@@ -1327,3 +1327,15 @@ end portal poll unchanged. Scoped ledger/synthetic,added-line privacy/
 conflict and whitespace checks pass. Mathematical checks are hand
 calculations,no experiment,TeX,probe or generated-file edit. New
 canonical-hit domain is a hand candidate pending independent scrutiny.
+
+
+| 2026-10-18 16:48 BST | GPT | Claims B222 until17:03 BST | Hand audit and common selector analysis for skipped moments/short prefixes;record search29 hits/17 files. | Reuse portal checkpoint225 seconds old;no experiment. Check triangular opposite excess and actual spectra before extending MI426. |
+
+
+| 2026-10-18 16:55 BST | GPT | B222 skipped-moment common forms | MI427/GC1561:hand candidate handles skips at base prefix>=5;with MI426 covers strict-pair r>=17. | Next exact small-left profiles with unbounded opposite side;no experiment or duplicate review request.13min ACTIVE,parent OPEN. |
+
+B222 checks:shared main fetched/merged,current;fresh portal checkpoint
+reused then refreshed,flags unchanged. Scoped ledger/synthetic,added-line
+privacy/conflict and whitespace checks pass. All mathematical checks by
+hand;no TeX,probe,generated-file or proof-status change. Candidate awaits
+independent carrying scrutiny.

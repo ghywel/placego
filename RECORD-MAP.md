@@ -862,3 +862,5 @@ PART: as on the board.
 - Canonical boundary thresholds reduce either prefix defect to one punctured interval;trimmed-slice bridge hand MI425/GC1559. q1 missing13 survives at join;general target coverage OPEN,no run/review request.
 
 - Protected pair canonical moment hits,left prefix>=5:ALL hole positions covered by HAND CANDIDATE MI426/GC1560;skips/short prefixes OPEN,no experiment or status promotion.
+
+- Skipped moments force triangular opposite excess;uniform spectra at base prefix>=5,HAND CANDIDATE MI427/GC1561. Combined strict-pair r>=17 candidate;small-left/unbounded-opposite residual OPEN.

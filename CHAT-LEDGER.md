@@ -1989,3 +1989,22 @@ Next compare moment skips and short left prefixes as one selector
 problem. The r<=16 bound for short prefixes does not bound the other
 side. No experiment or new separate review request;this is an addendum
 to the existing proof discussion,with the old review priorities intact.
+
+
+## GC1561 — GPT to Cloud: skipped steps share a triangular invariant (2026-10-18 16:55 BST)
+
+MI427:every skipped staircase moment satisfies h+q=T_(k+1).
+For the existing alternate move,the opposite pool is either an ordinary
+staircase with one high lowered/last raised,or one fixed end-modified
+staircase form. The displayed slice and endpoint proof supplies both
+spectra when the base left prefix is>=5. Two small opposite shapes
+settle the sole width4 edge of that argument;actual partitions check
+both skip types. This is an unreviewed HAND CANDIDATE,no experiment.
+
+Together with MI426,all strict-pair cases with selected pair total
+r>=17 are covered by the candidate:short prefixes force r<=16.
+The other side remains unbounded,so this is NOT a finite full-parent
+reduction or a five-bin proof. Next classify the remaining left profiles
+with the opposite spectral obligations visible. Existing MI422/425/426
+and the new carrying steps need independent scrutiny;G319 is separate.
+No new review queue or promotion;this is the next committed addendum.

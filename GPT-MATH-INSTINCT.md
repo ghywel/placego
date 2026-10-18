@@ -124,23 +124,23 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 16:43 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 16:55 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-The pair selector needs one actual boundary meeting both spectra.
-MI426 supplies a complete HAND CANDIDATE for canonical moment hits
-with left prefix p>=5,at EVERY hole position. Exact endpoint cancellation,
-selective trimming and repair of the single-translate edge hole remove
-MI422's threshold restrictions. The opposite short-prefix corner is
-excluded by strict integer margins or leaves Q unchanged. The q1
-negative controls at p3 survive. Nothing is independently promoted.
-Next inspect moment skips and p<=4 together as the remaining selector
-problem;do not replace them with a per-hole exception catalogue.
-The p<=4 bound r<=16 leaves the OTHER side unbounded,not a finite census.
-Dependencies:MI422/425/426 are unreviewed;G316 reviewed. G319-dependent
-candidates remain separate. Last trajectory check:MI423/GC1557,
-2026-10-18 16:02 BST;extra pull block unused. B221 expanded one uniform
-candidate domain;general P_0/five-bin/E28/L8 OPEN. Cloud's diagnostic
-remains separate;no new run or duplicate review request.
+MI426-427 give a combined HAND CANDIDATE for the strict-pair selector
+whenever its base left prefix has length>=5,whether the moment hits
+or skips. The new invariant is h+q=T_(k+1) at every skip;its actual
+opposite pool has one of two uniformly tractable staircase forms.
+Consequently the strict-pair branch with selected pair total r>=17
+is covered by this candidate. Canonical hits at smaller r may also
+be covered. General P_0/five-bin/E28/L8 remain OPEN.
+The residual has r<=16 but unbounded opposite size s. Next classify
+its exact left profiles and required opposite spectral guarantees
+before any finite diagnostic;one bounded side is not a finite problem.
+Dependencies:MI422/425/426/427 are unreviewed;G316 reviewed.
+No G319-dependent candidate is used here. Last trajectory check:
+MI423/GC1557,2026-10-18 16:02 BST;extra pull block unused.
+Cloud's diagnostic remains separate;no new run or duplicate review
+request. Existing small q1 failures remain outside the claimed regime.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31352,3 +31352,213 @@ by removed threshold hypotheses;reasoned:one uniform domain expanded,
 not the full parent. Last trajectory check remains MI423/GC1557
 16:02 BST,extra pull allowance unused;13min ACTIVE. Batch this as a
 checkpoint for the existing proof discussion,not a new review queue.
+
+
+### MI427 — B222: skipped moments have triangular opposite excess (2026-10-18 16:53 BST)
+
+**HAND CANDIDATE,unreviewed.** The parent is the same protected
+strict-pair branch of P_0. This block examines the actual MI419 selector,
+not arbitrary new boundary shapes. Record searched:`skipp|alternate`
+AND`staircase|boundary`:29 hits/17 files;MI419/422/425/426 and the
+G316 scalar formulas read. No external result or novelty assertion,
+no experiment. Fresh git is unchanged;the initial portal checkpoint
+was225 seconds old and reused,then refreshed during this block.
+Pull:skips and short prefixes should be compared through the selector's
+parameters before adding local repairs. The useful new constraint is
+that EVERY skipped moment has the same triangular form on the opposite
+side. The hand audit of MI426 retained its status and exact endpoint
+correction;this block does not count as independent review.
+
+**The common parameter of every skip.** Write the lower staircase
+area as H_0=T_k+t,0<=t<=k,and its prefix as p=r-k. If its next
+rank move crosses q-1 to q,then
+
+ q=r+k-2t, ell=r-t,
+ h=T_k-r+2t+1,
+ h+q=T_(k+1)=:A.                                        (1)
+
+For t<k,the moved token is a high;for t=k the move is the
+prefix endpoint p-1 to p. These include triangular transitions.
+They follow directly from the explicit staircase values and
+H_0-ell=h-1. Conversely these equations give that two-unit jump,
+when the admissible parameters and h>=0 hold. In particular k>=2:
+k0/1 would give h<0 at r>=6. The strict opposite target band gives
+A<=cd-2. The parameter t changes the SHAPE,but not its opposite
+excess A. This is the organizing constraint for the repairs below.
+
+Use MI419's SAME alternate move:for t<k move rank p-1 to p;
+for t=k move the largest rank up1. It achieves the required moment.
+We now establish both scalar memberships whenever p>=5.
+
+**Left pool for an interior staircase step,t<k.** Put P=p-1,
+K=k+1,so r=P+K. Its physical values are a full prefix[0,P-1]
+and K highs P+1+2i+e_i,where
+
+ e_0=0;
+ e_i=-1 for1<=i<=k-t;
+ e_i=+1 for k-t+1<=i<=k.
+
+This is a SET description of the alternate boundary,not a moment
+analogy. The high gaps are<=4,and P>=4 makes every middle low
+interval have width>=3. Hence every middle slice fills. In a join,
+F_j=sum(first j+1 e)-sum(last j e)<=0:pair indices1..j with
+the last j indices,using that e_1,...,e_(K-1) is nondecreasing,
+and leave e_00. Thus its gap1-(l-1)(P-l)-2j(K-j-1)+F_j
+is nonpositive at all middle joins.
+
+Here A_total=T_K+sum(e)=r+h. The band needed is
+[L(a)+A_total-b+1,L(a)+a+ab-1]. If a<=P-1 the first
+middle minimum is L(a),below the lower endpoint. Otherwise put
+u=a-P>=0,K=u+b. The first middle minimum has excess
+T_u+2u+2+sum(first u+1 e). The lower endpoint minus this is
+
+ (b-2)u+L(b)-1+sum(remaining e)
+ >=(b-2)u+L(b)-b >=0,                                  (2)
+
+because there are b-1 remaining increments,each>=-1,and b>=3.
+At the last end,if a>K all highs are selected and the actual
+maximum is L(a)+ab+A_total (the excluded b lows are0..b-1).
+If a<=K,the last middle maximum minus the required upper endpoint
+is at least
+
+ (a-2)K-L(a)+a-1+sum(last a-1 e)
+ >=(a-2)K-L(a)>=a(a-3)/2>=0.                           (3)
+
+Thus the entire required left band is supplied,including equalities
+in(2)/(3). No claim that all increments are nonnegative was used.
+
+**Left pool for the triangular transition,t=k.** The low prefix
+[0,p-1] stays intact. Its k physical highs are p+1+2i+e_i,
+with e_i2 except e_(k-1)3. Their gaps are<=3;middle low
+intervals fill them. At joins F_j is2 at j0 and j=k-1,
+and1 otherwise (k>=2). Thus the gap is<=3-(l-1)(p-l)-2B,
+nonpositive because p>=5. The MI422 endpoint calculation applies
+verbatim with these positive increments:the lower margin is
+(b-2)u+L(b)-1+sum(remaining e)>=2,or the first slice is
+all low. The last endpoint is bounded below by its same calculation,
+or is the actual maximum. This supplies the same left target band.
+The argument uses the explicit F bound,not the false assertion e<=2.
+
+**Opposite pool for t<k:one high lowered,one raised.** Let K=k+1,
+w=s-K. Relative to the ordinary staircase P_s(A),A=T_K,
+the actual reflected complement V lowers high number t by1 and
+raises the LAST high by1. In formula,its prefix is[0,w-1]
+and its K highs are w+1+2i+f_i,where
+
+ f_t=-1, f_(K-1)=+1, all other f_i=0; 0<=t<=K-2.        (4)
+
+For t0,the lowered first high adjoins the low prefix;we still treat
+it as a designated high. To check(4),apply MI419's physical
+reflection map to Q_s(H_0). For t>0,its negative suffix starts
+at t,the physical threshold raises indices>=t+1,and the alternate
+prefix move raises the largest remaining value. For t0 all original
+highs rise1 and the same last-value move occurs;adjoining the extra
+low value gives exactly(4). Total excess is A in both cases.
+
+The reviewed bound A<cd gives w>=3. Middle joins have F_j<=0:
+for t>=1 it is
+ -1_(j>=t)+1_(j=K-1)-1_(j>=1)+1_(j>=K-t),
+and for t0 it is-1 at the two boundary joins and-2 inside.
+The ordinary staircase join bound therefore suffices. The first
+middle minimum never increases:its high count is0 or at most K-2,
+so it excludes the raised last high. The last middle maximum never
+decreases:if it uses highs it includes the raised last one,offsetting
+any lowered one. If it is the actual maximum,nonnegative rank
+displacements or the excluded full low prefix give the same bound.
+Consequently G316's endpoint inequalities still cover
+[L(c)+A,L(c)+cd],provided the middle slices fill.
+
+All high gaps are<=3 except when t=K-2,the last gap being4.
+Thus slice fullness holds for w>=4,or for w3 without that last
+four-gap. If w3 and t=K-2,then s=K+3 and
+T_K<=cd-2<=s^2/4-2 force s6 or7. These are two actual scalar
+shapes,not an unbounded list of hole positions:
+
+ s6,K3,c=d3: V={0,1,2,4,5,9},A6.
+ Required triples9..12 are {0,4,5},{0,1,9},{0,2,9},{1,2,9}.
+ s7,K4,{c,d}={3,4}: V={0,1,2,4,6,7,11},A10.
+ Required triples13..15 are {0,2,11},{1,2,11},{0,4,11};
+ complementation in total31 supplies four-sums16..18.
+
+This checks the sole within-slice failure of the width argument.
+It is not a numerical extrapolation or a larger census.
+
+**Opposite pool for t=k:an end-modified staircase.** Put K=k+1,
+w=s-K as before. Before the alternate largest-rank move,the physical
+opposite pool equals Q_s(T_K-1):its prefix is[0,w-1] and only
+the LAST high of P_s(T_K) is lowered1. The alternate move removes
+w-1 and adds w to this opposite pool. Describe it instead with
+prefix length P=w-1 and J=K+1 highs P+1+2i+f_i,where
+
+ f_0=0, f_1=...=f_(J-2)=-1, f_(J-1)=-2.              (5)
+
+The total excess is T_J-J=L(J)=T_K=A. Since w>=3,P>=2;
+high gaps are<=2 and every middle low interval has width>=1.
+The join correction is0 at j0,J-1 and1 elsewhere. The raw gap
+1-A_join-2B+F is<=0:at a boundary F0,A_join>=1;inside,
+B>=1. All middle slices fill and join.
+
+For c<=P-1 the first minimum is L(c). Otherwise u=c-P,
+J=u+d and the first minimum excess is T_u+u+2;its margin
+below the target lower endpoint L(c)+A is
+
+ (d-2)u+L(d)-2>=1.
+
+If c<=J,the last middle maximum minus L(c)+cd is
+at least (c-2)J-L(c)+c-2>=L(c)-2>=1.
+If c>J the last middle slice reaches the actual maximum,which
+is at least L(c)+cd. This proves the same opposite central band
+in the triangular-transition case,without a new prefix restriction.
+
+**Result for the selector.** For every skipped moment with lower
+prefix p>=5,MI419's alternate boundary supplies the required A target,
+and its ACTUAL reflected complement supplies the required C target.
+Both other bins are obtained by complementation. Together with MI426:
+the chosen selector works whenever its base left prefix is>=5,
+whether its moment is a hit or a skip. The unresolved selector cases
+have p<=4. In both hit and skip cases their base area obeys
+
+ T_(r-4)<=H_base<=ab+r-2<=r^2/4+r-2,
+
+so r<=16. Therefore this is also a complete HAND CANDIDATE for the
+protected strict-minimum-pair branch whenever the chosen pair has
+combined size r>=17. It is not the singleton/triple branch or the
+whole five-bin theorem. The opposite size remains unbounded in the
+r<=16 residual;the statement is not a finite all-parent certificate.
+
+**Literal controls and an unexpected symmetry.** Interior skip:
+on S=[0,12] minus6,sizes(3,3,3,3),targets(10,11,26,25),AB
+has h0. Singleton slacks4,5,20,19;cross-pair slacks15,14,16,15;
+CD30;triple slacks2,1,16,17. Thus the protected strict-pair
+hypotheses hold. H_04,k2,t1,q6 skips h;the alternate boundary
+and its reflected complement BOTH equal {0,1,2,4,5,9}.
+Actual bins are {0,1,9}/{2,4,5}/{3,11,12}/{7,8,10}.
+This self-complementary shape is the unexpected check. Its p4 is
+outside the general left proof,but its literal partition and opposite
+small-width check are valid;it must not be called a p>=5 test.
+
+Triangular skip with p5:on S=[0,13] minus5,sizes(3,4,3,3),
+targets(12,17,29,28),AB has h1. Other singleton slacks6,7,23,22;
+cross-pair slacks20,19,18,17;CD36;triple slacks3,2,24,19.
+The lower H_05,k2,t2 pool has prefix5;the alternate boundary is
+U={0,1,2,3,4,8,11},V={0,1,3,4,6,7}. The actual bins
+{0,1,11}/{2,3,4,8}/{6,10,13}/{7,9,12} give all targets.
+Both controls use actual missing-value pools and disjoint partitions.
+
+**Outcome,niggles,next decision.** Hand candidate,not independently
+verified. The key niggles were negative high increments in the LEFT
+endpoint proof,one high gap4 with opposite prefix3,and the fact that
+a triangular step changes the opposite LOW prefix. Equations(2)/(3),
+the two literal scalar shapes,and formula(5) address them separately.
+No convex-hull substitution or experimental claim. Earliest pending
+support in the combined hit/skip result remains MI422/425/426;this
+block's new steps also need review. G319-dependent work stays separate.
+Parent coverage expands to the whole strict-pair branch at r>=17.
+Next reduce the r<=16 residual to exact left profiles and determine
+which opposite spectral guarantees survive their repairs BEFORE any
+finite diagnostic. Do not infer a finite full problem from one bounded
+side. Gut:the triangular invariant supplies a specific reason for
+continued interest. Reasoned:the new common forms removed the moment-
+skip gap on an entire regime,not just one fixture. Last trajectory
+check remains MI423/GC1557 at16:02 BST,extra pull allowance unused.
+No new experiment or separate review request;13min ACTIVE.
