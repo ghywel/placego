@@ -124,22 +124,25 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 21:33 BST: research ACTIVE every 13 minutes.**
+**Current state, 2026-10-18 21:46 BST: research ACTIVE every 13 minutes.**
 Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
 protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
 remain unresolved. G323 is PROVED; G324/MI449 remains pending independent
-review, not a premise here. G320–322 and MI430 remain pending and unused.
-Known integral rank splitting is source-confirmed (MI448). The fixed N11
-one-size-two diagnostic passes (MI452); MI451's false warning stays withdrawn.
-B237/MI453 extends the strict-pair branch by hand to one size-two bin and
-isolates a single remaining completion statement H2: protected one-hole
-THREE-bin counts (2,b,c), b,c>=3, all proper lower cuts >=L(r)+r.
-The exact actual-residual gate and converse embedding are written out.
-H2 and the full one-size-two row theorem remain OPEN; no parent coverage gain,
-new experiment, larger census or new review request. Next: test H2's joint
-completion using its inherited margin, not an unrestricted hole theorem.
-Latest trajectory check MI448/B234; previous extra-test allowance remains spent.
-The older schedule is PAUSED; no background computation runs.
+review and is not used here. G320–322 and MI430 remain pending and unused.
+Known integral rank splitting is source-confirmed (MI448). B237/MI453 reduces
+the one-size-two full row to H2: protected one-hole three-bin counts (2,b,c),
+b,c>=3, every proper group lower bound >=L(r)+r. B238/MI455 checks all 1,659
+protected domain-targets at counts233/234 and internal holes with two independent
+complete maps; all pass, finite scope only. MI456 proves by hand that a legal
+closest-to-midpoint pair always leaves both other targets inside actual rank
+bounds, but its literal (8,7,18) example refutes that pair as a universal
+physical selector. Another pair completes the SAME example.
+Next: prove or reject coverage of the exact H2 interval by the UNION of all
+legal-pair complementary spectra. No local repair catalogue or larger census.
+H2/full-row/five-bin remain OPEN; parent coverage unchanged, no new review job.
+Latest trajectory check MI448; one convenient-selector failure since that check,
+previous pull-only extra-test allowance remains spent. Older schedule PAUSED;
+no background computation runs.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -33479,3 +33482,157 @@ Gut: interest is specific to whether that margin removes pair competition;
 it is not evidence of success. Reasoned: a useful reduction with an OPEN
 joint-realization step, independent of G324. Latest trajectory check remains
 MI448; the earlier pull-only extra-test allowance is not renewed.
+
+### MI454 — Test H2 itself, with asymmetric protection retained (2026-10-18 21:42 BST; B238, NOT RUN at registration)
+
+Parent and dependencies: MI453's protected one-hole H2 completion would finish
+its one-size-two full-row argument, but not five-bin count admission. The H2
+statement is not implied by the completed N11 full-row census: a different
+first bin could conceal failure of the selected residual. G324 is unused.
+Pull: this is a direct opportunity to reject the reduction rather than extend
+its repairs. Record searched: `pair.*(owner|choice)|two.token|size2` AND
+`three.hole|one.hole|protect`, 32 hits/5 files. Read MI334's negative and
+MI453. No new literature theorem is assumed; this is a diagnostic of H2.
+
+**Fixed experiment, predictions written before execution.** Test all internal
+holes q in [0,M] for counts (2,3,3), M8, and (2,3,4), M9: precisely 7+8
+small domains. Enumerate complete physical target maps independently by
+pair/second-bin combinations and by token-owner recursion. Independently
+scan all integer triples of the conserved total satisfying every proper
+lower group cut t_J>=L(r)+r. Blind prediction: every H2 target is realized.
+A pass is finite support only. Stop at the FIRST H2 counterexample and
+hand-check it; do not repair it or increase the domain within this block.
+If the prediction passes, derive a structural pair-selection condition next,
+not another size increment. A cap/control failure is inconclusive and stops.
+
+Controls: complete-map agreement, multinomial partition count, literal token
+coverage and sums, exact original/reflected physical-map identity. Counterfactual:
+individual spectra and rank bounds alone falsely admit counts(2,2,2),
+P={0,1,2,3,4,6}, target(2,6,8), while the partition map excludes it.
+Keep MI451's withdrawn negative as a POSITIVE physical control:
+counts(2,3,3), q4, target(4,8,20), partition(13;026;578).
+No H2 admission is asserted for that positive control.
+
+**Unexpected check: protection is NOT reflection-invariant.** For M8,q1,
+partition(68;027;345) has targets(14,9,12), satisfies every H2 cut.
+Its literal reflection has q7, targets(2,15,12), and violates H2's pair
+lower bound3 despite being a perfectly valid partition. Check this contrast
+explicitly. More generally reflection converts the lower group protection
+L(r)+r into a lower bound L(r)+q via the complementary cut; never equate
+the two protected admission maps. Only the full physical maps reflect.
+
+Caps: 20 seconds / 1,000,000 owner recursion nodes per domain, 60 seconds
+for the whole run. One invocation, no retry/enlargement. Raw output outside
+git, source in tests/probes/instinct/protected_pair_row.py. This small run
+is registered locally before execution, not announced as a substantial run.
+All failures and empty domains will be recorded, without treating a vacuous
+pass as evidence of coverage.
+
+### MI455 — H2's two fixed domains pass (2026-10-18 21:46 BST; B238)
+
+**COMPUTED, one invocation of MI454's fixed experiment.** All seven internal
+holes for counts(2,3,3) pass: 602 protected targets across the seven domains,
+3,920 labelled partitions enumerated by each engine. All eight internal holes
+for counts(2,3,4) pass: 1,057 protected targets, 10,080 labelled partitions
+per engine. These are domain-target counts, not counts after forgetting q.
+Every domain is nonempty. No H2 negative, cap hit, retry or enlargement.
+Whole independent maps, multinomial counts, literal coverage, physical
+reflection, the unprotected negative and the withdrawn-warning positive pass.
+The unexpected protected/nonprotected reflection contrast passes as written.
+Summed per-domain times on the Intel host: 0.0396322500 and 0.0943210690 seconds;
+the negative control separately reports 0.0013923450 seconds. No speed claim.
+
+Source tests/probes/instinct/protected_pair_row.py SHA256
+ e9733b973b9dadc50f41a89ea4f90bf50b443a72c5433d60e87823f1befb27c2.
+Raw JSONL retained outside git, SHA256
+ 8cd6096cb68a5d35bdd4ad8462ca1b8870cff673cf4b779cdf5e8a42506add3a.
+No shared artifact upload or independent-party verification is claimed.
+The negative control's own H2 subset happens to pass; its required failure
+is the explicitly tested rank/individual-spectrum-only target(2,6,8).
+H2 remains OPEN beyond the registered cases. No further census follows.
+
+### MI456 — A rank-feasible pair can still fail; keep the union of all pair choices (2026-10-18 21:46 BST; B238 hand continuation)
+
+**Hand reduction and a selector refutation, not an H2 proof.** Let P=[0,M]
+minus q, 1<=q<=M-1, counts(2,b,c), b,c>=3, M=b+c+2. Write u for
+the pair target, v for the b-bin target, T=L(M+1)-q. H2 is exactly
+
+    3 <= u <= 2M-1-q,
+    max(L(b+1), L(b+3)-u) <= v
+       <= min(T-u-L(c+1), T-L(c+3)).
+
+The upper bound on u is the complementary b+c cut; the two lower bounds
+on v are its singleton cut and its union with the pair. Its upper bounds
+are the complementary c and pair-plus-c cuts. Thus no proper group is lost.
+For a fixed legal u, let A run through ALL two-element subsets of P of sum u.
+The exact remaining assertion is that the displayed integer interval is
+contained in the UNION of Sigma_b(P minus A). This keeps physical choices
+joint; it is not the sum of separately computed scalar spectra.
+
+**The closest-to-midpoint pair always meets the needed rank bounds.**
+There is a particularly simple legal pair A*={x,y}, x<y, x+y=u:
+for odd u=2w+1 start with {w,w+1}; if q occupies it, use {w-1,w+2}.
+For even u=2w start with {w-1,w+1}; if q occupies it, use {w-2,w+2}.
+These pairs are in [0,M] and avoid q. At the lower end u>=3 supplies
+all the required nonnegative entries. At the upper end an odd u is
+at most2M-3. The only potentially invalid even replacement has u=2M-2,
+but then H2 forces q<=1, while an invalid replacement would need q=M-2
+(or the forbidden endpoint M); M>=8 excludes it. Thus y-x<=4.
+
+For either remaining size r=b or c, let alpha_r be the smallest r-token
+sum in R=P minus A*. I claim
+
+    alpha_r <= max(L(r+1), L(r+3)-u).
+
+Here is a direct proof, including the short exceptional gaps.
+If u>=2r+3, then x>=r+1, except that a replacement can give x=r
+with q>=r+1. In the first case deleting the pair does not affect the
+first r values of P, which lie in [0,r], so alpha_r<=L(r+1).
+In the exceptional case all three removed values are >=r, so alpha_r=L(r).
+If u<=2r+3 and y<=r+2, take r survivors from [0,r+2]: deleting the
+pair and possibly q leaves at least r values, with total at most
+L(r+3)-u. Any extra survivor can be dropped since all values are nonnegative.
+If instead y>r+2, the gap bound y-x<=4 forces y=r+3 and either
+(x,u)=(r-1,2r+2) or (r,2r+3). In the first, q is r or r+2;
+alpha_r<=L(r)+2<=L(r)+r+1=L(r+3)-u. In the second,
+q is r+1 or r+2 and alpha_r=L(r)<=L(r+3)-u.
+This exhausts the cases and proves the inequality.
+
+Consequently H2 puts both requested remaining sums at or above their
+actual minima in R. Conservation puts each at or below its actual maximum.
+This is a uniform rank-admission result for a PHYSICAL chosen pair, without
+G324, any unreviewed count theorem or an assumed joint partition.
+
+**But that pair is not a sufficient selector.** On P=[0,8] minus3, take
+counts(2,3,3) and targets(8,7,18). The six H2 lower checks are
+8>=3,7>=6,18>=6,15>=15,26>=15,25>=21; total is33.
+The closest pair is {2,6}. Its remainder is {0,1,4,5,7,8}; no triple
+sums to7. Without0 its minimum is1+4+5=10; with0 no two distinct
+remaining entries sum to7. Yet the complete original partition is
+
+    {1,7}; {0,2,5}; {4,6,8}.
+
+Its sizes and sums are exactly(2,3,3)/(8,7,18), and it covers P once.
+Thus the obstruction is a scalar gap AFTER a valid physical pair choice,
+not a failed H2 target. This is distinct from MI451's withdrawn false example.
+No larger run was used to obtain or verify this hand example.
+
+**Decision and niggle sweep.** Do not patch the closest-pair rule with a
+new local exception catalogue. The rank difficulty has a uniform argument;
+the remaining inference is coverage by the union of all legal-pair spectra
+in the displayed interval. Next hand test: use the shared-sum pair family
+and the already proved small-hole scalar localization to determine whether
+a gap for one choice must be covered by another. Failure of one selector
+is not failure of H2, and a finite pass is not its proof. The reflection
+control keeps the asymmetric inherited bounds visible. Endpoints, even
+replacement validity, all six cuts and literal negative/positive witnesses
+were checked above; no status upgrade or new carrying-review job.
+
+Parent coverage is unchanged; the current row's rank-versus-spectrum
+obstruction is now explicit. Repeated assumption: a convenient physical
+selector might cover every target by itself; this block rejects that selector
+and changes to all-choice coverage before any repair. Latest trajectory check
+remains MI448; its pull-only extra allowance is not renewed. Gut: the failure
+is useful because the rank part survived uniformly; there is a concrete next
+inference, not merely a fresh label. Reasoned: H2 stays OPEN, with finite
+support and a precise global spectrum-cover question. No new experiment planned.
