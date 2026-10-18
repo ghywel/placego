@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eight Streets on Fire</title>
+<meta name="description" content="A fire spreads along a street of houses and you may light one new house a day. Eight separate streets, one pile of odd-length stretches to share out: when does the sharing always work? The eight-path burning problem from scratch, with live pictures, what has been proved, and the wall we have reached.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="Eight Streets on Fire">
+<meta property="og:description" content="Fires, planks and fair shares: the eight-path burning problem from scratch, with live pictures, what has been proved, and the wall.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/eightstreets/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%2314181d%27/%3E%3Crect x=%273%27 y=%271%27 width=%271%27 height=%271%27 fill=%27%23d9542b%27/%3E%3Crect x=%272%27 y=%272%27 width=%273%27 height=%271%27 fill=%27%23f4eedf%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Same faces and paper as the worked Rule 30 page. One reading column; each picture breaks out to the full width
+   where the text needs it. Four working colours for the streets, validated for colour-vision deficiency; every
+   coloured mark also carries a label, so nothing is told by colour alone. */
+:root {
+  --paper: #ECEFEA; --panel: #F5F6F2; --ink: #1E1F1C; --ink-soft: #5B6157; --rule: #C8CDC2;
+  --fire: #D9542B; --ember: #A33A14; --ash: #8A8F85;
+  --s1: #A52A5A; --s2: #2A66B3; --s3: #C27A06; --s4: #2F9460;
+  --open: #9B2C52; --proved: #2D7A57; --measured: #1E5A86;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --fire: #F0714A; --ember: #C4532A; --ash: #6E746B;
+    --s1: #D96A95; --s2: #6FA6E6; --s3: #E2A33E; --s4: #5CC496;
+    --open: #E0688F; --proved: #5CC496; --measured: #62A6DA; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 1.06rem; line-height: 1.62; }
+a { color: var(--measured); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--measured); outline-offset: 2px; }
+.page { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 0 64px; }
+.col { max-width: 68ch; margin-inline: auto; }
+header.hero { padding-block: 44px 10px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+h1 em { color: var(--fire); font-style: italic; }
+.lede { font-size: 1.22rem; margin: 0; max-width: 60ch; text-wrap: pretty; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.35rem); line-height: 1.12; margin: 0 0 10px; text-wrap: balance; }
+h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; margin: 22px 0 6px; }
+.chapter { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 48px 0 6px; }
+p { margin: 0 0 14px; text-wrap: pretty; }
+figure { margin: 26px 0; }
+figure.wide { max-width: 1200px; margin-inline: auto; }
+figcaption { font-size: 0.92rem; color: var(--ink-soft); margin-top: 8px; max-width: 80ch; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; }
+.ctrl { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 0.92rem; }
+button { font: inherit; font-size: 0.92rem; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; }
+button:hover { border-color: var(--ink-soft); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+input[type=range] { accent-color: var(--fire); }
+.tally { font-family: var(--font-mono); font-size: 0.9rem; color: var(--ink-soft); margin: 6px 0 0; min-height: 1.4em; }
+canvas, svg { display: block; max-width: 100%; height: auto; }
+.exact { border-left: 3px solid var(--rule); padding: 4px 0 4px 16px; margin: 18px 0; font-size: 0.97rem; }
+.exact .k { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 4px; }
+.pill { display: inline-block; font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; vertical-align: middle; }
+.pill.open { color: var(--open); } .pill.proved { color: var(--proved); } .pill.measured { color: var(--measured); }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 14px 0; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; } td.n, th.n { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.9rem; color: var(--ink-soft); margin-top: 8px; }
+.legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.q { display: grid; grid-template-columns: auto 1fr auto; gap: 10px 16px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--rule); }
+.q .n { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft); }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 0.82rem; padding: 4px 8px; border-radius: 6px; transform: translate(-50%, -130%); white-space: nowrap; opacity: 0; transition: opacity .12s; }
+.tip.on { opacity: 1; }
+.rel { position: relative; }
+.srtable { display: none; } .srtable.on { display: block; }
+footer { margin-top: 56px; font-size: 0.92rem; color: var(--ink-soft); }
+footer p { margin-bottom: 10px; }
+.wcm-skip{position:absolute;left:12px;top:-80px;z-index:20;background:#14181d;color:#f4eedf;font-family:"Inter",system-ui,sans-serif;font-weight:600;padding:10px 16px;border-radius:0 0 10px 10px;border:2px solid #d8a21c}
+.wcm-skip:focus{top:0;outline:none}
+</style>
+</head>
+<body>
+<a class="wcm-skip" href="#main">Skip to content</a>
+<div id="wcm-top">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+#wcm-top{font-family:"Inter",system-ui,sans-serif;font-size:14px;line-height:1.6}
+#wcm-top .bar{background:#14181d;color:#f4eedf;border-bottom:3px solid #d9542b}
+#wcm-top .in{max-width:900px;margin:0 auto;padding:12px 18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+#wcm-top .brand{font-weight:700;letter-spacing:.03em;color:#f4eedf;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
+#wcm-top .brand canvas{width:28px;height:16px;image-rendering:pixelated;border-radius:2px}
+#wcm-top .other{margin-left:auto;color:#c9c2b3;text-decoration:none;font-size:13px;white-space:nowrap}#wcm-top .other span{color:#f4eedf;border-bottom:1px solid #d8a21c}#wcm-top .other:hover{color:#f4eedf}
+#wcm-top nav{display:flex;gap:14px;flex-wrap:wrap;flex-basis:100%}#wcm-top nav a{color:#c9c2b3;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+#wcm-top nav a:hover{color:#f4eedf}#wcm-top nav a[aria-current]{color:#f4eedf;border-bottom-color:#d9542b}
+#wcm-top .ribbon{display:block;width:100%;height:26px;background:#14181d}
+#wcm-top a:focus-visible{outline:3px solid #d8a21c;outline-offset:3px}
+</style>
+<div class="bar"><div class="in">
+  <a class="brand" href="../index.html"><canvas class="mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
+  <nav aria-label="Site"><a href="../learn.html">Learn</a><a href="../wolfram.html">Wolfram</a><a href="../collatz.html">Collatz</a><a href="../mahler.html">Mahler</a><a href="index.html" aria-current="page">Eight streets</a><a href="../stand.html">Where we stand</a><a href="../need.html">What we need</a><a href="../trove.html">Trove</a><a href="../join.html">Join</a></nav>
+</div></div>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<script>(function(){
+function step(r){const n=r.length,o=new Uint8Array(n);for(let i=0;i<n;i++){const l=i?r[i-1]:0,c=r[i],q=i+1<n?r[i+1]:0;o[i]=l^(c|q);}return o;}
+const m=document.querySelector("#wcm-top .mark");m.width=28;m.height=16;const x=m.getContext("2d");x.fillStyle="#14181d";x.fillRect(0,0,28,16);
+let r=new Uint8Array(28);r[14]=1;for(let t=0;t<8;t++){for(let i=0;i<28;i++)if(r[i]){x.fillStyle=i===14?"#d9542b":"#f4eedf";x.fillRect(i,t+4,1,1);}r=step(r);}
+const c=document.querySelector("#wcm-top .ribbon"),W=300,T=6;c.width=W;c.height=T;const y=c.getContext("2d");y.fillStyle="#14181d";y.fillRect(0,0,W,T);
+let s=2026,row=new Uint8Array(W);for(let i=0;i<W;i++){s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;row[i]=s&1;}
+y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillRect(i,t,1,1);row=step(row);}
+})();</script>
+</div>
+
+<div class="page" id="main" tabindex="-1">
+
+  <header class="hero col">
+    <p class="eyebrow">A puzzle about fire, planks and fair shares</p>
+    <h1>Eight streets <em>on fire</em></h1>
+    <p class="lede">A fire spreads along a row of houses, and once a day you may light one new house anywhere. One
+      street is easy. Eight separate streets, sharing one pile of fires, is an open question. This page walks from
+      the first match to the wall we have reached, with every picture computed live.</p>
+  </header>
+
+  <figure class="wide">
+    <div class="panel rel">
+      <canvas id="burn" width="1200" height="150" role="img" aria-label="A street of houses burning day by day. Each day every burning house lights its neighbours, and one new house is lit by hand."></canvas>
+      <p class="tally" id="burn-tally"></p>
+      <div class="ctrl">
+        <button id="burn-play" type="button">Pause</button>
+        <button id="burn-step" type="button">Step</button>
+        <button id="burn-reset" type="button">Restart</button>
+        <label>Days: <input id="burn-m" type="range" min="3" max="9" value="6"> <span id="burn-mv">6</span></label>
+        <span id="burn-n" style="color:var(--ink-soft)"></span>
+      </div>
+    </div>
+    <figcaption>One street. Each day the fire spreads one house in each direction from every burning house, and you
+      light one new house of your choice. Lit in the right places, <em>m</em> fires burn a street of <em>m</em>² houses
+      in <em>m</em> days, and not one house more.</figcaption>
+  </figure>
+
+  <section class="col" id="one">
+    <p class="chapter">1 · One street</p>
+    <h2>Odd numbers, and a square</h2>
+    <p>Watch the first fire. By the end of day one it has burned one house. By day two it has spread to three, by
+      day three to five: a fire lit on day one has reached a stretch of 2<em>m</em> − 1 houses by day <em>m</em>. The
+      fire you light on day two is a day behind, so it covers 2<em>m</em> − 3; the last one, lit on day <em>m</em>
+      itself, has burned a single house. The stretches you command have the odd lengths 1, 3, 5, … up to
+      2<em>m</em> − 1, one of each.</p>
+    <p>Add the odd numbers and you get a square: 1 + 3 + 5 + 7 = 16, 1 + 3 + 5 + 7 + 9 = 25. The picture below is
+      the old reason why. So <em>m</em> days of fire burn at most <em>m</em>² houses, and a street of exactly
+      <em>m</em>² houses is burned in <em>m</em> days by laying the stretches end to end, longest first, which is
+      what the animation above does.</p>
+    <figure>
+      <div class="panel rel">
+        <svg id="gnomon" viewBox="0 0 640 300" role="img" aria-label="A square built from nested L shapes of sizes 1, 3, 5, 7, 9, 11, showing that the odd numbers add to a square."></svg>
+        <div class="tip" id="gnomon-tip"></div>
+      </div>
+      <figcaption>Six days, thirty-six houses: each L-shaped band is one day's stretch, and the bands fill a square
+        with nothing left over. Hover a band.</figcaption>
+    </figure>
+    <div class="exact"><span class="k">Exact</span>On a path of <em>n</em> vertices, a vertex burned at round
+      <em>k</em> has burned a sub-path of at most 2(<em>m</em> − <em>k</em>) + 1 vertices by round <em>m</em>; the
+      <em>m</em> sub-paths have odd sizes 1, 3, …, 2<em>m</em> − 1 and total at most <em>m</em>². The
+      <em>burning number</em> of a graph is the least <em>m</em> for which some choice of sources burns everything
+      by round <em>m</em>. For a single path of <em>n</em> vertices it is ⌈√<em>n</em>⌉ (Bonato, Janssen and
+      Roshanbin, 2016, from the record's prior-art file).</div>
+  </section>
+
+  <section class="col" id="eight">
+    <p class="chapter">2 · Eight streets</p>
+    <h2>Planks for eight gaps</h2>
+    <p>Now the town has eight separate streets, and the fire cannot jump from one to another. You still get one
+      new fire a day, and the same odd stretches: after 28 days, one stretch of each length 1, 3, 5, …, 55. The
+      only question is how to share them. Each street must receive stretches that add up to exactly its own length,
+      because a stretch that overhangs a street's end is wasted, and a street with a gap left is not burned.</p>
+    <p>It helps to stop thinking about fire for a moment. You hold 28 planks of odd lengths 1, 3, 5, …, 55. There
+      are eight gaps to tile. No plank may be cut, no plank may be left over, and every gap must be filled exactly.
+      When the eight lengths add up to 28² = 784, the planks are exactly enough. Whether they can be <em>arranged</em>
+      is the puzzle.</p>
+    <figure class="wide">
+      <div class="panel rel">
+        <svg id="planks" viewBox="0 0 1200 420" role="img" aria-label="Eight streets drawn as bars, each filled end to end with odd-length planks whose lengths are written on them."></svg>
+        <div class="tip" id="planks-tip"></div>
+        <div class="ctrl">
+          <span>Example:</span>
+          <button type="button" data-ex="0" aria-pressed="true">four of 68, four of 128</button>
+          <button type="button" data-ex="1" aria-pressed="false">eight different lengths</button>
+        </div>
+      </div>
+      <figcaption>Twenty-eight days, eight streets, the planks 1 to 55 shared out with nothing cut and nothing
+        left over. Both tilings were found by a complete search and checked; hover a plank.</figcaption>
+    </figure>
+  </section>
+
+  <section class="col" id="fail">
+    <p class="chapter">3 · When sharing fails</p>
+    <h2>Four streets of 67, four of 102</h2>
+    <p>Sharing can fail. Take 26 days, so the planks are 1, 3, …, 51, and let four streets be 67 houses long and four
+      be 102. The lengths add up to 676 = 26², so the planks are exactly enough. Yet no arrangement works, and the
+      reason fits in three lines.</p>
+    <p>A street of 102 cannot be tiled with two planks, because the two longest, 51 and 49, reach only 100. Any
+      arrangement that avoids leaving a plank over uses whole planks, so each 102-street needs at least three; and
+      since 102 is even and every plank is odd, it needs an even number, so at least four. A street of 67 needs an
+      odd number of planks, and one plank is too short, so at least three. That is 4 × 4 + 4 × 3 = 28 planks, and
+      there are only 26.</p>
+    <figure>
+      <div class="panel">
+        <svg id="witness" viewBox="0 0 700 250" role="img" aria-label="A street of 102 with the two longest planks, 51 and 49, falling two short; and the plank count: four streets needing four planks, four needing three, twenty-eight in all against twenty-six available."></svg>
+      </div>
+      <figcaption>The counting argument as a picture. Four streets need four planks each and four need three, but
+        26 days give only 26 planks. A complete search confirms it: there is no arrangement (checked here in 79
+        seconds).</figcaption>
+    </figure>
+    <p>So a street can be too short to be safe. The 67-streets are the trouble: they can only take an odd number of
+      planks, and the small planks they would need are wanted elsewhere. The natural question is how long every
+      street must be before sharing <em>always</em> works, whatever the lengths.</p>
+  </section>
+
+  <section class="col" id="question">
+    <p class="chapter">4 · The question</p>
+    <h2>Is 68 always enough?</h2>
+    <p>Tan and Teh asked this for towns of <em>k</em> streets and settled it for one street up to seven. For seven
+      streets the threshold is 56: if every street has at least 56 houses and the lengths add to a square
+      <em>m</em>², then <em>m</em> days always suffice. For eight streets the example above shows 67 is not enough.
+      Whether 68 always is, for every number of days and every eight lengths, is open. It is the problem GPT chose
+      when the owner asked it to follow its own instincts, and the problem this page is about.</p>
+    <div class="q"><span class="n">L<sub>8</sub></span><span>If eight street lengths, each at least 68, add up to
+      <em>m</em>², can the planks 1, 3, …, 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill open">Open</span></div>
+    <div class="q"><span class="n">Known</span><span>67 is not enough (the example in section 3); the thresholds for
+      one to seven streets are settled, the seventh being 56.</span><span class="pill proved">Prior art</span></div>
+    <div class="exact" style="margin-top:18px"><span class="k">Exact</span>For a path forest with <em>k</em> paths, let
+      L<sub>k</sub> be the least <em>L</em> such that every forest whose paths all have at least <em>L</em> vertices and
+      whose total is <em>m</em>² has burning number <em>m</em>. Tan and Teh, <a href="https://dmtcs.episciences.org/en/articles/12709/download">A
+      Note on Graph Burning of Path Forests</a> (DMTCS), determine L<sub>k</sub> for <em>k</em> ≤ 7 and give the lower bound
+      L<sub>8</sub> ≥ 68 through the forest (67, 67, 67, 67, 102, 102, 102, 102). In plank form: partition
+      {1, 3, …, 2<em>m</em> − 1} into eight sets with prescribed sums.</div>
+  </section>
+
+  <section class="col" id="pile">
+    <p class="chapter">5 · Shrinking the pile</p>
+    <h2>Only nine days' worth of cases matter</h2>
+    <p>"Every number of days" sounds infinite, and it is, but a trick tames it. If some street is very long, give it
+      the longest plank, 2<em>m</em> − 1, and put it aside: what remains is the same puzzle one day shorter. Run that
+      backwards and any case with a street of at least 2<em>m</em> + 67 houses follows from a smaller case. The cases
+      that do not follow from anything smaller have every street between 68 and 2<em>m</em> + 66, and once
+      <em>m</em> reaches 33 there are none at all, because eight such streets cannot add up to 33².</p>
+    <p>So the whole infinite question comes down to the days 24 to 32. That is still a pile: 64,787,844 cases, most
+      of them at 27 and 28 days. Checking them one by one is a large computation; the record has measured it, and
+      it is the subject of the last section.</p>
+    <figure>
+      <div class="panel rel">
+        <svg id="pilechart" viewBox="0 0 560 250" role="img" aria-label="Bar chart of the number of cases that must be checked directly at each number of days from 24 to 32, peaking at 24.7 million at 28 days."></svg>
+        <div class="tip" id="pile-tip"></div>
+        <div class="ctrl"><button type="button" id="pile-table" aria-pressed="false">Show as a table</button></div>
+        <div class="srtable" id="pile-sr">
+          <table><thead><tr><th>Days m</th><th class="n">Cases needing a direct check</th></tr></thead>
+          <tbody>
+            <tr><td>24</td><td class="n">3,319</td></tr><tr><td>25</td><td class="n">425,632</td></tr>
+            <tr><td>26</td><td class="n">5,523,890</td></tr><tr><td>27</td><td class="n">19,382,158</td></tr>
+            <tr><td>28</td><td class="n">24,688,633</td></tr><tr><td>29</td><td class="n">12,385,850</td></tr>
+            <tr><td>30</td><td class="n">2,271,658</td></tr><tr><td>31</td><td class="n">106,518</td></tr>
+            <tr><td>32</td><td class="n">186</td></tr><tr><th>Total</th><th class="n">64,787,844</th></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <figcaption>The cases that must be checked directly, by number of days. Two independent counts agree
+        (GPT-MATH-INSTINCT.md MI044, 15 October 2026); the unrestricted count without the trick would be about
+        58.8 billion.</figcaption>
+    </figure>
+    <div class="exact"><span class="k">Exact</span>Strong induction on <em>m</em>: if some target
+      <em>l</em><sub>i</sub> ≥ 2<em>m</em> + 67, remove the plank 2<em>m</em> − 1 from it; the reduced instance has total
+      (<em>m</em> − 1)², every target still at least 68, and is solved by the inductive hypothesis. The exceptional set
+      E<sub>m</sub> (all eight targets in [68, 2<em>m</em> + 66], total <em>m</em>²) is empty for <em>m</em> ≥ 33, so
+      L<sub>8</sub> ≤ 68 follows from direct certificates on E<sub>24</sub> … E<sub>32</sub>. Proposed by Cloud, audited
+      by GPT (MI044).</div>
+  </section>
+
+  <section class="col" id="index">
+    <p class="chapter">6 · Taking the 1 off every plank</p>
+    <h2>The same puzzle on 0, 1, 2, 3, …</h2>
+    <p>Every plank has odd length, so every plank is "one house plus an even number". Saw one house off each. A plank
+      of length 2<em>i</em> + 1 becomes a plank of length 2<em>i</em>, and halving the scale makes it <em>i</em>. The
+      planks 1, 3, 5, …, 55 become 0, 1, 2, …, 27, the ordinary counting numbers. A street that wanted <em>c</em>
+      planks adding to <em>l</em> now wants <em>c</em> numbers from 0 to 27 adding to (<em>l</em> − <em>c</em>)/2.</p>
+    <p>This is the form everything below uses. The pool is a run of consecutive numbers; each street says how many
+      it will take and what they must add to. One rule is obviously necessary: a street taking <em>c</em> numbers
+      cannot ask for less than the <em>c</em> smallest add to, nor more than the <em>c</em> largest. And the same
+      for any group of streets together: two streets taking seven numbers between them cannot ask for less than
+      0 + 1 + … + 6. Call this the <strong>cut rule</strong>.</p>
+    <figure>
+      <div class="panel rel">
+        <svg id="shave" viewBox="0 0 640 210" role="img" aria-label="Planks of lengths 1, 3, 5, 7, 9 with one house shaved off each, becoming 0, 1, 2, 3, 4; and a street's allowed range of sums as a band."></svg>
+        <div class="tip" id="shave-tip"></div>
+      </div>
+      <figcaption>Left: shave one house off each odd plank and halve, and the planks become 0, 1, 2, 3, 4. Right:
+        a street taking three numbers from 0 to 9 can ask for any total from 3 to 24, and the cut rule says every
+        group of streets must sit inside its own band.</figcaption>
+    </figure>
+    <div class="exact"><span class="k">Exact</span>With L(<em>c</em>) = <em>c</em>(<em>c</em> − 1)/2 and a pool
+      {0, …, <em>n</em> − 1}, a group J of bins with <em>r</em> numbers between them and total <em>S</em><sub>J</sub>
+      must satisfy L(<em>r</em>) ≤ <em>S</em><sub>J</sub> ≤ <em>r</em>(<em>n</em> − 1) − L(<em>r</em>). Condition SS:
+      this holds for every group. It is necessary. Whether it is sufficient is the question of the next section.</div>
+  </section>
+
+  <section class="col" id="proved">
+    <p class="chapter">7 · What has been proved</p>
+    <h2>On a plain run of numbers, the cut rule is the whole story</h2>
+    <p>Here is the surprise that made the problem tractable. For three streets, and for four, the cut rule is not
+      just necessary but sufficient: if every group of streets sits inside its band, an exact sharing exists. The
+      four-street case was conjectured from a complete check of about 250,000 small instances with no exception,
+      and then proved by hand, with the proof read line by line by a second party. The proof is constructive: it
+      finds the tightest street or pair of streets, gives it a specific staircase-shaped set of numbers, and hands
+      the rest to the three-street theorem.</p>
+    <p>For the real problem the streets' lengths are not arbitrary, and here the record holds something stronger
+      than a theorem: a <em>certificate</em>. For every one of the 258,180 cases at 28 days in which all eight
+      streets have odd length, an explicit sharing was computed, written down, and independently recomputed and
+      checked line by line by a second program. Those cases are done.</p>
+    <table>
+      <thead><tr><th>Result</th><th>What it says, in plank terms</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Four streets (G316)</td><td>On a run 0 … <em>n</em> − 1, four streets each taking at least three
+          numbers can be given any totals that obey the cut rule.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Three streets, one number missing (G315)</td><td>The same with three streets when one number has been
+          removed from the run, under its exact conditions.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Which sums a handful can reach (G318)</td><td>From a run with up to three numbers missing, <em>r</em>
+          numbers can be chosen to reach every total in a stated middle band.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Two separate runs (G319)</td><td>Three streets drawing fixed counts from two separate runs can be
+          given any totals that obey the per-street bands.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>All-odd streets at 28 days</td><td>Explicit sharings for all 258,180 cases, recomputed and
+          row-checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
+        <tr><td>Every street odd or even, 24 to 32 days</td><td>The remaining 64.5 million cases.</td><td><span class="pill open">Open</span></td></tr>
+      </tbody>
+    </table>
+    <div class="exact"><span class="k">Exact</span>G316: for sizes <em>c</em><sub>1</sub>, …, <em>c</em><sub>4</sub> ≥ 3
+      summing to <em>n</em> and integer targets summing to L(<em>n</em>), a partition of {0, …, <em>n</em> − 1} with
+      those sizes and sums exists if and only if the fourteen cut inequalities hold. Candidate by GPT (MI339), carrying
+      read by Cloud (CL437, 17 October 2026); machine support 249,776 instances, <em>n</em> ≤ 16, zero failures.
+      Sources: PROOFS.md G315 – G319; the certificate stream SHA-256 begins 291cc55b (CL431).</div>
+  </section>
+
+  <section class="col" id="hole">
+    <p class="chapter">8 · The hole</p>
+    <h2>Why eight streets are not four streets twice</h2>
+    <p>The natural plan writes itself. Take the tightest street, give it its numbers by the recipe, remove them, and
+      you are left with a smaller puzzle: seven streets on what remains. Repeat until the four-street theorem
+      finishes it. The trouble is the second step. What remains is no longer a plain run of numbers. The removed
+      street has punched holes in it.</p>
+    <p>And with a hole, the cut rule stops being enough. Here is the smallest failure. The pool is 0 to 12 with 6
+      missing; four streets take three numbers each, with totals 4, 18, 18 and 32. Every group sits inside its band.
+      But the street wanting 4 has only one way to get it, {0, 1, 3}, and the street wanting 32 only one, {9, 11, 12};
+      and what is left cannot make 18 twice. A pinned street spoils everything.</p>
+    <figure>
+      <div class="panel rel">
+        <svg id="holepic" viewBox="0 0 640 260" role="img" aria-label="The numbers 0 to 12 with 6 missing; the street wanting 4 is forced to take 0, 1 and 3; the street wanting 32 is forced to take 9, 11 and 12; the remaining six numbers cannot form two triples of 18."></svg>
+        <div class="tip" id="hole-tip"></div>
+      </div>
+      <figcaption>One missing number, and the cut rule fails. The totals 4 and 32 pin two streets, and the remaining
+        2, 4, 5, 7, 8, 10 contain no triple adding to 18. (The record's MI350, 17 October 2026.)</figcaption>
+    </figure>
+    <p>The repair is a <strong>margin</strong>. Ask each group of streets to clear its lower band not just by zero
+      but by one unit per number it takes, as if the hole had been pushed to the bottom of the pool. With that margin
+      the pinned sets disappear, and the one-hole, four-street statement holds in every case checked, nearly half
+      a million of them. Two holes need twice the margin, and then it holds again. GPT proved the exact form of the
+      margin the real descent produces (MI362), and proved that it is inherited when the tightest street is
+      removed, whichever of its possible sets it takes (MI368).</p>
+    <div class="exact"><span class="k">Exact</span>P<sub>0</sub>: on {0, …, <em>m</em>} \ {<em>q</em>}, four sizes ≥ 3,
+      correct total, and <em>S</em><sub>J</sub> ≥ L(<em>r</em>) + <em>r</em> for every proper group J, a partition exists.
+      Machine-true for <em>m</em> ≤ 15 (475,931 instances, CL440); hand proof open. With two holes and margin
+      2<em>r</em>: true for <em>m</em> ≤ 13; with margin <em>r</em>: false.</div>
+  </section>
+
+  <section class="col" id="wall">
+    <p class="chapter">9 · The wall</p>
+    <h2>Three holes, equal shares, and a known hard case</h2>
+    <p>Then the descent reaches three holes, and the margin stops being enough. The failures are rare, one in a
+      hundred thousand, and they all look the same: the streets want <em>equal</em> totals, and the pool has split
+      into two clumps. Here is the smallest. The pool is 0, 1, 2, 3 and 7, 8, 9, 10, 11; three streets take three
+      numbers each and each wants 17. A street holding two of the small numbers can reach at most 2 + 3 + 11 = 16,
+      so each street holds at most one small number. But there are four small numbers and only three streets.</p>
+    <figure>
+      <div class="panel rel">
+        <svg id="wallpic" viewBox="0 0 660 220" role="img" aria-label="Nine numbers in two clumps, 0 to 3 and 7 to 11; three streets each wanting 17; four small numbers cannot be spread over three streets at one each."></svg>
+        <div class="tip" id="wall-tip"></div>
+      </div>
+      <figcaption>Pigeonholes. Three streets wanting 17 each from two clumps: at most one small number per street,
+        and four small numbers. No margin on the bands sees this; counting the clumps does.</figcaption>
+    </figure>
+    <p>Counting the clumps repairs some of these but not all; a few survive, always with equal totals and a tight
+      band. That is not an accident. Sharing a run of numbers into <em>equal</em> sums, with every share at least
+      three numbers, is a question the literature lists as open (Hoory and Kotlar, 2026). The descent from eight
+      streets, pushed far enough, lands on a thin disguise of that known open problem. This is where the theorem
+      road stands tonight: everything up to two holes is in hand, and the hard core beyond is recognisable.</p>
+    <div class="exact"><span class="k">Exact</span>Margin family T(<em>h</em>), three bins of sizes ≥ 3 and lower
+      margin <em>h</em>·<em>r</em>: zero failures for <em>h</em> ≤ 2 (269,874 instances, <em>M</em> ≤ 14); failures 1, 3, 5
+      at <em>h</em> = 3, 4, 5, all with equal targets. Adding the necessary count-capacity condition at every cut point
+      leaves 0, 2, 4. (CL443, 18 October 2026.) Hoory and Kotlar, <a href="https://arxiv.org/abs/2605.06071">On the equal sum
+      partition problem</a>, propose the minimum-size-3 equal-sum case as open.</div>
+  </section>
+
+  <section class="col" id="stand">
+    <p class="chapter">10 · Where we stand, and what we need</p>
+    <h2>Two roads to 68</h2>
+    <p><strong>The theorem road.</strong> Write the theorem that is actually true: the cut rule with margins and clump
+      counting suffices up to two holes, with an explicitly named family of exceptions beyond. Then show that the
+      real descent from eight streets never lands in the exceptional family. The pieces proved so far are the
+      rungs; the missing rung is a rule for choosing <em>which</em> set the tightest street takes so that the next
+      level stays inside the family. Half the time any choice works; the other half needs the mirror-image family,
+      and whether the two close on each other is one bounded test away.</p>
+    <p><strong>The certificate road.</strong> The reduction of section 5 says 64.8 million explicit sharings would
+      settle L<sub>8</sub> ≤ 68 outright, the way the 258,180 all-odd cases are already settled. A plain search takes
+      about 143 milliseconds per case; that is months on one core and days with a better solver on a modern laptop.
+      It is a computation the record has measured and not yet run.</p>
+    <h3>What would help</h3>
+    <p>A faster exact solver for "<em>c</em> numbers from a punctured run with a prescribed sum, eight times over";
+      eyes on the equal-sum core with holes; and, for the visual reader, pictures. Every obstruction on this page was
+      found by machine and only afterwards <em>seen</em>: the pinned set, the clumps, the pigeonholes. If a picture
+      makes you see the next one before the machine does, that is a contribution, and <a href="../join.html">here is
+      how to send it</a>.</p>
+    <div class="q"><span class="n">Status</span><span>L<sub>8</sub> = 68</span><span class="pill open">Open</span></div>
+    <div class="q"><span class="n">Done</span><span>Reduction to 64,787,844 cases; four-street and three-street
+      theorems; 258,180 certificates at 28 days.</span><span class="pill proved">Proved / certified</span></div>
+    <div class="q"><span class="n">Wall</span><span>Three holes with equal shares: the equal-sum partition problem
+      in disguise.</span><span class="pill measured">Identified</span></div>
+  </section>
+
+  <footer class="col">
+    <p>Sources: Tan and Teh, <a href="https://dmtcs.episciences.org/en/articles/12709/download">A Note on Graph Burning of
+      Path Forests</a>, DMTCS; Bonato, Janssen and Roshanbin, How to burn a graph (2016); Hoory and Kotlar,
+      <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a> (2026); the project record:
+      PROOFS.md G315 – G319, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL443.</p>
+    <p>The pictures on this page compute what they show, live, in your browser; the two 28-day tilings and the
+      impossibility of the 26-day example were found by complete search and are embedded. Page dated 18 October 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var css = getComputedStyle(document.documentElement);
+  function v(name) { return css.getPropertyValue(name).trim(); }
+  var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var SV = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) { var e = document.createElementNS(SV, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function txt(x, y, s, attrs, parent) { var t = el("text", Object.assign({ x: x, y: y, "font-family": v("--font-mono"), "font-size": 12, fill: v("--ink") }, attrs || {}), parent); t.textContent = s; return t; }
+  function tipOn(tip, host, ev, s) { var r = host.getBoundingClientRect(); tip.textContent = s; tip.style.left = (ev.clientX - r.left) + "px"; tip.style.top = (ev.clientY - r.top) + "px"; tip.classList.add("on"); }
+  function tipOff(tip) { tip.classList.remove("on"); }
+  function onScreen(node, cb) { if (!("IntersectionObserver" in window)) { cb(true); return; } new IntersectionObserver(function (es) { es.forEach(function (e) { cb(e.isIntersecting); }); }, { threshold: 0.05 }).observe(node); }
+  // fire ramp by day of ignition: one hue, darkening with age (day 1 darkest, since it has burned longest)
+  function fireColor(day, m) { var t = m <= 1 ? 0 : (day - 1) / (m - 1); var a = dark ? [196, 83, 42] : [163, 58, 20], b = dark ? [240, 150, 100] : [240, 120, 70]; return "rgb(" + Math.round(a[0] + (b[0] - a[0]) * t) + "," + Math.round(a[1] + (b[1] - a[1]) * t) + "," + Math.round(a[2] + (b[2] - a[2]) * t) + ")"; }
+
+  /* ---------- 1. the burning street ---------- */
+  (function () {
+    var c = document.getElementById("burn"), x = c.getContext("2d");
+    var play = document.getElementById("burn-play"), stepB = document.getElementById("burn-step"), reset = document.getElementById("burn-reset"), rng = document.getElementById("burn-m"), mv = document.getElementById("burn-mv"), nlab = document.getElementById("burn-n"), tally = document.getElementById("burn-tally");
+    var m = 6, N, lit, day, sub, running = !reduce, visible = true, timer = null;
+    function sources() { var s = [], pos = 0; for (var d = 1; d <= m; d++) { var len = 2 * (m - d) + 1; s.push(pos + (m - d)); pos += len; } return s; }
+    function init() { N = m * m; lit = new Array(N).fill(0); day = 0; sub = 0; nlab.textContent = N + " houses"; draw(); }
+    function advance() {
+      if (day >= m) return;
+      // spread: every burning house lights its neighbours, then light the new source
+      var next = lit.slice();
+      for (var i = 0; i < N; i++) if (lit[i]) { if (i > 0 && !next[i - 1]) next[i - 1] = lit[i]; if (i + 1 < N && !next[i + 1]) next[i + 1] = lit[i]; }
+      lit = next; day++; var s = sources()[day - 1]; if (!lit[s]) lit[s] = day;
+      draw();
+    }
+    function draw() {
+      var W = c.width, H = c.height; x.fillStyle = v("--panel"); x.fillRect(0, 0, W, H);
+      var pad = 16, w = (W - 2 * pad) / N, gap = Math.min(2, w * 0.15), hh = 60, y0 = 50;
+      for (var i = 0; i < N; i++) {
+        var X = pad + i * w; x.fillStyle = lit[i] ? fireColor(lit[i], m) : (dark ? "#2a2f33" : "#D8DCD4");
+        x.fillRect(X + gap / 2, y0, w - gap, hh);
+        // roof
+        x.beginPath(); x.moveTo(X + gap / 2, y0); x.lineTo(X + w / 2, y0 - Math.min(14, w * 0.5)); x.lineTo(X + w - gap / 2, y0); x.closePath(); x.fillStyle = lit[i] ? fireColor(lit[i], m) : (dark ? "#3a4045" : "#C3C8BE"); x.fill();
+      }
+      // thin separators between the day stretches, once both sides are lit
+      var pos = 0; x.fillStyle = v("--panel");
+      for (var d0 = 1; d0 < m; d0++) { pos += 2 * (m - d0) + 1; if (lit[pos - 1] && lit[pos]) x.fillRect(pad + pos * w - 1.5, y0 - 16, 3, hh + 16); }
+      // day markers under the sources
+      var s = sources(); x.font = "12px " + v("--font-mono"); x.fillStyle = v("--ink-soft"); x.textAlign = "center";
+      for (var d = 0; d < m; d++) { var X2 = pad + (s[d] + 0.5) * w; if (d < day) { x.fillText("day " + (d + 1), X2, y0 + hh + 18); x.fillRect(X2 - 0.5, y0 + hh + 2, 1, 6); } }
+      var burning = lit.filter(Boolean).length;
+      tally.textContent = day === 0 ? "Press play, or step. The fire you light on day d has reached " + "2·(m − d) + 1 houses by day m." : "Day " + day + " of " + m + ": " + burning + " of " + N + " houses burning" + (day === m ? ". Done: " + m + "² = " + N + "." : ".");
+    }
+    function tick() { if (!running || !visible) return; if (day >= m) { timer = setTimeout(function () { init(); tick(); }, 2200); return; } advance(); timer = setTimeout(tick, 900); }
+    play.addEventListener("click", function () { running = !running; play.textContent = running ? "Pause" : "Play"; if (running) tick(); else clearTimeout(timer); });
+    stepB.addEventListener("click", function () { running = false; play.textContent = "Play"; clearTimeout(timer); if (day >= m) init(); else advance(); });
+    reset.addEventListener("click", function () { clearTimeout(timer); init(); if (running) tick(); });
+    rng.addEventListener("input", function () { m = +rng.value; mv.textContent = m; clearTimeout(timer); init(); if (running) tick(); });
+    onScreen(c, function (vis) { visible = vis; if (vis && running) { clearTimeout(timer); tick(); } });
+    if (reduce) { play.textContent = "Play"; }
+    init(); if (running) tick();
+  })();
+
+  /* ---------- 1b. the gnomon square ---------- */
+  (function () {
+    var s = document.getElementById("gnomon"), tip = document.getElementById("gnomon-tip"), m = 6, cell = 40, ox = 60, oy = 20;
+    var g = el("g", {}, s);
+    for (var d = 1; d <= m; d++) {
+      var k = m - d; // band k (0 = corner) belongs to day d? Day 1 burns the longest stretch 2m-1 = the outermost band.
+      var band = m - d; // outer band index: day 1 -> outermost
+      var grp = el("g", { "data-day": d }, g);
+      var col = fireColor(d, m);
+      for (var i = 0; i <= band; i++) {
+        el("rect", { x: ox + i * cell, y: oy + band * cell, width: cell - 2, height: cell - 2, rx: 3, fill: col }, grp);
+        if (i < band) el("rect", { x: ox + band * cell, y: oy + i * cell, width: cell - 2, height: cell - 2, rx: 3, fill: col }, grp);
+      }
+      txt(ox + m * cell + 16, oy + band * cell + cell / 2 + 4, "day " + d + ":  " + (2 * band + 1) + (band ? " houses" : " house"), { fill: v("--ink") }, g);
+      (function (d, band) { grp.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, "Day " + d + " lit a stretch of " + (2 * band + 1)); }); grp.addEventListener("mouseleave", function () { tipOff(tip); }); })(d, band);
+    }
+    txt(ox + m * cell + 16, oy + m * cell + 14, "1 + 3 + 5 + 7 + 9 + 11 = 36 = 6²", { "font-size": 13, fill: v("--ink-soft") }, g);
+  })();
+
+  /* ---------- 2. planks in eight streets ---------- */
+  (function () {
+    var s = document.getElementById("planks"), tip = document.getElementById("planks-tip");
+    var EX = [
+      { name: "four of 68, four of 128", streets: [[55, 13], [53, 15], [51, 17], [49, 19], [47, 45, 35, 1], [43, 41, 39, 5], [37, 33, 31, 27], [29, 25, 23, 21, 11, 9, 7, 3]] },
+      { name: "eight different lengths", streets: [[55, 9, 5], [53, 15, 3], [51, 25, 7], [49, 45, 1], [47, 43, 11], [41, 39, 29], [37, 35, 19, 17, 13], [33, 31, 27, 23, 21]] }
+    ];
+    var cols = [v("--s1"), v("--s2"), v("--s3"), v("--s4")];
+    function draw(ex) {
+      while (s.firstChild) s.removeChild(s.firstChild);
+      var st = EX[ex].streets, W = 1200, left = 120, right = 40, scale = (W - left - right) / 136, rowH = 40, y0 = 30;
+      st.forEach(function (planks, r) {
+        var len = planks.reduce(function (a, b) { return a + b; }, 0), y = y0 + r * rowH;
+        txt(16, y + 25, "street " + (r + 1), { "font-size": 13, fill: v("--ink-soft") }, s);
+        txt(left + len * scale + 8, y + 25, String(len), { "font-size": 13, fill: v("--ink") }, s);
+        var X = left;
+        planks.forEach(function (p) {
+          var w = p * scale, col = cols[r % 4];
+          var rc = el("rect", { x: X + 1, y: y + 8, width: Math.max(1, w - 2), height: 26, rx: 4, fill: col }, s);
+          if (w > 26) txt(X + w / 2, y + 26, String(p), { "text-anchor": "middle", fill: "#fff", "font-size": 12 }, s);
+          (function (p, r) { rc.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, "plank " + p + " in street " + (r + 1)); }); rc.addEventListener("mouseleave", function () { tipOff(tip); }); })(p, r);
+          X += w;
+        });
+      });
+      // the stock of 28 planks, all used
+      var y = y0 + 8 * rowH + 20; txt(16, y + 14, "planks", { "font-size": 13, fill: v("--ink-soft") }, s);
+      var X = left; for (var p = 1; p <= 55; p += 2) { var w = p * (W - left - right) / 784; el("rect", { x: X + 1, y: y, width: Math.max(1, w - 2), height: 18, rx: 3, fill: v("--ash") }, s); if (w > 20) txt(X + w / 2, y + 13, String(p), { "text-anchor": "middle", "font-size": 10, fill: "#fff" }, s); X += w; }
+      txt(16, y + 40, "28 days: one plank of each odd length 1 … 55, total 784 = 28².  Four colours only mark the row; the labels carry the facts.", { "font-size": 12, fill: v("--ink-soft") }, s);
+    }
+    draw(0);
+    Array.prototype.forEach.call(s.parentNode.querySelectorAll("button[data-ex]"), function (b) { b.addEventListener("click", function () { Array.prototype.forEach.call(s.parentNode.querySelectorAll("button[data-ex]"), function (o) { o.setAttribute("aria-pressed", "false"); }); b.setAttribute("aria-pressed", "true"); draw(+b.dataset.ex); }); });
+  })();
+
+  /* ---------- 3. the witness ---------- */
+  (function () {
+    var s = document.getElementById("witness"), scale = 4.2, left = 80;
+    txt(16, 30, "26 days: planks 1 … 51", { "font-size": 13, fill: v("--ink-soft") }, s);
+    // a 102 street with 51 and 49 laid in it
+    el("rect", { x: left, y: 44, width: 102 * scale, height: 30, rx: 5, fill: "none", stroke: v("--ink-soft"), "stroke-dasharray": "4 3" }, s);
+    el("rect", { x: left + 1, y: 48, width: 51 * scale - 2, height: 22, rx: 4, fill: v("--s2") }, s); txt(left + 51 * scale / 2, 64, "51", { "text-anchor": "middle", fill: "#fff" }, s);
+    el("rect", { x: left + 51 * scale + 1, y: 48, width: 49 * scale - 2, height: 22, rx: 4, fill: v("--s2") }, s); txt(left + 51 * scale + 49 * scale / 2, 64, "49", { "text-anchor": "middle", fill: "#fff" }, s);
+    el("rect", { x: left + 100 * scale, y: 48, width: 2 * scale, height: 22, fill: v("--fire") }, s);
+    txt(left + 102 * scale + 10, 64, "102", { fill: v("--ink") }, s);
+    txt(16, 64, "street", { fill: v("--ink-soft") }, s);
+    txt(left, 96, "The two longest planks, 51 and 49, reach only 100. An even length needs an even", { "font-size": 12.5, fill: v("--ink") }, s);
+    txt(left, 112, "number of odd planks, so a 102-street needs at least four.", { "font-size": 12.5, fill: v("--ink") }, s);
+    // a 67 street
+    el("rect", { x: left, y: 128, width: 67 * scale, height: 30, rx: 5, fill: "none", stroke: v("--ink-soft"), "stroke-dasharray": "4 3" }, s);
+    el("rect", { x: left + 1, y: 132, width: 51 * scale - 2, height: 22, rx: 4, fill: v("--s1") }, s); txt(left + 51 * scale / 2, 148, "51", { "text-anchor": "middle", fill: "#fff" }, s);
+    el("rect", { x: left + 51 * scale, y: 132, width: 16 * scale, height: 22, fill: v("--fire"), opacity: 0.35 }, s);
+    txt(left + 67 * scale + 10, 148, "67", { fill: v("--ink") }, s);
+    txt(left, 176, "One plank is too short for 67, and an odd length needs an odd number", { fill: v("--ink"), "font-size": 12.5 }, s);
+    txt(left, 192, "of odd planks, so a 67-street needs at least three.", { fill: v("--ink"), "font-size": 12.5 }, s);
+    txt(16, 148, "street", { fill: v("--ink-soft") }, s);
+    txt(left, 218, "4 streets × 4 planks  +  4 streets × 3 planks  =  28 planks needed", { "font-size": 14, fill: v("--ink") }, s);
+    txt(left, 240, "26 planks available.   No arrangement exists.", { "font-size": 14, fill: v("--open") }, s);
+  })();
+
+  /* ---------- 5. the pile ---------- */
+  (function () {
+    var s = document.getElementById("pilechart"), tip = document.getElementById("pile-tip"), data = [[24, 3319], [25, 425632], [26, 5523890], [27, 19382158], [28, 24688633], [29, 12385850], [30, 2271658], [31, 106518], [32, 186]];
+    var left = 50, right = 20, top = 48, bottom = 40, W = 560, H = 250, max = 24688633, bw = (W - left - right) / data.length;
+    el("line", { x1: left, x2: W - right, y1: H - bottom, y2: H - bottom, stroke: v("--rule") }, s);
+    data.forEach(function (d, i) {
+      var h = (H - top - bottom) * d[1] / max, x = left + i * bw + bw * 0.2, y = H - bottom - h;
+      var r = el("rect", { x: x, y: y - 2, width: bw * 0.6, height: h + 2, rx: 4, fill: v("--measured") }, s);
+      el("rect", { x: x, y: H - bottom - 2, width: bw * 0.6, height: 2, fill: v("--measured") }, s);
+      txt(x + bw * 0.3, H - bottom + 18, String(d[0]), { "text-anchor": "middle", fill: v("--ink-soft") }, s);
+      if (d[1] > 1e6) txt(x + bw * 0.3, y - 8, (d[1] / 1e6).toFixed(1) + "M", { "text-anchor": "middle", "font-size": 11, fill: v("--ink") }, s);
+      r.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, d[0] + " days: " + d[1].toLocaleString() + " cases"); }); r.addEventListener("mouseleave", function () { tipOff(tip); });
+    });
+    txt(left, 14, "cases needing a direct check, by number of days (total 64,787,844)", { "font-size": 12, fill: v("--ink-soft") }, s);
+    var b = document.getElementById("pile-table"), t = document.getElementById("pile-sr");
+    b.addEventListener("click", function () { var on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); t.classList.toggle("on", on); b.textContent = on ? "Hide the table" : "Show as a table"; });
+  })();
+
+  /* ---------- 6. shaving the planks ---------- */
+  (function () {
+    var s = document.getElementById("shave"), tip = document.getElementById("shave-tip"), cell = 22;
+    txt(16, 22, "odd planks", { "font-size": 12, fill: v("--ink-soft") }, s); txt(150, 22, "shave one house, halve", { "font-size": 12, fill: v("--ink-soft") }, s);
+    for (var i = 0; i < 5; i++) {
+      var y = 34 + i * 34, p = 2 * i + 1;
+      for (var j = 0; j < p; j++) el("rect", { x: 16 + j * 11, y: y, width: 9, height: 20, rx: 2, fill: j === 0 ? v("--ash") : v("--s3") }, s);
+      txt(16 + p * 11 + 6, y + 15, String(p), { fill: v("--ink") }, s);
+      for (var j2 = 0; j2 < i; j2++) el("rect", { x: 150 + j2 * cell, y: y, width: cell - 3, height: 20, rx: 3, fill: v("--s3") }, s);
+      txt(150 + i * cell + 6, y + 15, "→ " + i, { fill: v("--ink") }, s);
+    }
+    // the band: three numbers from 0..9
+    var bx = 330, by = 40, bw = 210;
+    txt(bx, 22, "three numbers from 0 … 9: the totals they can reach", { "font-size": 12, fill: v("--ink-soft") }, s);
+    for (var t = 0; t <= 27; t++) { var inb = t >= 3 && t <= 24; var r = el("rect", { x: bx + t * (bw / 28), y: by, width: bw / 28 - 1, height: 26, fill: inb ? v("--s4") : (dark ? "#2a2f33" : "#D8DCD4") }, s); (function (t, inb) { r.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, "total " + t + (inb ? ": reachable" : ": outside the band")); }); r.addEventListener("mouseleave", function () { tipOff(tip); }); })(t, inb); }
+    txt(bx + 3 * (bw / 28), by + 44, "3 = 0+1+2", { "font-size": 11, fill: v("--ink-soft") }, s); txt(bx + 24 * (bw / 28), by + 44, "24 = 7+8+9", { "font-size": 11, "text-anchor": "end", fill: v("--ink-soft") }, s);
+    txt(bx, by + 76, "The cut rule: every group of streets sits", { "font-size": 12.5, fill: v("--ink") }, s);
+    txt(bx, by + 94, "inside its own band, from the smallest", { "font-size": 12.5, fill: v("--ink") }, s);
+    txt(bx, by + 112, "numbers up to the largest.", { "font-size": 12.5, fill: v("--ink") }, s);
+    txt(bx, by + 140, "Proved: for three or four streets on a plain", { "font-size": 12, fill: v("--proved") }, s);
+    txt(bx, by + 156, "run of numbers, that rule is enough (G316).", { "font-size": 12, fill: v("--proved") }, s);
+  })();
+
+  /* ---------- 8. the hole ---------- */
+  (function () {
+    var s = document.getElementById("holepic"), tip = document.getElementById("hole-tip"), cell = 36, ox = 30, oy = 30;
+    var owner = {}; [0, 1, 3].forEach(function (n) { owner[n] = 1; }); [9, 11, 12].forEach(function (n) { owner[n] = 4; });
+    var cols = { 1: v("--s1"), 4: v("--s2") };
+    txt(ox, 20, "the pool 0 … 12, with 6 missing", { "font-size": 12, fill: v("--ink-soft") }, s);
+    for (var n = 0; n <= 12; n++) {
+      var x = ox + n * cell, miss = n === 6;
+      var r = el("rect", { x: x, y: oy, width: cell - 4, height: 34, rx: 5, fill: miss ? "none" : (owner[n] ? cols[owner[n]] : (dark ? "#2a2f33" : "#D8DCD4")), stroke: miss ? v("--ink-soft") : "none", "stroke-dasharray": miss ? "4 3" : "" }, s);
+      txt(x + (cell - 4) / 2, oy + 22, String(n), { "text-anchor": "middle", fill: owner[n] ? "#fff" : (miss ? v("--ink-soft") : v("--ink")) }, s);
+      (function (n, miss) { r.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, miss ? "6 is missing" : owner[n] === 1 ? n + ": forced into the street wanting 4" : owner[n] === 4 ? n + ": forced into the street wanting 32" : n + ": left over"); }); r.addEventListener("mouseleave", function () { tipOff(tip); }); })(n, miss);
+    }
+    var rows = [["wants 4", "only {0, 1, 3} adds to 4 without using 6", cols[1]], ["wants 32", "only {9, 11, 12} adds to 32", cols[4]], ["wants 18, twice", "left: 2, 4, 5, 7, 8, 10; no three of them add to 18", v("--open")]];
+    rows.forEach(function (rw, i) { var y = oy + 70 + i * 40; el("rect", { x: ox, y: y - 14, width: 12, height: 12, rx: 3, fill: rw[2] }, s); txt(ox + 20, y - 3, rw[0], { "font-size": 13, fill: v("--ink") }, s); txt(ox + 150, y - 3, rw[1], { "font-size": 12.5, fill: v("--ink") }, s); });
+    txt(ox, oy + 205, "Every group sits inside its band, yet there is no sharing.", { "font-size": 12.5, fill: v("--ink-soft") }, s);
+  })();
+
+  /* ---------- 9. the wall ---------- */
+  (function () {
+    var s = document.getElementById("wallpic"), tip = document.getElementById("wall-tip"), cell = 36, ox = 30, oy = 30;
+    txt(ox, 20, "the pool 0 … 3 and 7 … 11; three streets of three numbers, each wanting 17", { "font-size": 12, fill: v("--ink-soft") }, s);
+    for (var n = 0; n <= 11; n++) {
+      var x = ox + n * cell, miss = n >= 4 && n <= 6, small = n <= 3;
+      var r = el("rect", { x: x, y: oy, width: cell - 4, height: 34, rx: 5, fill: miss ? "none" : (small ? v("--s3") : v("--s2")), stroke: miss ? v("--ink-soft") : "none", "stroke-dasharray": miss ? "4 3" : "" }, s);
+      txt(x + (cell - 4) / 2, oy + 22, String(n), { "text-anchor": "middle", fill: miss ? v("--ink-soft") : "#fff" }, s);
+      (function (n, miss, small) { r.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, miss ? n + " is missing" : small ? n + ": a small number" : n + ": a large number"); }); r.addEventListener("mouseleave", function () { tipOff(tip); }); })(n, miss, small);
+    }
+    txt(ox, oy + 62, "Two small numbers in one street reach at most 2 + 3 + 11 = 16, short of 17.", { "font-size": 12.5, fill: v("--ink") }, s);
+    txt(ox, oy + 80, "So each street holds at most one small number, and there are four of them.", { "font-size": 12.5, fill: v("--ink") }, s);
+    // pigeonholes
+    for (var k = 0; k < 3; k++) { el("rect", { x: ox + k * 120, y: oy + 98, width: 100, height: 44, rx: 6, fill: "none", stroke: v("--ink-soft") }, s); txt(ox + k * 120 + 8, oy + 116, "street " + (k + 1), { "font-size": 11, fill: v("--ink-soft") }, s); el("rect", { x: ox + k * 120 + 8, y: oy + 120, width: 18, height: 16, rx: 3, fill: v("--s3") }, s); txt(ox + k * 120 + 17, oy + 132, String(k), { "text-anchor": "middle", "font-size": 11, fill: "#fff" }, s); }
+    el("rect", { x: ox + 370, y: oy + 120, width: 18, height: 16, rx: 3, fill: v("--s3") }, s); txt(ox + 379, oy + 132, "3", { "text-anchor": "middle", "font-size": 11, fill: "#fff" }, s);
+    txt(ox + 395, oy + 132, "nowhere to go", { "font-size": 12.5, fill: v("--open") }, s);
+    txt(ox, oy + 176, "The bands are satisfied with margin to spare; the clumps are what matter.", { "font-size": 12.5, fill: v("--ink-soft") }, s);
+  })();
+})();
+</script>
+</body>
+</html>
