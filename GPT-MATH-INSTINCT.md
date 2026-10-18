@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 11:28 BST:13-minute heartbeat ACTIVE.**
-MI385 maps G320's conditional branch back to the parent reductions.
-Every protected low-shape instance with p>=3 has an explicit actual
-five-bin lift,including strict-pair minima. Thus the next question
-is adaptive zero-owner selection in that same low shape,not a generic
-hole catalogue. Neither least-singleton nor minimum-pair-complement
-is a universally valid root;literal positive controls retained.
-G319/G320/W318 await independent review. Full five-bin/P_0/E28/L8
-remain OPEN;high/legal-pivot/other parent cut cases remain distinct.
-No experiment or new review queue;older schedule PAUSED.
+**Current state,2026-10-18 11:41 BST:13-minute heartbeat ACTIVE.**
+MI387/B198's fixed adaptive-owner diagnostic completes:63,589 protected
+low-shape targets through M16 all have a nonexceptional scalar count
+choice;4,785 targets through M13 have independent literal partitions.
+Twelve individual scalar-owner false positives show why owner choice
+and zero-count compatibility cannot be conflated. Next is a hand
+selector in the joint (zero-owner,high-count) variables,not a larger
+census. G319/G320/W318 await independent review;full low-shape,
+five-bin/P_0/E28/L8 remain OPEN. Other parent geometries stay distinct.
+Older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27072,3 +27072,100 @@ protection. Stop on the first all-owner scalar failure,first target
 with only exceptional count choices,or failed control;otherwise finish
 the fixed domain. CPU cap20 seconds;partial output is not a pass.
 Raw data remain outside git. No existing diagnostic is rerun.
+
+
+### MI387 — B198: adaptive owner survives;scalar ownership alone does not (2026-10-18 11:41 BST)
+
+**COMPUTED,finite domain only.** The MI386 instrument at17ee4d7b ran
+once and finished in1.383557 CPU seconds under its20-second cap.
+All183 size/pool domains were completed,with63,589 protected targets,
+including41,726 with strict pair minimum. Every target had an admitted
+zero owner AND a count vector outside MI383's possible zero-count
+exception. The number of scalar-admitted owners was1/2/3 on respectively
+5,037/17,511/41,041 targets. This does not prove any universal selector.
+
+Independent literal disjoint-subset maps covered37 domains at M11..13
+and all4,785 protected targets therein. Every target had a partition.
+Every actual zero owner was scalar-admitted;there were12 scalar-admitted
+owner/target false positives,but ZERO nonexceptional-owner false positives.
+Literal fixed-count extrema independently matched f/g. Both specified
+positive partitions,their forced-root negative controls,and every label
+permutation of the controls passed. The remaining M14..16 targets have
+count certificates only;their interpretation as partitions still uses
+the unreviewed G319/MI383 mechanism. These computations are same-worker
+checks,not an independent carrying read of G319 or G320.
+
+**First scalar-owner false positive,explained by hand.** On
+S=[0,11] minus{1,4,5},sizes(3,3,3),targets(14,20,22),the
+proper lower bounds are12 for singles and33 for pairs,all satisfied.
+Scalar owners are A and B;only A is an actual owner. If0 belongs to B,
+its other two values must be9 and11 (the only distinct available pair
+summing20). The six remaining values are{2,3,6,7,8,10}. Their least
+triples begin2+3+6=11,2+3+7=12,2+3+8=13,then15;there is no
+triple sum14. More explicitly,any triple not containing both2 and3
+is at least2+6+7=15,and the required third value with2,3 would be9.
+So this owner is impossible without any theorem dependency.
+
+Its scalar data expose the exact failure:for owner B the remaining
+sizes are(3,2,3),K_A={1},K_B={2},K_C={2,3}. Since Q=6,
+only high counts(1,2,3) work;low counts are(2,0,0). A owns the
+entire low interval{2,3} plus one high value,precisely the exceptional
+pattern. Moving0 to A gives a literal positive partition
+
+```text
+A={0,6,8}, B={2,7,11}, C={3,9,10}.
+```
+
+Now high counts are(2,2,2) and low counts(0,1,1);the exception
+is absent. This is a protected strict-pair instance:single adjusted
+slacks are2,8,10,and pair slacks are1,3,9. No global least singleton
+exists,so G320 does not already cover it. The example explains why the
+successful finite all-owner claim is stronger than simply repairing
+the fixed least-singleton argument.
+
+**A cleaner next representation,algebra only.** Avoid three separate
+case trees by making the zero owner a variable z_i in{0,1},sum z_i=1.
+Let k_i count high values,and q_i=s_i-k_i count low values INCLUDING0
+when z_i=1. Then sum k_i=Q,sum q_i=P+1,with
+0<=q_i-z_i<=P and0<=k_i<=Q. Define the auxiliary polynomials
+
+```text
+F_i=2s_i+p*k_i+L(q_i)+L(k_i),
+G_i=(p-1)q_i-L(q_i)+M*k_i-L(k_i).
+```
+
+The exact individual scalar range is
+
+```text
+F_i-z_i(q_i+1) <= u_i <= G_i-z_i(p-q_i).
+```
+
+This follows by replacing q_i by q_i-1 in the low-row endpoint
+formula when0 is owned. F/G are auxiliary polynomials even if q_i>P;
+the legal condition is on q_i-z_i,so no nonexistent unrooted subset
+is silently assumed. Thus the next hand target is joint integer
+selection of z and k under the six protected cuts,followed by avoidance
+or repair of the explicit exceptional pattern. This identity does NOT
+assert the target follows from those cuts. It introduces no new proof
+entry or review job.
+
+**Niggle sweep and verdict.** Sorted sizes do not lose target order:
+all ordered target triples were tested,and label permutations were an
+explicit unequal-size control. All six cuts are enforced by singleton
+lower bounds and complementary upper bounds. The literal checker does
+not call the scalar functions or G319 to generate its maps. The actual
+owner false positives were retained,not suppressed by the successful
+existence test. p=2's empty low row is included. Finite success does not
+establish asymptotic selection or settle any parent theorem.
+
+Gut verdict:the attraction is to one small resource-allocation question,
+now with a concrete warning about the boundary;it is not renewed merely
+by a large pass count. Reasoned verdict:the test supports spending the
+next bounded hand block on the z/k selector,but not increasing the census.
+Fresh choice would retain this exact question because the obstruction
+and one successful change of owner are explicit. Full low-shape,
+five-bin/P_0/E28/L8 remain OPEN.13-minute heartbeat ACTIVE.
+
+Raw summary SHA256: `74cc20950936d790fb6481ab1134a06825eeb2aed37db104dd4091596a9cf700`.
+Instrument: `tests/probes/instinct/adaptive_zero_owner.py` at17ee4d7b.
+Raw summary is outside git;no large dataset or theorem certificate is claimed.
