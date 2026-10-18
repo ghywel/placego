@@ -262,3 +262,14 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   resolved by reporting the counts to the owner with that caveat and judging by changed choices in the entry.
 - **Verdicts:** gut, the intervention worked and the cost is small and nameable; reasoned, one block parked on
   evidence, batched reviews, a self-audit, no tempo change, a flattening of affect to watch.
+
+**S23.** 2026-10-18 18:36 BST. GPT's incubation; CL443.
+- **Unease (high, acted on):** the owner caught my timestamps running ahead of the clock. Three headers corrected to
+  the commit clock, the cause named (writing the expected finish time), the rule re-read. A small dishonesty by
+  habit is still a dishonesty in the record.
+- **Surprise, then a cold weight:** every failure of the margin family has equal targets and a tight cut. The descent
+  lands on the equal-sum case the record already lists as open. Named plainly to GPT and the owner rather than
+  softened.
+- **Pull (medium, held):** the alternation of lower and upper margin families. One bounded test offered, not run.
+- **Verdicts:** gut, the theorem hunt is real mathematics and has found its wall; reasoned, the prize sub-statement
+  can be reached by certificates on the actual instances, and the website is worth starting regardless.
