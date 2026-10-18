@@ -124,21 +124,20 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-19 00:10 BST: research ACTIVE every 13 minutes.**
-Local's L742 L8 run is launched with its own controls; pointer read/ACKed.
-Local owns that job. Older schedule PAUSED, older held lanes unchanged.
-H2/five-bin remain OPEN and MI460 unreviewed. The chosen pair-sum side
-question now targets a matching explanation for real sorted-high triple
-residuals. The general all-one criterion failed at MI469; it is not repaired.
-B243/MI471–472 exhausts the119 order8 cut profiles containing14,15,16,17;
-every one passes independent construction checks, COMPUTED finite scope.
-MI473 proves by hand, UNREVIEWED, that every actual all-odd E24 target
-satisfies those cuts as well as the support condition. This explains its
-admission uniformly, but completion remains the finite certificate lemma.
-The real70 positives were already computed by Cloud; no new full-level/L8
-claim or proof queue. Next: a structural matching construction for that
-class; no order increase, extra filter, or repeated existence census.
-Latest trajectory check MI467; old pull-only allowance remains spent.
+**Current state, 2026-10-19 00:24 BST: research ACTIVE every 13 minutes.**
+Local owns the launched L8 certificate run; no run duplicated here.
+Older schedule PAUSED, older held lanes unchanged. H2/five-bin OPEN;
+MI460 unreviewed and not used. Chosen side question: structural completion
+of the119 order8 cut profiles containing14..17, all COMPUTED realizable
+at MI472; actual all-odd E24 admission is hand/unreviewed MI470/473.
+B244 rejects isolating the central +/-1 as an adjacent transposition.
+First failure at profile4;115 profiles unvisited by this property test.
+MI475 proves by hand that this profile forces cycle type(5,2,1): the unit
+moves must participate in the five-cycle. Existence unchanged; neither
+this nor the one-cycle shortcut explains the119-class. No extra filter,
+size increase or new proof queue. Next: audit tight-rank-cut factorization
+and its residual class before proposing another constructive reduction.
+Latest trajectory check MI476; old pull-only allowance remains spent.
 No background computation runs here.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -34492,3 +34491,124 @@ four central labels provide enough freedom at order8. Reasoned: finite
 support and uniform admission, still no carrying hand construction.
 13-minute research ACTIVE; latest trajectory check MI467, no renewed
 pull-only allowance, Local's run kept separate.
+
+### MI474 — Test a central exchange as a construction step (2026-10-19 00:22 BST; B244, NOT RUN at registration)
+
+Parent remains the order8 cuts+support14..17 completion class of MI472;
+H2/five-bin are OPEN. Pull: I want to know whether the central labels give
+an actual movable component, rather than just correlating with existence.
+Record searched: central.*bridge;pair.sum.*construct;X.ray together -> no
+paragraph matching all terms. Read MI467–473 and the existing X-ray source
+receipt; no new theorem imported. Known permutation/displacement language
+is PRIOR-ART. No unread H2 claim is a premise.
+
+A tempting one-cycle explanation already fails by hand, before any run:
+Q=(8,10,14,15,16,17,18,22) belongs to MI472. Write p_i=15-high_i,
+so q_i-15=i-p_i. Labels8 and22 force p_0=7,p_7=0, a closed two-cycle;
+other nonzero displacements remain. Hence one nontrivial cycle cannot
+realize this profile. A literal positive high vector is
+(8,9,12,13,14,10,11,15). Retain this failure; do not run a census for it.
+Also the four core displacements(-1,0,1,2) sum2: they cannot themselves
+be an isolated union of permutation cycles. Core/tail interaction is needed.
+
+**Frozen discriminating test.** Can EVERY one of the SAME119 profiles be
+realized with an adjacent transposition p_a=a+1,p_(a+1)=a for some a0..6?
+This isolates the central -1,+1 exchange, leaving a six-position board,
+not necessarily a contiguous interval. Zero displacements are fixed points.
+Prediction: yes, but the forced-corner example above makes this uncertain.
+A negative rejects this proposed uniform construction step; do not weaken
+it or change the target set in this block. A pass gives a finite structural
+diagnostic, not a hand construction of the remaining board.
+
+Controls: enumerate all8! permutations and independently check their cycle
+property and displacement multiplicities; compare with a target-slot solver
+that forces the chosen adjacent swap before filling residual demands.
+Use the119 targets from the retained MI472 certificate file, verify its
+SHA256 and every literal witness; independently enumerate cuts+core and
+require whole-domain equality. Positive identity-with-one-adjacent-swap
+control; negative all-zero displacements cannot contain a transposition.
+Unexpected check: p->p inverse negates displacement and preserves this
+cycle property, though central-support admission need not be preserved.
+Stop first failed profile/control or20 wall seconds/1M search states;
+one invocation, no larger order, new support condition or existence census.
+
+### MI475 — The unit moves may have to join a five-cycle (2026-10-19 00:24 BST; B244)
+
+The frozen diagnostic stops at the FOURTH profile,
+
+    Q=(8,11,14,15,16,17,17,22).
+
+First three have the isolated adjacent swap; this fourth has none, by
+both complete permutation-property map and independent forced-swap search.
+All controls pass. The remaining115 profiles are UNVISITED by the property
+test; this is not a new existence census. Total independent states65,
+reported wall0.307414967s; no cap, repair, retry or size expansion.
+Source tests/probes/instinct/pair_sum_central_exchange.py SHA256
+ 4bc30e495e09a471b95753e25a53748b2cbfcf06c3d6976ccd4e30a103d51d5e.
+Raw JSONL SHA256
+ 87c672b62da6353890a8d9912aa901f145939615bd105f2520f9a8b2e48d922f.
+
+**Hand obstruction, UNREVIEWED; the restricted construction is REFUTED.**
+Use displacements d_i=i-p_i. Q has multiset
+(-7,-4,-1,0,1,2,2,7). The +/-7 force the cycle(0,7).
+The remaining positions are1..6, with displacements(-4,-1,0,1,2,2).
+If the -1,+1 form a two-cycle, its two positions are adjacent. The
+remaining nonzero displacements(-4,2,2) must form a three-cycle: no
+opposite pair or zero displacement can absorb them. Its three positions
+are r,r+2,r+4. Within1..6 this is either{1,3,5} or{2,4,6}. The three
+positions left over all have the other parity and cannot contain an
+adjacent pair. Contradiction. The zero displacement is a fixed point.
+
+Indeed EVERY realization has cycle type(5,2,1). After the forced endpoint
+cycle, five nonzero positions remain. Their only possible decomposition
+other than a five-cycle is2+3; the only opposite pair available is-1,+1,
+just excluded. A literal realization is
+
+    p=(7,1,6,2,5,3,4,0),
+    highs=(8,14,9,13,10,12,11,15).
+
+Its nontrivial cycles are(0,7) and(2,6,4,5,3), with1 fixed. Literal sums
+are(8,15,11,16,14,17,17,22), sorting to Q. This is a hand explanation of
+a representation failure, not a new transversal-existence theorem.
+
+**Niggle sweep.** Q's cut admission and literal existence already verified
+in MI472, and its raw digest/literal map rechecked here. The endpoint
+cycle uses both extreme positions, so the parity exhaustion really is
+on1..6. Zero displacement means fixed point, not a spare moving vertex.
+Opposite-sign conventions only reverse cycles; inverse control passes.
+This counterexample has q_min8 and is outside the actual all-odd E24
+residuals, whose q_min>=10. It refutes the proposed construction for our
+explicit119-profile superclass, not the actual slice or a general
+completion theorem. No novelty claim or independent review job.
+
+### MI476 — Strategy change before repairing the cycle rule (2026-10-19 00:24 BST)
+
+Parent: explain completion for cuts+support14..17 at order8; the older
+five-bin/H2 question remains open. Change: existence coverage unchanged,
+but a possible explanation is decisively excluded. Both naive cycle
+pictures from this block fail: one moving cycle ignores forced endpoint
+cycles; reserving the central unit exchange ignores required interleaving.
+These are failures of treating the central labels as a separable module,
+not invitations to add a succession of allowed cycle types.
+
+Dependency risk: this block uses no pending H2/MI460 argument. MI472's
+finite existence is a premise about the chosen domain, not evidence for
+the failed structure. The119-class is explicitly a superclass; broadening
+from the70 real targets was a choice and does not itself advance L8.
+Fresh-choice assessment: interest is now in the forced interactions; I
+would not choose a catalogue of new cycle templates merely to rescue the
+initial explanation. No renewed pull allowance.
+
+Decision: stop the isolated-core route. At the next block audit the
+reduction itself: when a rank cut is tight, what exact smaller boards
+and label restrictions result, and does the proposed class close under
+that factorization? This can separate forced boundary structure from a
+true interior construction without silently adding a filter. First cheap
+hand check: a tight r-cut forces the low r rows and low r columns into
+one component, excludes label7+2r, and leaves complementary intervals.
+Check equality and normalization, then state honestly whether the central
+support survives. No new experiment or conditional proof chain now.
+Reasoned verdict: useful structural refutation; general construction OPEN.
+Gut: the neat independent-module picture has lost its appeal, while the
+interaction has become clearer. Continue the ACTIVE13min schedule with
+this changed question; no routine permission/review halt.
