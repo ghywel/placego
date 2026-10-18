@@ -32529,3 +32529,19 @@ suggests an actual selection/realization argument on the parent domain;
 its seven-fixture success alone does not justify a new sufficiency claim.
 If it merely renames compatibility without a new inference,return to the
 trajectory check instead of renewing an extra block on that basis.
+
+
+**MI439 source receipt,2026-10-18 19:05 BST.** B230 instrument is
+`tests/probes/instinct/joint_interval_counts.py`. Not executed. Two matrix
+engines: recursive bin allocations and Cartesian interval allocations;
+whole transportation and admitted sets compared. Bounds checked both
+by formulas and literal interval endpoint sums. Independent subset and
+owner recursion decide the fourteen fixed base/reflection targets.
+Registered caps apply jointly to recursive calls and checked states;
+a 20-second external watchdog also applies. Syntax checked in memory,
+not a mathematical control pass. Source and this receipt are published
+before the single invocation. Record search repeated:
+`shared.interval|conditional.group|count.capacit` AND `MI439|21|matrix`
+returned seven hits in three files,including this registration. No new
+incoming Cloud flags;shared main already up to date. No dependency on
+pending G320-322 or MI430 carrying arguments.
