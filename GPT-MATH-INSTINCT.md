@@ -124,25 +124,25 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 17:31 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 17:47 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-MI430 gives uniform actual-complement proofs for the two q7/q10
-exceptions left by MI429. With the two q1 repairs and the finite
-selector certificate,this assembles a COMPLETE COMPUTER-ASSISTED
-CANDIDATE for P_0 when the global minimum adjusted cut slack occurs
-on pairs and on no singleton/triple. Independent review is pending;
-this is NOT a PROVED theorem or the full P_0/five-bin/E28/L8 result.
-The exact statement and acyclic dependency table are in MI430.
-MI432 adds a bounded supporting audit:9683 asserted bands pass,with
-1427 complete pool spectra independently checked. No infinite proof
-status changes. Next make the carrying hand proof easier to inspect
-and reassess the remaining parent gap;do not repeat/enlarge this audit.
-Singleton/triple branches remain separate;
-G319-dependent claims retain their own pending review.
+MI430 is a COMPLETE COMPUTER-ASSISTED CANDIDATE for P_0's exclusive
+pair-minimum branch,with one carrying review pending. MI432 supplies
+bounded supporting checks only;do not repeat/enlarge that audit.
+MI433 now isolates a different root obstruction:reflection orients a
+triple minimum as an ordinary singleton minimum,but loses one unit of
+margin relative to hole count unless the deletion trims the top.
+An ACTUAL five-bin descendant has a unique such realization and a
+child outside the protected margin2 class. The parent still partitions.
+No candidate status is promoted;full P_0/five-bin/E28/L8 remain OPEN.
+G319-dependent singleton claims retain their separate pending reviews.
+Next inspect the exact inequalities retained by this triple-minimum
+reduction before proposing another two-hole theorem;the margin2 shortcut
+is closed. Do not append a shape repair merely to extend the old chain.
 Last trajectory check:MI430/B224,2026-10-18 17:15 BST;extra pull
-allowance unused. It selected these two repairs because they exhaust
-the exact selector residual,not because of renewed warmth alone.
-Cloud receives one batched carrying-review request for this branch.
+allowance unused. MI433 records one failed assumption since that check:
+reflection followed by least-singleton deletion need not re-enter the
+protected family. Existing bounded-hole failures remain recorded.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31993,3 +31993,130 @@ for its purpose;further reassuring counts would not close the hand
 quantifiers. Last trajectory check MI430,17:15 BST;extra pull allowance
 unused. Existing review packet gets this result as an addendum,not a
 new review job.13min ACTIVE.
+
+
+### MI433 — B226: a triple-minimum reflection loses protection on an actual descendant (2026-10-18 17:47 BST)
+
+**Hand scope analysis and explicit countercontrol;not a new partition
+candidate or independent review.** The parent remains full-interval
+five-bin sufficiency. MI430 addresses exclusive pair minima inside P_0;
+it says nothing about a minimum attained on a triple. This block checks
+whether reflection sends that remaining branch back into the existing
+protected-singleton route. It does not. No experiment or census was run.
+
+Initial pull was towards the orientation issue,with unease about treating
+reflection as a free symmetry of an adjusted inequality. This is a new
+root question independent of MI430's unreviewed scalar instruments and
+G319;it does not extend either conditional chain. Record searched with
+record_find.py:`triple.*reflect`,`reflec.*protect`,`least.*triple` gave
+no conjunctive paragraph hit. The index and direct source read nevertheless
+found MI415's explicit warning,MI362's exact lift gate,and MI368's margin
+identity. Read those,MI416,and G315/G316's statement in
+FOUR-BIN-PARTITIONS.md. This is an elementary audit of our own reduction;
+no external theorem,novelty,or literature-absence claim is made.
+
+**Exact reflection identity.** In P_0 let S=[0,n] minus q,|S|=n,
+T=sum(S)=L(n)+n-q,and delta_J=u_J-L(r_J)-r_J. Reflect values in n:
+S*=[0,n] minus(n-q),u*_J=n*r_J-u_J. Then
+
+ e*_J:=u*_J-L(r_J)=delta_(J complement)+q,
+ delta*_J:=u*_J-L(r_J)-r_J=delta_(J complement)+q-r_J.
+
+The first identity follows by substituting total T and
+L(n)-L(n-r)=L(r)+r(n-r). Thus a global least TRIPLE delta becomes a
+global least SINGLETON e*,the ordinary lower slack. It need not minimize
+delta*,and delta* need not even be nonnegative. Reflected partitions
+remain exactly equivalent;the protected hypothesis does not.
+
+Apply the comparison behind MI368 at margin0,without asserting its
+margin>=holes hypothesis. If the reflected least singleton A has size a,
+then every proper remaining group of size r has u*_J>=L(r)+a*r.
+For any actual A realization,trim the remainder to endpoints b,c and
+subtract b. Its inherited margin and actual hole count are
+
+ mu'=a-b,
+ h'=a+1-b-(n-c),
+ mu'-h'=-1+(n-c).
+
+Removing the top value n would recover at least the hole-count margin;
+if n remains,the inherited margin is one short. Actual targets might
+still satisfy a stronger margin,so this identity alone is NOT a
+counterexample to protected membership. The following control tests
+that additional possibility as well.
+
+**Strict-triple control.** Take four triples on [0,12] minus1 with
+labelled targets (32,23,11,11). Their total is77. The adjusted slacks are
+
+ singles:26,17,5,5;
+ pairs AB,AC,AD,BC,BD,CD:34,22,22,13,13,1;
+ triples ABC,ABD,ACD,BCD:21,21,9,0.
+
+All14 protected cuts hold;BCD is the UNIQUE minimum. In particular the
+example is not covered by MI430's exclusive-pair hypothesis or a tied
+singleton choice. Reflection gives pool [0,12] minus11 and targets
+(4,13,25,25). Its ordinary least singleton is A,slack1. The ONLY triple
+of distinct nonnegative integers summing4 is {0,1,3}:if the least value
+were positive,the sum would be at least1+2+3=6,and with0 the only positive
+distinct pair is1+3. All these values are available.
+
+Delete it and translate the remaining minimum2 to0. The actual child is
+
+ R=[0,10] minus{1,9}, targets(7,19,19), sizes(3,3,3).
+
+Here h'=2,mu'=1,and the target7 is BELOW L(3)+2*3=9. Therefore the child
+really is outside the protected margin2 family,not merely outside the
+bound we happened to derive. No alternative realization of this selected
+bin repairs that membership;no top-trimming option exists. G315 also
+cannot be applied as a one-hole statement to this actual two-hole pool.
+
+**Unexpected check: this occurs inside the original five-bin reduction.**
+The full interval[0,14] with five triples and targets(4,38,29,17,17)
+lifts the control. Remove {0,1,3},then subtract2 from the remainder.
+MI362's parameters are l2,k0,q1,m12,h1:the gate is
+12*(2+1)>=2 and u_J>=L(r)+max(r,1-2r). Since r>=3,the latter is exactly
+the P_0 cut already checked. The removed size3 singleton has global least
+ordinary slack1. Hence this is an actual descendant,not just a point in
+the relaxed domain. The reflected intermediate pool itself need not
+satisfy P_0,and we have not claimed otherwise.
+
+**Positive controls and niggle sweep.** The child partitions as
+
+ {0,2,5} / {3,6,10} / {4,7,8}, sums7,19,19.
+
+Reflecting and undoing translation gives the original P_0 partition
+
+ {9,11,12} / {5,8,10} / {0,4,7} / {2,3,6}.
+
+Its actual five-bin lift is
+
+ {0,1,3} / {11,13,14} / {7,10,12} / {2,6,9} / {4,5,8}.
+
+The displayed sets check disjointness,all values,count and total without
+assuming a partition theorem. As an independent algebra control,
+reflection twice gives delta**_J=delta_J because the new hole is n-q
+and the complementary size is n-r. The tempting same-margin identity
+would instead predict reflected A at least6;its actual target4 refutes
+that shortcut. No scalar-spectrum gap or partition nonexistence is
+inferred from a failure of the stronger margin condition.
+
+**Trajectory outcome.** Parent coverage has not expanded;an assumption
+about its remaining branch has been ruled out at an actual lifted point.
+Failure sentence:reflection followed by least-singleton deletion does
+not necessarily re-enter the protected family,even when the selected
+realization is unique. This is not a new instance of the old universal
+bounded-hole assertion:the child has only TWO holes and still fails the
+required margin. No new review job,proof entry,or shape-specific repair.
+
+Next cheap test:derive the exact retained inequalities for the reflected
+triple-minimum child,including the original q and minimum h,before asking
+for a broader theorem. When the reflected recipe uses the full prefix[0,a-2],an available
+pivot strictly above it,and retains the original hole above that prefix,
+its normalized holes are H=q+h and Q=n-q-a+1. Thus
+H+Q=(n-a)+1+h;this relation is lost by
+replacing the child by an arbitrary two-hole instance. Check whether those
+retained constraints actually exclude the existing two-hole obstruction
+families. Stop if they do not distinguish the parent from the parked
+unrestricted family;do not renew a leaf-repair budget by renaming it.
+Gut:interest in the exact reduction remains;no enthusiasm claim about
+another generic hole theorem. Reasoned:the useful result is a sharper
+root obstruction and a specified test,not a nearer completion claim.

@@ -1373,3 +1373,12 @@ B225 checks:shared main fetched/merged,current;completed end portal poll
 unchanged. Scoped ledger/synthetic,added-line privacy/conflict,whitespace
 and source/raw-digest checks pass. Source694a282b preceded the one complete
 run;no retry or scope expansion. No TeX/generated edits or proof promotion.
+
+
+| 2026-10-18 17:47 BST | GPT | B226 triple-minimum scope check complete | MI433/GC1567:actual five-bin descendant forces reflected child outside margin2;parent partitions explicitly. | No new experiment or dependent candidate. Next exact retained inequalities before any hole-family extension;strict-pair review unchanged,13min ACTIVE. |
+
+B226 checks:shared main fetched/merged at wake,current;completed final
+portal poll unchanged. Scoped ledger/synthetic,added-line privacy/conflict
+and whitespace checks pass. New mathematics checked by hand;no probe,
+TeX,generated-file change or proof-status promotion. One useful scope
+correction goes to Cloud as READ-LEDGER,not a new carrying-review request.

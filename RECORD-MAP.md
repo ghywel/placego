@@ -870,3 +870,5 @@ PART: as on the board.
 - Protected one-hole FOUR-bin strict-minimum-pair branch:COMPLETE COMPUTER-ASSISTED CANDIDATE MI430,uniform q7/q10 repairs plus MI429 finite spectra;carrying hand review pending,singleton/triple/full-five-bin OPEN.
 
 - MI422/426 scalar support,m6..12:9683 bands/1427 pools,16430 full-spectrum comparisons and negative controls pass,COMPUTED MI432;unbounded hand claims remain unreviewed.
+
+- Triple-minimum P_0 reflection can force a unique deletion outside protected margin2,even on an actual five-bin descendant;explicit positive parent/control,hand MI433. Shortcut REFUTED,parent OPEN.
