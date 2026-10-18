@@ -80,6 +80,13 @@ th { font-weight: 600; } td.n, th.n { text-align: right; font-family: var(--font
 .srtable { display: none; } .srtable.on { display: block; }
 footer { margin-top: 56px; font-size: 0.92rem; color: var(--ink-soft); }
 footer p { margin-bottom: 10px; }
+/* the title's little flame and the cute houses */
+.onfire { position: relative; display: inline-block; }
+.onfire em { color: var(--fire); }
+.flame { position: absolute; left: 50%; top: -0.62em; width: 0.62em; height: 0.8em; transform: translateX(-50%); overflow: visible; }
+.flame .f1 { fill: var(--fire); } .flame .f2 { fill: #F4B942; }
+@keyframes flicker { 0% { transform: translateX(-50%) scaleY(1) rotate(-2deg); } 50% { transform: translateX(-50%) scaleY(1.08) rotate(2deg); } 100% { transform: translateX(-50%) scaleY(0.96) rotate(-1deg); } }
+@media (prefers-reduced-motion: no-preference) { .flame { animation: flicker 0.9s ease-in-out infinite alternate; transform-origin: 50% 100%; } }
 .wcm-skip{position:absolute;left:12px;top:-80px;z-index:20;background:#14181d;color:#f4eedf;font-family:"Inter",system-ui,sans-serif;font-weight:600;padding:10px 16px;border-radius:0 0 10px 10px;border:2px solid #d8a21c}
 .wcm-skip:focus{top:0;outline:none}
 </style>
@@ -120,145 +127,170 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
 
   <header class="hero col">
     <p class="eyebrow">A puzzle about fire, planks and fair shares</p>
-    <h1>Eight streets <em>on fire</em></h1>
-    <p class="lede">A fire spreads along a row of houses, and once a day you may light one new house anywhere. One
-      street is easy. Eight separate streets, sharing one pile of fires, is an open question. This page walks from
-      the first match to the wall we have reached, with every picture computed live.</p>
+    <h1>Eight streets <span class="onfire"><svg class="flame" viewBox="0 0 40 52" aria-hidden="true"><path class="f1" d="M20 50 C8 50 4 40 6 31 C8 24 13 21 13 15 C17 19 18 24 17 28 C21 24 22 16 19 4 C29 12 36 24 34 36 C33 45 28 50 20 50 Z"/><path class="f2" d="M20 50 C14 50 11 45 12 39 C13 34 17 31 17 27 C19 30 20 33 19 36 C22 33 23 28 22 22 C27 28 29 36 28 41 C27 47 24 50 20 50 Z"/></svg><em>on fire</em></span></h1>
+    <p class="lede">Picture a long street of houses standing side by side. One of them catches fire. Each day the
+      fire spreads to the houses next door, and each day one more house, anywhere you like, is set alight. How
+      many days until the whole street has burned? That is easy to answer, and the answer is the start of a real,
+      unsolved piece of mathematics about a town with <em>eight</em> such streets. This page tells it from the first
+      match to the point where our own attempt to solve it gets stuck.</p>
   </header>
 
   <figure class="wide">
     <div class="panel rel">
-      <canvas id="burn" width="1200" height="150" role="img" aria-label="A street of houses burning day by day. Each day every burning house lights its neighbours, and one new house is lit by hand."></canvas>
+      <canvas id="burn" width="1200" height="190" role="img" aria-label="A street of little houses. Each day every burning house sets its neighbours alight, and one new house is lit by hand."></canvas>
       <p class="tally" id="burn-tally"></p>
       <div class="ctrl">
         <button id="burn-play" type="button">Pause</button>
-        <button id="burn-step" type="button">Step</button>
-        <button id="burn-reset" type="button">Restart</button>
+        <button id="burn-step" type="button">Next day</button>
+        <button id="burn-reset" type="button">Start again</button>
         <label>Days: <input id="burn-m" type="range" min="3" max="9" value="6"> <span id="burn-mv">6</span></label>
         <span id="burn-n" style="color:var(--ink-soft)"></span>
       </div>
     </div>
-    <figcaption>One street. Each day the fire spreads one house in each direction from every burning house, and you
-      light one new house of your choice. Lit in the right places, <em>m</em> fires burn a street of <em>m</em>² houses
-      in <em>m</em> days, and not one house more.</figcaption>
+    <figcaption>One street. Every day the fire spreads one house to the left and one to the right of each burning
+      house, and one new house is lit. Press "Next day" to watch it happen, or let it run.</figcaption>
   </figure>
 
   <section class="col" id="one">
     <p class="chapter">1 · One street</p>
-    <h2>Odd numbers, and a square</h2>
-    <p>Watch the first fire. By the end of day one it has burned one house. By day two it has spread to three, by
-      day three to five: a fire lit on day one has reached a stretch of 2<em>m</em> − 1 houses by day <em>m</em>. The
-      fire you light on day two is a day behind, so it covers 2<em>m</em> − 3; the last one, lit on day <em>m</em>
-      itself, has burned a single house. The stretches you command have the odd lengths 1, 3, 5, … up to
-      2<em>m</em> − 1, one of each.</p>
-    <p>Add the odd numbers and you get a square: 1 + 3 + 5 + 7 = 16, 1 + 3 + 5 + 7 + 9 = 25. The picture below is
-      the old reason why. So <em>m</em> days of fire burn at most <em>m</em>² houses, and a street of exactly
-      <em>m</em>² houses is burned in <em>m</em> days by laying the stretches end to end, longest first, which is
-      what the animation above does.</p>
+    <h2>Why the answer is a square</h2>
+    <p>Watch the very first fire. After one day it has burned one house. After two days it has spread to its two
+      neighbours, so three houses. After three days, five. Every day it grows by one house on each side, so after
+      <em>m</em> days the first fire has burned a stretch of 2<em>m</em> − 1 houses: for six days, that is 11.</p>
+    <p>The second fire, lit on day two, is a day behind, so it has only reached 9 houses by day six. The third has
+      reached 7, the fourth 5, the fifth 3, and the sixth fire, lit on the last day, has burned just the one house
+      it was lit in. So after six days you have six burned stretches of lengths 11, 9, 7, 5, 3 and 1: one of each
+      odd length, counting down.</p>
+    <p>Here is the lovely part. Add those up: 11 + 9 + 7 + 5 + 3 + 1 = 36, which is 6 × 6. It always works: the odd
+      numbers from 1 up to 2<em>m</em> − 1 add up to exactly <em>m</em> × <em>m</em>, a square. The picture below
+      shows why, with each day's stretch bent into an L-shape. So six days of fire can burn a street of 36 houses,
+      and no more, and a street of 36 houses <em>can</em> be burned in six days, as long as each fire is lit in the
+      right place. That is exactly what the animation above is doing: lighting the fires so that the stretches lie
+      end to end with no overlap and no gap.</p>
     <figure>
       <div class="panel rel">
-        <svg id="gnomon" viewBox="0 0 640 300" role="img" aria-label="A square built from nested L shapes of sizes 1, 3, 5, 7, 9, 11, showing that the odd numbers add to a square."></svg>
+        <svg id="gnomon" viewBox="0 0 640 300" role="img" aria-label="A six by six square built from nested L shapes of sizes 1, 3, 5, 7, 9 and 11, showing that the odd numbers add up to a square."></svg>
         <div class="tip" id="gnomon-tip"></div>
       </div>
-      <figcaption>Six days, thirty-six houses: each L-shaped band is one day's stretch, and the bands fill a square
-        with nothing left over. Hover a band.</figcaption>
+      <figcaption>Six days, thirty-six houses. Each L-shaped band is one day's stretch of burned houses, and the
+        bands fit together into a perfect square with nothing left over. Hover a band.</figcaption>
     </figure>
-    <div class="exact"><span class="k">Exact</span>On a path of <em>n</em> vertices, a vertex burned at round
-      <em>k</em> has burned a sub-path of at most 2(<em>m</em> − <em>k</em>) + 1 vertices by round <em>m</em>; the
+    <div class="exact"><span class="k">For the mathematician</span>On a path of <em>n</em> vertices, a vertex burned at
+      round <em>k</em> has burned a sub-path of at most 2(<em>m</em> − <em>k</em>) + 1 vertices by round <em>m</em>; the
       <em>m</em> sub-paths have odd sizes 1, 3, …, 2<em>m</em> − 1 and total at most <em>m</em>². The
       <em>burning number</em> of a graph is the least <em>m</em> for which some choice of sources burns everything
       by round <em>m</em>. For a single path of <em>n</em> vertices it is ⌈√<em>n</em>⌉ (Bonato, Janssen and
-      Roshanbin, 2016, from the record's prior-art file).</div>
+      Roshanbin, 2016).</div>
   </section>
 
   <section class="col" id="eight">
     <p class="chapter">2 · Eight streets</p>
-    <h2>Planks for eight gaps</h2>
-    <p>Now the town has eight separate streets, and the fire cannot jump from one to another. You still get one
-      new fire a day, and the same odd stretches: after 28 days, one stretch of each length 1, 3, 5, …, 55. The
-      only question is how to share them. Each street must receive stretches that add up to exactly its own length,
-      because a stretch that overhangs a street's end is wasted, and a street with a gap left is not burned.</p>
-    <p>It helps to stop thinking about fire for a moment. You hold 28 planks of odd lengths 1, 3, 5, …, 55. There
-      are eight gaps to tile. No plank may be cut, no plank may be left over, and every gap must be filled exactly.
-      When the eight lengths add up to 28² = 784, the planks are exactly enough. Whether they can be <em>arranged</em>
-      is the puzzle.</p>
+    <h2>One box of matches for the whole town</h2>
+    <p>Now the town has eight streets, and they are separate: a field between each pair, so a fire on one street
+      can never reach another. The rule is the same as before, with one twist. The whole town shares one box of
+      matches, and you may strike only <em>one</em> match a day, on any street you choose. After 28 days you will
+      have struck 28 matches, and each one will have burned a stretch of houses: the first match 55 houses, the next
+      53, and so on down to the last match, 1 house. The same odd numbers as before, just more of them.</p>
+    <p>Think of each stretch as a plank with its length painted on it: a plank of 55, a plank of 53, down to a plank
+      of 1. There are 28 planks and eight streets. To burn a street completely, you need to lay planks along it that
+      cover it exactly: a plank that sticks out past the end of the street is a wasted match, and a gap between
+      planks is a house that never burns. No plank can be cut in two, because a fire cannot be stopped halfway. So
+      the question "can the town be burned in 28 days?" becomes a tiling puzzle: can the 28 planks be shared out
+      so that every street is covered exactly?</p>
+    <p>For the puzzle to be fair we give the town exactly as many days as it needs: the eight street lengths add up
+      to 28 × 28 = 784, so the planks are exactly long enough, with nothing to spare. Here are two towns of that size
+      where the sharing works. Every plank is used, every street is covered, nothing is cut.</p>
     <figure class="wide">
       <div class="panel rel">
-        <svg id="planks" viewBox="0 0 1200 420" role="img" aria-label="Eight streets drawn as bars, each filled end to end with odd-length planks whose lengths are written on them."></svg>
+        <svg id="planks" viewBox="0 0 1200 420" role="img" aria-label="Eight streets drawn as bars, each covered end to end by planks whose lengths are written on them."></svg>
         <div class="tip" id="planks-tip"></div>
         <div class="ctrl">
-          <span>Example:</span>
-          <button type="button" data-ex="0" aria-pressed="true">four of 68, four of 128</button>
+          <span>Try a town:</span>
+          <button type="button" data-ex="0" aria-pressed="true">four streets of 68, four of 128</button>
           <button type="button" data-ex="1" aria-pressed="false">eight different lengths</button>
         </div>
       </div>
-      <figcaption>Twenty-eight days, eight streets, the planks 1 to 55 shared out with nothing cut and nothing
-        left over. Both tilings were found by a complete search and checked; hover a plank.</figcaption>
+      <figcaption>Twenty-eight matches, eight streets. The planks 1, 3, 5, … 55 are shared out with nothing cut and
+        nothing left over. Both arrangements were found by a computer trying every possibility; hover a plank to see
+        where it went.</figcaption>
     </figure>
   </section>
 
   <section class="col" id="fail">
     <p class="chapter">3 · When sharing fails</p>
-    <h2>Four streets of 67, four of 102</h2>
-    <p>Sharing can fail. Take 26 days, so the planks are 1, 3, …, 51, and let four streets be 67 houses long and four
-      be 102. The lengths add up to 676 = 26², so the planks are exactly enough. Yet no arrangement works, and the
-      reason fits in three lines.</p>
-    <p>A street of 102 cannot be tiled with two planks, because the two longest, 51 and 49, reach only 100. Any
-      arrangement that avoids leaving a plank over uses whole planks, so each 102-street needs at least three; and
-      since 102 is even and every plank is odd, it needs an even number, so at least four. A street of 67 needs an
-      odd number of planks, and one plank is too short, so at least three. That is 4 × 4 + 4 × 3 = 28 planks, and
-      there are only 26.</p>
+    <h2>A town that cannot be saved</h2>
+    <p>Sometimes there is no way to share the planks, even though they add up to exactly the right amount. Here is
+      the simplest town where it goes wrong. Give it 26 days, so the planks are 1, 3, 5, … up to 51. Let four of the
+      streets be 67 houses long and the other four be 102. Check: 4 × 67 + 4 × 102 = 676 = 26 × 26, so the planks are
+      exactly long enough. And yet no arrangement works. Here is why, in three steps.</p>
+    <p><strong>The 102-streets.</strong> Could one be covered by just two planks? The two longest planks are 51 and
+      49, and together they reach only 100, two houses short. So every 102-street needs at least three planks. But
+      there is a catch: every plank has an odd length, and odd + odd + odd is odd, while 102 is even. An even street
+      needs an <em>even</em> number of odd planks. Not two, so at least four.</p>
+    <p><strong>The 67-streets.</strong> One plank is not enough, since the longest is 51. And 67 is odd, so it needs an
+      odd number of odd planks: not one, so at least three.</p>
+    <p><strong>Count the planks.</strong> Four streets needing four planks each, plus four streets needing three
+      each, is 16 + 12 = 28 planks. But 26 days give only 26. The town cannot be burned in 26 days, however cleverly
+      the matches are struck.</p>
     <figure>
       <div class="panel">
-        <svg id="witness" viewBox="0 0 700 250" role="img" aria-label="A street of 102 with the two longest planks, 51 and 49, falling two short; and the plank count: four streets needing four planks, four needing three, twenty-eight in all against twenty-six available."></svg>
+        <svg id="witness" viewBox="0 0 700 250" role="img" aria-label="A street of 102 with the two longest planks, 51 and 49, falling two short; a street of 67 with the longest plank falling short; and the plank count: twenty-eight needed, twenty-six available."></svg>
       </div>
-      <figcaption>The counting argument as a picture. Four streets need four planks each and four need three, but
-        26 days give only 26 planks. A complete search confirms it: there is no arrangement (checked here in 79
-        seconds).</figcaption>
+      <figcaption>The counting argument as a picture. A computer trying every arrangement agrees: there is none
+        (the full check took 79 seconds).</figcaption>
     </figure>
-    <p>So a street can be too short to be safe. The 67-streets are the trouble: they can only take an odd number of
-      planks, and the small planks they would need are wanted elsewhere. The natural question is how long every
-      street must be before sharing <em>always</em> works, whatever the lengths.</p>
+    <p>Notice what went wrong. The trouble was the short streets. A short street can only take a few planks, and it
+      has no freedom about how many: 67 forces an odd count, and the small planks it wants are needed elsewhere. If
+      all the streets were long enough, there would be room to manoeuvre. So the real question is: <em>how long is
+      long enough?</em></p>
   </section>
 
   <section class="col" id="question">
     <p class="chapter">4 · The question</p>
     <h2>Is 68 always enough?</h2>
-    <p>Tan and Teh asked this for towns of <em>k</em> streets and settled it for one street up to seven. For seven
-      streets the threshold is 56: if every street has at least 56 houses and the lengths add to a square
-      <em>m</em>², then <em>m</em> days always suffice. For eight streets the example above shows 67 is not enough.
-      Whether 68 always is, for every number of days and every eight lengths, is open. It is the problem GPT chose
-      when the owner asked it to follow its own instincts, and the problem this page is about.</p>
-    <div class="q"><span class="n">L<sub>8</sub></span><span>If eight street lengths, each at least 68, add up to
-      <em>m</em>², can the planks 1, 3, …, 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill open">Open</span></div>
-    <div class="q"><span class="n">Known</span><span>67 is not enough (the example in section 3); the thresholds for
-      one to seven streets are settled, the seventh being 56.</span><span class="pill proved">Prior art</span></div>
-    <div class="exact" style="margin-top:18px"><span class="k">Exact</span>For a path forest with <em>k</em> paths, let
-      L<sub>k</sub> be the least <em>L</em> such that every forest whose paths all have at least <em>L</em> vertices and
-      whose total is <em>m</em>² has burning number <em>m</em>. Tan and Teh, <a href="https://dmtcs.episciences.org/en/articles/12709/download">A
-      Note on Graph Burning of Path Forests</a> (DMTCS), determine L<sub>k</sub> for <em>k</em> ≤ 7 and give the lower bound
-      L<sub>8</sub> ≥ 68 through the forest (67, 67, 67, 67, 102, 102, 102, 102). In plank form: partition
-      {1, 3, …, 2<em>m</em> − 1} into eight sets with prescribed sums.</div>
+    <p>Here is the question exactly. Suppose every one of the eight streets has at least <em>L</em> houses, and the
+      lengths add up to a square, <em>m</em> × <em>m</em>, for any <em>m</em> at all. Is the sharing then always
+      possible? The town above shows that <em>L</em> = 67 is not enough, because the 67-streets broke it. Two
+      mathematicians, Tan and Teh, worked this out for towns of one street, two streets, and so on up to seven
+      streets. For seven streets the answer is 56: if every street has at least 56 houses, the sharing always works.
+      For eight streets they could show that 67 is not enough, and that is where the known results stop.</p>
+    <p>So the conjecture, the thing everyone expects to be true but nobody has proved, is that 68 is always enough
+      for eight streets. This is the problem that GPT, the other half of this project's research partnership, chose
+      when it was told to follow its own curiosity, and it is what the rest of this page is about.</p>
+    <div class="q"><span class="n">The question</span><span>Eight streets, each at least 68 houses, adding up to
+      <em>m</em> × <em>m</em>. Can the planks 1, 3, 5, … 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill open">Open</span></div>
+    <div class="q"><span class="n">Known</span><span>67 is not enough (section 3). The answers for one to seven
+      streets are settled; for seven streets it is 56.</span><span class="pill proved">Settled</span></div>
+    <div class="exact" style="margin-top:18px"><span class="k">For the mathematician</span>For a path forest with
+      <em>k</em> paths, let L<sub>k</sub> be the least <em>L</em> such that every forest whose paths all have at least
+      <em>L</em> vertices and whose total is <em>m</em>² has burning number <em>m</em>. Tan and Teh,
+      <a href="https://dmtcs.episciences.org/en/articles/12709/download">A Note on Graph Burning of Path Forests</a>
+      (DMTCS), determine L<sub>k</sub> for <em>k</em> ≤ 7 and give L<sub>8</sub> ≥ 68 through the forest
+      (67, 67, 67, 67, 102, 102, 102, 102). In plank form: partition {1, 3, …, 2<em>m</em> − 1} into eight sets with
+      prescribed sums. The conjecture is L<sub>8</sub> = 68.</div>
   </section>
 
   <section class="col" id="pile">
     <p class="chapter">5 · Shrinking the pile</p>
-    <h2>Only nine days' worth of cases matter</h2>
-    <p>"Every number of days" sounds infinite, and it is, but a trick tames it. If some street is very long, give it
-      the longest plank, 2<em>m</em> − 1, and put it aside: what remains is the same puzzle one day shorter. Run that
-      backwards and any case with a street of at least 2<em>m</em> + 67 houses follows from a smaller case. The cases
-      that do not follow from anything smaller have every street between 68 and 2<em>m</em> + 66, and once
-      <em>m</em> reaches 33 there are none at all, because eight such streets cannot add up to 33².</p>
-    <p>So the whole infinite question comes down to the days 24 to 32. That is still a pile: 64,787,844 cases, most
-      of them at 27 and 28 days. Checking them one by one is a large computation; the record has measured it, and
-      it is the subject of the last section.</p>
+    <h2>Why only nine sizes of town matter</h2>
+    <p>"For any <em>m</em> at all" sounds hopeless: there are infinitely many towns to check. But a trick cuts the
+      infinite list down to size. Suppose one of the streets is very long, at least 2<em>m</em> + 67 houses. Give it
+      the longest plank, 2<em>m</em> − 1, and take that plank out of the game. What is left? A town one day smaller,
+      with the same rules, and the long street is now at least 68 houses shorter, which is still at least 68. So if
+      the smaller town can be burned, so can the bigger one. Any town with a very long street is really a smaller
+      town in disguise.</p>
+    <p>That means we only ever need to check towns where no street is very long: every street between 68 and
+      2<em>m</em> + 66 houses. And eight such streets cannot add up to <em>m</em> × <em>m</em> once <em>m</em> reaches
+      33, because the square grows faster than the streets can. So only the towns with 24 to 32 days are left to
+      check by hand, or rather by computer. That is still a lot of towns: 64,787,844 of them, most at 27 and 28 days.
+      But it is a finite list, and finite lists can, in principle, be worked through.</p>
     <figure>
       <div class="panel rel">
-        <svg id="pilechart" viewBox="0 0 560 250" role="img" aria-label="Bar chart of the number of cases that must be checked directly at each number of days from 24 to 32, peaking at 24.7 million at 28 days."></svg>
+        <svg id="pilechart" viewBox="0 0 560 250" role="img" aria-label="Bar chart of the number of towns that must be checked directly at each number of days from 24 to 32, peaking at 24.7 million at 28 days."></svg>
         <div class="tip" id="pile-tip"></div>
         <div class="ctrl"><button type="button" id="pile-table" aria-pressed="false">Show as a table</button></div>
         <div class="srtable" id="pile-sr">
-          <table><thead><tr><th>Days m</th><th class="n">Cases needing a direct check</th></tr></thead>
+          <table><thead><tr><th>Days</th><th class="n">Towns needing a direct check</th></tr></thead>
           <tbody>
             <tr><td>24</td><td class="n">3,319</td></tr><tr><td>25</td><td class="n">425,632</td></tr>
             <tr><td>26</td><td class="n">5,523,890</td></tr><tr><td>27</td><td class="n">19,382,158</td></tr>
@@ -268,11 +300,10 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
           </tbody></table>
         </div>
       </div>
-      <figcaption>The cases that must be checked directly, by number of days. Two independent counts agree
-        (GPT-MATH-INSTINCT.md MI044, 15 October 2026); the unrestricted count without the trick would be about
-        58.8 billion.</figcaption>
+      <figcaption>The towns that must be checked directly, by number of days. Two independent counts agree
+        (the record's MI044, 15 October 2026); without the trick there would be about 58.8 billion.</figcaption>
     </figure>
-    <div class="exact"><span class="k">Exact</span>Strong induction on <em>m</em>: if some target
+    <div class="exact"><span class="k">For the mathematician</span>Strong induction on <em>m</em>: if some target
       <em>l</em><sub>i</sub> ≥ 2<em>m</em> + 67, remove the plank 2<em>m</em> − 1 from it; the reduced instance has total
       (<em>m</em> − 1)², every target still at least 68, and is solved by the inductive hypothesis. The exceptional set
       E<sub>m</sub> (all eight targets in [68, 2<em>m</em> + 66], total <em>m</em>²) is empty for <em>m</em> ≥ 33, so
@@ -281,151 +312,172 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
   </section>
 
   <section class="col" id="index">
-    <p class="chapter">6 · Taking the 1 off every plank</p>
-    <h2>The same puzzle on 0, 1, 2, 3, …</h2>
-    <p>Every plank has odd length, so every plank is "one house plus an even number". Saw one house off each. A plank
-      of length 2<em>i</em> + 1 becomes a plank of length 2<em>i</em>, and halving the scale makes it <em>i</em>. The
-      planks 1, 3, 5, …, 55 become 0, 1, 2, …, 27, the ordinary counting numbers. A street that wanted <em>c</em>
-      planks adding to <em>l</em> now wants <em>c</em> numbers from 0 to 27 adding to (<em>l</em> − <em>c</em>)/2.</p>
-    <p>This is the form everything below uses. The pool is a run of consecutive numbers; each street says how many
-      it will take and what they must add to. One rule is obviously necessary: a street taking <em>c</em> numbers
-      cannot ask for less than the <em>c</em> smallest add to, nor more than the <em>c</em> largest. And the same
-      for any group of streets together: two streets taking seven numbers between them cannot ask for less than
-      0 + 1 + … + 6. Call this the <strong>cut rule</strong>.</p>
+    <p class="chapter">6 · A tidier way to count</p>
+    <h2>Saw one house off every plank</h2>
+    <p>Sixty-five million towns is too many to check one at a time, so the hope is a rule: a simple test that tells
+      you whether a town can be shared out, without trying every arrangement. To look for one, it helps to tidy the
+      planks first. Every plank has an odd length, which means "one house, plus an even number of houses". So saw
+      one house off every plank. The plank of 1 becomes nothing, the plank of 3 becomes 2, the plank of 5 becomes 4,
+      and so on. Now every plank is even, so measure them in pairs of houses instead: 0, 1, 2, 3, … up to 27. The
+      planks are just the ordinary counting numbers.</p>
+    <p>A street that wanted, say, 3 planks adding up to 67 houses now wants 3 numbers adding up to (67 − 3)/2 = 32.
+      Nothing about the puzzle has changed; it just reads more easily. The pool is the numbers 0 to 27, and each
+      street says how many numbers it will take and what they must add up to.</p>
+    <p>And now one rule is obvious. A street taking three numbers cannot ask for less than the three smallest add
+      up to (0 + 1 + 2 = 3), nor for more than the three largest (25 + 26 + 27 = 78). The same goes for any group of
+      streets together: two streets taking seven numbers between them cannot ask for less than 0 + 1 + … + 6 = 21.
+      We will call this the <strong>cut rule</strong>: every street, and every group of streets, must ask for a total
+      somewhere between the least and the most its numbers could possibly give. A town that breaks the cut rule is
+      obviously impossible. The surprise comes in the next section.</p>
     <figure>
       <div class="panel rel">
-        <svg id="shave" viewBox="0 0 640 210" role="img" aria-label="Planks of lengths 1, 3, 5, 7, 9 with one house shaved off each, becoming 0, 1, 2, 3, 4; and a street's allowed range of sums as a band."></svg>
+        <svg id="shave" viewBox="0 0 640 210" role="img" aria-label="Planks of lengths 1, 3, 5, 7, 9 with one house sawn off each, becoming 0, 1, 2, 3, 4; and a street's allowed range of totals drawn as a band."></svg>
         <div class="tip" id="shave-tip"></div>
       </div>
-      <figcaption>Left: shave one house off each odd plank and halve, and the planks become 0, 1, 2, 3, 4. Right:
-        a street taking three numbers from 0 to 9 can ask for any total from 3 to 24, and the cut rule says every
-        group of streets must sit inside its own band.</figcaption>
+      <figcaption>Left: saw one house off each odd plank, count in pairs, and the planks become 0, 1, 2, 3, 4. Right:
+        a street taking three numbers from 0 to 9 can ask for any total from 3 up to 24; the cut rule says every street
+        and every group of streets must sit inside its own band like this.</figcaption>
     </figure>
-    <div class="exact"><span class="k">Exact</span>With L(<em>c</em>) = <em>c</em>(<em>c</em> − 1)/2 and a pool
-      {0, …, <em>n</em> − 1}, a group J of bins with <em>r</em> numbers between them and total <em>S</em><sub>J</sub>
-      must satisfy L(<em>r</em>) ≤ <em>S</em><sub>J</sub> ≤ <em>r</em>(<em>n</em> − 1) − L(<em>r</em>). Condition SS:
-      this holds for every group. It is necessary. Whether it is sufficient is the question of the next section.</div>
+    <div class="exact"><span class="k">For the mathematician</span>Odd 2<em>i</em> + 1 ↦ index <em>i</em>; a bin of
+      size <em>c</em> and odd-sum <em>t</em> becomes a <em>c</em>-subset of {0, …, <em>n</em> − 1} with sum
+      (<em>t</em> − <em>c</em>)/2. With L(<em>c</em>) = <em>c</em>(<em>c</em> − 1)/2, a group J of bins with <em>r</em>
+      numbers between them and total <em>S</em><sub>J</sub> must satisfy L(<em>r</em>) ≤ <em>S</em><sub>J</sub> ≤
+      <em>r</em>(<em>n</em> − 1) − L(<em>r</em>). Condition SS: this holds for every group. It is necessary.</div>
   </section>
 
   <section class="col" id="proved">
     <p class="chapter">7 · What has been proved</p>
-    <h2>On a plain run of numbers, the cut rule is the whole story</h2>
-    <p>Here is the surprise that made the problem tractable. For three streets, and for four, the cut rule is not
-      just necessary but sufficient: if every group of streets sits inside its band, an exact sharing exists. The
-      four-street case was conjectured from a complete check of about 250,000 small instances with no exception,
-      and then proved by hand, with the proof read line by line by a second party. The proof is constructive: it
-      finds the tightest street or pair of streets, gives it a specific staircase-shaped set of numbers, and hands
-      the rest to the three-street theorem.</p>
-    <p>For the real problem the streets' lengths are not arbitrary, and here the record holds something stronger
-      than a theorem: a <em>certificate</em>. For every one of the 258,180 cases at 28 days in which all eight
-      streets have odd length, an explicit sharing was computed, written down, and independently recomputed and
-      checked line by line by a second program. Those cases are done.</p>
+    <h2>For a plain run of numbers, the cut rule is the whole story</h2>
+    <p>Here is the surprise. For a town of three streets, and for a town of four, the cut rule is not just
+      necessary but <em>enough</em>: if every street and every group of streets sits inside its band, a sharing
+      always exists. No further cleverness is needed. This was first noticed by having a computer check about
+      250,000 small towns, every one of which obeyed it, and then proved properly, by hand, with every line of the
+      proof read and checked by a second party. The proof even says how to find the sharing: take the street (or
+      pair of streets) that is squeezed tightest against its band, give it a particular staircase-shaped set of
+      numbers, and hand what is left to the three-street rule.</p>
+    <p>Real towns have eight streets, not four, and for those the record holds something different: not a rule but
+      a <em>list</em>. For every one of the 258,180 towns at 28 days in which all eight streets have odd length, an
+      actual sharing has been worked out, written down, and then recomputed and checked by a second, independent
+      program. Those towns are done, the way a crossword is done when it is filled in.</p>
     <table>
-      <thead><tr><th>Result</th><th>What it says, in plank terms</th><th>Status</th></tr></thead>
+      <thead><tr><th>Result</th><th>In plain words</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td>Four streets (G316)</td><td>On a run 0 … <em>n</em> − 1, four streets each taking at least three
-          numbers can be given any totals that obey the cut rule.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
-        <tr><td>Three streets, one number missing (G315)</td><td>The same with three streets when one number has been
-          removed from the run, under its exact conditions.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
-        <tr><td>Which sums a handful can reach (G318)</td><td>From a run with up to three numbers missing, <em>r</em>
-          numbers can be chosen to reach every total in a stated middle band.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Four streets (G316)</td><td>Four streets each taking at least three numbers from a plain run can be
+          given any totals that obey the cut rule.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Three streets, one number missing (G315)</td><td>The same for three streets when one number has been
+          taken out of the run, under its stated conditions.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>Reachable totals (G318)</td><td>From a run with up to three numbers missing, <em>r</em> numbers can
+          be chosen to hit every total in a stated middle band.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
         <tr><td>Two separate runs (G319)</td><td>Three streets drawing fixed counts from two separate runs can be
-          given any totals that obey the per-street bands.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
-        <tr><td>All-odd streets at 28 days</td><td>Explicit sharings for all 258,180 cases, recomputed and
-          row-checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
-        <tr><td>Every street odd or even, 24 to 32 days</td><td>The remaining 64.5 million cases.</td><td><span class="pill open">Open</span></td></tr>
+          given any totals that obey the bands.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>All-odd towns at 28 days</td><td>A sharing written down for every one of 258,180 towns, recomputed
+          and checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
+        <tr><td>Every other town, 24 to 32 days</td><td>The remaining 64.5 million.</td><td><span class="pill open">Open</span></td></tr>
       </tbody>
     </table>
-    <div class="exact"><span class="k">Exact</span>G316: for sizes <em>c</em><sub>1</sub>, …, <em>c</em><sub>4</sub> ≥ 3
-      summing to <em>n</em> and integer targets summing to L(<em>n</em>), a partition of {0, …, <em>n</em> − 1} with
-      those sizes and sums exists if and only if the fourteen cut inequalities hold. Candidate by GPT (MI339), carrying
-      read by Cloud (CL437, 17 October 2026); machine support 249,776 instances, <em>n</em> ≤ 16, zero failures.
-      Sources: PROOFS.md G315 – G319; the certificate stream SHA-256 begins 291cc55b (CL431).</div>
+    <div class="exact"><span class="k">For the mathematician</span>G316: for sizes
+      <em>c</em><sub>1</sub>, …, <em>c</em><sub>4</sub> ≥ 3 summing to <em>n</em> and integer targets summing to
+      L(<em>n</em>), a partition of {0, …, <em>n</em> − 1} with those sizes and sums exists if and only if the fourteen
+      cut inequalities hold. Candidate by GPT (MI339), carrying read by Cloud (CL437, 17 October 2026); machine support
+      249,776 instances, <em>n</em> ≤ 16, zero failures. Sources: PROOFS.md G315 – G319; the certificate stream
+      SHA-256 begins 291cc55b (CL431).</div>
   </section>
 
   <section class="col" id="hole">
     <p class="chapter">8 · The hole</p>
     <h2>Why eight streets are not four streets twice</h2>
-    <p>The natural plan writes itself. Take the tightest street, give it its numbers by the recipe, remove them, and
-      you are left with a smaller puzzle: seven streets on what remains. Repeat until the four-street theorem
-      finishes it. The trouble is the second step. What remains is no longer a plain run of numbers. The removed
-      street has punched holes in it.</p>
-    <p>And with a hole, the cut rule stops being enough. Here is the smallest failure. The pool is 0 to 12 with 6
-      missing; four streets take three numbers each, with totals 4, 18, 18 and 32. Every group sits inside its band.
-      But the street wanting 4 has only one way to get it, {0, 1, 3}, and the street wanting 32 only one, {9, 11, 12};
-      and what is left cannot make 18 twice. A pinned street spoils everything.</p>
+    <p>If the cut rule settles four streets, why not eight? The plan writes itself. Take the tightest street, give it
+      its numbers, cross them off, and you have a town of seven streets. Do it again: six streets. Keep going until
+      four are left and the four-street rule finishes the job. The trouble is in the crossing off. After the first
+      street has taken its numbers, the pool is no longer a plain run 0, 1, 2, 3, … It has holes in it where the
+      numbers were taken.</p>
+    <p>And with a hole, the cut rule stops being enough. Here is the smallest example. The pool is 0 to 12 with the
+      6 missing. Four streets take three numbers each, wanting totals of 4, 18, 18 and 32. Check every street and
+      every group against its band and they all pass. But look closer. The street wanting 4 has exactly one way to
+      get it, 0 + 1 + 3, because no other three different numbers add up to something as small as 4. The street wanting 32 also has exactly one way: 9 + 11 + 12. Those two streets are <em>pinned</em>.
+      Cross their numbers off and what is left is 2, 4, 5, 7, 8, 10, and no three of those add up to 18. The town
+      obeys the cut rule and still cannot be shared.</p>
     <figure>
       <div class="panel rel">
-        <svg id="holepic" viewBox="0 0 640 260" role="img" aria-label="The numbers 0 to 12 with 6 missing; the street wanting 4 is forced to take 0, 1 and 3; the street wanting 32 is forced to take 9, 11 and 12; the remaining six numbers cannot form two triples of 18."></svg>
+        <svg id="holepic" viewBox="0 0 640 260" role="img" aria-label="The numbers 0 to 12 with 6 missing; the street wanting 4 is forced to take 0, 1 and 3; the street wanting 32 is forced to take 9, 11 and 12; the remaining six numbers cannot form two groups of three adding to 18."></svg>
         <div class="tip" id="hole-tip"></div>
       </div>
-      <figcaption>One missing number, and the cut rule fails. The totals 4 and 32 pin two streets, and the remaining
-        2, 4, 5, 7, 8, 10 contain no triple adding to 18. (The record's MI350, 17 October 2026.)</figcaption>
+      <figcaption>One missing number, and the cut rule fails. The totals 4 and 32 pin two streets, and the leftover
+        2, 4, 5, 7, 8, 10 contains no three numbers adding to 18. (The record's MI350, 17 October 2026.)</figcaption>
     </figure>
-    <p>The repair is a <strong>margin</strong>. Ask each group of streets to clear its lower band not just by zero
-      but by one unit per number it takes, as if the hole had been pushed to the bottom of the pool. With that margin
-      the pinned sets disappear, and the one-hole, four-street statement holds in every case checked, nearly half
-      a million of them. Two holes need twice the margin, and then it holds again. GPT proved the exact form of the
-      margin the real descent produces (MI362), and proved that it is inherited when the tightest street is
-      removed, whichever of its possible sets it takes (MI368).</p>
-    <div class="exact"><span class="k">Exact</span>P<sub>0</sub>: on {0, …, <em>m</em>} \ {<em>q</em>}, four sizes ≥ 3,
-      correct total, and <em>S</em><sub>J</sub> ≥ L(<em>r</em>) + <em>r</em> for every proper group J, a partition exists.
-      Machine-true for <em>m</em> ≤ 15 (475,931 instances, CL440); hand proof open. With two holes and margin
-      2<em>r</em>: true for <em>m</em> ≤ 13; with margin <em>r</em>: false.</div>
+    <p>The repair is to ask for a little slack. Instead of letting a street sit right on the edge of its band, ask
+      every street and every group to clear the bottom of its band by one unit for each number it takes, as if the
+      missing number had been at the very bottom of the pool. Call that a <strong>margin</strong>. With a margin of
+      one, pinned streets like the one wanting 4 are ruled out, and the one-hole, four-street rule holds in every
+      town a computer has checked, nearly half a million of them. With two holes, a margin of two does the same.
+      GPT worked out exactly how much margin the crossing-off step leaves behind (MI362), and proved that the margin
+      survives when the tightest street is crossed off, whichever numbers it takes (MI368).</p>
+    <div class="exact"><span class="k">For the mathematician</span>P<sub>0</sub>: on {0, …, <em>m</em>} \ {<em>q</em>},
+      four sizes ≥ 3, correct total, and <em>S</em><sub>J</sub> ≥ L(<em>r</em>) + <em>r</em> for every proper group J, a
+      partition exists. Machine-true for <em>m</em> ≤ 15 (475,931 instances, CL440); hand proof open. With two holes
+      and margin 2<em>r</em>: true for <em>m</em> ≤ 13; with margin <em>r</em>: false.</div>
   </section>
 
   <section class="col" id="wall">
     <p class="chapter">9 · The wall</p>
-    <h2>Three holes, equal shares, and a known hard case</h2>
-    <p>Then the descent reaches three holes, and the margin stops being enough. The failures are rare, one in a
-      hundred thousand, and they all look the same: the streets want <em>equal</em> totals, and the pool has split
-      into two clumps. Here is the smallest. The pool is 0, 1, 2, 3 and 7, 8, 9, 10, 11; three streets take three
-      numbers each and each wants 17. A street holding two of the small numbers can reach at most 2 + 3 + 11 = 16,
-      so each street holds at most one small number. But there are four small numbers and only three streets.</p>
+    <h2>Three holes, equal shares, and a famous hard case</h2>
+    <p>So far so good: one hole, margin one; two holes, margin two. Then the crossing-off reaches three holes, and
+      the margin stops working. The failures are rare, about one town in a hundred thousand, and they all look
+      alike: the streets want <em>equal</em> totals, and the holes have split the pool into two clumps, a few small
+      numbers and a run of big ones. Here is the smallest. The pool is 0, 1, 2, 3 and then 7, 8, 9, 10, 11. Three
+      streets take three numbers each, and each wants 17.</p>
+    <p>Suppose a street takes two of the small numbers. The most it can reach is 2 + 3 + 11 = 16, one short of 17.
+      So every street takes at most one small number. But there are four small numbers and only three streets:
+      somebody has to take two. No sharing exists, and no amount of margin on the bands would have warned us. What
+      matters here is not how far each street is from its band but how the small numbers are spread out, which is a
+      different kind of counting altogether.</p>
     <figure>
       <div class="panel rel">
         <svg id="wallpic" viewBox="0 0 660 220" role="img" aria-label="Nine numbers in two clumps, 0 to 3 and 7 to 11; three streets each wanting 17; four small numbers cannot be spread over three streets at one each."></svg>
         <div class="tip" id="wall-tip"></div>
       </div>
-      <figcaption>Pigeonholes. Three streets wanting 17 each from two clumps: at most one small number per street,
-        and four small numbers. No margin on the bands sees this; counting the clumps does.</figcaption>
+      <figcaption>Pigeonholes. Three streets each wanting 17 from two clumps of numbers: at most one small number
+        per street, and four small numbers to place.</figcaption>
     </figure>
-    <p>Counting the clumps repairs some of these but not all; a few survive, always with equal totals and a tight
-      band. That is not an accident. Sharing a run of numbers into <em>equal</em> sums, with every share at least
-      three numbers, is a question the literature lists as open (Hoory and Kotlar, 2026). The descent from eight
-      streets, pushed far enough, lands on a thin disguise of that known open problem. This is where the theorem
-      road stands tonight: everything up to two holes is in hand, and the hard core beyond is recognisable.</p>
-    <div class="exact"><span class="k">Exact</span>Margin family T(<em>h</em>), three bins of sizes ≥ 3 and lower
-      margin <em>h</em>·<em>r</em>: zero failures for <em>h</em> ≤ 2 (269,874 instances, <em>M</em> ≤ 14); failures 1, 3, 5
-      at <em>h</em> = 3, 4, 5, all with equal targets. Adding the necessary count-capacity condition at every cut point
-      leaves 0, 2, 4. (CL443, 18 October 2026.) Hoory and Kotlar, <a href="https://arxiv.org/abs/2605.06071">On the equal sum
-      partition problem</a>, propose the minimum-size-3 equal-sum case as open.</div>
+    <p>Counting the clumps rescues some of these towns but not all. A few survive, always with equal totals and a
+      street squeezed tight against its band. That is not a coincidence. "Share a run of numbers into groups with
+      equal totals, every group having at least three numbers" is a question that mathematicians have asked on its
+      own, and it is still open (Hoory and Kotlar, 2026). The crossing-off plan, pushed far enough, lands on a thin
+      disguise of that known hard problem. This is the wall: everything up to two holes is in hand, and the hard
+      core beyond it has a name.</p>
+    <div class="exact"><span class="k">For the mathematician</span>Margin family T(<em>h</em>), three bins of sizes
+      ≥ 3 and lower margin <em>h</em>·<em>r</em>: zero failures for <em>h</em> ≤ 2 (269,874 instances, <em>M</em> ≤ 14);
+      failures 1, 3, 5 at <em>h</em> = 3, 4, 5, all with equal targets. Adding the necessary count-capacity condition
+      at every cut point leaves 0, 2, 4. (CL443, 18 October 2026.) Hoory and Kotlar,
+      <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a>, propose the minimum-size-3
+      equal-sum case as open.</div>
   </section>
 
   <section class="col" id="stand">
     <p class="chapter">10 · Where we stand, and what we need</p>
     <h2>Two roads to 68</h2>
-    <p><strong>The theorem road.</strong> Write the theorem that is actually true: the cut rule with margins and clump
-      counting suffices up to two holes, with an explicitly named family of exceptions beyond. Then show that the
-      real descent from eight streets never lands in the exceptional family. The pieces proved so far are the
-      rungs; the missing rung is a rule for choosing <em>which</em> set the tightest street takes so that the next
-      level stays inside the family. Half the time any choice works; the other half needs the mirror-image family,
-      and whether the two close on each other is one bounded test away.</p>
-    <p><strong>The certificate road.</strong> The reduction of section 5 says 64.8 million explicit sharings would
-      settle L<sub>8</sub> ≤ 68 outright, the way the 258,180 all-odd cases are already settled. A plain search takes
-      about 143 milliseconds per case; that is months on one core and days with a better solver on a modern laptop.
-      It is a computation the record has measured and not yet run.</p>
+    <p><strong>The rule road.</strong> Write down the rule that is actually true: the cut rule with margins and clump
+      counting works up to two holes, and beyond that there is a short, named list of exceptional shapes. Then show
+      that the crossing-off plan, started from a real eight-street town, never lands on an exceptional shape. The
+      pieces proved so far are the rungs of that ladder. The missing rung is a way of choosing <em>which</em>
+      numbers the tightest street takes, so that the next town down stays inside the rule. Half the time any choice
+      works; the other half needs the mirror-image rule, and whether the two fit together is the next thing to
+      test.</p>
+    <p><strong>The list road.</strong> Section 5 said 64.8 million towns would settle the question outright, the way
+      the 258,180 all-odd towns are already settled: find a sharing for each one and write it down. A plain
+      search takes about 143 milliseconds per town; that is months on one processor core, or days with a smarter
+      search on a modern laptop. It is a computation the record has measured and not yet run.</p>
     <h3>What would help</h3>
-    <p>A faster exact solver for "<em>c</em> numbers from a punctured run with a prescribed sum, eight times over";
-      eyes on the equal-sum core with holes; and, for the visual reader, pictures. Every obstruction on this page was
-      found by machine and only afterwards <em>seen</em>: the pinned set, the clumps, the pigeonholes. If a picture
-      makes you see the next one before the machine does, that is a contribution, and <a href="../join.html">here is
-      how to send it</a>.</p>
-    <div class="q"><span class="n">Status</span><span>L<sub>8</sub> = 68</span><span class="pill open">Open</span></div>
-    <div class="q"><span class="n">Done</span><span>Reduction to 64,787,844 cases; four-street and three-street
-      theorems; 258,180 certificates at 28 days.</span><span class="pill proved">Proved / certified</span></div>
-    <div class="q"><span class="n">Wall</span><span>Three holes with equal shares: the equal-sum partition problem
-      in disguise.</span><span class="pill measured">Identified</span></div>
+    <p>A faster exact search for "three numbers from a run with holes, adding to a given total, eight times over";
+      fresh eyes on the equal-shares problem with holes; and, for anyone who thinks in pictures, pictures. Every
+      obstruction on this page was found by a computer and only <em>afterwards</em> seen: the pinned street, the two
+      clumps, the pigeonholes. If a picture makes you see the next one before the computer does, that is a real
+      contribution, and <a href="../join.html">here is how to send it</a>.</p>
+    <div class="q"><span class="n">The question</span><span>Is 68 always enough for eight streets?</span><span class="pill open">Open</span></div>
+    <div class="q"><span class="n">Done</span><span>The list cut to 64,787,844 towns; the four-street and three-street
+      rules proved; 258,180 towns at 28 days settled.</span><span class="pill proved">Proved / certified</span></div>
+    <div class="q"><span class="n">The wall</span><span>Three holes with equal shares: a famous open problem in
+      disguise.</span><span class="pill measured">Identified</span></div>
   </section>
 
   <footer class="col">
@@ -433,8 +485,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       Path Forests</a>, DMTCS; Bonato, Janssen and Roshanbin, How to burn a graph (2016); Hoory and Kotlar,
       <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a> (2026); the project record:
       PROOFS.md G315 – G319, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL443.</p>
-    <p>The pictures on this page compute what they show, live, in your browser; the two 28-day tilings and the
-      impossibility of the 26-day example were found by complete search and are embedded. Page dated 18 October 2026.</p>
+    <p>The pictures on this page compute what they show, live, in your browser; the two 28-day towns and the
+      impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026.</p>
   </footer>
 </div>
 
@@ -454,47 +506,73 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
   // fire ramp by day of ignition: one hue, darkening with age (day 1 darkest, since it has burned longest)
   function fireColor(day, m) { var t = m <= 1 ? 0 : (day - 1) / (m - 1); var a = dark ? [196, 83, 42] : [163, 58, 20], b = dark ? [240, 150, 100] : [240, 120, 70]; return "rgb(" + Math.round(a[0] + (b[0] - a[0]) * t) + "," + Math.round(a[1] + (b[1] - a[1]) * t) + "," + Math.round(a[2] + (b[2] - a[2]) * t) + ")"; }
 
-  /* ---------- 1. the burning street ---------- */
+  /* ---------- 1. the burning street: little houses, little flames ---------- */
   (function () {
     var c = document.getElementById("burn"), x = c.getContext("2d");
     var play = document.getElementById("burn-play"), stepB = document.getElementById("burn-step"), reset = document.getElementById("burn-reset"), rng = document.getElementById("burn-m"), mv = document.getElementById("burn-mv"), nlab = document.getElementById("burn-n"), tally = document.getElementById("burn-tally");
-    var m = 6, N, lit, day, sub, running = !reduce, visible = true, timer = null;
+    var m = 6, N, lit, day, running = !reduce, visible = true, timer = null, raf = null, t0 = performance.now();
+    var paint = dark ? ["#3b4a5c", "#4a3f5c", "#3f5247", "#5c4a3b", "#4f4f3b"] : ["#F7E6C4", "#D9E8F5", "#DFEFD8", "#F5D9D0", "#EDE3F7"];
+    var roofs = dark ? ["#6b4a3a", "#5a5a6b", "#4a6b5a"] : ["#B5604A", "#5B6B8A", "#6B8A5B"];
     function sources() { var s = [], pos = 0; for (var d = 1; d <= m; d++) { var len = 2 * (m - d) + 1; s.push(pos + (m - d)); pos += len; } return s; }
-    function init() { N = m * m; lit = new Array(N).fill(0); day = 0; sub = 0; nlab.textContent = N + " houses"; draw(); }
+    function init() { N = m * m; lit = new Array(N).fill(0); day = 0; nlab.textContent = N + " houses"; draw(); }
     function advance() {
       if (day >= m) return;
-      // spread: every burning house lights its neighbours, then light the new source
       var next = lit.slice();
       for (var i = 0; i < N; i++) if (lit[i]) { if (i > 0 && !next[i - 1]) next[i - 1] = lit[i]; if (i + 1 < N && !next[i + 1]) next[i + 1] = lit[i]; }
       lit = next; day++; var s = sources()[day - 1]; if (!lit[s]) lit[s] = day;
       draw();
     }
-    function draw() {
-      var W = c.width, H = c.height; x.fillStyle = v("--panel"); x.fillRect(0, 0, W, H);
-      var pad = 16, w = (W - 2 * pad) / N, gap = Math.min(2, w * 0.15), hh = 60, y0 = 50;
-      for (var i = 0; i < N; i++) {
-        var X = pad + i * w; x.fillStyle = lit[i] ? fireColor(lit[i], m) : (dark ? "#2a2f33" : "#D8DCD4");
-        x.fillRect(X + gap / 2, y0, w - gap, hh);
-        // roof
-        x.beginPath(); x.moveTo(X + gap / 2, y0); x.lineTo(X + w / 2, y0 - Math.min(14, w * 0.5)); x.lineTo(X + w - gap / 2, y0); x.closePath(); x.fillStyle = lit[i] ? fireColor(lit[i], m) : (dark ? "#3a4045" : "#C3C8BE"); x.fill();
-      }
-      // thin separators between the day stretches, once both sides are lit
-      var pos = 0; x.fillStyle = v("--panel");
-      for (var d0 = 1; d0 < m; d0++) { pos += 2 * (m - d0) + 1; if (lit[pos - 1] && lit[pos]) x.fillRect(pad + pos * w - 1.5, y0 - 16, 3, hh + 16); }
-      // day markers under the sources
-      var s = sources(); x.font = "12px " + v("--font-mono"); x.fillStyle = v("--ink-soft"); x.textAlign = "center";
-      for (var d = 0; d < m; d++) { var X2 = pad + (s[d] + 0.5) * w; if (d < day) { x.fillText("day " + (d + 1), X2, y0 + hh + 18); x.fillRect(X2 - 0.5, y0 + hh + 2, 1, 6); } }
-      var burning = lit.filter(Boolean).length;
-      tally.textContent = day === 0 ? "Press play, or step. The fire you light on day d has reached " + "2·(m − d) + 1 houses by day m." : "Day " + day + " of " + m + ": " + burning + " of " + N + " houses burning" + (day === m ? ". Done: " + m + "² = " + N + "." : ".");
+    function flame(cx, base, w, h, phase) {
+      // a little teardrop flame with a yellow heart; phase wobbles it
+      var wob = Math.sin(phase) * w * 0.12, hh = h * (1 + 0.1 * Math.sin(phase * 1.7));
+      x.beginPath(); x.moveTo(cx - w / 2, base); x.bezierCurveTo(cx - w / 2, base - hh * 0.55, cx - w * 0.15 + wob, base - hh * 0.75, cx + wob * 0.5, base - hh);
+      x.bezierCurveTo(cx + w * 0.25 + wob, base - hh * 0.7, cx + w / 2, base - hh * 0.5, cx + w / 2, base); x.closePath(); x.fillStyle = v("--fire"); x.fill();
+      x.beginPath(); x.moveTo(cx - w * 0.22, base); x.bezierCurveTo(cx - w * 0.22, base - hh * 0.3, cx - w * 0.05 + wob * 0.5, base - hh * 0.4, cx + wob * 0.3, base - hh * 0.55);
+      x.bezierCurveTo(cx + w * 0.12 + wob * 0.5, base - hh * 0.38, cx + w * 0.22, base - hh * 0.28, cx + w * 0.22, base); x.closePath(); x.fillStyle = "#F4B942"; x.fill();
     }
-    function tick() { if (!running || !visible) return; if (day >= m) { timer = setTimeout(function () { init(); tick(); }, 2200); return; } advance(); timer = setTimeout(tick, 900); }
+    function draw(now) {
+      now = now || performance.now(); var ph = (now - t0) / 1000;
+      var W = c.width, H = c.height; x.fillStyle = v("--panel"); x.fillRect(0, 0, W, H);
+      var pad = 16, w = (W - 2 * pad) / N, gap = Math.max(1, w * 0.12), ground = H - 44, hh = Math.min(64, w * 1.6), roofH = Math.min(26, w * 0.7);
+      // ground
+      x.fillStyle = dark ? "#2f4a33" : "#CFE3C4"; x.fillRect(0, ground, W, 8);
+      for (var i = 0; i < N; i++) {
+        var X = pad + i * w + gap / 2, bw = w - gap, age = lit[i] ? day - lit[i] : -1; // age: days since ignition (0 = lit today)
+        var body = lit[i] ? (age >= 2 ? (dark ? "#2a2522" : "#4A3F3A") : age === 1 ? (dark ? "#5a3a2a" : "#8C5A45") : paint[i % paint.length]) : paint[i % paint.length];
+        var roof = lit[i] && age >= 1 ? (dark ? "#2a2522" : "#4A3F3A") : roofs[i % roofs.length];
+        x.fillStyle = body; x.fillRect(X, ground - hh, bw, hh);
+        // roof
+        x.beginPath(); x.moveTo(X - gap * 0.6, ground - hh); x.lineTo(X + bw / 2, ground - hh - roofH); x.lineTo(X + bw + gap * 0.6, ground - hh); x.closePath(); x.fillStyle = roof; x.fill();
+        if (bw > 9) { // door and window
+          x.fillStyle = lit[i] && age >= 1 ? (dark ? "#1a1716" : "#2a2320") : (dark ? "#2a2f33" : "#7A6A5A"); x.fillRect(X + bw * 0.38, ground - hh * 0.45, bw * 0.24, hh * 0.45);
+          x.fillStyle = lit[i] ? (age >= 2 ? "#2a2320" : "#F4B942") : (dark ? "#9bb7d4" : "#FFFFFF"); x.fillRect(X + bw * 0.16, ground - hh * 0.8, bw * 0.22, bw * 0.22); x.fillRect(X + bw * 0.62, ground - hh * 0.8, bw * 0.22, bw * 0.22);
+        }
+        if (lit[i]) {
+          var fw = Math.min(bw * 0.9, 34), fh = (age === 0 ? 1.1 : age === 1 ? 1.4 : 0.9) * Math.min(hh, 46);
+          flame(X + bw / 2, ground - hh - roofH * 0.6, fw, fh, ph * 6 + i * 1.3);
+          if (bw > 14) flame(X + bw * 0.25, ground - hh * 0.5, fw * 0.5, fh * 0.5, ph * 7 + i * 2.1);
+          // smoke
+          if (age >= 1 && bw > 9) { x.fillStyle = dark ? "rgba(180,180,180,0.25)" : "rgba(90,90,90,0.22)"; for (var k = 0; k < 3; k++) { var sy = ground - hh - roofH - fh - 6 - k * 10 - ((ph * 12 + i * 5) % 10), sx = X + bw / 2 + Math.sin(ph * 2 + k + i) * 5; x.beginPath(); x.arc(sx, sy, 3 + k * 1.2, 0, 6.3); x.fill(); } }
+        }
+      }
+      // day labels under the fires
+      var s = sources(); x.font = "12px " + v("--font-mono"); x.fillStyle = v("--ink-soft"); x.textAlign = "center";
+      for (var d = 0; d < m; d++) { var X2 = pad + (s[d] + 0.5) * w; if (d < day) { x.fillText("day " + (d + 1), X2, ground + 24); x.fillRect(X2 - 0.5, ground + 9, 1, 6); } }
+      // thin separators between finished stretches
+      var pos = 0; x.fillStyle = v("--panel");
+      for (var d0 = 1; d0 < m; d0++) { pos += 2 * (m - d0) + 1; if (lit[pos - 1] && lit[pos]) x.fillRect(pad + pos * w - 1.5, ground - hh - roofH - 4, 3, hh + roofH + 4); }
+      var burning = lit.filter(Boolean).length;
+      tally.textContent = day === 0 ? "A quiet street of " + N + " houses. Press \"Next day\" to strike the first match." : "Day " + day + " of " + m + ": " + burning + " of " + N + " houses burning or burned" + (day === m ? ". The whole street: " + m + " × " + m + " = " + N + "." : ".");
+    }
+    function loop(now) { if (!visible || reduce) return; draw(now); raf = requestAnimationFrame(loop); }
+    function tick() { if (!running || !visible) return; if (day >= m) { timer = setTimeout(function () { init(); tick(); }, 2600); return; } advance(); timer = setTimeout(tick, 1000); }
     play.addEventListener("click", function () { running = !running; play.textContent = running ? "Pause" : "Play"; if (running) tick(); else clearTimeout(timer); });
     stepB.addEventListener("click", function () { running = false; play.textContent = "Play"; clearTimeout(timer); if (day >= m) init(); else advance(); });
     reset.addEventListener("click", function () { clearTimeout(timer); init(); if (running) tick(); });
     rng.addEventListener("input", function () { m = +rng.value; mv.textContent = m; clearTimeout(timer); init(); if (running) tick(); });
-    onScreen(c, function (vis) { visible = vis; if (vis && running) { clearTimeout(timer); tick(); } });
+    onScreen(c, function (vis) { visible = vis; if (vis) { if (running) { clearTimeout(timer); tick(); } if (!reduce) { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); } } else { cancelAnimationFrame(raf); } });
     if (reduce) { play.textContent = "Play"; }
-    init(); if (running) tick();
+    init(); if (running) tick(); if (!reduce) raf = requestAnimationFrame(loop);
   })();
 
   /* ---------- 1b. the gnomon square ---------- */
@@ -543,7 +621,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       // the stock of 28 planks, all used
       var y = y0 + 8 * rowH + 20; txt(16, y + 14, "planks", { "font-size": 13, fill: v("--ink-soft") }, s);
       var X = left; for (var p = 1; p <= 55; p += 2) { var w = p * (W - left - right) / 784; el("rect", { x: X + 1, y: y, width: Math.max(1, w - 2), height: 18, rx: 3, fill: v("--ash") }, s); if (w > 20) txt(X + w / 2, y + 13, String(p), { "text-anchor": "middle", "font-size": 10, fill: "#fff" }, s); X += w; }
-      txt(16, y + 40, "28 days: one plank of each odd length 1 … 55, total 784 = 28².  Four colours only mark the row; the labels carry the facts.", { "font-size": 12, fill: v("--ink-soft") }, s);
+      txt(16, y + 40, "28 matches, 28 planks: one of each odd length from 1 to 55, adding up to 784 = 28 × 28. The colours just tell the rows apart; the numbers are what matter.", { "font-size": 12, fill: v("--ink-soft") }, s);
     }
     draw(0);
     Array.prototype.forEach.call(s.parentNode.querySelectorAll("button[data-ex]"), function (b) { b.addEventListener("click", function () { Array.prototype.forEach.call(s.parentNode.querySelectorAll("button[data-ex]"), function (o) { o.setAttribute("aria-pressed", "false"); }); b.setAttribute("aria-pressed", "true"); draw(+b.dataset.ex); }); });
@@ -587,7 +665,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       if (d[1] > 1e6) txt(x + bw * 0.3, y - 8, (d[1] / 1e6).toFixed(1) + "M", { "text-anchor": "middle", "font-size": 11, fill: v("--ink") }, s);
       r.addEventListener("mousemove", function (ev) { tipOn(tip, s.parentNode, ev, d[0] + " days: " + d[1].toLocaleString() + " cases"); }); r.addEventListener("mouseleave", function () { tipOff(tip); });
     });
-    txt(left, 14, "cases needing a direct check, by number of days (total 64,787,844)", { "font-size": 12, fill: v("--ink-soft") }, s);
+    txt(left, 14, "towns that must be checked directly, by number of days (64,787,844 in all)", { "font-size": 12, fill: v("--ink-soft") }, s);
     var b = document.getElementById("pile-table"), t = document.getElementById("pile-sr");
     b.addEventListener("click", function () { var on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); t.classList.toggle("on", on); b.textContent = on ? "Hide the table" : "Show as a table"; });
   })();
@@ -629,7 +707,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     }
     var rows = [["wants 4", "only {0, 1, 3} adds to 4 without using 6", cols[1]], ["wants 32", "only {9, 11, 12} adds to 32", cols[4]], ["wants 18, twice", "left: 2, 4, 5, 7, 8, 10; no three of them add to 18", v("--open")]];
     rows.forEach(function (rw, i) { var y = oy + 70 + i * 40; el("rect", { x: ox, y: y - 14, width: 12, height: 12, rx: 3, fill: rw[2] }, s); txt(ox + 20, y - 3, rw[0], { "font-size": 13, fill: v("--ink") }, s); txt(ox + 150, y - 3, rw[1], { "font-size": 12.5, fill: v("--ink") }, s); });
-    txt(ox, oy + 205, "Every group sits inside its band, yet there is no sharing.", { "font-size": 12.5, fill: v("--ink-soft") }, s);
+    txt(ox, oy + 205, "Every street and every group sits inside its band, yet there is no way to share.", { "font-size": 12.5, fill: v("--ink-soft") }, s);
   })();
 
   /* ---------- 9. the wall ---------- */
