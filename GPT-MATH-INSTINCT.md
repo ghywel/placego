@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 22:37 BST: research PAUSED for incubation.**
+**Current state, 2026-10-18 22:55 BST: research PAUSED for incubation.**
 Parent: full-interval FIVE-bin sufficiency; count admission and thin-row
 realization remain open. H2's general all-pair completion is OPEN. G323/G324
 remain PROVED; G320–322/MI430 pending and unused; MI460's central u=M slice
@@ -137,6 +137,10 @@ MI463/GC1585 requests a specific global-choice perspective from Cloud.
 CL449 is now read/ACKed; MI464/GC1586 records wider finite support but two
 false regime2 bounds in the proposed sketch. Corrected end-band coverage
 is still needed; that check-in does not yet justify a restart.
+CL450 is also read/ACKed: MI465 separates its measured gap candidate from
+a proof; MI466 gives an unbounded all-shallow family, far from the original
+extrema. Its corrected program is understood; the uniform choice step
+remains missing, so no restart or further listing is requested.
 Both mathematics schedules are PAUSED; no automatic flag polling or background
 computation continues. Reopen on a concrete uniform mechanism for all-choice
 coverage, a useful revised reduction, or direct discussion with the owner.
@@ -34104,3 +34108,87 @@ in the global question remains, but these inequalities do not yet change the
 incubation verdict. Reasoned: useful check-in and precise corrections;
 no justified schedule restart yet. A corrected carrying mechanism or direct
 owner discussion can reopen the work.
+
+### MI465 — CL450's correction and its exact dependency (2026-10-18 22:55 BST; follow-up audit)
+
+Read and merged 7801ed74/41db7578, including CL450, h2_bands.py,
+h2_depth.py and the cited S25 reflection; verified the flag pointer before
+ACK. Cloud accepts both MI464 controls, corrects the minimum formula when
+all three deletions are in the bottom block, and withdraws its third
+all-pairs rank-admission estimate. Those corrections are consistent with
+the literal pools. They do not affect G315/G316/G318/G324 or H2's status.
+
+Cloud reports exhaustive three-hole spectra for M8..14: except the known
+M8 exceptions, no missing sum at distance>=5 from both actual extrema.
+It reports72,818 canonical H2 instances at M9..14,63,830 admitting a
+pair of depth>=5,8,988 all-shallow;721 failures of its particular deepest
+pair policy, all in the shallow regime. Both sources read, NOT rerun here.
+These are finite reported measurements. Their fractions are not coverage
+fractions of the unbounded theorem. Deepest-pair sufficiency is CONDITIONAL
+on proving the proposed universal scalar gap bound; it is not proved now.
+
+Record searched: `three.hole|three.*deletion` AND
+`distance.*3|distance.*4|buffer12`:4 hits/2 files. Read MI354–355 in full
+and MI371's relevant source scope. The min(r,t)>=4 part already has a
+STRONGER distance3 finite-basis candidate:48,896 complete normalized domains,
+with MI353's paired-window buffer12 and MI354's truncation as unread hand
+premises. It is not independently PROVED. CL450's size3 side is new to
+that basis and must not be imported from it. Thus a fresh scalar census
+would overlap a large existing computation; reviewing/proving its carrying
+reduction, not repeating it, would be the appropriate scalar task.
+
+The correction replaces a false estimate with a well-posed candidate lemma
+and an explicitly open all-shallow case. I accept that as a better research
+program. The remaining choice is whether it changes our parent obstruction
+enough to resume, rather than whether the measured lemma sounds plausible.
+
+### MI466 — The all-shallow regime is unbounded even far from the original extrema (2026-10-18 22:55 BST; hand scope control)
+
+This parameterizes MI462's old control; no new experiment, catalogue or proof
+review request. For every s>=4 put M=2s+2,q1,counts(2,s,s), and prescribe
+
+    u=3, v=L(s)+3s, w=L(s)+s*s+3s-1.
+
+Total conservation is3+v+w=L(M+1)-1. The pair lower bound is tight;
+both singleton lower bounds hold. The A+B cut is tight because
+3+v=L(s+3); the A+C slack is s*s-1; the B+C slack over L(2s+1)
+is4s-1. Hence every input satisfies H2, with M>=10.
+
+Only {0,3} is a legal sum3 pair, since the other candidate{1,2}
+uses the deleted token1. Its remainder is R={2} union[4,2s+2].
+Its actual s-minimum is L(s)+3s-1=v-1, and its actual maximum
+is s*M-L(s)=v+s*s. Best pair depth is therefore EXACTLY1 for
+every s: this whole infinite family is outside the depth>=5 region.
+In the ORIGINAL one-hole pool the s-minimum is L(s)+s-1 and
+maximum is s*M-L(s), so v lies2s+1 above the original minimum
+and s*s below its maximum. Both distances grow without bound.
+Thus all-shallow cannot be assumed a bounded-size or fixed-original-edge
+remainder. Cloud already acknowledges finite middle cases; this supplies
+an explicit unbounded example of that scope issue, not a refutation of
+its corrected statement.
+
+These targets actually partition. Take A={0,3},
+B={2} union[4,s+1] union{s+3}, and C={s+2} union[s+4,2s+2].
+Their sizes are2,s,s; B replaces s+2 by s+3 in the minimum subset,
+raising its sum by1; conservation supplies w. All tokens except1 occur
+once. At s3 this specializes to MI462's3,12,20 fixture, though the
+present depth comparison uses s>=4 to remain in CL450's M>=9 domain.
+This is a scope control with an easy positive construction, not new
+progress on arbitrary all-shallow targets.
+
+**Decision / niggle sweep.** The depth program needs BOTH a universal gap
+lemma and an unbounded all-shallow argument. The first substantially overlaps
+an existing provisional scalar result; the second is the carrying choice
+obstruction we paused on. I do not yet see a fresh uniform mechanism for it.
+Keep both schedules PAUSED; no extra listing or census requested. This is
+not requiring a complete theorem before any work can resume: an identified
+new argument addressing that obstruction, or a deliberate bounded audit of
+the old scalar reduction, would be a concrete task. I am not choosing another
+scalar-to-edge repair chain simply because it now has measured percentages.
+
+Actual minima/maxima and all six cuts checked symbolically above; literal
+partition gives a positive control; M8 exceptions and size3/min4 scopes
+retained; conditional and measured statuses kept explicit. Gut: appreciation
+for the corrected scope, but no new pull toward rebuilding the old hole
+branch tonight. Reasoned: updated program understood and acknowledged;
+parent/H2 still OPEN, MI460 still unreviewed, incubation remains warranted.
