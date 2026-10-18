@@ -124,26 +124,23 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 19:46 BST:research heartbeat PAUSED for incubation.**
-Parent:full-interval FIVE-bin prescribed-size/sum sufficiency;P_0 is its
-protected one-hole FOUR-bin branch. B232 produced G323/MI445,a complete
-unreviewed construction for(a,1,1,1)/(0,k,k,k),using verified MI295;
-Cloud's carrying read requested at66a6e656. B233/MI447 tests admission:
-S=[0,4r] minus2r,four size-r targets2r^2,forces EVERY bin to cross the
-hole. The family is explicitly partitioned and lifts to actual five-bin
-least-slack descendants;its adjusted minimum is on triples only.
-Thus no universal one-sided-bin selector can cover the parent. G323 is
-not refuted;its applicability is limited. General P_0/five-bin remain OPEN.
-Latest trajectory check MI447/B233;extra diagnostic allowance SPENT.
-No specific four-crossing allocation mechanism currently identified.
-Incubate instead of extending one-sided cases or enlarging the census.
-Reopen on a concrete discriminating test for joint four-crossing allocation,
-a promising different representation/problem,or owner steering. Routine
-G323 approval alone is not the missing parent-admission argument.
-G320-322 and MI430 keep their pending status and are unused. Both saved
-maths schedules are PAUSED;no automatic flag poll or computation runs.
-Cloud receives the committed perspective question GC1577 through the
-portal. Latest incoming CL444-445 verified/read/ACKed;no new flags this wake.
+**Current state, 2026-10-18 20:51 BST: research heartbeat ACTIVE every 13 minutes.**
+Parent: full-interval FIVE-bin prescribed-size/sum sufficiency; P_0 is its
+protected one-hole FOUR-bin branch. General count admission and thin-row
+realization remain unresolved. Cloud CL446/a33d8bff is verified, read and ACKed:
+G323 is now PROVED in scope. MI448 confirms the general integer rank-splitting
+step from a primary source; all per-side counts at least three then use G316.
+MI449/G324 is a new complete hand candidate for one singleton count with all
+seven other counts at least three, using G315/G316 and a two-direction repair.
+It is not independently verified and is not a universal count selector.
+G320–322 and MI430 remain pending and are unused here. The MI447 one-sided
+selector failure stands. No new computation is running.
+Latest trajectory check: MI448/B234; the previous diagnostic allowance was
+spent, not renewed. The new mechanism is row repair with a proved legal sign,
+not another one-sided extension. Next cheap test: determine whether a singleton
+row repair can be replaced by a similarly bounded mechanism for one size-two
+count; first audit the scalar and joint obstruction, without enlarging a census
+or relying on G324 as verified. The older research schedule remains PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -33105,3 +33102,93 @@ no missing parent hypothesis is silently discarded. No experiment,probe,
 new PROOFS entry,status promotion or duplicate carrying-review request.
 Record's second search had86 broad hits/19 files;no claim to have read
 all hits or established novelty. The derivation above is self-contained.
+
+
+### MI448 — Cloud's carrying read and the known integer split (2026-10-18 20:51 BST; B234)
+
+CL446/a33d8bff was fetched, read in full and ACKed after verification. Cloud's
+independent carrying read promotes G323 to **PROVED in its stated scope**;
+its reported 96,360 support cases are not a GPT rerun. The original MI445
+candidate text remains historical. No other pending proof is promoted.
+
+The useful new perspective is that integer rank splitting is already known.
+Read Fujishige's primary *Submodularity and Discrete Convexity* slides (2012),
+PDF page 22, discrete separation with integrality; read scope and URL are in
+PRIOR-ART.md. For arbitrary nonnegative fixed counts l_i,k_i totaling P,Q,
+put f(J)=U_P(l_J) and g(J)=v_J-U_Q(k_J). They are respectively integer
+submodular and supermodular. Combined upper group bounds say f>=g; equality
+on the whole set fixes the total. The known theorem yields integer s with
+g<=s<=f; t=v-s satisfies the second row's upper cuts. Complements supply
+both lower cuts. This confirms the split for ANY number of bins, including
+zero counts, without importing a remembered g-polymatroid intersection formula.
+
+**Known-theorem corollary:** four bins with EVERY per-side count at least three
+are realizable by applying verified G316 to both split rows. No new review job
+for this composition. This removes a representation-level uncertainty, but
+Cloud's “everything after that is theorems” still needs the thin-row repairs
+outside this regime. Count selection remains separate. Cloud's SPLIT run was
+in progress at CL446; no completion is assumed and no duplicate run is needed.
+
+**Trajectory check.** Parent: five-bin sufficiency through P_0. Actual change:
+the general integer split is source-backed; physical realization is now isolated
+at thin counts. Repeated failed assumption: a universal one-sided selector remains
+refuted by MI447. Dependency risk: the next repair uses only known separation and
+PROVED G315/G316, not G320–322 or MI430. Decision: resume a bounded hand repair,
+not a larger census. The 13-minute schedule was restarted with its existing prompt;
+the older schedule stays paused. This is a new mechanism, not renewal of B232's
+spent extra-test allowance or resumption solely because G323 was approved.
+
+Record searched: polymatroid|rank.split|thin with G316|MI442|intersection|integral;
+then singleton|thin|one.token with repair|G315|G316. Relevant reads: MI442,
+CL446, FOUR-BIN-PARTITIONS.md Lemma 2 and Theorems A/B, and the sources below.
+The broad search is a record orientation, not a claim that every hit was read.
+
+### MI449 — One singleton row admits repair in either direction (2026-10-18 20:51 BST; B234)
+
+**Initial signal, recorded retrospectively from this turn.** The attraction was
+specific: the one-hole spectrum has isolated omissions, so perhaps the singleton
+can move either way while the other row chooses which sign it can afford. Unease:
+fixing one scalar omission could simply create another or break a group cut.
+This capture is not a preregistration and no experiment was run.
+
+**Question and result.** Two labelled intervals, four fixed-count bins: first row
+(1,b,c,d) with b,c,d>=3, second row all counts>=3. Do combined group rank bounds
+suffice? **Complete hand candidate G324**, filed with every carrying step in
+PROOFS.md; independent review pending and novelty UNASSESSED. This is a specific
+thin-count family. It does not establish count admission for P_0.
+
+The integer split comes from MI448. If first-row A takes x and its row is not
+realizable, G315 and the exact one-hole scalar spectrum force an offending bin B
+of size b with x=b, s_B=L(b)+1, or its reflected upper-edge version. Both vectors
+s+e_A-e_B and s-e_A+e_B remain rank feasible AND become physically realizable.
+For the first sign, a decreasing group containing B has slack one if it is B
+alone, otherwise at least R-b>=3 by its cut with A. For the other sign, a
+remaining decreasing group has slack at least bR-1>=2 by its cut with B.
+The old B+C cut bars a new lower omission in C; its upper omission would require
+the new hole b+/-1 to equal b+d, impossible at d>=3. B's own targets move to
+L(b) or L(b)+2, clear of both edge omissions. Reflection handles the upper case.
+
+The high-row rank function has strict submodular gap
+k_(X minus Y)*k_(Y minus X)>0 on incomparable groups. Two tight cuts therefore
+cannot separately block the two opposite unit transfers between A and B.
+One sign is legal; pair it with the opposite first-row repair and use G316
+on the high row. The proof uses neither G319 nor any currently pending candidate.
+
+**Niggle sweep and hand checks.** Is the move only scalar-feasible? No: every
+decreasing group cut is checked above before G315 is invoked. Can the legal sign
+leave the other row unrealizable? G316 applies because all four counts there are
+at least three. Does reflection assume protected-parent invariance? No: it proves
+a local row lemma only. The explicit G324 control has one sign blocked and the
+other sign realized by disjoint literal partitions. Unexpected scope check:
+a zero high count can block both directions; the strict-submodularity argument
+correctly loses strictness there. No zero-count or size-two extension is claimed.
+
+**What changed:** a uniform one-singleton repair, not another confined-bin case.
+**Unresolved:** size-two/multiple thin rows and the parent count selector.
+**Gut:** the two legal first-row signs are the part that draws attention; there is
+no need to call the whole problem warm. **Reasoned:** the new candidate is short,
+uses reviewed dependencies and changes the obstruction, but parent coverage is
+conditional on selecting its count pattern. Next cheap test: inspect one size-two
+row's obstruction and whether either sign has an analogous repair; do not start
+with more enumeration. Cloud receives one carrying-review request for G324;
+work need not halt for routine review.

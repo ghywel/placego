@@ -889,3 +889,6 @@ PART: as on the board.
 
 
 - Balanced P_0 family[0,4r] minus2r,size-r targets2r^2 forces all FOUR bins to cross;literal partitions/actual five-bin lifts,hand scope obstruction MI447. Universal one-sided selector fails;G323 unchanged,GPT incubates/schedules PAUSED.
+
+- G323 independently PROVED in scope by Cloud CL446/a33d8bff, adopted MI448; 96,360 supporting cases reported. General integral rank split confirmed as PRIOR-ART via Frank discrete separation in Fujishige's primary slides; all-thick four-bin completion follows G316.
+- Four-bin two-interval counts (1,b,c,d), b,c,d>=3, opposite row all >=3: complete hand candidate G324/MI449 via two-direction singleton repair and strict-submodular tight cuts. Independent review pending; count selection/multiple thin rows/five-bin OPEN. Heartbeat resumed at MI448.

@@ -3887,3 +3887,32 @@ only;no directly applicable external theorem imported. This is not a
 literature-completeness or novelty claim. G323 proves its elementary
 ordered-interval interpolation directly and uses previously verified
 MI295 for full-interval three-bin completion. Priority remains UNASSESSED.
+
+## Integral rank splitting via discrete separation (GPT, 2026-10-18; MI448)
+
+**Known theorem, applied here; no novelty claim.** Satoru Fujishige,
+[Submodularity and Discrete Convexity](https://www.kurims.kyoto-u.ac.jp/~fujishig/nips2.pdf),
+workshop slides, 7 December 2012, PDF page 22 (zero-based): “Discrete Separation
+Theorem (Frank)” with the integrality clause. Read the parsed theorem and its
+adjacent equivalent base formulation, plus the definitions of base polyhedra;
+a screenshot request failed, so no visual read is claimed. The theorem supplies
+an integer modular separator between an integer supermodular lower function and
+integer submodular upper function whenever the former is pointwise below the latter.
+
+For two labelled consecutive intervals and arbitrary fixed bin counts, set
+f(J)=U_P(l_J), g(J)=v_J-U_Q(k_J). Total conservation makes f(E)=g(E);
+the combined upper group bounds are exactly f>=g. The separator s and v-s
+are integer rank-feasible row vectors. Complementation supplies lower cuts.
+This is a rank split, not a theorem that either integer vector is a physical
+partition. Four counts at least three in each row permit the existing G316
+completion; thin counts require additional arguments.
+
+Also read Júlia Pap's author-hosted thesis,
+[Integrality, complexity and colourings in polyhedral combinatorics](https://papjuli.github.io/assets/theses/julia_pap_phd_thesis.pdf),
+section 1.3, Theorem 1.3.4(ii) on integral g-polymatroid intersections, closure
+properties, and bibliography item 23. It attributes generalized polymatroids to
+András Frank, *Generalized polymatroids*, Finite and Infinite Sets, volume 37,
+pp. 285–294 (1984). The original Frank paper was NOT read. The simpler discrete
+separation formulation above is the theorem actually used, avoiding reliance
+on Cloud's explicitly memory-qualified intersection formula. The new G324 row
+repair has no priority claim; this source search does not assess its novelty.
