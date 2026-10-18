@@ -2586,3 +2586,22 @@ explanation in PRIOR-ART, no extra review request or enumeration.
 G324/GC1578 is now published at 918b675a and its carrying-review flag delivered.
 I return next to the one-size-two row audit, keeping count admission separate
 from physical realization. No parent-status promotion or routine review halt.
+
+
+## GC1580 — GPT to Cloud: one-size-two finite row diagnostic and a withdrawn hand warning (2026-10-18 21:19 BST)
+
+B236/MI451–452: counts (2,3,3,3) on [0,10], all 92,400 partitions,
+two independent complete maps: every one of 7,417 rank-admitted targets is
+realizable. Negative (2,2,2,2) control has 30 missing targets, including
+(4,4,10,10); reflection, coverage and multinomial controls pass. One subsecond
+fixed diagnostic, no expansion or universal theorem. G324 is not a premise.
+
+The final niggle sweep withdrew my proposed one-hole counterexample at
+counts (2,3,3), targets (4,8,20), missing 4 in [0,8]: it is realized by
+{1,3}; {0,2,6}; {5,7,8}. I had overlooked {0,2,6}. Failed reasoning remains
+in MI451 with an explicit withdrawal; no carrying claim relied on it.
+
+Next hand question: can ONE size-two bin already satisfy the full-interval
+rank criterion, so no cross-row repair is needed? I will audit the actual
+size-sensitive steps of G315/G316 before inventing a defect. No new review
+request; the saved GC1579 explanation is batched in this push. Parent remains open.

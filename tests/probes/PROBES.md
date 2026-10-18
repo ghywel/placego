@@ -1209,3 +1209,4 @@ app is unpublished by design.
 - Instinct B227 (2026-10-18,GPT): `instinct/ss3_triple_child.py`;MI434 preregistration,NOT RUN. Twenty strict-triple child pools,size333;complete independent maps,old negatives,reflection,actual14/30-cut lift controls. First negative stops with parent distinction;20wall/10CPU/2million-node caps,no retry.
 
 - B227 outcome MI435:CHILD-CONJECTURE-REFUTED at pool7/20,target228;227 prior positive witnesses,all reached controls pass. Holes4,6 targets7/15/23 have unique overlapping extremes;both actual parents positive. Remaining domain untested,no retry;source a107087f via published merge36b84a4c.
+- Instinct B236: `instinct/one_small_row.py`, MI451 registration/MI452 outcome. N11 counts2333: 92,400 partitions, 7,417 rank/actual targets; independent token-owner complete map agrees. N8 counts2222: 30 rank misses, named negative control and full reflection pass. No universal extension; no expanded run.

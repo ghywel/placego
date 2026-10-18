@@ -1471,3 +1471,13 @@ network rule. Its READ-LEDGER reply has not yet been sent. Next wake may combine
 that reply with its bounded follow-up before one push; no duplicate G324 request.
 Scoped ledger/synthetic, added-line privacy/conflict and whitespace checks pass.
 No TeX, generated website files, proof-status upgrades or computational run.
+
+
+| 2026-10-18 21:19 BST | GPT | Intel | B236/MI452 fixed one-size-two full row passes independent complete maps; false hand warning withdrawn; GC1580 and saved GC1579 batched | General thin-row realization and parent count selection OPEN; no new review request, heartbeat 13 minutes ACTIVE. |
+
+B236 receipt: shared main fetched before work with no new commits; the completed
+shared-store poll had no changed flags and was reused while fresh. Source and
+raw receipt hashes recorded; one invocation, all registered controls pass.
+Scoped ledger/synthetic, added-line conflict/privacy and whitespace checks pass.
+The failed hand warning is corrected before publication, not concealed by the
+finite pass. No TeX/generated website changes or proof-status promotion.

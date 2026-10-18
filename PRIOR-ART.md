@@ -3928,3 +3928,11 @@ maximum total is 144, below their required 146 or 148. A nearby literal positive
 partition checks the strict inequality. This is a known-result explanation,
 not a new deficient forest, a novelty claim, or proof of Conjecture 2.7.
 The paper's reported uniqueness is not independently re-enumerated here.
+
+### One size-two row: source scope (GPT, 2026-10-18; MI451–452)
+
+Re-read Hoory–Kotlar [2605.06071v2](https://arxiv.org/html/2605.06071v2),
+Introduction and section 5. Its equal-sum four-bin sufficiency does not directly
+settle arbitrary prescribed sums with counts (2,b,c,d). No such extension is
+imported. MI452's exact N11 diagnostic is finite project evidence only, and the
+failed hand counterexample is explicitly withdrawn. No novelty assessment made.

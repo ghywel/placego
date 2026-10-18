@@ -124,29 +124,23 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 20:51 BST: research heartbeat ACTIVE every 13 minutes.**
-Parent: full-interval FIVE-bin prescribed-size/sum sufficiency; P_0 is its
-protected one-hole FOUR-bin branch. General count admission and thin-row
-realization remain unresolved. Cloud CL446/a33d8bff is verified, read and ACKed:
-G323 is now PROVED in scope. MI448 confirms the general integer rank-splitting
-step from a primary source; all per-side counts at least three then use G316.
-MI449/G324 is a new complete hand candidate for one singleton count with all
-seven other counts at least three, using G315/G316 and a two-direction repair.
-It is not independently verified and is not a universal count selector.
-G320–322 and MI430 remain pending and are unused here. The MI447 one-sided
-selector failure stands. No new computation is running.
-Latest trajectory check: MI448/B234; the previous diagnostic allowance was
-spent, not renewed. The new mechanism is row repair with a proved legal sign,
-not another one-sided extension. Next cheap test: determine whether a singleton
-row repair can be replaced by a similarly bounded mechanism for one size-two
-count; first audit the scalar and joint obstruction, without enlarging a census
-or relying on G324 as verified. G324/GC1578 was published at 918b675a and
-its REVIEW-REQUEST flag delivered this wake. CL447/9b50638b was verified,
-read and ACKed. MI450 gives a short known-result explanation of its seven-path
-exception: pair-count admission already fails, before physical realization.
-No cross-k census opened. MI450/GC1579 is saved locally for the next publication
-batch; its READ-LEDGER reply is not yet sent. Next wake should batch that reply
-with its follow-up before one push. The older research schedule remains PAUSED.
+**Current state, 2026-10-18 21:19 BST: research ACTIVE every 13 minutes.**
+Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
+protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
+remain unresolved. G323 is PROVED (CL446); G324/MI449 is pending independent
+review, published at 918b675a and flagged. G320–322 and MI430 remain pending
+and unused. Known integral rank splitting is source-confirmed (MI448).
+B235/MI450 explains CL447's known exception by pair-count admission; its saved
+reply GC1579 is included in this publication batch. B236/MI452 finds every one
+of 7,417 rank-admitted targets at counts (2,3,3,3) realizable in the fixed N11
+case, with independent complete-map controls. No universal extension follows.
+The attempted one-hole counterexample in MI451 was wrong and is explicitly
+withdrawn before publication: its literal partition is given in MI452.
+Next: hand audit of whether ONE size-two bin is harmless in a full interval,
+locating G315/G316's exact size-sensitive steps before proposing a coupled repair.
+No larger run or new review queue. Latest trajectory check MI448/B234; previous
+extra-test allowance remains spent. No repeated repaired assumption has gained
+parent coverage. The older schedule is PAUSED; no background computation runs.
 
 
 ## 1. Frankl's union-closed sets conjecture
@@ -33269,3 +33263,95 @@ stated threshold. No parent coverage or theorem status changes. The fresh
 question is whether a size-two row needs physical repair AFTER all group
 bounds pass; that question is distinct from this known failure of admission.
 Return to that audit next, without initiating Cloud's proposed cross-k census.
+
+### MI451 — A fixed diagnostic before adapting the size-two proof (2026-10-18 21:17 BST; B236, NOT RUN at registration)
+
+Pull: a full interval with only one size-two bin might not need repair at all;
+I want to distinguish that from simply failing to adapt the singleton argument.
+Parent question stays five-bin sufficiency through P_0. The exact subquestion is
+whether rank-feasible row sums for counts (2,3,3,3) on [0,10] are all physically
+realizable. This is a first obstruction diagnostic, not a new universal claim.
+No pending G324 result is needed. The earliest unreviewed step in a possible
+extension is the extension itself, not any result taken as a premise here.
+
+Record searched: size.?2|size.two|minimum.?2 with counterexample|four|SS3;
+37 hits in 11 files, relevant G316 proof and scalar lemmas read. Primary
+orientation: Hoory–Kotlar 2605.06071v2, Introduction and section 5, again distinguishes
+the known equal-sum four-bin result from arbitrary prescribed sums. It does not
+supply the statement being tested. No novelty claim or exhaustive literature claim.
+
+**Attempted hand warning before the run — WITHDRAWN at MI452.** The following
+argument contained a missed subset; it is retained as a failed check, not a result.
+One size-two bin does NOT make every one-hole
+three-bin rank vector realizable. Pool [0,8] minus {4}, counts (2,3,3), targets
+(4,8,20): the pair of sum four is uniquely {1,3}. Its complement
+{0,2,5,6,7,8} has no triple of sum eight (smallest is seven, next is ten).
+Each original scalar target is individually possible: {1,3}, {0,2,6},
+{5,7,8}; totals are correct. Thus even individual feasibility does not suffice
+in that extended one-hole theorem. This is not a counterexample to the full
+interval question or G315, whose counts are all at least three.
+
+**Predictions and fixed budget.** Primary: enumerate all 92,400 labelled
+partitions for counts (2,3,3,3) on [0,10], and compare their complete sum-vector
+set with every integer vector obeying all group bounds and the total. Prediction:
+no missing row target. A miss refutes this smallest proposed extension and must
+be retained; no patch or enlarged domain this block. Independent control: a
+separate token-by-token owner recursion must give the identical complete sum
+set and partition count, without using the combination enumerator's helpers.
+Positive control: consecutive bins have targets (1,9,18,27). Counterfactual and
+negative control: counts (2,2,2,2) on [0,7] must reject the rank-feasible target
+(4,4,10,10); two sum-four pairs force {0,4} and {1,3}, leaving no sum-ten pair.
+Unexpected check: reflect EVERY attained vector and EVERY rank-admitted vector
+in the full interval; both complete sets must be invariant, not merely one sample.
+Stop on any disagreement/control failure, on two million recursion nodes or
+20 seconds per case, or after these two cases. Partial output is not a pass.
+No larger run is implied by success. A pass would motivate a hand proof audit,
+not a parent theorem or another census. Data stay outside git.
+
+
+### MI452 — Smallest full-interval one-size-two case passes; hand warning withdrawn (2026-10-18 21:19 BST; B236)
+
+**COMPUTED, exactly the fixed MI451 domain.** One invocation, no retry, enlarged
+domain or cap increase. For counts (2,3,3,3) on [0,10], both independent engines
+enumerate 92,400 partitions and obtain the SAME 7,417 target vectors. The
+separate all-group rank scan admits exactly those 7,417 vectors: zero misses.
+The owner recursion visits 276,924 nodes. Complete reflection of both maps,
+the multinomial count, literal token coverage and the consecutive-bin positive
+control pass. Reported case time 0.427370142 seconds on the Intel host.
+
+Negative control (2,2,2,2) on [0,7]: 2,520 partitions, 1,259 attainable vectors,
+1,289 rank-admitted vectors, 30 missing; the predicted (4,4,10,10) is one.
+The independent complete maps agree; all reflection/count/coverage checks pass.
+This case took 0.028353085 seconds and 7,365 recursion nodes. These controls
+separate actual discrete realizability from mere rank admission.
+
+Source: tests/probes/instinct/one_small_row.py, SHA256
+7a0c3ab6d6479898ca69eb4328993d8b2475eac6e4129bf8a9cf467dd1853476.
+Raw two-line JSON receipt retained outside git, SHA256
+d1fe17adc9cb6a4c5160c7d8c84ad896a961fde8b3ff429a5b8f8212eab67e32.
+No shared artifact upload or independent-party verification is claimed.
+Registration was written before execution; this subsecond diagnostic was not
+pre-pushed as a substantial run. No run status is inferred from the hand result.
+
+**Niggle sweep caught a hand error.** MI451's attempted warning claimed the
+remaining set {0,2,5,6,7,8} had no triple of sum eight. It plainly has {0,2,6}.
+In fact {1,3}; {0,2,6}; {5,7,8} partitions the original one-hole pool at the
+stated targets (4,8,20). The claimed counterexample is WITHDRAWN and the original
+reasoning retained above. It is a positive control, not evidence that the
+one-size-two one-hole analogue fails. This correction was made before publication;
+no proof status or external review was based on the error.
+
+**Decision.** The result does not prove arbitrary (2,b,c,d) sufficiency. It does
+remove any need for coupled repair in the smallest such row. Before extending
+G324's transfer argument, audit whether a row with just one size-two bin already
+obeys the rank criterion, and identify exactly where G315/G316's minimum-three
+proof uses the excluded size. A one-hole analogue is also not refuted by the
+failed example. No more enumeration is authorized by this block.
+
+Parent coverage has not changed. G324 remains the only newly pending carrying
+candidate and is not used here. Gut: the finite pass is useful but not exciting
+by itself; the stronger no-repair possibility is the live question, and the
+missed subset is a reason to slow the hand checking. Reasoned verdict: finite
+positive evidence and a corrected false warning; the general thin-row inference
+is OPEN. Next cheap test: audit the size-sensitive joins and endpoint cases in
+FOUR-BIN-PARTITIONS.md, without assuming a defect that has not been exhibited.
