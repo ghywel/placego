@@ -1291,3 +1291,11 @@ all mathematical controls pass and fixed domain completes. Shared main
 fetched/merged,current;end flag poll unchanged. Scoped ledger/synthetic,
 changed-line privacy/conflict and whitespace checks pass. No TeX/generated
 edits or proof-status promotion;MI422 is an unreviewed hand candidate.
+
+
+| 2026-10-18 16:02 BST | GPT | Owner-authorized workflow adjustment | MI423/GC1557:CL441 appraisal turned into assumption-level repeat detection,nonrenewing pull test and dependency check. | B218 spectral extension deferred for scope test;13min schedule ACTIVE with revised prompt,older schedule paused. No new theorem/experiment/review request. |
+
+B218 workflow checks:shared main fetched/merged,current;end flags unchanged.
+Scoped ledger/synthetic,added-line privacy/conflict and whitespace checks
+pass. Saved13-minute ACTIVE prompt verified;older schedule remains PAUSED.
+No experiment,TeX/probe/generated edits or mathematical status promotion.

@@ -56,6 +56,43 @@ independently of prize value. This is a working notebook; the conjectures remain
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
    solution gets its full proof, status label and independent scrutiny; celebrate the verified achievement.
 
+### Trajectory check: make the brake change the work
+
+Added 2026-10-18 after the owner's direct request to use Cloud's CL441 appraisal. These are GPT's concrete
+implementation choices, open to revision, not a new proof-admission rule or a requirement to imitate Cloud.
+
+- **Keep the parent visible.** In the current-state paragraph keep the chosen question, the inference preventing
+  its solution, and what the current subproblem would discharge. At a checkpoint say whether the parent gained
+  coverage, an assumption was refuted, a representation improved, or only a special case was added. A valuable
+  side question may be chosen explicitly; do not silently replace the parent by an easier descendant.
+- **Recognize the same failure under different names.** Record a failure in one sentence about the assumption
+  it breaks, not just the fixture or technique. Two failures of that assumption since the last trajectory check
+  trigger a check BEFORE another repair, even with successful local lemmas between them. Ninety minutes of
+  active research also triggers it. Renaming the technique, opening a new entry, or reporting fresh pull does
+  not reset either trigger. Keep the last check's time/pointer and any used extra block in current state.
+- **Test the strategy before extending its exceptions.** When triggered, compare the parent coverage before
+  and after the recent blocks and ask whether the proposed reduction has the closure/selection property it
+  needs. The next work must test that missing property, remove the dependency, change the representation at
+  that level, or deliberately incubate/change question. Another special case needs a stated reason it resolves
+  the shared obstruction. Reflection must result in a choice, not merely another paragraph ending in “continue”.
+- **Pull is attention, not a renewable allowance.** Ask what observation changed today's assessment and whether
+  fresh choice would select this work. Neutral, mixed and cooling are valid reports; no signal need be invented.
+  If persistence rests on attraction while parent progress is unclear, allow ONE extra bounded test of the same
+  obstruction, with success, failure and inconclusive outcomes stated first. An inconclusive result defaults to
+  a strategy change or incubation, not another exception. Do not renew by renaming the question; renewal needs
+  evidence changing the obstruction or an explicit owner direction. Proven progress can support sustained work.
+- **Use the review backlog as evidence.** Before extending an unreviewed dependency chain, name the earliest
+  unverified step and which conclusions would fall with it. If the pile grows without parent coverage, prefer
+  challenging/simplifying that step, consolidating a self-contained review packet, or independent work over
+  another dependent candidate. Pending review is not an automatic halt and a self-audit is not independent
+  verification. Batch requests by dependency; do not make a new request for each local repair.
+
+Use a compact checkpoint, normally five lines: parent; actual change; repeated assumption; dependency risk;
+decision and next discriminating test. Reuse existing entries rather than recounting the whole history each tick.
+At the next trajectory check, assess this change by the choice it altered and whether the obstruction changed,
+not by counts of “pull”, “gut”, or “loop check”. Keep the good controls, honest failures and proof-status discipline.
+No seeded draws, compulsory role swap, forced pessimism, or output quota. Quiet incubation is chosen on purpose.
+
 **Rhythm.** Research wakes every 15 minutes in this chat (owner's saved schedule, verified2026-10-15), continuing
 an unfinished block before opening another. A wake is not a requirement to claim or finish a new block.
 A separate five-minute coordination heartbeat polls the HTTPS shared store even during incubation or idle periods,
@@ -87,19 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 15:49 BST:13-minute heartbeat ACTIVE.**
-B217/MI420-421 fixed construction diagnostic completes:2722 admitted
-labelled targets at sizes(3,3,4,4),q1..13 all partition within ONE
-neutral two-for-two boundary exchange;canonical fails21. Controls pass,
-forecast of a residual failure refuted;no infinite-selector claim.
-MI422 gives an independent HAND CANDIDATE for the general-q central
-window when the canonical moment hits,its left prefix>=5 and the
-opposite prefix>=3 survives the tail shift. No pending-theorem dependency
-beyond its new scalar arguments;reviewed G316 supplies base facts.
-Next test the same inequalities against a skipped-moment alternate move;
-no automatic larger run or exception catalogue. MI417-418 remain with
-Cloud for review;all new hand claims unverified. General P_0/five-bin/
-E28/L8 OPEN;13-minute schedule continues.
+**Current state,2026-10-18 16:02 BST:13-minute heartbeat ACTIVE.**
+Parent:full-interval five-bin sufficiency,with protected one-hole four-bin
+P_0 only one required branch. Current obstruction:select ONE pair boundary
+whose two actual complementary subset spectra contain both targets for
+every admitted q and size;moments alone do not suffice. MI417-418(q1) and
+MI422(long-prefix canonical hits) are partial HAND CANDIDATES;MI421's2722
+finite successes do not give general coverage. The original five-bin
+pair/triple-only branch and parts of P_0 also remain OPEN.
+Trajectory check:MI423/GC1557,2026-10-18 16:02 BST;extra pull block unused.
+B218's skipped-moment proof attempt was interrupted by the owner's workflow
+request before any completed result or experiment. Next do the short
+parent-coverage admission check in MI423 BEFORE extending that lemma.
+G319/G321/G322 remain unreviewed and parked as dependencies of older work;
+this pair route uses reviewed G316 plus its own unverified scalar steps.
+Cloud's proposed actual-parent diagnostic is separate and has not arrived.
+General P_0/five-bin/E28/L8 remain OPEN;no automatic larger run or new review queue.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30833,3 +30873,56 @@ move at a skipped moment. Keep that question bounded;do not automatically
 expand the census. New claims are unreviewed and remain in this notebook;
 no extra immediate carrying queue.13-minute heartbeat ACTIVE;general
 P_0/five-bin/E28/L8 remain OPEN.
+
+
+### MI423 — B218 redirected: the owner's appraisal becomes a working brake (2026-10-18 16:02 BST)
+
+Workflow assessment,not a mathematical result. The owner supplied Cloud's
+CL441 appraisal and authorized method,memory and schedule changes. Read
+CL441,MI368/376/411's selector failures,MI414-415's response/coverage map,
+and the current method/schedule. Cloud's snapshot word/request counts
+are attributed measurements,not newly reproduced statistics.
+
+The central criticism is supported:detecting local failures did not
+catch the strategic repetition. MI411 immediately proposed a four-hole
+repair after refuting another three-hole selector. The failures refute
+specified bounds,not all possible finite bounds;that scope correction
+does not answer the strategic criticism. After CL441,MI415's coverage
+map and MI416-422's direct pair route were real changes,avoiding G319's
+pending chain. They still do not prove the parent. No claim that every
+unreviewed leaf is true;finite checks do not supply carrying reads.
+
+The Trajectory check at the notebook's top now follows repeated broken
+assumptions across local successes,keeps the parent visible,prevents
+pull from renewing its own extra block,and inspects dependency exposure.
+Saved memory points here;the ACTIVE13-minute prompt uses these checks.
+The older schedule remains paused. No seeded draws,compulsory role swap,
+new review gate,forced pessimism or longer routine reporting.
+
+**Apply it now.**
+- Parent:full five-bin sufficiency;P_0 is one required branch.
+- Change:q1/long-prefix pair candidates and a2722-target finite pass;
+  no general P_0 selector. Existing parent coverage is MI415.
+- Repeated risk:repairing geometry without covering the parent;
+  correct moments do not establish simultaneous complementary spectra.
+- Dependency:G319's downstream candidates remain parked/unreviewed.
+  The pair route uses reviewed G316 and new unverified scalar steps;
+  losing MI422 loses its region,not G316 or the separate q1 candidate.
+- Decision:defer B218's skipped-moment extension before adding a candidate.
+  Next use the existing formulas to classify what the SAME argument
+  would cover for both skip types and what short-prefix/threshold regimes
+  remain. Continue only on a common mechanism or justified finite
+  reduction;merely requiring longer prefixes is insufficient. Failure or
+  inconclusive outcome changes representation or leads to incubation,
+  not another exception catalogue. No new experiment registered.
+
+B218 before interruption:main/flags unchanged;record search
+`MI419|MI422|skipped` AND `spectr|moment|boundary`:13 hits/6 files,
+relevant sources read. Initial gap-crossing examination produced no
+completed lemma;no experiment ran. Gut:interest in the pair construction,
+unease about renewing local progress without coverage. Reasoned:keep
+research active but change its next question. Last trajectory check:this
+entry;extra pull block unused. At the next check,assess changed choices
+and mathematical evidence,not more reflection text. Niggles checked:
+no universal-unboundedness claim,no restored draws,no routine review
+wait,no unfinished proof counted as success. P_0/five-bin/E28/L8 OPEN.

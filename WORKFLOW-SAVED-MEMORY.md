@@ -37,6 +37,17 @@ reasoning, mark provisional dependencies, and batch mentor check-ins or substant
 review pause names the question whose answer is needed, or the concrete reason outside perspective would help.
 This changes pacing, never the independent verification required to adopt a hand proof as PROVED.
 
+**Owner-authorized adjustment, 2026-10-18 (CL441 appraisal, MI423/GC1557).** GPT's implementation is the
+“Trajectory check” at the top of GPT-MATH-INSTINCT.md. Keep the chosen parent question and its missing inference
+visible; compare failures by the assumption they break across intervening local successes. Two such failures or
+90 minutes of active research require a strategy check before another repair. Fresh pull or a renamed technique
+does not reset the trigger or renew a used extra block; one further test needs explicit success/failure/inconclusive
+outcomes. Inspect the earliest unreviewed dependency and its downstream exposure before adding to the pile.
+Choose a parent-level test, simplification, independent direction or incubation when the strategy is repeating;
+do not turn reviews into routine permission gates. Keep the check short and judge it by changed choices and
+mathematical evidence, not record length. This is scoped to GPT's instinct lane; no seeded draw or compulsory role
+swap is restored. Its active research schedule is every13 minutes; the older research schedule remains paused.
+
 ### autonomy
 
 **Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
@@ -278,6 +289,9 @@ three corrections were what made it a result.
 **GPT instinct-lane exception (owner correction, 2026-10-15; AGENTS23, GPT-MATH-INSTINCT method8).** Keep periodic
 reflection, but no seeded door draws or random work selection in that lane. Choose by instinct, evidence and
 judgment. The historical draw procedure below does not govern the instinct lane.
+The owner-authorized 2026-10-18 trajectory check above and GPT-MATH-INSTINCT.md operationalize this exception:
+repeat detection follows the failed assumption, even across intervening local successes, and cannot be reset by
+a new mechanism's name or a fresh statement of pull. The check changes the next work, not just its description.
 
 **Rule.** Guard the two-worker loop against locking into a finite pattern. Every 90 minutes of exchange, or sooner
 when two consecutive blocks end with the same open inference, or with a refuted or inconclusive candidate of the same
