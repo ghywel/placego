@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 00:56 BST:** MI364 reformulates
-the protected one-hole FOUR-bin target as a rooted G316
-problem:insert the missing q into any expanded owner;the
-full-interval rank cuts always hold,but q must be placed
-in that owner. Pair-local repair from an arbitrary witness
-is FALSE even on protected targets;literal third-bin release
-shows the test target positive,not a generic release theorem.
-One question remains:control q's owner in the verified
-four-bin construction. Generic hole/exchange trees PARKED;
-Cloud's offered diagnostic separate,no run here. G315/G316/
-G317 PROVED in scope;five-bin/E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-18 01:12 BST: INCUBATION,heartbeat PAUSED.**
+MI366/B187 gives an actual N17 least-slack five-bin residual
+that defeats all FOUR ordinary expanded-owner constructions,
+including both canonical staircase shapes when applicable.
+The target has explicit partitions;this refutes the attempted
+rooting adaptation,not the protected theorem or G316. After
+two failed ownership adaptations,no credible general selector
+is in hand. Cloud is asked for a different representation via
+GC1526/portal flag;its offered n15/16 diagnostic retains its
+original scope. No background research/flag poll continues.
+G315/G316/G317 PROVED in scope;P_0,five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -24632,3 +24632,162 @@ what feature of the constructive G316 boundary can control
 q's owner? Seek it in that construction or in the incoming
 residual evidence,not a new general catalogue of exchanges.
 13min ACTIVE;G315/G316/G317 in scope,E28/L8 OPEN.
+
+
+### MI365 — B187 claim: root the actual boundary construction (2026-10-18 01:06 BST)
+
+Question:which step of G316 can retain a prescribed q in
+the expanded owner,under MI362 protection? Test the exact
+prefix/suffix and staircase sets,not arbitrary witness repair.
+One bounded hand block,no experiment or new exchange theorem.
+Record searched:staircase/rooted/prescribed.point with deletion/
+owner/fixed;read FOUR-BIN-PARTITIONS sections5,7-9 and MI364.
+Pull:control during construction may avoid the failed later
+repair. Unease:ordinary scalar coverage need not survive a
+prescribed owner. Kill test:write actual low-rank/middle-span
+conditions and test a candidate where q lies beyond a shared
+prefix. Unexpected check:remove the protected token from the
+actual boundary set,not from its convex sum interval.
+
+
+### MI366 — B187: canonical rooting fails on an actual five-bin residual;incubation (2026-10-18 01:12 BST)
+
+**Hand route refutation,not a counterexample to the protected
+theorem.** The missing inference is substantive:even trying
+each expanded owner in the canonical G316 construction can
+fail on a protected target that REALLY lifts to five-bin SS.
+This rules out the direct reuse I was considering. No run,
+new PROOFS entry,review job or expanded diagnostic domain.
+
+**The protected target.**
+R=[0,14] minus1,sizes(3,3,4,4),targets(14,14,38,38).
+Its total is104. For protected lower slack u_J-L(r)-r,
+the COMPLETE proper-cut list up to the evident symmetries is:
+
+ singles:8 (size3),28 (size4);
+ pairs:7 (AB),24 (cross),40 (CD);
+ triples:11 (ABC/ABD),24 (ACD/BCD).
+
+Thus ALL14 protected cuts hold,and AB is a STRICT globally
+closest protected pair. This is not merely a singleton tie
+like the smaller clue that initially encouraged me. The
+thought that choosing protected facets alone would fix the
+construction is refuted by this example.
+
+**Canonical expansion of A or B fails to root1.**
+Expand A:size4,target15;other sizes3,4,4 and targets14,38,38.
+In full0..14,the pair AB has cardinality7,target29,lower
+slack h=29-L(7)=8. Every singleton lower/upper slack is
+strictly larger (minimum9);the cross-pair slacks are25/31.
+Hence this is G316's actual strict closest-pair branch.
+For h8=T_3+2,the canonical seven-value boundary is
+
+ P={0,1,2,3,5,8,10}.
+
+It has sum29 and contains1. Rooting1 in A would require
+three OTHER values summing14 from P minus1={0,2,3,5,8,10}.
+None do:zero odd values gives even triple sums10,12,18,20;
+two odd values3+5 require an additional6,which is absent.
+The conjugate seven-value boundary
+
+ Q={0,1,2,4,6,7,9}
+
+fails too:after removing1,zero-odd triples have sum<=12,
+while two-odd triples contain7+9 and have sum>=16. Again
+14 is absent. Both standard boundary shapes therefore fail
+the pinning requirement,despite their ordinary scalar coverage.
+Exchanging A/B changes nothing because the original targets
+and sizes agree. This is NOT a claim about every boundary
+with the correct size/moment;an alternative works below.
+
+One complete canonical FULL witness,showing the obstruction
+is ownership rather than G316 feasibility,is
+
+ A={0,2,5,8},B={1,3,10},C={4,9,11,14},D={6,7,12,13}.
+
+Its sums are15,14,38,38,but1 is in B. The absence proof
+shows no different internal split of THIS boundary roots1 in A.
+
+**Expanding C or D does not rescue the ordinary recipe.**
+Expand C:size5,target39;A,B remain triples of target14,
+D remains size4,target38. A and B have the least singleton
+lower slack11;D's upper slack is12,and all pair cuts have
+larger slack. The canonical singleton recipe is therefore
+A or B={0,1,13}:size3,sum14. It contains1 in an UNEXPANDED
+bin. Choosing the other tied triple has the same problem.
+The ordinary G316 recipe cannot then root1 in C. Expanding
+D is symmetric. This exhausts the FOUR choices of expanded
+owner for these specified canonical branches. It does not
+exclude noncanonical first-bin choices or boundary adjustments.
+
+**The target is positive,and is an ACTUAL five-bin residual.**
+A literal original R partition is
+
+ {0,2,12}/{3,4,7}/{5,6,13,14}/{8,9,10,11}.
+
+The sums are14,14,38,38. Adding1 to the desired owner roots
+the expanded problem. For an independent boundary control,
+the canonical P can be changed by exchanging its{3,8} for
+outside{4,7},both sum11. On P'={0,1,2,4,5,7,10},take
+A'={0,1,4,10},B'={2,5,7};the complement splits as
+{3,9,12,14}/{6,8,11,13},both38. This is a literal repair
+of THIS instance,not a universal one-exchange theorem.
+
+To lift the R target to full interval0..16,use the removed
+size3 bin{0,1,3},sum4,lower slack1. Translate all R values
+by2. The resulting five-bin partition is
+
+ {0,1,3}/{2,4,14}/{5,6,9}/{7,8,15,16}/{10,11,12,13},
+
+with sizes3,3,3,4,4 and sums4,20,20,46,46,total136.
+MI362's exact lift gate applies with l2,k0,m14,q1,h1:
+all proper residual bounds reduce to P_0 because
+1-2r<r,and the whole-complement condition42>=2 holds.
+Consequently the removed bin really attains the global least
+lower slack. This failure of the canonical rooting route
+occurs INSIDE the intended reduction,not only in a relaxed
+P_0 superset. N17 is a single hand fixture,not a new search
+or a claim of minimality;Cloud's n15/16 domain need not be
+automatically expanded because of it.
+
+**Niggle sweep.** Both staircase shapes use their actual
+values and sum29;the parity exclusions are complete;all
+owner choices are assessed against their own expanded targets
+and globally closest facets;the successful boundary remains
+disjoint from its actual complement;all displayed partitions
+cover their full pools exactly. The P_0 claim,G316 and the
+full five-bin question are not refuted. No finite experiment
+or external verification is asserted for this hand analysis.
+
+**Early loop check and fresh choice.** B186 rejected a local
+ownership patch;B187 now rejects direct canonical reuse,
+including the tempting protected-facet correction. These are
+two failures around the same missing selector. The pull
+toward a SHORT adaptation has cooled. There is still interest
+in the protected question,but I do not currently have a
+credible general replacement for choosing a new boundary.
+Without the invested turns,I would take perspective here
+rather than write the next exchange catalogue. That is the
+reason for incubation,not waiting for routine approval.
+
+I am taking the owner's explicit halt option. The saved
+13-minute heartbeat was set PAUSED and independently read
+back PAUSED before writing this receipt;its prompt/cadence
+were preserved. No background research or flag poll will
+continue from that schedule. The older research schedule
+is not rearmed. All open mathematics stays OPEN.
+
+Concrete perspective request to Cloud:what global boundary
+selector or different representation could retain the marked
+value,without a new hierarchy of hole/neutral-move cases?
+The actual N17 fixture above should stress any proposed
+canonical-rooting approach. Your offered n15/16 diagnostic
+remains useful on its original scope;this note does not add
+a census or a proof-review queue. A fresh mechanism or your
+committed diagnostic/perspective can reopen the work when
+the owner returns;no routine permission gate is introduced.
+Gut:disappointment at the failed short route,relief at having
+a precise reason to stop patching. Reasoned:constructive
+ownership is still missing,and continuing the same patch
+pattern now risks recreating the branch tree CL438 warned of.
+G315/G316/G317 remain PROVED in scope;five-bin/E28/L8 OPEN.

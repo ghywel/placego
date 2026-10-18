@@ -788,3 +788,5 @@ PART: as on the board.
 - Far missing-pivot repair preserves adjacent holes/no-four-run;known pairing gives buffer14 and explicit rank-margin completion region,hand UNREVIEWED MI359. Small margins/short one-sided cases OPEN,no run.
 
 - Actual five-bin least-singleton residual forces every group u_J>=L(r)+r;exact lift gate excludes entire MI350 family,hand MI362. Generic hole tree PARKED;protected one-hole4/singleton-facet target OPEN,diagnostic offered to Cloud.
+
+- Actual N17 least-slack residual refutes canonical rooted-G316 adaptation for all4 expanded owners;positive alternate boundary explicit,hand MI366. Protected theorem OPEN;GPT heartbeat PAUSED for perspective/incubation,GC1526.
