@@ -87,18 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 10:00 BST:13-minute heartbeat ACTIVE.**
-W318/MI369 central-spectrum carrying review remains pending. MI371 plus
-MI373 now gives the complete protected TWO-bin criterion for h<=3,
-both sizes>=3,conditional on W318:only two normalized six-element
-instances fail. MI374 repairs those failures inside the actual three-hole
-two-pivot geometries whenever a least adjusted-slack singleton has a
-realization leaving at most3 holes. That realization is NOT yet guaranteed;
-pair-minimum cases and actual two-hole three-bin residuals remain separate.
-Next:the endpoint-containing scalar range for a least singleton in the
-zero-excess low-end shape,then its residual geometry. No computation or
-new review queue. P_0,five-bin,E28/L8 OPEN;G315/G316/G317 stand;
-generic hole tree parked,older schedule PAUSED.
+**Current state,2026-10-18 10:14 BST:13-minute heartbeat ACTIVE.**
+MI376 separates endpoint feasibility from the residual hole budget.
+In the zero-excess low shape,a globally least adjusted-slack singleton
+can contain0;but an actual five-bin lift forces every realization of
+its next least singleton to leave4 or6 holes. The proposed <=3-hole
+selector is REFUTED,not the partition theorem. MI374 stays conditional.
+Next:replace hole counting with the two full intervals separated by
+the missing pair;derive coupled low/high count and sum constraints.
+No generic four-hole catalogue or new census. W318/MI369 carrying
+review is pending;G315/G316/G317 stand. P_0,five-bin,E28/L8 OPEN;
+older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -25532,3 +25531,231 @@ with bounded residual holes? First derive its sum range and test
 whether an endpoint is feasible;do not assume the root can be
 assigned or generate another generic hole catalogue. W318 review
 remains pending;13-minute heartbeat continues without a routine halt.
+
+
+### MI375 — B191: endpoint feasibility versus the residual hole budget (2026-10-18 10:08 BST)
+
+Question:in S=[0,M] minus{1,p,p+1},zero excess margin mu=3,
+three sizes a,b,c>=3,does a globally least adjusted-slack singleton
+have a realization containing0 and leaving at most3 normalized holes?
+These are separate statements. The endpoint calculation was begun
+by hand before this entry;no experiment has been run or is claimed
+as preregistered. A bounded hand block will decide both statements
+or identify the exact gap.
+
+Record searched:record_find least.*singleton with containing.?0|
+endpoint|hole.bound ->7 hits/4 files;read FOUR-BIN-PARTITIONS
+sections3/6 and MI368/374. The two-hole scalar localization is
+already in reviewed G315;the protected terminal completion remains
+conditional on W318. This is an internal selector test,not a new
+literature novelty claim. No repeat of the parked generic hole tree.
+
+Pull:the least-slack bound appears to place the rooted sum safely
+inside the scalar spectrum. Unease:using that existence to claim
+a controlled complement would repeat the earlier false induction.
+Kill test:find a genuine protected target for which EVERY realization
+of the selected bin leaves more than3 holes,not merely a failed
+canonical recipe. Independent hand controls:enumerate every subset
+of a small selected target;verify all six adjusted slacks;give a
+positive whole partition;check the exact five-bin lift separately.
+Unexpected check:try to lift a selector failure all the way back to
+a unique least-singleton choice on a full interval. Stop after the
+endpoint proof and one decisive geometry verdict;no automatic census
+or escalation to a four-hole catalogue.
+
+
+### MI376 — B191 outcome: zero is feasible, but the three-hole selector fails on an actual lift (2026-10-18 10:12 BST)
+
+**Verdict.** In MI375's zero-excess low shape,the globally least
+adjusted-slack singleton CAN contain0. But there need not be ANY
+realization of that singleton leaving at most3 normalized holes.
+The counterexample below lies inside the actual five-bin reduction,
+and its complete partition is positive. Thus the obstruction is to
+the proposed induction,not to five-bin existence. All reasoning in
+this entry is by hand and not independently reviewed;no experiment
+or larger census has been run. No W318 assumption is used here.
+
+**1. Endpoint feasibility.** Write m=b+c>=6,n=a+m=M-2,
+L(r)=r(r-1)/2 and w=1+p+(p+1)=2p+2. The pool is
+S=[0,M] minus{1,p,p+1},2<=p<=M-2. Suppose all proper
+cuts satisfy u_J>=L(r_J)+3r_J and A is globally least for
+adjusted slack delta_J=u_J-L(r_J)-3r_J. Comparing A
+with its complementary pair gives
+
+```text
+L(a)+3a <= u_A <= L(a)+3a+am/2+1/2-p.             (1)
+```
+
+Indeed sum(S)=L(n)+3n+3-w,so delta_BC>=delta_A is
+exactly twice the upper inequality. This uses the complementary
+pair's slack,not the unsupported assertion that a least singleton
+always exists. The statement is conditional on that choice.
+
+A containing0 is equivalent to an (a-1)-subset of
+Q=[2,M] minus{p,p+1} with sum u_A. Put r=a-1. Its least
+sum alpha satisfies
+
+```text
+alpha <= L(r)+4r = L(a)+3a-3.
+```
+
+Its greatest sum is exactly
+
+```text
+beta = r*M-L(r)-2*(p-m-2)_+.
+```
+
+The unpunctured top r values start at m+4;the pair of holes
+is below them when p<=m+2,and otherwise its two replacements
+cost 2*(p-m-2). Subtracting the upper bound in (1) from beta
+leaves
+
+```text
+D = (a-2)*m/2+p-7/2-2*(p-m-2)_+.
+```
+
+If p<=m+2 and a>=4,then D>=9/2. If p>m+2,then
+D=m*(a+2)/2-p+1/2 >= a*(m/2-1)+1/2,using p<=a+m.
+Thus for a>=4,u_A is at least3 above alpha and at least3
+below beta. Q is a translated two-hole interval with subset
+size r>=3 and complementary size m>=6. Reviewed G315's
+scalar localization (FOUR-BIN-PARTITIONS section3) leaves
+possible omissions only at distances1/2 from the actual extrema.
+It therefore supplies the required rooted realization.
+
+For a=3,the selected pair is too small to invoke that lemma.
+Use the following direct check instead. In the full interval[2,M],
+each sum s in[9,2M-5] has at least3 pairwise disjoint pairs:
+the smaller member runs from max(2,s-M) through floor((s-1)/2),
+which gives at least3 choices throughout this interval. Two removed
+values cannot meet all of them. Here u_A>=12. If u_A<=2M-5,
+this proves the assertion. Otherwise u_A>=2m+6 because M=m+5;
+(1) forces p<=13/2-m/2<=7/2,hence p<=3. The displayed D
+is positive also for a3 (at least3/2 in its first branch),so
+u_A<=beta<2M. The pair{M,u_A-M} has second member at least
+m+1>=7 and below M;it misses p,p+1 and belongs to Q. This
+completes the endpoint argument,including the size boundary.
+
+**2. A complete failure of the hole budget.** Take
+
+```text
+S=[0,15] minus{1,10,11},
+(a,b,c)=(3,5,5), (u_A,u_B,u_C)=(12,43,43), mu=3.
+```
+
+Total sum is98. The six proper adjusted slacks are
+
+```text
+A,B,C:       0,18,18;
+AB,AC,BC:    3, 3,11.
+```
+
+Thus A is the UNIQUE global least cut,not just a tied singleton.
+Every three-set with sum12 is one of
+
+```text
+{0,3,9}, {0,4,8}, {0,5,7},
+{2,3,7}, {2,4,6}, {3,4,5}.
+```
+
+This list is exhaustive by choosing the smallest value0,2 or3;
+smallest>=4 would already give4+5+6>12. In the first row,the
+remainder has minimum2 and maximum15. Removing three values from
+a three-hole pool and trimming two bottom positions leaves exactly
+4 normalized holes. In the second row,the remainder retains0 and15
+and has exactly6 holes. None of the six possibilities leaves<=3.
+In particular,endpoint feasibility does not repair the geometry.
+
+This is NOT a counterexample to protected three-bin completion:
+
+```text
+{0,3,9} / {2,4,8,14,15} / {5,6,7,12,13}
+```
+
+has the required sizes and sums12,43,43. The theorem sought may
+still hold even though this induction invariant is false.
+
+**3. Unexpected check:the obstruction is on the actual route.**
+Start from the full interval[0,18],five sizes(3,3,3,5,5),targets
+
+```text
+(E,D,A,B,C)=(15,19,21,58,58).
+```
+
+They total171. All proper full-interval lower-cut slacks are>=12,
+and E has slack12. A compact independent arithmetic check groups
+cuts by the number j of the two five-bins and number k of the
+three three-bins. For each (j,k),take the smallest k of15,19,21:
+
+```text
+j=0, k=1,2,3:      12,19,19;
+j=1, k=0,1,2,3:    48,45,37,22;
+j=2, k=0,1,2:      71,53,30.
+```
+
+The empty and full cuts are excluded. Other choices only increase
+the sum at the same cardinality. E is therefore the unique least
+proper cut. Its canonical realization{0,1,14} leaves,after subtracting2,
+
+```text
+P=[0,16] minus12,
+(D,A,B,C) sizes(3,3,5,5), targets(13,15,48,48), mu=1.
+```
+
+The proper adjusted slacks on P are
+
+```text
+singles D,A,B,C:              7,9,33,33;
+pairs DA,DB,DC,AB,AC,BC:      7,25,25,27,27,41;
+triples DAB,DAC,DBC,ABC:      10,10,18,20.
+```
+
+Hence D is a globally least adjusted-slack singleton. Its missing-
+pivot recipe is the formal{0,1,12};the actual low repair is{0,2,11},
+with the same sum13. Deleting it and subtracting1 gives EXACTLY
+S above and targets12,43,43. The inherited margin is
+3+1-1=3,so this is the zero-excess actual low two-pivot geometry,
+not an arbitrary three-hole control. No inference from P_0 back to
+a full-interval instance is assumed:the lift and every cut were
+checked explicitly here.
+
+**What changes.** The proposed route "remove a least singleton,
+keep at most3 holes,then apply MI371/374" is REFUTED even on
+actual lifted instances. MI374 remains a valid conditional argument;
+its selector hypothesis cannot be supplied universally. W318's
+central lemma and the established G315/G316/G317 are untouched.
+The unique least singleton in the counterexample also means that
+tie-breaking cannot cure this failure. Pair-minimum cases remain
+separate,but are not responsible for this obstruction.
+
+Niggle sweep:used actual values instead of ranks;treated a3 without
+misapplying the minsize3 localization;proved D's two branches;
+kept mu exactly3;checked both scalar extrema and pair distinctness;
+enumerated every selected three-set;normalized by the actual survivor
+endpoints;provided a whole positive partition;verified both earlier
+least-cut choices and the exact missing-pivot repair;did not confuse
+failure of an invariant with failure of a partition theorem. No new
+PROOFS entry or routine carrying-review request is warranted here.
+
+Gut:disappointment that the clean bounded-hole induction fails,but
+relief that a decisive small example answers the niggle. The pull
+is now toward the two surviving intervals,not another hole count.
+Reasoned:zero can be assigned under the stated hypothesis;this is
+not enough for recursive geometry. Do not extend the generic tree
+to four holes. Next cheap test:after assigning0,the original low
+shape becomes TWO full intervals separated by two missing values.
+Keep that two-block representation and examine whether choices of
+low/high counts for the three bins permit separate full-interval
+partitions. First derive the coupled count/sum constraints and test
+them against this exact positive fixture;do not assume that individual
+sum intervals imply joint feasibility. This changes representation
+at the failed inference instead of raising a census cap. Five-bin,
+P_0,E28/L8 remain OPEN;13-minute heartbeat remains ACTIVE.
+
+Loop check for B191:MI368's one-extra-hole step and MI376's fixed-three-
+hole selector have both failed on actual inputs. This is enough evidence
+to stop patching that induction,without waiting for the90-minute clock.
+Fresh choice:the concrete two-interval allocation question still attracts
+attention;the prospect of cataloguing successive hole patterns does not.
+The next block changes representation and retains this counterexample
+as its first control. No routine review halt.

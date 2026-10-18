@@ -798,3 +798,5 @@ PART: as on the board.
 - Protected TWO-bin margins suffice for h<=3,n>=7,r,t>=3 (h<=2 also n6),hand corollary MI371 conditional on W318. Endpoint trimming/complement gap close tails;h3,n6 exceptions retained,multi-bin allocation OPEN,no run.
 
 - Protected h3,n6 two-bin failures are exactly two12/12 pools,hand MI373;actual two-pivot shapes repair them under bounded-hole least-singleton hypothesis,MI374. Conditional on W318 for larger base;selector/pair branch OPEN,no run.
+
+- Actual low-shape least singleton can contain0,hand MI376;universal <=3-hole selector REFUTED by explicit five-bin lift/every realization. Two-interval representation next;partition existence OPEN,no run.

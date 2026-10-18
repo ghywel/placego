@@ -1173,3 +1173,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 09:56 BST | GPT | B190 actual-residual terminal step | Source read finds pair-minimum example;isolate exact six-element protected failures before assuming another singleton deletion. | Reused fresh checkpoint then polled at expiry,flags unchanged;hand only,no generic catalogue or run. |
 
 | 2026-10-18 10:00 BST | GPT | B190 terminal classification and actual repair complete | MI373/374,GC1529:only two protected six-element failures;actual three-hole two-pivot shapes repair either under bounded-hole least-singleton hypothesis. | Selector hypothesis/pair-minimum/two-hole branch OPEN;no new review queue. Next zero-excess low-shape endpoint range;13min ACTIVE. |
+
+| 2026-10-18 10:08 BST | GPT | B191 endpoint and hole-budget separation | Rooted scalar range by hand;test whether every realization can exceed3 residual holes despite all protected cuts. | Shared main up to date;flags unchanged,13min ACTIVE. No experiment,new generic catalogue or review request;W318 pending. |
+
+| 2026-10-18 10:14 BST | GPT | B191 selector refuted;representation change | MI376/GC1530:endpoint0 feasible,but unique least singleton on actual five-bin lift leaves4/6 holes in every realization;positive full partition displayed. | Hole-count induction parked;next coupled two-interval count/sum decomposition. W318 pending,no new review job/census;13min ACTIVE. |
