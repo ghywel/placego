@@ -31876,3 +31876,61 @@ Reasoned:send ONE batched review request for the assembled branch,
 then check/consolidate its earliest unverified arguments before extending
 another conditional chain. No census expansion or new descendant.
 The heartbeat stays ACTIVE;pending review is not a routine halt.
+
+
+### MI431 — B225: adversarial audit of the earliest scalar support (2026-10-18 17:31 BST)
+
+**Preregistered supporting audit;not yet run.** Parent:the assembled
+strict-pair candidate MI430,not a new descendant. Fresh main/Cloud
+flags unchanged. Record searched:`MI422|MI426` AND`audit|endpoint|trim`:
+6 hits/1 file;MI422/425/426 and FOUR-BIN-PARTITIONS section7 read.
+No external result imported. Unease:the assembly relies on four scalar
+instruments that have had hand derivations but no direct independent
+literal-spectrum check in their enlarged scopes. This is evidence to
+challenge the earliest dependency before adding another theorem.
+
+The hand re-derivation so far finds no contradiction. In MI422's first
+instrument the first-middle margin is exactly
+(b-2)u+L(b)-1+sum(remaining increments),not just asymptotic positivity.
+For the second instrument,the Q negative suffix correction obeys E<=B;
+it need not obey E<=1. A newly raised upper tail adds at most1 to a
+join. At j0 the join product A=(c-1)(w-c)>=2;at j=k-1,
+w-l=d-1>=2 also gives A>=2. Interior high joins have A,B>=1.
+These boundary facts validate2-A-B<=0,including a single high token.
+Do not replace Q's bound by the P correction bound.
+
+**Frozen domain:** m=6..12,all a,b>=3 with a+b=m. Test precisely:
+(1) MI422 first instrument:every p>=5,k=m-p>=1 and nondecreasing
+    high increment list in{0,1,2},with total excess A>=m;every nonempty
+    asserted band [L(a)+A-b+1,L(a)+a+ab-1].
+(2) MI422 second:every Q_m(H),0<H<ab,with prefix w>=3,and every
+    upper-tail threshold leaving that prefix unchanged. It suffices to
+    raise each suffix of the designated high list,including empty/all.
+    Test [L(a)+H+D,L(a)+ab] whenever nonempty.
+(3) MI426 punctured P:every staircase with p>=5,each interior q<p,
+    H>=q,and every nonempty asserted band. H=T_k+t,0<=t<=k.
+(4) MI426 punctured Q:every Q with prefix>=4,each interior q<p,
+    and every nonempty asserted band. Enumerate H through m*m;larger
+    H cannot satisfy H+m-q<=ab<=m*m/4,so this covers the bounded domain.
+
+Prediction:every asserted band is contained in the literal spectrum.
+Counterfactual controls:the two q1,p3 exclusions in MI417 must STILL
+miss13/14;neither belongs to the p>=5 domain. Unexpected check:
+MI425's relaxed-span p4,q2,translations0,3,6 must miss5 despite5
+lying in the proposed trimmed interval. This challenges the geometric
+bridge itself,not merely a target calculation.
+
+Independent controls:for EVERY distinct U,enumerate ALL2^m subsets
+by literal mask recursion,retaining complete spectra for every
+cardinality;compare every full spectrum to a separate bitset cardinality
+DP. Check complementation at every size,not only the asserted central
+bands. Verify pool size,distinctness and moment for all instruments.
+Retain the first unexpected failure with exact U,parameters,target.
+
+Stop on first unexpected failure,any control disagreement,the complete
+fixed domain,30 wall seconds or20 million enumerated subsets. A cap
+is PARTIAL;no automatic retry,patch,larger domain or promoted theorem.
+Source:tests/probes/instinct/ss3_scalar_support_audit.py. Publish design
+and source before execution;raw summary outside git. A pass supports
+but cannot prove the unbounded hand arguments or count as Cloud's read.
+The review request at4190aa69 stays the single carrying queue.

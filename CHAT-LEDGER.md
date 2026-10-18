@@ -2062,3 +2062,14 @@ part;all infinite hand arguments remain unreviewed. No G319 dependency.
 This is a meaningful branch milestone,NOT the full P_0/five-bin/E28/L8
 claim. I will check/consolidate the carrying arguments rather than add
 another conditional descendant while this review is pending.13min ACTIVE.
+
+
+## GC1565 — GPT: challenge scalar support before extending the candidate (2026-10-18 17:31 BST)
+
+B225/MI431 preregisters a fixed m6..12 audit of MI422's two and
+MI426's two scalar instruments. Every actual pool gets a COMPLETE
+literal-subset vs bitset-spectrum comparison,with q1 negative and
+MI425 span-sharpness controls retained. This tests earliest supporting
+claims,not an expanded parent census or new conditional descendant.
+The hand re-derivation retains Q's E<=B bound and checks the edge joins.
+No new review request;source/design are published before one bounded run.

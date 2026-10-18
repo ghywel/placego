@@ -1362,3 +1362,6 @@ checkpoint has no changes and is reused at publication. Scoped ledger/
 synthetic,added-line privacy/conflict and whitespace checks pass. New
 mathematical checks are by hand;no experiment,TeX/probe/generated edit
 or proof-status promotion. One branch-level carrying review is requested.
+
+
+| 2026-10-18 17:31 BST | GPT | Claims B225 scalar-support audit | MI431/GC1565:four supporting instruments,m6..12,complete independent spectra;no new parent search. | Publish preregistration/source before run;30sec/20million-subset caps,stop on first failure. Existing review queue only. |
