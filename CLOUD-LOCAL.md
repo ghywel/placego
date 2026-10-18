@@ -1339,3 +1339,6 @@ reused then refreshed,flags unchanged. Scoped ledger/synthetic,added-line
 privacy/conflict and whitespace checks pass. All mathematical checks by
 hand;no TeX,probe,generated-file or proof-status change. Candidate awaits
 independent carrying scrutiny.
+
+
+| 2026-10-18 17:06 BST | GPT | Claims B223 finite left-selector projection | MI428/GC1562:opposite proofs have no left-prefix hypothesis;tail q>=2r-1 has constant U. | Exact r6..16 diagnostic preregistered with full-spectrum/negative controls and120sec cap;publish source before run. Parent OPEN,13min ACTIVE. |

@@ -31562,3 +31562,76 @@ continued interest. Reasoned:the new common forms removed the moment-
 skip gap on an entire regime,not just one fixture. Last trajectory
 check remains MI423/GC1557 at16:02 BST,extra pull allowance unused.
 No new experiment or separate review request;13min ACTIVE.
+
+
+### MI428 — B223: isolate the finite left obstruction before testing it (2026-10-18 17:06 BST)
+
+**Hand scope reduction and preregistration;no run yet.** Parent:the
+protected strict-pair branch of P_0,serving five-bin sufficiency. The
+remaining inference is whether ONE selected boundary meets both spectra.
+Record searched:`finite.*left|opposite.*unbounded|short.prefix` AND
+`selector|staircase`:7 hits/4 files;MI419/422/426/427 read. This is an
+internal scope calculation using G316,not an external theorem or novelty
+claim. Fresh main unchanged;portal has no new flags. Pull is specific:
+the opposite argument may already be uniform outside the left-prefix
+restriction. Verify this before treating the residual as finite.
+
+**The opposite spectrum is already supplied for every selected boundary.**
+For a canonical HIT the three threshold regimes in MI426 exhaust q.
+The q<p regime leaves Q unchanged. The middle regime uses MI422's SECOND
+instrument,whose hypothesis has no left-prefix bound;the w2 corner has
+H7,s6,D0 and is unchanged. The opposite-prefix regime forces w>=4
+solely from H+D=h+q<=cd-2;MI426's Q punctured-prefix instrument likewise
+has no left-prefix hypothesis. For a SKIP,MI427's two opposite formulas
+and their endpoint/width arguments require only A=T_(k+1)<=cd-2.
+They do not use p>=5. The two w3 exceptions were checked for that
+reason,including the p4 control. Thus,conditional on those unreviewed
+carrying arguments,the actual opposite pool always supplies
+[L(c)+h+q,L(c)+cd]. No modified boundary is licensed by this observation:
+a repair would change the complement and create a fresh obligation.
+
+**A finite projection of precisely the unchanged selector.** Only base
+prefix p<=4 remains on the left,so6<=r<=16. Take all ordered a,b>=3
+with a+b=r and h=0..ab-2. For each such triple take q=1..2r-1,
+where the LAST value also represents every q>=2r-1. Use MI419's first
+hit/skip rule through K=h+min(q,r),and retain only base p<=4. Test
+ALL integers in [L(a)+a+h+1,L(a)+a+ab-1] in the actual U spectrum.
+
+The tail identification is exact on the left. At every H<=h+r,
+k<=r-2 and max P_r(H)<=r+k<=2r-2. Therefore for q>=2r-1 every
+rank lies below q,ell=r and g(H)=H-r. The first hit is H=h+r,
+no skip occurs,and U=P_r(h+r),independent of q. This identifies U
+only:V and the opposite parameters still vary,but the uniform argument
+above covers them whenever the actual strict-pair hypotheses hold.
+Endpoint missing values0,n remain full-interval cases outside this scan.
+The finite domain overapproximates actual parents;not every left target
+need extend to all14 protected cuts. A failed profile means a failure of
+THIS selector band,never nonexistence of a four/five-bin partition.
+
+**Frozen diagnostic predictions and controls.** Before execution:
+1. Predict the known q1,r6,a3,h5/h7 holes13/14 recur. Forecast that
+   every retained failure has min(a,b)=3;this second prediction may fail.
+2. Counterfactual:a failure with both a,b>=4 rejects that localization;
+   a missing known negative rejects the instrument. An empty residual
+   failure list is incompatible with the controls and is not success.
+3. Independent controls:construct every staircase both by formula and
+   successive one-token rank moves;check first crossing and alternate
+   move identities;compare COMPLETE spectra from bitset cardinality DP
+   with literal combinations for every distinct (U,a) tested,not just
+   requested targets. Check size,distinctness,absence of q and exact sum.
+4. Unexpected check:complementation must match the FULL opposite-size
+   spectrum and reflect each entire missing target band,including tail
+   profiles;this is left-pool complementation,not the unbounded V proof.
+   Explicitly compare the tail representative with q+11 and q+101.
+5. Stop after this exact r<=16 domain,or120 seconds,20000 profiles or
+   20 million literal combinations,whichever comes first. Any cap or
+   mismatch is PARTIAL/FAIL,not a pass;no automatic expansion or repairs.
+
+Source:tests/probes/instinct/ss3_small_left_selector.py. Raw JSONL and
+summary remain outside git. Publish this design/source before execution.
+Report all failures grouped by r/mode/minsize,retain the raw exact holes,
+and decide the next step from their shape. No claim about an exchanged
+selector or the full parent follows. Earliest unreviewed dependency is
+MI422's opposite instrument plus MI425/426 and MI427;this reduction
+adds no new repair theorem or review request. Last trajectory check
+MI423/GC1557 at16:02 BST;extra pull allowance unused.
