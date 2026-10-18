@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 13:46 BST:13-minute heartbeat ACTIVE.**
-MI406 gives a complete hand candidate for protected two-hole pools
-[0,n+1] minus{1,3},sizes>=3,by assigning0/2 and invoking reviewed
-MI295 on the remaining interval. No pending theorem is used.
-MI404's endpoint-family existential descent and MI405's protected
-optimal-choice cycle remain as recorded. General separated-threshold
-existence/descent is OPEN. Next seek a joint count-capacity argument
-for an arbitrary middle interval;do not grow an exceptional-prefix
-catalogue. G321/MI399 and this new hand argument await independent
-review;full P_0/five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 14:01 BST:13-minute heartbeat ACTIVE.**
+MI407 proves by hand that for protected holes1,q,EVERY zero owner
+with nonempty scalar count intervals automatically satisfies both
+aggregate count bounds,at arbitrary middle-interval length. The proof
+classifies unprotected failures and excludes them by original pair cuts.
+Owner eligibility and disjoint count compatibility remain OPEN;
+no general two-hole partition/descent theorem is claimed. Next scalar
+owner existence,with the remaining-size2 gaps explicitly checked.
+MI406/G321/MI399 and this new argument await independent review.
+No new census or exceptional-prefix catalogue;full five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28983,3 +28983,224 @@ aggregate capacities. Keep the actual protected two-hole question
 visible;do not automatically expand to holes1,4,1,5,etc. This checkpoint
 can join Cloud's next combined read;no routine halt or new census.
 G321/MI399 pending,full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.
+
+### MI407 — B209: arbitrary middle length has no protected aggregate-count obstruction (2026-10-18 14:01 BST)
+
+**Hand PROOF-SKETCH,independent read and novelty assessment pending.**
+Question:can the previous joint-owner argument handle arbitrary distance
+to the second hole without a catalogue of exceptional prefixes?
+Work on R=[0,M] minus{1,q},n=M-1=a+b+c,all sizes>=3,
+and proper cuts u_J>=L(s_J)+2s_J. For an assumed zero owner A,
+put r=(a-1,b,c) and split the positive pool into
+
+```text
+I=[2,q-1], P=q-2;
+H=[q+1,M], Q=M-q;
+P+Q=n-1.
+```
+
+The conclusion below is conditional only on the THREE scalar count
+intervals being nonempty. It proves their aggregate capacity,not
+existence of an eligible owner and not simultaneous partitioning at
+chosen counts. G319's positive-count compatibility is not invoked.
+Those remaining tasks are kept explicit.
+
+Record searched:`endpoint|two.interval|two.hole` and
+`MI351|MI382|MI404|MI405|MI336`:29 hits/5 files. Read MI393/395's
+count-deficit algebra and MI383's warning about zero rows;G317's
+minimum4 scope also reread. Existing primary-source orientation retained;
+no external theorem or new literature claim. Initial pull:the gap between
+the positive intervals is now one missing value rather than two,which
+may shrink the deficit budget enough to avoid exceptional repairs.
+No experiment or numerical domain expansion was run. This entry records
+a hand derivation and a literal unprotected countercontrol.
+
+For a remaining size r and high count k,write l=r-k. Its exact
+scalar sum interval is [f_r(k),g_r(k)],where
+
+```text
+f_r(k)=2r+(q-1)k+L(r-k)+L(k),
+g_r(k)=(q-1)(r-k)-L(r-k)+Mk-L(k).
+K_i={max(0,r_i-P)<=k<=min(r_i,Q):f_(r_i)(k)<=u_i<=g_(r_i)(k)}.
+```
+
+Both endpoints strictly increase with k,so each nonempty K_i is
+an integer interval. Assume total conservation and nonempty K_i.
+We prove
+
+```text
+sum_i min K_i <= Q <= sum_i max K_i.                 (C)
+```
+
+under the protected cuts. Empty I or H makes (C) immediate because
+each K_i has its sole forced count;below P,Q>=1.
+
+**1. Classify an upper-count shortage without protection.**
+Suppose k_i=max K_i sum to Q-D,D>=1,and put l_i=r_i-k_i.
+Let J contain the bins with l_i>0,j=|J|. Every next count k_i+1
+on J is legal and maximality gives u_i<=f_i(k_i+1)-1.
+Put R_J=sum_J r_i=P+kappa,where
+kappa=Q-sum_(i outside J) r_i. A high-only outside bin has target
+at most its actual largest high-subset sum. Consequently
+
+```text
+u_J >= alpha(R_J)=2R_J+(q-1)kappa+L(P)+L(kappa).
+```
+
+For j3 this is total equality. Cases j<=1 are impossible because
+sum l=P+D but a single low count cannot exceed P. If D>=j,
+choose legal h_i>=k_i+1 with sum_J h_i=kappa. Their total low
+count is P;superadditivity of L gives sum_J f_i(h_i)<=alpha(R_J),
+contradicting u_J<=sum f_i(h_i)-j. Thus only(2,1),(3,1),(3,2)
+need consideration. These statements do not assume joint realizability.
+
+Write e=j-D and Cross(v)=sum_(i<h in J)v_i v_h. Direct expansion gives
+
+```text
+sum_J(f_i(k_i+1)-1)-alpha(R_J)
+ =e(kappa+1)+e^2-Cross(l-1)-Cross(k+1)-j.             (1)
+```
+
+This is MI393/395's calculation with gap2 in place of gap3;the
+constant is changed,not their conclusion imported.
+
+For j2,D1,write x,y for the two k entries and t,w for l-1.
+The right side of(1) is exactly -xy-tw. A shortage requires
+xy=tw=0. Since both remaining sizes are>=2,this forces,up to
+exchange,x=0,w=0,t>=1,y>=1. The first bin owns the ENTIRE low
+interval and has no high values. Its scalar target is therefore its
+single possible low sum. Its next-count upper bound f_P(1)-1
+is that sum PLUS1:replacing the largest low by the smallest high
+costs2. Thus at least one unit is lost from the upper bound(1),
+which was already0. This contradicts u_J>=alpha(R_J).
+This excludes j2 without any protected-cut assumption.
+
+For j3,D2,put x=k,t=l-1. Substituting sum x=Q-2 in(1) gives
+-Q-Cross(x)-Cross(t)<0. Only j3,D1 remains. Here
+
+```text
+sum x=Q-1, sum t=P-2,
+x_A+t_A=a-2>=1,
+x_B+t_B=b-1>=2, x_C+t_C=c-1>=2,
+0 <= sum_i(f_i(k_i+1)-1)-sum(R)
+   =2-Cross(x)-Cross(t).                            (2)
+```
+
+**2. Exhaust the budget2 by its zero supports.**
+All three x positive would give Cross(x)>=3. If x_A=0 and both
+nonroot x are positive,put t_A>=1. If x_B=x_C=1,then t_B,t_C>=1
+and the cross total is>=4. If one x is>=2 and the other1,the
+latter requires its t>=1,giving cross total>=3. If both x>=2,
+Cross(x)>=4. So this support is impossible.
+
+If exactly one nonroot x is zero,say x_B=0,then t_B>=2 and
+x_A,x_C>=1. The budget forces t_A=t_C=0,otherwise Cross(t)>=2
+in addition to Cross(x)>=1. Thus x_A=a-2>=1,x_C=c-1>=2;
+(2) forces x_A=1,x_C=2,a=c=3. Write t_B=b-1>=2.
+The cross total is exactly2,so conservation forces equality in
+EVERY next-count upper bound. This gives precisely
+
+```text
+sizes (a,b,c)=(3,b,3), b>=3;
+P=b+1,Q=4,q=b+3,M=b+7;
+targets (u_A,u_B,u_C)=(2b+8, L(b)+2b+2, 3b+14).       (Fmax)
+```
+
+With two zero x entries,they cannot be B and C because
+Cross(t)>=4. If they are A and B,then t_A>=1,t_B>=2.
+The budget forces t_A=1,t_B=2,t_C=0,a=b=3,x_C=c-1>=2.
+Thus P5,Qc and the high interval starts8. Equality in(2) would
+force u_C=sum(H)-1. But C at its claimed maximum k_C=c-1
+must replace the smallest high value8 by a low value at most6,
+so its scalar upper bound is sum(H)-2. Its K_C would be empty,
+contrary to hypothesis. The A,C-zero case is identical. Three
+zero entries also violate the budget. This exhausts every support.
+
+Hence (Fmax),up to interchanging the two nonroot labels,is the
+ONLY possible upper-count shortage among nonempty K systems in
+this family,even without protection. It is a real scalar failure:
+A can use one high (b+1)+(b+7),but two highs already exceed u_A;
+B uses all low values EXCEPT b,but one high already exceeds u_B;
+C uses (b+1)+(b+6)+(b+7),but three highs already exceed u_C.
+Their maxima are1,0,2,whose sum3 is below Q4.
+
+Under protection (Fmax) is impossible. Its A+B target sum minus
+the protected cut for original size b+3 is
+
+```text
+[2b+8+L(b)+2b+2]-[L(b+3)+2(b+3)]=1-b<0.             (3)
+```
+
+This proves the upper inequality of(C) for every eligible owner.
+
+**3. Reflect only the positive pool to classify lower-count excess.**
+Reflect v to M+2-v. This exchanges P,Q and replaces q by
+q*=M+2-q. The rooted sizes remain r=(a-1,b,c),the targets become
+u*_i=r_i(M+2)-u_i,and K*_i=r_i-K_i. A minimum-count excess in
+the original system is exactly a maximum-count shortage in this
+reflected system. We apply the UNPROTECTED classification above;
+we do not assume the protected margin survives reflection.
+
+Reflecting (Fmax) back gives the only possible minimum-count failure:
+
+```text
+sizes (3,b,3), b>=3;
+P=4,Q=b+1,q=6,M=b+7;
+targets (u_A,u_B,u_C)=(10, L(b)+8b-2, 13).            (Fmin)
+```
+
+But A+C totals23,below L(6)+2*6=27. Thus the ORIGINAL protected
+pair cut excludes it. This proves the lower inequality of(C).
+Both reflected targets and the use of remaining root size2 rather
+than original size3 are essential to this calculation.
+
+**Unexpected hand countercontrol:scalar eligibility alone is insufficient.**
+At b3,(Fmax) gives R=[0,10] minus{1,6},sizes3^3,targets14/11/23,
+with A as assumed zero owner. Its positive intervals are2..5 and7..10.
+Explicit independent scalar choices are A=4+10,B=2+4+5,C=4+9+10.
+The three K are nonempty and their maximum high counts are1,0,2;
+Q4 cannot be reached. All singleton protected lower bounds9 pass,
+but A+B=25 violates the pair lower bound27. This demonstrates why
+the pair inequalities in(3) cannot be dropped or replaced by scalar
+membership. The whole target nevertheless has the literal partition
+
+```text
+{3,4,7}/{0,2,9}/{5,8,10}, sums14/11/23.
+```
+
+The failed root is A;the successful partition puts0 in B. There is
+no claim that failed rooted count admission forbids global existence.
+The reflected b3 control has targets10/25/13 and minimum high counts
+1,3,1,exceeding Q4;its failing protected pair is A+C=23. No physical
+partition claim is needed for that control. These are hand identities,
+not a new numerical test or a computed finite census.
+
+**Scope and next obstruction.** Whenever an owner has nonempty K_i,
+(C) permits integer choices k_i in K_i with sum Q;then low counts
+sum P. This solves the aggregate scalar-count constraint at EVERY
+middle-interval length for holes1,q. It does not establish that some
+owner is eligible;one-hole scalar gaps must still be treated,especially
+when the root has remaining size2. Nor do these admitted individual
+sum intervals establish simultaneous disjoint partitioning:G319 handles
+positive rows only,and the zero-row boundary needs its own argument.
+General holes p,q,full P_0/five-bin/E28/L8 remain OPEN.
+
+Niggle sweep:all next counts are legal because a low token remains
+and sum k<Q;nonempty K supplies actual scalar upper bounds. The
+j2 equality has a strict one-unit loss which must not be omitted.
+The two-zero j3 pattern is killed by scalar NONMEMBERSHIP,not by an
+assumed joint construction. Reflection acts on positive values and
+remaining cardinalities,not on0 or the original protected inequalities.
+Every possible x-zero support is included;the infinite b parameter
+in(Fmax)/(Fmin) is retained. Both failures are excluded by actual
+original pair cuts. No dependency on pending G319/G321/MI399 or
+W318,no experiment,no independent verification or novelty claim.
+
+Gut verdict:the arbitrary-length calculation has more pull than a
+sequence of small-prefix cases. It explains exactly where protection
+is spent and removes an entire count-capacity obstacle without a
+new exceptional repair list. Reasoned:one part of joint selection is
+settled by hand;owner eligibility and disjoint compatibility remain.
+Next handle scalar owner existence for holes1,q,including the size2
+root gaps,before claiming a partition theorem. No routine review halt;
+include this uniform argument in Cloud's next combined read.13min ACTIVE.

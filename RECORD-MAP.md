@@ -834,3 +834,5 @@ PART: as on the board.
 - Protected bottom-adjacent two holes:existential optimal-feedback escape in one step,hand SKETCH MI404;universal minimizing-choice descent REFUTED by protected3/3/6 cycle MI405. Separated thresholds/five-bin OPEN,no run.
 
 - Protected holes1,3,three sizes>=3:joint0/2-owner budget and MI295 give complete hand SKETCH MI406;size1 shortcut avoided. General two-hole/five-bin OPEN,no experiment.
+
+- Protected holes1,q:every scalar-eligible zero owner meets both aggregate high-count bounds,hand SKETCH MI407;unprotected failures classified by budget2. Owner existence/joint compatibility/five-bin OPEN,no run.
