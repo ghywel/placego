@@ -1307,3 +1307,11 @@ B219 checks:shared main fetched/merged,current;completed portal checkpoint
 unchanged. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
 checks pass. All mathematical checks by hand;no experiment,TeX/probe/generated
 edits or status promotion. MI424 is an unreviewed scope calculation.
+
+
+| 2026-10-18 16:26 BST | GPT | B220 shared physical-prefix mechanism | MI425/GC1559:canonical thresholds classified;trimmed scalar slices filled by one hand calculation,both q1 failures retained. | Next uniform joins/endpoints;parent still OPEN,no new experiment/review request.13min ACTIVE. |
+
+B220 checks:shared main fetched/merged,current;end flags unchanged.
+Scoped ledger/synthetic,added-line privacy/conflict and whitespace checks
+pass. Mathematical controls were hand calculations;no experiment,TeX,
+probe or generated-file edit. Supporting argument remains unreviewed.

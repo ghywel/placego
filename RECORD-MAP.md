@@ -858,3 +858,5 @@ PART: as on the board.
 - Owner's CL441 appraisal implemented as parent-level trajectory/assumption/dependency check,MI423/GC1557;13min prompt revised. B218 extension deferred for coverage test,no new mathematical result.
 
 - Skipped-moment-only extension leaves unbounded actual five-bin descendant families with long prefixes,hand scope test MI424/GC1558;extension parked,next common physical-gap condition. No partition theorem/run.
+
+- Canonical boundary thresholds reduce either prefix defect to one punctured interval;trimmed-slice bridge hand MI425/GC1559. q1 missing13 survives at join;general target coverage OPEN,no run/review request.

@@ -124,22 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 16:11 BST:13-minute heartbeat ACTIVE.**
-Parent:full-interval five-bin sufficiency;protected one-hole four-bin P_0
-is one required branch. Its direct pair selector still needs ONE actual
-boundary meeting both target spectra. MI424's coverage test finds two
-unbounded actual-parent families outside MI422 solely because the missing
-value enters a low prefix;both have canonical moment hits and long
-prefixes. Skipped-moment repair alone cannot close that gap or leave a
-finite residual. B218's proposed extension is PARKED on this evidence.
-Next replace the untouched-prefix assumption by a common physical-gap
-condition for both pools;test against both MI424 families and the known
-q1 canonical failures before developing another lemma. No new census.
-MI417-418(q1) and MI422 remain unreviewed partial candidates;G319-dependent
-older work remains parked. General P_0/five-bin/E28/L8 OPEN.
-Last trajectory check:MI423/GC1557,2026-10-18 16:02 BST. B219 completed
-its specified coverage test and changed the next work;extra pull block
-unused. Cloud's proposed actual-parent diagnostic remains separate.
+**Current state,2026-10-18 16:26 BST:13-minute heartbeat ACTIVE.**
+Parent:full-interval five-bin sufficiency;P_0 is one required branch.
+The pair selector still needs one actual boundary meeting both spectra.
+MI425 classifies ALL canonical threshold positions:middle thresholds,
+a punctured left prefix with unchanged Q,or a punctured opposite prefix
+with unchanged P. A common hand interval-bridging calculation fills
+trimmed interiors in the punctured-prefix slices;the q1 failure still
+survives at a slice join. Neither joint target coverage nor all canonical
+boundaries is proved. Next test uniform joins and target endpoints in
+this representation,retaining singleton high-sum endpoint slices and
+MI417's two failures. No new exception catalogue or census.
+MI424's skipped-only extension stays parked;MI417-418/MI422 and the
+older G319-dependent candidates retain their unreviewed scopes.
+Last trajectory check:MI423/GC1557,2026-10-18 16:02 BST;extra pull block
+unused. B220 changed the representation but did not close a parent branch.
+General P_0/five-bin/E28/L8 OPEN. Cloud's diagnostic remains separate.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31030,3 +31030,113 @@ has lost priority;the shared prefix assumption is the sharper question.
 Reasoned:MI423's test changed the next work,so no extra pull allowance
 is used. Existing candidates keep their statuses.13min ACTIVE;
 P_0/five-bin/E28/L8 OPEN. No new experiment,PROOFS entry or review request.
+
+
+### MI425 — B220: a common punctured-prefix description;the join obstruction survives (2026-10-18 16:26 BST)
+
+**Supporting hand calculation,unreviewed;no full scalar or partition
+criterion.** Record searched:`prefix|low.pool` AND
+`punctur|one.hole|MI417`:39 hits/11 files. Relevant sources read:
+MI417/419/422/424 and FOUR-BIN-PARTITIONS sections2/7. No new external
+result or novelty assertion;no experiment. Main and flags unchanged.
+Initial pull is specific:replace the untouched-prefix hypothesis on BOTH
+sides by the same object. The countercontrol is the already missing q1
+sum;any purported automatic preservation must continue to fail there.
+
+**All threshold positions,for a canonical moment hit.** Let R=P_r(H)
+with consecutive prefix length p,and W=Q_s(H) with prefix length w.
+These are actual complementary rank pools. The physical maps are
+f_q(i)=i+1_(i>=q) on R and j->j+1_(j>=n-q) on W.
+Since max(R)=n-w-1 and R contains all ranks0..p-1:
+
+ * q<p:U has low pool[0,p] minus q and EVERY high value of P
+   raised by1. All q low ranks belong to R,so ell=q and V=Q
+   exactly. The opposite pool is not deformed at all.
+ * p<=q<=n-w:neither low prefix is punctured. This is MI422's
+   geometric regime,with its separate prefix-length requirements.
+ * q>n-w:every R rank is below q,so ell=r and U=P exactly.
+   V has low pool[0,w] minus(n-q),and EVERY high Q value raised1.
+
+These regimes exhaust thresholds because p+w<=n. The description
+uses actual complementarity,not two independently chosen pools.
+Unchanged P does NOT automatically mean its target band is supplied:
+H=h+r may exceed ab. No G316 left scalar lemma is used outside H<ab.
+Canonical moment skips remain outside this classification.
+
+**One calculation for a punctured low interval.** Put
+L=[0,p] minus q,0<q<p. Suppose T={t_0<...<t_M},M>=1,
+has successive gaps at most D. If p>=2D-1,then
+
+ [t_0+D,t_M+p-D] is contained in L+T.                 (1)
+
+Indeed the full translates[t_i,t_i+p] cover between their extreme
+endpoints. A missing point could lie in only ONE translate:in two,
+it would have to equal both distinct missing points t_i+q.
+If that sole translate is interior,its neighbours failing to contain
+x=t_i+q require q>=p-(t_i-t_(i-1))+1 and
+q<=t_(i+1)-t_i-1. These imply p<=2D-2,contradiction.
+If it is the first translate,x<t_1<=t_0+D;at the last,
+x>t_(M-1)+p>=t_M+p-D. Neither omission enters(1).
+The assumption M>=1 matters:one translate can retain a middle hole.
+
+Apply this to a subset-sum slice of L union HIGHS. Choosing j highs
+with0<j<k gives an increasing index path of sums from the least
+j-sum to the greatest,with steps at most the actual largest adjacent
+high gap D. Thus low counts l1 and l=p-1 have full trimmed intervals
+[actual slice minimum+D,actual slice maximum-D] under p>=2D-1.
+For l=p-1,use sum(L)-L,another translated punctured interval.
+For2<=l<=p-2,the reviewed one-hole scalar lemma instead fills
+[alpha_L(l)+2,beta_L(l)-2]. If its width is at least D-1,
+the same high-sum path bridges the translates,including j0/k.
+A convenient sufficient width is l(p-l)-4;use actual width when
+this lower bound is too weak. The P high gaps here are<=3,Q's<=2.
+This gives a shared interior-slice mechanism for BOTH punctured regimes.
+It does not assert the slice joins,required target endpoints,all-low/
+all-high coverage,or l1/p-1 slices with a SINGLE high-sum translate.
+
+**Independent hand controls in both orientations.** In MI424's m4,q2
+case,U={0,1,3,4,5,6,7,10}. Its low pool is[0,7] minus2.
+The four-low trimmed interval is[10,20],and three-low plus10 gives
+[16,26],so the required18 is covered. More generally the q2 family
+has u_A=m^2+m/2 in the all-low m-sum core:its lower endpoint is
+L(m)+m,and upper endpoint minus u_A is m^2/2-m-2>=2 for m>=4.
+The unchanged Q_2m(2) supplies the opposite target by reviewed G316.
+This is an application of existing scalar facts,not a new review job.
+
+At m4,q14,the unchanged U is{0,1,2,3,4,6,9,11} and
+V={0,1,3,4,6,8,9,11}. The latter low pool[0,4] minus2
+has two-sum core[3,5];the high pair-sum path14,15,17,19,20
+has steps<=2,so their translates fill[17,25],including target21.
+Literal halves are U:{0,1,6,11}/{2,3,4,9},both18,and
+V:{0,4,8,9}/{1,3,6,11},both21. Reflection gives both
+original opposite sums43. This checks the other orientation on one
+control,not the whole q=n-2 family or the arbitrary-target domain.
+
+**The q1 failures are retained.** At r6,H6,q1,the boundary is
+U={0,2,3,5,7,9},target13. Low L={0,2,3},highs{5,7,9}.
+The two-low/one-high sums are{7,8,9,10,11,12,14};the one-low/
+two-high sums are{12,14,15,16,17,18,19};all-low/all-high give5/21.
+The target13 is absent. Formula(1) correctly supplies only[9,12]
+and[14,17] from these middle slices:their JOIN is missing13.
+At H8,q1,U={0,2,3,5,8,10} still misses target14 by direct
+triple checking;its low span3 fails the D3 admission p>=5.
+Thus the new instrument cannot silently supersede MI418's repairs.
+
+Unexpected sharpness check:take p4,q2,D3 and T={0,3,6}.
+Then5 lies in[3,7] but not in([0,4] minus2)+T. This refutes
+lowering the span condition to2D-2 for arbitrary translation lists;
+it is NOT a protected partition counterexample.
+
+**Outcome and next inference.** The common physical description is
+exhaustive for canonical hits;interior slice filling is now reduced to
+one punctured-interval calculation. Parent coverage still requires the
+joins and target endpoints,with the stated endpoint exceptions. Next
+attempt a single bound for those gaps,not separate lemmas for each q.
+If it merely increases prefix requirements or replaces one unbounded
+exception family by another,return to the joint selector rather than
+add that theorem to the queue. B218's skipped-only extension stays parked.
+Gut:qualified interest in the common mechanism,not a claim of a solved
+selector. Reasoned:representation improved;general parent coverage has
+NOT closed. Niggles:single translates excluded;actual high gaps used;
+small failure and sharp negative survive;no H<ab smuggled in. No new
+PROOFS entry,carrying request,experiment or promotion.13min ACTIVE.
