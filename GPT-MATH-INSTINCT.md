@@ -124,25 +124,26 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 18:01 BST:13-minute heartbeat ACTIVE.**
-Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-MI430's strict-pair branch remains a COMPLETE COMPUTER-ASSISTED CANDIDATE,
-with its carrying review pending. CL442/9fd9bd0a independently verifies
-G319,now PROVED;G320/G321/G322 still need their own carrying reads.
-B227/MI435 REFUTES fixed canonical child completion even with ALL the
-exact retained strict-triple cuts. Holes4,6 and targets7/15/23 force
-incompatible triples;both actual five-bin ancestors nevertheless partition
-using a different first bin. The test stopped at its first negative.
-Full P_0/five-bin/E28/L8 remain OPEN. Do not patch this child or enlarge
-its census. Next wake is a reading/consolidation block on joint first-bin
-selection:which structural choice can be made together with completion,
-instead of demanding every canonical child complete? Cloud has the exact
-countercontrol to its unchecked top-recipe suggestion as well.
-Last trajectory check:MI435/B227,2026-10-18 18:01 BST;extra pull allowance
-unused. Two reduction failures MI433/435 now point to the same broader
-assumption that a chosen minimum-cut recipe automatically enters a solved
-or universally completable family. Decision:stop fixed-child extensions,
-keep parent existence separate,and seek a joint selection argument.
+**Current state,2026-10-18 18:10 BST: research heartbeat PAUSED for incubation.**
+B228/MI437 completed the reading/consolidation promised in MI435.
+Parent: full-interval five-bin sufficiency; P_0 is one required branch.
+The canonical strict-triple child is refuted, while both displayed parents
+partition. Choosing the first bin jointly with completion remains the
+missing inference, not a new mechanism: MI303/325/330 already expose it.
+No new experiment, local repair, proof filing or duplicate review request.
+G319 is PROVED; G320/G321/G322 retain their own unread arguments.
+MI430 remains a COMPLETE COMPUTER-ASSISTED CANDIDATE pending its carrying
+read. Full P_0/five-bin/E28/L8 remain OPEN; older lanes stay held.
+The owner-authorized pause is for the absence of a concrete new selector
+argument, not routine review permission. Cloud already has GC1569's
+perspective question; GC1570 records this decision. Both saved mathematics
+schedules are PAUSED; no automatic flag polling or computation continues.
+Reopen on a concrete mechanism addressing joint compatibility, a useful
+source that supplies the missing implication, or renewed owner discussion.
+First test on return: challenge that mechanism with MI435's bad child and
+positive ancestors, then MI330's isolated realization; do not merely repair
+those examples. Last trajectory check MI435/B227, refined by MI437/B228;
+extra pull allowance unused. No new timer or automatic resumption promised.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -32335,3 +32336,67 @@ mathematics prompts them,without manufacturing either warmth or restraint.
 Promotion-format checks also caught a repeated dependency receipt and placement
 outside the parser's E2 section. Both were corrected before publication;
 no generated proof pages or build scripts were edited.
+
+
+### MI437 — B228: joint selection is the old missing inference; choose incubation (2026-10-18 18:10 BST)
+
+**Reading/consolidation; no new mathematical result or experiment.**
+Record searched: `joint.*(select|realiz)|neutral.*(isolat|connect)|canonical.*child`
+AND `SS3|P_0|five.bin`: seven hits in two files. Read MI303, MI321,
+MI325, MI328's exchange argument, MI330, MI415/416 and the relevant
+PRIOR-ART notes on fractional allocation, target exchange and Lawrence
+fibres. These are existing source comparisons, not a fresh literature
+survey. The current store checkpoint was reused at wake; shared main
+was fetched and already up to date. CL442 remains the latest review.
+
+The first signal was curiosity about the alternate first bin in MI435.
+The reading adds disappointment: saying “choose it jointly” reproduces
+MI325's change of quantifier without supplying its missing construction.
+I do not presently have a new testable selector. Fresh choice would take
+some distance from this construction rather than enlarge its exceptions.
+
+Three distinctions now govern the return:
+- MI303 already shows that individually feasible target pieces can compete
+  for one token and need an outside bin. MI435 repeats that compatibility
+  obstruction inside an exact, actual descendant. More scalar admission
+  bounds alone have not supplied the missing simultaneous choice.
+- MI325 correctly allows ANY suitable realization; MI330 proves an actual
+  fixed realization can be isolated under ALL neutral two-bin moves.
+  Thus the small inward trade in MI435's positive examples is a witness,
+  not evidence of a universal local path from a canonical choice.
+- MI416's successful direction asked for one common pair boundary whose
+  two actual subset spectra contain the two desired values. Its extension
+  MI430 remains limited to the exclusive-pair-minimum branch and awaits
+  review. Reusing its name does not cover a strict triple minimum.
+
+**Unexpected check:** the seemingly broader global tools are already in
+our record. The target base-polyhedron exchange argument connects admissible
+sum vectors, not their actual partitions. Lawrence/Markov connectivity
+connects existing fibre points, not a desired point whose existence is the
+question. G319 supplies joint allocation for fixed POSITIVE counts on two
+intervals; it does not choose those counts or turn an arbitrary remainder
+into two intervals. None supplies a missing existence implication here.
+No new external theorem is imported or pronounced inapplicable in general.
+
+**Decision and scope.** Parent coverage is unchanged this block. The
+refuted assumption is fixed-recipe completion; a universal neutral repair
+would add another unsupported assumption. G319's verification reduces the
+review dependency risk for G320-322 but does not close their own arguments;
+MI430 has its separate carrying read. I choose incubation under the owner's
+explicit halt allowance and have paused the 13-minute research schedule.
+The older schedule was already paused. No routine review approval is needed,
+and no new review request is added. Cloud receives the operational pause
+as a continuation of the already delivered GC1569 question.
+
+What would reopen work: a concrete selector or augmentation argument that
+addresses compatibility across the whole target family, a source supplying
+that implication with applicable hypotheses, or renewed owner discussion.
+The next cheap test is to compare that proposed implication with MI435's
+bad child/positive parents and MI330's isolated realization BEFORE proving
+new local cases. With no such implication yet proposed, another census
+would not discriminate a new idea. Gut: the problem remains interesting,
+but the current repair direction has cooled. Reasoned verdict: incubate;
+our counterexample is useful evidence about the strategy, not a disproof
+of the five-bin parent. Niggle sweep: no failure transferred from child
+to parent, no connectivity assumed, no pending candidate promoted, and no
+claim that pausing proves the absence of another productive approach.

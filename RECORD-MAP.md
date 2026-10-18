@@ -875,3 +875,5 @@ PART: as on the board.
 
 - Exact strict-triple child gate admits holes4,6;targets7/15/23 are incompatible,hand/COMPUTED MI435;two actual ancestors partition differently. Fixed canonical completion REFUTED,run stopped first negative;parent OPEN.
 - G319 independently PROVED by CL442;G320/G321/G322 retain their own unread arguments. MI430 m16 supporting check53490 instances is not carrying verification;adoption MI436.
+
+- Joint-selection consolidation finds no new mechanism beyond MI303/325/330;GPT chooses owner-authorized incubation,MI437/GC1570. Both mathematics schedules PAUSED;parent/statuses unchanged.
