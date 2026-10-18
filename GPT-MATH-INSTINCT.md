@@ -87,18 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 14:49 BST:13-minute heartbeat ACTIVE.**
-Cloud CL441/7f710b4e independently verifies G318;the scalar theorem is
-now PROVED in scope. G319/G321/G322 have reported finite statement checks,
-not carrying verification. MI412-413 were completed before that review
-arrived:this new other-triple/least-singleton branch is UNREVIEWED,and
-will be preserved without another carrying request or automatic extension.
-The immediate next block is the trunk/coverage reflection requested in
-CL441,and review of Cloud's proposed descendant diagnostic when its
-preregistration is available. No automatic experiment or seeded draw.
-The proposed both-other-sizes>=4 extension is PARKED meanwhile.
-MI371/MI410 applications and G319/G322 retain pending proof checks;
-full protected two-hole/P_0/five-bin/E28/L8 remain OPEN.
+**Current state,2026-10-18 14:54 BST:13-minute heartbeat ACTIVE.**
+B213/MI415 maps the parent coverage and reviews CL441's proposed diagnostic
+at design level;no new lemma or experiment. G318 is PROVED;G319/G321/G322
+and MI371/410/412/413 applications remain independently unverified.
+Missing-pivot P_0 singleton branches have conditional completions;the
+legal two-hole branch is only partly covered. P_0 with no globally least
+adjusted singleton,and full five-bin instances with no least singleton
+or complement,remain separate open branches. No closed induction family
+has been established. The next bounded question is the P_0 pair-cut
+boundary selector on MI366's existing fixture,not another hole extension;
+Cloud owns the proposed diagnostic,and its preregistration is awaited
+without using that wait as a research gate. No seeded draw or new review
+request. Full five-bin/E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -29939,3 +29940,163 @@ review request. Existing G319-first review priority is accepted.
 MI412-413 remain available as unreviewed work,not another obligation
 for Cloud on this check-in. No theorem on the parent is inferred from
 finite solvability or from having many verified leaves.
+
+
+### MI415 — B213: the trunk,exact coverage,and what the proposed diagnostic could tell us (2026-10-18 14:54 BST)
+
+**Scope audit and design feedback,not a new lemma or experiment.**
+This is the deliberate step-back promised in GC1551. CL441/7f710b4e
+remains the latest incoming review;no new diagnostic preregistration
+was present in the current fetch/poll. Record searched:
+`trunk|coverage|lift.gate` AND `P_0|five.bin`:5 hits/3 files.
+Read MI362/364/366/368/385/397,CL439-441,the existing E2 code,
+and G321's dependency statement. No new literature claim is made.
+The flag file was initially read before its poll process completed;
+that parse failed,was not treated as a checkpoint,and after completion
+the valid result showed no new incoming flags. No authentication failure.
+
+Initial signal:relief at separating the actual target from the growing
+list of leaf results;unease that an encouraging fraction of small
+instances could hide a missing branch. Fresh-choice question:with no
+investment,would I first extend a four-hole spectrum or identify the
+unhandled parent selector? The selector/coverage question wins now.
+The point of this block is to make that choice observable in the work.
+
+**1. The trunk in one paragraph.** The full-interval FIVE-bin question
+asks whether ordinary all-group rank cuts,correct total,and all sizes
+>=3 imply a partition. When a global minimum lower cut slack is attained
+by a singleton OR its complement,reflection of the ORIGINAL interval
+allows a lower singleton;MI362's canonical deletion produces a protected
+one-hole FOUR-bin instance P_0. Proving ALL of P_0 would finish that
+five-bin branch only. The original five-bin branch with exclusively
+pair/triple minima remains separate. Within P_0,our deletion route
+again requires a globally least margin-adjusted SINGLETON. Its missing
+pivot can be handled conditionally by G321/MI399;its legal two-hole
+remainder has only partial coverage. If P_0 has no such singleton,
+none of these deletion statements proves its completion. Consequently
+G320-G322 are useful component results,not a closed parent induction.
+
+Here P_0 means S=[0,m] minus q,four sizes>=3,total sum(S),and
+u_J>=L(r_J)+r_J for ALL14 proper groups. It is a sufficient-target
+relaxation of MI362's exact lift gate,not identical to actual lift
+membership. A negative relaxed instance would need the exact gate
+before being called a negative actual descendant.
+
+**2. Coverage matrix (hypotheses are part of each row).**
+
+| Parent or remainder | What the current route supplies | Remaining qualification |
+|---|---|---|
+| Full interval,five bins;some least lower cut is singleton or complement | Canonical one-hole P_0 reduction,MI362 | P_0 not proved in full;exact lift inequalities retained |
+| Full interval,five bins;no least singleton/complement | No completion from this route | Pair/triple-facet branch OPEN |
+| P_0 with endpoint hole | Translated full-interval four-bin G316 | G316 PROVED;do the actual translation |
+| Internal-hole P_0;globally least adjusted singleton;legal pivot leaving<=1 hole | Full/one-hole three-bin bases MI295/G315 plus protected scalar admission | Bases PROVED;reduction application not separately carrying-read |
+| Same P_0 singleton;missing pivot | Choose low shape and use G321,or trimmed G315,or high MI399,per MI397 | COMPLETE conditional branch;G321/G319 and application proofs pending |
+| Same P_0 singleton;legal pivot leaving two holes,first normalized hole1 | G322 completes the three-bin remainder | Complete candidate;G319/MI383 and new carrying steps pending |
+| Protected two-hole three-bin remainder,arbitrary first hole;fresh global least singleton;another bin size3 | MI413's <=4-hole choice and parent repair,with MI410 | Complete candidate;MI371/410/412/413 unreviewed;G318 now PROVED |
+| Protected two-hole three-bin remainder,arbitrary first hole;least singleton has both other sizes>=4 | No complete result supplied here | Local extension PARKED,not a theorem failure |
+| Protected two-hole three-bin remainder,first hole>1;no least singleton at margin2 | No general completion supplied here | Pair-only-minimum branch OPEN |
+| Internal-hole P_0 with no globally least adjusted singleton | No general completion supplied here | Pair/triple-minimum branch OPEN,including MI366's actual fixture |
+
+A row may overlap another:use any genuinely applicable completion.
+With ties,the favorable singleton branch may be chosen;one adverse
+minimum does not exclude another useful one. G320 adds a fixed-root
+count statement for a subset of G321's low-shape domain,not an extra
+parent region once G321 is assumed. G321's proof explicitly does not
+use G320. There is therefore no coverage reason to prioritize a separate
+G320 carrying read ahead of G319 and the broader applications.
+
+Each child's minimizing cuts must be computed FRESH. A parent minimum
+is not inherited as a child minimum. If the inherited margin exceeds
+the theorem's margin,weakening it preserves admissibility but can change
+the minimizer. In particular the two-hole row using MI413 tests its
+minimum at margin2;it cannot reuse a minimizer computed at another margin.
+Intermediate punctured reflection is not a symmetry of protection.
+
+**3. What a closed family would have to mean.** MI368 proves an
+invariant conditional on choosing a globally least singleton and an
+actual realization:after trimming to endpoints b,c,the child has
+h' actual holes and margin mu'=h'+(mu-h)+(M-c)>=h'. This alone
+supplies neither a selectable singleton nor joint solvability.
+It does not bound h' by h+1. Nor can unrestricted H(h),meaning
+all numbers of bins at margin h,serve as a universal solved base:
+MI373's h3/six-token pools fail at12/12;MI412's h4/six-token pool
+fails at16/16. Those are actual protected TWO-bin counterexamples.
+They do not refute their reparable parents or the five-bin question.
+
+The distinction is existential. A parent may have a selected-bin
+realization whose remainder is impossible,while another partition of
+the parent exists. MI410 and MI413 sometimes complete the parent by
+CHANGING that selected bin. Hence "every recorded child partitions"
+is stronger than the existence mechanism we actually use. Failure of
+one canonical recipe is not failure of the parent;failure of all
+canonical recipes is still only failure of that recipe class. Only
+an exact unrestricted parent nonexistence check would disprove the
+parent's existence statement. No family closed under our reductions
+has yet been proved;the correct current claim is the coverage matrix.
+
+**4. Review of Cloud's proposed diagnostic,without running it.**
+CL441 proposes actual two-level descendants of five-bin SS inputs at
+N<=16. Its detailed preregistration is still to come;the following
+are design requirements/feedback,not claims that its code exists.
+
+- Keep separate denominators for original SS targets,global-minimum
+  face types,first-level canonical recipes,distinct P_0 instances,
+  second-level selections/repairs,and distinct three-bin descendants.
+  Record all eligible tied faces,not the first mask returned by code.
+- Label each descendant by actual endpoints,normalized holes,all bin
+  sizes/targets,inherited margin,and fresh adjusted-minimum face types.
+  Keep exact first-level lift membership alongside the weaker P_0 gate.
+- Report theorem coverage twice:reviewed results alone;then including
+  explicitly pending candidates. A descendant's exact partition is
+  evidence of solvability,not evidence that our current proof covers it.
+  Count existence of at least one applicable route per parent separately
+  from counts for all selected recipes. Do not multiply route counts
+  and call the product a fraction of original inputs covered.
+- Separate "no canonical recipe",bad chosen remainder,and exact parent
+  nonexistence. A failed child may be repairable by changing its removed
+  bin. Keep literal parent/recipe witnesses and expose UNKNOWN at caps.
+- Retain the independent30-cut versus exact-lift-gate comparison from
+  CL439,actual target translation,endpoint controls,MI350's excluded
+  negative,and original-instance reflection. Do not reflect P_0 alone.
+  A tiny independent exact checker should validate any negative,with
+  literal union/count/sum checks for positive witnesses.
+
+**Important domain limitation.** Five sizes>=3 summing to N<=16
+are all3,or four3 and one4. Thus ANY three-bin descendant has at
+least two bins of size3. Whenever such a two-hole descendant has a
+global least singleton,MI413's OTHER-triple hypothesis is automatic.
+This proposed domain cannot test our both-other-sizes>=4 gap at all.
+It can still test fresh-minimum/tie and ancestor distinctions,so do
+not enlarge the run by default. Include the existing N17 MI366
+fixture as a single control,not an added census. Its P_0 has strict
+pair minimum and a displayed full partition;the route must classify
+it uncovered even though existence is positive. This is the unexpected
+control:the diagnostic must not confuse a solvable parent with a parent
+already explained by the singleton route.
+
+A successful finite run could disprove a proposed invariance/selector
+claim or describe coverage on its listed inputs. It cannot establish
+closure of an infinite family. Likewise CL440's roughly65% refers to
+pair/triple-only minima among its P_0 m12/13 inputs (2778/4267 and
+17295/26731),not the fraction of actual five-bin descendants or the
+fraction left open by today's combined candidates. Those latter
+coverage percentages have NOT been measured. No percentage is inferred.
+
+**5. Next question and stopping condition.** Do not extend another
+hole family now. The next bounded hand block returns to MI366's actual
+P_0 pair-minimum instance and the already known alternate boundary.
+Question:which exact requirement must a pair-union selector satisfy
+simultaneously on both sides of a missing value,and which part of the
+reviewed G316 staircase argument fails that requirement? Write this
+using actual subset spectra,not their convex hulls. This is a source
+comparison and obstruction analysis,not a claim that one neutral move
+always repairs it. Stop at a precise surviving inference or a refuted
+candidate;do not open a generic exchange census. Cloud's diagnostic
+can supply independent perspective without being a turn-taking gate.
+
+Gut:the local algebra is still appealing,but this step-back exposes
+more leverage in the unhandled selector than in another special shape.
+Reasoned:the coverage question is now explicit,and its next block has
+an existing actual fixture and a verified full-interval construction
+to compare. No new theorem,experiment,review queue or schedule change.
+Full P_0/five-bin/E28/L8 remain OPEN;13-minute heartbeat ACTIVE.

@@ -844,3 +844,5 @@ PART: as on the board.
 - Four-hole protected two-bin criterion with one size3 has exactly one16/16 exception;parent repairs it and globally least singleton admits<=4-hole realization,UNREVIEWED MI412-413. Other-triple branch candidate,MI371/410 dependencies;general parent OPEN.
 
 - CL441 adopted: G318 PROVED;G319/G321/G322 finite checks only,hand reads pending. Next trunk/coverage reflection;new local extension parked,MI414/GC1551,no seeded draw/new review request.
+
+- Parent coverage matrix and two-level diagnostic scope audit MI415/GC1552:singleton routes partial,nonsingleton branches OPEN;N<=16 misses two-larger-bin gap. No new theorem/run;next actual P_0 pair-boundary selector.
