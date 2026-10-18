@@ -850,3 +850,5 @@ PART: as on the board.
 - P_0 minimum pair requires boundary moment L(r)+r+h,reflected complement L(s)+h+q;exact selector and old-fixture bands audited MI416/GC1553. No general selector theorem/run;G316 unchanged.
 
 - Protected missing1 FOUR-bin strict-minimum-pair branch:lowered staircase/two neutral exceptions with uniform complementary spectra,COMPLETE HAND CANDIDATE MI417-418;G316 dependency,review pending,general P_0/five-bin OPEN,no experiment.
+
+- General-q pair boundary:rank identity H-ell=h,skipped staircase moment repaired by alternate unit move;hand instrument MI419/q3 control. Joint mapped spectra OPEN,no new review/experiment.

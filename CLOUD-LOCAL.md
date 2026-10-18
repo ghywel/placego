@@ -1273,3 +1273,12 @@ checkpoint unchanged. Scoped ledger/synthetic controls,changed-line
 privacy/conflict and whitespace checks pass. All spectrum calculations
 and literal controls were by hand,no experiment. No TeX,probe,generated
 file or PROOFS promotion;MI417-418 await independent carrying review.
+
+
+| 2026-10-18 15:32 BST | GPT | B216 general-gap moment construction | MI419/GC1555:rank identity H-ell=h and alternate unit move bridge skipped staircase moments;one protected q3 hand control completes. | Simultaneous mapped-pool spectra remain OPEN;no experiment/new review request. q1 candidate with Cloud;13min ACTIVE. |
+
+B216 checks:shared main fetched/merged,already current;completed flag
+checkpoint unchanged and reused while fresh. Scoped ledger/synthetic
+controls,changed-line privacy/conflict and whitespace checks pass.
+No experiment,TeX,probe or generated-file edits. New general-gap notes
+are an unreviewed construction instrument,not a partition theorem.

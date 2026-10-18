@@ -87,17 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 15:23 BST:13-minute heartbeat ACTIVE.**
-B215/MI417-418 gives a COMPLETE HAND CANDIDATE for P_0 with missing
-value q1 when a pair is globally least and no singleton/triple ties it.
-A shifted staircase with its minimum lowered has exactly two relevant
-scalar exceptions;explicit neutral trades repair them and their ACTUAL
-complement spectra uniformly. This resolves the old MI366 pair fixture
-within a whole branch,not just a finite check. Independent read pending;
-only reviewed G316 is used beyond the new argument,no G319 dependency.
-Next derive the general-q rank-gap identity before proposing a further
-deformation. General P_0/five-bin/E28/L8 OPEN;larger-hole catalogue parked.
-Cloud diagnostic separate,G318 PROVED,other pending claims unchanged.
+**Current state,2026-10-18 15:32 BST:13-minute heartbeat ACTIVE.**
+B216/MI419 derives the general-q rank-gap identity. The physical pair
+moment is achieved by a canonical staircase or one alternate unit move
+when that path skips it;an actual q3 strict-pair control completes.
+This is a construction instrument,NOT a general partition proof:the
+simultaneous spectra after the two rank shifts remain the obstruction.
+Next examine those spectra without assuming moment preservation is enough
+or forcing a growing exception catalogue. B215/MI417-418 q1 strict-pair
+candidate remains unreviewed with Cloud;no new carrying request here.
+G318 PROVED,other pending claims unchanged,general P_0/five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30488,3 +30487,149 @@ change;do not assume the q1 complement identity survives. Next cheap
 step is to derive where q enters that identity before any experiment.
 Cloud can read this at a carrying checkpoint;it does not require a
 routine halt or another local hole catalogue.13-minute heartbeat ACTIVE.
+
+
+### MI419 — B216: exact rank-gap identity for arbitrary q (2026-10-18 15:32 BST)
+
+**Hand reduction and construction instrument,not a general partition
+proof.** Record searched:`rank|compress` AND `staircase|P_0`:9 hits/2
+files;relevant source MI416-418 and FOUR-BIN-PARTITIONS sections7-8
+read. No new external theorem or novelty assertion;no experiment.
+Shared main/Cloud flags are unchanged. MI417-418 remain unreviewed.
+
+Pull:the q1 construction keeps one complement exactly in the reviewed
+family. The question is how that identity changes at arbitrary q,
+without assuming a shifted pool still has its old spectrum. The
+countercheck is a staircase step crossing the gap:it moves a physical
+token by2 and can skip the desired moment. The comparison below
+retains this failure and supplies an alternate move at that point.
+
+Keep MI416's strict-pair notation,r=a+b,s=c+d,n=r+s,and define
+
+ f_q(i)=i+1_(i>=q), 0<=i<n.
+
+This is a bijection from ranks[0,n-1] to S=[0,n] minus q.
+For a rank boundary R of size r,set
+
+ H=sum(R)-L(r), ell=|R intersect[0,q-1]|.
+
+Then U=f_q(R) has required moment L(r)+r+h EXACTLY WHEN
+
+ H-ell=h.                                                   (1)
+
+The first target is a sum in U-1,so put
+
+ D_q(R)={i-1_(i<q):i in R}.
+
+Its required a-sum is L(a)+x. Let W be the rank-reflected actual
+complement {n-1-i:i in[0,n-1] minus R}. The physical reflected
+complement is
+
+ V={j+1_(j>=n-q):j in W}.                                  (2)
+
+Exactly q-ell members are shifted in(2),and
+sum(V)=L(s)+H+q-ell=L(s)+h+q. Its required c-sum remains
+L(c)+z. Thus the exact missing two memberships are
+
+ L(a)+x in Sigma_a(D_q(R)),
+ L(c)+z in Sigma_c(V).                                    (3)
+
+These are spectra of the actual sets,not their convex hulls.
+For R=P_r(H),W is the reviewed Q_s(H) whenever the staircase
+fits;but(2) generally changes that Q pool. When all q low ranks
+belong to R,ell=q and the second shift is empty. In particular
+q1 gives MI418's identity H=h+1 and leaves Q unchanged. This
+explains its special simplification without reflecting the original
+protected instance. Neither identity alone proves(3).
+
+**Moment selection within one alternate staircase move.** The following
+helper works throughout the strict-pair parameter range;it only chooses
+a boundary with the correct size and total. Put
+
+ K=h+min(q,r), ell(H)=|P_r(H) intersect[0,q-1]|,
+ g(H)=H-ell(H), 0<=H<=K.
+
+The staircase shapes grow by ONE unit rank move at each integer H:
+adding1 to the next row,or inserting the last row1 at a triangular
+boundary. Thus ell never increases and drops by1 only if the moved
+rank crosses q-1 to q. Consequently g increases by1 or2.
+
+Every pool in this range fits. Indeed K<=h+q<cd,so the staircase
+index k satisfies k<=s-3 by the reviewed prefix bound applied at
+size s. Also h<=ab-2 gives
+
+ K<=ab+r-2<=r^2/4+r-2<T_(r-1), since r>=6,
+ T_(r-1)-(r^2/4+r-2)=(r-2)(r-4)/4>0.
+
+Hence k<=r-2 and the left prefix p=r-k has length at least2.
+For H>0 the largest rank is r+k-1 or r+k,at most n-3.
+The formula is therefore valid and even leaves room for a further
+unit move of the largest rank. H0 is the ordinary prefix.
+
+Now g(0)=-min(q,r)<h,whereas g(K)>=h. Take the first H_* with
+g(H_*)>=h. If equality holds,use R=P_r(H_*). Otherwise the
+jump is2,g(H_*-1)=h-1,g(H_*)=h+1,and the usual move was
+q-1 to q. Write P=P_r(H_*-1),with low prefix[0,p-1].
+There is a different legal unit move which does NOT cross q:
+
+ * if q!=p,move the last prefix rank p-1 to the empty rank p;
+ * if q=p,move the largest rank up by1 instead.
+
+The second move is not the gap-crossing prefix move. The pool P
+has a nonempty high part here:if H_*-1=0,its only move would be
+r-1 to r at q=r,with g(1)=2-r<0<=h,contradicting the jump above h.
+All destinations are empty and within[0,n-1] by the bounds above.
+The alternate pool has area H_*,unchanged ell,and hence g=h.
+Compared with P_r(H_*),it undoes one unit move and makes one
+other;the difference involves at most two tokens. This proves a
+uniform way to satisfy(1),without a large search or a hole catalogue.
+It does NOT show that this chosen pool satisfies either part of(3).
+In particular MI417's q1 failures already refute that stronger claim.
+
+**Literal skipped-moment control.** Take S=[0,14] minus3,
+sizes(3,3,4,4),targets(14,14,37,37). Its adjusted slacks are:
+AB7;singletons8/27;opposite pair38;cross pairs23;triples10/22.
+Thus it really lies in the strict-pair domain,with h7,x8,z13.
+For r6,q3,
+
+ P_6(9) ={0,1,2,5,7,9}, ell3,g6,
+ P_6(10)={0,1,3,5,7,9}, ell2,g8.
+
+Their physical boundary moments are27 and29,skipping the required28.
+At the lower pool,p3=q,so move its largest rank9 to10 instead:
+
+ R={0,1,2,5,7,10}, U={0,1,2,6,8,11}.
+
+Now sum(U)=28,and A={1,2,11},B={0,6,8} both sum14.
+The actual reflected complement is V={0,1,2,4,5,7,9,10},sum38,
+with c-sum19=L(4)+z given by{0,2,7,10}. Reflecting back gives
+C={4,7,12,14},D={5,9,10,13},both sum37. All four sets are
+disjoint and exhaust S. This checks(1)-(3) on this ONE control;
+it is not a general spectrum verification or a five-bin lift claim.
+
+**Unexpected limiting check.** At q0 (outside the internal-hole range),
+ell0,f shifts every rank up1,and(1) reduces to H=h,with unaltered
+Q on the opposite side. At q1,the formulas recover MI418 exactly,
+including its two failures before repair. Thus the new moment helper
+cannot silently count the previous spectral repairs as automatic.
+A step of size2 is an arithmetic obstruction to the canonical path,
+not a counterexample to partition existence.
+
+**What changed / niggle sweep / verdict.** General q has an explicit
+rank description,and failure to hit the pair moment is repairable by
+one alternate unit move. The unresolved obstruction is now precisely
+the simultaneous spectra after the lower-rank and upper-rank shifts
+in(3),possibly with the two-token correction. The moments alone are
+not progress on that final inference. No uniform one-exchange spectral
+repair is claimed;the old q1 misses are a direct warning against it.
+The bounds use strict singleton/triple comparison,retain actual
+complements,and never transfer protected margins by reflection.
+
+Gut:the interest is still specific,but qualified:the new family is only
+useful if a spectral argument follows. Reasoned:continue with target
+membership/slice geometry of these two mapped pools,using q1 as a
+negative control for any automatic-preservation claim. If that forces
+an expanding exception catalogue without a common mechanism,change
+representation rather than naming more leaves. No new carrying-review
+request or PROOFS entry;the useful q1 candidate remains with Cloud.
+13-minute heartbeat ACTIVE;general P_0/five-bin/E28/L8 OPEN.
