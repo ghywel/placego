@@ -125,6 +125,18 @@ INTERIM OUTCOME (2026-10-15 13:51 BST, M5; machine output quoted; manifest rows 
     MSB was also slower at n = 5 and 6, outside U's registered range.
   - P3 REFUTED for the plain run: n = 6 hit its cap.
   n >= 8 runs under addendum 2 (unit only, six-hour cap).
+
+FINAL OUTCOME (recorded 2026-10-18 by Local from the run's log, manifest and file times; the run ended 2026-10-15).
+  - n = 8 LSD unit: UNSAT, 1116.4 s, 23,084 variables and 148,756 clauses, cake_lpr VERIFIED (log line quoted:
+    "n=8 lsd unit: UNSAT 1116.4 s vars 23084 clauses 148756 cake_lpr VERIFIED").
+  - n = 8 MSB unit: NO VERDICT. It started at 15:08 BST, after the LSD line was logged. Its LRAT output was last
+    written at 21:03 BST at 170 GB, 5 h 55 min into the solve. The job then ended with the session, about five
+    minutes before its six-hour cap. No UNKNOWN line was written. It is counted as undecided at the cap.
+  - n = 9 and 10: never started.
+  - Predictions: P5 REFUTED (n = 8 MSB did not decide within an hour, nor within six); P6 REFUTED (the same
+    instance); P7 not tested.
+  So K2' is certified to 7 states in both directions and to 8 states in LSD order only. Under AGENTS item 22,
+  K2' stops here. A restart (n = 8 MSB beyond six hours, then 9 and 10) is not made without the owner or Cloud.
 """
 import hashlib
 import os

@@ -3020,3 +3020,48 @@ written first: every town tiles; no impossible town (one would be a counterexamp
 under the prize-won first step); unknowns under 0.01%, at the tight end, to be re-run with a larger cap and reported
 either way; the first-branch flag will be rare, the node counts small, and the towns with the largest node counts
 will be the interesting ones. This is Local's run when the owner starts it; nothing has been launched beyond m = 25.
+
+
+## L742 — Local back on the M5: CL454's L₈ certificate job, preregistration addendum and launch; K2′ recorded as stopped at its cap (2026-10-18 23:58 BST)
+
+The owner tagged me in tonight to catch up on eight streets and to run CL454's job on the M5. I read the following:
+- NOW.md;
+- the ledger from CL441 to CL454;
+- GPT-MATH-INSTINCT.md's method and MI034–MI036, which select Tan–Teh's L₈ ≤ 68 and reduce it to m = 24..32.
+
+I have not read the whole of section 2. These additions to Cloud's CL454 predictions were written before launch.
+
+**Record searched:** `record_find.py l8_certificates`, 1 hit (the script); `record_find.py MI044`, 4 hits in 3 files;
+`record_find.py Tan–Teh`, 15 hits in 3 files; `record_find.py L₈`, 4 hits in the ledger; `record_find.py L8 E24 E25
+count-tight`, 0 hits (the record writes L₈).
+- **Completeness control (mine, independent of the job's enumerator).** A bounded-partition DP counts the towns, eight
+  lengths in [68, 2m+66] summing to m², per level: E24 3,319; E25 425,632; E26 5,523,890; E27 19,382,158; E28
+  24,688,633; E29 12,385,850; E30 2,271,658; E31 106,518; E32 186; in all 64,787,844. That agrees with MI044/CL414 and
+  with CL453's two levels. The job's `check` totals must equal these, level by level. Its per-chunk sizes sum to the
+  level totals.
+- **Smoke and the unexpected check.** m = 24 in a scratch folder took 0.85 s: 3,319 tiled, `check` 3,319 valid. I then
+  swapped two planks between two streets in one certificate on purpose, and `check` reported 3,318 valid, 1 invalid.
+  The checker can say no.
+- **Niggle, for Cloud's reason 2.** The job's greedy flag `g` is cleared by any pruned branch as well as by a real
+  backtrack, so it is 0 on all 3,319 towns at m = 24. The node count carries the information instead: n = m + 1 means
+  no backtracking into the recursion (121 of 3,319 at m = 24), and the hardest m = 24 town took 1,028 nodes,
+  (71⁴, 73⁴). I will read n, not g. The job is unchanged.
+- **Predictions (Local).**
+  - L1: every town tiles, as in CL454. One impossible town is a counterexample to L₈ ≤ 68, pushed at once.
+  - L2: wall-clock 1 to 4 hours on 8 workers. The tail is set by the largest single chunk, E27 with smallest street 68
+    (3,112,787 towns on one worker).
+  - L3: `check` matches the DP counts exactly.
+  - L4 (0.6): the share of towns with n = m + 1 rises with m, because more slack per street means fewer forced moves.
+- **How it runs.** The job runs as CL454 wrote it, with `--workers 8 --levels 27,28,26,29,30,25,31,24,32`. The order
+  puts the largest chunks first and changes only wall-clock. Output stays outside git in Local's scratch folder, a
+  different folder from the one CL454 names, and is registered with `jobctl` at priority 1.
+
+**K2′, recorded as promised in L741** (the probe's FINAL OUTCOME, `tests/probes/swarm/erdos_k2prime_barrier.py`):
+- n = 8 in LSD order is UNSAT, 1116.4 s, cake_lpr VERIFIED.
+- n = 8 in MSB order gave no verdict. Its proof was last written 5 h 55 min into the solve, at 170 GB, and then the job
+  ended with the session, just short of its six-hour cap.
+- n = 9 and 10 never started.
+
+So K2′ is certified to 7 states in both directions and to 8 in LSD order. P5 and P6 are refuted and P7 is untested.
+K2′ stops there under AGENTS item 22, and I will not restart it without the owner or Cloud. The 170 GB partial proof
+file is still in Local's scratch; deleting it is the owner's word.
