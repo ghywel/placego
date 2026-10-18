@@ -124,25 +124,28 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 18:50 BST:13-minute research heartbeat ACTIVE.**
-The owner requested reading Cloud's check-in and resumption if a reasonable
-path exists. CL443/d10405be is verified,read and ACKed. B229/MI438 rejects
-the natural actual-hole-count upper-margin alternation on MI435's existing
-parent,for EVERY realization of its top singleton. That is not the route
-being resumed. The new concrete lead is joint interval-count admission:
-Cloud's cutwise singleton capacities omit group competition. On its
-four-bin 21/21/21/21 counterexample,all low-count choices force a two-bin
-group needing sum42 whose least available sum is43.
-Next bounded task:the seven FIXED fixtures and controls in MI439;write and
-publish the instrument before its one invocation. No larger census or
-hole-family repair. This tests a necessary relaxation,not a universal
-sufficiency theorem. Parent remains full-interval five-bin sufficiency;
-P_0 is one branch and no parent coverage was added by this restart.
-G319 PROVED;G320/G321/G322 and MI430 retain their pending carrying steps.
-The older research schedule remains PAUSED. Last trajectory decision:
-MI438/B229 resumes on the changed group-count test,not renewed warmth or
-review permission. Extra pull allowance unused;two repeated failures or
-90 active minutes still require a check before another repair.
+**Current state,2026-10-18 19:12 BST:13-minute research heartbeat ACTIVE.**
+Parent:full-interval FIVE-bin prescribed-size/sum sufficiency;P_0 is its
+protected one-hole FOUR-bin branch. Missing inference:simultaneously
+choose actual disjoint token sets,not merely admissible marginal sums.
+B230/MI440 completed the ONE registered joint-count diagnostic:all fourteen
+fixture/reflection cases and independent controls passed. Group counts
+exclude all three specified negatives and retain the three positives.
+MI441 checks the older size3 negative MI350 by HAND:even one common count
+matrix with ALL conditional group bounds need not be realizable. It is
+outside P_0;no parent counterexample or coverage gain follows.
+Next bounded HAND question:can G319's coupled interval allocation handle
+one additional bin confined to one interval,while the other three bins
+cross both intervals,WITHOUT fixing the confined bin's physical subset?
+This count pattern occurs in both positive P_0 controls;its sufficiency
+and availability on general P_0 instances are separate,unproved questions.
+First inspect the carrying argument and old negatives;no new census or
+exception catalogue is authorized by the diagnostic's success alone.
+CL443/d10405be verified/read/ACKed. G319 PROVED;G320-322 and MI430 keep
+their unread carrying steps. Older research schedule PAUSED. Last strategy
+decision MI438/B229;MI441 records the scope guard and continuation reason.
+Extra pull allowance unused;two failures of the same assumption or90
+active minutes trigger a strategy check before another repair.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -32545,3 +32548,113 @@ before the single invocation. Record search repeated:
 returned seven hits in three files,including this registration. No new
 incoming Cloud flags;shared main already up to date. No dependency on
 pending G320-322 or MI430 carrying arguments.
+
+
+### MI440 — B230: joint-count diagnostic completes once (2026-10-18 19:12 BST)
+
+**COMPUTED diagnostic,not a sufficiency theorem.** MI439's source was
+published at07ac133f before its single invocation. All seven base fixtures
+and their reflections passed,with no retry,patch,domain expansion or cap
+increase. The aggregate count is25,631 recursive/checked states;0.066122
+process CPU seconds and0.06715017004171386 internal wall seconds on the
+Intel host. These are this tiny run's measurements,not a performance claim.
+The external20-second watchdog and registered10CPU/1m-state caps were not
+reached. Exit0;no instrument error.
+
+| Fixture | All count matrices | Admitted matrices | Actual partition |
+|---|---:|---:|---|
+| Cloud three-bin17^3 |12|0|no|
+| Cloud four-bin21^4 |44|0|no|
+| MI435 bad child7/15/23 |30|0|no|
+| P_0 parent missing4 |31|2|yes|
+| P_0 parent missing6 |44|2|yes|
+| Positive two-interval rows |7|1|yes|
+| Deliberate size1 countercontrol |1|1|no|
+
+Reflections have the same counts/existence;the ENTIRE admitted maps agree
+under interval-column reversal. Across fixtures/reflections338 matrices
+were checked,12 admitted,counted separately per case. Independent row-
+and column-enumeration match whole transportation/admitted sets;formula
+bounds match literal interval extrema. Independent subset/complement and
+token-owner recursions agree on exact existence. Returned and supplied
+positive witnesses pass direct disjointness,size,sum and count-admission
+checks. Hand contradictions in MI438-439 independently predict negatives.
+The unexpected size1 control remains admitted but impossible as registered.
+
+Frozen source SHA256:
+`4099da45717141db93cdf712b4cad0fabd7bd23a61688d16e04ed30abaf9961c`.
+Raw result SHA256:
+`6d765cbc218291925ec7fe005f56667d870f979a67b921634a2c59207f64e9cc`.
+Raw JSON retained outside git;source remains unchanged. No stronger
+coverage inferred:the next hand check below is deliberately adversarial.
+
+### MI441 — B230: the size3 limitation survives;next inference stays explicit (2026-10-18 19:12 BST)
+
+**Hand scope check using existing MI350,not another experiment.** Original
+response to the run:the clean discrimination is encouraging;unease is
+that joint counts may still disguise the same compatibility gap. Checking
+MI350 makes that limitation concrete even with every bin of size3.
+Record context:MI439's search,G319 and MI350 section2 reread;no new
+external theorem imported or novelty claim. This does not alter the
+registered run or retroactively add a fixture to it.
+
+Take S=[0,12] minus6,targets(A,B,C,D)=(4,18,18,32),all sizes3.
+For intervals[0,5],[7,12],choose count rows
+
+ A=(3,0), B=(1,2), C=(2,1), D=(0,3).
+
+Row totals are3,column totals6. Every proper group passes conditional
+rank bounds. Here are all singleton/pair bounds and targets:
+
+| Group | Lower | Target | Upper |
+|---|---:|---:|---:|
+| A |3|4|12|
+| B |15|18|28|
+| C |8|18|21|
+| D |24|32|33|
+| AB |21|22|37|
+| AC |17|22|27|
+| AD |27|36|45|
+| BC |27|36|45|
+| BD |45|50|55|
+| CD |35|50|51|
+
+The four triple-group inequalities follow by complement from total72
+and full interval column totals. Yet A is forced to{0,1,3},D to{9,11,12}.
+Remainder{2,4,5,7,8,10} has no triple18:with zero odd terms the sums are
+14,16,20,22;with two odd terms5+7 the third would be the missing6.
+Thus common counts plus ALL conditional group rank bounds are NOT a
+universal realization criterion,even on two intervals with bin sizes3.
+This is outside P_0:target4 violates its lower margin L(3)+3=6.
+No P_0/five-bin counterexample,no G319 contradiction (four bins and zeros).
+
+**Trajectory decision.** Parent coverage unchanged;representation improved,
+its generic sufficiency explicitly rejected. The recurring assumption to
+avoid is that joint rank feasibility already supplies physical ownership.
+No dependent proof added;G319 is verified and G320-322/MI430 are unused.
+Next cheap test is a bounded HAND audit of G319 with a fourth,one-sided bin,
+keeping that bin's subset variable during allocation. Both actual positive
+parents admit such a pattern:missing4 has low counts(0,1,1,2),missing6
+has(1,1,1,3),as their supplied literal partitions show. MI350 has TWO
+one-sided bins,so it must be kept as a negative boundary rather than
+silently admitted. A proof for this pattern would still need a separate
+P_0 count-selection argument;neither implication is claimed now.
+
+Reason to continue:there is an explicit allocation argument to inspect
+and a physical variable it must retain,not just another count census.
+Stop that hand block at a valid extension,a counterexample,or an identified
+unproved step;the latter triggers strategy reassessment,not another local
+repair. Gut:interested but cautious;the pass has not earned renewed blanket
+warmth. Reasoned verdict:one concrete mechanism audit is warranted;general
+sufficiency remains open. Niggle sweep:checked complement arithmetic,
+size3 negative versus protected parent,source-before-run chronology,
+independent-map scope and pending statuses. No proof-review request.
+
+
+**Incoming coordination receipt:**CL444-445 at8fd73e86 verified/read during
+publication. Cloud accepts MI438's alternation refutation and group-count
+explanation,and supplies six literal SSCM survivors without a rerun.
+These are available future controls,not additions to B230's completed
+fixed domain. No general exception classification follows from explaining
+a finite survivor list. Website sections8/9 read is deferred explicitly.
+The bounded allocation hand audit remains next.

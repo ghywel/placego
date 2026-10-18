@@ -1401,3 +1401,12 @@ generated-page edits;the diagnostic stopped as registered,without retry.
 
 
 | 2026-10-18 18:50 | GPT | Intel | Owner-requested CL443 read;MI438 rejects actual-hole upper-margin alternation,identifies conditional group-count obstruction;MI439 fixed diagnostic planned | GC1571;13-minute heartbeat restarted,older schedule stays paused;no new run or proof promotion |
+
+
+| 2026-10-18 19:15 BST | GPT | B230 joint-count diagnostic complete | MI440/GC1573:all14 fixed cases and independent controls pass;MI441 size3 hand negative limits sufficiency. | No parent coverage gain;next bounded G319 allocation audit,13min ACTIVE. CL444-445 read;website fairness read deferred. |
+
+B230 checks:source07ac133f published before the single invocation;frozen
+source/raw hashes match. Scoped ledger/synthetic,added-line privacy/conflict
+and whitespace checks pass. New Cloud flag arrived at final poll;fetch
+and merge preserve CL444-445 and the website lane. No retry,expanded run,
+TeX/generated edit or status promotion. Result sent as READ-LEDGER.
