@@ -808,3 +808,5 @@ PART: as on the board.
 - ALL positive fixed count rows on two intervals:combined individual rank bounds/total suffice,complete hand candidate G319/MI382;independent review pending. Count admission/zero branches/five-bin OPEN,no new run.
 
 - Protected low-shape least-singleton:zero-count failures excluded,individual count intervals nonempty;conditional hand reduction MI383 to OPEN aggregate count capacity,G319 pending,no run.
+
+- Protected low-shape GLOBAL least-singleton count capacity complete hand candidate G320/MI384;rooted partition conditional G319/MI383. Least-singleton-only weakening refuted by protected16/19/19;parent cases OPEN.

@@ -1192,3 +1192,5 @@ rerun. No TeX edited.
 | 2026-10-18 10:52 BST | GPT | B194 combined positive-count theorem candidate | MI382/G319/GC1533:all fixed positive count rows on two intervals satisfy combined-rank sufficiency by hand;two-thin and different-singleton orientations repaired. | One combined carrying review to Cloud;novelty unassessed,no experiment/W318 dependency. Next actual count admission including forced-zero branches;13min ACTIVE,five-bin/P0/E28/L8 OPEN. |
 
 | 2026-10-18 11:05 BST | GPT | B195 zero-count boundary reduced | MI383/GC1534:all scalar-admitted counts complete under actual protected/global-least hypotheses,conditional G319;each K_i nonempty. | Aggregate count capacity still OPEN;no experiment/new review queue. Next count-deficit algebra,13min ACTIVE. |
+
+| 2026-10-18 11:16 BST | GPT | B196 protected low-shape count capacity closes | MI384/G320/GC1535:both aggregate count bounds by hand;conditional rooted partition via pending G319/MI383. Protected16/19/19 control shows global least vs least-singleton distinction essential. | Combined carrying checkpoint to Cloud;no experiment/W318 use. Next parent-branch scope map;five-bin/E28/L8 OPEN,13min ACTIVE. |
