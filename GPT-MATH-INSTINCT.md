@@ -87,18 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 13:12 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 13:23 BST:13-minute heartbeat ACTIVE.**
 MI399's high-shape hand candidate and G321 remain pending review.
-MI400/401 test the remaining legal-pivot two-hole branch by rank
-compression. Every admissible hole-count array gives a feasible
-full-interval target,but the solver must also realize those counts.
-Blind lexicographic feedback fails on an ACTUAL parent instance:
-all45 count states enter a2-cycle despite10 physical partitions.
-Relabelling the same target makes it converge. That policy is parked;
-next question is target-aware selection within the compressed fibre,
-with a strict progress criterion required before further iteration.
-No larger census. Legal two-hole and nonsingleton P_0 branches,
-full five-bin/E28/L8 remain OPEN.
+MI403's SAME45-state diagnostic refutes the negative forecast:
+EVERY minimum-physical-error fibre choice strictly decreases the
+minimum error when positive. Lex-first minimum-error feedback reaches
+one of3 zero-error count states;10 literal physical partitions exist.
+This is ONE fixed protected two-hole target,not a general theorem.
+Next hand question:prove or refute the existential strict-descent
+statement for protected three-bin two-hole pools,explicitly spending
+the margin2 and size>=3 hypotheses. No larger census or tie-break
+sweep. The old blind lexicographic policy stays refuted/parked.
+Legal two-hole and nonsingleton P_0 branches,full five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28494,3 +28494,145 @@ that kind of monotonicity? Search that record before another run.
 Do not try more seeds or increase the domain. This is a failed algorithm,
 not a theorem against protected two-hole completion. G321/MI399 review
 continues independently;full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.
+
+
+### MI402 — B206: one final same-domain test of target-aware feedback (2026-10-18;preregistered before the run)
+
+Question:does a target-aware compressed-fibre choice supply a strict
+progress quantity? Pull is weaker toward iteration itself;the useful
+question is whether its proposed progress is real. Record searched:
+`monoton|fibre|neutral` AND `MI301|MI320|MI330|MI325|MI401`:15 hits/7 files.
+MI325/330 and MI334-335 read. Neutral pair moves can isolate a chosen
+four-bin realization;the original one-hole relay work stopped rather
+than assuming joint witnesses. Neither is a theorem about the present
+three-bin fibre oracle,but both prohibit an unproved connectivity step.
+Bounded primary searches for prescribed-cardinality/sum partitions
+returned the already recorded Hoory-Kotlar/Chen-Fu scopes;no new theorem
+or claim of literature completeness. MI295 remains the only base used.
+
+For the SAME n9,p3,q6,size3^3,target15/15/16 and SAME45 nested states,
+let E(K) be the MINIMUM physical L1 target error among ALL rank partitions
+with compressed sums u-k-ell. Examine ALL minimizers,not a hidden
+lexicographic choice. For each minimizer P,its actual counts K' are an
+admissible next state. Test whether E(K')<E(K) whenever E(K)>0.
+Also test the weaker existential version:some minimizing successor
+strictly improves. Separately classify the deterministic rule that
+chooses the lexicographically first MINIMUM-error partition.
+
+Blind prediction:the universal strict-descent claim fails,possibly even
+the existential one. Controls:whole1680 partitions,45 states,exact
+agreement of E(K)=0 with physical-compatible counts;all actual transitions
+admissible;independent original-value subset/backtracking confirms the
+10 physical partitions and their count states. Counterfactual:the old
+lex-only rule must still have its2-cycle. Unexpected check:strict versus
+weak/existential progress and actual orbit termination are DIFFERENT
+claims;report all of them,including plateaux. Stop at this SAME domain
+or5 CPU seconds. No new targets,holes,n,seeds,relabellings or cap increase.
+If no strict general mechanism emerges,park feedback rather than tuning
+another tie-break. An exact whole-fibre minimizer is an analysis oracle,
+not an algorithm already supplied by MI295.
+
+
+### MI403 — B206 outcome: minimum-error selection strictly improves on the fixed case (2026-10-18 13:23 BST)
+
+**COMPUTED,one domain only;general progress statement OPEN.**
+One run of the MI402 protocol completed in0.037537 CPU seconds.
+Its executed source was retained unchanged as
+`tests/probes/instinct_two_hole_best_response.py`,with a descriptive
+header added afterward. All controls passed;no rerun or domain increase.
+The independent physical catalogue has10 labelled partitions and exactly
+3 compatible count states. All1680 rank partitions and45 count states
+were used. Raw output outside git:math-instinct-b206-feedback.json,
+SHA256 e3959cb51784dcb6dafb56dbf261fa6bdcd678082ab597a51e9ca15a5d08f6c4.
+
+The minimum physical L1 error over each compressed fibre is distributed:
+
+```text
+E=0:3 states; E=2:11; E=4:8; E=6:14; E=8:9.
+```
+
+For EVERY positive-error state,every minimizing partition's actual-count
+successor has STRICTLY smaller minimum fibre error. Both the universal
+and existential strict-progress failure counts are0. The blind forecast
+of failure is REFUTED on this fixed domain. The deterministic first
+minimizer rule has3 fixed points,all error0,with basins20/11/14;
+there is no positive cycle. The original blind lex rule's2-cycle was
+reproduced as the negative policy control,not silently replaced.
+
+The3 fixed states have k=(2,2,2) and ell a permutation of(1,1,2).
+For the old cycle's X and Y,the whole-fibre minima are already0:
+compatible partitions existed and the original lex policy discarded
+them. This does not imply that every state was initially solved;
+42 states have positive minimum fibre error,as the distribution shows.
+The test exhausts ALL minimizing choices at those42 states,not just
+one favorable tie-break. Existence and proof are still distinct:
+45 states of one instance cannot carry an infinite progress claim.
+
+**Exact conjecture to test by hand.** For the protected two-hole
+three-bin data of MI400,let C be all nested count arrays with the
+fixed threshold totals. For K in C,let P(K) be all full-rank partitions
+with sums w_i=u_i-k_i-ell_i. The reviewed full-interval theorem
+makes P(K) nonempty. Put
+
+```text
+E(K)=min_(P in P(K)) sum_i |sum_(j in P_i) z_j-u_i|.
+F_min(K)={actual nested counts of P:
+          P in P(K) attains E(K)}.
+```
+
+The WEAKER sufficient statement is:if E(K)>0,there exists
+K' in F_min(K) with E(K')<E(K). It would imply protected
+two-hole completion:choose any initial K,follow strict decreases
+of the nonnegative integer E,and terminate at0. Conversely E0
+is exactly an actual partition. C is nonempty because one may
+assign the n rank positions to the prescribed bin sizes and then
+count their two thresholds,without imposing any sums. No existence
+of the requested physical partition is used in defining C or P(K).
+This conditional implication is elementary;the descent assertion
+is the open step. The stronger ALL-minimizers version happened
+to pass the finite case but is not needed for the implication.
+
+This is an existence argument with a finite optimization oracle,
+not a practical algorithm obtained for free from MI295. MI295
+supplies some full-interval realization,not the physical-error
+minimum within its fibre. Optimizing over the entire union of
+fibres and declaring its minimum0 would merely restate the task;
+the desired local strict inequality needs its own proof.
+
+**Unexpected hand limit:target-aware selection alone is insufficient.**
+In MI400's size2 one-hole countercontrol,each of the three assumed
+outlier owners has a UNIQUE compressed realization:
+
+```text
+owner A:targets1/6/8,partition01/24/35,actual top owner C;
+owner B:targets2/5/8,partition02/14/35,actual top owner C;
+owner C:targets2/6/7,partition02/15/34,actual top owner B.
+```
+
+Thus all three minimum errors are2. Even the error-minimizing rule
+has B<->C as a positive-error cycle. This is a direct hand enumeration
+of the already registered countercontrol,not a new computational domain.
+It shows why the proposed general proof must explicitly use protected
+margin2 and minimum size3;finite fibre optimization plus full-interval
+feasibility alone do NOT give strict descent. It is not a counterexample
+to the protected conjecture,whose hypotheses this toy violates.
+
+Niggle sweep:minimum error is over the whole fixed rank-sum fibre;
+ALL minimizers were checked. State updates use both thresholds,not
+only their sum. Each physical zero-error count is found independently
+from actual values. The old lex policy remains refuted;the new result
+is not a relabelling rescue or a claim that an arbitrary solver works.
+The comparison E(K')<E(K) uses a NEW fibre minimum,not the unchanged
+physical error of the partition which generated K'. No independent
+second reader or universal convergence is claimed.
+
+Gut verdict:surprise at the failed negative prediction. There is now
+a specific mathematical pull toward the strict inequality,not a reason
+to keep running variants. On a fresh choice this is worth one hand
+attack because a proof would close the remaining protected two-hole
+three-bin branch. Reasoned:the finite diagnostic earns a precise
+conjecture only. Next inspect a hypothetical nondecreasing best response
+using the two cut edges and protected rank slack;try to build a genuine
+protected countercontrol before growing a repair catalogue. No further
+census is authorized by this outcome. G321/MI399 review proceeds
+independently;full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.

@@ -828,3 +828,5 @@ PART: as on the board.
 - Protected high shape {0} union[3,n] union{n+2}:complete HAND CANDIDATE via two endpoint owners/full-interval MI295,MI399. Conditional parent missing-pivot branch completes with G321;legal two-hole/nonsingleton branches OPEN.
 
 - Actual protected two-hole legal pivot:all45 compressed-count states cycle under lexicographic feedback despite10 partitions;relabelling converges,COMPUTED/explicit hand cycle MI401. Blind feedback parked,existence OPEN.
+
+- SAME protected two-hole fixture:minimum-physical-error fibre feedback strictly improves for all minimizers at42 positive states,3 goal states,COMPUTED MI403;general existential descent OPEN,size2 countercontrol cycles.

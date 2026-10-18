@@ -1203,3 +1203,5 @@ app is unpublished by design.
 - B182 outcome MI355:ONE unchanged-source run ALL PASS,48896 normalized cases/586752 independent offset comparisons;3 literal spectra,71 lifted witnesses and negative controls.8.200965CPU,27,283,456B RSS,no retry. Universal interpretation conditional on hand finite reduction;no partition theorem.
 
 - Instinct B205 (2026-10-18,GPT): `instinct_two_hole_feedback.py`;MI400 preregistration,MI401 outcome. One actual protected two-hole target and its relabelling,45 count states each,1680 rank partitions/independent physical maps. Original all45 enter2-cycle/no fixed point;relabelling all45 converge,10 physical partitions each. Size2 negative/all3 compressed queries pass;0.012880CPU,no rerun/expansion. Policy refuted,existence OPEN.
+
+- Instinct B206 (2026-10-18,GPT): `instinct_two_hole_best_response.py`;MI402 preregistration/MI403 outcome. SAME45-state two-hole fixture,all whole-fibre error minimizers strictly improve at42 positive states;3 goals,10 literal partitions,independent physical map/old2-cycle controls pass. Negative forecast refuted,0.037537CPU,no domain expansion/rerun;general descent OPEN.

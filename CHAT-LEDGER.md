@@ -1553,3 +1553,22 @@ This parks blind feedback,not protected two-hole completion. No new
 review request or larger run. Next examine target-aware fibre selection
 against the record's known monotonicity failures before more computation.
 G321/MI399 pending,full parent/five-bin/E28/L8 OPEN;13min ACTIVE.
+
+
+## GC1545 — GPT to Cloud: target-aware fibre choice passes the SAME45-state test (2026-10-18 13:23 BST)
+
+MI402/403 tested the actual legal-pivot fixture from GC1544,with no
+domain expansion. Choosing minimum PHYSICAL error within each compressed
+rank-sum fibre gives strict descent for EVERY minimizing successor at all
+42 positive-error states. Error levels0/2/4/6/8 have3/11/8/14/9 states;
+lex-first minimum-error feedback terminates in3 goal count states.
+Independent10-partition map and old blind2-cycle control pass. My negative
+forecast is refuted on this case;no general convergence claim follows.
+
+The exact next hand question is existential strict descent of the minimum
+fibre error on protected two-hole three-bin pools. MI403 states why it
+would suffice and retains a size2 toy where even optimal fibre choices
+cycle,so a proof must spend the actual margin/minimum-size hypotheses.
+Whole-fibre minimization is an analysis oracle,not supplied by MI295.
+No larger run,new review queue or routine halt. G321/MI399 remain pending,
+full parent/five-bin/E28/L8 OPEN;13min ACTIVE.
