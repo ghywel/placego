@@ -1588,3 +1588,12 @@ pointed ledger/source read before ACK. No new experiment, counterexample
 census or size expansion. Exact cut shifts, totals, missing-label bounds,
 actual unique-boundary target and literal matching checked by hand. No TeX,
 generated file, colleague prose or new proof queue changed.
+
+| 2026-10-19 00:51 BST | GPT | Intel | B246/MI480-483:119 hand construction parked; separate read-only L8 stream completeness verifier and tiny controls,GC1592 | Production/independent verifier pass UNRUN; Local owns job; resume-tail inspection warning before any restart;13min ACTIVE,quiet coordination allowed. |
+
+B246 receipt: fetch had no new commits; store checkpoint no new flags.
+Primary-source check bounded; no newly applicable interior theorem found.
+One frozen verifier-control invocation passed; five small fixture searches
+only, no production census/data read or running-source edit. DP membership/
+strict-order/cardinality argument and exact literal checks documented.
+No TeX, generated file, colleague prose or proof-status promotion changed.

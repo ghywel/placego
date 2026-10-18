@@ -124,23 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-19 00:36 BST: research ACTIVE every 13 minutes.**
-Local owns the launched L8 run; no computation duplicated here. Older
-schedule PAUSED and old held lanes unchanged. H2/five-bin OPEN, MI460
-unreviewed and unused. Cloud CL455 independently verifies MI470/473
-admission and replicates MI472's119 completions: the actual all-odd E24
-slice has second-read admission plus TWO-PARTY COMPUTED completion.
-The structural matching explanation remains OPEN. B244 refuted isolating
-the central unit exchange; B245 proves exact tight-cut factorization,
-including the upper shift3r, but its support class changes after a split.
-Only ONE of the70 actual targets is on a proper tight face; the other69
-are strict interior. MI478-479 hand scope audit is unreviewed. Boundary
-recursion is parked as a main route; no extra boundary cases/filter/order
-or existence census. Next: bounded primary-source/representation check
-for a constructive use of nondecreasing delta>=0,total12. If that is just
-the same X-ray problem, ask specific perspective or incubate rather than
-renew local repairs. Latest strategy check MI476; pull-only allowance spent.
-No background computation runs here.
+**Current state, 2026-10-19 00:51 BST: schedule ACTIVE every 13 minutes.**
+Local owns the L8 run; no production computation or stream read duplicated.
+The119-profile hand construction is PARKED: bounded source check MI480
+found no applicable interior mechanism. MI472 remains TWO-PARTY COMPUTED;
+MI470/473 admission second-read CL455. H2/five-bin and old holds unchanged.
+MI478-479's boundary audit stays hand/unreviewed. Existing finite-to-infinite
+reduction MI276 reused, not rebranded as new work. B246 supplies a separate
+READ-ONLY finished-stream verifier, MI481-482: target membership, strict
+order and independent per-chunk counts prove coverage; literal sums and
+all285 filenames/DONE required.100 tiny DP controls,five fixture towns,nine
+negative mutations pass. NO production or independent-party verifier pass.
+Source-inspected resume predicate mismatch flagged for Local BEFORE any
+restart; running source unchanged. Next: review verifier/finished return;
+no forced mathematical block while the hand mechanism remains missing.
+Quiet incubation/coordination is valid. Latest strategy check MI476;
+source-block decision MI483, pull-only allowance spent. No background job here.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -34738,3 +34737,123 @@ realization result that uses these ordered-target constraints; if that
 returns only the same general X-ray existence problem, seek Cloud's
 specific perspective or incubate instead of inventing another local module.
 ACTIVE13min; latest strategy check MI476; no renewed extra-block allowance.
+
+### MI480 — Source check closes no interior construction; choose a useful independent obligation (2026-10-19 00:48 BST; B246)
+
+Record searched: permutation.*sum|sum.*permutation|Skolem|X.ray AND
+construct|monoton|ordered|interval ->10 hits/3 files; existing Nordh and
+X-ray receipts reread. Two initial and three focused literature queries;
+read the primary Davis–Schroeder2606.21532v1 introduction, Lemmas2.4,
+3.1–3.2 and selected section4 statements. Receipt in PRIOR-ART below.
+No applicable construction for the actual ordered delta targets found in
+this bounded search; NOT FOUND, not a theorem of absence. TTD language
+does not supply the missing decomposition. The hand119 completion question
+is PARKED, not refuted or declared impossible; its independently computed
+completion stands. No new support filter, order or cycle template.
+
+The finite-to-infinite L8 implication is already audited at MI276. Reread
+that entry, MI044, the primary Tan–Teh2312.10914v3 introduction/section2,
+and the running certificate source without executing or modifying it.
+Do not relabel the known induction as new progress. A useful independent
+obligation remains: its checker validates individual tilings, but total
+counts alone cannot rule out a duplicate replacing an omitted town. The
+old MI276 already requires independent target coverage. Implement that
+missing post-run check, not another search. Local still owns the job.
+
+### MI481 — Independent completeness verifier: frozen controls before execution (2026-10-19 00:49 BST; B246, NOT RUN at registration)
+
+Question: can the retained certificate stream be certified complete without
+rerunning its solver or retaining64.8million target keys in memory?
+For each exact-minimum chunk, require every target to be a member of its
+mathematical domain, records strictly increasing lexicographically, and
+the record count equal an independently computed domain cardinality.
+Membership+distinctness+equal finite cardinality proves exhaustion.
+Require all285 expected chunk files, final DONE exactly once, no X/U,
+and literal plank inventory/assignment sums; fail closed on violations.
+The full check will run only on finished output, on its owning host.
+
+Independent per-chunk count: remove the first target lo, then subtract lo
+from the remaining seven. Count partitions of r=m*m-8*lo into at most7
+positive parts, each<=2*m+66-lo (zeros pad to seven). A coin-count DP is
+independent of the search source's sorted-target recursion. Keep only
+bounded per-chunk state; no huge target set or certificate collection.
+
+Prediction: original tiny complete fixtures pass; a duplicated valid town
+replacing another valid town FAILS even though every tiling and total row
+count remain valid. Controls: missing record, bad assignment, wrong chunk,
+missing DONE, trailing record, X/U, footer mismatch. Independently brute
+count100 tiny rectangles against the DP. Unexpected: test a mathematical
+EMPTY chunk and require its DONE record, rather than accepting an absent
+file. Also preserve sorted-bin-sum semantics: bin label permutation is
+harmless. Fixture solver calls are only to prepare the five small known
+positive controls in E26 at minimum84; no production census/run.
+Stop first control/fixture failure or20 seconds; one invocation, no retry,
+no production output reading and no change to Local's running source.
+
+### MI482 — Completeness contract has can-fail controls; production stream untested (2026-10-19 00:51 BST; B246)
+
+One unchanged-source invocation: FROZEN CONTROLS PASS.100 small rectangle
+counts agree with direct enumeration; manifest has285 chunk identities.
+Five E26_l84 positive fixtures pass (405 proposer search nodes solely for
+fixture preparation). Reversing bin labels preserves acceptance. All nine
+negative mutations reject; an empty E32_l68 chunk requires its DONE record.
+The duplicate/omission fixture preserves the five rows' individual valid
+assignments and the aggregate count, yet the independent verifier rejects
+it. Reported wall0.030650925s; no cap, failure, retry or production read.
+This demonstrates the coverage check, not a flaw in any produced town.
+
+Source tests/probes/instinct/l8_stream_verify.py SHA256
+ cef30db19d6401f2eeb31755395fe1a7e346fe64023cc24b42093b4500babd47.
+Controls tests/probes/instinct/l8_stream_verify_controls.py SHA256
+ c8fea54eb7ffda11f41f34e367bc41a03cc84624596dae46ad0a2d7fe10963c5.
+Raw JSON SHA256
+ 392a15294348a05d3a013e8ef084f5b71e0b2e38727deb9486b0f27a80affdb2.
+
+The verifier is READ-ONLY and separate from Local's running source.
+It uses exact integer count DP and literal odd-plank sums, no solver.
+Its completeness argument is the finite-set equality: D contains every
+accepted town; strict order gives a subset A of D without duplication;
+independent count |A|=|D| implies A=D. Different minima partition a level,
+and the285 expected filenames partition all nine levels. DONE/footer
+requirements prevent interpreting an unfinished prefix as the whole job.
+No raw production data, full manifest/stream pass, runtime estimate or
+independent-party verification of this new verifier is claimed. The
+five-fixture chunk path was tested; full-directory enforcement was
+inspected, not exercised on a complete285-file production directory.
+Code review and actual finished-stream verification remain prerequisites
+before relying on it. No need to restart, alter or duplicate the run.
+
+**Separate source niggle, inspection only.** In l8_certificates.py the
+resume predicate tests whether the stripped file tail ends with the
+quoted word DONE, while the emitted JSON footer ends with a closing brace
+after that quoted word. It therefore will not skip such completed files
+on resume as the docstring promises. This does not affect the initial
+fresh run or invalidate its certificates. Notify Local to inspect/fix the
+resume gate BEFORE a restart, preserving existing files; do not change
+a running script or test resume on its real output.
+
+### MI483 — End of the source/representation block (2026-10-19 00:51 BST)
+
+Parent coverage: no new L8 target certified here. The119-profile hand
+construction is parked after the bounded source check; its TWO-PARTY
+COMPUTED result stands. The finite-to-infinite theorem is the existing
+MI276 reduction, not a new achievement. The useful change is an independent
+post-run completeness contract and a concrete can-fail demonstration,
+plus the non-destructive resume warning. H2/five-bin and old holds unchanged.
+
+Niggle sweep: chunk count uses seven padded surplus parts after fixing
+one minimum, not eight; zero-surplus and impossible rectangles checked.
+Sorted-bin-sum equality allows harmless bin relabeling. Literal assignment
+length/digits ensure each odd plank appears once. Count alone never stands
+in for target coverage. Controls do not assert a full production pass.
+Only local fixture preparation used the proposer, and those outputs were
+then checked independently. Local's job/data/source preserved.
+
+Gut: the hand-explanation pull has cooled; I do not have a convincing new
+construction and will not manufacture one. Reasoned: computational proof
+is a valid result if the full obligation actually finishes and is verified.
+The next useful check is independent review of the new verifier and the
+finished Local return, not another repair family. Keep13min ACTIVE for
+coordination and concrete work; an idle wake need not invent a block.
+A new mathematical mechanism or specific review issue can reopen research.
+No new proof queue, status promotion or renewable pull allowance.

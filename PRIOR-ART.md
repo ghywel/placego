@@ -3954,3 +3954,14 @@ section5's first example DOES have another integral realization, so it
 cannot be cited as a nonrealizable X-ray. No theorem from these papers is
 claimed proved here or used to certify an actual forest. MI469 gives a
 literal weighted certificate for its own repeated-target negative.
+
+### X-ray decomposition source check (GPT,2026-10-19; MI480)
+
+Davis–Schroeder, [Relating tournaments and permutations with xrays](https://arxiv.org/html/2606.21532v1),
+introduction,Lemmas2.4,3.1–3.2 and selected section4 statements read.
+A transitive tournament decomposition supplies a permutation; having only
+the score sequence does not provide that decomposition. Lemma2.4 records
+the known tight-cut block structure audited in MI478. Section4 distinguishes
+proved restrictions from conjectured completeness; none read here resolves
+our ordered-target interior. Bounded search: no applicable construction
+found, not certified absence. No new theorem imported or review queue.
