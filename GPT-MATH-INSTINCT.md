@@ -124,26 +124,25 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 18:10 BST: research heartbeat PAUSED for incubation.**
-B228/MI437 completed the reading/consolidation promised in MI435.
-Parent: full-interval five-bin sufficiency; P_0 is one required branch.
-The canonical strict-triple child is refuted, while both displayed parents
-partition. Choosing the first bin jointly with completion remains the
-missing inference, not a new mechanism: MI303/325/330 already expose it.
-No new experiment, local repair, proof filing or duplicate review request.
-G319 is PROVED; G320/G321/G322 retain their own unread arguments.
-MI430 remains a COMPLETE COMPUTER-ASSISTED CANDIDATE pending its carrying
-read. Full P_0/five-bin/E28/L8 remain OPEN; older lanes stay held.
-The owner-authorized pause is for the absence of a concrete new selector
-argument, not routine review permission. Cloud already has GC1569's
-perspective question; GC1570 records this decision. Both saved mathematics
-schedules are PAUSED; no automatic flag polling or computation continues.
-Reopen on a concrete mechanism addressing joint compatibility, a useful
-source that supplies the missing implication, or renewed owner discussion.
-First test on return: challenge that mechanism with MI435's bad child and
-positive ancestors, then MI330's isolated realization; do not merely repair
-those examples. Last trajectory check MI435/B227, refined by MI437/B228;
-extra pull allowance unused. No new timer or automatic resumption promised.
+**Current state,2026-10-18 18:50 BST:13-minute research heartbeat ACTIVE.**
+The owner requested reading Cloud's check-in and resumption if a reasonable
+path exists. CL443/d10405be is verified,read and ACKed. B229/MI438 rejects
+the natural actual-hole-count upper-margin alternation on MI435's existing
+parent,for EVERY realization of its top singleton. That is not the route
+being resumed. The new concrete lead is joint interval-count admission:
+Cloud's cutwise singleton capacities omit group competition. On its
+four-bin 21/21/21/21 counterexample,all low-count choices force a two-bin
+group needing sum42 whose least available sum is43.
+Next bounded task:the seven FIXED fixtures and controls in MI439;write and
+publish the instrument before its one invocation. No larger census or
+hole-family repair. This tests a necessary relaxation,not a universal
+sufficiency theorem. Parent remains full-interval five-bin sufficiency;
+P_0 is one branch and no parent coverage was added by this restart.
+G319 PROVED;G320/G321/G322 and MI430 retain their pending carrying steps.
+The older research schedule remains PAUSED. Last trajectory decision:
+MI438/B229 resumes on the changed group-count test,not renewed warmth or
+review permission. Extra pull allowance unused;two repeated failures or
+90 active minutes still require a check before another repair.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -32400,3 +32399,133 @@ our counterexample is useful evidence about the strategy, not a disproof
 of the five-bin parent. Niggle sweep: no failure transferred from child
 to parent, no connectivity assumed, no pending candidate promoted, and no
 claim that pausing proves the absence of another productive approach.
+
+
+### MI438 — B229: CL443 read;one proposed route fails,but group-count compatibility gives a test (2026-10-18 18:50 BST)
+
+**Hand/source assessment;no new experiment or general theorem.** The owner
+asks to get current and resume if a reasonable pathway exists. Verified
+CL443's commit d10405be,read its ledger entry and both committed source
+files,then ACKed. Cloud's finite totals are reported evidence,not replicated
+runs here. Its inference that the remaining obstruction is the known open
+equal-sum problem is a perspective,not an established reduction or a
+classification of all exceptions. Endpoint holes also need trimming before
+comparing families by actual hole count.
+
+Record searched:`count.capacit|interval.count|row.count` AND
+`group|joint|cut`:14 hits in six files;MI383/384/407,G319 and the new
+sscm_test.py are the relevant context. The operations below are elementary
+count/rank comparisons,not a new external theorem or novelty claim.
+
+**1. Cheap kill of the natural alternation proposal.** Interpret the
+suggested reflected family as U(h'):after normalizing the child to0..M,
+with h' actual holes,each proper group of size r satisfies
+u_J<=r*M-L(r)-h'*r. Take MI435's P_0 parent0..12 minus4,
+sizes3^4,targets29/23/15/7,whose unique minimum adjusted triple is BCD.
+Any realization A of target29 omits0,since0+11+12<29. Thus every
+nine-token child still starts at0. It has h'=M+1-9=M-8,so its
+upper-margin bound for a triple is3M-3-3(M-8)=21. The remaining
+target23 violates it for EVERY choice of A. This is stronger than
+one failed canonical recipe. In particular the displayed positive
+parent with A={7,10,12} still fails this proposed child family.
+Consequently lower-to-upper actual-hole-margin closure is false in
+this interpretation. A different inherited-margin invariant would
+need an explicit statement;it is not refuted merely by this calculation.
+No alternation census is warranted for the statement just disproved.
+
+**2. A concrete missing condition in the count test.** Cloud's code
+forms each bin's count set using min/max sums separately at each cut,
+then checks summed minima/maxima. It does not impose conditional rank
+bounds for GROUPS at one common count assignment. Its four-bin example
+S=[0,14] minus{6,7,8},sizes3^4,targets21^4 has low interval0..5
+and high interval9..14. Each target21 permits low count1 or2:zero
+low tokens have minimum30,three have maximum12;both1 and2 are
+individually possible. The scalar capacity check4<=6<=8 passes at
+this cut. Total low count6 forces exactly TWO bins with count1 and
+two with count2. The first two bins jointly need sum42,using two
+low tokens and four high tokens. Their minimum is
+
+  (0+1)+(9+10+11+12)=43>42.
+
+Hence NO joint count assignment satisfies the conditional group
+bounds. The example passes the original margin test:group sizes3,6,9
+have sums21,42,63 against lower bounds12,33,63;total84 is correct.
+Thus this retained negative has an elementary group-count explanation;
+its passage through independent cut capacities does not establish that
+one must solve an unknown equal-sum theorem to explain it.
+
+**Unexpected check:** G319 has THREE bins,where pair inequalities
+follow from singleton inequalities plus total. That shortcut fails
+for FOUR bins. Importing its singleton-only admission into the new
+count problem would erase precisely the two-bin obstruction above.
+The known full-interval target-polytope framework still does not
+make integer count/rank admission sufficient for actual partition.
+
+Initial pull:the distinction between separately possible counts and
+one shared count assignment is concrete enough to test. The reflection
+idea disappoints on the existing control;the count obstruction gives
+an identifiable next task without repairing another hole shape.
+Decision:restart the SAME13-minute heartbeat under the owner's request,
+with the fixed diagnostic MI439 next. Parent coverage unchanged;no
+proof promoted,no duplicate review request,no M5 job or E28 census.
+Niggle sweep:the upper-margin rejection quantifies all A;the four-bin
+count contradiction uses disjoint actual tokens;reported Cloud runs
+are not self-verified;no exceptional-family classification is adopted.
+The next block must distinguish necessary admission from sufficiency.
+
+
+### MI439 — B230 planned diagnostic: shared interval counts,seven fixed fixtures (registered 2026-10-18 18:50 BST)
+
+**NOT RUN;instrument not yet written.** This records the next bounded
+question;publish its source before execution. Does one common interval-
+count matrix expose the existing negative fixtures while preserving
+literal positive controls? This is diagnostic evidence about representation,
+not a proposed all-hole theorem or a new parent-coverage claim.
+
+Split each pool into maximal consecutive intervals [a_j,b_j]. Enumerate
+integer matrices c_ij>=0 with bin totals r_i and interval totals b_j-a_j+1.
+For EVERY proper nonempty bin group J,put C_j=sum_(i in J)c_ij and test
+
+ sum_j(a_j*C_j+L(C_j)) <= u_J <= sum_j(b_j*C_j-L(C_j)).
+
+These inequalities are necessary:each group must take C_j distinct tokens
+from interval j. Total target conservation is checked separately. Keep
+zero counts;no G319 application is assumed. Compare existence of an
+admitted matrix with exact partition existence on ONLY these fixtures:
+1. Cloud's0..11 minus{4,5,6},sizes333,targets17/17/17.
+2. Cloud's0..14 minus{6,7,8},sizes3333,targets21/21/21/21.
+3. MI435's0..10 minus{4,6},sizes333,targets7/15/23.
+4. Its positive P_0 parent0..12 minus4,targets29/23/15/7.
+5. Its positive P_0 parent0..12 minus6,targets27/23/15/7.
+6. Positive two-interval control{0,1,2,10,11,12},sizes222,targets12/12/12;
+   literal pairs{0,12},{1,11},{2,10},one token per interval in every bin.
+7. Unexpected countercontrol0..3,sizes1111,targets1/1/2/2:all group rank
+   bounds and its sole count matrix pass,but distinct singleton owners
+   cannot repeat values. This lies OUTSIDE the minimum-size3 parent;
+   it guards against treating a necessary relaxation as an exact solver.
+
+Predictions:1-3 have no admitted matrix;4-6 do;7 does but cannot partition.
+For3,the7 triple needs the middle token5 (three low tokens sum<=6;
+two low plus a high sum>=8). The23 triple also needs5 (one low plus
+two high sum<=22;three high sum>=24). One common matrix must respect
+that middle interval's capacity1. No new census is needed to check this.
+
+Independent controls:matrix enumeration by bin allocations versus interval
+allocations must agree on the WHOLE admitted-matrix set. Exact target
+partition checks use subset/complement recursion versus token-owner
+recursion,with direct literal witness checks for positives. Reflect each
+whole pool and same-labelled targets using u'_i=M*r_i-u_i;admission and
+existence must agree. Preserve the literal positive ancestor partitions
+from MI435. Do not infer correctness from agreement alone:the hand
+contradictions for1-3 and7 and the supplied positive witnesses carry
+independent expected answers.
+
+Stop:one invocation,seven base fixtures plus reflections,10 process CPU
+seconds,20 wall seconds,one million recursive nodes total. First failed
+control stops as instrument failure;first unexpected prediction stops
+and is retained. No patch-and-rerun,larger domain or new exception tree.
+If controls pass,the NEXT decision is whether the common-count condition
+suggests an actual selection/realization argument on the parent domain;
+its seven-fixture success alone does not justify a new sufficiency claim.
+If it merely renames compatibility without a new inference,return to the
+trajectory check instead of renewing an extra block on that basis.
