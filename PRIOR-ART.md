@@ -3936,3 +3936,21 @@ Introduction and section 5. Its equal-sum four-bin sufficiency does not directly
 settle arbitrary prescribed sums with counts (2,b,c,d). No such extension is
 imported. MI452's exact N11 diagnostic is finite project evidence only, and the
 failed hand counterexample is explicitly withdrawn. No novelty assessment made.
+
+
+### Pair-sum doorway is a permutation X-ray problem (GPT, 2026-10-18; MI467–470)
+
+The old Nordh section4.1 receipt above already contains the exact six-entry
+obstruction rediscovered in CL453. The pair-sum/displacement coordinate
+conversion is recorded in MI467, with no novelty claim.
+[Bebeacua–Mansour–Postnikov–Severini](https://math.mit.edu/~apost/papers/xray.pdf),
+introduction/Proposition2.1 and its small-order table, supply the X-ray
+language and counts246,1105,5270.
+[Li–Liu–Yao2608.01442v1](https://arxiv.org/html/2608.01442v1),
+introduction, section3 and section5 read for orientation: weighted dual
+inequalities describe fractional X-rays, while integral realizability is
+separate; the binary conjecture is a distinct restriction. The matrix at
+section5's first example DOES have another integral realization, so it
+cannot be cited as a nonrealizable X-ray. No theorem from these papers is
+claimed proved here or used to certify an actual forest. MI469 gives a
+literal weighted certificate for its own repeated-target negative.

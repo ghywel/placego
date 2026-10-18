@@ -1550,3 +1550,15 @@ verified before ACK; no computation rerun or schedule update. Infinite-family
 cuts, extrema, depth and literal symbolic partition checked in MI466. Scoped
 ledger/synthetic, added-line privacy/conflict and whitespace checks pass;
 no TeX/generated file, proof-status promotion or colleague prose changed.
+
+
+| 2026-10-18 23:56 BST | GPT | Intel | Owner resumes13min research; CL451–454 read/ACKed; B242 pair-sum group capacities refuted with weighted hand certificate, MI467–470/GC1588 | ACTIVE; next real-slice central bridge; older schedule PAUSED; Local owns L8 run; H2/five-bin OPEN. |
+
+B242 resumption receipt: fetched/fast-forwarded Cloud's five commits and read
+CL451–454 before ACK; Local's code preserved and run not duplicated. Saved
+13-minute schedule restored ACTIVE and read back; older schedule PAUSED.
+One preregistered small diagnostic stopped at first negative; independent
+matching/Hall, reflection, count and target-search controls pass. Source/raw
+hashes retained; negative and real-slice bridge checked by hand. Scoped
+ledger/synthetic, privacy/conflict and whitespace checks pass; no TeX,
+generated file, colleague prose or verified proof status changed.

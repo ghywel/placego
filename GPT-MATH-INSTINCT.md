@@ -124,28 +124,24 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 22:55 BST: research PAUSED for incubation.**
-Parent: full-interval FIVE-bin sufficiency; count admission and thin-row
-realization remain open. H2's general all-pair completion is OPEN. G323/G324
-remain PROVED; G320–322/MI430 pending and unused; MI460's central u=M slice
-remains an unreviewed hand result. B241/MI461–462 tests one uniform escape
-mechanism and stops on the second inspected state: a protected feasible
-instance has a blocking subset with no strict two-token exchange escape.
-Complete fibre and actual partition retained; this refutes the mechanism,
-not H2, and does not refute neutral paths. No repair or enlarged run follows.
-MI463/GC1585 requests a specific global-choice perspective from Cloud.
-CL449 is now read/ACKed; MI464/GC1586 records wider finite support but two
-false regime2 bounds in the proposed sketch. Corrected end-band coverage
-is still needed; that check-in does not yet justify a restart.
-CL450 is also read/ACKed: MI465 separates its measured gap candidate from
-a proof; MI466 gives an unbounded all-shallow family, far from the original
-extrema. Its corrected program is understood; the uniform choice step
-remains missing, so no restart or further listing is requested.
-Both mathematics schedules are PAUSED; no automatic flag polling or background
-computation continues. Reopen on a concrete uniform mechanism for all-choice
-coverage, a useful revised reduction, or direct discussion with the owner.
-This is an owner-authorized incubation, not a wait for routine proof approval.
-Latest trajectory check MI459; earlier pull-only allowance remains spent.
+**Current state, 2026-10-18 23:56 BST: research ACTIVE every 13 minutes.**
+Reawakened by the owner's explicit request after CL451–454. The older
+research schedule stays PAUSED. Local owns the full L8 certificate run;
+its E24/E25 results are recorded as reports, not rerun here. Existing H2,
+five-bin sufficiency and MI460 statuses are unchanged; older lanes stay held.
+Current chosen side question: pair-sum realizability across two intervals,
+the all-one thin-row object in CL453. MI467 identifies it with known
+permutation X-rays/displacements, including the exact known k6 obstruction.
+B242/MI468–469 tests cuts plus every sum-class matching capacity. It passes
+k6/7 but fails at k8 on(8,10,15,15,15,19,19,19); all capacities have
+hand witnesses, while2*n8+n10+n15+n19<=8 is violated9>8. No novel general
+theorem or review queue. MI470 shows actual sorted-high residuals from the
+70 all-odd E24 towns contain14,15,16,17 and have all sums>=10, excluding
+that negative. Next: test whether this central bridge excludes every
+order8 cut failure, then seek a structural matching explanation. No run
+beyond B242 opened, no claim of full-level mathematical sufficiency.
+Latest trajectory/resumption check MI467; prior pull-only allowance not
+renewed, no background computation here.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -34192,3 +34188,180 @@ retained; conditional and measured statuses kept explicit. Gut: appreciation
 for the corrected scope, but no new pull toward rebuilding the old hole
 branch tonight. Reasoned: updated program understood and acknowledged;
 parent/H2 still OPEN, MI460 still unreviewed, incubation remains warranted.
+
+### MI467 — Reawaken at the owner's word; choose the thin pair-sum object (2026-10-18 23:55 BST; B242)
+
+The owner explicitly requests reawakening and Cloud's updates. Fetched and
+merged a295bc11 through61edb625, read CL451–454 and the relevant pair-sum
+sources, then verified/ACKed all incoming pointers. CL451 accepts MI466.
+CL452–454 report real exceptional-level certificates and assign the full
+run to Local. Those computations remain reported, not rerun/adopted here;
+Local owns that job. I do not launch a second large run.
+
+The 13-minute research schedule is restored ACTIVE with its saved prompt
+and cadence; read-back confirms it. The older schedule remains PAUSED.
+Clock verified23:55 BST before publication. No proof status changes by resumption.
+
+**Trajectory and chosen question.** Five-bin sufficiency/H2 stay OPEN, and
+MI460 stays unreviewed. Explicit side question now chosen from CL453:
+realizability of prescribed pair sums between [0,k-1] and[k,2k-1]. This is
+all-one thin-row allocation, not claimed progress on five-bin coverage.
+The concrete pull is that the obstruction has twelve tokens and a clear
+matching interpretation. The question I can test is whether the rank cuts
+plus ALL sum-class matching capacities already reject every small failure.
+This changes the object deliberately rather than continuing a hole-repair
+branch. No prior pull-only extra allowance is renewed.
+
+Record searched: `Skolem|X.ray|displacement.pattern`:9 hits/4 files. Read
+MI061 and the existing PRIOR-ART Nordh receipt. Our pair sums q_i are
+EXACTLY permutation displacements after q_i-(2k-1), up to sign: if high
+k+j is assigned to low i, put pi(i)=k-1-j. Then q_i-(2k-1)=i-pi(i).
+The histogram is a permutation X-ray. Nordh's section4.1 already gives
+(-2,-2,-2,2,2,2), precisely Cloud's9,9,9,13,13,13 after translation.
+This is prior art, not a new counterexample or a new general problem.
+
+Primary reads: Nordh section4.1; Bebeacua et al., *On the X-rays of
+permutations*, introduction/Proposition2.1 and the order<=8 counts;
+Li–Liu–Yao2608.01442v1, introduction and sections3/5 for the distinction
+between fractional and integral X-rays. No full-paper audit or new
+complexity theorem is claimed. The binary restriction is a different
+problem from our repeated targets. Prior-art pointers are saved separately.
+
+### MI468 — One bounded test of sum-class capacities (B242, NOT RUN at registration)
+
+Let n_q be the multiplicity of target sum q. For a set S of sum labels,
+let nu(S) be the maximum matching size in the bipartite graph whose edges
+(i,j),0<=i,j<k, obey k+i+j in S. A necessary condition for realization is
+
+    sum(n_q : q in S) <= nu(S) for EVERY S.
+
+It is enough to inspect S inside the demand support: adding zero-demand
+labels can only enlarge nu. Together with conserved total and usual sorted
+rank cuts, call this the tested group-capacity criterion. This is a precise
+interpretation of CL453's proposed condition, not a sufficient theorem.
+
+**Frozen experiment.** At k6,7,8 ONLY, form complete attainable sum-profile
+sets from all k! permutations. Enumerate sorted cut-admitted profiles and
+inspect each missing profile's ALL subsets of its support. Predict that
+one may survive all capacities by k8 (blind prediction: rejection of the
+candidate criterion); finite survival/failure will not settle larger k.
+Stop at the FIRST surviving nonrealizable profile and independently check
+nonrealizability by target-count backtracking. If none survives, report
+finite support only. No higher order, weight relaxation or repair this block.
+
+Controls: complete permutation counts k!, known profile counts246,1105,5270;
+nu via augmenting paths AND independently Hall deficiency over all left
+subsets, with whole queried-capacity agreement. Rank cuts must hold on
+actual profiles. The known k6 failure has singleton capacities4,4 but
+combined capacity4<6: this is the counterfactual to checking single classes
+only. Positive reverse permutation has k copies of2k-1 and capacity k.
+Unexpected check: reflect labels q to4k-2-q and require every queried
+capacity to agree. For a surviving negative the independent exact target
+search must find no realization, or the instrument fails.
+
+Caps:20wall seconds/100,000 matching queries/200,000 independent search
+states, one unchanged-source invocation; no retry or domain expansion.
+Raw JSONL outside git. A cap or control failure is UNKNOWN, not a pass.
+No PROOFS entry or review queue; even a negative is a criterion refutation,
+not a counterexample to a real town or H2.
+
+### MI469 — All unweighted group capacities still miss an eight-pair obstruction (2026-10-18 23:56 BST; B242)
+
+**COMPUTED diagnostic, then a hand refutation of the candidate criterion.**
+MI468's unchanged-source invocation passes its controls. At k6 all247
+cut-admitted profiles include246 realizable ones; the single failure is
+rejected by group capacities. At k7,1111 admitted/1105 realizable,all6
+failures rejected. At k8 the run stops on the first group-admitted negative,
+after211 cut profiles and one missing profile; remaining order8 cases are
+NOT tested by the criterion. Complete permutation map5270 profiles from
+40320 permutations matches the published count. The negative is
+
+    Q=(8,10,15,15,15,19,19,19),  k=8.
+
+All15 nonempty subsets of its support pass the capacities;55 capacity
+queries overall agree between augmenting paths and Hall deficiency,
+including physical reflection. Independent target-count backtracking
+returns no realization in27 states. One invocation,0.083212748wall seconds,
+no cap/retry/expansion; no speed claim. Source SHA256
+ bb5d8448f7a0b93f17ca9ce338d83522d306c657e9279570b28b677de4015293;
+raw JSONL retained outside git, SHA256
+ 89afc47b4638cfa84d381bd3df442e44b9caaca4d09a54fd2e51d58842a3cdc7.
+No shared artifact upload or independent-party verification claimed.
+
+**Rank cuts, by hand.** Prefix sums of Q are
+8,18,33,48,63,82,101,120. Their required lower bounds
+j*(8+j-1) are8,18,30,44,60,78,98,120. Upper cuts follow from
+the conserved total120 and complementary lower cuts.
+
+**ALL sum-class capacities, with just two matching witnesses.** Use column
+index j for the high token8+j. The full matching(i,7-i),i0..7, has
+EIGHT edges of label15. Hence any label set S containing15 has capacity8,
+at least its total demand. For S not containing15, use the partial matching
+
+    (0,0),(1,1),(4,7),(5,6),(6,5),(7,4).
+
+Its labels are8,10,19,19,19,19. Restricted to any S inside{8,10,19},
+it meets or exceeds Q's demands1,1,3 on those classes. Labels outside the
+support have zero demand and can only increase capacity. Thus EVERY
+unweighted group-capacity inequality holds, independently of the program.
+
+**Nonrealizability, two hand views.** Label8 forces edge(0,0). Label10
+then forces(1,1), since(0,2) and(2,0) are unavailable. Removing rows/columns
+0,1 leaves an order6 problem: subtract6 from each remaining pair target
+to obtain9,9,9,13,13,13, the known Nordh obstruction.
+
+A direct weighted certificate avoids even relying on that known negative.
+Give weight1 to rows0,1,4,5 and to columns0,1,4,5; all others weight0.
+Every label8 edge receives charge2. Every edge of label10,15 or19
+receives at least1. Every perfect matching has total charge8. Therefore
+all realizable profiles satisfy the valid inequality
+
+    2*n_8 + n_10 + n_15 + n_19 <= 8.
+
+Q violates it, giving2+1+3+3=9. This also excludes a fractional
+realization. Edge checks: label10 uses(0,2),(1,1),(2,0); label15
+uses i+j7; label19 uses(4,7),(5,6),(6,5),(7,4). All charges
+have the stated lower bounds. The weighting is an application of the
+known X-ray-polytope dual framework, not a new general theorem.
+
+**What changed.** Ordinary cuts plus ALL unweighted sum-class capacities
+are insufficient. The new negative is a padded form of a known obstruction,
+not a counterexample to an actual town, H2 or five-bin sufficiency. It shows
+why root capacities can lose information exposed after tight assignments.
+Do not patch the criterion one tight face at a time or claim that weighted
+fractional feasibility alone ensures an integral realization. No PROOFS
+entry or new review queue; this is a hand-checkable criterion refutation.
+
+### MI470 — A necessary central bridge in the real E24 all-odd slice (2026-10-18 23:56 BST; B242 hand scope)
+
+The counterexample above is not automatically relevant to real towns.
+For the70 all-odd E24 towns, let sorted triple-index targets be T_i,
+i0..7. Each is at least33, and their sum is276. The sorted-high recipe
+uses h_i=16+i, leaving pair sums q_i=T_i-h_i. Therefore
+
+    sum(q_i)=120, q_0>=17, q_(i+1)-q_i>=-1.
+
+Some q_i is<=14: otherwise their sum is at least120 with one term>=17,
+which is impossible. On the way from q_0>=17 to such a value, a sequence
+whose downward steps are at most1 must visit17,16,15,14. Thus the residual
+multiset necessarily CONTAINS ALL FOUR labels14,15,16,17. Neither the
+known two-clump obstruction nor Q has this support. Also every q_i>=10,
+since T_i>=33 and h_i<=23; Q fails that simpler constraint as well.
+
+This is a necessary structural restriction on the actual sorted-high
+recipe, not a transversal-existence theorem. It serves the70 all-odd towns,
+not every E24 town or the full exceptional reduction. The next cheap test
+is whether rank-admitted order8 profiles containing14,15,16,17 can still
+fail; the uniform question would be what this central bridge permits in
+a matching. No new run is opened within this block, and no sufficient
+condition is claimed from the support alone.
+
+**Niggle sweep and verdicts.** Cut arithmetic literal; the two matching
+witnesses cover ALL label sets; weighted charges checked on every relevant
+edge; forced assignments remove distinct rows and columns; all-odd scope
+and sorted-high order retained. Known-counterexample/source identification
+precedes novelty language; no general integrality inference. Gut: the
+small weighted certificate and the real-instance bridge give concrete
+traction. Reasoned: a rejected candidate plus a narrower next question;
+parent five-bin/H2 and general pair-sum realization remain OPEN. The
+research schedule is ACTIVE, old held lanes and Local's computation preserved.
