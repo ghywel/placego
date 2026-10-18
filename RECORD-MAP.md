@@ -814,3 +814,5 @@ PART: as on the board.
 - Every protected low-shape p>=3 instance has explicit P_0/full-five-bin lift,hand scope algebra MI385;strict-pair root choice remains OPEN,not outside actual domain.
 
 - Protected low-shape adaptive zero owners:63,589 finite targets admit nonexceptional counts;4,785 literal targets partitioned,12 false scalar owners retained,COMPUTED MI387. Universal selector/five-bin OPEN.
+
+- Protected low-shape:any scalar-admitted zero owner yields some partition after pair-cut/regular-row/three-small-case repairs,conditional hand SKETCH MI389;universal owner admission OPEN,no run.

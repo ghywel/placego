@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 11:41 BST:13-minute heartbeat ACTIVE.**
-MI387/B198's fixed adaptive-owner diagnostic completes:63,589 protected
-low-shape targets through M16 all have a nonexceptional scalar count
-choice;4,785 targets through M13 have independent literal partitions.
-Twelve individual scalar-owner false positives show why owner choice
-and zero-count compatibility cannot be conflated. Next is a hand
-selector in the joint (zero-owner,high-count) variables,not a larger
-census. G319/G320/W318 await independent review;full low-shape,
-five-bin/P_0/E28/L8 remain OPEN. Other parent geometries stay distinct.
-Older schedule PAUSED.
+**Current state,2026-10-18 11:54 BST:13-minute heartbeat ACTIVE.**
+MI389 removes the extra compatibility qualification from adaptive
+scalar count selection,conditional on pending G319/MI383. If ANY
+zero owner admits counts,the protected low-shape target partitions,
+possibly after changing owner/counts. Pair cuts kill collisions when
+zero lies in either colliding bin;large surviving collisions admit a
+regular-row transfer and three small cases have literal repairs.
+Universal existence of a scalar-admitted owner remains OPEN;MI387's
+63,589 finite passes do not prove it. G319/G320/W318 pending review;
+full low-shape/five-bin/P_0/E28/L8 OPEN. Older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27169,3 +27169,194 @@ five-bin/P_0/E28/L8 remain OPEN.13-minute heartbeat ACTIVE.
 Raw summary SHA256: `74cc20950936d790fb6481ab1134a06825eeb2aed37db104dd4091596a9cf700`.
 Instrument: `tests/probes/instinct/adaptive_zero_owner.py` at17ee4d7b.
 Raw summary is outside git;no large dataset or theorem certificate is claimed.
+
+
+### MI388 — B199: isolate compatibility from adaptive count selection (2026-10-18 11:48 BST)
+
+Question:can the possible zero-count exception in MI383 always be
+repaired after choosing a different owner or count vector,using the
+protected cuts but WITHOUT a globally least singleton? This is the
+compatibility part of MI387's joint z/k question. A positive answer
+would leave only existence of some scalar-admitted owner to prove.
+
+Record searched:zero.owner AND count ->11 hits in the map/notebook;
+MI378's regular-row splitting,MI383's fixed-count classification and
+MI387's explicit false owner were reread. No new external theorem or
+novelty claim. Fresh shared main and portal flags are unchanged.
+Pull:the false owner has a very localized collision. Unease:an apparent
+repair must preserve all three targets,not just move0 to a feasible
+single bin. Hand budget:one bounded repair/classification block;no
+experiment or census. Countercheck:any proposed count change must
+pass BOTH extrema for each affected bin and must not recreate the
+same exceptional row shape. Unexpected check:the small p=5 boundary,
+where a generic move can land on another thin row,gets an explicit
+partition rather than an appeal to positivity.
+
+### MI389 — B199: any admitted owner suffices after repair (2026-10-18 11:54 BST)
+
+**Conditional hand PROOF-SKETCH,not independently reviewed.** Let
+S=[0,M] minus{1,p,p+1},2<=p<=M-2,three sizes>=3,total target
+sum(S),and all six proper cuts u_J>=L(s_J)+3s_J. Suppose SOME
+owner of0 and some counts in I=[2,p-1],J=[p+2,M] satisfy the
+individual combined f/g bounds and both count totals. Then S has
+a partition with the prescribed original sizes/targets,conditional
+on G319 and MI383 section1's generic fixed-count completion.
+The final partition need not retain that owner or those counts.
+No least-slack hypothesis is used here. Existence of an admitted
+owner is NOT proved;the full low-shape statement remains OPEN.
+
+MI383 section1,which does not use least slack,leaves only this
+possible fixed-count failure:one bin H owns a WHOLE interval and
+one value of the other interval. The other two counts in that other
+interval are>=2. Their exact one-hole spectrum can fail only at
+one bin's actual minimum+1,with the omitted value at that bin's count;
+the upper omission is the other bin's lower omission. Scalar rank
+bounds for the other bin and total ensure the actual one-hole extrema,
+not merely those of the undeleted interval. All other row shapes
+already complete via G319/MI383. Empty I is a single regular row.
+
+**1. A whole high interval cannot cause failure.** If H owns all
+of J and one low value,a failed low-only bin of original size s has
+target L(s)+2s+1 if nonroot,or L(s)+s if it owns0. Each is strictly
+below L(s)+3s for s>=3. This contradicts protection. No minimum-
+slack comparison or reflection of the protected pool is needed.
+
+**2. Whole low interval:the pair cuts decide where0 must be.** Put
+P=p-2,Q=M-p-1 and D0=sum(I)=L(p)-1. Let H own all of I and
+one high value p+2+y. Name the failed high-only bin D,whose remaining
+high count is d,and the third bin E,whose high count is e. Then
+
+```text
+Q=1+d+e, d,e>=2,
+y=d,
+u_H=L(p)+p+1+d,
+u_D=d(p+2)+L(d)+1.
+```
+
+The y=d identity and the displayed D target are the exact lower
+one-hole omission,not an arbitrary scalar-admitted triple. There is
+only one root,so d,e cannot both be2. If0 belongs to H or D,then
+the ORIGINAL size of H union D is p+d,regardless of which is root.
+But direct subtraction gives
+
+```text
+u_H+u_D - L(p+d)-3(p+d) = 2-2p < 0.
+```
+
+Thus that pair cut is violated. Every actual exceptional failure
+under protection has0 in E;H and D are nonroot. Consequently
+
+```text
+s_H=p-1>=3, p>=4; s_D=d>=3; s_E=e+1>=3;
+delta_H=u_H-L(p-1)-3(p-1)=d-p+3>=0.
+```
+
+In particular p<=d+3. This is the missing scope distinction in the
+old fixed-root proof:least-slack inequalities are unnecessary once
+we allow the owner to change. We have not inferred that an individual
+false owner becomes feasible without changing it.
+
+**3. For d>=4,keep0 in E and change two counts.** Give H two high
+values instead of one,and one fewer low value;give D one low value
+and one fewer high value. The new rows,ordered H,D,E,are
+
+```text
+low:  (P-1,1,0),
+high: (2,d-1,e).
+```
+
+They are legal,and targets/sizes remain the original prescribed ones.
+The high row has all counts>=2;the low row has at most two positive
+counts. Hence both are regular in MI378's sense. To prove combined
+scalar admission,compute the new extrema relative to the old target:
+
+```text
+H: f_new-u_H = 4-d <=0,
+   g_new-u_H = 2M-p-d-5 >0;
+D: f_new-u_D = -p-d <0,
+   g_new-u_D = (d-1)(e+1)-4 >=5.
+```
+
+E is unchanged. Positivity of H's upper difference follows from
+M=p+Q+1=p+d+e+2. All formulas use actual offsets2 and p+2.
+MI378's integer row-sum splitting plus the reviewed regular-row
+three-bin theorem now gives a partition. In particular,this repair
+itself does not require G319's thin-positive-row extension.
+
+**4. For d=3,change the root and construct explicitly.** Protection
+and s_H>=3 leave only p=4,5,6. Now Q=e+4>=6. Give0 to H.
+Give low value p-1 to D,low value p-2 to E,and every other low
+value to H. H takes two high values,D takes two,and E takes the
+remaining e high values. Specify the high values by their normalized
+indices j,meaning actual value p+2+j:
+
+| p | H high indices | D high indices |
+|---|---|---|
+| 4 | {0,2} | {3,4} |
+| 5 | {0,3} | {2,5} |
+| 6 | {0,4} | {2,5} |
+
+All indices are distinct and at most5,so they exist for every e>=2.
+H's high-index sum is p-2;D's is7. Its low remainder sums to
+D0-(2p-3). Thus
+
+```text
+H total = D0-(2p-3)+2(p+2)+(p-2) = D0+p+5 = u_H;
+D total = (p-1)+2(p+2)+7 = 3p+10 = u_D.
+```
+
+H has0,p-4 low values and two high values,so size p-1;D has
+size3;E has one low value and e high values,so original size e+1.
+Every value is assigned once,and E's target follows by conservation.
+This explicitly resolves the thin boundary with no spectrum inference.
+
+**Protected literal controls,hand checked.** In the order H,D,E:
+
+```text
+p4,e2: S=[0,11] minus{1,4,5}, sizes(3,3,3), sums(14,22,20)
+       {0,6,8} / {3,9,10} / {2,7,11}.
+p5,e3: S=[0,13] minus{1,5,6}, sizes(4,3,4), sums(19,25,35)
+       {0,2,7,10} / {4,9,12} / {3,8,11,13}.
+p6,e3: S=[0,14] minus{1,6,7}, sizes(5,3,4), sums(25,28,38)
+       {0,2,3,8,12} / {5,10,13} / {4,9,11,14}.
+```
+
+All single and pair bounds hold. The first is MI387's false-owner
+control relabelled. In each case the former root E is at its high
+maximum-minus1,and the construction moves0 to H. Although e=2
+suffices for the formula's legality,p5/e2 and p6/e2 fail a protected
+pair cut;they are not claimed as protected controls. This distinguishes
+construction scope from target admission. For the d>=4 branch,a
+protected endpoint control is p4,d4,e2 on[0,12] minus{1,4,5},
+sizes(H,D,E)=(3,4,3),targets(15,31,22). The new regular counts
+are low(1,1,0),high(2,3,2);a literal partition is
+{2,6,7}/{3,8,9,11}/{0,10,12}. Both extrema inequalities hold.
+These are hand controls,not a new experiment.
+
+**Conclusion and remaining inference.** Conditional on the existing
+generic completion statement,ANY scalar-admitted owner yields SOME
+partition,after the repairs above when needed. Therefore the protected
+low-shape existence question reduces exactly to finding an owner j
+with all K_i^(j) nonempty and
+sum min K_i^(j)<=Q<=sum max K_i^(j). Necessity is immediate from
+any actual partition;the conditional sufficiency is this argument.
+There is no longer a separate need to choose a nonexceptional count
+vector in the initial selector. The old scalar false-owner controls
+remain valid:the conclusion allows a different owner.
+
+Niggle sweep:actual one-hole extrema versus full-row extrema;root in
+H/D/E exhausted;d=2 excluded only AFTER locating the root in E;
+p2 empty row and p3 small size accounted for;both f/g endpoints for
+the large repair;three small p values and all distinct indices;
+conservation does not substitute for the two explicitly checked targets;
+no unproved reflection invariance;no use of W318 or G320. The regular
+row splitting is MI378's algebra,with MI295 as its reviewed existence
+input. Overall status remains conditional/unreviewed pending G319 and
+independent reading of this application. No new census or novelty claim.
+
+Gut verdict:the useful surprise was the pair cut 2-2p,which deletes
+most of the apparent case tree. Reasoned verdict:compatibility is now
+separated from count selection by a short repair,so the next hand
+question is genuinely narrower. Fresh choice still favours the z/k
+selector;this result does not imply it is easy or nearly proved.
+Full low-shape/five-bin/P_0/E28/L8 OPEN;13-minute heartbeat ACTIVE.
