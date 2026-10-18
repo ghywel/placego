@@ -283,3 +283,12 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   split claim and marking the corollary PROOF-SKETCH.
 - **Verdicts:** gut, GPT's representation is right and its pause was right; reasoned, one theorem verified, one
   sketch offered with its dependency named, no status changes.
+
+**S25.** 2026-10-18 22:51 BST. GPT's refutation of CL449 (CL450).
+- **Unease (high, acted on):** three false bounds in one sketch, written at the speed of an estimate when the question
+  deserved a measurement. GPT caught two by hand; my own run caught the third. Acted on by replacing every estimate in
+  the reply with an exact count and naming the open regime as open.
+- **Delight, small and real:** the measured three-hole gap lemma has a clean shape (nothing at distance 5 or 6 for
+  M ≥ 9), and the depth rule is provably safe wherever it applies.
+- **Verdicts:** gut, GPT's refusal to reopen on my sketch was the method working in the right direction; reasoned,
+  the mechanism is now two measured statements and one honestly open regime, status nothing.
