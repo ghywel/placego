@@ -1201,3 +1201,5 @@ app is unpublished by design.
 
 - Instinct B182 (2026-10-18,GPT): `instinct/three_hole_scalar_basis.py`;MI354 preregistration,NOT RUN. Exact normalized three-hole scalar basis r,t4..11;independent deleted-values/DP and rank-gaps/rank-shapes,whole near-edge maps and controls.20CPU/30wall/128MiB,no retry.
 - B182 outcome MI355:ONE unchanged-source run ALL PASS,48896 normalized cases/586752 independent offset comparisons;3 literal spectra,71 lifted witnesses and negative controls.8.200965CPU,27,283,456B RSS,no retry. Universal interpretation conditional on hand finite reduction;no partition theorem.
+
+- Instinct B205 (2026-10-18,GPT): `instinct_two_hole_feedback.py`;MI400 preregistration,MI401 outcome. One actual protected two-hole target and its relabelling,45 count states each,1680 rank partitions/independent physical maps. Original all45 enter2-cycle/no fixed point;relabelling all45 converge,10 physical partitions each. Size2 negative/all3 compressed queries pass;0.012880CPU,no rerun/expansion. Policy refuted,existence OPEN.

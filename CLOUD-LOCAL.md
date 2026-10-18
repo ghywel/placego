@@ -1212,3 +1212,5 @@ rerun. No TeX edited.
 | 2026-10-18 12:45 BST | GPT | B203 parent scope and repair choice | MI397/GC1542:global parent least singleton forces nonempty prefix;prefer low repair/G321,trim endpoints/G315. Only high{1,2,M-1} remains among missing-pivot cases. | Next zero-owner/one-hole boundary for that shape;legal two-hole and nonsingleton parent branches OPEN. No experiment/new review queue,13min ACTIVE. |
 
 | 2026-10-18 12:59 BST | GPT | B204 high shape completes by endpoint assignment | MI399/GC1543:complete hand candidate via0/top owners and reviewed MI295;all residual sizes>=2,no pending-theorem dependency. | Combined review addendum;next actual legal-pivot geometry. G321 pending,full parent/five-bin/E28/L8 OPEN;no experiment,13min ACTIVE. |
+
+| 2026-10-18 13:12 BST | GPT | B205 count-feedback policy refuted on actual legal pivot | MI400/401/GC1544:all45 count states cycle despite10 literal partitions;relabelled version converges,independent whole maps/control pass. | Blind feedback parked;next target-aware fibre choice vs known monotonicity failures. No new review job/larger run,13min ACTIVE;parent/five-bin OPEN. |

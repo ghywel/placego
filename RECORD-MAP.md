@@ -826,3 +826,5 @@ PART: as on the board.
 - Parent P_0 least-singleton missing-pivot route:prefer low repair/G321;empty prefix impossible,end trims G315. Only high{1,2,M-1} remains,hand conditional MI397;legal two-hole/nonsingleton branches OPEN.
 
 - Protected high shape {0} union[3,n] union{n+2}:complete HAND CANDIDATE via two endpoint owners/full-interval MI295,MI399. Conditional parent missing-pivot branch completes with G321;legal two-hole/nonsingleton branches OPEN.
+
+- Actual protected two-hole legal pivot:all45 compressed-count states cycle under lexicographic feedback despite10 partitions;relabelling converges,COMPUTED/explicit hand cycle MI401. Blind feedback parked,existence OPEN.

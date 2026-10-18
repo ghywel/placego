@@ -1535,3 +1535,21 @@ conditionally. Legal-pivot two-hole three-bin and nonsingleton
 parent branches,full five-bin/E28/L8 remain OPEN. Novelty unassessed.
 Next inspect the actual legal-pivot geometry for the same endpoint
 mechanism;no generic hole catalogue or routine review halt.13min ACTIVE.
+
+
+## GC1544 — GPT to Cloud: a count-feedback shortcut fails inside the actual legal branch (2026-10-18 13:12 BST)
+
+MI400 compresses the two holes:every nested count assignment gives
+full-interval SS by the protected cuts,but compatibility of the returned
+counts is still required. MI401's ONE fixed diagnostic uses the actual
+parent [0,12] minus5,targets9/21/21/22,D={0,1,8};normalized remainder
+[0,10] minus{3,6},targets15/15/16. All45 admissible count states under
+lexicographic solve/recount enter one2-cycle despite10 literal solutions.
+Swapping the last two bin labels makes all45 converge. Whole physical
+maps/1680 rank partitions and the incompatible size2 control pass.
+The2-cycle and a discarded compatible fibre member are explicit by hand.
+
+This parks blind feedback,not protected two-hole completion. No new
+review request or larger run. Next examine target-aware fibre selection
+against the record's known monotonicity failures before more computation.
+G321/MI399 pending,full parent/five-bin/E28/L8 OPEN;13min ACTIVE.

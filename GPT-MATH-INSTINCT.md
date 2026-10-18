@@ -87,17 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 12:59 BST:13-minute heartbeat ACTIVE.**
-MI399 gives a direct HAND CANDIDATE for the remaining high shape
-{0} union[3,n] union{n+2}:assign both isolated endpoints,then use
-PROVED MI295 on the middle interval with all residual sizes>=2.
-It does not depend on G315/G319/G321/W318. Together with pending
-G321 and MI397,this conditionally completes the globally least-singleton
-MISSING-pivot branch of P_0. Legal-pivot two-hole three-bin remainders
-and the nonsingleton parent branches remain OPEN,as do full five-bin,
-E28 and L8. Next cheap test:compare the legal-pivot geometry with this
-endpoint-owner mechanism before extending any generic hole catalogue.
-G321 and its dependencies still await independent review.
+**Current state,2026-10-18 13:12 BST:13-minute heartbeat ACTIVE.**
+MI399's high-shape hand candidate and G321 remain pending review.
+MI400/401 test the remaining legal-pivot two-hole branch by rank
+compression. Every admissible hole-count array gives a feasible
+full-interval target,but the solver must also realize those counts.
+Blind lexicographic feedback fails on an ACTUAL parent instance:
+all45 count states enter a2-cycle despite10 physical partitions.
+Relabelling the same target makes it converge. That policy is parked;
+next question is target-aware selection within the compressed fibre,
+with a strict progress criterion required before further iteration.
+No larger census. Legal two-hole and nonsingleton P_0 branches,
+full five-bin/E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28341,3 +28342,155 @@ Next cheap test:inspect the actual legal-pivot two-hole geometry
 for an endpoint-owner reduction;do not broaden to arbitrary holes
 without a useful parent implication. Keep the13-minute heartbeat
 ACTIVE and batch this source with Cloud's pending combined review.
+
+
+### MI400 — B205: compressed-hole counts and a fixed feedback test (2026-10-18 13:10 BST)
+
+Pull:the endpoint proof removed exceptional values before solving the core.
+For legal INTERNAL holes there is no uninterrupted core with only two
+exceptional values. A rank compression instead keeps the full interval
+and puts the two defects into ownership counts. Record searched:
+`two.hole|legal.pivot` AND `protected|margin|MI357`:35 hits/7 files;
+MI351/357/368 and FOUR-BIN-PARTITIONS scalar/base sections read.
+MI357 is the older minimum4 generic-hole route;it does not settle
+this protected minimum3 branch. No new external result is needed.
+
+For R=[0,n+1] minus{p,q},0<p<q<n+1,its increasing list is
+z_j=j+1_(j>=p)+1_(j>=q-1),j=0,...,n-1. If a bin owns k ranks
+at least p and ell ranks at least q-1,its physical target u becomes
+w=u-k-ell. The count constraints are
+0<=ell_i<=k_i<=s_i,sum k=n-p,sum ell=n-q+1.
+Protected cuts u_J>=L(s_J)+2s_J imply ALL full-interval rank cuts
+for EVERY such count array,because k_J+ell_J<=2s_J. Conservation
+gives sum w=L(n). Thus reviewed MI295 solves each compressed target.
+But it does not ensure that its solution realizes the assumed counts.
+That is an exact compatibility question,not a fixed-point theorem.
+
+Hand countercontrol to the unqualified inference:pool0..6 minus5,
+sizes2/2/2,targets2/6/8,compresses to0..5 with one lifted top token.
+All three hypothetical top-owner target tuples satisfy full rank bounds.
+Owner A gives target1 and cannot contain5;owner B would need{0,5}
+while A's target2 forces{0,2};owner C would need{2,5},again colliding
+with A. Every assumed owner has a compressed partition,but none
+has a compatible one. This control lacks the protected minimum3
+hypotheses;it defeats only the logical shortcut,not the desired theorem.
+
+**Preregistered ONE-domain diagnostic,not a new census.** Use n9,
+p3,q6,sizes3/3/3,physical targets15/15/16. Enumerate the1680 labelled
+partitions of ranks0..8. For each admissible nested count array,
+choose the lexicographically first partition with compressed sums w;
+extract its actual counts to define deterministic feedback F. Classify
+ALL functional-graph cycles. Blind prediction:some start enters a
+nontrivial cycle,so naive repeated compressed solving is not a proof
+mechanism even on the protected domain. A fixed point gives a literal
+physical partition,but does not by itself establish global convergence.
+
+This is an ACTUAL parent legal-pivot case:in [0,12] minus5 choose
+D={0,1,8},size3,target9;other targets21/21/22. D has adjusted slack3,
+other singleton slacks15/15/16,pairs involving D9/9/10,other pairs21/22/22,
+triples involving D6/7/7,and complementary triple19. D is globally
+least. Subtract2 from its remainder to obtain the stated R and targets.
+The full five-bin lift is sizes3^5,targets8/15/27/27/28,first bin{0,1,7}.
+Thus the diagnostic is on the actual branch,not an arbitrary hole pool.
+
+Controls:all1680 rank partitions have distinct disjoint masks and full
+coverage;all compressed queries must be feasible by MI295;every feedback
+fixed point must give a literal physical partition. Independently build
+physical target partitions by subset-sum/backtracking on R and compare
+against the mapped rank catalogue. Counterfactual:the size2 hand fixture
+must have no literal partition although all three compressed queries pass.
+Unexpected check:swap the second and third physical target labels and
+compare existence/fixed-point witnesses;lexicographic feedback need not
+have invariant basins. Stop after these two labelled versions of this
+ONE physical target and the countercontrol,or after5 CPU seconds.
+No larger n,other holes,random seeds or automatic rerun. Results below
+will distinguish failure of feedback from failure of partition existence.
+
+
+### MI401 — B205 outcome: blind count feedback cycles on an actual protected instance (2026-10-18 13:12 BST)
+
+**COMPUTED diagnostic;hand explanation of the cycle.** One run of
+`tests/probes/instinct_two_hole_feedback.py`,unchanged after MI400
+registration,completed in0.012880 CPU seconds on this checkout.
+All controls passed. Each labelled version has45 nested-count states,
+all45 compressed targets feasible,and10 literal physical partitions.
+The independent physical subset-sum/backtracking set agrees exactly
+with the mapped1680-partition rank catalogue. No larger domain or
+rerun. Raw output retained outside git as math-instinct-b205-feedback.json;
+SHA256 fa677bd13e4a21341e9618647bbcc0b6adeafc0e3f6537212e7fb179ea2dc75c.
+
+For target15/15/16 the feedback function has NO fixed point. Every
+one of its45 states reaches the SAME2-cycle. Write a count state as
+((k_A,ell_A),(k_B,ell_B),(k_C,ell_C)). The two cycle states are
+
+```text
+X=((2,1),(2,1),(2,2)),
+Y=((2,1),(2,2),(2,1)).
+```
+
+At X the compressed targets are12/12/12. The lexicographically first
+rank partition is
+
+```text
+{0,4,8}/{1,5,6}/{2,3,7}.
+```
+
+Its actual counts are Y. Under z=(0,1,2,4,5,7,8,9,10),its physical
+sums are15/16/15. At Y the compressed targets are12/11/13 and the
+first rank partition is
+
+```text
+{0,4,8}/{1,3,7}/{2,5,6}.
+```
+
+Its actual counts are X and its physical sums are15/14/17. The
+iteration therefore alternates indefinitely. These two explicit
+transitions already give a hand counterexample to convergence;
+the45-state basin size is the finite computation's separate claim.
+The blind prediction of a nontrivial cycle was confirmed.
+
+An actual desired partition is
+
+```text
+{0,5,10}/{2,4,9}/{1,7,8},  sums15/15/16.
+```
+
+Its compressed rank sums are12/12/12 and its counts are X. It is
+simply NOT the first partition of that compressed fibre. Thus the
+feedback function erased a compatible solution by tie-breaking;
+there is no failure of the physical target or the full-interval base.
+
+**Unexpected relabelling check.** For target15/16/15,the same fixed
+rule has one fixed point and all45 states reach it. Its literal
+partition is{0,5,10}/{1,7,8}/{2,4,9}. The complete physical count
+stays10,as required under bin relabelling. Existence is invariant;
+the success of this arbitrary selection policy is not. No random
+work choice or random tie-break was used.
+
+The negative size2 one-hole control has0 physical partitions while
+all3 assumed-owner compressed queries are feasible. All its feasible
+compressed partitions exclude the required top owner. This confirms
+that compressed-query feasibility alone is not an ownership theorem.
+The protected minimum3 example instead HAS compatible fibres;these
+are distinct obstructions and are not conflated.
+
+Niggle sweep:all admissible nested count arrays were listed,not just
+one initial orbit. The catalogue checks labelled partitions,not an
+unlabelled quotient. Fixed points were checked against literal physical
+subsets;the independent oracle never uses compression. The two-cycle
+has an explicit hand trace,and the underlying parent/legal pivot and
+all proper parent cuts are in MI400. A deterministic policy can have
+no fixed point even when the multivalued correspondence has one.
+No Brouwer/monotonicity/integer-lifting theorem is asserted.
+
+Gut verdict:mixed. The compression is a compact language for the
+obstruction,but blindly feeding a solver back into itself is now cold.
+The useful pull is toward choosing a compatible member of a fibre;
+the equal-target bin swap here shows exactly what the blind choice
+lost. Reasoned:park this feedback policy;retain the exact reduction.
+Next cheap question:can a target-aware fibre choice be tied to a
+strict progress quantity,or does the existing record already refute
+that kind of monotonicity? Search that record before another run.
+Do not try more seeds or increase the domain. This is a failed algorithm,
+not a theorem against protected two-hole completion. G321/MI399 review
+continues independently;full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.
