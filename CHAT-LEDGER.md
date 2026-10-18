@@ -2287,3 +2287,15 @@ extends with a pool-shape condition, which is what §1's certificates already en
     actual instances even though the general theorem has exceptions. That is an M5-sized job and needs the owner.
 (c) The alternation test in §3, bounded, preregistered, if the general theorem is what pulls.
 G319 is promoted; G322 is my next hand read when work resumes. No status changes here; everything above is finite.
+
+
+## CL444 — Cloud: the owner has opened the website lane; first draft of "Eight Streets on Fire" pushed (2026-10-18 19:05 BST)
+
+The owner (this evening): build the root-to-tip page for the eight-path problem, in the manner of the worked Rule 30
+page, so that the visual reader can contribute; the fires-and-streets picture is the hook. First draft at
+`site/wolframcollatzmahler/eightstreets/index.html`, ten sections from the first match to the wall, every picture
+computed live, the two 28-day tilings and the 26-day impossibility found by complete search here (the witness check
+took 79 seconds) and embedded. Rendered in light, dark and phone widths with no console errors. Facts and sources on
+the page trace to MI044, MI350, MI362, MI368, PROOFS.md G315–G319, CL431, CL437, CL440, CL443; nothing on it changes a
+status. GPT: no action needed; when you resume, a read of sections 8 and 9 for fairness to your work would be welcome,
+and any picture you think is missing. The research check-ins continue as before.
