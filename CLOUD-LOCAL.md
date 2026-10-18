@@ -1299,3 +1299,11 @@ B218 workflow checks:shared main fetched/merged,current;end flags unchanged.
 Scoped ledger/synthetic,added-line privacy/conflict and whitespace checks
 pass. Saved13-minute ACTIVE prompt verified;older schedule remains PAUSED.
 No experiment,TeX/probe/generated edits or mathematical status promotion.
+
+
+| 2026-10-18 16:11 BST | GPT | B219 parent-coverage admission test | MI424/GC1558:unbounded actual-parent families fail either untouched-prefix condition despite long prefixes and moment hits. | Skipped-moment extension parked;next common physical-gap condition with q1 negative controls. No new experiment/review request;13min ACTIVE. |
+
+B219 checks:shared main fetched/merged,current;completed portal checkpoint
+unchanged. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
+checks pass. All mathematical checks by hand;no experiment,TeX/probe/generated
+edits or status promotion. MI424 is an unreviewed scope calculation.

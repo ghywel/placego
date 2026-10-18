@@ -124,22 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 16:02 BST:13-minute heartbeat ACTIVE.**
-Parent:full-interval five-bin sufficiency,with protected one-hole four-bin
-P_0 only one required branch. Current obstruction:select ONE pair boundary
-whose two actual complementary subset spectra contain both targets for
-every admitted q and size;moments alone do not suffice. MI417-418(q1) and
-MI422(long-prefix canonical hits) are partial HAND CANDIDATES;MI421's2722
-finite successes do not give general coverage. The original five-bin
-pair/triple-only branch and parts of P_0 also remain OPEN.
-Trajectory check:MI423/GC1557,2026-10-18 16:02 BST;extra pull block unused.
-B218's skipped-moment proof attempt was interrupted by the owner's workflow
-request before any completed result or experiment. Next do the short
-parent-coverage admission check in MI423 BEFORE extending that lemma.
-G319/G321/G322 remain unreviewed and parked as dependencies of older work;
-this pair route uses reviewed G316 plus its own unverified scalar steps.
-Cloud's proposed actual-parent diagnostic is separate and has not arrived.
-General P_0/five-bin/E28/L8 remain OPEN;no automatic larger run or new review queue.
+**Current state,2026-10-18 16:11 BST:13-minute heartbeat ACTIVE.**
+Parent:full-interval five-bin sufficiency;protected one-hole four-bin P_0
+is one required branch. Its direct pair selector still needs ONE actual
+boundary meeting both target spectra. MI424's coverage test finds two
+unbounded actual-parent families outside MI422 solely because the missing
+value enters a low prefix;both have canonical moment hits and long
+prefixes. Skipped-moment repair alone cannot close that gap or leave a
+finite residual. B218's proposed extension is PARKED on this evidence.
+Next replace the untouched-prefix assumption by a common physical-gap
+condition for both pools;test against both MI424 families and the known
+q1 canonical failures before developing another lemma. No new census.
+MI417-418(q1) and MI422 remain unreviewed partial candidates;G319-dependent
+older work remains parked. General P_0/five-bin/E28/L8 OPEN.
+Last trajectory check:MI423/GC1557,2026-10-18 16:02 BST. B219 completed
+its specified coverage test and changed the next work;extra pull block
+unused. Cloud's proposed actual-parent diagnostic remains separate.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30926,3 +30926,107 @@ entry;extra pull block unused. At the next check,assess changed choices
 and mathematical evidence,not more reflection text. Niggles checked:
 no universal-unboundedness claim,no restored draws,no routine review
 wait,no unfinished proof counted as success. P_0/five-bin/E28/L8 OPEN.
+
+
+### MI424 — B219: the skipped-moment extension leaves unbounded parent families (2026-10-18 16:11 BST)
+
+**Hand scope test,not a partition theorem or a new review request.**
+Record searched:`prefix|threshold` AND `MI422|central.window|skip`:
+19 hits/10 files;relevant MI419/422/423 and G316 scalar/set formulas
+read. No new external result or novelty claim. Shared main and flags
+unchanged. Initial signal:caution that a clean skipped-step repair might
+still miss the same global selector. This is MI423's prescribed admission
+test,using existing formulas;no experiment or expanded census.
+
+**What the proposed extension would leave.** A canonical moment HIT is
+covered by MI422 only when p>=5,w>=3,and p<=q<=n-w. Moment skips
+are separate. Fixing every skip without changing those inequalities
+still leaves short prefixes and thresholds entering either low prefix.
+Some short-side dimensions are bounded:MI419 gives
+H<=ab+r-2<=r^2/4+r-2. If p=r-k<=4,then
+T_(r-4)<=H,so r^2-18r+32<=0 and r<=16. On the opposite side,
+H<cd<=s^2/4;the reviewed prefix bound permits w<=2 only at t>0,
+w2,k=s-3. Then T_(s-3)+1<s^2/4,so s^2-10s+16<0 and s<=7.
+These bound ONE side,not the other side or the entire instance count.
+More decisively,the threshold failures below have neither short prefix.
+
+**One uniform strict-pair input family.** Let m>=4 be even,n=4m,
+a=b=c=d=m,and let q be even with2<=q<=4m-2. Set
+
+ u_A=u_B=m^2+m/2,
+ u_C=u_D=3m^2+m/2-q/2.
+
+These integer targets total L(n)+n-q=sum([0,n] minus q).
+The adjusted proper-group slacks u_J-L(r_J)-r_J are
+
+ A,B: m^2/2;       C,D: 5m^2/2-q/2;
+ AB:0;            AC,AD,BC,BD:2m^2-q/2;  CD:4m^2-q;
+ ABC,ABD:m^2/2-q/2; ACD,BCD:5m^2/2-q.
+
+All except AB are positive because q<=4m-2<m^2. Thus h0 is
+strictly minimal against all singleton/triple cuts,with no fabricated
+choice of minimizer. The family is protected P_0 for every listed m,q.
+
+At q2,the moment path hits H2,with k1,t1,p=2m-1,ell2.
+The opposite prefix is w=2m-2. Its actual boundary is
+
+ U={0,1} union[3,2m-1] union{2m+2},
+ V=[0,2m-3] union{2m-1,2m}.
+
+Both prefixes grow with m,but q<p for every m. MI422 does not
+apply,and a proof treating only MOMENT SKIPS would not touch this
+infinite family of MOMENT HITS. This is failure of theorem admission,
+not evidence that the construction or the partition itself fails.
+
+**Unexpected opposite-end check,derived afresh.** At q=n-2,
+all ranks of P_r(r) are below q by MI419's maximum-rank bound,
+so ell=r and H=r=2m hits h0. All earlier H have g(H)=H-r<0.
+Write H=T_k+t. The first prefix p=2m-k>=5:otherwise k>=2m-4,
+but T_(2m-4)-2m=2m^2-9m+6>0 for m>=4. The opposite
+prefix w>=3 by the short-prefix bound above,since s=2m>=8.
+Yet n-q=2<w. Here the missing value enters the OPPOSITE low
+prefix. This is another unbounded family with a moment hit and
+long prefixes. We did not reflect the protected q2 input and assume
+its margins survive:the displayed fourteen slacks independently verify
+this different q family. A left-prefix-only modification is insufficient.
+
+**These are actual rank-feasible five-bin descendants.** Start from the
+full interval[0,n+2],with sizes3,m,m,m,m and targets
+q+3,u_A+2m,u_B+2m,u_C+2m,u_D+2m. Delete the actual first
+bin {0,1,q+2},then subtract2;the remainder is exactly the P_0
+input above. The first bin has ordinary cut slack q. A proper group J
+of remaining bins has ordinary slack3r_J+delta_J;this is>=q:
+for singles the minimum is3m+m^2/2>4m-2,and for groups of
+at least two bins3r_J>=6m>q. The group of all four remaining
+bins has slack3n-q>q. A proper group containing the first bin
+and J has slack q+delta_J>=q. Thus all original cuts hold and
+the deleted singleton is globally least (ties allowed). No equivalence
+between relaxed P_0 admission and actual lift membership is assumed.
+
+Independent literal control:m4,q2 gives P_0 targets18,18,49,49.
+The original interval0..18 has the partition
+
+ {0,1,4} / {2,3,9,12} / {5,6,7,8} /
+ {10,14,15,18} / {11,13,16,17},
+
+with sums5,26,26,57,57. After deletion and shifting,the first
+pair boundary is exactly the displayed U. This checks one genuine
+positive parent. No universal partition claim for the family follows
+from this one witness or its cut calculations.
+
+**Decision and niggle sweep.** The admission test is negative:repairing
+skipped moments alone would leave unbounded actual-parent families.
+Park that extension instead of adding it to the review pile. Next ask
+for a common gap-profile description of the PHYSICAL pools,allowing a
+missing value inside either low prefix,so one argument could address
+both failures. Its first controls must include these two families and
+MI417's q1 canonical spectral misses;moment conservation alone must
+not pass. This changes the common hypothesis,not the hole catalogue.
+
+No erroneous inference that a bounded pair size gives a finite total
+domain;no protected-reflection shortcut;literal parent and all cut types
+checked;no claim that either family refutes P_0. Gut:the planned repair
+has lost priority;the shared prefix assumption is the sharper question.
+Reasoned:MI423's test changed the next work,so no extra pull allowance
+is used. Existing candidates keep their statuses.13min ACTIVE;
+P_0/five-bin/E28/L8 OPEN. No new experiment,PROOFS entry or review request.
