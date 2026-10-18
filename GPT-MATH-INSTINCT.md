@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 11:54 BST:13-minute heartbeat ACTIVE.**
-MI389 removes the extra compatibility qualification from adaptive
-scalar count selection,conditional on pending G319/MI383. If ANY
-zero owner admits counts,the protected low-shape target partitions,
-possibly after changing owner/counts. Pair cuts kill collisions when
-zero lies in either colliding bin;large surviving collisions admit a
-regular-row transfer and three small cases have literal repairs.
-Universal existence of a scalar-admitted owner remains OPEN;MI387's
-63,589 finite passes do not prove it. G319/G320/W318 pending review;
-full low-shape/five-bin/P_0/E28/L8 OPEN. Older schedule PAUSED.
+**Current state,2026-10-18 12:07 BST:13-minute heartbeat ACTIVE.**
+MI391 proves by hand that every protected low-shape target has an
+owner for which ALL three scalar K intervals are nonempty. Nonroot
+eligibility is u>=alpha_s;root eligibility is u<=beta_(s-1),with
+spectrum gaps excluded explicitly. At most one bin requires0,and
+such a bin is eligible;otherwise a top-sum budget supplies an owner.
+The two AGGREGATE count bounds for some owner remain OPEN. MI389
+conditionally repairs compatibility once those bounds hold. G319/
+G320/W318 and new applications remain pending independent review;
+full low-shape/five-bin/P_0/E28/L8 OPEN. No new experiment.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27360,3 +27360,187 @@ separated from count selection by a short repair,so the next hand
 question is genuinely narrower. Fresh choice still favours the z/k
 selector;this result does not imply it is easy or nearly proved.
 Full low-shape/five-bin/P_0/E28/L8 OPEN;13-minute heartbeat ACTIVE.
+
+
+### MI390 — B200: owner eligibility before the shared count budget (2026-10-18 12:01 BST)
+
+Question:before proving sum min K<=Q<=sum max K,can we guarantee
+an owner whose three individual K intervals are nonempty? Empty
+intervals must not be hidden by manipulating their endpoints. Hand
+block only;no experiment or cap expansion. Record searched:count,
+capacity,owner ->20 hits across four files;current MI378/383/384/387/
+389 formulas are the relevant source,not the earlier path-forest work.
+Shared main/Cloud flags unchanged. No new external theorem assumed.
+
+Pull:the owner changes only one cardinality,so scalar subset extrema
+may separate forced ownership from the aggregate obstruction. Concern:
+actual subset sums need not fill every interval between their extrema.
+The kill check is to derive every possible gap in the union of the
+fixed-count f/g intervals,including rooted original size3. Unexpected
+hand control will include p2's empty low interval and a forced owner.
+A result about individual eligibility will not be labelled aggregate
+capacity or partition existence.
+
+### MI391 — B200: an individually admissible owner always exists (2026-10-18 12:07 BST)
+
+**Hand PROOF-SKETCH,not independently reviewed.** For the protected
+low shape S=[0,M] minus{1,p,p+1},sizes s_1,s_2,s_3>=3,total
+T=sum(S),and all proper cuts u_J>=L(s_J)+3s_J,there is a choice
+of owner of0 for which every scalar count interval K_i is nonempty.
+No least-slack hypothesis or G319/G320/W318 is used. This proves
+individual eligibility only;the aggregate bounds remain open.
+
+Write n=M-2=sum s_i>=9,m=n-1=|V|,V=S minus{0},P=p-2,
+Q=M-p-1. For 0<=r<=m,let alpha_r and beta_r be the sums of
+the r smallest and largest values of V. A nonroot bin has size r=s;
+a root bin has remaining nonzero size r=s-1. For a fixed legal high
+count k and low count l=r-k,its possible sums form the full interval
+[f_r(k),g_r(k)],because independent subset sums of each full interval
+are complete. K is nonempty exactly when the target belongs to the
+union of these fixed-count intervals.
+
+**1. Locate the gaps in that union directly.** Both endpoints grow
+strictly with k. For a legal transition k to k+1,put l=r-k. Then
+
+```text
+f_r(k+1)-g_r(k)
+ =3-(l-1)(P-l)-k(Q-k-1).                         (1)
+```
+
+For r>=3 and m-r>=3,set A=l-1,B=P-l,C=k,D=Q-k-1.
+All are nonnegative,A+C=r-1>=2,B+D=m-r-1>=2. A gap requires
+AB+CD<=1. If A,C are both positive,AB+CD>=B+D>=2,impossible.
+If C=0,then A>=2 forces B=0;this is r=P,k=0. If A=0,then
+C>=2 forces D=0;this is r=Q,k=Q-1. Hence the ONLY possible
+omissions are alpha_r+1,+2 when r=P,or beta_r-1,-2 when r=Q.
+These are genuine endpoint gaps when the transitions exist. Empty
+rows have no such transition and need no exception.
+
+For rooted r=2,the only transitions are k0->1 and k1->2. Formula
+(1) is respectively5-P and5-Q. Lower gaps occur only at P2 or P3:
+P2 gives missing sums6,7;P3 gives missing sum8. Upper gaps occur
+only at Q2 or Q3:respectively beta_2-1,-2 or beta_2-3. This lists
+all possibilities,including the distance3 gap that the r>=3 lemma
+would miss. When a transition is illegal it creates no gap.
+
+**2. Exact nonroot eligibility under protection.** For a bin of
+original size s>=3,the complement t=n-s>=6. Its actual largest
+s-sum beta_s has complement minimum in S equal to alpha_(t-1),
+since that minimum includes0. Every j-th smallest positive value of
+V is at most j+4 (j starts at0),so
+
+```text
+alpha_(t-1)<=L(t-1)+4(t-1)=L(t)+3t-3.
+```
+
+The complementary protected cut gives u<=beta_s-3. Thus neither
+upper gap from section1 can occur. A lower gap requires s=P,when
+alpha_s=L(s)+2s. Protection u>=L(s)+3s places u at least s>=3
+above that minimum. Therefore
+
+```text
+K(nonroot,s,u) is nonempty iff u>=alpha_s.          (2)
+```
+
+The upper condition and absence of gaps were proved,not assumed.
+
+**3. Exact root eligibility under protection.** For r=s-1,
+alpha_r<=L(s-1)+4(s-1)=L(s)+3s-3. Protection keeps u at least3
+above alpha_r. For r>=3 this excludes every lower gap. The only
+upper gaps require r=Q;then the other ORIGINAL bins have combined
+size t=m-r=P>=6. If u=beta_r-1 or beta_r-2,their total would be
+alpha_t+1 or alpha_t+2=L(t)+2t+1 or+2,below their protected bound
+L(t)+3t. So these gaps are also excluded.
+
+For s=3,r=2,the lower omissions6,7,8 are below u>=12. If Q2,
+the complementary size is t=P>=6,and the same argument excludes
+upper distances1,2. If Q3,then t=P+1>=6 and the t smallest positive
+values have sum alpha_t=L(t)+2t+2. The upper distance3 omission
+would give the other bins total alpha_t+3=L(t)+2t+5<L(t)+3t.
+Thus it too is excluded. Consequently,for every original s>=3,
+
+```text
+K(root,s,u) is nonempty iff u<=beta_(s-1).          (3)
+```
+
+This is a scalar feasibility statement;it does not assert a compatible
+partition after choosing0's owner.
+
+**4. At most one bin requires0,and that bin can own it.** A bin
+that is ineligible as nonroot has u<alpha_s<=L(s)+4s. If two bins
+of sizes a,b were ineligible,their integer targets would satisfy
+
+```text
+u_A+u_B <= L(a)+L(b)+4(a+b)-2
+          < L(a+b)+3(a+b),
+```
+
+because a+b-ab-2<0 for a,b>=3. This violates their protected pair
+cut. There is at most one such bin.
+
+For any size s with t=n-s>=6,the j-th largest positive value is at
+least M-2-j. Hence
+
+```text
+beta_(s-1)-alpha_s
+ >= (s-1)(n+1)-2L(s)-4s
+  = (s-1)(t+1)-4s
+ >= 3s-7 >=2.                                    (4)
+```
+
+If a bin requires0,its target u<alpha_s is therefore below
+beta_(s-1),so it is eligible as root by(3). Every other bin is
+eligible as nonroot by(2). This handles the forced-owner case.
+
+**5. When no bin requires0,at least one root is eligible.** Put
+r_i=s_i-1>=2,so sum r_i=m-2. The sequence beta_r is concave:
+its successive increments are the positive values in decreasing
+order. Transferring a unit from a smaller r>=3 to a largest r cannot
+increase the sum of beta values. Repeating gives
+
+```text
+sum_i beta_(r_i) >= beta_(m-6)+2 beta_2
+                  = T-alpha_6+2 beta_2.           (5)
+```
+
+All indices are legal because m>=8. If p<=M-3,the two largest
+values are M,M-1,so2 beta_2=4M-2>=42,while alpha_6<=39.
+If p=M-2,they are M,M-3,so2 beta_2=4M-6>=38;the six smallest
+values are2..7 because M>=11,so alpha_6=27. In either case(5)
+is at least T+3. All three targets cannot exceed their respective
+beta_(s_i-1),since their sum is T. At least one bin is root-eligible;
+by assumption the other two are nonroot-eligible. This completes the
+individual-owner assertion.
+
+**Hand controls and limits.** For p2,M11,sizes3^3,targets12,24,24,
+all six protected cuts hold. V=[4,11],alpha_3=15,beta_2=21:
+only A can own0 and A must own0. A literal partition is
+{0,4,8}/{5,9,10}/{6,7,11}. The empty low interval is therefore
+included in the argument,not discarded. Here sum beta_2=63=T+3,
+showing the lower margin used in(5) is attained.
+
+On MI385's p3,M15,sizes(5,5,3),targets37,38,37,the size3 bin
+cannot own0 since beta_2=29. The theorem does not say every owner
+is eligible. On p5,M11,sizes3^3,targets16,19,19,the original
+least-singleton owner A has all K intervals nonempty but each has
+minimum2,whose sum6 exceeds Q5. Thus the existence assertion just
+proved does not imply aggregate capacity for its chosen owner.
+This is the exact remaining obstacle,not evidence against the result.
+
+Niggle sweep:each fixed-count sum interval is actual;only LEGAL
+count transitions create gaps;rooted size3's distance3 gap is treated
+separately;complementary sizes are original sizes when protection is
+used;two ineligible nonroots use integer strictness;the large-bin
+extremal distribution in(5) retains sizes>=2;the p=M-2 endpoint has
+only one high value and its two largest values are handled separately.
+No numerical run,no G319/G320/W318 dependence,no novelty assertion.
+The earlier partition-polytope abstract supplies no theorem here.
+
+Gut verdict:there is a real simplification in excluding empty K
+systems before reasoning about their endpoints. Reasoned verdict:
+the remaining assertion is now precisely that SOME individually
+eligible owner also meets both aggregate bounds. MI389 then supplies
+conditional compatibility. Next hand test:compare aggregate count
+intervals across eligible owners,using the16/19/19 control to reject
+any claim that every eligible owner works. Full low-shape and all
+parent problems remain OPEN;13-minute heartbeat ACTIVE.

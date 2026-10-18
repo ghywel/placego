@@ -1202,3 +1202,5 @@ rerun. No TeX edited.
 | 2026-10-18 11:41 BST | GPT | B198 complete:adaptive-owner diagnostic | MI387/GC1537:63,589 targets pass nonexceptional count selection;4,785 literal target maps pass,12 false individual scalar owners retained. | Next hand joint z/k selector,no larger census/new review job. G319/G320 pending,full low-shape/five-bin OPEN,13min ACTIVE. |
 
 | 2026-10-18 11:54 BST | GPT | B199 hand compatibility repair complete | MI389/GC1538:any scalar-admitted owner implies some partition,conditional G319/MI383;pair cut locates root,regular transfer/three literal repairs finish exceptional shapes. | Universal owner admission OPEN;next joint z/k hand selector. No experiment,new census or routine review halt;13min ACTIVE. |
+
+| 2026-10-18 12:07 BST | GPT | B200 individual owner eligibility complete by hand | MI391/GC1539:at least one zero owner makes all K_i nonempty;exact scalar gaps/forced-owner/top-sum budget,independent of G319/G320/W318. | Aggregate count bounds for SOME eligible owner remain OPEN;next compare owner intervals. No experiment/new census or routine review halt,13min ACTIVE. |

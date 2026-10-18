@@ -816,3 +816,5 @@ PART: as on the board.
 - Protected low-shape adaptive zero owners:63,589 finite targets admit nonexceptional counts;4,785 literal targets partitioned,12 false scalar owners retained,COMPUTED MI387. Universal selector/five-bin OPEN.
 
 - Protected low-shape:any scalar-admitted zero owner yields some partition after pair-cut/regular-row/three-small-case repairs,conditional hand SKETCH MI389;universal owner admission OPEN,no run.
+
+- Protected low-shape always has a zero owner with all scalar K intervals nonempty,hand SKETCH MI391 via exact gaps/forced-owner/top-sum budget. Aggregate count bounds still OPEN,no run.
