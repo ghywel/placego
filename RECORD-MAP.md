@@ -822,3 +822,5 @@ PART: as on the board.
 - Protected low-shape excessive-minimum-count roots:exactly two configurations,both explicitly repaired by changing zero owner,hand SKETCH MI393. Maximum-count owner capacity remains OPEN,no run.
 
 - Protected low-shape ALL targets,size>=3,proper cuts margin3:COMPLETE COMPOSITE HAND CANDIDATE G321/MI395 via owner existence/four count-failure repairs/MI389;G319 dependency,review pending,full five-bin OPEN.
+
+- Parent P_0 least-singleton missing-pivot route:prefer low repair/G321;empty prefix impossible,end trims G315. Only high{1,2,M-1} remains,hand conditional MI397;legal two-hole/nonsingleton branches OPEN.

@@ -87,16 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 12:32 BST:13-minute heartbeat ACTIVE.**
-MI395 completes a composite HAND CANDIDATE for protected low-shape
-three-bin sufficiency:S=[0,M] minus{1,p,p+1},sizes>=3,and all proper
-cuts u_J>=L(s_J)+3s_J. MI391 supplies an eligible owner;MI393/395
-classify both count-capacity failures into four explicitly repaired
-configurations;otherwise MI389 supplies conditional compatibility.
-G319 and these carrying applications await independent verification.
-No global least-singleton assumption or W318 dependence is used.
-Next exact parent scope audit;full five-bin/P_0/E28/L8 remain OPEN.
-No new experiment or novelty claim;Cloud receives a combined review.
+**Current state,2026-10-18 12:45 BST:13-minute heartbeat ACTIVE.**
+G321 remains a complete UNREVIEWED protected low-shape candidate.
+MI397 maps its parent consequence:in P_0's globally least-singleton
+branch,choose the low missing-pivot repair whenever available.
+An empty low prefix is impossible;endpoint trims complete by G315.
+Only legal-pivot two-hole three-bin remainders and the single high
+shape {0} union[3,n] union{n+2} remain in that canonical branch.
+Next test removes0 from this high shape to obtain a one-hole pool;
+size3 owners leave a size2 boundary that must be treated explicitly.
+P_0's nonsingleton-minimum branches and full five-bin/E28/L8 OPEN.
+No new experiment or extra component review queue.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27975,3 +27976,191 @@ reason to wait before independent work. Next map precisely what this
 settles in the parent one-hole/five-bin reduction and what remains;
 do not silently promote this special shape to arbitrary holes.
 13-minute heartbeat ACTIVE;full five-bin/P_0/E28/L8 OPEN.
+
+### MI396 — B203: trace the completed low shape back to its parent (2026-10-18 12:45 BST)
+
+Question:which actual parent cases does G321 settle,and can the
+canonical repair be CHOSEN to land there? Record searched:low.shape
+AND parent ->8 hits/3 files. Read MI362,MI368,MI374,MI376,MI385,
+MI389 and FOUR-BIN-PARTITIONS section6's pivot construction.
+Shared main and Cloud flags unchanged;G321 and dependencies still
+await independent verification. No experiment or new literature claim.
+
+Pull:choose the favourable repair before solving another shape.
+Unease:reflecting a protected punctured pool does not preserve the
+same margins. The unexpected hand check is the legal endpoint where
+a displayed three-hole shape trims to one hole. This block audits
+scope and inherited hypotheses;it does not reopen the generic hole tree.
+
+### MI397 — B203: prefer the low repair;only one high shape is unavoidable (2026-10-18 12:45 BST)
+
+**Conditional parent reduction,hand UNREVIEWED.** G321 settles every
+protected low-shape remainder,including cases with a strict pair
+minimum. The stronger conclusion below is a choice of repair in the
+actual one-hole FOUR-bin parent. It is not a proof of that parent or
+of full five-bin sufficiency. No new proof-review job or experiment.
+
+Let the parent be P=[0,m] minus q,with four sizes>=3 summing to m,
+correct target total,and all proper group cuts u_J>=L(s_J)+s_J
+(the P_0 problem of MI362). Suppose singleton D,size a,is globally
+least for delta_J=u_J-L(s_J)-s_J. Put n=m-a>=9 for the total
+size of the other THREE bins. Original endpoint q0/m cases already
+reduce to G316 on a translated/full interval. Take0<q<m below.
+
+**Protected one-hole scalar admission.** The parent cuts imply
+individual feasibility for D:an r-subset actual minimum is at most
+L(r)+r,while the complementary protected cut supplies the upper
+bound. A one-hole scalar omission at minimum+1 requires q=r and
+has value L(r)+1<L(r)+r. An upper omission is the corresponding
+lower omission for the complement,also excluded. This uses sizes
+at least3 on both sides. The same observation applies later to a
+protected ONE-hole three-bin remainder,where G315 then gives joint
+completion. For a full-interval remainder,the ordinary cuts and
+MI295 suffice. No arbitrary two-hole joint theorem is imported.
+
+Use the actual extreme-value prefix/suffix/pivot construction in
+FOUR-BIN-PARTITIONS section6. A legal pivot leaves at most TWO holes
+after trimming;MI368 preserves at least the actual-hole-count margin.
+If at most one hole remains,the preceding paragraph completes it.
+An actual two-hole three-bin remainder remains a separate open branch.
+The rest of this entry concerns a FORMAL missing pivot q only.
+
+**1. There must be a nonempty low prefix.** Write l+k=a-1,
+with formal prefix0..l-1,suffix u..m,u=m-k+1,and pivot q.
+These are distinct formal values,so l<=q<=u-1. Put p=q-l>=0.
+The prescribed target and its protected slack are
+
+```text
+u_D=L(a)+p+k(n+1),
+delta_D=p+k(n+1)-a.
+```
+
+The sum of D's and its complementary group's protected slacks is
+an-q. Global minimality implies delta_complement>=delta_D,so
+
+```text
+3p <= n(l-k+1)+l+2.                              (1)
+```
+
+If l=0,then k=a-1>=2 and the right side is
+n(2-a)+2<0,contradicting p>=0. Thus l>=1. This eliminates the
+apparently unavoidable high-repair case caused by an empty prefix.
+The argument uses the complementary THREE-bin group in the parent;
+being least only among singletons would not justify(1).
+
+**2. Choose the low repair whenever p>=2.** Replace the formal
+pair {l-1,q} by {l,q-1}. Both replacements are distinct and available
+because q-(l-1)=p+1>=3. The remaining minimum is l-1. Before any
+upper trim,the remaining span has normalized length
+
+```text
+M0=m-k-(l-1)=n+2,
+holes {1,p,p+1}.
+```
+
+By MI368,the remaining proper group targets,after subtracting l-1
+per token,satisfy margin
+
+```text
+mu=a+1-(l-1)=k+3 >=3.                            (2)
+```
+
+If 2<=p<=M0-2,the endpoints are present and G321 applies,conditional
+on its recorded hand dependencies. It requires neither a least
+singleton in this THREE-bin remainder nor the preservation of the
+parent's minimizer. This is precisely the obstacle removed in B202.
+
+The upper boundary p=M0-1 is possible in the formal interval and
+must not be passed to G321 as an internal-hole case. Its missing
+values include M0-1,M0. Trimming those two top positions leaves
+[0,M0-2] minus1,a ONE-hole pool. Margin(2) still holds,so protected
+one-hole admission and G315 complete it. No other upper p is legal.
+This is the endpoint check that keeps the reduction honest.
+
+**3. The cases p=0,1.** Protection for D gives delta_D>=0.
+With p<=1 and a>=3,this forces k>=1. The high repair exists:
+replace {q,u} by {q+1,u-1}. Its normalized span,subtracting l,
+is again M0=n+2,with holes
+
+```text
+{p,p+1,M0-1},  margin mu=k+2>=3.                  (3)
+```
+
+For p0,the two lower endpoints0,1 are absent. Trim them and
+subtract2. The pool becomes [0,n] minus{n-1} and margin becomes
+k>=1. Protected one-hole admission plus G315 complete this case.
+
+For p1,the endpoints are present and the remaining pool is exactly
+
+```text
+S_high=[0,n+2] minus{1,2,n+1}
+      ={0} union [3,n] union {n+2},
+proper group margins at least k+2>=3.
+```
+
+This ONE high shape remains open in this route. Arbitrary positions
+of the adjacent high-shape holes are not required:when p>=2 we can
+choose the low repair instead. Reflection alone does not close p1.
+Indeed a three-hole pool [0,M] minus H with margin mu=3+e reflects
+to the lower bounds
+
+```text
+u'_J >= L(r)+sum(H)-3+e*(n-r),  n=M-2.
+```
+
+For this high shape sum(H)=M+2=n+4,so the extra term is
+n+1+e*(n-r),not generally3r. The low-shape theorem cannot be
+invoked just because the REFLECTED missing set has its geometry.
+
+**4. What has actually contracted.** In the globally least-singleton
+branch of P_0,the canonical route now leaves only:
+
+- a legal-pivot TWO-hole three-bin remainder with inherited protection;
+- S_high={0} union[3,n] union{n+2},with inherited margin k+2.
+
+All low missing-pivot repairs and both relevant endpoint trims now
+complete conditionally on G321/G315. This does not establish that
+P_0 always has a minimizing singleton:its minimum can be a pair OR
+a triple,and reflection of P_0 is not symmetry of its assumptions.
+At the full FIVE-bin level,the original strict pair/triple-facet
+branch also remains separate. No reflection of an intermediate
+punctured pool is substituted for reflection of the original interval.
+
+The exact infinite lift family in MI385 now gains a conditional
+partition theorem:its sizes(2p,p,a,b,c) and displayed target formula
+complete for every protected low-shape target,not just the examples
+or the globally least-three-bin-singleton subcase. This is a direct
+application of the existing lift and G321,not another proof filing.
+It does not assert that all five-bin instances have those sizes/targets.
+
+**Hand scope controls.** MI368's actual parent [0,12] minus5,
+targets(6,22,22,23),has a=3,l2,k0,p3. Low repair {0,2,4},followed
+by subtracting1,leaves [0,11] minus{1,3,4},targets19,19,20 and
+margin3. G321 covers it;the previous need for another selected
+singleton/hole-budget argument is gone.
+MI366's N17 lifted residual [0,14] minus1,targets14,14,38,38,
+has strict pair adjusted minimum7 versus singleton minimum8.
+It is NOT covered by this parent-singleton reduction,despite being
+positive by its displayed partition. This guards against turning a
+successful local theorem into a silent full-parent claim.
+
+Niggle sweep:the formal pivot remains absent,only the balanced
+replacement is used;all low-repair parameter endpoints are accounted
+for. Low-prefix nonemptiness comes from the parent's global minimum,
+not the new three-bin theorem. The top trim changes hole count but
+not translation;the p0 bottom trim changes margin by2. Both leave
+at least the one-hole margin required for scalar admission. Three
+remaining bins retain original sizes>=3 throughout. No generic
+three-hole induction or independent verification is claimed.
+
+Gut verdict:the useful pull is toward choosing the good geometry,
+not filling an inherited catalogue of bad geometries. Reasoned:
+the actual missing-pivot branch has contracted to one explicit
+unhandled shape. Next cheap hand test on S_high:assign0 to a bin,
+then translate the positive pool by-3. It becomes
+[0,n-1] minus{n-2},a one-hole pool. If the zero owner's original
+size is>=4,all remaining sizes are>=3 and G315 is available after
+scalar admission;an original size3 owner leaves size2,so the exact
+boundary and owner choice must be checked rather than assumed.
+No experiment or automatic generic-hole expansion.13min ACTIVE;
+G321 still awaits review,full P_0/five-bin/E28/L8 OPEN.

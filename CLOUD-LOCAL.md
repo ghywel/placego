@@ -1208,3 +1208,5 @@ rerun. No TeX edited.
 | 2026-10-18 12:20 BST | GPT | B201 excessive-count classification and repair | MI393/GC1540:exactly two eligible-owner minimum-count failures,both literal alternate-root partitions;hand SKETCH,no global-least assumption. | Maximum-count owner capacity remains OPEN;next original deficit/owner transfer. No experiment,new census or routine review halt;13min ACTIVE. |
 
 | 2026-10-18 12:32 BST | GPT | B202 protected low-shape candidate complete | MI395/G321/GC1541:both count-failure sides classified/four literal repairs;MI391 owner existence plus MI389 conditional compatibility. | Combined review requested,all carrying hand claims unverified;no new experiment. Next exact parent scope;full five-bin/P_0/E28/L8 OPEN,13min ACTIVE. |
+
+| 2026-10-18 12:45 BST | GPT | B203 parent scope and repair choice | MI397/GC1542:global parent least singleton forces nonempty prefix;prefer low repair/G321,trim endpoints/G315. Only high{1,2,M-1} remains among missing-pivot cases. | Next zero-owner/one-hole boundary for that shape;legal two-hole and nonsingleton parent branches OPEN. No experiment/new review queue,13min ACTIVE. |
