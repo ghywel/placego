@@ -124,25 +124,21 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 22:10 BST: research ACTIVE every 13 minutes.**
-Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
-protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
-remain unresolved. G323/G324 are PROVED; G320–322 and MI430 pending and unused.
-H2 is the remaining protected one-hole3 completion in MI453's one-size-two
-full-row argument. MI458 completes H2 when the number e of legal pair choices
-exceeds s=min(b,c). B240/MI460 gives a COMPLETE UNREVIEWED HAND argument for
-H2's entire central pair-sum slice u=M, including balanced b=c and all holes.
-It uses the proved one-/two-hole scalar lemmas and matching counts. No general
-H2 or five-bin claim, no new experiment or separate review request.
-Next: for arbitrary u and e<=s, can every size-s subset of the protected target
-sum touch all e pairs? If d counts doubled pairs and z unmatched tokens in a
-subset, completion requires d+z>s-e. Keep ALL such subsets available; do not
-turn the central proof into a catalogue of neighbouring preferred selectors.
-Trajectory check MI459 triggered by two choice restrictions failing: closest
-pair and unmatched-token-only subset. The latter's literal negative and its
-actual doubled-pair completion are both retained. Complete the named central
-test, then return to the whole-choice threshold. Earlier pull-only allowance
-remains spent. Older schedule PAUSED; no background computation runs.
+**Current state, 2026-10-18 22:23 BST: research PAUSED for incubation.**
+Parent: full-interval FIVE-bin sufficiency; count admission and thin-row
+realization remain open. H2's general all-pair completion is OPEN. G323/G324
+remain PROVED; G320–322/MI430 pending and unused; MI460's central u=M slice
+remains an unreviewed hand result. B241/MI461–462 tests one uniform escape
+mechanism and stops on the second inspected state: a protected feasible
+instance has a blocking subset with no strict two-token exchange escape.
+Complete fibre and actual partition retained; this refutes the mechanism,
+not H2, and does not refute neutral paths. No repair or enlarged run follows.
+MI463/GC1585 requests a specific global-choice perspective from Cloud.
+Both mathematics schedules are PAUSED; no automatic flag polling or background
+computation continues. Reopen on a concrete uniform mechanism for all-choice
+coverage, a useful revised reduction, or direct discussion with the owner.
+This is an owner-authorized incubation, not a wait for routine proof approval.
+Latest trajectory check MI459; earlier pull-only allowance remains spent.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -33924,3 +33920,119 @@ complete unreviewed hand proof; general H2 and the five-bin parent are OPEN.
 Latest trajectory check MI459, no renewed pull-only allowance. Stop this
 bounded block; next work is the global occupancy threshold, not adjacent
 families or a new catalogue of selectors. No routine review halt.
+
+### MI461 — One global escape test, not another selector family (2026-10-18 22:21 BST; B241, NOT RUN at registration)
+
+Parent/H2 remain open; MI460's central slice is unreviewed and is NOT a
+premise. The all-choice occupancy criterion is exact but not yet a method.
+The concrete attraction is a uniform potential: if every blocking subset
+can reduce the number of touched legal pairs while preserving its sum,
+there is a global escape mechanism. This is not assumed from the finite
+existence checks. Record searched: `sum.preserv|neutral|fibre` AND
+`H2|matching|pair.choice`,44 hits/14 files. Read the old neutral diagnostic's
+scope and MI456/458/460: no general monotone exchange theorem is available.
+
+**Preregistered test.** On exactly the existing counts233/234 domains and
+all internal holes, inspect actual size-three subsets B whose target,
+together with pair target u and the conserved third target, satisfies H2.
+When B touches EVERY legal sum-u pair, enumerate ALL exchanges removing
+two tokens and adding two others, preserving the sum. Blind prediction:
+some such exchange leaves a legal pair untouched. Since the start touches
+all pairs, this is exactly strict decrease of the number touched.
+
+This is a diagnostic of a uniform proposed proof mechanism, not another
+partition census. Stop at the first failed state and retain its complete
+same-sum fibre and complete exchange-neighbour list. Do not weaken the move
+rule, allow a plateau, enlarge sizes, or add repairs in this block. A pass
+supports only these fixed domains; a failure rejects the mechanism, not H2.
+Caps:20 wall seconds,50,000 inspected states; one invocation/no retry.
+
+Independent controls: enumerate subset fibres by combinations and separately
+by all bitmasks; compare the whole fibre maps. Generate neighbours by literal
+remove/add exchanges and independently by symmetric difference within the
+complete fibre. Check matching edges by pairs and by unique partners.
+Positive: q3,M8,u8,B={0,1,6}, target7, escapes to {0,2,5}.
+Counterfactual: on P={0,1,2,3,4,6},u2,B={0,6},counts222,target(2,6,8),
+there is no escape; it is outside H2 and is the known impossible control.
+Unexpected: reflect physical B, matching and full neighbour sets, even when
+H2 admission is not preserved. Compare the physical maps only.
+Raw output outside git. After a negative, hand-check it and stop; no new
+review queue or conditional proof chain follows from this test.
+
+### MI462 — Strict two-token escape fails immediately, while H2 still succeeds (2026-10-18 22:23 BST; B241)
+
+**COMPUTED and hand-checked refutation of MI461's proposed mechanism.**
+One invocation; controls passed; stopped at the second inspected state,
+also the second blocking state. No complete-domain claim, retry or expansion.
+Counts(2,3,3), M8,q1, targets(3,12,20), B={0,5,7}. The only legal
+sum3 pair is {0,3}, which B touches. Its complete same-size/same-sum fibre is
+
+    {0,4,8}, {0,5,7}, {2,3,7}, {2,4,6}, {3,4,5}.
+
+Hand completeness: with least element0 the other two sum12, giving48 or57;
+least2 gives37 or46; least3 gives45; least>=4 has sum>=4+5+6>12.
+The complete two-token-exchange neighbours of B are048,237,345.
+Every one touches {0,3}. The unique good member246 shares no token with B,
+so cannot be reached in ONE two-token exchange. Thus the strict-escape
+claim fails even in the smallest registered domain.
+
+H2's six lower cuts are3>=3,12>=6,20>=6,15>=15,23>=15,32>=21;
+total35. The actual partition is {0,3};{2,4,6};{5,7,8}, with sizes233
+and sums3,12,20. This is not an H2 counterexample, nor a refutation of
+MI460. As an additional hand scope check, a NEUTRAL first step is possible:
+057 ->048 ->246, replacing57 by48 and then08 by26. Thus no claim of
+disconnected fibres or failure of every nonincreasing path is warranted.
+Allowing those paths would be a different conjecture; none is tested here.
+
+The controls compare whole subset maps from combinations and all bitmasks,
+complete exchange sets from remove/add and symmetric difference, two matching
+constructions, and physical reflection including neighbours. The known
+unprotected negative and the positive escape control pass. The negative
+stopped the run before the remaining states/domains; they are NOT passed.
+Elapsed wall time reported by the one Intel-host invocation:0.000709958s;
+no speed claim. Source tests/probes/instinct/h2_pair_escape.py SHA256
+ f8266d712ed145ec45c4636491fa44d47e2060e7927a34f97a5c6ac70881f13a.
+Raw JSONL retained outside git, SHA256
+ 732d40c6dd3515f9a1cf9ce15904847143e26d9006ca5c8567e6b8abd59c1400.
+No shared artifact upload or independent-party verification is claimed.
+
+**What changed.** The global occupancy criterion survives, but strict local
+improvement is not its proof mechanism. The exact complete fibre makes that
+failure transparent. No status promotion or new proof-review request.
+Niggle sweep: H2 admission checked separately from feasibility; all neighbours
+listed; unique good state verified; reflection applies to physical maps only;
+neutral path retained so the negative's scope is not exaggerated. Gut: the
+quick rejection is clarifying, but I do not have a fresh uniform argument
+ready. Reasoned: stop this registered strategy test, not patch its first trap.
+
+### MI463 — Incubate the global-choice step; ask for a mechanism (2026-10-18 22:23 BST)
+
+The named obstruction is still H2: for every protected target, find some
+size-s subset with d+z>s-e in the sum-u matching. Pair counting covers e>s;
+MI460's unreviewed hand argument covers u=M. Neither supplies a general
+principle for the remaining weighted target fibres. The new strict-escape
+proposal fails; simply allowing more moves does not establish that a good
+member exists. Even a connected target fibre would need that existence
+argument, so a connectivity claim alone would be circular as a solution.
+
+Decision under the owner's explicit halt allowance: pause the 13-minute
+heartbeat and take a quiet incubation interval. This is my judgement that
+the next proposed work needs a fresh mechanism; it is not a routine wait
+for G320–322, MI430 or MI460 review. The schedule tool confirms PAUSED;
+the older research schedule stays PAUSED. No background calculation/poller.
+The saved prompt and cadence are preserved for a later resumption.
+
+Concrete mentoring question to Cloud, delivered with this checkpoint:
+can the one-hole geometry prove that the UNION of legal-pair complementary
+spectra covers MI456's protected interval without selecting a preferred pair
+or assuming a good member of the target fibre? An extremal argument would
+need a genuinely global obstruction to ALL choices, not strict descent from
+an arbitrary start. Please assess that carrying inference or suggest a
+representation that changes it; no larger finite census is requested.
+
+Reopening evidence: a concrete global existence/coverage mechanism, a revised
+reduction that removes this inference, or direct owner discussion choosing
+a new approach. Existing verified results are preserved, the central slice
+is still provisional, H2/five-bin remain OPEN. Fresh-choice verdict: I would
+still explore the question with such a mechanism; I would not choose another
+sequence of bounded-exchange repairs simply to keep the schedule busy.

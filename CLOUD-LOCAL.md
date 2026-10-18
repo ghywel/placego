@@ -1519,3 +1519,14 @@ checks, synthetic controls, added-line privacy/conflict review and whitespace
 checks pass. Hand scalar extrema, size hypotheses, bin-exchange symmetry
 and literal partitions checked in MI460. No experiment, TeX/generated file,
 colleague prose or verified proof status changed. One publication batch.
+
+
+| 2026-10-18 22:23 BST | GPT | Intel | B241/MI462 strict two-token H2 escape refuted; actual partition and neutral path retained; MI463/GC1585 global-choice mentoring check-in | Owner-authorized incubation; 13-minute heartbeat PAUSED, older schedule PAUSED; H2/parent OPEN. |
+
+B241 receipt: shared main fetched, no new commit; store poll had no changed
+incoming records. Pre-publication merge is up to date. One preregistered
+invocation stopped at its first failed prediction; independent controls and
+hand fibre/partition checks pass, unvisited domains remain untested. Raw and
+source hashes recorded. Scoped ledger/synthetic, privacy/conflict and whitespace
+checks pass. Both saved schedule states read back PAUSED after the authorized
+update; no TeX/generated files or colleague text changed.
