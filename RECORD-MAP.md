@@ -852,3 +852,5 @@ PART: as on the board.
 - Protected missing1 FOUR-bin strict-minimum-pair branch:lowered staircase/two neutral exceptions with uniform complementary spectra,COMPLETE HAND CANDIDATE MI417-418;G316 dependency,review pending,general P_0/five-bin OPEN,no experiment.
 
 - General-q pair boundary:rank identity H-ell=h,skipped staircase moment repaired by alternate unit move;hand instrument MI419/q3 control. Joint mapped spectra OPEN,no new review/experiment.
+
+- Fixed n14,(3,3,4,4),all q:2722 strict-pair targets pass one neutral boundary exchange,canonical fails21,controls COMPUTED MI421. General-q long-prefix canonical-hit region HAND CANDIDATE MI422;moment skips/short prefixes OPEN.

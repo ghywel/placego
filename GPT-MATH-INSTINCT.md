@@ -87,16 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 15:32 BST:13-minute heartbeat ACTIVE.**
-B216/MI419 derives the general-q rank-gap identity. The physical pair
-moment is achieved by a canonical staircase or one alternate unit move
-when that path skips it;an actual q3 strict-pair control completes.
-This is a construction instrument,NOT a general partition proof:the
-simultaneous spectra after the two rank shifts remain the obstruction.
-Next examine those spectra without assuming moment preservation is enough
-or forcing a growing exception catalogue. B215/MI417-418 q1 strict-pair
-candidate remains unreviewed with Cloud;no new carrying request here.
-G318 PROVED,other pending claims unchanged,general P_0/five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 15:49 BST:13-minute heartbeat ACTIVE.**
+B217/MI420-421 fixed construction diagnostic completes:2722 admitted
+labelled targets at sizes(3,3,4,4),q1..13 all partition within ONE
+neutral two-for-two boundary exchange;canonical fails21. Controls pass,
+forecast of a residual failure refuted;no infinite-selector claim.
+MI422 gives an independent HAND CANDIDATE for the general-q central
+window when the canonical moment hits,its left prefix>=5 and the
+opposite prefix>=3 survives the tail shift. No pending-theorem dependency
+beyond its new scalar arguments;reviewed G316 supplies base facts.
+Next test the same inequalities against a skipped-moment alternate move;
+no automatic larger run or exception catalogue. MI417-418 remain with
+Cloud for review;all new hand claims unverified. General P_0/five-bin/
+E28/L8 OPEN;13-minute schedule continues.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30669,3 +30672,164 @@ Stop at first classified family failure,any disagreement,20 CPU/30 wall
 seconds,256MiB RSS. One invocation,no patch/retry,new domain or cap
 increase. Source tests/probes/instinct/ss3_punctured_boundary_local.py;
 raw output outside git. No external result imported,novelty unassessed.
+
+
+### MI421 — B217 result: the fixed one-exchange family passes (2026-10-18 15:45 BST)
+
+**COMPUTED,one worker;not an infinite theorem.** Source was pushed at
+e1226798 before its single invocation. All preregistered controls passed,
+including MI350's fourteen union spectra/protected rejection and two
+independent negative partition searches. The fixed domain completed:
+83 moment-pool instances,776 family-pool instances,1566 complete spectrum comparisons,
+2722 admitted labelled targets. The canonical boundary failed on21;
+every target had a literal partition in its at-most-one-exchange family.
+The expectation of at least one remaining family failure is REFUTED.
+No first-failure classification was triggered;the two unrestricted
+searches were exercised on the negative control,not all2722 successes.
+The successful family witnesses were each checked literally.
+
+Reported CPU0.132056 seconds on the GPT Intel worker;no speed comparison claimed.
+Raw output is outside git,with status COMPLETE_FIXED_DOMAIN_PASS.
+No retry,expanded domain or threshold change. The output contains counts,
+not the full21-case classification;do not invent their distribution.
+This is distinct from Cloud's actual-parent diagnostic and gives no
+parent-coverage percentage. It supports examining the common spectral
+mechanism,not declaring the one-exchange rule universal.
+
+
+### MI422 — B217: a uniform central-window region by scalar slices (2026-10-18 15:45 BST)
+
+**HAND CANDIDATE,unreviewed.** The finite pass above does not carry this
+argument. Here is a direct sufficient region of the general-q strict-pair
+problem,without a list of individual hole positions or small exceptions.
+It uses the staircase set identity and scalar proof in reviewed G316.
+MI417-418/G319-G322 are NOT dependencies.
+
+**First scalar instrument.** Suppose a+b=r,p+k=r,a,b>=3,p>=5,and
+
+ U=[0,p-1] union {p+1+2j+e_j:0<=j<k},
+ 0<=e_0<=...<=e_(k-1)<=2,
+ sum(U)=L(r)+r+h, h>=0.
+
+Then Sigma_a(U) contains
+
+ [L(a)+a+h+1, L(a)+a+ab-1]                              (4)
+
+whenever that interval is nonempty. The high increments need not be
+one single staircase perturbation;two increasing steps are allowed.
+
+Proof:all middle slices,with l=a-j low values and1<=l<=p-1,fill.
+The low interval has width l(p-l)>=p-1>=4;the high list has adjacent
+gaps<=4,so its index path is bridged. At a middle join the gap is
+
+ 1-A-2B+F,
+ A=(l-1)(p-l)>=p-2>=3,
+ B=j(k-j-1)>=0,
+ F=sum(first j+1 increments)-sum(last j increments)<=2.
+
+The bound on F follows by pairing its first j increments with the
+largest j,leaving one increment<=2. Thus joins are nonpositive.
+Let E=sum(e_j) and A_total=T_k+E=r+h. If a<=p-1,the first
+middle minimum is L(a). Otherwise put u=a-p>=0,so k=u+b.
+The first middle slice uses u+1 highs and p-1 lows. Its excess
+over L(a) is T_u+2u+2+sum(first u+1 increments). The lower
+endpoint in(4) has excess A_total-b+1. Their difference is
+
+ (b-2)u+b(b-1)/2-1+sum(remaining increments)>=2.
+
+At the other end,if a>k the last middle slice reaches the actual
+maximum L(a)+ab+A_total,which is above the upper endpoint in(4).
+If a<=k,the last middle slice has a-1 highs and one low. Its
+maximum minus that upper endpoint is at least
+
+ (a-2)k-L(a)+a-1 >= L(a)-1>0.
+
+This proves both endpoint containments and every intervening integer.
+The k0 case cannot satisfy A_total=r+h>0,so is absent here.
+The proof uses real subset-sum intervals,not a rank-bound relaxation.
+
+**Second scalar instrument.** Start with Q_s(H),s=c+d,c,d>=3,
+0<H<cd. Let its consecutive low prefix have length w>=3. Raise
+by1 every value at or above a threshold tau>=w,leaving the prefix
+unchanged. If D values are raised,then the resulting V has
+
+ Sigma_c(V) containing [L(c)+H+D,L(c)+cd].                (5)
+
+For t>0 in the usual Q formula,the original high gaps are<=2,
+so raised high gaps are<=3 and low widths>=w-1>=2 bridge them.
+The original middle join bound is1-A-B (section7). The added
+upper-tail indicator is nondecreasing and changes a join correction
+by at most1,so the new gap is<=2-A-B. For an interior high-count
+join,B>=1 and A>=1. At the first/last high-count joins,B0,the
+conditions c,d>=3 force A>=2. Hence every join still holds.
+For t0,Q is the ordinary unperturbed staircase:the original join
+is1-A-2B and the same argument gives2-A-2B<=0. These statements
+also cover a single high token,whose only join is both first and last.
+The first middle minimum rises by at most D,while the last middle
+maximum cannot decrease. The reviewed Q central-containment endpoints
+therefore prove(5). Empty intervals make no claim.
+
+**Apply both to the actual missing-value problem.** In MI419's notation,
+suppose the canonical moment equation DOES hit at H:
+
+ H-|P_r(H) intersect[0,q-1]|=h.
+
+Write H=T_k+t,p=r-k. Require
+
+ p>=5, q>=p,
+ w=s-k if t0, or w=s-k-1 if t>0,
+ w>=3, n-q>=w.                                         (6)
+
+These are explicit sufficient geometric conditions,not claimed necessary.
+The strict minimum-pair cuts still give H<=h+q<cd,and the sizes
+and prefix conditions ensure the ordinary complementary set identity
+W=Q_s(H) fits in the rank interval. This use of section8 is its
+SET IDENTITY:it does not assume H<ab or apply G316's left central
+lemma outside its hypothesis.
+
+Because q>=p,the physical map f_q leaves the entire low prefix of
+P_r(H) unchanged. Its high increments relative to p+1+2j become
+
+ e_j=1_(j>=k-t)+1_(p+1+2j+1_(j>=k-t)>=q),
+
+which are nondecreasing and lie in0..2. The first instrument therefore
+supplies every actual A target,as h<x<ab implies(4). By MI419,the
+physical reflected complement raises the upper tail of Q_s(H) at
+tau=n-q. Conditions(6) preserve its prefix,so the second instrument
+applies with D=q-ell. Since H+D=h+q and h+q<z<cd,it supplies
+the desired C target. The SAME boundary and its actual complement
+thus partition A,B,C,D. This proves a complete hand candidate for
+the region(6),not for canonical moment skips or short prefixes.
+
+**Literal nontrivial control.** Take n20,q8,sizes(5,5,5,5),targets
+(28,28,73,73). AB has h1,x13,z17;singleton adjusted slacks13/58,
+triple slacks9/54,cross pairs46,opposite pair91,so AB is strictly
+least. H8,k3,t2,p7,ell7 satisfies H-ell=1. Q has w6 and
+n-q12>=6,so(6) holds. The actual pair boundary and reflected complement:
+
+ U={0,1,2,3,4,5,6,9,12,14},
+ V={0,1,2,3,4,5,7,9,10,13}.
+
+A={0,1,4,9,14},B={2,3,5,6,12} both sum28. The V-subset
+{0,1,3,10,13} sums27=L(5)+z. Reflect it to obtain
+C={7,10,17,19,20},D={11,13,15,16,18},both sum73.
+The four bins exhaust[0,20] minus8. This hand control checks actual
+complementarity and the shifted Q endpoint;it is not another run.
+
+**Niggles and limits.** The first high increments can jump by2,and
+hence high gaps by4;the prefix width used is large enough for that,
+not the old gap2 claim. The Q join correction has its own bound;
+it is not replaced by the P formula. A_total is not the join product A.
+No H<ab assumption is smuggled into the set identity. The canonical
+moment-skip alternative is NOT covered,even though it differs by only
+two tokens. Short-prefix cases and thresholds within the opposite low
+prefix remain OPEN here. Missing1 is not in(6),so its MI417-418 proof
+and two exceptions have not been silently subsumed.
+
+Gut:the finite failure forecast was wrong,but the useful surprise is
+a common slice argument rather than another table. Reasoned:the live
+next question is whether the same inequalities survive MI419's alternate
+move at a skipped moment. Keep that question bounded;do not automatically
+expand the census. New claims are unreviewed and remain in this notebook;
+no extra immediate carrying queue.13-minute heartbeat ACTIVE;general
+P_0/five-bin/E28/L8 remain OPEN.

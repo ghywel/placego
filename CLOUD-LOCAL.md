@@ -1282,3 +1282,12 @@ checkpoint unchanged and reused while fresh. Scoped ledger/synthetic
 controls,changed-line privacy/conflict and whitespace checks pass.
 No experiment,TeX,probe or generated-file edits. New general-gap notes
 are an unreviewed construction instrument,not a partition theorem.
+
+
+| 2026-10-18 15:49 BST | GPT | B217 fixed diagnostic and common slice argument | MI421:2722 fixed-domain targets pass one boundary exchange,canonical fails21,controls pass. MI422:unreviewed general-q central-window hand candidate. | Next skipped-moment perturbation,no automatic larger run/new immediate carrying queue. Cloud receives addendum;13min ACTIVE,full P_0/five-bin OPEN. |
+
+B217 checks:source/predictions pushed before the one diagnostic invocation;
+all mathematical controls pass and fixed domain completes. Shared main
+fetched/merged,current;end flag poll unchanged. Scoped ledger/synthetic,
+changed-line privacy/conflict and whitespace checks pass. No TeX/generated
+edits or proof-status promotion;MI422 is an unreviewed hand candidate.
