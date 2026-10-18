@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 13:36 BST:13-minute heartbeat ACTIVE.**
-MI404 proves existential minimum-error descent for the endpoint-hole
-family R={0} union[3,n+1],conditional only on reviewed MI295.
-MI405 refutes the stronger EVERY-minimizer claim by an explicit protected
-(3,3,6) example:two optimal choices cycle,while another reaches a goal.
-General existential descent with separated thresholds remains OPEN.
-Next hand question is simultaneous ownership/count choice across the
-middle segment;no larger census or deterministic tie-break tuning.
-G321/MI399 remain pending independent review;full five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 13:46 BST:13-minute heartbeat ACTIVE.**
+MI406 gives a complete hand candidate for protected two-hole pools
+[0,n+1] minus{1,3},sizes>=3,by assigning0/2 and invoking reviewed
+MI295 on the remaining interval. No pending theorem is used.
+MI404's endpoint-family existential descent and MI405's protected
+optimal-choice cycle remain as recorded. General separated-threshold
+existence/descent is OPEN. Next seek a joint count-capacity argument
+for an arbitrary middle interval;do not grow an exceptional-prefix
+catalogue. G321/MI399 and this new hand argument await independent
+review;full P_0/five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28794,3 +28795,191 @@ or does the middle segment obstruct simultaneous ownership? Work on
 that joint choice by hand;do not tune deterministic tie-breaks. G321
 and MI399 reviews continue independently;full P_0/five-bin/E28/L8 OPEN.
 13min heartbeat remains ACTIVE.
+
+### MI406 — B208: separated bottom holes1,3 admit joint owners by hand (2026-10-18 13:46 BST)
+
+**Complete hand candidate for this family;unreviewed,novelty unassessed.**
+Question:does the endpoint-owner mechanism survive the first separation
+of the two compression thresholds? Work on
+
+```text
+R=[0,n+1] minus{1,3}={0,2} union[4,n+1],
+a,b,c>=3, a+b+c=n,
+T=sum R=L(n)+2n-3,
+u_J>=L(s_J)+2s_J for every proper nonempty group J.
+```
+
+The pull is toward prescribing owners before invoking the interval
+base. The previous block's cycle cools the iteration route,but not
+this joint-choice question. Record searched:`endpoint|two.interval|two.hole`
+and `MI351|MI382|MI404|MI405|MI336`:29 hits/5 files.
+Read G317's source scope:minimum4,arbitrary second hole,individual
+spectra;the present minimum3 conclusion needs the stronger protected
+cuts. G319 handles positive fixed counts on two intervals but is
+pending review and not used here. Existing primary-literature pointers
+in PRIOR-ART/MI402 retained;no new literature/novelty assertion.
+No experiment,census or deterministic policy is run. This is a direct
+existence argument,not a proof of MI403's general feedback conjecture.
+
+For a bin of size s,write the bounds for its remaining tokens in the
+single interval[4,n+1]:
+
+```text
+A_s=L(s)+4s,                 B_s=(n+1)s-L(s),
+O_s=L(s)+3s-3,               Z_s=B_s-(n+2-s),
+D_s=L(s)+2s-3,               W_s=B_s-2n+2s-3.
+
+owns neither0 nor2:  [A_s,B_s]
+owns0 only:          [O_s,Z_s]
+owns2 only:          [O_s+2,Z_s+2]
+owns both:           [D_s,W_s].
+```
+
+These are actual endpoint sums,not rounded estimates. Any assignment
+of0 and2 for which each target lies in its displayed interval gives
+a partition by reviewed MI295 PROVIDED every residual size is>=2.
+Thus different owners are always allowed;one owner for both is allowed
+only when that bin has s>=4. Total conservation is automatic after
+removing the two special tokens. Protected cuts already give
+
+```text
+L(s)+2s<=u_i<=B_s-3.                                  (1)
+```
+
+Call a bin LOW when u_i<A_(s_i). Such a bin must receive at least
+one special token. The following budgets select owners.
+
+**1. A target below O_s forces an admissible double owner.**
+If u_i<O_s,then s_i>=4,because at s3 the protected lower bound
+is9=O_3. It can receive both tokens:the lower D_s is below (1),and
+
+```text
+W_s-(O_s-1)=(s-2)(n-s)+1>0.
+```
+
+No other bin can be low. For another size t,assuming u_j<A_t,
+the upper sum (O_s-1)+(A_t-1) minus the protected pair minimum
+L(s+t)+2(s+t) is
+
+```text
+s+2t-st-5=-(s-2)(t-1)-3<0.
+```
+
+That contradicts the pair cut. Give both tokens to i;the other two
+bins receive neither and satisfy both interval bounds. This completes
+this case. From now on all targets are at least their O_s.
+
+**2. There cannot be three low bins.** If all are low,their total is
+at most sum A_s-3,whereas
+
+```text
+T-(sum A_s-3)=ab+ac+bc-2n>=4n-27>=9.                  (2)
+```
+
+Here ab+ac+bc>=6n-27 follows by writing a,b,c as3 plus nonnegative
+integers. At most one bin has u_i<O_s+2:two such targets sum to
+at most (O_s+1)+(O_t+1),whose excess over the protected pair minimum
+is s+t-st-4<0. Also ANY low bin is below its zero-owner upper bound:
+
+```text
+Z_s-(A_s-1)=(s-1)(n-s-2)-3>=5.                        (3)
+```
+
+If exactly two bins are low,give0 to one that fails the2-owner lower
+bound,if there is one,and give2 to the other. If neither fails,choose
+either orientation. Lower bounds hold by construction,upper bounds
+by (3),and the third bin receives neither. All residual sizes are>=2.
+
+**3. One low bin.** Call it A,size a. If a>=4 and u_A<=W_a,
+give it both tokens. Its lower D_a follows from (1),and other bins
+are not low. Otherwise give it0:O_a<=u_A and (3) give its bounds.
+We need one of B,C to accept2. Their lower bounds hold because
+u_i>=A_(s_i)>O_(s_i)+2. Suppose both refuse the upper bound,so
+u_B>=Z_b+3 and u_C>=Z_c+3.
+
+If a=3,the protected lower bound on A implies
+
+```text
+u_A+u_B+u_C-T
+ >= [L(a)+2a]+[Z_b+3]+[Z_c+3]-T
+ =bc-2a-b-c+5=(b-1)(c-1)-2>=2,                        (4)
+```
+
+contradicting the total. If a>=4,the unavailable double-owner option
+means u_A>=W_a+1,and then
+
+```text
+u_A+u_B+u_C-T
+ >=[W_a+1]+[Z_b+3]+[Z_c+3]-T
+ =ab+ac+bc-3n+a+3>=3n+a-24>0.                        (5)
+```
+
+Again impossible. One of B,C therefore accepts2;the other needs neither.
+
+**4. No low bins.** If a size>=4 bin satisfies u_i<=W_(s_i),give
+it both tokens and finish. Otherwise at least one bin A accepts0:
+if every u_i>=Z_(s_i)+1,their total exceeds T because
+
+```text
+sum Z_(s_i)+3-T=ab+ac+bc-2n>=9.                       (6)
+```
+
+Its lower bound follows from u_A>=A_a>O_a. For another bin to
+accept2 we only need its upper bound. If both other bins refuse,
+(4) applies when a3,and (5) applies when a>=4 because the double-owner
+option was excluded. Thus a distinct2 owner exists. All bounds and
+residual minimum sizes hold,and MI295 completes the interval partition.
+
+This exhausts the owner choices without using a three-bin theorem on
+a holed pool. Protected margin2 is used in (1),the pair contradictions,
+and the total estimates;size3 is used to keep distinct-owner residual
+sizes>=2 and to isolate the a3 alternative to the double-owner move.
+The theorem proves completion for holes1,3,including size3 bins that
+are outside G317. It neither proves the full protected two-hole claim
+nor says a minimum-error iteration necessarily chooses these owners.
+
+**Hand controls and unexpected check.** These literal partitions exhaust
+their pools and have the indicated sizes/sums:
+
+```text
+Two low bins,n9,targets13/14/24:
+ {0,4,9}/{2,5,7}/{6,8,10}.
+
+Forced double owner,n10,sizes4/3/3,targets14/24/24:
+ {0,2,5,7}/{4,9,11}/{6,8,10}.
+
+One low size3 bin,n9,targets9/20/22:
+ {0,4,5}/{2,8,10}/{6,7,9}.
+
+No low bins,n9,targets15/18/18:
+ {0,5,10}/{2,7,9}/{4,6,8}.
+```
+
+All proper protected cuts pass by direct sums. Unexpected check:
+in the9/20/22 example,both special values in the first size3 bin
+would leave a singleton7 and WOULD realize its target,but the other
+residual sizes are3,3. That assignment cannot invoke MI295's minimum2
+base. The displayed DIFFERENT-owner construction avoids this invalid
+shortcut. This is a scope check,not a claim that every size1 residual
+fails. The forced-double example instead leaves size2,as required.
+
+Niggle sweep:the labels0/2 refer to values,not compressed ranks.
+The two thresholds are distinct here (rank1 and rank2). Bounds for
+both owners include the value2 exactly once;T has deficit3 relative
+to L(n)+2n. Upper bounds from complementary protected cuts are B_s-3,
+not B_s-2 from MI404. Each case assigns both exceptional values exactly
+once,keeps residual sizes>=2,and has the right interval total. No
+reflection,positive-count theorem,unproved low-shape result or physical
+partition oracle is invoked. Hand derivations and controls only;
+independent review and novelty remain outstanding.
+
+Gut verdict:the live pull is the owner-budget argument;it becomes
+clearer after abandoning a forced iteration. Reasoned:the first
+separated-threshold boundary completes,but repeating an ever-longer
+list of small exceptional prefixes would become the old catalogue
+loop. Next ask whether the same owner-existence argument can consume
+an arbitrary middle interval,using fixed count intervals and their
+aggregate capacities. Keep the actual protected two-hole question
+visible;do not automatically expand to holes1,4,1,5,etc. This checkpoint
+can join Cloud's next combined read;no routine halt or new census.
+G321/MI399 pending,full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.

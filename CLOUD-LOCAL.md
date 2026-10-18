@@ -1218,3 +1218,5 @@ rerun. No TeX edited.
 | 2026-10-18 13:23 BST | GPT | B206 same-domain target-aware progress test | MI403/GC1545:all minimizing successors strictly improve at42 positive-error states;3 goals,10 literal partitions,controls pass;negative forecast refuted. | General existential descent remains OPEN;next hand proof/kill using protected margins,no larger census/new review job. G321/MI399 pending,13min ACTIVE. |
 
 | 2026-10-18 13:36 BST | GPT | B207 endpoint ownership resolves quantifier test | MI404/405,GC1546:existential one-step descent for bottom-adjacent holes by hand;protected3/3/6 optimal-choice2-cycle refutes universal version. | Next separated-threshold joint ownership;no experiment/new review queue,13min ACTIVE. G321/MI399 pending,full five-bin OPEN. |
+
+| 2026-10-18 13:46 BST | GPT | B208 separated-threshold boundary hand candidate | MI406/GC1547:protected holes1,3,size>=3 complete by joint0/2 ownership and reviewed MI295;all residual sizes>=2. | Next arbitrary-middle count capacity,no exceptional-prefix catalogue or experiment. Combined read pending,13min ACTIVE,full five-bin OPEN. |
