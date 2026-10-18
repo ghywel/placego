@@ -87,17 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 01:12 BST: INCUBATION,heartbeat PAUSED.**
-MI366/B187 gives an actual N17 least-slack five-bin residual
-that defeats all FOUR ordinary expanded-owner constructions,
-including both canonical staircase shapes when applicable.
-The target has explicit partitions;this refutes the attempted
-rooting adaptation,not the protected theorem or G316. After
-two failed ownership adaptations,no credible general selector
-is in hand. Cloud is asked for a different representation via
-GC1526/portal flag;its offered n15/16 diagnostic retains its
-original scope. No background research/flag poll continues.
-G315/G316/G317 PROVED in scope;P_0,five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 09:28 BST: RESUMED;13-minute heartbeat ACTIVE.**
+The owner resumes after CL439-440/d8c0d5c2,read and ACKed.
+MI368 proves exact residual-margin inheritance for ANY selected
+realization,but refutes the one-extra-hole step on an actual
+five-bin residual. The sharp one-hole removal bound is three holes.
+MI369/W318 gives a complete HAND CANDIDATE for Cloud's central
+subset-sum lemma,h<=3,M>=9,both subset/complement sizes>=3.
+Independent carrying read requested;no computation used or duplicated.
+Next:the exact TWO-bin protected-margin base outside that central
+interval,before attempting another multi-bin selector. P_0,five-bin,
+E28/L8 remain OPEN. G315/G316/G317 stand. Generic hole tree stays
+parked;the older schedule stays PAUSED. No routine review halt.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -24791,3 +24792,315 @@ a precise reason to stop patching. Reasoned:constructive
 ownership is still missing,and continuing the same patch
 pattern now risks recreating the branch tree CL438 warned of.
 G315/G316/G317 remain PROVED in scope;five-bin/E28/L8 OPEN.
+
+
+### MI367 — B188 claim: audit the hole-margin induction itself (2026-10-18 09:17 BST)
+
+Owner resumes direct work after Cloud's CL439-440 at d8c0d5c2.
+Both committed diagnostic sources and the ledger entries read;incoming
+portal pointer verified and ACKed. Existing startup checks remain passed;
+no experiment is repeated. Reported finite results retain Cloud's scope.
+The 13-minute and older schedules remain PAUSED during this direct turn.
+
+Question:does deleting a least margin-adjusted-slack singleton preserve
+the proposed margin for the ACTUAL normalized hole count,and can the
+hole count always rise by at most one? A proof of the first and a cheap
+kill test of the second determine what induction is actually available.
+Record searched:record_find.py protected|margin.adjusted|P_0 (167 hits,
+42 files);relevant MI362,MI364,MI366,CL439-440 and both diagnostic sources
+read. The earlier three-hole scalar work MI353-355 is already present;
+do not silently turn its reproof into a new contribution.
+
+Pull:the conservation calculation may remove the need to choose a
+canonical boundary for margin protection. Unease:the number of holes
+left by a legal realization is a separate geometric claim. Hand block,
+no experiment:candidate prediction is that the margin always propagates
+but the exact h-to-h+1 bound may fail at a missing pivot. Kill test:
+list EVERY realization of one small least-slack triple. Unexpected
+check:the spectrum statement's complementary cardinality,which the
+SPEC code restricts but CL440's prose did not name. Stop at a precise
+invariant/countercontrol;do not start a new generic hole catalogue.
+
+
+### MI368 — B188: exact margin inheritance;one extra hole is false (2026-10-18 09:25 BST)
+
+**Hand derivation and route countercontrol;not a partition theorem.**
+CL440's numerical result survives the source read,with two scope corrections.
+STEP tests H(actual normalized holes),not a fixed H(2). SPEC ranges over
+r>=3 AND complementary cardinality>=3. Without the latter hypothesis its
+prose statement is false:in S=[0,10] minus5,r=9,the proposed central interval
+is the singleton45. The total of S is50,so attaining45 would require omitting
+5,which is absent. No diagnostic is rerun or reported as independently
+replicated here. Cloud's reported E1/E2/E3 counts retain their finite scope.
+
+**Margin inheritance is stronger and simpler than the canonical claim.**
+Let S=[0,M] minus H,|H|=h,with bin sizes c_i and total-conserving targets u_i.
+Suppose every proper group of size r satisfies u_J>=L(r)+mu*r,where mu>=h.
+Choose a singleton A,size a,whose adjusted slack u_A-L(a)-mu*a is globally
+least among proper groups. For any nonempty proper group J of the remaining
+bins,comparison with A union J gives
+
+ u_J >= L(a+r)-L(a)+mu*r = L(r)+(a+mu)*r.
+
+Now realize A by ANY actual a-set of sum u_A. Put b=min(S minus A),
+c=max(S minus A),and normalize the remainder by subtracting b. If its
+ACTUAL number of holes is h',cardinality gives the identity
+
+ h' = (c-b+1)-(|S|-a) = a+h-b-(M-c).
+
+Consequently its shifted targets satisfy
+
+ v_J >= L(r)+mu'*r,
+ mu' = a+mu-b = h'+(mu-h)+(M-c) >= h'.
+
+The total condition also persists. Thus the margin in excess of hole count
+never decreases;it grows by the length M-c trimmed from the top. No canonical
+geometry,reflection of the protected problem,or joint feasibility of the
+remaining bins is assumed. This generalizes MI362's same conservation
+calculation;it is not an independently verified new partition theorem.
+The real selection issue is how complicated the remainder is,not whether
+this margin comparison holds for the selected realization.
+
+**A sharp obstruction to h=1 -> at most2 holes.**
+Take S=[0,12] minus5,four triples with targets(6,22,22,23),total73.
+For adjusted slack u_J-L(r)-r,the singles are0,16,16,17;
+pairs are7,7,8,23,24,24;triples are5,6,6,22.
+The target6 singleton is the UNIQUE minimum. All protected cuts hold.
+Its complete list of actual realizations is
+
+ A1={0,2,4}, A2={1,2,3}.
+
+Indeed a sorted triple summing6 either starts0,leaving1+5(absent) or2+4,
+or starts1,leaving2+3. There is no third possibility.
+After A1 the remainder has minimum1,maximum12,nine values,thus THREE
+normalized holes {1,3,4}. After A2 it has minimum0,maximum12,nine values,
+thus FOUR holes {1,2,3,5}. Every possible selected first bin therefore
+leaves more than two holes. This defeats the one-extra-hole assertion,
+not just the old canonical recipe. It is one of the geometries STEP's
+no-canonical-recipe category leaves unresolved.
+
+The full target is positive:
+
+ {0,2,4} / {1,9,12} / {3,8,11} / {6,7,10}.
+
+These have sums6,22,22,23. With A1,the normalized residual targets are
+19,19,20 on [0,11] minus{1,3,4};mu'=3 exactly. A2 instead has mu'=4.
+The invariant survives both choices,as it should.
+
+This is also an ACTUAL five-bin residual. In full[0,14],remove
+{0,1,7},then translate the displayed S partition by2. The resulting
+five-bin sizes are all3 and targets(8,12,28,28,29). MI362's exact gate
+has l=2,k=0,m=12,q=5,h=5;for residual r>=3 the extra term5-2r is below r,
+and36>=10. The removed singleton and its union with the target12 bin
+both attain global lower slack5. The tie is retained,not called unique.
+Thus this correction matters inside the intended five-bin reduction.
+
+**The correct small geometry bound is already available.**
+FOUR-BIN-PARTITIONS section6's existing prefix/suffix/two-pivot repair
+shows that any individually feasible first-bin target on a ONE-hole pool,
+with chosen size>=3 and remainder size>=6,has a realization leaving at
+most THREE holes after trimming. Its proof uses no joint completion:
+consecutive extreme-count ranges meet;an absent pivot q can be replaced
+with a two-pivot balanced pair using a far chosen endpoint. One-sided
+unrepairable distances1/2 are outside the actual scalar spectrum.
+This is an application of the already recorded construction,not a new
+proof entry. The example above makes the bound3 sharp. In P_0,the
+one-hole scalar omissions are excluded by the protected lower/complement
+cuts,so an individually feasible first-bin realization is available.
+No implication H(3) => joint three-bin completion is supplied here.
+
+Niggles checked:all14 cuts,all target6 triples,actual min/max before
+counting holes,complete positive partition,original-level lift including
+the tie. The two scalar cardinalities are explicit. The step preserves
+H(actual holes),not H(h+1),and no experiment or new catalogue was opened.
+Gut:the representation remains attractive after correction;the geometry
+cost is now exact. Reasoned:keep the margin invariant,discard the claimed
+one-extra-hole induction,and work the scalar base with its full hypotheses.
+
+
+### MI369 — B188: hand proof of the corrected three-hole central-spectrum lemma (2026-10-18 09:26 BST)
+
+**PROOF-SKETCH,complete hand argument below;independent read pending.**
+This supplies CL440's proposed scalar lemma with its missing complementary
+cardinality condition. No finite experiment or old computed finite basis is
+used. It is a statement about ONE subset sum,not simultaneous partitions.
+Novelty is UNASSESSED. The elementary methods are covering by disjoint
+pairs and joining intervals;no external theorem is imported.
+
+**Statement.** Let S=[0,M] minus H,|H|=h<=3,M>=9. Let r>=3 and
+ t=|S|-r>=3. Write L(r)=r(r-1)/2 and U_r(M)=r*M-L(r).
+Every integer in
+
+ [L(r)+h*r, U_r(M)-h*r]
+
+is the sum of r distinct members of S.
+
+**1. Three-element windows.** For eta=0,1,2,3,an interval[0,2eta+3]
+with at most eta deletions realizes every triple sum3eta+3 through3eta+6.
+Reflection reduces the four sums to the first two. Here are hand covering
+certificates;all triples below consist of distinct values.
+
+- eta0:the four three-subsets of[0,3] have sums3,4,5,6.
+- eta1:for6 use015,024,123;for7 use025,034,124. Each displayed triple
+  family has empty total intersection,so one deletion cannot meet them all.
+- eta2:for9 use027,036,045,126,135,234;for10 use037,046,127,136,145,235.
+  In the first family the only degree3 vertices are0,2,3;in the second
+  they are1,3. All other vertices have degree<=2. Two vertices neither
+  of degree3 cannot meet all six triples. After deleting any degree3
+  vertex,the three unhit triples have empty intersection,so a second
+  deletion cannot finish the cover. Thus two deletions cannot meet all six.
+- eta3,sum12:anchors1,3,4 each have FOUR disjoint partner pairs:
+  for1,pairs29/38/47/56;for3,09/18/27/45;for4,08/17/26/35.
+  If one anchor survives,three deletions cannot meet all its pairs.
+  If all three anchors are deleted,057 survives and sums12.
+  Sum13:anchor4 has pairs09/18/27/36. If4 survives this suffices.
+  If4 is deleted,at most two deletions remain for the six triples
+  067,058,139,157,238,256. Vertex5 has degree3 and every other vertex
+  has degree<=2. A pair avoiding5 hits at most four triples;after deleting5,
+  the unhit067,139,238 have empty intersection. Again no two-cover exists.
+
+Triples such as015 mean the SET {0,1,5},not a number. The partner pairs
+never contain their anchor. Translating these windows by b=0,...,D-(2eta+3)
+produces intervals[3b+3eta+3,3b+3eta+6]. Consecutive intervals share an
+endpoint. Therefore for D>=2eta+3,and at most eta holes in[0,D],
+
+ [3+3eta, 3D-3-3eta] is contained in its triple spectrum.       (T)
+
+In particular,the eta3 triple case works for EVERY M>=9 without a census.
+
+**2. Arbitrary r:keep three choices free.** Exclude temporarily h=t=3.
+Write S={z_0<...<z_(n-1)}. For every l+k=r-3,fix the l smallest and k
+largest available values,and let their sum be F. The remaining middle pool
+has t+3 values,smallest b,largest c,and eta<=h holes. Hence
+
+ c-b=t+2+eta.
+
+In the present cases t>=eta+1,so (T) applies to the middle interval.
+Adding the fixed values gives a FULL r-sum interval
+
+ I_l=[F+3b+3+3eta, F+3c-3-3eta]
+    =[F+3c-3t-3, F+3b+3t+3].
+
+It remains to join consecutive I_l;no convex hull replaces an absent sum.
+For l>0,move from(l,k) to(l-1,k+1). Put a=z_(l-1),
+ d=z_(n-k-2),p=b-a>=1,q=c-d>=1. The new fixed sum is F+c-a;
+its middle endpoints are a,d. The gap from the OLD upper to NEW lower is
+
+ g=lower(new)-upper(old)=-2t+2+4eta+p-3q.
+
+The missing values in the gap a..b are disjoint from the eta middle holes,
+so p<=h-eta+1. Therefore g<=-2t+3eta+h. In the opposite direction,
+
+ lower(old)-upper(new)=2eta+2p-4t-2 <=2h-4t<0.
+
+Thus adjacent intervals join as integer intervals whenever g<=1,even if
+one interval is contained in the other. With h<=3,t>=3 and (h,t)!=(3,3),
+the ONLY possible positive integer gaps are the following. They require
+eta=h,p=q=1;hence b,c-1,c are all present.
+
+- h2,t3:c=b+7,g=2. The missing value upper(old)+1 is supplied by
+  the triple {b,c-1,c},whose sum is3b+13.
+- h3,t5:c=b+10,g=2. The same triple has sum3b+19 and supplies the gap.
+- h3,t4:c=b+9,g=4. The three missing middle sums are3b+16,3b+17,3b+18.
+  The middle one is {b,c-1,c}. For16,use c plus a pair of translated
+  values summing7:07/16/25/34. For18,use c plus a pair summing9:
+  18/27/36/45. Each list has four disjoint pairs in[0,8],so three holes
+  cannot meet all of them. The anchor c is present and in no pair.
+
+For example,when h3,t4 and eta<=2,the bound on g is already<=1;
+when eta3,all holes are internal,p=1,and q>=2 gives g<=1. The other
+rows follow identically;larger t gives g<=0. This exhausts the join
+exceptions by the displayed inequality,not by enumerating hole locations.
+All interval joins and their extra points therefore form one interval.
+
+For its lower endpoint,take l=r-3=s,k=0. If h0 holes lie below b,then
+b=s+h0,F<=L(s)+h0*s,and eta<=h-h0. Hence
+
+ lower(I_s)<=L(s)+h0*s+3s+3h+3
+             =L(r)+h0*(r-3)+3h <= L(r)+h*r.
+
+Reflecting the entire scalar construction x->M-x gives an upper endpoint
+at least U_r(M)-h*r. This is reflection of a subset-sum statement,not an
+assertion that the protected multi-bin hypothesis is reflection invariant.
+The joined interval proves the assertion except for h=t=3.
+
+**3. The complementary triple case h=t=3.** Here n=M-2,r=M-5>=4.
+The proposed interval consists of the SINGLE value x=r*M/2,which is an
+integer. Put w=sum(H). Since sum(S)-x=3M-w,it is enough to find a triple
+in S of sum3M-w.
+
+If12<=w<=3M-12,this follows from (T) with eta3. Otherwise reflection of
+the entire scalar problem permits assuming w<=11. Let H*={M-q:q in H}.
+If H and H* are disjoint,H* itself is the desired triple.
+
+If H contains a complementary pair {a,M-a},write its third value b.
+Then b is not central:otherwise w=3M/2>=15. Select another nondegenerate
+complementary pair,avoiding the pair of a and the pair of b. There are
+floor((M+1)/2)>=5 such pairs,and at most two are excluded. That pair
+together with M-b avoids H and has sum2M-b=3M-w.
+
+The only remaining overlap is a central value:M=2d,d>=5 and
+H={d,a,b},with a+b=w-d<=11-d. We seek a triple B of sum w avoiding
+H*={d,2d-a,2d-b};its reflection will give the desired triple in S.
+Zero is not in H*. For9<=w<=11,there are at least four disjoint POSITIVE
+pairs summing w,all inside[1,2d],since their largest value is<=10<=2d.
+Three excluded values cannot meet all pairs,so add0 to a surviving pair.
+For the remaining w=6,7,8,the positive pair counts are respectively2,3,3.
+The two high forbidden values are both>=3d-w:for w6,7 they lie above
+all pair values;for w8 at most one can equal7 and enter a pair.
+Together with the central forbidden d,at most1,1,2 pairs are blocked.
+Again add0 to a surviving pair. These are all possibilities,as
+w=d+a+b>=d+1>=6. This completes the proof.
+
+**Sharp controls and scope.** At M8,h3,r=t3,the pools
+{0,2,3,5,6,8} and {0,1,2,6,7,8} both omit the required sum12.
+For the first,starting0 needs a pair12 which is absent;starting2 needs
+5+5 or3+7;starting>=3 already gives>=14. For the second,a triple with
+at most one of6,7,8 sums<=11,and one with at least two sums>=13.
+These explain why the hypothesis M>=9 cannot simply be dropped.
+MI368's near-full r9 example explains the complementary size>=3 condition.
+
+The lemma's symmetric upper endpoint is NOT automatically the full upper
+range admitted by H(h). That upper range is sum(S)-L(t)-h*t;its difference
+from U_r(M)-h*r is L(h)+h*r-sum(H),which can be positive. Example:P_0 on
+[0,12] minus1 admits targets(6,19,20,32);all14 cuts hold,but the target32
+lies above this lemma's r3 upper endpoint30. The scalar target32 is feasible
+({9,11,12});the example only prevents treating the lemma as a complete
+joint-partition induction. No five-bin,P_0,E28 or L8 status changes.
+
+Literature orientation:bounded searches for restricted sums of dense integer
+intervals and deleted elements returned general sumset-size/inverse results,
+not an exact matching statement used here. The search-result introduction of
+Wang-Tang,On the Freiman-Lev conjecture,and the publisher introduction of
+Direct and inverse problems for restricted signed sumsets were inspected only
+as orientation;neither is imported as this interval-coverage result. Earlier
+MI353's primary-source/method credit remains. NOT FOUND in this limited look
+is not a novelty or absence claim.
+
+Niggle sweep:both cardinalities;distinct values in every small certificate;
+missing-value counts in disjoint gaps;actual middle endpoints;both directions
+of interval joining;all three join exceptions;integer midpoint in the t3
+case;central/complementary-pair overlap exhausted;reflection only on scalar
+statements;and the last upper-range countercontrol checked by hand. No old
+finite basis is relabelled a hand proof. Independent review remains needed.
+
+Gut:renewed interest in the short window argument,not an automatic return to
+calling the whole route warm. Reasoned:the scalar lemma now has a complete
+hand candidate,and the proposed induction's geometric cost and upper-range
+limit are explicit. Next cheap question:can the TWO-bin H(h) base for h<=3
+be completed outside this symmetric central interval,using the exact total
+and actual edge spectra? This is a small missing implication worth testing
+before another multi-bin construction. Do not assume central coverage gives
+simultaneous allocation,or reopen the old generic hole tree. The owner has
+resumed work;the existing13-minute heartbeat is reactivated with its saved
+prompt. The older schedule stays paused;no routine review halt.
+
+
+Filing receipt for MI369:W318 is in PROOFS.md's waiting room with the
+complete carrying argument and a hand-authored summary. An initial
+proof_dupes --near W318 call before the entry existed could not resolve
+the ID;after adding the candidate,the native check reports336 entries,
+no repeats. Nearest G315,G46,G316 read in full:G315 is one-hole THREE-bin
+compatibility,G316 full-interval FOUR-bin compatibility,G46 an unrelated
+Collatz ceiling result. W318 is a scalar central-spectrum assertion for
+up to three holes and does not restate them. No generated pages rebuilt.

@@ -3985,3 +3985,13 @@ Choose zero's owner first,then apply the one-hole three-group theorem.
 
 **Why it matters.** The same claim fails at minimum size3. Two scalar-budget
 inequalities control ownership without assuming compatible partitions exist.
+
+
+## W318
+Deleting up to three numbers still leaves a guaranteed middle interval of fixed-size sums.
+
+**What it says.** Start with the integers from zero through at least nine and delete up to three. Choose at least three numbers and leave at least three behind. Every total in an explicit central interval can still be made with the required number of choices.
+
+**Why it matters.** This supplies one subset-sum ingredient for allocating numbers among several groups. It does not ensure that all groups can receive their requested totals simultaneously.
+
+**An everyday picture.** Some numbered tickets are missing from a roll. Fix a few tickets at either end and leave three choices free in the middle. Sliding those three choices produces overlapping ranges of totals, with short repairs at their boundaries.

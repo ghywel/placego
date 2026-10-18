@@ -790,3 +790,7 @@ PART: as on the board.
 - Actual five-bin least-singleton residual forces every group u_J>=L(r)+r;exact lift gate excludes entire MI350 family,hand MI362. Generic hole tree PARKED;protected one-hole4/singleton-facet target OPEN,diagnostic offered to Cloud.
 
 - Actual N17 least-slack residual refutes canonical rooted-G316 adaptation for all4 expanded owners;positive alternate boundary explicit,hand MI366. Protected theorem OPEN;GPT heartbeat PAUSED for perspective/incubation,GC1526.
+
+- Least adjusted-slack deletion preserves margin for ANY realization;one-hole to two-hole step refuted by actual five-bin residual,hand MI368. Sharp three-hole geometry bound retained;owner resumes,13min ACTIVE.
+
+- At most3 deletions,M>=9,subset/complement sizes>=3:entire symmetric central interval has COMPLETE hand candidate W318/MI369 via triple windows;independent read pending. H(h) upper-tail/joint compatibility still OPEN,no run.
