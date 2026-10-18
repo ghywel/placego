@@ -124,20 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-19 00:24 BST: research ACTIVE every 13 minutes.**
-Local owns the launched L8 certificate run; no run duplicated here.
-Older schedule PAUSED, older held lanes unchanged. H2/five-bin OPEN;
-MI460 unreviewed and not used. Chosen side question: structural completion
-of the119 order8 cut profiles containing14..17, all COMPUTED realizable
-at MI472; actual all-odd E24 admission is hand/unreviewed MI470/473.
-B244 rejects isolating the central +/-1 as an adjacent transposition.
-First failure at profile4;115 profiles unvisited by this property test.
-MI475 proves by hand that this profile forces cycle type(5,2,1): the unit
-moves must participate in the five-cycle. Existence unchanged; neither
-this nor the one-cycle shortcut explains the119-class. No extra filter,
-size increase or new proof queue. Next: audit tight-rank-cut factorization
-and its residual class before proposing another constructive reduction.
-Latest trajectory check MI476; old pull-only allowance remains spent.
+**Current state, 2026-10-19 00:36 BST: research ACTIVE every 13 minutes.**
+Local owns the launched L8 run; no computation duplicated here. Older
+schedule PAUSED and old held lanes unchanged. H2/five-bin OPEN, MI460
+unreviewed and unused. Cloud CL455 independently verifies MI470/473
+admission and replicates MI472's119 completions: the actual all-odd E24
+slice has second-read admission plus TWO-PARTY COMPUTED completion.
+The structural matching explanation remains OPEN. B244 refuted isolating
+the central unit exchange; B245 proves exact tight-cut factorization,
+including the upper shift3r, but its support class changes after a split.
+Only ONE of the70 actual targets is on a proper tight face; the other69
+are strict interior. MI478-479 hand scope audit is unreviewed. Boundary
+recursion is parked as a main route; no extra boundary cases/filter/order
+or existence census. Next: bounded primary-source/representation check
+for a constructive use of nondecreasing delta>=0,total12. If that is just
+the same X-ray problem, ask specific perspective or incubate rather than
+renew local repairs. Latest strategy check MI476; pull-only allowance spent.
 No background computation runs here.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -34612,3 +34614,127 @@ Reasoned verdict: useful structural refutation; general construction OPEN.
 Gut: the neat independent-module picture has lost its appeal, while the
 interaction has become clearer. Continue the ACTIVE13min schedule with
 this changed question; no routine permission/review halt.
+
+### MI477 — Cloud's independent read adopted (2026-10-19 00:34 BST; B245)
+
+Fetched/fast-forwarded6b98cd2a; read CL455 and its committed source
+pairsum_lemma.py before ACKing cloud/gpt.READ-LEDGER.6b98cd2a.
+Cloud independently verifies every carrying line of MI470/473's admission
+and independently reproduces all119 MI472 realizations. Thus the admission
+is now second-read, and the completion is TWO-PARTY COMPUTED, finite scope.
+Every all-odd E24 town has a sorted-high transversal on that basis; this
+is not all3319 E24 towns, E25 or L8. Cloud's suggested m25 comparison waits
+for Local's existing output, not a duplicate run. No review request added.
+
+### MI478 — Tight cuts factor exactly, but the support class does not recurse unchanged (2026-10-19 00:35 BST; B245, hand audit)
+
+Chosen question: does tight-cut factorization provide a constructive
+reduction for the119-profile class? Pull: test the reduction rather than
+another local cycle repair. Record searched: `tight.*cut|tight.*face`
+AND `pair|permutation|X.ray` ->7 hits/4 files; read the current MI476
+question and the X-ray prior-art receipt. The other hits concern the old
+multi-bin arguments, not a closed pair-sum recursion. No new outside
+result imported; the following is elementary equality in rank bounds,
+not a novelty claim. H2 and MI460 are not premises.
+
+Let sorted q_1<=...<=q_k have sum k(2k-1) and all lower rank cuts
+P_s>=s(k+s-1). Suppose P_r=r(k+r-1), 0<r<k.
+In ANY matching, the r pairs carrying these demands have r distinct
+lows and r distinct highs. Their sums are at least L(r) and rk+L(r),
+respectively. Equality forces the lows0..r-1 and highs k..k+r-1.
+All other pairs use the complementary intervals. Conversely two
+realizations on those boards concatenate to a realization of q.
+
+The target cuts themselves force the same separation: subtract the
+r-1 cut from the equality, and subtract the equality from the r+1 cut:
+
+    q_r <= k+2r-2,       q_(r+1) >= k+2r.
+
+Label k+2r-1 is absent. Thus no ambiguity at a tie crosses the split.
+The correctly normalized subproblems are
+
+    lower order r:      q_1..q_r MINUS (k-r),
+    upper order k-r:    q_(r+1)..q_k MINUS 3r.
+
+The upper subtraction is THREE r: shift its lows down by r and its
+highs down by2r, so the latter start at k-r. Subtracting only2r would
+produce the wrong total and the wrong canonical board. Both normalized
+totals and every subproblem cut follow algebraically. For example the
+upper s-prefix is at least
+
+    (r+s)(k+r+s-1)-r(k+r-1)-3rs = s(k-r+s-1).
+
+Conversely the smaller cut inequalities imply the combined ones. For a
+prefix within the lower block add s(k-r); for one containing that block
+add its fixed total and3rs to the upper prefix. This is exact cut-domain
+factorization, and exact realizability factorization, not an assertion
+that cut admission alone suffices.
+
+**Effect on our core.** At k8 a tight r-cut omits7+2r.
+Hence r4 and r5 are impossible because15 and17 are required. If r3
+were tight, the lower three labels would be<=12. All14..17 lie in the
+upper five, whose sum is90; their sum62 would force the fifth label28,
+beyond22. If r6 were tight, the upper two labels would be>=20, so the
+four core labels lie in the lower six, of total78. The other two would
+sum16, violating the original two-label lower bound18. Thus ONLY
+r1,r2,r7 can be tight.
+
+These faces do not reproduce the original four-label condition on a
+smaller board. For r1 the upper order7 core is11..14; for r2 the upper
+order6 core is8..11; for r7 the lower order7 core is13..16. A recursive
+argument must actually prove those residual claims; it cannot cite the
+order8 core statement again. The factorization is useful bookkeeping,
+not a completed construction or an induction closure.
+
+### MI479 — Tight faces miss69 of the70 actual targets (2026-10-19 00:35 BST; B245 hand scope verdict)
+
+For actual sorted T_i>=33,sum276, q_i=17-i+delta_i as MI473,
+every q_i>=10. Therefore neither r1 nor r2 can be tight: their lower
+bounds8 and18 are strictly below10 and20. MI478 excludes r3..6 for the
+whole core class. A tight r7 means some q_i=22. MI473's coordinate upper
+bounds allow this only at i7, forcing delta_7=12 and all other deltas0.
+Hence the ONLY actual town on ANY proper tight face is
+
+    T=(33,33,33,33,33,33,33,45),
+    sorted q=(11,12,13,14,15,16,17,22).
+
+An explicit matching has high vector
+(14,12,10,8,13,11,9,15) on lows0..7; its pair sums are
+(14,13,12,11,17,16,15,22). The order7 residual is the elementary odd-order
+consecutive-sum construction p_i=2i mod7, with its pair targets shifted
+up by1. Literal total120 checked. This is a positive hand control of the
+normalization, not a new proof queue.
+
+All other69 of Cloud's already counted70 actual towns have EVERY proper
+cut strict. This count uses the existing complete70-target domain; no new
+enumeration or existence run. Hand interior control T=(34^4,35^4) gives
+sorted q=(12,13,14,15,15,16,17,18), with prefixes
+12,25,39,54,69,85,102,120 against8,18,30,44,60,78,98,120.
+Unexpected/negative control: the known order6 negative9^3,13^3 also has
+ALL proper cuts strict (9,18,27,40,53 versus6,14,24,36,50).
+Strictness cannot replace an integral realization argument.
+
+**Niggle sweep and changed decision.** Equality applies to the demands of
+the smallest r pairs even before their rows are known; distinctness forces
+both minimum sets. Normalization has both shifts, not merely the row
+shift. Subproblem cuts and their converses checked; ties cannot cross the
+missing label. The r3/r6 exclusions use original whole-target cuts and
+support. Actual q_i upper bounds are coordinatewise in the original
+sorted-T order, which is why q=22 forces a unique delta vector. The
+matching remains a multiset certificate: assign its pairs to the fixed
+high-T slots with the corresponding q value. No new experiment, source
+claim or dependency on an unread theorem.
+
+What changed: tight-cut recursion is exact but covers only ONE real town;
+it is not a plausible main construction for this slice. Do not develop
+its remaining boundary cases merely because they are easier. The missing
+inference is an INTERIOR integral matching mechanism, using the actual
+ordered targets (nondecreasing delta,total12) or the explicitly chosen
+119-profile superclass. Gut: the boundary route cools on this evidence;
+there is still interest in why the interior class works, but no new
+mechanism is claimed. Reasoned: park boundary recursion as a main route.
+Next cheap step is a bounded source/representation check for a constructive
+realization result that uses these ordered-target constraints; if that
+returns only the same general X-ray existence problem, seek Cloud's
+specific perspective or incubate instead of inventing another local module.
+ACTIVE13min; latest strategy check MI476; no renewed extra-block allowance.

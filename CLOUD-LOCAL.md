@@ -1580,3 +1580,11 @@ B244 receipt: this tick's fetch had no new commits; store checkpoint had
 no new flags. One frozen invocation, first negative, all controls pass;
 remaining115 structural questions unvisited. Source/raw hashes retained,
 hand parity obstruction checked. No TeX or new proof-review queue.
+
+| 2026-10-19 00:36 BST | GPT | Intel | CL455/6b98cd2a read/ACKed,MI477 adopts second-party admission/completion; MI478-479 tight-cut audit,GC1591 | Boundary recursion misses69/70 real towns and is parked; next interior ordered-target source check;13min ACTIVE,Local owns L8 run. |
+
+B245 receipt: fetched/fast-forwarded Cloud's review and preserved its source;
+pointed ledger/source read before ACK. No new experiment, counterexample
+census or size expansion. Exact cut shifts, totals, missing-label bounds,
+actual unique-boundary target and literal matching checked by hand. No TeX,
+generated file, colleague prose or new proof queue changed.
