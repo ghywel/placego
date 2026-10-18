@@ -124,23 +124,24 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 16:55 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 17:09 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-MI426-427 give a combined HAND CANDIDATE for the strict-pair selector
-whenever its base left prefix has length>=5,whether the moment hits
-or skips. The new invariant is h+q=T_(k+1) at every skip;its actual
-opposite pool has one of two uniformly tractable staircase forms.
-Consequently the strict-pair branch with selected pair total r>=17
-is covered by this candidate. Canonical hits at smaller r may also
-be covered. General P_0/five-bin/E28/L8 remain OPEN.
-The residual has r<=16 but unbounded opposite size s. Next classify
-its exact left profiles and required opposite spectral guarantees
-before any finite diagnostic;one bounded side is not a finite problem.
-Dependencies:MI422/425/426/427 are unreviewed;G316 reviewed.
+MI428 isolates the unchanged strict-pair selector's left obstruction:
+the opposite arguments in MI422/426/427 do not require a long LEFT
+prefix. MI429's complete finite diagnostic tests4058 short-prefix
+profiles with independent full spectra and finds exactly4 misses,
+all a=b3: (h,q,target)=(3,7,12),(5,1,13),(5,10,13),(7,1,14).
+The two q1 profiles already have unreviewed MI417-418 repairs.
+The q7/q10 profiles are genuine protected inputs,not merely loose
+projection artifacts. Next seek a common repair of these TWO boundary
+profiles with a uniform proof for their unbounded actual complements.
+Do not expand the census or treat a left repair as a joint partition.
+All infinite coverage and repairs remain HAND CANDIDATES;the finite
+spectra are COMPUTED with controls. General P_0/five-bin/E28/L8 OPEN.
+Earliest unreviewed dependencies:MI422/425/426/427;G316 reviewed.
 No G319-dependent candidate is used here. Last trajectory check:
 MI423/GC1557,2026-10-18 16:02 BST;extra pull block unused.
-Cloud's diagnostic remains separate;no new run or duplicate review
-request. Existing small q1 failures remain outside the claimed regime.
+No new review queue;Cloud receives this finite reduction checkpoint.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31635,3 +31636,80 @@ selector or the full parent follows. Earliest unreviewed dependency is
 MI422's opposite instrument plus MI425/426 and MI427;this reduction
 adds no new repair theorem or review request. Last trajectory check
 MI423/GC1557 at16:02 BST;extra pull allowance unused.
+
+
+### MI429 — B223 outcome: exactly four left misses,all two-triple profiles (2026-10-18 17:09 BST)
+
+**COMPUTED finite spectra;infinite scope reduction remains HAND CANDIDATE.**
+The preregistration and unchanged source were pushed at579048de BEFORE
+one invocation. The whole prescribed domain completed in0.805 reported
+wall seconds on the GPT Intel worker,not a comparative benchmark:
+
+ - 61589 ordered parameter profiles screened;4058 retained at p<=4;
+ - 1226 distinct complete (U,a) spectra compared by bitset DP and
+   literal combinations,740952 literal combinations in total;
+ - all rank-formula/incremental-walk,moment,missing-value,size and
+   complete complement checks passed;702 beyond-tail comparisons passed;
+ - exactly4 failed profiles,each missing exactlyONE requested sum.
+
+The complete list,with a=b=3,r=6 throughout:
+
+| h | q | mode | actual U | requested band | sole missing sum |
+|---|---|---|---|---|---|
+| 3 | 7 | alternate prefix move | {0,1,3,4,6,10} | 10..14 | 12 |
+| 5 | 1 | canonical hit | {0,2,3,5,7,9} | 12..14 | 13 |
+| 5 | 10 | alternate prefix move | {0,2,3,5,7,9} | 12..14 | 13 |
+| 7 | 1 | canonical hit | {0,2,3,5,8,10} | 14 | 14 |
+
+Both preregistered q1 negatives recur. The forecast that every failure
+has minimum bin size3 survives the ENTIRE fixed domain;the outcome is
+stronger (both sizes3),but that stronger observation was not predicted.
+No cap,disagreement,retry,larger domain or repair search occurred.
+The full missing bands respect complementation;all four missing sums
+are half the respective pool total. In particular the q1 and q10
+failures at h5 have identical U but DIFFERENT physical complements.
+This is a warning against transferring the q1 repair without checking V.
+
+Source SHA256:
+2be9395183013a33945c566d57698f4a30dcd7871d53e844653ef3f7ba36d654
+Raw4058-profile JSONL SHA256:
+7fdf2cf87ce279a7291f1112abffdd7b12af19ff38d8749dffe2d6630a3f12b6
+Raw JSONL/summary are outside git;the committed source regenerates the
+fixed output (elapsed time is variable). Raw profile order is fixed.
+The computed claim is the finite selector spectrum list,not all-parent
+existence;the tail and opposite-side arguments retain their hand status.
+
+**Scope checks on the two new profiles,by hand after the run.** These
+are genuine protected strict-pair inputs,not necessarily unrealizable
+points added by projecting away the other sizes/targets:
+
+ * q7,h3: S=[0,13] minus7,sizes(3,3,3,4),targets(12,12,25,35).
+   Singleton adjusted slacks6,6,19,25;pair slacks in order
+   AB,AC,AD,BC,BD,CD are3,16,19,16,19,32;triple slacks
+   ABC,ABD,ACD,BCD are4,4,17,17. Total84 is correct.
+ * q10,h5: S=[0,15] minus10,sizes(3,3,3,6),targets(13,13,26,58).
+   Singleton slacks7,7,20,37;pair slacks5,18,26,18,26,39;
+   triple slacks7,6,19,19. Total110 is correct.
+
+These verify admission only,not partitions or failure of the conjecture.
+The unbounded opposite families remain the next joint obligation.
+The two old q1 profiles already have MI417-418 alternate boundaries
+and uniform opposite arguments,still awaiting independent review.
+No copying those repairs to q7/q10 is claimed in this block.
+
+**Five-line checkpoint/niggle sweep.** Parent:one actual boundary serving
+both target pairs. Change:conditional on the uniform opposite and
+long-prefix arguments,the unresolved unchanged-selector spectrum is
+now exactly four finite left profiles;two have existing q1 repairs.
+Repeated assumption:the already-known universal short-prefix coverage
+fails in precisely this finite list;no new repaired mechanism was tried.
+Dependency risk:MI422/425/426/427 and the finite projection need scrutiny;
+this is not independent verification or a full P_0/five-bin proof.
+Decision:next compare the two remaining q7/q10 boundary repairs and
+prove their actual opposite spectra uniformly,or refute the proposed
+repair immediately. No automatic census expansion. Gut:the tiny exact
+failure list is a concrete surprise;interest rests on that compression.
+Reasoned:the unbounded-side qualification has been addressed by an
+explicit existing argument,not by truncation. Next block still owes
+the altered complement proof. Last trajectory check MI423/GC1557,
+16:02 BST;extra pull allowance unused.13min ACTIVE.

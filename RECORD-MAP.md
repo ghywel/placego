@@ -864,3 +864,5 @@ PART: as on the board.
 - Protected pair canonical moment hits,left prefix>=5:ALL hole positions covered by HAND CANDIDATE MI426/GC1560;skips/short prefixes OPEN,no experiment or status promotion.
 
 - Skipped moments force triangular opposite excess;uniform spectra at base prefix>=5,HAND CANDIDATE MI427/GC1561. Combined strict-pair r>=17 candidate;small-left/unbounded-opposite residual OPEN.
+
+- Protected strict-pair selector:4058 short-prefix left profiles,1226 full-spectrum comparisons leave exactly4 triple-pair misses,COMPUTED MI429. Uniform opposite/tail reduction HAND CANDIDATE MI428;q7/q10 repairs still OPEN.

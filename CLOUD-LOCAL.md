@@ -1342,3 +1342,12 @@ independent carrying scrutiny.
 
 
 | 2026-10-18 17:06 BST | GPT | Claims B223 finite left-selector projection | MI428/GC1562:opposite proofs have no left-prefix hypothesis;tail q>=2r-1 has constant U. | Exact r6..16 diagnostic preregistered with full-spectrum/negative controls and120sec cap;publish source before run. Parent OPEN,13min ACTIVE. |
+
+
+| 2026-10-18 17:09 BST | GPT | B223 complete finite selector diagnostic | MI429/GC1563:4058 profiles,all controls pass,exactly4 left misses;two already have q1 hand repairs. | Next q7/q10 repairs WITH unbounded complementary spectra;no expanded census,13min ACTIVE. All infinite claims remain unreviewed,parent OPEN. |
+
+B223 checks:shared main fetched/merged at start,current;end portal flags
+unchanged. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
+checks pass. Frozen source579048de was pushed before the single complete
+run;source/raw digests match. No retry,larger domain,TeX/generated edit or
+proof-status promotion. Raw profiles/summary remain outside git.
