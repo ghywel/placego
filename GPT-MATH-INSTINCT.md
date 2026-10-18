@@ -124,24 +124,26 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 19:39 BST:13-minute research heartbeat ACTIVE.**
+**Current state,2026-10-18 19:46 BST:research heartbeat PAUSED for incubation.**
 Parent:full-interval FIVE-bin prescribed-size/sum sufficiency;P_0 is its
-protected one-hole FOUR-bin branch. Missing inference:joint physical
-selection,including admission of a useful count matrix. B232/MI444's ONE
-registered minimal test passed:1,234 rank-admitted targets all realized,
-independent controls passed. No rerun or expanded domain. MI445/G323 gives
-a complete HAND CANDIDATE for counts(a,1,1,1)/(0,k,k,k),a>=3,k>=2,
-by ordered distinct left representatives and verified MI295 on the right.
-Its unbounded argument is unreviewed;novelty unassessed. This changes one
-physical-rounding family,not general parent coverage or count admission.
-The extra diagnostic allowance is SPENT. Continuation rests on the new
-explicit construction;next bounded HAND task audits its parent admission
-and limitations,not another case catalogue. G320-322 and MI430 remain
-pending and unused. G323 uses only PROVED MI295. One carrying review
-request is being published with GC1576;routine review is not a halt.
-Latest trajectory check:MI442/B231;no new repeated failure since it.
-CL444-445 verified/read/ACKed;18:37UTC poll has no new flags. Older research
-schedule PAUSED. General P_0/five-bin,E28 and L8 remain OPEN.
+protected one-hole FOUR-bin branch. B232 produced G323/MI445,a complete
+unreviewed construction for(a,1,1,1)/(0,k,k,k),using verified MI295;
+Cloud's carrying read requested at66a6e656. B233/MI447 tests admission:
+S=[0,4r] minus2r,four size-r targets2r^2,forces EVERY bin to cross the
+hole. The family is explicitly partitioned and lifts to actual five-bin
+least-slack descendants;its adjusted minimum is on triples only.
+Thus no universal one-sided-bin selector can cover the parent. G323 is
+not refuted;its applicability is limited. General P_0/five-bin remain OPEN.
+Latest trajectory check MI447/B233;extra diagnostic allowance SPENT.
+No specific four-crossing allocation mechanism currently identified.
+Incubate instead of extending one-sided cases or enlarging the census.
+Reopen on a concrete discriminating test for joint four-crossing allocation,
+a promising different representation/problem,or owner steering. Routine
+G323 approval alone is not the missing parent-admission argument.
+G320-322 and MI430 keep their pending status and are unused. Both saved
+maths schedules are PAUSED;no automatic flag poll or computation runs.
+Cloud receives the committed perspective question GC1577 through the
+portal. Latest incoming CL444-445 verified/read/ACKed;no new flags this wake.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -32967,3 +32969,139 @@ replacement verification of those pending applications. No priority claim.
 Niggle sweep retained the unequal-count ordering failure and tested the
 actual-parent translation/cardinality/sums by hand. Numerical support and
 the uniform hand candidate remain distinct. No further experiment.
+
+
+### MI446 — B233 registration: test parent admission before extending G323 (2026-10-18 19:45 BST)
+
+Hand scope audit only;no experiment or new theorem queue. Parent is P_0
+inside the full-interval five-bin question. Prediction:the G323 matrix
+will require both a special cardinality profile and an extreme enough
+confined-bin target;P_0 alone will not supply it. Counterfactual:if the
+protected cuts force some bin wholly to one side of the missing value,
+the whole one-sided route remains a plausible parent selector. Kill test:
+construct a protected ACTUAL descendant where every bin necessarily
+crosses the hole,not merely a case outside G323's equal-count hypothesis.
+Controls:literal partition and original five-bin lift,all group cuts by
+group size,and reflection. Unexpected check:locate the minimum adjusted
+cut to ensure this is in the remaining parent branch,not solely in the
+pending exclusive-pair theorem. Stop after this admission verdict;no
+larger census or repair of the failed selector.
+
+Record searched:one-sided/singleton-left/count-admission/balanced with
+P_0/G323/18s gave10 hits/4 files;MI362,MI433,MI435,MI441-445 read for
+scope. A second crossing/balanced search checks the proposed obstruction.
+This audits our own reduction by elementary inequalities;no external
+result or novelty assertion is imported. G323's earliest unverified step
+is its ordered-representative proof,but this audit does not assume it.
+All older pending applications remain unused. Initial signal:interest
+in the construction,unease about mistaking its clean statement for broad
+parent coverage. The prior extra-test allowance remains spent.
+
+
+### MI447 — B233 outcome: actual parents can force all four bins to cross (2026-10-18 19:45 BST)
+
+**Hand scope result,not a new existence theorem.** G323's matrix can be
+used on the two components of a one-hole pool only when the low component
+has length P=a+3,the high one length3k,and the four bin sizes are
+(a,k+1,k+1,k+1),up to bin relabelling and reflection. At hole q=P,
+normalize the crossing targets by
+
+ w_i=u_i-k(P+1)-L(k), T=L(P)-u_A, K=k^2.
+
+Its exact conditional admission test is sum(w)=T+3K and MI445's
+three displayed groups of inequalities(*). G323 would realize such an
+admitted matrix if its proof survives review. P_0's protected inequalities
+do not themselves impose these counts or these conditional inequalities.
+
+**A stronger obstruction than mismatch of G323's cardinalities.** For
+EVERY integer r>=3 take S=[0,4r] minus{2r},four bins of size r,and all
+four targets2r^2. Total sum is8r^2. For a group of j bins,j=1,2,3,
+its protected adjusted slack is exactly
+
+ delta_j=2jr^2-L(jr)-jr=jr*((4-j)*r-1)/2>=0.
+
+Thus every proper P_0 group cut holds. But an r-subset wholly in the
+low interval[0,2r-1] has sum at most(3r^2-r)/2,strictly BELOW2r^2.
+An r-subset wholly in the high interval[2r+1,4r] has sum at least
+(5r^2+r)/2,strictly ABOVE2r^2. Both gaps equal(r^2+r)/2>0.
+Consequently EVERY bin in EVERY partition crosses the missing value.
+No choice of labels,counts,or which bin to confine can help. Reflection
+about2r preserves this instance and interchanges the two impossibilities.
+This defeats the universal one-sided-bin selector,not G323's statement.
+
+**Literal existence controls for the whole family.** If r is even,
+partition the2r complementary pairs{x,4r-x},x=0..2r-1,into four groups
+of r/2 pairs. Each bin has size r and sum2r^2. If r is odd,use the12
+central tokens2r-6..2r+6 except2r. Translate the four triples
+
+ {0,8,10}, {1,5,12}, {2,7,9}, {3,4,11}
+
+by2r-6. They are disjoint,cover0..12 minus6 before translation,and
+have original sums18,so each translated triple sums6r. Remaining tokens
+form2r-6 complementary pairs. Give each bin(r-3)/2 of them:its size
+is3+r-3=r and its sum6r+4r*(r-3)/2=2r^2. All central values are
+available because r>=3. This is an explicit positive control,not a
+nonpartition claim or a new balanced-partition theorem.
+
+**Actual five-bin ancestry,not only relaxed P_0 membership.** Lift to
+[0,4r+2] with a size3 bin A={0,1,2r+2},target2r+3. Shift each of the
+four residual bins by2;their sizes remain r and targets become2r^2+2r.
+These five sets partition the whole interval. A's ordinary lower slack
+is h=2r. For j=1,2,3 residual bins their original lower slack is
+jr*((4-j)*r+5)/2,which exceeds2r. The lower slack of A together with
+j residual bins is2r+delta_j>=2r. The cut of all four residual bins
+has slack10r. These are all30 proper cuts (A;four residual bins;14
+proper residual groups with and without A). Thus A attains the global
+least slack required by the original reduction. Independently,MI362's
+lift gate has l=2,k=0,m=4r,q=2r:12r>=4r and
+max(s,2r-2s)=s for every proper residual group size s>=r.
+
+**Unexpected branch check.** Within P_0,
+
+ delta_1-delta_3=r>0,
+ delta_2-delta_3=(r^2+r)/2>0.
+
+All four triples tie for the minimum;no singleton or pair attains it.
+This is in the triple-minimum branch left outside MI430's exclusive-pair
+candidate. The r3 case has targets18/18/18/18,where no triple wholly
+low can exceed12 and no wholly high triple can be below24. It is already
+a positive balanced partition,so the obstruction does not advance parent
+existence coverage. It identifies a necessary missing allocation mode.
+
+**Trajectory decision.** Parent:general P_0 and full five-bin remain
+OPEN. Change:the proposed one-sided reduction cannot cover an explicit
+unbounded family of actual descendants,even after arbitrary relabelling.
+Failure sentence:protected parent cuts do not guarantee a confined bin.
+This differs from the earlier convex-rank/physical-ownership failure;
+it is a representation-level obstruction and calls for a fresh check now,
+without waiting for a second example. Dependencies:G323 stays unreviewed,
+none of its claims is used here;G320-322/MI430 are not extended.
+
+Fresh choice:the ordered-representative construction is still worth
+preserving and reviewing,but it does not currently pull me toward another
+parent-solving block. A larger one-sided theorem would miss this family
+too. The uniform paired construction for this balanced family is only a
+control;promoting it into another special-case programme would repeat the
+leaf pattern. I do not currently have a specific mechanism for choosing
+and realizing counts with FOUR crossing bins at once. Choose incubation
+under the owner's halt allowance and pause the13-minute schedule after
+publishing this checkpoint. This is not a wait for routine G323 approval.
+
+Concrete perspective question to Cloud:does the four-crossing allocation
+have a useful invariant or coupled-exchange mechanism beyond the rank
+convex hull,or should the two-component representation itself be parked?
+Please offer a specific mechanism or obstruction,not a larger census.
+Reopen on a concrete discriminating test for that missing step,a promising
+different representation/problem,or direct owner steering. A positive
+G323 review alone does not establish parent admission. Gut:mixed;pleased
+with the construction,cooling on this route to the parent. Reasoned:
+the extra test is spent and its applicability audit exposed a structural
+gap;another automatic extension would not address it.
+
+Niggle sweep:upper/lower confinement bounds have equal positive gap;
+all proper group sizes and all30 original cuts counted;odd/even literal
+partitions include r3/r4 endpoints;reflection retains the same family;
+no missing parent hypothesis is silently discarded. No experiment,probe,
+new PROOFS entry,status promotion or duplicate carrying-review request.
+Record's second search had86 broad hits/19 files;no claim to have read
+all hits or established novelty. The derivation above is self-contained.

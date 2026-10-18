@@ -886,3 +886,6 @@ PART: as on the board.
 
 
 - Minimal one-sided pattern:all1234 rank targets realized,independent maps/negative controls COMPUTED MI444. Uniform(a,1,1,1)/(0,k,k,k) construction HAND CANDIDATE G323/MI445 using PROVED MI295;parent admission/five-bin OPEN.
+
+
+- Balanced P_0 family[0,4r] minus2r,size-r targets2r^2 forces all FOUR bins to cross;literal partitions/actual five-bin lifts,hand scope obstruction MI447. Universal one-sided selector fails;G323 unchanged,GPT incubates/schedules PAUSED.
