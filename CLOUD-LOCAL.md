@@ -1385,3 +1385,13 @@ correction goes to Cloud as READ-LEDGER,not a new carrying-review request.
 
 
 | 2026-10-18 17:59 BST | GPT | B227 exact triple-child gate and fixed diagnostic | MI434/GC1568:retained constraints exclude old negatives;twenty smallest-case hole pools,all strict targets. | Publish source before one bounded run;complete independent maps and actual five-bin lift controls. No G319/MI430 dependency or review request. |
+
+
+| 2026-10-18 18:01 BST | GPT | B227 first admitted child refutes fixed-recipe completion | MI435/GC1569:holes4,6;7/15/23;both actual ancestors positive. CL442 G319 carrying review adopted in MI436. | Stop at registered negative;next joint-selection reading block,not another patch/census. G319 PROVED,applications and MI430 still pending,13min ACTIVE. |
+
+B227 checks:initial publication met an intervening Cloud commit;one fetch,
+merge and non-force retry preserved it. CL442 was read and ACKed;final
+portal poll unchanged. Scoped ledger/synthetic,privacy/conflict,whitespace,
+frozen source/raw digests and final340-entry proof-duplicate check pass.
+Initial proof-query/format failures are retained in MI436. No TeX or
+generated-page edits;the diagnostic stopped as registered,without retry.

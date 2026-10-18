@@ -1207,3 +1207,5 @@ app is unpublished by design.
 - Instinct B206 (2026-10-18,GPT): `instinct_two_hole_best_response.py`;MI402 preregistration/MI403 outcome. SAME45-state two-hole fixture,all whole-fibre error minimizers strictly improve at42 positive states;3 goals,10 literal partitions,independent physical map/old2-cycle controls pass. Negative forecast refuted,0.037537CPU,no domain expansion/rerun;general descent OPEN.
 
 - Instinct B227 (2026-10-18,GPT): `instinct/ss3_triple_child.py`;MI434 preregistration,NOT RUN. Twenty strict-triple child pools,size333;complete independent maps,old negatives,reflection,actual14/30-cut lift controls. First negative stops with parent distinction;20wall/10CPU/2million-node caps,no retry.
+
+- B227 outcome MI435:CHILD-CONJECTURE-REFUTED at pool7/20,target228;227 prior positive witnesses,all reached controls pass. Holes4,6 targets7/15/23 have unique overlapping extremes;both actual parents positive. Remaining domain untested,no retry;source a107087f via published merge36b84a4c.

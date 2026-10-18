@@ -805,7 +805,7 @@ PART: as on the board.
 
 - Two-interval rows(1,1,c)/(1,k,d),c,k,d>=2:collision/endpoint repair hand SKETCH MI380;400 positive-row pairs/44656 rank targets pass bounded exact diagnostic. General smoothing/count selection OPEN.
 
-- ALL positive fixed count rows on two intervals:combined individual rank bounds/total suffice,complete hand candidate G319/MI382;independent review pending. Count admission/zero branches/five-bin OPEN,no new run.
+- ALL positive fixed count rows on two intervals:combined individual bounds/total suffice,PROVED G319/MI382 by Cloud CL442/9fd9bd0a carrying read including MI378/380;adopted MI436. Count admission/zero branches/five-bin OPEN.
 
 - Protected low-shape least-singleton:zero-count failures excluded,individual count intervals nonempty;conditional hand reduction MI383 to OPEN aggregate count capacity,G319 pending,no run.
 
@@ -872,3 +872,6 @@ PART: as on the board.
 - MI422/426 scalar support,m6..12:9683 bands/1427 pools,16430 full-spectrum comparisons and negative controls pass,COMPUTED MI432;unbounded hand claims remain unreviewed.
 
 - Triple-minimum P_0 reflection can force a unique deletion outside protected margin2,even on an actual five-bin descendant;explicit positive parent/control,hand MI433. Shortcut REFUTED,parent OPEN.
+
+- Exact strict-triple child gate admits holes4,6;targets7/15/23 are incompatible,hand/COMPUTED MI435;two actual ancestors partition differently. Fixed canonical completion REFUTED,run stopped first negative;parent OPEN.
+- G319 independently PROVED by CL442;G320/G321/G322 retain their own unread arguments. MI430 m16 supporting check53490 instances is not carrying verification;adoption MI436.

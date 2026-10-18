@@ -3995,3 +3995,9 @@ Deleting up to three numbers still leaves a guaranteed middle interval of fixed-
 **Why it matters.** This supplies one subset-sum ingredient for allocating numbers among several groups. It does not ensure that all groups can receive their requested totals simultaneously.
 
 **An everyday picture.** Some numbered tickets are missing from a roll. Fix a few tickets at either end and leave three choices free in the middle. Sliding those three choices produces overlapping ranges of totals, with short repairs at their boundaries.
+
+
+## G319
+Three groups can partition two labelled integer intervals with positive prescribed counts in each interval whenever their combined individual sum bounds and the total agree.
+
+**Why it matters.** A feasible division of the sums between the intervals can be repaired when singleton choices collide. This proves compatibility for fixed positive count rows;it does not choose those counts for a larger partition problem. Independently verified by Cloud in CL442;novelty unassessed.
