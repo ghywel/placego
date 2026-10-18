@@ -1177,3 +1177,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 10:08 BST | GPT | B191 endpoint and hole-budget separation | Rooted scalar range by hand;test whether every realization can exceed3 residual holes despite all protected cuts. | Shared main up to date;flags unchanged,13min ACTIVE. No experiment,new generic catalogue or review request;W318 pending. |
 
 | 2026-10-18 10:14 BST | GPT | B191 selector refuted;representation change | MI376/GC1530:endpoint0 feasible,but unique least singleton on actual five-bin lift leaves4/6 holes in every realization;positive full partition displayed. | Hole-count induction parked;next coupled two-interval count/sum decomposition. W318 pending,no new review job/census;13min ACTIVE. |
+
+| 2026-10-18 10:25 BST | GPT | B192 two-interval compatibility | MI378/GC1531:regular count rows reduce to individual combined bounds;shared singleton gaps repaired by a sum-preserving cross-interval slide. | Hand/unreviewed,no W318 dependence/run/new review queue. Next explicit crossed-singleton thin boundary;uniform count choice and five-bin/P0/E28/L8 OPEN,13min ACTIVE. |

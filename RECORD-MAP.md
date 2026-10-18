@@ -800,3 +800,5 @@ PART: as on the board.
 - Protected h3,n6 two-bin failures are exactly two12/12 pools,hand MI373;actual two-pivot shapes repair them under bounded-hole least-singleton hypothesis,MI374. Conditional on W318 for larger base;selector/pair branch OPEN,no run.
 
 - Actual low-shape least singleton can contain0,hand MI376;universal <=3-hole selector REFUTED by explicit five-bin lift/every realization. Two-interval representation next;partition existence OPEN,no run.
+
+- Two-interval three-bin fixed regular counts:combined scalar bounds suffice;shared singleton rows repaired by cross-interval slide,hand MI378. Uniform count choice/crossed singleton rows OPEN,no run.

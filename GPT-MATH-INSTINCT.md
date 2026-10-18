@@ -87,17 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 10:14 BST:13-minute heartbeat ACTIVE.**
-MI376 separates endpoint feasibility from the residual hole budget.
-In the zero-excess low shape,a globally least adjusted-slack singleton
-can contain0;but an actual five-bin lift forces every realization of
-its next least singleton to leave4 or6 holes. The proposed <=3-hole
-selector is REFUTED,not the partition theorem. MI374 stays conditional.
-Next:replace hole counting with the two full intervals separated by
-the missing pair;derive coupled low/high count and sum constraints.
-No generic four-hole catalogue or new census. W318/MI369 carrying
-review is pending;G315/G316/G317 stand. P_0,five-bin,E28/L8 OPEN;
-older schedule PAUSED.
+**Current state,2026-10-18 10:25 BST:13-minute heartbeat ACTIVE.**
+MI378 replaces the failed hole-count induction with a two-interval
+count allocation. Fixed counts with two regular rows reduce exactly
+to individual combined sum bounds;the same bound suffices with a
+shared singleton on both sides and all other row counts>=2,via an
+explicit slide between the intervals. Hand/unreviewed application;
+no W318 dependency or computation. MI376's actual counterexample and
+a forced-split protected example are covered. Choosing such counts
+uniformly and crossed-singleton thin rows remain OPEN. Next:the
+explicit (3,3,4),12/21/31 thin boundary and its distinct-value constraints.
+W318 carrying review pending;G315/G316/G317 stand. P_0,five-bin,E28/L8
+OPEN;generic hole tree parked,older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -25759,3 +25760,235 @@ Fresh choice:the concrete two-interval allocation question still attracts
 attention;the prospect of cataloguing successive hole patterns does not.
 The next block changes representation and retains this counterexample
 as its first control. No routine review halt.
+
+
+### MI377 — B192: replace hole growth by two-interval count allocation (2026-10-18 10:18 BST)
+
+Question:after assigning0 in the low shape,can the three bins be
+constructed separately inside the two full intervals? Derive the
+coupled counts and sums exactly;test the actual MI376 obstruction
+and check whether singleton allocations invalidate any sufficiency
+claim. This is a bounded hand block,no experiment. Some algebra
+was explored before this entry;it is not a preregistered measurement.
+
+Record searched:record_find two.block|two.interval|low.high with
+partition|count|joint ->25 hits/10 files,mostly unrelated older work.
+Read FOUR-BIN-PARTITIONS section2's exact one-hole spectrum,section5's
+reviewed full-interval three-bin lemma,and PRIOR-ART's MI342 source
+scope. The ingredients are already in the record;no external novelty
+claim or new theorem review is proposed. The last counterexample,
+rather than an enlarged census,is the first control.
+
+Pull:the two intact intervals preserve far more structure than a
+hole count. Concrete concern:partitions with a singleton can fail
+individual rank bounds even on a full interval. Kill test for an
+overstrong claim:force the rooted bin to take one token from each
+interval under the actual protected cuts. Unexpected check:verify
+that a simpler fixed-count criterion follows without even solving
+a separate sum-splitting optimization. Stop after the exact regular-
+count reduction and the singleton boundary;no generic hole catalogue.
+
+
+### MI378 — B192 outcome: compatible count allocations and a shared-singleton repair (2026-10-18 10:25 BST)
+
+**Status.** Hand reduction/application of the reviewed full-interval
+three-bin theorem,plus an unreviewed shared-singleton repair. No
+novelty claim,no experiment and no W318 dependency. It supplies a
+constructive branch for the actual low shape;it does not yet prove
+that every protected target has an allocation in this branch.
+
+After assigning0 to A,write
+
+```text
+I=[2,p-1], P=p-2; J=[p+2,M], Q=M-p-1;
+(r_A,r_B,r_C)=(a-1,b,c).
+```
+
+Let k_i be the number of J values assigned to bin i,and l_i=r_i-k_i.
+Thus sum(k)=Q,sum(l)=P. Normalize the two full intervals separately
+by subtracting2 and p+2. If x_i,y_i are their normalized bin sums,
+then
+
+```text
+v_i = u_i-2*r_i-p*k_i = x_i+y_i,
+sum(x)=L(P), sum(y)=L(Q), L(t)=t(t-1)/2.
+```
+
+For fixed counts set
+
+```text
+alpha_i=L(l_i), beta_i=l_i*(P-1)-L(l_i),
+gamma_i=L(k_i), eta_i=k_i*(Q-1)-L(k_i).
+```
+
+A count row is called regular HERE if at most two counts are positive,
+or if all three are at least2. This is just a local definition. A
+regular full-interval row is jointly realizable exactly when its
+three sums total the interval sum and satisfy their individual rank
+bounds:use the reviewed three-bin theorem when all counts>=2,and
+the elementary complete subset-sum interval for at most two bins.
+
+**1. If both count rows are regular,only the individual combined
+bounds need checking.** Precisely,the count allocation succeeds iff
+
+```text
+alpha_i+gamma_i <= v_i <= beta_i+eta_i, for each i.     (R)
+```
+
+Necessity is immediate. For sufficiency,seek integer low sums in
+
+```text
+max(alpha_i,v_i-eta_i) <= x_i <= min(beta_i,v_i-gamma_i),
+sum(x)=L(P).                                         (S)
+```
+
+(R) makes each interval nonempty. The sum of the three lower
+endpoints is at most L(P):expand a choice of either alpha_i or
+v_i-eta_i for each i. Choosing none of the latter uses sum(alpha)
+<=L(P);choosing all uses sum(v)=L(P)+L(Q) and sum(eta)>=L(Q).
+For exactly one index i,use v_i-eta_i<=beta_i and
+beta_i+alpha_j+alpha_k<=L(P). For exactly two indices i,j,
+use v_k>=alpha_k+gamma_k and
+eta_i+eta_j+gamma_k>=L(Q). These two auxiliary inequalities
+are simply L(s+t)=L(s)+L(t)+s*t. Every choice therefore has
+sum<=L(P),which proves the lower-endpoint claim. Reflecting BOTH
+normalized interval summands gives the upper-endpoint claim
+sum min(beta_i,v_i-gamma_i)>=L(P). This is an algebraic reflection
+inside this fixed-count calculation,not an assertion that the original
+protected cuts are invariant under reflecting S.
+
+Integer intervals contain every sum between their endpoint sums,
+so choose x with (S) and put y=v-x. Both regular rows can now be
+partitioned independently;combining corresponding bins gives the
+required original partition. Thus joint compatibility has not been
+assumed from individual subset feasibility:it follows from this
+three-coordinate sum-splitting argument and the reviewed row theorem.
+
+**2. Both rows may instead have the SAME singleton bin.** The same
+criterion (R) is sufficient if the counts are
+
+```text
+low:  (1,l,c),  high: (1,k,d),  with l,c,k,d>=2.
+```
+
+This case matters when a=3 and A must take one value from each
+interval. First obtain a rank-feasible split (S),without asserting
+that either row is already an actual partition. Let A's low/high
+singleton values be x,y. Since their sums and the two other row
+sums satisfy all individual full-interval rank bounds,each remaining
+B target lies between the ACTUAL extrema after removing x or y.
+For example in the low row,
+
+```text
+min_B = L(l)+(l-x)_+,
+max_B = l*(P-1)-L(l)-(x-c)_+.
+```
+
+The first follows by taking the maximum of B's own lower bound
+and the bound from C's upper sum;the second similarly follows from
+B's upper bound and C's lower sum. The high row has the identical
+form with k,d,y. The one-hole spectrum lemma now applies because
+both remaining counts on each side are>=2.
+
+Each of these two spectra is its full actual interval except possibly
+minimum+1 and maximum-1. If the removed value is an endpoint,the
+spectrum is full with width at least l*c>=4 (or k*d>=4). If the
+removed value is internal,its width is at least l*c+1>=5. This
+follows directly by subtracting the two displayed extrema:the loss
+from l*(c+1) is at most l-1 for an internal x.
+
+Their sum spectrum therefore contains the entire combined interval
+except possibly its minimum+1 and maximum-1. To see the central
+coverage when both widths U,V>=5,translate both minima to0.
+Each spectrum contains{0,U} union[2,U-2],or the analogous V set.
+The two central intervals add to[4,U+V-4];adding0 or an endpoint
+covers the lower/upper tails[2,U+V-2],with adjacent or overlapping
+joins since U,V>=5. Combined minimum+1 is missing only when BOTH
+individual minimum+1 values are missing;the same holds at the top.
+If one spectrum is full of width>=4,its translates overlap across
+the other's at-most-one-point gaps and the entire sum interval fills.
+
+By the exact one-hole lemma,a simultaneous lower omission requires
+x=l,y=k and B's combined normalized target L(l)+L(k)+1. Move
+A's values to x'=l+1,y'=k-1,keeping x'+y'=x+y. Give B the low
+values0..l-1 and high values0..k-2 together with k. Their sum is
+exactly L(l)+L(k)+1;they avoid A and have the prescribed counts.
+C receives the complements. All values exist because l,c,k,d>=2.
+For a simultaneous upper omission,x=c,y=d. Move A to c-1,d+1;
+give B the top l low values,and the top k high values with d+1
+replaced by d. Their sum is the previous combined maximum minus1.
+Again C is the complement. These explicit slides fill the ONLY two
+remaining possible gaps. No unchanged-root assumption is used:the
+sum of A's two values stays fixed while their positions change.
+
+Small adversarial control:take both normalized intervals[0,4] and
+both count rows(1,2,2),combined targets(A,B,C)=(4,3,13). Freezing
+A at2 on each side leaves pair spectra{1,3,4,5,7};their sum misses3.
+The slide gives A=(3;1), B=({0,1};{0,2}), C=({2,4};{3,4}),
+with combined sums4,3,13. The reflected target4,13,3 is repaired
+by A=(1;3),B=({3,4};{2,4}),C=({0,2};{0,1}). These are
+local repair controls,not claimed to satisfy the original protected
+margin hypotheses.
+
+**3. What the count choice now asks.** Each bin's legal k lies in
+[max(0,r-P),min(r,Q)]. Its fixed-count scalar extrema are
+
+```text
+f_i(k)=2*r+p*k+L(r-k)+L(k),
+g_i(k)=(p-1)*(r-k)-L(r-k)+M*k-L(k).
+```
+
+Both increase strictly with k on the legal range. Thus the counts
+with f_i(k)<=u_i<=g_i(k) form an integer interval K_i,possibly
+empty. Ignoring row types,an allocation of high counts exists iff
+all K_i are nonempty and sum min(K_i)<=Q<=sum max(K_i).
+This is only a count condition. The sufficiency proved above applies
+when a choice summing to Q has two regular rows,or the shared-
+singleton shape in section2. Establishing an admitted count choice
+from the protected cuts is still OPEN;uncovered thin rows cannot
+be silently discarded.
+
+**4. Actual controls and the remaining boundary.**
+
+- MI376's S=[0,15] minus{1,10,11},sizes(3,5,5),targets12,43,43
+  has P8,Q4 and counts low(2,3,3),high(0,2,2),both regular.
+  The normalized combined targets are8,13,13. The low-sum intervals
+  in (S) are[8,8],[8,12],[8,12],whose sums include L(8)=28.
+  For example low sums8,8,12 and high sums0,5,1 reproduce MI376's
+  whole partition. No hole-bound invariant is required.
+- S=[0,13] minus{1,7,8},sizes(3,4,4),targets12,31,32 has
+  proper adjusted slacks0,13,14 / 1,2,11. The rooted A pair
+  cannot lie wholly in[2,6] (maximum11) or[9,13] (minimum19).
+  Both rows(1,2,2) are therefore a useful shared-singleton choice.
+  An explicit partition is{0,2,10}/{3,4,11,13}/{5,6,9,12}.
+- The remaining thin boundary is REAL under the protected cuts:
+  S=[0,12] minus{1,6,7},sizes(3,3,4),targets12,21,31 has
+  adjusted slacks0,9,13 / 0,1,10. With P4,Q5,A must split1/1.
+  The high-count intervals are K_A={1},K_B={1,2},K_C={2,3}.
+  Their only choices summing to5 are(1,1,3) and(1,2,2).
+  Neither has two regular rows or section2's shared singleton with
+  all four other counts>=2. Yet{0,4,8}/{2,9,10}/{3,5,11,12}
+  is a partition. This is the next missing boundary,not a negative
+  example to the protected theorem.
+
+Niggle sweep:count sums imposed before normalizing targets;empty
+rows/zero counts included;integer rather than fractional sum splitting;
+all subset choices in the three-coordinate endpoint argument covered;
+actual one-hole bounds derived from BOTH other-bin constraints;
+width4 endpoint cases treated separately;root slides preserve its
+sum and avoid duplicate values;minimum/maximum gap conditions taken
+from the exact reviewed lemma;all three positive controls hand checked.
+A full interval with counts(1,2,2),sums(2,2,6) remains a negative
+control to applying the regular-row theorem indiscriminately:the
+singleton2 removes every pair of sum2. No such assumption is used.
+
+Gut:the useful surprise is that the two interval rows can compensate
+for each other's isolated gaps by moving the shared singleton. This
+is a concrete mechanism that was invisible to hole counting. Reasoned:
+the new branch handles MI376 and a forced-split protected example;
+it still needs count selection and thin rows. Next cheap test is the
+crossed-singleton boundary just displayed:derive its distinct-value
+constraints and ask whether a one-step slide or choice of the other
+count allocation resolves them uniformly. Keep W318's separate review
+pending;no new census or per-lemma review queue. P_0,five-bin,E28/L8
+remain OPEN;13-minute heartbeat ACTIVE.
