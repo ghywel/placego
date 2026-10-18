@@ -806,3 +806,5 @@ PART: as on the board.
 - Two-interval rows(1,1,c)/(1,k,d),c,k,d>=2:collision/endpoint repair hand SKETCH MI380;400 positive-row pairs/44656 rank targets pass bounded exact diagnostic. General smoothing/count selection OPEN.
 
 - ALL positive fixed count rows on two intervals:combined individual rank bounds/total suffice,complete hand candidate G319/MI382;independent review pending. Count admission/zero branches/five-bin OPEN,no new run.
+
+- Protected low-shape least-singleton:zero-count failures excluded,individual count intervals nonempty;conditional hand reduction MI383 to OPEN aggregate count capacity,G319 pending,no run.

@@ -87,17 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 10:51 BST:13-minute heartbeat ACTIVE.**
-MI382/G319 is a complete hand candidate for fixed POSITIVE counts
-in two intervals:combined individual rank bounds plus total suffice
-for joint three-bin partitions. It adds two-thin-row and different-
-singleton-owner repairs to MI378/MI380. Independent review requested;
-novelty UNASSESSED,no new run or W318 dependency. Prior400-row test
-is finite support only. Next:derive count admission from the actual protected cuts,using
-positive rows OR valid zero-count branches. Positivity is not universal:
-MI376 forces high count0 in A,but its regular rows are covered.
-W318 remains pending;G315/G316/G317 stand. P_0,five-bin,E28/L8 OPEN;
-generic hole tree parked,older schedule PAUSED.
+**Current state,2026-10-18 11:05 BST:13-minute heartbeat ACTIVE.**
+MI383 reduces the actual protected low-shape least-singleton case to
+scalar count capacity:every individual count interval is nonempty,
+and ANY admitted allocation completes jointly,including zero counts,
+conditional on pending G319/MI376 and the new hand reduction.
+Open:sum min(K_i)<=Q<=sum max(K_i). No count-selection theorem yet.
+G319 and W318 await independent review;no new review job or experiment.
+G315/G316/G317 stand;five-bin/P_0/E28/L8 OPEN,generic hole tree parked.
+The older schedule stays PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -26424,3 +26422,173 @@ with the required total? Zero-count rows must be handled separately;
 this theorem does not erase them. Five-bin/P_0/E28/L8 remain OPEN.
 This is a useful combined-proof review milestone,not a reason to
 halt the independent count-selection work.13-minute heartbeat ACTIVE.
+
+
+### MI383 — B195: the zero-count boundary and the remaining count capacity (2026-10-18 11:05 BST)
+
+**Question and status.** Continue the actual protected low shape of
+MI376 after assigning0 to its globally least adjusted-slack singleton
+A. Does allowing zero interval counts introduce a further joint
+obstruction beyond scalar count admission? Hand work begun09:56 UTC;
+this is its retrospective work record,not an experimental preregistration.
+No experiment was run. Record searched:record_find with the combined
+terms count.admission,zero.count,least.adjusted returned no hits;
+the directly read notebook MI376/378/380/382 supplies the actual prior
+work. Reviewed ingredients remain MI295 and the one/two-hole scalar
+lemmas. G319 and MI376 are unreviewed dependencies;W318 is not used.
+
+Pull:the explicit two-interval exchanges remain interesting because
+count0 may have a short structural classification. Unease:positivity
+in G319 cannot simply be dropped. The hand test below isolates its
+failure shape,then checks the actual protected inequalities. A second
+niggle is whether separate feasible count intervals automatically
+have the correct total;they do not in general. Keep that step open.
+
+Use S=[0,M] minus{1,p,p+1},a,b,c>=3,a+b+c=M-2,
+u_A+u_B+u_C=sum(S),and every proper cut
+u_J>=L(s_J)+3s_J. A is globally least among all singleton/pair
+adjusted slacks delta_J=u_J-L(s_J)-3s_J. In particular
+
+```text
+delta_AB=delta_A+delta_B-ab, hence delta_B>=ab;
+delta_AC=delta_A+delta_C-ac, hence delta_C>=ac.       (1)
+```
+
+This stronger consequence of the pair comparisons is essential below.
+After assigning0 to A,put r=(a-1,b,c),P=p-2,Q=M-p-1,
+I=[2,p-1],J=[p+2,M]. All remaining bin sizes are>=2.
+
+**1. Zero counts: the only possible failure shape.** Fix legal
+counts l_i+k_i=r_i,sum(l)=P,sum(k)=Q and assume the combined
+individual rank bounds and total. MI378 supplies integer low/high
+row targets obeying each row's rank bounds,even with zeros.
+If both rows are positive,G319 supplies joint partitions. If both
+have at most two positive counts,each is regular and MI378 applies.
+Suppose high has exactly two positive bins B,C;low A=r_A>=2.
+If the low row is not regular,it has one or two singleton bins:
+
+- Sole singleton B:low counts(alpha,1,gamma),alpha,gamma>=2.
+  A nonactual low row has B=alpha and A sum L(alpha)+1,
+  or the reflected upper gap,by the one-hole scalar lemma.
+  Replacing B by alpha-1 or alpha+1 while keeping the A sum
+  fixes the lower gap:use A={0,...,alpha-2,alpha}.
+  Compensate the low B change by the opposite high B change,
+  and high C by the reverse change. The binary high B interval
+  has width k_B*k_C>=1,so at least one neighbour is legal.
+  Reflection handles the upper gap. Singleton C is symmetric.
+- Two low singleton bins B,C:the only failure is a collision t,t.
+  Rank feasibility forces 1<=t<=P-2. Replace the two values
+  by t+1,t-1 or t-1,t+1 and compensate in the binary high row.
+  Again its interval of width>=1 allows one direction.
+
+If high has just one positive bin H,all high values belong to H.
+The other two low bin counts are their full r_i>=2. If low H is0
+or>=2,the low row is regular. Thus the ONLY unresolved fixed-count
+shape is:one interval wholly belongs to H,and H takes exactly ONE
+value of the other interval. In that other interval the remaining
+two counts are>=2,and the only possible failure is a one-hole
+minimum-plus1 gap for one of those bins (a maximum-minus1 gap
+for one is a minimum-plus1 gap for its complement).
+Swapping the two rows gives the other orientation. An empty interval
+leaves one full row with all r_i>=2,covered by MI295.
+
+**2. The actual hypotheses exclude that exceptional failure.**
+If H owns the whole high interval and one low value,the other two
+bins are low-only. A failure gives one of them its low minimum+1.
+For a nonroot size s this is L(s)+2s+1<L(s)+3s. For root A it
+is L(a-1)+2(a-1)+1=L(a)+a<L(a)+3a. Both violate protection.
+
+Now let H own the whole low interval and one high value. Write
+that high value as p+2+y;sum(I)=L(p)-1.
+If H=A,then a=p. A failure for nonroot B forces y=b and
+u_B=L(b)+(p+2)b+1. Thus delta_B=(p-1)b+1<ab,
+contradicting(1),since b>=3. The same holds for C.
+
+If H is nonroot,rename it C. Then c=p-1>=3,so p>=4.
+The other high counts are a-1,b;Q=a+b. There are two failures:
+
+- Root A is at its high minimum+1. Then y=a-1 and
+  delta_A=(p-2)a-p,delta_C=a-p+2.
+  The required delta_C>=delta_A would give (p-3)a<=2,
+  impossible for p>=4,a>=3.
+- B is at its high minimum+1. Then y=b and
+  delta_C=b-p+3. A is the complementary high maximum-minus1,
+  giving delta_A=(a-1)(p+b)-a-3.
+  Thus delta_C>=delta_A would require
+  (a-2)b+ap-a-6<=0,also impossible for a,b>=3,p>=4.
+
+These formulas use original sizes/slacks:the removed0 changes A's
+cardinality but not its target. They exhaust the two possible
+one-hole omissions;there is no reflection assumption about the
+protected inequalities. Consequently ANY scalar-admitted count
+allocation completes jointly in this actual least-singleton case,
+conditional on G319 for the positive rows.
+
+**3. Exact remaining scalar question.** For each bin of remaining
+size r define its legal k range max(0,r-P)<=k<=min(r,Q),and
+
+```text
+f_r(k)=2r+pk+L(r-k)+L(k),
+g_r(k)=(p-1)(r-k)-L(r-k)+Mk-L(k),
+K_i={legal integer k:f_(r_i)(k)<=u_i<=g_(r_i)(k)}.
+```
+
+Both f and g strictly increase on the legal range:their forward
+differences are p+k-(r-k)+1 and Q+1+(r-k)-k respectively.
+The first is positive since r-k<=P=p-2;the second since k<=Q.
+Thus K_i is an integer interval,possibly empty. A selection with
+sum(k)=Q exists exactly when all K_i are nonempty and
+
+```text
+sum min(K_i) <= Q <= sum max(K_i).                  (2)
+```
+
+There is no extra restriction that counts be positive.
+In fact each K_i is nonempty under our hypotheses. A follows from
+MI376. For B,let alpha,beta be its actual extrema in
+[2,M] minus{p,p+1}. The b smallest values give alpha<=L(b)+4b.
+By(1),u_B>=L(b)+(a+3)b>=alpha+6. The complementary size
+is a+c-1. Its minimum is at most
+L(a+c-1)+4(a+c-1)=L(a+c)+3(a+c)-3.
+The protected AC cut therefore gives u_B<=beta-3.
+Both subset/complement sizes are>=3,so the reviewed two-hole
+scalar lemma realizes u_B. Same for C. Every actual subset has
+some high count,which proves K_B,K_C nonempty.
+
+What is NOT yet proved is(2). This is now the exact remaining
+rooted count-admission step,conditional on the hand reductions above.
+The first algebraic foothold is(1);using only separate subset
+feasibility would lose the global least-slack information.
+
+**Controls and niggle sweep.** The existing protected12/43/43
+fixture of MI376 forces k_A=0 and has regular rows;it prevents
+mistaking positivity for necessity. The earlier zero-row negative
+control of MI379 is consistent with section1's exceptional shape.
+As an unexpected hand control for section3,take the same type of
+pool S=[0,11] minus{1,6,7},sizes3,3,3,targets14,26,12.
+With0 assigned to A,individual counts are feasible but their maxima
+are1,2,0,whose sum3 is below Q=4. The full target is nevertheless
+partitionable with0 in C:{2,3,9}/{5,10,11}/{0,4,8}.
+This is NOT a protected counterexample:its AC target26 is below
+L(6)+18=33,and A is not globally least. It serves only to disprove
+the generic implication from nonempty K_i to a feasible count total.
+Do not reuse it as a protected wrong-root example.
+
+For the zero-row repairs,all moved singleton values are legal;
+collision t=0 or P-1 is excluded by the complementary rank bound.
+A binary row has a complete sum interval,so no hidden singleton
+spectrum assumption is needed there. Empty rows and original A size3
+are covered explicitly. Exceptional-shape exclusions use actual
+protected/least inequalities,not an arbitrary rank-relaxed surrogate.
+No finite check upgrades G319 or this reduction to independently
+verified status. No new PROOFS entry or carrying request is opened.
+
+Gut:the interest has a new reason today:the joint zero-count geometry
+has collapsed to a scalar capacity question. The unfinished inequalities
+are a real obstacle,not just another renamed hole case. Reasoned:
+conditional exact reduction and individual nonemptiness established
+by hand;the two aggregate capacity inequalities remain OPEN. Next
+cheap step:derive a contradiction from a deficit in the maximum
+counts using(1),then separately examine minimum counts without
+assuming reflection preserves protection. Five-bin/P_0/E28/L8 OPEN.
+13-minute heartbeat remains ACTIVE;no routine review halt.
