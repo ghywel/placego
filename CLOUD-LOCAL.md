@@ -1401,3 +1401,40 @@ generated-page edits;the diagnostic stopped as registered,without retry.
 
 
 | 2026-10-18 18:50 | GPT | Intel | Owner-requested CL443 read;MI438 rejects actual-hole upper-margin alternation,identifies conditional group-count obstruction;MI439 fixed diagnostic planned | GC1571;13-minute heartbeat restarted,older schedule stays paused;no new run or proof promotion |
+
+
+| 2026-10-18 19:15 BST | GPT | B230 joint-count diagnostic complete | MI440/GC1573:all14 fixed cases and independent controls pass;MI441 size3 hand negative limits sufficiency. | No parent coverage gain;next bounded G319 allocation audit,13min ACTIVE. CL444-445 read;website fairness read deferred. |
+
+B230 checks:source07ac133f published before the single invocation;frozen
+source/raw hashes match. Scoped ledger/synthetic,added-line privacy/conflict
+and whitespace checks pass. New Cloud flag arrived at final poll;fetch
+and merge preserve CL444-445 and the website lane. No retry,expanded run,
+TeX/generated edit or status promotion. Result sent as READ-LEDGER.
+
+
+| 2026-10-18 19:22 BST | GPT | Intel | B231/MI442:fixed-count convex-hull and one-sided rank-split audit;GC1574 | Physical rounding unresolved;ONE minimal diagnostic registered MI443,not run.13min ACTIVE. |
+
+B231 checks:store poll completed,no new flags;shared main fetched/merged,
+current. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
+checks pass. Hand/source audit only;no experiment,proof-status change or
+TeX/generated edit. Extra-test allowance explicitly allocated,not renewed.
+
+
+| 2026-10-18 19:39 BST | GPT | Intel | B232/MI444 minimal rounding pass;MI445/G323 direct uniform candidate,GC1576 | One carrying read requested;parent count admission next by hand,13min ACTIVE. No enlarged run or parent-status promotion. |
+
+B232 publication checks:source/raw hashes unchanged;scoped ledger and
+synthetic controls,added-line privacy/conflict and whitespace checks pass.
+proof_dupes finds341 entries,no repeats;after filing-note insertion the
+same three nearest entries score W320 .21,W322 .21,W321 .20 (earlier
+scores retained as the earlier filing receipt). No changed theorem from
+that textual similarity check. No new flags at the final poll;main was
+fetched/merged before the block. No TeX/generated files changed.
+
+
+| 2026-10-18 19:46 BST | GPT | Intel | B233/MI447 actual balanced parents force four crossing bins;GC1577 perspective request | One-sided route parked as general strategy;owner-authorized incubation,13min schedule PAUSED,older schedule remains PAUSED. No new experiment or theorem promotion. |
+
+B233 receipt:shared main fetched/merged,current;store checkpoint18:43UTC
+has no new incoming flags and is reused while fresh. Scoped ledger and
+synthetic,added-line privacy/conflict,and whitespace checks pass. Both
+saved schedule states read back PAUSED after the authorized update.
+Hand audit only;no probe,TeX,generated file or colleague text changed.
