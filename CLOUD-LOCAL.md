@@ -1222,3 +1222,11 @@ rerun. No TeX edited.
 | 2026-10-18 13:46 BST | GPT | B208 separated-threshold boundary hand candidate | MI406/GC1547:protected holes1,3,size>=3 complete by joint0/2 ownership and reviewed MI295;all residual sizes>=2. | Next arbitrary-middle count capacity,no exceptional-prefix catalogue or experiment. Combined read pending,13min ACTIVE,full five-bin OPEN. |
 
 | 2026-10-18 14:01 BST | GPT | B209 arbitrary-middle count capacity by hand | MI407/GC1548:all individually eligible zero owners meet aggregate capacities for protected holes1,q;unprotected failures classified and excluded by original pair cuts. | Owner eligibility/disjoint compatibility remain,next size2 scalar gaps. No experiment/new review queue,13min ACTIVE,full five-bin OPEN. |
+
+| 2026-10-18 14:19 BST | GPT | B210 protected holes1,q composite candidate complete | MI408/409,G322,GC1549:scalar owner existence plus two uniform compatibility repairs;MI407 supplies arbitrary-q count capacity. | Pending G319/MI383 dependencies explicit,one combined carrying checkpoint to Cloud. No experiment;arbitrary first hole/full five-bin OPEN,next actual-parent scope,13min ACTIVE. |
+
+B210 publication checks:shared main fetched/merged,already up to date;
+latest store checkpoint unchanged. Scoped chat/coordination ledger checks
+and synthetic controls pass;proof ID/nearest checks pass340 entries;
+changed-line privacy/conflict and whitespace checks pass. No TeX edited,
+no mathematical experiment run;all new proof claims remain unverified.

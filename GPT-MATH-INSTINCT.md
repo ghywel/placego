@@ -87,16 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 14:01 BST:13-minute heartbeat ACTIVE.**
-MI407 proves by hand that for protected holes1,q,EVERY zero owner
-with nonempty scalar count intervals automatically satisfies both
-aggregate count bounds,at arbitrary middle-interval length. The proof
-classifies unprotected failures and excludes them by original pair cuts.
-Owner eligibility and disjoint count compatibility remain OPEN;
-no general two-hole partition/descent theorem is claimed. Next scalar
-owner existence,with the remaining-size2 gaps explicitly checked.
-MI406/G321/MI399 and this new argument await independent review.
-No new census or exceptional-prefix catalogue;full five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 14:13 BST:13-minute heartbeat ACTIVE.**
+G322/MI407-409 is a complete composite hand candidate for protected
+holes1,q,three sizes>=3. MI408 supplies an eligible zero owner;
+MI407 supplies aggregate count capacity;MI409 repairs both exceptional
+fixed-count shapes. Generic positive rows depend on pending G319;
+all new carrying arguments require independent reading. No experiment
+or novelty claim. Next actual-parent scope for arbitrary first hole p;
+full protected two-hole/P_0/five-bin/E28/L8 remain OPEN. G321/MI399
+reviews remain pending;no routine review halt.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -29204,3 +29203,266 @@ settled by hand;owner eligibility and disjoint compatibility remain.
 Next handle scalar owner existence for holes1,q,including the size2
 root gaps,before claiming a partition theorem. No routine review halt;
 include this uniform argument in Cloud's next combined read.13min ACTIVE.
+
+### MI408 — B210: an eligible zero owner exists for every protected holes1,q target (2026-10-18 14:13 BST)
+
+**Hand PROOF-SKETCH,not independently verified.** Use MI407's pool
+R=[0,M] minus{1,q},2<=q<=M,n=M-1=a+b+c>=9,sizes>=3,
+total T,and all proper protected cuts u_J>=L(s_J)+2s_J.
+Put V=R minus{0}=[2,M] minus q,m=n-1. Write alpha_r,beta_r
+for V's least/greatest r-subset sums. A bin of size s is nonroot-
+eligible if u is an actual s-subset sum in V,and root-eligible if
+it is an actual(s-1)-subset sum. We prove there is an owner j
+which is root-eligible,with every other bin nonroot-eligible.
+
+Record searched:`owner|eligib` AND `MI391|MI407|G317`:22 hits/3 files.
+Read G317's owner argument,MI391's scalar method,MI407 and the exact
+one-hole scalar lemma (FOUR-BIN-PARTITIONS section2),including size2.
+The existing literature orientation is unchanged;no novelty or new
+source claim. Initial pull:the former minimum4 proof may be sharpened
+by actual top sums rather than a coarse uniform lower bound. Unease:
+root eligibility is NOT just u<=beta_(s-1),because an upper pair gap
+can survive the protected cuts. No experiment is run.
+
+**1. Locate failures without discarding the gaps.** Every scalar
+cardinality used is>=2 and its V-complement is>=5. The reviewed
+one-hole lemma says that the only possible missing sums between
+alpha_r,beta_r are alpha_r+1 and beta_r-1. It applies at r2 too.
+Endpoint deletion leaves an interval and has no exceptional gaps.
+
+For a bin of original size s,put t=n-s>=6. Since the least t values
+of R are0 plus the least t-1 values of V,
+
+```text
+beta_s=T-alpha_(t-1),
+alpha_(t-1)<=L(t-1)+3(t-1)=L(t)+2t-2.
+```
+
+The complementary protected cut therefore gives u<=beta_s-2.
+Nonroot failure can occur only below the minimum or at its lower gap:
+
+```text
+not nonroot-eligible => u<=alpha_s+1<=L(s)+3s+1.     (1)
+```
+
+For a proposed root,alpha_(s-1)<=L(s)+2s-2. Protection puts u
+at least2 above this minimum,excluding its lower gap. Thus
+
+```text
+not root-eligible => u>=beta_(s-1)-1.               (2)
+```
+
+This deliberately retains the possible upper gap.
+
+**2. A bin needing0 is unique and can receive it.** Two nonroot
+failures of sizes a,b would,by(1),have total at most
+L(a)+L(b)+3(a+b)+2,below their protected pair lower bound because
+
+```text
+a+b+2-ab<=-1, for a,b>=3.
+```
+
+There is at most one. For any s,t=n-s>=6,the top values of V give
+beta_(s-1)>=(s-1)(M-1)-L(s-1),whereas alpha_s<=L(s)+3s.
+Consequently
+
+```text
+beta_(s-1)-alpha_s >= (s-1)(t+1)-3s >=4s-7>=5.      (3)
+```
+
+A failed nonroot target is at most alpha_s+1,so it is at least4
+below beta_(s-1);its root lower gap was already excluded. It is
+therefore root-eligible. Choose this unique failed nonroot if it exists.
+
+**3. If all are nonroot-eligible,some root is eligible.**
+Let r_i=s_i-1>=2;sum r_i=m-2. The sequence beta_r is concave,
+being partial sums of the positive values in decreasing order.
+Moving a unit from a smaller coordinate>=3 to a largest coordinate
+cannot increase the sum of beta values. Concentrating at the boundary
+therefore gives
+
+```text
+sum_i beta_(r_i) >= beta_(m-6)+2 beta_2
+                 = T-alpha_6+2 beta_2.            (4)
+```
+
+If q<=M-2,then beta_2=2M-1 and alpha_6<=33. Since M>=10,
+2 beta_2-alpha_6-3>=4M-38>=2. If q=M-1,then beta_2=2M-2
+and alpha_6=27,giving at least4M-34>=6. If q=M,then
+beta_2=2M-3,alpha_6=27,giving at least4M-36>=4.
+In EVERY case sum beta_(r_i)-3>T. Three failures in(2) would
+force sum u_i>T,contradicting conservation. Some root is eligible.
+Together with section2,this completes the owner-existence proof.
+
+**Hand controls.** On M10,q5,sizes3^3,targets10/19/20,the first
+nonroot target is the exact gap10 between triples9 and11 of V.
+It must own0;the partition
+{0,2,8}/{3,6,10}/{4,7,9} witnesses its eligibility and the full target.
+On M10,q8,targets18/14/14,the first target is below beta_2=19
+but cannot be a pair in V:18 is the upper pair gap. All protected
+cuts pass. A different owner works:
+{2,6,10}/{0,5,9}/{3,4,7}. This is the unexpected check against
+silently replacing root eligibility by an extremal inequality.
+For M10,q2,the smallest margin in(4) is attained:
+2 beta_2-alpha_6-3=38-33-3=2. These are literal hand checks.
+
+Combining this hand lemma with MI407 gives some zero owner AND
+integer high counts with the correct total for arbitrary q. This is
+scalar count admission only. Disjoint compatibility is addressed next,
+not presumed from independent subset examples.
+
+### MI409 — B210: protected holes1,q complete after two uniform compatibility repairs (2026-10-18 14:13 BST)
+
+**Complete COMPOSITE HAND CANDIDATE G322;conditional on pending G319
+and the fixed-count reduction below. Independent verification and novelty
+remain outstanding.** Statement:three sizes>=3 on[0,M] minus{1,q}
+admit prescribed integer targets totaling the pool whenever every proper
+group target is at least L(s_J)+2s_J. No least-slack assumption. The
+second hole q is arbitrary;the first hole remains1. This is not a
+claim about arbitrary p,q,full P_0 or full five-bin sufficiency.
+
+MI408 supplies a scalar-eligible zero owner;MI407 supplies counts
+in the low interval I=[2,q-1] and high interval H=[q+1,M] that
+meet all individual sum bounds and both count totals. Their remaining
+sizes are all>=2. If I or H is empty,reviewed MI295 completes the
+single interval directly. Otherwise apply the following fixed-count
+reduction,whose argument is MI378/MI383 section1 with offsets2,q+1.
+
+For two positive count rows,G319 is the pending compatibility input.
+For two regular rows (each at most two positive counts,or all three
+counts>=2),MI378 splits the targets into integer row sums by interval
+bounds,then applies reviewed MI295 or binary subset completeness.
+If one row has two positive counts and the other is nonregular,a
+single low-row gap is repaired by shifting its singleton value by1
+and compensating in the binary other row. If two singleton values
+coincide,shift them to neighbours in opposite directions. The binary
+row's interval has width at least1,so one direction is available.
+These moves change sums within rows at FIXED counts;the different
+absolute interval offsets do not enter the argument. Thus the generic
+zero-row argument carries unchanged,without importing protection from
+the old three-hole setting. Its source is unreviewed MI383 section1.
+
+The only remaining fixed-count failure shape is:one bin X owns a
+WHOLE interval and exactly one value of the other. In that other
+interval the other bin counts are d,e>=2. A failed split must be
+one bin's minimum+1,with the omitted value at index d;the upper gap
+is the other bin's lower gap by complementation. Individual bounds
+and total imply the actual one-hole extrema,not just full-row extrema.
+We repair both orientations explicitly.
+
+**1. X owns all high values and one low value.**
+Here P=1+d+e,q=P+2,and the omitted low value is d+2. Call the
+failed bin D,with d remaining low tokens,so u_D=L(d)+2d+1;
+call the other bin E. Necessarily0 belongs to X. Otherwise the
+ORIGINAL size of D union E is P,and
+
+```text
+u_D+u_E=sum(I)-(d+2)<L(P)+2P,
+```
+
+contradicting its protected pair cut. Thus D,E are nonroots and
+d,e>=3,while X has original size Q+2. Keep all high values in X,
+move0 to D,and assign
+
+```text
+X low values: {2,d};
+D: {0} union ([3,d+1] minus{d}) union {d+3};
+E: all remaining low values.
+```
+
+The X low sum is d+2,its former low sum plus0. D has d values;
+the sum of3..d+1 is L(d)+2d-2,and replacing d by d+3 adds3.
+Its target is exactly L(d)+2d+1. Values are distinct and present:
+d>=3 and d+3<=d+e+2=q-1. E has e values and the correct sum
+by conservation. All original sizes are preserved. This repair uses
+no pending theorem,no high-row changes and no small-case table.
+
+**2. X owns all low values and one high value.**
+Write Q=1+d+e and M=q+d+e+1. The omitted high value is q+1+d,
+so,with the same naming,
+
+```text
+u_X=L(q)+q+d,
+u_D=d(q+1)+L(d)+1.
+```
+
+If0 belongs to X or D,the original size of their union is q+d,
+but direct subtraction gives
+
+```text
+u_X+u_D-[L(q+d)+2(q+d)]=1-q<0.
+```
+
+Therefore0 belongs to E. Now X is a nonroot of size q-1>=3,
+so q>=4;D has d>=3;E has original size e+1>=3. Change counts,
+keeping0 in E:give X two highs and one fewer low,and give D one
+low and one fewer high. In order X,D,E the new rows are
+
+```text
+low:  (P-1,1,0),
+high: (2,d-1,e).
+```
+
+The low row is binary,the high row has every count>=2. Both are
+regular. Their combined extrema compared to the unchanged targets are
+
+```text
+X: f_new-u_X=3-d<=0,
+   g_new-u_X=2M-q-d-4=q+d+2e-2>0;
+D: f_new-u_D=1-q-d<0,
+   g_new-u_D=(d-1)(e+1)-3>=3.
+```
+
+E is unchanged. MI378's integer row-sum splitting and reviewed MI295
+therefore complete these new counts. In contrast to the earlier gap3
+case,this repair already works at d3:there is no residual thin table.
+The formula is derived for the gap2 pool itself,not transferred by
+an unproved reflected protection assumption.
+
+**Literal protected controls.** Whole-high obstruction,then repair:
+M11,q9,sizes(X,D,E)=(4,3,3),targets26/10/20. The old fixed
+X={0,5,10,11} leaves D at the low triple gap10. The repair is
+
+```text
+{2,3,10,11}/{0,4,6}/{5,7,8}.
+```
+
+Singleton protected bounds are14/9/9;pair bounds35/35/27,against
+sums36/46/30. Whole-low obstruction at the smallest d:
+M10,q4,sizes3^3,targets13/19/18. The old X={2,3,8} leaves D
+at its high triple gap19. The new regular-count partition is
+
+```text
+{2,5,6}/{3,7,9}/{0,8,10}.
+```
+
+All pair sums32/31/37 exceed27. Each displayed partition exhausts
+its pool. These hand controls check both changed-root and fixed-root
+repairs;no computational experiment was performed.
+
+**Assembly and limits.** MI408 guarantees an individually eligible
+owner,MI407 guarantees aggregate count capacity,and interval interpolation
+chooses the integer counts. G319/MI383 handle generic fixed-count shapes;
+the two repairs above handle their only exceptional shape. Consequently
+the protected holes1,q theorem has a complete source-level candidate.
+The carrying dependency G319 is still unverified;MI378/MI383 and the
+new MI407-409 arguments also require independent reading. Reviewed
+MI295 and the one-hole scalar lemma are the established bases. Neither
+G321,MI399,W318 nor the general protected two-hole claim is used.
+
+Niggle sweep:scalar upper pair gaps were retained in MI408;rooted
+cardinalities never silently stay at their original values;the total
+budgets cover q2 and qM. In the whole-high failure,the D+E pair cut
+forces0 into X before asserting d,e>=3. In the whole-low failure,the
+X+D pair cut forces0 into E before invoking d-1>=2. Every new count
+row has its original size and correct interval totals. The full-interval
+base is never applied at size1. Generic thin positive rows remain an
+explicit pending G319 dependency. No experiment or novelty claim.
+
+Gut verdict:the pull remains specific:the uniform argument now closes
+the owner and count constraints and the two actual incompatibilities;
+it is not warmed by another finite census. Reasoned:send one combined
+carrying checkpoint for this whole family,folding it into G319's pending
+read. Continue independently on the scope gap:arbitrary first hole p
+rather than1,or its actual parent restrictions. Do not treat this family
+as all two-hole pools. Full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.

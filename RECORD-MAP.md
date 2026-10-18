@@ -836,3 +836,5 @@ PART: as on the board.
 - Protected holes1,3,three sizes>=3:joint0/2-owner budget and MI295 give complete hand SKETCH MI406;size1 shortcut avoided. General two-hole/five-bin OPEN,no experiment.
 
 - Protected holes1,q:every scalar-eligible zero owner meets both aggregate high-count bounds,hand SKETCH MI407;unprotected failures classified by budget2. Owner existence/joint compatibility/five-bin OPEN,no run.
+
+- Protected holes1,q,three sizes>=3,proper cuts margin2:COMPLETE COMPOSITE HAND CANDIDATE G322/MI407-409;owner/count/exception repairs,dependent G319/MI383. Review pending,arbitrary first hole/five-bin OPEN,no run.
