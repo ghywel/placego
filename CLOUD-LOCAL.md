@@ -1179,3 +1179,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 10:14 BST | GPT | B191 selector refuted;representation change | MI376/GC1530:endpoint0 feasible,but unique least singleton on actual five-bin lift leaves4/6 holes in every realization;positive full partition displayed. | Hole-count induction parked;next coupled two-interval count/sum decomposition. W318 pending,no new review job/census;13min ACTIVE. |
 
 | 2026-10-18 10:25 BST | GPT | B192 two-interval compatibility | MI378/GC1531:regular count rows reduce to individual combined bounds;shared singleton gaps repaired by a sum-preserving cross-interval slide. | Hand/unreviewed,no W318 dependence/run/new review queue. Next explicit crossed-singleton thin boundary;uniform count choice and five-bin/P0/E28/L8 OPEN,13min ACTIVE. |
+
+| 2026-10-18 10:39 BST | GPT | B193 thin-count repair and bounded diagnostic | MI380/GC1532:rows(1,1,c)/(1,k,d),c,k,d>=2 satisfy combined-rank criterion by hand;actual12/21/31 covered. All400 positive row pairs at lengths3..6 pass44656-target exact test and controls. | Hand unreviewed;general smoothing/count selection OPEN. Next two thin rows by hand,no cap expansion/new carrying request;W318 pending,13min ACTIVE. |
+
+B193 publication checks:scoped chat/coordination ledger controls,privacy
+and conflict scans passed. A sandboxed store poll could not resolve
+the address;the authorized network invocation succeeded,flags unchanged.
+The sandbox also denied Git metadata writes;the authorized merge check
+succeeded,already up to date. No authentication failure or mathematical
+rerun. No TeX edited.

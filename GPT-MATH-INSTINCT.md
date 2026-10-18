@@ -87,18 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 10:25 BST:13-minute heartbeat ACTIVE.**
-MI378 replaces the failed hole-count induction with a two-interval
-count allocation. Fixed counts with two regular rows reduce exactly
-to individual combined sum bounds;the same bound suffices with a
-shared singleton on both sides and all other row counts>=2,via an
-explicit slide between the intervals. Hand/unreviewed application;
-no W318 dependency or computation. MI376's actual counterexample and
-a forced-split protected example are covered. Choosing such counts
-uniformly and crossed-singleton thin rows remain OPEN. Next:the
-explicit (3,3,4),12/21/31 thin boundary and its distinct-value constraints.
-W318 carrying review pending;G315/G316/G317 stand. P_0,five-bin,E28/L8
-OPEN;generic hole tree parked,older schedule PAUSED.
+**Current state,2026-10-18 10:37 BST:13-minute heartbeat ACTIVE.**
+MI380 extends the two-interval fixed-count construction to rows
+(1,1,c)/(1,k,d),c,k,d>=2,by explicit collision and endpoint repairs.
+The protected12/21/31 thin boundary is covered by hand,unreviewed.
+Separately,all400 positive count-row pairs at interval lengths3..6
+pass the exact combined-rank test (44656 targets,two independent
+row maps and negative controls). General positive-row sufficiency
+is still a conjecture;uniform count selection remains OPEN.
+Next:two thin rows,their integer rank region and forbidden collision
+lines,by hand;no larger census. W318 carrying review pending;
+G315/G316/G317 stand. P_0,five-bin,E28/L8 OPEN;generic hole tree
+parked,older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -25992,3 +25992,191 @@ constraints and ask whether a one-step slide or choice of the other
 count allocation resolves them uniformly. Keep W318's separate review
 pending;no new census or per-lemma review queue. P_0,five-bin,E28/L8
 remain OPEN;13-minute heartbeat ACTIVE.
+
+
+### MI379 — B193: the additional-singleton boundary (2026-10-18 10:33 BST)
+
+Question:extend MI378 to low counts(1,1,c),high(1,k,d),c,k,d>=2,
+and test whether the same combined-rank criterion might cover ALL
+positive count rows. Hand reasoning already indicates a repair for
+one additional singleton;it is not a measurement prediction.
+
+Record searched:record_find singleton with two.interval|count.row|crossed
+->4 hits/2 files;MI378 is the current result. The exact one-hole
+spectrum and full-interval three-bin theorem are the existing reviewed
+ingredients. No new literature theorem is assumed or novelty claimed.
+Pull:the root can move without changing its total,and the other
+singleton may trade places with it. Concern:if both interval rows
+have two singletons,the two collision constraints could trap each other.
+
+**Preregistration before the small diagnostic.** Predict that for
+P,Q=3..6 and ALL ordered positive three-count compositions on each
+side,the actual sum of the two partition-sum sets equals the complete
+integer region given by the combined individual rank bounds and total.
+This is a finite prediction,not a theorem or an automatic extension
+beyond6. Counterfactual:any missing target satisfying these bounds
+refutes the proposed all-positive-row extension;retain its exact
+counts and target and stop trying to prove that general assertion.
+The one-additional-singleton hand argument has its own scope.
+
+Construct each row map by literal choices of two disjoint subsets;
+independently build all row maps by sequential value-assignment DP.
+Require complete equality before testing row sums. Check the resulting
+sum maps against simultaneous reflection of both intervals. Independent
+negative control:one interval[0,6] with counts(1,3,3),other[0,0]
+with counts(1,0,0),combined targets(3,4,14),passes combined rank
+bounds but has no partition (singleton3 removes the only route to
+three-set sum4). Unexpected check:run that zero-count control even
+though the main prediction requires all counts positive;do not silently
+promote positivity to an irrelevant hypothesis. Positive controls:
+MI378's regular-count fixture and the two shared-singleton edge repairs.
+
+Stop after P,Q3..6,at most400 ordered count-row pairs,or10 CPU seconds,
+or any control failure. No cap increase,no automatic rerun. Raw output
+outside git;record the exact result and proof/measurement distinction.
+
+
+### MI380 — B193 result: one additional singleton can be repaired (2026-10-18 10:37 BST)
+
+**Status.** Hand PROOF-SKETCH,not independently reviewed. The fixed
+finite diagnostic is separately COMPUTED below. No novelty claim,
+W318 dependency,or five-bin theorem is asserted.
+
+Let the two normalized intervals be[0,P-1] and[0,Q-1],with fixed
+three-bin count rows
+
+```text
+low: (1,1,c), high: (1,k,d),  c,k,d>=2;
+P=c+2, Q=k+d+1; L(n)=n(n-1)/2.
+```
+
+Then the combined individual rank bounds (R) of MI378 and total
+conservation suffice for a joint partition. Interval exchange and
+bin relabelling give the corresponding symmetric cases. This closes
+the actual12/21/31 boundary named in MI378,not uniform count selection.
+
+**Rank split and its only obstructions.** The interval-splitting
+part of MI378 produces integer row sums satisfying each row's
+individual rank bounds and total;that algebra does not require
+regular counts. Write the two singleton low sums x,z and the high
+A singleton y and B sum w. Thus the combined A,B targets are
+x+y,z+w. Put U=k*(Q-1)-L(k). The low row is realizable precisely
+when x!=z. Its C rank bounds say
+
+```text
+1<=x+z<=2*P-3.
+```
+
+Consequently a collision x=z=t has1<=t<=P-2. In the high row,
+B's own bounds and C's complementary bounds place w between the
+actual k-subset extrema after deleting y. The reviewed one-hole
+spectrum lemma says the only nonrealizable possibilities are
+
+```text
+lower gap: y=k, w=L(k)+1;
+upper gap: y=d, w=U-1.
+```
+
+At fixed D=y+w,at most one gap can occur:the two exceptional D
+values are L(k+1)+1 and U_(k+1)-1,whose difference is
+(k+1)*d-2>=4. Here U_(k+1) is the maximum(k+1)-subset sum
+in[0,Q-1]. This distinguishes a rank-feasible split from a partition.
+
+**1. Remove a low collision.** Suppose x=z=t. Try either
+
+```text
+plus:  low(A,B)=(t+1,t-1), high(A,B sums)=(y-1,w+1);
+minus: low(A,B)=(t-1,t+1), high(A,B sums)=(y+1,w-1).
+```
+
+Both low rows are actual;both preserve C's low sum. High C's sum
+also stays fixed. Plus fails high rank bounds only if y=0 or w=U;
+minus fails only if y=Q-1 or w=L(k). Both cannot fail:the only
+compatible simultaneous endpoint possibilities would be
+(y,w)=(0,L(k)) or(Q-1,U),and each violates the complementary
+rank bound for A union B (minimum L(k+1),maximum U_(k+1)).
+
+If both moves obey high rank bounds,at most one meets a high gap
+by the fixed-D observation,so choose the other. If just one obeys
+rank bounds but hits a gap,there are only two genuine boundary cases:
+
+- Plus hits the lower gap:the original y=k+1,w=L(k).
+  Keep A at low t/high k+1;give low B the value t-1 and high B
+  the k values0..k-2 together with k. Their high sum is L(k)+1.
+- Minus hits the upper gap:the original y=d-1,w=U.
+  Keep A at low t/high d-1;give low B the value t+1 and high B
+  the top k values with d+1 replaced by d. Their high sum is U-1.
+
+Each displayed construction preserves both combined targets,uses
+distinct legal values,and lets C take the complements. Plus hitting
+the upper gap cannot be the sole rank-legal move:its original values
+are y=d+1,w=U-2,so minus is legal as k>=2 and U-L(k)=k*(d+1)>=6.
+Similarly minus hitting the lower gap has original y=k-1,w=L(k)+2,
+and plus is legal. This exhausts low collisions,including simultaneous
+obstructions in the two rows.
+
+**2. Repair a high gap when the low row is already actual.** Suppose
+x!=z and the high row is at its lower gap y=k,w=L(k)+1. Change y
+to k-1 or k+1,compensating x to x+1 or x-1,and keep z,w fixed.
+For either high singleton,the explicit B set0..k-2 together with k
+has sum L(k)+1 and avoids A. Thus only a low endpoint or a new
+low collision could block the move. If both directions are blocked,
+the two possibilities are exactly x=0,z=1 or x=P-1,z=P-2:
+
+- At x=0,z=1,swap low A,B to1,0. Give high A the value k-1
+  and high B the values0..k-2 together with k+1 (sum L(k)+2).
+- At x=P-1,z=P-2,swap low A,B to P-2,P-1. Give high A k+1
+  and high B0..k-1 (sum L(k)).
+
+All combined sums and counts are preserved. The high upper gap is
+obtained by reflecting BOTH normalized intervals;the rank region,
+counts and partition property are invariant under this bijection.
+This reflection is internal to the fixed-count theorem,not an
+assumption about invariance of the original protected-margin cuts.
+Cases1 and2 now produce actual partitions from every rank split.
+
+**Actual boundary reached.** On S=[0,12] minus{1,6,7},targets
+12,21,31 with sizes3,3,4,put0 in A. The intervals[2,5] and[8,12]
+have the permitted count rows(1,1,2)/(1,2,2) and normalized combined
+targets(2,3,11). The theorem applies. The literal partition
+{0,4,8}/{2,9,10}/{3,5,11,12} checks counts,sums and disjoint coverage.
+Thus the additional singleton was a repairable obstruction in the
+construction,not a negative example to the protected theorem.
+
+**Finite diagnostic (MI379 preregistration).** The new probe
+`tests/probes/instinct/two_interval_count_smoothing.py` completed its
+fixed P,Q=3..6 domain:400 ordered pairs of positive count rows,
+44656 combined rank targets,NO missing target. All complete row maps
+for lengths1,3,4,5,6,7,8 agreed between literal disjoint-subset
+enumeration and sequential assignment DP. Four positive controls,
+whole-map simultaneous reflection,and the zero-count negative control
+passed. CPU0.256752 seconds on GPT's host;no timing comparison is
+claimed. Raw JSON is outside git;no rerun or domain expansion.
+The fourth positive control is this block's thin boundary,in addition
+to the three explicitly listed in MI379. The all-positive-row
+extension remains a CONJECTURE beyond the hand cases above/MI378;
+this finite equality is not its proof. The negative control shows
+that dropping positivity is not justified by these observations.
+
+Niggle sweep:the initial row split is only rank-feasible;all actual
+realizations enter through explicit disjoint sets or the reviewed
+scalar lemma. Collision moves keep C's row sums fixed until an
+explicit construction takes over;the latter automatically preserves
+C's combined sum by conservation. The sole-legal-move exceptions use
+k,d>=2,including their equality cases;no nonexistent endpoint is used.
+Both endpoint swaps preserve each bin's combined sum. No original
+protected-cut reflection,unproved general smoothing,or W318 claim is
+used. Probe maps are independently constructed and the negative
+control fails exactly where required;finite coverage is kept finite.
+
+Gut:the attraction is specific rather than inherited warmth:the two
+intervals absorb each other's single-value exclusions,and the thin
+case now has a short repair. Reasoned:that mechanism advances the
+chosen representation and reaches an actual protected example. The
+next cheap question is whether TWO thin rows can always avoid their
+two simultaneous collisions. For example low(1,l,1),high(1,1,d)
+leaves a two-dimensional integer rank region with two forbidden
+lines. Analyse that geometry by hand before enlarging any census.
+Uniform selection of the counts from protected cuts is separately
+OPEN. W318 remains the existing carrying request;no new per-lemma
+review queue. P_0,five-bin,E28/L8 OPEN;13-minute heartbeat ACTIVE.

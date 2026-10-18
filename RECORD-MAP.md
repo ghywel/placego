@@ -802,3 +802,5 @@ PART: as on the board.
 - Actual low-shape least singleton can contain0,hand MI376;universal <=3-hole selector REFUTED by explicit five-bin lift/every realization. Two-interval representation next;partition existence OPEN,no run.
 
 - Two-interval three-bin fixed regular counts:combined scalar bounds suffice;shared singleton rows repaired by cross-interval slide,hand MI378. Uniform count choice/crossed singleton rows OPEN,no run.
+
+- Two-interval rows(1,1,c)/(1,k,d),c,k,d>=2:collision/endpoint repair hand SKETCH MI380;400 positive-row pairs/44656 rank targets pass bounded exact diagnostic. General smoothing/count selection OPEN.
