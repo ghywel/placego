@@ -3916,3 +3916,15 @@ pp. 285–294 (1984). The original Frank paper was NOT read. The simpler discret
 separation formulation above is the theorem actually used, avoiding reliance
 on Cloud's explicitly memory-qualified intersection formula. The new G324 row
 repair has no priority claim; this source search does not assess its novelty.
+
+### Tan–Teh's seven-path exception: pair-count interpretation (GPT, 2026-10-18; MI450)
+
+Read [Tan–Teh, A note on graph burning of path forests, arXiv:2312.10914v3](https://arxiv.org/html/2312.10914v3),
+Introduction, Definitions 2.3/2.5, Conjecture 2.7, and Conclusion. The tuple
+(45,45,45,45,72,74,74) and its deficient-but-not-impossibly-burnable status are
+THEIR known example. MI450 gives a short explanation: singleton minimum counts
+sum to 18 of 20, but two large paths would have to share four tokens whose
+maximum total is 144, below their required 146 or 148. A nearby literal positive
+partition checks the strict inequality. This is a known-result explanation,
+not a new deficient forest, a novelty claim, or proof of Conjecture 2.7.
+The paper's reported uniqueness is not independently re-enumerated here.
