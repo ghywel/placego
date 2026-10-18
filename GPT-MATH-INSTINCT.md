@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 22:23 BST: research PAUSED for incubation.**
+**Current state, 2026-10-18 22:37 BST: research PAUSED for incubation.**
 Parent: full-interval FIVE-bin sufficiency; count admission and thin-row
 realization remain open. H2's general all-pair completion is OPEN. G323/G324
 remain PROVED; G320–322/MI430 pending and unused; MI460's central u=M slice
@@ -134,6 +134,9 @@ instance has a blocking subset with no strict two-token exchange escape.
 Complete fibre and actual partition retained; this refutes the mechanism,
 not H2, and does not refute neutral paths. No repair or enlarged run follows.
 MI463/GC1585 requests a specific global-choice perspective from Cloud.
+CL449 is now read/ACKed; MI464/GC1586 records wider finite support but two
+false regime2 bounds in the proposed sketch. Corrected end-band coverage
+is still needed; that check-in does not yet justify a restart.
 Both mathematics schedules are PAUSED; no automatic flag polling or background
 computation continues. Reopen on a concrete uniform mechanism for all-choice
 coverage, a useful revised reduction, or direct discussion with the owner.
@@ -34036,3 +34039,68 @@ a new approach. Existing verified results are preserved, the central slice
 is still provisional, H2/five-bin remain OPEN. Fresh-choice verdict: I would
 still explore the question with such a mechanism; I would not choose another
 sequence of bounded-exchange repairs simply to keep the schedule busy.
+
+### MI464 — CL449 received: finite support accepted, reopening sketch has two failed bounds (2026-10-18 22:37 BST; check-in audit)
+
+Fetched and fast-forwarded 9e6ef411, read CL449, h2_test.py and its imported
+enum_targets/margin definitions, verified the committed pointer, then ACKed.
+The owner reports Cloud has checked in; this audit assesses the response to
+MI463's concrete question. No new experiment or automatic restart.
+Record searched: `H2|MI456` AND `slack|minimum`:27 hits/7 files. Read the
+G318 statement and MI456/458 scope; no stronger three-hole gap theorem assumed.
+
+**What Cloud reports.** Through M14,73,231 H2 instances, zero failures;
+through M13,42,354 instances. These are canonical representatives: b<=c,
+and the target enumerator orders equal-size adjacent bins. Endpoint holes
+are included, unlike our earlier fixed domains. Source read, not rerun;
+these wider counts are Cloud's reported supporting computation, not a proof.
+The source checks all legal pairs, and separately scores the most spread and
+closest-to-midpoint choices. Its `any` counter is the union over ALL pairs;
+it does not separately score the union of just those two extreme choices.
+Those two tested rules fail on some targets; no conclusion about every
+possible selection rule is inferred.
+
+**First failed bound in regime2.** Take M9,q1,counts(2,3,4),targets(4,11,29).
+The only legal sum4 pair is {0,4}: {1,3} is excluded by q1. Its complement
+is {2,3,5,6,7,8,9}, whose minimum triple sum is10. The sketch's claimed
+upper bound on that minimum is L(3)+2*3+1-4=6, so it is false.
+Protection starts at max(L(4),L(6)-4)=11: actual lower slack1, not the
+claimed b+2=5. All six H2 checks hold:
+4>=3,11>=6,29>=10,15>=15,33>=21,40>=28; total44.
+The valid partition is {0,4};{2,3,6};{5,7,8,9}. This refutes the
+slack justification, not H2 or the existence of a covering proof.
+
+**Second failed bound in regime2.** The claim that u>=2b+3 supplies a
+legal pair with BOTH entries>=b+1 fails at M9,b3,q4,u9. Only {4,5}
+could have both entries>=4, and4 is deleted. The legal pairs are
+{0,9},{1,8},{2,7},{3,6}. This is the previously retained boundary
+exception in MI456, not a new H2 obstruction. For a positive admitted
+control, targets(9,12,20),counts234 have the partition
+{0,9};{1,3,8};{2,5,6,7}. The six cuts are9>=3,12>=6,20>=10,
+21>=15,29>=21,32>=28; total41. Thus neither failed bound depends on
+an impossible input or a three-hole size exception.
+
+G318's stated central interval is valid and useful. But its complement
+bands are not supplied by an already proved general distance-from-ACTUAL-
+extrema gap list at size3. MI458 already distinguishes that missing claim
+from G318 and the proved TWO-hole lemma. The two countercontrols above
+prevent accepting the offered slack argument as that missing bridge.
+No claim is made that every part of CL449's sketch is false.
+
+**Decision / response.** The wider finite support is welcome; the offered
+uniform mechanism is not yet sound enough to reopen a block. Keep both
+research schedules PAUSED. Send Cloud the two hand countercontrols and
+ask specifically for a corrected uniform end-band estimate or a global
+covering mechanism that avoids these premises. Its offered larger slack
+check is unnecessary to find these failures; no extra census is requested.
+This is proof pushback on its merits, not transferring the judgement to Cloud.
+
+Niggle sweep: matching lists complete by enumerating the tiny possible
+smaller endpoints; minima literal; all six original H2 cuts and disjoint
+positive partitions checked; M9 satisfies G318's ambient-size gate. Finite
+counts labelled as reported canonical instances; all-pair and two-policy
+unions kept distinct. H2/parent OPEN; MI460 still unreviewed. Gut: interest
+in the global question remains, but these inequalities do not yet change the
+incubation verdict. Reasoned: useful check-in and precise corrections;
+no justified schedule restart yet. A corrected carrying mechanism or direct
+owner discussion can reopen the work.

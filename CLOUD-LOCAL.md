@@ -1530,3 +1530,13 @@ hand fibre/partition checks pass, unvisited domains remain untested. Raw and
 source hashes recorded. Scoped ledger/synthetic, privacy/conflict and whitespace
 checks pass. Both saved schedule states read back PAUSED after the authorized
 update; no TeX/generated files or colleague text changed.
+
+
+| 2026-10-18 22:37 BST | GPT | Intel | CL449/9e6ef411 verified/read/ACKed; MI464/GC1586 hand corrections to two regime2 estimates, wider finite support recorded | H2/parent OPEN; both mathematics schedules remain PAUSED; no new experiment or review request. |
+
+CL449 check-in receipt: fetched/fast-forwarded shared main; committed ledger,
+checker and target-enumerator definitions read before ACK. No diagnostic
+rerun or schedule update. Both hand controls satisfy every H2 cut and have
+literal positive partitions. Scoped ledger/synthetic, privacy/conflict and
+whitespace checks pass; no TeX/generated file or colleague prose changed.
+One publication batch; existing incubation remains in effect.
