@@ -124,24 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 17:09 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 17:17 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-MI428 isolates the unchanged strict-pair selector's left obstruction:
-the opposite arguments in MI422/426/427 do not require a long LEFT
-prefix. MI429's complete finite diagnostic tests4058 short-prefix
-profiles with independent full spectra and finds exactly4 misses,
-all a=b3: (h,q,target)=(3,7,12),(5,1,13),(5,10,13),(7,1,14).
-The two q1 profiles already have unreviewed MI417-418 repairs.
-The q7/q10 profiles are genuine protected inputs,not merely loose
-projection artifacts. Next seek a common repair of these TWO boundary
-profiles with a uniform proof for their unbounded actual complements.
-Do not expand the census or treat a left repair as a joint partition.
-All infinite coverage and repairs remain HAND CANDIDATES;the finite
-spectra are COMPUTED with controls. General P_0/five-bin/E28/L8 OPEN.
-Earliest unreviewed dependencies:MI422/425/426/427;G316 reviewed.
-No G319-dependent candidate is used here. Last trajectory check:
-MI423/GC1557,2026-10-18 16:02 BST;extra pull block unused.
-No new review queue;Cloud receives this finite reduction checkpoint.
+MI430 gives uniform actual-complement proofs for the two q7/q10
+exceptions left by MI429. With the two q1 repairs and the finite
+selector certificate,this assembles a COMPLETE COMPUTER-ASSISTED
+CANDIDATE for P_0 when the global minimum adjusted cut slack occurs
+on pairs and on no singleton/triple. Independent review is pending;
+this is NOT a PROVED theorem or the full P_0/five-bin/E28/L8 result.
+The exact statement and acyclic dependency table are in MI430.
+Next consolidate/check the carrying proof rather than add a new
+conditional descendant. Singleton/triple branches remain separate;
+G319-dependent claims retain their own pending review.
+Last trajectory check:MI430/B224,2026-10-18 17:15 BST;extra pull
+allowance unused. It selected these two repairs because they exhaust
+the exact selector residual,not because of renewed warmth alone.
+Cloud receives one batched carrying-review request for this branch.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31713,3 +31711,168 @@ Reasoned:the unbounded-side qualification has been addressed by an
 explicit existing argument,not by truncation. Next block still owes
 the altered complement proof. Last trajectory check MI423/GC1557,
 16:02 BST;extra pull allowance unused.13min ACTIVE.
+
+
+### MI430 — B224: two exceptional complements close the strict-pair candidate (2026-10-18 17:17 BST)
+
+**COMPLETE COMPUTER-ASSISTED CANDIDATE for the strict-pair branch;
+independent review pending.** No new experiment. Fresh shared main
+unchanged;initial flag checkpoint reused at under5 minutes,then a
+fresh poll showed no new messages. Record searched:`repair|exception`
+AND`q1|MI418|two.high|adjacent.high`:73 hits/21 files;MI418's actual
+complement proofs,MI419,MI428-429 and G316 scalar machinery read.
+No external theorem or novelty claim introduced.
+
+**Short trajectory check before the repairs,17:15 BST.** The parent
+has gained a uniform long-prefix argument and an exact finite selector
+residual,not just additional isolated instances. The unchanged
+short-prefix selector fails one assumption at four profiles;two are
+already repaired. The next two repairs are justified only if their
+actual complements are handled for every c,d. A merely finite left
+fix is inconclusive;do not open a new exception tree after it. Fresh
+choice would select this bounded question:two fixed boundaries and
+unbounded but explicit complements are now the whole strict-pair gap.
+Earliest unreviewed carrying support remains MI422,then MI425/426/427;
+a failure there would invalidate the assembled domain,regardless of
+these repairs. The finite computation cannot replace those proofs.
+Extra pull allowance remains unused. This is an early strategy check,
+not a claim of independent verification or a reset by a new label.
+
+**Exact proposed statement.** Let S=[0,n] minus q have n elements,
+where0<=q<=n. Let four sizes a,b,c,d>=3 total n and targets u_i
+sum to L(n)+n-q. For each nonempty proper group J put
+ delta_J=sum(u_j:j in J)-L(sum(size_j:j in J))-sum(size_j:j in J).
+Assume every delta_J>=0,and that the global minimum is attained by
+at least one pair and by NO singleton or triple. Then S admits the
+prescribed four-bin partition. Other pairs may tie the chosen AB.
+This claim is restricted to that minimum-cut type;the other P_0
+branches and full five-bin sufficiency remain OPEN.
+
+Endpoint q0,n are full intervals and follow from reviewed G316 after
+translation where needed. For interior q,set r=a+b,s=c+d,h=delta_AB,
+x=u_A-L(a)-a,z=c*n-u_C-L(c). The strict comparisons give
+ h<x<ab, h+q<z<cd.
+The task is one actual U of size r,sum L(r)+r+h,with u_A in its
+spectrum,and V={n-v:v in S minus U} with L(c)+z in its spectrum.
+MI429 leaves only four left target failures. MI418 gives uniform
+repairs for the two q1 cases. Here are the two remaining repairs,
+proved using their own actual complements.
+
+**q7,h3,u_A=u_B=12.** Use
+ U={0,1,4,5,6,8}={0,4,8} disjoint-union {1,5,6}.
+This is obtained from the failed U by replacing3,10 with5,8,so its
+size and total24 are preserved;it avoids7. Direct subtraction from
+S gives S minus U={2,3} union[9,n]. Thus,putting p=s-2,
+
+ V=[0,p-1] union {p+5,p+6}, sum(V)=L(s)+10.              (1)
+
+The strict target is L(c)+z with11<=z<=cd-1;hence cd>=12,
+s>=7 and p>=5. We prove this entire requested band is present.
+Select j=0,1,2 of the two adjacent highs and c-j of the low prefix.
+All three low counts lie in1..p-1 because c,d>=3. Each j-slice
+is an ENTIRE interval:for j1 the two translates differ by1;for
+j0/2 there is one translate. Their extrema increase with j. Writing
+the gap as next minimum minus preceding maximum minus1 gives
+
+ j0 to1: 5-(c-1)(d-2),
+ j1 to2: 5-(c-2)(d-1).                                (2)
+
+Both are nonpositive for c,d>=4,or for min(c,d)=3 and max(c,d)>=6.
+The first slice starts at L(c);the last reaches the actual maximum,
+which is at least L(c)+cd by ordered-rank domination. So the slices
+cover the required band in these cases.
+
+The ONLY admissible omitted size pairs are (3,4),(3,5) and their
+reversals. For c3,d4,p5 the one-high slice is[11,18],containing the
+required singleton14. For c3,d5,p6 it is[12,21],containing14..17.
+For the reversed sizes use complementation:total V=L(c)+L(d)+cd+10
+sends offset z to cd+10-z,which preserves[11,cd-1]. The apparent
+small join gaps are outside the requested band,not assumed absent.
+This completes the uniform opposite proof for(1).
+
+**q10,h5,u_A=u_B=13.** Use
+ U={0,2,4,5,6,9}={0,4,9} disjoint-union {2,5,6}.
+This is the same LEFT repair as at q1,h5,but the complement is new.
+Here S minus U={1,3,7,8} union[11,n]. Put p=s-4. Then
+
+ V=[0,p-1] union {p+2,p+3,p+7,p+9}, sum(V)=L(s)+15.    (3)
+
+The target offsets satisfy16<=z<=cd-1,so cd>=17,s>=9,p>=5.
+Each middle slice with1<=l<=p-1 low tokens and j=c-l highs is
+an entire interval. Indeed the four high values have adjacent gaps
+at most4;a monotone index path through their j-subsets has steps
+at most4,and a low interval has width l(p-l)>=p-1>=4. For j0/4
+the high path is a singleton and the same fullness conclusion holds.
+At successive middle slices let A=(l-1)(p-l). The four possible
+join gaps,for j0,1,2,3 respectively,are
+
+ 2-A, -4-A, -4-A, 2-A.                                (4)
+
+For example,relative to high offsets1,3,5,7,the increments are
+1,0,2,2;the prefix-minus-suffix corrections are1,-1,-1,1.
+The usual gap1-A-2j(3-j)+correction gives(4). Since an actual
+middle join has2<=l<=p-1,A>=p-2>=3,all joins close.
+
+If c<=p-1 the first middle minimum is L(c). Otherwise c=p or p+1
+(the bound d>=3 excludes larger c),and the first minimum exceeds
+L(c) by3 or6 respectively. These lie below L(c)+15. For c>4,the
+last middle slice reaches the actual maximum,at least L(c)+cd.
+For c3 its maximum is3p+15,where L(c)+cd=3p+6;for c4 it is
+4p+18,where L(c)+cd=4p+6. Thus the joined middle slices contain
+[L(c)+15,L(c)+cd],which contains every requested target. This
+proves(3) uniformly,without importing the q1 complement argument.
+
+**Literal controls and unexpected check.** The two actual protected
+instances in MI429 now have explicit partitions:
+
+ q7,n13,sizes(3,3,3,4),targets(12,12,25,35):
+ {0,4,8}/{1,5,6}/{3,9,13}/{2,10,11,12}.
+
+ q10,n15,sizes(3,3,3,6),targets(13,13,26,58):
+ {0,4,9}/{2,5,6}/{3,8,15}/{1,7,11,12,13,14}.
+
+The sets are disjoint,exhaust the missing-value interval and have the
+stated sizes/sums. Unexpected check:for q7,c3,d4 the full triple
+spectrum of(1) has actual inter-slice holes10,19,20;the desired14
+is present. Thus the proof must cover the target BAND,not falsely
+assert full spectral convexity. For q10,the size bound p>=5 follows
+from cd>=17,not from the selected left prefix. No hidden bounded-s
+check is used. Both repairs are actual sets in S for every admitted n.
+
+**Acyclic assembly and review map.** This is a candidate with a finite
+certificate component,not a new all-hand proof:
+
+| Step | Exact obligation | Carrying source/status |
+|---|---|---|
+| Cut bounds | h<x<ab and h+q<z<cd | MI416;hand reduction |
+| Moment selector | correct actual boundary hit/alternate skip | MI419;hand instrument |
+| Long left prefix | all required left sums when base p>=5 | MI422/425/426/427;unreviewed |
+| Every opposite pool | actual reflected spectrum at all prefix lengths | MI428 scope read of MI422/426/427;unreviewed |
+| Finite residual | p<=4 forces r<=16;large q gives constant left pool | MI426/428;hand reduction |
+| Small left spectra | only four misses in complete projected domain | MI429,source579048de;COMPUTED with independent controls |
+| q1 exceptions | two literal boundaries plus all opposite sizes | MI418 explicit repair paragraphs;unreviewed |
+| q7/q10 exceptions | two literal boundaries plus all opposite sizes | this entry;unreviewed |
+
+For a canonical/alternate selector that has no missing left target,
+choose an a-subset of U at u_A and a c-subset of V at L(c)+z;
+complement within U gives B and inverse reflection gives C,D. For
+one of the four misses substitute its corresponding repaired U and
+use that repair's OWN opposite proof. This exhausts the finite list.
+The broad MI417 q1 deformation proof is not a dependency of this
+assembly;only MI418's two exceptional complement calculations are.
+G319/G321/G322 and singleton/triple claims are also not dependencies.
+G316's reviewed set identity/scalar machinery underlies the selector
+arguments. Novelty remains unassessed. No proof status is promoted.
+
+**Niggles/outcome/decision.** Checked literal complements,strict integer
+margins,small size exclusions,all four joins in(4),and the two exceptional
+gaps in(2). The key nonlocal obligation was the unbounded opposite size;
+formulas(1)/(3) discharge it by hand,subject to review. Parent progress:
+one entire minimum-cut branch now has an assembled candidate;the full
+parent still has singleton/triple branches. Gut:the reduction to fixed
+high offsets is satisfying and a specific reason for confidence in
+these two repairs,not confidence in every earlier carrying proof.
+Reasoned:send ONE batched review request for the assembled branch,
+then check/consolidate its earliest unverified arguments before extending
+another conditional chain. No census expansion or new descendant.
+The heartbeat stays ACTIVE;pending review is not a routine halt.

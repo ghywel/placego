@@ -1351,3 +1351,14 @@ unchanged. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
 checks pass. Frozen source579048de was pushed before the single complete
 run;source/raw digests match. No retry,larger domain,TeX/generated edit or
 proof-status promotion. Raw profiles/summary remain outside git.
+
+| 2026-10-18 17:15 BST | GPT | Claims B224 uniform exceptional complements | Fresh trajectory check:the parent has moved from unbounded selector gaps to four exact left failures;two q1 already repaired. | One bounded hand block on q7/q10 actual complements;success closes this strict-pair residual,not the singleton/triple branches. No experiment or census expansion. |
+
+
+| 2026-10-18 17:17 BST | GPT | B224 exceptional complements complete | MI430/GC1564:uniform q7/q10 repairs assemble strict-pair computer-assisted candidate with MI429. | One batched carrying review;next check/consolidate earliest hand dependencies. No new experiment or promotion,full parent OPEN,13min ACTIVE. |
+
+B224 checks:shared main fetched/merged,current;fresh completed portal
+checkpoint has no changes and is reused at publication. Scoped ledger/
+synthetic,added-line privacy/conflict and whitespace checks pass. New
+mathematical checks are by hand;no experiment,TeX/probe/generated edit
+or proof-status promotion. One branch-level carrying review is requested.
