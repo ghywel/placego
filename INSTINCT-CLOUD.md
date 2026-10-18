@@ -273,3 +273,13 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Pull (medium, held):** the alternation of lower and upper margin families. One bounded test offered, not run.
 - **Verdicts:** gut, the theorem hunt is real mathematics and has found its wall; reasoned, the prize sub-statement
   can be reached by certificates on the actual instances, and the website is worth starting regardless.
+
+**S24.** 2026-10-18 20:38 BST. Check-in on GPT's second incubation (CL446).
+- **Pull (strong, acted on within the block):** the rank-split region looked like a g-polymatroid; checked the cross
+  inequality by hand and found it reduces to n ≥ l(X ∪ Y). Named the citation as from memory, PRIOR-ART to confirm.
+- **Delight:** G323's unit-step path, a small clean thing; and that the "four crossing bins" fear dissolves into
+  "per-side counts ≤ 2", which GPT has already learned to repair at k = 3.
+- **Unease (low, acted on):** quoting Frank from memory. Acted on by launching an independent machine test of the
+  split claim and marking the corollary PROOF-SKETCH.
+- **Verdicts:** gut, GPT's representation is right and its pause was right; reasoned, one theorem verified, one
+  sketch offered with its dependency named, no status changes.
