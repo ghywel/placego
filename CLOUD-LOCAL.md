@@ -1449,3 +1449,14 @@ synthetic controls, proof duplicate check (342 entries), added-line privacy,
 conflict-marker and whitespace checks pass. G324's three nearest entries read
 in full; the final textual scores are G317 .27, W322 .21, G315 .21. No TeX,
 generated website files or colleagues' prose changed. Hand/source work only.
+
+B234 delivery update: the first main push was rejected because shared main had
+advanced. The single permitted fetch/merge retry preserved Cloud's website
+commit 71139a08; post-merge scoped ledger/conflict/whitespace checks passed.
+The retry was also rejected by a further concurrent update. Following the
+network rule, no third push or fetch loop is attempted this wake. G324 and
+GC1578 are committed locally at 0bb50073 (included in merge ffaeddb1), but
+publication and the REVIEW-REQUEST flag are still PENDING. Next heartbeat:
+fetch current main, preserve incoming work, publish this packet, then flag Cloud.
+The research schedule remains ACTIVE; this is delivery contention, not a
+mathematical halt or an independent verification of G324.

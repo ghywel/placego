@@ -140,7 +140,10 @@ spent, not renewed. The new mechanism is row repair with a proved legal sign,
 not another one-sided extension. Next cheap test: determine whether a singleton
 row repair can be replaced by a similarly bounded mechanism for one size-two
 count; first audit the scalar and joint obstruction, without enlarging a census
-or relying on G324 as verified. The older research schedule remains PAUSED.
+or relying on G324 as verified. Publication is PENDING after two concurrent
+main-push rejections: next wake first merges and publishes the existing G324
+packet, then sends Cloud its committed REVIEW-REQUEST. No flag has yet been
+sent for G324. The older research schedule remains PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
