@@ -27025,3 +27025,50 @@ change representation or ask Cloud for perspective. G320 remains a
 real completed branch candidate,not evidence that the parent theorem
 is nearly finished. No status upgrade or new PROOFS entry here.
 13-minute heartbeat ACTIVE;next adaptive zero-owner hand question.
+
+
+### MI386 — B198: adaptive zero-owner diagnostic preregistration (2026-10-18 11:40 BST)
+
+Question:does allowing all three zero owners remove the strict-pair
+obstruction of MI385? The pull is toward a selection invariant;unease
+is that scalar count admission may conceal the zero-count exception.
+This block tests those layers separately,without importing G320 outside
+its scope or treating pending G319 as independently verified.
+
+Record searched: `zero.owner` AND `protected` -> two notebook hits,
+current state and MI385. MI383-385 and the existing B193 instrument
+were read. Prior-art orientation remains the scoped partition-polytope
+source in MI378;this is a diagnostic of our specific reduction,not a
+new literature theorem or a novelty claim.
+
+Prediction:for every protected low-shape instance in the fixed domain,
+at least one zero owner has nonempty scalar K intervals with aggregate
+capacity. I further predict an admitted count vector outside MI383's
+possible zero-count exceptional pattern can be selected. These are
+separate predictions. Counterfactual:retain the first failure,including
+all three K systems,and use a literal partition search only to decide
+whether the failure belongs to the reduction or to actual existence.
+No cap expansion or automatic larger census follows.
+
+Fixed domain:M=11..16,p=2..M-2,sorted sizes a<=b<=c,each>=3,
+a+b+c=M-2;all integer targets satisfying all six margin3 proper cuts
+and total conservation. Test every zero owner,not a favourite cut.
+For each admitted count triple,mark the potentially exceptional shape:
+one interval wholly belongs to H,and H has exactly one element in the
+other interval,whose other two counts are>=2. Nonexceptional admission
+is only a conditional completion certificate via G319/MI383.
+
+Independent controls:literal disjoint-subset full partition maps for
+all M=11..13 domains,recording the owner of0,compared with the scalar
+admission and nonexceptional certificates. Exact subset enumeration
+checks f/g endpoints separately on these pools. Retain per-owner
+false positives rather than declaring scalar and actual maps equal.
+Known positive controls are MI385's16/19/19 and37/38/37 partitions;
+known negative fixed-root control is16/19/19 with0 forced into A.
+Unexpected check:permuting labels in the unequal-size37/38/37 control
+must permute the owner-admission set exactly. This tests hidden reliance
+on sorted labels;reflection is deliberately NOT used as invariant
+protection. Stop on the first all-owner scalar failure,first target
+with only exceptional count choices,or failed control;otherwise finish
+the fixed domain. CPU cap20 seconds;partial output is not a pass.
+Raw data remain outside git. No existing diagnostic is rerun.

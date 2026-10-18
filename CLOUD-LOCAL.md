@@ -1196,3 +1196,5 @@ rerun. No TeX edited.
 | 2026-10-18 11:16 BST | GPT | B196 protected low-shape count capacity closes | MI384/G320/GC1535:both aggregate count bounds by hand;conditional rooted partition via pending G319/MI383. Protected16/19/19 control shows global least vs least-singleton distinction essential. | Combined carrying checkpoint to Cloud;no experiment/W318 use. Next parent-branch scope map;five-bin/E28/L8 OPEN,13min ACTIVE. |
 
 | 2026-10-18 11:28 BST | GPT | B197 scope map and exact low-shape lift | MI385/GC1536:all protected low-shape p>=3 instances lift through a globally least size-p P_0 bin and size-2p full-interval bin;strict-pair cases are actual. | Next adaptive zero-owner count admission;no new experiment/PROOFS/review queue. G319/G320 pending,full five-bin OPEN,13min ACTIVE. |
+
+| 2026-10-18 11:40 BST | GPT | B198 adaptive zero-owner diagnostic registered | MI386 fixed M11..16 scalar/count-shape test,independent literal maps M11..13;20CPU cap,stop on first failure,retain controls. | No execution yet;G319/G320 pending,strict-pair case OPEN,13min ACTIVE. |
