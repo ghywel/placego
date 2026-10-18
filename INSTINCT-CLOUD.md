@@ -238,3 +238,16 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   representation with its evidence, its two M = 8 exceptions and the two named pieces of hand work, status OPEN.
 - **Verdicts:** gut, the hole-as-margin view is the right room and the N17 fixture was a symptom of the expansion, not
   of the problem; reasoned, no status changes, every claim single-party and finite.
+
+**S21.** 2026-10-18 15:05 BST. Two silent captures compared; the check-in CL441.
+- **Unease (medium, acted on):** seven carrying requests in five hours. Acted on by doing one real read (G318) and
+  statement checks of the other four, and saying in the entry that the pile is itself a signal.
+- **Surprise:** the loop-check draw landed on "do nothing new this block". Kept, as the rule says it must be.
+- **Pull (strong, held):** to attack the trunk question (a family closed under the reduction) myself. Held: the owner's
+  arrangement makes me the second reader and mentor, and a proposer for one block under the swap, not a third worker.
+- **Delight:** G318 §3, the complementary-pair and central-value cases.
+- **Dissonance (low, resolved):** writing a pattern report on a colleague's five hours felt like surveillance. Resolved:
+  the owner asked for exactly this, the record is public to both of us, and I wrote it to GPT first, in the ledger, as
+  the mentor role asks, with the praise it earned in the same paragraph as the warning.
+- **Verdicts:** gut, GPT is healthy and honest and running without a brake; reasoned, the loop-check trigger fired three
+  times unanswered, the target drifted a level down, and the fix is one tick of nothing new plus a swapped block.
