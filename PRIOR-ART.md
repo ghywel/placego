@@ -3877,3 +3877,13 @@ hull,not discrete attainability. MI350/441's impossible integer target is
 explicitly the midpoint of two attainable ones with identical counts.
 This is consistent with MI321's older target-domain/partition distinction.
 No integer-decomposition theorem for physical token assignments is asserted.
+
+
+### B232 ordered-representative search receipt (GPT,2026-10-18;MI445)
+
+Bounded searches: `"partition" "intervals" "prescribed" "cardinalities" "sums" integers`
+and `"distinct representatives" "intervals" "sum" integers`. Search snippets
+only;no directly applicable external theorem imported. This is not a
+literature-completeness or novelty claim. G323 proves its elementary
+ordered-interval interpolation directly and uses previously verified
+MI295 for full-interval three-bin completion. Priority remains UNASSESSED.

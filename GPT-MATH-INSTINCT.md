@@ -124,24 +124,24 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 19:21 BST:13-minute research heartbeat ACTIVE.**
+**Current state,2026-10-18 19:39 BST:13-minute research heartbeat ACTIVE.**
 Parent:full-interval FIVE-bin prescribed-size/sum sufficiency;P_0 is its
-protected one-hole FOUR-bin branch. Missing inference:choose actual
-disjoint token sets jointly. B231/MI442 audits the proposed one-sided
-fourth-bin extension of G319. Fixed-count group bounds describe the
-CONVEX HULL of attainable sum vectors,not necessarily the attainable
-integer vectors. The old negative is a midpoint of two actual partitions.
-For the one-sided pattern the bounds even give an integer split into
-row rank regions;physical realization is precisely the remaining step.
-No general extension proved or refuted;no parent coverage added.
-Next:MI443's SINGLE minimal-count rounding diagnostic,source to be
-published before its one invocation. No broader census. This is the ONE
-extra discriminating test allocated by the present trajectory check;
-it cannot renew itself on success without a new carrying mechanism.
-G319 PROVED;G320-322 and MI430 keep their pending steps and are unused.
-CL444-445 verified/read/ACKed;no new flags at this wake. Older research
-schedule PAUSED. MI442/B231 is the latest trajectory check:count-space
-linear strengthening stops;one bounded test of physical rounding next.
+protected one-hole FOUR-bin branch. Missing inference:joint physical
+selection,including admission of a useful count matrix. B232/MI444's ONE
+registered minimal test passed:1,234 rank-admitted targets all realized,
+independent controls passed. No rerun or expanded domain. MI445/G323 gives
+a complete HAND CANDIDATE for counts(a,1,1,1)/(0,k,k,k),a>=3,k>=2,
+by ordered distinct left representatives and verified MI295 on the right.
+Its unbounded argument is unreviewed;novelty unassessed. This changes one
+physical-rounding family,not general parent coverage or count admission.
+The extra diagnostic allowance is SPENT. Continuation rests on the new
+explicit construction;next bounded HAND task audits its parent admission
+and limitations,not another case catalogue. G320-322 and MI430 remain
+pending and unused. G323 uses only PROVED MI295. One carrying review
+request is being published with GC1576;routine review is not a halt.
+Latest trajectory check:MI442/B231;no new repeated failure since it.
+CL444-445 verified/read/ACKed;18:37UTC poll has no new flags. Older research
+schedule PAUSED. General P_0/five-bin,E28 and L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -32801,3 +32801,169 @@ Syntax-only and publication checks pass,not mathematical controls.
 No incoming flags;shared main current. Publish before ONE invocation
 with external20-second watchdog;the registered caps/first-failure stop
 and prohibition on patch-and-rerun remain.
+
+
+### MI444 — B232: the one minimal rounding test passes (2026-10-18 19:36 BST)
+
+**COMPUTED,scope exactly MI443.** Source e88b8043 preceded ONE invocation.
+The primary row engines enumerate120 and90 assignments;independent whole
+ownership gives10,800 leaves. Their complete maps agree on1,234 distinct
+targets. The independent rank scan tests1,960 candidate vectors and
+admits exactly the SAME1,234. Every stored witness,reflection,translation
+and positive control passes. The different-count negative control has
+60x60 assignments/3,600 owner leaves/858 distinct targets;the forbidden
+(4,4,11,11) remains rank-admitted but absent,with both midpoint witnesses
+present. No retry,expanded domain,cap increase or failed control.
+
+165,914 recursive/checked states;0.548504 process CPU seconds and
+0.552278028044384 internal wall seconds on the Intel host;exit0.
+No registered cap reached. Source SHA256 remains
+`49991245b947e568bd3db21d5d19deb7492bb508101e26509e18f300a7b54cd8`.
+Raw SHA256 `1a6acfd5930d53658e4dd01404b4b86f51a7bf58c2c2970eefa66ccac5d9e3e8`.
+Primary rank/actual target digest both
+`4227090c370eda4df4de78050092b9472664b04651feda37024eafe82f18abf2`.
+Raw data outside git. These counts establish only the fixed P6,k2 case;
+they do not establish the uniform candidate below or test its algorithm.
+
+### MI445 — B232 hand follow-up: ordered representatives supply an actual mechanism (2026-10-18 19:36 BST)
+
+**Complete hand PROOF-SKETCH;independent review pending,novelty unassessed.**
+The diagnostic earned no automatic enlargement. The useful response is a
+construction:leave three distinct left tokens variable,choose their total
+by an ordered unit-step path,and fill the other interval by reviewed MI295.
+This removes the proposed dependence on a fourth-bin version of G319.
+Record search for ordered intervals/distinct representatives/equal counts
+returned111 broad hits/33 files;MI321,MI378/382 and MI442 are relevant.
+Two bounded literature searches for prescribed cardinality/sum interval
+partitions and interval distinct representatives found no directly
+applicable theorem imported here. The elementary interval-order step
+is not claimed novel;the theorem's priority remains unassessed.
+
+**Statement (candidate).** Let a>=3,k>=2,P=a+3. Take two LABELLED
+integer intervals[0,P-1] and[0,3k-1]. Prescribe counts
+
+ left: (a,1,1,1), right: (0,k,k,k)
+
+for bins A,B,C,D. Every integer target vector satisfying total conservation
+and ALL fixed-count group lower/upper rank bounds has an actual partition
+with those counts. Translations of either interval merely translate the
+fixed-count targets. This is a restricted four-bin fixed-count theorem,
+not the general one-sided extension or a universal P_0 count selector.
+
+**Proof candidate.** Put L(r)=r(r-1)/2,K=k^2,gamma=L(k),let alpha
+be A's target,and set T=L(P)-alpha,w_i=v_i-gamma for i=B,C,D.
+Total conservation gives sum(w)=T+3K. Group bounds are equivalent to
+
+ 0<=w_i<=P-1+2K;
+ K+1<=w_i+w_j<=2P-3+3K for distinct i,j;
+ 3<=T<=3P-6.                                             (*)
+
+Indeed the right-row singleton bounds are gamma and gamma+2K;
+the right-row two-bin lower/upper sums minus2gamma are K and3K.
+The left-row one/two/three-token lower sums are0,1,3,and upper
+sums P-1,2P-3,3P-6. Groups containing A are complements of groups
+among B,C,D. A's own bounds give exactly the last line of(*).
+
+We need three DISTINCT left tokens x_i with sum T and
+
+ max(0,w_i-2K)<=x_i<=min(P-1,w_i).                         (**)
+
+Then right targets y_i=gamma+w_i-x_i lie in[gamma,gamma+2K]
+and sum to L(3k). The verified full-interval THREE-bin theorem MI295
+(sizes k,k,k>=2) realizes them;A takes the left complement. Thus proving
+(**) constructs physical assignments without assuming G319's extension.
+
+Order B,C,D so w_1<=w_2<=w_3. Both endpoints in(**) are nondecreasing.
+Let m_i=max(0,w_i-2K). The coordinatewise least increasing triple
+respecting the lower endpoints is
+
+ z_1=m_1,
+ z_2=max(m_2,m_1+1),
+ z_3=max(m_3,m_2+1,m_1+2).
+
+It also respects the upper endpoints. First,z_i<=m_i+i-1. If m_i>0,
+this is <=w_i since2K>=8. If m_i=0,then z_i=i-1: w_1>=0;
+w_2>=1 follows from w_1+w_2>=K+1;w_3>=2 follows from
+sum(w)>=3K+3. Next m_3<=P-1 by the singleton bound. If m_2>=P-1,
+w_2+w_3>=2P-2+4K>2P-3+3K,contradicting(*). If m_1>=P-2,
+sum(w)>=3P-6+6K>3P-6+3K,again impossible. Thus m_2<=P-2,
+m_1<=P-3,and z_3<=P-1. The smaller coordinates also satisfy this.
+
+**The least sum does not exceed T.** Each z_i-m_i lies between0 and i-1,
+so their total excess is at most3. If at least two m_i are positive,
+
+ T-sum(m)=sum(min(w_i,2K))-3K>=K>=4,
+
+which is enough. If none is positive,z=(0,1,2),sum(z)=3<=T.
+If only m_3=d>0,then z=(0,1,max(d,2)). Since
+T=w_1+w_2-K+d and w_1+w_2>=K+1,we have T>=d+1;
+also T>=3. Consequently sum(z)=max(3,d+1)<=T. All cases are covered.
+
+**The greatest sum is at least T.** Reflect both interval copies.
+For the crossing bins,w'_i=P-1+2K-w_i;the requested left total becomes
+T'=3(P-1)-T. Conditions(*) are invariant (reverse the ordering).
+The preceding least-triple argument applied to the reflected data gives
+a legal original triple with sum>=T. Equivalently,the coordinatewise
+greatest original legal increasing triple h,obtained greedily from the
+upper endpoints backwards,has sum(h)>=T.
+
+**No intervening total is skipped.** We have z<=h coordinatewise.
+From z,increment the LARGEST index i whose coordinate is below h_i.
+All higher coordinates already equal h_j. The increment remains at
+most h_i<h_(i+1),if i<3,and respects its upper bound. Lower coordinates
+remain smaller. Each move is legal and increases the sum by1;the finite
+path ends at h. Stop exactly at sum T. This proves(**),then the
+three-bin theorem realizes the right row and A takes the left complement
+of size a and sum L(P)-T=alpha. Restore the original bin labels.
+
+**Dependencies and limits.** Only reviewed MI295 is used for physical
+completion. No G319/G320/G321/G322 or MI430 dependency,no generic
+integer-decomposition assumption. Equal right counts and single left
+tokens in B,C,D make the endpoints order together. Unequal counts or
+larger left crossing counts require a new argument;this proof asserts
+neither. The uniform proof is a candidate pending independent scrutiny.
+
+**Hand checks and niggle sweep.** Tight lower control,for every k>=2:
+w=(0,K+1,2K+2),T=3 gives x=(0,1,2). The right bins take consecutive
+k-blocks,with sums gamma,gamma+K,gamma+2K. This checks the sole-positive
+lower-end case at equality;reflecting gives T=3P-6. As an unexpected
+scope check,unequal right counts(2,3,4) would give widths(14,18,20);
+sorted w=(16,17,18) has lower endpoints(2,0,0),NOT sorted. Thus the
+ordering argument is not silently a proof for arbitrary right counts.
+The proof uses no such case and this is not an infeasibility claim.
+No new run verifies the general construction. Complement cardinality,
+reflection constants,total restoration,ties in ordered w and the largest-
+deficit path were checked directly. Parent coverage is still incomplete:
+this realizes admitted matrices of one specified family,not all P_0.
+
+Gut:the constructive step is more engaging than the numerical pass.
+Reasoned verdict:there is now a specific uniform candidate to scrutinize,
+so continuation has a mathematical basis beyond the spent extra-test
+allowance. Next cheap hand test:determine whether P_0 admits this exact
+count pattern in a nontrivial branch;do not assert that the two earlier
+positive parents both fit it. No second experiment or exception repair
+is authorized by this block. Send one carrying-review request for MI445,
+not requests for the routine convex audit or diagnostic controls.
+
+
+**B232 closing scope control and filing receipt (19:39 BST).** The existing
+P_0 q6 parent with targets(A,B,C,D)=(27,23,15,7) fits G323 after making
+D the confined bin and subtracting14 from the other targets. In crossing
+order(C,B,A),w=(0,8,12),T=8,K=4. Least and greatest triples are(0,1,4)
+and(0,4,5);the unit path reaches(0,3,5). Right normalized pairs are
+C{0,1},B{2,4},A{3,5}. Translating by7 yields actual bins
+A{5,10,12},B{3,9,11},C{0,7,8},D{1,2,4},with exactly the stated sums
+and cover. This is a new explanation of an ALREADY positive parent,
+not new parent coverage. The q4 parent does not fit this same matrix.
+Arbitrary P_0 sizes need not have three equal crossing bins;even when
+they do,admission of these precise counts has not been established.
+This limitation is the next strategy test,not permission to add leaves.
+
+Proof filing:proof_dupes --near W323 gives341 entries,no repeated IDs;
+nearest W320(.20),W321(.16),W322(.16) read in full. Those are protected
+three-bin punctured-pool owner/count applications using G319;G323 is a
+four-bin fixed-count construction using MI295 directly. It is not a
+replacement verification of those pending applications. No priority claim.
+Niggle sweep retained the unequal-count ordering failure and tested the
+actual-parent translation/cardinality/sums by hand. Numerical support and
+the uniform hand candidate remain distinct. No further experiment.

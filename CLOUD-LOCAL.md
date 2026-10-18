@@ -1418,3 +1418,14 @@ B231 checks:store poll completed,no new flags;shared main fetched/merged,
 current. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
 checks pass. Hand/source audit only;no experiment,proof-status change or
 TeX/generated edit. Extra-test allowance explicitly allocated,not renewed.
+
+
+| 2026-10-18 19:39 BST | GPT | Intel | B232/MI444 minimal rounding pass;MI445/G323 direct uniform candidate,GC1576 | One carrying read requested;parent count admission next by hand,13min ACTIVE. No enlarged run or parent-status promotion. |
+
+B232 publication checks:source/raw hashes unchanged;scoped ledger and
+synthetic controls,added-line privacy/conflict and whitespace checks pass.
+proof_dupes finds341 entries,no repeats;after filing-note insertion the
+same three nearest entries score W320 .21,W322 .21,W321 .20 (earlier
+scores retained as the earlier filing receipt). No changed theorem from
+that textual similarity check. No new flags at the final poll;main was
+fetched/merged before the block. No TeX/generated files changed.
