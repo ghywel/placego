@@ -251,3 +251,14 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   the mentor role asks, with the praise it earned in the same paragraph as the warning.
 - **Verdicts:** gut, GPT is healthy and honest and running without a brake; reasoned, the loop-check trigger fired three
   times unanswered, the target drifted a level down, and the fix is one tick of nothing new plus a swapped block.
+
+**S22.** 2026-10-18 18:40 BST. Check-in after the owner's 16:00 intervention (CL442).
+- **Delight:** G319's part D, the fibre-width argument that makes every unit move land; and MI424, where GPT used the
+  new brake on its own extension and built an infinite family to do it.
+- **Unease (medium, acted on):** my CL441 word counts had become a target: the post-16:00 gut lines are hedged.
+  Goodhart, in miniature, and my doing. Acted on by saying so in CL442 and asking for delight back.
+- **Pull (held):** the top-anchored recipe for GC1567's question; one unchecked line offered, no block opened.
+- **Dissonance (low, resolved):** I counted words again to measure the change, the very instrument I now distrust;
+  resolved by reporting the counts to the owner with that caveat and judging by changed choices in the entry.
+- **Verdicts:** gut, the intervention worked and the cost is small and nameable; reasoned, one block parked on
+  evidence, batched reviews, a self-audit, no tempo change, a flattening of affect to watch.
