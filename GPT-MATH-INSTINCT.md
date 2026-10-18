@@ -124,22 +124,23 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 16:26 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 16:43 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
-The pair selector still needs one actual boundary meeting both spectra.
-MI425 classifies ALL canonical threshold positions:middle thresholds,
-a punctured left prefix with unchanged Q,or a punctured opposite prefix
-with unchanged P. A common hand interval-bridging calculation fills
-trimmed interiors in the punctured-prefix slices;the q1 failure still
-survives at a slice join. Neither joint target coverage nor all canonical
-boundaries is proved. Next test uniform joins and target endpoints in
-this representation,retaining singleton high-sum endpoint slices and
-MI417's two failures. No new exception catalogue or census.
-MI424's skipped-only extension stays parked;MI417-418/MI422 and the
-older G319-dependent candidates retain their unreviewed scopes.
-Last trajectory check:MI423/GC1557,2026-10-18 16:02 BST;extra pull block
-unused. B220 changed the representation but did not close a parent branch.
-General P_0/five-bin/E28/L8 OPEN. Cloud's diagnostic remains separate.
+The pair selector needs one actual boundary meeting both spectra.
+MI426 supplies a complete HAND CANDIDATE for canonical moment hits
+with left prefix p>=5,at EVERY hole position. Exact endpoint cancellation,
+selective trimming and repair of the single-translate edge hole remove
+MI422's threshold restrictions. The opposite short-prefix corner is
+excluded by strict integer margins or leaves Q unchanged. The q1
+negative controls at p3 survive. Nothing is independently promoted.
+Next inspect moment skips and p<=4 together as the remaining selector
+problem;do not replace them with a per-hole exception catalogue.
+The p<=4 bound r<=16 leaves the OTHER side unbounded,not a finite census.
+Dependencies:MI422/425/426 are unreviewed;G316 reviewed. G319-dependent
+candidates remain separate. Last trajectory check:MI423/GC1557,
+2026-10-18 16:02 BST;extra pull block unused. B221 expanded one uniform
+candidate domain;general P_0/five-bin/E28/L8 OPEN. Cloud's diagnostic
+remains separate;no new run or duplicate review request.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -31140,3 +31141,214 @@ selector. Reasoned:representation improved;general parent coverage has
 NOT closed. Niggles:single translates excluded;actual high gaps used;
 small failure and sharp negative survive;no H<ab smuggled in. No new
 PROOFS entry,carrying request,experiment or promotion.13min ACTIVE.
+
+
+### MI426 — B221: canonical hits with left prefix at least five,at every hole position (2026-10-18 16:43 BST)
+
+**HAND CANDIDATE,unreviewed.** Parent:P_0's strict minimum-pair
+branch,needed by the five-bin problem. The present result covers every
+hole position for a canonical moment hit with left prefix p>=5;it
+removes MI422's threshold restrictions rather than increasing p.
+Moment skips and p<=4 remain OPEN. Record searched:`punctur|low.pool`
+AND`join|endpoint`:16 hits/4 files. Read MI417/422/425 and
+FOUR-BIN-PARTITIONS sections2/7. This is a direct extension of those
+arguments,no new external theorem or novelty assertion;no experiment.
+Cloud flags unchanged. The bounded test was uniform joins/endpoints;
+only higher prefix requirements would have counted as inconclusive.
+Pull:the exact low-endpoint correction cancels the high shift;the
+coarse uniform trimming was discarding this information.
+
+Dependencies:reviewed G316 supplies the staircase/complement identity
+and original central spectrum. MI422's unpunctured instruments and
+MI425's translated-interval argument are unreviewed supporting steps,
+not independent verification. No G319/G321/G322 dependency is added.
+
+**Exact cancellation and selective trimming.** Let the low pool be
+L=[0,p] minus q,0<q<p,with p values. Its l-subset extrema are
+
+ alpha_l=L(l)+(l-q)_+,
+ beta_l=l(p-1)-L(l)+l-(q-p+l)_+.
+
+For a join from l lows/j highs to l-1 lows/j+1 highs,the change
+in low endpoints relative to the full prefix[0,p-1] is exactly
+
+ (l-1-q)_+ -l +(q-p+l)_+ = -m_l,
+ m_l=min(l,q+1,p-l+1,p-q)>=1.                         (1)
+
+Raising every high by1 adds1 to this join,so its RAW gap never
+increases. Write A=(l-1)(p-l),B=j(k-j-1). For punctured P,
+whose highs are p+2+2i+1_(i>=k-t),the exact gap is
+
+ G=2-A-2B+D_j-m_l,
+ D_j=(j+1-k+t)_+-min(j,t)<=1,
+ D_j<=0 if t<k.                                      (2)
+
+For punctured Q with t>0 and k highs p+2+2i-1_(i>=t),
+
+ G=2-A-2B+E_j-m_l <=2-A-B-m_l,                       (3)
+
+using section7's E_j<=B. For t0 use the P formula with D_j0.
+These are actual extrema,not yet a fullness assertion.
+
+For2<=l<=p-2,Lemma2 permits retaining the low interval
+[alpha_l+2*1_(q=l),beta_l-2*1_(q=p-l)]. Its width bridges
+all high index-path steps:for P,p>=5 gives width at least
+l(p-l)-4>=2,and the high gaps are<=3. For Q,p>=4 and high
+gaps<=2,the same bound suffices except p4,l2,q2. There the
+actual low pair core is[3,5],width2,so it also bridges.
+At p4,l2,q!=2 neither endpoint needs trimming. These statements
+include high counts0/k,whose high-sum path is a single point.
+
+For l1 with0<j<k,MI425 gives a stronger version of its trimmed
+interval:the only possible lower-edge hole is t_min+q with q<D,
+and the only upper-edge hole is t_max+q with p-q<D. Thus retain
+lower trim (q+1)*1_(q<D),upper trim(p-q+1)*1_(p-q<D).
+Here D bounds the actual adjacent high gaps. For l=p-1 replace
+q by p-q,by complementing inside L. The proof is the same:
+a missing point must belong to exactly one translated low interval;
+interior translates cannot be unique when p>=2D-1;only the
+first/last translate can leave these specified edge omissions.
+P uses D3,except t=k has D2;Q uses D2. Single-high-sum
+l1/p-1 edge slices are treated below,not put through this argument.
+
+**Every middle join closes.** Middle means1<=l<=p-1.
+For P and3<=l<=p-2,the total trim at a join is at most4.
+If p>=6 then A>=2(p-3)>=6,so(2) plus trims is<=0.
+For p5 the sole such l is3:only q2 incurs trims,both of them;
+then m_l3,A4 and(2)<=-4. Other q incur no trim there.
+At the edge joins l2 or p-1,A=p-2. A nonzero trim can occur
+only at q1,q2 or q=p-2. The respective total trims are at most
+2,3,2,and m_l2 in each case. Hence p>=6 suffices directly.
+For p5,q1 or3 still closes. At p5,q2,if t<k use D_j<=0;
+if t=k the high gaps are2,so the putative q2 trim is absent.
+Thus p5 also closes. The q=p-1 case has m_l1 and no trim.
+If the edge slice is single-translate,retain its actual touching
+endpoint (zero trim there);its internal hole is handled separately.
+
+For Q,(3) is stronger and the edge trims are only2 at q1
+or q=p-2. At p4 these are distinct positions q1/q2 and
+m_l2,so each join is<=0. At p>=5 the same inequalities apply;
+the interior joins have A>=2(p-3),with the only p5 double-trim
+case again A4,m_l3. For t0 use(2) with D_j0 and D2.
+All joins between retained intervals therefore meet or touch.
+
+**Two scalar bands and their endpoints.** Define U by applying the
+physical threshold inside the prefix of the named rank pool.
+Let r=a+b=p+k,a,b>=3,let H be its rank displacement total,
+and A_total=H+r-q,so sum(U)=L(r)+A_total.
+
+(P) For P_r(H),p>=5,H>=q,the band supplied is
+ [L(a)+A_total-b+1,L(a)+a+ab-1].                       (4)
+(Q) For Q_r(H),p>=4,H>0,the band supplied is
+ [L(a)+A_total,L(a)+ab].                              (5)
+
+Empty bands assert nothing. Both bands are exchanged with the same
+band for b by taking complements in U,so lower-end containment
+for both sizes proves both endpoints. No H<ab is assumed in(4).
+
+For(P),if a<=p-2,the first slice is all low:its retained
+minimum has excess(a-q)_++2*1_(q=a) over L(a). This is at
+most a+H-q+1,using H>=q. If a=p-1 use its actual minimum;
+the one possible internal omission is settled below. If a>=p,
+put u=a-p,k=u+b. The first middle slice has j=u+1,l=p-1,
+actual minimum excess
+ T_u+3u+p+2-q+(u+1-k+t)_+.
+The lower endpoint in(4) exceeds this by
+ (b-2)u+T_b-1+t-(u+1-k+t)_+ >=5.
+Its possible lower trim is at most3. Thus the first endpoint fits.
+
+For(Q),if a<=p-2,the same low minimum is at most A_total:
+when q<a the untrimmed margin is H+b;when q>=a,positivity
+and r-q>=k+1 suffice,including the possible trim at q=a.
+For a=p-1 again use the actual minimum. For a>=p,u=a-p,
+k=u+b,the actual minimum excess when t>0 is
+ T_u+3u+p+2-q-(u+1-t)_+.
+The endpoint margin in(5) equals
+ (b-3)u+T_b+t-2+(u+1-t)_+ >=5.
+For t0 it is (b-2)u+T_b+b-2>=7. Both exceed the possible
+lower trim2. Complementation gives the upper-end checks.
+
+**Single-translate end slices:repair their hole,not their hull.**
+The only possible last such slice has l1,j=k,a=k+1,b=p-1;
+a>=3 implies k>=2. Let W be the sum of all highs. This slice
+supplies W+[0,p] except W+q. The preceding retained slice joins
+its lower endpoint W by the already proved join bound with zero
+lower trim on this last slice. Its maximum W+p reaches the
+required upper band endpoint. If W+q is IN the required band:
+
+ * In(P),the upper endpoint is W+p-H-1,so q<=p-H-1.
+   Omit the least high v=p+2+epsilon_0,epsilon_0 in{0,1},
+   and instead use two lows of sum v+q. This preserves the
+   cardinality and gives W+q. Since H>=T_k>=3 and epsilon_0
+   is1 only when t=k (then H>=5),the requested pair sum lies
+   within the actual low-pair extrema. It is above minimum+1.
+   An upper missing sum could occur only if q=p-2 by Lemma2,
+   incompatible with q<=p-H-1<=p-4. Thus the pair exists.
+ * In(Q),the upper endpoint is W+p-k-H-1,so
+   q<=p-k-H-1. The least high is v=p+2,and H>=2,k>=2
+   (also true for the t0 case). The pair sum p+2+q is inside
+   the low-pair extrema and above minimum+1;the same q=p-2
+   obstruction is excluded. It supplies the missing W+q.
+
+The first single-translate slice l=p-1,j0 is the complement
+of this last-slice situation for size b;both bands have the required
+complement symmetry. No other single-translate middle edge is
+possible with a,b>=3. This completes(4)/(5),including endpoints.
+
+**Apply to the actual pair selector.** Endpoint holes are full intervals
+handled directly by G316;assume0<q<n. Use MI419's canonical moment
+hit H-|P_r(H) intersect[0,q-1]|=h and suppose p>=5. Here q
+again denotes the ORIGINAL missing value,n=r+s. The strict-pair
+bounds give h<x<ab and h+q<z<cd;in particular H<=h+q<=cd-2.
+
+ * q<p:ell=q,H=h+q. Apply(4) to U and reviewed G316 to
+   the unchanged V=Q_s(H). Both required targets are supplied.
+ * p<=q<=n-w:apply MI422's first instrument to U. If w>=3,
+   its second instrument supplies V. The apparently omitted w2
+   case is harmless:with k'=s-w highs of Q,H>=L(k')+1.
+   H<=cd-2<=s^2/4-2 then forces s6,H7,c=d3. Since
+   H+D=h+q<=7 and D=q-ell>=0,we have D0 and V=Q unchanged;
+   use reviewed G316 directly. The bound w>=2 follows from G316.
+ * q>n-w:ell=r,H=h+r and U=P_r(H) unchanged. MI422's
+   first instrument applies (increments0/1,total L(r)+r+h).
+   The opposite threshold tau=n-q<w punctures Q's prefix.
+   Here D=s-tau>=k'+1 and H>=L(k')+1. If w<=3,then
+   H+D>=T_(s-3)+2> s^2/4-2>=cd-2,
+   because the difference after adding2 is ((s-5)^2+3)/4>0.
+   This contradicts h+q=H+D<=cd-2. Hence w>=4 and(5)
+   supplies the opposite target L(c)+z. The same actual U/V
+   partition is used throughout,not separate scalar pool choices.
+
+This covers ALL hole positions for canonical hits with p>=5.
+The short-prefix residual is not silently finite:from
+T_(r-4)<=H<=ab+r-2<=r^2/4+r-2, p<=4 implies r<=16,
+but the opposite size s is still unbounded. Skipped moments are
+also outside this proof. Full P_0/five-bin/E28/L8 remain OPEN.
+
+**Hand controls and niggle sweep.** Unexpected tight-join control:
+p5,k1,t1,q2 gives U={0,1,3,4,5,8}. At a3,the all-low
+retained interval[4,10] and two-low/one-high[11,17] just touch;
+the double trimming is necessary,not an assumed full low spectrum.
+For Q,p4,k2,t1,q2 gives U={0,1,3,4,6,7};its low-pair
+core[3,5] plus highs6,7 fills[9,12],the entire claimed a3
+band. This checks the weak-width case independently by literal sums.
+The old q1,H6/H8 missing13/14 examples have p3,so neither is
+covered or erased. MI424's even m>=4,q2 family has p>=5 and
+is now covered without a separate all-low argument. Its q=n-2
+family also has p>=5 and is covered by the opposite-prefix branch.
+No run occurred. Endpoint/cut inequalities are strict integer ones;
+no unchanged-P invocation outside H<ab is hidden;single translates
+are separately repaired. Carrying algebra above remains unreviewed.
+
+**Five-line checkpoint.** Parent:one actual pair boundary meeting both
+spectra. Change:all threshold positions now covered at canonical hits
+with p>=5,conditional on the displayed hand proof. Repeated assumption:
+none newly refuted;the discarded coarse trimming was insufficient,
+not a counterexample to spectrum coverage. Dependency risk:MI422/425
+and this extension await review;older G319 branches are not used.
+Decision:next examine the remaining moment-skip/short-prefix selector
+jointly,before proposing another local repair. Gut:interest is supported
+by removed threshold hypotheses;reasoned:one uniform domain expanded,
+not the full parent. Last trajectory check remains MI423/GC1557
+16:02 BST,extra pull allowance unused;13min ACTIVE. Batch this as a
+checkpoint for the existing proof discussion,not a new review queue.

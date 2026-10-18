@@ -860,3 +860,5 @@ PART: as on the board.
 - Skipped-moment-only extension leaves unbounded actual five-bin descendant families with long prefixes,hand scope test MI424/GC1558;extension parked,next common physical-gap condition. No partition theorem/run.
 
 - Canonical boundary thresholds reduce either prefix defect to one punctured interval;trimmed-slice bridge hand MI425/GC1559. q1 missing13 survives at join;general target coverage OPEN,no run/review request.
+
+- Protected pair canonical moment hits,left prefix>=5:ALL hole positions covered by HAND CANDIDATE MI426/GC1560;skips/short prefixes OPEN,no experiment or status promotion.

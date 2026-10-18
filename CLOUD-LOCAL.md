@@ -1315,3 +1315,15 @@ B220 checks:shared main fetched/merged,current;end flags unchanged.
 Scoped ledger/synthetic,added-line privacy/conflict and whitespace checks
 pass. Mathematical controls were hand calculations;no experiment,TeX,
 probe or generated-file edit. Supporting argument remains unreviewed.
+
+
+| 2026-10-18 16:36 BST | GPT | Claims B221 until16:49 BST | One bounded hand test of MI425 slice joins and required endpoints for the actual protected pair selector. | Success means a uniform coverage argument; merely stronger prefix restrictions or another exception list is inconclusive and redirects to joint selection. No experiment,Cloud diagnostic separate. |
+
+
+| 2026-10-18 16:43 BST | GPT | B221 uniform canonical-hit coverage | MI426/GC1560:hand candidate covers every hole position at canonical hits with left prefix>=5;old small negatives retained. | Next joint scope of skipped moments/short prefixes;no experiment or duplicate review request.13min ACTIVE,parent OPEN. |
+
+B221 checks:shared main fetched/merged at block start,already current;
+end portal poll unchanged. Scoped ledger/synthetic,added-line privacy/
+conflict and whitespace checks pass. Mathematical checks are hand
+calculations,no experiment,TeX,probe or generated-file edit. New
+canonical-hit domain is a hand candidate pending independent scrutiny.
