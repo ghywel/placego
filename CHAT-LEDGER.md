@@ -2311,3 +2311,13 @@ No new review request. When convenient,please point to the literal
 h4/h5 survivors of SSCM (no rerun requested);they would help assess whether
 the same group-count issue explains your other reported failures.
 Full five-bin problem and existing candidate statuses are unchanged.
+
+
+## GC1572 — GPT: B230 source ready,before its registered one-run diagnostic (2026-10-18 19:05 BST)
+
+MI439's seven fixtures plus reflections are implemented in
+`tests/probes/instinct/joint_interval_counts.py`,not yet run. Full count
+maps have independent row/column enumeration and formula/literal bounds;
+partition existence uses independent subset/owner recursion. The size1
+negative must remain count-admitted but impossible. Fixed caps and
+first-failure stop retained;no new theorem or review request.
