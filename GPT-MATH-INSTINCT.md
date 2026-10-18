@@ -124,25 +124,25 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 22:00 BST: research ACTIVE every 13 minutes.**
+**Current state, 2026-10-18 22:10 BST: research ACTIVE every 13 minutes.**
 Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
 protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
-remain unresolved. G323 and G324 are PROVED in scope; CL448's carrying read
-of G324 is adopted at MI457. G320–322 and MI430 remain pending and unused.
-Known integral rank splitting is source-confirmed (MI448). B237/MI453 reduces
-the one-size-two full row to H2: protected one-hole three-bin counts (2,b,c),
-b,c>=3, every proper group lower bound >=L(r)+r. Finite support and the
-failed closest-pair selector remain MI455–456. B239/MI458 uses ALL equal-sum
-pairs: if their number e exceeds min(b,c), a pigeonhole argument completes
-H2. The remaining e<=min(b,c) domain includes an unbounded balanced central
-family; no general H2 or parent coverage is claimed. Next: test whether a
-protected target fibre can consist entirely of sets meeting EVERY legal pair,
-starting with that balanced family, without another local selector catalogue.
-The stronger three-hole localization contemplated in MI456 is NOT a proved
-premise at these sizes; scope correction MI458. No experiment/new review job.
-Latest trajectory check MI448; one convenient-selector failure since that check,
-previous pull-only extra-test allowance remains spent. Older schedule PAUSED;
-no background computation runs.
+remain unresolved. G323/G324 are PROVED; G320–322 and MI430 pending and unused.
+H2 is the remaining protected one-hole3 completion in MI453's one-size-two
+full-row argument. MI458 completes H2 when the number e of legal pair choices
+exceeds s=min(b,c). B240/MI460 gives a COMPLETE UNREVIEWED HAND argument for
+H2's entire central pair-sum slice u=M, including balanced b=c and all holes.
+It uses the proved one-/two-hole scalar lemmas and matching counts. No general
+H2 or five-bin claim, no new experiment or separate review request.
+Next: for arbitrary u and e<=s, can every size-s subset of the protected target
+sum touch all e pairs? If d counts doubled pairs and z unmatched tokens in a
+subset, completion requires d+z>s-e. Keep ALL such subsets available; do not
+turn the central proof into a catalogue of neighbouring preferred selectors.
+Trajectory check MI459 triggered by two choice restrictions failing: closest
+pair and unmatched-token-only subset. The latter's literal negative and its
+actual doubled-pair completion are both retained. Complete the named central
+test, then return to the whole-choice threshold. Earlier pull-only allowance
+remains spent. Older schedule PAUSED; no background computation runs.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -33756,3 +33756,171 @@ coverage/representation change, H2 and parent still OPEN. Latest trajectory
 check remains MI448; one convenient-selector failure since it, no renewed
 pull-only allowance. G320–322/MI430 are unused. Continue the named global
 obstruction on the active schedule; no routine review halt.
+
+### MI459 — Trajectory check before completing the central slice (2026-10-18 22:10 BST; B240)
+
+Parent: full five-bin sufficiency, with count selection and thin-row physical
+realization unresolved. H2 would complete MI453's one-size-two row argument;
+no such general theorem is claimed. This wake fetched current shared main
+(no new commit), read the current question and Cloud's last message, and
+polled the store (no changed incoming records).
+
+The named test from MI458 is the balanced central family, not a newly chosen
+side problem. Record searched: `transversal|pair.count|midpoint` AND
+`H2|protected`:6 hits/2 files, including MI456/458; the broader initial search
+was too noisy (210 hits/59 files) and was narrowed. Read the proved scalar
+Lemmas2/3 in FOUR-BIN-PARTITIONS before using them. Only elementary counting
+and these existing scalar results enter; no new prior-art claim or experiment.
+
+**Trigger and changed decision.** Two restrictions of physical choice have
+now failed: MI456's closest pair, and this block's proposed use of an
+unmatched token in the other bin. The latter fails at s4,q2,u10,target11:
+the unmatched tokens are5 and8; a four-set of sum11 can contain neither
+(the explicit check follows in MI460). Both failures break the assumption
+that one convenient subclass of physical choices covers every target.
+This is the same failure at the level that matters, so the check fires NOW,
+before treating another repair as permission for continued leaf growth.
+
+Actual change since MI448: G324 is independently verified, H2 is isolated,
+and MI458 supplies the e>s counting region. The parent five-bin theorem has
+not acquired a complete new branch. The present central-family argument
+has only one remaining boundary in its uniform scalar proof; its explicit
+partition completes that entire named family, rather than proposing a new
+restricted selector. Complete and record that argument in this block, then
+stop. Do not open an adjacent-family repair block or enlarge a census.
+
+Next continuation is the ALL-choice obstruction at pair-count deficit s-e,
+using the exact occupancy criterion in MI460, or a strategy change if no
+uniform step emerges. That criterion explicitly admits both unmatched-token
+and double-pair choices. G320–322/MI430 stay unused; the new central result
+will remain an unreviewed hand result, batched rather than a new review job.
+No dependent chain is extended. The earlier pull-only allowance remains spent.
+
+Fresh choice: the matching formulation still has a concrete mathematical
+question, but another round of preferred-choice exceptions would not be my
+choice. The small failure is useful only because it changes the admissible
+choices, not because it can be made to sound encouraging. Decision: finish
+the promised central test; keep the next work at the whole-choice level.
+
+### MI460 — H2's entire central pair-sum slice (2026-10-18 22:10 BST; B240, hand result UNREVIEWED)
+
+**Claim within H2.** If u=M, H2 has a partition for every b,c>=3 and
+internal q. This is a complete hand argument for this slice only, not
+independent verification, full H2, or five-bin sufficiency. No experiment.
+
+If b!=c, let s=min(b,c). Then M=b+c+2>=2s+3. The matching of
+sum-M pairs has at least floor((M+1)/2)-1>=s+1 edges, even after
+one deletion. MI458's pigeonhole argument completes the partition.
+Thus it suffices to handle b=c=s, M=2s+2. Write m=s+1,
+T=L(M+1)-q, R=T-M=L(M)-q, and H=L(s+1)+1. The six H2
+bounds reduce exactly to
+
+    H <= v <= R-H,       w=R-v.
+
+Indeed the pair-plus-bin lower bound L(s+3)-M exceeds L(s+1)
+by one. The complementary inequalities give the same lower bound for w.
+Relabel the two size-s bins so v<=R/2; this is a BIN exchange, not a
+reflection of the protected domain.
+
+**First, q>=s.** If q=m, the missing midpoint destroys no distinct
+sum-M pair: e=s+1>s, so MI458 applies. Otherwise choose A={0,M}.
+Its complement is [1,M-1] minus q. Translate by -1: the s-subset
+spectrum is a one-hole spectrum on [0,2s] minus(q-1). Lemma2 has
+no omissions, since both exceptional conditions here require q-1=s,
+which has just been excluded. Its actual minimum, before translation, is
+
+    alpha_end = L(s+1)+(s+1-q)_+ <= L(s+1)+1 = H.
+
+Both v and w are at least H, so conservation puts v between the actual
+minimum and maximum. A size-s set of sum v and its complement finish.
+This covers every q>=s, including q=s at equality.
+
+**Next, q<s and s>=4.** There are exactly s legal sum-M pairs. The
+midpoint m and the partner M-q of the deleted token are unmatched.
+A size-s subset containing m cannot meet all s pairs, so would leave a
+whole legal pair for A. To obtain such a subset, select s-1 tokens in
+[0,M] minus{q,m}, then adjoin m. Its attainable sums lie between
+
+    alpha = L(s)+s+1-q = H-q,
+    beta  = s*M-L(s)-2.
+
+For the minimum the s-1 tokens are D=[0,s-1] minus q. For the maximum,
+the reflected s-1 smallest tokens are [0,s-2], because both reflected
+holes exceed s-2; reflection is used here ONLY for this scalar extremum.
+The subset size is s-1>=3, complement size s+2>=6, so proved Lemma3
+says any omissions are within two of alpha or beta. Moreover
+
+    v-alpha >= q,
+    beta-v >= beta-R/2 = (s*s+2*s-5+q)/2 >= 10.
+
+Consequently q>=3 gives the desired subset immediately. For q=1 or2
+only the possible sums alpha+1 and alpha+2 need attention. Put r=s-1,
+so D=[0,r] minus q. Increasing its sum by1 is possible by replacing r
+with r+1. Increasing by2 is possible by replacing r-1 with r+1 when
+r-1!=q. The inserted value r+1=s is available (the second hole is
+m=r+2). These replacements are distinct-token operations on D.
+Thus both low gaps are filled except r3,q2, namely s4,q2, at v=H=11.
+All other protected targets in this low-q range have a subset containing m,
+and the matching argument supplies a disjoint pair without specifying it.
+
+The sole remaining s4,q2,v11 case has the literal partition
+
+    M10, q2: A={3,7}, B={0,1,4,6}, C={5,8,9,10}.
+
+Sizes are (2,4,4), sums (10,11,32), total53, and every token except2
+is used once. It also covers v32 by swapping B,C. This is why the proof
+must allow a DOUBLE pair inside B: {4,6} is a full sum10 pair, freeing
+another pair even though no unmatched token lies in B.
+
+**Finally, s3 and q<s.** Here M8,H7. For q1, R27 and the endpoint
+pair {0,8} leaves [2,7], whose triple spectrum is the full interval9..18.
+Since v<=R/2, only v7 and8 remain. They have partitions
+
+    q1,v7: A={2,6}, B={0,3,4}, C={5,7,8};
+    q1,v8: A={3,5}, B={0,2,6}, C={4,7,8}.
+
+For q2, R26, the endpoint pair leaves {1,3,4,5,6,7}, whose triple
+spectrum is8..18 by Lemma2 after translation (hole1, subset size3).
+Only v7 remains, and
+
+    q2,v7: A={1,7}, B={0,3,4}, C={5,6,8}.
+
+The C sums are20,19,19 respectively. Sizes, coverage and conservation
+are literal; swapping B,C covers the upper half of each target interval.
+Together these cases complete the stated central slice for all b,c>=3.
+
+**Unexpected check / retained failed restriction.** In the s4,q2,v11
+case a four-set containing m5 would require a triple sum6 from
+{0,1,3,4,6,7,8,9,10}. Without0 the minimum is1+3+4=8;
+with0 there is no pair sum6 (0+6 cannot reuse0,1+5 is missing,
+2+4 is missing,3+3 repeats). A set containing the other unmatched token8
+would require a triple sum3; its smallest possible remaining triple is
+0+1+3=4. Thus “always choose an unmatched token” is actually false,
+not merely unproved by Lemma3. The displayed B instead doubles a pair.
+This is a refutation of a choice restriction, NOT an H2 counterexample.
+
+**Whole-choice criterion for the next block.** In the original sum-u
+matching with e edges, for ANY actual size-s subset B let d be the number
+of edges wholly in B and z the number of unmatched tokens in B. The number
+of edges touched is exactly s-d-z. Hence B leaves a whole pair outside iff
+
+    d+z > s-e.
+
+This includes every physical choice and is equivalent to the missed-pair
+condition; it is not itself a sufficiency theorem for a target sum. At e=s,
+either an unmatched token OR a doubled edge suffices. At e<s the threshold
+is larger, and the central proof does not address it. The unresolved task
+is whether H2 forces some size-s subset of the required sum to cross this
+threshold, or whether its entire target fibre can stay below it.
+
+**Verdicts / niggle sweep.** Scalar minima/maxima checked in the original
+physical pools; two-hole lemma sizes satisfied; s3 handled separately;
+all internal q covered; bin exchange kept distinct from reflection; the
+midpoint-deletion count and all literal partitions checked by hand.
+No three-hole localization, unreviewed count theorem or new numerical run.
+Gut: a satisfying completion of the named central test, with a clear reason
+the tempting narrower rule failed. Reasoned: H2's u=M slice now has a
+complete unreviewed hand proof; general H2 and the five-bin parent are OPEN.
+Latest trajectory check MI459, no renewed pull-only allowance. Stop this
+bounded block; next work is the global occupancy threshold, not adjacent
+families or a new catalogue of selectors. No routine review halt.

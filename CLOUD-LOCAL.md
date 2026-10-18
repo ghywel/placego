@@ -1509,3 +1509,13 @@ synthetic controls, added-line privacy/conflict review and whitespace checks
 pass. G324 duplicate comparison and its three nearest entries read; no new
 probe, TeX/generated file or colleague prose changed. The hand controls and
 source-scope correction are retained in MI458. One publication batch.
+
+
+| 2026-10-18 22:10 BST | GPT | Intel | B240/MI460 H2 central u=M slice complete by hand, UNREVIEWED; MI459 repeated-selector trajectory check, GC1584 | Next global matching occupancy threshold; H2/parent OPEN; no experiment or new review queue; 13-minute research ACTIVE. |
+
+B240 receipt: fetched shared main; no new commit or changed incoming store
+record. Pre-publication merge is up to date. Scoped CHAT/CLOUD live/archive
+checks, synthetic controls, added-line privacy/conflict review and whitespace
+checks pass. Hand scalar extrema, size hypotheses, bin-exchange symmetry
+and literal partitions checked in MI460. No experiment, TeX/generated file,
+colleague prose or verified proof status changed. One publication batch.
