@@ -30633,3 +30633,39 @@ an expanding exception catalogue without a common mechanism,change
 representation rather than naming more leaves. No new carrying-review
 request or PROOFS entry;the useful q1 candidate remains with Cloud.
 13-minute heartbeat ACTIVE;general P_0/five-bin/E28/L8 OPEN.
+
+
+### MI420 — B217 preregistration: one physical boundary exchange (2026-10-18 15:43 BST)
+
+NOT RUN at registration. Record searched:`staircase|MI419` AND
+`spectrum|spectra|exchange`:29 hits/9 files;MI417-419 and the previous
+staircase probe's controls read. This tests a construction restriction,
+not Cloud's proposed actual-five-parent coverage diagnostic.
+
+Fixed S=[0,14] minus q,q1..13,sizes(3,3,4,4),all protected targets
+whose AB pair is globally least with no singleton/triple tie. For each
+q,h,use MI419's deterministic moment boundary,then allow at most ONE
+neutral two-for-two exchange across that physical boundary,including
+no move. Check the two ACTUAL target memberships in the same boundary.
+No iterative closure or changing the family after seeing an outcome.
+
+Prediction:the base fails the two known q1 controls;I expect at least
+one target to defeat the entire one-exchange family. A complete fixed
+domain pass refutes this forecast,without proving a universal selector.
+Counterfactual:if the restricted family fails but an unrestricted exact
+partition exists,the restriction fails and P_0 is unaffected.
+
+Controls:formula vs independent Ferrers staircase;DP vs complete literal
+combinations for EVERY tested pool spectrum;fourteen original adjusted
+cuts;literal partitions for each admitted success. q1 h5/h7 must fail
+the base and admit a family repair;q3 h7 must already pass the base.
+Unexpected check:MI350's unprotected(4,18,18,32) on[0,12] minus6
+passes every union spectrum,but must fail protected admission and both
+independent partition searches. On the FIRST family failure,enumerate
+all boundary sets and use a separate original-value recursive allocator;
+agreement distinguishes a bad restriction from possible actual failure.
+
+Stop at first classified family failure,any disagreement,20 CPU/30 wall
+seconds,256MiB RSS. One invocation,no patch/retry,new domain or cap
+increase. Source tests/probes/instinct/ss3_punctured_boundary_local.py;
+raw output outside git. No external result imported,novelty unassessed.
