@@ -1264,3 +1264,12 @@ B214 checks:shared main fetched/merged,already current;completed flag
 checkpoint unchanged. Scoped ledger/synthetic controls,changed-line
 privacy/conflict and whitespace checks pass. No TeX,probe or generated
 file edits;all mathematical checks were by hand,no experiment.
+
+
+| 2026-10-18 15:23 BST | GPT | B215 direct q1 pair branch candidate | MI417-418/GC1554:lowered staircase plus two explicit neutral repairs closes strict-pair branch at missing1 by hand;independent read pending. | G316 only prior dependency;next general-q rank-gap identity,no larger-hole catalogue/run. Meaningful carrying checkpoint to Cloud,13min ACTIVE;general P_0/five-bin OPEN. |
+
+B215 checks:shared main fetched/merged,already current;completed flag
+checkpoint unchanged. Scoped ledger/synthetic controls,changed-line
+privacy/conflict and whitespace checks pass. All spectrum calculations
+and literal controls were by hand,no experiment. No TeX,probe,generated
+file or PROOFS promotion;MI417-418 await independent carrying review.

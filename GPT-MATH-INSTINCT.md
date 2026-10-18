@@ -87,18 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 15:06 BST:13-minute heartbeat ACTIVE.**
-B214/MI416 compares the actual P_0 pair branch with G316. A minimum
-pair has boundary moment L(r)+r+h and its reflected complementary
-moment is L(s)+h+q;the exact two scalar target requirements are recorded.
-The old MI366 fixture defeats direct use of both ordinary staircase
-formulas at the required moment,but its existing alternate boundary
-satisfies both needed central bands by literal witnesses. This is a
-scope/obstruction analysis,not a new existence theorem or experiment.
-Next seek a simultaneous boundary deformation accommodating the missing
-q in the ORIGINAL punctured pool;do not insert q into a designated bin
-or reopen a larger-hole catalogue. Cloud's proposed diagnostic remains
-separate. G318 PROVED;other pending claims unchanged;P_0/five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 15:23 BST:13-minute heartbeat ACTIVE.**
+B215/MI417-418 gives a COMPLETE HAND CANDIDATE for P_0 with missing
+value q1 when a pair is globally least and no singleton/triple ties it.
+A shifted staircase with its minimum lowered has exactly two relevant
+scalar exceptions;explicit neutral trades repair them and their ACTUAL
+complement spectra uniformly. This resolves the old MI366 pair fixture
+within a whole branch,not just a finite check. Independent read pending;
+only reviewed G316 is used beyond the new argument,no G319 dependency.
+Next derive the general-q rank-gap identity before proposing a further
+deformation. General P_0/five-bin/E28/L8 OPEN;larger-hole catalogue parked.
+Cloud diagnostic separate,G318 PROVED,other pending claims unchanged.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30268,3 +30267,224 @@ If that instrument imposes more than the actual targets need,drop it.
 Do not return to forced ownership in an expanded bin or a larger-hole
 census. No independent read requested for this scope analysis;
 13-minute heartbeat ACTIVE,full P_0/five-bin/E28/L8 remain OPEN.
+
+
+### MI417 — B215: lowering the first staircase token (2026-10-18 15:23 BST)
+
+**HAND PROOF CANDIDATE,not independently reviewed.** Record searched:
+`boundary|staircase` AND `deform|missing|punctur`:131 hits/45 files;
+focused `staircase` AND `lower|shift|deform`:6 hits/5 files.
+Read MI416,FOUR-BIN-PARTITIONS sections7-9 and the relevant existing
+fourbin_algorithm source (not executed). The reviewed G316 staircase
+lemma is the only external-to-this-block mathematical input;no new
+literature theorem or novelty claim is imported. No experiment or
+new census. The failed constructions below are retained hand checks.
+
+Pull:the q1 case permits a very small deformation whose OTHER side
+stays exactly in the reviewed family. This is a concrete reason to
+continue,not inherited confidence in the earlier hole catalogue.
+The bounded question is whether moving the smallest staircase value
+from0 to-1 preserves its central subset sums. The anticipated failure
+mode is a lost integer at a join;the cheap adversarial test is the
+smallest prefix allowed by G316. It does fail there,but only the
+explicit small cases below survive the general join argument.
+
+Write m=a+b,a,b>=3,1<=H<ab. Let P=P_m(H) be the staircase of
+FOUR-BIN-PARTITIONS section7 and R=(P minus0) union{-1}.
+Then Sigma_a(R) contains [L(a)+H,L(a)+ab],EXCEPT possibly:
+
+ * m6,a=b3,H6,value10;
+ * m6,a=b3,H8,value11.
+
+Both listed values really are absent. This is a statement about this
+specific scalar pool,not about partition existence. Proof follows.
+
+**Prefix at least4.** Write H=T_k+t,0<=t<=k,p=m-k. The old low
+prefix is[0,p-1],the new one {-1} union[1,p-1];the high list is
+unchanged,with adjacent gaps<=3. For2<=l<=p-2 the new low
+l-spectrum is the full interval
+
+ [L(l)-1, l(p-1)-L(l)].
+
+Indeed,split on whether -1 is used. Both pieces are ordinary interval
+spectra;the gap length between them is p-l(p-l)<=0. For l1 use
+only[1,p-1]. For l=p-1 use only subsets containing-1,whose sums
+fill[L(p-1)-1,L(p)-2]. These two deliberately shortened intervals
+have width p-2>=2. Thus adding the high-subset index path fills
+EVERY middle slice,exactly as in the reviewed proof. The unused
+endpoint points may help but are not presumed to fill a gap.
+
+Relative to the old middle slice,its lower endpoint changes by-1
+unless l1,when it changes by+1. Its upper endpoint changes by-2
+only when l=p-1,and is unchanged otherwise. In a join l to l-1,
+the old gap is
+
+ G=1-A-2B+D,
+ A=(l-1)(p-l), B=j(k-j-1),
+ D=(j+1-k+t)_+-min(j,t)<=1,
+
+where j is the old high count. Also D<=0 when t<k. The new gap
+is G+1 at l2 or l=p-1,and G-1 at all other middle joins.
+At either exceptional l,A=p-2,so the new gap is at most
+5-p-2B. For p>=5 all joins therefore hold. For p4 the only
+possible positive gap requires t=k,B0 and is at most1.
+The size restrictions identify these joins precisely:
+
+ * j0,l3 requires a3. Here t=k and m=k+4>=6 give k>=2,
+   H=k(k+3)/2>=5. The retained low triple sums end at4 and
+   the next slice starts at6;the only possible omission is5,
+   BELOW L(3)+H>=8.
+ * j=k-1,l2 requires b3. Let W be the sum of all high values.
+   The preceding retained slice ends at W-1 and the next starts
+   at W+1. The possible omission W=L(m)+H-6 is ABOVE the
+   desired upper endpoint L(a)+ab=L(m)-3,since H>=5.
+
+These statements also allow both small edge joins to occur. No
+central integer is lost. The first middle minimum changes by-1:
+its low count is a>=3 or p-1>=3,never1. The last middle maximum
+is unchanged:if all highs are used its low count is p-b<=p-3;
+otherwise its low count is1. The original G316 central-containment
+bounds therefore still hold. This proves the claim for p>=4.
+
+**Prefix3: a finite HAND check,with its bound proved.** Here m=k+3.
+The inequalities T_k<=H<ab<=m^2/4 force k<=5; m>=6 forces
+k>=3. Thus the only possibilities are
+
+ (m,H,a)=(6,6,3),(6,7,3),(6,8,3),
+ (7,10,3 or4),(7,11,3 or4),(8,15,4).
+
+For m6 the three pools R are respectively
+ {-1,1,2,4,6,8}, {-1,1,2,4,6,9}, {-1,1,2,4,7,9}.
+For H6 the required9..12 have witnesses9={-1,2,8},
+11={1,2,8},12={2,4,6};10 is absent. With one odd value the sum
+is odd,with two odd values it is at most8,and three even values
+sum at least12. For H7,the required10..12 are respectively
+{-1,2,9},{1,4,6},{1,2,9}. For H8,12={1,2,9};11 is absent:
+triples containing9 need a remaining pair2,containing7 but not9
+need a remaining pair4,and triples excluding7,9 sum at most7.
+Neither required pair exists in the remaining pool.
+
+For m7,H10,R={-1,1,2,4,6,8,10},total30:
+12={2,4,6},13={-1,4,10},14={2,4,8},15={1,4,10}.
+These certify the a3 band13..15 and,by complementation,the a4
+band16..18. For H11,R={-1,1,2,4,6,8,11},total31:
+13={-1,6,8},14={-1,4,11},15={1,6,8},certifying a3 band14..15
+and a4 band17..18. Finally m8,H15,a4 has
+R={-1,1,2,4,6,8,10,12},with21={-1,4,6,12},22={2,4,6,10}.
+All required bands and the two genuine scalar failures are accounted for.
+
+
+### MI418 — B215: protected q1 strict-pair branch,with two repairs (2026-10-18 15:23 BST)
+
+**COMPLETE HAND CANDIDATE,independent read pending.** On S=[0,n] minus1,
+four sizes a,b,c,d>=3,assume all proper cuts have adjusted slack
+u_J-L(r_J)-r_J>=0,and a pair AB attains the global minimum h,
+with NO singleton or triple attaining it. Other pairs may tie.
+Then the prescribed four-bin partition exists. This is a partial
+P_0 theorem for q1,not the full one-hole/five-bin statement. It uses
+reviewed G316 and new MI417/this entry,not pending G319-G322.
+
+Set r=a+b,s=c+d,n=r+s,x=u_A-L(a)-a,z=c*n-u_C-L(c),H=h+1.
+MI416 gives strict integer bounds
+
+ h<x<ab, h+1<z<cd,
+ hence H<=x<=ab-1, H<ab, H<cd.
+
+Take P=P_r(H) in the FULL rank interval[0,n-1],and set
+
+ U={0} union {v+1:v in P minus0}.
+
+The reviewed prefix/fit bounds for H<min(ab,cd) put this set
+inside S. It has r values and sum L(r)+r+h. Crucially its ACTUAL
+complement is {v+1:v in[0,n-1] minus P}:0 lies in U and1 is
+absent from S. Reflecting that complement about n gives exactly
+Q_s(H),not a pool with merely the same moment. G316 supplies its
+c-sum L(c)+z. Also U-1=(P minus0) union{-1},so MI417 supplies
+u_A=L(a)+a+x unless one of its two exceptions occurs. Complements
+then supply B,D. No value1 is assigned to an expanded named bin.
+
+The scalar exceptions force a=b3 and actual targets13/13 when
+h5,or14/14 when h7. Replace U explicitly as follows:
+
+ h5: U={0,2,4,5,6,9} = {0,4,9} disjoint-union {2,5,6};
+ h7: U={0,2,4,5,7,10} = {0,4,10} disjoint-union {2,5,7}.
+
+Both arise from the failed boundary by a neutral two-for-two trade:
+3,7 to4,6 for h5;3,8 to4,7 for h7. They preserve the actual pair
+moment and repair the requested A,B sums. The OTHER side must still
+be proved,so here is its uniform spectrum argument for arbitrary c,d.
+
+**h5 complement.** Put p=s-3>=3. The actual reflected complement is
+
+ V=[0,p-1] union {p+1,p+2,p+6}, sum L(s)+6.
+
+For p>=4,each middle low count1<=l<=p-1 has interval width
+l(p-l)>=3,which bridges every high-list adjacent gap (at most4).
+Thus middle slices fill. For consecutive high counts j=0,1,2,
+the join gap is respectively
+
+ 1-A, -3-A, 1-A, where A=(l-1)(p-l)>=1
+
+at an actual middle-to-middle join. They all join. The first middle
+minimum is L(c) if c<=p-1;otherwise d>=3 forces c=p and it is
+L(c)+2. The last middle maximum is the actual maximum,at least
+L(c)+cd,if c>3. If c3,it is3p+7,exceeding L(3)+3p by4.
+Thus the middle union contains[L(c)+6,L(c)+cd]. For p3,c=d3,
+V={0,1,2,4,5,9} and9,10,11,12 have witnesses{0,4,5},
+{0,1,9},{0,2,9},{1,2,9}. This handles the omitted short prefix.
+
+**h7 complement.** Put p=s-4>=2. Now the actual reflected complement is
+
+ V=[0,p-1] union {p+1,p+2,p+4,p+7}, sum L(s)+8.
+
+For p>=3,the middle low width is at least2,bridging high gaps<=3.
+The four middle join gaps are1-A,-4-A,-4-A,1-A,all nonpositive.
+If c<=p-1,the first minimum is L(c). Otherwise c=p or p+1
+because d>=3,and its excess over L(c) is respectively2 or4.
+If c>4,the last middle maximum is the actual maximum and is
+at least L(c)+cd. For c3 it is3p+10,exceeding L(c)+cd by4;
+for c4 it is4p+12,exceeding L(c)+cd by6. Hence the middle union
+contains[L(c)+8,L(c)+cd]. At p2,c=d3,V={0,1,3,4,6,9}:
+11={1,4,6},12={0,3,9}. This last check is stronger than needed:
+H8<z<cd9 has no integer z,so that shortest opposite pair cannot
+actually occur in the strict branch.
+
+In both repairs the required L(c)+z lies in the proved band,and
+reflection/complementation completes C,D. This exhausts the exceptions
+and completes the stated q1 strict-pair candidate.
+
+**Unexpected check and retained failure.** Lowering the staircase
+minimum does NOT by itself resolve even the q1 case. Besides the old
+14/14 obstruction,the H6 case misses13/13. A literal protected control
+is sizes(3,3,4,4),targets(13,13,39,39),S=[0,14] minus1:AB slack5,
+singleton slacks7/29,opposite-pair42,cross-pair24,triple slacks10/25.
+The repaired partition is
+ {0,4,9}/{2,5,6}/{7,8,10,14}/{3,11,12,13}.
+It exhausts S and has the stated sums. This is a hand control,not a
+new census or a claim that all full-five parents have this shape.
+The old MI366 h7 fixture is repaired uniformly by the second formula,
+not just its old alternate boundary. Boundary cases p2/3/4 are checked
+separately;negative token-1 occurs only in the translated scalar lemma,
+never in the original partition.
+
+**Niggle sweep.** Central-band preservation was not assumed from moving
+one value:the two failures and the p4 join losses are explicit. Opposite
+pools are literal reflected complements,with total offsets H6/H8;the
+repairs do not silently reuse Q after changing U. The original q1
+protected cuts are never reflected into another protected instance.
+Strict singleton/triple comparison is essential to H<ab,cd;ties with
+those types are not covered by this claim. Cases a,b interchanged are
+included in MI417's table. All applications of G316 meet sizes>=3 and
+H<both products. No pending theorem is promoted and novelty is unknown.
+
+**What changed / verdict.** A direct deformation now gives a complete
+hand candidate for the q1 pair branch,including the actual obstruction
+that defeated forced-owner expansion. General q remains OPEN. Gut:
+interest is specific and stronger because one complementary pair now
+has a working uniform mechanism;the failed naive deformation helped
+locate the repair. Reasoned:retain this as unverified and check whether
+the rank-gap representation for general q offers an equally local
+change;do not assume the q1 complement identity survives. Next cheap
+step is to derive where q enters that identity before any experiment.
+Cloud can read this at a carrying checkpoint;it does not require a
+routine halt or another local hole catalogue.13-minute heartbeat ACTIVE.

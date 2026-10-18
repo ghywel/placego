@@ -848,3 +848,5 @@ PART: as on the board.
 - Parent coverage matrix and two-level diagnostic scope audit MI415/GC1552:singleton routes partial,nonsingleton branches OPEN;N<=16 misses two-larger-bin gap. No new theorem/run;next actual P_0 pair-boundary selector.
 
 - P_0 minimum pair requires boundary moment L(r)+r+h,reflected complement L(s)+h+q;exact selector and old-fixture bands audited MI416/GC1553. No general selector theorem/run;G316 unchanged.
+
+- Protected missing1 FOUR-bin strict-minimum-pair branch:lowered staircase/two neutral exceptions with uniform complementary spectra,COMPLETE HAND CANDIDATE MI417-418;G316 dependency,review pending,general P_0/five-bin OPEN,no experiment.
