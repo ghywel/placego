@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 12:20 BST:13-minute heartbeat ACTIVE.**
-MI391 supplies an individually eligible zero owner. MI393 classifies
-EVERY eligible owner whose minimum high counts exceed supply:only
-(3,3,3;16,19,19;p5,M11) and (4,3,3;29,22,13;p6,M12),up to
-nonroot relabelling. Both have explicit partitions with a different
-zero owner. This is a hand sketch,not an independently verified result.
-The remaining owner-admission obstacle is maximum-count shortage;
-MI389 conditionally completes any fully admitted owner. G319/G320/
-W318 and applications await independent review;full low-shape,
-five-bin/P_0/E28/L8 OPEN. No new experiment.
+**Current state,2026-10-18 12:32 BST:13-minute heartbeat ACTIVE.**
+MI395 completes a composite HAND CANDIDATE for protected low-shape
+three-bin sufficiency:S=[0,M] minus{1,p,p+1},sizes>=3,and all proper
+cuts u_J>=L(s_J)+3s_J. MI391 supplies an eligible owner;MI393/395
+classify both count-capacity failures into four explicitly repaired
+configurations;otherwise MI389 supplies conditional compatibility.
+G319 and these carrying applications await independent verification.
+No global least-singleton assumption or W318 dependence is used.
+Next exact parent scope audit;full five-bin/P_0/E28/L8 remain OPEN.
+No new experiment or novelty claim;Cloud receives a combined review.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27737,3 +27737,241 @@ bins by moving zero off the high-only root,then inspect its three-bin
 cross-budget patterns. No new census or separate component review
 queue;send this as an application note to the existing checkpoint.
 13-minute heartbeat ACTIVE;full low-shape/five-bin/P_0/E28/L8 OPEN.
+
+### MI394 — B202: the remaining maximum-count shortage (2026-10-18 12:32 BST)
+
+Question:can an eligible zero owner fail maximum-count capacity,and
+can every such failure be repaired? Record searched:maximum.count
+AND shortage ->2 hits in this notebook;MI384,MI389,MI391 and MI393
+are the relevant carrying sources. Shared main and Cloud flags are
+unchanged. No new primary-literature theorem is imported;the nearby
+partition-polytope paper remains abstract-read only,novelty unassessed.
+
+Pull:the same cross-product budget may classify this side too.
+Unease:changing zero owner directly might require a needless new
+selector. First test whether protection leaves only explicit exceptions.
+Countercheck:do not assume every eligible owner passes;retain the
+old16/18/18 near-extreme pattern. Unexpected check:use the protected
+PAIR cuts when a count row appears individually feasible. Hand block
+only,no experiment or expanded census. Stop at this exact low shape.
+
+### MI395 — B202: shortage classification and the complete low-shape candidate (2026-10-18 12:32 BST)
+
+**Hand PROOF-SKETCH;independent verification pending.** In the same
+protected low shape and notation as MI393,fix any individually
+eligible zero owner A. A maximum shortage sum max(K_i)<Q occurs
+only in these two configurations,up to exchanging B,C:
+
+```text
+(a,b,c)   (u_A,u_B,u_C)   p   M
+(3,3,3)   (16,18,18)      6   11
+(4,3,3)   (29,13,20)      7   12
+```
+
+Both really fail that rooted bound and both have explicit partitions
+with another owner. Together with MI391,MI393 and MI389,this supplies
+a COMPLETE COMPOSITE HAND CANDIDATE for the protected low shape,
+conditional on G319 and the recorded completion lemmas. There is no
+least-slack assumption. Full five-bin/P_0/E28/L8 remain OPEN.
+
+**1. General maximum-deficit algebra.** If P=0,nonempty K_i are
+singletons {r_i},so no shortage occurs. Otherwise use MI384 section1's
+reduction directly on the ORIGINAL positive pool,not its reflection.
+Write k_i=max K_i,l_i=r_i-k_i,sum k=Q-D,D>=1. For the incrementable
+bins J (l_i>0),the next legal count satisfies
+
+```text
+u_i <= f_(r_i)(k_i+1)-1.
+```
+
+The total or the single high-only outside bin gives
+u_J>=alpha(R)=L(R)+4R-2P,where R=sum_J r_i=P+kappa and
+kappa=Q-sum_(outside J)r_i. Legal capacity and the quadratic minimum
+identity exclude j=|J|<=1,D>=j,and(j,D)=(3,2),exactly as written in
+MI384 section1 and reproduced in MI393 section1. Only(2,1),(3,1)
+remain. No global least-slack comparison enters this reduction.
+
+**2. The two-incrementable-bin case is impossible.** Its upper
+bound is alpha(R)+1. If A belongs to J,protection for original
+size R+1 exceeds alpha(R) by2P+3,already a contradiction.
+Otherwise J={B,C} and A is high-only. Put
+
+```text
+x=k_B, y=k_C, t=l_B-1, w=l_C-1.
+x+y=kappa-1, t+w=P-1,
+x+t=b-1>=2, y+w=c-1>=2.
+```
+
+The exact two-bin version of the deficit identity sharpens the bound:
+
+```text
+0 <= u_B+u_C-alpha(R) <= 1-x*y-t*w.               (1)
+```
+
+If x,y are both positive,xy<=1 forces x=y=1;then t,w>=1,
+contradicting xy+tw<=1. Thus one high count is zero,say x=0.
+Now t=b-1>=2,so(1) forces w=0. Since t+w=P-1,we have b=P.
+B therefore owns the entire low interval and no high values. Its
+scalar bounds coincide at L(b)+2b,strictly below its protected
+lower bound L(b)+3b. This contradiction removes the entire case.
+It also removes the apparent need to transfer zero off a high-only
+root before understanding the count pattern.
+
+**3. Three incrementable bins.** Put x_i=k_i,t_i=l_i-1. The
+remaining deficit D1 gives
+
+```text
+x_A+t_A=a-2, x_B+t_B=b-1, x_C+t_C=c-1,
+P=sum t+2, Q=sum x+1,
+0 <= sum_i(f_(r_i)(k_i+1)-1)-sum(S)
+   =4-Cross(x)-Cross(t).                          (2)
+```
+
+If all x_i>0,Cross(x)<=4 forces x=(1,1,1). Then t_B,t_C>=1
+and Cross(t)<=1 force t=(0,1,1),a=b=c=3,P4,Q4,p6,M11.
+The cross sum is4,so conservation forces equality in all three
+upper bounds,namely targets(16,18,18). Retain this actual exception.
+
+If x_A=0 and x_B,x_C>0,set S0=t_B+t_C,t_A=a-2. The root's
+low-only upper bound and protected lower bound imply
+
+```text
+(a-1)*S0 >= a+2.                                 (3)
+```
+
+For a>=4,S0>=2 and Cross(t)>=(a-2)S0>=4,while Cross(x)>=1,
+contradicting(2). For a3,S0>=3. If x_B*x_C>=2 the contradiction
+already follows;otherwise x_B=x_C=1 forces t_B,t_C>=1 and
+Cross(t)=S0+t_B*t_C>=4,again impossible.
+
+**4. Two or more zero x entries.** If x_A=x_B=0,then
+ t_A=a-2>=1,t_B=b-1>=2. Inequality(2) forces t_C=0,as a positive
+t_C would make Cross(t)>=2+3=5. Thus p=a+b+1. Their next-count
+bounds are
+
+```text
+u_A<=L(a)+p,  u_B<=L(b)+b+p.
+```
+
+The sum minus their protected pair bound is at most
+2p-ab-3a-2b=2-a-ab<0. This is impossible;the A,C case is identical.
+If x_B=x_C=0,then t_B,t_C>=2. Inequality(2) forces
+ t_B=t_C=2,t_A=0,b=c=3,p8. Each next-count bound is14,so their
+pair sum is at most28<33. All possibilities with two zero x entries
+are excluded,including three zeros.
+
+**5. Exactly one nonroot x entry zero.** Exchange B,C so x_B=0
+and write
+
+```text
+v=x_A>=1, w=x_C>=1, T=t_B=b-1>=2,
+y=t_A>=0, z=t_C>=0,
+v+y=a-2, w+z=c-1>=2,
+v*w+T*(y+z)+y*z <=4.                             (4)
+```
+
+If y+z=0,then w>=2. B's next-count bound is
+u_B<=L(b)+2b+3. Protection forces b<=3;hence b3,T2,p6,u_B12.
+Equation(4) permits only(v,w)=(1,2),(1,3),(1,4),(2,2).
+Here a=v+2,and A's next-count bound is the minimum sum of v+1
+high values minus1,namely8(v+1)+L(v+1)-1. Adding12 and subtracting
+the protected bound for original size a+b=v+5 gives v-6<0.
+Every one of these possibilities violates the A,B pair cut.
+
+If y+z>0,(4) forces y+z=1,T<=3. For T3,we must have v=w=1.
+The condition w+z>=2 forces z1,y0. Thus(a,b,c)=(3,4,3),p8;
+the upper bounds u_A<=20,u_B<=18 violate their pair bound42.
+
+For T2,only(v,w)=(1,1),(1,2),(2,1) remain.
+If y1,z0,then w>=2 forces(v,w)=(1,2). Here(a,b,c)=(4,3,3),p7;
+upper bounds u_A<=20,u_B<=13 again violate their pair bound42.
+If y0,z1 and v1,then a=b=3,p7 and u_A<=18,u_B<=13 violate
+their pair bound33,for either w1 or w2.
+The only remaining pattern is
+
+```text
+v2,w1,T2,y0,z1;
+x=(2,0,1), t=(0,2,1), (a,b,c)=(4,3,3), P5,Q4,p7,M12.
+```
+
+Here Cross(x)+Cross(t)=2+2=4. Equality in all upper bounds is
+forced,so the targets are exactly(29,13,20). This is the second
+actual exception,and exhausts(4). There are no unconstrained target
+ranges left behind the count classification.
+
+**6. Verify and repair both actual exceptions.** For p6,M11,
+targets16,18,18 with sizes3^3,root A's maximum high count is1
+(two high values already sum17). Each nonroot's maximum is also1
+(two highs and one low sum at least19). Each count1 is feasible:
+A11+5,B9+4+5,C9+4+5,independently. Thus sum max K=3<Q4.
+A literal joint partition,with zero in B,is
+
+```text
+{3,4,9} / {0,8,10} / {2,5,11}.
+```
+
+The repeated values in the independent feasibility examples are
+intentional:those examples test separate K intervals only. The
+partition just displayed is disjoint and uses the entire pool.
+Singleton protection is12;pair sums34,34,36 all exceed33.
+
+For p7,M12,target29,13,20 with sizes4,3,3,root A can use at
+most2 highs (three highs sum at least30);B can use no high (one
+high and two lows sum at least14);C can use at most1 high (two
+highs and a low sum at least21). These maxima are individually
+feasible by11+12+6,2+5+6,and9+5+6,respectively. Their sum3<Q4.
+A literal joint partition is
+
+```text
+{4,6,9,10} / {0,2,11} / {3,5,12}.
+```
+
+It has the original sizes and sums and exhausts S exactly. Its
+singleton lower bounds are18,12,12. Pair sums42,49,33 meet the
+corresponding bounds42,42,33;TWO pair cuts are tight. This is the
+unexpected sharp control:protection does not exclude all bad roots,
+but the bad roots need not obstruct a partition.
+
+**7. Complete assembly for this low shape.** The candidate statement
+is:for S=[0,M] minus{1,p,p+1},2<=p<=M-2,a,b,c>=3 summing to M-2,
+and integer targets with total sum(S),the six proper protected cuts
+u_J>=L(s_J)+3s_J suffice for a prescribed-size,prescribed-sum partition.
+
+MI391 supplies an owner with every K_i nonempty. Choose any such
+owner. If its minimum-count bound fails,MI393 gives one of two
+explicitly partitioned configurations. If its maximum-count bound
+fails,the present proof gives one of two explicitly partitioned
+configurations. Otherwise the nonempty integer intervals have
+sum min K<=Q<=sum max K,so choose k_i in them summing Q;their
+low counts then sum P. MI389 completes these admitted counts,
+possibly changing the owner/counts,in its exceptional cases.
+
+This final step is conditional on G319 and MI383's generic count-row
+completion,with MI378/MI295 supplying the regular rows. MI389 was
+reread before this assembly. MI391 and both count classifications
+are additional unreviewed carrying hand lemmas. No G320 least-slack
+assumption or W318 deletion-spectrum theorem is needed. The four
+explicit exceptional partitions need none of those compatibility
+lemmas. This is a complete proof candidate with named provisional
+dependencies,not a claim of independent verification or novelty.
+
+Niggle sweep:the two-bin reduction uses the ONE outside high-only
+bin,not an invalid union of independent maxima;its sharpened xy+tw
+bound forces entire low ownership. Three-bin patterns exhaust all
+zero supports of x,including root plus nonroot zeros. In(4),the
+unbounded T case y+z0 is bounded by protection before enumerating
+v,w. Every rejection uses original cardinalities in its pair bound.
+The exceptional target values follow from total conservation only
+after zero excess is established. All four failures across MI393/395
+are repaired by full disjoint partitions,not separate subsets.
+P0 is explicit. No experiment,new census or status upgrade.
+
+Gut verdict:the fresh pull is the shorter proof mechanism:instead
+of engineering a zero transfer for every shortage,we can exhaust
+all shortages and repair four fixed configurations. Reasoned verdict:
+protected low-shape sufficiency now has a complete composite hand
+candidate. This is an appropriate combined review milestone,not a
+reason to wait before independent work. Next map precisely what this
+settles in the parent one-hole/five-bin reduction and what remains;
+do not silently promote this special shape to arbitrary holes.
+13-minute heartbeat ACTIVE;full five-bin/P_0/E28/L8 OPEN.
