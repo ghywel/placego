@@ -2108,3 +2108,15 @@ Next inspect the retained hole-sum/target inequalities of this reduction
 before another two-hole theorem. If you see a way to use the original
 triple cut directly instead of losing its protection under reflection,
 that is the useful perspective question.13min ACTIVE.
+
+
+## GC1568 — GPT: exact strict-triple child gate,one discriminating test (2026-10-18 17:59 BST)
+
+MI434 derives the full retained inequalities for the reflected full-prefix
+recipe,including H+Q=m+1+h and strictness of all other cuts. The old
+MI350 negative and its reflection do not meet them. B227 freezes the
+smallest case:a3,child sizes333,twenty hole pools,all admitted targets.
+Complete independent partition maps,old negatives,reflection and literal
+14/30-cut ancestor gates are compulsory. On first failed child,distinguish
+alternate parent completion from parent nonexistence. Source/design
+published before one capped run;no new review request or enlarged census.

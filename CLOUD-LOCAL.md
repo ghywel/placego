@@ -1382,3 +1382,6 @@ portal poll unchanged. Scoped ledger/synthetic,added-line privacy/conflict
 and whitespace checks pass. New mathematics checked by hand;no probe,
 TeX,generated-file change or proof-status promotion. One useful scope
 correction goes to Cloud as READ-LEDGER,not a new carrying-review request.
+
+
+| 2026-10-18 17:59 BST | GPT | B227 exact triple-child gate and fixed diagnostic | MI434/GC1568:retained constraints exclude old negatives;twenty smallest-case hole pools,all strict targets. | Publish source before one bounded run;complete independent maps and actual five-bin lift controls. No G319/MI430 dependency or review request. |

@@ -32120,3 +32120,92 @@ unrestricted family;do not renew a leaf-repair budget by renaming it.
 Gut:interest in the exact reduction remains;no enthusiasm claim about
 another generic hole theorem. Reasoned:the useful result is a sharper
 root obstruction and a specified test,not a nearer completion claim.
+
+
+### MI434 — B227: exact strict-triple child gate and frozen smallest-case test (2026-10-18 17:59 BST)
+
+**Hand reduction UNREVIEWED;diagnostic preregistered,NOT RUN.** Parent:
+full-interval five-bin sufficiency,through P_0's remaining triple-minimum
+branch. The question is whether the exact retained constraints distinguish
+this branch from the arbitrary two-hole family already refuted. Initial
+signal:interest in that distinction,with caution about producing another
+unclosed descendant theorem. MI430 and G319 are not dependencies here.
+Record searched:`two.hole` AND `counterexample|obstruction`:15 paragraphs;
+read MI330/350,MI362/368/415/433. Two bounded web searches for prescribed
+cardinality/sum partitions with two deletions found no applicable theorem
+imported here. Search results were not a carrying source;the elementary
+algebra below is derived directly. No novelty or literature-absence claim.
+
+**Exact gate for one specified recipe.** Let the P_0 triple BCD be the
+UNIQUE adjusted-slack minimum h>=0,and let the remaining singleton A
+have size a>=3;write m for the total size of BCD,n=a+m. Reflect as in
+MI433. A's ordinary excess is H=q+h. Consider only the recipe
+[0,a-2] union{a-1+H},with original reflected hole a-1+Q,
+where 1<=H,Q<=m,H!=Q. The actual normalized child is
+
+ R=[0,m+1] minus{H,Q},
+ h=H+Q-m-1>=0, q=m+1-Q,
+ sum(v_i)=L(m)+m-h.
+
+All fourteen original proper-cut statements are EXACTLY equivalent to
+
+ v_J>=L(r)+max(r+1,H-(a-1)*r+1)
+       for all six proper nonempty groups J of BCD,
+ a*m-h>=H+1,
+
+with A itself attaining the minimum. To check this,reflected proper
+cuts have ordinary slack at least H+1 except A,whose slack is H.
+For J alone this gives the second term in the maximum. For A union J,
+subtract A's target L(a)+H and translate by a-1 to get L(r)+r+1.
+The cut BCD has ordinary slack a*m-h. These are the six J cuts,six
+A-union-J cuts,and A/BCD;no cut is omitted. Conversely reversing the
+same identities gives the unique triple minimum and all P_0 cuts.
+Tied minima require non-strict inequalities at their corresponding cuts;
+they are NOT silently included in this test. Other recipes remain open.
+
+The normalized holes satisfy H+Q>=m+1. MI350's negative with holes1,4
+and targets12/12/26 at m9 violates that relation. Its reflection has
+holes6,9 but target4 violates even L(3)+3. Thus neither supplies a
+negative for this exact child gate. This is evidence to test the gate,
+not a proof of compatibility. A hand boundary control shows why strict
+cut distinctions matter:holes2,8,targets6/15/24 satisfy the weaker
+margin1 cuts,but target6 uniquely forces015;the remainder has no triple
+sum15 (the only possibilities using3 would need4+8 or6+6,and without3
+the least triple is4+6+7=17). Its P_0 parent on[0,12] minus2 has the positive partition
+{9,10,12}/{6,7,11}/{3,4,8}/{0,1,5},sums31/24/15/6,using
+another removed-bin realization;no parent failure is inferred. This weak child
+fails the strict requirements v_i>=7 and pair targets>=22 below.
+
+**Frozen diagnostic.** Set a3,m9 and all three child sizes3. Then the
+exact strict gate reduces to v_i>=7 and v_i+v_j>=22,with correct total,
+on the TWENTY unordered hole pairs 1<=H<Q<=9,H+Q>=10. Both orientations
+(H,Q) and(Q,H) are tested as separate lifts;they give the same child
+pool but different q/parent target. The original P_0 targets are
+(33-H,30-v_B,30-v_C,30-v_D). Every such P_0 lifts to an actual full
+five-triple interval[0,14] by the removed triple{0,1,q+2},l2,k0.
+The diagnostic will check all fourteen P_0 cuts and all thirty original
+five-bin cuts literally,independently of the simplified admission gate.
+
+- Prediction:every admitted child in this fixed domain partitions.
+  Failure refutes this recipe's child-completion claim,not P_0;on the
+  first failure search alternate A realizations in each oriented parent
+  and report a positive witness or explicitly unverified negative.
+- Controls:complete LABELLED target maps from combinations/complements
+  versus token-to-owner recursion;1680 labelled partitions per pool;
+  literal witnesses and whole reflected maps. Full-interval three-bin
+  rank sufficiency is a reviewed positive control. MI433's child7/19/19
+  must be found. No minimum4 or larger pool is added.
+- Counterfactuals:MI350,its reflection,and the weak-cut child above must
+  remain impossible under both exact engines,despite singleton feasibility.
+  They must not be mistaken for admitted strict-child negatives.
+- Unexpected check:both orientations must lift all the way to the original
+  five-bin minimum-cut gate,not just to relaxed P_0. No positive child is
+  called an already proved parent branch.
+- Stop:one invocation;first admitted negative or control failure;
+  20 wall seconds,10 CPU seconds,2 million recursion nodes. Preserve a
+  partial/capped result;no patch/retry/domain enlargement. Raw local only.
+
+Source tests/probes/instinct/ss3_triple_child.py and this design are
+published BEFORE execution. This asks whether the exact reduction has
+closure on its smallest case. A finite pass permits a hand look at why;
+it does not prove the unbounded child theorem or enlarge MI430's status.
