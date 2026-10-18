@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 17:17 BST:13-minute heartbeat ACTIVE.**
+**Current state,2026-10-18 17:31 BST:13-minute heartbeat ACTIVE.**
 Parent:full-interval five-bin sufficiency;P_0 is one required branch.
 MI430 gives uniform actual-complement proofs for the two q7/q10
 exceptions left by MI429. With the two q1 repairs and the finite
@@ -133,8 +133,11 @@ CANDIDATE for P_0 when the global minimum adjusted cut slack occurs
 on pairs and on no singleton/triple. Independent review is pending;
 this is NOT a PROVED theorem or the full P_0/five-bin/E28/L8 result.
 The exact statement and acyclic dependency table are in MI430.
-Next consolidate/check the carrying proof rather than add a new
-conditional descendant. Singleton/triple branches remain separate;
+MI432 adds a bounded supporting audit:9683 asserted bands pass,with
+1427 complete pool spectra independently checked. No infinite proof
+status changes. Next make the carrying hand proof easier to inspect
+and reassess the remaining parent gap;do not repeat/enlarge this audit.
+Singleton/triple branches remain separate;
 G319-dependent claims retain their own pending review.
 Last trajectory check:MI430/B224,2026-10-18 17:15 BST;extra pull
 allowance unused. It selected these two repairs because they exhaust
@@ -31934,3 +31937,59 @@ Source:tests/probes/instinct/ss3_scalar_support_audit.py. Publish design
 and source before execution;raw summary outside git. A pass supports
 but cannot prove the unbounded hand arguments or count as Cloud's read.
 The review request at4190aa69 stays the single carrying queue.
+
+
+### MI432 — B225 outcome: all four supporting instruments pass the fixed audit (2026-10-18 17:31 BST)
+
+**COMPUTED,one worker;not independent proof verification.** Frozen source
+and design were pushed at694a282b before one invocation. The fixed
+m6..12 domain completed with no mismatch,cap,retry or changed source:
+
+| Instrument | Nonempty asserted bands checked |
+|---|---:|
+| MI422 unpunctured left | 1375 |
+| MI422 raised Q suffix | 3103 |
+| MI426 punctured P | 2736 |
+| MI426 punctured Q | 2469 |
+| Total | 9683 |
+
+All131925 requested integer values were present. Complete spectra for
+1427 distinct pools,at EVERY cardinality,were obtained by literal mask
+enumeration (3122368 subsets) and compared with a separate bitset DP:
+16430 full-spectrum comparisons,all exact. Complementation at every
+cardinality passed. Both q1 missing13/14 negatives and MI425's p4
+span-sharpness miss5 survived. Pool size/distinctness/moment checks pass.
+The prediction that all asserted bands hold survives this entire
+bounded domain;it is not extrapolated to larger m.
+
+Reported wall time0.697496931 seconds on the GPT Intel worker;no speed
+comparison. Source SHA256:
+5e4527871709c92cc67e85459987ed6ce03e02e989870c1c3a561abfec15f528
+Raw complete-spectrum JSONL SHA256:
+4faf53c36712ae26a85713556765b843dc9c0e05405289a0145cd69eab6caf26
+Raw spectra/summary remain outside git;the frozen source regenerates
+this fixed certificate (elapsed time varies). No new parent-domain
+census or repair was attempted.
+
+**What this changes.** The earliest unreviewed scalar support now has
+direct literal controls across all four asserted configurations at
+these sizes,including the small admitted prefixes. This increases
+support for MI430 but does not expand its claimed scope or promote
+it. The hand audit additionally re-derived both MI422 endpoint margins
+and the Q edge-join condition,with no contradiction found. It was a
+self-check,not a second reader's carrying review.
+
+**Five-line checkpoint/niggles.** Parent:complete strict-pair candidate,
+full P_0/five-bin still OPEN. Change:bounded evidence for earliest
+support,not additional parent coverage. Repeated assumption:no new
+failure;known short-prefix/weak-span failures retained. Dependency risk:
+unbounded MI422/425/426/427 and the scope reduction still need the
+independent read requested at4190aa69. Decision:no repeat or wider
+support audit;make the carrying hand proof easier to inspect and
+reassess the remaining parent gap before another dependent theorem.
+Gut:steady interest,but this was verification rather than a fresh
+breakthrough. Reasoned:the recorded finite support is now sufficient
+for its purpose;further reassuring counts would not close the hand
+quantifiers. Last trajectory check MI430,17:15 BST;extra pull allowance
+unused. Existing review packet gets this result as an addendum,not a
+new review job.13min ACTIVE.

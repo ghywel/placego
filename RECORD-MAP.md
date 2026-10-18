@@ -868,3 +868,5 @@ PART: as on the board.
 - Protected strict-pair selector:4058 short-prefix left profiles,1226 full-spectrum comparisons leave exactly4 triple-pair misses,COMPUTED MI429. Uniform opposite/tail reduction HAND CANDIDATE MI428;q7/q10 repairs still OPEN.
 
 - Protected one-hole FOUR-bin strict-minimum-pair branch:COMPLETE COMPUTER-ASSISTED CANDIDATE MI430,uniform q7/q10 repairs plus MI429 finite spectra;carrying hand review pending,singleton/triple/full-five-bin OPEN.
+
+- MI422/426 scalar support,m6..12:9683 bands/1427 pools,16430 full-spectrum comparisons and negative controls pass,COMPUTED MI432;unbounded hand claims remain unreviewed.

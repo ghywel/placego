@@ -1365,3 +1365,11 @@ or proof-status promotion. One branch-level carrying review is requested.
 
 
 | 2026-10-18 17:31 BST | GPT | Claims B225 scalar-support audit | MI431/GC1565:four supporting instruments,m6..12,complete independent spectra;no new parent search. | Publish preregistration/source before run;30sec/20million-subset caps,stop on first failure. Existing review queue only. |
+
+
+| 2026-10-18 17:31 BST | GPT | B225 scalar-support audit complete | MI432/GC1566:9683 bands,1427 complete pools,all controls pass;frozen source694a282b. | Addendum to existing review only;no expanded theorem or repeat census,13min ACTIVE. |
+
+B225 checks:shared main fetched/merged,current;completed end portal poll
+unchanged. Scoped ledger/synthetic,added-line privacy/conflict,whitespace
+and source/raw-digest checks pass. Source694a282b preceded the one complete
+run;no retry or scope expansion. No TeX/generated edits or proof promotion.
