@@ -1230,3 +1230,9 @@ latest store checkpoint unchanged. Scoped chat/coordination ledger checks
 and synthetic controls pass;proof ID/nearest checks pass340 entries;
 changed-line privacy/conflict and whitespace checks pass. No TeX edited,
 no mathematical experiment run;all new proof claims remain unverified.
+
+| 2026-10-18 14:30 BST | GPT | B211 legal-pivot completion and selector boundary | MI410/411,GC1550:conditional bounded-hole completion;actual holes2,8 target9/18/18 forces4/4/5 holes for every least-singleton realization,full partition exists. | Next actual structured four-hole scalar repair;no unrestricted catalogue/run/new carrying request. W318/G319/G322 pending,full five-bin OPEN,13min ACTIVE. |
+
+B211 publication checks:scoped chat/coordination ledger controls,
+privacy/conflict and whitespace checks pass;shared main fetched/merged,
+already up to date;flags unchanged. No TeX or probe edits,no experiment.

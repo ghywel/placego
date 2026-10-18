@@ -838,3 +838,5 @@ PART: as on the board.
 - Protected holes1,q:every scalar-eligible zero owner meets both aggregate high-count bounds,hand SKETCH MI407;unprotected failures classified by budget2. Owner existence/joint compatibility/five-bin OPEN,no run.
 
 - Protected holes1,q,three sizes>=3,proper cuts margin2:COMPLETE COMPOSITE HAND CANDIDATE G322/MI407-409;owner/count/exception repairs,dependent G319/MI383. Review pending,arbitrary first hole/five-bin OPEN,no run.
+
+- Protected two-hole3/global-least singleton with <=3-hole realization completes,conditional MI410/W318;MI411 actual five-bin descendant forces4/4/5 holes for every such realization. Selector REFUTED,existence OPEN,no run.

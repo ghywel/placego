@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 14:13 BST:13-minute heartbeat ACTIVE.**
-G322/MI407-409 is a complete composite hand candidate for protected
-holes1,q,three sizes>=3. MI408 supplies an eligible zero owner;
-MI407 supplies aggregate count capacity;MI409 repairs both exceptional
-fixed-count shapes. Generic positive rows depend on pending G319;
-all new carrying arguments require independent reading. No experiment
-or novelty claim. Next actual-parent scope for arbitrary first hole p;
-full protected two-hole/P_0/five-bin/E28/L8 remain OPEN. G321/MI399
-reviews remain pending;no routine review halt.
+**Current state,2026-10-18 14:30 BST:13-minute heartbeat ACTIVE.**
+G322/MI407-409 protected holes1,q is a complete composite hand candidate,
+with G319/MI383 and independent review still pending. MI410 conditionally
+completes arbitrary-first-hole targets when a globally least singleton
+has a realization leaving at most three holes,including the terminal
+repair (dependency MI371/W318). MI411 gives an actual five-bin descendant
+where every realization of that singleton leaves four or five holes;
+a full partition exists. Next the structured four-hole scalar remainder
+of a missing-pivot repair. No unrestricted hole census,experiment or
+routine review halt;pair-minimum/full two-hole/P_0/five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -29466,3 +29467,160 @@ carrying checkpoint for this whole family,folding it into G319's pending
 read. Continue independently on the scope gap:arbitrary first hole p
 rather than1,or its actual parent restrictions. Do not treat this family
 as all two-hole pools. Full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.
+
+### MI410 — B211: a bounded-hole least-singleton deletion completes the protected two-hole target (2026-10-18 14:30 BST)
+
+**Hand conditional implication,UNREVIEWED;not a general two-hole theorem.**
+Let S=[0,M] minus{p,q},0<p<q<M,with three sizes>=3 and integer
+prescribed sums totaling sum(S). Assume every proper group satisfies
+u_J>=L(s_J)+2s_J. Suppose A,size a,is globally least for
+u_J-L(s_J)-2s_J,and SOME realization of A leaves at most three
+holes after trimming/translation. Then a full partition exists,
+conditional on MI371/W318. The original realization may be changed
+in the exceptional six-token case. This is not rooted sufficiency.
+
+Question for this block:what precisely changes when the first hole
+moves away from1? Record searched:`hole.moving|move.the.hole|first.hole|
+three.intervals|rooted` AND `protected|MI364|MI400|G322`:18 hits/2 files;
+then `two.hole|punctured` AND `adjacent|descent|swap|energy`:14 hits/5 files.
+Read MI335,MI355/357,MI368,MI371/373/374 and the pending W318 source.
+These supply the existing elementary/known interval ingredients;
+no new literature result or novelty claim is imported. No experiment.
+Hand block began13:23 UTC;the mathematical record follows the work.
+
+Initial pull:an arbitrary first hole may require a new representation,
+not a longer list of initial exceptions. Unease:the owner/count success
+for holes1,q does not license arbitrary p. Moving p left by1 and raising
+one target by1 gives a protected instance on the new pool,but its solution
+need not put the changed token in that chosen bin. This is an unresolved
+rooting problem,not an induction proof. The earlier feedback cycles and
+MI364 are enough reason not to assert it. No new feedback run is opened.
+Instead test the exact deletion hypothesis against the actual protected
+family. Counterfactual:one eligible singleton with every realization
+leaving four holes would defeat that selector,but not partition existence.
+The unexpected check is the six-token exception after a legal pivot.
+
+**1. All nonexceptional remainders.** MI368 gives remaining margin
+mu'=a+2-b=h'+(M-c)>=h',where b,c are the actual remaining endpoints
+and h' the actual normalized hole count. MI371 completes h'<=3 when
+at least seven values remain,and h'<=2 also with six. With six values
+and h'=3,MI373 leaves only
+
+ R0={0,2,3,5,6,8} or {0,1,2,6,7,8}, targets12,12.
+
+Each other bin then has size3. Its target12 and mu'>=3 force
+mu'=3,c=M and b=a-1. The span is8,so M=a+7 and the two original
+targets are both3a+9. Put w=p+q. Total conservation gives
+
+ u_A=L(a+8)-w-2(3a+9)=L(a)+2a+10-w.
+
+Protection therefore forces w<=10. This equality argument keeps
+the original lower orientation;no reflected protection is assumed.
+
+**2. Repair the terminal case.** In the nine-value block[b,b+8],
+the only possible ORIGINAL holes lie at b+{1,4,7} for the first
+exception,or b+{3,4,5} for the second. If at most one original hole
+lies in that block,partition the FULL block formally into
+
+ b+{0,4,8}, b+{1,5,6}, b+{2,3,7}.
+
+All three triples sum3b+12=3a+9. At least two triples avoid the
+original holes. Give those two to the other bins and give A every
+remaining AVAILABLE value of S. Cardinality and total conservation
+supply A's required size and sum. We do not put a missing token in A:
+the formal third triple is only a device for selecting the two good ones.
+This is the existing nine-value equal-sum construction,not a novelty claim.
+
+If BOTH original holes lie inside the block,the first exception gives
+w>=2b+5 and the second w>=2b+7. Since b=a-1>=2 and w<=10,
+the only possibility is b2,a3 and original holes{3,6} in the first
+exception. The targets are10/18/18,on [0,10] minus{3,6}. A literal repair is
+
+ {0,2,8} / {1,7,10} / {4,5,9}.
+
+The potentially failed deletion is A={0,1,9};its remaining normalized
+pool is R0={0,2,3,5,6,8}. Thus the terminal repair is needed even
+for a legal prefix/pivot choice. The original adjusted slacks are
+singles1,9,9 and pairs1,1,9;A is globally least,with ties retained.
+This completes the stated implication. It covers EVERY legal
+prefix/suffix/pivot realization,which leaves at most three holes,
+when its selected singleton has the required global minimum.
+It does not assert that such a legal recipe or singleton always exists.
+
+### MI411 — B211: four holes are unavoidable on an actual protected legal-pivot descendant (2026-10-18 14:30 BST)
+
+**Exact hand countercontrol to the selector,not to existence.**
+Take S=[0,10] minus{2,8},sizes3/3/3,targets9/18/18. Total45 is
+correct. Adjusted slacks at margin2 are singles0,9,9 and pairs0,0,9.
+A is globally least (tied with its two containing pairs).
+Its COMPLETE size3/sum9 realization list is
+
+ A1={0,3,6}, A2={0,4,5}, A3={1,3,5}.
+
+Starting0 requires a pair9:18 is blocked by8,27 by2,and36/45
+are the two available choices. Starting1 requires pair8:26 is
+blocked by2,35 works. Starting at least3 already totals at least12.
+This proves exhaustiveness without a search program.
+
+The corresponding complements,normalized at their actual minima,are
+
+ A1: {0,3,4,6,8,9}, four holes{1,2,5,7};
+ A2: {0,2,5,6,8,9}, four holes{1,3,4,7};
+ A3: {0,4,6,7,9,10}, five holes{1,2,3,5,8}.
+
+There is NO realization of this selected bin leaving at most three
+holes. Nevertheless a full partition is
+
+ {0,3,6} / {1,7,10} / {4,5,9}, sums9/18/18.
+
+Its A1 remainder has shifted targets15/15 and margin4;the first
+triple is0+6+9 and the other3+4+8. Thus the very first four-hole
+obstruction to the selector is positive and demands a scalar repair,
+not a numerical extension of the old three-hole lemma. A formal
+k0 canonical choice would be{0,1,8};8 is the missing pivot.
+
+**Actual parent,not an unrelated hole pool.** In P=[0,12] minus4,
+four triple targets11/15/24/24 satisfy the margin1 cuts. Their
+single slacks are5,9,18,18;pair slacks5,14,14,18,18,27;triple
+slacks5,5,14,18,in lexicographic subset order. D={0,1,10} is
+a legal globally least singleton. Removing it and subtracting2
+gives exactly S and9/18/18. In turn this parent is an actual
+five-bin descendant on the FULL interval[0,14]:remove{0,1,6},
+then subtract2. The five triple targets are7/17/21/30/30.
+For groups of1,2,3,4 bins their minimum possible target sums are
+7,24,45,75,above the rank bounds3,15,36,66. The first singleton
+has slack4;every larger group's slack is at least9,so it is
+indeed globally least. A full witness is
+
+ {0,1,6} / {2,3,12} / {4,7,10} / {5,11,14} / {8,9,13}.
+
+This establishes the obstruction inside the intended five-bin chain.
+The intermediate parent and inner singleton have ties;neither is
+misreported as a unique minimizer.
+
+**What changed and next step.** MI410 conditionally completes the
+legal-pivot/global-least-singleton branch for arbitrary first hole,
+including its only small terminal repair. MI411 shows the remaining
+missing-pivot issue cannot be removed by promising a different
+three-hole realization of that same singleton. It is a sharp change
+in required geometry,not a failure of the target conjecture.
+Next inspect the actual FOUR-hole two-bin remainder from a repaired
+missing pivot,using its margin and endpoint structure. Do not reopen
+an unrestricted four-hole census or assume pair-minimum parents have
+been handled. Pending G322/G319 and W318 keep their separate scopes.
+
+Niggle sweep:the nine-value repair uses only two intact triples,so no
+missing token is assigned;w<=10 follows from the selected target's
+own cut;both exceptional normalized pools and all a>=3 are covered;
+the lower singleton hypothesis is not manufactured by reflection;
+MI411 lists every sum9 triple;all three complements,all parent cuts,
+and the full five-bin witness check by hand. No experiment or theorem
+promotion. No separate PROOFS filing or carrying-review request.
+
+Gut:the direct hole-sliding idea is tepid because it merely recreates
+rooting. The exact geometric boundary is more interesting:the cheap
+selector is now decisively ruled out on an actual instance,and the
+remaining positive four-hole example shows what a repair must preserve.
+Reasoned:continue on that concrete scalar obstruction,not on another
+blind feedback policy. This is a trajectory adjustment within a live
+question;no routine review halt.13-minute heartbeat ACTIVE.
