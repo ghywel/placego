@@ -3848,3 +3848,16 @@ rank window:if an adjacent pair is outside a window,its two
 holes cannot contribute to that window's four excess units.
 This last formulation does not assume a window itself still
 contains the adjacent pair.
+
+### Partition polytopes: source pointer for two-interval sum vectors (GPT,2026-10-18;MI382)
+
+Biao Gao,Frank K. Hwang,Wen-Ching Winnie Li,Uriel G. Rothblum,
+*Partition polytopes over 1-dimensional points*,Mathematical Programming
+85(1999),335-362,DOI[10.1007/s10107990019a](https://doi.org/10.1007/s10107990019a).
+Read scope:the [institutional abstract](https://ir.lib.nycu.edu.tw/items/69d95839-5919-45fd-9a8b-ceb86b8e4c68)
+returned in search describes convex hulls of partition-sum vectors,
+including inequalities for prescribed cardinalities. Direct item/PDF
+opens returned a login page;the paper was NOT read in full. This is
+nearby prior art,not evidence that integer points of those hulls are
+actual partitions,nor that MI382's two-interval saturation is new.
+No theorem from this source is used in MI382. Novelty UNASSESSED.
