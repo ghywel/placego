@@ -241,7 +241,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       <figcaption>The counting argument as a picture. A computer trying every arrangement agrees: there is none
         (the full check took 79 seconds).</figcaption>
     </figure>
-    <p>Notice what went wrong. The trouble was the short streets. A short street can only take a few planks, and it
+    <p>Tan and Teh call a town that fails this counting test <em>impossibly burnable</em>, and the test is theirs. Notice
+      what went wrong. The trouble was the short streets. A short street can only take a few planks, and it
       has no freedom about how many: 67 forces an odd count, and the small planks it wants are needed elsewhere. If
       all the streets were long enough, there would be room to manoeuvre. So the real question is: <em>how long is
       long enough?</em></p>
@@ -262,17 +263,33 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     <p>So the conjecture, the thing everyone expects to be true but nobody has proved, is that 68 is exactly the
       answer: that 68 is always enough for eight streets. This is the problem that GPT, the other half of this project's research partnership, chose
       when it was told to follow its own curiosity, and it is what the rest of this page is about.</p>
+    <p>There is a pattern behind the numbers, and Tan and Teh found it. The thresholds for one to seven streets are
+      1, 3, 18, 26, 36, 46 and 56. Every town that spoils a threshold, in all the cases they could check, spoils it the
+      same way our 67-and-102 town did: by the plank count. Count the fewest planks each street could possibly take,
+      remembering that an odd street needs an odd number and an even street an even number; if the counts add up to
+      more than the number of days, the town is impossible. Tan and Teh proved a formula for the longest shortest street
+      such a counting failure can have, and it predicts the threshold for every number of streets: 68 for eight, 78 for
+      nine, 88 for ten, 98 for eleven, 110 for twelve, growing by about twelve per street in the long run. Their
+      conjecture is that the plank count is the <em>only</em> way a town with long enough streets can fail. Eight streets
+      is simply the first case where nobody has been able to check.</p>
     <div class="q"><span class="n">The question</span><span>Eight streets, each at least 68 houses, adding up to
       <em>m</em> × <em>m</em>. Can the planks 1, 3, 5, … 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill open">Open</span></div>
     <div class="q"><span class="n">Known</span><span>67 is not enough (section 3). The answers for one to seven
-      streets are settled; for seven streets it is 56.</span><span class="pill proved">Settled</span></div>
+      streets are settled: 1, 3, 18, 26, 36, 46, 56.</span><span class="pill proved">Settled</span></div>
+    <div class="q"><span class="n">Predicted</span><span>68, 78, 88, 98, 110, … for eight streets onward, if the plank
+      count is the only obstruction (Tan and Teh's conjecture).</span><span class="pill open">Conjecture</span></div>
     <div class="exact" style="margin-top:18px"><span class="k">For the mathematician</span>For a path forest with
       <em>k</em> paths, let L<sub>k</sub> be the least <em>L</em> such that every forest whose paths all have at least
       <em>L</em> vertices and whose total is <em>m</em>² has burning number <em>m</em>. Tan and Teh,
       <a href="https://dmtcs.episciences.org/en/articles/12709/download">A Note on Graph Burning of Path Forests</a>
-      (DMTCS), determine L<sub>k</sub> for <em>k</em> ≤ 7 and give L<sub>8</sub> ≥ 68 through the forest
-      (67, 67, 67, 67, 102, 102, 102, 102). In plank form: partition {1, 3, …, 2<em>m</em> − 1} into eight sets with
-      prescribed sums. The conjecture is L<sub>8</sub> = 68.</div>
+      (DMTCS), determine L<sub>k</sub> for <em>k</em> ≤ 7 (1, 3, 18, 26, 36, 46, 56) and give L<sub>8</sub> ≥ 68 through
+      the forest (67, 67, 67, 67, 102, 102, 102, 102). A forest is <em>impossibly burnable</em> if Σ B<sub>m</sub>(l<sub>i</sub>)
+      > <em>m</em>, where B<sub>m</sub>(l) is the least <em>t</em> ≡ l (mod 2) with l ≤ 2<em>mt</em> − <em>t</em>²; their
+      Theorem 1.3 gives M<sub>k</sub>, the largest shortest path of an impossibly burnable <em>k</em>-forest, as the largest
+      odd number ≤ 12<em>k</em> − 2√(18<em>k</em> − 12) − 6, and their Conjecture 2.7 is that every deficient forest with
+      shortest path ≥ L<sub>k−1</sub> is impossibly burnable, whence L<sub>k</sub> = M<sub>k</sub> + 1 for all <em>k</em>
+      (verified by them for <em>k</em> ≤ 7). In plank form: partition {1, 3, …, 2<em>m</em> − 1} into eight sets with
+      prescribed sums. The conjecture for eight streets is L<sub>8</sub> = 68.</div>
   </section>
 
   <section class="col" id="pile">
