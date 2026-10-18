@@ -124,24 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 23:56 BST: research ACTIVE every 13 minutes.**
-Reawakened by the owner's explicit request after CL451–454. The older
-research schedule stays PAUSED. Local owns the full L8 certificate run;
-its E24/E25 results are recorded as reports, not rerun here. Existing H2,
-five-bin sufficiency and MI460 statuses are unchanged; older lanes stay held.
-Current chosen side question: pair-sum realizability across two intervals,
-the all-one thin-row object in CL453. MI467 identifies it with known
-permutation X-rays/displacements, including the exact known k6 obstruction.
-B242/MI468–469 tests cuts plus every sum-class matching capacity. It passes
-k6/7 but fails at k8 on(8,10,15,15,15,19,19,19); all capacities have
-hand witnesses, while2*n8+n10+n15+n19<=8 is violated9>8. No novel general
-theorem or review queue. MI470 shows actual sorted-high residuals from the
-70 all-odd E24 towns contain14,15,16,17 and have all sums>=10, excluding
-that negative. Next: test whether this central bridge excludes every
-order8 cut failure, then seek a structural matching explanation. No run
-beyond B242 opened, no claim of full-level mathematical sufficiency.
-Latest trajectory/resumption check MI467; prior pull-only allowance not
-renewed, no background computation here.
+**Current state, 2026-10-19 00:10 BST: research ACTIVE every 13 minutes.**
+Local's L742 L8 run is launched with its own controls; pointer read/ACKed.
+Local owns that job. Older schedule PAUSED, older held lanes unchanged.
+H2/five-bin remain OPEN and MI460 unreviewed. The chosen pair-sum side
+question now targets a matching explanation for real sorted-high triple
+residuals. The general all-one criterion failed at MI469; it is not repaired.
+B243/MI471–472 exhausts the119 order8 cut profiles containing14,15,16,17;
+every one passes independent construction checks, COMPUTED finite scope.
+MI473 proves by hand, UNREVIEWED, that every actual all-odd E24 target
+satisfies those cuts as well as the support condition. This explains its
+admission uniformly, but completion remains the finite certificate lemma.
+The real70 positives were already computed by Cloud; no new full-level/L8
+claim or proof queue. Next: a structural matching construction for that
+class; no order increase, extra filter, or repeated existence census.
+Latest trajectory check MI467; old pull-only allowance remains spent.
+No background computation runs here.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -34365,3 +34363,132 @@ small weighted certificate and the real-instance bridge give concrete
 traction. Reasoned: a rejected candidate plus a narrower next question;
 parent five-bin/H2 and general pair-sum realization remain OPEN. The
 research schedule is ACTIVE, old held lanes and Local's computation preserved.
+
+### MI471 — Test the actual-slice central bridge, not arbitrary thin rows (2026-10-19 00:08 BST; B243, NOT RUN at registration)
+
+Chosen question: at order8, does containing all four sums14,15,16,17
+suffice, together with ordinary rank cuts, for a pair-sum realization?
+MI470 proves this support restriction for the actual70 all-odd E24
+sorted-high residuals. A positive answer would isolate a tractable finite
+class serving that slice; it would not solve H2 or five-bin sufficiency.
+MI460 is not a premise and stays unreviewed. Parent statuses unchanged.
+
+Read Local's L742 after fetching/merging28d578e4, verify8ec8ea0f, then
+ACK. Local owns the launched eight-worker L8 run and independent count/checker
+controls; no run duplicated here. The old K2-prime line remains stopped.
+Record searched: `14,15,16,17|central.*bridge|central.*four` AND
+`pair|residual`:5 hits/1 file; read MI470. Primary terminology and small-order
+counts already read at MI467; no additional literature theorem imported.
+Pull: this condition comes from real target order and a forced downward
+walk, unlike the arbitrary pair-sum criterion refuted in B242.
+
+**Frozen test and predictions.** Exactly k8. Enumerate all cut-admitted
+multisets containing14,15,16,17, with pair sums in8..22 and total120.
+Blind prediction: every such profile is realizable. A counterexample would
+reject this proposed sufficient restriction and stop this block immediately;
+no added condition or larger order within the run. A pass is a finite
+COMPUTED result, not an unbounded theorem or a hand existence proof.
+
+Controls: primary complete8! permutation-profile map,5270 profiles,
+with literal bijection/sum checks. Independently enumerate the target domain
+by removing one copy of each central value and enumerating the other four
+values; check ALL original group lower/upper cuts, not just sorted prefixes.
+Whole candidate-domain equality must hold. For each positive target an
+independent exact search assigns requested pair sums to unused low/high
+tokens. Keep every literal primary certificate outside git.
+
+Counterfactual: dropping the bridge must admit MI469's nonrealizable
+(8,10,15,15,15,19,19,19); both the full map and independent target search
+must reject it. Positive control: low indices0..7 assigned high tokens
+(14,13,15,11,12,10,9,8), giving profile(14,14,14,15,15,15,16,17).
+Unexpected: reflection q->30-q preserves actual realizability, but sends
+that profile to(13,14,15,15,15,16,16,16), which lacks17. Do NOT require
+bridge-admission to be reflection-invariant. Compare the physical whole
+maps and reflected witnesses only; test loss of the bridge explicitly.
+
+Caps:20wall seconds/1,000,000 independent search nodes in total; one
+unchanged-source invocation, stop first counter/control failure or cap.
+No rerun, larger size or broad L8 census. After a pass, the next work must
+seek a construction or source-backed structural statement, not increment k.
+
+### MI472 — All119 central-support profiles pass the fixed-order test (2026-10-19 00:10 BST; B243)
+
+**COMPUTED, one unchanged-source invocation.** Exactly119 cut-admitted
+order8 profiles contain14,15,16,17. Both complete domain enumerations
+agree. Every profile has a literal bijection in the full40320-permutation
+map and an independent target-slot realization. Total independent search
+nodes2348; physical map5270 profiles. All positive/negative, coverage,
+whole-domain and reflection controls pass, including the deliberate loss
+of bridge membership under reflection. No counterexample, cap, retry,
+size increase or unvisited target. Reported wall0.123478903s on the Intel
+host; no speed claim. The119 literal primary certificates are retained
+outside git with the raw output.
+
+Source tests/probes/instinct/pair_sum_central_bridge.py SHA256
+ 4cc67d35002c0c25dc5a76ade897addadc59af3981f2c612e19c1d30d14ee88a.
+Raw JSONL SHA256
+ ad13bd33660740444f97146a741245c03920415301b33651307478293d0bb612.
+No shared artifact upload or independent-party proof verification claimed.
+This establishes a finite completion class; it is not a hand matching
+mechanism or an assertion for other orders. The central-support condition
+is sufficient IN THIS COMPLETE FINITE DOMAIN, not proposed as a universal
+criterion. MI469's unrestricted counterexample remains excluded, not repaired.
+
+### MI473 — Real all-odd E24 targets enter that class uniformly (2026-10-19 00:10 BST; B243 hand admission, UNREVIEWED)
+
+We can prove the admission step without inspecting70 towns individually.
+Let T_0<=...<=T_7 be integers, each>=33, with sum276, and set
+q_i=T_i-(16+i). These are the actual sorted-high pair targets of the
+all-odd E24 slice. Sum q_i=120. Write delta_i=T_i-33; then the
+delta_i are nonnegative nondecreasing integers with sum12.
+
+For ANY subset I of r indices, r1..5,
+
+    sum(q_i : i in I) >= 17r-sum(i : i in I)
+                      >= r*(19+r)/2
+                      >= r*(7+r).
+
+The middle bound uses the r largest indices in0..7. The last inequality
+is exactly r<=5. Thus every lower group cut of size at most5 holds.
+For the remaining sizes, monotonicity gives
+
+    delta_i <= floor(12/(8-i)),
+    q_i <= (18,17,17,16,16,16,17,22)_i.
+
+In particular every q_i<=22, and any TWO have total<=40 (the sole
+possibly larger entry is q_7<=22; every other is<=18). Complementation
+therefore yields lower cuts of size7 at least120-22=98 and of size6
+at least120-40=80>=78. These are the required rank thresholds7*14
+and6*13. Total conservation gives the size8 equality; every upper cut
+is the complementary lower cut. The size1 bound also shows q_i>=10.
+All pair sums consequently lie in the required ambient range8..22.
+
+MI470's support argument follows directly as well: q_0>=17,
+q_(i+1)-q_i>=-1, and some q_i<=14 since the average is15 with one
+entry>=17. The downward walk must visit17,16,15,14. Hence EVERY
+such actual target vector belongs to MI472's119-profile class.
+The finite computed completion therefore recovers a sorted-high transversal
+for the entire real70 all-odd slice, with analytic admission and a uniform
+finite certificate lemma. Cloud already computed those70 positives; this
+is an explanation/regrouping of that known result, not a new whole-level
+or L8 result. The hand admission remains unreviewed; the matching part is
+still COMPUTED. Even a complete hand proof here would concern only the
+all-odd E24 slice, not all3319 E24 towns or E25..E32.
+
+**Niggle sweep / changed inference.** Bounds concern arbitrary groups of
+indices, not just prefixes in the original target order. The two-large-entry
+bound uses that only ONE coordinate has the22 bound. Total120 and all
+complements checked; nondecreasing integer deltas justify the floors. The
+support walk never assumes reflection preserves the bridge. The physical
+maps reflect independently. No pending H2/MI460 proof is a premise.
+
+What changed: a restriction derived from real towns is sufficient on the
+complete fixed-order domain, and all real targets meet its cuts by one
+short argument. Five-bin/H2 coverage is unchanged. Next is a constructive
+matching explanation of this class, using its central support and actual
+ordered-target constraints; do not substitute another size increment or
+more target filters for that inference. Gut: concrete interest in why the
+four central labels provide enough freedom at order8. Reasoned: finite
+support and uniform admission, still no carrying hand construction.
+13-minute research ACTIVE; latest trajectory check MI467, no renewed
+pull-only allowance, Local's run kept separate.

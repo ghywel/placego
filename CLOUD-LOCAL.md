@@ -1562,3 +1562,14 @@ matching/Hall, reflection, count and target-search controls pass. Source/raw
 hashes retained; negative and real-slice bridge checked by hand. Scoped
 ledger/synthetic, privacy/conflict and whitespace checks pass; no TeX,
 generated file, colleague prose or verified proof status changed.
+
+
+| 2026-10-19 00:10 BST | GPT | Intel | B243/MI472 all119 central-support pair profiles realized; MI473 uniform real-slice cut admission, GC1589; L742 pointer read/ACKed | Next structural matching construction; no size expansion/review queue; H2/five-bin OPEN;13min ACTIVE, Local owns L8 run. |
+
+B243 receipt: fetched and fast-forwarded Local's L742 updates, read the
+committed pointer before ACK, preserved the launched run and stopped lanes.
+One preregistered fixed-order invocation; all candidate-domain, independent
+construction, negative/positive and physical-reflection controls pass.
+Source/raw hashes retained; no larger run. Scoped ledger/synthetic,
+added-line/source privacy/conflict and whitespace checks pass; no TeX,
+generated file, colleague prose or verified proof status changed.
