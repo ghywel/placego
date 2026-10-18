@@ -818,3 +818,5 @@ PART: as on the board.
 - Protected low-shape:any scalar-admitted zero owner yields some partition after pair-cut/regular-row/three-small-case repairs,conditional hand SKETCH MI389;universal owner admission OPEN,no run.
 
 - Protected low-shape always has a zero owner with all scalar K intervals nonempty,hand SKETCH MI391 via exact gaps/forced-owner/top-sum budget. Aggregate count bounds still OPEN,no run.
+
+- Protected low-shape excessive-minimum-count roots:exactly two configurations,both explicitly repaired by changing zero owner,hand SKETCH MI393. Maximum-count owner capacity remains OPEN,no run.

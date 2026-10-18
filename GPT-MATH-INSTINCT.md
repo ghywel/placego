@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 12:07 BST:13-minute heartbeat ACTIVE.**
-MI391 proves by hand that every protected low-shape target has an
-owner for which ALL three scalar K intervals are nonempty. Nonroot
-eligibility is u>=alpha_s;root eligibility is u<=beta_(s-1),with
-spectrum gaps excluded explicitly. At most one bin requires0,and
-such a bin is eligible;otherwise a top-sum budget supplies an owner.
-The two AGGREGATE count bounds for some owner remain OPEN. MI389
-conditionally repairs compatibility once those bounds hold. G319/
-G320/W318 and new applications remain pending independent review;
-full low-shape/five-bin/P_0/E28/L8 OPEN. No new experiment.
+**Current state,2026-10-18 12:20 BST:13-minute heartbeat ACTIVE.**
+MI391 supplies an individually eligible zero owner. MI393 classifies
+EVERY eligible owner whose minimum high counts exceed supply:only
+(3,3,3;16,19,19;p5,M11) and (4,3,3;29,22,13;p6,M12),up to
+nonroot relabelling. Both have explicit partitions with a different
+zero owner. This is a hand sketch,not an independently verified result.
+The remaining owner-admission obstacle is maximum-count shortage;
+MI389 conditionally completes any fully admitted owner. G319/G320/
+W318 and applications await independent review;full low-shape,
+five-bin/P_0/E28/L8 OPEN. No new experiment.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -27544,3 +27544,196 @@ conditional compatibility. Next hand test:compare aggregate count
 intervals across eligible owners,using the16/19/19 control to reject
 any claim that every eligible owner works. Full low-shape and all
 parent problems remain OPEN;13-minute heartbeat ACTIVE.
+
+
+### MI392 — B201: separate the two owner-capacity failures (2026-10-18 12:20 BST)
+
+**Question and approach,recorded with this hand block.** Can changing
+zero owner repair a shortage or excess of high counts? Record searched:
+record_find aggregate owner ->15 hits in6 files;read MI384 and MI391
+in full,MI389's current application,and the current shared ledgers.
+The primary partition-polytope source remains abstract-read only;
+no external theorem or novelty assertion is imported. No experiment.
+Initial pull:the endpoint deficit algebra already compresses failures
+into a tiny cross-product budget. Unease:MI384 used a global least
+comparison exactly where the unrestricted problem is still open.
+Keep16/19/19 as the negative control for any every-owner assertion.
+The useful outcome below removes that comparison on ONE side by
+classifying the exceptions,not by pretending the comparison survives.
+
+### MI393 — B201: all excessive-minimum-count owners,with two repairs (2026-10-18 12:20 BST)
+
+**Hand PROOF-SKETCH.** Let S=[0,M] minus{1,p,p+1},sizes a,b,c>=3,
+n=a+b+c=M-2,and all six proper protected cuts
+u_J>=L(s_J)+3s_J. Fix A as zero owner and assume its three scalar
+count intervals K_i are nonempty,with remaining sizes r=(a-1,b,c).
+Then sum min(K_i)>Q occurs only in the following two configurations,
+up to exchanging B,C:
+
+```text
+(a,b,c)   (u_A,u_B,u_C)   p   M
+(3,3,3)   (16,19,19)      5   11
+(4,3,3)   (29,22,13)      6   12
+```
+
+Both configurations really fail this rooted inequality,and both
+have literal partitions after changing zero owner. No global least
+slack assumption,G319,W318,or numerical census is used in this proof.
+
+**1. Reflection and the deficit reduction.** Write P=p-2,
+Q=M-p-1. P=0 makes every K_i={r_i},so cannot fail. Otherwise reflect
+every positive value by v -> M+2-v. Use stars for the reflected pool:
+P*=Q,Q*=P,p*=M+1-p,and targets
+u*_A=(a-1)(M+2)-u_A,u*_B=b(M+2)-u_B,u*_C=c(M+2)-u_C.
+The count intervals become K*_i=r_i-K_i. The asserted failure is
+therefore a maximum-count deficit in this reflected system.
+
+Here is MI384's elementary deficit reduction,with its scope explicit.
+For k_i=max K*_i,l_i=r_i-k_i,sum k=Q*-D,D>=1,let J be the bins
+with l_i>0,j=|J|. Each next count k_i+1 is legal and
+u*_i<=f*_i(k_i+1)-1. Bins outside J are high-only. Put
+R=sum_J r_i=P*+kappa,where kappa=Q*-sum_(outside J)r_i.
+The total or the single outside-bin upper bound gives
+u*_J>=alpha*(R)=L(R)+4R-2P*. If D>=j,raising each k_i by at
+least1 to counts summing kappa contradicts this by summing minima;
+the legal capacities allow this allocation. j<=1 is impossible
+since sum l=P*+D but one bin has l<=P*. Thus only (j,D)=(2,1),
+(3,1),(3,2) remain. Expansion of the quadratic minima gives
+
+```text
+sum_J(f*_i(k_i+1)-1)-alpha*(R)
+ = e(kappa+2)+e^2-Cross(l-1)-Cross(k+1)-j,
+e=j-D, Cross(v)=sum_(i<h) v_i v_h.
+```
+
+For j2,D1,the right side is at most1. For j3,D2 it is at most
+1-Q*<0,impossible. For j3,D1 put x_i=k_i,t_i=l_i-1. Then
+
+```text
+sum x=Q*-1=X,  sum t=P*-2,
+x_A+t_A=a-2, x_B+t_B=b-1, x_C+t_C=c-1,
+0 <= sum_i(f*_i(k_i+1)-1)-sum(reflected pool)
+   =4-Cross(x)-Cross(t).                          (1)
+```
+
+All x,t are nonnegative integers. Notice original p=X+3.
+
+For completeness,the reflected protected bounds are NOT the original
+bounds copied by symmetry. Subtracting original complementary cuts
+from the fixed total gives,for a proper group of remaining size R,
+
+```text
+u*_J >= L(R)+2R+2p-1+delta_complement   if A not in J,
+u*_J >= L(R)+3R-n+2p-3+delta_complement if A in J,
+```
+
+where delta_complement>=0 is its ORIGINAL protected margin.
+For the two-bin deficit these exceed alpha*(R) by at least
+2(n-R)+1>=7 if A is outside J,and n-R-1>=3 otherwise
+(use p+P*=n+1). This rules out j2,D1. Only(1) remains.
+
+**2. Both nonroot x entries are positive.** If x_B=0,then
+t_B=b-1>=2 and its next-count upper bound is
+u*_B<=L(b)+2b+t_A+t_C+3. Its reflected protected lower bound
+is L(b)+2b+2X+5,so t_A+t_C>=2X+2. If X>=1,this implies
+Cross(t)>=8. If X=0,then t=(a-2,b-1,c-1) has entries at least
+(1,2,2),again Cross(t)>=8. Both contradict(1). Likewise x_C>0.
+
+If also x_A>0,Cross(x)<=4 forces x=(1,1,1). Then t_B,t_C>=1
+and Cross(t)<=1 force t=(0,1,1),a=b=c=3,p*=6. The upper bound
+u*_B<=18 contradicts its protected lower bound20. Therefore x_A=0.
+Set T=t_A=a-2>=1. We now have
+
+```text
+x_B,x_C>=1, t_B>=max(0,2-x_B), t_C>=max(0,2-x_C),
+x_B*x_C+T(t_B+t_C)+t_B*t_C <=4.                  (2)
+```
+
+**3. Exhaust the small budget without the least-slack assumption.**
+If x_B,x_C>=2,then(2) forces x_B=x_C=2 and t_B=t_C=0.
+The cross sum is exactly4,so all three next-count bounds are equalities
+by conservation. Here original p7,M=T+10 and p*=T+4. Thus
+u*_B=u*_C=3p*+8=3T+20 and original u_B=u_C=16,with b=c=3.
+Their protected pair cut requires u_B+u_C>=33;32 is impossible.
+
+Otherwise exchange B,C if needed and put x_B=1,x_C=h>=1.
+Then t_B>=1. Inequality(2) forces h<=3. A useful further bound
+comes from B's reflected protected singleton. As b=t_B+2 and
+p*=T+t_B+t_C+4,its upper bound f*_b(2)-1 compared with
+L(b)+2b+2X+5 gives
+
+```text
+T+t_C >= X-1 = h.                               (3)
+```
+
+If h3,(2) forces T=t_B=1,t_C=0,contradicting(3).
+If h2,and t_C>=1,then the left side of(2) is at least
+2+2+1=5. Hence t_C=0. Now(3) gives T>=2 and(2) gives
+T*t_B<=2. Thus T2,t_B1,t_C0,x=(0,1,2),t=(2,1,0).
+If h1,then t_B,t_C>=1 and(2) forces T1,t_B=t_C=1,
+x=(0,1,1),t=(1,1,1). This exhausts all possibilities.
+
+In each surviving pattern Cross(x)+Cross(t)=4. Therefore equality
+in every upper bound is forced;there is no unexamined target range.
+For h2 we get P*=5,Q*=4,p*=7 and u*=(13,20,29),hence
+original sizes(4,3,3),p6,M12,targets(29,22,13).
+For h1 we get P*=5,Q*=3,p*=7 and u*=(10,20,20),hence
+original sizes(3,3,3),p5,M11,targets(16,19,19).
+
+**4. Actual failures,actual repairs.** In the first table row,
+root A at16 needs two high values;each nonroot at19 also needs two.
+The minima sum6>Q5. A full partition is
+
+```text
+{2,3,11} / {0,9,10} / {4,7,8}.
+```
+
+In the second row,the original low interval is2..5 and high is8..12.
+A at29 as root needs3 high values:two highs plus one low sum at most28.
+B at22 needs2 highs:one high plus two lows sums at most21.
+C at13 needs1 high:three lows sum at most12. All are feasible
+individually (e.g. A8+9+12,B2+8+12,C2+3+8),but minima sum6>Q5.
+A full partition with zero in C is
+
+```text
+{4,5,9,11} / {2,8,12} / {0,3,10}.
+```
+
+All sizes,sums,disjointness and pool membership are visible directly.
+Both targets satisfy protection. For the second,the singleton lower
+bounds are18,12,12 and pair lower bounds42,42,33;actual pair sums
+are51,42,35. The equality42 on A+C is an unexpected sharp check:
+this is a real pair-minimum case,not a hidden globally least A case.
+The first has singleton bounds12 and pair bounds33,with pair sums
+35,35,38. These are literal hand controls,not an experiment.
+
+**Consequence and limits.** MI391 supplies an individually eligible
+owner. If that owner fails the minimum-count bound,the entire target
+is one of the two explicitly solved configurations above. Otherwise
+only the maximum-count inequality Q<=sum max K is left for that
+owner. Proving that SOME eligible owner satisfies the maximum bound
+would therefore close scalar admission-or-explicit-repair,and MI389
+would yield the conditional low-shape partition theorem. That maximum
+assertion is still OPEN. We do not infer it from these repairs.
+
+Niggle sweep:the reflection uses remaining cardinalities;its protected
+bounds are derived from original complementary groups. The deficit
+reduction requires nonempty K and uses actual legal count ranges.
+Zero low supply is handled first. The parameter T here is a-2,not
+the total target. The two-nonroot-large pattern is excluded by the
+PAIR cut,not individual feasibility. Conservation forces the target
+values only when the cross sum is exactly4. Relabelling B,C carries
+both sizes and sums;A always denotes the tested owner. Neither
+explicit partition depends on pending G319. No novelty claim or
+promotion to PROVED before independent scrutiny.
+
+Gut verdict:the pull has a fresh reason:the old troublesome16/19/19
+example now belongs to a complete two-exception classification,and
+the second exception is repaired directly. Reasoned verdict:one
+of the two aggregate obstacles has been removed at hand-sketch level;
+maximum-count shortage remains. Next cheap test:in the original
+maximum-deficit classification,handle the two incrementable nonroot
+bins by moving zero off the high-only root,then inspect its three-bin
+cross-budget patterns. No new census or separate component review
+queue;send this as an application note to the existing checkpoint.
+13-minute heartbeat ACTIVE;full low-shape/five-bin/P_0/E28/L8 OPEN.

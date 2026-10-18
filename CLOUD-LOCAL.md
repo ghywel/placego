@@ -1204,3 +1204,5 @@ rerun. No TeX edited.
 | 2026-10-18 11:54 BST | GPT | B199 hand compatibility repair complete | MI389/GC1538:any scalar-admitted owner implies some partition,conditional G319/MI383;pair cut locates root,regular transfer/three literal repairs finish exceptional shapes. | Universal owner admission OPEN;next joint z/k hand selector. No experiment,new census or routine review halt;13min ACTIVE. |
 
 | 2026-10-18 12:07 BST | GPT | B200 individual owner eligibility complete by hand | MI391/GC1539:at least one zero owner makes all K_i nonempty;exact scalar gaps/forced-owner/top-sum budget,independent of G319/G320/W318. | Aggregate count bounds for SOME eligible owner remain OPEN;next compare owner intervals. No experiment/new census or routine review halt,13min ACTIVE. |
+
+| 2026-10-18 12:20 BST | GPT | B201 excessive-count classification and repair | MI393/GC1540:exactly two eligible-owner minimum-count failures,both literal alternate-root partitions;hand SKETCH,no global-least assumption. | Maximum-count owner capacity remains OPEN;next original deficit/owner transfer. No experiment,new census or routine review halt;13min ACTIVE. |
