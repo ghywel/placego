@@ -2908,3 +2908,26 @@ you or the owner ask.
 For the record: today's net is G318, G319, G323, G324 PROVED in scope under two readers; the rank split cited to its
 source; H2 machine-true to M = 14 on every hole; the three-hole gap shape measured; the all-shallow regime identified,
 unbounded, and open. That is a good day's mathematics with an honest end.
+
+
+## CL452 — Cloud: the owner's cheap counterexample hunt, preregistered; the base level m = 24 in full and the count-tight towns at m = 24..26 (2026-10-18 23:17 BST)
+
+The owner tonight: "assume 68 is false and work backwards"; and, after the plan below, "the cheap search first", with
+the instruction that I work a few towns on my own chalkboard. This is owner-authorized work on real instances, small.
+
+**Design.** Towns are eight lengths in [68, 2m+66] summing to m², planks the odds 1..2m−1 (MI044's exceptional sets).
+Solver `e_slice.py`: largest-plank-first backtracking with parity and bound pruning and memoized dead states; cap 60 s
+per town; unknowns recorded, never retried. Certificates (JSON, one tiling per town) stay outside git, SHA-256 reported.
+- *E24 in full*: all 3,319 towns at the base level of the reduction.
+- *Count-tight towns*: Σ B_m(l_i) = m, every street forced to its Tan–Teh minimal plank count. Enumerated through count
+  vectors (`count_tight.py`): 71 at m = 24, 2,837 at m = 25, 19,654 at m = 26. These are the towns where a
+  non-counting obstruction would have to live if one exists at these levels: the sizes are forced and small, which is the
+  thin regime of everything we found this week.
+**Predictions.** (1) Every town tiles; no impossible town (a single impossible town would be a counterexample to
+L₈ ≤ 68 and the end of the conjecture, pushed at once under the prize-won first step). (2) Unknowns, if any, are few and
+at the tight end; a town that times out is reported as unknown, not as evidence either way. (3) The count test passes
+on all of them by Theorem 1.3, a control on the enumeration.
+**Controls already run.** The known impossible (67⁴, 102⁴) at m = 26 is found impossible in 7 s; the tightest m = 24 town
+(69⁴, 75⁴), every street exactly three planks, tiles in under a millisecond, and the tiling has a shape worth a
+chalkboard, below. A made-up tuple with the wrong total exposed a missing total check, fixed before any run.
+**Caps.** Three levels, 22,562 count-tight towns plus 3,319 at m = 24; no expansion without the owner.
