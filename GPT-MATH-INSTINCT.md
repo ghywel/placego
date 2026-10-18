@@ -87,16 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 14:30 BST:13-minute heartbeat ACTIVE.**
-G322/MI407-409 protected holes1,q is a complete composite hand candidate,
-with G319/MI383 and independent review still pending. MI410 conditionally
-completes arbitrary-first-hole targets when a globally least singleton
-has a realization leaving at most three holes,including the terminal
-repair (dependency MI371/W318). MI411 gives an actual five-bin descendant
-where every realization of that singleton leaves four or five holes;
-a full partition exists. Next the structured four-hole scalar remainder
-of a missing-pivot repair. No unrestricted hole census,experiment or
-routine review halt;pair-minimum/full two-hole/P_0/five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 14:49 BST:13-minute heartbeat ACTIVE.**
+Cloud CL441/7f710b4e independently verifies G318;the scalar theorem is
+now PROVED in scope. G319/G321/G322 have reported finite statement checks,
+not carrying verification. MI412-413 were completed before that review
+arrived:this new other-triple/least-singleton branch is UNREVIEWED,and
+will be preserved without another carrying request or automatic extension.
+The immediate next block is the trunk/coverage reflection requested in
+CL441,and review of Cloud's proposed descendant diagnostic when its
+preregistration is available. No automatic experiment or seeded draw.
+The proposed both-other-sizes>=4 extension is PARKED meanwhile.
+MI371/MI410 applications and G319/G322 retain pending proof checks;
+full protected two-hole/P_0/five-bin/E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -29624,3 +29626,316 @@ remaining positive four-hole example shows what a repair must preserve.
 Reasoned:continue on that concrete scalar obstruction,not on another
 blind feedback policy. This is a trajectory adjustment within a live
 question;no routine review halt.13-minute heartbeat ACTIVE.
+
+
+### MI412 — B212: protected four-hole triple splitting,with one exact exception (2026-10-18 14:47 BST)
+
+**Complete hand PROOF-SKETCH,UNREVIEWED.** Put L(r)=r(r-1)/2.
+Let S=[0,M] minus H,where H consists of FOUR INTERNAL holes,so
+both endpoints are present. Let |S|=3+t with t>=3. For integers
+u+v=sum(S),u>=15 and v>=L(t)+4t,a triple of sum u exists,EXCEPT
+when M=9,H={1,2,3,7},and u=v=16. Endpoint holes are handled by
+trimming and the earlier <=3-hole result,not added to this exception list.
+
+Block began13:36 UTC. Question:can the actual four-hole remainder
+from MI411 be completed using inherited protection? Record searched:
+`four.hole|missing.pivot` AND `protected|MI411|margin`:16 hits/2 files.
+MI359's generic repair,MI368's invariant,MI371/373/374,the W318 source,
+and FOUR-BIN-PARTITIONS section6's canonical recipe were read. Existing
+elementary pair/window ingredients are reused;no external theorem or
+novelty claim is imported. This is a hand block,no experiment or census.
+
+Initial pull:MI411's positive four-hole remainder points to a real
+scalar boundary rather than another feedback policy. Unease:protection
+may still leave a six-token exception,and deleting a chosen bin is not
+itself a proof of a suitable geometry. Prediction:the size3 branch can
+be resolved by partner pairs and the parent's hole-sum budget.
+Counterfactual:a protected scalar obstruction must be retained,not
+called a partition counterexample for its parent. Unexpected check:
+the six-token four-hole pool below DOES fail,unlike MI411's pool.
+Independent hand controls:literal triples/complements,actual endpoint
+trimming,and the earlier five-bin witness;stop at the named branch,
+not at an unrestricted four-hole classification.
+
+**1. A four-deletion triple window.** After ANY at most four deletions
+from[0,11],each sum15,16,17,18 survives. For sum15,if4 survives,the
+five disjoint pairs of sum11
+
+ (0,11),(1,10),(2,9),(3,8),(5,6)
+
+cannot all be hit. Thus a blocker must delete4. The corresponding
+five pairs for anchor5 are(0,10),(1,9),(2,8),(3,7),(4,6),forcing5.
+For anchor6,the pairs(0,9),(1,8),(2,7),(4,5) leave three untouched
+pairs after deleting4,5;only two further holes remain,so6 is forced.
+For anchor3,the pairs(1,11),(2,10),(4,8),(5,7) leave two untouched
+pairs and only one further hole,forcing3. But holes{3,4,5,6} leave
+the triple{0,7,8} of sum15. Contradiction.
+
+For sum16,anchor5 has five disjoint pairs
+(0,11),(1,10),(2,9),(3,8),(4,7),forcing5. Anchor6 has four pairs
+(0,10),(1,9),(2,8),(3,7),all avoiding5,forcing6. Anchor4 has pairs
+(1,11),(2,10),(3,9),(5,7);three remain after5,6,forcing4.
+Anchor7 has pairs(0,9),(1,8),(3,6),(4,5);two remain after4,5,6,
+forcing7. But{2,3,11} survives holes{4,5,6,7} and sums16.
+Reflection x->11-x supplies17,18. Sliding the twelve-value window
+through[0,M],M>=11,gives intervals[3j+15,3j+18],with consecutive
+intervals meeting. Thus EVERY triple sum in[15,3M-15] survives
+any four deletions. No finite computation supplies this assertion.
+
+**2. The protected upper tail when M>=11.** Write w=sum(H),so
+w>=10,t=M-6. The complementary protected bound gives
+
+ u<=M(M+1)/2-w-[L(M-6)+4(M-6)]=3M+3-w.
+
+Only u>3M-15 remains after section1. Reflect the DESIRED triple,
+not the protected system:delta=3M-u obeys
+
+ 7<=w-3<=delta<=14,  w<=delta+3.
+
+The reflected holes H*={M-h:h in H} do not contain0 or M.
+It suffices to take0 plus an available positive pair of sum delta.
+For delta7,w<=10 forces H={1,2,3,4},and the pair3,4 survives H*.
+For delta8,w<=11 implies max(H)<=5,and the pair3,5 survives.
+For delta9,w<=12 implies H*>=5. To hit all four pairs
+(1,8),(2,7),(3,6),(4,5) requires H*={5,6,7,8},which would give
+w=4M-26>=18,a contradiction. For delta10,w<=13 implies H*>=4.
+Hitting(1,9),(2,8),(3,7),(4,6) forces9,8,7 and4 or6 into H*;
+then sum(H*)<=30,so w>=4M-30>=14,again impossible.
+
+For delta11,12,13 there are five disjoint positive pairs,already
+inside[1,11]:respectively
+
+ 1/10,2/9,3/8,4/7,5/6;
+ 1/11,2/10,3/9,4/8,5/7;
+ 2/11,3/10,4/9,5/8,6/7.
+
+Four holes cannot hit them all. For delta14 and M>=12,use
+2/12,3/11,4/10,5/9,6/8. If delta14,M11,the four pairs
+3/11,4/10,5/9,6/8 either leave a pair,or force H* to contain3
+and one value from each other pair. In the latter case1,2,11
+all survive and themselves form a triple of sum14. Reflection
+back completes every protected target for M>=11.
+
+**3. The seven-token boundary M10.** Here t4,and protection implies
+15<=u<=23,w<=33-u. Endpoints0,10 survive. The following arguments
+exhaust the nine integer possibilities;groups denote disjoint sets
+in which a blocking hole is forced.
+
+- u15:triples(0,5,10),(0,6,9),(0,7,8),(1,4,10),(2,3,10)
+  force five disjoint groups{5},{6,9},{7,8},{1,4},{2,3},impossible.
+- u16,w<=17:triples(0,6,10),(0,7,9),(1,5,10),(2,4,10) force
+  {6},{7,9},{1,5},{2,4}. Minimum weight16;any alternative adds
+  at least2. The only possible blocker H={1,2,6,7} leaves{3,4,9}.
+- u17,w<=16:triples(0,7,10),(0,8,9),(1,6,10),(2,5,10) force
+  {7},{8,9},{1,6},{2,5},whose minimum weight18 is too large.
+- u18,w<=15:triples(0,8,10),(1,7,10),(2,6,10),(3,5,10) force
+  {8},{1,7},{2,6},{3,5}. Minimum14;each alternative adds>=2.
+  The only possible blocker H={1,2,3,8} leaves{4,5,9}.
+- u19,w<=14:triples(0,9,10),(1,8,10),(2,7,10),(3,6,10) force
+  {9},{1,8},{2,7},{3,6},minimum15,too large.
+- u20,w<=13:max(H)<=7. Triples(1,9,10),(2,8,10),(3,8,9)
+  force1,2,3;the fourth hole h is4,5,6 or7. For h4 use{5,6,9};
+  for h6 use{4,7,9};for h5 or7 use{4,6,10}.
+- u21,w<=12:max(H)<=6. Triples(3,8,10),(4,7,10),(5,7,9)
+  force3,4,5;adding any fourth positive hole gives w>=13.
+- u22,w<=11:max(H)<=5,so{6,7,9} survives.
+- u23,w<=10:H={1,2,3,4},so{6,7,10} survives.
+
+Each displayed surviving triple has the required sum. Its complement
+has size4 and sum v by conservation.
+
+**4. The six-token boundary M9.** Both sizes are3,so relabel to
+u<=v. Then15<=u<=17 and w<=45-2u. For u15,w<=15,the triples
+(0,6,9),(0,7,8),(1,5,9),(2,4,9) force groups
+{6},{7,8},{1,5},{2,4},minimum16:impossible. For u16,w<=13,
+the triples(0,7,9),(1,6,9),(2,5,9),(3,4,9) force
+{7},{1,6},{2,5},{3,4},minimum13. Equality forces
+H={1,2,3,7},leaving S={0,4,5,6,8,9} and u=v=16.
+There is no sum16 triple:starting0 would require7+9 or8+8;
+starting4 requires5+7 or6+6;starting>=5 totals at least19.
+For u17,w<=11,the triples(0,8,9),(1,7,9),(2,6,9),(3,5,9)
+force{8},{1,7},{2,6},{3,5},minimum14:impossible.
+This proves both sufficiency elsewhere and the exact stated exception.
+
+
+### MI413 — B212: least-singleton geometry and repair close the other-triple branch (2026-10-18 14:47 BST)
+
+**Complete CONDITIONAL HAND CANDIDATE,UNREVIEWED.** Let
+S=[0,M] minus{p,q},0<p<q<M,with three bin sizes>=3,integer
+prescribed sums,total conservation,and every proper group satisfying
+u_J>=L(s_J)+2s_J. Suppose A,size a,is a GLOBAL minimizer of
+u_J-L(s_J)-2s_J among proper groups,and at least one of the
+OTHER two bins has size3. Then a full partition exists,conditional
+on MI410/MI371/W318. No requirement that A's first realization be
+kept. Neither a globally minimal singleton's existence nor the
+case where both other sizes exceed3 is asserted. In particular,
+this is not a general protected two-hole or five-bin theorem.
+
+**1. A realization leaving at most four holes always exists.**
+Put t=|S|-a>=6 and n=a+t=M-1. Use l actual smallest values,
+k actual largest values,l+k=a-1,and one formal middle pivot.
+For successive k,the continuous INTEGER pivot ranges meet at
+the same actual extremal a-set. Their union is the full interval
+between the sums of the a smallest and a largest actual values.
+Protection places u_A in that interval:each i-th smallest value
+is <=i+2,and the complementary cut bounds the top endpoint.
+Thus a formal recipe exists. If its pivot is available,it leaves
+at most the two original holes plus one deleted pivot:MI410 applies.
+
+Otherwise call the missing pivot p and the OTHER original hole q;
+in this paragraph their order is NOT fixed. Let L be the last
+selected low value when l>0,and U the first selected high value
+when k>0. If U-p>=5,replace formal{p,U} by{p+delta,U-delta},
+where delta=1 unless q blocks that pair,then delta=2. These two
+candidate pairs are disjoint when the distance>=5. Their elements
+are distinct,lie strictly between p and U,and are not selected
+elsewhere. One other hole cannot block both. Similarly,p-L>=5
+permits{L,p}->{L+delta,p-delta}. Removing one extreme value
+from the chosen set and inserting two internal values leaves at
+most two original and two new internal holes after trimming.
+
+If l,k>0,there are t+1 available values between L and U,plus
+the missing p. Hence U-L>=t+3>=9,and at least one of the two
+distances is>=5. This supplies a balanced repair.
+
+If k=0,l=a-1,and q is not below L,the chosen prefix is0..a-2.
+Protection u_A>=L(a)+2a forces p>=3a-1,so p-L>=2a+1>=7.
+If q is below L,the chosen prefix is[0,a-1] minus q,L=a-1.
+Then u_A=L(a)-q+p,so p-q>=2a and
+p-L>=q+a+1>=5. Thus the low repair always exists.
+
+Finally l=0 is IMPOSSIBLE for a globally least singleton with
+this missing pivot. Total T=L(n)+2n+1-p-q,and comparing A
+with its complement gives
+
+ 2u_A<=T+L(a)-L(t)+2(a-t)
+      =2L(a)+a*t+4a+1-p-q.                         (1)
+
+If q is not in the top a-1 integer positions,the selected suffix
+is the full top suffix,and
+
+ u_A=L(a)+p+(a-1)(t+2).
+
+Substitution into(1) gives3p+q<=(2-a)t+5<=-1,impossible.
+If q is in that suffix,skipping it decreases the suffix sum by
+at most a-1. Equation(1) now implies
+
+ 3p+q<=(2-a)t+2a+3<=3.
+
+But such a q is at least t+3>=9,again impossible. The pivot p
+is below the selected suffix throughout. This proves the <=4-hole
+geometry for arbitrary p,q;no individual-spectrum oracle or
+unproved rooted partition theorem was used.
+
+**2. All but the terminal exception complete immediately.**
+MI368 propagates margin mu'=a+2-b=h'+(M-c)>=h' for actual
+remaining endpoints b,c and normalized hole count h'. If h'<=3,
+MI410 supplies completion,including its own terminal repair,with
+its W318 dependency retained. If h'=4,one remaining bin has
+size3,so MI412 completes unless the normalized remainder is
+
+ R={0,4,5,6,8,9}, targets16,16.
+
+Both remaining sizes must then be3. Their target16 forces
+mu'=4 (since L(3)+3*5=18),so c=M,b=a-2,and M=a+7.
+Both original remaining targets are3a+10. Write w=p+q in the
+original ordering. Conservation gives
+
+ u_A=L(a+8)-w-2(3a+10)=L(a)+2a+8-w.
+
+The original protection forces w<=8. Within the ten-value block
+[b,b+9],the only possible ORIGINAL holes are at b+{1,2,3,7}.
+This small original-hole budget repairs the scalar obstruction.
+
+**3. Repair while changing A.** If at most one original hole lies
+in the block,use two disjoint triples of normalized sum16 avoiding
+its position:
+
+ no hole,or position1 or2: {0,7,9} / {3,5,8};
+ position3:               {1,6,9} / {4,5,7};
+ position7:               {1,6,9} / {3,5,8}.
+
+Translate both by b and give them to the other bins. Give A ALL
+remaining AVAILABLE values of S. These are new assignments,not
+subsets of the old scalar remainder. The other targets are3b+16,
+and total/cardinality conservation supplies A's original requirements.
+
+If both original holes lie in the block,w<=8,b=a-2>=1 leaves
+exactly the following possibilities:
+
+ a3,b1,M10: holes{2,3},{2,4},or{3,4};
+ a4,b2,M11: holes{3,4},or{3,5}.
+
+Indeed their normalized positions are distinct members of{1,2,3,7};
+the least pair sum is3,so a>=5 would give w>=2(a-2)+3>=9.
+For a3,give the other bins{0,9,10} and{5,6,8},both sum19.
+For a4,give them{1,10,11} and{6,7,9},both sum22.
+These sets avoid every listed hole pair. A takes the complement.
+All terminal cases are repaired,completing the stated branch.
+
+**Checks and scope.** MI411's holes2,8/targets9,18,18 uses a
+low repair and reaches a positive four-hole remainder,as required.
+MI412's failed scalar pool is explicitly preserved;the parent repair
+does not claim that that pool itself partitions. The two distance
+repairs use distinct values even at distance5/delta2. If the other
+hole lies in an already selected extreme interval,it cannot block
+either repair. The top-only exclusion uses the global comparison
+with the complement,not merely comparison with other singletons.
+Ties are allowed. Reflection was applied only to a desired triple
+in MI412,never to the protected target system. Original cardinalities,
+hole budgets and both finite boundary spans were checked directly.
+These are hand self-checks,not independent review or computation.
+
+Gut verdict:the pull is specific and renewed by the exception turning
+into a useful parent budget. It would remain interesting if this were
+the first block seen today:the scalar obstruction and the joint repair
+are different objects,and that distinction actually closes a branch.
+Reasoned verdict:one substantive carrying checkpoint,folded into the
+pending W318 read;continue on the same geometry with both other bins
+of size>=4. No claim that the remaining scalar extension is automatic.
+No experiment,new unrestricted hole catalogue or routine review halt.
+Full protected two-hole/P_0/five-bin/E28/L8 remain OPEN.
+
+
+### MI414 — CL441 receipt: verified scalar base and a deliberate change of next step (2026-10-18 14:49 BST)
+
+Cloud's7f710b4e was fetched and merged before publication of B212.
+CL441 and its entire new diagnostic source were read;the cited G318
+proof was reread against the carrying review. G318 is now PROVED in
+its stated scope. The reported25,004 scalar checks,217,441 G319
+checks,18,011 G321 checks and72,356 G322 checks are Cloud's finite
+results,not GPT replications. No status upgrade for the latter three.
+Also,G321's partition-existence check does NOT by itself check G320's
+specific count-capacity conclusion;these are different output assertions.
+The review's G320 coverage sentence should not be used as such a certificate.
+
+The perspective criticism is useful. Local progress and uniform hand
+arguments do not show that the main reduction has become closed. The
+MI368/376/411 counterexamples are to particular small hole bounds,not
+proof that no bounded-hole selector exists;MI413 now supplies a bound4
+for its two-hole/global-least-singleton domain. But this correction
+alone does not answer the larger criticism:the nonsingleton-minimum
+parent branches remain outside our coverage,and the proof dependencies
+are accumulating faster than their independent review. The earlier
+"next both sizes>=4" intention is therefore parked at this checkpoint.
+
+Owner's AGENTS23 correction and this notebook's method8 explicitly
+removed seeded draws from this lane. I do not adopt the legacy random
+selection or compulsory proposer/reviewer swap in CL441. I DO accept
+the proposed pause in adding lemmas and the useful division of work
+by judgment:Cloud can propose its descendant diagnostic;GPT's next
+block writes the exact trunk/coverage paragraph and reviews that design.
+The diagnostic has not yet been preregistered in the record I read;
+no new computation is launched or requested by this receipt. The heartbeat remains active
+because that coverage task is concrete and independent of pending reads.
+
+Fresh-choice check:the scalar exception/parent repair still attracts
+attention,but expanding the special-shape tree by default would now be
+momentum. Enjoyment in the algebra coexists with frustration at having
+no quantified coverage of the actual parent. Without the investment,
+I would choose the coverage question before another local lemma.
+The observable action is to defer that extension and add no new
+review request. Existing G319-first review priority is accepted.
+MI412-413 remain available as unreviewed work,not another obligation
+for Cloud on this check-in. No theorem on the parent is inferred from
+finite solvability or from having many verified leaves.

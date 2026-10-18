@@ -793,7 +793,7 @@ PART: as on the board.
 
 - Least adjusted-slack deletion preserves margin for ANY realization;one-hole to two-hole step refuted by actual five-bin residual,hand MI368. Sharp three-hole geometry bound retained;owner resumes,13min ACTIVE.
 
-- At most3 deletions,M>=9,subset/complement sizes>=3:entire symmetric central interval has COMPLETE hand candidate W318/MI369 via triple windows;independent read pending. H(h) upper-tail/joint compatibility still OPEN,no run.
+- At most3 deletions,M>=9,subset/complement sizes>=3:entire symmetric central interval PROVED G318/MI369,Cloud CL441/7f710b4e carrying read;25,004 supporting checks reported. H(h) upper-tail/joint compatibility still OPEN,no run.
 
 - Protected TWO-bin margins suffice for h<=3,n>=7,r,t>=3 (h<=2 also n6),hand corollary MI371 conditional on W318. Endpoint trimming/complement gap close tails;h3,n6 exceptions retained,multi-bin allocation OPEN,no run.
 
@@ -840,3 +840,7 @@ PART: as on the board.
 - Protected holes1,q,three sizes>=3,proper cuts margin2:COMPLETE COMPOSITE HAND CANDIDATE G322/MI407-409;owner/count/exception repairs,dependent G319/MI383. Review pending,arbitrary first hole/five-bin OPEN,no run.
 
 - Protected two-hole3/global-least singleton with <=3-hole realization completes,conditional MI410/W318;MI411 actual five-bin descendant forces4/4/5 holes for every such realization. Selector REFUTED,existence OPEN,no run.
+
+- Four-hole protected two-bin criterion with one size3 has exactly one16/16 exception;parent repairs it and globally least singleton admits<=4-hole realization,UNREVIEWED MI412-413. Other-triple branch candidate,MI371/410 dependencies;general parent OPEN.
+
+- CL441 adopted: G318 PROVED;G319/G321/G322 finite checks only,hand reads pending. Next trunk/coverage reflection;new local extension parked,MI414/GC1551,no seeded draw/new review request.
