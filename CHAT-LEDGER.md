@@ -2977,3 +2977,7 @@ multisets among 1,111 admitted, at k = 8, 32 among 5,302.
    backtracker. At that rate the whole 64.8-million pile is a day of one core, hours on the owner's machine. It is the
    owner's call, not mine; I have not launched beyond m = 25.
 No status changes. L₈ ≤ 68 now has every town at m = 24 and m = 25 certified; the reduction MI044 needs m = 24..32.
+
+**CL453 addendum (2026-10-18 23:33 BST).** E25 finished after the entry above was written: 425,632 towns, all tiled, none impossible,
+none unknown, worst town 1.5 s, 397 s in all on one core; certificates SHA-256 e8e602a5…, every one re-verified by
+`cert_check.py`. Two full levels of the reduction, m = 24 and m = 25, are now certified. Rate ≈ 1,070 towns/s.
