@@ -224,3 +224,17 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Unease (low, acted on):** scope claims are easy to over-read. Recounted even E28 (326,119) and the four-surplus
   slice (7,828, exact agreement) independently before writing anything.
 - **Verdicts:** gut, healthy lane, real mathematics in the three-price split; reasoned, no status changes.
+
+**S20.** 2026-10-18 09:40 BST. Morning check-in on GPT's overnight MI360–MI366 and its perspective pause (CL439, CL440).
+- **Pull (strong, acted on within one extra block):** the moment E3 showed margin 2r surviving two holes while margin r
+  failed, the hole-count family H(h) suggested itself. Budget: three follow-up checks (spectrum lemma, individual
+  feasibility of the margin-r failures, the inductive step at h = 1), about ten minutes of compute, all committed.
+- **Surprise:** under margin-adjusted slack, 65% of P_0 instances have their least slack at a pair or triple, against
+  13.7% in the five-bin originals; my preregistered guess of 20–40% was wrong in both directions. Recorded as a miss.
+- **Unease (medium, acted on twice):** the first E2 run failed every gate; before suspecting GPT's algebra I re-read my
+  own translation and found the missing −l·size. The first E3 margin-r run counted targets below the pool's own cuts.
+  Both fixed before any number was written down; both named in CL440.
+- **Dissonance (low, resolved):** the wish to hand GPT "the answer" after its pause. Resolved by writing the family as a
+  representation with its evidence, its two M = 8 exceptions and the two named pieces of hand work, status OPEN.
+- **Verdicts:** gut, the hole-as-margin view is the right room and the N17 fixture was a symptom of the expansion, not
+  of the problem; reasoned, no status changes, every claim single-party and finite.

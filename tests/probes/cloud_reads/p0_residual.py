@@ -114,7 +114,8 @@ def E2():
                         assert len(set(A)) == a and sum(A) == su[j]
                         pool = sorted(set(full) - set(A)); R = [x - l for x in pool]
                         assert R == [x for x in range(m + 1) if x != q]
-                        rsz = [sz[b] for b in others]; rsu = [su[b] for b in others]
+                        rsz = [sz[b] for b in others]; rsu = [su[b] - l*sz[b] for b in others]   # translate values by -l: each bin's sum drops by l*size
+                        assert sum(rsu) == sum(R)
                         key = (m, q, tuple(sorted(zip(rsz, rsu))))
                         p0 = margin_ok(rsz, rsu, 1); gate = lift_gate(l, k, m, q, rsz, rsu)
                         if not p0: stats['p0_fail'] += 1
@@ -134,8 +135,15 @@ def controls():
     P = [x for x in range(13) if x != 6]
     print("MI350 negative (4,18,18,32) on [0,12]\\{6}: P_0", margin_ok([3,3,3,3],[4,18,18,32],1), "plain cuts only", all(sum(u) >= L(r) for u, r in [([4],3)]), "partition", exists(P,[3,3,3,3],[4,18,18,32]))
     print("MI364 protected (18,18,20,16):", margin_ok([3,3,3,3],[18,18,20,16],1), exists(P,[3,3,3,3],[18,18,20,16]))
+def pool_cuts(pool, sizes, sums):
+    pool = sorted(pool); k = len(sizes); n = len(pool); pre = [0]
+    for x in pool: pre.append(pre[-1] + x)
+    for mask in groups(k):
+        r = sum(sizes[j] for j in range(k) if mask >> j & 1); s = sum(sums[j] for j in range(k) if mask >> j & 1)
+        if not (pre[r] <= s <= pre[n] - pre[n-r]): return False
+    return True
 def E3():
-    print("== E3: two holes, four bins sizes>=3, margin mu*r (m=12,13) ==", flush=True)
+    print("== E3: two holes, four bins sizes>=3, margin mu*r AND the pool's own cuts (m=12,13) ==", flush=True)
     for mu in (2, 1):
         for m in (12, 13):
             cnt = fail = 0; fails = []
@@ -143,7 +151,7 @@ def E3():
                 pool = [x for x in range(m + 2) if x not in (q1, q2)]
                 for sizes in itertools.combinations_with_replacement(range(3, m), 4):
                     if sum(sizes) != m: continue
-                    for sums in enum_targets(pool, sizes, lambda s, u: margin_ok(s, u, mu)):
+                    for sums in enum_targets(pool, sizes, lambda s, u: margin_ok(s, u, mu) and pool_cuts(pool, s, u)):
                         cnt += 1
                         if not exists(pool, list(sizes), sums): fail += 1; fails.append((q1, q2, sizes, tuple(sums)))
                 if time.time() - T0 > 3*CAP: break
