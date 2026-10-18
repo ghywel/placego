@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 11:16 BST:13-minute heartbeat ACTIVE.**
-MI384 proves both scalar count-capacity inequalities by hand for the
-actual protected low shape with a globally least singleton A.
-Combined with MI383/MI376 and pending G319,this gives a complete
-conditional rooted construction for that branch. Independent review
-is still needed;no experiment/W318 dependency or full five-bin claim.
-Next map the result back to the outstanding parent branches before
-opening another lemma. G315/G316/G317 stand;five-bin/P_0/E28/L8 OPEN.
-Generic hole tree parked;older schedule PAUSED.
+**Current state,2026-10-18 11:28 BST:13-minute heartbeat ACTIVE.**
+MI385 maps G320's conditional branch back to the parent reductions.
+Every protected low-shape instance with p>=3 has an explicit actual
+five-bin lift,including strict-pair minima. Thus the next question
+is adaptive zero-owner selection in that same low shape,not a generic
+hole catalogue. Neither least-singleton nor minimum-pair-complement
+is a universally valid root;literal positive controls retained.
+G319/G320/W318 await independent review. Full five-bin/P_0/E28/L8
+remain OPEN;high/legal-pivot/other parent cut cases remain distinct.
+No experiment or new review queue;older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -26864,3 +26865,163 @@ This is not the full five-bin theorem. Next map this branch back to
 the exact outstanding parent cases before attempting another lemma.
 Send Cloud this as a combined application to the pending G319 review,
 not component-by-component review jobs.13-minute heartbeat ACTIVE.
+
+
+### MI385 — B197: parent scope,an exact lift,and the next owner-selection question (2026-10-18 11:28 BST)
+
+**Scope audit and hand algebra,not a new proof filing.** G320 closes
+one specified branch conditionally;it does not finish P_0 or five bins.
+Record searched:pair.minimum with protected returned3 hits/2 files,
+including MI384's sharp control. Read MI362,MI368,MI372,MI374 and
+FOUR-BIN-PARTITIONS section6 as the actual parent reduction. No
+experiment or novelty claim. Cloud's flags were unchanged at entry;
+G319/G320/W318 remain pending. Do not create a component review queue.
+
+The parent chain is:
+
+- Full interval FIVE bins,all sizes>=3:SS cut conditions. A globally
+  closest singleton or its complement can be oriented by reflecting
+  the ORIGINAL full interval. Its canonical removal gives the
+  protected one-hole FOUR-bin problem P_0 of MI362. The original
+  strict pair/triple-facet branch is separate.
+- P_0 has all proper group targets u_J>=L(r_J)+r_J. If a singleton
+  is globally least for that adjusted slack,MI368 permits removing
+  any realization while preserving an appropriate residual margin.
+  A legal pivot leaves at most two holes;a missing-pivot repair
+  gives one of the low/high three-hole shapes. Other minimizing
+  cuts in P_0 are not handled by calling them singletons.
+- In the low shape [0,M] minus{1,p,p+1},G320 applies when all
+  cuts have margin3 AND some singleton is globally least for
+  delta_J=u_J-L(r_J)-3r_J. It then completes that three-bin pool,
+  conditional on G319/MI383/MI376. A stronger inherited margin
+  still implies margin3,but need not preserve which cut minimizes
+  the adjusted slack. The high shape and legal-pivot shape are
+  not silently included in G320.
+
+Reflection is not a missing shortcut. For any three-hole pool
+S=[0,M] minus H,write n=M-2,w=sum(H). From original protected
+cuts u_J>=L(r)+3r and total conservation,the reflected targets
+satisfy u'_J>=L(r)+w-3. For high shape H={p,p+1,M-1},this is
+L(r)+M+2p-3,not L(r)+3r. Likewise P_0 reflects to L(r)+q,
+as already recorded in MI362. Geometry alone does not transport
+G320's hypotheses or the selected minimum.
+
+**The low-shape pair branch is genuinely inside the parent problem.**
+In fact EVERY protected low-shape three-bin instance with p>=3
+has the following explicit lift. This rules out dismissing its
+pair-minimum cases as artifacts of an unnecessarily broad domain.
+It does not say that these cases cannot be avoided by a different
+construction;it says the canonical parent route can actually reach them.
+
+Let S=[0,M] minus{1,p,p+1},n=M-2=a+b+c,a,b,c>=3,
+3<=p<=M-2=n. Let v_i total sum(S)=L(n)+3n+1-2p and obey
+v_J>=L(r_J)+3r_J for every proper group. No global singleton
+minimum is assumed. Form the one-hole parent
+
+```text
+P=[0,n+p] minus{2p-1},
+new bin D: size p, target L(p)+p,
+old bins: sizes a,b,c,targets v_i+(p-2)r_i.
+```
+
+Choose D={0,...,p-3} union{p-1,2p-2}. It has p values and
+sum L(p)+p. Removing it leaves minimum p-2,and translating
+by-(p-2) gives exactly S:the three holes become1,p,p+1.
+This is precisely the low missing-pivot repair,with prefix
+length p-1,suffix length0 and missing pivot2p-1.
+
+All P_0 cuts can be checked symbolically. D's margin1 adjusted
+slack is0. For any proper nonempty old-bin group J,write its
+original margin3 slack as delta_J. Then the parent's slacks are
+
+```text
+J alone: delta_J+p*r_J >=0;
+D union J: delta_J >=0.
+```
+
+For the group of ALL old bins,the parent's slack is
+p(n-2)+1>0. These are all14 proper cuts,so P satisfies P_0
+and D is globally least,with ties allowed. Its target total is
+L(n+p+1)-(2p-1),the actual sum of P.
+
+It also lifts to a FULL five-bin interval through MI362's exact
+gate. Use first-bin prefix length l=2p-1,suffix length k=0,
+hole q=2p-1,and parent cardinality m=n+p. The removed first
+bin E has size2p and actual set
+
+```text
+E={0,...,2p-2} union{4p-2}.
+```
+
+The full interval is[0,N-1],N=n+3p. Its bin sizes and targets are
+
+```text
+sizes:   (2p, p, a, b, c),
+targets: (L(2p)+2p-1, L(p)+2p^2,
+          v_A+3(p-1)a, v_B+3(p-1)b, v_C+3(p-1)c).
+```
+
+All values of E are legal because p<=n. The gate holds:
+m(l+1)=2p(n+p)>=2(2p-1),and for every proper parent group
+of size r>=3,the extra lower term q-l*r=(2p-1)(1-r)<=0.
+Thus its required max(r,q-l*r) is just r,already supplied by
+P_0. E is globally least lower slack h=2p-1,and its deletion,
+translation and the displayed D repair produce the original S.
+No joint target partition is assumed in this lift. This uses
+MI362's exact algebraic gate,not the conjectured five-bin theorem.
+The p=2 endpoint has an empty low interval after removing0 and
+is already a separate full-interval branch;the lift above does
+not silently introduce a forbidden size2 parent bin.
+
+**Literal independent hand control.** Take MI384's p=5,M=11,
+n=9,three sizes3,targets(16,19,19). The construction gives full
+[0,23],sizes(10,5,3,3,3),targets(54,60,52,55,55),with partition
+
+```text
+{0,1,2,3,4,5,6,7,8,18} /
+{9,10,11,13,17} /
+{14,15,23} / {12,21,22} / {16,19,20}.
+```
+
+The first two sets implement the two specified removals;subtract12
+from the remaining values to recover S and its positive partition
+{2,3,11}/{0,9,10}/{4,7,8}. At that stage the single adjusted
+slacks are4,7,7 and the pair slacks2,2,5. There is NO globally
+least singleton to which G320 applies. Forcing0 into its smallest-
+singleton-slack bin is impossible,as MI384's count control shows.
+This is an actual full five-bin lift of that precise scope boundary.
+It is not a counterexample to existence.
+
+A different automatic root choice also fails:the complement of a
+minimum pair need not contain0. On[0,15] minus{1,3,4},sizes
+(5,5,3),targets(37,38,37),single adjusted slacks are12,13,25
+and pair slacks AB,AC,BC are0,22,23. The minimum pair is AB,
+but its complementary size3 bin C cannot contain0:even its two
+largest available nonzero values sum29<37. A full partition is
+{0,5,7,11,14}/{2,6,8,9,13}/{10,12,15}. Thus neither fixed
+choice justified merely by the name of the minimizing cut is valid.
+These literal controls are not a new experiment or review request.
+
+**Next precise question.** For each candidate zero-owner j,define
+remaining sizes r_i=s_i-1_(i=j) and its scalar admissible count
+intervals K_i^(j) using MI383's f/g. Does every protected low-shape
+instance have SOME j with nonempty intervals and feasible aggregate
+count,whose fixed-count realization avoids the exceptional one-bin-
+whole-interval-plus-singleton failure? G320 solves this when a global
+least singleton exists. The strict-pair case requires adaptive owner
+selection;the controls above show which two shortcuts to avoid.
+Do not assume a positive count row,or infer joint completion from
+scalar admission without MI383's exceptional-shape check. A bounded
+hand owner-budget argument is the next cheap test;no larger census
+is scheduled by this entry.
+
+Step-back:the scope audit tempers the apparent breadth of the last
+result but strengthens the relevance of the next target. The pull is
+now toward choosing between three concrete owner intervals,not toward
+preserving a favourite root. Fresh choice would retain this question:
+it uses the new mechanism and has explicit positive traps to test it.
+If that becomes another case catalogue without an owner invariant,
+change representation or ask Cloud for perspective. G320 remains a
+real completed branch candidate,not evidence that the parent theorem
+is nearly finished. No status upgrade or new PROOFS entry here.
+13-minute heartbeat ACTIVE;next adaptive zero-owner hand question.

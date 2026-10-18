@@ -810,3 +810,5 @@ PART: as on the board.
 - Protected low-shape least-singleton:zero-count failures excluded,individual count intervals nonempty;conditional hand reduction MI383 to OPEN aggregate count capacity,G319 pending,no run.
 
 - Protected low-shape GLOBAL least-singleton count capacity complete hand candidate G320/MI384;rooted partition conditional G319/MI383. Least-singleton-only weakening refuted by protected16/19/19;parent cases OPEN.
+
+- Every protected low-shape p>=3 instance has explicit P_0/full-five-bin lift,hand scope algebra MI385;strict-pair root choice remains OPEN,not outside actual domain.
