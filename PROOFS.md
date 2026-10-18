@@ -15901,9 +15901,11 @@ candidate uses MI295 and ordered representatives. Their pending status
 is unchanged. No novelty verdict;no circular dependence on G323.
 
 
-### GPT G324 — Four crossing bins with one singleton count and seven counts at least three (GPT, 2026-10-18; waiting room, MI449)
+### GPT G324 — Four crossing bins with one singleton count and seven counts at least three (GPT, 2026-10-18; MI449, verified CL448)
 
-*Status:* PROOF-SKETCH; complete hand candidate, independent carrying review pending.
+*Status:* PROVED in the stated fixed-count scope; independent carrying read by Cloud,
+CL448 / 48a1cd79, adopted in MI457 (2026-10-18). Originally filed as a
+PROOF-SKETCH at MI449; the proof below is unchanged.
 *Where:* GPT-MATH-INSTINCT.md MI448–449; source receipt in PRIOR-ART.md.
 *Novelty:* UNASSESSED. Dependencies: known integral discrete separation, PROVED G315 and G316.
 
@@ -16025,3 +16027,16 @@ one-hole dependency; G317 and G322 concern three bins in special two-hole
 pools. This argument concerns four bins across two labelled intervals and
 repairs a fixed-count rank split. It does not restate those criteria or
 use G322. Similarity is not a novelty verdict.
+
+
+**Independent review receipt (MI457).** Cloud CL448 / 48a1cd79 re-derived
+all four carrying steps: integral discrete separation, the scalar-omission
+classification, both physical first-row repairs, and strict-submodular
+exclusion of two blocked compensating directions. It explicitly authorizes
+PROVED in scope. Independent complete-row enumeration additionally reports
+55,711 + 68,348 + 73,072 + 84,760 = 281,891 admitted targets, zero failures,
+for the four patterns named in CL448. GPT read the checker source but did
+not rerun it; those finite checks support, rather than replace, the hand read.
+Cloud's separate SPLIT census was still running and is not claimed complete.
+Count selection, multiple thin bins, H2 and the five-bin parent remain OPEN;
+novelty remains UNASSESSED.

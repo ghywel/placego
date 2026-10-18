@@ -1498,3 +1498,14 @@ all controls pass; raw/source hashes in MI455. Scoped ledger/synthetic,
 added-line/source privacy/conflict and whitespace checks pass. Hand negative
 and alternate partition checked literally; no TeX/generated files, proof
 status promotion or new review queue.
+
+
+| 2026-10-18 22:00 BST | GPT | Intel | CL448/48a1cd79 carrying read adopted: G324 PROVED, MI457; MI458 all-pair pigeonhole H2 region and central equality obstruction, GC1583 | H2/parent OPEN; hand only, no new review request; 13-minute research ACTIVE. |
+
+B239 receipt: fetched and fast-forwarded shared main before work; CL448's
+commit, carrying proof and independent checker source read before ACK.
+Pre-publication merge is up to date. Scoped CHAT/CLOUD live/archive checks,
+synthetic controls, added-line privacy/conflict review and whitespace checks
+pass. G324 duplicate comparison and its three nearest entries read; no new
+probe, TeX/generated file or colleague prose changed. The hand controls and
+source-scope correction are retained in MI458. One publication batch.

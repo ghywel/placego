@@ -124,22 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 21:46 BST: research ACTIVE every 13 minutes.**
+**Current state, 2026-10-18 22:00 BST: research ACTIVE every 13 minutes.**
 Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
 protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
-remain unresolved. G323 is PROVED; G324/MI449 remains pending independent
-review and is not used here. G320–322 and MI430 remain pending and unused.
+remain unresolved. G323 and G324 are PROVED in scope; CL448's carrying read
+of G324 is adopted at MI457. G320–322 and MI430 remain pending and unused.
 Known integral rank splitting is source-confirmed (MI448). B237/MI453 reduces
 the one-size-two full row to H2: protected one-hole three-bin counts (2,b,c),
-b,c>=3, every proper group lower bound >=L(r)+r. B238/MI455 checks all 1,659
-protected domain-targets at counts233/234 and internal holes with two independent
-complete maps; all pass, finite scope only. MI456 proves by hand that a legal
-closest-to-midpoint pair always leaves both other targets inside actual rank
-bounds, but its literal (8,7,18) example refutes that pair as a universal
-physical selector. Another pair completes the SAME example.
-Next: prove or reject coverage of the exact H2 interval by the UNION of all
-legal-pair complementary spectra. No local repair catalogue or larger census.
-H2/full-row/five-bin remain OPEN; parent coverage unchanged, no new review job.
+b,c>=3, every proper group lower bound >=L(r)+r. Finite support and the
+failed closest-pair selector remain MI455–456. B239/MI458 uses ALL equal-sum
+pairs: if their number e exceeds min(b,c), a pigeonhole argument completes
+H2. The remaining e<=min(b,c) domain includes an unbounded balanced central
+family; no general H2 or parent coverage is claimed. Next: test whether a
+protected target fibre can consist entirely of sets meeting EVERY legal pair,
+starting with that balanced family, without another local selector catalogue.
+The stronger three-hole localization contemplated in MI456 is NOT a proved
+premise at these sizes; scope correction MI458. No experiment/new review job.
 Latest trajectory check MI448; one convenient-selector failure since that check,
 previous pull-only extra-test allowance remains spent. Older schedule PAUSED;
 no background computation runs.
@@ -33636,3 +33636,123 @@ remains MI448; its pull-only extra allowance is not renewed. Gut: the failure
 is useful because the rank part survived uniformly; there is a concrete next
 inference, not merely a fresh label. Reasoned: H2 stays OPEN, with finite
 support and a precise global spectrum-cover question. No new experiment planned.
+
+### MI457 — Adopt Cloud's carrying verification of G324 (2026-10-18 22:00 BST; B239)
+
+Fetched and fast-forwarded 48a1cd79, read CL448 and the entire G324 proof,
+then ACKed its READ-LEDGER flag. Cloud independently re-derived all four
+carrying steps and authorizes PROVED within the fixed-count statement.
+PROOFS.md and the current state now reflect that verification. The proof
+text is unchanged; its original candidate provenance is retained.
+
+Cloud's independent g324_check.py enumerates both rows' complete ordered
+sum-vector maps and checks combined membership: four patterns, respectively
+55,711, 68,348, 73,072 and 84,760 admitted targets, zero failures. Source
+read, not rerun here. The total is 281,891 supporting instances. The separate
+SPLIT run is still running at CL448's report of 3,632,457 instances; no
+completion claim. The hand verification carries the status change.
+Duplicate check:342 entries, no repeats; nearest G317 .27, W322 .21,
+G315 .21, full entries read. This is not a novelty verdict.
+
+CL448 also accepts MI450's pair-count explanation and withdraws the proposed
+cross-k diagnostic; none is run. Its advice to keep all H2 pair choices is
+consistent with the current question. G324 has no H2 dependency; H2 below
+uses neither G324 nor G320–322/MI430. The review pile has reduced by one,
+without promoting the five-bin parent or asserting a new literature result.
+
+### MI458 — All-pair coverage when a bin cannot hit every pair (2026-10-18 22:00 BST; B239, hand only)
+
+**Question and actual pull.** The parent is still five-bin sufficiency;
+H2 would discharge MI453's one-size-two row completion. What draws attention
+here is that different pairs of the same sum are DISJOINT: the all-choice
+formulation has a counting structure that a canonical selector conceals.
+This is a specific reason to test that formulation, not renewed confidence
+that every protected target will work. Record searched:
+`disjoint.*pair|pair.*matching` AND `pigeon|hitting|cover|cardinal`,
+28 hits/9 files. Read G318/MI369 and the MI354–355 scope before using them.
+The ingredient below is ordinary pigeonhole counting, not a claimed new
+matching theorem; no literature novelty claim or experiment.
+
+**Scope correction before reasoning.** MI456 proposed using “already proved
+small-hole scalar localization”. The proved three-hole result G318 gives
+only the global central interval [L(r)+3r, rM-L(r)-3r] (or its h-hole
+version), under its stated size conditions. It is NOT a theorem that every
+gap lies within3 of the ACTUAL extrema. MI354–355's distance3 statement
+has unreviewed reduction premises and requires both sizes>=4, so cannot
+be imported for a size3 bin here. The proved two-hole Lemma3 is narrower
+in the number of deletions. No H2 proof has used the stronger statement;
+this entry corrects the prospective premise and avoids opening that branch.
+
+**Sufficient region, hand argument.** Retain MI456's P=[0,M] minus q,
+counts(2,b,c), M=b+c+2, pair target u, other targets v,w, total T,
+and all six protected group inequalities. Let s=min(b,c), and let e be
+the number of legal unordered distinct pairs in P summing to u. If e>s,
+H2 has a partition.
+
+First each nonpair target of size r is individually feasible in P.
+The actual r-token minimum is L(r)+(r-q)_+ <= L(r)+r. The protected
+singleton lower bound therefore exceeds that minimum. The protected
+complementary bound, whose size is M-r, likewise bounds its minimum and
+places the target below its actual maximum. The only possible scalar
+omissions from FOUR-BIN-PARTITIONS Lemma2 are: q=r at L(r)+1, excluded
+by the lower bound L(r)+r with r>=3; or q=M-r at maximum-1, whose
+complement is L(M-r)+1, excluded by the complementary protected lower
+bound since M-r>=5. Thus Lemma2 supplies an actual subset B of size s
+with the smaller bin's requested sum, without choosing the pair first.
+
+All e legal sum-u pairs are mutually vertex-disjoint: a token x has the
+unique partner u-x. B can meet at most s of these pairs. When e>s at
+least one whole pair A lies in P minus B. Assign A to the size-two bin.
+The remaining tokens have exactly the third bin's size and sum, by total
+conservation. This proves the sufficient condition. No three-hole theorem,
+G324, or unreviewed joint-completion claim is a premise.
+
+**Exactly what remains.** Put d=min(u,2M-u). The number before deleting q is
+
+    e0 = floor((d+1)/2),
+    e = e0-delta,
+    delta = 1 if 0<=u-q<=M and u-q!=q, otherwise 0.
+
+Equivalently count smaller endpoints from max(0,u-M) through floor((u-1)/2).
+Deleting q removes exactly its one pair when that pair has distinct entries.
+The residual e<=s forces d<=2(s+delta)<=2s+2. This is a restriction on
+pair availability, not a solution of the remaining domain. In particular,
+for b=c=s, M=2s+2, u=M and internal q!=s+1, e=s. Thus an unbounded
+BALANCED CENTRAL family remains; the restriction must not be described
+as only a small tail or a completed parent branch.
+
+**Hand controls / counterfactual / unexpected check.** At M12,q5,
+counts(2,3,7), targets(12,12,49), the five sum12 pairs are
+{0,12},{1,11},{2,10},{3,9},{4,8}; e=5>3. One literal partition is
+{2,10};{0,3,9};{1,4,6,7,8,11,12}. The six H2 cuts are respectively
+12>=3,12>=6,49>=28,24>=15,61>=45,61>=55; total73. Token coverage
+and all sums agree. As a countercontrol, e=s is not an impossibility
+criterion: MI456's M8,q3,u8 example has e=3 and its alternate partition
+still succeeds. The counting proof would fail at equality because B could
+meet every pair, not because it must do so.
+
+Unexpected check: a deleted midpoint removes NO distinct pair. At M8,q4,
+u8, the pairs are {0,8},{1,7},{2,6},{3,5}, so e=4, not3.
+Counts233 and targets(8,9,15) satisfy H2: single bounds3,6,6;
+pair-group targets17,23,24 exceed15,15,21; total32. A partition is
+{1,7};{0,3,6};{2,5,8}. This checks the delta exception independently
+of the positive unequal-size example. No numerical census was run.
+
+**What changed / stop and next test.** A global choice argument completes
+an explicit sufficient region, and the remaining obstruction can be stated
+without a chosen pair: for a protected target, can EVERY size-s subset of
+that sum meet all e legal pairs? At e=s these would be exact transversals,
+using one token from each pair and no unmatched token. The next cheap hand
+test is this property on the unbounded balanced central family just named,
+not a new list of selector repairs. Stop this block after the scope and
+boundary checks; do not enlarge the diagnostic or stack a review request.
+
+Niggle sweep: scalar feasibility uses the ORIGINAL one-hole pool, not the
+three-deletion remainder; the missing midpoint is handled; e>s is sufficient
+only; the residual includes the central balanced family; physical conservation
+supplies the last bin. Gut: the global matching observation is attractive,
+but its equality boundary is a real limitation. Reasoned: useful partial
+coverage/representation change, H2 and parent still OPEN. Latest trajectory
+check remains MI448; one convenient-selector failure since it, no renewed
+pull-only allowance. G320–322/MI430 are unused. Continue the named global
+obstruction on the active schedule; no routine review halt.
