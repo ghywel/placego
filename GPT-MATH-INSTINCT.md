@@ -87,18 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 13:23 BST:13-minute heartbeat ACTIVE.**
-MI399's high-shape hand candidate and G321 remain pending review.
-MI403's SAME45-state diagnostic refutes the negative forecast:
-EVERY minimum-physical-error fibre choice strictly decreases the
-minimum error when positive. Lex-first minimum-error feedback reaches
-one of3 zero-error count states;10 literal physical partitions exist.
-This is ONE fixed protected two-hole target,not a general theorem.
-Next hand question:prove or refute the existential strict-descent
-statement for protected three-bin two-hole pools,explicitly spending
-the margin2 and size>=3 hypotheses. No larger census or tie-break
-sweep. The old blind lexicographic policy stays refuted/parked.
-Legal two-hole and nonsingleton P_0 branches,full five-bin/E28/L8 OPEN.
+**Current state,2026-10-18 13:36 BST:13-minute heartbeat ACTIVE.**
+MI404 proves existential minimum-error descent for the endpoint-hole
+family R={0} union[3,n+1],conditional only on reviewed MI295.
+MI405 refutes the stronger EVERY-minimizer claim by an explicit protected
+(3,3,6) example:two optimal choices cycle,while another reaches a goal.
+General existential descent with separated thresholds remains OPEN.
+Next hand question is simultaneous ownership/count choice across the
+middle segment;no larger census or deterministic tie-break tuning.
+G321/MI399 remain pending independent review;full five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28636,3 +28633,164 @@ using the two cut edges and protected rank slack;try to build a genuine
 protected countercontrol before growing a repair catalogue. No further
 census is authorized by this outcome. G321/MI399 review proceeds
 independently;full P_0/five-bin/E28/L8 OPEN,13min ACTIVE.
+
+### MI404 — B207: endpoint holes separate existential progress from arbitrary minimizers (2026-10-18 13:36 BST)
+
+**Hand analysis,not a new census;carrying argument unreviewed.** Question:
+can MI403's existential descent be proved using the protected margin2,
+rather than treating whole-fibre optimization as a convergence theorem?
+Record searched:`best.response|strict.descent|minimum.*fibre|minimum.*fiber`
+and `hole|count|MI403`:16 hits/7 files. MI400-403 and the existing
+MI295 three-bin base (FOUR-BIN-PARTITIONS section5) read. MI402's
+primary-literature orientation is retained;no new literature or novelty
+claim. Initial pull is toward an explanation of strictness;unease is that
+one favorable finite graph hides bad minimizing choices. The bounded
+hand test specializes to holes1,2,where the state is just the owner of0.
+No experiment,larger census or new tie-break policy is run.
+
+Put R={0} union[3,n+1],three sizes a,b,c>=3 totaling n,and
+T=L(n)+2n-2. Assume every proper group target obeys
+u_J>=L(s_J)+2s_J and total conservation. Define
+
+```text
+alpha_s=L(s)+3s,
+beta_s=(n+1)s-L(s),
+Z_s=(n+1)(s-1)-L(s-1)=beta_s-(n+2-s).
+```
+
+The protected complementary cut gives u_i<=beta_(s_i)-2.
+A bin is LOW when u_i<alpha_(s_i). At most one is low:two low
+bins of sizes a,b would have target sum at most
+L(a)+L(b)+3(a+b)-2,strictly less than L(a+b)+2(a+b),since
+ab-a-b+2=(a-1)(b-1)+1>0.
+
+Call J a GOOD owner if an actual partition with0 in J exists.
+An exact criterion,from the reviewed three-bin interval base,is
+
+```text
+u_J<=Z_(s_J), and u_i>=alpha_(s_i) for every i!=J.       (G)
+```
+
+Indeed,after removing0 from J,the remaining pool is[3,n+1],with
+sizes s_J-1 and the two other original sizes,ALL at least2.
+Its individual bounds are sufficient by MI295 after translation.
+For nonowners the lower bound is alpha_s and the upper beta_s;
+the upper holds already. For J its lower bound is
+3(s_J-1)+L(s_J-1)=L(s_J)+2s_J-2,below the protected bound;
+its upper is Z_(s_J). The remaining total is exactly the pool total.
+Necessity of (G) is literal subset extremality. Thus no desired
+partition was assumed to invoke the interval theorem.
+
+There is always a good owner. If D is low,it is the sole low bin,
+and is good because
+
+```text
+Z_s-alpha_s=(s-1)(n-s-1)-3>=7
+```
+
+for s>=3,n-s>=6. If none is low,some u_J<=Z_(s_J):otherwise
+sum u_i>=sum Z_(s_i)+3>T,as
+
+```text
+sum Z_(s_i)+3-T=ab+ac+bc-2n-1
+                    >=(6n-27)-2n-1=4n-28>=8.
+```
+
+The lower estimate ab+ac+bc>=6n-27 follows by writing each size
+as3 plus a nonnegative integer. This proves protected completion
+for this endpoint-hole family by hand,conditional only on reviewed MI295.
+It does not yet prove feedback progress for interior holes.
+
+**Existential progress in this family.** Compression is z_0=0 and
+z_j=j+2 for j>=1. Both thresholds coincide. Every admissible nested
+count state is exactly one assumed zero owner K;its rank targets are
+
+```text
+w_i=u_i-2s_i+2*1_(i=K).
+```
+
+All rank fibres are nonempty by MI295 and the protected cuts. For
+a rank partition whose actual zero owner is J,its physical error
+vector is2*(1_K-1_J). Consequently E(K)=0 for good K,and E(K)=4
+otherwise. Every rank partition in a bad K fibre is a minimizer.
+
+If a low D exists and K is bad,then K!=D. Its rank target
+w_D=u_D-2s_D<L(s_D)+s_D. A subset avoiding0 has minimum
+L(s_D)+s_D,so EVERY partition in that fibre puts0 in D.
+D is good and the next error is0.
+
+If no low bin exists,choose any good J. For bad K,J!=K. We show
+that the K fibre has a partition with0 in J,by applying MI295 to
+[1,n-1] after removing0. For either nonowner i!=J the required
+rank lower bound is L(s_i)+s_i. At i=K it follows from
+u_K>=alpha_(s_K) (in fact alpha-2 would suffice);at the other
+nonowner it follows from u_i>=alpha_(s_i). Rank upper bounds
+(n-1)s_i-L(s_i) follow from u_i<=beta_(s_i)-2,including the+2
+in w_K. For J the lower bound is L(s_J),supplied by protection.
+Its upper bound is (n-1)(s_J-1)-L(s_J-1)=Z_(s_J)-2s_J+2,
+and w_J=u_J-2s_J<=Z_(s_J)-2s_J. Sizes are again at least2,
+and total rank sum is unchanged. Hence this partition exists.
+It is a minimizing successor leading to E(J)=0. Thus EVERY bad
+state in the endpoint-hole family has SOME minimizing successor
+that strictly improves,in fact reaches0 in one update.
+
+### MI405 — B207 unexpected check: protected optimal choices can still cycle (2026-10-18 13:36 BST)
+
+**Explicit hand counterexample to the STRONGER universal version.**
+Take n12,R={0} union[3,13],sizes(3,3,6),targets(26,26,36).
+Total88 is correct;singleton protected minima are9,9,27,and
+pair minima are27,54,54,against actual sums52,62,62. All cuts pass.
+A triple containing0 sums at most0+12+13=25. Therefore A and B
+are bad zero owners;C is good. E(A)=E(B)=4 by MI404's error identity.
+
+In state A the rank targets are22/20/24. The rank partition
+
+```text
+A={5,7,10}, B={0,9,11}, C={1,2,3,4,6,8}
+```
+
+has actual zero owner B. Its physical sums are28/24/36,so its
+error4 is MINIMAL over the whole A fibre. In state B,swap A and B
+in that displayed partition. Rank targets become20/22/24,actual
+zero owner A,physical sums24/28/36,and error4 is again minimal.
+Thus A<->B is a positive cycle of valid MINIMIZING choices within
+the protected minimum3 domain. The universal strict-descent extension
+suggested by MI403's finite test is REFUTED. This does not refute
+the existential conjecture:the alternatives must be kept.
+
+For a literal successful edge from A to C,use rank partition
+
+```text
+{3,8,11}/{4,6,10}/{0,1,2,5,7,9}, sums22/20/24.
+```
+
+It also has minimum error4,but its actual owner C has E(C)=0.
+A literal physical solution at C is
+
+```text
+{3,10,13}/{5,9,12}/{0,4,6,7,8,11}, sums26/26/36.
+```
+
+Niggle sweep:all displayed subsets are disjoint and exhaust their
+specified pools;rank and physical sums are distinguished. There are
+only3 nested-count states because the thresholds COINCIDE. Minimum
+error4 is proved from the owner identity and the maximum25,not
+inferred from a sample. The two uses of MI295 have residual sizes
+at least2;all complementary bounds follow from totals. Endpoint-hole
+reflection is NOT imported:the protected-margin condition need not
+survive reflection. The counterexample addresses the full protected
+conjecture of MI403;no claim that this particular fixture passes the
+additional original-parent legal-pivot gate. No computation or second
+read is claimed;the general existential statement remains OPEN.
+
+Gut verdict:the pull is more specific now. The surprising part is that
+optimality still allows a cycle while a chosen owner supplies immediate
+escape. A fresh choice favors understanding that ownership choice,not
+another dynamics census. Reasoned:discard the universal quantifier;
+retain existential descent,proved here only for bottom-adjacent holes.
+Next cheap question:for separated thresholds,can one prescribe a
+compatible pair of threshold counts by the same interval-bound argument,
+or does the middle segment obstruct simultaneous ownership? Work on
+that joint choice by hand;do not tune deterministic tie-breaks. G321
+and MI399 reviews continue independently;full P_0/five-bin/E28/L8 OPEN.
+13min heartbeat remains ACTIVE.

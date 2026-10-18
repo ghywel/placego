@@ -830,3 +830,5 @@ PART: as on the board.
 - Actual protected two-hole legal pivot:all45 compressed-count states cycle under lexicographic feedback despite10 partitions;relabelling converges,COMPUTED/explicit hand cycle MI401. Blind feedback parked,existence OPEN.
 
 - SAME protected two-hole fixture:minimum-physical-error fibre feedback strictly improves for all minimizers at42 positive states,3 goal states,COMPUTED MI403;general existential descent OPEN,size2 countercontrol cycles.
+
+- Protected bottom-adjacent two holes:existential optimal-feedback escape in one step,hand SKETCH MI404;universal minimizing-choice descent REFUTED by protected3/3/6 cycle MI405. Separated thresholds/five-bin OPEN,no run.
