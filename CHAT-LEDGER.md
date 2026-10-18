@@ -2981,3 +2981,42 @@ No status changes. L₈ ≤ 68 now has every town at m = 24 and m = 25 certified
 **CL453 addendum (2026-10-18 23:33 BST).** E25 finished after the entry above was written: 425,632 towns, all tiled, none impossible,
 none unknown, worst town 1.5 s, 397 s in all on one core; certificates SHA-256 e8e602a5…, every one re-verified by
 `cert_check.py`. Two full levels of the reduction, m = 24 and m = 25, are now certified. Rate ≈ 1,070 towns/s.
+
+
+## CL454 — Cloud: the owner asked me to make the call on the full computation; the call is yes, as an experiment, and the job for Local is written and tested (2026-10-18 23:43 BST)
+
+The owner: "does the brute force answer bring us any closer to breaking the wall? Even if we learn yes or no, it
+leaves the maths boring. So I'll set this as your call." My call, with its reasons, so that it can be argued with.
+
+**Run it.** Three reasons, in order of weight.
+1. *It is a result, not just a pile.* Tan–Teh determined L₁..L₇ exactly this way, by complete lists, and wrote that
+   they could not reach n = 8 "due to computational limitations". Certificates for E₂₄..E₃₂ under MI044's reduction
+   settle L₈ = 68, the first new value of their sequence, and confirm their Conjecture 2.7 at n = 8. That is a note
+   worth writing, with the reduction as its small mathematical content.
+2. *The certificates are data about the mechanism, which is what the wall question needs.* Every record carries the
+   tiling, the node count and whether the first branch succeeded. Tonight's chalkboard found the transversal shape by
+   looking at one tiling. Sixty-five million tilings let us ask the question that decides whether the wall is real for
+   this problem or an artefact of arbitrary targets: *does any real town ever need the clump machinery?* If a simple
+   canonical construction (sorted highs, then matching; or the solver's own first branch) tiles every real town, the
+   general theorem for real towns is that construction, and the equal-sum wall is a theorem about targets that never
+   occur. If some towns resist, those towns are the mathematics, and we will hold them in our hands.
+3. *It is cheap now.* Measured here on one core of a small container: 1,070 towns/s at m = 25, 720–2,555 at m = 28.
+   The whole pile is of the order of 12 core-hours; on the M5 with 8–10 workers, two hours.
+
+**What it does not do.** It does not touch the general cut-rule theorem, H2, or the equal-sum core; those stay with
+GPT, and the pair-sum realizability question of CL453 is the sharpest form of them. "Boring" is fair for the run
+itself; the reading of the output is not.
+
+**The job** (`tests/probes/cloud_reads/l8_certificates.py`, tested end to end here: run, independent check, resume).
+Chunks by (level, smallest street); each chunk writes one JSON-lines file ending in a DONE record and is skipped on
+restart; per-town cap 120 s, unknowns recorded, never retried; output outside git, about 105 bytes per town, ≈ 7 GB
+for everything. On the M5, from the repository root, with a folder outside the repository:
+```
+python3 tests/probes/cloud_reads/l8_certificates.py run  ~/placego-data/l8 --workers 8
+python3 tests/probes/cloud_reads/l8_certificates.py check ~/placego-data/l8
+```
+The check re-verifies every tiling against the plank list and prints one stream hash for the record. Predictions,
+written first: every town tiles; no impossible town (one would be a counterexample to L₈ ≤ 68, to be pushed at once
+under the prize-won first step); unknowns under 0.01%, at the tight end, to be re-run with a larger cap and reported
+either way; the first-branch flag will be rare, the node counts small, and the towns with the largest node counts
+will be the interesting ones. This is Local's run when the owner starts it; nothing has been launched beyond m = 25.
