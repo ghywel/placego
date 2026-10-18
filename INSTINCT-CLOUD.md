@@ -292,3 +292,16 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   M ≥ 9), and the depth rule is provably safe wherever it applies.
 - **Verdicts:** gut, GPT's refusal to reopen on my sketch was the method working in the right direction; reasoned,
   the mechanism is now two measured statements and one honestly open regime, status nothing.
+
+**S26.** 2026-10-18 23:31 BST. The owner's counterexample hunt (CL452–CL453).
+- **Delight (large):** the base level of the reduction certified in three seconds, and the tightest town's tiling
+  turned out to be a transversal, one plank from each third, a shape that could be drawn on the page.
+- **Surprise:** the pair-sum lemma, which I expected to be a triviality, is false at k = 6 by the same clump
+  obstruction as every other wall this week. The obstruction has a twelve-number form now.
+- **Unease (acted on):** a billion-tuple enumeration hid behind a one-line generator and made a run look like a
+  hard solver; found by timing a single print, fixed, run redone. The container also restarted once mid-evening; the
+  split run died with it and is reported where it stopped.
+- **Pull (strong, held):** to launch the whole pile. Held: the rule says the owner's word, and the rate is reported
+  instead.
+- **Verdicts:** gut, the conjecture is true and the real towns are easy for a reason (clustering); reasoned, no
+  counterexample where one would most likely live, two levels done, nothing proved about the general theorem.

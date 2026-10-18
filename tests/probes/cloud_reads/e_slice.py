@@ -11,18 +11,29 @@ def solve(m, targets, cap=60.0):
     # suffix min/max sums for t planks from P[i:] (smallest t / largest t)
     n = len(P); t0 = time.time(); nodes = [0]
     suf = [P[i:] for i in range(n+1)]; dead = set()
+    # prefix sums of the remaining planks (descending) and of their reverse (ascending) for count bounds
     def feasible(i):
-        # each bin: remaining sum r with parity constraint (odd planks): need some t>=0 with t = r mod 2 and achievable range
+        # dynamic Tan-Teh count test: each bin's remaining sum r needs t planks with t = r (mod 2); the fewest is the least
+        # such t whose largest-t sum reaches r, the most is the largest such t whose smallest-t sum stays <= r; the counts
+        # must be able to add up to exactly the number of planks left.
+        left = n - i; big = suf[i]; small = big[::-1]
+        tmin_total = 0; tmax_total = 0
         for r in rem:
             if r < 0: return False
             if r == 0: continue
-            # minimal number of planks: largest first
-            s = 0; t = 0
-            for p in suf[i]:
-                if s >= r: break
+            par = r & 1; s = 0; t = 0; tmin = None
+            for p in big:
                 s += p; t += 1
-            if s < r: return False
-        return True
+                if s >= r and (t & 1) == par: tmin = t; break
+            if tmin is None: return False
+            s = 0; t = 0; tmax = 0
+            for p in small:
+                if s + p > r: break
+                s += p; t += 1
+                if (t & 1) == par: tmax = t
+            if tmax < tmin: return False
+            tmin_total += tmin; tmax_total += tmax
+        return tmin_total <= left <= tmax_total
     def rec(i):
         nodes[0] += 1
         if nodes[0] & 1023 == 0 and time.time() - t0 > cap: raise TimeoutError
@@ -48,21 +59,32 @@ def B(m, l):  # Tan-Teh minimal plank count with parity
     while 2*m*t - t*t < l: t += 2
     return t
 def towns(m, lo, hi):
-    for c in itertools.combinations_with_replacement(range(lo, hi+1), 8):
-        if sum(c) == m*m: yield c
+    # nondecreasing 8-tuples in [lo, hi] with sum m^2, by bounded recursion (the naive product is a billion tuples)
+    out = []
+    def rec(i, start, remaining, acc):
+        if i == 8:
+            if remaining == 0: out.append(tuple(acc))
+            return
+        left = 8 - i
+        for l in range(start, hi + 1):
+            if l * left > remaining: break
+            if l + hi * (left - 1) < remaining: continue
+            rec(i + 1, l, remaining - l, acc + [l])
+    rec(0, lo, m*m, []); return out
 def slice_towns(m, delta):
     vals = sorted(set(list(range(68, 68+delta+1)) + list(range(2*m+66-delta, 2*m+67))))
     for c in itertools.combinations_with_replacement(vals, 8):
         if sum(c) == m*m: yield c
 if __name__ == '__main__':
     mode = sys.argv[1]; out = sys.argv[2]; T0 = time.time(); results = []
-    if mode == 'E24':
-        gen = [(24, t) for t in towns(24, 68, 2*24+66)]
+    if mode.startswith('E') and mode[1:].isdigit():
+        mm = int(mode[1:]); gen = [(mm, t) for t in towns(mm, 68, 2*mm+66)]
     else:
         delta = int(sys.argv[3]); gen = [(m, t) for m in range(24, 33) for t in slice_towns(m, delta)]
     print(f"{mode}: {len(gen)} towns", flush=True)
     stats = {'tiled': 0, 'impossible': 0, 'unknown': 0, 'count_test_fail': 0}; worst = 0
-    for (m, t) in gen:
+    for idx, (m, t) in enumerate(gen):
+        if idx and idx % 50000 == 0: print(f"  progress {idx}/{len(gen)} {stats} worst {worst:.1f}s ({time.time()-T0:.0f}s)", flush=True)
         if sum(B(m, l) for l in t) > m: stats['count_test_fail'] += 1
         bins, dt, nodes = solve(m, list(t))
         worst = max(worst, dt)
