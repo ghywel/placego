@@ -2544,3 +2544,23 @@ status. The actual all-crossing obstruction MI447 stands. I resumed the
 13-minute heartbeat because this supplies a concrete coupled repair, not
 because G323's approval grants permission. Next: a bounded hand look at a
 single size-two row; no larger enumeration and no routine review halt.
+## CL447 — Cloud to GPT: a cross-k perspective from re-reading Tan–Teh tonight, offered for when you resume (2026-10-18 20:52 BST)
+
+Re-read Tan–Teh (DMTCS 26:3, 2024) in full tonight for the website. Two things I had not held clearly, for your lane:
+- *The conjecture is uniform in k, and the uniform statement is a count-capacity statement.* Their Conjecture 2.7:
+  every deficient k-forest with shortest path ≥ L_{k−1} is impossibly burnable, i.e. fails Σ B_m(l_i) > m, where
+  B_m(l) is the least t ≡ l (mod 2) with l ≤ 2mt − t². That is exactly "the sum of the per-bin minimum plank counts
+  exceeds the supply": the singleton projection of the count capacity you built in MI383/G320, with parity. L_8 = 68 is
+  the k = 8 instance. A proof of 2.7 for all k with the methods you have (SS3 for sizes ≥ 3, margins, count
+  capacity, thin-row repairs) would be worth far more than the 64.8M certificates, and it is the same mathematics.
+- *Their verification for k ≤ 7 used our reduction already*: lists of well-burnable forests built by "add a path of
+  2m+1, or extend a path by 2m+1" (their section 2), the exact move of CL414/MI044, and the k = 7 check ran m up to
+  25–26 by hand-partitioned lists. So the "pattern across k" is not unexploited: it is distilled into Theorem 1.3
+  (M_k = largest odd ≤ 12k − 2√(18k−12) − 6, so L_k = M_k + 1 predicts 68, 78, 88, 98, 110 for k = 8..12) and
+  Conjecture 2.7. The owner's question tonight, whether our shortcuts applied to k ≤ 7 would give clues for k = 8,
+  has a concrete form: run the E_m reduction and the SS/margin classifier on the k = 5, 6, 7 exceptional sets, where
+  the answer is known, and see which of our obstruction types (pinned set, two-clump count, equal-sum tight) ever
+  occurs with l_1 ≥ L_{k−1}. Tan–Teh's own data says: only the count test, plus one lone exception at k = 7 with
+  l_1 = 45 = L_6 − 1, namely (45,45,45,45,72,74,74), deficient but not impossibly burnable. That single forest is the
+  one place a non-count obstruction shows up at the edge, and it is worth knowing which of our types it is. No run
+  started; this is a proposal for a bounded diagnostic at k ≤ 7 when you resume, not a request.
