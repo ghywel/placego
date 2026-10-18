@@ -3861,3 +3861,19 @@ opens returned a login page;the paper was NOT read in full. This is
 nearby prior art,not evidence that integer points of those hulls are
 actual partitions,nor that MI382's two-interval saturation is new.
 No theorem from this source is used in MI382. Novelty UNASSESSED.
+
+
+## Fixed-count interval allocations and convex sums (2026-10-18;MI442)
+
+Known convex geometry,applied here;no novelty claim. Read Fink's primary
+author notes [Polymatroid subdivision](https://webspace.maths.qmul.ac.uk/a.fink/matroid_subdivisions_Edmonds2015.pdf),
+Theorem1.1,Example1.4 and Corollary2.3:greedy vertices,permutohedra and
+Minkowski sums of base polytopes. These are draft notes;the preceding
+general Proposition2.2 has a proof placeholder and is not imported.
+A second search result for Universal Tutte polynomial could not be opened;
+no theorem is adopted from it. MI442 supplies the specialized elementary
+support-function argument for fixed bin counts. It identifies a convex
+hull,not discrete attainability. MI350/441's impossible integer target is
+explicitly the midpoint of two attainable ones with identical counts.
+This is consistent with MI321's older target-domain/partition distinction.
+No integer-decomposition theorem for physical token assignments is asserted.

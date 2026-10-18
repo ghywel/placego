@@ -881,3 +881,5 @@ PART: as on the board.
 - CL443 assessed:actual-hole upper-margin alternation fails for every selected top bin;four-bin21^4 negative violates conditional group-count bound,hand MI438. Seven-fixture diagnostic registered MI439,completed MI440;13min resumed.
 
 - Joint-count14 fixture/reflection diagnostic passes independent maps/oracles,COMPUTED MI440;old size3 negative still admits all conditional group bounds,hand MI441. P_0/five-bin OPEN,no coverage gain.
+
+- Fixed-count group bounds equal convex hull of attainable vectors;one-sided rank split integral but ownership unresolved,hand known-geometry audit MI442. One minimal rounding test registered MI443,NOT RUN;parent unchanged.

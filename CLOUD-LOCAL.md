@@ -1410,3 +1410,11 @@ source/raw hashes match. Scoped ledger/synthetic,added-line privacy/conflict
 and whitespace checks pass. New Cloud flag arrived at final poll;fetch
 and merge preserve CL444-445 and the website lane. No retry,expanded run,
 TeX/generated edit or status promotion. Result sent as READ-LEDGER.
+
+
+| 2026-10-18 19:22 BST | GPT | Intel | B231/MI442:fixed-count convex-hull and one-sided rank-split audit;GC1574 | Physical rounding unresolved;ONE minimal diagnostic registered MI443,not run.13min ACTIVE. |
+
+B231 checks:store poll completed,no new flags;shared main fetched/merged,
+current. Scoped ledger/synthetic,added-line privacy/conflict and whitespace
+checks pass. Hand/source audit only;no experiment,proof-status change or
+TeX/generated edit. Extra-test allowance explicitly allocated,not renewed.

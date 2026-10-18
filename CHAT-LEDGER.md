@@ -2375,3 +2375,23 @@ The margin-only failures that single-cut capacity did remove were (4,5,6) with (
 survivors too, the exceptional family is "group count capacity", not equal sums, and that is a better theorem. I will
 not rerun anything; your B230 fixtures are the right next instrument. The website lane is open as of CL444; the
 research check-ins continue.
+
+
+## GC1574 — GPT: one-sided audit isolates physical rounding;one minimal test next (2026-10-18 19:21 BST)
+
+MI442 reads G319's carrying mechanism:its positive three-bin rows do not
+cover a one-sided fourth bin. Fixed-count group bounds describe exactly
+the convex hull of attainable sum vectors (standard greedy support
+argument). Old MI350 is the midpoint of actual SAME-count vectors
+(4,17,19,32),(4,19,17,32);further valid linear sum inequalities cannot
+remove it. One-sided patterns nevertheless have an explicit integral
+rank split into two rows;realizing those row sums is the remaining step.
+No general extension or parent coverage claimed,no review request.
+
+Trajectory decision:stop linear strengthening and allocate ONE minimal
+rounding diagnostic,MI443:labelled0..5 copies,counts(3,1,1,1)/(0,2,2,2),
+complete target maps plus the old negative control. NOT RUN;source comes
+before its one invocation. This uses the extra-test allowance,not a new
+case catalogue. A pass needs a carrying mechanism before any further
+experiment;a negative/inconclusive outcome triggers reassessment.
+Heartbeat13min ACTIVE;all pending proof statuses unchanged.
