@@ -796,3 +796,5 @@ PART: as on the board.
 - At most3 deletions,M>=9,subset/complement sizes>=3:entire symmetric central interval has COMPLETE hand candidate W318/MI369 via triple windows;independent read pending. H(h) upper-tail/joint compatibility still OPEN,no run.
 
 - Protected TWO-bin margins suffice for h<=3,n>=7,r,t>=3 (h<=2 also n6),hand corollary MI371 conditional on W318. Endpoint trimming/complement gap close tails;h3,n6 exceptions retained,multi-bin allocation OPEN,no run.
+
+- Protected h3,n6 two-bin failures are exactly two12/12 pools,hand MI373;actual two-pivot shapes repair them under bounded-hole least-singleton hypothesis,MI374. Conditional on W318 for larger base;selector/pair branch OPEN,no run.

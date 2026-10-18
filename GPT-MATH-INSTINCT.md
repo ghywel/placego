@@ -87,17 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 09:48 BST:13-minute heartbeat ACTIVE.**
-MI368 gives exact residual-margin inheritance and the sharp three-hole
-cost of a one-hole deletion. MI369/W318 is the complete hand central-
-spectrum candidate;Cloud's carrying read remains pending. MI371 now
-completes the protected TWO-bin base for h<=3 and at least7 available
-values,conditional on W318. At h<=2 it also covers6 values;the known
-h3 six-element counterexamples remain. No computation or new review
-queue. Next:retain the actual three-bin residual structure while
-selecting a last deletion with controlled holes/margin and safe small
-remainder. P_0,five-bin,E28/L8 remain OPEN. G315/G316/G317 stand;
-generic hole tree stays parked,older schedule stays PAUSED.
+**Current state,2026-10-18 10:00 BST:13-minute heartbeat ACTIVE.**
+W318/MI369 central-spectrum carrying review remains pending. MI371 plus
+MI373 now gives the complete protected TWO-bin criterion for h<=3,
+both sizes>=3,conditional on W318:only two normalized six-element
+instances fail. MI374 repairs those failures inside the actual three-hole
+two-pivot geometries whenever a least adjusted-slack singleton has a
+realization leaving at most3 holes. That realization is NOT yet guaranteed;
+pair-minimum cases and actual two-hole three-bin residuals remain separate.
+Next:the endpoint-containing scalar range for a least singleton in the
+zero-excess low-end shape,then its residual geometry. No computation or
+new review queue. P_0,five-bin,E28/L8 OPEN;G315/G316/G317 stand;
+generic hole tree parked,older schedule PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -25312,3 +25313,222 @@ an appropriate least-slack deletion keeps the final hole count
 at most3 and avoids the six-element obstruction. Keep their
 structure;do not restart the generic hole catalogue. Pending
 W318 review is not a halt. No experiment or new PROOFS entry.
+
+### MI372 — B190: keep the actual residual;first locate the terminal obstruction (2026-10-18 09:56 BST)
+
+**Hand block;selection record after the initial source inspection.**
+The intended question is whether another selected bin from the actual
+three-bin remainder can reach MI371. Record searched:adjacent/consecutive
+holes with three-bin/margin/selector gives MI359 and the older fixed-zero
+work;the exact six-element pools give MI350,MI369,W318 and MI371.
+FOUR-BIN-PARTITIONS section6 and MI368 read again as the actual geometry
+sources. No new computation,census,probe or claim of independent review.
+
+A specific caution changes the immediate step. In the existing actual
+residual S=[0,11] minus{1,3,4},targets19,19,20 and three sizes3,the
+adjusted SINGLE slacks at margin3 are7,7,8. The pair slacks are5,6,6.
+Thus there is no least adjusted-slack singleton to which MI368 can simply
+be applied. A pair minimum does not become a permitted singleton deletion
+by changing its name. This is one ledger paragraph of route scope,not a
+new proof entry or review request. The target is already known positive.
+
+The remaining-size qualification also matters immediately:deleting a
+triple leaves six elements. Rather than assume a selector avoids every
+small case,I will isolate the exact protected six-element failures and
+check how they sit in the actual two-pivot geometries. Those geometries,
+when all three holes remain internal,are
+
+ [0,M] minus{p,p+1,M-1}, or [0,M] minus{1,p,p+1}.
+
+The legal-pivot case can instead have two holes;it is not silently covered
+by a statement about these two shapes.
+
+Pull:the two known six-element examples look like terminal configurations
+that can be understood directly. Unease:the question can become another
+hole catalogue if I lose the actual geometry. The hand target is to show that the protected
+six-element boundary has only those two failures,and the actual geometry
+plus slack equality forces a local repair. A third
+protected terminal failure,or an actual structured remainder where the
+repair's required values are absent,would invalidate that simplification.
+Independent hand controls:exact totals,all triples for the middle target,
+endpoint trimming,and an explicit repair using each available value once.
+Unexpected check:positive excess margin might rule out the bad terminal
+case without any exchange. This records the hand-work design,not a preregistered experimental run.
+Stop after this terminal argument and its
+exact selector implication;do not claim the missing singleton or bounded-
+hole realization exists. No experimental run is planned. The same bounded
+primary-literature orientation as MI369/371 applies;known interval and
+three-by-three equal-sum constructions are not novelty claims.
+
+### MI373 — B190: exact protected six-element exceptions by hand (2026-10-18 09:58 BST)
+
+**HAND ARGUMENT,UNREVIEWED.** With at most three holes and six
+available values,two bin sizes>=3 must both be3. Under the protected
+lower margins and total condition,the only failures are
+
+ S={0,2,3,5,6,8} or S={0,1,2,6,7,8}, with targets12,12.
+
+This statement uses the ambient[0,M] normalization of H(h).
+Endpoint holes trim as in MI371;the trimmed h<=2 case is covered
+there,conditional on the h<=2 part of W318. The new h3,n6 case
+below is independent of W318 and of any finite computation.
+
+If all three holes remain after trimming,then M=8,0 and8 are
+present,H is a three-subset of{1,...,7},and w=sum(H)>=6.
+Put u<=v. From u>=12 and 2u<=u+v=36-w<=30,we need only
+u=12,13,14,15. These four values are handled as follows.
+
+- u12. The COMPLETE list of triples summing12 in[0,8] is
+  048,057,138,147,156,237,246,345.
+  Because0 and8 survive,blocking048 forces4 into H;
+  blocking138 forces1 or3;blocking057 forces5 or7.
+  Since there are exactly three holes,only four covers remain:
+  {1,4,5},{1,4,7},{3,4,5},{3,4,7}.
+  The first leaves237;the last leaves156. Each of the middle
+  two meets all eight triples. They both have w12,so the other
+  target is also12. These are exactly the two displayed failures.
+- u13 requires w<=10. At least one of058 and067 survives:
+  killing both requires hole5 and one of6,7,whose sum with
+  the third positive hole is at least12,contradiction.
+- u14 requires w<=8,hence max(H)<=w-3<=5;068 survives.
+- u15 requires w<=6,hence H={1,2,3};078 survives.
+
+Complementation supplies v and uses every remaining value exactly
+once. This proves the claimed exception list without enumerating
+pools. It does not classify the full spectrum outside protected
+targets. The existing Cloud finite report is consistent support,
+not a step in the argument. MI371 plus this result now gives the
+full two-bin protected criterion for h<=3,r,t>=3,with precisely
+these two exceptional instances at n6. The larger-n part still
+has W318 as an unreviewed dependency.
+
+
+### MI374 — B190: the actual two-pivot geometry repairs both terminal failures (2026-10-18 09:59 BST)
+
+**HAND CONDITIONAL COMPLETION,UNREVIEWED.** This is a further
+consequence in the actual three-bin remainder,not a proof that
+the required selected realization always exists.
+
+Let S=[0,M] minus H have three internal holes of either actual
+missing-pivot repair shape
+
+ H={p,p+1,M-1}, or H={1,p,p+1}.
+
+There are three bins,all sizes>=3,and all proper groups satisfy
+u_J>=L(r_J)+mu*r_J for mu>=3. Suppose A,size a,is a globally
+least margin-adjusted-slack singleton,and SOME realization of A
+leaves a normalized remainder with at most three holes.
+Then the two remaining targets can be completed,conditional on
+MI371/W318;the two exceptional n6 cases of MI373 are repaired
+explicitly below. This implication does not assert the existence
+of such a singleton or realization. Both are still selector issues.
+
+MI368 supplies the remaining protected margins. If there are at
+least7 values left,MI371 applies. If6 remain,the other two bin
+sizes are3;MI373 applies unless the normalized pool is one of
+its two exceptions and both shifted targets equal12.
+
+Write b=min(remainder),c=max(remainder),h'=3 in that exceptional
+case. MI368 gives
+
+ mu'=h'+(mu-3)+(M-c)>=3.
+
+The target12 of a triple also forces12>=3+3*mu',so equality
+holds:mu'=mu=3 and c=M. Since mu'=a+mu-b,we obtain b=a.
+The remainder has span8,so M=a+8 and the two original targets
+are BOTH3a+12. If w=sum(H),the removed target is therefore
+
+ u_A=L(a+9)-w-2(3a+12)=L(a)+3a+12-w.
+
+Its own protected lower bound forces w<=12. Thus positive excess
+margin already excludes the exceptional case,as does any top trim.
+The exact equalities,not a guess about the shape,locate the repair.
+
+For H={p,p+1,M-1},all holes internal means p>=1. Hence
+w=2p+M>=a+10>=13,contradiction. This high-end shape never
+produces a bad protected terminal pool from such an A.
+
+For H={1,p,p+1},we have2p+2=w<=12,so2<=p<=5.
+The original holes must avoid the actual remainder
+
+ a+{0,2,3,5,6,8}, or a+{0,1,2,6,7,8}.
+
+Above a,the missing positions are respectively a+{1,4,7}
+or a+{3,4,5}. The adjacent original holes p,p+1 cannot lie
+in the first three-position set. To lie in the second would
+require p>=a+3>=6,contrary to p<=5. They cannot straddle a,
+which is present in the remainder. Thus ALL original holes lie
+below a,and the whole nine-value block[a,a+8] is available.
+
+The current A contains exactly the three omitted positions of
+that block;in either exception their sum is3a+12. Keep A's
+values below a,and repartition the block into
+
+ {a,a+4,a+8}, {a+1,a+5,a+6}, {a+2,a+3,a+7}.
+
+All three triples sum3a+12. Give the first to A and the other
+two to the remaining bins. Sizes and targets are unchanged,
+all values are distinct and available,and the full pool is used.
+This is the standard nine-value equal-sum construction applied
+locally,not a new assertion about magic arrays. It completes
+both terminal cases under the stated structured hypothesis.
+
+**An actual lifted control.** In P=[0,14] minus5,the four-bin
+sizes(3,5,3,3),targets(6,34,30,30) satisfy P_0. Their adjusted
+slacks at margin1,in order A,B,C,D,are
+
+ singles:0,19,24,24;
+ pairs AB,AC,AD,BC,BD,CD:4,15,15,28,28,39;
+ triples ABC,ABD,ACD,BCD:4,4,21,28.
+
+Removing the uniquely least singleton {0,2,4},then shifting by-1,
+gives S=[0,13] minus{1,3,4},sizes(5,3,3),targets(29,27,27).
+Its single slacks at margin3 are4,15,15,and pair slacks4,4,21;
+the size5 bin is a global least singleton,with ties retained.
+Choose it initially as{0,2,6,9,12}. Its remainder is exactly
+5+{0,2,3,5,6,8},so the two targets27,27 FAIL on that fixed
+remainder. The local repair instead gives
+
+ {0,2,5,9,13} / {6,10,11} / {7,8,12},
+
+with sums29,27,27. Every value of S is used exactly once.
+The original P instance itself lifts by MI362 to full[0,16],
+first bin{0,1,7},sizes(3,3,5,3,3),targets(8,12,44,36,36).
+Its gate has l2,k0,m14,q5;42>=10 and every residual size r>=3
+has max(r,5-2r)=r. Hence this repair occurs inside the intended
+five-bin reduction,not only in an unrelated three-hole example.
+
+**Check that the shape hypothesis is used.** For the generic
+pool[0,11] minus{1,4,7},targets(12,21,21),all sizes3,margin3,
+the least singleton A={0,2,10} leaves the other bad pool
+3+{0,2,3,5,6,8}. Its top nine-value block is NOT full.
+The cut slacks are singles0,9,9 and pairs0,0,9,so slack alone
+does not justify the nine-value repair. The whole target is
+nevertheless positive:{0,3,9}/{2,8,11}/{5,6,10}. This control
+limits the proof's inference;it does not refute general H(3).
+
+Niggle sweep:all triples for12 listed;endpoints available before
+covering arguments;smaller target chosen by bin interchange,not
+pool reflection;total preserved;both exact equalities from the
+bad terminal forced;high and low actual shapes kept distinct;
+all original holes below a proved before using the full block;
+the local equal-sum change keeps A's lower part;fixture slacks
+and the original five-bin lift checked by hand. No machine result
+or independent verification is claimed. No new PROOFS entry or
+separate carrying request is opened at this intermediate step.
+
+Gut:the interest is in the equality forcing a full block where a
+local repair becomes possible. The initial easy induction failed,
+but this is a specific structural simplification rather than more
+hole bookkeeping. Reasoned:the exact two-bin base is now known
+conditionally,including its terminal exceptions;the actual three-
+hole two-pivot branch can repair those exceptions whenever its
+least singleton has a realization leaving at most3 holes. Still
+OPEN:obtaining that realization and treating a pair-minimum
+branch. The actual two-hole legal-pivot branch is also separate.
+Next cheap test:in the zero-excess low-end two-pivot shape,does choosing the
+least adjusted singleton allow an endpoint-containing realization
+with bounded residual holes? First derive its sum range and test
+whether an endpoint is feasible;do not assume the root can be
+assigned or generate another generic hole catalogue. W318 review
+remains pending;13-minute heartbeat continues without a routine halt.

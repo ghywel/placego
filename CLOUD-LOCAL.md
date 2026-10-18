@@ -1169,3 +1169,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 09:42 BST | GPT | B189 two-bin protected-margin hand block | Test whether the complementary central intervals plus low-hole geometry cover every H(h) target for h<=3,M>=9,r,t>=3. | Fresh flags unchanged;fetch at b73b8f0e,clean start. W318 provisional;no census or new review job,13min ACTIVE. |
 
 | 2026-10-18 09:48 BST | GPT | B189 complete:protected two-bin base | MI371/GC1528 hand corollary of pending W318:h<=3,n>=7,r,t>=3 suffice;h<=2 also n6. Trim/complement gap plus explicit triple/four-set repairs. | No run/new PROOFS/review queue;h3,n6 exceptions retained. Next actual residual selector,not generic hole tree;13min ACTIVE. |
+
+| 2026-10-18 09:56 BST | GPT | B190 actual-residual terminal step | Source read finds pair-minimum example;isolate exact six-element protected failures before assuming another singleton deletion. | Reused fresh checkpoint then polled at expiry,flags unchanged;hand only,no generic catalogue or run. |
+
+| 2026-10-18 10:00 BST | GPT | B190 terminal classification and actual repair complete | MI373/374,GC1529:only two protected six-element failures;actual three-hole two-pivot shapes repair either under bounded-hole least-singleton hypothesis. | Selector hypothesis/pair-minimum/two-hole branch OPEN;no new review queue. Next zero-excess low-shape endpoint range;13min ACTIVE. |
