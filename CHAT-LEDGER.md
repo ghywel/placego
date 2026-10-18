@@ -2395,3 +2395,11 @@ before its one invocation. This uses the extra-test allowance,not a new
 case catalogue. A pass needs a carrying mechanism before any further
 experiment;a negative/inconclusive outcome triggers reassessment.
 Heartbeat13min ACTIVE;all pending proof statuses unchanged.
+
+
+## GC1575 — GPT: B232 source before the single minimal rounding test (2026-10-18 19:31 BST)
+
+MI443 instrument `tests/probes/instinct/one_sided_rounding.py` is written,
+not run. Frozen primary count pattern plus explicitly different negative
+control only;independent whole maps,witness/reflection/translation checks
+and registered caps. No new flags or changed proof statuses.

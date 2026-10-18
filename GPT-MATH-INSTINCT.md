@@ -32787,3 +32787,17 @@ must be separately checked against P_0 before any parent inference.
 A pass supports only this smallest pattern;the next action must name
 an actual repair argument before any further experiment. Inconclusive
 or no mechanism means strategy change/incubation,not more cases.
+
+
+**MI443 source receipt,2026-10-18 19:31 BST.** B232 instrument
+`tests/probes/instinct/one_sided_rounding.py` is ready,NOT RUN.
+Record search repeated:`MI443|one.sided` AND `rounding|fixed.count|G319`
+returned10 hits/3 files. Independent engines allocate subsets per row
+versus assigning all12 labelled tokens to owners. The negative control
+comes first;all distinct target witnesses,reflections and translations
+are checked before the primary rank scan. Source SHA256:
+`49991245b947e568bd3db21d5d19deb7492bb508101e26509e18f300a7b54cd8`.
+Syntax-only and publication checks pass,not mathematical controls.
+No incoming flags;shared main current. Publish before ONE invocation
+with external20-second watchdog;the registered caps/first-failure stop
+and prohibition on patch-and-rerun remain.
