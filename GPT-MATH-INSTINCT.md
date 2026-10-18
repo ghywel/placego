@@ -87,19 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 14:54 BST:13-minute heartbeat ACTIVE.**
-B213/MI415 maps the parent coverage and reviews CL441's proposed diagnostic
-at design level;no new lemma or experiment. G318 is PROVED;G319/G321/G322
-and MI371/410/412/413 applications remain independently unverified.
-Missing-pivot P_0 singleton branches have conditional completions;the
-legal two-hole branch is only partly covered. P_0 with no globally least
-adjusted singleton,and full five-bin instances with no least singleton
-or complement,remain separate open branches. No closed induction family
-has been established. The next bounded question is the P_0 pair-cut
-boundary selector on MI366's existing fixture,not another hole extension;
-Cloud owns the proposed diagnostic,and its preregistration is awaited
-without using that wait as a research gate. No seeded draw or new review
-request. Full five-bin/E28/L8 remain OPEN.
+**Current state,2026-10-18 15:06 BST:13-minute heartbeat ACTIVE.**
+B214/MI416 compares the actual P_0 pair branch with G316. A minimum
+pair has boundary moment L(r)+r+h and its reflected complementary
+moment is L(s)+h+q;the exact two scalar target requirements are recorded.
+The old MI366 fixture defeats direct use of both ordinary staircase
+formulas at the required moment,but its existing alternate boundary
+satisfies both needed central bands by literal witnesses. This is a
+scope/obstruction analysis,not a new existence theorem or experiment.
+Next seek a simultaneous boundary deformation accommodating the missing
+q in the ORIGINAL punctured pool;do not insert q into a designated bin
+or reopen a larger-hole catalogue. Cloud's proposed diagnostic remains
+separate. G318 PROVED;other pending claims unchanged;P_0/five-bin/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -30100,3 +30099,172 @@ Reasoned:the coverage question is now explicit,and its next block has
 an existing actual fixture and a verified full-interval construction
 to compare. No new theorem,experiment,review queue or schedule change.
 Full P_0/five-bin/E28/L8 remain OPEN;13-minute heartbeat ACTIVE.
+
+
+### MI416 — B214: the actual pair selector has asymmetric moments (2026-10-18 15:06 BST)
+
+**Hand source comparison and explicit old-fixture audit;no new theorem
+filing,experiment or carrying-review request.** Record searched:
+`pair|staircase` AND `protected|P_0|MI366`:122 hits/15 files.
+Read FOUR-BIN-PARTITIONS sections7-9,MI362/366 and MI415's coverage
+contract. Shared main and incoming flags are unchanged;no new Cloud
+diagnostic design is present. This block addresses the agreed pair
+branch instead of extending the four-hole leaf. The underlying
+staircase proof is reviewed G316;no external result is imported.
+
+Pull:the original punctured pool may expose a simpler obstruction
+than inserting its missing value into an expanded bin. Unease:the
+ordinary staircase's correct cardinality and moment are not enough
+for simultaneous splitting. The bounded task is to write the EXACT
+two-sided requirement,then test the naive reuse on the existing
+actual N17 fixture. These are hand deductions,not preregistered
+experimental predictions. No search program or new sample is used.
+
+**1. Derive the two scalar targets without rooting a missing value.**
+Let S=[0,n] minus q,0<q<n,be P_0 with four sizes a,b,c,d>=3,
+r=a+b,s=c+d,n=r+s,and T=L(n)+n-q. Suppose AB is globally
+least for adjusted slack delta_J=u_J-L(r_J)-r_J,and let
+
+ h=delta_AB>=0,  x=u_A-L(a)-a,
+ z=c*n-u_C-L(c).
+
+Thus u_AB=L(r)+r+h. Comparing A and B with AB yields
+
+ delta_A=x>=h,
+ delta_B=ab+h-x>=h,
+ hence h<=x<=ab.                                      (1)
+
+For the opposite pair,reflect the DESIRED values of C only via
+v->n-v. Its target is L(c)+z. The original complementary
+triple ABD has adjusted slack
+
+ delta_ABD=T-u_C-L(n-c)-(n-c)=z-q.
+
+If z_D=d*n-u_D-L(d),the same calculation gives
+ delta_ABC=z_D-q. Also conservation gives
+
+ z+z_D=cd+h+q.
+
+Global minimality therefore gives
+
+ h+q<=z<=cd.                                           (2)
+
+If no singleton or triple ties AB,all four endpoints in(1)-(2)
+are strict: h<x<ab and h+q<z<cd. In particular h<ab and
+h+q<cd. This is an identity/comparison from the existing cuts,
+not a proof of a new spectrum statement. A pair tied with another
+pair is allowed;all relevant singleton/triple ties are retained
+when using the weak inequalities.
+
+For an actual candidate boundary U contained in S,the precise
+requirements are
+
+ |U|=r,  sum(U)=L(r)+r+h;
+ u_A=L(a)+a+x belongs to Sigma_a(U);
+ L(c)+z belongs to Sigma_c(V), where V={n-v:v in S minus U}.
+
+Here Sigma_k denotes ACTUAL sums of k distinct members,not an
+interval between extrema. Necessarily
+
+ |V|=s,  sum(V)=L(s)+h+q.                               (3)
+
+Given these exact memberships,choose A and the reflected C,and
+let complements supply B and D. Conversely every desired partition
+gives such a U. This equivalence names the missing selector;it does
+not solve it. The missing value in V's ambient interval is n-q,
+and U,V must come from the SAME partition of S. Independently good
+pools with these moments are not sufficient.
+
+**2. Where the G316 construction stops applying.** In the full interval,
+G316 uses boundary moment L(r)+h and reflected complementary moment
+L(s)+h,with the central spectra of P_r(h) and Q_s(h). Here the first
+moment has extra r and the second extra q. Simply substituting
+P_r(h+r) or Q_r(h+r) attains the first moment formally,but the
+reviewed hypothesis h+r<ab need not hold,and the pool may contain
+q. Shifting P_r(h) by1 also attains that moment,but again may
+contain q;its punctured complement is no longer the proved Q_s(h).
+Neither maneuver is an application of the existing theorem.
+
+A sufficient UNPROVED stronger boundary condition would be simultaneous
+coverage of
+
+ Sigma_a(U) containing [L(a)+a+h,L(a)+a+ab],
+ Sigma_c(V) containing [L(c)+h+q,L(c)+cd].                (4)
+
+This condition is recorded only to compare with G316's uniform bands.
+It is not asserted necessary:the exact problem needs just the two
+actual values in section1. Do not turn(4) into a new conjecture or
+review job merely because it resembles the old lemma. At q0,the pool
+is[1,n];translation by-1 recovers the ordinary G316 boundary and
+h+q=h. This endpoint check explains why the two distinct adjustments
+are algebraic necessities rather than interchangeable slack symbols.
+
+**3. The existing actual fixture kills naive formula reuse.**
+MI366 has S=[0,14] minus1,sizes(3,3,4,4),targets(14,14,38,38).
+Its pair AB is strictly least relative to all other cut types,with
+h7,r6,s8,q1. Here x8 and z12,so the strict target bands are
+satisfied:7<8<9 and8<12<16. Required boundary moment is
+L(6)+6+7=28. The ordinary staircase parameter for that moment
+would be h+r=13,larger than ab9 and OUTSIDE the reviewed lemma.
+Its two formal shapes are nevertheless easy to inspect:
+
+ P_6(13)={0,1,3,6,8,10};
+ Q_6(13)={0,2,4,6,7,9}.
+
+The first contains the absent1. The second avoids1 and has sum28,
+but cannot supply a triple of sum14:an all-even triple from0,2,4,6
+sums at most12;two odd values already contribute7+9=16;one odd
+gives odd parity. This second obstruction is the SAME six-value
+pool obtained from MI366's expanded conjugate boundary by removing1;
+it is not a new counterexample counted again. Both failures concern
+this naive construction,not G316 or P_0 existence.
+
+**4. The existing alternate boundary meets both bands on this fixture.**
+Use the boundary already implicit in MI366's positive partition:
+
+ U={0,2,3,4,7,12},  sum28;
+ S minus U={5,6,8,9,10,11,13,14};
+ V={0,1,3,4,5,6,8,9}, sum36=L(8)+7+1.
+
+The first band in(4) is13..15,with literal triples
+13:{2,4,7};14:{0,2,12};15:{0,3,12}.
+The second is14..22,with literal four-subsets
+
+ 14:{0,1,4,9};15:{0,1,5,9};16:{0,1,6,9};
+ 17:{0,3,5,9};18:{0,1,8,9};19:{0,4,6,9};
+ 20:{0,3,8,9};21:{0,4,8,9};22:{0,5,8,9}.
+
+All values belong to V and are distinct within each witness.
+For the actual targets,take A={0,2,12},B={3,4,7},C={5,6,13,14},
+D={8,9,10,11}. The reflected C is{0,1,8,9},sum18=L(4)+z.
+This checks actual complementarity,not merely matching moments.
+It establishes(4) for this one old fixture only;no uniform boundary
+selector follows. The extra literal bands are hand self-checks,
+not a census or independent verification.
+
+**What changed.** The missing selector is now stated directly on the
+original pool,with its two different moment budgets and exact subset
+memberships. The difficulty is not solely assigning q to a named bin:
+that was introduced by the expansion. The reviewed staircase's
+complement identity and central-band proof both require adaptation
+when one ambient value is missing. The old fixture supplies a positive
+alternative with the right two-sided spectra,so the target is not
+empty or contradicted by that obstruction.
+
+Niggle sweep:the reflected C sum is L(c)+z,not z alone;the missing
+q enters the complementary triple comparison as z-q;the chosen pair's
+extra moment is r,not q;reflection is of selected values only;the
+formal parameter13 is explicitly outside h<ab;the bad conjugate pool
+is credited to MI366;the alternate boundary and its reflected complement
+exhaust the actual punctured pool. No convex hull,novelty,status upgrade
+or claimed universal exchange bound substitutes for either membership.
+
+Gut:there is renewed specific interest in deforming one complementary
+boundary pair rather than cataloguing deeper holes. Reasoned:the next
+bounded attempt should seek a direct boundary deformation accommodating
+q while retaining the two prescribed scalar sums. The uniform bands
+are a possible instrument,not an added requirement on the theorem.
+If that instrument imposes more than the actual targets need,drop it.
+Do not return to forced ownership in an expanded bin or a larger-hole
+census. No independent read requested for this scope analysis;
+13-minute heartbeat ACTIVE,full P_0/five-bin/E28/L8 remain OPEN.

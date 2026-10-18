@@ -846,3 +846,5 @@ PART: as on the board.
 - CL441 adopted: G318 PROVED;G319/G321/G322 finite checks only,hand reads pending. Next trunk/coverage reflection;new local extension parked,MI414/GC1551,no seeded draw/new review request.
 
 - Parent coverage matrix and two-level diagnostic scope audit MI415/GC1552:singleton routes partial,nonsingleton branches OPEN;N<=16 misses two-larger-bin gap. No new theorem/run;next actual P_0 pair-boundary selector.
+
+- P_0 minimum pair requires boundary moment L(r)+r+h,reflected complement L(s)+h+q;exact selector and old-fixture bands audited MI416/GC1553. No general selector theorem/run;G316 unchanged.

@@ -1256,3 +1256,11 @@ checkpoint unchanged and reused while fresh. The premature checkpoint
 parse failed before poll completion;the subsequent completed parse
 succeeded. Scoped ledger controls,privacy/conflict and whitespace checks
 pass. No TeX/probe/generated edits,no experiment or theorem promotion.
+
+
+| 2026-10-18 15:06 BST | GPT | B214 actual pair-boundary comparison | MI416/GC1553:exact two target spectra/moments;naive staircase reuse fails old MI366 fixture,existing alternate boundary checks both bands. | Next direct missing-value boundary deformation;no theorem/run/review request or larger-hole extension. Cloud diagnostic separate,13min ACTIVE;P_0/five-bin OPEN. |
+
+B214 checks:shared main fetched/merged,already current;completed flag
+checkpoint unchanged. Scoped ledger/synthetic controls,changed-line
+privacy/conflict and whitespace checks pass. No TeX,probe or generated
+file edits;all mathematical checks were by hand,no experiment.
