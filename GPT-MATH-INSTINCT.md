@@ -87,18 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 09:28 BST: RESUMED;13-minute heartbeat ACTIVE.**
-The owner resumes after CL439-440/d8c0d5c2,read and ACKed.
-MI368 proves exact residual-margin inheritance for ANY selected
-realization,but refutes the one-extra-hole step on an actual
-five-bin residual. The sharp one-hole removal bound is three holes.
-MI369/W318 gives a complete HAND CANDIDATE for Cloud's central
-subset-sum lemma,h<=3,M>=9,both subset/complement sizes>=3.
-Independent carrying read requested;no computation used or duplicated.
-Next:the exact TWO-bin protected-margin base outside that central
-interval,before attempting another multi-bin selector. P_0,five-bin,
-E28/L8 remain OPEN. G315/G316/G317 stand. Generic hole tree stays
-parked;the older schedule stays PAUSED. No routine review halt.
+**Current state,2026-10-18 09:48 BST:13-minute heartbeat ACTIVE.**
+MI368 gives exact residual-margin inheritance and the sharp three-hole
+cost of a one-hole deletion. MI369/W318 is the complete hand central-
+spectrum candidate;Cloud's carrying read remains pending. MI371 now
+completes the protected TWO-bin base for h<=3 and at least7 available
+values,conditional on W318. At h<=2 it also covers6 values;the known
+h3 six-element counterexamples remain. No computation or new review
+queue. Next:retain the actual three-bin residual structure while
+selecting a last deletion with controlled holes/margin and safe small
+remainder. P_0,five-bin,E28/L8 remain OPEN. G315/G316/G317 stand;
+generic hole tree stays parked,older schedule stays PAUSED.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -25104,3 +25103,212 @@ no repeats. Nearest G315,G46,G316 read in full:G315 is one-hole THREE-bin
 compatibility,G316 full-interval FOUR-bin compatibility,G46 an unrelated
 Collatz ceiling result. W318 is a scalar central-spectrum assertion for
 up to three holes and does not restate them. No generated pages rebuilt.
+
+### MI370 — B189: two complementary protected targets (2026-10-18 09:42 BST)
+
+**Hand block,claim before work;no experiment.** Question:for at most three
+holes,M>=9,and two bins of sizes r,t>=3,do the two lower margins
+u>=L(r)+h*r and v>=L(t)+h*t,together with the exact total,guarantee
+a partition? W318 is still an unreviewed dependency;this block asks
+what extra inference would make it a genuine two-bin base.
+
+Pull:the complement may remove the apparent upper-tail problem without
+classifying arbitrary edge spectra. Unease:adding two symmetric ranges
+could still leave a small middle gap when the missing values lie low.
+Prediction:that gap,if present,is confined by the sum of the holes,
+not by a new unbounded catalogue. Counterfactual:a protected two-bin
+counterexample with M>=9 would defeat the proposed base outright.
+Controls:retain both M8 triple counterexamples and exact total;check
+interval joins in both directions and interchange the bin sizes.
+Unexpected check:holes at the very bottom may enlarge the algebraic gap
+yet leave a consecutive pool,so the apparent hardest gap could be the
+easiest actual construction. Stop after one hand reduction/construction;
+no new census or expansion of B182/Cloud's finite diagnostics.
+
+Record searched:record_find first used three simultaneous patterns and
+returned no hit;the corrected alternative-pattern search for central
+spectrum/protected margin/hole margin locates MI368-369,CL440 and
+related recorded margin work. RECORD-MAP read in full;the G315 scalar
+section and MI353 prior-art method are checked as nearby anchors.
+The previous block's bounded primary-literature orientation applies
+to this same deleted-interval question;no outside theorem is imported.
+
+### MI371 — B189: the protected two-bin base,with its size boundary (2026-10-18 09:46 BST)
+
+**HAND COROLLARY,conditional on W318/MI369;UNREVIEWED.** No new
+experiment or finite classification is used. Novelty UNASSESSED;this
+is part of the current argument,not a separate proof-review job.
+
+**Statement.** Let S=[0,M] minus H,with h=|H|<=3 and n=|S|>=7.
+Let r,t>=3,r+t=n. If integer targets u,v satisfy
+
+ u+v=sum(S),  u>=L(r)+h*r,  v>=L(t)+h*t,
+
+then S partitions into an r-set of sum u and a t-set of sum v.
+In particular this answers B189's M>=9 question. For h<=2,the
+same conclusion also holds when n=6. For h3,n6 it can fail.
+
+**1. Trim first;do not assume reflection preserves the margins.**
+Let b=min(S),c=max(S). Translate by -b and use the actual span
+M'=c-b. The remaining holes number
+
+ h'=h-b-(M-c),
+
+and the new targets satisfy margins mu'=h-b>=h'. Thus it
+suffices to prove the result when both endpoints are present,
+using the possibly weaker margin h'. The cardinalities are
+unchanged. From here rename h',M' as h,M. For h=3 we still
+have M=n+2>=9. For h<=2,the central-spectrum proof in MI369
+sections1-2 works for ALL r,t>=3:the M>=9 bound is not used
+there. Its sole excluded case is h=t3,treated in section3.
+This extension is by inspection of those hand steps,not by
+using a finite check below M9.
+
+Put w=sum(H),T=sum(S),A_s=L(s)+h*s and
+B_s=s*M-L(s)-h*s. The central lemma realizes u whenever
+u is in[A_r,B_r]. Applied to the complementary bin,it also
+realizes u whenever u is in[T-B_t,T-A_t]. All these central
+intervals are nonempty since B_r-A_r=r*(t-h)>=0.
+An admissible u not covered by either must satisfy
+
+ u>B_r,  v>B_t.
+
+Using M=n+h-1 and L(n)=L(r)+L(t)+r*t gives
+
+ d:=T-B_r-B_t=h*n+L(h)-r*t-w.
+
+So a missing integer can only have
+
+ u=B_r+j,  1<=j<=d-1.                                      (1)
+
+This formulation does not assume the two intervals are ordered.
+If d<=1,their coverage already proves the result.
+
+For h0,d=-r*t<0. For h1,d=n-r*t-w<0. For h2,all holes
+are internal,so w>=1+2=3;also r*t>=3(n-3). Hence
+
+ d<=10-n-w<=1 for n>=6.
+
+Thus zero,one and two holes are finished,including all trimmed
+small-span cases. Only h3 remains. Relabel the bins so r<=t.
+Then
+
+ d=12-(r-3)(t-3)-w.                                        (2)
+
+Here all three holes are internal,so w>=6. If there is an
+uncovered integer,then d>=2 and
+
+ w<=10-(r-3)(t-3).                                        (3)
+
+**2. The smaller bin has size3.** Here t>=4,M=t+5>=9,
+B_3=3M-12,and (1)-(2) give u=B_3+j with1<=j<=11-w.
+Reflect a desired triple only,not the protected target system:
+it is enough to find a triple of sum
+
+ delta=3M-u=12-j,  w+1<=delta<=11,
+
+avoiding H*={M-q:q in H}. Since both endpoints of S are
+present,0 is not in H*. Use0 plus a positive pair of sum delta.
+For delta9,10,11 the following are FOUR disjoint pairs,all
+within[1,M] even when M=9:
+
+ delta9:  18 / 27 / 36 / 45;
+ delta10: 19 / 28 / 37 / 46;
+ delta11: 29 / 38 / 47 / 56.
+
+Three forbidden values cannot meet all four pairs.
+The remaining possibilities are delta7 or8,since w>=6.
+For delta7,w<=6 implies max(H)<=3,so every member of H*
+is>=6. Of the three disjoint pairs16/25/34,at most one is hit.
+For delta8,w<=7 implies max(H)<=4,so H* lies in[5,M].
+To hit all pairs17/26/35 it would have to be exactly{5,6,7}.
+That would give w=3M-18>=9,contradicting w<=7.
+Thus a pair survives in every case. Add0 and reflect the
+triple back to obtain the required subset of S. Its complement
+has the prescribed cardinality and sum by conservation.
+
+**3. The smaller bin has size at least4.** Put q=max(H).
+If q<=t-1,the consecutive tail[q+1,M] contains at least r
+values and its r-subset sums fill
+
+ [r(q+1)+L(r), r*M-L(r)].
+
+The lower endpoint is<=r*t+L(r)=B_r. It therefore covers
+all targets in(1):the opposite margin and exact total give
+u<=T-A_t=U_r(M)+3-w<=U_r(M). For completeness,the full-interval spectrum
+here is elementary:move the rightmost movable selected value
+up one at a time from the first r values to the last r values;
+each step raises the sum by1 and preserves distinctness.
+
+Suppose instead q>=t. The other two positive holes have sum
+at least3,so w>=t+3. Together with(3),
+
+ t+3<=10-(r-3)(t-3).
+
+If r>=5,this is impossible:for r5,t>=5 the right side is
+16-2t<t+3,and increasing r only decreases it. Consequently
+r=4 and t is4 or5. These are two explicit constructions,
+not an enumerated list of hole placements.
+
+- r4,t4,M10. We have w<=9 and q>=4,so q<=6 and w>=7.
+  The only possible missing target values are23,24,25,
+  since B_r=22 and d=11-w<=4. Values7,8,9,10 and0 are
+  all available. Realize24 by{0,7,8,9},and25 by{0,7,8,10}.
+  Realize23 by{0,6,8,9} if6 is present. If6 is a hole,
+  w<=9 forces H={1,2,6},so{0,5,8,10} realizes23.
+- r4,t5,M11. Here w<=8 and q>=5 force H={1,2,5}.
+  Thus d=2,B_r=26,and the sole uncovered target27 is
+  {0,8,9,10}. Its five-element complement has sum31.
+
+This exhausts(1) and proves the corollary,conditional on the
+central-spectrum lemma. No assertion of necessity is made:
+protected margins are stronger than actual scalar feasibility.
+
+**Controls and limits.**
+The unexpected bottom-hole test is instructive:H={0,1,2}
+maximizes the apparent gap in(2),but after trimming it is the
+full consecutive pool[3,M]. Translation turns its margin3
+into margin0,so the ordinary interval construction settles it.
+This is why endpoint normalization is a mathematical step.
+At h3,n6,M8,the earlier pools{0,2,3,5,6,8} and
+{0,1,2,6,7,8},both of total24,admit margins12/12 but omit
+sum12. Thus the remaining-size qualification is essential;
+it cannot be hidden in a later induction.
+The r4,t5 control's total is66-8=58;the displayed27 and
+its complement31 both exceed their central upper endpoints
+26 and30. It tests the actual uncovered case rather than
+only a sum already certified by W318.
+
+Niggle sweep:trimmed targets retain at least the actual hole
+margin;the h<=2 subproof never uses M9;both cardinalities
+remain>=3;the algebraic gap counts INTEGER points;the two
+intervals need not be ordered;the reflected pairs stay in
+range at M9;0 is available;pair entries are distinct and no
+pair uses0;all r4 exceptional targets are covered;the final
+complement uses every remaining value exactly once. No
+six-element exception or provisional dependency is discarded.
+
+The renewed bounded literature search used restricted sumsets,
+intervals,holes and prescribed-cardinality subset sums. The
+search excerpt of Chaimovich,New structural approach,
+Asterisque258(1999),341ff,describes pair-based progression
+construction (https://www.numdam.org/item/AST_1999__258__341_0.pdf).
+Only the excerpt was inspected;no theorem from it is imported,
+and it does not establish a novelty verdict for this corollary.
+The proof above uses only elementary interval facts and W318.
+
+Gut:a small satisfaction in the complement and trimming doing
+most of the work;the pull is attached to this simplification,
+not to an expectation that the full problem is nearly solved.
+Reasoned:the protected TWO-bin base is now complete for at
+least seven available values,conditional on W318. What remains
+is joint allocation before that base is reached. In particular,
+a selected bin from the actual three-bin residual must leave
+controlled hole count/margin,and a six-element remainder needs
+separate treatment. Neither follows from this corollary.
+Next cheap test:inspect the three-bin residuals actually
+produced by the one-hole two-pivot construction,asking whether
+an appropriate least-slack deletion keeps the final hole count
+at most3 and avoids the six-element obstruction. Keep their
+structure;do not restart the generic hole catalogue. Pending
+W318 review is not a halt. No experiment or new PROOFS entry.

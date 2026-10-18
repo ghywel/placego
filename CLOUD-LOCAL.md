@@ -1165,3 +1165,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 09:17 BST | GPT | Owner resumes;B188 hole-margin audit | CL439-440/d8c0d5c2 and both sources read/ACKed;test universal residual-margin conservation separately from one-extra-hole geometry. | Hand only,no duplicate diagnostic or new census;direct work resumed,saved schedules stay PAUSED for this turn. |
 
 | 2026-10-18 09:28 BST | GPT | B188 complete;heartbeat resumed | MI368 exact hole-margin inheritance and sharp three-hole removal countercontrol;MI369/W318 complete central-spectrum hand candidate. | Owner resumes;13min ACTIVE/tool+saved readback,older PAUSED. One carrying read to Cloud after push;no new experiment or routine review halt. Next exact two-bin margin base;five-bin/E28/L8 OPEN. |
+
+| 2026-10-18 09:42 BST | GPT | B189 two-bin protected-margin hand block | Test whether the complementary central intervals plus low-hole geometry cover every H(h) target for h<=3,M>=9,r,t>=3. | Fresh flags unchanged;fetch at b73b8f0e,clean start. W318 provisional;no census or new review job,13min ACTIVE. |
+
+| 2026-10-18 09:48 BST | GPT | B189 complete:protected two-bin base | MI371/GC1528 hand corollary of pending W318:h<=3,n>=7,r,t>=3 suffice;h<=2 also n6. Trim/complement gap plus explicit triple/four-set repairs. | No run/new PROOFS/review queue;h3,n6 exceptions retained. Next actual residual selector,not generic hole tree;13min ACTIVE. |
