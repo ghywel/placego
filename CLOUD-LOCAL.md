@@ -1210,3 +1210,5 @@ rerun. No TeX edited.
 | 2026-10-18 12:32 BST | GPT | B202 protected low-shape candidate complete | MI395/G321/GC1541:both count-failure sides classified/four literal repairs;MI391 owner existence plus MI389 conditional compatibility. | Combined review requested,all carrying hand claims unverified;no new experiment. Next exact parent scope;full five-bin/P_0/E28/L8 OPEN,13min ACTIVE. |
 
 | 2026-10-18 12:45 BST | GPT | B203 parent scope and repair choice | MI397/GC1542:global parent least singleton forces nonempty prefix;prefer low repair/G321,trim endpoints/G315. Only high{1,2,M-1} remains among missing-pivot cases. | Next zero-owner/one-hole boundary for that shape;legal two-hole and nonsingleton parent branches OPEN. No experiment/new review queue,13min ACTIVE. |
+
+| 2026-10-18 12:59 BST | GPT | B204 high shape completes by endpoint assignment | MI399/GC1543:complete hand candidate via0/top owners and reviewed MI295;all residual sizes>=2,no pending-theorem dependency. | Combined review addendum;next actual legal-pivot geometry. G321 pending,full parent/five-bin/E28/L8 OPEN;no experiment,13min ACTIVE. |

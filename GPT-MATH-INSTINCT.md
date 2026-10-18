@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 12:45 BST:13-minute heartbeat ACTIVE.**
-G321 remains a complete UNREVIEWED protected low-shape candidate.
-MI397 maps its parent consequence:in P_0's globally least-singleton
-branch,choose the low missing-pivot repair whenever available.
-An empty low prefix is impossible;endpoint trims complete by G315.
-Only legal-pivot two-hole three-bin remainders and the single high
-shape {0} union[3,n] union{n+2} remain in that canonical branch.
-Next test removes0 from this high shape to obtain a one-hole pool;
-size3 owners leave a size2 boundary that must be treated explicitly.
-P_0's nonsingleton-minimum branches and full five-bin/E28/L8 OPEN.
-No new experiment or extra component review queue.
+**Current state,2026-10-18 12:59 BST:13-minute heartbeat ACTIVE.**
+MI399 gives a direct HAND CANDIDATE for the remaining high shape
+{0} union[3,n] union{n+2}:assign both isolated endpoints,then use
+PROVED MI295 on the middle interval with all residual sizes>=2.
+It does not depend on G315/G319/G321/W318. Together with pending
+G321 and MI397,this conditionally completes the globally least-singleton
+MISSING-pivot branch of P_0. Legal-pivot two-hole three-bin remainders
+and the nonsingleton parent branches remain OPEN,as do full five-bin,
+E28 and L8. Next cheap test:compare the legal-pivot geometry with this
+endpoint-owner mechanism before extending any generic hole catalogue.
+G321 and its dependencies still await independent review.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -28164,3 +28164,180 @@ scalar admission;an original size3 owner leaves size2,so the exact
 boundary and owner choice must be checked rather than assumed.
 No experiment or automatic generic-hole expansion.13min ACTIVE;
 G321 still awaits review,full P_0/five-bin/E28/L8 OPEN.
+
+
+### MI398 — B204: the remaining high shape and a change of approach (2026-10-18 12:57 BST)
+
+Question:do all protected targets on S={0} union[3,n] union{n+2},
+three sizes>=3 and all proper lower cuts L(r)+3r,partition?
+Initial pull:toward removing0 and applying G315 to the translated
+one-hole remainder. Unease:an original triple becomes a pair.
+Record searched:`one.hole` AND `size2`:9 hits/3 files;MI334/335
+read. The known negative on {0,1,2,3,4,6},sizes2/2/2,targets2/6/8
+rules out an unqualified size2 extension. The padded two-pair
+negative in MI335 is also retained;neither settles one pair/two
+larger bins. No new general one-hole claim is made.
+
+Changed approach:assign BOTH isolated values0 and n+2 first.
+The middle becomes a full interval,where reviewed MI295 permits
+sizes2. This is useful only if the endpoints can be assigned to
+different original triples,or together to a bin of size>=4.
+Record searched:`outlier|endpoint.*owner|two.*isolated` AND
+`three.bin|partition|MI329`:9 hits/2 files. MI329's outlier-owner
+budget read in full;it supplies the idea,not a dependency or a
+previous statement of this two-endpoint result. The reviewed
+MI295 proof in FOUR-BIN-PARTITIONS section5 and actual one-hole
+scalar hypotheses in section2 were read. One bounded primary
+literature search for almost-consecutive prescribed-cardinality
+partitions found no matching statement;no novelty or complete
+literature-search claim. No new external theorem imported.
+
+No experiment or new census. The following is a direct hand proof
+and hand adversarial checks. The proposed kill conditions are an
+endpoint assignment leaving size1,an unprotected middle-interval
+upper bound,or two bins both forced to own the largest endpoint.
+The endpoint assignment must rule out all three without assuming
+an existing compatible partition.
+
+
+### MI399 — B204: two endpoint owners complete the protected high shape (2026-10-18 12:59 BST)
+
+**Complete HAND CANDIDATE,not independently verified.** Only the
+reviewed full-interval three-bin lemma MI295 is a theorem dependency.
+No G315/G319/G320/G321/W318 or generic punctured-pool theorem is used.
+
+Let a,b,c>=3,n=a+b+c,and S={0} union[3,n] union{n+2}.
+Suppose integer targets u_i sum to
+
+```text
+T=sum(S)=L(n)+2n-1
+```
+
+and every proper nonempty group J satisfies
+u_J>=L(s_J)+3s_J. Then S has a partition of those sizes and sums.
+A larger inherited margin also implies these hypotheses.
+
+Write t=n+2 and I=[3,n]. For an s-subset of the core I define
+
+```text
+alpha_s=L(s)+3s,  beta_s=ns-L(s).
+```
+
+All sizes used below are within0..n-2. A singleton lower cut and
+the complementary pair's lower cut give
+
+```text
+alpha_s <= u <= H_s := T-alpha_(n-s)
+                    = beta_s+2s-n-1.                     (1)
+```
+
+For the four possible assignments of isolated endpoints to a bin
+of original size s,the necessary middle-interval bounds are:
+
+```text
+neither:  alpha_s <= u <= beta_s;
+0 only:   alpha_(s-1) <= u <= Z_s := beta_(s-1);
+t only:   Q_s := t+alpha_(s-1) <= u <= t+beta_(s-1);
+both:     B_s := t+alpha_(s-2) <= u <= t+beta_(s-2).
+```
+
+These are individual core bounds,not a claim of joint allocation.
+The useful identities are
+
+```text
+Q_s=alpha_s+n-s,
+B_s=alpha_s+n-2s-1,
+t+beta_(s-2)=H_s,
+beta_s-B_s=(s-1)(n-s-1)>0,
+Q_s-B_s=s+1,
+(t+beta_(s-1))-H_s=n+2-s>0.                    (2)
+```
+
+Thus (1) already supplies the lower bound for a zero-only bin,
+the upper bound for a top-only bin,and the exact upper bound for
+a both-endpoints bin. A both-endpoints assignment will be used
+only when s>=4. Distinct endpoint owners leave sizes>=2 as well.
+Once an assignment satisfying these bounds is found,the three
+remaining core targets sum to sum(I). Translate I by-3 and invoke
+MI295 with all three residual sizes>=2. Its singleton rank bounds
+and conservation give the actual compatible partition. Restore
+the assigned endpoints. It remains to prove that assignment exists.
+
+**Case1:a target exceeds beta_s.** By (1),this requires
+2s>n+1,so at most one bin j can do so. Its size is>=4.
+By (2),u_j>beta_s>B_s;give BOTH endpoints to j. Its upper
+bound is (1),and both other bins satisfy their neither-endpoint
+bounds. The core lemma finishes. No two bins can be forced above
+the core maximum because two sizes>(n+1)/2 cannot sum to at most n.
+
+**Case2:every target is at most its beta_s.** If some bin of
+size>=4 has u>=B_s,give it both endpoints. The other bins
+already meet their core bounds,and again MI295 finishes.
+
+Otherwise assume every size>=4 bin has u<B_s. At least one
+bin is eligible for the TOP endpoint alone:u_j>=Q_(s_j).
+Indeed put K=ab+ac+bc. If every u_i<=Q_(s_i)-1,then
+
+```text
+T-sum_i(Q_(s_i)-1)=K-3n+2>=2>0,
+```
+
+a contradiction. The inequality follows on writing each size
+as3+x_i:K-3n=3 sum(x_i)+sum_(i<j)x_i*x_j>=0.
+By Q_s>B_s and the present assumption,ANY such top-eligible
+bin has original size3. Call it B,with other sizes a,c>=3.
+At least one of A,C is eligible for ZERO alone. Otherwise their
+integer targets satisfy u_A>=Z_a+1 and u_C>=Z_c+1,and
+
+```text
+u_A+u_B+u_C >= Z_a+Q_3+Z_c+2,
+Z_a+Q_3+Z_c+2-T = ac-n+1
+                       = (a-1)(c-1)-3 >=1,
+```
+
+contradicting conservation. Assign0 to a zero-eligible OTHER bin
+and t to B. The third bin gets neither. All displayed bounds
+hold,all residual sizes are>=2,and MI295 finishes. This exhausts
+the cases and proves the candidate statement.
+
+**Hand controls and unexpected check.** The all-triple n9 case
+cannot place both endpoints together in this proof,even when
+its scalar both-endpoints inequality allows it:that would leave
+size1. Targets13,20,20 on {0,3,4,5,6,7,8,9,11} satisfy the cuts
+and have the different-owner partition
+{0,4,9}/{11,3,6}/{5,7,8}. This explicitly checks the boundary
+that blocked the first one-hole reduction.
+
+For n10,sizes4/3/3,targets20/22/22,the both-endpoints branch gives
+{0,3,5,12}/{4,8,10}/{6,7,9}. The two pair cuts involving the
+first bin are exactly42=L(7)+3*7,so the proof tolerates equality.
+
+Unexpected forced-owner check:n14,sizes8/3/3,targets85/15/18.
+Here beta_8=84,H_8=85,so the first bin really is forced above the
+core maximum. The cuts hold,including15+18=33=L(6)+18,and
+{0,9,10,11,12,13,14,16}/{3,4,8}/{5,6,7} is a literal partition.
+This tests the branch that would be lost by assuming every bin
+could avoid the top endpoint. These are hand checks,not a census
+or an independent verification.
+
+Niggle sweep:the total is L(n)+2n-1,not the low-shape total;
+core upper bounds use its actual top n. Pair protection is used
+in (1),not replaced by singleton protection. The top owner in
+Case2 is a triple only AFTER excluding every large both-owner.
+The zero owner is different in that final case. No residual size1
+or scalar-to-joint inference is hidden:joint completion is exactly
+MI295 on a full interval. No reflection of a punctured margin is
+assumed. The old size2 one-hole counterexample remains valid.
+
+Gut verdict:renewed pull from simplifying the representation;
+the interesting change was assigning the two exceptional tokens
+together before invoking a theorem. Reasoned verdict:the sole
+high missing-pivot shape has a complete independent-of-G321 hand
+candidate. With MI397 and pending G321,the globally least-singleton
+MISSING-pivot branch of P_0 now completes conditionally. Legal-pivot
+two-hole remainders and nonsingleton parent branches remain OPEN;
+full five-bin/E28/L8 likewise remain OPEN. Novelty unassessed.
+Next cheap test:inspect the actual legal-pivot two-hole geometry
+for an endpoint-owner reduction;do not broaden to arbitrary holes
+without a useful parent implication. Keep the13-minute heartbeat
+ACTIVE and batch this source with Cloud's pending combined review.

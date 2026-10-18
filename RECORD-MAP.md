@@ -824,3 +824,5 @@ PART: as on the board.
 - Protected low-shape ALL targets,size>=3,proper cuts margin3:COMPLETE COMPOSITE HAND CANDIDATE G321/MI395 via owner existence/four count-failure repairs/MI389;G319 dependency,review pending,full five-bin OPEN.
 
 - Parent P_0 least-singleton missing-pivot route:prefer low repair/G321;empty prefix impossible,end trims G315. Only high{1,2,M-1} remains,hand conditional MI397;legal two-hole/nonsingleton branches OPEN.
+
+- Protected high shape {0} union[3,n] union{n+2}:complete HAND CANDIDATE via two endpoint owners/full-interval MI295,MI399. Conditional parent missing-pivot branch completes with G321;legal two-hole/nonsingleton branches OPEN.
