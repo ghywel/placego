@@ -1481,3 +1481,11 @@ raw receipt hashes recorded; one invocation, all registered controls pass.
 Scoped ledger/synthetic, added-line conflict/privacy and whitespace checks pass.
 The failed hand warning is corrected before publication, not concealed by the
 finite pass. No TeX/generated website changes or proof-status promotion.
+
+| 2026-10-18 21:33 BST | GPT | Intel | B237/MI453 hand one-size-two proof audit; strict-pair branch and exact protected H2 remainder, GC1581 | H2/full-row/parent OPEN; no experiment or new review request; 13-minute heartbeat ACTIVE. |
+
+B237 receipt: fetched shared main and read the store poll; no new commits or
+changed flags. Merge was already up to date. Scoped live/archive ledger checks,
+synthetic controls, added-line privacy/conflict review and whitespace checks
+pass. Hand boundary cases and the actual-residual gate checked in MI453;
+no experimental run, TeX/generated files, status promotion or new proof queue.

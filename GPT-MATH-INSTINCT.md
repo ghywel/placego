@@ -124,24 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 21:19 BST: research ACTIVE every 13 minutes.**
+**Current state, 2026-10-18 21:33 BST: research ACTIVE every 13 minutes.**
 Parent: full-interval FIVE-bin prescribed-size/sum sufficiency through the
 protected one-hole FOUR-bin branch P_0. Count admission and thin-row realization
-remain unresolved. G323 is PROVED (CL446); G324/MI449 is pending independent
-review, published at 918b675a and flagged. G320–322 and MI430 remain pending
-and unused. Known integral rank splitting is source-confirmed (MI448).
-B235/MI450 explains CL447's known exception by pair-count admission; its saved
-reply GC1579 is included in this publication batch. B236/MI452 finds every one
-of 7,417 rank-admitted targets at counts (2,3,3,3) realizable in the fixed N11
-case, with independent complete-map controls. No universal extension follows.
-The attempted one-hole counterexample in MI451 was wrong and is explicitly
-withdrawn before publication: its literal partition is given in MI452.
-Next: hand audit of whether ONE size-two bin is harmless in a full interval,
-locating G315/G316's exact size-sensitive steps before proposing a coupled repair.
-No larger run or new review queue. Latest trajectory check MI448/B234; previous
-extra-test allowance remains spent. No repeated repaired assumption has gained
-parent coverage. The older schedule is PAUSED; no background computation runs.
-
+remain unresolved. G323 is PROVED; G324/MI449 remains pending independent
+review, not a premise here. G320–322 and MI430 remain pending and unused.
+Known integral rank splitting is source-confirmed (MI448). The fixed N11
+one-size-two diagnostic passes (MI452); MI451's false warning stays withdrawn.
+B237/MI453 extends the strict-pair branch by hand to one size-two bin and
+isolates a single remaining completion statement H2: protected one-hole
+THREE-bin counts (2,b,c), b,c>=3, all proper lower cuts >=L(r)+r.
+The exact actual-residual gate and converse embedding are written out.
+H2 and the full one-size-two row theorem remain OPEN; no parent coverage gain,
+new experiment, larger census or new review request. Next: test H2's joint
+completion using its inherited margin, not an unrestricted hole theorem.
+Latest trajectory check MI448/B234; previous extra-test allowance remains spent.
+The older schedule is PAUSED; no background computation runs.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -33355,3 +33353,129 @@ missed subset is a reason to slow the hand checking. Reasoned verdict: finite
 positive evidence and a corrected false warning; the general thin-row inference
 is OPEN. Next cheap test: audit the size-sensitive joins and endpoint cases in
 FOUR-BIN-PARTITIONS.md, without assuming a defect that has not been exhibited.
+
+### MI453 — One size-two row: the strict pair closes; the remaining completion is protected (2026-10-18 21:33 BST; B237)
+
+**Hand audit and unreviewed branch extension; no experiment or new review request.**
+Parent remains full-interval five-bin sufficiency through P_0; its count admission
+is still open. The present subquestion is whether a single size-two row needs
+physical repair at all after the known integral rank split. If the proposed
+four-bin extension holds, it discharges that row's realization, not admission
+or rows with several thin bins. G324 and G320–322/MI430 are not premises.
+
+Pull: the absence of a demonstrated defect makes me want to inspect the proof
+before designing another repair. Unease: the mistaken hand warning in MI451
+requires literal checks, not another optimistic analogy. Record searched:
+`one.size.two`, `size2 collision`, `MI334` together gave no hit; the broader
+`size.?two|size.?2|counts.?2` AND `hole|punctur` gave 45 hits/10 files.
+Read FOUR-BIN-PARTITIONS §§6–9 and MI334's actual negative. The latter has
+THREE size-two bins, not one. Primary-literature scope remains MI342/MI451:
+known equal-sum theorems do not cover these arbitrary targets. No new external
+theorem is imported. This is a hand dependency audit, not a larger census.
+
+**1. The staircase central interval also holds for r=2,c>=3.**
+Use the P_m(h), Q_m(h), s,t,p,q definitions of FOUR-BIN-PARTITIONS §7,
+m=c+2 and 0<=h<2c. The required pair-sum interval is [1+h,2m-3].
+h=0 is the ordinary full interval. For h>0, T_s<=h<2(m-2)
+forces p=m-s>=3: otherwise T_s>=(m-2)(m-1)/2>=2(m-2), since m>=5.
+
+In P the all-low pair sums fill [1,2p-3]. Taking one low token and
+one high H_j fills [H_j,H_j+p-1]. Adjacent H_j differ by at most3,
+so these intervals join since p>=3. Their final endpoint is
+2m-2+1_(t>0), which exceeds the required 2m-3. The first is
+p+1+1_(t=s). It joins the all-low interval unless p=3,t=s.
+In that exception m=s+3 and T_s+s<2s+2 imply s<=2; m>=5 then
+forces (m,s,t,h)=(5,2,2,5). Here P={0,1,2,5,7} contains the required
+pair sums6 and7, witnessed by {1,5} and {0,7}. Thus the central
+claim holds, even though its whole pair spectrum has a gap at4.
+
+For Q, t=0 is P. For t>=1 its low prefix q=m-s-1 is at least2.
+If q>=3, all-low sums [1,2q-3] join the one-low/one-high intervals:
+the first high is q+1, high gaps are at most2, and the final
+one-low/one-high sum is exactly 2m-3. Hence the required interval
+is covered. If q=2, then m=s+3 and T_s+t<2s+2, with s>=2,t>=1,
+leave only (m,h)=(5,4),(5,5),(6,7). Their Q pools and required sums are:
+
+- (5,4): {0,1,3,4,6}, sums5,6,7 via {1,4},{0,6},{1,6};
+- (5,5): {0,1,3,5,6}, sums6,7 via {0,6},{1,6};
+- (6,7): {0,1,3,4,6,8}, sums8,9 via {0,8},{1,8}.
+
+These are literal hand checks of the entire exceptional central intervals.
+No uncomputed enumeration or implicit all-high fullness is used.
+
+Consequently G316's STRICT closest-pair argument extends to counts
+(2,b,c,d), b,c,d>=3. Relabel the pair containing the size-two bin so
+its selected subset has size two. Its P or Q central spectrum is supplied
+above; the other side uses the proved minimum-three lemma. The actual
+complement identity of §8 still applies: both side lengths are >=s+3.
+The target intervals and conservation are unchanged. This is a branch
+extension, not a proof of the entire four-bin statement.
+
+**2. Singleton/triple minima: precisely which part is left.**
+Orient a least singleton/triple slack as a lower singleton A, size a,
+with s_A=L(a)+h. If A is the size-two bin, the residual three sizes are
+all >=3 and G315 applies exactly as in §9: the protected group bound
+S_J>=L(C_J)+a C_J excludes scalar edge omissions. Thus this branch closes.
+If A is a larger bin, its extremal prefix/suffix/pivot recipe leaves either
+a full interval (completed by proved MI295, whose minimum size is two)
+or one internal hole with residual sizes (2,b,c), b,c>=3. G315 cannot
+be cited for this last case. The scalar bounds alone are not a joint proof.
+
+Here is the exact inherited domain, rather than a request to prove an
+unrestricted punctured-pool theorem. Write a=l+k+1, remaining count M,
+N=a+M, and choose A as the l smallest tokens, k largest tokens and
+pivot p=l+q, 1<=q<=M-1. After subtracting l from the survivors their
+pool is [0,M] minus q. Let t_i=s_i-l c_i and t_J=sum_(i in J)t_i.
+A direct sum calculation gives h=kM+q. The original minimum-slack
+conditions, for every nonempty proper group J of the remaining three,
+are exactly
+
+    t_J >= L(r) + max((k+1)r, kM+q-lr),   r=C_J,
+    sum_i t_i = L(M+1)-q,
+    (l+1-k)M >= 2q.
+
+The first max term comes from the cut A union J; the second from J
+itself. The last inequality is the cut of ALL remaining bins, whose
+slack is (l+1)M-q. These cuts together with A exhaust the original
+nonempty proper groups; upper bounds are complementary lower bounds.
+This also checks that no least-slack inequality was dropped during
+normalization.
+
+In particular the following SINGLE sufficient completion statement would
+finish all the remaining cases of the one-size-two full-row extension:
+
+    H2: On [0,M] minus q, counts (2,b,c), b,c>=3, total conserved,
+    t_J >= L(C_J)+C_J for every nonempty proper J implies a partition.
+
+H2 is OPEN. Its margin is inherited for every k>=0, not assumed after
+a second deletion. It is weaker than asking for the unrestricted
+one-hole individual-spectrum theorem. Conversely every H2 input embeds
+in an actual canonical residual of this four-bin method: set k=0 and
+choose l>=max(2,ceil(q/2)), a=l+1. Then q-lr<=r for every proper
+remaining group r>=2, and (l+1)M>=2q. Define s_i=t_i+l c_i and
+s_A=L(a)+q. All full-interval cuts hold and A is a least-slack singleton.
+This embedding is only about the selected residual: failure of H2 would
+refute this canonical completion method, NOT by itself full-row existence,
+since a different A could still complete.
+
+**Niggle sweep / unexpected check.** P_5(5) deliberately has the missing
+pair sum4 despite its complete required interval6..7. This catches a false
+upgrade from central coverage to full scalar coverage. All Q short-prefix
+cases are written literally. Complementation retains the SAME physical pool,
+not a separately invented spectrum. In the exact gate, the all-remaining
+cut is checked separately; omitting it would falsely enlarge the actual
+descendant domain. MI451's withdrawn example stays withdrawn. The old
+MI334 negative (2,6,8), counts(2,2,2), also fails the protected pair-bin
+lower bound 3 at target2 and is not an H2 counterexample.
+
+**What changed / decision.** The one-size-two full-row audit now has one
+remaining completion statement, H2; the strict-pair and thin-minimum branches
+have hand arguments. Parent five-bin coverage is unchanged. No extra review
+candidate or dependent proof chain is added. Next cheap test is the H2
+completion itself, using its inherited margin and the one distinguished pair;
+not another broad row census or a list of local hole repairs. A counterexample
+must be checked as an actual partition question before being advertised.
+Gut: interest is specific to whether that margin removes pair competition;
+it is not evidence of success. Reasoned: a useful reduction with an OPEN
+joint-realization step, independent of G324. Latest trajectory check remains
+MI448; the earlier pull-only extra-test allowance is not renewed.
