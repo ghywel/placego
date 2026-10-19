@@ -33,8 +33,12 @@ THE CERTIFICATE STREAM (data/E24.jsonl.xz ... data/E32.jsonl.xz, data/manifest.j
   Byte-stream SHA-256 of the retained run (chunk files concatenated in name order):
       90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b
   Timing-free SHA-256 (footers without their elapsed-time field; identical for every regeneration):
-      PENDING: computed from the retained stream when it is packed; manifest.json will carry it.
-  Per-file sizes and SHA-256s are in manifest.json.
+      da7c2e7716df23188cba01580ceabb4172e924529b9b73721671c330479c3a96
+  The same for levels 24, 25, 31 and 32 alone, which equals two fresh regenerations on another machine:
+      0d3799d021b0182d998426f5fe17ff7dac7be3af652acea4ccd7bb30669530f1
+  Files: E24.jsonl.xz ... E32.jsonl.xz, 340 MB in all (E28 is the largest, 122 MB), and manifest.json (8,988 bytes,
+  SHA-256 4523b4b4d27cdad86ffb8c1dd9ed9f16a77435f4ea27ce2e3d169f4a1bcc313b). Per-file sizes and SHA-256s, before and
+  after compression, are in manifest.json. The folder has no index page; use the names above.
 
 SMALLER DATASETS (data/)
   mechanism_rates.json         65b28fc5765f2fe29e547b73c3db198fb4472f80c1c9dd78ed9a959a3ea4e92e        608 bytes

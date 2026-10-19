@@ -123,7 +123,13 @@ timing-free digest
 
     0d3799d021b0182d998426f5fe17ff7dac7be3af652acea4ccd7bb30669530f1,
 
-while their byte-stream digests differ (6caa653b… and 218cd0c6…). The timing-free digest of the retained stream has not yet been computed (see Section 9).
+while their byte-stream digests differ (6caa653b… and 218cd0c6…). The timing-free digest of the retained stream is
+
+    da7c2e7716df23188cba01580ceabb4172e924529b9b73721671c330479c3a96.
+
+Restricted to the four levels m = 24, 25, 31 and 32, the retained stream gives 0d3799d0…669530f1, the value of the
+two regenerations. So the retained run and the regenerations agree byte for byte on those levels, apart from timing
+(ledger L744).
 
 **A further independent run.** Levels m = 24, 25, 31 and 32 (535,655 tuples) were also certified by a third program on
 another machine, with its own enumerator, its own search and its own checker. It was written by the author of the
@@ -200,11 +206,12 @@ The owner decided on 19 October 2026 that the code and data are published on the
 explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather than only through the repository.
 1. *Code.* `release/code/` holds every program named in Section 5, the packing tools, the rule experiment of Remark 2
    and the counter for Remark 1, with their SHA-256 digests in `release/README.txt`. Done.
-2. *Digests.* The timing-free digest of the retained stream is computed in the same pass that packs it (requested of
-   the machine that holds it, ledger CL461), and will be recorded here beside the byte-stream digest.
+2. *Digests.* The timing-free digest of the retained stream was computed in the same pass that packed it (ledger
+   CL461, L744), and is recorded in Section 5 beside the byte-stream digest. Done.
 3. *Data.* The retained stream, packed as nine xz files (one per level, concatenating to the original bytes) with a
-   manifest of sizes and digests, goes to `release/data/`, with the third program's certificates for four levels.
-   Pending the pack.
+   manifest of sizes and digests, is in `release/data/` (340 MB), with the third program's certificates for four
+   levels. Unpacking it restored the stream byte for byte, and the stream verifier passed on the restored copy
+   (ledger L744). Done.
 4. *Licence.* None, by the owner's decision (19 October 2026).
 5. *Where it lives.* The project website only: no DOI and no formal repository or journal, by the owner's decision
    (19 October 2026).

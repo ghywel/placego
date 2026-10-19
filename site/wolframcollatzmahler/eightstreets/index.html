@@ -570,15 +570,21 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
         (<a href="release/code/mechanism.py">mechanism.py</a>, <a href="release/code/r3_certcounts.py">r3_certcounts.py</a>)
         and the town counter (<a href="release/code/pile_counts.py">pile_counts.py</a>).</li>
       <li><strong>The certificates</strong>: one sharing for every one of the 64,787,844 towns, in nine compressed
-        files, one per number of days, with a manifest of their fingerprints. They are being packed from the original
-        run and will appear in <code>release/data/</code>; until then the README lists what to expect.</li>
-      <li><strong>The smaller datasets</strong>: the third program's certificates for 24, 25, 31 and 32 days, and the
-        scores of the three rules above, in <code>release/data/</code>.</li>
+        files, one per number of days (340 MB in all): <a href="release/data/E24.jsonl.xz">24</a>, <a href="release/data/E25.jsonl.xz">25</a>, <a href="release/data/E26.jsonl.xz">26</a>, <a href="release/data/E27.jsonl.xz">27</a>, <a href="release/data/E28.jsonl.xz">28</a>, <a href="release/data/E29.jsonl.xz">29</a>, <a href="release/data/E30.jsonl.xz">30</a>, <a href="release/data/E31.jsonl.xz">31</a>, <a href="release/data/E32.jsonl.xz">32</a> days, with
+        <a href="release/data/manifest.json">manifest.json</a> holding their fingerprints. Unpacked, they give back the
+        original output byte for byte.</li>
+      <li><strong>The smaller datasets</strong>: the third program's certificates for
+        <a href="release/data/third_program_E24.json.xz">24</a>, <a href="release/data/third_program_E25.json.xz">25</a>,
+        <a href="release/data/third_program_E31.json.xz">31</a> and <a href="release/data/third_program_E32.json.xz">32</a>
+        days, and the <a href="release/data/mechanism_rates.json">scores</a> of the three rules above.</li>
     </ul>
     <p>The fingerprint of the original output is</p>
     <p style="font-family:var(--font-mono);font-size:0.82rem;overflow-wrap:anywhere">90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b</p>
     <p>It covers the run's timing notes as well as the sharings, so a fresh run gives a different one. A fresh run is
-      compared by a second fingerprint that leaves the timing out; the README gives both, and the commands to make
+      compared by a second fingerprint that leaves the timing out. For the original output it is</p>
+    <p style="font-family:var(--font-mono);font-size:0.82rem;overflow-wrap:anywhere">da7c2e7716df23188cba01580ceabb4172e924529b9b73721671c330479c3a96</p>
+    <p>Fresh runs of four of the nine sizes of town, made on another machine, give the same timing-free fingerprint for
+      those four sizes as the original output does. The README gives both fingerprints and the commands to make
       them.</p>
 
     <h3>What would help</h3>
