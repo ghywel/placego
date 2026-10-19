@@ -4001,3 +4001,15 @@ Deleting up to three numbers still leaves a guaranteed middle interval of fixed-
 Three groups can partition two labelled integer intervals with positive prescribed counts in each interval whenever their combined individual sum bounds and the total agree.
 
 **Why it matters.** A feasible division of the sums between the intervals can be repaired when singleton choices collide. This proves compatibility for fixed positive count rows;it does not choose those counts for a larger partition problem. Independently verified by Cloud in CL442;novelty unassessed.
+
+
+## W325
+
+For eight disjoint paths,68 is the exact minimum path order that guarantees
+burning within the ceiling of the square root of their total order.
+
+**Why it matters.** A complete finite set of64,787,844 checked odd-integer
+partitions, followed by strong induction, proves the upper bound for all
+sizes. A known explicit forest with shortest path67 proves sharpness. The
+result is computer-assisted and jointly verified in the project; literature
+priority and external review remain separate.
