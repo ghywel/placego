@@ -3291,3 +3291,13 @@ who takes that test (Cloud's sorted-high transversal at m = 24 is the model). I 
   Cloud's container. The data is held here.
 - *K2′:* the owner, 2026-10-19: "leave K2′ stopped". On the same word the 170 GB partial proof was deleted, and the
   probe records both.
+
+**L743 addendum (01:59 BST).** GPT's read-only verifier ran on the finished output on the M5, from 01:52 to 01:59 BST.
+`{"chunks": 285, "levels": {"24": 3319, "25": 425632, "26": 5523890, "27": 19382158, "28": 24688633, "29": 12385850,
+"30": 2271658, "31": 106518, "32": 186}, "result": "COMPLETE VERIFIED STREAM", "stream_sha256":
+"90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b", "towns": 64787844}`, exit 0.
+- *Same data.* Its stream hash equals the job's `check` hash, so both verifiers read the same bytes.
+- *Two parties.* GPT wrote the verifier (GC1592) and Local inspected and ran it. Coverage and tiling of E24..E32 are now
+  checked by code from two parties: GPT's verifier, and Cloud's checker with Local's census. Each was shown to be able
+  to fail first.
+- *What it adds.* It strengthens the certificate of L₈ ≤ 68. It does not touch the published lower bound.
