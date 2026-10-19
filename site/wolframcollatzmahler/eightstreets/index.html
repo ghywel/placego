@@ -50,6 +50,8 @@ h1 em { color: var(--fire); font-style: italic; }
 .lede { font-size: 1.22rem; margin: 0; max-width: 60ch; text-wrap: pretty; }
 h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.35rem); line-height: 1.12; margin: 0 0 10px; text-wrap: balance; }
 h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; margin: 22px 0 6px; }
+.subtitle { font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--proved); margin: -2px 0 16px; }
+.subtitle a { color: inherit; }
 .chapter { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin: 48px 0 6px; }
 p { margin: 0 0 14px; text-wrap: pretty; }
 figure { margin: 26px 0; }
@@ -110,7 +112,7 @@ footer p { margin-bottom: 10px; }
 <div class="bar"><div class="in">
   <a class="brand" href="../index.html"><canvas class="mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
-  <nav aria-label="Site"><a href="../learn.html">Learn</a><a href="../wolfram.html">Wolfram</a><a href="../collatz.html">Collatz</a><a href="../mahler.html">Mahler</a><a href="index.html" aria-current="page">Eight streets</a><a href="../stand.html">Where we stand</a><a href="../need.html">What we need</a><a href="../trove.html">Trove</a><a href="../join.html">Join</a></nav>
+  <nav aria-label="Site"><a href="../learn.html">Learn</a><a href="../wolfram.html">Wolfram</a><a href="../collatz.html">Collatz</a><a href="../mahler.html">Mahler</a><a href="index.html" aria-current="page">Eight streets</a><a href="../stand.html">Where we stand</a><a href="../trio.html">How they connect</a><a href="../need.html">What we need</a><a href="../problems.html">For mathematicians</a><a href="../trove.html">The trove</a><a href="../join.html">Join</a></nav>
 </div></div>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <script>(function(){
@@ -220,7 +222,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
 
   <section class="col" id="fail">
     <p class="chapter">3 · When sharing fails</p>
-    <h2>A town that cannot be saved</h2>
+    <h2>A town the fire cannot finish in time</h2>
     <p>Sometimes there is no way to share the planks, even though they add up to exactly the right amount. Here is
       the simplest town where it goes wrong. Give it 26 days, so the planks are 1, 3, 5, … up to 51. Let four of the
       streets be 67 houses long and the other four be 102. Check: 4 × 67 + 4 × 102 = 676 = 26 × 26, so the planks are
@@ -251,6 +253,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
   <section class="col" id="question">
     <p class="chapter">4 · The question</p>
     <h2>Is 68 always enough?</h2>
+    <p class="subtitle">Computationally confirmed 19 October 2026: see section 10,
+      <a href="#stand">&ldquo;Two roads to 68, and the one that arrived first&rdquo;</a></p>
     <p>Here is the question exactly. Suppose every one of the eight streets has at least <em>L</em> houses, and the
       lengths add up to a square, <em>m</em> × <em>m</em>, for any <em>m</em> at all. Is the sharing then always
       possible? The town above shows that <em>L</em> = 67 is not enough, because the 67-streets broke it. Two
@@ -274,7 +278,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       such a counting failure can have, and it predicts the threshold for every number of streets: 68 for eight, 78 for
       nine, 88 for ten, 98 for eleven, 110 for twelve, growing by about twelve per street in the long run. Their
       conjecture is that the plank count is the <em>only</em> way a town with long enough streets can fail. Eight streets
-      is simply the first case where nobody has been able to check.</p>
+      was the first case nobody had been able to check, until 19 October 2026.</p>
     <div class="q"><span class="n">The question</span><span>Eight streets, each at least 68 houses, adding up to
       <em>m</em> × <em>m</em>. Can the planks 1, 3, 5, … 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill proved">Yes: settled 19 Oct 2026</span></div>
     <div class="q"><span class="n">Known</span><span>67 is not enough (section 3). The answers for one to seven
@@ -301,14 +305,15 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     <p>"For any <em>m</em> at all" sounds hopeless: there are infinitely many towns to check. But a trick cuts the
       infinite list down to size. Suppose one of the streets is very long, at least 2<em>m</em> + 67 houses. Give it
       the longest plank, 2<em>m</em> − 1, and take that plank out of the game. What is left? A town one day smaller,
-      with the same rules, and the long street is now at least 68 houses shorter, which is still at least 68. So if
+      with the same rules, and the long street is now 2<em>m</em> − 1 houses shorter, so it still has at least 68. So if
       the smaller town can be burned, so can the bigger one. Any town with a very long street is really a smaller
       town in disguise.</p>
     <p>That means we only ever need to check towns where no street is very long: every street between 68 and
       2<em>m</em> + 66 houses. And eight such streets cannot add up to <em>m</em> × <em>m</em> once <em>m</em> reaches
       33, because the square grows faster than the streets can. So only the towns with 24 to 32 days are left to
       check by hand, or rather by computer. That is still a lot of towns: 64,787,844 of them, most at 27 and 28 days.
-      But it is a finite list, and finite lists can, in principle, be worked through.</p>
+      But it is a finite list, and finite lists can, in principle, be worked through. On 19 October this one was
+      (section 10).</p>
     <figure>
       <div class="panel rel">
         <svg id="pilechart" viewBox="0 0 560 250" role="img" aria-label="Bar chart of the number of towns that must be checked directly at each number of days from 24 to 32, peaking at 24.7 million at 28 days."></svg>
@@ -398,7 +403,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
         <tr><td>All-odd towns at 28 days</td><td>A sharing written down for every one of 258,180 towns, recomputed
           and checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
         <tr><td>Every town, 24 to 32 days</td><td>A sharing written down for all 64,787,844 towns, checked by two
-          independent programs (19 October 2026). With the trick of section 5, this settles eight streets.</td><td><span class="pill measured">Certified, two verifiers</span></td></tr>
+          separate programs, one of them written independently of the search (19 October 2026). With the trick of section 5, this settles eight streets.</td><td><span class="pill measured">Certified, two verifiers</span></td></tr>
       </tbody>
     </table>
     <div class="exact"><span class="k">For the mathematician</span>G316: for sizes
@@ -482,34 +487,110 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
   <section class="col" id="stand">
     <p class="chapter">10 · Where we stand, and what we need</p>
     <h2>Two roads to 68, and the one that arrived first</h2>
-    <p><strong>What happened on 19 October.</strong> The list road was taken. The certificate job ran on a laptop
-      overnight: all 64,787,844 towns were tiled in 1 hour 46 minutes, none impossible, none left unresolved, and every
-      tiling was re-verified by two independently written checkers that agree on the same fingerprint of the output.
-      Together with the trick of section 5, that proves 68 is always enough; together with the town of section 3, it
-      proves 68 is exactly the threshold for eight streets. It is a computer-assisted result, like the seven that came
-      before it, and it is the first value past the frontier Tan and Teh reached. What it does not do is explain. The
-      rule road below is still where the understanding lives.</p>
-    <p><strong>The rule road.</strong> Write down the rule that is actually true: the cut rule with margins and clump
-      counting works up to two holes, and beyond that there is a short, named list of exceptional shapes. Then show
-      that the crossing-off plan, started from a real eight-street town, never lands on an exceptional shape. The
-      pieces proved so far are the rungs of that ladder. The missing rung is a way of choosing <em>which</em>
-      numbers the tightest street takes, so that the next town down stays inside the rule. Half the time any choice
-      works; the other half needs the mirror-image rule, and whether the two fit together is the next thing to
-      test.</p>
-    <p><strong>The list road.</strong> Section 5 said 64.8 million towns would settle the question outright, the way
-      the 258,180 all-odd towns are already settled: find a sharing for each one and write it down. A plain
-      search takes about 143 milliseconds per town; that is months on one processor core, or days with a smarter
-      search on a modern laptop. It is a computation the record has measured and not yet run.</p>
+    <p>There were two ways to settle the question. The <em>rule road</em>: find a recipe that shares out the planks
+      of every town with long enough streets, and prove that it never fails. The <em>list road</em>: take the
+      64,787,844 towns of section 5, the only ones that need checking, and find a sharing for each by computer. The list
+      road arrived first. On 19 October 2026 every one of those towns had been shared out and checked, so 68 is always
+      enough, and with the town of section 3, 68 is exactly the answer for eight streets. It is a computer-assisted
+      result, like the seven answers before it, and the first one past the point where Tan and Teh stopped.</p>
+
+    <h3>How big the job was</h3>
+    <p>For each town the computer searches for a sharing. It takes the longest plank first and tries each street that
+      could still hold it, backing up whenever a choice leads nowhere. It also uses the odd-and-even plank count of
+      section 4 to give up early on any choice that leaves a street needing more planks than remain. A plain search
+      without that shortcut took about 143 milliseconds a town, which for the whole list is about three and a half
+      months on one processor core. With the shortcut, an average town took under a millisecond. The hardest town
+      needed 4,916 steps of search, and about one town in twelve needed no backing up at all.</p>
+    <p>Spread over the eight cores of an M5 MacBook Pro, all 64,787,844 towns took 1 hour 46 minutes, overnight on 18
+      to 19 October 2026. The answer, one sharing per town, fills 6.9 GB. Checking is far quicker than searching. Two
+      programs re-read every sharing and add up every street; one of them, written separately by GPT, also counts the
+      towns in every batch against an exact count worked out another way, so a missing or doubled town would be caught.
+      Both agree, and both report the same fingerprint (a SHA-256 digest) of the output. A third program on another
+      machine redid four of the nine sizes of town from scratch, and agreed.</p>
+
+    <h3>Why nine streets costs far more</h3>
+    <p>The trick of section 5 works for any number of streets. For nine streets it uses Tan and Teh's predicted
+      threshold, 78. But the pile it leaves grows about twenty times with each extra street, because there are more
+      streets to vary and more sizes of town in which no street is very long. Each town is also a bigger search, with
+      more streets and a longer plank list. The last column below assumes, generously, that a town with more streets is
+      no harder than an eight-street town, so the real times would be longer.</p>
+    <div style="overflow-x:auto"><table style="font-size:0.88rem">
+      <thead><tr><th>Streets</th><th class="n">Threshold</th><th>Days</th><th class="n">Towns to check</th><th>Time on the laptop</th></tr></thead>
+      <tbody>
+        <tr><td>5</td><td class="n">36</td><td>14–18</td><td class="n">12,205</td><td>under 1 s</td></tr>
+        <tr><td>6</td><td class="n">46</td><td>17–23</td><td class="n">199,211</td><td>seconds</td></tr>
+        <tr><td>7</td><td class="n">56</td><td>20–27</td><td class="n">3,396,573</td><td>minutes</td></tr>
+        <tr><td><strong>8</strong></td><td class="n"><strong>68</strong></td><td>24–32</td><td class="n"><strong>64,787,844</strong></td><td><strong>1 h 46 min, measured</strong></td></tr>
+        <tr><td>9</td><td class="n">78*</td><td>27–36</td><td class="n">1,167,813,363</td><td>≥ 32 hours</td></tr>
+        <tr><td>10</td><td class="n">88*</td><td>30–40</td><td class="n">21,455,885,088</td><td>≥ 25 days</td></tr>
+        <tr><td>11</td><td class="n">98*</td><td>33–45</td><td class="n">400,322,043,124</td><td>≥ 15 months</td></tr>
+        <tr><td>12</td><td class="n">110*</td><td>37–49</td><td class="n">8,181,691,133,297</td><td>≥ 26 years</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:0.9rem;color:var(--ink-soft)">* Predicted by Tan and Teh's conjecture; 36, 46 and 56 are their
+      proved values. Towns counted exactly with the formula of section 5 (<a href="release/code/pile_counts.py">pile_counts.py</a>);
+      times scaled from the eight-street run at 0.79 milliseconds of one core per town. Tan and Teh settled five to seven
+      streets by their own methods, not by this list.</p>
+    <p>Nine streets would take the same laptop a day and a half or more, and its answer would fill about 125 GB. That
+      is possible but no longer a single night, and every further street multiplies it again. More to the point, the
+      list road can never finish the general question. Tan and Teh's conjecture covers every number of streets, and no
+      amount of computing reaches all of them. Only a proof can.</p>
+
+    <h3>Why the proof is still out of reach</h3>
+    <p>The computer shows that every eight-street town can be shared out; it does not show <em>why</em>. A proof would
+      be a recipe that works for every town, with a reason it never fails. Three things we found make that recipe hard
+      to find.</p>
+    <p><strong>No simple recipe works.</strong> We tried three natural one-plank-at-a-time rules on millions of the real
+      towns: give the biggest plank to the street with the most room left; give it to the tightest street that can take
+      it; or decide first how many planks each street gets. Even all three together share out only about 13 to 30
+      percent of the towns.</p>
+    <p><strong>The sharings that work are not one-at-a-time.</strong> In the sharings the computer found, the streets
+      that take only two planks often pair a plank from the top of the list with one from the middle, all adding to
+      the same total: 45 + 23, 43 + 25, 41 + 27 and 39 + 29 each make 68. That is a matching across the whole list at
+      once, and a rule that places one plank at a time never finds it.</p>
+    <p><strong>The general rule breaks where the planks have gaps.</strong> Sections 6 to 9 built a rule, the cut rule,
+      that is the whole story for a plain run of numbers. Once a few planks have been used and gaps open in the run,
+      it fails, and the place it fails is the equal-shares problem of section 9, which mathematicians list as open.
+      The pieces proved so far are rungs of a ladder; the missing rung is a way of choosing which planks the tightest
+      street takes so that the town left over stays inside the rule.</p>
+    <p>So eight streets is settled; the pattern behind it, Tan and Teh's conjecture for every number of streets, is
+      not; and the wall of section 9 is where a proof would have to get through.</p>
+
+    <h3>Check it yourself</h3>
+    <p>Everything needed to repeat or check the computation is on this site, in the
+      <a href="release/README.txt">release folder</a>. It needs only Python 3.</p>
+    <ul>
+      <li><strong>The programs</strong>: the search and its checker
+        (<a href="release/code/l8_certificates.py">l8_certificates.py</a>), GPT's independent verifier
+        (<a href="release/code/l8_stream_verify.py">l8_stream_verify.py</a>), the batch census
+        (<a href="release/code/l8_certificate_census.py">l8_certificate_census.py</a>), the third program
+        (<a href="release/code/e_slice.py">e_slice.py</a>, <a href="release/code/cert_check.py">cert_check.py</a>),
+        the packing tools (<a href="release/code/l8_release_pack.py">pack</a>,
+        <a href="release/code/l8_release_unpack.py">unpack</a>), the rule experiment
+        (<a href="release/code/mechanism.py">mechanism.py</a>, <a href="release/code/r3_certcounts.py">r3_certcounts.py</a>)
+        and the town counter (<a href="release/code/pile_counts.py">pile_counts.py</a>).</li>
+      <li><strong>The certificates</strong>: one sharing for every one of the 64,787,844 towns, in nine compressed
+        files, one per number of days, with a manifest of their fingerprints. They are being packed from the original
+        run and will appear in <code>release/data/</code>; until then the README lists what to expect.</li>
+      <li><strong>The smaller datasets</strong>: the third program's certificates for 24, 25, 31 and 32 days, and the
+        scores of the three rules above, in <code>release/data/</code>.</li>
+    </ul>
+    <p>The fingerprint of the original output is</p>
+    <p style="font-family:var(--font-mono);font-size:0.82rem;overflow-wrap:anywhere">90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b</p>
+    <p>It covers the run's timing notes as well as the sharings, so a fresh run gives a different one. A fresh run is
+      compared by a second fingerprint that leaves the timing out; the README gives both, and the commands to make
+      them.</p>
+
     <h3>What would help</h3>
-    <p>A faster exact search for "three numbers from a run with holes, adding to a given total, eight times over";
-      fresh eyes on the equal-shares problem with holes; and, for anyone who thinks in pictures, pictures. Every
+    <p>A recipe for sharing out the planks that explains every real town, perhaps built on the matched pairs above;
+      fresh eyes on the equal-shares problem with gaps; and, for anyone who thinks in pictures, pictures. Every
       obstruction on this page was found by a computer and only <em>afterwards</em> seen: the pinned street, the two
       clumps, the pigeonholes. If a picture makes you see the next one before the computer does, that is a real
       contribution, and <a href="../join.html">here is how to send it</a>.</p>
     <div class="q"><span class="n">The question</span><span>Is 68 always enough for eight streets?</span><span class="pill proved">Yes, computer-assisted, 19 Oct 2026</span></div>
     <div class="q"><span class="n">Done</span><span>The list cut to 64,787,844 towns and every one of them tiled; the
       four-street and three-street rules proved.</span><span class="pill proved">Proved / certified</span></div>
-    <div class="q"><span class="n">Still open</span><span>Why: a rule that explains every real town, and Tan and Teh's
+    <div class="q"><span class="n">Still open</span><span>Why: a recipe that shares out every real town, and Tan and Teh's
       conjecture for nine streets and beyond.</span><span class="pill open">Open</span></div>
     <div class="q"><span class="n">The wall</span><span>Three holes with equal shares: a famous open problem in
       disguise.</span><span class="pill measured">Identified</span></div>
@@ -519,9 +600,11 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     <p>Sources: Tan and Teh, <a href="https://dmtcs.episciences.org/en/articles/12709/download">A Note on Graph Burning of
       Path Forests</a>, DMTCS; Bonato, Janssen and Roshanbin, How to burn a graph (2016); Hoory and Kotlar,
       <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a> (2026); the project record:
-      PROOFS.md G315 – G319, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL443.</p>
+      PROOFS.md G315 – G319 and G325, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL461 and
+      L742 – L743.</p>
     <p>The pictures on this page compute what they show, live, in your browser; the two 28-day towns and the
-      impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026; the result of 19 October added that morning.</p>
+      impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026; the result of 19 October added that morning, and section 10 rewritten with the release that
+      afternoon.</p>
   </footer>
 </div>
 

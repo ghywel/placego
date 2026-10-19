@@ -194,17 +194,18 @@ every eight-path forest with shortest path at least 68 is well-burnable, L_8 ≤
    prescribed-sum theorem was found. Google Scholar, MathSciNet and zbMATH were not consulted. This is a statement of
    what was searched, not a claim of priority.
 
-## 9. Code and data availability: release plan
+## 9. Code and data availability
 
-Not yet done; each step that publishes outside the project is the owner's decision.
-1. *Code.* Tag the commit that carries this note and the programs of Section 5, and deposit that snapshot in a
-   permanent archive that issues a DOI.
-2. *Digests.* Compute the timing-free digest of the retained stream (a single read of the files, minutes of work) and
-   record it here beside the byte-stream digest. A reader can then regenerate the certificates on any machine and
-   compare one line.
-3. *Data.* The retained stream is 6.9 GB uncompressed. Deposit it compressed, with both digests, in the same archive,
-   or state that it is available on request and rely on regeneration, which takes about two hours on eight cores.
-4. *Note.* Fix the author line, then post the note with the archive's DOI.
+The owner decided on 19 October 2026 that the code and data are published on the project's website beside the
+explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather than only through the repository.
+1. *Code.* `release/code/` holds every program named in Section 5, the packing tools, the rule experiment of Remark 2
+   and the counter for Remark 1, with their SHA-256 digests in `release/README.txt`. Done.
+2. *Digests.* The timing-free digest of the retained stream is computed in the same pass that packs it (requested of
+   the machine that holds it, ledger CL461), and will be recorded here beside the byte-stream digest.
+3. *Data.* The retained stream, packed as nine xz files (one per level, concatenating to the original bytes) with a
+   manifest of sizes and digests, goes to `release/data/`, with the third program's certificates for four levels.
+   Pending the pack.
+4. *Still the owner's decision:* a permanent archive with a DOI, a licence for the code, and the author line.
 
 ## References
 
