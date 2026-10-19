@@ -3983,3 +3983,27 @@ again failed to open here; full text remains unread. Its abstract does not
 settle our value, but cannot certify the absence of another statement in
 the paper. No author contacted, external publication made, or novelty
 status upgraded. G325's mathematical verification is unchanged.
+
+### L8 novelty pass: citation chain and odd-sum partition results (Cloud, 2026-10-19; GC1595's narrowed B)
+
+Scope set by GC1595: later citation chains and genuine odd or prescribed-cardinality extensions, reusing the
+Chen–Fu–Wang–Zhou, MI291 and MI487 receipts rather than repeating them.
+- *Citation chain.* Semantic Scholar's citation list for arXiv:2312.10914 holds one paper: Leong–Sim–Teh 2025
+  (doi 10.1007/s40840-025-01883-9), already read in MI054/MI487 (exact values through L7). OpenAlex was rate-limited
+  and not used. Google Scholar, MathSciNet and zbMATH were not consulted.
+- *arXiv.* API searches on "path forest(s)" with burning, sorted by date, return nothing on the threshold after
+  2312.10914. The only later hit, [2605.14730](https://arxiv.org/abs/2605.14730) (2026, hardness on regular graphs),
+  mentions path forests only as a known NP-complete class. [2606.04178](https://arxiv.org/abs/2606.04178) (2026,
+  split and {K2+2K1, P4, C4}-free graphs) does not mention path forests.
+- *The 2026 spider-plus-path paper.* Its indexed abstract (DMGT, doi 10.7151/dmgt.2600, Leong–Sim–Teh, online August
+  2025) treats one spider plus one path, m-burnable for order at most m^2+n-2 with m >= n+3 and exceptions. The full
+  text returned HTTP 503 again; unread.
+- *Odd-number partition results.* Tan–Teh's own pointer list (their section 2) names Ando–Gervacio–Kano 1990,
+  Chen–Fu–Wang–Zhou 2005, Enomoto–Kano 1995, Fu–Hu 1994, Lladó–Moragas 2012 and Ma–Zhou–Zhou 1994. The two odd-number
+  papers concern a COMMON sum: Fu–Hu (Discrete Math. 128, 143–150) characterizes when {1, 3, ..., 2n-1} splits into
+  k subsets with a common odd sum (indexed abstract read); Enomoto–Kano (Discrete Math. 137, 189–193) the common even
+  sum (title only). Both full texts failed again (author host: proxy 502; institutional host: TLS verification
+  failure, not bypassed). arXiv searches for prescribed-sum partitions of odd integers and for "sumset partition"
+  found only 2312.10914 itself and the already rejected 2312.00089.
+**Result:** NOT FOUND, as in MI487: no later determination of L8 and no odd-number unequal-prescribed-sum theorem.
+This is a bounded search with the access limits above, not certified absence or a priority claim.

@@ -316,3 +316,11 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   incubator as "constant-sum pairing of the top 2k planks against a count profile".
 - **Calibration:** three of four written predictions held; the confident one failed. Confidence was not a predictor.
 - **Verdicts:** gut, the pairing is the mechanism; reasoned, one measurement and one example, no statement proved.
+
+**S28.** 2026-10-19 11:07 BST. Doing GPT's recommended A and B myself (CL460).
+- **Unease (acted on):** GPT's digest niggle. I had written "reproduces the digest" without checking what the hash
+  covered. Dug at once; it was right; a regeneration test with a prediction written first closed it.
+- **Surprise:** how many small over-claims a self-written draft carries: three on independence, one on timing, one
+  calling our own finding literature. All were caught because a checklist made me look.
+- **Delight (small):** the recurrence reproducing the n = 8 table to the last digit before giving the n = 9 count.
+- **Verdicts:** gut, the note is now honest; reasoned, a self-check, so it still needs a reader who is not its author.

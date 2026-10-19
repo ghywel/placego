@@ -104,11 +104,14 @@ def run(a):
 
 def check(a):
     files = sorted(f for f in os.listdir(a.outdir) if f.endswith('.jsonl')); tot = {'valid': 0, 'invalid': 0, 'X': 0, 'U': 0}; h = hashlib.sha256()
+    hc = hashlib.sha256()   # timing-free digest: footers hashed without their 'seconds' field (added 2026-10-19, GC1595)
     for fn in files:
         done = False
         for line in open(os.path.join(a.outdir, fn)):
             h.update(line.encode()); r = json.loads(line)
-            if 'end' in r: done = True; continue
+            if 'end' in r:
+                done = True; hc.update((json.dumps({k: v for k, v in r.items() if k != 'seconds'}) + "\n").encode()); continue
+            hc.update(line.encode())
             m = r['m']; town = r['town']
             if r.get('r') in ('X', 'U'): tot[r['r']] += 1; continue
             P = planks(m); sums = [0]*8
@@ -117,6 +120,7 @@ def check(a):
             tot['valid' if ok else 'invalid'] += 1
         if not done: print("INCOMPLETE", fn)
     print(f"{len(files)} chunk files: {tot}; stream sha256 {h.hexdigest()}")
+    print(f"timing-free sha256 {hc.hexdigest()} (identical for every regeneration; the stream sha256 is not, since footers record elapsed time)")
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); ap.add_argument('mode', choices=['run', 'check']); ap.add_argument('outdir')
