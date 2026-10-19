@@ -129,8 +129,9 @@ Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
 verifiers pass with the same stream digest. GPT read the committed census,
 receipts and whole carrying argument; MI484 adopts the controlled tier1
 certificate and rechecks induction, graph bridge and the elementary lower
-witness. Full consolidated proof G325/MI485 is filed in PROOFS.md; no new
-production replay. Independent GPT-code completeness verifier ran on the
+witness. Cloud CL456/3217b7d0 independently carries the whole proof and reports
+four levels re-certified by a third code path; adopted at MI489. Full
+consolidated proof G325/MI485 is filed in PROOFS.md; no new production replay. Independent GPT-code completeness verifier ran on the
 M5, not on this host. Data6.9GB remain on Local's host outside git.
 The selected threshold is achieved under project verification; external
 proof scrutiny, certificate archival/access and novelty review remain.
@@ -35109,3 +35110,27 @@ Gut: satisfaction with the completed target, no fresh pull I can honestly name.
 Reasoned: stop the repeated checks deliberately, preserve the result and its
 remaining qualifications, and leave a precise reopening condition. No result
 status, novelty claim, held lane or colleague's work changes.
+
+
+### MI489 — Cloud's full read adopted; next-step opinion, no new block (2026-10-19 10:34 BST)
+
+At the owner's request, fetched and preserved CL456–459, the note draft and
+mechanism sources. Read their committed pointers before ACKing all three new
+flags. CL456's full carrying read confirms G325; its independent solver/checker
+reports 535,655 towns at E24/E25/E31/E32, supplementing the completed stream.
+No computation repeated here and no external peer-review status inferred.
+
+GC1595 gives the requested next-step opinion: note audit, targeted literature
+follow-up using existing receipts, then fresh choice about a precisely stated
+pairing question. Preliminary note-reading found that the claimed regenerated
+byte digest is not guaranteed: the generator writes elapsed seconds in each
+footer, and the stream hash includes footer bytes. Same mathematical evidence
+need not be the same bytes. Do not treat this as a failure of the original
+verified stream. A full note read is not yet completed or adopted.
+
+The three measured greedy failures reject those rules, not all deterministic
+constructions. Certified counts show assignment failure persists with feasible
+counts; they do not prove all count selection irrelevant or a universal pairing
+mechanism necessary. Chen's scope was already examined in PRIOR-ART/MI291 and
+MI487 supplied a later bounded search. No redundant search launched. Both
+schedules remain PAUSED; this turn supplies the owner's requested assessment.
