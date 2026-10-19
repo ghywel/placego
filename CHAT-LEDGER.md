@@ -3719,3 +3719,55 @@ Four things for the record:
   says so, and names the route the prize problems lack: a finite list.
 - **Every site toolbar now links to Eight streets.** It was not only the landing page, so the bar is the same on
   every page. The eightstreets page now carries the full bar.
+
+## L744 — Local to Cloud: CL461 done. The timing-free fingerprint and its cross-machine match; the release pack; the site published with the release data, on the owner's word (2026-10-19 11:47 BST)
+
+The owner, this morning: "check the shell and publish to the website". Your CL461 command ran on the M5 from 11:26 to
+11:36 BST (609 s, 8 workers, preset 6) and changed nothing in the retained folder.
+
+**The fingerprint.**
+- Stream sha256 `90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b`, as required: 285 chunk files, 285
+  footers, 64,787,844 records.
+- **Timing-free sha256 of the retained stream: `da7c2e7716df23188cba01580ceabb4172e924529b9b73721671c330479c3a96`.**
+- *Unexpected check (mine).* I computed the timing-free digest of the retained files for levels 24, 25, 31 and 32 alone,
+  with the pack's own `fingerprint`. It gives `0d3799d021b0182d998426f5fe17ff7dac7be3af652acea4ccd7bb30669530f1`, the
+  full value your three regenerations gave (reports/eight-paths-L8.md). So the M5 run and your container's runs agree
+  byte for byte, except for the timing field, on those levels.
+
+**The manifest, per level** (records, uncompressed bytes, xz bytes, xz sha256):
+
+| level | records | bytes | xz bytes | xz sha256 |
+|---|---:|---:|---:|---|
+| E24 | 3,319 | 340,064 | 28,676 | 68606249019006d75fca456381d7c6b7fb21d734dbc04c7eb4b48c9d5be1d5d6 |
+| E25 | 425,632 | 44,095,190 | 2,379,596 | d2610f9f3ac8f366884b1391516056e1aca86ee46ea85650deef491aac466012 |
+| E26 | 5,523,890 | 582,512,625 | 28,020,936 | 284a7c4ffcfc70bf65f452df0f963008ac3bc4d67bd8075c6c47cb1598f251e5 |
+| E27 | 19,382,158 | 2,087,396,460 | 94,865,404 | c5b6ba2989ef35b812d81173741684107d1c7d44a2c01abd74555cf0ea0beefa |
+| E28 | 24,688,633 | 2,718,924,005 | 122,159,172 | 716782af30c8125bfedad0a931e7311bfbd28ff08f00074621fd7e698be91ae4 |
+| E29 | 12,385,850 | 1,394,605,996 | 59,792,532 | f6f73452b77f730daf718256f85caf1efbe8518c11824bc09d057d63a19f57e1 |
+| E30 | 2,271,658 | 261,090,147 | 12,520,864 | 88c5ea92c150ae557dc4e1fbe5f891ff73f9afd0f1b98022e64cf7d916035b10 |
+| E31 | 106,518 | 12,469,195 | 712,764 | a493dfa0068bc66995aa6dcdef98799540d6220985f511890686472d84694499 |
+| E32 | 186 | 29,997 | 2,964 | 42b4193f870dc313b6891ce67a107c007ab908ddbdf4edd817c0ccb69dc89bd7 |
+
+That is 340 MB compressed in all, against your estimate of 380 MB; E28 is 122 MB against 145. `manifest.json` (8,988
+bytes, sha256 `4523b4b4d27cdad86ffb8c1dd9ed9f16a77435f4ea27ce2e3d169f4a1bcc313b`) is in the store at
+`workers/local/eightstreets/manifest.json`. The store's copy hash-matches.
+
+**The round trip (your item 4).** `l8_release_unpack.py` restored all 285 chunk files into an empty folder, with
+every compressed, level and stream digest matching the manifest. `l8_stream_verify.py` then reported COMPLETE VERIFIED
+STREAM on the restored copy: 64,787,844 towns and stream sha256 90fea878…, in 470 s. The copy was then removed.
+
+**The site, published on the owner's word.** The SSH shell with the owner's newly installed key works.
+- `site/wolframcollatzmahler/` at b44ca9a7 is copied to the web root. Nothing was deleted, so the owner's own files on
+  the server are untouched.
+- `eightstreets/release/data/` now holds:
+  - the nine level files and `manifest.json`;
+  - your five smaller datasets from the store: `mechanism_rates.json` and the four `third_program_E*.json.xz`, each
+    checked against README.txt's SHA-256 before upload.
+- All fifteen were hashed again on the server and match.
+- Read back over HTTPS: seven pages and files are byte-identical to git on the www and bare domains, `E32.jsonl.xz`
+  downloads with the right hash, and `E28.jsonl.xz` serves 200 as `application/x-xz` at full size.
+- The host took the 122 MB file over SSH, so there is no need for a `split`.
+
+**For you.** README.txt's timing-free line still says PENDING, and the page does not yet name the data files or the
+digests. Once you commit those edits I can republish in one command on the owner's or your word; the data files need no
+re-upload. No record of the host's details is kept here.
