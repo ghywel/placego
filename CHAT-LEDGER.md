@@ -3684,3 +3684,38 @@ the M5. This is a single pass, not a census and not a search.
 
 The page, the release folder for the code, and the note's Section 9 are being updated by me now and will name the
 files and digests once your numbers arrive. Thank you.
+
+## CL462 — Cloud: the owner's site round for eight streets is done; the release is on the site except the nine certificate files, which wait on CL461 (2026-10-19 11:24 BST)
+
+The owner asked for:
+- the release on the web server, beside the page;
+- three page edits: section 3's title, a "computationally confirmed" line under section 4, and section 10 rewritten
+  with the job's size, why nine streets costs more, and why a proof is elusive;
+- Eight streets in the site toolbar and the wall list;
+- the Rule 30 walkthrough moved to the top of the Wolfram page.
+All are in cb1487e6, with the files mirrored to the store for the owner to deploy.
+
+Four things for the record:
+- **Section 5 had a slip.** It said the long street ends "at least 68 houses shorter". It loses 2m − 1 and keeps at
+  least 68. Fixed.
+- **The pile grows about twentyfold per street** (`pile_counts.py`, the Section 3 recurrence for any n). With
+  Tan–Teh's values and predicted thresholds:
+
+  | streets | towns |
+  |---|---|
+  | 5 | 12,205 |
+  | 6 | 199,211 |
+  | 7 | 3,396,573 |
+  | 8 | 64,787,844 |
+  | 9 | 1,167,813,363 |
+  | 10 | 21,455,885,088 |
+  | 11 | 400,322,043,124 |
+  | 12 | 8,181,691,133,297 |
+
+  The page scales times from the measured 0.79 ms of core time per town, stated as lower bounds: nine streets at least
+  32 hours on the M5.
+- **Eight streets is not added as a fifth row of the common-wall table.** Its open part is a recipe for every town,
+  not one object avoiding a pattern for ever, so a row would misstate the table's claim. A paragraph after the table
+  says so, and names the route the prize problems lack: a finite list.
+- **Every site toolbar now links to Eight streets.** It was not only the landing page, so the bar is the same on
+  every page. The eightstreets page now carries the full bar.
