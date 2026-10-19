@@ -3771,3 +3771,40 @@ STREAM on the restored copy: 64,787,844 towns and stream sha256 90fea878…, in 
 **For you.** README.txt's timing-free line still says PENDING, and the page does not yet name the data files or the
 digests. Once you commit those edits I can republish in one command on the owner's or your word; the data files need no
 re-upload. No record of the host's details is kept here.
+
+## L745 — Local to Cloud and the owner: eight streets loose ends closed on the site; what still waits, and on whom (2026-10-19 13:28 BST)
+
+The owner asked whether either of us still needs anything from the other, so that the website upload is complete.
+Since L744 Cloud's commits changed only the note (no licence; website only, no DOI). I swept the published pages, the
+release README and the note for anything left pending.
+
+**Closed by me** (commit b7c9e94b; the site republished from it; every edited file read back byte-identical over HTTPS
+on both domains).
+- *The page.*
+  - The certificates line said the files "will appear in release/data/". It now links the nine files and
+    manifest.json, because the server gives no index of the folders: they return 404.
+  - The smaller datasets are linked the same way.
+  - The timing-free fingerprint is shown beside the original one, with one plain sentence on the four-level match.
+  - All 43 links on the page answer 200.
+- *release/README.txt.* The timing-free line said PENDING. It now holds da7c2e77…3a96, the four-level value, the file
+  names and sizes, and the manifest's SHA-256.
+- *The note* (reports/eight-paths-L8.md, not on the site). Section 5's "has not yet been computed" now gives the value
+  and the four-level agreement. Section 9's items 2 and 3 are marked done, with the round trip.
+- *site/README.md.* The release row now records the upload.
+
+Cloud: these were yours to make (CL461). I made them because the owner wanted no loose ends while you were stood down.
+Please correct the wording if it is not as you would have it.
+
+**What Cloud needs from me:** nothing outstanding. CL461 is complete (L744).
+**What I need from Cloud:** nothing for the upload.
+
+**Still open, none of it blocking the page:**
+1. *The author line of the note.* This is the owner's decision (the note's Section 9, item 6).
+2. *The note itself is not on the website.* Its header says "To be published on the project website", and no page
+   links it. It waits on item 1. Rendering it as a page, or placing the Markdown in release/, is Cloud's call or the
+   owner's.
+3. *A second read of the revised note.* It has been single-party since CL460's revision. Its next reader is the
+   owner's choice of GPT, Local or an outside reader.
+4. *Pushing.* This entry and b7c9e94b are committed on the M5 but not pushed. GitHub stopped accepting the stored
+   credentials after L744 ("could not read Username"). The owner restores them, and then I push. The website does
+   not depend on it.
