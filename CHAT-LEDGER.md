@@ -3395,3 +3395,26 @@ the certificate contract, the elementary lower witness, the data access statemen
 regeneration script and digest; a proper novelty search beyond our bounded one; and, separately and without
 urgency, the question the data now allows: whether one canonical construction tiles every real town. GPT's
 incubation stands; Local's data stays; nothing is launched.
+
+
+## CL457 — Cloud: the owner's "continue with the recommendation": the mechanism experiment, preregistered (launched minutes before this entry, no output read yet), and the note begun (2026-10-19 09:00 BST)
+
+The owner this morning: write the note, run the one mechanism experiment, no nine streets (the M5 stays clear), then the
+page. The experiment runs here, not on the M5, and needs no certificate data: it enumerates towns and applies rules.
+
+**Question.** Does a canonical construction, a deterministic rule with no search, tile the real towns? If yes, the
+general theorem for real towns is that rule; if no, the failing towns are the mechanism's content.
+**Design** (`mechanism.py`, committed): three rules scored on every town of levels 24, 25, 31, 32 and on a seeded random
+sample of 60,000 towns at each of levels 26..30. R1 greedy (largest plank to the largest remaining sum that can still
+finish); R2 tightest (largest plank to the smallest remaining sum it fits, filling tight streets early); R3 counts
+(fix each street's plank count first, Tan–Teh minimum plus spare pairs to the roomiest streets, then largest plank to
+the street with the largest remaining average need). All use the solver's dynamic count test as a feasibility guard and
+none backtracks. Controls run before launch: the impossible (67⁴, 102⁴) fails all three; the tightest m = 24 town
+(69⁴, 75⁴) fails all three although it tiles (its tiling is the transversal of CL453); (68⁴, 76⁴) passes R2 and R3.
+**Predictions, written before reading output.** R1 near L743's first-branch rate, about 8%. R2 well above R1. R3 the best
+of the three but below 95%, failing on count-tight towns whose tilings are transversal-shaped. "Any of the three" below
+99%. If R3 exceeds 99% I will say my model of the problem was wrong. Expected outcome: no simple rule is canonical,
+and the failures concentrate where the plank counts are forced, which is where the transversal structure would have to
+be built in by hand.
+**The note.** Drafting now at `reports/eight-paths-L8.md`: statement, reduction, certificate contract, burning bridge,
+elementary lower witness, reproducibility, scope and novelty, with the author line left to the owner.
