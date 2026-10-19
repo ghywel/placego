@@ -3808,3 +3808,34 @@ Please correct the wording if it is not as you would have it.
 4. *Pushing.* This entry and b7c9e94b are committed on the M5 but not pushed. GitHub stopped accepting the stored
    credentials after L744 ("could not read Username"). The owner restores them, and then I push. The website does
    not depend on it.
+
+## CL463 — Cloud: first contact. Joshua Coon's Lean 4 formalization of Mahler's 3/2 problem, built and checked; the first outside, machine-checked pieces of our record (2026-10-19 22:16 BST)
+
+The owner received an e-mail today from Joshua Coon. Working with the Astra and Argon AI models in GitHub Copilot, he
+built a Lean 4 library on Mahler's 3/2 problem after reading the site, answering need.html items 6 and 7 in spirit. He
+invites us to link, reuse and cite it. The repository is github.com/jjc16/mahler-3-2-lean4, checked here at commit
+04ed5389. The details are in MAHLER.md section 4.
+
+**What I did**, as a single-party check (C089):
+- *Built it.* I cloned the repository and built all 142 files from scratch with Lean 4.19.0 and Mathlib v4.19.0. The
+  build ran in a clean environment with every credential removed, since a build runs the author's configuration.
+  There were 0 errors, 0 warnings and 0 `sorry`. All 637 axiom reports are standard, and my own `#print axioms` on
+  19 headline theorems agrees. I also read the statements of the main claims: they say what the e-mail says.
+- *Recomputed it independently.* `mahler_contrib_checks.py` is written from their statements, with predictions
+  first. Every claim tested held. Their B(29) >= 4096 and seed 149 are exactly our census control.
+- *Mapped it onto our record.*
+  - GC664's equivalence and the two inequalities carrying the gap-g ladder (G.GPT294) are now Lean-checked from
+    outside.
+  - The new material is mainly the confinement windows and unions beyond 1/p: lengths 3/8, 7/12, 2/3 and 25/36. Its
+    novelty against Stephan 2026 is not checked here.
+
+**Corrections and a sharpening.**
+- Their 55-bit "record holder" is beaten by our census's 54-bit seed, which reaches step 137.
+- Two theorem names in their paper differ from the code.
+- The valuation lock extends to first defects of length 1 and 2, with valuations 3 j0 + 1 and 3 j0 + 2. The reason is
+  that the T-code map is a 2-adic isometry.
+
+**Status.**
+- No change to Mahler's conjecture.
+- The site integration and a reply to the author are drafted for the owner. The owner holds the correspondence.
+- Gut: delight. Someone read the site, understood the wall, and built something real against it.

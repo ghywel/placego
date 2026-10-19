@@ -260,3 +260,42 @@ RULE30-GPT.md's L363 checkpoint.)
      GC1253). G296's finite-plateau refinement awaits review, and Cloud's ten further certificates are COMPUTED.
    - These are statements about pairs of points of K; no single integer is excluded. (comb note, 2026-10-14, Local,
      SW-01: pointer added; the honest summary's "No proof, nothing claimed" is about Mahler's conjecture and stands.)
+
+4. **The first outside contribution: Joshua Coon's Lean 4 formalization** (received by e-mail on 2026-10-19 with an
+   invitation to link, reuse and cite; checked by Cloud the same evening, CL463). Joshua Coon, with the Astra and Argon
+   AI models in GitHub Copilot: [github.com/jjc16/mahler-3-2-lean4](https://github.com/jjc16/mahler-3-2-lean4), Lean
+   4.19.0 and Mathlib v4.19.0, 142 files, with a 13-page paper in the repository root. Checked at commit 04ed5389.
+   - *Replayed* (tier 1, a machine certificate adopted on replay under need.html's rule; the scope is each Lean statement
+     as written). It was built from scratch here in a clean environment: 142 of 142 files, 0 errors, 0 warnings,
+     0 `sorry`, and 637 axiom reports, all within `propext`, `Quot.sound` and `Classical.choice`. An independent
+     `#print axioms` on 19 headline theorems agrees. Their statements use `Int.fract` directly, so nothing hides in a
+     definition.
+   - *Independently recomputed* (`tests/probes/mahler/mahler_contrib_checks.py`, our code from their statements):
+     - seed 149 survives 28 steps and fails at 29, and nothing below 4096 survives step 29;
+     - their seed 29871555608238677 survives 113 and fails at 114;
+     - the first-defect valuation lock v_2(19 a0 + 9) = 3 j0 + 3 held on 40,249 seeds;
+     - five window and union escape bounds held at every W = 1..10;
+     - the (2/7, 5/7) branch counts equal Mahler's binary partition numbers through depth 15 and give 200 against 202
+       at depth 16.
+   - *Where it meets our record.*
+     - Their `mahler_conjecture_iff_leastPositiveSurvivor_unbounded` is the Lean form of GC664. Their
+       `gap_ladder_short_gap_cost_and_cap` checks the two inequalities that carry Lemmas 2 and 3 of the gap-g window
+       ladder (G.GPT294). Their B(29) >= 4096 and seed 149 are our census control C0.
+     - So, for the first time, pieces of this record are machine-checked by someone outside the project.
+   - *What it adds.*
+     - Escape bounds for confinement sets beyond the 1/p barrier: the window [1/6, 13/24) of length 3/8 at base 3/2,
+       [1/3, 5/8) at base 4/3, and unions of total length 7/12, 2/3 and 25/36. The unions sit well above Dubickas's
+       20/39 example of 2008.
+     - Formal proofs of Dubickas (2009) Theorem 1 in general base, with explicit escape bounds.
+     - Exclusions of two-letter mechanical, Thue–Morse, period-doubling and rapid-growth block chains.
+     - A catalogue of eighteen formally diagnosed dead ends for classical Diophantine tools.
+     - Its novelty against Stephan (2026) and Dubickas–Mossinghoff (2009) is not checked here.
+   - *Two notes for the author, and one sharpening.*
+     - The 55-bit seed is a long survivor, not a record. Our census (2026-10-14) has 9850069454682037, 54 bits,
+       surviving to step 137, and a horizon of 157 below 2^63.
+     - Two theorem names in the paper's table differ from the code.
+     - Sharpening, found by the recomputation: the lock extends to defects of length 1 and 2, giving 3 j0 + 1 and
+       3 j0 + 2. The reason is that the T-code map is a 2-adic isometry (G51), so v_2(a0 + 9/19) is the length of the
+       common prefix of a0's code and (100)^infinity.
+   - Nothing here touches Mahler's conjecture itself, and the author says so: the wall is the same one, the gap
+     between the 2-adic set and one positive integer.
