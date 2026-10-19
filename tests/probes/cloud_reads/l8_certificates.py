@@ -77,7 +77,7 @@ def chunk(args):
     if os.path.exists(path):
         with open(path, 'rb') as f:
             f.seek(0, 2); size = f.tell(); f.seek(max(0, size - 64)); tail = f.read().decode(errors='ignore')
-        if tail.strip().endswith('"DONE"'): return (m, l1, 'skipped')
+        if '"end": "DONE"' in tail: return (m, l1, 'skipped')   # fixed 2026-10-19 (L743 found the old test never matched)
     towns = towns_with_min(m, l1); t0 = time.time(); st = {'tiled': 0, 'greedy': 0, 'impossible': 0, 'unknown': 0}
     with open(path, 'w') as f:
         for t in towns:

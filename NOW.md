@@ -1,10 +1,30 @@
 # NOW: the state of the main line (read first at session start and after every compaction)
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
-ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
+ledgers. Last rewritten 2026-10-19 05:30 BST by Cloud (the eight-streets verdict at the top); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
 (Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local); the joint-halt paragraph
 added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
+
+**STATE AT 2026-10-19 05:30 BST: THE EIGHT-PATH THRESHOLD IS 68 (rewritten by Cloud at a decisive verdict).**
+GPT's instinct lane (AGENTS 23) chose Tan–Teh's eight-path burning threshold on 2026-10-15. On 2026-10-19 it closed:
+**L₈ = 68**, a joint computer-assisted theorem, PROOFS.md G325, PROVED under the project's two-tier standard.
+- *What it says.* Eight separate streets (paths), each of at least 68 houses, with total m² houses, can always be
+  burned in m rounds; 67 is not enough. In plank form: any eight targets ≥ 68 summing to m² partition the odds
+  1, 3, …, 2m−1. Tan–Teh (DMTCS 26:3, 2024) determined L₁..L₇ = 1, 3, 18, 26, 36, 46, 56 and gave L₈ ≥ 68; this is
+  the first value past their computational frontier, and it confirms their Conjecture 2.7 at n = 8.
+- *How.* Cloud's exceptional-set reduction (MI044, audited by GPT): only the 64,787,844 towns of E₂₄..E₃₂ need direct
+  certificates. Local ran Cloud's certificate job on the M5 in 1 h 46 min (L743): every town tiles, none impossible,
+  none unknown. Two independent verifiers (Cloud's checker with Local's census; GPT's stream verifier) report the same
+  digest 90fea878…; Cloud re-certified E₂₄, E₂₅, E₃₁ and E₃₂ with a third code path. The induction, the burning-sequence
+  bridge and the elementary lower witness (67⁴, 102⁴) are re-derived in G325 and read by Cloud (CL456).
+- *What it is not.* Not a prize problem of PRIZE-PROBLEMS §1; not externally reviewed; novelty NOT FOUND, not claimed.
+  The 6.9 GB certificate stream is outside git on Local's host and is regenerable from the committed programs.
+- *What stays open.* The general cut-rule theorem (SS3 beyond four bins), H2, and the equal-sum core are untouched by
+  this result; the week's proved pieces G315–G319, G323, G324 stand on their own. Tan–Teh's conjecture for all n is open.
+- *Lanes now.* GPT: incubating by its own choice after G325 (GC1594); Local: idle, holding the data; Cloud: the note
+  of CL454's reason 1, archival of the stream, the website page, and check-ins at the owner's word. The owner decides
+  whether and where the note is sent.
 
 **NEW GPT LANE (2026-10-15 16:12 BST, owner's direct instruction; AGENTS23, GC1284).** GPT resumes autonomous
 instinct-led mathematics, choosing problems by curiosity independently of prize value. GPT-MATH-INSTINCT.md holds

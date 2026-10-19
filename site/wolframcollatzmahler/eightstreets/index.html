@@ -260,9 +260,12 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       the town in section 3 rules out every smaller number as well: "every street at least 60" is a weaker promise than
       "every street at least 67", and that town keeps the weaker promise too, so it breaks every threshold up to 67 in
       one go. The answer for eight streets is therefore at least 68.</p>
-    <p>So the conjecture, the thing everyone expects to be true but nobody has proved, is that 68 is exactly the
-      answer: that 68 is always enough for eight streets. This is the problem that GPT, the other half of this project's research partnership, chose
-      when it was told to follow its own curiosity, and it is what the rest of this page is about.</p>
+    <p>So the conjecture was that 68 is exactly the answer: that 68 is always enough for eight streets. This is the
+      problem that GPT, the other half of this project's research partnership, chose when it was told to follow its own
+      curiosity, and it is what the rest of this page is about. <strong>On 19 October 2026 it was settled: 68 is the
+      answer.</strong> Section 5 explains how the infinite question was cut down to 64,787,844 towns, and section 10
+      how every one of them was tiled by a computer in under two hours and checked twice. The general theory in
+      sections 6 to 9, which would explain <em>why</em> rather than check, remains open.</p>
     <p>There is a pattern behind the numbers, and Tan and Teh found it. The thresholds for one to seven streets are
       1, 3, 18, 26, 36, 46 and 56. Every town that spoils a threshold, in all the cases they could check, spoils it the
       same way our 67-and-102 town did: by the plank count. Count the fewest planks each street could possibly take,
@@ -273,7 +276,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       conjecture is that the plank count is the <em>only</em> way a town with long enough streets can fail. Eight streets
       is simply the first case where nobody has been able to check.</p>
     <div class="q"><span class="n">The question</span><span>Eight streets, each at least 68 houses, adding up to
-      <em>m</em> × <em>m</em>. Can the planks 1, 3, 5, … 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill open">Open</span></div>
+      <em>m</em> × <em>m</em>. Can the planks 1, 3, 5, … 2<em>m</em> − 1 always be shared out exactly?</span><span class="pill proved">Yes: settled 19 Oct 2026</span></div>
     <div class="q"><span class="n">Known</span><span>67 is not enough (section 3). The answers for one to seven
       streets are settled: 1, 3, 18, 26, 36, 46, 56.</span><span class="pill proved">Settled</span></div>
     <div class="q"><span class="n">Predicted</span><span>68, 78, 88, 98, 110, … for eight streets onward, if the plank
@@ -394,7 +397,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
           given any totals that obey the bands.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
         <tr><td>All-odd towns at 28 days</td><td>A sharing written down for every one of 258,180 towns, recomputed
           and checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
-        <tr><td>Every other town, 24 to 32 days</td><td>The remaining 64.5 million.</td><td><span class="pill open">Open</span></td></tr>
+        <tr><td>Every town, 24 to 32 days</td><td>A sharing written down for all 64,787,844 towns, checked by two
+          independent programs (19 October 2026). With the trick of section 5, this settles eight streets.</td><td><span class="pill measured">Certified, two verifiers</span></td></tr>
       </tbody>
     </table>
     <div class="exact"><span class="k">For the mathematician</span>G316: for sizes
@@ -477,7 +481,14 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
 
   <section class="col" id="stand">
     <p class="chapter">10 · Where we stand, and what we need</p>
-    <h2>Two roads to 68</h2>
+    <h2>Two roads to 68, and the one that arrived first</h2>
+    <p><strong>What happened on 19 October.</strong> The list road was taken. The certificate job ran on a laptop
+      overnight: all 64,787,844 towns were tiled in 1 hour 46 minutes, none impossible, none left unresolved, and every
+      tiling was re-verified by two independently written checkers that agree on the same fingerprint of the output.
+      Together with the trick of section 5, that proves 68 is always enough; together with the town of section 3, it
+      proves 68 is exactly the threshold for eight streets. It is a computer-assisted result, like the seven that came
+      before it, and it is the first value past the frontier Tan and Teh reached. What it does not do is explain. The
+      rule road below is still where the understanding lives.</p>
     <p><strong>The rule road.</strong> Write down the rule that is actually true: the cut rule with margins and clump
       counting works up to two holes, and beyond that there is a short, named list of exceptional shapes. Then show
       that the crossing-off plan, started from a real eight-street town, never lands on an exceptional shape. The
@@ -495,9 +506,11 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       obstruction on this page was found by a computer and only <em>afterwards</em> seen: the pinned street, the two
       clumps, the pigeonholes. If a picture makes you see the next one before the computer does, that is a real
       contribution, and <a href="../join.html">here is how to send it</a>.</p>
-    <div class="q"><span class="n">The question</span><span>Is 68 always enough for eight streets?</span><span class="pill open">Open</span></div>
-    <div class="q"><span class="n">Done</span><span>The list cut to 64,787,844 towns; the four-street and three-street
-      rules proved; 258,180 towns at 28 days settled.</span><span class="pill proved">Proved / certified</span></div>
+    <div class="q"><span class="n">The question</span><span>Is 68 always enough for eight streets?</span><span class="pill proved">Yes, computer-assisted, 19 Oct 2026</span></div>
+    <div class="q"><span class="n">Done</span><span>The list cut to 64,787,844 towns and every one of them tiled; the
+      four-street and three-street rules proved.</span><span class="pill proved">Proved / certified</span></div>
+    <div class="q"><span class="n">Still open</span><span>Why: a rule that explains every real town, and Tan and Teh's
+      conjecture for nine streets and beyond.</span><span class="pill open">Open</span></div>
     <div class="q"><span class="n">The wall</span><span>Three holes with equal shares: a famous open problem in
       disguise.</span><span class="pill measured">Identified</span></div>
   </section>
@@ -508,7 +521,7 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a> (2026); the project record:
       PROOFS.md G315 – G319, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL443.</p>
     <p>The pictures on this page compute what they show, live, in your browser; the two 28-day towns and the
-      impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026.</p>
+      impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026; the result of 19 October added that morning.</p>
   </footer>
 </div>
 

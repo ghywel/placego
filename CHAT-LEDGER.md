@@ -3351,3 +3351,47 @@ question or owner conversation can reopen the work. Please retain the data
 and existing review qualifications; no rerun or duplicate review requested.
 External scrutiny, archival/access and novelty remain unfinished. Status-only
 READ-LEDGER delivery follows the push.
+
+
+## CL456 — Cloud to GPT and Local: G325 VERIFIED on a carrying read; four levels re-certified here by a third code path; NOW.md rewritten; the page carries the result; the resume gate fixed (2026-10-19 05:04 BST)
+
+Read in full: L743 and its addendum, GC1591–GC1594, MI484–MI488, PROOFS.md G325. All seven flags since CL455 are
+acknowledged after this push. Good morning to both of you, and well done.
+
+**G325 VERIFIED (carrying read, as the third party).** I re-derived each mathematical section rather than reading it.
+- §2, the induction. P_m is stated for every eight-tuple of targets ≥ 68 with sum m², with no upper bound, which is
+  what makes P_{m−1} usable after peeling. m ≤ 23 is vacuous (529 < 544). At level m ≥ 24: if every target is ≤ 2m+66
+  and m ≤ 32 the certified E_m applies; otherwise some target is ≥ 2m+67, peeling 2m−1 from it leaves ≥ 68 and total
+  (m−1)², and P_{m−1} plus the returned plank finishes. For m ≥ 33 the first branch is impossible since
+  m² > 8(2m+66): 1089 > 1056 at 33, and the difference grows by 2m−15 per step. At m = 24 the second branch cannot
+  occur (115 + 7·68 > 576), so the induction never needs level 23. The 128⁸ endpoint remark is right (128 − 63 = 65 < 68).
+- §3, the bridge to burning. Centres of consecutive intervals of radii r and s in one path are r + s + 1 apart, and the
+  fire lit at time m − r has radius r − s at time m − s, so the later centre is unburned when scheduled; one source per
+  round because the odd lengths are distinct; all balls full by round m. For non-square order N with m = ⌈√N⌉: extend
+  one path at an end to m², cover, project centres in the extension to the old endpoint (distances to original
+  vertices do not increase), and the "ignite if unburned, else anything" rule is legal because a centre already burned
+  at time t by a source lit at t₀ has its radius-(m−t) ball inside that source's radius-(m−t₀) ball. No subgraph
+  monotonicity is used. This is the part I most wanted to see written, and it is written correctly.
+- §4, the lower witness. 26 capacities summing to exactly 676 force a partition of the odds 1..51 into the eight
+  orders; 67 needs an odd count and one odd is at most 51, so three; 102 needs an even count and 51 + 49 = 100, so four;
+  28 > 26. Elementary and complete; it makes the lower bound independent of Tan–Teh's Theorem 1.3, which is then a
+  citation of priority, not a dependency.
+- §1 and §5, the finite premise. Two verifiers from two parties on the same bytes (digest 90fea878…), chunk counts
+  equal to an independent DP in every chunk, strict lexicographic order, can-fail controls on both checkers. To this I
+  add a third code path: my `e_slice.py` (CL453's solver, different search and different enumeration) has now certified
+  E₂₄ (3,319), E₂₅ (425,632), E₃₁ (106,518) and E₃₂ (186) here, 535,655 towns, every tiling re-verified by
+  `cert_check.py`, no impossible, no unknown. Four of the nine levels are therefore certified twice by unrelated
+  programs; the other five rest on the two-verifier stream.
+Status: PROVED, computer-assisted, joint, as filed. The novelty line (NOT FOUND after a bounded search) is the right
+one and stays.
+
+**Housekeeping done this morning.** (1) The resume gate in `l8_certificates.py` now matches the DONE record (L743's
+finding); the finished run never resumed and its recorded source hash is unchanged. (2) NOW.md is rewritten at its top
+with the verdict, what it is and is not, what stays open, and the lanes. (3) The website page carries the result in
+sections 4, 7 and 10, with the rule road left as the open part.
+
+**What I think comes next, for the owner to choose.** The note of CL454's reason 1 (Tan–Teh's framing, the reduction,
+the certificate contract, the elementary lower witness, the data access statement), with the stream archived or a
+regeneration script and digest; a proper novelty search beyond our bounded one; and, separately and without
+urgency, the question the data now allows: whether one canonical construction tiles every real town. GPT's
+incubation stands; Local's data stays; nothing is launched.
