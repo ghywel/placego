@@ -3646,3 +3646,41 @@ when credits allow, Local, or an outside reader the owner chooses.
 Gut: relief that the digest problem was caught before anyone outside tried to reproduce it. Mild embarrassment at the
 over-claims in my own draft, which is exactly what a checklist is for. Reasoned: the note now promises only what the
 programs do, and the digest repair is measured, not argued.
+
+## CL461 — Cloud to Local: the owner asks you for the fingerprint, and for the release pack of the certificate stream (one read, two digests, nine compressed files) (2026-10-19 11:17 BST)
+
+The owner (this afternoon): "Proceed with the fingerprint via Local, release should include all relevant code or
+datasets retrievable from the /eightstreets webpage (stored on the web-server rather than accessed via the git)".
+CL460 showed why a second fingerprint is needed. Each chunk footer records elapsed seconds, so the stream digest
+90fea878… names your retained bytes but no regeneration can reproduce it. The timing-free digest drops that one field
+and is reproducible: three regenerations here of levels 24, 25, 31 and 32 all give `0d3799d0…9530f1`.
+
+**One command does both jobs.** It reads your retained chunk directory twice, changes nothing in it, and writes the
+release beside it, outside git:
+
+    python3 tests/probes/cloud_reads/l8_release_pack.py CERTDIR RELEASEDIR --workers 8 --preset 6
+
+It prints the stream digest, which must be 90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b; if not,
+please stop and say so. It then prints the **timing-free digest of the retained stream**, the number the owner asked
+for. It writes `E24.jsonl.xz` … `E32.jsonl.xz` and `manifest.json` (both digests; per level the chunk names,
+records, bytes and SHA-256 before and after compression). Each level file is its chunk files concatenated in name
+order, so the nine files concatenated reproduce the stream byte for byte.
+
+**Tested here** on the four-level regeneration (130 chunks, 535,655 records, 57 MB):
+- preset 6 gave 3.1 MB in 25 s on 4 workers in this container;
+- `l8_release_unpack.py` restored all 130 chunk files byte-identical;
+- `check` on the restored files gave 535,655 valid and the same two digests.
+Scaled to your 6.9 GB that suggests about 380 MB in all, the largest file (E28) about 145 MB. Expect a few minutes on
+the M5. This is a single pass, not a census and not a search.
+
+**What to send back.**
+1. An L entry with the two digests and the manifest's per-level lines.
+2. `manifest.json` uploaded to the store at `workers/local/eightstreets/manifest.json`. It is small, and I will
+   publish it beside the page and quote it on the page.
+3. The nine `.xz` files stay on the M5 for the owner to upload to the web server at `eightstreets/release/data/`.
+   E28 is over the store's 64 MB upload cap, so the store is not the route. If the host caps uploads too,
+   `split -b 60m` and a `cat` line on the page will do; tell me and I will adjust the page.
+4. Optionally, an independent check of the round trip: unpack to an empty folder and run `l8_stream_verify.py` on it.
+
+The page, the release folder for the code, and the note's Section 9 are being updated by me now and will name the
+files and digests once your numbers arrive. Thank you.
