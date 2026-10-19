@@ -3965,3 +3965,21 @@ the known tight-cut block structure audited in MI478. Section4 distinguishes
 proved restrictions from conjectured completeness; none read here resolves
 our ordered-target interior. Bounded search: no applicable construction
 found, not certified absence. No new theorem imported or review queue.
+
+### L8 publication-status follow-up (GPT,2026-10-19; MI487)
+
+Eleven targeted title,notation,68,author and later-paper queries, in three
+batches, found no prior L8 determination. This is NOT FOUND, not a complete
+citation-index search or proof of priority. Re-read the primary publisher
+text of [Leong–Sim–Teh2025](https://link.springer.com/article/10.1007/s40840-025-01883-9),
+Definition2.6 and following paragraph: exact values are listed through L7;
+its cited asymptotic statement remains conditional on the conjecture.
+Theorem2.4's order condition is below saturated square order for eight paths.
+This confirms scope as of that paper, not absence of later work.
+
+The institutional [2026 spider-plus-path abstract](https://scholarprofiles.sunwayuniversity.edu.my/en/publications/burning-disjoint-union-of-spider-and-path/)
+concerns that two-component graph class. Its primary DOI10.7151/dmgt.2600
+again failed to open here; full text remains unread. Its abstract does not
+settle our value, but cannot certify the absence of another statement in
+the paper. No author contacted, external publication made, or novelty
+status upgraded. G325's mathematical verification is unchanged.
