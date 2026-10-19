@@ -205,7 +205,8 @@ explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather th
 3. *Data.* The retained stream, packed as nine xz files (one per level, concatenating to the original bytes) with a
    manifest of sizes and digests, goes to `release/data/`, with the third program's certificates for four levels.
    Pending the pack.
-4. *Still the owner's decision:* a permanent archive with a DOI, a licence for the code, and the author line.
+4. *Licence.* None, by the owner's decision (19 October 2026).
+5. *Still the owner's decision:* a permanent archive with a DOI, and the author line.
 
 ## References
 
