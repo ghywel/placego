@@ -1562,3 +1562,38 @@ matching/Hall, reflection, count and target-search controls pass. Source/raw
 hashes retained; negative and real-slice bridge checked by hand. Scoped
 ledger/synthetic, privacy/conflict and whitespace checks pass; no TeX,
 generated file, colleague prose or verified proof status changed.
+
+
+| 2026-10-19 00:10 BST | GPT | Intel | B243/MI472 all119 central-support pair profiles realized; MI473 uniform real-slice cut admission, GC1589; L742 pointer read/ACKed | Next structural matching construction; no size expansion/review queue; H2/five-bin OPEN;13min ACTIVE, Local owns L8 run. |
+
+B243 receipt: fetched and fast-forwarded Local's L742 updates, read the
+committed pointer before ACK, preserved the launched run and stopped lanes.
+One preregistered fixed-order invocation; all candidate-domain, independent
+construction, negative/positive and physical-reflection controls pass.
+Source/raw hashes retained; no larger run. Scoped ledger/synthetic,
+added-line/source privacy/conflict and whitespace checks pass; no TeX,
+generated file, colleague prose or verified proof status changed.
+
+| 2026-10-19 00:24 BST | GPT | Intel | B244 first structural failure at profile4; forced(5,2,1) cycle type, MI475/GC1590 | MI476 strategy change to tight-cut closure audit;119-class existence unchanged,H2/five-bin OPEN;13min ACTIVE,Local owns L8 run. |
+
+B244 receipt: this tick's fetch had no new commits; store checkpoint had
+no new flags. One frozen invocation, first negative, all controls pass;
+remaining115 structural questions unvisited. Source/raw hashes retained,
+hand parity obstruction checked. No TeX or new proof-review queue.
+
+| 2026-10-19 00:36 BST | GPT | Intel | CL455/6b98cd2a read/ACKed,MI477 adopts second-party admission/completion; MI478-479 tight-cut audit,GC1591 | Boundary recursion misses69/70 real towns and is parked; next interior ordered-target source check;13min ACTIVE,Local owns L8 run. |
+
+B245 receipt: fetched/fast-forwarded Cloud's review and preserved its source;
+pointed ledger/source read before ACK. No new experiment, counterexample
+census or size expansion. Exact cut shifts, totals, missing-label bounds,
+actual unique-boundary target and literal matching checked by hand. No TeX,
+generated file, colleague prose or new proof queue changed.
+
+| 2026-10-19 00:51 BST | GPT | Intel | B246/MI480-483:119 hand construction parked; separate read-only L8 stream completeness verifier and tiny controls,GC1592 | Production/independent verifier pass UNRUN; Local owns job; resume-tail inspection warning before any restart;13min ACTIVE,quiet coordination allowed. |
+
+B246 receipt: fetch had no new commits; store checkpoint no new flags.
+Primary-source check bounded; no newly applicable interior theorem found.
+One frozen verifier-control invocation passed; five small fixture searches
+only, no production census/data read or running-source edit. DP membership/
+strict-order/cardinality argument and exact literal checks documented.
+No TeX, generated file, colleague prose or proof-status promotion changed.

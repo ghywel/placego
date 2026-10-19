@@ -124,24 +124,22 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-18 23:56 BST: research ACTIVE every 13 minutes.**
-Reawakened by the owner's explicit request after CL451–454. The older
-research schedule stays PAUSED. Local owns the full L8 certificate run;
-its E24/E25 results are recorded as reports, not rerun here. Existing H2,
-five-bin sufficiency and MI460 statuses are unchanged; older lanes stay held.
-Current chosen side question: pair-sum realizability across two intervals,
-the all-one thin-row object in CL453. MI467 identifies it with known
-permutation X-rays/displacements, including the exact known k6 obstruction.
-B242/MI468–469 tests cuts plus every sum-class matching capacity. It passes
-k6/7 but fails at k8 on(8,10,15,15,15,19,19,19); all capacities have
-hand witnesses, while2*n8+n10+n15+n19<=8 is violated9>8. No novel general
-theorem or review queue. MI470 shows actual sorted-high residuals from the
-70 all-odd E24 towns contain14,15,16,17 and have all sums>=10, excluding
-that negative. Next: test whether this central bridge excludes every
-order8 cut failure, then seek a structural matching explanation. No run
-beyond B242 opened, no claim of full-level mathematical sufficiency.
-Latest trajectory/resumption check MI467; prior pull-only allowance not
-renewed, no background computation here.
+**Current state, 2026-10-19 00:51 BST: schedule ACTIVE every 13 minutes.**
+Local owns the L8 run; no production computation or stream read duplicated.
+The119-profile hand construction is PARKED: bounded source check MI480
+found no applicable interior mechanism. MI472 remains TWO-PARTY COMPUTED;
+MI470/473 admission second-read CL455. H2/five-bin and old holds unchanged.
+MI478-479's boundary audit stays hand/unreviewed. Existing finite-to-infinite
+reduction MI276 reused, not rebranded as new work. B246 supplies a separate
+READ-ONLY finished-stream verifier, MI481-482: target membership, strict
+order and independent per-chunk counts prove coverage; literal sums and
+all285 filenames/DONE required.100 tiny DP controls,five fixture towns,nine
+negative mutations pass. NO production or independent-party verifier pass.
+Source-inspected resume predicate mismatch flagged for Local BEFORE any
+restart; running source unchanged. Next: review verifier/finished return;
+no forced mathematical block while the hand mechanism remains missing.
+Quiet incubation/coordination is valid. Latest strategy check MI476;
+source-block decision MI483, pull-only allowance spent. No background job here.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -34365,3 +34363,497 @@ small weighted certificate and the real-instance bridge give concrete
 traction. Reasoned: a rejected candidate plus a narrower next question;
 parent five-bin/H2 and general pair-sum realization remain OPEN. The
 research schedule is ACTIVE, old held lanes and Local's computation preserved.
+
+### MI471 — Test the actual-slice central bridge, not arbitrary thin rows (2026-10-19 00:08 BST; B243, NOT RUN at registration)
+
+Chosen question: at order8, does containing all four sums14,15,16,17
+suffice, together with ordinary rank cuts, for a pair-sum realization?
+MI470 proves this support restriction for the actual70 all-odd E24
+sorted-high residuals. A positive answer would isolate a tractable finite
+class serving that slice; it would not solve H2 or five-bin sufficiency.
+MI460 is not a premise and stays unreviewed. Parent statuses unchanged.
+
+Read Local's L742 after fetching/merging28d578e4, verify8ec8ea0f, then
+ACK. Local owns the launched eight-worker L8 run and independent count/checker
+controls; no run duplicated here. The old K2-prime line remains stopped.
+Record searched: `14,15,16,17|central.*bridge|central.*four` AND
+`pair|residual`:5 hits/1 file; read MI470. Primary terminology and small-order
+counts already read at MI467; no additional literature theorem imported.
+Pull: this condition comes from real target order and a forced downward
+walk, unlike the arbitrary pair-sum criterion refuted in B242.
+
+**Frozen test and predictions.** Exactly k8. Enumerate all cut-admitted
+multisets containing14,15,16,17, with pair sums in8..22 and total120.
+Blind prediction: every such profile is realizable. A counterexample would
+reject this proposed sufficient restriction and stop this block immediately;
+no added condition or larger order within the run. A pass is a finite
+COMPUTED result, not an unbounded theorem or a hand existence proof.
+
+Controls: primary complete8! permutation-profile map,5270 profiles,
+with literal bijection/sum checks. Independently enumerate the target domain
+by removing one copy of each central value and enumerating the other four
+values; check ALL original group lower/upper cuts, not just sorted prefixes.
+Whole candidate-domain equality must hold. For each positive target an
+independent exact search assigns requested pair sums to unused low/high
+tokens. Keep every literal primary certificate outside git.
+
+Counterfactual: dropping the bridge must admit MI469's nonrealizable
+(8,10,15,15,15,19,19,19); both the full map and independent target search
+must reject it. Positive control: low indices0..7 assigned high tokens
+(14,13,15,11,12,10,9,8), giving profile(14,14,14,15,15,15,16,17).
+Unexpected: reflection q->30-q preserves actual realizability, but sends
+that profile to(13,14,15,15,15,16,16,16), which lacks17. Do NOT require
+bridge-admission to be reflection-invariant. Compare the physical whole
+maps and reflected witnesses only; test loss of the bridge explicitly.
+
+Caps:20wall seconds/1,000,000 independent search nodes in total; one
+unchanged-source invocation, stop first counter/control failure or cap.
+No rerun, larger size or broad L8 census. After a pass, the next work must
+seek a construction or source-backed structural statement, not increment k.
+
+### MI472 — All119 central-support profiles pass the fixed-order test (2026-10-19 00:10 BST; B243)
+
+**COMPUTED, one unchanged-source invocation.** Exactly119 cut-admitted
+order8 profiles contain14,15,16,17. Both complete domain enumerations
+agree. Every profile has a literal bijection in the full40320-permutation
+map and an independent target-slot realization. Total independent search
+nodes2348; physical map5270 profiles. All positive/negative, coverage,
+whole-domain and reflection controls pass, including the deliberate loss
+of bridge membership under reflection. No counterexample, cap, retry,
+size increase or unvisited target. Reported wall0.123478903s on the Intel
+host; no speed claim. The119 literal primary certificates are retained
+outside git with the raw output.
+
+Source tests/probes/instinct/pair_sum_central_bridge.py SHA256
+ 4cc67d35002c0c25dc5a76ade897addadc59af3981f2c612e19c1d30d14ee88a.
+Raw JSONL SHA256
+ ad13bd33660740444f97146a741245c03920415301b33651307478293d0bb612.
+No shared artifact upload or independent-party proof verification claimed.
+This establishes a finite completion class; it is not a hand matching
+mechanism or an assertion for other orders. The central-support condition
+is sufficient IN THIS COMPLETE FINITE DOMAIN, not proposed as a universal
+criterion. MI469's unrestricted counterexample remains excluded, not repaired.
+
+### MI473 — Real all-odd E24 targets enter that class uniformly (2026-10-19 00:10 BST; B243 hand admission, UNREVIEWED)
+
+We can prove the admission step without inspecting70 towns individually.
+Let T_0<=...<=T_7 be integers, each>=33, with sum276, and set
+q_i=T_i-(16+i). These are the actual sorted-high pair targets of the
+all-odd E24 slice. Sum q_i=120. Write delta_i=T_i-33; then the
+delta_i are nonnegative nondecreasing integers with sum12.
+
+For ANY subset I of r indices, r1..5,
+
+    sum(q_i : i in I) >= 17r-sum(i : i in I)
+                      >= r*(19+r)/2
+                      >= r*(7+r).
+
+The middle bound uses the r largest indices in0..7. The last inequality
+is exactly r<=5. Thus every lower group cut of size at most5 holds.
+For the remaining sizes, monotonicity gives
+
+    delta_i <= floor(12/(8-i)),
+    q_i <= (18,17,17,16,16,16,17,22)_i.
+
+In particular every q_i<=22, and any TWO have total<=40 (the sole
+possibly larger entry is q_7<=22; every other is<=18). Complementation
+therefore yields lower cuts of size7 at least120-22=98 and of size6
+at least120-40=80>=78. These are the required rank thresholds7*14
+and6*13. Total conservation gives the size8 equality; every upper cut
+is the complementary lower cut. The size1 bound also shows q_i>=10.
+All pair sums consequently lie in the required ambient range8..22.
+
+MI470's support argument follows directly as well: q_0>=17,
+q_(i+1)-q_i>=-1, and some q_i<=14 since the average is15 with one
+entry>=17. The downward walk must visit17,16,15,14. Hence EVERY
+such actual target vector belongs to MI472's119-profile class.
+The finite computed completion therefore recovers a sorted-high transversal
+for the entire real70 all-odd slice, with analytic admission and a uniform
+finite certificate lemma. Cloud already computed those70 positives; this
+is an explanation/regrouping of that known result, not a new whole-level
+or L8 result. The hand admission remains unreviewed; the matching part is
+still COMPUTED. Even a complete hand proof here would concern only the
+all-odd E24 slice, not all3319 E24 towns or E25..E32.
+
+**Niggle sweep / changed inference.** Bounds concern arbitrary groups of
+indices, not just prefixes in the original target order. The two-large-entry
+bound uses that only ONE coordinate has the22 bound. Total120 and all
+complements checked; nondecreasing integer deltas justify the floors. The
+support walk never assumes reflection preserves the bridge. The physical
+maps reflect independently. No pending H2/MI460 proof is a premise.
+
+What changed: a restriction derived from real towns is sufficient on the
+complete fixed-order domain, and all real targets meet its cuts by one
+short argument. Five-bin/H2 coverage is unchanged. Next is a constructive
+matching explanation of this class, using its central support and actual
+ordered-target constraints; do not substitute another size increment or
+more target filters for that inference. Gut: concrete interest in why the
+four central labels provide enough freedom at order8. Reasoned: finite
+support and uniform admission, still no carrying hand construction.
+13-minute research ACTIVE; latest trajectory check MI467, no renewed
+pull-only allowance, Local's run kept separate.
+
+### MI474 — Test a central exchange as a construction step (2026-10-19 00:22 BST; B244, NOT RUN at registration)
+
+Parent remains the order8 cuts+support14..17 completion class of MI472;
+H2/five-bin are OPEN. Pull: I want to know whether the central labels give
+an actual movable component, rather than just correlating with existence.
+Record searched: central.*bridge;pair.sum.*construct;X.ray together -> no
+paragraph matching all terms. Read MI467–473 and the existing X-ray source
+receipt; no new theorem imported. Known permutation/displacement language
+is PRIOR-ART. No unread H2 claim is a premise.
+
+A tempting one-cycle explanation already fails by hand, before any run:
+Q=(8,10,14,15,16,17,18,22) belongs to MI472. Write p_i=15-high_i,
+so q_i-15=i-p_i. Labels8 and22 force p_0=7,p_7=0, a closed two-cycle;
+other nonzero displacements remain. Hence one nontrivial cycle cannot
+realize this profile. A literal positive high vector is
+(8,9,12,13,14,10,11,15). Retain this failure; do not run a census for it.
+Also the four core displacements(-1,0,1,2) sum2: they cannot themselves
+be an isolated union of permutation cycles. Core/tail interaction is needed.
+
+**Frozen discriminating test.** Can EVERY one of the SAME119 profiles be
+realized with an adjacent transposition p_a=a+1,p_(a+1)=a for some a0..6?
+This isolates the central -1,+1 exchange, leaving a six-position board,
+not necessarily a contiguous interval. Zero displacements are fixed points.
+Prediction: yes, but the forced-corner example above makes this uncertain.
+A negative rejects this proposed uniform construction step; do not weaken
+it or change the target set in this block. A pass gives a finite structural
+diagnostic, not a hand construction of the remaining board.
+
+Controls: enumerate all8! permutations and independently check their cycle
+property and displacement multiplicities; compare with a target-slot solver
+that forces the chosen adjacent swap before filling residual demands.
+Use the119 targets from the retained MI472 certificate file, verify its
+SHA256 and every literal witness; independently enumerate cuts+core and
+require whole-domain equality. Positive identity-with-one-adjacent-swap
+control; negative all-zero displacements cannot contain a transposition.
+Unexpected check: p->p inverse negates displacement and preserves this
+cycle property, though central-support admission need not be preserved.
+Stop first failed profile/control or20 wall seconds/1M search states;
+one invocation, no larger order, new support condition or existence census.
+
+### MI475 — The unit moves may have to join a five-cycle (2026-10-19 00:24 BST; B244)
+
+The frozen diagnostic stops at the FOURTH profile,
+
+    Q=(8,11,14,15,16,17,17,22).
+
+First three have the isolated adjacent swap; this fourth has none, by
+both complete permutation-property map and independent forced-swap search.
+All controls pass. The remaining115 profiles are UNVISITED by the property
+test; this is not a new existence census. Total independent states65,
+reported wall0.307414967s; no cap, repair, retry or size expansion.
+Source tests/probes/instinct/pair_sum_central_exchange.py SHA256
+ 4bc30e495e09a471b95753e25a53748b2cbfcf06c3d6976ccd4e30a103d51d5e.
+Raw JSONL SHA256
+ 87c672b62da6353890a8d9912aa901f145939615bd105f2520f9a8b2e48d922f.
+
+**Hand obstruction, UNREVIEWED; the restricted construction is REFUTED.**
+Use displacements d_i=i-p_i. Q has multiset
+(-7,-4,-1,0,1,2,2,7). The +/-7 force the cycle(0,7).
+The remaining positions are1..6, with displacements(-4,-1,0,1,2,2).
+If the -1,+1 form a two-cycle, its two positions are adjacent. The
+remaining nonzero displacements(-4,2,2) must form a three-cycle: no
+opposite pair or zero displacement can absorb them. Its three positions
+are r,r+2,r+4. Within1..6 this is either{1,3,5} or{2,4,6}. The three
+positions left over all have the other parity and cannot contain an
+adjacent pair. Contradiction. The zero displacement is a fixed point.
+
+Indeed EVERY realization has cycle type(5,2,1). After the forced endpoint
+cycle, five nonzero positions remain. Their only possible decomposition
+other than a five-cycle is2+3; the only opposite pair available is-1,+1,
+just excluded. A literal realization is
+
+    p=(7,1,6,2,5,3,4,0),
+    highs=(8,14,9,13,10,12,11,15).
+
+Its nontrivial cycles are(0,7) and(2,6,4,5,3), with1 fixed. Literal sums
+are(8,15,11,16,14,17,17,22), sorting to Q. This is a hand explanation of
+a representation failure, not a new transversal-existence theorem.
+
+**Niggle sweep.** Q's cut admission and literal existence already verified
+in MI472, and its raw digest/literal map rechecked here. The endpoint
+cycle uses both extreme positions, so the parity exhaustion really is
+on1..6. Zero displacement means fixed point, not a spare moving vertex.
+Opposite-sign conventions only reverse cycles; inverse control passes.
+This counterexample has q_min8 and is outside the actual all-odd E24
+residuals, whose q_min>=10. It refutes the proposed construction for our
+explicit119-profile superclass, not the actual slice or a general
+completion theorem. No novelty claim or independent review job.
+
+### MI476 — Strategy change before repairing the cycle rule (2026-10-19 00:24 BST)
+
+Parent: explain completion for cuts+support14..17 at order8; the older
+five-bin/H2 question remains open. Change: existence coverage unchanged,
+but a possible explanation is decisively excluded. Both naive cycle
+pictures from this block fail: one moving cycle ignores forced endpoint
+cycles; reserving the central unit exchange ignores required interleaving.
+These are failures of treating the central labels as a separable module,
+not invitations to add a succession of allowed cycle types.
+
+Dependency risk: this block uses no pending H2/MI460 argument. MI472's
+finite existence is a premise about the chosen domain, not evidence for
+the failed structure. The119-class is explicitly a superclass; broadening
+from the70 real targets was a choice and does not itself advance L8.
+Fresh-choice assessment: interest is now in the forced interactions; I
+would not choose a catalogue of new cycle templates merely to rescue the
+initial explanation. No renewed pull allowance.
+
+Decision: stop the isolated-core route. At the next block audit the
+reduction itself: when a rank cut is tight, what exact smaller boards
+and label restrictions result, and does the proposed class close under
+that factorization? This can separate forced boundary structure from a
+true interior construction without silently adding a filter. First cheap
+hand check: a tight r-cut forces the low r rows and low r columns into
+one component, excludes label7+2r, and leaves complementary intervals.
+Check equality and normalization, then state honestly whether the central
+support survives. No new experiment or conditional proof chain now.
+Reasoned verdict: useful structural refutation; general construction OPEN.
+Gut: the neat independent-module picture has lost its appeal, while the
+interaction has become clearer. Continue the ACTIVE13min schedule with
+this changed question; no routine permission/review halt.
+
+### MI477 — Cloud's independent read adopted (2026-10-19 00:34 BST; B245)
+
+Fetched/fast-forwarded6b98cd2a; read CL455 and its committed source
+pairsum_lemma.py before ACKing cloud/gpt.READ-LEDGER.6b98cd2a.
+Cloud independently verifies every carrying line of MI470/473's admission
+and independently reproduces all119 MI472 realizations. Thus the admission
+is now second-read, and the completion is TWO-PARTY COMPUTED, finite scope.
+Every all-odd E24 town has a sorted-high transversal on that basis; this
+is not all3319 E24 towns, E25 or L8. Cloud's suggested m25 comparison waits
+for Local's existing output, not a duplicate run. No review request added.
+
+### MI478 — Tight cuts factor exactly, but the support class does not recurse unchanged (2026-10-19 00:35 BST; B245, hand audit)
+
+Chosen question: does tight-cut factorization provide a constructive
+reduction for the119-profile class? Pull: test the reduction rather than
+another local cycle repair. Record searched: `tight.*cut|tight.*face`
+AND `pair|permutation|X.ray` ->7 hits/4 files; read the current MI476
+question and the X-ray prior-art receipt. The other hits concern the old
+multi-bin arguments, not a closed pair-sum recursion. No new outside
+result imported; the following is elementary equality in rank bounds,
+not a novelty claim. H2 and MI460 are not premises.
+
+Let sorted q_1<=...<=q_k have sum k(2k-1) and all lower rank cuts
+P_s>=s(k+s-1). Suppose P_r=r(k+r-1), 0<r<k.
+In ANY matching, the r pairs carrying these demands have r distinct
+lows and r distinct highs. Their sums are at least L(r) and rk+L(r),
+respectively. Equality forces the lows0..r-1 and highs k..k+r-1.
+All other pairs use the complementary intervals. Conversely two
+realizations on those boards concatenate to a realization of q.
+
+The target cuts themselves force the same separation: subtract the
+r-1 cut from the equality, and subtract the equality from the r+1 cut:
+
+    q_r <= k+2r-2,       q_(r+1) >= k+2r.
+
+Label k+2r-1 is absent. Thus no ambiguity at a tie crosses the split.
+The correctly normalized subproblems are
+
+    lower order r:      q_1..q_r MINUS (k-r),
+    upper order k-r:    q_(r+1)..q_k MINUS 3r.
+
+The upper subtraction is THREE r: shift its lows down by r and its
+highs down by2r, so the latter start at k-r. Subtracting only2r would
+produce the wrong total and the wrong canonical board. Both normalized
+totals and every subproblem cut follow algebraically. For example the
+upper s-prefix is at least
+
+    (r+s)(k+r+s-1)-r(k+r-1)-3rs = s(k-r+s-1).
+
+Conversely the smaller cut inequalities imply the combined ones. For a
+prefix within the lower block add s(k-r); for one containing that block
+add its fixed total and3rs to the upper prefix. This is exact cut-domain
+factorization, and exact realizability factorization, not an assertion
+that cut admission alone suffices.
+
+**Effect on our core.** At k8 a tight r-cut omits7+2r.
+Hence r4 and r5 are impossible because15 and17 are required. If r3
+were tight, the lower three labels would be<=12. All14..17 lie in the
+upper five, whose sum is90; their sum62 would force the fifth label28,
+beyond22. If r6 were tight, the upper two labels would be>=20, so the
+four core labels lie in the lower six, of total78. The other two would
+sum16, violating the original two-label lower bound18. Thus ONLY
+r1,r2,r7 can be tight.
+
+These faces do not reproduce the original four-label condition on a
+smaller board. For r1 the upper order7 core is11..14; for r2 the upper
+order6 core is8..11; for r7 the lower order7 core is13..16. A recursive
+argument must actually prove those residual claims; it cannot cite the
+order8 core statement again. The factorization is useful bookkeeping,
+not a completed construction or an induction closure.
+
+### MI479 — Tight faces miss69 of the70 actual targets (2026-10-19 00:35 BST; B245 hand scope verdict)
+
+For actual sorted T_i>=33,sum276, q_i=17-i+delta_i as MI473,
+every q_i>=10. Therefore neither r1 nor r2 can be tight: their lower
+bounds8 and18 are strictly below10 and20. MI478 excludes r3..6 for the
+whole core class. A tight r7 means some q_i=22. MI473's coordinate upper
+bounds allow this only at i7, forcing delta_7=12 and all other deltas0.
+Hence the ONLY actual town on ANY proper tight face is
+
+    T=(33,33,33,33,33,33,33,45),
+    sorted q=(11,12,13,14,15,16,17,22).
+
+An explicit matching has high vector
+(14,12,10,8,13,11,9,15) on lows0..7; its pair sums are
+(14,13,12,11,17,16,15,22). The order7 residual is the elementary odd-order
+consecutive-sum construction p_i=2i mod7, with its pair targets shifted
+up by1. Literal total120 checked. This is a positive hand control of the
+normalization, not a new proof queue.
+
+All other69 of Cloud's already counted70 actual towns have EVERY proper
+cut strict. This count uses the existing complete70-target domain; no new
+enumeration or existence run. Hand interior control T=(34^4,35^4) gives
+sorted q=(12,13,14,15,15,16,17,18), with prefixes
+12,25,39,54,69,85,102,120 against8,18,30,44,60,78,98,120.
+Unexpected/negative control: the known order6 negative9^3,13^3 also has
+ALL proper cuts strict (9,18,27,40,53 versus6,14,24,36,50).
+Strictness cannot replace an integral realization argument.
+
+**Niggle sweep and changed decision.** Equality applies to the demands of
+the smallest r pairs even before their rows are known; distinctness forces
+both minimum sets. Normalization has both shifts, not merely the row
+shift. Subproblem cuts and their converses checked; ties cannot cross the
+missing label. The r3/r6 exclusions use original whole-target cuts and
+support. Actual q_i upper bounds are coordinatewise in the original
+sorted-T order, which is why q=22 forces a unique delta vector. The
+matching remains a multiset certificate: assign its pairs to the fixed
+high-T slots with the corresponding q value. No new experiment, source
+claim or dependency on an unread theorem.
+
+What changed: tight-cut recursion is exact but covers only ONE real town;
+it is not a plausible main construction for this slice. Do not develop
+its remaining boundary cases merely because they are easier. The missing
+inference is an INTERIOR integral matching mechanism, using the actual
+ordered targets (nondecreasing delta,total12) or the explicitly chosen
+119-profile superclass. Gut: the boundary route cools on this evidence;
+there is still interest in why the interior class works, but no new
+mechanism is claimed. Reasoned: park boundary recursion as a main route.
+Next cheap step is a bounded source/representation check for a constructive
+realization result that uses these ordered-target constraints; if that
+returns only the same general X-ray existence problem, seek Cloud's
+specific perspective or incubate instead of inventing another local module.
+ACTIVE13min; latest strategy check MI476; no renewed extra-block allowance.
+
+### MI480 — Source check closes no interior construction; choose a useful independent obligation (2026-10-19 00:48 BST; B246)
+
+Record searched: permutation.*sum|sum.*permutation|Skolem|X.ray AND
+construct|monoton|ordered|interval ->10 hits/3 files; existing Nordh and
+X-ray receipts reread. Two initial and three focused literature queries;
+read the primary Davis–Schroeder2606.21532v1 introduction, Lemmas2.4,
+3.1–3.2 and selected section4 statements. Receipt in PRIOR-ART below.
+No applicable construction for the actual ordered delta targets found in
+this bounded search; NOT FOUND, not a theorem of absence. TTD language
+does not supply the missing decomposition. The hand119 completion question
+is PARKED, not refuted or declared impossible; its independently computed
+completion stands. No new support filter, order or cycle template.
+
+The finite-to-infinite L8 implication is already audited at MI276. Reread
+that entry, MI044, the primary Tan–Teh2312.10914v3 introduction/section2,
+and the running certificate source without executing or modifying it.
+Do not relabel the known induction as new progress. A useful independent
+obligation remains: its checker validates individual tilings, but total
+counts alone cannot rule out a duplicate replacing an omitted town. The
+old MI276 already requires independent target coverage. Implement that
+missing post-run check, not another search. Local still owns the job.
+
+### MI481 — Independent completeness verifier: frozen controls before execution (2026-10-19 00:49 BST; B246, NOT RUN at registration)
+
+Question: can the retained certificate stream be certified complete without
+rerunning its solver or retaining64.8million target keys in memory?
+For each exact-minimum chunk, require every target to be a member of its
+mathematical domain, records strictly increasing lexicographically, and
+the record count equal an independently computed domain cardinality.
+Membership+distinctness+equal finite cardinality proves exhaustion.
+Require all285 expected chunk files, final DONE exactly once, no X/U,
+and literal plank inventory/assignment sums; fail closed on violations.
+The full check will run only on finished output, on its owning host.
+
+Independent per-chunk count: remove the first target lo, then subtract lo
+from the remaining seven. Count partitions of r=m*m-8*lo into at most7
+positive parts, each<=2*m+66-lo (zeros pad to seven). A coin-count DP is
+independent of the search source's sorted-target recursion. Keep only
+bounded per-chunk state; no huge target set or certificate collection.
+
+Prediction: original tiny complete fixtures pass; a duplicated valid town
+replacing another valid town FAILS even though every tiling and total row
+count remain valid. Controls: missing record, bad assignment, wrong chunk,
+missing DONE, trailing record, X/U, footer mismatch. Independently brute
+count100 tiny rectangles against the DP. Unexpected: test a mathematical
+EMPTY chunk and require its DONE record, rather than accepting an absent
+file. Also preserve sorted-bin-sum semantics: bin label permutation is
+harmless. Fixture solver calls are only to prepare the five small known
+positive controls in E26 at minimum84; no production census/run.
+Stop first control/fixture failure or20 seconds; one invocation, no retry,
+no production output reading and no change to Local's running source.
+
+### MI482 — Completeness contract has can-fail controls; production stream untested (2026-10-19 00:51 BST; B246)
+
+One unchanged-source invocation: FROZEN CONTROLS PASS.100 small rectangle
+counts agree with direct enumeration; manifest has285 chunk identities.
+Five E26_l84 positive fixtures pass (405 proposer search nodes solely for
+fixture preparation). Reversing bin labels preserves acceptance. All nine
+negative mutations reject; an empty E32_l68 chunk requires its DONE record.
+The duplicate/omission fixture preserves the five rows' individual valid
+assignments and the aggregate count, yet the independent verifier rejects
+it. Reported wall0.030650925s; no cap, failure, retry or production read.
+This demonstrates the coverage check, not a flaw in any produced town.
+
+Source tests/probes/instinct/l8_stream_verify.py SHA256
+ cef30db19d6401f2eeb31755395fe1a7e346fe64023cc24b42093b4500babd47.
+Controls tests/probes/instinct/l8_stream_verify_controls.py SHA256
+ c8fea54eb7ffda11f41f34e367bc41a03cc84624596dae46ad0a2d7fe10963c5.
+Raw JSON SHA256
+ 392a15294348a05d3a013e8ef084f5b71e0b2e38727deb9486b0f27a80affdb2.
+
+The verifier is READ-ONLY and separate from Local's running source.
+It uses exact integer count DP and literal odd-plank sums, no solver.
+Its completeness argument is the finite-set equality: D contains every
+accepted town; strict order gives a subset A of D without duplication;
+independent count |A|=|D| implies A=D. Different minima partition a level,
+and the285 expected filenames partition all nine levels. DONE/footer
+requirements prevent interpreting an unfinished prefix as the whole job.
+No raw production data, full manifest/stream pass, runtime estimate or
+independent-party verification of this new verifier is claimed. The
+five-fixture chunk path was tested; full-directory enforcement was
+inspected, not exercised on a complete285-file production directory.
+Code review and actual finished-stream verification remain prerequisites
+before relying on it. No need to restart, alter or duplicate the run.
+
+**Separate source niggle, inspection only.** In l8_certificates.py the
+resume predicate tests whether the stripped file tail ends with the
+quoted word DONE, while the emitted JSON footer ends with a closing brace
+after that quoted word. It therefore will not skip such completed files
+on resume as the docstring promises. This does not affect the initial
+fresh run or invalidate its certificates. Notify Local to inspect/fix the
+resume gate BEFORE a restart, preserving existing files; do not change
+a running script or test resume on its real output.
+
+### MI483 — End of the source/representation block (2026-10-19 00:51 BST)
+
+Parent coverage: no new L8 target certified here. The119-profile hand
+construction is parked after the bounded source check; its TWO-PARTY
+COMPUTED result stands. The finite-to-infinite theorem is the existing
+MI276 reduction, not a new achievement. The useful change is an independent
+post-run completeness contract and a concrete can-fail demonstration,
+plus the non-destructive resume warning. H2/five-bin and old holds unchanged.
+
+Niggle sweep: chunk count uses seven padded surplus parts after fixing
+one minimum, not eight; zero-surplus and impossible rectangles checked.
+Sorted-bin-sum equality allows harmless bin relabeling. Literal assignment
+length/digits ensure each odd plank appears once. Count alone never stands
+in for target coverage. Controls do not assert a full production pass.
+Only local fixture preparation used the proposer, and those outputs were
+then checked independently. Local's job/data/source preserved.
+
+Gut: the hand-explanation pull has cooled; I do not have a convincing new
+construction and will not manufacture one. Reasoned: computational proof
+is a valid result if the full obligation actually finishes and is verified.
+The next useful check is independent review of the new verifier and the
+finished Local return, not another repair family. Keep13min ACTIVE for
+coordination and concrete work; an idle wake need not invent a block.
+A new mathematical mechanism or specific review issue can reopen research.
+No new proof queue, status promotion or renewable pull allowance.
