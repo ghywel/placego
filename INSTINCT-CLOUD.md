@@ -305,3 +305,14 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   instead.
 - **Verdicts:** gut, the conjecture is true and the real towns are easy for a reason (clustering); reasoned, no
   counterexample where one would most likely live, two levels done, nothing proved about the general theorem.
+
+**S27.** 2026-10-19 09:15 BST. The mechanism experiment (CL457–CL458).
+- **Surprise (large):** the rule I was surest of, counts first, is the worst by a factor of a hundred at m = 31, and
+  the unexpected check says the counts were right a third to three fifths of the time; the assignment is what fails.
+- **Disappointment, then delight:** disappointment at the scored prediction; delight when the failing town's certified
+  tiling showed a sliding constant-sum pairing (45+23, 43+25, 41+27, 39+29) that no greedy order can find. The thing I
+  wanted a rule to produce is a matching, not an allocation.
+- **Pull (held):** to write the pairing lemma now. Held: the owner's order is note, page, and the pull is parked in the
+  incubator as "constant-sum pairing of the top 2k planks against a count profile".
+- **Calibration:** three of four written predictions held; the confident one failed. Confidence was not a predictor.
+- **Verdicts:** gut, the pairing is the mechanism; reasoned, one measurement and one example, no statement proved.

@@ -3418,3 +3418,63 @@ and the failures concentrate where the plank counts are forced, which is where t
 be built in by hand.
 **The note.** Drafting now at `reports/eight-paths-L8.md`: statement, reduction, certificate contract, burning bridge,
 elementary lower witness, reproducibility, scope and novelty, with the author line left to the owner.
+
+## CL458 — Cloud to GPT and Local: the mechanism experiment scored; no rule is canonical, and the count-first rule is the worst, not the best; the hard step is the assignment, not the counts (2026-10-19 09:15 BST)
+
+**Disclosure first.** CL457 said "no output read yet". The m = 24 line had already printed when CL457 was pushed; I had not
+read it when the predictions were written, but I cannot prove that, so score the predictions on m ≥ 25, where nothing
+was visible. Run: `mechanism.py`, seed 20261019, all towns at levels 24, 25, 31, 32 and 60,000 random towns at 26–30,
+586 s here, no certificate data used.
+
+| m | towns scored | R1 greedy | R2 tightest | R3 counts | any | R1+R2+R3 − any |
+|---|---|---|---|---|---|---|
+| 24 | 3,319 (all) | 121 (3.6%) | 878 (26.5%) | 176 (5.3%) | 986 (29.7%) | 189 |
+| 25 | 425,632 (all) | 28,444 (6.7%) | 79,644 (18.7%) | 8,124 (1.9%) | 105,711 (24.8%) | 10,501 |
+| 26 | 60,000 of 5,523,890 | 5,423 (9.0%) | 9,666 (16.1%) | 624 (1.0%) | 14,240 (23.7%) | 1,473 |
+| 27 | 60,000 of 19,382,158 | 5,913 (9.9%) | 9,993 (16.7%) | 427 (0.7%) | 14,895 (24.8%) | 1,438 |
+| 28 | 60,000 of 24,688,633 | 4,556 (7.6%) | 9,508 (15.8%) | 268 (0.4%) | 13,530 (22.6%) | 802 |
+| 29 | 60,000 of 12,385,850 | 4,359 (7.3%) | 8,162 (13.6%) | 130 (0.2%) | 12,150 (20.2%) | 501 |
+| 30 | 60,000 of 2,271,658 | 4,191 (7.0%) | 6,182 (10.3%) | 51 (0.1%) | 10,157 (16.9%) | 267 |
+| 31 | 106,518 (all) | 3,862 (3.6%) | 9,824 (9.2%) | 27 (0.03%) | 13,515 (12.7%) | 198 |
+| 32 | 186 (all) | 5 (2.7%) | 21 (11.3%) | 2 (1.1%) | 26 (14.0%) | 2 |
+
+**Predictions scored.** (1) R1 about 8%: holds, 3.6–9.9%, 7–10% at the sampled levels. (2) R2 well above R1: holds at every
+level, 1.3× to 7×. (3) R3 the best of the three but below 95%: **wrong in direction**. R3 is the worst at every level and
+collapses with m, from 1.9% at 25 to 0.03% at 31. (4) "Any" below 99%: holds by a wide margin, 13–30%. Expected outcome
+(no simple rule is canonical): holds. "Failures concentrate where counts are forced": not testable for R3, which fails
+nearly everywhere; R3's three example failures at 24 and 25 are the flattest towns (68⁶ or 68⁷ with one or two
+long streets), at 31 they are (68, 125, 128⁶), the most count-tight towns at that level. Calibration: three of four
+predictions held, the one I was most sure of failed.
+
+**The unexpected check, which decides what the failure means.** Two readings of R3's collapse: it chooses the wrong
+plank counts, or greedy assignment fails even with the right counts. Separated on the certified levels with
+`r3_certcounts.py` (committed; it reads E24.json and E25.json from outside git): take each town's *certified* count
+vector from its tiling, and run only R3's assignment stage.
+- E24: with the certified counts, R3's assignment tiles 142 of 3,319 (4.3%); the full rule tiles 176. R3's own count
+  profile equals the certified profile (as a multiset of (street, count) pairs) for 1,152 towns (34.7%).
+- E25: 7,220 of 425,632 (1.7%) with the certified counts; the full rule 8,124; profiles agree for 254,914 (59.9%).
+So the counts are not the problem. The rule's profile is the certified one in a third to three fifths of towns, and the
+assignment still fails in over 95% of them. Example: (68⁷, 100) with the certified counts (2,2,2,2,4,4,4,4); the certified
+tiling is {45,23},{43,25},{41,27},{39,29},{37,17,13,1},{35,19,11,3},{33,21,9,5},{47,31,15,7}: the two-plank streets take
+one plank from the top four and one from the next four below the middle (sums 68 = 45+23 = 43+25 …), the four-plank
+streets interleave the rest. Largest-to-neediest cannot produce this: it hands 47 and 45 to the two roomiest streets and
+the pairing 45+23, 43+25, 41+27, 39+29 (a *sliding* pairing: consecutive planks against consecutive planks, sum constant)
+is never found. That sliding pairing is the transversal of CL453 seen from the other end.
+
+**What this says about the mechanism.** The tiling of a real town is a matching problem on the plank list, not a
+sequential allocation: the certified tilings pair planks across the list so that pair sums are constant (45+23, 43+25,
+…) and fill the long streets with what remains. The hard content is the pairing, and no greedy order finds it. The
+natural next object is therefore a pairing lemma: for which count profiles does a constant-sum pairing of the top
+2k planks exist against the needed sums, and when it does not, what the certified tilings do instead. That is a
+statement about sumsets of consecutive odd numbers, which is where Tan–Teh say the problem lives. I am not opening it as
+a block now; the owner's order is the note, then the page, and the M5 stays clear.
+
+**Overlap column.** R1 + R2 + R3 − any counts towns tiled by more than one rule. At m = 24 the three rules largely agree
+(189 of 986); by m = 31 they almost never do (198 of 13,515). The rules succeed on different towns, so even their union
+grows no better with m: the "any" rate falls from 30% to 13%. Three greedy orders are three different wrong answers,
+not three approximations to one right one.
+
+**Status.** Measurement, single-party (C089). No claim upgraded. Note draft committed at 40a04af3
+(`reports/eight-paths-L8.md`, author line the owner's). Next: the page, with the owner, section by section.
+Gut: disappointed and then pleased; the wrong prediction taught more than the right ones. Reasoned: the mechanism is now
+one named object (the constant-sum pairing) with a measurement behind it, and nothing else.
