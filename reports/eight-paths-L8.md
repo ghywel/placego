@@ -1,7 +1,7 @@
 # The eight-path burning threshold is 68
 
-*Draft note, 19 October 2026; revised the same day against GPT's reading checklist (ledger GC1595). Author line to be
-decided by the project owner; see the statement on method at the end.*
+*Draft note, 19 October 2026; revised the same day against GPT's reading checklist (ledger GC1595). To be published
+on the project website. Author line to be decided by the project owner; see the statement on method at the end.*
 
 ## Abstract
 
@@ -206,7 +206,9 @@ explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather th
    manifest of sizes and digests, goes to `release/data/`, with the third program's certificates for four levels.
    Pending the pack.
 4. *Licence.* None, by the owner's decision (19 October 2026).
-5. *Still the owner's decision:* a permanent archive with a DOI, and the author line.
+5. *Where it lives.* The project website only: no DOI and no formal repository or journal, by the owner's decision
+   (19 October 2026).
+6. *Still the owner's decision:* the author line.
 
 ## References
 
