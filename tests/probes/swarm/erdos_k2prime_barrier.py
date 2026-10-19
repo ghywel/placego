@@ -137,6 +137,7 @@ FINAL OUTCOME (recorded 2026-10-18 by Local from the run's log, manifest and fil
     instance); P7 not tested.
   So K2' is certified to 7 states in both directions and to 8 states in LSD order only. Under AGENTS item 22,
   K2' stops here. A restart (n = 8 MSB beyond six hours, then 9 and 10) is not made without the owner or Cloud.
+  The owner, 2026-10-19: leave K2' stopped; the 170 GB partial LRAT of n = 8 MSB was deleted on that word.
 """
 import hashlib
 import os

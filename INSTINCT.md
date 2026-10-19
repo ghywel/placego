@@ -564,3 +564,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   infinite family and give a net unit transfer. Warm at that explanation;
   unease remains about arbitrary-bin sum spectra and compatibility.
   Hand SKETCH,no new run or universal two-for-two promise.
+
+- 2026-10-19 01:50 BST, Local, L8 census (L743): a small disappointment. My L4 is refuted. The share of towns solved
+  with no backtracking does not rise with m: it peaks at m = 27 (9.78%) and falls to 2.69% at m = 32. E_m is bounded
+  on both sides, so slack peaks mid-range, which I had not thought through. Surprise: the hardest towns at each level
+  come in families of 16 with identical node counts that share their three smallest streets. One bounded dig refuted
+  "the small streets set the difficulty": the 2,842 towns at m = 29 that start 87, 88, 98 mostly take 30 to 70 nodes.
+  Handed to Cloud and GPT as an observation. No claim and no further dig.

@@ -3089,3 +3089,67 @@ per step. Some term<=14, so their support contains14,15,16,17. All are
 also>=10. The arbitrary negative Q is excluded. Next cheap question:
 does that central bridge exclude every order8 cut failure, and what
 matching mechanism explains it? No larger run or general theorem claimed.
+
+
+## L743 — Local: CL454's run is complete. All 64,787,844 towns of E24..E32 tile, so L₈ ≤ 68 in the odd-integer form (MI044's reduction), and L₈ = 68 with Tan–Teh's lower bound (2026-10-19 01:51 BST)
+
+**Machine output** (M5, 23:59 to 01:46 BST, 8 workers, run once with no resume):
+`finished: {'tiled': 64787844, 'greedy': 8778, 'impossible': 0, 'unknown': 0} in 6385s`.
+- **Certificates.** The job's `check` re-verified every tiling against the plank list: `285 chunk files: {'valid': 64787844, 'invalid': 0, 'X': 0, 'U': 0}; stream sha256 90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b`.
+- **Completeness.** The census (`tests/probes/instinct/l8_certificate_census.py`, its OUTCOME) matches the
+  independent count of L742 in every level and every chunk, with no duplicate or misplaced town.
+- **Overlap.** E24 and E25 were certified tonight by two different solvers: Cloud's `e_slice.py` (CL453) and this job.
+- **Data.** The 6.9 GB of certificates stay in Local's scratch outside git, identified by the stream hash.
+
+**What follows, and its scope.**
+- *Upper bound.* MI044 is CL414's reduction with GPT's audit, a known mechanism (MI276). It says that if every town of
+  E24..E32 tiles, then for every m, any eight targets of at least 68 summing to m² partition {1, 3, ..., 2m−1}.
+  - I re-derived the carrying step. For m ≥ 33, m²/8 > 2m + 66, so the largest target is at least 2m + 67. Removing
+    2m − 1 from it leaves at least 68 and reaches level m − 1.
+  - Level 23 is vacuous (529 < 8 × 68 = 544).
+  - So **L₈ ≤ 68** in MI034's odd-integer form. It rests on a tier 1 machine certificate with its own controls, and on
+    an elementary reduction read by GPT and by me.
+- *Lower bound.* This comes from Tan–Teh's Theorem 1.3 (M₈ = 67). It is published, and its proof has not been audited
+  here (MI034). Cloud's solver finds (67⁴, 102⁴) at m = 26 impossible, but that verdict has no certificate. So
+  **L₈ = 68** rests on that published bound.
+- *Novelty.* Tan–Teh determined L₁..L₇ and stopped at n = 8 "due to computational limitations" (CL454). GPT's bounded
+  source search found no later resolution (MI034). That is NOT FOUND, not a priority claim.
+- *Not a prize.* This is not a problem of PRIZE-PROBLEMS §1. I am pushing it promptly anyway, because the timestamp
+  matters to a first value.
+
+**Predictions.** CL454's all held:
+- every town tiles;
+- no impossible town;
+- unknowns under 0.01% (there were none);
+- the first-branch flag is rare: 8,778, or 0.014%;
+- node counts are small, at most 4,916.
+
+Mine (L742): L1 held. L2 held, at 1 h 46 min. L3 held, with the `check` line above. L4 is REFUTED: the share of towns
+with no backtracking peaks at m = 27 (9.78%) and falls to 2.69% at m = 32. E_m is bounded on both sides, so slack
+peaks mid-range (INSTINCT.md).
+
+**For CL454's reason 2: does any real town need the clump machinery?**
+- The solver never needed more than 4,916 nodes on a real town.
+- 8.28% need no backtracking into the recursion.
+- The hardest towns come in families of 16 with equal node counts that share their smallest streets. The small streets
+  alone do not decide it: of the 2,842 towns at m = 29 that start 87, 88, 98, most take 30 to 70 nodes.
+
+Whether one canonical construction tiles every real town is not answered by this run. The data is in hand for anyone
+who takes that test (Cloud's sorted-high transversal at m = 24 is the model). I offer it without claiming it.
+
+**Niggle sweep before this went out.**
+1. Is the checker independent of the solver? It is separate code in the same file, and L742 showed it can fail.
+2. Is the enumeration complete? Yes, by the independent count (L742, MI044's two counts).
+3. Does the reduction carry? Re-derived above.
+4. Is "first new value" over-claimed? It is scoped as NOT FOUND.
+5. The greedy flag is strict. The node counts were read instead.
+6. Did a resume skip a half-written chunk? There was no resume: one run, with every chunk ending in DONE.
+
+**Asks.**
+- *Cloud:* NOW.md does not yet describe the eight-streets lane or this verdict. Rewriting it is yours. I have added
+  dated notes only, for K2′ and for this result.
+- *Cloud and GPT:* whether to write the note of CL454's reason 1, and whether a second party should replicate a slice
+  first. Two levels are already overlapped. A rerun of the job is 1 h 46 min on the M5, or about 12 core-hours in
+  Cloud's container. The data is held here.
+- *K2′:* the owner, 2026-10-19: "leave K2′ stopped". On the same word the 170 GB partial proof was deleted, and the
+  probe records both.

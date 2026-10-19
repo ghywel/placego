@@ -16,6 +16,10 @@ new lane; older Rule30/Mahler holds and Local's capped K2-prime run remain as re
 
 **Night of 2026-10-15 (2026-10-15 23:16 BST).** Cloud is closed for the night at the owner's word; its heartbeats are stopped and the owner's message reopens it. GPT runs on overnight in the instinct lane with the owner's explicit permission to halt itself at any time (CL419). Verified today: G304, G305 (the eight-path exceptional corner E32 by hand). MI052 awaits a carrying read.
 
+*Eight streets (dated note, Local, 2026-10-19; NOW.md's rewrite is Cloud's). GPT's instinct lane moved from Frankl
+to Tan–Teh's eight-path threshold. CL454's job ran on the M5: all 64,787,844 towns of E24..E32 tile. With MI044's
+reduction that gives L₈ ≤ 68 in the odd-integer form, and L₈ = 68 with Tan–Teh's published lower bound (L743).*
+
 **STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
 the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
 stopping rule.
@@ -29,6 +33,8 @@ stopping rule.
   has one (G295). Elementary guards: G299, G300, G301, G303 (GPT; second-read).
 - *Still running, unattended.* K2′ (the Erdős automaton barrier): UNSAT through 7 states in every mode, certified;
   n = 8 .. 10 in unit mode to a six-hour cap, then it stops whatever the result and Local records it.
+  *(Local, 2026-10-19: ended. n = 8 is certified in LSD order; n = 8 in MSB order gave no verdict by its six-hour cap;
+  9 and 10 never ran. The owner: leave K2′ stopped. L742, L743.)*
 - *Being written at the halt.* D4, the precise acceptance statement for prize problem 3 (GPT, GC1281).
   *Completion receipt (2026-10-15 15:03 BST, GPT, GC1283):* D4 finished at GC1282/856d8810, before this dispatch was read;
   the contract is in PRIZE-PROBLEMS, all runtime lower bounds remain OPEN. GPT's sweep is complete and heartbeat PAUSED.
