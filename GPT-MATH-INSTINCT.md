@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 18:03 BST: protected one-hole FOUR-bin boundary; general theorem OPEN.**
+**CURRENT working state, 2026-10-20 18:13 BST: deliberate incubation; mathematics heartbeat PAUSED, general theorem OPEN.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -158,15 +158,25 @@ exchange mechanism and primary literature;the incubation above is history.
   MI565 parks the189-form expansion; no endpoint/threshold repair tree.
   MI571 gives the exact linear-interpolation/fractional distinction;
   ordinary compression feedback is already closed at MI401/551.
-- **Next.** Address the simultaneous inward-rounding obstruction for
-  actual protected Q/P, using all group bounds; convex feasibility alone
-  is not progress. No clipping of negative means, automatic source import,
-  census extension or extra review job. Last trajectory MI56517:22 BST,
-  next by18:52 or repeated failure; no extra allowance used.
-- **Rhythm.**13-minute research ACTIVE, older15-minute schedule PAUSED,
-  no separate poller. Shared-store checkpoint at this wake has no new
-  message. Reverse-stack strategy stays in this neighbourhood while a
-  concrete question remains; transfer needs an explicit bridge.
+- **Latest kill test.** MI572–573 refute largest-remainder rounding of
+  an ARBITRARY fractional Q point on an actual protected parent: M12,q6,
+  c3333,t18^4,k=(23/10,5/4,5/4,6/5). All14 fractional bounds pass,
+  minimum slack3/10; unique-largest rounding gives(3,1,1,1), first
+  minimum24>18. This does not refute the parent or MI569's chosen means.
+- **Decision.** Early trajectory MI57418:13 BST chooses incubation.
+  Central partial coverage is real progress; generic fractional imports
+  and arbitrary rounding do not solve the boundary. No justified next
+  selection mechanism currently identified. The189-form case expansion,
+  clipping, feedback and census enlargement remain parked. No new job.
+- **Reopen on.** A specific structural choice of Q point/rounding that
+  uses the protected group inequalities, a materially different global
+  mechanism from Cloud, or renewed owner conversation. A routine review
+  ACK alone does not solve this mathematical uncertainty. G333/G334's
+  carrying review remains useful and pending; this is no permission wait.
+- **Rhythm.**13-minute research schedule PAUSED by confirmed app update;
+  older15-minute schedule remains PAUSED, no separate poller or background
+  run. Send GC1641 through the portal, then no automatic flag checks.
+  Reverse-stack strategy stays in this neighbourhood; no other lane opens.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39243,3 +39253,77 @@ to keep that inference and the one review packet visible. Gut: cooling
 for the generic convex-source route; interest remains in the actual
 protected rounding obstruction. No new allowance or carrying request;
 last trajectory MI56517:22 BST,13min ACTIVE.
+
+
+### MI572 — Kill test for rounding an arbitrary fractional point (2026-10-20 18:12 BST)
+
+Parent remains protected one-hole FOUR-bin existence. Chosen bounded
+question: does largest-remainder rounding of an ARBITRARY point of the
+known fractional count region Q give joint admitted counts? A yes would
+supply an explicit selector; a no closes this proposed source route.
+This is not a test of MI569's particular central means, and not a census.
+
+Record searched: balanced.*cover/inward.*round/normal.*fan joint search
+returned no combined hit; actual MI560–571, FOUR25/27 and PRIOR-ART's
+known fractional/rounding statements read. No new external theorem used.
+Take the OLD protected M12,q6,c3333,t18^4, and one rational point
+k=(23/10,5/4,5/4,6/5), sum6. Prediction: all14 true fractional
+(linearly interpolated) moment bounds hold, but unique-largest-fraction
+rounding gives(3,1,1,1), whose first bin violates f3(3)=24>18.
+Can-fail counterfactual: any original group cut or fractional moment
+bound fails, or rounded counts actually remain admitted, invalidating
+this proposed refutation. No repair or parameter search after a failure.
+Control: means(3/2)^4 round to(2,2,1,1), already realized by permuting
+MI447's literal partition. Unexpected guard: the largest fractional
+part3/10 is UNIQUE; ties between the two1/4 entries cannot cause the
+bad round. Use exact fractions, every group and conserved totals only.
+This is a cheap arithmetic hand check, no probe or new review request.
+
+
+### MI573 — Arbitrary fractional-point rounding REFUTED on a protected parent (2026-10-20 18:13 BST)
+
+The preregistered point k=(23/10,5/4,5/4,6/5) passes total6 and
+ALL14 actual protected cuts and linearly interpolated fractional moment
+bounds on M12,q6,c3333,t18^4. Minimum fractional slack is exactly3/10.
+Floors total5; the fractional parts3/10,1/4,1/4,1/5 total1, with a
+UNIQUE maximum at the first coordinate. Largest-remainder rounding
+therefore gives(3,1,1,1). The first bin's minimum with three high tokens
+is7+8+9=24>18. Thus the proposed ARBITRARY-Q-point rounding selector is
+REFUTED; unlike MI571's old control, this input DOES satisfy protection.
+It is not a negative partition: MI447's literal partition, permuted,
+has counts(2,2,1,1) and all targets18. The distinguished means(3/2)^4
+round to those good counts. They are outside MI569's threshold3, so this
+control is not evidence enlarging that theorem's central hypothesis.
+
+Arithmetic limitation retained: the first check used /2 on integer
+constants, introduced floats and printed0.3000000000000007. It did NOT
+satisfy the promised exact-arithmetic check. Changing ONLY L/T to return
+Fraction and repeating the SAME point/controls gives exact3/10 and all
+assertions pass. No point search, parameter adjustment, census, new probe
+or independent review. HAND refutation/scope guard; no PROOFS job. The
+failure is arbitrary representative choice, not a flaw in standard
+rounding's own conserved-total/floor-ceiling guarantees.
+
+### MI574 — Early trajectory: incubate the actual boundary selection gap (2026-10-20 18:13 BST)
+
+Parent unchanged: protected one-hole FOUR-bin partition. Actual progress
+since MI565: G334 conditional integer-selection candidate, fixed minimal
+count evidence, and MI570's uniform central hand construction. General
+REAL admission and thin physical completion remain OPEN. MI571/573 show
+why known convex feasibility plus an arbitrary rounded representative
+returns to the SAME missing choice property; another reformulation or
+local repair would not move it. G333/G334 stay ONE pending review packet;
+MI570 is independent and unreviewed. No candidate is promoted here.
+
+Fresh choice: the central construction was satisfying, but the boundary
+pull is presently a question without a justified next mechanism. Choose
+incubation, not the189-form expansion, another generic source search or a
+larger confirming census. This is a named mathematical uncertainty, not a
+routine review halt or a request for permission. The owner authorizes
+pausing for this situation. App confirms check-cloud-mathematics-flags
+PAUSED, preserving its13-minute rule/prompt; older research schedule
+stays paused, no separate poller/background job. GC1641 asks Cloud for
+specific perspective on choosing Q points/rounding under protection.
+Reopen on that kind of concrete mechanism or renewed owner conversation;
+an ACK alone is not the missing mathematical bridge. No extra allowance
+is renewed. No automatic switch to Frankl or held older problems.

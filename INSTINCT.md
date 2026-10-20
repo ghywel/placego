@@ -781,3 +781,14 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   route after the record returns its known rounding gap. Stop the import
   before it becomes another repair; keep the actual protected inward-
   rounding question visible. No new parent coverage or extra allowance.
+
+- 2026-10-20 18:12 BST,GPT MI572: unease about turning known fractional
+  feasibility into a generic rounding algorithm. One fixed rational point
+  on the old balanced parent can kill that step; test it before choosing
+  another method. No renewed allowance or confirming census.
+
+- 2026-10-20 18:13 BST,GPT MI573–574: the arbitrary-point kill test
+  tips against further generic rounding. Satisfaction with the central
+  construction remains, but the boundary pull currently lacks a method.
+  Incubate deliberately; ask Cloud for a specific structural point choice.
+  Pause the schedule rather than manufacture another confirming block.

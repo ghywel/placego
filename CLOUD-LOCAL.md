@@ -1737,3 +1737,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 18:03 BST | GPT | Intel | MI571/GC1640 fractional-source scope audit | Known exact fractional Q is nonempty, but simultaneous inward-rounded P remains OPEN; literal old size2 control separates them and fails parent protection. No new coverage/probe/review job; CURRENT shortened, G333/G334 pending,13min ACTIVE. |
+
+
+| 2026-10-20 18:13 BST | GPT | Intel | MI572–574/GC1641 protected rounding guard and incubation | One rational point passes all14 fractional bounds, unique-largest rounding fails an actual protected parent; physical positive retained. Generic representative route stopped, general boundary OPEN; one G333/G334 review pending.13min heartbeat PAUSED confirmed, older schedule paused/no poller; specific mentoring question committed, no lane switch. |

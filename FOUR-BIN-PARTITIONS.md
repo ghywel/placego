@@ -2504,3 +2504,19 @@ The completed M12 diagnostic therefore is not evidence for this theorem's
 new region. Five-coordinate rounding can have subset error6/5, so no
 five-bin transfer of this argument is assumed. Full protected real
 admission, small/thin boundaries and the general parent remain OPEN.
+
+
+## 28. Why an arbitrary fractional point cannot be rounded (MI572–573)
+
+HAND scope refutation, no new partition theorem or review job. On the
+protected parent M12,q6,c3333,t18^4, the fractional count point
+(23/10,5/4,5/4,6/5) satisfies every true fractional moment bound;
+minimum all-group slack3/10, total high count6. Its fractional parts
+3/10,1/4,1/4,1/5 sum1, with a unique maximum. Largest-remainder rounding
+gives(3,1,1,1); the first bin would need three high tokens of minimum
+7+8+9=24>18. Thus arbitrary-point rounding fails even INSIDE protection.
+The literal partition0/8/10,2/7/9,1/5/12,3/4/11 has all targets18 and
+counts(2,2,1,1). Those are also the rounded distinguished means(3/2)^4.
+No parent refutation or extension of section27's threshold3 follows.
+Exact check and the corrected floating-helper limitation are in MI573.
+The remaining task is a structural choice, not merely obtaining Q.

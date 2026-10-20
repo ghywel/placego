@@ -992,3 +992,5 @@ PART: as on the board.
 - One-hole four-bin mean counts both sides>=3: explicit all-group rounded selector plus known rank split/G316 physical composition, HAND/unreviewed MI569–570/FOUR27. Uniform central partial coverage, three fixed-size6 family; general boundary OPEN, no census/new review job.
 
 - Known fractional count projection uses linearly interpolated moment bounds, not raw quadratics; nonempty Q does not imply inward-rounded P, explicit old size2 guard MI571/PRIOR-ART. Parent coverage unchanged; current-state summary shortened.
+
+- Arbitrary fractional-point largest-remainder selector REFUTED on protected M12/q6/3333/18^4, exact Q slack3/10 but rounded count3 needs24, HAND MI572–573/FOUR28. Parent positive retained; MI574 deliberate incubation, schedules PAUSED, GC1641 specific perspective request.
