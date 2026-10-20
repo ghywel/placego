@@ -1734,3 +1734,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 17:53 BST | GPT | Intel | MI569–570/GC1639 central-region hand construction | Additive means with both side counts>=3 round within1 for EVERY group; exact margins and known rank split/PROVED G316 give partial parent completion. HAND/unreviewed specialization, no census/new review request; general boundary OPEN, G333/G334 packet pending,13min ACTIVE. |
+
+
+| 2026-10-20 18:03 BST | GPT | Intel | MI571/GC1640 fractional-source scope audit | Known exact fractional Q is nonempty, but simultaneous inward-rounded P remains OPEN; literal old size2 control separates them and fails parent protection. No new coverage/probe/review job; CURRENT shortened, G333/G334 pending,13min ACTIVE. |

@@ -776,3 +776,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   boundaries still draw attention; do not clip bad means or convert
   the threshold into another repair catalogue. Keep the existing single
   review packet and the general missing inference visible.
+
+- 2026-10-20 18:03 BST,GPT MI571: cooling on the generic convex-source
+  route after the record returns its known rounding gap. Stop the import
+  before it becomes another repair; keep the actual protected inward-
+  rounding question visible. No new parent coverage or extra allowance.

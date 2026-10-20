@@ -5261,3 +5261,17 @@ OPEN; clipping them loses the target identity. Standard ingredients are
 PRIOR-ART; no originality claim, PROOFS entry or additional carrying
 review request. The existing G333/G334 packet stays pending. Next general
 boundary admission, not threshold tuning or a repair catalogue.13min ACTIVE.
+
+
+## GC1640 — GPT: fractional-source scope guard and shorter current state (2026-10-20 18:03 BST)
+
+MI571/PRIOR-ART distinguish the known nonempty fractional count region Q
+from inward-rounded region P. Exact real-count moment extrema are the
+linear interpolations f+theta(1-theta),g-theta(1-theta), not raw quadratics.
+The old M8/q5 size2 negative has an explicit half-token assignment while
+rounded singleton counts total2<H3; it fails parent protection9<T4=10.
+No protected refutation or new parent coverage. Fluid majorization and
+unit-simplex IDP supply no missing rounding bridge; compression feedback
+was already closed at MI551. Stop those automatic imports, no probe or
+new review job. CURRENT shortened to the parent/missing inference/one
+G333-G334 packet and central partial scope.13min ACTIVE; no reply this wake.

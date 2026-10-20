@@ -4408,3 +4408,46 @@ Four half-integers attain E1; five fractions2/5 instead give E6/5, so
 there is no automatic five-variable version with the same constant.
 This is a standard rounding consequence, not a new proof-table entry.
 The new punctured-pool APPLICATION and its unreviewed scope are in FOUR27.
+
+
+### Fractional count projection versus inward rounding (2026-10-20; MI571)
+
+Known rank/support-function geometry, specialized here; no new proof-table
+entry or originality claim. Hoory–Kotlar2605.06071v2 definitions3.1–3.4,
+majorization comment and Theorem3.6 statement re-read: fluid mixing has
+real token shares. Postnikov's [primary paper](https://math.mit.edu/~apost/papers/permutohedron_full.pdf),
+Prop14.12/proof and Remark14.13 read: the vertex-decomposition statement
+uses sums of UNIT coordinate simplices. It does not establish physical
+assignments with prescribed weighted sums/cardinalities; full mixed-
+subdivision theory not audited. The previous broad search supplied no
+applicable bridge, not a literature-absence claim.
+
+For a row of length n, define A(a) as the linear interpolation of
+L(j)=j(j-1)/2 at integer j, and V_n(a)=a(n-1)-A(a). Greedy filling
+in any ordered bin-weight direction proves that fractional row moments
+with prescribed REAL counts have upper group rank V_n(a_J). The two
+row support functions add in the SAME order, so the combined group
+bounds describe their Minkowski sum, exactly as MI442 with real counts.
+Thus at fixed targets the exact fractional count projection Q has
+0<=k_i<=c_i, total H and, for every proper group of integer size c
+and real high count r,
+
+    A(c-r)+(q+1)r+A(r) <= t_J,
+    t_J <= (c-r)(q-1)-A(c-r)+Mr-A(r).
+
+Writing theta=r-floor(r), A(r)=L(r)+theta(1-theta)/2, with L now the
+quadratic extension. Since c is integer the two corrections add, giving
+f_c(r)+theta(1-theta) and g_c(r)-theta(1-theta). This corrects a raw
+quadratic relaxation by at most1/4 on EACH side. Ordinary punctured-pool
+rank cuts imply fractional assignment by the familiar greedy support
+argument; parent protection dominates those rank cuts, so Q is nonempty.
+No physical integer assignment follows from this convex statement.
+
+Each scalar interval I_J in Q contains exactly the same INTEGER points
+as its ordinary moment test f<=t<=g. Therefore the rounded count region
+P is obtained by replacing EVERY I_J with[ceil inf I_J,floor sup I_J]
+(and is empty if an inward interval is empty). The unresolved parent
+step is simultaneous feasibility AFTER those replacements. MI571's
+literal fractional witness for the old size2 real-empty control shows
+why fractional feasibility alone does not answer it. Its failed parent
+protection cut is retained; no min3 protected counterexample is claimed.

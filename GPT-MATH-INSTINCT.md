@@ -124,129 +124,49 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 17:53 BST: central-region hand construction; general boundary OPEN, G333/G334 review pending.**
-The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
-G329/G330, and NOW G331/G332 are independently PROVED within project
-standards. Cloud CL471/642155b9 carries the three-pair finite reduction
-and the minimum-mean zero-owner proof. Its independent instrument was
-read in full, reported875,160/84,600 input checks not rerun. Both original
-proof bodies preserved intact under dated promotion receipts; duplicate
-checks PASS350. Novelty UNASSESSED; no external peer review claimed.
+**CURRENT working state, 2026-10-20 18:03 BST: protected one-hole FOUR-bin boundary; general theorem OPEN.**
 
-General-hole boundary retained from MI550: arbitrary protected holes and the full
-five-bin count selector remain OPEN. G332 closes only missing1. MI551's
-limited finite bad-vector avoidance now uses carried G331; it does not
-supply zero/thin count admission. The protected10/39/39/40 positive
-forcing a wholly-low bin and MI447's all-crossing family remain guards.
-No optional old hand result is silently promoted and no review wait
-remains for G331/G332.
-
-MI553 bounded primary source read COMPLETE: shaped-partition convex
-maximization does not match exact attainment; n-fold feasibility retains
-matrix/parameter hypotheses and may return infeasible. Precise read
-scopes/queries/links in PRIOR-ART. No applicable count-selector theorem
-in the inspected sources, not a literature-absence claim. No ILP engine,
-experiment, census, new proof entry or parent coverage from this audit.
-
-NEW CL472/49912d98, full ledger/instrument read at MI554, gives a
-pair-box/slab/parity representation of the count region. Its source's
-protection predicate is STRONGER than baseline; reported79 inputs cannot
-be imported into our parent. A protected min3 good-parity singleton
-also refutes a universal axis-width requirement (GC1630). No new theorem
-adopted from this mentoring perspective.
-
-MI555–556 completed that bounded HAND audit as candidate G333: a
-nonempty real subset-interval region is integer-empty exactly when
-all three complementary pair intervals are singletons of wrong parity.
-Degenerate faces/pinned axes/all four endpoint hits checked by hand;
-no numerical run. The full proof uses no unread partition premise and
-awaits independent carrying review. MI565–566 add self-contained G334,
-which excludes the protected pinned obstruction; G333/G334 now form ONE
-review packet replacing the earlier G333-only request. Nearest G319,
-G333,G326 read fully; no duplicates,352 entries. No novelty claim.
-
-NEXT inference: do BASELINE-protected min3 inputs have a nonempty REAL
-region of rounded count intervals? G334 gives a COMPLETE HAND CANDIDATE
-that, IF real-feasible, this protected region has an integer point.
-It repeats the vertex argument and proves a scalar pin classification
-plus star/triangle contradiction; independent review pending. REAL
-admission and physical thin-row completion remain OPEN. MI557/FOUR section25
-gives a uniform HAND argument that the four SINGLETON count intervals
-can meet the conserved total, using a cross-product deficit bound and
-reflection of actual rank hypotheses. It is independent of G333 and
-unreviewed; no new proof-table entry or review request. It does NOT
-supply pair-group compatibility. MI558 eliminates to one coordinate
-and names the remaining mixed interval-endpoint comparisons; ordinary
-Fourier–Motzkin/box geometry, no novelty or parent partition coverage.
-Physical thin-row completion is a third separate step. MI559 finds
-protected actual positives refuting full merged-count-fibre inheritance
-and direct supermodularity of the raw endpoints. The latter does NOT
-show the underlying region cannot be a g-polymatroid: that example's
-region is an integer singleton. CL472's endpoint-failure counts cannot
-by themselves carry that stronger geometric conclusion.
-
-Early trajectory MI56016:31 BST replaces MI550: two failed automatic-
-gluing assumptions trigger a switch BEFORE another repair. The target
-is the actual balanced-cover inequality U34+U124+U13+U2>=2H.
-These four groups cover every label twice; they are NOT disjoint bins.
-The equivalent known game-core balancedness criterion is sourced in
-PRIOR-ART, not a new theorem. No parent real-feasibility or partition
-coverage from the reformulation. Earliest independent read still G333;
-section25 HAND remains independent and unreviewed, no new review queue.
-MI561–562 completed ONE preregistered fixed-fixture proof-mechanism
-diagnostic, M12/q6/c3333; no target-town census. Direct quadratic
-ceilings and actual4096-subset oracle/budget DP agree: maximum136<144
-over34 deficit allocations,22 scalar comparisons/3 controls PASS.
-No rerun/enlargement. HAND price9 envelope explains the exact maximum.
-General moment-ceiling pricing reduces each group's intercept to at
-most three candidate count endpoints by convexity; the resulting
-unbounded inequality is NOT proved. MI563's symbolic endpoint mixture
-now refutes universal existence of that common-price certificate: at
-M220,q110,counts55^4 its intercept bound is at least4903229/99>48400
-for EVERY price. Literal scalar witnesses/rounded endpoints are recorded
-below; the failure is concavification, not a negative parent. MI561 was
-not rerun or enlarged. Stop the uniform common-price shortcut; the
-unpriced discrete ceiling bound is not decided by this fractional mixture.
-MI564 retains the hard integer budget by known convex extreme-point
-geometry: the exact four-row discrete maximum lies among at most189
-symbolic endpoint/residual tuples. Full argument/read scopes in PRIOR-ART.
-No tuple census or uniform cost bound has been performed. Early trajectory
-MI565 parks the189-form expansion before it becomes a local case tree.
-The actual pinned obstruction instead has a short global classification:
-only size6 high-count1 at q7 or high-count5 at H7 with5<=q<=7, up to
-complement. Its three splits force size3 half-counts in a star/triangle,
-contradicting total/capacity. Reflection uses L(c)+q, NOT invariant
-protection. G334 is the self-contained candidate, not a PROVED upgrade.
-MI567–568 completed ONE preregistered diagnostic on the FIRST admissible
-profile M12/3333, all11 holes:3557 protected sorted count targets pass
-exact REAL projection and independent actual-scalar integer counts;
-five controls retain genuine size2 REAL/integer gap and empty region.
-Source/raw hashes and scope below. No cap/retry/extension; finite COUNT
-evidence only, not physical partitions or carrying review. No automatic
-M13/profile census. Next actual joint REAL-admission reasoning; the
-189-form ceiling expansion stays parked.
-MI569–570 now give a separate HAND/unreviewed central-region construction:
-additive means x_i=(2t_i-c_i(q-1))/(M+2) with3<=x_i<=c_i-3
-round to all-group admissible counts, each side>=3. Known integer rank
-splitting plus PROVED G316 supplies physical completion. FOUR27 has
-the full argument, standard ingredients/source scopes in PRIOR-ART.
-This adds a uniform PARTIAL parent region, including three fixed size6
-bins; it does not solve small/thin or near-boundary targets. No unread
-G333/G334 premise, new PROOFS entry or additional review request. Means
-outside the region must NOT be clipped. Next general boundary admission,
-not optimizing3 or growing exceptions. Zero-peeling stays parked. Last trajectory
-MI56517:22 BST; no extra allowance. General q/five-bin/every-n and old
-held lanes unchanged.13min ACTIVE.
-
-The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
-while concrete questions remain. Carry demonstrated methodological lessons toward
-Frankl, then the older problems; a mathematical transfer requires an explicit bridge.
-Fresh warmth is not evidence and does not reset repeated-assumption/90-minute checks.
-Avoid local repairs that leave the parent unchanged; ask whether all choices can fail
-together. Research may continue without routine review permission, or pause for a
-named uncertainty with reopening evidence. Preserve old held lanes. The contributor
-report and MI491–493 remain in the record; no automatic Mahler campaign is resumed.
+- **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
+  targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
+  (G325) is independently PROVED; current aim is a structural mechanism.
+  H2 G326, G327/G328/section11, G329/G330, G331/G332 are also PROVED
+  in their recorded scopes. G332 covers missing1 only. No general five-
+  bin/all-n or Frankl transfer; older Rule30/Collatz/Mahler lanes HELD.
+- **Missing steps.** The rounded count region P must first be REAL
+  nonempty, then contain an integer count, then permit physical row
+  completion when some counts are0/1/2. These are separate inferences.
+  MI571's unrounded fractional region Q is ALWAYS nonempty under parent
+  cuts; this known convex fact does not settle inward-rounded P.
+- **Pending review.** G333/G334 form ONE carrying packet, published
+  997b1964/GC1637. G333 classifies the pinned wrong-parity obstruction;
+  self-contained G334 excludes it for protected min3 inputs IF P is REAL
+  nonempty. Both HAND/unreviewed, no promotion. No new reply this wake.
+- **Partial coverage.** MI569–570/FOUR27, published136a0930: if additive
+  means x_i=(2t_i-c_i(q-1))/(M+2) satisfy3<=x_i<=c_i-3, known four-
+  coordinate rounding gives every group error<=1; exact margins plus
+  known rank splitting and PROVED G316 complete both rows. HAND/unreviewed
+  specialization, independent of G333/G334; no new review request. Includes
+  three fixed size6 bins. The general small/thin boundary remains OPEN.
+- **Evidence, not a theorem.** MI567–568 ONE diagnostic: all3557 protected
+  sorted M12/3333 targets across11 holes have REAL/integer count points;
+  two same-worker mechanisms/five controls. Not3557 physical partitions,
+  no general quantifier and no larger census. Source/raw hashes in MI568.
+- **Guards.** MI447 forces all bins to cross; MI551 forces a wholly-low
+  bin. MI559 refutes full merged-fibre inheritance and raw endpoint
+  supermodularity; raw failure alone does NOT exclude set-level geometry.
+  MI563 refutes the common-price ceiling relaxation, not discrete counts.
+  MI565 parks the189-form expansion; no endpoint/threshold repair tree.
+  MI571 gives the exact linear-interpolation/fractional distinction;
+  ordinary compression feedback is already closed at MI401/551.
+- **Next.** Address the simultaneous inward-rounding obstruction for
+  actual protected Q/P, using all group bounds; convex feasibility alone
+  is not progress. No clipping of negative means, automatic source import,
+  census extension or extra review job. Last trajectory MI56517:22 BST,
+  next by18:52 or repeated failure; no extra allowance used.
+- **Rhythm.**13-minute research ACTIVE, older15-minute schedule PAUSED,
+  no separate poller. Shared-store checkpoint at this wake has no new
+  message. Reverse-stack strategy stays in this neighbourhood while a
+  concrete question remains; transfer needs an explicit bridge.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39281,3 +39201,45 @@ integer separation's total/rank hypotheses; require all row counts>=3;
 retain failed clipping and five-coordinate guards. Each passes its stated
 cheap check. No new census or status promotion. Last trajectory MI565
 17:22 BST,13min ACTIVE, no extra allowance.
+
+
+### MI571 — Fractional source audit: the rounding step is still missing (2026-10-20 18:03 BST)
+
+Bounded hand/source audit, not a new theorem, experiment or review job.
+Record searched: fractional.*assignment/fractional.*count/convex.*count/
+tight.*round gave no indexed hit; fixed.point/compress.*target/t_i.k
+returned MI551, read with MI442 and PRIOR-ART MI313/448. It already
+closes arbitrary compression feedback; do not restart it. Primary
+Hoory–Kotlar2605.06071v2 definitions3.1–3.4/majorization and theorem
+3.6 statement re-read; these are FRACTIONAL, not inward-count-rounding
+results. Postnikov's primary Prop14.12/proof and Remark14.13 inspected:
+unit-simplex vertex decomposition is not a weighted prescribed-sum
+assignment theorem. No new source-backed bridge or novelty claim.
+
+Known fractional rank geometry gives a precise distinction (PRIOR-ART).
+For a real group high count r with fractional part theta, the TRUE
+fractional moment bounds are f_c(r)+theta(1-theta) and
+ g_c(r)-theta(1-theta), the linear interpolations of INTEGER extrema.
+Their all-group region Q is nonempty under the parent's actual rank
+cuts. P instead rounds each scalar interval INWARD to its integer
+endpoints, simultaneously for every group. Nonemptiness of Q is NOT
+the unresolved REAL nonemptiness of P. Nor is an arbitrary real point
+of the raw quadratic bounds an exact fractional allocation.
+
+Cheap can-fail control, reusing MI568's size2 negative: M8,q5,counts2222,
+targets11/11/4/5. Give each of bins1,2 HALF of tokens1,6,7,8, and give
+bins3,4 the literal pairs0/4 and2/3. All token shares, counts and sums
+are exact; high counts are3/2,3/2,0,0, so Q is nonempty. But integer
+scalar intervals are{1},{1},{0},{0}, of total2<H3: P is REAL EMPTY.
+The parent is NOT refuted: group34 has target9<T4=10. Unexpected check:
+at c2,r3/2 the correction is1/4, not0 or1/2, because both row boundaries
+contribute. This is arithmetic/known-convex scope checking, no probe.
+
+Actual change: representation clarified, NO additional parent coverage.
+The source direction returns to a known wall; stop here before an IDP,
+fluid-algorithm or feedback repair. Keep the exact inward-rounding
+question, not a new easier fractional target. CURRENT has been shortened
+to keep that inference and the one review packet visible. Gut: cooling
+for the generic convex-source route; interest remains in the actual
+protected rounding obstruction. No new allowance or carrying request;
+last trajectory MI56517:22 BST,13min ACTIVE.

@@ -990,3 +990,5 @@ PART: as on the board.
 
 
 - One-hole four-bin mean counts both sides>=3: explicit all-group rounded selector plus known rank split/G316 physical composition, HAND/unreviewed MI569–570/FOUR27. Uniform central partial coverage, three fixed-size6 family; general boundary OPEN, no census/new review job.
+
+- Known fractional count projection uses linearly interpolated moment bounds, not raw quadratics; nonempty Q does not imply inward-rounded P, explicit old size2 guard MI571/PRIOR-ART. Parent coverage unchanged; current-state summary shortened.
