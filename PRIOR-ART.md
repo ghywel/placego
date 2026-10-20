@@ -4132,3 +4132,28 @@ a genuine integer hole, preserving the scope distinction. The SIAM2023
 exact bipartite matching polytope abstract was read only for orientation;
 no theorem from its unread proof is used. Geometric vertex-colouring
 search hits and two unrelated arXiv pages are not imported.
+
+### Mixed decomposition is stronger than the source's repeated-polytope IDP (2026-10-20; MI534)
+
+[Haase, Nill, Paffenholz and Santos, Lattice points in Minkowski sums,
+Electronic Journal of Combinatorics15(2008),N11](https://www.combinatorics.org/ojs/index.php/eljc/article/download/886/pdf/0),
+full five-page text read. Theorem1.1 gives lattice-point addition
+surjectivity when one polygon's normal fan coarsens the other's; the
+smoothness assumption of the earlier result is removed. Its proof uses
+lattice-free intersections and the fan condition, not downward closure.
+This directly covers identical/homothetic component triangles, but does
+not automatically cover our mixed odd paths. Already RBR and RBRBRBR
+have triangles with intercepts(2,1),(4,3), non-axis normals(1,2),(3,4).
+Their three-ray fans differ and neither coarsens the other. This scope
+check is not a novelty claim or a counterexample to their theorem.
+
+[Mori, Motomura, Ohsugi and Tsuchiya, Algebraic aspects of unconditional
+lattice polytopes,2605.19586v1](https://arxiv.org/html/2605.19586v1),
+introduction and section2 through Theorem2.2/proof read; later algebra
+not imported. Their anti-blocking definition is the downward-closed
+property used in G330. IDP concerns repeated copies tP of ONE polytope.
+Theorems1.1/2.2 compare normality with reflected pieces; they do not state
+the mixed P_1+...+P_m lattice-addition assertion we need. The terminology
+is useful, but neither result is a replacement premise for G330's18.2.
+Bounded search only: exact matching specialization/anti-blocking mixed
+plane statement still NOT FOUND here; originality remains UNASSESSED.

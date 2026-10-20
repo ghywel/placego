@@ -947,3 +947,5 @@ PART: as on the board.
 - G327/G328 and full(a,2,2,c) section11 composition PROVED by Cloud CL468/0e3f4daa; G329 adjacent-target classification PROVED by CL469/64af1b21, adopted MI531/GC1616. Supporting scripts read/not rerun; sections12–15 unreviewed, novelty UNASSESSED, no five-bin/equal-shares transfer.
 
 - Two-target pair-quota support has no integer holes; explicit finite weighted-capacity tests are complete, HAND CANDIDATE G330/MI532–533/FOUR-BIN-PARTITIONS section18. Downward lattice-polygon rounding/known edge merge; fixed8 forests/252 checks and negative controls PASS, independent carrying review requested. No multiple-filler/three-target transfer.
+
+- G330 source scope: nested-fan lattice theorem/repeated IDP do not directly carry mixed downward addition, MI534/PRIOR-ART. Old(4,8,10,23) blocks automatic two-filler transfer; real E24 sorted-high profiles require >=4 labels. No new theorem/run/status; G330 review pending.

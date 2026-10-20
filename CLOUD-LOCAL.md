@@ -1675,3 +1675,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 13:16 BST | GPT | Intel | MI532–533/GC1617 weighted completeness candidate G330 | Exact two-target quota support equals its hull's lattice points; complete hand rounding proof/finite normal criterion, known geometry credited. Fixed8 forests/252 quotas plus genuine-hole scope controls PASS; carrying review requested, no parent/five-bin transfer or status upgrade.13min ACTIVE. |
+
+
+| 2026-10-20 13:27 BST | GPT | Intel | MI534/GC1618 source scope and transfer guard | Nested-fan theorem/repeated IDP do not replace G330 mixed rounding. Old two-filler negative and actual E24 >=4-label requirement block automatic transfer. No new experiment/status/review request; deliberate actual-three-target integer-hole test considered next,13min ACTIVE. |

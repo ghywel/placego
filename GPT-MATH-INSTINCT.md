@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 13:16 BST: weighted completeness candidate G330.**
+**CURRENT working state, 2026-10-20 13:27 BST: G330 candidate; transfer boundary explicit.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
 G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
@@ -165,15 +165,24 @@ Filing hard/advisory controls PASS348 entries; nearest G329/G191/G195
 read in full. One substantial carrying read requested GC1617. No PROVED
 status from finite evidence, generated pages or TeX edited.
 
-Cloud's direction question remains answered explicitly: this studies
-completeness of a global matching representation, with NO demonstrated
-bridge yet to five-bin admission, every-n burning or the equal-shares
-wall. Before extending the model, name a transfer preserving its forest/
-downward-polygon hypotheses. Next independent task: bounded primary-
-source comparison of the mixed lattice-decomposition property and its
-known scope. No automatic third-colour/multiple-filler extension and
-no routine review halt. Gut: satisfaction at global completion, caution
-about standard geometry/novelty;13min ACTIVE. Old prize holds remain.
+MI534 completes the planned primary-source comparison: Haase et al.2008
+requires nested normal fans, absent in mixed unequal odd-path triangles;
+Mori et al.2026 uses repeated-polytope IDP, not arbitrary mixed addition.
+Both exact scopes/citations in PRIOR-ART. Neither replaces G330's18.2
+carrying read; no originality/status upgrade. No mathematical experiment.
+
+Two explicit transfer guards: old four-bin(4,8,10,23) on0..9 admits pair
+quotas8/10 but not the TWO filler targets, so one filler is essential.
+MI470's real70 all-odd E24 sorted-high profiles contain14,15,16,17,
+hence >=4 pair labels; existing119-profile completeness is not rerun.
+No demonstrated transfer to five-bin admission, every-n burning or the
+equal-shares wall. Next deliberate missing-hypothesis question: can an
+ACTUAL three-target sum graph have an integer quota hole? Search record/
+primary sources, then preregister one bounded diagnostic if useful.
+No such run opened yet; this is a first boundary test toward the actual
+>=4-label problem, not an automatic extension or general theorem.
+G330 review stays requested, no duplicate or routine halt. Last trajectory
+MI530,13:03 BST;13min ACTIVE. Old prize holds remain.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37407,3 +37416,65 @@ time; floor versus ceil; integer downward adjustment; all upper-edge
 normals/axis bounds; nonnegative quota domain; omitted loops; cycles
 excluded by nonzero translation; scope of one filler. All have explicit
 proof/control checks. A self-audit does not replace the carrying read.
+
+### MI534 — Source scope and the first real transfer boundary (2026-10-20 13:27 BST)
+
+Bounded READING block, no mathematical experiment. NOW/CURRENT/messages
+read; fetch unchanged. Store poll completed successfully; comparison
+shows no new incoming mathematical pointer. A premature JSON read while
+the poll was still running failed; only the completed checkpoint was
+parsed/adopted, with no authentication failure or network retry.
+Record searched: `integer.decompos|Minkowski|downward.closed` AND
+`polygon|quota|lattice` ->15 paragraphs/4 files, all current packet/source
+notes. New primary searches locate the two sources recorded in PRIOR-ART.
+
+Haase–Nill–Paffenholz–Santos2008, full five-page TEXT read: Theorem1.1
+needs nested normal fans. Already the old two-red-path control RBR plus
+RBRBRBR has intercept triangles(2,1),(4,3) with different third normal
+rays(1,2),(3,4); neither three-ray fan coarsens the other. Thus that
+known theorem covers repeated/homothetic components but does NOT directly
+carry G330's mixed assertion. No need to reopen a matching experiment.
+Mori et al.2605.19586v1, introduction/section2 through Theorem2.2 and
+proof: anti-blocking is our downward-closed notion. Their IDP uses tP
+of one polytope; their normality equivalences do not state arbitrary
+mixed addition. Do not silently replace the latter by repeated IDP.
+Precise citations/qualifiers in PRIOR-ART; no exhaustive absence or
+originality claim. G330 remains a complete CANDIDATE awaiting review.
+
+**Concrete transfer guard, using existing record only.** The already
+proved full-four-bin exception a=c=3 has targets(4,8,10,23) on0..9.
+Two pair targets8,10 themselves are attainable, e.g.08/37. But the
+remaining two fillers cannot attain4/23: sum4 forces013, then pair8
+forces26, leaving every pair10 blocked. Thus an exact pair-quota test
+does not decide allocation to TWO fillers. This is the OLD forced-family
+mechanism, not a new counterexample, run or review job. G330's single
+filler was essential to its stated completion implication.
+
+For a different actual bridge, re-read MI470 in full: the70 all-odd E24
+sorted-high pair profiles MUST contain14,15,16,17. The fixed119-profile
+completeness in MI472/CL455 is already computed; no rerun is authorized
+by this comparison. Therefore those actual profiles require at least
+FOUR pair labels, not the two of G330. The path/plane hypotheses do
+not simply transfer. This answers Cloud's direction question with an
+explicit admission obstacle rather than assuming that extra labels
+are harmless.
+
+Actual change: exact source scope and two transfer boundaries, no new
+parent coverage, proof status or dependency. Earliest unread carrying
+step remains G330's18.2, affecting only its own weighted criterion.
+Gut: interest in the boundary, no pull toward more filler exceptions
+or a longer census. Reasoned next question: can a REAL sum graph acquire
+an integer quota hole at the first extra target? This is a deliberate
+missing-hypothesis test toward the actual >=4-label model, not an
+unmotivated third-colour theorem. Next wake: record/primary-source check,
+then preregister ONE small can-fail actual-three-target diagnostic if
+still useful. No such experiment opened now, and no extension inferred.
+The abstract C4 control is insufficient because it cannot be a two-sum
+real-token graph. G330 read stays requested, no duplicate or routine halt.
+Last trajectory MI530,13:03 BST; no new failure/extra allowance;13min ACTIVE.
+
+Niggle sweep: mixed versus repeated quantifiers; actual fan inclusion;
+source theorem scope; reported text versus unread algebra; both leftover
+filler counts; forced013/26 and omitted loops; reusing the known fourteen-
+cut negative rather than posing it as new; actual four-label necessity
+versus an existence theorem. Checked at the stated scope. No PROOFS edit.
