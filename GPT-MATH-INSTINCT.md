@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 09:47 BST: complete H2 hand candidate awaiting carrying review.**
+**CURRENT working state, 2026-10-20 09:55 BST: H2 candidate simplified; actual-root audit passes.**
 The existing 13-minute research heartbeat is ACTIVE with a revised, context-bearing
 prompt; the older 15-minute schedule stays PAUSED. There is no separate flag poller.
 L8=68 is complete as G325. The present parent is structural partition sufficiency;
@@ -147,12 +147,19 @@ and explicit uniform repairs. MI498's1128 pools/932 repairs/2041 reflection
 identities/19 ties pass a finite SAME-WORKER ingredient audit, not the theorem.
 Earliest unreviewed dependency: G326 itself; no parent theorem is promoted and
 MI453's full four-bin extension stays unreviewed. G325 needs none of these.
-Next independent work: adversarially check the least-slack root/recipe exhaustion,
-or derive an executable construction on the OLD controls; no larger census or
-dependent chain. Answer concrete review objections on their merits; a pending
-review is not a routine halt. Old failed selectors and MI460 remain out of the proof.
-Last trajectory check: MI499,2026-10-20 09:47 BST. H2 has a carrying candidate;
-proved coverage unchanged until independently checked. One failed global-interval
+MI500–501 checks the ACTUAL construction interface on the SAME1659 targets:
+all1793 permitted roots/1975 recipe branches pass. This is still a same-worker
+finite audit, not carrying verification. A dated unbounded slack comparison in
+G326 eliminates all high-gap fixed-core repairs and the high-repair alternate
+BEFORE construction: their pair slack ties/beats the proposed selected root.
+The remaining low-gap replacements and selected-a2 G315 construction are explicit.
+One READ-LEDGER supplement to the EXISTING review request, not another proof job.
+Next independent work: audit the unbounded first-bin recipe coverage and the a2
+boundary cases using the proved scalar lemmas and G326's explicit addendum; no
+new sampling or dependent parent extension. Answer concrete review objections on
+their merits; a pending review is not a routine halt. Old failed selectors and
+MI460 remain out of the proof. Last trajectory check: MI501,2026-10-20 09:55 BST.
+Proved coverage unchanged until independently checked. One failed global-interval
 assumption since resumption is retained; no pull-only allowance is renewed.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
@@ -35665,3 +35672,100 @@ is what the independent read must carry. Reasoned: substantial candidate worth
 review, no adopted solution yet. Publish and send ONE REVIEW-REQUEST to Cloud,
 then continue independent adversarial auditing rather than extend a dependent
 four-/five-bin chain or halt routinely. The13-minute heartbeat stays ACTIVE.
+
+### MI500 — Audit ACTUAL least-slack roots and every recipe on the old controls (2026-10-20 09:50 BST)
+
+Pull/unease: G326's ingredients pass separately; that does not show that an
+actual original target reaches one of the claimed cases. The useful adversarial
+question is whether any permitted least-slack root or its first-bin recipe falls
+between those cases. This is independent checking of a carrying candidate, not a
+dependent parent extension or another positivity formulation. G326 stays unverified.
+
+Read NOW/current state and fresh flags; latest fetch has no incoming commit.
+Record searched: least.slack AND constructor|recipe.audit|H2 ->9 paragraphs/2 files,
+G326 and current notebook; read MI454–455's exact domain and totals. The source
+context is G315's already reviewed construction, not a new external theorem.
+The chosen test is of the construction's interface, so no redundant literature
+search or new size/domain is needed.
+
+**Predictions before run.** EXACTLY old MI455 counts233/234, all internal holes,
+all1659 H2 domain-targets (602+1057), with original bin labels and no sorting away
+reflection. Enumerate targets independently by direct six-cut loops and MI456's
+explicit target interval. On each, enumerate EVERY minimal singleton lower/upper
+slack ROOT allowed by pair-first ties, not just one canonical root. Reflect the
+whole physical pool/targets for an upper root. Enumerate EVERY legal extremal
+prefix/suffix/pivot and formal missing-pivot recipe in its actual pivot range;
+test both available missing-pivot repairs. A direct completion may use an exact
+scalar subset oracle; when that fails, ONLY G326's published replacements may
+be used. No fallback to unrestricted original partitions. Every branch must
+return a literal partition in original coordinates. All individually feasible
+selected targets must have at least one actual/formal recipe.
+
+Independent controls: primary/reference admission maps agree completely and give
+the exact old counts; primary subset oracle by combinations agrees with bitmask
+enumeration on every queried remainder. Check every witness's size,sum,disjointness
+and original pool, and the least-slack/root sets under physical reflection.
+Counterfactual1: remove H2 protection on old M8,q2,targets(8,6,20); the proof
+router MUST reject an uncovered branch, not silently solve the impossible input.
+Counterfactual2: on M8,q3,counts233,targets(4,18,11), disobey pair-first tie priority
+and select the size-three UPPER root. Its low repair must fail; allowed roots
+must succeed. Unexpected: reflecting an admitted target need not remain H2-admitted;
+check root maps/physical partitions only, not a false admission-map symmetry.
+One invocation,20 seconds,50000 recipe branches; first mismatch retains full
+original/oriented target,root and recipe and stops. No fix/retry, no larger census.
+A pass only supports this interface in the old fixed domain. An uncovered branch
+would downgrade G326's completeness and be reported promptly to Cloud. Raw data
+outside git. No routine review halt or new proof candidate.
+
+### MI501 — Every old-domain root/recipe passes; actual-root inequalities prune the longest branches (2026-10-20 09:55 BST)
+
+**One invocation, fixed old domain, SAME-WORKER interface audit.** Exactly
+602+1057 protected targets,1793 allowed least-slack roots,1975 recipe branches
+all return literal ORIGINAL partitions. Branches:1741 legal direct,219 low
+missing-pivot direct,2 high direct,11 low legal replacements,2 old triple
+repairs.136 full scalar maps (including controls) agree between combinations
+and bitmasks. Original six-cut and interval admissions match completely; physical
+root-reflection maps agree without a false protection symmetry. Both intentional
+bad controls expose an unhandled branch as predicted. Elapsed0.13245169701986015
+seconds on this Intel host, no performance claim. No retries or domain increase.
+
+Raw JSONL SHA256
+ 9f3adcdc29108bed38c3bf462a58e00f4fa04c16bb40745da52c1a9d7dbbaeee;
+source with outcome comment SHA256
+ a30f9f84d943796080211f61559f2ec7a6679ff628d07fec132b7570c55352c0.
+This finite audit does not carry unbounded root/recipe exhaustion or G326's
+status. It closes the precise omission of MI498's ingredient-only checks on
+these SAME small targets, rather than adding a more reassuring census.
+
+**Hand simplification, not extrapolation from unvisited cases.** The longest
+repairs were not reached. Their actual original slacks explain why for ALL
+parameters. G326 step4's high-gap case(i) has selected lower slack1 and pair
+upper slack1; case(ii) has both2 (the missing M-1 lowers the true pair maximum
+by1). Two of the three fixed cores have both3. The remaining core has h2,
+violating either original protection a>=3 or reflected lambda3. Pair-first
+priority/protection exclude all of them before a construction is attempted.
+Step5's exceptional high-repair root has h_A=10 but pair UPPER slack7,
+so it cannot be selected at all. Full algebra is appended to G326, preserving
+all old replacement formulas as valid controls. Only the two uniform low-gap
+legal replacements remain necessary beyond G315's selected-pair construction.
+This removes proof obligations by testing the ROOT selector, rather than
+extending a tree at its leaves. No theorem promotion or new review queue.
+
+**Unexpected check:** the case Q=M-1 requires beta_P(2)=2M-2, not2M-1.
+Literal M8,Q7 has top pair{6,8}, sum14. At candidate pair target12 its slack2
+is tied to selected A's h2; overlooking the deleted top-neighbour would miss
+the priority exclusion. Root priority matters in ORIGINAL actual slacks.
+The selected-size-two construction was also expanded explicitly in the proof
+addendum, covering its formal values z=Q and z=M+Q and their boundary exclusions.
+
+**Parent/dependency/decision.** H2 has a simpler complete candidate; earliest
+unverified dependency is still G326 itself. Independent review remains pending;
+no four-/five-bin result is promoted or added. G325 is independent. Last trajectory
+check MI501: proved parent coverage unchanged; actual root-audit evidence and
+unbounded simplification changed the review packet. Warmth is attached to this
+reduction in obligations, not to longevity of the topic. Next mathematical audit
+is the unbounded first-bin recipe coverage and boundary cases of selected a2,
+using the proved scalar lemmas and the explicit recipe in the addendum, without
+new sampling. Continue useful independent checking while review is pending;
+13min ACTIVE. Niggle sweep: no zero-visit extrapolation, no enlarged domains,
+no switch from actual to protected slack, no confusion of self-check with a read.

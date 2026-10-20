@@ -16458,3 +16458,45 @@ an unknown target. After filing, --near W326 passes with344 entries; nearest
 G319,G315,G317 read in full. G315 is the explicit construction being extended;
 G319 fixes counts over two intervals and G317 has two holes/minimum size4.
 None states H2, and their statuses are not altered by this candidate.
+
+**Dated self-audit simplification, 2026-10-20 09:55 BST (MI501; review pending).**
+The replacements above are valid, but the ACTUAL root rule excludes several
+of their domains. This shortens the carrying proof without adding a premise.
+This is algebra about all parameters, not an inference from zero visits in a
+finite audit. Retain the original formulas as explicit controls.
+
+In step4's high-gap audit at k0, set a=l+1,M=l+c+3. Every potential root
+has h_A=p because Q=l+q0>a. Then:
+
+- Case(i): Q=M-2, pair target2M-2, and actual beta_P(2)=2M-1.
+  The pair upper slack1 equals h_A=1, so pair-first priority excludes A.
+- Case(ii): c3,Q=M-1,p2. The pair target is2M-4, but its actual maximum
+  is2M-2 (NOT2M-1, since M-1 is missing). Its upper slack2 equals h_A=2.
+  Thus the old triple repair with a remaining pair2 is unnecessary here.
+- The three fixed cores have pair target2M-4 and actual maximum2M-1,
+  hence pair upper slack3. Two have p3=h_A and are excluded by priority.
+  The first has c3,Q=M-3,p2. Before reflection it violates h_A>=a;
+  after reflection it violates h_A>=lambda=M-Q=3. So it is also impossible.
+
+Thus ALL remaining step4 high-gap branches are excluded by the original
+root rule/protection; the translated cores are valid but unneeded. The only
+new legal-pivot replacements actually needed are the two uniform LOW-gap rows.
+
+The special step5 high-repair case has a=l+2,Q=M-3,M=l+7 and
+s_A=L(a)+10, so h_A=10. The pair target2l+6 equals2M-8;
+its actual maximum is2M-1, giving UPPER slack7<10. This contradicts
+selection of A. Hence the alternate-low repair there is also unneeded.
+The existing step6 exclusion by a pair upper/lower tie remains essential.
+
+For clarity on the selected-a2 dependency, its recipe is especially explicit.
+Let its requested sum be z. If z<=M and z!=Q, choose {0,z}; if z>=M
+and z-M!=Q, choose {z-M,M}. Only positive distinct legal values are used;
+individual scalar feasibility excludes z=0 or z=2M and the missing-end cases.
+The two exceptional formal values are z=Q and z=M+Q. In the first,
+scalar feasibility excludes Q1/2, and the low repair is {1,Q-1}.
+In the second, it excludes Q=M-1/M-2, and the high repair is
+{Q+1,M-1}. The scalar completion of these two structured remainders is
+exactly G315's already proved argument with BOTH remaining sizes>=3.
+For a legal first pair its only triple exception Q6,z3 is repaired by
+A*={1,2},D*={0,4,5}. Thus no general size-two scalar lemma is hidden in
+that use of G315, and all values/boundary cases in the extension are explicit.

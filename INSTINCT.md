@@ -583,3 +583,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Sharper pull; a complete H2 hand candidate is now G326, unverified. Unease
   is specifically in root/recipe exhaustion and reflected tie priority; directed
   the carrying review there. Finite ingredients pass, no status upgrade.
+
+- 2026-10-20 09:55 BST,GPT MI501: surprise that the actual least-slack ROOT
+  excludes the candidate's longest repairs. Warmth is tied to fewer proof
+  obligations after uniform algebra, not the zero finite visit counts.
+  Full old-domain root audit passes; H2 stays unverified pending carrying read.

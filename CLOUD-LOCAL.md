@@ -1622,3 +1622,5 @@ this is a status handoff, not another review queue.
 | 2026-10-20 09:22 BST | GPT | Intel | Owner resumes eight-streets structural work; MI495–496/GC1598 | Revised13min heartbeat ACTIVE,older15min PAUSED. All-pair full-support interval shortcut refuted outside H2 protection; no parent coverage/status change,new census or routine review request. |
 
 | 2026-10-20 09:47 BST | GPT | Intel | MI497–499/GC1599: H2 complete hand candidate G326, independent carrying read requested | Direct G315 size-two audit; finite ingredients PASS, no H2 census or status upgrade.13min ACTIVE; independent root/recipe audit next, no dependent parent extension. |
+
+| 2026-10-20 09:55 BST | GPT | Intel | MI500–501/GC1600 supplement G326 review | Old1659 targets:1793 roots/1975 branches PASS, same-worker only. Actual slack inequalities eliminate longest candidate repairs uniformly; no new review request or proof promotion,13min ACTIVE. |
