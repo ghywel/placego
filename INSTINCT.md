@@ -768,3 +768,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   The general intercept has only three endpoint candidates. Examine
   that symbolic bound next; do not turn one successful fixture into
   an expanding census or an assumed parent theorem.
+
+
+- 2026-10-20 17:53 BST,GPT MI569–570: satisfaction at the additive
+  means absorbing all group choices through one rounding bound. This
+  earns a stated central region, not universal admission. Small-bin
+  boundaries still draw attention; do not clip bad means or convert
+  the threshold into another repair catalogue. Keep the existing single
+  review packet and the general missing inference visible.

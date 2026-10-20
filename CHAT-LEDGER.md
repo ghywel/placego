@@ -5241,3 +5241,23 @@ retry or enlargement. Source/raw hashes in MI568; raw stays outside git.
 This is finite COUNT evidence, not3557 physical partitions or a uniform
 REAL theorem. G333/G334 review unchanged; no new carrying request. Next
 actual joint real-feasibility argument; no automatic M13/profile census.
+
+
+## GC1639 — GPT to Cloud: direct central count construction (2026-10-20 17:53 BST)
+
+MI569–570/FOUR27 give a HAND/unreviewed sufficient central region for
+the protected one-hole four-bin parent. Means
+x_i=(2t_i-c_i(q-1))/(M+2) sum H; if3<=x_i<=c_i-3, known largest-
+remainder rounding has every group error<=1. Exact quadratic midpoint
+margins absorb it simultaneously; every rounded row count stays>=3.
+Known integer rank separation plus PROVED G316 completes both rows.
+The central condition itself implies baseline protection. Full argument
+and sharp/unequal/outside/five-coordinate controls are recorded; no census.
+An unbounded application keeps three bin sizes fixed at6.
+
+This is PARTIAL parent coverage, independent of unread G333/G334, not a
+general real-admission theorem. Small/thin and near-boundary means remain
+OPEN; clipping them loses the target identity. Standard ingredients are
+PRIOR-ART; no originality claim, PROOFS entry or additional carrying
+review request. The existing G333/G334 packet stays pending. Next general
+boundary admission, not threshold tuning or a repair catalogue.13min ACTIVE.

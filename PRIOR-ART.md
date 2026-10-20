@@ -4384,3 +4384,27 @@ That is ONE point, not the maximum over the189 candidates. It illustrates
 exactly why the common-price relaxation and the discrete question differ.
 The lost-plateau check F(0)=0,F(1)=1,F(2)=100 at budget1 requires b-1=1;
 using only the first and plateau endpoints would miss the optimum.
+
+### Largest-remainder count rounding (2026-10-20; MI569–570)
+
+Known rounding ingredient, specialized here; no originality claim.
+Read [Cont–Heidari, Optimal rounding under integer constraints, v1](https://arxiv.org/html/1501.00014v1),
+section3's procedure through its largest-remainder comparison. Floor each
+coordinate, then raise the required number with largest fractional parts.
+No general objective-function proposition or complexity result is needed.
+The four-coordinate discrepancy bound below is rederived directly.
+The dependent-rounding primary paper was located/opened as background;
+its randomization/correlation theorems are NOT used or claimed read.
+Fujishige's integer separation statement, nips2 PDF page22, was re-read
+for the physical composition already recorded at MI448; no broader
+intersection theorem is substituted.
+
+Let four real x_i have integer sum H, fractional parts a_i, and s=sum a_i
+in{0,1,2,3}. Round up the s largest fractions. The total positive error
+is E=s-sum_(largest s)a_i<=s-s^2/4<=1 (s0 gives E0). Since total error
+is zero, EVERY subset error has absolute value<=E<=1. Coordinates remain
+in their individual floor/ceiling pairs. Ties do not affect this bound.
+Four half-integers attain E1; five fractions2/5 instead give E6/5, so
+there is no automatic five-variable version with the same constant.
+This is a standard rounding consequence, not a new proof-table entry.
+The new punctured-pool APPLICATION and its unreviewed scope are in FOUR27.

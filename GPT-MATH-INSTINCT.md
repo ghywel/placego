@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 17:35 BST: minimal REAL-admission diagnostic passes; general inference OPEN, G334 review pending.**
+**CURRENT working state, 2026-10-20 17:53 BST: central-region hand construction; general boundary OPEN, G333/G334 review pending.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -226,8 +226,16 @@ Source/raw hashes and scope below. No cap/retry/extension; finite COUNT
 evidence only, not physical partitions or carrying review. No automatic
 M13/profile census. Next actual joint REAL-admission reasoning; the
 189-form ceiling expansion stays parked.
-Zero-peeling stays parked. This global reduction changes the integer
-selection obstruction, not parent partition coverage. Last trajectory
+MI569–570 now give a separate HAND/unreviewed central-region construction:
+additive means x_i=(2t_i-c_i(q-1))/(M+2) with3<=x_i<=c_i-3
+round to all-group admissible counts, each side>=3. Known integer rank
+splitting plus PROVED G316 supplies physical completion. FOUR27 has
+the full argument, standard ingredients/source scopes in PRIOR-ART.
+This adds a uniform PARTIAL parent region, including three fixed size6
+bins; it does not solve small/thin or near-boundary targets. No unread
+G333/G334 premise, new PROOFS entry or additional review request. Means
+outside the region must NOT be clipped. Next general boundary admission,
+not optimizing3 or growing exceptions. Zero-peeling stays parked. Last trajectory
 MI56517:22 BST; no extra allowance. General q/five-bin/every-n and old
 held lanes unchanged.13min ACTIVE.
 
@@ -39192,3 +39200,84 @@ its finite quantifier is explicit. Niggles checked: all11 holes, every
 proper group, actual scalar oracle, independent count sets, honest gap
 control, no physical-partition inference. Last trajectory MI56517:22 BST;
 13min ACTIVE, no extra allowance.
+
+### MI569 — Direct mean-count construction, bounded hand test (2026-10-20 17:49 BST)
+
+No new Cloud flag/review or remote commit this wake. G333/G334 retain
+one pending carrying packet; no larger diagnostic is opened. Parent:
+baseline-protected min3 four-bin one-hole partition. Chosen subquestion:
+can we give an EXPLICIT joint selector on a uniform central region,
+independent of unread rounding candidates? This is deliberately partial
+parent coverage, not a replacement of its boundary question.
+
+Define x_i=(2t_i-c_i(q-1))/(M+2). These additive mean high counts sum
+H exactly. Prediction: if3<=x_i<=c_i-3 for all FOUR bins, largest-
+remainder rounding gives integer k of total H, and every proper group
+satisfies its exact low/high moment bounds. The threshold3 is chosen
+to feed the verified full-interval row theorem, not claimed sharp.
+Can-fail counterfactual: a group rounding error exceeding1, an incorrect
+midpoint/margin identity, or a missing integer rank-splitting hypothesis
+kills the claimed construction. No claim about means outside this region.
+
+Record searched: midpoint/mean.*count/balanced.*round/strong.slack and
+mean.*round/positive.*floor/rank.split gave no direct indexed hit; actual
+MI313–314 and MI448 read. MI313 is an asymptotic strong-slack adaptation,
+not this finite count selector. Primary source Cont–Heidari1501.00014v1,
+section3 procedure, read; largest-remainder rounding is KNOWN. Fujishige's
+primary slides' integer separation theorem re-read on PDF page22; G316
+and MI448's all-thick composition retain their verified scope. Exact
+source/read limits and the short rounding proof go to PRIOR-ART.
+
+Before arithmetic self-checks: use c7^4,M28,q14,t98^4, whose four half
+means test SHARP subset rounding discrepancy1; use M34,q16,counts7/8/9/10,
+targets116/141/149/173 for unequal means and noncentral row proportions.
+Check all14 group bounds with exact fractions and target conservation.
+Outside-region guard: old protected positive6/21/21/24 at M12,q6 has
+negative first mean, so do NOT clip or pretend the rule is universal.
+Unexpected check: FIVE equal fractional remainders2/5 yield subset error
+6/5 under the same rule. Thus the four-coordinate discrepancy bound
+cannot be transferred to five bins. No probe, sample, census or parameter
+sweep; literal arithmetic supports the hand argument, not its quantifier.
+
+
+### MI570 — Central-region selector and physical composition, HAND (2026-10-20 17:53 BST)
+
+The bounded hand test resolves its stated central subquestion. FOUR27
+contains the full argument: additive mean counts sum H; known largest-
+remainder rounding in FOUR coordinates has all-subset discrepancy<=1.
+If every mean high and low count is>=3, exact quadratic midpoint margins
+absorb that error for ALL fourteen groups at once. The rounded counts
+keep>=3 tokens in every bin on each side. Known integer rank separation
+and PROVED G316 then realize both rows. No unread G333/G334 step is used.
+Central protection follows algebraically; it was not silently assumed.
+Status HAND/unreviewed specialization, novelty unassessed. Standard
+rounding and separation remain PRIOR-ART, not new proof-table entries.
+
+Both preregistered rational fixtures PASS conservation, all group cuts,
+midpoint/margin identities and count legality. M28/q14/c7^4/t98^4 attains
+subset error1; unequal M34/q16 has means127/36,9/2,163/36,49/9,
+counts4/4/5/5 and maximum subset error17/18. These are same-worker exact
+arithmetic controls, not a numerical experiment or independent review.
+The outside-region positive has first mean-3/14, and five fractional
+remainders2/5 give error6/5: both scope guards PASS. No clipping or
+automatic five-bin discrepancy transfer. The completed3557-case minimal
+count diagnostic does not test this new region (its bin sizes are3).
+
+Actual coverage: one uniform central parent region, with unbounded
+family(6,6,6,2n-18),n>=12,12<=q<=2n-12, targets3(n+q) three times
+and2n^2-8n-10q. The general min3 protected partition theorem remains
+OPEN; no sharp threshold, boundary classification or Frankl transfer.
+Earliest outstanding substantial review is G333/G334 as ONE packet;
+this independent application adds no review request or conditional chain.
+Next return to general joint admission outside the central condition,
+not another threshold optimization or local exception catalogue.
+
+Gut: satisfaction at a direct construction replacing the separate
+crossing inequalities on its actual domain; the small-bin boundary still
+has a real pull. Reasoned: partial coverage is explicit, the parent has
+not been solved. Niggle sweep: check f/g monotonicity on REAL legal counts;
+check the SHARP discrepancy1 rather than coordinatewise error<1; keep
+integer separation's total/rank hypotheses; require all row counts>=3;
+retain failed clipping and five-coordinate guards. Each passes its stated
+cheap check. No new census or status promotion. Last trajectory MI565
+17:22 BST,13min ACTIVE, no extra allowance.

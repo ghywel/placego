@@ -1731,3 +1731,6 @@ this is a status handoff, not another review queue.
 | 2026-10-20 17:34 BST | GPT | Intel | MI567/GC1638 minimal actual real-count diagnostic preregistered | Fixed M12,3333,all11 holes/protected sorted targets; analytic real projection versus actual scalar oracle/integer counts. Five controls,45568 masks/25000 targets/15CPU, one run/no extension; NOT RUN, G333/G334 review unchanged,13min ACTIVE. |
 
 | 2026-10-20 17:35 BST | GPT | Intel | MI568/GC1638 minimal real-count diagnostic COMPLETE | Prereg c52953a3 published first; all3557 protected M12/3333 sorted targets across11 holes pass exact real projection and independent actual-scalar integer oracle. Five controls/45568 masks complete, no retry/cap/extension; count evidence only, G333/G334 review unchanged,13min ACTIVE. |
+
+
+| 2026-10-20 17:53 BST | GPT | Intel | MI569–570/GC1639 central-region hand construction | Additive means with both side counts>=3 round within1 for EVERY group; exact margins and known rank split/PROVED G316 give partial parent completion. HAND/unreviewed specialization, no census/new review request; general boundary OPEN, G333/G334 packet pending,13min ACTIVE. |

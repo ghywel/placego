@@ -2399,3 +2399,108 @@ pinned pair intervals really DO occur; universal positive width remains
 false. The genuine size2 half-integral negative is retained. No census,
 new real-admission theorem, five-bin result or blanket physical completion.
 G333/G334 are one pending review packet; no status is promoted here.
+
+## 27. An explicit central-region selector by mean counts (MI569–570)
+
+**HAND construction, unreviewed specialization of standard ingredients.**
+Not a general protected one-hole theorem, not a G333/G334 consequence,
+and no originality claim. It uses known largest-remainder rounding and
+integer rank splitting, followed by PROVED G316. No additional carrying
+review job or PROOFS entry is opened while G333/G334 is pending.
+
+Let four integer sizes c_i total M and integer targets t_i total
+S=T_M-q, with internal hole q and H=M-q. Suppose
+
+    x_i=(2t_i-c_i(q-1))/(M+2),
+    3<=x_i<=c_i-3 for every i.                         (central)
+
+In particular c_i>=6 and H,q>=12. Then there is an explicit integer
+high-count selector with all per-side counts>=3 satisfying EVERY group
+moment bound. The known all-thick row composition consequently supplies
+a physical partition. The central condition itself implies the original
+baseline group protection, as checked below. Its boundary complement
+remains OPEN; no sharpness of3 or universal selector is asserted.
+
+**1. Additive means and controlled rounding.** Conservation gives
+sum x_i=H. Floor all four x_i and round up the required number with
+largest fractional parts. By the elementary argument in PRIOR-ART,
+sum k_i=H, each k_i is floor/ceiling x_i, and
+
+    |k(J)-x(J)|<=1 for EVERY subset J.
+
+Moreover k_i>=3 and l_i=c_i-k_i>=3. This deterministic rounding is
+known; no independence or random sampling is involved.
+
+**2. One uniform margin protects all group choices.** For a proper
+nonempty group set c=C_J, r=x(J), l=c-r, h=H-r, d=q-l. All four
+are real numbers at least3. With L(a)=a(a-1)/2, the extrema are
+
+    f_c(r)=L(c)+(q+1-c)r+r^2,
+    g_c(r)=c(q-1)-L(c)+(H+c+1)r-r^2.
+
+These quadratics extend to real r and satisfy
+
+    mu_c(r)=(f_c(r)+g_c(r))/2
+           =c(q-1)/2+r(M+2)/2=t_J,
+    g_c(r)-f_c(r)=rh+ld.
+
+Both f and g increase on their real legal-count interval. Also r+1
+and r-1 remain legal. Direct subtraction gives
+
+    2[mu_c(r)-f_c(r+1)]
+        =r(h-2)+(l-2)d-4>=2,
+    2[g_c(r-1)-mu_c(r)]
+        =(r-2)h+l(d-2)-4>=2.
+
+Since k(J) lies between r-1 and r+1, monotonicity yields
+
+    f_c(k(J))+1<=t_J<=g_c(k(J))-1.
+
+Thus all fourteen rounded group bounds hold SIMULTANEOUSLY, including
+integer-mean groups whose rounded subset total may differ by exactly1.
+No canonical pair, independent fibre gluing or raw submodularity is
+assumed. The same means also show baseline protection:
+
+    mu_c(r)-T_c=rd+rh/2+l(d-2)/2>=0.
+
+Complements give the corresponding upper bound.
+
+**3. Use only carried physical-row tools.** Normalize the high row by
+subtracting q+1 from each of its tokens and put v_i=t_i-(q+1)k_i.
+Then sum v=L(q)+L(H). For a count a in a row of length n write
+U_n(a)=a(n-1)-L(a). On bin groups set
+
+    F(J)=U_q(l_J),    G(J)=v_J-U_H(k_J).
+
+F is integer submodular, G integer supermodular; the proved combined
+upper group bounds give F>=G, and F(E)=G(E)=L(q). The KNOWN integer
+discrete separation theorem supplies an integer modular s with G<=s<=F.
+Its total is L(q); v-s has total L(H). Complements give both rows'
+lower cuts as well. Each row's four counts are>=3, so PROVED G316
+realizes each normalized integer row target vector. Restore the high
+translation and unite the two disjoint pools in every bin. This is
+MI448's existing all-thick composition, with the central count choice
+now explicit; it uses no unread one-hole partition theorem.
+
+**Controls and scope.** M28,q14,c7^4,t98^4 has x=(7/2)^4; choosing
+k=(4,4,3,3) attains pair rounding error1, so replacing the group error
+bound by a strict inequality would be wrong. M34,q16,c7/8/9/10,
+t116/141/149/173 has x=(127,162,163,196)/36 and rounded k4/4/5/5;
+all fourteen exact moment bounds are checked by rational arithmetic.
+These are hand controls, not a new census or independently read proof.
+
+An unbounded small-bin family inside the criterion is M=2n,n>=12,
+counts(6,6,6,2n-18), and12<=q<=2n-12. The first three targets are
+3(n+q), and the fourth is2n^2-8n-10q. Their mean high counts are
+3/3/3/(H-9), and low counts3/3/3/(q-9). This keeps three bin sizes
+FIXED, unlike an asymptotic hypothesis requiring quadratic margins in
+every singleton. It is an application of this same construction, not
+another repair lemma or a novelty claim.
+
+The old protected M12,q6,c3333,t6/21/21/24 has x_1=-3/14, despite its
+literal partition. The central criterion deliberately does not cover it;
+clipping that mean would destroy the exact target/midpoint relation.
+The completed M12 diagnostic therefore is not evidence for this theorem's
+new region. Five-coordinate rounding can have subset error6/5, so no
+five-bin transfer of this argument is assumed. Full protected real
+admission, small/thin boundaries and the general parent remain OPEN.

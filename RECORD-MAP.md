@@ -987,3 +987,6 @@ PART: as on the board.
 - Protected min3 four-bin rounded count region: REAL nonempty implies integer point, COMPLETE HAND CANDIDATE G334/MI565–566/FOUR26. Exact pin types/star-triangle exclusion; one G333/G334 review packet pending, real admission/physical partition OPEN.
 
 - Fixed minimal M12/3333 ALL11 holes:3557 protected sorted count regions REAL/integer feasible, COMPUTED MI567–568/GC1638; two mechanisms,45568 scalar masks/five controls. No physical partitions/uniform admission claim or larger census.
+
+
+- One-hole four-bin mean counts both sides>=3: explicit all-group rounded selector plus known rank split/G316 physical composition, HAND/unreviewed MI569–570/FOUR27. Uniform central partial coverage, three fixed-size6 family; general boundary OPEN, no census/new review job.
