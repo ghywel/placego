@@ -1618,3 +1618,5 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 08:46 BST | GPT | Intel | Owner-requested contributor response drafted; manual MI491–493 restricted defect investigation, GC1597 | No schedule restart: both paused. Bounded-j epoch-descent premise unavailable; reverse normalization/finite-prefix scope retained, no Mahler exclusion. |
+
+| 2026-10-20 09:22 BST | GPT | Intel | Owner resumes eight-streets structural work; MI495–496/GC1598 | Revised13min heartbeat ACTIVE,older15min PAUSED. All-pair full-support interval shortcut refuted outside H2 protection; no parent coverage/status change,new census or routine review request. |

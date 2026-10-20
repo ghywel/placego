@@ -124,13 +124,37 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-20 08:46 BST: owner-requested manual Mahler investigation.**
-The contributor response is reports/response-to-joshua-mahler.md. MI491–493 test
-the restricted defect process: sparse epoch descent does not admit bounded
-waiting times; reverse normalization retains an initial mod19 seed condition.
-No new integer exclusion. The next useful step needs control of one fixed
-seed's residue stabilization, not more CRT depth. Both schedules remain PAUSED;
-no automatic wake or background job. Older held lanes are not reopened generally.
+**CURRENT working state, 2026-10-20 09:18 BST: eight-streets structural research resumed by the owner.**
+The existing 13-minute research heartbeat is ACTIVE with a revised, context-bearing
+prompt; the older 15-minute schedule stays PAUSED. There is no separate flag poller.
+L8=68 is complete as G325. The present parent is structural partition sufficiency;
+H2 is the first concrete question, not a premise needed by the completed L8 result.
+On P=[0,M] minus internal q, partition into counts (2,b,c), b,c>=3, with conserved
+targets and every proper group J having target >= C_J(C_J+1)/2. MI456 gives the
+exact protected target interval and a rank-feasible pair; MI458/460 give the
+all-choice formulation. The missing step is coverage by the UNION of the remaining
+b-subset spectra over every legal sum-u pair. Canonical pair choice and strict
+two-token escape have failed; MI460's central slice stays unreviewed, not a premise.
+MI495–496's first-gap test REFUTES a stronger interval-support shortcut after18
+domains: M8,q2,u8 misses6 inside its all-pair support hull, while H2 requires v>=7.
+Do not repeat this test or patch its fixture. H2 is unchanged. Next bounded hand
+question: in the first-unhit-pair positive coefficient expansion of MI496, can the
+proper-group inequalities force a nonzero term? Start by tracking BOTH singleton
+and pair-plus-bin inequalities; scalar convex-hull membership alone is insufficient.
+If this is merely the original inference in new notation, say so and change the
+representation at that level rather than commission another census.
+Last trajectory check: MI496,2026-10-20 09:22 BST. No new coverage of the parent;
+one post-resumption failure of the stronger interval assumption. Earlier selector
+and strict-descent failures remain guards. No unread theorem is a premise.
+
+The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
+while concrete questions remain. Carry demonstrated methodological lessons toward
+Frankl, then the older problems; a mathematical transfer requires an explicit bridge.
+Fresh warmth is not evidence and does not reset repeated-assumption/90-minute checks.
+Avoid local repairs that leave the parent unchanged; ask whether all choices can fail
+together. Research may continue without routine review permission, or pause for a
+named uncertainty with reopening evidence. Preserve old held lanes. The contributor
+report and MI491–493 remain in the record; no automatic Mahler campaign is resumed.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -35400,3 +35424,120 @@ standard axioms. This closes MI490's newer-version replay limitation under
 the project certificate rule. It does not supply a fresh numerical check or
 verify GPT's MI492–493 hand arguments. Updated the report's verification
 paragraph; no source theorem or mathematical conclusion changes.
+
+### MI495 — Owner resumes eight-streets; test the whole spectrum before selecting a pair (2026-10-20 09:18 BST)
+
+**Pull before explanation:** the distinction between a failed choice and failed
+existence draws me back. Unease: naming global choice again could conceal the
+same unsolved inference. The owner explicitly chooses continued eight-streets
+work and reactivation of its heartbeat; that reopens incubation, not a failed
+strict-descent mechanism. Saved schedule updated/read back ACTIVE every13 minutes;
+older schedule PAUSED. Cloud CL465/6ea0d487 and formatting1643b886 were merged and
+read; external-site work preserved. Startup controls already passed at MI490.
+
+**Parent and one discriminating question.** H2 would complete the protected
+one-size-two residual in MI453, without promoting five-bin sufficiency. With
+P=[0,M] minus q and fixed pair target u, put
+
+    U_b(P,u) = union over A subset P, |A|=2, sum A=u of Sigma_b(P minus A).
+
+MI456's rank argument supplies a legal pair whose min/max enclose the H2 target.
+Thus the stronger statement that U_b itself has NO internal gaps would imply H2.
+This tests the entire union, not one canonical selector or descent graph. We have
+not established this stronger statement, even in all the old finite domains.
+No dependence on MI460 or the unread G320–322/MI430 chain is introduced.
+
+Record searched: H2|MI456 AND global|spectrum|interval ->77 paragraphs in26 files;
+read MI453/456/458/460–466 and the existing strict-escape probe. Broad first search
+was noisy (809 hits), then narrowed. Primary arXiv searches for prescribed-sum
+partitions with a deletion, and fixed-cardinality subset sums with holes, returned
+no applicable result; the unrelated Gilbreath abstract is not imported. Existing
+G315/G318 scalar scopes remain as read, with no stronger localization assumed.
+
+**Predictions before the run.** One invocation on EXACTLY the old counts233 and234,
+all internal q, u=3..2M-1-q. Blind prediction: nonempty U_b is every integer between
+its actual minimum and maximum. This is stronger than the protected H2 assertion.
+Stop on the first internal gap, retaining its complete all-pair spectra and whether
+it lies inside H2; no patch, larger domain or retry. A pass supports this finite
+shape only and leads to a hand global-support argument, not another size increase.
+Inconclusive/cap -> inspect the representation, not renew a run. Caps20 seconds and
+500 pool/u domains; raw output outside git.
+
+Independent controls: complete coefficients from direct B enumeration must equal
+F-H, where F=product_x(1+t*z^x) and H=product_edges(t*z^a+t*z^b+t^2*z^u)
+ times product_unmatched(1+t*z^x). H counts exactly subsets hitting every legal
+pair. Separately form U_b by enumerating subsets after each possible pair deletion.
+All coefficients nonnegative. Positive old q3,M8,u8 includes target7 even though
+closest pair26 misses it. Can-fail counterfactual: M8,q5,u1 has the sole pair01;
+its triple spectrum misses10 inside9..21. This is outside the admitted u range.
+Unexpected check: reflect physical pools/pairs and the ENTIRE coefficient vector,
+without asserting protected-domain reflection; deleting a midpoint removes no pair.
+A subset avoiding two pairs is counted once in F-H, unlike pair-incidence counting.
+No general theorem, novelty claim or carrying-review request is made here.
+
+### MI496 — The whole union can have gaps: protection must carry the argument (2026-10-20 09:22 BST)
+
+**COMPUTED first-negative result, literal hand check, no H2 refutation.**
+MI495 ran once. All controls passed: independent complete F-H coefficient maps,
+per-pair subset enumerations, physical reflection, midpoint and multiplicity checks.
+At the18th pool/u domain it stopped on counts233,M8,q2,u8. The complete supports
+for B, listed by the reserved pair, were:
+
+    08: [8,18]; 17: [7,19]; 35: {5} union[7,19] union{21}.
+    Whole union: {5} union[7,19] union{21}.
+
+Here [a,b] means all integer sums in that interval. Thus6 (also20) is an internal
+gap after considering EVERY legal pair, not a canonical-choice failure. Direct
+hand check of6: the only triple in P of sum6 is015. It touches08,17,35, so cannot
+leave a reserved pair. Sum5 has B014 with reserved35; sum7 has B034 with reserved17.
+This proves the displayed first gap independently of the program. Complete
+per-pair spectra were printed before stopping; the rest of counts233/234 was
+NOT traversed or passed. No retry or larger domain.
+
+Crucially target(8,6,20) violates the pair-plus-B inequality:8+6=14<15 for
+combined count5. Its singleton bound6>=6 holds, so the union cuts contribute real
+information. At the admitted endpoint target(8,7,19), the known literal partition
+is A17,B034,C568. This is MI460's old small fixture, not a new theorem or fresh
+counterexample to H2. My preregistered prediction was stronger than the old claim
+and fails; the protected interval[7,19] survives here. It would be a mistake to
+report this as new H2 coverage or repair the excluded sum6.
+
+Elapsed0.013039325014688075 seconds on this Intel-host invocation; no performance
+claim. The non-H2 u1 countercontrol had min9,max21 and missing10. At q1,M8,u8,
+size3,target11 the distinct-good-B coefficient is4 while reserved-pair incidence
+is5, so those counts cannot be interchanged. Source SHA256
+ 595d87085db45c8d7bec99e42e5073aead37497e1bf29f7044f8fa13d3e056f5;
+private raw JSONL SHA256
+ 44fa70765b719d832bfb12678778cb510e88446fae669341ef75df459cc13988.
+Raw data stay outside git. This is a same-worker audit, not independent review.
+
+**Positive coefficient representation, a reformulation only.** For legal matching
+edges A_i={a_i,b_i}, sum u, define P_i=1+t(z^a_i+z^b_i)+t^2*z^u and H_i=P_i-1.
+Let R=product over unmatched x of(1+t*z^x). The polynomial of DISTINCT subsets
+leaving some legal pair unhit is
+
+    G = R * (product_i P_i - product_i H_i)
+      = R * sum_j (product_(i<j) H_i) * (product_(i>j) P_i).
+
+The j term chooses the FIRST untouched pair: earlier pairs must be hit, pair j
+is empty, later pairs are arbitrary. All factors have nonnegative coefficients.
+The elementary telescoping identity also shows why this counts each good B once,
+whereas summing the unconditioned pair-deletion products counts some B repeatedly.
+The coefficient[t^b*z^v] is positive exactly when the H2 target partitions.
+This is an exact encoding, NOT a positivity proof; the failed fixture shows that
+convex-hull membership of U_b does not supply the coefficient. No external theorem,
+new PROOFS entry or review request.
+
+**Trajectory decision / niggle sweep.** Parent unchanged; global interval shortcut
+refuted; dependency risk none beyond definitions, existing MI456 rank result not
+used to establish a new claim. This is one failure of this stronger assumption
+since resumption, not a reset of the earlier history of selector rigidity. Retire
+the interval shortcut. Next bounded HAND question is to trace how the singleton
+and pair-plus-bin margins constrain a first-unhit-pair term; another coefficient
+census would not answer that. If it only restates H2, explicitly choose another
+representation instead of claiming movement. Keep the13-minute heartbeat active
+at the owner's direction, with no automatic domain expansion or local exception
+catalogue. Gut: disappointment at the lost shortcut, interest in the sharp role
+of the cut that excludes6, and uncertainty about a uniform mechanism. Reasoned:
+a useful rejected strategy; no increased confidence or status for H2, five-bin,
+Frankl or an older prize problem. No routine review halt or new dependent chain.

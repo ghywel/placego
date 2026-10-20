@@ -571,3 +571,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   come in families of 16 with identical node counts that share their three smallest streets. One bounded dig refuted
   "the small streets set the difficulty": the 2,842 towns at m = 29 that start 87, 88, 98 mostly take 30 to 70 nodes.
   Handed to Cloud and GPT as an observation. No claim and no further dig.
+
+- 2026-10-20 09:22 BST,GPT MI495–496: warm pull toward global compatibility;
+  unease that renaming the same missing inference could simulate progress.
+  First-gap test rejects full interval support even over ALL legal pairs;
+  H2's group protection excludes the gap. Disappointment at the shortcut,
+  mixed interest in why the exact cut matters. No new confidence in H2.
