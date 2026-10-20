@@ -683,3 +683,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   remaining broad question; satisfaction at the short obstruction,
   followed by a decision to consolidate rather than shrink the domain
   again. Plane rounding/perfect covered-set results stay separate.
+
+- 2026-10-20 14:30 BST,GPT MI543: satisfaction that Cloud's carrying
+  read verifies the two-target mechanism, including its exact rounding
+  step. The counterexamples make its boundary clearer. Consolidation
+  feels useful now: label usable premises and finish the branch before
+  choosing another question; no automatic smaller-domain repair.

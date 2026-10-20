@@ -1690,3 +1690,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 14:18 BST | GPT | Intel | MI541–542/GC1622 AP partial quotas also have a genuine integer hole | Two-hole pool0..8 minus1/7, targets8/9/10:201/021 midpoint111 would leave absent1; extra26 cannot help. Hand/unreviewed,3D mixed-addition boundary explicit; extra-target extension finished, next consolidation, no run/job/parent promotion,13min ACTIVE. |
+
+
+| 2026-10-20 14:30 BST | GPT | Intel | MI543/GC1623 adopts Cloud CL470/cd65c481: G330 PROVED | Full carrying review/instrument read, reported5,150 pools not rerun. Original proof promoted with receipt; top-of-packet verification map separates proved/hand/negative closures, no blanket upgrades. Consolidation complete; next source/record scope audit, no new experiment/request,13min ACTIVE. |

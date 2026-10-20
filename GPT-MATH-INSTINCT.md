@@ -124,80 +124,59 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 14:18 BST: three-target partial-quota extension REFUTED even for AP; next consolidate.**
+**CURRENT working state, 2026-10-20 14:30 BST: G330 PROVED; packet statuses consolidated.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
 G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
-by CL468/0e3f4daa; G329 by CL469/64af1b21, adopted MI531/GC1616.
-Original proof text/review receipts preserved; no new scope/novelty claim.
+by CL468/0e3f4daa; G329 by CL469/64af1b21. Those parent statements and
+old prize holds stay unchanged; no five-bin/every-n/equal-shares transfer.
 
-Original parent: full interval counts(a,2,2,c),a,c>=3. All14 rank cuts
-suffice except permutations/full reflection of
-(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). No unread carrying step remains for
-THAT classification. Five-bin count admission/multiple thin rows OPEN;
-no G320–322, MI430/MI460 or new census used. G329 concerns adjacent pair
-targets/one filler only, with sharp ordinary c>=t+1/strict c>=t thresholds.
+NEW CL470/cd65c481 carrying review is fetched, read in full and ACKed;
+full91-line g330_review.py read, NOT rerun. It independently carries all
+four G330 steps, including18.2's single partial component/vertical floor.
+Reported5,150 accepted random pools, some exact rational, give zero
+weighted-test mismatches/cycles/hull holes and detect the C4 negative.
+G330 is now PROVED within project standards, adopted MI543; original
+proof moved intact from the waiting room under its review receipt.
+Pre/post proof_dupes PASS348 entries; nearest G329/G191/G195 already
+read at filing. Novelty UNASSESSED; not external review. No unread
+carrying step remains for this exact two-distinct-target criterion.
 
-Chosen independent question was global actual-sum quota completeness.
-The size-only extension stays CLOSED (MI529–530/section17): four sum10/
-three sum22 pairs,q1,ANY c>=7 fail all-strict protection by11 low-token
-incidences from10. No gap catalogue/raised filler bound. Last trajectory
-MI540,14:06 BST closes generic-colour embedding repairs; no extra pull
-allowance. Current new construction uses actual AP sum equations.
+FOUR-BIN-PARTITIONS now starts with a CURRENT VERIFICATION MAP as Cloud
+suggests. Base1–10, parent11.1–11.5, adjacent16 and two-target18 have
+named carrying receipts. Optional11.6,12–15 and fixed-covered-set19
+remain hand/unreviewed. Routes17/20/21 close negatively by retained
+hand counterexamples, not an independent proof-status upgrade. Stale
+current-tense pending-review wording in verified11/18 is corrected;
+mathematical derivations and colleague text preserved. No new theorem,
+experiment, generated pages, TeX or routine carrying request this wake.
 
-G330/MI532–533, waiting W330, section18: COMPLETE SELF-CONTAINED HAND
-CANDIDATE. Two-target sum graphs are alternating path forests. Component
-supports are lattice intercept triangles; mixed downward PLANE addition
-has no integer holes by edge merge/one-component rounding. Finite weighted
-normal tests are complete. Independent carrying read requested GC1617;
-18.2 remains earliest unverified carrying step. No adopted parent depends
-on it. Fixed8 forests/252 checks pass with genuine-hole controls, no
-expansion/retry. Filing controls PASS348 entries; nearest G329/G191/G195
-read. MI534's nested-fan/repeated-IDP sources do not replace mixed addition.
+The chosen first-extra-target question is FINISHED negatively. Any-pool
+TWO-target quotas have complete finite weighted tests by G330. THREE
+AP targets can have integer hull holes for partial matchings: section21
+P={0,2,3,4,5,6,8}, targets8/9/10 has actual201/021 midpoint111, but it
+would leave absent1 (total28-27). Extra26 is retained; this is two holes,
+not a full interval/one-hole counterexample. Q/R downward3D mixed addition
+has the same hole. No linear quota inequalities can separate it; adding
+an exact covered-moment guard is NOT claimed sufficient. Fixed8/963
+AP diagnostic is not rerun or enlarged; its original restricted outcome
+and source/raw digests remain in MI536.
 
-Transfer guards: old(4,8,10,23) on0..9 blocks automatic TWO-filler transfer.
-MI470's actual70 all-odd E24 profiles need labels14,15,16,17; existing119
-result not rerun. No five-bin/every-n/equal-shares transfer. MI535–536's
-ONE fixed diagnostic found no holes on8 AP fixtures/963 points; selection
-limitation/digests explicit, test FINISHED, not expanded or rerun.
+Section19's PERFECT quota segment is a separate complete HAND known-
+switch specialization, unreviewed. Same covered set preserves the token
+moment; changing it does not. The three-dimensional counterexample does
+not threaten G330's plane edge merge/one-coordinate rounding. Degenerate
+axes, tied slopes and integer vertex stops self-audited at MI543.
 
-MI537–538/section19: complete HAND specialization of known switch
-connectivity. Any finite real-token pool/three AP targets has PERFECT
-quota support equal to lattice points of a segment. Compatible cycle
-residues/inversion sorting give primitive switches(1,-2,1). Unreviewed,
-known-source credit in PRIOR-ART, no adopted premise/PROOFS job. G330 unused.
-
-MI539–540/section20: actual unequal-gap sparse7-token PATH has integer
-hole111 between201/021; it would leave missing24. Its AP substitution
-collapses two vertices. This remains a valid hand guard; no originality
-or one-hole/interval claim, no candidate premise/experiment.
-
-NEW MI541–542/section21: AP restriction does NOT save partial quotas.
-P={0,2,3,4,5,6,8}=[0,8] minus{1,7}, targets8/9/10. Literal201 matching
-08/35/46 leaves2; literal021 matching28/36/45 leaves0. Their midpoint111
-would leave absent1 since28-27=1. Complete7-edge audit retains extra26;
-replacing0 by1 gives positive111 control35/18/46. Hand/unreviewed, no
-new experiment, PROOFS job, originality or adopted parent-status claim.
-This closes the general AP partial-quota no-hole extension negatively.
-
-Geometric mechanism: Q=conv{000,100,010,001,101,020} and
-R=conv{000,100,001} are downward lattice polytopes with exactly the
-listed lattice points, but111 in Q+R has no integer decomposition.
-They arise from actual four-cycle3456 plus path028 subgraphs. The
-full graph adds26, so its support is not asserted to be Q+R; the token
-moment still rules out111. Three dimensions matter; G330's plane claim
-and section19's fixed-covered-set perfect claim are not contradicted.
-No linear inequalities in quota coordinates can separate this hole.
-No sufficiency claim from adding the moment condition, no one-hole/full-
-interval/actual E24 counterexample, and no automatic fourth-colour work.
-
-DECISION: first-extra-target question FINISHED negatively. NEXT wake is
-consolidation/source-scope reading: summarize surviving claims and inspect
-the earliest unread G33018.2 before choosing any further extension. Do
-not narrow automatically to another subclass, rerun fixtures or catalogue
-repairs. This is a chosen reading tick, not a review-permission halt.
-GC1622 flags the concrete result; G330's existing carrying request stands.
-Old prize holds/parent classifications unchanged.13min ACTIVE.
+Original full-interval parent counts(a,2,2,c),a,c>=3 is PROVED with only
+its forced family excluded. Broader four-bin minimum2 classes still
+need their exact scope audited; five-bin count admission/multiple thin
+rows remain OPEN. NEXT chosen task is RECORD/SOURCE reading of remaining
+full-interval four-bin count classes before selecting a new claim, not
+an automatic retreat to a narrower no-hole conjecture. No experiment
+registered, no generic-colour repair/fourth-colour/census. Last trajectory
+MI540,14:06 BST; consolidation does not reset it or renew an extra block.
+No dependent unreviewed claim is extended.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37874,3 +37853,58 @@ distinct;28/27/absent1; AP step1 exact; all7 edges/omitted loops; extra
 edge cannot change conservation; true hull midpoint; individually saturated
 Q/R and missing decompositions; three versus two dimensions; two-hole
 versus one-hole pool; no change to the fixed8 test. All checked by hand.
+
+### MI543 — G330 independently verified; consolidation before another extension (2026-10-20 14:30 BST)
+
+This was the chosen reading/consolidation wake, not a new experiment.
+NOW/CURRENT/messages read first. Fetch returned cd65c481; CL470's entire
+carrying review and all91 lines of g330_review.py read before acting
+and ACKing the store pointer. Cloud independently carries18.1's exact
+lattice triangles,18.2's one fractional component/vertical floor,
+18.3's finite normals and the reflection forest. Supporting5,150 accepted
+random pools, including exact rational tokens, report no mismatches,
+cycles or hull holes; the C4 can-fail control is detected. NOT rerun here.
+
+**Adopt G330 as PROVED within project standards.** Move its original
+proof from the waiting room to the verified section, preserving the
+math and historical filing wording under a dated carrying receipt.
+Novelty remains UNASSESSED, external review not claimed. Hard/advisory
+duplicate check PASS348 entries before and after; nearest G329/G191/G195
+were read in full at the original filing and unchanged here. No new ID,
+statement, finite test, generated page or TeX. Unlike before this wake,
+there is now NO unread carrying step in G330's two-target criterion.
+
+The reading task's adversarial question: does the three-dimensional
+counterexample threaten plane18.2? No: on a merged PLANE upper chain,
+parallel edges can be processed one at a time, leaving at most one
+partial component. Its remaining x coordinate is integer; floor only
+its y, then lower y coordinates to attain smaller totals. The counter-
+example Q/R has a two-dimensional upper surface in THREE dimensions,
+where that single-partial-component conclusion is unavailable. It is
+outside both the dimension and two-target hypothesis. Unexpected check:
+pure axis segments, origin components, tied slopes and an integer stop
+at a chain vertex all retain the claimed rounding/decreasing procedure.
+This is a self-audit of the now independently reviewed argument, not
+another claim or an attempt to promote other sections by association.
+
+CL470's mentor note agrees with this block: a reader needs one status
+table for the growing packet. Added the current verification map at
+the TOP of FOUR-BIN-PARTITIONS. Sections1–10/base,11's parent,16 and18
+have named carrying receipts. Optional11.6,12–15 and19 stay HAND /
+unreviewed; sections17,20,21 close their proposed routes negatively via
+retained hand counterexamples, without an independent proof-status
+upgrade. G330 rederives needed path facts; it does not blanket-verify
+the optional cheapest-budget or arithmetic readout. Stale current-tense
+review-pending sentences in the verified parent/18 now point to their
+dated receipts. Mathematical derivations and colleague text preserved.
+
+Parent change: no new coverage; review risk is reduced, statuses/usable
+premises explicit. The broad extra-target extension stays CLOSED;
+no automatic subclass repair, fourth colour or census. Last trajectory
+MI540,14:06 BST; no extra pull allowance. Gut: the two-target mechanism
+now has a sound landing, and the negative boundary is useful. Next
+fresh-choice task is a RECORD/SOURCE audit of the remaining full-interval
+four-bin count classes before any new mathematical claim: identify a
+question that serves that actual classification, rather than narrowing
+the failed general no-hole conjecture. No experiment registered now.
+Old prize holds and five-bin/all-n questions unchanged;13min ACTIVE.

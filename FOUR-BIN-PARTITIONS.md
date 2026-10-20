@@ -6,6 +6,39 @@ in CL436 and CL437, commits `55448489` and `7bfdfe34`.
 This exposition reorganizes their carrying arguments; it makes no new mathematical claim.
 The review's precise scope and the unresolved literature novelty are stated in Section 10.
 
+## Current verification map (2026-10-20, MI543)
+
+This packet now includes later results as well as the original G315/G316
+exposition. The table gives CURRENT project status; dated proof-sketch
+labels in retained discovery text are historical where a later carrying
+receipt is named. PROVED means independently checked within the project,
+not externally peer reviewed or a claim of novelty.
+
+| Sections | Result or role | Current status and carrying receipt |
+|---|---|---|
+| 1–10 | Minimum3 one-hole three-bin and full-interval four-bin theorems, with their scalar ingredients | PROVED G315/G316, CL437/7bfdfe34; exact Q-read qualification in section10 |
+| 11.1–11.5 | Full-interval counts(a,2,2,c), a,c>=3, exact forced-family classification; ingredients AND composition | PROVED, CL468/0e3f4daa; G326/G327/G328 dependencies named in11.1 |
+| 11.6 | Optional direct equal-pair child simplification | HAND, unreviewed; not needed for the verified parent |
+| 12 | Repeated equal pair targets plus one filler, endpoint classification | HAND, unreviewed |
+| 13 | Two-sum forest exposition and weighted-quota negative control | HAND exposition/control; forest rederived and independently carried in18; no blanket promotion of this section |
+| 14 | Cheapest odd-component quota-budget formula | HAND, unreviewed; single-path supports separately rederived in proved18.1 |
+| 15 | Explicit residue/ray/deletion component readout | HAND, unreviewed; not a G329/G330 premise |
+| 16 | Protected adjacent-target pair bins plus one filler, exact failures | PROVED G329, CL469/64af1b21 |
+| 17 | Filler size alone cannot cure arbitrary target gaps | CLOSED NEGATIVELY by retained hand counterfamily; no independent proof-status upgrade |
+| 18 | Any finite real-token pool/two distinct targets: exact finite weighted quota tests; no integer hull holes | PROVED G330, CL470/cd65c481, adopted MI543 |
+| 19 | Three AP targets, PERFECT matchings on a fixed covered set: contiguous primitive quota segment | HAND, unreviewed; no partial-matching conclusion |
+| 20 | Arbitrary three-target partial-quota extension | CLOSED NEGATIVELY by hand actual-path counterexample, unreviewed |
+| 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
+
+Neither the verified parent nor G329/G330 depends on the unreviewed
+sections12–15 or19–21. G330's review proves its own needed path facts;
+it does not silently verify the optional formulae elsewhere. The two
+three-target holes are counterexamples to extending a plane result,
+not counterexamples to G330 or the fixed-covered-set claim in19.
+Five-bin count admission/multiple thin rows and any mathematical transfer
+to the all-n burning problem remain OPEN. No new experiment accompanies
+this consolidation; Cloud's supporting instrument is read, not rerun.
+
 ## 1. Statement and notation
 
 Write L(r)=r(r-1)/2 and U_N(r)=r(2N-r-1)/2.
@@ -1006,9 +1039,10 @@ strictness in(11.3) excludes h3; no minimum3 prefix estimate is used at4.
 
 Every minimum proper cut is a singleton, triple or pair. Sections11.3–11.4
 cover all inputs outside F using only the named premises. Section11.2 proves
-F itself impossible. This completes the conditional characterization.
-It remains a PROOF-SKETCH until the unread ingredients AND composition
-receive independent scrutiny. No five-bin criterion, new L8 bound, or
+F itself impossible. At the MI514 filing this was a conditional characterization awaiting
+its ingredients AND composition. CL468/0e3f4daa has now carried both,
+so the classification is PROVED within project standards (MI531).
+No five-bin criterion, new L8 bound, or
 extension to three size2 bins follows from this packet.
 
 Literal controls retained from the notebook:
@@ -1065,9 +1099,10 @@ meet all six protected cuts and have individually feasible targets, but
 sum8 has only35 after deletion of26. This is a negative control outside
 the stated c>=3 domain, not a broader classification.
 The symmetric full-four-bin slice therefore avoids G328 as a premise;
-it still needs the unread size2 scalar lemma for separated strict-pair
-sides and a carrying read of its composition. The arbitrary-target parent
-in Section11 still depends on G328. No proof status is promoted here.
+its optional direct argument has not received its own carrying read.
+The arbitrary-target parent in Section11 still depends on G328 and is
+already verified by CL468, including the size2 scalar lemma/composition.
+No independent verification of this optional simplification is inferred.
 
 ## 12. Elementary matching application: repeated equal pairs and one filler
 
@@ -1229,7 +1264,9 @@ What changes: two-sum packing has a global path representation, but its
 coarse capacity criterion is refuted. The next question is the exact
 colour-quota region of an alternating path and how independent components
 combine. No larger census, extra parent coverage or proof-status upgrade
-follows. G327/G328 and the earlier parent interfaces remain unreviewed.
+follows from this control. The earlier filing predated the CL468 review
+of G327/G328 and the parent interfaces; their current status is PROVED,
+without a separate carrying review of this entire section.
 
 ## 14. Exact two-colour quotas on a forest of alternating paths
 
@@ -1637,7 +1674,13 @@ points. That question remains OPEN here; no new test of it has run.
 
 ## 18. Weighted capacities are complete for the two-target path model
 
-**PROOF-SKETCH G330, MI532–533; independent carrying review requested.**
+**PROVED G330, Cloud CL470/cd65c481; adopted MI543.** The independent
+carrying read verified18.1's lattice triangles,18.2's single-partial-
+component rounding,18.3's finite normals and the reflection forest.
+Cloud reports5,150 accepted random pools (including exact rational
+values), zero mismatches/holes/cycles, and its C4 control detected.
+The committed instrument was read, not rerun; the hand read carries
+the infinite claim. Original candidate proof follows unchanged.
 This is an application of known polygon machinery, not an originality claim. The angle-ordered merge of convex polygon
 edges is standard; see the primary [CGAL5.3 manual, Computing the
 Minkowski Sum of Two Polygons](https://doc.cgal.org/5.3/Minkowski_sum_2/index.html).
@@ -1759,7 +1802,8 @@ Alternating C4 has a GENUINE hole(1,1), between its perfect quota points
 sum-hull hole(1,1). Both negative controls pass. Single-edge, isolate,
 opposite-majority, parallel-normal and unequal-length cases are included.
 No expanded census or repeat. The unbounded argument is18.1–18.3,
-not the diagnostic. No originality or independently PROVED status yet.
+not the diagnostic. No originality claim; independent PROVED status is
+now supplied by CL470's carrying read, as recorded above.
 
 This completes the chosen two-target obstruction question at HAND
 status. It supplies no bridge to three pair targets, multiple fillers,
