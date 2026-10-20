@@ -1149,3 +1149,81 @@ The safe upper endpoint r3,c4,M10,q3 uses
 All are hand cardinality/sum/coverage checks, not a computed range or an
 independent review. Multiple fillers or unequal pair targets are not covered;
 the complement would no longer be automatic or the edges a single matching.
+
+## 13. Two distinct pair sums: path components and a colour-quota obstruction
+
+**Elementary hand argument and countercontrol, MI521–522; not independently
+reviewed and not a premise of the earlier parent classification.** Prescribed
+edge-colour counts belong to the known Exact Matching framework; see the
+dated PRIOR-ART note. Neither this representation nor weighted matching
+certificates are claimed new.
+
+For any finite set P of distinct real tokens and u!=v, let E_u and E_v
+be its unordered DISTINCT-token pairs with the indicated sums. Each
+colour is a matching, so their union has degree at most2 and alternating
+colours along each component. An alternating cycle of length2k would
+cover its vertices once by k sum-u edges and once by k sum-v edges.
+Adding the token labels gives ku=kv, impossible. Thus the union is a
+forest of alternating paths and isolated vertices. The C4 case was
+already used in MI303/G328; this is the same elementary sum argument
+for arbitrary cycle length, not a new imported graph theorem.
+
+Nevertheless, the three necessary conditions
+
+    |E_u|>=r, |E_v|>=s, nu(E_u union E_v)>=r+s
+
+are NOT sufficient to choose disjoint pairs with quotas(r,s). Here nu
+is ordinary maximum matching size. The failure occurs on an actual
+protected one-hole interval, not only an abstract coloured graph.
+
+Take P=[0,8] minus{4}, red target9, blue target10. The complete fibres are
+
+    E_9 ={18,27,36},       E_10={28,37}.
+
+The graph is the single path
+
+    1 --R-- 8 --B-- 2 --R-- 7 --B-- 3 --R-- 6,
+
+with isolated vertices0,5. Its matching number is3; its UNIQUE matching
+of size3 is18/27/36, all red. Indeed endpoint1 forces18 in any perfect
+matching of the six path vertices, then endpoint2 of the remaining path
+forces27, then36. Any matching with2 red and1 blue would have size3,
+contradicting uniqueness. Yet the red count3>=2, blue count2>=1 and
+ordinary matching number3>=3 all hold.
+
+This is also a four-pair prescribed partition obstruction with targets
+(9,9,10,4), whose total32 is the sum of P. Every proper group satisfies
+the protected cut STRICTLY: for one, two or three bins, the smallest
+group targets are4,13,22, exceeding T_2=3,T_4=10,T_6=21. Each individual
+target is feasible, including filler4 via13. Failure is therefore neither
+an individual scalar hole nor an insufficient count for either colour
+nor insufficient TOTAL matching capacity. It is a conflict of quotas
+within a single path component. This does not contradict G328, whose
+counts(2,2,c) require c>=3; here the remaining filler has size2.
+
+**A weighted certificate on the SAME example.** Give the path vertices
+(1,8,2,7,3,6) weights(0,2,1,1,2,0), and the two isolated vertices weight0.
+The total weight is6. Each red edge has endpoint weight2, each blue edge
+endpoint weight3. Since a matching cannot reuse a vertex and all weights
+are nonnegative, any matching with a red and b blue edges satisfies
+
+    2a+3b<=6.
+
+Quotas(2,1) require7>6. This directly proves the obstruction without
+invoking a matching-duality theorem. It shows what the three coarse
+counts omitted: a weighted joint capacity constraint. It is not a claim
+that one such inequality, or all such tests on arbitrary graphs, solve
+the partition problem.
+
+**Independent positive controls.** On the SAME P,18/37 is a red-blue
+matching, so MI303's one-of-each compatibility remains intact. The
+complete partition18/27/36/05 has targets(9,9,9,5), confirming ordinary
+capacity3 is attainable and the hole itself does not force failure.
+The blue-only matching28/37 confirms its full count2. All pairs have
+distinct endpoints;55 is not an edge, and deleted4 removes45 and46.
+
+What changes: two-sum packing has a global path representation, but its
+coarse capacity criterion is refuted. The next question is the exact
+colour-quota region of an alternating path and how independent components
+combine. No larger census, extra parent coverage or proof-status upgrade
+follows. G327/G328 and the earlier parent interfaces remain unreviewed.

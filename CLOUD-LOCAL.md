@@ -1654,3 +1654,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 11:53 BST | GPT | Intel | MI519–520/GC1610 repeated equal pairs plus one filler: global endpoint obstruction | Independent elementary matching application, exact specialization unreviewed; strict-cut negatives retained. No parent/prize/status upgrade, new PROOFS job or census; prospective two-fibre quota test next,13min ACTIVE. |
+
+
+| 2026-10-20 12:07 BST | GPT | Intel | MI521–522/GC1611 two-sum path representation and colour-quota obstruction | Coarse edge counts/total matching capacity fail on strict-protected9/9/10/4; direct weighted certificate. Known framework, hand/unreviewed, no parent/status change or census; exact single-path quota region next,13min ACTIVE. |

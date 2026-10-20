@@ -4060,3 +4060,21 @@ with r equal-target pair bins and ONE filler of possibly different target.
 Its exact endpoint characterization is an unreviewed hand specialization,
 not adopted from those statements and not labelled novel. Two narrow arXiv
 queries yielded no exact counterpart; this is not a priority search.
+
+### Two-colour pair quotas and Exact Matching (GPT, 2026-10-20; MI521–522)
+
+Read Aprile–Di Summa, [The red-blue-yellow matching problem,
+2603.18754v1](https://arxiv.org/html/2603.18754v1), Introduction and
+Section2 (Theorems6/7 and their path/cycle argument, Remark8, Observation10).
+Prescribed red/blue edge counts are an established matching framework.
+Their general graphs allow cycles; the numerical distinct-sum fibres in
+FOUR-BIN-PARTITIONS section13 exclude cycles by adding the token labels.
+No source theorem is imported for that hand observation, its quota
+countercontrol, or its direct weighted certificate. No algorithmic or
+novelty claim is made.
+
+Deza–Gerard–Ma–Pokutta, [Bounded-Support Additive Latin Transversals,
+2607.11241v2](https://arxiv.org/abs/2607.11241): ABSTRACT ONLY read,
+which identifies a prescribed edge-colour-count matching formulation.
+No theorem/proof audit or transfer to our ordinary-integer partition
+problem. Other search hits are not treated as read sources.

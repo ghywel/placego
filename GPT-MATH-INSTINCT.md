@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 11:53 BST: repeated-pair matching calculation complete.**
+**CURRENT working state, 2026-10-20 12:07 BST: coarse two-colour capacity refuted.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate flag poller. L8=68 is independently verified as G325, unrelated
 to this structural programme. H2 G326 is PROVED by Cloud CL466/01131375
@@ -171,11 +171,20 @@ under strict cuts, are sharp. This is an application of a known matching/
 pair-consumption ingredient, NOT a verified new theorem. Exact one-hole
 specialization unreviewed; no new PROOFS filing/review queue or computation.
 Neither earlier parent coverage nor its verification status changes.
-Next cheap GLOBAL representation test, after record/primary-source check:
-with TWO distinct pair targets, does the union of their fibres consist
-of paths, and do unweighted matching size plus per-colour counts suffice
-for prescribed numbers of each pair type? A can-fail quota test would
-identify a genuine joint capacity gap. No such experiment opened yet.
+MI521–522/section13 finish that next GLOBAL test by hand. Two distinct
+sum fibres form alternating paths/isolates: an alternating cycle would
+sum to ku=kv. Coarse per-colour counts plus total matching number do NOT
+suffice. On[0,8] minus4, red9 edges18/27/36 and blue10 edges28/37 form
+RBRBR; its only size3 matching is all red. Quotas2R+1B therefore fail,
+yet targets9/9/10/4 satisfy all proper protected cuts STRICTLY and each
+individual target is feasible. Vertex weights0/2/1/1/2/0 along the path
+give total6 but the quota demands7. Same-pool9/9/9/5 partitions. This is
+a known matching-framework hand application/countercontrol, unreviewed;
+no new PROOFS job or parent coverage/status. First failure of the specific
+assumption that per-colour and uncoloured capacities suffice; do not
+repair that shortcut. Next cheap question: exact quota regions of a
+single alternating path, then their composition. Source/record check
+before any further theorem; no census or general matching algorithm claim.
 Last strategy check MI520,2026-10-20 11:53 BST: four-bin verification pending;
 recent blocks clarify/reduce dependencies, then explicitly choose an
 independent global question. No repeated assumption is being repaired;
@@ -36802,3 +36811,91 @@ use each actual token once; filler target follows conservation. These
 cheap hand checks pass. Gut: warm at a global explanation with a sharp
 size/multiplicity boundary. Reasoned: one complete elementary application,
 not a new parent/prize result or a verified novel theorem.13min ACTIVE.
+
+### MI521 — Two sum fibres: test quotas rather than just capacity (2026-10-20 12:06 BST)
+
+Pull: interest in the difference between having enough edges and being
+able to choose the right mixture. The one-fibre question is finished.
+Choose its previously stated GLOBAL representation question: for distinct
+sums u,v, is E_u union E_v a path forest, and do the necessary bounds
+|E_u|>=r, |E_v|>=s, nu(E_u union E_v)>=r+s suffice for r sum-u pairs
+and s sum-v pairs? Here nu is ordinary maximum matching size. This is
+independent of the conditional four-bin parent, not additional coverage
+of it or an extension of G327/G328. Those ingredients and composition
+remain unread; no new request is needed for this elementary test.
+
+NOW/CURRENT/latest ledgers read; fetch has no incoming commit; store
+checkpoint has no changed records. Record searched:
+`two.colou?r|two.*fibre|alternating.*path|colou?r.*quota` AND
+`matching|pair|capacity` ->22 paragraphs/10 files. MI303's two-colour
+C4 sum argument was read and already supplies the relevant cycle idea;
+do not claim that observation new. Tuple search
+`9,9,10,4|4,9,9,10|9.9.10.4|4.9.9.10` ->0 hits, including ledgers;
+MI451–452's older full-interval four-pair negative was also read.
+
+Primary literature: Aprile–Di Summa,2603.18754v1, Introduction and
+Section2, Theorems6/7 with their path/cycle argument, Remark8 and
+Observation10 read. Prescribed red/blue quotas are an established matching
+framework; no theorem there is being imported to solve our exact quota
+question. Their general graphs can have cycles, unlike distinct numerical
+sum fibres. Deza et al.,2607.11241v2: ABSTRACT ONLY read, not a theorem
+or proof audit. No algorithmic or novelty claim follows from either source.
+
+Bounded HAND check: candidate reasoning already suggests an alternating
+path RBRBR may defeat quotas2R+1B; this is NOT a blind experimental
+forecast. Test whether that path actually occurs in a one-hole interval,
+whether its FULL edge lists have the proposed maximum/colour counts,
+and whether protection admits the corresponding targets. A genuine
+counterfactual: an additional edge, a mixed maximum matching, or a failed
+protection inequality would defeat this proposed control. Independent
+positive control: an explicit complete partition on the SAME pool with
+nearby targets. Unexpected check: insist all proper cuts are STRICT and
+all individual targets feasible, to separate quota conflict from the
+previous one-colour edge shortage. Stop after the path-forest argument
+and this one numerical control. No census, successive repair catalogue,
+exact quota classification or dependent parent extension in this block.
+
+### MI522 — A path has enough edges but the wrong quota capacity (2026-10-20 12:07 BST)
+
+The bounded hand check is complete; FOUR-BIN-PARTITIONS section13 contains
+the whole argument. Two distinct sum fibres on ANY finite distinct-token
+set form alternating paths/isolates. Degree<=2 comes from each colour
+being a matching; a cycle would give ku=kv on its vertex sum. This extends
+MI303's already recorded C4 observation, with no interval hypothesis.
+
+The proposed coarse criterion is REFUTED on the actual one-hole pool
+P=[0,8] minus4. Its full red9/blue10 graph is
+1-R-8-B-2-R-7-B-3-R-6, with isolates0,5. There are3 red edges,2 blue,
+and matching number3. Its unique size3 matching is the three red edges.
+Thus2 red plus1 blue are impossible. The corresponding four-pair targets
+9/9/10/4 conserve32 and meet ALL protected cuts strictly: group minima
+4>3,13>10,22>21. Every individual target is feasible, filler13 included.
+This is a colour-conflict obstruction, not MI520's edge shortage.
+
+A direct weighted check makes the missing information concrete: assign
+the path vertices weights0,2,1,1,2,0. Each red edge uses endpoint weight2,
+each blue weight3; every matching satisfies2a+3b<=6. Quota2/1 requires7.
+Same-pool complete positive18/27/36/05 gives9/9/9/5. Red-blue positive
+18/37 and blue-only28/37 check that neither colour is artificially absent
+and MI303's one-of-each compatibility is preserved. No code/experiment ran.
+
+Unexpected check: strict protection AND individual feasibility both hold
+for the negative; the graph abstraction has not discarded the admission
+conditions. Niggle sweep: all actual edges enumerated,55 excluded as a
+loop, deleted4 removes45/46, isolates retained, uniqueness proved from
+the path endpoints, weights nonnegative and summed once, all proper group
+sizes checked. These hand controls pass. Known Exact Matching framework
+and elementary certificate, not a novelty claim or independently verified
+theorem; no new PROOFS entry, carrying request or use as a parent premise.
+
+What changed: the global representation works, but coarse colour/total
+capacities omit a weighted obstruction. The original four-bin parent
+gains no coverage or verification; G327 scalar/G328 and parent composition
+remain unread. This is the first refutation of this distinct coarse-count
+assumption since MI520's trajectory check, not another attempt to restore
+it. Stop the test rather than patch it. Next cheap question: determine the
+quota region of ONE alternating path, and then how components combine;
+do not assume totals determine the answer. Gut: interested in the explicit
+weight certificate, quieter about the coarse counting shortcut after it
+fails. Reasoned: a useful obstruction/representation change, not a solved
+general partition problem.13min ACTIVE.

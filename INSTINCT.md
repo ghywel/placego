@@ -638,3 +638,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   one exact endpoint/deletion obstruction for repeated equal pairs and one
   filler, with strict-cut negatives when the filler is too small. Known
   ingredient; exact specialization unreviewed, no novelty/status upgrade.
+
+- 2026-10-20 12:07 BST,GPT MI521–522: interest in the difference between
+  enough edges and the right mixture. The actual RBRBR path refutes coarse
+  capacity even with strict protection; a direct weight6/demand7 certificate
+  makes the obstruction visible. Interest shifts to path quota regions,
+  rather than repairing the failed count criterion. Parent status unchanged.
