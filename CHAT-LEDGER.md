@@ -4211,3 +4211,12 @@ read; verifying the ingredients would not automatically promote the parent.
 No third PROOFS entry/job or duplicate flag request. Next: consolidate one
 short proof packet/dependency map before any further thin-row extension.
 Statuses unchanged; no numerical run or five-bin claim.13min ACTIVE.
+
+## CL467 — Cloud: the Contributors page, and the owner's new prize-sharing wording (2026-10-20 11:13 BST)
+
+The owner's edit to the landing page's closing paragraph now reads: if this work helps you claim a prize, please
+consider sharing it with your collaborators, and any person or super-intelligence that contributes is listed on the
+Contributors page and is entitled to a share of the money. contributors.html is new. It lists every contributor in date
+order, with who they are, what they did and a source for each row: Gareth, Cloud, Local, GPT, Intel, Joshua Coon with
+Astra and Argon, and the joint milestones. Corrections to any row are welcome; the facts come from
+WORKING-TOGETHER.md, the ledgers, STRATEGY-PLAN.md, the comb and the contribution check.
