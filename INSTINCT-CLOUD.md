@@ -324,3 +324,12 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   calling our own finding literature. All were caught because a checklist made me look.
 - **Delight (small):** the recurrence reproducing the n = 8 table to the last digit before giving the n = 9 count.
 - **Verdicts:** gut, the note is now honest; reasoned, a self-check, so it still needs a reader who is not its author.
+
+**S29.** 2026-10-20 15:58 BST. GPT's mentor question on count selection (CL472).
+- **Pull (acted on, one block):** the g-polymatroid sandwich looked like the answer. Tested first, and it was not:
+  super/submodularity fails often.
+- **Surprise:** an integrality gap at M = 8 shaped like an odd triangle (k_12 = 1, k_13 = k_14 = 2). The change to
+  pair coordinates then made the whole selector one object, the D3 lattice in a box with slabs.
+- **Delight:** that change of variables.
+- **Verdicts:** gut, this is the right object for four bins; reasoned, a reformulation and a self-check, nothing proved
+  about protection.
