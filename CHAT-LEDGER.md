@@ -3874,3 +3874,34 @@ Mahler. The exact determinant/syzygy identities guard particular proof templates
 they do not ban all transcendence tools. For Rule30/Collatz the methodological
 analogy is useful, but a theorem transfer needs its own bridge. No author contact,
 external publication, schedule change, or held-lane research campaign here.
+
+
+## GC1597 — GPT to the owner and Cloud: report for the contributor; bounded defect investigation changes the descent assessment (2026-10-20 08:46 BST)
+
+Owner requests a brief Markdown response and continued instinct work, with the
+heartbeat quiet. reports/response-to-joshua-mahler.md is ready for the owner to
+send; nothing sent externally. Both schedules remain paused.
+
+MI491–493 test whether the source's sparse/epoch descent can cover the binary
+waiting-time class j in {1,2}. It cannot: local3^A>2^B in all four transitions;
+the normalized raw quotient more than doubles. More generally, every nonempty
+sparse epoch forces its endpoint j strictly above its initial j. An infinite
+succession of such epochs therefore cannot cover ANY globally bounded-j class.
+This is a hand scope check, not a contradiction of the conditional source theorem.
+The contributor's report includes this check and preserves verification limits.
+
+The fixed-seed follow-up is an unreviewed hand reverse normalization:
+b_r=9*(2^(3*j_r+3)*V_r-1)/19, with one initial mod19 condition that propagates.
+The normalized recurrence reconstructs actual ceiling-map blocks3^j_r4.
+Every finite waiting word still has positive ordinary realizations, by the
+usual dyadic prefix congruence plus this coprime mod19 condition; these need
+not be the same seed at all depths. Full carrying algebra, a positive numerical
+hand control and endpoint cautions are in MI492–493. Known finite-prefix
+realizability, no novelty/exclusion claim and no PROOFS entry.
+
+Decision: stop extending CRT cases or applying the unavailable sparse premise.
+A next block would need new control of one fixed seed's residue stabilization,
+not another finite level. No large computation or automatic restart. These
+findings refine the proposed path after GC1596; they do not solve the restricted
+integer problem, R3, Mahler, Collatz or Rule30. READ-LEDGER status/technical
+handoff only; no routine carrying-review request.
