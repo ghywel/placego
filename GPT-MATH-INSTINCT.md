@@ -124,49 +124,39 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:12 BST: three-pair classification candidate complete.**
+**CURRENT working state, 2026-10-20 15:24 BST: actual missing1 bridge has a short hand candidate.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate poller. L8=68 G325, H2 G326, G327/G328 and section11's
-exact(a,2,2,c) parent, G329 and G330 are independently PROVED. Receipts:
-CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481. Optional hand sections
-remain distinguished in the packet verification map; novelty UNASSESSED.
+no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
+G329/G330 independently PROVED. G331 is the complete three-pair full-
+interval COMPUTER-ASSISTED candidate: fixed5,146 basis cases pass two
+same-worker engines, only2/6/8 and reflection fail; unbounded reduction
+and finite interface still await carrying review (GC1626/fd7ebb5b).
 
-Parent: full-interval four-bin minimum2 classification. The remaining
-unbounded count row(2,2,2,c),c>=3 now has COMPLETE COMPUTER-ASSISTED
-CANDIDATE G331, PROOFS waiting room/FOUR section22/MI545–548. Exactly
-the old pair-target triple2/6/8 and its full reflection fail among
-rank-admitted inputs. This is exhaustion of the known obstruction,
-not a new obstruction mechanism or an adopted PROVED classification.
+NEW MI549/G332/FOUR section23 finishes the ACTUAL protected four-bin
+missing1 endpoint at minimum sizes3: give0 to a minimum t_i/c_i bin,
+shift the remaining[2,M] by-2, and use PROVED G327 (at most one2).
+All transformed cuts hold: containing-owner cuts use original protection;
+a failed excluding-owner cut contradicts minimum mean plus the union's
+protection, with the ALL-bins union handled separately by conserved total.
+No G331 or older unread punctured lemma is used. Full proof and literal
+positive/minimum-size negative controls in PROOFS waiting room G332.
+No numerical experiment or new census. Novelty UNASSESSED, HAND and
+unreviewed; one short carrying read requested GC1627/portal.
 
-Hand reduction: merging one pair with the filler inherits every cut
-for the PROVED three-bin lemma. The other two pairs use four tokens,
-so any selected fibre of>=5 edges completes. Any target in[9,2M-9]
-therefore completes. Remaining targets are in the endpoint bands.
-For M>=17 their token blocks are disjoint; a mixture of endpoint
-sides completes by selecting the majority two compatibly. The large-M
-residual is EXACTLY the50 sorted low triples1<=a<=b<=d<=8 with
-a+b>=6,total>=15; all pairs lie in0..8. Add M8..16 endpoint-band
-inputs under their original14 rank cuts. M16 touching blocks retained.
+Actual parent change: the protected missing1 endpoint is completed by
+hand via a global owner rule, replacing MI417–418's longer strict-pair
+branch. Other hole positions and the full five-bin parent remain OPEN.
+There are two independent current candidates, no new chain through an
+unread premise. Optional old hand formulae stay labelled in the packet
+verification map. Pending review is not a permission halt.
 
-MI547–548 one preregistered run COMPLETE: all5,146 admitted basis
-queries plus7 controls agree between actual target-edge selection and
-independent six-token-first pairing enumeration. All7,258 candidate
-rank comparisons, complete counts, literal witnesses/filler sums and
-full reflection pass;477,450 terminal matchings including controls.
-Only2/6/8 and reflection fail. Old token-reuse and two-hole AP negative
-controls retained.1.230820CPU, no cap/retry/expansion. Raw/hash/source
-in MI548. Finite result COMPUTED by same-worker independent engines;
-unbounded reduction and exact finite-domain interface UNREVIEWED.
-
-Earliest unread step: section22/G331 itself; no optional unread result
-or G330 used. ONE carrying review of the whole packet requested via
-GC1626/portal, not a routine permission halt. Duplicate check PASS349,
-nearest G327/G328/G329 read in full. Next useful task: concise full-
-count classification synthesis and the actual bridge to five-bin count
-admission; no automatic new experiment or larger-M census. The broad
-three-target no-hole extension stays FINISHED negatively. Last trajectory
-MI54014:06 BST; no repeated repair or renewable extra allowance. Old
-held lanes and five-bin/every-n questions remain unchanged.
+NEXT: revisit the GENERAL missing-hole/count constraint from the record
+before another endpoint repair. No automatic new experiment, hole ladder,
+larger census or held-lane reopening. Last trajectory MI54014:06 BST;
+90-minute check due before work passes15:36 BST; no repeated repair or
+renewed extra allowance. The broad three-target no-hole extension stays
+FINISHED negatively. Independent review is still needed for both new
+candidates, and no full five-bin/all-n burning result is claimed.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -38145,3 +38135,67 @@ NEW section22/G331 reduction itself. Last trajectory MI54014:06 BST;
 no renewed extra allowance.13min ACTIVE. Next useful direction is a
 concise full-count classification synthesis and its actual bridge to
 five-bin count admission; no automatic new experiment or held-lane work.
+
+### MI549 — Missing1 bridge: give zero to a minimum-mean bin (2026-10-20 15:23 BST)
+
+Parent question: can the proved full-interval four-bin machinery finish
+an ACTUAL protected punctured four-bin case? G331 review remains pending;
+this question uses PROVED G327 alone, not that unread reduction.
+Initial pull: assigning0 leaves one size2 bin, exactly the extension
+that G327 added. The potential obstruction is a group NOT containing
+that owner losing too much margin under translation. Test by choosing
+a minimum target-per-token owner; check the complementary group too,
+since its union with the owner is ALL bins and is not a proper cut.
+This is bounded hand reasoning, not a numerical experiment.
+
+Record searched: count.admission|five.bin|two.interval with
+G323|G324|minimum|thin ->67 hits/6 files; relevant MI383/417/449 read.
+The first overly broad zero.owner/ratio search returned491 hits and
+truncated; no claim all were read. Focused zero.owner|missing1|missing.1
+with mean|ratio|G327 ->6 hits/2 files, none this selector. Exact scoped
+rg for minimum/smallest mean found no relevant result. G317's prior
+zero-owner argument concerns TWO holes/three bins; MI417–418 covers
+only the q1 STRICT-PAIR branch. G324 requires both interval rows and
+does not carry this endpoint. Primary Kotlar1410.6916v7 introduction
+read again (common-sum full interval); Hoory–Kotlar2605.06071v2 source
+opened, its earlier section5 scope audit MI544 retained. Two new broad
+searches yielded no applicable primary theorem; irrelevant/secondary
+hits not imported. Novelty unassessed, not a search-completeness claim.
+
+HAND result: on P=[0,M] minus1, four counts c_i>=3 total M and integer
+targets totaling T_M-1, assume EVERY nonempty proper group J obeys
+t_J>=T_(C_J)=C_J(C_J+1)/2. Assign0 to A minimizing t_i/c_i;
+let a=c_A. Remove0 and translate2..M by-2. New counts are c'_A=a-1,
+c'_i=c_i otherwise, all>=2 and at most one2; new targets
+s_i=t_i-2*c'_i sum L(M-1). G327 supplies a partition once its
+proper lower rank cuts are verified; upper cuts are complementary.
+
+If J contains A, writing r=C_J gives the needed inequality
+s_J>=L(r-1), equivalently t_J>=L(r)+r-1. Protection gives the
+stronger L(r)+r. If J excludes A, it suffices to prove
+ t_J>=L(r)+2r=r(r+3)/2.
+Suppose instead t_J/r<(r+3)/2. Minimum mean gives t_A/a<=t_J/r,
+so t_A+t_J<(a+r)(r+3)/2. If A union J is proper, protection gives
+at least(a+r)(a+r+1)/2, strictly larger because a>=3. If it is ALL
+bins, a+r=M and the same upper bound is at most M^2/2, whereas
+total T_M-1>M^2/2 for M>=12. Both contradict the supposed failure.
+Thus EVERY transformed proper cut holds. Lift G327's partition by+2
+and put0 back in A. This completes ALL protected q1 four-bin inputs,
+not just a minimum-cut branch. No residual count selector remains
+for this endpoint. No claim for other q or the full five-bin parent.
+
+Literal control: M12,counts3333,targets19/19/19/20 partition as
+{0,7,12}/{2,6,11}/{4,5,10}/{3,8,9}. Choosing the first tied-mean
+owner yields translated counts2333 and targets15/13/13/14, with
+actual disjoint sets{5,10}/{0,4,9}/{2,3,8}/{1,6,7}. All protected
+cuts follow from minimum one/two/three-bin sums19/38/57>=6/21/45.
+
+Unexpected minsize guard: M10,missing1,counts2224,targets4/6/14/30
+obey ALL protected cuts but cannot partition: pair4 forces04 and
+both sum6 pairs06/24 intersect it. Singleton minima3/10 hold; pair-
+only totals>=10, all three pairs24>=21; filler+onepair>=34>=21,
+filler+twopairs>=40>=36. Nearby4/7/14/29 partitions as04/25/68/{3,7,9,10}.
+Thus extending this reduction without the minimum3 premise is unsafe.
+No scalar spectrum or reflection invariance was presumed. All controls
+by hand, no probe, expansion or new census. Full candidate G332 follows
+in the proof record; independent carrying review needed.

@@ -30,6 +30,7 @@ not externally peer reviewed or a claim of novelty.
 | 20 | Arbitrary three-target partial-quota extension | CLOSED NEGATIVELY by hand actual-path counterexample, unreviewed |
 | 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
 | 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | COMPUTER-ASSISTED CANDIDATE G331; finite basis COMPLETE MI548, unbounded reduction unreviewed; proved section5 sole partition premise |
+| 23 | Protected missing1 four-bin pool, all sizes>=3: minimum-mean zero owner | Complete HAND CANDIDATE G332, unreviewed; PROVED G327 sole partition premise, no G331 dependency |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -2168,3 +2169,32 @@ self-contained candidate is PROOFS.md G331 in the waiting room. The
 finite result is COMPUTED by two same-worker engines; the unbounded
 merge/separation/domain interface still needs a carrying independent
 read. No project PROVED status, novelty or five-bin/all-n transfer.
+
+## 23. A direct punctured-pool bridge: protected missing1 four-bin case (MI549)
+
+**Complete HAND candidate G332, unreviewed.** On[0,M] minus1, let
+four counts c_i>=3 total M, targets total T_M-1, and every nonempty
+proper group obey t_J>=T_(C_J), T_r=r(r+1)/2. These hypotheses suffice.
+This is the actual protection used by the five-bin singleton reduction,
+for the particular normalized hole q1; arbitrary q remains open.
+
+Give0 to a bin A minimizing t_i/c_i. Put a=c_A and translate the
+remaining interval[2,M] down by2. The new counts are c'_A=a-1 and
+c'_i=c_i otherwise; sums s_i=t_i-2c'_i are conserved. All counts are
+at least2, with at most one2, so PROVED G327 applies once its cuts hold.
+Groups containing A need only t_J>=L(r)+r-1, supplied by protection.
+For a group J excluding A of size r, a failed transformed cut would
+mean t_J/r<(r+3)/2. Minimum mean then gives
+ t_A+t_J<(a+r)(r+3)/2.
+If their union is proper, its protection exceeds this bound because
+a>=3. If it is all bins, the bound is at most M^2/2, less than
+T_M-1 since M>=12. Contradiction in both cases. Thus EVERY cut holds,
+G327 partitions the full interval, and lifting gives the desired bins.
+
+The complete proof, conserved-sum algebra, tied-owner positive and
+minimum-size negative controls are in PROOFS waiting room G332/MI549.
+Only proved G327 is a partition premise; neither G331 nor optional
+unread punctured arguments are used. This replaces MI417–418's longer
+strict-pair q1 branch with a full endpoint proof. It does not settle
+other holes, general count admission or a five-bin theorem. No run,
+new census or proof-status upgrade; novelty UNASSESSED.

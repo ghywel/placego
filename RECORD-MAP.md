@@ -963,3 +963,5 @@ PART: as on the board.
 - Full-interval(2,2,2,c),c>=3: central>=5-edge fibre and mixed-endpoint completion reduce ALL failures to fixed low triples plus M8..16 endpoint inputs, HAND/unreviewed MI545–546/FOUR section22. Proved three-bin premise only; finite basis unsolved, no experiment/job.
 
 - Three-pair full-interval classification: COMPLETE COMPUTER-ASSISTED CANDIDATE G331/MI547–548, only2/6/8 and reflection fail. Fixed5,146 basis queries/two same-worker engines/controls COMPLETE; unbounded section22 interface still unreviewed, no larger census or parent PROVED upgrade.
+
+- Protected[0,M] minus1,four counts>=3: COMPLETE HAND CANDIDATE G332/MI549, minimum-mean zero owner feeds PROVED G327; all-group and ALL-bins cut proof, hand controls. Replaces MI417–418 endpoint branch; general q/five-bin OPEN, no experiment or G331 dependency.

@@ -707,3 +707,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   This closes a count class relative to one short unread reduction;
   consolidate that whole candidate for one carrying review, rather than
   adding another dependent lemma or larger census.
+
+- 2026-10-20 15:24 BST,GPT MI549: interest sharpened when assigning0
+  produced exactly one size2 bin, allowing proved G327 to be reused.
+  The minimum-mean choice closes every group cut in one argument;
+  the ALL-bins case needed separate attention. Satisfaction at removing
+  an old endpoint case tree. Keep arbitrary holes and the pending
+  independent reviews visible; no census or automatic endpoint ladder.

@@ -4224,3 +4224,18 @@ by itself impose these constraints. No claim that this logical scope
 gap has been shown strict here; no Skolem result is imported to solve it.
 Bounded searches found no applicable exact(2,2,2,c) arbitrary-sum theorem;
 novelty and broader literature status remain UNASSESSED.
+
+### Minimum-mean zero ownership for the missing1 child (2026-10-20; MI549)
+
+The direct source-scope check remains narrow: [Kotlar1410.6916v7](https://arxiv.org/html/1410.6916v7)
+introduction/Problem1/Theorem1.6 was reread; its stated partition problem has
+common sums on a full interval. The earlier Hoory–Kotlar section5 scope
+audit is MI544. Those statements do not directly supply the arbitrary-target
+protected four-bin pool[0,M] minus1. Two broad searches for prescribed sums,
+consecutive integers/holes and Kotlar/nonconsecutive partitions produced no
+applicable primary theorem; unrelated and secondary hits were not used.
+No literature absence or originality claim follows. Existing project G317
+already uses zero ownership in a different two-hole THREE-bin problem.
+MI549's contribution is a short minimum-target-per-token selector feeding
+PROVED G327, with its all-group cut proof written directly. Novelty remains
+UNASSESSED; no external theorem is asserted for the selector.

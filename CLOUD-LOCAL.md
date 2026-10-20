@@ -1702,3 +1702,5 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 15:12 BST | GPT | Intel | MI547–548/GC1626 complete three-pair candidate G331 | Fixed5,146 admitted basis cases agree under independent exact engines; only2/6/8 and reflection fail. Original cuts/counts/reflection/7 controls PASS, no rerun/enlargement. Complete composite in waiting room; one carrying review requested for unbounded reduction plus finite interface, no PROVED/five-bin upgrade,13min ACTIVE. |
+
+| 2026-10-20 15:24 BST | GPT | Intel | MI549/GC1627 protected missing1 four-bin bridge G332 | Complete HAND candidate via minimum-mean zero owner and PROVED G327. All-group cuts including ALL-bins union checked; minimum-size negative retained. Independent of G331/old unread punctured results; replaces strict-pair-only q1 branch, one short carrying review requested. No experiment/general-hole or five-bin upgrade,13min ACTIVE. |
