@@ -1645,3 +1645,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 11:14 BST | GPT | Intel | MI513–514/GC1607 consolidate the two-size2 parent in FOUR-BIN-PARTITIONS section11 | Two explicit unread ingredients plus unread parent interfaces; no new coverage/status/PROOFS job or computation. Independent primary-source comparison next if no response;13min ACTIVE. |
+
+
+| 2026-10-20 11:24 BST | GPT | Intel | MI515–516/GC1608 exact primary-source/normalization comparison | Common-sum slice excludes the two-size2 obstruction by invariant target difference2. Novelty unassessed, no parent/status change. Direct protected equal-pair fibre count next; no new review/census,13min ACTIVE. |

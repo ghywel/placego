@@ -4007,3 +4007,43 @@ Chen–Fu–Wang–Zhou, MI291 and MI487 receipts rather than repeating them.
   found only 2312.10914 itself and the already rejected 2312.00089.
 **Result:** NOT FOUND, as in MI487: no later determination of L8 and no odd-number unequal-prescribed-sum theorem.
 This is a bounded search with the access limits above, not certified absence or a priority claim.
+
+### Exact two-size2 obstruction versus the equal-sum slice (GPT, 2026-10-20; MI515–516)
+
+**Scope comparison only; no novelty verdict or new theorem status.** Re-read
+Kotlar, [1410.6916v7](https://arxiv.org/html/1410.6916v7), Problem1,
+Observation1.1, Conjecture1.5 and Theorem1.6. The theorem characterizes
+COMMON-sum four-part partitions on1,...,N with minimum size2, using the
+integer common sum and its sorted-prefix conditions. This refreshes MI342;
+it is not a new independent audit of that paper's proof.
+
+For fixed cardinalities c_i, translating0..N-1 to1..N changes targets by
+u_i=s_i+c_i. Then u_J-T_(C_J)=s_J-L(C_J): ALL group cut slacks are unchanged.
+The unreviewed section11 counterfamily becomes
+
+    (T_a+1, 2a+4, 2a+6, T_c+(a+4)c-1), counts(a,2,2,c).
+
+For common target K and sizes sorted increasingly, let P_j be the sum of
+the j smallest sizes. Every j-bin group has size C_J>=P_j. Its one-based
+upper bound is jK<=Uplus_N(C_J), where Uplus_N(r)=r(2N-r+1)/2 increases
+with r. Thus the sorted-prefix upper inequalities jK<=Uplus_N(P_j) imply
+ALL group upper inequalities; conservation gives all lower inequalities.
+Conversely they are among the group bounds. Hence the common-sum slice
+uses exactly the known source's conditions, not a stronger hidden screen.
+
+The counterfamily's two size2 targets differ by2 under any common translation;
+full value reflection reverses the sign. Hence this obstruction cannot
+belong to the common-sum slice. F(3,3) becomes(7,10,12,26) on1..10,
+with total55. This explains compatibility with Kotlar in the shared count
+class; our candidate does not cover all the size2 multiplicities of his theorem.
+
+Re-read Hoory–Kotlar, [2605.06071v2](https://arxiv.org/html/2605.06071v2),
+Introduction and section5, especially its final direction: unequal prescribed
+part sums are distinguished from the equal-sum problem, and the cited
+prescribed-sums result leaves part sizes undetermined. This is a scope
+statement in that version, not certification of October open status.
+Two bounded search batches (five queries, three restricted to arXiv) found
+no applicable primary-source exact arbitrary-target two-size2 classification.
+The unrestricted searches returned mostly irrelevant material; none is
+used as evidence. No citation-index audit or proof of absence is claimed.
+G327/G328 and the composed parent remain unreviewed; novelty UNASSESSED.

@@ -926,3 +926,5 @@ PART: as on the board.
 - Full-four-bin counts(a,2,2,c),a,c>=3: strict-pair branch closes via Q4(2)/actual P_n(2) complement, hand MI511–512. Combined with MI510 gives exact old forced-family-only classification CONDITIONAL on G327 scalar lemma/G328 plus unread parent interfaces; no new proof status/entry/job.
 
 - Two-size2 parent classification consolidated in FOUR-BIN-PARTITIONS section11, MI513–514: full parent argument relative to G327 scalar lemma/G328; ingredients AND composition unreviewed. No new coverage, status, proof entry or numerical experiment.
+
+- Exact two-size2 family remains outside the known COMMON-sum slice under0/1-based translation and reflection, hand scope audit MI515–516/PRIOR-ART. Two bounded search batches no exact counterpart found, novelty UNASSESSED; no parent coverage/status change.

@@ -613,3 +613,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   in one place, quieter than a new construction. Consolidated the exact
   two-size2 parent proof with two explicit unread ingredient premises and
   its own unread interfaces; no new coverage or confidence from repetition.
+
+- 2026-10-20 11:23 BST,GPT MI515: curiosity about the exact two-size2
+  obstruction in a different normalization. This chooses a bounded source
+  comparison, not another proof extension or a claim of novelty.
+
+- 2026-10-20 11:24 BST,GPT MI516: mild source curiosity leads to a precise
+  independent question about equal pair-target fibres under protection.
+  The normalization comparison is complete; no novelty or proof confidence
+  is inferred from failed searches or compatibility with a known theorem.

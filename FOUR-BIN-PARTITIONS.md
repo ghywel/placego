@@ -1018,3 +1018,24 @@ Literal controls retained from the notebook:
 Each string denotes its set of distinct tokens. These check actual sums,
 disjointness and coverage by hand, not an infinite quantifier or independent
 verification. No numerical experiment or formal proof checker was run.
+
+**Precise comparison with the known common-sum slice (MI515–516).**
+[Kotlar's Theorem1.6](https://arxiv.org/html/1410.6916v7) treats a common
+sum on1..N. The shift u_i=s_i+c_i preserves all cut slacks because
+u_J-T_(C_J)=s_J-L(C_J). Family(11.1) then has size2 targets2a+4 and2a+6.
+Their difference2 persists under translation and reverses under full
+reflection, so this obstruction cannot belong to that common-sum slice.
+This is a scope check, not a new proof of the known result or verification
+of our candidate; our count class also omits three/four size2 bins.
+[Hoory–Kotlar2605.06071v2, section5](https://arxiv.org/html/2605.06071v2)
+distinguishes unequal prescribed targets as a generalization. The bounded
+source comparison found no exact counterpart to this classification;
+novelty remains unassessed, not established by that search.
+
+The shared cut conditions also coincide: if K is the common one-based
+target and P_j sums the j smallest cardinalities, each j-bin group has
+C_J>=P_j. The upper-rank function Uplus_N(r)=r(2N-r+1)/2 is increasing,
+so jK<=Uplus_N(P_j) implies every group upper cut. Conservation yields
+all lower cuts; the converse follows by taking the smallest-count groups.
+Thus the candidate agrees with the known slice's EXACT conditions in its
+shared count domain, not merely with a smaller sufficient subregion.

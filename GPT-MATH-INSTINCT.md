@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 11:14 BST: conditional parent argument consolidated.**
+**CURRENT working state, 2026-10-20 11:24 BST: source comparison complete; equal-pair mechanism next.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate flag poller. L8=68 is independently verified as G325 and does
 not depend on this structural programme. Current parent: prescribed-sum
@@ -166,11 +166,17 @@ section11, relative to those two explicit ingredient premises. This changes
 readability/dependency visibility, not mathematical coverage or status.
 The reconstruction needs no additional ingredient; separated-side scalar
 selection and post-reflection relabelling are explicit. Consolidation and
-endpoint audits are now finished; do not repeat them. Next independent
-block if no carrying response: targeted primary-source comparison of the
-exact prescribed-target statement/exception and0-based/1-based shift.
-No further count-class extension or census is planned. Five-bin count
-admission/multiple thin rows remain OPEN.
+endpoint audits are finished; do not repeat them. MI515–516 finish the
+targeted primary-source comparison: translating targets by their sizes
+preserves cuts, and the exceptional size2 targets still differ by2, so
+the obstruction never meets the known common-sum slice. No exact broader
+theorem found in two limited search batches; novelty UNASSESSED. Do not
+repeat this search without a concrete new source. Next INDEPENDENT cheap
+mechanism test: protected one-hole(2,2,c) with equal pair targets u,u; do
+group cuts directly force at least two edges in E_u? Use literal pair
+counts/high-end boundary, not G328. This simplifies a symmetric slice,
+not parent coverage or the five-bin count selector. No count-class
+extension, new PROOFS job or census planned. Five-bin admission remains OPEN.
 Last trajectory check MI510,2026-10-20 10:48 BST; MI512 completes the named
 missing branch rather than another local exception. No repeated failure
 or renewable extra-block allowance.13min ACTIVE.
@@ -36495,3 +36501,100 @@ scalar selection and L/T offset checks above address the cheap notational
 risks. Gut: the pull here was toward a shorter explanation, quieter than
 finding a new construction. Reasoned: consolidation was warranted by the
 review backlog, but cannot be counted as a new theorem.13min ACTIVE.
+
+### MI515 — Source comparison for the exact exceptional family (2026-10-20 11:23 BST)
+
+Pull: specific curiosity about whether the now precise obstruction already
+has a name or theorem in another normalization. No new surge of confidence
+in the candidate proof. Parent remains full-four-bin counts(a,2,2,c);
+its complete hand classification is consolidated in FOUR-BIN-PARTITIONS
+section11, but G327's scalar lemma, G328 and parent interfaces are unread.
+This is an independent literature/scope block, not another parent repair.
+
+Read NOW, CURRENT, latest messages and exact packet; fetch/store give no
+new commit or changed flag. Record searched: `Kotlar|prescribed.target|
+prescribed.sum` AND `exception|arbitrary|generaliz` ->29 paragraphs/6 files.
+Earlier equal-sum audits are retained; do not count their rediscovery as
+progress. The new search target is the EXACT arbitrary-target two-size2
+classification and its forced family, not generic four-bin existence.
+
+Bound: read the relevant primary-source statements in Kotlar1410.6916 and
+Hoory–Kotlar2605.06071v2, and at most two targeted search batches for an
+exact broader theorem/exception. Prediction: the common-sum result is a
+proper slice after t_i=s_i+c_i; no prediction that our statement is new.
+Can-fail counterfactual: an applicable arbitrary-target theorem would
+reclassify the statement as known and replace the current novelty wording,
+not be rejected because it uses different symbols. Controls: map BOTH
+cardinalities and sums; translate F(3,3) to targets(7,10,12,26) on1..10;
+keep input conservation and all group bounds. Unexpected check: the two
+size2 bins acquire the SAME shift, so their target difference2 persists;
+it cannot be removed by translating the universe. Stop after that source
+comparison or an exact match. No numerical experiment, new PROOFS entry,
+count-class extension or duplicate review request.
+
+### MI516 — The obstruction stays off the common-sum slice (2026-10-20 11:24 BST)
+
+Source/scope result, not new parent coverage. Read the precise primary
+statements in Kotlar1410.6916v7, Problem1/Observation1.1/Conjecture1.5/
+Theorem1.6, and Hoory–Kotlar2605.06071v2 Introduction/section5. The first
+is a known common-sum four-part result, minimum size2. The second explicitly
+distinguishes its proposed unequal-target direction from its equal-sum
+problem. Neither read settles our exact arbitrary-target statement. Two
+search batches, five queries total, found no applicable primary result;
+the general search was noisy and the arXiv-restricted batch empty. This
+is weak NOT FOUND, never proof of novelty or current open status. The
+bounded search stops here; do not renew it without a concrete new source.
+Exact citations and version scope are in PRIOR-ART's dated note.
+
+**Independent algebra/control.** If c_i is a bin's cardinality, shifting
+values by1 changes its target to u_i=s_i+c_i and preserves every cut slack:
+
+    u_J-T_(C_J)=s_J-L(C_J).
+
+Thus our candidate exceptional family on1..N is
+
+    (T_a+1,2a+4,2a+6,T_c+(a+4)c-1), counts(a,2,2,c).
+
+The size2 targets differ by2. Any common translation adds the SAME amount
+to both; full reflection reverses their difference. Consequently no
+member of the excluded family lies in the common-sum slice. This is
+consistent with the known theorem, not a contradiction or a proof of
+our candidate. It also does not promote an unrestricted strengthening:
+our current parent has EXACTLY two size2 bins and two sizes>=3.
+
+The shared conditions agree exactly as well: for common one-based target
+K, every j-bin group has count at least P_j, the sum of the j smallest
+counts. Since Uplus_N(r)=r(2N-r+1)/2 increases with r, the known sorted
+prefix condition jK<=Uplus_N(P_j) implies every group upper cut. Total
+conservation supplies lower cuts, and the converse is immediate. This is
+a normalization/scope derivation of the known criterion, not a new proof
+of its integral sufficiency. No stronger hidden screen was substituted.
+
+F(3,3) shifts from(4,8,10,23) to(7,10,12,26), total55. Its first and last
+bins are forced124 and{7,9,10}; remainder{3,5,6,8} has pair sums
+{8,9,11,13,14}, missing10/12. The nearby positive control becomes
+124 /37 /58 /{6,9,10}, with targets(7,10,13,25). Counts, totals, actual
+coverage and the invariant two-unit difference check directly by hand.
+No numerical experiment or solver was run.
+
+**Status/decision.** This adds source positioning and an exact normalization
+control; no mathematical parent coverage, proof status or review request.
+Earliest unread dependencies remain G327's scalar lemma and G328 plus the
+new parent composition. Consolidation and this source comparison are now
+finished. A quieter pull remains toward the reason pair equality avoids
+this obstruction, rather than another novelty search or a count-class
+extension. Next cheap INDEPENDENT mechanism question: on the protected
+one-hole child with counts(2,2,c) and EQUAL pair targets u,u, do the group
+cuts themselves force the sum-u fibre to contain at least two edges?
+Test directly from the literal pair-count formula, especially the high
+boundary, without using G328's classification. This would remove that
+classification dependency on the symmetric slice; it would not advance
+the already conditionally covered parent or solve the five-bin selector.
+No separate PROOFS entry/review job is proposed for that elementary check.
+
+Niggle sweep: shift depends on SIZE, not a common target offset; group
+slacks shift by C_J; full reflection acts on TARGETS with c_i(N+1), not a
+single-bin upper bound; common equal sums do not mean equal means. Those
+cheap algebraic checks pass. Gut: mild curiosity sharpened into a concrete
+pair-count question, not certainty about novelty. Reasoned: source boundary
+clarified; useful independent simplification available.13min ACTIVE.
