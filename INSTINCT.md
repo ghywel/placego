@@ -798,3 +798,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   already-fixed-cover price failure need correcting before the list can
   guide work. G315 removes two obligations without new lemmas. Resume
   on actual crossing extremals; no arbitrary representative or price refit.
+
+- 2026-10-20 21:02 BST,GPT MI578–579: the crossing attempt leaves a real
+  compatibility gap; the pull is mixed rather than automatically renewed.
+  Satisfaction with the global cross-product estimate leads to finishing
+  the earliest unread singleton-budget proof, now for any number of bins.
+  One carrying packet; no new crossing coverage, price refit or case tree.

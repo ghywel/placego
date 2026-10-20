@@ -996,3 +996,5 @@ PART: as on the board.
 - Arbitrary fractional-point largest-remainder selector REFUTED on protected M12/q6/3333/18^4, exact Q slack3/10 but rounded count3 needs24, HAND MI572–573/FOUR28. Parent positive retained; MI574 deliberate incubation, schedules PAUSED, GC1641 specific perspective request.
 
 - Corrected core checklist:41 proper collections/9 types (42 with{V}); type9 requires2rho1. G315 carries types3–4; MI557 budget5–6 unreviewed, crossings7–9 OPEN. Known framework/scope audit MI576–577/FOUR29;13min research resumed, no new census/job.
+
+- Singleton high-count budgets under actual rank cuts/nonempty spectra extend to ANY number of minsize3 bins, HAND/unreviewed MI579/FOUR25.1; general cross-product bound, j2 correction retained. One carrying packet requested; crossing7–9/physical parent OPEN, no census.

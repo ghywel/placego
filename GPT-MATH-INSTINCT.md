@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 20:39 BST: resumed on the corrected core checklist; general theorem OPEN.**
+**CURRENT working state, 2026-10-20 21:02 BST: crossing gap explicit; singleton budget generalized, unreviewed.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -167,12 +167,17 @@ exchange mechanism and primary literature;the incubation above is history.
   collections in9 types (42 with the trivial grand coalition). Corrected
   row9 has2rho1. Scalar nonemptiness covers1–2; PROVED G315 coarsening
   covers3–4. MI557 supplies HAND/unreviewed5–6. Crossings7–9 are OPEN.
-  No new review job or numerical target census. MI563 closes the price
-  shortcut for ONE row7 cover, not merely a price across all types.
+  MI578 coarsening still leaves the overlap width hi3-rho3; it is not
+  a type7 proof. MI579 generalizes the existing singleton budget to any
+  number of minsize3 bins using actual rank cuts; HAND/unreviewed, one
+  carrying packet for FOUR25/25.1. No new target census or proof number.
+  MI563 closes the price shortcut for ONE row7 cover, not all types.
 - **Next.** A bounded type7 extremal-set argument; preserve actual group
   overlaps. No arbitrary-Q rounding, clipping, raw supermodularity,
   full-fibre inheritance,189-form expansion or automatic larger census.
-  Last trajectory MI577 20:39 BST; no extra allowance.
+  Last trajectory MI577 20:39 BST; MI578 explicitly changes to finishing
+  the earliest unread prerequisite. No extra allowance used; next check
+  by22:09 BST or repeated failure. Crossings remain the parent gap.
 - **Rhythm.**13-minute research ACTIVE, app update confirmed; older
   schedule PAUSED, no separate poller/background computation. Explicit
   owner continuation and the corrected finite obligations reopen work.
@@ -39434,3 +39439,84 @@ target matching quotas, not this parity theorem. G334's G333,G319,G326
 were fully read at the earlier filing; their distinct conditional/count/
 partition scopes remain explicit. Original G333/G334 bodies are verified
 byte-for-byte unchanged. No generated proof pages or TeX files edited.
+
+### MI578 — Crossing attempt and the earliest unread budget (2026-10-20 21:02 BST)
+
+Parent and statuses remain MI577. Record searched: crossing.*extrem,
+rho.*hi.*type.?7, MI558 gave no joint paragraph; balanced AND extremal
+gave FOUR29 plus unrelated exchange results. FOUR25/29, MI557–558,
+the current state and colleague tails were read. No new incoming Cloud
+message at the completed poll; Local's release receipt is already read.
+
+The bounded HAND type7 attempt has NOT closed the inequality. Coarsening
+to bins1,3,24 gives rho1+rho3<=hi13; coarsening to3,4,12 gives
+rho34<=hi3+hi4. Adding leaves precisely hi3-rho3. These witnesses do
+not select a common high count for the overlapping bin3. A pinned K3
+would remove it, but recording that elementary special case as parent
+progress would hide the unresolved compatibility step. No full-fibre
+inheritance, new price or separate extremal-set gluing is adopted.
+The attempt is inconclusive, not a counterexample to type7 or the parent.
+
+Decision: finish the earliest unread global prerequisite, MI557/FOUR25,
+rather than extend a conditional crossing argument. Its cross-product
+bound is not intrinsically four-bin: for j nonempty low rows it appears
+to be C>=j(j-2)+(j mod2). The same capacity proof would then apply to
+ANY number of bins, all sizes>=3, under actual rank cuts and nonempty
+singleton count intervals. This is an explicit structural side result;
+it does not settle any additional crossing type or physical completion.
+No new proof-table number or dependent chain is being opened.
+
+Primary search before this extension: two bounded queries on prescribed
+cardinality/sum partitions and polymatroids returned constant-sum work
+(arXiv2312.00089) and general partition/rank material, not an adopted
+theorem for this deleted-token count budget. This is no novelty claim.
+The proof below is the direct generalization of the already recorded
+MI557 algebra, not an import from those search snippets.
+
+Before the independent arithmetic check: predict that minimizing C on
+the 2^j corners with every x_i+z_i=2 gives exactly j(j-2)+(j mod2),
+for j2..12. A smaller minimum kills the generalization; disagreement
+in the expanded budget identity stops the check. Check that identity
+on one j5 endpoint control, not new target domains. Unexpected check:
+retain the j2 equality trap, where the crude inequality is only zero
+and the original admitted-count bound supplies the essential extra1.
+No target census, partition solver, random sample or cap extension.
+
+
+### MI579 — Singleton count budgets do not depend on four bins (2026-10-20 21:02 BST)
+
+HAND candidate/generalization of MI557, not independently verified.
+FOUR25.1 gives the full carrying change: with ANY n>=2, all c_i>=3,
+actual proper-group rank cuts, conservation and nonempty scalar K_i,
+we have sum min K_i<=H<=sum max K_i. The vertex argument gives
+C>=j(j-2)+(j mod2) for arbitrary j, making the deficit excess at most
+-(j-1)(j-2)/2-(j mod2)<0 for every j>=3. The original j2 extra1
+and actual-rank reflection survive unchanged. No four-bin partition
+lemma or unread predecessor is needed. The box-corner proof, not the
+finite check, carries the infinite quantifier.
+
+The preregistered arithmetic controls PASS: j2..12 corner minima match;
+the j5 identity gives103-110=-7; the j2 improvement is exactly1. No
+target instance, partition engine or larger census was run. This check
+is by the proposer and is not an independent read. Earliest unverified
+step is the complete FOUR25/25.1 budget argument itself; if it falls,
+core rows5–6 lose this proposed justification, while G315/G333/G334 and
+the other carried results remain intact. One self-contained review
+packet is requested, with no new PROOFS number or dependent candidate.
+
+Actual change: a uniform prerequisite has a simpler all-n explanation.
+No extra crossing inequality or physical parent case is declared solved.
+The type7 hand attempt remains inconclusive: its two G315 coarsenings
+leave hi3-rho3, and separate chosen witnesses cannot erase that width.
+Next work must use the coupled overlap or test a different global
+representation; pinned-overlap and endpoint repairs are not a new lane.
+Gut: the exact general bound is satisfying; the crossing pull is mixed
+after this attempt, not renewed by the side result. Reasoned: finish
+and expose the earliest unread argument rather than build on it. The
+13-minute schedule stays active; no routine review halt or background run.
+
+Niggle sweep before publication: the proof must not assume j<=4,
+reflection must preserve ACTUAL ranks rather than baseline protection,
+and the j2 equality case must retain its scalar extra1. Each is checked
+explicitly in FOUR25/25.1. The j5 control intentionally lacks conserved
+targets and is labeled accordingly. No proof status is upgraded.

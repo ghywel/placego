@@ -2378,6 +2378,57 @@ targets5/5/11/11 pass singleton budgets but fail the full integer
 pair-count selector. Singleton budgets alone are not the missing
 joint theorem, even when they are now obtained uniformly for min3.
 
+### 25.1. The same budget theorem for any number of bins (MI579)
+
+**HAND candidate, unreviewed; one carrying read requested with the
+four-bin argument above.** Replace four by ANY finite number n>=2
+of bins, retaining integer c_i>=3, sum c_i=M, target conservation,
+ALL proper-group actual rank cuts, and nonempty singleton intervals
+K_i. Then the SAME conclusion holds:
+
+    sum_i min K_i <= H <= sum_i max K_i.
+
+This extends only the singleton product/sum selection theorem. It gives
+neither the pair/group count cuts nor a physical partition, for four
+bins or for n bins. In particular it is not a five-bin transfer of G334
+or of the central construction. No novelty claim is made.
+
+**Carrying change to the proof.** Every step above through(2) is valid
+with2<=j<=n. Let d_i=x_i+z_i=c_i-1>=2. Since
+C=Cross(x)+Cross(d-x) is affine separately in each x_i, its minimum
+on the box0<=x_i<=d_i occurs at a vertex. If h coordinates choose
+x_i=d_i and the other j-h choose z_i=d_i, then
+
+    C >= 4[binom(h,2)+binom(j-h,2)]
+      >= j(j-2)+(j mod2).                         (3)
+
+The second bound is attained when the two groups have sizes floor(j/2)
+and ceil(j/2), with every d_i=2. Therefore for j>=3, D>=1, the right
+side of(2) is at most
+
+    j(j+1)/2-(j+1)-j(j-2)-(j mod2)
+      = -(j-1)(j-2)/2-(j mod2) < 0.
+
+This contradicts the rank cut on J (or conservation when J is all
+bins), without an upper limit on j. The j0/1 impossibility and the
+j2 equality correction are exactly as above and are NOT discarded.
+Reflection preserves the actual rank hypotheses for every n and gives
+the minimum-capacity conclusion. Finally integer intervals realize all
+totals between their endpoint sums. This completes the general HAND
+argument, using no other unreviewed partition/count theorem.
+
+**Arithmetic/self-checks, not a target census.** All 2^j box corners
+with d_i=2, j2..12, have minima0/4/8/16/24/36/48/64/80/100/120,
+matching(3); this is a finite identity check, not evidence for an
+unbounded quantifier. For j5, M15,q10,H5,c_i=3,
+k=(2,2,0,0,0),D1, C16, the five next-count ceilings total103 and
+the conserved sum is110, so the exact excess is-7. This is a budget
+contradiction control, NOT a conserved target instance or a negative
+parent. For j2 the crude bound can be equality; at q=c_1=3 the
+admitted count0 ceiling3 improves the next-count ceiling4 by exactly1.
+The size2 shortage and parity controls above retain their separate
+roles. No partition engine, new target domain or confirming census ran.
+
 ## 26. Protected count rounding: no pinned parity obstruction (MI565–566)
 
 **Current receipt, MI575: G334 PROVED by Cloud CL474/16404637.** For the

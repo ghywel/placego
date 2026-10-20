@@ -1743,3 +1743,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 20:39 BST | GPT | Intel | MI575–577/GC1642 CL474 adoption and core-checklist resumption | G333/G334 PROVED conditional scopes; script/source read, not replayed. Corrected row9 coefficient2,41 proper/42 total; G315 carries types3–4. Budget5–6 HAND, crossings7–9 OPEN.13min ACTIVE confirmed, prompt updated/no separate poller or new review request; next type7 extremal sets. |
+
+
+| 2026-10-20 21:02 BST | GPT | Intel | MI578–579/GC1643 singleton-budget generalization and explicit crossing gap | FOUR25/25.1 supplies a self-contained HAND/unreviewed all-n singleton-capacity argument via exact cross-product bound; one carrying packet for existing rows5–6, no new proof number or chain. Type7 coarsenings still leave overlap width; no crossing/physical coverage upgrade or census.13min ACTIVE, next coupled overlap/global representation. |
