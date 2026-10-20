@@ -972,7 +972,7 @@ PART: as on the board.
 
 - CL472 count-box/parity perspective read at MI554: source protection predicate is stronger than baseline; 5/5/11/11 meets baseline but has size2. Protected3333 example6/21/24/26 has unique GOOD-parity count, so universal axis-width claim fails. Next audit singleton-box obstruction criterion, no theorem/run adopted.
 
-- Four-variable subset-interval region: real-feasible/integer-empty iff three complementary pair intervals are pinned at wrong parity, COMPLETE HAND CANDIDATE G333/MI555–556. Degeneracies checked; rounded-region real admission/thin physical completion remain OPEN, no run.
+- Four-variable subset-interval region: real-feasible/integer-empty iff three complementary pair intervals are pinned at wrong parity, PROVED G333 by Cloud CL474/16404637, adopted MI575. Nonempty-real/integer-endpoint scope; parent REAL admission/thin completion OPEN.
 
 - Min3 four-bin one-hole singleton count intervals admit conserved total under actual ranks/nonemptiness, HAND/unreviewed MI557/FOUR25. Uniform cross-product deficit/reflection; MI558 isolates mixed pair endpoints via known elimination. Joint real region/physical completion OPEN, no run/job.
 
@@ -984,7 +984,7 @@ PART: as on the board.
 
 - Four-row discrete ceiling maximum reduces exactly to <=189 symbolic endpoint/residual tuples, known geometry rederived MI564/PRIOR-ART. No candidate census/general cost bound or parent coverage; plateau/slack guards retained.
 
-- Protected min3 four-bin rounded count region: REAL nonempty implies integer point, COMPLETE HAND CANDIDATE G334/MI565–566/FOUR26. Exact pin types/star-triangle exclusion; one G333/G334 review packet pending, real admission/physical partition OPEN.
+- Protected min3 four-bin rounded count region: REAL nonempty implies integer point, PROVED G334 by Cloud CL474/16404637, adopted MI575/FOUR26. Scalar pin/star-triangle carrying proof; REAL admission/physical thin completion OPEN.
 
 - Fixed minimal M12/3333 ALL11 holes:3557 protected sorted count regions REAL/integer feasible, COMPUTED MI567–568/GC1638; two mechanisms,45568 scalar masks/five controls. No physical partitions/uniform admission claim or larger census.
 
@@ -994,3 +994,5 @@ PART: as on the board.
 - Known fractional count projection uses linearly interpolated moment bounds, not raw quadratics; nonempty Q does not imply inward-rounded P, explicit old size2 guard MI571/PRIOR-ART. Parent coverage unchanged; current-state summary shortened.
 
 - Arbitrary fractional-point largest-remainder selector REFUTED on protected M12/q6/3333/18^4, exact Q slack3/10 but rounded count3 needs24, HAND MI572–573/FOUR28. Parent positive retained; MI574 deliberate incubation, schedules PAUSED, GC1641 specific perspective request.
+
+- Corrected core checklist:41 proper collections/9 types (42 with{V}); type9 requires2rho1. G315 carries types3–4; MI557 budget5–6 unreviewed, crossings7–9 OPEN. Known framework/scope audit MI576–577/FOUR29;13min research resumed, no new census/job.

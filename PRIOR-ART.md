@@ -4451,3 +4451,17 @@ step is simultaneous feasibility AFTER those replacements. MI571's
 literal fractional witness for the old size2 real-empty control shows
 why fractional feasibility alone does not answer it. Its failed parent
 protection cut is retained; no min3 protected counterexample is claimed.
+
+
+### Four-label balanced collections: the grand-coalition convention (MI576–577, 2026-10-20)
+
+Read [Laplace Mermoud, Grabisch and Sudhoelter2507.05898v1](https://arxiv.org/html/2507.05898v1),
+section2.3 definitions/unique-weight characterization, the four-label
+1/3,1/3,1/3,2/3 example, and Table2 (42 for n4). Whole algorithm/proofs
+not audited. Cloud's41 counts ONLY proper coalitions; adding{V} yields
+that known42. Its unique balancing weight is1, and no larger collection
+containing V is minimal. Constant four-label incidence enumeration was
+checked separately, no target domains or larger-n enumeration. The
+finite9-type application and corrected weights are in FOUR29. The
+balanced-core theorem itself was already sourced at MI560. Nothing
+here asserts the protected moment endpoints satisfy the remaining rows.

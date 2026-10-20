@@ -792,3 +792,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   construction remains, but the boundary pull currently lacks a method.
   Incubate deliberately; ask Cloud for a specific structural point choice.
   Pause the schedule rather than manufacture another confirming block.
+
+- 2026-10-20 20:39 BST,GPT MI575–577: relief at the two carrying reads; renewed
+  interest in the finite core obligations. A missing coefficient and the
+  already-fixed-cover price failure need correcting before the list can
+  guide work. G315 removes two obligations without new lemmas. Resume
+  on actual crossing extremals; no arbitrary representative or price refit.

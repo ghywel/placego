@@ -2234,6 +2234,10 @@ minimum-mean zero-owner tool is recorded explicitly in the map.
 
 ## 24. Global count selection: the only conditional lattice obstruction (MI555–556)
 
+**Current receipt, MI575: G333 PROVED by Cloud CL474/16404637.** The
+nonempty-REAL and integer-endpoint hypotheses remain. Original candidate
+labels below are historical; no parent REAL admission follows.
+
 **COMPLETE HAND CANDIDATE G333, carrying review pending.** For four
 variables k of integer total H, suppose every proper subset total has
 integer lower/upper bounds. Intersect each interval with the reflected
@@ -2375,6 +2379,11 @@ pair-count selector. Singleton budgets alone are not the missing
 joint theorem, even when they are now obtained uniformly for min3.
 
 ## 26. Protected count rounding: no pinned parity obstruction (MI565–566)
+
+**Current receipt, MI575: G334 PROVED by Cloud CL474/16404637.** For the
+stated protected min3 four-bin parent, REAL-nonempty P contains an integer
+point. Real admission and physical zero/thin completion remain open.
+Historical candidate labels below are retained as provenance.
 
 **COMPLETE HAND CANDIDATE G334; independent carrying review pending.**
 For baseline-protected four bins of sizes>=3, a nonempty REAL region of
@@ -2520,3 +2529,58 @@ counts(2,2,1,1). Those are also the rounded distinguished means(3/2)^4.
 No parent refutation or extension of section27's threshold3 follows.
 Exact check and the corrected floating-helper limitation are in MI573.
 The remaining task is a structural choice, not merely obtaining Q.
+
+
+## 29. The corrected finite core checklist (CL474, MI576–577)
+
+KNOWN balanced-core framework; not a new general admission theorem.
+Write rho_J=min K(C_J,t_J), hi_J=max K(C_J,t_J). Protected scalar
+spectra make every K nonempty, and exact complementation gives
+rho_(J^c)=H-hi_J. Therefore P is precisely the core of v(J)=rho_J,
+v(V)=H. Standard balancedness/LP duality says it is nonempty exactly
+when every minimal balanced collection satisfies sum lambda_J*rho_J<=H.
+
+Cloud's constant four-label enumeration, independently checked here at
+its incidence level, gives41 proper collections in9 symmetry types.
+The known count42 includes the trivial collection{V}, whose inequality
+is equality. All label permutations of the following rows are required.
+The singleton in row9 has weight1, the three pair terms weight1/2.
+This corrects CL474's displayed last row; its committed script was correct.
+
+| Type | Representative collection and weights | Equivalent inequality | Current scope |
+|---|---|---|---|
+| 1 | 1,234; weights1,1 | rho1<=hi1 | Known scalar nonemptiness |
+| 2 | 12,34; weights1,1 | rho12<=hi12 | Known scalar nonemptiness |
+| 3 | 1,2,34; weights1,1,1 | rho1+rho2<=hi12 | Consequence of PROVED G315 |
+| 4 | 12,134,234; weights1/2 each | rho12<=hi1+hi2 | Consequence of PROVED G315 |
+| 5 | 1,2,3,4; weights1 each | sum rho_i<=H | MI557 HAND budget argument, unreviewed |
+| 6 | 123,124,134,234; weights1/3 each | sum hi_i>=H | MI557 reflected budget, unreviewed |
+| 7 | 1,123,24,34; weights1/2 each | rho1+rho34<=hi13+hi4 | OPEN crossing inequality |
+| 8 | 12,13,14; weights1/3;234 weight2/3 | rho12+rho13<=2hi1+hi23 | OPEN crossing inequality |
+| 9 | 1 weight1;23,24,34 weights1/2 | 2rho1+rho24+rho34<=H+hi14 | OPEN crossing inequality |
+
+**Rows3–4 require no new lemma.** Coarsen the original four labels to
+1,2,34. Their sizes are at least3 and all three targets have individual
+one-hole subset realizations: the only scalar minimum+1 exception is
+excluded by t_J>=L(C_J)+C_J, and the upper exception is excluded by the
+complement's same protection. PROVED G315 partitions those THREE bins.
+Counting high tokens in that literal partition gives k1 in K1,k2 in K2
+and k1+k2 in K12. Hence rho1+rho2<=hi12 and rho12<=hi1+hi2. This proves
+both inequalities for every relabeling as a consequence of G315. It
+selects SOME count; it does not imply all merged counts refine (MI559).
+
+**Scope of the price failure.** MI563 already fixes ONE row7 balanced
+cover and refutes its separated common-affine-price certificate. It is
+not merely a price required to work simultaneously for all nine types.
+A separate price for that same row is not a rescue. An actual extremal-
+set argument using overlapping groups remains a distinct possibility.
+
+All9 complement conversions and exact representative weights pass the
+structural check; orbit sizes are4/3/6/6/1/1/12/4/4. The wrong half-
+weight on row9's singleton fails incidence at label1. No target instance,
+new census or Cloud production run was executed here. Cloud's reported
+565503 protected instances are finite support, not a uniform proof.
+The next bounded question is type7 with actual group extremal sets.
+Physical thin-row completion is still a separate open inference even
+if all core inequalities are eventually established. No G335 or new
+carrying review request is opened for this known-framework checklist.

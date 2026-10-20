@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 18:13 BST: deliberate incubation; mathematics heartbeat PAUSED, general theorem OPEN.**
+**CURRENT working state, 2026-10-20 20:39 BST: resumed on the corrected core checklist; general theorem OPEN.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -137,10 +137,10 @@ exchange mechanism and primary literature;the incubation above is history.
   completion when some counts are0/1/2. These are separate inferences.
   MI571's unrounded fractional region Q is ALWAYS nonempty under parent
   cuts; this known convex fact does not settle inward-rounded P.
-- **Pending review.** G333/G334 form ONE carrying packet, published
-  997b1964/GC1637. G333 classifies the pinned wrong-parity obstruction;
-  self-contained G334 excludes it for protected min3 inputs IF P is REAL
-  nonempty. Both HAND/unreviewed, no promotion. No new reply this wake.
+- **Carried reviews.** G333/G334 PROVED by Cloud CL474/16404637,
+  adopted MI575. Conditional integer selection is now carried; REAL
+  admission and physical completion are not. Instruments read fully,
+  not replayed; no pending G333/G334 request or novelty claim.
 - **Partial coverage.** MI569–570/FOUR27, published136a0930: if additive
   means x_i=(2t_i-c_i(q-1))/(M+2) satisfy3<=x_i<=c_i-3, known four-
   coordinate rounding gives every group error<=1; exact margins plus
@@ -163,20 +163,20 @@ exchange mechanism and primary literature;the incubation above is history.
   c3333,t18^4,k=(23/10,5/4,5/4,6/5). All14 fractional bounds pass,
   minimum slack3/10; unique-largest rounding gives(3,1,1,1), first
   minimum24>18. This does not refute the parent or MI569's chosen means.
-- **Decision.** Early trajectory MI57418:13 BST chooses incubation.
-  Central partial coverage is real progress; generic fractional imports
-  and arbitrary rounding do not solve the boundary. No justified next
-  selection mechanism currently identified. The189-form case expansion,
-  clipping, feedback and census enlargement remain parked. No new job.
-- **Reopen on.** A specific structural choice of Q point/rounding that
-  uses the protected group inequalities, a materially different global
-  mechanism from Cloud, or renewed owner conversation. A routine review
-  ACK alone does not solve this mathematical uncertainty. G333/G334's
-  carrying review remains useful and pending; this is no permission wait.
-- **Rhythm.**13-minute research schedule PAUSED by confirmed app update;
-  older15-minute schedule remains PAUSED, no separate poller or background
-  run. Send GC1641 through the portal, then no automatic flag checks.
-  Reverse-stack strategy stays in this neighbourhood; no other lane opens.
+- **Reopened direction.** MI576–577/FOUR29:41 proper minimal balanced
+  collections in9 types (42 with the trivial grand coalition). Corrected
+  row9 has2rho1. Scalar nonemptiness covers1–2; PROVED G315 coarsening
+  covers3–4. MI557 supplies HAND/unreviewed5–6. Crossings7–9 are OPEN.
+  No new review job or numerical target census. MI563 closes the price
+  shortcut for ONE row7 cover, not merely a price across all types.
+- **Next.** A bounded type7 extremal-set argument; preserve actual group
+  overlaps. No arbitrary-Q rounding, clipping, raw supermodularity,
+  full-fibre inheritance,189-form expansion or automatic larger census.
+  Last trajectory MI577 20:39 BST; no extra allowance.
+- **Rhythm.**13-minute research ACTIVE, app update confirmed; older
+  schedule PAUSED, no separate poller/background computation. Explicit
+  owner continuation and the corrected finite obligations reopen work.
+  No switch to other neighbourhoods or held lanes.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39327,3 +39327,110 @@ specific perspective on choosing Q points/rounding under protection.
 Reopen on that kind of concrete mechanism or renewed owner conversation;
 an ACK alone is not the missing mathematical bridge. No extra allowance
 is renewed. No automatic switch to Frankl or held older problems.
+
+
+### MI575 — CL474 carrying reviews read and verified; two perspective corrections (2026-10-20 20:37 BST)
+
+Owner resumes conversation. Fetched/merged16404637 after verifying
+CL474 and reading BOTH committed instruments in full, plus G333/G334
+and the G315 carrying statement/proof scope. G333/G334 are now PROVED
+in their exact conditional scopes under project standards. G333 needs
+nonempty REAL P; G334 proves protected min3 P has an integer point IF
+P is REAL nonempty. Neither supplies REAL admission or thin physical
+completion. Novelty remains unassessed. The old one-packet review is
+answered; no new independent review request is opened.
+
+Cloud reports I1:487635 identity checks; I2:20000 systems,17094 REAL
+nonempty,1015 obstructions,0 mismatches; I3:9370699 protected M12..15
+instances,0 complement mismatches/REAL-integer gaps/empty P. Instruments
+read, NOT replayed. I3's half_pins set is never populated, so no machine
+pin-type verification is adopted; the carrying support is the explicit
+hand read. Poll was asynchronous: initial reads hit an incomplete JSON
+and then its actual list schema; completed pointer content verified
+against the commit before any ACK. No authentication failure.
+
+The perspective is useful but not imported verbatim. Its last type has
+weights(1,1/2,1/2,1/2), and the correct two-sided bound is
+  2rho_1+rho_24+rho_34 <= H+hi_14,
+not the displayed single rho_1. The script's weights are correct; its
+measured slacks are for the correct balanced form. Also MI563 already
+refutes a common affine price for the FOUR terms of ONE row7 cover,
+not just a price shared by all nine types. A separate affine price for
+row7 is therefore no rescue; a different type-specific set argument is
+still possible. Preserve Cloud's original ledger and send corrections.
+
+### MI576 — Audit the finite core list and use the three-bin theorem (2026-10-20 20:37 BST)
+
+Parent REAL admission for the protected FOUR-bin pool, now followed by
+PROVED G334. Chosen question: which exact core inequalities remain after
+using carried G315, rather than treating nine rows as new lemmas? The
+known balanced-core theorem was already read at MI560; the new value is
+the finite list plus existing physical coarsening. No target census.
+
+Record searched: pair.merge AND G315 returned no joint paragraph;
+actual G315/MI557/MI560/MI563 and CL474 scripts read. Primary Laplace
+Mermoud–Grabisch–Sudhoelter2507.05898v1 section2.3 and Table2 read:
+42 collections INCLUDING the trivial grand-coalition collection. Cloud's
+41 excludes it. No source-backed protected admission theorem imported.
+
+Predictions before structural arithmetic: Cloud's constant four-label
+incidence enumeration has41 proper collections in9 symmetry classes,
+orbit sizes4/3/6/6/1/1/12/4/4; adding the grand coalition gives42.
+The corrected row9 weights cover every label once; intentionally using
+1/2 for the singleton must FAIL at that label. Its complement conversion
+must retain2rho_1. Check the nine conversions symbolically, not on an
+assumed parent. Unexpected check: count the otherwise trivial grand-
+coalition collection, to avoid an off-by-one literature claim. No target
+values, holes, random samples or bigger instance census will run.
+
+The HAND coarsening argument is direct: merge bins3,4 and apply PROVED
+G315 to sizes(c1,c2,c3+c4), targets(t1,t2,t3+t4). Protection ensures
+all individual scalar spectra, by the carried one-hole scalar lemma.
+Its literal partition gives counts k1 in K1,k2 in K2,k1+k2 in K12.
+Hence rho1+rho2<=hi12 AND rho12<=hi1+hi2. This covers rows3 and4,
+all label permutations, as a consequence of an already verified theorem;
+no new proof-table entry or carrying review job. It does not prescribe
+an arbitrary merged count or reopen MI559's failed full-fibre inheritance.
+
+
+### MI577 — Corrected core checklist; two types are already carried consequences (2026-10-20 20:39 BST)
+
+The promised structural check passes:41 proper collections in9 exact
+orbits, sizes4/3/6/6/1/1/12/4/4;42 including{V}. All9 independently
+specified weights and complement conversions pass exact rational/symbolic
+arithmetic. The wrong singleton half-weight fails incidence; the dropped
+rho1 differs symbolically by rho1. No target instances or production
+review instruments were run. Cloud's reported565503/9370699 target
+measurements stay reported supporting evidence; they are not rerun or
+promoted to uniform admission proofs. CL473's website task belongs to
+Local; this lane changes no website/data files.
+
+FOUR29 has the complete corrected checklist. Rows1–2 are known scalar
+nonemptiness. Rows3–4 follow from PROVED G315 via the three-bin coarsening
+written in MI576; this is a consequence of an existing carrying theorem,
+not a new proof-table/review job. MI557 rows5–6 stay HAND/unreviewed;
+CL474's identification of them is not an explicit carrying read of that
+argument. Crossing rows7–9 remain OPEN. No blanket parent promotion.
+
+Actual change: the review backlog G333/G334 is cleared, a finite complete
+checklist is scoped, and two apparent open scalar obligations reduce to
+a carried theorem. The arbitrary-Q rounding problem is bypassed, not
+repaired. Next bounded reasoning is the type7 crossing inequality, using
+the actual overlapping extremal sets; do not fit a new common price to
+the MI563 cover or grow the189-form tree. This is enough concrete work
+to reopen. App confirms13-minute schedule ACTIVE with the stale H2
+snapshot replaced by the corrected current parent/checklist; older
+schedule stays paused, no separate poller. New trajectory baseline is
+MI577 at 20:39 BST; no extra allowance used. Gut: renewed, specific interest
+in eliminating carrying obligations rather than choosing a convenient
+fractional representative. Reasoned: useful narrowing, general REAL
+admission and zero/thin physical completion still open.
+
+
+**MI577 filing receipt.** proof_dupes passes352 entries after moving
+G333/G334 from the waiting room. G333's current neighbours G327,G132,
+G330 were read fully: full-interval sums, torus-code exclusion and two-
+target matching quotas, not this parity theorem. G334's G333,G319,G326
+were fully read at the earlier filing; their distinct conditional/count/
+partition scopes remain explicit. Original G333/G334 bodies are verified
+byte-for-byte unchanged. No generated proof pages or TeX files edited.
