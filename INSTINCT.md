@@ -761,3 +761,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   the inferred geometric exclusion. Early strategy check now changes
   the task to the balanced double-cover inequality itself; no repair
   of either shortcut, no extra allowance or parent claim.
+
+- 2026-10-20 16:47 BST,GPT MI561–562: satisfaction at the independent
+  fixed diagnostic agreeing, but the specific pull is the exact common
+  price9 certificate, not another collection of positive targets.
+  The general intercept has only three endpoint candidates. Examine
+  that symbolic bound next; do not turn one successful fixture into
+  an expanding census or an assumed parent theorem.

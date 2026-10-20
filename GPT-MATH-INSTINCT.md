@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 16:31 BST: direct balanced-cover count test; two gluing shortcuts closed.**
+**CURRENT working state, 2026-10-20 16:47 BST: fixed balanced-cover mechanism passes; symbolic price envelope next.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -134,7 +134,7 @@ read in full, reported875,160/84,600 input checks not rerun. Both original
 proof bodies preserved intact under dated promotion receipts; duplicate
 checks PASS350. Novelty UNASSESSED; no external peer review claimed.
 
-MI550 trajectory still governs: arbitrary protected holes and the full
+General-hole boundary retained from MI550: arbitrary protected holes and the full
 five-bin count selector remain OPEN. G332 closes only missing1. MI551's
 limited finite bad-vector avoidance now uses carried G331; it does not
 supply zero/thin count admission. The protected10/39/39/40 positive
@@ -182,13 +182,23 @@ region is an integer singleton. CL472's endpoint-failure counts cannot
 by themselves carry that stronger geometric conclusion.
 
 Early trajectory MI56016:31 BST replaces MI550: two failed automatic-
-gluing assumptions trigger a switch BEFORE another repair. Next test
-the actual balanced-cover inequality U34+U124+U13+U2>=2H directly.
+gluing assumptions trigger a switch BEFORE another repair. The target
+is the actual balanced-cover inequality U34+U124+U13+U2>=2H.
 These four groups cover every label twice; they are NOT disjoint bins.
 The equivalent known game-core balancedness criterion is sourced in
 PRIOR-ART, not a new theorem. No parent real-feasibility or partition
 coverage from the reformulation. Earliest independent read still G333;
 section25 HAND remains independent and unreviewed, no new review queue.
+MI561–562 completed ONE preregistered fixed-fixture proof-mechanism
+diagnostic, M12/q6/c3333; no target-town census. Direct quadratic
+ceilings and actual4096-subset oracle/budget DP agree: maximum136<144
+over34 deficit allocations,22 scalar comparisons/3 controls PASS.
+No rerun/enlargement. HAND price9 envelope explains the exact maximum.
+General moment-ceiling pricing reduces each group's intercept to at
+most three candidate count endpoints by convexity; the resulting
+unbounded inequality is NOT proved. Next examine that symbolic envelope,
+preserving caps/rounding and overlapping incidence; do not enlarge the
+fixture or treat its success as a general count-admission theorem.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
 MI56016:31 BST; no extra allowance. General q/five-bin/every-n and old
@@ -38757,3 +38767,71 @@ Caps exactly4096 scalar subset masks, at most2401 direct count allocations,
 cap or completed diagnostic. No rerun/enlargement or new review request.
 The unbounded balanced inequality, G333's independent read and physical
 thin-row completion keep their existing statuses whatever this outcome.
+
+### MI562 — Fixed ceiling diagnostic complete; exact price certificate (2026-10-20 16:47 BST)
+
+Prereg7941b339 was published before the ONE execution of
+tests/probes/instinct/balanced_count_ceiling.py. Completed without cap,
+retry or enlargement:4096 actual subset masks;22 scalar ceiling
+comparisons (including the repeated size6 row);34 deficit allocations;
+three controls PASS. Independent direct products and budget DP agree
+on maximum136<144. The two maximizing endpoint budgets are(2,5,4,0)
+and(4,5,2,0), group order34/124/13/2. Both have budget11; their
+ceiling costs are26+59+44+7 or44+59+26+7. DP maxima at budgets
+8/9/10/11 are109/118/127/136. Runtime0.006819CPU seconds on GPT's
+Intel host, an instrument timing not a performance extrapolation.
+
+Raw /tmp/math-instinct-mi561-ceilings.json stays outside git; SHA256
+82e3e07d15e29bc80738a84dcb4299e75581beff4465b0b4465b0dc4d398c27d.
+Executed source SHA256
+d5df0b17d1596c99e24d575b86e06834efcaec39b6ff59f2ad775230e74ffa5f.
+No subsequent source edit or rerun. Scalar oracle retains the known
+merged-count3/child-max2 incompatibility; the literal positive has
+upper endpoints5/5/3/2; size6,r1 is rejected as EMPTY. All data are
+counts/moments, with no enumeration of target towns or joint partitions.
+
+Post-run HAND explanation, not another experiment: from the committed
+ceiling tables, F6(r)<=9r+8, F9(r)<=9r+14, F3(r)<=9r+7 on EVERY
+admitted count option. The intercept maxima are attained (F6 at r2/4,
+F9 at r4/5, F3 at r0). Thus for the four groups and any sum r<=11,
+
+    sum F <=9*11+(8+14+8+7)=136<144.
+
+This is a short scalar-price certificate for this ONE fixture's balanced
+inequality, not just a reassuring list of target positives. It does not
+prove the other balanced collections, full real count admission, integer
+selection or physical completion. Finite result COMPUTED by two same-
+worker mechanisms; this hand interpretation is unreviewed. G333 retains
+its separate pending carrying read. No new PROOFS entry/review request.
+
+Reusable next HAND reduction: for general M,q,c, let a=U_c(T_c) and
+b=U_c(sum(S)-T_(M-c)), where U_c(t) is the largest scalar-admitted
+high count. For these scalar-admitted protected endpoints, F_c(r) is
+the increasing convex quadratic f_c(r+1)-1 until its first plateau
+at r=b, then the constant protected upper. For any price lambda>=0,
+the maximum of F_c(r)-lambda*r is therefore attained among a,b-1,b,
+omitting b-1<a and duplicate choices. Convexity handles the preplateau
+integer interval; subtracting a nonnegative price makes the plateau
+nonincreasing. This is elementary envelope geometry, not a new theorem
+of existence. Legality and scalar nonemptiness are retained explicitly.
+
+For the chosen balanced cover, a sufficient GENERAL certificate would
+be a lambda>=0 with
+
+    lambda*(2H-1)+sum_(J in{34,124,13,2}) max_r(F_(C_J)(r)-lambda*r)
+        < 2sum(S).
+
+Each of those maxima now needs only the three symbolic endpoint
+candidates. Existence of such a price for arbitrary protected sizes
+and holes is OPEN, and this separated ceiling method might be too weak.
+Do not assume it from the fixed success; do not compensate with more
+fixtures. Next bounded reasoning is on this symbolic inequality and
+its actual rounded roots/capacities, not a new parameter census.
+Niggles checked: independent scalar oracle rather than reused f;
+capacity case handled separately; empty rounded intervals discarded;
+all deficit budgets included; unbounded quantifier not inferred;
+overlapping groups never assigned disjoint ownership. Gut: interest
+in the exact price witness rather than in the positive test count.
+Reasoned: one mechanism has survived its fixed diagnostic, with an
+explicit symbolic next test and no parent coverage upgrade. Last
+trajectory MI56016:31 BST;13min ACTIVE, no extra allowance.

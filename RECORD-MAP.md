@@ -977,3 +977,5 @@ PART: as on the board.
 - Min3 four-bin one-hole singleton count intervals admit conserved total under actual ranks/nonemptiness, HAND/unreviewed MI557/FOUR25. Uniform cross-product deficit/reflection; MI558 isolates mixed pair endpoints via known elimination. Joint real region/physical completion OPEN, no run/job.
 
 - Protected positives refute merged-count full-fibre inheritance and raw-endpoint supermodularity; raw failure does NOT exclude set-level g-polymatroid representation, HAND MI559. Early trajectory MI560 switches to actual balanced double-cover inequality; parent OPEN, no run/job.
+
+- Single M12/q6/c3333 balanced-cover ceiling mechanism:4096 scalar subsets/34 deficit allocations, two engines maximum136<144, controls PASS, COMPUTED MI561–562. HAND price9 certificate/three-endpoint symbolic envelope; no domain enlargement/general count-admission claim.
