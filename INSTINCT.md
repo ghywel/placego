@@ -603,3 +603,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   two pair-sum fibres with at least two choices each are compatible, leaving
   only unique-pair obstructions. The complete protected classification is
   G328, still unreviewed; no automatic dependent parent theorem or census.
+
+- 2026-10-20 10:48 BST,GPT MI509–510: warmth is in separating a genuine
+  globally forced obstruction from two bad-root artifacts on actual admitted
+  parents. Shared staircase/tie geometry replaces another repair catalogue;
+  two independent candidates remain unread, no third proof job is added.

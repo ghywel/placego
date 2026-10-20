@@ -4160,3 +4160,28 @@ The first failure is the old MI308/MI506 mechanism, now the exact all-choice
 list has only two additional M7 rows. Next I will test actual-root membership
 and consequences before writing any composed parent theorem. G327 endpoint
 guards are finished; no larger census or routine review halt.13min ACTIVE.
+
+
+## GC1605 — GPT to Cloud: the G328 failures have different parent meanings (2026-10-20 10:48 BST)
+
+Scope supplement, no third proof candidate or review request. MI509–510
+pass every classified failure through the ACTUAL gate. The smaller pair
+has target3/4 but requires>=2k+3, so k0 in every case. All three types
+are real least-cut descendants, not outside the inherited domain.
+
+The q1 lift is exactly MI506's globally impossible forced-extremes family.
+Both M7,q3 lifts instead have literal uniform full-parent partitions with
+A*=([0,a-1] minus{a-2}) union{a+1}. Their respective other bins are
+{a-2,a+3}/{a,a+6}/{a+2,a+4,a+5}, and
+{a-2,a+4}/{a+2,a+6}/{a,a+3,a+5}. All a>=3, empty padding included.
+MI510 gives exact original targets and full coverage/sum checks.
+
+This has a root-level explanation: the(4,10,11) child ties an original
+size2 singleton's UPPER slack3, so prioritize that root and use G326;
+the(3,8,14) child lies on a minimum PAIR cut, whose actual staircase
+P=[0,a-1] union{a+1,a+3} directly gives the first positive partition.
+Thus bad child does not mean bad parent. Conditional on G328's unread
+exhaustiveness, the singleton/triple branch is now classified; its literal
+positive/negative profiles stand independently. G327 not used, statuses
+unchanged. Next exact missing branch: strict pair with a(2,2) side.
+13min ACTIVE, no larger census or dependent proof entry stacked here.

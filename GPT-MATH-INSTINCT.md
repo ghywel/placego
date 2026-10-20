@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 10:39 BST: G328 classifies protected two-pair obstructions.**
+**CURRENT working state, 2026-10-20 10:48 BST: actual-root scope test complete; pair branch next.**
 The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
 PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
 not depend on H2. The current parent is structural partition sufficiency.
@@ -163,12 +163,23 @@ whole obstruction list, without a numerical census. G328 is independent
 of G327, not another link in an unread chain. Both now need their own
 carrying reads; no parent theorem is promoted. Earliest unread steps:
 G327's size2 staircase/interface and G328's classification, separately.
-Next cheap parent-facing test: pass the three obstruction types through
-the actual least-cut residual gate; distinguish a genuinely forced global
-failure from a bad first-bin choice before another candidate. No local
-margin ladder, automatic full-four-bin extension or larger census.
-Last trajectory check MI508,2026-10-20 10:39 BST: no new PROVED coverage
-beyond H2; complete independent residual classification candidate added.
+MI509–510 complete the ACTUAL-gate scope test. All three G328 failure
+types force k0. The q1 row is precisely the uniquely forced old negative
+family; both M7,q3 rows have literal uniform full-parent partitions with
+the SAME changed first bin. One is already avoided by choosing a tied
+size2 singleton; the other lies on a minimum pair facet and has an explicit
+physical staircase partition. These direct examples use no unreviewed
+completeness claim. CONDITIONAL on G328's classification, this covers
+the larger-singleton/triple branch except the genuine negative family;
+selected-size2 roots already use PROVED G326/full-interval base.
+No entire two-size2 four-bin theorem is asserted or filed. Two carrying
+reads remain pending, not three. G327 and G328 are still separate unread
+claims; no status promotion. Next cheap test: the remaining STRICT pair
+branch, especially a pair side split(2,2), using its ACTUAL four-token
+staircase and conjugate and their physical complement. Do not return to
+another singleton exception or enlarge a numerical domain.
+Last trajectory check MI510,2026-10-20 10:48 BST: actual-parent distinction
+clarified, branch coverage conditional; no new PROVED result or review queue.
 Old failed selectors/MI460 stay outside the proof.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
@@ -36135,3 +36146,129 @@ need to guess a pair. Reasoned: a precise candidate mechanism and boundary,
 not a solved five-bin parent. Niggle sweep: equal targets, legal high unique
 pairs, q-midpoint deletion, all M7/M8 joins, complementary bounds, exact
 cut labels and literal controls checked. No inherited warmth resets a budget.
+
+### MI509 — Test the classified obstructions at the ACTUAL parent gate (2026-10-20 10:45 BST)
+
+Pull: the small obstruction list makes it possible to distinguish a genuine
+parent failure from a bad root without guessing more repairs. Unease: a
+residual counterexample is not automatically a counterexample to the parent.
+G327 and G328 are both still unreviewed, and neither will be promoted here.
+The question is the actual full-four-bin counts(a,2,2,c), a,c>=3, under all14
+rank cuts, restricted to the singleton/triple-minimum reduction. This is a
+scope test, not a new full-four-bin theorem or independent review queue.
+
+Read NOW,current state,latest ledger, exact G328 statement and MI453's gate;
+fresh fetch/store checkpoint bring no new commit or addressed flag. Record
+searched: `actual.*gate|kM+q|root.*exception` AND `H2|two.pair|size.two|size2`
+->10 paragraphs/5 files; the relevant MI453/MI504–505 source algebra is read.
+Primary-literature scope is the preceding prescribed-sum check, unchanged;
+no new external theorem or novelty premise is imported by this hand audit.
+
+Bounded hand test: for each of G328's THREE candidate failure types, enforce
+BOTH terms of the actual inherited max bound, h=kM+q, and the all-remaining
+cut. Determine whether k>0 is possible, then recover original counts and
+targets. Keep original moment/cardinality fixed when testing a different
+first bin. Counterfactual: “every child failure is a global parent failure”
+must face an explicit alternate-root partition; the opposite claim must
+face the q1 first bin's UNIQUE minimum+1 realization. Independent controls:
+translate each final partition back and account for all14 cuts through the
+exact gate, including the all-remaining inequality. Unexpected check: a3
+means an empty padding prefix in any constant core, not a nonexistent token.
+Stop after this scope audit; no numerical run, census expansion, automatic
+new composed proof candidate or unrelated local repair is opened.
+
+### MI510 — Actual-root test: one forced negative family, two avoidable child failures (2026-10-20 10:48 BST)
+
+**Hand scope result; no new PROOFS entry or review request.** Consider a
+full interval with counts(a,2,2,c), a,c>=3, and a larger selected first bin
+A of size a at the global minimum cut slack h. Its prefix/suffix/pivot
+remainder has l+k=a-1, M=c+4, h=kM+q. For either remaining pair the
+actual gate forces t_pair>=1+2(k+1)=2k+3. Each of G328's THREE negative
+rows has a pair target3 or4, hence EVERY one requires k0. Thus
+
+    l=a-1, h=q, s_A=L(a)+q.
+
+Conversely each listed row satisfies the EXACT gate for every a>=3:
+q-lr<=r for q1 or3, l>=2,r>=2, so its max reduces to r; and
+(l+1)M>=2q holds at M>=7. These are actual least-cut descendants,
+not negatives lying outside the inherited domain. This gate calculation
+is direct and independent of the completeness of G328's classification.
+
+**The q1 row is genuinely impossible in the parent.** Recovering targets
+from(4,6,T_M-11) gives exactly MI506's family
+
+    L(a)+1, 2a+2, 2a+4, L(c)+(a+4)c-1.
+
+The first bin's minimum+1 target uniquely forces [0,a-2] union{a}.
+No alternate first-bin choice exists, and its residual pair4 is forced04,
+blocking both sum6 pairs. This is a GLOBAL negative, not just a failure
+of the canonical selector; the older forced-extremes proof remains the source.
+Reflection/permutation of this family is covered by the same physical
+calculation (a,c and the two pair labels interchange under reflection).
+
+**Both q3 rows have uniform parent partitions.** Here M7,c3,N=a+7 and
+A's target is L(a)+3. The original targets and literal partitions are:
+
+1. Child(3,8,14), original(L(a)+3,2a+1,2a+6,3a+11):
+
+    A* = ([0,a-1] minus{a-2}) union{a+1};
+    B* = {a-2,a+3}; C* = {a,a+6}; D* = {a+2,a+4,a+5}.
+
+2. Child(4,10,11), original(L(a)+3,2a+2,2a+8,3a+8):
+
+    A* as above;
+    B* = {a-2,a+4}; C* = {a+2,a+6}; D* = {a,a+3,a+5}.
+
+For ALL a>=3 these are disjoint and cover0..a+6. A* has size a and sum
+L(a)-(a-2)+(a+1)=L(a)+3; other sums are displayed. This is not an
+inference from a finite core scan. At a3 the actual controls are
+024/16/39/578 and024/17/59/368 on0..9. Their canonical first bin015
+really leaves the respective nonpartitionable G328 child, while024 gives
+these full partitions. The elementary counterfactual “bad child implies
+bad parent” is therefore REFUTED on actual admitted parents. No independent
+classification premise is needed for these literal positive families.
+
+**Why the alternatives are structural.** In row2 the large pair target
+2a+8 has ORIGINAL upper slack U_N(2)-(2a+8)=3=h. A size-two priority among
+singleton/triple minima chooses that pair instead of A; the PROVED G326
+then completes its one-size-two remainder. This reflects the FULL original
+interval first, not a claim that H2's protected margin is reflection-invariant.
+
+In row1 the cut A union B has lower slack3=h. Thus a pair cut is ALSO
+minimum, although the old rule sent singleton ties to A first. Its two
+pair-group products are2a and6, both greater than h3. The same physical
+staircase with boundary
+
+    P=[0,a-1] union{a+1,a+3}
+
+has complement {a,a+2,a+4,a+5,a+6}; reflected in N-1 this is exactly
+{0,1,2,4,6}=Q5(3). It gives the first displayed partition directly.
+The first scalar endpoint is on the boundary of the CENTRAL interval,
+not a missing scalar sum. The global rule need not demand that every
+minimum pair be STRICTLY closer than all singletons before using its
+construction. This does not yet assert a general non-strict-pair theorem;
+it explains this entire actual exception family with the existing geometry.
+
+**Coverage/dependency/decision.** CONDITIONAL on G328's exhaustiveness,
+the larger-singleton/triple branch with exactly two size2 bins now has
+only MI506's true negative family left. A selected size2 singleton instead
+leaves counts(2,a,c): internal-hole cases use PROVED G326 from the inherited
+cuts; endpoint holes use the proved full-interval three-bin base.
+Literal positives and negatives above are direct hand facts; a claim that
+they exhaust the branch still needs the independent G328 carrying read.
+G327 is not used. No entire four-bin or five-bin theorem is filed or promoted.
+The remaining full-row branch is pair minima, especially when BOTH size2
+bins share the same side of that pair cut. That is the next precise audit,
+not another exception to the singleton branch or a new numerical domain.
+
+Two independent carrying requests remain pending (G327,G328); no third
+candidate/job is stacked on them here. Next cheap test is the actual
+four-token staircase/conjugate when its split is(2,2), with inclusive
+central endpoints at tied pair cuts. Check its scope before composing
+any parent characterization. Niggle sweep: k0 forced by an ACTUAL cut,
+all-remaining inequality included, both examples truly admitted, uniqueness
+only claimed at h1, empty a3 padding harmless, full value reflection and
+same physical P/complement checked. Gut: warmth attaches to identifying
+selector artifacts versus genuine nonexistence. Reasoned: parent branch
+coverage is conditional and precisely named; two new local programmes are
+avoided.13min ACTIVE; no experiment, larger census or routine review halt.

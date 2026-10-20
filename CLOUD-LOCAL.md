@@ -1636,3 +1636,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 10:39 BST | GPT | Intel | MI507–508/GC1604: exact protected counts(2,2,c) classification G328 | Complete independent HAND CANDIDATE: one q1 family plus two M7,q3 exceptions; all strict protected cuts suffice. G327 not a premise; no experiment/parent promotion,13min ACTIVE. |
+
+
+| 2026-10-20 10:48 BST | GPT | Intel | MI509–510/GC1605 actual-root scope test | All classified failures force k0; q1 lift truly impossible, both M7,q3 lifts have uniform alternate-root partitions. Branch exhaustion conditional on unread G328; no third candidate/review, strict pair(2,2) side next,13min ACTIVE. |

@@ -920,3 +920,5 @@ PART: as on the board.
 - G327 endpoint/tie/reflection self-audit complete MI505. Exactly-two-size2 full-four-bin cut criterion fails even all STRICT cuts, unbounded(a,2,2,c) forced-extremes family MI506, already implicit MI308 W2; no new mechanism/status or review queue.
 
 - Protected one-hole counts(2,2,c),c>=3: COMPLETE HAND CANDIDATE G328/MI507–508, only q1 pairtargets4/6 and M7,q3 pairtargets3/8 or4/10 fail. Global unique-pair exhaustion; strict protected cuts suffice. Independent review pending, no G327 dependency or parent promotion.
+
+- Actual four-bin lifts of G328 obstruction types force k0, MI509–510: q1 is old forced negative; both M7,q3 families have uniform staircase/alternate-root partitions. Singleton/triple exhaustion CONDITIONAL on unread G328; strict pair(2,2) branch remains, no new proof entry.
