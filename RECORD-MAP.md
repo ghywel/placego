@@ -981,3 +981,5 @@ PART: as on the board.
 - Single M12/q6/c3333 balanced-cover ceiling mechanism:4096 scalar subsets/34 deficit allocations, two engines maximum136<144, controls PASS, COMPUTED MI561–562. HAND price9 certificate/three-endpoint symbolic envelope; no domain enlargement/general count-admission claim.
 
 - Symbolic common-price ceiling certificate REFUTED by literal endpoint mixture, HAND MI563/GC1635: count219,cost4903229/99>48400. Fractional obstruction only; discrete ceiling/balanced inequality/parent OPEN, no census or review job.
+
+- Four-row discrete ceiling maximum reduces exactly to <=189 symbolic endpoint/residual tuples, known geometry rederived MI564/PRIOR-ART. No candidate census/general cost bound or parent coverage; plateau/slack guards retained.

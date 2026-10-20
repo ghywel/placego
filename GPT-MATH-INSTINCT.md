@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 16:56 BST: symbolic common-price shortcut fails; retain joint incidence.**
+**CURRENT working state, 2026-10-20 17:10 BST: exact discrete ceiling reduction; uniform inequality still open.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -203,8 +203,12 @@ for EVERY price. Literal scalar witnesses/rounded endpoints are recorded
 below; the failure is concavification, not a negative parent. MI561 was
 not rerun or enlarged. Stop the uniform common-price shortcut; the
 unpriced discrete ceiling bound is not decided by this fractional mixture.
-Next inspect which exact incidence/target identity the mixture loses,
-before deciding whether a genuinely joint certificate is tractable.
+MI564 retains the hard integer budget by known convex extreme-point
+geometry: the exact four-row discrete maximum lies among at most189
+symbolic endpoint/residual tuples. Full argument/read scopes in PRIOR-ART.
+No tuple census or uniform cost bound has been performed. Next seek one
+rank/cross-product inequality for these forms; do not build a local
+repair catalogue. If separate ceilings fail, keep exact joint incidence.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
 MI56016:31 BST; no extra allowance. General q/five-bin/every-n and old
@@ -38942,3 +38946,55 @@ budget without concavification; if that merely produces another case
 catalogue, step back to the joint selector. Earliest unread dependency
 G333 remains unchanged; this obstruction is independent of it and of
 section25. Last trajectory MI56016:31 BST, no extra allowance;13min ACTIVE.
+
+### MI564 — Keep the integer budget: exact global endpoint reduction (2026-10-20 17:10 BST)
+
+No new Cloud flags/remote commits this wake. Continue MI563's specific
+question: does retaining the hard count budget give an exact mechanism,
+instead of another affine-price fit? Record searched: integer.*ceiling,
+convex.*allocation, balanced.*rank returned no indexed hits; MI561–563
+and scalar instrument read. Primary knapsack background/read limits and
+complete elementary specialization now in PRIOR-ART. Known geometry,
+not an originality claim, new proof entry or parent existence theorem.
+
+HAND prediction: after separating each row's plateau, convexity permits
+concentrating all but one count at endpoints without lowering cost.
+Can-fail counterfactual: a required nonintegral residual, lost plateau
+jump, or forced equality despite slack would invalidate the reduction.
+Checks: opposite-coordinate pushes have integer ends because the budget
+has coefficient1 on each count; the b=a and b=a+1 degeneracies merely
+remove empty/repeated endpoints; a fully plateaued tuple can legitimately
+leave budget unused. Unexpected check: the last preplateau point b-1
+must be retained, as the explicit0/1/100 three-value example shows.
+No numerical probe, target census or enlargement of MI561 was run.
+
+Result: the exact discrete maximum of the four-row separated ceiling
+problem is attained among at most189 explicitly defined SYMBOLIC tuples:
+81 with every coordinate in{a,b-1,b}, plus108 with three such coordinates
+and the fourth equal to R minus their sum. Discard illegal points.
+Proof: compress constant plateaus to b; in each resulting preplateau/
+point box push two interior coordinates oppositely to an integer end
+using convexity. At most one remains interior, and if budget is slack
+push it to a bound or the integer residual. Full argument in PRIOR-ART.
+There is no concavification across the plateau and no fractional option
+mixing. These are worst-case upper counts on candidate descriptions,
+not a claim that189 distinct cases have been computed or proved safe.
+
+Cheap exact check on the EXISTING MI563 construction: its average
+second count is44 but F110(44)=8064. Hence the single integer tuple
+(10,110,44,55) costs47355<48400. Its mixture costs4903229/99>48400.
+This is a control of the representation, NOT an assertion of the global
+integer maximum for M220 or of the general balanced inequality.
+
+Actual parent coverage remains unchanged. The uniform sufficient claim
+still needs EVERY feasible candidate's cost<2S, OR a proof using joint
+target incidence when separate ceilings are too weak. No new carrying
+request; earliest unread substantial dependency G333 unchanged, section25
+independent/unreviewed. Gut: interested in the exact geometry, cautious
+about turning189 symbolic descriptions into a replacement case tree.
+Reasoned: a known extremal argument now makes the next can-fail question
+finite in form without smoothing away integers. Next inspect whether
+one uniform rank/cross-product inequality can bound those extreme forms;
+do not launch a parameter census or claim a lemma for each form. If
+that only regenerates local repairs, return to the joint selector.
+Last trajectory MI56016:31 BST; no extra allowance;13min ACTIVE.

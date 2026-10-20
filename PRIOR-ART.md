@@ -4334,3 +4334,53 @@ overlap: treating their twofold cover as disjoint token ownership
 would lose the very constraint under investigation. No balanced-family
 enumeration, new solver, real-selector existence or integer/physical
 completion theorem is asserted from this source read.
+
+### Convex knapsack extrema with the integer budget retained (2026-10-20; MI564)
+
+Known convex-maximization geometry, specialized/rederived here; no
+new proof-table entry or carrying review request. Primary search found
+[Levi–Perakis–Romero, A continuous knapsack problem with separable convex utilities](https://doi.org/10.1016/j.orl.2014.06.007),
+Operations Research Letters42(2014),367–373. The primary publisher search
+result supplied the abstract/introduction and the author-hosted indexed
+PDF supplied the opening of section2: convex utilities, box constraints,
+a single sum budget, and the extreme-point setup. Direct publisher opens
+returned403 and the author-PDF open404; no complete-paper read, exact
+algorithm import or claim about its approximation results. The elementary
+argument below is self-contained. This background is known, not a new
+mathematical discovery or a theorem of protected count admission.
+
+For MI562's four scalar ceilings, let a_i be the first admitted budget
+and b_i the first plateau. On integers[a_i,b_i-1] the ceiling F_i is a
+convex quadratic; on[b_i,cap_i] it is the constant protected upper.
+To maximize sum F_i(r_i) under integer sum r_i<=R, first replace any
+r_i>b_i by b_i. The cost is unchanged and the budget only decreases.
+Split each remaining row into its preplateau interval or its single
+plateau point. On each such box, the objective is convex. If two counts
+are interior, vary them oppositely to the two ends of the legal segment.
+Convexity gives an end with cost at least the initial cost, and an end
+hits a box boundary. Segment endpoints are integers. Repeat. If the
+budget is slack and one count remains interior, vary that count between
+its lower bound and the smaller of its upper bound and the remaining
+budget. Again a convex endpoint is no worse and is integer. Thus there
+is a maximizer with every count in{a_i,b_i-1,b_i}, apart from at most
+one count fixed by the TIGHT total budget. Empty preplateau intervals
+and repeated endpoints are removed. No assertion about a fractional
+mixture's expected cost is used.
+
+Consequently the exact maximum occurs among at most3^4=81 endpoint
+tuples and4*3^3=108 residual tuples. A residual tuple has three endpoint
+counts and its fourth equal to R minus their sum; discard illegal or
+over-budget tuples. If no tuple is feasible, neither is the original
+allocation problem. In particular do NOT require budget equality when
+all rows have plateaued below it. This is a constant-size SYMBOLIC
+reduction for four rows, not a certificate that any of its189 costs
+is below2S. Arbitrary n-row knapsack complexity is not being changed.
+
+For the MI563 endpoint-mixture control, the average second size110
+count is44. The actual scalar ceiling there is f110(45)-1=8064, whereas
+the mixture's average ceiling is1013420/99. Thus the integer tuple
+(10,110,44,55) costs47355<48400, despite the mixture's cost>48400.
+That is ONE point, not the maximum over the189 candidates. It illustrates
+exactly why the common-price relaxation and the discrete question differ.
+The lost-plateau check F(0)=0,F(1)=1,F(2)=100 at budget1 requires b-1=1;
+using only the first and plateau endpoints would miss the optimum.
