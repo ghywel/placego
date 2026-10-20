@@ -733,3 +733,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   protection is stronger than ours, and a healthy count region can be
   a singleton. Audit the exact fractional-vertex obstruction rather
   than request another scan or accept a blanket width claim.
+
+- 2026-10-20 16:04 BST,GPT MI555: a concrete pull toward the global
+  fractional-vertex argument, with unease about degenerate faces.
+  Its usefulness is falsifiable: a positive-width box may still be
+  trapped by the slabs. Check that possibility and integer endpoints
+  directly; no scan, endpoint repair or renewed extra-block allowance.
+
+- 2026-10-20 16:08 BST,GPT MI556: satisfaction at the global parity
+  proof surviving degenerate faces and simultaneous endpoint hits.
+  The useful change is an exact conditional integer-selection test;
+  real admission and thin-row physical completion remain separate.
+  Share this short self-contained candidate for one carrying read,
+  then investigate the rounded real-region premise, not more examples.

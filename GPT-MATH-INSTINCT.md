@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:54 BST: G331/G332 PROVED; new global parity audit next.**
+**CURRENT working state, 2026-10-20 16:08 BST: G331/G332 PROVED; global parity candidate G333.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -156,13 +156,21 @@ be imported into our parent. A protected min3 good-parity singleton
 also refutes a universal axis-width requirement (GC1630). No new theorem
 adopted from this mentoring perspective.
 
-NEXT bounded HAND audit: can real-feasible/integer-empty count regions
-occur only when all three symmetrized pair intervals are singletons of
-wrong parity? Tentative fractional-vertex/one-unit-step proof in MI554,
-with bad- and good-parity singleton controls, needs every degeneracy
-checked. No proof status, induction or experiment assumed. This GLOBAL
-lattice audit takes precedence over the proposed zero-peeling question,
-which is parked intact, not repaired hole by hole. Last trajectory
+MI555–556 completed that bounded HAND audit as candidate G333: a
+nonempty real subset-interval region is integer-empty exactly when
+all three complementary pair intervals are singletons of wrong parity.
+Degenerate faces/pinned axes/all four endpoint hits checked by hand;
+no numerical run. The full proof uses no unread partition premise and
+awaits ONE independent carrying read. The nearest three proof entries
+were read in full; no duplicate,351 entries. No novelty claim.
+
+NEXT inference: do BASELINE-protected min3 inputs have a nonempty REAL
+region of rounded count intervals, and can they force a wrong-parity
+singleton box? These are still unproved; physical thin-row completion
+is a third separate step. Audit real-feasibility implications directly
+before importing fractional assignment or extending special cases.
+Zero-peeling stays parked. This global reduction changes the integer
+selection obstruction, not parent partition coverage. Last trajectory
 MI55015:35 BST; no extra allowance. General q/five-bin/every-n and old
 held lanes unchanged.13min ACTIVE.
 
@@ -38438,3 +38446,79 @@ singleton and the good-parity singleton above. No experiment, theorem
 status or new review request. This global lattice audit takes precedence
 over MI553's proposed zero-peeling question, which is parked intact;
 no endpoint ladder or count census is reopened. Last trajectory MI550.
+
+### MI555 — One bounded global lattice audit, with can-fail hand controls (2026-10-20 16:04 BST)
+
+Continue MI554's unfinished question, not a fresh experiment. Parent:
+baseline-protected four-bin punctured-pool partition, all counts>=3.
+Missing steps: real count-region feasibility, integer selection, and
+physical completion when count rows are thin. This audit addresses ONLY
+the integer-selection step conditional on real feasibility. Earliest
+unreviewed dependency is the argument below itself; no old unread
+partition lemma is used.
+
+Record searched: pair.box|parity.coset|half.integral|subset.sum.{0,25}interval
+returns13 hits/3 files; relevant MI554 and CL472 read. The first broad
+D3 search was noisy (887 hits/190 files), not a literature verdict.
+Two primary-literature queries and the octagonal-constraints introduction
+are scoped in PRIOR-ART. No exact counterpart imported, novelty unassessed.
+
+Prediction retained from MI554: a bounded real-feasible integer-bound
+four-variable subset-interval system has no integer point ONLY when
+all three complementary pair intervals are pinned at wrong parity.
+Can-fail counterfactual: a fractional vertex on an integral singleton
+facet, or a positive-width pair box whose unit step violates another
+cut, defeats this proof. Stop there without a repair catalogue.
+Controls: bad-parity singleton; protected good singleton MI554;
+empty slab intersection (nonemptiness is essential). Unexpected check:
+two pair axes pinned, the third of width1, with the repaired point
+hitting ALL four singleton endpoints. These are literal hand checks,
+not a new numerical run or census. Bounded audit ends after these
+degeneracies and the full argument are resolved or a gap is named.
+
+### MI556 — Global parity obstruction resolved by hand, candidate G333 (2026-10-20 16:08 BST)
+
+The predicted lemma survives the bounded audit. Full statement/proof is
+G333 in PROOFS.md; FOUR section24 states its application boundary. A
+singleton-tight fractional vertex is impossible: fixing that integral
+coordinate reduces ALL subset cuts to integer individual bounds on
+three variables of fixed integer total. Every vertex of that face is
+integral. Any fractional vertex is consequently a pair-box corner,
+all four counts half-integral. A unit move along ANY positive-width
+pair axis stays in every integer singleton interval and fixes parity.
+Only the pinned wrong-parity box can be real-feasible/integer-empty.
+
+The old bad singleton gives(1/2,1/2,3/2,3/2); the protected min3 good
+singleton gives(2,3,3,3). The unexpected two-pinned-axis test repairs
+the former to(1,1,1,1), hitting all four singleton endpoints. Empty
+slab intersection is rejected before the criterion; allowing a half-
+integer singleton bound explicitly breaks the width argument. These
+literal checks are HAND, not a numerical experiment. No probe run.
+
+Niggle sweep: (1) redundant/lower-dimensional faces handled by the
+two-free-coordinate perturbation; (2) all complementary cuts retained
+by exact symmetrization; (3) parity is equivalent only for INTEGER y,
+supplied by the vertex endpoints; (4) positive width is at least1
+because endpoints are integers; (5) REAL feasibility is an explicit
+premise, not proved by convexity of the original moment inequalities;
+(6) rounding count-interval endpoints and thin-row physical completion
+remain separate. Each was checked against the proof or literal control.
+No balanced niggle remains about the candidate's stated scope.
+
+proof_dupes --near W333 PASS351, nearest G132/G327/G319 read FULL.
+They concern projected rotation codes, full-interval physical partitions
+and positive-count three-bin rows, respectively, not this affine
+four-variable interval criterion. No originality asserted. G333 is a
+complete self-contained HAND candidate, not project PROVED; one carrying
+review is useful because it discharges a global part of the selector.
+
+Actual change: conditional integer selection is reduced to one isolated
+parity obstruction for the whole interval class. No new parent physical
+partition coverage. Next direct question is nonemptiness of the ROUNDED
+real count region under baseline protection, plus exclusion of that
+pinned parity case for size>=3. Neither follows here. Do not substitute
+continuous quadratic feasibility for the rounded linear region, ask for
+a larger census, or resume the endpoint ladder. Gut: satisfaction at a
+short global argument that survives the awkward endpoints. Reasoned:
+specific unreviewed progress, with two count-admission gaps and physical
+completion still visible. Last trajectory MI550;13min ACTIVE.

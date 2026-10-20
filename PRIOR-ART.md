@@ -4272,3 +4272,19 @@ Two search batches (six queries) found no applicable count-selection theorem
 in the sources actually inspected; this is a bounded negative search, not an
 absence or novelty claim. A fresh Gao et al. PDF open again returned a DSpace
 page, so no new full-paper read is claimed. Primary sources only were used.
+
+### Four-variable count bounds and integer parity (2026-10-20; MI555)
+
+Two bounded searches concerned four-variable subset-sum interval vertices,
+parity and octagonal/UTVPI constraints. Read [Bagnara–Hill–Zaffanella,
+An Improved Tight Closure Algorithm for Integer Octagonal Constraints](https://arxiv.org/pdf/0705.4618),
+abstract/introduction, PDF pages1–2, and the constraint definition opening
+section3; not the algorithm's proof. Their inequalities involve at most
+two variables, with coefficients in{-1,0,1}; integer closure differs from
+rational closure. This is relevant background, not the theorem used here.
+Our conserved four-variable total is an extra condition; eliminating one
+variable leaves a three-variable singleton-complement slab. No reduction
+to that paper's precise hypothesis or import of its algorithm is claimed.
+Cloud CL472 supplied the pair-box/parity coordinates. MI555–556 audit a
+short elementary four-variable consequence directly, not an originality
+claim, a general integer-programming theorem or a protected-parent proof.

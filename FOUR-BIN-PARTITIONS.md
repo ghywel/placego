@@ -31,6 +31,7 @@ not externally peer reviewed or a claim of novelty.
 | 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
 | 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | PROVED G331, CL471/642155b9; unbounded carrying read plus independent finite engine; proved section5 sole partition premise |
 | 23 | Protected missing1 four-bin pool, all sizes>=3: minimum-mean zero owner | PROVED G332, CL471/642155b9; reusable minimum-mean zero-owner tool, PROVED G327 sole partition premise |
+| 24 | Four-variable integer subset-interval bounds: exact conditional parity obstruction | COMPLETE HAND CANDIDATE G333, MI555–556; carrying review pending, no protected-parent existence claim |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -2229,3 +2230,32 @@ Cloud CL471/642155b9, so the row bad-list bound cited above is no longer
 conditional on its review. This does not remove the demonstrated
 zero/thin-count admission limitation. G332 is also PROVED; its reusable
 minimum-mean zero-owner tool is recorded explicitly in the map.
+
+## 24. Global count selection: the only conditional lattice obstruction (MI555–556)
+
+**COMPLETE HAND CANDIDATE G333, carrying review pending.** For four
+variables k of integer total H, suppose every proper subset total has
+integer lower/upper bounds. Intersect each interval with the reflected
+interval of its complement. If the resulting REAL polytope is nonempty,
+it lacks an integer point exactly when the three pair intervals for
+k12,k13,k14 are singletons whose endpoint sum differs from H modulo2.
+Otherwise an integer point exists. The full elementary proof and
+can-fail hand controls are in PROOFS.md G333; no partition premise.
+
+The mechanism is global: a fractional vertex cannot lie on a singleton
+facet, since that face is an integral three-variable box/sum section.
+It must be a pair-box corner with all four counts half-integral.
+Any positive pair-box width supplies a unit step, changing each count
+by plus or minus1/2, safely within its integer singleton bounds, and
+flipping parity. Pinned axes and endpoint hits are included.
+
+For the punctured-pool application the subset intervals are the integer
+count values satisfying the combined low/high moment extrema, as in
+Cloud CL472. The REAL relaxation here uses those ROUNDED integer interval
+endpoints; it is not an assertion about arbitrary real roots of the
+original quadratic bounds. Its nonemptiness under baseline protection
+remains OPEN. So does exclusion of a forced wrong-parity singleton
+under the parent's size>=3 hypothesis. Even an integer count selector
+does not automatically complete zero/thin physical rows. No protected
+partition coverage, five-bin theorem, census or integrality-of-all-
+vertices claim follows from this candidate alone. Novelty unassessed.
