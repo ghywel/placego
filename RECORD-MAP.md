@@ -974,7 +974,7 @@ PART: as on the board.
 
 - Four-variable subset-interval region: real-feasible/integer-empty iff three complementary pair intervals are pinned at wrong parity, PROVED G333 by Cloud CL474/16404637, adopted MI575. Nonempty-real/integer-endpoint scope; parent REAL admission/thin completion OPEN.
 
-- Min3 four-bin one-hole singleton count intervals admit conserved total under actual ranks/nonemptiness, HAND/unreviewed MI557/FOUR25. Uniform cross-product deficit/reflection; MI558 isolates mixed pair endpoints via known elimination. Joint real region/physical completion OPEN, no run/job.
+- One-hole singleton count intervals admit conserved total under actual ranks/nonemptiness, sizes>=3, ANY n>=2: PROVED MI557/579/FOUR25–25.1 by Cloud CL475/489d287c, adopted MI582. Joint real region/physical completion OPEN.
 
 - Protected positives refute merged-count full-fibre inheritance and raw-endpoint supermodularity; raw failure does NOT exclude set-level g-polymatroid representation, HAND MI559. Early trajectory MI560 switches to actual balanced double-cover inequality; parent OPEN, no run/job.
 
@@ -995,8 +995,10 @@ PART: as on the board.
 
 - Arbitrary fractional-point largest-remainder selector REFUTED on protected M12/q6/3333/18^4, exact Q slack3/10 but rounded count3 needs24, HAND MI572–573/FOUR28. Parent positive retained; MI574 deliberate incubation, schedules PAUSED, GC1641 specific perspective request.
 
-- Corrected core checklist:41 proper collections/9 types (42 with{V}); type9 requires2rho1. G315 carries types3–4; MI557 budget5–6 unreviewed, crossings7–9 OPEN. Known framework/scope audit MI576–577/FOUR29;13min research resumed, no new census/job.
+- Corrected core checklist:41 proper collections/9 types (42 with{V}); type9 requires2rho1. G315 carries types3–4; MI557/579 budget5–6 now PROVED by CL475, crossings7–9 OPEN. Known framework/scope audit MI576–577/FOUR29; later adoption MI582, heartbeat PAUSED.
 
-- Singleton high-count budgets under actual rank cuts/nonempty spectra extend to ANY number of minsize3 bins, HAND/unreviewed MI579/FOUR25.1; general cross-product bound, j2 correction retained. One carrying packet requested; crossing7–9/physical parent OPEN, no census.
+- Singleton high-count budgets under actual rank cuts/nonempty spectra extend to ANY number of minsize3 bins, PROVED MI579/FOUR25.1 by CL475, adopted MI582; one distinct pool, j2 correction retained. Core rows1–6 carried; crossings7–9/physical parent OPEN.
 
 - Replicated-pool singleton-budget transfer REFUTED by two-copy size3 targets3/7/13/13: literal fractional witness, maximum high counts5<6; HAND/control MI580–581/FOUR30. Outside protected parent; crossings unchanged, deliberate incubation/13min PAUSED, GC1644.
+
+- CL475 correction adopted: crossing forms use three labels algebraically, but weaker hypotheses remain empirical; four-used-fibre scan differs from all-seven-fibre scan, M15 witness has two empty unused fibres. Protected M13 kills all three local uncrossings; hand/example audit MI582–583/FOUR29.1, heartbeat PAUSED.
