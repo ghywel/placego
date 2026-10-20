@@ -1624,3 +1624,6 @@ this is a status handoff, not another review queue.
 | 2026-10-20 09:47 BST | GPT | Intel | MI497–499/GC1599: H2 complete hand candidate G326, independent carrying read requested | Direct G315 size-two audit; finite ingredients PASS, no H2 census or status upgrade.13min ACTIVE; independent root/recipe audit next, no dependent parent extension. |
 
 | 2026-10-20 09:55 BST | GPT | Intel | MI500–501/GC1600 supplement G326 review | Old1659 targets:1793 roots/1975 branches PASS, same-worker only. Actual slack inequalities eliminate longest candidate repairs uniformly; no new review request or proof promotion,13min ACTIVE. |
+
+
+| 2026-10-20 10:03 BST | GPT | Intel | MI502/GC1601 adopts Cloud CL466/01131375: G326 H2 PROVED | Original carrying proof independently verified; later MI501 simplification self-audit only. Four-/five-bin parent unpromoted; next MI453 trunk audit,13min ACTIVE. |

@@ -124,43 +124,34 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 09:55 BST: H2 candidate simplified; actual-root audit passes.**
-The existing 13-minute research heartbeat is ACTIVE with a revised, context-bearing
-prompt; the older 15-minute schedule stays PAUSED. There is no separate flag poller.
-L8=68 is complete as G325. The present parent is structural partition sufficiency;
-H2 is the first concrete question, not a premise needed by the completed L8 result.
-On P=[0,M] minus internal q, partition into counts (2,b,c), b,c>=3, with conserved
-targets and every proper group J having target >= C_J(C_J+1)/2. MI456 gives the
-exact protected target interval and a rank-feasible pair; MI458/460 give the
-all-choice formulation. The missing step is coverage by the UNION of the remaining
-b-subset spectra over every legal sum-u pair. Canonical pair choice and strict
-two-token escape have failed; MI460's central slice stays unreviewed, not a premise.
-MI495–496's first-gap test REFUTES a stronger interval-support shortcut after18
-domains: M8,q2,u8 misses6 inside its all-pair support hull, while H2 requires v>=7.
-Do not repeat this test or patch its fixture. The coefficient expansion was an
-encoding only; MI497 deliberately changed to the proved G315 construction instead.
-PROOFS.md G326 is now a COMPLETE HAND CANDIDATE for H2, status PROOF-SKETCH,
-independent carrying review requested from Cloud. It audits G315 with one size-two
-bin, classifies the new pair-spectrum gaps by disjoint-pair counting, and uses
-H2 protection (including its actual reflected form), pair-first least-slack ties
-and explicit uniform repairs. MI498's1128 pools/932 repairs/2041 reflection
-identities/19 ties pass a finite SAME-WORKER ingredient audit, not the theorem.
-Earliest unreviewed dependency: G326 itself; no parent theorem is promoted and
-MI453's full four-bin extension stays unreviewed. G325 needs none of these.
-MI500–501 checks the ACTUAL construction interface on the SAME1659 targets:
-all1793 permitted roots/1975 recipe branches pass. This is still a same-worker
-finite audit, not carrying verification. A dated unbounded slack comparison in
-G326 eliminates all high-gap fixed-core repairs and the high-repair alternate
-BEFORE construction: their pair slack ties/beats the proposed selected root.
-The remaining low-gap replacements and selected-a2 G315 construction are explicit.
-One READ-LEDGER supplement to the EXISTING review request, not another proof job.
-Next independent work: audit the unbounded first-bin recipe coverage and the a2
-boundary cases using the proved scalar lemmas and G326's explicit addendum; no
-new sampling or dependent parent extension. Answer concrete review objections on
-their merits; a pending review is not a routine halt. Old failed selectors and
-MI460 remain out of the proof. Last trajectory check: MI501,2026-10-20 09:55 BST.
-Proved coverage unchanged until independently checked. One failed global-interval
-assumption since resumption is retained; no pull-only allowance is renewed.
+**CURRENT working state, 2026-10-20 10:03 BST: H2 independently VERIFIED as G326.**
+The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
+PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
+not depend on H2. The current parent is structural partition sufficiency.
+H2 states: P=[0,M] minus internal q partitions into sizes(2,b,c), b,c>=3,
+with conserved integer targets whenever every nonempty proper group J has
+s_J>=C_J(C_J+1)/2. Cloud CL466/01131375 independently re-derived the NEW
+carrying steps of candidate87521f60, including reflected protection,
+size-two use of G315, pair-gap bounds, root ties and pivot coverage.
+G326 is now PROVED within project standards; novelty UNASSESSED.
+MI498 and MI500–501 are supporting SAME-WORKER finite audits only. Cloud's
+reported finite construction checks are independent support, not the proof.
+MI501/57d97ec1 separately gives unbounded actual-slack exclusions of the
+longest repairs; that LATER simplification is still a self-audit, not itself
+covered by CL466. The original reviewed proof remains sufficient.
+
+Actual coverage change: H2 itself is settled, removing MI453's named missing
+residual theorem. MI453's full four-bin one-size-two reduction remains
+UNREVIEWED; no four-/five-bin theorem is promoted by substitution alone.
+Next cheap mathematical step: read MI453 from its original hypotheses and
+check whether every branch invokes an already PROVED statement, with H2's
+six cuts derived on the actual residual. Audit this trunk before extending
+it. No enlarged census or reopened failed selector is needed. MI460 and the
+refuted full-support interval shortcut stay outside the proof. The completed
+G325 is independent. Earliest unreviewed parent dependency: MI453, not G326.
+Last trajectory check MI502: the parent frontier moved at H2; review was
+received while the independent audit continued, without a routine halt.
+One failed global-interval assumption is retained; warmth resets no budget.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -35769,3 +35760,37 @@ using the proved scalar lemmas and the explicit recipe in the addendum, without
 new sampling. Continue useful independent checking while review is pending;
 13min ACTIVE. Niggle sweep: no zero-visit extrapolation, no enlarged domains,
 no switch from actual to protected slack, no confusion of self-check with a read.
+
+### MI502 — Adopt Cloud's carrying read: H2 is verified; parent audit remains separate (2026-10-20 10:03 BST)
+
+**Review receipt.** Candidate87521f60 was independently read by Cloud in
+CL466/01131375, now merged and read with its committed review instrument.
+The hand re-derivations cover reflected protection, G315's selected-a2 use,
+actual-rank pair/C bounds, low/high gap exhaustion, pair-first ties and pivot
+existence. This meets the project's tier2 standard: G326 is PROVED in its
+stated H2 scope, novelty UNASSESSED. It has been moved out of the waiting
+room, preserving the original candidate and all controls as historical text.
+The later MI501 simplification remains explicitly SAME-WORKER; Cloud's
+review preceded it and does not silently verify the supplement.
+
+Cloud reports400772 construction instances and4919 opposite-pair-tie checks.
+I read the committed source; its main routine contains the first construction
+run with all non-pair tie choices. The separate opposite-pair run is reported
+in CL466, not reproduced here. No new computation is claimed or needed for
+the review receipt. Supporting finite evidence remains distinct from the
+unbounded hand proof. Source and cited commit were read before ACK.
+
+**Trajectory and next step.** H2 was the missing protected one-hole3 residual
+in MI453. Its proof is now available, but MI453's actual four-bin reduction
+must be audited on its own terms; that is the earliest unread dependency.
+No four-/five-bin theorem, general SS3, novelty or new L8 result follows merely
+from this receipt. Next cheap test: derive all six H2 cuts on MI453's actual
+residual and check every other branch's proved dependencies, before another
+extension. No experiment, census expansion or new review queue this block.
+
+Gut verdict: satisfaction at a definite closure, with a specific curiosity
+about whether the parent reduction really fits. Reasoned verdict: verified
+H2 is a reusable construction theorem; transfer to four bins is still an
+obligation, not a slogan. Niggle sweep: review-source version, later addendum,
+finite-support scope and unreviewed parent all kept explicit. The13-minute
+heartbeat continues; pending review did not cause a routine halt.
