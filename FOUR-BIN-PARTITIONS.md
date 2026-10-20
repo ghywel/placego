@@ -1541,3 +1541,90 @@ question at HAND CANDIDATE status. It does not verify the earlier
 four-bin parent or establish the threshold for arbitrary target gaps,
 multiple fillers, or three distinct pair targets. Its review is one
 substantial proof read, not another review of the known matching guards.
+
+## 17. A large filler cannot cure every gap: strict counterfamily
+
+**HAND countercontrol, MI529–530; known weighted token-consumption
+method, not a new general matching theorem.** No premise from G327,
+G328 or G329 is used. The proposed extension of G329's filler thresholds
+to arbitrary target gaps is false, even if the filler is arbitrarily large.
+
+### 17.1 Ordinary protection already fails at gap2
+
+For any c>=3, take M=c+4, delete q=1, prescribe two pair sums4,6 and
+filler w=T_M-11, where T_n=n(n+1)/2. Sum4 forces{0,4}; every sum6
+pair is{0,6} or{2,4}, so completion is impossible. Yet the pair-only
+cuts are4>=3,6>=3,10=T_4, and the three cuts containing the filler have
+slacks4c-1,2c,2c+2 over T_c,T_(c+2),T_(c+2), respectively. This is the
+old q1 obstruction, checked directly without using its classification.
+
+### 17.2 Strict protection fails for fixed pair multiplicities and unbounded filler
+
+For EVERY c>=7, put M=c+14, q=1. Prescribe four size2 bins of sum10,
+three size2 bins of sum22, and one size-c bin of sum
+
+    w=T_M-107.
+
+The target total is106+w=T_M-1, the available token total. There are
+exactly ten available tokens in U=[0,10] minus{1}. Every sum10 pair
+uses two U tokens. Every sum22 pair uses at least one: two DISTINCT
+tokens outside U have sum at least11+12=23. Thus the required seven
+pairs demand at least2*4+3=11 U tokens, exceeding|U|=10. No partition
+exists. Extra high tokens cannot change this capacity inequality.
+
+Independently, the four sum10 pairs are forced:
+
+    {0,10}, {2,8}, {3,7}, {4,6}.
+
+After these, only5 and9 remain in U. The ONLY remaining sum22 pairs
+are{5,17} and{9,13}, both present since M>=21. Three are needed.
+The missing{1,9} edge and the prohibited{5,5}/{11,11} loops are not
+silently counted as pairs.
+
+**ALL cuts are strictly protected.** A nonempty pair-only group with
+j red bins and k blue bins has0<=j<=4,0<=k<=3 and slack
+
+    F(j,k)=10j+22k-T_(2j+2k)
+          =9j+21k-2j^2-4jk-2k^2.
+
+For k=0 and j>=1 this is j(9-2j)>0. For k=3 it is
+45-3j-2j^2>=1 on0<=j<=4. Concavity in k puts k=1,2 above the
+interpolated endpoint values, also for j=0 where F(0,0)=0. Hence every
+nonempty pair-only group is strict, including the whole seven-pair
+group, whose slack is1.
+
+A proper group containing the filler omits m>=1 pair bins, m<=7.
+Let their total target be S<=22m. Its slack over the required triangular
+bound is exactly
+
+    T_M-1-S-T_(M-2m)=m(2M-2m+1)-1-S.
+
+Since M>=21 and m<=7, this is at least7m-1>=6. These complementary
+groups and the pair-only groups exhaust every proper nonempty cut.
+Thus the counterfamily has ALL strict cuts for arbitrarily large c,
+with fixed multiplicities4/3 and fixed target gap12. No finite
+filler-size bound can suffice uniformly for even this fixed pair data.
+
+### 17.3 Same-pool positive control
+
+Change each blue sum22 to23, retaining the pool and all bin sizes.
+Use the same four red pairs and the three disjoint blue pairs
+
+    {5,18}, {9,14}, {11,12}.
+
+The remaining c tokens form a filler of sum T_M-110. At c=7,M=21
+they are{13,15,16,17,19,20,21}, of sum121. For larger c add22..M
+to that filler. Pair-only cut slacks increase by k; filler-containing
+cuts have the same calculation with S<=23m, giving at least6m-1>0.
+So both the negative and this literal positive satisfy every strict cut.
+
+This is the known weighted-capacity mechanism (compare MI469 and
+section13/MI522), now testing a size-only generalization. It refutes
+neither adjacent-target G329 nor the earlier four-bin parent: the
+target gap, number of pair bins and filler structure have different
+scopes. No new burning obstruction, proof-status promotion or census.
+Do not repair this failure by increasing c or starting a gap exception
+catalogue. A possible next global question is whether weighted matching
+inequalities completely describe integer quotas on alternating path
+forests, or whether their convex hull can have unattainable integer
+points. That question remains OPEN here; no new test of it has run.

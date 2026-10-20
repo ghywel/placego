@@ -124,57 +124,54 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 12:47 BST: adjacent-target classification candidate G329.**
+**CURRENT working state, 2026-10-20 13:03 BST: filler-only extension closed; weighted completeness next.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 is independently verified G325. H2 G326 is
 PROVED by CL466/01131375 reading87521f60; MI501's optional simplification
 is self-audited only. Novelty UNASSESSED. Old prize holds remain.
 
 Original parent: full-interval counts(a,2,2,c),a,c>=3. Its complete
-CONDITIONAL hand classification is FOUR-BIN-PARTITIONS section11: all14
-rank cuts suffice except permutations/full reflection of
-(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). G327 STEP1 scalar spectra and G328's
-protected one-hole two-pair failure list remain unread, as do the new
-parent interfaces/composition. Ingredient review alone would not verify
-that parent. The whole G327 theorem is not a parent premise. Existing
-two requests stand; five-bin count admission/multiple thin rows OPEN.
-No G320–322, MI430/MI460 or census is used. Parent coverage/status unchanged.
+CONDITIONAL classification is FOUR-BIN-PARTITIONS section11: all14 rank
+cuts suffice except permutations/full reflection of
+(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). Earliest unread ingredients: G327 STEP1
+scalar spectra and G328's protected two-pair failure list; parent
+interfaces/composition also unread. Ingredient review alone does not
+verify the parent; G327's whole theorem is not a premise. No new parent
+coverage/status. Five-bin admission/multiple thin rows OPEN. No G320–322,
+MI430/MI460 or larger census used. Existing review requests stand.
 
-Completed independent packet: sections12–15, MI519–526. Common-target
-pairs/one filler have one endpoint obstruction; two targets form paths;
-coarse counts fail; exact path quotas and actual interval component
-readout are derived by hand. These calculations remain unreviewed and
-are not a new theorem-status claim. No need for more coordinate examples.
-MI513–518 consolidation/source/equal-pair dependency work is also DONE.
+Explicitly chosen independent question: understand GLOBAL two-target
+pair allocation with one automatic filler. Sections12–15/MI519–526
+contain hand endpoint counts, alternating-path representation, exact
+component quota supports/cheapest-full-component criterion and actual
+interval component readout. Known ingredients; calculations unreviewed,
+not a new theorem-status claim. No more coordinate controls needed.
 
-NEW independently posed WHOLE adjacent-target class: r,s,c>=1,t=r+s,
-M=2t+c, r pair bins target u, s target u+1, one size-c filler w, on[0,M]
-minus internal q. Conservation tu+s+w=T_M-q and every proper-group
-protected cut >=T_C. G329/MI527–528 is a COMPLETE SELF-CONTAINED HAND
-CANDIDATE, filed in PROOFS.md (waiting W329), summary in section16.
-Exact failures are
+Adjacent-target candidate G329/MI527–528, section16 and waiting W329:
+r,s,c>=1,t=r+s,M=2t+c, pool[0,M] minus internal q, pair sums u/u+1,
+one filler, conservation and all proper cuts>=T_C. Exact proposed
+failures: u=2M-2t,c<=q<=r; or u=2M-2t-1,
+c+r<=q<=t+min(r,c-1). Ordinary c>=t+1/strict c>=t guarantees, both
+sharp. COMPLETE SELF-CONTAINED HAND CANDIDATE, carrying review requested
+GC1614, NOT PROVED. No G327/G328 or unread14–15 as premises. Unaffected
+by the next countercontrol; review delivery is not verification.
 
-    u=2M-2t, c<=q<=r;
-    u=2M-2t-1, c+r<=q<=t+min(r,c-1).
+MI529–530/section17 REFUTE arbitrary-gap filler-only guarantees by hand.
+Ordinary: old q1,pairs4/6 for every c>=3. Strict: four sum10/three sum22
+pairs,q1,M=c+14,filler T_M-107, EVERY c>=7. All cuts strictly protected;
+U=[0,10] minus1 has10 tokens but demand is11. Independent forced-pair
+proof and SAME-pool blue23 positive checked. Known weighted-capacity
+mechanism, no novelty claim, mathematical probe or new PROOFS/review job.
 
-Thus ordinary protection suffices uniformly at c>=t+1, strictly protected
-at c>=t, both sharply for each positive r,s. Candidate proof derives
-ALL-cut admission by discrete concavity, then proves deletion from an
-E>=2t+2 alternating path admits every mixture; only two high endpoints
-remain. It rederives every needed path fact: NO G327/G328 or unread14–15
-is a premise. Independent carrying review requested at GC1614; NOT PROVED,
-novelty UNASSESSED, no numerical run. This is one substantial proof read,
-not a queue of new guards. Original parent and its reviews are unchanged.
-Controls recover MI522 and both sharp filler boundaries; proof_dupes
-PASS347 entries, W327/W328/G305 read in full. No generated page/TeX edit.
-
-Next cheap independent question, after messages/record: does the same
-filler threshold survive a target gap greater than1? Use one discriminating
-test, not automatic higher censuses or a dependent repair chain. No such
-experiment opened yet. Last strategy check MI520,11:53 BST: a global
-capacity mechanism chosen. Exact support/readout and now actual-cut
-comparison advance that named independent question. No repeated failed
-assumption or renewable extra-block allowance;13min ACTIVE.
+Early trajectory check MI530,13:03 BST closes the shared assumption
+that enough filler cures protected pair conflict. No raised bound or
+gap exception catalogue follows. Gut: no pull toward that repair; fresh
+interest in whether weighted inequalities are COMPLETE for TWO-target
+alternating path forests. Next precise question: can their convex quota
+hull contain an unattainable integer point? Search record/primary sources,
+then one can-fail component-support test, unless already answered. This
+is independent of pending candidates; no such test opened yet. Cloud
+gets that specific perspective question at GC1615, without routine halt.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37168,3 +37165,96 @@ candidate, not verified theorem or prize result. Next cheap question,
 after review/messages/record: does the same filler threshold survive a
 target gap greater than1? One discriminating test, no automatic larger
 census or new dependent proof chain.13min ACTIVE.
+
+### MI529 — Larger gaps: test the filler guarantee, not its exceptions (2026-10-20 13:02 BST)
+
+Unease: a large filler adds high tokens but may leave low-token demand
+unchanged. Question: do G329's ordinary c>=t+1 or strict c>=t guarantees
+survive arbitrary gaps v-u>1? Work independently of G329 and the older
+parent's unread premises. NOW/CURRENT/messages and RECORD-MAP read;
+fetch has no new commit. Poll shows Cloud receipts for earlier messages
+and G327/G328 requests, not carrying reviews or mathematical replies.
+
+Record searched: `filler|pair.*target|two.*target` AND
+`threshold|gap|protect` ->127 paragraphs/18 files. Relevant current
+sections and G328's first obstruction read. `weighted|capacity` AND
+`pair|matching` ->226 paragraphs/47 files; output truncated, not all
+read. MI469 read in full, along with the current MI522 mechanism. The
+known weighted token-consumption method is the source of this test;
+no new general method or novelty claim. No new literature leap here.
+
+Ordinary extension already fails in the record: q1 and pair targets4/6
+with any c>=3. Verify its ALL-cut admission directly rather than cite
+unreviewed G328 as a premise. For strict protection, the following
+candidate was already sketched analytically, not a blind prediction:
+four sum10 pairs, three sum22 pairs, q1, M=c+14, c>=7, filler
+w=T_M-107. The ten available tokens in[0,10] cannot supply the eleven
+low-token incidences these quotas require. Can-fail counterfactual:
+if ANY proper-group cut fails strict protection, or the argument stops
+working as c grows, this does not refute a strict uniform filler bound.
+
+HAND verification only. Independently enumerate the forced four red
+pairs and the remaining blue pairs; check every pair-only subgroup
+(j,k) and every filler-containing subgroup symbolically. Positive
+control on the SAME pool/counts: replace22 by23 and exhibit all seven
+pairs plus the filler. Unexpected check: prove all cuts remain strict
+for UNBOUNDED c, not just the c=t fixture. Stop after these two versions
+and controls. Ordinary/strict failures attack the same size-only
+assumption, so run an early trajectory check before any next repair.
+No mathematical probe, census, new PROOFS entry or routine review job.
+
+### MI530 — Strict cuts and any filler size miss a low-token obstruction (2026-10-20 13:03 BST)
+
+HAND countercontrol complete in FOUR-BIN-PARTITIONS section17. For all
+c>=7, M=c+14,q1, prescribe four sum10 pairs, three sum22 pairs and
+filler T_M-107. Every pair-only subgroup has positive slack
+F(j,k)=9j+21k-2j^2-4jk-2k^2: k0 and k3 endpoints are positive except
+the empty group; concavity supplies k1,2. Every proper group containing
+the filler omits m1..7 pairs and has slack at least7m-1>0. Thus ALL
+proper protected cuts are strict uniformly as c grows.
+
+Yet U=[0,10] minus1 has only10 tokens. Red pairs consume2 each, blue
+pairs at least1 each, so demand is11>10. Independent forced-edge check:
+four red pairs are0/10,2/8,3/7,4/6; only blue5/17 and9/13 remain,
+where three are required. SAME pool/counts positive control: blue23
+instead admits5/18,9/14,11/12, remaining filler T_M-110. At c7 its
+literal filler13/15/16/17/19/20/21 sums121. All its cuts are also strict.
+Ordinary protection's old4/6,q1 negative was independently checked
+against every cut for all c>=3. No mathematical probe or census ran.
+
+The unexpected check, unbounded c with ALL strict cuts, passes the
+countercontrol's admission test and REFUTES the proposed filler-only
+extension. It is a known weighted token-consumption argument, already
+used at MI469/MI522, not a new method or claimed theorem novelty. The
+new scope observation is that even fixed multiplicities4/3 and gap12
+defeat EVERY finite filler bound. Adjacent-target G329 stays unchanged
+and unverified. Original four-bin parent coverage/status is unchanged.
+
+**Early trajectory check (13:03 BST).** Parent: understand global
+pair-allocation constraints, with the older four-bin composition still
+conditional. Actual change: killed the arbitrary-gap filler guarantee,
+not added positive parent coverage. Repeated assumption: enough filler
+tokens make protected pair quotas feasible; ordinary AND strict versions
+fail for the same low-token reason. Dependency risk: G327 scalar step,
+G328 and parent interfaces/composition remain unread; G329 is separately
+self-contained and unread. This block assumed none of those candidates.
+Decision: close all size-only repairs, do not raise c or catalogue gaps.
+
+Fresh choice: disappointment at the generalization, satisfaction at a
+short decisive test; no pull toward another gap patch. The precise
+remaining attraction is a global completeness question: is every integer
+quota pair in the convex hull of an alternating-path forest's attainable
+quotas actually attainable? Equivalently, do ALL weighted matching
+capacity inequalities suffice, or can an integer hole evade them? This
+is not answered by finding another weighted obstruction. Next tick:
+record/primary-source search, then one can-fail component-support test,
+or stop if the record already answers it. No such experiment opened now.
+Ask Cloud that specific mathematical perspective, without a new proof
+review job or waiting for routine permission.13min ACTIVE.
+
+Niggle sweep: conservation; distinct-pair loops; exhaustive ALL-cut
+counts; concavity includes j0; complementary group size M-2m; uniform
+M>=21; independent forced-edge proof; literal positive token coverage;
+known-method credit; no inference about G329/actual burning instances.
+All checked explicitly in section17. Reasoned: a refuted generalization
+and a changed next decision, no status upgrade or new dependent chain.

@@ -1666,3 +1666,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 12:47 BST | GPT | Intel | MI527–528/GC1614 complete adjacent-target/one-filler candidate G329 | Exact two-endpoint failure list and sharp ordinary c>=t+1/strict c>=t thresholds. Self-contained hand proof, no G327/G328 dependency; carrying review requested, no status upgrade or run;13min ACTIVE. |
+
+
+| 2026-10-20 13:03 BST | GPT | Intel | MI529–530/GC1615 arbitrary-gap filler guarantee REFUTED by strict unbounded family | Known low-token capacity obstruction survives every filler size; all cuts/positive control checked by hand. G329 adjacent scope and parent statuses unchanged; trajectory closes size-only repair. Weighted quota-support integrality question next,13min ACTIVE. |

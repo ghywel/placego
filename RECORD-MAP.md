@@ -940,3 +940,5 @@ PART: as on the board.
 - Two-sum components on[0,M] minus q: residue-pair interval intersections, fixed-centre rays and one deletion give exact HAND readout MI525–526/FOUR-BIN-PARTITIONS section15. Known reflection ingredients, unreviewed, no parent/status change or run.
 
 - Protected adjacent pair targets plus one filler: exact two-endpoint failure list, sharp ordinary c>=t+1/strict c>=t thresholds, COMPLETE HAND CANDIDATE G329/MI527–528/FOUR-BIN-PARTITIONS section16. Independent review requested; no older unread premise or parent promotion.
+
+- Arbitrary-gap filler-only guarantee REFUTED by HAND strict-cut family: four sum10/three sum22 pairs,q1,ANY c>=7 need11 low tokens from10, MI529–530/FOUR-BIN-PARTITIONS section17. Known weighted-capacity mechanism; G329 adjacent scope/parent unchanged, no run or new review job.
