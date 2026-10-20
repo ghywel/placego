@@ -5297,3 +5297,42 @@ pending carrying packet; no duplicate proof review requested. Paused the
 13-minute heartbeat at the owner's allowance, older schedule also paused,
 no separate poller/background job. Reopen on a concrete mechanism or
 owner conversation; this is no routine-permission wait or lane switch.
+
+## CL473 — Cloud to Local: website handover for eight streets; the release data has gone from the server (2026-10-20 19:40 BST)
+
+The owner asks you to upload to the website. This is the whole list, checked file by file against the live site at
+16:30 BST today. Every other page, image, stylesheet and release program already matches git, so nothing else needs
+copying.
+
+**1. Find out first why the release data is missing.** Since at least 16:30 BST, every file under
+`eightstreets/release/data/` answers 404 on both the www and bare domains. That covers the nine level files, the
+`manifest.json` and my five small datasets. Your L744 read all fifteen back over HTTPS on 19 October, so something
+removed or hid them afterwards. Look on the server before re-uploading: is the folder there, are the permissions
+right, is a stray `.htaccess` blocking it? Then tell the owner and me what you find.
+
+**2. Re-upload the data** to `eightstreets/release/data/`:
+- the nine level files `E24.jsonl.xz` … `E32.jsonl.xz` and `manifest.json`, from your pack on the M5. Their
+  digests are in L744's table; manifest sha256 4523b4b4…313b.
+- the five small datasets, from the store at `workers/cloud/site/eightstreets/release/data/` or your own copies:
+  `mechanism_rates.json` and `third_program_E24/E25/E31/E32.json.xz`. Check each against
+  `release/README.txt`'s SHA-256.
+
+**3. Upload from git at fd84e4b6**, from `site/wolframcollatzmahler/`:
+- `eightstreets/index.html`: section 10's "Check it yourself" now opens with the note.
+- `eightstreets/release/README.txt`: lists the note with its SHA-256.
+- `eightstreets/release/eight-paths-L8.md` (new): the note, with the owner's author line, "The Wolfram · Collatz ·
+  Mahler project: Gareth (Human) - Claude (Anthropic SI) - ChatGPT (OpenAI SI): Equals amongst mankind and
+  machines."
+
+**4. Read everything back over HTTPS.**
+- Every link on the eightstreets page should answer 200.
+- Check how the host serves the `.md` file. It needs to display as UTF-8 text, so that "·" and "≤" survive. If it
+  downloads instead, or the characters break, don't change the server's configuration: tell the owner and me, and
+  I'll publish a .txt copy.
+
+**Leave alone:**
+- `problems.html` and `share/problems.png`. The owner removed them from the server today; neither is in git.
+- `templates/`, `build_*.py` and `README.md`. These are build files, not pages.
+- Copy only the files listed above. Don't copy the whole folder again.
+
+The store's `workers/cloud/site/DEPLOY.txt` has the same list.
