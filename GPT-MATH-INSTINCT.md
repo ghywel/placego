@@ -124,39 +124,39 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:24 BST: actual missing1 bridge has a short hand candidate.**
+**CURRENT working state, 2026-10-20 15:37 BST: stop endpoint repairs; audit global count/moment selection.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
-G329/G330 independently PROVED. G331 is the complete three-pair full-
-interval COMPUTER-ASSISTED candidate: fixed5,146 basis cases pass two
-same-worker engines, only2/6/8 and reflection fail; unbounded reduction
-and finite interface still await carrying review (GC1626/fd7ebb5b).
+G329/G330 independently PROVED. G331 complete computer-assisted three-
+pair classification candidate and G332 short HAND protected missing1
+four-bin candidate await independent carrying reads, separately. Neither
+uses the other. Their scope and controls are in the waiting room; no
+status changes or duplicate requests this wake.
 
-NEW MI549/G332/FOUR section23 finishes the ACTUAL protected four-bin
-missing1 endpoint at minimum sizes3: give0 to a minimum t_i/c_i bin,
-shift the remaining[2,M] by-2, and use PROVED G327 (at most one2).
-All transformed cuts hold: containing-owner cuts use original protection;
-a failed excluding-owner cut contradicts minimum mean plus the union's
-protection, with the ALL-bins union handled separately by conserved total.
-No G331 or older unread punctured lemma is used. Full proof and literal
-positive/minimum-size negative controls in PROOFS waiting room G332.
-No numerical experiment or new census. Novelty UNASSESSED, HAND and
-unreviewed; one short carrying read requested GC1627/portal.
+MI550 trajectory check compares genuine coverage changes with the still
+OPEN arbitrary-hole/count selector. Decision: no endpoint ladder, more
+fixed-row repairs or count census. MI551 global interface audit finds:
+G316 realizes every prospective compressed sum vector t-k, but does not
+supply its compatible high counts k. Old MI401 feedback remains refuted.
+A limited fixed-count bridge is finite forbidden-target avoidance: more
+rank splits than the two rows' bad-list sizes yields a good physical
+split. With G331 pending, the uniform <=30-per-row minimum2 bound is
+CONDITIONAL; no new theorem or dependency chain is filed from it.
 
-Actual parent change: the protected missing1 endpoint is completed by
-hand via a global owner rule, replacing MI417–418's longer strict-pair
-branch. Other hole positions and the full five-bin parent remain OPEN.
-There are two independent current candidates, no new chain through an
-unread premise. Optional old hand formulae stay labelled in the packet
-verification map. Pending review is not a permission halt.
+Unexpected admission kill control: on[0,16] minus8,counts4444,protected
+targets10/39/39/40 partition literally, but the sum10 bin MUST be wholly
+low. Thus even original size4 and two8-token intervals do not guarantee
+minimum2 counts in both rows. MI447's old family conversely forces all
+bins to cross. Both modes must be handled by a global selector. No new
+parent existence coverage, numerical experiment, proof job or status.
 
-NEXT: revisit the GENERAL missing-hole/count constraint from the record
-before another endpoint repair. No automatic new experiment, hole ladder,
-larger census or held-lane reopening. Last trajectory MI54014:06 BST;
-90-minute check due before work passes15:36 BST; no repeated repair or
-renewed extra allowance. The broad three-target no-hole extension stays
-FINISHED negatively. Independent review is still needed for both new
-candidates, and no full five-bin/all-n burning result is claimed.
+NEXT bounded task: PRIMARY-LITERATURE read on simultaneous per-bin count
+and moment constraints; explicit mentor question GC1628 via portal.
+Known integral MOMENT splitting at fixed counts is MI442/448 and is not
+reproved. Ask what actually supplies count selection, not just its convex
+relaxation. Last trajectory MI55015:35 BST, decision changed work as above;
+no extra allowance used. Independent review is not a permission halt.
+General q/five-bin/every-n questions and old held lanes remain OPEN/held.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -38199,3 +38199,113 @@ Thus extending this reduction without the minimum3 premise is unsafe.
 No scalar spectrum or reflection invariance was presumed. All controls
 by hand, no probe, expansion or new census. Full candidate G332 follows
 in the proof record; independent carrying review needed.
+
+### MI550 — Trajectory check: keep the endpoint bridge separate from general count selection (2026-10-20 15:35 BST)
+
+Parent: arbitrary protected one-hole FOUR-bin completion and its actual
+five-bin ancestry, not another fixed endpoint. Since MI540, the broad
+three-target quota extension closed negatively; G331 completed a full-
+interval count classification candidate; G332 supplied a short ACTUAL
+missing1 endpoint candidate. Those are concrete coverage changes, but
+the arbitrary-hole parent still has the old coupled-count inference.
+Earliest unread steps are G331's unbounded reduction and G332's ratio
+proof, independently; neither is used as a proved premise for the other.
+
+Fresh choice: the minimum-mean bridge still draws interest because it
+reuses the new size2 theorem. Extending it q-by-q would now risk the old
+leaf pattern. The record's MI401/442/447/448 rules out treating count
+feedback, convex rank feasibility or a convenient count pattern as a
+solution. Choose ONE bounded global interface audit below, not q2,
+another thin-row repair, a probe or a larger census. No extra pull
+allowance invoked. Reflection changes the decision: stop endpoint
+extensions and inspect the SAME general count obstruction directly.
+
+### MI551 — General-hole compression and the limited finite-obstruction bridge (2026-10-20 15:35 BST)
+
+HAND scope audit, not a new partition theorem or experiment. Record
+searched: compress|fixed.point|count.feedback|rank.split|one.sided with
+count|hole|G316 ->254 hits/74 files; relevant MI401, MI442, MI447 and
+MI448 read in full/relevant complete sections. Unrelated hits not used.
+Read PRIOR-ART's MI448 source-backed discrete-separation formulation;
+no new external theorem or originality claim is imported.
+
+**Why arbitrary compression is insufficient.** For P=[0,M] minus q,
+compress x>q to x-1, obtaining[0,M-1]. For a prospective high-count
+vector k_i,0<=k_i<=c_i,sum k=M-q, prescribe s_i=t_i-k_i. Every
+protected proper cut implies s_J>=L(C_J)+C_J-k_J>=L(C_J); totals
+are L(M). Thus PROVED G316 realizes EVERY such compressed target
+vector when all c_i>=3. The missing inference is still that SOME
+realization has exactly k_i tokens at least q. Nonemptiness of all
+these ordinary sum fibres does not itself supply a compatible count
+fixed point. Blind tie-breaking feedback was already refuted MI401;
+it is not restarted under a new label.
+
+Use the OLD MI447,r3 balanced positive as a hand control, not a new
+fixture discovery: M12,q6,counts3333,targets18 each. Proposed k=(3,3,0,0)
+gives compressed targets15/15/18/18, realized on0..11 by
+{0,4,11}/{1,5,9}/{2,6,10}/{3,7,8}. Its actual high counts are1/1/2/2,
+not3/3/0/0. In fact no compatible realization at that proposed k exists:
+three high tokens would have compressed sum at least6+7+8=21>15.
+The original positive partition is MI447's
+{0,8,10}/{1,5,12}/{2,7,9}/{3,4,11}; its correct k is2/1/2/1.
+This refutes only a universal count-realization shortcut, not existence.
+
+**Exact but limited bridge from the four-bin classification.** For two
+fixed interval count rows l_i,k_i, normalize both intervals. Let w be
+the target after subtracting their constant per-bin translation offsets.
+The known rank-separation theorem describes integer splits x with
+x in the first row's rank region and w-x in the second's. If their
+unattainable row-target sets are finite Bad_l and Bad_k, only
+|Bad_l|+|Bad_k| split points can be blocked: x must equal a member
+of Bad_l or w-Bad_k. More distinct integer splits than this bound
+therefore force a physical two-row partition. This is elementary finite
+avoidance applied to the actual split, not an IDP/no-hole assertion.
+
+For full four-bin rows with every count>=2, the classification gives
+bad-set sizes0 at <=one2; at most4 for exactly two2 (proved section11,
+two choices of low thick label times two pair-label orders);12 for
+three2 (CONDITIONAL on unread G331);30 in the finite all-pair case
+(MI452's retained complete COMPUTED count). Hence61 distinct integer
+rank splits would suffice in the combined minimum2 regime, with that
+explicit status/dependency. No new proof entry or programme is founded
+on pending G331 here. Counts having0 or1 remain outside this bound.
+
+Unexpected hand check of the criterion, not a new existence result:
+M16,q8,counts4444,targets32 each, choose both count rows2222.
+The normalized combined target is w=(14,14,14,14). The63 vectors
+x=(a,b,14-a,14-b),a=3..11,b=4..10 are DISTINCT row rank-feasible:
+singletons>=3, pairs>=7, triples>=17, total28; the bounds needed
+are1/6/15 and upper cuts are complementary. Also14-x is a permutation
+of x. The bad-vector bound can therefore select a good split.
+A literal one uses x=(4,4,9,11): physical bins
+{0,4,12,16}/{1,3,13,15}/{2,7,9,14}/{5,6,10,11} all sum32.
+But x=(4,4,10,10) is also rank-admitted and is impossible as a row,
+so a rank split chosen arbitrarily still does not suffice.
+
+**Kill test for treating that bridge as universal count admission.**
+On SAME M16,q8 with counts4444, targets(10,39,39,40) satisfy all
+protected cuts: minimum one/two/three-group sums10/49/88>=10/36/78,
+total128=T16-8. The size4 bin of sum10 must be WHOLLY low: even one
+high token contributes at least9, and three other distinct nonnegative
+tokens contribute at least0+1+2=3, totaling12>10. It therefore cannot
+have two tokens on each side, or even one high token. This is a positive
+input, explicitly partitioned as
+{0,1,2,7}/{3,6,14,16}/{4,9,11,15}/{5,10,12,13}.
+All four bins have the required counts/sums and cover the original pool.
+Thus protection does not guarantee access to the minimum2-per-row
+regime even when every original size is4 and both intervals have8 tokens.
+Together with MI447's family forcing every bin to cross, this keeps both
+necessary allocation modes visible. The failed assumption is that
+protected parent cuts select our convenient fixed-count regime.
+
+Actual change: a precise conditional finite-hole avoidance interface,
+plus a concrete rejection of its use as a universal selector. NO new
+parent existence coverage, no G331/G332 status upgrade, experiment,
+review request or endpoint repair. Gut: the finite avoidance mechanism
+is worth keeping, but compression alone has cooled into a reformulation
+of an already named gap. Next useful task is a bounded PRIMARY-LITERATURE
+read on simultaneous count/moment selection, not more fixed-row lemmas;
+ask Cloud for that specific perspective with this committed pointer.
+Keep the13min heartbeat ACTIVE; no routine review halt. Last trajectory
+is now MI55015:35 BST, with the changed decision above; no renewable
+extra allowance. General q/five-bin and old held lanes stay OPEN/held.

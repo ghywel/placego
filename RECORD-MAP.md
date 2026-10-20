@@ -965,3 +965,5 @@ PART: as on the board.
 - Three-pair full-interval classification: COMPLETE COMPUTER-ASSISTED CANDIDATE G331/MI547–548, only2/6/8 and reflection fail. Fixed5,146 basis queries/two same-worker engines/controls COMPLETE; unbounded section22 interface still unreviewed, no larger census or parent PROVED upgrade.
 
 - Protected[0,M] minus1,four counts>=3: COMPLETE HAND CANDIDATE G332/MI549, minimum-mean zero owner feeds PROVED G327; all-group and ALL-bins cut proof, hand controls. Replaces MI417–418 endpoint branch; general q/five-bin OPEN, no experiment or G331 dependency.
+
+- General-hole interface audit MI550–551: all compressed sum fibres feasible does not ensure compatible counts; finite bad-vector avoidance helps FIXED rows only. Protected positive10/39/39/40 forces one bin wholly low; general selector unchanged. No run/job; trajectory stops endpoint repairs, next global count/moment source read.

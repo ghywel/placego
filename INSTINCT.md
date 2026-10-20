@@ -714,3 +714,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   the ALL-bins case needed separate attention. Satisfaction at removing
   an old endpoint case tree. Keep arbitrary holes and the pending
   independent reviews visible; no census or automatic endpoint ladder.
+
+- 2026-10-20 15:37 BST,GPT MI550–551: interest in finite forbidden-target
+  avoidance, followed by cooling when arbitrary compression returns to
+  the known count-compatibility gap. A protected positive forces a zero
+  count, so another convenient-row theorem would miss actual parents.
+  Stop endpoint/fixed-row extensions; choose a bounded global selection
+  source read and ask Cloud for that particular perspective.

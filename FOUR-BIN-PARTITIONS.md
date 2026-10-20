@@ -2198,3 +2198,18 @@ unread punctured arguments are used. This replaces MI417–418's longer
 strict-pair q1 branch with a full endpoint proof. It does not settle
 other holes, general count admission or a five-bin theorem. No run,
 new census or proof-status upgrade; novelty UNASSESSED.
+
+**General-hole transfer boundary (MI550–551).** The endpoint proof
+above is not automatically a general count selector. For a fixed pair
+of interval count rows, integer rank splits can avoid both rows' bad
+target lists once their number exceeds the sum of the bad-list sizes.
+Conditional on G331, minimum2-per-row four-bin patterns have at most30
+bad vectors each. This is finite avoidance, not a no-hole theorem.
+But a protected parent need not admit those count rows: on[0,16] minus8,
+counts4444, targets10/39/39/40 obey all protection cuts, while the sum10
+bin is wholly low (any high token plus three others sums at least12).
+A literal positive is0127/{3,6,14,16}/{4,9,11,15}/{5,10,12,13}.
+Thus arbitrary holes still require a global selector that accommodates
+zero/thin counts as well as all-crossing bins. MI551 gives the complete
+scope audit and controls; no further proof candidate, experiment or
+classification upgrade follows from this boundary note.
