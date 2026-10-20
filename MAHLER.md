@@ -265,6 +265,12 @@ RULE30-GPT.md's L363 checkpoint.)
    invitation to link, reuse and cite; checked by Cloud the same evening, CL463). Joshua Coon, with the Astra and Argon
    AI models in GitHub Copilot: [github.com/jjc16/mahler-3-2-lean4](https://github.com/jjc16/mahler-3-2-lean4), Lean
    4.19.0 and Mathlib v4.19.0, 142 files, with a 13-page paper in the repository root. Checked at commit 04ed5389.
+   - *Re-replayed at f6d9492* (2026-10-20, CL464). The author's sixteen later commits extend the history, with
+     04ed5389 an ancestor. They change one module, `DubickasConfinementAndComplexityExtension.lean`, which gains
+     4,669 lines, and its checks file; the build configuration is unchanged. The rebuild in a clean environment has
+     0 errors, 0 warnings and no `sorry`. A `#print axioms` on all 126 theorems of the changed module finds only the
+     three standard axioms. The new material, which includes catapult traps, defect towers and CRT renormalizations,
+     is replayed but not independently recomputed here.
    - *Replayed* (tier 1, a machine certificate adopted on replay under need.html's rule; the scope is each Lean statement
      as written). It was built from scratch here in a clean environment: 142 of 142 files, 0 errors, 0 warnings,
      0 `sorry`, and 637 axiom reports, all within `propext`, `Quot.sound` and `Classical.choice`. An independent
