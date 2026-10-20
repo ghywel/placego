@@ -985,3 +985,5 @@ PART: as on the board.
 - Four-row discrete ceiling maximum reduces exactly to <=189 symbolic endpoint/residual tuples, known geometry rederived MI564/PRIOR-ART. No candidate census/general cost bound or parent coverage; plateau/slack guards retained.
 
 - Protected min3 four-bin rounded count region: REAL nonempty implies integer point, COMPLETE HAND CANDIDATE G334/MI565–566/FOUR26. Exact pin types/star-triangle exclusion; one G333/G334 review packet pending, real admission/physical partition OPEN.
+
+- Fixed minimal M12/3333 ALL11 holes:3557 protected sorted count regions REAL/integer feasible, COMPUTED MI567–568/GC1638; two mechanisms,45568 scalar masks/five controls. No physical partitions/uniform admission claim or larger census.

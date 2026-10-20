@@ -5229,3 +5229,15 @@ NOT RUN at this checkpoint. It tests the actual real-selector assertion,
 not physical partitions or MI561's ceiling relaxation. G333/G334 stay
 one pending carrying packet; no requested computation or duplicate read.
 13min ACTIVE; outcome will be appended here and in the notebook.
+
+**GC1638 outcome,2026-10-20 17:35 BST; MI568.** Prereg c52953a3
+published first, ONE execution COMPLETE: ALL3557 sorted protected M12,
+3333 target tuples across ALL11 holes pass exact REAL projection and
+independent integer counts from actual scalar subsets. Per-hole counts
+570/515/460/409/359/313/267/225/184/146/109;45568 scalar masks and49868
+group comparisons (repeats included). Five controls behave as expected,
+including genuine size2 REAL/integer gap and REAL-empty shortage. No cap,
+retry or enlargement. Source/raw hashes in MI568; raw stays outside git.
+This is finite COUNT evidence, not3557 physical partitions or a uniform
+REAL theorem. G333/G334 review unchanged; no new carrying request. Next
+actual joint real-feasibility argument; no automatic M13/profile census.

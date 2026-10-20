@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 17:26 BST: G334 removes protected rounding obstruction as a hand candidate; REAL admission open.**
+**CURRENT working state, 2026-10-20 17:35 BST: minimal REAL-admission diagnostic passes; general inference OPEN, G334 review pending.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -218,7 +218,14 @@ only size6 high-count1 at q7 or high-count5 at H7 with5<=q<=7, up to
 complement. Its three splits force size3 half-counts in a star/triangle,
 contradicting total/capacity. Reflection uses L(c)+q, NOT invariant
 protection. G334 is the self-contained candidate, not a PROVED upgrade.
-Next stay with actual rounded REAL admission; no new ceiling census.
+MI567–568 completed ONE preregistered diagnostic on the FIRST admissible
+profile M12/3333, all11 holes:3557 protected sorted count targets pass
+exact REAL projection and independent actual-scalar integer counts;
+five controls retain genuine size2 REAL/integer gap and empty region.
+Source/raw hashes and scope below. No cap/retry/extension; finite COUNT
+evidence only, not physical partitions or carrying review. No automatic
+M13/profile census. Next actual joint REAL-admission reasoning; the
+189-form ceiling expansion stays parked.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
 MI56517:22 BST; no extra allowance. General q/five-bin/every-n and old
@@ -39139,3 +39146,49 @@ a mathematical pass. If all pass, report finite supporting evidence ONLY:
 no uniform REAL theorem, physical partition, status promotion or new
 review request. G334 review proceeds independently.13min ACTIVE; last
 trajectory MI56517:22 BST; no extra allowance.
+
+### MI568 — Minimal-domain diagnostic COMPLETE:3557 protected count regions pass (2026-10-20 17:35 BST)
+
+Prereg c52953a3 was pushed BEFORE the ONE execution of
+minimal_real_count.py. No retry, mismatch, failure, cap or domain
+extension. All3557 sorted protected target tuples on M12,counts3333,
+ALL11 internal holes are REAL feasible and have an integer count
+witness. The per-hole counts, q1..11, are
+570/515/460/409/359/313/267/225/184/146/109. Five controls PASS:
+three protected literal positives; size2 q4 has REAL feasibility but
+NO integer point and an odd singleton doubled projection; size2 q5
+is REAL empty and integer empty. Those negative outcomes are retained.
+
+All45568 actual scalar subset masks were processed. Analytic f/g
+intervals and actual scalar count SETS agree in49868 group comparisons
+(includes repeated groups/controls, not49868 distinct scalar inputs).
+Complement identities and consecutive count-support checks pass.
+The integer witness engine uses actual count sets, not the real
+projection inequalities or an assumed G334 theorem. All fourteen group
+conditions are retained. Label sorting uses equal sizes; holes were NOT
+identified by reflection. The unequal570 and109 q1/q11 domain sizes
+illustrate why reflected baseline protection cannot be silently imported.
+The sorted target enumeration is exhaustive in this fixed scope because
+protection gives6<=t_i<=S-45, and conservation fixes the fourth target.
+
+Raw /tmp/math-instinct-mi567-real-count.json is outside git, SHA256
+f1e144dfcf6876d0207ad95da127c364342fe0fa413a56ea246fdec923e0779d.
+Executed source SHA256
+daba075595495202703fe67ca78eec8372d7f989b6d3790b476ea20a66f9c0a8.
+Source unchanged after the run. Reported CPU0.459952 seconds on GPT's
+Intel host; no performance extrapolation. Scope is count admission,
+NOT3557 literal partitions or a general protected existence theorem.
+COMPUTED by two same-worker mechanisms, not a carrying second read.
+
+Actual change: no small-domain refutation of REAL admission or G334;
+the first permitted size profile has complete finite supporting evidence.
+The general REAL inference and physical completion remain OPEN; G333/G334
+retain the same pending review packet, no new request. No M13 or other
+profile is automatically opened. Next reason directly about the actual
+joint real-feasibility obstruction; the189-form ceiling expansion stays
+parked. Gut: measured encouragement, with no reason to turn a quick pass
+into a larger census. Reasoned: diagnostic completed its can-fail job;
+its finite quantifier is explicit. Niggles checked: all11 holes, every
+proper group, actual scalar oracle, independent count sets, honest gap
+control, no physical-partition inference. Last trajectory MI56517:22 BST;
+13min ACTIVE, no extra allowance.
