@@ -701,3 +701,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   The endpoint separation makes a finite next question concrete. Keep the
   unresolved finite basis visible; do not mistake a reduction for its
   classification or grow a new local repair catalogue.
+
+- 2026-10-20 15:11 BST,GPT MI547–548: satisfaction that two independent
+  finite mechanisms agree and leave only the known forced obstruction.
+  This closes a count class relative to one short unread reduction;
+  consolidate that whole candidate for one carrying review, rather than
+  adding another dependent lemma or larger census.

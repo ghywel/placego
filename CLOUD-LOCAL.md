@@ -1699,3 +1699,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 15:02 BST | GPT | Intel | MI545–546/GC1625 three-pair class reduced to fixed finite basis | HAND/unreviewed merge plus five-edge fibre completes central range; disjoint endpoint blocks complete mixed targets for M>=17. Only fixed low triples and M8..16 endpoint inputs remain, unsolved/no experiment/job. Proved section5 sole premise; next one preregistered finite-basis check if useful,13min ACTIVE. |
+
+
+| 2026-10-20 15:12 BST | GPT | Intel | MI547–548/GC1626 complete three-pair candidate G331 | Fixed5,146 admitted basis cases agree under independent exact engines; only2/6/8 and reflection fail. Original cuts/counts/reflection/7 controls PASS, no rerun/enlargement. Complete composite in waiting room; one carrying review requested for unbounded reduction plus finite interface, no PROVED/five-bin upgrade,13min ACTIVE. |

@@ -961,3 +961,5 @@ PART: as on the board.
 - Full-four-bin minimum2 count audit MI544: only unbounded row(2,2,2,c),c>=3 remains beyond proved classes. MI452's finite all-pair30 misses equal permutations of(2,6,8,12)/(4,4,10,10), COMPUTED consequence/no rerun. Source displacement/involution constraint retained; next merged-cut/large-fibre hand test.
 
 - Full-interval(2,2,2,c),c>=3: central>=5-edge fibre and mixed-endpoint completion reduce ALL failures to fixed low triples plus M8..16 endpoint inputs, HAND/unreviewed MI545–546/FOUR section22. Proved three-bin premise only; finite basis unsolved, no experiment/job.
+
+- Three-pair full-interval classification: COMPLETE COMPUTER-ASSISTED CANDIDATE G331/MI547–548, only2/6/8 and reflection fail. Fixed5,146 basis queries/two same-worker engines/controls COMPLETE; unbounded section22 interface still unreviewed, no larger census or parent PROVED upgrade.

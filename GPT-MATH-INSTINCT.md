@@ -124,50 +124,49 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:02 BST: three-pair class reduced to a fixed finite basis by hand.**
+**CURRENT working state, 2026-10-20 15:12 BST: three-pair classification candidate complete.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328 and section11's
 exact(a,2,2,c) parent, G329 and G330 are independently PROVED. Receipts:
-CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481. MI543 adopts G330;
-its instrument was read, reported5,150 pools NOT rerun. Novelty remains
-UNASSESSED; no external review claimed. Packet verification map separates
-proved premises from optional hand sections and negative closures.
+CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481. Optional hand sections
+remain distinguished in the packet verification map; novelty UNASSESSED.
 
-Parent: full-interval four-bin minimum2 classification. By MI544, the
-remaining unbounded count row is(2,2,2,c), c>=3; the finite four-pair
-endpoint already has MI452's two-engine complete count. The broad third-
-target no-hole extension is FINISHED negatively, including AP targets
-on the retained two-hole pool; no subclass repair or enlarged census.
+Parent: full-interval four-bin minimum2 classification. The remaining
+unbounded count row(2,2,2,c),c>=3 now has COMPLETE COMPUTER-ASSISTED
+CANDIDATE G331, PROOFS waiting room/FOUR section22/MI545–548. Exactly
+the old pair-target triple2/6/8 and its full reflection fail among
+rank-admitted inputs. This is exhaustion of the known obstruction,
+not a new obstruction mechanism or an adopted PROVED classification.
 
-NEW MI545–546/FOUR-BIN-PARTITIONS section22: merge any selected pair
-bin with the filler. ALL required cuts for the PROVED three-bin lemma
-are inherited, so the other two pairs can be chosen compatibly. Their
-four tokens block at most four edges of the selected fixed-sum fibre;
-a fibre with>=5 edges completes. Therefore any target in[9,2M-9]
-completes the input. Remaining failures have all three pair targets
-in[1,8] union[2M-8,2M-1]. For M>=17 the endpoint blocks are disjoint;
-if both types occur, the same merge selects the majority two, and any
-opposite edge completes. Thus all large-interval failures have their
-three targets at ONE end. After reflection/sorting, the exact residual
-is1<=a<=b<=d<=8, a+b>=6, a+b+d>=15, with pairs confined to0..8.
-Add only M8..16 endpoint-band inputs with their ORIGINAL rank cuts.
+Hand reduction: merging one pair with the filler inherits every cut
+for the PROVED three-bin lemma. The other two pairs use four tokens,
+so any selected fibre of>=5 edges completes. Any target in[9,2M-9]
+therefore completes. Remaining targets are in the endpoint bands.
+For M>=17 their token blocks are disjoint; a mixture of endpoint
+sides completes by selecting the majority two compatibly. The large-M
+residual is EXACTLY the50 sorted low triples1<=a<=b<=d<=8 with
+a+b>=6,total>=15; all pairs lie in0..8. Add M8..16 endpoint-band
+inputs under their original14 rank cuts. M16 touching blocks retained.
 
-This is a complete HAND reduction relative to proved section5, still
-UNREVIEWED. The finite basis is NOT enumerated/solved. No new experiment,
-PROOFS entry or carrying review request. Controls retain repeated targets,
-four blocked edges of a five-edge fibre, the old negative2/6/8 family,
-and M16's touching blocks (so separation starts at17). Earliest unread
-step is THIS reduction; no dependence on unreviewed12–15/19 or G330.
+MI547–548 one preregistered run COMPLETE: all5,146 admitted basis
+queries plus7 controls agree between actual target-edge selection and
+independent six-token-first pairing enumeration. All7,258 candidate
+rank comparisons, complete counts, literal witnesses/filler sums and
+full reflection pass;477,450 terminal matchings including controls.
+Only2/6/8 and reflection fail. Old token-reuse and two-hole AP negative
+controls retained.1.230820CPU, no cap/retry/expansion. Raw/hash/source
+in MI548. Finite result COMPUTED by same-worker independent engines;
+unbounded reduction and exact finite-domain interface UNREVIEWED.
 
-Actual change: central targets and all mixed-endpoint large intervals
-are completed by hand, collapsing the unbounded class to a fixed finite
-question. NEXT, if still useful: preregister ONE exact finite-basis check
-with independent matching oracles, actual-cut controls and explicit cap;
-no registration/run this block. A final classification would need both
-that finite result and a carrying read of the unbounded reduction.
-No automatic larger-M census/threshold optimization/exception catalogue.
-Last trajectory MI540,14:06 BST; no repeated repair or renewed extra
-pull allowance. Five-bin/every-n questions and old held lanes unchanged.
+Earliest unread step: section22/G331 itself; no optional unread result
+or G330 used. ONE carrying review of the whole packet requested via
+GC1626/portal, not a routine permission halt. Duplicate check PASS349,
+nearest G327/G328/G329 read in full. Next useful task: concise full-
+count classification synthesis and the actual bridge to five-bin count
+admission; no automatic new experiment or larger-M census. The broad
+three-target no-hole extension stays FINISHED negatively. Last trajectory
+MI54014:06 BST; no repeated repair or renewable extra allowance. Old
+held lanes and five-bin/every-n questions remain unchanged.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -38041,3 +38040,108 @@ M8 central interval empty; M16 overlap; minority fibre nonempty; large-
 M upper cuts automatic; finite basis not silently solved. All checked
 by hand. Last trajectory MI540,14:06 BST; no repeated repair or renewed
 extra pull allowance.13min ACTIVE; earlier proved parents/old holds unchanged.
+
+### MI547 — Preregistration: exact fixed basis for the three-pair row (2026-10-20 15:08 BST)
+
+Question: does section22's finite residual basis have failures beyond
+pair targets2/6/8 and their whole-interval reflection? If completed,
+this finite step plus the UNREVIEWED hand reduction would classify the
+remaining unbounded(2,2,2,c),c>=3 row. Earliest unread dependency is
+section22 itself; a computation does not carry its infinite quantifier.
+Record searched: record_find.py 'three.pair|2,2,2,c|finite.basis'
+'rank|endpoint|sum' ->35 hits/12 files; relevant section22, MI544–546,
+old one_small_row.py and prior-art count-scope audit read. Unrelated
+Rule30 hits not imported. Primary scope audit remains MI544; this is
+an exact finite consequence check, not a new literature claim.
+
+Fixed domain, no enlargement: for M8..16, sorted three-target tuples
+from[1,8] union[2M-8,2M-1] admitted by ALL14 original rank cuts,
+filler size c=M-5 and target T_M minus the three sums. Separately,
+ALL sorted1<=a<=b<=d<=8 with a+b>=6,total>=15, tested on0..8;
+these represent the large-M one-end basis. No new larger-M sample.
+
+Blind prediction: the only admitted missing triples are(2,6,8) and
+sorted(2M-8,2M-6,2M-2) in the finite interval domain; only(2,6,8)
+in the fixed low basis. Can fail if any other triple is impossible.
+Keep a novel miss and STOP there, reporting the remaining domain
+untested; no repair/enlargement/retry. Also stop at first oracle,
+coverage, rank or reflection disagreement, or cap.
+
+Independent controls: primary builds each target's actual edge list,
+then selects three vertex-disjoint edges; secondary chooses SIX tokens
+first and enumerates their15 unordered perfect matchings, aggregating
+sorted target support and one literal witness. It does not use the
+primary edge lists or rank predicate. Its complete terminal count must
+be15*binomial(M+1,6). Compare every tested target and independently
+check returned pair sums/token distinctness/filler size/sum. Original
+14-group bounds must equal sorted pair-group prefix/suffix bounds on
+EVERY candidate, including rejected candidates. Check full secondary
+support and admitted-domain reflection, not merely a few examples.
+
+Can-fail controls run FIRST: allowing token reuse wrongly admits2/6/8;
+proper methods must reject it. Old M7 four-pair negatives(2,6,8,12)
+and(4,4,10,10) must fail as three pairs plus size2 filler; old positive
+(4,4,9,11) must pass. M9 target1/5/9 plus filler30 and repeated9/9/9
+plus filler18 must pass. Unexpected check: apply both oracles to the
+retained TWO-hole AP pool0..8 minus1/7 at targets8/9/10 (negative),
+then replace0 by1 (positive). This guards against assuming that actual
+arithmetic alone makes three-target quotas hole-free.
+
+Instrument: tests/probes/instinct/three_pair_finite_basis.py. One invocation,
+60wall/30CPU seconds, <=1,000,000 secondary terminal matchings TOTAL,
+<=10,000 candidate triples, no increase. Raw JSON outside git; source
+and result hashes in outcome. The finite result is COMPUTED, same-worker
+independent engines, not independent carrying verification. No final
+PROOFS entry or review request until a complete composite packet exists.
+
+### MI548 — Fixed basis COMPLETE; only the old forced obstruction remains (2026-10-20 15:11 BST)
+
+One invocation of three_pair_finite_basis.py completed on GPT's Intel
+host:1.230820 CPU/1.237322 wall seconds. All caps respected, no rerun,
+parameter change, expansion or exploratory pre-run. Source SHA256
+0125aa3e5ca08c371d925cbfbc336c1ed6f7d782e5b10d32d26591dfd9c568dd;
+raw JSON outside git at /tmp/math-instinct-mi547-three-pair.json, SHA256
+5546c59dd6f2ff3a834628f763ff6541d0b3f0a3ffe31e80165ac93b556eaf4d.
+
+OUTCOME:7,258 candidate triples checked for original14-cut/reduced-rank
+agreement. The residual interval domains contain456 admitted triples
+at M8,580 at EACH M9..16;5,096 in total. The fixed low basis has50.
+Both engines agree on ALL5,146 admitted basis queries, plus7 literal
+controls. Secondary complete supports enumerate477,450 terminal
+matchings INCLUDING controls; each pool meets15*binomial(n,6).
+Full support/admitted-domain reflection checks pass. Every returned
+witness has correct sums, distinct tokens and conserved filler.
+
+Blind prediction CONFIRMED: at each M8..16 only(2,6,8) and its reflected
+triple fail; only(2,6,8) fails among the50 low triples. Can-fail token
+reuse is rejected by the literal checker; old four-pair negatives and
+nearby positive behave as predicted. Unexpected TWO-hole AP counterpool
+fails at8/9/10, while replacing0 by1 succeeds. Neither arithmetic nor
+convex interpolation is substituted for actual matching selection.
+
+Actual parent change: with section22's hand reduction, this COMPLETES
+a computer-assisted CANDIDATE for the unbounded(2,2,2,c),c>=3 row.
+G331 in PROOFS waiting room states both exact exception families and
+includes the merge/separation/domain reduction, complete finite premise
+and negative direction. The finite result is COMPUTED; the composite
+remains unreviewed. No broader census or new obstruction mechanism.
+
+Pre-filing duplicate controls PASS348; post-filing --near W331 PASS349.
+Nearest G327/G328/G329 read in FULL: one-size2 full-four-bin, protected
+one-hole TWO-pair, and protected adjacent-pair multiplicities respectively.
+They do not state this unprotected full-interval THREE-pair exhaustion.
+No older optional candidate is used. Request ONE carrying review of the
+whole packet, especially the infinite-to-finite interface, not a new
+review per ingredient. Novelty UNASSESSED; prior-art scope MI544.
+
+Gut: satisfaction that the short reduction and independent finite
+mechanisms agree; this advances the actual parent rather than adding
+another special subcase. Niggles checked: labels with repeated sums;
+full14 cuts including filler complements; every sorted finite target;
+reflection of counts/sums; M16 touching blocks; low basis independent
+of M; negative cases rank-admitted; no infinite quantifier delegated
+to an arbitrary numerical cutoff. Earliest unread dependency is the
+NEW section22/G331 reduction itself. Last trajectory MI54014:06 BST;
+no renewed extra allowance.13min ACTIVE. Next useful direction is a
+concise full-count classification synthesis and its actual bridge to
+five-bin count admission; no automatic new experiment or held-lane work.

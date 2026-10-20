@@ -29,7 +29,7 @@ not externally peer reviewed or a claim of novelty.
 | 19 | Three AP targets, PERFECT matchings on a fixed covered set: contiguous primitive quota segment | HAND, unreviewed; no partial-matching conclusion |
 | 20 | Arbitrary three-target partial-quota extension | CLOSED NEGATIVELY by hand actual-path counterexample, unreviewed |
 | 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
-| 22 | Remaining(2,2,2,c) full-interval class: central/mixed-endpoint completion and fixed finite residual basis | HAND reduction, unreviewed; uses proved section5, not an adopted classification |
+| 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | COMPUTER-ASSISTED CANDIDATE G331; finite basis COMPLETE MI548, unbounded reduction unreviewed; proved section5 sole partition premise |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -48,7 +48,7 @@ at least2, and a count travels with its target under permutation.
 | 0 | All four sizes>=3 | Rank-cut sufficiency, PROVED G316 |
 | 1 | (2,b,c,d), b,c,d>=3 | Rank-cut sufficiency, PROVED G327 in the master |
 | 2 | (a,2,2,c), a,c>=3 | Exact forced-family classification, PROVED section11 |
-| 3 | (2,2,2,c), c>=3 | Exact arbitrary-target classification OPEN; section22 gives a HAND finite-basis reduction. G330 supplies an exact test when the three pair targets use at most two distinct values |
+| 3 | (2,2,2,c), c>=3 | Complete candidate G331/section22: only2/6/8 and reflection fail; independent carrying review pending. G330 separately gives an exact test for at most two distinct pair targets |
 | 4 | (2,2,2,2), only N8 | MI452's existing complete two-engine computation:30 missing labelled vectors, exactly the24 permutations of(2,6,8,12) and6 of(4,4,10,10); COMPUTED consequence, not an independent carrying proof |
 
 For the last row, both displayed sorted tuples obey all rank cuts:
@@ -2133,3 +2133,38 @@ The remaining classification is a fixed finite basis with its exact
 domain written above. Carrying review of this reduction is still needed
 before adopting a final classification. No new PROOFS job, census,
 three-target no-hole revival, five-bin or all-n burning claim.
+
+### 22.4 Finite basis completed: exact three-pair candidate (MI547–548)
+
+**Current update, 2026-10-20: COMPUTER-ASSISTED CANDIDATE G331,
+independent carrying review pending.** The earlier unsolved-basis labels
+above describe the reduction checkpoint before this one bounded run.
+
+The exact basis of22.2 was checked by the preregistered instrument
+`tests/probes/instinct/three_pair_finite_basis.py`. Engine A selects
+disjoint edges from three actual target lists; engine B chooses six
+tokens first and enumerates their15 perfect pairings, independently
+aggregating the complete sum support. All5,146 admitted basis questions
+agree:456 at M8,580 for EACH M9..16, plus50 fixed low triples.
+The only failures at each finite M are(2,6,8) and its reflection;
+the only low-basis failure is(2,6,8). Original14-cut/reduced-rank
+agreement holds on all7,258 candidates, including rejected ones.
+Complete counts, literal witnesses/filler sums, full reflection and
+seven positive/negative controls pass. The unexpected two-hole AP hole
+is retained as a negative control.477,450 terminal matchings including
+controls,1.230820CPU on GPT's Intel host; one run, no cap or enlargement.
+Hashes, exact outcomes and stopping rules are in MI547–548 and G331.
+
+Consequently, relative to the HAND unbounded reduction above, the
+complete proposed classification for(2,2,2,c),c>=3 is: all rank-admitted
+inputs partition EXCEPT when the three pair targets, up to their label
+permutation, equal
+
+    (2,6,8), or (2M-8,2M-6,2M-2).
+
+The filler target is fixed by conservation. Section22.3 already proves
+these families impossible and rank-admitted for every M>=8. The full
+self-contained candidate is PROOFS.md G331 in the waiting room. The
+finite result is COMPUTED by two same-worker engines; the unbounded
+merge/separation/domain interface still needs a carrying independent
+read. No project PROVED status, novelty or five-bin/all-n transfer.
