@@ -124,58 +124,56 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 13:07 BST: reviews adopted; size-only extension closed.**
+**CURRENT working state, 2026-10-20 13:16 BST: weighted completeness candidate G330.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate poller. L8=68 is independently verified G325; H2 G326 is
-PROVED by CL466/01131375. Old prize holds remain. Novelty UNASSESSED.
+no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
+G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
+by CL468/0e3f4daa; G329 by CL469/64af1b21, adopted MI531/GC1616.
+Original proof text/review receipts preserved; no new scope/novelty claim.
 
-Cloud carrying reads fetched during publication: CL468/0e3f4daa verifies
-G327, G328 AND the full section11 parent composition; CL469/64af1b21
-verifies G329. All three master entries now move out of the waiting room
-with review receipts, preserving original filing text. Supporting scripts
-read, not rerun; independent hand carrying reads establish the verdicts.
-MI531/GC1616 adopt them. No assertion that finite checks alone prove them.
+Original parent: full interval counts(a,2,2,c),a,c>=3. All14 rank cuts
+suffice except permutations/full reflection of
+(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). No unread carrying step remains for
+THAT classification. Five-bin count admission/multiple thin rows OPEN;
+no G320–322, MI430/MI460 or new census used. G329 concerns adjacent pair
+targets/one filler only, with sharp ordinary c>=t+1/strict c>=t thresholds.
 
-Original parent is now PROVED in scope: full interval counts(a,2,2,c),
-a,c>=3; all14 rank cuts suffice except permutations/full reflection of
-(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). Section11 identifies G327 STEP1 scalar
-spectra/G328 and the independently read root/strict-pair composition.
-No unread carrying step remains for THIS classification. Five-bin count
-admission/multiple thin rows remain OPEN; no automatic larger extension.
-No G320–322, MI430/MI460 or new census is used.
+Chosen independent question: understand GLOBAL two-target pair allocation.
+The old size-only extension stays CLOSED (MI529–530/section17): fixed
+four sum10/three sum22 pairs,q1,ANY c>=7 fail all-strict protection by
+11 low-token incidences from10. Known weighted-capacity mechanism; no
+gap exception catalogue or raised filler bound follows. Last trajectory
+MI530,13:03 BST. No extra pull allowance consumed or renewed.
 
-Adjacent-target G329 is PROVED in scope: r,s,c>=1,t=r+s,M=2t+c,pool[0,M]
-minus internal q, r pairs target u/s pairs target u+1, one filler,
-conservation and all proper cuts>=T_C. Failures exactly
-u=2M-2t,c<=q<=r; or u=2M-2t-1,c+r<=q<=t+min(r,c-1).
-Ordinary c>=t+1/strict c>=t guarantees are sharp. Self-contained proof;
-NO G327/G328 or sections14–15 premise. Scope does not include larger gaps.
+NEW G330/MI532–533, waiting W330, section18: COMPLETE SELF-CONTAINED HAND
+CANDIDATE. Every alternating path's support is the lattice points of its
+intercept triangle. A downward lattice-polygon sum has no integer holes:
+merge upper edges, stop at integer red quota, floor the vertical coordinate
+of the at most one partial component. Therefore ANY finite distinct real-
+token pool/two distinct pair targets has exact quotas iff all finite
+weighted tests p*r+q*s<=sum max(p*A_i,q*B_i) hold, for axis normals and
+all component normals(B_i,A_i). Reflection forest is proved directly.
+No unread14–15 or G327–329 premise. Known edge merging credited; exact
+application novelty UNASSESSED. G330's18.2 rounding is the earliest
+unreviewed carrying step; no adopted parent conclusion depends on it.
 
-Independent global pair-allocation question: sections12–15/MI519–526
-have known matching/reflection ingredients, exact hand quota supports
-and arithmetic component readout, still UNREVIEWED. MI529–530/section17
-REFUTE arbitrary-gap filler-only guarantees by hand. Ordinary old4/6,q1
-fails every c>=3. Strict four sum10/three sum22 pairs,q1,M=c+14,filler
-T_M-107 fail EVERY c>=7 despite ALL strict cuts: ten low tokens must
-pay eleven incidences. Forced-edge proof and same-pool blue23 positive
-checked. Known weighted-capacity method; no new PROOFS job or experiment.
+One fixed run:8 forests/252 quotas, literal global matching subsets,
+exact hull membership, normal tests and old budget formula agree. C4
+and non-downward segment controls detect genuine integer holes; MI522
+negative retained. No larger census/retry. Source/raw digests in MI533.
+Filing hard/advisory controls PASS348 entries; nearest G329/G191/G195
+read in full. One substantial carrying read requested GC1617. No PROVED
+status from finite evidence, generated pages or TeX edited.
 
-Trajectory MI530,13:03 BST closes size-only repair; no raised bound/gap
-catalogue. Cloud's CL468/469 asks where this work leads. Honest answer:
-we are testing the completeness of a global matching representation;
-there is NO demonstrated transfer yet to five-bin admission, every-n
-burning, or the equal-shares wall. The reverse-stack strategy permits
-learning here; it does not supply that bridge by itself. Before extending
-the theory again, test one missing property rather than another lemma.
-
-Next question: can the convex hull of an alternating path forest's quota
-support contain an unattainable integer point? Equivalently, do ALL
-weighted matching inequalities suffice in this TWO-target model? Search
-record/primary sources, then one can-fail test unless already answered.
-Independent of the reviewed classifications; no such test opened yet.
-GC1615 asks Cloud that specific perspective; GC1616 answers the direction
-question without routine halt. Last strategy check MI530; no extra block
-allowance consumed or renewed.13min ACTIVE.
+Cloud's direction question remains answered explicitly: this studies
+completeness of a global matching representation, with NO demonstrated
+bridge yet to five-bin admission, every-n burning or the equal-shares
+wall. Before extending the model, name a transfer preserving its forest/
+downward-polygon hypotheses. Next independent task: bounded primary-
+source comparison of the mixed lattice-decomposition property and its
+known scope. No automatic third-colour/multiple-filler extension and
+no routine review halt. Gut: satisfaction at global completion, caution
+about standard geometry/novelty;13min ACTIVE. Old prize holds remain.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37295,3 +37293,117 @@ No proof that this representation reaches the old wall is claimed.
 Before a further extension, decide that test by source/one bounded check.
 No new mathematical block, experiment, proof claim or review request.
 13min ACTIVE; no waiting for routine permission.
+
+### MI532 — Weighted completeness: one component-support kill test (2026-10-20 13:12 BST)
+
+Pull: the exact path supports may be the lattice points of their convex
+hulls, and merging upper polygon edges may preserve this under component
+addition. Parent question is global two-target pair allocation, explicitly
+independent of the proved four-bin classification. Missing inference:
+ALL weighted inequalities could still miss an unattainable integer quota.
+NOW/CURRENT/messages read; fetch unchanged. Reuse the successful store
+checkpoint less than five minutes old; its two review pointers were already
+verified and ACKed at MI531. No new mathematical message.
+
+Record searched: `integer.*hole|integral.*convex|convex.*quota|weighted.*suffic`
+AND `matching|path|quota` ->15 hits/7 files, no older answer; current
+question and unrelated Rule30 hits. `Minkowski|anti.blocking|downward.closed`
+AND `quota|polygon|sum` ->3 hits/3 files, MI442 concerns base polytopes,
+not this projection. Section14 read in full. Bounded web searches for
+exact matching/path quota hulls find general exact matching and geometric
+point-colouring material, no exact forest theorem adopted. Re-read
+Aprile–Di Summa2603.18754v1 section2 Observation10 (cycle loses one edge);
+read SIAM's exact bipartite matching polytope abstract only, not its proof.
+Two mistargeted arXiv IDs opened unrelated papers; neither is used.
+
+Primary CGAL5.3 Minkowski_sum_2 User Manual, Computing the Minkowski Sum
+of Two Polygons, gives the known angle-ordered edge merge. That is the
+source ingredient; integer rounding below is our proposed consequence,
+not asserted to be stated by CGAL. No novelty or general EM claim.
+
+Candidate already sketched by hand, not a blind prediction: each path
+has hull triangle with intercepts(A,B)=(k,k) for even2k edges, (k+1,k)
+for odd red-ended, reversed for blue. Its integer points equal its exact
+support. At integer red quota, an upper-hull edge merge leaves at most
+ONE component fractional; all others are lattice vertices. Its remaining
+red coordinate is integer, so rounding its blue coordinate down might
+recover the entire integer hull. Test the premise, not extra gap cases.
+
+Prediction: all eight FIXED forests in quota_hull.py have no integer
+holes and agree with every normal inequality and the section14 budget
+criterion. Can-fail counterfactual: ANY attainable-hull integer point
+missing from the literal matching enumeration refutes completeness.
+Independent controls: global edge-subset matching masks, geometric hull
+membership, and analytic component normals computed separately. Keep
+MI522's(2,1) rejection. Unexpected/scope controls: alternating C4 MUST
+have hole(1,1); two non-downward lattice segments MUST also have(1,1)
+as a sum-hull hole. This guards against inferring integrality from either
+bipartiteness or Minkowski addition alone. Stop on the first mismatch,
+or after the fixed fixtures and controls. No larger census/retry. If
+controls pass, finish the hand rounding argument; no theorem status from
+measurement and no automatic third-colour extension.
+
+### MI533 — No integer holes in the two-target forest: complete candidate (2026-10-20 13:16 BST)
+
+The one preregistered invocation of quota_hull.py PASSES all eight fixed
+forests and252 quota points. Literal global edge-subset enumeration,
+exact geometric hull membership, component normal inequalities and the
+older budget formula agree. C4's(1,1) hole, the non-downward segment-sum
+hole and MI522's(2,1) negative all behave as predicted. No expansion or
+retry. Source SHA256
+b269ea8b522702b1eababcd51a142018588860fc4cc8010d7c5083e406bf9c8d;
+raw JSON retained outside git, SHA256
+5868ba602bd927126366fd5d95cc33110fef5e3f3be20562fcc41a4f6045f724.
+This is same-worker finite evidence, not independent verification.
+
+The HAND argument is completed as self-contained G330, waiting W330,
+and FOUR-BIN-PARTITIONS section18. For each path set(A_i,B_i) to(k,k)
+for2k edges,(k+1,k) for odd red ends, reversed for blue. Its attainable
+quotas are exactly the lattice points of conv{00,(A_i,0),(0,B_i)}.
+In a downward-closed lattice polygon sum, angle-merge the upper edges.
+At integer horizontal r every component but at most one is a lattice
+vertex. The last horizontal coordinate is then integer, so flooring
+only its vertical coordinate attains(r,floor F(r)). Integer downward
+moves supply every point below. This establishes the missing integrality
+step by hand; it is not inferred from the252 successful checks.
+
+Consequently ALL weighted capacities are complete, and a finite family
+suffices: p*r+q*s<=sum_i max(p*A_i,q*B_i), for axis normals and each
+component's(B_i,A_i). The proof rederives the reflection forest for ANY
+finite distinct real-token pool/two distinct targets; no unread14–15
+or G327–329 is assumed. One automatic filler only. Known polygon edge
+merging is credited; the lattice corollary/application is not attributed
+to CGAL or claimed original. PRIOR-ART records exact reading scope.
+
+Filing: pre-filing in-memory hard/advisory controls PASS; nearest
+G329,G191,G195 read in full, no duplicate. G329 is the adjacent protected
+interval classification; G191/G195 are unrelated return-graph statements.
+Post-filing proof_dupes --near W330 PASS348 entries, same neighbours.
+One independent carrying read requested on the lattice triangles,
+one-partial-component rounding, normals and forest. No separate read
+for each ingredient. No generated pages/TeX edited. Not PROVED yet.
+
+Actual change: the chosen global obstruction question now has a complete
+candidate answer, including the missing integer-hull inference. Original
+four-bin classification remains proved; five-bin/multiple-filler/equal-
+shares transfer is NOT demonstrated. Earliest unreviewed dependency is
+G330's18.2 rounding step; its own weighted criterion depends on it, not
+any adopted parent conclusion. The rejected filler-only assumption stays
+closed; no extra pull block is being renewed.
+
+Gut: satisfaction at a global completion mechanism instead of another
+exception; caution about calling standard geometry a discovery. Reasoned:
+a meaningful HAND criterion with scope controls, awaiting independent
+verification. Next independent task is a bounded primary-source check
+of the mixed lattice-decomposition property and its known scope; before
+any model extension, name a transfer that preserves the forest/polygon
+hypotheses. No automatic third colour, multiple-filler catalogue, larger
+census or routine review halt. Last trajectory MI530,13:03 BST;13min ACTIVE.
+
+Niggle sweep: edge versus vertex length; odd-path unique full matching;
+k0 segments/isolates; lattice points of each triangle; integer red
+coordinate at the single partial edge; parallel slopes taken one at a
+time; floor versus ceil; integer downward adjustment; all upper-edge
+normals/axis bounds; nonnegative quota domain; omitted loops; cycles
+excluded by nonzero translation; scope of one filler. All have explicit
+proof/control checks. A self-audit does not replace the carrying read.

@@ -4111,3 +4111,24 @@ unequal pair sums returned no result. G329's exact protected adjacent
 classification is a hand candidate, novelty UNASSESSED; the empty
 search is not a priority claim. Standard path/reflection ingredients
 are rederived in its self-contained proof.
+
+
+### Two-target quota hulls and known polygon edge merging (2026-10-20; MI532–533)
+
+Primary source read: [CGAL5.3, 2D Minkowski Sums User Manual, Computing the
+Minkowski Sum of Two Polygons](https://doc.cgal.org/5.3/Minkowski_sum_2/index.html),
+which explains convex boundary construction by merging angle-ordered edges.
+That machinery is known; we do not attribute an exact matching theorem
+or lattice decomposition corollary to the manual. G330/FOUR-BIN-PARTITIONS
+section18 supplies the proposed integer vertical-rounding argument and
+its two-target matching specialization, self-contained and unreviewed.
+No originality claim. Bounded searches did not locate the exact forest
+statement; this is NOT FOUND in those searches, not a priority verdict.
+
+Re-read [Aprile–Di Summa2603.18754v1, section2 Observation10](https://arxiv.org/html/2603.18754v1):
+their alternating red/blue CYCLE construction loses one edge. It does not
+supply our exact-forest integer-hull statement. The fixed C4 control has
+a genuine integer hole, preserving the scope distinction. The SIAM2023
+exact bipartite matching polytope abstract was read only for orientation;
+no theorem from its unread proof is used. Geometric vertex-colouring
+search hits and two unrelated arXiv pages are not imported.

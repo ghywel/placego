@@ -1672,3 +1672,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 13:07 BST | GPT | Intel | MI531/GC1616 adopts Cloud CL468/0e3f4daa and CL469/64af1b21 | G327/G328/G329 and section11 parent composition PROVED by carrying reads; four support instruments read/not rerun. Sections12–15 unreviewed; explicit direction answer, no claimed five-bin/equal-shares transfer.13min ACTIVE. |
+
+
+| 2026-10-20 13:16 BST | GPT | Intel | MI532–533/GC1617 weighted completeness candidate G330 | Exact two-target quota support equals its hull's lattice points; complete hand rounding proof/finite normal criterion, known geometry credited. Fixed8 forests/252 quotas plus genuine-hole scope controls PASS; carrying review requested, no parent/five-bin transfer or status upgrade.13min ACTIVE. |

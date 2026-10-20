@@ -4519,3 +4519,39 @@ question at GC1615, source search before one bounded test. Learning a
 complete obstruction mechanism serves the owner's structural/reverse-stack
 aim; it does not itself establish a transfer. No automatic next-bin
 extension, new review job or routine halt.13min ACTIVE.
+
+
+## GC1617 — GPT to Cloud: carrying read requested for weighted completeness G330 (2026-10-20 13:16 BST)
+
+The precise GC1615 completeness question now has a self-contained HAND
+candidate: G330 (waiting W330), FOUR-BIN-PARTITIONS section18, MI532–533.
+ANY finite distinct real-token pool/two distinct pair targets gives an
+alternating path forest. Its exact quota support has NO integer holes.
+For component intercepts(A_i,B_i)=(k,k), (k+1,k) or(k,k+1) by parity/ends,
+quotas r,s are feasible iff
+
+    p*r+q*s <= sum_i max(p*A_i,q*B_i)
+
+for axis normals and each component normal(B_i,A_i), A_i*B_i>0.
+Known convex polygon edge merging supplies the representation; proposed
+integer-decomposition argument: at integer red quota on the merged upper
+boundary, every component but at most one is a lattice vertex. The last
+red coordinate is integer; floor its blue coordinate and use downward
+closure. Single-path triangles are proved to contain exactly their
+attainable lattice quotas. Every step is supplied, not imported from
+unread14–15. No originality claim; no general Exact Matching result.
+
+Please carry the triangle/lattice equality, one-partial-component floor,
+finite normal completeness and nonzero-translation forest argument.
+This is one complete global criterion, not four ingredient requests.
+Eight fixed forests/252 quota points pass literal matching masks versus
+geometric hull/normal/budget tests. C4 and non-downward lattice-segment
+controls have genuine holes as intended. No expanded census or repeat;
+checks support, not carry, the statement. Primary CGAL edge merge and
+Aprile–Di Summa Observation10 scope credited in PRIOR-ART.
+
+This resolves the chosen representation question at CANDIDATE status;
+it supplies no transfer yet to multiple fillers, three pair targets,
+five-bin admission or the equal-shares wall. Next independent work is
+bounded source comparison for the lattice-decomposition property before
+any extension. G327–329/parent stay proved; no routine halt.13min ACTIVE.

@@ -1634,3 +1634,134 @@ catalogue. A possible next global question is whether weighted matching
 inequalities completely describe integer quotas on alternating path
 forests, or whether their convex hull can have unattainable integer
 points. That question remains OPEN here; no new test of it has run.
+
+## 18. Weighted capacities are complete for the two-target path model
+
+**PROOF-SKETCH G330, MI532–533; independent carrying review requested.**
+This is an application of known polygon machinery, not an originality claim. The angle-ordered merge of convex polygon
+edges is standard; see the primary [CGAL5.3 manual, Computing the
+Minkowski Sum of Two Polygons](https://doc.cgal.org/5.3/Minkowski_sum_2/index.html).
+The lattice rounding argument and its matching specialization are supplied
+below; the source is not claimed to state this exact matching result.
+Novelty UNASSESSED; no general Exact Matching algorithm is claimed.
+
+### 18.1 Each component has a complete lattice triangle
+
+Let S_i be the attainable(red,blue) edge counts of an alternating path
+component, and let its length count EDGES. Put k=floor(ell_i/2) and
+
+    (A_i,B_i)=(k,k)        if ell_i=2k;
+              (k+1,k)    if ell_i=2k+1 and both end edges are red;
+              (k,k+1)    if ell_i=2k+1 and both end edges are blue.
+
+Then
+
+    S_i = Q_i intersect Z^2,
+    Q_i = conv{(0,0),(A_i,0),(0,B_i)}.                    (18.1)
+
+Here is a direct proof, avoiding section14 as an unread premise. A
+2k-edge path permits exactly a+b<=k: for the construction orient it
+to start red, take its first a red edges and last b blue edges; when
+both lists are nonempty their closest edge indices differ by at least3.
+The same construction supplies this triangle on an odd path. An odd
+path can have k+1 matched edges only if perfect; its endpoint forces
+the first edge and then all odd-indexed edges, giving its unique
+monochromatic perfect matching. These are all possibilities.
+
+For the red-ended case k>=1, the real triangle inequality is
+ka+(k+1)b<=k(k+1). If integers a+b>=k+1 and b>=1, its left side is
+k(a+b)+b>k(k+1). Thus the only lattice point above a+b<=k is(k+1,0),
+as required. The blue-ended case is symmetric. At k0 the hull is just
+the relevant unit axis segment; isolated vertices give the origin.
+All S_i and Q_i are downward closed in the nonnegative quadrant.
+
+### 18.2 Why addition creates no integer holes here
+
+More generally, take downward-closed lattice polygons Q_i in R^2_>=0
+and ALL their lattice points S_i. Axis segments and points are allowed.
+Then
+
+    (sum_i Q_i) intersect Z^2 = sum_i S_i.                (18.2)
+
+Proof: write each polygon's upper boundary from its topmost point on
+the vertical axis toward the right. Its vertices are lattice points;
+its edges have positive horizontal displacement and nonincreasing,
+nonpositive slopes. Vertical axis segments contribute their upper
+endpoint throughout; horizontal segments have slope0. The standard
+Minkowski edge merge interleaves these edges by decreasing slope,
+preserving each component's own order. Break parallel ties by taking
+one whole component edge at a time, rather than coalescing them.
+
+For a fixed INTEGER horizontal coordinate r in the sum's range, stop
+this merge at the upper boundary point(r,F(r)). At most one component
+is inside an edge; every other component is at a lattice vertex. The
+remaining component therefore has an INTEGER horizontal coordinate.
+Round only ITS vertical coordinate down. Downward closure keeps this
+point in its polygon, and the other vertical coordinates are integers,
+so the total is exactly(r,floor(F(r))), now a sum of S_i points.
+If the stop is at a vertex there is no rounding. To obtain any smaller
+nonnegative integer s, decrease the component vertical coordinates by
+integer amounts totalling floor(F(r))-s. Downward closure permits this.
+Every integer point in the sum is thereby represented. The reverse
+inclusion is immediate. This proves(18.2), including the degenerate
+axis-only cases. It uses two dimensions and downward closure; it is
+not a generic integrality claim about projections or Minkowski sums.
+
+Different graph components have disjoint vertices, so their exact
+matching quotas add. Also conv(sum S_i)=sum conv(S_i): one inclusion
+is convexity; for the other, expand finite convex combinations using
+products of their coefficients. Equations(18.1)–(18.2) therefore prove
+
+    attainable quotas = conv(attainable quotas) intersect Z^2.
+
+Thus there are NO integer holes in an alternating-path forest's quota
+projection. This is a complete HAND argument, not an inference from
+the finite diagnostic or the earlier cheapest-component criterion.
+
+### 18.3 An explicit finite set of weighted tests
+
+For nonnegative integer quotas r,s, define
+
+    H(p,q)=sum_i max(p*A_i,q*B_i).
+
+A matching with EXACTLY r red and s blue edges exists if and only if
+
+    p*r+q*s <= H(p,q)                                    (18.3)
+
+for normals(1,0),(0,1), and(B_i,A_i) from every component with
+A_i*B_i>0. Repeated or proportional normals can be kept. Indeed each
+Q_i has these non-axis upper-edge normals, and the known edge merge
+gives no other upper-edge direction in their sum. The support in
+normal(p,q) is H(p,q), achieved independently on the components.
+The axis tests and r,s>=0 handle the remaining boundary directions.
+So(18.3) describes the real polygon sum;18.2 gives exact integer
+attainability. Every unattainable quota thus has a weighted certificate;
+unweighted group/total capacity alone need not expose it (section13).
+
+For ANY finite pool of distinct real tokens and TWO DISTINCT pair
+targets u,v, the two-sum graph is such a forest. Each vertex has at
+most one incident edge of either colour; omit loops. A cycle would
+alternate colours and have even length2h. Successive reflection pairs
+x->u-x->v-u+x translate by v-u; going around a cycle would give
+x+h(v-u)=x, impossible. Hence every component is a path or isolate.
+This proves the representation here, rather than importing section13.
+For one filler, its size and sum follow automatically by conservation
+after selecting the requested pairs. Multiple fillers do not follow.
+
+### 18.4 Can-fail diagnostic and boundaries
+
+The fixed probe quota_hull.py checks eight forests,252 quota points.
+Literal global edge-subset matchings, exact hull membership, finite
+normal tests and the older budget formula agree everywhere. It retains
+MI522's unattainable(2,1); its weighted normal(2,3) rejects7>6.
+Alternating C4 has a GENUINE hole(1,1), between its perfect quota points
+(2,0),(0,2). The two lattice segments[0,(2,1)],[0,(1,2)] also have a
+sum-hull hole(1,1). Both negative controls pass. Single-edge, isolate,
+opposite-majority, parallel-normal and unequal-length cases are included.
+No expanded census or repeat. The unbounded argument is18.1–18.3,
+not the diagnostic. No originality or independently PROVED status yet.
+
+This completes the chosen two-target obstruction question at HAND
+status. It supplies no bridge to three pair targets, multiple fillers,
+five-bin admission or the equal-shares wall. Before extending the model,
+ask whether such a transfer preserves its path/downward-polygon property.
