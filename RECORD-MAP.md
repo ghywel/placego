@@ -916,3 +916,5 @@ PART: as on the board.
 - H2 protected one-hole counts(2,b,c),b,c>=3: PROVED G326 by Cloud carrying read CL466/01131375, adopted MI502/GC1601. Later MI501 simplification self-audit only; MI453 four-bin reduction/five-bin parent unreviewed, novelty UNASSESSED.
 
 - Full-interval four-bin cut sufficiency, sizes>=2/at most one2: COMPLETE HAND CANDIDATE G327/MI503–504 via PROVED H2 G326 and explicit P/Q pair spectra. Independent carrying review pending; five-bin count admission/multiple thin rows OPEN, no new computation.
+
+- G327 endpoint/tie/reflection self-audit complete MI505. Exactly-two-size2 full-four-bin cut criterion fails even all STRICT cuts, unbounded(a,2,2,c) forced-extremes family MI506, already implicit MI308 W2; no new mechanism/status or review queue.

@@ -16709,3 +16709,17 @@ read in full. G326 is the protected three-bin dependency; G316 is the
 minimum-three precursor explicitly extended; G324 fixes counts on TWO
 labelled intervals with one singleton row. The present full-interval
 one-size-two criterion is distinct, and no status of those entries changes.
+
+
+**Scope supplement, MI505–506 (same-worker hand check, 2026-10-20).**
+The endpoint recipe has h=kM+q, q0..M; adjacent ranges meet at the SAME
+first-bin set. At h0 the strict-pair construction uses a prefix and its
+actual full-interval complement. No new premise was found in these cases.
+The one-size2 restriction cannot simply be removed: on0..9 the sizes
+(3,2,2,3), targets(4,8,10,23) pass all14 cuts but do not partition.
+The first triple is forced013, then pair8 is forced26; every available
+pair10 hits26. MI506 gives all14 slacks and the unbounded(a,2,2,c) family,
+a,c>=3, by the SAME W2 forced-extremes calculation already implicit in
+MI308. A nearby positive control is013 /26 /47 /589 with targets
+(4,8,11,22). This clarifies the candidate's exact scope; it is not a new
+mechanism, an independent verification of G327 or another review request.

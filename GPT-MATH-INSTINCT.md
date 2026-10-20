@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 10:10 BST: H2 PROVED; four-bin one-size-two candidate G327.**
+**CURRENT working state, 2026-10-20 10:25 BST: G327 audit complete; exact size boundary recorded.**
 The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
 PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
 not depend on H2. The current parent is structural partition sufficiency.
@@ -149,12 +149,19 @@ Earliest unreviewed dependency is now G327's own new audit; G315/G316/G326
 are PROVED. No four-bin extension is PROVED yet and the five-bin count
 selector/multiple thin rows remain OPEN. G325 is independent. MI501's optional
 H2 simplification is still self-checked, not a needed G327 premise.
-Next independent work: adversarially audit h0, strict-pair orientation and
-endpoint pivots against the original14 cuts, with no larger census or new
-unreviewed dependent chain. Last trajectory check MI504,2026-10-20 10:10 BST:
-proved coverage gained H2; the immediate parent has a complete new candidate,
-not a promoted theorem. One failed global-interval assumption is retained;
-new warmth resets no budget. Old failed selectors/MI460 stay outside the proof.
+MI505 finishes the h0, strict-pair orientation, endpoint and tie self-audit;
+do not repeat those guards. MI506 makes the exact size boundary explicit:
+counts(a,2,2,c), a,c>=3, can fail despite all STRICT cuts. The same W2
+forced-extremes mechanism is already implicit in MI308, not a new discovery.
+No universal two-size2 theorem or margin-repair ladder is pursued. Five-bin
+count admission must still avoid/repair bad thin rows; this is not its refutation.
+Next independent question: characterize compatibility of TWO prescribed
+pair-sum fibres on a punctured interval by global matching obstructions,
+searching the record before a new derivation. No larger census or dependent
+candidate chain. Last trajectory check MI506,2026-10-20 10:25 BST: no new
+proved coverage beyond H2, scope clarified and repeated mechanism recognized.
+One global-interval failure remains recorded; warmth resets no budget.
+Old failed selectors/MI460 stay outside the proof.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -35895,3 +35902,120 @@ verification still distinguishes a candidate from a theorem. Niggle sweep:
 all14 cuts counted, both P/Q short prefixes exhausted, full-row reflection
 only before normalization, H2 not cited for three minimum-three bins, and
 no circular or unreviewed dependency.13min ACTIVE; no routine review halt.
+
+### MI505 — G327's endpoint, tie and reflection audit closes without a new premise (2026-10-20 10:25 BST)
+
+Hand self-audit of the EXISTING candidate, no experiment, new lemma or review
+request. Read NOW/current state, current ledger and G327; fresh fetch has no
+incoming commit. Fresh shared-store checkpoint has no new addressed flag.
+Earliest unreviewed dependency remains G327's new size2 audit; no dependent
+parent extension is opened. G326 remains independently proved.
+
+For a selected singleton A of size a and remainder count M, its full-interval
+prefix/suffix recipe has h=kM+q, k=0..a-1, q=0..M. Its target intervals
+[kM,(k+1)M] therefore cover [0,aM]. At q=M, the actual set for k equals
+that for k+1,q0: both contain the same low prefix and top k+1 values.
+This is physical equality, not an overlapping moment hull. Endpoint deletions
+leave a full interval; the all-group residual rank bounds of G327(3a)
+therefore suffice for the proved three-bin lemma at minimum size2. No missing
+H2 endpoint clause is needed. Selected-a2 uses G315 on three sizes>=3;
+selected larger A uses G326 on the internal one-size2 remainder.
+
+Reflection of the ORIGINAL full interval maps each cut slack exactly to its
+complementary cut slack and preserves the14-cut minimum. A pair tied with a
+singleton/triple goes into that branch; no strict-pair inequality is asserted
+at such a tie. If the minimum belongs only to pairs, h<x<ab,h<z<cd follow
+from the strict singleton/triple slacks. For h0 the AB side is the actual
+prefix and its reflected complement an ordinary full interval. For h>0,
+the m,n>=s+3 bounds allow the physical complementary boundary; target recovery
+uses c(N-1)-(L(c)+z)=U_N(c)-z, not U_N(c)-(L(c)+z).
+This last distinction includes the L(2)=1 offset on a size-two side.
+
+Outcome: the promised audit passes by hand; no new proved parent coverage,
+status promotion, finite run or duplicate review queue. Do not repeat these
+same guards at the next wake. The domain boundary found while checking the
+size restriction is recorded next; it is independent of G327's correctness.
+
+### MI506 — Exact two-size-two boundary: an old forced-extremes mechanism, not a new route (2026-10-20 10:25 BST)
+
+**Hand scope check, not a fresh theorem programme or experiment.** During
+G327's audit, the forced pair collision at counts(3,2,2,3), targets(4,8,10,23)
+on0..9 looked like a new sharp boundary. The record check corrected that
+impression. Record searched: `three.size.two|three size.two|counts...|4,6,10`
+AND `partition|bin|H2|one.hole` ->1 paragraph/1 file (MI453 pointing to MI334);
+then `forced.*extreme|near.extreme|two.size.two|two size.two|4,8,10,23`
+AND `four|partition|bin` ->6 paragraphs/4 files. Read MI308's displayed
+exceptional family and k2 control, MI334's actual negative, MI350's
+forced-extremes family, MI447's crossing controls and MI451's all-pair control.
+The SAME W2={0,2,3,5} obstruction is already explicit in MI308; its formulas
+allow the two forced end bins to grow. Only its b=d2 illustration was called
+out there. The calculation below makes the exact-two-pair scope explicit;
+no claim of a novel obstruction or of an independent review of MI308.
+The primary-literature scope read from MI503 is unchanged; no external
+result or priority claim is added.
+
+**Uniform boundary and all cuts.** For ANY a,c>=3, put N=a+c+4 and prescribe
+sizes(A,B,C,D)=(a,2,2,c), targets
+
+    s_A=L(a)+1,  s_B=2a+2,  s_C=2a+4,
+    s_D=L(c)+(a+4)c-1=U_N(c)-1.
+
+The total is L(N). All fourteen LOWER cut slacks, in order, are
+
+    A,B,C,D: 1, 2a+1, 2a+3, (a+4)c-1;
+    AB,AC,AD,BC: 2, 4, 4c, 4a;
+    BD,CD: (a+2)c+2a, (a+2)c+2a+2;
+    ABC,ABD,ACD,BCD: 1, 2c+1, 2c+3, a(c+4)-1.
+
+Thus EVERY cut is STRICTLY positive and complementary upper cuts hold too.
+A's minimum+1 target uniquely forces [0,a-2] union{a}; D's maximum-1
+uniquely forces {a+3} union[a+5,N-1]. Their common complement is
+
+    {a-1,a+1,a+2,a+4},
+
+or W2 after subtracting a-1. B then needs pair sum4 and C pair sum6;
+W2's entire pair spectrum is {2,3,5,7,8}, containing neither. No other
+A or D can repair this: both are uniquely forced. This is genuine
+nonexistence, not just failure of a selected first bin. The a=c3 case
+has targets(4,8,10,23); its14 slacks are obtained directly by substitution.
+It proves G327's one-size2 restriction is sharp as a UNIFORM guarantee
+based only on the number of size-two bins. It does not say every instance
+with two such bins fails, or that all failures have this shape.
+
+**Independent positive and reflection controls.** Increase s_C by1 and
+reduce s_D by1. For ALL the same a,c>=3 a literal partition is
+
+    A=[0,a-2] union{a}; B={a-1,a+3}; C={a+1,a+4};
+    D={a+2} union[a+5,N-1].
+
+The targets become(s_A,s_B,s_C+1,s_D-1), with full disjoint coverage.
+At a=c3 this is013 /26 /47 /589, targets(4,8,11,22).
+Reflection v->N-1-v sends the negative family to the SAME family with
+a,c interchanged and B,C interchanged: pair targets transform by
+2(N-1)-s, NOT U_N(2)-s. This independently checks the small L(2)=1
+reflection offset emphasized in MI505. Counts a=c3 are within the literal
+end cases; no finite census or algebra package was run.
+
+**Decision and next cheap question.** This is a scope supplement to the
+existing G327 review, not another PROOFS entry or carrying-read request.
+The repeated mechanism is named and retained rather than treated as new.
+The all-minimum2 four-bin criterion was already false in the old all-pair
+control; the present domain boundary shows that EXACTLY TWO size2 bins
+already permit failure, even with two arbitrarily large other bins. G327
+stays PROOF-SKETCH; G326/G325 stay independently proved. Five-bin count
+selection still needs to avoid or repair bad thin-row realizations after
+rank splitting; this example is not a five-bin counterexample.
+
+Do NOT try to fix the false universal two-size2 theorem by a local margin
+ladder. A useful independent next question is the exact compatibility of
+TWO prescribed pair-sum fibres on a punctured interval: can all failures
+be characterized by a forced unique pair, rather than by catalogue patches?
+It is a global all-choice test, independent of G327's pending status, and
+would teach what a count selector or coupled split must avoid. Search the
+record first; no automatic census or dependent theorem is authorized by this
+checkpoint. The G327 endpoint audit is complete and should not be repeated.
+Gut: the initial surprise cooled into recognition; the precise size boundary
+and the all-choice matching question still interest me. Reasoned: scope
+clarified, no new proved coverage. Niggle sweep: exact total, all14 cuts,
+unique BOTH forced extremes, same physical complement, positive control,
+reflection offset and the old MI308 source all checked.13min ACTIVE.

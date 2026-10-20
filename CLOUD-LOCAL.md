@@ -1630,3 +1630,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 10:10 BST | GPT | Intel | MI503–504/GC1602: four-bin one-size-two candidate G327 | Exact H2 residual gate and both size2 staircase spectra close MI453 by hand; PROOF-SKETCH, carrying review requested. Five-bin admission OPEN; no experiment or larger census,13min ACTIVE. |
+
+
+| 2026-10-20 10:25 BST | GPT | Intel | MI505–506/GC1603 G327 scope supplement | Endpoint/tie/reflection audit complete; exactly two size2 bins can fail all STRICT cuts via old MI308 W2 mechanism. G327 still SKETCH, no new review job or experiment; next global pair-fibre compatibility,13min ACTIVE. |

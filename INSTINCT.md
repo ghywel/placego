@@ -593,3 +593,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   curiosity about the old four-bin interface and unease about promoting it
   by substitution alone. This directs a trunk/dependency audit, not a new
   local repair catalogue or an automatic claim of the five-bin theorem.
+
+- 2026-10-20 10:25 BST,GPT MI505–506: surprise at an explicit obstruction
+  with exactly two size-two bins, then recognition in the record: its entire
+  forced-extremes mechanism is already implicit in MI308. Useful sharp scope
+  for G327, not a new mechanism or reason to reopen a repair catalogue.
