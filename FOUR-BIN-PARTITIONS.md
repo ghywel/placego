@@ -32,6 +32,7 @@ not externally peer reviewed or a claim of novelty.
 | 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | PROVED G331, CL471/642155b9; unbounded carrying read plus independent finite engine; proved section5 sole partition premise |
 | 23 | Protected missing1 four-bin pool, all sizes>=3: minimum-mean zero owner | PROVED G332, CL471/642155b9; reusable minimum-mean zero-owner tool, PROVED G327 sole partition premise |
 | 24 | Four-variable integer subset-interval bounds: exact conditional parity obstruction | COMPLETE HAND CANDIDATE G333, MI555–556; carrying review pending, no protected-parent existence claim |
+| 25 | Singleton high-count intervals can meet their conserved total, sizes>=3 | HAND, unreviewed MI557; pair-group compatibility and real selector feasibility remain OPEN |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -2259,3 +2260,103 @@ under the parent's size>=3 hypothesis. Even an integer count selector
 does not automatically complete zero/thin physical rows. No protected
 partition coverage, five-bin theorem, census or integrality-of-all-
 vertices claim follows from this candidate alone. Novelty unassessed.
+
+## 25. A uniform count-budget argument before imposing pair cuts (MI557)
+
+**HAND argument, unreviewed; no new proof-table entry or review job.**
+Let S=[0,M] minus an internal q, H=M-q, four sizes c_i>=3 total M,
+and integer targets total sum(S). Suppose ALL proper-group actual
+rank lower bounds hold. Define each bin's individually allowed
+high-count interval K_i by legal k and
+
+    f_c(k)=L(c-k)+(q+1)k+L(k) <= t_i,
+    t_i <= g_c(k)=(c-k)(q-1)-L(c-k)+Mk-L(k).
+
+Assume K_i is nonempty for every i. Then
+
+    sum_i min K_i <= H <= sum_i max K_i.
+
+Consequently SOME integer vector in the product of the four singleton
+count intervals has total H. This does NOT impose the six pair bounds.
+
+**Maximum capacity.** Put k_i=max K_i and suppose sum k_i=H-D,D>=1.
+Let J contain the j bins with l_i=c_i-k_i>0; all other bins are high-only.
+Put R=sum_J c_i and kappa=H-sum_(outside J)c_i. Then
+R=q+kappa, sum_J k_i=kappa-D, sum_J l_i=q+D and kappa>=D.
+If j=1, its low count exceeds q, contradicting legal capacity; j0 is
+impossible too. Thus2<=j<=4.
+
+For i in J, k_i+1 is legal: l_i>0 and k_i<H since sum k_i<H.
+The extrema f,g strictly increase across legal adjacent counts;
+their differences are q+2-c_i+2k_i and H+c_i-2k_i, both positive.
+Because t_i<=g(k_i)<g(k_i+1), maximality of k_i forces
+
+    t_i <= f_(c_i)(k_i+1)-1.                         (1)
+
+The actual minimum R-subset sum of S, since R=q+kappa, is
+alpha=L(q)+(q+1)kappa+L(kappa). The group rank cut gives t_J>=alpha;
+if J is all bins this is equality by conservation. No simultaneous
+realization of the independent counts is assumed in this inference.
+
+For i in J set x_i=k_i, z_i=l_i-1, so x_i+z_i=c_i-1>=2.
+Write Cross(v)=sum_(i<h) v_i*v_h and C=Cross(x)+Cross(z).
+Expanding (1) with sum x=kappa-D and sum z=q+D-j gives
+
+    sum_J(f_i(k_i+1)-1)-alpha
+      =(1-D)kappa+j(j+1)/2-D(j+2)+D^2-C
+      <= j(j+1)/2-D(j+1)-C.                        (2)
+
+The final inequality uses kappa>=D and1-D<=0, not a reversed sign.
+For j3, C>=4; for j4, C>=8. To see this, hold d_i=x_i+z_i>=2
+fixed and vary x_i in[0,d_i], z_i=d_i-x_i. C is affine in each
+coordinate separately, so its minimum on that box occurs at a vertex.
+At a vertex each whole d_i is assigned to one of two rows. Splitting
+j labels between rows gives at least4 times the number of within-row
+label pairs: the minima are4 for j3 and8 for j4. Therefore (2) is at
+most-2 or-3, respectively, contradicting t_J>=alpha.
+
+For j2 the right side is at most0. Equality can survive only if
+D1 and C0. Then, after interchanging the two bins,
+x=(0,c_2-1), z=(c_1-1,0). Low-count conservation forces q=c_1.
+The first bin's admitted count0 consequently gives
+t_1<=g_(c_1)(0)=L(c_1), whereas its bound in(1) was
+f_(c_1)(1)-1=L(c_1)+1. Improve that one bound by1; the total is
+now at most alpha-1, again a contradiction. This exhausts the deficit.
+
+**Minimum capacity.** Reflect S by v->M-v. Its hole is q'=M-q,
+its high total is H'=q, its targets are t'_i=Mc_i-t_i, and its
+admitted count intervals are K'_i=c_i-K_i. ALL actual rank cuts
+and the singleton nonemptiness hypothesis are preserved by reflection.
+Apply the maximum-capacity argument to get q<=sum max K'_i,
+equivalently sum min K_i<=H. This does not assume baseline protection
+is reflection invariant. Finally independent integer intervals admit
+every total between the sum of their lower and upper endpoints.
+
+**Protected-parent application and controls.** Baseline protection
+t_J>=T_(C_J) implies every actual rank cut, since the actual minimum
+is L(C_J)+max(0,C_J-q)<=T_(C_J). The proved one-hole scalar lemma
+then makes each K_i nonempty: its sole possible minimum+1 omission
+requires q=c_i and target L(c_i)+1, excluded by protection; an upper
+omission is the same lower omission for the complementary group.
+All relevant subset/complement sizes are>=3. Thus the budget argument
+applies to the chosen parent, without G333 or any old unread proof.
+
+At M12,q6,c3333, targets6/15/24/27 are protected. Their singleton
+count intervals are{0},[1,2],[2,3],[2,3]; H6 is attained by(0,2,2,2).
+A physical positive is123/078/{4,9,11}/{5,10,12}. The all-four-bin
+threshold algebra in(2), checked at q7,H5,k=(2,2,0,0),c3333,D1,
+gives C8 and excess-3: the four next-count bounds total68 versus
+the conserved71. The j2 equality trap q=c_1=c_2=3,k=(0,2)
+has next-count bounds4/14 summing alpha18, but admitted low-only
+count0 lowers the first to3; its putative target4 is a scalar gap.
+
+Minimum size matters under this argument's weaker rank hypotheses:
+M8,q5,c2222,targets11/11/4/5 meet all actual rank cuts and have actual
+individual pairs38/47/04/14, respectively. The first two bins allow
+at most one high token each; the last two allow none. Only two of
+the three high tokens can be assigned. This input fails baseline
+protection on the4+5 pair; it is a scope control, not a refutation
+of any minsize2 protected statement. Conversely CL472's q4,c2222,
+targets5/5/11/11 pass singleton budgets but fail the full integer
+pair-count selector. Singleton budgets alone are not the missing
+joint theorem, even when they are now obtained uniformly for min3.

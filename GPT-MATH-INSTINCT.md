@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 16:08 BST: G331/G332 PROVED; global parity candidate G333.**
+**CURRENT working state, 2026-10-20 16:21 BST: global parity candidate; singleton count budget closed by hand.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -166,9 +166,17 @@ were read in full; no duplicate,351 entries. No novelty claim.
 
 NEXT inference: do BASELINE-protected min3 inputs have a nonempty REAL
 region of rounded count intervals, and can they force a wrong-parity
-singleton box? These are still unproved; physical thin-row completion
-is a third separate step. Audit real-feasibility implications directly
-before importing fractional assignment or extending special cases.
+singleton box? These are still unproved. MI557/FOUR section25 now
+gives a uniform HAND argument that the four SINGLETON count intervals
+can meet the conserved total, using a cross-product deficit bound and
+reflection of actual rank hypotheses. It is independent of G333 and
+unreviewed; no new proof-table entry or review request. It does NOT
+supply pair-group compatibility. MI558 eliminates to one coordinate
+and names the remaining mixed interval-endpoint comparisons; ordinary
+Fourier–Motzkin/box geometry, no novelty or parent partition coverage.
+Physical thin-row completion is a third separate step. Next check a
+crossing-pair endpoint inequality from the actual moment roots, rather
+than assume budgets or fractional assignment settle the real region.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
 MI55015:35 BST; no extra allowance. General q/five-bin/every-n and old
@@ -38522,3 +38530,89 @@ a larger census, or resume the endpoint ladder. Gut: satisfaction at a
 short global argument that survives the awkward endpoints. Reasoned:
 specific unreviewed progress, with two count-admission gaps and physical
 completion still visible. Last trajectory MI550;13min ACTIVE.
+
+### MI557 — Real admission: total budget before pair cuts (2026-10-20 16:21 BST)
+
+HAND exploration, begun after initial algebra inspection; no experimental
+preregistration or run claimed. Question: can rounded individual high-
+count intervals fail their TOTAL before pair compatibility? A uniform
+deficit argument or an actual protected shortage would discriminate.
+Stop at this global question, without q-specific repairs. Unexpected
+check: reflect ACTUAL rank hypotheses, not baseline protection. Controls:
+j2 equality, minsize2 shortage, protected positive with a wholly-low bin.
+
+Record searched: count.interval|real.feasib|rounded|Farkas|balanced.collection
+returned125 hits/39 files; relevant MI383/384 and MI442/448 read. The
+older conditional low-shape argument MI384 is NOT a premise. Its threshold
+expansion suggested replacing its case catalogue by a cross-product bound.
+Bounded primary search for cardinalities/sums/two-interval counts supplied
+no applicable theorem; no absence or novelty claim. No old unread result
+is promoted; no G333 dependency. Full HAND proof is FOUR section25.
+
+For max-count deficit D, j incrementable bins, residual high capacity
+kappa and C=Cross(k)+Cross(c-k-1), the threshold excess over the actual
+GROUP minimum is at most j(j+1)/2-D(j+1)-C. Minsize3 gives C>=4 for
+j3 and>=8 for j4, strict contradictions. The j2 equality pattern has
+an admitted low-only bin; its exact maximum improves the threshold by1.
+Reflect actual ranks to obtain the minimum-count budget. Thus individual
+intervals admit integer counts summing H. Pair cuts remain separate.
+
+Baseline protection supplies actual ranks and individual nonemptiness
+via the PROVED one-hole scalar lemma, reread in FOUR section2. Controls
+checked literally: protected M12,q6,c3333,t6/15/24/27 has counts(0,2,2,2)
+and partition123/078/{4,9,11}/{5,10,12}; the j4 cross-product minimum
+at q7,k=(2,2,0,0),D1 has next-count bounds68<71, excess-3; the j2
+q=c1=c2=3,k=(0,2) trap improves nominal4+14=18 to3+14<18. M8,q5,
+c2222,t11/11/4/5 meets actual ranks/scalar feasibility but max counts
+total2<H3; it fails baseline on4+5<10, so is only a minimum-size
+scope control. CL472's different bad-parity example passes singleton
+budgets but fails the integer pair selector; no implication is assumed.
+
+Niggle sweep: k+1 legal since total max<H; increasing g forces the
+failure at f; integer targets supply the -1; GROUP rank cut replaces
+no union of independent subsets; cross minimum over a larger box is
+a valid lower bound; j2 equality checked; reflection maps K to c-K
+and preserves actual ranks/scalar intervals. These cheap hand checks
+leave no balanced scope niggle. Reasoned: uniform budget HAND result,
+unreviewed, no parent partition coverage. Gut: satisfaction at replacing
+the old boundary catalogue with one inequality. No new PROOFS entry,
+probe/census or additional review request while G333 waits.
+
+### MI558 — Exact real projection and remaining crossing comparisons (2026-10-20 16:21 BST)
+
+Known elimination, specialized by hand; no novelty or proof upgrade.
+After complement symmetrization write singleton intervals[A_i,B_i],
+pair1j intervals[P_j,Q_j], j2,3,4. At x=k1 the other intervals are
+[max(A_j,P_j-x),min(B_j,Q_j-x)], with required total H-x.
+Expand all8 choices in their lower/upper sums. Assuming each original
+interval nonempty, real feasibility is EXACTLY the six static bounds
+
+    P_j+A_h+A_l <= H <= Q_j+B_h+B_l, {j,h,l}={2,3,4},
+
+and lower<=upper for
+
+    lower=max(A1, H-sum B_j, P_j-B_j [each j],
+              P_j+P_h+A_l-H [each distinct j,h,l], (sum P_j-H)/2),
+    upper=min(B1, H-sum A_j, Q_j-A_j [each j],
+              Q_j+Q_h+B_l-H [each distinct j,h,l], (sum Q_j-H)/2).
+
+All signs and8 choices checked directly. For integer x the remaining
+box/sum face is integer-feasible. Only the last endpoints can be half-
+integer, consistent with G333; not its independent verification.
+Read scope for known Fourier–Motzkin projection is in PRIOR-ART.
+
+Under baseline protection the static bounds follow from PROVED G315
+after merging bins1,j: all three targets are scalar-attainable by the
+same protection argument, sizes/complements>=3, conserved total. A
+physical merged partition supplies the required counts separately for
+each merge. This does not make those different merges compatible.
+MI557 also handles the all-singleton total-budget comparison.
+
+Remaining mixed comparisons include P_2-B_2<=Q_3-A_3, equivalently
+P_2+A_3<=Q_3+B_2, coupling pairs12 and13. Separate merged partitions
+and singleton budgets do NOT prove it. Next bounded hand test: do actual
+rounded quadratic-root endpoints under baseline protection force that
+crossing inequality and its label variants? A violation is an explicit
+real-empty certificate. No fractional-feasibility shortcut, solver or
+larger census. Parent real admission/thin completion OPEN. Last trajectory
+MI55015:35 BST; no extra allowance or repeated-failure trigger.13min ACTIVE.

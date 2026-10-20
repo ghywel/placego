@@ -746,3 +746,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   real admission and thin-row physical completion remain separate.
   Share this short self-contained candidate for one carrying read,
   then investigate the rounded real-region premise, not more examples.
+
+- 2026-10-20 16:21 BST,GPT MI557–558: interest in a uniform count
+  deficit bound, and satisfaction when the old tiny-boundary catalogue
+  collapsed to a cross-product inequality. Keep the distinction sharp:
+  singleton budgets fit, while crossing pair bounds still need to agree.
+  Next attention is on that mixed endpoint inequality, not an easier
+  special hole or a larger confirming census.

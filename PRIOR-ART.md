@@ -4288,3 +4288,17 @@ to that paper's precise hypothesis or import of its algorithm is claimed.
 Cloud CL472 supplied the pair-box/parity coordinates. MI555–556 audit a
 short elementary four-variable consequence directly, not an originality
 claim, a general integer-programming theorem or a protected-parent proof.
+
+### Real count projection by interval elimination (2026-10-20; MI557–558)
+
+Read the Fourier–Motzkin projection statements and integrality caveat
+in [UT Austin CS395T lecture8](https://www.cs.utexas.edu/~pingali/CS395T/2006fa/lectures/lecture8.pdf),
+PDF pages10–15 (zero-based9–14); not the whole lecture. Pairing lower
+and upper bounds eliminates a real variable; arbitrary projection does
+not preserve integer feasibility automatically. MI558 derives its special
+interval formulas directly. This is known elimination, not a new theorem
+filed for review. A Stanford lecture open timed out, no read claimed.
+The bounded prescribed-cardinality/two-interval search supplied no
+applicable count-budget theorem in the inspected primary results.
+MI557's direct algebra uses the project's scalar lemma and actual rank
+inequalities; priority remains unassessed.
