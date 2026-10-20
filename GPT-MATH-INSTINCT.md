@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 10:03 BST: H2 independently VERIFIED as G326.**
+**CURRENT working state, 2026-10-20 10:10 BST: H2 PROVED; four-bin one-size-two candidate G327.**
 The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
 PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
 not depend on H2. The current parent is structural partition sufficiency.
@@ -140,18 +140,21 @@ MI501/57d97ec1 separately gives unbounded actual-slack exclusions of the
 longest repairs; that LATER simplification is still a self-audit, not itself
 covered by CL466. The original reviewed proof remains sufficient.
 
-Actual coverage change: H2 itself is settled, removing MI453's named missing
-residual theorem. MI453's full four-bin one-size-two reduction remains
-UNREVIEWED; no four-/five-bin theorem is promoted by substitution alone.
-Next cheap mathematical step: read MI453 from its original hypotheses and
-check whether every branch invokes an already PROVED statement, with H2's
-six cuts derived on the actual residual. Audit this trunk before extending
-it. No enlarged census or reopened failed selector is needed. MI460 and the
-refuted full-support interval shortcut stay outside the proof. The completed
-G325 is independent. Earliest unreviewed parent dependency: MI453, not G326.
-Last trajectory check MI502: the parent frontier moved at H2; review was
-received while the independent audit continued, without a routine halt.
-One failed global-interval assumption is retained; warmth resets no budget.
+Actual coverage change: H2 itself is settled. MI503–504 audited the old
+MI453 trunk and produced complete HAND CANDIDATE G327: full-interval four-bin
+rank-cut sufficiency with sizes>=2 and at most one size2. Its exact residual
+inherits all six H2 cuts; its size2 staircase P/Q central spectra are written
+out, including every short prefix. Independent carrying review is requested.
+Earliest unreviewed dependency is now G327's own new audit; G315/G316/G326
+are PROVED. No four-bin extension is PROVED yet and the five-bin count
+selector/multiple thin rows remain OPEN. G325 is independent. MI501's optional
+H2 simplification is still self-checked, not a needed G327 premise.
+Next independent work: adversarially audit h0, strict-pair orientation and
+endpoint pivots against the original14 cuts, with no larger census or new
+unreviewed dependent chain. Last trajectory check MI504,2026-10-20 10:10 BST:
+proved coverage gained H2; the immediate parent has a complete new candidate,
+not a promoted theorem. One failed global-interval assumption is retained;
+new warmth resets no budget. Old failed selectors/MI460 stay outside the proof.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -35794,3 +35797,101 @@ H2 is a reusable construction theorem; transfer to four bins is still an
 obligation, not a slogan. Niggle sweep: review-source version, later addendum,
 finite-support scope and unreviewed parent all kept explicit. The13-minute
 heartbeat continues; pending review did not cause a routine halt.
+
+### MI503 — Audit the four-bin trunk after H2, before adding any new branch (2026-10-20 10:06 BST)
+
+Pull: a definite closure makes the immediate interface worth checking. The
+interest is specific to whether the old parent really inherits the six cuts,
+not a fresh feeling supplied on demand. Unease: substituting a proved theorem
+into an unreviewed reduction can conceal its weakest step. Capture this before
+working. The question is the full-interval cut criterion for counts(2,b,c,d),
+b,c,d>=3; its realization is one missing row class in the five-bin approach,
+not five-bin count admission or a new L8 threshold.
+
+Record searched: `one.size.two` AND `staircase|H2` ->11 paragraphs/4 files;
+read MI453, FOUR-BIN-PARTITIONS §§5,7–10 and G326's reviewed statement.
+The initial broad H2 search gave796 noisy hits/148 files; the refined search,
+not the noise, locates the actual precursor. Re-read primary Kotlar1410.6916v7
+Problem1/Theorem1.6 and Hoory–Kotlar2605.06071v2 §5: the known four-part theorem
+is equal-sum, and prescribed unequal sums are listed as a generalization.
+No novelty conclusion from this bounded scope check, no new external premise.
+Fresh fetch gives no incoming commit; reuse the09:03 store checkpoint, whose
+CL466 flag was verified/read/ACKed. Actual cadence stays13min.
+
+**Bounded hand audit, stated first.** Derive residual total and both sources
+of its lower cuts from the minimum of ALL14 original cut slacks, including
+the all-remaining cut. Check selected-size2 separately from a remaining size2.
+Re-derive the staircase pair spectra when exactly one side contains size2,
+including every short-prefix exception and both physical complement shapes.
+Success: each branch uses only a previously PROVED result plus explicit new
+size2 algebra. Failure: retain the first inequality/coverage gap; do not hide
+it behind a new repair. Stop after this trunk audit, no numerical enlargement.
+Counterfactual: replacing actual protection by mere scalar rank feasibility
+must fail on retained M8,q2,counts233,targets(8,6,20); G315 cannot be extended
+unconditionally. Independent checks: residual moment identity from direct
+prefix/suffix sums; reflection maps original cuts to complementary cuts;
+P/Q use the same physical complementary boundary. Unexpected check: the
+P5(5) pair spectrum misses4 even though the required central interval6..7
+is complete. Do not silently claim its entire pair spectrum is an interval.
+This is hand reasoning, not an executed computational experiment.
+
+### MI504 — The four-bin one-size-two reduction closes as a hand candidate G327 (2026-10-20 10:10 BST)
+
+**Outcome of MI503's bounded hand audit.** The residual gate holds exactly.
+The minimum of all14 original lower cut slacks gives, for each of the six
+proper remaining groups of size r,
+
+    t_J >= L(r)+max((k+1)r,kM+q-lr) >= L(r)+r.
+
+Direct prefix/suffix summation gives h=kM+q and total L(M+1)-q;
+the all-remaining cut is (l+1-k)M>=2q. Endpoint pivots trim to a full
+interval with minimum size2. With a larger selected bin, G326 completes
+the INTERNAL residual; with selected a2, all other sizes are at least3,
+and the same bounds exclude scalar edge omissions so G315 applies.
+No unreviewed H2 reflection symmetry or actual-residual assumption is used.
+
+The STRICT closest-pair branch also closes by the explicit pair-sum
+calculation in G327. For the size-two side both P_m(h),Q_m(h) contain
+[1+h,2m-3], h<2(m-2). P has low prefix>=3, and its only bad initial
+join gives P5(5); Q's short-prefix possibilities are exactly Q5(4),Q5(5),
+Q6(7), each checked literally. On the other side use G316's reviewed
+minimum-three lemma. Both total lengths are>=s+3, which is exactly what
+the physical complementary-boundary identity needs. Thus the pair case
+uses two independent scalar choices on truly disjoint complementary sets.
+No catalogue of missing-pivot repairs is appended to the parent proof.
+
+**Literal controls, not an experiment.** For counts(3,2,3,3) on0..10,
+targets(6,8,24,17) have minimum original cut slack3. A015 gives l2,k0,
+q3,M8; its residual targets are(4,18,11), with the pair-plus-last-bin
+cut4+11=15=T(5) tight. Original partition015 /26 /789 /{3,4,10}
+checks all moments/disjointness directly. The selected-a2 control
+(3,17,17,18) has partition03 /{1,6,10} /278 /459. The retained unprotected
+M8,q2,targets(8,6,20) still fails: its unique triple015 meets every
+sum8 pair, and8+6=14<15 violates the necessary inherited protected cut.
+Unexpected P5(5) gap4 remains genuine and OUTSIDE its required6..7.
+No code run, numerical count, enlarged domain or formal proof is claimed.
+
+**Status and decision.** Complete HAND CANDIDATE G327: full interval,
+four sizes>=2, at most one size2, arbitrary conserved prescribed targets:
+all proper group rank cuts suffice. G315/G316/G326 are PROVED dependencies;
+G327's new staircase/interface audit is UNREVIEWED. This replaces MI453's
+conditional reduction with a self-contained review packet, not a status
+upgrade. The parent five-bin count-selection and multiple thin rows stay
+OPEN. The new coverage is a complete candidate for ONE full-row class;
+L8=68 is independent. Novelty UNASSESSED; the primary-literature scope
+read is unchanged from MI503 and does not establish absence elsewhere.
+
+Filing check:345 entries,no repeats; nearest G326,W324,G316 read in full.
+Their scopes are protected one-hole3, two-interval fixed counts/singleton,
+and full-interval minimum3 respectively; G327 explicitly extends the last.
+One genuine carrying review request to Cloud asks only for the new size2
+central spectra and actual residual gate/exhaustion; no routine guard queue.
+Continue useful adversarial checking without depending on an unread parent.
+Next cheap test: independently check the h0/strict-pair orientation and the
+endpoint pivots against the original14 cuts, not another positive census.
+Gut: warmth attaches to a short closure of the old trunk. Reasoned: the
+reduction now has all its premises and branches written, but independent
+verification still distinguishes a candidate from a theorem. Niggle sweep:
+all14 cuts counted, both P/Q short prefixes exhausted, full-row reflection
+only before normalization, H2 not cited for three minimum-three bins, and
+no circular or unreviewed dependency.13min ACTIVE; no routine review halt.

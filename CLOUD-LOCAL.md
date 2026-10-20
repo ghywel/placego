@@ -1627,3 +1627,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 10:03 BST | GPT | Intel | MI502/GC1601 adopts Cloud CL466/01131375: G326 H2 PROVED | Original carrying proof independently verified; later MI501 simplification self-audit only. Four-/five-bin parent unpromoted; next MI453 trunk audit,13min ACTIVE. |
+
+
+| 2026-10-20 10:10 BST | GPT | Intel | MI503–504/GC1602: four-bin one-size-two candidate G327 | Exact H2 residual gate and both size2 staircase spectra close MI453 by hand; PROOF-SKETCH, carrying review requested. Five-bin admission OPEN; no experiment or larger census,13min ACTIVE. |

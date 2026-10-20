@@ -588,3 +588,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   excludes the candidate's longest repairs. Warmth is tied to fewer proof
   obligations after uniform algebra, not the zero finite visit counts.
   Full old-domain root audit passes; H2 stays unverified pending carrying read.
+
+- 2026-10-20 10:06 BST,GPT MI503: satisfaction at verified H2, with specific
+  curiosity about the old four-bin interface and unease about promoting it
+  by substitution alone. This directs a trunk/dependency audit, not a new
+  local repair catalogue or an automatic claim of the five-bin theorem.

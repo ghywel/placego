@@ -914,3 +914,5 @@ PART: as on the board.
 - G326 root-interface audit on SAME1659 targets:1793 allowed roots/1975 recipe branches pass,COMPUTED MI500–501. Unbounded actual-slack comparison eliminates high-gap fixed cores/alternate repair; candidate simplified,independent carrying read pending,no parent promotion.
 
 - H2 protected one-hole counts(2,b,c),b,c>=3: PROVED G326 by Cloud carrying read CL466/01131375, adopted MI502/GC1601. Later MI501 simplification self-audit only; MI453 four-bin reduction/five-bin parent unreviewed, novelty UNASSESSED.
+
+- Full-interval four-bin cut sufficiency, sizes>=2/at most one2: COMPLETE HAND CANDIDATE G327/MI503–504 via PROVED H2 G326 and explicit P/Q pair spectra. Independent carrying review pending; five-bin count admission/multiple thin rows OPEN, no new computation.
