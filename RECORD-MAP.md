@@ -936,3 +936,5 @@ PART: as on the board.
 - Two distinct sum fibres form alternating paths; coarse colour/total capacity REFUTED by strict-protected9/9/10/4, weighted6<7 hand certificate MI521–522/FOUR-BIN-PARTITIONS section13. Known matching framework, parent/status unchanged, no run.
 
 - Alternating-path quota supports compose via cheapest full odd components: exact HAND criterion r+s<=K+alpha(r)+beta(s), MI523–524/FOUR-BIN-PARTITIONS section14. Known ingredients, formula unreviewed; two-target/one-filler test, parent unchanged, no run.
+
+- Two-sum components on[0,M] minus q: residue-pair interval intersections, fixed-centre rays and one deletion give exact HAND readout MI525–526/FOUR-BIN-PARTITIONS section15. Known reflection ingredients, unreviewed, no parent/status change or run.

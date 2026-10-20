@@ -1349,3 +1349,148 @@ partition theorem. The next arithmetic question is how the two sums,
 interval endpoints and a deleted token determine these component data;
 the protected cuts alone have not been shown to enforce(14.3). No new
 PROVED status, census, parent coverage or three-colour transfer is claimed.
+
+## 15. Read the two-sum components directly from interval arithmetic
+
+**Elementary hand readout, MI525–526; unreviewed.** Integer pool[0,M],
+integer targets u<v, red sum u and blue sum v; loops are excluded.
+This specializes the known two-reflection action, with no originality
+claim. The component calculation is independent of section14's quota
+criterion and of the earlier conditional partition results.
+
+Put d=v-u>0. Reflections R(x)=u-x and B(x)=v-x satisfy BR(x)=x+d.
+Their full integer orbits are indexed by the unordered residue pairs
+
+    {a, u-a} mod d.                                          (15.1)
+
+Choose one representative a in0,...,d-1 for each such pair. Every
+integer belongs to exactly one orbit. Two different residues give an
+infinite path; a fixed residue 2a=u mod d requires the separate ray
+description below. Identifying the two cases prevents double counting.
+
+### 15.1 Two different residues: intersect two index intervals
+
+If 2a!=u mod d, define, for ALL j in Z,
+
+    z_(2j)=a+jd,          z_(2j+1)=u-a-jd.
+
+All labels are distinct: a coincidence between the two progressions
+would imply 2a=u mod d. Red edges join positions2j,2j+1; blue edges join
+2j+1,2j+2. These are all possible edges, by applying R and B to each
+label. Thus this is an exact coordinate path, not just a containing orbit.
+Its vertices survive in[0,M] precisely at even/odd positions with
+
+    j in I=[ceil(-a/d), floor((M-a)/d)],
+    j in J=[ceil((u-a-M)/d), floor((u-a)/d)], respectively.
+
+Empty intervals contribute no edges. Write I=[A,B], J=[C,D]. The
+surviving red and blue EDGE index intervals are
+
+    red j in [max(A,C),   min(B,D)]       = [r0,r1],
+    blue j in[max(A-1,C), min(B-1,D)]     = [b0,b1].            (15.2)
+
+The edge with index j here has chain-edge position2j+1 for red,
+2j+2 for blue, joining consecutive chain vertices h-1,h.
+Use only nonempty intervals. If both are nonempty, b0 is r0-1 or r0,
+and b1 is r1-1 or r1. Their edges therefore interleave without a gap.
+If one is empty, the other has at most one edge: shifting I by1 can
+create only a single overlap when I and J are disjoint. Consequently
+each orbit contributes at most ONE nontrivial path, plus isolates.
+
+The path length E is the sum of the two nonnegative interval lengths.
+Its first/last chain-edge positions are the minimum/maximum of
+
+    2r0+1, 2r1+1 (red, if present);
+    2b0+2, 2b1+2 (blue, if present).
+
+If these extremes are h0,h1, the path's vertex positions are h0-1,...,h1.
+Its first colour is red when h0 is odd, blue when h0 is even. This gives
+both its length and, when odd, its majority colour. Other surviving
+coordinate vertices are isolated and contribute no matching capacity.
+
+### 15.2 A fixed residue: one ray, not two copies of a progression
+
+When 2a=u mod d, put m=(u-2a)/d in Z. If m is even, this orbit contains
+the integer red fixed point f=u/2; if m is odd, it contains the integer
+blue fixed point f=v/2. Exactly one centre belongs to this residue:
+their difference is d/2, not a multiple of d. This also handles the two
+different fixed residues that can occur when d is even.
+
+For a RED fixed point the ray, starting at f, is
+
+    f, f+d, f-d, f+2d, f-2d, ...,
+
+with first edge BLUE and alternating thereafter. For a BLUE fixed point
+it is
+
+    f, f-d, f+d, f-2d, f+2d, ...,
+
+with first edge RED. Applying the two reflections verifies all adjacent
+edges; their only omitted edge is the fixed-point loop. Each ray lists
+the whole residue class once. If f is outside[0,M], all surviving labels
+lie on one side of f and have no adjacent ray positions, so are isolated.
+Otherwise put L=floor(f/d), H=floor((M-f)/d). The single nontrivial
+component, if any, is an INITIAL ray segment, of length
+
+    E=min(2L+1,2H),       first BLUE, for red fixed f;
+    E=min(2L,2H+1),       first RED,  for blue fixed f.          (15.3)
+
+For the first ray, even vertices survive through position2L and odd
+vertices through2H-1; for the second exchange L,H. This proves(15.3)
+and shows all remaining vertices are isolated. E0 means no edges.
+
+### 15.3 Delete q: only one component can split
+
+Only q's residue orbit changes. If q is isolated, the path data do not
+change. Otherwise let p be its vertex distance from the path's first
+endpoint, 0<=p<=E, with E its pre-deletion edge length and sigma its
+first colour. Removing q leaves edge lengths
+
+    max(0,p-1),         max(0,E-p-1).                         (15.4)
+
+Ignore zero-length pieces for matching purposes. A nonempty left piece
+starts in sigma; a nonempty right piece starts in sigma reversed when
+p+1 is odd. Its first surviving edge was edge p+2 of the original path.
+Endpoint deletion and an absent reflection loop are thus not mistaken
+for removing two ordinary edges.
+
+For two-residue coordinates, q has position t=2(q-a)/d if q=a mod d,
+and t=2(u-a-q)/d+1 otherwise; when it lies on the path,
+p=t-(h0-1). For a red-fixed ray its position is 2(f-q)/d at q<=f,
+and 2(q-f)/d-1 at q>f. For a blue-fixed ray it is 2(q-f)/d at q>=f,
+and 2(f-q)/d-1 at q<f. In the ray cases p is this position if <=E;
+larger positions are isolated. These formulas locate the hole without
+exploring the edge graph. They also show that only an internal even
+p in an even-edge path creates TWO odd pieces; their majority colours
+are opposite. This is a parity constraint, not a new margin repair.
+
+### 15.4 Literal hand controls and scope
+
+- M8,u9,v10 has d1 and BLUE fixed f5. L5,H3 give E7, first red:
+  5-R-4-B-6-R-3-B-7-R-2-B-8-R-1, with isolated0. Hole q4 has p1,
+  leaving an isolate5 and the red-ended5-edge path of MI522. Hole q5
+  instead deletes the endpoint/fixed point, leaving a6-edge path, not5;
+  its missing55 loop was never counted. Quotas2 red/1 blue then work:
+  18/27/46, with filler03, targets9/9/10/3 on the new pool.
+- M10,u4,v7 has d3. Nonfixed representative a0 gives I=[0,3],J=[-2,1],
+  red j0..1 and blue j-1..1: path7-B-0-R-4-B-3-R-1-B-6.
+  Fixed residue2 has red fixed f2, L0,H2, giving single blue edge25.
+  Tokens8,9,10 are isolated. Deleting internal q8 leaves all path data
+  unchanged; deleting q3 instead splits the first path into lengths2,1.
+- M10,u6,v10,d4 has TWO fixed residues: red fixed f3 gives blue37;
+  blue fixed f5 gives5-R-1-B-9. Nonfixed a0 gives
+  10-B-0-R-6-B-4-R-2-B-8. All11 tokens occur exactly once; the two
+  centres are not merged into one orbit or counted as loops.
+- Unexpected check: M8,u7,v9,d2 has one nonfixed orbit, the8-edge path
+  0-R-7-B-2-R-5-B-4-R-3-B-6-R-1-B-8. Hole q4 has p4 and leaves
+  red-ended and blue-ended3-edge paths. Both can be fully matched:
+  07/25/36/18 gives targets7/7/9/9 on[0,8] minus4. The two-colour
+  full-component phenomenon in section14 is genuinely attained here;
+  its proper cuts are also strict (minima7,14,23 exceed3,10,21).
+
+The result reads all component data for an actual one-hole interval;
+with section14's unreviewed criterion it gives a HAND arithmetic test
+for two-target pair bins plus ONE filler. No claim that protected cuts
+imply that test, or that two or more filler bins are automatic. Known
+reflection ingredients, exact formulas unreviewed here, no new proof
+status, census, original-parent coverage or three-colour generalization.

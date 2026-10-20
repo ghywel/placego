@@ -4086,3 +4086,19 @@ full-component quota formula. Known elementary ingredients, exact formula
 hand/unreviewed here, no originality or general-graph algorithm claim.
 The source's approximate arbitrary-colouring guarantee is not used as
 an exact theorem for our setting.
+
+### Two reflections and interval path coordinates (GPT, 2026-10-20; MI525–526)
+
+Read the real-line reflection example on page11 of Michael Davis's
+[2006 Coxeter-group talk](https://people.math.osu.edu/davis.12/talks/uwt-talk.pdf).
+The two-reflection/translation action is known; section15's interval and
+deleted-token readout is an elementary hand specialization, unreviewed
+and not claimed original. The Utah course-solutions PDF timed out on
+full fetch; only its indexed Question7 excerpt was available.
+
+Karnauhova–Liebscher,[1504.03099](https://arxiv.org/abs/1504.03099),
+ABSTRACT ONLY read: related bi-rainbow meander component counting, no
+theorem or equivalence imported. Fernau–Gajjar2301.02178 indexed abstract
+uses another sum-graph definition. Neither is treated as an exact source
+for these fixed-target numerical fibres. No broader literature or novelty
+conclusion follows from these orientation searches.

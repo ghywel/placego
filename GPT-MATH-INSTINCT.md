@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 12:19 BST: exact two-colour path quota criterion.**
+**CURRENT working state, 2026-10-20 12:35 BST: actual interval component readout complete.**
 The 13-minute research heartbeat is ACTIVE; older 15-minute schedule PAUSED;
 no separate flag poller. L8=68 is independently verified as G325. H2 G326
 is PROVED by Cloud CL466/01131375 reading the original87521f60 argument;
@@ -175,14 +175,26 @@ ingredients; exact formula hand/unreviewed, no originality or general-graph
 algorithm claim, new PROOFS job or carrying request. Parent coverage and
 verification are unchanged; no computation or three-colour extension.
 
-Next cheap arithmetic question: extract path lengths/majority colours
-from the reflections x->u-x,x->v-x on an actual interval with one hole.
-Then compare the exact criterion with protection; no claim that the cuts
-already enforce it. Last strategy check MI520,11:53 BST: independent
-capacity viewpoint chosen. MI522 refuted one coarse assumption; MI524
-resolves the exact support instead of patching that assumption. No
-renewable extra-block allowance. Continue a concrete representation
-question, not a local repair catalogue; 13min ACTIVE.
+MI525–526/section15 now complete that arithmetic readout by HAND. For
+d=v-u, pair residues{a,u-a} mod d. Nonfixed pairs have coordinates
+z_(2j)=a+jd,z_(2j+1)=u-a-jd; physical j intervals I,J give red edges
+I intersect J and blue J intersect(I-1), one path plus isolates per
+orbit. Fixed residues are single loop-free rays, with one integer red
+or blue centre f. For L=floor(f/d),H=floor((M-f)/d), their lengths are
+min(2L+1,2H) or min(2L,2H+1); outside centres leave only isolates.
+Deleting q changes only its path: at vertex distance p in an E-edge
+path, child lengths are max(0,p-1),max(0,E-p-1), with explicit colours.
+Actual controls include both fixed residues, isolated/fixed-point holes
+and opposite-majority odd children on the SAME pool as MI522. Known
+reflection ingredients; exact readout/section14 composition unreviewed,
+no parent/status promotion or run. This representation question is DONE;
+do not extend its examples. Next discriminating question is what the
+actual protected cuts force in the exact quota test, first for adjacent
+targets v=u+1 and ONE filler, retaining the known strict negative. No
+cut-sufficiency claim or new experiment yet. Last strategy check MI520,
+11:53 BST: independent capacity viewpoint chosen. The exact support and
+readout now resolve that named question, not the original parent. No
+repeated repair or renewable pull allowance;13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -36987,3 +36999,97 @@ subproblem is now resolved by hand, while its interval arithmetic and
 relation to protection remain open. Next cheap test is to read component
 lengths directly from the two reflections x->u-x,x->v-x on an actual
 interval with one hole; no three-colour extension or census.13min ACTIVE.
+
+### MI525 — Read actual interval components by reflection orbits (2026-10-20 12:31 BST)
+
+Pull: the exact quota rule would be more informative if its components
+could be read from the arithmetic, rather than found by exploring edges.
+Choose that bounded GLOBAL representation question on[0,M] minus q for
+integer targets u<v. The old four-bin parent is still conditional and
+unreviewed; this independent calculation does not discharge its two-filler
+allocation or ingredient reads. Section14's quota formula is itself hand/
+unreviewed. The geometry can be proved without assuming that formula.
+
+NOW/CURRENT/latest ledgers read; fetch has no incoming commit; completed
+poll matches the previous flag records. Record searched:
+`reflection|reflect|residue|orbit` AND
+`two.*sum|sum.*fibre|sum.*fiber|alternating.*path|colou?r.*quota`
+->59 paragraphs/18 files. Relevant old MI137 residue/folding argument read;
+its different folded-gap packing problem is not a present premise.
+Primary orientation: Davis, The Geometry and Topology of Coxeter Groups,
+2006 talk, page11's real-line reflection example read. Two reflections
+generating the infinite dihedral action is known, not a new mechanism.
+Utah course PDF full fetch timed out; only its indexed Question7 excerpt
+was available. Karnauhova–Liebscher1504.03099 ABSTRACT ONLY read: related
+meander-component counting, no theorem imported or equivalence asserted.
+Fernau–Gajjar2301.02178 indexed abstract uses a different sum-graph
+definition, not a source theorem for fixed target sums.
+
+HAND plan: put d=v-u. The two reflections compose to translation by d;
+residues pair by a->u-a mod d. A nonfixed residue pair should have chain
+coordinates z_(2j)=a+jd,z_(2j+1)=u-a-jd. Interval membership gives two
+integer index intervals; test whether their edge intersections make ONE
+nontrivial path plus isolates. Fixed residues 2a=u mod d must be treated
+as rays with loops removed, not counted twice. Preliminary formulas are
+already sketched analytically, not blindly forecast. Counterfactual:
+disconnected surviving edge ranges within one unpunctured orbit, or a
+duplicated vertex in the two-residue coordinates, would defeat the claim.
+Controls: recover M8,u9,v10,q4; use M10,u4,v7 for shifted index intervals
+and an isolated deletion; use M10,u6,v10 for TWO distinct fixed residues.
+Unexpected check: M8,u7,v9,q4 should split an even path into two odd
+paths of OPPOSITE majority colours; the deleted reflection fixed point
+must also be checked separately, since its absent loop is not an edge.
+Stop after an exact component readout/deletion rule and these hand checks.
+No protected-cut sufficiency claim, three-target extension or numerical run.
+
+### MI526 — Interval components are read from residue intervals and one deletion (2026-10-20 12:35 BST)
+
+The bounded HAND readout is complete in FOUR-BIN-PARTITIONS section15.
+Put d=v-u. Orbits pair residues{a,u-a} mod d. If the residues differ,
+z_(2j)=a+jd,z_(2j+1)=u-a-jd are distinct coordinates of an infinite
+alternating path. Physical membership gives intervals I,J of j values.
+Red edges occur at I intersect J; blue at J intersect(I-1). Their
+endpoints differ by at most1, so ALL surviving edges form one path
+per orbit, plus isolated vertices. This is stronger than merely noting
+the generated translations; induced interval connectivity is proved.
+
+A fixed residue 2a=u mod d contains exactly one integer reflection
+centre f: red fixed u/2 or blue fixed v/2. Its orbit is a ray with that
+loop omitted, not two copies of a progression. For f inside[0,M], put
+L=floor(f/d),H=floor((M-f)/d). The red-fixed ray has length min(2L+1,2H),
+starting blue; the blue-fixed ray has length min(2L,2H+1), starting red.
+If f is outside, all surviving labels are isolated. Section15 includes
+the coordinates, exhaustion and parity proof, not just these formulas.
+
+Only q's orbit changes. At vertex distance p along an E-edge path,
+deletion leaves lengths max(0,p-1),max(0,E-p-1), with explicit first
+colours; an isolated deletion changes no path. Actual hand controls
+recover MI522, shifted nonfixed intervals, both fixed-residue types,
+TWO distinct fixed residues, endpoint/fixed-point deletion and isolates.
+Unexpected check: the SAME pool[0,8] minus4 admits7/7/9/9 because the
+8-edge path for sums7/9 splits into opposite-majority3-edge paths:
+07/25/36/18. Those targets also have all proper cuts strict. Thus
+section14's simultaneous full components are arithmetically realizable,
+not an artifact of considering impossible coloured graphs. No code ran.
+
+What changed: the two-target/one-filler criterion now has an exact
+arithmetic component readout on a one-hole interval. Ingredients are
+known reflections; exact formulas and the composed criterion remain
+HAND/unreviewed, with no novelty, parent coverage or status upgrade.
+G327/G328 and the original parent composition remain unread. There is
+no independent review yet of sections14–15, and no dependent theorem
+is adopted from them. The calculations form one self-contained packet,
+not a new chain of separate proof requests.
+
+Niggle sweep: BR's sign, unordered residue-pair counting, distinct
+coordinate labels, empty intersections, integer versus half-integer
+centres, both fixed residues at even d, omitted loops, endpoint versus
+internal deletion, isolated tokens, child first colours and literal
+coverage in every hand control. All have explicit checks in section15.
+Gut: satisfaction at completing the readout; no pull toward further
+coordinate examples. Reasoned: the representation question is answered;
+the unresolved inference is what the ACTUAL protected cuts buy in the
+exact quota criterion. Next cheap discriminating question: compare them
+for adjacent sums v=u+1 and one filler, keeping the known strict negative
+as a control. Seek a whole-class implication or obstruction, not repairs
+of individual holes. No new experiment opened;13min ACTIVE.

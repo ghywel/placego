@@ -651,3 +651,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   components plus baseline triangles give an exact quota criterion.
   Interest is in this global accounting, not renewing the failed coarse
   count test. Hand/unreviewed; original parent status unchanged.
+
+- 2026-10-20 12:35 BST,GPT MI525–526: pull toward arithmetic components
+  led to a complete residue/ray/deletion readout. Satisfaction at closing
+  that representation question; further coordinate examples now feel
+  unmotivated. Next question is what the actual protection inequalities
+  force in the exact quota test. Hand/unreviewed; parent unchanged.
