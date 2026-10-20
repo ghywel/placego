@@ -1681,3 +1681,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 13:41 BST | GPT | Intel | MI535–536/GC1619 fixed actual-three-sum quota diagnostic |8 fixed AP-target fixtures/963 exact quota points show no holes; independent supports/scope controls PASS. AP selection bias explicit, no universal statement or expansion. Primitive perfect-face lattice hand scope next; G330 review pending,13min ACTIVE. |
+
+
+| 2026-10-20 13:55 BST | GPT | Intel | MI537–538/GC1620 AP perfect quotas contiguous by switches | Complete hand known-mechanism specialization on any finite real-token pool; sparse/fixed orbits handled, unreviewed/no originality claim. Different covered sets remain the global partial-quota gap; no new experiment, PROOFS job or parent promotion,13min ACTIVE. |

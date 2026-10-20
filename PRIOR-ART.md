@@ -4176,3 +4176,25 @@ our ACTUAL integral-matching quota hull. Broad searches and the existing
 record did not locate the exact three-sum no-hole question; no universal
 inference from that search or from the fixed8 arithmetic-progression
 fixtures/963 quota checks at MI536. No larger domain tested.
+
+### AP sum graphs and known perfect-matching switches (2026-10-20; MI537–538)
+
+[Dyer, Jerrum and Muller, On the switch Markov chain for perfect
+matchings,1501.07725v3](https://arxiv.org/html/1501.07725v3), section2
+Lemma2/proof and the monotone-graph definitions read. Switch connectivity
+on chordal bipartite graphs is known; monotone graphs are a subclass.
+[Dyer and Muller, Counting perfect matchings and the switch chain,
+1705.05790v2](https://arxiv.org/html/1705.05790v2), section2 Theorem1's
+odd-chord argument, section3.1 definitions/Lemmas5–7 and section3.2's
+scope read. Quasimonotone means every bipartition cut is monotone;
+the whole graph need not be bipartite. No rapid-mixing proof, counting
+algorithm or recognition theorem imported. The later1801.06494v2 was
+opened for orientation only, not used as a carrying source.
+
+FOUR-BIN-PARTITIONS section19 specializes this known switch mechanism
+with a direct adjacent-inversion proof on each alternating-cycle cut.
+For AP targets u-d,u,u+d, cross sums on that cut are congruent to u
+mod d, so the interval bounds suffice for each switch. The resulting
+perfect-quota interval on the primitive(1,-2,1) line is an elementary
+hand corollary here, unreviewed; no originality claim/new PROOFS filing.
+It does not prove partial-quota hull integrality across covered sets.

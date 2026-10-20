@@ -663,3 +663,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   and their exact quota budgets give sharp filler thresholds. G329 is
   self-contained and unverified; one carrying read requested. No local
   repair ladder, automatic parent promotion or claim of novelty.
+
+- 2026-10-20 13:52 BST,GPT MI537: interest in why actual arithmetic
+  avoids the generic C4 hole. The perfect-face question feels precise
+  enough to test by switches; mixed feeling about calling a lower-
+  dimensional face progress on the whole quota support. Keep both
+  quantifiers visible and stop at the stated hand test.

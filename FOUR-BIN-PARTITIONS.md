@@ -1765,3 +1765,87 @@ This completes the chosen two-target obstruction question at HAND
 status. It supplies no bridge to three pair targets, multiple fillers,
 five-bin admission or the equal-shares wall. Before extending the model,
 ask whether such a transfer preserves its path/downward-polygon property.
+
+## 19. Three AP targets: perfect quotas form a lattice interval (MI537–538)
+
+**HAND specialization, unreviewed.** Known monotone-graph switch
+connectivity is credited in PRIOR-ART; the argument below is elementary
+and self-contained. No originality, general partial-quota integrality,
+four-label or five-bin conclusion. It does not depend on G330.
+
+Let P be ANY finite set of2n distinct real tokens, d>0, and allow
+pairs whose sums are u-d,u,u+d. Suppose a perfect matching exists.
+Write its three quotas as(r,s,t), in that order. Then the attainable
+perfect quota triples are EXACTLY the integer points of a closed line
+segment (possibly one point). Its line satisfies
+
+    r+s+t=n,    u*n+d*(t-r)=sum(P).                      (19.1)
+
+Differences of integer solutions of(19.1) are multiples of(1,-2,1).
+The assertion here is that no such intermediate lattice point is missed.
+
+### 19.1 Switch connectivity without assuming bipartiteness
+
+Take any two perfect matchings X,Y. Their symmetric difference consists
+of disjoint even alternating cycles; common edges can be kept. On ONE
+such cycle, partition alternate vertices into L,R. Every edge of X or Y
+on this cycle crosses L,R. Two consecutive reflections x->u+k*d-x
+change x by an integer multiple of d. Consequently, for some real a,
+ALL vertices in L belong to a+d*Z and ALL vertices in R belong to
+u-a+d*Z. Thus every cross sum belongs to u+d*Z. It is an allowed sum
+if and only if it lies in the CLOSED interval[u-d,u+d]. This statement
+concerns vertices already on the cycle, not nonexistent tokens between
+them. It holds for sparse pools and for fixed reflection residue classes.
+
+List L as x_1<...<x_h and R as y_1>...>y_h. A cross perfect matching
+is a permutation pi, pairing x_i with y_(pi(i)). If pi has an adjacent
+inversion pi(i)>pi(i+1), then y_(pi(i))<y_(pi(i+1)). The existing
+sums x_i+y_(pi(i)) and x_(i+1)+y_(pi(i+1)) bracket BOTH switched sums
+
+    x_i+y_(pi(i+1)),    x_(i+1)+y_(pi(i)).
+
+Both switched sums therefore remain in[u-d,u+d], and both belong to
+u+d*Z. They are allowed edges. Swapping these partners removes one
+inversion; repeated adjacent inversion switches reach pi(i)=i.
+All four tokens in a switch are distinct because L,R are disjoint.
+Thus X and Y on this cycle each connect to the same sorted matching.
+Reverse the second path and repeat on the disjoint cycles. This gives
+a finite sequence of legal two-edge switches from X to Y on P.
+
+The whole graph need NOT be bipartite: targets(-1,0,1) on tokens
+(-1,0,1) give a triangle. The proof uses only alternating-cycle cuts;
+it never imposes a global bipartition or adds a self-loop.
+
+### 19.2 Primitive steps force every intermediate perfect quota
+
+A two-edge switch preserves the four-token total and number of edges.
+Its quota difference therefore has the form k*(1,-2,1), with integer k.
+Only two edges change, so the middle quota changes by at most2; hence
+k is0,+1 or-1. There are finitely many matchings. Choose those with
+minimum and maximum red quota. Along a switch path joining them, the
+integer red quota changes by at most1, so it visits every integer in
+between. Equation(19.1) uniquely determines the other two quotas from
+the red quota. This proves the stated interval property. The empty
+pool and a unique perfect matching give degenerate segments as claimed.
+
+Hand controls: P0123, targets2/3/4, has matchings02/13 and03/12,
+quotas(1,0,1),(0,2,0). The same switch occurs on the sparse rational
+pool{1/5,6/5,9/5,14/5}, with those same targets. The fixed half-integer
+pool{-3/2,-1/2,1/2,3/2}, targets(-1,0,1), likewise gives these two quotas.
+The abstract two-colour alternating C4 instead has quotas(2,0),(0,2)
+and misses their integer midpoint; its arithmetic is not(19.1).
+These are literal hand checks, not a new numerical census.
+
+### 19.3 Exact boundary of this argument
+
+It also applies to partial matchings when their COVERED TOKEN SET is
+fixed: they are perfect on that set. It does NOT join different covered
+sets. At fixed size k, unmatched tokens have total
+
+    sum(P)-u*k-d*(t-r).
+
+Changing that set changes the affine line in(19.1). Taking the union
+of the separate line segments need not follow from their individual
+contiguity. No overlap theorem for those fibres is proved here. Thus
+the full three-dimensional partial-quota hull question remains OPEN,
+as does the four-label model that the actual E24 transfer requires.

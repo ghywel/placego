@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 13:41 BST: fixed three-AP test complete, no general inference.**
+**CURRENT working state, 2026-10-20 13:55 BST: AP perfect-face switch argument complete, partial quotas OPEN.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
 G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
@@ -138,62 +138,51 @@ THAT classification. Five-bin count admission/multiple thin rows OPEN;
 no G320–322, MI430/MI460 or new census used. G329 concerns adjacent pair
 targets/one filler only, with sharp ordinary c>=t+1/strict c>=t thresholds.
 
-Chosen independent question: understand GLOBAL two-target pair allocation.
+Chosen independent question: understand GLOBAL actual-sum pair allocation.
 The old size-only extension stays CLOSED (MI529–530/section17): fixed
 four sum10/three sum22 pairs,q1,ANY c>=7 fail all-strict protection by
 11 low-token incidences from10. Known weighted-capacity mechanism; no
-gap exception catalogue or raised filler bound follows. Last trajectory
-MI530,13:03 BST. No extra pull allowance consumed or renewed.
+gap catalogue or raised filler bound. Last trajectory MI530,13:03 BST;
+no extra pull allowance consumed or renewed.
 
-NEW G330/MI532–533, waiting W330, section18: COMPLETE SELF-CONTAINED HAND
-CANDIDATE. Every alternating path's support is the lattice points of its
-intercept triangle. A downward lattice-polygon sum has no integer holes:
-merge upper edges, stop at integer red quota, floor the vertical coordinate
-of the at most one partial component. Therefore ANY finite distinct real-
-token pool/two distinct pair targets has exact quotas iff all finite
-weighted tests p*r+q*s<=sum max(p*A_i,q*B_i) hold, for axis normals and
-all component normals(B_i,A_i). Reflection forest is proved directly.
-No unread14–15 or G327–329 premise. Known edge merging credited; exact
-application novelty UNASSESSED. G330's18.2 rounding is the earliest
-unreviewed carrying step; no adopted parent conclusion depends on it.
+G330/MI532–533, waiting W330, section18: COMPLETE SELF-CONTAINED HAND
+CANDIDATE. Two-target sum graphs are alternating path forests. Component
+supports are all lattice points in intercept triangles; downward plane
+polygon addition has no integer holes by edge merge/one-component
+rounding. Finite weighted normal tests are complete. Independent carrying
+read requested GC1617;18.2 remains earliest unverified carrying step.
+No adopted parent conclusion depends on it. Fixed8 forests/252 quota
+checks pass including genuine-hole controls; no expansion/retry. Filing
+controls PASS348 entries; nearest G329/G191/G195 read. MI534 source
+comparison: nested-fan theorem/repeated IDP do not replace mixed addition.
 
-One fixed run:8 forests/252 quotas, literal global matching subsets,
-exact hull membership, normal tests and old budget formula agree. C4
-and non-downward segment controls detect genuine integer holes; MI522
-negative retained. No larger census/retry. Source/raw digests in MI533.
-Filing hard/advisory controls PASS348 entries; nearest G329/G191/G195
-read in full. One substantial carrying read requested GC1617. No PROVED
-status from finite evidence, generated pages or TeX edited.
+Transfer guards: old(4,8,10,23) on0..9 defeats automatic TWO-filler
+transfer. MI470's actual70 all-odd E24 profiles need labels14,15,16,17;
+existing119-profile result not rerun. No demonstrated five-bin/every-n
+or equal-shares transfer. MI535–536's ONE frozen diagnostic finds no
+holes on8 AP fixtures/963 points. Every triple was an AP: explicit
+selection limitation, no added unequal-gap inputs or universal inference.
+Source/raw digests retained there; the diagnostic is FINISHED.
 
-MI534 completes the planned primary-source comparison: Haase et al.2008
-requires nested normal fans, absent in mixed unequal odd-path triangles;
-Mori et al.2026 uses repeated-polytope IDP, not arbitrary mixed addition.
-Both exact scopes/citations in PRIOR-ART. Neither replaces G330's18.2
-carrying read; no originality/status upgrade. No mathematical experiment.
+NEW MI537–538, FOUR-BIN-PARTITIONS section19: complete HAND arithmetic
+specialization of known switch connectivity. On any finite distinct-real
+pool with three AP targets, perfect matchings connect through two-edge
+switches: on each alternating-cycle cut, compatible residue classes
+make an adjacent inversion's intermediate sums legal. This handles
+sparse pools/fixed orbits without falsely declaring the graph bipartite.
+Each switch changes quotas by0 or plus/minus(1,-2,1). Thus perfect quota
+support is all lattice points of a segment. Hand controls include actual
+C4, sparse rational/fixed half-integer pools, and the triangle warning.
+Known source scope/credit in PRIOR-ART. Unreviewed, no originality claim,
+PROOFS job, new experiment or change to adopted parent status; G330 unused.
 
-Two explicit transfer guards: old four-bin(4,8,10,23) on0..9 admits pair
-quotas8/10 but not the TWO filler targets, so one filler is essential.
-MI470's real70 all-odd E24 sorted-high profiles contain14,15,16,17,
-hence >=4 pair labels; existing119-profile completeness is not rerun.
-No demonstrated transfer to five-bin admission, every-n burning or the
-equal-shares wall. MI535–536 completes ONE frozen actual-three-sum test:
-8 fixtures/963 quota points have no holes, complete recursive/edge-subset
-supports and exact hull normals agree, all scope/reflection controls PASS.
-Every selected triple is an AP: selection bias now explicit, no added
-unequal-gap cases, larger census or general no-hole assertion. Digests
-in MI536; source/three-perfect-colour theorem's conservation obstruction
-in PRIOR-ART. No new PROOFS/FOUR-BIN result or review request.
-
-Cheap hand guide: P0123 with sums2/3/4 has perfect quotas(1,0,1) and
-(0,2,0), whose midpoint is fractional. AP-target perfect quota differences
-must lie on the primitive(1,-2,1) lattice by total size/moment. Contiguity
-on that line and ALL partial-matching hull coverage are still unproved.
-Next bounded task: record/primary-source comparison of AP residue-band/
-reflection geometry, then a hand primitive-switch test on the perfect
-face if useful. Keep that weaker face question explicit; no automatic
-new lemma, non-AP expansion or census. G330 carrying request stands,
-no duplicate/routine halt. Last trajectory MI530,13:03 BST;13min ACTIVE.
-Old prize holds remain.
+The missing inference is now explicit: each FIXED covered-token set of
+a partial matching has such a segment, but varying covered sets changes
+the total moment/affine line. Their union need not inherit integer-hull
+completeness from this argument. Next useful question is a global
+obstruction across those sets, not more perfect-face examples or an AP
+census. G330's independent read remains pending; no routine review halt.
+The old prize holds remain. No repeated failure since MI530.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37603,3 +37592,93 @@ feasibility; complete original supports; distinct tokens/omitted loops;
 actual versus abstract controls;963 count; AP selection bias; perfect
 versus partial quantifiers; retained capped outcomes (none capped).
 All checked at their stated scope. No PROOFS/FOUR-BIN theorem edit.
+
+### MI537 — AP perfect-face switch question, bounded hand test (2026-10-20 13:52 BST)
+
+Continue MI536's narrower question, not a new census. Parent learning aim:
+understand when actual sum-graph quota supports have integer holes; the
+current subquestion asks ONLY whether perfect AP-target quotas are contiguous
+on their primitive(1,-2,1) lattice. A positive answer would explain one face,
+not all partial quotas, four-label E24 or five-bin admission. G330 remains
+independently unread; its rounding step is not a premise here.
+
+NOW/CURRENT/messages read; fetch unchanged and completed store poll has
+no changed incoming pointer. Record searched: `bipartite permutation|
+chordal bipartite|tridiagonal|primitive.*switch|switch.*perfect` ->5 hits
+in4 files, only MI536 relevant. Primary search identifies Dyer–Jerrum–Muller
+1501.07725 and Dyer–Muller1705.05790/1801.06494 on four-edge switch
+connectivity; read the carrying definitions/theorem before importing it.
+
+Prediction: the residue-band graph has four-edge switch connectivity;
+every such switch changes AP quotas by0 or plus/minus(1,-2,1), so a
+path between extreme perfect quotas should cross each intermediate one.
+Can-fail counterfactual: fixed reflection orbits may violate the graph
+class hypothesis, or a legal switch may jump a larger lattice step.
+Controls by hand: P0123/sums234 must give the primitive switch; a generic
+alternating C4 must still show why arithmetic matters. Unexpected check:
+fixed orbits may contain a TRIANGLE, so do not call the whole graph
+bipartite. Check arbitrary sparse finite pools and omitted self-loops,
+not only full intervals. Stop after the graph-class/switch argument or
+first obstruction; no expanded diagnostic, new target list or retry.
+Known switch machinery stays PRIOR-ART; any new specialization remains
+hand/unreviewed until a carrying read. Last trajectory MI530,13:03 BST.
+
+### MI538 — Perfect AP quotas are contiguous; covered-set boundary retained (2026-10-20 13:55 BST)
+
+The bounded hand question has a complete answer, in FOUR-BIN-PARTITIONS
+section19. On ANY finite distinct-real-token pool with targets u-d,u,u+d,
+all perfect matchings connect by two-edge switches. On an alternating
+cycle, its two sides lie in a+d*Z and u-a+d*Z. Sort the first side up,
+the second down; an adjacent permutation inversion has its two switched
+sums BETWEEN the original sums, still in[u-d,u+d] and congruent to u.
+Thus both are allowed, and inversion sorting connects the two matchings
+through the same sorted matching. Work cycle by cycle. Four distinct
+tokens, sparse pools, fixed residue classes and omitted loops are handled.
+
+Each switch preserves size and token total, so its quota change is
+k*(1,-2,1). At most2 middle edges change, giving |k|<=1. A switch path
+between minimum and maximum red perfect quotas visits every intermediate
+integer red count; conservation fixes the other two. Thus PERFECT quota
+support is all lattice points of a segment, including degenerate cases.
+This is a self-contained HAND specialization of known switch machinery,
+not an independently PROVED entry or an originality claim. G330 unused.
+
+Primary Dyer–Jerrum–Muller1501.07725v3 section2 Lemma2/proof and monotone
+definition, Dyer–Muller1705.05790v2 odd-chord argument/quasiclass scope read;
+exact read/import limits in PRIOR-ART. No need to refile the known
+connectivity theorem or create another routine carrying-read request.
+Section19's arithmetic application stays unreviewed, not a premise of
+any adopted result. The general G33018.2 carrying read remains pending.
+
+Hand controls pass: P0123/sums234, sparse rational pool1/5,6/5,9/5,14/5
+with the same sums, and fixed half-integer pool+-1/2,+-3/2/sums-1,0,1
+all have the primitive(1,0,1)<->(0,2,0) switch. Unexpected check:
+tokens-1,0,1 form a TRIANGLE, so a global bipartite assertion would be
+false. The proof requires only each alternating-cycle bipartition.
+Generic alternating C4's integer midpoint hole remains a valid negative
+control; its two-colour arithmetic is not this three-target conservation.
+No new experiment, larger domain, source/raw digest or numerical claim.
+
+Actual change: the perfect-face question moves from observation to a
+complete hand argument; full partial-quota coverage remains OPEN. A
+partial matching is perfect on its covered set, so each such fibre has
+the same segment property. DIFFERENT covered sets change the total
+moment and hence the affine line. Their union's integer-hull completeness
+does not follow. This is the explicit missing inference, not a successful
+transfer to all three targets, four-label E24 or five-bin count admission.
+
+Gut: satisfaction at a short mechanism replacing the generic C4 analogy;
+the lower-dimensional scope still matters. Decision: the perfect-face
+block is FINISHED. Next useful question is whether changes of covered set
+leave a global quota obstruction; no more fixed-face variants or larger
+AP census. No repeated failure/extra pull allowance. Last trajectory
+MI530,13:03 BST;13min ACTIVE. The current source comparison is not a
+new review halt. Parent classifications/statuses unchanged.
+
+Niggle sweep: real congruence means differences in d*Z, not rounded
+residues; cycle sides have compatible classes even in a fixed orbit;
+cross edges use existing distinct vertices; adjacent inversion decreases
+the inversion count; both paths reach the SAME sorted matching; each
+switch changes at most2 middle edges; finite extrema and conservation
+give every lattice point; empty pool handled; known-source credit;
+perfect/partial/covered-set scopes. All checked at the stated scope.
