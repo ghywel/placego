@@ -727,3 +727,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   audit cools automatic algorithm imports. A specific pull remains in
   the minimum-mean tool: test one protection-preserving zero peel and
   its thin-owner stopping condition before proposing an induction.
+
+- 2026-10-20 15:54 BST,GPT MI554: Cloud's parity coordinates supply a
+  specific global pull. Two cheap scope checks matter: the script's
+  protection is stronger than ours, and a healthy count region can be
+  a singleton. Audit the exact fractional-vertex obstruction rather
+  than request another scan or accept a blanket width claim.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:50 BST: G331/G332 independently PROVED; source audit complete.**
+**CURRENT working state, 2026-10-20 15:54 BST: G331/G332 PROVED; new global parity audit next.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -149,15 +149,22 @@ scopes/queries/links in PRIOR-ART. No applicable count-selector theorem
 in the inspected sources, not a literature-absence claim. No ILP engine,
 experiment, census, new proof entry or parent coverage from this audit.
 
-NEXT bounded HAND question: for[0,M] minus q, choose minimum t_i/c_i
-owner A, remove0 and shift every remaining token by-1. Targets become
-t'_i=t_i-c_i+1_(i=A), counts c'_i=c_i-1_(i=A), hole q-1. Audit whether
-protection survives when q<=M/2, including the ALL-bins case, then name
-the thin-owner stop. No induction, endpoint ladder or new lemma assumed;
-stop instead of patching an unclosed thin-bin regime. This tests a global
-invariant suggested by the proved tool, not old fixed-count feedback.
-Cloud's GC1628 global-object perspective question remains open. Last
-trajectory MI55015:35 BST; no extra allowance. Old held lanes unchanged.
+NEW CL472/49912d98, full ledger/instrument read at MI554, gives a
+pair-box/slab/parity representation of the count region. Its source's
+protection predicate is STRONGER than baseline; reported79 inputs cannot
+be imported into our parent. A protected min3 good-parity singleton
+also refutes a universal axis-width requirement (GC1630). No new theorem
+adopted from this mentoring perspective.
+
+NEXT bounded HAND audit: can real-feasible/integer-empty count regions
+occur only when all three symmetrized pair intervals are singletons of
+wrong parity? Tentative fractional-vertex/one-unit-step proof in MI554,
+with bad- and good-parity singleton controls, needs every degeneracy
+checked. No proof status, induction or experiment assumed. This GLOBAL
+lattice audit takes precedence over the proposed zero-peeling question,
+which is parked intact, not repaired hole by hole. Last trajectory
+MI55015:35 BST; no extra allowance. General q/five-bin/every-n and old
+held lanes unchanged.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -38378,3 +38385,56 @@ the ALL-bins case at q near M/2, and stop rather than patch a thin-owner
 failure. No result or experiment claimed for that next question now.
 Last trajectory MI55015:35 BST; no renewed extra allowance.13min ACTIVE;
 held lanes and arbitrary-hole/five-bin statuses unchanged.
+
+### MI554 — CL472 arrives: a useful lattice object, with two scope corrections (2026-10-20 15:54 BST)
+
+Publication race: the first push of MI552–553 was rejected because Cloud
+published49912d98 after the fetch. Used the permitted ONE fetch/merge
+retry; histories preserved. CL472 and its150-line count_interval_check.py
+read FULL, not rerun. Commit49912d9852b5ebe17077f1760226ade5d139d2ba
+verified. This is mentoring/reformulation, not an independently carried
+new proof. G331/G332's earlier adoption is unaffected.
+
+Useful object: k high counts with sum H=M-q, and integer interval
+bounds on every subset total. Coordinates y=(k12,k13,k14) give three
+pair intervals as a box; singleton/complement bounds become four slabs,
+with integral k equivalent to sum(y)==H mod2 for integer y. This exact
+linear coordinate identity merits a direct hand audit. Per-group integer
+interval endpoints arise from convex minimum/concave maximum row sums.
+It does not make thin-row physical realization automatic.
+
+First correction: CL472's q4,counts2222,targets5/5/11/11 DOES obey our
+baseline protection: minimum one/two/three-bin totals5/10/21>=3/10/21,
+with total32=T8-4. It is outside our parent by minimum SIZE, not by
+those cuts. The source's variable prot tests the STRONGER actual-rank
+conditions min(S,r)+r<=t<=max(S,r)-r. For a size6 group here, actual
+minimum is17, so that predicate asks23, whereas baseline T6 is21.
+Therefore its reported79 protected inputs are not counts for our
+baseline predicate. All M<=8 data also lie outside four sizes>=3,
+which first become possible at M12. Keep the reported measurements
+with their actual predicate; do not import them as parent evidence.
+
+Second correction: a unit y-axis segment cannot be required for EVERY
+protected minimum3 input. M12,q1,counts3333,targets6/21/24/26 obey all
+baseline cuts (minimum group totals6/27/51>=6/21/45,total77) and partition
+as024 /{3,7,11}/{5,9,10}/{6,8,12}. The low side contains only0.
+The sum6 bin cannot take three high tokens (2+3+4=9), so it must take0;
+its high count is2, and all other high counts are3. The ENTIRE count
+region is the singleton k=(2,3,3,3), y=(5,5,5), H11: correct parity,
+no axis segment. Thus a sufficient parity-slack lemma must allow an
+already-good singleton, rather than demanding universal positive width.
+
+Fresh bounded HAND question suggested by this object (not a proved
+claim yet): if the real subset-interval region is nonempty but has NO
+integer k, must all THREE symmetrized pair intervals be singletons,
+whose unique y has wrong parity? Possible proof to audit: a fractional
+vertex cannot have an integral singleton bound tight, since fixing one
+k_i leaves a three-variable box/sum problem with integral vertices.
+It would therefore be a pair-box corner with all k_i half-integral;
+if a pair interval has width>=1, one unit axis step should stay within
+all integer singleton bounds and repair parity. Check degenerate faces
+and every endpoint before using this. Kill controls: CL472's bad-parity
+singleton and the good-parity singleton above. No experiment, theorem
+status or new review request. This global lattice audit takes precedence
+over MI553's proposed zero-peeling question, which is parked intact;
+no endpoint ladder or count census is reopened. Last trajectory MI550.

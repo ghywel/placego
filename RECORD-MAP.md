@@ -969,3 +969,5 @@ PART: as on the board.
 - General-hole interface audit MI550–551: all compressed sum fibres feasible does not ensure compatible counts; finite bad-vector avoidance helps FIXED rows only. Protected positive10/39/39/40 forces one bin wholly low; general selector unchanged. No run/job; trajectory stops endpoint repairs, next global count/moment source read.
 
 - G331 and G332 PROVED by Cloud CL471/642155b9 carrying reads plus separate finite support, adopted MI552. Original proofs preserved; minimum-mean zero-owner tool named. MI553 primary source audit supplies no count-admission implication; next zero-peeling invariant test, no new experiment/general-hole upgrade.
+
+- CL472 count-box/parity perspective read at MI554: source protection predicate is stronger than baseline; 5/5/11/11 meets baseline but has size2. Protected3333 example6/21/24/26 has unique GOOD-parity count, so universal axis-width claim fails. Next audit singleton-box obstruction criterion, no theorem/run adopted.
