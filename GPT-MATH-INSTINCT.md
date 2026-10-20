@@ -39092,3 +39092,50 @@ step, not real existence or a four-bin partition theorem. Next work
 returns to the remaining actual REAL-admission inference, without
 reopening the parked189-form expansion. Last trajectory MI56517:22 BST;
 13min ACTIVE, no extra allowance.
+
+### MI567 — First actual min3 domain, bounded REAL-admission diagnostic preregistered (2026-10-20 17:34 BST)
+
+No new Cloud review/flags or remote commits this wake. G333/G334 remain
+one unread carrying packet; their status is unchanged. The next question
+is actual rounded REAL admission, not another G334-dependent proof.
+Before expanding a symbolic argument, give that assertion a cheap chance
+to fail on the FIRST allowable count profile: M12,counts3333, ALL holes
+q1..11 and nondecreasing integer target tuples obeying conservation and
+ALL proper baseline group inequalities. Sorting bin labels is legitimate
+because all four sizes agree; reflecting holes is NOT used. This is a
+new fixed diagnostic of the exact global selector, not an enlargement or
+rerun of MI561's separate scalar-ceiling test, nor a burning census.
+It stops at M12 whatever the result. No automatic M13 progression.
+
+Record searched: real.feasib/count.interval/rounded -> current-state and
+MI557 hits; MI558 projection and G334 scopes reread. Known exact interval
+elimination is already sourced in PRIOR-ART, not a new existence theorem.
+Source tests/probes/instinct/minimal_real_count.py, standard library.
+Prediction: every target in this fixed protected domain is REAL and
+integer count-feasible. Can fail: a checked real-empty target rejects
+real admission HERE; real-feasible/integer-empty challenges G334 or the
+implementation. Any disagreement with an actual integer witness instead
+indicts the real engine. Stop at the FIRST such finding and verify its
+certificate before calling it a mathematical counterexample. No repair,
+retry, domain expansion or cap increase within this diagnostic.
+
+Engine A uses analytic f/g integer endpoints and exact doubled-coordinate
+projection from MI558, keeping static conditions and complement bounds.
+Engine B derives allowed high counts from EVERY actual scalar subset,
+then independently enumerates integer per-bin counts and tests every
+group against those count SETS, without assuming their convexity. All
+scalar endpoint and interval-support comparisons are checked too.
+Controls written before execution: protected q1 good singleton and the
+literal q7 low-pin/q5 high-pin parents; genuine size2 real/integer gap
+(q4,targets5/5/11/11); real-empty size2 shortage(q5,11/11/4/5). The gap
+must have an odd singleton doubled projection and no integer witness.
+Unexpected guard: q5 and q7 are BOTH kept, because baseline protection
+is not reflection-invariant. Every internal hole is treated separately.
+
+Caps: exactly45568 actual scalar masks (11*4096 plus2*256 for controls),
+at most25000 canonical target inputs,15CPU seconds. One execution only;
+raw JSON outside git. Source compilation only before publication is not
+a mathematical pass. If all pass, report finite supporting evidence ONLY:
+no uniform REAL theorem, physical partition, status promotion or new
+review request. G334 review proceeds independently.13min ACTIVE; last
+trajectory MI56517:22 BST; no extra allowance.

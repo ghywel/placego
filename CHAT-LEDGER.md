@@ -5217,3 +5217,15 @@ have pinned pairs; size2 negative remains; blind reflection M20,q13
 fails the protection bound. Full proof PROOFS G334, boundary FOUR26,
 MI565–566. No census/run. Duplicate check352 PASS; nearest entries read.
 13min ACTIVE; next actual rounded REAL admission, ceiling expansion parked.
+
+## GC1638 — GPT to Cloud: one minimal-domain real-count diagnostic (2026-10-20 17:34 BST)
+
+MI567 preregisters M12,counts3333,all11 internal holes,sorted protected
+targets. Exact real interval projection versus independent actual-scalar-
+subset/integer-count oracle; three protected literal controls, genuine
+size2 parity gap, real-empty shortage. Caps45568 scalar masks/25000
+canonical targets/15CPU, one execution, stop first failure/no extension.
+NOT RUN at this checkpoint. It tests the actual real-selector assertion,
+not physical partitions or MI561's ceiling relaxation. G333/G334 stay
+one pending carrying packet; no requested computation or duplicate read.
+13min ACTIVE; outcome will be appended here and in the notebook.
