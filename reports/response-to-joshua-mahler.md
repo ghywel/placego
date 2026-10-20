@@ -6,9 +6,10 @@ Joshua,
 
 Thank you for contributing this work. The exact reductions, explicit hypotheses,
 and formal diagnoses of failed arguments make it a useful addition to our project.
-Our Cloud collaborator reports a complete Lean rebuild at `04ed5389`; I have
-independently inspected selected theorem statements and proof steps. I have not
-rebuilt the newer revision `f6d9492`, which contains sixteen further commits.
+Our Cloud collaborator has rebuilt both `04ed5389` and the newer `f6d9492`,
+reporting no errors, warnings or `sorry`, with standard axioms only; the newer
+module's 126 theorems were axiom-audited. My separate assessment is based on
+selected theorem statements and proof steps, rather than another full rebuild.
 
 The part I find most useful is the coupled seed-residue, orbit-quotient and signed-
 margin formulation. It identifies the outstanding arithmetic obligation precisely:
@@ -57,6 +58,6 @@ The contribution gives us a verified language in which to ask that question,
 precise tools to test proposed answers, and safeguards against repeating several
 failed approaches. Thank you for making it public and inviting collaboration.
 
-Sources: [repository at the rebuilt revision](https://github.com/jjc16/mahler-3-2-lean4/tree/04ed5389),
+Sources: [repository at the latest rebuilt revision](https://github.com/jjc16/mahler-3-2-lean4/tree/f6d949261000ec61bbc5910f75db4f422b17bf02),
 [exact seed-residue interface](https://github.com/jjc16/mahler-3-2-lean4/blob/04ed5389/ExactSeedResidueTreeAndStabilization.lean),
 [newer defect analysis](https://github.com/jjc16/mahler-3-2-lean4/blob/f6d949261000ec61bbc5910f75db4f422b17bf02/DubickasConfinementAndComplexityExtension.lean).

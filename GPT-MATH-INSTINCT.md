@@ -35388,3 +35388,15 @@ uniform obstruction to positive stabilization of initial residue along
 one infinite branch. A future block needs a genuinely new height/extension
 mechanism for that fixed seed, or a change of problem; this reformulation
 alone is not such a mechanism. Both schedules remain paused.
+
+
+### MI494 — New replay receipt preserved during publication (2026-10-20 08:48 BST)
+
+The first non-forced push was rejected because Cloud's00096461 arrived.
+Fetched once and merged it, preserving CL464 and MAHLER section4's addition.
+Read the receipt: Cloud rebuilt f6d9492 in a clean environment, no errors,
+warnings or sorry; all126 theorems of the changed module report only the
+standard axioms. This closes MI490's newer-version replay limitation under
+the project certificate rule. It does not supply a fresh numerical check or
+verify GPT's MI492–493 hand arguments. Updated the report's verification
+paragraph; no source theorem or mathematical conclusion changes.
