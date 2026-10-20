@@ -82,6 +82,13 @@ already in print we have not settled.</p>
 the sign of the start would also settle the open window (½, 1). And several standard integer-side tools see only that
 the start is rational, not that it is a whole number; on their own they would have to prove a strictly stronger
 conjecture about rational starts.</p></div>
+<div class="level"><p class="kicker">From outside: machine-checked in Lean (19 October 2026)</p>
+<p><b>Joshua Coon</b>, with the Astra and Argon AI models in GitHub Copilot, sent us
+<a href="https://github.com/jjc16/mahler-3-2-lean4">a library of 142 Lean 4 files</a> on this problem: every theorem checked
+by a machine, from the exact reduction to new windows wider than 1/3 that no number can stay in. We rebuilt it ourselves
+and recomputed its numbers; it checks out. It also checks, from outside, two of our own results: that Mahler's conjecture holds
+exactly when every bounded range of starts dies out, and the inequalities behind the ladder above. <a href="#outside">Its windows, drawn and checked live</a> ·
+<a href="contributions.html#coon">the full entry</a>.</p></div>
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> (the exact form,
 the census, the swarm's results and the ladder's proof); <a href="https://github.com/ghywel/placego/blob/main/RULE30-GPT.md">RULE30-GPT.md</a>
 G50 (the exact form), GC1221 and G293 (the dimension), GC1228 and G294 (the ladder, second-read);
@@ -101,6 +108,39 @@ game.</p>
 after 124 steps, the share whose first 124 parity bits keep every two odd steps at least 3 apart (the first rung's
 pattern, which certifies the 5 mod 8 game through step 121) was what chance predicts: 217 of 4,499, against 214.</p>
 
+<h2 data-glyph="strip" id="outside">From outside: windows wider than 1/3</h2>
+<p><a href="contributions.html#coon">Joshua Coon's Lean library</a>, built with the Astra and Argon AI models in GitHub
+Copilot, proves that no positive number keeps every fractional part of ξ·(3/2)<sup>n</sup> inside any of the sets below.
+Each is wider than Flatto, Lagarias and Pollington's 1/3, and each comes with a deadline. Pick a set and a size W. This
+page then follows every number between 1 and 2<sup>W</sup> exactly, in your browser, and finds the step by which all of them
+have left.</p>
+<div class="tools" id="usets" role="group" aria-label="Choose a set"></div>
+<figure><svg id="ustrip" viewBox="0 0 640 128" role="img" aria-labelledby="ustrip-t"><title id="ustrip-t">The chosen set against Mahler's half-window on the unit interval</title></svg>
+<figcaption id="ucap"></figcaption></figure>
+<div class="tools"><label>W <input id="uw" type="range" min="1" max="10" value="6" aria-label="Size W: every number from 1 to 2 to the W"></label> <span id="uwv">6</span>
+<button id="ugo">Check every number from 1 to 2<sup>W</sup></button></div>
+<p class="pill" id="uout" aria-live="polite"></p>
+<p class="note">For Mahler's own half-window [0, ½) the same check also ends, at step 4, 12, 25 and 29 as W grows from 1 to 8,
+and our <a href="mahler-census.html">census</a> takes it to 2<sup>63</sup>. The difference is the deadline: for each set
+above, Lean proves one for every W, while for [0, ½) nobody can.</p>
+
+<h3>A fractal in the middle window</h3>
+<p>Stephan (2026) proved in Lean that no number stays in the middle window (2/7, 5/7). Watch why it is so tight: follow
+every possible carry from step to step, and count how many separate branches of survivors remain. The library proves
+that the count equals Mahler's own binary partition numbers 1, 2, 4, 6, 10, 14, … (each is the one before plus the one
+halfway back) for 15 steps, and then falls behind. This page recomputes the counts exactly.</p>
+<figure><svg id="ctree" viewBox="0 0 640 260" role="img" aria-labelledby="ctree-t"><title id="ctree-t">Branch counts in the window (2/7, 5/7) against Mahler's binary partition numbers, depths 0 to 18</title></svg>
+<figcaption>Dots: surviving branches in (2/7, 5/7) at each depth, computed exactly in your browser. Line: Mahler's binary
+partition numbers B(d) = B(d − 1) + B(⌊d/2⌋). They agree through depth 15; at depth 16 the window keeps 200 branches
+against 202. Hover a dot for its values.</figcaption></figure>
+<div style="overflow-x:auto"><table><thead><tr><th scope="col">Depth</th><th scope="col">Branches in (2/7, 5/7)</th><th scope="col">Mahler's B(d)</th><th scope="col">Difference</th></tr></thead>
+<tbody id="ctree-rows"></tbody></table></div>
+<p class="source"><b>Sources.</b> Joshua Coon, with Astra and Argon via GitHub Copilot,
+<a href="https://github.com/jjc16/mahler-3-2-lean4">mahler-3-2-lean4</a> (the Dubickas extension module; checked here at
+f6d9492, see <a href="contributions.html#coon">Outside contributions</a>); Dubickas, Math. Nachr. 281 (2008), the union
+(8/39, 18/39) ∪ (21/39, 31/39); Stephan (2026), Lean confinement certificates; our recomputation,
+<a href="https://github.com/ghywel/placego/blob/main/tests/probes/mahler/mahler_contrib_checks.py">mahler_contrib_checks.py</a>.</p>
+
 <h2 data-glyph="map">What it is and what it is not</h2>
 <p>No proof, and nothing claimed. The census is evidence and the ladder is a reformulation. Our own swarm of nine
 agents, run on this problem with a skeptic for every idea, found nothing that moves the critical path, and said so. What
@@ -114,6 +154,7 @@ going further.</li>
 <li><a href="trio.html">How the three problems connect</a>, and its siblings <a href="wolfram.html">Rule 30</a> and
 <a href="collatz.html">Collatz</a>.</li>
 <li><a href="problems.html">The open statements in symbols</a>.</li>
+<li><a href="contributions.html">Outside contributions</a>: Joshua Coon's Lean library, and how we checked it.</li>
 </ul>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
@@ -153,5 +194,81 @@ document.getElementById("nin").addEventListener("keydown",e=>{if(e.key==="Enter"
 document.getElementById("rin").addEventListener("keydown",e=>{if(e.key==="Enter")rung();});
 draw();rung();let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(draw,150);});
 })();</script>
+<script>(function(){
+// Exact rational arithmetic with BigInt: a fraction is [numerator, denominator], denominator > 0, reduced.
+const g=(a,b)=>{a=a<0n?-a:a;while(b){[a,b]=[b,a%b];}return a;};
+const Fr=(n,d)=>{n=BigInt(n);d=BigInt(d);const k=g(n,d)||1n;return[n/k,d/k];};
+const lt=(a,b)=>a[0]*b[1]<b[0]*a[1];
+const mx=(a,b)=>lt(a,b)?b:a, mn=(a,b)=>lt(a,b)?a:b;
+const addInt=(k,a)=>[k*a[1]+a[0],a[1]];
+const flo=a=>{let q=a[0]/a[1];if(a[0]<0n&&q*a[1]!==a[0])q-=1n;return q;};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+const C1=dark?"#3a9fd0":"#0a78b0", C2=dark?"#e06a40":"#d9542b";   // validated pair: sets (blue), Mahler (ember)
+const SV="http://www.w3.org/2000/svg";
+const el=(t,a,p)=>{const e=document.createElementNS(SV,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;};
+const txt=(x,y,s,a,p)=>{const t=el("text",Object.assign({x,y,"font-size":12,"font-family":css("--sans"),fill:css("--mute")},a||{}),p);t.textContent=s;return t;};
+// The sets: half-open [l, r) pieces as fraction strings; open endpoints are noted in the label (the half-open check is the stronger one).
+const SETS=[
+ {key:"w38",short:"One window, 3/8",label:"[1/6, 13/24), length 3/8",U:[[1,6,13,24]],c:15},
+ {key:"d08",short:"Dubickas 2008, 20/39",label:"Dubickas 2008: (8/39, 18/39) ∪ (21/39, 31/39), length 20/39",U:[[8,39,18,39],[21,39,31,39]],c:8},
+ {key:"u712",short:"Four pieces, 7/12",label:"Four pieces, length 7/12",U:[[0,1,1,6],[1,4,1,3],[5,12,2,3],[3,4,5,6]],c:12},
+ {key:"u23",short:"Five pieces, 2/3",label:"Five pieces, length 2/3",U:[[0,1,1,9],[1,6,4,9],[1,2,5,9],[11,18,7,9],[5,6,8,9]],c:14},
+ {key:"u2536",short:"Six pieces, 25/36",label:"Six pieces, length 25/36",U:[[0,1,1,12],[1,9,11,36],[4,9,2,3],[25,36,3,4],[5,6,8,9],[11,12,1,1]],c:16}];
+SETS.forEach(s=>s.P=s.U.map(([a,b,c,d])=>[Fr(a,b),Fr(c,d)]));
+const MAHLER=[[Fr(0,1),Fr(1,2)]];
+let cur=SETS[4];
+// Follow every x = xi*(3/2)^n with xi in [1, 2^W) exactly; return the first n at which no xi is left inside the set.
+function firstEmpty(P,W,maxn){let S=[[Fr(1,1),Fr(2n**BigInt(W),1n)]];
+  for(let n=0;n<=maxn;n++){const T=[];
+    for(const [a,b] of S){const k0=flo(a),k1=flo(b);for(let k=k0;k<=k1;k++)for(const [l,r] of P){const lo=mx(a,addInt(k,l)),hi=mn(b,addInt(k,r));if(lt(lo,hi))T.push([lo,hi]);}}
+    if(!T.length)return n; S=T.map(([a,b])=>[Fr(a[0]*3n,a[1]*2n),Fr(b[0]*3n,b[1]*2n)]);}
+  return null;}
+function strip(){const s=document.getElementById("ustrip");while(s.lastChild&&s.lastChild.tagName!=="title")s.removeChild(s.lastChild);
+  const L=150,R=630,X=v=>L+(R-L)*v;
+  const row=(y,name,P,col)=>{txt(8,y+15,name,{fill:css("--text")},s);
+    for(const [a,b] of P){const x0=X(Number(a[0])/Number(a[1])),x1=X(Number(b[0])/Number(b[1]));
+      const r=el("rect",{x:x0+1,y,width:Math.max(1,x1-x0-2),height:20,rx:4,fill:col},s);
+      el("title",{},r).textContent=`[${a[0]}/${a[1]}, ${b[0]}/${b[1]})`;}};
+  el("rect",{x:L,y:14,width:R-L,height:20,fill:"none",stroke:css("--line")},s);
+  el("rect",{x:L,y:52,width:R-L,height:20,fill:"none",stroke:css("--line")},s);
+  row(14,"Mahler: [0, ½)",MAHLER,C2); row(52,"The chosen set",cur.P,C1);
+  [[0,"0"],[1/3,"⅓"],[0.5,"½"],[2/3,"⅔"],[1,"1"]].forEach(([v,t])=>{el("line",{x1:X(v),x2:X(v),y1:80,y2:86,stroke:css("--mute")},s);txt(X(v),100,t,{"text-anchor":"middle"},s);});
+  el("line",{x1:X(1/3),x2:X(1/3),y1:8,y2:80,stroke:css("--mute"),"stroke-dasharray":"3 3"},s);
+  txt(X(1/3)+4,122,"any interval shorter than ⅓ is ruled out (1995)",{},s);
+  document.getElementById("ucap").textContent=cur.label+". Lean deadline: every number between 1 and 2 to the power W has left by step W + "+cur.c+". Hover a piece for its endpoints.";
+  document.getElementById("uout").textContent="";}
+function check(){const W=+document.getElementById("uw").value,o=document.getElementById("uout");o.textContent="Checking every number from 1 to "+(2**W)+"…";
+  setTimeout(()=>{const t0=performance.now(),n=firstEmpty(cur.P,W,W+cur.c+5),ms=Math.round(performance.now()-t0);
+    o.textContent=n===null?"Some number is still inside after "+(W+cur.c+5)+" steps: please tell us at once.":
+      "Every number from 1 to "+(2**W)+" has left by step "+n+". The Lean deadline is step "+(W+cur.c)+", so it holds here. ("+ms+" ms, exact arithmetic)";},20);}
+const box=document.getElementById("usets");
+SETS.forEach(s=>{const b=document.createElement("button");b.textContent=s.short;
+  b.setAttribute("aria-pressed",s===cur);b.onclick=()=>{cur=s;box.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));strip();};box.appendChild(b);});
+const w=document.getElementById("uw");w.oninput=()=>{document.getElementById("uwv").textContent=w.value;};
+document.getElementById("ugo").onclick=check;strip();
+// The Cantor tree of the open window (2/7, 5/7): every carry, every branch, exactly.
+(function(){const lo=Fr(2,7),hi=Fr(5,7),D=18,cnt=[],B=[1];for(let d=1;d<=D;d++)B.push(B[d-1]+B[Math.floor(d/2)]);
+  let S=[[lo,hi]];
+  for(let d=0;d<=D;d++){cnt.push(S.length);const T=[];
+    for(const [a,b] of S)for(const p of [0n,1n]){const xa=[a[0]*3n+p*a[1],a[1]*2n],xb=[b[0]*3n+p*b[1],b[1]*2n];
+      for(let k=flo(xa);k<=flo(xb);k++){const l=mx(addInt(-k,Fr(xa[0],xa[1])),lo),r=mn(addInt(-k,Fr(xb[0],xb[1])),hi);if(lt(l,r))T.push([Fr(l[0],l[1]),Fr(r[0],r[1])]);}}
+    S=T;}
+  const s=document.getElementById("ctree"),L=48,R=600,T0=16,Bm=222,Y=v=>Bm-(Bm-T0)*v/300,X=d=>L+(R-L)*d/D;
+  [0,100,200,300].forEach(v=>{el("line",{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:css("--line")},s);txt(L-8,Y(v)+4,String(v),{"text-anchor":"end"},s);});
+  for(let d=0;d<=D;d+=3)txt(X(d),Bm+18,String(d),{"text-anchor":"middle"},s);
+  txt((L+R)/2,Bm+36,"depth (steps)",{"text-anchor":"middle"},s);
+  el("polyline",{points:B.map((v,d)=>X(d)+","+Y(v)).join(" "),fill:"none",stroke:C2,"stroke-width":2},s);
+  cnt.forEach((v,d)=>{const g2=el("g",{},s);el("circle",{cx:X(d),cy:Y(v),r:4.5,fill:C1,stroke:css("--paper"),"stroke-width":2},g2);
+    el("circle",{cx:X(d),cy:Y(v),r:11,fill:"transparent"},g2);el("title",{},g2).textContent="depth "+d+": "+v+" branches; B("+d+") = "+B[d];});
+  el("line",{x1:X(16),x2:X(16),y1:T0+22,y2:Bm,stroke:css("--mute"),"stroke-dasharray":"3 3"},s);
+  txt(X(16)-6,T0+34,"split at depth 16",{"text-anchor":"end",fill:css("--text")},s);
+  const tb=document.getElementById("ctree-rows");tb.textContent="";
+  for(let d=13;d<=18;d++){const tr=document.createElement("tr");[d,cnt[d],B[d],B[d]-cnt[d]].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});tb.appendChild(tr);}
+  const lg=el("g",{},s);el("circle",{cx:L+14,cy:T0+6,r:4.5,fill:C1},lg);txt(L+24,T0+10,"branches in (2/7, 5/7)",{fill:css("--text")},lg);
+  el("line",{x1:L+190,x2:L+208,y1:T0+6,y2:T0+6,stroke:C2,"stroke-width":2},lg);txt(L+214,T0+10,"Mahler's B(d)",{fill:css("--text")},lg);
+})();
+})();</script>
+
 </body>
 </html>

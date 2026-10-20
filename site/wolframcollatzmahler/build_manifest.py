@@ -85,6 +85,15 @@ ITEMS=[
  dict(path=L+'rule30_cloud_channel_truecount_F.txt',kind='counts',title='Channel bound counts',
   what='The exact counts behind the channel bound: how many column-1 words of each length occur beside the wall, in integer '
        'arithmetic.',schema='See the file header.',source='the channel-bound probes (Cloud; RULE30-PRIZE.md 8.20, 8.33).'),
+ dict(path='tests/probes/mahler/mahler_contrib_checks.py',kind='outside contribution',
+  title='Joshua Coon\'s Lean 4 library on Mahler\'s 3/2 problem: our independent checks',
+  what='The first outside contribution: Joshua Coon, with the Astra and Argon AI models in GitHub Copilot, '
+       'github.com/jjc16/mahler-3-2-lean4 (142 Lean 4 files on Mathlib; checked at f6d9492 and 04ed5389: all compiled, no sorry, '
+       'standard axioms only). This file recomputes its concrete claims from the statements alone: survival horizons, the bound '
+       'B(29) >= 4096, the first-defect valuation lock, and the escape deadlines of five windows and unions wider than 1/3.',
+  schema='Python 3, standard library; predictions and outcome in the header.',
+  source='Cloud, 2026-10-19 (CL463, CL464; MAHLER.md section 4). The library and its paper belong to their author.',
+  replay='python3 tests/probes/mahler/mahler_contrib_checks.py 10'),
  dict(path='STATE-OF-THE-PROOF.md',kind='document',title='The state of the proof',what='Where the three prize problems stand, every claim pointing to its section.'),
  dict(path='PERIOD-TWO.md',kind='document',title='Period two: the open case in full',what='Every exact form of the problem, the closed routes, the status board.'),
  dict(path='RULE30-PRIZE.md',kind='document',title='The research record',what='The day-by-day record with its honest summary; section 8 is the work.'),

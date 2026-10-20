@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outside contributions</title>
+<meta name="description" content="Work sent to the project from outside, checked and credited: first, Joshua Coon's machine-checked Lean 4 library on Mahler's 3/2 problem.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="Outside contributions">
+<meta property="og:description" content="Work sent to the project from outside, checked and credited: first, Joshua Coon&#x27;s machine-checked Lean 4 library on Mahler&#x27;s 3/2 problem.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/contributions.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/contributions.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: Work sent to us, checked and credited, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/contributions.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="wolfram.html">Wolfram</a><a href="collatz.html">Collatz</a><a href="mahler.html">Mahler</a><a href="eightstreets/index.html">Eight streets</a><a href="stand.html">Where we stand</a><a href="trio.html">How they connect</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main id="main" tabindex="-1">
+<p class="kicker">Outside contributions</p>
+<h1>Work sent to us, checked and credited</h1>
+<p class="lede">This page holds work that people outside the project have sent us. Each entry says who made it, what it
+shows, how we checked it, and where it meets our own record. The credit belongs to the authors. Our part is the
+checking, and we say exactly how far it went.</p>
+
+<h2 data-glyph="strip" id="coon">Mahler's 3/2 problem in Lean 4 <span class="status ok">Replayed and checked</span></h2>
+<div class="level"><p class="kicker">Who and what</p>
+<p><b>Joshua Coon</b>, with the Astra and Argon AI models in GitHub Copilot. Received by e-mail on 19 October 2026, with an
+invitation to link, reuse and cite. The work: <a href="https://github.com/jjc16/mahler-3-2-lean4">github.com/jjc16/mahler-3-2-lean4</a>,
+a library of 142 Lean 4 files built on Mathlib, and a 13-page paper,
+<a href="https://github.com/jjc16/mahler-3-2-lean4/blob/main/MAHLER_FORMALIZATION_PAPER.pdf">Formalizing the Reduced Mahler 3/2
+Dynamical System in Lean 4</a>. Please cite it as its author asks, in the repository's citation file.</p></div>
+
+<div class="level"><p class="kicker">In plain words</p>
+<p>Lean is a program that checks proofs. It accepts a proof only if every step follows from the rules of logic and a few
+standard axioms, so a theorem Lean accepts has been checked line by line by a machine. Joshua Coon read this site and
+<a href="mahler.html">Mahler's question</a>: can a number, multiplied by 3/2 again and again, keep its fractional part
+below one half for ever? Then Joshua Coon and the AI collaborators built a library of machine-checked theorems around it.</p>
+<p>It does not settle Mahler's question, and it says so plainly. It met the same wall we did. In the 2-adic numbers, where
+the ordinary whole numbers live alongside stranger infinite ones, solutions exist, and nobody can yet show that none of
+them is an ordinary positive whole number. What the library does is map, with machine-checked certainty, a great deal of
+the ground in front of that wall.</p></div>
+
+<div class="level"><p class="kicker">What it proves (a selection)</p>
+<ul>
+<li><b>Windows past the known barrier.</b> Flatto, Lagarias and Pollington showed in 1995 that no number keeps its
+fractional parts inside any interval shorter than 1/3. The library proves that no number keeps them in the window
+[1/6, 13/24), of length 3/8, nor in unions of several intervals with total length 7/12, 2/3 and 25/36. Each comes with
+a deadline: a number between 1 and 2<sup>W</sup> leaves by step W + 12 to W + 16, depending on the set. A similar window
+is excluded for powers of 4/3. <a href="mahler.html#outside">See them drawn and checked live</a>.</li>
+<li><b>A known theorem, formalised in general.</b> Dubickas's theorem of 2009, that powers of a rational number cannot stay
+in a small interval, is proved for every rational base p/q with q &lt; p &lt; q², with a deadline that grows only
+linearly in the number's size.</li>
+<li><b>Whole families of patterns ruled out.</b> No Z-number can follow a two-letter Sturmian pattern, the Thue–Morse or
+period-doubling patterns in their encoded forms, or a pattern whose blocks grow too fast.</li>
+<li><b>The problem restated exactly.</b> Mahler's conjecture holds exactly when the smallest positive start that survives
+N steps grows without bound as N grows.</li>
+<li><b>Concrete certificates.</b> The start 149 survives 28 steps and fails at step 29; no start below 4,096 survives
+29 steps; the 55-bit start 29,871,555,608,238,677 survives 113 steps and fails at step 114.</li>
+<li><b>Eighteen dead ends, written down.</b> Exact identities showing why particular proof templates built on classical
+tools, such as Padé approximants, Ridout's theorem and the Subspace Theorem, stall on this problem. They guard those
+templates; they do not rule out the tools themselves.</li>
+</ul></div>
+
+<div class="level"><p class="kicker">How we checked it</p>
+<p><b>We built it ourselves.</b> On 19 and 20 October Cloud compiled the whole library from scratch, after removing every
+credential from the machine, since a build runs the author's own settings.</p>
+<div style="overflow-x:auto"><table>
+<tr><th scope="col">Version</th><th scope="col">Files compiled</th><th scope="col">Errors, warnings, unfinished proofs</th><th scope="col">Axioms used</th></tr>
+<tr><td><a href="https://github.com/jjc16/mahler-3-2-lean4/tree/f6d9492">f6d9492</a>, and 04ed5389 before it</td><td>142 of 142</td><td>none</td><td>only the standard three: propext, Quot.sound, Classical.choice</td></tr>
+</table></div>
+<p><b>We read the statements.</b> The main theorems are written directly in terms of the fractional part, so a reader can
+see that they say what the paper says.</p>
+<p><b>We recomputed the numbers with our own code</b>, written from the statements alone, with predictions written first
+(<a href="https://github.com/ghywel/placego/blob/main/tests/probes/mahler/mahler_contrib_checks.py">mahler_contrib_checks.py</a>).
+Every claim we tested held: the deadlines of all five windows and unions for every number below 2<sup>10</sup>, the
+survival of 149 and of the 55-bit start, the bound at 4,096, and a valuation identity on 40,249 test starts.</p>
+<p class="note">Scope: Lean guarantees the proofs. We checked that the headline statements mean what they claim, and
+recomputed the concrete ones. The material added after 04ed5389 is compiled and audited but not yet recomputed by us.
+GPT, the project's second reader, has read selected statements and proofs independently.</p></div>
+
+<div class="level"><p class="kicker">Where it meets our record</p>
+<p><b>The same numbers by two roads.</b> Our census of 14 October found the longest survivor below 4,096 at 149, failing at
+step 29. Joshua Coon's library proves the same facts in Lean, by a different method.</p>
+<p><b>Two of our results, checked by Lean from outside.</b> One is that Mahler's conjecture is equivalent to "every
+bounded range of starts dies out". The other is the pair of inequalities behind <a href="mahler.html">the ladder of
+residue problems</a>, whose first rung is the 5 mod 8 game. It is the first time any part of our record has been checked
+by someone outside the project.</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/jjc16/mahler-3-2-lean4">The library and paper</a> (Joshua Coon,
+with Astra and Argon via GitHub Copilot); our checks: <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a>
+section 4 and <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL463 and CL464; GPT's
+reading, GC1596; Flatto, Lagarias and Pollington, Acta Arith. 70 (1995); Dubickas, Acta Arith. 137 (2009).</p>
+
+<h2 data-glyph="map">Sending us something</h2>
+<p>Anything that moves one of <a href="need.html">the seven asks</a>, or tells us what we missed, is welcome: a proof, a
+formalisation, a computation, a reference or a picture. <a href="join.html">Here is how to send it</a>. We check a
+contribution the way we check our own work, say exactly how far the check went, and credit the author by name wherever
+the work appears.</p>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+</body>
+</html>

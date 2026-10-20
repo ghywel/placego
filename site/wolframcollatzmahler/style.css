@@ -89,6 +89,7 @@ th:nth-child(2){color:var(--link)}th:nth-child(3){color:var(--teal-text)}th:nth-
 code,pre{font-family:var(--mono);font-size:.9em}
 pre{background:var(--ink);color:var(--cream);padding:12px 14px;border-radius:8px;overflow:auto;line-height:1.45}
 .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-family:var(--sans);font-size:14px;margin:8px 0}
+.tools button[aria-pressed="true"]{background:var(--text);color:var(--paper);border-color:var(--text)}
 button,input[type=search],select{font:inherit;font-family:var(--sans);font-size:14px;padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2);color:var(--text)}
 button{cursor:pointer}button:hover{border-color:var(--ember)}input[type=search]{min-width:240px;flex:1}
 .card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:var(--paper-2);border-left:5px solid var(--teal)}

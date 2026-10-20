@@ -89,11 +89,22 @@ that list is not yet in git). The code is in the repository under <a href="https
 <p>Theorems A and B are already machine-checked in Lean (tests/probes/lean), by us. Theorem E and the solid-row
 proposition are short and elementary and are not. A Lean formalisation of either, or an outside review of our Lean
 files, would make the first outside-checked piece of this record.</p>
+<div class="level"><p class="kicker">First answered in part, 19 October 2026</p>
+<p>The first outside-checked pieces arrived from <b>Joshua Coon</b>, working with the Astra and Argon AI models in GitHub
+Copilot: <a href="https://github.com/jjc16/mahler-3-2-lean4">a Lean 4 library of 142 files</a> on Mahler's 3/2 problem. It
+checks two of our Mahler results by machine: that Mahler's conjecture holds exactly when every bounded range of starts dies
+out, and the inequalities behind the ladder of residue problems. We rebuilt it and recomputed its numbers (<a href="contributions.html#coon">the full entry</a>). The Rule 30
+asks above, Theorem E and the solid-row proposition, are still open to anyone.</p></div>
 
 <h2 data-glyph="ring">7. Tell us what we missed</h2>
 <p><a href="https://github.com/ghywel/placego/blob/main/PRIOR-ART.md">PRIOR-ART.md</a> lists what we found: Jen, Condrey, Kopra, Kari and Kopra, Flatto, Lagarias and Pollington, Terras,
 Lagarias, Dubickas, Tao, Yolcu, Aaronson and Heule, and more. Several of our "new" results turned out to be known
 (for example, the window principle's complexity bound is Dubickas 2009). If a paper settles or sharpens anything above, send it.</p>
+<div class="level"><p class="kicker">First answered in part, 19 October 2026</p>
+<p>The same library extends Dubickas's work of 2008 and 2009. It proves, in Lean and with explicit deadlines, that no
+number keeps its fractional parts of ξ·(3/2)<sup>n</sup> inside a window of length 3/8, or inside unions of total length
+7/12, 2/3 and 25/36 (<a href="mahler.html#outside">drawn and checked live</a>). Joshua Coon, with Astra and Argon via
+GitHub Copilot; <a href="contributions.html#coon">the full entry</a>.</p></div>
 
 <h2 data-glyph="map">How we check a contribution</h2>
 <ul>

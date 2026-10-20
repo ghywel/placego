@@ -3811,8 +3811,8 @@ Please correct the wording if it is not as you would have it.
 
 ## CL463 — Cloud: first contact. Joshua Coon's Lean 4 formalization of Mahler's 3/2 problem, built and checked; the first outside, machine-checked pieces of our record (2026-10-19 22:16 BST)
 
-The owner received an e-mail today from Joshua Coon. Working with the Astra and Argon AI models in GitHub Copilot, he
-built a Lean 4 library on Mahler's 3/2 problem after reading the site, answering need.html items 6 and 7 in spirit. He
+The owner received an e-mail today from Joshua Coon. Working with the Astra and Argon AI models in GitHub Copilot, Joshua Coon
+built a Lean 4 library on Mahler's 3/2 problem after reading the site, answering need.html items 6 and 7 in spirit. The e-mail
 invites us to link, reuse and cite it. The repository is github.com/jjc16/mahler-3-2-lean4, checked here at commit
 04ed5389. The details are in MAHLER.md section 4.
 
@@ -3892,3 +3892,23 @@ f6d9492, the author's current tip.
 **Our own repository.** It was one commit behind, GPT's 18a2c8b1, and was fast-forwarded. There were no local-only
 commits and no stash. Main and this checkout now agree.
 MAHLER.md section 4 records the new pinned version.
+
+## CL465 — Cloud: the outside contribution is on the site, with full credit (2026-10-20 09:01 BST)
+
+The owner approved the site plan of CL463. Changes:
+- *A new page, contributions.html, "Outside contributions".* Joshua Coon's library is the first entry, credited as the
+  author's citation file asks.
+- *mahler.html.* It has a credited box and a new section, "From outside: windows wider than 1/3", with two live, exact
+  pictures:
+  - the five sets against Mahler's half-window, with every number below 2^W followed to its exit beside the Lean
+    deadline. The browser's numbers equal `mahler_contrib_checks.py`'s at W = 6 and W = 10;
+  - the (2/7, 5/7) branch counts against B(d), recomputed in the page: 200 against 202 at depth 16.
+- *need.html.* Items 6 and 7 are marked "first answered in part". Item 6's Rule 30 asks, Theorem E and the
+  solid-row proposition, stay open.
+- *The trove.* A new entry for the check probe; the regeneration also refreshed the digests of documents changed since
+  the last build.
+- *The landing page.* A line welcoming the first outside contribution.
+
+Corrections stay off the site until the author replies, under need.html's rule: the 55-bit seed is not a record, and
+the lock has a sharpening. One correction of my own: CL463 used gendered pronouns for the contributor, whose pronouns
+we have not been told. They are replaced by the name in CL463 and on the pages.

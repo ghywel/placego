@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11 18:12 UTC",
+ "generated": "2026-10-20 08:00 UTC",
  "repository": "https://github.com/ghywel/placego",
  "items": [
   {
@@ -237,6 +237,19 @@
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/tests/probes/lexicon/rule30_cloud_channel_truecount_F.txt"
   },
   {
+   "path": "tests/probes/mahler/mahler_contrib_checks.py",
+   "kind": "outside contribution",
+   "title": "Joshua Coon's Lean 4 library on Mahler's 3/2 problem: our independent checks",
+   "what": "The first outside contribution: Joshua Coon, with the Astra and Argon AI models in GitHub Copilot, github.com/jjc16/mahler-3-2-lean4 (142 Lean 4 files on Mathlib; checked at f6d9492 and 04ed5389: all compiled, no sorry, standard axioms only). This file recomputes its concrete claims from the statements alone: survival horizons, the bound B(29) >= 4096, the first-defect valuation lock, and the escape deadlines of five windows and unions wider than 1/3.",
+   "schema": "Python 3, standard library; predictions and outcome in the header.",
+   "source": "Cloud, 2026-10-19 (CL463, CL464; MAHLER.md section 4). The library and its paper belong to their author.",
+   "replay": "python3 tests/probes/mahler/mahler_contrib_checks.py 10",
+   "bytes": 9042,
+   "sha256": "7812b277df21c545a16b6c3fb1bd0d0f79421ae723a5392c399cbfabe3d999de",
+   "view": "https://github.com/ghywel/placego/blob/main/tests/probes/mahler/mahler_contrib_checks.py",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/tests/probes/mahler/mahler_contrib_checks.py"
+  },
+  {
    "path": "STATE-OF-THE-PROOF.md",
    "kind": "document",
    "title": "The state of the proof",
@@ -251,8 +264,8 @@
    "kind": "document",
    "title": "Period two: the open case in full",
    "what": "Every exact form of the problem, the closed routes, the status board.",
-   "bytes": 99335,
-   "sha256": "afca935125418b8b5b578fd5806fbca9ede05dfaeac5a1f243b45dacffc79086",
+   "bytes": 105030,
+   "sha256": "eb933010418fcdc2cd17ba3ff616a549fe5d02726b4acabd8e04e549c605f2fd",
    "view": "https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/PERIOD-TWO.md"
   },
@@ -261,8 +274,8 @@
    "kind": "document",
    "title": "The research record",
    "what": "The day-by-day record with its honest summary; section 8 is the work.",
-   "bytes": 554112,
-   "sha256": "0cf73650a8bbef14ef8ebb1860d1c21ee0f3a091c50d7709c190acc584c364fa",
+   "bytes": 767755,
+   "sha256": "9d6e5f8838077aa1b01a68987753f20a094169873f509bca60024f03c3ee0257",
    "view": "https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/RULE30-PRIZE.md"
   },
@@ -271,8 +284,8 @@
    "kind": "document",
    "title": "The record map",
    "what": "An index of the record by topic.",
-   "bytes": 39967,
-   "sha256": "eb0a53d341071c78a4495e5a14ff367be05ca6969e00bb45f1bd8cef14ee80d4",
+   "bytes": 91531,
+   "sha256": "1549c4f6b1ce76fab9b1a8b2a8aebbf96220dc7a1b52566d675dda99c10af87b",
    "view": "https://github.com/ghywel/placego/blob/main/RECORD-MAP.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/RECORD-MAP.md"
   },
@@ -281,8 +294,8 @@
    "kind": "document",
    "title": "Collatz: the prize and the Rule 30 method",
    "what": "The Collatz twin: counting form, least-residue lemma, window principle.",
-   "bytes": 42328,
-   "sha256": "28895489ce7a88b73adf6294f6f5c4afaa998ff982cb75cddcd15313cda4a080",
+   "bytes": 45563,
+   "sha256": "8ec47133614f174100b8573339aa471cf24b79727c464435cedb3aac6a4af5bf",
    "view": "https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/COLLATZ-PRIZE.md"
   },
@@ -291,8 +304,8 @@
    "kind": "document",
    "title": "Prior art",
    "what": "The literature found, with what each result does and does not cover.",
-   "bytes": 260605,
-   "sha256": "2a2e38eacd0f1bac68f2446b42585d62fd5c9696247341a5b10c454385e8f13b",
+   "bytes": 366003,
+   "sha256": "e02bbaf735c84e2b180f9ee315dd6f0a10b26a0e6b6b999621d2f28cc2c04efb",
    "view": "https://github.com/ghywel/placego/blob/main/PRIOR-ART.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/PRIOR-ART.md"
   },
@@ -301,8 +314,8 @@
    "kind": "proofs",
    "title": "Proofs",
    "what": "Every statement with a written proof and a second reader, in one file; the proofs directory holds them one per file.",
-   "bytes": 1556092,
-   "sha256": "af4923bf248578ac1af003391e7ebe2d4ac733b60cecb954416a800f880f4a69",
+   "bytes": 1790439,
+   "sha256": "0e727842ec82c5385903c061938e8ce0aabb7e51db0a5187a351f1fe2a51f4f7",
    "view": "https://github.com/ghywel/placego/blob/main/PROOFS.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/PROOFS.md"
   },
@@ -311,8 +324,8 @@
    "kind": "probes",
    "title": "The probe index",
    "what": "One line per experiment: what it tested, its predictions and its outcome; the scripts are beside it.",
-   "bytes": 137442,
-   "sha256": "0d6e7e9e65082e757a5cb43eefb0ab6a3fe614b2eb6d30e818989fec6b4e77eb",
+   "bytes": 165099,
+   "sha256": "74bd9c16adaca854d928afb435d99cefafb9363ad83e574acbd3a777c071b765",
    "view": "https://github.com/ghywel/placego/blob/main/tests/probes/PROBES.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/tests/probes/PROBES.md"
   },
@@ -321,8 +334,8 @@
    "kind": "document",
    "title": "How we worked together",
    "what": "The lanes, the git protocol and the review rules.",
-   "bytes": 26917,
-   "sha256": "b6a863a37646ce54a3a0654ee86e868ac7dee234cc0996e6863be6caf8e38c03",
+   "bytes": 28699,
+   "sha256": "54da93bcb3b86aca9e7d7838d6c0791945aa4a79e82aae9dd969ca701c958906",
    "view": "https://github.com/ghywel/placego/blob/main/WORKING-TOGETHER.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/WORKING-TOGETHER.md"
   },
@@ -331,8 +344,8 @@
    "kind": "document",
    "title": "The working rules",
    "what": "Predictions first, failures retained, two-tier review, and the other standing rules.",
-   "bytes": 76905,
-   "sha256": "f8fcbf374137251808ceb8b6ea31369c1176040f0e5e668a16d31b1fce6a1a10",
+   "bytes": 97743,
+   "sha256": "8a5318f50b17d85ee4e0593168fe3b16f87df7e56609bdea5d3eb12c300a8306",
    "view": "https://github.com/ghywel/placego/blob/main/WORKFLOW-SAVED-MEMORY.md",
    "raw": "https://raw.githubusercontent.com/ghywel/placego/main/WORKFLOW-SAVED-MEMORY.md"
   }
