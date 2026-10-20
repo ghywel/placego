@@ -983,3 +983,5 @@ PART: as on the board.
 - Symbolic common-price ceiling certificate REFUTED by literal endpoint mixture, HAND MI563/GC1635: count219,cost4903229/99>48400. Fractional obstruction only; discrete ceiling/balanced inequality/parent OPEN, no census or review job.
 
 - Four-row discrete ceiling maximum reduces exactly to <=189 symbolic endpoint/residual tuples, known geometry rederived MI564/PRIOR-ART. No candidate census/general cost bound or parent coverage; plateau/slack guards retained.
+
+- Protected min3 four-bin rounded count region: REAL nonempty implies integer point, COMPLETE HAND CANDIDATE G334/MI565–566/FOUR26. Exact pin types/star-triangle exclusion; one G333/G334 review packet pending, real admission/physical partition OPEN.

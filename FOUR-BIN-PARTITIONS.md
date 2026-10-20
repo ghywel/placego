@@ -2255,8 +2255,9 @@ count values satisfying the combined low/high moment extrema, as in
 Cloud CL472. The REAL relaxation here uses those ROUNDED integer interval
 endpoints; it is not an assertion about arbitrary real roots of the
 original quadratic bounds. Its nonemptiness under baseline protection
-remains OPEN. So does exclusion of a forced wrong-parity singleton
-under the parent's size>=3 hypothesis. Even an integer count selector
+remains OPEN. The later section26/G334 gives a self-contained HAND
+candidate excluding the forced wrong-parity singleton under size>=3;
+independent review is pending. Even an integer count selector
 does not automatically complete zero/thin physical rows. No protected
 partition coverage, five-bin theorem, census or integrality-of-all-
 vertices claim follows from this candidate alone. Novelty unassessed.
@@ -2372,3 +2373,29 @@ of any minsize2 protected statement. Conversely CL472's q4,c2222,
 targets5/5/11/11 pass singleton budgets but fail the full integer
 pair-count selector. Singleton budgets alone are not the missing
 joint theorem, even when they are now obtained uniformly for min3.
+
+## 26. Protected count rounding: no pinned parity obstruction (MI565–566)
+
+**COMPLETE HAND CANDIDATE G334; independent carrying review pending.**
+For baseline-protected four bins of sizes>=3, a nonempty REAL region of
+ROUNDED count intervals contains an integer count vector. The full proof
+in PROOFS.md is self-contained, including G333's vertex/axis argument.
+This is conditional count selection, not real admission or physical
+completion. It is not an assertion that all vertices are integer.
+
+At a putative pinned half-integral obstruction each pair's four row
+counts r,l,h,d are positive, with selected/complement sizes>=6. Exact
+moment thresholds force (r-1)(h-1)+(l-1)(d-1)<=4. Protection then leaves
+only a size6 side of high count1 at q7,target22, or high count5 at
+H7,5<=q<=7,target6M-22, up to complementation. Reflection uses its
+transformed bound L(c)+q, not an assumed invariant protection rule.
+A size6 side consists of two size3 bins, forcing each half-count to
+1/2 or5/2. Three chosen sides, one per complementary pair split, form
+a star or triangle. Both force an illegal total or individual count,
+including the mixed q=H7 case. Thus the pinned obstruction is absent.
+
+The protected M12,q7 and q5 literal parents in G334 show that individual
+pinned pair intervals really DO occur; universal positive width remains
+false. The genuine size2 half-integral negative is retained. No census,
+new real-admission theorem, five-bin result or blanket physical completion.
+G333/G334 are one pending review packet; no status is promoted here.

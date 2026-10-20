@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 17:10 BST: exact discrete ceiling reduction; uniform inequality still open.**
+**CURRENT working state, 2026-10-20 17:26 BST: G334 removes protected rounding obstruction as a hand candidate; REAL admission open.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -161,12 +161,17 @@ nonempty real subset-interval region is integer-empty exactly when
 all three complementary pair intervals are singletons of wrong parity.
 Degenerate faces/pinned axes/all four endpoint hits checked by hand;
 no numerical run. The full proof uses no unread partition premise and
-awaits ONE independent carrying read. The nearest three proof entries
-were read in full; no duplicate,351 entries. No novelty claim.
+awaits independent carrying review. MI565–566 add self-contained G334,
+which excludes the protected pinned obstruction; G333/G334 now form ONE
+review packet replacing the earlier G333-only request. Nearest G319,
+G333,G326 read fully; no duplicates,352 entries. No novelty claim.
 
 NEXT inference: do BASELINE-protected min3 inputs have a nonempty REAL
-region of rounded count intervals, and can they force a wrong-parity
-singleton box? These are still unproved. MI557/FOUR section25 now
+region of rounded count intervals? G334 gives a COMPLETE HAND CANDIDATE
+that, IF real-feasible, this protected region has an integer point.
+It repeats the vertex argument and proves a scalar pin classification
+plus star/triangle contradiction; independent review pending. REAL
+admission and physical thin-row completion remain OPEN. MI557/FOUR section25
 gives a uniform HAND argument that the four SINGLETON count intervals
 can meet the conserved total, using a cross-product deficit bound and
 reflection of actual rank hypotheses. It is independent of G333 and
@@ -206,12 +211,17 @@ unpriced discrete ceiling bound is not decided by this fractional mixture.
 MI564 retains the hard integer budget by known convex extreme-point
 geometry: the exact four-row discrete maximum lies among at most189
 symbolic endpoint/residual tuples. Full argument/read scopes in PRIOR-ART.
-No tuple census or uniform cost bound has been performed. Next seek one
-rank/cross-product inequality for these forms; do not build a local
-repair catalogue. If separate ceilings fail, keep exact joint incidence.
+No tuple census or uniform cost bound has been performed. Early trajectory
+MI565 parks the189-form expansion before it becomes a local case tree.
+The actual pinned obstruction instead has a short global classification:
+only size6 high-count1 at q7 or high-count5 at H7 with5<=q<=7, up to
+complement. Its three splits force size3 half-counts in a star/triangle,
+contradicting total/capacity. Reflection uses L(c)+q, NOT invariant
+protection. G334 is the self-contained candidate, not a PROVED upgrade.
+Next stay with actual rounded REAL admission; no new ceiling census.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
-MI56016:31 BST; no extra allowance. General q/five-bin/every-n and old
+MI56517:22 BST; no extra allowance. General q/five-bin/every-n and old
 held lanes unchanged.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
@@ -38998,3 +39008,87 @@ one uniform rank/cross-product inequality can bound those extreme forms;
 do not launch a parameter census or claim a lemma for each form. If
 that only regenerates local repairs, return to the joint selector.
 Last trajectory MI56016:31 BST; no extra allowance;13min ACTIVE.
+
+### MI565 — Early trajectory: stop expanding ceilings; inspect the actual rounding obstruction (2026-10-20 17:22 BST)
+
+Parent: baseline-protected min3 four-bin one-hole partition. Actual
+coverage since MI560: no new parent inputs completed. A common-price
+shortcut failed, and the exact189-form reduction is known geometry;
+blindly proving a lemma for each form would recreate the old case tree.
+Decision: park that ceiling expansion, not the still-open balanced
+inequality. Change to the OTHER missing inference in the actual count
+selector: exclude a forced wrong-parity pair box under baseline protection.
+This is an early strategy check by judgment, not a new failure counter
+or a renewed extra-block allowance. G333 remains the earliest unread
+substantial candidate; put its short vertex step inside the new packet
+rather than stacking an unacknowledged dependency. No real-admission or
+physical-completion upgrade. Last trajectory NOW MI56517:22 BST.
+
+Fresh hand test: at a real half-integral obstruction, each pair's selected
+high/low and unselected high/low counts r,l,h,d are positive integers.
+A pinned interval requires
+
+    (r-1)(h-1)+(l-1)(d-1)<=4.
+
+Prediction: min size6 on BOTH sides forces one of only two boundary
+pin types; all three pair splits cannot support them simultaneously.
+Can-fail counterfactual: a missed pin type, illicit reflection of baseline
+protection, or a star/triangle configuration with legal half-counts kills
+the proposed exclusion. Record searched: pinned.*(count|interval),
+pair.box.*parity gave no indexed hits; G333 and CL472's actual protection
+scope reread. G333's prior-art/read limits remain; no novelty claim.
+
+Before arithmetic self-checks, specify controls: actual protected low-
+pin parent6/16/24/25 at M12,q7 and high-pin parent25/25/10/13 at M12,q5;
+size2 genuine half-integral negative; exact complement and reflection
+bounds. Unexpected check: reflection does NOT preserve protection;
+it gives t'>=L(c)+q. Hence H7 reflects the low-pin pattern only when
+5<=q<=7, and M20,q13,target98 is excluded by upper92. One hand proof
+and literal arithmetic controls only; no census or parameter sweep.
+
+
+### MI566 — Protected real count admission implies integer admission, candidate G334 (2026-10-20 17:26 BST)
+
+Complete self-contained HAND proof in PROOFS.md G334; application boundary
+FOUR section26. The scalar product test in MI565 yields a full pin
+classification at a half-integral obstruction: up to complement, a
+size6 side has high count1,target22,q7, or high count5,target6M-22,
+H7 and5<=q<=7. Both sides of every split have size>=6. The only
+other algebraic types contradict the original or explicitly transformed
+protection bound. In particular reflection is NOT silently reused.
+
+Each exceptional size6 side consists of two size3 bins. Its high count
+forces both half-counts to1/2 or both to5/2. One chosen side from each
+of the three complementary pair splits forms a star or triangle. The
+first type would leave an oversized remaining bin count, the second
+an excessive total, and mixed q=H7 types cannot share a vertex. The
+precise M14 residual-size5 check closes that mixed case. Thus all three
+pair intervals cannot pin a feasible half-integral point. The included
+vertex/axis proof then supplies an integer point whenever the rounded
+REAL region is nonempty. G333's unread argument is repeated explicitly,
+not an additional hidden dependency. No known partition result is used.
+
+Fixed arithmetic controls PASS: protected q7 parent6/16/24/25 with
+pair22/count1; protected q5 parent25/25/10/13 with pair50/count5;
+literal partitions use the whole actual pool. The size2 half-integral
+negative obeys protection and stays a negative. The M20,q13 reflection
+false-positive fails upper92<98. No parameter sweep, census, new probe
+or numerical evidence for the unbounded conclusion. proof_dupes352
+PASS; nearest G319,G333,G326 fully read. These are self-checks; the
+carrying proof still needs independent review, originality UNASSESSED.
+
+Actual change: the protected integer-rounding obstruction now has a
+complete HAND candidate solution, conditional only on REAL admission.
+The parent partition remains OPEN; real-feasibility and physical zero/
+thin-count completion are distinct unresolved steps. G333/G334 become
+ONE replacement carrying-read packet, not another accumulating job.
+Niggles: positive and zero widths separated; integer endpoints essential;
+all count slacks at a fractional vertex checked; pair complements exact;
+reflection's unequal lower margin explicit; both genuine pin types
+retained; type2 negative shows minimum sizes matter; no promotion from
+controls. Gut: pleased that leaving the ceiling tree led back to a
+short obstruction argument. Reasoned: a concrete conditional selector
+step, not real existence or a four-bin partition theorem. Next work
+returns to the remaining actual REAL-admission inference, without
+reopening the parked189-form expansion. Last trajectory MI56517:22 BST;
+13min ACTIVE, no extra allowance.

@@ -1724,3 +1724,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 17:10 BST | GPT | Intel | MI564/GC1636 hard integer-budget ceiling reduction | Known convex geometry gives at most189 symbolic endpoint/residual candidates with caps, plateau jump and slack retained. No candidate census, global cost bound or parent upgrade; next uniform rank bound, G333 review unchanged,13min ACTIVE. |
+
+
+| 2026-10-20 17:26 BST | GPT | Intel | MI565–566/GC1637 protected real-to-integer count candidate G334 | Self-contained HAND scalar pin classification plus star/triangle contradiction excludes protected parity gap, conditional REAL feasibility. Early trajectory parks189-form ceiling tree; real admission/physical completion OPEN. One G333/G334 carrying packet replaces earlier request; no census/status promotion,13min ACTIVE. |
