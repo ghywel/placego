@@ -7,7 +7,10 @@ Prediction: violations exist in the relaxed domain (so b's protection is load-be
 Counterfactual: none, which would make row 7 a three-group scalar inequality.
 
 OUTCOME: M = 12: 148,150 relaxed instances, 0 violations; M = 12..14: 5,275,244, 0 violations.
-Prediction FAILED: b's protection is not load-bearing for row 7 in this range.  Control: dropping the
+Prediction FAILED: b's protection is not load-bearing for row 7 in this range.
+M = 12..16: 52,797,986 relaxed instances, 28 violations, all first examples at M = 15 with the absent
+bin below its own floor (e.g. q8, sizes 3/6/3/3, t_b = 2 < T_6).  So the CL475 claim 'the absent bin is
+irrelevant' is FALSE as stated; rerun counting violations with t_b >= T(c_b) in progress.  Control: dropping the
 three-label cuts too (targets from L(c)) gives 34 violations at M = 12 (e.g. q3, 3333, t_a 5, t_d 3).
 """
 import itertools, sys
@@ -15,7 +18,7 @@ L = lambda n: n * (n - 1) // 2
 T = lambda n: n * (n + 1) // 2
 
 def run(MMAX):
-    viol = n = 0; ex = []
+    viol = n = viol_floor = 0; ex = []
     for M in range(12, MMAX + 1):
         for ca, cc, cd in itertools.product(range(3, M), repeat=3):
             cb = M - ca - cc - cd
@@ -37,8 +40,9 @@ def run(MMAX):
                             if Ka[0] + Kcd[0] > Kac[1] + Kd[1]:
                                 viol += 1
                                 tb = S - ta - tc - td
+                                if tb >= T(cb): viol_floor += 1
                                 if len(ex) < 3: ex.append((M, q, (ca, cb, cc, cd), (ta, tb, tc, td)))
-    print('relaxed instances', n, 'row-7 violations', viol, ex)
+    print('relaxed instances', n, 'row-7 violations', viol, 'of which the absent bin meets its own floor t_b >= T(c_b):', viol_floor, ex)
 
 if __name__ == '__main__':
     run(int(sys.argv[1]))
