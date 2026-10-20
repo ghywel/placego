@@ -1227,3 +1227,125 @@ coarse capacity criterion is refuted. The next question is the exact
 colour-quota region of an alternating path and how independent components
 combine. No larger census, extra parent coverage or proof-status upgrade
 follows. G327/G328 and the earlier parent interfaces remain unreviewed.
+
+## 14. Exact two-colour quotas on a forest of alternating paths
+
+**Self-contained elementary hand derivation, MI523–524; unreviewed.**
+Known matching ingredients, no originality or general-graph algorithm claim.
+This section is independent of the conditional four-bin parent. Its proof
+does not use G327/G328 or any other unread partition result. Length means
+NUMBER OF EDGES throughout, not vertices; isolated vertices have length0.
+
+### 14.1 One path: a triangle and possibly one extra point
+
+For nonnegative integers a,b, an alternating path of length2k admits
+exactly the red/blue quotas
+
+    a+b<=k.                                                   (14.1)
+
+A path of length2k+1 whose two end edges are red admits exactly
+
+    a+b<=k, OR (a,b)=(k+1,0).                                 (14.2)
+
+Interchange colours if the end edges are blue. This includes k0: an
+isolated vertex permits only(0,0); a single red edge permits(0,0),(1,0).
+
+**Necessity.** The even-length path has2k+1 vertices, so at most k edges
+can be matched. The odd-length path has2k+2 vertices, so at most k+1
+can be matched. A matching of size k+1 is perfect. Its first endpoint
+forces edge1; removing its two endpoints forces edge3, then5, and so on.
+It is therefore the unique perfect matching, all in the end-edge colour.
+
+**Sufficiency of EVERY triangle point.** At k0 the triangle consists of
+the empty matching. For k>0 orient an even path to start red, and number
+its edges1,...,2k. For an odd red-ended path number
+them1,...,2k+1. Choose the first a red edges at positions
+1,3,...,2a-1, and the last b blue edges at positions
+2k-2b+2,2k-2b+4,...,2k. Empty choices are allowed. Within either list
+the edges are disjoint. When both lists are nonempty their closest
+indices differ by2(k-a-b)+3>=3, so they also share no endpoint across
+lists. This constructs every a+b<=k. For the extra point in(14.2),
+choose all odd-indexed edges. The blue-ended case follows by swapping
+the colour names. This is the elementary prefix/suffix construction
+already visible in the matching literature, specialized here to paths.
+
+### 14.2 An exact criterion for ALL components together
+
+Let the forest's path lengths be ell_i, and put
+
+    k_i=floor(ell_i/2),        K=sum_i k_i.
+
+Each odd-length component has a majority colour (its two end edges'
+colour). Its full matching has w_i=k_i+1 edges, all in that colour.
+Sort these w_i increasingly within the red-majority components and
+within the blue-majority components. For integer budgets r,s>=0 define
+
+    alpha(r)=maximum j for which the j smallest RED w_i sum to <=r;
+    beta(s) =maximum j for which the j smallest BLUE w_i sum to <=s.
+
+The empty prefix is allowed. Then a matching with EXACTLY r red and s
+blue edges exists if and only if
+
+    r+s <= K+alpha(r)+beta(s).                                (14.3)
+
+Thus the full quota support depends only on the even components'
+baseline capacities and the odd components' majority colours/lengths.
+No search over individual edges is needed to state the criterion.
+
+**Necessity.** In any matching call an odd component full when it uses
+k_i+1 edges. By(14.2) it is then monochromatic. Every other component
+uses at most k_i edges. If x red-majority and y blue-majority components
+are full, the matching has at most K+x+y edges. Their full red matchings
+cost at most r red edges in total, hence the x smallest red w_i also
+sum to at most r, giving x<=alpha(r). Likewise y<=beta(s). This gives
+(14.3), including matchings that leave many components partly unused.
+
+**Sufficiency.** Fully match the alpha(r) cheapest red-majority components
+and beta(s) cheapest blue-majority components. Their red/blue costs
+W_R,W_B do not exceed r,s. After removing those components the remaining
+baseline capacity is
+
+    K'=K-sum_selected k_i.
+
+The remaining quotas r'=r-W_R,s'=s-W_B are nonnegative. Condition(14.3)
+is precisely what gives r'+s'<=K', since the selected components consume
+sum_selected(k_i+1) edges. Every remaining component permits its entire
+integer triangle(14.1)/(14.2), including both colours. Distribute r'
+red edges among their capacities, then s' blue edges among the remaining
+capacities. This is possible because their sum is at most K'; on each
+component use the construction of14.1. Distinct components have disjoint
+vertices. The union has the exact required quotas, proving sufficiency.
+
+### 14.3 Controls, use and limits
+
+- MI522's RBRBR path has k2,K2 and one red weight3. For quotas(2,1),
+  alpha(2)=beta(1)=0, so3<=2 fails. For(3,0), alpha(3)=1 and3<=3 holds;
+  for(1,1),2<=2 holds. This recovers both the negative and its controls.
+- An even path RBRB has K2 and no odd component: quota(1,1) is attained
+  by edge positions1 and4, a mixed MAXIMUM matching. Charging a penalty
+  for every mixed path would falsely reject it.
+- For components RBR and BRB, K2 and majority weights2 of each colour.
+  Quota(2,2) activates BOTH components and is attained by their two
+  monochromatic perfect matchings. Unexpected check: there is no
+  single forest-wide mixed-colour loss; penalties are component-local.
+- Red-majority paths RBR and RBRBRBR have weights2,4 and K4. Quota(2,3)
+  uses the cheaper full red path, then the three blue edges of the longer
+  path. The criterion gives5<=4+1. An arbitrary full-component choice
+  could fail its colour budget; sorting by cost is essential to the proof.
+- Single red and single blue components have K0 and weights1 of the
+  respective colours; quota(1,1) passes and uses both edges. Adding any
+  isolated vertices changes nothing.
+
+By section13, this criterion applies to ANY finite distinct-token pool
+with two distinct pair targets u,v. For r target-u pair bins, s target-v
+pair bins and ONE filler bin of size |P|-2r-2s>=0, total conservation
+makes the filler sum automatic once those pairs are chosen. Hence(14.3)
+is an exact completion test in that setting. No interval, protection or
+hole bound is assumed in the graph argument. Additional filler bins
+would require their own joint allocation and are outside this corollary.
+
+This resolves the two-fibre matching question, not the original multi-bin
+partition theorem. The next arithmetic question is how the two sums,
+interval endpoints and a deleted token determine these component data;
+the protected cuts alone have not been shown to enforce(14.3). No new
+PROVED status, census, parent coverage or three-colour transfer is claimed.

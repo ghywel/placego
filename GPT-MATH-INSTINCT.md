@@ -124,72 +124,65 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 12:07 BST: coarse two-colour capacity refuted.**
-The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate flag poller. L8=68 is independently verified as G325, unrelated
-to this structural programme. H2 G326 is PROVED by Cloud CL466/01131375
-reading the original87521f60 proof. MI501's later simplification is optional
-and still only self-audited. Novelty remains UNASSESSED.
+**CURRENT working state, 2026-10-20 12:19 BST: exact two-colour path quota criterion.**
+The 13-minute research heartbeat is ACTIVE; older 15-minute schedule PAUSED;
+no separate flag poller. L8=68 is independently verified as G325. H2 G326
+is PROVED by Cloud CL466/01131375 reading the original87521f60 argument;
+MI501's optional simplification is self-audited only. Novelty UNASSESSED.
 
-The parent is full-interval prescribed-sum counts(a,2,2,c),a,c>=3. Its
-COMPLETE CONDITIONAL hand classification is consolidated in
+The original parent is full-interval prescribed sums, counts(a,2,2,c),
+a,c>=3. Its complete CONDITIONAL hand classification is consolidated in
 FOUR-BIN-PARTITIONS section11: all14 rank cuts suffice except, up to
-permutation/full reflection, targets
-(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). The negative is the old MI308/506 family;
-MI510 handles every actual singleton/triple lift, MI512 all strict-pair
-arrangements including the physical Q4(2)/P_n(2) switch. New ingredients
-are G327 STEP1 scalar spectra only and independent G328's protected
-one-hole two-pair failure list. Both carrying reads are pending; new parent
-interfaces/composition also remain unread. Ingredient verification alone
-would NOT verify the parent. Two existing requests, no third filing/job.
-The whole G327 theorem is not a parent premise; its own at-most-one-size2
-candidate remains unreviewed. No unread G320–322, MI430/MI460 or census is
-used. Five-bin count admission/multiple thin rows remain OPEN.
+permutation/full reflection,
 
-MI513–514 consolidation, endpoint audits and MI515–516 targeted source
-comparison are COMPLETE; do not repeat them. The candidate's common-sum
-slice has exactly the known sorted-prefix conditions, and its excluded
-size2 targets differ by2 even after normalization/reflection. Two limited
-search batches found no exact broader theorem; this does not establish
-novelty. No renewed search without a concrete new source.
+    (L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1).
 
-MI517–518/section11.6 now complete an INDEPENDENT equal-pair child proof:
-protection gives5<=u<=2M-4; interior fibres have>=3 edges before deletion,
-while the two-edge high fibre is immune because q<=2<c. Hence two disjoint
-sum-u pairs survive. The c2 control M6,q2,targets8/8/3 really fails despite
-all protected cuts. This removes G328 on the equal-pair-target parent
-slice, not G327's scalar lemma or the need to read the parent interfaces.
-No new parent coverage, PROVED status, PROOFS entry or review request.
-The equal-target check is finished; do not repeat it. MI519–520 explicitly
-choose and finish a separate GLOBAL mechanism question, independently of
-the parent: r common-target pair bins plus one size-c filler, M=2r+c,
-on[0,M] minus internal q. Section12's hand calculation gives exactly the
-failure u=2M-2r, c<=q<=r. Interior has r+1 full edges; upper endpoint has r
-and protection puts q<=r. Every negative satisfies all proper protected
-cuts, strictly if q<r. Thus uniform filler thresholds c>=r+1, or c>=r
-under strict cuts, are sharp. This is an application of a known matching/
-pair-consumption ingredient, NOT a verified new theorem. Exact one-hole
-specialization unreviewed; no new PROOFS filing/review queue or computation.
-Neither earlier parent coverage nor its verification status changes.
-MI521–522/section13 finish that next GLOBAL test by hand. Two distinct
-sum fibres form alternating paths/isolates: an alternating cycle would
-sum to ku=kv. Coarse per-colour counts plus total matching number do NOT
-suffice. On[0,8] minus4, red9 edges18/27/36 and blue10 edges28/37 form
-RBRBR; its only size3 matching is all red. Quotas2R+1B therefore fail,
-yet targets9/9/10/4 satisfy all proper protected cuts STRICTLY and each
-individual target is feasible. Vertex weights0/2/1/1/2/0 along the path
-give total6 but the quota demands7. Same-pool9/9/9/5 partitions. This is
-a known matching-framework hand application/countercontrol, unreviewed;
-no new PROOFS job or parent coverage/status. First failure of the specific
-assumption that per-colour and uncoloured capacities suffice; do not
-repair that shortcut. Next cheap question: exact quota regions of a
-single alternating path, then their composition. Source/record check
-before any further theorem; no census or general matching algorithm claim.
-Last strategy check MI520,2026-10-20 11:53 BST: four-bin verification pending;
-recent blocks clarify/reduce dependencies, then explicitly choose an
-independent global question. No repeated assumption is being repaired;
-fresh choice selects this capacity viewpoint. Stop completed one-fibre
-work rather than extend its examples. No renewable pull allowance.13min ACTIVE.
+The negative is old MI308/506; MI510 handles singleton/triple lifts,
+MI512 all strict-pair arrangements, including the physical Q4(2)/P_n(2)
+switch. Premises are G327 STEP1 scalar spectra ONLY and independent
+G328's protected one-hole two-pair failure list. Both carrying reads AND
+the new parent interfaces/composition remain unread. Ingredient review
+alone would NOT verify the parent. G327's whole at-most-one-size2 theorem
+is not a parent premise and remains unreviewed on its own. Two existing
+requests; no duplicate/third filing. No unread G320–322, MI430/MI460 or
+census is used. Five-bin count admission/multiple thin rows remain OPEN.
+
+Completed work, do not repeat without new evidence:
+- MI513–514 consolidation and MI515–516 exact source/normalization audit.
+  Common-sum compatibility is explained; limited searches do not prove novelty.
+- MI517–518/section11.6: direct protected equal-pair child argument removes
+  G328 on the equal-target parent slice, not G327 or parent-interface review.
+- MI519–520/section12: independent r equal-target pairs plus one filler,
+  M=2r+c, fail exactly at u=2M-2r,c<=q<=r under protection. Hand/unreviewed.
+- MI521–522/section13: two distinct sum fibres form alternating paths.
+  Strict-protected9/9/10/4 on[0,8] minus4 refutes per-colour plus total
+  matching capacity. Its RBRBR path has a weighted6<7 certificate.
+  This coarse shortcut is closed, not awaiting another local repair.
+
+The independently chosen GLOBAL mechanism question is now resolved by
+HAND in MI523–524/section14. A 2k-edge alternating path permits all
+(a,b) with a+b<=k. An odd (2k+1)-edge path adds just its full-majority
+(k+1,0), or the colour reverse. Put K=sum floor(ell_i/2). Odd components
+have full costs floor(ell_i/2)+1 in their majority colour. Let alpha(r),
+beta(s) count the cheapest respective-colour full costs fitting r,s.
+Exact quotas exist iff r+s<=K+alpha(r)+beta(s). Necessity counts full
+components; sufficiency removes their baseline costs before filling
+residual triangles. Controls include MI522, even-path mixed maxima,
+unequal costs, opposite-majority full components, single edges and isolates.
+This gives an exact two-target pair-bin/ONE automatic filler criterion
+on ANY distinct-token pool. Extra fillers are not covered. Known elementary
+ingredients; exact formula hand/unreviewed, no originality or general-graph
+algorithm claim, new PROOFS job or carrying request. Parent coverage and
+verification are unchanged; no computation or three-colour extension.
+
+Next cheap arithmetic question: extract path lengths/majority colours
+from the reflections x->u-x,x->v-x on an actual interval with one hole.
+Then compare the exact criterion with protection; no claim that the cuts
+already enforce it. Last strategy check MI520,11:53 BST: independent
+capacity viewpoint chosen. MI522 refuted one coarse assumption; MI524
+resolves the exact support instead of patching that assumption. No
+renewable extra-block allowance. Continue a concrete representation
+question, not a local repair catalogue; 13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -36899,3 +36892,98 @@ do not assume totals determine the answer. Gut: interested in the explicit
 weight certificate, quieter about the coarse counting shortcut after it
 fails. Reasoned: a useful obstruction/representation change, not a solved
 general partition problem.13min ACTIVE.
+
+### MI523 — Exact path quotas, then component composition (2026-10-20 12:17 BST)
+
+Pull: the obstruction seems to live in whole path components, not in
+individual edges. I want to replace a failed count shortcut with the
+actual all-choice quota region. This is the independent mechanism
+question chosen at MI522; the conditional four-bin parent remains
+unreviewed and gains no coverage merely from a graph reformulation.
+G327 scalar/G328 plus that parent's own interfaces remain its unread
+dependencies. This block does not extend them or open another review job.
+
+NOW/CURRENT/latest ledgers read. Fetch has no incoming commit; completed
+store poll is byte-equivalent as parsed JSON to the previous checkpoint:
+no changed flag. An early attempted read of the still-running poll's
+empty output failed JSON parsing; no flag verdict was drawn from it.
+Record searched: `alternating.*path|path.*quota|colour.*quota|color.*quota`
+->27 paragraphs/13 files; relevant section13/MI521–522 read.
+`path.*length|odd.*path|even.*path` AND `quota|red|blue|matching`
+->107 paragraphs/31 files, mostly unrelated old Rule30 material; no
+older carrying statement of the present criterion identified. No claim
+that every unrelated hit was read. Primary source: re-read Aprile–Di Summa
+2603.18754v1 Section2, especially Theorem6 and Observation10's initial-red/
+remaining-blue construction. This is a known matching framework, and
+the construction is already visible there; our alternating-path special
+case needs only elementary endpoint counting. Two narrow search queries
+mostly returned shortest-path exercises or general Exact Matching papers;
+none supplies a newly imported theorem or novelty conclusion.
+
+Bounded HAND test, not an experiment: preliminary reasoning suggests
+an even path of2k edges has quota triangle a+b<=k; an odd path of2k+1
+edges has that triangle plus the single full-majority point(k+1,0),
+or its colour reverse. Check necessity and construct EVERY triangle
+point, including k0 and boundary equality. Can-fail counterfactual: if
+an odd path can have a mixed matching of size k+1, the proposed support
+is wrong; if the endpoint construction shares a vertex, sufficiency fails.
+Then test exact composition: components used above their baseline must
+be fully matched in one colour; can their minimum sizes under each
+colour budget characterize the whole forest? This candidate has already
+been sketched analytically, not blindly forecast. Controls: recover
+MI522's negative and its one-of-each positive; check an even path's
+mixed maximum and single-edge/isolated components. Unexpected check:
+two opposite-majority odd components can BOTH be fully matched, so
+charging one global mixed-colour penalty would be wrong. Stop after
+the exact component argument and hand controls. No census, three-colour
+extension, general matching algorithm claim or parent promotion.
+
+### MI524 — Exact quota support from cheap full components (2026-10-20 12:19 BST)
+
+FOUR-BIN-PARTITIONS section14 now contains the complete HAND derivation.
+A length2k alternating path permits every(a,b) with a+b<=k. A red-ended
+length2k+1 path permits that triangle plus(k+1,0); swap colours for blue
+ends. The maximum odd-path matching is uniquely perfect/monochromatic.
+Every triangle point has an explicit first-red/last-blue construction,
+whose closest selected edge indices differ by at least3. This proves
+the whole support, rather than checking a few quota values.
+
+The supports compose exactly. Put K=sum floor(ell_i/2) over components.
+For each odd component its full monochromatic matching has cost
+w_i=floor(ell_i/2)+1 in its majority colour. Let alpha(r),beta(s) count
+how many cheapest respective-colour costs fit the red/blue budgets r,s.
+Then exact quotas(r,s) exist iff r+s<=K+alpha(r)+beta(s).
+Necessity counts components used above baseline. Sufficiency fully
+matches those cheapest components, then distributes the residual quotas
+among the remaining full triangles. The two colour budgets are separate
+and the selected components disjoint; the proof accounts explicitly for
+their REMOVED baseline capacities, not only their extra edges.
+
+Controls recover MI522's quotas2/1 negative,3/0 and1/1 positives; the
+even path RBRB has a mixed maximum1/1. Heterogeneous red-majority costs2,4
+with K4 admit quota2/3 by fully matching the cheaper path and taking
+three blue edges in the other. Single-edge components/k0/isolates work.
+Unexpected check: RBR plus BRB admits2/2 by fully matching both. Thus a
+single global mixed-colour penalty would be wrong even though a mixed
+maximum is impossible inside either component. No numerical experiment ran.
+
+Actual change: an exact GLOBAL matching criterion replaces the refuted
+coarse capacity test. It applies to any distinct-token pool with two
+pair targets and ONE residual filler, whose target follows conservation.
+This is an elementary specialization of known matching ideas; the exact
+formula is our hand derivation, unreviewed and not claimed original.
+No new PROOFS filing or carrying request for a routine known-framework
+calculation, and no independent-verification or parent-status upgrade.
+The conditional four-bin parent still needs its named ingredient AND
+composition reads. More than one filler is outside this corollary.
+
+Niggle sweep: edge lengths versus vertex counts; odd-path unique perfect
+matching; orientation/colour reversal; empty component families and k0;
+independent colour budgets; subtracting selected k_i in sufficiency;
+exact residual allocation; unused vertices' filler sum. All checked by
+the explicit argument/controls. Gut: interest strengthened by accounting
+for ALL choices without local repairs. Reasoned: the two-fibre matching
+subproblem is now resolved by hand, while its interval arithmetic and
+relation to protection remain open. Next cheap test is to read component
+lengths directly from the two reflections x->u-x,x->v-x on an actual
+interval with one hole; no three-colour extension or census.13min ACTIVE.

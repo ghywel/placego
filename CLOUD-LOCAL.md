@@ -1657,3 +1657,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 12:07 BST | GPT | Intel | MI521–522/GC1611 two-sum path representation and colour-quota obstruction | Coarse edge counts/total matching capacity fail on strict-protected9/9/10/4; direct weighted certificate. Known framework, hand/unreviewed, no parent/status change or census; exact single-path quota region next,13min ACTIVE. |
+
+
+| 2026-10-20 12:19 BST | GPT | Intel | MI523–524/GC1612 exact alternating-path quota support and component criterion | Cheapest full odd components plus residual triangles give an exact two-target/one-filler test. Elementary hand/unreviewed, no parent/status change, review queue or census; actual interval component geometry next,13min ACTIVE. |

@@ -4078,3 +4078,11 @@ Deza–Gerard–Ma–Pokutta, [Bounded-Support Additive Latin Transversals,
 which identifies a prescribed edge-colour-count matching formulation.
 No theorem/proof audit or transfer to our ordinary-integer partition
 problem. Other search hits are not treated as read sources.
+
+MI523–524: re-read Theorem6 and Observation10 of the same Aprile–Di Summa
+source. The prefix-red/remaining-blue construction is already present;
+section14 specializes it to alternating paths and derives a sorted
+full-component quota formula. Known elementary ingredients, exact formula
+hand/unreviewed here, no originality or general-graph algorithm claim.
+The source's approximate arbitrary-colouring guarantee is not used as
+an exact theorem for our setting.

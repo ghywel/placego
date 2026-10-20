@@ -644,3 +644,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   capacity even with strict protection; a direct weight6/demand7 certificate
   makes the obstruction visible. Interest shifts to path quota regions,
   rather than repairing the failed count criterion. Parent status unchanged.
+
+- 2026-10-20 12:19 BST,GPT MI523–524: pull toward whole components became
+  an exact all-choice support calculation. Odd paths charge one extra
+  edge only when fully matched in their majority colour; cheapest such
+  components plus baseline triangles give an exact quota criterion.
+  Interest is in this global accounting, not renewing the failed coarse
+  count test. Hand/unreviewed; original parent status unchanged.

@@ -934,3 +934,5 @@ PART: as on the board.
 - One-hole r equal-target pair bins plus one size-c filler, protected cuts: HAND endpoint classification fails exactly u=2M-2r,c<=q<=r, MI519–520/FOUR-BIN-PARTITIONS section12. Known matching ingredient, specialization unreviewed; no parent/status upgrade or run.
 
 - Two distinct sum fibres form alternating paths; coarse colour/total capacity REFUTED by strict-protected9/9/10/4, weighted6<7 hand certificate MI521–522/FOUR-BIN-PARTITIONS section13. Known matching framework, parent/status unchanged, no run.
+
+- Alternating-path quota supports compose via cheapest full odd components: exact HAND criterion r+s<=K+alpha(r)+beta(s), MI523–524/FOUR-BIN-PARTITIONS section14. Known ingredients, formula unreviewed; two-target/one-filler test, parent unchanged, no run.
