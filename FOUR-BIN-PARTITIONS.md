@@ -1912,3 +1912,72 @@ The AP-target partial-quota question remains OPEN. Section19's fixed-
 covered-set perfect-face argument is neither used nor contradicted.
 No uniform filler threshold, full-interval counterexample, four-label
 E24 obstruction or new numerical census is claimed.
+
+## 21. Even consecutive AP targets have a partial-quota hole (MI541–542)
+
+**Explicit hand guard, unreviewed; no originality claim.** The AP
+restriction does NOT restore integer-hull completeness for partial
+matching quotas on arbitrary finite pools. This answers section19.3's
+remaining broad question negatively without relying on section19's proof.
+
+Take
+
+    P={0,2,3,4,5,6,8}=[0,8] minus{1,7},
+    targets(A,B,C)=(8,9,10).
+
+Two literal matchings on six of these seven tokens are
+
+    {(0,8),(3,5),(4,6)}    quota(2,0,1), leaves2;
+    {(2,8),(3,6),(4,5)}    quota(0,2,1), leaves0.
+
+Thus(1,1,1) is the midpoint of two ACTUAL matching quotas. But
+sum(P)=28, whereas8+9+10=27. Any matching with that quota would
+leave exactly ONE unused token of value1, absent from P. Therefore
+the integer quota111 is in the actual hull and is unattainable.
+
+For an independent pair-list audit, the ENTIRE allowed graph has
+
+    A: {0,8}, {2,6}, {3,5};
+    B: {3,6}, {4,5};
+    C: {2,8}, {4,6}.
+
+These lists follow by testing complements of pool tokens at most half
+each target; omit loops4+4 and5+5. The extra A-edge2-6 does not alter
+the total-moment obstruction. No claim that the graph has just two
+disjoint components is made. As a positive hand control, replacing
+token0 by1 admits quota111 via3-5,1-8,4-6 (leaving2). This is one
+literal control, not a general repair rule or domain extension.
+
+### 21.1 Why component-wise rounding stops at this dimension
+
+The construction uses a real four-cycle on{3,4,5,6}, with perfect
+quotas101 and020, and a real two-edge path on{0,2,8}, with quotas100
+and001. Their vertices are disjoint; the full graph also has the
+extra edge noted above. Even on the displayed subgraph, the two
+perfect-size component supports combine to201,120,102,021, whose
+convex hull contains111 but whose set omits it.
+
+More explicitly, let
+
+    Q=conv{000,100,010,001,101,020},
+    R=conv{000,100,001}.
+
+They are downward-closed lattice polytopes in the nonnegative orthant.
+Q's integer points are exactly its six displayed points: total degree
+is at most2, first/third counts at most1, and the possible extra mixed
+points110/011 are excluded by2r+s<=2 and s+2t<=2 respectively.
+R's integer points are its three displayed points. Yet111 belongs
+to Q+R, since it is the midpoint of201=101+100 and021=020+001.
+It is not a sum of integer points of Q and R: subtracting R's
+000,100,001 would require111,011,110 in Q, all absent. Thus TWO
+individually hole-free downward lattice polytopes can have a mixed
+addition hole in three dimensions. This explicit calculation explains
+the dimension restriction in section18.2; it does not challenge that
+PLANE claim. Nor does it say the full graph support equals Q+R.
+
+The AP partial-quota extension is REFUTED at hand status, even for
+consecutive integer target sums. Fixed-covered-set PERFECT quotas in
+section19 and the two-target candidate remain separate. This is a
+TWO-hole pool, not a full interval or one-hole counterexample; no
+actual E24, four-label or five-bin conclusion. The fixed8 diagnostic
+is not rerun, expanded or reinterpreted as having found this example.

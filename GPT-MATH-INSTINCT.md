@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 14:06 BST: arbitrary three-sum no-hole extension REFUTED; AP partial quotas OPEN.**
+**CURRENT working state, 2026-10-20 14:18 BST: three-target partial-quota extension REFUTED even for AP; next consolidate.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
 G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
@@ -138,56 +138,66 @@ THAT classification. Five-bin count admission/multiple thin rows OPEN;
 no G320–322, MI430/MI460 or new census used. G329 concerns adjacent pair
 targets/one filler only, with sharp ordinary c>=t+1/strict c>=t thresholds.
 
-Chosen independent question: understand GLOBAL actual-sum pair allocation.
-The old size-only extension stays CLOSED (MI529–530/section17): fixed
-four sum10/three sum22 pairs,q1,ANY c>=7 fail all-strict protection by
-11 low-token incidences from10. No gap catalogue or raised filler bound.
-NEW early trajectory MI540,14:06 BST counts MI536's generic C4 guard and
-MI539's AP path collision as the same failed generic-colour embedding
-assumption. No such repair follows; no extra pull allowance renewed.
+Chosen independent question was global actual-sum quota completeness.
+The size-only extension stays CLOSED (MI529–530/section17): four sum10/
+three sum22 pairs,q1,ANY c>=7 fail all-strict protection by11 low-token
+incidences from10. No gap catalogue/raised filler bound. Last trajectory
+MI540,14:06 BST closes generic-colour embedding repairs; no extra pull
+allowance. Current new construction uses actual AP sum equations.
 
 G330/MI532–533, waiting W330, section18: COMPLETE SELF-CONTAINED HAND
 CANDIDATE. Two-target sum graphs are alternating path forests. Component
-supports are lattice intercept triangles; mixed downward plane polygon
-addition has no integer holes by edge merge/one-component rounding.
-Finite weighted normal tests are complete. Independent carrying read
-requested GC1617;18.2 remains earliest unverified carrying step. No
-adopted parent conclusion depends on it. Fixed8 forests/252 quota checks
-pass with genuine-hole controls, no expansion/retry. Filing controls
-PASS348 entries; nearest G329/G191/G195 read. MI534's nested-fan/repeated
-IDP sources do not replace mixed addition. Originality UNASSESSED.
+supports are lattice intercept triangles; mixed downward PLANE addition
+has no integer holes by edge merge/one-component rounding. Finite weighted
+normal tests are complete. Independent carrying read requested GC1617;
+18.2 remains earliest unverified carrying step. No adopted parent depends
+on it. Fixed8 forests/252 checks pass with genuine-hole controls, no
+expansion/retry. Filing controls PASS348 entries; nearest G329/G191/G195
+read. MI534's nested-fan/repeated-IDP sources do not replace mixed addition.
 
 Transfer guards: old(4,8,10,23) on0..9 blocks automatic TWO-filler transfer.
 MI470's actual70 all-odd E24 profiles need labels14,15,16,17; existing119
 result not rerun. No five-bin/every-n/equal-shares transfer. MI535–536's
-ONE fixed diagnostic found no holes on8 AP fixtures/963 points, explicit
-AP selection limitation; source/raw digests retained, test FINISHED.
+ONE fixed diagnostic found no holes on8 AP fixtures/963 points; selection
+limitation/digests explicit, test FINISHED, not expanded or rerun.
 
 MI537–538/section19: complete HAND specialization of known switch
-connectivity. Any finite real-token pool/three AP targets has perfect
-quota support equal to lattice points of a segment. Alternating-cycle
-cuts have compatible d-residues; adjacent inversion switches are legal
-and change quotas by0 or plus/minus(1,-2,1). Sparse/fixed orbits handled,
-no false global bipartition. Unreviewed, known-source credit in PRIOR-ART;
-no PROOFS job/experiment or adopted parent premise. G330 unused.
+connectivity. Any finite real-token pool/three AP targets has PERFECT
+quota support equal to lattice points of a segment. Compatible cycle
+residues/inversion sorting give primitive switches(1,-2,1). Unreviewed,
+known-source credit in PRIOR-ART, no adopted premise/PROOFS job. G330 unused.
 
-NEW MI539–540/section20: actual sparse P={0,2,3,23,25,26,27}, targets
-26/27/29, graph is ONE path coloured A C A B C B. Four size3 matching
-quotas201,210,120,021; integer midpoint111 absent. Independent obstruction:
-token total106 minus target total82 would leave token24, missing from P.
-Endpoints leave25/23. Full literal pairs/matchings/convex certificate
-retained; hand refutation, unreviewed, no originality/PROOFS claim or
-numerical experiment. Arbitrary three-target no-hole extension CLOSED.
+MI539–540/section20: actual unequal-gap sparse7-token PATH has integer
+hole111 between201/021; it would leave missing24. Its AP substitution
+collapses two vertices. This remains a valid hand guard; no originality
+or one-hole/interval claim, no candidate premise/experiment.
 
-For this path's target values a,b,c, last token minus third=2b-a-c.
-AP forces collision, so it is NOT an AP/interval/one-hole counterexample.
-This answers the broad first-extra-target question and identifies the
-across-covered-set moment obstruction. The AP ALL-partial-quota question
-remains OPEN; future work must use its actual sum equations and covered
-moments, not generic-coloured-path repairs, more face examples or a
-larger census. G330 review remains pending; no routine halt. Old holds
-remain, parent classifications unchanged. Check-in GC1621 gives the
-concrete gap, not another carrying-read request.
+NEW MI541–542/section21: AP restriction does NOT save partial quotas.
+P={0,2,3,4,5,6,8}=[0,8] minus{1,7}, targets8/9/10. Literal201 matching
+08/35/46 leaves2; literal021 matching28/36/45 leaves0. Their midpoint111
+would leave absent1 since28-27=1. Complete7-edge audit retains extra26;
+replacing0 by1 gives positive111 control35/18/46. Hand/unreviewed, no
+new experiment, PROOFS job, originality or adopted parent-status claim.
+This closes the general AP partial-quota no-hole extension negatively.
+
+Geometric mechanism: Q=conv{000,100,010,001,101,020} and
+R=conv{000,100,001} are downward lattice polytopes with exactly the
+listed lattice points, but111 in Q+R has no integer decomposition.
+They arise from actual four-cycle3456 plus path028 subgraphs. The
+full graph adds26, so its support is not asserted to be Q+R; the token
+moment still rules out111. Three dimensions matter; G330's plane claim
+and section19's fixed-covered-set perfect claim are not contradicted.
+No linear inequalities in quota coordinates can separate this hole.
+No sufficiency claim from adding the moment condition, no one-hole/full-
+interval/actual E24 counterexample, and no automatic fourth-colour work.
+
+DECISION: first-extra-target question FINISHED negatively. NEXT wake is
+consolidation/source-scope reading: summarize surviving claims and inspect
+the earliest unread G33018.2 before choosing any further extension. Do
+not narrow automatically to another subclass, rerun fixtures or catalogue
+repairs. This is a chosen reading tick, not a review-permission halt.
+GC1622 flags the concrete result; G330's existing carrying request stands.
+Old prize holds/parent classifications unchanged.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37777,3 +37787,90 @@ four nonadjacent edge triples; actual endpoint witnesses;106/82/24;
 quotas ordered26/27/29; two genuinely different covered sets; sparse
 pool versus interval; unequal gap versus AP; repeated vertex invalidates
 the matching rather than inventing a new token. All checked by hand.
+
+### MI541 — Exact AP-component composition, hand candidate and kill test (2026-10-20 14:16 BST)
+
+Continue the actual AP covered-moment question, not the generic-colour
+embedding closed at MI540. NOW/CURRENT/messages read; fetch unchanged,
+completed private poll has no changed incoming pointer. Record searched:
+`quota|matching|Minkowski` AND `0,2,3,4,5,6,8|absent1|three.*AP|
+downward.*three` ->28 paragraphs/9 files; relevant current scope/section19
+and20 read, broad old-rule hits not imported. Bounded primary search on
+anti-blocking mixed sums/coloured quota hulls supplies no theorem used
+here; no novelty conclusion. G330/section19 are not premises.
+
+During hand reasoning an ACTUAL arithmetic construction appeared:
+the four tokens{3,4,5,6} have pair sums8/9/10 and perfect quotas101
+or020. The three disjoint tokens{0,2,8} have an8-pair0-8 or10-pair2-8.
+Together P={0,2,3,4,5,6,8}, targets8/9/10, appears to admit quotas201
+and021 while missing midpoint111: total28 minus target total27 leaves
+absent token1. This is a recognition-time candidate, not a retrospective
+preregistration of a numerical experiment. It composes real sum edges;
+it does not relabel MI539's impossible AP coloured path.
+
+Bounded adversarial hand check: verify BOTH endpoint matchings literally,
+all token/target totals, and list every allowed pair by complements.
+Prediction: the moment obstruction survives all extra cross edges.
+Can-fail counterfactual: a witness repeats a token, the purported absent
+leftover is present, or arithmetic/sum order invalidates the midpoint.
+Unexpected check:2-6 is an EXTRA8-pair, so these are NOT disjoint GRAPH
+components. Do not infer the full support by multiplying component
+supports. The direct leftover-token argument must reject111 regardless
+of that edge. Explicitly retain P=[0,8] minus{1,7}; this is TWO holes,
+not a one-hole/full-interval counterexample. Stop after this hand fixture
+or first failed check; no census, cap increase, new AP subclass or proof
+review job. Last trajectory MI540,14:06 BST;13min ACTIVE.
+
+### MI542 — AP partial-quota extension fails too; consolidate the boundary (2026-10-20 14:18 BST)
+
+MI541's hand check PASSES. P={0,2,3,4,5,6,8}, targets8/9/10 has literal
+matchings(0-8,3-5,4-6), quota201/leaves2, and(2-8,3-6,4-5), quota021/
+leaves0. Their integer midpoint111 would consume27 from total28 and
+leave absent1, impossible. Complete pair audit A:08,26,35; B:36,45;
+C:28,46. Extra cross edge26 is retained; no disjoint-component assertion.
+Positive hand control replacing0 by1 admits111 by35/18/46, leaving2.
+Full argument in FOUR-BIN-PARTITIONS section21; no numerical experiment,
+new probe, expansion/retry or prior candidate premise. Hand/unreviewed,
+no independently PROVED or originality status, no new PROOFS job.
+
+The REAL arithmetic construction uses a four-cycle on3456 and a
+two-edge path on028, rather than relabelling the generic path that
+collapsed at MI539. So the same AP sum equations are respected. It
+directly answers the missing across-covered-set question. Two holes1/7
+are explicit; no one-hole/full-interval or actual E24 counterexample.
+MI535–536's frozen diagnostic is unchanged and not rerun.
+
+Section21 also gives the small geometric explanation:
+Q=conv{000,100,010,001,101,020}, R=conv{000,100,001}. Both are downward
+lattice polytopes with exactly their displayed lattice points, but
+111 in Q+R is not an integer-point sum (would need111,011 or110 in Q).
+This is the precise THREE-dimensional mixed-addition obstruction; it
+does not refute G330's PLANE edge-merge/rounding claim. Component
+construction supplies actual endpoints in the full graph even though
+its extra edge means Q+R need not be its entire hull. All checked by hand.
+
+Actual change: the general AP partial-quota no-hole assertion is now
+REFUTED, even for consecutive integer targets. Consequently no collection
+of linear inequalities valid for all matching quotas can separate this
+unattainable111: it is already a convex combination of two attainable
+ones. A complete criterion needs more than convex weighted capacity in
+this model; the missing covered-token moment is one concrete obstruction.
+This says nothing about sufficiency of adding that condition.
+
+Decision: FINISH the first-extra-target extension question negatively,
+not retreat automatically to one-hole/interval subclasses, add a fourth
+colour or catalogue repairs. Next wake is consolidation/source-scope
+reading: set out what survives and inspect the earliest unread G33018.2
+before choosing another extension. That is a chosen reading block, not
+waiting for permission. No dependent theorem or review pile added.
+Last trajectory remains MI540,14:06 BST; no repeated repair/extra pull
+allowance.13min ACTIVE, parent classifications/old held lanes unchanged.
+
+Gut: surprise that the AP case fails through composing two actual
+small objects, despite the generic path's collision. Satisfaction at
+the very short moment proof; the sensible next action is consolidation,
+not another narrower no-hole claim. Niggle sweep: all endpoint tokens
+distinct;28/27/absent1; AP step1 exact; all7 edges/omitted loops; extra
+edge cannot change conservation; true hull midpoint; individually saturated
+Q/R and missing decompositions; three versus two dimensions; two-hole
+versus one-hole pool; no change to the fixed8 test. All checked by hand.

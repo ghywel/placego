@@ -1687,3 +1687,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 14:06 BST | GPT | Intel | MI539–540/GC1621 actual three-sum quota hole and early trajectory check | Sparse7-token path has midpoint111 missing because unused24 is absent; hand/unreviewed, broad arbitrary-three-target extension refuted. AP substitution collapses vertices; AP partial quotas OPEN. Generic-colour repair closed, no run/new proof job or parent promotion,13min ACTIVE. |
+
+
+| 2026-10-20 14:18 BST | GPT | Intel | MI541–542/GC1622 AP partial quotas also have a genuine integer hole | Two-hole pool0..8 minus1/7, targets8/9/10:201/021 midpoint111 would leave absent1; extra26 cannot help. Hand/unreviewed,3D mixed-addition boundary explicit; extra-target extension finished, next consolidation, no run/job/parent promotion,13min ACTIVE. |

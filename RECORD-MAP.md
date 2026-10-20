@@ -955,3 +955,5 @@ PART: as on the board.
 - Three AP sum targets on any finite real-token pool: perfect quotas form a primitive lattice segment, HAND known-switch specialization MI537–538/FOUR section19. Alternating-cycle inversion sorting handles sparse/fixed orbits; varying covered-set partial quotas OPEN, no new experiment/status/job.
 
 - Arbitrary three-sum no-hole extension REFUTED by sparse seven-token path: quotas201/021 midpoint111 would leave absent24, hand MI539–540/FOUR section20. AP substitution forces token collision, so AP partial quotas remain OPEN; early trajectory closes generic-colour embedding repair, no run/job.
+
+- AP partial-quota no-hole extension REFUTED: P=[0,8] minus{1,7},targets8/9/10, actual201/021 midpoint111 leaves absent1, hand MI541–542/FOUR section21. Extra26 retained; explicit downward3D mixed-addition hole explains dimension boundary. No one-hole/interval claim, run/job; next consolidation.

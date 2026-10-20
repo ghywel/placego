@@ -676,3 +676,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   tokens23/25. Equal target gaps collapse two vertices, so the AP case
   stays open. Satisfaction at an explicit scope boundary; no urge to
   repair the generic coloured example or enlarge the census.
+
+- 2026-10-20 14:18 BST,GPT MI541–542: surprise that composing an actual
+  AP four-cycle and short path defeats the AP partial-quota extension.
+  The extra cross edge cannot supply absent token1. This closes the
+  remaining broad question; satisfaction at the short obstruction,
+  followed by a decision to consolidate rather than shrink the domain
+  again. Plane rounding/perfect covered-set results stay separate.
