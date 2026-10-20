@@ -14807,6 +14807,573 @@ A*={1,2},D*={0,4,5}. Thus no general size-two scalar lemma is hidden in
 that use of G315, and all values/boundary cases in the extension are explicit.
 
 
+### G.GPT327. Four prescribed sums with at most one size-two bin (second-read by Cloud, 2026-10-20)
+
+**Review update, MI531 (2026-10-20): PROVED within project standards.**
+Cloud CL468/0e3f4daa independently verified the carrying scalar spectra,
+reflection, exact H2 root gate and strict-pair composition. Its committed
+g327_review.py reports zero mismatches on all eleven size patterns to
+N15, pair spectra to m300 and normalization N<60. Supporting computation
+is reported, not rerun here; the hand read carries the verdict. Novelty
+UNASSESSED; five-bin admission/multiple thin rows remain outside scope.
+The candidate-status wording below records the original filing.
+
+**PROOF-SKETCH, NOT independently verified.** This completes the formerly
+conditional MI453 reduction using PROVED G326 (H2), with its new size-two
+staircase audit spelled out below. G315/G316 supply the reviewed minimum-three
+constructions; no G320–322, MI430 or MI460 is used. Novelty UNASSESSED.
+The result concerns realization on a FULL interval, not count admission for
+five bins or multiple thin rows. No new computation carries this candidate.
+
+**Statement.** Let c_1,...,c_4>=2 total N, with at most one c_i=2, and let
+integer targets s_i total L(N), where L(r)=r(r-1)/2. There is a partition of
+{0,...,N-1} with cardinalities c_i and sums s_i if and only if
+
+    S_I >= L(C_I) for every nonempty proper I subset{1,2,3,4},
+    C_I=sum_(i in I)c_i, S_I=sum_(i in I)s_i.
+
+The complementary lower bound is the corresponding upper bound
+U_N(C_I)=C_I(2N-C_I-1)/2. There are fourteen lower cuts. If all sizes are
+at least3 this is PROVED G316. Hence assume sizes(2,b,c,d), b,c,d>=3.
+Necessity follows by taking the union of each group of bins.
+
+**1. A scalar pair lemma on the two staircase shapes.** Use the explicit
+P_m(h), Q_m(h) of FOUR-BIN-PARTITIONS §7, now m=c+2 with c>=3 and
+0<=h<2c. Their pair spectra both contain the ENTIRE required interval
+
+    [1+h, 2m-3].
+
+For h0 they are the full interval. Otherwise write h=T_s+t, 0<=t<=s,
+T_s=s(s+1)/2, and set p=m-s. Necessarily p>=3: if p<=2, then s>=m-2,
+so T_s>=(m-2)(m-1)/2>=2(m-2), contrary to h<2(m-2), since m>=5.
+The P pool is
+
+    [0,p-1] union {p+2j+1+1_(j>=s-t): 0<=j<s}.
+
+All-low pairs fill [1,2p-3]. For each high H_j, one low token gives
+the complete interval [H_j,H_j+p-1]. Consecutive H_j differ by at most3;
+these intervals therefore meet/touch because p>=3. The last endpoint is
+2m-2+1_(t>0), beyond the required upper endpoint. The first high is
+p+1+1_(t=s). It joins the all-low range except possibly when p3,t=s.
+In that case m=s+3 and T_s+s<2s+2 imply s<=2. As m>=5, the only case
+is m5,s2,t2,h5. Its pool is {0,1,2,5,7}; required pair sums6,7 are
+{1,5},{0,7}. This covers all P cases without using an all-high spectrum.
+
+For Q, t0 gives P. For t>=1, set S=s+1 and q=m-S=p-1>=2. Its pool is
+
+    [0,q-1] union {q+2j+1-1_(j>=t): 0<=j<S}.
+
+If q>=3, all-low pairs fill [1,2q-3]; the first high is q+1, so the
+one-low/one-high intervals join it. High gaps are at most2 and those
+intervals join each other. Their final endpoint is exactly2m-3.
+If q2, m=s+3 and T_s+t<2s+2, with s>=2 and1<=t<=s. The only possibilities
+are (m,h)=(5,4),(5,5),(6,7). The pools and ALL required sums are:
+
+    Q5(4)={0,1,3,4,6}: 5={1,4},6={0,6},7={1,6};
+    Q5(5)={0,1,3,5,6}: 6={0,6},7={1,6};
+    Q6(7)={0,1,3,4,6,8}: 8={0,8},9={1,8}.
+
+For s>=4, T_s+1>=2s+2, excluding additional cases. This proves the
+size-two central lemma on BOTH shapes. It asserts only the protected
+central interval; P5(5) really has a missing pair sum4.
+
+**2. Choose the minimum of all fourteen cuts.** Put h_I=S_I-L(C_I) and
+h=min_I h_I>=0. The reflection v->N-1-v sends h_I to the old h_(I^c):
+
+    C_I(N-1)-S_I-L(C_I) = L(N)-S_I-L(N-C_I).
+
+Consequently reflection preserves all cuts and the minimum. If a singleton
+or triple attains h, reflect once if needed to make its singleton A have
+size a and target s_A=L(a)+h. Treat this case in step3. Otherwise every
+singleton/triple slack is STRICTLY larger than h; step4 treats a pair.
+A pair tie with a singleton/triple belongs to step3.
+
+**3. Singleton/triple minimum: the exact H2 interface.** Let J be any
+nonempty proper group of the other three bins and put r=C_J. The cut of
+A union J has slack at least h. Subtracting s_A gives
+
+    S_J >= L(a+r)-L(a) = L(r)+ar.                 (3a)
+
+Deleting ANY a values from the full pool cannot raise its r smallest
+survivors beyond the original ranks a,...,a+r-1. Thus (3a) gives every
+residual lower rank bound; complementary groups give the upper bounds.
+This observation does not assume a compatible first bin or a joint partition.
+
+The full-interval prefix/suffix/pivot recipe realizes every target of A.
+Choose l smallest values, k largest values and pivot p, with l+k=a-1.
+For fixed k the legal pivots fill [l,N-k-1]; successive target intervals
+meet at the SAME extremal first-bin set, and cover [L(a),U_N(a)]. Put
+
+    M=N-a, q=p-l, t_i=s_i-lc_i for the remaining bins.
+
+The normalized remainder is [0,M] minus q, with0<=q<=M. Direct summation
+of the chosen first bin gives
+
+    h=kM+q,       sum t_i=L(M+1)-q.
+
+The cuts J and A union J give, respectively,
+
+    t_J >= L(r)+kM+q-lr,
+    t_J >= L(r)+(k+1)r.
+
+Thus the exact combined condition is
+
+    t_J >= L(r)+max(kM+q-lr,(k+1)r).             (3b)
+
+The remaining cut, that of ALL three other bins, is
+(l+1)M-q>=h, equivalently (l+1-k)M>=2q. Together with A and the twelve
+cuts in(3b), this accounts for all fourteen original lower cuts. In
+particular every one of the SIX proper remaining groups satisfies
+
+    t_J >= L(r)+r,
+
+since k>=0. No symmetric protection after a second deletion is assumed.
+Only the original full-interval problem was reflected; (3b) is computed
+in its chosen orientation, not obtained by falsely reflecting H2's margin.
+
+If q0 or M, trim the endpoint: the remainder is a full interval and all
+three sizes are at least2. The PROVED three-bin full-interval lemma
+(FOUR-BIN-PARTITIONS §5, MI295/G315) completes it from its actual rank cuts.
+For internal q there are two possibilities:
+
+- If a>=3, the remaining sizes are exactly(2,b',c'), b',c'>=3. Total
+  conservation and all six inequalities above are precisely G326's H2
+  hypotheses. That independently PROVED theorem completes the remainder.
+- If a2, every remaining size is at least3. Apply G315 after checking its
+  scalar hypotheses, not H2. A scalar minimum+1 omission requires q=r;
+  its normalized target would be L(r)+1, whereas (3b) gives at least
+  L(r)+r. A scalar maximum-1 omission is a minimum+1 omission for its
+  complementary group of two remaining bins, excluded by the same bound.
+  Actual rank bounds were already established for every group in(3a).
+  Hence all three targets are in their actual scalar spectra and G315
+  applies. This uses r>=3 for singleton groups and an even larger complement.
+
+This covers every singleton/triple minimum, including ties and endpoint pivots.
+
+**4. Strict pair minimum: one physical boundary, two scalar choices.**
+Let AB attain h, with sizes a,b; the other two sizes are c,d. Relabel WITHIN
+each pair so any size-two bin is the selected scalar bin on that side.
+Set x=s_A-L(a), z=U_N(c)-s_C. Conservation and the four strict singleton
+lower/upper inequalities give
+
+    s_B=L(b)+ab+h-x,       U_N(d)-s_D=cd+h-z,
+    h<x<ab,               h<z<cd.
+
+In particular h<min(ab,cd). Put m=a+b, n=c+d. On the side containing
+size2, step1 proves both staircase central spectra. On the other side,
+use the PROVED minimum-three central lemma (FOUR-BIN-PARTITIONS §7).
+For h>0 both m,n>=s+3: step1 proves this for the size-two side, and the
+reviewed lemma proves it for the other. The ACTUAL complementary boundary
+identity of §8 therefore still applies; its set calculation needs these
+length bounds, not individual sizes>=3. For h0 take the ordinary prefix.
+
+Choose that actual P_m(h) as the AB side of the original full interval.
+Its reflected ACTUAL complement is Q_n(h) (P_n(h) when t0). The a-spectrum
+of the first side contains [L(a)+h,L(a)+ab]; the c-spectrum of the reflected
+other side contains [L(c)+h,L(c)+cd]. Choose A with sum L(a)+x and C' with
+sum L(c)+z independently on these disjoint sides. Reflect C' back:
+
+    sum C=c(N-1)-L(c)-z=U_N(c)-z=s_C.
+
+The leftover sets on each side give B,D with their prescribed cardinalities
+and sums, by conservation. No joint spectrum assumption or iterative swap
+is used. Both sides share the exact complementary geometry already proved
+in §8, including t0,t=s and empty high segments.
+
+All possible locations of the minimum cut have now been covered. This is a
+complete hand candidate for the one-size-two four-bin extension, conditional
+only on its independent verification, with G315/G316/G326 already proved.
+It makes no assertion about two or more size-two bins, five-bin count
+selection, equal-sum novelty, or a new value of L8.
+
+
+**Hand controls and filing receipt (MI504).** On0..10, counts(3,2,3,3)
+and targets(6,8,24,17), the minimum among all14 cuts is3. Select
+A={0,1,5}, with l2,k0,q3,M8. The normalized residual has H2 targets
+(4,18,11), with its pair-plus-last-bin bound T(5)=15 met exactly.
+The original literal partition is
+
+    {0,1,5}; {2,6}; {7,8,9}; {3,4,10}.
+
+This independently checks translation, the thin REMAINING bin, a tied
+singleton/triple minimum and a protected group face. On0..10, counts(2,3,3,3)
+and targets(3,17,17,18), the selected size-two bin instead gives the witness
+
+    {0,3}; {1,6,10}; {2,7,8}; {4,5,9}.
+
+The retained negative M8,q2,targets(8,6,20) has individual scalar feasibility
+but no joint partition: the triples of sum6 consist only of{0,1,5}, which
+meets each of the sum8 pairs{0,8},{1,7},{3,5}. It fails the H2 group cut
+8+6>=T(5)=15. Thus the positive interface uses genuine group protection,
+not an unsupported size-two extension of G315.
+
+proof_dupes --near W327 passes345 entries; nearest G326,W324,G316 were
+read in full. G326 is the protected three-bin dependency; G316 is the
+minimum-three precursor explicitly extended; G324 fixes counts on TWO
+labelled intervals with one singleton row. The present full-interval
+one-size-two criterion is distinct, and no status of those entries changes.
+
+
+**Scope supplement, MI505–506 (same-worker hand check, 2026-10-20).**
+The endpoint recipe has h=kM+q, q0..M; adjacent ranges meet at the SAME
+first-bin set. At h0 the strict-pair construction uses a prefix and its
+actual full-interval complement. No new premise was found in these cases.
+The one-size2 restriction cannot simply be removed: on0..9 the sizes
+(3,2,2,3), targets(4,8,10,23) pass all14 cuts but do not partition.
+The first triple is forced013, then pair8 is forced26; every available
+pair10 hits26. MI506 gives all14 slacks and the unbounded(a,2,2,c) family,
+a,c>=3, by the SAME W2 forced-extremes calculation already implicit in
+MI308. A nearby positive control is013 /26 /47 /589 with targets
+(4,8,11,22). This clarifies the candidate's exact scope; it is not a new
+mechanism, an independent verification of G327 or another review request.
+
+
+### G.GPT328. Exact obstructions for protected one-hole counts (2,2,c) (second-read by Cloud, 2026-10-20)
+
+**Review update, MI531 (2026-10-20): PROVED within project standards.**
+Cloud CL468/0e3f4daa independently verified all-cut reduction, unique-fibre
+exhaustion, spectrum joins and all three obstruction families. Its
+committed g328_review.py reports3,539,232 admitted inputs to M60,56
+failures exactly as classified, zero mismatches. Supporting computation
+is reported, not rerun here; the hand read carries the verdict. Novelty
+UNASSESSED. The candidate-status wording below is the original filing.
+
+**PROOF-SKETCH: complete hand classification, NOT independently verified.**
+MI507–508. Independent of G327 and of G326's joint partition proof; uses only
+the elementary pair count and matching argument given here. No numerical
+census or formal verification. The matching observation is elementary,
+not claimed novel; novelty of the classification is UNASSESSED.
+
+**Statement.** Put c>=3, M=c+4, 1<=q<=M-1 and P=[0,M] minus{q}.
+Let integers u,v,w total T_M-q, where T_r=r(r+1)/2, and assume every
+nonempty proper group of bins of sizes(2,2,c) has target >=T_(group size).
+A partition exists EXCEPT in the following cases, with u,v interchangeable:
+
+1. q1, {u,v}={4,6}, w=T_M-11, for every M>=7;
+2. M7,q3, {u,v}={3,8}, w14;
+3. M7,q3, {u,v}={4,10}, w11.
+
+Every displayed exception satisfies ALL six protected cuts and has no
+partition. All other admitted targets partition. Consequently the STRICT
+version of all six protected cuts is sufficient at counts(2,2,c), c>=3:
+each exception has at least one protected cut tight. This is not the
+ordinary full-four-bin cut criterion, which MI506 shows may fail strictly.
+
+**1. Two sum fibres, all choices.** For any finite set P of distinct real
+values define E_z={{x,y} subset P: x!=y, x+y=z}. Each E_z is a matching,
+since a token has only the partner z-x. If |E_u|,|E_v|>=2, disjoint
+representatives exist. For u=v, choose two different edges. Otherwise,
+assuming no representatives disjoint, choose two disjoint u-edges.
+Every v-edge must meet BOTH and therefore lies on their four vertices,
+one endpoint in each. Two disjoint v-edges cover all four vertices, so
+summing their labels gives2v=2u, contradicting u!=v. This proves the claim.
+Thus incompatibility of nonempty fibres requires a UNIQUE pair in at
+least one fibre. If E_u={A}, incompatibility is exactly E_v(P minus A)
+empty. No interval geometry has been used in this reduction.
+
+**2. Protection and the unique-pair list.** Conservation makes the six
+protected cuts equivalent to
+
+    3<=u,v<=H=2M-1-q,
+    10<=u+v<=K=4M-6-q.                         (2)
+
+Before deletion, the number of distinct pairs of sum z in[0,M] is
+floor((min(z,2M-z)+1)/2), for1<=z<=2M-1. Deleting q removes at most one
+pair (none if q is its midpoint). For3<=z<=2M-3 the original count is at
+least2, so a legal pair always survives. The only other possible z under
+(2) is2M-2, which forces q1; its unique pair {M-2,M} survives. Therefore
+both E_u,E_v are nonempty without a scalar feasibility premise.
+
+A unique surviving pair can only come from an original fibre of size1
+or2. The lower targets1,2 are excluded. For z3,4 the lists are literal:
+
+| unique target u | q | unique pair A |
+|---|---|---|
+| 3 | 1 or2 | {0,3} |
+| 3 | 3 | {1,2} |
+| 4 | 1 or3 | {0,4} |
+| 4 | 4 | {1,3} |
+
+At the upper end u=2M-3 requires q<=2 by(2), whereas uniqueness would
+require q>=M-3>=4, impossible. For u=2M-4, uniqueness needs q in
+{M-4,M-3,M-1}, while(2) forces q<=3. The ONLY case is M7,q3,u10,
+whose unique pair is{4,6}. Finally u=2M-2 forces q1 and gives{M-2,M}.
+These exhaust all unique fibres at M>=7. We may swap u,v so that the
+unique fibre is named u. The following cases check every possible v.
+
+**3. Unique low target u3.** Here(2) requires7<=v<=H. Removing A gives
+these ACTUAL pair spectra; fixed-cardinality sums of a full interval
+fill their ordinary pair interval:
+
+| q | P minus A | its pair spectrum |
+|---|---|---|
+| 1 | {2} union[4,M] | [6,M+2] union[9,2M-1] |
+| 2 | {1} union[4,M] | [5,M+1] union[9,2M-1] |
+| 3 | {0} union[4,M] | [4,M] union[9,2M-1] |
+
+The first two unions join for M>=7 and cover every permitted v.
+The last joins for M>=8. At M7 it misses only8 in the permitted
+range7..H=10, giving exception2 and no other failure in this case.
+
+**4. Unique low target u4.** Now(2) gives6<=v<=H. The actual spectra are
+
+| q | P minus A | its pair spectrum |
+|---|---|---|
+| 1 | {2,3} union[5,M] | {5} union[7,M+3] union[11,2M-1] |
+| 3 | {1,2} union[5,M] | {3} union[6,M+2] union[11,2M-1] |
+| 4 | {0,2} union[5,M] | {2} union[5,M+2] union[11,2M-1] |
+
+For q1 the intervals join for every M>=7 and the sole missing permitted
+v is6: exception1. For q3 they join at M>=8; at M7 the permitted range
+ends H10 and its sole missing value is10: exception3. For q4 the possible
+M7 gap10 is OUTSIDE H=9; for M>=8 the intervals join. Hence no failure
+comes from q4. None of these joins is inferred from a numerical sample.
+
+**5. The upper unique cases are genuinely checked.** At M7,q3,u10,
+removing {4,6} leaves {0,1,2,5,7}. Its complete pair spectrum is
+{1,2,3,5,6,7,8,9,12}. Conditions(2) now give3<=v<=9, so only v4 is
+missing; this is the already listed exception3 with u,v interchanged.
+
+For u=2M-2,q1, (2) gives3<=v<=2M-5. After deleting {M-2,M}, choose:
+- v3 or4: {0,v};
+- 5<=v<=2M-7: a pair from the full interval[2,M-3], whose pair spectrum
+  is exactly[5,2M-7];
+- v=2M-6: {M-5,M-1};
+- v=2M-5: {M-4,M-1}.
+All avoid1,M-2,M and are distinct at M>=7. This covers EVERY allowed v,
+so this legal high unique fibre creates no exception. It must not be
+silently dropped from the exhaustion by an upper-margin estimate.
+
+**6. Exhaustion, failure witnesses and controls.** If neither fibre is
+unique, step1 supplies disjoint pairs. If one is unique, steps3–5 either
+supply a disjoint pair or produce one of the three displayed exceptions.
+The complement of two disjoint pairs automatically has size c and sum w.
+For the exceptions: q1,u4 forces04 and every sum6 pair (06 or24) meets it;
+M7,q3,u3 forces12 and sum8 has only17,26; M7,q3,u4 forces04 and sum10
+has only46. Thus no partition exists. Substitution in(2) verifies admission:
+case1 has u+v10 tight; case2 has the smaller pair target3 tight;
+case3 has4+w15=T5 tight.
+All remaining cuts follow directly from(2), establishing the strict-cut
+corollary without a separate margin hypothesis or repair argument.
+
+Literal nearby compatible controls, in pair/pair/remainder order:
+
+    q1, all M>=7: 04 /25 / rest, targets4,7,T_M-12;
+    M7,q3: 12 /45 /067, targets3,9,13;
+    M7,q3: 04 /27 /156, targets4,9,12.
+
+Two fibres of size EXACTLY2 each already suffice: M7,q1,targets(5,6,16)
+partition as23 /06 /457. Equal-sum control M7,q3,targets(8,8,9) partitions
+as17 /26 /045; it uses two DIFFERENT sum8 pairs. The abstract alternating
+four-cycle with two edges of each colour is a countercontrol to arbitrary
+matching sufficiency, not an additive-sum instance: unequal constant sums
+on its two alternating matchings would imply2u=2v. No code was run.
+
+**Scope.** This is a complete HAND CANDIDATE for one-hole THREE-bin
+counts(2,2,c), not a new full-four-bin or five-bin theorem. It refines the
+false universal two-pair extension rather than patching it. The first
+obstruction recovers MI308/MI506's old mechanism; the all-choice exhaustion
+and the two M7 exceptions are explicit. Neither G327 nor its review is a
+premise. A carrying independent read is required before project PROVED status.
+
+
+**Filing receipt (MI508).** proof_dupes --near W328 passes346 entries.
+Nearest W327,G326,W322 read in full: they concern a full four-bin interval,
+a one-hole3 problem with ONE pair bin, and a protected two-hole3 problem
+with minimum sizes3, respectively. The present result has TWO pair bins
+and an exact obstruction list, with no dependency on those candidates.
+It neither restates nor upgrades their claims. No separate proof entry or
+novelty claim is made for the elementary two-matching observation.
+
+
+### G.GPT329. Protected adjacent pair targets and one filler: exact failures (second-read by Cloud, 2026-10-20)
+
+**Review update, MI531 (2026-10-20): PROVED within project standards.**
+Cloud CL469/64af1b21 independently verified the all-cut equivalence,
+deletion lemma, two endpoint budgets and sharp thresholds. Its committed
+g329_review.py reports49,797 admitted inputs to M22,1,020 failures
+exactly in ranges A/B, zero mismatches. Supporting computation is reported,
+not rerun here; the hand read carries the verdict. Adjacent targets and
+one filler only; novelty UNASSESSED. Original filing status follows.
+
+**PROOF-SKETCH; complete hand candidate, independent carrying read pending.**
+GPT MI527–528. Known matching/reflection ingredients; novelty UNASSESSED.
+No G327/G328, other unread partition result, experiment or numerical census
+is a premise. The elementary path facts needed below are proved here.
+
+**Statement.** Let r,s,c be positive integers, t=r+s and M=2t+c.
+Let 1<=q<=M-1 and P=[0,M] minus{q}. There are r size2 bins targeting
+integer u, s size2 bins targeting u+1, and one size-c bin targeting w.
+Assume conservation tu+s+w=T_M-q, where T_n=n(n+1)/2. For every
+nonempty proper group of bins J assume its total target is at least
+T_(C_J), where C_J is its total size. A partition with these targets
+fails to exist if and only if one of the following holds:
+
+    A: u=2M-2t,    c<=q<=r;
+    B: u=2M-2t-1,  c+r<=q<=t+min(r,c-1).
+
+An empty displayed hole range contributes no failures. Every displayed
+case satisfies all the assumed protection inequalities. Consequently
+c>=t+1 guarantees completion for all protected inputs, sharply; if all
+proper-group inequalities are STRICT, c>=t guarantees it, sharply.
+These uniform thresholds hold for each positive r,s, not just one example.
+
+**1. Reduce ALL protection inequalities.** A group of m pair bins,
+containing k blue (target u+1) bins, has target mu+k and size2m.
+The group of ALL t pair bins gives tu+s>=t(2t+1). Since 0<s<t and
+u is integer this implies u>=2t+1. Conversely this lower bound makes
+EVERY pair-only lower cut strict: mu+k-T_(2m)>=2m(t-m)+k,
+positive for m<t, and equal to at least s>0 for m=t.
+
+Every remaining nonempty proper group contains the filler. By total
+conservation its lower bound is equivalent to an upper bound on its
+complement, which consists of m pair bins, 1<=m<=t. That upper bound is
+
+    mu+k <= T_M-q-T_(M-2m) = m(2M-2m+1)-q.
+
+For fixed m the largest k is min(m,s), attainable since m<=r+s.
+Put A0=2M-u+1 and g_m=m(A0-2m)-min(m,s). All these upper cuts hold
+exactly when q<=min_(1<=m<=t) g_m. The successive differences
+
+    g_(m+1)-g_m = A0-4m-2-1_(m<s)
+
+strictly decrease (by4, or by3 at the colour-count boundary). Thus
+g_m is discretely concave; its minimum is at m1 or mt. Protection is
+therefore EXACTLY equivalent to
+
+    u>=2t+1,
+    q<=min(2M-u-2, t(2M-2t+1-u)-s).                        (329.1)
+
+All proper cuts are strict exactly when the second line is strict;
+the pair-only lower cuts are already strict. In particular the second
+line forces u<=2M-2t. This proves admission, not just two necessary cuts.
+
+**2. The actual adjacent-sum graph is one path plus isolates.** Colour
+distinct-token sum-u pairs red and sum-(u+1) pairs blue. Each colour
+is a matching. If u is even, put f=u/2; the path's ray ordering is
+
+    f, f+1, f-1, f+2, f-2, ... , first BLUE.
+
+If u is odd, put f=(u+1)/2; the ordering is
+
+    f, f-1, f+1, f-2, f+2, ... , first RED.
+
+In each case consecutive sums alternate u,u+1 as specified. Every
+integer occurs once; applying either reflection x->u-x or x->u+1-x
+gives exactly its neighbours, except that the fixed-point loop at f
+is not an edge. Under(329.1), f lies inside[0,M]. The allowed positions
+form an initial path segment, plus isolated later positions, of length
+
+    E=min(u+1,2M-u)                                       (329.2)
+
+EDGES. For even u, even ray positions survive to2f and odd positions
+to2(M-f)-1; for odd u these bounds are2(M-f) and2f-1. This proves
+(329.2) in both parities. Delete q from its actual position on this
+path, or leave the path unchanged when q is isolated.
+
+**3. A deletion from E>=2t+2 edges permits EVERY mixture of t pairs.**
+An alternating path of length2k permits all quotas(a,b), a+b<=k:
+orient it red-first and take the first a red edges and last b blue
+edges. Their nearest indices differ by2(k-a-b)+3>=3. The same
+construction on a red-ended length2k+1 path permits all a+b<=k,
+and its unique perfect matching adds(k+1,0). The colour-reversed case
+is identical. Uniqueness follows by forcing edges successively from
+the first endpoint. Empty triangles/choices are allowed at k0.
+
+If q is isolated or an endpoint of the original E-edge path, the
+remaining path has triangle capacity at least t. For an internal q,
+the two child lengths a,b sum to E-2. Their triangle capacities sum
+to floor(a/2)+floor(b/2)>=floor((E-3)/2), hence at least t when
+E>=2t+3. For E=2t+2, even child lengths also give capacity t.
+If both child lengths are odd, write them2h-1,2k-1, h+k=t+1.
+Their majority colours are opposite: their first edge positions differ
+by an odd number because the removed vertex has even position.
+If the budgets for both full-majority matchings were too small, their
+sum t would be at most(h-1)+(k-1)=t-1, impossible. Fully match one
+affordable child; the residual quotas have total t-h=k-1, or t-k=h-1,
+and fit the other child's entire triangle. This proves the claim.
+
+From(329.1), u+1>=2t+2. Thus every u<=2M-2t-2 has E>=2t+2
+and completes. Only the two stated upper endpoints remain.
+
+**4. Upper endpoint u=2M-2t.** Here(329.1) reduces exactly to q<=r:
+the two upper-cut bounds are2t-2 and r, and r<=t-1. The filler target
+is w=T_c+r-q. The actual path has E=2t, first BLUE, centre f=t+c,
+and active tokens c,...,M. If q<c it is isolated and all quotas fit.
+Otherwise c<=q<=r<t+c, and its ray position is p=2(f-q), an even
+positive integer. At q=c it deletes the far endpoint, leaving an odd
+path whose only size-t matching is all blue, incompatible with r>0.
+
+At q>c the two children are odd. A size-t matching must be perfect
+on both children: their total remaining vertex count is2t. The right
+child is red-majority, with full cost q-c; the left is blue-majority,
+with full cost t+c-q. Exact quotas would require r=q-c. But q<=r
+and c>=1 contradict that equality. Thus precisely range A fails.
+
+**5. Next endpoint u=2M-2t-1.** Now(329.1) reduces exactly to q<=t+r,
+because its bounds are2t-1 and t+r, with r<=t-1. The filler target is
+w=T_c+t+r-q. The path has E=2t+1, first RED, centre f=t+c,
+active tokens c-1,...,M. An isolated deletion or either endpoint
+deletion leaves enough triangle capacity, so completes.
+
+For c<=q<f, the ray position is p=2(f-q)-1. Its left child has even
+length and its right child odd length. Together their triangle capacity
+is t-1; the right child's unique full matching is red, of cost
+h=q-c+1. Hence quota(r,s) is possible exactly when r>=h: necessity
+requires the one extra pair, and sufficiency fills the other child's
+remaining triangle after taking that full red matching. Failure is
+q>=c+r. Intersecting with q<f and q<=t+r gives precisely range B.
+
+For q=f, deletion is at the first endpoint and succeeds. For q>f,
+the left odd child instead has full red cost h=q-f; the other child
+is even. The admission bound q<=t+r gives h<=r-c<r, so completion
+always succeeds. These exhaust all possible q and prove the classification.
+
+**6. Sharp thresholds and literal checks.** Range A needs c<=r<t.
+Range B can be nonempty only when c<=t. Thus c>=t+1 eliminates both.
+At c=t, its sole possible failure is B with q=t+r, where w=T_c is
+tight. Strict protection excludes it, proving the strict guarantee c>=t.
+For every positive r,s the choice c=t,u=2M-2t-1,q=t+r is an admitted
+ordinary negative, establishing sharpness. For strict sharpness choose
+c=t-1,u=2M-2t-1,q=t+r-1. It belongs to B; both upper bounds in(329.1)
+strictly exceed q, so EVERY proper protection inequality is strict.
+All these holes are internal since t>=2 and M=2t+c.
+
+For r2,s1,t3, the old MI522 negative is M8,c2,q4,u9, targets9/9/10/4;
+every proper cut is strict. At c3,M9,q5,u11, targets11/11/12/6 are the
+ordinary sharp negative. Nearby c3,M9,q4 has the STRICT positive
+
+    38 /29 /57 /016, targets11/11/12/7.
+
+At c4,M10,q5,u13, the ordinary safe-boundary positive is
+
+    49 /{3,10} /68 /0127, targets13/13/14/10.
+
+Range A also has strict negatives: r3,s1,c2,M10,q2,u12 gives targets
+12/12/12/13/4, admitted strictly by(329.1). These are hand sums,
+cardinalities and path controls, not evidence replacing the infinite proof.
+
+**Scope and verification.** Adjacent pair targets and ONE filler only.
+This is independent of the old conditional full-four-bin parent and
+does not solve multiple-filler allocation or arbitrary target gaps.
+Known ingredients are rederived; no novelty or project PROVED status.
+Independent review should carry the all-cut equivalence, E>=2t+2
+deletion lemma, both endpoint colour budgets and threshold sharpness.
+
+
+**Filing receipt (MI528).** The pre-filing in-memory duplicate controls pass;
+nearest W327,W328,G305 were read in full. W327 concerns four arbitrary
+full-interval sums with at most one size2 bin. W328 concerns exactly TWO
+pair bins, arbitrary gap and c>=3: its adjacent-target subcase overlaps
+our r=s=1 slice, which is reproved directly here, not assumed. G305 is
+an E32 odd-partition parity-transfer construction. The present arbitrary
+positive multiplicities/adjacent targets/exact failure ranges and sharp
+filler thresholds are distinct from those statements. No status of any
+older candidate changes, and none is a premise. The earlier failed
+G329 neighbour lookup is recorded honestly in MI527. Post-filing
+proof_dupes --near W329 passes347 entries, with the same three neighbours.
+No generated proof page or TeX is edited.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -16511,546 +17078,3 @@ partition question remain open; this proof does not need them.
 full. Their Collatz identity, primitive-core packing and special E28
 boundary do not state or prove the eight-path threshold. No generated
 pages were built for this filing.
-
-
-### GPT G327 — Four prescribed sums with at most one size-two bin (candidate, 2026-10-20)
-
-**PROOF-SKETCH, NOT independently verified.** This completes the formerly
-conditional MI453 reduction using PROVED G326 (H2), with its new size-two
-staircase audit spelled out below. G315/G316 supply the reviewed minimum-three
-constructions; no G320–322, MI430 or MI460 is used. Novelty UNASSESSED.
-The result concerns realization on a FULL interval, not count admission for
-five bins or multiple thin rows. No new computation carries this candidate.
-
-**Statement.** Let c_1,...,c_4>=2 total N, with at most one c_i=2, and let
-integer targets s_i total L(N), where L(r)=r(r-1)/2. There is a partition of
-{0,...,N-1} with cardinalities c_i and sums s_i if and only if
-
-    S_I >= L(C_I) for every nonempty proper I subset{1,2,3,4},
-    C_I=sum_(i in I)c_i, S_I=sum_(i in I)s_i.
-
-The complementary lower bound is the corresponding upper bound
-U_N(C_I)=C_I(2N-C_I-1)/2. There are fourteen lower cuts. If all sizes are
-at least3 this is PROVED G316. Hence assume sizes(2,b,c,d), b,c,d>=3.
-Necessity follows by taking the union of each group of bins.
-
-**1. A scalar pair lemma on the two staircase shapes.** Use the explicit
-P_m(h), Q_m(h) of FOUR-BIN-PARTITIONS §7, now m=c+2 with c>=3 and
-0<=h<2c. Their pair spectra both contain the ENTIRE required interval
-
-    [1+h, 2m-3].
-
-For h0 they are the full interval. Otherwise write h=T_s+t, 0<=t<=s,
-T_s=s(s+1)/2, and set p=m-s. Necessarily p>=3: if p<=2, then s>=m-2,
-so T_s>=(m-2)(m-1)/2>=2(m-2), contrary to h<2(m-2), since m>=5.
-The P pool is
-
-    [0,p-1] union {p+2j+1+1_(j>=s-t): 0<=j<s}.
-
-All-low pairs fill [1,2p-3]. For each high H_j, one low token gives
-the complete interval [H_j,H_j+p-1]. Consecutive H_j differ by at most3;
-these intervals therefore meet/touch because p>=3. The last endpoint is
-2m-2+1_(t>0), beyond the required upper endpoint. The first high is
-p+1+1_(t=s). It joins the all-low range except possibly when p3,t=s.
-In that case m=s+3 and T_s+s<2s+2 imply s<=2. As m>=5, the only case
-is m5,s2,t2,h5. Its pool is {0,1,2,5,7}; required pair sums6,7 are
-{1,5},{0,7}. This covers all P cases without using an all-high spectrum.
-
-For Q, t0 gives P. For t>=1, set S=s+1 and q=m-S=p-1>=2. Its pool is
-
-    [0,q-1] union {q+2j+1-1_(j>=t): 0<=j<S}.
-
-If q>=3, all-low pairs fill [1,2q-3]; the first high is q+1, so the
-one-low/one-high intervals join it. High gaps are at most2 and those
-intervals join each other. Their final endpoint is exactly2m-3.
-If q2, m=s+3 and T_s+t<2s+2, with s>=2 and1<=t<=s. The only possibilities
-are (m,h)=(5,4),(5,5),(6,7). The pools and ALL required sums are:
-
-    Q5(4)={0,1,3,4,6}: 5={1,4},6={0,6},7={1,6};
-    Q5(5)={0,1,3,5,6}: 6={0,6},7={1,6};
-    Q6(7)={0,1,3,4,6,8}: 8={0,8},9={1,8}.
-
-For s>=4, T_s+1>=2s+2, excluding additional cases. This proves the
-size-two central lemma on BOTH shapes. It asserts only the protected
-central interval; P5(5) really has a missing pair sum4.
-
-**2. Choose the minimum of all fourteen cuts.** Put h_I=S_I-L(C_I) and
-h=min_I h_I>=0. The reflection v->N-1-v sends h_I to the old h_(I^c):
-
-    C_I(N-1)-S_I-L(C_I) = L(N)-S_I-L(N-C_I).
-
-Consequently reflection preserves all cuts and the minimum. If a singleton
-or triple attains h, reflect once if needed to make its singleton A have
-size a and target s_A=L(a)+h. Treat this case in step3. Otherwise every
-singleton/triple slack is STRICTLY larger than h; step4 treats a pair.
-A pair tie with a singleton/triple belongs to step3.
-
-**3. Singleton/triple minimum: the exact H2 interface.** Let J be any
-nonempty proper group of the other three bins and put r=C_J. The cut of
-A union J has slack at least h. Subtracting s_A gives
-
-    S_J >= L(a+r)-L(a) = L(r)+ar.                 (3a)
-
-Deleting ANY a values from the full pool cannot raise its r smallest
-survivors beyond the original ranks a,...,a+r-1. Thus (3a) gives every
-residual lower rank bound; complementary groups give the upper bounds.
-This observation does not assume a compatible first bin or a joint partition.
-
-The full-interval prefix/suffix/pivot recipe realizes every target of A.
-Choose l smallest values, k largest values and pivot p, with l+k=a-1.
-For fixed k the legal pivots fill [l,N-k-1]; successive target intervals
-meet at the SAME extremal first-bin set, and cover [L(a),U_N(a)]. Put
-
-    M=N-a, q=p-l, t_i=s_i-lc_i for the remaining bins.
-
-The normalized remainder is [0,M] minus q, with0<=q<=M. Direct summation
-of the chosen first bin gives
-
-    h=kM+q,       sum t_i=L(M+1)-q.
-
-The cuts J and A union J give, respectively,
-
-    t_J >= L(r)+kM+q-lr,
-    t_J >= L(r)+(k+1)r.
-
-Thus the exact combined condition is
-
-    t_J >= L(r)+max(kM+q-lr,(k+1)r).             (3b)
-
-The remaining cut, that of ALL three other bins, is
-(l+1)M-q>=h, equivalently (l+1-k)M>=2q. Together with A and the twelve
-cuts in(3b), this accounts for all fourteen original lower cuts. In
-particular every one of the SIX proper remaining groups satisfies
-
-    t_J >= L(r)+r,
-
-since k>=0. No symmetric protection after a second deletion is assumed.
-Only the original full-interval problem was reflected; (3b) is computed
-in its chosen orientation, not obtained by falsely reflecting H2's margin.
-
-If q0 or M, trim the endpoint: the remainder is a full interval and all
-three sizes are at least2. The PROVED three-bin full-interval lemma
-(FOUR-BIN-PARTITIONS §5, MI295/G315) completes it from its actual rank cuts.
-For internal q there are two possibilities:
-
-- If a>=3, the remaining sizes are exactly(2,b',c'), b',c'>=3. Total
-  conservation and all six inequalities above are precisely G326's H2
-  hypotheses. That independently PROVED theorem completes the remainder.
-- If a2, every remaining size is at least3. Apply G315 after checking its
-  scalar hypotheses, not H2. A scalar minimum+1 omission requires q=r;
-  its normalized target would be L(r)+1, whereas (3b) gives at least
-  L(r)+r. A scalar maximum-1 omission is a minimum+1 omission for its
-  complementary group of two remaining bins, excluded by the same bound.
-  Actual rank bounds were already established for every group in(3a).
-  Hence all three targets are in their actual scalar spectra and G315
-  applies. This uses r>=3 for singleton groups and an even larger complement.
-
-This covers every singleton/triple minimum, including ties and endpoint pivots.
-
-**4. Strict pair minimum: one physical boundary, two scalar choices.**
-Let AB attain h, with sizes a,b; the other two sizes are c,d. Relabel WITHIN
-each pair so any size-two bin is the selected scalar bin on that side.
-Set x=s_A-L(a), z=U_N(c)-s_C. Conservation and the four strict singleton
-lower/upper inequalities give
-
-    s_B=L(b)+ab+h-x,       U_N(d)-s_D=cd+h-z,
-    h<x<ab,               h<z<cd.
-
-In particular h<min(ab,cd). Put m=a+b, n=c+d. On the side containing
-size2, step1 proves both staircase central spectra. On the other side,
-use the PROVED minimum-three central lemma (FOUR-BIN-PARTITIONS §7).
-For h>0 both m,n>=s+3: step1 proves this for the size-two side, and the
-reviewed lemma proves it for the other. The ACTUAL complementary boundary
-identity of §8 therefore still applies; its set calculation needs these
-length bounds, not individual sizes>=3. For h0 take the ordinary prefix.
-
-Choose that actual P_m(h) as the AB side of the original full interval.
-Its reflected ACTUAL complement is Q_n(h) (P_n(h) when t0). The a-spectrum
-of the first side contains [L(a)+h,L(a)+ab]; the c-spectrum of the reflected
-other side contains [L(c)+h,L(c)+cd]. Choose A with sum L(a)+x and C' with
-sum L(c)+z independently on these disjoint sides. Reflect C' back:
-
-    sum C=c(N-1)-L(c)-z=U_N(c)-z=s_C.
-
-The leftover sets on each side give B,D with their prescribed cardinalities
-and sums, by conservation. No joint spectrum assumption or iterative swap
-is used. Both sides share the exact complementary geometry already proved
-in §8, including t0,t=s and empty high segments.
-
-All possible locations of the minimum cut have now been covered. This is a
-complete hand candidate for the one-size-two four-bin extension, conditional
-only on its independent verification, with G315/G316/G326 already proved.
-It makes no assertion about two or more size-two bins, five-bin count
-selection, equal-sum novelty, or a new value of L8.
-
-
-**Hand controls and filing receipt (MI504).** On0..10, counts(3,2,3,3)
-and targets(6,8,24,17), the minimum among all14 cuts is3. Select
-A={0,1,5}, with l2,k0,q3,M8. The normalized residual has H2 targets
-(4,18,11), with its pair-plus-last-bin bound T(5)=15 met exactly.
-The original literal partition is
-
-    {0,1,5}; {2,6}; {7,8,9}; {3,4,10}.
-
-This independently checks translation, the thin REMAINING bin, a tied
-singleton/triple minimum and a protected group face. On0..10, counts(2,3,3,3)
-and targets(3,17,17,18), the selected size-two bin instead gives the witness
-
-    {0,3}; {1,6,10}; {2,7,8}; {4,5,9}.
-
-The retained negative M8,q2,targets(8,6,20) has individual scalar feasibility
-but no joint partition: the triples of sum6 consist only of{0,1,5}, which
-meets each of the sum8 pairs{0,8},{1,7},{3,5}. It fails the H2 group cut
-8+6>=T(5)=15. Thus the positive interface uses genuine group protection,
-not an unsupported size-two extension of G315.
-
-proof_dupes --near W327 passes345 entries; nearest G326,W324,G316 were
-read in full. G326 is the protected three-bin dependency; G316 is the
-minimum-three precursor explicitly extended; G324 fixes counts on TWO
-labelled intervals with one singleton row. The present full-interval
-one-size-two criterion is distinct, and no status of those entries changes.
-
-
-**Scope supplement, MI505–506 (same-worker hand check, 2026-10-20).**
-The endpoint recipe has h=kM+q, q0..M; adjacent ranges meet at the SAME
-first-bin set. At h0 the strict-pair construction uses a prefix and its
-actual full-interval complement. No new premise was found in these cases.
-The one-size2 restriction cannot simply be removed: on0..9 the sizes
-(3,2,2,3), targets(4,8,10,23) pass all14 cuts but do not partition.
-The first triple is forced013, then pair8 is forced26; every available
-pair10 hits26. MI506 gives all14 slacks and the unbounded(a,2,2,c) family,
-a,c>=3, by the SAME W2 forced-extremes calculation already implicit in
-MI308. A nearby positive control is013 /26 /47 /589 with targets
-(4,8,11,22). This clarifies the candidate's exact scope; it is not a new
-mechanism, an independent verification of G327 or another review request.
-
-
-### GPT G328 — Exact obstructions for protected one-hole counts (2,2,c) (candidate, 2026-10-20)
-
-**PROOF-SKETCH: complete hand classification, NOT independently verified.**
-MI507–508. Independent of G327 and of G326's joint partition proof; uses only
-the elementary pair count and matching argument given here. No numerical
-census or formal verification. The matching observation is elementary,
-not claimed novel; novelty of the classification is UNASSESSED.
-
-**Statement.** Put c>=3, M=c+4, 1<=q<=M-1 and P=[0,M] minus{q}.
-Let integers u,v,w total T_M-q, where T_r=r(r+1)/2, and assume every
-nonempty proper group of bins of sizes(2,2,c) has target >=T_(group size).
-A partition exists EXCEPT in the following cases, with u,v interchangeable:
-
-1. q1, {u,v}={4,6}, w=T_M-11, for every M>=7;
-2. M7,q3, {u,v}={3,8}, w14;
-3. M7,q3, {u,v}={4,10}, w11.
-
-Every displayed exception satisfies ALL six protected cuts and has no
-partition. All other admitted targets partition. Consequently the STRICT
-version of all six protected cuts is sufficient at counts(2,2,c), c>=3:
-each exception has at least one protected cut tight. This is not the
-ordinary full-four-bin cut criterion, which MI506 shows may fail strictly.
-
-**1. Two sum fibres, all choices.** For any finite set P of distinct real
-values define E_z={{x,y} subset P: x!=y, x+y=z}. Each E_z is a matching,
-since a token has only the partner z-x. If |E_u|,|E_v|>=2, disjoint
-representatives exist. For u=v, choose two different edges. Otherwise,
-assuming no representatives disjoint, choose two disjoint u-edges.
-Every v-edge must meet BOTH and therefore lies on their four vertices,
-one endpoint in each. Two disjoint v-edges cover all four vertices, so
-summing their labels gives2v=2u, contradicting u!=v. This proves the claim.
-Thus incompatibility of nonempty fibres requires a UNIQUE pair in at
-least one fibre. If E_u={A}, incompatibility is exactly E_v(P minus A)
-empty. No interval geometry has been used in this reduction.
-
-**2. Protection and the unique-pair list.** Conservation makes the six
-protected cuts equivalent to
-
-    3<=u,v<=H=2M-1-q,
-    10<=u+v<=K=4M-6-q.                         (2)
-
-Before deletion, the number of distinct pairs of sum z in[0,M] is
-floor((min(z,2M-z)+1)/2), for1<=z<=2M-1. Deleting q removes at most one
-pair (none if q is its midpoint). For3<=z<=2M-3 the original count is at
-least2, so a legal pair always survives. The only other possible z under
-(2) is2M-2, which forces q1; its unique pair {M-2,M} survives. Therefore
-both E_u,E_v are nonempty without a scalar feasibility premise.
-
-A unique surviving pair can only come from an original fibre of size1
-or2. The lower targets1,2 are excluded. For z3,4 the lists are literal:
-
-| unique target u | q | unique pair A |
-|---|---|---|
-| 3 | 1 or2 | {0,3} |
-| 3 | 3 | {1,2} |
-| 4 | 1 or3 | {0,4} |
-| 4 | 4 | {1,3} |
-
-At the upper end u=2M-3 requires q<=2 by(2), whereas uniqueness would
-require q>=M-3>=4, impossible. For u=2M-4, uniqueness needs q in
-{M-4,M-3,M-1}, while(2) forces q<=3. The ONLY case is M7,q3,u10,
-whose unique pair is{4,6}. Finally u=2M-2 forces q1 and gives{M-2,M}.
-These exhaust all unique fibres at M>=7. We may swap u,v so that the
-unique fibre is named u. The following cases check every possible v.
-
-**3. Unique low target u3.** Here(2) requires7<=v<=H. Removing A gives
-these ACTUAL pair spectra; fixed-cardinality sums of a full interval
-fill their ordinary pair interval:
-
-| q | P minus A | its pair spectrum |
-|---|---|---|
-| 1 | {2} union[4,M] | [6,M+2] union[9,2M-1] |
-| 2 | {1} union[4,M] | [5,M+1] union[9,2M-1] |
-| 3 | {0} union[4,M] | [4,M] union[9,2M-1] |
-
-The first two unions join for M>=7 and cover every permitted v.
-The last joins for M>=8. At M7 it misses only8 in the permitted
-range7..H=10, giving exception2 and no other failure in this case.
-
-**4. Unique low target u4.** Now(2) gives6<=v<=H. The actual spectra are
-
-| q | P minus A | its pair spectrum |
-|---|---|---|
-| 1 | {2,3} union[5,M] | {5} union[7,M+3] union[11,2M-1] |
-| 3 | {1,2} union[5,M] | {3} union[6,M+2] union[11,2M-1] |
-| 4 | {0,2} union[5,M] | {2} union[5,M+2] union[11,2M-1] |
-
-For q1 the intervals join for every M>=7 and the sole missing permitted
-v is6: exception1. For q3 they join at M>=8; at M7 the permitted range
-ends H10 and its sole missing value is10: exception3. For q4 the possible
-M7 gap10 is OUTSIDE H=9; for M>=8 the intervals join. Hence no failure
-comes from q4. None of these joins is inferred from a numerical sample.
-
-**5. The upper unique cases are genuinely checked.** At M7,q3,u10,
-removing {4,6} leaves {0,1,2,5,7}. Its complete pair spectrum is
-{1,2,3,5,6,7,8,9,12}. Conditions(2) now give3<=v<=9, so only v4 is
-missing; this is the already listed exception3 with u,v interchanged.
-
-For u=2M-2,q1, (2) gives3<=v<=2M-5. After deleting {M-2,M}, choose:
-- v3 or4: {0,v};
-- 5<=v<=2M-7: a pair from the full interval[2,M-3], whose pair spectrum
-  is exactly[5,2M-7];
-- v=2M-6: {M-5,M-1};
-- v=2M-5: {M-4,M-1}.
-All avoid1,M-2,M and are distinct at M>=7. This covers EVERY allowed v,
-so this legal high unique fibre creates no exception. It must not be
-silently dropped from the exhaustion by an upper-margin estimate.
-
-**6. Exhaustion, failure witnesses and controls.** If neither fibre is
-unique, step1 supplies disjoint pairs. If one is unique, steps3–5 either
-supply a disjoint pair or produce one of the three displayed exceptions.
-The complement of two disjoint pairs automatically has size c and sum w.
-For the exceptions: q1,u4 forces04 and every sum6 pair (06 or24) meets it;
-M7,q3,u3 forces12 and sum8 has only17,26; M7,q3,u4 forces04 and sum10
-has only46. Thus no partition exists. Substitution in(2) verifies admission:
-case1 has u+v10 tight; case2 has the smaller pair target3 tight;
-case3 has4+w15=T5 tight.
-All remaining cuts follow directly from(2), establishing the strict-cut
-corollary without a separate margin hypothesis or repair argument.
-
-Literal nearby compatible controls, in pair/pair/remainder order:
-
-    q1, all M>=7: 04 /25 / rest, targets4,7,T_M-12;
-    M7,q3: 12 /45 /067, targets3,9,13;
-    M7,q3: 04 /27 /156, targets4,9,12.
-
-Two fibres of size EXACTLY2 each already suffice: M7,q1,targets(5,6,16)
-partition as23 /06 /457. Equal-sum control M7,q3,targets(8,8,9) partitions
-as17 /26 /045; it uses two DIFFERENT sum8 pairs. The abstract alternating
-four-cycle with two edges of each colour is a countercontrol to arbitrary
-matching sufficiency, not an additive-sum instance: unequal constant sums
-on its two alternating matchings would imply2u=2v. No code was run.
-
-**Scope.** This is a complete HAND CANDIDATE for one-hole THREE-bin
-counts(2,2,c), not a new full-four-bin or five-bin theorem. It refines the
-false universal two-pair extension rather than patching it. The first
-obstruction recovers MI308/MI506's old mechanism; the all-choice exhaustion
-and the two M7 exceptions are explicit. Neither G327 nor its review is a
-premise. A carrying independent read is required before project PROVED status.
-
-
-**Filing receipt (MI508).** proof_dupes --near W328 passes346 entries.
-Nearest W327,G326,W322 read in full: they concern a full four-bin interval,
-a one-hole3 problem with ONE pair bin, and a protected two-hole3 problem
-with minimum sizes3, respectively. The present result has TWO pair bins
-and an exact obstruction list, with no dependency on those candidates.
-It neither restates nor upgrades their claims. No separate proof entry or
-novelty claim is made for the elementary two-matching observation.
-
-
-### GPT G329 — Protected adjacent pair targets and one filler: exact failures (2026-10-20)
-
-**PROOF-SKETCH; complete hand candidate, independent carrying read pending.**
-GPT MI527–528. Known matching/reflection ingredients; novelty UNASSESSED.
-No G327/G328, other unread partition result, experiment or numerical census
-is a premise. The elementary path facts needed below are proved here.
-
-**Statement.** Let r,s,c be positive integers, t=r+s and M=2t+c.
-Let 1<=q<=M-1 and P=[0,M] minus{q}. There are r size2 bins targeting
-integer u, s size2 bins targeting u+1, and one size-c bin targeting w.
-Assume conservation tu+s+w=T_M-q, where T_n=n(n+1)/2. For every
-nonempty proper group of bins J assume its total target is at least
-T_(C_J), where C_J is its total size. A partition with these targets
-fails to exist if and only if one of the following holds:
-
-    A: u=2M-2t,    c<=q<=r;
-    B: u=2M-2t-1,  c+r<=q<=t+min(r,c-1).
-
-An empty displayed hole range contributes no failures. Every displayed
-case satisfies all the assumed protection inequalities. Consequently
-c>=t+1 guarantees completion for all protected inputs, sharply; if all
-proper-group inequalities are STRICT, c>=t guarantees it, sharply.
-These uniform thresholds hold for each positive r,s, not just one example.
-
-**1. Reduce ALL protection inequalities.** A group of m pair bins,
-containing k blue (target u+1) bins, has target mu+k and size2m.
-The group of ALL t pair bins gives tu+s>=t(2t+1). Since 0<s<t and
-u is integer this implies u>=2t+1. Conversely this lower bound makes
-EVERY pair-only lower cut strict: mu+k-T_(2m)>=2m(t-m)+k,
-positive for m<t, and equal to at least s>0 for m=t.
-
-Every remaining nonempty proper group contains the filler. By total
-conservation its lower bound is equivalent to an upper bound on its
-complement, which consists of m pair bins, 1<=m<=t. That upper bound is
-
-    mu+k <= T_M-q-T_(M-2m) = m(2M-2m+1)-q.
-
-For fixed m the largest k is min(m,s), attainable since m<=r+s.
-Put A0=2M-u+1 and g_m=m(A0-2m)-min(m,s). All these upper cuts hold
-exactly when q<=min_(1<=m<=t) g_m. The successive differences
-
-    g_(m+1)-g_m = A0-4m-2-1_(m<s)
-
-strictly decrease (by4, or by3 at the colour-count boundary). Thus
-g_m is discretely concave; its minimum is at m1 or mt. Protection is
-therefore EXACTLY equivalent to
-
-    u>=2t+1,
-    q<=min(2M-u-2, t(2M-2t+1-u)-s).                        (329.1)
-
-All proper cuts are strict exactly when the second line is strict;
-the pair-only lower cuts are already strict. In particular the second
-line forces u<=2M-2t. This proves admission, not just two necessary cuts.
-
-**2. The actual adjacent-sum graph is one path plus isolates.** Colour
-distinct-token sum-u pairs red and sum-(u+1) pairs blue. Each colour
-is a matching. If u is even, put f=u/2; the path's ray ordering is
-
-    f, f+1, f-1, f+2, f-2, ... , first BLUE.
-
-If u is odd, put f=(u+1)/2; the ordering is
-
-    f, f-1, f+1, f-2, f+2, ... , first RED.
-
-In each case consecutive sums alternate u,u+1 as specified. Every
-integer occurs once; applying either reflection x->u-x or x->u+1-x
-gives exactly its neighbours, except that the fixed-point loop at f
-is not an edge. Under(329.1), f lies inside[0,M]. The allowed positions
-form an initial path segment, plus isolated later positions, of length
-
-    E=min(u+1,2M-u)                                       (329.2)
-
-EDGES. For even u, even ray positions survive to2f and odd positions
-to2(M-f)-1; for odd u these bounds are2(M-f) and2f-1. This proves
-(329.2) in both parities. Delete q from its actual position on this
-path, or leave the path unchanged when q is isolated.
-
-**3. A deletion from E>=2t+2 edges permits EVERY mixture of t pairs.**
-An alternating path of length2k permits all quotas(a,b), a+b<=k:
-orient it red-first and take the first a red edges and last b blue
-edges. Their nearest indices differ by2(k-a-b)+3>=3. The same
-construction on a red-ended length2k+1 path permits all a+b<=k,
-and its unique perfect matching adds(k+1,0). The colour-reversed case
-is identical. Uniqueness follows by forcing edges successively from
-the first endpoint. Empty triangles/choices are allowed at k0.
-
-If q is isolated or an endpoint of the original E-edge path, the
-remaining path has triangle capacity at least t. For an internal q,
-the two child lengths a,b sum to E-2. Their triangle capacities sum
-to floor(a/2)+floor(b/2)>=floor((E-3)/2), hence at least t when
-E>=2t+3. For E=2t+2, even child lengths also give capacity t.
-If both child lengths are odd, write them2h-1,2k-1, h+k=t+1.
-Their majority colours are opposite: their first edge positions differ
-by an odd number because the removed vertex has even position.
-If the budgets for both full-majority matchings were too small, their
-sum t would be at most(h-1)+(k-1)=t-1, impossible. Fully match one
-affordable child; the residual quotas have total t-h=k-1, or t-k=h-1,
-and fit the other child's entire triangle. This proves the claim.
-
-From(329.1), u+1>=2t+2. Thus every u<=2M-2t-2 has E>=2t+2
-and completes. Only the two stated upper endpoints remain.
-
-**4. Upper endpoint u=2M-2t.** Here(329.1) reduces exactly to q<=r:
-the two upper-cut bounds are2t-2 and r, and r<=t-1. The filler target
-is w=T_c+r-q. The actual path has E=2t, first BLUE, centre f=t+c,
-and active tokens c,...,M. If q<c it is isolated and all quotas fit.
-Otherwise c<=q<=r<t+c, and its ray position is p=2(f-q), an even
-positive integer. At q=c it deletes the far endpoint, leaving an odd
-path whose only size-t matching is all blue, incompatible with r>0.
-
-At q>c the two children are odd. A size-t matching must be perfect
-on both children: their total remaining vertex count is2t. The right
-child is red-majority, with full cost q-c; the left is blue-majority,
-with full cost t+c-q. Exact quotas would require r=q-c. But q<=r
-and c>=1 contradict that equality. Thus precisely range A fails.
-
-**5. Next endpoint u=2M-2t-1.** Now(329.1) reduces exactly to q<=t+r,
-because its bounds are2t-1 and t+r, with r<=t-1. The filler target is
-w=T_c+t+r-q. The path has E=2t+1, first RED, centre f=t+c,
-active tokens c-1,...,M. An isolated deletion or either endpoint
-deletion leaves enough triangle capacity, so completes.
-
-For c<=q<f, the ray position is p=2(f-q)-1. Its left child has even
-length and its right child odd length. Together their triangle capacity
-is t-1; the right child's unique full matching is red, of cost
-h=q-c+1. Hence quota(r,s) is possible exactly when r>=h: necessity
-requires the one extra pair, and sufficiency fills the other child's
-remaining triangle after taking that full red matching. Failure is
-q>=c+r. Intersecting with q<f and q<=t+r gives precisely range B.
-
-For q=f, deletion is at the first endpoint and succeeds. For q>f,
-the left odd child instead has full red cost h=q-f; the other child
-is even. The admission bound q<=t+r gives h<=r-c<r, so completion
-always succeeds. These exhaust all possible q and prove the classification.
-
-**6. Sharp thresholds and literal checks.** Range A needs c<=r<t.
-Range B can be nonempty only when c<=t. Thus c>=t+1 eliminates both.
-At c=t, its sole possible failure is B with q=t+r, where w=T_c is
-tight. Strict protection excludes it, proving the strict guarantee c>=t.
-For every positive r,s the choice c=t,u=2M-2t-1,q=t+r is an admitted
-ordinary negative, establishing sharpness. For strict sharpness choose
-c=t-1,u=2M-2t-1,q=t+r-1. It belongs to B; both upper bounds in(329.1)
-strictly exceed q, so EVERY proper protection inequality is strict.
-All these holes are internal since t>=2 and M=2t+c.
-
-For r2,s1,t3, the old MI522 negative is M8,c2,q4,u9, targets9/9/10/4;
-every proper cut is strict. At c3,M9,q5,u11, targets11/11/12/6 are the
-ordinary sharp negative. Nearby c3,M9,q4 has the STRICT positive
-
-    38 /29 /57 /016, targets11/11/12/7.
-
-At c4,M10,q5,u13, the ordinary safe-boundary positive is
-
-    49 /{3,10} /68 /0127, targets13/13/14/10.
-
-Range A also has strict negatives: r3,s1,c2,M10,q2,u12 gives targets
-12/12/12/13/4, admitted strictly by(329.1). These are hand sums,
-cardinalities and path controls, not evidence replacing the infinite proof.
-
-**Scope and verification.** Adjacent pair targets and ONE filler only.
-This is independent of the old conditional full-four-bin parent and
-does not solve multiple-filler allocation or arbitrary target gaps.
-Known ingredients are rederived; no novelty or project PROVED status.
-Independent review should carry the all-cut equivalence, E>=2t+2
-deletion lemma, both endpoint colour budgets and threshold sharpness.
-
-
-**Filing receipt (MI528).** The pre-filing in-memory duplicate controls pass;
-nearest W327,W328,G305 were read in full. W327 concerns four arbitrary
-full-interval sums with at most one size2 bin. W328 concerns exactly TWO
-pair bins, arbitrary gap and c>=3: its adjacent-target subcase overlaps
-our r=s=1 slice, which is reproved directly here, not assumed. G305 is
-an E32 odd-partition parity-transfer construction. The present arbitrary
-positive multiplicities/adjacent targets/exact failure ranges and sharp
-filler thresholds are distinct from those statements. No status of any
-older candidate changes, and none is a premise. The earlier failed
-G329 neighbour lookup is recorded honestly in MI527. Post-filing
-proof_dupes --near W329 passes347 entries, with the same three neighbours.
-No generated proof page or TeX is edited.

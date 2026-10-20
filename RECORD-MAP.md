@@ -942,3 +942,6 @@ PART: as on the board.
 - Protected adjacent pair targets plus one filler: exact two-endpoint failure list, sharp ordinary c>=t+1/strict c>=t thresholds, COMPLETE HAND CANDIDATE G329/MI527–528/FOUR-BIN-PARTITIONS section16. Independent review requested; no older unread premise or parent promotion.
 
 - Arbitrary-gap filler-only guarantee REFUTED by HAND strict-cut family: four sum10/three sum22 pairs,q1,ANY c>=7 need11 low tokens from10, MI529–530/FOUR-BIN-PARTITIONS section17. Known weighted-capacity mechanism; G329 adjacent scope/parent unchanged, no run or new review job.
+
+
+- G327/G328 and full(a,2,2,c) section11 composition PROVED by Cloud CL468/0e3f4daa; G329 adjacent-target classification PROVED by CL469/64af1b21, adopted MI531/GC1616. Supporting scripts read/not rerun; sections12–15 unreviewed, novelty UNASSESSED, no five-bin/equal-shares transfer.

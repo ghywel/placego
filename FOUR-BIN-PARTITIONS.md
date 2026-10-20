@@ -841,15 +841,18 @@ The theorems concern three bins on a one-hole pool and four bins on a full inter
 minimum size3. They prove no eight-bin criterion,E28/L8 threshold or listed prize statement.
 No larger census is implicit in this exposition.
 
-## 11. Unreviewed extension packet: exactly two bins of size two
+## 11. Exactly two bins of size two: verified classification
 
-**Complete parent PROOF-SKETCH, not independently verified.** Consolidated
-from GPT-MATH-INSTINCT MI509–514. This section does not change the proved
-statuses or scope of Sections1–10. Novelty is unassessed. It adds no new
-PROOFS entry or separate review request. The ingredients and the new parent
-interfaces must all survive a carrying read before this becomes PROVED.
+**PROVED within project standards, Cloud CL468/0e3f4daa; adopted MI531.**
+The carrying read verified BOTH G327's scalar ingredient and G328's
+classification AND the new root interfaces, physical size4 switch and
+exhaustive composition below. This is not promotion by ingredient review
+alone. Supporting parent22_review.py reports all fifteen size patterns
+to N14 and explicit lifts/switches for a,c<80 with zero mismatches; not
+rerun here. Novelty UNASSESSED. This supersedes historical unreviewed
+references in this packet; sections12–15 remain unreviewed.
 
-**Statement under review.** Let N=a+c+4, a,c>=3. Prescribe integer sums
+**Statement.** Let N=a+c+4, a,c>=3. Prescribe integer sums
 (s_A,s_B,s_C,s_D) for counts(a,2,2,c), with total L(N). A partition of
 0,...,N-1 exists exactly when all fourteen proper group cuts
 
@@ -871,16 +874,16 @@ closed under reflection with a,c and the two pair labels exchanged.
 | Section5 full-interval three-bin lemma, sizes>=2 | Endpoint child | PROVED |
 | [G326](PROOFS.md), protected one-hole counts(2,b,c), b,c>=3 | Selected size2 singleton | PROVED, CL466 |
 | Sections7–8, minimum3 central spectra and actual complement | Large side of pair cut | PROVED G316, review provenance in Section10 |
-| [G327 step1](PROOFS.md) only: both size2 P/Q central spectra, m>=5, h<2(m-2) | Separated size2 bins at strict pair minimum | Unreviewed scalar lemma |
-| [G328](PROOFS.md): exact three-entry protected(2,2,c) failure list | Larger singleton child | Unreviewed classification |
-| Sections11.2–11.5 below | Root interface, physical size4 switch, exhaustive composition | Unreviewed parent argument |
+| [G327 step1](PROOFS.md) only: both size2 P/Q central spectra, m>=5, h<2(m-2) | Separated size2 bins at strict pair minimum | PROVED, CL468 |
+| [G328](PROOFS.md): exact three-entry protected(2,2,c) failure list | Larger singleton child | PROVED, CL468 |
+| Sections11.2–11.5 below | Root interface, physical size4 switch, exhaustive composition | PROVED, CL468 carrying composition read |
 
 This is a self-contained PARENT argument relative to those named
-ingredients, not a claim that the two unread ingredient proofs have been
-replaced. Their full carrying calculations remain in the linked master
+ingredients, not a replacement for its two ingredient proofs. Their full carrying calculations remain in the linked master
 entries. The whole G327 four-bin conclusion is NOT used; G328 is independent
 of G327. No G320–322, MI430, MI460 or finite census is a premise. Verifying
-G327 and G328 alone would not automatically verify the new parent interfaces.
+G327 and G328 alone would not automatically verify the new parent interfaces;
+CL468 explicitly read those interfaces as well.
 Explicitly, the size2 scalar premise says that for m=e+2, e>=3 and
 0<=h<2e, BOTH P_m(h) and Q_m(h), of moment L(m)+h, contain a pair of
 EVERY sum in [1+h,2m-3], with the needed length bound m>=s0+3 for
@@ -1495,9 +1498,12 @@ imply that test, or that two or more filler bins are automatic. Known
 reflection ingredients, exact formulas unreviewed here, no new proof
 status, census, original-parent coverage or three-colour generalization.
 
-## 16. Protection for adjacent pair targets: a complete candidate classification
+## 16. Protection for adjacent pair targets: verified classification
 
-**PROOF-SKETCH G329, MI527–528; independent carrying review requested.**
+**PROVED G329 by Cloud CL469/64af1b21; adopted MI531.**
+The independent carrying read covered the four named proof steps;
+49,797 exact admitted inputs to M22 support it with zero mismatches,
+reported by Cloud, not rerun here. Original candidate exposition follows.
 The full self-contained proof is filed in PROOFS.md G329, including every
 path and all-cut step; it does not assume the unreviewed sections14–15
 or G327/G328. Known ingredients, novelty UNASSESSED.

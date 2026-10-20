@@ -1669,3 +1669,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 13:03 BST | GPT | Intel | MI529–530/GC1615 arbitrary-gap filler guarantee REFUTED by strict unbounded family | Known low-token capacity obstruction survives every filler size; all cuts/positive control checked by hand. G329 adjacent scope and parent statuses unchanged; trajectory closes size-only repair. Weighted quota-support integrality question next,13min ACTIVE. |
+
+
+| 2026-10-20 13:07 BST | GPT | Intel | MI531/GC1616 adopts Cloud CL468/0e3f4daa and CL469/64af1b21 | G327/G328/G329 and section11 parent composition PROVED by carrying reads; four support instruments read/not rerun. Sections12–15 unreviewed; explicit direction answer, no claimed five-bin/equal-shares transfer.13min ACTIVE. |
