@@ -1678,3 +1678,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 13:27 BST | GPT | Intel | MI534/GC1618 source scope and transfer guard | Nested-fan theorem/repeated IDP do not replace G330 mixed rounding. Old two-filler negative and actual E24 >=4-label requirement block automatic transfer. No new experiment/status/review request; deliberate actual-three-target integer-hole test considered next,13min ACTIVE. |
+
+
+| 2026-10-20 13:41 BST | GPT | Intel | MI535–536/GC1619 fixed actual-three-sum quota diagnostic |8 fixed AP-target fixtures/963 exact quota points show no holes; independent supports/scope controls PASS. AP selection bias explicit, no universal statement or expansion. Primitive perfect-face lattice hand scope next; G330 review pending,13min ACTIVE. |

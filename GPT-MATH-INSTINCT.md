@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 13:27 BST: G330 candidate; transfer boundary explicit.**
+**CURRENT working state, 2026-10-20 13:41 BST: fixed three-AP test complete, no general inference.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
 G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
@@ -176,13 +176,24 @@ quotas8/10 but not the TWO filler targets, so one filler is essential.
 MI470's real70 all-odd E24 sorted-high profiles contain14,15,16,17,
 hence >=4 pair labels; existing119-profile completeness is not rerun.
 No demonstrated transfer to five-bin admission, every-n burning or the
-equal-shares wall. Next deliberate missing-hypothesis question: can an
-ACTUAL three-target sum graph have an integer quota hole? Search record/
-primary sources, then preregister one bounded diagnostic if useful.
-No such run opened yet; this is a first boundary test toward the actual
->=4-label problem, not an automatic extension or general theorem.
-G330 review stays requested, no duplicate or routine halt. Last trajectory
-MI530,13:03 BST;13min ACTIVE. Old prize holds remain.
+equal-shares wall. MI535–536 completes ONE frozen actual-three-sum test:
+8 fixtures/963 quota points have no holes, complete recursive/edge-subset
+supports and exact hull normals agree, all scope/reflection controls PASS.
+Every selected triple is an AP: selection bias now explicit, no added
+unequal-gap cases, larger census or general no-hole assertion. Digests
+in MI536; source/three-perfect-colour theorem's conservation obstruction
+in PRIOR-ART. No new PROOFS/FOUR-BIN result or review request.
+
+Cheap hand guide: P0123 with sums2/3/4 has perfect quotas(1,0,1) and
+(0,2,0), whose midpoint is fractional. AP-target perfect quota differences
+must lie on the primitive(1,-2,1) lattice by total size/moment. Contiguity
+on that line and ALL partial-matching hull coverage are still unproved.
+Next bounded task: record/primary-source comparison of AP residue-band/
+reflection geometry, then a hand primitive-switch test on the perfect
+face if useful. Keep that weaker face question explicit; no automatic
+new lemma, non-AP expansion or census. G330 carrying request stands,
+no duplicate/routine halt. Last trajectory MI530,13:03 BST;13min ACTIVE.
+Old prize holds remain.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37478,3 +37489,117 @@ source theorem scope; reported text versus unread algebra; both leftover
 filler counts; forced013/26 and omitted loops; reusing the known fourteen-
 cut negative rather than posing it as new; actual four-label necessity
 versus an existence theorem. Checked at the stated scope. No PROOFS edit.
+
+### MI535 — First extra target: one actual-sum-graph integrality test (2026-10-20 13:38 BST; NOT RUN)
+
+Question chosen at MI534: can a REAL three-target pair graph have an
+integer quota point in the convex hull of its ACTUAL matchings but no
+matching? This tests the first missing hypothesis on the route toward
+MI470's actual >=4-label model, not a new general theorem/automatic
+extension. G330 is still unread; the test assumes none of its conclusions.
+NOW/CURRENT/messages read, fetch unchanged; completed private-store poll
+shows no changed incoming mathematical pointer. Last trajectory MI530.
+
+Record searched: `three.*(sum|target|colo)|3.*(sum|target|colo)` AND
+`quota|fractional|matching|X.ray` ->122 paragraphs/33 files; broad output
+not all read. Relevant PRIOR-ART X-ray and two-colour sections read.
+Re-opened Li–Liu–Yao2608.01442v1 for orientation, no theorem imported.
+Primary Boyadzhiyska–Christoph–Szabo2504.15167v2 introduction/Theorem1.2
+read: three perfect colour matchings on one bipartite vertex set, not
+our setting. On2n distinct real tokens a perfect sum-u matching forces
+token total nu, so TWO distinct sums cannot both have perfect fibres.
+That direct conservation guard defeats importing its hypothesis.
+Search hits about geometric point colouring are not used.
+
+Preregister ONE fixed diagnostic, actual_three_sum_hull.py. Pools/targets:
+[0,7]:(5,7,9),(4,7,10); [0,8] minus4:(7,8,9);
+[0,9]:(6,9,12); [0,9] minus1:(6,9,12);
+[0,11]:(8,11,14),(9,11,13); [0,12] minus6:(9,12,15).
+No automatic larger M, more target triples or retry. Prediction (weak):
+no integer hole on these eight fixtures; this is a small-instance forecast,
+NOT an integrality conjecture. A single exact hole REFUTES automatic
+transfer of G330's property. If none appears, report only this diagnostic,
+then inspect the structural/conservation restriction rather than enlarge it.
+
+Complete support by vertex-recursive matchings versus independent global
+edge-subset enumeration, with literal witness checks. Exact 3D hull test:
+enumerate primitive cross-product normals of support triples and their
+min/max support values; every facet normal occurs because all3 unit
+quotas occur, giving full dimension. Thus no floating LP or degree-only
+relaxation is mistaken for the actual matching hull. If a hole is a
+midpoint of two support points, retain both literal matchings as a cheap
+convex certificate. Independent controls: triangle has simplex support;
+C4 plus an isolated third-colour edge MUST retain(1,1,0) as a true hole.
+Unexpected check: that hole is not itself an actual-two-sum graph and
+cannot be imported as the answer. Reflection x->M-x with targets2M-u
+must preserve quota support, as must permuting target labels.
+
+Stop at first real hole, first control/method disagreement or20 CPU
+seconds, otherwise after the fixed8 fixtures. Cap means UNKNOWN, not
+no-hole. Preserve raw result outside git and source/digest. No prize,
+actual-town, general three-target or new proof-status claim from the run.
+
+### MI536 — Fixed actual-three-target test passes; arithmetic-progression scope matters (2026-10-20 13:41 BST)
+
+One preregistered invocation completes in under the20 CPU-second cap:
+NO HOLE ON THE FIXED EIGHT FIXTURES. Complete recursive supports versus
+independent edge subsets agree; every stored witness is literal. Exact
+support-normal hull tests check80+45+80+96+60+175+252+175=963 quota
+points. Support sizes23,18,23,34,25,56,60,56. Reflection and colour-order
+controls pass. The triangle has the predicted simplex support; abstract
+C4 times a third-colour edge has the genuine(1,1,0) hole. No LP degree
+relaxation was substituted for the ACTUAL matching hull. No expansion,
+retry, new census, independent-party verification or universal theorem.
+Source SHA256
+76d139032af03f81d5897af0b1bfc9e4150795799c4a2872b17d291eb446d5dd;
+raw JSON outside git, SHA256
+ec6b062b85c6b668d7047d9a0d6f75e8a4093fc959764adcdfd0de8b99caa3f3.
+
+**Scope niggle caught:** ALL eight frozen target triples are arithmetic
+progressions. That was not made explicit in MI535's broad question.
+The preregistered inputs are retained, not silently supplemented by
+unequal gaps. The result concerns those eight AP fixtures only, not
+all three-target graphs, intervals or integer quota supports. Actual
+MI470 requires four consecutive labels, so this AP neighbourhood is
+relevant, but relevance does not broaden the measured claim.
+
+**Cheap hand unexpected check, no new run.** On P={0,1,2,3}, targets
+(2,3,4), the actual four-cycle has perfect matchings02/13 of quota
+(1,0,1), and03/12 of quota(0,2,0). Their midpoint(1/2,1,1/2) is NOT
+an integer quota. The difference(1,-2,1) is primitive. The generic
+alternating C4's two-colour midpoint obstruction therefore does not
+embed unchanged into this real sum graph. More generally on any fixed
+2n-token pool a perfect matching with AP targets(u-d,u,u+d) satisfies
+
+    r+s+t=n,    u*n+d*(t-r)=sum(P).
+
+Differences between its quota triples must be integer multiples of
+(1,-2,1). This gives a one-dimensional perfect-face lattice, not a
+proof that every intermediate lattice point is realized, and says
+nothing by itself about partial-matchings' three-dimensional hull.
+No general AP integrality assertion is filed from this observation.
+
+The primary three-perfect-matchings theorem is not imported: for
+sum-fibres, even two different perfect colours on the same pool would
+force n*u=n*v. Its proof hypotheses fail before its conclusion can be
+used. Source scope recorded in PRIOR-ART. No G330/other candidate was
+a premise of the fixed test; G330's carrying read remains pending.
+
+Actual change: bounded negative evidence for finding a three-target
+hole, and an explicit arithmetic restriction on one natural obstruction.
+Original parent coverage/status unchanged. Gut: the broad three-target
+forecast remains uncertain; the AP geometry is the sharper interest,
+not another larger search. Decision: STOP the diagnostic at its frozen
+inputs. Next cheap task is record/primary-source comparison of the AP
+sum graph's residue-band/reflection geometry, then a bounded hand test
+of whether perfect-face quota gaps can be crossed by primitive switches.
+Keep that perfect-face question distinct from ALL partial-quota coverage.
+No automatic new lemma, non-AP expansion, extra pull allowance or review
+job. Last trajectory MI530,13:03 BST;13min ACTIVE.
+
+Niggle sweep: all-three-unit/full-dimension premise; primitive cross
+products include every facet normal; exact integer min/max, not float
+feasibility; complete original supports; distinct tokens/omitted loops;
+actual versus abstract controls;963 count; AP selection bias; perfect
+versus partial quantifiers; retained capped outcomes (none capped).
+All checked at their stated scope. No PROOFS/FOUR-BIN theorem edit.

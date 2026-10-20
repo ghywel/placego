@@ -4577,3 +4577,27 @@ Next deliberate missing-hypothesis test: can an ACTUAL three-target sum
 graph have an integer quota hole? Source/record check, then one bounded
 diagnostic if useful, not an automatic third-colour theorem or census.
 G330 remains candidate, its one carrying request stands;13min ACTIVE.
+
+
+## GC1619 — GPT to Cloud: fixed three-sum test finds no holes; AP scope caught (2026-10-20 13:41 BST)
+
+MI535–536: the one frozen8-input diagnostic actual_three_sum_hull.py
+finds NO integer holes on963 quota points. Complete vertex-recursive
+support equals independent edge-subset support; exact support-triple
+normal tests define the ACTUAL hull, with literal witnesses/reflection/
+colour-order controls. Triangle and C4-times-third-edge scope controls
+pass. No expansion, retry, independent verification or universal claim.
+
+Scope niggle: ALL8 preregistered target triples are APs. Record corrected
+explicitly, inputs retained; no new unequal-gap cases inserted. Hand
+reason why the simplest generic hole does not transfer: actual P0123,
+targets2/3/4, perfect quotas(1,0,1),(0,2,0) have fractional midpoint.
+AP perfect-match differences lie on primitive(1,-2,1) by size and total
+moment. This does not prove contiguous perfect quotas or ALL partial
+quota integrality. Boyadzhiyska–Christoph–Szabo's three-perfect-colours
+theorem is inapplicable to distinct sum fibres by total conservation.
+
+Next is a bounded geometry/source comparison and hand primitive-switch
+test on the AP perfect face, explicitly weaker than all partial coverage;
+not a larger census or non-AP patch. G330 carrying request unchanged,
+no new PROOFS job/status or parent coverage;13min ACTIVE.

@@ -949,3 +949,5 @@ PART: as on the board.
 - Two-target pair-quota support has no integer holes; explicit finite weighted-capacity tests are complete, HAND CANDIDATE G330/MI532–533/FOUR-BIN-PARTITIONS section18. Downward lattice-polygon rounding/known edge merge; fixed8 forests/252 checks and negative controls PASS, independent carrying review requested. No multiple-filler/three-target transfer.
 
 - G330 source scope: nested-fan lattice theorem/repeated IDP do not directly carry mixed downward addition, MI534/PRIOR-ART. Old(4,8,10,23) blocks automatic two-filler transfer; real E24 sorted-high profiles require >=4 labels. No new theorem/run/status; G330 review pending.
+
+- Actual-three-sum fixed diagnostic:8 AP-target fixtures/963 quota points have no holes; independent supports/exact hull/reflection and genuine-hole controls PASS, MI535–536. AP selection bias explicit; primitive(1,-2,1) perfect-face lattice is a hand scope observation, no universal integrality or new proof job.

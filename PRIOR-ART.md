@@ -4157,3 +4157,22 @@ the mixed P_1+...+P_m lattice-addition assertion we need. The terminology
 is useful, but neither result is a replacement premise for G330's18.2.
 Bounded search only: exact matching specialization/anti-blocking mixed
 plane statement still NOT FOUND here; originality remains UNASSESSED.
+
+### Three perfect colour matchings are not three distinct sum fibres (2026-10-20; MI535–536)
+
+[Boyadzhiyska, Christoph and Szabo, Almost-perfect colorful matchings in
+three-edge-colored bipartite graphs,2504.15167v2](https://arxiv.org/html/2504.15167v2),
+introduction, Theorem1.2 and setup read, proof not imported. The theorem
+assumes three disjoint PERFECT colour matchings on the same bipartite
+vertex set, and supplies quotas totalling n-1. Those assumptions do not
+hold for distinct real-token pair sums: a perfect sum-u matching on2n
+tokens forces the total nu; two different perfect sum fibres would force
+u=v. This is a direct conservation scope check, not an objection to the
+source theorem. No absence, originality or new general matching result.
+
+Re-opened Li–Liu–Yao2608.01442v1 for X-ray terminology/orientation only;
+its binary restriction and degree relaxations are not substituted for
+our ACTUAL integral-matching quota hull. Broad searches and the existing
+record did not locate the exact three-sum no-hole question; no universal
+inference from that search or from the fixed8 arithmetic-progression
+fixtures/963 quota checks at MI536. No larger domain tested.
