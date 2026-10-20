@@ -38718,3 +38718,42 @@ branch. Gut: unease successfully sharpened the quantifier, with interest
 in the nonpartition obstruction. Reasoned: better strategy, no theorem
 or coverage upgrade. Last trajectory NOW MI56016:31 BST; no extra
 allowance.13min ACTIVE; old held lanes unchanged.
+
+### MI561 — One fixed balanced-cover ceiling diagnostic, preregistered (2026-10-20 16:44 BST)
+
+Continue MI560's actual crossing certificate. No root-submodularity,
+full-fibre inheritance or disjointness assumption. Question: is a simple
+sum of separate protected moment ceilings already sufficient to rule out
+an upper-count shortage in the FIRST central admissible fixture, M12,q6,
+counts3333, balanced groups34/124/13/2 of sizes6/9/6/3? This tests the
+threshold PROOF MECHANISM; it is not a target-town or partition census.
+No domain expansion to other counts, holes or M is authorized by its result.
+
+For each group's count budget r define F_c(r) as the largest separately
+protected target whose upper high-count endpoint is at most r. The direct
+formula is min(protected upper, f_c(r+1)-1) when r<min(c,H), and the
+protected upper at the capacity; discard F<T_c. Any actual violating
+endpoint vector has sum r<=2H-1 and necessarily sum F>=2sum(S).
+Thus maximum sum F<144 would certify this relaxed mechanism HERE.
+A maximum>=144 instead kills the relaxed argument HERE; it need not
+be a compatible target vector and does not refute the parent. Do not
+add target-compatibility filters after seeing the answer in this run.
+
+Prediction: maximum<144. Genuine counterfactual: a deficit allocation
+with ceiling sum>=144 invalidates the hoped-for separated ceiling proof.
+Independent engine A uses the row-minimum quadratic and direct budget
+products. Engine B enumerates4096 ACTUAL scalar subsets, derives count
+endpoints from their sums, then maximizes by budget DP. Compare all scalar
+ceilings, maximum values and literal witnesses. Controls: protected positive
+015/{2,7,12}/{3,8,10}/{4,9,11}; known merged-count3 versus child-maximum2
+incompatibility; unexpected size6,r1 option is EMPTY after protection.
+
+Record searched: balanced.*(count|selector|core)|double.cover|U34\+U124
+gave27 hits/11 files; MI557–560 and FOUR25 read, prior-art core/duality
+scope already recorded. No external theorem of count admission imported.
+Source tests/probes/instinct/balanced_count_ceiling.py, standard library.
+Caps exactly4096 scalar subset masks, at most2401 direct count allocations,
+5CPU seconds. One execution; raw output outside git. Stop on first mismatch,
+cap or completed diagnostic. No rerun/enlargement or new review request.
+The unbounded balanced inequality, G333's independent read and physical
+thin-row completion keep their existing statuses whatever this outcome.
