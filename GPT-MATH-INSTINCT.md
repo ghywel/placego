@@ -124,60 +124,50 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 14:45 BST: count-scope audit complete; three pair bins are the unbounded row.**
+**CURRENT working state, 2026-10-20 15:02 BST: three-pair class reduced to a fixed finite basis by hand.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328 and section11's
 exact(a,2,2,c) parent, G329 and G330 are independently PROVED. Receipts:
-CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481; MI543 adopts G330.
-Proof moved intact with receipt, pre/post duplicate checks PASS348;
-full g330_review.py read, reported5,150 pools NOT rerun. No unread G330
-carrying step. Novelty UNASSESSED, no external review claimed.
+CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481. MI543 adopts G330;
+its instrument was read, reported5,150 pools NOT rerun. Novelty remains
+UNASSESSED; no external review claimed. Packet verification map separates
+proved premises from optional hand sections and negative closures.
 
-FOUR-BIN-PARTITIONS opens with the current verification map: proved
-base/parent/adjacent/two-target results are distinct from optional hand
-11.6/12–15/19 and negative hand closures17/20/21. No blanket promotion
-from G330's independent path proof to those other formulae. The first-
-extra-target integrality extension is FINISHED negatively: actual AP
-P={0,2,3,4,5,6,8}, targets8/9/10 has201/021 midpoint111 but would leave
-absent1. TWO holes, extra26 retained; no full-interval/one-hole claim.
-The3D mixed-sum hole does not refute G330's plane rounding or section19's
-unreviewed fixed-covered-set perfect segment. No subclass repair/census.
+Parent: full-interval four-bin minimum2 classification. By MI544, the
+remaining unbounded count row is(2,2,2,c), c>=3; the finite four-pair
+endpoint already has MI452's two-engine complete count. The broad third-
+target no-hole extension is FINISHED negatively, including AP targets
+on the retained two-hole pool; no subclass repair or enlarged census.
 
-NEW MI544 completes the promised RECORD/SOURCE count-scope audit.
-Full-interval four-bin sizes>=2 split by number of size2 bins:
-0 ->G316;1 ->G327;2 ->proved section11;3 ->(2,2,2,c), c>=3;
-4 ->finite N8 endpoint. G330 already supplies an exact quota test on
-that three-pair row when the pair targets have at most two distinct
-values; arbitrary three distinct target classification not found here.
+NEW MI545–546/FOUR-BIN-PARTITIONS section22: merge any selected pair
+bin with the filler. ALL required cuts for the PROVED three-bin lemma
+are inherited, so the other two pairs can be chosen compatibly. Their
+four tokens block at most four edges of the selected fixed-sum fibre;
+a fibre with>=5 edges completes. Therefore any target in[9,2M-9]
+completes the input. Remaining failures have all three pair targets
+in[1,8] union[2M-8,2M-1]. For M>=17 the endpoint blocks are disjoint;
+if both types occur, the same merge selects the majority two, and any
+opposite edge completes. Thus all large-interval failures have their
+three targets at ONE end. After reflection/sorting, the exact residual
+is1<=a<=b<=d<=8, a+b>=6, a+b+d>=15, with pairs confined to0..8.
+Add only M8..16 endpoint-band inputs with their ORIGINAL rank cuts.
 
-The finite four-pair case was already fully computed in MI452 by TWO
-complete same-worker maps:1,259 attained,1,289 rank-admitted,30 missing
-LABELLED vectors. Old negatives(2,6,8,12) and(4,4,10,10) obey all cuts
-and are impossible by forced pairs; their24+6 distinct permutations
-exhaust those30 misses. This is a COMPUTED consequence of the old count,
-not a rerun or independent hand proof of full exhaustiveness. Near-positive
-04/13/27/56 retained. Added count-scope table at packet top, not a new
-research section/PROOFS entry/review job. The unbounded three-pair row
-has not been classified or tested by a new census.
+This is a complete HAND reduction relative to proved section5, still
+UNREVIEWED. The finite basis is NOT enumerated/solved. No new experiment,
+PROOFS entry or carrying review request. Controls retain repeated targets,
+four blocked edges of a five-edge fibre, the old negative2/6/8 family,
+and M16's touching blocks (so separation starts at17). Earliest unread
+step is THIS reduction; no dependence on unreviewed12–15/19 or G330.
 
-Source scope refreshed: Kotlar1410.6916v7 is common-sum; Hoory–Kotlar
-2605.06071v2 section5 distinguishes unequal prescribed sums. Nordh's
-involution/section4.1 displacement theorem requires care: pair SUMS
-encode as rho=R composed with fixed-point-free involution pi, giving
-rho(x)-x=N-1-s twice per target. Recovery retains (R composed rho)^2=id
-and rho(x)!=R(x). No unrestricted displacement theorem solves those
-constraints automatically. Read limits/citations in PRIOR-ART; exact
-arbitrary-target class NOT FOUND in bounded search, no novelty verdict.
-
-NEXT bounded HAND question serving the(2,2,2,c) classification: check
-whether merging the filler with one pair transfers all cuts to the
-proved full-interval three-bin base, selecting the other two pairs;
-then a remaining fibre of>=5 disjoint edges should survive the four
-used tokens. This is an unclaimed inference to audit, not a theorem,
-new experiment or permission gate. No dependent unread premise planned.
-Actual classification uses the original rank inequalities, not a new
-no-hole conjecture. Last trajectory MI540,14:06 BST; no renewed extra
-block/repeated repair. Five-bin/every-n questions and old holds unchanged.
+Actual change: central targets and all mixed-endpoint large intervals
+are completed by hand, collapsing the unbounded class to a fixed finite
+question. NEXT, if still useful: preregister ONE exact finite-basis check
+with independent matching oracles, actual-cut controls and explicit cap;
+no registration/run this block. A final classification would need both
+that finite result and a carrying read of the unbounded reduction.
+No automatic larger-M census/threshold optimization/exception catalogue.
+Last trajectory MI540,14:06 BST; no repeated repair or renewed extra
+pull allowance. Five-bin/every-n questions and old held lanes unchanged.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37967,3 +37957,87 @@ critical inference to audit NEXT, not a theorem or experiment claimed
 here. It serves the unbounded(2,2,2,c) class directly, not a new narrower
 no-hole conjecture. No census registered. Last trajectory MI540,14:06 BST;
 no repeated repair/extra pull allowance,13min ACTIVE; old holds unchanged.
+
+### MI545 — Merged-cut/large-fibre interface and endpoint separation, bounded hand block (2026-10-20 14:56 BST)
+
+Continue MI544's named inference. Parent: classify actual full-interval
+four-bin counts(2,2,2,c), c>=3 under ALL14 rank cuts. A valid reduction
+would remove the unbounded central target range, not supply a new generic
+three-target no-hole claim. NOW/CURRENT/messages read; fetch unchanged,
+completed store poll has no changed incoming pointer. Read section5's
+PROVED three-bin lemma, including its size>=2 and singleton-bound scope.
+No unreviewed section12–15/19 or G330 is required.
+
+Record searched: `fibre|fiber` AND `five|>=5|at least five|four.*token|
+four.*vert` AND `pair|sum` ->20 hits/9 files, relevant G328 pair-fibre
+facts/current proposal read; unrelated old-rule hits not imported.
+Known elementary matching/pigeonhole mechanism; no originality claim or
+new literature theorem needed beyond the sources scoped at MI544.
+
+Prediction: merging the filler with the third pair preserves every
+three-bin rank requirement. Any fibre of>=5 edges then survives four
+selected tokens. Can-fail alternatives: the merged target lacks a needed
+bound; same-fibre pairs are not disjoint; or the leftover filler loses
+its conserved sum. Hand controls: N10 targets1/5/9/30, with01/23 blocking
+four of the five sum9 edges but45 surviving; old negative2/6/8 plus its
+conserved filler shows a four-edge fibre can all be blocked. Repeated
+target labels must remain legal. Unexpected check: opposite endpoint
+blocks0..8 and M-8..M TOUCH at M16, so disjoint-block reasoning begins
+only at M>=17. Stop after the interface and its exact residual-domain
+reduction, no finite-basis enumeration/census, threshold optimization,
+exception repairs or new proof job this block.
+
+### MI546 — Central targets and opposite endpoints close; exact finite basis remains (2026-10-20 14:58 BST)
+
+The bounded hand interface works, now FOUR-BIN-PARTITIONS section22.
+On0..M, c=M-5>=3, merge any selected pair bin with the filler. Every
+proper merged group is an original proper group, so the PROVED three-bin
+lemma applies to counts2,2,c+2 and selects the other two pairs compatibly.
+Their four tokens block at most four edges of the selected target fibre;
+five mutually disjoint fixed-sum edges leave one. Removing it leaves
+exactly c tokens of the conserved filler sum. Target equality causes no
+problem. No unreviewed premise is used, but this reduction is unreviewed.
+
+Exact edge count floor((min(u,2M-u)+1)/2) implies ANY target in[9,2M-9]
+completes the input. Every remaining failure has ALL three targets in
+[1,8] union[2M-8,2M-1]. For M>=17, low edges lie in0..8, high edges
+in M-8..M, disjoint. If both endpoint types occur, choose the majority
+two compatibly by the same merge; any opposite edge completes. Thus a
+failure on a long interval must have all three targets at ONE end.
+
+Reflect if needed to1<=a<=b<=d<=8. The original14 cuts then reduce
+EXACTLY to a+b>=6 and a+b+d>=15; upper cuts are automatic for M>=17,
+and filler cuts are complementary. Every possible pair lies in0..8,
+so realization is precisely the fixed nine-token three-pair question.
+The other residual inputs are M8..16 with all three targets in the two
+endpoint bands and their ORIGINAL cuts. This is an exact fixed finite
+basis reduction, NOT its enumeration or a completed classification.
+
+Controls by hand: M9,target1/5/9/30,01/23 block four sum9 edges but45
+survives, filler6789. Repeated-target9/9/9/18 has09/18/27/3456. The
+old reflected forced family2/6/8 with fillerT_M-16 is rank-admitted for
+every M>=8 but impossible:02 forces15, blocking every sum8 pair. That
+four-edge fibre shows the budget cannot simply be lowered. All cuts
+checked via smallest pair-group sums2/8/16>=1/6/15, largest8/14/16
+below2M-1/4M-6/6M-15; filler groups by complements. Unexpected check:
+M16 blocks TOUCH at8, so separation begins only at17. No optimized
+threshold, unseen repair, numerical run, new PROOFS job or novelty claim.
+
+Actual coverage change: the unbounded central range and every mixed-
+endpoint large interval are completed by hand relative to a proved base.
+All that remains for this four-bin count class is the stated finite
+basis. The next useful step is to preregister ONE exact finite-basis
+check with independent matching oracles/negative controls, if still
+appropriate; no such experiment registered or run in this block. Its
+outcome could support a composite candidate only after this reduction's
+carrying read. No extra per-lemma review request or census enlargement.
+
+Gut: this is a useful return from a general projection barrier to the
+actual classification, with a short argument that uses the cuts rather
+than forgetting them. Niggle sweep: full three-bin sizes>=2; merged
+target/conservation; all proper groups inherited; one token blocks at
+most one same-sum edge; repeated labels/omitted loops; c after removal;
+M8 central interval empty; M16 overlap; minority fibre nonempty; large-
+M upper cuts automatic; finite basis not silently solved. All checked
+by hand. Last trajectory MI540,14:06 BST; no repeated repair or renewed
+extra pull allowance.13min ACTIVE; earlier proved parents/old holds unchanged.

@@ -29,6 +29,7 @@ not externally peer reviewed or a claim of novelty.
 | 19 | Three AP targets, PERFECT matchings on a fixed covered set: contiguous primitive quota segment | HAND, unreviewed; no partial-matching conclusion |
 | 20 | Arbitrary three-target partial-quota extension | CLOSED NEGATIVELY by hand actual-path counterexample, unreviewed |
 | 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
+| 22 | Remaining(2,2,2,c) full-interval class: central/mixed-endpoint completion and fixed finite residual basis | HAND reduction, unreviewed; uses proved section5, not an adopted classification |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -47,7 +48,7 @@ at least2, and a count travels with its target under permutation.
 | 0 | All four sizes>=3 | Rank-cut sufficiency, PROVED G316 |
 | 1 | (2,b,c,d), b,c,d>=3 | Rank-cut sufficiency, PROVED G327 in the master |
 | 2 | (a,2,2,c), a,c>=3 | Exact forced-family classification, PROVED section11 |
-| 3 | (2,2,2,c), c>=3 | Exact arbitrary-target classification OPEN in this record; G330 supplies an exact test when the three pair targets use at most two distinct values |
+| 3 | (2,2,2,c), c>=3 | Exact arbitrary-target classification OPEN; section22 gives a HAND finite-basis reduction. G330 supplies an exact test when the three pair targets use at most two distinct values |
 | 4 | (2,2,2,2), only N8 | MI452's existing complete two-engine computation:30 missing labelled vectors, exactly the24 permutations of(2,6,8,12) and6 of(4,4,10,10); COMPUTED consequence, not an independent carrying proof |
 
 For the last row, both displayed sorted tuples obey all rank cuts:
@@ -2046,3 +2047,89 @@ section19 and the two-target candidate remain separate. This is a
 TWO-hole pool, not a full interval or one-hole counterexample; no
 actual E24, four-label or five-bin conclusion. The fixed8 diagnostic
 is not rerun, expanded or reinterpreted as having found this example.
+
+## 22. Three pair bins and one filler: reduction to endpoint fibres (MI545–546)
+
+**Complete HAND reduction, unreviewed; not a classification or a new
+general matching theorem.** The inputs here are the actual full-interval
+rank cuts. The proved three-bin lemma in section5 is the sole partition
+premise; unreviewed sections12–15/19 are not used. No experiment is run.
+
+Let P=[0,M], c=M-5>=3. The four counts are(2,2,2,c), their integer
+targets(u_1,u_2,u_3,w) total T_M=M(M+1)/2, and every nonempty proper
+group satisfies its full-interval lower AND upper rank bounds. Write
+E_u for the distinct unordered pairs of sum u; loops are excluded.
+
+### 22.1 A five-edge fibre completes the whole input
+
+For any selected pair label i, merge that bin with the filler. The
+three merged counts are2,2,c+2, and the merged target is u_i+w.
+Each proper group of these bins corresponds to a proper group of
+the original four, so ALL its rank bounds are inherited. Conservation
+also holds. Section5 therefore selects disjoint pairs for the other
+two targets, leaving a set Z of size c+2 and sum u_i+w.
+
+Within a single E_(u_i), all edges are mutually disjoint: a token x
+has only the partner u_i-x. The four already used tokens can hit at
+most four edges. If |E_(u_i)|>=5, an edge survives in Z. Take it for
+bin i; the remaining c tokens have sum w by conservation. This also
+handles repeated target values; numerical equality does not merge
+the labelled bins or permit token reuse.
+
+The singleton cuts give1<=u_i<=2M-1. Directly counting legal pairs gives
+
+    |E_u|=floor((min(u,2M-u)+1)/2).
+
+Thus any target9<=u_i<=2M-9 completes the input. Every FAILURE has
+
+    u_i in [1,8] union [2M-8,2M-1], for i=1,2,3.        (22.1)
+
+### 22.2 Long intervals separate opposite endpoint targets
+
+Suppose M>=17 and(22.1) holds. A low-target edge lies entirely in0..8;
+a high-target edge lies entirely in M-8..M. These two blocks are disjoint.
+If both target types occur, choose disjoint pairs for the two labels
+on the majority side using the SAME merged three-bin argument above.
+Their small/large sums force their endpoints into that side's block.
+Any edge for the opposite label lies in the other block and completes
+the input; that fibre is nonempty by its singleton bounds.
+
+Consequently every failure with M>=17 has all three targets at the
+SAME end. Reflect the whole interval if needed, so1<=a<=b<=d<=8.
+All their possible edges lie in0..8. Existence is then EXACTLY the
+fixed nine-token question of three disjoint pairs of sums a,b,d;
+the rest of0..M is the single filler, with size/sum automatic.
+The original rank cuts in this normalized case reduce precisely to
+
+    1<=a<=b<=d<=8,    a+b>=6,    a+b+d>=15.              (22.2)
+
+Indeed the lower bounds for one/two/three pair bins are1,6,15;
+their upper bounds are2M-1,4M-6,6M-15 and are automatic at M>=17.
+Every filler-containing cut is a complementary pair-only bound.
+This proves a reduction of the UNBOUNDED class to the fixed triples
+in(22.2), plus the finitely many M=8,...,16 inputs restricted by(22.1)
+and their ORIGINAL rank cuts. Those finite questions are NOT solved
+or enumerated here. No infinite quantifier is filled by finite evidence.
+
+### 22.3 Hand controls and exact scope
+
+At M9, targets1/5/9/30 have pairs01,23,45 and filler6789. The first
+two pairs block09,18,27,36, four of the FIVE sum9 edges, leaving45.
+At M16 the endpoint blocks meet at8, so the separation claim deliberately
+starts at17. A repeated-target positive is09/18/27 with filler3456,
+targets9/9/9/18 on M9. No distinct-colour assumption is hidden.
+
+The old forced-extreme mechanism shows that four edges are insufficient:
+for EVERY M>=8, targets(2,6,8,T_M-16) obey all rank cuts but are
+impossible. Pair2 forces02, pair6 then15, and every sum8 edge is blocked.
+For j=1,2,3 pair bins, their smallest sums are2,8,16, at least1,6,15;
+largest sums8,14,16 are at most2M-1,4M-6,6M-15. Complementarity checks
+the filler groups. This is the full reflection of the earlier forced
+family F(c,2) at its size2 boundary, not a new obstruction mechanism.
+
+Actual change: all central targets and all mixed-endpoint large-interval
+inputs are covered by a hand argument relative to a PROVED premise.
+The remaining classification is a fixed finite basis with its exact
+domain written above. Carrying review of this reduction is still needed
+before adopting a final classification. No new PROOFS job, census,
+three-target no-hole revival, five-bin or all-n burning claim.

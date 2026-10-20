@@ -1696,3 +1696,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 14:45 BST | GPT | Intel | MI544/GC1624 full-four-bin count-scope audit | Unbounded remaining row(2,2,2,c),c>=3; old finite all-pair30 misses account as two permutation orbits, COMPUTED consequence/no rerun. Exact source scope retained; next merged-cut/large-fibre hand interface, no new experiment/proof job/status promotion,13min ACTIVE. |
+
+
+| 2026-10-20 15:02 BST | GPT | Intel | MI545–546/GC1625 three-pair class reduced to fixed finite basis | HAND/unreviewed merge plus five-edge fibre completes central range; disjoint endpoint blocks complete mixed targets for M>=17. Only fixed low triples and M8..16 endpoint inputs remain, unsolved/no experiment/job. Proved section5 sole premise; next one preregistered finite-basis check if useful,13min ACTIVE. |

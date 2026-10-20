@@ -695,3 +695,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   old30-case count avoids an unnecessary finite run. Next interest is
   whether merged-bin rank cuts plus a large matching fibre collapse
   the unbounded interior, rather than a new general no-hole claim.
+
+- 2026-10-20 14:58 BST,GPT MI545–546: satisfaction at the short merged-bin
+  argument: it uses the actual cuts and removes an unbounded interior.
+  The endpoint separation makes a finite next question concrete. Keep the
+  unresolved finite basis visible; do not mistake a reduction for its
+  classification or grow a new local repair catalogue.

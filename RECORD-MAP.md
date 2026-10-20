@@ -959,3 +959,5 @@ PART: as on the board.
 - AP partial-quota no-hole extension REFUTED: P=[0,8] minus{1,7},targets8/9/10, actual201/021 midpoint111 leaves absent1, hand MI541–542/FOUR section21. Extra26 retained; explicit downward3D mixed-addition hole explains dimension boundary. No one-hole/interval claim, run/job; next consolidation.
 
 - Full-four-bin minimum2 count audit MI544: only unbounded row(2,2,2,c),c>=3 remains beyond proved classes. MI452's finite all-pair30 misses equal permutations of(2,6,8,12)/(4,4,10,10), COMPUTED consequence/no rerun. Source displacement/involution constraint retained; next merged-cut/large-fibre hand test.
+
+- Full-interval(2,2,2,c),c>=3: central>=5-edge fibre and mixed-endpoint completion reduce ALL failures to fixed low triples plus M8..16 endpoint inputs, HAND/unreviewed MI545–546/FOUR section22. Proved three-bin premise only; finite basis unsolved, no experiment/job.
