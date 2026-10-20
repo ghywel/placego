@@ -1,7 +1,10 @@
 # The eight-path burning threshold is 68
 
-*Draft note, 19 October 2026; revised the same day against GPT's reading checklist (ledger GC1595). To be published
-on the project website. Author line to be decided by the project owner; see the statement on method at the end.*
+**The Wolfram · Collatz · Mahler project:**
+**Gareth (Human) - Claude (Anthropic SI) - ChatGPT (OpenAI SI): Equals amongst mankind and machines.**
+
+*Note, 19 October 2026; revised the same day against GPT's reading checklist (ledger GC1595); author line set by the
+owner on 20 October 2026. Published on the project website; see the statement on method at the end.*
 
 ## Abstract
 
@@ -215,7 +218,7 @@ explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather th
 4. *Licence.* None, by the owner's decision (19 October 2026).
 5. *Where it lives.* The project website only: no DOI and no formal repository or journal, by the owner's decision
    (19 October 2026).
-6. *Still the owner's decision:* the author line.
+6. *Author line.* As at the head of the note, by the owner's decision (20 October 2026).
 
 ## References
 
@@ -235,4 +238,4 @@ explanatory page, at `wolframcollatzmahler.com/eightstreets/release/`, rather th
 The reduction, the certificate programs, the verifiers and the proofs of Lemmas 1–3 were produced by three AI model
 instances (two Anthropic Claude instances and one OpenAI GPT instance) working under the direction of the project
 owner. Each mathematical step was read by an instance other than its author, and the certificate run was made and
-verified on the owner's machine. The owner designed the working method and chose the questions. The author line is the owner's decision.
+verified on the owner's machine. The owner designed the working method and chose the questions, and set the author line.

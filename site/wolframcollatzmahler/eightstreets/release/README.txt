@@ -4,6 +4,10 @@ Code and data behind the result L_8 = 68 (every eight-path forest whose paths al
 well-burnable; Tan and Teh's forest (67,67,67,67,102,102,102,102) shows 67 is not enough). Computed 18-19 October
 2026. Page: ../index.html, section 10. Python 3, standard library only.
 
+THE NOTE
+  eight-paths-L8.md            d1abddfd750a1355449ac576cb7c9c59d973b15a7d45fe2d17860aca78cda0d7
+      the result written up: the reduction, Lemmas 1-3, the three programs and the checks
+
 CODE (code/)
   cert_check.py                715673d54a2790bf96427dbca8805ecfbcba883dccd2e3350985df074e1dc45e
       checks the third program's certificate files
