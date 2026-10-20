@@ -18,7 +18,8 @@ OUTCOME (M = 6..8, every q, all full-cut instances, 376,739): (A) 0.  (B) 32,708
 per-side count <= 2 (vacuous at M <= 8, where no k makes all eight sides >= 3).  (C) 201,904
 failures of super/submodularity among P(t) nonempty.  Gap scan (`gap 6 7 8`): integer-empty 99,840,
 rational-nonempty 6, all permutations of q=4, counts 2222, targets 5/5/11/11 (k = 1/2,1/2,3/2,3/2).
-Protected instances: 79, all with P(t) nonempty.
+Protected instances: 79, all with P(t) nonempty.  M = 9: 902,152 instances, (A) 0, (B) 47,904,
+(C) 580,368, protected 704, all with P(t) nonempty (3m55s).
 """
 import itertools, sys
 import numpy as np

@@ -4982,3 +4982,12 @@ once k is chosen they are CL446's split.
 
 Gut: a pull. This is the first time count selection has looked like one object rather than many repairs.
 Reasoned: a reformulation plus a self-check, no status change.
+
+*CL472 postscript (16:12 BST).* M = 9 finished:
+- 902,152 full-cut instances;
+- partition ⇒ P(t) ≠ ∅ with 0 exceptions;
+- 47,904 cases of P(t) ≠ ∅ with no partition, all thin;
+- 580,368 super/submodularity failures;
+- 704 protected instances, every one with P(t) ≠ ∅.
+
+Protected instances so far: 783 at M ≤ 9, and none has an empty selector.
