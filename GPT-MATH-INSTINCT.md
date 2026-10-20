@@ -124,7 +124,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
+**Current state, 2026-10-20 08:46 BST: owner-requested manual Mahler investigation.**
+The contributor response is reports/response-to-joshua-mahler.md. MI491–493 test
+the restricted defect process: sparse epoch descent does not admit bounded
+waiting times; reverse normalization retains an initial mod19 seed condition.
+No new integer exclusion. The next useful step needs control of one fixed
+seed's residue stabilization, not more CRT depth. Both schedules remain PAUSED;
+no automatic wake or background job. Older held lanes are not reopened generally.
+
+**Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
 verifiers pass with the same stream digest. GPT read the committed census,
 receipts and whole carrying argument; MI484 adopts the controlled tier1
@@ -35207,3 +35215,188 @@ retain the return corollary as a known-theorem application, and prioritize one
 integer-realization/defect mechanism over more large unions or another census.
 No Rule30 or Collatz theorem transfers without a separate model-specific bridge.
 No novelty, external-version replay, or new prize status is claimed.
+
+
+### MI491 — A bounded reopening: does epoch descent reach the binary defect class? (2026-10-20 08:41 BST)
+
+Owner asks for the brief Markdown response and continued instinct investigation;
+scheduled heartbeats remain paused. Report drafted at
+reports/response-to-joshua-mahler.md, for the owner to send, not sent externally.
+
+Pull: unease that a conditional sparse-descent theorem could be pointed at the
+binary class while its hypothesis excludes precisely that class. The arithmetic
+is simple enough to decide this before another CRT refinement. Parent question:
+ordinary positive realizability of the remaining restricted defect process; this
+block tests the proposed descent mechanism's admission, not all of Mahler.
+
+Record searched: defect.*quotient|sparse.*epoch|cumulative.*sparse|Cantor.dust AND
+ descent|growth|Mahler -> one unrelated
+old growth note. Read the pinned external definitions, sparse/epoch theorems,
+normalized recurrence and four binary CRT parametrizations. This is the primary
+source for the exact question; no general literature theorem is imported.
+
+Question: with waiting times j_r in {1,2} and
+  2^(3*j_(r+1)+4)*V_(r+1)+1=3^(3*j_r+4)*V_r,
+can any nonempty epoch meet the source's cumulative power-dominance assumption?
+Work by hand first. Also compare ordinary positive solutions of finite prefixes
+with an infinite solution at one fixed seed; do not mistake either direction.
+
+Prediction before any diagnostic: the power-dominance condition fails throughout
+the binary class. Candidate consequence: raw V grows rather than descends.
+Counterfactual: relaxing j to allow a sufficiently large jump must admit a
+power-dominant step. Independent controls, if a diagnostic is needed: construct
+prefixes by modular inversion, check each recurrence literally and compare the
+initial seed with direct ceiling-map block extraction. Unexpected check: require
+ordinary positive seeds for finite prefixes, not just 2-adic residues. Stop on a
+hand obstruction, control failure or one small fixed-depth diagnostic; no search
+for larger CRT moduli, long survivors or a general theorem in this block.
+
+
+### MI492 — Epoch descent cannot cover bounded waiting times; raw quotients expand (2026-10-20 08:43 BST)
+
+HAND SCOPE RESULT, not a Mahler exclusion or a newly verified external theorem.
+The admission question is decided without launching the optional diagnostic.
+Put a_r=3*j_r+4. In the binary class j_r in {1,2}, a_r is 7 or 10. Every
+local sparse-descent premise 3^a_r<=2^a_(r+1) is false, since 2187>1024.
+For positive integer V satisfying the normalized recurrence,
+
+    2^a_(r+1)*(V_(r+1)-2*V_r)
+       =(3^a_r-2*2^a_(r+1))*V_r-1
+       >=139*V_r-1>0.
+
+Hence V_(r+1)>2*V_r. With U=9V the analogous bound subtracts9 instead of1
+and remains positive. Raw quotient descent therefore fails throughout this
+class, rather than only on an awkward exceptional branch. This strengthens
+the source's adjacent-quotients-unequal observation in this restricted domain;
+no literature novelty assessment is made.
+
+**The epoch issue is more general than the binary bound.** For any nonempty
+epoch from r to r+d, let S=sum_(t=r..r+d-1) a_t and
+B=sum_(t=r+1..r+d) a_t. Then B=S+3*(j_(r+d)-j_r). Since S>0,
+3^S>2^S. The source's epoch premise 3^S<=2^B consequently forces
+j_(r+d)>j_r. An infinite consecutive sequence of such epochs needs unbounded
+endpoint waiting times, irrespective of any quotient equation. It cannot
+supply the required exclusion for ANY globally bounded-j class. In the binary
+class even one such epoch is impossible: multiply the strict inequalities
+3^a_t>2^a_(t+1) over its transitions. No source theorem is contradicted;
+its additional premise is simply unavailable in the target subclass.
+
+**Counterfactual control.** Allow j_r=1,j_(r+1)=3. Then3^7=2187<8192=2^13,
+so the dominance premise is not universally impossible outside the bounded
+binary class. The argument is scoped to the stated class/epoch sequence.
+
+**Unexpected ordinary-seed hand control.** The source's first binary CRT
+parametrization at k=24 gives V_0=394147,V_1=6734371. Both are odd and
+coprime to6, and128*6734371+1=2187*394147=861999489. The associated ordinary
+seed is a0=9*(64*394147-1)/19=11948877. Direct block extraction gives
+
+    11948877 --s3--> 40327461 --s4--> 204157773
+             --s3--> 689032485 --s4--> 3488226957.
+
+Each arrow uses 3*b+1=2^s*u with u odd, followed by b'=3^(s-1)*u.
+Thus this finite binary defect pattern has an actual positive seed, not
+merely a formal 2-adic interpretation. It does not assert infinite survival.
+The hand products are literal controls, no new search or measured census.
+
+**Trajectory decision.** Parent coverage has not increased; the proposed
+arithmetic descent's admission has been ruled out on the bounded waiting-time
+class. Do not patch it with another local/epoch case or another CRT depth.
+The next question changes level: can a quantitative seed-residue extension
+obligation be obtained at defect returns without assuming the very sparse
+growth just excluded? Finite CRT residue restrictions and uniqueness alone
+leave that ordinary-integer compatibility obligation open. Gut: the initial
+unease was productive; curiosity now concerns the dependence on one fixed
+seed, not larger congruence tables. Reasoned: preserve this obstruction and
+choose one test of that fixed-seed requirement next. No routine proof review
+request, no unbounded campaign, and both heartbeats remain paused.
+
+
+### MI493 — Preserve ordinary seeds: reverse the defect normalization (2026-10-20 08:46 BST)
+
+HAND REFORMULATION / SELF-AUDIT, independent carrying read pending; no new
+exclusion or novelty claim. The preceding obstruction changes the question:
+does the normalized recurrence retain a hidden ordinary-seed obstruction,
+or can its states be put back into the original ceiling map explicitly?
+Record/source check: defect.*quotient|affine.invariant|19.*9 AND
+conjug|inverse|converse|realiz -> broad existing affine/realization results,
+including G51 and the ladder; no directly indexed reverse-defect statement.
+The external file was searched for converse/reconstruct and mod19; forward
+normalization and binary CRT statements were read. This is elementary algebra
+on those source identities, not an imported new theorem or a new experiment.
+
+Let A_r=3*j_r+4 and let positive odd integers V_r satisfy
+  2^A_(r+1)*V_(r+1)+1=3^A_r*V_r.
+Assume initially
+  2^(A_0-1)*V_0 = 1 mod19.
+Define
+  b_r=9*(2^(A_r-1)*V_r-1)/19.
+Then this congruence propagates: since A_r-1 is a multiple of3 and
+3^3=2^3 mod19, the recurrence modulo19 gives
+  2^(A_(r+1)-1)*V_(r+1)=(3^A_r*V_r-1)/2=1 mod19.
+So each b_r is a positive odd ordinary integer, not just a 2-adic one.
+
+Put I(b)=19*b+9. At b_r, v2(I)=3*j_r+3. Whenever v2(I)>3,
+  3*I(b)=19*(3*b+1)+8
+forces v2(3*b+1)=3, so an actual length3 block occurs and changes
+I to(27/8)*I. After j_r such blocks the state c has
+I(c)=72*27^j_r*V_r. The next recurrence has right side divisible by16
+apart from its +1, so3^A_r*V_r=1 mod16. Consequently
+3^(A_r-1)*V_r=11 mod16, and
+  3*c+1=8*(3^(A_r-1)*V_r-1)/19
+has valuation exactly4. The next actual block has length4. Across that
+block I changes to(81*I(c)-72)/16, which equals
+  (9/2)*(3^A_r*V_r-1)=9*2^(A_(r+1)-1)*V_(r+1)=I(b_(r+1)).
+This reconstructs the ceiling-map block word 3 repeated j_r times, then4,
+with the source's convention b'=3^(s-1)*(3*b+1)/2^s.
+
+Thus an infinite odd positive normalized chain with that initial mod19
+condition really would produce an ordinary positive orbit with all block
+lengths3 or4, hence a Z-number by the known gap3 bridge. This is a restricted
+subproblem, not an equivalence with full Mahler or all of R3. The mod19
+condition cannot be dropped; not every normalized starting quotient maps
+to an ordinary b_0. This argument has no independent or Lean verification
+here and is not used to upgrade any claim.
+
+**Why finite CRT refinement alone does not escape the old wall.** For any
+finite prescribed waiting word j_0,...,j_L, compose the recurrence to obtain
+  2^B*V_L=3^S*V_0-C,
+for L>=1, where B=sum_(i=1..L) A_i, S=sum_(i=0..L-1) A_i, and C is odd. Requiring
+V_L odd determines one V_0 residue mod2^(B+1); the odd coefficient3^S is
+invertible. The prefix congruences follow by reducing this relation at each
+partial power of2. The mod19 condition is independent and can be imposed
+by CRT. Adding a sufficiently large multiple of19*2^(B+1) makes all
+intermediate V_i and reconstructed b_i positive. Optionally avoid0mod3 by
+another coprime congruence. The same block algebra proves that every
+prescribed finite binary waiting word has an ordinary positive realizing
+seed. This is G51's finite-prefix realizability in the new coordinates,
+not a new result of the project. Seeds may change with prefix length.
+The ordinary seed in MI492 is a literal positive control.
+
+**Niggle sweep.** Binary j denotes counts of consecutive length3 blocks,
+not the lengths s themselves. Pure3 blocks require v2(I)>3, and the final
+s4 requires the NEXT recurrence; the last endpoint of a finite chain need
+not come with another exact4 block. All exponent divisions are exact under
+the proved congruences. Positivity is checked, and mod19 is preserved, not
+assumed at every step. Infinite finite-prefix realizations do not provide
+one fixed positive integer. The real companion is supplied only after an
+infinite ordinary orbit is obtained, using the previously proved gap3 bridge.
+
+Gut: this is a useful clarification, with no new promise of easy descent.
+Reasoned trajectory: do not grow the CRT table. The finite-prefix trap and
+the quotient-growth obstruction are now explicit. What remains is a
+uniform obstruction to positive stabilization of initial residue along
+one infinite branch. A future block needs a genuinely new height/extension
+mechanism for that fixed seed, or a change of problem; this reformulation
+alone is not such a mechanism. Both schedules remain paused.
+
+
+### MI494 — New replay receipt preserved during publication (2026-10-20 08:48 BST)
+
+The first non-forced push was rejected because Cloud's00096461 arrived.
+Fetched once and merged it, preserving CL464 and MAHLER section4's addition.
+Read the receipt: Cloud rebuilt f6d9492 in a clean environment, no errors,
+warnings or sorry; all126 theorems of the changed module report only the
+standard axioms. This closes MI490's newer-version replay limitation under
+the project certificate rule. It does not supply a fresh numerical check or
+verify GPT's MI492–493 hand arguments. Updated the report's verification
+paragraph; no source theorem or mathematical conclusion changes.
