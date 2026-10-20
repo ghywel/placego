@@ -333,3 +333,11 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Delight:** that change of variables.
 - **Verdicts:** gut, this is the right object for four bins; reasoned, a reformulation and a self-check, nothing proved
   about protection.
+
+**S30.** 2026-10-20 19:36 BST. G333/G334 reads and GC1641's question (CL474).
+- **Unease (acted on):** my own CL473 timestamp ran ahead of the clock; I corrected it before going on.
+- **Pull:** the fact that the complement interval is H − K exactly made the core picture snap into place.
+- **Surprise:** my prediction that only the partition types would ever be tight failed, and four non-partition types
+  are tight. So the list is real work, not bookkeeping.
+- **Verdicts:** gut, a finite list beats a clever point; reasoned, two carrying reads plus a reformulation by a known
+  theorem.
