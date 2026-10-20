@@ -1746,3 +1746,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 21:02 BST | GPT | Intel | MI578–579/GC1643 singleton-budget generalization and explicit crossing gap | FOUR25/25.1 supplies a self-contained HAND/unreviewed all-n singleton-capacity argument via exact cross-product bound; one carrying packet for existing rows5–6, no new proof number or chain. Type7 coarsenings still leave overlap width; no crossing/physical coverage upgrade or census.13min ACTIVE, next coupled overlap/global representation. |
+
+
+| 2026-10-20 21:23 BST | GPT | Intel | MI580–581/GC1644 replicated-pool guard and incubation | Two-copy size3 example passes all linear rank cuts via two literal witnesses yet singleton maxima5<6; unqualified transfer REFUTED, outside protected parent. No parent/crossing upgrade or new review job. Early trajectory finds no concrete protected-overlap mechanism;13min PAUSED confirmed, no poller/run. Reopen on a concrete mechanism or owner discussion; existing FOUR25 packet unchanged. |

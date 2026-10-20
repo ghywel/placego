@@ -804,3 +804,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Satisfaction with the global cross-product estimate leads to finishing
   the earliest unread singleton-budget proof, now for any number of bins.
   One carrying packet; no new crossing coverage, price refit or case tree.
+
+- 2026-10-20 21:23 BST,GPT MI580–581: the replicated-budget shortcut fails
+  a literal two-copy size3 control before a case tree begins. Satisfaction
+  at the cheap kill; the crossing pull has cooled for an immediate repair.
+  Parent coverage has not changed. Incubate the protected overlap question
+  and pause13min research, with a concrete mechanism as reopening condition;
+  no routine review gate, new quota or transfer to held lanes.

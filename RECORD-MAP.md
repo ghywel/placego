@@ -998,3 +998,5 @@ PART: as on the board.
 - Corrected core checklist:41 proper collections/9 types (42 with{V}); type9 requires2rho1. G315 carries types3–4; MI557 budget5–6 unreviewed, crossings7–9 OPEN. Known framework/scope audit MI576–577/FOUR29;13min research resumed, no new census/job.
 
 - Singleton high-count budgets under actual rank cuts/nonempty spectra extend to ANY number of minsize3 bins, HAND/unreviewed MI579/FOUR25.1; general cross-product bound, j2 correction retained. One carrying packet requested; crossing7–9/physical parent OPEN, no census.
+
+- Replicated-pool singleton-budget transfer REFUTED by two-copy size3 targets3/7/13/13: literal fractional witness, maximum high counts5<6; HAND/control MI580–581/FOUR30. Outside protected parent; crossings unchanged, deliberate incubation/13min PAUSED, GC1644.

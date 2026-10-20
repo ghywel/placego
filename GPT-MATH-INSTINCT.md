@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 21:02 BST: crossing gap explicit; singleton budget generalized, unreviewed.**
+**CURRENT working state, 2026-10-20 21:23 BST: deliberate incubation; schedule PAUSED.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -172,16 +172,26 @@ exchange mechanism and primary literature;the incubation above is history.
   number of minsize3 bins using actual rank cuts; HAND/unreviewed, one
   carrying packet for FOUR25/25.1. No new target census or proof number.
   MI563 closes the price shortcut for ONE row7 cover, not all types.
-- **Next.** A bounded type7 extremal-set argument; preserve actual group
-  overlaps. No arbitrary-Q rounding, clipping, raw supermodularity,
-  full-fibre inheritance,189-form expansion or automatic larger census.
-  Last trajectory MI577 20:39 BST; MI578 explicitly changes to finishing
-  the earliest unread prerequisite. No extra allowance used; next check
-  by22:09 BST or repeated failure. Crossings remain the parent gap.
-- **Rhythm.**13-minute research ACTIVE, app update confirmed; older
-  schedule PAUSED, no separate poller/background computation. Explicit
-  owner continuation and the corrected finite obligations reopen work.
-  No switch to other neighbourhoods or held lanes.
+- **Latest failed transfer.** MI580–581/FOUR30 refutes an unqualified
+  two-copy application of the singleton budget, even for four size3
+  rows and a literal fractional assignment. P={0,1,2,4,5,6}, two copies,
+  targets3/7/13/13: integer count maxima total5<6. Outside the one-copy
+  protected parent; not a crossing or parent counterexample.
+- **Decision.** MI581 early trajectory: no additional crossing/physical
+  coverage since MI577. Coarsenings leave an overlap width; replicating
+  the pool does not preserve the distinct-pool model's count compatibility.
+  No concrete next argument using the actual protected overlap is ready.
+  Incubate that named uncertainty; no replica threshold/endpoint tree,
+  arbitrary-Q rounding, price refit,189-form expansion or larger census.
+  The one FOUR25/25.1 carrying packet remains pending; no dependent chain.
+- **Reopening.** A concrete overlap inequality or selector using the
+  protection, a different global mechanism, or direct owner discussion.
+  A routine review receipt alone does not settle the crossing question.
+  This is GPT's incubation choice, not a requested permission gate.
+- **Rhythm.** The13-minute research heartbeat is PAUSED; app and saved
+  configuration confirmed. Older research schedule stays PAUSED; no
+  separate poller or background computation continues. Last trajectory
+  MI58121:23 BST; no extra allowance renewed. No held lane reopened.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39520,3 +39530,80 @@ reflection must preserve ACTUAL ranks rather than baseline protection,
 and the j2 equality case must retain its scalar extra1. Each is checked
 explicitly in FOUR25/25.1. The j5 control intentionally lacks conserved
 targets and is labeled accordingly. No proof status is upgraded.
+
+### MI580 — Kill the replicated-pool budget shortcut first (2026-10-20 21:21 BST)
+
+Parent REAL admission, crossing7–9, still OPEN. One possible global
+transfer of MI579 is to replace a balanced double cover by virtual bins
+on TWO copies of the pool and apply the same singleton budget there.
+This is not authorized by the distinct-token theorem. Each virtual bin
+must still use each token value at most once. Test that extension before
+trying to use it on the crossing cover; do not start an endpoint tree.
+
+Record searched: balanced.*duplicate / replicat.*pool / two.cop.*budget
+gave no joint hit; multiplicity AND count.*budget returned only an old
+unrelated clock ledger. FOUR25/25.1 and MI571's fractional/rounded scope
+are the primary existing inputs. This is an elementary hand test of a
+new transfer, not an imported literature theorem or a parent census.
+
+HAND construction before arithmetic verification: let P={0,1,2,4,5,6},
+with TWO copies of every value, four rows of size3 and targets3/7/13/13.
+The total is36, twice sum(P). Rows are required to contain distinct
+values. In the ORIGINAL single P, the size3 count fibres at these
+targets should be{0},{1},{2},{2}, respectively. Hence their maximum
+counts total5, less than the SIX available high tokens (values4/5/6).
+If verified, no integer row assignment can have these targets.
+
+Nevertheless the target vector is the exact average of two literal
+two-copy assignments:012 / 016 / 245 / 456 and012 / 016 / 456 / 245.
+Their targets are3/7/11/15 and3/7/15/11. Thus the integer target
+3/7/13/13 lies in the convex hull of physical assignments; every valid
+linear rank inequality of that assignment problem holds. Its fractional
+row high counts are0/1/2.5/2.5, with no value exceeding1 in any row.
+This is stronger evidence against the transfer than an abstract box.
+
+Before running checks: predict the four scalar fibres and total5 above;
+both literal assignments use every value exactly twice and have distinct
+values in each row. Their averaged target vector is integer. Failure of
+any equality kills this proposed counterexample; stop without repair.
+Positive control is the literal3/7/11/15 assignment, whose scalar counts
+0/1/2/3 total6. Unexpected check: reflection v->6-v gives targets
+15/11/5/5 with singleton MINIMUM total7>6. Retain the actual scalar
+gaps4 and14 as negative oracle controls. Enumerate only the20 size3
+subsets of this ONE six-value pool; no target or partition census.
+
+Scope guard before the test: this is NOT the protected one-copy parent.
+Here sum c_i=2M, not M, and the first target3 is below T_3=6. A negative
+result closes the unqualified replicated-pool transfer only. It does not
+refute the crossing inequality, the protected parent or distinct-pool
+MI557/MI579. No repair by changing the replica threshold is planned.
+
+
+### MI581 — Replication verified; choose incubation (2026-10-20 21:23 BST)
+
+All MI580 checks PASS on the stated20 scalar subsets. The four fibres
+are{0},{1},{2},{2}, maximum total5<6. Both literal assignments use each
+value exactly twice with distinct values within rows; their exact
+average has integer targets3/7/13/13. Reflection gives minimum7>6;
+the positive control and scalar gaps4/14 remain. FOUR30 has the full
+HAND refutation. No changed input, census or new carrying request.
+
+Broken assumption: a balanced cover cannot be moved to a replicated
+pool and fed to the distinct-pool budget from rank feasibility and
+minimum size3 alone. The example lacks protection and the cover pattern;
+parent/crossing statements and MI557/MI579's ONE-copy scope remain intact.
+
+Early trajectory: parent coverage has not changed since MI577. The
+coarsening and replication routes both leave integer compatibility
+unresolved. Earliest unread dependency is still the single FOUR25/25.1
+packet, supporting rows5–6 only; carried G315/G333/G334 are unaffected.
+No concrete next protected-overlap argument is ready. Fresh choice would
+incubate rather than repair replica thresholds. A concrete overlap
+inequality/different selector, or direct owner discussion, would reopen.
+No extra allowance is renewed, and this is not a routine review gate.
+
+Niggles checked: duplicated versus one-copy pool, genuine rowwise
+distinctness, rank validity from literal convex averaging, and failure
+of parent protection. Gut: satisfied with the cheap kill, cooled for
+an immediate repair. The13-minute schedule is PAUSED, confirmed by app
+and saved configuration; older schedule remains paused, no poller/run.

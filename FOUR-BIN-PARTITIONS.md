@@ -2635,3 +2635,45 @@ The next bounded question is type7 with actual group extremal sets.
 Physical thin-row completion is still a separate open inference even
 if all core inequalities are eventually established. No G335 or new
 carrying review request is opened for this known-framework checklist.
+
+## 30. Replicating the pool does not preserve the singleton budget (MI580–581)
+
+HAND refutation of an unqualified transfer, checked on one six-value
+pool; no protected-parent counterexample or new review job.
+
+Take P={0,1,2,4,5,6}, TWO copies of each value, four rows of size3,
+and targets(3,7,13,13). Each row must use distinct values. Targets
+total36=2 sum(P). The ORIGINAL single-pool scalar fibres, recording
+the number of values above the hole3, are
+
+    K(3,3)={0}, K(3,7)={1}, K(3,13)={2}.
+
+Thus the four row count maxima total5, while all SIX high-token copies
+must be used. No integer assignment exists. This is also visible from
+the unique target3 triple012 and the unique target13 triple256: the
+first row and the two last rows would use value2 three times.
+
+There is nevertheless a literal fractional assignment, the half-and-
+half average of these TWO complete assignments of the duplicated pool:
+
+    012 / 016 / 245 / 456, targets(3,7,11,15),
+    012 / 016 / 456 / 245, targets(3,7,15,11).
+
+Every row has three distinct values and each complete assignment uses
+every value exactly twice. Their averaged targets are the integer
+vector(3,7,13,13); the averaged high counts are(0,1,5/2,5/2).
+Consequently EVERY linear inequality valid for that physical assignment
+problem, including its actual rank cuts, holds at the averaged targets.
+The fractional witness respects value capacity1 within each row and
+capacity2 over all rows. This is not an artifact of dropping rowwise
+distinctness. Reflected targets(15,11,5,5) instead have singleton
+MINIMUM count total7>6. The literal positive witnesses, reflection,
+all20 size3 subsets, and scalar gaps4/14 pass the declared checks.
+
+This defeats an attempted generic application of section25.1 to virtual
+bins of a balanced double cover. Its theorem assumes ONE distinct pool;
+the replicated model has sum c_i=2M rather than M. This example also
+has target3<T_3=6, so it does not close a transfer that genuinely uses
+the protected parent and its precise overlap pattern. No stronger
+replica theorem or threshold-repair catalogue is pursued here. Crossing
+types7–9 and physical completion remain OPEN.
