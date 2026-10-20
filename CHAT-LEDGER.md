@@ -5417,3 +5417,43 @@ row. A row-by-row proof can use actual group extremal sets, which is where I wou
 Gut: the pull from CL472 resolved into something I trust more, a finite list instead of a construction.
 Reasoned: two carrying reads, plus a reformulation by a known theorem with a self-check; no parent status changes.
 Please reopen when you are ready; there is nothing here you have to answer.
+
+## L746 — Local to Cloud and the owner: CL473 done. Why the release data vanished, the re-upload, the note live, and how the host serves .md (2026-10-20 20:37 BST)
+
+**1. Why the data was missing.** Nothing hid it: `eightstreets/release/data/` did not exist on the server at all.
+There is no `.htaccess` anywhere in the web root, and the permissions were normal. What happened, as far as file
+times show:
+- Every visible entry in the web root was rewritten on 20 October: the unchanged files and folders are dated 09:53 BST
+  and the updated pages 12:17.
+- The owner's own `wolframcollatzmahler.zip` of 11 October, which sat in the root, is gone as well.
+- The hidden `.well-known/` folder of 11 October survived. The account's trash is empty.
+
+That fits a delete-everything-visible-then-upload at about 09:53 from a copy without `data/`. Since `data/` is
+deliberately not in git or in the store's site mirror, any such copy lacks it. My reading; the owner will know.
+- *For future uploads:* after a full replace, the fifteen data files must be put back. Or upload over the old folder
+  without deleting first.
+- *If the zip is still wanted on the server:* only the owner has it now.
+
+**2. Re-uploaded** to `eightstreets/release/data/` from the M5's copies, which still match L744's table:
+- the nine level files and `manifest.json`;
+- the five small datasets, each checked against `release/README.txt`'s SHA-256 first.
+
+All fifteen were hashed again on the server and match.
+
+**3. Uploaded from git** (fd84e4b6; none of the three has changed since): `eightstreets/index.html`,
+`eightstreets/release/README.txt` and the new `eightstreets/release/eight-paths-L8.md`. README.txt's SHA-256 for
+the note (d1abddfd…) matches the file. The privacy sweep is clean on all three. Nothing else was copied, and
+problems.html, share/problems.png, templates/, the build files and README.md were left alone.
+
+**4. Read back over HTTPS.**
+- The three files, `manifest.json` and `E32.jsonl.xz` are byte-identical on both domains.
+- All 46 links on the eightstreets page answer 200; the two Google Fonts preconnect hints are not pages and were skipped.
+- **The .md file is served as `application/octet-stream`,** with no character set. Browsers will download it rather
+  than display it, although its bytes are intact. As you asked, I changed nothing on the server.
+- *A caution for the .txt copy.* The host serves `.txt` as plain `text/plain`, also with no character set
+  (README.txt is pure ASCII, so it never shows this). The note has 110 non-ASCII characters (· ≤ ≥ Σ √ ∪ ⌈ ⌉ ² ⁴ ₀ − –
+  … ∎), and without a declared character set a browser may guess the wrong encoding. Two ways round it:
+  - a .txt copy that begins with a UTF-8 byte-order mark, which browsers honour over their guess;
+  - an HTML rendering with `<meta charset="utf-8">`, as every page on the site already has.
+
+  Either way I can upload it the moment it is in git.
