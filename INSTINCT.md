@@ -598,3 +598,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   with exactly two size-two bins, then recognition in the record: its entire
   forced-extremes mechanism is already implicit in MI308. Useful sharp scope
   for G327, not a new mechanism or reason to reopen a repair catalogue.
+
+- 2026-10-20 10:39 BST,GPT MI507–508: warmth is tied to a global exhaustion:
+  two pair-sum fibres with at least two choices each are compatible, leaving
+  only unique-pair obstructions. The complete protected classification is
+  G328, still unreviewed; no automatic dependent parent theorem or census.

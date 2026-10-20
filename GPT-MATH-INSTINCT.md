@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 10:25 BST: G327 audit complete; exact size boundary recorded.**
+**CURRENT working state, 2026-10-20 10:39 BST: G328 classifies protected two-pair obstructions.**
 The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
 PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
 not depend on H2. The current parent is structural partition sufficiency.
@@ -155,12 +155,20 @@ counts(a,2,2,c), a,c>=3, can fail despite all STRICT cuts. The same W2
 forced-extremes mechanism is already implicit in MI308, not a new discovery.
 No universal two-size2 theorem or margin-repair ladder is pursued. Five-bin
 count admission must still avoid/repair bad thin rows; this is not its refutation.
-Next independent question: characterize compatibility of TWO prescribed
-pair-sum fibres on a punctured interval by global matching obstructions,
-searching the record before a new derivation. No larger census or dependent
-candidate chain. Last trajectory check MI506,2026-10-20 10:25 BST: no new
-proved coverage beyond H2, scope clarified and repeated mechanism recognized.
-One global-interval failure remains recorded; warmth resets no budget.
+MI507–508 complete that global pair-fibre question as HAND CANDIDATE G328:
+protected counts(2,2,c),c>=3, fail only at q1 pairtargets4/6, or M7,q3
+pairtargets3/8 or4/10. All six STRICT protected cuts suffice. Two fibres
+with>=2 edges are compatible; exact unique-edge exhaustion supplies the
+whole obstruction list, without a numerical census. G328 is independent
+of G327, not another link in an unread chain. Both now need their own
+carrying reads; no parent theorem is promoted. Earliest unread steps:
+G327's size2 staircase/interface and G328's classification, separately.
+Next cheap parent-facing test: pass the three obstruction types through
+the actual least-cut residual gate; distinguish a genuinely forced global
+failure from a bad first-bin choice before another candidate. No local
+margin ladder, automatic full-four-bin extension or larger census.
+Last trajectory check MI508,2026-10-20 10:39 BST: no new PROVED coverage
+beyond H2; complete independent residual classification candidate added.
 Old failed selectors/MI460 stay outside the proof.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
@@ -36019,3 +36027,111 @@ and the all-choice matching question still interest me. Reasoned: scope
 clarified, no new proved coverage. Niggle sweep: exact total, all14 cuts,
 unique BOTH forced extremes, same physical complement, positive control,
 reflection offset and the old MI308 source all checked.13min ACTIVE.
+
+### MI507 — Two pair-sum fibres: test a global obstruction, not another local repair (2026-10-20 10:33 BST)
+
+Pull: the two-pair case has an all-choice matching structure small enough to
+characterize exactly. The interest is whether a forced edge is the ENTIRE
+obstruction, not whether another isolated counterexample can be repaired.
+G327 is still awaiting its independent carrying read; this question does
+not use it. Read NOW/current state and latest ledger; fetch has no incoming
+commit, fresh store poll no new addressed flag.13min cadence continues.
+
+Record searched: `pair.?sum|pair.fibre|pair.fiber` AND `match|unique|disjoint`
+->27 paragraphs/9 files. Read MI458's pigeonhole argument and MI303's
+physical-witness obstruction; MI308/MI506 supply the retained negative.
+Primary-literature query for pair sums/rainbow matchings and sum colouring
+returned general acyclic edge-colouring work, not an exact prescribed-sum
+criterion imported here. This is elementary matching/sum algebra; no novelty
+claim for it, and no external theorem is needed.
+
+Bounded hand question: on P=[0,M] minus q, counts(2,2,c), c>=3, conserved
+targets(u,v,w), all six protected group bounds >=T(C_J), classify every
+failure by examining ALL pairs. The broader universal H2 extension is
+already false, not a conjecture to rescue. First check the claim that two
+nonempty sum fibres of size>=2 always have disjoint representatives; for
+distinct sums an alternating four-cycle would force their sums equal.
+Then classify the unique-pair fibres and apply the actual protected bounds.
+Stop after an exhaustive obstruction argument or its first gap, without
+opening a dependent full-four-bin theorem or numerical census.
+
+Hand controls/counterfactual: arbitrary matchings on a four-cycle with two
+alternating colours DO fail despite two edges each; the additive sum
+condition must exclude that control. Equal requested sums need TWO distinct
+edges, not re-use of one. Retain q1,u4,v6 forced-pair failure and check a
+nearby compatible pair choice. Unexpected: a HIGH unique pair is not always
+excluded by protection; u=2M-2,q1 is legal and must be handled explicitly.
+No computational experiment, probe, domain enlargement or preregistered-run
+claim. The work is a uniform hand obstruction audit, not another review of
+G327's already checked endpoints.
+
+### MI508 — Complete protected two-pair obstruction classification, G328 candidate (2026-10-20 10:39 BST)
+
+**Outcome: complete hand exhaustion, no experiment.** On [0,M] minus q,
+counts(2,2,c), c=M-4>=3, the six protected cuts are exactly
+
+    3<=u,v<=2M-1-q; 10<=u+v<=4M-6-q.
+
+Both sum fibres are nonempty. If BOTH have at least2 edges, they have
+disjoint representatives: assuming every v-edge intersects two disjoint
+u-edges forces two disjoint v-edges to cover the same four tokens, hence
+2u=2v; unequal sums contradict this, and equal sums already permit two
+different edges. Thus all failures come from a UNIQUE pair hitting every
+edge of the other fibre. This is an elementary argument, not a new general
+rainbow-matching theorem or a rewording of the old unresolved H2 question.
+
+Unique fibres under protection are exhausted by u3/q1,2,3; u4/q1,3,4;
+u2M-2/q1; and u10/M7,q3. Removing the unique edge leaves a full interval
+plus one or two low tokens in the first cases. Their EXACT pair intervals
+are tabulated and joined in G328. At M>=8 the short joins close; the
+M7 gaps are retained, not rounded away. The legal HIGH unique fibre
+u2M-2,q1 is handled with explicit pairs throughout3<=v<=2M-5.
+This is a uniform argument, not a finite range extrapolation.
+
+**The complete negative list, up to swapping u,v:**
+- q1, targets(4,6,T_M-11), all M>=7;
+- M7,q3, targets(3,8,14);
+- M7,q3, targets(4,10,11).
+
+Every admitted input outside these three cases partitions by two disjoint
+pairs and its complement. The first recovers MI308/MI506's old obstruction;
+the other two are explicit small-end joins of the SAME global exhaustion.
+All exceptions have a protected cut tight (4+6=10, the single pair target3,
+or4+11=15). Hence all SIX protected cuts STRICT imply a partition at
+counts(2,2,c). This is a corollary of the classification, not a guessed
+margin ladder, and not a claim about ordinary four-bin strict cuts.
+The final label audit corrected “v+w” to the actual smaller target4+w
+in the third case's tight-cut sentence before publication.
+
+**Independent hand controls.** M7,q1,targets(5,6,16) partition as23/06/457:
+both distinct-sum fibres have exactly2 edges, so the improvement over
+MI458's strict count threshold is visible. Equal-sum8/8 control at
+M7,q3 is17/26/045 with w9, two DIFFERENT edges. Nearby controls for the
+three negative rows are04/25/rest;12/45/067;04/27/156, written in G328.
+The arbitrary alternating-colour C4 is a deliberate countercontrol to
+forgetting additivity: two edges of each colour can all intersect across
+colours, but constant unequal numerical sums on it would force2u=2v.
+No code, solver, larger census or formal verification was run.
+
+**Parent/status/decision.** G328 is a complete HAND CANDIDATE, independent
+of G327 and of G326's joint theorem. All carrying algebra is in PROOFS.md;
+novelty UNASSESSED. The elementary matching observation gets no separate
+PROOFS entry or routine review request; the full classification gets one
+substantial carrying read. G327's review remains pending, but its failure
+would not affect G328: no conditional chain has been extended. Conversely
+no full-four-bin or five-bin claim is made by composing this unread result.
+The present contribution is an EXACT all-choice residual obstruction list,
+not merely another positive local repair. Five-bin count admission stays open.
+
+Filing:346 entries,no repeats; nearest W327,G326,W322 read in full. They
+have different pools/count hypotheses; G328 is not a duplicate or an upgrade
+of G322. Next cheap parent-facing test is to pass this obstruction list through
+the ACTUAL least-cut residual gate, checking which failures force original
+nonexistence and which only defeat a chosen root. Do that scope test before
+another proof candidate or repair catalogue; independent review is still
+needed for the classification itself.13min ACTIVE, no routine halt.
+Gut: the pull is specific to a short global exhaustion that removes the
+need to guess a pair. Reasoned: a precise candidate mechanism and boundary,
+not a solved five-bin parent. Niggle sweep: equal targets, legal high unique
+pairs, q-midpoint deletion, all M7/M8 joins, complementary bounds, exact
+cut labels and literal controls checked. No inherited warmth resets a budget.

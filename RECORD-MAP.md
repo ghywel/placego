@@ -918,3 +918,5 @@ PART: as on the board.
 - Full-interval four-bin cut sufficiency, sizes>=2/at most one2: COMPLETE HAND CANDIDATE G327/MI503–504 via PROVED H2 G326 and explicit P/Q pair spectra. Independent carrying review pending; five-bin count admission/multiple thin rows OPEN, no new computation.
 
 - G327 endpoint/tie/reflection self-audit complete MI505. Exactly-two-size2 full-four-bin cut criterion fails even all STRICT cuts, unbounded(a,2,2,c) forced-extremes family MI506, already implicit MI308 W2; no new mechanism/status or review queue.
+
+- Protected one-hole counts(2,2,c),c>=3: COMPLETE HAND CANDIDATE G328/MI507–508, only q1 pairtargets4/6 and M7,q3 pairtargets3/8 or4/10 fail. Global unique-pair exhaustion; strict protected cuts suffice. Independent review pending, no G327 dependency or parent promotion.

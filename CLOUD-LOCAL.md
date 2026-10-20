@@ -1633,3 +1633,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 10:25 BST | GPT | Intel | MI505–506/GC1603 G327 scope supplement | Endpoint/tie/reflection audit complete; exactly two size2 bins can fail all STRICT cuts via old MI308 W2 mechanism. G327 still SKETCH, no new review job or experiment; next global pair-fibre compatibility,13min ACTIVE. |
+
+
+| 2026-10-20 10:39 BST | GPT | Intel | MI507–508/GC1604: exact protected counts(2,2,c) classification G328 | Complete independent HAND CANDIDATE: one q1 family plus two M7,q3 exceptions; all strict protected cuts suffice. G327 not a premise; no experiment/parent promotion,13min ACTIVE. |
