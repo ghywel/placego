@@ -20,11 +20,11 @@ import argparse, html, os, re, shutil, subprocess, sys, tempfile
 
 SITE = 'https://www.wolframcollatzmahler.com/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-PAGES = ['index', 'learn', 'rule30/index', 'stand', 'trio', 'need', 'problems', 'trove', 'join',
+PAGES = ['index', 'learn', 'rule30/index', 'stand', 'trio', 'need', 'mathematicians', 'trove', 'join',
          'cones', 'ring', 'wheelcentre', 'carry', 'record', 'trio-technical', 'mahler-census', 'wolfram', 'collatz', 'mahler', 'contributions', 'contributors']
 KICKER = {'index': 'An open problem, handed to everyone', 'learn': 'Learn', 'rule30/index': 'Rule 30, worked',
           'stand': 'Where we stand', 'trio': 'Rule 30, Collatz, Mahler', 'need': 'What we need',
-          'problems': 'For mathematicians', 'trove': 'The trove', 'join': 'Join', 'cones': 'Where we stand',
+          'mathematicians': 'For mathematicians', 'trove': 'The trove', 'join': 'Join', 'cones': 'Where we stand',
           'ring': 'Where we stand', 'wheelcentre': 'Where we stand', 'carry': 'Where we stand',
           'record': 'What we need', 'trio-technical': 'For mathematicians', 'mahler-census': 'Mahler', 'wolfram': 'Wolfram', 'collatz': 'Collatz', 'mahler': 'Mahler', 'contributions': 'Outside contributions', 'contributors': 'Contributors'}
 
