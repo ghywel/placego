@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 16:47 BST: fixed balanced-cover mechanism passes; symbolic price envelope next.**
+**CURRENT working state, 2026-10-20 16:56 BST: symbolic common-price shortcut fails; retain joint incidence.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -196,9 +196,15 @@ over34 deficit allocations,22 scalar comparisons/3 controls PASS.
 No rerun/enlargement. HAND price9 envelope explains the exact maximum.
 General moment-ceiling pricing reduces each group's intercept to at
 most three candidate count endpoints by convexity; the resulting
-unbounded inequality is NOT proved. Next examine that symbolic envelope,
-preserving caps/rounding and overlapping incidence; do not enlarge the
-fixture or treat its success as a general count-admission theorem.
+unbounded inequality is NOT proved. MI563's symbolic endpoint mixture
+now refutes universal existence of that common-price certificate: at
+M220,q110,counts55^4 its intercept bound is at least4903229/99>48400
+for EVERY price. Literal scalar witnesses/rounded endpoints are recorded
+below; the failure is concavification, not a negative parent. MI561 was
+not rerun or enlarged. Stop the uniform common-price shortcut; the
+unpriced discrete ceiling bound is not decided by this fractional mixture.
+Next inspect which exact incidence/target identity the mixture loses,
+before deciding whether a genuinely joint certificate is tractable.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
 MI56016:31 BST; no extra allowance. General q/five-bin/every-n and old
@@ -38835,3 +38841,104 @@ in the exact price witness rather than in the positive test count.
 Reasoned: one mechanism has survived its fixed diagnostic, with an
 explicit symbolic next test and no parent coverage upgrade. Last
 trajectory MI56016:31 BST;13min ACTIVE, no extra allowance.
+
+### MI563 — Symbolic price test: a fractional endpoint mixture defeats every common price (2026-10-20 16:56 BST)
+
+Continue MI562's HAND question, not a new census. Record searched:
+balanced.*ceiling / common.*price / scalar.*envelope returned no indexed
+hit; MI560–562, the actual fixed instrument and current state read.
+Known scalar-envelope/duality background remains PRIOR-ART; this test
+uses only explicit moments and elementary weighted inequalities.
+Prediction before the arithmetic check: the convexification required by
+one common price is too strong in a large equal-size symbolic family.
+Can-fail counterfactual: if any proposed scalar endpoint is inadmissible,
+if weighted count is not exactly2H-1, or the cost does not exceed2S,
+this proposed disproof fails. Independent controls: literal subsets at
+EVERY used endpoint, consecutive quadratic thresholds at the unsaturated
+ends, and exact rational arithmetic. Unexpected check: the size2n
+plateau begins at2n-1, BEFORE its legal high capacity2n. Preserve this
+rounding; do not substitute a continuous root. One hand construction,
+no enumeration, parameter sweep, new probe or extension of MI561.
+
+Let M=4n,q=2n,H=2n,S=8n^2, all four bin sizes n. The same balanced
+cover34/124/13/2 has sizes2n,3n,2n,n. Its scalar protected ceilings
+satisfy, when2n=m(m+1) and m>=2,
+
+    F_(2n)(m)=T_(2n)+2m+1,
+    F_(2n)(2n-1)=S-T_(2n),
+    F_(3n)(2n)=S-T_n,
+    F_n(n)=S-T_(3n).
+
+Here f_(2n)(k)=L(2n)+k+k^2, so its lower protected endpoint has
+upper count m, and the next threshold gives the first formula. Its
+upper protected endpoint has upper count2n-1, since f(2n-1)=6n^2-3n
+and f(2n)=6n^2+n straddle6n^2-n. The other two options are actual
+high capacities with protected upper targets. Use only the specialization
+m10,n55 below; no universal size threshold or physical partition theorem.
+
+Take n55, hence M220,q110,H110,S24200. The four endpoint options are:
+
+    size110: (r,F)=(10,6126) and(109,18095);
+    size165: (110,22660);
+    size55:  (55,10505).
+
+Literal scalar witnesses, on0..220 minus110:
+- (110,6126,10): low0..99, high111..119 plus141;
+- (110,18095,109): low1, high112..220;
+- (165,22660,110): low{0} union56..109, high111..220;
+- (55,10505,55): high164..218.
+
+Their targets lie between T_c and S-T_(220-c). For size110,
+f(10)=6105<=6126<f(11)=6127 and
+f(109)=17985<=18095<f(110)=18205, proving the stated EXACT upper
+counts independently of any enumeration. The other two counts are
+legal capacities, attained by the displayed witnesses. Consequently
+the stated ceilings are exact, not just relaxed moment values.
+
+Fix the first size110 row at its low option, the size165 and55 rows
+at their capacities. In the SECOND size110 row mix its low option
+with weight65/99 and its high option with weight34/99. The weighted
+count is10+110+55+(65*10+34*109)/99=219=2H-1. The weighted cost is
+
+    6126+22660+10505+(65*6126+34*18095)/99
+        =4903229/99 >48400=2S,
+
+with excess111629/99. For ANY lambda, each D_c(lambda)=max_r(F_c(r)-lambda*r)
+majorizes this row's weighted value minus its priced count. Summing
+cancels lambda against219 exactly, so
+
+    219*lambda+D110(lambda)+D165(lambda)+D110(lambda)+D55(lambda)
+        >=4903229/99 >48400.
+
+Thus NO nonnegative common price can give MI562's proposed uniform
+certificate. This does NOT refute the actual balanced inequality,
+its discrete unpriced ceiling test, real count admission or the parent.
+The mixture is not an actual count/target vector; in particular it need
+not satisfy the exact identity that the four group targets sum to2S.
+The proof mechanism has silently allowed more than the parent. The
+small M12 success stands with its original scope. Do not repair this
+failure by fitting another price or enlarging its diagnostic.
+
+Exact-arithmetic self-check COMPLETE: all four literal cardinalities,
+sums, distinctness, missing110 exclusion, high counts, protected ranges,
+and consecutive thresholds PASS; rational count219, cost4903229/99,
+excess111629/99 agree. This was four explicitly displayed subset checks
+and arithmetic, not a domain search or independent carrying review.
+Niggle sweep: the high size110 endpoint is109, not capacity110;
+capacity options in the other rows use their protected ceilings, not an
+inapplicable next-count threshold; the rows overlap as group labels;
+the fractional mixture is NOT reported as a discrete deficit allocation.
+The generic first-ceiling formula needs m>=2 to avoid clipping in the
+smallest case; that qualifier is explicit and only n55 is used here.
+
+Reasoned verdict: universal affine pricing is REFUTED by hand, with no
+parent coverage/status upgrade. A failure of a sufficient certificate
+is not failure of its intended theorem. Gut: disappointment in the
+shortcut, interest in the integer budget that the price smooths away.
+Decision: close universal common-price fitting; do not rerun MI561,
+open a census, or add a carrying review job. The next precise question
+is whether a discrete convex-allocation argument can retain the hard
+budget without concavification; if that merely produces another case
+catalogue, step back to the joint selector. Earliest unread dependency
+G333 remains unchanged; this obstruction is independent of it and of
+section25. Last trajectory MI56016:31 BST, no extra allowance;13min ACTIVE.

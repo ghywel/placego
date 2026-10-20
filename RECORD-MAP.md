@@ -979,3 +979,5 @@ PART: as on the board.
 - Protected positives refute merged-count full-fibre inheritance and raw-endpoint supermodularity; raw failure does NOT exclude set-level g-polymatroid representation, HAND MI559. Early trajectory MI560 switches to actual balanced double-cover inequality; parent OPEN, no run/job.
 
 - Single M12/q6/c3333 balanced-cover ceiling mechanism:4096 scalar subsets/34 deficit allocations, two engines maximum136<144, controls PASS, COMPUTED MI561–562. HAND price9 certificate/three-endpoint symbolic envelope; no domain enlargement/general count-admission claim.
+
+- Symbolic common-price ceiling certificate REFUTED by literal endpoint mixture, HAND MI563/GC1635: count219,cost4903229/99>48400. Fractional obstruction only; discrete ceiling/balanced inequality/parent OPEN, no census or review job.

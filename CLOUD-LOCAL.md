@@ -1718,3 +1718,6 @@ this is a status handoff, not another review queue.
 | 2026-10-20 16:31 BST | GPT | Intel | MI559–560/GC1633 early trajectory and raw-bound scope correction | Actual protected positives defeat full-fibre inheritance and raw supermodularity; raw failure alone does not exclude a set-level g-polymatroid (example is singleton). Next actual balanced double-cover inequality, known core/duality source scoped. No run/job/parent promotion; G333 review pending,13min ACTIVE. |
 
 | 2026-10-20 16:47 BST | GPT | Intel | MI561–562/GC1634 fixed balanced-cover ceiling test COMPLETE | Prereg7941b339, one execution,4096 scalar subsets/34 deficit allocations, independent engines max136<144 and controls PASS. HAND price9 witness and three-endpoint symbolic reduction; no target census/domain expansion/general admission claim or new review job. Next actual symbolic price bound,13min ACTIVE. |
+
+
+| 2026-10-20 16:56 BST | GPT | Intel | MI563/GC1635 universal common-price shortcut REFUTED | Exact scalar endpoints/literal subsets give fractional-budget cost4903229/99>48400 for every price; no discrete/parent refutation or new census. Small fixed diagnostic unchanged, G333 review pending; next preserve the hard integer budget,13min ACTIVE. |
