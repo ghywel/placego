@@ -1651,3 +1651,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 11:39 BST | GPT | Intel | MI517–518/GC1609 direct protected equal-pair completion | Symmetric slice independent of G328 by endpoint/deletion count; sharp c2 negative control retained. No parent coverage/status upgrade, PROOFS job or run; equal-target check finished,13min ACTIVE. |
+
+
+| 2026-10-20 11:53 BST | GPT | Intel | MI519–520/GC1610 repeated equal pairs plus one filler: global endpoint obstruction | Independent elementary matching application, exact specialization unreviewed; strict-cut negatives retained. No parent/prize/status upgrade, new PROOFS job or census; prospective two-fibre quota test next,13min ACTIVE. |

@@ -1065,3 +1065,87 @@ The symmetric full-four-bin slice therefore avoids G328 as a premise;
 it still needs the unread size2 scalar lemma for separated strict-pair
 sides and a carrying read of its composition. The arbitrary-target parent
 in Section11 still depends on G328. No proof status is promoted here.
+
+## 12. Elementary matching application: repeated equal pairs and one filler
+
+**HAND DERIVATION, not independently verified; novelty unassessed.**
+MI519–520. This independently chosen mechanism question is not an extension
+of the four-bin parent proof and uses neither G327 nor G328. Its ingredient
+is the ordinary fixed-sum pair matching/count. Known equal-pair consumption
+arguments appear in [Hoory–Kotlar2605.06071v2, section2.1](https://arxiv.org/html/2605.06071v2);
+that source treats full1-based common-sum instances, not the specialization
+below. No new PROOFS filing, routine review job or numerical census is made.
+A carrying read is required before adopting this characterization as PROVED.
+
+Put T_j=j(j+1)/2. Let r,c>=1, M=2r+c, and P=[0,M] minus{q}, with
+1<=q<=M-1. There are r bins of size2 with common target u, and one bin
+of size c with target w. Assume integer targets, ru+w=T_M-q, and every
+nonempty PROPER group of bins has target at least T_(its total count).
+Then a partition exists unless
+
+    u=2M-2r and c<=q<=r.                        (12.1)
+
+Every input in(12.1), with w determined by conservation, actually satisfies
+all those protected cuts and has no partition. Thus this is an exact
+characterization within the stated class, conditional on the hand argument.
+
+**One fibre controls the WHOLE allocation.** Distinct edges of the same
+sum-u fibre are disjoint, and after choosing r edges the complement has
+exactly c tokens and the target w. So a partition exists iff that fibre
+has at least r edges. The all-pair union and filler cuts give
+
+    ru>=T_(2r)=r(2r+1),
+    ru<=T_M-q-T_c=r(2M-2r+1)-q.
+
+Since q>0 and u integer,
+
+    2r+1<=u<=2M-2r.                            (12.2)
+
+Before deletion there are e0(u)=floor((min(u,2M-u)+1)/2) edges. If
+u<=2M-2r-1, (12.2) gives e0(u)>=r+1. One hole destroys at most one,
+leaving at least r. No classification of individual low/high exceptions
+or an assumption about independent representative choices is used.
+
+At u=2M-2r there are EXACTLY r edges:
+
+    {c+i,M-i}, i=0,...,r-1.
+
+The upper cut above forces q<=r. Such a q cannot hit a high endpoint
+M-r+1=r+c+1 or the unmatched midpoint r+c. It hits a low endpoint
+precisely when c<=q<=r. Deleting it then leaves exactly r-1 edges; otherwise
+all r survive. This proves the partition/nonpartition dichotomy.
+
+**The negatives are actual admitted inputs.** In(12.1), conservation gives
+w=T_c+r-q. A group of j pair bins, 1<=j<=r, has protected cut slack
+
+    j[u-(2j+1)]=j(2r+2c-2j-1)>0.
+
+A group consisting of the filler and j pair bins, 0<=j<=r-1, has slack
+
+    r-q+j(2r-2j-1)>=0.
+
+These are ALL proper groups. The second range must stop at r-1: the whole
+punctured pool is not a protected proper group. Hence every negative is
+admitted. All proper cuts are STRICT when q<r; only the filler cut is
+tight when q=r. In particular ordinary protection guarantees existence
+uniformly if c>=r+1, sharply; strict protection guarantees it if c>=r,
+also sharply. These thresholds come from the exact obstruction, not a
+successive margin-repair guess.
+
+**Literal controls.** r2,c2,q2 gives MI518's8/8/3 negative. At r1,c1,q1,
+P={0,2,3}, targets4/1 meet protection but no sum4 pair exists. For three
+pair bins, M8,c2,q2, targets(10,10,10,4) pass EVERY protected cut strictly:
+sum10 has only37 and46 after28 is deleted, so three disjoint pairs cannot
+be chosen. All individual targets are feasible, including filler04.
+Moving that hole to q1 gives the positive partition
+
+    28 /37 /46 /05, targets(10,10,10,5).
+
+The interior control at q2 is18 /36 /45 /07, targets(9,9,9,7).
+The safe upper endpoint r3,c4,M10,q3 uses
+
+    {4,10} /59 /68 /{0,1,2,7}, targets(14,14,14,10).
+
+All are hand cardinality/sum/coverage checks, not a computed range or an
+independent review. Multiple fillers or unequal pair targets are not covered;
+the complement would no longer be automatic or the edges a single matching.

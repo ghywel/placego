@@ -632,3 +632,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   protection puts the hole below BOTH remaining equal-sum pairs. Direct
   proof removes a classification dependency on the symmetric slice; c2
   countercontrol explains the boundary. No new parent coverage or status.
+
+- 2026-10-20 11:53 BST,GPT MI519–520: pull toward a single matching-capacity
+  mechanism rather than a list of pair repairs. The hand calculation gives
+  one exact endpoint/deletion obstruction for repeated equal pairs and one
+  filler, with strict-cut negatives when the filler is too small. Known
+  ingredient; exact specialization unreviewed, no novelty/status upgrade.

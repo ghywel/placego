@@ -930,3 +930,5 @@ PART: as on the board.
 - Exact two-size2 family remains outside the known COMMON-sum slice under0/1-based translation and reflection, hand scope audit MI515–516/PRIOR-ART. Two bounded search batches no exact counterpart found, novelty UNASSESSED; no parent coverage/status change.
 
 - Protected one-hole(2,2,c),c>=3,EQUAL pair targets: direct edge-count completion avoids G328, hand MI517–518/FOUR-BIN-PARTITIONS section11.6. High endpoint immune to deletion; c2 negative8/8/3 retained. Dependency reduction only, no parent coverage/status upgrade.
+
+- One-hole r equal-target pair bins plus one size-c filler, protected cuts: HAND endpoint classification fails exactly u=2M-2r,c<=q<=r, MI519–520/FOUR-BIN-PARTITIONS section12. Known matching ingredient, specialization unreviewed; no parent/status upgrade or run.

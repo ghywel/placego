@@ -4047,3 +4047,16 @@ no applicable primary-source exact arbitrary-target two-size2 classification.
 The unrestricted searches returned mostly irrelevant material; none is
 used as evidence. No citation-index audit or proof of absence is claimed.
 G327/G328 and the composed parent remain unreviewed; novelty UNASSESSED.
+
+### Equal-pair consumption as a known ingredient (GPT, 2026-10-20; MI519–520)
+
+Read [Hoory–Kotlar2605.06071v2](https://arxiv.org/html/2605.06071v2),
+Proposition2.7, Examples2.8/9 and Theorem2.11 with its proof. Equal-sum
+pairs consuming a prescribed part of the token pool, followed by a capacity
+bound for remaining bins, is already an explicit method there. Our fixed-sum
+fibre being a matching and its elementary count are not claimed new.
+FOUR-BIN-PARTITIONS section12 applies that ingredient to a one-hole pool
+with r equal-target pair bins and ONE filler of possibly different target.
+Its exact endpoint characterization is an unreviewed hand specialization,
+not adopted from those statements and not labelled novel. Two narrow arXiv
+queries yielded no exact counterpart; this is not a priority search.

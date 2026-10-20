@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 11:39 BST: direct equal-pair mechanism complete.**
+**CURRENT working state, 2026-10-20 11:53 BST: repeated-pair matching calculation complete.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate flag poller. L8=68 is independently verified as G325, unrelated
 to this structural programme. H2 G326 is PROVED by Cloud CL466/01131375
@@ -160,13 +160,27 @@ sum-u pairs survive. The c2 control M6,q2,targets8/8/3 really fails despite
 all protected cuts. This removes G328 on the equal-pair-target parent
 slice, not G327's scalar lemma or the need to read the parent interfaces.
 No new parent coverage, PROVED status, PROOFS entry or review request.
-The equal-target check is finished; do not repeat it. A prospective next
-GLOBAL mechanism question is repeated equal pair bins plus one filler:
-can one endpoint/deletion-budget calculation describe their packing
-obstruction? Search record and primary sources BEFORE choosing that scope;
-no automatic count-class extension or numerical census has been opened.
-Last trajectory check MI510,2026-10-20 10:48 BST; no repeated refuted
-assumption since then. No renewable pull allowance.13min ACTIVE.
+The equal-target check is finished; do not repeat it. MI519–520 explicitly
+choose and finish a separate GLOBAL mechanism question, independently of
+the parent: r common-target pair bins plus one size-c filler, M=2r+c,
+on[0,M] minus internal q. Section12's hand calculation gives exactly the
+failure u=2M-2r, c<=q<=r. Interior has r+1 full edges; upper endpoint has r
+and protection puts q<=r. Every negative satisfies all proper protected
+cuts, strictly if q<r. Thus uniform filler thresholds c>=r+1, or c>=r
+under strict cuts, are sharp. This is an application of a known matching/
+pair-consumption ingredient, NOT a verified new theorem. Exact one-hole
+specialization unreviewed; no new PROOFS filing/review queue or computation.
+Neither earlier parent coverage nor its verification status changes.
+Next cheap GLOBAL representation test, after record/primary-source check:
+with TWO distinct pair targets, does the union of their fibres consist
+of paths, and do unweighted matching size plus per-colour counts suffice
+for prescribed numbers of each pair type? A can-fail quota test would
+identify a genuine joint capacity gap. No such experiment opened yet.
+Last strategy check MI520,2026-10-20 11:53 BST: four-bin verification pending;
+recent blocks clarify/reduce dependencies, then explicitly choose an
+independent global question. No repeated assumption is being repaired;
+fresh choice selects this capacity viewpoint. Stop completed one-fibre
+work rather than extend its examples. No renewable pull allowance.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -36694,3 +36708,97 @@ all six cuts for the c2 control, and T_r versus L(r) normalization checked.
 Gut: warm at the concrete reason the last two pairs are immune to deletion.
 Reasoned: independent dependency reduction and a sharp control, not a new
 full classification or a five-bin result.13min ACTIVE.
+
+### MI519 — Choose the repeated-pair endpoint question after checking sources (2026-10-20 11:52 BST)
+
+Pull: the equal-pair proof looks like a matching-capacity calculation,
+not a special fact about two bins. I explicitly choose a small independent
+mechanism question: on[0,M] minus internal q, M=2r+c, r>=1,c>=1, with r
+size2 bins all targeting u and one size-c filler targeting w, what EXACTLY
+can fail under total conservation and every proper group target>=T_C?
+This does not advance the already conditionally complete four-bin parent,
+whose two ingredient reads and composition remain pending. It tests a
+portable global mechanism; no census or dependent proof chain is opened.
+
+NOW/CURRENT/latest messages read; fetch/poll give no incoming commit or
+changed flag. Record searched: `equal.*pair|pair.*equal|parts.*size.2` AND
+`filler|one.hole|obstruct|matching` ->50 paragraphs/15 files; narrowed
+`size.?2|size.?two|equal.pair|two.pair` AND `protected|punctured|one.hole`
+->64 paragraphs/10 files. Relevant MI518/G328 matching facts read. Primary
+source: Hoory–Kotlar2605.06071v2 section2.1, Proposition2.7 and Examples2.8/9,
+and Theorem2.11 statement/proof. These already use equal-pair consumption
+and remaining-token capacity; the ingredient is not new. Their setting
+is a full1-based pool with common targets on other bins too. Our one-hole
+single-filler specialization is not adopted from that source. Two narrow
+arXiv queries found no exact counterpart; no novelty conclusion follows.
+
+Bounded HAND test: packing is equivalent to the common fibre having at
+least r edges, since that fibre is a matching and the filler is automatic.
+Use the ALL-pairs union and filler cuts to localize a possible deficit.
+Provisional algebra suggests a single fragile high endpoint, not a list
+of local repairs; this is not a blind numerical forecast. Can-fail check:
+verify that every alleged negative satisfies ALL other group cuts, not
+just the two used to locate it. Controls: recover MI518/r2, check r1/c1,
+and compare a three-pair negative with a nearby positive by explicit sets.
+Unexpected check: strict protected cuts might still permit a missing edge
+when r grows. Stop after this exact common-fibre calculation; do not
+extend to unequal targets or multiple fillers in the same block. No
+experiment or separate proof-review job for the elementary application.
+
+### MI520 — Repeated equal pairs: a single endpoint obstruction (2026-10-20 11:53 BST)
+
+FOUR-BIN-PARTITIONS section12 gives the complete independent HAND calculation
+for r common-target pair bins plus one size-c filler on[0,M] minus q,
+M=2r+c, r,c>=1. Under conservation and all protected proper-group cuts,
+packing fails EXACTLY when u=2M-2r and c<=q<=r. The full argument is there,
+not a numerical extrapolation: two cuts force2r+1<=u<=2M-2r; the interior
+has r+1 full pairs, while the upper endpoint has exactly r. Protection
+puts the hole at q<=r, and it destroys an edge precisely when q>=c.
+
+The negative-family admission is checked against ALL proper groups:
+j pair bins have slack j(2r+2c-2j-1)>0; filler plus j pair bins have
+slack r-q+j(2r-2j-1)>=0, j0..r-1. There is no hidden converse from only
+the two locating cuts. Thus the sharp uniform filler thresholds are c>=r+1
+for ordinary protection, c>=r for STRICT protection. This is an exact
+matching-budget application, not a ladder of proposed local margins.
+No G327/G328, first-bin selector or other unreviewed result is a premise.
+
+**Unexpected check changes the scope.** At r3,c2,M8,q2, targets10/10/10/4
+have all protected cuts STRICT, yet only pairs37 and46 remain for sum10.
+Every individual target is feasible (filler04 included). The nearby q1
+positive is28/37/46/05; the q2 interior positive is18/36/45/07 with
+9/9/9/7. r1/c1 and r2/c2 negatives and the r3/c4 safe upper endpoint are
+listed in section12. This recovers MI518 and shows exactly why its fixed
+c>=3 guarantee cannot be copied to arbitrary pair multiplicity. No code,
+experiment, larger census, or claim about five-bin count selection.
+
+**Status and trajectory.** The fixed-sum matching/count ingredient and
+pair-consumption approach are known; the exact protected one-hole
+specialization is our unreviewed hand derivation, novelty UNASSESSED.
+No new PROOFS filing or review queue; it is not used to adopt any parent
+claim. Independent scrutiny is still required before PROVED status.
+The earlier four-bin parent remains conditional on its named ingredients
+AND composition; this calculation does not improve that domain's coverage.
+I chose a separate global mechanism question explicitly, rather than
+silently replacing the parent with an easier descendant.
+
+Compact strategy check: parent verification is still pending; the recent
+consolidation/source/equal-pair blocks clarified or reduced dependencies;
+this block resolves one independently posed global matching question.
+No repeated refuted assumption is being repaired. Fresh choice would
+select the mechanism, because a one-line capacity deficit explains an
+entire family, including strict-cut failures. Decision: stop this completed
+single-fibre question. Next cheap global test, after record/source check:
+with TWO distinct pair sums, does their union have only path components,
+and are unweighted matching size plus the two colour counts enough for
+prescribed numbers of each pair type? A counterexample would identify a
+real joint-capacity obstruction rather than another boundary repair.
+No unequal-target experiment is opened in this block.
+
+Niggle sweep: no loops counted as pairs; r1 allowed; c1 allowed; negative
+admission covers every proper group but not the whole punctured pool;
+q cannot reach a high endpoint/midpoint in the fragile case; all-controls
+use each actual token once; filler target follows conservation. These
+cheap hand checks pass. Gut: warm at a global explanation with a sharp
+size/multiplicity boundary. Reasoned: one complete elementary application,
+not a new parent/prize result or a verified novel theorem.13min ACTIVE.
