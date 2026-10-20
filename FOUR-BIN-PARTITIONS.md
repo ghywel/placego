@@ -1039,3 +1039,29 @@ so jK<=Uplus_N(P_j) implies every group upper cut. Conservation yields
 all lower cuts; the converse follows by taking the smallest-count groups.
 Thus the candidate agrees with the known slice's EXACT conditions in its
 shared count domain, not merely with a smaller sufficient subregion.
+
+### 11.6 Direct equal-pair child simplification (MI517–518)
+
+**Elementary hand argument, not independently verified; no separate proof
+filing or review request.** In the singleton reduction, if the two original
+size2 targets are equal, they stay equal after normalization. Their child
+can be completed without G328's obstruction classification as follows.
+
+On P=[0,M] minus internal q, M=c+4>=7, let targets(u,u,w) conserve the sum
+and satisfy all six protected cuts. The two-pair union and filler imply
+10<=2u<=4M-6-q, hence5<=u<=2M-4. Before deletion the sum-u fibre has
+floor((min(u,2M-u)+1)/2) edges, and every two distinct edges in that SAME
+fibre are disjoint. For5<=u<=2M-5 there are at least three edges, so one
+deletion leaves at least two. At u=2M-4 there are exactly the edges
+{M-4,M},{M-3,M-1}; the upper inequality forces q<=2, below all four
+endpoints since M-4=c>=3. Neither edge is removed. Choose those two
+edges and put all other tokens in the filler.
+
+The minimum filler size matters: M6,q2,targets(8,8,3), counts(2,2,2),
+meet all six protected cuts and have individually feasible targets, but
+sum8 has only35 after deletion of26. This is a negative control outside
+the stated c>=3 domain, not a broader classification.
+The symmetric full-four-bin slice therefore avoids G328 as a premise;
+it still needs the unread size2 scalar lemma for separated strict-pair
+sides and a carrying read of its composition. The arbitrary-target parent
+in Section11 still depends on G328. No proof status is promoted here.

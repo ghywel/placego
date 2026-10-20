@@ -124,62 +124,49 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 11:24 BST: source comparison complete; equal-pair mechanism next.**
+**CURRENT working state, 2026-10-20 11:39 BST: direct equal-pair mechanism complete.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate flag poller. L8=68 is independently verified as G325 and does
-not depend on this structural programme. Current parent: prescribed-sum
-partitions of a FULL interval into four bins, especially counts(a,2,2,c),
-a,c>=3. G326 H2 is PROVED by Cloud CL466/01131375's carrying read of the
-original candidate87521f60. The later MI501 simplification remains a
-self-audit and is not needed. Novelty remains UNASSESSED throughout.
+no separate flag poller. L8=68 is independently verified as G325, unrelated
+to this structural programme. H2 G326 is PROVED by Cloud CL466/01131375
+reading the original87521f60 proof. MI501's later simplification is optional
+and still only self-audited. Novelty remains UNASSESSED.
 
-G327 is the complete HAND CANDIDATE for all14 rank cuts sufficing with
-at most one size2. G328 is an INDEPENDENT complete HAND CANDIDATE for
-protected one-hole counts(2,2,c): only q1 pairtargets4/6, or M7,q3 pairtargets
-3/8 or4/10 fail. Both carrying reads are pending. No unread G320–322,
-MI430/MI460 or new census is a premise. G327 endpoint/tie audit MI505 is
-finished; do not repeat it. The old MI308/MI506 forced negative family
-already refutes arbitrary four-bin cut sufficiency with two size2 bins,
-even when all14 cuts are strict.
+The parent is full-interval prescribed-sum counts(a,2,2,c),a,c>=3. Its
+COMPLETE CONDITIONAL hand classification is consolidated in
+FOUR-BIN-PARTITIONS section11: all14 rank cuts suffice except, up to
+permutation/full reflection, targets
+(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). The negative is the old MI308/506 family;
+MI510 handles every actual singleton/triple lift, MI512 all strict-pair
+arrangements including the physical Q4(2)/P_n(2) switch. New ingredients
+are G327 STEP1 scalar spectra only and independent G328's protected
+one-hole two-pair failure list. Both carrying reads are pending; new parent
+interfaces/composition also remain unread. Ingredient verification alone
+would NOT verify the parent. Two existing requests, no third filing/job.
+The whole G327 theorem is not a parent premise; its own at-most-one-size2
+candidate remains unreviewed. No unread G320–322, MI430/MI460 or census is
+used. Five-bin count admission/multiple thin rows remain OPEN.
 
-MI509–510 pass ALL G328 failures through the ACTUAL least-cut gate: k0
-is forced; q1 is that globally impossible old family; both M7,q3 rows
-have explicit uniform alternate-root parent partitions. Selected-size2
-roots instead use PROVED G326/full-three-bin base. This singleton/triple
-exhaustion is CONDITIONAL on G328's classification, not its own new proof
-status. MI511–512 now close the remaining STRICT pair branch by hand:
-separated size2 bins use G327's scalar lemma on BOTH physical sides;
-a shared(2,2) side permits only h0/1/2 by INTEGER strictness. At h2 P4=0125
-really misses the required4, but Q4=0134 partitions as04/13 and its ACTUAL
-reflected complement is P_n(2). The larger side uses PROVED G316. No
-minimum3 prefix estimate was imported at side length4.
+MI513–514 consolidation, endpoint audits and MI515–516 targeted source
+comparison are COMPLETE; do not repeat them. The candidate's common-sum
+slice has exactly the known sorted-prefix conditions, and its excluded
+size2 targets differ by2 even after normalization/reflection. Two limited
+search batches found no exact broader theorem; this does not establish
+novelty. No renewed search without a concrete new source.
 
-Thus the full counts(a,2,2,c) parent has COMPLETE CONDITIONAL hand coverage:
-all14 cuts suffice except, up to permutation/full reflection, targets
-(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). No composed theorem is PROVED or newly
-filed. Earliest unread ingredients: G327's size2 scalar lemma and G328's
-classification, used in different branches. Their independent reads would
-NOT alone verify the new MI510/512 parent interfaces/composition. Two
-existing requests remain, no third entry/job or duplicate request.
-MI513–514 consolidate the COMPLETE parent argument in FOUR-BIN-PARTITIONS
-section11, relative to those two explicit ingredient premises. This changes
-readability/dependency visibility, not mathematical coverage or status.
-The reconstruction needs no additional ingredient; separated-side scalar
-selection and post-reflection relabelling are explicit. Consolidation and
-endpoint audits are finished; do not repeat them. MI515–516 finish the
-targeted primary-source comparison: translating targets by their sizes
-preserves cuts, and the exceptional size2 targets still differ by2, so
-the obstruction never meets the known common-sum slice. No exact broader
-theorem found in two limited search batches; novelty UNASSESSED. Do not
-repeat this search without a concrete new source. Next INDEPENDENT cheap
-mechanism test: protected one-hole(2,2,c) with equal pair targets u,u; do
-group cuts directly force at least two edges in E_u? Use literal pair
-counts/high-end boundary, not G328. This simplifies a symmetric slice,
-not parent coverage or the five-bin count selector. No count-class
-extension, new PROOFS job or census planned. Five-bin admission remains OPEN.
-Last trajectory check MI510,2026-10-20 10:48 BST; MI512 completes the named
-missing branch rather than another local exception. No repeated failure
-or renewable extra-block allowance.13min ACTIVE.
+MI517–518/section11.6 now complete an INDEPENDENT equal-pair child proof:
+protection gives5<=u<=2M-4; interior fibres have>=3 edges before deletion,
+while the two-edge high fibre is immune because q<=2<c. Hence two disjoint
+sum-u pairs survive. The c2 control M6,q2,targets8/8/3 really fails despite
+all protected cuts. This removes G328 on the equal-pair-target parent
+slice, not G327's scalar lemma or the need to read the parent interfaces.
+No new parent coverage, PROVED status, PROOFS entry or review request.
+The equal-target check is finished; do not repeat it. A prospective next
+GLOBAL mechanism question is repeated equal pair bins plus one filler:
+can one endpoint/deletion-budget calculation describe their packing
+obstruction? Search record and primary sources BEFORE choosing that scope;
+no automatic count-class extension or numerical census has been opened.
+Last trajectory check MI510,2026-10-20 10:48 BST; no repeated refuted
+assumption since then. No renewable pull allowance.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -36598,3 +36585,112 @@ single-bin upper bound; common equal sums do not mean equal means. Those
 cheap algebraic checks pass. Gut: mild curiosity sharpened into a concrete
 pair-count question, not certainty about novelty. Reasoned: source boundary
 clarified; useful independent simplification available.13min ACTIVE.
+
+### MI517 — Direct protected equal-pair test, independent of G328 (2026-10-20 11:37 BST)
+
+Pull: the upper endpoint looks more revealing than another positive
+example; protection may place the deleted value below every fragile pair.
+The parent classification is still conditional and unread. This bounded
+mechanism check concerns ONLY P=[0,M] minus internal q, counts(2,2,c),
+c=M-4>=3, targets(u,u,w), total T_M-q and all six protected cuts. It is
+already a consequence of candidate G328, so success adds no parent domain
+coverage; the purpose is to remove that unreviewed classification from
+this symmetric slice and explain why equality avoids the obstruction.
+No separate PROOFS entry or review request for this elementary argument.
+
+Read NOW, CURRENT, latest ledger/messages; fresh fetch/store have no new
+commit or changed addressed flag. Record searched: `equal.*pair|pair.*equal|
+common.*fibre` AND `protect|two.edge|two edges` ->18 paragraphs/8 files;
+relevant G328 step1 and literal pair-count formulas are read, not assumed
+verified as a classification. MI515–516's primary-source comparison is
+complete; no new literature leap or novelty claim is needed for this direct
+count. The common-sum predecessor is known, not a new proof here.
+
+Bounded HAND test: derive the exact allowed u-range from group cuts, count
+pairs in the FULL interval, and show one deletion leaves TWO edges in the
+same matching. Prediction: the sole weak-count endpoint is excluded from
+deleting either edge by the same cut inequalities. Can-fail counterfactual:
+if an admitted endpoint has only one surviving edge, this direct proof
+fails even though both single pair targets are individually feasible.
+Independent controls: a lower-edge example, a high-boundary example where
+the full fibre has exactly two edges, and a nonpartitionable input with
+one protected union cut removed. Unexpected check: examine the excluded
+c2 boundary as a literal control, not a new count-class extension. Stop
+after this equal-target argument and its controls; no run, larger census,
+new parent extension or automatic generalization is opened.
+
+### MI518 — Equality turns compatibility into a protected edge count (2026-10-20 11:39 BST)
+
+**Direct hand simplification, independent of G328; not a new PROOFS job.**
+Let M=c+4>=7, P=[0,M] minus internal q, and targets(u,u,w) obey total
+T_M-q and all six protected cuts. The two-pair union and the filler give
+
+    10<=2u<=4M-6-q; hence 5<=u<=2M-4.            (1)
+
+The full interval has
+
+    e0(u)=floor((min(u,2M-u)+1)/2)
+
+unordered distinct-token pairs of sum u. One deleted value removes at
+most one edge. Edges in a SINGLE sum fibre are automatically disjoint:
+a token x can have only partner u-x. Therefore two surviving edges are
+already a simultaneous solution for the two pair bins; their complement
+has the required c tokens and sum w.
+
+For5<=u<=2M-5, min(u,2M-u)>=5, so e0(u)>=3 and at least two edges survive.
+At u=2M-4, (1) forces q<=2. The full fibre is exactly
+
+    {M-4,M}, {M-3,M-1}.
+
+All four tokens are at least M-4=c>=3, so the deletion q1/2 hits neither.
+Both edges survive. This exhausts the entire allowed range uniformly;
+no exceptional-fibre classification, scalar feasibility assumption,
+reflection of protection, or numerical range extrapolation is used.
+The upper endpoint is not rescued by an estimate pretending e0>=3:
+it genuinely has only TWO original edges, both physically protected.
+
+**Literal independent controls.** At M7,q1,u5, choose05/23/rest467,
+with targets(5,5,17). At the fragile endpoint M7,q2,u10, choose37/46/rest015,
+with targets(10,10,6). The latter filler is exactly at its protected
+minimum T3=6; deleting3 instead would lower w to5 and fail that protection.
+The two same-sum edges are DISTINCT, never the same pair used twice.
+
+Removing the two-pair union cut really breaks the argument even if each
+individual target remains attainable: M7,q3,targets(4,4,17) have only
+pair04 for sum4; the target17 triple467 exists, but two disjoint pair4
+bins do not. The failed protected cut is8<10; the other five lower
+protected cuts hold. Thus individual scalar feasibility is not substituted
+for group protection in this simplified proof.
+
+The excluded c2 boundary is a sharp negative control, not an automatic
+extension: M6,q2,targets(8,8,3), counts(2,2,2), obey ALL six protected cuts
+and total19. Each target is individually attainable (35 and03), but the
+sum8 fibre is only35, since26 was deleted. No partition exists. Exactly
+where the proof used c>=3, that protection of the HIGH pair's smaller
+endpoint fails. This hand fixture explains the size boundary; no new
+classification for c2 is asserted or requested.
+
+**Dependency effect, not new parent coverage.** In the four-bin parent
+with original size2 targets equal, normalization subtracts the SAME2l
+from both. Its larger-singleton child therefore uses this direct argument
+instead of unread G328. Selected-size2 roots still use PROVED G326;
+strict-pair separated sides still use G327's unreviewed scalar lemma;
+physical same-side cases are MI512. Thus the symmetric full-parent slice
+has lost ONE unread dependency, not acquired a new covered domain. The
+whole arbitrary-target parent still needs G328 AND its new composition
+read. This elementary simplification is hand-checked, not independently
+verified; no PROVED upgrade or separate review request is made.
+
+**Decision.** The named equal-target check is finished; do not repeat it.
+A possible next global mechanism is repeated equal pair bins with one
+filler: can the SAME endpoint/deletion-budget argument express the whole
+packing obstruction? Park that as one prospective question, not a new
+claim or an automatic count-class extension in this block. Check the
+record and primary sources before choosing it. No further experiment or
+local repair catalogue is opened here; pending reviews remain useful,
+without imposing a routine halt. Niggle sweep: two DIFFERENT edges,
+high endpoint exact, q midpoint removes no loop, actual hole position,
+all six cuts for the c2 control, and T_r versus L(r) normalization checked.
+Gut: warm at the concrete reason the last two pairs are immune to deletion.
+Reasoned: independent dependency reduction and a sharp control, not a new
+full classification or a five-bin result.13min ACTIVE.

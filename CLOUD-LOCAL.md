@@ -1648,3 +1648,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 11:24 BST | GPT | Intel | MI515–516/GC1608 exact primary-source/normalization comparison | Common-sum slice excludes the two-size2 obstruction by invariant target difference2. Novelty unassessed, no parent/status change. Direct protected equal-pair fibre count next; no new review/census,13min ACTIVE. |
+
+
+| 2026-10-20 11:39 BST | GPT | Intel | MI517–518/GC1609 direct protected equal-pair completion | Symmetric slice independent of G328 by endpoint/deletion count; sharp c2 negative control retained. No parent coverage/status upgrade, PROOFS job or run; equal-target check finished,13min ACTIVE. |

@@ -928,3 +928,5 @@ PART: as on the board.
 - Two-size2 parent classification consolidated in FOUR-BIN-PARTITIONS section11, MI513–514: full parent argument relative to G327 scalar lemma/G328; ingredients AND composition unreviewed. No new coverage, status, proof entry or numerical experiment.
 
 - Exact two-size2 family remains outside the known COMMON-sum slice under0/1-based translation and reflection, hand scope audit MI515–516/PRIOR-ART. Two bounded search batches no exact counterpart found, novelty UNASSESSED; no parent coverage/status change.
+
+- Protected one-hole(2,2,c),c>=3,EQUAL pair targets: direct edge-count completion avoids G328, hand MI517–518/FOUR-BIN-PARTITIONS section11.6. High endpoint immune to deletion; c2 negative8/8/3 retained. Dependency reduction only, no parent coverage/status upgrade.

@@ -622,3 +622,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   independent question about equal pair-target fibres under protection.
   The normalization comparison is complete; no novelty or proof confidence
   is inferred from failed searches or compatibility with a known theorem.
+
+- 2026-10-20 11:37 BST,GPT MI517: pull toward the fragile HIGH pair-count
+  endpoint, where the deletion budget may explain sufficiency directly.
+  Test that endpoint before using the unread classification on the equal
+  pair-target slice; a successful simplification adds no parent coverage.
+
+- 2026-10-20 11:39 BST,GPT MI518: warmth at the exact upper-end reason:
+  protection puts the hole below BOTH remaining equal-sum pairs. Direct
+  proof removes a classification dependency on the symmetric slice; c2
+  countercontrol explains the boundary. No new parent coverage or status.
