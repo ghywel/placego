@@ -35134,3 +35134,76 @@ counts; they do not prove all count selection irrelevant or a universal pairing
 mechanism necessary. Chen's scope was already examined in PRIOR-ART/MI291 and
 MI487 supplied a later bounded search. No redundant search launched. Both
 schedules remain PAUSED; this turn supplies the owner's requested assessment.
+
+
+### MI490 — External Mahler formalization: source audit and a usable return condition (2026-10-20 08:30 BST)
+
+Owner-requested assessment; no schedule restart or broad reopening of held lanes.
+Read Cloud CL463/16b8ba22 and MAHLER section 4; preserved all incoming shared work.
+Both startup probes rule30_wall.py/rule30_merge.py finish ALL CHECKS PASS, with their
+refuted blind predictions retained. Record searched: first.defect|valuation.lock|
+signed.margin|bispecial|confinement AND Mahler|Dubickas|2.adic|Coon -> four hits in
+three files, including the earlier Stephan survey and Cloud's checks. No new
+experiment or production census is run in this block.
+
+**Version and verification.** Read selected statements/proofs and the matching
+paper portions in the public external repository. Cloud's complete Lean replay
+covers 04ed5389d3a37736291e3b2fa377af4c6ba448c3. The downloaded current tip is
+f6d949261000ec61bbc5910f75db4f422b17bf02, sixteen commits later; its extension file
+has 4,669 added lines beyond that replay. New catapult/defect/CRT results are
+source-inspected only here, not silently included in Cloud's kernel verdict.
+This host has Lean 4.33.1, not the pinned 4.19.0; no independent library rebuild
+was attempted. GitHub web rendering failed, so public source was read from a
+temporary Git clone. No external code or build configuration executed.
+
+**The carrying interface is exact but still open.** In
+ExactSeedResidueTreeAndStabilization.lean, r_N is the least seed residue matching
+the parity prefix, Q_N=T^N(r_N), eta_N is its next extension bit, and
+
+    r_(N+1)=r_N+eta_N*2^N,
+    2 Q_(N+1)=3 Q_N+3^(N+1)*eta_N+e_N,
+    D_(N+1)=min(2^(N+1),3 D_N-2^(N+1)*e_N).
+
+Positive ordinary seeds correspond to eventual positive stabilization of r_N;
+Mahler is equivalent to every such branch eventually having D_N<=0. The formal
+rank-certificate theorem ASSUMES an invariant and a decreasing natural rank;
+it does not construct the missing rank. Q_N is not floor(a0/2^N), despite the
+email's quotient notation. The 100 ceiling-recovery theorem gives normalized
+margins 1 -> 1/2 -> 3/4 -> 1, so scalar contraction alone cannot work globally.
+Repeated low-complexity blocks require a mean/balance hypothesis in their block
+threshold theorem; the general shifted-carry complexity theorem is a distinct
+statement. Neither supplies an exhaustive dichotomy with rapid growth.
+
+**Concrete usable consequence, hand application of the replayed union theorem.**
+Let U be the six-interval union of total length 25/36 from
+union_twenty_five_thirty_sixths_explicit_and_infinite_escape. Its complement
+inside Mahler's half-window is exactly
+
+    H=[1/12,1/9) union [11/36,4/9).
+
+Any hypothetical positive Z-number must have its fractional orbit in H at
+arbitrarily late times, because the imported theorem says every positive real
+escapes U after every starting threshold. For xi in [1,2^W), the first such
+visit is at most W+16 under the Z-number assumption. This is a necessary return
+condition, not an exclusion of Z-numbers. Unexpected hand control: U does not
+contain the half-window (1/10 is in H). Total length greater than 1/2 therefore
+does not imply a stronger Mahler theorem. The valid relaxed cycle has fractional
+states 9/19,4/19,6/19; 6/19 belongs to H, while the other two belong to U. Thus
+this new return obligation is compatible with our familiar nonordinary 2-adic
+seed -9/19 and does not itself cross the realization wall.
+
+**First-defect lock and barriers.** Its valuation 3*j0+3 is a bound on the initial
+constant-three run; later blocks leave that fixed initial valuation unchanged,
+not a growing demand on the same initial integer. Their cocycle residual is an
+increasing boundary invariant, explicitly noted in the source. The Padé and
+three-origin identities are useful exact tests for dependence of chosen
+auxiliaries, not impossibility theorems about every Diophantine method. The
+latest defect recurrence is genuinely arithmetic and worth a pinned scope read,
+but sparse-descent and rank results still need their named hypotheses.
+
+Gut: interest in the exact coupled arithmetic and in an outside formal bridge;
+no eureka at a solved wall. Reasoned: adopt the replayed statements in scope,
+retain the return corollary as a known-theorem application, and prioritize one
+integer-realization/defect mechanism over more large unions or another census.
+No Rule30 or Collatz theorem transfers without a separate model-specific bridge.
+No novelty, external-version replay, or new prize status is claimed.
