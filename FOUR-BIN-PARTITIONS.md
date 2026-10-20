@@ -840,3 +840,181 @@ quantifier. The exact review provenance is in the master entries.
 The theorems concern three bins on a one-hole pool and four bins on a full interval,with
 minimum size3. They prove no eight-bin criterion,E28/L8 threshold or listed prize statement.
 No larger census is implicit in this exposition.
+
+## 11. Unreviewed extension packet: exactly two bins of size two
+
+**Complete parent PROOF-SKETCH, not independently verified.** Consolidated
+from GPT-MATH-INSTINCT MI509–514. This section does not change the proved
+statuses or scope of Sections1–10. Novelty is unassessed. It adds no new
+PROOFS entry or separate review request. The ingredients and the new parent
+interfaces must all survive a carrying read before this becomes PROVED.
+
+**Statement under review.** Let N=a+c+4, a,c>=3. Prescribe integer sums
+(s_A,s_B,s_C,s_D) for counts(a,2,2,c), with total L(N). A partition of
+0,...,N-1 exists exactly when all fourteen proper group cuts
+
+    S_I>=L(C_I)
+
+hold AND the input is not, up to permutation of labelled bins and full
+value reflection v->N-1-v, the family
+
+    F(a,c)=(L(a)+1, 2a+2, 2a+4, L(c)+(a+4)c-1).       (11.1)
+
+Permutation carries each count with its target. Full reflection replaces
+s_i by c_i(N-1)-s_i. It preserves the cut conditions. In fact (11.1) is
+closed under reflection with a,c and the two pair labels exchanged.
+
+### 11.1 Exact premises and verification boundary
+
+| Ingredient | Exact use here | Status |
+|---|---|---|
+| Section5 full-interval three-bin lemma, sizes>=2 | Endpoint child | PROVED |
+| [G326](PROOFS.md), protected one-hole counts(2,b,c), b,c>=3 | Selected size2 singleton | PROVED, CL466 |
+| Sections7–8, minimum3 central spectra and actual complement | Large side of pair cut | PROVED G316, review provenance in Section10 |
+| [G327 step1](PROOFS.md) only: both size2 P/Q central spectra, m>=5, h<2(m-2) | Separated size2 bins at strict pair minimum | Unreviewed scalar lemma |
+| [G328](PROOFS.md): exact three-entry protected(2,2,c) failure list | Larger singleton child | Unreviewed classification |
+| Sections11.2–11.5 below | Root interface, physical size4 switch, exhaustive composition | Unreviewed parent argument |
+
+This is a self-contained PARENT argument relative to those named
+ingredients, not a claim that the two unread ingredient proofs have been
+replaced. Their full carrying calculations remain in the linked master
+entries. The whole G327 four-bin conclusion is NOT used; G328 is independent
+of G327. No G320–322, MI430, MI460 or finite census is a premise. Verifying
+G327 and G328 alone would not automatically verify the new parent interfaces.
+Explicitly, the size2 scalar premise says that for m=e+2, e>=3 and
+0<=h<2e, BOTH P_m(h) and Q_m(h), of moment L(m)+h, contain a pair of
+EVERY sum in [1+h,2m-3], with the needed length bound m>=s0+3 for
+h=T_(s0)+t0>0. Only this premise from G327 is invoked below.
+
+### 11.2 Necessity and the excluded family's actual obstruction
+
+Every union of bins must meet its rank cut, so the fourteen inequalities
+are necessary. The fourteen LOWER cut slacks for F(a,c) are
+
+    A,B,C,D: 1, 2a+1, 2a+3, (a+4)c-1;
+    AB,AC,AD,BC: 2, 4, 4c, 4a;
+    BD,CD: (a+2)c+2a, (a+2)c+2a+2;
+    ABC,ABD,ACD,BCD: 1, 2c+1, 2c+3, a(c+4)-1.
+
+All are positive. A's target L(a)+1 uniquely forces [0,a-2] union{a};
+D's target U_N(c)-1 uniquely forces {a+3} union[a+5,N-1]. This follows
+by distributing the single unit of displacement above the minimum, or
+below the maximum, in a sorted fixed-cardinality subset. Their complement
+is {a-1,a+1,a+2,a+4}. Subtracting a-1 leaves {0,2,3,5}, while the two
+pair targets become4 and6. That set has pair spectrum{2,3,5,7,8}, so neither
+required sum exists. Thus F really is impossible despite all strict cuts.
+This is the old MI308/MI506 forced-extremes mechanism, not a new obstruction.
+
+### 11.3 A singleton or triple attains the minimum cut slack
+
+Assume the cuts. Put h=min_I(S_I-L(C_I))>=0. Full reflection sends each
+cut slack to its complementary old slack. If a singleton or triple attains
+h, reflect once if needed so a selected singleton of size d has target
+L(d)+h. Use the ordinary prefix/suffix/pivot recipe of Section5:
+choose l low values, k high values, and a pivot p, with l+k=d-1. Set
+
+    M=N-d, q=p-l, t_i=s_i-lc_i.
+
+The actual translated remainder is [0,M] minus{q}, 0<=q<=M. Its moment
+and the selected target give
+
+    h=kM+q,   sum t_i=L(M+1)-q.
+
+For any proper nonempty group J of remaining bins, write r=C_J. The
+cuts J and selected-singleton union J, both with slack>=h, yield
+
+    t_J>=L(r)+max(kM+q-lr,(k+1)r)>=L(r)+r.       (11.2)
+
+For completeness the all-remaining cut yields (l+1-k)M>=2q. Formula
+(11.2) comes from the FULL original interval in its chosen orientation;
+it assumes no reflection-invariance of punctured-pool protection. It
+accounts for the twelve cuts other than the selected singleton and its
+complement. Child protection uses T_r=L(r)+r, not L(r).
+
+The original cuts also give S_J>=L(r)+dr. After ANY d values have been
+deleted, the r smallest survivors have sum at most L(r)+dr. Thus actual
+rank cuts hold for every child group. If q0 or M, trim the endpoint and
+use the proved full-three-bin lemma with sizes>=2. If d2, the internal
+child has counts(2,a,c), a,c>=3; its conservation and six inequalities
+(11.2) are exactly PROVED G326's hypotheses, so it partitions.
+
+It remains to select a larger bin, renamed A of size a>=3. The internal
+child has counts(2,2,c), M=c+4. By G328 it partitions unless its pair
+targets u,v (interchangeable) and final target w are one of
+
+    q1: (u,v,w)=(4,6,T_M-11), any M>=7;
+    M7,q3: (3,8,14) or (4,10,11).
+
+In EVERY exceptional row a pair has target at most4, while (11.2) demands
+that target>=2k+3. Hence k0, l=a-1, h=q. The q1 row translates back to
+exactly F(a,c), already excluded in the statement. The other rows have
+c3, N=a+7, and respectively translate to
+
+    (L(a)+3,2a+1,2a+6,3a+11),
+    (L(a)+3,2a+2,2a+8,3a+8).
+
+Both have direct partitions. Put A*=([0,a-1] minus{a-2}) union{a+1}.
+The other three bins are respectively
+
+    {a-2,a+3}, {a,a+6}, {a+2,a+4,a+5};
+    {a-2,a+4}, {a+2,a+6}, {a,a+3,a+5}.
+
+For every a>=3 these sets cover0..a+6 disjointly, and their sums are the
+displayed targets; A* has sum L(a)+3. No changed child protection is
+needed. Thus a bad canonical child in these two rows is not a bad parent.
+All singleton/triple minimum cases, including ties, are now covered.
+
+### 11.4 No singleton or triple attains the minimum: a strict pair
+
+Let a pair of bins attain h and write its sizes r,s, with t,u on the other
+side. As in Section9, put x=s_r-L(r), z=U_N(t)-s_t. Strict singleton/triple
+comparisons and conservation give
+
+    h<x<rs, h<z<tu, and h<min(rs,tu).             (11.3)
+
+If the size2 bins are on different sides, relabel WITHIN each pair so
+r=t=2; each side then has counts(2,large). Use the G327 scalar lemma
+on BOTH P and Q shapes, selecting targets1+x and1+z respectively. Its length bound on
+each side justifies the Section8 ACTUAL complementary set identity.
+For h0 use ordinary full intervals. Choose the two scalar subsets on
+these disjoint physical sides; reflecting the second back gives
+s_t=t(N-1)-L(t)-z=U_N(t)-z. Their complements give the other two targets.
+
+If the size2 bins are together, reflect the FULL interval if necessary
+so their side is the lower pair cut attaining h. Recompute(11.3) in this
+orientation with r=s=2 and t=a,u=c. Now h<x<4 with x integer,
+so h0,1,2 are the only possibilities. Put n=a+c, N=n+4.
+
+- h0: use low side0123; its reflected complement is0..n-1.
+- h1: use low side0124, split12/04 for the required targets3/4.
+  Its reflected ACTUAL complement is [0,n-2] union{n}=P_n(1).
+- h2: strictness forces both pair targets4. P4(2)=0125 misses4;
+  instead use Q4(2)=0134 and split04/13. Its ACTUAL complement is
+  {2} union[5,N-1], reflecting to [0,n-2] union{n+1}=P_n(2).
+
+For h0/1/2 the large reflected side has moment L(n)+h. The proved
+minimum3 central lemma supplies its a-subset target L(a)+z, since
+h<z<ac. Reflect it back, obtaining s_a=a(N-1)-L(a)-z; conservation gives
+the last bin. This explicitly changes the physical boundary at h2,
+not just a scalar representative on an incompatible boundary. The integer
+strictness in(11.3) excludes h3; no minimum3 prefix estimate is used at4.
+
+### 11.5 Exhaustion, controls and remaining verification
+
+Every minimum proper cut is a singleton, triple or pair. Sections11.3–11.4
+cover all inputs outside F using only the named premises. Section11.2 proves
+F itself impossible. This completes the conditional characterization.
+It remains a PROOF-SKETCH until the unread ingredients AND composition
+receive independent scrutiny. No five-bin criterion, new L8 bound, or
+extension to three size2 bins follows from this packet.
+
+Literal controls retained from the notebook:
+
+    F(3,3)=(4,8,10,23): impossible; near positive(4,8,11,22)=013/26/47/589.
+    First q3 lift at a3: (6,7,12,20)=024/16/39/578.
+    Second q3 lift at a3: (6,8,14,17)=024/17/59/368.
+    Strict pair h2: counts(2,2,3,3), (4,4,18,19)=04/13/279/568.
+
+Each string denotes its set of distinct tokens. These check actual sums,
+disjointness and coverage by hand, not an infinite quantifier or independent
+verification. No numerical experiment or formal proof checker was run.

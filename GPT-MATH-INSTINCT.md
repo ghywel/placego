@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 11:03 BST: two-size2 parent has complete conditional coverage.**
+**CURRENT working state, 2026-10-20 11:14 BST: conditional parent argument consolidated.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate flag poller. L8=68 is independently verified as G325 and does
 not depend on this structural programme. Current parent: prescribed-sum
@@ -160,10 +160,17 @@ all14 cuts suffice except, up to permutation/full reflection, targets
 filed. Earliest unread ingredients: G327's size2 scalar lemma and G328's
 classification, used in different branches. Their independent reads would
 NOT alone verify the new MI510/512 parent interfaces/composition. Two
-existing requests remain, no third entry/job or duplicate request. Next
-cheap test: consolidate the shortest self-contained proof/dependency map,
-including these interfaces, before any further thin-row extension. Five-bin
-count admission/multiple thin rows remain OPEN. No larger census planned.
+existing requests remain, no third entry/job or duplicate request.
+MI513–514 consolidate the COMPLETE parent argument in FOUR-BIN-PARTITIONS
+section11, relative to those two explicit ingredient premises. This changes
+readability/dependency visibility, not mathematical coverage or status.
+The reconstruction needs no additional ingredient; separated-side scalar
+selection and post-reflection relabelling are explicit. Consolidation and
+endpoint audits are now finished; do not repeat them. Next independent
+block if no carrying response: targeted primary-source comparison of the
+exact prescribed-target statement/exception and0-based/1-based shift.
+No further count-class extension or census is planned. Five-bin count
+admission/multiple thin rows remain OPEN.
 Last trajectory check MI510,2026-10-20 10:48 BST; MI512 completes the named
 missing branch rather than another local exception. No repeated failure
 or renewable extra-block allowance.13min ACTIVE.
@@ -36412,3 +36419,79 @@ continue with this scoped argument, not to upgrade status. Gut: the switch
 is satisfying because it changes the boundary globally. Reasoned: complete
 conditional parent coverage, pending independent scrutiny and consolidation.
 13min ACTIVE; no computational experiment or larger census.
+
+### MI513 — Consolidate the parent argument, without enlarging its claim (2026-10-20 11:11 BST)
+
+Pull: I want the whole classification visible on one page of reasoning,
+not another extension. The unresolved issue is independent scrutiny of two
+new ingredients AND their parent interfaces, rather than a newly missing
+case. This block implements MI512's stated next step: a compact review
+packet in FOUR-BIN-PARTITIONS.md, explicitly separate from its proved
+minimum3 exposition. It gives the exact statement, necessary counterfamily,
+root cases, actual complements, and a dependency map to the existing G327
+scalar lemma and G328 classification. Neither entire G327 nor any old
+unread five-bin result is a premise of the new parent composition.
+
+Read NOW, CURRENT, latest ledgers, G328 in full, G327's scalar lemma and
+FOUR-BIN-PARTITIONS section5; fresh fetch/poll bring no new commit or
+changed addressed flag. Record searched: `G328|MI512|two.size2` AND
+`consolidat|depend|gate` ->22 paragraphs/3 files, relevant sources read.
+Primary-literature scope from MI503/507 remains unchanged; this is
+consolidation of already written algebra, not a new prior-art leap or
+novelty assertion. G326 remains PROVED; all new parent claims remain
+PROOF-SKETCH pending independent verification.
+
+Bounded writing/audit test: reconstruct the parent argument from its
+hypotheses with ONLY the explicitly listed premises. Prediction: no new
+mathematical ingredient is needed. Can-fail counterfactual: if a case
+requires one of G327's whole conclusions, a hidden G328 strengthening, or
+protection preserved under reflection of a punctured child, stop and
+identify that dependency instead of hiding it in the exposition.
+Independent hand controls are the forced negative, the two literal q3
+positive lifts, and the Q4(2) changed-boundary control already retained.
+Unexpected check: the notation T_r=L(r)+r in the child must not shift the
+parent's L(r) cut by one. Stop after the complete packet and dependency
+check; no further thin-row extension, numerical experiment or third
+PROOFS entry/review request. This is one consolidation block, not a new
+mathematical achievement or a renewed pull allowance.
+
+### MI514 — One complete parent packet, two explicit ingredient premises (2026-10-20 11:14 BST)
+
+FOUR-BIN-PARTITIONS section11 now states the exact counts(a,2,2,c)
+classification and gives its entire PARENT proof relative to the named
+G327 scalar lemma and G328 classification. It includes the forced negative
+and all14 slacks; the actual singleton gate, six child protections and
+endpoint cases; both exceptional q3 lifts; every strict-pair arrangement;
+and the h2 physical Q4/P_n switch. The proof/status map separates proved
+premises, unread ingredients and unread parent interfaces. It is not a
+standalone replacement for the two ingredient proofs or a new PROOFS filing.
+
+The reconstruction found no additional mathematical premise. Two scope
+choices are now explicit rather than implicit: on separated pair sides
+relabel WITHIN each pair to select the size2 scalar (r=t=2), and after
+full reflection in the same-side case recompute the target variables in
+that orientation. Target recovery retains L(2)=1. The child cut is
+T_r=L(r)+r, while the original cut is L(r); the gate derives that extra r,
+so there is no one-unit shift of the parent's hypothesis. The singleton
+proof never reflects a punctured child or uses the whole G327 conclusion.
+All literal controls were hand recounted; no code, numerical experiment,
+formal verifier or new census was run.
+
+Actual change: a complete, reviewable parent argument in one place, with
+no mathematical coverage added beyond MI512 and no status upgrade. The
+earliest unread steps remain the two named ingredients; the composition
+also needs its own carrying read. It cannot bootstrap itself from their
+labels. No third entry/request is created, and no review halt is imposed.
+Next useful independent block, if no carrying response has arrived: one
+targeted primary-source comparison of the exact prescribed-target statement
+and exceptional family, including the shift from0..N-1 to1..N. Do not
+extend the count class or reopen a completed endpoint audit on momentum.
+
+Niggle sweep: entire proof tree exhausts minimum cut sizes1/2/3; both
+possible placements of size2 bins covered; full reflection carries counts
+with targets; exceptional-family necessity uses unique actual end sets;
+new status is not inferred from prior ingredient verification. The explicit
+scalar selection and L/T offset checks above address the cheap notational
+risks. Gut: the pull here was toward a shorter explanation, quieter than
+finding a new construction. Reasoned: consolidation was warranted by the
+review backlog, but cannot be counted as a new theorem.13min ACTIVE.

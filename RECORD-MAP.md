@@ -924,3 +924,5 @@ PART: as on the board.
 - Actual four-bin lifts of G328 obstruction types force k0, MI509–510: q1 is old forced negative; both M7,q3 families have uniform staircase/alternate-root partitions. Singleton/triple exhaustion CONDITIONAL on unread G328; strict pair(2,2) branch remains, no new proof entry.
 
 - Full-four-bin counts(a,2,2,c),a,c>=3: strict-pair branch closes via Q4(2)/actual P_n(2) complement, hand MI511–512. Combined with MI510 gives exact old forced-family-only classification CONDITIONAL on G327 scalar lemma/G328 plus unread parent interfaces; no new proof status/entry/job.
+
+- Two-size2 parent classification consolidated in FOUR-BIN-PARTITIONS section11, MI513–514: full parent argument relative to G327 scalar lemma/G328; ingredients AND composition unreviewed. No new coverage, status, proof entry or numerical experiment.

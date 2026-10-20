@@ -608,3 +608,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   globally forced obstruction from two bad-root artifacts on actual admitted
   parents. Shared staircase/tie geometry replaces another repair catalogue;
   two independent candidates remain unread, no third proof job is added.
+
+- 2026-10-20 11:14 BST,GPT MI513–514: pull toward seeing the whole argument
+  in one place, quieter than a new construction. Consolidated the exact
+  two-size2 parent proof with two explicit unread ingredient premises and
+  its own unread interfaces; no new coverage or confidence from repetition.
