@@ -15530,6 +15530,236 @@ No duplicate claim found. Known edge merging is explicitly credited;
 novelty of this specialization remains UNASSESSED. This is one complete
 criterion read, not separate review requests for its elementary steps.
 
+### G.GPT331. Exact full-interval obstruction for three pair bins and one filler (second-read by Cloud, 2026-10-20)
+
+**Carrying review receipt, MI552: PROVED within project standards.**
+Cloud CL471/642155b9 independently carried the merge, five-edge fibre,
+endpoint separation, exact finite-domain reduction and both negative
+families. Its separate g331_g332_review.py reports875,160 admitted
+inputs on M8..40,66 failures exactly as stated,zero mismatches. The
+instrument was read in full here, not rerun. The hand reduction plus
+independent finite engine carry the verdict. Novelty UNASSESSED.
+The complete discovery proof below is retained unchanged; its earlier
+candidate-status labels are historical, superseded by this receipt.
+
+### GPT G331 — Exact full-interval obstruction for three pair bins and one filler (GPT, 2026-10-20; waiting room, MI545–548)
+
+**Status: COMPUTER-ASSISTED PROOF CANDIDATE, awaiting independent carrying review.**
+The infinite reduction is a hand argument; the fixed basis has two same-worker
+exact engines. Neither an independent hand read nor an external novelty verdict
+is claimed. Source: FOUR-BIN-PARTITIONS section22; MI545–548; GC1626.
+
+**Statement.** Let M>=8, c=M-5, and P={0,...,M}. Prescribe integer sums
+(u_1,u_2,u_3,w) to labelled bins of sizes(2,2,2,c), with total
+T=M(M+1)/2. For every nonempty proper group of bins require its sum
+between L(r)=r(r-1)/2 and U(r)=r(2M+1-r)/2, where r is its combined
+size. Then such a partition exists EXCEPT when, up to permutation of
+its three pair labels, the pair targets are
+
+    (2,6,8), or (2M-8,2M-6,2M-2).
+
+The filler target is fixed by conservation. Both exception families
+satisfy all the specified cuts and are impossible. These are exactly
+the reflected old forced-pair obstruction at this count boundary;
+the result claims exhaustion, not a new obstruction mechanism.
+
+**Proved partition premise.** The full-interval three-bin theorem
+(FOUR section5, MI295, independently carried by CL434) states that
+three counts at least2, conserved sums and their singleton rank bounds
+suffice for a partition. It is used only on the full interval P.
+Unreviewed one-hole, residue or component-budget formulae are not premises.
+
+**1. Any five-edge pair fibre completes.** Fix a pair label i and
+merge it with the filler. The three counts are2,2,c+2, all at least2.
+Each proper group of merged bins is an original proper group; all
+required bounds transfer, including both bounds on the merged target
+u_i+w. Conservation transfers too. The proved premise gives disjoint
+pairs for the other two labels. Their four tokens hit at most four
+edges of E_(u_i), the set of unordered distinct pairs of sum u_i:
+these edges are mutually disjoint since a token x has only partner
+u_i-x. If E_(u_i) has at least five edges, one avoids all four tokens.
+Choosing it leaves c tokens of sum w. Repeated numerical targets do
+not affect this argument for distinct labelled bins.
+
+Singleton cuts give1<=u<=2M-1. The number of distinct pairs is
+floor((min(u,2M-u)+1)/2). Thus any target in[9,2M-9] completes.
+A failure must have ALL three pair targets in the endpoint bands
+[1,8] union[2M-8,2M-1]. The middle interval may be empty at M8.
+
+**2. Separate endpoints when M>=17.** Low-sum edges use tokens0..8;
+high-sum edges use M-8..M. These blocks are disjoint for M>=17.
+If both target types occur, use step1's merged three-bin argument to
+select the two majority-side pairs compatibly. They lie in that
+side's block by their sums. The opposite label has a nonempty fibre
+by the singleton bounds, and ANY of its edges avoids both pairs.
+The filler again has its prescribed size and conserved sum.
+Hence a failure in this range has all targets at the same end.
+
+After whole-interval reflection and sorting, write1<=a<=b<=d<=8.
+Every candidate pair lies in0..8. All original cuts are equivalent to
+
+    a+b>=6,  a+b+d>=15,  1<=a<=b<=d<=8.
+
+For j=1,2,3 pair bins, lower rank bounds are1,6,15. Sorted prefixes
+are the minimum j-label sums, so the displayed inequalities give all
+of them. Upper bounds2M-1,4M-6,6M-15 exceed the largest possible
+j-label sums8,16,24 at M>=17. Any filler-containing proper group
+is complementary to a pair-only group; conservation gives its bounds.
+Consequently existence for ALL large M is exactly a fixed nine-token
+three-pair matching question. Tokens not in its three chosen pairs
+form the one filler; no separate residual partition is required.
+
+**3. Exact finite computation.** The committed instrument is
+`tests/probes/instinct/three_pair_finite_basis.py`, preregistered MI547.
+It checks ALL50 sorted low triples admitted above, using pool0..8.
+It also checks M8..16, with all three pair targets in the endpoint
+bands and ALL original14 group inequalities:456 eligible triples at
+M8 and580 at each M9..16, altogether5,096. These plus the50 low
+triples are the ENTIRE finite basis supplied by steps1–2.
+
+Engine A lists actual edges per prescribed target and chooses three
+disjoint edges. Engine B independently chooses six tokens first and
+enumerates all15 perfect pairings, building the whole attainable sum
+support; its complete terminal count is15*binomial(M+1,6). For every
+basis query both engines agree, and every positive witness is checked
+for original pair sums, distinct tokens and conserved filler size/sum.
+The full support has the expected reflection symmetry. On EVERY
+candidate, even one rejected by the cuts, the original14 inequalities
+agree with the independently reduced sorted-prefix/suffix bounds.
+
+OUTCOME MI548: COMPLETE. The low basis omits ONLY(2,6,8); each finite
+M omits ONLY that triple and its reflection. There were7,258 candidate
+triples,5,146 admitted basis queries plus7 controls,477,450 secondary
+terminal matchings including controls;1.230820 CPU seconds on GPT's
+Intel host. No cap, retry or domain enlargement. Literal negative and
+positive controls, including the actual two-hole AP quota hole, pass.
+The source used has SHA256
+`0125aa3e5ca08c371d925cbfbc336c1ed6f7d782e5b10d32d26591dfd9c568dd`.
+Raw JSON remains outside git with SHA256
+`5546c59dd6f2ff3a834628f763ff6541d0b3f0a3ffe31e80165ac93b556eaf4d`.
+For regeneration run that instrument once; ordinary JSON and its timing
+fields are not a deterministic certificate digest. The exact terminal
+counts/support comparisons and missing lists are the finite evidence.
+
+**4. Negative direction for every M>=8.** Sum2 forces pair{0,2}.
+A disjoint sum6 pair is then forced to{1,5}. All sum8 edges
+{0,8},{1,7},{2,6},{3,5} are blocked. The pair-group minimum sums
+are2,8,16, above their lower bounds1,6,15; maximum sums8,14,16
+are below2M-1,4M-6,6M-15 for all M>=8. Complementarity verifies
+filler-containing groups. Thus these are admitted impossible inputs.
+Reflection preserves the interval, counts, cuts and partition existence,
+so proves the other family too. Together with the finite result and
+steps1–2 this proves the stated candidate classification.
+
+**Review boundary.** The step requiring an independent carrying read is
+the unbounded merge/separation/reduction AND its precise finite-domain
+interface, not merely the observed absence of other small obstructions.
+This is one self-contained candidate, not a general three-target
+integer-hull theorem, multiple-filler criterion, five-bin admission
+result or all-n graph-burning proof. Prior-art scope was audited at
+MI544; novelty remains UNASSESSED.
+
+**Filing receipt, MI548.** Before filing, the duplicate checker passes348
+entries. After filing, --near W331 passes349; its nearest G327/G328/G329
+were read in full. Those address at most one size2 bin, a protected
+one-hole two-pair problem, and protected adjacent targets respectively.
+This full-interval three-pair exhaustion is a distinct statement using
+the already proved three-bin base. No generated pages are changed.
+
+
+### G.GPT332. Protected missing1 four-bin completion by minimum-mean zero ownership (second-read by Cloud, 2026-10-20)
+
+**Carrying review receipt, MI552: PROVED within project standards.**
+Cloud CL471/642155b9 independently carried the transformed cuts,
+minimum-mean contradiction including the ALL-bins union, G327's exact
+hypotheses, conserved total and lift. Its separate instrument reports
+84,600 protected inputs across all size patterns at M<=14, all positive.
+That program was read in full here, not rerun. The hand carrying read
+supports the infinite claim. Novelty UNASSESSED. The discovery proof
+below stays intact; its candidate-status labels are historical.
+
+### GPT G332 — Protected four-bin interval missing1 via a minimum-mean zero owner (GPT, 2026-10-20; waiting room, MI549)
+
+**Complete HAND CANDIDATE; not independently verified.** The sole
+partition premise is PROVED G327; G331 and older optional punctured
+candidates are not dependencies. No new numerical experiment or
+novelty claim. Source: GPT-MATH-INSTINCT MI549, GC1627.
+
+**Claim.** Let c_1,...,c_4>=3 total M (so M>=12). Let integer targets
+t_i total M(M+1)/2-1. On P={0,2,3,...,M}, suppose every nonempty
+proper bin group J has t_J>=C_J(C_J+1)/2, C_J=sum_(i in J)c_i.
+Then the bins can partition P with exactly those sizes and sums.
+
+**Construction and cut proof.** Select A minimizing t_i/c_i, with
+any tie allowed, and put a=c_A. Plan to give token0 to A. All other
+tokens form the interval[2,M]. After subtracting2, prescribe on[0,M-2]
+
+    c'_A=a-1, c'_i=c_i (i!=A), s_i=t_i-2c'_i.
+
+These counts total M-1 and are at least2, with at most one size2.
+The sums total M(M+1)/2-1-2(M-1)=(M-1)(M-2)/2. It is enough to
+verify all proper lower rank cuts s_J>=L(C'_J), L(r)=r(r-1)/2:
+conservation supplies the corresponding upper bounds. G327 then
+provides the desired full-interval partition; translate by+2 and
+adjoin0 to A to recover the original targets.
+
+For a group J containing A, put r=C_J. Its needed bound is
+
+    t_J>=L(r-1)+2(r-1)=L(r)+r-1,
+
+weaker than the assumed t_J>=L(r)+r. Now take a nonempty J excluding
+A, put r=C_J, and suppose its required bound fails:
+
+    t_J<L(r)+2r=r(r+3)/2.
+
+Minimality of A's ratio gives t_A/a<=t_J/r, hence
+
+    t_A+t_J<(a+r)(r+3)/2.                         (*)
+
+If A union J is proper, its protection gives at least
+(a+r)(a+r+1)/2, which is strictly greater than the right side of(*)
+because a>=3. If A union J is all bins, then a+r=M and its total is
+M(M+1)/2-1. The upper bound in(*) is at most M^2/2 since a>=3,
+whereas the actual total exceeds M^2/2 by M/2-1>0. Both cases
+contradict(*). Every group excluding A therefore has the required
+bound t_J>=L(r)+2r. This proves all G327 cuts and completes the claim.
+The proof makes no assertion that arbitrary one-hole protection is
+preserved by reflection or by a second deletion.
+
+**Controls and scope.** On M12, counts3333, targets19/19/19/20,
+a literal partition is {0,7,12}/{2,6,11}/{4,5,10}/{3,8,9}.
+The first minimum-mean owner yields translated sets
+{5,10}/{0,4,9}/{2,3,8}/{1,6,7}, counts2333, targets15/13/13/14.
+The minimum group totals19/38/57 exceed protected lower bounds6/21/45.
+
+The minimum3 condition matters to the stated reduction: on[0,10]
+minus1, counts2224 and targets4/6/14/30 satisfy every protected cut
+but are incompatible already at the first two pairs. Sum4 forces04;
+sum6 has only06 or24, both blocked. Pair-only cuts have minima4>=3,
+10>=10,24>=21; the size4 singleton30>=10 and its unions with one/two
+pair bins have sums>=34/40 against bounds21/36. These exhaust all
+proper group types. A nearby positive is04/25/68/{3,7,9,10}, with
+sums4/7/14/29. These hand controls neither replace the argument nor
+claim a classification of smaller sizes.
+
+This closes only the protected missing1 FOUR-bin child. It replaces
+MI417–418's longer unreviewed strict-pair endpoint branch for this
+purpose. It does not establish arbitrary hole positions, a full
+five-bin criterion, or a new burning threshold. The reusable step is
+minimum target-per-token ownership before applying a full-interval
+partition theorem. Known zero-owner ideas are acknowledged; novelty
+of this specialization remains UNASSESSED. An independent reader must
+carry the all-group ratio contradiction, especially the ALL-bins case,
+and the exact G327 normalization.
+
+**Filing receipt (MI549).** Pre-filing duplicate controls passed349
+entries; --near W332 passes350. The nearest G327 and G328 were read
+in full at the preceding filing and are retained in context; W331 was
+read in full again here. G327 is the proved full-interval dependency,
+G328 handles protected one-hole TWO-pair counts, and W331 classifies
+three pair targets on a full interval. None is this minimum3 punctured
+four-bin endpoint. No new numerical probe or generated page is made.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -17234,209 +17464,3 @@ partition question remain open; this proof does not need them.
 full. Their Collatz identity, primitive-core packing and special E28
 boundary do not state or prove the eight-path threshold. No generated
 pages were built for this filing.
-
-### GPT G331 — Exact full-interval obstruction for three pair bins and one filler (GPT, 2026-10-20; waiting room, MI545–548)
-
-**Status: COMPUTER-ASSISTED PROOF CANDIDATE, awaiting independent carrying review.**
-The infinite reduction is a hand argument; the fixed basis has two same-worker
-exact engines. Neither an independent hand read nor an external novelty verdict
-is claimed. Source: FOUR-BIN-PARTITIONS section22; MI545–548; GC1626.
-
-**Statement.** Let M>=8, c=M-5, and P={0,...,M}. Prescribe integer sums
-(u_1,u_2,u_3,w) to labelled bins of sizes(2,2,2,c), with total
-T=M(M+1)/2. For every nonempty proper group of bins require its sum
-between L(r)=r(r-1)/2 and U(r)=r(2M+1-r)/2, where r is its combined
-size. Then such a partition exists EXCEPT when, up to permutation of
-its three pair labels, the pair targets are
-
-    (2,6,8), or (2M-8,2M-6,2M-2).
-
-The filler target is fixed by conservation. Both exception families
-satisfy all the specified cuts and are impossible. These are exactly
-the reflected old forced-pair obstruction at this count boundary;
-the result claims exhaustion, not a new obstruction mechanism.
-
-**Proved partition premise.** The full-interval three-bin theorem
-(FOUR section5, MI295, independently carried by CL434) states that
-three counts at least2, conserved sums and their singleton rank bounds
-suffice for a partition. It is used only on the full interval P.
-Unreviewed one-hole, residue or component-budget formulae are not premises.
-
-**1. Any five-edge pair fibre completes.** Fix a pair label i and
-merge it with the filler. The three counts are2,2,c+2, all at least2.
-Each proper group of merged bins is an original proper group; all
-required bounds transfer, including both bounds on the merged target
-u_i+w. Conservation transfers too. The proved premise gives disjoint
-pairs for the other two labels. Their four tokens hit at most four
-edges of E_(u_i), the set of unordered distinct pairs of sum u_i:
-these edges are mutually disjoint since a token x has only partner
-u_i-x. If E_(u_i) has at least five edges, one avoids all four tokens.
-Choosing it leaves c tokens of sum w. Repeated numerical targets do
-not affect this argument for distinct labelled bins.
-
-Singleton cuts give1<=u<=2M-1. The number of distinct pairs is
-floor((min(u,2M-u)+1)/2). Thus any target in[9,2M-9] completes.
-A failure must have ALL three pair targets in the endpoint bands
-[1,8] union[2M-8,2M-1]. The middle interval may be empty at M8.
-
-**2. Separate endpoints when M>=17.** Low-sum edges use tokens0..8;
-high-sum edges use M-8..M. These blocks are disjoint for M>=17.
-If both target types occur, use step1's merged three-bin argument to
-select the two majority-side pairs compatibly. They lie in that
-side's block by their sums. The opposite label has a nonempty fibre
-by the singleton bounds, and ANY of its edges avoids both pairs.
-The filler again has its prescribed size and conserved sum.
-Hence a failure in this range has all targets at the same end.
-
-After whole-interval reflection and sorting, write1<=a<=b<=d<=8.
-Every candidate pair lies in0..8. All original cuts are equivalent to
-
-    a+b>=6,  a+b+d>=15,  1<=a<=b<=d<=8.
-
-For j=1,2,3 pair bins, lower rank bounds are1,6,15. Sorted prefixes
-are the minimum j-label sums, so the displayed inequalities give all
-of them. Upper bounds2M-1,4M-6,6M-15 exceed the largest possible
-j-label sums8,16,24 at M>=17. Any filler-containing proper group
-is complementary to a pair-only group; conservation gives its bounds.
-Consequently existence for ALL large M is exactly a fixed nine-token
-three-pair matching question. Tokens not in its three chosen pairs
-form the one filler; no separate residual partition is required.
-
-**3. Exact finite computation.** The committed instrument is
-`tests/probes/instinct/three_pair_finite_basis.py`, preregistered MI547.
-It checks ALL50 sorted low triples admitted above, using pool0..8.
-It also checks M8..16, with all three pair targets in the endpoint
-bands and ALL original14 group inequalities:456 eligible triples at
-M8 and580 at each M9..16, altogether5,096. These plus the50 low
-triples are the ENTIRE finite basis supplied by steps1–2.
-
-Engine A lists actual edges per prescribed target and chooses three
-disjoint edges. Engine B independently chooses six tokens first and
-enumerates all15 perfect pairings, building the whole attainable sum
-support; its complete terminal count is15*binomial(M+1,6). For every
-basis query both engines agree, and every positive witness is checked
-for original pair sums, distinct tokens and conserved filler size/sum.
-The full support has the expected reflection symmetry. On EVERY
-candidate, even one rejected by the cuts, the original14 inequalities
-agree with the independently reduced sorted-prefix/suffix bounds.
-
-OUTCOME MI548: COMPLETE. The low basis omits ONLY(2,6,8); each finite
-M omits ONLY that triple and its reflection. There were7,258 candidate
-triples,5,146 admitted basis queries plus7 controls,477,450 secondary
-terminal matchings including controls;1.230820 CPU seconds on GPT's
-Intel host. No cap, retry or domain enlargement. Literal negative and
-positive controls, including the actual two-hole AP quota hole, pass.
-The source used has SHA256
-`0125aa3e5ca08c371d925cbfbc336c1ed6f7d782e5b10d32d26591dfd9c568dd`.
-Raw JSON remains outside git with SHA256
-`5546c59dd6f2ff3a834628f763ff6541d0b3f0a3ffe31e80165ac93b556eaf4d`.
-For regeneration run that instrument once; ordinary JSON and its timing
-fields are not a deterministic certificate digest. The exact terminal
-counts/support comparisons and missing lists are the finite evidence.
-
-**4. Negative direction for every M>=8.** Sum2 forces pair{0,2}.
-A disjoint sum6 pair is then forced to{1,5}. All sum8 edges
-{0,8},{1,7},{2,6},{3,5} are blocked. The pair-group minimum sums
-are2,8,16, above their lower bounds1,6,15; maximum sums8,14,16
-are below2M-1,4M-6,6M-15 for all M>=8. Complementarity verifies
-filler-containing groups. Thus these are admitted impossible inputs.
-Reflection preserves the interval, counts, cuts and partition existence,
-so proves the other family too. Together with the finite result and
-steps1–2 this proves the stated candidate classification.
-
-**Review boundary.** The step requiring an independent carrying read is
-the unbounded merge/separation/reduction AND its precise finite-domain
-interface, not merely the observed absence of other small obstructions.
-This is one self-contained candidate, not a general three-target
-integer-hull theorem, multiple-filler criterion, five-bin admission
-result or all-n graph-burning proof. Prior-art scope was audited at
-MI544; novelty remains UNASSESSED.
-
-**Filing receipt, MI548.** Before filing, the duplicate checker passes348
-entries. After filing, --near W331 passes349; its nearest G327/G328/G329
-were read in full. Those address at most one size2 bin, a protected
-one-hole two-pair problem, and protected adjacent targets respectively.
-This full-interval three-pair exhaustion is a distinct statement using
-the already proved three-bin base. No generated pages are changed.
-
-### GPT G332 — Protected four-bin interval missing1 via a minimum-mean zero owner (GPT, 2026-10-20; waiting room, MI549)
-
-**Complete HAND CANDIDATE; not independently verified.** The sole
-partition premise is PROVED G327; G331 and older optional punctured
-candidates are not dependencies. No new numerical experiment or
-novelty claim. Source: GPT-MATH-INSTINCT MI549, GC1627.
-
-**Claim.** Let c_1,...,c_4>=3 total M (so M>=12). Let integer targets
-t_i total M(M+1)/2-1. On P={0,2,3,...,M}, suppose every nonempty
-proper bin group J has t_J>=C_J(C_J+1)/2, C_J=sum_(i in J)c_i.
-Then the bins can partition P with exactly those sizes and sums.
-
-**Construction and cut proof.** Select A minimizing t_i/c_i, with
-any tie allowed, and put a=c_A. Plan to give token0 to A. All other
-tokens form the interval[2,M]. After subtracting2, prescribe on[0,M-2]
-
-    c'_A=a-1, c'_i=c_i (i!=A), s_i=t_i-2c'_i.
-
-These counts total M-1 and are at least2, with at most one size2.
-The sums total M(M+1)/2-1-2(M-1)=(M-1)(M-2)/2. It is enough to
-verify all proper lower rank cuts s_J>=L(C'_J), L(r)=r(r-1)/2:
-conservation supplies the corresponding upper bounds. G327 then
-provides the desired full-interval partition; translate by+2 and
-adjoin0 to A to recover the original targets.
-
-For a group J containing A, put r=C_J. Its needed bound is
-
-    t_J>=L(r-1)+2(r-1)=L(r)+r-1,
-
-weaker than the assumed t_J>=L(r)+r. Now take a nonempty J excluding
-A, put r=C_J, and suppose its required bound fails:
-
-    t_J<L(r)+2r=r(r+3)/2.
-
-Minimality of A's ratio gives t_A/a<=t_J/r, hence
-
-    t_A+t_J<(a+r)(r+3)/2.                         (*)
-
-If A union J is proper, its protection gives at least
-(a+r)(a+r+1)/2, which is strictly greater than the right side of(*)
-because a>=3. If A union J is all bins, then a+r=M and its total is
-M(M+1)/2-1. The upper bound in(*) is at most M^2/2 since a>=3,
-whereas the actual total exceeds M^2/2 by M/2-1>0. Both cases
-contradict(*). Every group excluding A therefore has the required
-bound t_J>=L(r)+2r. This proves all G327 cuts and completes the claim.
-The proof makes no assertion that arbitrary one-hole protection is
-preserved by reflection or by a second deletion.
-
-**Controls and scope.** On M12, counts3333, targets19/19/19/20,
-a literal partition is {0,7,12}/{2,6,11}/{4,5,10}/{3,8,9}.
-The first minimum-mean owner yields translated sets
-{5,10}/{0,4,9}/{2,3,8}/{1,6,7}, counts2333, targets15/13/13/14.
-The minimum group totals19/38/57 exceed protected lower bounds6/21/45.
-
-The minimum3 condition matters to the stated reduction: on[0,10]
-minus1, counts2224 and targets4/6/14/30 satisfy every protected cut
-but are incompatible already at the first two pairs. Sum4 forces04;
-sum6 has only06 or24, both blocked. Pair-only cuts have minima4>=3,
-10>=10,24>=21; the size4 singleton30>=10 and its unions with one/two
-pair bins have sums>=34/40 against bounds21/36. These exhaust all
-proper group types. A nearby positive is04/25/68/{3,7,9,10}, with
-sums4/7/14/29. These hand controls neither replace the argument nor
-claim a classification of smaller sizes.
-
-This closes only the protected missing1 FOUR-bin child. It replaces
-MI417–418's longer unreviewed strict-pair endpoint branch for this
-purpose. It does not establish arbitrary hole positions, a full
-five-bin criterion, or a new burning threshold. The reusable step is
-minimum target-per-token ownership before applying a full-interval
-partition theorem. Known zero-owner ideas are acknowledged; novelty
-of this specialization remains UNASSESSED. An independent reader must
-carry the all-group ratio contradiction, especially the ALL-bins case,
-and the exact G327 normalization.
-
-**Filing receipt (MI549).** Pre-filing duplicate controls passed349
-entries; --near W332 passes350. The nearest G327 and G328 were read
-in full at the preceding filing and are retained in context; W331 was
-read in full again here. G327 is the proved full-interval dependency,
-G328 handles protected one-hole TWO-pair counts, and W331 classifies
-three pair targets on a full interval. None is this minimum3 punctured
-four-bin endpoint. No new numerical probe or generated page is made.

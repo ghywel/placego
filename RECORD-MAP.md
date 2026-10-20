@@ -967,3 +967,5 @@ PART: as on the board.
 - Protected[0,M] minus1,four counts>=3: COMPLETE HAND CANDIDATE G332/MI549, minimum-mean zero owner feeds PROVED G327; all-group and ALL-bins cut proof, hand controls. Replaces MI417–418 endpoint branch; general q/five-bin OPEN, no experiment or G331 dependency.
 
 - General-hole interface audit MI550–551: all compressed sum fibres feasible does not ensure compatible counts; finite bad-vector avoidance helps FIXED rows only. Protected positive10/39/39/40 forces one bin wholly low; general selector unchanged. No run/job; trajectory stops endpoint repairs, next global count/moment source read.
+
+- G331 and G332 PROVED by Cloud CL471/642155b9 carrying reads plus separate finite support, adopted MI552. Original proofs preserved; minimum-mean zero-owner tool named. MI553 primary source audit supplies no count-admission implication; next zero-peeling invariant test, no new experiment/general-hole upgrade.

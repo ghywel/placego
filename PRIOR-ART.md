@@ -4239,3 +4239,36 @@ already uses zero ownership in a different two-hole THREE-bin problem.
 MI549's contribution is a short minimum-target-per-token selector feeding
 PROVED G327, with its all-group cut proof written directly. Novelty remains
 UNASSESSED; no external theorem is asserted for the selector.
+
+### Joint count/moment selection: bounded source audit (2026-10-20; MI553)
+
+[Hwang–Onn–Rothblum, A Polynomial Time Algorithm for Shaped Partition Problems](https://epubs.siam.org/doi/abs/10.1137/S1052623497344002),
+SIAM J. Optimization10(1999): read the official ABSTRACT, not the full paper.
+Its task maximizes a convex function of part-sum vectors under shape constraints,
+with fixed criterion dimension and part count. Exact attainment of prescribed
+sums is a different task: minimizing a convex distance to the desired vector
+(or maximizing its negative) does not match that objective assumption. The
+failed convex-hull shortcut in MI442 therefore remains a relevant guard. No
+integer-attainment theorem is imported.
+
+[Hemmecke–Onn–Romanchuk, N-fold integer programming in cubic time](https://arxiv.org/pdf/1101.3267),
+arXiv1101.3267v1: read introduction, definitions2.1–2.2, Lemmas3.7–3.8,
+Theorem3.9 and section6/Theorem6.1 statement with its parameter discussion;
+not the whole paper or an independent proof verification. The repeated fixed
+bimatrix is a hypothesis. The variable-entry result still fixes block dimensions
+and retains coefficient dependence. Its feasibility procedure may also return
+infeasible; it does not make the protected inequalities sufficient.
+
+For the natural per-token assignment encoding here, the count/sum blocks have
+coefficients[1;x], varying with token x. No reduction to the required uniform
+fixed block with controlled parameters has been supplied. The general Graver
+view is useful algorithmic context, not a bounded repair theorem for this
+family. No implementation or run is proposed from it.
+
+The record search found26 hits/10 files for n.fold|multiobjective|
+cardinality.constrain|prescribed.cardinalit with partition|sum|moment. Relevant
+MI382/442/448 and existing prior-art scope were read; unrelated hits were not.
+Two search batches (six queries) found no applicable count-selection theorem
+in the sources actually inspected; this is a bounded negative search, not an
+absence or novelty claim. A fresh Gao et al. PDF open again returned a DSpace
+page, so no new full-paper read is claimed. Primary sources only were used.

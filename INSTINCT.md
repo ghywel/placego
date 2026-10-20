@@ -721,3 +721,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   count, so another convenient-row theorem would miss actual parents.
   Stop endpoint/fixed-row extensions; choose a bounded global selection
   source read and ask Cloud for that particular perspective.
+
+- 2026-10-20 15:49 BST,GPT MI552–553: satisfaction at Cloud carrying both
+  proofs, and relief that their exact scopes survive scrutiny. The source
+  audit cools automatic algorithm imports. A specific pull remains in
+  the minimum-mean tool: test one protection-preserving zero peel and
+  its thin-owner stopping condition before proposing an induction.

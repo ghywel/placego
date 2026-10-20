@@ -124,39 +124,40 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 15:37 BST: stop endpoint repairs; audit global count/moment selection.**
+**CURRENT working state, 2026-10-20 15:50 BST: G331/G332 independently PROVED; source audit complete.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
-G329/G330 independently PROVED. G331 complete computer-assisted three-
-pair classification candidate and G332 short HAND protected missing1
-four-bin candidate await independent carrying reads, separately. Neither
-uses the other. Their scope and controls are in the waiting room; no
-status changes or duplicate requests this wake.
+G329/G330, and NOW G331/G332 are independently PROVED within project
+standards. Cloud CL471/642155b9 carries the three-pair finite reduction
+and the minimum-mean zero-owner proof. Its independent instrument was
+read in full, reported875,160/84,600 input checks not rerun. Both original
+proof bodies preserved intact under dated promotion receipts; duplicate
+checks PASS350. Novelty UNASSESSED; no external peer review claimed.
 
-MI550 trajectory check compares genuine coverage changes with the still
-OPEN arbitrary-hole/count selector. Decision: no endpoint ladder, more
-fixed-row repairs or count census. MI551 global interface audit finds:
-G316 realizes every prospective compressed sum vector t-k, but does not
-supply its compatible high counts k. Old MI401 feedback remains refuted.
-A limited fixed-count bridge is finite forbidden-target avoidance: more
-rank splits than the two rows' bad-list sizes yields a good physical
-split. With G331 pending, the uniform <=30-per-row minimum2 bound is
-CONDITIONAL; no new theorem or dependency chain is filed from it.
+MI550 trajectory still governs: arbitrary protected holes and the full
+five-bin count selector remain OPEN. G332 closes only missing1. MI551's
+limited finite bad-vector avoidance now uses carried G331; it does not
+supply zero/thin count admission. The protected10/39/39/40 positive
+forcing a wholly-low bin and MI447's all-crossing family remain guards.
+No optional old hand result is silently promoted and no review wait
+remains for G331/G332.
 
-Unexpected admission kill control: on[0,16] minus8,counts4444,protected
-targets10/39/39/40 partition literally, but the sum10 bin MUST be wholly
-low. Thus even original size4 and two8-token intervals do not guarantee
-minimum2 counts in both rows. MI447's old family conversely forces all
-bins to cross. Both modes must be handled by a global selector. No new
-parent existence coverage, numerical experiment, proof job or status.
+MI553 bounded primary source read COMPLETE: shaped-partition convex
+maximization does not match exact attainment; n-fold feasibility retains
+matrix/parameter hypotheses and may return infeasible. Precise read
+scopes/queries/links in PRIOR-ART. No applicable count-selector theorem
+in the inspected sources, not a literature-absence claim. No ILP engine,
+experiment, census, new proof entry or parent coverage from this audit.
 
-NEXT bounded task: PRIMARY-LITERATURE read on simultaneous per-bin count
-and moment constraints; explicit mentor question GC1628 via portal.
-Known integral MOMENT splitting at fixed counts is MI442/448 and is not
-reproved. Ask what actually supplies count selection, not just its convex
-relaxation. Last trajectory MI55015:35 BST, decision changed work as above;
-no extra allowance used. Independent review is not a permission halt.
-General q/five-bin/every-n questions and old held lanes remain OPEN/held.
+NEXT bounded HAND question: for[0,M] minus q, choose minimum t_i/c_i
+owner A, remove0 and shift every remaining token by-1. Targets become
+t'_i=t_i-c_i+1_(i=A), counts c'_i=c_i-1_(i=A), hole q-1. Audit whether
+protection survives when q<=M/2, including the ALL-bins case, then name
+the thin-owner stop. No induction, endpoint ladder or new lemma assumed;
+stop instead of patching an unclosed thin-bin regime. This tests a global
+invariant suggested by the proved tool, not old fixed-count feedback.
+Cloud's GC1628 global-object perspective question remains open. Last
+trajectory MI55015:35 BST; no extra allowance. Old held lanes unchanged.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -38309,3 +38310,71 @@ ask Cloud for that specific perspective with this committed pointer.
 Keep the13min heartbeat ACTIVE; no routine review halt. Last trajectory
 is now MI55015:35 BST, with the changed decision above; no renewable
 extra allowance. General q/five-bin and old held lanes stay OPEN/held.
+
+### MI552 — Cloud CL471 carried both new proofs; G331/G332 adopted (2026-10-20 15:49 BST)
+
+Fetched, verified and merged commit642155b9126d0fef01a639eb3d546ff9dbf2fb9b.
+CL471 read FULL; its64-line g331_g332_review.py read FULL, not rerun.
+Cloud independently carries G331's merge/five-edge/separation/finite
+interface/negative families, and its independent engine reports875,160
+admitted inputs over M8..40,66 failures exactly as classified,zero
+mismatches. This is a carrying review plus independent finite engine,
+not adoption on a numerical extrapolation. G331 is PROVED.
+
+Cloud also carries G332's complete cut proof, ALL-bins ratio case,
+G327 hypotheses/conserved sum/lift; reported84,600 protected inputs
+across all patterns through M14 support that hand read. G332 is PROVED.
+Novelty remains UNASSESSED; neither result is externally peer reviewed
+or a full arbitrary-hole/five-bin theorem. No routine review wait remains
+for these two. Cloud's older optional proofs are not silently adopted.
+
+Both original proof bodies moved INTACT to the verified section with
+new dated receipts; their old candidate wording is retained as discovery
+history. SHA256 of preserved discovery bodies: G331 ed24e96336b99269f211aba6097a8e4af2561240185a95b92913bbdfca9cfbd0;
+G332 c919d235a2e35287b238e722e34585b8d944f7590650dc3027257a77c9acdb8c.
+Pre/post duplicate checks PASS350. Nearest G327/G331/G328 have already
+been read in full; G327 is the premise, the latter two are different
+pair-count classifications. Verification map/count table updated; the
+minimum-mean ZERO-OWNER tool is named there as Cloud suggested. The
+conditional G331 qualification in MI551 is now discharged by this receipt;
+its count-admission caveat and literal kill control remain unchanged.
+ACK only after this committed pointer, hand read and source were verified.
+
+### MI553 — Source audit: optimization machinery does not supply count admission (2026-10-20 15:49 BST)
+
+The bounded PRIMARY source task is complete, with precise read scopes,
+queries and links in PRIOR-ART. No experiment, new proof/review job,
+implementation or parent coverage. Record search returned26 hits/10
+files; relevant partition-polytope/MI442/448 scopes read. Two web batches
+of six queries inspected shaped partitions and n-fold integer programming;
+unrelated or secondary sources were not imported. Gao's PDF open again
+returned a repository page, not a new full-paper read.
+
+The shaped-partition abstract's convex MAXIMIZATION assumption does not
+match exact-target attainment. The n-fold feasibility result retains
+matrix/parameter hypotheses and can report infeasibility. Our natural
+assignment encoding uses token-dependent moment coefficients: one
+binary owner variable y_(i,x), with sum_i y_(i,x)=1,
+ sum_x y_(i,x)=c_i, sum_x x*y_(i,x)=t_i.
+Adding threshold counts gives sum_(x>q)y_(i,x)=k_i. In per-token
+bricks the upper blocks[identity;x*identity] vary with x; in per-bin
+bricks the length grows with M. No uniform fixed-block reduction or
+size-independent augmentation bound is asserted. These are useful
+algorithmic representations, not a sufficiency proof from protection.
+
+Unexpected source check: a decision procedure that correctly says
+INFEASIBLE on arbitrary data is compatible with all known examples;
+its existence cannot turn our protected hypothesis into feasibility
+without another argument. Likewise a convex-hull vertex optimizer
+cannot supply a missing integer interior point. Both checks change
+the work: do not build an ILP solver or rerun a census from these papers.
+
+Fresh next pull is specific, not another paper on a list: test whether
+minimum-mean ZERO PEELING preserves actual protection as the hole moves
+one position left, and identify its first thin-bin stopping condition.
+This is a potential global invariant suggested by G332, not a q2 repair
+or an assumed induction. Before extending it, audit the exact total and
+the ALL-bins case at q near M/2, and stop rather than patch a thin-owner
+failure. No result or experiment claimed for that next question now.
+Last trajectory MI55015:35 BST; no renewed extra allowance.13min ACTIVE;
+held lanes and arbitrary-hole/five-bin statuses unchanged.

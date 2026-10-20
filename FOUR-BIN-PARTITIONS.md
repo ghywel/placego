@@ -29,8 +29,8 @@ not externally peer reviewed or a claim of novelty.
 | 19 | Three AP targets, PERFECT matchings on a fixed covered set: contiguous primitive quota segment | HAND, unreviewed; no partial-matching conclusion |
 | 20 | Arbitrary three-target partial-quota extension | CLOSED NEGATIVELY by hand actual-path counterexample, unreviewed |
 | 21 | AP/consecutive-three-target partial-quota extension | CLOSED NEGATIVELY by hand two-hole counterexample, unreviewed; explicit3D mixed-addition obstruction |
-| 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | COMPUTER-ASSISTED CANDIDATE G331; finite basis COMPLETE MI548, unbounded reduction unreviewed; proved section5 sole partition premise |
-| 23 | Protected missing1 four-bin pool, all sizes>=3: minimum-mean zero owner | Complete HAND CANDIDATE G332, unreviewed; PROVED G327 sole partition premise, no G331 dependency |
+| 22 | Full-interval(2,2,2,c),c>=3: exactly the2/6/8 forced obstruction and reflection | PROVED G331, CL471/642155b9; unbounded carrying read plus independent finite engine; proved section5 sole partition premise |
+| 23 | Protected missing1 four-bin pool, all sizes>=3: minimum-mean zero owner | PROVED G332, CL471/642155b9; reusable minimum-mean zero-owner tool, PROVED G327 sole partition premise |
 
 Neither the verified parent nor G329/G330 depends on the unreviewed
 sections12–15 or19–21. G330's review proves its own needed path facts;
@@ -49,7 +49,7 @@ at least2, and a count travels with its target under permutation.
 | 0 | All four sizes>=3 | Rank-cut sufficiency, PROVED G316 |
 | 1 | (2,b,c,d), b,c,d>=3 | Rank-cut sufficiency, PROVED G327 in the master |
 | 2 | (a,2,2,c), a,c>=3 | Exact forced-family classification, PROVED section11 |
-| 3 | (2,2,2,c), c>=3 | Complete candidate G331/section22: only2/6/8 and reflection fail; independent carrying review pending. G330 separately gives an exact test for at most two distinct pair targets |
+| 3 | (2,2,2,c), c>=3 | PROVED G331/section22, CL471/642155b9: only2/6/8 and reflection fail. G330 separately gives an exact test for at most two distinct pair targets |
 | 4 | (2,2,2,2), only N8 | MI452's existing complete two-engine computation:30 missing labelled vectors, exactly the24 permutations of(2,6,8,12) and6 of(4,4,10,10); COMPUTED consequence, not an independent carrying proof |
 
 For the last row, both displayed sorted tuples obey all rank cuts:
@@ -2051,6 +2051,11 @@ is not rerun, expanded or reinterpreted as having found this example.
 
 ## 22. Three pair bins and one filler: reduction to endpoint fibres (MI545–546)
 
+**Current receipt, MI552: G331 PROVED by Cloud CL471/642155b9.**
+The carrying review and independent supporting instrument were read, not
+rerun. Candidate/unreviewed labels retained below describe discovery
+checkpoints. Novelty remains UNASSESSED; no broader parent upgrade.
+
 **Complete HAND reduction, unreviewed; not a classification or a new
 general matching theorem.** The inputs here are the actual full-interval
 rank cuts. The proved three-bin lemma in section5 is the sole partition
@@ -2172,6 +2177,11 @@ read. No project PROVED status, novelty or five-bin/all-n transfer.
 
 ## 23. A direct punctured-pool bridge: protected missing1 four-bin case (MI549)
 
+**Current receipt, MI552: G332 PROVED by Cloud CL471/642155b9.**
+The carrying review and independent supporting instrument were read, not
+rerun. Candidate/unreviewed labels retained below describe discovery
+checkpoints. Novelty remains UNASSESSED; no broader parent upgrade.
+
 **Complete HAND candidate G332, unreviewed.** On[0,M] minus1, let
 four counts c_i>=3 total M, targets total T_M-1, and every nonempty
 proper group obey t_J>=T_(C_J), T_r=r(r+1)/2. These hypotheses suffice.
@@ -2213,3 +2223,9 @@ Thus arbitrary holes still require a global selector that accommodates
 zero/thin counts as well as all-crossing bins. MI551 gives the complete
 scope audit and controls; no further proof candidate, experiment or
 classification upgrade follows from this boundary note.
+
+**Receipt for the scope note, MI552.** G331 has now been carried by
+Cloud CL471/642155b9, so the row bad-list bound cited above is no longer
+conditional on its review. This does not remove the demonstrated
+zero/thin-count admission limitation. G332 is also PROVED; its reusable
+minimum-mean zero-owner tool is recorded explicitly in the map.
