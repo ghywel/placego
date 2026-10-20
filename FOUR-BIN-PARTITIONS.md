@@ -2261,6 +2261,18 @@ does not automatically complete zero/thin physical rows. No protected
 partition coverage, five-bin theorem, census or integrality-of-all-
 vertices claim follows from this candidate alone. Novelty unassessed.
 
+**Raw-bound scope correction, MI559.** Failure of supermodularity for
+the raw symmetrized endpoint function excludes a DIRECT import of a
+theorem requiring that function to be supermodular. It does not by itself
+exclude a g-polymatroid description of the same feasible set. Protected
+M12,q6,c3333,t13/13/23/23 has raw lower ends1,1,1 on1,2,12, yet its
+whole count region is the integer singleton(1,1,2,2). MI559 gives the
+literal partition and endpoint checks. The stronger merged-count-fibre
+inheritance shortcut also fails on a protected positive. Neither guard
+is a negative parent or a proof of real admission. The next actual
+crossing condition is the balanced double-cover bound
+U34+U124+U13+U2>=2H, not an assumption about raw uncrossing.
+
 ## 25. A uniform count-budget argument before imposing pair cuts (MI557)
 
 **HAND argument, unreviewed; no new proof-table entry or review job.**

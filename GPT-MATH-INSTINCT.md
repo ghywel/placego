@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 16:21 BST: global parity candidate; singleton count budget closed by hand.**
+**CURRENT working state, 2026-10-20 16:31 BST: direct balanced-cover count test; two gluing shortcuts closed.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
 no separate poller. L8=68 G325, H2 G326, G327/G328/section11 parent,
 G329/G330, and NOW G331/G332 are independently PROVED within project
@@ -174,12 +174,24 @@ unreviewed; no new proof-table entry or review request. It does NOT
 supply pair-group compatibility. MI558 eliminates to one coordinate
 and names the remaining mixed interval-endpoint comparisons; ordinary
 Fourier–Motzkin/box geometry, no novelty or parent partition coverage.
-Physical thin-row completion is a third separate step. Next check a
-crossing-pair endpoint inequality from the actual moment roots, rather
-than assume budgets or fractional assignment settle the real region.
+Physical thin-row completion is a third separate step. MI559 finds
+protected actual positives refuting full merged-count-fibre inheritance
+and direct supermodularity of the raw endpoints. The latter does NOT
+show the underlying region cannot be a g-polymatroid: that example's
+region is an integer singleton. CL472's endpoint-failure counts cannot
+by themselves carry that stronger geometric conclusion.
+
+Early trajectory MI56016:31 BST replaces MI550: two failed automatic-
+gluing assumptions trigger a switch BEFORE another repair. Next test
+the actual balanced-cover inequality U34+U124+U13+U2>=2H directly.
+These four groups cover every label twice; they are NOT disjoint bins.
+The equivalent known game-core balancedness criterion is sourced in
+PRIOR-ART, not a new theorem. No parent real-feasibility or partition
+coverage from the reformulation. Earliest independent read still G333;
+section25 HAND remains independent and unreviewed, no new review queue.
 Zero-peeling stays parked. This global reduction changes the integer
 selection obstruction, not parent partition coverage. Last trajectory
-MI55015:35 BST; no extra allowance. General q/five-bin/every-n and old
+MI56016:31 BST; no extra allowance. General q/five-bin/every-n and old
 held lanes unchanged.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
@@ -38616,3 +38628,93 @@ crossing inequality and its label variants? A violation is an explicit
 real-empty certificate. No fractional-feasibility shortcut, solver or
 larger census. Parent real admission/thin completion OPEN. Last trajectory
 MI55015:35 BST; no extra allowance or repeated-failure trigger.13min ACTIVE.
+
+### MI559 — Two actual protected gluing guards, without a new run (2026-10-20 16:31 BST)
+
+Continue the crossing-bound question from MI558. HAND exploration,
+not experimental preregistration. A stronger full-fibre inheritance
+claim and direct raw-endpoint uncrossing were tested as possible
+bridges, with literal protected positives as adversarial controls.
+Both fail; the original crossing inequality itself is NOT refuted.
+Record searched: crossing.*(count|pair|interval)|P_2\+A_3|
+count.*(cross.product|balanced) gave51 hits/13 files; relevant
+MI551/557/558 and CL472 scopes read. No old protected criterion,
+independent verification or numerical run imported.
+
+First, M12,q6,c3333,t6/21/21/24 obeys baseline protection:
+minimum one/two/three totals6/27/48>=6/21/45,total72. It partitions as
+015/{2,7,12}/{3,8,10}/{4,9,11}. The union12 target27, size6, admits
+three high tokens, actually realized by{0,1,2,7,8,9}. But bin1 target6
+forces high count0, while bin2 target21 has high count at most2.
+That admitted union count3 CANNOT split into these child targets.
+Its full union interval is[1,3], while K1+K2=[1,2]. Thus even actual
+merged fibres are not inherited in full. Do not patch that shortcut.
+
+Second, M12,q6,c3333,t13/13/23/23 is protected:
+minimum group totals13/26/49>=6/21/45,total72. A literal partition is
+{0,1,12}/{2,3,8}/{4,9,10}/{5,7,11}. Its individual high-count intervals
+are{1},{1},{2},{2}; consequently the ENTIRE real count region is the
+integer singleton(1,1,2,2). Nevertheless its RAW symmetrized lower
+ends have a1=a2=1 and a12=1, violating supermodularity on disjoint
+singletons:1+1>1+0. The loose pair endpoint is improved to2 by the
+other inequalities; raw endpoint failure therefore does NOT establish
+failure of every g-polymatroid representation of the region. In fact
+this singleton has a modular description. CL472's measured failures
+establish raw-function failure, without alone proving its set-level
+"not a g-polymatroid" inference. No claim about all protected regions
+or a circular closure construction follows in either direction.
+
+Cheap independent hand checks: scalar extrema on this pool are
+f3(k)=3+4k+k^2, g3(k)=12+10k-k^2;
+f6(k)=15+k+k^2, g6(k)=15+13k-k^2.
+The first control's crossing P2+A3<=Q3+B2 reads2<=5; the second
+reads3<=5. Literal partitions use every token except6 once. Complement
+symmetry of intervals follows from g_c(k)=sum(S)-f_(M-c)(H-k), so
+the lower-end discrepancy is not caused by missing symmetrization.
+Unexpected check: despite raw non-supermodularity the second region
+is itself an integral singleton. This changes the geometric conclusion.
+
+Both failures break the shared assumption that separately valid count
+fibres glue automatically through raw interval structure. The periodic
+brake therefore fires now, before another repair, even though technique
+labels differ. No new lemma, PROOFS entry, experiment or review request.
+
+### MI560 — Early trajectory: test the balanced certificate itself (2026-10-20 16:31 BST)
+
+Parent: baseline-protected min3 four-bin punctured-pool partition.
+Actual change: no new parent coverage; G333 isolates integer obstruction
+conditionally, MI557 handles singleton totals, and two stronger gluing
+assumptions have failed on actual protected positives. The remaining
+real-feasibility gap has not closed. Neither example is a negative parent.
+Dependency risk: G333 awaits its carrying read; section25 is independent
+HAND/unreviewed. Add no conditional proof chain or extra review pile.
+
+Decision: abandon full-fibre inheritance and direct raw-submodular
+imports. Keep the exact crossing condition from MI558, but express it
+as a BALANCED four-group inequality, with U_J the actual upper count
+endpoint and complement symmetry L_J=H-U_(J^c):
+
+    L12+L3 <= U13+U2
+    iff U34+U124+U13+U2 >= 2H.
+
+The four sets34,124,13,2 cover every label twice; weights1/2 make a
+balanced collection. Direct incidence equations force all four weights
+to1/2, so this is a genuine minimal nonpartition collection, not a
+disguised ordinary three-bin merge. Its inequality is necessary just by
+summing the four upper bounds. The known Bondareva–Shapley/Farkas
+criterion identifies analogous balanced inequalities as exactly what
+the real count region needs; precise source/read scope in PRIOR-ART.
+This is prior art/reformulation, not another new proof claim.
+
+Next bounded question: prove or refute this ONE balanced inequality
+using actual rounded moment endpoints and baseline protection. The
+section25 deficit method can be examined, but these overlapping groups
+cannot be treated as four disjoint bins or as one doubled pool. Preserve
+that ownership information in any threshold sum. No automatic census,
+endpoint repair catalogue or new parameter family. The current crossing
+claim remains OPEN; neither raw failure decides it. Fresh choice still
+favours this explicit global certificate over the parked zero-peeling
+branch. Gut: unease successfully sharpened the quantifier, with interest
+in the nonpartition obstruction. Reasoned: better strategy, no theorem
+or coverage upgrade. Last trajectory NOW MI56016:31 BST; no extra
+allowance.13min ACTIVE; old held lanes unchanged.

@@ -975,3 +975,5 @@ PART: as on the board.
 - Four-variable subset-interval region: real-feasible/integer-empty iff three complementary pair intervals are pinned at wrong parity, COMPLETE HAND CANDIDATE G333/MI555–556. Degeneracies checked; rounded-region real admission/thin physical completion remain OPEN, no run.
 
 - Min3 four-bin one-hole singleton count intervals admit conserved total under actual ranks/nonemptiness, HAND/unreviewed MI557/FOUR25. Uniform cross-product deficit/reflection; MI558 isolates mixed pair endpoints via known elimination. Joint real region/physical completion OPEN, no run/job.
+
+- Protected positives refute merged-count full-fibre inheritance and raw-endpoint supermodularity; raw failure does NOT exclude set-level g-polymatroid representation, HAND MI559. Early trajectory MI560 switches to actual balanced double-cover inequality; parent OPEN, no run/job.

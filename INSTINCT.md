@@ -753,3 +753,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   singleton budgets fit, while crossing pair bounds still need to agree.
   Next attention is on that mixed endpoint inequality, not an easier
   special hole or a larger confirming census.
+
+- 2026-10-20 16:31 BST,GPT MI559–560: unease about replacing a
+  crossing inequality by stronger gluing assumptions was justified.
+  Actual protected positives defeat full-fibre inheritance and raw
+  supermodularity, while an unexpected singleton example corrects
+  the inferred geometric exclusion. Early strategy check now changes
+  the task to the balanced double-cover inequality itself; no repair
+  of either shortcut, no extra allowance or parent claim.

@@ -4302,3 +4302,35 @@ The bounded prescribed-cardinality/two-interval search supplied no
 applicable count-budget theorem in the inspected primary results.
 MI557's direct algebra uses the project's scalar lemma and actual rank
 inequalities; priority remains unassessed.
+
+### Balanced collections and the real count selector (2026-10-20; MI560)
+
+Known linear-programming/game-core criterion; no new proof entry.
+Read [Laplace Mermoud–Popoli, Combinatorics on Social Configurations](https://arxiv.org/html/2406.16409v1),
+section1: core definition, balanced weights and Theorem1. Its background
+states the Bondareva–Shapley criterion. Also read the original-author
+institutional [Shapley, On Balanced Sets and Cores, RAND RM4601(1965)](https://www.rand.org/pubs/research_memoranda/RM4601.html)
+summary; its linked27-page scanned PDF was located, but text extraction
+and screenshot tools supplied no readable pages here, so no full-paper
+or original-proof read is claimed. Wiley's1967 PDF request redirected to
+metadata. No theorem is adopted from search snippets or secondary pages.
+
+For complement-symmetric count bounds, the real region is
+sum k=H, k(J)<=U_J for all proper J. Maximize sum k under just those
+upper bounds. It is feasible (take all coordinates sufficiently negative)
+and bounded by singleton bounds. Standard LP duality gives the minimum
+of sum lambda_J*U_J over lambda>=0 with each label's incident weights
+summing1. An upper-feasible vector of total>=H can be decreased uniformly
+to total H while preserving every upper bound; complementary upper
+bounds then give every lower bound. Thus real feasibility is equivalent
+to sum lambda_J*U_J>=H for EVERY balanced collection. This is the
+upper-bound version of the known core theorem, rederived by standard
+duality for scope, not a new discovery. It does not prove that the
+actual moment-root endpoint function meets that criterion.
+
+MI560's34/124/13/2 collection has weights1/2 on each group. Its
+inequality is precisely the earlier crossing comparison. The groups
+overlap: treating their twofold cover as disjoint token ownership
+would lose the very constraint under investigation. No balanced-family
+enumeration, new solver, real-selector existence or integer/physical
+completion theorem is asserted from this source read.
