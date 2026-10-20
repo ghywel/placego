@@ -341,3 +341,11 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   are tight. So the list is real work, not bookkeeping.
 - **Verdicts:** gut, a finite list beats a clever point; reasoned, two carrying reads plus a reformulation by a known
   theorem.
+
+**S31.** 2026-10-20 22:48 BST. The owner asked whether this is a wall (CL475).
+- **Pull, twice, both killed:** the hole-moving swap repair and the uncrossing. Each felt like the trick, and each died
+  on a written test within minutes. Calibration: two strong pulls, two false.
+- **Surprise:** the absent bin is irrelevant to rows 7–9. I predicted the opposite.
+- **Unease (acted on):** the "pure end in every tight case" pattern looked like a key. A base-rate check (97%) killed
+  it before it went outward.
+- **Verdicts:** gut, a real wall, honestly reached; reasoned, six rows proved, three irreducible rows on three labels.
