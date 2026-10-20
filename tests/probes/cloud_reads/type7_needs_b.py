@@ -10,7 +10,8 @@ OUTCOME: M = 12: 148,150 relaxed instances, 0 violations; M = 12..14: 5,275,244,
 Prediction FAILED: b's protection is not load-bearing for row 7 in this range.
 M = 12..16: 52,797,986 relaxed instances, 28 violations, all first examples at M = 15 with the absent
 bin below its own floor (e.g. q8, sizes 3/6/3/3, t_b = 2 < T_6).  So the CL475 claim 'the absent bin is
-irrelevant' is FALSE as stated; rerun counting violations with t_b >= T(c_b) in progress.  Control: dropping the
+irrelevant' is FALSE as stated.  Rerun: all 28 have t_b < T(c_b); with the absent bin's own floor,
+0 violations in 52,797,986 instances to M = 16 (11m18s).  Control: dropping the
 three-label cuts too (targets from L(c)) gives 34 violations at M = 12 (e.g. q3, 3333, t_a 5, t_d 3).
 """
 import itertools, sys

@@ -5616,3 +5616,16 @@ rest:
 
 Gut: respect for the wall, and a small pull toward the three-label form. Reasoned: one carrying read, three refuted
 templates (two of them mine), one structural reduction measured, not proved.
+
+*CL475 correction (23:10 BST).* My claim that "the fourth bin is irrelevant" is **false as stated**. Extending
+`type7_needs_b.py` to M = 16 (52,797,986 relaxed instances) found 28 violations of row 7 at M = 15, for example q8,
+sizes 3/6/3/3, targets 37/2/31/42.
+
+In every one, the absent bin is below its own floor: here 6 tokens with target 2 < T_6. A rerun counting only
+instances where the absent bin meets t_b ≥ T(c_b) found **0 violations**. So the corrected statement is: row 7 needs
+the seven cuts inside {x, y, z} **plus the absent bin's singleton floor**, equivalently the single upper cut
+t_xyz ≤ S − T(c_b), and nothing else about that bin. This matches the packing test, where the only failures had a
+remainder below its floor.
+
+Rows 8–9 were tested only to M = 13 without that floor, so read them with the same caveat. The three-label reduction
+stands with one extra hypothesis; the rest of CL475 is unchanged.
