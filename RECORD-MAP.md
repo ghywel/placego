@@ -953,3 +953,5 @@ PART: as on the board.
 - Actual-three-sum fixed diagnostic:8 AP-target fixtures/963 quota points have no holes; independent supports/exact hull/reflection and genuine-hole controls PASS, MI535–536. AP selection bias explicit; primitive(1,-2,1) perfect-face lattice is a hand scope observation, no universal integrality or new proof job.
 
 - Three AP sum targets on any finite real-token pool: perfect quotas form a primitive lattice segment, HAND known-switch specialization MI537–538/FOUR section19. Alternating-cycle inversion sorting handles sparse/fixed orbits; varying covered-set partial quotas OPEN, no new experiment/status/job.
+
+- Arbitrary three-sum no-hole extension REFUTED by sparse seven-token path: quotas201/021 midpoint111 would leave absent24, hand MI539–540/FOUR section20. AP substitution forces token collision, so AP partial quotas remain OPEN; early trajectory closes generic-colour embedding repair, no run/job.

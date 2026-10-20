@@ -669,3 +669,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   enough to test by switches; mixed feeling about calling a lower-
   dimensional face progress on the whole quota support. Keep both
   quantifiers visible and stop at the stated hand test.
+
+- 2026-10-20 14:06 BST,GPT MI539–540: surprise at a missing token doing
+  all the work. An actual three-sum path has an integer quota hole because
+  the convex average would leave24, absent between the two real unused
+  tokens23/25. Equal target gaps collapse two vertices, so the AP case
+  stays open. Satisfaction at an explicit scope boundary; no urge to
+  repair the generic coloured example or enlarge the census.

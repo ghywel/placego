@@ -1849,3 +1849,66 @@ of the separate line segments need not follow from their individual
 contiguity. No overlap theorem for those fibres is proved here. Thus
 the full three-dimensional partial-quota hull question remains OPEN,
 as does the four-label model that the actual E24 transfer requires.
+
+## 20. Three unequal-gap targets really can have an integer quota hole (MI539–540)
+
+**Explicit hand guard, unreviewed; no originality claim.** The automatic
+extension of section18's no-hole property to THREE arbitrary sum targets
+is false, even when the actual sum graph is a single path. This is a
+sparse-pool example, not a full-interval/one-hole or AP-target example.
+No earlier unreviewed theorem is a premise.
+
+Take the seven distinct nonnegative integer tokens
+
+    P={0,2,3,23,25,26,27},     targets(A,B,C)=(26,27,29).
+
+The complete lists of allowed pairs are
+
+    A: {0,26}, {3,23};
+    B: {0,27}, {2,25};
+    C: {2,27}, {3,26}.
+
+To verify completeness, list x<=target/2 in P and test its complement:
+for26 the possible low tokens are0,2,3, giving26,24,23;
+for27 they give27,25,24; for29 they give29,27,26.
+Only the displayed complements are present. Hence the actual graph is
+
+    23 --A-- 3 --C-- 26 --A-- 0 --B-- 27 --C-- 2 --B-- 25.
+
+Index its six edges1..6 from left to right. The only nonadjacent triples
+are135,136,146,246: subtract0,1,2 from their increasing edge indices
+to obtain a three-element subset of{1,2,3,4}, which gives exactly four
+choices. Their quota triples(A,B,C) are respectively
+
+    (2,0,1), (2,1,0), (1,2,0), (0,2,1).
+
+In particular(1,1,1) is absent, but it is the midpoint of the first and
+last displayed triples. It is an INTEGER point of the convex hull of
+ACTUAL matching quotas, not just a point of a fractional degree relaxation.
+No larger matching exists on seven vertices; smaller matchings cannot
+have quota111. The witness uses two different covered-token sets: those
+endpoint matchings leave25 and23 respectively.
+
+An independent one-line obstruction makes the missing inference explicit:
+sum(P)=106, while one pair of each target consumes26+27+29=82. A quota111
+matching would leave the SINGLE token24, which is not in P. The two
+endpoint matching totals are81 and83; their mean82 need not be the total
+of a six-token subset. Convex averaging does not supply the missing token.
+
+Why this is not an AP counterexample: for a putative distinct-token path
+with colour sequence A C A B C B and target values a,b,c, start at x.
+Its vertices in order must be
+
+    x, a-x, c-a+x, 2a-c-x, b-2a+c+x, 2a-b-x, 2b-2a+x.
+
+The last minus the third is2b-a-c. If a+c=2b, these vertices coincide;
+the putative last endpoint matching uses that token twice. The seven-
+vertex coloured-path witness therefore fails injective AP realization.
+This computation does NOT prove all other AP quota supports integral.
+It shows why forgetting arithmetic would overstate either conclusion.
+
+The broad three-target no-hole extension is REFUTED at hand status.
+The AP-target partial-quota question remains OPEN. Section19's fixed-
+covered-set perfect-face argument is neither used nor contradicted.
+No uniform filler threshold, full-interval counterexample, four-label
+E24 obstruction or new numerical census is claimed.
