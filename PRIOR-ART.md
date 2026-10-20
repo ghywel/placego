@@ -4102,3 +4102,12 @@ theorem or equivalence imported. Fernau–Gajjar2301.02178 indexed abstract
 uses another sum-graph definition. Neither is treated as an exact source
 for these fixed-target numerical fibres. No broader literature or novelty
 conclusion follows from these orientation searches.
+
+MI527–528: re-read Hoory–Kotlar2605.06071v2 Proposition2.7 and its
+pair-consumption example. That is a common-target/full-pool setting,
+not an imported adjacent-target one-hole theorem. Two narrow arXiv
+queries for prescribed-sum pair partitions/consecutive integers and
+unequal pair sums returned no result. G329's exact protected adjacent
+classification is a hand candidate, novelty UNASSESSED; the empty
+search is not a priority claim. Standard path/reflection ingredients
+are rederived in its self-contained proof.

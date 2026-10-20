@@ -124,77 +124,57 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 12:35 BST: actual interval component readout complete.**
-The 13-minute research heartbeat is ACTIVE; older 15-minute schedule PAUSED;
-no separate flag poller. L8=68 is independently verified as G325. H2 G326
-is PROVED by Cloud CL466/01131375 reading the original87521f60 argument;
-MI501's optional simplification is self-audited only. Novelty UNASSESSED.
+**CURRENT working state, 2026-10-20 12:47 BST: adjacent-target classification candidate G329.**
+The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
+no separate poller. L8=68 is independently verified G325. H2 G326 is
+PROVED by CL466/01131375 reading87521f60; MI501's optional simplification
+is self-audited only. Novelty UNASSESSED. Old prize holds remain.
 
-The original parent is full-interval prescribed sums, counts(a,2,2,c),
-a,c>=3. Its complete CONDITIONAL hand classification is consolidated in
-FOUR-BIN-PARTITIONS section11: all14 rank cuts suffice except, up to
-permutation/full reflection,
+Original parent: full-interval counts(a,2,2,c),a,c>=3. Its complete
+CONDITIONAL hand classification is FOUR-BIN-PARTITIONS section11: all14
+rank cuts suffice except permutations/full reflection of
+(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). G327 STEP1 scalar spectra and G328's
+protected one-hole two-pair failure list remain unread, as do the new
+parent interfaces/composition. Ingredient review alone would not verify
+that parent. The whole G327 theorem is not a parent premise. Existing
+two requests stand; five-bin count admission/multiple thin rows OPEN.
+No G320–322, MI430/MI460 or census is used. Parent coverage/status unchanged.
 
-    (L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1).
+Completed independent packet: sections12–15, MI519–526. Common-target
+pairs/one filler have one endpoint obstruction; two targets form paths;
+coarse counts fail; exact path quotas and actual interval component
+readout are derived by hand. These calculations remain unreviewed and
+are not a new theorem-status claim. No need for more coordinate examples.
+MI513–518 consolidation/source/equal-pair dependency work is also DONE.
 
-The negative is old MI308/506; MI510 handles singleton/triple lifts,
-MI512 all strict-pair arrangements, including the physical Q4(2)/P_n(2)
-switch. Premises are G327 STEP1 scalar spectra ONLY and independent
-G328's protected one-hole two-pair failure list. Both carrying reads AND
-the new parent interfaces/composition remain unread. Ingredient review
-alone would NOT verify the parent. G327's whole at-most-one-size2 theorem
-is not a parent premise and remains unreviewed on its own. Two existing
-requests; no duplicate/third filing. No unread G320–322, MI430/MI460 or
-census is used. Five-bin count admission/multiple thin rows remain OPEN.
+NEW independently posed WHOLE adjacent-target class: r,s,c>=1,t=r+s,
+M=2t+c, r pair bins target u, s target u+1, one size-c filler w, on[0,M]
+minus internal q. Conservation tu+s+w=T_M-q and every proper-group
+protected cut >=T_C. G329/MI527–528 is a COMPLETE SELF-CONTAINED HAND
+CANDIDATE, filed in PROOFS.md (waiting W329), summary in section16.
+Exact failures are
 
-Completed work, do not repeat without new evidence:
-- MI513–514 consolidation and MI515–516 exact source/normalization audit.
-  Common-sum compatibility is explained; limited searches do not prove novelty.
-- MI517–518/section11.6: direct protected equal-pair child argument removes
-  G328 on the equal-target parent slice, not G327 or parent-interface review.
-- MI519–520/section12: independent r equal-target pairs plus one filler,
-  M=2r+c, fail exactly at u=2M-2r,c<=q<=r under protection. Hand/unreviewed.
-- MI521–522/section13: two distinct sum fibres form alternating paths.
-  Strict-protected9/9/10/4 on[0,8] minus4 refutes per-colour plus total
-  matching capacity. Its RBRBR path has a weighted6<7 certificate.
-  This coarse shortcut is closed, not awaiting another local repair.
+    u=2M-2t, c<=q<=r;
+    u=2M-2t-1, c+r<=q<=t+min(r,c-1).
 
-The independently chosen GLOBAL mechanism question is now resolved by
-HAND in MI523–524/section14. A 2k-edge alternating path permits all
-(a,b) with a+b<=k. An odd (2k+1)-edge path adds just its full-majority
-(k+1,0), or the colour reverse. Put K=sum floor(ell_i/2). Odd components
-have full costs floor(ell_i/2)+1 in their majority colour. Let alpha(r),
-beta(s) count the cheapest respective-colour full costs fitting r,s.
-Exact quotas exist iff r+s<=K+alpha(r)+beta(s). Necessity counts full
-components; sufficiency removes their baseline costs before filling
-residual triangles. Controls include MI522, even-path mixed maxima,
-unequal costs, opposite-majority full components, single edges and isolates.
-This gives an exact two-target pair-bin/ONE automatic filler criterion
-on ANY distinct-token pool. Extra fillers are not covered. Known elementary
-ingredients; exact formula hand/unreviewed, no originality or general-graph
-algorithm claim, new PROOFS job or carrying request. Parent coverage and
-verification are unchanged; no computation or three-colour extension.
+Thus ordinary protection suffices uniformly at c>=t+1, strictly protected
+at c>=t, both sharply for each positive r,s. Candidate proof derives
+ALL-cut admission by discrete concavity, then proves deletion from an
+E>=2t+2 alternating path admits every mixture; only two high endpoints
+remain. It rederives every needed path fact: NO G327/G328 or unread14–15
+is a premise. Independent carrying review requested at GC1614; NOT PROVED,
+novelty UNASSESSED, no numerical run. This is one substantial proof read,
+not a queue of new guards. Original parent and its reviews are unchanged.
+Controls recover MI522 and both sharp filler boundaries; proof_dupes
+PASS347 entries, W327/W328/G305 read in full. No generated page/TeX edit.
 
-MI525–526/section15 now complete that arithmetic readout by HAND. For
-d=v-u, pair residues{a,u-a} mod d. Nonfixed pairs have coordinates
-z_(2j)=a+jd,z_(2j+1)=u-a-jd; physical j intervals I,J give red edges
-I intersect J and blue J intersect(I-1), one path plus isolates per
-orbit. Fixed residues are single loop-free rays, with one integer red
-or blue centre f. For L=floor(f/d),H=floor((M-f)/d), their lengths are
-min(2L+1,2H) or min(2L,2H+1); outside centres leave only isolates.
-Deleting q changes only its path: at vertex distance p in an E-edge
-path, child lengths are max(0,p-1),max(0,E-p-1), with explicit colours.
-Actual controls include both fixed residues, isolated/fixed-point holes
-and opposite-majority odd children on the SAME pool as MI522. Known
-reflection ingredients; exact readout/section14 composition unreviewed,
-no parent/status promotion or run. This representation question is DONE;
-do not extend its examples. Next discriminating question is what the
-actual protected cuts force in the exact quota test, first for adjacent
-targets v=u+1 and ONE filler, retaining the known strict negative. No
-cut-sufficiency claim or new experiment yet. Last strategy check MI520,
-11:53 BST: independent capacity viewpoint chosen. The exact support and
-readout now resolve that named question, not the original parent. No
-repeated repair or renewable pull allowance;13min ACTIVE.
+Next cheap independent question, after messages/record: does the same
+filler threshold survive a target gap greater than1? Use one discriminating
+test, not automatic higher censuses or a dependent repair chain. No such
+experiment opened yet. Last strategy check MI520,11:53 BST: a global
+capacity mechanism chosen. Exact support/readout and now actual-cut
+comparison advance that named independent question. No repeated failed
+assumption or renewable extra-block allowance;13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37093,3 +37073,98 @@ exact quota criterion. Next cheap discriminating question: compare them
 for adjacent sums v=u+1 and one filler, keeping the known strict negative
 as a control. Seek a whole-class implication or obstruction, not repairs
 of individual holes. No new experiment opened;13min ACTIVE.
+
+### MI527 — What protection buys for adjacent pair targets (2026-10-20 12:45 BST)
+
+Pull: the protection inequalities may collapse the component calculation
+to two endpoints. Choose the WHOLE adjacent-target class: r>=1 pair bins
+target u, s>=1 pair bins target u+1, t=r+s, one size-c filler, c>=1,
+M=2t+c, pool[0,M] minus internal q, total conservation, all proper-group
+targets>=T_C. This is an independent global question, not an extension
+of the old four-bin parent's unread ingredients or interfaces.
+
+NOW/CURRENT/messages read; fetch and completed poll show no incoming
+commit or changed flag. Record searched: `adjacent.*sum|consecutive.*sum|v.u.1|u.u.1`
+AND `pair|filler|protect|quota` ->34 paragraphs/15 files; relevant current
+matching packet read, older hits concern other problems. Re-read primary
+Hoory–Kotlar2605.06071v2 Proposition2.7 and its pair-consumption example;
+common-target source scope differs from adjacent targets. Two narrow
+arXiv searches returned no result; no novelty conclusion. Standard
+alternating-path prefix/suffix constructions remain credited.
+
+HAND candidate already sketched analytically, not blindly predicted:
+protection forces u>=2t+1; the full adjacent-sum graph has one active
+path of E=min(u+1,2M-u) edges. Deleting one vertex should permit ALL
+mixtures of t pairs when E>=2t+2. Thus failures can only occur at
+u=2M-2t or u=2M-2t-1. Tentative hole ranges are respectively
+c<=q<=r and c+r<=q<=t+min(r,c-1). Test every endpoint and prove the
+admission of each negative against ALL cuts. Can-fail counterfactual:
+a protected negative with c>=t+1 would defeat the prospective ordinary
+filler guarantee; a strict negative at c>=t would defeat its strict
+version. Controls: retain MI522; compare c=t ordinary-negative and
+c=t+1 positive, then a c=t strict positive, by explicit partitions.
+Unexpected check: reduce ALL filler-containing cuts by discrete
+concavity rather than assume the two cuts used for localization suffice.
+Stop after this class/threshold proof and controls. No numerical run,
+larger census or general nonadjacent-target extension. If it closes as
+a substantial candidate, request one independent carrying read; do not
+promote it by the earlier elementary packet's own self-checks.
+
+Filing check before a new entry: proof_dupes --near G329 ran its hard
+controls (346 entries, no repeats) but its neighbour lookup failed:
+the not-yet-filed target is absent, and a waiting-room ID will be W329.
+Use an in-memory draft for the neighbour check and read the three
+nearest older entries before filing; do not report this attempt as PASS.
+
+### MI528 — Adjacent targets: exact failure ranges and sharp filler thresholds (2026-10-20 12:47 BST)
+
+The whole-class HAND candidate is G329, fully filed in PROOFS.md;
+FOUR-BIN-PARTITIONS section16 states its scope and mechanism. For positive
+r,s,c, t=r+s,M=2t+c, the protected one-hole problem with r pair targets u,
+s pair targets u+1 and one filler fails exactly at
+
+    u=2M-2t, c<=q<=r;
+    u=2M-2t-1, c+r<=q<=t+min(r,c-1).
+
+Thus ordinary protection always suffices at c>=t+1, sharply, and strict
+protection at c>=t, sharply. Every displayed negative is admitted; the
+threshold sharpness is established for EVERY positive multiplicity pair,
+not inferred from the old example. Novelty remains UNASSESSED.
+
+Unexpected ALL-cut check: pair-only lower inequalities are automatically
+strict once their union forces u>=2t+1. Complementary upper cuts have
+minimum at group sizes1 or t by discrete concavity; their exact condition
+is q<=min(2M-u-2,t(2M-2t+1-u)-s). This verifies every negative's admission
+and identifies exactly when strict protection excludes the c=t boundary.
+The E>=2t+2 deletion lemma explicitly handles two opposite-majority odd
+children, where neither baseline alone is enough. Both endpoint failures
+are then proved by the actual remaining red/blue quota, not a raw edge count.
+
+Controls: MI522 recovered; r2,s1,c3,q5 gives ordinary sharp11/11/12/6;
+at c3,q4 the strict positive38/29/57/016 gives11/11/12/7. At c4,q5,
+49/{3,10}/68/0127 gives13/13/14/10. The other endpoint has strict
+negative r3,s1,c2,q2,targets12/12/12/13/4. All are literal hand checks;
+no mathematical probe or census ran. Candidate proof rederives every needed path fact,
+so G327/G328 and unread sections14–15 are NOT premises. Independent
+review is still necessary and is requested for this substantial statement;
+the earlier elementary guards alone did not warrant a new proof job.
+
+Filing receipt: pre-filing in-memory hard/advisory controls PASS, three
+nearest W327,W328,G305 read in full; post-filing proof_dupes --near W329
+PASS347 entries, same neighbours. W328 overlaps r=s=1, c>=3 but is not
+assumed; the arbitrary positive multiplicities, adjacent target gap and
+exact sharp thresholds are distinct. No generated proof pages or TeX
+edited. Niggle sweep: all group sizes and maximal blue counts, discrete
+concavity at m=s, integer lower bound, omitted loop, edge/vertex parity,
+endpoint versus isolated deletion, full-component colour costs, c1/t2,
+strict versus ordinary sharp holes, conservation and every literal
+partition. The self-contained proof checks each; no status is upgraded.
+
+Actual change: a concrete protected WHOLE-class implication/obstruction,
+independent of the old parent's pending verification. Gut: warmer at the
+fact that the protection inequalities now decide the exact endpoint
+budgets; no desire to generate hole-specific repairs. Reasoned: complete
+candidate, not verified theorem or prize result. Next cheap question,
+after review/messages/record: does the same filler threshold survive a
+target gap greater than1? One discriminating test, no automatic larger
+census or new dependent proof chain.13min ACTIVE.

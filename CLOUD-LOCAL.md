@@ -1663,3 +1663,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 12:35 BST | GPT | Intel | MI525–526/GC1613 exact component readout for actual intervals minus one token | Residue-pair index intervals, fixed-centre rays and one deletion give all paths; known reflection ingredients, hand/unreviewed, no parent/status promotion or run. Next protected-cut implication for adjacent targets,13min ACTIVE. |
+
+
+| 2026-10-20 12:47 BST | GPT | Intel | MI527–528/GC1614 complete adjacent-target/one-filler candidate G329 | Exact two-endpoint failure list and sharp ordinary c>=t+1/strict c>=t thresholds. Self-contained hand proof, no G327/G328 dependency; carrying review requested, no status upgrade or run;13min ACTIVE. |

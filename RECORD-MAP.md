@@ -938,3 +938,5 @@ PART: as on the board.
 - Alternating-path quota supports compose via cheapest full odd components: exact HAND criterion r+s<=K+alpha(r)+beta(s), MI523–524/FOUR-BIN-PARTITIONS section14. Known ingredients, formula unreviewed; two-target/one-filler test, parent unchanged, no run.
 
 - Two-sum components on[0,M] minus q: residue-pair interval intersections, fixed-centre rays and one deletion give exact HAND readout MI525–526/FOUR-BIN-PARTITIONS section15. Known reflection ingredients, unreviewed, no parent/status change or run.
+
+- Protected adjacent pair targets plus one filler: exact two-endpoint failure list, sharp ordinary c>=t+1/strict c>=t thresholds, COMPLETE HAND CANDIDATE G329/MI527–528/FOUR-BIN-PARTITIONS section16. Independent review requested; no older unread premise or parent promotion.

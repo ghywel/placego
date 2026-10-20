@@ -1494,3 +1494,50 @@ for two-target pair bins plus ONE filler. No claim that protected cuts
 imply that test, or that two or more filler bins are automatic. Known
 reflection ingredients, exact formulas unreviewed here, no new proof
 status, census, original-parent coverage or three-colour generalization.
+
+## 16. Protection for adjacent pair targets: a complete candidate classification
+
+**PROOF-SKETCH G329, MI527–528; independent carrying review requested.**
+The full self-contained proof is filed in PROOFS.md G329, including every
+path and all-cut step; it does not assume the unreviewed sections14–15
+or G327/G328. Known ingredients, novelty UNASSESSED.
+
+Let r,s,c>=1, t=r+s, M=2t+c. On[0,M] minus an internal q, prescribe
+r size2 bins of sum u, s size2 bins of sum u+1, and a size-c filler
+of sum w. Assume tu+s+w=T_M-q and every proper nonempty group of
+bins has target at least T_(its size). The candidate says that failure
+occurs EXACTLY in the two families
+
+    u=2M-2t,    c<=q<=r;
+    u=2M-2t-1,  c+r<=q<=t+min(r,c-1).
+
+Empty hole ranges give no failures. Every listed negative is admitted.
+Consequently c>=t+1 guarantees completion for ordinary protection,
+sharply; c>=t guarantees completion for STRICT protection, sharply.
+Both sharpness assertions hold for each positive r,s.
+
+The carrying mechanism uses the actual inequalities. All pair-only
+lower cuts reduce to u>=2t+1. By discrete concavity, ALL complementary
+upper cuts reduce exactly to
+
+    q<=min(2M-u-2, t(2M-2t+1-u)-s).
+
+The adjacent-sum graph is one path of E=min(u+1,2M-u) edges plus isolates.
+A deletion from E>=2t+2 permits every mixture of t pairs. The proof
+checks its borderline opposite-majority children rather than assuming
+ordinary matching capacity suffices. Only the two high u endpoints
+remain; their admitted hole positions force exactly the displayed
+colour-budget failures. This is not an extension by local repairs.
+
+Old strict negative: r2,s1,c2,M8,q4,targets9/9/10/4. Ordinary sharp
+negative at c=t: r2,s1,c3,M9,q5,targets11/11/12/6. Strict safe-boundary
+positive at c=t is38/29/57/016 on[0,9] minus4, targets11/11/12/7.
+Ordinary safe-boundary positive at c=t+1 is49/{3,10}/68/0127 on[0,10]
+minus5, targets13/13/14/10. The first endpoint also has strict negatives,
+for example r3,s1,c2,M10,q2,targets12/12/12/13/4. No numerical run.
+
+This resolves the independently posed adjacent-target/one-filler
+question at HAND CANDIDATE status. It does not verify the earlier
+four-bin parent or establish the threshold for arbitrary target gaps,
+multiple fillers, or three distinct pair targets. Its review is one
+substantial proof read, not another review of the known matching guards.

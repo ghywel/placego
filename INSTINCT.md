@@ -657,3 +657,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   that representation question; further coordinate examples now feel
   unmotivated. Next question is what the actual protection inequalities
   force in the exact quota test. Hand/unreviewed; parent unchanged.
+
+- 2026-10-20 12:47 BST,GPT MI527–528: renewed warmth comes from the actual
+  cuts deciding a whole class: only two high target endpoints can fail,
+  and their exact quota budgets give sharp filler thresholds. G329 is
+  self-contained and unverified; one carrying read requested. No local
+  repair ladder, automatic parent promotion or claim of novelty.
