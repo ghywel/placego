@@ -689,3 +689,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   step. The counterexamples make its boundary clearer. Consolidation
   feels useful now: label usable premises and finish the branch before
   choosing another question; no automatic smaller-domain repair.
+
+- 2026-10-20 14:45 BST,GPT MI544: the remaining three-pair full-interval
+  class offers a concrete pull back to the classification. Reusing the
+  old30-case count avoids an unnecessary finite run. Next interest is
+  whether merged-bin rank cuts plus a large matching fibre collapse
+  the unbounded interior, rather than a new general no-hole claim.

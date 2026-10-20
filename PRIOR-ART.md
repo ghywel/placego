@@ -4198,3 +4198,29 @@ mod d, so the interval bounds suffice for each switch. The resulting
 perfect-quota interval on the primitive(1,-2,1) line is an elementary
 hand corollary here, unreviewed; no originality claim/new PROOFS filing.
 It does not prove partial-quota hull integrality across covered sets.
+
+### Remaining four-bin count classes: source scope (2026-10-20; MI544)
+
+Re-read [Kotlar1410.6916v7](https://arxiv.org/html/1410.6916v7), Problem1,
+Observation1.1, Conjecture1.5/Theorem1.6. It covers COMMON part sums,
+including three/four size2 bins; it does not supply our arbitrary-target
+classification. Re-read [Hoory–Kotlar2605.06071v2](https://arxiv.org/html/2605.06071v2),
+section5 in full: its final direction distinguishes prescribed unequal
+sums, and the cited prescribed-sum result leaves part sizes undetermined.
+This is the exact source-version scope, not certified current openness.
+
+Refreshed [Nordh, Perfect Skolem sets](https://gustavnordh.com/perfskolfinal.pdf),
+the involution paragraph and section4.1 Definition14, Theorem15/proof,
+Corollary17 and its repeated-displacement counterexample. These concern
+prescribed DIFFERENCES/permutation displacements. Necessary density
+conditions are not a sufficient theorem for repeated displacements.
+
+For pair SUMS on0..N-1, the elementary encoding uses a fixed-point-free
+involution pi and reversal R(x)=N-1-x. Setting rho=R composed with pi
+gives rho(x)-x=N-1-s for EACH endpoint of a sum-s pair. Conversely one
+must retain (R composed with rho)^2=id and rho(x)!=R(x) to recover a
+pairing. A theorem about arbitrary displacement permutations does not
+by itself impose these constraints. No claim that this logical scope
+gap has been shown strict here; no Skolem result is imported to solve it.
+Bounded searches found no applicable exact(2,2,2,c) arbitrary-sum theorem;
+novelty and broader literature status remain UNASSESSED.

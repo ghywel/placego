@@ -39,6 +39,27 @@ Five-bin count admission/multiple thin rows and any mathematical transfer
 to the all-n burning problem remain OPEN. No new experiment accompanies
 this consolidation; Cloud's supporting instrument is read, not rerun.
 
+**Full-interval four-bin COUNT coverage (MI544).** All sizes here are
+at least2, and a count travels with its target under permutation.
+
+| Number of size2 bins | Exact class | What is actually available |
+|---|---|---|
+| 0 | All four sizes>=3 | Rank-cut sufficiency, PROVED G316 |
+| 1 | (2,b,c,d), b,c,d>=3 | Rank-cut sufficiency, PROVED G327 in the master |
+| 2 | (a,2,2,c), a,c>=3 | Exact forced-family classification, PROVED section11 |
+| 3 | (2,2,2,c), c>=3 | Exact arbitrary-target classification OPEN in this record; G330 supplies an exact test when the three pair targets use at most two distinct values |
+| 4 | (2,2,2,2), only N8 | MI452's existing complete two-engine computation:30 missing labelled vectors, exactly the24 permutations of(2,6,8,12) and6 of(4,4,10,10); COMPUTED consequence, not an independent carrying proof |
+
+For the last row, both displayed sorted tuples obey all rank cuts:
+their smallest1/2/3-bin totals are at least1/6/15 and each totals28;
+complements give the upper cuts. For(2,6,8,12), sum2 forces02, sum6
+then15, blocking every sum8 pair. For(4,4,10,10), the two sum4 pairs
+are forced04/13, blocking every sum10 pair. The two disjoint permutation
+orbits account for all30 misses reported by MI452, so its COMPLETE count
+exhausts the finite case. No rerun or new computation is made. A near
+positive is(4,4,9,11)=04/13/27/56. This finite row and the unbounded
+three-size2 row are distinct; neither enlarges the status of the other.
+
 ## 1. Statement and notation
 
 Write L(r)=r(r-1)/2 and U_N(r)=r(2N-r-1)/2.

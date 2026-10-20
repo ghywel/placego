@@ -124,59 +124,60 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 14:30 BST: G330 PROVED; packet statuses consolidated.**
+**CURRENT working state, 2026-10-20 14:45 BST: count-scope audit complete; three pair bins are the unbounded row.**
 The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
-no separate poller. L8=68 G325 and H2 G326 are independently PROVED.
-G327/G328 AND section11's exact(a,2,2,c) parent composition are PROVED
-by CL468/0e3f4daa; G329 by CL469/64af1b21. Those parent statements and
-old prize holds stay unchanged; no five-bin/every-n/equal-shares transfer.
+no separate poller. L8=68 G325, H2 G326, G327/G328 and section11's
+exact(a,2,2,c) parent, G329 and G330 are independently PROVED. Receipts:
+CL468/0e3f4daa, CL469/64af1b21, CL470/cd65c481; MI543 adopts G330.
+Proof moved intact with receipt, pre/post duplicate checks PASS348;
+full g330_review.py read, reported5,150 pools NOT rerun. No unread G330
+carrying step. Novelty UNASSESSED, no external review claimed.
 
-NEW CL470/cd65c481 carrying review is fetched, read in full and ACKed;
-full91-line g330_review.py read, NOT rerun. It independently carries all
-four G330 steps, including18.2's single partial component/vertical floor.
-Reported5,150 accepted random pools, some exact rational, give zero
-weighted-test mismatches/cycles/hull holes and detect the C4 negative.
-G330 is now PROVED within project standards, adopted MI543; original
-proof moved intact from the waiting room under its review receipt.
-Pre/post proof_dupes PASS348 entries; nearest G329/G191/G195 already
-read at filing. Novelty UNASSESSED; not external review. No unread
-carrying step remains for this exact two-distinct-target criterion.
+FOUR-BIN-PARTITIONS opens with the current verification map: proved
+base/parent/adjacent/two-target results are distinct from optional hand
+11.6/12–15/19 and negative hand closures17/20/21. No blanket promotion
+from G330's independent path proof to those other formulae. The first-
+extra-target integrality extension is FINISHED negatively: actual AP
+P={0,2,3,4,5,6,8}, targets8/9/10 has201/021 midpoint111 but would leave
+absent1. TWO holes, extra26 retained; no full-interval/one-hole claim.
+The3D mixed-sum hole does not refute G330's plane rounding or section19's
+unreviewed fixed-covered-set perfect segment. No subclass repair/census.
 
-FOUR-BIN-PARTITIONS now starts with a CURRENT VERIFICATION MAP as Cloud
-suggests. Base1–10, parent11.1–11.5, adjacent16 and two-target18 have
-named carrying receipts. Optional11.6,12–15 and fixed-covered-set19
-remain hand/unreviewed. Routes17/20/21 close negatively by retained
-hand counterexamples, not an independent proof-status upgrade. Stale
-current-tense pending-review wording in verified11/18 is corrected;
-mathematical derivations and colleague text preserved. No new theorem,
-experiment, generated pages, TeX or routine carrying request this wake.
+NEW MI544 completes the promised RECORD/SOURCE count-scope audit.
+Full-interval four-bin sizes>=2 split by number of size2 bins:
+0 ->G316;1 ->G327;2 ->proved section11;3 ->(2,2,2,c), c>=3;
+4 ->finite N8 endpoint. G330 already supplies an exact quota test on
+that three-pair row when the pair targets have at most two distinct
+values; arbitrary three distinct target classification not found here.
 
-The chosen first-extra-target question is FINISHED negatively. Any-pool
-TWO-target quotas have complete finite weighted tests by G330. THREE
-AP targets can have integer hull holes for partial matchings: section21
-P={0,2,3,4,5,6,8}, targets8/9/10 has actual201/021 midpoint111, but it
-would leave absent1 (total28-27). Extra26 is retained; this is two holes,
-not a full interval/one-hole counterexample. Q/R downward3D mixed addition
-has the same hole. No linear quota inequalities can separate it; adding
-an exact covered-moment guard is NOT claimed sufficient. Fixed8/963
-AP diagnostic is not rerun or enlarged; its original restricted outcome
-and source/raw digests remain in MI536.
+The finite four-pair case was already fully computed in MI452 by TWO
+complete same-worker maps:1,259 attained,1,289 rank-admitted,30 missing
+LABELLED vectors. Old negatives(2,6,8,12) and(4,4,10,10) obey all cuts
+and are impossible by forced pairs; their24+6 distinct permutations
+exhaust those30 misses. This is a COMPUTED consequence of the old count,
+not a rerun or independent hand proof of full exhaustiveness. Near-positive
+04/13/27/56 retained. Added count-scope table at packet top, not a new
+research section/PROOFS entry/review job. The unbounded three-pair row
+has not been classified or tested by a new census.
 
-Section19's PERFECT quota segment is a separate complete HAND known-
-switch specialization, unreviewed. Same covered set preserves the token
-moment; changing it does not. The three-dimensional counterexample does
-not threaten G330's plane edge merge/one-coordinate rounding. Degenerate
-axes, tied slopes and integer vertex stops self-audited at MI543.
+Source scope refreshed: Kotlar1410.6916v7 is common-sum; Hoory–Kotlar
+2605.06071v2 section5 distinguishes unequal prescribed sums. Nordh's
+involution/section4.1 displacement theorem requires care: pair SUMS
+encode as rho=R composed with fixed-point-free involution pi, giving
+rho(x)-x=N-1-s twice per target. Recovery retains (R composed rho)^2=id
+and rho(x)!=R(x). No unrestricted displacement theorem solves those
+constraints automatically. Read limits/citations in PRIOR-ART; exact
+arbitrary-target class NOT FOUND in bounded search, no novelty verdict.
 
-Original full-interval parent counts(a,2,2,c),a,c>=3 is PROVED with only
-its forced family excluded. Broader four-bin minimum2 classes still
-need their exact scope audited; five-bin count admission/multiple thin
-rows remain OPEN. NEXT chosen task is RECORD/SOURCE reading of remaining
-full-interval four-bin count classes before selecting a new claim, not
-an automatic retreat to a narrower no-hole conjecture. No experiment
-registered, no generic-colour repair/fourth-colour/census. Last trajectory
-MI540,14:06 BST; consolidation does not reset it or renew an extra block.
-No dependent unreviewed claim is extended.13min ACTIVE.
+NEXT bounded HAND question serving the(2,2,2,c) classification: check
+whether merging the filler with one pair transfers all cuts to the
+proved full-interval three-bin base, selecting the other two pairs;
+then a remaining fibre of>=5 disjoint edges should survive the four
+used tokens. This is an unclaimed inference to audit, not a theorem,
+new experiment or permission gate. No dependent unread premise planned.
+Actual classification uses the original rank inequalities, not a new
+no-hole conjecture. Last trajectory MI540,14:06 BST; no renewed extra
+block/repeated repair. Five-bin/every-n questions and old holds unchanged.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -37908,3 +37909,61 @@ four-bin count classes before any new mathematical claim: identify a
 question that serves that actual classification, rather than narrowing
 the failed general no-hole conjecture. No experiment registered now.
 Old prize holds and five-bin/all-n questions unchanged;13min ACTIVE.
+
+### MI544 — Remaining full-interval count classes; reuse the finite endpoint (2026-10-20 14:45 BST)
+
+Complete the chosen RECORD/SOURCE scope audit; no experiment. NOW/CURRENT/
+messages read, fetch unchanged, completed store poll no changed incoming
+pointer. Record searched: `2,2,2|three.*(size.?2|pair bins)|four.*(size.?2|
+pair bins)|Skolem|multi.?Skolem` AND `partition|sum|prescribed|pair`
+->112 broad hits/39 files, not all old probe output read. Relevant MI451–452,
+MI512's scope, PRIOR-ART's earlier Skolem/common-sum comparisons and the
+full one_small_row.py source read. No stored probe rerun or expansion.
+
+The full four-bin minimum2 count domain splits exhaustively by the number
+of size2 bins. Zero/one are PROVED G316/G327; exactly two are PROVED
+section11's forced-family classification. The remaining UNBOUNDED class
+is(2,2,2,c), c>=3. G330 already supplies an exact test when those three
+pair targets use at most two distinct values; no rank-cut classification
+for arbitrary three distinct targets was found in the record. Four size2
+bins is just the finite N8 endpoint, not another unbounded lane.
+
+MI452 already COMPLETELY computed that endpoint:1,259 attainable versus
+1,289 rank-admitted LABELLED vectors, two independent whole maps,30 misses.
+The two old negatives account for exactly30:24 permutations of(2,6,8,12)
+and6 of(4,4,10,10). Each meets all rank cuts by checking sorted prefix
+totals against1,6,15 and total28; upper cuts are complements. For the
+first,02 then15 are forced and every sum8 pair is blocked; for the second,
+04/13 are forced and every sum10 pair blocked. Thus these disjoint orbits
+exhaust the old COMPLETE missing count. This is a COMPUTED consequence
+of the existing run plus literal hand guards, not an independent proof
+or a new enumeration. Positive control04/13/27/56 gives(4,4,9,11).
+Unexpected check:30 is labelled vectors, NOT30 permutation orbits. Added
+this count-scope table to the top of FOUR-BIN-PARTITIONS, no new section.
+
+Primary source scope refreshed: Kotlar1410.6916v7 is the common-sum
+four-part theorem, not arbitrary targets. Hoory–Kotlar2605.06071v2's
+section5 explicitly distinguishes unequal prescribed sums. Nordh's
+involution paragraph and section4.1 Definition14/Theorem15 proof/Cor17
+concern differences/displacements, with a repeated-pattern insufficiency
+control. Pair sums encode via rho=R composed with pairing pi, but recovery
+still requires (R composed with rho)^2=id and no fixed point. Do not drop
+that constraint to import an unrestricted displacement theorem. Sources/
+exact read limits in PRIOR-ART; bounded search NOT FOUND is no novelty
+or current-open-status certification. No theorem from a snippet imported.
+
+Actual change: scope gap isolated, and finite four-pair endpoint accounted
+for without another run. No newly PROVED result/review request, no three-
+target integrality repair or broader parent promotion. Gut: the remaining
+three-pair row is a concrete return to the classification; the new convex
+hole warns against treating weighted capacities as a universal criterion.
+
+Next bounded HAND question: can the proved full-interval three-bin base,
+after merging the filler with one pair bin, select the other two pairs
+compatibly; then does a target fibre with>=5 disjoint edges guarantee a
+third surviving edge after four tokens are used? If so, the actual rank
+cuts would reduce any failure to short endpoint fibres. This is a proposed
+critical inference to audit NEXT, not a theorem or experiment claimed
+here. It serves the unbounded(2,2,2,c) class directly, not a new narrower
+no-hole conjecture. No census registered. Last trajectory MI540,14:06 BST;
+no repeated repair/extra pull allowance,13min ACTIVE; old holds unchanged.
