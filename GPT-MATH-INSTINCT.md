@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 09:18 BST: eight-streets structural research resumed by the owner.**
+**CURRENT working state, 2026-10-20 09:47 BST: complete H2 hand candidate awaiting carrying review.**
 The existing 13-minute research heartbeat is ACTIVE with a revised, context-bearing
 prompt; the older 15-minute schedule stays PAUSED. There is no separate flag poller.
 L8=68 is complete as G325. The present parent is structural partition sufficiency;
@@ -137,15 +137,23 @@ b-subset spectra over every legal sum-u pair. Canonical pair choice and strict
 two-token escape have failed; MI460's central slice stays unreviewed, not a premise.
 MI495–496's first-gap test REFUTES a stronger interval-support shortcut after18
 domains: M8,q2,u8 misses6 inside its all-pair support hull, while H2 requires v>=7.
-Do not repeat this test or patch its fixture. H2 is unchanged. Next bounded hand
-question: in the first-unhit-pair positive coefficient expansion of MI496, can the
-proper-group inequalities force a nonzero term? Start by tracking BOTH singleton
-and pair-plus-bin inequalities; scalar convex-hull membership alone is insufficient.
-If this is merely the original inference in new notation, say so and change the
-representation at that level rather than commission another census.
-Last trajectory check: MI496,2026-10-20 09:22 BST. No new coverage of the parent;
-one post-resumption failure of the stronger interval assumption. Earlier selector
-and strict-descent failures remain guards. No unread theorem is a premise.
+Do not repeat this test or patch its fixture. The coefficient expansion was an
+encoding only; MI497 deliberately changed to the proved G315 construction instead.
+PROOFS.md G326 is now a COMPLETE HAND CANDIDATE for H2, status PROOF-SKETCH,
+independent carrying review requested from Cloud. It audits G315 with one size-two
+bin, classifies the new pair-spectrum gaps by disjoint-pair counting, and uses
+H2 protection (including its actual reflected form), pair-first least-slack ties
+and explicit uniform repairs. MI498's1128 pools/932 repairs/2041 reflection
+identities/19 ties pass a finite SAME-WORKER ingredient audit, not the theorem.
+Earliest unreviewed dependency: G326 itself; no parent theorem is promoted and
+MI453's full four-bin extension stays unreviewed. G325 needs none of these.
+Next independent work: adversarially check the least-slack root/recipe exhaustion,
+or derive an executable construction on the OLD controls; no larger census or
+dependent chain. Answer concrete review objections on their merits; a pending
+review is not a routine halt. Old failed selectors and MI460 remain out of the proof.
+Last trajectory check: MI499,2026-10-20 09:47 BST. H2 has a carrying candidate;
+proved coverage unchanged until independently checked. One failed global-interval
+assumption since resumption is retained; no pull-only allowance is renewed.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -35541,3 +35549,119 @@ catalogue. Gut: disappointment at the lost shortcut, interest in the sharp role
 of the cut that excludes6, and uncertainty about a uniform mechanism. Reasoned:
 a useful rejected strategy; no increased confidence or status for H2, five-bin,
 Frankl or an older prize problem. No routine review halt or new dependent chain.
+
+### MI497 — Stop treating the coefficient encoding as progress; audit the size-two boundary of G315 (2026-10-20 09:39 BST)
+
+Pull: the exact place where the proved min-three argument fails is more concrete
+than coefficient positivity. The first-unhit expansion is a valid encoding but
+supplies no estimate from H2's six cuts; I do not claim it advanced that inference.
+The chosen question stays H2. Change representation at the parent, to an audit of
+FOUR-BIN-PARTITIONS section6: can its least-slack proof cover ONE size-two bin
+under H2 protection? This is not restarting arbitrary hole or local-swap searches.
+
+Record searched: first.unhit|hitting.*polynomial|generating.function AND H2|matching
+->4 paragraphs/2 files; G315|one.hole AND size.?two|a2|a=2 ->14 paragraphs/4 files.
+Read FOUR-BIN-PARTITIONS sections2–6 in full and MI453/456/458/460–466. The primary
+source context remains the recorded arbitrary-target versus equal-sum distinction;
+no new literature theorem imported or novelty claim. Latest fetch has no incoming
+commit; fresh portal checkpoint has no unacknowledged incoming pointer.
+
+**Hand outline under audit, not yet a theorem.** H2 makes every original scalar
+sum feasible. Choose the least of all six ACTUAL singleton lower/upper slacks,
+prioritizing the size-two bin on ties, and reflect once if needed. The existing
+rank protection then holds for every actual choice of the selected bin. If that
+bin has size2, the remaining sizes>=3 let G315's construction work; its uniform
+exception formula still makes literal sense at a2 (empty prefix). If a larger
+bin is selected, only the remaining PAIR spectrum needs a new audit. Two holes
+can block a pair sum only within four of the original span ends; the structured
+three-hole repair pools only within six. This is a disjoint-pair counting fact,
+not an unproved scalar localization. Trace all those endpoint possibilities.
+
+The tentative lists are finite SHAPES in a uniform proof, not a new census or
+unbounded family tree. H2's inequalities are retained after reflection as
+s_J>=L(C_J)+(M-Q), where Q is the reflected hole; they must NOT be reflected
+as the original margin C_J. The actual least-slack rule remains unchanged.
+Before accepting the outline, write every exception and repair and test the
+pair-spectrum classifications with independent literal subsets. Any unresolved
+branch or bad original-target inequality prevents a full H2 candidate.
+
+### MI498 — H2 hand candidate and a bounded audit of its carrying exception lists (2026-10-20 09:45 BST)
+
+A complete HAND CANDIDATE is now PROOFS.md G326, status PROOF-SKETCH, not
+independently verified. It extends the proved least-slack construction, retains
+all six H2 inequalities including their different reflected form, and audits
+only the newly exposed size-two pair spectra. A uniform core argument discharges
+the finite residual shapes. This would solve H2 itself; no claim yet for the
+four-/five-bin parent, a prize or novelty. Its premises are proved G315's scalar
+lemmas/construction, not the unread candidates or MI460's central slice.
+
+**Predictions before any audit run.** Test the TWO-hole pair gap table on spans
+U6..18 and every two INTERNAL holes. Test the structured H_p/K_t three-hole
+pair tables on V7..20 and every legal p/t. Direct complete pair sums and unique-
+partner enumeration must agree. The formula tables must equal the WHOLE actual
+missing set between extrema, not only the listed convenient gaps. Verify every
+written replacement on l2..20,c3..20, every fixed core and the high-repair alternate
+for l1..20. Check sizes, original sums, disjointness and exact union with the
+ORIGINAL pool. G315's old triple repair must also pass at a2 and when its last
+bin is2. Check the reflection inequality algebra for every M8..20,q,r in range.
+
+Counterfactual: the two-hole pool0..6 minus{3,4} has a genuine pair gap4;
+a table that omits it MUST fail. A low-only table must miss a high reflected gap.
+Unexpected: the low-repair tie has actual selected-bin lower slack3 and pair
+upper slack3 for all l2..20, so the specified pair-first priority is necessary
+for that exclusion. Test its complete arithmetic, not only a claimed tie.
+This is ONE invocation,10seconds/5000 pools/5000 repairs, no H2 census or larger
+run. First mismatch stops, retaining the full pool/spectrum or proposed partition;
+no edit/retry. A pass checks the ingredients on finite ranges only. The written
+unbounded disjoint-pair count and branch exhaustion remain the proof obligations
+for Cloud. A failure downgrades the candidate and requires a trajectory check
+before repair. Raw evidence outside git.
+
+### MI499 — Ingredient audit passes; publish G326 for an independent carrying read (2026-10-20 09:47 BST)
+
+One invocation completed:1128 COMPLETE pair-spectrum pools,932 literal partitions,
+2041 reflection identities and19 priority ties; all assertions and both can-fail
+countercontrols pass. Elapsed0.09660283895209432 seconds on this Intel host, no
+speed claim. Raw JSONL retained outside git, SHA256
+ b6ff46b7be1c9f0361db6a8fb738072a6cec261c5be25e9f7207728e8049139f.
+Probe with outcome-only comment appended, SHA256
+ b544b937734221bb735b0ea6cb35a799754310da7474f6b6b6e98b28ceb4adc2.
+The test did NOT enumerate H2 targets, prove unbounded classification, or check
+all actual least-slack root/recipe branches. Those carrying steps are explicitly
+written in G326 and need an independent reader. No larger run or retry.
+
+**What changed.** The first-unhit formula supplied no new positivity estimate;
+I set it aside as a reformulation. A direct audit of the PROVED G315 proof gives
+a complete H2 hand candidate. Its new ingredients are short exact pair-gap lists
+for two internal holes and the two structured three-hole pools, H2's correctly
+reflected protection, pair-first priority at an actual slack tie, and literal
+uniform replacements/three fixed cores. If correct it resolves H2, rather than
+adding another conditional side family. Status remains PROOF-SKETCH. It uses
+neither the unread G320–322/MI430 chain nor MI460. The stronger unprotected
+one-size-two scalar statement remains false (MI496's old fixture).
+
+Proof filing: an early --near G326 call before the entry existed failed with
+unknown-target ValueError. After filing, --near W326 gives344 entries, no repeats.
+G319,G315,G317 were read in full; G315 is the exact predecessor extended, the
+others have different domains/count requirements. No novelty or prize claim.
+The unbounded case audit is in PROOFS.md G326, not supplied by finite tests.
+
+**Niggle sweep.** Pair-gap tables compare WHOLE missing sets; endpoint holes are
+trimmed before using an internal-hole table. Reflection changes the protection
+function and is explicitly derived. The tie is in ORIGINAL actual singleton
+slacks, not in guessed target margins. The a2 repair has an empty prefix and
+still uses distinct nonnegative values. Three fixed cores are translated only
+after removing the stated A prefix; sizes and original target sums were checked.
+High repair's sole surviving bad pair has an available low replacement; low
+repair's equal-slack obstruction is excluded by the stated priority. The one-sided
+pivot-existence argument needs remaining count>=5, and its distance bound8 is
+written. Generic G315 is NOT invoked at residual pair size2. No new status is
+inferred from terminology, a passed diagnostic, or a self-audit.
+
+Gut: a sharper pull and some satisfaction at using a proved argument instead of
+inventing another dynamics. Unease is now concentrated on exhaustion of the actual
+root branches, especially reflection/priority and the pair upper-gap list; this
+is what the independent read must carry. Reasoned: substantial candidate worth
+review, no adopted solution yet. Publish and send ONE REVIEW-REQUEST to Cloud,
+then continue independent adversarial auditing rather than extend a dependent
+four-/five-bin chain or halt routinely. The13-minute heartbeat stays ACTIVE.

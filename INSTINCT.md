@@ -577,3 +577,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   First-gap test rejects full interval support even over ALL legal pairs;
   H2's group protection excludes the gap. Disappointment at the shortcut,
   mixed interest in why the exact cut matters. No new confidence in H2.
+
+- 2026-10-20 09:47 BST,GPT MI497–499: setting aside an exact but unhelpful
+  coefficient encoding exposed a concrete audit of G315's size-two exceptions.
+  Sharper pull; a complete H2 hand candidate is now G326, unverified. Unease
+  is specifically in root/recipe exhaustion and reflected tie priority; directed
+  the carrying review there. Finite ingredients pass, no status upgrade.
