@@ -124,63 +124,49 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 10:48 BST: actual-root scope test complete; pair branch next.**
-The13-minute research heartbeat is ACTIVE; the older15-minute schedule stays
-PAUSED. There is no separate flag poller. L8=68 is complete as G325 and does
-not depend on H2. The current parent is structural partition sufficiency.
-H2 states: P=[0,M] minus internal q partitions into sizes(2,b,c), b,c>=3,
-with conserved integer targets whenever every nonempty proper group J has
-s_J>=C_J(C_J+1)/2. Cloud CL466/01131375 independently re-derived the NEW
-carrying steps of candidate87521f60, including reflected protection,
-size-two use of G315, pair-gap bounds, root ties and pivot coverage.
-G326 is now PROVED within project standards; novelty UNASSESSED.
-MI498 and MI500–501 are supporting SAME-WORKER finite audits only. Cloud's
-reported finite construction checks are independent support, not the proof.
-MI501/57d97ec1 separately gives unbounded actual-slack exclusions of the
-longest repairs; that LATER simplification is still a self-audit, not itself
-covered by CL466. The original reviewed proof remains sufficient.
+**CURRENT working state, 2026-10-20 11:03 BST: two-size2 parent has complete conditional coverage.**
+The13-minute research heartbeat is ACTIVE; older15-minute schedule PAUSED;
+no separate flag poller. L8=68 is independently verified as G325 and does
+not depend on this structural programme. Current parent: prescribed-sum
+partitions of a FULL interval into four bins, especially counts(a,2,2,c),
+a,c>=3. G326 H2 is PROVED by Cloud CL466/01131375's carrying read of the
+original candidate87521f60. The later MI501 simplification remains a
+self-audit and is not needed. Novelty remains UNASSESSED throughout.
 
-Actual coverage change: H2 itself is settled. MI503–504 audited the old
-MI453 trunk and produced complete HAND CANDIDATE G327: full-interval four-bin
-rank-cut sufficiency with sizes>=2 and at most one size2. Its exact residual
-inherits all six H2 cuts; its size2 staircase P/Q central spectra are written
-out, including every short prefix. Independent carrying review is requested.
-Earliest unreviewed dependency is now G327's own new audit; G315/G316/G326
-are PROVED. No four-bin extension is PROVED yet and the five-bin count
-selector/multiple thin rows remain OPEN. G325 is independent. MI501's optional
-H2 simplification is still self-checked, not a needed G327 premise.
-MI505 finishes the h0, strict-pair orientation, endpoint and tie self-audit;
-do not repeat those guards. MI506 makes the exact size boundary explicit:
-counts(a,2,2,c), a,c>=3, can fail despite all STRICT cuts. The same W2
-forced-extremes mechanism is already implicit in MI308, not a new discovery.
-No universal two-size2 theorem or margin-repair ladder is pursued. Five-bin
-count admission must still avoid/repair bad thin rows; this is not its refutation.
-MI507–508 complete that global pair-fibre question as HAND CANDIDATE G328:
-protected counts(2,2,c),c>=3, fail only at q1 pairtargets4/6, or M7,q3
-pairtargets3/8 or4/10. All six STRICT protected cuts suffice. Two fibres
-with>=2 edges are compatible; exact unique-edge exhaustion supplies the
-whole obstruction list, without a numerical census. G328 is independent
-of G327, not another link in an unread chain. Both now need their own
-carrying reads; no parent theorem is promoted. Earliest unread steps:
-G327's size2 staircase/interface and G328's classification, separately.
-MI509–510 complete the ACTUAL-gate scope test. All three G328 failure
-types force k0. The q1 row is precisely the uniquely forced old negative
-family; both M7,q3 rows have literal uniform full-parent partitions with
-the SAME changed first bin. One is already avoided by choosing a tied
-size2 singleton; the other lies on a minimum pair facet and has an explicit
-physical staircase partition. These direct examples use no unreviewed
-completeness claim. CONDITIONAL on G328's classification, this covers
-the larger-singleton/triple branch except the genuine negative family;
-selected-size2 roots already use PROVED G326/full-interval base.
-No entire two-size2 four-bin theorem is asserted or filed. Two carrying
-reads remain pending, not three. G327 and G328 are still separate unread
-claims; no status promotion. Next cheap test: the remaining STRICT pair
-branch, especially a pair side split(2,2), using its ACTUAL four-token
-staircase and conjugate and their physical complement. Do not return to
-another singleton exception or enlarge a numerical domain.
-Last trajectory check MI510,2026-10-20 10:48 BST: actual-parent distinction
-clarified, branch coverage conditional; no new PROVED result or review queue.
-Old failed selectors/MI460 stay outside the proof.13min ACTIVE.
+G327 is the complete HAND CANDIDATE for all14 rank cuts sufficing with
+at most one size2. G328 is an INDEPENDENT complete HAND CANDIDATE for
+protected one-hole counts(2,2,c): only q1 pairtargets4/6, or M7,q3 pairtargets
+3/8 or4/10 fail. Both carrying reads are pending. No unread G320–322,
+MI430/MI460 or new census is a premise. G327 endpoint/tie audit MI505 is
+finished; do not repeat it. The old MI308/MI506 forced negative family
+already refutes arbitrary four-bin cut sufficiency with two size2 bins,
+even when all14 cuts are strict.
+
+MI509–510 pass ALL G328 failures through the ACTUAL least-cut gate: k0
+is forced; q1 is that globally impossible old family; both M7,q3 rows
+have explicit uniform alternate-root parent partitions. Selected-size2
+roots instead use PROVED G326/full-three-bin base. This singleton/triple
+exhaustion is CONDITIONAL on G328's classification, not its own new proof
+status. MI511–512 now close the remaining STRICT pair branch by hand:
+separated size2 bins use G327's scalar lemma on BOTH physical sides;
+a shared(2,2) side permits only h0/1/2 by INTEGER strictness. At h2 P4=0125
+really misses the required4, but Q4=0134 partitions as04/13 and its ACTUAL
+reflected complement is P_n(2). The larger side uses PROVED G316. No
+minimum3 prefix estimate was imported at side length4.
+
+Thus the full counts(a,2,2,c) parent has COMPLETE CONDITIONAL hand coverage:
+all14 cuts suffice except, up to permutation/full reflection, targets
+(L(a)+1,2a+2,2a+4,L(c)+(a+4)c-1). No composed theorem is PROVED or newly
+filed. Earliest unread ingredients: G327's size2 scalar lemma and G328's
+classification, used in different branches. Their independent reads would
+NOT alone verify the new MI510/512 parent interfaces/composition. Two
+existing requests remain, no third entry/job or duplicate request. Next
+cheap test: consolidate the shortest self-contained proof/dependency map,
+including these interfaces, before any further thin-row extension. Five-bin
+count admission/multiple thin rows remain OPEN. No larger census planned.
+Last trajectory check MI510,2026-10-20 10:48 BST; MI512 completes the named
+missing branch rather than another local exception. No repeated failure
+or renewable extra-block allowance.13min ACTIVE.
 
 The owner's reverse-stack strategy keeps attention in the eight-streets neighbourhood
 while concrete questions remain. Carry demonstrated methodological lessons toward
@@ -36272,3 +36258,157 @@ same physical P/complement checked. Gut: warmth attaches to identifying
 selector artifacts versus genuine nonexistence. Reasoned: parent branch
 coverage is conditional and precisely named; two new local programmes are
 avoided.13min ACTIVE; no experiment, larger census or routine review halt.
+
+### MI511 — Remaining strict-pair branch: test the physical conjugate (2026-10-20 11:01 BST)
+
+Pull: the four-token side looks small enough to resolve exactly, and the
+conjugate might change the whole boundary rather than add a repair. Unease:
+the old prefix-length proof assumed side length at least5 or6; it must not
+be silently imported at4. The parent is full-interval counts(a,2,2,c),
+a,c>=3, all14 rank cuts. MI510 conditionally exhausts singleton/triple
+minima except the old forced negative. This block tests the remaining
+STRICT pair minima, not a larger census or a five-bin theorem.
+
+Read NOW, CURRENT, RECORD-MAP in full after compaction, latest ledgers,
+G327 step1 and FOUR-BIN-PARTITIONS sections7–9. Fetch and fresh store poll
+give no incoming commit or changed flag. Record searched:
+`staircase|conjugate` AND `four.token|P4|Q4|2,2` ->7 paragraphs/3 files;
+the relevant old gate/shape sources and MI510 are read. The preceding
+primary-literature scope audit is unchanged; no external theorem or
+novelty premise is imported in this elementary continuation.
+
+Bounded HAND test, written before completing the argument: if the two
+size2 bins are separated, use the size2 central lemma on BOTH physical
+sides and verify the same complement identity still applies. If together,
+derive the integer slack restriction from h<x<4, then list the actual
+four-token P/Q shapes for every allowed h. Prediction: the P shape can
+miss a REQUIRED sum, but switching sides in the complementary construction
+handles it while keeping the larger side's proved central interval.
+Can-fail counterfactual: if the switch merely matches moments without
+giving the ACTUAL complement, this mechanism has not closed the branch.
+Independent controls: list both pair spectra literally; write the full
+complement and its reflection; recover the original target on the larger
+side. Unexpected check: h3 is below the product4 but may admit no integer
+strict-interior target at all. Stop on an uncovered legal h or a failed
+physical complement, or after this one branch closes. No numerical
+experiment, new PROOFS entry, duplicate request or automatic third carrying
+job. Earliest unread dependencies remain G327's size2 scalar lemma and
+G328's independent classification; a composed exhaustion would require both.
+
+### MI512 — Strict pairs complete; exact two-size2 classification is conditional (2026-10-20 11:02 BST)
+
+**Hand result of MI511; no experiment or new proof-review job.** All counts
+are(a,2,2,c), a,c>=3. Set h_I=S_I-L(C_I), h=min h_I. Suppose every
+singleton/triple slack is STRICTLY greater than h, and a pair attains h.
+These are precisely the cases not handled by MI510's singleton/triple branch.
+Write the selected pair sizes r,s and the other pair sizes t,u. With
+x=s_r-L(r), z=U_N(t)-s_t, the exact G316 algebra gives
+
+    h<x<rs, h<z<tu.
+
+These strict INTEGER bounds, not just h<min(rs,tu), control the short side.
+No generic minimum3 prefix estimate is imported at length4.
+
+**Size2 bins on different sides.** Each side has sizes(2,large>=3).
+G327 step1 proves the pair central interval on BOTH P and Q for exactly
+these sizes. Its proof also gives both side lengths>=s0+3, where
+h=T_(s0)+t0. Thus the existing actual complementary set identity applies
+unchanged. Use P on one side, reflect its ACTUAL complement Q, and choose
+the sum on each side independently. Target recovery is exactly
+s_t=t(N-1)-L(t)-z. This uses G327's unreviewed scalar lemma, not its whole
+four-bin conclusion or G328. It is still conditional on that lemma's read.
+
+**Size2 bins on the same side.** If necessary reflect the FULL original
+interval so that this two-pair side is the selected LOWER cut of slack h.
+Reflection exchanges each cut with its complement and preserves strictness
+of all singleton/triple comparisons. The side has four tokens and
+
+    h<x<4, x integer, h>=0 integer; hence h=0,1,2 only.
+
+In particular h3 is NOT a legal strict-pair case, although3<2*2. This is
+the unexpected check promised in MI511. Put n=a+c>=6, N=n+4. The actual
+small shapes, literal pair spectra, and required central intervals are:
+
+    h0: P4=0123; spectrum{1,2,3,4,5}; required[1,5].
+    h1: P4=0124; spectrum{1,2,3,4,5,6}; required[2,5].
+    h2: P4=0125; spectrum{1,2,3,5,6,7}; required[3,5].
+         Q4=0134; spectrum{1,3,4,5,7}; required[3,5].
+
+The h2 P shape really misses4. Moreover strictness forces x3 and BOTH
+pair targets4; this is a genuine required hole, not a missing sum outside
+protection. Using P4 alone would fail the test.
+
+For h0 use the ordinary prefix and its reflected full-interval complement.
+For h1 use P4=0124; its ACTUAL complement is {3} union[5,N-1]. Reflection
+in N-1 sends that to [0,n-2] union{n}=P_n(1), the t0 conjugate. Both
+pair targets3/4 are realized by12 and04. The larger reflected side has
+sizes(a,c)>=3 and its central scalar interval is covered by PROVED G316.
+
+For h2 change the WHOLE boundary to Q4={0,1,3,4}. Its ACTUAL complement is
+
+    {2} union[5,N-1],
+
+whose reflection is [0,n-2] union{n+1}=P_n(2). Thus this is a genuine
+physical conjugate switch, not two separately selected spectra or moment
+matching. The low side partitions as04 /13, with targets4/4. The larger
+reflected side has moment L(n)+2 and the proved scalar interval
+[L(a)+2,L(a)+ac]. Its required target L(a)+z lies strictly inside it,
+since2<z<ac. Select that subset and reflect back; its sum is
+
+    a(N-1)-L(a)-z=U_N(a)-z=s_a.
+
+The complementary large bin has the right size and target by conservation.
+The only new size4 arithmetic is listed in full above; G327's size2 lemma
+is not needed for this same-side subcase.
+
+**Literal can-fail control.** On0..9, counts(2,2,3,3), targets(4,4,18,19)
+have minimum cut slack2 at the two-pair union; every singleton/triple
+slack is larger. The P4(2) boundary cannot realize its required pair4.
+The changed physical boundary gives
+
+    04 /13 /279 /568,
+
+with exact sizes, sums and all ten tokens used once. In the reflected
+large pool P6(2)=012347, the sum for the original18-triple is6+L(3)=9,
+realized by027; reflection gives279 as required. This independently checks
+the orientation and target recovery, not just the four-token repair.
+
+**Parent coverage, explicitly CONDITIONAL.** Combining this branch with
+MI510 gives a complete hand argument for counts(a,2,2,c), a,c>=3:
+all14 rank cuts suffice EXCEPT, up to bin permutation and full reflection,
+
+    (L(a)+1, 2a+2, 2a+4, L(c)+(a+4)c-1).
+
+That excluded family is directly impossible by the old MI308/MI506
+forced-extremes argument. MI510 covers endpoint remainders, selected-size2
+roots via PROVED G326, and every larger-root case via G328 plus its two
+literal alternate-root families. The present strict-pair construction
+covers both possible arrangements of the size2 bins. Thus the parent has
+candidate COMPLETE coverage, not another narrow positive slice.
+
+This is NOT a newly PROVED theorem. Earliest unread ingredients are the
+G327 size2 scalar lemma (only the separated-pair branch needs it) and G328's
+independent classification (only the larger-singleton branch needs it).
+MI510's parent interfaces and this composition also need a carrying read;
+verification of the two ingredients alone would not automatically verify
+this new parent statement. No third PROOFS entry or duplicate request is
+created. The two existing requests can eventually be consolidated into
+one short proof packet including these interfaces; no further thin-row
+extension is justified by an unread composite. Five-bin count selection
+and all older held lanes stay open/held; L8 G325 is independent.
+
+**Decision and next cheap test.** Finish this bounded branch and publish
+its actual coverage change. Next, consolidate the shortest self-contained
+argument/dependency map for that classification, checking every invocation
+against its precise hypotheses, rather than extending to three size2 bins
+or adding a numerical domain. This will make the existing carrying reads
+more useful without claiming another independent theorem in the meantime.
+Niggle sweep: orient the entire interval before choosing the small side;
+h3 excluded by integer strictness; P4 missing4 retained; Q4 has its ACTUAL
+complement; scalar reflection gives the original target; h0/1 direct sets;
+minimum ties assigned to MI510; negative family unchanged under reflection
+with a,c and pair labels exchanged. Cheap hand checks tip each niggle to
+continue with this scoped argument, not to upgrade status. Gut: the switch
+is satisfying because it changes the boundary globally. Reasoned: complete
+conditional parent coverage, pending independent scrutiny and consolidation.
+13min ACTIVE; no computational experiment or larger census.

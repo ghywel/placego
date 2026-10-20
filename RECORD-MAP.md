@@ -922,3 +922,5 @@ PART: as on the board.
 - Protected one-hole counts(2,2,c),c>=3: COMPLETE HAND CANDIDATE G328/MI507–508, only q1 pairtargets4/6 and M7,q3 pairtargets3/8 or4/10 fail. Global unique-pair exhaustion; strict protected cuts suffice. Independent review pending, no G327 dependency or parent promotion.
 
 - Actual four-bin lifts of G328 obstruction types force k0, MI509–510: q1 is old forced negative; both M7,q3 families have uniform staircase/alternate-root partitions. Singleton/triple exhaustion CONDITIONAL on unread G328; strict pair(2,2) branch remains, no new proof entry.
+
+- Full-four-bin counts(a,2,2,c),a,c>=3: strict-pair branch closes via Q4(2)/actual P_n(2) complement, hand MI511–512. Combined with MI510 gives exact old forced-family-only classification CONDITIONAL on G327 scalar lemma/G328 plus unread parent interfaces; no new proof status/entry/job.

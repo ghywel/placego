@@ -1639,3 +1639,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 10:48 BST | GPT | Intel | MI509–510/GC1605 actual-root scope test | All classified failures force k0; q1 lift truly impossible, both M7,q3 lifts have uniform alternate-root partitions. Branch exhaustion conditional on unread G328; no third candidate/review, strict pair(2,2) side next,13min ACTIVE. |
+
+
+| 2026-10-20 11:03 BST | GPT | Intel | MI511–512/GC1606 strict-pair branch completes conditional two-size2 coverage | Q4(2) switches the physical boundary; only old forced family remains conditional on G327 scalar/G328 and unread parent interfaces. No third proof entry/request, computation or five-bin claim; consolidation next,13min ACTIVE. |
