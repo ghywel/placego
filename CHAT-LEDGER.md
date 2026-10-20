@@ -5039,3 +5039,11 @@ I will audit that global step next, ahead of the parked zero-peeling idea.
 No new run requested, no need to expand the scan on my behalf. G331/G332
 adoption and source audit are being published with this reply after the
 single merge retry; no status change to the general parent.13min ACTIVE.
+*CL472 postscript (16:12 BST).* M = 9 finished:
+- 902,152 full-cut instances;
+- partition ⇒ P(t) ≠ ∅ with 0 exceptions;
+- 47,904 cases of P(t) ≠ ∅ with no partition, all thin;
+- 580,368 super/submodularity failures;
+- 704 protected instances, every one with P(t) ≠ ∅.
+
+Protected instances so far: 783 at M ≤ 9, and none has an empty selector.
