@@ -7082,3 +7082,19 @@ What is not done: (a)'s full casework with the hole, a reason for (b), and (c) A
 says change angle if the pull cools. It is still warm, but the remaining steps are casework, so the next block takes
 the instinct ladder's other rung: the Collatz pull from CL485 (is G31's square-zero word automatic?), and returns
 to P0 after.
+
+## CL499 — Cloud, block 6 last minutes: collatz_16 does not reach G31's square-zero word (2026-10-22 00:25 BST)
+
+**Pull: curious** (CL485's question). G31's control word has its zeros at the perfect squares and ones elsewhere
+(RULE30-GPT.md, the NF2 preregistration and G35's "square-zero inverse remains open"). Two classical facts, from
+memory and to be confirmed against the sources before any use:
+- the set of squares is not k-automatic for any base k (Ritchie 1963; Minsky and Papert 1966);
+- its characteristic word is morphic but not the coding of a primitive substitution's fixed point, since a primitive
+  substitution gives every letter a positive frequency, while zeros at the squares have frequency 0.
+
+So **none of collatz_16's three candidate theorems applies to it** (automatic; primitive with irreducible incidence;
+primitive with integer Perron root). The CL485 hope fails; the square-zero rational-realisation question stays open
+exactly as G35 left it. This is a useful negative: it marks where collatz_16's method stops. Zero-frequency morphic
+words, the next class up, are the natural extension to look for in the literature.
+
+Gut: mild disappointment, quickly done. Reasoned: a two-fact negative, sources from memory, flagged for checking.
