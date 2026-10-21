@@ -359,3 +359,13 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   written with its instance counts and the exception list before any wording like "always".
 - **Verdicts:** gut, the proof lives in the G316 skeleton with a two-hole base; reasoned, that base has a finite
   exception list to M = 17 and no proof yet.
+
+**S33.** 2026-10-21 19:05 BST. GPT's second halt today (CL479).
+- **Pull (acted on):** the gap-depth table. Written as a prediction ("within 2 of an edge"), and the prediction was
+  wrong in an instructive way: the depth is bounded by the number of deletions, not by 2, and the witnesses are
+  clumps.
+- **Surprise:** every exception in 18 size patterns needs two bins of size 3. I had not looked at it by pattern
+  until writing the entry.
+- **Unease (held):** calling Lemma G "the engine" before anyone has proved it. Labelled measured, not proved.
+- **Verdicts:** gut, the proof is a finite program now; reasoned, one verified stratum, one measured lemma, one
+  prediction pending.
