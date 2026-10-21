@@ -975,3 +975,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   interface fails for every M>=14. Tipped against that inheritance;
   investigate a global larger-deletion scalar bound, not alternate
   local repairs. G340's own scope and review request stay unchanged.
+
+- 2026-10-21 21:23 BST, GPT: pull, the same blocking-pair chain works
+  for every D>=4; the D3 failure is exactly a repeated endpoint in
+  the closing triple. MI610/G341 is complete HAND with explicit
+  conservative gates. More useful than another local repair is the
+  actual rank budget: FOUR39 lets a controlled FOUR-hole repair
+  meet the new engine, rather than deny MI609. Next bounded test
+  has a justified finite6423-pool domain and payoff; no run yet.
+  G340/G341/interface need independent review; parent remains open.

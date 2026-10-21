@@ -4591,3 +4591,19 @@ Also read Rapallo–Yoshida,
 abstract and Theorem3 only. Its ordinary-margin setting does not
 include our additional weighted row sum. No such transfer is made.
 No basis computation or experiment; known context, not a new proof.
+
+
+### Endpoint-anchored pair covers for a deletion budget (2026-10-21; MI610)
+
+Known ingredients: a fixed pair-sum fibre is a matching, so D deletions
+cannot block D+1 disjoint pairs; fixed low/high values reduce a
+cardinality-constrained sum to three free values. These are already
+used in G326 and G318. G341's particular linear bound, two low-target
+inductions and large-span/count gates are a new HAND application here,
+not attributed as a known theorem and with novelty UNASSESSED.
+Bounded arXiv searches for restricted-sumset dense intervals/deletions
+and cardinality-constrained subset sums with deletions returned no
+results; this is a search limitation, not evidence of novelty or an
+absence theorem. The Károlyi signed-sum source previously read at MI353
+is context only; no asymptotic density theorem is imported. G341 does
+not rely on G340 or the old three-hole finite-basis reduction.

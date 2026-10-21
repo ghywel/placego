@@ -2936,3 +2936,150 @@ k1 can leave only3 or4, insufficient for the stated scalar engine.
 Missing-pivot repairs and repeated selections need their own budgets.
 Keep the measured D4–6 gap-depth claims and small-remainder branches
 open; do not infer that only six- and seven-value remainders are hard.
+
+
+## 38. A large-pool scalar engine for arbitrary deletion budget (MI610/G341)
+
+**COMPLETE HAND candidate, not independently verified.** For D>=4,
+at most D holes, min(r,t)>=3 and max(r,t)>=4D-1, every sum at least
+2D-2 from BOTH actual extrema occurs. G341 gives a self-contained
+pair-cover proof. At endpoints0,N and N>=4D+1, two anchored bands
+join; low targets2D+1 and2D+2 are covered by inductions on the D
+blocking pairs. Sliding three-value certificates gives all sizes.
+This is independent of unread G340 and the old finite-basis route.
+
+For D4 this applies when one of the two sizes is>=15; D5 needs>=19,
+D6>=23. These are sufficient count gates, not CL479's measured small
+thresholds. Outside the count gate both sizes are<=4D-2, so the
+normalized scalar span is<=9D-5. No confirming census is proposed.
+The parent still needs actual margin and selection arguments.
+
+
+## 39. Actual missing-pivot margin budget, two holes (MI611)
+
+**HAND application, conditional on G340/G341 and independent review of
+this interface.** In a two-hole three-bin pool S with sizes(a,b,c),
+choose a global minimum among the six actual singleton slacks, and
+reflect the WHOLE pool so A attains it below. Assume
+
+    h>=6, min(b,c)>=5, max(b,c)>=15.
+
+Then the claimed conclusion is a joint partition. This is a partial
+A2 region, not the protected one-hole four-bin parent or all A2.
+Here is the whole previously missing interface; no repair catalogue.
+
+Write S=z_0<...<z_(n-1), target s_A=alpha_S(a)+h. Least-slack
+selection gives, for r=b,c,
+
+    s_r>=F_r=sum(z_a,...,z_(a+r-1)).
+
+The formal canonical recipe has l low and k high values,l+k=a-1,
+and pivot q in[z_l,z_(n-k-1)]. The target ranges meet at the SAME
+actual endpoint sets as k increases, so every feasible s_A has one
+such representation. If q is available, MI608 applies G340: both
+residual margins are>=5 and there are at most3 holes.
+
+Otherwise q is one of the TWO missing original values and lies
+strictly between the available middle endpoints. Let x=z_(l-1)
+when l>0 and u=z_(n-k) when k>0. We can always choose a legal
+balanced repair with displacement delta in{1,2}:
+
+- If l,k>0, (q-x)+(u-q)=u-x>=b+c+2>=12. At least one side
+  has distance>=6. On a side of distance>=5 the candidate pairs
+  at displacements1 and2 are distinct and DISJOINT; the one other
+  original hole can block at most one. Thus either replacing
+  {x,q} by{x+delta,q-delta}, or{q,u} by{q+delta,u-delta}, is legal.
+- If k0, h=q-z_l>=6, so q-x>=7 and the low repair exists.
+- If l0, A's actual upper slack is z_(n-k-1)-q. It is>=h by
+  the global selection, so u-q>=7 and the high repair exists.
+
+A formal missing q is never treated as a token: after the repair
+A contains a-2 fixed extreme values and TWO actual replacement
+values. The complementary span has at most4 holes, not3. This
+honours MI609's obstruction rather than bypassing it.
+
+**Low repair budget.** Let U be the original available middle after
+fixing l-1 low and k high values; write y_0=x,y_1=z_l,... . The
+removed values are w=x+delta and v=q-delta, with w<v. The rank of
+w is<=delta<=2, so w lies among the first r+2 values. Put
+F0=sum(y_2,...,y_(r+1)). Directly inspecting whether v is within
+those first r+2 values gives EXACTLY
+
+    F0-alpha_R(r)=min(q-y_1,y_(r+1)-y_1+delta).
+
+The original F_r>=F0+k*r. If k>=1, q>y_1 gives margin>=k*r+1;
+if k0, q-y_1=h and the margin is>=min(h,r+delta). In both
+cases it is>=6 under the displayed hypotheses, for r=b AND c.
+
+**High repair budget.** Now U is the middle after l low and k-1
+high fixed values, with y_0=z_l and last value u. Removed values
+are w=q+delta and v=u-delta. The latter is at most two available
+ranks below the top of U, so has rank>=r+t-1>r+1 (t>=5).
+It cannot affect the first r minimum values after removing w.
+Also w>y_0 since q lies strictly between the old middle endpoints.
+For F0=sum(y_2,...,y_(r+1)), if w is among the first r+1 values,
+
+    F0-alpha_R(r)=y_(r+1)-y_1+w-y_0 >=r+1;
+
+otherwise the difference is>=2r. The original
+F_r>=F0+(k-1)*r, hence the residual lower margin is>=k*r+1>=6.
+The F_r segment itself need not lie inside U; its comparison uses
+only original increasing ranks. This avoids an extra hidden count
+restriction on the selected bin's high suffix.
+
+Apply these lower margins to b and c; conservation supplies both
+actual residual endpoint margins. G341 with D4, max(b,c)>=15,
+now supplies a B subset of its requested sum, and its complement C.
+Thus the repaired branch completes conditionally on the two scalar
+engines and this carrying read. Neither engine is called PROVED here.
+
+**Checks/limits.** The candidate pairs must use displacements below
+half the endpoint distance; otherwise disjointness can fail. The
+chosen distance>=5 ensures this. In MI609's positive family the low
+repair026 has four holes and actual residual B depth17, so the D4
+engine's gate applies for M>=24. The other actual A134 leaves five
+holes and would require a different D/threshold; no claim about
+ALL repairs is used. The literal original partition is already known,
+so this is an interface sanity control, not new target coverage by
+experiment. No small-prefix/high-suffix case is silently excluded.
+
+
+## 40. The exact finite question that would remove the D4 count gate (MI612)
+
+**Reduction/design, not a run or a proved scalar theorem.** To replace
+G341's max(r,t)>=15 in FOUR39, it would suffice to prove T4:
+a triple pool with at most4 deletions and at least8 values misses
+sums only at actual depth<=5. G341 part(a), still HAND, covers
+normalized spans N>=17. The ENTIRE remaining triple basis is
+
+    7<=N<=16, endpoints0,N present,
+    0<=h<=min(4,N-7), all h-subsets of1..N-1 deleted.
+
+Its size is exactly6423 by sum_N sum_h binom(N-1,h). This is a
+justified finite triple basis, not a larger sample of A2 targets.
+Deleted endpoints are trimmed first; translation preserves gaps.
+No all-fibre inheritance or ambient-size cutoff for the parent.
+
+If T4 holds, fixing r-3 low/high values gives all-size scalar coverage
+for r,t>=5. With buffer B6 the two join gaps are<=12-2t and12-4t.
+For t>=6 intervals overlap. At t5 the only possible integer hole
+requires seven consecutive middle values v,...,v+6 before the old
+last c. It is F_l+c+2v+6, supplied by the fixed old set together
+with the actual triple{v,v+6,c}. Thus this join needs no additional
+basis or shared-token move. Conditional on T4 and this composition,
+FOUR39 would work with BOTH remaining sizes>=5 and h>=6, removing
+its max>=15 gate. It would STILL not cover all A2 failures, a
+remaining size3/4, or the one-hole four-bin parent automatically.
+
+Next task is one bounded instrument design for exactly this6423 basis,
+with source frozen/pushed before execution. Blind prediction: T4 holds.
+Can-fail control: permitting n7 must FAIL on[0,10] minus{3,4,5,6},
+pool01278910, where14 is absent at depth11. Independent engines:
+complete literal triple spectra versus cardinality bitset DP; compare
+ALL sums and verify retained witnesses literally. Independently count
+the normalized domains via rank-gap encodings and the binomial formula.
+Unexpected checks: whole-pool reflection, nonzero translations and the
+physical t5 join triple, including lifted sizes. One unchanged-source
+run only with stated CPU/wall/memory caps, stop at first independently
+confirmed counterexample or control failure. No instrument exists or
+run is claimed here; no automatic D5/D6 basis or threshold reduction.

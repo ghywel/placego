@@ -1037,3 +1037,6 @@ PART: as on the board.
 - At most3 deletions,n>=7,r,t>=3 imply actual missing-sum depth<=4: COMPLETE HAND G340/MI607/FOUR37, independent carrying read requested. G318 triple interior+anchored low tails+sliding fixed-end triples, explicit4/4 join; bound/threshold sharp. Conditional A2 legal-pivot h>=5/other sizes>=5 slice MI608; missing-pivot margin gate next. Parent OPEN;13min research resumes, no census/old finite-basis dependency.
 
 - Missing-pivot three-hole inheritance fails even with unique least raw slack5/other sizes>=5: positive sizes(3,5,M-9),holes5/7,targets8/42/(T_M-62),EVERY first-bin realization leaves4/5 holes, HAND MI609. G340 unaffected; next global large-span pair-cover test, not a repair table/census/new review job.
+
+- Arbitrary-D large-pool scalar depth<=2D-3 for D>=4,max(r,t)>=4D-1,min>=3: COMPLETE HAND G341/MI610/FOUR38, independent of G340; anchored pairs+low-survivor induction+sliding triples. Actual balanced-pivot repair margins>=6 give CONDITIONAL A2 h>=6/other sizes>=5/one>=15 slice FOUR39/MI611. One consolidated carrying packet; parent OPEN.
+- G341 cutoff and one physical t5 join reduce a useful D4 strengthening to EXACT6423 normalized triple pools,D<=4,n>=8,N<=16, MI612/FOUR40. Instrument NOT YET frozen/run; no census, sharper threshold adoption or parent finite-M reduction.

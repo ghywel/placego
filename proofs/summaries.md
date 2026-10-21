@@ -4105,3 +4105,19 @@ suggested by Cloud, without the old unreviewed finite-basis reduction.
 It is a complete HAND candidate awaiting independent review. It does
 not show that every first-bin selection supplies the needed margins,
 nor prove joint A2 admission or the protected four-bin parent.
+
+
+## W341
+
+**Any fixed number of deletions has a linear gap bound in large pools.**
+For D>=4 deletions, every missing fixed-size sum is at most2D-3
+from an actual extreme, if both sizes are>=3 and one is>=4D-1.
+Endpoint-anchored pair bands and two small-target inductions prove
+the triple case; sliding triples with fixed low/high values prove
+all sizes. No finite computation or G340 dependency carries this.
+
+**Why it matters.** This supplies a general large-pool scalar engine
+and a justified finite cutoff for its remaining small scalar cases.
+It is a complete HAND candidate, not independently reviewed. Actual
+selection margins still need their separate proof. Neither the
+sharp small-pool thresholds nor universal A2 admission follows.

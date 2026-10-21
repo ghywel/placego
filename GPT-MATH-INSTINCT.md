@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 20:45 BST: CL479 adopted; three-hole scalar engine and exact margin gate.**
+**CURRENT working state, 2026-10-21 21:23 BST: arbitrary-D scalar engine and actual balanced-repair interface.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes
   c_i>=3, total targets T_M-q, every proper group t_J>=T_(C_J).
@@ -164,15 +164,33 @@ exchange mechanism and primary literature;the incubation above is history.
   EVERY realization of that bin leaves4/5 holes. No application of G340
   follows from the new slack/cardinality assumptions alone. Its own
   scalar statement and legal-pivot slice remain unchanged.
-- **Next bounded HAND question.** Test a GLOBAL anchored-pair scalar
-  argument for arbitrary D before sharp small-pool classification.
-  Proposed, NOT proved: D>=4,N>=4D+1 implies triple gap depth<=2D-3;
-  sliding triples might lift this at max(r,t)>=4D-1. First audit the two
-  low targets, anchor pairs and exact overlap/cardinality gates. No
-  automatic census, threshold lowering or new review packet. Earliest
-  unread dependency remains G340 for its own applications; this new
-  question is independent of it. The actual repair must still place
-  its target inside any newly proved scalar interval.
+- **G341/MI610/FOUR38: COMPLETE HAND, unverified.** Independent of
+  G340/G318: D>=4, max(r,t)>=4D-1,min>=3 implies missing actual depth
+  <=2D-3. Endpoint pair bands and two low-target inductions give the
+  triple bound at span>=4D+1; sliding triples gives all sizes. No
+  assertion of the sharper measured thresholds. Small scalar region
+  normalizes to span<=9D-5, not a parent finite-M reduction.
+- **Actual repair interface FOUR39/MI611, CONDITIONAL.** Global least
+  raw h>=6, other sizes>=5/one>=15 suffice. Two disjoint candidate
+  balanced replacements at delta1/2 leave<=4 holes, and exact rank
+  minima give margins>=6 (low k0: min(h,r+delta), positive suffix:
+  >=k*r+1, high: >=k*r+1). G341 handles repair; G340 handles legal
+  pivots. The old three-hole inheritance is NOT revived. This is
+  conditional partial A2 coverage; parent target coverage still NONE.
+- **Next bounded task MI612/FOUR40.** Design one exact finite triple-
+  basis instrument, NOT YET frozen/run: normalized spans7..16,<=4
+  internal holes,n>=8,6423 pools. Together with G341 D4 large-span
+  cutoff and a physical t5 join, a pass would remove max>=15 from
+  FOUR39 for remaining sizes>=5. It would not cover sizes3/4 or
+  the parent selector. Push frozen source/predictions before execution;
+  complete literal/DP spectra, independent domain counts, n7 negative,
+  physical joins/translations/reflections, one capped unchanged run.
+  No automatic D5/D6 basis, confirming census or patch/retry.
+- **Dependency.** G340/G341/FOUR39 are ONE consolidated carrying
+  packet, replacing the G340-only request. Both scalar arguments
+  remain HAND; interface also unread. G341 itself has no G340 premise.
+  Do independent finite-source work while awaiting actual review,
+  with all resulting universal claims CONDITIONAL on their cutoff.
 - **Retained failures.** MI601 defeats canonical selection at least
   raw slack7 but is positive; MI604 defeats actual quadratic first-bin
   connectivity for every M>=10. Neither refutes failure localization.
@@ -181,8 +199,8 @@ exchange mechanism and primary literature;the incubation above is history.
 - **Trajectory/rhythm.** MI608 changes the choice after MI605's real
   incubation: a different scalar engine now has a complete hand argument
   and an explicit partial margin gate. This is not a reset of the old
-  failed connectivity assumption. G339 review cleared; G340 sole new
-  packet. ACTIVE confirmed by the schedule tool at19:48 UTC,13-minute cadence, quiet
+  failed connectivity assumption. G339 review cleared; G340/G341/FOUR39
+  share one consolidated carrying packet. ACTIVE confirmed by the schedule tool at19:48 UTC,13-minute cadence, quiet
   on unchanged/nonactionable state; older schedule PAUSED, no poller.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
@@ -41277,3 +41295,107 @@ at a single general pair-cover argument, not more repair rows.
 Reasoned: the current engine remains useful in its exact legal-pivot
 scope; its missing-pivot application needs a separate deletion budget.
 Continue independent global reasoning while G340 awaits review.
+
+
+### MI610 — The anchored-pair prediction gives an arbitrary-D scalar engine (2026-10-21 21:23 BST)
+
+**Complete HAND candidate G341, unverified.** Continue MI609's exact
+bounded question, not a parameter census. Record searched:
+2D.3|2.h.3|gap.depth|anchored.pair|pair.capacity AND hole|deletion|
+scalar,15 hits/8 files. Read G326's known disjoint-pair ingredient,
+MI353/PRIOR-ART and G340's endpoint/three-free-value argument.
+Primary searches for restricted-sumset dense intervals/deletions
+returned no results in the bounded two arXiv queries; no novelty
+or absence claim follows. No external theorem supplies the proof.
+
+Full self-contained argument is PROOFS G341/FOUR38. For D>=4,
+endpoints0,N retained,N>=4D+1, two endpoint-anchored pair bands
+cover[2D+3,3N-2D-3]. A target at depth>=2D-2 leaves only low
+2D+1/2D+2 and reflections. Assuming one of these is absent
+forces the D holes to choose exactly one point in each of D
+positive matching pairs. Surviving012 or013 then propagate a
+chain of surviving low values; {2,D-1,D} closes the odd case,
+{1,D,D+1} the even case. Distinctness really requires D>=4.
+
+Sliding the triple intervals with buffer2D-2 gives the ALL-size
+claim for r,t>=3,max(r,t)>=4D-1. It is independent of G340,
+G318 and the old finite basis, not an unlabelled conditional chain.
+For fixed D the uncovered count region normalizes to span<=9D-5;
+this is a scalar finite reduction only. It is not a finite-M
+reduction of A2 or the protected parent. Bound examples for D4/5/6
+match depths5/7/9 after arbitrary padding; no all-D sharpness claim.
+Counterfactual D3 fails on old holes4,5,6 and absent7. Unexpected
+N4D check: the two certified bands miss6D even when an actual
+triple exists. Certificate failure is not an impossibility theorem.
+No experiment or census; known matching method, novelty UNASSESSED.
+
+Gut: pull at one mechanism for all deletion budgets rather than
+separate D4/5/6 rows. Reasoned: a scalar engine has a complete hand
+argument with explicit conservative gates, but the parent needs an
+actual margin interface. G340 stays HAND; this proof does not rely
+on it. Consolidate the new engine with the existing carrying packet,
+not parallel duplicate review requests.
+
+
+### MI611 — A bounded balanced repair DOES retain the needed actual margins (2026-10-21 21:23 BST)
+
+**HAND interface, CONDITIONAL on unread G340/G341.** MI609 correctly
+refutes retaining3 holes. It does not refute a controlled4-hole
+repair. FOUR39 now gives the entire replacement/margin argument.
+For a global least raw singleton slack h>=6, with both other sizes
+>=5 and one>=15, the claimed result is a joint A2 partition.
+This is a partial A2 target region, not universal parent coverage.
+
+A missing formal pivot q lies strictly between AVAILABLE middle
+endpoints. On a side of distance>=5, the candidate balanced pairs
+at displacements1 and2 are disjoint; the one OTHER original hole
+blocks at most one. Boundary cases use the least-slack upper/lower
+bound; interior low/high distances sum to at least b+c+2. Therefore
+one such repair exists without a hole/pattern catalogue. The actual
+complement has at most4 holes, as required by MI609's negative.
+
+The decisive step is to count actual minima, not just deletions.
+For low repair, starting at x with next original value y1, its
+rank comparison is exactly min(q-y1,y_(r+1)-y1+delta), plus>=k*r.
+At k0 it is>=min(h,r+delta); at k>=1 it is>=k*r+1. For high
+repair the token removed near the top is beyond the first r+1
+available ranks (other size>=5), and the lower removed token is
+strictly above the first. The margin is again>=k*r+1. Thus BOTH
+actual residual target margins are>=6. G341 D4 then supplies the
+scalar split. Legal pivots separately use G340 with margins>=5.
+This meets the stronger deletion budget instead of assuming it away.
+
+Independent hand control: MI609's026 residual has4 holes and B-depth17;
+for M>=24 it satisfies the D4 count gate. Its alternative134 has5
+holes and is not silently included. The original target was already
+positive, so no new empirical success is claimed. Every formal token
+is replaced by two ACTUAL tokens; no source theorem or same-worker
+check upgrades either candidate. Earliest unread dependencies:
+G340 endpoint/join proof for legal pivots, G341 pair/chain proof
+for repairs, plus FOUR39's new rank budget. If either engine fails,
+its corresponding completion branch falls. One consolidated carrying
+packet includes that interface; no second dependent proof number.
+
+
+### MI612 — Next discriminating task is a justified finite triple basis, not a confirming census (2026-10-21 21:23 BST)
+
+The large-count engine and actual repair budget now have explicit
+HAND arguments, so a small finite question has a defined payoff.
+FOUR40 derives exactly6423 normalized triple pools with at most4
+holes, n>=8, span<=16. If all gaps have depth<=5, G341 supplies
+the rest of the spans; a single t5 join construction then gives
+all-size D4 coverage for remaining sizes>=5. That would remove
+FOUR39's max>=15 gate, still CONDITIONAL on the independent carrying
+reads. It would not settle a remaining size3/4 or the parent selector.
+
+No basis has run and no instrument is yet frozen. Next design one
+bounded run on exactly that basis, push the source first, compare
+complete literal/DP spectra and independent domain counts, retain the
+n7 depth11 negative and physical joins/reflections/translations.
+A counterexample rejects this step; no widening, patch/retry or
+automatic D5/D6 expansion. This is a changed independent test with
+a proved-by-hand cutoff, not a claim that the finite census already
+establishes localization. G340/G341 remain the sole consolidated
+review packet; do independent finite-source work while they are pending.
+Last strategy change MI608, concrete shift to a scalar engine; old
+connectivity/three-hole inheritance failures are retained.
