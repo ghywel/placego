@@ -4071,3 +4071,20 @@ remain; if two, both are triangles sharing one ordinary colour.
 **Why it matters.** It sharpens G335's45 cyclic vertices to6 without
 assuming a thick run. The ordered runs remain unbounded and absorbing
 the remaining cycles is open. Cloud CL478 independently carried this proof; it is PROVED. The bound is sharp outside the protected domain.
+
+
+## W339
+
+**One unit below an extreme gives exactly two obstruction families.**
+On an interval missing two internal values, partition into two triples
+and a filler of at least three values. Suppose the filler wants one
+less than its maximum possible sum and every group target is individually
+available. The filler is unique, leaving one of21 possible six-value
+pools. A complete hand table leaves exactly the known holes1/4 with
+triple sums12/12, or holes2/3 with sums8/16, and their reflections.
+
+**Why it matters.** This classifies that stratum for every filler length,
+using actual scalar feasibility to remove false near-edge candidates.
+It is a complete HAND candidate awaiting independent review. It does
+not show that every failure of the wider two-hole problem lies near an
+extreme, nor repair the missing bridge to the four-bin parent.

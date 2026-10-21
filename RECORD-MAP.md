@@ -1024,3 +1024,5 @@ PART: as on the board.
 - CL478 protected M12/q7/26,8,16,21 refutes universal fixed-run-count transfer; full partition must change side counts, hand audit MI597. One-hole census through M17 reports54 exceptions, one known family; universal classification unproved.
 - A2 two-hole base is independent: old MI368 also has UNIQUE least raw-rank singleton and EVERY realization leaves>=3 holes, MI597. No automatic G316-to-parent bridge.
 - Extreme filler deficit d<=D, other counts total K: all joint partitions reduce bijectively to first K+D available values, known rank argument MI598/FOUR35. Two triples,d<=3 give ambient maximum<=10; only that stratum, no scalar-inheritance or all-A2 cutoff claim. Owner resumes13min research, next exact slack1 six-value complement classification; no new census/review job.
+
+- Two-hole three-bin sizes(3,3,c),c>=3,filler maximum-minus1: COMPLETE HAND candidate G339/MI599–600/FOUR36, only holes1/4 with12/12 or2/3 with8/16. Unique filler gives21 six-value pools; original-spectrum edge lift excludes remaining gaps. One carrying review requested, no census/parent coverage; next global slack localization, not automatic d2/3 tables.

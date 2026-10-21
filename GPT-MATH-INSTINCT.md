@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 17:55 BST: Cloud CL478 adopted; bounded two-hole base work resumed.**
+**CURRENT working state, 2026-10-21 18:16 BST: unit-deficit A2 slice is HAND; global localization next.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes c_i>=3,
   total targets T_M-q and every proper group t_J>=T_(C_J). L8=68
@@ -160,16 +160,26 @@ exchange mechanism and primary literature;the incubation above is history.
   ambient maximum10 regardless of the original filler length. This
   justifies bounded analysis of THAT stratum, not all A2 failures.
   Scalar-spectrum inheritance is not assumed. No census/new review job.
-- **Next bounded question.** Classify the slack1 filler stratum with
-  two size3 bins, by its unique filler realization and actual six-value
-  complement; separate forced collisions from equal-split cores. It is
-  a useful A2 subproblem independently of the missing parent bridge.
-  Seek an exact obstruction/localization, not a confirming sample.
+- **Completed bounded question.** MI599–600/G339/FOUR36 is a complete
+  HAND candidate: two triples plus a filler at maximum-minus1 on a
+  two-hole pool fail exactly at holes1/4 with12/12 or holes2/3 with8/16,
+  for EVERY filler length>=3. The unique filler leaves one of21 pools;
+  original spectra exclude every near-edge omission. One carrying read
+  requested for the whole classification, especially table/interface.
+  The examples themselves are already MI350/CL478. No census or novelty
+  claim. Earliest new unread steps:21-row arithmetic and its edge lift.
+- **Next strategy question.** Is there an all-choice bound on the least
+  actual singleton lower/upper slack of ANY A2 failure, for example<=4?
+  This is a conjectural localization gate, not a consequence of the
+  finite census or G339. Seek a hand estimate or a counterfamily before
+  more deficit/count tables; do not automatically extend G339 to d2/3.
+  A bounded slack would still leave the other counts/parent bridge open.
 - **Dependency/trajectory.** Last strategy check MI597 at 2026-10-21 17:55 BST;
   the changed decision is to leave fixed-count tournament repairs and
-  audit finite-base localization. G337/G338 review queue is cleared.
-  New application is elementary known rank displacement, not a new
-  independently carried theorem. Parent target coverage remains NONE.
+  audit finite-base localization. G337/G338 review queue is cleared;
+  G339 is the sole new carrying packet. No result is upgraded by a
+  self-check. Parent target coverage remains NONE; one A2 stratum is
+  classified conditionally on that carrying read.
 - **Rhythm.** ACTIVE confirmed by the schedule tool; the existing13-minute
   research heartbeat resumes under
   the owner's conditional authorization, with this scope and quiet
@@ -40765,3 +40775,76 @@ now pinned to the unproved localization rather than hidden by the data.
 **Schedule receipt, MI598:** existing13-minute heartbeat ACTIVE confirmed,
 with the bounded A2/kernel task and its missing-parent-bridge warning saved.
 Older mathematics schedule remains PAUSED; no separate flag poller.
+
+
+### MI599 — Continue the unit-deficit filler question, not a larger census (2026-10-21 18:14 BST)
+
+**Bounded HAND design; no experimental run.** The current A2 question:
+S=[0,M] minus two internal holes, sizes(3,3,M-7), M>=10, each target
+in its actual spectrum, filler target beta(c)-1. Classify ALL failures
+in this stratum, independently of the missing parent reduction.
+Record searched: record_find slack1|margin1 with two.hole|six.value|filler
+->8 hits/3 files; MI350 and FOUR3 reread. Known rank geometry and primary
+source orientation remain MI598 (Stanley Chapter6); neither source is
+a theorem on this A2 slice. Cloud CL478 already lists its two types
+of negative examples; do not claim new counterexamples or novelty.
+
+Pull: the filler is unique, so the object is its six-value complement.
+Hand prediction: there are only21 normalized complements; exactly the
+12/12 core and the8/16 collision survive ORIGINAL scalar feasibility.
+A central missing sum in any other complement, an alternative filler
+of the same near-maximal sum, or a false inherited edge spectrum would
+reject the proposed classification. Controls: both known negatives,
+nearby disjoint positives, complete complement symmetry, actual counts
+and targets for arbitrary filler length. Unexpected check: original
+holes above the active prefix disappear; also a gap>1 at the filler
+boundary makes its requested sum itself unavailable. Stop after this
+stratum and its exact scalar interface. No new census or automatic
+extension to deficits2/3, other small counts, or global A2 localization.
+
+### MI600 — Two known obstruction families exhaust the unit-deficit/two-triple stratum (2026-10-21 18:14 BST)
+
+**Complete HAND candidate G339, not independently verified.** Full
+self-contained proof and21-row scalar table are in PROOFS G339. The
+unique filler replaces z6 by z5 in the maximum set, forcing their gap1;
+its complement is z0,...,z4,z6. Its largest value is6,7 or8, with the
+preceding value absent, so1+5+15 actual pools suffice for ALL M.
+The table comes from Sigma3(W union{m})=Sigma3(W) union(m+Sigma2(W)),
+|W|5. All omitted sums except the known central12 or8/16 are at
+distance1/2 from an actual edge. Any original triple with excess<=2
+uses only the first five available ranks, all in the residual. Thus
+those edge misses already fail original scalar feasibility for one
+of the two bins; scalar inheritance is proved only at these offsets.
+
+Consequently holes(1,4) with12/12 and holes(2,3) with8/16 are the
+EXACT failures for filler deficit1, M>=10; their reflected low-filler
+versions follow. Both have filler {7} union[9,M], target T_M-29.
+Explicit original-spectrum witnesses and nearby disjoint partitions
+check necessity and the two different mechanisms: unsplittable core
+versus unique low triple colliding with the filler. No machine check
+or finite census was performed. The21 cases are finite hand arithmetic,
+not sampled sizes. The earliest unreviewed steps are that table and
+the original-spectrum interface; ask for one carrying read of the
+whole stratum, not separate reviews of its rank and edge observations.
+
+Actual change: an unbounded-length A2 stratum has a complete candidate
+classification, rather than empirical stabilization at M17. Parent
+coverage remains NONE; even a verified result here supplies neither
+global A2 localization nor the old missing two-hole selector. Do not
+renew the route by automatically classifying every deficit. Next question
+is whether the same compression gives a reason failures outside this
+stratum must approach a boundary, or a can-fail obstruction to that
+localization. Compare assumptions before another table.
+Gut: satisfaction that the scalar interface can be proved here, and
+caution about the unbounded interior. Reasoned: bank one exact stratum
+for independent scrutiny; no label upgrades or held-lane changes.
+
+**MI600 filing/niggle receipt.** Nearest G326/G317/G327 read in full,
+357-entry duplicate check passes. No repeated theorem or hidden
+minimum4/one-hole premise. The table covers21 pools, not21 sampled
+instances; all are hand arithmetic. One carrying packet is appropriate
+because the contribution is exact exhaustion for unbounded filler
+length, not reproof of the familiar rank inequality. M10/c3 and
+all far-hole cases included; no general spectrum inheritance claimed.
+The next block must test global localization, not fill out another
+deficit catalogue while treating the parent bridge as solved.

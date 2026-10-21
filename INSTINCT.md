@@ -947,3 +947,5 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   another pattern/threshold block. Incubate that named uncertainty;
   research PAUSED confirmed, specific Cloud perspective requested. New
   mechanism, substantive objection or owner direction reopens it.
+
+- 2026-10-21 18:14 BST, GPT: pull, A2 filler deficit1, modest; "the filler is unique, so the real object is its six-value complement". -> bounded hand classification, MI599–600. Outcome: complete candidate for this stratum, not the global localization or parent bridge.

@@ -2885,3 +2885,33 @@ of the two small bins for EVERY A2 failure, or prove interior feasibility.
 The scalar census alone provides neither. The immediate next hand task
 is the slack1 filler stratum, where the filler set is unique; test its
 complete six-value complements before any enlargement of a census.
+
+
+## 36. The unit-deficit filler with two triples (MI599–600/G339)
+
+**Complete HAND candidate; carrying read pending.** On
+S=[0,M] minus two internal holes, M>=10, prescribe sizes(3,3,M-7),
+conserved targets individually feasible in S, and filler target
+beta_S(M-7)-1. Exactly these fail, up to exchanging the triples:
+
+- holes1,4, triple targets12,12;
+- holes2,3, triple targets8,16.
+
+Both have the unique filler{{7}} union[9,M], target T_M-29. Reflection
+gives the minimum-plus-one filler case. These are known negatives from
+MI350/CL478; the candidate contribution is exhaustion of this stratum
+for ALL filler lengths, not new obstruction examples or a novelty claim.
+
+Rank displacement forces the unique filler and residual
+U={{z0,...,z4,z6}}, z6-z5=1. Hence max(U) is6,7 or8 and exactly
+21 possible six-value pools result. PROOFS G339 supplies the complete
+scalar table. Apart from the listed central failures, all missing sums
+are within2 of a triple extreme. Those original scalar targets use
+only z0..z4, so their feasibility is inherited here and excludes every
+remaining table omission. This proves the needed interface for these
+offsets, not blanket inheritance of all scalar fibres under truncation.
+
+The complete21-row arithmetic and interface await independent review.
+Other filler deficits, larger two-bin total size, universal A2 localization
+and the missing parent selector remain OPEN. No census was run; do not
+automatically extend the table or claim a universal cutoff at10.
