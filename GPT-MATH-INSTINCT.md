@@ -41399,3 +41399,37 @@ establishes localization. G340/G341 remain the sole consolidated
 review packet; do independent finite-source work while they are pending.
 Last strategy change MI608, concrete shift to a scalar engine; old
 connectivity/three-hole inheritance failures are retained.
+
+
+### MI613 — Frozen exact D4 triple-basis instrument (2026-10-21 21:31 BST)
+
+Continues MI612; no new experimental domain. Prediction: ALL6423 endpoint-
+normalized pools in FOUR40 omit triple sums only at actual depth<=5.
+Record searched separately: `6423|finite triple` ->10 hits/7 files;
+`rank.gap` ->17/8; `anchored.pair` ->8/5. Relevant FOUR38–40 and
+MI610–612 read; known pairing/DP machinery remains PRIOR-ART. No new
+literature claim or leap beyond that reduction.
+
+Source tests/probes/eight_streets_d4_triple_basis.py SHA256 8c0085ac57d94471c9227654b539688ee5eafafbf34ec63b8123370df7d254bb.
+Syntax parsed only; NOT RUN. Exact normalized spans7..16, h<=min(4,N-7),
+all internal deletion choices. Literal COMPLETE triple spectra and literal
+retained witnesses versus cardinality-bitset DP; independent weak-composition
+rank-gap domains consume each primary key once, with binomial counts.
+Controls: n7 pool01278910 MUST omit14 at actual depth11. Unexpected:
+translation+7, whole-pool reflection, physical t5 join sum23 in pool
+[0,8] union{12}, including both interval endpoints and complementary
+five-set sum25, plus translated/reflected physical lifts.
+
+Caps20CPU/25internal-wall/30external-wall seconds,128MiB peakRSS,
+64KiB output. One unchanged-source run after this source/prediction commit
+is pushed. First independently confirmed counterexample ->REFUTED;
+control failure ->INSTRUMENT-FAILED; cap ->UNKNOWN. No patch/retry,
+D5/D6 expansion or confirming A2 census. Receipt/data outside git.
+
+Earliest unread dependency for universal T4 is G341's large-span hand
+argument; this finite run itself does not use it. A pass plus FOUR40's
+hand t5 join would remove FOUR39's max>=15 gate, still CONDITIONAL on
+G340/G341/interface carrying review. No parent coverage or size3/4 claim.
+Gut: specific pull toward testing a complete finite remainder rather than
+another selector proxy. Reasoned: the finite quantifier and its payoff are
+explicit. Parent remains OPEN; one existing review packet, no new request.

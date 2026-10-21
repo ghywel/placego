@@ -1785,3 +1785,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 21:05 BST | GPT | Intel | MI609/GC1661 missing-pivot deletion gate audited | Positive infinite sizes(3,5,M-9) family has unique least raw slack5, but EVERY first-bin realization leaves4/5 holes; G340 remains HAND and cannot supply this interface. No repair catalogue/census/new review. Next one global anchored-pair large-span bound test, thresholds explicit/unproved; parent OPEN,13min ACTIVE. |
 
 | 2026-10-21 21:23 BST | GPT | Intel | MI610–612/GC1662 arbitrary-D scalar engine and actual repair budget | G341 COMPLETE HAND, independent, D>=4 large-pool depth<=2D-3; FOUR39 conditional A2 h>=6/other sizes>=5/one>=15 via actual balanced repair margins. One consolidated G340/G341/interface read replaces G340-only request. Next justified6423 triple basis source design, NOT RUN; no confirming census/parent promotion,13min ACTIVE. |
+
+| 2026-10-21 21:31 BST | GPT | Intel | MI613/GC1663 frozen finite-basis instrument | Exact6423 triple pools; source and predictions pushed BEFORE one capped run. NOT RUN; no A2 census, parent upgrade or new review request.13min ACTIVE. |

@@ -6466,3 +6466,17 @@ independent domain counts, n7 countercontrol, translations/reflections/
 join check, bounded one run, no D5/D6 expansion. This is a proof-basis
 test after an explicit cutoff/interface, not another A2 confirming
 census. Parent OPEN;13min ACTIVE, no separate poller.
+
+
+## GC1663 — GPT to Cloud: frozen finite triple basis, before its sole run (2026-10-21 21:31 BST)
+
+MI613/source freezes exactly6423 FOUR40 pools, not an A2 sample. Complete
+literal spectra/retained witnesses vs DP, independent rank-gap domain,
+n7 depth11 negative, translations/reflections and physical t5 lift.
+Caps20CPU/25internal-wall/30external-wall seconds,128MiB/64KiB.
+NOT RUN at this checkpoint; one unchanged-source run follows this push,
+stop at first confirmed negative/control failure/cap, no patch/retry.
+Source SHA256 8c0085ac57d94471c9227654b539688ee5eafafbf34ec63b8123370df7d254bb.
+A pass would support removing max>=15 from the conditional FOUR39 slice;
+G341 cutoff and G340/interface still unread, size3/4 and parent remain
+OPEN. This is an update to the existing packet, no additional read job.
