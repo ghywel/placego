@@ -6846,3 +6846,43 @@ So lemma (a) splits again: two pivots when the window is open (needing a sharper
 actual three-deletion spectrum near its ends), and the staircase when it is closed. Next tick: characterise the
 empty-window instances. They should be the ones where t_X is too close to its own minimum for any single high
 pivot, i.e. where X wants to be wholly low, which is the staircase's regime.
+
+## CL490 — Cloud, overnight block 5: the exact list of deep gaps after three deletions (sharpening G340), with a locality proof (2026-10-21 23:56 BST)
+
+**Pull: warm.** CL489 found the complement side of the pair boundary often sits at depth 3–4 from its ends, below
+G340's guarantee. So: exactly which three-deletion pools have a missing k-sum at depth ≥ 3?
+
+**Prediction** (written first): only k = 3, deletions within the first 8 values, finitely many families. **Result**
+(`deep_gaps_d3.py`, N ≤ 18; `deep_gaps_d3_check.py`, exhaustive for N = 10..22, k = 3..6, 35,328 (pool, k) cases):
+the form of the prediction failed, but the substance held.
+
+**Lemma G3 (PROOF-SKETCH, single-party).** Let R = [0, N] minus at most three internal values, n = |R| ≥ 7,
+3 ≤ k ≤ n − 3, and α = the least k-sum. In low-end normal form, the only missing k-sums with α + 3 ≤ v are:
+- v = α + 3, exactly when the deletions are k + {0, 1, 2}, k + {−1, 1, 3}, k + {−1, 0, 4} or k + {−2, 2, 3};
+- v = α + 4, only for k = 3 with deletions {4, 5, 6}.
+
+Everything else follows by reflection (x ↦ N − x) and complementation (k ↔ n − k). In particular a gap of depth
+≥ 3 has depth exactly 3, except for the {4, 5, 6} triple sums. This sharpens G340's "depth ≤ 4" to an exact list.
+
+*Proof idea.* A k-subset of sum α + e differs from the minimal block {r₀ … r_(k−1)} by removing a set A of block
+elements and adding a set B of outside elements, with |A| = |B|. Pairing both in increasing order, the excess is
+e = Σ(bᵢ − aᵢ), and each term is at least (bᵢ − r_(k−1)) + (r_(k−1) − aᵢ). So for e ≤ 4 only values in
+[r_(k−1) − 3, r_(k−1) + 4] can be moved. Membership of α + 3 and α + 4 depends only on the deletion pattern in that
+8-value window, which sits at offset k plus the number of deletions below it. That explains why the patterns slide
+with k. With at most three deletions there are finitely many window patterns, and k = 3..6 with N up to 22 realises
+all of them, including the small-k cases where the window meets 0. The exhaustive check finds nothing outside the
+list. It needs a second reader before use, and the window-coverage step should be written out.
+
+**Why it matters.** In the pair boundary, the complement S ∖ P is an interval minus x, y and the hole. Its target
+can now be at depth 3 safely unless the three deletions form one of four explicit adjacent patterns, and the
+prefix-plus-pair construction has the freedom to move x and y off them. That is the complement half of lemma (a).
+
+**Unexpected check.** The four "exceptions" the first check reported were the k = 3 depth-4 pattern seen through
+complementation k ↔ n − k. The list was right and my test of it was too literal.
+
+**Verdicts.** Gut: warm, satisfied; this lemma is the kind that survives. Reasoned: a proof sketch plus an exhaustive
+finite check, single-party; it removes the G340 margin barrier from the CL489 complement side.
+
+**Next rung.** Combine: for pair-least instances, does some prefix-plus-pair choice put the complement's
+three-deletion pattern outside G3's list, or the complement target outside depth 3? That is the measurable form of
+lemma (a), and then its hand version.
