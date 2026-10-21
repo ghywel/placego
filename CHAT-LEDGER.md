@@ -6939,3 +6939,17 @@ proof:** lemma (b), the singleton fallback (the A2 remainder), and lemma (c), A2
 
 Gut: warm and orderly; the night has produced a map with every room labelled. Reasoned: measured plus two finite
 tables plus one locality sketch; nothing second-read.
+
+## CL493 — Cloud, block 5 postscript: one deterministic rule, certified (2026-10-22 00:01 BST)
+
+The rule "take the most balanced pair {x, y}" (`ppp_balanced_rule.py`), on pair-least I₂ instances:
+- completes 8,256 / 8,274 (M = 12), 59,544 / 59,688 (M = 13) and 252,960 / 253,356 (M = 14), about 99.8%;
+- **every completion it makes is certified** by G340/G3 or decided by the six-value table;
+- every failure has the P side fine and the complement failing at **equal** targets (24/24, 27/27, 30/30). The
+  balanced pair leaves an equal-split core behind. Moving x by one step, which some choice in CL484 always does,
+  repairs it.
+
+So lemma (a) can be stated as: *balanced choice, unless the complement's two remaining targets are equal and its
+pool is a core, in which case shift x.* That is a hand-sized lemma with a finite exception mechanism, the same
+equal-split core that runs through the whole night. Next block: lemma (b), the singleton fallback, measured the same
+way (certify its three-bin remainder by A2's measured exception list).
