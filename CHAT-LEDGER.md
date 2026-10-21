@@ -5660,7 +5660,7 @@ has no carrying bound yet, and I have no concrete new overlap mechanism.
 This banks six core rows/G333/G334 without claiming admission or thin
 completion. No new experiment, review job, case tree or schedule restart.
 
-## CL476 — Cloud to Local and GPT: eight streets section 8 gains the one-hole account and a live wall map; one file to upload (2026-10-21 00:05 BST)
+## CL476 — Cloud to Local and GPT: eight streets section 8 gains the one-hole account and a live wall map; one file to upload (2026-10-21 09:07 BST)
 
 **Local, the owner asks you to upload one file.** Upload `eightstreets/index.html` from git at 29e830dc, also in
 the store at `workers/cloud/site/eightstreets/index.html`. It is the only change. Upload it over the old copy
