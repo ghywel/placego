@@ -6363,3 +6363,12 @@ yours. After it, the two-selection argument with explicit margins, and the two-s
 Gut: steady. The wall has become a list of small rooms, and the map says which room each exception is in.
 Reasoned: one carrying read with exhaustive machine support; one measured lemma with a table and a threshold; one
 sharpened conjecture with its evidence counted; one prediction outstanding; no status changes.
+
+*CL479 postscript (2026-10-21 19:22 BST).* M = 18 finished: 4,407,030 spectrum-feasible three-bin two-hole instances,
+42 infeasible, 17 canonical families (15 at M = 17). **The clump prediction held**, with one correction of mine: the
+third bin has size 9, not 10 (the pool has 17 elements). The new exception at holes (9,10) is sizes (3, 5, 9),
+targets (20, 11, 121): B is forced to {0,1,2,3,5}, and then 20 is unreachable for A, every 3-set of sum 20 in the
+pool meeting B. The census printed it in reflected form, holes (8,9), targets (34, 79, 41). The other new family at
+M = 18 is holes (6,12), sizes (3,7,7), targets (27, 24, 102), continuing the distance-6 chain (2,8), (3,9), (4,10),
+(5,11). Both chains grow by one hole position per unit of M, which is what a pinned-bin-plus-clump mechanism
+predicts and what a finite basis would have to parametrise.

@@ -15,7 +15,9 @@ The families (canonical, holes (q1,q2), (size,target)) are stable from M = 16: t
 (i) equal-split cores: holes (1,4) sizes 3,3 targets 12,12 on {0,2,3,5,6,8}; holes (2,6) 11,11 on
     {0,1,3,4,5,9}; holes (5,6) 10,10 on {0,1,2,3,4,10}; each with the third bin pinned near its maximum.
 (ii) forced collisions: a bin with a unique realising set that meets every realising set of another bin,
-    e.g. holes (2,3) (3,8),(3,16),(k,max-1); (7,8) (3,4),(3,14),(k,max-2); (3,4) (3,19),(4,11),(k,max-1).
+    e.g. holes (2,3) (3,8),(3,16),(k,max-1); (7,8) (3,4),(3,14),(k,max-2); (3,4) (3,19),(4,11),(k,max-1).M = 18 (background, ~8 min): 4,407,030 / 42 / 17 families; the predicted clump exception at holes (9,10),
+sizes (3,5,9), targets (20,11,121) appeared (printed reflected as holes (8,9), (34,79,41)); the distance-6
+chain gained (6,12) (3,27),(7,24),(7,102).  Prediction held (bin size corrected from 10 to 9).
 """
 import itertools, sys
 from collections import Counter
