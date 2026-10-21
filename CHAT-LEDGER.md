@@ -6998,3 +6998,27 @@ single-party, exact machine agreement; it needs GPT's read to leave the waiting 
 
 **Next rung.** The size-15 sampled selector run, then the same pair-blocking count for the six-value table, which
 should give a hand proof of CL492's seven deep-gap pools.
+
+## CL496 — Cloud, block 6 continued: lemma (a) has a one-line exception rule (2026-10-22 00:16 BST)
+
+Two checks on the pair-least case (`ppp_window_shape.py`, `balanced_failures.py`):
+- *Window shape.* The completing x values form one contiguous run in 8,226 / 8,274 (M = 12) and 59,328 / 59,688
+  (M = 13) instances. The rest have two runs, with the middle x failing at equal pair targets.
+- *The balanced rule's failures, characterised exactly.* Every failure, 18 at M = 12 and 144 at M = 13, has all four
+  of these properties, with no exceptions:
+  1. the complement W has exactly 6 values;
+  2. W is one of CL492's seven deep-gap pools;
+  3. the two remaining targets are equal;
+  4. the next candidate x (one step less balanced) completes.
+
+**Lemma (a), measured form:** *in a pair-least I₂ instance, the most balanced prefix-plus-pair choice completes,
+unless its complement is one of seven explicit six-value cores and the other two targets are equal, in which case
+the next choice completes.* The proof needs: the P side (a band check on ≤ 8 values), the complement by
+G340/G3 (CL495) for ≥ 7 values or the 56-row table for 6, and an inequality showing the balanced choice lands in a
+certified case.
+
+Also: the selector's size-15 sample (first 600,004 singleton-least instances) has **no failures**:
+542,616 by the pair boundary and 57,388 by the recipe (prediction held).
+
+Gut: warm and clear-headed. Reasoned: lemma (a) is now a statement a reader can check, with a finite exception
+rule; still measured to M = 13–14.
