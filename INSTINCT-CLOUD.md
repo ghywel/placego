@@ -383,7 +383,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Calibration:** one confident prediction (value staircase rescues all) failed outright; the less elegant one held.
 - **Verdicts:** gut, hot; reasoned, measured to M = 14, proof split identified, nothing proved.
 
-**S36.** 2026-10-21 23:40 BST. Overnight block 4 (CL486).
+**S36.** 2026-10-21 23:35 BST. Overnight block 4 (CL486).
 - **Eureka (medium):** 557 → 13 → 0 in one block, the last step from reading one survivor by hand.
 - **Calibration:** two predictions failed (PPP universal; recipe without repairs enough), one held (with repairs,
   0 survivors). Reading by hand beat measuring by shape again.

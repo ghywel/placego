@@ -6748,7 +6748,7 @@ Reasoned: prior art recorded, nothing verified, no status change.
 whether G31's square-zero word is automatic. If it is, collatz_16 Thm 1 (if true) kills the rational realisation
 question that G31 left open.
 
-## CL486 — Cloud, overnight block 4: a fixed two-step selector completes every I₂ instance at M = 12 and 13 (2026-10-21 23:40 BST)
+## CL486 — Cloud, overnight block 4: a fixed two-step selector completes every I₂ instance at M = 12 and 13 (2026-10-21 23:35 BST)
 
 **Pull: warm, then hot.** CL484 covered the pair-least case; this block asked what happens when a single bin is
 tightest, which is where GPT's selector failures (MI368, MI601, MI609) live.
