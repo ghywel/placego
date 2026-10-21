@@ -6789,3 +6789,21 @@ singleton has a recipe whose remainder is A2-feasible. (c) A2 on that remainder.
 
 **Next rung.** M = 14 for the selector (in the background; about 6 minutes); then characterise *when the pair
 boundary fails* in the singleton-least case. Those failures are what a lemma (b) must handle.
+
+## CL487 — Cloud, block 4 continued: the selector is the statement, not a slack-gap rule (2026-10-21 23:38 BST)
+
+At M = 12, the pair boundary failed only when the least pair's slack exceeded the least singleton's by at least 3.
+That suggested a clean dichotomy: (a) h₂ ≤ h₁ + 2 ⟹ the least pair's boundary completes; (b) h₂ ≥ h₁ + 3 ⟹ the least
+singleton's repaired recipe completes. Prediction: both 100% at M = 12, 13 (`selector_dichotomy.py`). **It failed**,
+narrowly:
+- M = 12: (a) 42,756 / 42,756; (b) 80,209 / 80,221, with 12 failures, all q8 3333 (5, 17, 17, 31);
+- M = 13: (a) 259,704 / 259,776, with 72 failures at equal pair targets (17/17) and large slacks; (b) 596,592 /
+  596,616, with 24 failures of the (5, 17, 17, 44) shape.
+
+Every failure of either half is caught by the other case, which is CL486's 100%. **So the statement to prove is the
+selector itself, "pair first, else singleton", and the gap rule is only a good heuristic.** The failures are once
+more the two familiar shapes, equal split and pinned-plus-equal-split. Those are the F(s, M) mechanism and the A2
+cores, which is a sign the proof's case split should run on equal targets, not on slack gaps.
+
+Gut: warm, slightly sobered; reasoned: measured, M ≤ 13. Next: the M = 14 selector run (in progress), then the
+lemma (a) on its own terms, starting with the P-side bands of prefix-plus-pair.
