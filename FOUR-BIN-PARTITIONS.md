@@ -3242,3 +3242,89 @@ The second family prevents promoting that bridge to a universal selector.
 No experiment, basis expansion or new review request. Next inspect the
 unread rank budget itself before extending it, rather than adding a new
 delete-another-bin chain or repairing this counterfamily by catalogue.
+
+
+## 43. Explicit replacement-rank audit of FOUR39 (MI616)
+
+**HAND self-audit, not independent verification or extra coverage.** No
+experiment or new proof number. This checks the earliest new interface,
+without using G340/G341 to justify any rank identity. All ranks are zero-
+based; let P_j=sum(y_0,...,y_j) in the available ordered middle U.
+
+**Prerequisites, separately.** In the original three-bin two-hole S,
+let A attain global minimum h among the SIX singleton lower/upper raw
+slacks, oriented lower. For other bin size r and complementary bin size t,
+its upper slack is>=h. Conservation therefore gives
+
+    s_r >= sum(S)-s_A-beta_S(t)+h
+         = alpha_S(a+r)-alpha_S(a)=F_r.
+
+This uses the other bin's upper slack, not a missing all-union hypothesis.
+For each suffix count k, l=a-1-k, the formal pivot target interval has
+ends obtained from q=z_l and q=z_(n-k-1). The upper endpoint for k
+is exactly the lower endpoint for k+1, representing the SAME actual set.
+The first/last ends are alpha_S(a)/beta_S(a). Thus a feasible original
+A target admits a formal recipe. A missing pivot is strictly between
+available endpoints, and is one of the original holes.
+
+For low repair the distance q-x>=5 makes the delta1/2 pairs disjoint,
+with distinct elements and strict order x<x+delta<q-delta<q. The
+other original hole blocks at most one pair. Both replacement tokens
+are between old fixed extremes, so they collide with no retained fixed
+value. High repair is identical with q<u. If both sides exist, their
+distances sum u-x>=r+t+2>=12; if k0, h=q-z_l>=6 makes q-x>=7;
+if l0, A's upper slack>=h makes u-q>=7. Thus a usable side exists.
+The new fixed set has a-2 extreme tokens. U has r+t+2 available values;
+after removing two ACTUAL replacements R has r+t and at most four holes.
+No formal missing q is counted as a removable available token.
+
+**Low repair, all positions.** U begins y_0=x, y_1=z_l.
+Write w=x+delta=y_j and v=q-delta=y_i. Then 1<=j<=2,
+i>j, delta<=2, and r>=5. Let F0=P_(r+1)-y_0-y_1.
+
+- If i<=r+1, both removed values lie in the first r+2 ranks.
+  Exactly r remain there, so alpha_R(r)=P_(r+1)-w-v.
+  Hence F0-alpha_R(r)=w+v-y_0-y_1=q-y_1.
+- If i>=r+2, only w is removed from the first r+1 ranks.
+  Hence alpha_R(r)=P_r-w, and the difference is
+  y_(r+1)-y_1+delta.
+
+The first expression is smaller exactly when v<=y_(r+1), so these
+cases give precisely min(q-y_1,y_(r+1)-y_1+delta). Unexpected boundary
+check: at v=y_(r+1) the two expressions are EQUAL; there is no lost
+rank or discontinuity. F0 uses original ranks l+1,...,l+r, whereas
+F_r uses a,...,a+r-1, shifted by k. Therefore F_r>=F0+k*r.
+At k0 the difference is>=min(h,r+delta)>=6; at k>=1 it is>=k*r+1>=6.
+
+**High repair, all positions.** U begins y_0=z_l and ends u.
+Write w=q+delta=y_j and v=u-delta=y_i. We have j>=1, i>j, and
+
+    i >= (r+t+1)-delta >= r+t-1 > r+1.
+
+Thus v does not affect the r-minimum even after deleting w. With the
+same F0=P_(r+1)-y_0-y_1, the exhaustive cases are:
+
+- j<=r: alpha_R(r)=P_r-w; difference
+  y_(r+1)-y_1+w-y_0 >=r+1.
+- j>=r+1: alpha_R(r)=P_(r-1); difference
+  y_r+y_(r+1)-y_0-y_1 >=2r.
+
+This includes w=y_(r+1) in the SECOND case. F0 has original ranks
+l+2,...,l+r+1, shifted k-1 to F_r. The high repair requires k>=1,
+so F_r-alpha_R(r)>=(k-1)*r+(r+1)=k*r+1>=6. Original F_r
+may extend outside U when k is large; the index comparison is in S,
+not an assumption that this segment lies in U. Both needed index ranges
+exist since the complementary size is>=5.
+
+For legal pivots, deleting one available middle value similarly gives
+margin>=k*r for k>=1. At k0 its exact value is
+min(h,z_(a+r-1)-z_(a-1))>=5. R then has at most3 holes; this branch
+needs G340, not a false claim that the repaired buffer6 applies to it.
+Original A2 hypotheses include actual singleton spectrum feasibility.
+At the parent-family application FOUR42 that prerequisite is checked by
+carried G315 scalar Lemma3 before the new joint result is called.
+
+**Audit verdict.** No discrepancy in these identities or prerequisites.
+They are now derived for every removal-rank case. The cutoff, scalar
+joining and application still await the OTHER party's carrying read.
+This self-audit upgrades no status and adds no parent region.

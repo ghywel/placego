@@ -987,3 +987,6 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 
 
 MI614: finite-basis pull resolved by one frozen run,6423/6423 PASS with independent spectra/domain controls. Satisfaction tied to a defined conditional payoff: removing the large-other-count gate. No fresh enthusiasm claimed for more bases; remaining size3/4 and parent selector, plus unread cutoff/interface, are the next decision gate.
+
+
+MI617 trajectory signal: remaining pull is at all-choice compatibility, not another scalar spectrum. Rank audit resolves the specific formula niggle without independent promotion. MI609/615 repeat the small-hole inheritance failure across levels. Fresh choice favours deliberate incubation: PAUSED; reopen on a concrete joint selector/invariant, different representation or mechanism-changing objection. No extra block renewed by the finite success.

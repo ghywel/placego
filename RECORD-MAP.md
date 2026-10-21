@@ -1044,3 +1044,5 @@ PART: as on the board.
 - Exact D4 triple basis6423 pools COMPLETE/two engines/independent rank-gap domains/all controls PASS, MI614/FOUR41. With unread G341(a) and physical t5 join, conditional FOUR39 drops max>=15; remaining3/4 and parent selector OPEN, no new census or universal promotion.
 
 - Explicit protected q5/(3,s,s,s),s>=5,targetA9/balanced others reaches CONDITIONAL A2 region through actual018, MI615/FOUR42. Same large companion counts retain MI368 selector obstruction at A6; no universal selector or unconditional promotion.
+
+- FOUR39 all-rank hand self-audit finds no discrepancy, MI616/FOUR43; no independent promotion. MI617 same-assumption trajectory incubates all-choice parent selector:13min PAUSED/no poller, GC1666 specific perspective; reopen on concrete invariant/representation or changed mechanism.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21: exact D4 basis complete; enlarged conditional balanced-repair region.**
+**CURRENT working state, 2026-10-21: rank audit complete; joint-selector incubation, research PAUSED.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes
   c_i>=3, total targets T_M-q, every proper group t_J>=T_(C_J).
@@ -194,6 +194,15 @@ exchange mechanism and primary literature;the incubation above is history.
   with A6 retain the old ALL-realization3/4-hole selector obstruction.
   Next audit FOUR39's exact replacement-rank identities themselves
   before further dependent extension; no run/catalogue/new review job.
+- **MI616/FOUR43 audit and MI617 incubation.** All actual removal-
+  rank cases confirm FOUR39's formulas; self-audit only. The repeated
+  assumption is preserving the next deletion budget under least-slack
+  selection (MI609 and MI615 across levels). No concrete all-choice
+  lemma currently supports another extension. Research PAUSED, older
+  schedule paused/no poller/run. Reopen on a concrete joint selector/
+  invariant, different representation, mechanism-changing carrying
+  objection or owner direction. Existing review packet unchanged;
+  no routine review halt, new experiment or duplicate request.
 - **Dependency.** G340/G341/FOUR39 are ONE consolidated carrying
   packet, replacing the G340-only request. Both scalar arguments
   remain HAND; interface also unread. G341 itself has no G340 premise.
@@ -208,8 +217,8 @@ exchange mechanism and primary literature;the incubation above is history.
   incubation: a different scalar engine now has a complete hand argument
   and an explicit partial margin gate. This is not a reset of the old
   failed connectivity assumption. G339 review cleared; G340/G341/FOUR39
-  share one consolidated carrying packet. ACTIVE confirmed by the schedule tool at19:48 UTC,13-minute cadence, quiet
-  on unchanged/nonactionable state; older schedule PAUSED, no poller.
+  share one consolidated carrying packet. MI617 now PAUSES research for
+  named joint-selector incubation; no separate poller or background run.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -41510,3 +41519,58 @@ choice favours auditing the rank interface itself before extending a
 dependent chain. Next bounded hand question: verify FOUR39's EXACT low/
 high minimum formula for all possible replacement ranks, independently
 of its claimed equality; retain a discrepancy before any repair.
+
+
+### MI616 — Actual replacement-rank audit, all cases (2026-10-21 21:56 BST)
+
+HAND self-audit only, no new proof/coverage/experiment. Record searched:
+`F0.alpha|min.q.y|replacement.rank` ->8 hits/5 files; FOUR39 and its
+source MI611 read in full. FOUR43 writes the whole independent rank
+calculation. Low repair has w rank1/2 and v either inside first r+2
+or beyond: minima P_(r+1)-w-v or P_r-w give exactly the claimed min.
+High v has rank>=r+t-1>r+1; w rank<=r gives P_r-w, otherwise
+P_(r-1), yielding r+1/2r lower bounds. All original-index shifts,
+formal interval coverage, legal replacement disjointness and the original
+spectrum premise are checked separately. Unexpected equality at v=y_(r+1)
+makes both low formulas equal; no boundary lost. No discrepancy found.
+
+This is not independent carrying verification. Earliest unread G340/
+G341/interface steps and parent status unchanged. No computation was
+launched and the frozen finite basis was not rerun.
+
+
+### MI617 — Trajectory check: incubate the joint selector, not another scalar branch (2026-10-21 21:56 BST)
+
+Parent: protected one-hole four-bin partition remains OPEN. Change since
+MI608: two complete HAND scalar engines, one COMPLETE finite basis,
+actual repaired margins, and one explicit CONDITIONAL parent family.
+The rank self-audit found no carrying identity error; no unconditional
+universal parent coverage has been claimed.
+
+Repeated assumption: least-slack selection preserves the deletion budget
+needed by the next theorem. MI609 breaks it at the two-hole-to-three-hole
+step even with h5/large companions; MI615 retains the old one-hole-to-two-
+hole obstruction with arbitrarily large companions. These are the SAME
+selection issue across levels, not failures reset by different labels.
+The controlled four-hole repair handles one interface but does not select
+a universal first parent bin. No further repair starts after this check.
+
+Fresh choice: I would choose the all-choice joint-selection question now,
+not another small deletion spectrum or larger confirming run. The appeal
+of the scalar mechanism is resolved by its explicit conditional payoff;
+there is no specific next all-choice lemma I can currently substantiate.
+The uncertainty is how to choose a completable parent remainder WITHOUT
+assuming the hole budget or importing margin inheritance from a different
+selector. Selecting another bin needs a new actual budget; that is not
+provided by the positive examples or the finite pass.
+
+Decision: deliberate mathematical incubation, research schedule PAUSED;
+older research schedule stays paused, no separate poller or background
+run. Existing carrying packet remains available; this is not a routine
+review halt or request for permission. Reopen on a concrete all-choice
+selector/invariant, a genuinely different representation, a carrying
+objection that changes the existing mechanism, or the owner's direction.
+Gut: the remaining pull is at compatibility, while more scalar refinements
+would be momentum. Reasoned: stop the branch rather than turn that
+unnamed inference into another local catalogue. Specific perspective
+check-in to Cloud via the committed ledger/portal, no new review job.
