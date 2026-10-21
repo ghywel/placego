@@ -124,151 +124,58 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 15:27 BST: incubation at the all-choice balanced reversal; research PAUSED.**
+**CURRENT working state, 2026-10-21 17:55 BST: Cloud CL478 adopted; bounded two-hole base work resumed.**
 
-- **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
-  targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
-  (G325) is independently PROVED; current aim is a structural mechanism.
-  H2 G326, G327/G328/section11, G329/G330, G331/G332 are also PROVED
-  in their recorded scopes. G332 covers missing1 only. No general five-
-  bin/all-n or Frankl transfer; older Rule30/Collatz/Mahler lanes HELD.
-- **Missing steps.** The rounded count region P must first be REAL
-  nonempty, then contain an integer count, then permit physical row
-  completion when some counts are0/1/2. These are separate inferences.
-  MI571's unrounded fractional region Q is ALWAYS nonempty under parent
-  cuts; this known convex fact does not settle inward-rounded P.
-- **Carried reviews.** G333/G334 PROVED by Cloud CL474/16404637,
-  adopted MI575. CL475/489d287c independently carries FOUR25/25.1
-  (MI557/579), adopted MI582: singleton budgets for ANY n>=2, one
-  distinct pool. Core rows1–6 are PROVED. REAL admission and physical
-  completion remain OPEN; no current count-budget review is pending.
-  Review instruments read, not replayed; no novelty claim.
-- **Partial coverage.** MI569–570/FOUR27, published136a0930: if additive
-  means x_i=(2t_i-c_i(q-1))/(M+2) satisfy3<=x_i<=c_i-3, known four-
-  coordinate rounding gives every group error<=1; exact margins plus
-  known rank splitting and PROVED G316 complete both rows. HAND/unreviewed
-  specialization, independent of G333/G334; no new review request. Includes
-  three fixed size6 bins. The general small/thin boundary remains OPEN.
-- **Evidence, not a theorem.** MI567–568 ONE diagnostic: all3557 protected
-  sorted M12/3333 targets across11 holes have REAL/integer count points;
-  two same-worker mechanisms/five controls. Not3557 physical partitions,
-  no general quantifier and no larger census. Source/raw hashes in MI568.
-- **Guards.** MI447 forces all bins to cross; MI551 forces a wholly-low
-  bin. MI559 refutes full merged-fibre inheritance and raw endpoint
-  supermodularity; raw failure alone does NOT exclude set-level geometry.
-  MI563 refutes the common-price ceiling relaxation, not discrete counts.
-  MI565 parks the189-form expansion; no endpoint/threshold repair tree.
-  MI571 gives the exact linear-interpolation/fractional distinction;
-  ordinary compression feedback is already closed at MI401/551.
-- **Latest kill test.** MI572–573 refute largest-remainder rounding of
-  an ARBITRARY fractional Q point on an actual protected parent: M12,q6,
-  c3333,t18^4,k=(23/10,5/4,5/4,6/5). All14 fractional bounds pass,
-  minimum slack3/10; unique-largest rounding gives(3,1,1,1), first
-  minimum24>18. This does not refute the parent or MI569's chosen means.
-- **Reopened direction.** MI576–577/FOUR29:41 proper minimal balanced
-  collections in9 types (42 with the trivial grand coalition). Corrected
-  row9 has2rho1. Scalar nonemptiness covers1–2; PROVED G315 coarsening
-  covers3–4. MI557/579 supplies PROVED5–6 by CL475. Crossings7–9 OPEN.
-  MI578 coarsening still leaves the overlap width hi3-rho3; it is not
-  a type7 proof. MI579 generalizes the existing singleton budget to any
-  number of minsize3 bins using actual rank cuts; independently PROVED
-  by CL475. The packet is cleared; no new census or proof number.
-  MI563 closes the price shortcut for ONE row7 cover, not all types.
-- **Latest failed transfer.** MI580–581/FOUR30 refutes an unqualified
-  two-copy application of the singleton budget, even for four size3
-  rows and a literal fractional assignment. P={0,1,2,4,5,6}, two copies,
-  targets3/7/13/13: integer count maxima total5<6. Outside the one-copy
-  protected parent; not a crossing or parent counterexample.
-- **New representation, MI584-585.** G335 PROVED by Cloud CL477/f70717bb:
-  actual one-hole rank cuts imply a prescribed-colour tournament whose
-  score-square maximum has <=11 cyclic components/45 vertices. The
-  maximum is transitive iff the parent partitions. Ordered bulk stays
-  unbounded; no M<=45 reduction or new physical parent coverage.
-- **Absorption, MI588–589.** G337 is a complete HAND candidate replacing
-  the narrower G336-only review. One consecutive singleton run with
-  four counts>=3 absorbs EVERY rainbow cyclic component of size<=5.
-  Incomparable cut slacks sum>=9; slacks<=4 form a chain. Core subset
-  overshoot<=5; one chain ordering minimizes all dangerous cuts with
-  * fixed. PROVED G316 realizes the run repair; Phi gains2*tau_K.
-  Same run works successively. No unread G336 premise; GC1649 one read.
-- **Decision/dependency.** G337's chain selector/application remains an
-  unread dependency of its absorption conclusion; G335/G316 carried. No new protected target-family
-  coverage or run-existence theorem. In a cyclic maximum all singleton
-  runs and both whole sides must be thin IF the candidate is carried.
-  M12/c3333 cannot fit a12-score run avoiding *, so mixing existence
-  is not automatic. Next seek one exact JOINT run/core budget from
-  G335 and protection, not one-colour threshold patches or mixed
-  integer decomposition. Keep any dependence on G337 conditional.
-- **Joint-budget audit, MI590–591.** The exact group slack is external
-  component inversions plus internal outgoing wins. A protected M12
-  thin-run cyclic control satisfies it: shape/protection alone cannot
-  replace actual maximality. MI551 already gives a transitive-ordinary
-  compression model; no blind feedback restart. In that separate
-  restricted family, neutral10 flips plus same-colour bit exchanges
-  give a WORKING HAND <=2-descents optimum; if two occur only two bits
-  differ from monotone. This is unreviewed, not a new carrying job.
-  Its restricted optimum is NOT identified with G335's global maximum;
-  never combine these two normal forms without a bridge. No binary
-  pattern-repair catalogue is opened. Actual parent coverage unchanged.
-- **Global optimality, MI592.** Reversing an actual simple colour circuit
-  gives DeltaPhi=2(m-C), where C sums winner-minus-loser scores and m
-  counts colours using distinct incoming/outgoing vertices. A global
-  maximum requires C>=m. Known shared colour potentials follow, but
-  the protected NONmaximum MI590 already admits zero prices. Thus the
-  quadratic endpoint penalty, not prices alone, is the live obstruction.
-  WORKING HAND/unreviewed, no extra carrying job or parent coverage.
-  General balanced-reversal selection under protection remains OPEN;
-  simple circuit conditions have not been shown sufficient.
-- **Six-vertex refinement, MI593.** G338 is a complete HAND candidate:
-  in a GLOBAL maximum two cyclic components cannot share two colours.
-  Opposite paired paths gain2(x-y+2) and2(y-x+2); one gains>=4 with all
-  colour totals and q fixed. Rainbow palettes then allow at most2
-  cyclic components/6 vertices. If two, both are triangles with sets
-  {*,A,B} and {A,C,D}. This is independent of G337 and MI591/592; one
-  consolidated G337/G338 carrying request at GC1652. Protected repair
-  and true outside-parent sharpness controls included; novelty unassessed.
-  Ordered runs remain unbounded (at most3 if the refinement is carried).
-  No M<=6 reduction, run-existence theorem or new parent target coverage.
-  Next absorption must use this actual small core plus protection;
-  do not start a pattern-repair tree or infer that cycles are gone.
-- **Neutral closure, MI594.** WORKING HAND, no extra read job: a core
-  path plus adjacent run-edge reversal forces decreasing core degrees
-  at run transitions. A neutral gap1 switch permutes the core scores,
-  keeps it strong and exposes a strict improvement if either boundary
-  block repeats. Conditional on G338's unread overlap step, a core using
-  all four ordinary colours has only singleton exterior; run/block
-  counting and one actual protection cut exclude that full palette.
-  This application falls if the overlap step fails; no adopted premise,
-  new PROOFS entry or parent target coverage. G337 is not used. The
-  current G337/G338 carrying packet remains unchanged. Do not silently
-  use this working exclusion or extend it into a smaller-core repair tree.
-- **Selector audit, MI595.** Neutral gap1 moves fix the WHOLE global
-  degree multiset, so symmetric higher moments or sorted-degree tie
-  breakers cannot choose their direction. Per-colour objectives remain
-  a separate unproved option. No potential refit, smaller-core repair
-  tree, new theorem or review job; the unread dependencies remain.
-- **Current guard/incubation, MI596.** Protected M12/q5/c3333/t=(6,28,19,20)
-  forces exterior A01 and B11,12 in EVERY unchanged-target fibre, so
-  no direct A/B adjacency exists. Two disjoint swaps through C plus
-  the core path nevertheless absorb the triangle with Phi+2. The
-  single-edge shortcut is REFUTED; the initial orientation is NONmaximal,
-  not a parent or global-maximizer counterexample. Compare this with
-  MI592's price proxy: both omit coordinated changes. No proxy repair,
-  smaller-core catalogue or larger census. Named uncertainty: an actual
-  all-choice balanced-reversal/cut mechanism under protection across
-  interrupted runs. GC1655 seeks Cloud's perspective; current carrying
-  packet unchanged. Reopen on a concrete mechanism, substantive proof
-  objection changing the reduction, or direct owner direction.
-- **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
-  7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
-  checks the triangle identity and SCC description, not the full bound.
-  No larger run, old count repairs or endpoint catalogue is authorized
-  merely by this evidence. L8 remains solved and held prize lanes held.
-- **Rhythm.** Research schedule PAUSED (tool-confirmed) for MI596's
-  named mathematical uncertainty; retained cadence13min. Older schedule
-  stays PAUSED; no separate poller or unattended work. Latest trajectory
-  MI596 at 2026-10-21 15:27 BST; no renewed extra-block allowance. Proof-review receipts
-  are not absorption results; all candidate statuses remain unchanged.
+- **Parent OPEN.** Partition[0,M] minus internal q into four sizes c_i>=3,
+  total targets T_M-q and every proper group t_J>=T_(C_J). L8=68
+  G325 is PROVED; this is structural research. No Frankl/general-n
+  transfer or reopening of held Rule30/Collatz/Mahler lanes.
+- **Carried.** Cloud CL478/9a7e4136 independently verifies G337 and
+  G338; adopted MI597. G336 is a proved corollary of G337. A global
+  maximum has at most2 cyclic components/6 vertices, but ordered bulk
+  is unbounded. One full singleton run with at least3 of every colour
+  absorbs any rainbow component. Neither statement proves such a run
+  exists or the parent partitions. MI591/592/594 stay unreviewed.
+- **Decisive negative.** CL478's protected M12,q7,3333,t26/8/16/21
+  has a unique exterior fibre and no unit transfer between the triangle
+  colours, even through intermediates. Every full partition changes
+  the side counts. MI597 checks the actual cuts and both failed count
+  options. Stop the fixed-run-count absorption mechanism as universal;
+  no new price, neutral pattern or threshold repair is queued.
+- **New evidence.** CL478/a123fff4 reports18,682,428 spectrum-feasible
+  one-hole instances through M17,54 failures, all in known F(s,M) at
+  least margin1. Reported census only: sources read, not rerun; no
+  exhaustive universal theorem or novelty claim. Three-bin two-hole
+  A2 has multiple reported exception families, not a proved finite list.
+- **Reduction gate.** MI368 already refutes the claim that the least
+  singleton ALWAYS leaves only2 holes, even over every realization.
+  Its protected 6/22/22/23 example has unique least actual-rank slack3
+  too. A2 therefore needs an explicit bridge, repaired3-hole branch or
+  alternate selector before proving the parent. The strict-pair
+  one-hole staircase extension also remains OPEN.
+- **Useful independent step.** MI598/FOUR35 gives an exact known-method
+  forced-tail reduction when a filler is within d<=D of its maximum:
+  with other sizes totaling K, only the first K+D available values
+  can belong to those bins. Sizes333 with filler slack<=3 reduce to
+  ambient maximum10 regardless of the original filler length. This
+  justifies bounded analysis of THAT stratum, not all A2 failures.
+  Scalar-spectrum inheritance is not assumed. No census/new review job.
+- **Next bounded question.** Classify the slack1 filler stratum with
+  two size3 bins, by its unique filler realization and actual six-value
+  complement; separate forced collisions from equal-split cores. It is
+  a useful A2 subproblem independently of the missing parent bridge.
+  Seek an exact obstruction/localization, not a confirming sample.
+- **Dependency/trajectory.** Last strategy check MI597 at 2026-10-21 17:55 BST;
+  the changed decision is to leave fixed-count tournament repairs and
+  audit finite-base localization. G337/G338 review queue is cleared.
+  New application is elementary known rank displacement, not a new
+  independently carried theorem. Parent target coverage remains NONE.
+- **Rhythm.** ACTIVE confirmed by the schedule tool; the existing13-minute
+  research heartbeat resumes under
+  the owner's conditional authorization, with this scope and quiet
+  notifications. Older schedule remains PAUSED; no separate poller.
+  Continue unfinished bounded reasoning first. No renewable extra-block
+  allowance, automatic census, or claim of completeness from stability.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -40719,3 +40626,142 @@ older schedule remains PAUSED and there is no separate flag poller.
 Thus no unattended research or flag polling continues during incubation.
 Gut: the6-vertex idea remains interesting; the next leap currently has
 no honest discriminating proof step. Bank that distinction and stop.
+
+
+### MI597 — CL478 adoption; change the mechanism, audit its proposed base (2026-10-21 17:55 BST)
+
+**Carrying receipts and HAND scope checks; no experiment.** Fetched once,
+merged through a123fff4, verified9a7e4136/a123fff4/94b1fe22 are ancestors.
+Read CL478 and its postscript in full, plus all eight committed source
+instruments. G337/G338 are now PROVED under project standards. G336
+is the direct triangle corollary. Original proof packets are preserved
+verbatim under receipt wrappers; optional controls are not blanket-promoted.
+No carrying read for MI591/592/594 is claimed.
+
+Cloud's400 G337 construction trials and1,522,340 G338 maximisers for460
+sampled colourings are reported supporting measurements, not reproduced
+here. The actual carrying hand arguments, not finite tests, settle those
+two lemmas. One-hole census through M17 reports18,682,428 spectrum-feasible
+instances and54 failures in F(s,M), all at least margin1. This remains
+finite evidence; the universal classification, larger-M absence of other
+families and novelty are unproved. No raw data were fetched or new census run.
+
+**GC1655's proposed transfer mechanism fails even with all choices.**
+Cloud's M12,q7,3333,target(A,B,C,D)=(26,8,16,21) has low singleton word
+B,B,C,C,D,D on0..5, triangle A,B,* on ranks6..8 with scores7, and high
+word A,A,C,D on9..12. The proper protection minima are8>=T3,24>=T6,
+45=T9; total71=T12-7. The exterior target pairs A19 and B1 force
+A9,10 and B0,1; the remaining C16 uniquely forces2,3,11, leaving D4,5,12.
+The adjacent transfer graph has edges C->B,D->C,C->A,D->C; A and B
+are both sinks. More fundamentally, after straightening this triangle
+with *7 fixed, its high-side counts would be(2,1,1,1) or(3,0,1,1).
+The first requires a B value>=8 although t_B=8 and its other two values
+are distinct nonnegative integers, whose minimum sum is1. The second
+requires three A values>=8, whose sum>=8+9+10=27>26. Thus even arbitrary
+repartition WITH THOSE SIDE COUNTS cannot repair it. A real partition is
+A3,11,12 / B0,2,6 / C1,5,10 / D4,8,9, with q7 omitted. This confirms
+Cloud's decisive scope objection, not an impossibility or a true cyclic
+global maximum. The new assumption refuted is sufficiency of a repair
+that keeps the interrupted runs' colour counts. Do not repair that proxy.
+
+**A2 is a separate useful problem, not yet the parent reduction.**
+Record searched: record_find.py MI368; two-hole; rank.displacement.
+Re-read MI368, MI372–376, FOUR5/9 and the scalar/finite-base precedents.
+The old protected M12,q5,3333,t=(6,22,22,23) has actual-rank lower slacks
+singles3,19,19,20; pairs12,12,13,28,29,29; triples10,11,11,27.
+So A6 is the UNIQUE least raw-rank slack, not merely least adjusted
+protection slack. Its only triples024 and123 leave respectively3 and4
+normalized holes. A2 cannot close this singleton branch without a new
+selector or treatment of the extra-hole case. This is a retained old
+refutation, not a new counterexample or a reason to ignore A2 itself.
+The proposed strict-pair one-hole staircase is likewise an unproved
+extension, not already G316.
+
+**Trajectory.** Parent still OPEN, coverage unchanged. Structural lemmas
+are now carried; the universal fixed-count transfer route is closed.
+The census suggests an independently worthwhile finite-base question,
+but a small list to M17 is not a large-M localization proof. Fresh choice:
+there is a modest concrete pull toward that localization; no renewed
+enthusiasm for the failed transfer route. Next bounded hand test is the
+known rank-excess forced-tail argument and exactly which strata it bounds.
+No dependent candidate chain, new review request or automatic larger run.
+L748's raw-body client requirement is compatible with the private client;
+credentials remain private, TLS verified, multipart is not used.
+
+### MI598 — A bounded kernel for an extreme filler, with its quantifier exposed (2026-10-21 17:55 BST)
+
+**Known rank-displacement argument, applied here; HAND, no experiment.**
+This is an A2 subproblem: if two bins have fixed total size K and the
+third is within D of an actual extremum, does a genuinely bounded
+partition problem remain after forced values are stripped? It would
+justify finite analysis of that stratum, not prove all failures enter it.
+
+Record searched: MI354–355's forced prefix/tail and rank displacement;
+FOUR7's staircase ranks; G331's finite reduction. Primary orientation:
+Stanley, Topics in Algebraic Combinatorics, Chapter6, definitions of
+rectangle partitions, Proposition6.3 and Theorem6.6, read from
+https://math.mit.edu/~rstan/algcomb/algcomb.pdf . Bounded rank displacement
+is familiar partition geometry; the integer-gap inequality is derived
+below, not imported as a new partition theorem. No novelty claim or
+new PROOFS entry. The sources do not give A2 or scalar inheritance.
+
+Hand-test design: expect exact correspondence of ALL joint partitions
+after deleting a forced filler tail. Can fail if physical excess does
+not bound rank excess, or if the reduced filler moment is wrong. Check
+cardinalities, conservation, converse lifting, and D=d/c=D boundaries.
+Counterfactual: replace D>=d by D<d and exhibit a partition using a
+value incorrectly called forced. Unexpected check: put BOTH holes above
+the active prefix, so the reduced pool has fewer holes; an exactly-two-
+hole assumption must not be retained. Stop at this exact reduction and
+one controlled consequence; no experiment or broad classification.
+
+Let S=(z_0<...<z_(n-1)) be distinct integers, n=K+c, K=a+b.
+Suppose t_A+t_B+t_C=sum(S), t_C=beta_S(c)-d, 0<=d<=D<=c.
+Then U=A union B has size K and target alpha_S(K)+d. Writing its
+indices as i_0<...<i_(K-1), i_j>=j and integer spacing give
+
+    d=sum_j(z_(i_j)-z_j) >= sum_j(i_j-j)
+      >= i_(K-1)-(K-1).
+
+Thus every U lies in the first K+D available values. All later values
+are in C in EVERY partition. Delete their fixed tail F and replace
+(c,t_C) by(D,t_C-sum(F)). Conversely any partition of that prefix
+with sizes(a,b,D) lifts by returning F to C. This is an exact bijection,
+including equality d=D and empty F. Reflection gives the bottom-extreme
+version. It neither uses protection nor says individual A/B spectra
+survive truncation. A theorem on spectrum-feasible reduced instances
+cannot be invoked until that separate interface is checked.
+
+If S=[0,M] minus at most2 internal values, its first K+D available
+values have maximum<=K+D+1. Hence a=b=3, d<=3<=c reduces to nine
+values on ambient maximum<=10, irrespective of original M. If a+b<=7
+and d<=3<=c, maximum<=11. This supplies an infinite-to-finite reduction
+ONLY for the named filler-slack/small-count strata. It does not bound
+the slack, smaller-bin sizes, or all A2 counterexamples.
+
+Can-fail control: on S=[0,M] minus1,4, M>=11, take A0,2,11 and
+B3,5,6, with C the complement. alpha_S(6)=23, t_A+t_B=27, d4.
+Value11 has available rank9 and lies outside the first9 values. A
+false D3 tail rule would put it in C. D4 is valid and leaves the
+first10 values, maximum11. This rejects the false all-partitions
+forcing claim; the target might also have other partitions.
+Unexpected check: for S=[0,M] minus M-2,M-1, M>=12, the first9
+values are0..8. The kernel is a FULL interval, not an internally
+two-holed pool. Deletions above it disappear into the forced tail.
+Counts and moments, not a preserved hole label, carry the bijection.
+
+Actual change: a rigorous known-method finite reduction for the
+near-extreme filler strata suggested by CL478. Missing global step:
+why every A2 failure must have bounded filler slack and bounded other
+counts, or why the remaining interior always partitions. Neither the
+reported census nor this reduction proves it. Next bounded question:
+slack1 filler with a=b=3 has a unique filler realization; classify
+the actual six-element complements and their failing triple sums.
+This is concrete enough to resume13-minute research independently
+of the broken two-hole parent selector. No new census or carrying job.
+Gut: interest in a finite object with a justified cutoff, with unease
+now pinned to the unproved localization rather than hidden by the data.
+
+**Schedule receipt, MI598:** existing13-minute heartbeat ACTIVE confirmed,
+with the bounded A2/kernel task and its missing-parent-bridge warning saved.
+Older mathematics schedule remains PAUSED; no separate flag poller.

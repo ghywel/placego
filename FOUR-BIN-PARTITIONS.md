@@ -2751,6 +2751,9 @@ replicated budgets and the old capped physical swap policy are not used.
 
 ## 32. Absorbing a distinguished triangle with one thick run (MI586–587/G336)
 
+**Current receipt, MI597:** PROVED as the triangle corollary of G337,
+independently carried in Cloud CL478/9a7e4136. Historical discovery labels below are retained.
+
 **Complete HAND candidate, independent review pending.** The full proof
 is PROOFS.md G336. A rainbow triangle component containing * has scores
 q,q,q. It can straighten to q-1,q,q+1 in either colour order while *
@@ -2774,8 +2777,8 @@ thin/interrupted runs and general parent completion remain OPEN.
 
 ## 33. A five-unit defect and a nine-unit separation (MI588–589/G337)
 
-**Complete HAND candidate, one independent carrying read pending.**
-PROOFS G337 replaces the narrower G336 review packet; the latter is a
+**PROVED, Cloud CL478/9a7e4136; adopted MI597.**
+PROOFS G337 carries the stronger result; G336 is a
 corollary, not a premise. Any rainbow cyclic strong component (size<=5)
 can be absorbed by ONE disjoint consecutive singleton run with at least3
 vertices of each ordinary colour, preserving q, colour counts and totals.
@@ -2804,7 +2807,7 @@ mechanism, not uniform parent coverage or a finite-M reduction.
 
 ## 34. Two opposite paths leave at most six cyclic vertices (MI593/G338)
 
-**Complete HAND candidate, independently unverified.** This sharpens
+**PROVED, Cloud CL478/9a7e4136; adopted MI597.** This sharpens
 the PROVED G335 normal form and is independent of G337. In a global
 score-square maximum, distinct strong components cannot share two
 colours A,B. Within each component choose opposite A/B paths. Reversing
@@ -2828,3 +2831,57 @@ sharpness or obstruction within the protected parent is claimed.
 There are at most three ordinary singleton runs avoiding *, also treating
 * as a separator if it is itself a singleton, still of UNBOUNDED length. This is not an M<=6 reduction, proof of absorption,
 new target-family completion or automatic reservoir existence theorem.
+
+
+## 35. Scope of the two-hole base and an exact forced-tail reduction (MI597–598)
+
+Cloud CL478 proposes a three-bin two-hole classification A2. Its reported
+one-hole four-bin census through M17 has54 spectrum-feasible failures,
+all in the previously known forced-core family F(s,M). This is finite
+evidence, not a universal classification. Its two-hole census also has
+several exceptional families; their exhaustive large-M reduction is OPEN.
+
+A2 alone does not cover the singleton branch: MI368 already gives the
+protected M12,q5,3333,target(6,22,22,23) with a unique least actual-rank
+slack singleton. Its only target6 triples are024 and123; their complements
+have respectively3 and4 normalized holes. Even choosing among ALL first
+bin realizations cannot always leave at most2 holes. The strict-pair
+one-hole staircase extension is also a new obligation, not G316 itself.
+
+One useful finite reduction DOES hold in a specified stratum. Let an
+ordered distinct-integer pool S have n=K+c values, where K=a+b. For
+three target sums conserving sum(S), suppose the size-c bin C has
+target beta_S(c)-d, with0<=d<=D<=c. In every partition, U=A union B
+has size K and sum alpha_S(K)+d. Write S=(z_0<...<z_(n-1)) and
+U=(z_(i_0),...,z_(i_(K-1))). Then
+
+    d=sum_j (z_(i_j)-z_j) >= sum_j (i_j-j)
+      >= i_(K-1)-(K-1).
+
+Thus U lies in the first K+D available values. Every later value is
+forced into C. Delete that tail and subtract its sum from C's target: a
+bijection gives the EXACT remaining partition problem on those K+D
+values with sizes(a,b,D), unchanged A/B targets, and the adjusted C target.
+This is a known rank-displacement argument, already used in MI354–355,
+applied here to joint partitions; no new proof number or review job.
+
+On a pool with at most two deletions and least value0, this prefix has
+maximum at most K+D+1. For a=b=3 and d<=3<=c, joint feasibility reduces
+to a pool with at most9 values and ambient maximum10 (exactly9 when D3).
+For a+b<=7, d<=3 and c>=3, the maximum is at most11. Reflection supplies
+the analogous lower-extreme filler case. These are exact STRATUM bounds,
+not a cutoff for all A2 instances. Individual scalar spectra of A/B
+are not asserted to be inherited by this deletion.
+
+The d bound is necessary for the all-realizations statement. In
+S=[0,M] minus{1,4}, M>=11, the partition
+A={0,2,11}, B={3,5,6}, C=the complement has d4. Rank9 (value11) lies
+in A, so deleting beyond the first9 available values would wrongly
+force it into C. Taking D4 is valid. This rejects a hidden cap at3; it
+does not assert that the same targets have no other partition.
+
+The missing global inference is to bound the slack and the total sizes
+of the two small bins for EVERY A2 failure, or prove interior feasibility.
+The scalar census alone provides neither. The immediate next hand task
+is the slack1 filler stratum, where the filler set is unique; test its
+complete six-value complements before any enlargement of a census.

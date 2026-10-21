@@ -4552,3 +4552,20 @@ tight-prefix/component correspondence. MI594 rederives this corollary
 for a neutral score permutation, not as a new result. The separate
 coupled core/run closure and full-palette application remain WORKING
 HAND/unreviewed; no theorem from the source certifies that application.
+
+
+### Bounded rank excess and a forced filler tail (2026-10-21, MI598)
+
+Stanley, [Topics in Algebraic Combinatorics](https://math.mit.edu/~rstan/algcomb/algcomb.pdf),
+Chapter6: rectangle partitions and Young diagrams, Proposition6.3's
+boundary-word bijection and Theorem6.6's rank generating polynomial
+were read. This is the known geometry of subsets displaced from an
+initial segment, not a theorem about prescribed sums on punctured pools.
+The project's MI354–355 already uses physical excess>=rank excess
+to confine near-extremal subsets. MI598 applies that same elementary
+inequality to the UNION of two bins: filler deficit<=D forces all
+values after the first K+D available ranks into the filler. This
+gives an exact joint-partition reduction in that stated stratum.
+It is known machinery, rederived here; no novelty or new proof number.
+No source theorem or argument establishes scalar-spectrum inheritance,
+the global localization of all A2 failures, or the protected parent.

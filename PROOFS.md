@@ -16233,6 +16233,498 @@ quotas respectively, not this grouped-score tournament normal form.
 No generated proof pages were rebuilt. Primary-source scope is recorded
 in PRIOR-ART at MI584; independent review remains pending.
 
+### G.GPT336. A distinguished triangle is absorbed by one thick ordered run (second-read by Cloud, 2026-10-21)
+
+**Carrying receipt: PROVED in the stated scope; adopted MI597.**
+The statement is a direct triangle corollary of G337, independently carried by Cloud CL478/9a7e4136. This adopts the corollary through that stronger theorem; no separate review of every optional G336 control is claimed.
+Original candidate text follows unchanged; pending-review labels are historical.
+Thin/interrupted runs, general parent existence and novelty remain OPEN, OPEN and UNASSESSED.
+
+### GPT G336 — Absorbing a distinguished triangle through one thick ordered run (GPT, 2026-10-21; waiting room, MI586–587)
+
+*Status:* complete HAND proof candidate, independent carrying read requested.
+*Where:* FOUR-BIN-PARTITIONS.md section32; GPT-MATH-INSTINCT.md MI586–587; CHAT-LEDGER.md GC1648.
+
+**Statement.** Fix four ordinary vertex colours and a distinguished
+vertex * whose score q is fixed. Scores count wins. Suppose a tournament
+has a three-vertex strong component K with colours A,B,* all distinct.
+Suppose another consecutive interval R of strong components consists
+entirely of singleton components and contains at least3 vertices of
+EACH of the four ordinary colours. Then there exists a tournament with
+the same vertices, colour classes, colour score totals and * score q,
+whose sum Phi of squared scores is larger by exactly2.
+
+Consequently a global Phi maximizer in G335 cannot have this motif.
+In particular its component containing * cannot be a triangle if one
+whole side has at least3 vertices of each ordinary colour: G335's
+contiguous replacement already makes that side entirely ordered.
+No protection cut is needed for the local improvement itself. General
+star components of size4/5 and thin/interrupted runs remain outside
+this statement. This does not prove the parent partition theorem.
+
+**1. A directed colour path detects exactly the unit rank-cut gate.**
+First take an actual partition of consecutive scores a,...,a+n-1 into
+four colours with counts r_i>=3 and sums s_i. Draw a directed edge
+D->C whenever adjacent scores x+1,x are owned by D,C respectively,
+with D different from C. For different colours B,A put
+
+    s'_i = s_i + 1_(i=A) - 1_(i=B).
+
+Claim: s' obeys all full-interval rank cuts iff A is reachable from B
+in this graph. Translation by a does not affect this assertion.
+
+For the forward direction's contrapositive, suppose A is not reachable.
+Let J be all colours reachable from B, including B itself. Then A is
+outside J and no edge leaves J. If score x+1 has colour in J, score x
+must also have colour in J. Hence J owns exactly the first r_J scores,
+so s_J=a*r_J+L(r_J). But s'_J=s_J-1 violates this lower cut.
+
+For the reverse direction, suppose B reaches A. A lower cut can fail
+under the unit change only for a colour set J containing B but not A,
+and only if its original lower cut is tight; all slacks are integers.
+A tight group owns exactly the first r_J scores, since that is the
+unique subset of its cardinality with minimum sum. No edge leaves
+such a group, contradicting the path B->A. Thus every lower cut holds.
+Total conservation gives all upper cuts by complementary groups.
+This proves the claim. This tight-prefix reachability argument is the
+old MI292 argument specialized to a prescribed unit change, not a new
+claim that graph edges can be implemented simultaneously.
+
+Now PROVED G316 applies to these SAME four counts r_i>=3 and targets
+s'_i after translation. There is an actual partition of the run's
+scores with sums s'. This is the physical lift. It uses a complete
+full-interval theorem; reachability alone would not give a partition
+for arbitrary small counts, nor a literal adjacent-swap algorithm.
+
+**2. At least one direction between two colours is reachable.**
+If a run contains A and B, choose one occurrence of each. Follow the
+consecutive scores from the higher occurrence down to the lower.
+The successive colour changes form a directed walk, hence a directed
+path after deleting loops. Its endpoints are either B,A or A,B.
+Therefore at least one of these two directed reachabilities holds.
+No connectivity of an exact-sum fibre is being assumed.
+
+**3. Straighten the triangle and repair in R.**
+A three-vertex strong tournament is a directed triangle. If b vertices
+lie below K in component order, all three vertices of K have score
+b+1. Thus q=b+1. Straightening K into a transitive triple can keep *
+in the middle with score q and give A,B scores q-1,q+1 in either order.
+
+By step2, one of the unit directions between A and B is available in
+R. If B reaches A there, step1 gives a repartition of its scores with
+A gaining1 and B losing1. Choose the triangle order with A losing1 and
+B gaining1. The opposite reachable direction uses the opposite order.
+Every ordinary colour total is restored, and * stays at q.
+
+Implement the run repartition by assigning its chosen scores to its
+vertices WITH THEIR COLOURS FIXED and orienting R transitively in that
+score order. All external edges stay unchanged: every vertex of R has
+the same external win count a, because R is a consecutive interval of
+singleton strong components. Each vertex outside R also beats all of
+R or loses to all of it. Reorient K internally in the chosen order,
+keeping its external edges unchanged. These two disjoint operations
+therefore do not alter any other score or class size.
+
+The multiset of scores on R is unchanged, so its contribution to Phi
+is unchanged. The triangle contributes
+
+    (q-1)^2+q^2+(q+1)^2 - 3*q^2 = 2.
+
+All other contributions are fixed. This proves the claimed strict
+improvement and excludes the motif in a global maximizer.
+
+**Carrying dependencies and limits.** G316 and G335 are PROVED under
+the project's two-party standard. The novel carrying application above
+is not independently verified yet. No inward count rounding, mixed
+polymatroid integer decomposition, ordinary unit-flow lifting, generic
+Markov connectivity, incomplete repair search or unreviewed central
+construction is a premise. One full consecutive ordered run is essential
+here: paths in the union of interrupted runs are not automatically
+lifted by G316. A run missing a colour or with counts1/2 is not covered
+by the four-colour application. Absence of the motif is an additional
+structural restriction, not proof of new target families or zero cycles.
+Novelty is UNASSESSED.
+
+**Hand controls (MI586 predicted; MI587 audited, no census).**
+In the word C,C,C,A,A,A,B,B,B on0..8, there is a B->A->C graph path
+but no adjacent B/C pair. The target change C+1,B-1,A fixed is realized
+by C={0,1,3}, A={2,4,6}, B={5,7,8}, with sums4,12,20. This is a
+three-colour base control, with all sizes3; G336 itself uses four colours.
+Dropping size conditions fails: word C,A,B on0,1,2 has B->A->C but
+shifted targets1,1,1 have no distinct-score realization. Thus the old
+shared-token issue has not been silently erased by reachability.
+
+A protected four-colour control has M26,q13. On0..11 use
+A={0,5,10}, B={1,6,11}, C={2,4,9}, D={3,7,8}; on15..26 use their
+translates by15. Insert K at ranks12..14 as a directed triangle with
+colours A,B,* and scores13 each. The ordinary counts are7,7,6,6 and
+targets88,94,75,81, totaling338=T26-13. Singleton cuts compare with
+28,28,21,21. Pair sums are182,163,169,169,175,156, compared respectively
+with105,91,91,91,91,78. Triple sums250,244,263,257 (omit A,B,C,D)
+compare with190,190,210,210. All14 proper protection cuts hold.
+
+Exchange ownership of scores0 and1 in the low run, giving A+1,B-1;
+straighten K with A at12, * at13, B at14. Every ordinary total is
+restored and * is unchanged. The resulting tournament is transitive,
+so this control also gives a literal partition of the protected pool.
+Unexpected check: the q constraint is preserved exactly, despite the
+core replacement and the run repair being on different rank intervals.
+
+**Filing receipt.** proof_dupes --near W336 passes with354 entries and
+its hard/advisory controls. Nearest G335, G327 and C3 read in full:
+the normal form, the carried full-interval one-size2 extension, and a
+Rule30 white-triangle identity. G336 uses the minimum3 G316 base; it
+does not restate G335's bounded-support conclusion or lower the run
+size requirement using G327. No generated pages were rebuilt.
+
+**Review consolidation, MI589.** GC1649 requests the stronger G337
+application in place of a separate G336 carrying read. The triangle
+argument remains HAND until that independent verification; no status
+is upgraded by the stronger same-worker proof.
+
+### G.GPT337. One thick ordered run absorbs every rainbow cyclic component (second-read by Cloud, 2026-10-21)
+
+**Carrying receipt: PROVED in the stated scope; adopted MI597.**
+Cloud CL478/9a7e4136 independently carries the exact slack identity, the small-slack chain, the five-unit core bound, the fixed-* minimum, the simultaneous chain ordering, the G316 physical lift and the potential gain. Its 400-instance construction check is supporting measurement, read here but not rerun.
+Original candidate text follows unchanged; pending-review labels are historical.
+Thin/interrupted runs, general parent existence and novelty remain OPEN, OPEN and UNASSESSED.
+
+### GPT G337 — One thick ordered run absorbs every rainbow cyclic component (GPT, 2026-10-21; waiting room, MI588–589)
+
+*Status:* complete HAND proof candidate; one independent carrying read requested, replacing the narrower G336 request.
+*Where:* FOUR-BIN-PARTITIONS.md section33; GPT-MATH-INSTINCT.md MI588–589; CHAT-LEDGER.md GC1649.
+
+**Statement.** A tournament has four ordinary vertex colours and one
+distinguished vertex * with prescribed score q. Let K be a nontrivial
+strong component with at most one vertex of each colour (including
+* as a fifth colour). Let R, disjoint from K and not containing *, be
+a consecutive interval of singleton strong components, with at least3
+vertices of EACH ordinary colour. There is a new tournament on the
+same vertices with the same fixed colour classes, colour score totals
+and * score q, such that K and R are transitive, every external edge
+of K and R is unchanged, and the squared-score potential Phi increases
+by exactly twice the number of cyclic triangles originally in K.
+
+In particular, a global maximum as in PROVED G335 cannot contain any
+cyclic component if such a run exists. If a feasible tournament has all
+components rainbow and has such a run, successively applying the local
+result makes it transitive, yielding a partition. For a nontransitive
+G335 maximum every ordered singleton run is thin in some colour, and
+both whole sides of the component of * have some colour occurring at
+most twice. This is a conditional structural/absorption theorem; it
+does not establish that a thick run or side exists in the parent.
+
+**1. Quantitative cut separation inside R.** Write R's consecutive
+GLOBAL scores as a,...,a+n-1. Its fixed colour counts r_i>=3 and current
+colour sums s_i give, for every colour set J (including empty/all),
+
+    h_J = s_J - a*r_J - L(r_J) >= 0,
+    L(k)=k(k-1)/2,       h_empty=h_all=0.
+
+Modularity of sums and counts, and direct expansion of L, give
+
+    h_X+h_Y = h_(X union Y)+h_(X intersection Y)
+              + r_(X minus Y)*r_(Y minus X).
+
+If X,Y are incomparable, each difference contains an ordinary colour,
+so its count is at least3; their product is at least9. Thus two such
+sets cannot both have slack at most4. The family
+
+    C = {J : h_J<=4}
+
+is a chain under inclusion. This is a quantitative version of the
+strict cut argument already used in G324, not raw endpoint
+supermodularity on the punctured pool. It concerns one actual FULL
+consecutive run whose colour sums are already realized.
+
+**2. Any straightening has subset cost at most5.** Let r=|K|, so
+3<=r<=5 by the rainbow property and minimum size of a nontrivial
+tournament component. Denote its INTERNAL scores by d_v. For ordinary
+colour set J, put W=K intersect J, k=|W| and D_J=sum_(v in W)d_v.
+For any assignment of the distinct internal scores0,...,r-1, let
+P_J be the sum assigned to W. If 0<k<r, strong connectivity gives
+at least one outgoing edge from W to K minus W, so
+
+    D_J >= L(k)+1,
+    P_J <= U_r(k)=k(2r-k-1)/2,
+    P_J-D_J <= k(r-k)-1 <= 5.
+
+For k0 or r the difference is0. Therefore5 is a uniform bound for
+EVERY ordinary subset and every straightening, including the ones
+that keep * fixed. No cancellation or random choice is assumed.
+
+**3. One straightening minimizes ALL small-slack cuts.**
+If * is in K, let its internal score be b=q minus the number of
+vertices in components below K. Keep its assigned score equal to b
+and use the available score list
+
+    V={0,...,r-1} minus{b}
+
+for the ordinary vertices. Their current sums satisfy the actual rank
+minima of V. Indeed a k-vertex ordinary subset W has D_J>=L(k), and
+W union{*} gives D_J+b>=L(k+1). Consequently
+
+    D_J >= L(k)+max(0,k-b) = alpha_V(k).
+
+The last expression is precisely the sum of the k smallest elements
+of V. It holds also for k0 and k=r-1. If * is outside K instead,
+use V={0,...,r-1}, and D_J>=alpha_V(k)=L(k) follows from the internal
+edges of W. In this case r<=4.
+
+The colour sets in C form a chain. Order the ordinary vertices of K
+by the first chain member containing their colour; ties may be broken
+arbitrarily. Assign the elements of V increasingly in this order.
+Every J in C then contains exactly the first k=|K intersect J|
+assigned ordinary scores. Hence simultaneously
+
+    P_J=alpha_V(k)<=D_J       for EVERY J in C.
+
+Empty layers, colours absent from K, and an empty/full intersection
+with K cause no problem. If * is present, it has already been assigned
+b and is not part of this ordinary-colour ordering.
+
+**4. All repaired run cuts hold, and G316 lifts them physically.**
+Straightening K changes ordinary colour i's internal contribution
+from D_i to P_i. Give R the compensating target
+
+    s'_i=s_i+D_i-P_i,
+    h'_J=h_J+D_J-P_J.
+
+For J in C, step3 gives h'_J>=h_J>=0. For J outside C, integer slack
+means h_J>=5, and step2 gives h'_J>=h_J-5>=0. This checks EVERY lower
+run cut. Its total is fixed: if * is in K both ordinary totals are
+L(r)-b, otherwise both are L(r). Thus all complementary upper cuts
+hold as well. All targets are integers and R has the SAME four counts
+r_i>=3. PROVED G316, after subtracting a*r_i, gives a partition of
+R's original score interval with exactly these corrected colour sums.
+There is no mixed-polytope integer decomposition or path-of-swaps lift.
+
+**5. Realize the orientations and the strict gain.** Assign the run's
+new partitioned scores to its vertices without changing their colours,
+and orient R transitively in that score order. Give the vertices of K
+the selected internal scores, orienting K transitively as well. All
+external edges of K and R stay fixed. Each of K and R has one common
+external win offset; every vertex outside either region beats all of
+that region or loses to all of it. The new orientations therefore
+realize the intended global scores and leave every other score fixed.
+The opposite colour changes restore all ordinary class totals. If *
+is in K it keeps its internal score b and its external offset; otherwise
+it is untouched. Its prescribed global score q is preserved.
+
+R keeps exactly its original global score multiset, so Phi_R is fixed.
+For K, the cyclic-triangle identity gives
+
+    sum_v d_v^2 = sum_(j=0)^(r-1) j^2 - 2*tau_K.
+
+The common external offset contributes a fixed quantity, since the
+sum of the internal scores is L(r) both before and after. Thus Phi
+increases by2*tau_K>0. Nontrivial strong K contains a cyclic triangle.
+This proves the local statement.
+
+For the iterative assertion, all other strong components and their
+scores are unchanged, K becomes singleton components, and R remains
+a consecutive singleton interval with the same colour counts. Repeat
+for the finitely many other rainbow cyclic components. The final
+transitive tournament has scores0,...,M, with * still at q, giving
+the required ordinary partition. For the assertion about whole sides
+in a G335 maximum, if all four counts on one side were>=3, G335's
+contiguous replacement would first imply that side is entirely ordered.
+It would be a run R of the required kind, excluding every cyclic K.
+
+**Scope and dependencies.** The only physical saturation base is
+PROVED G316; G335 supplies rainbow components when applied to a global
+maximum. The full argument above does NOT assume unread G336. Rather,
+G336's triangle statement is a corollary. The new quantitative chain
+selector and absorption application are HAND, pending independent
+verification. No proof that a thick run exists is supplied, even with
+protected sums. Thin/interrupted runs and the general parent stay OPEN.
+There is no bound M<=45, source-policy maximality claim or larger census.
+Known rank/cut ideas are credited; novelty of the application UNASSESSED.
+
+**Hand controls (registered in MI588, checked in MI589).**
+At counts2, the block word A,A,B,B,C,C,D,D on0..7 has incomparable
+h_A=0,h_B=4. Thus a <=4 chain conclusion without the size3 assumption
+fails. At counts3, A={0,3,4},B={1,2,5},C={6,7,8},D={9,10,11} has
+h_A=4,h_B=5,h_AB=0. Their sum9 equals the separation product; slack5
+must be treated as an automatically safe cut, not included in C.
+
+For the sharp defect5, start the regular tournament on vertices0..4,
+where i beats i+1 and i+2 modulo5. Reverse0->2 and1->3. The retained
+cycle0->1->2->3->4->0 certifies strong connectivity, and scores become
+(1,1,3,3,2). Designate vertex4 as *. Assigning scores3,4 to vertices0,1
+overshoots their old total2 by5, so a bound4 would be false.
+
+A literal protected example puts that component at ranks12..16, with
+ordinary colours A,B,C,D and * internally scored1,1,3,3,2. Use the
+above twelve-score run below it and its translate by17 above it.
+Then M28,q14, counts7 each, targets(78,80,108,126), total392=T28-14.
+The smallest singleton, pair and triple target sums are78,158,266,
+respectively above T7=28,T14=105,T21=231, so all14 proper cuts hold.
+The dangerous low-run chain is A subset AB subset ABC. Assign internal
+scores A0,B1,C3,D4,*2. Corrected low-run sums are8,8,21,29, realized by
+
+    A={1,3,4}, B={0,2,6}, C={5,7,9}, D={8,10,11}.
+
+The upper run stays unchanged. Core scores become12,13,15,16,*14.
+Every colour target is restored, q stays14, and Phi gains6, since
+24=1^2+1^2+3^2+3^2+2^2 becomes30. This checks a five-vertex component,
+fixed q, actual protection and a physical repair, not a global maximum
+with a cycle. No random run or census was performed.
+
+**Filing receipt.** proof_dupes --near W337 passes with355 entries and
+its controls. Nearest W336, G335 and G327 read in full. W336 is the
+explicitly subsumed triangle consequence; G335 supplies the reviewed
+normal form, not absorption; G327 is the one-size2 full-interval
+extension, not used to lower this run's minimum3 threshold. No repeated
+claim found, no generated proof pages rebuilt. One G337 carrying request
+replaces the G336-only request; neither candidate is silently upgraded.
+
+### G.GPT338. A global maximum has at most six cyclic vertices (second-read by Cloud, 2026-10-21)
+
+**Carrying receipt: PROVED in the stated scope; adopted MI597.**
+Cloud CL478/9a7e4136 independently carries both paired-path changes, their gain sum8, the palette count and the outside-parent sharpness argument. Its reported 1,522,340 maximisers for 460 sampled colourings support the hand read; the colourings are sampled, not all colourings. The source is read here, not rerun.
+Original candidate text follows unchanged; pending-review labels are historical.
+Thin/interrupted runs, general parent existence and novelty remain OPEN, OPEN and UNASSESSED.
+
+### GPT G338 — A global maximum has at most six cyclic vertices (GPT, 2026-10-21; waiting room, MI593)
+
+**Status: COMPLETE HAND CANDIDATE, not independently verified.** This
+sharpens G335's11-component/45-vertex bound. It uses G335's carried
+orientation existence and rainbow-component fact, not G337's unread
+absorption argument, MI592's prices, or any count-admission claim.
+
+**Statement.** Fix four ordinary vertex classes and a distinguished
+singleton *, prescribing every class's total tournament score (the
+singleton's score is q). Whenever this feasible family is nonempty,
+a GLOBAL maximum of Phi=sum_v d(v)^2 has at most two nontrivial strong
+components and at most six vertices in those components. Here d(v)
+is the number of wins, and u->v means that u beats v. If there are
+two nontrivial components, both are directed triangles, one contains *,
+and their ordinary-colour sets have exactly one common colour. Up to
+renaming they have palettes {*,A,B} and {A,C,D}.
+
+In particular G335 supplies such a maximum for every protected one-hole
+four-bin parent. This remains a bound on cyclic support, NOT on M:
+singleton runs before, between and after these components are unbounded.
+There are at most three ordinary singleton runs avoiding *, also counting
+* as an extra separator if its component is a singleton. Transitivity
+and the original partition assertion remain open.
+
+**1. Path reversal and colour preservation.** If P is a simple directed
+path from u to v, reversing its arrows lowers d(u) by1, raises d(v)
+by1 and leaves every interior vertex's score unchanged. Its squared-
+score change is2(d(v)-d(u)+1). Thus G335's same-colour path argument
+makes every strong component rainbow in a global maximum: with two
+same-colour vertices, start the path at the one of lower score. The
+result preserves each class total and strictly raises Phi. The singleton
+* cannot be one of two same-colour endpoints; if it is internal its
+score is unchanged. This also gives a self-contained check of the
+rainbow fact used below.
+
+**2. Distinct components share at most one colour.** Suppose two different
+strong components K,H have both colours A and B. Their corresponding
+vertices are a,b in K and a',b' in H. Since * occurs only once, A and B
+are ordinary colours. All four endpoint vertices are distinct.
+
+Choose simple directed paths P:a->b inside K and Q:b'->a' inside H.
+Such paths exist by strong connectivity of the induced components.
+They are vertex-disjoint, so may be reversed together. The changes at
+(a,b,a',b') are(-1,+1,+1,-1), respectively. Every other score is fixed;
+each ordinary class total and q are therefore unchanged. Put
+
+    x=d(b)-d(a),                  y=d(b')-d(a').
+
+The simultaneous change of Phi is
+
+    G_plus=2(x-y+2).
+
+Strong connectivity also supplies paths b->a in K and a'->b' in H.
+Reversing those together, as a SEPARATE alternative from the original
+tournament, gives
+
+    G_minus=2(y-x+2).
+
+Both alternatives are feasible, and G_plus+G_minus=8. At least one
+gain is4 or more, contradicting global maximality. This proves the
+intersection assertion. The two alternatives are not executed in
+sequence. Intermediate appearances of A or B cause no extra score
+change, and an internal * keeps q. No equality of external offsets
+between K and H is assumed: the two differences x and y use GLOBAL
+scores and each subtraction cancels its own offset.
+
+**3. Count the remaining components.** A nontrivial tournament strong
+component has size at least3. By step1 it uses that many distinct
+colours. Two components not containing * would each contain at least3
+of the four ordinary colours; their intersection would have size at
+least2, contradicting step2. Thus there is at most one ordinary cyclic
+component, and at most one cyclic component containing *.
+
+If both exist, let their sizes be r and s. Both are at least3. Their
+palettes are subsets of the five colours, so their intersection has
+size at least r+s-5. Step2 bounds it by1. Consequently r+s<=6;
+hence r=s=3 and the intersection is exactly1. The common colour is
+ordinary, giving the displayed pair of palettes. If there is just one
+cyclic component its size is at most5 (at most4 if it avoids *).
+The claimed two-component/six-vertex bound follows.
+
+**4. Protected literal repair control.** Let M=12,q=6, each ordinary
+class have size3, and targets(A,B,C,D)=(12,22,16,22). Use singleton
+scores0,1,2 coloured A,C,D. At positions3..5 put a triangle A->B->C->A,
+each vertex with global score4. Put * as singleton score6. At positions
+7..9 put a triangle B->A->D->B, each vertex with global score8. Finish
+with singleton scores10,11,12 coloured B,C,D. All higher components
+beat all lower components. Counts and the displayed targets follow.
+All proper parent cuts hold: minimum singleton12>=T3=6; minimum pair
+28>=T6=21; minimum triple50>=T9=45; total72=T12-6.
+
+Reverse the edge A->B in the lower triangle and B->A in the upper
+triangle. Here x=y=0, so the gain is4. The resulting transitive scores
+partition into
+
+    A={0,3,9}, B={5,7,10}, C={1,4,11}, D={2,8,12}, *=6.
+
+Each target and q is unchanged. The original two cyclic triangles
+lower Phi from650 to646; the repair restores650. This directly checks
+endpoints, two unequal component offsets and the fixed distinguished
+score on an actual protected parent. The initial orientation is a
+NONmaximum, exactly as step2 requires.
+
+**5. Unexpected sharpness check outside the protected domain.** On six
+vertices use a lower triangle with colours A,C,D, all scores1, and an
+upper triangle with colours A,B,*, all scores4. Higher beats lower.
+Here M=5,q=4, counts(A,B,C,D)=(2,1,1,1), and targets(5,4,1,1).
+The two cyclic palettes share only A. This is a TRUE global Phi maximum
+for those fixed classes/totals, not merely an untested cyclic drawing.
+Indeed B,* must have score4 and C,D score1. The two A scores sum to5
+and lie in[0,5], so their unordered possibilities are(0,5),(1,4),(2,3).
+The first would make three vertices have scores0,1,1. Their total2
+cannot account for even the three internal wins of their induced
+triple; it is impossible. The remaining A square sums are17 and13,
+respectively. Our orientation has the larger, so Phi=51 is globally
+maximal. It has exactly six cyclic vertices and two components.
+
+This control violates the minsize3 parent and its protection (C,D
+together have total2<T2=3). Thus the six-vertex bound is sharp for the
+abstract prescribed-class problem; no sharpness, counterexample or
+failure of absorption in the protected parent is asserted. Eliminating
+the single shared colour requires information beyond maximality alone.
+
+**Scope and review.** The two-path lemma uses only actual independent
+path reversals, not an abstract shared-token lift. It supplies new
+universal structural simplification relative to G335, but no protected
+target-family admission or transitivity theorem. G337 is independent
+and stays HAND. One consolidated carrying packet covers that existing
+request and this short refinement. Novelty remains UNASSESSED; no
+experiment, diagnostic rerun or generated-page rebuild was performed.
+
+**Filing receipt.** proof_dupes --near W338 passes with356 entries and
+its can-fail controls. Nearest G335, W337 and W336 read in full. G335
+provides the existing path/rainbow base and weaker45 bound; W337/W336
+require a thick ordered reservoir and physically absorb cycles. G338
+instead excludes two shared colours between separate cyclic components,
+without a reservoir, and gives the universal6 bound. Original packets
+are preserved; no generated proof pages rebuilt or status upgraded.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -17937,474 +18429,3 @@ partition question remain open; this proof does not need them.
 full. Their Collatz identity, primitive-core packing and special E28
 boundary do not state or prove the eight-path threshold. No generated
 pages were built for this filing.
-
-### GPT G336 — Absorbing a distinguished triangle through one thick ordered run (GPT, 2026-10-21; waiting room, MI586–587)
-
-*Status:* complete HAND proof candidate, independent carrying read requested.
-*Where:* FOUR-BIN-PARTITIONS.md section32; GPT-MATH-INSTINCT.md MI586–587; CHAT-LEDGER.md GC1648.
-
-**Statement.** Fix four ordinary vertex colours and a distinguished
-vertex * whose score q is fixed. Scores count wins. Suppose a tournament
-has a three-vertex strong component K with colours A,B,* all distinct.
-Suppose another consecutive interval R of strong components consists
-entirely of singleton components and contains at least3 vertices of
-EACH of the four ordinary colours. Then there exists a tournament with
-the same vertices, colour classes, colour score totals and * score q,
-whose sum Phi of squared scores is larger by exactly2.
-
-Consequently a global Phi maximizer in G335 cannot have this motif.
-In particular its component containing * cannot be a triangle if one
-whole side has at least3 vertices of each ordinary colour: G335's
-contiguous replacement already makes that side entirely ordered.
-No protection cut is needed for the local improvement itself. General
-star components of size4/5 and thin/interrupted runs remain outside
-this statement. This does not prove the parent partition theorem.
-
-**1. A directed colour path detects exactly the unit rank-cut gate.**
-First take an actual partition of consecutive scores a,...,a+n-1 into
-four colours with counts r_i>=3 and sums s_i. Draw a directed edge
-D->C whenever adjacent scores x+1,x are owned by D,C respectively,
-with D different from C. For different colours B,A put
-
-    s'_i = s_i + 1_(i=A) - 1_(i=B).
-
-Claim: s' obeys all full-interval rank cuts iff A is reachable from B
-in this graph. Translation by a does not affect this assertion.
-
-For the forward direction's contrapositive, suppose A is not reachable.
-Let J be all colours reachable from B, including B itself. Then A is
-outside J and no edge leaves J. If score x+1 has colour in J, score x
-must also have colour in J. Hence J owns exactly the first r_J scores,
-so s_J=a*r_J+L(r_J). But s'_J=s_J-1 violates this lower cut.
-
-For the reverse direction, suppose B reaches A. A lower cut can fail
-under the unit change only for a colour set J containing B but not A,
-and only if its original lower cut is tight; all slacks are integers.
-A tight group owns exactly the first r_J scores, since that is the
-unique subset of its cardinality with minimum sum. No edge leaves
-such a group, contradicting the path B->A. Thus every lower cut holds.
-Total conservation gives all upper cuts by complementary groups.
-This proves the claim. This tight-prefix reachability argument is the
-old MI292 argument specialized to a prescribed unit change, not a new
-claim that graph edges can be implemented simultaneously.
-
-Now PROVED G316 applies to these SAME four counts r_i>=3 and targets
-s'_i after translation. There is an actual partition of the run's
-scores with sums s'. This is the physical lift. It uses a complete
-full-interval theorem; reachability alone would not give a partition
-for arbitrary small counts, nor a literal adjacent-swap algorithm.
-
-**2. At least one direction between two colours is reachable.**
-If a run contains A and B, choose one occurrence of each. Follow the
-consecutive scores from the higher occurrence down to the lower.
-The successive colour changes form a directed walk, hence a directed
-path after deleting loops. Its endpoints are either B,A or A,B.
-Therefore at least one of these two directed reachabilities holds.
-No connectivity of an exact-sum fibre is being assumed.
-
-**3. Straighten the triangle and repair in R.**
-A three-vertex strong tournament is a directed triangle. If b vertices
-lie below K in component order, all three vertices of K have score
-b+1. Thus q=b+1. Straightening K into a transitive triple can keep *
-in the middle with score q and give A,B scores q-1,q+1 in either order.
-
-By step2, one of the unit directions between A and B is available in
-R. If B reaches A there, step1 gives a repartition of its scores with
-A gaining1 and B losing1. Choose the triangle order with A losing1 and
-B gaining1. The opposite reachable direction uses the opposite order.
-Every ordinary colour total is restored, and * stays at q.
-
-Implement the run repartition by assigning its chosen scores to its
-vertices WITH THEIR COLOURS FIXED and orienting R transitively in that
-score order. All external edges stay unchanged: every vertex of R has
-the same external win count a, because R is a consecutive interval of
-singleton strong components. Each vertex outside R also beats all of
-R or loses to all of it. Reorient K internally in the chosen order,
-keeping its external edges unchanged. These two disjoint operations
-therefore do not alter any other score or class size.
-
-The multiset of scores on R is unchanged, so its contribution to Phi
-is unchanged. The triangle contributes
-
-    (q-1)^2+q^2+(q+1)^2 - 3*q^2 = 2.
-
-All other contributions are fixed. This proves the claimed strict
-improvement and excludes the motif in a global maximizer.
-
-**Carrying dependencies and limits.** G316 and G335 are PROVED under
-the project's two-party standard. The novel carrying application above
-is not independently verified yet. No inward count rounding, mixed
-polymatroid integer decomposition, ordinary unit-flow lifting, generic
-Markov connectivity, incomplete repair search or unreviewed central
-construction is a premise. One full consecutive ordered run is essential
-here: paths in the union of interrupted runs are not automatically
-lifted by G316. A run missing a colour or with counts1/2 is not covered
-by the four-colour application. Absence of the motif is an additional
-structural restriction, not proof of new target families or zero cycles.
-Novelty is UNASSESSED.
-
-**Hand controls (MI586 predicted; MI587 audited, no census).**
-In the word C,C,C,A,A,A,B,B,B on0..8, there is a B->A->C graph path
-but no adjacent B/C pair. The target change C+1,B-1,A fixed is realized
-by C={0,1,3}, A={2,4,6}, B={5,7,8}, with sums4,12,20. This is a
-three-colour base control, with all sizes3; G336 itself uses four colours.
-Dropping size conditions fails: word C,A,B on0,1,2 has B->A->C but
-shifted targets1,1,1 have no distinct-score realization. Thus the old
-shared-token issue has not been silently erased by reachability.
-
-A protected four-colour control has M26,q13. On0..11 use
-A={0,5,10}, B={1,6,11}, C={2,4,9}, D={3,7,8}; on15..26 use their
-translates by15. Insert K at ranks12..14 as a directed triangle with
-colours A,B,* and scores13 each. The ordinary counts are7,7,6,6 and
-targets88,94,75,81, totaling338=T26-13. Singleton cuts compare with
-28,28,21,21. Pair sums are182,163,169,169,175,156, compared respectively
-with105,91,91,91,91,78. Triple sums250,244,263,257 (omit A,B,C,D)
-compare with190,190,210,210. All14 proper protection cuts hold.
-
-Exchange ownership of scores0 and1 in the low run, giving A+1,B-1;
-straighten K with A at12, * at13, B at14. Every ordinary total is
-restored and * is unchanged. The resulting tournament is transitive,
-so this control also gives a literal partition of the protected pool.
-Unexpected check: the q constraint is preserved exactly, despite the
-core replacement and the run repair being on different rank intervals.
-
-**Filing receipt.** proof_dupes --near W336 passes with354 entries and
-its hard/advisory controls. Nearest G335, G327 and C3 read in full:
-the normal form, the carried full-interval one-size2 extension, and a
-Rule30 white-triangle identity. G336 uses the minimum3 G316 base; it
-does not restate G335's bounded-support conclusion or lower the run
-size requirement using G327. No generated pages were rebuilt.
-
-**Review consolidation, MI589.** GC1649 requests the stronger G337
-application in place of a separate G336 carrying read. The triangle
-argument remains HAND until that independent verification; no status
-is upgraded by the stronger same-worker proof.
-
-### GPT G337 — One thick ordered run absorbs every rainbow cyclic component (GPT, 2026-10-21; waiting room, MI588–589)
-
-*Status:* complete HAND proof candidate; one independent carrying read requested, replacing the narrower G336 request.
-*Where:* FOUR-BIN-PARTITIONS.md section33; GPT-MATH-INSTINCT.md MI588–589; CHAT-LEDGER.md GC1649.
-
-**Statement.** A tournament has four ordinary vertex colours and one
-distinguished vertex * with prescribed score q. Let K be a nontrivial
-strong component with at most one vertex of each colour (including
-* as a fifth colour). Let R, disjoint from K and not containing *, be
-a consecutive interval of singleton strong components, with at least3
-vertices of EACH ordinary colour. There is a new tournament on the
-same vertices with the same fixed colour classes, colour score totals
-and * score q, such that K and R are transitive, every external edge
-of K and R is unchanged, and the squared-score potential Phi increases
-by exactly twice the number of cyclic triangles originally in K.
-
-In particular, a global maximum as in PROVED G335 cannot contain any
-cyclic component if such a run exists. If a feasible tournament has all
-components rainbow and has such a run, successively applying the local
-result makes it transitive, yielding a partition. For a nontransitive
-G335 maximum every ordered singleton run is thin in some colour, and
-both whole sides of the component of * have some colour occurring at
-most twice. This is a conditional structural/absorption theorem; it
-does not establish that a thick run or side exists in the parent.
-
-**1. Quantitative cut separation inside R.** Write R's consecutive
-GLOBAL scores as a,...,a+n-1. Its fixed colour counts r_i>=3 and current
-colour sums s_i give, for every colour set J (including empty/all),
-
-    h_J = s_J - a*r_J - L(r_J) >= 0,
-    L(k)=k(k-1)/2,       h_empty=h_all=0.
-
-Modularity of sums and counts, and direct expansion of L, give
-
-    h_X+h_Y = h_(X union Y)+h_(X intersection Y)
-              + r_(X minus Y)*r_(Y minus X).
-
-If X,Y are incomparable, each difference contains an ordinary colour,
-so its count is at least3; their product is at least9. Thus two such
-sets cannot both have slack at most4. The family
-
-    C = {J : h_J<=4}
-
-is a chain under inclusion. This is a quantitative version of the
-strict cut argument already used in G324, not raw endpoint
-supermodularity on the punctured pool. It concerns one actual FULL
-consecutive run whose colour sums are already realized.
-
-**2. Any straightening has subset cost at most5.** Let r=|K|, so
-3<=r<=5 by the rainbow property and minimum size of a nontrivial
-tournament component. Denote its INTERNAL scores by d_v. For ordinary
-colour set J, put W=K intersect J, k=|W| and D_J=sum_(v in W)d_v.
-For any assignment of the distinct internal scores0,...,r-1, let
-P_J be the sum assigned to W. If 0<k<r, strong connectivity gives
-at least one outgoing edge from W to K minus W, so
-
-    D_J >= L(k)+1,
-    P_J <= U_r(k)=k(2r-k-1)/2,
-    P_J-D_J <= k(r-k)-1 <= 5.
-
-For k0 or r the difference is0. Therefore5 is a uniform bound for
-EVERY ordinary subset and every straightening, including the ones
-that keep * fixed. No cancellation or random choice is assumed.
-
-**3. One straightening minimizes ALL small-slack cuts.**
-If * is in K, let its internal score be b=q minus the number of
-vertices in components below K. Keep its assigned score equal to b
-and use the available score list
-
-    V={0,...,r-1} minus{b}
-
-for the ordinary vertices. Their current sums satisfy the actual rank
-minima of V. Indeed a k-vertex ordinary subset W has D_J>=L(k), and
-W union{*} gives D_J+b>=L(k+1). Consequently
-
-    D_J >= L(k)+max(0,k-b) = alpha_V(k).
-
-The last expression is precisely the sum of the k smallest elements
-of V. It holds also for k0 and k=r-1. If * is outside K instead,
-use V={0,...,r-1}, and D_J>=alpha_V(k)=L(k) follows from the internal
-edges of W. In this case r<=4.
-
-The colour sets in C form a chain. Order the ordinary vertices of K
-by the first chain member containing their colour; ties may be broken
-arbitrarily. Assign the elements of V increasingly in this order.
-Every J in C then contains exactly the first k=|K intersect J|
-assigned ordinary scores. Hence simultaneously
-
-    P_J=alpha_V(k)<=D_J       for EVERY J in C.
-
-Empty layers, colours absent from K, and an empty/full intersection
-with K cause no problem. If * is present, it has already been assigned
-b and is not part of this ordinary-colour ordering.
-
-**4. All repaired run cuts hold, and G316 lifts them physically.**
-Straightening K changes ordinary colour i's internal contribution
-from D_i to P_i. Give R the compensating target
-
-    s'_i=s_i+D_i-P_i,
-    h'_J=h_J+D_J-P_J.
-
-For J in C, step3 gives h'_J>=h_J>=0. For J outside C, integer slack
-means h_J>=5, and step2 gives h'_J>=h_J-5>=0. This checks EVERY lower
-run cut. Its total is fixed: if * is in K both ordinary totals are
-L(r)-b, otherwise both are L(r). Thus all complementary upper cuts
-hold as well. All targets are integers and R has the SAME four counts
-r_i>=3. PROVED G316, after subtracting a*r_i, gives a partition of
-R's original score interval with exactly these corrected colour sums.
-There is no mixed-polytope integer decomposition or path-of-swaps lift.
-
-**5. Realize the orientations and the strict gain.** Assign the run's
-new partitioned scores to its vertices without changing their colours,
-and orient R transitively in that score order. Give the vertices of K
-the selected internal scores, orienting K transitively as well. All
-external edges of K and R stay fixed. Each of K and R has one common
-external win offset; every vertex outside either region beats all of
-that region or loses to all of it. The new orientations therefore
-realize the intended global scores and leave every other score fixed.
-The opposite colour changes restore all ordinary class totals. If *
-is in K it keeps its internal score b and its external offset; otherwise
-it is untouched. Its prescribed global score q is preserved.
-
-R keeps exactly its original global score multiset, so Phi_R is fixed.
-For K, the cyclic-triangle identity gives
-
-    sum_v d_v^2 = sum_(j=0)^(r-1) j^2 - 2*tau_K.
-
-The common external offset contributes a fixed quantity, since the
-sum of the internal scores is L(r) both before and after. Thus Phi
-increases by2*tau_K>0. Nontrivial strong K contains a cyclic triangle.
-This proves the local statement.
-
-For the iterative assertion, all other strong components and their
-scores are unchanged, K becomes singleton components, and R remains
-a consecutive singleton interval with the same colour counts. Repeat
-for the finitely many other rainbow cyclic components. The final
-transitive tournament has scores0,...,M, with * still at q, giving
-the required ordinary partition. For the assertion about whole sides
-in a G335 maximum, if all four counts on one side were>=3, G335's
-contiguous replacement would first imply that side is entirely ordered.
-It would be a run R of the required kind, excluding every cyclic K.
-
-**Scope and dependencies.** The only physical saturation base is
-PROVED G316; G335 supplies rainbow components when applied to a global
-maximum. The full argument above does NOT assume unread G336. Rather,
-G336's triangle statement is a corollary. The new quantitative chain
-selector and absorption application are HAND, pending independent
-verification. No proof that a thick run exists is supplied, even with
-protected sums. Thin/interrupted runs and the general parent stay OPEN.
-There is no bound M<=45, source-policy maximality claim or larger census.
-Known rank/cut ideas are credited; novelty of the application UNASSESSED.
-
-**Hand controls (registered in MI588, checked in MI589).**
-At counts2, the block word A,A,B,B,C,C,D,D on0..7 has incomparable
-h_A=0,h_B=4. Thus a <=4 chain conclusion without the size3 assumption
-fails. At counts3, A={0,3,4},B={1,2,5},C={6,7,8},D={9,10,11} has
-h_A=4,h_B=5,h_AB=0. Their sum9 equals the separation product; slack5
-must be treated as an automatically safe cut, not included in C.
-
-For the sharp defect5, start the regular tournament on vertices0..4,
-where i beats i+1 and i+2 modulo5. Reverse0->2 and1->3. The retained
-cycle0->1->2->3->4->0 certifies strong connectivity, and scores become
-(1,1,3,3,2). Designate vertex4 as *. Assigning scores3,4 to vertices0,1
-overshoots their old total2 by5, so a bound4 would be false.
-
-A literal protected example puts that component at ranks12..16, with
-ordinary colours A,B,C,D and * internally scored1,1,3,3,2. Use the
-above twelve-score run below it and its translate by17 above it.
-Then M28,q14, counts7 each, targets(78,80,108,126), total392=T28-14.
-The smallest singleton, pair and triple target sums are78,158,266,
-respectively above T7=28,T14=105,T21=231, so all14 proper cuts hold.
-The dangerous low-run chain is A subset AB subset ABC. Assign internal
-scores A0,B1,C3,D4,*2. Corrected low-run sums are8,8,21,29, realized by
-
-    A={1,3,4}, B={0,2,6}, C={5,7,9}, D={8,10,11}.
-
-The upper run stays unchanged. Core scores become12,13,15,16,*14.
-Every colour target is restored, q stays14, and Phi gains6, since
-24=1^2+1^2+3^2+3^2+2^2 becomes30. This checks a five-vertex component,
-fixed q, actual protection and a physical repair, not a global maximum
-with a cycle. No random run or census was performed.
-
-**Filing receipt.** proof_dupes --near W337 passes with355 entries and
-its controls. Nearest W336, G335 and G327 read in full. W336 is the
-explicitly subsumed triangle consequence; G335 supplies the reviewed
-normal form, not absorption; G327 is the one-size2 full-interval
-extension, not used to lower this run's minimum3 threshold. No repeated
-claim found, no generated proof pages rebuilt. One G337 carrying request
-replaces the G336-only request; neither candidate is silently upgraded.
-
-### GPT G338 — A global maximum has at most six cyclic vertices (GPT, 2026-10-21; waiting room, MI593)
-
-**Status: COMPLETE HAND CANDIDATE, not independently verified.** This
-sharpens G335's11-component/45-vertex bound. It uses G335's carried
-orientation existence and rainbow-component fact, not G337's unread
-absorption argument, MI592's prices, or any count-admission claim.
-
-**Statement.** Fix four ordinary vertex classes and a distinguished
-singleton *, prescribing every class's total tournament score (the
-singleton's score is q). Whenever this feasible family is nonempty,
-a GLOBAL maximum of Phi=sum_v d(v)^2 has at most two nontrivial strong
-components and at most six vertices in those components. Here d(v)
-is the number of wins, and u->v means that u beats v. If there are
-two nontrivial components, both are directed triangles, one contains *,
-and their ordinary-colour sets have exactly one common colour. Up to
-renaming they have palettes {*,A,B} and {A,C,D}.
-
-In particular G335 supplies such a maximum for every protected one-hole
-four-bin parent. This remains a bound on cyclic support, NOT on M:
-singleton runs before, between and after these components are unbounded.
-There are at most three ordinary singleton runs avoiding *, also counting
-* as an extra separator if its component is a singleton. Transitivity
-and the original partition assertion remain open.
-
-**1. Path reversal and colour preservation.** If P is a simple directed
-path from u to v, reversing its arrows lowers d(u) by1, raises d(v)
-by1 and leaves every interior vertex's score unchanged. Its squared-
-score change is2(d(v)-d(u)+1). Thus G335's same-colour path argument
-makes every strong component rainbow in a global maximum: with two
-same-colour vertices, start the path at the one of lower score. The
-result preserves each class total and strictly raises Phi. The singleton
-* cannot be one of two same-colour endpoints; if it is internal its
-score is unchanged. This also gives a self-contained check of the
-rainbow fact used below.
-
-**2. Distinct components share at most one colour.** Suppose two different
-strong components K,H have both colours A and B. Their corresponding
-vertices are a,b in K and a',b' in H. Since * occurs only once, A and B
-are ordinary colours. All four endpoint vertices are distinct.
-
-Choose simple directed paths P:a->b inside K and Q:b'->a' inside H.
-Such paths exist by strong connectivity of the induced components.
-They are vertex-disjoint, so may be reversed together. The changes at
-(a,b,a',b') are(-1,+1,+1,-1), respectively. Every other score is fixed;
-each ordinary class total and q are therefore unchanged. Put
-
-    x=d(b)-d(a),                  y=d(b')-d(a').
-
-The simultaneous change of Phi is
-
-    G_plus=2(x-y+2).
-
-Strong connectivity also supplies paths b->a in K and a'->b' in H.
-Reversing those together, as a SEPARATE alternative from the original
-tournament, gives
-
-    G_minus=2(y-x+2).
-
-Both alternatives are feasible, and G_plus+G_minus=8. At least one
-gain is4 or more, contradicting global maximality. This proves the
-intersection assertion. The two alternatives are not executed in
-sequence. Intermediate appearances of A or B cause no extra score
-change, and an internal * keeps q. No equality of external offsets
-between K and H is assumed: the two differences x and y use GLOBAL
-scores and each subtraction cancels its own offset.
-
-**3. Count the remaining components.** A nontrivial tournament strong
-component has size at least3. By step1 it uses that many distinct
-colours. Two components not containing * would each contain at least3
-of the four ordinary colours; their intersection would have size at
-least2, contradicting step2. Thus there is at most one ordinary cyclic
-component, and at most one cyclic component containing *.
-
-If both exist, let their sizes be r and s. Both are at least3. Their
-palettes are subsets of the five colours, so their intersection has
-size at least r+s-5. Step2 bounds it by1. Consequently r+s<=6;
-hence r=s=3 and the intersection is exactly1. The common colour is
-ordinary, giving the displayed pair of palettes. If there is just one
-cyclic component its size is at most5 (at most4 if it avoids *).
-The claimed two-component/six-vertex bound follows.
-
-**4. Protected literal repair control.** Let M=12,q=6, each ordinary
-class have size3, and targets(A,B,C,D)=(12,22,16,22). Use singleton
-scores0,1,2 coloured A,C,D. At positions3..5 put a triangle A->B->C->A,
-each vertex with global score4. Put * as singleton score6. At positions
-7..9 put a triangle B->A->D->B, each vertex with global score8. Finish
-with singleton scores10,11,12 coloured B,C,D. All higher components
-beat all lower components. Counts and the displayed targets follow.
-All proper parent cuts hold: minimum singleton12>=T3=6; minimum pair
-28>=T6=21; minimum triple50>=T9=45; total72=T12-6.
-
-Reverse the edge A->B in the lower triangle and B->A in the upper
-triangle. Here x=y=0, so the gain is4. The resulting transitive scores
-partition into
-
-    A={0,3,9}, B={5,7,10}, C={1,4,11}, D={2,8,12}, *=6.
-
-Each target and q is unchanged. The original two cyclic triangles
-lower Phi from650 to646; the repair restores650. This directly checks
-endpoints, two unequal component offsets and the fixed distinguished
-score on an actual protected parent. The initial orientation is a
-NONmaximum, exactly as step2 requires.
-
-**5. Unexpected sharpness check outside the protected domain.** On six
-vertices use a lower triangle with colours A,C,D, all scores1, and an
-upper triangle with colours A,B,*, all scores4. Higher beats lower.
-Here M=5,q=4, counts(A,B,C,D)=(2,1,1,1), and targets(5,4,1,1).
-The two cyclic palettes share only A. This is a TRUE global Phi maximum
-for those fixed classes/totals, not merely an untested cyclic drawing.
-Indeed B,* must have score4 and C,D score1. The two A scores sum to5
-and lie in[0,5], so their unordered possibilities are(0,5),(1,4),(2,3).
-The first would make three vertices have scores0,1,1. Their total2
-cannot account for even the three internal wins of their induced
-triple; it is impossible. The remaining A square sums are17 and13,
-respectively. Our orientation has the larger, so Phi=51 is globally
-maximal. It has exactly six cyclic vertices and two components.
-
-This control violates the minsize3 parent and its protection (C,D
-together have total2<T2=3). Thus the six-vertex bound is sharp for the
-abstract prescribed-class problem; no sharpness, counterexample or
-failure of absorption in the protected parent is asserted. Eliminating
-the single shared colour requires information beyond maximality alone.
-
-**Scope and review.** The two-path lemma uses only actual independent
-path reversals, not an abstract shared-token lift. It supplies new
-universal structural simplification relative to G335, but no protected
-target-family admission or transitivity theorem. G337 is independent
-and stays HAND. One consolidated carrying packet covers that existing
-request and this short refinement. Novelty remains UNASSESSED; no
-experiment, diagnostic rerun or generated-page rebuild was performed.
-
-**Filing receipt.** proof_dupes --near W338 passes with356 entries and
-its can-fail controls. Nearest G335, W337 and W336 read in full. G335
-provides the existing path/rainbow base and weaker45 bound; W337/W336
-require a thick ordered reservoir and physically absorb cycles. G338
-instead excludes two shared colours between separate cyclic components,
-without a reservoir, and gives the universal6 bound. Original packets
-are preserved; no generated proof pages rebuilt or status upgraded.

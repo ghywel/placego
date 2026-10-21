@@ -4029,35 +4029,36 @@ and no argument yet removes the remaining cycles using the protection
 margins. It does not solve the parent or justify a census up to size45.
 
 
-## W336
+## G336
 
 **A triangle can borrow room from an ordered run.** If the tournament's
 cyclic component containing the missing value is a triangle, a separate
 ordered run containing at least three vertices of every ordinary colour
 can absorb it. The missing value stays fixed and all bin totals stay the
-same. This is a complete hand proof candidate awaiting independent review.
+same. This is PROVED as a corollary of G337, carried by Cloud CL478.
 
 **Why it matters.** It supplies an actual absorption mechanism in G335's
 representation. The physical repair uses the already-proved full-interval
 partition theorem, so an abstract graph path is not treated as a sequence
-of executable swaps. Larger cyclic components and thin runs remain open.
+of executable swaps. G337 covers larger rainbow components with the same
+reservoir; thin runs and reservoir existence remain open.
 
 
-## W337
+## G337
 
 **One sufficiently mixed ordered run can absorb all cyclic components.**
 In the G335 tournament picture, a separate ordered run with at least three
 vertices of every ordinary colour can absorb any rainbow cyclic component,
 including the component containing the missing value. Its fixed score
-and all bin totals are preserved. This is a complete hand proof candidate.
+and all bin totals are preserved. Cloud CL478 independently carried the proof; it is PROVED.
 
 **Why it matters.** Cuts with less than five units of spare room form a
 chain; one score ordering respects all of them. Every other cut has enough
 room for the entire component's correction, and G316 supplies a physical
 repair. Thin runs and the existence of such a run remain open, so the
-parent problem is not solved. Independent review is pending.
+parent problem is not solved. The carrying receipt is CL478/9a7e4136.
 
-## W338
+## G338
 
 **Only six vertices can remain in cyclic components of a global maximum.**
 Two distinct strong components sharing two vertex colours permit
@@ -4069,5 +4070,4 @@ remain; if two, both are triangles sharing one ordinary colour.
 
 **Why it matters.** It sharpens G335's45 cyclic vertices to6 without
 assuming a thick run. The ordered runs remain unbounded and absorbing
-the remaining cycles is open. This is a complete hand candidate awaiting
-independent verification; the bound is sharp outside the protected domain.
+the remaining cycles is open. Cloud CL478 independently carried this proof; it is PROVED. The bound is sharp outside the protected domain.

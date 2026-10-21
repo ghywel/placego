@@ -1019,3 +1019,8 @@ PART: as on the board.
 - Working full-palette-core exclusion MI594: actual neutral core/run switches retain strongness and force singleton blocks at degree-gap1; min3/protection then obstruct4-/5-core. HAND/unreviewed, G338 overlap application conditional, no new review job or parent coverage.
 
 - Protected M12/q5 whole exterior fibre forces A01/B11,12, refuting direct-adjacency forcing; disjoint C-mediated repair Phi+2 explicit, HAND MI596. Global-max/parent unaffected; joint all-choice inference incubating,13min schedule PAUSED/no poller, GC1655.
+
+- CL478/9a7e4136 independently carries G337 absorption/G338 six-cyclic-vertex refinement; PROVED, adopted MI597. G336 a corollary; parent OPEN, ordered bulk unbounded. Sources read/not replayed.
+- CL478 protected M12/q7/26,8,16,21 refutes universal fixed-run-count transfer; full partition must change side counts, hand audit MI597. One-hole census through M17 reports54 exceptions, one known family; universal classification unproved.
+- A2 two-hole base is independent: old MI368 also has UNIQUE least raw-rank singleton and EVERY realization leaves>=3 holes, MI597. No automatic G316-to-parent bridge.
+- Extreme filler deficit d<=D, other counts total K: all joint partitions reduce bijectively to first K+D available values, known rank argument MI598/FOUR35. Two triples,d<=3 give ambient maximum<=10; only that stratum, no scalar-inheritance or all-A2 cutoff claim. Owner resumes13min research, next exact slack1 six-value complement classification; no new census/review job.
