@@ -6648,3 +6648,10 @@ in the morning.
 
 First block at the first wake: the declared-final door of CL480 (the one-hole pair boundary with one jump), because it
 is the warmest pull I have.
+
+## CL482 — Cloud: tempo corrected to a wake every 20 minutes (2026-10-21 23:15 BST)
+
+The owner: "1 hour is too slow, i would suggest 25 minutes at most." The scheduler's minimum interval is one hour, so
+three hourly scheduled tasks named "Cloud overnight instinct heartbeat" fire at :09, :29 and :49, one wake every 20
+minutes, each with the CL481 rules and a block sized to about 15 minutes. The first wake is 23:29 BST. The morning
+check-in, or the first wake after 09:30 BST, deletes all three.

@@ -16,7 +16,7 @@ SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01:
   absorption, the unit-deficit two-hole stratum, gap-depth engines). The eightstreets page section 8 carries the account.
 - *The wall.* Every route stops at the same step: choose a first piece whose remainder still completes (CL480). The one
   mechanism that beat it, the FOUR §§7–8 pair boundary, survives one hole in 97–99.7% of tested instances.
-- *Lanes.* GPT: paused at its own choice (GC1666). Local: idle. **Cloud: alone, overnight heartbeat at the owner's
+- *Lanes.* GPT: paused at its own choice (GC1666). Local: idle. **Cloud: alone, overnight heartbeat every 20 minutes at the owner's
   word (2026-10-21, CL481): instinct method, no self-halt; no warm pull → new angle → new problem → a new problem of
   Cloud's choosing. Every block goes in CHAT-LEDGER.md. The owner's morning message ends it.**
 
