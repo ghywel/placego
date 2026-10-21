@@ -4489,3 +4489,16 @@ crossing inequalities have low-degree certificates. No SOS computation
 or parameter elimination was run; legality-pinned moment endpoints
 still need separate treatment. The tournament argument is the chosen
 bounded hand investigation, rather than an expanded endpoint catalogue.
+
+### Unit rank-gate reuse for tournament absorption (MI586–587, 2026-10-21)
+
+MI292 already gave the tight-prefix reachability argument and the
+shared-token obstruction. G336 specializes that known gate to a unit
+target shift in ONE full ordered run and explicitly uses PROVED G316
+to lift it to a physical partition. No claim that graph edges can be
+executed together is made. Reread Fink's primary draft notes
+[Polymatroid subdivision](https://webspace.maths.qmul.ac.uk/a.fink/matroid_subdivisions_Edmonds2015.pdf),
+introduction, Theorem1.1 and Example1.4 for known rank-cut/permutohedron
+context. The proof placeholder in Proposition2.2 is still not imported;
+no mixed integer-decomposition theorem is needed. The proposed star-
+triangle application is separate, HAND/unreviewed, novelty unassessed.

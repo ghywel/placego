@@ -2747,3 +2747,27 @@ cycle-absorption theorem, or novelty claim follows. The next question
 is whether the protected margins eliminate this bounded cyclic support
 using the ordered bulk. Full-fibre inheritance, arbitrary rounding,
 replicated budgets and the old capped physical swap policy are not used.
+
+
+## 32. Absorbing a distinguished triangle with one thick run (MI586–587/G336)
+
+**Complete HAND candidate, independent review pending.** The full proof
+is PROOFS.md G336. A rainbow triangle component containing * has scores
+q,q,q. It can straighten to q-1,q,q+1 in either colour order while *
+stays at q. One outside consecutive singleton run with at least3
+vertices of every ordinary colour can repair one of those two opposite
+unit changes. The run's score multiset is fixed; Phi therefore gains2.
+A global maximum cannot have that motif. A whole thick side is such
+a run by G335, so a star triangle there is excluded conditionally on
+the new candidate's independent verification.
+
+The physical lift is G316: reachability in the run's adjacent-colour
+graph means precisely that the shifted integer targets pass its rank
+cuts. It does not mean that a path's adjacent swaps can be performed
+together. MI292's old shared-token obstruction is retained, and the
+size1 C,A,B negative control shows why reachability without the size
+hypotheses fails. No two-run integer-decomposition theorem is assumed.
+
+Actual change is a new HAND absorption mechanism/maximum-motif exclusion,
+not a new protected target-family theorem. Larger special components,
+thin/interrupted runs and general parent completion remain OPEN.

@@ -4027,3 +4027,17 @@ within the project standard.
 four-bin obstruction. The ordered bulk may still be arbitrarily long,
 and no argument yet removes the remaining cycles using the protection
 margins. It does not solve the parent or justify a census up to size45.
+
+
+## W336
+
+**A triangle can borrow room from an ordered run.** If the tournament's
+cyclic component containing the missing value is a triangle, a separate
+ordered run containing at least three vertices of every ordinary colour
+can absorb it. The missing value stays fixed and all bin totals stay the
+same. This is a complete hand proof candidate awaiting independent review.
+
+**Why it matters.** It supplies an actual absorption mechanism in G335's
+representation. The physical repair uses the already-proved full-interval
+partition theorem, so an abstract graph path is not treated as a sequence
+of executable swaps. Larger cyclic components and thin runs remain open.

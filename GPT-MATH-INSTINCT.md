@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 13:35 BST: CL477 carries G335; owner resumes13-minute absorption research.**
+**CURRENT working state, 2026-10-21 13:56 BST: G336 HAND triangle absorption;13-minute research active.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -184,14 +184,20 @@ exchange mechanism and primary literature;the incubation above is history.
   score-square maximum has <=11 cyclic components/45 vertices. The
   maximum is transitive iff the parent partitions. Ordered bulk stays
   unbounded; no M<=45 reduction or new physical parent coverage.
-- **Decision/dependency.** Independent G335 review is cleared. Work on
-  absorption of the block containing *, with * fixed at q. First audit
-  the no-adjacent-swap-path -> group-extremum implication: account for
-  ALL singleton runs, other cyclic blocks and the special block's own
-  colour scores before using f_c(k)-T(c)=k(q+1-c+k)-c. This expression
-  must actually be negative for a protection contradiction. No universal
-  absorption premise or unreviewed dependent chain. Thin-side completion
-  remains open; source policy stops are not certified maxima.
+- **Absorption, MI586–587.** G336 HAND candidate: a star triangle can
+  be straightened with q fixed if one outside consecutive singleton
+  run has at least3 vertices of every ordinary colour. A reachable unit
+  target change passes its exact rank cuts, PROVED G316 gives physical
+  repartition, and opposite triangle order gains2 in Phi. One whole
+  thick side suffices by G335. GC1648 requests one carrying read.
+  This excludes a maximum motif conditionally on that unread application;
+  no new target-family/parent coverage or arbitrary path-swap algorithm.
+- **Decision/dependency.** G335/G316 are carried; G336 is earliest new
+  unread application. Study the all-choice rank-cut criterion for
+  straightening larger special components without assuming G336. Other
+  cyclic blocks/thin runs remain. The multi-run no-path -> global-f_c
+  inference is still open; the one-run argument bypassed it. Do not
+  assume its sign or combine interrupted runs as one full interval.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -199,7 +205,7 @@ exchange mechanism and primary literature;the incubation above is history.
   merely by this evidence. L8 remains solved and held prize lanes held.
 - **Rhythm.** Owner resumes the13-minute research heartbeat; prompt
   updated for absorption. Older15-minute schedule stays PAUSED; no
-  separate poller. Latest trajectory MI58513:35 BST, no repeated-failure
+  separate poller. Latest trajectory MI58713:56 BST, no repeated-failure
   allowance renewed. Publish substantive checkpoints, routine work quiet.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
@@ -39843,3 +39849,102 @@ E2; the parser caught the missing G335 unit, placement was corrected,
 and proof-dupes passes with353 entries and no repeats. Its nearest
 G191/G330/G195 were read at the original filing; no statement changed.
 Live/archive ledger, privacy, conflict and whitespace checks pass.
+
+### MI586 — Hand audit plan: a thick run can replace literal path lifting (2026-10-21 13:54 BST)
+
+Parent unchanged: protected one-hole four-bin partition. Question:
+can a score-square maximizer contain a triangle component with * if
+one outside consecutive singleton run has at least3 vertices of each
+ordinary colour? This would remove one genuine residual component
+shape in that domain, not supply universal absorption.
+
+Record searched: unit.neigh/unit.transfer/adjacent.swap/triangle AND
+colour/color/tournament/bin ->103 hits/42 files, many unrelated. Read
+MI292's shared-token obstruction, MI321's existence/connectivity guard,
+PRIOR-ART's full-run two-colour lattice and Fink-source scope, G316's
+exact14-cut theorem. The carrying base is PROVED G316, not a new
+integer-hull inference or unread mixed-decomposition theorem. Known
+rank-cut/target-exchange geometry remains prior art; the triangle
+application is the proposed new consequence. No novelty claim.
+
+The hand argument suggests a prediction BEFORE its literal controls:
+for a full-run colouring, an adjacent-colour graph path B->A should
+mean the shifted target s+e_A-e_B obeys every rank cut. G316 then gives
+some recolouring if all four run counts>=3. It need not give a literal
+sequence realizing those unit edges. A run containing A and B should
+allow at least one direction, since descending through its consecutive
+scores supplies a directed colour walk. A triangle with * has both
+other scores q and straightens to q-1,q+1 while * stays q, so choosing
+the opposite direction should preserve global totals and raise Phi by2.
+
+Can-fail control: in the size1 word C,A,B on0,1,2, graph reachability
+B->A->C exists, but targets1,1,1 cannot be a permutation. Thus lifting
+without the size hypothesis must FAIL. Positive indirect-path control:
+C012,A345,B678, shift C+1/B-1 with A fixed; seek a literal new partition.
+Unexpected check: embed a triangle of colours A,B,* above a balanced
+0..11 run and below its translate by15, with * at13. Check every
+protected parent cut, a literal opposite-unit repair and unchanged q.
+Stop after a full proof or one carrying failure; no random search,
+experiment, claim of complete adjacent-swap dynamics, or automatic
+extension to four-/five-vertex strong components.
+
+### MI587 — A first absorption mechanism: distinguished triangles (2026-10-21 13:56 BST)
+
+**Complete HAND candidate G336, not independently verified.** The first
+all-run-extremum niggle can be bypassed in one useful domain. A full
+ordered run already has all its cuts; after a unit B->A target change,
+a failed lower cut would have to be an originally tight prefix group
+containing B but not A. Such a prefix blocks graph reachability. Thus
+reachability is exactly the unit RANK gate. PROVED G316 supplies the
+physical recolouring of that same run when all four counts>=3. This
+uses a carried saturation theorem, not simultaneous execution of a
+shared-token path or a mixed two-run integer decomposition.
+
+A run containing A and B always has reachability in at least one
+direction: descend the consecutive scores between chosen occurrences.
+A triangle strong component containing * has all three scores q and
+can straighten with * still at q, the other colours at q-1,q+1 in
+EITHER order. Choose the opposite order to the available run transfer.
+The run's score multiset is fixed and the triangle raises Phi by2.
+All colour totals, counts and the distinguished score are preserved.
+Therefore a global maximum cannot have a star triangle plus an outside
+consecutive ordered run with at least3 of every ordinary colour. By
+G335, either whole side is such a run when its four counts are>=3.
+The full carrying argument is PROOFS G336/FOUR32. It assumes neither
+protection nor a count choice for the local improvement.
+
+**MI586 hand controls all pass.** The indirect B->A->C example has
+C013/A246/B578 with sums4,12,20, matching the predicted unit repair;
+there was no original adjacent B/C pair. The size1 control genuinely
+fails: three targets1 cannot be three distinct scores0,1,2 even though
+all rank cuts pass and the graph path exists. Unexpected fixed-q check:
+M26,q13,c=(7,7,6,6),t=(88,94,75,81) is protected. PROOFS lists all14
+cuts explicitly. A low-run0/1 ownership exchange gives A+1,B-1 and
+core scores12,13,14 give A-1,B+1 while * remains13. Each bin total is
+restored, and Phi gains exactly2. No random run or census was performed.
+
+**What changed.** New HAND structural exclusion of one maximum motif;
+no new protected target-family coverage, full absorption or parent
+proof. The protected control has a literal partition, not an asserted
+maximizer with a cycle. Larger special components and thin/interrupted
+runs remain open. Earliest unreviewed dependency is G336's application;
+G316/G335 are already carried. One focused read is worthwhile for this
+first actual absorption mechanism; no dependent chain is opened.
+
+The complete no-path-to-global-f_c inference for several runs has not
+been proved or refuted. It was unnecessary in this one-run argument.
+This is a changed decision: use an already-proved physical saturation
+base to lift the unit rank gate, instead of trying to rescue literal
+path swaps. It does not erase MI292's shared-token failure.
+
+Next discriminating question: formulate ALL candidate straightenings
+of a4-/5-vertex special component against one run's exact fourteen
+rank cuts. Does at least one preserve those cuts under identifiable
+parent protection, or does a cut give an explicit obstruction? First
+derive the simultaneous criterion by hand, not a repair catalogue or
+new census. This question can be studied from PROVED G335/G316 without
+assuming the unread G336 application. Stop this block at its complete
+reviewable proof. Gut: warmer because the representation now removes
+an actual cycle; reasoned: useful partial mechanism with clear bounds.
+The13-minute heartbeat continues; no repeated-assumption failure or
+renewable extra block is invoked.

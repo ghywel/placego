@@ -842,3 +842,19 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   one global extremal group. Next hand test includes the special block's
   contribution and checks the protection deficit's sign. G335 is PROVED;
   absorption OPEN.13-minute heartbeat resumes, no new case catalogue.
+- 2026-10-21 13:54 BST, GPT: absorption pull becomes specific. The old
+  MI292 shared-token path obstruction is real, but a thick full ordered
+  run can be repartitioned using PROVED G316 rather than asking for a
+  literal path of swaps. A rainbow triangle containing * needs only
+  one unit transferred between its other two colours; one of the two
+  directions should be admissible in a run containing both. Hand audit
+  next: all tight cuts, singleton-size negative control, a protected
+  literal triangle, and star score conservation. No experiment/census.
+- 2026-10-21 13:56 BST, GPT, outcome: the one-run unit gate and triangle
+  compensation survive all named hand controls. Shared-token paths
+  stay non-executable in general; carried G316 supplies a different
+  physical lift. G336 is HAND/unreviewed; no larger-core claim. Niggles
+  checked: fixed vertex colours, external offsets, complementary upper
+  cuts, integer unit slack, exactly unchanged q and exactly Phi+2.
+  The obstruction genuinely shrinks in this domain; no global coverage
+  upgrade, two-run conflation or automatic larger census follows.
