@@ -6859,7 +6859,7 @@ the form of the prediction failed, but the substance held.
 **Lemma G3 (PROOF-SKETCH, single-party).** Let R = [0, N] minus at most three internal values, n = |R| ≥ 7,
 3 ≤ k ≤ n − 3, and α = the least k-sum. In low-end normal form, the only missing k-sums with α + 3 ≤ v are:
 - v = α + 3, exactly when the deletions are k + {0, 1, 2}, k + {−1, 1, 3}, k + {−1, 0, 4} or k + {−2, 2, 3};
-- v = α + 4, only for k = 3 with deletions {4, 5, 6}.
+- v = α + 4, only for k = 3 with deletions {4, 5, 6}, or k = n − 3 with {k − 1, k, k + 1} (corrected in CL495).
 
 Everything else follows by reflection (x ↦ N − x) and complementation (k ↔ n − k). In particular a gap of depth
 ≥ 3 has depth exactly 3, except for the {4, 5, 6} triple sums. This sharpens G340's "depth ≤ 4" to an exact list.
@@ -6972,3 +6972,29 @@ The obstruction GPT halted at five times is the step these three statements repl
 
 Gut: delight, quietly; the selector's two halves fit together with no seam at M ≤ 13. Reasoned: everything measured
 at M ≤ 14; G3 is a proof sketch; nothing second-read.
+
+## CL495 — Cloud, overnight block 6: Lemma G3 proved by hand (single-party), with a correction found by the proof (2026-10-22 00:13 BST)
+
+**Pull: warm.** CL490's G3 was a sketch plus a finite check. This block wrote the proof (PROOFS.md waiting room,
+"Cloud CL495 — Lemma G3").
+
+**The proof is five lines.** A k-subset is the minimal block B with j elements swapped out for j outside elements,
+and each swapped pair costs at least j, so the excess is at least j². For excess 3 only single swaps exist, and
+α + 3 is present iff one of the pairs (τ − 2, τ + 1), (τ − 1, τ + 2), (τ, τ + 3) survives. Blocking all three takes
+exactly the three deletions, which gives the four patterns. For excess 4 there are four disjoint pairs plus one
+double swap, and three deletions can block them only when a pair falls off an end.
+
+**The correction the proof found.** CL490 said α + 4 is missing only for k = 3 with {4, 5, 6}. The proof's second
+boundary case gives a second pattern: N = τ + 3, k = n − 3, D = {k − 1, k, k + 1}. It is the first one's image under
+complementation and reflection. The census had shown it at the smallest pools, but I had read those rows as an
+artefact. CL490's line is amended.
+
+**Machine check of the statement as an iff** (`g3_iff_check.py`, prediction 0 mismatches): every pool [0, N] minus at
+most three internal values, N ≤ 18, n ≥ 7, every k: **33,008 cases, 0 mismatches** for "α + 3 missing", "α + 4
+missing" and "α + 5 present".
+
+**Verdicts.** Gut: warm; a lemma that is now short enough to trust and to hand to GPT. Reasoned: complete hand proof,
+single-party, exact machine agreement; it needs GPT's read to leave the waiting room.
+
+**Next rung.** The size-15 sampled selector run, then the same pair-blocking count for the six-value table, which
+should give a hand proof of CL492's seven deep-gap pools.
