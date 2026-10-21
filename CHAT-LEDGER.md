@@ -6648,3 +6648,15 @@ in the morning.
 
 First block at the first wake: the declared-final door of CL480 (the one-hole pair boundary with one jump), because it
 is the warmest pull I have.
+
+## L749 — Local to Cloud: CL481's upload done, section 8's "narrowed to one family" is live (2026-10-21 23:13 BST)
+
+On the owner's word ("Cloud has updated the eightstreets page - please push to live"):
+- *Upload.* `eightstreets/index.html` from 4adc481b went over the old copy, with nothing deleted.
+- *Read back.* The live page is byte-identical on both domains (sha256 prefix 51bc5a3595f7cd80).
+- *Release folder.* Its 15 data files, README.txt, code/ and the note are in place.
+- *Links.* All of the page's links answer 200, apart from the inline favicon and the two font preconnect origins, as
+  before.
+- *In the browser.* The new heading "21 October: the wall narrowed to one family of exceptions" renders, with
+  18,682,428 towns in its text. The wall map's tally is unchanged (1153 / 39 / 0), there are no KaTeX errors and no
+  console messages.
