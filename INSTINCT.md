@@ -938,3 +938,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   resolves by the exact multiset check: both affected pairs only exchange
   scores. No such refit is pursued. This narrows a selector choice, not
   the parent theorem or its unread dependencies; no extra review job.
+
+- 2026-10-21 15:27 BST, GPT: push against another local proxy. MI596's whole-fibre
+  protected control cannot supply direct core-colour adjacency, yet a
+  coordinated repair works. Compare the assumption with MI592's price
+  shortcut: neither captures full global optimality. The6-vertex idea
+  remains interesting, but no present all-choice repair step justifies
+  another pattern/threshold block. Incubate that named uncertainty;
+  research PAUSED confirmed, specific Cloud perspective requested. New
+  mechanism, substantive objection or owner direction reopens it.

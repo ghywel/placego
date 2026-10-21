@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 15:04 BST: G337/G338 review pending; MI594 working neutral closure.**
+**CURRENT working state, 2026-10-21 15:27 BST: incubation at the all-choice balanced reversal; research PAUSED.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -247,15 +247,28 @@ exchange mechanism and primary literature;the incubation above is history.
   breakers cannot choose their direction. Per-colour objectives remain
   a separate unproved option. No potential refit, smaller-core repair
   tree, new theorem or review job; the unread dependencies remain.
+- **Current guard/incubation, MI596.** Protected M12/q5/c3333/t=(6,28,19,20)
+  forces exterior A01 and B11,12 in EVERY unchanged-target fibre, so
+  no direct A/B adjacency exists. Two disjoint swaps through C plus
+  the core path nevertheless absorb the triangle with Phi+2. The
+  single-edge shortcut is REFUTED; the initial orientation is NONmaximal,
+  not a parent or global-maximizer counterexample. Compare this with
+  MI592's price proxy: both omit coordinated changes. No proxy repair,
+  smaller-core catalogue or larger census. Named uncertainty: an actual
+  all-choice balanced-reversal/cut mechanism under protection across
+  interrupted runs. GC1655 seeks Cloud's perspective; current carrying
+  packet unchanged. Reopen on a concrete mechanism, substantive proof
+  objection changing the reduction, or direct owner direction.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
   No larger run, old count repairs or endpoint catalogue is authorized
   merely by this evidence. L8 remains solved and held prize lanes held.
-- **Rhythm.** Owner resumes the13-minute research heartbeat; prompt
-  updated for absorption. Older15-minute schedule stays PAUSED; no
-  separate poller. Latest trajectory MI59114:28 BST, no repeated-failure
-  allowance renewed. Publish substantive checkpoints, routine work quiet.
+- **Rhythm.** Research schedule PAUSED (tool-confirmed) for MI596's
+  named mathematical uncertainty; retained cadence13min. Older schedule
+  stays PAUSED; no separate poller or unattended work. Latest trajectory
+  MI596 at 2026-10-21 15:27 BST; no renewed extra-block allowance. Proof-review receipts
+  are not absorption results; all candidate statuses remain unchanged.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -40619,3 +40632,90 @@ The current G337/G338 carrying packet is unchanged. Broad literature
 queries gave mainly irrelevant sports/arc-coloured results and supplied
 no applicable theorem; this is not evidence of absence. No new source
 result is imported. This audit does not reset MI591's trajectory clock.
+
+
+### MI596 — Whole-fibre adjacency is still too narrow; incubate the joint inference (2026-10-21 15:27 BST)
+
+**HAND shortcut refutation/control, not a new theorem or review job.**
+The protected parent and absorption remain OPEN. G335 is PROVED;
+G337/G338 remain HAND pending their unchanged consolidated carrying read.
+MI594's full-palette application remains unverified and conditional.
+
+Continue the all-choice selector question, rather than a smaller-core
+repair catalogue. Test the stronger shortcut: parent protection forces
+some unchanged-target exterior recolouring with an adjacent pair of the
+two ordinary colours of a special triangle. Can-fail control: make the
+exterior pairs of these two colours uniquely forced far apart, while
+retaining all protection cuts. Independent checks: exact pair minima/
+maxima, all14 parent cuts, and a literal full repair. Unexpected check:
+permit two disjoint swaps through a THIRD colour across different runs.
+No experiment or census was run; this is a hand control.
+
+Record searched: adjacent|direct.edge|one.edge AND fibre|fiber|repair AND
+triangle|tournament|core ->10 hits/5 files. G336/MI587 already shows that
+a direct adjacency is not necessary for a unit correction. The fixture
+below strengthens the unchanged-fibre guard within the actual protected
+parent; it is the SAME failed single-edge-completeness assumption, not
+a new route because the examples or runs differ. No novelty claim.
+
+Take M12,q5,c=(3,3,3,3), t=(6,28,19,20). Low singleton scores0..3 have
+colours A,A,C,D. The special triangle occupies ranks4..6, has colours
+A,B,* and scores5, with cycle A->*->B->A. High singleton scores7..12
+have colours C,D,D,C,B,B. This realizes the displayed class totals.
+All proper protection cuts hold: minimum singleton6=T3; minimum pair
+25>=T6=21; minimum triple45=T9; total73=T12-5.
+
+Fix that core and ANY exterior recolouring preserving the outside
+counts and targets. A has two exterior vertices totaling1, forcing
+A={0,1}; B's two exterior vertices total23, forcing B={11,12}, the
+unique maximum pair in the exterior pool {0,1,2,3,7,8,9,10,11,12}.
+Thus NO such exterior fibre choice can create an adjacent A/B pair
+in either actual singleton run. This is a quantifier over the WHOLE
+unchanged-target exterior fibre, not a failed canonical colouring.
+
+Nevertheless the triangle absorbs by a genuine balanced reversal.
+Reverse the lower run edge C2->A1 and upper run edge B11->C10, and
+reverse the core path A->*->B. The two run edges use different C vertices
+and all pieces are vertex-disjoint except for the two edges of the
+single core path. A's exterior gains1, B's loses1, C's total is fixed;
+the core changes A-1,B+1 and leaves * fixed. The resulting partition is
+
+    A={0,2,4}, B={6,10,12}, C={1,7,11}, D={3,8,9}, *=5.
+
+All totals are restored. The exterior score multiset stays fixed and
+Phi rises2, from648 to650. This orientation is explicitly NONmaximal;
+it is NOT a counterexample to any theorem assuming a genuine global
+maximum. Nor does this one disjoint path justify arbitrary shared-token
+path lifting. The failure is the proposed direct-adjacency forcing
+shortcut; the needed all-choice balanced transfer can be nonlocal.
+
+**Trajectory check (early, common inference rather than labels).**
+Parent: still no uniform protected target-family coverage from the new
+orientation work; G338 supplies a useful universal HAND core reduction.
+Actual change: the whole-fibre single-edge shortcut fails even though
+a coordinated repair exists. MI592's protected zero-price NONmaximum
+and this protected no-adjacency NONmaximum both reject substituting a
+partial optimality proxy for the required full coordinated obstruction.
+Their mathematical proxies differ, but both omit balanced multi-vertex
+changes. Another local proxy or a lower reservoir threshold would not
+answer that inference. Do not renew a pull block by renaming the move.
+Dependency risk: G338's paired paths and G337's chain selector remain
+unread; MI594 also remains a working application. Independent review
+is necessary, but a routine receipt alone will not bridge absorption.
+
+Decision: deliberate incubation at the EXACT joint inference. I do not
+currently see an all-choice argument turning the actual protection
+inequalities into a valid balanced reversal across interrupted runs.
+More word patterns, potential refits or confirming trials would add a
+catalogue without that mechanism. Ask Cloud the specific mathematical
+question at GC1655, retain the existing carrying packet, and pause the
+research schedule under the owner's named-uncertainty allowance.
+Reopen on a concrete all-choice repair/cut mechanism, a substantive
+objection that changes the reduction, or the owner's direct direction.
+There is no claim that this is an immovable mathematical barrier.
+
+Schedule tool confirms PAUSED. The retained cadence is13 minutes, the
+older schedule remains PAUSED and there is no separate flag poller.
+Thus no unattended research or flag polling continues during incubation.
+Gut: the6-vertex idea remains interesting; the next leap currently has
+no honest discriminating proof step. Bank that distinction and stop.

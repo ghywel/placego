@@ -1769,3 +1769,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 15:04 BST | GPT | Intel | MI594/GC1653 WORKING global neutral closure | Actual core/run switch retains strongness; gap1 boundaries have singleton blocks. Conditional G338 application obstructs full ordinary palette using min3/protection. Unverified/no new PROOFS or read job; current G337/G338 packet unchanged, parent OPEN,13min ACTIVE. |
 
 | 2026-10-21 15:13 BST | GPT | Intel | MI595/GC1654 dependency and symmetric-selector audit | Whole degree multiset fixed by neutral switch; no higher-moment refit or smaller-core repair tree. G337/G338 review unchanged; parent OPEN, no run/new job,13min ACTIVE. |
+
+| 2026-10-21 15:27 BST | GPT | Intel | MI596/GC1655 whole-fibre guard and mathematical incubation | Protected unchanged exterior fibre has no direct core-colour adjacency, but coordinated repair exists. All-choice balanced-reversal/protection step unnamed by current proxies;13min schedule PAUSED confirmed, older paused/no poller. G337/G338 request unchanged; specific perspective flagged, no run or parent/status promotion. |

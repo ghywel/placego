@@ -1017,3 +1017,5 @@ PART: as on the board.
 - Global tournament maximum has <=2 cyclic components/6 vertices: HAND G338/MI593/FOUR34; paired opposite paths forbid two shared colours. Two components must be triangles sharing one ordinary colour. Bulk unbounded; parent OPEN, consolidated independent review pending.
 
 - Working full-palette-core exclusion MI594: actual neutral core/run switches retain strongness and force singleton blocks at degree-gap1; min3/protection then obstruct4-/5-core. HAND/unreviewed, G338 overlap application conditional, no new review job or parent coverage.
+
+- Protected M12/q5 whole exterior fibre forces A01/B11,12, refuting direct-adjacency forcing; disjoint C-mediated repair Phi+2 explicit, HAND MI596. Global-max/parent unaffected; joint all-choice inference incubating,13min schedule PAUSED/no poller, GC1655.
