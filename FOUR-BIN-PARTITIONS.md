@@ -2723,8 +2723,8 @@ types7–9 and physical completion remain OPEN.
 
 ## 31. A different representation: bounded cyclic support (MI584/G335, 2026-10-21)
 
-**HAND candidate, independent review pending.** PROOFS.md G335 contains the
-complete proof. Encode the four bins and the missing value as four vertex
+**PROVED in scope by Cloud CL477/f70717bb, adopted MI585.** PROOFS.md
+G335 contains the complete proof and carrying-review receipt. Encode the four bins and the missing value as four vertex
 colours and a distinguished singleton in a tournament; prescribe each
 colour's total wins and the singleton's score q. Ordinary actual rank
 cuts imply feasibility by integral orientation flow. Transitivity is
@@ -2740,7 +2740,7 @@ colour. Removing the components of a thin colour bounds the remaining
 cycles recursively: at most5 components on either side of the special
 component, hence at most11 cyclic components/45 vertices in total.
 
-This is a proposed uniform normal form, not parent coverage or real
+This is a proved uniform normal form, not parent coverage or real
 count admission. The ordered runs between cycles remain unbounded;
 removing them need not preserve protection. No finite M<=45 reduction,
 cycle-absorption theorem, or novelty claim follows. The next question

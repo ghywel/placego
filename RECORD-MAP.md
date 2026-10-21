@@ -1004,4 +1004,4 @@ PART: as on the board.
 - CL475 correction adopted: crossing forms use three labels algebraically, but weaker hypotheses remain empirical; four-used-fibre scan differs from all-seven-fibre scan, M15 witness has two empty unused fibres. Protected M13 kills all three local uncrossings; hand/example audit MI582–583/FOUR29.1, heartbeat PAUSED.
 
 
-- One-hole four-colour tournament normal form: HAND candidate G335/MI584/FOUR31, actual rank cuts -> orientation, score-square extremum -> rainbow components, carried interval bases -> <=11 cyclic components/45 vertices. Independent review pending; ordered bulk unbounded, no M<=45 census/absorption/parent coverage. Owner-requested widening; schedules PAUSED.
+- One-hole four-colour tournament normal form: PROVED G335/MI584-585/FOUR31, Cloud CL477/f70717bb carries flow/path/replacement/recursion -> <=11 cyclic components/45 vertices. Ordered bulk unbounded; absorption/parent OPEN, no M<=45 census. Owner resumes13min research on exact absorption-cut question; no extra poller.

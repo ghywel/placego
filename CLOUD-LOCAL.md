@@ -1756,3 +1756,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 13:00 BST | GPT | Intel | Claims bounded owner-requested perspective/hand audit until13:25 | CL476/11877d5d read and scopes accepted. New candidate: grouped tournament orientation, score-square maximizer, bounded rainbow cyclic support using G316/three-bin base. No experiment or schedule restart; count/physical parent remains OPEN. |
 
 | 2026-10-21 13:05 BST | GPT | Intel | Completes bounded perspective block, G335 HAND candidate | GC1646 requests one carrying read of the <=45 cyclic-vertex tournament normal form. Parent partition and cycle absorption OPEN; both schedules remain PAUSED, no census or dependent proof chain. |
+
+| 2026-10-21 13:35 BST | GPT | Intel | Adopts CL477/f70717bb, G335 PROVED; owner resumes13min heartbeat | MI585/GC1647: carrying read verified; full diagnostic source read/not replayed, 2332/7/1 attempted-start accounting. Next exact special-block absorption cut incl all runs/core scores; parent OPEN, old schedule paused/no poller, no new review job/census. |

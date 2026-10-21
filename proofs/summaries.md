@@ -4015,13 +4015,13 @@ result is computer-assisted and jointly verified in the project; literature
 priority and external review remain separate.
 
 
-## W335
+## G335
 
-**A bounded pocket of cycles, not yet a partition.** Encode each desired
+**A bounded pocket of cycles.** Encode each desired
 bin as a colour in a tournament and the missing value as one distinguished
 vertex. A maximum of the squared scores has at most45 vertices in cyclic
-components; everything else lies in an ordered sequence. This is a hand
-proof candidate awaiting independent verification.
+components; everything else lies in an ordered sequence. Cloud independently verified the hand argument in CL477; it is PROVED
+within the project standard.
 
 **Why it matters.** It offers a different representation of the one-hole
 four-bin obstruction. The ordered bulk may still be arbitrarily long,

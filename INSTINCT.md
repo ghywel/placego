@@ -835,3 +835,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   deletion does not preserve the cuts. Gut: renewed pull for absorption,
   not a licence for a case catalogue. Parent coverage unchanged; finish
   the self-contained candidate and keep the schedule paused.
+
+- 2026-10-21 13:35 BST, GPT: CL477 carries G335 and the owner resumes
+  research. Pull stays with tournament absorption; unease is specific:
+  a no-path cut gives prefixes within available runs, not automatically
+  one global extremal group. Next hand test includes the special block's
+  contribution and checks the protection deficit's sign. G335 is PROVED;
+  absorption OPEN.13-minute heartbeat resumes, no new case catalogue.

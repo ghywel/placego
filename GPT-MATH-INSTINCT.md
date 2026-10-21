@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 13:05 BST: owner-requested widening; G335 tournament candidate, schedules paused.**
+**CURRENT working state, 2026-10-21 13:35 BST: CL477 carries G335; owner resumes13-minute absorption research.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -179,23 +179,28 @@ exchange mechanism and primary literature;the incubation above is history.
   rows and a literal fractional assignment. P={0,1,2,4,5,6}, two copies,
   targets3/7/13/13: integer count maxima total5<6. Outside the one-copy
   protected parent; not a crossing or parent counterexample.
-- **New representation, MI584.** Owner requested widening after CL476.
-  G335 is a complete HAND candidate: actual one-hole rank cuts imply
-  a tournament with the prescribed four colour totals and singleton
-  score q, whose score-square maximum has at most11 cyclic components/
-  45 vertices. The rest is ordered. Full proof in PROOFS.md; FOUR31.
-  Independent review pending; no new physical parent coverage.
-- **Decision/dependency.** The global orientation invariant is a fresh
-  pull. Earliest unreviewed step is G335, using only carried G316 and
-  the three-bin interval base. No dependent absorption theorem begun.
-  The unresolved question is whether protection eliminates those cycles
-  using the ordered bulk. Bulk length is unbounded: no M<=45 reduction.
-  Old replica/endpoint/rounding repairs remain parked. CL476's observed
-  boundary concentration remains slice evidence, not a theorem.
-- **Rhythm.** Both mathematics schedules remain PAUSED, no separate
-  poller/background run. Owner-authorized hand block recorded MI584;
-  last trajectory13:05 BST. Publish one focused candidate read for
-  Cloud, without restarting automated research or another case catalogue.
+- **New representation, MI584-585.** G335 PROVED by Cloud CL477/f70717bb:
+  actual one-hole rank cuts imply a prescribed-colour tournament whose
+  score-square maximum has <=11 cyclic components/45 vertices. The
+  maximum is transitive iff the parent partitions. Ordered bulk stays
+  unbounded; no M<=45 reduction or new physical parent coverage.
+- **Decision/dependency.** Independent G335 review is cleared. Work on
+  absorption of the block containing *, with * fixed at q. First audit
+  the no-adjacent-swap-path -> group-extremum implication: account for
+  ALL singleton runs, other cyclic blocks and the special block's own
+  colour scores before using f_c(k)-T(c)=k(q+1-c+k)-c. This expression
+  must actually be negative for a protection contradiction. No universal
+  absorption premise or unreviewed dependent chain. Thin-side completion
+  remains open; source policy stops are not certified maxima.
+- **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
+  7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
+  checks the triangle identity and SCC description, not the full bound.
+  No larger run, old count repairs or endpoint catalogue is authorized
+  merely by this evidence. L8 remains solved and held prize lanes held.
+- **Rhythm.** Owner resumes the13-minute research heartbeat; prompt
+  updated for absorption. Older15-minute schedule stays PAUSED; no
+  separate poller. Latest trajectory MI58513:35 BST, no repeated-failure
+  allowance renewed. Publish substantive checkpoints, routine work quiet.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39756,3 +39761,85 @@ of it. Stop this bounded hand block at its complete reviewable argument.
 The13-minute heartbeat and older mathematics schedule stay PAUSED;
 no background poller. Gut: real surprise and renewed pull, tempered by
 the distinction between concentrating an obstruction and removing it.
+
+### MI585 — Adopt CL477's carrying read; resume on absorption (2026-10-21 13:35 BST)
+
+Owner requests catch-up and continuation of the heartbeat. Fetched once,
+fast-forwarded to f70717bb, verified CL477 and the committed instrument
+blob9499aba4df82c7e37dfb4f7c787fc553055e3925; source SHA256
+2258ebad2493703b1de2b2b1212f83fedac1b18d4c99b811a37692d0a1e90d76.
+Read the entire instrument, not rerun. Cloud's explicit hand read carries
+flow lift, path reversal, contiguous replacement and thin-colour recursion.
+G335 is now PROVED in its stated scope under project standards. The
+<=11 components/45 vertices conclusion and no-small-M guard stand.
+Novelty remains UNASSESSED. This closes the G335 review dependency.
+
+Startup wall/merge checks both print ALL CHECKS PASS; the merge probe's
+historical blind predictions marked REFUTED remain refuted. Read NOW,
+RECORD-MAP, method/CURRENT and latest ledger messages. The private HTTPS
+store checkpoint verifies the incoming f70717bb flag and Cloud's ACK of
+our5ff04c1f request; credentials private, TLS verified, no auth failure.
+
+**Source scopes.** Part A actually checks only the squared-score/triangle
+identity and Landau tight-prefix/SCC correspondence on3,000 random
+uncoloured tournaments; its broader opening description is not extra
+executed verification of the coloured bound. Cloud's carrying HAND read
+is what verifies that bound. Part B reports2,332 transitive outcomes,
+7 policy stops and1 failed start out of2,340 attempted starts. None is
+an example of a certified global maximum with cycles. The2,332 witnesses
+are a reported finite diagnostic, not uniform absorption. No replay or
+larger run is requested. The score potential is globally constant minus
+2 times the cyclic-triangle count: a partition exists exactly when its
+maximum reaches the transitive value. This is an exact reformulation;
+the maximum's value is not supplied by G335.
+
+**Decision and next question.** Adopt the change of door, retain the
+protected one-hole four-bin parent, and focus on the block containing *.
+Straightening that block changes ordinary colour totals by a small
+vector. Can ordered-run colour swaps repair that vector while * stays
+at q? The first bounded hand task must inspect the proposed no-path cut
+certificate, before claiming the protection gives a contradiction.
+Record searched: adjacent.swap/reachable.colour/tournament/permutohedron
+with absorp/cut/segment ->17 hits in8 files, including the old full-run
+lattice fact and the new G335 packet. No absence or novelty inference.
+
+The specific niggle is the passage from prefixes in EACH accessible
+singleton run to the extremum of ONE global group. Other cyclic blocks
+can separate runs; the special block itself also contributes scores and
+colours. A reachability obstruction need not put the whole group at
+f_c(k). Cloud's displayed identity is exact:
+
+    f_c(k)-T(c) = k(q+1-c+k)-c.
+
+But the right side can be nonnegative. Protection bites only after an
+actual blocked configuration yields the required negative bound. The
+next wake should derive the group's exact contribution, including the
+special block and every run, or give a hand countercontrol to that
+inference. One-step reachability and a complete repair sequence must
+also stay distinct because swaps change the available edges. This is
+a question and guard, not a refutation of Cloud's suggestion or a new
+lemma. No absorption experiment or dependent theorem is opened here.
+
+**Trajectory.** Parent coverage remains unchanged; the normal form has
+now survived independent review. No unreviewed dependency in the next
+G335-based argument. Missing inference is protected cycle elimination;
+ordered bulk unbounded, and thin sides remain. This resumption is
+supported by the carried representation and a concrete discriminating
+question, not renewed allowance for the old count/endpoint tree. Gut:
+renewed pull, with unease aimed at the global-extremum implication.
+Reasoned: test that implication before extending the mechanism.
+
+Owner-authorized13-minute research heartbeat resumes with an updated
+prompt. The older15-minute automation stays paused; no separate five-
+minute poller. Quiet on unchanged/nonactionable state; notify substantive
+findings/failures/direction changes or needed input. No routine review
+halt; keep the90-minute/two-same-assumption brake and named incubation
+option. Actual app status is checked as part of this restart.
+
+Restart receipt: app reports ACTIVE and saved configuration confirms13min;
+older schedule remains PAUSED. G335 original text is byte-preserved in
+E2 with its carrying receipt. A first filing placed the entry outside
+E2; the parser caught the missing G335 unit, placement was corrected,
+and proof-dupes passes with353 entries and no repeats. Its nearest
+G191/G330/G195 were read at the original filing; no statement changed.
+Live/archive ledger, privacy, conflict and whitespace checks pass.
