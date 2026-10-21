@@ -6666,3 +6666,25 @@ On the owner's word ("Cloud has updated the eightstreets page - please push to l
 - *In the browser.* The new heading "21 October: the wall narrowed to one family of exceptions" renders, with
   18,682,428 towns in its text. The wall map's tally is unchanged (1153 / 39 / 0), there are no KaTeX errors and no
   console messages.
+
+## CL483 — Cloud, overnight block 1: the one-jump boundary covers everything tested, but the shape is too loose to count (2026-10-21 23:20 BST)
+
+**Pull: warm** (CL480's declared-final door). **Prediction, written before the run:** a completing pair boundary with
+a prefix, high gaps ≤ 3 and at most one jump ≤ 6 exists in 100% of I₂ instances at M = 12 and in the first 400,000 at
+M = 13. Counterfactual: any miss means the jump shape is not the whole story.
+
+**Result.** The prediction held: 8,274 + 114,703 at M = 12 and 27,948 + 372,052 at M = 13, every one covered
+(`staircase_boundary.py`, now with the jump shape). A jump ≤ 5 still covers all of M = 12; a jump ≤ 4 misses 12
+singleton-least instances, and the pair-least ones never need more than 4.
+
+**Unexpected check, and it bites.** The base rate (`jump_base_rate.py`): at M = 12, 43–57% of ALL m-subsets of the
+pool already have the one-jump shape (the plain staircase: 10–25%). So full coverage at M ≤ 13 says little: a loose
+family covering half of everything will cover the completing sets by chance. It is evidence that the right family
+is staircase-like, not that this family is right.
+
+**Verdicts.** Gut: still warm, but the pleasure of 100% faded at the base rate, which is the right reaction.
+Reasoned: no mechanism yet; the shape test cannot discriminate at these sizes.
+
+**Next rung (same problem, sharper angle).** Stop testing families of shapes and test one explicit construction, as
+FOUR §7 does on the full interval: a formula P(M, q, h) with one jump placed by the hole, checked for completion
+directly. A formula has base rate zero, so its coverage would mean something.

@@ -20,6 +20,11 @@ The misses are balanced targets, e.g. q2 (19,19,19,19), q3 (18,18,18,21), q2 333
 completing boundary there has one jump of 4-6 between its low part and its high part (e.g. {0,1,7,8,10,12}).
 Prediction held on coverage; the strict family covers less.  So the full-interval staircase nearly transfers,
 and the data names the one extra shape it needs.
+CL483 (jump shape added: prefix >= 1, high gaps <= 3 except at most one gap <= JUMPMAX = 6): coverage 100% at
+M = 12 (8,274 + 114,703) and of the first 400,000 at M = 13 (27,948 + 372,052).  JUMPMAX = 5 still 100% at
+M = 12; JUMPMAX = 4 misses 12 singleton-least instances (pair-least still 100%).  BASE RATE (jump_base_rate.py):
+the jump shape holds for 43-57% of ALL m-subsets at M = 12 (staircase 10-25%), so this coverage is weak
+evidence at these sizes; the real test is an explicit construction.
 """
 import itertools, sys
 from collections import Counter
@@ -27,6 +32,7 @@ from collections import Counter
 T = lambda n: n * (n + 1) // 2
 SUB = [J for s in (1, 2, 3) for J in itertools.combinations(range(4), s)]
 PAIRS = list(itertools.combinations(range(4), 2))
+JUMPMAX = 6
 
 def spectra(pool):
     sp = [set() for _ in range(len(pool) + 1)]; sp[0].add(0)
@@ -42,7 +48,9 @@ def shapes(P, S):
     if pre >= 1 and high: gaps = [high[0] - S[pre - 1]] + gaps        # gap from the prefix to the first high value
     stair = pre >= 1 and all(g in (1, 2, 3) for g in gaps)
     strict = pre >= 1 and sum(1 for g in gaps if g != 2) <= 1 and all(g in (1, 2, 3) for g in gaps)
-    return stair, strict
+    big = [g for g in gaps if g > 3]
+    jump = pre >= 1 and (len(big) == 0 or (len(big) == 1 and big[0] <= JUMPMAX))
+    return stair, strict, jump
 
 def run(M, limit=None):
     cnt = Counter(); ex = []
@@ -98,16 +106,16 @@ def run(M, limit=None):
                 else:
                     F = fibre(C[X] + C[Y], t2[X] + t2[Y])
                 others = [z for z in range(4) if z not in (X, Y)]
-                any_c = stair_c = strict_c = False
+                any_c = stair_c = strict_c = jump_c = False
                 for P, spP, spR in F:
                     if t2[X] not in spP[C[X]]: continue
                     if not any(t2[z] in spR[C[z]] for z in others): continue
                     any_c = True
-                    st, sr = shapes(list(P), S2)
-                    stair_c |= st; strict_c |= sr
-                    if strict_c: break
-                cnt[(cat, 'n')] += 1; cnt[(cat, 'any')] += any_c; cnt[(cat, 'stair')] += stair_c; cnt[(cat, 'strict')] += strict_c
-                if not stair_c and len(ex) < 4: ex.append((cat, q, C, t, (X, Y), h))
+                    st, sr, jp = shapes(list(P), S2)
+                    stair_c |= st; strict_c |= sr; jump_c |= jp
+                    if strict_c and jump_c: break
+                cnt[(cat, 'n')] += 1; cnt[(cat, 'any')] += any_c; cnt[(cat, 'stair')] += stair_c; cnt[(cat, 'strict')] += strict_c; cnt[(cat, 'jump')] += jump_c
+                if not jump_c and len(ex) < 6: ex.append((cat, q, C, t, (X, Y), h))
                 if limit and sum(v for k, v in cnt.items() if k[1] == 'n') >= limit: return cnt, ex
     return cnt, ex
 
@@ -116,5 +124,5 @@ if __name__ == '__main__':
     cnt, ex = run(M, limit)
     for cat in ('pair-least', 'singleton-least'):
         n = cnt[(cat, 'n')]
-        print(M, cat, 'instances', n, 'completing P exists', cnt[(cat, 'any')], 'staircase', cnt[(cat, 'stair')], 'strict', cnt[(cat, 'strict')])
-    print('examples without a staircase boundary:', ex)
+        print(M, cat, 'instances', n, 'completing P exists', cnt[(cat, 'any')], 'staircase', cnt[(cat, 'stair')], 'strict', cnt[(cat, 'strict')], 'jump<=6', cnt[(cat, 'jump')])
+    print('examples without a one-jump boundary:', ex)
