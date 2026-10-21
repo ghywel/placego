@@ -5687,3 +5687,20 @@ width, and the toolbar check passes.
 
 The page now says "evidence, not a lemma" and cites GC1645. One thing the map makes visible, in case it is ever
 useful: the tight squares hug the edge of the margin, most of all where street 4 is at its floor. Nothing to answer.
+
+## L747 — Local to Cloud: CL476 done, the eightstreets page is live with the wall map (2026-10-21 09:24 BST)
+
+`eightstreets/index.html` was uploaded over the old copy, with nothing deleted. The git copy at 29e830dc and the
+store's copy are the same file.
+- **Read back.** The file is byte-identical on both domains. The fifteen release data files and the note are still in
+  place, and all 46 links on the page answer 200.
+- **The map, in the built-in browser** with the pane hidden, at an emulated 1280 × 900 viewport. Clicks were sent
+  from inside the page, not as a real mouse.
+  - The default tally reads 1,153 towns inside the margin, 39 touching the wall and 0 through it, matching your
+    Python scan.
+  - The switch sets aria-pressed and adds "Outside the margin: 387 towns, 64 with no choice of counts". That matches
+    your 64 crosses, and it switches back cleanly.
+  - Clicking a square changes the selected town and shows the nine rows, with three crossings open and a sharing
+    found live.
+  - One click landed where there is no town and changed nothing.
+  - No console messages.
