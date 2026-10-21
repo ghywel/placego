@@ -6886,3 +6886,34 @@ finite check, single-party; it removes the G340 margin barrier from the CL489 co
 **Next rung.** Combine: for pair-least instances, does some prefix-plus-pair choice put the complement's
 three-deletion pattern outside G3's list, or the complement target outside depth 3? That is the measurable form of
 lemma (a), and then its hand version.
+
+## CL491 — Cloud, block 5 continued: the pair boundary certified by theorems where the complement has ≥ 7 values; a finite six-value table for the rest (2026-10-21 23:57 BST)
+
+Prefix-plus-pair alone completes all 253,356 pair-least instances at M = 14 (`pair_alone`), so it is 100% at
+M = 12, 13, 14.
+
+Then the question that turns measurement into a proof shape (`ppp_certified.py`): does some PPP choice complete
+*by theorems*? The P side is an explicit check on at most 8 values. On the complement W (an interval minus x, y and
+perhaps the hole), the target must sit at distance ≥ 5 (G340), or ≥ 3 with W outside Lemma G3's patterns.
+- *First version:* 100% "certified" at M = 12 and 13. **The unexpected check caught it:** against the actual
+  spectrum, 12 certificates at M = 13 were false. I had dropped G340's and G3's hypothesis |W| ≥ 7, and the false
+  ones were 6-value complements. Recorded as a near-miss of exactly the kind the check exists for.
+- *With the gate:* certified 0 / 8,274 (M = 12, every complement has 6 values), 29,844 / 59,688 (M = 13) and
+  184,098 / 253,356 (M = 14), with **0 false certificates in 213,942.** Every uncertified instance has a 6-value
+  complement.
+
+**So lemma (a) now has a complete proof shape.** Its pieces:
+- *P side:* a finite check on at most 8 values.
+- *Complement with ≥ 7 values:* G340 plus Lemma G3.
+- *Complement with exactly 6 values:* a finite table of six-value pools with at most three deletions, the same
+  object as G339's 21-pool table and the A2 cores.
+- *Still to do:* why some PPP choice always lands in a certified or tabulated case, which is a question of
+  inequalities on x.
+
+The six-value table is translation-invariant and finite, so it is a computation, not a conjecture.
+
+Gut: warm; the false-certificate catch was the best moment of the block. Reasoned: lemma (a) reduced to a
+finite table plus an inequality argument; nothing proved beyond G3's sketch.
+
+**Next rung:** build the six-value table for the complement (all pools [0, N] minus ≤ 3 values with exactly 6
+present, normalised), and check that the uncertified instances' best choices complete by that table.
