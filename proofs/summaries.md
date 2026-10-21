@@ -4041,3 +4041,18 @@ same. This is a complete hand proof candidate awaiting independent review.
 representation. The physical repair uses the already-proved full-interval
 partition theorem, so an abstract graph path is not treated as a sequence
 of executable swaps. Larger cyclic components and thin runs remain open.
+
+
+## W337
+
+**One sufficiently mixed ordered run can absorb all cyclic components.**
+In the G335 tournament picture, a separate ordered run with at least three
+vertices of every ordinary colour can absorb any rainbow cyclic component,
+including the component containing the missing value. Its fixed score
+and all bin totals are preserved. This is a complete hand proof candidate.
+
+**Why it matters.** Cuts with less than five units of spare room form a
+chain; one score ordering respects all of them. Every other cut has enough
+room for the entire component's correction, and G316 supplies a physical
+repair. Thin runs and the existence of such a run remain open, so the
+parent problem is not solved. Independent review is pending.

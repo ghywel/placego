@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 13:56 BST: G336 HAND triangle absorption;13-minute research active.**
+**CURRENT working state, 2026-10-21 14:10 BST: G337 HAND all-component absorption conditional on one thick run.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -184,20 +184,21 @@ exchange mechanism and primary literature;the incubation above is history.
   score-square maximum has <=11 cyclic components/45 vertices. The
   maximum is transitive iff the parent partitions. Ordered bulk stays
   unbounded; no M<=45 reduction or new physical parent coverage.
-- **Absorption, MI586–587.** G336 HAND candidate: a star triangle can
-  be straightened with q fixed if one outside consecutive singleton
-  run has at least3 vertices of every ordinary colour. A reachable unit
-  target change passes its exact rank cuts, PROVED G316 gives physical
-  repartition, and opposite triangle order gains2 in Phi. One whole
-  thick side suffices by G335. GC1648 requests one carrying read.
-  This excludes a maximum motif conditionally on that unread application;
-  no new target-family/parent coverage or arbitrary path-swap algorithm.
-- **Decision/dependency.** G335/G316 are carried; G336 is earliest new
-  unread application. Study the all-choice rank-cut criterion for
-  straightening larger special components without assuming G336. Other
-  cyclic blocks/thin runs remain. The multi-run no-path -> global-f_c
-  inference is still open; the one-run argument bypassed it. Do not
-  assume its sign or combine interrupted runs as one full interval.
+- **Absorption, MI588–589.** G337 is a complete HAND candidate replacing
+  the narrower G336-only review. One consecutive singleton run with
+  four counts>=3 absorbs EVERY rainbow cyclic component of size<=5.
+  Incomparable cut slacks sum>=9; slacks<=4 form a chain. Core subset
+  overshoot<=5; one chain ordering minimizes all dangerous cuts with
+  * fixed. PROVED G316 realizes the run repair; Phi gains2*tau_K.
+  Same run works successively. No unread G336 premise; GC1649 one read.
+- **Decision/dependency.** G337's chain selector/application is the new
+  unread dependency; G335/G316 carried. No new protected target-family
+  coverage or run-existence theorem. In a cyclic maximum all singleton
+  runs and both whole sides must be thin IF the candidate is carried.
+  M12/c3333 cannot fit a12-score run avoiding *, so mixing existence
+  is not automatic. Next seek one exact JOINT run/core budget from
+  G335 and protection, not one-colour threshold patches or mixed
+  integer decomposition. Keep any dependence on G337 conditional.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -205,7 +206,7 @@ exchange mechanism and primary literature;the incubation above is history.
   merely by this evidence. L8 remains solved and held prize lanes held.
 - **Rhythm.** Owner resumes the13-minute research heartbeat; prompt
   updated for absorption. Older15-minute schedule stays PAUSED; no
-  separate poller. Latest trajectory MI58713:56 BST, no repeated-failure
+  separate poller. Latest trajectory MI58914:10 BST, no repeated-failure
   allowance renewed. Publish substantive checkpoints, routine work quiet.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
@@ -39948,3 +39949,118 @@ reviewable proof. Gut: warmer because the representation now removes
 an actual cycle; reasoned: useful partial mechanism with clear bounds.
 The13-minute heartbeat continues; no repeated-assumption failure or
 renewable extra block is invoked.
+
+### MI588 — The five-unit defect meets a nine-unit cut separation (2026-10-21 14:06 BST)
+
+Continue the named ALL-choice absorption question from MI587, independent
+of the unread G336 application. Record searched: laminar/chain/nested/
+incomparable AND slack/supermod/rank.cut ->8 hits/3 files. G324 step4
+already uses strict submodularity to prevent two opposite tight cuts.
+Read that exact argument and the prior-art rank-polytope scopes; Fink's
+primary Theorem1.1/Example1.4 were reread in MI586. No mixed polytope
+integer decomposition or unproved path-lifting result is imported.
+
+The hand derivation has found a candidate simultaneous selector. With
+run counts r_i>=3 and lower slacks h_J, modularity gives
+h_A+h_B=h_union+h_intersection+r_(A\B)*r_(B\A). Incomparable sets
+therefore have h_A+h_B>=9. All cuts with slack<=4 form a chain. A
+rainbow strong component with at most5 vertices can increase a subset's
+sum by at most5 when straightened, because each proper internal cut has
+at least one outgoing win. If its distinguished score a is fixed, its
+ordinary subset sums obey the actual rank minima of[0,r-1] minus a.
+One score ordering can minimize every group along a chain at once.
+Thus no dangerous cut increases its core score, while all other run
+cuts have at least5 slack. G316 would then physically repair the run.
+
+Hand audit gates, BEFORE checking the literal controls: verify the
+slack identity's sign and endpoints; the bound uses STRONG connectivity,
+not arbitrary repeated scores; for fixed *, include J union{*} to get
+the deleted-rank minimum. Check disjoint fixed-colour reorientation and
+potential gain. If any carrying implication fails, stop before another
+repair. This is hand proof development, not an experiment/census.
+
+Can-fail control: four run counts2 permit incomparable slacks0 and4
+on the block word A,A,B,B,C,C,D,D, so the <=4 chain assertion must FAIL
+there. Sharp boundary control at counts3: A034,B125,C678,D9,10,11 has
+h_A=4,h_B=5,h_AB=0, attaining the9 separation. Unexpected sharp defect:
+a regular five-vertex tournament, with edges0->2 and1->3 reversed,
+keeps the directed5-cycle and has scores(1,1,3,3,2). Fix * at its
+last vertex (score2). Assigning3,4 to the first two colours creates
+an overshoot5, so replacing5 by4 must FAIL. For a literal protected
+check, combine this core at ranks12..16 with that twelve-score run
+and its translate by17; all ordinary counts7, q14. Check the simultaneous
+selector and physical repair while every protected cut remains visible.
+
+### MI589 — One chain selector absorbs every allowed component (2026-10-21 14:10 BST)
+
+**Complete HAND candidate G337, independent review pending.** This
+resolves the named ALL-choice question for ONE full run, using only
+PROVED G335/G316 as carrying bases. It does not depend on unread G336;
+G336 is now a triangle corollary and its review request is consolidated.
+
+The constants fit exactly. In a full run with four counts>=3, the
+slack identity forces incomparable slacks to sum to at least9. Thus
+all cuts with slack<=4 are nested. A rainbow strong component has
+size at most5; every proper nonempty internal subset has at least one
+outgoing win, bounding ANY straightening's upward subset change by
+k(r-k)-1<=5. If * belongs to it, keep its internal score b. Current
+ordinary subset sums obey both the ordinary cut and the cut together
+with *, hence the actual minima of[0,r-1] minus b. Order the ordinary
+core colours by the nested run cuts and assign the available scores
+increasingly. This minimizes EVERY small-slack cut simultaneously.
+All other run cuts have at least5 slack. G316 supplies an actual
+repartition of the run. Reorienting both disjoint regions restores
+all totals, keeps q fixed and gains2*tau_K in Phi.
+
+This is an all-choice selector, not a catalogue of four-/five-vertex
+repairs. Other components do not change. The same run retains its
+counts and score multiset after every absorption, so the local claim
+can be repeated for all rainbow components. In particular a cyclic
+G335 maximum has NO ordered run with3 of every ordinary colour, and
+both sides of its special component must be thin in some colour.
+Cloud's earlier policy observation was not a theorem about maxima;
+this new HAND argument is separate, not an upgrade of that measurement.
+
+**Hand controls from MI588 pass.** Size2 block colours have incomparable
+slacks0,4, so dropping the minimum3 premise fails. The size3 A034/B125
+control has slacks4,5 with sum9, checking the boundary sign and the
+strict <=4 chain. Reversing the two named chords in the regular five-
+vertex tournament keeps its Hamiltonian cycle and gives(1,1,3,3,2),
+so a subset can overshoot by5, refuting a bound4. The protected M28,q14
+control has counts7 each and targets78,80,108,126. Minima over singleton,
+pair and triple groups are78,158,266, above28,105,231: every parent
+cut holds. The explicit run correction and core ordering in G337 give
+a literal partition, keep q14 and improve Phi by6. No computation or
+census was performed. The controls support, not carry, the argument.
+
+Niggle sweep: the chain includes empty/all cuts; colours absent from
+the core give repeated chain layers, not omitted cuts. Proper internal
+cuts use strong connectivity; the k0/r cases have zero change. The
+fixed-star minimum uses J union{*}, not an unjustified distinct-score
+assumption. Core and run external offsets cancel, colours stay fixed,
+upper cuts are complementary, and each iteration preserves the run.
+The remaining worry is the new theorem's correctness as a whole;
+one independent carrying read is required before relying on it.
+
+**Trajectory and scope.** Parent still the protected one-hole four-bin
+partition. Actual new target-family coverage: none. Proposed mechanism:
+all rainbow cyclic components can be removed conditional on one
+sufficiently mixed run. Earliest unreviewed step is G337, a self-contained
+replacement for the narrower G336 read; no unreviewed dependency chain.
+The existence of such a run is NOT automatic. For instance M12,c3333,
+internal q leaves fewer than12 consecutive ranks on either side of *,
+so no run avoiding * can contain3 of every colour. This is a scope guard,
+not a protected-parent counterexample or a reason to rerun the small census.
+The global thin-run/colour-budget obstruction remains genuinely open.
+
+Decision: bank the complete universal local mechanism and ask for one
+carrying read, replacing the triangle-only request. Continue by seeking
+an exact joint budget over the actual ordered runs and core scores from
+G335, rather than loosening run thresholds one colour at a time. A
+claim that protection forces the same thick run everywhere is already
+excluded by the cardinality guard. Start with a hand obstruction or
+one exact whole-group inequality; no mixed integer decomposition is
+assumed. Gut: delight at9 versus two times4; reasoned: the physical
+lift is real and all-choice, but a local reservoir is still a hypothesis.
+Research stays ACTIVE every13 minutes. This is the same bounded block,
+not a new allowance or a routine halt while review is pending.

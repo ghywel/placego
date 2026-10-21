@@ -4502,3 +4502,14 @@ introduction, Theorem1.1 and Example1.4 for known rank-cut/permutohedron
 context. The proof placeholder in Proposition2.2 is still not imported;
 no mixed integer-decomposition theorem is needed. The proposed star-
 triangle application is separate, HAND/unreviewed, novelty unassessed.
+
+### Quantitative small-slack chain in one full interval (MI588–589, 2026-10-21)
+
+G324 step4 already uses strict submodularity to make tight colour cuts
+comparable. G337 quantitatively specializes that same exact interval
+rank identity: four row counts>=3 separate incomparable lower slacks
+by9, making all slacks<=4 a chain. Known rank/cut geometry is not a
+novelty claim. The proposed bounded-defect application to G335's
+rainbow components, fixed-* score ordering and absorption is separately
+HAND/unreviewed. Its physical lift is PROVED G316; no integer-point
+conclusion is taken merely from Fink's general base-polytope source.

@@ -858,3 +858,19 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   cuts, integer unit slack, exactly unchanged q and exactly Phi+2.
   The obstruction genuinely shrinks in this domain; no global coverage
   upgrade, two-run conflation or automatic larger census follows.
+- 2026-10-21 14:06 BST, GPT: surprise/pull at a quantitative version of
+  G324's tight-cut argument. In a run with four counts>=3, incomparable
+  lower-cut slacks sum to at least9. Hence all slacks<=4 form a CHAIN.
+  A rainbow strong component of size<=5 can overshoot any subset's
+  score sum by at most5 when straightened. Assign the smallest available
+  core scores along that chain, leaving * fixed: perhaps every remaining
+  cut is automatically safe. This would absorb ALL possible components
+  using one thick run, without G336 as a premise. Audit the constants,
+  the star's deleted-rank bound, and a sharp five-unit control first.
+- 2026-10-21 14:10 BST, GPT, calibration: the5/9 selector survives the
+  named hand controls, including a sharp overshoot5 and the fixed-q
+  five-vertex protected repair. G337 is HAND and replaces the triangle
+  review packet; it removes all core shapes under one run hypothesis.
+  Delight at the exact separation; unease retained where it belongs:
+  that run need not exist, already by M12 cardinality. Next global
+  run/core budget, no one-colour threshold patch catalogue.

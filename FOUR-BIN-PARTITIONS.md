@@ -2771,3 +2771,33 @@ hypotheses fails. No two-run integer-decomposition theorem is assumed.
 Actual change is a new HAND absorption mechanism/maximum-motif exclusion,
 not a new protected target-family theorem. Larger special components,
 thin/interrupted runs and general parent completion remain OPEN.
+
+## 33. A five-unit defect and a nine-unit separation (MI588–589/G337)
+
+**Complete HAND candidate, one independent carrying read pending.**
+PROOFS G337 replaces the narrower G336 review packet; the latter is a
+corollary, not a premise. Any rainbow cyclic strong component (size<=5)
+can be absorbed by ONE disjoint consecutive singleton run with at least3
+vertices of each ordinary colour, preserving q, colour counts and totals.
+All other components stay fixed; the same run can absorb them in turn.
+
+In that run, lower slacks obey
+
+    h_X+h_Y=h_union+h_intersection+r_(X\Y)*r_(Y\X).
+
+Incomparable sets have a product at least9, so all slacks<=4 form a
+chain. Any core straightening raises any subset sum by at most5, using
+strong connectivity and r<=5. Assign available core scores increasingly
+along the small-slack chain, fixing * at its old internal score. The
+old ordinary core sums satisfy the rank minima after deleting that score,
+so every small-slack cut is safe simultaneously. Every remaining cut has
+at least5 slack. PROVED G316 then realizes the run correction physically.
+The run multiset is fixed; the core's Phi gain is2 times its cyclic
+triangle count. No path lifting or mixed decomposition is used.
+
+A cyclic G335 maximum would therefore have every ordered run thin in
+some colour; both whole sides of its special component must be thin.
+Existence of a mixed run, general thin completion and parent partition
+remain OPEN. The M12/c3333 cardinality guard already prevents such a
+run avoiding * in that small parent domain. This is a new conditional
+mechanism, not uniform parent coverage or a finite-M reduction.

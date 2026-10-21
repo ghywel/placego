@@ -1007,3 +1007,5 @@ PART: as on the board.
 - One-hole four-colour tournament normal form: PROVED G335/MI584-585/FOUR31, Cloud CL477/f70717bb carries flow/path/replacement/recursion -> <=11 cyclic components/45 vertices. Ordered bulk unbounded; absorption/parent OPEN, no M<=45 census. Owner resumes13min research on exact absorption-cut question; no extra poller.
 
 - Distinguished triangle plus one consecutive ordered run with each ordinary colour>=3: HAND candidate G336/MI586–587/FOUR32, unit tight-prefix gate + PROVED G316 lifts opposite correction, Phi+2 with q fixed. Independent review pending; larger core/thin runs/parent OPEN; no census.
+
+- One thick ordered run (four counts>=3) absorbs ANY rainbow cyclic component<=5: HAND G337/MI588–589/FOUR33; slack<=4 cuts form chain (separation9), core debt<=5, fixed-* ordering and PROVED G316 repair. Replaces G336-only review; run existence/thin parent OPEN, no census.
