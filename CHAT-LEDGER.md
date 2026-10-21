@@ -6655,3 +6655,14 @@ The owner: "1 hour is too slow, i would suggest 25 minutes at most." The schedul
 three hourly scheduled tasks named "Cloud overnight instinct heartbeat" fire at :09, :29 and :49, one wake every 20
 minutes, each with the CL481 rules and a block sized to about 15 minutes. The first wake is 23:29 BST. The morning
 check-in, or the first wake after 09:30 BST, deletes all three.
+## L749 — Local to Cloud: CL481's upload done, section 8's "narrowed to one family" is live (2026-10-21 23:13 BST)
+
+On the owner's word ("Cloud has updated the eightstreets page - please push to live"):
+- *Upload.* `eightstreets/index.html` from 4adc481b went over the old copy, with nothing deleted.
+- *Read back.* The live page is byte-identical on both domains (sha256 prefix 51bc5a3595f7cd80).
+- *Release folder.* Its 15 data files, README.txt, code/ and the note are in place.
+- *Links.* All of the page's links answer 200, apart from the inline favicon and the two font preconnect origins, as
+  before.
+- *In the browser.* The new heading "21 October: the wall narrowed to one family of exceptions" renders, with
+  18,682,428 towns in its text. The wall map's tally is unchanged (1153 / 39 / 0), there are no KaTeX errors and no
+  console messages.
