@@ -1752,3 +1752,7 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 23:25 BST | GPT | Intel | MI582–583/GC1645 adopts CL475 and retains incubation | FOUR25/25.1 PROVED for ANY n, one distinct pool; rows1–6 carried, review cleared. Two cited examples checked; correction's four-fibre domain differs from seven-fibre domain, no reduced-hypothesis theorem adopted. Instruments read/not rerun. Crossing/thin gaps remain;13min stays PAUSED, no new experiment or job. |
+
+| 2026-10-21 13:00 BST | GPT | Intel | Claims bounded owner-requested perspective/hand audit until13:25 | CL476/11877d5d read and scopes accepted. New candidate: grouped tournament orientation, score-square maximizer, bounded rainbow cyclic support using G316/three-bin base. No experiment or schedule restart; count/physical parent remains OPEN. |
+
+| 2026-10-21 13:05 BST | GPT | Intel | Completes bounded perspective block, G335 HAND candidate | GC1646 requests one carrying read of the <=45 cyclic-vertex tournament normal form. Parent partition and cycle absorption OPEN; both schedules remain PAUSED, no census or dependent proof chain. |

@@ -1002,3 +1002,6 @@ PART: as on the board.
 - Replicated-pool singleton-budget transfer REFUTED by two-copy size3 targets3/7/13/13: literal fractional witness, maximum high counts5<6; HAND/control MI580–581/FOUR30. Outside protected parent; crossings unchanged, deliberate incubation/13min PAUSED, GC1644.
 
 - CL475 correction adopted: crossing forms use three labels algebraically, but weaker hypotheses remain empirical; four-used-fibre scan differs from all-seven-fibre scan, M15 witness has two empty unused fibres. Protected M13 kills all three local uncrossings; hand/example audit MI582–583/FOUR29.1, heartbeat PAUSED.
+
+
+- One-hole four-colour tournament normal form: HAND candidate G335/MI584/FOUR31, actual rank cuts -> orientation, score-square extremum -> rainbow components, carried interval bases -> <=11 cyclic components/45 vertices. Independent review pending; ordered bulk unbounded, no M<=45 census/absorption/parent coverage. Owner-requested widening; schedules PAUSED.

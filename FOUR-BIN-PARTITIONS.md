@@ -2719,3 +2719,31 @@ has target3<T_3=6, so it does not close a transfer that genuinely uses
 the protected parent and its precise overlap pattern. No stronger
 replica theorem or threshold-repair catalogue is pursued here. Crossing
 types7–9 and physical completion remain OPEN.
+
+
+## 31. A different representation: bounded cyclic support (MI584/G335, 2026-10-21)
+
+**HAND candidate, independent review pending.** PROOFS.md G335 contains the
+complete proof. Encode the four bins and the missing value as four vertex
+colours and a distinguished singleton in a tournament; prescribe each
+colour's total wins and the singleton's score q. Ordinary actual rank
+cuts imply feasibility by integral orientation flow. Transitivity is
+exactly a physical partition of[0,M] minus q.
+
+Maximizing the sum of squared scores forces each strong component to
+contain at most one vertex of each colour: reverse a directed path
+between two equally coloured vertices from lower to higher score.
+Consecutive components without the distinguished vertex have a common
+external offset. Our carried three-bin interval theorem and G316 then
+exclude any cyclic consecutive region that is thick in every present
+colour. Removing the components of a thin colour bounds the remaining
+cycles recursively: at most5 components on either side of the special
+component, hence at most11 cyclic components/45 vertices in total.
+
+This is a proposed uniform normal form, not parent coverage or real
+count admission. The ordered runs between cycles remain unbounded;
+removing them need not preserve protection. No finite M<=45 reduction,
+cycle-absorption theorem, or novelty claim follows. The next question
+is whether the protected margins eliminate this bounded cyclic support
+using the ordered bulk. Full-fibre inheritance, arbitrary rounding,
+replicated budgets and the old capped physical swap policy are not used.

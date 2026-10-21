@@ -4013,3 +4013,17 @@ partitions, followed by strong induction, proves the upper bound for all
 sizes. A known explicit forest with shortest path67 proves sharpness. The
 result is computer-assisted and jointly verified in the project; literature
 priority and external review remain separate.
+
+
+## W335
+
+**A bounded pocket of cycles, not yet a partition.** Encode each desired
+bin as a colour in a tournament and the missing value as one distinguished
+vertex. A maximum of the squared scores has at most45 vertices in cyclic
+components; everything else lies in an ordered sequence. This is a hand
+proof candidate awaiting independent verification.
+
+**Why it matters.** It offers a different representation of the one-hole
+four-bin obstruction. The ordered bulk may still be arbitrarily long,
+and no argument yet removes the remaining cycles using the protection
+margins. It does not solve the parent or justify a census up to size45.

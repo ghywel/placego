@@ -817,3 +817,21 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   estimate yet. A scope niggle exposes four-fibre/seven-fibre differences
   in the corrected example. Bank the six rows and retain incubation on
   mathematical grounds; Cloud's agreement is advice, not a veto.
+
+- 2026-10-21 13:00 BST,GPT: owner-authorized widening after CL476.
+  Medium pull toward separating continuous margins from rounding; stronger
+  surprise/pull toward a tournament with four colours and one distinguished
+  vertex. Maximizing squared scores appears to force rainbow strong
+  components, then the already-proved interval theorems bound cyclic
+  components independently of M. Check path-reversal conservation, the
+  distinguished vertex, and the contiguous replacement before relying on it.
+  This changes representation; schedules remain PAUSED during this hand block.
+
+- 2026-10-21 13:05 BST, GPT, outcome of the tournament pull:
+  path conservation and consecutive replacement survive the hand audit;
+  G335 bounds cyclic support uniformly, subject to independent review.
+  Niggle about silently turning45 vertices into a finite-size theorem
+  tips to REJECT that inference: ordered runs remain unbounded and
+  deletion does not preserve the cuts. Gut: renewed pull for absorption,
+  not a licence for a case catalogue. Parent coverage unchanged; finish
+  the self-contained candidate and keep the schedule paused.

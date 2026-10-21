@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 23:25 BST: CL475 adopted; six core rows PROVED, incubation retained.**
+**CURRENT working state, 2026-10-21 13:05 BST: owner-requested widening; G335 tournament candidate, schedules paused.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -179,25 +179,23 @@ exchange mechanism and primary literature;the incubation above is history.
   rows and a literal fractional assignment. P={0,1,2,4,5,6}, two copies,
   targets3/7/13/13: integer count maxima total5<6. Outside the one-copy
   protected parent; not a crossing or parent counterexample.
-- **Decision.** MI581 early trajectory: no additional crossing/physical
-  coverage since MI577. Coarsenings leave an overlap width; replicating
-  the pool does not preserve the distinct-pool model's count compatibility.
-  No concrete next argument using the actual protected overlap is ready.
-  Incubate that named uncertainty; no replica threshold/endpoint tree,
-  arbitrary-Q rounding, price refit,189-form expansion or larger census.
-  CL475 clears the FOUR25/25.1 packet and supports this pause. Its
-  threshold proposal has no carrying estimate yet. The three-label
-  rewrite is algebra; weakening its hypotheses remains empirical, with
-  four-fibre/seven-fibre domains distinguished in FOUR29.1/MI583.
-- **Reopening.** A concrete overlap inequality or selector using the
-  protection, a different global mechanism, or direct owner discussion.
-  A routine review receipt alone does not settle the crossing question.
-  This is GPT's incubation choice, not a requested permission gate.
-- **Rhythm.** The13-minute research heartbeat is PAUSED; app and saved
-  configuration confirmed. Older research schedule stays PAUSED; no
-  separate poller or background computation continues. Last trajectory
-  MI58323:25 BST retains the pause; no extra allowance renewed. No held
-  lane reopened. Cloud response is considered on its merits, not a veto.
+- **New representation, MI584.** Owner requested widening after CL476.
+  G335 is a complete HAND candidate: actual one-hole rank cuts imply
+  a tournament with the prescribed four colour totals and singleton
+  score q, whose score-square maximum has at most11 cyclic components/
+  45 vertices. The rest is ordered. Full proof in PROOFS.md; FOUR31.
+  Independent review pending; no new physical parent coverage.
+- **Decision/dependency.** The global orientation invariant is a fresh
+  pull. Earliest unreviewed step is G335, using only carried G316 and
+  the three-bin interval base. No dependent absorption theorem begun.
+  The unresolved question is whether protection eliminates those cycles
+  using the ordered bulk. Bulk length is unbounded: no M<=45 reduction.
+  Old replica/endpoint/rounding repairs remain parked. CL476's observed
+  boundary concentration remains slice evidence, not a theorem.
+- **Rhythm.** Both mathematics schedules remain PAUSED, no separate
+  poller/background run. Owner-authorized hand block recorded MI584;
+  last trajectory13:05 BST. Publish one focused candidate read for
+  Cloud, without restarting automated research or another case catalogue.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39669,3 +39667,92 @@ Gut: relief at the carried budget and respect for the remaining gap.
 Reasoned: local/coarsened information still has not supplied simultaneous
 selection; another case catalogue is not justified. No new experiment,
 proof candidate, review request, held-lane switch or automatic restart.
+
+### MI584 — Widening finds a tournament normal form (2026-10-21 13:05 BST)
+
+Owner explicitly asks for renewed perspective after the halting wall.
+Read/verified CL476 at11877d5d and Local's L747 after the one startup
+fetch to109804dc. Cloud accepts both GC1645 scope corrections. Its
+boundary-hugging wall-map observation is a measured slice, not a lemma;
+we do not turn it into a universal boundary principle. Both startup
+checks pass (wall and merge controls; merge's historical blind predictions
+remain labelled REFUTED). The HTTPS private-client poll succeeded with
+TLS verification. No new census, Cloud production rerun or schedule restart.
+
+**Question and pull.** Can a representation with more intermediate
+states concentrate the obstruction before demanding a physical partition?
+The old state spaces insist on a chosen count or already-distinct tokens.
+A tournament can temporarily have repeated scores, while its colour
+totals retain exactly our sums. The attraction strengthened when a
+score-square extremum appeared to force rainbow strong components.
+This is an actual different invariant, not a renamed local pair repair.
+
+**Record searched:** record_find queries for tournament/Landau with
+partition/bin/prescribed/score, and strong component/squared score/cyclic
+triangle/rainbow with tournament/orientation. MI480's X-ray scope note
+and the older rainbow-matching orientation do not supply this result.
+Initial multi-term searches used the tool's AND semantics and are NOT
+absence evidence; subsequent alternation searches corrected that.
+Read G316's exact cut statement and FOUR5's full three-bin minsize2 proof.
+Primary literature audit is in PRIOR-ART: generalized Landau/integral
+orientation flow is known, not an acyclic realization theorem. No exact
+prior occurrence of the proposed composition was found in this bounded
+search; novelty remains UNASSESSED.
+
+**Result: G335 HAND candidate, full argument in PROOFS.md.** Contract
+four colours and a singleton of score q. All actual rank cuts yield
+an integral orientation by edge-assignment flow. Maximize squared
+vertex scores. A path reversal between equally coloured vertices in
+one strong component strictly improves the objective, so components
+are rainbow. Consecutive components have one common external score
+offset; a thick colour region can be replaced by a transitive tournament
+using the carried three-bin base or G316, improving the same objective.
+Removing the at most two components of a thin colour leaves at most
+three regions on three colours. The recursion bounds cyclic support
+by5 components on either side of the singleton component: at most11
+components and45 vertices, uniformly in M.
+
+**Audit and controls.** These are hand checks of the proposed proof,
+not a preregistered computational experiment. The falsifiable gate was
+path conservation (especially the singleton) and contiguous replacement,
+as recorded at the initial INSTINCT signal. Both survive: only path
+endpoints change scores; contiguity gives a common external offset.
+Unexpected check: in A -> * -> A on a directed triangle, reversing the
+path leaves the distinguished score1 fixed and changes the two A scores
+from1,1 to0,2. The rainbow A,B,* triangle with all targets1 is the
+can-fail control: ordinary orientation exists but transitivity cannot.
+The known c2222/t2,6,8,12 obstruction guards the minimum-size requirement
+in the four-colour replacement. Neither is a protected-parent negative.
+The cyclic-triangle identity gives a strict, not just weak, improvement.
+Every removed thin-colour component and each remaining gap is accounted
+for; the special component is never included in a replacement.
+
+**Alternative considered, parked.** The scalar continuous lower endpoint
+is convex in the target and the upper endpoint concave. Rounding loses
+less than4 in crossing7, less than5 in8/9, so continuous gaps at least3
+and4 respectively suffice by integrality. This does not bound distance
+to the protection boundary, and no such bound was proved. Cloud's
+strict-threshold/SOS possibility likewise lacks a certificate or small-
+parameter theorem. The orientation normal form has the clearer current
+pull; no polynomial solver or endpoint catalogue is launched.
+
+**Trajectory/dependency checkpoint.** Parent remains the protected four-
+bin one-hole partition. Actual new parent coverage: NONE. Proposed
+change: a uniform bound on cyclic disorder in a different integral
+representation. Earliest unreviewed dependency is G335 itself; its
+step3 uses only already-carried interval theorems. Any future absorption
+claim would fall if this normal form fails. One focused carrying read
+is requested; no dependent proof chain is opened. A small cyclic support
+is not a small counterexample: ordered runs may be unbounded and may
+carry indispensable colour/score budgets. Never infer an M<=45 census.
+
+**Decision.** Fresh choice now selects this representation. The next
+substantive question is whether the actual protection margins force
+cycle absorption using the ordered runs, or whether an explicit
+extremal configuration defeats that proposed mechanism. No universal
+absorption assertion or guaranteed finite search is made today. This
+is a promising route around the present selector wall, not a crossing
+of it. Stop this bounded hand block at its complete reviewable argument.
+The13-minute heartbeat and older mathematics schedule stay PAUSED;
+no background poller. Gut: real surprise and renewed pull, tempered by
+the distinction between concentrating an obstruction and removing it.

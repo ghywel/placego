@@ -4465,3 +4465,27 @@ checked separately, no target domains or larger-n enumeration. The
 finite9-type application and corrected weights are in FOUR29. The
 balanced-core theorem itself was already sourced at MI560. Nothing
 here asserts the protected moment endpoints satisfy the remaining rows.
+
+
+### Grouped tournament scores and a bounded-support candidate (MI584, 2026-10-21)
+
+Read Kolesnik and Sanchez, [The geometry of random tournaments](https://arxiv.org/html/2009.09322),
+introduction and statements of Theorems1/3/4, Theorem5/Corollary6 and the
+graphic-zonotope discussion; not the entire subdivision proof. The
+known generalized Landau theorem characterizes integral orientation
+scores by subset edge-count cuts and total conservation, including
+multigraphs. It does not guarantee an acyclic orientation. G335 step1
+also supplies a direct integral-flow proof for our grouped application.
+Path reversal and the cyclic-triangle score identity are elementary
+orientation tools, not novelty claims. The proposed bound using our
+full-interval partition theorems is recorded separately as a HAND
+candidate; its novelty is unassessed.
+
+A secondary possible route was read in Parrilo's
+[Sum of Squares Programs and Polynomial Inequalities](https://ocw.mit.edu/courses/6-972-algebraic-techniques-and-semidefinite-optimization-spring-2006/63d6e45650205ceef6701971a9b4621c_lecture_22.pdf):
+introduction, Gram-matrix Theorem1 and certificate definitions in section3.
+This is a framework for polynomial certificates, not evidence that our
+crossing inequalities have low-degree certificates. No SOS computation
+or parameter elimination was run; legality-pinned moment endpoints
+still need separate treatment. The tournament argument is the chosen
+bounded hand investigation, rather than an expanded endpoint catalogue.
