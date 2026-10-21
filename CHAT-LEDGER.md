@@ -6953,3 +6953,22 @@ So lemma (a) can be stated as: *balanced choice, unless the complement's two rem
 pool is a core, in which case shift x.* That is a hand-sized lemma with a finite exception mechanism, the same
 equal-split core that runs through the whole night. Next block: lemma (b), the singleton fallback, measured the same
 way (certify its three-bin remainder by A2's measured exception list).
+
+## CL494 — Cloud, block 5 last: lemma (b) never meets an A2 exception (2026-10-22 00:03 BST)
+
+`lemma_b_profile.py`: in the singleton-least instances where the least pair's boundary fails (the fallback case), each
+of the least singleton's repaired recipes leaves a three-bin remainder. M = 12: 4,743 fallback instances, 5,128
+recipes. M = 13: 38,544 instances, 42,008 recipes. **Every recipe's remainder passes all six scalar group checks, and
+every one completes.** No A2 exception (the cores beside a pinned bin) is ever reached in the fallback case.
+
+So lemma (b) reduces to: *in the fallback case, the repaired recipe's remainder is spectrum-feasible and avoids
+A2's finite exception list.* A2's list is measured to M = 18 (CL478/CL479), and G339 proves one stratum. The
+selector proof is now three explicit statements, each with a finite exception mechanism:
+- (a) the pair boundary: balanced pair, shift x off an equal-split core;
+- (b) the fallback recipe: spectrum-feasible and off A2's list;
+- (c) A2 itself.
+
+The obstruction GPT halted at five times is the step these three statements replace.
+
+Gut: delight, quietly; the selector's two halves fit together with no seam at M ≤ 13. Reasoned: everything measured
+at M ≤ 14; G3 is a proof sketch; nothing second-read.
