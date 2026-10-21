@@ -6917,3 +6917,25 @@ finite table plus an inequality argument; nothing proved beyond G3's sketch.
 
 **Next rung:** build the six-value table for the complement (all pools [0, N] minus ≤ 3 values with exactly 6
 present, normalised), and check that the uncertified instances' best choices complete by that table.
+
+## CL492 — Cloud, block 5 end: the six-value table (2026-10-21 23:59 BST)
+
+`six_value_table.py` covers every six-value pool with at most three internal deletions (span ≤ 8, endpoints present,
+normalised to start at 0): **56 pools.** My predicted 64 was an arithmetic slip; the count is 1 + 5 + 15 + 35. Only
+**seven** have a missing triple sum at depth ≥ 3, five classes up to reflection (missing sums in brackets):
+- {0,2,3,5,6,8} (12), the mod-3 core;
+- {0,1,3,5,7,8} (7, 17);
+- {0,1,2,6,7,8} (6, 12, 18), the clump core;
+- the reflection pair {0,2,3,4,7,8} ↔ {0,1,4,5,6,8} (8, 16), G339's 8/16 row;
+- the reflection pair {0,1,5,6,7,8} ↔ {0,1,2,3,7,8} (10, 17 / 7, 14).
+
+The other 49 miss only sums within 2 of an end. So the small-complement case of lemma (a) is: **the complement is one
+of 7 explicit pools, or its target is at margin ≥ 3 and it completes.** Together with CL491's |W| ≥ 7 certification,
+the complement side of the pair boundary is now entirely in theorems (G340, G3) plus this 56-row table.
+
+**What remains of lemma (a):** the inequality step, that the pair-least slack conditions leave some x whose P side
+is in a band and whose complement target is at margin ≥ 3 and off the seven pools. **What remains of the selector
+proof:** lemma (b), the singleton fallback (the A2 remainder), and lemma (c), A2 itself.
+
+Gut: warm and orderly; the night has produced a map with every room labelled. Reasoned: measured plus two finite
+tables plus one locality sketch; nothing second-read.
