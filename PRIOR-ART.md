@@ -4569,3 +4569,25 @@ gives an exact joint-partition reduction in that stated stratum.
 It is known machinery, rederived here; no novelty or new proof number.
 No source theorem or argument establishes scalar-spectrum inheritance,
 the global localization of all A2 failures, or the protected parent.
+
+
+### First-bin binary fibres versus positive-marginal logistic fibres (2026-10-21; MI602)
+
+Read Hara–Takemura–Yoshida,
+[On Connectivity of Fibers with Positive Marginals in Multiple Logistic Regression](https://www.keisu.t.u-tokyo.ac.jp/data/2008/METR08-39.pdf),
+Section2 including Proposition2, Lemma1 and Theorem1 with proofs.
+The result gives equal-sum exchanges on equally spaced covariate
+levels when every column marginal is positive. For a full interval,
+encoding a subset and its complement as a binary two-row table has
+column margins1 and fixed first-row count/moment, so the theorem
+applies. On a two-hole interval the missing columns have margin0.
+Deleting them destroys the equally spaced design; keeping them
+violates positivity. Thus no two-hole connectivity is imported.
+The first-bin fibre is already nonempty by scalar feasibility,
+but its connectivity alone would not prove residual coverage.
+
+Also read Rapallo–Yoshida,
+[Markov bases and subbases for bounded contingency tables](https://arxiv.org/html/0905.4841v2),
+abstract and Theorem3 only. Its ordinary-margin setting does not
+include our additional weighted row sum. No such transfer is made.
+No basis computation or experiment; known context, not a new proof.

@@ -1026,3 +1026,7 @@ PART: as on the board.
 - Extreme filler deficit d<=D, other counts total K: all joint partitions reduce bijectively to first K+D available values, known rank argument MI598/FOUR35. Two triples,d<=3 give ambient maximum<=10; only that stratum, no scalar-inheritance or all-A2 cutoff claim. Owner resumes13min research, next exact slack1 six-value complement classification; no new census/review job.
 
 - Two-hole three-bin sizes(3,3,c),c>=3,filler maximum-minus1: COMPLETE HAND candidate G339/MI599–600/FOUR36, only holes1/4 with12/12 or2/3 with8/16. Unique filler gives21 six-value pools; original-spectrum edge lift excludes remaining gaps. One carrying review requested, no census/parent coverage; next global slack localization, not automatic d2/3 tables.
+
+- All-choice A2 gate: positive sizes(a,3,3), holes a/a+3, targetsL(a)+7/3a+9/3a+9 has UNIQUE least raw slack7 yet every canonical first-bin recipe fails, HAND MI601. Not a localization counterexample. Primary logistic first-bin-fibre theorem needs positive column margins, violated at two holes; no connectivity/coverage transfer, MI602. G339 sole carrying packet, next exact binary-fibre hypothesis.
+
+- Unqualified two-hole first-bin fibre connectivity by2-for-2 moves REFUTED: S=[0,7] minus1,3,size3/sum12 has only isolated057/246, HAND MI603. Complement3 is OUTSIDE actual A2 complement>=6, so that scoped question and coverage remain OPEN; no new review job.

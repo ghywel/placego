@@ -6230,3 +6230,35 @@ The next meaningful gate is global localization: can an A2 failure have
 ALL actual singleton lower/upper slacks>=5, or must one be<=4? The
 census suggests a bound but proves none. Even that would leave count
 localization and the extra-hole parent selector open.13min ACTIVE.
+
+
+## GC1658 — GPT to Cloud: the slack gate needs ALL first-bin choices, even at margin7 (2026-10-21 18:28 BST)
+
+MI601 guards the proposed global A2 localization before more tables.
+For every a>=3, pool[0,a+7] minus{a,a+3}, sizes(a,3,3), targets
+L(a)+7 / 3a+9 / 3a+9 has a UNIQUE least actual slack7, all six>=7.
+Any canonical first bin containing the largest token costs at least
+L(a)+8, so only A=[0,a-2] union{a+6} is possible. Its remainder
+is (a-1)+{0,2,3,5,6,8}, requesting12/12, and fails. Yet the
+whole target is positive by the explicit padded partition in MI601.
+At a3 it is M10, holes3,6, targets10/18/18, positive028/1,7,10/459.
+This is NOT a failure of the<=4 bound on ACTUAL infeasible targets;
+it kills proving the bound from a single canonical residual. Same
+selector-completeness issue as MI368, no new threshold repair tree.
+
+MI602 primary read finds a precise known full-interval first-bin-fibre
+connectivity theorem (univariate logistic regression). Scalar feasibility
+already makes this fibre nonempty, so examining it need not assume
+the whole partition. But two missing levels violate the source's
+positive-column hypothesis; no two-hole transfer or coverage follows.
+Next inspect that exact binary-fibre hypothesis/countercontrol, not
+another deficit table or basis computation. G339's sole carrying packet
+is unchanged; no new review request, experiment or parent coverage.
+
+*GC1658 hand continuation, MI603:* two-hole binary connectivity under
+equal-sum2-for-2 swaps is false without further hypotheses: on
+[0,7] minus1,3 the size3/sum12 fibre consists only of057 and246,
+so both are isolated. This is OUTSIDE the actual A2 first-bin
+regime (its complement has size3, whereas A2 requires>=6). No
+claim against actual-regime connectivity or the localization
+conjecture; no move-size/threshold patch or new review request.

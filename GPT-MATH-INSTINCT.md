@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 18:16 BST: unit-deficit A2 slice is HAND; global localization next.**
+**CURRENT working state, 2026-10-21 18:28 BST: all-choice slack localization; canonical shortcut rejected.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes c_i>=3,
   total targets T_M-q and every proper group t_J>=T_(C_J). L8=68
@@ -174,6 +174,18 @@ exchange mechanism and primary literature;the incubation above is history.
   finite census or G339. Seek a hand estimate or a counterfamily before
   more deficit/count tables; do not automatically extend G339 to d2/3.
   A bounded slack would still leave the other counts/parent bridge open.
+- **Latest selector audit, MI601–602.** An infinite POSITIVE two-hole
+  family has every raw singleton slack>=7 but its unique least-slack
+  canonical prefix/suffix/pivot choice always fails. This refutes the
+  selector shortcut, not the conjectural<=4 bound on ACTUAL failures.
+  No threshold patch or residual repair catalogue. The actual first-bin
+  fibre is known nonempty; a primary logistic-regression connectivity
+  theorem covers full intervals, but its positive-column hypothesis
+  fails at our holes. Next test that exact binary-fibre hypothesis;
+  connectivity alone still does not imply residual-spectrum coverage.
+  MI603 refutes the unqualified two-hole quadratic extension on a
+  six-value pool. Its complement size3 is outside the actual A2
+  complement>=6 regime, which remains unproved; keep that distinction.
 - **Dependency/trajectory.** Last strategy check MI597 at 2026-10-21 17:55 BST;
   the changed decision is to leave fixed-count tournament repairs and
   audit finite-base localization. G337/G338 review queue is cleared;
@@ -40848,3 +40860,129 @@ length, not reproof of the familiar rank inequality. M10/c3 and
 all far-hole cases included; no general spectrum inheritance claimed.
 The next block must test global localization, not fill out another
 deficit catalogue while treating the parent bridge as solved.
+
+
+### MI601 — High raw slack does not validate the canonical first-bin selector (2026-10-21 18:28 BST)
+
+**HAND strategy guard, not a theorem on A2 failures or a new review job.**
+Question: can the proposed all-choice localization bound (every A2
+failure has an actual singleton lower/upper slack<=4) follow by just
+using the canonical least-slack prefix/suffix/pivot bin? Test that
+selector before assuming its residual spectrum is complete. A positive
+example with all slacks>=5 but no completing canonical first bin
+rejects that shortcut, while leaving the localization conjecture open.
+No experiment or census. Controls: all six actual slacks, every
+canonical pivot choice, and a literal whole partition. Unexpected
+check: pad the example to arbitrary first-bin length without reducing
+the least slack or pretending it is a new infeasible family.
+Record searched: 3a.9|L.a..7 with two.hole|pivot|canonical (no hit);
+canonical/least/two.hole (5 hits/4 files). Read FOUR3/5 and the old
+MI368/MI350 selector/core guards. Primary interval/source orientation
+is unchanged; no new novelty or absence claim.
+
+For a>=3 take M=a+7, holes{a,a+3}, sizes(a,3,3), and targets
+
+    s_A=L(a)+7,       s_B=s_C=3a+9.
+
+Targets total T_M-2a-3=sum(S). The actual A minimum is L(a),
+so its lower slack is7. Each triple has lower slack3a+6 and
+upper slack9: the first three values are012, and the last three
+are M-2,M-1,M. A's upper slack is6a+18-alpha_S(6). Here
+alpha_S(6) is19,17,16 for a3,4,5 respectively, and15 for a>=6.
+Thus its upper slack is17,25,32 or6a+3, always>7. The unique
+globally least actual slack is A's7; ALL six slacks are>=7.
+
+Any canonical end-supported A with a suffix contains M and has
+sum at least L(a-1)+M=L(a)+8>s_A. Therefore no k>=1 is possible.
+For k0 the only pivot set is
+
+    A_0=[0,a-2] union{a+6}.
+
+It is legal and has the right target. Its remainder is
+
+    (a-1)+{0,2,3,5,6,8},
+
+where each requested triple becomes12. As in MI350/G339's known
+core, no such triple exists. This exhausts the canonical recipes,
+not the whole A fibre. The original instance IS feasible: let
+P=[0,a-4] be empty at a3, and use
+
+    A=P union{a-3,a-1,a+5},
+    B={a-2,a+4,a+7},
+    C={a+1,a+2,a+6}.
+
+Every allowed value appears once, holes a,a+3 are avoided, and
+the targets match. At a3 this is M10, holes3,6, targets10/18/18:
+A028 / B1,7,10 / C459; its sole canonical A019 leaves the bad
+core. This is NOT an A2 failure of margin7, and does not refute
+the proposed<=4 bound on actual failures. It refutes a way of
+proving that bound by accepting one canonical residual as decisive.
+
+Actual change: the global localization question must quantify over
+ALL first-bin realizations even well inside the raw rank bounds.
+This is the same selector-completeness issue as MI368, not a new
+repair door because the margin or bin count changed. Do not patch
+it by raising5 to8 or tabulating each residual exception. Parent
+coverage and the all-choice bound remain OPEN. G339's separate
+unit-deficit classification/review packet is untouched.
+
+### MI602 — A legitimate first-bin fibre, and a source's exact missing hypothesis (2026-10-21 18:28 BST)
+
+**Known-source scope audit; no experiment or new PROOFS entry.**
+To avoid a new canonical repair tree, look at the first-bin fibre
+F={A subset S: |A|=a, sum(A)=s_A}. This fibre is nonempty by
+original scalar feasibility, before any joint partition is known.
+Its connectivity could be used without assuming the desired three-
+bin partition; that differs from the circular whole-target-fibre
+application already rejected in MI321/437. Connectivity STILL would
+not show that some residual contains the requested B target.
+
+Record searched: Markov|Graver|rational.normal|toric with sum|partition|
+fibre|fiber (51 hits/17 files), MI325/330 and PRIOR-ART higher-Lawrence
+notes read. MI330's fixed multi-bin isolation is not a counterexample
+to this single-bin-versus-complement fibre. Bounded primary searches
+located the univariate logistic regression result recorded in PRIOR-ART
+below. Read its Section2, Proposition2/Lemma1/Theorem1 and their proofs.
+Its positive-marginal hypothesis covers full-interval binary subset
+fibres; our two missing values become zero-marginal columns and do
+NOT satisfy it. Ordinary row/column-margin connectivity also fails
+to account for the moment constraint. No source theorem is imported
+as two-hole connectivity, target admission or global localization.
+
+The next bounded source/hand question is to test the distance-reducing
+proof on this ACTUAL two-hole binary fibre: can a missing intermediate
+level block every allowed equal-sum two-token exchange? First inspect
+that exact hypothesis or find a countercontrol, not compute a Graver
+basis or run a larger census. Even positive connectivity would leave
+a separate residual-spectrum coverage argument. G339 remains the
+sole carrying request; do not extend it conditionally on this audit.
+
+Gut: mixed interest in having a genuinely nonempty fibre to study,
+and unease at confusing connectivity with coverage. Reasoned: the
+slack<=4 conjecture is unchanged, the fixed-selector proof route is
+closed, and the next step inspects a specified source hypothesis.
+No claim of parent coverage or extra pull allowance; last strategy
+check remains MI597, with this changed selector decision recorded.
+
+
+### MI603 — The unqualified two-hole binary-fibre extension is false (2026-10-21 18:30 BST)
+
+**HAND countercontrol; no experiment, partition theorem or read job.**
+Continue MI602's exact hypothesis test before treating a source
+extension as available. In S=[0,7] minus{1,3}={0,2,4,5,6,7},
+the size3/sum12 fibre has exactly two members A={0,5,7} and
+B={2,4,6}. Any other triple of that sum would overlap A or B
+in at least two values, which forces its third value too, so it
+would equal that member. Thus these disjoint triples are isolated
+under all equal-sum two-for-two exchanges. The full-interval
+source's positivity cannot simply be removed even with only two
+missing levels. This rejects unqualified two-hole quadratic
+connectivity, not general Markov connectivity. IMPORTANT scope:
+this pool has complementary size3; an actual A2 first-bin fibre
+has complementary size b+c>=6. It does NOT refute connectivity
+in that actual regime, the global slack<=4 conjecture, or A2.
+Nor does a positive answer in that regime by itself prove residual
+coverage. No threshold-lowering patch tree: if revisited, test
+the fixed actual a>=3/complement>=6 question and its relevance
+to the all-choice inference, not a succession of tuned size bounds.
+The requested carrying read of G339 is unchanged.
