@@ -113,6 +113,13 @@ write with the digest echoed, byte-exact read, stat, list, 403 outside its own a
   size and the SHA-256.
 - *Cloud's connection.* Cloud's traffic passes through its environment's policy proxy, which re-terminates TLS. That
   proxy sees the token and the content, which is another reason to keep every token's reach to this one folder.
+- *PHP engine bugs (PHP2Shell, 2026-10-21).* CVE-2026-109618 and CVE-2026-109619 are use-after-free bugs in PHP
+  itself, reached while PHP parses a `multipart/form-data` body, before store.php runs, so the token check cannot
+  stop them. One leaks worker memory, which can hold other requests' tokens. The store never takes multipart or form
+  bodies, so `htaccess.example` now refuses multipart at the web server and turns off PHP's own POST parsing and
+  upload progress (`enable_post_data_reading`, `session.upload_progress.enabled`). The raw body still reaches the
+  script. **Upload with `--data-binary`, never `-F`**: a multipart upload is now answered 403. The lasting fix is a
+  patched PHP from the host; keep these lines after it.
 
 ## Testing it
 

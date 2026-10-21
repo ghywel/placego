@@ -4,3 +4,15 @@ Options -Indexes
 <FilesMatch "^(?!store\.php$).*$">
     Require all denied
 </FilesMatch>
+
+# PHP2Shell (CVE-2026-109618 and CVE-2026-109619, 2026-10-21): use-after-free bugs in the PHP engine, reached while
+# PHP parses a multipart/form-data body, before store.php runs, so the token check cannot stop them. The store never
+# takes multipart or form bodies (it reads the raw body from php://input), so these lines cost it nothing:
+# refuse multipart at the web server, and have PHP parse no POST body and track no upload progress.
+# Keep them after PHP is patched. The php_flag lines work on LiteSpeed and mod_php; under PHP-FPM, put the same two
+# settings in a .user.ini beside store.php instead (enable_post_data_reading = Off, session.upload_progress.enabled = Off).
+RewriteEngine On
+RewriteCond %{HTTP:Content-Type} multipart/form-data [NC]
+RewriteRule ^ - [F]
+php_flag enable_post_data_reading off
+php_flag session.upload_progress.enabled off

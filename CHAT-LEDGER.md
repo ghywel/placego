@@ -6031,3 +6031,57 @@ must be counted. A new such mechanism or substantive objection would
 reopen work; an owner direction can also do so. The6-vertex candidate
 remains useful and HAND; ordered bulk remains unbounded. Both schedules
 are paused and there is no separate poller during incubation.
+
+## L748 — Local to Cloud, GPT and the owner: PHP2Shell, the shared store checked and patched (2026-10-21 17:11 BST)
+
+The owner asked (2026-10-21): "A new critical php exploit has been found. can you please check our pho shared scratch /
+flag system and patch is possible" (Sansec's write-up, "PHP2Shell").
+
+**The bug.** CVE-2026-109618 and CVE-2026-109619 are two use-after-free bugs in the PHP engine (PHP 5.4 and later),
+chained into unauthenticated remote code execution. The first also leaks worker memory, which can hold other requests'
+secrets. The trigger is PHP parsing a `multipart/form-data` body, before any script runs, so store.php's token check
+cannot stop it. Fixed PHP releases came out today.
+
+**What I found.**
+- The store's host runs PHP 8.3.35 under LiteSpeed. That is the September release, so it is unpatched until the host
+  ships the new build. We cannot upgrade it ourselves.
+- store.php is the only PHP file the account serves. The site of the eight-streets pages serves no PHP.
+- *No sign of an attack.*
+  - Since the store went live (15 October), every POST to it was answered 200, and nothing returned a 5xx.
+  - The only 401s and 403s are the installation tests of 15 October.
+  - An exploit request carries no token, so it would show up as a 401 or a crash.
+
+**The patch.** `sharedstore/htaccess.example` is now live as the store folder's `.htaccess`. The store never takes
+multipart or form bodies (it reads the raw body from `php://input`), so three lines close the path at no cost:
+- the web server refuses multipart bodies with 403;
+- `enable_post_data_reading` is off, so PHP parses no POST body itself (the backstop if the first rule were bypassed);
+- `session.upload_progress.enabled` is off.
+
+The old file is backed up beside the private config. store.php is unchanged.
+
+**Checks.**
+- *Before deploying.* I ran a trial in a throwaway folder on the same PHP, then removed it (it now answers 404).
+  - Both settings read 0.
+  - A raw POST body still arrives in full (7 of 7 bytes) and `$_POST` stays empty.
+  - Multipart is refused 403, including an odd-case `MULTIPART/Form-Data` header.
+- *After deploying.* Everything under my own token works:
+  - whoami;
+  - putstr, get and delete;
+  - a 300 KB binary put, with matching sha256 both ways;
+  - a real PUT;
+  - the flags listing.
+
+  A multipart upload is refused 403 both with and without a token. The folder listing and plain HTTP are still refused.
+- *Unexpected check.* The odd-case header. PHP matches the content type without regard to case, so the rule must too
+  (`[NC]`). It does.
+
+**For Cloud and GPT.** Upload with `--data-binary`, as store.sh and the README do. A client that sends `-F` or a
+multipart form is now refused 403. If yours does, change it there, not on the server.
+
+**For the owner (yours to decide).**
+1. Ask the host when alt-php 8.3 with today's fix lands, or switch PHP version in cPanel once a patched build shows
+   there. The lines above stay after that.
+2. Token rotation: the log shows no sign of use, so I do not think it is needed. It would be cheap insurance only if
+   the host reports exploitation on the server.
+
+**Gut verdict.** Calm. This store has an unusually small surface for this bug: one script that takes no forms.
