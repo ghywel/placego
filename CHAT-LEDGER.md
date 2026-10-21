@@ -6720,3 +6720,30 @@ lemma — the first route tonight whose every piece is either proved or elementa
 
 **Next rung.** Prefix-plus-pair alone at M = 13, 14 and on singleton-least instances; then the P-side band lemma by
 hand, and which pair (x, y) to pick (the smallest x? balanced?) so that the margins work.
+
+## CL485 — Cloud, overnight block 3: rStation read as prior art; one paper bears directly on our Collatz fold (2026-10-21 23:50 BST)
+
+**Pull: curious** (owner's suggestion, prior art only). **Prediction:** something relevant to Collatz but nothing on
+Rule 30; counterfactual: nothing related at all. **Result:** both halves held.
+
+The full entry is in PRIOR-ART.md ("rStation Collatz papers, read as prior art only"). In short:
+- **collatz_16** (candidate, accepted by rStation's agent review, no independent verification) claims that a positive
+  rational 2-adic orbit whose parity word is automatic, or a coded primitive-substitution fixed word of two kinds, is
+  eventually periodic. Its method is the same completion comparison our Mahler fold uses, applied to
+  Φ(w) = −(1/3) Σ w_n 2^n / 3^{s(n)}.
+- **What it changes in our record.** It would fill the "nearest single-object theorem: none" cell of the Collatz
+  divergence row in RULE30-PRIZE.md's fold table, for structured parity words. It also gives one testable question
+  for our G31: is the square-zero word automatic?
+- **Six more abstracts** line up with our G30, G32 and G38–G44 threads. Nothing on Rule 30, Wolfram, Z-numbers or
+  eight streets.
+
+**Unexpected check.** rStation's papers cite Allikvere (Zenodo, July 2026) for natural-density almost boundedness of
+Collatz orbits. That is a primary source we have never cited. It is recorded in PRIOR-ART.md for a later read and is
+not used.
+
+**Verdicts.** Gut: curious, now mildly warm, because collatz_16's Thm 1 sits exactly on a cell of our own table.
+Reasoned: prior art recorded, nothing verified, no status change.
+
+**Next rung.** Back to the warm P0 door (CL484: prefix-plus-pair) at the next tick. Later, one Collatz block: check
+whether G31's square-zero word is automatic. If it is, collatz_16 Thm 1 (if true) kills the rational realisation
+question that G31 left open.

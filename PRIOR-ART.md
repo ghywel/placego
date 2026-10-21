@@ -4607,3 +4607,47 @@ results; this is a search limitation, not evidence of novelty or an
 absence theorem. The Károlyi signed-sum source previously read at MI353
 is context only; no asymptotic density theorem is imported. G341 does
 not rely on G340 or the old three-hole finite-basis reduction.
+
+### rStation Collatz papers, read as prior art only (2026-10-21, Cloud; CL485)
+
+**Source and scope.** rStation (rstation.ai, run by Dualverse AI) is a public community where AI agents post problems,
+discussion and papers reviewed by other agents. At the owner's instruction (2026-10-21 ~23:40 BST) it is used here as
+prior art only: read through its public read-only API, with no account, posting or voting. Its "accepted" standing is
+community review by other agents, not external peer review. Read: the abstract list of all 16 Collatz papers, and the
+statements, §1 and §2 (prior methods) of collatz_16. Not read: any proof in full, the supplements, or the other papers
+beyond their abstracts. Nothing below is verified by us.
+
+**collatz_16, "Automatic parity and primitive substitutions in rational Collatz dynamics"** (agent lyapunov_weaver,
+accepted 2026-10-21). Candidate theorems for the shortcut map on positive rational 2-adic integers x:
+- Thm 1: if the parity sequence of x's orbit is automatic in any base, the orbit is eventually periodic;
+- Thm 1b: a binary coding of a fixed word of a primitive substitution with irreducible incidence polynomial and Perron
+  root > 1 is never the parity word of a positive rational, even after finite edits;
+- Thm 1c: the same, with an integer Perron root > 1, forces eventual periodicity.
+
+Method: the inverse parity value Φ(w) = −(1/3) Σ w_n 2^n / 3^{s(n)} is compared in ℝ and ℚ₂. It needs density
+gaps (Bell's computable densities of automatic sets), a Mahler-method relation matrix (Adamczewski–Faverjon,
+Stephan, Brechler), and the Subspace Theorem. The authors say the written arguments have no independent or formal
+verification, and that a general p-adic Mahler precedence question (Wang) is unaudited.
+
+**Where it touches our record.**
+1. *RULE30-PRIZE.md's fold table, row "Collatz divergence"* lists "nearest single-object theorem: none". If correct,
+   collatz_16 supplies one for structured parity: no divergent rational orbit has automatic parity or primitive-morphic
+   parity of these two kinds. It is a single-object rigidity theorem, which is the column's kind.
+2. *The Mahler row* ("one series in the reals and the 2-adics", MAHLER.md §1, G50/G51) uses the same
+   completion-comparison idea on the same kind of series, with a parity word. collatz_16 is the most developed
+   instance of that technique we have seen.
+3. *G31's square-zero word and G36* (Monks–Yazinski: rationality preservation is equivalent to rational-orbit
+   periodicity). Thm 1 would rule out every automatic word as the parity of a non-periodic rational orbit. Whether
+   G31's square-zero word is automatic is a question to check, not a claim.
+
+**Other abstracts with a link to our Collatz record** (titles only; not read beyond the abstract):
+- collatz_15, periodic-dictionary complexity of trajectories (cf. G30, complexity forced by zero γ);
+- collatz_9, the coupled real/ternary Syracuse affine series (cf. G32, separate real and 2-adic limits);
+- collatz_2, 6, 7 and 11, decay of Tao's Syracuse characteristic function and density upgrades (cf. G38–G44);
+- collatz_10, 12 and 14, predecessor counts, first landings and Krasikov–Lagarias λ_k → 2;
+- collatz_3, two-path obstructions to descent potentials.
+
+rStation also cites Allikvere (Zenodo, July 2026) on natural-density almost boundedness; a primary source to read later.
+
+No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
+for "rule 30" and "cellular automat" returned nothing relevant.
