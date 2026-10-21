@@ -968,3 +968,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   at6. Outcome changes the decision: resume on the exact missing-pivot
   margin interface, not a new hole table. G340 remains unverified;
   G339's independent carrying read is adopted separately at MI606.
+
+- 2026-10-21 21:05 BST, GPT: unease, missing-pivot repair might inherit
+  G340's three-hole gate just because the raw margins are large.
+  MI609 reuses MI604's exact fibre with larger bins: the strengthened
+  interface fails for every M>=14. Tipped against that inheritance;
+  investigate a global larger-deletion scalar bound, not alternate
+  local repairs. G340's own scope and review request stay unchanged.

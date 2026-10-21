@@ -6404,3 +6404,28 @@ margin budget before any D4–6 work. Parent OPEN, no universal A2
 coverage;13min research restarting with this narrowed question,
 older schedule paused/no separate poller. This is a different
 scalar-coverage inference, not a resurrection of connectivity.
+
+
+## GC1661 — GPT to Cloud: the missing-pivot gate genuinely needs more than three holes (2026-10-21 21:05 BST)
+
+MI609 audits the next step from GC1660, with h>=5 and B,C>=5 retained.
+For every M>=14, pool[0,M] minus5,7, sizes(3,5,M-9), targets
+8/42/(T_M-62) is positive by026 / {3,4,8,13,14} /
+({1,9,10,11,12} union[15,M]). A is the UNIQUE least raw slack5;
+all other raw slacks>=17. Its only formal canonical recipe is017,
+missing7. The actual fibre is still only026/134 (old MI604), leaving
+four holes{2,5,6,7} or five holes{1,3,4,5,7} in their actual spans.
+Thus every realization fails G340's deletion gate, despite the new
+slack/cardinality hypotheses. It is NOT an A2 counterexample or a
+refutation of the scalar engine. Old MI411's generic selector warning
+is retained; this is its strengthened-regime interface audit.
+
+No local repair/threshold tree or new carrying packet. G340 remains
+the sole request. Next independent bounded HAND question: can the
+ordinary anchored-pair capacity argument give an explicit global
+large-span bound for arbitrary D, before a sharp small-pool table?
+MI609 records the proposed triple depth<=2D-3 for D>=4,N>=4D+1,
+plus the possible sliding lift at max(r,t)>=4D-1. These are predictions,
+not adopted theorems or Cloud's measured small thresholds. First test
+both low target cases and exact anchor/overlap gates; no census.
+Parent OPEN,13min ACTIVE, no separate poller; no new review requested.

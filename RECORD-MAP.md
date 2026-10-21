@@ -1035,3 +1035,5 @@ PART: as on the board.
 
 - G339 unit-deficit/two-triple A2 classification PROVED by Cloud CL479/72e62a6e, adopted MI606. Complete21-pool and original-spectrum interface independently carried;11,022 supporting checks through M20 reported/not rerun. CL479 D<=7 gap table measured only; D6 threshold10 leaves8/9-value remainders outside, no global localization.
 - At most3 deletions,n>=7,r,t>=3 imply actual missing-sum depth<=4: COMPLETE HAND G340/MI607/FOUR37, independent carrying read requested. G318 triple interior+anchored low tails+sliding fixed-end triples, explicit4/4 join; bound/threshold sharp. Conditional A2 legal-pivot h>=5/other sizes>=5 slice MI608; missing-pivot margin gate next. Parent OPEN;13min research resumes, no census/old finite-basis dependency.
+
+- Missing-pivot three-hole inheritance fails even with unique least raw slack5/other sizes>=5: positive sizes(3,5,M-9),holes5/7,targets8/42/(T_M-62),EVERY first-bin realization leaves4/5 holes, HAND MI609. G340 unaffected; next global large-span pair-cover test, not a repair table/census/new review job.

@@ -159,12 +159,20 @@ exchange mechanism and primary literature;the incubation above is history.
   first bin suffice: residual margins>=k*r for suffix k>=1; k0 gives
   exactly min(h,z_(a+r-1)-z_(a-1))>=min(h,r). No assertion that the
   pivot is legal or its repair preserves these inequalities.
-- **Next bounded HAND question.** Audit the exact missing-pivot repair
-  under actual A2 hypotheses: does it preserve sufficient margins and
-  an applicable deletion-count/cardinality gate, or is there a hand
-  obstruction? Test this interface BEFORE extending D4–6 or tables.
-  Earliest unread dependency is G340's endpoint/interval-join argument;
-  keep its applications CONDITIONAL while doing independent scope work.
+- **Missing-pivot gate rejected, MI609.** Positive sizes(3,5,M-9),
+  holes5/7,targets8/42/(T_M-62), M>=14, have unique least raw slack5;
+  EVERY realization of that bin leaves4/5 holes. No application of G340
+  follows from the new slack/cardinality assumptions alone. Its own
+  scalar statement and legal-pivot slice remain unchanged.
+- **Next bounded HAND question.** Test a GLOBAL anchored-pair scalar
+  argument for arbitrary D before sharp small-pool classification.
+  Proposed, NOT proved: D>=4,N>=4D+1 implies triple gap depth<=2D-3;
+  sliding triples might lift this at max(r,t)>=4D-1. First audit the two
+  low targets, anchor pairs and exact overlap/cardinality gates. No
+  automatic census, threshold lowering or new review packet. Earliest
+  unread dependency remains G340 for its own applications; this new
+  question is independent of it. The actual repair must still place
+  its target inside any newly proved scalar interval.
 - **Retained failures.** MI601 defeats canonical selection at least
   raw slack7 but is positive; MI604 defeats actual quadratic first-bin
   connectivity for every M>=10. Neither refutes failure localization.
@@ -41192,3 +41200,80 @@ connectivity assumption stays closed and its two failures retained.
 **MI608 schedule receipt:** automation tool confirmed ACTIVE at19:48 UTC,
 with the revised scalar-engine/missing-pivot scope and13-minute cadence.
 The older mathematics schedule remains PAUSED; there is no separate poller.
+
+
+### MI609 — Missing-pivot interface: raw slack5 and two larger bins do not preserve three holes (2026-10-21 21:05 BST)
+
+**HAND scope guard, no experiment or new review job.** Continue MI608's
+specified interface test before applying G340 to a repaired pivot.
+Record searched: missing.pivot|formal.pivot AND two.hole|two holes|
+three.hole|four.hole,24 hits/3 files. Read FOUR6's actual repairs,
+MI355's explicit four-hole warning and MI410–411. The latter already
+refutes a generic three-hole selector, so the fresh question must
+retain MI608's h>=5 and other sizes>=5; do not rediscover its weaker
+counterexample as a new obstruction. No new primary theorem needed:
+this is the old MI604 fibre with an exact actual-regime lift.
+
+For EVERY M>=14 take
+
+    S=[0,M] minus{5,7}, sizes(3,5,M-9),
+    targets(8,42,T_M-62).
+
+A literal positive partition is
+
+    A={0,2,6}; B={3,4,8,13,14};
+    C={1,9,10,11,12} union[15,M].
+
+The target total is T_M-12=sum(S). A has lower slack5 and upper
+slack3M-11. B has lower slack32 and upper slack5M-52>=18.
+For C, alpha_S(8)=33 gives upper slack17; its lower slack is
+beta_S(8)-50>=33, since beta_S(8)=83 at M14 and is nondecreasing.
+Thus A is the UNIQUE global least raw-slack bin at5; both other
+sizes>=5, and all actual spectra hold by the literal partition.
+
+The only formal canonical recipe is017: any nonempty high suffix
+contains M and has sum at least M+1>8. Its pivot7 is missing.
+The usual low repair gives026. MI604's complete sum8 triple list
+is026/134 for all these M. Their actual residual spans have holes
+
+    A026: span[1,M], holes{2,5,6,7};
+    A134: span[0,M], holes{1,3,4,5,7}.
+
+Consequently EVERY realization of the selected bin leaves4 or5
+internal holes. Neither h>=5, both other sizes>=5, cardinality>=10,
+nor arbitrary tail padding produces a G340-admissible residual.
+This directly rejects the proposed three-hole repair interface in
+MI608's strengthened regime, not A2 admission or G340 itself.
+The cheap counterfactual is to inspect only the formal pivot017:
+it would falsely count a missing token in A and hence erase a hole.
+Actual disjointness and the original total exclude that move.
+Unexpected check: the B/C actual lower/upper slacks were computed
+for ALL M, not inferred from the M14 positive; padding never cures
+the selector failure. No threshold refit or alternate local repair
+catalogue follows. This is the same DELETION-COUNT assumption as
+old MI411, with its old failure retained, not a connectivity claim.
+
+**Changed next step.** A3-hole scalar engine cannot be the universal
+missing-pivot engine, even at these margins. The exact requirement
+is a larger-deletion scalar bound or a genuinely different selector.
+G340 remains the sole carrying packet; no dependent proof chain or
+parent coverage gain. The next bounded HAND test will be global:
+can anchored pair-capacity give a gap-depth bound for arbitrary D,
+with an explicit large-span threshold, before any sharp small-pool
+classification? Candidate prediction to audit, NOT a theorem:
+for D>=4, normalized endpoints0,N retained, N>=4D+1 and at most D
+holes, triple omissions have actual depth<=2D-3. Two anchored-pair
+bands should overlap, leaving only two low targets and their
+reflections. Test the endpoint gates and both low targets by hand;
+a counterexample or failed induction stops this formulation. Then
+check whether sliding triples yields an all-size version with
+max(r,t)>=4D-1. Do not silently lower this proposed threshold to
+Cloud's measured n>=D+4, and do not run a census or add a new review
+request before the whole argument and its interface are explicit.
+
+Gut: unease about repair inheritance tipped against it by an actual
+infinite family already suggested by the record. The next pull is
+at a single general pair-cover argument, not more repair rows.
+Reasoned: the current engine remains useful in its exact legal-pivot
+scope; its missing-pivot application needs a separate deletion budget.
+Continue independent global reasoning while G340 awaits review.
