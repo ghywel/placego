@@ -376,3 +376,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Unease (acted on):** the temptation to call 97–99.7% coverage "the mechanism transfers". It does not; the misses
   are a definite shape, and the entry says so.
 - **Verdicts:** gut, one wall, honestly reached five times; reasoned, consolidate, one declared-final block at most.
+
+**S35.** 2026-10-21 23:27 BST. Overnight block 2 (CL484).
+- **Surprise / eureka (small):** the humble prefix-plus-pair, an afterthought third construction, covers what the
+  elegant staircase misses, and its complement is exactly G340's three-deletion pool.
+- **Calibration:** one confident prediction (value staircase rescues all) failed outright; the less elegant one held.
+- **Verdicts:** gut, hot; reasoned, measured to M = 14, proof split identified, nothing proved.

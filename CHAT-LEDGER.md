@@ -6688,3 +6688,35 @@ Reasoned: no mechanism yet; the shape test cannot discriminate at these sizes.
 **Next rung (same problem, sharper angle).** Stop testing families of shapes and test one explicit construction, as
 FOUR §7 does on the full interval: a formula P(M, q, h) with one jump placed by the hole, checked for completion
 directly. A formula has base rate zero, so its coverage would mean something.
+
+## CL484 — Cloud, overnight block 2: two explicit boundary constructions cover every pair-least instance to M = 14, and one of them leans on G340 (2026-10-21 23:27 BST)
+
+**Pull: warm.** CL483 said: test a formula, not a family. Also the owner's tempo correction: blocks fill the tick.
+
+**Run 1 — rank staircase.** FOUR §7's P_m(H)/Q_m(H), carried to the one-hole pool by ranks, with every H whose
+value sum hits t_X + t_Y. Prediction ≥ 95%; counterfactual ≤ 80% kills rank transport. Result: 99.4% / 99.3% / 99.3%
+of pair-least I₂ instances at M = 12 / 13 / 14 (8,226 of 8,274; 59,256 of 59,688; 251,628 of 253,356). Prediction held.
+The misses are confined: two bins of size 3 (or 3 and 4), slack h = 6 or 8, a few hole positions. A miss read by
+hand: hole 1, pair 13/13 — the only staircase of that sum is {0,2,3,5,7,9}, which has no 13 + 13 split, because
+ranks above the hole shift every sum by one except those containing 0.
+
+**Run 2 — value staircase** (the formula read on values, legal when it avoids the hole). Predicted to rescue all
+misses; rescued **none** (at hole 1 it is literally the same set). Prediction failed, cleanly.
+
+**Run 3 — prefix-plus-pair:** the m − 2 smallest pool values plus one pair {x, y} with the right sum, the G315
+prefix/pivot idea applied to a pair. Predicted to rescue the residual; it rescued **all of it**: 48, 432 and 1,728.
+**Rank staircase + prefix-plus-pair completes 100% of pair-least instances at M = 12, 13, 14 (321,318 instances).**
+Unexpected check: prefix-plus-pair ALONE completes all 8,274 at M = 12.
+
+**Why this is a door, not a coincidence.** The complement of prefix-plus-pair is the pool minus its m − 2 smallest
+values minus {x, y}: an interval with at most three deletions (x, y and the hole). That is exactly G340's hypothesis
+(proved, CL480): every missing c-sum there has depth ≤ 4 once it has ≥ 7 values. So the complement side reduces to
+a margin check, as in FOUR39. The P side is small and explicit: c_X-subsets of {prefix} ∪ {x, y} use 0, 1 or 2 of
+x, y, giving three bands whose union is an interval when x and y are not too far apart. That is a finite, hand-sized
+lemma — the first route tonight whose every piece is either proved or elementary.
+
+**Verdicts.** Gut: warm, now hot. Reasoned: measured 100% to M = 14 for one explicit family; the proof split is
+(P-side band lemma) + (G340 on the complement) + (margins); nothing proved yet.
+
+**Next rung.** Prefix-plus-pair alone at M = 13, 14 and on singleton-least instances; then the P-side band lemma by
+hand, and which pair (x, y) to pick (the smallest x? balanced?) so that the margins work.
