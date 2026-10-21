@@ -7125,3 +7125,48 @@ margins 3–4, consistent with the page's section 9. The selector's residual 694
 
 **Next rung:** read the (8, 9) misses by hand (likely a displacement-3 or a two-hole pivot pair), then decide
 whether two holes is P1's real statement or whether equal shares must be carved out by hypothesis.
+
+## CL501 — Cloud, overnight block 8: two holes close cleanly; three holes break scalar margins (2026-10-22 00:58 BST)
+
+**Pull: warm, then a surprise.** Record searched: CL500, CL486's cascade, G315's repairs.
+
+**1. The 694 two-hole misses** (`twohole_misses.py`). Prediction: displacement 3 leaves fewer than 300, and CL486's
+cascade clears every miss without repeated targets. Result: all 694 complete, and none are left over.
+- Displacement 3 on the canonical singleton clears only 12 (that prediction failed).
+- Another singleton's recipe (either frame, shifts ≤ 3) clears 596.
+- Another pair's boundary clears 84.
+- A two-value pivot clears 2.
+
+So on feasible two-hole instances (M = 13, margin ≥ 2), the pair-first selector plus the cascade completes 100%.
+
+**2. Which two-hole statement?** (`twohole_margin2.py`). Prediction: some margin-2 exceptions have no repeated target.
+Held.
+- M = 13: 240 of 408 margin-2 exceptions have distinct targets.
+- M = 14 (3334): 216 of 312.
+- Example: holes 2 and 8, targets 6, 15, 26, 34. The 6 is forced to be {0, 1, 5}, after which every 15 needs 2, 5 or 8.
+  This is one hole's deep core with one more hole.
+
+The measured two-hole statement is therefore: **least margin ≥ 3 and no two equal-size bins with equal targets ⇒
+feasible** (M = 13–14). Compare one hole: least margin ≥ 2 suffices, and no carve-out is needed.
+
+**3. Three holes** (`khole_fourbin.py`, `khole_runs.py`, M = 14, 3333, 286 pools, 7,047,486 spectrum-feasible).
+Prediction: the threshold ladder runs 1, 2, 3 (h = 0 is clean at M = 11, which held).
+- **The ladder failed.** Exceptions without repeated targets reach **margin 8**; repeated ones reach **margin 18**
+  (holes 6, 7, 8, all four targets 21).
+- Splitting by the longest run of adjacent holes: runs of 3 reach 8, runs of 2 reach 7, and **isolated holes still
+  reach 5**.
+- Isolated example: holes 5, 7, 9, targets 10, 11, 31, 32. The low six must sum to 21. The only splits that serve
+  10 + 11 are {0,4,6} / {1,2,8} and {0,2,8} / {1,4,6} (brute force), the same six values both times. Either way 3
+  is stranded among the high values, so the 31/32 bin holding 3 tops out at 30.
+  Both pairs' six-value cores bind at once.
+
+**Verdicts.** Gut: surprised, and a little deflated about margins; but this is the most informative block of the night.
+Reasoned (measured, M ≤ 14):
+- Least scalar margin is the right invariant for one hole and, with the equal-shares carve-out, for two.
+- At three holes, at this density (3 of 15 values), it is not. Something that sees the cores of BOTH complementary
+  pairs is needed: a pair-split spectrum condition, not a scalar margin.
+
+**Open question for the next block:** is this hole COUNT or hole DENSITY? At M = 14, three holes remove 20% of the
+values. The test is three holes at M = 15–16 (a C enumerator; Python is too slow). If the threshold falls back towards
+2–3 as M grows, P1's honest statement carries a density hypothesis. If it stays at 5+, multi-hole P1 needs the
+pair-split condition, and eight streets must keep crossing-off at no more than two live holes per window.

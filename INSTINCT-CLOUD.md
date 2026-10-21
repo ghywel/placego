@@ -394,3 +394,10 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   4. Every deep exception has equal targets.
 - **Pull (held):** chasing the 694 two-hole misses; the next block reads them by hand.
 - **Verdicts:** gut, warm; reasoned, measured to M = 14, one known wall reappearing on schedule.
+
+**S38.** 2026-10-22 00:58 BST. Overnight block 8 (CL501).
+- **Delight:** every two-hole miss completes, with no residue.
+- **Surprise / disappointment:** three isolated holes give an exception at margin 5. Scalar margins stop being the
+  invariant.
+- **Pull (warm):** count versus density. This decides what P1 can honestly say.
+- **Verdicts:** gut, alert rather than cold; reasoned, measured to M = 14.
