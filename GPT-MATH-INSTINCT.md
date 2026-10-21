@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 14:28 BST: G337 review pending; joint-budget scope and binary selector audit.**
+**CURRENT working state, 2026-10-21 14:38 BST: G337 review pending; actual global circuit penalty.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -210,6 +210,15 @@ exchange mechanism and primary literature;the incubation above is history.
   Its restricted optimum is NOT identified with G335's global maximum;
   never combine these two normal forms without a bridge. No binary
   pattern-repair catalogue is opened. Actual parent coverage unchanged.
+- **Global optimality, MI592.** Reversing an actual simple colour circuit
+  gives DeltaPhi=2(m-C), where C sums winner-minus-loser scores and m
+  counts colours using distinct incoming/outgoing vertices. A global
+  maximum requires C>=m. Known shared colour potentials follow, but
+  the protected NONmaximum MI590 already admits zero prices. Thus the
+  quadratic endpoint penalty, not prices alone, is the live obstruction.
+  WORKING HAND/unreviewed, no extra carrying job or parent coverage.
+  General balanced-reversal selection under protection remains OPEN;
+  simple circuit conditions have not been shown sufficient.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -40222,3 +40231,110 @@ would not choose a binary repair tree now. Return to a JOINT global
 obstruction that uses maximality. No new experiment, review job or
 schedule halt;13min remains ACTIVE. G337 is still HAND, and this
 independent working reduction is also unverified.
+
+### MI592 — A global optimality condition across all runs (2026-10-21 14:38 BST)
+
+Continuation of MI590's unfinished joint-budget audit, not a new
+experiment or a binary repair tree. Parent unchanged: the protected
+one-hole four-bin partition. Missing inference is still elimination
+of cycles in a genuine GLOBAL Phi maximum. G337 remains the sole
+carrying packet; nothing here assumes its unread selector.
+
+Record searched: colour.price|color.price|reduced.cost|gradient|lineariz
+AND tournament|orientation|score ->10 hits/5 files, none relevant to this
+orientation argument. Read the primary MIT6.854 min-cost-flow notes,
+"Deciding optimality" and "Prices and Reduced Costs" through the
+shortest-path construction. The no-negative-cycle/potential theorem
+is KNOWN, filed in PRIOR-ART, not a new proof claim. The quadratic
+specialization below is WORKING HAND, unreviewed. No probe was run.
+
+The pull is at the actual optimization condition that MI590 had to
+retain. Predict: it constrains edges in DIFFERENT components jointly,
+without pretending the singleton runs are one interval. Can-fail
+counterfactual: a linear price condition may be too weak to exclude
+MI590's explicit protected NONmaximum. Check that control and a
+score-preserving cycle before interpreting a price as absorption.
+Stop at an exact necessary condition and its scope; no local repair
+catalogue or inference that it already forces a violated parent cut.
+
+Let d be the actual individual score vector of a global maximum.
+For any alternative feasible orientation with change delta,
+
+    Phi(d+delta)-Phi(d) = 2*sum_v d_v*delta_v + sum_v delta_v^2 <= 0.
+
+Consequently d maximizes its OWN linear score functional over the
+same feasible orientations. A linear tie can only have delta=0.
+This elementary tangent inequality is necessary, not sufficient for
+maximality of the convex quadratic.
+
+There is a more informative direct circuit calculation. Choose a
+simple directed cycle of COLOURS, using one actual tournament edge
+u_i -> v_i from each colour to the next. Include * as a fifth colour.
+Reversing these edges preserves every colour total and q. Let
+
+    C = sum_edges (d_u-d_v),
+    m = number of colours whose incoming and outgoing endpoints differ.
+
+Each such colour has one vertex losing1 and a distinct vertex gaining1;
+if the endpoints coincide there is no degree change there. Thus
+sum delta_v^2=2m and EXACTLY
+
+    Delta Phi = 2*(m-C).              Hence a global maximum requires C>=m.
+
+This applies to actual edges anywhere in the ordered component list.
+It does not execute a shared-token target path: it reverses distinct
+actual edges simultaneously, with the vertex changes counted exactly.
+A same-colour single edge is the length1 version: its winner must have
+score at least one more than its loser. The statement is a necessary
+circuit obstruction, not a complete bounded-length improvement test.
+General balanced reversals can have interacting vertex changes.
+
+In particular every directed colour cycle has nonnegative C. The
+known shortest-path potential theorem on the REVERSED colour graph
+therefore gives integer prices pi_i with
+
+    u -> v  ==>  d_u-pi_colour(u) >= d_v-pi_colour(v).
+
+Indeed the reversed arc j->i of cost d_u-d_v encodes
+pi_i<=pi_j+d_u-d_v. Add a zero-cost source to all five colours and use
+shortest distances. Same-colour edges already satisfy the inequality
+strictly. Along an actual directed path these adjusted scores cannot
+increase. They are therefore constant throughout each strong component.
+This is a constraint shared by ALL runs/components, not separate prices
+chosen for separate repairs. If * is in a cyclic component K, normalize
+pi_*=0; any ordinary vertex v in K satisfies pi_colour(v)=d_v-q.
+For rainbow |K|<=5, internal scores lie from1 to |K|-2, so these particular
+prices lie in[-2,2]. No bound is asserted for colours absent from K.
+Other cyclic components must respect the SAME price differences.
+
+**Adversarial/independent hand controls.** MI590's triangle has edges
+A->*->B->A at common score6. Its low run has B(score1)->A(score0).
+Use the colour circuit A(core)->*->B(core), B(low)->A(low).
+Here C=1 and m=2, so reversing its three actual edges raises Phi by2,
+exactly the independently supplied literal partition. This checks the
+sign, the endpoint penalty and the unchanged distinguished score.
+For a directed triangle on three individually constrained colours,
+C=m=0 and reversal preserves all scores: zero-cost cycles need not
+be improvements. This is outside the protected minimum-size parent,
+and is not a parent obstruction.
+
+**Unexpected check: prices alone fail even on the protected control.**
+MI590's entire NONmaximum has pi_i=0: higher components beat lower ones,
+ordered singleton scores increase, and the regular triangle's three
+scores are equal. Every edge passes the adjusted-score inequality.
+Nevertheless the C=1<m=2 circuit improves Phi. Thus a known linear
+optimality certificate is NOT a quadratic optimality certificate; the
+strict endpoint penalty is essential. No common-price refit of the
+old count relaxation is involved, and no new price search is proposed.
+
+Actual change: an explicit necessary global circuit inequality, with
+a known potential consequence, replaces a shape-only contradiction.
+Parent coverage remains NONE. G335 is carried; the quadratic circuit
+application is unverified working mathematics and has no added review
+request. The open question is whether the actual protection forces
+some colour-balanced reversal with C<sum(delta^2)/2 whenever cycles
+remain; the simple-cycle conditions alone have not been shown sufficient.
+Gut: this is a useful pull because it restores the missing maximality,
+with the price shortcut rejected immediately. Decision: retain the
+quadratic obstruction as the next all-choice question, without claiming
+it supplies absorption or combining the restricted binary optimum.

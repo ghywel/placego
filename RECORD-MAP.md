@@ -1011,3 +1011,5 @@ PART: as on the board.
 - One thick ordered run (four counts>=3) absorbs ANY rainbow cyclic component<=5: HAND G337/MI588–589/FOUR33; slack<=4 cuts form chain (separation9), core debt<=5, fixed-* ordering and PROVED G316 repair. Replaces G336-only review; run existence/thin parent OPEN, no census.
 
 - Joint component cut budget/shape-only shortcut guard: protected M12 cyclic thin-run control is nonmaximal, MI590. Old MI551 compression recognized; separate restricted inversion optimum has WORKING HAND <=2 descents via neutral equal-score flips, MI591. Unverified, no new read job; not G335's global maximum or parent progress.
+
+- Global tournament maximum requires C>=m on actual simple colour-edge circuits; known common potentials alone fail protected NONmaximum, WORKING HAND MI592. Quadratic balanced-reversal/protection inference OPEN; no new review packet or parent coverage.

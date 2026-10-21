@@ -4513,3 +4513,17 @@ novelty claim. The proposed bounded-defect application to G335's
 rainbow components, fixed-* score ordering and absorption is separately
 HAND/unreviewed. Its physical lift is PROVED G316; no integer-point
 conclusion is taken merely from Fink's general base-polytope source.
+
+### Colour potentials for a tournament's linearized objective (MI592, 2026-10-21)
+
+Read MIT6.854 [Min-Cost Flow notes](https://courses.csail.mit.edu/6.854/16/Notes/n10-mincostflow.html),
+sections "Deciding optimality" and "Prices and Reduced Costs", including
+the zero-source shortest-path construction. The known theorem equates
+nonnegative residual cycle costs with a feasible potential. MI592 applies
+it to the reversed five-colour orientation graph after linearizing Phi
+at a GLOBAL maximum. This is known optimization machinery, not a novelty
+claim. Its price certificate alone does not certify the quadratic
+maximum: the protected NONmaximum in MI590 already admits zero prices.
+The separate exact reversal formula includes the squared vertex changes;
+no parent absorption theorem or sufficiency of simple circuit tests is
+imported from the source.

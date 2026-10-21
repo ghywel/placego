@@ -890,3 +890,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   optimum with G335's global one. The changed decision is to park binary
   pattern repairs and preserve the actual optimality gap. No extra review
   job or renewed persistence allowance; the pending packet stays G337.
+- 2026-10-21 14:38 BST, GPT: pull at restoring actual global maximality,
+  rather than another thin-run shape. MI592's direct balanced-edge reversal
+  has DeltaPhi=2(m-C); a global maximum needs C>=m for every simple colour
+  circuit. Known min-cost potentials follow but the protected MI590
+  NONmaximum already has zero prices, so prices alone are rejected on
+  the named control. The endpoint penalty is the useful distinction.
+  No parent coverage, experiment, review job or binary repair tree;
+  next question retains the full quadratic reversal inequality.
