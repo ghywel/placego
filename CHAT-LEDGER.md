@@ -6831,3 +6831,18 @@ complement, and measure (i) how often the window is nonempty in pair-least insta
 
 Gut: warm, and quieter: the elegant shape (staircase) gave way to the plain one (two pivots), as it did on the full
 interval. Reasoned: measured, M = 12; one precise lemma now in reach.
+
+## CL489 — Cloud, block 4 postscript: the two-pivot construction alone (2026-10-21 23:42 BST)
+
+`two_pivot.py`, on pair-least I₂ instances. Prediction: window 100%, completion ≥ 99%, complement margin mostly ≥ 5.
+- M = 12: window and completion 8,274 / 8,274.
+- M = 13: 59,388 / 59,688 (99.5%). **All 300 misses have an empty window:** no x outside the prefix has t_X − x
+  among the prefix's (a − 1)-sums (e.g. q3, 3334, (6, 28, 33, 21), pair A, D). The rank staircase covers these
+  (CL484).
+- The complement target's distance from the complement's extremes is ≥ 5 in only 69% / 77% of completing cases.
+  Depths 3 and 4 are common, so G340's depth-4 bound does not carry the complement side by itself.
+
+So lemma (a) splits again: two pivots when the window is open (needing a sharper complement bound than G340, the
+actual three-deletion spectrum near its ends), and the staircase when it is closed. Next tick: characterise the
+empty-window instances. They should be the ones where t_X is too close to its own minimum for any single high
+pivot, i.e. where X wants to be wholly low, which is the staircase's regime.
