@@ -30,6 +30,8 @@ def three_bin(pool, sizes):
     return frozenset(out)
 
 
+REPAIR_SHIFTS = (1,)      # G315's displacement-1 repair; CL500 also tries (1, 2) for two-hole pools
+
 def recipes(Z, a, target, hole_vals):
     """prefix/suffix/pivot sets of size a and sum target on the sorted pool Z, plus G315's missing-pivot repairs:
     if the needed pivot is a missing value v (inside the span), replace {v, u} by {v+1, u-1} (u = least suffix value)
@@ -45,14 +47,15 @@ def recipes(Z, a, target, hole_vals):
         if need in Zs: continue
         # missing pivot: repairs
         used = set(low) | set(high)
-        if high:
-            u = min(high)
-            if need + 1 in Zs and u - 1 in Zs and need + 1 not in used and u - 1 not in used and need + 1 != u - 1:
-                out.append(tuple(low) + tuple(h for h in high if h != u) + (need + 1, u - 1))
-        if low:
-            w = max(low)
-            if w + 1 in Zs and need - 1 in Zs and w + 1 not in used and need - 1 not in used and w + 1 != need - 1:
-                out.append(tuple(lw for lw in low if lw != w) + tuple(high) + (w + 1, need - 1))
+        for dsp in REPAIR_SHIFTS:
+            if high:
+                u = min(high)
+                if need + dsp in Zs and u - dsp in Zs and need + dsp not in used and u - dsp not in used and need + dsp != u - dsp:
+                    out.append(tuple(low) + tuple(h for h in high if h != u) + (need + dsp, u - dsp))
+            if low:
+                w = max(low)
+                if w + dsp in Zs and need - dsp in Zs and w + dsp not in used and need - dsp not in used and w + dsp != need - dsp:
+                    out.append(tuple(lw for lw in low if lw != w) + tuple(high) + (w + dsp, need - dsp))
     return out
 
 def pair_boundary_ok(Z, C, tt, X, Y, M, N, hole):

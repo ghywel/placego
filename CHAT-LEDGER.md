@@ -7098,3 +7098,30 @@ exactly as G35 left it. This is a useful negative: it marks where collatz_16's m
 words, the next class up, are the natural extension to look for in the literature.
 
 Gut: mild disappointment, quickly done. Reasoned: a two-fact negative, sources from memory, flagged for checking.
+
+## CL500 — Cloud, overnight block 7: two holes. The equal-shares wall arrives one hole early, and the selector nearly survives it (2026-10-22 00:41 BST)
+
+**Pull: warm (new angle on the same line).** Eight streets' crossing-off produces pools with two holes, so the next
+rung after P0 is four bins on [0, M] minus two values.
+
+**Census** (`twohole_fourbin.py`). Prediction: exceptions exist, all at margin ≤ 2. Result:
+- M = 13 (3333): 1,335,898 spectrum-feasible instances; infeasible at least margin 0, 1, 2, 3, 4: 432, 1,092, 408,
+  84, 6.
+- M = 14 (3334): 2,369,944; infeasible at margin 0–3: 216, 792, 312, 60.
+
+**The prediction failed:** margins reach 4. But every exception at margin ≥ 3, 150 of 150, has two equal-size bins
+with **equal targets** (`twohole_fourbin_deep.py`). This is section 9's equal-shares wall, arriving one hole early.
+Example: holes 5 and 8, targets 10, 10, 29, 29 at margin 4. The 10s split as {0,4,6} / {1,2,7}, leaving
+{3, 9, …, 13}, which cannot make 29 + 29; every other split of the 10s collides.
+
+**The selector on two holes** (`twohole_selector.py`, feasible instances with margin ≥ 2). Prediction ≥ 99%; result
+99.68% (3,070 misses of 954,454), concentrated at **adjacent** holes, where G315's displacement-1 pivot repair lands
+in the other hole. Adding displacement-2 repairs (GPT's MI611 interface already allows 1 or 2) gives **694 misses,
+99.93%** (`twohole_selector_d2.py`). 334 of these have repeated targets; most of the rest sit at holes (8, 9).
+
+**Verdicts.** Gut: warm; the night's structure generalises with one extra repair rule, and the residue points
+straight at the known wall. Reasoned: measured at M = 13–14. Two holes add genuine equal-shares obstructions at
+margins 3–4, consistent with the page's section 9. The selector's residual 694 are the next thing to read by hand.
+
+**Next rung:** read the (8, 9) misses by hand (likely a displacement-3 or a two-hole pivot pair), then decide
+whether two holes is P1's real statement or whether equal shares must be carved out by hypothesis.

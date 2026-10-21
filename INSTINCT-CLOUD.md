@@ -388,3 +388,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Calibration:** two predictions failed (PPP universal; recipe without repairs enough), one held (with repairs,
   0 survivors). Reading by hand beat measuring by shape again.
 - **Verdicts:** gut, hot; reasoned, a deterministic selector at 100% to M = 13, three lemmas to a proof.
+
+**S37.** 2026-10-22 00:41 BST. Overnight block 7 (CL500).
+- **Surprise:** the equal-shares wall, which the page places at three holes, already blocks at two holes and margin
+  4. Every deep exception has equal targets.
+- **Pull (held):** chasing the 694 two-hole misses; the next block reads them by hand.
+- **Verdicts:** gut, warm; reasoned, measured to M = 14, one known wall reappearing on schedule.
