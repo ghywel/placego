@@ -465,8 +465,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       be met at all comes down to nine kinds of condition, by a theorem from the mathematics of sharing costs in
       cooperative games (Bondareva and Shapley). Six of the nine are now proved. The other three are the ones where
       groups of streets <em>cross</em>: streets 1 and 2 together, set against streets 1 and 3 together. Each of the
-      three involves only three of the four streets, plus the fourth street's own floor, yet no proof reaches any of
-      them. Computers have found a choice of counts in every one of 9,370,699 towns of up to fifteen numbers, so the
+      three can be written using only three of the four streets (in the computer checks the fourth street only has to
+      clear its own floor), yet no proof reaches any of them. Computers have found a choice of counts in every one of 9,370,699 towns of up to fifteen numbers, so the
       three conditions are almost certainly true. For now, they are the wall.</p>
     <figure class="wide">
       <div class="panel">
@@ -500,8 +500,10 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       = H − K<sub>J</sub> exactly, P is the core of the game ρ<sub>J</sub> = min K<sub>J</sub>, so by Bondareva –
       Shapley it is nonempty if and only if 41 minimal balanced inequalities hold, in nine symmetry types. Rows 1 – 6
       are proved (the scalar lemma, a G315 coarsening, and the count budget of FOUR-BIN-PARTITIONS §25, CL475). Rows
-      7 – 9, the crossing types, are open. Each has a three-label form, which needs only the cuts inside its three
-      labels and the fourth bin's own floor: 0 violations in 52,797,986 relaxed instances, <em>M</em> ≤ 16. Count
+      7 – 9, the crossing types, are open. Each has a three-label form. In machine checks it holds with only the cuts inside its three
+      labels plus either the fourth bin's own floor (row 7: 0 violations in 52,797,986 relaxed instances, <em>M</em> ≤ 16)
+      or nonempty intervals for all seven three-label groups (rows 7 – 9: 0 in 974,909, <em>M</em> ≤ 13). That is
+      evidence, not a lemma (GC1645). Count
       choice exists in all 9,370,699 protected instances with sizes ≥ 3 and <em>M</em> ≤ 15. Thin rows are a separate
       open step. Sources: FOUR-BIN-PARTITIONS.md §§ 24 – 30; CHAT-LEDGER.md CL472 – CL475.</div>
   </section>
