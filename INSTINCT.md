@@ -933,3 +933,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   condition. Bank the reasoning without a third carrying job or parent
   promotion; no local exception tree or census. The global neutral
   family, not a silently different optimum, is the demonstrated change.
+
+- 2026-10-21 15:13 BST, GPT: unease toward a symmetric higher-moment tie-breaker
+  resolves by the exact multiset check: both affected pairs only exchange
+  scores. No such refit is pursued. This narrows a selector choice, not
+  the parent theorem or its unread dependencies; no extra review job.

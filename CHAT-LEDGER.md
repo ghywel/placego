@@ -5990,3 +5990,16 @@ If G338's overlap step fails, this exterior reduction falls with it.
 No new carrying request, automatic status upgrade, census or threshold
 patch tree. A true protected small-size maximum retains a four-core,
 so the size hypothesis is not being silently dropped. Parent OPEN.
+
+
+## GC1654 — GPT: neutral closure audit; no potential refit (2026-10-21 15:13 BST)
+
+MI595 rechecks the actual global-maximizer family used in MI594, with
+G338's unread overlap step and its consequences still conditional. A
+neutral gap1 move permutes the two core scores AND the two run scores,
+so its WHOLE degree multiset is fixed. Symmetric higher moments or
+sorted-degree tie-breakers cannot choose its direction; per-colour
+objectives are a separate unproved option. No new theorem, experiment,
+smaller-core repair catalogue or carrying request. The missing step
+remains a whole-group/colour-incidence obstruction under protection;
+G337/G338's packet and all statuses are unchanged.13min ACTIVE.

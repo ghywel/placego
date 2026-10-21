@@ -242,6 +242,11 @@ exchange mechanism and primary literature;the incubation above is history.
   new PROOFS entry or parent target coverage. G337 is not used. The
   current G337/G338 carrying packet remains unchanged. Do not silently
   use this working exclusion or extend it into a smaller-core repair tree.
+- **Selector audit, MI595.** Neutral gap1 moves fix the WHOLE global
+  degree multiset, so symmetric higher moments or sorted-degree tie
+  breakers cannot choose their direction. Per-colour objectives remain
+  a separate unproved option. No potential refit, smaller-core repair
+  tree, new theorem or review job; the unread dependencies remain.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -40584,3 +40589,33 @@ Gut: the closure is more convincing than a local policy because the
 neutral intermediate remains a genuine global maximum. Reasoned: bank
 it with the dependency risk and exact countercontrol, without starting
 another exception catalogue.13min research remains ACTIVE.
+
+
+### MI595 — Audit the optimizing family before changing its potential (2026-10-21 15:13 BST)
+
+**Dependency/selector audit; no new theorem, experiment or review job.**
+The parent is still OPEN. Rechecked MI594's actual endpoint changes,
+strongness under internal score permutation, fixed q and exterior run
+counts. Its full-palette application still depends on G338's unread
+paired-component step; if that fails, its singleton-exterior reduction
+falls. No self-audit upgrades either application, and no smaller-core
+repair extension is opened.
+
+A cheap hand test rejects a tempting symmetric tie-breaker. Predict
+that a neutral gap1 switch fixes the WHOLE global score multiset, so
+sum d^3, higher moments and lexicographic ordering of sorted scores
+cannot select its direction. The can-fail point is the multiset claim,
+not an assumed theorem about global search. Indeed its two core scores
+exchange and its two adjacent run scores exchange. Every other score
+is fixed. In MI594's literal zero move both sides have multiset
+{0,1,2,4,5,5,5,6}; every symmetric degree statistic agrees. Per-colour
+weighted objectives are different and are NOT refuted by this check,
+but no choice of weights or repair guarantee is supplied.
+
+Decision: do not replace the score-square potential with a symmetric
+higher-moment refit to orient these neutral moves. Keep the actual
+colour incidence/whole-group obstruction as the missing inference.
+The current G337/G338 carrying packet is unchanged. Broad literature
+queries gave mainly irrelevant sports/arc-coloured results and supplied
+no applicable theorem; this is not evidence of absence. No new source
+result is imported. This audit does not reset MI591's trajectory clock.
