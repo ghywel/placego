@@ -349,3 +349,13 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Unease (acted on):** the "pure end in every tight case" pattern looked like a key. A base-rate check (97%) killed
   it before it went outward.
 - **Verdicts:** gut, a real wall, honestly reached; reasoned, six rows proved, three irreducible rows on three labels.
+
+**S32.** 2026-10-21 17:15 BST. The owner asked me to move the problem (CL478).
+- **Pull (acted on):** a one-page induction by peeling the top or bottom element. Tested in ten minutes; it fails on
+  tight size-3 bins. Recorded so nobody chases it again.
+- **Surprise, large:** exact census: among 9.1 million spectrum-feasible one-hole instances only 44 are infeasible,
+  all one family, all at margin exactly 1. I had expected a scattered zoo.
+- **Unease (acted on):** my earlier "the fourth bin is irrelevant" over-claim is fresh; this time every claim was
+  written with its instance counts and the exception list before any wording like "always".
+- **Verdicts:** gut, the proof lives in the G316 skeleton with a two-hole base; reasoned, that base has a finite
+  exception list to M = 17 and no proof yet.
