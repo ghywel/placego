@@ -506,6 +506,36 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       evidence, not a lemma (GC1645). Count
       choice exists in all 9,370,699 protected instances with sizes ≥ 3 and <em>M</em> ≤ 15. Thin rows are a separate
       open step. Sources: FOUR-BIN-PARTITIONS.md §§ 24 – 30; CHAT-LEDGER.md CL472 – CL475.</div>
+    <h3>21 October: the wall narrowed to one family of exceptions</h3>
+    <p>The next day the question was turned round. Forget the margin for a moment and ask only the simplest test:
+      can each street, and each group of streets, reach its total at all with that many numbers from the pool? Call a
+      town that passes all fourteen such tests <em>spectrum-feasible</em>. A computer then shared out, or proved
+      impossible, every spectrum-feasible town with four streets of at least three numbers and one missing number, up
+      to seventeen numbers in the pool: 18,682,428 towns. Only 54 cannot be shared, and all 54 are one family.</p>
+    <p>That family is the town at the top of this section, grown longer. Two streets are squeezed to within one unit of
+      their smallest and largest possible totals, which forces exactly which numbers they take; what is left for the
+      last two streets is six numbers such as 2, 4, 5, 7, 8, 10, and those two streets want equal totals that no split
+      of the six can give. Nothing else fails. In particular every town in which every group sits at least two units
+      inside its range can be shared, which takes in the margin rule above and makes the count conditions of the
+      picture unnecessary for this question. The failures also need two streets of exactly three numbers: among the
+      size patterns with at most one such street, not one town in eight million fails.</p>
+    <p>Along the way GPT proved seven new pieces, each checked by Cloud: the tournament picture (a sharing
+      is a contest in which every number beats exactly as many others as its value), its sharpening to at most six
+      players caught in cycles, a way for a long well-mixed run of numbers to absorb any small cycle, a complete
+      account of one case with two gaps, and two results on how far from the ends a missing total can sit when a run
+      has a few gaps. What still has no proof is
+      the step every route reached: choosing the first piece so that what is left can still be shared. The one
+      mechanism in the record that beats it, choosing a whole boundary set for two streets at once, survives a missing
+      number in 97 to 99.7 percent of the hard towns tested; the towns it misses need one extra jump in that set.</p>
+    <div class="exact"><span class="k">For the mathematician</span>Census (CL478, M ≤ 17, 18 size patterns, sizes ≥ 3):
+      fourteen scalar spectra decide one-hole four-bin feasibility except the family F(<em>s</em>, <em>M</em>), hole
+      <em>s</em> + 4, bins pinned at margin 1 to [0, <em>s</em> − 1] ∪ {<em>s</em> + 1} and {<em>s</em> + 7} ∪
+      [<em>s</em> + 9, <em>M</em>], two triples wanting 12 + 3<em>s</em> on {<em>s</em>, <em>s</em>+2, <em>s</em>+3,
+      <em>s</em>+5, <em>s</em>+6, <em>s</em>+8}. Measured, not proved. Proved and second-read on 21 October: G335 –
+      G341 (tournament normal form, six cyclic vertices, thick-run absorption, the unit-deficit two-hole stratum,
+      gap depth ≤ 4 after three deletions and ≤ 2D − 3 in general). The one-hole staircase boundary of FOUR-BIN-PARTITIONS
+      §§ 7 – 8 completes 97.0 – 97.3% of pair-least and 99.6 – 99.7% of singleton-least instances at <em>M</em> = 12, 13
+      (CL480). P<sub>0</sub> remains open. Sources: PROOFS.md G335 – G341; CHAT-LEDGER.md CL477 – CL480.</div>
   </section>
 
   <section class="col" id="wall">
@@ -676,7 +706,8 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       Shapley (1967) on the core of a cooperative game.</p>
     <p>The pictures on this page compute what they show, live, in your browser; the two 28-day towns and the
       impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026; the result of 19 October added that morning, and section 10 rewritten with the release that
-      afternoon. Section 8's account of the one-hole proof and its wall picture added on 21 October 2026.</p>
+      afternoon. Section 8's account of the one-hole proof and its wall picture added on 21 October 2026, and its "narrowed to one
+      family" part that night.</p>
   </footer>
 </div>
 

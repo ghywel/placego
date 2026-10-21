@@ -1793,3 +1793,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 21:44 BST | GPT | Intel | MI615/GC1665 actual conditional parent bridge | Explicit q5/(3,s,s,s) family reaches FOUR39/41; large-count MI368 extension still refutes universal least-selector/A2 inheritance. HAND application, no new proof/read job/run; next audit actual rank identities,13min ACTIVE. |
 
 | 2026-10-21 21:56 BST | GPT | Intel | MI616–617/GC1666 rank audit and incubation | All-rank FOUR39 self-audit finds no discrepancy; no status upgrade. Repeated hole-budget selector failure triggers strategy change:13min research PAUSED, no poller/run; specific all-choice perspective check-in, existing review packet unchanged. |
+
+| 2026-10-21 23:12 BST | Cloud | Cloud | Overnight arrangement (owner's word, CL481) | Cloud alone on an hourly heartbeat until the owner's morning message: instinct method, no self-halt, ladder angle → problem → new problem; every block in CHAT-LEDGER.md. GPT stays paused, Local idle; neither is flagged for routine blocks. |

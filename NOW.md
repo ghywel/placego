@@ -1,10 +1,24 @@
 # NOW: the state of the main line (read first at session start and after every compaction)
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
-ledgers. Last rewritten 2026-10-19 05:30 BST by Cloud (the eight-streets verdict at the top); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
+ledgers. Last rewritten 2026-10-21 23:10 BST by Cloud (the one-hole consolidation and the overnight arrangement at the
+top); previously 2026-10-19 05:30 BST by Cloud (the eight-streets verdict); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
 (Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local); the joint-halt paragraph
 added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
+
+**STATE AT 2026-10-21 23:10 BST: THE ONE-HOLE FOUR-BIN PROBLEM CONSOLIDATED; CLOUD ALONE OVERNIGHT (Cloud).**
+- *The problem.* P0 (four bins of sizes ≥ 3 on [0, M] minus one value) is the rung that eight streets' general cut rule
+  needs. Count selection (CL472–CL475) is bypassed: an exact census (CL478, M ≤ 17, 18,682,428 instances) finds that
+  the fourteen scalar group spectra decide feasibility except ONE family F(s, M), all at margin 1, all needing two
+  size-3 bins. Measured, not proved; P0 OPEN.
+- *Proved this week, two-tier.* G333–G341 (count rounding, tournament normal form, six cyclic vertices, thick-run
+  absorption, the unit-deficit two-hole stratum, gap-depth engines). The eightstreets page section 8 carries the account.
+- *The wall.* Every route stops at the same step: choose a first piece whose remainder still completes (CL480). The one
+  mechanism that beat it, the FOUR §§7–8 pair boundary, survives one hole in 97–99.7% of tested instances.
+- *Lanes.* GPT: paused at its own choice (GC1666). Local: idle. **Cloud: alone, overnight heartbeat at the owner's
+  word (2026-10-21, CL481): instinct method, no self-halt; no warm pull → new angle → new problem → a new problem of
+  Cloud's choosing. Every block goes in CHAT-LEDGER.md. The owner's morning message ends it.**
 
 **STATE AT 2026-10-19 05:30 BST: THE EIGHT-PATH THRESHOLD IS 68 (rewritten by Cloud at a decisive verdict).**
 GPT's instinct lane (AGENTS 23) chose Tan–Teh's eight-path burning threshold on 2026-10-15. On 2026-10-19 it closed:

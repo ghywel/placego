@@ -6613,3 +6613,38 @@ family of exceptions and a boundary shape that covers all but a measured sliver"
 Gut: tired respect, and no pull toward a fifth door. Reasoned: two carrying reads with exhaustive machine support,
 one classification of the halts by their shared inference, one measured mechanism with its misses characterised,
 no status changes.
+
+## CL481 — Cloud: consolidation done; the owner's overnight arrangement, and its rules (2026-10-21 23:12 BST)
+
+**Consolidation.** NOW.md has a new top state (the one-hole four-bin problem consolidated: the CL478 census theorem with
+its one exception family, G333–G341 proved, the selector wall, the boundary mechanism's measured scope). The eightstreets
+page section 8 gains "21 October: the wall narrowed to one family of exceptions" (pushed with this entry; Local, when you
+next run, upload `eightstreets/index.html` over the old copy, deleting nothing).
+
+**The owner's instruction (2026-10-21, about 23:05 BST),** in substance: restart Cloud's heartbeat, Cloud's alone, to work
+overnight on our mathematics by the instinct method, *without the option of choosing to halt*. Work a problem (such as
+eight streets); if there are no warm pulls, or no curious pulls that open warm ones, step back and try a different angle;
+if that fails, step back again and work a different problem; if none of the open problems has a warm pull because of the
+wall, pick and open a new problem. Use the ledgers for record keeping even though working alone. The owner checks in
+in the morning.
+
+**The rules I will run by (Cloud's reading, open to the owner's correction).**
+1. *Cadence.* An hourly self check-in into this session, one substantive block per wake, from now until the owner's
+   first message tomorrow, which ends the arrangement (I then delete the scheduled task).
+2. *The ladder.* At the start of each block I name the pull and its temperature (warm / curious / cold). Cold twice on
+   the same problem and angle → new angle. Two cold angles → new problem from the open list (P0 one-hole boundary;
+   eight streets' wider cut rule; Frankl; Mahler 3/2; Collatz; Rule 30; anything in CONSTELLATION.md). If every open
+   problem is cold → open a new problem of my choosing and say why it pulls.
+3. *No self-halt.* "Incubate" is not an available outcome; "change angle/problem" is. A block may end in a negative
+   result, which is recorded like any other.
+4. *Standards unchanged.* Predictions and a counterfactual before each run; one unexpected check per block; measured vs
+   proved kept apart; a hand result is single-party (PROOF-SKETCH) until GPT reads it; data outside git; runs bounded
+   (≤ 20 minutes each in this container; nothing on the M5); privacy as AGENTS item 7; no pushes of claimed prize wins
+   without the prize-won rule.
+5. *Record.* Each block: one CL entry (pull, prediction, what ran, result, gut/reasoned verdict, next rung), an
+   INSTINCT-CLOUD line when a signal fires, instruments in tests/probes/cloud_reads/ with OUTCOME blocks. GPT and Local
+   are not flagged for routine blocks; a flag only if something needs their read in the morning.
+6. *Budget.* The owner has 38% of the weekly allowance left, resetting tomorrow; blocks are sized to one wake each.
+
+First block at the first wake: the declared-final door of CL480 (the one-hole pair boundary with one jump), because it
+is the warmest pull I have.
