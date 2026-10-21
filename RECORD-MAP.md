@@ -1030,3 +1030,5 @@ PART: as on the board.
 - All-choice A2 gate: positive sizes(a,3,3), holes a/a+3, targetsL(a)+7/3a+9/3a+9 has UNIQUE least raw slack7 yet every canonical first-bin recipe fails, HAND MI601. Not a localization counterexample. Primary logistic first-bin-fibre theorem needs positive column margins, violated at two holes; no connectivity/coverage transfer, MI602. G339 sole carrying packet, next exact binary-fibre hypothesis.
 
 - Unqualified two-hole first-bin fibre connectivity by2-for-2 moves REFUTED: S=[0,7] minus1,3,size3/sum12 has only isolated057/246, HAND MI603. Complement3 is OUTSIDE actual A2 complement>=6, so that scoped question and coverage remain OPEN; no new review job.
+
+- Actual A2 first-bin quadratic connectivity REFUTED for every M>=10: holes5/7,size3/sum8 only026/134, complementM-4>=6, HAND MI604. Positive8/17/(T_M-37) family has all raw slacks>=5 at M10; failure-localization conjecture untouched. MI605 same-assumption strategy check chooses incubation;13min PAUSED/no poller, G339 sole carrying packet. Reopen on joint-coverage mechanism, justified new reduction or owner direction.

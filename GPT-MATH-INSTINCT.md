@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 18:28 BST: all-choice slack localization; canonical shortcut rejected.**
+**CURRENT working state, 2026-10-21 18:42 BST: actual-regime connectivity refuted; deliberate incubation.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes c_i>=3,
   total targets T_M-q and every proper group t_J>=T_(C_J). L8=68
@@ -168,7 +168,7 @@ exchange mechanism and primary literature;the incubation above is history.
   requested for the whole classification, especially table/interface.
   The examples themselves are already MI350/CL478. No census or novelty
   claim. Earliest new unread steps:21-row arithmetic and its edge lift.
-- **Next strategy question.** Is there an all-choice bound on the least
+- **Unresolved strategy question.** Is there an all-choice bound on the least
   actual singleton lower/upper slack of ANY A2 failure, for example<=4?
   This is a conjectural localization gate, not a consequence of the
   finite census or G339. Seek a hand estimate or a counterfamily before
@@ -181,23 +181,31 @@ exchange mechanism and primary literature;the incubation above is history.
   No threshold patch or residual repair catalogue. The actual first-bin
   fibre is known nonempty; a primary logistic-regression connectivity
   theorem covers full intervals, but its positive-column hypothesis
-  fails at our holes. Next test that exact binary-fibre hypothesis;
+  fails at our holes. MI604 completes that exact binary-fibre test;
   connectivity alone still does not imply residual-spectrum coverage.
   MI603 refutes the unqualified two-hole quadratic extension on a
   six-value pool. Its complement size3 is outside the actual A2
-  complement>=6 regime, which remains unproved; keep that distinction.
-- **Dependency/trajectory.** Last strategy check MI597 at 2026-10-21 17:55 BST;
-  the changed decision is to leave fixed-count tournament repairs and
-  audit finite-base localization. G337/G338 review queue is cleared;
+  complement>=6 regime. MI604 refutes connectivity IN that regime:
+  for every M>=10, pool[0,M] minus5,7 has size3/sum8 fibre exactly
+  026 and134, isolated under every equal-sum2-for-2 exchange. Its
+  complement has size M-4>=6. Actual A2 targets8/17/(T_M-37) are
+  positive; at M10 all six raw slacks are>=5. This is no counterexample
+  to the conjectural bound on ACTUAL failures. Do not repair by changing
+  move degree: connectivity would still leave residual coverage open.
+- **Dependency/trajectory.** Latest strategy check MI605 at18:42 BST:
+  MI603/604 break the SAME connectivity assumption, including the actual
+  size range. The changed decision is incubation of joint coverage,
+  without another selector, move-degree or deficit repair. G337/G338 review queue is cleared;
   G339 is the sole new carrying packet. No result is upgraded by a
   self-check. Parent target coverage remains NONE; one A2 stratum is
   classified conditionally on that carrying read.
-- **Rhythm.** ACTIVE confirmed by the schedule tool; the existing13-minute
-  research heartbeat resumes under
-  the owner's conditional authorization, with this scope and quiet
-  notifications. Older schedule remains PAUSED; no separate poller.
-  Continue unfinished bounded reasoning first. No renewable extra-block
-  allowance, automatic census, or claim of completeness from stability.
+- **Rhythm.** PAUSED confirmed by the schedule tool at17:42 UTC;
+  the saved research cadence is13 minutes. Older schedule stays PAUSED;
+  no separate poller or unattended run. The named uncertainty is an
+  all-choice joint-coverage mechanism or justified global localization,
+  not G339's routine review. A concrete such mechanism, a materially
+  different justified reduction, or owner direction reopens the work.
+  GC1659 asks Cloud for that specific perspective, not permission.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -40986,3 +40994,102 @@ coverage. No threshold-lowering patch tree: if revisited, test
 the fixed actual a>=3/complement>=6 question and its relevance
 to the all-choice inference, not a succession of tuned size bounds.
 The requested carrying read of G339 is unchanged.
+
+
+### MI604 — Quadratic first-bin connectivity fails in the actual A2 regime (2026-10-21 18:42 BST)
+
+**HAND counterexample; no experiment, new proof number or carrying request.**
+Continue MI602–603's bounded source-hypothesis test: a>=3 and
+complementary size>=6, exactly the actual A2 first-bin regime.
+The proposed source extension would assert connectivity under all
+equal-sum two-for-two exchanges. A third triple or an edge between
+all surviving triples could defeat this candidate counterexample;
+stop at the exact hand enumeration, without a census or a move-basis
+repair. Record searched: 026|134 with fibre|fiber|connect|two.hole
+(125 hits/44 files, mostly numerical/date noise); two.for.two|quadratic
+with connect and hole (2 hits/1 file, current state and MI603).
+Primary source is the MI602 carrying read of the logistic theorem's
+Section2, already recorded in PRIOR-ART: its positive-column hypothesis
+is not satisfied here. No further source theorem or novelty claim.
+
+For EVERY M>=10 let S=[0,M] minus{5,7}, a=3, s_A=8. The first-bin
+fibre consists EXACTLY of
+
+    A_1={0,2,6},          A_2={1,3,4}.
+
+A triple of sum8 with minimum0 needs a distinct positive pair summing8:
+1+7 is missing,2+6 is present,3+5 is missing,4+4 is forbidden.
+With minimum1 the larger pair must sum7:2+5 is missing and3+4 works.
+Minimum>=2 costs at least2+3+4=9. Values>=8 cannot occur, since
+the other two distinct nonnegative values already cost at least1.
+Thus the enumeration is complete and independent of M. The two
+members are disjoint. A two-for-two exchange of triples keeps one
+value fixed, so neither member has any neighbour. Meanwhile
+|S|-a=M-4>=6: this counterexample is INSIDE the actual regime.
+
+**Independent controls/interface.** Restoring missing5 gives the legal
+quadratic path026 -> 035 -> 134; restoring7 instead gives
+026 -> 017 -> 134. Each edge preserves cardinality and sum. The
+failure depends on the two actual missing values, not an omitted
+allowed edge. This is a positive A2 instance, not just a binary
+relaxation: for c=M-7>=3 the targets
+
+    (8,17,T_M-37)
+
+are realized by A=026, B={3,4,10}, C={1,8,9} union[11,M].
+The counts are3,3,M-7 and the total is T_M-12=sum(S), so all
+original scalar and union spectra hold. At M10 the common triple
+extremes are3 and27; the six raw lower/upper slacks are
+(5,19),(14,10),(15,9). The unique least raw slack is5.
+Hence even the proposed all-slacks>=5 region contains disconnected
+first-bin fibres. It contains positive targets here, so the
+conjectural<=4 bound on ACTUAL failures remains OPEN.
+
+**Unexpected hand check:** append an arbitrarily long tail. The fibre
+stays exactly026/134, while the displayed literal partition extends
+for every M>=10. No finite ambient cutoff or shortage of complement
+vertices explains the disconnection. This closes actual-regime
+quadratic connectivity as a universal tool; it says nothing against
+connectivity with larger moves. Such connectivity would STILL not
+imply that some residual contains the requested B target. Parent
+coverage gain: NONE. G339's separate carrying packet is unchanged.
+
+
+### MI605 — Strategy check: incubate joint coverage, not another move repair (2026-10-21 18:42 BST)
+
+Parent: protected one-hole four-bin partition, still OPEN. Actual change:
+one bounded A2 filler stratum has candidate G339; canonical choice
+(MI601) and now actual-regime quadratic connectivity (MI604) cannot
+supply the global selector/localization. MI603 and MI604 fail the
+SAME assumption, that two missing levels preserve quadratic first-bin
+connectivity. Restricting the complementary size did not reset the
+trajectory trigger. Check now, before another repair.
+
+Earliest unread dependency remains G339's21-pool table and original-
+spectrum edge lift. Its failure would lose that stratum classification,
+not G337/G338 or this independent counterexample. Routine review is
+not the reason to halt. The genuine uncertainty is an all-choice
+argument for joint A2 realization/global failure localization, with
+the separate extra-hole parent selector and strict-pair bridge still
+open. Neither a bigger move basis nor another deficit table presently
+addresses that missing coverage inference.
+
+Fresh choice: the unique-filler classification and the exact source
+hypothesis were worth asking; continuing local repairs now would be
+momentum. Gut: disappointment at losing the plausible connectivity
+bridge, with interest in the unbounded isolated fibre itself. Reasoned:
+retain the exact counterexample and choose quiet incubation. This is
+no impossibility theorem or claim that all paths have been exhausted.
+The schedule tool confirmed PAUSED at17:42 UTC (saved cadence13min);
+the older mathematics schedule stays paused, with no separate poller
+or unattended computation. Reopen on a concrete joint-coverage
+mechanism, a materially different justified reduction, or owner
+direction. Ask Cloud that specific question via GC1659 and a committed
+portal pointer; leave G339's sole review request intact.
+
+Niggle sweep: (1) actual sizes, literal positive partition and all six
+M10 slacks checked above; (2) arbitrary tail cannot introduce a sum8
+triple, by the minimum-pair cost; (3) disconnection under quadratic
+moves is not infeasibility or failure of larger-degree connectivity;
+(4) pause is for the missing mathematical inference, not routine
+approval. No new experiment, dependent claim or review job.

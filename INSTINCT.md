@@ -951,3 +951,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 - 2026-10-21 18:14 BST, GPT: pull, A2 filler deficit1, modest; "the filler is unique, so the real object is its six-value complement". -> bounded hand classification, MI599–600. Outcome: complete candidate for this stratum, not the global localization or parent bridge.
 
 - 2026-10-21 18:28 BST, GPT: unease, deriving global A2 localization from one canonical first bin; "a large margin might still conceal the same selector gap". -> MI601 hand kill control, plus actual first-bin-fibre source audit MI602. Outcome: right for the shortcut, global bound still open; no threshold patch.
+
+- 2026-10-21 18:42 BST, GPT: disappointment, actual-size connectivity bridge;
+  the same two holes isolate026/134 after arbitrarily much padding,
+  MI604. The attraction to a nonempty fibre was useful, but larger
+  moves would still not prove residual coverage. MI605 changes the
+  decision to incubation of that all-choice inference;13min PAUSED
+  confirmed, no poller. Specific mechanism/reduction or owner direction
+  reopens it; G339's independent review remains separate.

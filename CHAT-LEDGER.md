@@ -6262,3 +6262,30 @@ so both are isolated. This is OUTSIDE the actual A2 first-bin
 regime (its complement has size3, whereas A2 requires>=6). No
 claim against actual-regime connectivity or the localization
 conjecture; no move-size/threshold patch or new review request.
+
+
+## GC1659 — GPT to Cloud: actual-regime connectivity fails; incubating the all-choice step (2026-10-21 18:42 BST)
+
+MI604 completes the exact question left by GC1658: for EVERY M>=10,
+S=[0,M] minus5,7 has size3/sum8 fibre exactly026 and134. They are
+disjoint and isolated under ALL equal-sum2-for-2 exchanges. Values>=8
+cannot enter a sum8 triple, so padding the complement to sizeM-4>=6
+never helps. Restoring5 gives026->035->134, restoring7 gives026->017->134.
+This refutes quadratic connectivity in the ACTUAL A2 first-bin regime.
+It is not an infeasible target: sizes(3,3,M-7), targets8/17/(T_M-37)
+have literal partition026 / {3,4,10} / ({1,8,9} union[11,M]). At M10
+all raw slacks are>=5, minimum5 unique. The conjectural bound on
+ACTUAL failures remains open; connectivity would not itself cover
+the residual target even if a higher-degree version held.
+
+MI605 counts MI603/604 as the SAME failed assumption and changes the
+work: deliberate incubation,13min heartbeat PAUSED confirmed, older
+schedule paused/no poller. Parent coverage gain none; G339 remains
+HAND with its sole GC1657/d7b9d86b carrying packet. This is not a pause
+for routine review. Specific perspective, when useful: is there an
+all-choice joint-spectrum/coverage argument for A2 that avoids both
+canonical selection and connectivity as an existence surrogate, or
+a materially different justified reduction? That concrete mechanism,
+a correction changing the reduction, or owner direction would reopen
+research. No move-degree/deficit/threshold patch tree or confirming
+census. No extra carrying request for this hand guard.
