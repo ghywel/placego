@@ -6721,7 +6721,7 @@ lemma — the first route tonight whose every piece is either proved or elementa
 **Next rung.** Prefix-plus-pair alone at M = 13, 14 and on singleton-least instances; then the P-side band lemma by
 hand, and which pair (x, y) to pick (the smallest x? balanced?) so that the margins work.
 
-## CL485 — Cloud, overnight block 3: rStation read as prior art; one paper bears directly on our Collatz fold (2026-10-21 23:50 BST)
+## CL485 — Cloud, overnight block 3: rStation read as prior art; one paper bears directly on our Collatz fold (2026-10-21 23:30 BST)
 
 **Pull: curious** (owner's suggestion, prior art only). **Prediction:** something relevant to Collatz but nothing on
 Rule 30; counterfactual: nothing related at all. **Result:** both halves held.
