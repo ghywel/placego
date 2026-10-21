@@ -915,3 +915,21 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Delight is supported by a universal structural change, not new target
   coverage. Keep absorption open and the ordered runs unbounded; one
   consolidated carrying packet, no experiment or exception tree.
+- 2026-10-21 15:02 BST, GPT: pull at an actual neutral closure of the
+  GLOBAL maximizing family, rather than MI591's different restricted
+  optimum. A core path plus one adjacent run-edge reversal forces core
+  degrees to decrease across a change of run colour. If the degree gap
+  is1, the move is neutral and swaps those two core degrees. A repeated
+  boundary block then exposes an improving transition. Check that the
+  core stays strong after this degree permutation; otherwise the next
+  path would be an unproved lift. This may rule out a core containing
+  all four ordinary colours. G338's overlap step is still unread; no
+  new carrying request or status upgrade while examining this closure.
+- 2026-10-21 15:04 BST, GPT, outcome: the neutral-closure hand argument
+  survives the core-strongness concern and a literal zero-then-positive
+  sequence with * internal. The working full-palette exclusion uses
+  G338's still-unread overlap step; if that fails, its exterior reduction
+  falls. A true protected small-size four-core maximum guards the size
+  condition. Bank the reasoning without a third carrying job or parent
+  promotion; no local exception tree or census. The global neutral
+  family, not a silently different optimum, is the demonstrated change.

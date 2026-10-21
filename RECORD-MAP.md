@@ -1015,3 +1015,5 @@ PART: as on the board.
 - Global tournament maximum requires C>=m on actual simple colour-edge circuits; known common potentials alone fail protected NONmaximum, WORKING HAND MI592. Quadratic balanced-reversal/protection inference OPEN; no new review packet or parent coverage.
 
 - Global tournament maximum has <=2 cyclic components/6 vertices: HAND G338/MI593/FOUR34; paired opposite paths forbid two shared colours. Two components must be triangles sharing one ordinary colour. Bulk unbounded; parent OPEN, consolidated independent review pending.
+
+- Working full-palette-core exclusion MI594: actual neutral core/run switches retain strongness and force singleton blocks at degree-gap1; min3/protection then obstruct4-/5-core. HAND/unreviewed, G338 overlap application conditional, no new review job or parent coverage.

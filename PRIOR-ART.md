@@ -4540,3 +4540,15 @@ mostly arc-coloured rainbow-path results; none was imported as a result
 about fixed vertex-class totals. No exact predecessor was identified in
 that bounded read; novelty remains UNASSESSED. The argument is fully
 written as a HAND candidate, not attributed to the survey.
+
+### Strongness under a score permutation (MI594, 2026-10-21)
+
+The known Landau subset-score inequalities and their necessity were
+reopened in Kolesnik–Sanchez Theorem1. A strong tournament has every
+proper minimum k-score sum strictly above L(k); a bottom component of
+a nonstrong tournament attains equality. Hence strongness is determined
+by the internal score multiset. CL477's instrument already records the
+tight-prefix/component correspondence. MI594 rederives this corollary
+for a neutral score permutation, not as a new result. The separate
+coupled core/run closure and full-palette application remain WORKING
+HAND/unreviewed; no theorem from the source certifies that application.

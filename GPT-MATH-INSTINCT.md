@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 14:52 BST: G338 HAND six-vertex refinement; G337/G338 consolidated review.**
+**CURRENT working state, 2026-10-21 15:04 BST: G337/G338 review pending; MI594 working neutral closure.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -231,6 +231,17 @@ exchange mechanism and primary literature;the incubation above is history.
   No M<=6 reduction, run-existence theorem or new parent target coverage.
   Next absorption must use this actual small core plus protection;
   do not start a pattern-repair tree or infer that cycles are gone.
+- **Neutral closure, MI594.** WORKING HAND, no extra read job: a core
+  path plus adjacent run-edge reversal forces decreasing core degrees
+  at run transitions. A neutral gap1 switch permutes the core scores,
+  keeps it strong and exposes a strict improvement if either boundary
+  block repeats. Conditional on G338's unread overlap step, a core using
+  all four ordinary colours has only singleton exterior; run/block
+  counting and one actual protection cut exclude that full palette.
+  This application falls if the overlap step fails; no adopted premise,
+  new PROOFS entry or parent target coverage. G337 is not used. The
+  current G337/G338 carrying packet remains unchanged. Do not silently
+  use this working exclusion or extend it into a smaller-core repair tree.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -40421,3 +40432,155 @@ unbounded ordinary singleton runs avoiding * (also separating * itself
 if it is a singleton). Do not infer the mixed run exists. Gut: delight
 at a genuine simplification; reasoned: the ordered bulk/protection bridge
 is still the open parent inference. No new allowance or routine halt.
+
+### MI594 — Neutral closure constrains a full-palette core (2026-10-21 15:04 BST)
+
+**WORKING HAND; not independently verified or an adopted premise.**
+No new PROOFS entry or carrying request. G337/G338 remain the current
+consolidated packet. This is one bounded GLOBAL-optimality closure
+question, not an extension of the restricted binary optimum.
+
+Parent: protected one-hole four-bin partition, still OPEN. If this
+works, the maximal cyclic core cannot contain all four ordinary colours;
+this reduces the remaining obstruction, not the number of proved target
+families. The local neutral lemma below uses carried G335 only. Its
+full-palette application ALSO uses the unread paired-component step of
+G338: other cyclic components would share two colours with that core.
+If that step fails, the reduction to two/three singleton runs falls,
+and the full-palette conclusion is not established. Keep that dependency
+visible; rechecking it here is not independent verification.
+
+Prediction before hand controls: paired core/run reversals give an exact
+adjacent-degree condition, and a neutral gap1 switch stays inside the
+same GLOBAL maximizing family. Can-fail counterfactual: the first move
+could break strong connectivity, so a second core path might not exist.
+Independent controls: write every endpoint change; check strongness from
+the degree multiset; give a literal zero-then-positive path sequence
+including * as an interior vertex. Unexpected check: exhibit a genuine
+protected but SMALL-size maximum with a full-palette four-vertex core.
+Stop at this closure and full-palette obstruction. No experiment,
+policy run, census, threshold lowering or binary-pattern repair tree.
+
+Record searched: neutral|adjacent|consecutive AND core|component|tournament
+AND degree|score ->30 hits/12 files, mainly G335-337 and MI591. Read those
+carrying scopes. strong|component AND score.multiset|score.sequence|
+prefix.*tight|tight.*prefix ->4 hits/3 files, plus CL477's instrument
+opening; it states the known Landau tight-prefix/SCC fact. Reopened
+Kolesnik–Sanchez Theorem1/necessity for the known subset-score inequalities.
+The strongness corollary is proved directly below; no new source theorem
+about this neutral coupled move is imported. Novelty unassessed.
+
+**Actual adjacent-edge constraint.** Let K be a rainbow strong component
+of a global Phi maximum, with internal score g_i for each ordinary
+colour present. In a separate consecutive singleton run, suppose
+ascending scores j,j+1 have different colours P,Q, both present in K.
+Reverse a core path P->Q and the run edge Q->P simultaneously. These
+actual edge sets are disjoint. The core changes P-1,Q+1; the run changes
+P+1,Q-1. Every colour total and q is fixed. The run's two individual
+scores exchange, so its Phi is unchanged; the core gain is
+
+    DeltaPhi = 2(g_Q-g_P+1).
+
+Hence g_P>=g_Q+1 at every such run transition. If ALL four ordinary
+colours occur in K, every run is a sequence of constant-colour blocks
+whose core degrees strictly decrease. A colour appears in at most one
+block per run, and at most one colour of any given core degree appears
+there. This concerns actual consecutive singleton scores, not a union
+of interrupted runs or an abstract colour path.
+
+**A neutral switch cannot destroy the required core.** If g_P=g_Q+1,
+the preceding move has DeltaPhi=0. Core scores at P,Q exchange, and
+the run order PQ exchanges to QP; all other core scores stay fixed.
+A strong tournament's internal score MULTISET determines strongness:
+every proper nonempty k-vertex subset has score sum>L(k), since some
+edge leaves it. Its minimum k-score sum is therefore strictly above
+L(k). Any orientation with the same multiset has the same strict
+minima. A nonstrong tournament would have a proper bottom strong
+component with no outgoing edge and score sum exactly L(k), impossible.
+Thus the permuted core remains strong, and the neutral orientation is
+also a global maximum. No restricted/unrestricted optimum is identified.
+
+If the P block before the boundary has length>=2, after the switch
+there is an adjacent P,Q pair with new degrees g_P<g_Q, contradicting
+the actual adjacent-edge condition in the new maximum. The same holds
+if the original Q block has length>=2, using the right neighbour.
+Therefore a gap1 transition in a maximum has BOTH blocks of length1.
+The second improving path is in the newly strong core, not assumed
+from the old orientation without checking.
+
+**Working full-palette application, conditional on G338's unread step.**
+A core containing all four ordinary colours is either an ordinary
+four-vertex core or a five-vertex core containing *. Any other cyclic
+component would share at least two ordinary colours with it. G338's
+paired-path step therefore leaves only this core and singleton components.
+The ordinary exterior consists of at most three runs if * is a separate
+singleton, and two runs if * lies in the core. Each ordinary colour
+has at least TWO exterior vertices, since c_i>=3 and K is rainbow.
+
+For an ordinary four-core, internal scores are1,1,2,2. Each exterior
+run is monochromatic or has two colours, one of each degree. A mixed
+run has two singleton blocks by the neutral lemma. If m of the at most
+three runs are mixed, at most3-m colours occur in monochromatic runs.
+At least1+m colours must get BOTH their required exterior vertices
+from mixed runs; they demand at least2+2m places but only2m exist.
+Contradiction. This part needs the size condition, not protection.
+
+For a five-core containing *, internal scores lie in{1,2,3}. Each degree
+can occur on at most two ordinary core colours, since there are only
+two exterior runs and every colour must occur outside. If a degree
+occurs twice, those two colours occupy different runs exclusively,
+and each has a block of length>=2. No adjacent degree level can then
+occur in either run: it would be adjacent to that long block and violate
+the gap1 lemma. Four ordinary colours across three degree levels force
+a repeated level. The only distribution compatible with this exclusion
+is TWO ordinary colours of degree1 and TWO of degree3; * then has degree2
+because the total internal score is10. Each exterior run contains one
+colour of each degree, each in a block of length>=2. Every ordinary
+colour is wholly on ONE exterior side apart from its core vertex.
+
+Let l>=4 be the low run length and J its two colours. Then
+C_J=l+2 and the actual global target sum is
+
+    t_J=L(l)+2*l+(1+3)=L(l+2)+3.
+
+Protection requires t_J>=T_(l+2)=L(l+2)+l+2, impossible for l>=4.
+This is a genuine WHOLE-group cut with both core contributions counted.
+No negative f_c(k) value is inferred from a prefix shape alone.
+
+**Literal neutral-then-positive check (outside the minimum-size parent).**
+Use K on vertices P,Q,R,S,* obtained from the regular five-tournament
+(i beats i+1,i+2 mod5) by reversing3->0; P=0,Q=1,R=2,S=3,*=4.
+Internal degrees are(3,2,2,1,2), with the Hamilton cycle retained. Put
+K after the singleton run P,P,Q at scores0,1,2. Core global scores are
+(6,5,5,4,5), so q5, counts(3,2,1,1), targets(7,7,5,4).
+Reverse the core edge P->Q and run edge at2->1. Core degrees exchange
+P3,Q2 toP2,Q3; the run becomes P,Q,P. Phi stays132, class totals and q
+stay fixed. In this new core the path P->R->S->*->Q exists. Reverse
+it and the run edge Q(score1)->P(score0). The run becomes Q,P,P;
+core globals become(4,7,5,4,5), * fixed at5. Phi becomes136, gain4.
+Both P,Q totals remain7. This checks the newly required path explicitly,
+including unchanged * internally, separately from the multiset argument.
+
+**Unexpected true-max control: protection alone is insufficient.**
+M5,q1, counts(2,1,1,1), targets(3,3,4,4). Put A at singleton score0,
+* at1, and a strong four-core at ranks2..5 with internal degrees
+(A,B,C,D)=(1,1,2,2). Realize it by cycle A->B->C->D->A with diagonals
+C->A,D->B. Global core scores are3,3,4,4. All proper protection margins
+t_J-T_(C_J) are: singles0,2,3,3; pairs0,1,1,4,4,5; triples0,0,1,5.
+The two A scores sum3, hence are(0,3) or(1,2); all other scores are
+fixed. Their square sums are9 or5, respectively, so this orientation
+with Phi51 is a TRUE global maximum. The minimum3 hypothesis fails;
+no sharpness at size2 is claimed. Thus the working exclusion is not
+being deduced from protection or a cyclic drawing alone.
+
+Actual change: a candidate global neutral-closure obstruction to a
+full ordinary palette in a single core. Parent coverage remains NONE;
+G338's component-overlap step and this new neutral application are
+unverified. G337 is not used. Keep the present carrying packet unchanged
+rather than adding a third read job or promoting this as a premise.
+The next question still needs protection for a core missing an ordinary
+colour, or the pair of triangles; the new argument does not cover those.
+Gut: the closure is more convincing than a local policy because the
+neutral intermediate remains a genuine global maximum. Reasoned: bank
+it with the dependency risk and exact countercontrol, without starting
+another exception catalogue.13min research remains ACTIVE.
