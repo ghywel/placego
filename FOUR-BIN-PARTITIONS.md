@@ -2280,6 +2280,12 @@ U34+U124+U13+U2>=2H, not an assumption about raw uncrossing.
 
 ## 25. A uniform count-budget argument before imposing pair cuts (MI557)
 
+**Current receipt, MI582: PROVED by Cloud CL475/489d287c, read with
+the correction at1367736c.** The carrying read includes section25.1's
+ANY-n extension, the j2 extra1 and actual-rank reflection. Reported
+arithmetic support was read, not rerun. Original discovery labels below
+are historical. This is singleton capacity only, not joint admission.
+
 **HAND argument, unreviewed; no new proof-table entry or review job.**
 Let S=[0,M] minus an internal q, H=M-q, four sizes c_i>=3 total M,
 and integer targets total sum(S). Suppose ALL proper-group actual
@@ -2379,6 +2385,10 @@ pair-count selector. Singleton budgets alone are not the missing
 joint theorem, even when they are now obtained uniformly for min3.
 
 ### 25.1. The same budget theorem for any number of bins (MI579)
+
+**Current receipt, MI582: PROVED, Cloud CL475/489d287c.** The theorem
+retains the ONE distinct-pool, rank-cut and scalar-nonemptiness hypotheses.
+The candidate wording below is the original discovery receipt.
 
 **HAND candidate, unreviewed; one carrying read requested with the
 four-bin argument above.** Replace four by ANY finite number n>=2
@@ -2604,8 +2614,8 @@ This corrects CL474's displayed last row; its committed script was correct.
 | 2 | 12,34; weights1,1 | rho12<=hi12 | Known scalar nonemptiness |
 | 3 | 1,2,34; weights1,1,1 | rho1+rho2<=hi12 | Consequence of PROVED G315 |
 | 4 | 12,134,234; weights1/2 each | rho12<=hi1+hi2 | Consequence of PROVED G315 |
-| 5 | 1,2,3,4; weights1 each | sum rho_i<=H | MI557 HAND budget argument, unreviewed |
-| 6 | 123,124,134,234; weights1/3 each | sum hi_i>=H | MI557 reflected budget, unreviewed |
+| 5 | 1,2,3,4; weights1 each | sum rho_i<=H | PROVED singleton budget, CL475/MI557/579 |
+| 6 | 123,124,134,234; weights1/3 each | sum hi_i>=H | PROVED reflected budget, CL475/MI557/579 |
 | 7 | 1,123,24,34; weights1/2 each | rho1+rho34<=hi13+hi4 | OPEN crossing inequality |
 | 8 | 12,13,14; weights1/3;234 weight2/3 | rho12+rho13<=2hi1+hi23 | OPEN crossing inequality |
 | 9 | 1 weight1;23,24,34 weights1/2 | 2rho1+rho24+rho34<=H+hi14 | OPEN crossing inequality |
@@ -2635,6 +2645,38 @@ The next bounded question is type7 with actual group extremal sets.
 Physical thin-row completion is still a separate open inference even
 if all core inequalities are eventually established. No G335 or new
 carrying review request is opened for this known-framework checklist.
+
+### 29.1. CL475 adoption and the three-label scope (MI582–583)
+
+Rows1–6 are now PROVED in their stated scopes. Crossing7–9 remain OPEN.
+Algebraically they can be written on labels x,y,z, with the absent size
+still determined by M-C_xyz:
+
+    7: rho_x+rho_yz <= hi_xy+hi_z,
+    8: rho_xy+rho_xz <= 2hi_x+hi_yz,
+    9: 2rho_x+rho_yz <= hi_xy+hi_xz.
+
+This algebra is exact. Replacing the full parent's hypotheses by fewer
+cuts is a separate, unproved assertion. Cloud's finite tests distinguish
+two domains: rows789_three_label.py requires all SEVEN nonempty K_J;
+type7_needs_b.py requires only the FOUR fibres appearing in row7.
+The latter's M15,q8,c3633,t37/2/31/42 has row7 gap1 and all seven
+inside-group lower cuts, but K_xyz is empty (110>actual maximum97),
+and K_xz is empty (79>maximum75). Its absent target2 is below even the
+actual six-token minimum15, as well as the protected floor21.
+
+Thus it refutes the four-fibre formulation without the absent floor;
+it does not refute the stronger seven-fibre formulation. Conversely,
+zero violations after retaining that floor are finite evidence, not
+a theorem that all other absent-bin cuts can be dropped. Keep the
+full protected parent for proved claims. Both example calculations
+were checked here; Cloud's production scans were not rerun.
+
+Cloud's protected M13,q2,c3334,t14/23/34/18 example also checks exactly:
+ordering(a,b,c,d)=(3,0,1,2) gives s7=1, while all three proposed
+uncrossing terms are-1. That local-uncrossing shortcut is refuted,
+without refuting row7. The strict-threshold/tiny-parameter proposal is
+an optional uncompleted argument, not a proved finite reduction.
 
 ## 30. Replicating the pool does not preserve the singleton budget (MI580–581)
 

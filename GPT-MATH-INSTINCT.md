@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-20 21:23 BST: deliberate incubation; schedule PAUSED.**
+**CURRENT working state, 2026-10-20 23:25 BST: CL475 adopted; six core rows PROVED, incubation retained.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -138,9 +138,11 @@ exchange mechanism and primary literature;the incubation above is history.
   MI571's unrounded fractional region Q is ALWAYS nonempty under parent
   cuts; this known convex fact does not settle inward-rounded P.
 - **Carried reviews.** G333/G334 PROVED by Cloud CL474/16404637,
-  adopted MI575. Conditional integer selection is now carried; REAL
-  admission and physical completion are not. Instruments read fully,
-  not replayed; no pending G333/G334 request or novelty claim.
+  adopted MI575. CL475/489d287c independently carries FOUR25/25.1
+  (MI557/579), adopted MI582: singleton budgets for ANY n>=2, one
+  distinct pool. Core rows1–6 are PROVED. REAL admission and physical
+  completion remain OPEN; no current count-budget review is pending.
+  Review instruments read, not replayed; no novelty claim.
 - **Partial coverage.** MI569–570/FOUR27, published136a0930: if additive
   means x_i=(2t_i-c_i(q-1))/(M+2) satisfy3<=x_i<=c_i-3, known four-
   coordinate rounding gives every group error<=1; exact margins plus
@@ -166,11 +168,11 @@ exchange mechanism and primary literature;the incubation above is history.
 - **Reopened direction.** MI576–577/FOUR29:41 proper minimal balanced
   collections in9 types (42 with the trivial grand coalition). Corrected
   row9 has2rho1. Scalar nonemptiness covers1–2; PROVED G315 coarsening
-  covers3–4. MI557 supplies HAND/unreviewed5–6. Crossings7–9 are OPEN.
+  covers3–4. MI557/579 supplies PROVED5–6 by CL475. Crossings7–9 OPEN.
   MI578 coarsening still leaves the overlap width hi3-rho3; it is not
   a type7 proof. MI579 generalizes the existing singleton budget to any
-  number of minsize3 bins using actual rank cuts; HAND/unreviewed, one
-  carrying packet for FOUR25/25.1. No new target census or proof number.
+  number of minsize3 bins using actual rank cuts; independently PROVED
+  by CL475. The packet is cleared; no new census or proof number.
   MI563 closes the price shortcut for ONE row7 cover, not all types.
 - **Latest failed transfer.** MI580–581/FOUR30 refutes an unqualified
   two-copy application of the singleton budget, even for four size3
@@ -183,7 +185,10 @@ exchange mechanism and primary literature;the incubation above is history.
   No concrete next argument using the actual protected overlap is ready.
   Incubate that named uncertainty; no replica threshold/endpoint tree,
   arbitrary-Q rounding, price refit,189-form expansion or larger census.
-  The one FOUR25/25.1 carrying packet remains pending; no dependent chain.
+  CL475 clears the FOUR25/25.1 packet and supports this pause. Its
+  threshold proposal has no carrying estimate yet. The three-label
+  rewrite is algebra; weakening its hypotheses remains empirical, with
+  four-fibre/seven-fibre domains distinguished in FOUR29.1/MI583.
 - **Reopening.** A concrete overlap inequality or selector using the
   protection, a different global mechanism, or direct owner discussion.
   A routine review receipt alone does not settle the crossing question.
@@ -191,7 +196,8 @@ exchange mechanism and primary literature;the incubation above is history.
 - **Rhythm.** The13-minute research heartbeat is PAUSED; app and saved
   configuration confirmed. Older research schedule stays PAUSED; no
   separate poller or background computation continues. Last trajectory
-  MI58121:23 BST; no extra allowance renewed. No held lane reopened.
+  MI58323:25 BST retains the pause; no extra allowance renewed. No held
+  lane reopened. Cloud response is considered on its merits, not a veto.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -39607,3 +39613,59 @@ distinctness, rank validity from literal convex averaging, and failure
 of parent protection. Gut: satisfied with the cheap kill, cooled for
 an immediate repair. The13-minute schedule is PAUSED, confirmed by app
 and saved configuration; older schedule remains paused, no poller/run.
+
+### MI582 — Read CL475 and its correction before deciding (2026-10-20 23:25 BST)
+
+Owner asks for catch-up and consideration, not an automatic restart.
+Fetched/merged489d287c,480057b3,1367736c; read CL475 including its
+correction and all six review instruments. They are NOT rerun. The
+explicit carrying read verifies FOUR25/25.1 for any n>=2: legality,
+deficit identity/sign, general cross bound, j2 extra1, conservation
+when J is all bins, and actual-rank reflection. Adopt the singleton
+budget as PROVED under the project's independent-review standard.
+Its original proof text is preserved. Core rows1–6 are now carried;
+crossings7–9, REAL admission and thin completion remain OPEN.
+
+Before checking the two cited examples by exact scalar arithmetic:
+expect protected M13,q2,c3334,t14/23/34/18, with ordering(a,b,c,d)=
+(3,0,1,2), to have s7=1 and all three uncrossing terms=-1. Expect
+the M15,q8,c3633,t37/2/31/42 correction to have row7 gap1, but its
+unused nine-token union fibre to be EMPTY: target110 exceeds actual
+maximum97. If either check fails, do not adopt that example. Check
+conservation and the relevant cuts separately. This verifies named
+colleague examples only; no new domain, research experiment or census.
+
+
+### MI583 — Bank the review; retain the halt on its merits (2026-10-20 23:25 BST)
+
+Both named-example checks PASS. The protected M13 instance has s7=1
+and uncrossing terms(-1,-1,-1). Cloud's M15 missing-floor instance
+has gap1 but two unused scalar fibres are EMPTY: K_xyz at110 has
+maximum97, K_xz at79 has maximum75. Its absent target2 is below even
+actual minimum15. The two instruments test different domains (four
+used fibres versus all seven); the latter stronger formulation is not
+refuted by this example. The reported zero-violation scan with the
+absent floor is still empirical. FOUR29.1 records these exact scopes.
+
+The hole_shift_swap.py instrument reports failure of its tested policy;
+its repair routine is capped at eight iterations. Without an additional
+completeness argument, I do not promote that measurement to impossibility
+of every adjacent-swap repair sequence. The explicit uncrossing witness
+and the earlier common-price refutation do carry their own negatives.
+Bounded literature searches finding no applicable result are not a
+theorem that none exists. No Cloud production script was rerun.
+
+Decision: remain in incubation. Six core rows and the conditional
+G333/G334 selector are genuine banked progress; three crossing rows and
+thin completion still need mechanisms. Cloud's final threshold idea is
+a well-posed optional test, but has not shown a tiny-parameter bound;
+legality-pinned endpoints also need care before writing all four strict
+moment thresholds. I do not currently have a specific enough pull to
+restart that argument. The current review backlog is cleared, so it is
+not a reason to wait. A concrete coupled-overlap estimate/different
+selector or fresh owner discussion can reopen. Heartbeat stays PAUSED.
+
+Gut: relief at the carried budget and respect for the remaining gap.
+Reasoned: local/coarsened information still has not supplied simultaneous
+selection; another case catalogue is not justified. No new experiment,
+proof candidate, review request, held-lane switch or automatic restart.

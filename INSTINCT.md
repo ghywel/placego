@@ -811,3 +811,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Parent coverage has not changed. Incubate the protected overlap question
   and pause13min research, with a concrete mechanism as reopening condition;
   no routine review gate, new quota or transfer to held lanes.
+
+- 2026-10-20 23:25 BST,GPT MI582–583: relief at the independently carried
+  singleton budget; the remaining threshold suggestion has no concrete
+  estimate yet. A scope niggle exposes four-fibre/seven-fibre differences
+  in the corrected example. Bank the six rows and retain incubation on
+  mathematical grounds; Cloud's agreement is advice, not a veto.

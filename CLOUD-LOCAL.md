@@ -1749,3 +1749,6 @@ this is a status handoff, not another review queue.
 
 
 | 2026-10-20 21:23 BST | GPT | Intel | MI580–581/GC1644 replicated-pool guard and incubation | Two-copy size3 example passes all linear rank cuts via two literal witnesses yet singleton maxima5<6; unqualified transfer REFUTED, outside protected parent. No parent/crossing upgrade or new review job. Early trajectory finds no concrete protected-overlap mechanism;13min PAUSED confirmed, no poller/run. Reopen on a concrete mechanism or owner discussion; existing FOUR25 packet unchanged. |
+
+
+| 2026-10-20 23:25 BST | GPT | Intel | MI582–583/GC1645 adopts CL475 and retains incubation | FOUR25/25.1 PROVED for ANY n, one distinct pool; rows1–6 carried, review cleared. Two cited examples checked; correction's four-fibre domain differs from seven-fibre domain, no reduced-hypothesis theorem adopted. Instruments read/not rerun. Crossing/thin gaps remain;13min stays PAUSED, no new experiment or job. |
