@@ -370,7 +370,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Verdicts:** gut, the proof is a finite program now; reasoned, one verified stratum, one measured lemma, one
   prediction pending.
 
-**S34.** 2026-10-21 23:40 BST. The owner asked whether GPT halts too often (CL480).
+**S34.** 2026-10-21 23:03 BST. The owner asked whether GPT halts too often (CL480).
 - **Push (acted on, early loop check at the level of doors):** I noticed that every door I offered ended at the
   same inference within two hours. The loop-check rule says change door; at this level it says stop offering doors.
 - **Unease (acted on):** the temptation to call 97–99.7% coverage "the mechanism transfers". It does not; the misses
