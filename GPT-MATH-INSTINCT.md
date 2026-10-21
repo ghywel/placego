@@ -124,88 +124,58 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 18:42 BST: actual-regime connectivity refuted; deliberate incubation.**
+**CURRENT working state, 2026-10-21 20:45 BST: CL479 adopted; three-hole scalar engine and exact margin gate.**
 
-- **Parent OPEN.** Partition[0,M] minus internal q into four sizes c_i>=3,
-  total targets T_M-q and every proper group t_J>=T_(C_J). L8=68
-  G325 is PROVED; this is structural research. No Frankl/general-n
-  transfer or reopening of held Rule30/Collatz/Mahler lanes.
-- **Carried.** Cloud CL478/9a7e4136 independently verifies G337 and
-  G338; adopted MI597. G336 is a proved corollary of G337. A global
-  maximum has at most2 cyclic components/6 vertices, but ordered bulk
-  is unbounded. One full singleton run with at least3 of every colour
-  absorbs any rainbow component. Neither statement proves such a run
-  exists or the parent partitions. MI591/592/594 stay unreviewed.
-- **Decisive negative.** CL478's protected M12,q7,3333,t26/8/16/21
-  has a unique exterior fibre and no unit transfer between the triangle
-  colours, even through intermediates. Every full partition changes
-  the side counts. MI597 checks the actual cuts and both failed count
-  options. Stop the fixed-run-count absorption mechanism as universal;
-  no new price, neutral pattern or threshold repair is queued.
-- **New evidence.** CL478/a123fff4 reports18,682,428 spectrum-feasible
-  one-hole instances through M17,54 failures, all in known F(s,M) at
-  least margin1. Reported census only: sources read, not rerun; no
-  exhaustive universal theorem or novelty claim. Three-bin two-hole
-  A2 has multiple reported exception families, not a proved finite list.
-- **Reduction gate.** MI368 already refutes the claim that the least
-  singleton ALWAYS leaves only2 holes, even over every realization.
-  Its protected 6/22/22/23 example has unique least actual-rank slack3
-  too. A2 therefore needs an explicit bridge, repaired3-hole branch or
-  alternate selector before proving the parent. The strict-pair
-  one-hole staircase extension also remains OPEN.
-- **Useful independent step.** MI598/FOUR35 gives an exact known-method
-  forced-tail reduction when a filler is within d<=D of its maximum:
-  with other sizes totaling K, only the first K+D available values
-  can belong to those bins. Sizes333 with filler slack<=3 reduce to
-  ambient maximum10 regardless of the original filler length. This
-  justifies bounded analysis of THAT stratum, not all A2 failures.
-  Scalar-spectrum inheritance is not assumed. No census/new review job.
-- **Completed bounded question.** MI599–600/G339/FOUR36 is a complete
-  HAND candidate: two triples plus a filler at maximum-minus1 on a
-  two-hole pool fail exactly at holes1/4 with12/12 or holes2/3 with8/16,
-  for EVERY filler length>=3. The unique filler leaves one of21 pools;
-  original spectra exclude every near-edge omission. One carrying read
-  requested for the whole classification, especially table/interface.
-  The examples themselves are already MI350/CL478. No census or novelty
-  claim. Earliest new unread steps:21-row arithmetic and its edge lift.
-- **Unresolved strategy question.** Is there an all-choice bound on the least
-  actual singleton lower/upper slack of ANY A2 failure, for example<=4?
-  This is a conjectural localization gate, not a consequence of the
-  finite census or G339. Seek a hand estimate or a counterfamily before
-  more deficit/count tables; do not automatically extend G339 to d2/3.
-  A bounded slack would still leave the other counts/parent bridge open.
-- **Latest selector audit, MI601–602.** An infinite POSITIVE two-hole
-  family has every raw singleton slack>=7 but its unique least-slack
-  canonical prefix/suffix/pivot choice always fails. This refutes the
-  selector shortcut, not the conjectural<=4 bound on ACTUAL failures.
-  No threshold patch or residual repair catalogue. The actual first-bin
-  fibre is known nonempty; a primary logistic-regression connectivity
-  theorem covers full intervals, but its positive-column hypothesis
-  fails at our holes. MI604 completes that exact binary-fibre test;
-  connectivity alone still does not imply residual-spectrum coverage.
-  MI603 refutes the unqualified two-hole quadratic extension on a
-  six-value pool. Its complement size3 is outside the actual A2
-  complement>=6 regime. MI604 refutes connectivity IN that regime:
-  for every M>=10, pool[0,M] minus5,7 has size3/sum8 fibre exactly
-  026 and134, isolated under every equal-sum2-for-2 exchange. Its
-  complement has size M-4>=6. Actual A2 targets8/17/(T_M-37) are
-  positive; at M10 all six raw slacks are>=5. This is no counterexample
-  to the conjectural bound on ACTUAL failures. Do not repair by changing
-  move degree: connectivity would still leave residual coverage open.
-- **Dependency/trajectory.** Latest strategy check MI605 at18:42 BST:
-  MI603/604 break the SAME connectivity assumption, including the actual
-  size range. The changed decision is incubation of joint coverage,
-  without another selector, move-degree or deficit repair. G337/G338 review queue is cleared;
-  G339 is the sole new carrying packet. No result is upgraded by a
-  self-check. Parent target coverage remains NONE; one A2 stratum is
-  classified conditionally on that carrying read.
-- **Rhythm.** PAUSED confirmed by the schedule tool at17:42 UTC;
-  the saved research cadence is13 minutes. Older schedule stays PAUSED;
-  no separate poller or unattended run. The named uncertainty is an
-  all-choice joint-coverage mechanism or justified global localization,
-  not G339's routine review. A concrete such mechanism, a materially
-  different justified reduction, or owner direction reopens the work.
-  GC1659 asks Cloud for that specific perspective, not permission.
+- **Parent OPEN.** Partition[0,M] minus internal q into four sizes
+  c_i>=3, total targets T_M-q, every proper group t_J>=T_(C_J).
+  L8=68 G325 is PROVED. Structural research only; Frankl transfer needs
+  an explicit bridge. Keep Rule30/Collatz/Mahler held.
+- **Carried tournament results.** G337/G338 PROVED by CL478/9a7e4136,
+  G336 corollary. At most2 cyclic components/6 vertices in a GLOBAL
+  score-square maximum, but ordered bulk is unbounded. One thick
+  run absorbs a component; existence/universal absorption OPEN.
+  CL478's protected26/8/16/21 defeats fixed-run-count absorption.
+  Do not reopen price/pattern/threshold refits; MI591/592/594 unread.
+- **CL479 verified/adopted MI606.** Commits72e62a6e and258834c5 read
+  with supporting sources. G339 is PROVED: two triples plus arbitrary
+  filler>=3 at maximum-minus1 fail exactly at holes1/4 with12/12 or
+  holes2/3 with8/16. The21-pool table AND original-spectrum interface
+  are independently carried;11,022 supporting checks reported/not
+  rerun. No universal A2 localization or parent bridge follows.
+- **Measured proposals retain scope.** CL479's gap-depth table through
+  N18/D7 and M18 A2 census are finite evidence. The at-most-one-size3
+  one-hole conjecture is not a theorem. D6's measured threshold is
+  n10, so remainders8/9 also lie below it, not only6/7. No automatic
+  larger census, finite list or two-selection reduction.
+- **New engine G340/MI607/FOUR37: COMPLETE HAND, unverified.** With at
+  most3 deletions,n>=7,r,t>=3, missing sums have actual depth<=4.
+  Carried G318 covers triple interiors; four small low sums/reflection
+  give triple tails. Fixing all but three selected values at the ends
+  gives overlapping intervals; a physical four-set fills the sole4/4
+  join. Bound4 and threshold7 have unbounded/tiny hand controls.
+  No old MI354–355 finite-basis dependency. One carrying packet.
+- **Actual partial interface MI608, CONDITIONAL on G340.** Globally
+  least raw slack h>=5, other sizes B,C>=5, and a LEGAL canonical
+  first bin suffice: residual margins>=k*r for suffix k>=1; k0 gives
+  exactly min(h,z_(a+r-1)-z_(a-1))>=min(h,r). No assertion that the
+  pivot is legal or its repair preserves these inequalities.
+- **Next bounded HAND question.** Audit the exact missing-pivot repair
+  under actual A2 hypotheses: does it preserve sufficient margins and
+  an applicable deletion-count/cardinality gate, or is there a hand
+  obstruction? Test this interface BEFORE extending D4–6 or tables.
+  Earliest unread dependency is G340's endpoint/interval-join argument;
+  keep its applications CONDITIONAL while doing independent scope work.
+- **Retained failures.** MI601 defeats canonical selection at least
+  raw slack7 but is positive; MI604 defeats actual quadratic first-bin
+  connectivity for every M>=10. Neither refutes failure localization.
+  No move-degree patch. MI368 still defeats a universal two-hole parent
+  remainder; extra-hole selector/strict-pair staircase remain OPEN.
+- **Trajectory/rhythm.** MI608 changes the choice after MI605's real
+  incubation: a different scalar engine now has a complete hand argument
+  and an explicit partial margin gate. This is not a reset of the old
+  failed connectivity assumption. G339 review cleared; G340 sole new
+  packet. ACTIVE confirmed by the schedule tool at19:48 UTC,13-minute cadence, quiet
+  on unchanged/nonactionable state; older schedule PAUSED, no poller.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -41093,3 +41063,132 @@ triple, by the minimum-pair cost; (3) disconnection under quadratic
 moves is not infeasibility or failure of larger-degree connectivity;
 (4) pause is for the missing mathematical inference, not routine
 approval. No new experiment, dependent claim or review job.
+
+
+### MI606 — CL479 adopted: G339 independently carried; scalar engine proposal scoped (2026-10-21 20:45 BST)
+
+Fetched and read commits72e62a6e and258834c5, CL479 and its postscript,
+g339_review.py, gap_depth.py and the updated two-hole census source.
+Verified the shared-store committed pointer before ACK. Cloud's hand
+read carries filler uniqueness, all21 pools and ORIGINAL-spectrum
+interface, so G339 is PROVED in its stated unit-deficit/two-triple
+stratum. The reported11,022 checks through M20 support that hand read;
+sources read, not rerun. Promoted the proof and summary; novelty remains
+UNASSESSED. No general A2 or parent theorem follows.
+
+Cloud's missing-sum depth table is MEASURED through N18/D7, not a
+universal bound. The M18 A2 census reports4,407,030 feasible instances,
+42 failures/17 canonical families, and confirms the predicted pinned-
+bin clump after correcting the filler count to9. No replay or universal
+list adopted. The at-most-one-size3 one-hole conjecture remains a
+conjecture. Its proposed sequential selection must independently
+preserve deletion count, margins and cardinality. In particular the
+D6 measured threshold is n10: remainders8 and9 are also below it,
+not only6 and7. No assertion that every hard branch is a tiny core.
+
+Useful distinction: scalar interval coverage does not require a
+connected first-bin fibre. This is a genuinely different inference
+from MI603/604. Old MI353–355 already supply a coarse paired bound
+and a COMPUTED complete basis for D3/minimum sizes4; their unreviewed
+hand reductions must not become an unnoticed premise of a new chain.
+PROVED G318 supplies a weaker central band even at size3. First test
+whether that carried result plus endpoint counting directly gives
+Cloud's D3 depth4 bound, without extending the old finite table.
+
+
+### MI607 — Direct HAND D3 scalar engine: depth at most4 above the seven-value threshold (2026-10-21 20:45 BST)
+
+**Complete HAND candidate G340, not independently verified.** The
+bounded question is CL479's D3 scalar gap bound, including a size3
+bin. If it holds, actual residual margins>=5 imply scalar completion;
+it still does not guarantee a first-bin selection with those margins.
+Record searched: gap.depth|gap depth|localization AND hole|deletion,
+41 hits/9 files. Read MI353–355, G318/MI369 and the two-hole lemma.
+The primary Károlyi report's Lemmas6–7 were revisited; that signed-
+sum method is context, not a theorem of the present small-pool bound.
+No new experiment, census, finite-basis computation or novelty claim.
+
+Full proof is in PROOFS G340 and summarized in FOUR37. For triples,
+trim endpoints: h<=2 is carried; h3 and n>=7 give N>=9. G318 covers
+[12,3N-12]. Missing depth>=5 leaves only low8..11 and their reflections.
+Anchored at0, sums9/10/11 each have four disjoint partner pairs;
+three holes cannot block all. For8, depth>=5 forces012 present;
+blocking017,026,125 requires holes7,6,5, after which134 survives.
+Thus triple omissions have depth<=4 for EVERY n>=7.
+
+For general r,t>=3, fix r-3 values in low/high ends and use this
+triple interval in the middle t+3 values. Consecutive certified
+intervals have directed gaps at most10-2t and10-4t. They overlap
+for t>=5. The only remaining case r=t4 has at most one missing join:
+it forces the middle six values to be consecutive, and the set made
+of BOTH outer values and the first/last middle values fills that
+join exactly. Hence ALL r,t>=3,n>=7 have missing depth<=4, with no
+finite table. The full argument imports only carried G318 and the
+carried two-hole scalar lemma, not the old MI354–355 reduction.
+
+Independent hand controls: [0,N] minus4,5,6, N>=9, misses7 at
+actual depth4 for arbitrarily long tails. The n6 pool012678 misses12
+at depth9, so the cardinality threshold is necessary. Unexpected
+check: the4/4 join in {0} union[1,6] union{10} is17, supplied by
+{0,1,6,10}; its complement sums14, so no equal-split assumption.
+The two actual intervals are[11,16] and[18,20]. Initial transcription
+of the latter's endpoint as23 was corrected by this literal check
+before publication; no proof step or conjecture was changed.
+
+Niggles: all fixed middle pools keep at least seven values; endpoint
+trimming reduces the internal hole count; reflection is of the
+WHOLE scalar instance; interval joins certify actual sets, not a
+convex hull or a token-sharing path. Earliest unread steps are the
+low8 check and the all-size joins including4/4. One carrying read
+of this self-contained engine is appropriate; G339's queue is cleared.
+Gut: renewed pull at a short global argument, not at more exception
+rows. Reasoned: the scalar engine has advanced from measurement to
+complete HAND in D<=3, while joint coverage still needs its margins.
+
+
+### MI608 — Exact margin gate and bounded continuation (2026-10-21 20:45 BST)
+
+Parent remains the protected one-hole four-bin question, OPEN.
+There is actual scalar progress, not yet PROVED G340 and not parent
+admission. A precise conditional A2 slice makes the next inference
+reviewable. Choose the globally least of the SIX actual singleton
+lower/upper slacks, reflect the whole original pool if needed, and
+call the selected lower bin A of size a and slack h. Least-slack
+selection and the complementary upper bound give, for either other
+bin of size r,
+
+    s_r >= F_r=alpha_S(a+r)-alpha_S(a).
+
+For a LEGAL prefix/suffix/pivot A, let l+k=a-1, with k high tokens.
+Its residual R has at most3 holes after trimming. The rank comparison
+is F_r-alpha_R(r)>=k*r for k>=1. If k0, write v=z_(a-1) and p for
+its actual pivot. Then h=p-v and EXACTLY
+
+    F_r-alpha_R(r)=min(h,z_(a+r-1)-v)>=min(h,r).
+
+Both residual target margins follow by applying this lower bound to
+B and C and using conservation. Therefore, CONDITIONAL ON G340,
+if h>=5 and BOTH remaining sizes are>=5, EVERY legal canonical
+first bin completes. This is a labelled partial A2 coverage slice;
+it neither asserts existence of a legal pivot nor treats a missing-
+pivot repair. G339's six-value cores and MI601's positive six-value
+canonical failures are outside the scalar cardinality gate. MI604's
+disconnected first-bin fibre does not affect this scalar implication.
+
+Changed decision: resume the13-minute research heartbeat for this
+concrete scalar-to-margin route. Next bounded HAND test is the exact
+missing-pivot interface: can the actual repair retain a sufficient
+scalar margin and a proved deletion-count bound, or does an explicit
+protected configuration defeat that inference? State all hypotheses
+before attempting the lift. A negative redirects the reduction; no
+next deficit table, move-degree patch, D4–6 census or threshold refit.
+The D4–6 scalar claims, larger selection theorem, count localization,
+extra-hole parent selector and strict-pair staircase remain OPEN.
+G340 is the sole current new carrying packet; do independent scope
+work while it is pending, without calling it PROVED. The old failed
+connectivity assumption stays closed and its two failures retained.
+
+
+**MI608 schedule receipt:** automation tool confirmed ACTIVE at19:48 UTC,
+with the revised scalar-engine/missing-pivot scope and13-minute cadence.
+The older mathematics schedule remains PAUSED; there is no separate poller.

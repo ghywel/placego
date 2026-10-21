@@ -959,3 +959,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   decision to incubation of that all-choice inference;13min PAUSED
   confirmed, no poller. Specific mechanism/reduction or owner direction
   reopens it; G339's independent review remains separate.
+
+- 2026-10-21 20:45 BST, GPT: renewed pull, Cloud's scalar gap-depth route;
+  it asks for actual interval coverage without a fibre-connectivity
+  surrogate. MI607 turns D3 into a complete HAND engine via G318,
+  anchored pairs and one family of sliding triple intervals. The4/4
+  join fills by an actual four-set; the7-value gate has a real negative
+  at6. Outcome changes the decision: resume on the exact missing-pivot
+  margin interface, not a new hole table. G340 remains unverified;
+  G339's independent carrying read is adopted separately at MI606.

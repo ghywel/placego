@@ -2889,7 +2889,7 @@ complete six-value complements before any enlargement of a census.
 
 ## 36. The unit-deficit filler with two triples (MI599–600/G339)
 
-**Complete HAND candidate; carrying read pending.** On
+**PROVED within project standards, Cloud CL479/72e62a6e; adopted MI606.** On
 S=[0,M] minus two internal holes, M>=10, prescribe sizes(3,3,M-7),
 conserved targets individually feasible in S, and filler target
 beta_S(M-7)-1. Exactly these fail, up to exchanging the triples:
@@ -2911,7 +2911,28 @@ only z0..z4, so their feasibility is inherited here and excludes every
 remaining table omission. This proves the needed interface for these
 offsets, not blanket inheritance of all scalar fibres under truncation.
 
-The complete21-row arithmetic and interface await independent review.
+Cloud independently carried the complete21-row arithmetic and interface.
+Its reported11,022 finite checks support that hand read; not rerun here.
 Other filler deficits, larger two-bin total size, universal A2 localization
 and the missing parent selector remain OPEN. No census was run; do not
 automatically extend the table or claim a universal cutoff at10.
+
+
+## 37. Three-deletion scalar engine and its margin gate (MI607/G340)
+
+**Complete HAND candidate, not independently verified.** G340 states:
+if at least seven values remain after at most three deletions, and
+both selected and complementary sizes are>=3, every sum at distance
+at least5 from BOTH actual extrema is available. The bound4 is sharp.
+PROVED G318 supplies the triple interior; four small low sums and
+reflection supply the tails. Fixing all but three selected values
+in low/high ends gives overlapping intervals; the only4/4 join is
+filled by an actual four-set. Full argument and controls are in
+PROOFS G340; no old MI354–355 finite computation is a premise.
+
+This is no general A2 or parent admission theorem. A legal first-bin
+recipe with k high tokens has actual residual margins at least k*r;
+k1 can leave only3 or4, insufficient for the stated scalar engine.
+Missing-pivot repairs and repeated selections need their own budgets.
+Keep the measured D4–6 gap-depth claims and small-remainder branches
+open; do not infer that only six- and seven-value remainders are hard.

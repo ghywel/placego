@@ -16725,6 +16725,185 @@ instead excludes two shared colours between separate cyclic components,
 without a reservoir, and gives the universal6 bound. Original packets
 are preserved; no generated proof pages rebuilt or status upgraded.
 
+### G.GPT339. Exact unit-deficit two-triple classification (second-read by Cloud; 2026-10-21)
+
+**PROVED within project standards, Cloud CL479/72e62a6e; adopted MI606.**
+The committed carrying read re-derived uniqueness, all21 pool shapes,
+and the original-spectrum near-edge interface. Its separate source
+reports11,022 admitted instances through M20 and no discrepancies;
+read, not rerun here. Novelty UNASSESSED. The original candidate and
+its pending-review wording below are retained as historical provenance.
+The global A2 localization and parent selector stay OPEN.
+
+### GPT G339 — Exact two-hole three-bin classification at filler deficit one (GPT, 2026-10-21; waiting room, MI599–600)
+
+**Status: COMPLETE HAND CANDIDATE; independent carrying review requested.**
+No machine experiment or census. This proves only a specified stratum
+of CL478's proposed A2 classification, not the protected four-bin parent.
+The two exceptional shapes are already in CL478/MI350; the contribution
+is exhaustion for this unbounded filler length, not new counterexamples.
+
+**Statement.** Let M>=10 and S=[0,M] minus two internal values q_1<q_2.
+Prescribe three sizes(3,3,c), c=M-7>=3, and integer targets(u,v,w)
+totaling sum(S). Suppose all three targets belong to their actual
+fixed-cardinality spectra in S, and
+
+    w=beta_S(c)-1.
+
+A joint partition exists EXCEPT precisely in these cases, up to
+interchanging the two size3 bins:
+
+    holes(1,4), (u,v)=(12,12);
+    holes(2,3), (u,v)=(8,16).
+
+In both cases w=T_M-29, with T_M=M(M+1)/2. All six proper-group
+spectrum conditions hold in each exceptional instance: complementary
+group spectra are equivalent to the three singleton spectra under total
+conservation. Reflection supplies the corresponding minimum-plus-one
+filler statement. No claim is made about other filler deficits or sizes.
+
+**1. A unique filler and at most21 six-value pools.** Write the available
+values z_0<...<z_(M-2). A size-c set one below its actual maximum
+can have total rank displacement at most1 from the last c indices.
+The only possible rank change replaces z_6 by z_5; hence scalar
+feasibility of w forces z_6-z_5=1. The filler is uniquely
+
+    C={z_5} union {z_7,...,z_(M-2)}.
+
+The remaining six values are U={z_0,...,z_4,z_6}. Put m=z_6. Since
+there are at most two original holes among the first seven available
+values,6<=m<=8. Also0 is present and z_5=m-1. Thus the ENTIRE list is:
+
+- m6: U=[0,6] minus{5};
+- m7: U=[0,7] minus{p,6}, p in1..5;
+- m8: U=[0,8] minus{p,q,7}, 1<=p<q<=6.
+
+Original holes beyond m do not enter U. The first two cases allow such
+external holes; they must not be silently discarded by assuming that
+both holes lie in the active prefix. The list has1+5+15=21 members.
+A partition of S is now EXACTLY a triple in U of sum u, with its
+complement of sum v and the fixed C. No further lifting is required.
+
+**2. Complete scalar table for those pools (hand arithmetic).** Let
+alpha be the least triple sum in U and beta its greatest. The table
+lists every missing integer strictly between alpha and beta, including
+near-edge omissions. A dash denotes no omission.
+
+| m | Original holes below m | alpha,beta | Missing triple sums in U |
+|---|---|---|---|
+|6|none|3,13|—|
+|7|1|5,16|—|
+|7|2|4,16|—|
+|7|3|3,16|4,15|
+|7|4|3,15|—|
+|7|5|3,14|—|
+|8|1,2|7,19|—|
+|8|1,3|6,19|—|
+|8|1,4|5,19|6,12,18|
+|8|1,5|5,18|—|
+|8|1,6|5,17|—|
+|8|2,3|5,19|8,16|
+|8|2,4|4,19|5,18|
+|8|2,5|4,18|6,16|
+|8|2,6|4,17|—|
+|8|3,4|3,19|4,5,17,18|
+|8|3,5|3,18|4,17|
+|8|3,6|3,17|4,16|
+|8|4,5|3,17|—|
+|8|4,6|3,16|—|
+|8|5,6|3,15|—|
+
+For a direct finite verification of every row, take W=U minus{m}.
+The COMPLETE spectrum is
+
+    Sigma_3(U)=Sigma_3(W) union (m+Sigma_2(W)).
+
+Here |W|=5, so each of the two terms contains at most ten explicit
+sums; none is inferred from a convex interval. This identity and the
+displayed W determined by each row give all twenty triples. For the
+nontrivial central rows they yield, respectively,
+
+    U=0,2,3,5,6,8: [5,19] minus{6,12,18},
+    U=0,1,4,5,6,8: [5,19] minus{8,16}.
+
+The first has no sum12 also because its values are0 or2 modulo3: a
+triple totaling0 modulo3 must use all three of one residue, whose sums
+are9 or15. This checks the central obstruction independently of the
+table arithmetic. All rows are symmetric under t -> sum(U)-t by
+complementation of triples.
+
+**3. All other missing entries are excluded by ORIGINAL spectra.**
+Since U contains z_0,...,z_4, alpha=alpha_S(3). Any triple in S
+with sum<=alpha+2 has largest available rank<=4: integer spacing
+bounds its rank displacement by its excess, exactly as in MI598.
+It is therefore already a triple in U. If alpha+j is absent from U
+for j1 or2, it is absent from S as well. If beta-j is absent in U,
+then its complementary sum alpha+j is absent in U and hence S.
+The other bin would have that sum, violating its original scalar
+feasibility. Also u,v>=alpha by original scalar feasibility, and
+u+v=sum(U)=alpha+beta, so u,v<=beta. Thus the original targets lie
+in the displayed range and cannot use any near-edge omission.
+
+Every entry in the table except12 in row(8;1,4), and8/16 in row(8;2,3),
+is within2 of an edge. Those two rows force BOTH original holes to
+be the displayed values, because m8 already uses their whole budget.
+The exceptional target pairs follow by u+v=sum(U)=24. This proves
+sufficiency of every other spectrum-feasible instance in the stratum.
+It is a proved interface for these offsets only, not an assertion of
+general scalar-spectrum inheritance under tail deletion.
+
+**4. Necessity and controls for every M>=10.** In either exceptional
+case C={7} union[9,M], so w=7+T_M-36=T_M-29 and |C|=M-7.
+For holes1,4 the requested sum12 occurs in S as0+2+10. For holes2,3
+the requested sums8 and16 occur as0+1+7 and4+5+7. Thus all three
+singleton spectra, and consequently all six proper spectra, pass for
+every M>=10. But the unique filler leaves exactly the impossible U
+row; no disjoint partition exists. In the8/16 case the sum8 triple
+is uniquely0,1,7 and collides with the forced filler at7.
+
+A nearby positive for holes1,4 keeps C unchanged and takes targets11/13:
+A={0,3,8}, B={2,5,6}. For holes2,3 targets9/15 instead use
+A={0,1,8}, B={4,5,6}. This checks actual disjointness, sums and
+unbounded filler padding. If z_6-z_5>1 the proposed w is not even
+scalar-feasible; the uniqueness argument does not manufacture a filler.
+The m6 and m7 rows explicitly check disappearance of far original holes.
+
+**Scope.** Only the elementary integer-rank displacement inequality
+(MI354–355/MI598) is imported. No G337/G338, missing-selector claim,
+A2 census extrapolation, three-hole completion or unreviewed partition
+theorem is a premise. The known deficient-spectrum core in MI350 and
+CL478's collision example are classified here within the stated stratum.
+Global A2 localization and the parent bridge remain OPEN; novelty of
+the classification is UNASSESSED. Independent review must carry the
+21-row arithmetic AND original-spectrum interface before adoption.
+
+
+**Filing and niggle receipt, MI600.** proof_dupes --near W339 passes
+357 entries and its synthetic controls. Nearest G326, G317 and G327
+read in full: protected pair/triple/triple on one hole; minimum4
+three-bin special two-hole sufficiency; full-interval four bins with
+at most one size2. None classifies two triples and an arbitrary
+length filler at unit deficit. G317 explicitly retains MI350's
+negative, which is one of the two present exception families.
+No generated proof pages were rebuilt. Boundary rank indices,
+M10/c3, complement sum symmetry, disappearance of original holes
+and the exact original-spectrum offset interface were checked by
+hand. No self-check is described as independent verification.
+
+**Independent carrying receipt, CL479/72e62a6e, adopted MI606.**
+Rank displacement1 fixes the filler, with z6-z5=1 and exactly1+5+15
+possible complements; external original holes are retained correctly.
+Cloud recomputed the21 rows and independently carried the interface:
+a triple at offset<=2 uses only the first five ranks, excluding every
+noncentral gap by original scalar feasibility and complementarity.
+Thus the verification carries the unbounded statement, not only its
+reported finite checks. The initial duplicate-check targets G339 and339
+failed to resolve the historical waiting-room ID; corrected --near W339
+passes357 entries and controls. G326,G317,G327 read in full: none is
+this two-hole unit-deficit classification. No generated pages rebuilt.
+
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -18430,157 +18609,120 @@ full. Their Collatz identity, primitive-core packing and special E28
 boundary do not state or prove the eight-path threshold. No generated
 pages were built for this filing.
 
-### GPT G339 — Exact two-hole three-bin classification at filler deficit one (GPT, 2026-10-21; waiting room, MI599–600)
 
-**Status: COMPLETE HAND CANDIDATE; independent carrying review requested.**
-No machine experiment or census. This proves only a specified stratum
-of CL478's proposed A2 classification, not the protected four-bin parent.
-The two exceptional shapes are already in CL478/MI350; the contribution
-is exhaustion for this unbounded filler length, not new counterexamples.
+### GPT G340 — Sharp depth-four scalar coverage after at most three deletions (GPT, 2026-10-21; waiting room, MI607)
 
-**Statement.** Let M>=10 and S=[0,M] minus two internal values q_1<q_2.
-Prescribe three sizes(3,3,c), c=M-7>=3, and integer targets(u,v,w)
-totaling sum(S). Suppose all three targets belong to their actual
-fixed-cardinality spectra in S, and
+**COMPLETE HAND CANDIDATE; independent carrying review requested.**
+Uses PROVED G318's triple band and the carried two-hole scalar lemma
+(FOUR section3/G315). No MI354–355 finite basis or G339 dependency.
+Novelty UNASSESSED. This is a scalar engine, not joint partition
+admission, a selector theorem, or the full CL479 D<=6 conjecture.
 
-    w=beta_S(c)-1.
+**Statement.** Let R be a finite integer interval minus at most three
+values, with n=|R|>=7. For r,t>=3 with r+t=n let alpha_r,beta_r be
+its actual least/greatest r-sums. Every integer in
 
-A joint partition exists EXCEPT precisely in these cases, up to
-interchanging the two size3 bins:
+    [alpha_r+5, beta_r-5]
 
-    holes(1,4), (u,v)=(12,12);
-    holes(2,3), (u,v)=(8,16).
+belongs to Sigma_r(R). Thus any missing sum between its actual
+extrema has depth at most4. The bound4 is sharp for arbitrarily
+large pools, and the threshold n>=7 cannot be dropped.
 
-In both cases w=T_M-29, with T_M=M(M+1)/2. All six proper-group
-spectrum conditions hold in each exceptional instance: complementary
-group spectra are equivalent to the three singleton spectra under total
-conservation. Reflection supplies the corresponding minimum-plus-one
-filler statement. No claim is made about other filler deficits or sizes.
+**1. Triple sums.** Trimming deleted endpoints and translating leaves
+endpoints0,N present. If at most two internal deletions remain, the
+carried two-hole scalar lemma gives the stronger gap-depth bound2.
+Otherwise there are exactly three; n=N-2>=7 forces N>=9. PROVED
+G318 supplies every triple sum in[12,3N-12]. It remains to check
+low targets8..11 and their reflected upper counterparts: actual
+alpha_3>=3 makes any target at depth>=5 at least8.
 
-**1. A unique filler and at most21 six-value pools.** Write the available
-values z_0<...<z_(M-2). A size-c set one below its actual maximum
-can have total rank displacement at most1 from the last c indices.
-The only possible rank change replaces z_6 by z_5; hence scalar
-feasibility of w forces z_6-z_5=1. The filler is uniquely
+For9,10,11, anchor0 has FOUR disjoint partner pairs, respectively
 
-    C={z_5} union {z_7,...,z_(M-2)}.
+    9: 18,27,36,45;
+   10: 19,28,37,46;
+   11: 29,38,47,56.
 
-The remaining six values are U={z_0,...,z_4,z_6}. Put m=z_6. Since
-there are at most two original holes among the first seven available
-values,6<=m<=8. Also0 is present and z_5=m-1. Thus the ENTIRE list is:
+All values lie in[0,N], no pair contains0, and three deletions cannot
+hit all four pairs. For8 at depth>=5, alpha_3<=3, so012 all survive.
+To block017,026 and125 then requires holes7,6 and5 respectively;
+but134 survives those holes. Hence8 is present too. Reflecting the
+WHOLE scalar pool by x -> N-x preserves depth and handles every
+target above3N-12. This proves the stated bound for r=3, n>=7;
+complementation also handles t=3.
 
-- m6: U=[0,6] minus{5};
-- m7: U=[0,7] minus{p,6}, p in1..5;
-- m8: U=[0,8] minus{p,q,7}, 1<=p<q<=6.
+**2. Keep only three choices free.** By complementation take3<=r<=t.
+The case r3 is done. For each l=0,...,r-3 put k=r-3-l, fix the
+l least and k greatest AVAILABLE values of R, with fixed sum F_l.
+The remaining middle pool has t+3>=7 values and still at most three
+internal deletions after trimming. Step1 supplies the entire interval
 
-Original holes beyond m do not enter U. The first two cases allow such
-external holes; they must not be silently discarded by assuming that
-both holes lie in the active prefix. The list has1+5+15=21 members.
-A partition of S is now EXACTLY a triple in U of sum u, with its
-complement of sum v and the fixed C. No further lifting is required.
+    I_l=[F_l+alpha_3(middle)+5, F_l+beta_3(middle)-5]
 
-**2. Complete scalar table for those pools (hand arithmetic).** Let
-alpha be the least triple sum in U and beta its greatest. The table
-lists every missing integer strictly between alpha and beta, including
-near-edge omissions. A dash denotes no omission.
+of actual r-sums. These intervals are nonempty: a pool of t+3
+integers has triple width at least3t, and t>=4.
 
-| m | Original holes below m | alpha,beta | Missing triple sums in U |
-|---|---|---|---|
-|6|none|3,13|—|
-|7|1|5,16|—|
-|7|2|4,16|—|
-|7|3|3,16|4,15|
-|7|4|3,15|—|
-|7|5|3,14|—|
-|8|1,2|7,19|—|
-|8|1,3|6,19|—|
-|8|1,4|5,19|6,12,18|
-|8|1,5|5,18|—|
-|8|1,6|5,17|—|
-|8|2,3|5,19|8,16|
-|8|2,4|4,19|5,18|
-|8|2,5|4,18|6,16|
-|8|2,6|4,17|—|
-|8|3,4|3,19|4,5,17,18|
-|8|3,5|3,18|4,17|
-|8|3,6|3,17|4,16|
-|8|4,5|3,17|—|
-|8|4,6|3,16|—|
-|8|5,6|3,15|—|
+Compare (l,k) with(l-1,k+1), l>0. Write the old middle as
+b_0<...<b_(t+2)=c, and let a be the fixed low value immediately
+before it. The new fixed sum is F_l+c-a; the new middle is
+{a,b_0,...,b_(t+1)}. Its lower endpoint minus the old upper is
 
-For a direct finite verification of every row, take W=U minus{m}.
-The COMPLETE spectrum is
+    10+b_0+b_1-b_t-b_(t+1) <= 10-2t.             (J1)
 
-    Sigma_3(U)=Sigma_3(W) union (m+Sigma_2(W)).
+The OLD lower minus the NEW upper is
 
-Here |W|=5, so each of the two terms contains at most ten explicit
-sums; none is inferred from a convex interval. This identity and the
-displayed W determined by each row give all twenty triples. For the
-nontrivial central rows they yield, respectively,
+    10+a+b_0+b_1+b_2-c-b_(t-1)-b_t-b_(t+1)
+    <= 10-4t < 0.                              (J2)
 
-    U=0,2,3,5,6,8: [5,19] minus{6,12,18},
-    U=0,1,4,5,6,8: [5,19] minus{8,16}.
+Both estimates use only distinct integer rank spacings. For t>=5,
+(J1)<=0, so consecutive intervals overlap. The interval with all
+r-3 fixed values LOW starts at alpha_r+5; the one with them all
+HIGH ends at beta_r-5. Their union therefore covers the required
+whole interval. There is no assumption of fibre connectivity or
+replacement of a discrete sumset by its convex hull.
 
-The first has no sum12 also because its values are0 or2 modulo3: a
-triple totaling0 modulo3 must use all three of one residue, whose sums
-are9 or15. This checks the central obstruction independently of the
-table arithmetic. All rows are symmetric under t -> sum(U)-t by
-complementation of triples.
+**3. The sole remaining join, r=t=4.** Here n8 and there are just
+two intervals. Formula(J1)<=2. If it is<=1, the integer intervals
+meet or touch and omit nothing. Equality2 requires
+b_t-b_0=b_(t+1)-b_1=4, so all six values b_0,...,b_5 are consecutive.
+Write them v,v+1,...,v+5. The whole pool is then
 
-**3. All other missing entries are excluded by ORIGINAL spectra.**
-Since U contains z_0,...,z_4, alpha=alpha_S(3). Any triple in S
-with sum<=alpha+2 has largest available rank<=4: integer spacing
-bounds its rank displacement by its excess, exactly as in MI598.
-It is therefore already a triple in U. If alpha+j is absent from U
-for j1 or2, it is absent from S as well. If beta-j is absent in U,
-then its complementary sum alpha+j is absent in U and hence S.
-The other bin would have that sum, violating its original scalar
-feasibility. Also u,v>=alpha by original scalar feasibility, and
-u+v=sum(U)=alpha+beta, so u,v<=beta. Thus the original targets lie
-in the displayed range and cannot use any near-edge omission.
+    {a} union[v,v+5] union{c}.
 
-Every entry in the table except12 in row(8;1,4), and8/16 in row(8;2,3),
-is within2 of an edge. Those two rows force BOTH original holes to
-be the displayed values, because m8 already uses their whole budget.
-The exceptional target pairs follow by u+v=sum(U)=24. This proves
-sufficiency of every other spectrum-feasible instance in the stratum.
-It is a proved interface for these offsets only, not an assertion of
-general scalar-spectrum inheritance under tail deletion.
+Its only possible gap between these two certified intervals is
+s=a+c+2v+5. The actual four-set {a,v,v+5,c} has exactly sum s,
+so fills that gap. Formula(J2) excludes a reversed-order gap.
+This finishes every permitted r,t without a finite table.
 
-**4. Necessity and controls for every M>=10.** In either exceptional
-case C={7} union[9,M], so w=7+T_M-36=T_M-29 and |C|=M-7.
-For holes1,4 the requested sum12 occurs in S as0+2+10. For holes2,3
-the requested sums8 and16 occur as0+1+7 and4+5+7. Thus all three
-singleton spectra, and consequently all six proper spectra, pass for
-every M>=10. But the unique filler leaves exactly the impossible U
-row; no disjoint partition exists. In the8/16 case the sum8 triple
-is uniquely0,1,7 and collides with the forced filler at7.
+**4. Tightness and independent hand controls.** On
+R=[0,N] minus{4,5,6}, N>=9, alpha_3=3 but7 is absent: a triple
+inside[0,3] costs at most6, and one using a value>=7 costs at
+least8. Its depth is exactly4 since beta_3>=24. Adding any tail
+preserves this witness. Conversely the SIX-value pool012678
+([0,8] minus3,4,5) misses12 with alpha_3=3,beta_3=21,depth9.
+Thus the cardinality gate matters, not just the deletion count.
+Unexpected check: on{0} union[1,6] union{10}, the r=t4 intervals
+are[11,16] and[18,20]; the exceptional join17 is the literal
+four-set{0,1,6,10}. Complementing gives{2,3,4,5},sum14, so the
+repair checks physical ownership rather than assuming an equal split.
 
-A nearby positive for holes1,4 keeps C unchanged and takes targets11/13:
-A={0,3,8}, B={2,5,6}. For holes2,3 targets9/15 instead use
-A={0,1,8}, B={4,5,6}. This checks actual disjointness, sums and
-unbounded filler padding. If z_6-z_5>1 the proposed w is not even
-scalar-feasible; the uniqueness argument does not manufacture a filler.
-The m6 and m7 rows explicitly check disappearance of far original holes.
+**Scope/dependency.** Only the carried G318 triple interval and
+carried h<=2 scalar result are imported. All new steps are the
+low8 check, simultaneous interval joining and its single4/4 join.
+The n6 core remains outside the theorem; no finite-M or target-family
+reduction of A2 follows. Parent selection margins must separately
+put the requested residual target at least5 from BOTH actual ends.
+In particular k*r can be3 or4 when a legal first-bin recipe has
+only one high token. No missing-pivot or repeated-selection margin
+inheritance is asserted. Keep HAND until the carrying read lands.
 
-**Scope.** Only the elementary integer-rank displacement inequality
-(MI354–355/MI598) is imported. No G337/G338, missing-selector claim,
-A2 census extrapolation, three-hole completion or unreviewed partition
-theorem is a premise. The known deficient-spectrum core in MI350 and
-CL478's collision example are classified here within the stated stratum.
-Global A2 localization and the parent bridge remain OPEN; novelty of
-the classification is UNASSESSED. Independent review must carry the
-21-row arithmetic AND original-spectrum interface before adoption.
-
-
-**Filing and niggle receipt, MI600.** proof_dupes --near W339 passes
-357 entries and its synthetic controls. Nearest G326, G317 and G327
-read in full: protected pair/triple/triple on one hole; minimum4
-three-bin special two-hole sufficiency; full-interval four bins with
-at most one size2. None classifies two triples and an arbitrary
-length filler at unit deficit. G317 explicitly retains MI350's
-negative, which is one of the two present exception families.
-No generated proof pages were rebuilt. Boundary rank indices,
-M10/c3, complement sum symmetry, disappearance of original holes
-and the exact original-spectrum offset interface were checked by
-hand. No self-check is described as independent verification.
+**Filing/niggle receipt, MI607.** Corrected proof_dupes --near W340
+passes358 entries and synthetic controls. Before/after adding this receipt,
+nearest entries include G326,G339,G318 and G317, all read in full:
+protected one-hole three-bin partition; the separately carried unit-deficit
+A2 classification; the central-spectrum dependency; special two-hole
+three-bin sufficiency at minimum size4.
+None is the present sharp actual-extreme depth bound. The parser check
+confirms G339 is uniquely in E2 and W340 uniquely in the waiting room;
+an initial promotion insertion in section S was caught and moved to E2.
+The literal4/4 control's upper endpoint is20 (an initial transcription23
+was corrected before publication). No experiment or generated-page build.

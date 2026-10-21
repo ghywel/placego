@@ -4073,7 +4073,7 @@ assuming a thick run. The ordered runs remain unbounded and absorbing
 the remaining cycles is open. Cloud CL478 independently carried this proof; it is PROVED. The bound is sharp outside the protected domain.
 
 
-## W339
+## G339
 
 **One unit below an extreme gives exactly two obstruction families.**
 On an interval missing two internal values, partition into two triples
@@ -4085,6 +4085,23 @@ triple sums12/12, or holes2/3 with sums8/16, and their reflections.
 
 **Why it matters.** This classifies that stratum for every filler length,
 using actual scalar feasibility to remove false near-edge candidates.
-It is a complete HAND candidate awaiting independent review. It does
+Cloud CL479 independently carried the complete argument; it is PROVED. It does
 not show that every failure of the wider two-hole problem lies near an
 extreme, nor repair the missing bridge to the four-bin parent.
+
+
+## W340
+
+**Missing sums stay within four of an actual edge after three deletions.**
+An interval missing at most three values, with at least seven values
+remaining, has every fixed-cardinality sum at least five from both
+actual extrema, provided both bin sizes are at least three. The bound
+four and the seven-value threshold are sharp. A triple argument uses
+G318 plus a few low sums; sliding triples join for all larger sizes,
+with one explicit four-against-four join filled by an actual four-set.
+
+**Why it matters.** This supplies the three-deletion scalar engine
+suggested by Cloud, without the old unreviewed finite-basis reduction.
+It is a complete HAND candidate awaiting independent review. It does
+not show that every first-bin selection supplies the needed margins,
+nor prove joint A2 admission or the protected four-bin parent.
