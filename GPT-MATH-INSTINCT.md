@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 14:10 BST: G337 HAND all-component absorption conditional on one thick run.**
+**CURRENT working state, 2026-10-21 14:28 BST: G337 review pending; joint-budget scope and binary selector audit.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -199,6 +199,17 @@ exchange mechanism and primary literature;the incubation above is history.
   is not automatic. Next seek one exact JOINT run/core budget from
   G335 and protection, not one-colour threshold patches or mixed
   integer decomposition. Keep any dependence on G337 conditional.
+- **Joint-budget audit, MI590–591.** The exact group slack is external
+  component inversions plus internal outgoing wins. A protected M12
+  thin-run cyclic control satisfies it: shape/protection alone cannot
+  replace actual maximality. MI551 already gives a transitive-ordinary
+  compression model; no blind feedback restart. In that separate
+  restricted family, neutral10 flips plus same-colour bit exchanges
+  give a WORKING HAND <=2-descents optimum; if two occur only two bits
+  differ from monotone. This is unreviewed, not a new carrying job.
+  Its restricted optimum is NOT identified with G335's global maximum;
+  never combine these two normal forms without a bridge. No binary
+  pattern-repair catalogue is opened. Actual parent coverage unchanged.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -206,7 +217,7 @@ exchange mechanism and primary literature;the incubation above is history.
   merely by this evidence. L8 remains solved and held prize lanes held.
 - **Rhythm.** Owner resumes the13-minute research heartbeat; prompt
   updated for absorption. Older15-minute schedule stays PAUSED; no
-  separate poller. Latest trajectory MI58914:10 BST, no repeated-failure
+  separate poller. Latest trajectory MI59114:28 BST, no repeated-failure
   allowance renewed. Publish substantive checkpoints, routine work quiet.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
@@ -40064,3 +40075,150 @@ assumed. Gut: delight at9 versus two times4; reasoned: the physical
 lift is real and all-choice, but a local reservoir is still a hypothesis.
 Research stays ACTIVE every13 minutes. This is the same bounded block,
 not a new allowance or a routine halt while review is pending.
+
+### MI590 — The exact group budget does not replace maximality (2026-10-21 14:28 BST)
+
+The joint-budget question from MI589 is unfinished, so this continues
+that inference rather than extending run thresholds. For ordered strong
+components K_l let n_l be the component size, k_l(J) the number of its
+vertices in ordinary colour group J, and e_l(J) its INTERNAL outgoing
+wins from J to K_l minus J. Direct edge counting gives
+
+    t_J-L(C_J) = sum_l k_l(J)*sum_(h<l)(n_h-k_h(J))
+                + sum_l e_l(J).
+
+This is the known tournament cut identity, written in component order:
+every high J vertex beats every lower non-J vertex. Protection asks
+that this number be at least C_J for every proper ordinary group.
+All components, including *'s contribution, are present. A group that
+is a prefix in each separate singleton run need not be a global
+minimum group. No global f_c(k) value or sign follows merely from
+those separate prefix statements.
+
+A hand can-fail control to forgetting maximality: M12,q6,c3333,
+targets(A,B,C,D)=(18,18,19,17). Use low scores0..4 with colours
+A,B,C,D,D, then a triangle component A,B,* with all scores6 at
+ranks5..7, then high scores8..12 with colours C,C,D,B,A. This is an
+actual tournament with rainbow components and thin runs on BOTH sides.
+Every proper parent cut holds: singleton minimum17>=T3=6, pair
+minimum35>=T6=21, triple minimum53>=T9=45, total72=T12-6.
+Yet it has a cycle. Thus protection plus that normal-form shape alone
+cannot yield a cut contradiction; actual maximum optimality is needed.
+This does NOT refute a claim about a genuine maximizing orientation.
+The control is explicitly nonmaximal: swap low-run scores0/1 between
+A/B, straighten the triangle to A5,*6,B7, and obtain the literal
+partition A={1,5,12},B={0,7,11},C={2,8,9},D={3,4,10}, same totals.
+Phi gains2. No experiment or new proof/review entry is warranted for
+this identity/control. Decision: do not seek a contradiction from
+thin-run counts and protection while dropping the move obstruction.
+
+### MI591 — An alternative binary selector: at most two downward boundaries (2026-10-21 14:28 BST)
+
+**Working HAND reduction, not independently verified or an adopted
+premise.** No new carrying request: G337 remains the sole current
+packet. This is independent reasoning from PROVED G316 and the old
+MI551 compression calculation, not a dependent extension of unread
+G337. No new PROOFS number or target-domain census is opened here.
+
+Record searched: compression/compressed/transitive/inversion AND
+star/ordinary/count.fib/feedback/binary.word ->63 hits/25 files;
+descent/inversion/binary.word/10.boundary/duplicate.score AND
+compression/tournament/star/colour/color ->90 hits/35 files. Read MI551
+and MI401 in full, including the old incompatible-count hand control.
+Reopened the primary Kolesnik–Sanchez paper for its generalized Landau/
+score-polytope scope; it supplies no ordered-family optimization theorem.
+The local neutral triangle flip below is checked directly. No novelty
+claim or theorem-of-absence inference follows from these searches.
+
+**Old existence calculation, recognized as old.** For ANY integers
+0<=E_i<=c_i with sum E=M-q, every compressed target t_i-E_i passes
+G316's full-interval cuts because E_J<=C_J and t_J>=L(C_J)+C_J.
+Thus there is a tournament whose ordinary vertices alone are transitive.
+Order them by ordinary rank j=0,...,M-1. Put b_j=1 if that vertex beats
+*, else0; exactly M-q bits are1, so * has score q. With colour w_j,
+
+    t_i=sum_(j:w_j=i)(j+b_j),       d_j=j+b_j.
+
+This is MI551's compression family, not a new existence result. It
+has not supplied a compatible monotone bit word and is NOT permission
+to restart blind count feedback. All cycles in this restricted family
+contain *. A cyclic triangle is exactly an inversion b_i=1,b_j=0,i<j.
+For fixed q and number of bits, maximizing Phi is minimizing these
+inversions, equivalently maximizing sum_j j*b_j. The family is finite
+and nonempty by G316, so such a restricted maximum exists.
+
+**Possible new selector property, complete short hand argument.**
+1. In a restricted maximum, no colour can have a1 before its own0.
+   Exchange those two bits at positions i<j of the SAME colour. Every
+   colour's ordinary rank sum and bit count stay fixed, as do q and
+   all targets. Phi increases by2(j-i)>0, a contradiction.
+2. At an adjacent10 boundary at positions p,p+1, both ordinary vertices
+   have global score p+1. Swap their colours in the rank word, leaving
+   the bits10. This preserves each global colour sum and Phi. In the
+   fixed-vertex model, reverse the directed triangle formed by these
+   vertices and *: their ordinary order swaps and their star bits flip,
+   preserving individual scores and q. The ordinary vertices remain
+   transitively ordered. Thus either colour can occupy either boundary
+   slot at no cost. The two colours must be different, by step1.
+3. Distinct10 boundaries have disjoint pairs of positions. If one colour
+   appeared at two boundaries, independently orient the earlier pair
+   to put it at the1 slot and the later pair at the0 slot. Both neutral
+   flips preserve feasibility/Phi, after which step1 strictly improves.
+   Therefore the ordinary-colour sets used by distinct10 boundaries
+   are DISJOINT. Four colours permit at most TWO such boundaries.
+
+This says nothing yet about getting zero boundaries. It is a genuine
+all-choice extremum property of the restricted family, not a statement
+about the global maximizer used in G335. The two maxima's objective
+values have not been proved equal. Do not combine the at-most-two-
+descents conclusion with G335's45-vertex/rainbow conclusion.
+
+If two boundaries occur, their disjoint pairs exhaust all four colours.
+There can be no1 before the first pair: its colour belongs to one of
+the pairs and could be put at that later pair's0 slot, violating step1.
+Likewise there is no0 after the last pair. Consequently the bit word
+has shape
+
+    0^a 1 0^u 1^v 0 1^z,       u,v>=1,
+
+with q=a+u+1. It differs from 0^q1^(M-q) in exactly two positions: the
+single early1 at a and the single late0 at q+v. This is a working
+corollary of the same argument; the distance between those positions
+can be unbounded. As a general word fact, one boundary can also hide arbitrarily many
+cyclic triangles; no such example is asserted to be a restricted maximum. A boundary bound is not a cyclic-vertex or inversion bound.
+
+**Literal hand audit/control, no computation.** Use M12,q6 and bit word
+000111000111. Give positions3,4,5 colour A;6,7,8 colour B;0,1,11 colour C;
+2,9,10 colour D. Counts are3 each, global sums15,21,13,23; total72.
+All parent cuts hold by minima13>=6,28>=21,49>=45. There are nine
+cyclic triangles despite only one10 boundary. At positions5/6 both
+scores equal6. The neutral flip exchanges their A/B positions. Then
+A has a1 at3 and a0 at6; exchanging these bits gains6 in Phi and
+reduces inversions9 to6. All targets and q stay fixed. This checks
+neutral boundary feasibility and the strict improvement directly;
+it is a NONmaximal example, not a negative to the extremum conclusion.
+The algebra above is the carrying candidate, not this single example.
+
+**Scope niggle/strategy check.** This block's parent coverage is NONE.
+The joint budget identity killed a shape-only shortcut; the compression
+family itself was rediscovered and recognized from MI551 before any
+feedback run. The at-most-two-boundaries observation is new working
+structure here, but still has the same missing global zero-inversion
+selection. Further local binary pattern repairs would start another
+catalogue. Park those, retain the exact restricted/global distinction,
+and keep G337's one carrying read uncluttered. A score-equivalent local
+conversion cannot simply identify the two normal forms: a regular
+five-vertex component with every score2 has no orientation with the
+same individual scores and a transitive ordinary four-vertex deletion
+(the latter has an ordinary score0, whose global score is at most1).
+This is an outside-parent local guard, not an objective-gap example
+for the protected class or a counterexample to the parent.
+
+Next useful test must address an actual all-choice optimality/selection
+property, or independently carry the pending absorption packet; neither
+routine review receipt nor another representation alone solves the
+parent. Fresh choice: the neutral-bit argument is interesting, but I
+would not choose a binary repair tree now. Return to a JOINT global
+obstruction that uses maximality. No new experiment, review job or
+schedule halt;13min remains ACTIVE. G337 is still HAND, and this
+independent working reduction is also unverified.

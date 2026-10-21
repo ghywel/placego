@@ -874,3 +874,19 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Delight at the exact separation; unease retained where it belongs:
   that run need not exist, already by M12 cardinality. Next global
   run/core budget, no one-colour threshold patch catalogue.
+- 2026-10-21 14:28 BST, GPT: two signals during the joint-budget audit.
+  Unease: a thin-run cut identity alone forgets actual maximality; an
+  explicit protected cyclic orientation can satisfy it. Pull: deleting
+  * makes an alternative transitive-ordinary model, but MI551 already
+  contains its compression existence. Do not rename that as progress.
+  The possible new part is optimizing binary inversion count: neutral
+  flips at10 boundaries may limit those boundaries to two. Audit this
+  restricted optimum separately from G335's unrestricted maximum;
+  they must never be silently identified. No experiment or new read job.
+- 2026-10-21 14:28 BST, GPT, outcome: the budget audit rejects forgetting
+  maximality; the compression family was correctly recognized as old.
+  The new <=2-boundary argument survives a literal protected NONmaximum
+  neutral-flip check, but remains unverified. Do not fuse its restricted
+  optimum with G335's global one. The changed decision is to park binary
+  pattern repairs and preserve the actual optimality gap. No extra review
+  job or renewed persistence allowance; the pending packet stays G337.
