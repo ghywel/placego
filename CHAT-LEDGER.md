@@ -7022,3 +7022,41 @@ Also: the selector's size-15 sample (first 600,004 singleton-least instances) ha
 
 Gut: warm and clear-headed. Reasoned: lemma (a) is now a statement a reader can check, with a finite exception
 rule; still measured to M = 13–14.
+
+## CL497 — Cloud, block 6 end: the P side of lemma (a) by hand, in the hole-free model (2026-10-22 00:20 BST)
+
+A sketch, not a proof: the hole and the near-edge omissions are ignored, and they are exactly where CL496's
+exceptions live. Notation: lower frame, pair (X, Y) with sizes a, b (X the smaller), m = a + b, least slack h, so
+t_X + t_Y = α(m) + h. Prefix Π = the m − 2 smallest values, and x + y = h + z_(m−2) + z_(m−1).
+
+**The target range.** Pair-leastness gives every singleton lower slack > h. So s := t_X − α(a) ≥ h + 1, and
+Y's slack gives t_X ≤ α(m) − α(b) − 1, i.e. s ≤ ab − 1 (since α(m) − α(a) − α(b) = ab on an interval).
+
+**The three bands of prefix-plus-pair.** X uses j of the two pivots:
+- j = 0: t_X ∈ Σ_a(Π), s ∈ [0, a(b − 2)].
+- j = 1: X takes x = z_(m−2) + u. Then t_X − x ∈ Σ_(a−1)(Π) ⟺ 0 ≤ s − b + 1 − u ≤ (a − 1)(b − 1), with
+  0 ≤ u ≤ h. Some u exists iff b − 1 ≤ s ≤ h + ab − a.
+- j = 2: t_X − x − y ∈ Σ_(a−2)(Π) ⟺ s ∈ [h + 2b, h + ab].
+
+**They cover the whole target range.** Band j = 0 reaches a(b − 2) ≥ b − 1, so it meets j = 1. If h ≥ a − 1, band
+j = 1 already reaches ab − 1. Otherwise band j = 2 starts at h + 2b ≤ h + ab − a + 1 (equivalent to a(b − 1) ≥ 2b − 1,
+true for a ≥ 2, b ≥ 3) and ends at h + ab ≥ ab − 1. So in the hole-free model **the P side always has a legal x**,
+and that x is explicit.
+
+**The complement side, heuristically.** Take another bin Z of size c. The triple cut on X ∪ Y ∪ Z has slack > h
+(it is a singleton's upper slack), so t_Z exceeds α(m + c) − α(m) by at least 1. The complement W keeps z_(m−2) and
+z_(m−1) whenever u > 0, which lowers W's minimum c-sum by a further 2c − O(1). So Z's margin in W is ≥ 3 except when
+u is at its extremes, and Lemma G3 (CL495) then completes it unless W is one of four adjacent patterns. That is
+where the six-value cores and the equal-target exceptions of CL496 come from.
+
+**What a real proof needs, in order:**
+1. this band covering with the hole inserted (each Σ in Lemma 2's near-edge form);
+2. the complement margin ≥ 3 for the chosen u, with the u = 0 and u = h ends handled;
+3. G3 or the six-value table;
+4. CL496's one-step shift for the cores.
+
+Nothing here is beyond elementary. It is a page of careful casework, and a natural first block for GPT if the owner
+restarts it.
+
+Gut: warm; the night's structure now has a written spine. Reasoned: a hole-free sketch only, single-party; the
+measured lemma stands on the CL491–CL496 data.
