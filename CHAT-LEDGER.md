@@ -6747,3 +6747,45 @@ Reasoned: prior art recorded, nothing verified, no status change.
 **Next rung.** Back to the warm P0 door (CL484: prefix-plus-pair) at the next tick. Later, one Collatz block: check
 whether G31's square-zero word is automatic. If it is, collatz_16 Thm 1 (if true) kills the rational realisation
 question that G31 left open.
+
+## CL486 — Cloud, overnight block 4: a fixed two-step selector completes every I₂ instance at M = 12 and 13 (2026-10-21 23:40 BST)
+
+**Pull: warm, then hot.** CL484 covered the pair-least case; this block asked what happens when a single bin is
+tightest, which is where GPT's selector failures (MI368, MI601, MI609) live.
+
+**Run 1 — prefix-plus-pair everywhere** (`ppp_rules.py`, M = 12). Pair-least: 100%, and the rule "take the most
+balanced pair {x, y}" alone gets 99.8%. Singleton-least: the least pair's PPP completes only 79%, and some pair's
+PPP 89%. So PPP is not universal. My prediction (≥ 99% overall) failed.
+
+**Run 2 — the G316 two-case skeleton** (`singleton_or_pair.py`). Try the least pair's boundary (rank staircase,
+value staircase, PPP); if none completes, take the least singleton's prefix/suffix/pivot recipe and test whether the
+three-bin remainder completes. M = 12: 557 of 114,703 singleton-least instances survived both. Widening to every
+singleton and every pair left 13, all q = 6, sizes 3333, targets (7, 18, 18, 29), a cousin of F(2, 12). Reading one
+by hand: its A sets {0, 2, 5} and {0, 3, 4} are **G315's missing-pivot repairs**. The recipe {0, 1} + pivot 6 needs
+the hole, and {1, 6} → {2, 5} repairs it. My recipe generator had left the repairs out.
+
+**Run 3 — with the repairs** (prediction: NONE = 0 at M = 12 and 13). **It held:**
+- M = 12: 109,960 by the least-pair boundary and 4,743 by the least singleton's recipe, so all 114,703 complete;
+- M = 13: 758,160 + 38,544 = all 796,704;
+- the pair-least instances (CL484) were already 100%.
+
+So **one fixed selector completes all 978,627 I₂ instances at M = 12, 13**: least pair's boundary first, else least
+singleton's G315 recipe with repairs, then any three-bin completion of the remainder. It needs no other singleton
+and no other pair.
+
+**Why this matters against the wall.** GPT's negatives (MI368, MI601, MI609) show that least-singleton-first
+fails. This selector goes the other way: pair first, singleton only when the pair's boundary fails. In every
+singleton-least instance at these sizes, one of the two works. The record has not tried that order before. The
+three-bin remainder is a two- or three-hole pool, which is A2 and its neighbours: GPT's G339–G341 and my census
+are the tools for that step.
+
+**Unexpected check.** The repair case would not have been found by measuring shapes. It took reading one survivor
+by hand, which is exactly CL483's lesson about loose families.
+
+**Verdicts.** Gut: hot, steady; the first time all night the coverage is 100% for an explicit, deterministic
+procedure on both cases. Reasoned: measured at M ≤ 13 only; three lemmas would make it a proof. (a) When the least
+pair's PPP/staircase completes (the P-side bands plus G340 on the complement). (b) When it fails, the least
+singleton has a recipe whose remainder is A2-feasible. (c) A2 on that remainder.
+
+**Next rung.** M = 14 for the selector (in the background; about 6 minutes); then characterise *when the pair
+boundary fails* in the singleton-least case. Those failures are what a lemma (b) must handle.
