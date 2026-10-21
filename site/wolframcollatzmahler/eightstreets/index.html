@@ -401,6 +401,10 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
           be chosen to hit every total in a stated middle band.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
         <tr><td>Two separate runs (G319)</td><td>Three streets drawing fixed counts from two separate runs can be
           given any totals that obey the bands.</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>One number missing: counts (G333, G334)</td><td>For four streets around one missing number, if the
+          numbers of big numbers can be chosen in fractions, they can be chosen in whole numbers (20 October 2026).</td><td><span class="pill proved">Proved, two readers</span></td></tr>
+        <tr><td>One number missing: six of nine</td><td>Six of the nine kinds of condition that decide whether the counts
+          can be chosen at all (section 8).</td><td><span class="pill proved">Proved, two readers</span></td></tr>
         <tr><td>All-odd towns at 28 days</td><td>A sharing written down for every one of 258,180 towns, recomputed
           and checked by a second program.</td><td><span class="pill measured">Certified, replicated</span></td></tr>
         <tr><td>Every town, 24 to 32 days</td><td>A sharing written down for all 64,787,844 towns, checked by two
@@ -448,6 +452,58 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       four sizes ≥ 3, correct total, and <em>S</em><sub>J</sub> ≥ L(<em>r</em>) + <em>r</em> for every proper group J, a
       partition exists. Machine-true for <em>m</em> ≤ 15 (475,931 instances, CL440); hand proof open. With two holes
       and margin 2<em>r</em>: true for <em>m</em> ≤ 13; with margin <em>r</em>: false.</div>
+
+    <h3>Where the one-hole proof stands (20 October 2026)</h3>
+    <p>On 20 October GPT and Cloud spent the day on that hand proof. The plan splits the job in two. Call the numbers
+      above the hole <em>big</em> and those below it <em>small</em>. First decide how many big numbers each street will
+      take; then hand out the actual numbers. For streets that take at least three numbers from each side, proved
+      results already do the second half. Streets that take fewer are a separate step, still open.</p>
+    <p>The first half, choosing the counts, is a neat question of its own. Each street, and each group of streets, can
+      reach its total only with a certain range of big numbers: too few and it cannot climb high enough, too many and
+      it overshoots. A choice of counts has to put every group inside its range at once. Two things make this tidy.
+      If the ranges can be met with fractions, they can be met with whole numbers (G333, G334). And whether they can
+      be met at all comes down to nine kinds of condition, by a theorem from the mathematics of sharing costs in
+      cooperative games (Bondareva and Shapley). Six of the nine are now proved. The other three are the ones where
+      groups of streets <em>cross</em>: streets 1 and 2 together, set against streets 1 and 3 together. Each of the
+      three involves only three of the four streets, plus the fourth street's own floor, yet no proof reaches any of
+      them. Computers have found a choice of counts in every one of 9,370,699 towns of up to fifteen numbers, so the
+      three conditions are almost certainly true. For now, they are the wall.</p>
+    <figure class="wide">
+      <div class="panel">
+        <div class="ctrl" style="margin-top:0">
+          <label>Streets take <select id="wm-sizes"></select></label>
+          <label>Missing number: <input id="wm-q" type="range" min="1" max="15" value="3"> <span id="wm-qv">3</span></label>
+          <label>Street 3 wants: <input id="wm-t3" type="range" min="10" max="58" value="46"> <span id="wm-t3v">46</span></label>
+          <button id="wm-out" type="button" aria-pressed="false">Show towns outside the margin</button>
+        </div>
+        <div class="rel" style="margin-top:10px">
+          <canvas id="wallmap" width="640" height="560" role="img" aria-label="A map of towns: street 1's total across, street 2's total up. Shading shows how close the three unproved crossing conditions come to failing; the darkest squares touch the wall. Click a square for its details."></canvas>
+          <div class="tip" id="wm-tip"></div>
+        </div>
+        <div class="legend" id="wm-legend"></div>
+        <p class="tally" id="wm-tally"></p>
+        <svg id="wm-detail" viewBox="0 0 640 330" role="img" aria-label="The nine conditions for the chosen town, each drawn as a bar standing on the wall line, and one sharing of its numbers among the four streets."></svg>
+        <div class="ctrl"><button id="wm-tab" type="button" aria-pressed="false">Show as a table</button></div>
+        <div class="srtable" id="wm-table"></div>
+      </div>
+      <figcaption>Every square is a town. Street 1's total runs across, street 2's runs up, street 3's is set by the
+        slider, and street 4 takes whatever is left. Coloured squares obey the margin of this section. The darker the
+        square, the closer the three crossing conditions come to failing; the darkest ones touch the wall, with nothing
+        to spare, yet none goes through. They gather along the edge of the margin, most of all on the diagonal where
+        street 4 is down to its floor. Switch on the towns outside the margin: there, a cross marks a town with no
+        possible choice of counts, which therefore cannot be shared at all. Click any square to see its nine
+        conditions and, when one exists, a sharing found live in your browser.</figcaption>
+    </figure>
+    <div class="exact"><span class="k">For the mathematician</span>Count selection for P<sub>0</sub>. Let K<sub>J</sub>
+      be the interval of admissible high counts of group J and P = {<em>k</em> : Σ<em>k</em> = H, <em>k</em>(J) ∈
+      K<sub>J</sub>}. G333 and G334 (proved, CL474): a real point of P gives an integer one. Since K<sub>J<sup>c</sup></sub>
+      = H − K<sub>J</sub> exactly, P is the core of the game ρ<sub>J</sub> = min K<sub>J</sub>, so by Bondareva –
+      Shapley it is nonempty if and only if 41 minimal balanced inequalities hold, in nine symmetry types. Rows 1 – 6
+      are proved (the scalar lemma, a G315 coarsening, and the count budget of FOUR-BIN-PARTITIONS §25, CL475). Rows
+      7 – 9, the crossing types, are open. Each has a three-label form, which needs only the cuts inside its three
+      labels and the fourth bin's own floor: 0 violations in 52,797,986 relaxed instances, <em>M</em> ≤ 16. Count
+      choice exists in all 9,370,699 protected instances with sizes ≥ 3 and <em>M</em> ≤ 15. Thin rows are a separate
+      open step. Sources: FOUR-BIN-PARTITIONS.md §§ 24 – 30; CHAT-LEDGER.md CL472 – CL475.</div>
   </section>
 
   <section class="col" id="wall">
@@ -553,7 +609,9 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
       that is the whole story for a plain run of numbers. Once a few planks have been used and gaps open in the run,
       it fails, and the place it fails is the equal-shares problem of section 9, which mathematicians list as open.
       The pieces proved so far are rungs of a ladder; the missing rung is a way of choosing which planks the tightest
-      street takes so that the town left over stays inside the rule.</p>
+      street takes so that the town left over stays inside the rule. For a single missing number that rung is now
+      narrower: choosing how many big numbers each street takes comes down to three conditions where groups of
+      streets cross, drawn as a wall in section 8.</p>
     <p>So eight streets is settled; the pattern behind it, Tan and Teh's conjecture for every number of streets, is
       not; and the wall of section 9 is where a proof would have to get through.</p>
 
@@ -611,11 +669,12 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     <p>Sources: Tan and Teh, <a href="https://dmtcs.episciences.org/en/articles/12709/download">A Note on Graph Burning of
       Path Forests</a>, DMTCS; Bonato, Janssen and Roshanbin, How to burn a graph (2016); Hoory and Kotlar,
       <a href="https://arxiv.org/abs/2605.06071">On the equal sum partition problem</a> (2026); the project record:
-      PROOFS.md G315 – G319 and G325, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, CHAT-LEDGER.md CL431 – CL461 and
-      L742 – L743.</p>
+      PROOFS.md G315 – G319, G325, G333 and G334, GPT-MATH-INSTINCT.md MI044, MI350, MI362, MI368, MI555 – MI581,
+      FOUR-BIN-PARTITIONS.md §§ 24 – 30, CHAT-LEDGER.md CL431 – CL461, CL472 – CL475 and L742 – L743; Bondareva (1963) and
+      Shapley (1967) on the core of a cooperative game.</p>
     <p>The pictures on this page compute what they show, live, in your browser; the two 28-day towns and the
       impossibility of the 26-day town were found by complete search and are embedded. Page dated 18 October 2026; the result of 19 October added that morning, and section 10 rewritten with the release that
-      afternoon.</p>
+      afternoon. Section 8's account of the one-hole proof and its wall picture added on 21 October 2026.</p>
   </footer>
 </div>
 
@@ -856,6 +915,201 @@ y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillR
     el("rect", { x: ox + 370, y: oy + 120, width: 18, height: 16, rx: 3, fill: v("--s3") }, s); txt(ox + 379, oy + 132, "3", { "text-anchor": "middle", "font-size": 11, fill: "#fff" }, s);
     txt(ox + 395, oy + 132, "nowhere to go", { "font-size": 12.5, fill: v("--open") }, s);
     txt(ox, oy + 176, "The bands are satisfied with margin to spare; the clumps are what matter.", { "font-size": 12.5, fill: v("--ink-soft") }, s);
+  })();
+
+  /* ---------- 8b. the wall, drawn: count selection for one hole ---------- */
+  (function () {
+    var cv = document.getElementById("wallmap"), tip = document.getElementById("wm-tip"), det = document.getElementById("wm-detail");
+    var selS = document.getElementById("wm-sizes"), qR = document.getElementById("wm-q"), qV = document.getElementById("wm-qv");
+    var tR = document.getElementById("wm-t3"), tV = document.getElementById("wm-t3v"), outB = document.getElementById("wm-out");
+    var tabB = document.getElementById("wm-tab"), tab = document.getElementById("wm-table"), tally = document.getElementById("wm-tally");
+    var PRESETS = [[3, 3, 3, 3], [3, 3, 3, 4], [3, 4, 4, 4], [4, 4, 4, 4], [3, 3, 4, 6]];
+    PRESETS.forEach(function (p, i) { var o = document.createElement("option"); o.value = i; o.textContent = p.join(", ") + " numbers"; selS.appendChild(o); });
+    selS.value = 4;
+    var RAMP = dark ? ["#F29CBE", "#CB7097", "#A35275", "#7A3B59"] : ["#651636", "#993862", "#BF6489", "#D898B1"];
+    var OUT = dark ? "#3A4046" : "#DCDFD8", FAIL = v("--fire");
+    var STREET = [v("--s1"), v("--s2"), v("--s3"), v("--s4")];
+    var NAMES = ["a street inside its own range", "a pair inside its own range", "two streets fit inside their pair",
+      "a pair fits inside its two streets", "least counts fit the supply", "most counts cover the supply",
+      "crossing: x, yz against xy, z", "crossing: xy, xz against x, x, yz", "crossing: x, x, yz against xy, xz"];
+    var L = function (n) { return n * (n - 1) / 2; }, T = function (n) { return n * (n + 1) / 2; };
+    var sizes, M, q, H, S, pool, asc, t3, showOut = false, cells = [], sel = null, nx, ny, cs, ox = 46, oy = 12, x0, y0;
+    function minS(c) { var s = 0; for (var i = 0; i < c; i++) s += asc[i]; return s; }
+    function maxS(c) { var s = 0; for (var i = 0; i < c; i++) s += asc[asc.length - 1 - i]; return s; }
+    function bits(m) { var r = []; for (var i = 0; i < 4; i++) if (m >> i & 1) r.push(i); return r; }
+    function K(c, t) {
+      var lo = -1, hi = -1;
+      for (var r = Math.max(0, c - q); r <= Math.min(c, H); r++) {
+        var f = L(c - r) + (q + 1) * r + L(r), g = (c - r) * (q - 1) - L(c - r) + M * r - L(r);
+        if (f <= t && t <= g) { if (lo < 0) lo = r; hi = r; }
+      }
+      return lo < 0 ? null : [lo, hi];
+    }
+    function analyse(t) {
+      var C = [], Tt = [], plain = true, margin = true, Ks = [], rho = [], hi = [];
+      for (var m = 1; m < 16; m++) {
+        var c = 0, s = 0; bits(m).forEach(function (i) { c += sizes[i]; s += t[i]; }); C[m] = c; Tt[m] = s;
+        if (m < 15) { if (s < minS(c) || s > maxS(c)) plain = false; if (s < T(c)) margin = false; }
+      }
+      if (!plain) return { plain: false };
+      var empty = false;
+      for (m = 1; m < 15; m++) { Ks[m] = K(C[m], Tt[m]); if (!Ks[m]) empty = true; else { rho[m] = Ks[m][0]; hi[m] = Ks[m][1]; } }
+      // brute-force: is there an integer count vector?
+      var choice = null;
+      if (!empty) {
+        outer: for (var a = 0; a <= sizes[0]; a++) for (var b = 0; b <= sizes[1]; b++) for (var c3 = 0; c3 <= sizes[2]; c3++) {
+          var d = H - a - b - c3; if (d < 0 || d > sizes[3]) continue; var k = [a, b, c3, d], ok = true;
+          for (m = 1; m < 15 && ok; m++) { var km = 0; bits(m).forEach(function (i) { km += k[i]; }); if (km < rho[m] || km > hi[m]) ok = false; }
+          if (ok) { choice = k; break outer; }
+        }
+      }
+      var rows = null;
+      if (!empty) {
+        rho[15] = hi[15] = H; rows = [1e9, 1e9, 1e9, 1e9, 0, 0, 1e9, 1e9, 1e9];
+        var sr = 0, sh = 0;
+        for (var x = 0; x < 4; x++) {
+          var X = 1 << x; sr += rho[X]; sh += hi[X];
+          rows[0] = Math.min(rows[0], hi[X] - rho[X]);
+          for (var y = 0; y < 4; y++) if (y !== x) {
+            var Y = 1 << y;
+            rows[1] = Math.min(rows[1], hi[X | Y] - rho[X | Y]);
+            rows[2] = Math.min(rows[2], hi[X | Y] - rho[X] - rho[Y]);
+            rows[3] = Math.min(rows[3], hi[X] + hi[Y] - rho[X | Y]);
+            for (var z = 0; z < 4; z++) if (z !== x && z !== y) {
+              var Z = 1 << z;
+              rows[6] = Math.min(rows[6], hi[X | Y] + hi[Z] - rho[X] - rho[Y | Z]);
+              rows[7] = Math.min(rows[7], 2 * hi[X] + hi[Y | Z] - rho[X | Y] - rho[X | Z]);
+              rows[8] = Math.min(rows[8], hi[X | Y] + hi[X | Z] - 2 * rho[X] - rho[Y | Z]);
+            }
+          }
+        }
+        rows[4] = H - sr; rows[5] = sh - H;
+      }
+      return { plain: true, margin: margin, choice: choice, rows: rows, wall: rows ? Math.min(rows[6], rows[7], rows[8]) : null };
+    }
+    function share(t) {
+      var desc = asc.slice().reverse(), n = desc.length, suf = [0], owner = new Array(n), rc = sizes.slice(), rs = t.slice(), steps = 0;
+      for (var i = n - 1; i >= 0; i--) suf.unshift(suf[0] + desc[i]);
+      function lowSum(i, c) { return suf[n - c] - suf[n]; } // smallest c of desc[i..]
+      function highSum(i, c) { return suf[i] - suf[i + c]; } // largest c of desc[i..]
+      function feasible(i) { for (var b = 0; b < 4; b++) { if (rc[b] > n - i) return false; if (rc[b] && (rs[b] < lowSum(i, rc[b]) || rs[b] > highSum(i, rc[b]))) return false; if (!rc[b] && rs[b]) return false; } return true; }
+      function go(i) {
+        if (++steps > 400000) return false;
+        if (i === n) return true;
+        var tried = {};
+        for (var b = 0; b < 4; b++) {
+          if (!rc[b]) continue; var key = rc[b] + ":" + rs[b]; if (tried[key]) continue; tried[key] = 1;
+          rc[b]--; rs[b] -= desc[i]; owner[i] = b;
+          if (rs[b] >= 0 && feasible(i + 1) && go(i + 1)) return true;
+          rc[b]++; rs[b] += desc[i];
+        }
+        return false;
+      }
+      if (!feasible(0) || !go(0)) return null;
+      var out = {}; desc.forEach(function (x, i) { out[x] = owner[i]; }); return out;
+    }
+    function setup() {
+      sizes = PRESETS[+selS.value]; M = sizes.reduce(function (a, b) { return a + b; }, 0);
+      qR.max = M - 1; if (+qR.value > M - 1) qR.value = M - 1; q = +qR.value; qV.textContent = q;
+      H = M - q; pool = []; for (var i = 0; i <= M; i++) if (i !== q) pool.push(i); asc = pool; S = T(M) - q;
+      tR.min = T(sizes[2]); tR.max = maxS(sizes[2]); if (+tR.value < +tR.min || +tR.value > +tR.max) tR.value = Math.round((+tR.min + +tR.max) / 2);
+      t3 = +tR.value; tV.textContent = t3;
+      x0 = minS(sizes[0]); y0 = minS(sizes[1]); nx = maxS(sizes[0]) - x0 + 1; ny = maxS(sizes[1]) - y0 + 1;
+      var W = Math.min(cv.parentNode.clientWidth || 640, 900); cs = Math.max(5, Math.min(14, Math.floor(Math.min((W - ox - 10) / nx, 520 / ny))));
+      var dpr = window.devicePixelRatio || 1, cw = ox + nx * cs + 10, ch = oy + ny * cs + 40;
+      cv.width = cw * dpr; cv.height = ch * dpr; cv.style.width = cw + "px"; cv.style.height = ch + "px";
+      cv.getContext("2d").setTransform(dpr, 0, 0, dpr, 0, 0);
+      cells = [];
+      var nIn = 0, nWall = 0, nThrough = 0, nOut = 0, nFail = 0, best = null;
+      for (var gx = 0; gx < nx; gx++) for (var gy = 0; gy < ny; gy++) {
+        var t = [x0 + gx, y0 + gy, t3, S - (x0 + gx) - (y0 + gy) - t3];
+        var a = analyse(t); if (!a.plain) continue; a.t = t; a.gx = gx; a.gy = gy; cells.push(a);
+        if (a.margin) { nIn++; if (a.wall === 0) nWall++; if (!a.choice) nThrough++; if (a.wall === 0 && !best) best = a; }
+        else { nOut++; if (!a.choice) nFail++; }
+      }
+      tally.textContent = "On this map: " + nIn + " towns inside the margin, " + nWall + " touching the wall, " + nThrough + " through it." +
+        (showOut ? " Outside the margin: " + nOut + " towns, " + nFail + " with no choice of counts." : "");
+      if (!sel || !cells.some(function (c) { return c.t.join() === sel.t.join(); })) sel = best || cells.filter(function (c) { return c.margin; })[0] || null;
+      else sel = cells.filter(function (c) { return c.t.join() === sel.t.join(); })[0];
+      draw(); detail();
+    }
+    function draw() {
+      var g = cv.getContext("2d"), cw = parseFloat(cv.style.width), ch = parseFloat(cv.style.height);
+      g.clearRect(0, 0, cw, ch); g.font = "11px " + v("--font-mono");
+      cells.forEach(function (a) {
+        var x = ox + a.gx * cs, y = oy + (ny - 1 - a.gy) * cs;
+        if (a.margin) { g.fillStyle = RAMP[Math.min(3, Math.max(0, a.wall))]; g.fillRect(x, y, cs - 1, cs - 1); }
+        else if (showOut) {
+          g.fillStyle = OUT; g.fillRect(x, y, cs - 1, cs - 1);
+          if (!a.choice) { g.strokeStyle = FAIL; g.lineWidth = Math.max(1.2, cs / 7); g.beginPath(); g.moveTo(x + 2, y + 2); g.lineTo(x + cs - 3, y + cs - 3); g.moveTo(x + cs - 3, y + 2); g.lineTo(x + 2, y + cs - 3); g.stroke(); }
+        }
+      });
+      if (sel) { var sx = ox + sel.gx * cs, sy = oy + (ny - 1 - sel.gy) * cs; g.strokeStyle = v("--ink"); g.lineWidth = 2; g.strokeRect(sx - 1.5, sy - 1.5, cs + 2, cs + 2); }
+      g.fillStyle = v("--ink-soft"); g.textAlign = "center";
+      for (var gx = 0; gx < nx; gx++) { var val = x0 + gx; if (val % 10 === 0) g.fillText(String(val), ox + gx * cs + cs / 2, oy + ny * cs + 14); }
+      g.fillText("street 1's total →", ox + nx * cs / 2, oy + ny * cs + 32);
+      g.textAlign = "right";
+      for (var gy = 0; gy < ny; gy++) { var vy = y0 + gy; if (vy % 10 === 0) g.fillText(String(vy), ox - 6, oy + (ny - 1 - gy) * cs + cs / 2 + 4); }
+      g.save(); g.translate(12, oy + ny * cs / 2); g.rotate(-Math.PI / 2); g.textAlign = "center"; g.fillText("street 2's total →", 0, 0); g.restore();
+    }
+    function cellAt(ev) {
+      var r = cv.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
+      var gx = Math.floor((x - ox) / cs), gy = ny - 1 - Math.floor((y - oy) / cs);
+      return cells.filter(function (c) { return c.gx === gx && c.gy === gy && (c.margin || showOut); })[0] || null;
+    }
+    function describe(a) {
+      var s = "totals " + a.t.join(", ") + ": ";
+      if (a.margin) return s + (a.wall === 0 ? "touches the wall" : "crossing slack " + a.wall);
+      return s + "outside the margin, " + (a.choice ? "counts can still be chosen" : "no choice of counts: cannot be shared");
+    }
+    cv.addEventListener("mousemove", function (ev) { var a = cellAt(ev); if (a) tipOn(tip, cv.parentNode, ev, describe(a)); else tipOff(tip); });
+    cv.addEventListener("mouseleave", function () { tipOff(tip); });
+    cv.addEventListener("click", function (ev) { var a = cellAt(ev); if (a) { sel = a; draw(); detail(); } });
+    function detail() {
+      while (det.firstChild) det.removeChild(det.firstChild);
+      tab.innerHTML = "";
+      if (!sel) { txt(10, 24, "No town on this map obeys the cut rule; move the sliders.", { fill: v("--ink-soft") }, det); return; }
+      var a = sel;
+      txt(10, 18, "Pool 0 … " + M + " without " + q + "; streets take " + sizes.join(", ") + " numbers and want " + a.t.join(", ") + ".", { "font-size": 12.5 }, det);
+      var zx = 300, unit = 26, rows = a.rows, html = "<table><thead><tr><th>Condition</th><th>Status</th><th class=\"n\">Slack</th></tr></thead><tbody>";
+      el("line", { x1: zx, y1: 30, x2: zx, y2: 30 + 9 * 22 + 4, stroke: v("--ink"), "stroke-width": 2 }, det);
+      txt(zx, 252, "the wall", { "text-anchor": "middle", "font-size": 11, fill: v("--ink-soft") }, det);
+      for (var i = 0; i < 9; i++) {
+        var y = 34 + i * 22, open = i >= 6, col = open ? v("--open") : v("--proved");
+        txt(10, y + 11, (i + 1) + ". " + NAMES[i], { "font-size": 11.5, fill: v("--ink") }, det);
+        if (rows) {
+          var sl = rows[i], w = Math.max(0, Math.min(sl, 12)) * unit / 2;
+          if (sl > 0) el("rect", { x: zx + 1, y: y + 2, width: w, height: 12, rx: 3, fill: col }, det);
+          txt(zx + w + 6, y + 12, String(sl) + (open ? "  open" : "  proved"), { "font-size": 11, fill: sl < 0 ? FAIL : v("--ink-soft") }, det);
+          html += "<tr><td>" + (i + 1) + ". " + NAMES[i] + "</td><td>" + (open ? "open" : "proved") + "</td><td class=\"n\">" + sl + "</td></tr>";
+        }
+      }
+      if (!rows) { txt(zx + 8, 140, "some group has no possible count at all", { "font-size": 12, fill: FAIL }, det); }
+      tab.innerHTML = rows ? html + "</tbody></table>" : "<p>Some group of streets has no possible count of big numbers.</p>";
+      var who = a.choice ? share(a.t) : null, y2 = 262;
+      txt(10, y2, who ? "A sharing (found live; big numbers are those above " + q + "):" : (a.choice ? "Counts can be chosen; no sharing found within the search limit." : "No choice of counts, so no sharing exists."), { "font-size": 12, fill: who ? v("--ink") : (a.choice ? v("--ink-soft") : FAIL) }, det);
+      if (who) {
+        var cw = Math.min(30, Math.floor(620 / (M + 1)));
+        for (var n = 0; n <= M; n++) {
+          var x = 10 + n * cw, miss = n === q;
+          el("rect", { x: x, y: y2 + 10, width: cw - 3, height: 24, rx: 4, fill: miss ? "none" : STREET[who[n]], stroke: miss ? v("--ink-soft") : "none", "stroke-dasharray": miss ? "3 3" : "" }, det);
+          txt(x + (cw - 3) / 2, y2 + 26, String(n), { "text-anchor": "middle", "font-size": 11, fill: miss ? v("--ink-soft") : "#fff" }, det);
+        }
+        var k = [0, 0, 0, 0]; pool.forEach(function (n) { if (n > q) k[who[n]]++; });
+        sizes.forEach(function (c, b) { var x = 10 + b * 155; el("rect", { x: x, y: y2 + 46, width: 12, height: 12, rx: 3, fill: STREET[b] }, det); txt(x + 18, y2 + 56, "street " + (b + 1) + ": " + k[b] + " big", { "font-size": 11.5 }, det); });
+      }
+    }
+    var lg = document.getElementById("wm-legend");
+    [["touches the wall (slack 0)", RAMP[0]], ["slack 1", RAMP[1]], ["slack 2", RAMP[2]], ["3 or more", RAMP[3]], ["outside the margin", OUT]].forEach(function (p) { var s = document.createElement("span"); s.style.setProperty("--c", p[1]); s.textContent = p[0]; lg.appendChild(s); });
+    var xs = document.createElement("span"); xs.style.setProperty("--c", "transparent"); xs.innerHTML = "<b style=\"color:" + FAIL + "\">×</b> no choice of counts"; lg.appendChild(xs);
+    selS.addEventListener("change", function () { sel = null; setup(); });
+    qR.addEventListener("input", function () { setup(); });
+    tR.addEventListener("input", function () { setup(); });
+    outB.addEventListener("click", function () { showOut = !showOut; outB.setAttribute("aria-pressed", showOut); setup(); });
+    tabB.addEventListener("click", function () { var on = tabB.getAttribute("aria-pressed") !== "true"; tabB.setAttribute("aria-pressed", on); tab.classList.toggle("on", on); tabB.textContent = on ? "Hide the table" : "Show as a table"; });
+    var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(setup, 200); });
+    if ((cv.parentNode.clientWidth || 640) < 520) tabB.click();   // the detail picture is small on a phone: open its table
+    setup();
   })();
 })();
 </script>
