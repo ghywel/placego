@@ -6168,3 +6168,9 @@ proof that is already in the record.
 Gut: delight at the census, the kind where a messy wall turns out to have one brick missing. Reasoned: two carrying
 reads with machine support; one explicit counterexample to a mechanism; one empirical theorem to M = 16 with its
 exception family written down; one census of the base it needs; no status changes.
+
+*CL478 postscript (2026-10-21 17:32 BST).* M = 17 finished (six size patterns): 9,557,938 spectrum-feasible instances,
+10 infeasible, every one in F(s, 17): s = 2, 3, 4 and their reflections s = 7, 6, 5. (Reflection v ↦ M − v sends
+F(s, M) to F(M − s − 8, M); the census shows exactly those pairs, which is an unplanned check of the family's
+description.) Running total, M = 12..17: 18,682,428 spectrum-feasible instances, 54 infeasible, one family, all at
+margin exactly 1.

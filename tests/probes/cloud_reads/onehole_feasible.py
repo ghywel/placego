@@ -10,6 +10,9 @@ margin exactly 1, all in ONE family up to relabelling and reflection (s >= 2, M 
 a bin of size s+1 pinned to [0,s-1] u {s+1}, a bin of size M-s-7 pinned to {s+7} u [s+9,M], and two
 size-3 bins wanting 12+3s each on the core {s,s+2,s+3,s+5,s+6,s+8}.  Seen: s=2 at M=12..16, s=3 at
 M=14..16, s=4 at M=16.  No infeasible instance at margin 0 or at margin >= 2.
+M = 17 (six size patterns, ~10 min each in the background): 9,557,938 spectrum-feasible, 10 infeasible, all in
+F(s, 17) with s = 2, 3, 4 and their reflections s = 7, 6, 5 (reflection maps F(s, M) to F(M - s - 8, M)).
+Running total M = 12..17: 18,682,428 spectrum-feasible instances, 54 infeasible, one family.
 """
 import itertools, sys, pickle, os
 
