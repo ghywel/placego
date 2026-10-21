@@ -7,6 +7,7 @@ spectrum-feasible.  Counterfactual: a non-A2 spectrum-feasible failure is a new 
 OUTCOME.  M = 12: 4,743 fallback instances, 5,128 recipes, every one spectrum-feasible AND feasible.  M = 13
 (84 s): 38,544 fallback instances, 42,008 recipes, all spectrum-feasible and feasible.  No A2 exception is ever
 reached from a least-singleton recipe in the fallback case.  Prediction held, more strongly than stated.
+M = 14 (about 6 min): 174,985 fallback instances, 188,510 recipes, all spectrum-feasible and feasible.
 """
 import sys, itertools
 from collections import Counter

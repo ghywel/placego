@@ -3,7 +3,7 @@ exactly 6 values, W (normalised) is one of CL492's seven deep-gap pools, the two
 the next candidate (x - 1 step) completes.  Prediction (written first): all four hold for every failure at M = 12, 13.
 
 OUTCOME: M = 12: 18 failures, all six-value complements, all deep pools, all equal remaining targets, next
-candidate completes in all 18.  M = 13: the same for all 144.  Prediction held exactly.
+candidate completes in all 18.  M = 13: the same for all 144.  M = 14: the same for all 396.  Prediction held exactly.
 """
 import itertools, sys
 from collections import Counter

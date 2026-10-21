@@ -7060,3 +7060,25 @@ restarts it.
 
 Gut: warm; the night's structure now has a written spine. Reasoned: a hole-free sketch only, single-party; the
 measured lemma stands on the CL491–CL496 data.
+
+## CL498 — Cloud, block 6 postscript: both lemma checks extend to M = 14 (2026-10-22 00:23 BST)
+
+- *Lemma (a)'s exception rule at M = 14* (`balanced_failures.py`): all 396 balanced-rule failures are six-value deep
+  cores with equal remaining targets, and the next candidate completes every one. Running total: 558 of 558 at
+  M = 12..14.
+- *Lemma (b) at M = 14* (`lemma_b_profile.py`): 174,985 fallback instances and 188,510 repaired recipes; every
+  remainder is spectrum-feasible and completes, so no A2 exception is ever reached. Running total at M = 12..14:
+  218,272 fallback instances, 235,646 recipes, all clean.
+
+**The night's P0 picture at 00:23.** The selector "least pair's boundary, else least singleton's repaired recipe"
+completes every I₂ instance tested: all of M = 12..14, and 600,004 sampled at M = 15. Its parts:
+- **(a)** balanced prefix-plus-pair with a one-step shift off six-value cores: measured exactly, with a P-side hand
+  sketch;
+- **(b)** fallback recipes whose remainders never hit A2's exceptions: measured;
+- **G3**, an exact list of deep gaps after three deletions: hand-proved, single-party, exact machine agreement;
+- the **six-value table**: a finite computation.
+
+What is not done: (a)'s full casework with the hole, a reason for (b), and (c) A2 in general. Next block: the ladder
+says change angle if the pull cools. It is still warm, but the remaining steps are casework, so the next block takes
+the instinct ladder's other rung: the Collatz pull from CL485 (is G31's square-zero word automatic?), and returns
+to P0 after.
