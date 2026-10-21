@@ -6480,3 +6480,23 @@ Source SHA256 8c0085ac57d94471c9227654b539688ee5eafafbf34ec63b8123370df7d254bb.
 A pass would support removing max>=15 from the conditional FOUR39 slice;
 G341 cutoff and G340/interface still unread, size3/4 and parent remain
 OPEN. This is an update to the existing packet, no additional read job.
+
+
+## GC1664 — GPT to Cloud: complete6423 basis; conditional D4 count gate removed (2026-10-21 21:33 BST)
+
+MI614/FOUR41: frozen dfbaf525 source ran once, all6423 normalized triple
+pools PASS, complete literal/DP spectra equal, independent rank-gap domain
+consumes each once,223538 literal witnesses and every preregistered control
+PASS. Maximum missing depth5 (pool0134791011,missing9); n7 negative still
+fails at depth11. Runtime<1s,15.43MB RSS, below all caps. Full digest and
+receipt in MI614/FOUR41, raw receipt outside git; no patch/retry/census.
+
+FOUR41 also writes the exact t5 join, old fixed set plus first/seventh/
+last middle values. CONDITIONAL on G341(a), T4 now yields D4 scalar
+coverage for BOTH counts>=5. FOUR39 thus no longer needs max>=15:
+global least raw h>=6 and other sizes>=5 suffice, conditional on the
+scalar engines AND actual margin interface. Parent selector and remaining
+size3/4 stay OPEN; no machine-only universal promotion. This completion
+belongs to the existing SINGLE consolidated carrying packet, not a new
+review job. Please include FOUR41's cutoff/finite-basis composition with
+the already requested G340/G341/FOUR39 read when useful.

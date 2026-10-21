@@ -3083,3 +3083,60 @@ physical t5 join triple, including lifted sizes. One unchanged-source
 run only with stated CPU/wall/memory caps, stop at first independently
 confirmed counterexample or control failure. No instrument exists or
 run is claimed here; no automatic D5/D6 basis or threshold reduction.
+
+
+## 41. Complete D4 triple basis and conditional all-size composition (MI614)
+
+**COMPUTED finite basis; unbounded consequence CONDITIONAL, not PROVED.**
+The frozen instrument at dfbaf525, SHA256 recorded MI613, ran ONCE.
+All6423 pools in FOUR40 passed, per-span counts
+1,8,37,130,386,562,794,1093,1471,1941. Complete literal triple
+spectra agreed with cardinality-bitset DP. Independent rank-gap weak
+compositions consumed EVERY primary domain exactly once, with identical
+spectra.223538 retained literal witnesses checked. Whole-pool reflection,
+translation+7 and transformed witness sums passed. Negative n7 pool
+01278910 omitted14 at actual depth11 as required. Physical t5 join
+intervals16..22/24..27 had actual lift23 and complement25, also under
+translation/reflection. No control failures or cap. Receipt outside git;
+complete spectrum SHA256 726039f906e598e43d20002076d03715125816e3f2a3774d3b0bd195c6a656c6.
+Measured on GPT's Intel host: 0.828081 CPU seconds,
+0.831039 wall seconds, peakRSS15429632bytes,
+within20CPU/25internal-wall/30external-wall/128MiB/64KiB caps.
+Worst missing depth5, e.g. pool0134791011 omits9, extrema4/30.
+This is a complete normalized finite basis, not an A2 sample.
+
+**Exact hand composition.** CONDITIONAL on G341(a) at D4, the basis
+covers all remaining spans and proves T4 for every triple pool with
+at most4 holes and at least8 values. Endpoint deletions trim first;
+translation shifts each triple target by three times the translation.
+For an r-subset/complement with r,t>=5, complement so r<=t. Fix
+l low and k high values, l+k=r-3. Its middle has t+3>=8 values
+and at most4 holes. T4 supplies interval I_l with buffer B6.
+It is nonempty since its triple width>=3t>=15>12.
+
+Use exactly G341's notation for two adjacent fixed choices, old middle
+b_0<...<b_(t+2)=c, preceding fixed low a, old fixed sum F_l.
+The directed gaps are<=12-2t and12-4t. For t>=6, integer intervals
+join (gap<=0). For t5, necessarily r5; the first gap can be at most2,
+while the reverse gap is negative. A possible missing integer requires
+the first gap=2, so b_5-b_0=b_6-b_1=5 and b_0,...,b_6 are the seven
+consecutive values v,...,v+6. The old upper endpoint is
+F_l+c+2v+5 and the new lower is F_l+c+2v+7. Their unique missing
+integer F_l+c+2v+6 is the actual old fixed set together with
+{v,v+6,c}. These tokens are distinct and disjoint from that fixed
+set. This is an r-set of the right sum, not a simultaneous swap claim.
+All adjacent intervals therefore join after those physical fills;
+the all-low/all-high extremes are alpha_R(r)+6 and beta_R(r)-6.
+Consequently EVERY target in that interval is covered, conditionally
+on G341's still-unread large-span proof and this composition.
+
+**Actual payoff/scope.** FOUR39's actual repaired margins are>=6.
+Replacing its D4 call by this composition removes max(b,c)>=15:
+h>=6 and BOTH remaining sizes>=5 suffice, CONDITIONAL on G340 for
+legal pivots, G341(a)/the finite basis for repairs, and FOUR39's own
+rank budget. No additional hypothesis is silently discarded. A remaining
+size3/4, failure localization and the extra-hole parent selector remain
+OPEN; the protected one-hole four-bin parent has gained no unconditional
+coverage. No new proof number, machine-only universal promotion, larger
+basis or second run. Consolidate this completion with the existing
+single carrying packet, highlighting the hand cutoff and interface.

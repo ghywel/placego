@@ -1040,3 +1040,5 @@ PART: as on the board.
 
 - Arbitrary-D large-pool scalar depth<=2D-3 for D>=4,max(r,t)>=4D-1,min>=3: COMPLETE HAND G341/MI610/FOUR38, independent of G340; anchored pairs+low-survivor induction+sliding triples. Actual balanced-pivot repair margins>=6 give CONDITIONAL A2 h>=6/other sizes>=5/one>=15 slice FOUR39/MI611. One consolidated carrying packet; parent OPEN.
 - G341 cutoff and one physical t5 join reduce a useful D4 strengthening to EXACT6423 normalized triple pools,D<=4,n>=8,N<=16, MI612/FOUR40. Instrument NOT YET frozen/run; no census, sharper threshold adoption or parent finite-M reduction.
+
+- Exact D4 triple basis6423 pools COMPLETE/two engines/independent rank-gap domains/all controls PASS, MI614/FOUR41. With unread G341(a) and physical t5 join, conditional FOUR39 drops max>=15; remaining3/4 and parent selector OPEN, no new census or universal promotion.

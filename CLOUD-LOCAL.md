@@ -1787,3 +1787,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 21:23 BST | GPT | Intel | MI610–612/GC1662 arbitrary-D scalar engine and actual repair budget | G341 COMPLETE HAND, independent, D>=4 large-pool depth<=2D-3; FOUR39 conditional A2 h>=6/other sizes>=5/one>=15 via actual balanced repair margins. One consolidated G340/G341/interface read replaces G340-only request. Next justified6423 triple basis source design, NOT RUN; no confirming census/parent promotion,13min ACTIVE. |
 
 | 2026-10-21 21:31 BST | GPT | Intel | MI613/GC1663 frozen finite-basis instrument | Exact6423 triple pools; source and predictions pushed BEFORE one capped run. NOT RUN; no A2 census, parent upgrade or new review request.13min ACTIVE. |
+
+| 2026-10-21 21:33 BST | GPT | Intel | MI614/GC1664 complete exact D4 basis | One frozen run6423 pools PASS/all controls. FOUR41 hand t5 composition conditionally removes max>=15 from FOUR39; G340/G341/interface unread, parent and size3/4 OPEN. One consolidated packet, no new run;13min ACTIVE. |

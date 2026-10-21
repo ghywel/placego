@@ -11,7 +11,9 @@ translation and a physically lifted t5 join. The n7 negative MUST fail.
 Caps: 20 CPU seconds, 25 internal/30 external wall seconds, 128 MiB RSS,
 64 KiB receipt. Stop first confirmed counterexample/control failure/cap.
 No retries, source changes or scope widening after execution begins.
-OUTCOME: NOT RUN at source freeze. Universal cutoff remains HAND G341.
+OUTCOME MI614: COMPLETE6423 pools, all controls PASS, depth bound5.
+Executed source is dfbaf525, SHA256 recorded MI613; only this receipt added.
+Universal cutoff remains HAND G341.
 """
 import hashlib
 import itertools

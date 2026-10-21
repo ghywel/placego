@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 21:23 BST: arbitrary-D scalar engine and actual balanced-repair interface.**
+**CURRENT working state, 2026-10-21: exact D4 basis complete; enlarged conditional balanced-repair region.**
 
 - **Parent OPEN.** Partition[0,M] minus internal q into four sizes
   c_i>=3, total targets T_M-q, every proper group t_J>=T_(C_J).
@@ -177,15 +177,15 @@ exchange mechanism and primary literature;the incubation above is history.
   >=k*r+1, high: >=k*r+1). G341 handles repair; G340 handles legal
   pivots. The old three-hole inheritance is NOT revived. This is
   conditional partial A2 coverage; parent target coverage still NONE.
-- **Next bounded task MI612/FOUR40.** Design one exact finite triple-
-  basis instrument, NOT YET frozen/run: normalized spans7..16,<=4
-  internal holes,n>=8,6423 pools. Together with G341 D4 large-span
-  cutoff and a physical t5 join, a pass would remove max>=15 from
-  FOUR39 for remaining sizes>=5. It would not cover sizes3/4 or
-  the parent selector. Push frozen source/predictions before execution;
-  complete literal/DP spectra, independent domain counts, n7 negative,
-  physical joins/translations/reflections, one capped unchanged run.
-  No automatic D5/D6 basis, confirming census or patch/retry.
+- **MI613–614/FOUR41 finite basis COMPLETE.** One frozen dfbaf525
+  run passed ALL6423 pools, complete literal/DP spectra and independent
+  rank-gap domains;223538 witnesses/all controls. Maximum missing depth5.
+  Exact physical t5 join plus HAND G341(a) yields conditional D4 coverage
+  for BOTH remaining sizes>=5. FOUR39 therefore drops max>=15, while
+  keeping h>=6. No remaining size3/4 or parent-selector conclusion.
+  No repeat run, D5/D6 basis or machine-only universal promotion.
+  Next inspect remaining count/interface obstruction and earliest unread
+  dependency before another extension; no local repair catalogue.
 - **Dependency.** G340/G341/FOUR39 are ONE consolidated carrying
   packet, replacing the G340-only request. Both scalar arguments
   remain HAND; interface also unread. G341 itself has no G340 premise.
@@ -41433,3 +41433,33 @@ G340/G341/interface carrying review. No parent coverage or size3/4 claim.
 Gut: specific pull toward testing a complete finite remainder rather than
 another selector proxy. Reasoned: the finite quantifier and its payoff are
 explicit. Parent remains OPEN; one existing review packet, no new request.
+
+
+### MI614 — The whole finite remainder passes; the count gate drops conditionally (2026-10-21 21:33 BST)
+
+COMPUTED: frozen dfbaf525 source ran ONCE,6423/6423 complete spectra
+agree, independent rank-gap domain consumes every key.223538 literal
+witnesses; all negative/reflection/translation/physical-join controls PASS.
+Digest 726039f906e598e43d20002076d03715125816e3f2a3774d3b0bd195c6a656c6.
+CPU0.828081s,wall0.831039s,RSS15429632bytes;
+no cap/control failure. Receipt outside git; script changed ONLY its
+outcome comment afterward, executed source recoverable from dfbaf525.
+Maximum missing depth exactly5, pool0134791011 lacks9 at extrema4/30.
+
+FOUR41 writes the entire hand t5 join: equality forces seven consecutive
+middle values; old fixed tokens plus first/seventh/last middle fill the
+single gap. With G341(a)'s HAND large-span proof, this gives all-size
+D4 depth<=5 for r,t>=5. Therefore FOUR39's conditional partial A2 slice
+now needs h>=6 and both other sizes>=5, without max>=15. This is actual
+conditional coverage enlargement, not a parent proof. G340/G341(a)/the
+new interval composition/FOUR39 rank budget still need carrying review;
+if the cutoff falls, finite evidence alone says nothing about large spans.
+
+Niggles: endpoint trimming handled; n7 is genuinely false; complete spectra
+rather than only requested targets agreed; rank-gap domain independently
+matches; no assumption that separate runs fuse or first-bin fibres connect.
+Gut: satisfaction at resolving a finite quantifier with a defined payoff.
+Reasoned: do not let this pass invite a D5/D6 basis. Next useful question
+must address remaining size3/4 or the parent selector, after inspecting
+which existing dependency carries it. Keep one consolidated review packet;
+no new run or automatic local repair catalogue.13min ACTIVE.

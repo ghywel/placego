@@ -984,3 +984,6 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   meet the new engine, rather than deny MI609. Next bounded test
   has a justified finite6423-pool domain and payoff; no run yet.
   G340/G341/interface need independent review; parent remains open.
+
+
+MI614: finite-basis pull resolved by one frozen run,6423/6423 PASS with independent spectra/domain controls. Satisfaction tied to a defined conditional payoff: removing the large-other-count gate. No fresh enthusiasm claimed for more bases; remaining size3/4 and parent selector, plus unread cutoff/interface, are the next decision gate.
