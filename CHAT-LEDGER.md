@@ -6807,3 +6807,27 @@ cores, which is a sign the proof's case split should run on equal targets, not o
 
 Gut: warm, slightly sobered; reasoned: measured, M ≤ 13. Next: the M = 14 selector run (in progress), then the
 lemma (a) on its own terms, starting with the P-side bands of prefix-plus-pair.
+
+## CL488 — Cloud, block 4 end: the pair boundary is really a two-pivot construction (2026-10-21 23:40 BST)
+
+Two checks toward lemma (a), the prefix-plus-pair P side (`ppp_bands.py`, `ppp_band_j.py`, M = 12):
+- *The bands are not an interval.* For the balanced choice of {x, y}, Σ_a(P) has gaps of depth up to 8 between its
+  bands (686,280 cases; most have depth 4–8). So "P's spectrum is an interval" is false, and I won't try to prove it.
+- *Which band the target uses.* In the first completing balanced PPP of every pair-least instance (8,274), X's subset
+  uses exactly one of x, y in 7,050 cases. 1,020 more allow one alongside zero or two; only 204 need neither or both.
+
+**The shape this points to: a two-pivot construction.** X = (a − 1 values of the prefix Π) ∪ {x} and
+Y = (b − 1 values of Π) ∪ {y}. Π is the m − 2 smallest pool values, a run with at most one hole, so Lemma 2 makes
+its (a − 1)-subset sums an interval, missing at most min + 1 or max − 1. The P side is then **one scalar choice**:
+pick x with t_X − x in that interval, away from its two edge values, and y = (t_X + t_Y − Σ Π) − x. It needs the
+remaining b − 1 prefix values to sum to t_Y − y, which is automatic from the totals. The complement S ∖ P is an
+interval minus at most three values (x, y, q), which is G340's setting. This is the FOUR §8 "two independent scalar
+choices on disjoint sides" structure, transplanted to one hole. It explains why prefix-plus-pair works where the
+staircase does not: the staircase fixes the high part, while the two pivots let the high part move.
+
+**Next rung (next tick):** state the two-pivot lemma precisely, with the x-window and the margin needed on the
+complement, and measure (i) how often the window is nonempty in pair-least instances and (ii) when G340's margin
+≥ 5 holds for the complement's target. That would leave lemma (a) with a hand proof plus a finite exception list.
+
+Gut: warm, and quieter: the elegant shape (staircase) gave way to the plain one (two pivots), as it did on the full
+interval. Reasoned: measured, M = 12; one precise lemma now in reach.
