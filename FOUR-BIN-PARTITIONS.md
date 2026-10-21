@@ -3140,3 +3140,105 @@ OPEN; the protected one-hole four-bin parent has gained no unconditional
 coverage. No new proof number, machine-only universal promotion, larger
 basis or second run. Consolidate this completion with the existing
 single carrying packet, highlighting the hand cutoff and interface.
+
+
+## 42. An actual parent bridge, and the selector limit (MI615)
+
+**HAND application, CONDITIONAL on the existing scalar/interface packet;
+not independently verified or a universal parent theorem.** Write
+T_r=r(r+1)/2 and L_r=r(r-1)/2. For EVERY integer s>=5 put
+
+    M=3s+3, S=[0,M] minus{5}, counts(3,s,s,s),
+    u_A=9, W=T_M-14, w=floor(W/3),
+    (u_B,u_C,u_D)=(w,w,W-2w).
+
+These targets sum T_M-5. Let Delta_J=u_J-T_(C_J). Taking the
+least targets of each symmetry type, their proper-group bounds are
+
+    A:             3,
+    B:             >=s^2+3s-11/3,
+    A+B:           >=s^2-2/3,
+    B+C:           >=s^2+6s-22/3,
+    A+B+C:         >=s^2-13/3,
+    B+C+D:         9s-8.
+
+They follow just from W/3-1<=w and w<=u_i<=W/3+2. Thus all
+protection inequalities hold, and A uniquely minimizes adjusted
+proper-group slack. No realization or theorem is assumed in that check.
+For this one-hole pool alpha_S(r)=L_r+(r-5)_+; hence raw lower
+slack equals Delta_J+min(r,5). A has raw slack6; every other
+proper group has larger raw slack. Complements identify upper with
+lower raw slacks, so it is also the unique singleton attaining the
+minimum of the eight singleton lower/upper slacks.
+
+Use the ACTUAL legal first bin A={0,1,8}. Its complementary pool,
+after subtracting2, is exactly
+
+    R=[0,3s+1] minus{3,6}, counts(s,s,s), v_i=u_i-2s.
+
+This is two holes, not an assumed inheritance statement. The elementary
+rank bounds for at most two holes give
+
+    alpha_R(s)<=L_s+2s,
+    beta_R(s)>=s((3s+1)-2)-L_s.
+
+Consequently EVERY one of the child's three targets satisfies
+
+    v_i-alpha_R(s) >= s^2-11/3,
+    beta_R(s)-v_i >= s^2-2s+2/3.
+
+Both exceed6 at s>=5. Total conservation is exact. The carried scalar
+Lemma3/G315 puts every target more than2 from its actual extrema
+in its individual spectrum, since both cardinalities are>=3. This
+checks the ORIGINAL-SPECTRUM hypothesis of A2, not just rank bounds.
+Now choose the child's globally least raw singleton slack, with whole-
+pool reflection if needed: it is>=6 and both other counts are>=5.
+FOUR39+41 therefore partition this child CONDITIONALLY on G340,
+G341(a), the complete finite basis, and their unread hand composition/
+rank interface. Adding back018 partitions the displayed protected
+parent. This is an explicit infinite parent region reached by the
+new mechanism. No claim that this family is novel, never previously
+constructible, or that all protected parents reduce to it.
+
+Independent HAND control s5 gives M18, targets9/52/52/53, with
+literal partition018 / {2,6,11,15,18} / {3,7,12,14,16} /
+{4,9,10,13,17}. This only checks one instance, not the quantifier.
+The potentially silent premise was individual child feasibility;
+carried Lemma3 verifies it separately from the new joint theorem.
+
+**Large remaining counts do NOT make the selector universal.**
+The old MI368 obstruction persists for every s>=5 on the SAME
+S/counts, with instead
+
+    u_A=6,
+    u_B=(3s^2+5s-6)/2,
+    u_C=(3s^2+7s-4)/2,
+    u_D=(3s^2+9s)/2.
+
+A has adjusted slack0. The least other slacks, by group type,
+are respectively s^2+2s-3, s^2-s-3, s^2+5s-5,
+s^2-s-5 and9s-5, all positive. Raw slack of A is3 and all
+other proper groups have greater raw slack. Its ONLY realizations
+are024 and123, leaving respectively THREE holes{2,4,5} in[1,M]
+and FOUR holes{1,2,3,5} in[0,M]. These statements concern actual
+spans before normalization. The obstruction is to a universal least-
+selector/A2 reduction, not partition existence: a literal general
+partition is
+
+    A=024,
+    B={1} union{7+3j:0<=j<=s-2},
+    C={3} union{8+3j:0<=j<=s-2},
+    D={6} union{9+3j:0<=j<=s-2}.
+
+All bins have the stated counts/sums and cover S disjointly. This is
+MI368's known mechanism with large companions, not a new proof filing.
+Choosing another first bin requires a NEW actual margin calculation;
+its existence is not ruled out by this example. Raising sizes cannot
+silently restore the defeated two-hole inheritance assumption.
+
+**Decision.** Parent coverage has moved CONDITIONALLY by the first
+family; unconditional status awaits the existing carrying packet.
+The second family prevents promoting that bridge to a universal selector.
+No experiment, basis expansion or new review request. Next inspect the
+unread rank budget itself before extending it, rather than adding a new
+delete-another-bin chain or repairing this counterfamily by catalogue.

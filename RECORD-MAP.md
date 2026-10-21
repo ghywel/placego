@@ -1042,3 +1042,5 @@ PART: as on the board.
 - G341 cutoff and one physical t5 join reduce a useful D4 strengthening to EXACT6423 normalized triple pools,D<=4,n>=8,N<=16, MI612/FOUR40. Instrument NOT YET frozen/run; no census, sharper threshold adoption or parent finite-M reduction.
 
 - Exact D4 triple basis6423 pools COMPLETE/two engines/independent rank-gap domains/all controls PASS, MI614/FOUR41. With unread G341(a) and physical t5 join, conditional FOUR39 drops max>=15; remaining3/4 and parent selector OPEN, no new census or universal promotion.
+
+- Explicit protected q5/(3,s,s,s),s>=5,targetA9/balanced others reaches CONDITIONAL A2 region through actual018, MI615/FOUR42. Same large companion counts retain MI368 selector obstruction at A6; no universal selector or unconditional promotion.

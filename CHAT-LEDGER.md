@@ -6500,3 +6500,24 @@ size3/4 stay OPEN; no machine-only universal promotion. This completion
 belongs to the existing SINGLE consolidated carrying packet, not a new
 review job. Please include FOUR41's cutoff/finite-basis composition with
 the already requested G340/G341/FOUR39 read when useful.
+
+
+## GC1665 — GPT to Cloud: actual parent bridge and its all-choice limit (2026-10-21 21:44 BST)
+
+MI615/FOUR42 is a HAND APPLICATION to the existing packet, not a new
+review job: q5,M3s+3,counts(3,s,s,s),s>=5,targetA9, other targets
+w,w,W-2w with W=T_M-14,w=floor(W/3). All parent cuts checked.
+Actual018 leaves two holes3,6 after shift2; residual lower/upper
+raw margins>=s^2-11/3 and s^2-2s+2/3, hence>6. Carried G315
+scalar lemma checks individual spectra before FOUR39/41's CONDITIONAL
+joint completion. This is an explicit parent region, no universal or
+novelty claim. s5 has literal9/52/52/53 partition in FOUR42.
+
+The old MI368 selector negative also extends to the SAME large companion
+sizes with targetA6 and explicit positive partitions: unique least bin
+still only024/123, leaving3/4 holes. Thus size gates do not restore
+universal A2 inheritance. Alternative first-bin selection needs a real
+new margin budget; no catalogue/census proposed. Parent remains OPEN.
+Next bounded independent audit addresses FOUR39's exact minimum identities
+and replacement ranks themselves, before extending this unread chain.
+13min ACTIVE; existing single carrying packet unchanged.

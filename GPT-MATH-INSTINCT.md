@@ -186,6 +186,14 @@ exchange mechanism and primary literature;the incubation above is history.
   No repeat run, D5/D6 basis or machine-only universal promotion.
   Next inspect remaining count/interface obstruction and earliest unread
   dependency before another extension; no local repair catalogue.
+- **MI615/FOUR42 actual parent bridge, HAND application.** For
+  q5,M3s+3,counts(3,s,s,s),s>=5,A target9 and balanced others,
+  actual018 leaves two holes with all raw margins>6. G315 scalar
+  admission plus FOUR39/41 partitions it CONDITIONALLY. No novelty
+  claim or universal parent inference. The same large companions
+  with A6 retain the old ALL-realization3/4-hole selector obstruction.
+  Next audit FOUR39's exact replacement-rank identities themselves
+  before further dependent extension; no run/catalogue/new review job.
 - **Dependency.** G340/G341/FOUR39 are ONE consolidated carrying
   packet, replacing the G340-only request. Both scalar arguments
   remain HAND; interface also unread. G341 itself has no G340 premise.
@@ -41463,3 +41471,42 @@ Reasoned: do not let this pass invite a D5/D6 basis. Next useful question
 must address remaining size3/4 or the parent selector, after inspecting
 which existing dependency carries it. Keep one consolidated review packet;
 no new run or automatic local repair catalogue.13min ACTIVE.
+
+
+### MI615 — The scalar region reaches an actual parent family, but not a universal selector (2026-10-21 21:44 BST)
+
+Bounded HAND coverage gate from MI614. Record searched: parent.*(margin|
+slack)|residual.*margin AND singleton ->4 hits/3 files; second broad
+MI368/formula search ->52/22, including the exact old selector negative.
+Read MI362/368/376/410, FOUR3/35 and the existing G341/interface.
+This is an elementary application of that record, no new prior-art claim.
+
+FOUR42 gives a full conditional bridge, not just an abstract admission
+predicate: for s>=5,M3s+3,q5,counts(3,s,s,s), take targetA9 and
+split W=T_M-14 into w,w,W-2w with w=floor(W/3). All protected
+cuts hold; A uniquely minimizes both adjusted and raw proper cut slack.
+Actual A018 leaves normalized [0,3s+1] minus3,6. Each residual
+singleton target has lower depth>=s^2-11/3 and upper depth
+>=s^2-2s+2/3, both>6. Carried G315 scalar Lemma3 separately
+verifies individual spectrum admission. Thus FOUR39/41 gives a full
+parent partition CONDITIONAL on the unread scalar/rank packet.
+Literal s5 partition9/52/52/53 checks physical tokens and conservation.
+No novelty or claim of a previously unknown family is asserted.
+
+The opposite scope check also matters: MI368 extends to counts(3,s,s,s)
+for ALLs>=5 with targetA6 and explicit cyclic-distribution companion
+sums. Every realization of the unique least singleton still leaves3/4
+holes, and the parent is explicitly positive. Thus large companions
+do not fix the SAME failed two-hole-selector assumption. No repair
+follows from this counterfamily; changing first bin needs a new budget.
+
+Trajectory: chosen parent unchanged. Actual change is one explicit
+CONDITIONAL parent region, not a universal inference; unconditional
+coverage/status unchanged pending carrying read. Earliest unread steps
+remain G340/G341 and FOUR39/41, not this finite example. No new review
+job or experiment. Gut: the bridge is concrete enough to justify the
+scalar work, while the counterfamily keeps its limits visible. Fresh
+choice favours auditing the rank interface itself before extending a
+dependent chain. Next bounded hand question: verify FOUR39's EXACT low/
+high minimum formula for all possible replacement ranks, independently
+of its claimed equality; retain a discrepancy before any repair.

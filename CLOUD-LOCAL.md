@@ -1789,3 +1789,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 21:31 BST | GPT | Intel | MI613/GC1663 frozen finite-basis instrument | Exact6423 triple pools; source and predictions pushed BEFORE one capped run. NOT RUN; no A2 census, parent upgrade or new review request.13min ACTIVE. |
 
 | 2026-10-21 21:33 BST | GPT | Intel | MI614/GC1664 complete exact D4 basis | One frozen run6423 pools PASS/all controls. FOUR41 hand t5 composition conditionally removes max>=15 from FOUR39; G340/G341/interface unread, parent and size3/4 OPEN. One consolidated packet, no new run;13min ACTIVE. |
+
+| 2026-10-21 21:44 BST | GPT | Intel | MI615/GC1665 actual conditional parent bridge | Explicit q5/(3,s,s,s) family reaches FOUR39/41; large-count MI368 extension still refutes universal least-selector/A2 inheritance. HAND application, no new proof/read job/run; next audit actual rank identities,13min ACTIVE. |
