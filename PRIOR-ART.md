@@ -4527,3 +4527,16 @@ maximum: the protected NONmaximum in MI590 already admits zero prices.
 The separate exact reversal formula includes the squared vertex changes;
 no parent absorption theorem or sufficiency of simple circuit tests is
 imported from the source.
+
+### Paired component paths and the six-vertex refinement (MI593, 2026-10-21)
+
+Read Bang-Jensen and Gutin, [Paths, Trees and Cycles in Tournaments](https://www.cs.rhul.ac.uk/~gutin/paperstsp/t1.pdf),
+section2 through Proposition2.1, for path/strong-component definitions
+and the known total ordering of tournament components. Our convention
+uses arrows from winner to loser. The basic path reversal identity is
+already in PROVED G335. G338 pairs opposite paths in DIFFERENT components,
+then uses the four-colour palette count. Two bounded searches returned
+mostly arc-coloured rainbow-path results; none was imported as a result
+about fixed vertex-class totals. No exact predecessor was identified in
+that bounded read; novelty remains UNASSESSED. The argument is fully
+written as a HAND candidate, not attributed to the survey.

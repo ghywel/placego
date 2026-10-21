@@ -1013,3 +1013,5 @@ PART: as on the board.
 - Joint component cut budget/shape-only shortcut guard: protected M12 cyclic thin-run control is nonmaximal, MI590. Old MI551 compression recognized; separate restricted inversion optimum has WORKING HAND <=2 descents via neutral equal-score flips, MI591. Unverified, no new read job; not G335's global maximum or parent progress.
 
 - Global tournament maximum requires C>=m on actual simple colour-edge circuits; known common potentials alone fail protected NONmaximum, WORKING HAND MI592. Quadratic balanced-reversal/protection inference OPEN; no new review packet or parent coverage.
+
+- Global tournament maximum has <=2 cyclic components/6 vertices: HAND G338/MI593/FOUR34; paired opposite paths forbid two shared colours. Two components must be triangles sharing one ordinary colour. Bulk unbounded; parent OPEN, consolidated independent review pending.

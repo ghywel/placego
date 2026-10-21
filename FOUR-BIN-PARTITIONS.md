@@ -2801,3 +2801,30 @@ Existence of a mixed run, general thin completion and parent partition
 remain OPEN. The M12/c3333 cardinality guard already prevents such a
 run avoiding * in that small parent domain. This is a new conditional
 mechanism, not uniform parent coverage or a finite-M reduction.
+
+## 34. Two opposite paths leave at most six cyclic vertices (MI593/G338)
+
+**Complete HAND candidate, independently unverified.** This sharpens
+the PROVED G335 normal form and is independent of G337. In a global
+score-square maximum, distinct strong components cannot share two
+colours A,B. Within each component choose opposite A/B paths. Reversing
+one path in each component preserves all colour totals and q. If their
+global score differences are x and y, the two opposite choices gain
+2(x-y+2) and2(y-x+2), respectively; one is at least4. Actual paths are
+vertex-disjoint between components, and their intermediate scores stay
+fixed. No common component offset or mixed path-lifting theorem is used.
+
+Every component is rainbow by G335's carried path argument. There can
+be at most one ordinary cyclic component, since any two would share
+at least two of the four colours. There is at most one containing *.
+If both exist, their sizes r,s>=3 have r+s-5<=1, forcing two triangles
+with palettes {*,A,B} and {A,C,D}. Otherwise the single cyclic component
+has size<=5. Thus there are at most2 components and6 cyclic vertices.
+
+PROOFS G338 includes a protected M12/q6 repair with Phi+4, and a TRUE
+outside-parent global maximum on6 vertices showing that intersection1
+and the abstract bound6 cannot be removed by optimality alone. No
+sharpness or obstruction within the protected parent is claimed.
+There are at most three ordinary singleton runs avoiding *, also treating
+* as a separator if it is itself a singleton, still of UNBOUNDED length. This is not an M<=6 reduction, proof of absorption,
+new target-family completion or automatic reservoir existence theorem.

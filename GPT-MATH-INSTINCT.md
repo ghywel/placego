@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21 14:38 BST: G337 review pending; actual global circuit penalty.**
+**CURRENT working state, 2026-10-21 14:52 BST: G338 HAND six-vertex refinement; G337/G338 consolidated review.**
 
 - **Parent.** Partition[0,M] minus internal q into four sizes c_i>=3,
   targets totaling T_M-q, every proper group t_J>=T_(C_J). L8=68
@@ -191,8 +191,8 @@ exchange mechanism and primary literature;the incubation above is history.
   overshoot<=5; one chain ordering minimizes all dangerous cuts with
   * fixed. PROVED G316 realizes the run repair; Phi gains2*tau_K.
   Same run works successively. No unread G336 premise; GC1649 one read.
-- **Decision/dependency.** G337's chain selector/application is the new
-  unread dependency; G335/G316 carried. No new protected target-family
+- **Decision/dependency.** G337's chain selector/application remains an
+  unread dependency of its absorption conclusion; G335/G316 carried. No new protected target-family
   coverage or run-existence theorem. In a cyclic maximum all singleton
   runs and both whole sides must be thin IF the candidate is carried.
   M12/c3333 cannot fit a12-score run avoiding *, so mixing existence
@@ -219,6 +219,18 @@ exchange mechanism and primary literature;the incubation above is history.
   WORKING HAND/unreviewed, no extra carrying job or parent coverage.
   General balanced-reversal selection under protection remains OPEN;
   simple circuit conditions have not been shown sufficient.
+- **Six-vertex refinement, MI593.** G338 is a complete HAND candidate:
+  in a GLOBAL maximum two cyclic components cannot share two colours.
+  Opposite paired paths gain2(x-y+2) and2(y-x+2); one gains>=4 with all
+  colour totals and q fixed. Rainbow palettes then allow at most2
+  cyclic components/6 vertices. If two, both are triangles with sets
+  {*,A,B} and {A,C,D}. This is independent of G337 and MI591/592; one
+  consolidated G337/G338 carrying request at GC1652. Protected repair
+  and true outside-parent sharpness controls included; novelty unassessed.
+  Ordered runs remain unbounded (at most3 if the refinement is carried).
+  No M<=6 reduction, run-existence theorem or new parent target coverage.
+  Next absorption must use this actual small core plus protection;
+  do not start a pattern-repair tree or infer that cycles are gone.
 - **Read diagnostic, not replayed.** CL477's source reports2332 transitive,
   7 stuck and1 failed start out of2340 attempts; capped/incomplete. Part A
   checks the triangle identity and SCC description, not the full bound.
@@ -40338,3 +40350,74 @@ Gut: this is a useful pull because it restores the missing maximality,
 with the price shortcut rejected immediately. Decision: retain the
 quadratic obstruction as the next all-choice question, without claiming
 it supplies absorption or combining the restricted binary optimum.
+
+### MI593 — Two opposite paths reduce the cyclic support to six (2026-10-21 14:52 BST)
+
+**Complete HAND candidate G338; independent verification pending.**
+This continues the unfinished GLOBAL-optimality inference from MI592.
+It changes G335's structural obstruction from at most11 components/45
+cyclic vertices to at most2 components/6 vertices. It still gives no
+finite-M reduction, new protected target-family coverage or absorption.
+The parent remains the protected one-hole four-bin partition.
+
+Prediction before completing the hand audit: actual paths in two
+DISJOINT strong components sharing two colours give a simultaneous
+score transfer in each direction, at least one strictly profitable.
+Can-fail counterfactual: the paths might collide or change q, or the
+six-vertex count could silently assume a common component offset.
+Controls: calculate endpoint changes independently, exhibit an actual
+protected two-component repair, and test a TRUE outside-parent maximum
+with exactly one shared colour. Unexpected check: decide whether the
+six-vertex bound is sharp without protection, rather than merely draw
+another nonmaximum. Stop at the universal normal-form refinement;
+no experiment, census, binary repair tree or run-threshold extension.
+
+Record searched: strong.component|cyclic.component|rainbow AND
+share|intersect|two.path|two.colour|opposite.path ->7 hits/4 files.
+Read G335's path reversal and component count, and G337's distinct
+absorption scope. The exact paired-component assertion was not found
+in these hits. Two bounded primary-literature queries returned mainly
+ARC-coloured path results, which do not apply to these vertex classes.
+Read Bang-Jensen–Gutin, Paths, Trees and Cycles in Tournaments,
+section2 through Proposition2.1 for definitions and component ordering.
+No result from that survey supplies the new optimization implication;
+novelty remains UNASSESSED. This is an elementary hand argument.
+
+If K and H contain ordinary colours A,B, choose vertices a,b in K
+and a',b' in H. Strong connectivity supplies a->b and b'->a' paths,
+inside their respective components. Reverse BOTH. Each interior vertex
+keeps its score; endpoints change by(-1,+1,+1,-1) in the order
+(a,b,a',b'). All colour totals and q are preserved. If
+x=d(b)-d(a) and y=d(b')-d(a'), the Phi gain is2(x-y+2).
+The opposite pair of paths b->a and a'->b' instead gains2(y-x+2).
+The gains sum to8, so one is at least4. A global maximum cannot admit
+both shared colours. No common external offset, price certificate,
+abstract shared-token path or G337 premise is used.
+
+G335's carried rainbow property then makes each cyclic component's
+colour set have at least3 elements. Two ordinary components would be
+3-element-or-larger subsets of only four colours, hence share at least2;
+impossible. At most one other component contains the singleton *.
+If both kinds exist, sizes r,s>=3 have intersection at least r+s-5.
+The intersection is at most1, so r+s<=6 and both sizes equal3.
+Their sets are {*,A,B} and {A,C,D}, up to names. Otherwise a single
+cyclic component has at most5 vertices. This proves the proposed bound.
+
+The full candidate and two literal controls are in PROOFS G338 and
+FOUR34. The protected M12 control repairs two ordinary triangles by
+Phi+4 with q fixed. The outside-parent M5 control is a genuine global
+maximum with two triangles/6 cyclic vertices: one shared colour cannot
+be excluded by maximality alone. No independent review is claimed.
+
+**Decision/dependency.** G338 uses only carried G335 (and rederives its
+short path identity); it does not extend G337 or the unread MI591/592
+applications. It is worth one carrying read because it improves the
+universal structural bound, not just a local motif. Consolidate the
+existing G337 request and this short refinement in ONE updated packet,
+retaining both HAND until read. No duplicate request or extra experiment.
+Next all-choice absorption question concerns one rainbow component,
+or two triangles sharing exactly one ordinary colour, with up to three
+unbounded ordinary singleton runs avoiding * (also separating * itself
+if it is a singleton). Do not infer the mixed run exists. Gut: delight
+at a genuine simplification; reasoned: the ordered bulk/protection bridge
+is still the open parent inference. No new allowance or routine halt.

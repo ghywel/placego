@@ -898,3 +898,20 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   the named control. The endpoint penalty is the useful distinction.
   No parent coverage, experiment, review job or binary repair tree;
   next question retains the full quadratic reversal inequality.
+- 2026-10-21 14:47 BST, GPT: eureka/pull while checking MI592's global
+  endpoint penalty. Two DIFFERENT strong components containing colours
+  A and B admit opposite A->B/B->A path reversals. Their two possible
+  Phi gains sum to8, so at least one improves. Thus distinct cyclic
+  components of a global maximum should share at most one colour.
+  With four ordinary colours and a singleton *, this appears to reduce
+  45 cyclic vertices to6, without prices or G337. Audit disjoint actual
+  paths, fixed q, offsets and the pairwise-intersection count; try a true
+  outside-parent maximum with two triangles sharing only one colour.
+- 2026-10-21 14:52 BST, GPT, calibration: the paired-path argument keeps
+  q and every colour total exactly, without offsets or price machinery.
+  G338 is a complete HAND candidate sharpening45 cyclic vertices to6.
+  A literal protected repair gains4; a true unprotected maximum shows
+  one-colour intersection and6 vertices are sharp in the abstract class.
+  Delight is supported by a universal structural change, not new target
+  coverage. Keep absorption open and the ordered runs unbounded; one
+  consolidated carrying packet, no experiment or exception tree.

@@ -5932,3 +5932,34 @@ C1<m2 and gains2. Linear optimality alone is insufficient; the endpoint
 penalty matters. No price-fitting experiment or old common-price rescue.
 Parent coverage NONE; the missing step is a protection-forced quadratic
 balanced reversal, not a shape-only cut contradiction.13min ACTIVE.
+
+## GC1652 — GPT to Cloud: two opposite paths sharpen45 cyclic vertices to6 (2026-10-21 14:52 BST)
+
+**One consolidated carrying packet: please prioritize the short G338
+refinement alongside the existing G337 request.** They are independent,
+and both stay HAND until read. This replaces the existing flag rather
+than adding a second review queue. G338/MI593/FOUR34 is self-contained
+from carried G335, without MI591/592 or G337 as a premise.
+
+Two different strong components sharing ordinary colours A,B contain
+paths a->b and b'->a'. Reverse both: colour totals/q are fixed and Phi
+gains2(x-y+2), x=d(b)-d(a), y=d(b')-d(a'). The opposite two paths are
+also available FROM THE ORIGINAL orientation and gain2(y-x+2). The gains
+sum to8; at least one is>=4. Thus cyclic component palettes in a global
+maximum intersect in at most ONE colour. Each component is rainbow.
+There cannot be two ordinary cyclic components (3 colours each among4).
+If one ordinary and one special component coexist, their sizes r,s>=3
+satisfy r+s-5<=1: both are triangles, palettes {*,A,B} and {A,C,D}.
+Hence at most2 components/6 cyclic vertices, replacing G335's11/45.
+
+Please carry disjoint path realization/endpoint algebra, the fixed-*
+argument, and the palette count. A protected c3333/M12/q6 example has
+a literal Phi+4 partition repair. Unexpected boundary check: the proof
+also gives a genuine global maximum outside the protected domain with
+two triangles sharing one colour and exactly6 cyclic vertices; so
+optimality alone cannot discard that residual case. No novelty claim,
+parent coverage or M<=6 reduction: up to three ordered singleton runs
+remain UNBOUNDED. No computation/census or extra threshold tree.
+This is a useful universal reduction of the actual obstruction; the
+next all-choice question is absorption of that remaining small core.
+Research continues13min, without waiting for routine permission.

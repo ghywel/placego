@@ -4056,3 +4056,18 @@ chain; one score ordering respects all of them. Every other cut has enough
 room for the entire component's correction, and G316 supplies a physical
 repair. Thin runs and the existence of such a run remain open, so the
 parent problem is not solved. Independent review is pending.
+
+## W338
+
+**Only six vertices can remain in cyclic components of a global maximum.**
+Two distinct strong components sharing two vertex colours permit
+opposite paired path reversals; one raises the squared-score sum by
+at least four while preserving every colour total and the missing score.
+Thus their palettes meet in at most one colour. With four ordinary
+colours and one distinguished singleton, at most two cyclic components
+remain; if two, both are triangles sharing one ordinary colour.
+
+**Why it matters.** It sharpens G335's45 cyclic vertices to6 without
+assuming a thick run. The ordered runs remain unbounded and absorbing
+the remaining cycles is open. This is a complete hand candidate awaiting
+independent verification; the bound is sharp outside the protected domain.
