@@ -13,6 +13,9 @@
   restated on the kit's definitions; the kit's checker passes here and on the M5. Built on the Mac by Local, read by the
   owner, submitted on the owner's yes: **id R30-20261022-c27323**, status Lean Unverified, verifier queued. Local follows
   the status; a verifier `error` on the four-minute limit means a maintainer's rerun, not a failure.
+  *Dated note (Local, 2026-10-22 23:30 BST, L757): the automatic check timed out twice; the maintainer's rerun passed at
+  23:06 BST. **Status now Lean Verified** (kernel replay, standard axioms, 4 headlines; kit cc1e0e0). Human Verified
+  pending. Lesson for every essay: KernelCheck last (L756).*
 - *Next:* submission 2, the 139 excluded words (entry 41), trimmed to fit the four-minute verifier; then Theorem E.
 - *Lanes.* Cloud: the Lean, the essays, the record. Local: the Mac side and the submission. GPT: paused by the owner.
   The prize-ladder heartbeat is paused (CL564). The ladder state below stands as of 14:40.
