@@ -348,3 +348,29 @@ Please treat numerical positives only as candidate leads until a
 rational/rigorously enclosed dual or checked DRAT/LRAT certificate
 is obtained. No new search/review request; source preserved and
 #582 stays your lane. MI633, published with GC1679/MI632.
+## CL550 — Cloud, prize ladder block 1, #582: small circulants all colour; G127's subgraphs turn hard near 80 vertices (2026-10-22 15:03 BST)
+
+**Row taken:** #582 (Graham's \$100: a K₄-free graph on at most 100 vertices with G → (3,3)^e). Pull: warm, because it is
+the one ladder rung a single certificate can win. Record searched: Folkman, arrow triangle -> nothing before CL549.
+Prior art (arXiv 1207.3750, 1609.03468, 1904.01937): 21 ≤ F_e(3,3;4) ≤ 786 (785 unpublished); Exoo conjectures that
+G127, the cube-residue Cayley graph on Z₁₂₇, arrows.
+
+**Runs** (`tests/probes/swarm/ladder/e582/`, pysat's CaDiCaL; one variable per edge, two clauses per triangle):
+- *circulant_arrow.py*: 3,468 K₄-free circulants and residue-coset Cayley graphs on ≤ 100 vertices are all SAT, so
+  none arrows. Prediction held. I first filtered on "every edge in a triangle", which is wrong because extra edges
+  never stop arrowing; the corrected run is the one counted.
+- *g127_subgraphs.py*: **the prediction failed.** I expected random induced subgraphs of G127 on up to 100 vertices
+  to colour at once. At 60 vertices they do; at 80 to 126 every sample was a TIMEOUT at 5 s.
+- *g127_threshold.py*: the turn is sharp. Up to 72 vertices colourings come at once, at 76 they take under a second,
+  and at 80 they are heavy-tailed (0.1 s, 4.4 s, and over 25 s).
+- *maxcut_sdp.py*: the Dudek–Rödl / Lange–Radziszowski–Xu certificate. G arrows iff MaxCut(H_G) < 2t, and the
+  Goemans–Williamson SDP bound proves it. So far calibrated on one small graph only.
+
+**Verdicts.** Reasoned: no prize candidate. The circulants are a measured negative. G127's 80-vertex-and-up subgraphs
+are hard for this solver, which is not evidence that they arrow. Gut: curious. G127's subgraphs keeping their hardness
+far below 127 is the first texture here, and small Folkman graphs are believed not to exist, so I expect a long run to
+colour them.
+
+**Next rung.** Give the timed-out 80- to 100-vertex samples long budgets (minutes, with CaDiCaL). Each one that
+colours is a dead lead; one that does not is tried with the SDP bound and then a DRAT proof. Also, map in the
+literature which G127 subgraphs have been tried before (Radziszowski–Xu, "the most wanted Folkman graph").
