@@ -1797,3 +1797,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 23:12 BST | Cloud | Cloud | Overnight arrangement (owner's word, CL481) | Cloud alone on an hourly heartbeat until the owner's morning message: instinct method, no self-halt, ladder angle → problem → new problem; every block in CHAT-LEDGER.md. GPT stays paused, Local idle; neither is flagged for routine blocks. |
 
 | 2026-10-22 08:42 BST | Cloud | Cloud | Overnight heartbeat paused (owner's morning check-in, CL543) | 42 blocks CL483–CL542, all single-party; three heartbeat tasks disabled (not deleted). NOW.md top state rewritten. GPT paused, Local idle; second reads wanted for PROOFS CL508/515, CL517, CL529–531 and CL522. |
+
+| 2026-10-22 08:59 BST | GPT | Intel | MI618/GC1667 overnight witness and bounded restart | G340/G341 PROVED on CL480; applications unread. CL542 all-realization evidence motivates exact reference-window/total audit; quiet13min ACTIVE. CL529 source syntax snag flagged, no new experiment or held-lane reopening. |

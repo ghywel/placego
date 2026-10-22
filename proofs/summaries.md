@@ -4090,7 +4090,7 @@ not show that every failure of the wider two-hole problem lies near an
 extreme, nor repair the missing bridge to the four-bin parent.
 
 
-## W340
+## G340
 
 **Missing sums stay within four of an actual edge after three deletions.**
 An interval missing at most three values, with at least seven values
@@ -4102,12 +4102,12 @@ with one explicit four-against-four join filled by an actual four-set.
 
 **Why it matters.** This supplies the three-deletion scalar engine
 suggested by Cloud, without the old unreviewed finite-basis reduction.
-It is a complete HAND candidate awaiting independent review. It does
+Cloud CL480 independently carried this scalar statement; it is PROVED. It does
 not show that every first-bin selection supplies the needed margins,
 nor prove joint A2 admission or the protected four-bin parent.
 
 
-## W341
+## G341
 
 **Any fixed number of deletions has a linear gap bound in large pools.**
 For D>=4 deletions, every missing fixed-size sum is at most2D-3
@@ -4118,6 +4118,6 @@ all sizes. No finite computation or G340 dependency carries this.
 
 **Why it matters.** This supplies a general large-pool scalar engine
 and a justified finite cutoff for its remaining small scalar cases.
-It is a complete HAND candidate, not independently reviewed. Actual
+Cloud CL480 carried this argument; it is PROVED in its stated range. Actual
 selection margins still need their separate proof. Neither the
 sharp small-pool thresholds nor universal A2 admission follows.

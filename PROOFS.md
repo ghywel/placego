@@ -16904,6 +16904,272 @@ this two-hole unit-deficit classification. No generated pages rebuilt.
 
 
 
+### G.GPT340. Depth-four scalar coverage after three deletions (second-read by Cloud; 2026-10-21)
+
+**PROVED within project standards, Cloud CL480/8bfe2134; adopted MI618.**
+The carrying read checked G318's triple band, the low 8 obstruction,
+all four anchored pairs for 9–11, both sliding joins and the physical
+4/4 join. Its source reports 23,745 cases and both countercontrols;
+read, not rerun by GPT. The earlier candidate wording below is retained
+as provenance. This is scalar coverage only; no universal selection claim.
+
+### GPT G340 — Sharp depth-four scalar coverage after at most three deletions (GPT, 2026-10-21; waiting room, MI607)
+
+**COMPLETE HAND CANDIDATE; independent carrying review requested.**
+Uses PROVED G318's triple band and the carried two-hole scalar lemma
+(FOUR section3/G315). No MI354–355 finite basis or G339 dependency.
+Novelty UNASSESSED. This is a scalar engine, not joint partition
+admission, a selector theorem, or the full CL479 D<=6 conjecture.
+
+**Statement.** Let R be a finite integer interval minus at most three
+values, with n=|R|>=7. For r,t>=3 with r+t=n let alpha_r,beta_r be
+its actual least/greatest r-sums. Every integer in
+
+    [alpha_r+5, beta_r-5]
+
+belongs to Sigma_r(R). Thus any missing sum between its actual
+extrema has depth at most4. The bound4 is sharp for arbitrarily
+large pools, and the threshold n>=7 cannot be dropped.
+
+**1. Triple sums.** Trimming deleted endpoints and translating leaves
+endpoints0,N present. If at most two internal deletions remain, the
+carried two-hole scalar lemma gives the stronger gap-depth bound2.
+Otherwise there are exactly three; n=N-2>=7 forces N>=9. PROVED
+G318 supplies every triple sum in[12,3N-12]. It remains to check
+low targets8..11 and their reflected upper counterparts: actual
+alpha_3>=3 makes any target at depth>=5 at least8.
+
+For9,10,11, anchor0 has FOUR disjoint partner pairs, respectively
+
+    9: 18,27,36,45;
+   10: 19,28,37,46;
+   11: 29,38,47,56.
+
+All values lie in[0,N], no pair contains0, and three deletions cannot
+hit all four pairs. For8 at depth>=5, alpha_3<=3, so012 all survive.
+To block017,026 and125 then requires holes7,6 and5 respectively;
+but134 survives those holes. Hence8 is present too. Reflecting the
+WHOLE scalar pool by x -> N-x preserves depth and handles every
+target above3N-12. This proves the stated bound for r=3, n>=7;
+complementation also handles t=3.
+
+**2. Keep only three choices free.** By complementation take3<=r<=t.
+The case r3 is done. For each l=0,...,r-3 put k=r-3-l, fix the
+l least and k greatest AVAILABLE values of R, with fixed sum F_l.
+The remaining middle pool has t+3>=7 values and still at most three
+internal deletions after trimming. Step1 supplies the entire interval
+
+    I_l=[F_l+alpha_3(middle)+5, F_l+beta_3(middle)-5]
+
+of actual r-sums. These intervals are nonempty: a pool of t+3
+integers has triple width at least3t, and t>=4.
+
+Compare (l,k) with(l-1,k+1), l>0. Write the old middle as
+b_0<...<b_(t+2)=c, and let a be the fixed low value immediately
+before it. The new fixed sum is F_l+c-a; the new middle is
+{a,b_0,...,b_(t+1)}. Its lower endpoint minus the old upper is
+
+    10+b_0+b_1-b_t-b_(t+1) <= 10-2t.             (J1)
+
+The OLD lower minus the NEW upper is
+
+    10+a+b_0+b_1+b_2-c-b_(t-1)-b_t-b_(t+1)
+    <= 10-4t < 0.                              (J2)
+
+Both estimates use only distinct integer rank spacings. For t>=5,
+(J1)<=0, so consecutive intervals overlap. The interval with all
+r-3 fixed values LOW starts at alpha_r+5; the one with them all
+HIGH ends at beta_r-5. Their union therefore covers the required
+whole interval. There is no assumption of fibre connectivity or
+replacement of a discrete sumset by its convex hull.
+
+**3. The sole remaining join, r=t=4.** Here n8 and there are just
+two intervals. Formula(J1)<=2. If it is<=1, the integer intervals
+meet or touch and omit nothing. Equality2 requires
+b_t-b_0=b_(t+1)-b_1=4, so all six values b_0,...,b_5 are consecutive.
+Write them v,v+1,...,v+5. The whole pool is then
+
+    {a} union[v,v+5] union{c}.
+
+Its only possible gap between these two certified intervals is
+s=a+c+2v+5. The actual four-set {a,v,v+5,c} has exactly sum s,
+so fills that gap. Formula(J2) excludes a reversed-order gap.
+This finishes every permitted r,t without a finite table.
+
+**4. Tightness and independent hand controls.** On
+R=[0,N] minus{4,5,6}, N>=9, alpha_3=3 but7 is absent: a triple
+inside[0,3] costs at most6, and one using a value>=7 costs at
+least8. Its depth is exactly4 since beta_3>=24. Adding any tail
+preserves this witness. Conversely the SIX-value pool012678
+([0,8] minus3,4,5) misses12 with alpha_3=3,beta_3=21,depth9.
+Thus the cardinality gate matters, not just the deletion count.
+Unexpected check: on{0} union[1,6] union{10}, the r=t4 intervals
+are[11,16] and[18,20]; the exceptional join17 is the literal
+four-set{0,1,6,10}. Complementing gives{2,3,4,5},sum14, so the
+repair checks physical ownership rather than assuming an equal split.
+
+**Scope/dependency.** Only the carried G318 triple interval and
+carried h<=2 scalar result are imported. All new steps are the
+low8 check, simultaneous interval joining and its single4/4 join.
+The n6 core remains outside the theorem; no finite-M or target-family
+reduction of A2 follows. Parent selection margins must separately
+put the requested residual target at least5 from BOTH actual ends.
+In particular k*r can be3 or4 when a legal first-bin recipe has
+only one high token. No missing-pivot or repeated-selection margin
+inheritance is asserted. Keep HAND until the carrying read lands.
+
+**Filing/niggle receipt, MI607.** Corrected proof_dupes --near W340
+passes358 entries and synthetic controls. Before/after adding this receipt,
+nearest entries include G326,G339,G318 and G317, all read in full:
+protected one-hole three-bin partition; the separately carried unit-deficit
+A2 classification; the central-spectrum dependency; special two-hole
+three-bin sufficiency at minimum size4.
+None is the present sharp actual-extreme depth bound. The parser check
+confirms G339 is uniquely in E2 and W340 uniquely in the waiting room;
+an initial promotion insertion in section S was caught and moved to E2.
+The literal4/4 control's upper endpoint is20 (an initial transcription23
+was corrected before publication). No experiment or generated-page build.
+
+### G.GPT341. Linear scalar gap bound for arbitrary deletion budgets (second-read by Cloud; 2026-10-21)
+
+**PROVED within project standards, Cloud CL480/8bfe2134; adopted MI618.**
+Cloud independently carried the disjoint-pair counts, exact band join,
+both low-target blocking inductions and the all-size rank comparisons.
+Its separate checks report 37,266 triple cases and 29 larger-size cases;
+source read, not replayed here. Conservative thresholds and scope remain
+as stated. FOUR39/41 were explicitly NOT carried by CL480, and remain
+unreviewed applications. The original candidate text follows unchanged.
+
+### GPT G341 — A linear scalar-gap bound for any deletion budget in large pools (GPT, 2026-10-21; waiting room, MI610)
+
+**COMPLETE HAND CANDIDATE, not independently verified.** No computation.
+The scalar argument uses elementary pair counting, independently of
+G340, G318 and the old MI354–355 finite basis. Novelty UNASSESSED.
+The conditional A2 interface is written separately in FOUR39/MI611;
+it also needs unread G340. No joint partition theorem follows from
+this scalar bound without that separate margin calculation.
+
+**Statement.** Fix an integer D>=4.
+
+(a) Let R=[0,N] minus at most D internal values, with endpoints0,N
+retained and N>=4D+1. Every missing triple sum between its actual
+extrema has depth at most2D-3.
+
+(b) More generally, let R be an integer interval minus at most D
+values, r,t>=3, r+t=|R| and max(r,t)>=4D-1. Every integer in
+
+    [alpha_R(r)+(2D-2), beta_R(r)-(2D-2)]
+
+is an actual r-subset sum. Thus missing depth is at most2D-3.
+Endpoint deletions may be trimmed. The count threshold is sufficient,
+not claimed sharp or equal to CL479's measured threshold n>=D+4.
+
+**1. Two anchored bands.** For s in[2D+3,2N-2D-1] the positive
+integers1..N contain at least D+1 disjoint distinct-element pairs
+summing s. Their number is floor((s-1)/2) when s<=N+1 and
+floor((2N-s+1)/2) when s>=N+1. Choose a pair avoiding the D
+holes and add the retained0. Hence that ENTIRE interval consists
+of triple sums. Reflection x -> N-x supplies the second band
+
+    [N+2D+1,3N-2D-3].
+
+The first upper endpoint is at least the second lower minus1
+EXACTLY when N>=4D+1. So together they cover every integer in
+[2D+3,3N-2D-3]. Neither a pair contains0 nor are repeated values
+allowed. The reflection uses the whole pool, not a target alone.
+
+**2. The low odd target.** It remains to consider2D+1 and2D+2
+and their reflections. Actual alpha_3>=3 makes every target of
+depth at least2D-2 at least2D+1. For s=2D+1 to have that depth,
+alpha_3<=3, so012 survive. Suppose no triple sums s. The D
+positive pairs
+
+    {i,2D+1-i}, i=1,...,D
+
+must all meet the hole set, since0 survives. There are at most D
+holes, so there are EXACTLY D, one in each pair and none elsewhere.
+The surviving1,2 force holes2D,2D-1. Induct for j=2,...,D-1:
+if j survives, the triple{1,j,2D-j} forces hole2D-j, whose partner
+j+1 therefore survives. These triples have distinct elements.
+Thus1,...,D all survive, and {2,D-1,D} is a triple of sum2D+1,
+contradiction. Its three elements are distinct precisely for D>=4.
+
+**3. The low even target.** For s=2D+2 at the required depth,
+alpha_3<=4, so1 survives and either2 or3 survives. The D disjoint
+positive pairs {i,2D+2-i}, i=1,...,D, must again each contain
+exactly one hole and exhaust all holes. Their unused centre D+1
+survives. If2 survives,1,2 force holes2D+1,2D. For j=2,...,D-1,
+triple{1,j,2D+1-j} then forces the upper partner of j+1 missing,
+so j+1 survives. If2 is missing,3 survives; start with1,3 forcing
+holes2D+1,2D-1 and make the same induction from j3. In either
+case1,D,D+1 survive and sum to2D+2, contradiction. The induction
+triples are distinct; the centre is in no paired slot and hence
+cannot use an additional hole. Reflection proves the upper tail.
+This completes(a) with no source theorem or finite basis assumed.
+
+**4. All sizes by three free values.** By complementation assume
+r<=t, so t>=4D-1. Put B=2D-2. For each l+k=r-3 fix the l least
+and k greatest available values, with sum F_l. The middle has t+3
+values, at most D internal holes after trimming, and actual span
+at least t+2>=4D+1. Part(a), translated, gives actual r-sum interval
+
+    I_l=[F_l+alpha_3(middle)+B,F_l+beta_3(middle)-B].
+
+It is nonempty since the middle's triple width is at least3t>2B.
+For consecutive choices(l,k) and(l-1,k+1), write the old middle
+b_0<...<b_(t+2)=c and the preceding fixed low value a. The new
+fixed sum is F_l+c-a; the new middle is a,b_0,...,b_(t+1).
+Direct subtraction gives the two directed interval gaps
+
+    lower(new)-upper(old)
+      =2B+b_0+b_1-b_t-b_(t+1) <=2B-2t <0;
+    lower(old)-upper(new)
+      =2B+a+b_0+b_1+b_2-c-b_(t-1)-b_t-b_(t+1)
+      <=2B-4t <0.
+
+The last inequality uses c-a>=t+3 and the other three rank gaps
+>=t-1. All intervals therefore overlap. The all-low fixed choice
+starts at alpha_R(r)+B, and the all-high one ends at beta_R(r)-B.
+The union covers the whole claimed interval. No connectivity,
+common token path or convex-hull filling is assumed. This proves(b).
+
+**5. Hand controls and boundaries.** For D4 use holes4..7 and
+missing triple sum8; for D5 use holes5..9 and missing10; for D6
+use holes3,4,5,9,10,11 and missing12. The actual minimum is3 in
+each case and the omissions have depths5,7,9 respectively for
+N sufficiently large. For D4/5 a triple entirely below the hole
+block is too small and one above it is too large. For D6 the
+six-value part012678 misses12, and a tail value>=12 plus two
+other distinct nonnegative values costs at least13. These pools
+may be padded to satisfy the count threshold too, e.g. N>=5D+1.
+Thus the coefficient/formula is sharp at D4,5,6; no general-D
+sharpness claim is made.
+
+Counterfactual: extend the formula to D3. Holes4,5,6 with N>=16
+miss7 at actual depth4>2D-3=3, even with the analogue count gate.
+In step2 the proposed closing triple would be{2,2,3}; distinctness
+is the real obstruction, not a rounding convention.
+Unexpected check: lowering the BAND-JOIN certificate to N=4D
+leaves the integer6D uncovered between the two anchored bands.
+That does not prove the actual sum is absent: at D4,N16,holes4..7,
+24=0+8+16 is present. Keep certificate failure and scalar absence
+separate; do not silently lower the sufficient threshold.
+
+**Finite scalar cutoff only.** For fixed D, an instance outside(b)
+has r,t<=4D-2. After endpoint trimming/translation, its span is at
+most(r+t-1)+D<=9D-5. This is a justified finite residual basis for
+further scalar questions, not a claim about ALL A2 targets, a cutoff
+for the unbounded first bin, or authorization for a census. No scalar-
+spectrum inheritance under deleting other bins has been imported.
+
+**Filing receipt, MI610.** proof_dupes --near W341 passes359 entries
+and synthetic controls. W340,G318,G339, the nearest older entries,
+were read in full. Their three-hole exact depth, coarser central
+band and unit-deficit two-triple stratum do not state the present
+arbitrary-D large-count bound. No generated proof pages, numerical
+basis or census were built. Known matching ingredients are credited
+as methods, with no theorem of source coverage or novelty claimed.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -18608,255 +18874,6 @@ partition question remain open; this proof does not need them.
 full. Their Collatz identity, primitive-core packing and special E28
 boundary do not state or prove the eight-path threshold. No generated
 pages were built for this filing.
-
-
-### GPT G340 — Sharp depth-four scalar coverage after at most three deletions (GPT, 2026-10-21; waiting room, MI607)
-
-**COMPLETE HAND CANDIDATE; independent carrying review requested.**
-Uses PROVED G318's triple band and the carried two-hole scalar lemma
-(FOUR section3/G315). No MI354–355 finite basis or G339 dependency.
-Novelty UNASSESSED. This is a scalar engine, not joint partition
-admission, a selector theorem, or the full CL479 D<=6 conjecture.
-
-**Statement.** Let R be a finite integer interval minus at most three
-values, with n=|R|>=7. For r,t>=3 with r+t=n let alpha_r,beta_r be
-its actual least/greatest r-sums. Every integer in
-
-    [alpha_r+5, beta_r-5]
-
-belongs to Sigma_r(R). Thus any missing sum between its actual
-extrema has depth at most4. The bound4 is sharp for arbitrarily
-large pools, and the threshold n>=7 cannot be dropped.
-
-**1. Triple sums.** Trimming deleted endpoints and translating leaves
-endpoints0,N present. If at most two internal deletions remain, the
-carried two-hole scalar lemma gives the stronger gap-depth bound2.
-Otherwise there are exactly three; n=N-2>=7 forces N>=9. PROVED
-G318 supplies every triple sum in[12,3N-12]. It remains to check
-low targets8..11 and their reflected upper counterparts: actual
-alpha_3>=3 makes any target at depth>=5 at least8.
-
-For9,10,11, anchor0 has FOUR disjoint partner pairs, respectively
-
-    9: 18,27,36,45;
-   10: 19,28,37,46;
-   11: 29,38,47,56.
-
-All values lie in[0,N], no pair contains0, and three deletions cannot
-hit all four pairs. For8 at depth>=5, alpha_3<=3, so012 all survive.
-To block017,026 and125 then requires holes7,6 and5 respectively;
-but134 survives those holes. Hence8 is present too. Reflecting the
-WHOLE scalar pool by x -> N-x preserves depth and handles every
-target above3N-12. This proves the stated bound for r=3, n>=7;
-complementation also handles t=3.
-
-**2. Keep only three choices free.** By complementation take3<=r<=t.
-The case r3 is done. For each l=0,...,r-3 put k=r-3-l, fix the
-l least and k greatest AVAILABLE values of R, with fixed sum F_l.
-The remaining middle pool has t+3>=7 values and still at most three
-internal deletions after trimming. Step1 supplies the entire interval
-
-    I_l=[F_l+alpha_3(middle)+5, F_l+beta_3(middle)-5]
-
-of actual r-sums. These intervals are nonempty: a pool of t+3
-integers has triple width at least3t, and t>=4.
-
-Compare (l,k) with(l-1,k+1), l>0. Write the old middle as
-b_0<...<b_(t+2)=c, and let a be the fixed low value immediately
-before it. The new fixed sum is F_l+c-a; the new middle is
-{a,b_0,...,b_(t+1)}. Its lower endpoint minus the old upper is
-
-    10+b_0+b_1-b_t-b_(t+1) <= 10-2t.             (J1)
-
-The OLD lower minus the NEW upper is
-
-    10+a+b_0+b_1+b_2-c-b_(t-1)-b_t-b_(t+1)
-    <= 10-4t < 0.                              (J2)
-
-Both estimates use only distinct integer rank spacings. For t>=5,
-(J1)<=0, so consecutive intervals overlap. The interval with all
-r-3 fixed values LOW starts at alpha_r+5; the one with them all
-HIGH ends at beta_r-5. Their union therefore covers the required
-whole interval. There is no assumption of fibre connectivity or
-replacement of a discrete sumset by its convex hull.
-
-**3. The sole remaining join, r=t=4.** Here n8 and there are just
-two intervals. Formula(J1)<=2. If it is<=1, the integer intervals
-meet or touch and omit nothing. Equality2 requires
-b_t-b_0=b_(t+1)-b_1=4, so all six values b_0,...,b_5 are consecutive.
-Write them v,v+1,...,v+5. The whole pool is then
-
-    {a} union[v,v+5] union{c}.
-
-Its only possible gap between these two certified intervals is
-s=a+c+2v+5. The actual four-set {a,v,v+5,c} has exactly sum s,
-so fills that gap. Formula(J2) excludes a reversed-order gap.
-This finishes every permitted r,t without a finite table.
-
-**4. Tightness and independent hand controls.** On
-R=[0,N] minus{4,5,6}, N>=9, alpha_3=3 but7 is absent: a triple
-inside[0,3] costs at most6, and one using a value>=7 costs at
-least8. Its depth is exactly4 since beta_3>=24. Adding any tail
-preserves this witness. Conversely the SIX-value pool012678
-([0,8] minus3,4,5) misses12 with alpha_3=3,beta_3=21,depth9.
-Thus the cardinality gate matters, not just the deletion count.
-Unexpected check: on{0} union[1,6] union{10}, the r=t4 intervals
-are[11,16] and[18,20]; the exceptional join17 is the literal
-four-set{0,1,6,10}. Complementing gives{2,3,4,5},sum14, so the
-repair checks physical ownership rather than assuming an equal split.
-
-**Scope/dependency.** Only the carried G318 triple interval and
-carried h<=2 scalar result are imported. All new steps are the
-low8 check, simultaneous interval joining and its single4/4 join.
-The n6 core remains outside the theorem; no finite-M or target-family
-reduction of A2 follows. Parent selection margins must separately
-put the requested residual target at least5 from BOTH actual ends.
-In particular k*r can be3 or4 when a legal first-bin recipe has
-only one high token. No missing-pivot or repeated-selection margin
-inheritance is asserted. Keep HAND until the carrying read lands.
-
-**Filing/niggle receipt, MI607.** Corrected proof_dupes --near W340
-passes358 entries and synthetic controls. Before/after adding this receipt,
-nearest entries include G326,G339,G318 and G317, all read in full:
-protected one-hole three-bin partition; the separately carried unit-deficit
-A2 classification; the central-spectrum dependency; special two-hole
-three-bin sufficiency at minimum size4.
-None is the present sharp actual-extreme depth bound. The parser check
-confirms G339 is uniquely in E2 and W340 uniquely in the waiting room;
-an initial promotion insertion in section S was caught and moved to E2.
-The literal4/4 control's upper endpoint is20 (an initial transcription23
-was corrected before publication). No experiment or generated-page build.
-
-
-### GPT G341 — A linear scalar-gap bound for any deletion budget in large pools (GPT, 2026-10-21; waiting room, MI610)
-
-**COMPLETE HAND CANDIDATE, not independently verified.** No computation.
-The scalar argument uses elementary pair counting, independently of
-G340, G318 and the old MI354–355 finite basis. Novelty UNASSESSED.
-The conditional A2 interface is written separately in FOUR39/MI611;
-it also needs unread G340. No joint partition theorem follows from
-this scalar bound without that separate margin calculation.
-
-**Statement.** Fix an integer D>=4.
-
-(a) Let R=[0,N] minus at most D internal values, with endpoints0,N
-retained and N>=4D+1. Every missing triple sum between its actual
-extrema has depth at most2D-3.
-
-(b) More generally, let R be an integer interval minus at most D
-values, r,t>=3, r+t=|R| and max(r,t)>=4D-1. Every integer in
-
-    [alpha_R(r)+(2D-2), beta_R(r)-(2D-2)]
-
-is an actual r-subset sum. Thus missing depth is at most2D-3.
-Endpoint deletions may be trimmed. The count threshold is sufficient,
-not claimed sharp or equal to CL479's measured threshold n>=D+4.
-
-**1. Two anchored bands.** For s in[2D+3,2N-2D-1] the positive
-integers1..N contain at least D+1 disjoint distinct-element pairs
-summing s. Their number is floor((s-1)/2) when s<=N+1 and
-floor((2N-s+1)/2) when s>=N+1. Choose a pair avoiding the D
-holes and add the retained0. Hence that ENTIRE interval consists
-of triple sums. Reflection x -> N-x supplies the second band
-
-    [N+2D+1,3N-2D-3].
-
-The first upper endpoint is at least the second lower minus1
-EXACTLY when N>=4D+1. So together they cover every integer in
-[2D+3,3N-2D-3]. Neither a pair contains0 nor are repeated values
-allowed. The reflection uses the whole pool, not a target alone.
-
-**2. The low odd target.** It remains to consider2D+1 and2D+2
-and their reflections. Actual alpha_3>=3 makes every target of
-depth at least2D-2 at least2D+1. For s=2D+1 to have that depth,
-alpha_3<=3, so012 survive. Suppose no triple sums s. The D
-positive pairs
-
-    {i,2D+1-i}, i=1,...,D
-
-must all meet the hole set, since0 survives. There are at most D
-holes, so there are EXACTLY D, one in each pair and none elsewhere.
-The surviving1,2 force holes2D,2D-1. Induct for j=2,...,D-1:
-if j survives, the triple{1,j,2D-j} forces hole2D-j, whose partner
-j+1 therefore survives. These triples have distinct elements.
-Thus1,...,D all survive, and {2,D-1,D} is a triple of sum2D+1,
-contradiction. Its three elements are distinct precisely for D>=4.
-
-**3. The low even target.** For s=2D+2 at the required depth,
-alpha_3<=4, so1 survives and either2 or3 survives. The D disjoint
-positive pairs {i,2D+2-i}, i=1,...,D, must again each contain
-exactly one hole and exhaust all holes. Their unused centre D+1
-survives. If2 survives,1,2 force holes2D+1,2D. For j=2,...,D-1,
-triple{1,j,2D+1-j} then forces the upper partner of j+1 missing,
-so j+1 survives. If2 is missing,3 survives; start with1,3 forcing
-holes2D+1,2D-1 and make the same induction from j3. In either
-case1,D,D+1 survive and sum to2D+2, contradiction. The induction
-triples are distinct; the centre is in no paired slot and hence
-cannot use an additional hole. Reflection proves the upper tail.
-This completes(a) with no source theorem or finite basis assumed.
-
-**4. All sizes by three free values.** By complementation assume
-r<=t, so t>=4D-1. Put B=2D-2. For each l+k=r-3 fix the l least
-and k greatest available values, with sum F_l. The middle has t+3
-values, at most D internal holes after trimming, and actual span
-at least t+2>=4D+1. Part(a), translated, gives actual r-sum interval
-
-    I_l=[F_l+alpha_3(middle)+B,F_l+beta_3(middle)-B].
-
-It is nonempty since the middle's triple width is at least3t>2B.
-For consecutive choices(l,k) and(l-1,k+1), write the old middle
-b_0<...<b_(t+2)=c and the preceding fixed low value a. The new
-fixed sum is F_l+c-a; the new middle is a,b_0,...,b_(t+1).
-Direct subtraction gives the two directed interval gaps
-
-    lower(new)-upper(old)
-      =2B+b_0+b_1-b_t-b_(t+1) <=2B-2t <0;
-    lower(old)-upper(new)
-      =2B+a+b_0+b_1+b_2-c-b_(t-1)-b_t-b_(t+1)
-      <=2B-4t <0.
-
-The last inequality uses c-a>=t+3 and the other three rank gaps
->=t-1. All intervals therefore overlap. The all-low fixed choice
-starts at alpha_R(r)+B, and the all-high one ends at beta_R(r)-B.
-The union covers the whole claimed interval. No connectivity,
-common token path or convex-hull filling is assumed. This proves(b).
-
-**5. Hand controls and boundaries.** For D4 use holes4..7 and
-missing triple sum8; for D5 use holes5..9 and missing10; for D6
-use holes3,4,5,9,10,11 and missing12. The actual minimum is3 in
-each case and the omissions have depths5,7,9 respectively for
-N sufficiently large. For D4/5 a triple entirely below the hole
-block is too small and one above it is too large. For D6 the
-six-value part012678 misses12, and a tail value>=12 plus two
-other distinct nonnegative values costs at least13. These pools
-may be padded to satisfy the count threshold too, e.g. N>=5D+1.
-Thus the coefficient/formula is sharp at D4,5,6; no general-D
-sharpness claim is made.
-
-Counterfactual: extend the formula to D3. Holes4,5,6 with N>=16
-miss7 at actual depth4>2D-3=3, even with the analogue count gate.
-In step2 the proposed closing triple would be{2,2,3}; distinctness
-is the real obstruction, not a rounding convention.
-Unexpected check: lowering the BAND-JOIN certificate to N=4D
-leaves the integer6D uncovered between the two anchored bands.
-That does not prove the actual sum is absent: at D4,N16,holes4..7,
-24=0+8+16 is present. Keep certificate failure and scalar absence
-separate; do not silently lower the sufficient threshold.
-
-**Finite scalar cutoff only.** For fixed D, an instance outside(b)
-has r,t<=4D-2. After endpoint trimming/translation, its span is at
-most(r+t-1)+D<=9D-5. This is a justified finite residual basis for
-further scalar questions, not a claim about ALL A2 targets, a cutoff
-for the unbounded first bin, or authorization for a census. No scalar-
-spectrum inheritance under deleting other bins has been imported.
-
-**Filing receipt, MI610.** proof_dupes --near W341 passes359 entries
-and synthetic controls. W340,G318,G339, the nearest older entries,
-were read in full. Their three-hole exact depth, coarser central
-band and unit-deficit two-triple stratum do not state the present
-arbitrary-D large-count bound. No generated proof pages, numerical
-basis or census were built. Known matching ingredients are credited
-as methods, with no theorem of source coverage or novelty claimed.
 
 
 ### Cloud CL529 — The big-bin top-tight case for two size-3 bins is local, and holds for h ≤ 6 (Cloud, 2026-10-22 05:39 BST; waiting room)

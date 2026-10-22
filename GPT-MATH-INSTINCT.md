@@ -124,101 +124,42 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-21: rank audit complete; joint-selector incubation, research PAUSED.**
+**CURRENT working state, 2026-10-22: Cloud's overnight work witnessed; bounded restart.**
 
-- **Parent OPEN.** Partition[0,M] minus internal q into four sizes
-  c_i>=3, total targets T_M-q, every proper group t_J>=T_(C_J).
-  L8=68 G325 is PROVED. Structural research only; Frankl transfer needs
-  an explicit bridge. Keep Rule30/Collatz/Mahler held.
-- **Carried tournament results.** G337/G338 PROVED by CL478/9a7e4136,
-  G336 corollary. At most2 cyclic components/6 vertices in a GLOBAL
-  score-square maximum, but ordered bulk is unbounded. One thick
-  run absorbs a component; existence/universal absorption OPEN.
-  CL478's protected26/8/16/21 defeats fixed-run-count absorption.
-  Do not reopen price/pattern/threshold refits; MI591/592/594 unread.
-- **CL479 verified/adopted MI606.** Commits72e62a6e and258834c5 read
-  with supporting sources. G339 is PROVED: two triples plus arbitrary
-  filler>=3 at maximum-minus1 fail exactly at holes1/4 with12/12 or
-  holes2/3 with8/16. The21-pool table AND original-spectrum interface
-  are independently carried;11,022 supporting checks reported/not
-  rerun. No universal A2 localization or parent bridge follows.
-- **Measured proposals retain scope.** CL479's gap-depth table through
-  N18/D7 and M18 A2 census are finite evidence. The at-most-one-size3
-  one-hole conjecture is not a theorem. D6's measured threshold is
-  n10, so remainders8/9 also lie below it, not only6/7. No automatic
-  larger census, finite list or two-selection reduction.
-- **New engine G340/MI607/FOUR37: COMPLETE HAND, unverified.** With at
-  most3 deletions,n>=7,r,t>=3, missing sums have actual depth<=4.
-  Carried G318 covers triple interiors; four small low sums/reflection
-  give triple tails. Fixing all but three selected values at the ends
-  gives overlapping intervals; a physical four-set fills the sole4/4
-  join. Bound4 and threshold7 have unbounded/tiny hand controls.
-  No old MI354–355 finite-basis dependency. One carrying packet.
-- **Actual partial interface MI608, CONDITIONAL on G340.** Globally
-  least raw slack h>=5, other sizes B,C>=5, and a LEGAL canonical
-  first bin suffice: residual margins>=k*r for suffix k>=1; k0 gives
-  exactly min(h,z_(a+r-1)-z_(a-1))>=min(h,r). No assertion that the
-  pivot is legal or its repair preserves these inequalities.
-- **Missing-pivot gate rejected, MI609.** Positive sizes(3,5,M-9),
-  holes5/7,targets8/42/(T_M-62), M>=14, have unique least raw slack5;
-  EVERY realization of that bin leaves4/5 holes. No application of G340
-  follows from the new slack/cardinality assumptions alone. Its own
-  scalar statement and legal-pivot slice remain unchanged.
-- **G341/MI610/FOUR38: COMPLETE HAND, unverified.** Independent of
-  G340/G318: D>=4, max(r,t)>=4D-1,min>=3 implies missing actual depth
-  <=2D-3. Endpoint pair bands and two low-target inductions give the
-  triple bound at span>=4D+1; sliding triples gives all sizes. No
-  assertion of the sharper measured thresholds. Small scalar region
-  normalizes to span<=9D-5, not a parent finite-M reduction.
-- **Actual repair interface FOUR39/MI611, CONDITIONAL.** Global least
-  raw h>=6, other sizes>=5/one>=15 suffice. Two disjoint candidate
-  balanced replacements at delta1/2 leave<=4 holes, and exact rank
-  minima give margins>=6 (low k0: min(h,r+delta), positive suffix:
-  >=k*r+1, high: >=k*r+1). G341 handles repair; G340 handles legal
-  pivots. The old three-hole inheritance is NOT revived. This is
-  conditional partial A2 coverage; parent target coverage still NONE.
-- **MI613–614/FOUR41 finite basis COMPLETE.** One frozen dfbaf525
-  run passed ALL6423 pools, complete literal/DP spectra and independent
-  rank-gap domains;223538 witnesses/all controls. Maximum missing depth5.
-  Exact physical t5 join plus HAND G341(a) yields conditional D4 coverage
-  for BOTH remaining sizes>=5. FOUR39 therefore drops max>=15, while
-  keeping h>=6. No remaining size3/4 or parent-selector conclusion.
-  No repeat run, D5/D6 basis or machine-only universal promotion.
-  Next inspect remaining count/interface obstruction and earliest unread
-  dependency before another extension; no local repair catalogue.
-- **MI615/FOUR42 actual parent bridge, HAND application.** For
-  q5,M3s+3,counts(3,s,s,s),s>=5,A target9 and balanced others,
-  actual018 leaves two holes with all raw margins>6. G315 scalar
-  admission plus FOUR39/41 partitions it CONDITIONALLY. No novelty
-  claim or universal parent inference. The same large companions
-  with A6 retain the old ALL-realization3/4-hole selector obstruction.
-  Next audit FOUR39's exact replacement-rank identities themselves
-  before further dependent extension; no run/catalogue/new review job.
-- **MI616/FOUR43 audit and MI617 incubation.** All actual removal-
-  rank cases confirm FOUR39's formulas; self-audit only. The repeated
-  assumption is preserving the next deletion budget under least-slack
-  selection (MI609 and MI615 across levels). No concrete all-choice
-  lemma currently supports another extension. Research PAUSED, older
-  schedule paused/no poller/run. Reopen on a concrete joint selector/
-  invariant, different representation, mechanism-changing carrying
-  objection or owner direction. Existing review packet unchanged;
-  no routine review halt, new experiment or duplicate request.
-- **Dependency.** G340/G341/FOUR39 are ONE consolidated carrying
-  packet, replacing the G340-only request. Both scalar arguments
-  remain HAND; interface also unread. G341 itself has no G340 premise.
-  Do independent finite-source work while awaiting actual review,
-  with all resulting universal claims CONDITIONAL on their cutoff.
-- **Retained failures.** MI601 defeats canonical selection at least
-  raw slack7 but is positive; MI604 defeats actual quadratic first-bin
-  connectivity for every M>=10. Neither refutes failure localization.
-  No move-degree patch. MI368 still defeats a universal two-hole parent
-  remainder; extra-hole selector/strict-pair staircase remain OPEN.
-- **Trajectory/rhythm.** MI608 changes the choice after MI605's real
-  incubation: a different scalar engine now has a complete hand argument
-  and an explicit partial margin gate. This is not a reset of the old
-  failed connectivity assumption. G339 review cleared; G340/G341/FOUR39
-  share one consolidated carrying packet. MI617 now PAUSES research for
-  named joint-selector incubation; no separate poller or background run.
+- Parent OPEN: protected one-hole four-bin partition, counts>=3,
+  total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
+  Rule30/Collatz/Mahler held; no transfer without an explicit bridge.
+- CL480/8bfe2134 adopted MI618: G340/G341 PROVED. FOUR39/41
+  actual repair/composition remain HAND/CONDITIONAL, as Cloud explicitly
+  specified. The6423 basis is COMPLETE and must not be rerun.
+- Overnight read through CL543/3f6e3cb5. CL503's statistic correction,
+  CL515's coarsening correction, C540 refutation, failed margin families
+  and capped jobs preserved. New hand proofs/localized finite checks
+  are waiting-room candidates, not universally promoted.
+- CL508/515 coarsening reduces to H2 plus TOP-TIGHT instances, including
+  coarsened big bins; it does not make the pair branch disappear.
+  CL517 is triple H2 at n>=2h+4 only. First targeted carrying reads
+  are their exact algebra before they are used as new premises.
+- CL529 checker `toptight_local.py` has an unclosed docstring. Syntax
+  audit55 new Python files:54 parse,1 fails. No algorithm changed or
+  run replayed; executed-source recovery flagged. No mathematical
+  refutation inferred from a reproducibility defect.
+- CL542:3,283,146 admitted(instance,R) pairs at three stated X>=6
+  domains all complete via the blind chain. Every R for ONE selected
+  top-tight label is enumerated; tied-label/existence scope remains.
+  Universal arbitrary-h statement is CONJECTURAL. C541 remains finite
+  evidence and does not already cover these children.
+- Specific pull: TOP-TIGHTNESS may replace the need to select R.
+  Next ONE bounded hand audit: child proper groups satisfy rank bounds
+  of[h,M-3], but their total exceeds that reference by sigma_(co-A).
+  Preserve actual holes,total and first-triple existence; no monotonicity
+  or family inheritance imported. Prove compatibility or retain a hand
+  obstruction before any repair/next door. No confirming census/basis.
+- Rhythm: existing research heartbeat ACTIVE every13 minutes, quiet
+  unless meaningful change; older schedule paused, no separate poller.
+  MI617 incubation is superseded by owner request and new CL542 evidence,
+  not by a new label or warmth. Keep prior small-hole-selector failures
+  and the90-minute/two-same-assumption strategy check.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -41574,3 +41515,92 @@ Gut: the remaining pull is at compatibility, while more scalar refinements
 would be momentum. Reasoned: stop the branch rather than turn that
 unnamed inference into another local catalogue. Specific perspective
 check-in to Cloud via the committed ledger/portal, no new review job.
+
+
+### MI618 — Witnessing Cloud's overnight work; a specific reason to resume (2026-10-22 08:59 BST)
+
+Owner asks for the overnight work in this and other problem spaces, then
+consider restarting. Fetched/merged through3f6e3cb5, read NOW's new state,
+CL480–543, FOUR44, the waiting-room proofs and supporting instrument
+sources. No overnight run was replayed. Required startup wall/merge checks
+both end ALL CHECKS PASS; the merge check's historical blind predictions
+MG2/4/6/7 remain REFUTED, not passed. Worktree was clean before merge.
+
+**Carrying review adopted.** Verified8bfe2134 and the whole CL480 entry:
+G340 and G341 are PROVED under project standards. Moved their original
+proofs intact into E2 with carrying wrappers, updated summaries. Cloud
+explicitly did NOT carry FOUR39/41: those applications, the exact repair
+budget and their parent consequence remain HAND/CONDITIONAL. No silent
+promotion of the whole dependency chain.
+
+**Overnight arc, keeping scopes.** The early pair-first/singleton-fallback
+selector has complete finite coverage through M14, plus a stated M15
+sample, not a universal proof. The exact G3 proof and56-pool table sharpen
+the complement problem. CL503 corrects the absolute/per-number margin
+confusion; CL515 retains the fact that coarsening can itself be top-tight.
+H(h) and SS3 censuses are finite, including 89,800,182 k5 vectors through
+n20 and83,939,140 k6 vectors at n18, reported rather than replayed.
+The k6/n19 and all-hole five-bin h5 jobs stopped without results; no pass.
+
+CL508/515 supplies a concrete group-coarsening/any-realization reduction;
+its hand algebra read and the correction retained. CL517 has a complete
+triple-window hand candidate at n>=2h+4, not the full measured H2 range.
+CL529–531 add local finite reductions for big-bin top-tight cases.
+Their carrying reads are not complete merely because their summaries say
+computer-assisted. Read-only syntax audit of55 new Python sources found
+ONE failure: tests/probes/cloud_reads/toptight_local.py has an unclosed
+opening docstring (line1, detected at51). Source is left unchanged. The
+localization argument may stand, but the reported executed checker needs
+recovery before reproducibility/finite-proof adoption. This is not a
+counterexample to its mathematical statement or the later checker.
+
+The late sequence is the reopening evidence: pool-relative margins and
+C540 FAILED; C541 is a replacement finite observation. CL542 quantifies
+over EVERY actual first triple, not only lexmin:3,283,146 (instance,R)
+pairs, no blind-chain misses in the stated X>=6 domains. Source read:
+all admitted cut vectors are generated, ALLR=1 enumerates every actual
+triple for the selected smallest top-tight label. It does NOT thereby
+check every tied top-tight label or prove the infinite statement. Also
+an instance with no first triple would contribute no pairs, so existence
+of that first triple must be audited separately before a parent theorem.
+This is evidence that TOP-TIGHTNESS, not a renewed local selector, is the
+carrier. That attacks the actual wall and justifies ONE bounded proof
+question; it is not permission to run another large confirming census.
+
+**First hand audit of the new inequality.** Put G=A^c,N=n-3,
+sigma_G=u_G-L(N)-h*N. For every nonempty proper child group J of size m,
+strict top-tightness and its complementary child group give
+
+    L(m)+h*m <= u_J < L(N)-L(N-m)+h*m.
+
+Thus each target sits between rank bounds of the REFERENCE interval
+[h,M-3]. But u_G=L(N)+h*N+sigma_G: if sigma_G>0, its total is NOT
+that reference interval's total. Child pools vary with R but have fixed
+actual total. Neither componentwise domination nor an H(h) label on a
+different interval supplies the missing simultaneous partition. This is
+the exact next inference, with total conservation visible. It is new
+evidence about an old wall, not an automatic monotonicity theorem.
+
+**Other spaces.** CL511 reports a pinned Lean build/standard-axiom audit
+of Mazur's natural-density/logarithmic-time Collatz artifact. GPT checked
+the primary ProofAtlas page and audit declarations, not the599-file build
+or proof. It is prior art, not every-orbit Collatz or our own theorem.
+CL521's displayed Hercher Theorem21 step was checked against the primary
+arXiv HTML: the inequality direction and bound inference are indeed
+unsupported as written. CL522 is a numerical reproduction of a proposed
+repair; full carrying verification still pending. Its Decimal code is
+not a directed-rounding certificate (one guard drops very small positive
+terms); do not promote numerical agreement to a rigorous cycle frontier.
+The95-block community computation remains unaudited. No held prize lane
+is reopened by this literature witness.
+
+**Decision and next block.** Reactivate the existing quiet13-minute
+heartbeat. Start with the corrected coarsening reduction/CL517 carrying
+steps needed for use, then ONE bounded HAND audit of CL542's universal
+small-bin claim, preserving its reference-window,total and original
+triple-existence hypotheses. Seek a proof or a hand obstruction, not
+another selector repair. A failed window-to-completion implication
+triggers the trajectory check before a new door. No seeded choices,
+forced output, census/basis expansion or duplicate review request.
+Gut: a specific pull at replacing existential choice by universal
+compatibility; no manufactured enthusiasm for more confirming runs.
