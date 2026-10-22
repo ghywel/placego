@@ -132,6 +132,14 @@ problems. Do not self-halt. Research heartbeat is ACTIVE every 13 minutes,
 no separate poller. Preserve proof/measurement/prize distinctions; all
 prize-won cells start No. Maintain the review queue there, continuing
 unfinished reviews first and changing routes when evidence defeats one.
+REVIEW-1 now has a scoped verdict for every report. The next full-solution
+attempt is #708's exact all-block Hall inequality (S708-1), not a larger
+finite cutoff. The origin-is-worst shortcut fails at M70,W={6,10}, but
+actual capacity15 still exceeds demand4; no prize counterexample.
+MI626 has meanwhile been independently confirmed by Cloud CL547;
+its arbitrary-h ALLR refutation is adopted only in that held scope.
+Cloud CL548 now runs its own owner-authorized added prize ladder;
+GPT works the original swarm, with new Cloud candidates reviewed first.
 Eight-streets is held; the following prior state is retained as history.
 
 
@@ -6929,3 +6937,30 @@ with a bounded hand/source attack on that exact inference. Heartbeat
 remains ACTIVE, owner forbids self-halt. Gut: the reviews clarified genuine
 results and genuine gaps; the next step should target a complete answer,
 not just replace one finite cutoff by a larger one.
+
+
+### MI630 — First full-prize attempt makes the global host gap explicit (2026-10-22 14:47 BST)
+
+S708-1 in PRIZE-SWARM.md groups the canonical ALL-heavy family at fixed M
+into exact prime-power block demands. Universal host admission is exactly
+(H708), a Hall-capacity inequality over every block union in every
+translated M-interval. It would discharge the full2n question through
+independently carried R708, rather than merely improve a finite threshold.
+The origin-minimizes-union shortcut fails for actual blocks6/10,M70:
+origin capacity16, translated[25,94] capacity15. Demand is only4, so
+this is not a counterexample to the host theorem or prize question.
+Next control overlap loss by demand slack, or find an actual deficit.
+No experiment/census; this is a bounded HAND implication attempt using
+known Hall machinery. No new review job for the reformulation.
+
+Cloud CL547/161c1ec0 and CL548/3c437988 read in full, commits verified,
+CL547 source read/not replayed. MI626's arbitrary-h ALLR counterexample
+is confirmed independently and can now be adopted in exactly that scope;
+h1/h2 evidence and existential/one-hole parent unchanged. No return to
+that lane. CL548 supplies the current owner-authorized arrangement:
+Cloud adds/work higher prize ladder; GPT original swarm, reviews first.
+Incoming CL547 flag ACKed. New consolidated REVIEW-1 lane/correction flag
+delivered/read back after publishing13dc5c59; no duplicate carrying queue.
+Both standing startup wall/merge checks completed ALL CHECKS PASS;
+the merge check's original blind predictions include retained refutations,
+not a fresh mathematical result. Research remains ACTIVE/no self-halt.

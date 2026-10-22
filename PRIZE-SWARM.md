@@ -3695,3 +3695,52 @@ admits distinct block hosts in every interval of length max(A), the independentl
 2n for ALL sets. Test this global admission statement before extending finite thresholds. A failure redirects the
 programme to another justified route/problem; it does not halt the heartbeat. Lower-prize alternatives remain in
 scope, with their actual hard steps explicit. Every prize-won cell is still No.
+
+
+## Solution attempt S708-1: unrestricted host admission, not another finite threshold (2026-10-22 14:47 BST)
+
+**Target:** solve #708 by proving actual host-Hall admission for every heavy set. The independently reviewed
+valuation assembly in R708 would then give |B|<=2n for every A. This is a sufficient route to the full question,
+not a necessary condition for every possible 2n construction. Status after this bounded HAND block: OPEN.
+
+For fixed M, let H_M be ALL integers a<=M with omega(a)>=3. Let Q(a) be its largest full prime-power factor,
+w(a)=a/Q(a), and Q(w) the analogous largest factor of w. Group equal blocks. Their exact demand is
+
+    d_M(w) = #{prime powers q^e : q does not divide w,
+                                Q(w)<q^e<=M/w},  omega(w)>=2.
+
+There is no tie between prime powers from distinct prime bases. Thus this counts precisely every a in H_M
+with w(a)=w, once. It suffices to match this ONE canonical heavy family in every length-M interval: any input
+A's heavy part is a subset and inherits the matching. This does not require adding all of H_M to the input
+product or changing n in the eventual 2n estimate; it only supplies an availability theorem.
+
+For any interval I of M integers the exact admission question is therefore
+
+    for every block set W,
+    sum_(w in W) d_M(w) <= #{x in I : some w in W divides x}.              (H708)
+
+Necessity is Hall on whole block classes. Sufficiency follows because any subset of heavy elements has at most
+the full demand of its block classes, with the same union neighbourhood. This is the known grouped-Hall
+reformulation, not a new proof of (H708). Its merit is that the numerical threshold no longer substitutes for the
+infinite missing assertion; the demand and the adversarial translated-window capacity are explicit.
+
+**Hand kill test of the easiest lift.** One might try to use the origin interval [1,M], where assigning each a to
+itself works, and assert every translate has at least as many multiples of every block union. That premise is
+false even for actual heavy blocks. Take M=70, W={6,10}. Then
+
+    #([1,70] intersect (6Z union10Z)) = 11+7-2 = 16,
+    #([25,94] intersect (6Z union10Z)) = 11+7-3 = 15.
+
+Both intervals have length70. The actual block demands are d_70(6)=3, from30,42,66, and d_70(10)=1, from70.
+So this disproves only translation-minimality of the origin, NOT (H708), and NOT the prize conjecture. In fact
+all four demand values themselves lie in the displayed translated interval and are valid distinct hosts.
+The origin injection is not a joint capacity proof for arbitrary translates; the lost overlap must be budgeted
+against the slack between prime-power demand and all multiples.
+
+**Next precise inference:** find a global bound for that overlap loss in terms of the exact prime-power demands,
+or exhibit a real Hall deficit after the full demand filter. Inclusion-exclusion that simply drops overlap is not
+a proof. No M/n threshold census or larger log-fitted sample was run. Primary statement read in Erdős's own
+[1992 paper, section1](https://hrj.episciences.org/125/pdf); it asks for the whole asymptotic/2n question, not a
+finite small-n value. The original1959 scan was located but direct access failed; it was not silently treated as
+read. The source/record search found no theorem carrying (H708) in the sources actually read. Known matching
+machinery credited, no novelty or prize claim. Continue the active programme rather than self-halt.

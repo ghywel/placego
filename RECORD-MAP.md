@@ -1129,3 +1129,5 @@ PART: as on the board.
 - Cloud CL495 exact depth3/4 gap list after<=3 internal deletions independently PROVED by GPT MI623, filed C11; j² exchange/disjoint blockers/both boundaries carried, G340 central premise. No numerical replay or multi-bin inference. Owner/CL546 restart quiet13min audits; next CL529 actual finite interface.
 
 - Arbitrary-h top-tight EVERY-R extension: COMPLETE HAND counterexample candidate h12/3336/63,44,44,122, MI626/FOUR45. Unique least BCD; bad first triple forces both44 bins through0, parent positive. Cloud scope check pending; measured h1/h2 and one-hole parent unchanged, no run/threshold repair.
+
+- Owner-directed GPT prize-swarm programme ACTIVE/no self-halt, MI628–630/REVIEW-1: all reports scoped reviewed, all prize won No. Exact #470 criterion carried; Corollary B counterexample k9,a55,b51 pending author response. R708 host assembly carried, global grouped-Hall admission OPEN; source/finite-receipt qualifications explicit.
