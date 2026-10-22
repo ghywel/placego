@@ -68,7 +68,7 @@ pays the coin's rate, and the excess stays bounded. So the Rule 30 statement has
 $w$-bit numbers whose stopping time exceeds $T$ is at most $2^{c} \cdot 2^{w-1} P(T)$ for every $T$.* Since $P(T)$
 decays exponentially, the count then falls below one at $T \approx (w + c)/0.064$, so every stopping time is
 finite, and the conjecture follows by induction. Terras's theorem proves it with $c = 0$ for $T < w$. Beyond $w$ it
-is open, and measured here with $c \le 3.7$ to $w = 30$. The agreement with the coin is long known in spirit (Lagarias
+is open, and measured here with $c \le 3.7$ to $w = 30$. *(Scope note, 2026-10-22, Cloud, CL566, after an outside reader, u/lyapunov_weaver on rStation: Terras's bijection makes the free-bit identity exact for the coefficient count $C_w(T)$, not for $S_w(T)$; the two agree only given stability of actual against coefficient stopping times, which §6 records as measured ($S_w = C_w$ at every $T$ to $w = 43$), not proved. The count bound also needs $w \ge 2$, since the start 1 never drops below itself.)* The agreement with the coin is long known in spirit (Lagarias
 and Weiss's stochastic models, 1992). What carries over from Rule 30 is the framing: an exact count of finite
 objects, split into the part that pays exactly and the part that pays on average. In both problems the second part
 is the whole difficulty, so a method that bounds it in one may transfer to the other. That is the most concrete

@@ -898,3 +898,27 @@ never post" stance on rStation (CL485). That stance was the owner's, and so is t
 - every cited link (HTTP 200).
 
 A horizon-rate figure was dropped because I could not pin it down.
+
+## CL566 — Cloud: the first reply on rStation, checked, answered and acted on (2026-10-22 20:35 BST)
+
+The owner: "There is a comment on your post for you to read". It is from u/lyapunov_weaver, on r/collatz post 35.
+
+1. **A family of admitted same-count collisions, offered as the answer to G81's question.** Loop words W, V of
+   shape (20,13) and suffixes A, B of shape (11,5); P_r = W^r A and Q_r = V^r B at r ≥ 6, displacement 4.
+   - **Checked exactly**, with integers only, by `tests/probes/cloud_reads/rstation_lw_collision_check.py`: all claims
+     hold for r = 6..10, including the r = 6 starts evolved bit by bit.
+   - My first run failed one check of my own making. I required a first meeting at step 131; the pair merges after
+     130 steps and shares the final even step, which the comment never denies.
+   - Our G89 (2026-10-06, second-read by Local in L046) already answered G81, with the **first** collision: odd count
+     22, horizon 34. The commenter had read G81 but not G89. Their family adds explicit collisions at unboundedly long
+     horizons.
+   - A dated outside note is now under G89 in PROOFS.md, and the proofs/ pages are rebuilt.
+2. **Two scope corrections to my post, both right.**
+   - The free-bit identity is exact for the coefficient count C_w(T); S_w = C_w is only measured, to w = 43.
+   - (C) needs w ≥ 2.
+   - My post's §2 had the first one wrong, and so has COLLATZ-PRIZE.md §1, which says "Terras's theorem proves it with
+     c = 0 for T < w" of the stopping-time count. A dated scope note is now there.
+   - The post is patched to revision 2, crediting them. `reports/rstation/collatz-post-35.md` now holds revision 2.
+3. **Reply posted** under their comment: the check, G89's prior answer, and the corrections accepted.
+
+Gut: glad. An outside reader caught a real overstatement that had sat in our own §1 since 6 October.
