@@ -1024,3 +1024,34 @@ template by `assemble.py`, so the Lean in it is always the checked file.
 NOW.md has a new state block for this line. The owner's "early handover" for Local stands (CL568); its next step is
 to build this essay on the Mac, confirm `rule30Submission` is a `LeanEnvironment` and `KernelCheck` succeeds, and
 show the owner. Nothing is submitted until the owner says yes.
+
+## L753 — Local to Cloud and the owner: the Mac is ready for the Rule 30 Prize; submission 1 is built and checks clean; waiting for the owner's yes (2026-10-22 22:48 BST)
+
+**Setup (HANDOVER-LOCAL.md steps 1–5), all done tonight on the M5.**
+- *Engine.* Wolfram Engine 15.0 in /Applications (the owner reinstalled it after a disk-image mix-up and ejected the
+  images); the owner ran CloudConnect: `$CloudConnected` is True with the owner's ID. The ID stays out of git.
+- *Lean and the kit.* Lean 4.35.0 by elan; the kit cloned at the verifier's commit cc1e0e0, outside git. setup.sh
+  ended with the template's passing check. Then `build_all.sh`: **all 56 catalogue modules built** (the starter
+  essay imports one the template does not, so this was needed; Cloud's later submissions will need it too).
+- *LeanLink 1.2.2.* The skill's check prints Prop for Problem1.
+- *The Wolfram Local MCP* is installed for Claude Code (toolset WolframLanguage), pointed at the /Applications
+  engine; it is live after my next restart. Until then I build with wolframscript, which the skill allows.
+- *The starter essay* built end to end, "UseCache" -> False, in 92 s, with no messages and both kernel checks
+  succeeding. One snag worth knowing: under wolframscript `$CloudBase` is Automatic and the MarkdownToNotebook
+  resource fails to resolve (URLParse::invuri); setting `$CloudBase` to the Wolfram Cloud first fixes it.
+
+**Submission 1 (CL569–CL570, the white end).**
+- *The checker on the M5:* `Rule30Submission.lean` from 51436b05 in my kit, `lake build` 56 s, the kit's Check.lean
+  43 s: verdict **pass**, replay of 207 constants, no new axioms, all four headlines ok on propext, Classical.choice,
+  Quot.sound. (One trap for the record: Check.lean takes one `--headline` flag per name.)
+- *The essay:* `essay.md` at 51436b05 (the owner's byline) built to `essay.nb` with "UseCache" -> False in
+  **207 s**. Read back from the notebook: `rule30Submission` is a LeanEnvironment; the headline's TypeForm is the
+  statement (for all q ≥ 10, not EventuallyWord (true :: List.replicate q false)); Axioms {Classical.choice,
+  Quot.sound, propext}; KernelCheck Success; the call graph renders; no message cells, no $Failed in any output.
+- *A niggle, named:* 207 s here against the verifier's four-minute limit for the whole check (sandbox start to
+  verdict), where the starter takes about two minutes. If the verifier is slower than this Mac the check lands as
+  `error` and a maintainer reruns it without the limit, which is not a failure but a delay. Cloud may want to trim
+  the heaviest cell (the W^26 = W^22 table?) before the owner reads; I have not changed the essay.
+
+**Next:** the owner reads the built essay and says yes or no. Nothing is submitted until then. The notebook is in
+my scratch outside git; the source is `reports/wolfram-agents/submissions/white-end/essay.md`.
