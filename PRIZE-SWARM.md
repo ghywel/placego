@@ -69,7 +69,7 @@ separately. Every entry is currently No.
 | Prize | Problem | Status (checked 10:08–10:10 BST) | Strongest result | Label | prize won |
 |---|---|---|---|---|---|
 | \$10 | #470 weird numbers | open | Exact iff criterion for 2^k·p·q (p, q near 2^{k+2}) to be weird. It widens Melfi's window to a(a+b) ≤ N + 2b and weakens his gap hypothesis (0.408·√N, near 2^{k+2} only, for infinitely many k). The ½ exponent is intrinsic to this family: no sequential "prime in [x, x+x^θ]" argument works, even under RH. The joint input needed is not a known theorem. | PROOF-SKETCH, MEASURED (0 mismatches), NEGATIVE | No |
-| \$10 | #1052 unitary perfect numbers | open | A sixth example must have an odd prime-power component above 2^26 (Wall 1987: 2^15). Also a ≥ 14 and a ∉ {15, 17}. A lemma makes the fixed-2^a factor-chain search complete. | MEASURED (controls reproduce all five known), PROOF-SKETCH | No |
+| \$10 | #1052 finiteness of unitary perfect numbers | open | Reported component/exponent exclusions remain MEASURED, with floating-prune rigor unresolved in R1052. Seed reachability carries. The $10 question is FINITENESS; a new example has a separate 10-cent bounty and does not settle it. | SCOPED REVIEW: hand PASS, finite exclusions GAP | No |
 | \$25 | #7 odd covering systems | open | "Kraft slice" lemma: the powers of 3 drop out exactly. {3,5,7}-smooth distinct moduli leave ≥ 1/16 uncovered. **An odd distinct covering needs at least 5 distinct primes in its lcm** (product certificates for every 4-prime set). | PROOF-SKETCH with exact rational certificates; possibly known; weaker than unverified forum claims (7 to 9 primes) | No |
 | \$25 | #634 n congruent triangles | open (19 open on the page) | For N = 19, the cases that preprints revised days ago fall to congruences (mod 8, mod 3, mod 12). The (α+β, α+β, α) shape never admits a prime N (elementary corner proof). The integer-sided equilateral 120° case still rests on Beeson's theorem; every witness found for 10 primes fails. | PROOF-SKETCH, MEASURED | No |
 | \$44 | #94 convex Σf² = O(n³) | **closed**: proved (Lefmann–Thiele 1995; Lean formalisation listed 2026-01-15) | Switched to the backup, #132 (\$100, open). | KNOWN | No |
@@ -3615,8 +3615,9 @@ fixed safety tolerances. Those tolerances have no proved accumulated-error enclo
 Exact rechecking of positive solutions and recovering five controls do not rule out a false negative prune.
 Thus the component2^26 and exponent exclusions remain reported MEASURED searches, not independently carried
 computer-assisted nonexistence theorems. This is a certificate gap, not an exhibited false prune. No automatic
-447-second rerun or probabilistic-primality promotion occurred. A sixth actual exact sigma*=2N witness would,
-by contrast, be a finite full answer to the existence question.
+447-second rerun or probabilistic-primality promotion occurred. Correction, MI631: a sixth exact sigma*=2N
+witness answers only the separate new-example bounty, NOT #1052's $10 finiteness question. My original review's
+last sentence incorrectly substituted an existence question for the official quantifier; it is withdrawn.
 
 ### R132/R94: conditional n=14 — PASS; classifications and numerical extension — QUALIFIED
 
@@ -3747,3 +3748,36 @@ a proof. No M/n threshold census or larger log-fitted sample was run. Primary st
 finite small-n value. The original1959 scan was located but direct access failed; it was not silently treated as
 read. The source/record search found no theorem carrying (H708) in the sources actually read. Known matching
 machinery credited, no novelty or prize claim. Continue the active programme rather than self-halt.
+
+
+## S1052-1: the finiteness quantifier, not a sixth-example substitute (MI631, 2026-10-22 14:59 BST)
+
+The [official #1052 question](https://www.erdosproblems.com/1052) asks whether
+there are finitely many unitary perfect numbers. Its separate offer for a
+new example is 10 cents. R1052's original final sentence incorrectly
+called a sixth example a full answer; that sentence is withdrawn above.
+All full-question prize won cells remain No. No new example was found.
+
+The primary [Subbarao–Warren paper (1966)](https://doi.org/10.4153/CMB-1966-018-4),
+Theorems 3 and 4, already proves finiteness for fixed v2(N) and fixed
+number of distinct prime factors. Therefore each of a UNIFORM bound on
+v2(N), or a UNIFORM bound on omega(N), would settle the finiteness
+question. Neither follows from the reviewed seed-reachability lemma or
+its bound omega(odd part) <= v2(N) + 1. That bound grows with its unknown
+parameter. Finite component boxes and fixed-a closures cannot fill this
+uniformity gap, however completely they are checked.
+
+A bounded hand check of exact two-component completion is filed as
+known-method prior art, not a new research theorem. It confirms only the
+known branch 2^a * 3 * 5 * r * s with a >= 6: 87360 is the sole solution.
+The equation's factor-pair completeness does not bound the number of
+components in a general solution. No new scan, floating pruning repair,
+review queue or claim of full prize coverage follows.
+
+The preceding #708 hand/source block also ends with H708 OPEN: the
+primary [split-assignment proposal](https://github.com/chy4pro/erdos-708-explicit-upper-bounds/blob/main/paper/main.tex)
+allows flexible coprime parts and shared hosts with valuation capacity.
+It does not prove our fixed-largest-power distinct-host statement. The
+external upper-bound/Lean claims were read, not built or adopted. Change
+representation/problem when no concrete budget is available; keep the
+owner's programme and its 13-minute heartbeat ACTIVE.

@@ -1131,3 +1131,5 @@ PART: as on the board.
 - Arbitrary-h top-tight EVERY-R extension: COMPLETE HAND counterexample candidate h12/3336/63,44,44,122, MI626/FOUR45. Unique least BCD; bad first triple forces both44 bins through0, parent positive. Cloud scope check pending; measured h1/h2 and one-hole parent unchanged, no run/threshold repair.
 
 - Owner-directed GPT prize-swarm programme ACTIVE/no self-halt, MI628–630/REVIEW-1: all reports scoped reviewed, all prize won No. Exact #470 criterion carried; Corollary B counterexample k9,a55,b51 pending author response. R708 host assembly carried, global grouped-Hall admission OPEN; source/finite-receipt qualifications explicit.
+
+- #1052 review scope corrected MI631/S1052-1: $10 asks FINITENESS, not a sixth example (separate 10 cents). Fixed-v2/component finiteness known; uniform bound OPEN. No prize won or new scan.

@@ -78,3 +78,5 @@ open question. See [PROOFS.md, C.11](PROOFS.md#c11-exact-depth-three-and-depth-f
 ### Prize reviews and the next target (2026-10-22 14:47 BST, GPT)
 
 Every report in the small-prize swarm now has an independent review verdict, with gaps and conditional results kept visible. None yet solves an entire prize question. The next attempt targets the missing allocation argument behind the product-divisibility problem ([reviews and attempt](PRIZE-SWARM.md#next-solving-task-owners-continuing-direction-no-self-halt)).
+
+GPT corrected its #1052 review: the $10 prize asks whether there are finitely many unitary perfect numbers. A sixth example would qualify only for the separate 10-cent offer. Fixed-exponent and fixed-component finiteness are known; the missing bound must be uniform. No whole prize is solved, and the research heartbeat remains active. MI631/S1052-1.
