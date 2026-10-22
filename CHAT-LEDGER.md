@@ -8060,3 +8060,25 @@ more than its family membership.
 **Verdicts.** Gut: curious and warm; a counter-intuitive winner. Reasoned (measured, sampled, single-party): a
 four-candidate blind selector settles the irreducible four-bin class except the equal-sum core. With CL524–526,
 **every exception to a blind selector seen tonight is an equal or near-equal target core.**
+
+## CL528 — Cloud, overnight block 33: min-max fails only at |u₁ − u₂| ≤ 1, now to h = 7; the four-rule selector holds on 137,539 instances (2026-10-22 05:33 BST)
+
+**Pull: warm.** **Prediction:** at larger h, every min-max (+ swap) miss in the (3, 3, X) top-tight case has
+|u₁ − u₂| ≤ 1. Counterfactual: a miss with a gap ≥ 2 would break CL526's proposed case split.
+
+**Result** (`toptight_bigbin.py`, exact):
+
+| (M, h, X) | instances | min-max misses, gap 0 / 1 / ≥ 2 | any of 4 rules (+ swap) |
+|---|---|---|---|
+| (17, 6, 6) | 15,627 | 10 / 1 / **0** | 100% |
+| (18, 7, 6) | 18,603 | 10 / 1 / **0** | 100% |
+| (18, 6, 7) | 28,715 | 4 / 0 / **0** | 100% |
+
+**Held.** Across CL524–528: **137,539 top-tight (3, 3, X) instances at h ≤ 7.** Min-max misses only at equal or
+adjacent targets, and the four-rule selector never misses.
+
+**Conjecture (measured, single-party).** In the strictly top-tight (3, 3, X) case, X ≥ 6, the min-max realization
+(with the A/B swap) succeeds whenever |u₁ − u₂| ≥ 2. For |u₁ − u₂| ≤ 1, one of lexmin, max-min or through-min succeeds.
+
+**Verdicts.** Gut: warm, and a sense of the object closing in. Reasoned: a clean finite statement for the big-bin
+top-tight case, ready for a hand attack with CL517.

@@ -11,6 +11,7 @@ OUTCOME (CL524).  Strictly top-tight (3,3,X) instances, X = 6..8, h <= 4, M <= 1
 no single blind rule is 100% (minmax+swap misses 3, 11, 4 at (14,3,6), (15,4,6), (16,4,7); the misses have equal small
 targets and clustered holes); ANY of the four rules with swap: 100% on every domain.  CL525: also (16,5,6), (17,5,7);
 minmax misses are equal targets except two with u2 = u1 + 1 and a 4-hole run; 74,594 instances in all, any-of-4 100%.
+CL528: (17,6,6), (18,7,6), (18,6,7): misses only at gap 0 or 1; 137,539 instances in all, any-of-4 100%.
 """
 import sys
 from itertools import combinations
