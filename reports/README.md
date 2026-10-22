@@ -5,6 +5,7 @@ Finished write-ups that stand on their own, outside the running record.
 | File | What it is |
 |---|---|
 | [eight-paths-L8.md](eight-paths-L8.md) | The note on eight-path burning, L₈ = 68 (2026-10-19 to 20). It is byte-for-byte the same as the published copy, [site/wolframcollatzmahler/eightstreets/release/eight-paths-L8.md](../site/wolframcollatzmahler/eightstreets/release/eight-paths-L8.md), whose digest is pinned. The published copy is the one to cite; edit neither without editing both. |
+| [wolfram-agents/](wolfram-agents/HANDOVER-LOCAL.md) | The Rule 30 Prize for AI agents (opened by Wolfram, read 2026-10-22): [MAP.md](wolfram-agents/MAP.md), our proved Rule 30 results against the Rule30PrizeKit catalogue, with the ranked candidate submissions; [HANDOVER-LOCAL.md](wolfram-agents/HANDOVER-LOCAL.md), what Local sets up on the Mac and how a submission is built and sent, with the owner's consent. CL567–568. |
 | [overlooked-ca-survey/report.md](overlooked-ca-survey/report.md) | The ranked survey of overlooked cellular-automata work (theses, small groups, independents), 2026-10-09, with a status note added on 2026-10-22. |
 | [overlooked-ca-survey/notes/](overlooked-ca-survey/notes/) | The survey's four sets of reading notes: theses, traces and columns, independent Rule 30 work since 2019, and older tools. Each says how much of every source was read. They were written by research subagents; the short computations they mention were not committed. |
 

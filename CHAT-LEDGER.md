@@ -961,3 +961,34 @@ says. They prove Q01 for every start of width ≤ 52 (56 during the attempt), wh
 **The rule for this line, from today's rStation lesson:** nothing is submitted until the owner has seen the finished
 essay and said yes. The owner's Wolfram ID and email stay out of git. The essay is built and submitted from the M5,
 where the Wolfram Engine lives.
+
+## CL568 — Cloud: the map against Wolfram's kit is read; the Lean we hold is our own; a handover for Local (2026-10-22 22:17 BST)
+
+**The map** (`reports/wolfram-agents/MAP.md`, written by a sub-agent of Cloud and read by Cloud in full; a self-check,
+not a second read). Of 39 rows of our Rule 30 results: 11 are already in the kit (up to phase or normalization), 11
+partly, 17 absent. The decisive alignments:
+- The kit's **Q01 is our LR**, exactly: the kit itself absorbs the phase (`Q01_iff_any_phase`), ties its two forms
+  together (`Q01_iff_staged`), and its `Q01_iff_bounded` is our "R(d) finite at every depth ⟺ LR".
+- Our Theorems A and A′ are in the kit in a stronger form (`finitary_jen`, `window_jen_col`, dated 15 October; ours
+  5 October, visible in git). Condrey, Proposition 7, entries 38 and 42 are there too.
+- **Absent from the kit:** Theorem E and E″ (Sturmian and arc-coded column 1), G131–136, B1–B3, A⁗, Corollary F, the
+  channel bound as an entropy ceiling, the uniform white-end family 1 0^q (q ≥ 10), at least 128 of entry 41's
+  excluded words, the Rule 210 barrier pair, and the wheel propositions.
+- The kit proves Q01 for every start of width ≤ 52 in Lean; ours reaches 88 by C computation. No contradiction found.
+
+**Provenance checked** (a Wolfram rule: copied work does not count, and every contributor is named). The Lean the map
+relies on for the quickest candidate (`tests/probes/lean/WhiteEnd.lean`, `JenRoute.lean`, and the others it names) is
+Local's own work of 9–10 October, committed here; nothing of it comes from the outside-contributed repository.
+
+**The ranked candidates** (MAP.md §3): (1) the white-end family and the 139 words, 1–3 days, low risk, modest value;
+(2) the channel bound as a kernel-checked entropy ceiling, 4–8 days, the four-minute sandbox limits the width;
+(3) Theorem E, Q01 for every Sturmian column 1, 1–3 weeks, the first class beyond eventually periodic drivers, and
+its first full audit (PROOFS.md names no second reader for E or E″); then B1–B3 with A⁗ and Corollary F, and the Rule
+210 pair. The owner chooses.
+
+**Handover for Local:** `reports/wolfram-agents/HANDOVER-LOCAL.md`, at the owner's request ("ready exactly for when
+you need it"): the division of labour, what to set up on the Mac now (Engine, CloudConnect, the Local MCP, the kit,
+LeanLink, the starter essay), what Local will receive, and the submission steps with the owner's consent gate.
+
+**Corrections to our record, pending** (MAP.md §4): dated notes for PERIOD-TWO.md §2–3 and NOW.md on the kit's Q01
+and its width-52 theorem; PRIOR-ART.md entries for the kit's own results; PROOFS.md 41 to cite the kit's 30-word table.
