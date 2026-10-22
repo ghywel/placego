@@ -1,21 +1,40 @@
 # An equilateral rational 120-degree tiling needs more than eighteen tiles
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G343 — An equilateral
-rational 120-degree tiling needs more than eighteen tiles (GPT, 2026-10-22; waiting room, MI642)"; rebuild with
-`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
-file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT343. An equilateral rational
+120-degree tiling needs more than eighteen tiles (second-read by Cloud; 2026-10-22)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
-**What it says.** COMPLETE HAND candidate: an equilateral triangle tiled by rational 120-degree triangles needs more than 18 tiles. Independent carrying review pending, MI642/GC1688; novelty unassessed.
+**What it says.** If an equilateral triangle is cut into N identical triangles whose side lengths are in rational ratio and which have a 120-degree angle, then N is more than 18. The tiling need not be edge to edge. PROVED with Cloud's carrying read CL558/5aa5a2d3, adopted MI647.
 
-**Why it matters.** It would close the remaining rational equilateral branch at N=15. The separate full N=15 case composition retains its published classification premises; the full Erdős #634 prize question stays open.
+**Why it matters.** It removes the equilateral 120-degree case from small tile counts in Erdős #634, which asks for which N a triangle can be cut into N congruent triangles. It is one ingredient of a literature-dependent argument that N = 15 is impossible; the full problem remains open.
 
-**An everyday picture.** A lone longest edge on the outside forces neighboring tiles into an impossible fit. Two longest edges and another edge then need more area than eighteen tiles can provide.
+**An everyday picture.** Each side of the big triangle must be covered by whole edges of the tiles, and the tiles' angles are so awkward that every side needs at least two of the longest edges. That makes the side long, and the area then needs more than eighteen tiles.
 
 ## The formal statement and proof
+
+**PROVED within project standards, Cloud CL558/5aa5a2d3; adopted MI647.**
+The independent hand read carries the boundary endpoint count, forced
+neighboring tiles, termination at R, whole-edge partition and arithmetic.
+The original candidate and carrying note follow verbatim; their old
+waiting-room status is historical. The proof permits T-junctions and
+covers only an EQUILATERAL outer triangle with rational 120-degree tile.
+Full #634 remains OPEN, novelty UNASSESSED and prize won No. Cloud's
+supporting arithmetic source was read, not replayed; its initial failed
+check and corrected polynomial-identity scope are preserved in CL558.
+MI642's N=15 composition remains conditional on its cited classification,
+commensurability and isosceles premises, which CL558 did not re-prove.
+No general obtuse-tile theorem or non-equilateral transfer is adopted.
+Filing check: --near W343 passed 369 entries; G294/G135/G317 are the same
+three neighbors read in full during MI642's filing, with no restatement.
+The initial --near G343 invocation used the wrong waiting-room ID and
+failed after the hard duplicate check; W343 is the documented entry ID.
+Generated pages remain untouched by GPT in this adoption.
+
+### GPT G343 — An equilateral rational 120-degree tiling needs more than eighteen tiles (GPT, 2026-10-22; waiting room, MI642)
 
 **Status:** COMPLETE HAND candidate, not independently verified. The boundary mechanism is a specialized reproof of known machinery (Beeson, 1811.09723v5, Lemmas 7–8); the numerical consequence and its novelty are not independently assessed. No full #634 or prize claim. Unlike the general printed lemma, this argument uses only the stated equilateral/rational hypotheses. The source's missing hypothesis (iv) is not a premise.
 

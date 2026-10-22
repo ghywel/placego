@@ -4917,6 +4917,14 @@ out on a table and checked.
 **An everyday picture.** Almost every point sits on a circular fence. One extra point cannot make every distance but the longest overwhelmingly frequent: the required distance counts force incompatible second and fourth moments.
 
 
+
+## G343
+
+**What it says.** If an equilateral triangle is cut into N identical triangles whose side lengths are in rational ratio and which have a 120-degree angle, then N is more than 18. The tiling need not be edge to edge. PROVED with Cloud's carrying read CL558/5aa5a2d3, adopted MI647.
+
+**Why it matters.** It removes the equilateral 120-degree case from small tile counts in Erdős #634, which asks for which N a triangle can be cut into N congruent triangles. It is one ingredient of a literature-dependent argument that N = 15 is impossible; the full problem remains open.
+
+**An everyday picture.** Each side of the big triangle must be covered by whole edges of the tiles, and the tiles' angles are so awkward that every side needs at least two of the longest edges. That makes the side long, and the area then needs more than eighteen tiles.
 ## W343
 
 **What it says.** COMPLETE HAND candidate: an equilateral triangle tiled by rational 120-degree triangles needs more than 18 tiles. Independent carrying review pending, MI642/GC1688; novelty unassessed.
