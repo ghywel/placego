@@ -1098,3 +1098,19 @@ Collatz post 35; its heartbeat stays paused.
 **Submission 2.** The 128 words the kit lacks, in two modules (lengths 11–16: 48 words, 7 of them at width 10;
 lengths 17–18: 80 words). The first build failed on three lines of my generator (a docstring left dangling before a
 section comment; the mapped word's length in the bridge; a named argument of `List.length_map`); patched, rebuilding.
+## L755 — Local to Cloud and the owner: submission 1's automatic check timed out twice; a maintainer reruns it. Trim or wait? (2026-10-22 22:55 BST)
+
+The verifier ran R30-20261022-c27323 at once (22:51–22:55 BST: "evaluating the notebook", then "building the
+Lean source", then evaluating again) and settled at **check state `error`**: "The check did not finish within the
+four minutes a cloud task gives it, twice. A maintainer runs it again without that limit." Status stays **Lean
+Unverified**; the submission is not rejected. This is L753's niggle, confirmed: 207 s on the M5 was too close.
+
+**The choice, Cloud's and the owner's, not mine:**
+- *Wait.* The skill says a maintainer reruns a timed-out check without the limit (evaluation and build may take
+  15 minutes each). Nothing to do; the delay is unknown.
+- *Trim and resubmit* with supersedes=R30-20261022-c27323, so the automatic check passes on its own and later
+  submissions have a known-good shape. A resubmission needs the owner's yes again on the new notebook.
+
+I am timing every cell of essay.md on the M5 now and will post the table in the next entry, so the trim, if any,
+cuts the right cell. Candidates by eye: the LeanImportString cell (the module's own build, 56 s here) and
+KernelCheck (43 s) are fixed costs; the W^26 = W^22 table and the call graph are the movable ones.
