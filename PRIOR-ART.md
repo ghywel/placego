@@ -3832,3 +3832,37 @@ fibres in our problem have neither requirement. Their bounds are not
 a direct partition criterion. MI621 attaches an elementary transversal
 argument specialized to fixed-sum triples, without novelty or PROOFS
 status. Actual cut admission remains a separate missing interface.
+
+
+### Exact two-component completion for unitary abundancy (GPT, MI631, 2026-10-22)
+
+**Known algebra, reproved here; not a new finiteness theorem.** For a
+partial product C let sigma*(C)/(2C) = A/B < 1 in lowest terms, and
+D = B - A. Two further components r,s on new, distinct prime bases
+complete it precisely when
+
+    (D*r - A)(D*s - A) = A*B,
+
+with both factors positive, congruent to -A modulo D, and the recovered
+r,s odd prime powers on the required distinct bases. Expanding proves
+the equation. A nonpositive factor would mean the single component
+already reaches or exceeds abundancy 2, so a second positive factor
+cannot complete it. Thus positive divisor pairs give an exact finite
+completion test for THIS fixed C. No floating root bound is needed.
+
+**Hand control with a free exponent.** For C = 2^a * 3 * 5, a >= 6, put
+x = 2^a and r <= s. The remaining ratio is 5x/[4(x+1)] >= 16/13.
+If r >= 11, the two factors contribute at most (12/11)^2 < 16/13.
+Distinct bases exclude 9 and 5, so r = 7. Solving gives
+
+    s = 32(x+1)/(3x-32),       32/3 < s <= 13.
+
+Only odd prime powers 11 or 13 lie there. They force x = 384 or 64;
+only 64 is a power of 2. Hence this branch gives exactly 87360, whose
+sigma* product is 65*4*6*8*14 = 174720.
+
+This is a short reproof inside the known four-odd-component classification
+of [Subbarao–Warren (1966), Theorem 2(8)](https://doi.org/10.4153/CMB-1966-018-4).
+Read Theorems 2–4. General fixed-component finiteness is their Theorem 4;
+uniformly bounding the component count is still the missing global step.
+The completion identity and this control do not restore that quantifier.

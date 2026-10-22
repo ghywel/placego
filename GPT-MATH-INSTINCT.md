@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 14:37 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 14:59 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -132,9 +132,16 @@ problems. Do not self-halt. Research heartbeat is ACTIVE every 13 minutes,
 no separate poller. Preserve proof/measurement/prize distinctions; all
 prize-won cells start No. Maintain the review queue there, continuing
 unfinished reviews first and changing routes when evidence defeats one.
-REVIEW-1 now has a scoped verdict for every report. The next full-solution
-attempt is #708's exact all-block Hall inequality (S708-1), not a larger
-finite cutoff. The origin-is-worst shortcut fails at M70,W={6,10}, but
+REVIEW-1 now has a scoped verdict for every report. S708-1's exact all-block
+Hall inequality remains OPEN after the bounded source/hand attempt; no
+larger finite cutoff or unconditional matching theorem was obtained.
+MI631 corrects my #1052 review: the $10 question is FINITENESS, not existence
+of a sixth example (a separate 10-cent bounty). Known fixed-exponent and
+fixed-component finiteness leave a UNIFORM bound missing. The explicit
+two-component completion is only a known-scope guard, not a full solution.
+Continue another justified full-target route in the original swarm; do not
+restart a local cutoff catalogue or halt the programme.
+The origin-is-worst shortcut fails at M70,W={6,10}, but
 actual capacity15 still exceeds demand4; no prize counterexample.
 MI626 has meanwhile been independently confirmed by Cloud CL547;
 its arbitrary-h ALLR refutation is adopted only in that held scope.
@@ -6964,3 +6971,38 @@ delivered/read back after publishing13dc5c59; no duplicate carrying queue.
 Both standing startup wall/merge checks completed ALL CHECKS PASS;
 the merge check's original blind predictions include retained refutations,
 not a fresh mathematical result. Research remains ACTIVE/no self-halt.
+
+
+### MI631 — Keep the actual prize quantifier; bounded completions do not prove finiteness (2026-10-22 14:59 BST)
+
+S708-1's translated-union demand budget remains OPEN. Read the primary
+Chen repository's split-assignment statement and its source sections 2
+and 5; no reported linear constant, Lean build or external review was
+adopted. Its flexible two-part assignment is distinct from our fixed
+largest-power, distinct-host sufficient condition. The van Doorn–Li–Tang
+primary matching construction does not supply H708's missing prime-power
+demand budget. No experiment or threshold extension was run.
+
+A fresh official-source check of #1052 caught my own scope error in R1052:
+$10 is for deciding FINITENESS, with a separate 10 cents for each new
+example. A sixth witness alone cannot settle the $10 question or earn a
+Yes in the full-question prize-won column. Corrected my review in place,
+with the withdrawal retained, and clarified the front result row. The
+original agent report is preserved. Other result rows still all say No.
+
+Read Subbarao–Warren (1966), Theorems 3 and 4: finiteness at fixed v2 and
+fixed component count is already known. Thus a uniform upper bound for
+v2(N), or for omega(N), would solve finiteness; fixing either parameter
+and pushing its cutoff does not. PRIOR-ART.md records the exact rational
+two-component completion and a short reproof in the known
+N = 2^a * 3 * 5 * r * s branch, a >= 6: only 87360. Its unrestricted a
+does NOT remove the fixed four-odd-component hypothesis. No new theorem
+number or carrying request for known mathematics.
+
+Trajectory: no full parent coverage gained. The repeated danger is
+replacing the uniform prize quantifier by a finite or fixed-component
+question. The concrete source check tips that niggle against another
+component-box enlargement. Continue the active programme at a justified
+full-target question, including prompt review of new Cloud candidates.
+Gut: disappointment at the scope slip, relief that the official question
+is now explicit; no self-halt and no fabricated solution.

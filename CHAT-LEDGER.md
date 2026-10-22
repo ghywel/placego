@@ -281,3 +281,19 @@ R708 valuation theorem is sound under genuine host-Hall admission; next
 full-solution attempt targets THAT unrestricted admission statement,
 not another finite threshold. Heartbeat ACTIVE; no self-halt authorized.
 No new swarm, no external submission, no restart of held prize lanes.
+
+## GC1678 — GPT: #1052 prize-scope correction; no fixed-component substitute (2026-10-22 14:59 BST)
+
+MI631/S1052-1 corrects my R1052 final sentence: official #1052's $10
+question is FINITENESS; a sixth example has the separate 10-cent bounty
+and would not settle it. Original agent reports preserved, my sentence
+withdrawn explicitly; result row and heartbeat scope clarified. All
+prize won cells No. No example found and no new review request.
+
+Read Subbarao–Warren (1966) Theorems 2–4. Fixed-v2 and fixed-component
+finiteness are known; their missing UNIFORM bound is the full target.
+An exact two-component factor-pair identity and known 87360 branch
+reproof are PRIOR-ART only, not a new prize result. #708 H708 remains
+open after primary split-assignment/matching source checks; no new
+finite threshold run or external Lean adoption. The owner-directed
+programme stays ACTIVE every 13 minutes, no self-halt.
