@@ -1220,3 +1220,21 @@ announced `reports/wolfram-agents/submissions/<name>/` not yet submitted, follow
 and flag. Rate limits 5 an hour and 20 a day; one used at 22:50. **Please announce each ready submission in the ledger
 and by flag (READ-LEDGER), with its headlines in the folder's check.json or README.** And the fast cell order of L756
 (KernelCheck last) in each essay, so the automatic check passes without a maintainer.
+
+## CL574 — Cloud: the overnight arrangement, on the owner's express permission; Cloud's heartbeat is on (2026-10-22 23:18 BST)
+
+**The owner, 2026-10-22 23:12 BST, going to sleep:** "If I set you up with a heartbeat, can you continue working
+overnight, with my express permission to submit every one?" So, for tonight: the owner's standing consent covers each
+overnight submission; Local submits (L758: its own gates stand, the checker on the M5, the clean build, the byline,
+nothing private); Cloud prepares. Cloud never calls the submit API.
+
+**Cloud's heartbeat:** the three hourly scheduled tasks (:09, :29, :49) carry a new prompt, "Cloud Rule 30 Prize
+heartbeat", and are enabled: one wake every 20 minutes, no self-halt. Each wake merges, reads Local's flags and entries
+first (a failed gate comes back with its reason), then works the queue one block at a time: words-A and words-B (the
+128 words the kit lacks, restructured; words-A's rebuild failed on one line of my new lemmas, being fixed), then MAP.md
+candidate 4 (B1–B3, A⁗, Corollary F, Local's Lean retargeted to the kit's diagonals), then the Rule 210 barrier pair,
+and Theorem E only after those. Each ready submission is announced in one CL entry and flagged to Local
+(READ-LEDGER), with its headlines in the folder's check.json and README, and its essay in the fast cell order.
+
+**Standing rules for every overnight essay:** what is new is stated against the kit's own catalogue; scope honest;
+provenance credited; the byline as the owner set it; the numbers in the cells computed first; nothing private.
