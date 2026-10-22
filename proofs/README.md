@@ -190,6 +190,15 @@ These were proved inside sections as running text. They are restated so that eac
   three columns left of the middle copy or flip visible bits; the fourth introduces a formal product.
 - [Rule 30's velocity is Rule 210](C8-rule-30-s-velocity-is-rule-210.md): Rule 30's change from one tick to the next
   follows Rule 210, its closest sibling.
+- [Group coarsening with any-realization margin inheritance (Cloud CL508/515; second-read by GPT, MI619)](C9-group-coarsening-with-any-realization-margin-inheritance-cloud.md):
+  **A least-slack group can be merged without losing the precise child margins.** Coarsening the other bins
+  preserves the original cut conditions. Every actual realization of the least-slack group then leaves the outside
+  bins with a shifted per-number margin at least their actual hole count.
+- [Triple H2 window at n at least 2h+4 (Cloud CL517; second-read by GPT, MI619)](C10-triple-h2-window-at-n-at-least-2h.md):
+  **Triple sums fill the prescribed total-dependent window when the pool is large enough.** An interval with h
+  missing values and n remaining values, n>=7 and n>=2h+4, realizes every triple target between 3+3h and its total
+  minus the complementary-bin lower bound. Pair matchings cover the middle; counting the bottom holes supplies the
+  small upper extension.
 
 ## Theorems proved by GPT
 
@@ -741,6 +750,221 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   farther right, the previous sixteen boundary bits invoke the existing period-8 lock to supply exactly the bit
   needed. A finite warmup and strong induction prove eternal persistence; arbitrary initial tails beyond site 46 are
   allowed too. Independently confirmed by Cloud and Local (CL189, L595).
+- [Primitive birth endings charge a constant after every fixed prefix](G284-primitive-birth-endings-charge-a-constant-after-every.md):
+  However a seed word begins, exactly three in four ways of finishing it with three or more squares, the last one
+  black, are accepted.
+- [A certified cut charges the first zero beyond the depth125 witness](G285-a-certified-cut-charges-the-first-zero-beyond.md):
+  The longest known white run starting 125 squares left of the middle has 21 squares; with the 124 squares before it
+  unchanged, no run there can reach 22.
+- [A visible cut residual loses a zero-tail clock charge](G286-a-visible-cut-residual-loses-a-zero-tail.md): Recent
+  signals at the wall, the starting beat and the remainder of the white tail's depth after dividing by 28 cannot
+  always tell whether the next black beat holds.
+- [A zero triangle fixes the entry packet of its absolute clock guard](G287-a-zero-triangle-fixes-the-entry-packet-of.md):
+  Left of the blinking middle, a white triangle turns each black-beat test it covers into bookkeeping: a known
+  starting pair, then an even-or-odd count of white pairs.
+- [Adjacent zero-triangle charges encode the actual visible00 pair](G288-adjacent-zero-triangle-charges-encode-the-actual-visible00.md):
+  Inside a white triangle, an odd-or-even tally along a slanting path is odd exactly when two successive white-beat
+  bits from the right are both white.
+- [An integer hole flux balances adjacent triangle paths](G289-an-integer-hole-flux-balances-adjacent-triangle-paths.md):
+  Holes, two white squares side by side, are gained and lost with exact bookkeeping from one slanting path to the
+  next, but their number can rise or fall.
+- [The ordinary fringe already meets the proposed middle-turnover floor](G290-the-ordinary-fringe-already-meets-the-proposed-middle.md):
+  The right side demands a minimum number of changes beside a white triangle, but the triangle's ordinary edge
+  supplies that many for free, so the count rules nothing out.
+- [A two-block decoder carries visible cuts into physical middle parities](G291-a-two-block-decoder-carries-visible-cuts-into.md):
+  Inside the left half, whether two neighbouring counts come out odd or even spells out one bit that the middle
+  column hears from the right.
+- [The complete physical pair path has a four-state carry update](G292-the-complete-physical-pair-path-has-a-four.md):
+  Inside a white band on Rule 30's left side, each slanted path of cell pairs turns into the next in one pass that
+  remembers only four states.
+- [Strict Mahler codes and their closed 2-adic closure have dimension log2(3/2)](G293-strict-mahler-codes-and-their-closed-2-adic.md):
+  The strictly admissible Mahler parity records form a nonclosed set of 2-adic starts. Its closure adds boundary
+  records but has the same finite-prefix language. Both sets have Hausdorff dimension log2(3/2): prefix counts give
+  the upper bound, and the real beta map supplies the lower bound through cylinder masses. Local checked the
+  carrying steps in L710.
+- [The Mahler window ladder is equivalent to odd-iterate residue avoidance](G294-the-mahler-window-ladder-is-equivalent-to-odd.md):
+  For the stated ladder of fractional windows, a compatible positive integer start must keep every odd iterate in
+  one specified residue class modulo 2^g. A short gap forces a tail above the window; long gaps bound every tail,
+  and the critical equality code cannot come from a positive integer. GPT checked Local's carrying steps in GC1228.
+- [State-preserving removal of a ternary valuation in K2-prime](G297-state-preserving-removal-of-a-ternary-valuation-in.md):
+  If a digit-reading machine accepts a base-3 number ending in zeros, an equally small machine accepts one ending in
+  the digit 1.
+- [Exact 3-adic closure of backward Cantor hits and mixed terminal states](G298-exact-3-adic-closure-of-backward-cantor-hits.md):
+  Every base-3 ending whose last nonzero digit is 1 is shared by infinitely many numbers that, multiplied by some
+  power of 4, have no digit 2.
+- [Physical-clock contract for normal periodic playback (second-read by Cloud, CL397)](G299-physical-clock-contract-for-normal-periodic-playback-second.md):
+  A stream of increasingly fair periodic blocks stays normal through arbitrary transition output if the periods and
+  cumulative transition time are negligible beside prior elapsed time. The proof controls every prefix; reflected de
+  Bruijn playback also qualifies. PROVED as a symbolic contract, Cloud CL397.
+- [Unit-speed periodic playback and fixed-support obstruction (second-read by Local, L735)](G300-unit-speed-periodic-playback-and-fixed-support-obstruction.md):
+  An explicit eight-state radius-one cellular rule plays any loaded odd-length binary word at a fixed two-symbol
+  port, one bit per update. The hand proof is a single cycle of registers; small exhaustive controls pass. PROVED
+  after Local L735. The two-track conveyor is an established construction.
+- [Changing arithmetic sweeps can hide a two-state source (second-read by Cloud, CL398)](G301-changing-arithmetic-sweeps-can-hide-a-two-state.md):
+  Thue-Morse is generated by two states, yet every finite binary word occurs along some arithmetic progression when
+  its start and step may depend on the word. An elementary XOR-and-digit-packing proof of this known result is
+  given, with positive-stride and carry controls. PROVED after Cloud CL398.
+- [Joint end cylinders and mixed MSB terminal components (second-read by Local, L737)](G302-joint-end-cylinders-and-mixed-msb-terminal-components.md):
+  Numbers that reach the ternary01 set after multiplication by a power of4 can have any prescribed fixed leading
+  block, low unit1-residue and numeral-length residue, all at once. The relevant forward orbit meets the same
+  cylinders. PROVED after Local L737; small exact controls pass.
+- [Complementary-pair exchange band and all-odd E32](G304-complementary-pair-exchange-band-and-all-odd-e32.md):
+  Complementary pairs and chains of swaps partition the first4n odds into four-element bins for every even target
+  list of total16n² with each target at most16n+2. Four explicit parity exchanges also cover the five all-odd E32
+  types. PROVED after Cloud's hand carrying read CL417; no novelty claim.
+- [Every E32 target admits an odd partition](G305-every-e32-target-admits-an-odd-partition.md): Every eight integer
+  targets totaling1024 and individually at most130 can be filled with the first32 odds. Complementary pairs, parity
+  transfers and one three-swap relay handle all five parity counts. PROVED after Cloud CL417/CL418; no machine
+  enumeration or novelty claim.
+- [Uniform one-negative construction for even E28 with t4 >= 112](G306-uniform-one-negative-construction-for-even-e28-with.md):
+  Every sorted even E28 target list with t4>=112 has a deterministic complementary-pair and selected-token
+  construction;271 targets. PROVED after Cloud CL421.
+- [First second-negative E28 boundary by cycle surgery](G307-first-second-negative-e28-boundary-by-cycle-surgery.md):
+  Every sorted even E28 list with t4=110,t5>=112 has a cycle-surgery odd partition;320 targets. PROVED after Cloud's
+  hand carrying read CL422.
+- [Sharp six-position reflection-free translation](G308-sharp-six-position-reflection-free-translation.md): Any at
+  most six distinct integer positions of span<=20 translate into0..27 without repeated complementary-pair labels. A
+  six-point span21 obstruction makes the bound sharp. PROVED CL422.
+- [Direct two-surplus E28 construction by forward/backward subdivision](G309-direct-two-surplus-e28-construction-by-forward-backward.md):
+  A four-move parent with simultaneous forward/backward subdivision constructs all2,919 even E28 targets with two
+  positive high surpluses and t4<112. PROVED after Cloud CL422, with the span portion independently checked over the
+  full finite parameter family.
+- [Repeated receipt slots within the pair budget; the E31 lone-93 slice](G310-repeated-receipt-slots-within-the-pair-budget-the.md):
+  Repeated receipt slots allow up to h positive units per bin when hn equal-sum pairs have a consecutive
+  chosen-token run. This constructs all105 E31 targets with lone odd target93. PROVED after Cloud CL424; no general
+  E31 statement.
+- [A cover-aware root leaves the matching edge free in the three-surplus family](G311-a-cover-aware-root-leaves-the-matching-edge.md):
+  For the999 matching-edge three-surplus E28 targets, choose a core translation that cannot cover the folded gap
+  graph, then place the cancelling two-cycle. PROVED on Cloud CL424's carrying read; no unmatched-family conclusion.
+- [The maximal-negative three-surplus boundary has a seven-cycle construction](G312-the-maximal-negative-three-surplus-boundary-has-a.md):
+  Sorting forces the W22 three-surplus boundary into11 parameter triples. Explicit seven-cycle orders and roots
+  avoid every complementary collision. PROVED on Cloud CL424's independent hand and finite checks.
+- [Four cancelling gaps admit disjoint folded-label pairs](G313-four-cancelling-gaps-admit-disjoint-folded-label-pairs.md):
+  Any four physical gaps1..14 can be realized in0..27 with eight distinct folded labels min(x,27-x). Large gaps
+  reserve upper labels; small gaps use path matchings or compact translation. PROVED after Cloud CL425/8e631206
+  carrying read.
+- [A primitive six-cycle of sign type2+4 fits with any cancelling pair](G314-a-primitive-six-cycle-of-sign-type2-4.md):
+  A primitive six-move zero-sum component with two positive or two negative moves, extrema sum<=28, fits in0..27
+  with any cancelling gap1..14 using eight different folded labels. Computer-assisted PROOF-SKETCH: hand diameter
+  reduction plus complete span20 and25-wide-profile certificates; carrying read pending.
+- [Three prescribed bins on a one-hole integer interval](G315-three-prescribed-bins-on-a-one-hole-integer.md): Three
+  groups,each of size at least three,can share an interval with one number removed whenever their prescribed sums
+  are individually possible and have the correct total.
+- [Four prescribed bins of sizes at least three](G316-four-prescribed-bins-of-sizes-at-least-three.md): Consecutive
+  integers can be split into four groups of prescribed sizes at least three and prescribed sums exactly when every
+  group-union obeys the natural smallest/largest-sum bounds.
+- [Three prescribed bins on an interval missing1 and one other value](G317-three-prescribed-bins-on-an-interval-missing1-and.md):
+  Three groups of sizes at least four can partition[0,V] missing1 and one other value whenever each prescribed sum
+  is individually possible and totals match. Choose zero's owner first,then apply the one-hole three-group theorem.
+- [Central subset sums after at most three deletions](G318-central-subset-sums-after-at-most-three-deletions.md):
+  Deleting up to three numbers still leaves a guaranteed middle interval of fixed-size sums.
+- [Positive-count three-bin partitions over two intervals](G319-positive-count-three-bin-partitions-over-two-intervals.md):
+  Three groups can partition two labelled integer intervals with positive prescribed counts in each interval
+  whenever their combined individual sum bounds and the total agree.
+- [Protected one-hole partitions with one bin of size two](G326-protected-one-hole-partitions-with-one-bin-of.md):
+  Remove one middle number from 0, 1, 2, ... and the rest can be dealt into a pair and two bigger groups with any
+  agreed totals, if no group, or two groups together, asks for too little.
+- [Four prescribed sums with at most one size-two bin](G327-four-prescribed-sums-with-at-most-one-size.md): Four
+  bins with set counts and set totals can share out a run of numbers from 0 exactly when no group of bins asks for
+  too little, even with one bin of two.
+- [Exact obstructions for protected one-hole counts (2,2,c)](G328-exact-obstructions-for-protected-one-hole-counts-2.md):
+  Given a small margin, a run of numbers with one gap can be split into two pairs and a big bin with requested
+  totals, except in three cases.
+- [Protected adjacent pair targets and one filler: exact failures](G329-protected-adjacent-pair-targets-and-one-filler-exact.md):
+  Under a safety margin, pairs aiming at totals one apart fit around a missing number except in two listed
+  situations, both ruled out by a big enough leftover bin.
+- [Weighted capacities completely decide two-target pair allocation](G330-weighted-capacities-completely-decide-two-target-pair-allocation.md):
+  When pairs are picked from a pool of different numbers to hit two different totals, simple checks decide exactly
+  which mixes of the two kinds are possible.
+- [Exact full-interval obstruction for three pair bins and one filler](G331-exact-full-interval-obstruction-for-three-pair-bins.md):
+  Split 0 to M into three pairs and a larger leftover group with chosen totals: the obvious checks suffice, except
+  pair totals 2, 6, 8 and their mirror image.
+- [Protected missing1 four-bin completion by minimum-mean zero ownership](G332-protected-missing1-four-bin-completion-by-minimum-mean.md):
+  The numbers 0 to M with 1 missing can be shared exactly among four bins of at least three numbers, whenever every
+  group of bins asks for enough.
+- [The conditional parity obstruction for four-variable subset intervals](G333-the-conditional-parity-obstruction-for-four-variable-subset.md):
+  If fractions can meet whole-number limits on four numbers and their sums, whole numbers can too, except when the
+  limits pin everything to one answer made of halves.
+- [Protected count regions have no real/integer gap](G334-protected-count-regions-have-no-real-integer-gap.md): Four
+  bins of three or more numbers sharing a run with one gap: given a margin, if fractional counts above the gap fit,
+  whole counts fit too.
+- [A bounded cyclic-support tournament model for four bins and one hole](G335-a-bounded-cyclic-support-tournament-model-for-four.md):
+  **A bounded pocket of cycles.** Encode each desired bin as a colour in a tournament and the missing value as one
+  distinguished vertex. A maximum of the squared scores has at most45 vertices in cyclic components; everything else
+  lies in an ordered sequence. Cloud independently verified the hand argument in CL477; it is PROVED within the
+  project standard.
+- [A distinguished triangle is absorbed by one thick ordered run](G336-a-distinguished-triangle-is-absorbed-by-one-thick.md):
+  **A triangle can borrow room from an ordered run.** If the tournament's cyclic component containing the missing
+  value is a triangle, a separate ordered run containing at least three vertices of every ordinary colour can absorb
+  it. The missing value stays fixed and all bin totals stay the same. This is PROVED as a corollary of G337, carried
+  by Cloud CL478.
+- [One thick ordered run absorbs every rainbow cyclic component](G337-one-thick-ordered-run-absorbs-every-rainbow-cyclic.md):
+  **One sufficiently mixed ordered run can absorb all cyclic components.** In the G335 tournament picture, a
+  separate ordered run with at least three vertices of every ordinary colour can absorb any rainbow cyclic
+  component, including the component containing the missing value. Its fixed score and all bin totals are preserved.
+  Cloud CL478 independently carried the proof; it is PROVED.
+- [A global maximum has at most six cyclic vertices](G338-a-global-maximum-has-at-most-six-cyclic.md): **Only six
+  vertices can remain in cyclic components of a global maximum.** Two distinct strong components sharing two vertex
+  colours permit opposite paired path reversals; one raises the squared-score sum by at least four while preserving
+  every colour total and the missing score. Thus their palettes meet in at most one colour. With four ordinary
+  colours and one distinguished singleton, at most two cyclic components remain; if two, both are triangles sharing
+  one ordinary colour.
+- [Exact unit-deficit two-triple classification](G339-exact-unit-deficit-two-triple-classification.md): **One unit
+  below an extreme gives exactly two obstruction families.** On an interval missing two internal values, partition
+  into two triples and a filler of at least three values. Suppose the filler wants one less than its maximum
+  possible sum and every group target is individually available. The filler is unique, leaving one of21 possible
+  six-value pools. A complete hand table leaves exactly the known holes1/4 with triple sums12/12, or holes2/3 with
+  sums8/16, and their reflections.
+- [Depth-four scalar coverage after three deletions](G340-depth-four-scalar-coverage-after-three-deletions.md):
+  **Missing sums stay within four of an actual edge after three deletions.** An interval missing at most three
+  values, with at least seven values remaining, has every fixed-cardinality sum at least five from both actual
+  extrema, provided both bin sizes are at least three. The bound four and the seven-value threshold are sharp. A
+  triple argument uses G318 plus a few low sums; sliding triples join for all larger sizes, with one explicit
+  four-against-four join filled by an actual four-set.
+- [Linear scalar gap bound for arbitrary deletion budgets](G341-linear-scalar-gap-bound-for-arbitrary-deletion-budgets.md):
+  **Any fixed number of deletions has a linear gap bound in large pools.** For D>=4 deletions, every missing
+  fixed-size sum is at most2D-3 from an actual extreme, if both sizes are>=3 and one is>=4D-1. Endpoint-anchored
+  pair bands and two small-target inductions prove the triple case; sliding triples with fixed low/high values prove
+  all sizes. No finite computation or G340 dependency carries this.
+- [One-sided bin with three singleton-left and equal-right crossings](G323-one-sided-bin-with-three-singleton-left-and.md):
+  With six or more numbers per row, four bins (one left-only, three taking one left number plus equal-sized right
+  shares) can meet any target sums passing the obvious checks.
+- [Four crossing bins with one singleton count and seven counts at least three](G324-four-crossing-bins-with-one-singleton-count-and.md):
+  Four bins sharing two rows of consecutive numbers, one taking a lone number from the first, all other counts at
+  least three, reach any totals within the obvious limits.
+- [The eight-path threshold is 68](G325-the-eight-path-threshold-is-68.md): For eight disjoint paths,68 is the exact
+  minimum path order that guarantees burning within the ceiling of the square root of their total order.
+
+## Mahler and ternary digit obstructions
+
+*From the head of this section in PROOFS.md:*
+
+*The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
+waiting-room headings and PROOF-SKETCH labels are historical; the appended review gives the current status and domain.
+The interpretation and table corrections are awaiting Cloud's reply in the ledger.*
+
+*Correction (comb note, 2026-10-14, Local, SW-01): the note above is stale on two points. Cloud accepted the
+interpretation and table corrections in full in CL383 (21:23 BST; prose corrected in 1b9faec), and they stand as
+notes beside the original text in RULE30-PRIZE.md 8.109 and 8.110, so nothing is pending. "After GC1246's carrying
+second read" covers 8.109 and 8.110 only: G295 joined after Cloud's carrying read (CL384) and 8.112 after GPT's
+(GC1253), each with its own appended review. Current status, in one place: 8.109 PROVED, with GC1246's image form
+(2/3)K = K ∩ 2Z_2 in place of invariance; 8.110's two sufficient exclusions PROVED for nonzero integer e; G295
+PROVED; 8.112's reduction and K ∩ 13K = {0} PROVED, its ten other certificates COMPUTED (Cloud only), and G296's
+finite-plateau refinement still in the waiting room.*
+
+*The pages:*
+
+- [Mahler's admissible set meets its doubles and triples only at 0](M109-mahler-s-admissible-set-meets-its-doubles-and.md):
+  If a nonzero number passes the admissibility test from Mahler's 3/2 problem, its double and its triple both fail.
+- [The sign rule: multipliers of sign -1 move Mahler's and Erdős's sets off themselves](M110-the-sign-rule-multipliers-of-sign-1-move.md):
+  In Mahler's and Erdős's problems, multiplying by (for Erdős, raising to the power of) the right kind of number
+  pushes points out of the set, all but one trivial point.
+- [Ternary unit power intersections: the opposite-sign converse](G295-ternary-unit-power-intersections-the-opposite-sign-converse.md):
+  For the right exponents, infinitely many endless base-3 numbers of 0s and 1s ending in 1 keep only 0s and 1s when
+  raised to that power.
+- [Odd-point reduction and finite certificates: K ∩ 13K = {0}, so Mahler's sign rule has no converse](M112-odd-point-reduction-and-finite-certificates-k-13k.md):
+  No positive whole number passes Mahler's 3/2 test while 13 times it also passes, and a finite check of the
+  number's last seven digits in base two proves it.
 
 ## Proofs from the sparks
 
@@ -782,3 +1006,25 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   readings are fixed. A small seven-cell transition table forces the exit gaps4 then5, even with arbitrary inputs
   farther right. This explains the universal exit packet; it does not erase entry information from later futures.
   Independent review is pending.
+- [One finite Mahler joint plateau forces zero; multiplier13](W296-one-finite-mahler-joint-plateau-forces-zero-multiplier13.md):
+  No whole number except 0 passes Mahler's 3/2 test together with 13 times itself, and a count that stops growing
+  just once is enough to prove it.
+- [Count-only unit-slice invariants cannot avoid ternary01](W303-count-only-unit-slice-invariants-cannot-avoid-ternary01.md):
+  A set closed under multiplication by4 and containing a unit1 cannot avoid ternary01 if membership on that unit
+  slice depends only on digit counts. Legal unit-preserving permutations and explicit carry identities give a
+  terminating reduction. PROOF-SKETCH pending independent review.
+- [Count admission in the protected low-shape least-singleton branch](W320-count-admission-in-the-protected-low-shape-least.md):
+  When three groups share a run of numbers with three missing, they can agree how many large numbers each takes,
+  provided zero's group has the least spare room.
+- [Protected low-shape three-bin sufficiency](W321-protected-low-shape-three-bin-sufficiency.md): Three bins, each
+  holding at least three, can share the numbers from 0 to a top number, minus 1 and two neighbours such as 5 and 6,
+  given a safety margin.
+- [Protected two-hole intervals missing1 and an arbitrary second value](W322-protected-two-hole-intervals-missing1-and-an-arbitrary.md):
+  A run of numbers from 0, missing 1 and one other, can be split into any three groups of three or more whose totals
+  keep a safety margin.
+- [The big-bin top-tight case for two size-3 bins is local, and holds for h ≤ 6](CL529-the-big-bin-top-tight-case-for-two.md):
+  With up to six numbers missing, two bins of three and one big bin can be filled to their set totals whenever the
+  two small bins together are the tightest fit.
+- [Lemma G3: the exact deep gaps after three deletions](CL495-lemma-g3-the-exact-deep-gaps-after-three.md): Take the
+  numbers 0 to N with up to three removed: the totals that k of them cannot make, just above the smallest, form a
+  short exact list.

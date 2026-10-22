@@ -29,9 +29,9 @@ determined by the a visible sigma bits at the white times. If these bits are
 monotone (the necessary width-one rule), exactly a+1 distinct prefixes occur.
 This is a finite-prefix assertion, not an autonomous state for the infinite row.
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Theorem.** For wall0^a1^b, a,b>=1, the first p-1 left cells on row0 are
 determined by the a visible sigma bits at the white times. If these bits are

@@ -58,7 +58,9 @@ negative integers. So $T^k(r) - 3^a < 0$. $\square$
 **Checked** for every $r < 2^k$, $k \le 18$ (CR0, CR1). I had predicted the weaker "least residue, or that plus
 $3^a$, the second case rare" (CR2). The second case never occurs, and the proof above came after the run. The
 counterfactual modulus $3^{a+1}$ fails for two numbers in three, as it must. The lemma is elementary and is probably
-in the Collatz literature; it was not looked up.
+in the Collatz literature; it was not looked up. (comb note, 2026-10-14, Local, SW-01: it was looked up the same
+night, §5: the identity is Terras 1976 and Lagarias 1985, Theorem B; the bound is Kontorovich and Sinai's
+Theorem 5.2; PRIOR-ART.md.)
 
 **What it adds to §2 and §3.**
 - **The Collatz twin is a statement about one number written in two bases.** The next parities of an orbit are the

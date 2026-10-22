@@ -40,9 +40,9 @@ addition their common cells in the interval
 backward step consumes three cells of this protected window. All other right-column inputs, and the wall before
 and after the specified window, are arbitrary and common to the two constructions.*
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Follow-up block, 2026-10-06 07:44 BST.** The one-step theorem has a bounded iteration.
 Predictions MS0–MS2 and CF were pushed inc0c27f0 before the `multistep` check. This extends

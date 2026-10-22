@@ -93,3 +93,6 @@ The upper bound of $(\ast\ast)$ at $n + 1$ now gives $h(n) \le q_{n-1} + C + 2$,
 $h(n) \ge q_{n-1} - C - 4$. So $h(n)$ is within $C + 4$ of $q_{n-1}$, for every large $n$. Then $h(n+1) = h(n) + q_n$
 is within $C + 4$ of $q_{n+1}$. But the same statement at $n + 1$ puts $h(n+1)$ within $C + 4$ of $q_n$. Those
 disagree once $q_{n-1} > 2C + 8$. $\square$
+
+*Correction (comb note, 2026-10-14, Local, SW-01): this bears on question 7 of PERIOD-TWO.md §7 (the regime between;
+answered for the Sturmian class, §8.57), not question 3; §8.61 closed question 3, which this theorem does not touch.*

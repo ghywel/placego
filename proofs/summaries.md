@@ -4643,3 +4643,266 @@ bins of two numbers each, the trap really can happen, even with the margin.
 Cat two, and Ann and Dan two. On paper, only halves work (half a marble each for Ann and Ben, one and a half each
 for Cat and Dan), and a marble cannot be split; loosen any one rule by one marble and whole marbles do. With three
 or more numbers to a bin and the margin, the proof shows the bins are never cornered like this.
+
+## G284
+However a seed word begins, exactly three in four ways of finishing it with three or more squares, the last one
+black, are accepted.
+
+**What it says.** The record writes one family of possible births of white stretches in the left half as seed words:
+strings of black and white squares, read one at a time by proof E1's rebuild of the row before, which remembers only
+its last two squares and so has four possible states. A word is accepted if it ends in black and the rebuild's final
+two squares are white then black (type Q) or black then white (type P), the two kinds of birth. Finish any allowed
+start with three or more squares, the last one black: whatever the start, exactly three quarters of the endings of
+each length are accepted, a quarter as Q and a half as P. Two free squares can steer the rebuild into each of the
+four states in exactly one way, later squares keep the four equally common, and the final black square sends one
+state to Q, two to P and one to rejection. With only one or two squares to finish, the share depends on the start.
+
+**Why it matters.** So, from three squares up, the acceptance rule turns away exactly one ending in four at every
+length, and on its own it can never make long seed words rare. Any such limit would have to come from checks this
+count leaves out, such as whether the middle column keeps its black-white beat and whether the real birth, traced to
+where it actually starts, runs into a pattern already proved impossible; those checks may add a cost, but nothing
+here shows that they do. It counts patterns on paper, not ones shown to occur, and settles no prize.
+
+**An everyday picture.** A wheel of fortune at a fair with four equal segments, two marked P, one marked Q and one
+marked "lose". Give it a proper spin, at least two segments' worth before the final click, and it lands on each
+segment equally often wherever it started, so three spins in four win however long the spin lasts. A tiny nudge of
+one or two segments, though, depends on where the wheel began.
+
+## G285
+The longest known white run starting 125 squares left of the middle has 21 squares; with the 124 squares before it
+unchanged, no run there can reach 22.
+
+**What it says.** Hold the middle column to blink black, white, black, white, starting on black. The blink breaks
+unless, at each black beat, the square on its left is black and, at each white beat, the squares either side of it
+differ in colour. The record counts a white run in the starting row only if some right half keeps this up until news
+from the run's far end reaches the middle, and its best example from depth 125 (125 squares left of the middle) has
+21 squares. Keep that example's first 124 squares and extend its white run to depth 146: the colours then demanded
+on the right at the 38 white beats from tick 71 to tick 145 (the new square sets the last) form a pattern that a
+checked computer proof shows no right half can ever produce. Squares farther out cannot help, since news from them
+travels at most one square per tick and arrives too late.
+
+**Why it matters.** A start with finitely many black squares whose middle settled into blinking for ever would have
+a white run with no end on its left, so the record measures how long white runs can be. This proves that one
+recorded run must end where it does, for a reason nothing farther out can undo. It covers this one starting pattern
+only: by itself it does not show that 21 is the most possible at depth 125, it gives no limit at other depths, and
+the prize question for a blinking middle stays open.
+
+**An everyday picture.** A crossword in which pencilling in one more square fixes the last letter of a long answer,
+turning it into a word no dictionary contains. Squares farther along the grid do not cross that answer, so nothing
+written there can save it.
+
+## G286
+Recent signals at the wall, the starting beat and the remainder of the white tail's depth after dividing by 28
+cannot always tell whether the next black beat holds.
+
+**What it says.** Picture the centre column forced to blink black, white, black, white: the wall. A black beat holds
+only if the square to the wall's left is black. At each white beat the left half dictates a colour, or signal, that
+the right side must show. Take two left halves that both start on a black beat, copy the same seven-square repeating
+pattern and then turn white all the way out. Their white tails start at suitable depths 28 squares apart, as deep as
+you like. Both keep the clock going while asking for long runs of alternating signals that a real right half can
+show (G282), then a white signal where black was due; yet at the next black beat one holds and the other breaks. So
+a fixed number of recent signals, the starting beat and the remainder of the tail's depth after dividing by 28
+cannot always predict that beat. Nor can a checker for a finite list of forbidden signal patterns, since it
+remembers only the last few signals.
+
+**Why it matters.** It closes one proposed shortcut: a checker that predicts the clock exactly must remember more
+than those three things, and the depth's remainder after dividing by 56 already tells this pair apart. It does not
+rule out a checker with a richer finite memory, or a cautious one that allows both outcomes. Neither left half is
+claimed to come from a real band, and the one that passes is not claimed to keep the clock forever.
+
+**An everyday picture.** Two people wake in windowless rooms with twelve-hour clocks that both show three. For one
+it is three in the afternoon and the bakery downstairs is open; for the other it is three in the morning and its
+shutters are down. Nothing in either room tells them which, though a twenty-four-hour clock would.
+
+## G287
+Left of the blinking middle, a white triangle turns each black-beat test it covers into bookkeeping: a known
+starting pair, then an even-or-odd count of white pairs.
+
+**What it says.** Suppose the middle keeps blinking and, in one row, the squares from d to E places left of it are
+white, just outside a black square that is not the middle itself. As this run shrinks into a white triangle, its
+black inner edge forces two side-by-side squares a few rows later, whatever else the row holds: both are black if k
+− d is even, and only the outer one is white if k − d is odd. Here k is any tick from d to E − 1 (counted from that
+first row) at which the middle is black, called a black beat. A diagonal starting at the outer square of the pair
+moves one place inward each tick and reaches the square next to the middle exactly at tick k. It changes colour at
+every step unless the two squares on its inner side are both white (a white pair). That square must be black at a
+black beat for the middle to turn white next, so the number of white pairs met must be even or odd as d and k
+decide; the last pair is all white exactly when the square right of the middle must be black one tick earlier.
+
+**Why it matters.** Each black-beat test the run covers now starts from known colours and comes down to one exact
+even-or-odd count, worked forward with nothing assumed about earlier rows. It settles no prize question and does not
+bound how long a white run can be: later counts run over ever more squares of the actual picture, and white pairs
+can cancel out, so no fixed-size summary or growing cost follows.
+
+**An everyday picture.** Carry a coin down a staircase, turning it over at every step except where the two tiles
+beside that step are both white. If you know the face at the top, the number of steps and the face needed at the
+bottom, you know before looking whether the double-white steps must be even or odd in number. The triangle sets the
+top face; the blinking middle names the bottom one.
+
+## G288
+Inside a white triangle, an odd-or-even tally along a slanting path is odd exactly when two successive white-beat
+bits from the right are both white.
+
+**What it says.** Start with a row where a black square is followed by a long run of white squares; under Rule 30
+that run shrinks tick by tick into a white triangle. Assume the clock, a middle column that blinks black, white,
+black, white: proof G287 turned each check that its black beat is obeyed into a parity, that is, whether a count is
+odd or even, of the places along a slanting path where two white squares sit side by side. The next check, two ticks
+later, uses the same path moved one tick later and one square further out, plus one extra square at its end. This
+result tallies, along the first path minus its last place, how many places switch between "two white side by side"
+and not under that move. The tally is odd exactly when the two successive bits heard from the right at the white
+beats (the ticks when the right side gets through), one just before each check, are both white. It holds while the
+white run reaches far enough to cover both checks and both checks pass. So the stream of these values can never read
+odd, even, odd, nor odd four times running (that would need five white bits in a row at the white beats, which is
+already known never to happen).
+
+**Why it matters.** It ties hidden bookkeeping inside the triangle directly to what is actually heard from the
+right, working forward from the real starting row without inventing an earlier history. It is not a rule that
+predicts the next check, and it gives no bound on cost. It does not claim the two forbidden patterns are the only
+limits: an all-even stream is still allowed. It does not newly prove that two black bits never come in a row at the
+white beats; it uses that known fact.
+
+**An everyday picture.** Two rows of chairs, the second one row back and shifted one seat along. Walk both rows side
+by side, and tick a tally each time "two empty chairs together" is true in one row but not the other, skipping the
+last seat. The tally comes out odd exactly when your last two glances through the window on the right, one before
+each row, both showed an empty chair.
+
+## M109
+If a nonzero number passes the admissibility test from Mahler's 3/2 problem, its double and its triple both fail.
+
+**What it says.** Mahler asked whether some positive number, multiplied by 3/2 again and again, always keeps its
+fractional part (the part after the point) below one half. Such a number is called a Z-number, and none is known.
+The record recasts the question as a set of "admissible" 2-adic numbers: numbers that may have endlessly many binary
+digits running leftwards, like an odometer that never ends. A whole number n is the whole-number part of a Z-number
+exactly when it lies in the set's strict core, the admissible numbers whose every step stays strictly below one
+half. The proof shows that a nonzero number is never admissible together with its double or its triple:
+admissibility forbids two odd steps of the 3/2 map in a row, and for a number and its triple that would need two
+quantities, one three times the other, both to leave remainder 3 on division by 4, which is impossible. So if n is
+the whole-number part of a Z-number, then 2n and 3n are not, and neither are n/2 or n/3 when those are whole.
+Multiplying by 2/3, by contrast, always keeps an admissible number admissible, though not every admissible number
+arises that way.
+
+**Why it matters.** It closes one hoped-for route. The famous rigidity theorems about multiplying by 2 and by 3
+(Furstenberg's, which say that a set kept by two independent multipliers must be very simple) need a set that both
+multipliers keep, and each of 2 and 3 pushes this set off itself instead. It describes the set, not which whole
+numbers lie in it: it does not say whether any Z-number exists, and it does not list every multiplier that keeps the
+set.
+
+**An everyday picture.** Think of the set as a choir's list of allowed pitches, where doubling a frequency is an
+octave up and multiplying by 3/2 is a fifth up. Any allowed note can always be sung a fifth lower, but never an
+octave higher or lower, nor an octave and a fifth either way.
+
+## M110
+In Mahler's and Erdős's problems, multiplying by (for Erdős, raising to the power of) the right kind of number
+pushes points out of the set, all but one trivial point.
+
+**What it says.** Mahler's set K holds the "2-adic" numbers (numbers written in binary with digits running on
+forever to the left) whose odd-and-even pattern passes Mahler's test at every step. Write a nonzero whole-number
+multiplier e, negative ones included, as a power of two, 2^a, times an odd number u; if 3^a times u leaves remainder
+3 when divided by 4 (as for e = 2, 3, 7, 10, 11 or -1), then x and e times x can both be in K only when x = 0.
+Erdős's set C holds the numbers written in base 3 with digits 0 and 1 only, again running on forever to the left. If
+e is a power of three times a number u that leaves remainder 2 when divided by 3, and x ends in the digit 1, then x
+and x raised to the power e can both be in C only when x = 1. So for whole numbers n ≥ 1 and e ≥ 2 of that kind (2,
+5, 6, 8, 11, ...): if 2^n has no digit 2 in base 3, then 2^(en) has one.
+
+**Why it matters.** It proves that any multiplier acting like a minus sign on the one digit that matters always
+pushes these sets off themselves, which is the pattern a computer check of the multipliers from -15 to 40 found. It
+does not say that the other multipliers keep a point: for Mahler's set, 13 pushes it off too. It also says nothing
+about whether any single whole number belongs to the sets, and it solves no prize.
+
+**An everyday picture.** A room where everyone must wear their watch on the left wrist: in a mirror, each of them
+wears it on the right, so nobody in the room is also allowed in the mirror's room. Only someone with no watch at
+all, the trivial point, can be in both.
+
+## G295
+For the right exponents, infinitely many endless base-3 numbers of 0s and 1s ending in 1 keep only 0s and 1s when
+raised to that power.
+
+**What it says.** Think of 3-adic numbers: numbers written in base 3 with digits running on forever to the left,
+added and multiplied from the right with carries, like an odometer that never ends; in this arithmetic a negative
+power means dividing 1 by the number. Take those whose digits are all 0 or 1 and whose last digit is 1, and an
+exponent e that is any whole number other than 0, positive or negative; strip every factor of 3 from e, say b of
+them, and call what is left u. If u is one more than a multiple of 3 (1, 4, 7 or −2, for example), then for every h
+from 1 upwards there is such a number whose digits are 0 between its last digit and position h (counting the last
+digit as position 0), with its next 1 exactly at position h, and whose e-th power also has only 0s and 1s. The proof
+builds it one digit at a time: a new digit at position i leaves the lower digits of the power alone and turns the
+power's digit at position i + b forward by exactly the amount added, rolling over from 2 to 0, so a safe choice of 0
+or 1 always exists. A companion result covers the other case, so the split is complete: when u is one less than a
+multiple of 3 (2, 5 or −1, for example), the number 1 is the only such number.
+
+**Why it matters.** Among these numbers ending in 1, it decides for every nonzero whole-number exponent whether the
+power keeps infinitely many of them or only the number 1, using just the remainder of u on division by 3. It does
+not say how large the infinite set is. It also says nothing about ordinary whole numbers such as the powers of 2, so
+it does not settle Erdős's question of whether every power of 2 beyond 256 has a 2 among its base-3 digits.
+
+**An everyday picture.** Two car mileage counters linked by gears, each wheel marked 0, 1 or 2. Setting a new wheel
+on the first leaves the lower wheels of the second untouched, and clicks one wheel a few places further along
+forward by exactly what you set, rolling over from 2 to 0. Whatever that wheel shows, setting 0 or 1 keeps it off 2,
+so you can keep going forever.
+
+## M112
+No positive whole number passes Mahler's 3/2 test while 13 times it also passes, and a finite check of the number's
+last seven digits in base two proves it.
+
+**What it says.** Mahler asked whether some positive number, multiplied by 3/2 again and again, can keep the part
+after the point below a half for ever. Call a whole number passing if it can be the whole part of such a number.
+Stripping out factors of 2 shows that 2^k times an odd m passes exactly when 3^k times m does. So whether a number
+and a multiple of it can both pass comes down to odd numbers alone; for an odd multiplier the multiplier stays the
+same, and each factor 2 in an even one becomes a 3. If no odd ending of D binary digits (the ones and zeros a
+computer writes a number in) lets a number and its multiple both get through the first D steps, then no such pair
+exists at all: for 13 this happens at seven digits, and computer checks find the same for 21, 29, 37, 53, 69, 77,
+85, 93 and 101 at six to fourteen digits.
+
+**Why it matters.** An earlier rule showed that odd multipliers leaving remainder 3 on division by 4 forbid such
+pairs, and one could hope that remainder 1 always allows them, as it does in a related problem of Erdős (G295); 13
+leaves remainder 1, so that hope fails for Mahler. It is about pairs, not any single number: Mahler's problem stays
+open, and the multipliers 5 and 9 remain undecided.
+
+**An everyday picture.** Two keys must be cut, one for a number and one for 13 times it, each to open its own very
+long lock; a key whose first notches are flat is simply trimmed first, which is the stripping of factors of 2. A
+locksmith tries every way of cutting the first seven notches of the trimmed keys and finds that whatever opens the
+first lock that far jams the second, so no pair of keys exists, however long they are cut.
+
+## CL495
+Take the numbers 0 to N with up to three removed: the totals that k of them cannot make, just above the smallest,
+form a short exact list.
+
+**What it says.** Start with the whole numbers 0 to N, remove up to three from the middle (never 0 or N) so that at
+least seven remain, and choose k of them, with at least three chosen and at least three left over. The smallest
+possible total is the sum of the k smallest, and the totals one or two above it can be impossible to make. Three
+above is impossible exactly when the removed numbers are k, k + 1, k + 2, or k − 1, k + 1, k + 3, or k − 2, k + 2,
+k + 3, or k − 1, k, k + 4. Four above is impossible exactly when k is 3 and 4, 5, 6 are removed, or when exactly
+three numbers are left over and k − 1, k, k + 1 are removed. Every total at least five from both the smallest and
+the largest can be made (proof G340), and near the largest total the same list applies once the numbers are turned
+round, each number x becoming N − x.
+
+**Why it matters.** It sharpens G340, which showed that an impossible total lies at most four from either end, into
+an exact list of when that happens, and an exhaustive computer check of every case with N up to 22 and k up to 6
+finds nothing outside it. It only concerns which totals can be made by choosing k numbers from one such set with at
+most three removed; it does not say how to split the numbers into several groups with given totals, and it solves no
+prize problem.
+
+**An everyday picture.** Number tiles 0 to N lie on a table with a few lost, and you hold the k lowest. To raise
+your score by exactly 3 you must trade one tile in your hand for one on the table worth exactly 3 more, since
+trading two at once always gains at least 4, and only three such trades exist near the top of your hand. Three lost
+tiles can spoil all three trades only by sitting in one of four patterns.
+
+## CL529
+With up to six numbers missing, two bins of three and one big bin can be filled to their set totals whenever the two
+small bins together are the tightest fit.
+
+**What it says.** Take the whole numbers from 0 to M with h of them removed, where h is at most 6. Share them among
+three bins of fixed size (groups of 3, 3 and at least 6 numbers), each with a target total, where the three targets
+add up to the sum of all the numbers. Every bin and every pair of bins must clear a lower bar: the smallest total
+that many different numbers could have, plus h for each number in the group. Its "slack" is how far it clears that
+bar. Suppose the two small bins taken together have the least slack of any bin or pair, and strictly less than
+either small bin alone. Then the numbers can always be shared out to hit all three targets exactly.
+
+**Why it matters.** The tightness condition forces the two small targets to be low, so only numbers up to 10 + 3h
+can go into the small bins; that leaves finitely many cases, and a computer checks every one (over 2.1 million at
+six missing numbers). This handles one of the cases left over when a larger version of the sharing puzzle is broken
+into smaller pieces, but only for two bins of three and at most six missing numbers. The check grows quickly, and
+the result does not cover seven or more missing numbers or other small-bin sizes.
+
+**An everyday picture.** A box of numbered tiles stored in number order, with a few missing: two people each take
+three tiles to make their own small totals, and a third person takes everything left. Because the two totals are
+small, only the tiles at the front of the box ever matter, so every way the front of the box could look can be laid
+out on a table and checked.

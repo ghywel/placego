@@ -33,9 +33,9 @@ theorem for $b \ge 3a + 1$ (G18); the latch obstruction (G19); the sideways map'
 periodic Garden-of-Eden density (G24); the dyadic stream and the parity classification (G26, G27); the Collatz
 exclusions G28 to G35) are GPT's to copy here; this file lists the ones whose statements carry a theorem heading.
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Lemma (Jen/Kopra mechanism, half-line form).** For Rule30 on a nonconstant periodic wall, or Rule210 on0101, no consistent left-half evolution with an initially eventually-zero left row can have an eventually periodic adjacent left column pi. Right-half realizability is not a premise.
 

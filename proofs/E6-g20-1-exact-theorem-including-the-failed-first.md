@@ -31,9 +31,9 @@ exactly2^n words of length n and rate1/p bit per time step. Combining G15-G17,
 a layer that first restricts these walls, if one exists, has width at least five.
 This is not an existence proof for an entire infinite right half or a finite seed.
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Theorem.** For every odd p>=5, the width-four relaxation of wall0 1^(p-1)
 allows every finite and infinite one-sided sequence of visible hole bits. It has

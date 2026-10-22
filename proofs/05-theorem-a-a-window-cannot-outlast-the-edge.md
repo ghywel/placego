@@ -57,3 +57,6 @@ At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ 
 - Facts 1 .. 3 are separate lemmas (`left`, `left_iter`, `edge`).
 - The axioms are propext and Quot.sound only.
 - The case of a leftmost black cell to the right of the column (time re-basing, as in entry 40) stays a hand step.
+
+*Correction (comb note, 2026-10-14, Local, SW-01): "question 2" in the Bears-on field above should read questions 5
+and 7 of PERIOD-TWO.md §7, as §8.54 itself says; question 2 is Flatto, Lagarias and Pollington's move.*

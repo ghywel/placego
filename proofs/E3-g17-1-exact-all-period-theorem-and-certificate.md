@@ -31,9 +31,9 @@ avoids11; p3 avoids100; odd p>=5 is unrestricted. G16's counts and entropy rates
 remain exact for this relaxation. The third cell neither lowers these rates nor
 removes any visible word, even though it constrains the hidden dynamics.
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Theorem.** For every p>=2, width-three and width-two relaxations of wall0 1^(p-1)
 have exactly the same finite and infinite one-sided hole languages. Thus even p

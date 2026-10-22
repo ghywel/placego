@@ -86,3 +86,7 @@ maxima above hold at every depth for $P = 3$ to 7, not only within 40 columns.
 actual-wall maxima odd 7, even 6 at both $P = 8$ and $P = 9$. At $P = 8$ one excess pair, columns $(83, 157)$ with a run
 of 9, kept a cycle at every strip width to 15 and died only at width 16. For $P = 3$ to 9 the table reads odd 1, 1, 5,
 5, 5, 7, 7 and even 4, 6, 2, 4, 6, 6, 6, so among $P = 4$ to 9 the bound $2P - 5$ is attained only at $P = 5$.
+
+*Correction (comb note, 2026-10-14, Local, SW-01): "question 2" in the Bears-on field above should read question 5 of
+PERIOD-TWO.md §7, a weaker theorem about every single seed (done by Theorems A and B, §8.54, in its status row);
+question 2 is Flatto, Lagarias and Pollington's move.*

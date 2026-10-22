@@ -11,7 +11,7 @@ summaries live in proofs/summaries.md, one "## <id>" section per proof. The buil
 proof has no summary, so this folder cannot fall silently behind the master. Edit a proof in PROOFS.md and its
 summary in summaries.md, then rebuild; never edit the generated files.
 """
-import pathlib, re, sys, textwrap
+import os, pathlib, re, sys, textwrap
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 HERE = ROOT / "proofs"
@@ -101,10 +101,21 @@ def source_proof(body):
     m = re.search(r"\*Where:\* (RULE30-GPT\.md|COLLATZ-PRIZE\.md), \"([^\"]+)\"", body)
     if not m:
         return None, None
-    src = (ROOT / m.group(1)).read_text().split("\n")
+    # older sections of a notebook live in its volumes, archive/gpt/<name>.N.md (rotated 2026-10-22)
+    stem = m.group(1)[:-3]
+    vols = sorted((ROOT / "archive" / "gpt").glob(stem + ".*.md"), key=lambda q: int(q.name.split(".")[1]))
+    for path in [ROOT / m.group(1)] + vols:
+        found = section(path.read_text().split("\n"), m.group(2))
+        if found is not None:
+            return str(path.relative_to(ROOT)), found
+    return m.group(1), None
+
+
+def section(src, heading):
+    """The text under the heading named, down to the next heading of its level or higher; None if absent."""
     for k, line in enumerate(src):
         hm = re.match(r"^(#+) (.*)", line)
-        if hm and hm.group(2).strip() == m.group(2).strip():
+        if hm and hm.group(2).strip() == heading.strip():
             level, j = len(hm.group(1)), k + 1
             while j < len(src) and not re.match(r"^#{1,%d} " % level, src[j]):
                 j += 1
@@ -116,8 +127,19 @@ def source_proof(body):
                 while n < len(src) and not re.match(r"^#{1,%d} " % level, src[n]):
                     n += 1
                 text += "\n\n" + src[j] + "\n" + "\n".join(src[j + 1:n]).rstrip("\n")
-            return m.group(1), text
-    return m.group(1), None
+            return text
+    return None
+
+
+def rebase(text, src):
+    """Links in a file below the root are relative to its folder; make them relative to the root, as relink expects."""
+    folder = (ROOT / src).parent
+    if folder == ROOT:
+        return text
+    def fix(m):
+        target = os.path.relpath(os.path.normpath(folder / m.group(1)), ROOT)
+        return f"]({target}{m.group(2)})"
+    return re.sub(r"\]\((?!https?:|mailto:|#)([^)#\s]+)(#[^)\s]*)?\)", fix, text)
 
 
 def relink(text):
@@ -135,8 +157,8 @@ def status(sec, body, head=""):
     if sec == "G":
         return "in the waiting room: stated with a proof, not yet checked by a second reader"
     if sec == "M":
-        return "second-read (the head of PROOFS.md section M gives each entry's current status, quoted on its index)"
-    if sec == "E2" and "joint" in head:  # G325, filed as a joint computer-assisted result (2026-10-22)
+        return "second-read; the head of PROOFS.md section M, quoted in the proofs index, gives each entry's current status"
+    if sec == "E2" and "joint computer-assisted" in head:  # G325, filed as a joint computer-assisted result (2026-10-22)
         return "proved, a joint computer-assisted result under the project's two-tier standard"
     if sec == "E2":  # the reader is named in the heading from 2026-10-08 (GC620); G39 to G204 were all Local's
         m = re.search(r"\(second-read by ([A-Za-z]+(?: and [A-Za-z]+)?)", head)
@@ -191,6 +213,7 @@ def main():
         if s in ("E", "F"):
             src, proof = source_proof(b)
             if proof:
+                proof = rebase(proof, src)
                 doc += (f"\n## The proof, copied from {src}\n\n*Verbatim from [{src}](../{src}), the section named "
                         f"above; the master PROOFS.md holds the statement only.*\n\n{relink(proof)}\n")
             elif src:

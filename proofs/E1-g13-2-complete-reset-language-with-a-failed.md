@@ -34,9 +34,9 @@ after the reset it is in the same one, and nothing about before survives.
  0\,1^{3k+1}\,0\,z,\qquad k\ge0,\quad z\in\{0,1\}.
 ```
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 I initially proposed that every reset word contains010 followed by another bit. IR5 checked
 that claim and failed at0111100. This is a false characterization, not an instrument failure

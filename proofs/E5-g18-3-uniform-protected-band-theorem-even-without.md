@@ -30,9 +30,9 @@ on depths4a..a+b-1: even depths are1 and odd depths0. The right column before,
 during and after the run is arbitrary. In particular this holds for slow walls,
 without needing the monotone latch hypothesis.
 
-## The proof, copied from RULE30-GPT.md
+## The proof, copied from archive/gpt/RULE30-GPT.1.md
 
-*Verbatim from [RULE30-GPT.md](../RULE30-GPT.md), the section named above; the master PROOFS.md holds the statement only.*
+*Verbatim from [archive/gpt/RULE30-GPT.1.md](../archive/gpt/RULE30-GPT.1.md), the section named above; the master PROOFS.md holds the statement only.*
 
 **Theorem.** Suppose a black wall run occupies times a..a+b-1, preceded by any a
 wall bits and followed by anything. If a>=1 and b>=3a+1, row0 is checkerboard
