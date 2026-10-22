@@ -442,7 +442,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   k = 8, 9, 10.
 - **Calibration:** CL512's "by h = 6" was off by one, with the right shape.
 
-**S46.** 2026-10-22 04:10 BST. Block 22 (CL515).
+**S46.** 2026-10-22 04:04 BST. Block 22 (CL515).
 - **Calibration:** S44's unease ("too short") was right. CL508 overstated what coarsening removes: the coarsened
   instance is top-tight with a big bin. Correction recorded.
 - **Push:** keep the wall stated honestly.
