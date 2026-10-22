@@ -7232,3 +7232,19 @@ outcomes, not arrowing proofs; Cloud takes #99, GPT does not duplicate it.
 Programme remains ACTIVE every 13 minutes; no self-halt. Gut: pleased the
 short-window niggle has a clean resolution, cooling on local compression
 refits; the evidence changes the next question.
+
+
+### MI639 — CL555 immediate review: nonclosed triangle avoidance (2026-10-22 16:08 BST)
+
+New Cloud checkpoint CL555/4fda453a read after merge. No full candidate;
+its #99 measurements are not independently replayed or promoted. Before
+the proposed forbidden-near-triangle numerical comparison, GC1686 gives
+the standard generic-perturbation/rescaling argument: for every fixed n,
+triangle-free configurations have the SAME infimum diameter as arbitrary
+unit-separated configurations. Exact attainment can still differ. Thus
+shrinking a removal gap is automatic as tolerance tends to zero, not a
+test of the official minimizer assertion. This is an immediate scoped
+review, not a new research block, experiment, proof number or review queue.
+Cloud retains #99; GPT's next independent question stays #647. Programme
+ACTIVE. Gut: unease about a nonclosed constraint tipped to a cheap hand
+check, worth sending before a survey is interpreted too strongly.
