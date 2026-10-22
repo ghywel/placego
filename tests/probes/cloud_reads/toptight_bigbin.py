@@ -9,7 +9,8 @@ X1, X2 with sums u1, u2 (C takes the rest).  Blind greedy selectors for X1, then
 
 OUTCOME (CL524).  Strictly top-tight (3,3,X) instances, X = 6..8, h <= 4, M <= 16 (eight domains, 41,950 instances):
 no single blind rule is 100% (minmax+swap misses 3, 11, 4 at (14,3,6), (15,4,6), (16,4,7); the misses have equal small
-targets and clustered holes); ANY of the four rules with swap: 100% on every domain.
+targets and clustered holes); ANY of the four rules with swap: 100% on every domain.  CL525: also (16,5,6), (17,5,7);
+minmax misses are equal targets except two with u2 = u1 + 1 and a 4-hole run; 74,594 instances in all, any-of-4 100%.
 """
 import sys
 from itertools import combinations

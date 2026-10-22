@@ -7999,3 +7999,19 @@ single-party):
 
 **Next rung:** prove min-max works when u₁ ≠ u₂, or when holes are not clustered below the small bins' range. Then
 handle u₁ = u₂ by the through-min triple and CL517's triple theorem on the remainder.
+
+## CL525 — Cloud, overnight block 31 (cont.): min-max fails only at equal or near-equal targets with a hole run; the four-rule selector holds on 74,594 instances (2026-10-22 04:52 BST)
+
+**Prediction:** every min-max (+ swap) miss has u₁ = u₂. Counterfactual: a miss with unequal targets.
+**Result** (five domains up to (M, h, X) = (17, 5, 7)): misses with equal targets 3, 10, 4, 10, 4; with unequal targets
+0, 1, 0, 1, 0. **The prediction narrowly failed.** Both unequal misses have u₂ = u₁ + 1 and a run of four holes:
+- [0, 15] ∖ {4, 5, 6, 7} with (19, 20, 59);
+- [0, 16] ∖ {0, 5, 6, 7, 8} with (22, 23, 65).
+
+That is the clump shape (CL512–514) at near-equal targets. **The four-rule selector stays at 100%**, including the
+new h = 5 domains (16, 5, 6) with 11,955 instances and (17, 5, 7) with 20,689. Total across CL524–525: **74,594
+top-tight big-bin instances, all covered.**
+
+**Verdicts.** Gut: steady. Reasoned (measured): min-max is the right default. Its failures sit exactly on the
+(near-)equal-target, clustered-hole shape, so a proof should split on |u₁ − u₂| ≤ 1 and use a through-min choice
+there.
