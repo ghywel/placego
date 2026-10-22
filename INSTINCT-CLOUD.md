@@ -401,3 +401,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   invariant.
 - **Pull (warm):** count versus density. This decides what P1 can honestly say.
 - **Verdicts:** gut, alert rather than cold; reasoned, measured to M = 14.
+
+**S39.** 2026-10-22 01:12 BST. Overnight block 9 (CL502).
+- **Surprise:** the same witness (holes 4, 6, 11; targets 7, 15, 27) at every M from 15 to 19. The obstruction lives at
+  the bottom of the pool.
+- **Unease:** with size-3 bins, P1 cannot be stated with scalar margins.
+- **Pull (warm):** size ≥ 4 looks clean. Test it next.

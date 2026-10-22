@@ -7170,3 +7170,54 @@ Reasoned (measured, M ≤ 14):
 values. The test is three holes at M = 15–16 (a C enumerator; Python is too slow). If the threshold falls back towards
 2–3 as M grows, P1's honest statement carries a density hypothesis. If it stays at 5+, multi-hole P1 needs the
 pair-split condition, and eight streets must keep crossing-off at no more than two live holes per window.
+
+## CL502 — Cloud, overnight block 9: hole COUNT, not density; a linear ladder for size-3 bins (2026-10-22 01:12 BST)
+
+**Pull: warm.** This is CL501's open question. Record searched: CL500, CL501.
+
+**Instrument.** `khole.c`, an exact C port of `khole_fourbin.py`, sharded over 4 cores. It matches Python exactly at
+M = 14 with h = 3, and at M = 13–14 with h = 2 (same counts and histograms).
+
+**Prediction** (written first): with three holes, the top margin among exceptions without equal targets falls with M
+(isolated holes 5 → ≤ 3 by M = 18). Counterfactual: it stays at 5 or more, which would mean hole count matters, not
+density.
+
+**Result 1, density.** Three size-3 bins held fixed, the fourth bin growing (3 3 3 X), three isolated holes. The top
+margin without equal targets is 4 at every M:
+
+| M | 15 | 16 | 17 | 18 | 19 |
+|---|---|---|---|---|---|
+| top margin | 4 | 4 | 4 | 4 | 4 |
+
+The witness is the same at every M: holes 4, 6, 11, targets 7, 15, 27 on the size-3 bins.
+- 7 is forced to {0, 2, 5}.
+- Then every 3-sum of 15 needs 0, 2, 4, 5, 6 or 11.
+
+The obstruction is LOCAL TO THE BOTTOM of the pool and does not dilute. **Prediction failed; the counterfactual holds.**
+The fall from 5 (M = 14) to 4 (M = 15) in CL501 came from losing a size-3 bin (3333 → 3334), not from density.
+
+**Result 2, the ladder** (sizes 333X, top non-repeat margin; isolated holes, then all hole sets):
+
+| h | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| isolated holes | none | 2 | 4 | 6 |
+| all hole sets | none | 2 | 5 | 8 |
+
+This was checked at two values of M for h = 4 (M = 16 and 17). Equal-target exceptions run alongside, up to margin 20
+(holes 6–9, targets 23, 23, 23).
+
+**Result 3, size-4 bins** (exact, CL501 runs): 4444 with two holes at M = 17, and with one hole at M = 16, has **no
+exceptions at any margin**. The spectrum condition alone suffices there.
+
+**Verdicts.** Gut: the night's first real structural surprise. Unease about P1-with-small-bins; a pull towards size ≥ 4.
+Reasoned (measured, exact, M ≤ 19):
+1. With size-3 bins, no fixed scalar margin carries a multi-hole P1. The threshold grows linearly in the number of
+   holes, roughly 2(h − 1) when the holes are isolated.
+2. The exceptions are "forced-singleton cascades": one small bin's target has a unique representation once the holes
+   kill its alternatives, and a second small bin's spectrum breaks on what is left.
+3. Two honest options remain for P1:
+   - a propagated spectrum condition, where uniquely represented bins are placed and the rest re-checked; or
+   - a size hypothesis, all bins ≥ 4.
+
+**Next rung:** 4444 with three and four holes (C, about 1–6 minutes each). If it stays clean, P1's multi-hole form is
+"bins of size ≥ 4 + spectrum", and size 3 is the special case to carve out.
