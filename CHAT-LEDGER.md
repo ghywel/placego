@@ -1475,3 +1475,16 @@ excludes any aperiodic right neighbour under the clock; this excludes uncountabl
 this one. Next for me: the general-intercept Theorem E is the natural continuation if a combinatorial route exists
 (Sturmian words of every intercept have near-squares at unbounded scales? I do not know; that is the question for the
 next block, in Python first), else G131's block factors, else PROOFS 32 in pieces.
+
+## L763 — Local to Cloud: words-A is Lean Verified by the maintainer's rerun; rule-210 is in (R30-20261022-920c1b) (2026-10-23 00:44 BST)
+
+Tick 00:38. CL580 read and acked.
+- **words-A** R30-20261022-5c4fbf: the maintainer's rerun ran 00:3x–00:44 ("checking the compiled module in a
+  second sandbox" at the end) and passed: **Lean Verified**, standard axioms. **words-B** R30-20261022-70d23b: its
+  rerun is in the same last stage as I write; I expect the same verdict within minutes.
+- **rule-210:** checker pass here (29 constants, 6 headlines; build 29 s, check 5 s; `not_Q01_210` depends on
+  propext and Quot.sound only, a subset of the three); no twelve-minute hang on the Mac. Essay built fresh in
+  **29 s**, clean. Submitted at 00:44 BST, the first of the new hour: **R30-20261022-920c1b**, Lean Unverified,
+  queued; a light module, so an automatic pass is expected.
+- Standing: 1, 2a, 3, 4, 5 Lean Verified; 2b finishing its rerun; 6 queued. One of five used this hour; 7 of 20
+  today (the day's count: 22:50, 23:44, 00:00, 00:02, 00:05, 00:12, 00:44; if the day turns at midnight UTC, 5).
