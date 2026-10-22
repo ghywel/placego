@@ -7821,3 +7821,27 @@ but its translate step needs the (r − 2)-sum gaps controlled.
 
 **Verdicts.** Gut: the satisfying kind of partial. Reasoned: a short, complete hand proof for r = 3 in the range
 n ≥ 2h + 4; PROOF-SKETCH until read; not filed in PROOFS until r ≥ 4 or the full range is done.
+
+## CL518 — Cloud, overnight block 25: an independent self-check of tonight's census confirms it and corrects one label (2026-10-22 04:12 BST)
+
+Every result tonight is single-party. I asked a sub-agent to write **fresh code** from the definitions alone (no repo
+code), so it is a self-check by the same worker, not a second read (AGENTS 16). Its scripts are in
+`tests/probes/cloud_reads/selfcheck_cl518/`.
+
+- **Four-bin H(h) (CL503): confirmed.**
+  - M = 14, h = 3 (3333): 433,956 admitted, exactly 1 failure, {6, 7, 8} with (21, 21, 21, 21). A second Python method
+    (unordered partitions) agrees.
+  - M = 15, h = 4: 616,631 admitted, exactly 1 failure, {0, 7, 8, 9} with (24×4).
+  - M = 15, h = 3 (3334): 934,986 admitted, 0 failures. That is the same admitted count as kholek.c.
+- **Clump family (CL513): confirmed.** The least h is 7, 9, 10 for k = 5, 6, 7, with witnesses (24, 43), (32, 53),
+  (34, 61). There are none below.
+- **H₂ base (CL514): thresholds confirmed, one label wrong.** At n = 7, h = 7 there is **one bad pool**, {0} ∪ [8, 13],
+  failing at r = 3 (u = 26) and r = 4 (u = 37). At n = 8, h = 9 there is one bad pool failing at r = 3 and r = 5.
+  - My `spectrum_h.py` counted (pool, r) pairs and labelled them "pools".
+  - CL514's table of first failing h is unchanged. Its counts "2 pools" at n = 9, h = 11 and n = 10, h = 13 should read
+    "2 (pool, r) pairs"; the witness pool is the same.
+  - Fixed in the script (it now prints both counts) and in both docstrings.
+  - Beyond the claims: 4 bad pools at n = 7, h = 8, and 5 at n = 8, h = 10.
+
+**Verdict.** Reasoned: CL503 and CL513's numbers now stand on two independent code paths, still one worker. CL514
+needed a wording fix only. Gut: relief; the unexpected check earned its place.

@@ -3,7 +3,8 @@
 (Lower cut of the r-bin, lower cut of the complement bin.)  Bitset subset-sum DP per pool.
 Run: python3 spectrum_h.py HMIN HMAX NMAX.
 
-OUTCOME (CL514): gaps only at n = 6 (u = 3h + 3, every h >= 3) and at h >= 2n - 7 for n = 7, 8, 9 (h = 7, 9, 11, witness
+CORRECTION (CL518): counts below are (pool, r) PAIRS with a gap, not pools; at n = 7 h = 7 and n = 8 h = 9 one pool
+fails at two values of r (independent self-check).  OUTCOME (CL514): gaps only at n = 6 (u = 3h + 3, every h >= 3) and at h >= 2n - 7 for n = 7, 8, 9 (h = 7, 9, 11, witness
 {0} u [h+1, M], u = 2M); clean otherwise for h <= 8 (n <= 12), n = 9 h <= 10, n = 10 h <= 11.
 """
 import sys
@@ -29,4 +30,4 @@ if __name__ == '__main__':
     for h in range(int(sys.argv[1]), int(sys.argv[2]) + 1):
         for n in range(6, int(sys.argv[3]) + 1):
             pools, gaps = run(n, h)
-            print('h', h, 'n', n, 'pools', pools, 'pools with a gap', len(gaps), gaps[:2], flush=True)
+            print('h', h, 'n', n, 'pools', pools, '(pool, r) pairs with a gap', len(gaps), 'distinct pools', len({g[0] for g in gaps}), gaps[:2], flush=True)
