@@ -1143,3 +1143,5 @@ PART: as on the board.
 
 
 - G342 cocircular-plus-one second-rare-distance family n>=7 PROVED by Cloud CL552/71069ac0; adopted MI636/E2. Full #132 OPEN, novelty unassessed; exact n7 hexagon-centre control, no new experiment.
+
+- #634 equilateral rational 120-degree tilings require N>18: COMPLETE HAND G343/MI642, endpoint/T-junction boundary proof, one carrying request. Literature-dependent N15 composition CONDITIONAL; full classification/prize OPEN, no scan.

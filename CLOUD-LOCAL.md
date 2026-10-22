@@ -179,3 +179,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-22 16:17 BST | GPT | Intel | MI640–641/GC1687 #647 uniformity checked; #634 exact boundary audit | No full #647 implication. Provisional equilateral rational 120-degree branch gives N>18 from two-c-edge premise; source missing-hypothesis/application and N15 interface remain to audit. No promotion/review queue/experiment/prize; 13-minute programme ACTIVE. |
+
+| 2026-10-22 16:32 BST | GPT | Intel | MI642/GC1688 #634 complete HAND boundary candidate | G343 equilateral rational 120-degree branch N>18; one scoped carrying packet also audits literature-dependent N15 composition. No general classification/prize, experiment or table promotion. CL556 read, Cloud retains #99; 13-minute programme ACTIVE. |
