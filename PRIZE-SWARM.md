@@ -142,23 +142,26 @@ counterexample.*
 \$24, five at \$25, two at \$44, four at \$50, two at \$78). The swarm read all of them (PRIZE-PROBLEMS.md §8, "Low
 tiers read and worked"). Nine were already settled by others (#56, #1071, #1134, #426, #633, #825, #94, #105,
 #1128), and the nine still open are the swarm's problems above. So the next rung up is the \$100 tier: 31 problems,
-of which three (#132, #552, #708) are in the swarm. The other 28 are below; the page summaries are being verified
-problem by problem, and each row is checked again before any work starts.
+of which three (#132, #552, #708) are in the swarm. Of the other 28, the twelve below looked open; a triage of each
+page, its forum and the latest papers (2026-10-22, Cloud's sub-agents, a self-check; detail in CL549) verified eleven
+as open or partly open and found #211 settled. They are ranked by tractability, 5 meaning a small team could settle
+the prize question in days. Only #582 can be won by one finite certificate; every other row needs a full asymptotic
+or structural theorem, so after #582 the ladder reaches the "difficult" rungs the owner named.
 
-| Prize | Problem | Status (page, to verify) | Tractability (1–5) | Cloud's work | Prize won |
+| Prize | Problem | Status (verified 2026-10-22, CL549) | Tractability (1–5) | Cloud's work | Prize won |
 |---|---|---|---|---|---|
-| \$100 | #78 constructive R(k) > C^k | open | triage running | | No |
-| \$100 | #86 C₄-free subgraphs of the cube | open | triage running | | No |
-| \$100 | #99 minimal diameter, unit equilateral triangle | open for large n | triage running | | No |
-| \$100 | #104 unit circles through three points | open | triage running | | No |
-| \$100 | #120 Erdős similarity problem | open | triage running | | No |
-| \$100 | #159 R(C₄, K_n) ≪ n^{2−c} | open | triage running | | No |
-| \$100 | #211 lines from points, the sharp constant | partly open | triage running | | No |
-| \$100 | #241 Sidon-type sets for sums of three | open | triage running | | No |
-| \$100 | #474 three-colouring the plane's uncountable squares | partly open | triage running | | No |
-| \$100 | #582 Folkman-type K₄-free graphs, the least size | partly open | triage running | | No |
-| \$100 | #588 f_k(n) = o(n²) for k ≥ 4 | open | triage running | | No |
-| \$100 | #1029 R(k) / (k·2^{k/2}) → ∞ | open | triage running | | No |
+| \$100 | #582 Folkman-type K₄-free graphs, the least size | partly open: Folkman graphs exist; is the least one at most 100 vertices? (21 ≤ least ≤ 786) | 2: the only row a single certificate can win (one K₄-free graph on ≤ 100 vertices with an UNSAT proof) | next (heartbeat) | No |
+| \$100 | #99 minimal diameter, unit equilateral triangle | open for large n (counterexample \$100, proof \$50) | 2: asymptotic; minimisers certified only to n = 8 |  | No |
+| \$100 | #120 Erdős similarity problem | open (the Erdős similarity problem); several sequence classes now done | 2: needs a theorem for every null sequence |  | No |
+| \$100 | #78 constructive R(k) > C^k | open | 1: an explicit construction with homogeneous sets O(log n) |  | No |
+| \$100 | #86 C₄-free subgraphs of the cube | open; density between 1/2 and about 0.603 | 1: asymptotic; f(7) is a side question |  | No |
+| \$100 | #104 unit circles through three points | open | 1: asymptotic, no finite settlement |  | No |
+| \$100 | #159 R(C₄, K_n) ≪ n^{2−c} | open | 1: needs a power saving |  | No |
+| \$100 | #241 Sidon-type sets for sums of three | open; constant between 1 and about 1.5155 | 1: asymptotic |  | No |
+| \$100 | #474 three-colouring the plane's uncountable squares | partly open; the dichotomy is largely settled (Shelah 2026 preprint) | 1: set theory, no computation |  | No |
+| \$100 | #588 f_k(n) = o(n²) for k ≥ 4 | open | 1: asymptotic |  | No |
+| \$100 | #1029 R(k) / (k·2^{k/2}) → ∞ | open | 1: asymptotic |  | No |
+| \$100 | #211 lines from points, the sharp constant | **settled by others**: Beck; Szemerédi–Trotter (1983); only an unpriced 1/6 constant is open | — |  | No |
 
 *Read as settled on the page, to confirm: #6, #13, #27, #29, #43, #47, #54, #72, #88, #97, #101, #119, #182, #548, #720
 and #1123. If one of them proves to have an open part, it joins the table.*
