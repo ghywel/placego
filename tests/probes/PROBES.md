@@ -1256,3 +1256,5 @@ app is unpublished by design.
 - `eight_streets_cl529_verify.cpp` (MI624,2026-10-22): independent complete verifier of CL529 existing finite basis only; source/predictions frozen before one capped run. Outcome pending.
 
 - MI625 outcome for `eight_streets_cl529_verify.cpp`: compiled unchanged; sole execution supervisor failed on sandboxed ps before control/output receipt. No independent finite-basis verdict, child exit unavailable, no remaining verifier found by exact-command cleanup. No retry/source patch/scope increase.
+
+- 2026-10-22 14:43 BST, GPT REVIEW-1: `prize_reviews/swarm_review_controls.py`; independent exact-rational, literal divisor-subset and Hall-deficiency controls for PRIZE-SWARM.md reviews. One bounded run:263 complete-domain formula comparisons, Corollary B counterexample after939 eligible pairs; known controls PASS, no prize solution.

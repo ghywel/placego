@@ -51,18 +51,18 @@ separately. Every entry is currently No.
 
 | Problem | Open material to audit | Current review state |
 |---|---|---|
-| #634 | A1 corner argument; congruences; equilateral dependency | Hand audit completed; scoped verdict being recorded |
-| #7 | Kraft slice; sorted powers; all four-prime certificates | Hand audit completed; three domination certificates simplify coverage |
-| #708 | Hall hosts; valuation assembly; finite threshold 20 | Hand theorem checks; finite-proof receipt not independently adopted |
-| #552 | Increment lemma; graph certificate; prize versus finite-value scope | Increment and spectral identities check; certificate tier 1; full prize open |
-| #470 | Exact criterion; window corollary; confinement | Exact criterion checks; corollary/proof and global-confinement gaps identified |
-| #647 | Fixed-dimensional sieve bound; models versus theorem | Hand reduction checks; precise sieve application being recorded |
-| #32 | Uniform HL-AP/Bonferroni; random models | Conditional argument checked; range and model qualifications being recorded |
-| #1052 | Seed reachability; quantitative import; search/prunes | Reachability checks; floating search not yet a rigorous exclusion certificate |
-| #132 / #94 | Conditional geometry; classification; finite SAT | Conditional n=14 proof checks; classification remains open; no universal SAT inference |
-| #661 | General-modulus volume lemma; density estimates | Induction checks with explicit case ordering; analytic uniformity scoped separately |
-| #710 | Hall certificate scope; smooth lemma; extrapolation | Hall formulation checks; canonical-set maximality wording needs correction |
-| #711 | CRT construction; range bound; finite-period coverage | Main CRT proof checks with n=12 endpoint qualification; receipts scoped separately |
+| #634 | A1 corner argument; congruences; equilateral dependency | COMPLETE: R634 PASS in scope; global dependencies retained |
+| #7 | Kraft slice; sorted powers; all four-prime certificates | COMPLETE: R7 PASS; full problem open |
+| #708 | Hall hosts; valuation assembly; finite threshold 20 | COMPLETE: R708 hand PASS; finite receipt QUALIFIED |
+| #552 | Increment lemma; graph certificate; prize versus finite-value scope | COMPLETE: R552 hand PASS; finite value not prize |
+| #470 | Exact criterion; window corollary; confinement | COMPLETE: R470 exact PASS; corollary counterexample and confinement GAP |
+| #647 | Fixed-dimensional sieve bound; models versus theorem | COMPLETE: R647 sparsity PASS; finiteness open |
+| #32 | Uniform HL-AP/Bonferroni; random models | COMPLETE: R32 conditional PASS; growing-model qualification |
+| #1052 | Seed reachability; quantitative import; search/prunes | COMPLETE: R1052 hand PASS; rigorous exclusions GAP |
+| #132 / #94 | Conditional geometry; classification; finite SAT | COMPLETE: R132 conditional PASS; classification/universal extension open |
+| #661 | General-modulus volume lemma; density estimates | COMPLETE: R661 volume PASS with clarification; analytic scope retained |
+| #710 | Hall certificate scope; smooth lemma; extrapolation | COMPLETE: R710 certificates scoped; canonical-set correction |
+| #711 | CRT construction; range bound; finite-period coverage | COMPLETE: R711 CRT PASS; open-interval endpoint qualification |
 
 ## Results at a glance
 
@@ -3413,3 +3413,252 @@ I computed the spectra of the SAT witnesses.
   - The UNSAT results have no DRAT certificates, so they are labelled MEASURED, with controls passed.
   - The runs killed by pkill are listed and voided above.
   - The symmetry breaking was argued sound, and it reproduced known values in both directions.
+
+
+## GPT independent review register (REVIEW-1, 2026-10-22 14:43 BST)
+
+**All seven named review requests, plus the substantive claims in the other five reports, have now received a
+scoped independent review.** PASS below carries only the stated hand implication. GAP or QUALIFIED is a completed
+review with an outstanding mathematical/certificate issue, not a claim that the issue was fixed. Historical agent
+labels and all original reports above are retained. No entire prize problem is solved and every prize-won cell
+remains No. Exact official pages returned 403 in direct access; indexed official statements and the primary sources
+listed here were read with that access/age limitation. No inaccessible source is treated as independently verified.
+
+### R634: triangle corner exclusion — PASS, with original global dependencies retained
+
+The A1 proof in hand-back 2 carries. Under its commensurable-side and irrational-angle hypotheses, the apex has
+one alpha tile and each base corner has one alpha plus one beta tile. Whole boundary edges have lengths
+(a,b,c)=(mk,k²-m²,k²), gcd(m,k)=1. The side vector is s(k,k,m); both lengths are integers, so s is an integer.
+Counting b-edges modulo k on the leg with the apex b-edge gives at least k such edges, hence s>=b. Area gives
+s²=Nb, therefore s<=N. If N is prime then N|s, so s=b=N. The leg is consequently all b-edges. The base count
+is congruent to m mod k, hence is at least m; its length is exactly mb, so it too is all b-edges. At their common
+corner the beta tile has only a/c edges incident to that vertex, a contradiction. No extra tiling hypothesis was
+silently added. The congruences for 2k²-m² modulo 8, 3k²-m² modulo 3, and the stated primitive Eisenstein branches
+modulo 12 check; square scale factors must travel with them. The irrational-c equilateral argument also carries
+under its explicitly rational a/b and irrational-angle assumptions: a mixed integer-plus-c side cannot have a
+rational square, and the remaining pure-side cases give the stated corner contradiction.
+
+This does not independently carry Laczkovich's entire shape list, the 2026 commensurability claims, or all later
+preprints. Beeson's primary [equilateral paper](https://arxiv.org/abs/1812.07014), abstract read, explicitly gives
+the prime-N>3 exclusion; it is prior art, not our prize. The bounded list through 100 is not a complete answer to
+#634. The agent's integer-sided final corner obstruction remains open, as it itself states.
+
+### R7: Kraft slice and four-prime support — PASS (known-style argument; no novelty claim)
+
+CRT makes each admitted q^i e progression occupy exactly q^-i of one q-adic slice. The union bound gives the
+claimed uncovered density. Ordering residues by their largest assigned power works even with empty families:
+any power left outside the first t occupied residues has t distinct larger powers before it, so the total tail
+is at most sum_(i>=t) q^-i. This carries both lemmas and the 1/16 bound for {3,5,7}.
+
+The product-event improvement carries: when A is the independent intersection of pure-prime avoidance events,
+a mixed family uses only its own prime coordinates, so its conditional expectation pays only their probability
+penalties. The all-four-prime conclusion needs no 298-case machine enumeration. If 3 is absent, even the largest
+four-prime Euler product, at {5,7,11,13}, is less than 2, giving a strict finite union bound. If 3 is present,
+sorted remaining primes are dominated by one of {5,7,11}, {5,11,13}, {7,11,13}. Use the report's product bound with
+avoidance counts (1,2,2), (1,1,1), (1,1,1), respectively. Exact resulting bounds are
+
+    23/48, 7/18 (=77/198), 277/990,
+
+all below 1/2, and each expression decreases as any corresponding prime grows. Thus every distinct odd covering
+must use at least five distinct prime factors in its lcm. The three-prime density and four-prime exclusion are
+independently carried; larger claimed support bounds in outside material were not adopted. No odd covering is
+ruled out without the support restriction, so no prize solution.
+
+### R708: valuation assembly — PASS; finite threshold — QUALIFIED
+
+Lemma 1 carries: for each prime the nested prime-power neighbourhoods satisfy Hall, and the union of the
+per-prime injections costs at most sum omega(a). For Theorem 2, an s-element heavy subset has at least s hosts
+whenever the sorted t condition holds. Pinning heavy roles then costs one host per heavy element. At each p-level,
+
+    H_k+min(r_p,S_k-H_k)=min(H_k+r_p,S_k)>=P_k+R_k,
+
+because the right side is <=S_k and <=H_k+r_p. The SAME r_p largest outside valuations realize all level counts
+simultaneously. Summing proves the 2n bound with the stated host-admission premise, including repeated powers.
+The addendum generalizes that premise to actual union-Hall admission, rather than requiring the crude sorted t
+condition. This is valid. Source pushh.py enumerates all prime-power components <s, all heavy candidates a, every
+interval-constant C set, and inclusion-minimal block collections whose demand is >=s. Its minunion routine scans
+a full lcm period at the smallest window length; monotonicity justifies this reduction.
+
+The reported finite threshold 20 still needs its executed complete receipt/control record before it becomes an
+independently certified finite theorem. No long replay was done. In particular the s=18..20 single-code-path
+runs and time-limit boundary are not upgraded by the hand proof. Literal website wording uses exact |B|, while
+the intended extremal question uses |B|<=g(n); the report's sup-min convention is retained explicitly. Do not win
+a prize by exploiting the known wording defect. The unrestricted host-Hall condition is an actual possible bridge
+to 2n; it is NOT proved for all heavy sets by these finite checks.
+
+### R552: increment lemma and spectral identity — PASS; finite graph — controlled certificate scope
+
+For a C4-free graph with minimum degree d, deletion of two vertices is safe for degree d-1 if their common
+neighbour, if present, originally has degree >=d+1. A vertex of higher degree supplies such a pair of neighbours,
+since there can be no second common neighbour. If the graph is d-regular, choose a pair with no common neighbour;
+if none exists the friendship theorem forces the regular graph to be K3, outside the n>=1 case used in the
+argument. This proves the increment bound R(n+1)<=R(n)+2 with the report's convention. The identity
+A²=(d-1)I+J-B and degree(B)=N-1-d(d-1) follow directly from the common-neighbour counts. The spectral and triangle
+consequences quoted for a 46-vertex 7-regular graph check.
+
+Local's explicitly rebuilt 48-vertex graph and genuine negative graph controls are a tier-1 finite certificate;
+its degree/C4 checks, together with the stated Parsons upper bound, support R(C4,K_(1,41))=49. This is a finite
+Ramsey value, not the official asymptotic unbounded-gap question. Novelty is unassessed, and a finite value must
+not be counted as the $100 prize. Restricted symmetry-class UNSATs do not exclude arbitrary 46-vertex graphs.
+
+### R470: exact criterion — PASS; Corollary B — COUNTEREXAMPLE; confinement — GAP
+
+The exact Theorem A carries in its stated band. All relevant proper-divisor sums below Delta have form
+r+h*p+h'*q with 0<=r,h,h'<=M-1. Since Delta<M², relevant layers h+h' stay below M; consecutive intervals within a
+layer overlap when a+b<=M. The gaps are exactly [lambda*q+M,(lambda+1)*p-1]. The quotient/remainder expression
+for Delta therefore gives the stated L,b,v inequalities, including deficiency and negative-L cases. The three
+maximal proper divisors n/p,n/q,n/2 are deficient under the stated prime bounds, so primitivity follows.
+
+**Corollary B's unrestricted iff shortcut is false.** Take
+
+    k=9, N=2048, M=1024, a=55, b=51,
+    p=1993, q=2099 (both prime), n=2141853184.
+
+Here a>=b+4, a<M/2 and a+b<=M. But u=1, v=760, L=1 and Delta=3832. The first proper-divisor layer ends at
+q+M-1=3122 and the second starts at 2p=3986, so Delta is not representable and n is weird. Meanwhile
+
+    a(a+b)=5830 > N+2b=2150,
+
+which contradicts the claimed iff. An even smaller hand control to just the u=0 inference is
+N128,a31,b23,p97,q151,u5. The counterexample is independently confirmed by literal proper-divisor subset sums,
+without using the exact formula as its verifier. Preserve this correction for the author's response; it does not
+refute Theorem A or prove any odd-weird result. The small-u=0 sufficient window can still be used if that premise
+is actually shown. Corollary C's displayed (2G+2)(3G+2) estimate also needs its rounding/endpoint argument; it is
+not carried on that one-line bound. Theorem D controls ONE quotient run but does not prove that all admissible
+runs form one global interval or bound the q-fixed fibre. Its own next-step list admits those missing proofs.
+Thus the universal confinement/RH negative is not independently carried; finite measurements remain measurements.
+
+### R647: log-power sparsity — PASS with an explicit sieve-level justification; finiteness not proved
+
+The omega-bound, pairwise coprimality of medium-prime products d_k, CRT class and harmonic tuple summation check.
+The terse assertion that z<=T alone licenses the quoted sieve bound should be expanded. For fixed C,r,J, omit the
+at most rJ exceptional primes dividing D, and apply the general Selberg upper bound only up to R=z^(1/8), with
+squared level R². Since T>=z, the aggregate CRT remainder O(R² times a fixed log power) is negligible relative to
+T/(log z)^r. Omitting at most rJ primes changes the fixed-dimensional denominator by at most a constant depending
+on C,r: each factor 1+r/(p-r) is <=r+1. The usual full squarefree h-sum is of order (log R)^r. This gives a bound
+uniform in the tuples, and summing their reciprocal weights produces the report's (log log x)^(rJ) factor.
+Finite n<=r are discarded. The degenerate J=0 case is finite or follows directly. This verifies the theorem as a
+known-style application of sieve theory, not a finiteness theorem. Primary reference read: Tao's
+[Selberg sieve notes, Theorems30–32](https://terrytao.wordpress.com/2015/01/21/254a-notes-4-some-sieve-theory/).
+
+The exact long scan is supporting measured evidence, not a new infinite exclusion. Neither its near-miss fit nor
+its estimated tail probability is a rigorous nonexistence bound. The first-six-shift congruence argument has its
+stated small-n exceptions and carries as a necessary reduction, never a sufficiency criterion.
+
+### R32: uniform conditional theorem — PASS with an explicit zero convention; growing-model version — GAP
+
+Under exactly the stated STRONG uniform HL-AP hypothesis, the minimizing CRT class, fixed-order Bonferroni,
+uniform tail singular-series bound and error summation carry. Shifts with n-a<X^(1/2), including a>=n, must have
+x_(n,a)=0; otherwise log(n-a) in the displayed symmetric-function notation is undefined. With that convention,
+all terms share the far-from-shifts range after the recorded negligible deletion. First choose m(C), then
+eta(C); k never grows with X. Excluding the small primes makes the reciprocal prime-factor sum of each fixed
+Delta(S) at most log(1/(1-eta))+o(1), so the claimed uniform approximation is valid. This verifies the conditional
+obstruction to O(log N), including the almost-all corollary with its factors. It assumes far more than ordinary
+fixed-shift Hardy–Littlewood and is NOT an unconditional prize solution.
+
+The Cramer-model lower bound carries: there are linearly many good target n, a polylogarithmic dependency degree,
+and an exponentially strong failure probability that survives the union over every possible A. Its upper bound
+is a joint random construction followed by Borel–Cantelli/Fubini. The fixed-modulus Granville variant carries with
+its actual averaging. The advertised arbitrary growing z extension requires a uniform rough-integer count and a
+specified single probability model; an exact fraction of residue classes does not give that fraction in a short
+finite interval when the modulus exceeds its length. That extension is not independently adopted. Greedy covers
+and all random models remain heuristic evidence for real primes. No source or hypothesis was silently upgraded.
+
+### R1052: seed reachability/import — PASS; rigorous finite exclusions — GAP
+
+If K is an unreachable set, q-adic balance within K supplies its full q-demand. Its even factors therefore force
+prod_K(1+q^-e)>=2^|K|, but the full odd abundancy is below 2; K is empty. The import bound follows by the same
+valuation product, and the one-element obstruction extends reachability to unitary multiperfect factors3 and4.
+The report's equality v2(sigma*)=omega for odd numbers should read >=; the parity contradiction still works.
+The finite 2-adic budget, exponent overshoot, component-cap and best-new-prime abundancy inequalities are sound
+in exact arithmetic. The gap branch uses at most rem future factors, so at least one component is <=Y; branching
+all such components closes the logical search, subject to actual enumeration and rigorously bounded arithmetic.
+
+Source review of upn_box3.py/upn_free3.py finds floating log seed filters and exponential/abundancy/gap prunes with
+fixed safety tolerances. Those tolerances have no proved accumulated-error enclosure in the supplied record.
+Exact rechecking of positive solutions and recovering five controls do not rule out a false negative prune.
+Thus the component2^26 and exponent exclusions remain reported MEASURED searches, not independently carried
+computer-assisted nonexistence theorems. This is a certificate gap, not an exhibited false prune. No automatic
+447-second rerun or probabilistic-primality promotion occurred. A sixth actual exact sigma*=2N witness would,
+by contrast, be a finite full answer to the existence question.
+
+### R132/R94: conditional n=14 — PASS; classifications and numerical extension — QUALIFIED
+
+Counting fixes the n14 counterexample multiplicities at (1,15,15,15,15,15,15). Removing a diameter endpoint leaves
+13 points with six distances, each multiplicity<=15. Under C13, the two high-multiplicity models are excluded,
+and the R13 equal-pair axis argument forces y=-7/6, whose maximal squared distance is too large. This conditional
+proof carries. Lemmas A/B and the unconditional n15 consequence (seven distances, no common diameter endpoint)
+also carry. The stronger n15 claim using a two-point diameter cover invokes a universal nonextendability statement
+for R13 that the report only checks by a grid scan; that scan is not a proof about every point, so that extra
+claim is not carried on that evidence.
+
+The primary [few-distance paper](https://arxiv.org/html/1911.11688v3), Theorem1.3(vi), says AT LEAST three optimal
+13-point configurations, not exactly three. C13 stays open; no unconditional n14 or full #132 solution follows.
+SAT conclusions concern only their stated finite point universes, and no DRAT certificates are supplied for the
+UNSATs. #94 was already a known solved problem before this programme; it cannot populate our prize-won column.
+
+### R661: all-modulus volume — PASS after ordering cases; analytic scope retained
+
+CRT tensorization is valid: projections form a biclique in the first factor and even the two largest fibres form
+a biclique in the remaining factors, so their volumes multiply as upper bounds. The ramified and inert cases are
+subgroup bounds. For a split prime, treat a singleton reduction first (or a shared line, with the stated induction).
+If the opposite reduction meets both arms, two independent coordinate congruences force the singleton side to be
+one actual point. Otherwise the shared-line induction applies. Only after excluding this case may the two-corner
+case assert that BOTH sides have at most two points. This ordering supplies the omitted qualifier in (iii) and
+proves |Pbar|*|Qbar|<=M². The disk consequence is an upper bound; an ideal of norm exactly M need not exist when
+an inert prime occurs to odd exponent, so attainment by such a coset is not universal.
+
+For the per-ideal estimate use the sharper Gaussian-ideal lattice error
+O(R/sqrt(Nideal)+1), not merely the displayed O(R), to obtain the asserted relative o(1) uniformly up to
+Nideal<=R^(2-epsilon). The single-centre argument remains conditional on its cited uniform analytic estimate;
+a numerical check does not independently prove Selberg–Delange uniformity. The volume obstruction is a partial
+negative about divisibility constructions, not a solution of #661 or a universal dense-pair lower bound.
+
+### R710: Hall certificate method/smooth lemma — PASS; canonical-set description — CORRECTION
+
+A literal perfect matching supplies the upper bound; recounting neighbours of an explicit deficient K supplies the
+lower bound. Both interval endpoints in cert.py/fm_verify.c agree with the stated open interval. The smooth-cutoff
+lemma follows because every relevant multiplier is <the next prime q. The supplied certificate checkers are sound
+for literal inputs; large numerical values still require their actual original receipts/data, not a fresh execution
+or a claim that this source review has independently regenerated all ten values.
+
+The alternating set reachable from ALL unmatched left vertices in a maximum matching is the SMALLEST maximum-
+deficiency set, not the largest. A countercontrol has two left vertices, one isolated, and one matched to a single
+right vertex. Both the isolated singleton and the whole left side have maximum deficiency1; only the singleton
+is reachable. This does not invalidate any literal Hall certificate or f(n) value, but “largest” must not be used
+as a structural premise. Smooth-region observations, saddle-point optimization and asymptotic constants remain
+measured/heuristic. No matching theorem of the required infinite scope is proved by those fits.
+
+### R711: CRT lower bound/restricted range — PASS; exact maxima — certificate scope
+
+The six moduli are distinct. Every cross gcd between the two hub groups divides2: their possible odd common
+factors3 and5 are excluded by the explicit choices of K and a. Hence the CRT system is soluble. In the window
+1..3K-1 each modulus has exactly its stated two multiples, on only five offsets; Hall then gives f>=3K+1.
+The rule K=n-6 or n-7 meets K>=5 at the stated n>=12 gate. The construction and literal lower bound carry for
+all stated n. The coarse general bound also carries with an endpoint adjustment: take an INTEGER window length
+W=n*T(2n^A) and hence f<=W+1 in the open-interval convention. Wigert gives the stated n^(1+o(1)) when
+A=o(log log n); this does not cover arbitrary starts m. It is a proper restricted-range theorem, not the prize.
+
+Reflection applies to the failing window and the corrected start -m-F+1, so it can support coverage of the other
+half-period. Complete F(n) maxima still require the archived sweep receipts plus exact gap coverage, not just
+symmetry or a lower-bound witness. The measured formula through24 is not an asymptotic law. The Golomb-ruler
+remark has no explicit ruler/incidence/CRT construction in its proof text and is not carried as a new all-n
+family here. It is unnecessary for either the checked 3n lower bound or the known stronger asymptotic lower bound.
+
+### Independent audit instrument and outcome
+
+One bounded run of tests/probes/prize_reviews/swarm_review_controls.py checked the three rational support
+certificates, known weird/nonweird controls, all263 eligible prime pairs in the complete k=1..6 domain against
+literal proper-divisor subset sums, and then939 eligible pairs before finding the independent Corollary B witness.
+It also checked the Hall-deficiency countercontrol. All genuine controls passed; no patch/retry or scope increase.
+Observed wall time0.026s, output under1KiB; CPU10s/wall10s/pair250000/domain/bitset caps were fixed in the header.
+The exact counterexample and hand gap proof above, rather than its finite search extent, carry the correction.
+
+### Next solving task (owner's continuing direction; no self-halt)
+
+All report reviews now have explicit verdicts; unresolved certificate/analytic dependencies are named rather than
+counted as proved. The first full-solution attempt is #708's unrestricted host-Hall bridge: if every heavy set
+admits distinct block hosts in every interval of length max(A), the independently carried valuation assembly gives
+2n for ALL sets. Test this global admission statement before extending finite thresholds. A failure redirects the
+programme to another justified route/problem; it does not halt the heartbeat. Lower-prize alternatives remain in
+scope, with their actual hard steps explicit. Every prize-won cell is still No.

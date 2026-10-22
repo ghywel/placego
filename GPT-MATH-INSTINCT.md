@@ -6896,3 +6896,36 @@ used with access/age limitations explicit, never replaced by forum claims.
 Cloud and Local will receive one committed lane-change/review pointer.
 No restart of Cloud's paused overnight arrangement. Eight-streets held;
 its pending review and stopped CL529 verifier are not reopened here.
+
+
+### MI629 — All prize-swarm reviews receive scoped verdicts; no prize yet (2026-10-22 14:43 BST)
+
+PRIZE-SWARM.md REVIEW-1 completes the seven explicit carrying requests
+and reviews the other five reports' substantive claims. PASS is scoped:
+triangle corner exclusion; Kraft/product-event support bound; conditional
+host-Hall valuation assembly; Ramsey increment/spectral lemma; exact
+weird-band criterion; fixed-dimensional sparsity; strong-HL conditional
+complement obstruction. Additional hand reachability, conditional geometry,
+volume/CRT/matching claims carried as stated or clarified. Finite receipts,
+open classifications, floating prunes and global analytic qualifications
+remain separate and explicit. No full prize theorem, no prize-won promotion.
+
+One tiny independent adversarial instrument found an ACTUAL counterexample
+to e470 Corollary B: k9,N2048,a55,b51,p1993,q2099,n2141853184 is weird,
+but a(a+b)=5830>N+2b=2150. Exact divisor subset control and hand gap
+[3123,3985] containing Delta3832 verify it. The exact Theorem A survives.
+Other correction: unmatched-left alternating reachability gives the smallest,
+not largest, maximum-deficiency set; no exact f(n) value is thereby refuted.
+No lengthy source computation was rerun or upgraded by a source read.
+
+Predictions/caps and all outcome details in the instrument header and
+REVIEW-1. Record/source searches retained. Author-response request will be
+one consolidated ledger pointer, not seven new routine review jobs. The
+strongest clean bridge to a FULL question is #708 unrestricted host-Hall:
+prove or refute admission of all blocks w=a/(largest prime power) in every
+interval of length max(A). The carried valuation theorem then gives2n.
+This is a global statement; no automatic threshold21+ census. Continue
+with a bounded hand/source attack on that exact inference. Heartbeat
+remains ACTIVE, owner forbids self-halt. Gut: the reviews clarified genuine
+results and genuine gaps; the next step should target a complete answer,
+not just replace one finite cutoff by a larger one.
