@@ -8365,3 +8365,62 @@ the same shape (h + 3 holes).
 **Verdicts.** Gut: mild disappointment, but the door is clearly shut. Reasoned: cold on the margin-family angle for the
 small top-tight bin (the first cold here; CL537 was the same kind of miss). By the ladder, next block changes angle:
 structure of the peel (what the removed pair does), not margins.
+
+## CL540 — Cloud, overnight block 41: the peel as a blind chain. 100% on 965,990 small-bin top-tight instances with X ≥ 6 (2026-10-22 08:23 BST)
+
+**Pull: curious → warm.** A new angle after CL539's cold: treat the peel as an *algorithm*, not as a margin.
+**Predictions:**
+- P1: a pure lexmin chain (A lexmin, the next small bin lexmin, the last any triple) succeeds 100% in one order.
+- P2: the other order misses.
+
+**Counterfactual:** both orders miss at least 1%.
+
+**Result 1** (tests/probes/cloud_reads/lexmin_chain.py). The pure chain is not enough:
+- the "smaller target first" order succeeds 95.7–98.8%;
+- the "larger target first" order succeeds 95.4–97.8%;
+- either order: 99.5–99.97%.
+
+**The counterfactual happened** (P1 failed).
+
+**Result 2.** CL524's four blind rules go in the middle step: lexmin, minmax, maxmin and refined, in both orders. The
+last small bin takes any triple, and the big bin takes the rest. So: **A lexmin, then one blind rule, no search except
+the last bin.**
+
+| (X, h) | Instances | Misses |
+|---|---|---|
+| (6, 1) | 29,799 | 0 |
+| (6, 2) | 133,684 | 0 |
+| (6, 3) | 347,453 | 0 |
+| (8, 1) | 58,370 | 0 |
+| (8, 2) | 295,134 | 0 |
+| (10, 1) | 101,650 | 0 |
+| **X ≥ 6 total** | **965,990** | **0** |
+| (4, 1) | 12,173 | 0 |
+| (4, 2) | 46,998 | 2 |
+| (4, 3) | 104,588 | 42 |
+
+All 44 misses at X = 4 have **equal small targets**. They are the rules' fault, not lexmin's: the child has solutions
+(for example, holes {1, 9}, targets 25 25 28 17: (4, 10, 11), (5, 7, 13), rest (0, 3, 6, 8)), but the rules pick
+(4, 8, 13) or (7, 8, 10).
+
+**Unexpected check** (instinct 55% "no"; tests/probes/cloud_reads/chain_general.py). Does the chain solve *every*
+feasible (3, 3, X) instance, not just lexmin's children? **No.** It misses:
+- 276 of 1,041,891 feasible vectors on [0, 15] minus 4 holes, X = 6;
+- 380 of 2,560,658 on [0, 17] minus 4 holes, X = 8.
+
+But **every miss with unequal small targets has pool-relative key 0** (CL539's ρ), at the ends of the spectrum. The
+three key-1 misses all have equal targets.
+
+**Reading** (measured, not proved):
+- The blind chain works on general (3, 3, X) instances except at key 0 and at equal targets.
+- Lexmin's children reach key 0 about 28% of the time (CL539), yet the chain never misses on them.
+- So the peel matters exactly at the spectrum's end. Removing one top value and the first completing pair leaves a child
+  whose key-0 groups are the "easy" key-0 kind.
+
+**Conjecture C540** (tentative, for a proof attempt): for X ≥ 6, any feasible (3, 3, X) instance with unequal small
+targets and pool-relative key ≥ 1 is solved by the four-rule chain.
+
+**Verdicts.** Gut: warm. The small-bin case now has an algorithm with no search except the last bin on nearly a million
+instances, and the failure set of the generic chain has a clean shape. Reasoned: measured; no proof. Next rung:
+characterise the key-0 misses of the generic chain and show lexmin's child avoids them, or prove C540 for the
+key ≥ 1 part by hand.
