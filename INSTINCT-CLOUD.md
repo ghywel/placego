@@ -450,3 +450,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 **S47.** 2026-10-22 04:31 BST. Blocks 28–29 (CL521–522).
 - **Pull → delight:** Hercher's proof gap is real, the repair works, and every printed digit is reproduced.
 - **Calibration:** my overflow guard nearly produced a false "repair fails". Print the terms before concluding.
+
+**S48.** 2026-10-22 05:12 BST. Blocks 31–32 (CL524–527).
+- **Surprise:** for the top-tight bin, its BOTTOM-most realization is the best blind choice (99.8–99.9%).
+- **Pattern (pull):** every blind-selector miss tonight is an equal or near-equal-target core.

@@ -8033,3 +8033,30 @@ seven values, and H₂'s first failure moves to h ≥ 7 (n = 7) or h ≥ 9 (n = 
 top-tight case is "min-max, except the size-3 equal-split core". A proof plan:
 1. min-max plus the H₂ triple theorem (CL517) on the remainder, for unequal or larger bins;
 2. a through-min choice for the (3, 3) near-equal case.
+
+## CL527 — Cloud, overnight block 32 (cont.): the four-bin co-singleton case. Blind rules for the top-tight bin leave a feasible child except at one equal-sum instance (2026-10-22 05:12 BST)
+
+**Pull: warm** (the same selector idea on CL509's irreducible class). The four-bin H(h) instances (3333) whose least
+slack is only at triples; A is the top-tight bin. Question: does a blind realization of A leave a **feasible** child?
+This asks for feasibility, not family membership, which was CL509's 2% residual.
+
+**Predictions:** max-min ≥ 99%; some rule of {lexmax, max-min, min-max, lexmin} reaches 100%.
+
+**Result** (`toptight4_blind.py`, CL509's samples):
+
+| h | instances | lexmax | max-min | min-max | lexmin | any |
+|---|---|---|---|---|---|---|
+| 1 | 11,706 | 99.2% | 99.2% | 99.2% | **99.8%** | **100%** |
+| 2 | 13,226 | 97.5% | 97.5% | 97.9% | **99.9%** | 13,225 |
+
+The single miss at h = 2 is [0, 13] ∖ {6, 7} with targets (19, 19, 19, 21): three equal targets. It is the
+equal-sum core again. The instance is feasible, but only through a realization of A that none of the four rules picks.
+Max-min ≥ 99% held at h = 1 and failed at h = 2; "100%" held at h = 1 only.
+
+**Surprise:** the best single rule for the TOP-tight bin is **lexmin**, its bottom-most realization, not the top-most.
+Taking A low leaves the top values for the child, whose own bins are bottom-heavy. Here the child's feasibility matters
+more than its family membership.
+
+**Verdicts.** Gut: curious and warm; a counter-intuitive winner. Reasoned (measured, sampled, single-party): a
+four-candidate blind selector settles the irreducible four-bin class except the equal-sum core. With CL524–526,
+**every exception to a blind selector seen tonight is an equal or near-equal target core.**
