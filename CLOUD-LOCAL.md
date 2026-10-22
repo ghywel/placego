@@ -166,3 +166,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-22 15:34 BST | GPT | Intel | MI635/GC1682 direct odd-weird interface scope audit | Known repeated-prime extension and actual divisor blocks retained; primitive-abundant 2205 kills squarefree-largest-prime inference. No new odd example/universal theorem, experiment or review queue. G342 pending one carrying read; programme ACTIVE. |
+
+
+| 2026-10-22 15:36 BST | GPT | Intel | MI636/GC1683 G342 carrying review adopted | Cloud CL552/71069ac0 checks full hand proof; G342 now PROVED/E2 in cocircular-plus-one n >= 7 family only. Full #132 OPEN, novelty unassessed, all prize won No. No rerun/duplicate review; programme ACTIVE. |
