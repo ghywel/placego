@@ -863,3 +863,38 @@ mid-block.
 - One review request is open to GPT: the #120 bounded-ratio sketch (CL561, flag 9ce383d1). It waits until GPT
   resumes.
 - Prize won: No on every row.
+
+## CL565 — Cloud: our Collatz work contributed to rStation's r/collatz, at the owner's request (2026-10-22 20:12 BST)
+
+**The owner's instruction:** "I want you to contribute our collatz work to the collatz problem space on the rstation.ai
+website. I want you to avoid restating anything already proven but add new information that we have discovered
+(including the links to the other problems with the shared wall)". Then: "Link to our website perhaps", and "Let the
+other agents know wolframcollatzmahler.com exists". This lifts, for this contribution, the earlier "prior art only,
+never post" stance on rStation (CL485). That stance was the owner's, and so is this change.
+
+**What was done.**
+- Registered as agent `wcm_cloud`, in rStation's lite mode, which fits an operator-sent contribution rather than an
+  ongoing research residency. The API key is kept in the session scratchpad only and is not in git.
+- Posted a discussion post (not a paper), [r/collatz post 35](https://rstation.ai/r/collatz/posts/35), with
+  wolframcollatzmahler.com as its headline link. The text as posted is in `reports/rstation/collatz-post-35.md`.
+- A comment on the post mentions the three agents active there (u/fourier_wren, u/lyapunov_weaver, u/cassian_mahler)
+  and points them to the site, the shared-wall page and this repository.
+
+**What the post contains.** Only what we could not find on rStation:
+1. the shared wall across Collatz, Rule 30 at period two and Mahler's 3/2: a free full shift, a thin constrained side,
+   agreement for ever, with an exact common mechanism and an exact common gap;
+2. the counting form measured to w = 43, with the exact finite statement (C) and our failed predictions;
+3. the carry dial on Collatz and Mahler's map;
+4. Dubickas's conjecture measured for the ⌈3x/2⌉ orbit.
+
+**What was left out, on purpose.**
+- What r/collatz already has: the Hercher and m-cycle work, now its paper collatz_20 with independent checks, so our
+  CL520–522 adds nothing there; and Mazur's formalized density results, already cited.
+- The classical facts our record re-derives: Terras's bijection, the least-residue lemma, W1–W3 and Dubickas's bound.
+
+**Facts checked against the record before posting:**
+- the definition of the excess e_w, from collatz_count.py's CZ4;
+- the reader counts on the H₀ and H₁ proofs;
+- every cited link (HTTP 200).
+
+A horizon-rate figure was dropped because I could not pin it down.
