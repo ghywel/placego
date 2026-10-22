@@ -10,6 +10,11 @@ rules4+swap: 100% at (X, h) = (6, 1) 29,799; (6, 2) 133,684; (6, 3) 347,453; (8,
 has EQUAL small targets (holes 1, 9 | 25 25 28 17; holes 6, 8 | 22 22 22 25).
 So for X >= 6 on these domains the small-bin top-tight case is solved by a blind two-step chain, no search but the
 last bin.
+OUTCOME (CL542).  MODE=a ALLR=1: keep top-tightness, take EVERY triple R of sum u_A (not only lexmin): the child is
+solved by the chain for every (instance, R): (6,1) 362,861; (6,2) 2,026,835; (8,1) 893,450 pairs, 0 misses (top of R
+in the pool's top three for 306,954 / 1,556,843 / 706,029 of them; the rest also solved).  X = 4, h = 1: 44 misses of
+112,219, all with equal small targets.  MODE=b (lexmin, top-tightness dropped, A = each small bin of every H(h)
+instance): (6,1) 167,795 of 185,517 (90.4%).  Top-tightness carries the small-bin case; lexmin is incidental.
 """
 import sys
 from itertools import combinations
@@ -54,6 +59,17 @@ def chain(pool, order, t):
         if R is None: return False
         p = [x for x in p if x not in R]
 
+def chain4R(pool, R, b, c, t):
+    p = [x for x in pool if x not in R]
+    for mid, last in ((b, c), (c, b)):
+        for rule in RULES:
+            Q = pick(p, t[mid], rule)
+            if Q is not None and lexmin([x for x in p if x not in Q], t[last]) is not None: return rule
+    return None
+
+MODE = __import__('os').environ.get('MODE', '')
+ALLR = __import__('os').environ.get('ALLR') == '1'   # MODE=a: every realization of A, not only top-in-top-three
+
 def run(M, h, X):
     C = (3, 3, 3, X); cnt = Counter(); ex = []
     groups = [J for s in (1, 2, 3) for J in combinations(range(4), s)]
@@ -69,11 +85,26 @@ def run(M, h, X):
                         sig[J] = s_
                     if bad: continue
                     mn = min(sig.values()); arg = [J for J in sig if sig[J] == mn]
+                    if MODE == 'b':   # lexmin, no top-tightness: A = each small bin in turn
+                        for A in range(3):
+                            b, c = [i for i in range(3) if i != A]
+                            cnt['b_n'] += 1; ok = chain4(S, A, b, c, t) is not None
+                            cnt['b_solved'] += ok
+                            if not ok and len(ex) < 4: ex.append((H, t, A))
+                        continue
                     if any(len(J) <= 2 for J in arg): continue
                     tops = {[i for i in range(4) if i not in J][0] for J in arg}
                     if tops == {3}: continue
                     A = min(i for i in tops if i < 3); cnt['n'] += 1
                     b, c = sorted((i for i in range(3) if i != A), key=lambda i: t[i])
+                    if MODE == 'a':   # top-tight kept; A = every triple of sum u_A whose top is among the top three
+                        for R in combinations(S, 3):
+                            if sum(R) != t[A] or (R[2] < S[-3] and not ALLR): continue
+                            cnt['a_top3'] += R[2] >= S[-3]
+                            cnt['a_n'] += 1; ok = chain4R(S, R, b, c, t) is not None
+                            cnt['a_solved'] += ok; cnt['a_lexmin'] += R == lexmin(S, t[A])
+                            if not ok and len(ex) < 4: ex.append((H, t, A, R))
+                        continue
                     lo = chain(S, (A, b, c), t); hi = chain(S, (A, c, b), t)
                     cnt['lo'] += lo; cnt['hi'] += hi; cnt['either'] += lo or hi
                     r4 = chain4(S, A, b, c, t); cnt['rules4+swap'] += r4 is not None

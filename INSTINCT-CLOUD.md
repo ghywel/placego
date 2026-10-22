@@ -480,3 +480,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   H-key, is sharp across four domains.
 - **Pull (curious):** lexmin's children sit up to three keys below that line and are never missed. What do the peel's
   holes do?
+
+**S54.** 2026-10-22 08:39 BST. Block 42 (CL542).
+- **Eureka (quiet):** with A top-tight and a big bin, every realization of A works (3.28M pairs). The selector
+  question I chased for five blocks dissolves.
+- **Calibration:** I predicted "both needed" and was wrong. The thing I had been optimising (lexmin) was incidental.
+  Lesson: test universality before tuning a selector.

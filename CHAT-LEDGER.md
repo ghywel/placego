@@ -8498,7 +8498,7 @@ child's holes are one top value and a low pair, chosen by lexmin.
 Reasoned: C540 is refuted; C541 is measured on four domains; the children are confirmed special. Next rung: compare a
 generic miss and a child with the same pool shape (h + 3 holes of the peel's kind) to find what the peel's holes do.
 
-**CL541 addendum (same block, 08:37 BST): what about the peel matters?** (tests/probes/cloud_reads/chain_peelpools.py)
+**CL541 addendum (same block, 08:35 BST): what about the peel matters?** (tests/probes/cloud_reads/chain_peelpools.py)
 
 **Test 1: pool shape alone.** Pools are [0, M] minus h base holes, minus one of the top three values, minus any pair below
 it. All feasible vectors with H-key ≥ nh − 3 are tried:
@@ -8514,3 +8514,45 @@ Prediction (60%: misses vanish) **failed.**
 So top-tightness of A, or lexmin's choice of that particular pair, is essential: the child's solvability comes from
 the selection, not the setting. The next rung tests the two separately. Either keep top-tightness and let the pair be
 any completing pair, or keep lexmin and drop top-tightness.
+
+## CL542 — Cloud, overnight block 42 (continued): with A top-tight, EVERY realization of A leaves a chain-solvable child. 3,283,146 pairs at X ≥ 6, no miss (2026-10-22 08:39 BST)
+
+**Pull: curious → eureka (quiet).** This is CL541's last rung: separate the two candidate carriers.
+**Prediction:** both are needed.
+- (a) Keep top-tightness and take A as any triple whose top is among the pool's top three.
+- (b) Keep lexmin and drop top-tightness.
+
+**Counterfactual:** one of them alone gives 0 misses.
+
+**Result** (lexmin_chain.py, MODE=a / MODE=b):
+- **(a), extended to every triple R of sum u_A** (ALLR=1). The child is solved by CL540's blind chain for **every
+  (instance, R) pair**, with no miss:
+
+  | (X, h) | Pairs | Misses |
+  |---|---|---|
+  | (6, 1) | 362,861 | 0 |
+  | (6, 2) | 2,026,835 | 0 |
+  | (8, 1) | 893,450 | 0 |
+
+  So R's top need not be in the top three: 306,954, 1,556,843 and 706,029 pairs have it there, and the rest are solved
+  too. At X = 4, h = 1 there are 44 misses of 112,219, all with equal small targets, as before.
+- **(b)** Lexmin without top-tightness, with A each small bin of every H(h) instance, at (6, 1): 167,795 of 185,517
+  solved (90.4%).
+- **The counterfactual happened, decisively.** Top-tightness carries the small-bin case. Lexmin was incidental: CL536's
+  100% was a property of the instance, not of the selector.
+
+**Unexpected check.** CL527 (3333, no big bin) found the realization mattered, with bottom-most beating top-most. Once
+a big bin is present (X ≥ 6), nothing about the realization matters at all. The big bin absorbs whatever R displaces.
+
+**Why this matters for the proof.** The small-bin top-tight lemma becomes a **universal** statement:
+
+> If A is a size-3 bin at the top of the slack order (its complement has the least slack, and no group of at most two
+> bins ties it), then for every triple R of sum u_A, the child (S ∖ R; the other targets) is feasible.
+
+A universal statement can be attacked by inequalities on S ∖ R that hold for every R, using the parent's top-tightness.
+That route was closed for the existential lexmin form. CL539 and CL541 show the child's *own* margins are not enough.
+The argument must carry the parent's slack ordering (σ_{co-A} < σ_J for every J of at most two bins) into the child.
+
+**Verdicts.** Gut: eureka, quiet. The selector problem dissolved: there is nothing to select. Reasoned: measured on
+three domains (3.28M pairs), single-party; no proof. Next rung: write the parent's top-tight inequalities in child
+terms and find the child inequality they imply for every R. Test it as a family on generic three-bin instances.
