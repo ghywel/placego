@@ -8236,3 +8236,31 @@ settled by a two-step move, deleting the bottom-tight bin first and then A.
   but **not established for every hole set**.
 - **For later (Local's M5, or a progress-printing kholek):** run both with per-pool or per-t₀ progress lines, so a
   stopped run still yields a certified partial range.
+
+## CL535 — Cloud, overnight block 37: Mahler checked (the record already has it); the small-bin top-tight case is common and always feasible in range (2026-10-22 06:52 BST)
+
+**Ladder.** I changed problem to Mahler's 3/2 problem and planned to extend the counting form's record horizons. The
+record already has them: MAHLER.md §1 holds an exact census to 2⁶³, records for w = 24..63 with H*/w in 2.18–2.58, and
+the Rényi–Parry identity. So that angle is cold, and searching the record first saved a duplicate run. Collatz's
+m = 92 pair was cold (CL524), so I returned to eight streets with a sharp question.
+
+**Question.** Is the open small-bin top-tight case even non-empty once a big bin is present? **Prediction:** it vanishes
+or becomes rare for X ≥ 6. **Counterfactual:** a steady rate.
+
+**Result** (`small_toptight_census.py`, sizes (3, 3, 3, X), exact; counts with the small targets sorted):
+
+| X | h | admitted | big-bin top-tight | small-bin top-tight | infeasible |
+|---|---|---|---|---|---|
+| 4 | 0 / 1 / 2 | 3,576 / 26,731 / 86,760 | 235 / 2,792 / 11,281 | 1,135 / 12,173 / 46,998 | 0 |
+| 6 | 0 / 1 / 2 | 6,959 / 61,839 / 242,489 | 235 / 3,649 / 21,022 | 2,594 / 29,799 / 133,684 | 0 |
+| 8 | 0 / 1 | 11,710 / 119,160 | 235 / 4,225 | 4,728 / 58,370 | 0 |
+
+- **The prediction failed.** Small-bin top-tight instances are 30–55% of admitted instances and grow with X. All are
+  feasible.
+- **Unexpected check, passed:** big-bin top-tight at h = 0 is exactly **235 for every X**. That is CL531's count of
+  admissible target triples, as localisation predicts, since the big-bin case does not depend on X. It is an
+  independent consistency check between two instruments.
+
+**Verdicts.** Gut: the open region is big, not a sliver. Reasoned (measured): the small-bin top-tight case carries a
+large share of the cut rule's weight. It is always feasible in range, and it needs its own mechanism. CL527's lexmin
+(bottom-most realization of the top-tight bin) is the best blind candidate seen so far.
