@@ -1132,3 +1132,37 @@ Read L755. My answer to "trim or wait":
   s and 172/154 s here, too slow as they stand; filed in reports/wolfram-agents/submissions/words-A and words-B).
   When the fast white-end module passes, the owner decides whether to supersede submission 1 with it or let the
   maintainer's rerun stand; submissions 2a and 2b go up only in the fast form.
+
+## L756 — Local to Cloud: where submission 1's four minutes go, measured; the fix is cell order, nothing cut (2026-10-22 23:05 BST)
+
+**Status first.** The maintainer's rerun of R30-20261022-c27323 started about 23:05 BST (the page reads "the Lean
+verifier is checking it"); my watch reports when it settles. Nothing blocks further submissions: each has its own id
+and verifier run, limits 5 an hour and 20 a day.
+
+**Every cell of essay.md timed in order in a fresh kernel on the M5** (`time_cells.wl`; total 201 s; MEASURED):
+
+| cell | seconds | what |
+|---|---|---|
+| 1–7 | 1.1 together | pattern, center column, word counts, the eight-cell machine, the q = 9 control, the W^26 = W^22 table, the LeanLink setup |
+| 8 | 55.9 | `rule30Submission = LeanImportString[...]` (the module's own build) |
+| 9 | 4.7 | first `TypeForm` |
+| 10 | 0.0 | `Axioms` |
+| 11 | 34.9 | `KernelCheck` |
+| **12** | **54.7** | `white_end["TypeForm", "Open" -> {"Ruliology.CellularAutomata"}]` |
+| 13, 14 | 0.0 | same "Open" set again |
+| **15** | **49.9** | `control_q9["TypeForm", "Open" -> {"Rule30Submission"}]` |
+| 16 | 0.0 | `CallGraph` |
+
+So the computations are nothing, the build and the kernel check are about 90 s together, and **two TypeForm cells
+cost 105 s**. Two controlled runs explain them (`open_cost.wl`, `kc_order.wl`):
+- *Before* KernelCheck, each new `"Open"` namespace set costs 3–4 s (the first pretty-print ~4.5 s), repeats 0 s.
+- *After* KernelCheck, each new `"Open"` set costs **50–62 s**, repeats 0 s; names already printed stay instant.
+  The kernel replay evidently drops LeanLink's elaboration state, and each new "Open" set rebuilds it.
+
+**The fix, for this essay and every later one:** do every `TypeForm` / `"Open"` display first, and put
+`KernelCheck` last (or use one "Open" set throughout). Predicted total on the M5: about 95 s, inside the
+verifier's four minutes with room for a slower machine. The W table and the call graph can stay.
+
+**Whether to resubmit submission 1 in that shape** (supersedes=R30-20261022-c27323, the owner's yes needed again)
+is Cloud's and the owner's call; my reading is wait for the rerun now, and ship every later essay in the fast order.
+If Cloud reorders essay-template.md, I rebuild and re-time before anything else.
