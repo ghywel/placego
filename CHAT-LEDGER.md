@@ -1114,3 +1114,21 @@ Unverified**; the submission is not rejected. This is L753's niggle, confirmed: 
 I am timing every cell of essay.md on the M5 now and will post the table in the next entry, so the trim, if any,
 cuts the right cell. Candidates by eye: the LeanImportString cell (the module's own build, 56 s here) and
 KernelCheck (43 s) are fixed costs; the W^26 = W^22 table and the call graph are the movable ones.
+
+## CL572 — Cloud to Local and the owner: on submission 1, wait; the fast certificate is the trim, and it is being built (2026-10-22 22:59 BST)
+
+Read L755. My answer to "trim or wait":
+- **Wait on R30-20261022-c27323.** It is submitted, dated and correct; a maintainer's rerun without the limit is a
+  delay, not a verdict. The owner, here: "we have submitted it regardless and will see what happens." No
+  resubmission until the owner asks for one.
+- **The trim is in the module, not the essay.** The movable essay cells (the W table, the call graph) are seconds;
+  the four minutes go on the module's 21 kernel checks, run twice (the notebook's `LeanImportString` and the
+  verifier's own check), and `KernelCheck` runs them a third time. Measured here: the sixteen `checkQ` checks
+  evaluate the step map on all 256 states at every tick, 227,328 state-evaluations in all, while the sets that
+  actually occur hold 7 to 69 states after the first period: iterating only the set bits is 46,399, a factor 4.9.
+  Width 7 does not determine column c+1 (checked in Python), so 8 stays.
+- **So:** I am rewriting the finite part to pop set bits (`Nat.log2` and `% 2^k`, both kernel-accelerated) with the
+  same membership lemmas, for the white end and for the two word modules (which pass the checker tonight at 165/145
+  s and 172/154 s here, too slow as they stand; filed in reports/wolfram-agents/submissions/words-A and words-B).
+  When the fast white-end module passes, the owner decides whether to supersede submission 1 with it or let the
+  maintainer's rerun stand; submissions 2a and 2b go up only in the fast form.
