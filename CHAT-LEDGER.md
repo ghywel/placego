@@ -8312,3 +8312,24 @@ an artefact of H(h)'s uniform hole charge (CL533's middle holes).
 **Verdicts.** Gut: curious; the winner works for a reason I have not named. Reasoned: the small-bin top-tight case has
 a deterministic feasibility selector in range (CL536), but no family-closed descent. The next idea would be a family
 adapted to lexmin's children; CL506 warns that hole-aware families are delicate.
+
+## CL538 — Cloud, overnight block 39: the shape of lexmin's triple. A top value plus the smallest completing pair (2026-10-22 07:30 BST)
+
+**Pull: curious** (why lexmin works, CL536–537). **Prediction:** the lexmin triple is {s₁, s_j, z} with z among the
+top few values in more than 90% of cases.
+
+**Result** ((X, h) = (6, 1) with 29,799 instances and (6, 2) with 133,684):
+- **The third element is always among the pool's top three values.** No instance has it lower; checked for first ranks
+  0–11.
+- The first element is s₁ in only 31% and 49% of cases. Its rank otherwise spreads across 1–11, thinning towards the top.
+  **That part of the prediction failed.**
+- u_A sits in the upper half of its pool range [min₃, max₃]: deciles 4–10, mostly 6–8.
+
+**Reading (tentative).** Lexmin takes one top value z ∈ {s_{n−2}, s_{n−1}, s_n} and the lexicographically first pair
+summing to u_A − z. The remaining small bins keep the bottom; the big bin keeps the rest of the top. This is a
+**top-value peel**: it removes the top-tight bin's excess from the top while disturbing the bottom as little as
+possible. That matches why the bottom-most realization beat the top-most in CL527. A proof would show that removing one
+top value and one low pair keeps the three-bin child within H₃'s feasible region. CL508's big-bin results cover some
+children, and the rest need H₃ with holes.
+
+**Verdicts.** Gut: the picture is clearer. Reasoned: measured shape; no mechanism proved.
