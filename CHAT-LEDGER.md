@@ -7605,3 +7605,43 @@ runner timeout. k = 6 at n = 18 is rerunning without a timeout. Operational note
 **Verdicts.** Gut: satisfaction at a clean build; it is someone else's theorem, so no pull. Reasoned: tier 1 for "the
 formal statement compiles against the standard axioms". It changes the Collatz fold row's density cell (Tao,
 logarithmic → Mazur, natural plus clock) and nothing on the prize line.
+
+## CL512 — Cloud, overnight block 19: five bins of size 3 first fail at h = 7, by a two-clump pigeonhole; rStation has no Wolfram work (2026-10-22 03:47 BST)
+
+**rStation, the Wolfram half of the owner's ask.** Its paper and problem listings have no Rule 30, Wolfram, cellular
+automaton, Mahler or normality item; its only Collatz-adjacent material is the 16 papers CL485 read. Nothing to add for
+the Wolfram lane.
+
+**Unexpected check, five-bin equal-sum cores** (`kholek.c`, new `MAXRUNS` filter: only hole sets made of at most r
+runs; validated against the full four-bin h = 6 run, whose failures it reproduces). Five bins had no H(h) failure
+through h = 4 (CL504/507), while three and four bins fail from h = 3. Prediction: failures by h = 6. Result (33333,
+holes in at most two runs):
+
+| h (M) | admitted | failures | failing at key h − 1 |
+|---|---|---|---|
+| 5 (19) | 17,757,320 | 0 | 6.7M |
+| 6 (20) | 17,044,576 | 0 | 6.6M |
+| 7 (21) | 16,488,263 | **5** (one up to order) | 6.5M |
+
+**The witness**: [0, 21] ∖ {2, …, 8}, targets (24, 43, 43, 43, 43). The pool is {0, 1} ∪ {9, …, 21}.
+- A 43-bin cannot hold a small value: it would need two large values summing to 42 or 43, and the most is 41.
+- So both 0 and 1 must go to the 24-bin, which would need 23.
+- This is the page's two-clump pigeonhole with five bins, and it passes the margin 7·r.
+
+Prediction narrowly failed (h = 7, not ≤ 6). The pattern is now:
+
+| bins of size 3 | first failure at |
+|---|---|
+| 3 | h = 3 |
+| 4 | h = 3 |
+| 5 | h = 7 |
+
+The failures always come with equal targets and a run of holes that strands a small clump. A plausible general
+family: k − 1 equal heavy bins, one light bin, and a clump too small for the heavy bins but too large for the light one.
+
+**Verdicts.** Gut: a small delight. The wall has the same face at every k; only its distance moves. Reasoned
+(measured, single-party): five-bin H(h) holds to h = 6 on run-type hole sets and fails at h = 7 by an explicit
+pigeonhole. For eight streets, which needs H at the hole counts the descent actually creates, the exception class is
+the record's equal-sum core in every case seen.
+
+**Census.** k = 6 at n = 18 (333333) is still running at 45 minutes; SEARCH slows sharply with six bins.
