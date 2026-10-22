@@ -7687,3 +7687,41 @@ therefore has to choose realizations that avoid it. That is a concrete, finite r
 window is proved by hand (single-party, a few lines); the full H(h) admission is machine-checked for k ≤ 10; the claim
 "first failure" is an upper bound on the true first failure, since other shapes could fail earlier for k ≥ 6. For
 k = 5 the census confirms 7 on two-run hole sets.
+
+## CL514 — Cloud, overnight block 21: the reduction tree's two-bin base, H₂(h), holds exactly for h ≤ 2n − 8 (n ≥ 7), and fails at 2n − 7 by a one-line witness (2026-10-22 04:02 BST)
+
+**Pull: warm.** CL508's tree ends in two-bin leaves, and a two-bin H(h) instance is just a subset-sum question:
+- Setting: S = [0, M] minus h values, n = |S|, 3 ≤ r ≤ n − 3.
+- Question: is every u with L(r) + h·r ≤ u ≤ ΣS − L(n − r) − h(n − r) an r-subset sum of S?
+
+Record searched: CL439 (two gaps at M = 8, h = 3), G318 (≤ 3 deletions, proved), G340/G341 (depth bounds; G341 needs
+max(r, t) ≥ 4D − 1, so it does not decide small pools).
+
+**Census** (`spectrum_h.py`; every hole set in [0, M], every r). Prediction: gaps only for small n.
+
+| n | first h with a gap | clean through |
+|---|---|---|
+| 6 | 3 (every h ≥ 3) | h = 2 |
+| 7 | 7 | h = 6 |
+| 8 | 9 | h = 8 |
+| 9 | 11 | h = 10 |
+| 10, 11, 12 | – | h = 11, 8, 8 |
+
+- At n = 6 the gaps are u = 3h + 3: two size-3 bins with equal targets, the two-bin equal-sum core. It is CL513's table
+  with k = 2.
+- For n ≥ 7 the threshold is **h = 2n − 7**, with a one-line witness. Take S = {0} ∪ [h + 1, M]. Three-sums containing 0
+  reach at most 2M − 1, and three-sums without 0 start at 3h + 6. So **2M is missing when 2M < 3h + 6, i.e.
+  h ≥ 2n − 7**, and 2M lies in the window while h ≤ 2n − 5.
+- I predicted n = 9 → h = 11 from this before running it. It held, with witness {0} ∪ [12, 19] and u = 38.
+
+**Conjecture (measured; single-party).** For n ≥ 7 and 3 ≤ r ≤ n − 3, H₂(h) holds iff h ≤ 2n − 8.
+
+The necessity half is proved by the witness. Sufficiency is measured for n ≤ 12 within the table's ranges and is G318
+for h ≤ 3.
+
+**Meaning.** The leaves of CL508's tree are safe while each two-bin leaf keeps h ≤ 2n − 8. Its only other failure is the
+n = 6 equal-sum split, the same core as CL513 at k = 2. Every obstruction met tonight, at every k, is one shape: a small
+clump stranded by a run of holes, with equal or near-equal targets.
+
+**Verdicts.** Gut: warm and tidy. Reasoned: the necessity witness is a proof; the iff is a conjecture with exact census
+support.
