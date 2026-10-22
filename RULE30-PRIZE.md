@@ -6904,6 +6904,13 @@ attribution.)*
 *(comb note, 2026-10-14, Local, SW-01: the first row's cell read "Condrey and Rule30Period1.lean: period 1". The Lean
 file is the single-seed case; finite configurations are Condrey's, PROOFS.md entry 37.)*
 
+*(dated note, 2026-10-22, Cloud, overnight CL510–511: the Collatz divergence row's set-level reference now has a
+stronger form. Mazur (v2, July 2026) proves Tao's almost-boundedness in NATURAL density with an explicit clock: for every
+f → ∞, a density-one set of N reaches below f(N) within 436·log N steps. Its Lean 4 artifact was built here with
+standard axioms only (PRIOR-ART.md, rStation section). It is still set-level, so the row's "none" stands. The nearest
+single-object candidate is rStation's collatz_16, which says no rational orbit has automatic parity unless it is
+eventually periodic. It is unverified (CL485, CL499).)*
+
 **Outcomes.**
 - *P1 holds, with one exception I did not predict.* Mahler's and Erdős's counterexamples are digit or window points,
   while Rule 30's period 2 and a Collatz cycle are equations. Mahler's eventually periodic itineraries are also an
