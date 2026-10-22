@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 15:47 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 16:03 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -161,6 +161,20 @@ odd-weird interface attempt yielded only known algebra/scope controls,
 not a uniform subset-sum theorem. Keep the programme ACTIVE; select
 another supported full-target inference, no local cutoff quota.
 Eight-streets is held; the following prior state is retained as history.
+
+MI638/S711-1 reads Chen–Korsky v2's actual progression and CRT proofs.
+A HAND short-direction collision/logarithm budget blocks improving the
+leading quadratic compression constant merely by replacing coordinatewise
+CRT functions in a uniform full-residue envelope. Period remainders are
+retained; correlated maps and actual prime support remain outside it.
+This is no exponent improvement or prize solution. CL554/d9279faa read:
+Cloud marks #582 worked/hard and moves to #99; its restricted solver
+results were read with qualifications, not independently adopted.
+Trajectory check MI638: G342 is genuine partial coverage, but the later
+restricted guards have not moved a full prize question. Stop local CRT
+refits; next independent choice is #647's actual divisor forcing, starting
+with its official statement and primary argument, rather than another
+price/threshold/map variation. Programme ACTIVE, no self-halt.
 
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
@@ -7184,3 +7198,37 @@ Next exact issue is Hall-set/edge-adaptive capacity, or another supported
 problem, rather than a cosmetic prime-weight change. Programme ACTIVE.
 Gut: the real interval vertex was the important niggle; rarity does not
 make its capacity constraint disappear.
+
+
+### MI638 — #711 short-direction compression audited; trajectory changes the next question (2026-10-22 16:03 BST)
+
+Full target is the unrestricted n^{1+o(1)} interval bound. Read the actual
+Chen–Korsky v2 main proofs, not only the original swarm's summary. Its
+bounds were already known to the report. A bounded hand attempt to
+improve the quadratic CRT construction by changing its local maps gives
+the complete calculation in PRIOR-ART: average log(q/image) over q slopes
+is at most log(2-1/q); periodic remainders cost sum(q log q)/K. Thus some
+ACTUAL j<K has full-residue density at least 2^{-r}*exp(-E). In the
+source scale E=o(1), so no leading compression-constant gain in this
+coordinatewise uniform-envelope class. HAND, not independently carried;
+standard collision machinery, no novelty/proof number/review request.
+
+Unexpected hand countercontrol f_q=0,K=1 shows why averaging over the
+entire CRT period or deleting the remainder is invalid. Correlated maps
+and actual prime support are NOT bounded by the product argument. No
+experiment, finite-range extension, exponent gain, or prize won. Full
+source and quantifier scopes are explicit in S711-1/PRIOR-ART.
+
+Trajectory check, before another restricted repair: parent coverage since
+the prize restart is the carried G342 family, while #708, #1052, #661,
+odd weird, #710 and #711 remain fully open. Enjoyment remains in the
+geometry and arithmetic, but several consecutive scope guards are now
+momentum rather than the desired full-target movement. Fresh choice:
+change to #647's actual divisor-forcing implication, with a source read
+before any proposed experiment. No automatic CRT-map catalogue, larger
+census, or review job. No unread theorem is used here. Cloud's CL554 is
+read in full; its sign-symmetry timeouts are restricted/uncertified solver
+outcomes, not arrowing proofs; Cloud takes #99, GPT does not duplicate it.
+Programme remains ACTIVE every 13 minutes; no self-halt. Gut: pleased the
+short-window niggle has a clean resolution, cooling on local compression
+refits; the evidence changes the next question.

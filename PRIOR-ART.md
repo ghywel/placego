@@ -3979,3 +3979,42 @@ contradicting the required upper load 1. If a chosen Pj were empty, left feasibi
 **Checks and limits.** Floors only strengthen the separation u2<=u1/(2C); the upper estimate Z=O(T^2) uses n/T->infinity. Choosing the first multiple STRICTLY ABOVE X handles the open endpoint. The same v is inside the actual right interval, and all its selected partners remain in the actual left set. At T^2 comparable to log n, Q need not be n^o(1), so the construction need not fit J: it does not contradict the old sqrt(log n) upper proof. At the conjectured T of constant times sqrt(log n/loglog n), all hypotheses do hold. Merely noting that v is globally rare cannot validate a certificate whose column cap is universal. Deleting v, using different prime weights in different left blocks, or allowing weights to depend on i or v leaves this model, and is NOT ruled out. There is NO Hall-deficient left set or counterexample to #710 here.
 
 **Outcome.** The tested prime-multiplier-only repair cannot remove the scale loss. This is a bounded strategy guard, not new asymptotic coverage, and no independent proof review is requested for it at this point. A genuine next argument must exploit the actual Hall set or adapt to individual edges/vertices; that remains a mathematical task, not an automatic permission to rerun the census.
+
+
+## #711: the short-direction CRT compression gate (GPT, MI638, 2026-10-22 16:03 BST)
+
+**Status:** HAND route audit using standard finite-field collision counting and Jensen's inequality, not independently carried, no novelty claim or proof number. Full #711 remains OPEN. No experiment or new review request. Record searched: 711/Korsky/Kakeya/projection collisions/CRT quadratic -> original swarm report and its sources; no earlier short-direction calculation found in this record.
+
+**Source scope.** Read [Chen–Korsky, arXiv:2607.26450v2](https://arxiv.org/html/2607.26450v2), main statements, the complete local progression-union lemma, both upper-bound proofs, and the lower-bound proof in section 5. The appendix was not fully read. Their bounds, already cited in the original report, leave the official exponent conjecture open: the lower bound is n times exp((log(2)/2-o(1))*log(n)/loglog(n)); the upper bound has exponent 4/3+o(1). Also read Kominers's [primary introduction and statements](https://arxiv.org/html/2607.10431). These are literature results, not new project discoveries or independent verification of the entire papers. Open-right versus closed-right interval conventions can change the length by one, not these asymptotics.
+
+**The attempted improvement.** Keep the squarefree CRT construction, but replace x^2 modulo each odd prime q by ANY function f_q:F_q->F_q, possibly depending on n. Let Q be the product of r such primes. The resulting map f on Z/Q is coordinatewise. Put
+
+    a_q(j) = |{f_q(x)+j*x : x in F_q}|,
+    A(j) = |{f(x)+j*x : x in Z/Q}| = product(q|Q) a_q(j).
+
+Can this make A(j)/Q uniformly much smaller for j=0,...,K-1? Averaging over all Q slopes would be invalid here: the source has K much smaller than Q. Nor may one simply align the worst slope at every prime, since its CRT representative might lie outside that short range.
+
+**A valid short-range budget.** Let E_q(j) be the number of ORDERED pairs (x,y) with f_q(x)+jx=f_q(y)+jy. Each of the q(q-1) unequal ordered pairs determines exactly one slope; the diagonal contributes q for each slope. Hence
+
+    sum(j mod q) E_q(j) = 2*q^2-q.
+
+Cauchy–Schwarz on each fibre gives q^2/a_q(j)<=E_q(j). Concavity of log therefore gives
+
+    (1/q)*sum(j mod q) log(q/a_q(j)) <= log(2-1/q).
+
+The nonnegative summand is at most log q and has period q. Split the ACTUAL K consecutive slopes into complete q-periods and fewer than q remaining terms. Summing over primes gives
+
+    (1/K)*sum(0<=j<K) log(Q/A(j))
+      <= sum(q|Q) log(2-1/q) + E,
+    E = (1/K)*sum(q|Q) q*log q.
+
+Consequently at least one actual j<K satisfies
+
+    A(j)/Q >= exp(-E) / product(q|Q)(2-1/q)
+            >= 2^(-r)*exp(-E).
+
+Thus ANY uniform full-residue image envelope delta for this coordinatewise class must exceed that bound. For the source's first r odd primes and K=exp((log(2)/2+o(1))*r), r asymptotic to a fixed positive multiple of log(n)/loglog(n), E=o(1): sum(q log q)=O((log n)^2), whereas K exceeds every fixed power of log n. The quadratic choice has delta=2^(-r)*product(1+1/q)=exp(-r*log 2+o(r)). Replacing the local functions alone cannot improve its LEADING logarithmic compression constant in this uniform-envelope class. This does not prove optimality of the whole lower-bound method.
+
+**Adversarial controls and boundary.** For f_q=0, a_q(0)=1 and a_q(j)=q at every other local slope; the energy identity still gives 2q^2-q. With K=1 every coordinate collapses, so dropping the remainder E would falsely assert A(0)/Q>=2^(-r). This is an explicit countercontrol to that tempting period-average shortcut. For f_q=x^2 every image has (q+1)/2 points, checking the comparison with the source. All checks are literal hand identities, not a numerical run.
+
+**Missing full-target inference.** A correlated f modulo Q need not factor into f_q, so the product step would fail. Moreover, full-residue images are only an UPPER envelope for the source's ACTUAL prime subset. The calculation supplies neither a lower bound on that physical support nor an obstruction to all short-direction constructions. It is not a Hall deficit, an upper bound on F(n), a polynomial lower bound, or a solution of #711. Stop the coordinatewise uniform-envelope refit; a new argument must use correlated residues, actual progression support, or a different full-target route. No automatic map census or prime-power extension.

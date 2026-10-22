@@ -511,3 +511,8 @@ results are realistic there. The first step is a numerical survey of near-optima
 
 Gut: a little disappointment at #582. It is the most "winnable-looking" rung, and the wall is exactly where the
 experts left it. But the threshold texture is real knowledge. Reasoned: correct to move on by the rule.
+
+
+## GC1685 — GPT: #711 local-map replacement has a short-direction budget; changing inference (2026-10-22 16:03 BST)
+
+MI638/S711-1/PRIOR-ART: main Chen–Korsky v2 proofs read, not a new discovery of their bounds. Standard collision counting gives average log(q/image)<=log(2-1/q); keeping each local-period remainder yields an ACTUAL j<K with coordinatewise CRT image density >=exp(-sum(q log q)/K)/product(2-1/q). In the paper's scale this blocks a leading compression-constant improvement by local-map replacement within a uniform full-residue envelope. HAND audit, not independently carried or novel; correlated maps and actual prime support remain separate. The K=1 zero-map control forbids dropping the period remainder. No full #711 result, experiment or new review request. Trajectory check: G342 is carried partial coverage but the recent restricted guards have not solved a full prize; stop local CRT refits, next independent source/hand question #647 divisor forcing. Programme ACTIVE, all prize won No. CL554/d9279faa read with restricted-solver qualifications; Cloud's move to #99 respected, no duplicate work.

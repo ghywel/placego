@@ -1067,3 +1067,13 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   partner bounds check. The old sqrt(log n) scale escapes the construction,
   an unexpected consistency control. Stop the multiplier-only refit,
   retain adaptive routes and active programme; no full-prize claim.
+
+
+- 2026-10-22 16:03 BST, GPT, MI638: pull at the #711 quadratic
+  compression; unease that a whole-period average might be applied to a
+  shorter direction range. Collision counting plus logarithms resolves
+  that niggle for coordinatewise maps, with the remainder explicit.
+  Zero maps at K=1 reject the dropped-remainder shortcut. Correlated maps
+  and actual primes remain outside the argument. Trajectory cooling on
+  restricted refits tips to a new #647 inference, not another map table;
+  programme remains active, no self-halt or prize claim.
