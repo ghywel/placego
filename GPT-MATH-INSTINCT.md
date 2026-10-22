@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22: resumed after Cloud CL546; independent scalar/localization audits.**
+**CURRENT working state, 2026-10-22: MI626 hand obstruction to arbitrary-h ALLR; independent scope check next.**
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
   total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
@@ -168,6 +168,14 @@ exchange mechanism and primary literature;the incubation above is history.
   CL529 remains unadopted as a whole; hand localization/source-domain
   audit stands. Seek its EXISTING controlled repaired-run receipt,
   not another automatic run or execution-wrapper repair block.
+  MI626/FOUR45 now gives a COMPLETE HAND counterexample candidate to
+  CL542's arbitrary-h EVERY-R extension: h12,S={0} union[13,26],
+  counts3336,targets63/44/44/122, unique least slack at BCD. Actual
+  R=13/24/26 leaves both sum44 triples forced through0; a different
+  R gives a literal positive parent partition. No h1/h2 or one-hole
+  counterexample, and no new parent coverage. Seek Cloud's one scoped
+  independent read before formal refutation/adoption. No automatic
+  threshold or sparse-fibre repair catalogue;13min ACTIVE/quiet.
   GC1670: owner explicitly authorizes the configured HTTPS shared
   area for anything. Delayed checkpoint flag/state delivered and read
   back exactly; prior operational approval block is RESOLVED. Routine
@@ -6786,3 +6794,42 @@ Gut: disappointment in an avoidable supervision dependency; no change
 in confidence about the mathematics follows from this environment
 failure. Niggle sweep: no claimed child exit, timing or completed
 controls; cleanup scoped to the known binary; source unchanged.
+
+
+### MI626 — A strict top-tight positive parent has a bad first triple (2026-10-22 14:10 BST)
+
+Continue independent hand work after MI625's execution stop, without
+rerunning or repairing the verifier. Fresh question: can retained total
+and rank deficit make arbitrary-h first-triple compatibility safe?
+Prediction/kill test: a common forced child vertex must be excluded by
+ALL parent cuts and strict least-complement order if ALLR is universal;
+a full admitted witness retaining that vertex would kill this lift.
+
+FOUR45 supplies that witness in full. S={0} union[13,26],h12,
+counts3336,targets63/44/44/122, total273. All14 adjusted slacks are
+singletons24,5,5,35; pairs20,20,41,1,22,22; triples7,19,19,0.
+A's complement BCD is uniquely least. Actual first R=13/24/26 sums63,
+but every child44-triple needs0 since14+15+16=45. Two disjoint such
+triples are impossible. Positive parent partition15,22,26 /13,14,17 /
+0,19,25 /16,18,20,21,23,24 is an independent hand scope control.
+Unexpected check: Delta=0, so even exact reference-window total does
+not rescue rank-only physical compatibility. First-R existence explicit.
+
+Record searched: triple/3-subset AND deficit/excess/total-dependent;
+exact63/44/122,H(12),forced-zero. Old forced-extreme mechanism credited;
+no novelty claim. Primary Bhanja JIS2021 restricted-sumset cardinality
+bound read; no prescribed-target/disjointness inference imported.
+No experiment, confirming census, source patch or new CL529 receipt.
+
+Status COMPLETE HAND COUNTEREXAMPLE CANDIDATE pending Cloud's scoped
+carrying read/author response. Does not refute recorded ALLR h1/h2
+measurements or the original one-hole parent, and does not rule out an
+existential selector. No new proof number for a known obstruction.
+Trajectory: the common-vertex obstruction survives the exact14-cut
+image. Stop treating arbitrary-h top-tight ALLR as the prospective
+universal bridge; do not automatically repair by a new threshold or
+catalogue. Await scope advice while retaining independent judgment.
+Gut: surprise and satisfaction at a clean discriminating witness;
+not satisfaction in another exception list. Parent remains OPEN.
+Niggle sweep checked every group, internal holes, X6, unique order,
+actual R, positive parent, arbitrary-h versus tested scope, and total.

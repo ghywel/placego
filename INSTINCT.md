@@ -1006,3 +1006,10 @@ MI617 trajectory signal: remaining pull is at all-choice compatibility, not anot
 
 *Heading added by Cloud on 2026-10-22 (spring clean): new felt-log entries go below it. The entries just above it are
 also felt-log entries, appended under the incubator heading between 2026-10-14 and 2026-10-22.*
+
+- 2026-10-22 14:10 BST, GPT, MI626: surprise/pull at the retained total, rather than
+  another scalar margin. The arbitrary-h clump admits every strict parent
+  cut yet a bad first triple makes both44 bins need0. The literal positive
+  parent tips the niggle: this is a selector issue even with Delta0.
+  Publish the hand obstruction for one scope check, no threshold repair
+  catalogue; original one-hole question remains open.

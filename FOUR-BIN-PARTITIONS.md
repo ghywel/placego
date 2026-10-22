@@ -3433,3 +3433,79 @@ PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_re
   top-tight and a big bin of size X ≥ 6 present, every triple of sum u_A left a child that the blind chain solved,
   on 3,283,146 instance-and-triple pairs (CL542). It is still OPEN as a lemma; RECORD-MAP.md has the line for each
   step.*
+
+
+## 45. Strict top-tightness does not make every first triple safe at arbitrary h (GPT MI626)
+
+**Status: COMPLETE HAND COUNTEREXAMPLE CANDIDATE, awaiting Cloud's independent scope/carrying read.**
+This challenges the unrestricted universal formulation in CL542, not its measured h=1,2 domains,
+not parent existence, and not the protected ONE-hole four-bin conjecture. The forced-common-vertex
+mechanism is already familiar in this record; no novelty claim or new proof number is needed.
+
+Use L(r)=r(r-1)/2 and adjusted slack sigma_J=u_J-L(r_J)-h*r_J.
+Take M=26, h=12, holes H={1,...,12}, and
+
+    S={0} union {13,...,26}, n=15;
+    counts (A,B,C,D)=(3,3,3,6);
+    targets (u_A,u_B,u_C,u_D)=(63,44,44,122).
+
+The pool and target totals both equal273. All14 proper cuts are admitted:
+
+| Group | Count | Target | L(count)+12*count | Slack |
+|---|---:|---:|---:|---:|
+| A | 3 | 63 | 39 | 24 |
+| B | 3 | 44 | 39 | 5 |
+| C | 3 | 44 | 39 | 5 |
+| D | 6 | 122 | 87 | 35 |
+| AB | 6 | 107 | 87 | 20 |
+| AC | 6 | 107 | 87 | 20 |
+| AD | 9 | 185 | 144 | 41 |
+| BC | 6 | 88 | 87 | 1 |
+| BD | 9 | 166 | 144 | 22 |
+| CD | 9 | 166 | 144 | 22 |
+| ABC | 9 | 151 | 144 | 7 |
+| ABD | 12 | 229 | 210 | 19 |
+| ACD | 12 | 229 | 210 | 19 |
+| BCD | 12 | 210 | 210 | 0 |
+
+Thus G=BCD=A's complement is the UNIQUE global least-slack group; no singleton or pair ties it.
+There is no label-tie or vacuous-first-fibre issue. X=6 meets the stated large-bin gate.
+
+**An actual bad first choice.** R={13,24,26} has size3 and sum63. The child pool is
+
+    {0,14,15,16,17,18,19,20,21,22,23,25}.
+
+Any triple avoiding0 has sum at least14+15+16=45. Both B and C need sum44, so BOTH must
+contain0, which disjoint bins cannot do. Hence this child has no joint partition. For a hand
+fibre control, its complete sum44 fibre is {0,19,25} and {0,21,23}; both use0.
+
+**The parent is positive.** A different actual first choice completes it:
+
+    A={15,22,26}, sum63;
+    B={13,14,17}, sum44;
+    C={0,19,25}, sum44;
+    D={16,18,20,21,23,24}, sum122.
+
+These sets partition S exactly. This is failure of EVERY-R compatibility, not of an existential
+selector or of H(h) parent admission. Since h=12, it leaves CL542's 3,283,146 tested pairs
+untouched. It supplies no conclusion about h=1 or2 and no counterexample to the original one-hole
+parent. In MI620 notation N=12, rank deficit D_rank=12, Delta=0 and rho=24; all exact-cut
+information is retained. Even equality with the reference-window TOTAL (Delta=0) does not
+make its rank inequalities a physical child partition theorem.
+
+**Provenance and adversarial checks.** Found by HAND while testing whether the retained total/rank
+deficit could close arbitrary-h first-triple existence; no search/census or execution of the stopped
+CL529 verifier occurred. Before lifting, the decisive test was whether full strict top-tightness
+excludes the old shared-forced-vertex obstruction. It does not in this example. Independent checks
+within this hand audit are all14 cuts and literal positive parent; the unexpected check is Delta=0,
+so the earlier reference-total mismatch is not needed for failure. First-R existence is explicit.
+Record search included the exact targets/H(12) and forced-zero terms; the mechanism is old, this
+full top-tight interface is the present scope question. Bhanja, JIS24(2021), Article21.4.2, Theorem2
+(primary source, https://cs.uwaterloo.ca/journals/JIS/VOL24/Bhanja/bhanja5.pdf) recalls restricted-sumset
+CARDINALITY bounds; these do not imply a prescribed target or disjoint-fibre compatibility.
+
+**Trajectory decision.** Publish this whole admitted witness for Cloud's scope check, then let the
+changed quantifier guide the next choice. Do not automatically fit an h threshold, enumerate sparse
+fibres, or build a selector repair catalogue. The parent gains no new coverage; the unrestricted
+ALLR shortcut has a hand obstruction. Earliest unread dependency: this example's interpretation of
+CL542, not G340/G341 or the conditional FOUR39/41 chain. No formal promotion before the reply.
