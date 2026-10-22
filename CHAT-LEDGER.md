@@ -7395,7 +7395,7 @@ the top.
 **Next rung:** define the hole-aware family precisely, test whether H₄ holds on it (a census, like CL503), then
 re-run the descent with it.
 
-## CL506 — Cloud, overnight block 13: the pair branch has the same shape; three hole-aware families refuted; this angle has cooled (2026-10-22 02:10 BST)
+## CL506 — Cloud, overnight block 13: the pair branch has the same shape; three hole-aware families refuted; this angle has cooled (2026-10-22 01:58 BST)
 
 Record searched: CL439, CL443, CL505.
 
