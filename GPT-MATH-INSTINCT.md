@@ -6713,3 +6713,36 @@ These are independent hand/source checks, NOT an independent full
 execution receipt or adoption of its reported zero-failure result.
 Next finish the finite-proof verification standard before upgrading
 CL529; no automatic extension to CL530/531.
+
+
+### MI624 — Freeze an independent CL529 finite-basis verifier, before its one run (2026-10-22 13:50 BST)
+
+Continuation of MI623 carrying audit, not a larger confirming census.
+The localization/source domain carries by hand, but Cloud's reported
+zero-failure execution is not an independently controlled receipt.
+Choose ONE complete verification of EXACTLY that justified finite basis
+with a different catalogue/witness mechanism, not replaying its nested
+Python query. No new parent family or CL530/531 claim.
+
+Record searched: CL529 AND basis|receipt|check ->13 hits/6 files.
+Frozen source: tests/probes/eight_streets_cl529_verify.cpp.
+SHA256: cbcf729f7dccb5ae1c42a27791dbde7e69f129d6c391b276fabc5a2bfeca0f60
+NOT RUN at this checkpoint. Predictions and controls are in its header.
+Expected long717722/short1779900 pools, h6 counts621616/1528956.
+20 sorted offset pairs per pool, short-pool six-cut predicate compared
+against the explicit three remaining big-bin cuts. Search precomputes
+disjoint triple pairs; EVERY returned witness is physically checked
+against original available numbers, count and both target sums.
+Gosper hole enumeration has independent combinadic complete-domain
+bitmaps; exact domain counts forbid duplicates or omissions. Any
+negative is confirmed by independent literal token-subset enumeration.
+
+Can-fail controls: full0..11,26/26 has individual triples but max six
+values sum51<52, and is excluded by the actual ambient M16,h5 big-bin
+cut; full0..10,3/4 is negative. A literal7/8 partition is positive.
+Unexpected physical translation/reflection and endpoint-hole coverage
+are checked; no claim that reflecting retains H(h).
+Caps: CPU120s, wall180s, RSS512MiB, stdout/stderr1MiB. One unchanged-
+source run; stop on confirmed negative, control failure or cap. No
+patch/retry, scope increase or automatic extension. Compile outside
+git. Raw receipt/data stay outside git. A cap is incomplete, not a pass.

@@ -1252,3 +1252,5 @@ app is unpublished by design.
 - `instinct/h2_g326_roots.py` (MI500–501,2026-10-20): G326 construction interface on EXACTLY the old602+1057 H2 targets. All1793 permitted roots/1975 legal/formal repair branches return original literal partitions;136 scalar maps agree independently, physical reflection and two can-fail controls pass. Finite same-worker root audit, not unbounded proof, independent review or larger census.
 
 - `instinct/three_pair_finite_basis.py` (MI547–548,2026-10-20): COMPLETE exact residual basis for counts(2,2,2,c),c>=3. 5,146 admitted queries/7,258 candidate rank comparisons agree under target-edge versus six-token-first pairing engines;477,450 terminal matchings including controls. Only2/6/8 and reflection fail; unexpected two-hole AP negative retained. One run/no enlargement; finite COMPUTED premise for unreviewed composite G331, not its carrying verification.
+
+- `eight_streets_cl529_verify.cpp` (MI624,2026-10-22): independent complete verifier of CL529 existing finite basis only; source/predictions frozen before one capped run. Outcome pending.
