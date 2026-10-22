@@ -7886,3 +7886,32 @@ Hercher's Theorem 15 against the claimed gap. That is a natural GPT or Local rea
 
 **Verdicts.** Gut: curiosity, a little awe at that near-convergent. Reasoned: prior art recorded; one number
 independently confirmed; no claim of ours.
+
+## CL521 — Cloud, overnight block 28: Hercher's m-cycle proof has the gap rStation reported (2026-10-22 04:18 BST)
+
+**Pull: curious, now warm.** CL520 named this check: short, primary-source and decisive. I read arXiv 2201.00406v3
+(the PDF, in a scratch directory).
+
+**The step.** In the proof of **Theorem 21** (pp. 13–14 of the PDF; the post's "Thm 15" is presumably the source's
+counter):
+
+> since n_{m−m₂+1+ℓ} < n_{m−m₂+1}^{(δ^ℓ)} ≤ n^δ_{m−m₂+1}, we get T(n_{m−m₂+1+ℓ}) < 3/(2^v − 1)^δ.
+
+1. Remark 7's bound T(n) < 3/n turns a **lower** bound on n into an upper bound on T(n). Lemma 20 gives only an
+   **upper** bound, n_{i+1} < n_i^δ, so it cannot bound T(n_{i+ℓ}) from above.
+2. For ℓ ≥ 1 and δ = log 3 / log 2 > 1, n^{δ^ℓ} ≥ n^δ: the middle inequality is reversed.
+
+**Verdict on the reading: the post is right; the step does not follow as written** (single-party read).
+
+**Not checked:**
+- whether the claimed repair (sorting the minima by log₂(n + 1), K ≤ t·G(r)) restores m ≤ 91;
+- the m = 92 reduction beyond its Λ (CL520);
+- the 95-block search.
+
+**Bearing.** Our fold table cites Simons–de Weger, not Hercher, so nothing in the record moves. Hercher's "no m-cycles
+for m ≤ 91" is a published bound whose proof, as written, has a hole. A repair exists on rStation, unreviewed by us.
+PRIOR-ART.md now gives the exact location. A natural next read, for GPT, Local or a later block, is the repair's
+lemma: sorting the minima and splitting the cycle into r chains.
+
+**Verdicts.** Gut: the small thrill of checking a published proof and finding the reported hole exactly where they said.
+Reasoned: one inference confirmed invalid as written (single-party); the theorem's truth is not assessed.

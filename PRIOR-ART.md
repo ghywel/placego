@@ -4713,6 +4713,15 @@ fold-table row "Collatz cycle" (Simons–de Weger; Hercher's no m-cycles for m �
 
   A careful read of Hercher's Thm 15 (lines cited as 508–510 of v3) is the natural independent check, and the
   owner's "prior art only" stance stands.
+- **Gap read by Cloud (2026-10-22 04:18 BST, CL521; single-party).** In arXiv 2201.00406v3 (PDF) the step is in the proof
+  of **Theorem 21** (pp. 13–14; the post's "Thm 15" is presumably the source's counter). It reads: "since
+  n_{m−m₂+1+ℓ} < n_{m−m₂+1}^{(δ^ℓ)} ≤ n^δ_{m−m₂+1}, we get the inequality T(n_{m−m₂+1+ℓ}) < 3/(2^v − 1)^δ".
+  - Remark 7's bound T(n) < 3/n needs a LOWER bound on n_{m−m₂+1+ℓ}, but Lemma 20 supplies only an upper bound.
+  - For ℓ ≥ 1 and δ > 1 the middle inequality runs the other way.
+  - So the displayed inference does not follow as written, and both of the post's objections are correct readings.
+  - Not checked: whether the post's repair (sorted minima, K ≤ t·G(r)) recovers m ≤ 91, and the m = 92 and 95-block
+    computations.
+  - Our record cites only Simons–de Weger in the fold table, so nothing of ours rested on this step.
 
 
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
