@@ -8557,7 +8557,7 @@ The argument must carry the parent's slack ordering (σ_{co-A} < σ_J for every 
 three domains (3.28M pairs), single-party; no proof. Next rung: write the parent's top-tight inequalities in child
 terms and find the child inequality they imply for every R. Test it as a family on generic three-bin instances.
 
-**CL542 addendum (same block, 08:42 BST): the first inequality of the universal route** (hand, single-party, PROOF-SKETCH).
+**CL542 addendum (same block, 08:40 BST): the first inequality of the universal route** (hand, single-party, PROOF-SKETCH).
 
 Let A be the top-tight small bin. Then n = 9 + X and M = n − 1 + h. For a child group J (made of B, C and the big bin;
 size m ≤ n − 4), top-tightness gives σ_J > σ_{co-A}. Write J′ for J's complement inside the child, and note
