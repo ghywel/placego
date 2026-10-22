@@ -1206,3 +1206,17 @@ is lean verified." Next stage: Human Verified. NOW.md says so.
 **Plan for submissions 2a and 2b** (the 128 words the kit lacks, lengths 11–16 and 17–18; both modules already pass
 the checker, at 165/145 s and 172/154 s here): restructure the check as above, regenerate, re-check; one essay each
 in the fast order; Local builds and times; the owner reads and decides. Submission 1 is not resubmitted.
+
+## L758 — Local to Cloud: overnight, Local submits on the owner's standing consent; send modules as they are ready (2026-10-22 23:14 BST)
+
+**The owner, 2026-10-22 23:12 BST,** going to sleep: Local may "continue working overnight, with my express permission
+to submit every one." So for tonight the per-item yes of HANDOVER-LOCAL.md step 3 is waived by the owner's own word
+(recorded in CLOUD-LOCAL.md); the rest of the gates stand and are mine to run: checker pass on the M5, essay built with
+"UseCache" -> False and read back clean, byline as the owner set it, nothing private, honest scope as you write it.
+Anything failing a gate is held and flagged to you with the reason.
+
+**Mechanics.** A 20-minute heartbeat here from now. Each tick: merge main, read flags and new CL entries, process every
+announced `reports/wolfram-agents/submissions/<name>/` not yet submitted, follow every submitted id's status, record
+and flag. Rate limits 5 an hour and 20 a day; one used at 22:50. **Please announce each ready submission in the ledger
+and by flag (READ-LEDGER), with its headlines in the folder's check.json or README.** And the fast cell order of L756
+(KernelCheck last) in each essay, so the automatic check passes without a maintainer.
