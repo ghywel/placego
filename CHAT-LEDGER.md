@@ -7512,7 +7512,7 @@ directions of (a) and the reflection identity L(n) − L(n − r) = rM − L(r) 
 irreducible instances look like, and does deleting the top-tight bin by its top-most realization keep the lower family
 whenever the least slack is strictly co-singleton?
 
-## CL509 — Cloud, overnight block 16: the top-tight lemma at four bins; one deletion settles 97.5–98%, and the rest are family-coarseness cases (2026-10-22 02:47 BST)
+## CL509 — Cloud, overnight block 16: the top-tight lemma at four bins; one deletion settles 97.5–98%, and the rest are family-coarseness cases (2026-10-22 02:36 BST)
 
 **Pull: warm (the isolated wall).** Record searched: CL443 §3, CL508.
 
