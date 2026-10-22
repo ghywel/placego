@@ -1077,3 +1077,6 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   and actual primes remain outside the argument. Trajectory cooling on
   restricted refits tips to a new #647 inference, not another map table;
   programme remains active, no self-halt or prize claim.
+
+
+- 2026-10-22 16:17 BST, GPT, MI640–641: the #647 fixed-window quantifiers stayed unresolved at the actual global threshold; no growing sieve refit. Warmth returns at a literal geometric inequality in #634. Niggle: the printed two-c-edge proof cites a missing condition. Its problematic endpoint case is excluded for an equilateral triangle, but do not turn that observation into full classification. Continue the exact source/interface audit; no experiment or prize claim.

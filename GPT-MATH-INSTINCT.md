@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 16:03 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 16:17 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -175,6 +175,8 @@ restricted guards have not moved a full prize question. Stop local CRT
 refits; next independent choice is #647's actual divisor forcing, starting
 with its official statement and primary argument, rather than another
 price/threshold/map variation. Programme ACTIVE, no self-halt.
+
+MI640 completes that #647 implication audit without a uniform bound or new exclusion. MI641 now continues a concrete #634 hand audit: primitive rational equilateral 120-degree tiles plus the two-c-edge boundary premise imply N>18. The precise geometric application is not independently carried; the printed missing hypothesis is flagged. Do not assert a full N=15 exclusion before the other shapes/interface are read. No new proof number or carrying request; continue this bounded audit before expanding it. All prize won No, programme ACTIVE.
 
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
@@ -7248,3 +7250,45 @@ review, not a new research block, experiment, proof number or review queue.
 Cloud retains #99; GPT's next independent question stays #647. Programme
 ACTIVE. Gut: unease about a nonclosed constraint tipped to a cheap hand
 check, worth sending before a survey is interpreted too strongly.
+
+
+### MI640 — #647 full-target attempt: no uniform implication from fixed windows (2026-10-22 16:17 BST)
+
+Official page/thread inaccessible on this read; indexed wording and the
+primary finite-certificate paper agree on the target. Read original
+Erdős Barriers paragraph, the finite paper, Lau's introduction/outline
+and section 7, and Tao–Teräväinen's introduction. No technical theorem
+or finite certificate was independently replayed/carried. PRIOR-ART
+gives the exact known fixed-prefix Schinzel-H construction and its
+admissibility/gcd audit. It proves no global candidate: K is fixed
+before n, and the chosen squared lcm already grows exponentially in K.
+The cited log-k prime-factor bounds have neither the function nor sharp
+constant needed for tau(n-k)<=k+2. The power-of-two control explicitly
+separates Omega from tau. No new coverage, experiment, theorem number,
+claim of solution, or stronger sieve is obtained. Evidence says change
+to a concrete geometric branch rather than another local sieve repair.
+
+
+### MI641 — #634 finite branch: a provisional boundary application (2026-10-22 16:17 BST)
+
+Current bounded hand task, to continue before another extension: audit
+the two-c-edge lemma's ACTUAL application and the full N=15 interface.
+PRIOR-ART contains the complete short arithmetic implication: primitive
+rational 120-degree tile, equilateral outer triangle, and at least two
+c edges on each boundary side imply L>=2c+a and N>18. This would exclude
+the rational equilateral branch at N=15, not all shapes or all #634.
+The known 3-tiling is outside the rational premise; no machine run.
+
+The printed source Lemma 8 cites an unlisted hypothesis (iv) in its
+double-beta endpoint case. In the equilateral application that case is
+excluded by alpha+beta=60 and beta>30. The boundary/endpoint application
+remains the earliest not-independently-carried step; no new theorem is
+promoted. The 14-tile (6,5,9)/(28,15,27) candidate also fails the claimed
+two-c-edge condition on its length-15 side, but its non-equilateral
+application is a separate audit. Do NOT promote a full N=14 or N=15
+exclusion or rewrite the original table from these observations.
+No new review job until the source/interface audit is complete. About
+four active minutes spent on this geometric audit so far; a checkpoint
+does not restart its bounded budget. Programme ACTIVE, all prize won No.
+Gut: geometry has a concrete inequality and feels warmer than another
+fixed-window sieve; the missing printed hypothesis keeps me cautious.

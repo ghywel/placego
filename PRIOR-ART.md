@@ -4018,3 +4018,38 @@ Thus ANY uniform full-residue image envelope delta for this coordinatewise class
 **Adversarial controls and boundary.** For f_q=0, a_q(0)=1 and a_q(j)=q at every other local slope; the energy identity still gives 2q^2-q. With K=1 every coordinate collapses, so dropping the remainder E would falsely assert A(0)/Q>=2^(-r). This is an explicit countercontrol to that tempting period-average shortcut. For f_q=x^2 every image has (q+1)/2 points, checking the comparison with the source. All checks are literal hand identities, not a numerical run.
 
 **Missing full-target inference.** A correlated f modulo Q need not factor into f_q, so the product step would fail. Moreover, full-residue images are only an UPPER envelope for the source's ACTUAL prime subset. The calculation supplies neither a lower bound on that physical support nor an obstruction to all short-direction constructions. It is not a Hall deficit, an upper bound on F(n), a polynomial lower bound, or a solution of #711. Stop the coordinatewise uniform-envelope refit; a new argument must use correlated residues, actual progression support, or a different full-target route. No automatic map census or prime-power extension.
+
+
+## #647: fixed windows do not supply a uniform divisor barrier (GPT, MI640, 2026-10-22 16:17 BST)
+
+**Outcome:** the bounded full-target attempt is inconclusive; no new theorem, finite exclusion, experiment or proof review. The original report already states the fixed-window Schinzel-H implication. Here is its exact construction and the missing uniformity, not a new result. Record searched: 647/divisor forcing -> original report and R647; its fixed-dimensional sieve was already carried.
+
+The official page and thread returned HTTP 403 in this read. The indexed official statement agrees with the primary [Mian–Siddique paper](https://arxiv.org/html/2608.17880), read in full: finite certificates do not prove an infinite domination chain. No Lean build or claimed range is adopted independently here. Read Erdős's original [1979 Barriers paragraph, p.68](https://www.renyi.hu/~p_erdos/1979-22.pdf). Read Lau [2604.15042v3](https://arxiv.org/html/2604.15042), introduction, outline and section 7, plus Tao–Teräväinen [2512.01739v2](https://arxiv.org/html/2512.01739), introduction only. Lau's backward theorem supplies an unspecified constant times log k for Omega; it does not supply tau(n-k)<=k+2. The technical sieve proofs were not fully read or independently carried.
+
+For fixed K>=2 let M=lcm(1,...,K)^2. The distinct linear forms F_i(t)=(M/i)*t-1, i=1,...,K, are admissible. For p<=K all coefficients are divisible by p, hence no form vanishes modulo p. For p>K at most K residues are excluded. Under Schinzel's H, infinitely many t make all forms prime. With n=M*t, gcd(i,F_i(t))=1 since i^2 divides M, and
+
+    tau(n-i)=2*tau(i)<=2*(floor(i/2)+1)<=i+2.
+
+This verifies EVERY inequality in the fixed prefix, not the remaining shifts. The n can depend on K without any usable upper bound. Already n>=M and log M asymptotic to 2K constrain this particular construction to K<= (1/2+o(1))*log n; no global divisor-tail bound covering the rest was obtained. Swapping these quantifiers would assert what is missing.
+
+Unexpected hand control: the elementary large-Omega obstruction from powers of 2 does not imply a tau obstruction. At m=2^a one has Omega(m)=a but tau(m)=a+1, rather than 2^a. Similarly, a lower bound omega(n-k)>(1-epsilon)*log k only forces tau above k^{(1-epsilon)*log 2}, below the linear threshold. No implication from these cited statements settles #647. The next constructive finite target is #634's small tiling branches; no larger divisor scan or fixed-window sieve refit follows.
+
+
+## #634: provisional boundary reduction for an equilateral rational 120-degree tile (GPT, MI641, 2026-10-22 16:17 BST)
+
+**Status:** HAND source-based application, not independently carried, no novelty/proof number or full #634 claim. It is a possible reduction of the small-composite branch, pending the actual classification/interface audit. No experiment or review queue yet. Record searched: two c edges/14-tiling -> original report's scalar boundary discussion, not this inequality.
+
+Read Beeson [No triangle can be cut into seven congruent triangles](https://arxiv.org/html/1811.09723), v5, section 12.2, Lemmas 7–8 and their proofs, also compared with the author's PDF. For an equilateral triangle tiled by a rational nonisosceles tile with angle gamma=120 degrees and irrational alpha/pi, the two-c-edge lemma says every boundary side contains at least two longest tile edges. Its general printed proof refers to an unlisted hypothesis (iv) in one endpoint case; DO NOT adopt the unrestricted lemma merely from its statement. In this EQUILATERAL application alpha+beta=60 degrees and alpha<beta, so a corner of 60 degrees is strictly between beta and 2beta. That problematic double-beta endpoint case is never entered. Boundary vertices containing gamma have the unique remaining angles alpha and beta, as required by the proof. The equilateral application and the other endpoint case still deserve a scoped carrying read before any new theorem is promoted.
+
+**Arithmetic after that geometric premise.** Normalize the rational tile to primitive positive integers a<=b<c, with c^2=a^2+ab+b^2. They are pairwise coprime. Let L be the equilateral side, so L^2=Nab. Two c edges give L>=2c. Equality L=2c would imply ab divides 4, by coprimality with c. Up to swapping, the possible pairs (a,b) are (1,1),(1,2),(1,4); none has integer c. Thus L>2c. Boundary sides are unions of WHOLE tile edges; any further edge has length at least a. A third c edge also meets that bound. Therefore L>=2c+a.
+
+Since c>b+a/2,
+
+    (2c+a)^2-18ab
+      =5a^2+4b^2-14ab+4ac
+      >7a^2+4b^2-10ab
+      =((4b-5a)^2+3a^2)/4 > 0.
+
+Hence this application would give N>18 in the stated rational, nonisosceles equilateral 120-degree branch. The known 3-tiling by a 30-30-120 tile is an adversarial scope control: its side ratios include sqrt(3), so the rational/primitive-integer premise fails. No contradiction or universal obtuse-tile bound follows.
+
+For the separate 14-tile triquadratic arithmetic candidate, tile (6,5,9) and outer sides (28,15,27) have exact area ratio 14. The same two-c-edge boundary premise would reject it because 15<2*9, but the equilateral-only audit above does NOT by itself verify that application. The original report's other shapes, commensurability reductions and its n<=100 map remain distinct dependencies. In particular, do not mark N=14 or N=15 fully excluded, alter original reports, or mark prize won on this basis. Continue the bounded source/interface audit before a consolidated carrying request.
