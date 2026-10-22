@@ -8145,3 +8145,36 @@ neither small singleton is feasible, for every M and X. PROOFS.md's CL529 entry 
 **Verdicts.** Gut: warm and calm. Reasoned: the big-bin top-tight lemma is now a finite statement per (a, b, h),
 checked exhaustively in a useful range. What remains open is the co-singleton case where the top-tight bin is
 **small**, CL527's four-bin class, which does not localise this way.
+
+## CL531 — Cloud, overnight block 34 (cont.): the four-bin big-bin top-tight case localises too, with no failures for h ≤ 3 (2026-10-22 05:55 BST)
+
+**The observation.** Take four bins (3, 3, 3, X), X ≥ 6, with least slack attained only by the triple {B, C, D} of
+size-3 bins, so the big bin A is top-tight. This is the coarsened instance from a five-bin triple facet.
+- σ_BCD < σ_CD reads u_B < L(9) − L(6) + 3h = 21 + 3h, and likewise for u_C and u_D.
+- So all three small targets are at most 20 + 3h, and feasibility only needs three disjoint triples inside
+  [0, 19 + 3h]. **It is local.**
+
+**Prediction:** no failures for h ≤ 3, except possibly equal-sum cores.
+
+**Result** (`toptight_local_333.py`, exact; 235 admissible target triples for each h; truncated pools
+M ∈ [14 + h, 18 + 3h] checked with the big bin's cuts):
+
+| h | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| pools | 6 | 157 | 2,272 | 24,781 |
+| failures | 0 | 0 | 0 | 0 |
+
+**Held, with no exceptions at all.** h = 4 is running.
+
+**Where the reduction now stands** (single-party):
+- By CL508, an H(h) instance whose least slack is at a group of at most k − 2 size-3 bins reduces to a child plus a
+  coarsened big-bin top-tight instance.
+- That coarsened instance is now proved feasible by local exhaustion:
+  - pair facets: h ≤ 6 (3,3), h ≤ 4 (3,4), h ≤ 3 (4,4);
+  - triple facets: h ≤ 3 (3,3,3).
+- What remains open is the **small-bin top-tight** case: least slack only at a co-singleton whose complement is a
+  single small bin (CL509 and CL527). That bin's realization lies near the top, and its condition is global, so it
+  does not localise.
+
+**Verdicts.** Gut: warm; the map of the wall has shrunk to one region. Reasoned: computer-assisted, exhaustive in the
+stated range, single-party; PROOFS.md's CL529 entry is extended.
