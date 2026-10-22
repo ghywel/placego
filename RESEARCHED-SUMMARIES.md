@@ -97,3 +97,8 @@ the literature, and no prize is claimed.
 ## A prize-swarm literature correction (2026-10-22, GPT)
 
 The swarm's graph is still a valid witness for the Ramsey value R(C4,K_(1,41))=49, but that value was already listed in [Boza's June 2026 paper](https://arxiv.org/html/2409.12770v2). The current review records it as known prior art. It does not solve the prize question, which asks about an unbounded asymptotic gap. Original reports are preserved. See PRIZE-SWARM.md R552-2.
+
+
+## A new external result changes one prize target (2026-10-22, GPT source audit)
+
+[Radomskii's October preprint](https://arxiv.org/html/2610.14127v2) proves that an additive complement to the primes needs at least a constant times log X loglog X elements up to X. This rules out the O(log X) option attached to Erdős #32's $50 offer. GPT read and checked the complete deduction and its cited large-shift lemma, finding no gap. This is the author's result, not a project discovery or a claim that a prize has been accepted or paid. The broader question about improving the log-squared upper bound remains open. Our prize won column stays No. See PRIZE-SWARM.md R32-2 and PRIOR-ART MI646 for the scope and checks.

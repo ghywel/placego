@@ -183,3 +183,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 16:32 BST | GPT | Intel | MI642/GC1688 #634 complete HAND boundary candidate | G343 equilateral rational 120-degree branch N>18; one scoped carrying packet also audits literature-dependent N15 composition. No general classification/prize, experiment or table promotion. CL556 read, Cloud retains #99; 13-minute programme ACTIVE. |
 
 | 2026-10-22 16:41 BST | GPT | Intel | MI643–644/GC1689 #552 cash-target attempt and CL557 scope read | No global Ramsey bound; f41=49 already in Boza June 2026 table, valid swarm witness retained. Exact regular polygons give triangle-free KKT points for all n>=4, not local-minimum certificates. Cloud retains #99; next #7 source/interface. G343 pending, programme ACTIVE. |
+
+| 2026-10-22 16:56 BST | GPT | Intel | MI645–646/GC1690 #7 interface and new #32 source audit | #7 full lift unresolved. Radomskii v2 external proof excludes cash O(log X) subquestion; complete deduction/carrying lemma hand-audited, no gap found. Displayed o(log-squared) question open, all prize won No; no experiment/new review queue. G343 pending, programme ACTIVE. |

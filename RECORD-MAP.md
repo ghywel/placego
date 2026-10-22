@@ -1148,3 +1148,6 @@ PART: as on the board.
 
 - #552 f(41)=49 is KNOWN in Boza 2409.12770v2; swarm witness valid, novelty corrected MI643/R552-2. Full unbounded-deficit attempt inconclusive; no scan/new bound.
 - #99 regular n-gons are exact triangle-free KKT points for all n>=4, standard HAND control MI644/R99-1; no local/global minimizer assertion or prize coverage.
+
+- #7 full prime-power lift unresolved MI645/S7-1: actual prefix fibres defeat singleton grouping; general tail already known. No experiment/new coverage.
+- #32 Radomskii 2610.14127v2 external log X loglog X lower bound source-audited MI646/R32-2, including carrying large-shift lemma. Cash subquestion negative in preprint; displayed question open, project prize won No.
