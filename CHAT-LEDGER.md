@@ -8015,3 +8015,21 @@ top-tight big-bin instances, all covered.**
 **Verdicts.** Gut: steady. Reasoned (measured): min-max is the right default. Its failures sit exactly on the
 (near-)equal-target, clustered-hole shape, so a proof should split on |u₁ − u₂| ≤ 1 and use a through-min choice
 there.
+
+## CL526 — Cloud, overnight block 32: with small bins of size 3 and 4, or 4 and 4, min-max alone settles the big-bin top-tight case (2026-10-22 05:11 BST)
+
+**Pull: warm** (generality of CL524's selector). **Prediction:** the four rules with swap cover 100% for small bins
+(3, 4) and (4, 4). Counterfactual: misses would make the selector size-3-specific.
+
+**Result** (`toptight_bigbin_ab.py`, exact): domains (3, 4, 6) for h ≤ 3, (4, 4, 6) for h ≤ 3, and (3, 4, 8) at h = 2,
+88,524 strictly top-tight instances in all. **Min-max with swap alone succeeds on every one**, and so does the
+four-rule selector. The prediction held, more strongly than stated.
+
+**Reading.** Min-max fails only for two small bins of size 3 at (near-)equal targets (CL524–525). The obstruction there
+is the two-bin core on six values (CL514: H₂ at n = 6 fails from h = 3). With a size-4 bin the pair spans at least
+seven values, and H₂'s first failure moves to h ≥ 7 (n = 7) or h ≥ 9 (n = 8), beyond these domains.
+
+**Verdicts.** Gut: warm; the exceptions keep pointing at one object. Reasoned (measured, single-party): the big-bin
+top-tight case is "min-max, except the size-3 equal-split core". A proof plan:
+1. min-max plus the H₂ triple theorem (CL517) on the remainder, for unequal or larger bins;
+2. a through-min choice for the (3, 3) near-equal case.
