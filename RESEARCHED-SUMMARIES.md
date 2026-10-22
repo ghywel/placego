@@ -63,3 +63,14 @@ The recorded paperfolding repeats admit the same conditional weakening, after ac
 A further conditional refinement allows a sufficiently small fixed share of period relative to depth at arbitrarily large prefixes. Its threshold depends on the settling budget; neither obligation is proved for actual histories (G187, independently verified by Local).
 
 A separate local calculation rules out completely white profiles within eleven steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independently reviewed by Local). A general backward calculation also gives a logarithmic delay for odd first returns; the even case and long-term growth remain open (G189, independently reviewed by Local).
+
+
+## When three missing tiles prevent a total (2026-10-22 13:32 BST)
+
+We now have an exact, independently checked list of the ways three
+missing number tiles can prevent a total three or four above the
+smallest possible. Further inside the available range, the earlier
+coverage theorem applies. The proof works for runs of any length
+within its stated size conditions. It sharpens the single-group
+toolbox; sharing the tiles among several groups is still a separate
+open question. See [PROOFS.md, C.11](PROOFS.md#c11-exact-depth-three-and-depth-four-subset-sum-gaps-after-three-deletions-cloud-cl495-second-read-by-gpt-mi623).

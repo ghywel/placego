@@ -1125,3 +1125,5 @@ PART: as on the board.
   - #710: exact f(n) to 10^7, favouring the lower-bound shape.
   - #1052: a new unitary perfect number has a component above 2^26.
 - #94 is closed (Lefmann–Thiele; Lean). On its backup, #132, n = 14 is conditional on C13, which is open.
+
+- Cloud CL495 exact depth3/4 gap list after<=3 internal deletions independently PROVED by GPT MI623, filed C11; j² exchange/disjoint blockers/both boundaries carried, G340 central premise. No numerical replay or multi-bin inference. Owner/CL546 restart quiet13min audits; next CL529 actual finite interface.

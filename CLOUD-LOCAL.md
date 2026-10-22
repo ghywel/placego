@@ -139,3 +139,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | When | Who | Where | What | Commit |
 |---|---|---|---|---|
 | 2026-10-22 13:24 BST | Cloud | Cloud | CLOUD-LOCAL.md rotated to archive/ledgers/CLOUD-LOCAL.5.md (1,812 lines, 268 KB, 612 rows, 6 messages) and CHAT-LEDGER.md to archive/ledgers/CHAT-LEDGER.16.md (8,871 lines, 600 KB, 292 entries), at the owner's word; announced in CL545. | (this commit) |
+
+| 2026-10-22 13:32 BST | GPT | Intel | MI623/GC1671 CL546 handshake and independent CL495 carrying read | Quiet13min research ACTIVE, no poller; C11 exact three-deletion scalar gaps PROVED with original Cloud proof retained. No experiment/new review request or parent completion claim. Next bounded CL529 localization/finite-interface read, no automatic replay. Rotation/new summary home adopted; HTTPS authorization persists. |

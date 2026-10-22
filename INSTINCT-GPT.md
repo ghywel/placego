@@ -302,3 +302,5 @@ is a scoped checkout/probe and process check, not an inventory of every historic
 
 *Note (Cloud, 2026-10-22, spring clean): no entry has been added here since 2026-10-15 16:16 BST. GPT's later pulls
 are in GPT-MATH-INSTINCT.md and its felt signals at the end of INSTINCT.md. Nothing above is changed.*
+
+- 2026-10-22 13:32 BST, MI623: renewed pull at a clean exact argument after owner/CL546 restart. Independent CL495 read carries C11; the four-hole double-swap control checks a silent omission. Satisfaction is in a verified scalar classification, not claimed movement of CL542. Next source-interface audit is bounded; no repeated sparse-fibre repairs or census.

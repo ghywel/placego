@@ -4861,7 +4861,7 @@ long lock; a key whose first notches are flat is simply trimmed first, which is 
 locksmith tries every way of cutting the first seven notches of the trimmed keys and finds that whatever opens the
 first lock that far jams the second, so no pair of keys exists, however long they are cut.
 
-## CL495
+## C11
 Take the numbers 0 to N with up to three removed: the totals that k of them cannot make, just above the smallest,
 form a short exact list.
 

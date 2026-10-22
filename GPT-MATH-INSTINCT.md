@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22: bounded universal-compatibility audit complete; incubation.**
+**CURRENT working state, 2026-10-22: resumed after Cloud CL546; independent scalar/localization audits.**
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
   total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
@@ -157,15 +157,18 @@ exchange mechanism and primary literature;the incubation above is history.
   fibre<=9 or a shared vertex forced in both (MI621, HAND).
   MI622's ACTUAL protected3336 control has only5 B-triples, so no
   uniform >=10 gate follows. It partitions and is not a CL542 negative.
-- MI622 trajectory: bounded compatibility audit is inconclusive.
-  Research schedule PAUSED, older paused/no poller; no experiment,
-  new review job or sparse-fibre catalogue. Reopen on a rank-sensitive
-  blocking theorem, admitted negative, new bridge or owner direction.
+- MI622 universal-compatibility audit remains inconclusive; no
+  repeated density/margin repair or sparse-fibre catalogue. Owner's
+  renewed direction and Cloud CL546 restart quiet13-minute work,
+  older schedule paused/no poller. MI623 independently carries the
+  exact three-deletion scalar list as C11; parent coverage unchanged.
+  Next bounded read audits CL529's localization/finite interface
+  before relying on its unbounded-M statement; no automatic replay.
   GC1670: owner explicitly authorizes the configured HTTPS shared
   area for anything. Delayed checkpoint flag/state delivered and read
   back exactly; prior operational approval block is RESOLVED. Routine
   shared-area use needs no fresh per-transfer permission. Mathematical
-  incubation and the PAUSED schedule are unchanged.
+  authorization persists; mathematical rhythm is as updated above.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -6646,3 +6649,67 @@ a sequence of small-fibre repairs without an invariant linking them.
 Niggle sweep: internal original hole, all14 slacks, X6 gate, every
 sum12 triple, complete positive partition, source-hypothesis mismatch,
 and no inference from a positive control to universal completion.
+
+
+### MI623 — Cloud check-in adopted; exact three-deletion list independently carried (2026-10-22 13:32 BST)
+
+Read CL545/a0f32cdb and CL546/c735fb28 in full. No mathematical
+objection or new universal-compatibility premise arrived: Cloud offers
+independent readings and welcomes the owner's requested restart.
+New live ledgers/volume paths and RESEARCHED-SUMMARIES adopted.
+The prior automatic-approval issue is resolved under GC1670; no new
+permission question for the authorized shared store.
+
+Choice: resume quiet13-minute work on concrete hand carrying audits,
+starting with Cloud CL495's exact deep-gap classification. This changes
+the verified scalar toolbox, not the open CL542 compatibility inference.
+No automatic census, basis, threshold repair or sparse-fibre catalogue.
+Record searched: CL495|Lemma G3 ->10 hits/7 files. Read the full proof,
+its literal-support source and G340's actual-depth statement.
+proof_dupes --near CL495 passes367 entries; G332/G326/W322 nearest
+read in full. No generated proof pages modified and no source replay.
+Post-filing --near C11 also passes367 entries; C10/27/16 read in
+full, distinct statements. No generated-page rebuild was run.
+
+Carrying read PASSES: j exchanges cost>=j²; the three disjoint gain3
+pairs require exactly3 blockers, producing all four patterns. The four
+gain4 pairs need4 blockers unless an outside pair is lost at one of
+the two extreme boundaries. Counts>=3 on both sides identify those
+boundaries exactly; the forced holes also kill the sole double swap.
+The reverse implications, reflection and complement case were checked.
+The lower-to-upper spectrum spread is>=k(n-k)>=12, so the displayed
+offsets have the asserted ACTUAL depth, not just lower distance.
+PROVED G340 supplies the central exclusion. Filed as C11 with Cloud
+credit and original proof intact. This does not upgrade a partition
+theorem or any scalar-to-selector application.
+
+Unexpected hand countercontrol to dropping the two-exchange term:
+four-hole R={0,3,4,5,6,9,10},k3,alpha7 has no gain4 single swap
+but0,5,6 realizes11. Outside the theorem deliberately; it checks the
+mechanism rather than falsely enlarging its deletion budget.
+
+Next bounded independent audit: inspect CL529's repaired localization
+AND its finite-check interface before relying on the unbounded-M
+claim. Source validity alone is not carrying verification of the basis.
+No automatic run; first look for a hand counterexample to the stated
+finite-to-infinite implication or an omitted hypothesis in its instrument.
+CL530/531 and the universal small-bin case remain separate.
+Gut: renewed interest in a clean, independently checkable exact argument,
+without pretending the selector wall has moved. Owner restart is the
+reason this new independent review block was opened; it does not reset
+the previous failed margin/density assumptions.
+
+**CL529 first source/interface read (same continuation).** The repaired
+script parses and its finite-to-infinite domain matches the hand
+localization: 20 sorted offset pairs, exactly all subset holes<=h in
+the long window, and every short ambient interval with n>=12. Its
+three extra admission tests are precisely C, A+C and B+C; A, B, A+B
+were already enforced by the offset domain. The other two values in
+a triple sum to>=1, so its token bound u-1 remains valid even when0
+or1 is absent. At h6 the domain counts are sum_(j=0)^6 C(29,j)=621616
+and sum_(M=17)^27 C(M+1,6)=C(29,7)-C(18,7)=1528956.
+The source's ok function explicitly enumerates both disjoint triples.
+These are independent hand/source checks, NOT an independent full
+execution receipt or adoption of its reported zero-failure result.
+Next finish the finite-proof verification standard before upgrading
+CL529; no automatic extension to CL530/531.
