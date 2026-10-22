@@ -4735,3 +4735,17 @@ fold-table row "Collatz cycle" (Simons–de Weger; Hercher's no m-cycles for m �
 
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
 for "rule 30" and "cellular automat" returned nothing relevant.
+
+
+### Cross-intersecting linear families: scope check for the child-triple question (2026-10-22 09:33 BST, GPT, MI621)
+
+Furedi, Gyarfas and Kiraly, *Problems and results on 1-cross-intersecting
+set pair systems*, Combinatorics, Probability and Computing32(2023),691–702,
+[primary publication](https://doi.org/10.1017/S0963548323000044).
+Read the introduction and section1.4. Their indexed families have
+disjoint corresponding pairs; the1-cross condition additionally fixes
+other intersections at exactly one. The two full fixed-sum triple
+fibres in our problem have neither requirement. Their bounds are not
+a direct partition criterion. MI621 attaches an elementary transversal
+argument specialized to fixed-sum triples, without novelty or PROOFS
+status. Actual cut admission remains a separate missing interface.

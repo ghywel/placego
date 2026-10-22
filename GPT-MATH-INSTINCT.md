@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22: Cloud's overnight work witnessed; bounded restart.**
+**CURRENT working state, 2026-10-22: bounded universal-compatibility audit complete; incubation.**
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
   total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
@@ -150,19 +150,19 @@ exchange mechanism and primary literature;the incubation above is history.
   top-tight label is enumerated; tied-label/existence scope remains.
   Universal arbitrary-h statement is CONJECTURAL. C541 remains finite
   evidence and does not already cover these children.
-- Specific pull: TOP-TIGHTNESS may replace the need to select R.
-  Next ONE bounded hand audit: child proper groups satisfy rank bounds
-  of[h,M-3], but their total exceeds that reference by sigma_(co-A).
-  MI619 supplies first-triple existence only for h<=floor((X+5)/2).
-  MI620 retains ALL14 parent cuts, Delta/rho and rank deficit D with
-  rho+Delta=3N-D; no child compatibility follows just from the reference
-  window. Next hand kill test targets that actual image and disjoint
-  small-bin realizations; no new relaxation, repair catalogue or census.
-- Rhythm: existing research heartbeat ACTIVE every13 minutes, quiet
-  unless meaningful change; older schedule paused, no separate poller.
-  MI617 incubation is superseded by owner request and new CL542 evidence,
-  not by a new label or warmth. Keep prior small-hole-selector failures
-  and the90-minute/two-same-assumption strategy check.
+- MI619 gives first-R existence only for h<=floor((X+5)/2).
+  MI620–621 retain ALL14 cuts, the rank deficit, small-target order
+  and rho>=9+ceil(Delta/3); none proves joint child compatibility.
+  Complete child triple fibres are linear. Failure implies a small
+  fibre<=9 or a shared vertex forced in both (MI621, HAND).
+  MI622's ACTUAL protected3336 control has only5 B-triples, so no
+  uniform >=10 gate follows. It partitions and is not a CL542 negative.
+- MI622 trajectory: bounded compatibility audit is inconclusive.
+  Research schedule PAUSED, older paused/no poller; no experiment,
+  new review job or sparse-fibre catalogue. Reopen on a rank-sensitive
+  blocking theorem, admitted negative, new bridge or owner direction.
+  Portal notification separately blocked by automatic approval review;
+  do not retry pending authorization, and do not confuse it with maths.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full
@@ -41679,3 +41679,111 @@ parent/R counterexample. No confirming census or scalar table. Gut:
 pull at the retained rank deficit, tempered by the absence of a joint
 proof. If this is merely another margin relaxation, fail it before any
 repair; prior CL539/541 failures remain the guards.
+
+
+### MI621 — The small-target order and a whole-fibre obstruction (2026-10-22 09:33 BST)
+
+HAND continuation of MI618–620's ONE bounded audit; no experiment or
+new carrying request. Record searched: top.tight|co.singleton AND
+deficit|moment|reflec ->8 hits/7 files; cross-intersecting/fixed-sum
+linear hypergraph terms found no corresponding eight-streets entry.
+Read MI368/435 and CL542 again. Do not extrapolate the X3 negative
+to X>=6 by padding: adding t top values to its big bin raises the
+co-A slack by3t while an unchanged small-bin slack stays1.
+The resulting instance is no longer top-tight.
+
+For the actual (3,3,3,X) parent, co-B/co-C have the same size as
+co-A. Hence u_B,u_C<=u_A; ties between co-singletons are allowed.
+The A+B+C cut gives
+
+    3*u_A >= u_A+u_B+u_C >= L(9)+9h+Delta,
+    rho >= 9+ceil(Delta/3).
+
+Thus the low-rho holes in an arbitrary H2 window are not automatically
+admitted by this parent. This strengthens the nonvacuity audit, but
+does not yet prove first-triple existence at arbitrary h. In reversed
+coordinates z_i=M-s_(n-1-i)=i+e_i, sum(e_i)=D. If R has reversed
+indices i<j<k, its reversed sum is3+D+Delta, so
+
+    i+j+k-3 = Delta + sum(e_l : l outside {i,j,k}).
+
+This exact rank budget is still not a simultaneous partition argument.
+
+A different exact view: for a fixed actual R, let F_B,F_C be ALL
+remaining triples at the two small targets. Child feasibility is
+EXACTLY a disjoint pair from these fibres; the big bin is the conserved
+complement. Each fibre is a linear3-uniform hypergraph: two of its
+distinct triples cannot share two numbers, since their third numbers
+would then be equal. A failed child means the fibres cross-intersect.
+
+Elementary blocking bound, a known transversal-style argument rederived
+here (HAND, no novelty/proof-number claim): if a nonempty F_B has no
+common vertex, fix E in F_B. For each v in E choose E_v in F_B avoiding
+v. Any C-triple containing v must meet E_v. For each of its3 choices
+x in E_v, v and x determine the third number uniquely by the target
+sum. At most3 C-triples contain v, hence |F_C|<=9. Symmetrically,
+if both fibres have>=10 triples, cross-intersection forces a common
+vertex in F_B. A C-triple avoiding that vertex meets at most3 edges
+of the B-star, so when |F_B|>=4 every C-triple contains it too.
+Therefore a failed child has an empty/small fibre (<=9), OR a shared
+vertex forced in every triple of both fibres. This is a whole-choice
+obstruction, not a single bad selector or an absorption theorem.
+
+Primary-source check: Furedi–Gyarfas–Kiraly, *Problems and results on
+1-cross-intersecting set pair systems*, CPC32(2023),691–702,
+https://doi.org/10.1017/S0963548323000044, introduction/section1.4 read.
+Their SPS has paired disjoint diagonals and often cross intersection
+EXACTLY1; our two complete fibres need neither property. Do not import
+their numerical bounds. This is related machinery, not a theorem
+settling our rank-data interface.
+
+
+### MI622 — The natural density shortcut fails inside the actual parent (2026-10-22 09:33 BST)
+
+HAND adversarial control; no enumeration program, census or new proof
+queue. On S=[0,15] minus1 take A/B/C/D targets36/12/15/56, sizes3336.
+The total is119. With sigma=u_J-L(r_J)-r_J, the singles are
+30,6,9,35; pairs AB/AC/AD/BC/BD/CD have27,30,47,6,23,26;
+co-A/co-B/co-C/co-D have5,29,26,18. Thus co-A is uniquely least;
+EVERY singleton/pair is strictly above it, as required by CL542.
+
+Take ACTUAL R={7,14,15}, sum36. Its child's COMPLETE sum12 fibre is
+
+    {0,2,10}, {0,3,9}, {0,4,8}, {2,4,6}, {3,4,5}.
+
+Hand completeness: a triple starting0 gives the three displayed
+positive pairs; starting2 gives only4+6 (3+7 unavailable); starting3
+gives4+5; a minimum>=4 already has sum>=15. Value1 is absent.
+Only FIVE choices exist, despite full parent protection/top-tightness.
+So protection does NOT force the >=10-fibre gate of MI621. This is a
+positive parent/child, not a counterexample to CL542:
+
+    {7,14,15} / {0,2,10} / {3,4,8} / {5,6,9,11,12,13}.
+
+The literal disjoint pieces have the prescribed counts and sums. The
+small-fibre branch of the obstruction is genuinely inside the intended
+problem, not a size3/4 or out-of-family artefact.
+
+Trajectory check at the bounded audit's end. Parent coverage: NONE.
+C9/C10 are real scoped carrying progress; MI620–621 retain stronger
+necessary information and a whole-choice obstruction, but do not prove
+compatibility. The cheap hoped-for implication from cuts to uniformly
+large fibres FAILS on an actual protected X6 parent. The remaining
+inference is to exclude cross-intersection of the COMPLETE actual
+fibres, including sparse fibres/shared forced vertices, from actual
+parent ranks. Classifying more local exceptional triples would not
+by itself supply it. No universal claim has been refuted.
+
+Decision: incubate this compatibility inference; pause the13-minute
+research schedule rather than turn this result into another sparse-
+fibre catalogue or reset the bounded allowance. Reopening evidence:
+a rank-sensitive obstruction theorem, a genuine admitted parent/R
+negative, a new structural bridge or renewed owner direction. The
+portal delivery block remains operational and is NOT the reason for
+the mathematical pause; no retry or repeat approval question here.
+Gut: interest in the linear-fibre representation, disappointment that
+its simplest quantitative gate is false. Fresh choice would not select
+a sequence of small-fibre repairs without an invariant linking them.
+Niggle sweep: internal original hole, all14 slacks, X6 gate, every
+sum12 triple, complete positive partition, source-hypothesis mismatch,
+and no inference from a positive control to universal completion.

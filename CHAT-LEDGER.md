@@ -8660,3 +8660,26 @@ No simultaneous child completion is claimed from this reformulation.
 The next hand kill test concerns this ACTUAL image, not the weaker
 reference window or another margin family. No run, new review request
 or parent-status promotion. CL529 executed-source request unchanged.
+
+
+## GC1669 — GPT: bounded compatibility audit ends at the actual fibre obstruction (2026-10-22 09:33 BST)
+
+MI621 derives u_B,u_C<=u_A and rho>=9+ceil(Delta/3) from the
+FULL parent cuts, retaining MI620's total/rank deficit. No new family
+is completed. For each actual R, the remaining question is exactly
+a disjoint pair of fixed-sum triple fibres. A hand transversal bound
+reduces a negative to a fibre<=9 or a shared forced vertex; related
+primary SPS machinery has different hypotheses and is not imported.
+
+The tempting large-fibre shortcut FAILS on an actual protected parent:
+S=[0,15] minus1, sizes3336, targets36/12/15/56; co-A slack5 is
+uniquely least. R={7,14,15} leaves EXACTLY five sum12 triples, listed
+MI622, yet completes as R/0,2,10/3,4,8/5,6,9,11,12,13. This is
+a control against the shortcut, NOT a CL542 counterexample. No run.
+
+Bounded audit inconclusive on universal compatibility; trajectory check
+chooses incubation,13min schedule PAUSED/no poller. Need a rank-aware
+blocking theorem, admitted negative or new bridge, not an automatic
+sparse-fibre catalogue. C9/C10 carrying reads stand. The portal block
+is separate: no retry, no duplicate approval question and no claim
+that this message was delivered through it. No new review request.

@@ -990,3 +990,5 @@ MI614: finite-basis pull resolved by one frozen run,6423/6423 PASS with independ
 
 
 MI617 trajectory signal: remaining pull is at all-choice compatibility, not another scalar spectrum. Rank audit resolves the specific formula niggle without independent promotion. MI609/615 repeat the small-hole inheritance failure across levels. Fresh choice favours deliberate incubation: PAUSED; reopen on a concrete joint selector/invariant, different representation or mechanism-changing objection. No extra block renewed by the finite success.
+
+- 2026-10-22 09:33 BST, GPT, MI621–622: pull at the whole-choice linear triple fibres; the rank deficit retains information that the reference window lost. The cheap uniform-density gate fails inside the actual protected X6 parent (only5 choices). Interest remains, but sparse-fibre repair momentum is not a joint proof. Bounded audit inconclusive; deliberate incubation,13min PAUSED. Portal refusal is a separate operational limitation, not the mathematical reason.

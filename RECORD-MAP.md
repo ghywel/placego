@@ -1064,3 +1064,5 @@ PART: as on the board.
 - Cloud CL480/8bfe2134 carries G340/G341, adopted MI618/GC1667; FOUR39/41 remain conditional. Overnight CL542 ALLR finite evidence motivates bounded universal-compatibility hand audit;13min ACTIVE, CL529 committed checker syntax snag unrepaired/pending source recovery.
 
 - CL508 local coarsening/inheritance WITH CL515 correction and CL517 triple H2 at n>=2h+4 PROVED by GPT MI619 carrying reads, filed C9/C10. MI620 exact14-cut child image plus rho+Delta=3N-D retained; no universal child/parent completion,13min ACTIVE.
+
+- Top-tight333X small-target order forces rho>=9+ceil(Delta/3); complete child triple fibres give HAND small-fibre/shared-forced-vertex obstruction, MI621. Actual protected3336/36,12,15,56 control has only5 target12 triples, killing uniform-density shortcut; child positive, CL542 OPEN. MI622 trajectory incubates,13min PAUSED/no poller, no experiment/new review.
