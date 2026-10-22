@@ -7787,3 +7787,37 @@ n = 7, 8, 9, 10.
 - the r = 3 lower-window lemma is proved by hand (single-party, PROOF-SKETCH, not filed until the junction step is
   done);
 - r ≥ 4 is not addressed.
+
+## CL517 — Cloud, overnight block 24: H₂ for triples, proved by hand for n ≥ 2h + 4 (half the conjectured range) (2026-10-22 04:10 BST)
+
+**Setting** (CL516's reductions). S ⊆ [0, M] with 0, M ∈ S, |S| = n, h = M + 1 − n holes, all interior. Write
+s_i = i − 1 + d_i, where d_i is the number of holes below s_i. The window for triples is W = [3 + 3h, W_hi] with
+W_hi = ΣS − L(n − 3) − h(n − 3).
+
+**Claim 1 (pairs).** For every z ∈ S, every v ∈ [2h + 3, 2M − 2h − 3] is a sum of two distinct elements of S ∖ {z}.
+*Proof.* The pairs {x, v − x} with 0 ≤ x < v − x ≤ M are pairwise disjoint, and there are
+min(⌊(v + 1)/2⌋, ⌊(2M − v + 1)/2⌋) ≥ h + 2 of them. The h holes and z meet at most h + 1 of them. ∎
+
+**Claim 2 (the middle).** If 2M ≥ 5h + 6, then Σ₃(S) ⊇ [2h + 3, 3M − 2h − 3].
+*Proof.* Σ₃(S) ⊇ ∪_{z∈S} (z + [2h + 3, 2M − 2h − 3]) by Claim 1. Consecutive elements of S differ by at most h + 1, and
+each interval has 2M − 4h − 5 ≥ h + 1 integers, so consecutive translates overlap. The first starts at 0 + 2h + 3; the
+last ends at M + 2M − 2h − 3. ∎
+
+**Claim 3 (the ends).**
+- *Bottom:* 3 + 3h ≥ 2h + 3, so it is inside Claim 2's interval.
+- *Top:* W_hi − (3M − 2h − 3) = Σ_{i≤n−3} (d_i − h) + d_{n−2} + d_{n−1}, using d_n = h. Every hole q contributes
+  #{i ≤ n − 3 : s_i < q} ≥ 1 to Σ(h − d_i), and ≥ 2 unless it lies between 0 and s₂. Hence **the excess is at most d**,
+  the number of holes between 0 and s₂.
+- Those top values M + v, with v = 2M − 2h − 3 + j and 1 ≤ j ≤ d, come from pairs in S ∖ {M} with x ≥ n − h − 3 + j.
+  There are h + 1 − ⌈j/2⌉ such pairs, and only holes above n − h − 3 can meet them. If the d bottom holes lie below that
+  range (d < n − h − 3), at most h − d holes interfere, and h + 1 − ⌈j/2⌉ > h − d. ∎
+
+**Theorem (hand, single-party).** If 0, M ∈ S, 2M ≥ 5h + 6 and d < n − h − 3, then every value in the triple window
+is a triple sum. Since d ≤ h, it suffices that **n ≥ 2h + 4**. With CL516's reductions, H₂(h) holds for r = 3 whenever
+n ≥ 2h + 4 (after trimming end holes).
+
+The census says the truth is h ≤ 2n − 8, so this is half the range. r ≥ 4 is not done: the anchor lemma generalises,
+but its translate step needs the (r − 2)-sum gaps controlled.
+
+**Verdicts.** Gut: the satisfying kind of partial. Reasoned: a short, complete hand proof for r = 3 in the range
+n ≥ 2h + 4; PROOF-SKETCH until read; not filed in PROOFS until r ≥ 4 or the full range is done.
