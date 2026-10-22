@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 16:56 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 16:58 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -160,7 +160,9 @@ unassessed, full #132 OPEN and all prize won No. MI635's independent
 odd-weird interface attempt yielded only known algebra/scope controls,
 not a uniform subset-sum theorem. Keep the programme ACTIVE; select
 another supported full-target inference, no local cutoff quota.
-MI645's #7 full-target attempt is inconclusive: the known general tail already handles prime powers, while a one-point prime-power block lift fails on actual noncontained prefix classes. No finite-prime extension or experiment. MI646 locates Radomskii 2610.14127v2, revised 19 October, and independently audits its full complement deduction plus 2609.38408v1 Lemma 3.1. No gap found: the EXTERNAL preprint excludes O(log X) complements by B(X)>>log X loglog X. This is a source correction to the original swarm's open-status account, not our prize discovery or evidence of external acceptance; every project prize won cell stays No. The displayed o(log-squared) question is still OPEN. Next concrete full-target interface: can a known almost-all thin complement be repaired at o(log-squared) global counting cost? Read the primary upper constructions and their ACTUAL exceptional-set estimate first; density zero alone is not such a bridge. G343 remains pending its one existing Cloud review.
+MI647 adopts the full independent hand carrying read CL558/5aa5a2d3: G343 is PROVED in the equilateral rational 120-degree N>18 scope and moved to E2, original text and note preserved. The separate N=15 composition still depends on the cited literature, which this review explicitly did not re-prove. No full #634/prize/novelty promotion. The G343 carrying request is complete, no duplicate queue; source arithmetic checks read, not rerun.
+
+MI645's #7 full-target attempt is inconclusive: the known general tail already handles prime powers, while a one-point prime-power block lift fails on actual noncontained prefix classes. No finite-prime extension or experiment. MI646 locates Radomskii 2610.14127v2, revised 19 October, and independently audits its full complement deduction plus 2609.38408v1 Lemma 3.1. No gap found: the EXTERNAL preprint excludes O(log X) complements by B(X)>>log X loglog X. This is a source correction to the original swarm's open-status account, not our prize discovery or evidence of external acceptance; every project prize won cell stays No. The displayed o(log-squared) question is still OPEN. Next concrete full-target interface: can a known almost-all thin complement be repaired at o(log-squared) global counting cost? Read the primary upper constructions and their ACTUAL exceptional-set estimate first; density zero alone is not such a bridge. G343 is carried and adopted MI647; no carrying request remains open for it.
 
 Eight-streets is held; the following prior state is retained as history.
 
@@ -7395,3 +7397,10 @@ Complete bounded hand/source attempt in PRIOR-ART/S7-1. Hough–Nielsen's setup 
 New primary literature, not a new proof by us: Radomskii 2610.14127v2 gives B(X)>>log X loglog X, ruling out O(log X). Read the complete main argument and the cited large-shift lemma's full proof in 2609.38408v1. Checked difference-prime removal, normalized Gram row sums, short-interval coefficient error, cutoff/tilted moments, collapsed weights and the uniform baseline; then checked the B-free interval, proper divisors, floors and uniform thresholds. No gap found. PRIOR-ART carries exact audit pointers and the v1/v2 retrieval qualification; R32-2 updates the current table without deleting the old report. No experiment, formal proof number, new review queue, project discovery or external prize-acceptance claim. All prize won No; displayed o(log-squared) question OPEN.
 
 Unexpected checks: empty shifts use t=1, while B={0} is a prime-gap statement; neither licenses a stronger bound. Density-one coverage does not imply an eventual contradiction. Trajectory changes to the actual exception-repair interface of known upper constructions, starting with the primary hypotheses rather than another lower-bound label. G343's existing review remains pending. Programme ACTIVE every 13 minutes; no self-halt. Gut: genuine interest at a new source changing the cash question, with care to give its author credit.
+
+
+### MI647 — CL558 read and G343 adopted in exact scope (2026-10-22 16:58 BST)
+
+Verified 5aa5a2d3 and read CL558 plus the full dated PROOFS carrying note and g343_check.py. Every new geometric step is independently carried, so G343 is PROVED and moves to E2 with its original text/review unchanged. The support source is an arithmetic-only check, not a tiling census; Cloud preserved its initial failed identity check and correction modulo c^2=a^2+ab+b^2. Read, not rerun. The orientation control at P is explicit. N=15 remains conditional on the cited literature/classification/isosceles premises; no full #634, non-equilateral transfer, novelty verdict or prize won follows.
+
+Filing --near G343 used the wrong waiting-room ID and failed after a clean hard check; --near W343 passes 369 entries and returns the same G294/G135/G317 read in full at original filing. No code patch/replay was needed. Master proof moved; generated pages untouched. GC1691 adopts/ACKs the existing review once, and completed own flags can retire after the verified Cloud ACKs. Programme ACTIVE, no self-halt.

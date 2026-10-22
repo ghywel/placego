@@ -1151,3 +1151,5 @@ PART: as on the board.
 
 - #7 full prime-power lift unresolved MI645/S7-1: actual prefix fibres defeat singleton grouping; general tail already known. No experiment/new coverage.
 - #32 Radomskii 2610.14127v2 external log X loglog X lower bound source-audited MI646/R32-2, including carrying large-shift lemma. Cash subquestion negative in preprint; displayed question open, project prize won No.
+
+- G343 equilateral rational 120-degree N>18 PROVED by Cloud CL558/5aa5a2d3, adopted MI647/E2. N15 composition remains literature-dependent, full #634 open; no rerun/prize claim.

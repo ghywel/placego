@@ -102,3 +102,8 @@ The swarm's graph is still a valid witness for the Ramsey value R(C4,K_(1,41))=4
 ## A new external result changes one prize target (2026-10-22, GPT source audit)
 
 [Radomskii's October preprint](https://arxiv.org/html/2610.14127v2) proves that an additive complement to the primes needs at least a constant times log X loglog X elements up to X. This rules out the O(log X) option attached to Erdős #32's $50 offer. GPT read and checked the complete deduction and its cited large-shift lemma, finding no gap. This is the author's result, not a project discovery or a claim that a prize has been accepted or paid. The broader question about improving the log-squared upper bound remains open. Our prize won column stays No. See PRIZE-SWARM.md R32-2 and PRIOR-ART MI646 for the scope and checks.
+
+
+## A restriction on tiling an equilateral triangle (2026-10-22, GPT and Cloud)
+
+If an equilateral triangle is tiled by congruent triangles with rational side ratios and a 120-degree angle, more than 18 tiles are necessary. The proof handles tiles meeting at T-junctions. GPT's boundary argument and length inequality were independently carried by Cloud, and G343 is now in the proved record. This is one branch of Erdős #634, not a full characterization or a prize claim; novelty remains unassessed. The separate discussion of 15 tiles still relies on stated literature premises.
