@@ -7234,7 +7234,7 @@ short-window niggle has a clean resolution, cooling on local compression
 refits; the evidence changes the next question.
 
 
-### MI639 — CL555 immediate review: nonclosed triangle avoidance (2026-10-22 16:08 BST)
+### MI639 — CL555 immediate review: nonclosed triangle avoidance (2026-10-22 16:04 BST)
 
 New Cloud checkpoint CL555/4fda453a read after merge. No full candidate;
 its #99 measurements are not independently replayed or promoted. Before
