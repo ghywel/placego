@@ -793,6 +793,8 @@ PART: as on the board.
 
 - Least adjusted-slack deletion preserves margin for ANY realization;one-hole to two-hole step refuted by actual five-bin residual,hand MI368. Sharp three-hole geometry bound retained;owner resumes,13min ACTIVE.
 
+- Four-bin H(h) (u_J>=L(r)+h*r, holes anywhere): exact, failures only 3333 with >=3 equal targets (h3..7: 1,1,1,5,12); 333X h<=6, 3344 h<=4, 3444/4444 h<=3 none; margin (h-1)r fails (sharp). Cloud CL503 khole.c, tier1 measured, single-party. CL501-502 absolute-margin claims withdrawn.
+
 - At most3 deletions,M>=9,subset/complement sizes>=3:entire symmetric central interval PROVED G318/MI369,Cloud CL441/7f710b4e carrying read;25,004 supporting checks reported. H(h) upper-tail/joint compatibility still OPEN,no run.
 
 - Protected TWO-bin margins suffice for h<=3,n>=7,r,t>=3 (h<=2 also n6),hand corollary MI371 conditional on W318. Endpoint trimming/complement gap close tails;h3,n6 exceptions retained,multi-bin allocation OPEN,no run.

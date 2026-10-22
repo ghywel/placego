@@ -1,4 +1,5 @@
-"""CL501: four bins 3333 on [0, M] minus h interior holes: the least margin of infeasible spectrum-feasible
+"""CL503 NOTE: absolute margins, not the record's per-number H(h); see khole.c PERNUM for P1.
+CL501: four bins 3333 on [0, M] minus h interior holes: the least margin of infeasible spectrum-feasible
 instances, split by whether two equal-size bins have equal targets (equal shares).
 Data so far: h = 1: non-repeat exceptions only at margin 1 (F(s, M)); h = 2 (M = 13): non-repeat to margin 2,
 repeat to margin 4.

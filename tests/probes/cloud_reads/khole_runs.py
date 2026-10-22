@@ -1,4 +1,5 @@
-"""CL501: three holes, M = 14, 3333, split by the longest run of adjacent holes.
+"""CL503 NOTE: absolute margins, not the record's per-number H(h); see khole.c PERNUM for P1.
+CL501: three holes, M = 14, 3333, split by the longest run of adjacent holes.
 OUTCOME (99 s): run 1 (165 pools): non-repeat exceptions to margin 5 (holes 5,7,9, targets 10,11,31,32), repeated to 7;
 run 2 (110 pools): non-repeat to 7, repeated to 7; run 3 (11 pools): non-repeat to 8, repeated to 18.
 """

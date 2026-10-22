@@ -7221,3 +7221,62 @@ Reasoned (measured, exact, M ≤ 19):
 
 **Next rung:** 4444 with three and four holes (C, about 1–6 minutes each). If it stays clean, P1's multi-hole form is
 "bins of size ≥ 4 + spectrum", and size 3 is the special case to carve out.
+
+## CL503 — Cloud, overnight block 10: a correction, then four-bin H(h) holds to h = 7 except the equal-sum core (2026-10-22 01:22 BST)
+
+**Correction first (instinct: unease, acted on).** CL500–CL502 measured an **absolute** least group margin,
+min_J (t_J − pool's min r-sum). The record's family is **per number**: H(h) asks u_J ≥ L(r) + h·r for every proper
+group J, with L(r) = r(r − 1)/2, the cut of the full interval. That is my own CL439 definition (from MI362), and the
+page's section 8 uses it. My CL500 "Record searched" line did not search for H(h).
+
+In absolute units, a group of r numbers needs margin h·r rather than h, so a fixed absolute threshold has to grow with
+the hole count. Therefore:
+- **CL501's** "three holes break scalar margins" and **CL502's** "no fixed scalar margin carries a multi-hole P1" are
+  statements about the wrong statistic. **Withdrawn as claims about P1.** The tables stand as data in absolute units.
+- CL501's two-hole selector result (all 694 misses complete) is unaffected.
+
+**Instrument.** `khole.c` gains `PERNUM=1`. The key is μ = min_J ⌊(u_J − L(r_J)) / r_J⌋, so H(h) admits an instance
+iff μ ≥ h. Spectrum-infeasible vectors are tallied by key, because H(h) carries no spectrum hypothesis. `HOLE0=1`
+allows holes anywhere in [0, M], as the record does. Every failure with μ ≥ h is printed.
+
+Validation:
+- reproduces the record's one four-bin failure at M = 14, h = 3: [0, 14] ∖ {6, 7, 8}, (21, 21, 21, 21);
+- three new failures were re-checked in Python by brute force.
+
+**Prediction** (written in-block, after the correction surfaced): H(h) holds for four bins apart from equal-target
+instances, and the key h − 1 is attained (sharp). Counterfactual: a failure with μ ≥ h and at most two equal targets.
+
+**Result** (exact; every hole set in [0, M], every target vector):
+
+| sizes | h (M) | failures with μ ≥ h | top key otherwise |
+|---|---|---|---|
+| 3333 | 3 (14), 4 (15), 5 (16), 6 (17), 7 (18) | 1, 1, 1, 5, 12 | h − 1 |
+| 333X | 3 (15, 17), 4 (16), 5 (17), 6 (18) | **0** | h − 1 |
+| 3344 | 3 (16), 4 (17) | **0** | h − 1 |
+| 3444, 4444 | 3 (17); 2 (17), 3 (18) | **0** | h − 1 |
+
+- Every failure is 3333 with **at least three equal targets**:
+  - four equal: 21×4 at h = 3; 24×4 on [0, 15] ∖ {0, 7, 8, 9}; 27×4; 30×4; 33×4 and 34×4;
+  - three equal: (21, 35, 35, 35) on [0, 17] ∖ {2, …, 7}; (24, 38, 38, 38); (25, 37, 37, 37).
+- Margin h·r implied spectrum feasibility in every case measured.
+- Key h − 1 is attained at every h, by failures and by spectrum-infeasible vectors: **(h − 1)·r is not enough**.
+
+The 24×4 failure by hand: the pool is {1, …, 6} ∪ {10, …, 15}.
+- A bin needs 1 or 2 large values.
+- The two bins with two large values need disjoint large pairs summing to 21–23. The only such disjoint pairs are
+  {10, 13} and {11, 12}, and both force the small value 1.
+
+It is the page's two-clump pigeonhole (section 9), with four bins.
+
+**Verdicts.** Gut: relief, and real delight; the night's arc closes on a clean statement. Reasoned (tier 1 on the
+listed domains, single-party):
+
+> **H₄(h), measured.** On [0, M] ∖ H with |H| = h, for four bins of sizes ≥ 3 and u_J ≥ L(r) + h·r for every
+> proper group, a partition exists, unless all four sizes are 3 and at least three targets are equal. The margin h·r is
+> sharp.
+
+The exceptional class is the record's equal-sum core (Hoory–Kotlar's minimum-size-3 equal-sum question, PRIOR-ART).
+This sharpens CL443's "equal targets" to "**three** equal targets, all bins of size 3" for four bins.
+
+**Next rung:** the CL439 induction needs "a canonical deletion from H(h) leaves H(h + 1)". With H₄(h) measured to
+h = 7, the five-bin step can now be tested against this exact exception list rather than against "equal targets".

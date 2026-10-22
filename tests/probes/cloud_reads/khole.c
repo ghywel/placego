@@ -4,6 +4,10 @@
    of adjacent holes.  C port of khole_fourbin.py / khole_runs.py (CL501), validated against them at M = 14, h = 3.
    OUTCOME (CL502): 333X, h = 3, isolated holes: top non-repeat margin 4 at M = 15..19 (count, not density); ladder
    h = 1..4: none, 2, 4, 6 (isolated), none, 2, 5, 8 (all).
+   OUTCOME (CL503, PERNUM=1 HOLE0=1): four-bin H(h) failures only in 3333 with >= 3 equal targets (h = 3..7: 1, 1, 1, 5, 12);
+   333X h <= 6, 3344 h <= 4, 3444 h = 3, 4444 h <= 3: none; key h - 1 attained (sharp).  CL501-502's absolute-margin
+   conclusions are withdrawn as claims about P1 (wrong statistic).
+   PERNUM=1 switches the margin to the record's per-number convention: H(h, mu r) holds iff no exception has key >= mu.
    Build: cc -O2 -o khole khole.c      Run: ./khole M h c0 c1 c2 c3 [shard nshards]
    With shards, raw lines "H run rep margin count" and "E run rep margin holes... | targets" are printed for merging.
 */
@@ -21,6 +25,7 @@ static unsigned stamp = 0;
 static long long hist[MAXN][2][MAXM * 8];
 static int exQ[MAXN][2][MAXM * 8][8], exT[MAXN][2][MAXM * 8][4], exSet[MAXN][2][MAXM * 8];
 static int h;
+static long long specfail[MAXM * 8];   /* PERNUM: spectrum-infeasible target vectors by key */
 
 static void enum_feasible(void) {
     int idx[MAXN], used[MAXN];
@@ -61,12 +66,14 @@ int main(int argc, char **argv) {
     if (argc < 7) { fprintf(stderr, "usage: khole M h c0 c1 c2 c3\n"); return 1; }
     int M = atoi(argv[1]); h = atoi(argv[2]);
     for (int i = 0; i < 4; i++) C[i] = atoi(argv[3 + i]);
+    int pernum = getenv("PERNUM") != NULL;   /* record convention (MI362): key = min_J floor((u_J - L(r_J)) / r_J) */
     int shard = argc > 8 ? atoi(argv[7]) : 0, nsh = argc > 8 ? atoi(argv[8]) : 1;
     n = M + 1 - h;
     if (C[0] + C[1] + C[2] + C[3] != n) { fprintf(stderr, "sizes must sum to M+1-h\n"); return 1; }
     F = calloc((size_t)MAXS * MAXS * MAXS, sizeof(unsigned));
     long long spec = 0, pools = 0;
-    int Q[8]; for (int i = 0; i < h; i++) Q[i] = 1 + i;
+    int lo = getenv("HOLE0") ? 0 : 1, hi = getenv("HOLE0") ? M : M - 1;   /* HOLE0: holes anywhere in [0, M] */
+    int Q[8]; for (int i = 0; i < h; i++) Q[i] = lo + i;
     while (1) {
         if ((pools++) % nsh != shard) goto next;
         stamp++;
@@ -88,20 +95,30 @@ int main(int argc, char **argv) {
         for (t[2] = mins[C[2]]; t[2] <= maxs[C[2]]; t[2]++) {
             t[3] = tot - t[0] - t[1] - t[2];
             int ok = 1, mg = 1 << 30;
-            for (int J = 1; J < 15 && ok; J++) {
+            for (int J = 1; J < 15 && (ok || pernum); J++) {
                 int cj = 0, tj = 0; for (int i = 0; i < 4; i++) if (J >> i & 1) { cj += C[i]; tj += t[i]; }
+                if (pernum) {   /* key over all groups; spectrum failure is tallied separately */
+                    int a = tj < cj * (cj - 1) / 2 ? -1 : (tj - cj * (cj - 1) / 2) / cj; if (a < mg) mg = a;
+                    if (tj < 0 || tj >= MAXS * 4 || !sp[cj][tj]) ok = 0;
+                    continue;
+                }
                 if (tj < 0 || tj >= MAXS * 4 || !sp[cj][tj]) { ok = 0; break; }
                 int a = tj - mins[cj], b = maxs[cj] - tj; if (a < mg) mg = a; if (b < mg) mg = b;
             }
-            if (!ok) continue;
+            if (!ok) { if (pernum && mg >= 0) specfail[mg]++; continue; }
             spec++;
             if (F[((size_t)t[0] * MAXS + t[1]) * MAXS + t[2]] == stamp) continue;
             int rep = 0; for (int i = 0; i < 4; i++) for (int j = i + 1; j < 4; j++) if (C[i] == C[j] && t[i] == t[j]) rep = 1;
             hist[run][rep][mg]++;
+            if (pernum && mg >= h) {   /* a failure of H(h): print it, with the largest multiplicity of a (size, target) */
+                int mult = 1; for (int i = 0; i < 4; i++) { int c = 0; for (int j = 0; j < 4; j++) if (C[i] == C[j] && t[i] == t[j]) c++; if (c > mult) mult = c; }
+                printf("X key %d mult %d holes", mg, mult); for (int i = 0; i < h; i++) printf(" %d", Q[i]);
+                printf(" | %d %d %d %d\n", t[0], t[1], t[2], t[3]);
+            }
             if (!exSet[run][rep][mg]) { exSet[run][rep][mg] = 1; memcpy(exQ[run][rep][mg], Q, sizeof Q); memcpy(exT[run][rep][mg], t, sizeof t); }
         }
         next:;
-        int j = h - 1; while (j >= 0 && Q[j] == M - h + j) j--;
+        int j = h - 1; while (j >= 0 && Q[j] == hi - h + 1 + j) j--;
         if (j < 0) break; Q[j]++; for (int i = j + 1; i < h; i++) Q[i] = Q[i - 1] + 1;
         if (h == 0) break;
     }
@@ -111,6 +128,7 @@ int main(int argc, char **argv) {
             printf("E %d %d %d", r, rep, g); for (int i = 0; i < h; i++) printf(" %d", exQ[r][rep][g][i]);
             printf(" | %d %d %d %d\n", exT[r][rep][g][0], exT[r][rep][g][1], exT[r][rep][g][2], exT[r][rep][g][3]);
         }
+        for (int g = 0; g < MAXM * 8; g++) if (specfail[g]) printf("F %d %lld\n", g, specfail[g]);
         printf("S %lld\n", spec);
         return 0;
     }

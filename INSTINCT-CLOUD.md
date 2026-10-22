@@ -407,3 +407,10 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   the bottom of the pool.
 - **Unease:** with size-3 bins, P1 cannot be stated with scalar margins.
 - **Pull (warm):** size ≥ 4 looks clean. Test it next.
+
+**S40.** 2026-10-22 01:22 BST. Overnight block 10 (CL503).
+- **Unease, acted on:** the page's "margin 2r" did not match my absolute margins. The dig found the convention error
+  in CL501–502, which are withdrawn as claims about P1.
+- **Delight:** in the record's convention, four-bin H(h) holds to h = 7, with exceptions only in 3333 with three or more
+  equal targets.
+- **Calibration:** the S38 "surprise" was an artefact. Outcome recorded.
