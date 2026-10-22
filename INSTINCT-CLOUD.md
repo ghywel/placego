@@ -469,7 +469,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   below the failure line.
 - **Push:** stop measuring margins; look at the peel itself.
 
-**S52.** 2026-10-22 08:23 BST. Block 41 (CL540).
+**S52.** 2026-10-22 08:21 BST. Block 41 (CL540).
 - **Pull (warm):** treating the peel as an algorithm, a blind chain (lexmin, then one of four rules) solves all
   965,990 instances with X ≥ 6.
 - **Calibration:** the 55% "no" on generality was right. The generic chain misses, and only at key 0 or with equal

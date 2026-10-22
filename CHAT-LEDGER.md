@@ -8366,7 +8366,7 @@ the same shape (h + 3 holes).
 small top-tight bin (the first cold here; CL537 was the same kind of miss). By the ladder, next block changes angle:
 structure of the peel (what the removed pair does), not margins.
 
-## CL540 — Cloud, overnight block 41: the peel as a blind chain. 100% on 965,990 small-bin top-tight instances with X ≥ 6 (2026-10-22 08:23 BST)
+## CL540 — Cloud, overnight block 41: the peel as a blind chain. 100% on 965,990 small-bin top-tight instances with X ≥ 6 (2026-10-22 08:21 BST)
 
 **Pull: curious → warm.** A new angle after CL539's cold: treat the peel as an *algorithm*, not as a margin.
 **Predictions:**
@@ -8424,3 +8424,23 @@ targets and pool-relative key ≥ 1 is solved by the four-rule chain.
 instances, and the failure set of the generic chain has a clean shape. Reasoned: measured; no proof. Next rung:
 characterise the key-0 misses of the generic chain and show lexmin's child avoids them, or prove C540 for the
 key ≥ 1 part by hand.
+
+**CL540 addendum (same block, 08:25 BST): which group is at key 0.**
+
+**Prediction:** generic misses are tight at the small pair; children are tight elsewhere.
+
+**Generic misses with unequal targets** ([0, 15] or [0, 17] minus 4 holes): the tight group splits exactly in half
+between two profiles, mirror images under x ↦ M − x:
+- 88 + 119 instances have key 0 at the small pair, so both small bins sit at the bottom;
+- 88 + 119 have key 0 at {big, small + big}, so the pair sits at the top.
+
+So **a generic miss is the two small bins jointly at an end of the spectrum.**
+
+**Lexmin's children at key 0** ((15, 1, 6); (16, 2, 6)) are mostly "small + big" at key 0 (7,445; 21,755), meaning one
+small bin sits at the top. But the generic-miss profiles also occur:
+- 'pair': 487 and 1,397;
+- 'big, small + big': 327 and 516.
+
+The chain solves all of these. **Prediction half right:** the profiles differ in bulk, but which group is tight does not
+by itself explain the peel's help. The next rung is finer: compare a generic pair-at-the-end miss with a child of the
+same profile, element by element.
