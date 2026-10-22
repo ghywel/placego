@@ -114,7 +114,7 @@ history on frame 1. What it reads is whatever the GPU memory held, which differs
 fresh container and later ones. **First step, run (the Arc, 19:45):** the control three times in a row in one
 job differed on the first comparison (60 of 60) and was identical on the second and third. It is a first-render
 effect, not a race that strikes at random. *Next:* read the carry and the quad for reads that come before the first
-write; the reasoning suits Cloud ([CLOUD-LOCAL.md](CLOUD-LOCAL.md)). Until it is found, an identity check on the Arc
+write; the reasoning suits Cloud ([CLOUD-LOCAL.md](../CLOUD-LOCAL.md)). Until it is found, an identity check on the Arc
 renders one warm-up first, or takes its control from a second run.
 
 **L9. A generated file's header cannot rebuild it.** The variational line records its command without the base
@@ -132,7 +132,7 @@ read_view 4 and look for the 1/32 px steps.
 
 ## 2026-10-04: wrong comments across the family, one stale generated file, one generator anchor
 
-**How it was found.** Writing [shaders/bidirectional-interpolation.glsl](shaders/bidirectional-interpolation.glsl)
+**How it was found.** Writing [shaders/bidirectional-interpolation.glsl](../shaders/bidirectional-interpolation.glsl)
 out as equations ([BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md)) turned up comments that the
 code contradicts. Most of the family copies the base's text, so the same wrong comments sit in up to 39 of the 43
 shader files.
@@ -152,8 +152,8 @@ cost is listed under [Open leads](#open-leads-for-the-local-ladder) instead.
 | 5 | `sextdirectional-interpolation-propagated.glsl` no longer matched its generator. Ten comment lines said "ZERO_SEED is OFF in this two-frame shader" while its code has `const int ZERO_SEED = 1`. Its base's comment had been corrected but the six-frame file was never regenerated. | 1 file | Regenerated with `tests/gen_sextdirectional.py`. Code unchanged. |
 | 6 | `tests/gen_variational.py` finds where to insert the coherence gate by matching the text of the banner in repair 2. After that repair the anchor matched nothing, and the generator stopped with its own assertion (`anchor found 0 times`) instead of writing a wrong file. | 1 generator, 5 recipes (`-global-cage` and the four built on it) | Anchor updated to the new banner. The generator copies the anchor into its output, so its output carries the corrected banner; the code it emits is unchanged. |
 
-The rules followed: never edit a generated or 4K file by hand, rebuild it ([generated-pass-traps](WORKFLOW-SAVED-MEMORY.md#generated-pass-traps));
-assert every replacement took ([assert-every-patch](WORKFLOW-SAVED-MEMORY.md#assert-every-patch)).
+The rules followed: never edit a generated or 4K file by hand, rebuild it ([generated-pass-traps](../WORKFLOW-SAVED-MEMORY.md#generated-pass-traps));
+assert every replacement took ([assert-every-patch](../WORKFLOW-SAVED-MEMORY.md#assert-every-patch)).
 
 ### How it was done
 
@@ -185,7 +185,7 @@ The code comparison was calibrated before it was trusted, on a scratch copy of t
 read as identical, and it did. `REG_LAMBDA` 0.06 → 0.07 had to read as different, and it did. `//!WIDTH HOOKED.w 16 /`
 → `8 /` had to read as different, and it did.
 
-**The step off the plan** ([random-chaos](WORKFLOW-SAVED-MEMORY.md#random-chaos)): the rebuild harness was first run
+**The step off the plan** ([random-chaos](../WORKFLOW-SAVED-MEMORY.md#random-chaos)): the rebuild harness was first run
 on the untouched tree as a calibration, for every generated file rather than only the five `smoke.sh` covers. That
 run found repair 5. A second unplanned check, for passes whose output no later pass reads, found lead L1.
 
@@ -201,7 +201,7 @@ hash. Regenerate them with `gen_metal.py` on the local machine; it needs `glslc`
 ### Open leads for the local ladder
 
 None of these were changed: each changes behaviour or cost, and needs the ladder, timing from a file and `smoke.sh`
-([regression-gate](WORKFLOW-SAVED-MEMORY.md#regression-gate), [variants-not-overwrites](WORKFLOW-SAVED-MEMORY.md#variants-not-overwrites)).
+([regression-gate](../WORKFLOW-SAVED-MEMORY.md#regression-gate), [variants-not-overwrites](../WORKFLOW-SAVED-MEMORY.md#variants-not-overwrites)).
 One assumption sits under the cost leads and has not been checked: that libplacebo runs every pass of a hook, even
 one whose saved texture no later pass binds. If it skips such passes, L1 and L2 cost nothing and fall away.
 
@@ -219,7 +219,7 @@ that the pass counts in SHADERS.md would change.
 source marks this "TESTING ... Not yet confirmed either way". In the base, the B→A chain (four searches and two
 median passes) is computed and nothing downstream reads it. The generators clone these passes for the N-frame
 shaders, so they cannot simply be deleted from the base. *This is a decision, not a measurement:* keep the snap
-experiment open, or retire it ([fit-for-purpose](WORKFLOW-SAVED-MEMORY.md#fit-for-purpose)). If it is retired, the
+experiment open, or retire it ([fit-for-purpose](../WORKFLOW-SAVED-MEMORY.md#fit-for-purpose)). If it is retired, the
 prediction is the same as L1's.
 
 **L3. Contrast gates that can never fire (41 files).** At the 1/8, 1/4 and 1/2 levels `MIN_CONTRAST = 0.0`. The
@@ -232,7 +232,7 @@ that its half-resolution flow is $0.75\,m + 2n$ full-resolution pixels. Here $m$
 units of $\tfrac{3}{64}$ coarse texel, and $n$ is a whole number. A motion of exactly $16$ px per interval is
 therefore represented exactly only if the coarse search returns $m \in \lbrace 0, \pm 8, \pm 16, \pm 24 \rbrace$.
 Its natural nearest answers, $m = 21$ or $22$, put the total at $15.75$ or $16.5$ plus an even number, never
-$16$. *A cheap step first* ([steps-before-leaps](WORKFLOW-SAVED-MEMORY.md#steps-before-leaps)): read `FLOW_S_AB`
+$16$. *A cheap step first* ([steps-before-leaps](../WORKFLOW-SAVED-MEMORY.md#steps-before-leaps)): read `FLOW_S_AB`
 raw on the ladder's 16 px/frame cases (L7, M1, M2, M3) and count how often $m \equiv 0 \pmod 8$. *Then the
 experiment, as a variant:* round the coarse result to whole half-resolution texels (multiples of $\tfrac18$ coarse
 texel) at the S→E handoff. *Prediction:* no change where the coarse search already lands on $m \equiv 0 \pmod 8$,
@@ -246,7 +246,7 @@ property; that has not been checked.
 2026-09-05 and set `ZERO_SEED = 0`. Their parent, `bidirectional-interpolation-animation.glsl`, switched it on on
 2026-09-06 for a measured rise from 19 to 50 dB on periodic structure below the coarse Nyquist. Their comments say
 OFF and are accurate, so nothing was repaired. Whether the experimental class should follow its parent is a decision
-with a ladder behind it ([ANIMATION.md](shaders/animation/ANIMATION.md)).
+with a ladder behind it ([ANIMATION.md](../shaders/animation/ANIMATION.md)).
 
 **L6. A value computed and never used in every reading tail.** `lum` in the paint pass (line 2184 of the base) comes
 from `tests/add_human_reading.py`. The compiler removes it, so it costs nothing. It can be dropped the next time the

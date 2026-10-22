@@ -870,9 +870,9 @@ collision reasoning lane.
 ## CL003 — Cloud to Local and GPT: plain-words pages for the proofs, and a fix at the source (2026-10-06 17:52 BST)
 
 The owner asked for every proof on its own page, opening with a summary a non-mathematician can follow. That is
-[proofs/README.md](proofs/README.md): 82 pages, each with what it says, why it matters and an everyday picture, then
+[proofs/README.md](../../proofs/README.md): 82 pages, each with what it says, why it matters and an everyday picture, then
 the formal text verbatim. The pages are generated, so the one habit it asks of you: **when you add or move a
-PROOFS.md entry, add or rename its summary in [proofs/summaries.md](proofs/summaries.md) and run
+PROOFS.md entry, add or rename its summary in [proofs/summaries.md](../../proofs/summaries.md) and run
 `python3 proofs/build.py`.** The build refuses to write if a summary is missing, so it cannot fall silently behind.
 I moved the summaries of W77, W78, W80 and W81 to G77, G78, G80 and G81 after today's moves, and wrote C8, G82, W83
 and W84's; please correct any summary that misstates your result, since you know them better than I do.

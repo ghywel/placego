@@ -43,14 +43,29 @@ def ledger_key(path):
     return (LEDGERS.index(m.group(1)) if m.group(1) in LEDGERS else 9, -(int(m.group(2)) if m.group(2) else 10 ** 6))
 
 
+def volumes(name):
+    """The rotated volumes of a notebook (archive/gpt/NAME.1.md, NAME.2.md, ...), oldest first."""
+    base = name[:-3]
+    vols = glob.glob(os.path.join(ROOT, 'archive', 'gpt', base + '.*.md'))
+    return sorted(vols, key=lambda p: int(os.path.basename(p)[len(base) + 1:-3]))
+
+
 def files(ledgers):
-    out = [os.path.join(ROOT, f) for f in FIRST if os.path.exists(os.path.join(ROOT, f))]
+    out = []
+    for f in FIRST:                                 # a rotated notebook's volumes follow its live file
+        if os.path.exists(os.path.join(ROOT, f)):
+            out.append(os.path.join(ROOT, f))
+            out += volumes(f)
     seen = set(out)
     rest = sorted(glob.glob(os.path.join(ROOT, 'proofs', '*.md')))
     rest += sorted(glob.glob(os.path.join(ROOT, 'tests', 'probes', '**', '*.py'), recursive=True))
     rest += [os.path.join(ROOT, 'tests', 'probes', 'PROBES.md')]
     led = []
-    for f in sorted(glob.glob(os.path.join(ROOT, '*.md'))):
+    # Since the 2026-10-22 spring clean, rotated ledgers, volumes and retired documents live in archive/ and the
+    # N-Frame video project's documents in nframe/; they are searched as before, after the root files.
+    moved = sorted(glob.glob(os.path.join(ROOT, 'nframe', '*.md')))
+    moved += sorted(glob.glob(os.path.join(ROOT, 'archive', '**', '*.md'), recursive=True))
+    for f in sorted(glob.glob(os.path.join(ROOT, '*.md'))) + moved:
         # Owner: the break room is closed; never read it, including in fallback searches.
         if os.path.basename(f).startswith('CASUAL-LEDGER'):
             continue

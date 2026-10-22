@@ -38,7 +38,7 @@ def scalar_children(a, b):
 
 def main():
     blocks = []
-    for path in Path('.').glob('CHAT-LEDGER*.md'):
+    for path in [*Path('.').glob('CHAT-LEDGER*.md'), *Path('archive/ledgers').glob('CHAT-LEDGER*.md')]:
         source = '\n' + path.read_text()
         if '\n## L224 ' in source:
             blocks.append(source.split('\n## L224 ', 1)[1].split('\n## ', 1)[0])

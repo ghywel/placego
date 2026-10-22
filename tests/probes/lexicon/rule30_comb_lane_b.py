@@ -169,6 +169,8 @@ def receipt_hashes():
                                                                                       recursive=True)
     files += glob.glob(os.path.join(REPO, 'tests', 'probes', '**', '*.py'), recursive=True)
     files += glob.glob(os.path.join(REPO, '*.md'))
+    files += glob.glob(os.path.join(REPO, 'archive', '**', '*.md'), recursive=True)   # rotated ledgers and volumes
+    files += glob.glob(os.path.join(REPO, 'nframe', '*.md'))                           # (moved 2026-10-22)
     for p in files:
         try:
             if os.path.getsize(p) > 50e6:

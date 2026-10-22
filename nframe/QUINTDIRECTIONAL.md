@@ -8,7 +8,7 @@
 > A7's acceleration field (40% gross against the quad's 34%) and the time limit (+18% against 10%) missed. It is a
 > field instrument; for the picture the quad is the file. The six-frame line that followed is
 > [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md); the estimator background (Savitzky-Golay fits for N > 4) is in
-> [PRIOR-ART.md](PRIOR-ART.md).
+> [PRIOR-ART.md](../PRIOR-ART.md).
 
 *Design and pre-registration, written 2026-09-04 before any code. The
 numbers to beat are stated here so the result cannot be graded after the

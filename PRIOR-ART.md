@@ -5,7 +5,7 @@
 > index below says where each survey led. Five surveys: the four-frame leap and the instrument framing (2026-08-31,
 > the opening sections), the periodic interior (2026-09-27), the energy-transfer investigations (2026-09-30), lead 4,
 > fast motion of a fine periodic print (2026-09-30), and lead 2, the impact mode as a shader (2026-10-01). Two leaps
-> keep their prior art elsewhere: [THREEDIMENSIONAL.md section 3](THREEDIMENSIONAL.md#3-prior-art-stated-narrowly) (motion in depth) and
+> keep their prior art elsewhere: [THREEDIMENSIONAL.md section 3](nframe/THREEDIMENSIONAL.md#3-prior-art-stated-narrowly) (motion in depth) and
 > [shaders/animation/ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md) (the animation shaders). Authors were added
 > to the source lists on 2026-10-01, each checked against the paper, its DOI record, arXiv or the publisher, in one form:
 > "Surname, I." for up to three authors, "Surname et al." beyond three; patents name the inventors as first cited, with
@@ -39,13 +39,13 @@
 
 | Leap (date) | Survey | What was taken | Where it led |
 |---|---|---|---|
-| Four frames, and the field as a calibrated instrument (2026-08-31) | [the first survey](#prior-art-where-this-work-sits-in-the-record) | the equiangular sub-pixel fit (peak locking); the EQVI / All-at-Once fork; the stencil algebra; Savitzky-Golay fits; PIV as the closest discipline | [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) (P1-P4; [the equiangular fit](QUADDIRECTIONAL.md#post-battery-upgrade-the-equiangular-fit-sharpens-both-fields)); [TRIDIRECTIONAL.md, "Field accuracy, current state"](TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit); [NFRAME-LIMITS.md section 1](NFRAME-LIMITS.md#1-the-stopping-point-is-a-signal-to-noise-crossing-not-a-fixed-n) |
-| Motion in depth (2026-09-03) | [THREEDIMENSIONAL.md section 3](THREEDIMENSIONAL.md#3-prior-art-stated-narrowly) | Lee's time to contact; Koenderink and van Doorn's divergence, curl and deformation; four-pulse PIV's material derivative | [THREEDIMENSIONAL.md section 9](THREEDIMENSIONAL.md#9-measurements) |
-| The animation shaders (from 2026-09-05) | [shaders/animation/ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md) | the Anime4K line shaders; SVP and the cadence | NFRAME-LIMITS.md, ["Content drawn on twos"](NFRAME-LIMITS.md#content-drawn-on-twos-the-family-collapses-to-a-hold-and-the-cadence-is-the-prize-2026-09-19) and ["The cadence branch"](NFRAME-LIMITS.md#the-cadence-branch-the-prize-taken-inside-the-window-and-the-two-things-it-cannot-know-2026-09-19-afternoon) |
-| The periodic interior, V3 (2026-09-27) | [this file](#before-the-periodic-interior-leap-v3-in-other-peoples-words-surveyed-2026-09-27-night) | the ambiguity flag; weighting by distinctness; the SGM-form carry; the unwrapping form; gating by ownership; the Imry-Ma warning | NFRAME-LIMITS.md: the flag offline in ["The field on real bodies"](NFRAME-LIMITS.md#the-field-on-real-bodies-two-hours-of-children-scored-against-a-skeleton-it-shares-nothing-with-2026-09-27); `ALIAS_PRIOR` and `ALIAS_CARRY` in ["The half-period alias in the shader"](NFRAME-LIMITS.md#the-half-period-alias-in-the-shader-the-prior-gate-and-the-carry-2026-09-28); the aperture rule in ["The aperture in the carry"](NFRAME-LIMITS.md#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later), in the Cadence player from 1.0.3. The unwrapping form became ENERGY-TRANSFER.md's [STAGE v1](ENERGY-TRANSFER.md#stage-1a-concluded-the-taxonomy-the-refine-and-stage-v1-frozen) and then `OUTLINE_ADOPT` |
-| Energy transfer (2026-09-30) | [this file](#before-the-energy-transfer-investigations-surveyed-2026-09-30) | splitting at an impact; the unit-free two-drop witness; a sphere fit for spin; shared motion for held objects; sub-pixel floors; the codecs' affine motion | ENERGY-TRANSFER.md, ["What the survey changed"](ENERGY-TRANSFER.md#what-the-survey-changed-2026-09-30) and each investigation's results; the rigid-region repair (lead 3) is [parked](ENERGY-TRANSFER.md#results-25e-lead-3s-selection-rule-the-m5-r1-and-r2-missed-the-lead-is-parked-with-its-reason) |
-| Lead 4: fast motion of a fine periodic print (2026-09-30) | [this file](#before-lead-4-fast-motion-of-a-fine-periodic-print-surveyed-2026-09-30-2335-by-a-research-subagent-read-and-checked-before-it-was-filed) | carrying the aliases down and re-scoring them at full resolution (the BBC's menu; Nam et al.; MRMCS); the per-level trust gate (Battiti et al.; Anandan) | NFRAME-LIMITS.md, ["The weave"](NFRAME-LIMITS.md#the-weave-a-two-dimensional-periodic-print-where-the-field-locks-one-period-away-and-the-family-sits-at-the-blend-2026-09-30-late-evening), steps 0 to 1c; ENERGY-TRANSFER.md, lead 4 through [the cost cap](ENERGY-TRANSFER.md#results-b--2000-k2-passed-k3-missed-the-shipped-choice-a-budget-per-size): `PRINT_LATTICE`, the Cadence player's default (High) quality tier. The trust gate is [parked](ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours) |
-| Lead 2: the impact mode as a shader (2026-10-01) | [this file](#before-lead-2-the-impact-mode-as-a-shader-one-source-per-pixel-chosen-by-the-side-of-tau-surveyed-2026-10-01-0405-by-a-research-subagent-read-and-checked-before-it-was-filed) | the four-field pair test (BBC, US 6,005,639); a fifth sample from the carry; WENO and ICI triggers | nothing built: [parked for the player](ENERGY-TRANSFER.md#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs); the offline prototype is ENERGY-TRANSFER.md [3.2](ENERGY-TRANSFER.md#results-32-the-impact-placer-prototype-2026-09-30) |
+| Four frames, and the field as a calibrated instrument (2026-08-31) | [the first survey](#prior-art-where-this-work-sits-in-the-record) | the equiangular sub-pixel fit (peak locking); the EQVI / All-at-Once fork; the stencil algebra; Savitzky-Golay fits; PIV as the closest discipline | [QUADDIRECTIONAL.md](nframe/QUADDIRECTIONAL.md) (P1-P4; [the equiangular fit](nframe/QUADDIRECTIONAL.md#post-battery-upgrade-the-equiangular-fit-sharpens-both-fields)); [TRIDIRECTIONAL.md, "Field accuracy, current state"](nframe/TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit); [NFRAME-LIMITS.md section 1](nframe/NFRAME-LIMITS.md#1-the-stopping-point-is-a-signal-to-noise-crossing-not-a-fixed-n) |
+| Motion in depth (2026-09-03) | [THREEDIMENSIONAL.md section 3](nframe/THREEDIMENSIONAL.md#3-prior-art-stated-narrowly) | Lee's time to contact; Koenderink and van Doorn's divergence, curl and deformation; four-pulse PIV's material derivative | [THREEDIMENSIONAL.md section 9](nframe/THREEDIMENSIONAL.md#9-measurements) |
+| The animation shaders (from 2026-09-05) | [shaders/animation/ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md) | the Anime4K line shaders; SVP and the cadence | NFRAME-LIMITS.md, ["Content drawn on twos"](nframe/NFRAME-LIMITS.md#content-drawn-on-twos-the-family-collapses-to-a-hold-and-the-cadence-is-the-prize-2026-09-19) and ["The cadence branch"](nframe/NFRAME-LIMITS.md#the-cadence-branch-the-prize-taken-inside-the-window-and-the-two-things-it-cannot-know-2026-09-19-afternoon) |
+| The periodic interior, V3 (2026-09-27) | [this file](#before-the-periodic-interior-leap-v3-in-other-peoples-words-surveyed-2026-09-27-night) | the ambiguity flag; weighting by distinctness; the SGM-form carry; the unwrapping form; gating by ownership; the Imry-Ma warning | NFRAME-LIMITS.md: the flag offline in ["The field on real bodies"](nframe/NFRAME-LIMITS.md#the-field-on-real-bodies-two-hours-of-children-scored-against-a-skeleton-it-shares-nothing-with-2026-09-27); `ALIAS_PRIOR` and `ALIAS_CARRY` in ["The half-period alias in the shader"](nframe/NFRAME-LIMITS.md#the-half-period-alias-in-the-shader-the-prior-gate-and-the-carry-2026-09-28); the aperture rule in ["The aperture in the carry"](nframe/NFRAME-LIMITS.md#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later), in the Cadence player from 1.0.3. The unwrapping form became ENERGY-TRANSFER.md's [STAGE v1](nframe/ENERGY-TRANSFER.md#stage-1a-concluded-the-taxonomy-the-refine-and-stage-v1-frozen) and then `OUTLINE_ADOPT` |
+| Energy transfer (2026-09-30) | [this file](#before-the-energy-transfer-investigations-surveyed-2026-09-30) | splitting at an impact; the unit-free two-drop witness; a sphere fit for spin; shared motion for held objects; sub-pixel floors; the codecs' affine motion | ENERGY-TRANSFER.md, ["What the survey changed"](nframe/ENERGY-TRANSFER.md#what-the-survey-changed-2026-09-30) and each investigation's results; the rigid-region repair (lead 3) is [parked](nframe/ENERGY-TRANSFER.md#results-25e-lead-3s-selection-rule-the-m5-r1-and-r2-missed-the-lead-is-parked-with-its-reason) |
+| Lead 4: fast motion of a fine periodic print (2026-09-30) | [this file](#before-lead-4-fast-motion-of-a-fine-periodic-print-surveyed-2026-09-30-2335-by-a-research-subagent-read-and-checked-before-it-was-filed) | carrying the aliases down and re-scoring them at full resolution (the BBC's menu; Nam et al.; MRMCS); the per-level trust gate (Battiti et al.; Anandan) | NFRAME-LIMITS.md, ["The weave"](nframe/NFRAME-LIMITS.md#the-weave-a-two-dimensional-periodic-print-where-the-field-locks-one-period-away-and-the-family-sits-at-the-blend-2026-09-30-late-evening), steps 0 to 1c; ENERGY-TRANSFER.md, lead 4 through [the cost cap](nframe/ENERGY-TRANSFER.md#results-b--2000-k2-passed-k3-missed-the-shipped-choice-a-budget-per-size): `PRINT_LATTICE`, the Cadence player's default (High) quality tier. The trust gate is [parked](nframe/ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours) |
+| Lead 2: the impact mode as a shader (2026-10-01) | [this file](#before-lead-2-the-impact-mode-as-a-shader-one-source-per-pixel-chosen-by-the-side-of-tau-surveyed-2026-10-01-0405-by-a-research-subagent-read-and-checked-before-it-was-filed) | the four-field pair test (BBC, US 6,005,639); a fifth sample from the carry; WENO and ICI triggers | nothing built: [parked for the player](nframe/ENERGY-TRANSFER.md#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs); the offline prototype is ENERGY-TRANSFER.md [3.2](nframe/ENERGY-TRANSFER.md#results-32-the-impact-placer-prototype-2026-09-30) |
 
 ---
 
@@ -111,8 +111,8 @@ estimator designs or error budgets, read PIV literature, not VFI literature.
    residual under-read still visible in `A4`. One-line change, sweepable
    against the same calibration. Cheapest open win we have.
 
-   *2026-10-01: done: the equiangular fit shipped ([QUADDIRECTIONAL.md, "Post-battery upgrade"](QUADDIRECTIONAL.md#post-battery-upgrade-the-equiangular-fit-sharpens-both-fields);
-   [TRIDIRECTIONAL.md, "Field accuracy, current state"](TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit)).*
+   *2026-10-01: done: the equiangular fit shipped ([QUADDIRECTIONAL.md, "Post-battery upgrade"](nframe/QUADDIRECTIONAL.md#post-battery-upgrade-the-equiangular-fit-sharpens-both-fields);
+   [TRIDIRECTIONAL.md, "Field accuracy, current state"](nframe/TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit)).*
 
 2. **The fourth frame is a fork, and both arms are in the record.** EQVI
    (Liu et al., ECCV-W 2020, AIM 2020 winner) fits the *quadratic* by least
@@ -124,7 +124,7 @@ estimator designs or error budgets, read PIV literature, not VFI literature.
    confidence field, which is what our T3.1 wants it for. Pre-register both
    arms and measure.
 
-   *2026-10-01: measured in [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md#p4----the-lsq-residual-partially-confirmed-and-the-fork-is-decided) (P4): the exact cubic, `QUAD_MODE 0`, is the
+   *2026-10-01: measured in [QUADDIRECTIONAL.md](nframe/QUADDIRECTIONAL.md#p4----the-lsq-residual-partially-confirmed-and-the-fork-is-decided) (P4): the exact cubic, `QUAD_MODE 0`, is the
    default, and the least-squares residual serves as a trust gate.*
 
 3. **Stencil algebra sharpens the leap's success criteria** (classical
@@ -147,8 +147,8 @@ estimator designs or error budgets, read PIV literature, not VFI literature.
      |v| from jerk.
 
    *2026-10-01: P1 was confirmed to the digit (QUADDIRECTIONAL.md). The O5 frame-10 figure later fell to 4.9% with
-   the equiangular fit ([TRIDIRECTIONAL.md](TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit)) and to 2.1% against the corrected
-   discrete truth ([QUADDIRECTIONAL.md, "CORRECTION, 2026-09-01"](QUADDIRECTIONAL.md#correction-2026-09-01-the-jerk-truth-model-was-wrong-and-the-field)).*
+   the equiangular fit ([TRIDIRECTIONAL.md](nframe/TRIDIRECTIONAL.md#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit)) and to 2.1% against the corrected
+   discrete truth ([QUADDIRECTIONAL.md, "CORRECTION, 2026-09-01"](nframe/QUADDIRECTIONAL.md#correction-2026-09-01-the-jerk-truth-model-was-wrong-and-the-field)).*
 
 4. **Savitzky-Golay filters are the N-frame endgame.** A degree-d
    least-squares fit over N uniform samples, evaluated at a fixed point, is
@@ -360,10 +360,10 @@ frame. Inside the patch +12 and -12 score alike, and only the patch's ends can s
        value and period;
      - then lift each flagged cell as d = w + P round((r - w) / P).
 
-*2026-10-01: items 1-3 were built: the flag offline in NFRAME-LIMITS.md, ["The field on real bodies"](NFRAME-LIMITS.md#the-field-on-real-bodies-two-hours-of-children-scored-against-a-skeleton-it-shares-nothing-with-2026-09-27);
-`ALIAS_PRIOR` and `ALIAS_CARRY` in ["The half-period alias in the shader"](NFRAME-LIMITS.md#the-half-period-alias-in-the-shader-the-prior-gate-and-the-carry-2026-09-28),
-with the aperture rule in ["The aperture in the carry"](NFRAME-LIMITS.md#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later), in the Cadence player from
-1.0.3. The unwrapping form became ENERGY-TRANSFER.md's [STAGE v1](ENERGY-TRANSFER.md#stage-1a-concluded-the-taxonomy-the-refine-and-stage-v1-frozen) and then
+*2026-10-01: items 1-3 were built: the flag offline in NFRAME-LIMITS.md, ["The field on real bodies"](nframe/NFRAME-LIMITS.md#the-field-on-real-bodies-two-hours-of-children-scored-against-a-skeleton-it-shares-nothing-with-2026-09-27);
+`ALIAS_PRIOR` and `ALIAS_CARRY` in ["The half-period alias in the shader"](nframe/NFRAME-LIMITS.md#the-half-period-alias-in-the-shader-the-prior-gate-and-the-carry-2026-09-28),
+with the aperture rule in ["The aperture in the carry"](nframe/NFRAME-LIMITS.md#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later), in the Cadence player from
+1.0.3. The unwrapping form became ENERGY-TRANSFER.md's [STAGE v1](nframe/ENERGY-TRANSFER.md#stage-1a-concluded-the-taxonomy-the-refine-and-stage-v1-frozen) and then
 `OUTLINE_ADOPT`.*
 
 ### What not to import
@@ -443,7 +443,7 @@ primary sources. The document's own bibliography was checked the same day and is
 below (2025-2026) were found by that search and have not been re-read individually.
 
 *2026-10-01: the investigations have since run as far as they can without a camera; see the status note at the top of
-[ENERGY-TRANSFER.md](ENERGY-TRANSFER.md).*
+[ENERGY-TRANSFER.md](nframe/ENERGY-TRANSFER.md).*
 
 ### What the survey changed, in order of weight
 
@@ -507,7 +507,7 @@ below (2025-2026) were found by that search and have not been re-read individual
   to carry a rigid fit into a per-block shader, and it is cheap to evaluate per pixel.
 
 *2026-10-01: the selection rule was tested in ENERGY-TRANSFER.md 2.5b-2.5e, and lead 3 is parked
-([Results: 2.5e](ENERGY-TRANSFER.md#results-25e-lead-3s-selection-rule-the-m5-r1-and-r2-missed-the-lead-is-parked-with-its-reason)).*
+([Results: 2.5e](nframe/ENERGY-TRANSFER.md#results-25e-lead-3s-selection-rule-the-m5-r1-and-r2-missed-the-lead-is-parked-with-its-reason)).*
 
 ## Before lead 4: fast motion of a fine periodic print (surveyed 2026-09-30, 23:35, by a research subagent; read and checked before it was filed)
 
@@ -532,7 +532,7 @@ search tonight. "(abstract)" means only the abstract or a summary was seen; UNVE
   data alone (estimated margin about 0.02 luma, 5-6/255: not measured). Real cloth is irregular in the same way.
 
   *2026-10-01: measured: +0.0190 luma at full resolution, the truth lowest on every block (NFRAME-LIMITS.md,
-  ["The weave"](NFRAME-LIMITS.md#the-weave-a-two-dimensional-periodic-print-where-the-field-locks-one-period-away-and-the-family-sits-at-the-blend-2026-09-30-late-evening), step 0).*
+  ["The weave"](nframe/NFRAME-LIMITS.md#the-weave-a-two-dimensional-periodic-print-where-the-field-locks-one-period-away-and-the-family-sits-at-the-blend-2026-09-30-late-evening), step 0).*
 - **Temporal priors help only where the print was once read right.** Constant-velocity multi-frame fits cannot break
   a period tie (the CRT, on record).
 
@@ -668,9 +668,9 @@ search tonight. "(abstract)" means only the abstract or a summary was seen; UNVE
 
 *2026-10-01: item 1 was built as `PRINT_LATTICE` (NFRAME-LIMITS.md, "The weave", steps 0 to 1c; ENERGY-TRANSFER.md,
 lead 4 through the cost cap) and is the Cadence player's default (High) quality tier; item 2 is
-[parked](ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours); items 3 and 4 are not recorded as tried.*
+[parked](nframe/ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours); items 3 and 4 are not recorded as tried.*
 
-*2026-10-01, evening: item 2 is built as `TRUST_GATE` ([ENERGY-TRANSFER.md](ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)). Its flag needed BOTH terms: the level's aliasing (the box against the point samples, as here) and the level's ambiguity (the second-minimum margin, Anandan's caveat above). The first honest level offers, and full resolution decides, with item 1's uniqueness test. The survey's risk (the interior ties at 1/4) was met by letting full resolution decide rather than the quarter level.*
+*2026-10-01, evening: item 2 is built as `TRUST_GATE` ([ENERGY-TRANSFER.md](nframe/ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)). Its flag needed BOTH terms: the level's aliasing (the box against the point samples, as here) and the level's ambiguity (the second-minimum margin, Anandan's caveat above). The first honest level offers, and full resolution decides, with item 1's uniqueness test. The survey's risk (the interior ties at 1/4) was met by letting full resolution decide rather than the quarter level.*
 
 ### 4. Not to import
 - **Mean, box or Gaussian pyramids** (any prefilter): refuted on 09-03, 8-20 dB on fine texture.
@@ -927,7 +927,7 @@ at collisions as such.
 5. **Gate the carry at flagged cells** (Black & Anandan). **Cost:** one branch. **Risk:** low.
 
 *2026-10-01: none was built; the impact mode was parked for the player
-([ENERGY-TRANSFER.md, "The owner's two decisions"](ENERGY-TRANSFER.md#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs)).*
+([ENERGY-TRANSFER.md, "The owner's two decisions"](nframe/ENERGY-TRANSFER.md#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs)).*
 
 ### Not to import
 

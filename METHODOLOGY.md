@@ -11,8 +11,8 @@
 How this project was actually built, and how to carry on building it.
 
 The shaders and the patch are documented elsewhere
-([README.md](README.md),
-[SHADERS.md](SHADERS.md),
+([README.md](nframe/README.md),
+[SHADERS.md](nframe/SHADERS.md),
 [tests/TESTING.md](tests/TESTING.md)). This document is about
 the *process*, because the process turned out to be the more transferable
 result. A working motion compensator is one artefact; a loop that can find

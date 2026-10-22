@@ -859,7 +859,7 @@ failure. Give a combined run inputs long enough for every segment.
 **Rule.** Gate a shader on a host that gives the same answer twice.
 
 **Why.** On macOS the same render wandered from run to run, by up to 6 dB on the test ladder, until two MoltenVK
-switches ended it (see [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md)). Until then,
+switches ended it (see [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](nframe/MOLTENVK-NONDETERMINISM-INVESTIGATED.md)). Until then,
 a Linux host was the only one whose single run could be trusted to a hundredth of a dB.
 
 **How to apply.** On macOS, set the two switches (`tests/mvk-env.sh`). Compare a shader against the same host, not
@@ -953,7 +953,7 @@ overwriting the usable ones."
 - Measure render time before proposing to ship.
 - A costly change becomes `<name>-<variant>.glsl`, or a switch in its generator.
 - Only a change that is free and never worse may replace a file in place, and that must be said explicitly.
-- [SHADERS.md](SHADERS.md) says what each variant buys, what it costs and who wants it.
+- [SHADERS.md](nframe/SHADERS.md) says what each variant buys, what it costs and who wants it.
 
 ### regression-gate
 
@@ -1006,7 +1006,7 @@ re-implements a shader by hand. A law found on the port's side goes back into th
 
 **How to apply.** Every translated graph carries the hash of the GLSL it came from. One command checks every place
 the two sides touch: the graphs, the frame window, the painting, the scenes and the constants. It runs after any
-change on either side, and its verdict is written in the port's record ([METALPORT.md](METALPORT.md)).
+change on either side, and its verdict is written in the port's record ([METALPORT.md](nframe/METALPORT.md)).
 
 ### switch-defaults
 
@@ -1186,7 +1186,7 @@ through the `NP_SCRATCH` variable. Write no absolute home paths into anything co
 
 ### plain-language-summary
 
-**Rule.** [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) is the entry point for every reader, from the layman to the scientist.
+**Rule.** [WHAT-WE-BUILT.md](nframe/WHAT-WE-BUILT.md) is the entry point for every reader, from the layman to the scientist.
 It carries the conclusion in plain words and a pointer; the detail goes in the technical records.
 
 **How to apply.** When a finding changes the story, update the technical record in full first. Then add at most a

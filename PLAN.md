@@ -2,9 +2,9 @@
 
 > **History, frozen 2026-09-03.** This was the working plan for the three- and four-frame line from 2026-08-31 to
 > 2026-09-03. Everything it ranks has since been done, closed or overtaken (T3.1, four frames, is
-> [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md)). It is kept unedited because its reversals are part of the record. For
-> what is open now, read the newest dated entries of [NFRAME-LIMITS.md](NFRAME-LIMITS.md) section 9 and
-> [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md); for which shader to use, [SHADERS.md](SHADERS.md); for how the work is
+> [QUADDIRECTIONAL.md](nframe/QUADDIRECTIONAL.md)). It is kept unedited because its reversals are part of the record. For
+> what is open now, read the newest dated entries of [NFRAME-LIMITS.md](nframe/NFRAME-LIMITS.md) section 9 and
+> [ENERGY-TRANSFER.md](nframe/ENERGY-TRANSFER.md); for which shader to use, [SHADERS.md](nframe/SHADERS.md); for how the work is
 > done now, [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md).
 
 A reassessment, because the leads had gone vague rather than dead. Most of
@@ -458,7 +458,7 @@ help either, since the value extrapolated is constant across the fit. **Three
 samples are what it costs to see curvature, and one frame of age is the change
 owed on that.** A genuinely current acceleration requires modelling how
 acceleration is changing, which is a cubic, which is a fourth frame. Full
-argument in [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md).
+argument in [TRIDIRECTIONAL.md](nframe/TRIDIRECTIONAL.md).
 
 ---
 
@@ -509,7 +509,7 @@ tri. Originally promoted by T0.3 and sharpened by the prior-art survey
 
 It was already the *necessary* step for a second, independent reason:
 three frames cannot validate an acceleration estimate (proved in
-[TRIDIRECTIONAL.md](TRIDIRECTIONAL.md)), and four give two independent
+[TRIDIRECTIONAL.md](nframe/TRIDIRECTIONAL.md)), and four give two independent
 estimates that can be checked against each other. That would replace the
 round-trip trust heuristic with a **measured** confidence signal -- the thing
 standing between this field and being a real instrument. The architecture is

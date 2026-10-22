@@ -74,7 +74,7 @@ out, for timing runs). bench.sh and the master tier source it. realbench.sh, vis
 watch.sh, prospect.sh, jitter.sh, tieprobe.sh, smoke.sh's own renders and the older probes do not: run
 `. ./mvk-env.sh` in the shell first. With it a Mac ladder repeats within 0.01 dB, and the best-of-three practice
 in the record below is retired. For bit-exact renders add libplacebo's `dithering=ordered_fixed`
-([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../MOLTENVK-NONDETERMINISM-INVESTIGATED.md)).
+([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../nframe/MOLTENVK-NONDETERMINISM-INVESTIGATED.md)).
 
 **Linux, in a container** (the deterministic host). The image and volume names are arbitrary; `<tree>` is this
 tree's checkout inside the volume:
@@ -1763,7 +1763,7 @@ needs deciding in one place rather than both.
 ## Usage
 
 Requires an `ffmpeg` built against a libplacebo carrying
-`frame-mix-hook.patch` (see [README.md](../README.md)). Software Vulkan
+`frame-mix-hook.patch` (see [README.md](../nframe/README.md)). Software Vulkan
 (Mesa lavapipe) is entirely sufficient -- this measures correctness, not
 speed, and needs no GPU. (2026-10-01: the commands per host -- macOS, the
 Linux container, MSYS2 -- are in [How to run it today](#how-to-run-it-today)
@@ -1832,7 +1832,7 @@ explains too little for the ratio to separate anything -- non-cut pairs sat at
 A pair over 0.125 is still held only if the FINAL flow, not the coarse one, also leaves more than 0.3 of the
 difference unexplained. Measured on 58,080 real pairs: every real cut read 0.37 or more, and every frame-filling print
 pan 0.26 or less. The rejection above used the 1/16 level's flow; the final half-level flow separates the two
-([ENERGY-TRANSFER.md, C2a](../ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)).*
+([ENERGY-TRANSFER.md, C2a](../nframe/ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)).*
 
 **What the numbers mean, and what they do not.** On the bright fast-action
 clip, cuts score *no higher than ordinary motion* (0.118 at cuts against a
@@ -1903,7 +1903,7 @@ exists it is more likely to be architectural -- more pyramid levels, or a
 genuinely different estimator for extreme motion -- than another threshold on
 the signals above. See ROADMAP.md (in the development repository, not in this
 copy). (2026-10-01: the later work on motion beyond the search's reach is in
-[NFRAME-LIMITS.md](../NFRAME-LIMITS.md), section 9: "The fast pan over fine
+[NFRAME-LIMITS.md](../nframe/NFRAME-LIMITS.md), section 9: "The fast pan over fine
 texture" (2026-09-19), "The global-motion seed" (2026-09-20) and "The field on
 real bodies" (2026-09-27).)
 
@@ -2008,7 +2008,7 @@ that source pair is built on it.
 proves nothing** -- both are bit-reproducible, so nothing ever perturbs the
 comparison. macOS exposed it only because its MoltenVK path is not
 reproducible; see the nondeterminism section of
-[BUILDANDUSAGE.md](../BUILDANDUSAGE.md). (2026-09-30: with `mvk-env.sh`'s two
+[BUILDANDUSAGE.md](../nframe/BUILDANDUSAGE.md). (2026-09-30: with `mvk-env.sh`'s two
 switches the macOS path is reproducible too, so `tieprobe.sh` is the way to
 expose this on every platform; see the end of this file.)
 
@@ -2261,7 +2261,7 @@ recommendation, case by case).
 ### The Mac wander solved: two MoltenVK switches (2026-09-30)
 
 The full account, with the bit-level follow-up of 2026-10-01, is
-[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../MOLTENVK-NONDETERMINISM-INVESTIGATED.md); the instruments are
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../nframe/MOLTENVK-NONDETERMINISM-INVESTIGATED.md); the instruments are
 `probes/energy/mvksweep.sh` and `probes/mvk/`.
 
 **Pre-registered, the MoltenVK settings sweep (2026-09-30 evening, before it ran).** The pendulum field read

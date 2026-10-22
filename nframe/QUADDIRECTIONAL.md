@@ -1,6 +1,6 @@
 # Quaddirectional interpolation: the four-frame experiment
 
-> **Status (2026-10-01).** Built after [PRIOR-ART.md](PRIOR-ART.md)'s first survey (2026-08-31). Against its
+> **Status (2026-10-01).** Built after [PRIOR-ART.md](../PRIOR-ART.md)'s first survey (2026-08-31). Against its
 > pre-registration: P1 confirmed to the digit; P2 confirmed (the jerk truth was corrected on 2026-09-01 to the
 > discrete third difference at the window centre, against which the field reads within a few percent of peak); P3
 > confirmed; P4 partly (`QUAD_MODE 0` is the default, and the residual is a trust gate, not an error estimate:

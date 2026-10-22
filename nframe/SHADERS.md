@@ -1,10 +1,10 @@
 # Shaders
 
-Thirty-seven `.hook`-format GLSL shaders in [shaders/](shaders/), built on
-[frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
+Thirty-seven `.hook`-format GLSL shaders in [shaders/](../shaders/), built on
+[frame-mix-hook.patch](../frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
 see [README.md](README.md) for what that patch adds and why -- and six
 experimental shaders for cel animation in
-[shaders/animation/](shaders/animation/).
+[shaders/animation/](../shaders/animation/).
 
 The thirty-seven divide into four groups:
 
@@ -34,9 +34,9 @@ their commands spell out `shaders/`. All of these tools except
 `gen_variational.py` and `flowvis.py` need Python 3.10 or later: they write
 with `Path.write_text(newline=...)`.
 
-For the tools that measure all this, start at [tests/TOOLS.md](tests/TOOLS.md).
-For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
-the measurements behind the claims, [tests/TESTING.md](tests/TESTING.md).
+For the tools that measure all this, start at [tests/TOOLS.md](../tests/TOOLS.md).
+For how any of this was arrived at, see [METHODOLOGY.md](../METHODOLOGY.md); for
+the measurements behind the claims, [tests/TESTING.md](../tests/TESTING.md).
 
 **What the family is FOR, as opposed to which file to use, is
 [WHAT-IT-CAN-MEASURE.md](WHAT-IT-CAN-MEASURE.md): the derivative order each shader can
@@ -73,7 +73,7 @@ any two members of this family and is not a picture difference at all.**
 | `tridirectional-` / `quaddirectional-interpolation-seeded.glsl`, `-animation.glsl`, and the stock `tridirectional-interpolation.glsl` / `quaddirectional-interpolation.glsl` | The same windows on the other bases | Variants; the stock pair is the original experiment | 44 / 62, 52 / 74, 48 / 68 |
 | `quaddirectional-interpolation-propagated-cadence.glsl` | Animation drawn on twos or threes: re-times across held drawings inside the window | Experimental | 74 |
 | **Research, diagnostics, superseded** | | | |
-| `shaders/animation/` (six files; `-lineart.glsl` is the one to carry) | A shader class for cel animation | Experimental; judged not yet viable on real cel footage ([ANIMATION.md](shaders/animation/ANIMATION.md)) | 27-52 |
+| `shaders/animation/` (six files; `-lineart.glsl` is the one to carry) | A shader class for cel animation | Experimental; judged not yet viable on real cel footage ([ANIMATION.md](../shaders/animation/ANIMATION.md)) | 27-52 |
 | `human-reading-quad.glsl` | The four-frame propagated shader with the velocity field painted by default | Demonstration | 74 |
 | `motion-edges-dual.glsl` | A one-pass hook example | Example | 1 |
 | `nframe-smoketest.glsl` | Shows a four-frame window binding | Test | 1 |
@@ -111,7 +111,7 @@ In short:
 - **Not for new work:** the two diffusion forks.
 
 The ladder case names used throughout (L1, V3, A5, B1 and the rest) are the
-synthetic test ladder's: [tests/TESTING.md](tests/TESTING.md), "The
+synthetic test ladder's: [tests/TESTING.md](../tests/TESTING.md), "The
 complexity ladder", describes them, and `tests/scenes.sh` defines every one,
 including the later B, C and K cases.
 
@@ -1032,10 +1032,10 @@ same in both.)
 Fixing this properly is judged to need a different class of shader rather
 than a change to this one -- the project roadmap's "A shader class specific to
 animation" (the roadmap is outside this published folder;
-[ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md), "The idea's origin",
+[ANI-PRIOR-ART.md](../shaders/animation/ANI-PRIOR-ART.md), "The idea's origin",
 gives the idea). **That class now exists**: `shaders/animation/`, built 2026-09-05 on
 other people's published results, with
-[ANIMATION.md](shaders/animation/ANIMATION.md) as its record and
+[ANIMATION.md](../shaders/animation/ANIMATION.md) as its record and
 `-lineart.glsl` as the file to carry. On synthetic cel scenes it gains 1.5 to
 3.3 dB whole-frame over the shipped animation shader and cuts the chamfer
 line distance by 43 to 65 per cent; on real cel footage the owner's eyes judged the
@@ -1050,7 +1050,7 @@ ears, the mouth on its head -- and transform each as one whole object, rather
 than estimating a vector per texel and hoping a feature holds together. That
 speculation, what has already been reached from its direction, and the
 judgement that the rest of it is out of reach for this design, are stated at
-the top of [ANIMATION.md](shaders/animation/ANIMATION.md).
+the top of [ANIMATION.md](../shaders/animation/ANIMATION.md).
 
 ### Known remaining weakness: periodic structure below the coarse level's Nyquist
 
@@ -1595,8 +1595,8 @@ directly to warp a whole character or feature as a template, rather than
 consulting a mostly-static whole-frame flow field, was parked in the project
 roadmap under "A shader class specific to animation" and became the
 animation class in `shaders/animation/` (2026-09-05;
-[ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md), "The idea's origin",
-and [ANIMATION.md](shaders/animation/ANIMATION.md)).
+[ANI-PRIOR-ART.md](../shaders/animation/ANI-PRIOR-ART.md), "The idea's origin",
+and [ANIMATION.md](../shaders/animation/ANIMATION.md)).
 
 ### `nframe-smoketest.glsl` -- 1 pass
 

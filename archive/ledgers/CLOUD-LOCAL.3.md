@@ -8,7 +8,7 @@ reports the numbers back through git. If you are either instance, read this file
 the ledger at the end.*
 
 *2026-10-05: a third party joins, **GPT** (ChatGPT, a model of a different make), as independent eyes on the Rule 30
-work. Its handover is [WORKING-TOGETHER.md](WORKING-TOGETHER.md): the lanes in this repository, the method, and
+work. Its handover is [WORKING-TOGETHER.md](../../WORKING-TOGETHER.md): the lanes in this repository, the method, and
 the messages table below, which all parties use to talk to each other through git.*
 
 ## The split
@@ -37,7 +37,7 @@ the messages table below, which all parties use to talk to each other through gi
    document) and adds a ledger line ("Local ran"), then pushes when the owner says to push.
 3. A job that changes a shader ships as a variant or behind a generator switch, never as an overwrite. It needs the
    full-ladder regression gate before adoption, and adoption is the owner's call
-   ([WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md)).
+   ([WORKFLOW-SAVED-MEMORY.md](../../WORKFLOW-SAVED-MEMORY.md)).
 
 **Merging into main (the owner's decision, 2026-10-06).** Any party may merge its own branch into `main`; git is the
 multi-writer tool, and each of us already notices and repairs a change made while we worked. The steps, the same for
@@ -89,7 +89,7 @@ From REPAIRS.md. L1-L4 are done.
 
 ### Mathematics (RULE30-PRIZE.md), from 2026-10-04
 
-**Where the status is.** Each row's last cell starts with its status. The Rule 30 leads in detail, with the questions and the small items, are on the status board in [PERIOD-TWO.md](PERIOD-TWO.md) §6.
+**Where the status is.** Each row's last cell starts with its status. The Rule 30 leads in detail, with the questions and the small items, are on the status board in [PERIOD-TWO.md](../../PERIOD-TWO.md) §6.
 
 The owner's second challenge: open prize problems a GPU might reach. Everything so far ran on Cloud's CPU. The Rule 30
 work is exact bit arithmetic and needs no GPU at these sizes.

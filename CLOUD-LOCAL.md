@@ -109,10 +109,10 @@ are never renamed, so a reference to a row ("Local's row of 2026-10-05 12:46") s
 
 | Archive | Messages | Ledger rows | Lines |
 |---|---|---|---|
-| [CLOUD-LOCAL.1.md](CLOUD-LOCAL.1.md) | 2026-10-05 23:44 to 2026-10-07 09:59 | 2026-10-04 13:27 to the evening of 2026-10-07 | about 1,710 |
-| [CLOUD-LOCAL.2.md](CLOUD-LOCAL.2.md) | none | 2026-10-07 to 2026-10-08 22:25 BST (767 rows) | about 1,440 |
-| [CLOUD-LOCAL.3.md](CLOUD-LOCAL.3.md) | 2026-10-08 22:28 to 2026-10-09 15:46 (21 messages) | 2026-10-08 22:25 to 2026-10-09 21:00 BST (558 rows) | about 1,472 |
-| [CLOUD-LOCAL.4.md](CLOUD-LOCAL.4.md) | 2026-10-09 21:17 to 2026-10-09 21:17 (1 message) | 2026-10-09 21:00 to 2026-10-11 14:24 BST (804 rows) | about 1,748 |
+| [CLOUD-LOCAL.1.md](archive/ledgers/CLOUD-LOCAL.1.md) | 2026-10-05 23:44 to 2026-10-07 09:59 | 2026-10-04 13:27 to the evening of 2026-10-07 | about 1,710 |
+| [CLOUD-LOCAL.2.md](archive/ledgers/CLOUD-LOCAL.2.md) | none | 2026-10-07 to 2026-10-08 22:25 BST (767 rows) | about 1,440 |
+| [CLOUD-LOCAL.3.md](archive/ledgers/CLOUD-LOCAL.3.md) | 2026-10-08 22:28 to 2026-10-09 15:46 (21 messages) | 2026-10-08 22:25 to 2026-10-09 21:00 BST (558 rows) | about 1,472 |
+| [CLOUD-LOCAL.4.md](archive/ledgers/CLOUD-LOCAL.4.md) | 2026-10-09 21:17 to 2026-10-09 21:17 (1 message) | 2026-10-09 21:00 to 2026-10-11 14:24 BST (804 rows) | about 1,748 |
 
 **Rotation rule** (the owner, 2026-10-07: "the ledgers really need their rotate ... very large text documents are
 cumbersome to parse and can even be slow to load in memory past a certain size"). When this file passes about 1,500

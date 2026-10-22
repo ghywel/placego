@@ -1,6 +1,6 @@
 # bidirectional-interpolation.glsl, written as mathematics
 
-This document restates [shaders/bidirectional-interpolation.glsl](shaders/bidirectional-interpolation.glsl), the
+This document restates [shaders/bidirectional-interpolation.glsl](../shaders/bidirectional-interpolation.glsl), the
 base shader the rest of the family derives from, as equations. It covers all 22 passes, in pass order, and then the
 seven passes of the optional reading view. Each equation cites the source lines it comes from, so it can be checked
 against the code. The constants are the ones the file ships with.
@@ -380,7 +380,7 @@ and scores each by its total Euclidean distance to the other eight:
 
 The incumbent's cost is $10^{30}$, so $\mathbf v_0$ is always accepted first and $\mathbf v_4$ is only a placeholder. The
 result is one of the nine input vectors: the one whose total distance to the others is smallest, within the margin.
-That is the vector median filter (Astola, Haavisto and Neuvo, 1990; [PRIOR-ART.md](PRIOR-ART.md)). It runs twice:
+That is the vector median filter (Astola, Haavisto and Neuvo, 1990; [PRIOR-ART.md](../PRIOR-ART.md)). It runs twice:
 
 ```math
 \bar F^{AB}_H = \mathcal V\big[\, \mathcal V[F^{AB}_H] \,\big], \qquad \bar F^{BA}_H = \mathcal V\big[\, \mathcal V[F^{BA}_H] \,\big].

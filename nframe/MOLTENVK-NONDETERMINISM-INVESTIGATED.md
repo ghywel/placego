@@ -31,7 +31,7 @@ they were found, so that the numbers can be re-earned and the wrong turns are no
 ## 1. The symptom
 
 The project measures interpolation shaders against a ground-truth ladder of synthetic scenes (`tests/bench.sh`,
-[tests/TESTING.md](tests/TESTING.md)). On Linux and Windows a ladder run is exactly reproducible. On macOS it was
+[tests/TESTING.md](../tests/TESTING.md)). On Linux and Windows a ladder run is exactly reproducible. On macOS it was
 not.
 
 **2026-08-30, the Intel MacBook Pro** (macOS 15.7.9, MoltenVK 1.4.2). The same render twice, compared exactly with

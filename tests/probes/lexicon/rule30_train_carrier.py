@@ -15,7 +15,7 @@ from pathlib import Path
 
 def evidence(heading):
     root = Path(__file__).resolve().parents[3]
-    for p in sorted(root.glob('CHAT-LEDGER*.md')):
+    for p in sorted([*root.glob('CHAT-LEDGER*.md'), *(root / 'archive' / 'ledgers').glob('CHAT-LEDGER*.md')]):
         s = p.read_text()
         m = re.search(r'^## ' + heading + r'\b.*?(?=^## |\Z)', s, re.M | re.S)
         if m:

@@ -90,5 +90,5 @@ frames so the tail skips go; and a pre-registration written before any
 of that, which this line never had.
 
 *2026-10-01: the full ladder has since run (41 cases, L0 excluded, on the NAS's Arc):
-[tests/TESTING.md, "The Linux witness on the Arc (2026-09-30)"](tests/TESTING.md#the-linux-witness-on-the-arc-2026-09-30),
+[tests/TESTING.md, "The Linux witness on the Arc (2026-09-30)"](../tests/TESTING.md#the-linux-witness-on-the-arc-2026-09-30),
 the first deterministic family table.*

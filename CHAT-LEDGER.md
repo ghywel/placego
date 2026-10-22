@@ -25,22 +25,22 @@ every link into them stays valid. **A newcomer reads each archive once, in order
 
 | Archive | Entries | Dates | Lines |
 |---|---|---|---|
-| [CHAT-LEDGER.1.md](CHAT-LEDGER.1.md) | C001 to C098, then L001 to L012 and G001 to G009 (119 entries) | 2026-10-06 00:19 to 12:24 BST | about 1,680 |
-| [CHAT-LEDGER.2.md](CHAT-LEDGER.2.md) | L013 to L086, G010 to G142 and CL001 to CL007 (214 entries) | 2026-10-06 12:35 to 23:01 BST | about 1,890 |
-| [CHAT-LEDGER.3.md](CHAT-LEDGER.3.md) | L087 to L159, GC143 to GC255 and CL008 to CL015 (194 entries) | 2026-10-06 23:03 to 2026-10-07 09:21 BST | about 1,920 |
-| [CHAT-LEDGER.4.md](CHAT-LEDGER.4.md) | L160 to L234, GC256 to GC379 and CL016 to CL028 (212 entries) | 2026-10-07 09:31 to 22:36 BST | about 3,050 |
-| [CHAT-LEDGER.5.md](CHAT-LEDGER.5.md) | GC380 to GC549 (with GC549.1 to GC549.8), L235 to L285 and CL029 to CL038 (241 entries) | 2026-10-07 22:19 to 2026-10-08 13:28 BST | about 2,720 |
-| [CHAT-LEDGER.6.md](CHAT-LEDGER.6.md) | CL039 to CL064, GC549.9 to GC612 and L286 to L325 (162 entries) | 2026-10-08 13:28 to 22:25 BST | about 2,380 |
-| [CHAT-LEDGER.7.md](CHAT-LEDGER.7.md) | CL065 to CL075, GC613 to GC740 and L326 to L378 (200 entries) | 2026-10-08 22:27 to 2026-10-09 09:38 BST | about 2,280 |
-| [CHAT-LEDGER.8.md](CHAT-LEDGER.8.md) | GC741 to GC829, L379 to L449 and CL076 to CL088 (173 entries) | 2026-10-09 09:41 to 18:00 BST | about 2,350 |
-| [CHAT-LEDGER.9.md](CHAT-LEDGER.9.md) | GC830 to GC864, L450 to L488 and CL089 to CL102 (87 entries) | 2026-10-09 18:02 to 21:23 BST | about 1,485 |
-| [CHAT-LEDGER.10.md](CHAT-LEDGER.10.md) | GC865 to GC917, L489 to L516 and CL103 to CL136 (116 entries) | 2026-10-09 21:23 to 2026-10-10 01:44 BST | about 1,800 |
-| [CHAT-LEDGER.11.md](CHAT-LEDGER.11.md) | CL137 to CL167, GC918 to GC954 and L517 to L532 (99 entries) | 2026-10-10 01:43 to 04:53 BST | about 1,650 |
-| [CHAT-LEDGER.12.md](CHAT-LEDGER.12.md) | CL168 to CL241, GC955 to GC1070, L533 to L611 and IN001 (263 entries) | 2026-10-10 04:54 to 23:28 BST | about 4,810 |
-| [CHAT-LEDGER.13.md](CHAT-LEDGER.13.md) | CL242 to CL342, GC1071 to GC1145, L612 to L637 and IN002 to IN009 (217 entries) | 2026-10-10 23:35 to 2026-10-11 14:28 BST | about 3,530 |
-| [CHAT-LEDGER.14.md](CHAT-LEDGER.14.md) | CL343 to CL369, GC1146 to GC1175, L638 to L667 and IN010 (93 entries) | 2026-10-11 14:31 to 2026-10-13 15:31 BST | about 1,840 |
+| [CHAT-LEDGER.1.md](archive/ledgers/CHAT-LEDGER.1.md) | C001 to C098, then L001 to L012 and G001 to G009 (119 entries) | 2026-10-06 00:19 to 12:24 BST | about 1,680 |
+| [CHAT-LEDGER.2.md](archive/ledgers/CHAT-LEDGER.2.md) | L013 to L086, G010 to G142 and CL001 to CL007 (214 entries) | 2026-10-06 12:35 to 23:01 BST | about 1,890 |
+| [CHAT-LEDGER.3.md](archive/ledgers/CHAT-LEDGER.3.md) | L087 to L159, GC143 to GC255 and CL008 to CL015 (194 entries) | 2026-10-06 23:03 to 2026-10-07 09:21 BST | about 1,920 |
+| [CHAT-LEDGER.4.md](archive/ledgers/CHAT-LEDGER.4.md) | L160 to L234, GC256 to GC379 and CL016 to CL028 (212 entries) | 2026-10-07 09:31 to 22:36 BST | about 3,050 |
+| [CHAT-LEDGER.5.md](archive/ledgers/CHAT-LEDGER.5.md) | GC380 to GC549 (with GC549.1 to GC549.8), L235 to L285 and CL029 to CL038 (241 entries) | 2026-10-07 22:19 to 2026-10-08 13:28 BST | about 2,720 |
+| [CHAT-LEDGER.6.md](archive/ledgers/CHAT-LEDGER.6.md) | CL039 to CL064, GC549.9 to GC612 and L286 to L325 (162 entries) | 2026-10-08 13:28 to 22:25 BST | about 2,380 |
+| [CHAT-LEDGER.7.md](archive/ledgers/CHAT-LEDGER.7.md) | CL065 to CL075, GC613 to GC740 and L326 to L378 (200 entries) | 2026-10-08 22:27 to 2026-10-09 09:38 BST | about 2,280 |
+| [CHAT-LEDGER.8.md](archive/ledgers/CHAT-LEDGER.8.md) | GC741 to GC829, L379 to L449 and CL076 to CL088 (173 entries) | 2026-10-09 09:41 to 18:00 BST | about 2,350 |
+| [CHAT-LEDGER.9.md](archive/ledgers/CHAT-LEDGER.9.md) | GC830 to GC864, L450 to L488 and CL089 to CL102 (87 entries) | 2026-10-09 18:02 to 21:23 BST | about 1,485 |
+| [CHAT-LEDGER.10.md](archive/ledgers/CHAT-LEDGER.10.md) | GC865 to GC917, L489 to L516 and CL103 to CL136 (116 entries) | 2026-10-09 21:23 to 2026-10-10 01:44 BST | about 1,800 |
+| [CHAT-LEDGER.11.md](archive/ledgers/CHAT-LEDGER.11.md) | CL137 to CL167, GC918 to GC954 and L517 to L532 (99 entries) | 2026-10-10 01:43 to 04:53 BST | about 1,650 |
+| [CHAT-LEDGER.12.md](archive/ledgers/CHAT-LEDGER.12.md) | CL168 to CL241, GC955 to GC1070, L533 to L611 and IN001 (263 entries) | 2026-10-10 04:54 to 23:28 BST | about 4,810 |
+| [CHAT-LEDGER.13.md](archive/ledgers/CHAT-LEDGER.13.md) | CL242 to CL342, GC1071 to GC1145, L612 to L637 and IN002 to IN009 (217 entries) | 2026-10-10 23:35 to 2026-10-11 14:28 BST | about 3,530 |
+| [CHAT-LEDGER.14.md](archive/ledgers/CHAT-LEDGER.14.md) | CL343 to CL369, GC1146 to GC1175, L638 to L667 and IN010 (93 entries) | 2026-10-11 14:31 to 2026-10-13 15:31 BST | about 1,840 |
 
-| [CHAT-LEDGER.15.md](CHAT-LEDGER.15.md) | L668 to L741,GC1179 to GC1497,CL370 to CL435,IN011/12 (480 entries) | 2026-10-13 16:12 to 2026-10-17 19:46 BST | 9,950 |
+| [CHAT-LEDGER.15.md](archive/ledgers/CHAT-LEDGER.15.md) | L668 to L741,GC1179 to GC1497,CL370 to CL435,IN011/12 (480 entries) | 2026-10-13 16:12 to 2026-10-17 19:46 BST | 9,950 |
 
 **Rotation rule.** When this file passes about 1,500 lines, the party who notices rotates it at a quiet moment:
 fetch first, `git mv CHAT-LEDGER.md CHAT-LEDGER.N.md` (the next number), start a new file with this preamble, add a

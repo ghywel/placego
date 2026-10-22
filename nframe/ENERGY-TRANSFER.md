@@ -8,7 +8,7 @@ mean further afield, from astrophysics to quantum mechanics? And how do we detec
 > that day as far as they go without a camera; the results follow each investigation. Still owed: the camera steps
 > (the real throw, pendulum and bounce; a pool table; real collisions; the cradle rig and its sound) and the app-side
 > steps of investigation 4 (4.3-4.5). The prior art is in
-> [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it changed is
+> [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it changed is
 > ["What the survey changed"](#what-the-survey-changed-2026-09-30). From ["The shared stage"](#the-shared-stage-finding-the-region-one-motion-governs-begun-2026-09-30-late-night) on, this document records the
 > interpolation leads the investigations produced, numbered as in ["Suggested order"](#suggested-order-cheapest-and-readiest-first):
 > - lead 1, the slow-print outline prior (`OUTLINE_ADOPT`): in the Cadence player since 2026-10-01;
@@ -171,7 +171,7 @@ guard "a control that must not move", supplied by physics.
 parabolas to thrown balls; the classroom measurement of g from video). Any vision work that calibrates a camera's scale
 or timing from gravity or from projectile motion (to find).
 
-*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
+*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
 changed is ["What the survey changed"](#what-the-survey-changed-2026-09-30).*
 
 **Cost.** One GPU reading pass over short clips; the rest is Python. A phone, a tripod and ten minutes of throwing.
@@ -276,7 +276,7 @@ and the field reports all of it.
 - Pool physics: Alciatore, *The Illustrated Principles of Pool and Billiards*, and his 90 and 30 degree rules.
 - Spin measured from video in sport: baseball spin rate from seams, table tennis from the logo. To survey.
 
-*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
+*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
 changed is ["What the survey changed"](#what-the-survey-changed-2026-09-30).*
 
 **Cost.** Step 1 is minutes of CPU on an existing probe. Steps 2-3 are small renders. Step 4 needs a table.
@@ -1012,7 +1012,7 @@ nothing between". Two uses follow.
 - **Impulse-based rigid-body simulation** (Mirtich's thesis, 1996).
 - **Sub-frame event timing** in high-speed sports video (to find).
 
-*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
+*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
 changed is ["What the survey changed"](#what-the-survey-changed-2026-09-30).*
 
 **Cost.** Step 1 is analysis of renders that exist or are cheap to redo. Steps 2 and 4 are Python. Step 3 is a scene
@@ -1553,7 +1553,7 @@ Wertheimer).
 **Prior art to survey first.** Multi-target data association (JPDA; Bar-Shalom and Fortmann). Hand-object interaction
 tracking in vision. Common fate in perception.
 
-*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
+*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
 changed is ["What the survey changed"](#what-the-survey-changed-2026-09-30).*
 
 **Cost.** CPU on recorded data. No camera is needed for steps 1-3.
@@ -1648,7 +1648,7 @@ phone at 1080p, for well under a millisecond. That gives two separate targets:
   - phase-based motion processing (Wadhwa et al. 2013);
   - the visual microphone (Davis et al. 2014) and visual vibrometry (Davis et al. 2015).
 
-*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
+*2026-10-01: surveyed on 2026-09-30: [PRIOR-ART.md, "Before the energy-transfer investigations"](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30); what it
 changed is ["What the survey changed"](#what-the-survey-changed-2026-09-30).*
 
 **Cost.** Steps 1-2 are a small render plus CPU. Steps 3 and 5 need the phone and a cradle, an afternoon.
@@ -1908,7 +1908,7 @@ masters (`batch1/textured`), then the body-to-body scenes of 3.3, then real foot
 behind a switch, with the full-ladder gate on the Arc, where a single run is exact.
 
 *2026-10-01: parked for the player, nothing built (["The owner's two decisions"](#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs)); its prior art is
-[PRIOR-ART.md, "Before lead 2"](PRIOR-ART.md#before-lead-2-the-impact-mode-as-a-shader-one-source-per-pixel-chosen-by-the-side-of-tau-surveyed-2026-10-01-0405-by-a-research-subagent-read-and-checked-before-it-was-filed).*
+[PRIOR-ART.md, "Before lead 2"](../PRIOR-ART.md#before-lead-2-the-impact-mode-as-a-shader-one-source-per-pixel-chosen-by-the-side-of-tau-surveyed-2026-10-01-0405-by-a-research-subagent-read-and-checked-before-it-was-filed).*
 
 ## Suggested order (cheapest and readiest first)
 
@@ -1927,7 +1927,7 @@ Then, when the camera is free: 1.2-1.4 (the throw, the pendulum), 5.5 (the cradl
 handy). Before designing any of it, survey the prior art named in its section and record it in PRIOR-ART.md.
 
 *2026-10-01: 1.4 and 2.4 have since run in simulation (their results are above); their camera parts remain. The prior
-art was surveyed the same day ([PRIOR-ART.md](PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30)).*
+art was surveyed the same day ([PRIOR-ART.md](../PRIOR-ART.md#before-the-energy-transfer-investigations-surveyed-2026-09-30)).*
 
 **Done since, the evening and night of 2026-09-30 (without the camera, across the three machines):**
 - 1.5 in simulation (the bounce's parabolas; the unit-free witness T^2/h to 0.5 percent; the camera recipe).

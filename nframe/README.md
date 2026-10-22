@@ -2,13 +2,13 @@
 
 ## What this is
 
-[frame-mix-hook.patch](frame-mix-hook.patch) is a small patch to
+[frame-mix-hook.patch](../frame-mix-hook.patch) is a small patch to
 [libplacebo](https://code.videolan.org/videolan/libplacebo), the GPU rendering library that ffmpeg's `libplacebo`
 filter is built on. It adds a custom-shader hook stage, `PL_HOOK_FRAME_MIX`, that hands a user-supplied GLSL shader
 (the `.hook` format that mpv and ffmpeg already load through `custom_shader_path`) a whole *window* of source frames
 at once, from 1 up to 8, with the exact timing between them. Stock libplacebo gives such a shader one
 already-blended frame. A companion patch to ffmpeg's filter,
-[frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch), lets that window fire when the output rate equals the
+[frame-mix-nn-threshold.patch](../frame-mix-nn-threshold.patch), lets that window fire when the output rate equals the
 input rate, and makes room in the frame queue for windows of five frames or more.
 
 Anything that needs to reason across time rather than within one frame then becomes a shader in an ordinary
@@ -48,8 +48,8 @@ commits each host was verified at are in [BUILDANDUSAGE.md](BUILDANDUSAGE.md#sta
 ## Trying it
 
 You need an ffmpeg built against the patched libplacebo. [BUILDANDUSAGE.md](BUILDANDUSAGE.md) covers Linux (by
-hand, or in a container), Windows and macOS, and the scripts beside it ([build-macos.sh](build-macos.sh),
-[build-windows.ps1](build-windows.ps1), [linux/build-linux.sh](linux/build-linux.sh)) do it end to end. Then, with
+hand, or in a container), Windows and macOS, and the scripts beside it ([build-macos.sh](../build-macos.sh),
+[build-windows.ps1](../build-windows.ps1), [linux/build-linux.sh](../linux/build-linux.sh)) do it end to end. Then, with
 software decode:
 
 ```bash
@@ -58,7 +58,7 @@ ffmpeg -init_hw_device vulkan=vk -filter_hw_device vk -i input.mkv \
   -c:v libx264 -crf 18 output.mkv
 ```
 
-Run it from the [shaders/](shaders/) directory, or copy the shader beside your files: a path inside a filter
+Run it from the [shaders/](../shaders/) directory, or copy the shader beside your files: a path inside a filter
 argument should be relative. [SHADERS.md](SHADERS.md), "Which one to use", says which shader fits which job.
 `fps=` can be any rate, including non-integer ratios. Set it equal to the source's rate (with the companion patch)
 and no frames are invented: the shader's diagnostic outputs become the measurement.
@@ -247,9 +247,9 @@ the smoke test remains the quick check that a build is sound.
 
 ### The patches
 
-- [frame-mix-hook.patch](frame-mix-hook.patch): the hook stage above (libplacebo).
-- [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch): its companion in ffmpeg's filter, for N:N and for
+- [frame-mix-hook.patch](../frame-mix-hook.patch): the hook stage above (libplacebo).
+- [frame-mix-nn-threshold.patch](../frame-mix-nn-threshold.patch): its companion in ffmpeg's filter, for N:N and for
   windows of five or more frames.
-- [hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch): an unrelated one-line fix for an
+- [hw-base-encode-eof-nullcheck.patch](../hw-base-encode-eof-nullcheck.patch): an unrelated one-line fix for an
   upstream ffmpeg bug (a NULL pointer dereference in `libavcodec/hw_base_encode.c` on an early EOF flush), found
   while testing this project.

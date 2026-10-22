@@ -12,7 +12,7 @@ from rule30_hw32_literal_audit import bit, reset, scalar_edge
 
 def main():
     blocks = []
-    for path in Path('.').glob('CHAT-LEDGER*.md'):
+    for path in [*Path('.').glob('CHAT-LEDGER*.md'), *Path('archive/ledgers').glob('CHAT-LEDGER*.md')]:
         text = path.read_text()
         if '\n## L224 ' in '\n' + text:
             blocks.append(('\n' + text).split('\n## L224 ', 1)[1]

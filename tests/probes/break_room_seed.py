@@ -99,7 +99,8 @@ def conversation(text, writer):
 
 
 def newest_archive():
-    arch = sorted(ROOT.glob("CASUAL-LEDGER.*.md"), key=lambda q: int(q.name.split(".")[1]))
+    arch = sorted([*ROOT.glob("CASUAL-LEDGER.*.md"), *(ROOT / "archive" / "ledgers").glob("CASUAL-LEDGER.*.md")],
+                  key=lambda q: int(q.name.split(".")[1]))  # archives live in archive/ledgers/ since 2026-10-22
     return arch[-1].read_text() if arch else ""
 
 

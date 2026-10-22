@@ -5,7 +5,8 @@ RUN-ON:     cpu (Python 3, standard library)
 COMMAND:    python3 tests/probes/ledger_check.py [REPO_ROOT]   or   python3 tests/probes/ledger_check.py --branch
 COST:       instant. Run after merging main into a branch, and before pushing.
 
-Why (CHAT-LEDGER.md CL001). The ledgers rotate like a log: `git mv LEDGER.md LEDGER.N.md` and a fresh file. With
+Why (CHAT-LEDGER.md CL001). The ledgers rotate like a log: `git mv LEDGER.md archive/ledgers/LEDGER.N.md` and a fresh
+file (archives sat beside the live file until the 2026-10-22 spring clean moved them to archive/ledgers/). With
 `merge=union` on the live files, a branch begun before a rotation that appended an entry merges without any
 conflict and re-imports the archived text into the live file. This check fails if any entry of a live file also
 appears in one of its archives, or if an entry appears twice in the live chat.
@@ -23,6 +24,7 @@ main's live file instead.
 import pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+ARCHIVE = "archive/ledgers"   # where rotated ledgers live (the root also counts, for branches older than the move)
 
 KINDS = {
     "CHAT-LEDGER": (re.compile(r"^## [A-Z]+\d+(\.\d+)* "), True),  # entry headings (C001, L013, CL001, GC549.3)
@@ -49,8 +51,10 @@ def problems(live, archives, pat=KINDS["CHAT-LEDGER"][0], unique=True):
 
 def archives_in(ref, base):
     import subprocess
-    out = subprocess.run(["git", "ls-tree", "--name-only", ref], cwd=ROOT, capture_output=True, text=True, check=True)
-    return sum(1 for n in out.stdout.split() if re.fullmatch(re.escape(base) + r"\.\d+\.md", n))
+    out = subprocess.run(["git", "ls-tree", "-r", "--name-only", ref], cwd=ROOT, capture_output=True, text=True,
+                         check=True)
+    pat = r"(?:" + re.escape(ARCHIVE) + r"/)?" + re.escape(base) + r"\.\d+\.md"
+    return sum(1 for n in out.stdout.split("\n") if re.fullmatch(pat, n))
 
 
 def branch_mode():
@@ -91,7 +95,10 @@ def main():
         if not live_path.exists():
             continue
         live = live_path.read_text()
-        archives = [p.read_text() for p in sorted(root.glob(f"{base}.*.md"))]
+        loose = sorted(root.glob(f"{base}.*.md"))
+        if loose:
+            print(f"NOTE: {len(loose)} {base} archive(s) at the root; rotated ledgers belong in {ARCHIVE}/")
+        archives = [p.read_text() for p in loose + sorted((root / ARCHIVE).glob(f"{base}.*.md"))]
         f = problems(live, archives, pat, unique)
         found += [f"{base}: {p}" for p in f]
         counts[base] = (len(entries(live, pat)), len(archives))

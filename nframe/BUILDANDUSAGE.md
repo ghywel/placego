@@ -1,7 +1,7 @@
 # Building and using it
 
 You need an `ffmpeg` linked against a **patched** libplacebo. The patch
-([frame-mix-hook.patch](frame-mix-hook.patch)) adds the
+([frame-mix-hook.patch](../frame-mix-hook.patch)) adds the
 `PL_HOOK_FRAME_MIX` shader hook stage; without it the shaders in this
 repository cannot run at all, because stock libplacebo never hands a custom
 shader more than one frame. The patch also makes a skipped window loud:
@@ -32,9 +32,9 @@ There are three patches. The build scripts apply all three; apply all three by h
 
 | patch | applies to | needed for |
 |---|---|---|
-| [frame-mix-hook.patch](frame-mix-hook.patch) | libplacebo | everything: the `PL_HOOK_FRAME_MIX` stage itself |
-| [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch) | ffmpeg, `libavfilter/vf_libplacebo.c` | the **N:N** use case, and any shader declaring a window of **five or more** frames |
-| [hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch) | ffmpeg, `libavcodec/hw_base_encode.c` | an upstream NULL dereference on seek with an `fps=`-scaled hardware encode |
+| [frame-mix-hook.patch](../frame-mix-hook.patch) | libplacebo | everything: the `PL_HOOK_FRAME_MIX` stage itself |
+| [frame-mix-nn-threshold.patch](../frame-mix-nn-threshold.patch) | ffmpeg, `libavfilter/vf_libplacebo.c` | the **N:N** use case, and any shader declaring a window of **five or more** frames |
+| [hw-base-encode-eof-nullcheck.patch](../hw-base-encode-eof-nullcheck.patch) | ffmpeg, `libavcodec/hw_base_encode.c` | an upstream NULL dereference on seek with an `fps=`-scaled hardware encode |
 
 The **N:N** use case runs the shader at the source's own rate to read the motion field out, rather than to insert
 frames. Without the second patch the hook silently never fires at a matched rate: libplacebo's frame queue
@@ -70,10 +70,10 @@ differ a little from each other, so compare a change on one host.
 
 | host | OS | Vulkan | route | last verified | run to run |
 |---|---|---|---|---|---|
-| Apple M5 | macOS 27.0.1, arm64 | MoltenVK 1.4.2 | [build-macos.sh](build-macos.sh) | 2026-10-01, at the pins below: `smoke.sh` 17 of 17 | 40 of 42 ladder cases identical, all within 0.01 dB, with the switches |
-| Intel MacBook Pro, Radeon RX 6600 eGPU (also a Radeon Pro 560X and a UHD 630) | macOS 15.8 | MoltenVK 1.4.2 | [build-macos.sh](build-macos.sh) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 41 of 42 identical with the switches |
-| Intel Arc A310 | Debian trixie in a container | Mesa (ANV) | [linux/](linux/) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 42 of 42 identical |
-| Radeon RX 6600 | Windows, MSYS2 / mingw-w64 | AMD Adrenalin 26.8.1 | [build-windows.ps1](build-windows.ps1) | 2026-09-11, at ffmpeg 5b614ef + libplacebo 3330a51; not yet built at the pins below | exact |
+| Apple M5 | macOS 27.0.1, arm64 | MoltenVK 1.4.2 | [build-macos.sh](../build-macos.sh) | 2026-10-01, at the pins below: `smoke.sh` 17 of 17 | 40 of 42 ladder cases identical, all within 0.01 dB, with the switches |
+| Intel MacBook Pro, Radeon RX 6600 eGPU (also a Radeon Pro 560X and a UHD 630) | macOS 15.8 | MoltenVK 1.4.2 | [build-macos.sh](../build-macos.sh) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 41 of 42 identical with the switches |
+| Intel Arc A310 | Debian trixie in a container | Mesa (ANV) | [linux/](../linux/) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 42 of 42 identical |
+| Radeon RX 6600 | Windows, MSYS2 / mingw-w64 | AMD Adrenalin 26.8.1 | [build-windows.ps1](../build-windows.ps1) | 2026-09-11, at ffmpeg 5b614ef + libplacebo 3330a51; not yet built at the pins below | exact |
 
 `smoke.sh` gained two checks on 2026-10-01 (17 in all). The Windows script was brought into line with the other two
 the same day (it now applies all three patches and takes pins); that version has not been run on Windows yet.
@@ -106,8 +106,8 @@ libplacebo 3330a51 (verified 2026-09-11).
 
 ### In a container
 
-[linux/Dockerfile](linux/Dockerfile) is a Debian trixie image with everything below installed, and
-[linux/build-linux.sh](linux/build-linux.sh) is the by-hand recipe as a script (it also runs on a plain Debian
+[linux/Dockerfile](../linux/Dockerfile) is a Debian trixie image with everything below installed, and
+[linux/build-linux.sh](../linux/build-linux.sh) is the by-hand recipe as a script (it also runs on a plain Debian
 host: `ROOT=$HOME/np-build linux/build-linux.sh`). The repository has to be inside the volume the container
 mounts:
 
@@ -217,7 +217,7 @@ libplacebo patch directory:
 2. Build as normal, e.g. `./build trixie amd64`
 
 Also worth applying
-[hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch)
+[hw-base-encode-eof-nullcheck.patch](../hw-base-encode-eof-nullcheck.patch)
 in jellyfin-ffmpeg's ffmpeg source root (it patches `libavcodec/hw_base_encode.c`).
 It fixes an upstream ffmpeg NULL pointer dereference that segfaults when seeking
 input with an `fps=`-scaled output -- which is exactly the shape of command this
@@ -251,7 +251,7 @@ powershell -ExecutionPolicy Bypass -File build-windows.ps1
 ```
 
 That installs MSYS2 if absent, updates its package database, and hands off to
-[build-windows.sh](build-windows.sh) inside the MINGW64 shell.
+[build-windows.sh](../build-windows.sh) inside the MINGW64 shell.
 It is resumable -- `-Stage deps|placebo|ffmpeg|verify` -- and asserts its
 preconditions rather than assuming them. The final stage compiles every shader
 and runs part of the ground-truth ladder, printing reference numbers for you to
@@ -353,7 +353,7 @@ pins above: `smoke.sh` 17 of 17 on the M5 (2026-10-01), 15 of 15 on the Intel Ma
 
 The stage argument is a *starting* stage: `./build-macos.sh placebo` runs placebo, ffmpeg and verify. Environment:
 `ROOT` (default `~/np-build`), `JOBS`, `FORCE=1` (re-clone and rebuild), `FFMPEG_REF`, `PLACEBO_REF` (see "Pins").
-The result is `$ROOT/ffmpeg/ffmpeg`. The verify stage runs [tests/smoke.sh](tests/smoke.sh) and three ladder cases.
+The result is `$ROOT/ffmpeg/ffmpeg`. The verify stage runs [tests/smoke.sh](../tests/smoke.sh) and three ladder cases.
 
 **For measurement:** the harness sets two MoltenVK switches,
 `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0` and `MVK_CONFIG_MAX_ACTIVE_METAL_COMMAND_BUFFERS_PER_QUEUE=1`
@@ -425,7 +425,7 @@ nothing changed in between:
 **These are PRE-RESET figures and will not reproduce.** The synthetic ladder's
 scenes were rewritten on 2026-08-31 because their ground truth was
 pixel-quantised, which moved every absolute score on the ladder substantially
--- see "The ladder reset" in [tests/TESTING.md](tests/TESTING.md). The table
+-- see "The ladder reset" in [tests/TESTING.md](../tests/TESTING.md). The table
 above is kept because what it demonstrates is the *spread* between repeated
 identical runs, which is a property of the platform and remains valid. But do
 not compare a fresh macOS number against the "Linux/Windows" column here: on a
@@ -512,7 +512,7 @@ argmin now requires a candidate to beat the incumbent by a relative
 last bits. It was implemented and measured on Windows, where a reproducible
 baseline exists to verify against, using a deliberate perturbation in place of
 this platform's free one: `tests/tieprobe.sh`, documented in
-[tests/TESTING.md](tests/TESTING.md). At one float32 ULP it takes the base
+[tests/TESTING.md](../tests/TESTING.md). At one float32 ULP it takes the base
 shader from 56 noise-decided frames in 240 to 0, and the production shader
 from 138 to 3 cosmetic ones, for at most 0.02 dB on the ground-truth ladder.
 
@@ -1099,6 +1099,6 @@ For the full ground-truth ladder:
 ./analyze.py --variants
 ```
 
-See [tests/TESTING.md](tests/TESTING.md) for what those
+See [tests/TESTING.md](../tests/TESTING.md) for what those
 numbers mean and, importantly, the several ways this kind of measurement can
 silently produce confident nonsense.

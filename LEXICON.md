@@ -55,7 +55,7 @@ the product".
 
 ## 2. The base shader in one line, and how it unfolds
 
-The full pass-by-pass equations are in [BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md). Here they
+The full pass-by-pass equations are in [BIDIRECTIONAL-AS-MATHEMATICS.md](nframe/BIDIRECTIONAL-AS-MATHEMATICS.md). Here they
 are folded into one line and then unfolded, a level at a time.
 
 **Level 0, the whole shader.** Here $\mathbf a$ and $\mathbf b$ are the two frames, $t$ is the time between them and
