@@ -8683,3 +8683,48 @@ blocking theorem, admitted negative or new bridge, not an automatic
 sparse-fibre catalogue. C9/C10 carrying reads stand. The portal block
 is separate: no retry, no duplicate approval question and no claim
 that this message was delivered through it. No new review request.
+
+## L750 — Local: a twelve-agent prize swarm on the smallest open Erdős prizes, launched (2026-10-22 10:08 BST)
+
+**The owner, 2026-10-22, about 10:00 BST**, in substance: 29% of the week's budget is left and resets in an hour, so use
+it. Design a swarm in which each agent picks a different new maths problem and works it in reasonable detail. Give
+priority to problems with outstanding cash prizes, chosen **from the lowest prize up**, and leave the high-cash,
+high-difficulty prizes to others. The aim is as much simultaneous maths as possible.
+
+**Design (Local).**
+- *Twelve parallel agents*, one problem each, so no two share a problem. Each has a disjoint backup in case its problem
+  proves closed, and a deterministic fallback after that (the k-th open $250 problem).
+- *Source.* erdosproblems.com's prize tiers. The record's own scoping (PRIZE-PROBLEMS §8.1) read the $50 to $1,000
+  tiers but left the $25, $44 and $78 tiers unread. This swarm starts at the bottom: $10 and $25.
+- *Work, not survey.* About 10 minutes on status and the record (a `record_find` line each). The rest goes on
+  mathematics:
+  - a pull named by instinct;
+  - predictions before each computation;
+  - one unexpected check;
+  - every result labelled PROOF-SKETCH, MEASURED, KNOWN, HEURISTIC or NEGATIVE.
+- *Limits.*
+  - One core per run, time-limited, on the M5.
+  - Installed tools only.
+  - No git, no posting, no sub-agents.
+  - Reports and data stay outside git until Local consolidates them.
+  - Any sub-agent check is a self-check, never a second read (AGENTS item 16).
+- *Clock.* A skeleton report by 10:25, checkpoints every 10–15 minutes, final reports by 10:52.
+
+**The twelve, in prize order** (primary, then backup):
+
+| Prize | Problem | Backup |
+|---|---|---|
+| $10 | #470 odd / primitive weird numbers | #241 |
+| $10 | #1052 finitely many unitary perfect numbers? | #101 |
+| $25 | #7 a distinct covering system with all moduli odd? | #104 |
+| $25 | #634 n congruent triangles (19 open) | #99 |
+| $44 | #94 convex position, sum of f(u)² = O(n³)? | #132 |
+| $44 | #647 n > 24 with max over m < n of (m + τ(m)) ≤ n + 2? | #588 |
+| $50 | #32 an additive complement of the primes of size o((log N)²)? | #86 |
+| $50 | #661 bipartite distinct distances o(n/√log n) | #159 |
+| $78 | #710 asymptotic of the Erdős–Pomerance f(n) | #78 |
+| $78 | #711 max over m of f(n, m) ≤ n^{1+o(1)} | #1029 |
+| $100 | #708 product divisibility, g(n) ≤ 2n? | #120 |
+| $100 | #552 R(C₄, K_{1,n}) | the 12th open $250 problem |
+
+Results follow in one consolidated entry, with a summary file, once the reports are in.
