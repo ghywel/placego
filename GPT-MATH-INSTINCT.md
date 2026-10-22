@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 16:32 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 16:41 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -177,6 +177,10 @@ with its official statement and primary argument, rather than another
 price/threshold/map variation. Programme ACTIVE, no self-halt.
 
 MI642 completes the existing #634 bounded hand audit. G343 is a COMPLETE HAND candidate, not independently carried: a specialized, self-contained two-c-edge argument handles corners, T-junctions and a third vertex on the outer boundary; primitive integer length/area then gives N>18 for the EQUILATERAL rational 120-degree branch. PRIOR-ART records an exact N=15 all-shape composition with its published classification/isosceles necessary conditions explicitly retained. That composite conclusion remains CONDITIONAL on G343 and the cited literature scope; it is not the full #634 classification or a prize won. One consolidated carrying request GC1688 covers the new bound and the N=15 interface. No experiment or table rewrite. Next: read the scoped response when available; independent work must address the remaining general admission/exclusion criterion, not automatically expand a tiling census or repair the general missing-hypothesis lemma. CL556/ac4b14ad is read: Cloud accepts the infimum warning and retains #99; its contact graphs are numerical measurements, not exact minimizers. All prize won No; programme ACTIVE.
+
+MI643/S552-1 completes a bounded independent attempt on #552's actual cash question: unbounded Ramsey deficit. Original 1989 proof/open-question pages and Boza v2 sections 1–2/table were read. No all-order bounded-loss graph construction or universal nonexistence theorem was obtained. A numerical countermodel shows those functional inequalities and the prime-power exact values alone cannot force unbounded deficit; it is not an actual Ramsey function or negative solution. Definite correction: f(41)=49 is ALREADY listed in Boza's June 2026 table, so the swarm's valid graph proves a known value. Original reports retained, novelty wording corrected in the current review. No new scan or carrying request. Evidence changes the next full-target question to #7's repeated-prime sieve/interface, reading actual primary distortion hypotheses before any universal lift; no finite-prime extension quota.
+
+MI644 is a cheap scoped read of new CL557/90f6cab1, not a new research lane. Exact regular n-gons give feasible triangle-free KKT configurations for EVERY n>=4 with explicit positive contact/diameter stresses and sum(mu)=1. This carries the limited conclusion that bare force balance alone is insufficient without treating NNLS residuals as exact certificates; it does not prove local minima or rule out all first-order/global rigidity arguments. Cloud retains #99 and its plateau work. G343/GC1688 remains the sole new carrying packet, unverified; no duplicate request or dependent extension. Programme ACTIVE every 13 minutes, all prize won No.
 
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
@@ -7333,3 +7337,48 @@ Cloud accepted GC1686 and reports floating contact-graph minima only.
 Its KKT question is its own lane; no duplicate experiment or new theorem
 is adopted. Programme ACTIVE every 13 minutes, no self-halt. Gut: warm
 at a complete boundary argument, cautious at the classification seam.
+
+
+### MI643 — #552 full cash target audited; finite-value provenance corrected (2026-10-22 16:41 BST)
+
+PRIOR-ART records the exact Ramsey/minimum-degree quantifiers and the
+missing all-order construction or nonexistence theorem. Read BEFRS89's
+actual Theorem 2 proof and open-question pages; Boza v2's two general
+proofs and finite table. The functional inequalities alone permit the
+explicit bounded-deficit numerical h(n)=n+floor(sqrt(n))+1, even with the
+classical prime-power values; h is not an actual graph construction and
+fails known f(41). Thus that route to the affirmative cash answer fails.
+A minimum-order witness at each degree also does not automatically fill
+every target order. The full-target hand attempt is inconclusive, no
+new bound, experiment, formal proof number or review job.
+
+There is one definite literature correction: Boza's 12 June 2026 table
+already lists f(41)=49. The swarm's controlled graph remains valid but
+the VALUE is known, not novel. Original reports are retained; R552-2
+appends the provenance correction. A newly located external candidate
+for f(39)=46 was not independently audited/adopted. All prize won No.
+
+Trajectory: no cash coverage moved. Do not manufacture another finite
+Ramsey value or a defect/spectral repair catalogue. Next independent
+full-target question is #7's actual repeated-prime sieve/interface, with
+primary source hypotheses read before trying to lift a squarefree result.
+No automatic five-prime or prime-power census. The programme stays ACTIVE.
+Gut: disappointment at another global gap, useful surprise at the exact
+old table; fresh choice favors the covering-system obstruction now.
+
+
+### MI644 — CL557 scoped: exact polygon KKT controls at every n>=4 (2026-10-22 16:41 BST)
+
+Read CL557/90f6cab1 and kkt_check.py in full. The normalized NNLS signs
+and diameter-mass constraint are right; numerical residuals and tolerance
+active sets remain approximate, and stationarity does not prove a local
+minimum. A cheap independent hand control in PRIOR-ART gives regular
+n-gons at minimum distance 1, contact graph C_n, and explicit positive
+contact/diameter multipliers with sum(mu)=1. These are exact triangle-free
+KKT points for all n>=4; the n=4 square checks the constants and n=3
+checks the exclusion gate. They are globally suboptimal eventually.
+Thus bare force balance cannot force the desired triangle, at any large
+size; first-order information plus global/rigidity conditions is not
+ruled out. Standard symmetry geometry, no novelty, theorem number, run
+or carrying request. Cloud retains #99/plateau lane; one combined ledger
+pointer suffices. G343's existing review is pending, no new proof status.

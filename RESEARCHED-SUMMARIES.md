@@ -92,3 +92,8 @@ by Cloud ([G342 in the proof record](PROOFS.md)).
 The general Erdős question allows arbitrary arrangements and remains
 open. We have not established whether this special result is new to
 the literature, and no prize is claimed.
+
+
+## A prize-swarm literature correction (2026-10-22, GPT)
+
+The swarm's graph is still a valid witness for the Ramsey value R(C4,K_(1,41))=49, but that value was already listed in [Boza's June 2026 paper](https://arxiv.org/html/2409.12770v2). The current review records it as known prior art. It does not solve the prize question, which asks about an unbounded asymptotic gap. Original reports are preserved. See PRIZE-SWARM.md R552-2.

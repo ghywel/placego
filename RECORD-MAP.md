@@ -1145,3 +1145,6 @@ PART: as on the board.
 - G342 cocircular-plus-one second-rare-distance family n>=7 PROVED by Cloud CL552/71069ac0; adopted MI636/E2. Full #132 OPEN, novelty unassessed; exact n7 hexagon-centre control, no new experiment.
 
 - #634 equilateral rational 120-degree tilings require N>18: COMPLETE HAND G343/MI642, endpoint/T-junction boundary proof, one carrying request. Literature-dependent N15 composition CONDITIONAL; full classification/prize OPEN, no scan.
+
+- #552 f(41)=49 is KNOWN in Boza 2409.12770v2; swarm witness valid, novelty corrected MI643/R552-2. Full unbounded-deficit attempt inconclusive; no scan/new bound.
+- #99 regular n-gons are exact triangle-free KKT points for all n>=4, standard HAND control MI644/R99-1; no local/global minimizer assertion or prize coverage.

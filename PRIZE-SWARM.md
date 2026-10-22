@@ -54,7 +54,7 @@ separately. Every entry is currently No.
 | #634 | A1 corner argument; congruences; equilateral dependency | COMPLETE: R634 PASS in scope; global dependencies retained |
 | #7 | Kraft slice; sorted powers; all four-prime certificates | COMPLETE: R7 PASS; full problem open |
 | #708 | Hall hosts; valuation assembly; finite threshold 20 | COMPLETE: R708 hand PASS; finite receipt QUALIFIED |
-| #552 | Increment lemma; graph certificate; prize versus finite-value scope | COMPLETE: R552 hand PASS; finite value not prize |
+| #552 | Increment lemma; graph certificate; prize versus finite-value scope | COMPLETE: R552 hand PASS; R552-2 corrects value to known prior art |
 | #470 | Exact criterion; window corollary; confinement | COMPLETE: R470 exact PASS; corollary counterexample and confinement GAP |
 | #647 | Fixed-dimensional sieve bound; models versus theorem | COMPLETE: R647 sparsity PASS; finiteness open |
 | #32 | Uniform HL-AP/Bonferroni; random models | COMPLETE: R32 conditional PASS; growing-model qualification |
@@ -3903,3 +3903,14 @@ The next concrete #634 branch is provisional: for primitive rational 120-degree 
 ### S634-2 — Boundary proof and the fifteen-tile interface (GPT, MI642, 2026-10-22 16:32 BST)
 
 G343 is COMPLETE HAND, awaiting one independent carrying read: equilateral rational 120-degree tilings have N>18. Full boundary proof in PROOFS waiting room, including endpoint, T-junction and third-vertex containment cases; known boundary machinery is credited. PRIOR-ART MI642 records the separate complete N=15 case composition using explicit published classification/commensurability/isosceles necessary conditions and literal arithmetic. This composite is CONDITIONAL on G343 and those stated source premises; no full #634 classification, novelty verdict or prize won. The original numerical map is not promoted or rewritten. One consolidated GC1688 carrying request, no new census, no N14 non-equilateral inference. Earliest unread new step is edge termination/whole-edge filling, followed by the quoted necessary-condition interface. All prize won cells remain No.
+
+
+### R552-2 / S552-1 — Known value, exact cash scope and bounded full-target attempt (GPT, MI643, 2026-10-22 16:41 BST)
+
+**Literature correction:** [Boza 2409.12770v2, section 3 table](https://arxiv.org/html/2409.12770v2), dated 12 June 2026, already lists R(C4,K_(1,41))=49. Local's controlled graph remains valid; the Ramsey value is KNOWN, not a newly established value. Novelty of its specific connection rule is separate and unassessed. The original reports and old wording are preserved as history. The same star-indexed row 41,49 was checked directly in Radziszowski DS1.18 Table IVa, printed page 21. No finite 39-value candidate located elsewhere is independently adopted here.
+
+The cash question is the unbounded-deficit assertion, corroborated in BEFRS89 section 4. PRIOR-ART MI643 audits the actual all-order minimum-degree bridge. Its functional-inequality/countermodel test does not yield a proof, counterexample or new bound; it shows why those numerical conditions alone do not force the affirmative answer. The numerical h is explicitly not an actual Ramsey function. No experiment, new review request or automatic finite range extension. Full prize OPEN; prize won No.
+
+### R99-1 — CL557 stationarity scope, with an exact infinite control (GPT, MI644, 2026-10-22 16:41 BST)
+
+CL557 and kkt_check.py read, not replayed. The normalized NNLS system is correctly formed, but tiny residuals/tolerance active sets are approximate and KKT does not certify local minimality. Regular n-gons scaled to unit adjacent edges supply exact triangle-free KKT configurations for all n>=4; explicit positive multipliers and sum(mu)=1 are in PRIOR-ART MI644. This supports only the conclusion that bare force balance is insufficient; it does not close all first-order arguments combined with global optimality or rigidity. No independent adoption of the measured minima/plateau families. Cloud retains #99; standard hand scope check, no proof number or carrying job.
