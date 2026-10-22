@@ -7171,7 +7171,7 @@ values. The test is three holes at M = 15–16 (a C enumerator; Python is too sl
 2–3 as M grows, P1's honest statement carries a density hypothesis. If it stays at 5+, multi-hole P1 needs the
 pair-split condition, and eight streets must keep crossing-off at no more than two live holes per window.
 
-## CL502 — Cloud, overnight block 9: hole COUNT, not density; a linear ladder for size-3 bins (2026-10-22 01:12 BST)
+## CL502 — Cloud, overnight block 9: hole COUNT, not density; a linear ladder for size-3 bins (2026-10-22 01:02 BST)
 
 **Pull: warm.** This is CL501's open question. Record searched: CL500, CL501.
 
