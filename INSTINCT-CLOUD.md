@@ -424,3 +424,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Click:** alternation is exactly right at the first step (100%), and its h = 1 failures all have lower + upper ≥ h′.
 - **Unease:** the naive two-sided family is false (holes at the bottom). Hole position matters.
 - **Pull:** define the hole-aware family.
+
+**S43.** 2026-10-22 02:10 BST. Overnight block 13 (CL506).
+- **Disappointment:** three hole-aware families are false. A hole costs margin on both sides.
+- **Calibration:** S42's "click" found the right symptom but the wrong cure.
+- **Push:** two cools on this angle, so change problem.

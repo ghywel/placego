@@ -6,6 +6,9 @@
    Generalises khole.c (CL503); validated against it at k = 4.
    OUTCOME (CL504): k = 3 reproduces CL443 T(h) (1, 3, 5 failures at h = 3, 4, 5); k = 4 reproduces khole.c; five bins
    33333 h <= 3, 33334 h <= 2, 33344 h = 1: no failures; key h - 1 attained (sharp).
+   OUTCOME (CL506): hole-aware families are FALSE.  AWARE=1 (lower only): 3,620 non-equal failures at 3333 h = 2 (holes
+   0, 10; targets 10, 11, 25, 35).  AWARE=2 (both sides): 24 at h = 2 (holes 2, 11; targets 6, 15, 24, 33), 4,457 at h = 3.
+   AWARE=1 (with SEARCH): admission u_J >= L(r) + r*max(d_r, 1), d_r = holes below the r-th smallest; key h means admitted.
    SEARCH=1: test only vectors with key >= h - 1, by backtracking (no enumeration); failing keys then start at h - 1.
    Build: cc -O2 -o kholek kholek.c      Run: ./kholek M h c0 .. c(k-1) shard nshards
 */
@@ -21,6 +24,7 @@ static unsigned *F, stamp;
 static long long fails_by_key[64];
 static int T[MAXK], search_mode;
 static long long dump_every;
+static int aware, need_r[64], needu_r[64], top_r[64];   /* AWARE=1: admitted iff u_J >= L(r) + r*max(d_r,1) for every proper J */
 
 /* SEARCH mode: backtracking, bin by bin; pick c values (ascending indices) from avail summing to T[bin] */
 static int place(int bin, unsigned avail);
@@ -68,6 +72,7 @@ int main(int argc, char **argv) {
     int maxc = 0; for (int i = 0; i < k; i++) if (C[i] > maxc) maxc = C[i];
     D = maxc * M + 1;
     size_t FS = 1; for (int i = 0; i < k - 1; i++) FS *= D;
+    aware = getenv("AWARE") ? atoi(getenv("AWARE")) : 0;   /* 2: also upper u_J <= T_r(M) - r*max(e_r,1) */
     dump_every = getenv("DUMPEVERY") ? atoll(getenv("DUMPEVERY")) : 0;
     search_mode = getenv("SEARCH") != NULL;   /* only vectors with key >= h - 1, by backtracking */
     F = search_mode ? NULL : calloc(FS, sizeof(unsigned));
@@ -81,6 +86,11 @@ int main(int argc, char **argv) {
             int hole[64] = {0}, m = 0; for (int i = 0; i < h; i++) hole[Q[i]] = 1;
             for (int x = 0; x <= M; x++) if (!hole[x]) pool[m++] = x;
             int tot = 0; for (int i = 0; i < n; i++) tot += pool[i];
+            if (aware) for (int r = 1; r <= n; r++) {
+                int d = pool[r - 1] - (r - 1); need_r[r] = d > 1 ? d : (h > 0 ? 1 : 0);
+                int e = (M - pool[n - r]) - (r - 1); needu_r[r] = aware == 2 ? (e > 1 ? e : (h > 0 ? 1 : 0)) : -1000000;
+                top_r[r] = 0; for (int j = 0; j < r; j++) top_r[r] += M - j;
+            }
             int sums[MAXK]; if (!search_mode) rec(0, (n == 32 ? ~0u : (1u << n) - 1), sums);
             /* targets: t_i >= L(c_i) (key >= 0 needs u_J >= L(r)); t_i <= maxc*M */
             int t[MAXK], lo[MAXK], hi[MAXK];
@@ -93,7 +103,9 @@ int main(int argc, char **argv) {
                     int mu = 1 << 30;
                     for (int J = 1; J <= ng; J++) {
                         int u = 0; for (int i = 0; i < k; i++) if (J >> i & 1) u += t[i];
-                        int a = u < gl[J] ? -1 : (u - gl[J]) / gc[J]; if (a < mu) mu = a;
+                        int a = u < gl[J] ? -1 : (u - gl[J]) / gc[J];
+                        if (aware) a = (u - gl[J] >= gc[J] * need_r[gc[J]] && top_r[gc[J]] - u >= gc[J] * needu_r[gc[J]]) ? h : (u < gl[J] ? -1 : (h > 0 ? h - 1 : -1));   /* key h iff admitted */
+                        if (a < mu) mu = a;
                         if (mu < 0) break;
                     }
                     if (mu >= (search_mode && h > 0 ? h - 1 : 0)) {

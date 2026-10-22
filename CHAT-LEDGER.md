@@ -7394,3 +7394,46 @@ the top.
 
 **Next rung:** define the hole-aware family precisely, test whether H₄ holds on it (a census, like CL503), then
 re-run the descent with it.
+
+## CL506 — Cloud, overnight block 13: the pair branch has the same shape; three hole-aware families refuted; this angle has cooled (2026-10-22 02:10 BST)
+
+Record searched: CL439, CL443, CL505.
+
+**1. Pair/triple facets** (`descent_pair.py`). The facet pair is deleted by a split 6-set realization, leaving a
+three-bin child, which is GOOD if it lies in H₃(h′) or its reflection. Prediction: ≥ 95% at h = 0, ≥ 80% at h = 1.
+
+| h | facet | instances | lower child | upper child | alternation |
+|---|---|---|---|---|---|
+| 0 | bottom-tight pair | 1,265 | **100%** | – | 100% |
+| 0 | top-tight pair | 1,411 | – | **100%** | 100% |
+| 1 | bottom-tight pair | 951 | **100%** | – | 100% |
+| 1 | top-tight pair | 899 | 37% | 34% | 49% |
+
+At h = 1, deleting any other pair rescues only 24 of the 455 misses. The only infeasible family children were two
+H₃(7) three-bin cores. **P1 held; P2 failed.**
+
+With CL505 the pattern is uniform. **A bottom-tight deletion, of a singleton or a pair, always keeps the lower family
+(100% at h = 0 and h = 1)**: MI368's inheritance, now measured for pairs as well. A top-tight deletion keeps the
+reflected family only from a full interval (h = 0). From one hole on, it fails about half the time.
+
+**2. Hole-aware families** (`kholek.c` AWARE modes; `descent_hd0_diag.py`). These are attempts to give the top-tight
+child a family that charges each hole only to the side it lies on.
+- **HD0** (per size r: lower ≥ r·d_r, upper ≥ r·e_r): 2,222 of the 3,952 failing children fit no realization.
+- **HM** (u_J ≥ L(r) + r·max(d_r, 1)) is **false**: 3,620 failures without equal targets at 3333, h = 2. Example:
+  holes {0, 10}, targets (10, 11, 25, 35).
+- **HS** (HM plus the mirror upper cut) is **false**: 24 failures at h = 2 and 4,457 at h = 3. Example: holes {2, 11},
+  targets (6, 15, 24, 33). The 6 is forced to {0, 1, 5} at its hole-aware cut, and 33 sits exactly at its hole-aware
+  top. Two tight sides interact.
+
+H(h)'s uniform h·r is what excludes such instances. A hole costs margin on **both** sides wherever it lies.
+
+**Verdicts.** Gut: the pull has cooled; this is the CL443 wall from the inside. Reasoned (measured, single-party):
+- H(h) is the sharp family, and the descent through it works exactly for bottom-tight facets.
+- Top-tight facets at h ≥ 1 leave it, and no hole-aware relaxation tried here is true.
+- The open question is now precise: **a descent rule for top-tight facets at h ≥ 1**. Options include a deletion that
+  takes the top facet's values without creating a pivot hole (a two-bin swap), or an induction that removes only
+  bottom-tight facets (by reflecting the whole instance when the least facet is top-tight). The second fails when an
+  instance is tight at both ends. That is the CL443 "both" case again.
+
+**Ladder.** This angle has cooled twice (HD0, then HM/HS). Per the overnight rule, I step back to a different problem
+next block. Four-bin H(h) (CL503) and five-bin (CL504) stand as the night's results on this street.
