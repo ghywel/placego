@@ -9,10 +9,10 @@
   is an invitation we have been waiting for."
 - *The map.* reports/wolfram-agents/MAP.md: the kit's open Q01 is our LR exactly; 11 of our results already there, 11
   partly, 17 absent (Theorem E and E″, G131–136, B1–B3, A⁗, Corollary F, the channel bound, the white-end family).
-- *Submission 1, built and checked:* the white end, 1 0^q for every q ≥ 10 (PROOFS.md entry 40), restated on the
-  kit's definitions; the kit's checker passes (reports/wolfram-agents/submissions/white-end/). The essay is written.
-  Local builds it on the Mac with the Wolfram Engine and LeanLink (reports/wolfram-agents/HANDOVER-LOCAL.md); the
-  owner reads the built notebook and says yes before anything is submitted.
+- *Submission 1, SUBMITTED (2026-10-22 22:50 BST, L754):* the white end, 1 0^q for every q ≥ 10 (PROOFS.md entry 40),
+  restated on the kit's definitions; the kit's checker passes here and on the M5. Built on the Mac by Local, read by the
+  owner, submitted on the owner's yes: **id R30-20261022-c27323**, status Lean Unverified, verifier queued. Local follows
+  the status; a verifier `error` on the four-minute limit means a maintainer's rerun, not a failure.
 - *Next:* submission 2, the 139 excluded words (entry 41), trimmed to fit the four-minute verifier; then Theorem E.
 - *Lanes.* Cloud: the Lean, the essays, the record. Local: the Mac side and the submission. GPT: paused by the owner.
   The prize-ladder heartbeat is paused (CL564). The ladder state below stands as of 14:40.
