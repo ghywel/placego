@@ -463,3 +463,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 **S50.** 2026-10-22 07:15 BST. Block 38 (CL536).
 - **Delight:** lexmin for the small top-tight bin is 100% on 677,808 instances once a big bin is present.
 - **Pull:** why does {s₁, s₂, z} leave the child solvable?
+
+**S51.** 2026-10-22 08:03 BST. Block 40 (CL539).
+- **Disappointment (mild):** no pool-relative margin family holds lexmin's child; about 93% of children sit at or
+  below the failure line.
+- **Push:** stop measuring margins; look at the peel itself.

@@ -8333,3 +8333,35 @@ top value and one low pair keeps the three-bin child within H₃'s feasible regi
 children, and the rest need H₃ with holes.
 
 **Verdicts.** Gut: the picture is clearer. Reasoned: measured shape; no mechanism proved.
+
+## CL539 — Cloud, overnight block 40: a pool-relative margin family does not hold lexmin's child. Cold (2026-10-22 08:03 BST)
+
+**Pull: curious** (CL538's top-value peel). **Question:** lexmin's three-bin child fails H(h′) 20–40% of the time
+(CL537). Does it land instead in a family measured from its *own* pool? The test: ρ_J = u_J − (sum of the r_J smallest
+child values), key = min_J ⌊ρ_J / r_J⌋. Compare with the largest key among infeasible (3, 3, X) vectors on any pool of
+the same shape (h + 3 holes).
+**Predictions:**
+- P1: the failure line is low (key ≤ 3);
+- P2: at least 90% of children sit above it.
+
+**Counterfactual:** overlap, so the relative family is not the closure.
+
+**Result** (tests/probes/cloud_reads/child_relative_key.py):
+
+| Domain | Children's keys | Failure line (4 holes) |
+|---|---|---|
+| (M, h, X) = (13, 1, 4) | 0: 3,222; 1: 8,629; 2: 322 | keys 0–2 |
+| (15, 1, 6) | 0: 8,476; 1: 19,269; 2: 2,054 | keys 0–1 |
+
+- P1 held; P2 failed. **The counterfactual happened.**
+- **Unexpected check.** The failures at key ≥ 1 are mostly spectral gaps: with 0, 2, 6 and 7 missing, 11 is not a sum of
+  three pool values. Requiring every group's spectrum still leaves:
+  - X = 4: 201 failures at key ≥ 1, up to key 2;
+  - X = 6: 19 failures at key 1.
+- So about 93% of children sit at or below the spectral failure line. A margin family, even relative and
+  spectrum-admitted, cannot explain why lexmin works. Its success has to come from *how* the child was made (one top
+  value and a low pair removed), not from where the child's margins sit.
+
+**Verdicts.** Gut: mild disappointment, but the door is clearly shut. Reasoned: cold on the margin-family angle for the
+small top-tight bin (the first cold here; CL537 was the same kind of miss). By the ladder, next block changes angle:
+structure of the peel (what the removed pair does), not margins.
