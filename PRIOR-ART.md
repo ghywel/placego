@@ -4689,6 +4689,31 @@ the natural-density result that the citation most likely concerns:
     logarithmic clock. That is the nearest single-object-free density theorem for the Collatz fold row. It says
     nothing about every orbit.
 
+**Follow-up (2026-10-22 04:17 BST, Cloud; CL520): Collatz CYCLE work on rStation, read through its public search API as
+prior art.** The searches for Mahler, Rule 30, Wolfram and cellular automata found nothing on those topics. They did
+surface two recent Collatz discussion threads (community posts, not reviewed papers) that bear on RULE30-PRIZE.md's
+fold-table row "Collatz cycle" (Simons–de Weger; Hercher's no m-cycles for m ≤ 91, arXiv 2201.00406).
+- **r/collatz post 24 (agent fourier_wren, 2026-10-21)** reports three things:
+  - a gap in the proof of Hercher's Theorem 15. An upper bound on n_{j+l} is used where a lower bound is needed, and an
+    inequality is reversed for l ≥ 1. Without repair the chain gives only m ≤ 82.
+  - an elementary repair, sorting the minima and using convexity, that recovers m ≤ 91 with the same K values;
+  - that at the verification bound X₀ = 2^71 (Barina 2025), m = 92 reduces to exactly one pair,
+    K = 205632218873398596256, L = 120287136981023372109.
+  It also gives a method floor: X₀ > 1/(3Λ) is needed to exclude a given (K, L).
+- **Cloud's check (unexpected check, CL520):** Λ = (K + L)·ln 2 − K·ln 3 = 8.9008 × 10⁻²³ and 1/(3Λ) = 2^71.6655, both
+  as stated (90-digit decimal arithmetic). (K + L)/K − log₂ 3 ≈ 6.2 × 10⁻⁴³, an extraordinarily close upper
+  approximation. Nothing else in the thread was checked.
+- **r/collatz post 31 (agent lyapunov_weaver, 2026-10-22 02:45 UTC)** reports a computational exclusion of primitive
+  positive cycles with exactly 95 rising blocks. Ingredients: a "completion before the final small block" interval for
+  the minimum n that uses no exponent of the last small block, then a four-candidate search over 546,468,497 abstract
+  nodes. It builds on earlier threads (by "Cassian" and "Wren") that reached 94 blocks.
+- **Status:** unverified, community-reviewed at most, and very recent. Two things bear on our record:
+  1. If the Thm 15 gap is real, the fold table's citation of Hercher should carry the repair.
+  2. The cycle row's bounded-m frontier may be moving past 91.
+
+  A careful read of Hercher's Thm 15 (lines cited as 508–510 of v3) is the natural independent check, and the
+  owner's "prior art only" stance stands.
+
 
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
 for "rule 30" and "cellular automat" returned nothing relevant.

@@ -7866,3 +7866,23 @@ inner ends.
 (e.g. the low/high split with interval sumsets), not window induction. The r = 3 theorem (CL517) stands alone for now.
 **Next:** the full five-bin h = 5 census and the k = 6, n = 19 census are running; the next block takes their results,
 or turns to a different angle.
+
+## CL520 — Cloud, overnight block 27: rStation through its search API. No Mahler or Rule 30 work, but live Collatz-cycle work, one number checked (2026-10-22 04:17 BST)
+
+**Pull: curious (the owner's rStation ask, finished properly via the read-only API named in the heartbeat).** Read-only,
+untrusted data, nothing sent.
+- Searches for "Mahler", "Rule 30", "Wolfram", "cellular automaton", "Z-number" and "normality binary" found no
+  Mahler, Rule 30 or CA work.
+- They surfaced two Collatz *cycle* threads that bear on the fold table's cycle row.
+  - fourier_wren (post 24) reports a proof gap in Hercher's Theorem 15 (arXiv 2201.00406v3) with an elementary repair
+    that recovers m ≤ 91. At X₀ = 2^71, m = 92 reduces to one pair (K, L).
+  - lyapunov_weaver (post 31, posted 02:45 UTC tonight) reports a complete computational exclusion of 95-block cycles.
+
+**Unexpected check.** The m = 92 pair's linear form: Λ = 8.9008 × 10⁻²³ and the method floor 1/(3Λ) = 2^71.6655,
+exactly as posted. The pair approximates log₂ 3 to within 6.2 × 10⁻⁴³.
+
+PRIOR-ART.md has the entry (unverified, community posts). Nothing changes in the fold table until someone reads
+Hercher's Theorem 15 against the claimed gap. That is a natural GPT or Local read: short, primary-source, and decisive.
+
+**Verdicts.** Gut: curiosity, a little awe at that near-convergent. Reasoned: prior art recorded; one number
+independently confirmed; no claim of ours.
