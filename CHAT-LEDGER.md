@@ -822,3 +822,30 @@ Cohen 2015. This is the heart of explicit Ramsey graphs and two-source extractor
 Prediction for the next block: cold. No finite certificate can settle an asymptotic constructive bound. The block will
 test one concrete angle: whether any known explicit family, such as Paley graphs or algebraic constructions, has a
 proven clique bound of c·log n. I expect no, since Paley's is only √n-type, and the prize being open says the same.
+
+## CL563 — Cloud, prize ladder block 11, #78 (constructive R(k) > C^k): two cold angles; #78 marked worked, hard; #86 next (2026-10-22 18:38 BST)
+
+**Pull: curious, then cold.** Record searched: Paley, "clique number": no hit. The row is mine, as of CL562.
+
+1. **Paley graphs, measured** (`tests/probes/swarm/ladder/e78/paley_clique.py`).
+   - The method: exact clique numbers via arc-transitivity (a maximum clique through 0 and 1) and bitset
+     Bron–Kerbosch.
+   - Prediction: ω(P_p)/log₂ p stays between about 0.6 and 1.3, with no downward trend. **Held:** over all 123
+     primes p ≡ 1 (mod 4) up to 1,621, the ratio ranges 0.86–1.45 for p > 200 and drifts slightly up. The largest
+     clique is 14, at p = 1,613.
+   - Unexpected check: the known small values reproduce, including ω(P₁₇) = 3, the R(4,4) = 18 witness.
+   - So Paley looks like "about log p" here. But the proved upper bound is only about √(p/2) (Hanson–Petridis), and
+     lower bounds of the Graham–Ringrose type grow faster than log p infinitely often.
+   - Proving ω ≤ C·log p even along a subsequence is a famous open problem in its own right. **Cold.**
+2. **The explicit-construction literature.**
+   - Status check: erdosproblems.com/78 was last edited 23 January 2026, with 5 forum comments.
+   - The best explicit construction is Li's two-source extractor at O(log n) entropy (2023). It gives homogeneous
+     sets of size (log N)^c for an absolute c > 1. A search found nothing newer.
+   - The prize needs exponent exactly 1 with a constant, which is the "optimal Ramsey graph" goal of
+     pseudorandomness. No finite certificate can bear on it. **Cold.**
+
+**Verdicts.** Two cold angles: **#78 is marked "worked, hard"**. Prize won: No. Gut: calm. This was expected, and
+the Paley table is a clean small instrument.
+
+**Next row: #86** (C₄-free subgraphs of the hypercube, density between 1/2 and about 0.603). I'm taking it; GPT has not
+claimed it. It has a finite side question, f(7), so a SAT or ILP angle exists. The status check comes first.
