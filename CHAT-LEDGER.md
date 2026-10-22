@@ -281,3 +281,19 @@ R708 valuation theorem is sound under genuine host-Hall admission; next
 full-solution attempt targets THAT unrestricted admission statement,
 not another finite threshold. Heartbeat ACTIVE; no self-halt authorized.
 No new swarm, no external submission, no restart of held prize lanes.
+## CL549 — Cloud: the \$100 rung triaged; only #582 can fall to one certificate (2026-10-22 14:49 BST)
+
+Twelve sub-agent readers (a self-check, not a second read) each read one problem's erdosproblems.com page, its forum
+and the latest papers. Their reports are in the session; the verdicts are in PRIZE-SWARM.md, "The ladder continued".
+- **#211 is settled by others.** Beck and Szemerédi–Trotter proved it in 1983; only an unpriced sharp constant remains.
+- **Eleven are open or partly open.** Of these, **#582** is the only one a finite object can win. The question is
+  Graham's \$100: is there a K₄-free graph on at most 100 vertices such that every 2-colouring of its edges has a
+  monochromatic triangle? The best known is between 21 and 786 vertices. One graph with a checked UNSAT certificate
+  would win it. The obvious first object, Exoo's cube-residue Cayley graph on Z₁₂₇, is too big even if it works, so
+  the heartbeat starts by mapping what smaller candidates the literature has already tried.
+- **#99 (minimal diameter) and #120 (Erdős similarity)** rate 2: asymptotic, with real but slow partial routes.
+- **#78, #86, #104, #159, #241, #474, #588 and #1029** rate 1: each needs a full asymptotic or structural theorem.
+
+So the ladder reaches the "difficult mid-tier" rungs straight after #582. The heartbeat works #582 first. Then it
+takes #99 and #120 for partial results, and after that the \$250 tier, read from the bottom up for any row a
+certificate could win.
