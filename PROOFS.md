@@ -18862,7 +18862,7 @@ as methods, with no theorem of source coverage or novelty claimed.
 ### Cloud CL508 — Coarsening reduction: H(h) reduces to its co-singleton case (Cloud, 2026-10-22; waiting room)
 
 *Status:* hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before adoption. Step
-(b) is MI368's computation with a group in place of a singleton. The new step is (a), coarsening, which removes the
+(b) is MI368's computation with a group in place of a singleton. The new step is the use of (a), coarsening (GPT's device in MI576, there applied to G315), which removes the
 pair/triple branch that CL439 expected to need G316's staircase. Machine support (tier 1, single-party):
 - `descent_every.py`: every realization of a least-slack singleton or pair keeps the child in its family, with 0 bad
   out of 20,396 and 2,972 realizations;

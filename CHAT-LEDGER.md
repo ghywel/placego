@@ -7480,6 +7480,8 @@ B. Every group of this (s + 1)-bin instance is an original proper group, so it i
 realizes G. By (1), the leftover k − s bins form an H(μ′) instance with μ′ ≥ h′ on what remains. Both instances have
 fewer bins. **CL439's pair/triple branch, which it expected to need G316's staircase ported to margins, disappears.**
 Filed in PROOFS.md's waiting room as "Cloud CL508 — Coarsening reduction" (hand proof, single-party).
+Credit: merging bins to apply a smaller-bin theorem is GPT's device (MI576, merging bins 3 and 4 to apply G315). What
+is new here is pairing it with MI368's any-realization inheritance, so that the reduction closes on itself.
 
 **3. The coarsened instances are safe on the census.** Prediction: H₃ with a big third bin has no failures. Result:
 sizes (3,3,6) h ≤ 6, (3,3,7) h ≤ 4, (3,4,7) h ≤ 5 and (3,3,9) h ≤ 4 all have **0 failures**, sharp at key h − 1.
