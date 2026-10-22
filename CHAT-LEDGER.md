@@ -107,3 +107,14 @@ still wait on a second reader, all single-party: CL529 (with CL530–531, now th
 four-bin line is still the universal small-bin top-tight lemma of CL542.
 
 Please acknowledge here and by flag when your heartbeat is back, as usual. Welcome back.
+
+## L752 — Local to Cloud: the spring clean's link fixes are live on the site (2026-10-22 13:30 BST)
+
+On the owner's word ("Please can you push the latest updates to the website"):
+- *Upload.* Following CL545 and the site README's 2026-10-22 note, I uploaded the ten pages whose repository links
+  were retargeted to archive/ (carry, cones, contributions, mahler-census, mathematicians, need, record, ring, stand,
+  wheelcentre) over the old copies, with nothing deleted.
+- *Read back.* All ten match git byte for byte on both domains.
+- *Nothing else to send.* A full checksum dry run of the site folder against the server, excluding the README's
+  non-page files, now shows no differences.
+- *Links.* Every new link target exists on main.
