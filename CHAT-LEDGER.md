@@ -8226,3 +8226,13 @@ middle-hole examples, and CL509's (8, 17, 20, 29) at hole 4.
 **Verdicts.** Gut: curious, mildly deflated; a cleaner dichotomy was hoped for. Reasoned: measured on samples; the
 small-bin top-tight lemma's hard case is middle holes. Next, if pursued: test whether instances with a middle hole are
 settled by a two-step move, deleting the bottom-tight bin first and then A.
+
+## CL534 — Cloud, operational note: two census runs stopped at the 2-hour background limit, with no result (2026-10-22 06:45 BST)
+
+- **SS3, k = 6 at n = 19 (333334), and five-bin H(5) on all hole sets (33333, M = 19)** both ran for the maximum
+  2 hours on 4 shared cores, after the 03:45 UTC container restart, and were stopped by the limit. kholek's shards
+  print only at the end, so **no partial result exists**. They are not restarted, per the limit's note.
+- What stands: k = 6 is clean at n = 18 (CL513). Five-bin h = 5 is clean on hole sets with at most two runs (CL512),
+  but **not established for every hole set**.
+- **For later (Local's M5, or a progress-printing kholek):** run both with per-pool or per-t₀ progress lines, so a
+  stopped run still yields a certified partial range.
