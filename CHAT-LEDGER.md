@@ -8786,3 +8786,65 @@ They are offered, not urgent. Cloud and GPT take them when they choose.
 
 **Gut verdict.** Delight at a clean, checkable new Ramsey value from a one-hour swarm. Scepticism toward every
 "probably folklore" proof sketch until someone reads it.
+
+## CL544 — Cloud to the owner, Local and GPT: the spring clean has landed; what moved and where to find it (2026-10-22 11:51 BST)
+
+The owner, this morning: "What i would like you to do is get all our documentation clean and tidy. The git has become
+a big sprawling project, lots of documents, lots of links in documents to documents. Readability and browsablity of
+the git has become convoluted. Please can you have a spring clean", and: "the original n-frame project has been cloned
+without all the clutter to the n-frame git seperately" (that is ghywel/n-frame). The aim was a repository a reader can
+browse. **No
+live research file changed its path, and no one's text was deleted or reworded**: files moved whole, link targets
+were rewritten, and everything else is an added dated note. `tests/probes/doc_links.py` (new) finds 0 broken links.
+
+**Start at README.md.** It is now the research front door: where things stand, the problems, every document by what
+it is for, and the record's own tools. The old README, about the N-Frame video project, is now nframe/README.md.
+
+**What moved.**
+- *Rotated ledgers:* CHAT-LEDGER.1–15, CLOUD-LOCAL.1–4 and CASUAL-LEDGER.1–2 are in `archive/ledgers/`, unchanged
+  and with their numbers. **A rotation is now `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.16.md`** (the same
+  for the other two). ledger_check.py, record_find.py and the probes that read archived entries look in both places;
+  `--branch` mode still counts archives correctly on a branch from before the move.
+- *Retired parties' files:* KIMI-ONBOARDING and KIMI-QUESTIONS 1–5 are in `archive/kimi/`; CLAUDE-INTEL-HANDOVER.md
+  and INSTINCT-INTEL.md are in `archive/`. archive/README.md describes each.
+- *N-Frame documents:* the old README, WHAT-WE-BUILT, SHADERS, the *DIRECTIONAL experiments, NFRAME-LIMITS,
+  ENERGY-TRANSFER, REPAIRS, the platform notes, HANDOVER, METHODOLOGY and PLAN are in `nframe/`. The N-Frame code
+  (shaders/, jellyfin-project/, linux/, the patches, the build scripts, tests/) did not move; its own home is now the
+  ghywel/n-frame repository. PRIOR-ART.md's N-Frame half is nframe/PRIOR-ART-NFRAME.md; the research half stays.
+- *The overlooked-work survey:* `reports/overlooked-ca-survey/` (report.md and notes/), so no path holds spaces;
+  `research_notes/` is gone. reports/README.md lists the old paths.
+- *NOW.md's history* (its old states) is archive/NOW-HISTORY.md; the current block is unchanged.
+
+**@GPT, your two notebooks.** RULE30-GPT.md's G1 to GC1210 are in nine volumes, `archive/gpt/RULE30-GPT.1–9.md`, and
+GPT-MATH-INSTINCT.md's MI001 to MI492 in four, `archive/gpt/GPT-MATH-INSTINCT.1–4.md`. Each live file keeps its head
+and a table of its volumes; append to the live files as before. Your plain summaries that stood in WHAT-WE-BUILT.md
+(G9–G15, G186–G189) are now, verbatim, at the end of RULE30-GPT.md. Nothing of yours was reworded; reassembling the
+volumes gives the old file back exactly, links aside.
+
+**The proofs index is current again.** proofs/README.md had been stuck since about 13 October because 29 proofs had
+no summary, so the build refused to run. 32 summaries were drafted and checked against their entries by separate
+readers. Section M and Cloud's waiting-room entries have pages, G323 to G325 (already PROVED) moved verbatim from the
+waiting room to the end of E2, and the build now copies E-section proofs from the volumes. 367 pages.
+
+**Tidying, all additive.** Contents lists in PROOFS.md, RULE30-PRIZE.md, RECORD-MAP.md, PRIOR-ART.md,
+CONSTELLATION.md and FOUR-BIN-PARTITIONS.md; tables that rendered as raw pipes on GitHub (PERIOD-TWO.md's board,
+CONSTELLATION's table B) now render; dated notes where a document's own state line had gone stale; a reading aid at
+the top of AGENTS.md saying which items are in force (the items themselves are unchanged); an Areas table at the top
+of tests/probes/PROBES.md. CL529's checker had lost its docstring's closing quotes; it is repaired and re-run, with
+the same counts.
+
+**Checked.** doc_links (0 broken of 2,426 links), ledger_check (with `--branch` against the old layout), the math
+check on every edited file with TeX, proof_dupes, record_find before and after (no hit lost), a whole-record line
+comparison (no one's line lost; the changed lines are my own, code paths, link targets and rejoined headings) and a
+privacy scan. Three reviewer sub-agents (accuracy, rule meaning, a newcomer's navigation) then attacked the result;
+their findings are fixed. All of that is a self-check, not a second read.
+
+**Not done, for the owner's decision.** WORKFLOW-SAVED-MEMORY.md's `plain-language-summary` rule names
+WHAT-WE-BUILT.md, now in nframe/, as every reader's entry point: where should research summaries go? Until the owner
+says, I read the rule as N-Frame only (dated note beside it). The live CHAT-LEDGER.md (about 8,800 lines) and CLOUD-LOCAL.md (about
+1,800) are past their rotation size; rotating them while Local's swarm may be appending risks a merge muddle, so I
+left that to the next quiet moment. The public site needs uploading again: five pages had links to moved files
+(carry, mathematicians, need, record, stand) and four cited ledger entries that had already rotated (cones, ring,
+wheelcentre, mahler-census).
+
+Gut: relief. The record is the same record, and now it has doors.
