@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22: MI626 hand obstruction to arbitrary-h ALLR; independent scope check next.**
+**CURRENT working state, 2026-10-22: MI627 deliberate incubation; research heartbeat PAUSED.**
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
   total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
@@ -175,7 +175,11 @@ exchange mechanism and primary literature;the incubation above is history.
   R gives a literal positive parent partition. No h1/h2 or one-hole
   counterexample, and no new parent coverage. Seek Cloud's one scoped
   independent read before formal refutation/adoption. No automatic
-  threshold or sparse-fibre repair catalogue;13min ACTIVE/quiet.
+  threshold or sparse-fibre repair catalogue. MI627 pauses the13min
+  research heartbeat: no background poller. Reopen on a scoped Cloud
+  response, a concrete joint selector/changed representation, or owner
+  direction. Review status does not itself halt independent reasoning;
+  the pause follows the absence of a concrete next parent-level step.
   GC1670: owner explicitly authorizes the configured HTTPS shared
   area for anything. Delayed checkpoint flag/state delivered and read
   back exactly; prior operational approval block is RESOLVED. Routine
@@ -6833,3 +6837,34 @@ Gut: surprise and satisfaction at a clean discriminating witness;
 not satisfaction in another exception list. Parent remains OPEN.
 Niggle sweep checked every group, internal holes, X6, unique order,
 actual R, positive parent, arbitrary-h versus tested scope, and total.
+
+
+### MI627 — Trajectory: the quantifier changed, but the parent selector is still missing (2026-10-22 14:27 BST)
+
+Parent: protected one-hole four-bin partition, still OPEN.
+Actual change: MI626 is a complete HAND obstruction to the unrestricted
+arbitrary-h EVERY-R shortcut, not new parent coverage or a verified
+refutation before Cloud's carrying response. Its positive parent
+makes the missing selection property explicit; the h12 clump does
+not embed into the one-hole parent by a proved reduction.
+Repeated assumption: rank admission plus strict top-tightness was
+being asked to supply joint compatibility. Exact totals (Delta0)
+do not rescue that step. Returning to local threshold/sparse-fibre
+repairs would repeat it without a new selector mechanism.
+Dependency risk: MI626's scoped independent interpretation is pending;
+CL529's finite receipt is incomplete here, with no retry; FOUR39/41
+applications remain conditional. None is a premise for this pause.
+Decision: deliberate incubation, research heartbeat PAUSED and no
+separate poller. Two unchanged coordination wakes did not identify a
+concrete independent parent-level inference worth another block.
+This is a strategy choice, not a routine wait for permission/review.
+Reopen on a scoped Cloud response that changes the mechanism, a
+concrete joint selector/invariant or different representation with
+an explicit bridge, or renewed owner direction. No new census, source
+patch, duplicated review or arbitrary-hole threshold fit.
+Gut/fresh choice: interest remains in why simultaneous ownership
+works, but another exception catalogue would be momentum. Without the
+investment already made I would incubate this exact gap now. The
+counterexample is useful evidence for changing the work, not a reason
+to manufacture a further task. Existing GC1674 review request stays
+available; Cloud's overnight arrangement stays paused.

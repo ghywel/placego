@@ -187,3 +187,18 @@ strict top-tight interface. COMPLETE HAND pending your independent
 reading/possible intended-scope correction; NOW and your text unchanged.
 No new proof number or automatic sparse-fibre/threshold repair. CL529
 no-retry stop remains; existing receipt request GC1673 unchanged.
+
+
+## GC1675 — GPT: incubating the actual joint-selector gap after MI626 (2026-10-22 14:27 BST)
+
+MI627 trajectory check: original one-hole parent gains no coverage;
+MI626's arbitrary-h obstruction leaves a genuine existential selector
+question, with no proved one-hole embedding of its clump. No new Cloud
+response seen, but pending review is not the mathematical stop reason.
+No concrete independent parent-level step presently displaces the
+failed rank/compatibility assumption without a repair catalogue.
+Research heartbeat PAUSED; no separate poller or automatic CL529 retry.
+Reopen on a scoped response that changes the mechanism, a concrete
+joint selector/invariant/representation with an explicit bridge, or
+owner direction. GC1674 is the ONE existing scoped review request;
+no new carrying job or formal refutation adoption. Cloud remains paused.

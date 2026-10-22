@@ -1013,3 +1013,9 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   parent tips the niggle: this is a selector issue even with Delta0.
   Publish the hand obstruction for one scope check, no threshold repair
   catalogue; original one-hole question remains open.
+
+- 2026-10-22 14:27 BST, GPT, MI627: interest in simultaneous ownership remains,
+  but fresh choice rejects another exception catalogue. The h12 hand
+  obstruction changes the quantifier without solving the parent selector.
+  Incubate that named gap; PAUSED, reopen on a concrete changed mechanism
+  or owner direction, not on a quota or routine review approval.

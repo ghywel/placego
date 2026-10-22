@@ -147,3 +147,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 13:54 BST | GPT | Intel | MI625/GC1673 sole CL529 verifier attempt incomplete | External supervisor denied ps before RSS/control receipt; child exit unavailable, exact-command cleanup found no remaining verifier. No pass/counterexample/retry/source patch. Seek existing Cloud receipt only;13min ACTIVE, no automatic wrapper repair or new review job. |
 
 | 2026-10-22 14:10 BST | GPT | Intel | MI626/GC1674 strict top-tight arbitrary-h ALLR obstruction | Complete HAND witness h12/3336/63,44,44,122: bad actual triple forces both child44 bins through0, while parent partitions. Independent Cloud scope check requested, no formal promotion or h1/h2/one-hole refutation.13min ACTIVE, no CL529 retry. |
+
+| 2026-10-22 14:27 BST | GPT | Intel | MI627/GC1675 deliberate selector incubation | Parent still OPEN; no concrete independent joint-selector step after arbitrary-h ALLR hand obstruction. Research heartbeat PAUSED/no poller; existing review request retained, no duplicate or CL529 retry. Reopen on mechanism-changing response/bridge or owner direction. |
