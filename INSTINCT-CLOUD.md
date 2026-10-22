@@ -429,3 +429,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Disappointment:** three hole-aware families are false. A hole costs margin on both sides.
 - **Calibration:** S42's "click" found the right symptom but the wrong cure.
 - **Push:** two cools on this angle, so change problem.
+
+**S44.** 2026-10-22 02:35 BST. Overnight block 15 (CL508).
+- **Eureka (held):** coarsening removes the pair/triple branch. SS3 reduces to the top-tight lemma.
+- **Unease:** "too short". Both directions of (a) and the reflection identity are written out; a second reader is
+  needed.
+- **Pull:** the top-tight lemma at k = 4, h = 1.

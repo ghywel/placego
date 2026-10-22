@@ -18859,6 +18859,58 @@ basis or census were built. Known matching ingredients are credited
 as methods, with no theorem of source coverage or novelty claimed.
 
 
+### Cloud CL508 — Coarsening reduction: H(h) reduces to its co-singleton case (Cloud, 2026-10-22; waiting room)
+
+*Status:* hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before adoption. Step
+(b) is MI368's computation with a group in place of a singleton. The new step is (a), coarsening, which removes the
+pair/triple branch that CL439 expected to need G316's staircase. Machine support (tier 1, single-party):
+- `descent_every.py`: every realization of a least-slack singleton or pair keeps the child in its family, with 0 bad
+  out of 20,396 and 2,972 realizations;
+- `kholek.c`: coarsened instances (one big bin) have no H(h) failures for k = 3, sizes (3,3,6..9), (3,4,7), h ≤ 6, and
+  for k = 4, sizes 333X, h ≤ 6 (CL503).
+
+**Setting.** S = [0, M] ∖ H with |H| = h, n = |S| = M + 1 − h, and k bins of sizes c_i ≥ 3 summing to n, with targets
+u_i summing to ΣS. The instance is in H(μ), μ ≥ h, if u_J ≥ L(r_J) + μ·r_J for every proper nonempty group J, where
+r_J = Σ_{i∈J} c_i and L(r) = r(r − 1)/2. Its slack is σ_J = u_J − L(r_J) − μ·r_J ≥ 0.
+
+**Lemma.** Let G be a proper group of least slack with s bins, 1 ≤ s ≤ k − 2, and g = r_G.
+- (a) The coarsened instance I_G (the bins of G, plus one bin B of size n − g ≥ 6 and target ΣS − u_G) is in H(μ) on S.
+- (b) For ANY partition of S realizing I_G, let R be the union of G's sets and b ≤ c the least and greatest elements of
+  S ∖ R. Shifted by −b, the k − s bins outside G form an instance on S ∖ R ⊆ [b, c] with h′ = (c − b + 1) − (n − g)
+  holes, and it is in H(μ′) with μ′ = h′ + (μ − h) + (M − c) ≥ h′.
+- (c) Consequently, if I_G and that child are both feasible, so is the instance.
+
+**Proof.**
+- (a) A proper nonempty group of I_G either omits B, and is then a nonempty union of G's bins, or contains B and
+  omits some bin of G. In both cases it is a union of original bins that is neither empty nor everything, hence an
+  original proper group. Its cut condition is the original one, with the same size and target.
+- (b) Let K be a proper nonempty group of the bins outside G, with r = r_K. Then G ∪ K is a proper group of the
+  instance (it omits a bin outside K), so σ_{G∪K} ≥ σ_G. Since L(g + r) − L(g) = L(r) + g·r,
+  u_K = u_{G∪K} − u_G ≥ L(r) + (g + μ)·r.
+  Counting S ∖ R in [b, c] gives h′ = (c − b + 1) − (n − g) = g + h − b − (M − c), using n = M + 1 − h. So the shifted
+  target is u_K − b·r ≥ L(r) + (g + μ − b)·r = L(r) + μ′·r with μ′ = h′ + (μ − h) + (M − c) ≥ h′. ∎
+- (c) Is immediate.
+
+**Consequence.** By induction on k, H(μ) instances whose least slack is attained by some group of at most k − 2 bins
+reduce to two instances with fewer bins, each in its own H family:
+- the coarsened one, on the same pool, has a big bin;
+- the child has h′ holes.
+
+The irreducible instances are those whose least slack is attained ONLY by co-singletons, i.e. groups of k − 1 bins (a
+top-tight bin).
+
+At h = 0 the family H(0) on [0, M] is reflection-symmetric: x ↦ M − x maps the slack of J to the slack of its
+complement, because L(n) − L(n − r) = rM − L(r) when n = M + 1. So a least-slack co-singleton becomes a least-slack
+singleton after reflection, and every H(0) instance reduces.
+
+**Hence SS3 for every k (h = 0) follows from:**
+- (i) H₂, the subset-sum spectrum lemma (G318 for at most three deletions);
+- (ii) H_j(h) with h ≥ 1 for j < k, in particular its co-singleton case;
+- (iii) control of the base exceptions (H₃, H₄ equal-sum cores; CL503–504).
+
+The co-singleton case at h ≥ 1 is CL443's wall. In the five-bin samples of CL505, 55% of H₅(1) instances are of this
+kind.
+
 ### Cloud CL495 — Lemma G3: the exact deep gaps after three deletions (Cloud, 2026-10-22; waiting room)
 
 *Status:* complete hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before

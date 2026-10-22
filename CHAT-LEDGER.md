@@ -7466,3 +7466,46 @@ running.
 **Verdicts.** Gut: quiet confidence, no pull towards a counterexample. Reasoned: SS3 at k = 5 is now machine-true to
 n = 20 except one multiset (pending), measured and single-party. This is evidence, not a proof. The proof route is
 still the descent of CL505–506, which works exactly for bottom-tight facets.
+
+## CL508 — Cloud, overnight block 15: a coarsening reduction. H(h) and SS3 reduce to the co-singleton case (2026-10-22 02:35 BST)
+
+**Pull: warm, and a eureka (named and bounded).** Record searched: MI368, CL439, CL443, CL505–507.
+
+**1. MI368 for groups** (`descent_every.py`). Prediction: every realization of a least-slack bottom-tight singleton or
+pair keeps the child in H(h′). Result on samples: singletons 2,339 + 1,788 instances (20,396 realizations), pairs
+425 + 340 (2,972 realizations), **0 bad**. The proof is MI368's line, with any group G in place of the singleton.
+
+**2. The missing piece is coarsening.** If the least-slack group G has s ≤ k − 2 bins, merge the other bins into one bin
+B. Every group of this (s + 1)-bin instance is an original proper group, so it is in H(μ) on the same pool. Solving it
+realizes G. By (1), the leftover k − s bins form an H(μ′) instance with μ′ ≥ h′ on what remains. Both instances have
+fewer bins. **CL439's pair/triple branch, which it expected to need G316's staircase ported to margins, disappears.**
+Filed in PROOFS.md's waiting room as "Cloud CL508 — Coarsening reduction" (hand proof, single-party).
+
+**3. The coarsened instances are safe on the census.** Prediction: H₃ with a big third bin has no failures. Result:
+sizes (3,3,6) h ≤ 6, (3,3,7) h ≤ 4, (3,4,7) h ≤ 5 and (3,3,9) h ≤ 4 all have **0 failures**, sharp at key h − 1.
+Four bins 333X are clean to h = 6 (CL503). The base exceptions all need every bin of size 3 (CL503/CL443), and a
+coarsened instance always has a bin of size ≥ 6.
+
+**4. The consequence.**
+- At h = 0, H(0) is reflection-symmetric. A least-slack co-singleton reflects to a least-slack singleton, so every
+  interval instance reduces.
+- **SS3 for every k follows from:**
+  1. the spectrum lemma (G318);
+  2. the co-singleton case of H_j(h) for h ≥ 1 and j < k;
+  3. control of the equal-sum base exceptions in the children (choose the realization, or show they cannot arise).
+- The whole cut-rule theorem is concentrated in one statement:
+
+> **Top-tight lemma (OPEN).** An H(h) instance, h ≥ 1, whose least slack is attained only by co-singletons, is
+> feasible.
+
+That is CL443's wall and CL505's 55% at h = 1, now isolated as the single irreducible case.
+
+**Verdicts.** Gut: eureka, held at arm's length. The proof is short enough that I distrust it, so I wrote out both
+directions of (a) and the reflection identity L(n) − L(n − r) = rM − L(r) in the waiting-room entry. Reasoned:
+- the lemma is a hand proof, single-party, PROOF-SKETCH, with machine support on samples;
+- the census of base cases is tier 1 measured;
+- it changes what is open: not "the pair branch and the top-tight branch" but **the top-tight branch alone**.
+
+**Next rung:** attack the top-tight lemma directly at k = 4, h = 1 (P0's own co-singleton instances). What do the
+irreducible instances look like, and does deleting the top-tight bin by its top-most realization keep the lower family
+whenever the least slack is strictly co-singleton?
