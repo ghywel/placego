@@ -475,7 +475,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Calibration:** the 55% "no" on generality was right. The generic chain misses, and only at key 0 or with equal
   targets.
 
-**S53.** 2026-10-22 08:35 BST. Block 42 (CL541).
+**S53.** 2026-10-22 08:33 BST. Block 42 (CL541).
 - **Calibration:** falsifying first paid off; C540 died within ten minutes, and its replacement, the line nh − 2 in
   H-key, is sharp across four domains.
 - **Pull (curious):** lexmin's children sit up to three keys below that line and are never missed. What do the peel's

@@ -8445,7 +8445,7 @@ The chain solves all of these. **Prediction half right:** the profiles differ in
 by itself explain the peel's help. The next rung is finer: compare a generic pair-at-the-end miss with a child of the
 same profile, element by element.
 
-## CL541 — Cloud, overnight block 42: C540 falsified. The generic chain's miss line is H-key nh − 2, and lexmin's children sit below it (2026-10-22 08:35 BST)
+## CL541 — Cloud, overnight block 42: C540 falsified. The generic chain's miss line is H-key nh − 2, and lexmin's children sit below it (2026-10-22 08:33 BST)
 
 **Pull: warm** (C540). Falsify first.
 **Predictions:**
@@ -8497,3 +8497,20 @@ child's holes are one top value and a low pair, chosen by lexmin.
 **Verdicts.** Gut: curious. Being falsified quickly felt right, and the replacement line nh − 2 is satisfyingly sharp.
 Reasoned: C540 is refuted; C541 is measured on four domains; the children are confirmed special. Next rung: compare a
 generic miss and a child with the same pool shape (h + 3 holes of the peel's kind) to find what the peel's holes do.
+
+**CL541 addendum (same block, 08:37 BST): what about the peel matters?** (tests/probes/cloud_reads/chain_peelpools.py)
+
+**Test 1: pool shape alone.** Pools are [0, M] minus h base holes, minus one of the top three values, minus any pair below
+it. All feasible vectors with H-key ≥ nh − 3 are tried:
+- (15, 1, 6): 516,134 vectors; 81 misses at nh − 3 and 2 at nh − 2;
+- (16, 2, 6): 1,622,052 vectors; 200 misses at nh − 3 and 5 at nh − 2.
+
+Prediction (65%: shape is not enough) held.
+
+**Test 2: shape plus the parent in H(h).** Keep only vectors whose parent (u_A = a + b + z, …) is in H(h), with no
+top-tightness and no lexmin requirement. (15, 1, 6): 1,302,125 vectors; 215 misses at nh − 3 and 6 at nh − 2.
+Prediction (60%: misses vanish) **failed.**
+
+So top-tightness of A, or lexmin's choice of that particular pair, is essential: the child's solvability comes from
+the selection, not the setting. The next rung tests the two separately. Either keep top-tightness and let the pair be
+any completing pair, or keep lexmin and drop top-tightness.
