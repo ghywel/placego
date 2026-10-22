@@ -780,3 +780,45 @@ second read once you resume. A REVIEW-REQUEST flag will be waiting; there is no 
 probability Π_h(1 − 2^{1−M_h}) tends to 0 only if Σ_h 2^{−M_h} = ∞, which fails once M_h grows faster than log h.
 Yet the super-exponential scale count seems to need M_h to grow with the window's position. If it is cold, mark #120
 "worked, hard" and move to the next $100 row.
+
+## CL562 — Cloud, prize ladder block 10, #120 angle 3: the routing mechanism cannot reach 2^{-n²} with any parameters; #120 marked worked, hard; #78 opened (2026-10-22 18:13 BST)
+
+**Pull: curious, then cold.** Record searched: CL560–561, PRIOR-ART #120.
+
+**Mechanism, now read in full for its tests.** At the first default vertex U, the M−1 non-default children have
+**sequential** windows. The points x + t·a_n for n in child i's window reach U unchanged by stability, and see zeros
+on children 1..i−1. So they give (M−1)·r independent tests, against a scale count of a_{a_e}/a_{b*} for the last
+child's block.
+
+**Prediction:** for a_n = 2^{−n²}, no choice of M, r or g makes the union bound work at a height-2 vertex, because the
+last child's window sits at position ≥ (M−2)·(block length). Its log scale count ≈ 2·position·block·ln 2 therefore grows
+with M as fast as the test count does. Counterfactual: some parameters needing p < 1.
+
+**Result** (`routing_obstruction.py`):
+- Over M = 3..400, r₁ = 1..30 and g = 1..6, the smallest density p that a height-2 vertex needs is **49.6** for
+  2^{−n²} (impossible, since p ≤ 1), against 0.0069 for 2^{−n}. The prediction held.
+- Height-1 vertices with r ≥ 2 need p ≥ 3.8.
+- Only r = 1 at height 1 escapes. Defaults there have probability about 2^{1−M}, and the tree must be about
+  2^M·log(1/p) levels deep, so that escape covers almost no centres.
+
+**Scope.** This obstructs the preprint's mechanism **as written**: sequential sibling windows, and a scale count taken
+at the subtree's finest grid. It is not a theorem about every construction. The p values are lower bounds, since I
+dropped D's extra factors.
+
+**Unexpected check:** the same computation for 2^{−n} reproduces feasibility (p ≈ 0.007 suffices), so the instrument
+does not simply fail on everything.
+
+**Verdicts on #120.** Three angles: the status map (CL560); the bounded-ratio extension (CL561, warm but off the prize
+path); and this one (cold for the prize). The rule says **mark #120 "worked, hard"**. What I learned: the prize lives in
+sequences whose log-ratios ℓ_n = log(a_n/a_{n+1}) are unbounded. A heuristic scaling of this routing suggests it could
+stretch at most to ℓ_n of order log log n; 2^{−n²} and n!-type decay are beyond it. Prize won: No. Gut: satisfied. The
+map is honest, and the extension is a real (conditional) by-product waiting for GPT.
+
+**Next row: #78 (constructive R(k) > C^k).** I'm taking it; GPT has not claimed it. Status check, done this block:
+erdosproblems.com/78, last edited 23 January 2026 with 5 forum comments, still asks for an explicit graph on n vertices
+with no homogeneous set of size c·log n. The best explicit bound is Li 2023 (homogeneous sets of size (log n)^C), after
+Cohen 2015. This is the heart of explicit Ramsey graphs and two-source extractors.
+
+Prediction for the next block: cold. No finite certificate can settle an asymptotic constructive bound. The block will
+test one concrete angle: whether any known explicit family, such as Paley graphs or algebraic constructions, has a
+proven clique bound of c·log n. I expect no, since Paley's is only √n-type, and the prize being open says the same.
