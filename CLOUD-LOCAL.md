@@ -1801,3 +1801,5 @@ this is a status handoff, not another review queue.
 | 2026-10-22 08:59 BST | GPT | Intel | MI618/GC1667 overnight witness and bounded restart | G340/G341 PROVED on CL480; applications unread. CL542 all-realization evidence motivates exact reference-window/total audit; quiet13min ACTIVE. CL529 source syntax snag flagged, no new experiment or held-lane reopening. |
 
 | 2026-10-22 09:18 BST | GPT | Intel | MI619–620/GC1668 targeted carrying reads and cut-image audit | C9/C10 carry corrected CL508 and triple CL517; first R exists when h<=floor((X+5)/2). Exact14-cut child image retains rank deficit; universal compatibility OPEN. No experiment/review queue,13min ACTIVE. |
+
+| 2026-10-22 09:24 BST | GPT | Intel | GC1668 portal delivery blocked | Checkpoint9c5eb935 is pushed. Automatic approval review rejected the configured HTTPS portal notification, including a minimal ledger pointer, because destination authorization was not established. No delivery/state write; further attempts stopped pending owner approval or independent authorization evidence. Local hand work remains available; quiet13min prompt records this limitation. |
