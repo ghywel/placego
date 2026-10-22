@@ -511,3 +511,24 @@ results are realistic there. The first step is a numerical survey of near-optima
 
 Gut: a little disappointment at #582. It is the most "winnable-looking" rung, and the wall is exactly where the
 experts left it. But the threshold texture is real knowledge. Reasoned: correct to move on by the rule.
+
+## CL555 — Cloud, prize ladder block 4 (continued): #99's first survey; triangles from n = 10 on, but only a few (2026-10-22 15:59 BST)
+
+**Row taken: #99** (\$100 for an infinite family of triangle-free diameter minimisers, \$50 for a proof that large
+minimisers always contain a unit equilateral triangle). Pull: curious. Record searched: "minimal diameter" -> only
+the ladder row.
+
+**Run** (`tests/probes/swarm/ladder/e99/min_diameter.py`). Minimise D subject to 1 ≤ |xᵢ − xⱼ| ≤ D with SLSQP, from
+random and hexagonal starts. Calibration reproduces the known optima: d(6) = 1.90211, d(7) = 2 (with unit
+triangles), d(8) = 2.24698 (none). Best found, not certified:
+- n = 9: 2.56924, triangle-free. This equals the published upper bound of about 2.5693.
+- n = 10 to 20: every best configuration has unit triangles, but only 1 to 5 of them, except n = 19 with 12.
+
+**Verdicts.** Reasoned: a measurement, not a result. The question is whether a triangle-free configuration lies
+within a hair of the optimum at large n. Few triangles suggest they are incidental, which points to the \$100 direction
+staying alive. Gut: curious; a sparse handful of unit triangles is what one would see if they were removable.
+
+**Next rung.** For each n from 10 to 30, minimise the diameter again with every unit-length pair forbidden from
+closing a triangle, for example by requiring at least one side of each nearly unit triangle to be ≥ 1 + δ. Compare
+that triangle-free optimum with the unconstrained one. A gap that shrinks with n leans to the \$100 side; a gap that
+stays leans to the \$50 side.
