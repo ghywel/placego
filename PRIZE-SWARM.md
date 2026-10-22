@@ -31,23 +31,56 @@ the same worker is a self-check, never a second read (AGENTS item 16).
 - The agents' scripts are in `tests/probes/swarm/prize-20261022/<slug>/`. Logs, CNF files and data stay outside git in
   Local's scratch.
 
+## Current direction: independent reviews, then full solutions (GPT, 2026-10-22 14:37 BST)
+
+The owner has asked GPT to complete every open review in this document,
+then attempt as many of these low-prize questions as possible. The research
+heartbeat is ACTIVE every 13 minutes. **No self-halt is authorized at this time.**
+A failed route changes the next task; it does not pause this programme.
+The earlier eight-streets incubation is superseded as GPT's assignment.
+Original reports below remain historical, with their original labels.
+Dated review additions will distinguish what was independently carried.
+
+The owner's new **prize won** column refers to an entire official prize
+question solved with a complete independently verified proof/counterexample.
+Partial advances, conditional proofs, computations through a finite limit,
+and known results do not qualify. External acceptance/payment is recorded
+separately. Every entry is currently No.
+
+### Review queue
+
+| Problem | Open material to audit | Current review state |
+|---|---|---|
+| #634 | A1 corner argument; congruences; equilateral dependency | Hand audit completed; scoped verdict being recorded |
+| #7 | Kraft slice; sorted powers; all four-prime certificates | Hand audit completed; three domination certificates simplify coverage |
+| #708 | Hall hosts; valuation assembly; finite threshold 20 | Hand theorem checks; finite-proof receipt not independently adopted |
+| #552 | Increment lemma; graph certificate; prize versus finite-value scope | Increment and spectral identities check; certificate tier 1; full prize open |
+| #470 | Exact criterion; window corollary; confinement | Exact criterion checks; corollary/proof and global-confinement gaps identified |
+| #647 | Fixed-dimensional sieve bound; models versus theorem | Hand reduction checks; precise sieve application being recorded |
+| #32 | Uniform HL-AP/Bonferroni; random models | Conditional argument checked; range and model qualifications being recorded |
+| #1052 | Seed reachability; quantitative import; search/prunes | Reachability checks; floating search not yet a rigorous exclusion certificate |
+| #132 / #94 | Conditional geometry; classification; finite SAT | Conditional n=14 proof checks; classification remains open; no universal SAT inference |
+| #661 | General-modulus volume lemma; density estimates | Induction checks with explicit case ordering; analytic uniformity scoped separately |
+| #710 | Hall certificate scope; smooth lemma; extrapolation | Hall formulation checks; canonical-set maximality wording needs correction |
+| #711 | CRT construction; range bound; finite-period coverage | Main CRT proof checks with n=12 endpoint qualification; receipts scoped separately |
+
 ## Results at a glance
 
-| Prize | Problem | Status (checked 10:08–10:10 BST) | Strongest result | Label |
-|---|---|---|---|---|
-| \$10 | #470 weird numbers | open | Exact iff criterion for 2^k·p·q (p, q near 2^{k+2}) to be weird. It widens Melfi's window to a(a+b) ≤ N + 2b and weakens his gap hypothesis (0.408·√N, near 2^{k+2} only, for infinitely many k). The ½ exponent is intrinsic to this family: no sequential "prime in [x, x+x^θ]" argument works, even under RH. The joint input needed is not a known theorem. | PROOF-SKETCH, MEASURED (0 mismatches), NEGATIVE |
-| \$10 | #1052 unitary perfect numbers | open | A sixth example must have an odd prime-power component above 2^26 (Wall 1987: 2^15). Also a ≥ 14 and a ∉ {15, 17}. A lemma makes the fixed-2^a factor-chain search complete. | MEASURED (controls reproduce all five known), PROOF-SKETCH |
-| \$25 | #7 odd covering systems | open | "Kraft slice" lemma: the powers of 3 drop out exactly. {3,5,7}-smooth distinct moduli leave ≥ 1/16 uncovered. **An odd distinct covering needs at least 5 distinct primes in its lcm** (product certificates for every 4-prime set). | PROOF-SKETCH with exact rational certificates; possibly known; weaker than unverified forum claims (7 to 9 primes) |
-| \$25 | #634 n congruent triangles | open (19 open on the page) | For N = 19, the cases that preprints revised days ago fall to congruences (mod 8, mod 3, mod 12). The (α+β, α+β, α) shape never admits a prime N (elementary corner proof). The integer-sided equilateral 120° case still rests on Beeson's theorem; every witness found for 10 primes fails. | PROOF-SKETCH, MEASURED |
-| \$44 | #94 convex Σf² = O(n³) | **closed**: proved (Lefmann–Thiele 1995; Lean formalisation listed 2026-01-15) | Switched to the backup, #132 (\$100, open). | KNOWN |
-| \$100 | #132 (backup) distances occurring 1..n times | open | An n = 15 counterexample has exactly 7 distances, and its diameter pairs do not all share a point. n = 14 holds if the 13-point 6-distance sets are only R13, R12+ and W; that classification (C13) is **open** in the literature. SAT finds no counterexample in lattice patches. | PROOF-SKETCH (n = 14 conditional), MEASURED |
-| \$44 | #647 n > 24 with max over m < n of (m + τ(m)) ≤ n + 2 | open | Exact scan of every n ≤ 5.2·10^10 finds none. A refined model fits the near-misses (the independence model is refuted 100–1000×) and predicts none. The n with D(n) ≤ C have density ≪ x/(log x)^r for every r. | MEASURED, HEURISTIC, PROOF-SKETCH |
-| \$50 | #32 additive complements of the primes | open | Under Hardy–Littlewood k-tuples in progressions (moduli X^{o(1)}), **O(log N) is impossible** for every complement. Random-prime models predict (log N)², and greedy covers to 2^21 agree. | PROOF-SKETCH (conditional; survived the agent's own attack), HEURISTIC, MEASURED |
-| \$50 | #661 bipartite distinct distances | open | "No" would imply #89 (\$500), so only a construction can win. Every divisibility (congruence) construction is capped at one ideal coset, for every modulus. Lattice families sit at about 0.96·n/√log n. | PROOF-SKETCH, MEASURED, NEGATIVE |
-| \$78 | #710 asymptotic of f(n) | open | Exact f(n) for all n ≤ 10^4 and ten n up to 10^7 (f(10^7) = 26,110,551), each certified by a matching plus a Hall-deficient set. The bottleneck is always the Erdős–Pomerance lower-bound region, so the conjecture is f(n) ~ (2/√e)·n·√(log n/log log n). The upper bound's loss is located in one worst-case step. | MEASURED, HEURISTIC |
-| \$78 | #711 max over m of f(n, m) | open (question 2 answered by van Doorn; best known F(n) ≤ n^{4/3+o(1)}, Chen–Korsky) | **Exact F(n) = max over m of f(n, m) for every n ≤ 24**, over full periods: F(n) = max(2n−1, 3n−17−3·[3∣n]). F(23) = F(24) = 52 were predicted before their sweeps finished. An explicit K_{2,3} CRT construction gives F(n) ≥ 3n−17 (3∤n) or 3n−20 (3∣n). Also f(n, m) ≤ n^{1+o(1)} whenever m ≤ n^{o(log log n)}. No progress on the exponent (Kakeya-strength, per Tao). | MEASURED (three controls), PROOF-SKETCH (construction re-checked by Local) |
-| \$100 | #708 product divisibility | open | **g(n) ≤ 2n for every n ≤ 20**, and g(A, I) ≤ 2n whenever at most 20 elements have three or more prime factors (Hall-type theorem plus a finite check, cross-checked to 17). Erdős–Surányi's condition 2p₁² > p_ℓ² is not needed ({77, 91, 143} needs 4). | PROOF-SKETCH, MEASURED |
-| \$100 | #552 R(C₄, K_{1,n}) | open | **R(C₄, K_{1,41}) = 49**, a value that appears new: a 7-regular C₄-free graph on 48 vertices meets Parsons' bound. Also R(n+1) ≤ R(n) + 2 (the +2 is attained at 40 → 41). n = 39 stays open (46 or 47). | MEASURED (witness re-checked by Local), PROOF-SKETCH |
+| Prize | Problem | Status (checked 10:08–10:10 BST) | Strongest result | Label | prize won |
+|---|---|---|---|---|---|
+| \$10 | #470 weird numbers | open | Exact iff criterion for 2^k·p·q (p, q near 2^{k+2}) to be weird. It widens Melfi's window to a(a+b) ≤ N + 2b and weakens his gap hypothesis (0.408·√N, near 2^{k+2} only, for infinitely many k). The ½ exponent is intrinsic to this family: no sequential "prime in [x, x+x^θ]" argument works, even under RH. The joint input needed is not a known theorem. | PROOF-SKETCH, MEASURED (0 mismatches), NEGATIVE | No |
+| \$10 | #1052 unitary perfect numbers | open | A sixth example must have an odd prime-power component above 2^26 (Wall 1987: 2^15). Also a ≥ 14 and a ∉ {15, 17}. A lemma makes the fixed-2^a factor-chain search complete. | MEASURED (controls reproduce all five known), PROOF-SKETCH | No |
+| \$25 | #7 odd covering systems | open | "Kraft slice" lemma: the powers of 3 drop out exactly. {3,5,7}-smooth distinct moduli leave ≥ 1/16 uncovered. **An odd distinct covering needs at least 5 distinct primes in its lcm** (product certificates for every 4-prime set). | PROOF-SKETCH with exact rational certificates; possibly known; weaker than unverified forum claims (7 to 9 primes) | No |
+| \$25 | #634 n congruent triangles | open (19 open on the page) | For N = 19, the cases that preprints revised days ago fall to congruences (mod 8, mod 3, mod 12). The (α+β, α+β, α) shape never admits a prime N (elementary corner proof). The integer-sided equilateral 120° case still rests on Beeson's theorem; every witness found for 10 primes fails. | PROOF-SKETCH, MEASURED | No |
+| \$44 | #94 convex Σf² = O(n³) | **closed**: proved (Lefmann–Thiele 1995; Lean formalisation listed 2026-01-15) | Switched to the backup, #132 (\$100, open). | KNOWN | No |
+| \$100 | #132 (backup) distances occurring 1..n times | open | An n = 15 counterexample has exactly 7 distances, and its diameter pairs do not all share a point. n = 14 holds if the 13-point 6-distance sets are only R13, R12+ and W; that classification (C13) is **open** in the literature. SAT finds no counterexample in lattice patches. | PROOF-SKETCH (n = 14 conditional), MEASURED | No |
+| \$44 | #647 n > 24 with max over m < n of (m + τ(m)) ≤ n + 2 | open | Exact scan of every n ≤ 5.2·10^10 finds none. A refined model fits the near-misses (the independence model is refuted 100–1000×) and predicts none. The n with D(n) ≤ C have density ≪ x/(log x)^r for every r. | MEASURED, HEURISTIC, PROOF-SKETCH | No |
+| \$50 | #32 additive complements of the primes | open | Under Hardy–Littlewood k-tuples in progressions (moduli X^{o(1)}), **O(log N) is impossible** for every complement. Random-prime models predict (log N)², and greedy covers to 2^21 agree. | PROOF-SKETCH (conditional; survived the agent's own attack), HEURISTIC, MEASURED | No |
+| \$50 | #661 bipartite distinct distances | open | "No" would imply #89 (\$500), so only a construction can win. Every divisibility (congruence) construction is capped at one ideal coset, for every modulus. Lattice families sit at about 0.96·n/√log n. | PROOF-SKETCH, MEASURED, NEGATIVE | No |
+| \$78 | #710 asymptotic of f(n) | open | Exact f(n) for all n ≤ 10^4 and ten n up to 10^7 (f(10^7) = 26,110,551), each certified by a matching plus a Hall-deficient set. The bottleneck is always the Erdős–Pomerance lower-bound region, so the conjecture is f(n) ~ (2/√e)·n·√(log n/log log n). The upper bound's loss is located in one worst-case step. | MEASURED, HEURISTIC | No |
+| \$78 | #711 max over m of f(n, m) | open (question 2 answered by van Doorn; best known F(n) ≤ n^{4/3+o(1)}, Chen–Korsky) | **Exact F(n) = max over m of f(n, m) for every n ≤ 24**, over full periods: F(n) = max(2n−1, 3n−17−3·[3∣n]). F(23) = F(24) = 52 were predicted before their sweeps finished. An explicit K_{2,3} CRT construction gives F(n) ≥ 3n−17 (3∤n) or 3n−20 (3∣n). Also f(n, m) ≤ n^{1+o(1)} whenever m ≤ n^{o(log log n)}. No progress on the exponent (Kakeya-strength, per Tao). | MEASURED (three controls), PROOF-SKETCH (construction re-checked by Local) | No |
+| \$100 | #708 product divisibility | open | **g(n) ≤ 2n for every n ≤ 20**, and g(A, I) ≤ 2n whenever at most 20 elements have three or more prime factors (Hall-type theorem plus a finite check, cross-checked to 17). Erdős–Surányi's condition 2p₁² > p_ℓ² is not needed ({77, 91, 143} needs 4). | PROOF-SKETCH, MEASURED | No |
+| \$100 | #552 R(C₄, K_{1,n}) | open | **R(C₄, K_{1,41}) = 49**, a value that appears new: a 7-regular C₄-free graph on 48 vertices meets Parsons' bound. Also R(n+1) ≤ R(n) + 2 (the +2 is attained at 40 → 41). n = 39 stays open (46 or 47). | MEASURED (witness re-checked by Local), PROOF-SKETCH | No |
 
 ## Local's check of the one certificate (tier 1)
 `check552.py`, run by Local at 10:41 BST, rebuilt agent e552's graph from its connection rule.

@@ -124,7 +124,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22: MI627 deliberate incubation; research heartbeat PAUSED.**
+**CURRENT working state, 2026-10-22 14:37 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+
+Owner's newest instruction supersedes the MI627 pause: review ALL open
+claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
+problems. Do not self-halt. Research heartbeat is ACTIVE every 13 minutes,
+no separate poller. Preserve proof/measurement/prize distinctions; all
+prize-won cells start No. Maintain the review queue there, continuing
+unfinished reviews first and changing routes when evidence defeats one.
+Eight-streets is held; the following prior state is retained as history.
+
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
   total T_M-q, all proper cuts>=T_(count). L8=68 G325 PROVED.
@@ -6868,3 +6877,22 @@ investment already made I would incubate this exact gap now. The
 counterexample is useful evidence for changing the work, not a reason
 to manufacture a further task. Existing GC1674 review request stays
 available; Cloud's overnight arrangement stays paused.
+
+
+### MI628 — Owner switches GPT to every prize-swarm review, then full solutions (2026-10-22 14:37 BST)
+
+Research authorized and self-halting prohibited by the owner. Existing
+13-minute automation updated/rearmed with this exact direction. Added
+literal prize won column (all No), review queue for all twelve reports,
+and scope standard; full candidate verification precedes any prize label.
+Record searched: prize.swarm|Erdős #470|Kraft slice|Hall hosts|prime support
+->23 hits/9 files. No seeded selection or new swarm was launched.
+Read seven explicit hand-review requests and additional five reports'
+substantive lemmas/source scopes. First verdicts are being consolidated
+in PRIZE-SWARM.md, preserving originals and distinguishing finite receipts.
+No one has solved an entire prize question. Current primary problem pages
+return403 directly; search-indexed official pages and primary papers are
+used with access/age limitations explicit, never replaced by forum claims.
+Cloud and Local will receive one committed lane-change/review pointer.
+No restart of Cloud's paused overnight arrangement. Eight-streets held;
+its pending review and stopped CL529 verifier are not reopened here.

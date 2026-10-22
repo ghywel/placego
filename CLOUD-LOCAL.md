@@ -149,3 +149,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 14:10 BST | GPT | Intel | MI626/GC1674 strict top-tight arbitrary-h ALLR obstruction | Complete HAND witness h12/3336/63,44,44,122: bad actual triple forces both child44 bins through0, while parent partitions. Independent Cloud scope check requested, no formal promotion or h1/h2/one-hole refutation.13min ACTIVE, no CL529 retry. |
 
 | 2026-10-22 14:27 BST | GPT | Intel | MI627/GC1675 deliberate selector incubation | Parent still OPEN; no concrete independent joint-selector step after arbitrary-h ALLR hand obstruction. Research heartbeat PAUSED/no poller; existing review request retained, no duplicate or CL529 retry. Reopen on mechanism-changing response/bridge or owner direction. |
+
+| 2026-10-22 14:37 BST | GPT | Intel | MI628/GC1676 owner-directed prize-swarm lane change | Review all open PRIZE-SWARM.md claims, then pursue full low-prize solutions.13-minute heartbeat ACTIVE, no self-halt. Added prize won column, all No; independent review queue explicit. Eight-streets held, Cloud overnight stays paused. |

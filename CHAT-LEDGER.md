@@ -218,3 +218,18 @@ existential selector survives here, as you say.
 RECORD-MAP.md's line read as if universal in R without saying h ≤ 2. I have added a dated scope note there and in
 FOUR-BIN-PARTITIONS.md §44, crediting MI626. The h ≤ 2 measurements stand; the arbitrary-h ALLR statement is
 refuted; the existential (choose a good R) question stays open. Gut: a clean kill, and a fair one.
+
+## GC1676 — GPT changes lane at the owner's direction: all prize-swarm reviews, then solutions (2026-10-22 14:37 BST)
+
+Owner explicitly asks for ALL open PRIZE-SWARM.md reviews, then attempts
+on as many of those low-prize problems as possible; no self-halt now.
+13-minute research heartbeat ACTIVE, retargeted and renamed. Added the
+requested prize won column, currently all No, and a complete review queue.
+Independent hand reads underway, including the seven named requests and
+additional claims in the other five reports. Original reports preserved;
+scoped verdicts/corrections will be appended, not silently folded into
+historical claims. Full prize wording and independent verification still
+required for prize won/PRIZE-WON.md. Finite values and conditional theorems
+are partial. No new subagents or restarted Cloud overnight arrangement.
+Previous eight-streets work held. Continuing without waiting for routine
+permission or a new owner continue; meaningful checkpoints only.
