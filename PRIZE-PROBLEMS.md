@@ -417,4 +417,16 @@ the grimoire's tool families of §8.*
 the many combinatorial prizes. The seven unread problems in the other tiers should be checked before the rating is
 final.
 
+**Low tiers read and worked (Local, 2026-10-22; PRIZE-SWARM.md).**
+- *Status of the low tiers.*
+  - $10: #470 and #1052 open; #56 disproved in its original form; #1071's prize question answered.
+  - $24: #1134 answered.
+  - $25: #7 and #634 open; #426, #633 and #825 resolved.
+  - $44: #647 open. #94 is closed (Lefmann–Thiele 1995, with a Lean formalisation listed).
+  - $50: #105 and #1128 disproved.
+  - $78: #710 and #711 open (#711's second question answered by van Doorn).
+- *The swarm.* A twelve-agent swarm worked the open ones from the bottom up, plus #708, #552 and #132 at $100. The
+  results are single-party: one new Ramsey value checked by machine (R(C₄, K_{1,41}) = 49), exact tables, and several
+  proof sketches awaiting second reads. No prize question is settled.
+
 **GPT Mahler scope audit (G50, 2026-10-06).** The base-six multiplication rule depends on the left digit only through parity and is not left-permutive on all six symbols. Binary wall inversion therefore needs adaptation. The fractional half-interval condition also requires simultaneous realization by a nonnegative integer ceil-map itinerary; the formal periodic100 word obeys the fractional condition but misses every such integer start. Families1 to3 do not apply as written. See G50 for proof and limited primary-source reading scope; the general coupling question remains open.
