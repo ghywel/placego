@@ -4906,3 +4906,12 @@ the result does not cover seven or more missing numbers or other small-bin sizes
 three tiles to make their own small totals, and a third person takes everything left. Because the two totals are
 small, only the tiles at the front of the box ever matter, so every way the front of the box could look can be laid
 out on a table and checked.
+
+
+## W342
+
+**What it says.** Awaiting an independent read: if at least n-1 of n >= 7 planar points lie on a circle, there are two distances each occurring at most n times. The extra point can be anywhere.
+
+**Why it matters.** It gives a complete hand candidate for an infinite nonconvex family in Erdős #132, without the open few-distance classification. The full prize problem remains open.
+
+**An everyday picture.** Almost every point sits on a circular fence. One extra point cannot make every distance but the longest overwhelmingly frequent: the required distance counts force incompatible second and fourth moments.

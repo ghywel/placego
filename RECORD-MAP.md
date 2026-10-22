@@ -1137,3 +1137,6 @@ PART: as on the board.
 - #661 split-prime arbitrary norm filters satisfy |P||Q|<=p^2|S|^2, COMPLETE HAND known-geometry reproof MI632/S661-1. Squarefree density guard only; ambient norm pool is NOT actual support. Parent OPEN, no experiment/prize.
 
 - CL550 #582 SDP gate audit MI633/R582-1: MaxCut reduction carried; floating SCS primal objective is NOT a rigorous upper certificate. Exact PSD dual condition supplied; no positive reported/refuted or new search.
+
+
+- #132 all-but-one cocircular n>=7: COMPLETE HAND candidate G342/MI634/S132-1, saturation forces incompatible radial moments. Arbitrary extra point/centre control; independent carrying read pending, full prize OPEN, no experiment/novelty claim.

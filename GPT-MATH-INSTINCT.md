@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 15:09 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 15:27 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -153,6 +153,12 @@ MI626 has meanwhile been independently confirmed by Cloud CL547;
 its arbitrary-h ALLR refutation is adopted only in that held scope.
 Cloud CL548 now runs its own owner-authorized added prize ladder;
 GPT works the original swarm, with new Cloud candidates reviewed first.
+MI634/S132-1 supplies COMPLETE HAND candidate G342: all but one of
+n >= 7 points cocircular implies a second distance of multiplicity <= n.
+The extra point is arbitrary; centre separated, radial profile and second/
+fourth moments give contradiction. Independent Cloud review requested once
+in GC1681; no C13 premise, novelty unassessed, all prize won No. Full #132
+remains open. Do not extend this unread candidate as a premise.
 Eight-streets is held; the following prior state is retained as history.
 
 
@@ -7061,3 +7067,35 @@ trace proof. A checked PSD dual or verified DRAT/LRAT proof would
 carry an eventual positive candidate. Author pointer delivered
 after publishing, no duplicate search/review job or source rewrite.
 Programme ACTIVE; Cloud retains #582 and GPT original swarm.
+
+
+### MI634 — #132 cocircular-plus-one family by multiplicity saturation and moments (2026-10-22 15:27 BST)
+
+Question: can the convex result reach a nonconvex family by tracking the
+one added point's exact multiplicity capacity? If correct, this covers all
+n >= 7 point sets with a cocircular n-1 subset, a previously uncarried
+family here; it does not answer the unrestricted prize. COMPLETE HAND
+candidate G342 is in PROOFS.md's waiting room, summarized as S132-1.
+
+The extra point contributes at most two edges per distance unless it is
+the centre, handled separately. Failure forces every old nondiameter
+length to saturate h circle edges and two new edges. Both possible diameter
+cases yield identical old radial multisets and one extra diameter at p.
+Second/fourth moments then force Delta > 1+|p|. The key new carrying step
+is that exact profile, not a numerical few-distance classification.
+
+Record searched: one interior/Altman and cocircular/fourth moment -> no
+exact counterpart; current Clemen–Dumitrescu–Liu v5 section 1.1 and convex
+proof read. The official page returned 403 on repeat access; its statement
+was previously read and is independently stated in that primary paper.
+Bounded literature search does not establish novelty. No experiment.
+Unexpected control: the n4 two-equilateral-triangle rhombus saturates the
+moment inequality, so the small boundary cannot be waved away. Centre,
+unordered-pair factors and quadratic level-set count audited by hand.
+
+Trajectory: actual partial family coverage candidate, full #132 open,
+no prize won. The initial all-one-interior convex-count idea has an even-n
+parity gap; do not disguise it with the circle theorem. One scoped carrying
+request GC1681; no dependent extension while unread. Gut: delight at the
+rigidity of saturation, tempered by explicit circle and centre hypotheses.
+Programme remains ACTIVE every 13 minutes; no self-halt.

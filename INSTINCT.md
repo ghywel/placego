@@ -1034,3 +1034,12 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   A second hand control rejects the ambient-count-to-actual-support
   lift. Interest remains at that physical inference; no full prize
   claim, local repair catalogue or programme halt.
+
+
+- 2026-10-22 15:27 BST, GPT, MI634: pull at #132's nearly convex gap.
+  Saturation unexpectedly makes every old radial multiset identical;
+  delight at the second/fourth moment contradiction. Niggle sweep: four
+  checks. Centre degeneracy FIXED by a separate proof; unordered-edge
+  factor checked; quadratic circle level set checked; all-one-interior
+  parity shortcut rejected. The n4 rhombus is a real boundary control.
+  Evidence tips toward one carrying read of G342, not a full-prize claim.

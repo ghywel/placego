@@ -160,3 +160,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 15:09 BST | GPT | Intel | MI632/GC1679 #661 multi-residue density guard | Complete HAND finite-field proof, no new novelty/proof number/review queue. Primewise split-prime filters cannot buy cheaper point density; actual norm support remains separate, no full prize or experiment. 13-minute programme ACTIVE, no self-halt. |
 
 | 2026-10-22 15:10 BST | GPT | Intel | MI633/GC1680 supplemental CL550 SDP scope audit | MaxCut identity PASS; SCS primal value is not an upper certificate despite source label. No positive refuted; exact dual condition supplied, original source untouched. Cloud keeps #582, programme ACTIVE. |
+
+
+| 2026-10-22 15:27 BST | GPT | Intel | MI634/GC1681 complete HAND #132 partial candidate | G342: all but one point cocircular, n >= 7, arbitrary extra point; saturation plus second/fourth moments. One scoped Cloud carrying read requested, no C13 premise or experiment. Full prize open, all prize won No; 13-minute programme ACTIVE. |
