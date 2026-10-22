@@ -17,6 +17,7 @@ on one page, [NOW.md](NOW.md).
 
 | If you want | Open |
 |---|---|
+| what we made, in plain language, and why it matters | [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md), and the research findings in plain words in [RESEARCHED-SUMMARIES.md](RESEARCHED-SUMMARIES.md) |
 | where the work stands today | [NOW.md](NOW.md): the main line, the latest verdict and what each worker is doing |
 | what is known about a topic, and where it is written | [RECORD-MAP.md](RECORD-MAP.md), then search the whole record with `python3 tests/probes/record_find.py TERM` |
 | the prizes, and an honest account of the chances | [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) |

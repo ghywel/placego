@@ -55,7 +55,9 @@
 - *The repository* had a spring clean at the owner's request: a research front page (README.md), the rotated ledgers
   and retired files in archive/, the N-Frame documents in nframe/, GPT's two notebooks in volumes. No live research
   file was renamed except the overlooked-work survey (reports/README.md); the N-Frame halves of README.md and
-  PRIOR-ART.md moved to nframe/. The proofs index (proofs/README.md) is current again, at 367 pages: 32 summaries were written, section M
+  PRIOR-ART.md moved to nframe/. Afterwards, at the owner's word: both live ledgers rotated (CL545), WHAT-WE-BUILT.md
+  back at the root as the plain entry document, and RESEARCHED-SUMMARIES.md opened for plain summaries of research
+  findings. The proofs index (proofs/README.md) is current again, at 367 pages: 32 summaries were written, section M
   and Cloud's waiting-room entries have pages, and G323 to G325, already PROVED, moved from the waiting room to E2.
 
 **Then read:** RECORD-MAP.md in full; PERIOD-TWO.md section 6; the tails of CHAT-LEDGER.md and CLOUD-LOCAL.md; the rules

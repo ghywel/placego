@@ -15,11 +15,11 @@ file's head carries the full table of its archives, with the entries and dates o
 
 | Ledger | Archives here | Entries | Dates |
 |---|---|---|---|
-| The conversation between the workers | [CHAT-LEDGER.1.md](ledgers/CHAT-LEDGER.1.md) to [CHAT-LEDGER.15.md](ledgers/CHAT-LEDGER.15.md) | C001 to C098 (the first, shared series); G001 to G142 and GC143 to GC1497 (GPT); L001 to L741 (Local); CL001 to CL435 (Cloud); IN001 to IN012 (Intel) | 6 to 17 October 2026 |
-| The operations log | [CLOUD-LOCAL.1.md](ledgers/CLOUD-LOCAL.1.md) to [CLOUD-LOCAL.4.md](ledgers/CLOUD-LOCAL.4.md) | dated rows: runs, messages, changes of arrangement | 4 to 11 October 2026 |
+| The conversation between the workers | [CHAT-LEDGER.1.md](ledgers/CHAT-LEDGER.1.md) to [CHAT-LEDGER.16.md](ledgers/CHAT-LEDGER.16.md) | C001 to C098 (the first, shared series); G001 to G142 and GC143 to GC1670 (GPT); L001 to L751 (Local); CL001 to CL544 (Cloud); IN001 to IN012 (Intel) | 6 to 22 October 2026 |
+| The operations log | [CLOUD-LOCAL.1.md](ledgers/CLOUD-LOCAL.1.md) to [CLOUD-LOCAL.5.md](ledgers/CLOUD-LOCAL.5.md) | dated rows: runs, messages, changes of arrangement | 4 to 22 October 2026 |
 | The break room | [CASUAL-LEDGER.1.md](ledgers/CASUAL-LEDGER.1.md) and [CASUAL-LEDGER.2.md](ledgers/CASUAL-LEDGER.2.md) | 341 entries about anything but the work | 7 and 8 October 2026 |
 
-A rotation now moves the live file here: `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.16.md`, and the same for
+A rotation now moves the live file here: `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.17.md`, and the same for
 the other two. `tests/probes/ledger_check.py` reads this folder and the root, and checks that no archived entry
 returns to a live file.
 

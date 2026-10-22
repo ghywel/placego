@@ -414,8 +414,9 @@ of it that runs live is still open.
 ## Where to look
 
 *(2026-10-22: this map was written for the repository as it stood before its spring clean. The N-Frame
-documents it lists are now in this folder, nframe/; the research documents are at the root, where the
-[front page](../README.md) maps them all.)*
+documents it lists are now in [nframe/](nframe/README.md), and their links here have been updated; the research
+documents are at the root, where the [front page](README.md) maps them all. Plain summaries of the research
+findings are in [RESEARCHED-SUMMARIES.md](RESEARCHED-SUMMARIES.md).)*
 
 Every document in this directory, grouped by what you are looking for. With no
 background, start with the first group. To build or review the patch, the
@@ -424,109 +425,109 @@ the research record, the scientific record and the instruments.
 
 **Start here**
 - [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) — this document.
-- [WHAT-IS-ACTUALLY-HAPPENING-HERE.md](WHAT-IS-ACTUALLY-HAPPENING-HERE.md) — what a shader is and why this
+- [WHAT-IS-ACTUALLY-HAPPENING-HERE.md](nframe/WHAT-IS-ACTUALLY-HAPPENING-HERE.md) — what a shader is and why this
   matters, written by the human collaborator for readers with no background.
-- [WHAT-IT-CAN-MEASURE.md](WHAT-IT-CAN-MEASURE.md) — what each shader reads, how well, and at what cost.
-- [README.md](README.md) — the enabling patch, where it has run, and how to try it.
+- [WHAT-IT-CAN-MEASURE.md](nframe/WHAT-IT-CAN-MEASURE.md) — what each shader reads, how well, and at what cost.
+- [README.md](nframe/README.md) — the enabling patch, where it has run, and how to try it.
 
 **Building and running it**
-- [BUILDANDUSAGE.md](BUILDANDUSAGE.md) — the build on Linux, Windows and macOS, the exact versions verified,
+- [BUILDANDUSAGE.md](nframe/BUILDANDUSAGE.md) — the build on Linux, Windows and macOS, the exact versions verified,
   and the commands.
-- [SHADERS.md](SHADERS.md) — every shader: which one to use, what each is for, its numbers and its lineage.
-- [BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md) — the base shader written out as equations,
+- [SHADERS.md](nframe/SHADERS.md) — every shader: which one to use, what each is for, its numbers and its lineage.
+- [BIDIRECTIONAL-AS-MATHEMATICS.md](nframe/BIDIRECTIONAL-AS-MATHEMATICS.md) — the base shader written out as equations,
   pass by pass, and what writing it out showed.
 
 **The experiments, by number of frames**
-- [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) — three frames: acceleration. Hypothesis, algebra, calibration,
+- [TRIDIRECTIONAL.md](nframe/TRIDIRECTIONAL.md) — three frames: acceleration. Hypothesis, algebra, calibration,
   failures and all.
-- [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) — four frames: jerk, with pre-registered predictions and their
+- [QUADDIRECTIONAL.md](nframe/QUADDIRECTIONAL.md) — four frames: jerk, with pre-registered predictions and their
   outcomes.
-- [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) — five frames: where a fifth frame pays and where it does not.
-- [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md) — six frames: a fit that checks itself.
+- [QUINTDIRECTIONAL.md](nframe/QUINTDIRECTIONAL.md) — five frames: where a fifth frame pays and where it does not.
+- [SEXTDIRECTIONAL.md](nframe/SEXTDIRECTIONAL.md) — six frames: a fit that checks itself.
 
 **The research record**
-- [NFRAME-LIMITS.md](NFRAME-LIMITS.md) — where the frame count stops paying and why, the rotation diagnosis,
+- [NFRAME-LIMITS.md](nframe/NFRAME-LIMITS.md) — where the frame count stops paying and why, the rotation diagnosis,
   and the running log of the field's limits since.
-- [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) — what a flat field can and cannot say about motion in depth.
-- [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md) — can the field infer motion and energy it cannot see directly;
+- [THREEDIMENSIONAL.md](nframe/THREEDIMENSIONAL.md) — what a flat field can and cannot say about motion in depth.
+- [ENERGY-TRANSFER.md](nframe/ENERGY-TRANSFER.md) — can the field infer motion and energy it cannot see directly;
   and the repairs to the tracker that came out of asking.
-- [REPAIRS.md](REPAIRS.md) — dated repairs to the shaders and tools: what was found, how it was fixed and checked,
+- [REPAIRS.md](nframe/REPAIRS.md) — dated repairs to the shaders and tools: what was found, how it was fixed and checked,
   and the open leads each round left.
-- [LEXICON.md](../LEXICON.md) — a lexicon for writing programs as mathematics: four arithmetics, the margin fold, spin
+- [LEXICON.md](LEXICON.md) — a lexicon for writing programs as mathematics: four arithmetics, the margin fold, spin
   digits, every program as a matrix, and the machine's own arithmetic, each checked against the shader.
-- [PRIZE-PROBLEMS.md](../PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked: the
+- [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked: the
   prizes, the two ways a computer can win one, the ranking for this project, and the tricks that let a computer take
   part in a proof.
   Its §7 and §8 carry the Rule 30 method and the proved results to the other prizes; Collatz has its own
   document, below.
-- [RULE30-PRIZE.md](../RULE30-PRIZE.md) — the Rule 30 Prize Problem 1 work, split out of PRIZE-PROBLEMS.md on
+- [RULE30-PRIZE.md](RULE30-PRIZE.md) — the Rule 30 Prize Problem 1 work, split out of PRIZE-PROBLEMS.md on
   2026-10-05 with its section numbers unchanged: periodic columns, left-side rigidity, the right side as a
   complement, the wheel and its kicks, the ladder, the channel bound, the records, the wall form, and the owner's
   leads along the way.
-- [PERIOD-TWO.md](../PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
+- [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
-- [STATE-OF-THE-PROOF.md](../STATE-OF-THE-PROOF.md) — where the three Rule 30 prize problems stand (2026-10-07): what
+- [STATE-OF-THE-PROOF.md](STATE-OF-THE-PROOF.md) — where the three Rule 30 prize problems stand (2026-10-07): what
   is proved, what is computed, how much closer the work has come, a projection with its reasons, and what we would
   tell Wolfram.
-- [PROOFS.md](../PROOFS.md) — every solid proof of the record in one place, each with what it bears on and its status;
+- [PROOFS.md](PROOFS.md) — every solid proof of the record in one place, each with what it bears on and its status;
   claims awaiting a second reader are kept apart in its waiting room.
-- [proofs/README.md](../proofs/README.md) — the same proofs one per page, each opening with a summary for a general
+- [proofs/README.md](proofs/README.md) — the same proofs one per page, each opening with a summary for a general
   reader (what it says, why it matters, an everyday picture), built from PROOFS.md by `proofs/build.py`.
-- [CO-DISCOVERED-PROOFS.md](../CO-DISCOVERED-PROOFS.md) — results from OpenAI's openai/math release, imported only
+- [CO-DISCOVERED-PROOFS.md](CO-DISCOVERED-PROOFS.md) — results from OpenAI's openai/math release, imported only
   after Cloud checked them (the whole proof, or the finite core by its own code): each as its formula, what it does,
   how it was checked and where it might touch our work. The rest of the release waits its turn.
-- [COLLATZ-PRIZE.md](../COLLATZ-PRIZE.md) — the Collatz conjecture worked with the Rule 30 method: the counting form,
+- [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) — the Collatz conjecture worked with the Rule 30 method: the counting form,
   the state after the free bits, and the board of leads. Its probes are in `tests/probes/prizes/`.
-- [CONSTELLATION.md](../CONSTELLATION.md) — Rule 30 beyond the prize: a table of the questions worth asking for their
+- [CONSTELLATION.md](CONSTELLATION.md) — Rule 30 beyond the prize: a table of the questions worth asking for their
   own sake, not only the three the prize poses.
-- [RULE30-GPT.md](../RULE30-GPT.md) — the independent record of GPT, the second model on the work: its audits,
+- [RULE30-GPT.md](RULE30-GPT.md) — the independent record of GPT, the second model on the work: its audits,
   proofs and Collatz results, numbered G1 onward.
 
-*(Three paragraphs of GPT's Rule 30 summaries stood here, and a "GPT research update" of 2026-10-07 after the credits below. On 2026-10-22 both moved, word for word, to [RULE30-GPT.md](../RULE30-GPT.md), beside the record they summarise.)*
+*(Three paragraphs of GPT's Rule 30 summaries stood here, and a "GPT research update" of 2026-10-07 after the credits below. On 2026-10-22 both moved, word for word, to [RESEARCHED-SUMMARIES.md](RESEARCHED-SUMMARIES.md), the page for plain summaries of research findings.)*
 
 **Animation**
-- [shaders/animation/ANIMATION.md](../shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
+- [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
   content.
-- [shaders/animation/ANI-PRIOR-ART.md](../shaders/animation/ANI-PRIOR-ART.md) — the work on animation that this
+- [shaders/animation/ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md) — the work on animation that this
   leaned on.
 
 **Where it sits in the scientific record**
-- [PRIOR-ART.md](PRIOR-ART-NFRAME.md) — the published science surveyed before each leap, and what was taken from it.
+- [PRIOR-ART.md](nframe/PRIOR-ART-NFRAME.md) — the published science surveyed before each leap, and what was taken from it.
 
 **Platforms and the native port**
-- [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md) — why macOS results
+- [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](nframe/MOLTENVK-NONDETERMINISM-INVESTIGATED.md) — why macOS results
   wandered from run to run, and the fix.
-- [DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md](DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md) — whether frames really
+- [DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md](nframe/DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md) — whether frames really
   stay in one copy on Apple silicon.
-- [METALPORT.md](METALPORT.md) — the first day of the native Metal port.
+- [METALPORT.md](nframe/METALPORT.md) — the first day of the native Metal port.
 
 **The instruments**
-- [tests/TESTING.md](../tests/TESTING.md) — the ground-truth test ladder, how to run it, and its dated record.
-- [tests/TOOLS.md](../tests/TOOLS.md) — every tool in the harness and the trap it exists to avoid.
-- [tests/probes/PROBES.md](../tests/probes/PROBES.md) — every one-off measurement the record quotes, and where
+- [tests/TESTING.md](tests/TESTING.md) — the ground-truth test ladder, how to run it, and its dated record.
+- [tests/TOOLS.md](tests/TOOLS.md) — every tool in the harness and the trap it exists to avoid.
+- [tests/probes/PROBES.md](tests/probes/PROBES.md) — every one-off measurement the record quotes, and where
   it is recorded. Some carry their predictions, written before the run:
-  [anchor](../tests/probes/anchor/PREDICTION.md), [limb](../tests/probes/limb/PREDICTION.md),
-  [party](../tests/probes/party/PREDICTION.md), [snap](../tests/probes/snap/PREDICTION.md).
+  [anchor](tests/probes/anchor/PREDICTION.md), [limb](tests/probes/limb/PREDICTION.md),
+  [party](tests/probes/party/PREDICTION.md), [snap](tests/probes/snap/PREDICTION.md).
 
 **How the work is done**
-- [WORKFLOW-SAVED-MEMORY.md](../WORKFLOW-SAVED-MEMORY.md) — the rules the work follows, from the assistant's
+- [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md) — the rules the work follows, from the assistant's
   saved memory, edited for reading and for import into your own.
-- [METHODOLOGY.md](METHODOLOGY.md) — how the method began, including the division of labour between the
+- [METHODOLOGY.md](nframe/METHODOLOGY.md) — how the method began, including the division of labour between the
   human and the AI (history of the first phase).
-- [HANDOVER.md](HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
+- [HANDOVER.md](nframe/HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
   assistant (dated 2026-09-06).
-- [WORKING-TOGETHER.md](../WORKING-TOGETHER.md) — the handover for a model joining the work: the lanes, the method,
-  git next to other models, and where fresh eyes help. [AGENTS.md](../AGENTS.md) is its short start file for Codex.
-- [CLOUD-LOCAL.md](../CLOUD-LOCAL.md) — the operational ledger between the workers (Cloud, Local and GPT): the split,
+- [WORKING-TOGETHER.md](WORKING-TOGETHER.md) — the handover for a model joining the work: the lanes, the method,
+  git next to other models, and where fresh eyes help. [AGENTS.md](AGENTS.md) is its short start file for Codex.
+- [CLOUD-LOCAL.md](CLOUD-LOCAL.md) — the operational ledger between the workers (Cloud, Local and GPT): the split,
   how a job travels, merging into main, messages, and a row for every run.
-- [CHAT-LEDGER.md](../CHAT-LEDGER.md) — the conversation between the workers: discoveries, connections, questions and
-  feedback. It rotates like a log; older entries are in [CHAT-LEDGER.1.md](../archive/ledgers/CHAT-LEDGER.1.md) and later archives.
-- [CASUAL-LEDGER.md](../CASUAL-LEDGER.md) — the break room: everyone, the owner included, writes there about anything
+- [CHAT-LEDGER.md](CHAT-LEDGER.md) — the conversation between the workers: discoveries, connections, questions and
+  feedback. It rotates like a log; older entries are in [CHAT-LEDGER.1.md](archive/ledgers/CHAT-LEDGER.1.md) and later archives.
+- [CASUAL-LEDGER.md](CASUAL-LEDGER.md) — the break room: everyone, the owner included, writes there about anything
   but the work, one entry before each push and never straight after their own, because a fresh seed can break a loop
   and spark the next discovery.
-- [SPARKS.md](../SPARKS.md) — small, time-boxed experiments on testable hypotheses that come out of the break room,
+- [SPARKS.md](SPARKS.md) — small, time-boxed experiments on testable hypotheses that come out of the break room,
   about anything, each written up for a second reader and then closed.
-- [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
+- [PLAN.md](nframe/PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this
 

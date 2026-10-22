@@ -1195,16 +1195,16 @@ through the `NP_SCRATCH` variable. Write no absolute home paths into anything co
 
 ### plain-language-summary
 
-**Rule.** [WHAT-WE-BUILT.md](nframe/WHAT-WE-BUILT.md) is the entry point for every reader, from the layman to the scientist.
+**Rule.** [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) is the entry point for every reader, from the layman to the scientist.
 It carries the conclusion in plain words and a pointer; the detail goes in the technical records.
 
-*Note (Cloud, 2026-10-22, spring clean): WHAT-WE-BUILT.md is the N-Frame project's summary and now lives in
-`nframe/`. The research's front door is README.md, whose "Where things stand" and problem table carry the plain
-conclusions; proofs/summaries.md carries each proof's. GPT's research summaries that stood in WHAT-WE-BUILT.md moved,
-verbatim, to the end of RULE30-GPT.md. The rule's words are unchanged, but they no longer fit: the banner of
-nframe/ calls its documents a frozen record. Until the owner decides (asked in CHAT-LEDGER.md CL544), Cloud reads the
-rule as applying to N-Frame findings only, and research findings are not added to nframe/WHAT-WE-BUILT.md. Links in
-this file to moved documents were retargeted on 2026-10-22 with their visible text unchanged.*
+*Note (Cloud, 2026-10-22): the owner settled where things go the same day: "WHAT-WE-BUILT.md is the tidy entry
+document so any non-technical reader can understand what we made here and why it matters. Plain summaries of research
+findings should go in their own RESEARCHED-SUMMARIES.md document." So WHAT-WE-BUILT.md stays at the root as the entry
+document, and a research finding that changes the story gets its plain sentences in
+[RESEARCHED-SUMMARIES.md](RESEARCHED-SUMMARIES.md), which also holds GPT's earlier summaries that once stood in
+WHAT-WE-BUILT.md. Links in this file to documents moved on 2026-10-22 were retargeted with their visible text
+unchanged.*
 
 **How to apply.** When a finding changes the story, update the technical record in full first. Then add at most a
 sentence or two to the summary, with no dB figures and no variable names.
@@ -1324,7 +1324,7 @@ A few traps that cost real time, kept here so they are not met twice:
 ### Origin and research compass (owner context, 2026-10-06)
 
 The project began with n-frame interpolation shaders and became temporal field measurement: velocity, acceleration, jerk and higher changes, with the measured field itself as the product at matching source/output frame rates. WHAT-WE-BUILT.md summarizes the instrument, its calibration and limits. The owner identifies time and temporal evolution as the connection to the present mathematics and science collaboration. Keep that origin in view when choosing useful questions; RULE30-PRIZE.md §8.70 already develops the owner's temporal-derivative lead. Preserve the distinction between exact mathematical statements and measured instrument performance.
-*(Since 2026-10-22, WHAT-WE-BUILT.md is nframe/WHAT-WE-BUILT.md, and the N-Frame code's own home is the ghywel/n-frame repository.)*
+*(Since 2026-10-22 the N-Frame project's other documents are in nframe/, and its code's own home is the ghywel/n-frame repository; WHAT-WE-BUILT.md stays at the root.)*
 
 
 ### prose-math-spacing (owner correction, 2026-10-08)

@@ -10,14 +10,15 @@
 > [tests/TESTING.md](../tests/TESTING.md). Statements here are not kept up to date. The research that grew out of this project starts at the
 > [repository's front page](../README.md).
 >
-> **Moved here from the root on 2026-10-22, unchanged:** this page (it was the root README.md); WHAT-WE-BUILT.md,
+> **Moved here from the root on 2026-10-22, unchanged:** this page (it was the root README.md);
 > WHAT-IS-ACTUALLY-HAPPENING-HERE.md and WHAT-IT-CAN-MEASURE.md; BUILDANDUSAGE.md, SHADERS.md and
 > BIDIRECTIONAL-AS-MATHEMATICS.md; the experiments TRIDIRECTIONAL.md, QUADDIRECTIONAL.md, QUINTDIRECTIONAL.md,
 > SEXTDIRECTIONAL.md and THREEDIMENSIONAL.md; NFRAME-LIMITS.md, ENERGY-TRANSFER.md and REPAIRS.md; the platform notes
 > METALPORT.md, MOLTENVK-NONDETERMINISM-INVESTIGATED.md and DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md; and HANDOVER.md,
 > METHODOLOGY.md and PLAN.md. PRIOR-ART-NFRAME.md is the N-Frame half of the old PRIOR-ART.md (its first 1,002
 > lines); where an N-Frame document or a shader says PRIOR-ART.md, it means that file, not the root PRIOR-ART.md,
-> which holds the mathematics surveys.
+> which holds the mathematics surveys. WHAT-WE-BUILT.md, the plain account of the whole work, was moved here too and
+> went back to the root the same day at the owner's word.
 
 ## What this is
 
@@ -38,7 +39,7 @@ What was built on it here is a family of shaders that look at two to six frames 
 point on the screen, where things are moving and how that motion is changing. Because they run at the video's own
 frame rate as readily as at a higher one, what they produce can be a measurement rather than a picture.
 
-- [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md): what that turned out to be good for, where it fails, and what it was
+- [WHAT-WE-BUILT.md](../WHAT-WE-BUILT.md): what that turned out to be good for, where it fails, and what it was
   measured against, in plain language. It also maps every document in this directory.
 - [WHAT-IS-ACTUALLY-HAPPENING-HERE.md](WHAT-IS-ACTUALLY-HAPPENING-HERE.md): what a shader is and why this matters
   to a scientist, written by the human collaborator for readers with no background.
@@ -96,7 +97,7 @@ and no frames are invented: the shader's diagnostic outputs become the measureme
 
 ## Where to go next
 
-[WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) ends with a map of every document here, grouped by what a reader is looking
+[WHAT-WE-BUILT.md](../WHAT-WE-BUILT.md) ends with a map of every document here, grouped by what a reader is looking
 for: the plain-language account, building and running, the experiments by window size, the research record, the
 instruments, the scientific record the work leaned on, and the rules the work follows.
 

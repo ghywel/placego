@@ -99,15 +99,17 @@ The mechanics:
    does, merge your own branch yourself after those checks.
 3. Never force-push. Never rewrite history. Never delete, move or rename another party's file. Never edit another
    party's text except to append a dated note under it, marked with your name.
-   *Exception (the owner, 2026-10-22: "Please can you have a spring clean"; recorded in CHAT-LEDGER.md CL544):
+   *Exception (the owner, 2026-10-22: "Please can you have a spring clean"; recorded in archive/ledgers/CHAT-LEDGER.16.md CL544):
    Cloud moved files and passages whole, with their words unchanged, and retargeted links throughout the record so
    that they still land (a link's visible text was left alone). The moves: the rotated ledgers, the Kimi and Intel
    files and NOW.md's earlier states to `archive/` (archive/README.md lists them); older notebook entries to volumes
    in `archive/gpt/` (each notebook's head lists its volumes); the N-Frame documents, and PRIOR-ART.md's N-Frame
    half, to `nframe/` (nframe/README.md lists them); the overlooked-work survey to `reports/` (reports/README.md);
-   GPT's plain summaries from WHAT-WE-BUILT.md to the end of RULE30-GPT.md; and three PROVED entries from PROOFS.md's
+   GPT's plain summaries from WHAT-WE-BUILT.md to RESEARCHED-SUMMARIES.md (WHAT-WE-BUILT.md itself went to nframe/
+   and back to the root the same day, at the owner's word); and three PROVED entries from PROOFS.md's
    waiting room to E2, as that file's practice is. Moving NOW.md's history was housekeeping, not a rewrite of its
-   state (AGENTS.md item 15). The rule above stands for everything else.*
+   state (AGENTS.md item 15). At the owner's word the same day, one file was deleted outright: a draft letter to an
+   outside contributor, which did not belong in the record. The rule above stands for everything else.*
 4. **This repository is public.** No personal names other than the owner's. No usernames, hostnames, IP addresses,
    device names, local paths that contain a user's name, credentials, or pasted logs that carry any of these. No
    `._*` or `.DS_Store` files. No data files: results are text in the probe's OUTCOME or a small `.txt` beside it;
