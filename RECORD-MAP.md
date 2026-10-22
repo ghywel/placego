@@ -793,7 +793,7 @@ PART: as on the board.
 
 - Least adjusted-slack deletion preserves margin for ANY realization;one-hole to two-hole step refuted by actual five-bin residual,hand MI368. Sharp three-hole geometry bound retained;owner resumes,13min ACTIVE.
 
-- Coarsening reduction (CL508, PROOFS waiting room, hand, single-party): least-slack group of <=k-2 bins -> coarsened instance in H(mu) + child in H(mu') (MI368 for groups, any realization); H(0)/SS3 reduces fully by reflection. Irreducible = least slack only at co-singletons (top-tight lemma, OPEN; CL443's wall).
+- Coarsening reduction (CL508, PROOFS waiting room, hand, single-party): least-slack group of <=k-2 bins -> coarsened instance in H(mu) + child in H(mu') (MI368 for groups, any realization); H(0)/SS3 reduces fully by reflection. Irreducible = least slack only at co-singletons (top-tight lemma, OPEN; CL443's wall). CORRECTION CL515: for pair/triple-least G the coarsened instance is itself top-tight (big bin B), so the top-tight lemma must include big-bin cases.
 - Top-tight four-bin census (CL509): one deletion (lower/upper, any single/pair) settles 98.0% (h1) / 97.5% (h2) of irreducible 3333 instances; residual is H-family coarseness. Hole-aware families HM/HS FALSE (CL506).
 - Equal-sum core distance (CL512-513): size-3 bins first fail H(h) at h = 3, 3, 7, 9, 10, 12, 13, 15 for k = 3..10 (clump family; s=2 window h >= 1.5k-1+1/(k-1), hand). Two-bin base H2(h) (CL514): gaps only n=6 (equal split) and h >= 2n-7 (witness {0} u [h+1,M]); conjecture iff h <= 2n-8, n >= 7.
 - SS3 census (CL507/511/513): k=5 n=17..20 all 23 multisets 89.8M ordered vectors, k=6 n=18 83.9M, 0 failures (kholek.c, tier1 measured).

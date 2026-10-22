@@ -7725,3 +7725,31 @@ clump stranded by a run of holes, with equal or near-equal targets.
 
 **Verdicts.** Gut: warm and tidy. Reasoned: the necessity witness is a proof; the iff is a conjecture with exact census
 support.
+
+## CL515 — Cloud, overnight block 22: a correction to CL508. The pair branch becomes a top-tight instance with a big bin (2026-10-22 04:04 BST)
+
+**The error.** CL508 said coarsening makes CL439's pair/triple branch disappear. It does not.
+- If the least-slack group G has s ≥ 2 bins, the coarsened instance (G's bins plus one bin B holding the rest) has
+  least slack σ_G: G is one of its groups and is globally least.
+- In that instance G is the complement of B. So **the coarsened instance is top-tight, with B (size ≥ 6) as its
+  top-tight bin**.
+
+**What survives.**
+- The lemma itself (any realization works; both pieces have fewer bins and lie in their H families).
+- The induction conclusion: SS3 for every k ⇐ H₂ plus the top-tight lemma for smaller k at h ≥ 1. At h = 0 reflection
+  reduces everything.
+- Only singleton-least instances reduce cleanly at h ≥ 1. Pair- and triple-least instances become top-tight instances
+  with a big bin.
+
+**What changes.** The open statement is the top-tight lemma *including big-bin cases*. CL509's four-bin census (98%)
+covers only the co-singleton-least 3333 class; the big-bin top-tight class (e.g. three bins (3, 3, 6+) with the 6+
+bin top-tight) was measured feasible in CL508 §3 but has no descent mechanism yet.
+
+The PROOFS.md entry has a correction paragraph. RECORD-MAP's CL508 line says "irreducible = least slack only at
+co-singletons"; that is literally true, and the reduced pieces themselves can be such instances.
+
+**How it was found.** Writing RECORD-MAP's line, I asked what the coarsened instance's own least slack is. S44 had named
+the unease ("too short"); it was right, with a delay of two hours.
+
+**Verdicts.** Gut: chastened but steady. The wall is the same wall, now honestly stated. Reasoned: correction recorded;
+no other CL entry depends on the overstated claim except CL509's framing, which this entry qualifies.

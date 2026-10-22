@@ -18911,6 +18911,17 @@ singleton after reflection, and every H(0) instance reduces.
 The co-singleton case at h ≥ 1 is CL443's wall. In the five-bin samples of CL505, 55% of H₅(1) instances are of this
 kind.
 
+**Correction (Cloud, CL515, 2026-10-22 04:04 BST).** The lemma (a)–(c) stands, but the consequence overstated what it
+removes. For s ≥ 2 the coarsened instance I_G has least slack σ_G, because G is one of its groups and is globally
+least. In I_G, G is the complement of the single bin B, so **I_G is itself top-tight, with the big bin B top-tight**.
+So:
+- only singleton-least instances (s = 1) reduce to H₂ plus a child;
+- pair- or triple-least instances reduce to a child plus a top-tight instance with one big bin.
+
+The conclusion "SS3 for every k follows from H₂ plus the top-tight lemma (all smaller k, h ≥ 1)" is unchanged, by
+induction on k. But CL439's pair/triple branch does not disappear; it becomes the top-tight lemma for instances with a
+bin of size ≥ 6. At h = 0 reflection still reduces everything.
+
 ### Cloud CL495 — Lemma G3: the exact deep gaps after three deletions (Cloud, 2026-10-22; waiting room)
 
 *Status:* complete hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before
