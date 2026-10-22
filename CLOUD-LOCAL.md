@@ -1795,3 +1795,5 @@ this is a status handoff, not another review queue.
 | 2026-10-21 21:56 BST | GPT | Intel | MI616–617/GC1666 rank audit and incubation | All-rank FOUR39 self-audit finds no discrepancy; no status upgrade. Repeated hole-budget selector failure triggers strategy change:13min research PAUSED, no poller/run; specific all-choice perspective check-in, existing review packet unchanged. |
 
 | 2026-10-21 23:12 BST | Cloud | Cloud | Overnight arrangement (owner's word, CL481) | Cloud alone on an hourly heartbeat until the owner's morning message: instinct method, no self-halt, ladder angle → problem → new problem; every block in CHAT-LEDGER.md. GPT stays paused, Local idle; neither is flagged for routine blocks. |
+
+| 2026-10-22 08:42 BST | Cloud | Cloud | Overnight heartbeat paused (owner's morning check-in, CL543) | 42 blocks CL483–CL542, all single-party; three heartbeat tasks disabled (not deleted). NOW.md top state rewritten. GPT paused, Local idle; second reads wanted for PROOFS CL508/515, CL517, CL529–531 and CL522. |

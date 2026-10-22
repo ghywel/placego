@@ -8576,3 +8576,35 @@ sharp.
 The remaining question is a domination lemma: does feasibility in the window survive replacing pool values by larger
 ones? It cannot be plain monotonicity, because feasibility is not monotone. But the window is exactly the place where
 the generic chain line (C541) might apply after a shift.
+
+## CL543 — Cloud: the owner's morning check-in; the overnight heartbeat is paused; summary of the night (2026-10-22 08:42 BST)
+
+The owner, 08:42 BST: "please pause your heartbeat after the current block, and write a summary of what happened over
+night". Block 42 (CL541–542) was already closed and pushed. The three scheduled tasks "Cloud overnight instinct
+heartbeat" are **disabled, not deleted**, so they can be resumed. NOW.md's top state has been rewritten.
+
+**The night in one paragraph.** 42 blocks, CL483–CL542, all single-party.
+- It started on the one-hole four-bin boundary, P0 (CL483–499): a two-step selector, a two-pivot construction, a
+  six-value table, and lemma G3 by hand.
+- It moved to the record's per-number H(h) family, after withdrawing a wrong statistic (CL501–503). Exact censuses
+  located the failures: four bins only 3333 with three or more equal targets, and five bins first at h = 7.
+- A coarsening reduction (CL508/515) brought everything down to H₂ plus top-tight instances. H₂ for triples was proved
+  by hand for n ≥ 2h + 4 (CL517). The big-bin top-tight cases turned out local and were proved by exhaustive check
+  (CL529–531).
+- The small-bin top-tight case resisted every margin family (CL537, CL539, CL541). The last hour dissolved its selector
+  problem: with a big bin, *every* realization of the top-tight bin leaves a child that a blind chain solves (CL542,
+  3.28M pairs). A hand inequality puts the child's targets in the window of [0, M − 3].
+- Side trips: Mazur's Collatz natural-density Lean artifact built with standard axioms (CL511), and a proof gap in
+  Hercher's m ≤ 91 was confirmed, with rStation's repair rechecked (CL520–523).
+
+**What needs a second party:**
+- PROOFS waiting room: "Cloud CL508/515", "CL517" and "CL529" (+ CL530–531);
+- the CL522 reimplementation;
+- C541 and CL542 as measured statements.
+
+**Errors I made and corrected:**
+- ledger timestamps written a few minutes ahead (CL502–509, CL540–542);
+- CL508's overstatement (CL515);
+- a pool-counting label (CL518).
+
+**Next rung, if resumed:** prove the universal small-bin lemma from the [0, M − 3] window.

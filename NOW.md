@@ -1,11 +1,48 @@
 # NOW: the state of the main line (read first at session start and after every compaction)
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
-ledgers. Last rewritten 2026-10-21 23:10 BST by Cloud (the one-hole consolidation and the overnight arrangement at the
-top); previously 2026-10-19 05:30 BST by Cloud (the eight-streets verdict); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
+ledgers. Last rewritten 2026-10-22 08:42 BST by Cloud (the overnight journey, paused at the owner's word); previously
+2026-10-21 23:10 BST by Cloud (the one-hole consolidation and the overnight arrangement); previously 2026-10-19 05:30 BST by Cloud (the eight-streets verdict); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
 (Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local); the joint-halt paragraph
 added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
+
+**STATE AT 2026-10-22 08:42 BST: THE OVERNIGHT JOURNEY IS PAUSED; THE CUT RULE'S WALL IS MAPPED (Cloud).**
+- *Night.* Cloud worked alone by the instinct method with no self-halt, at the owner's word (CL481). That was 42 blocks
+  (CL483–CL542), and the owner paused it at 08:42 BST. Everything is single-party: hand results are PROOF-SKETCH in
+  PROOFS.md's waiting room, and the machine checks are exact but have not been second-read.
+- *One hole (CL483–499).*
+  - A fixed two-step selector completes every I₂ instance at M = 12, 13.
+  - The pair boundary is a two-pivot construction, certified by theorems where the complement has at least 7 values,
+    with a six-value table for the rest.
+  - Lemma G3 was proved by hand.
+- *H(h), the per-number margin family* (u_J ≥ L(r) + h·r; CL439):
+  - four-bin failures occur only for 3333 with at least three equal targets, h ≤ 7 (CL503);
+  - five bins: no failure through h = 4 on all hole sets, and through h = 6 on two-run sets; the first failure is at
+    h = 7 (CL504, CL512);
+  - the equal-sum core's first failing h for size-3 bins is 3, 3, 7, 9, 10, 12, 13, 15 (k = 3..10) (CL513);
+  - SS3 on intervals: 0 failures for k = 5 to n = 20 and k = 6 at n = 18;
+  - independently self-checked (CL518).
+- *Reduction* (CL508, corrected CL515). Everything reduces to H₂ plus **top-tight** instances.
+  - H₂ for triples is proved by hand for n ≥ 2h + 4 (CL517).
+  - **Big-bin top-tight cases are local and proved by exhaustive check:** (3, 3, X) for h ≤ 6; (3, 4) and (4, 4) for
+    h ≤ 4; (3, 3, 3, X) for h ≤ 4 (CL529–531).
+  - **Small-bin top-tight** (the open region, 30–55% of instances) gives the night's last and best finding (CL539–542):
+    - no margin family holds the child (CL539, CL541);
+    - with A top-tight and X ≥ 6, **every** realization of A leaves a child that a blind two-step chain solves:
+      3,283,146 pairs, no miss (CL542);
+    - by a hand inequality, top-tightness puts every child target in the H(h) window of [0, M − 3], whatever R is;
+    - the generic chain's miss line is H-key nh − 2 (C541).
+- *Collatz.*
+  - Mazur's natural-density theorem's Lean artifact builds here with standard axioms only (CL511).
+  - Hercher's m ≤ 91 has a real proof gap; rStation's repair recovers it, checked by an independent reimplementation
+    (CL520–523).
+- *Lanes.* GPT: paused (GC1666). Local: idle. Cloud: overnight heartbeat paused at the owner's word (three scheduled
+  tasks disabled, not deleted).
+  - **Second reads wanted:** PROOFS "Cloud CL508/515", "CL517" and "CL529" (+ CL530–531), and the CL522 Hercher
+    reimplementation.
+  - **Next rung:** the universal small-bin lemma (CL542). Turn the [0, M − 3] window into a proof that every child is
+    feasible.
 
 **STATE AT 2026-10-21 23:10 BST: THE ONE-HOLE FOUR-BIN PROBLEM CONSOLIDATED; CLOUD ALONE OVERNIGHT (Cloud).**
 - *The problem.* P0 (four bins of sizes ≥ 3 on [0, M] minus one value) is the rung that eight streets' general cut rule
