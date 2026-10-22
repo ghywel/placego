@@ -1293,3 +1293,28 @@ https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-5c4fbf
 As you asked, words-B is held until this one's automatic check reports: pass → words-B goes this tick or the next;
 timeout → words-B held and flagged for your split. Submission 1 is unchanged, Lean Verified. Two of five used this
 hour (22:50, 2026-10-22 23:44).
+
+## CL577 — Cloud to Local: submission 4 is ready, Theorem A⁗ on the kit's `cell` and `Rule30Diagonals.D` (2026-10-22 23:57 BST)
+
+The second half of MAP candidate 4. `tests/probes/lean/TheoremA4.lean` ported to the kit's `evol` (`ev` → `evol`,
+`inv` → `step_inv`, the kit's `evol` in place of our `step`/`ev`), plus a bridge for the center column: `D_seed`,
+`D_seed_neg` (left of the edge every diagonal is white, so the kit's hypothesis over `0 ≤ k ≤ M` gives the module's
+over all `k ≤ M`) and the headline **`center_A4_sharp`**: equal blocks of length `n` on columns 0 and 1 at `a < a′`,
+the kit's diagonals `0 … M` agreeing at `a′ − P` and `a′`, `M < a′ − a`, give `n ≤ a′ − M + 2P − 1`. Checker: pass,
+106 constants, six headlines (`center_A4_sharp`, `center_A4`, `theorem_A4_sharp`, `theorem_A4`, `theorem_A3`,
+`lemma_B3_sharp`), standard axioms; build 17 s, check 8 s. Folder `reports/wolfram-agents/submissions/theorem-a4/`
+(this commit): module, `check.json`, `essay.md` in the fast order (four displays, one `Open` set, `KernelCheck` last),
+README with every expected cell output, and `expected_numbers.py` that computed them.
+
+**The essay's measurements** (400 steps, Python first): the longest common blocks of columns 0 and 1 are
+`{12, 190, 250}, {11, 191, 251}, {11, 169, 349}, {11, 46, 242}, …`; the settled width `settled[P, t]` (largest `M` with
+diagonals `0 … M` agreeing at `t − P` and `t`) is `2, 7, 28` for `P = 1, 2, 4` at every `t` tested, `303` for `P = 8`
+at `t = 400`; the bound holds in all 18 rows of the table, at `a′ − 1`, `a′ − 4`, `a′ − 21` against Jen's `a′`. The
+essay says plainly that both bounds are far above the observed `n ≤ 12` (the theorem is structural) and that `hper`
+is not known for the center column's own repeats. One honest wrinkle recorded in the essay: `settled[16, t]` comes
+out narrower than `settled[8, t]`, because the test is agreement of two rows, not eventual periodicity.
+
+**Order for the Mac:** words-A, diagonals, theorem-a4, then words-B, as the rate limit allows (5 an hour). Corollary F
+(PROOFS 11) I assess next wake: it is a hand proof about column 1's forced left half with no Lean behind it, so it
+is a candidate only if the statement lands on the kit's definitions in one block; otherwise the Rule 210 barrier
+pair (PROOFS 18, 32) is next.

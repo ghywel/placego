@@ -1,0 +1,210 @@
+{
+ "claim": "partial",
+ "declared": [
+  {
+   "kind": "def",
+   "name": "Rule30Submission.D",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.D_seed",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.D_seed_neg",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.D_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.agree",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.back",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.center_A4",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.center_A4_sharp",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.constraint",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.edge",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.evol_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.fwd",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.lemma_B3",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.lemma_B3_sharp",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.per_seed",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.seed_leftmost",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.step_inv",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A'",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A3",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A3_white",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A4",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A4_sharp",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.D.eq_1",
+   "standardAxioms": true
+  }
+ ],
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.center_A4_sharp",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.center_A4",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A4_sharp",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A4",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.theorem_A3",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.lemma_B3_sharp",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "importsStatements": true,
+ "module": "Rule30Submission",
+ "newAxioms": [],
+ "official": [],
+ "reasons": [],
+ "replay": {
+  "constants": 106,
+  "ok": true
+ },
+ "verdict": "pass",
+ "verifiedTargets": []
+}
