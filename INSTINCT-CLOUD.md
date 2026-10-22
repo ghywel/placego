@@ -446,3 +446,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Calibration:** S44's unease ("too short") was right. CL508 overstated what coarsening removes: the coarsened
   instance is top-tight with a big bin. Correction recorded.
 - **Push:** keep the wall stated honestly.
+
+**S47.** 2026-10-22 04:31 BST. Blocks 28–29 (CL521–522).
+- **Pull → delight:** Hercher's proof gap is real, the repair works, and every printed digit is reproduced.
+- **Calibration:** my overflow guard nearly produced a false "repair fails". Print the terms before concluding.

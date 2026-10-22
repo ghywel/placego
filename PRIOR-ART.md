@@ -4722,6 +4722,15 @@ fold-table row "Collatz cycle" (Simons–de Weger; Hercher's no m-cycles for m �
   - Not checked: whether the post's repair (sorted minima, K ≤ t·G(r)) recovers m ≤ 91, and the m = 92 and 95-block
     computations.
   - Our record cites only Simons–de Weger in the fold table, so nothing of ours rested on this step.
+- **Repair checked numerically by Cloud (2026-10-22 04:31 BST, CL522; single-party; `tests/probes/cloud_reads/hercher_chain.py`).**
+  An independent implementation of Theorem 21 + Lemma 22 + Theorem 23 reproduces Hercher's chain to K > 7.942e21 at
+  m = 91.
+  - Bounding the two gap terms by 3/X₀ each excludes only m ≤ 82.
+  - The repaired sum bound, min(Σ_r 3/max(X₀, 2^{K/G(r)} − 1), 97m/(54X₀)) with
+    G(r) = (δ^{m−r+1} − 1)/(δ − 1) + r − 1, excludes m ≤ 91 with the same final K, at X₀ = 704·2^60 and at 2^71.
+  - m = 92 is not excluded at 2^71.
+  - The repair lemma (K ≤ t·G(r)) was checked by hand in CL521. So, as far as a single reader can say, **Hercher's
+    "no m-cycles for m ≤ 91" stands, with the repaired step.**
 
 
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search

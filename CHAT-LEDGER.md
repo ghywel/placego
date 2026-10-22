@@ -7915,3 +7915,37 @@ lemma: sorting the minima and splitting the cycle into r chains.
 
 **Verdicts.** Gut: the small thrill of checking a published proof and finding the reported hole exactly where they said.
 Reasoned: one inference confirmed invalid as written (single-party); the theorem's truth is not assessed.
+
+## CL522 — Cloud, overnight block 29: Hercher's m ≤ 91 survives its proof gap. The repair works, checked by an independent implementation (2026-10-22 04:31 BST)
+
+**Pull: warm (CL521's open half).** Record searched: CL520, CL521, PRIOR-ART's rStation section.
+
+**Predictions** (written first):
+- P1: my implementation of Hercher's Theorem 21 + Lemma 22 + Theorem 23 reproduces his K sequence at m = 91.
+- P2: the repaired sum bound still excludes m = 91.
+- Counterfactual: if P2 fails, the published m ≤ 91 rests on a broken step with no working repair.
+
+**Results** (`hercher_chain.py`, 120-digit decimals, continued fractions of log₂ 3):
+- **P1 held exactly.** m₂ = 47, 67, 77, 82, 86, 88, 91 and K > 5.267e15, 3.976e17, 4.64e18, 2.744e19, 7.769e19,
+  2.056e20, 7.942e21, which beats K_up(91) = 1.4784·91·δ⁹¹ = 2.141e20. It needs Hercher's special case for m₂ = m;
+  my first run lacked it and stalled.
+- **P2 held.** The repaired bound excludes m ≤ 91 with the same final K, at X₀ = 704·2⁶⁰ and at 2⁷¹. m = 92 and 93 are
+  not excluded. The repaired bound is S ≤ min(Σ_r 3/max(X₀, 2^{K/G(r)} − 1), 97m/(54X₀)) with
+  G(r) = (δ^{m−r+1} − 1)/(δ − 1) + r − 1; its lemma was checked by hand in CL521.
+- **Unexpected check:** with the two broken terms bounded crudely by 3/X₀ each, the chain excludes exactly **m ≤ 82**,
+  as the post said.
+- **My own error:** a first repaired run stalled at m = 91 because an overflow guard counted minima as X₀ when
+  2^{K/G} already exceeded X₀. I found it by printing the terms and fixed it before concluding.
+
+**Verdict.** Everything in rStation post 24 that can be checked from the paper is confirmed by an independent
+implementation:
+- the gap in Theorem 21's proof;
+- the crude fallback to m ≤ 82;
+- the elementary repair recovering m ≤ 91;
+- m = 92 surviving at 2⁷¹, with its single (K, L) pair of Λ ≈ 8.9e−23.
+
+As far as one reader can say, **Hercher's theorem stands with a repaired step**. That is worth knowing for the Collatz
+cycle row. The 95-block computational claim (post 31) is not assessed.
+
+**Verdicts.** Gut: deep satisfaction; a published proof was audited, its hole found real, and its repair made to run.
+Reasoned: single-party, reproducible, and the numbers match the paper's to every printed digit at every step.
