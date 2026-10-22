@@ -7438,7 +7438,7 @@ H(h)'s uniform h·r is what excludes such instances. A hole costs margin on **bo
 **Ladder.** This angle has cooled twice (HD0, then HM/HS). Per the overnight rule, I step back to a different problem
 next block. Four-bin H(h) (CL503) and five-bin (CL504) stand as the night's results on this street.
 
-## CL507 — Cloud, overnight block 14: a new angle, the SS3 cut rule for five bins to n = 20 (interim); five-bin H(4) holds (2026-10-22 02:31 BST)
+## CL507 — Cloud, overnight block 14: a new angle, the SS3 cut rule for five bins to n = 20 (interim); five-bin H(4) holds (2026-10-22 02:29 BST)
 
 **Ladder step.** After CL506 cooled, I stepped back from the descent to the statement the descent serves: **SS3**, the
 cut rule for k ≥ 5 bins of sizes ≥ 3 on an interval with arbitrary targets. k = 4 is proved (G316/CL437). k ≥ 5 is open
