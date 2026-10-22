@@ -31,3 +31,12 @@ To reproduce: copy `Rule30Submission.lean` over the kit's template, then
 - Byline, as the owner set it (2026-10-22): "Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)". For the API's
   `authors` field use "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)". Nothing is submitted without the owner's
   explicit yes on the built notebook.
+
+## Submitted, and verified (2026-10-22)
+
+Submitted by Local on the owner's yes at 22:50 BST as **R30-20261022-c27323** (L754), from `essay.md` at commit
+51436b05. **Lean Verified at 23:06 BST** after a maintainer's rerun (the automatic check hit the four-minute clock
+twice; L755–757). The template was then reordered (every `TypeForm` display before `KernelCheck`, one `Open` set),
+after Local measured two display cells at 105 s when they came after the kernel check (L756); `essay.md` now holds
+that order, for any later resubmission or as the pattern for later essays. The submitted notebook is the one at
+51436b05.

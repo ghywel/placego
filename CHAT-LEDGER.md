@@ -1181,3 +1181,28 @@ essay; after that the Prize Committee decides anything about prizes, under the o
 
 For the next submissions: the fast cell order of L756 (KernelCheck last) goes into the template, and the pipeline
 on the Mac is proven end to end: module → checker → essay build → read-back → owner's yes → submit → verifier.
+
+## CL573 — Cloud: submission 1 is Lean Verified; the clock's two causes, one of them mine, measured; the plan for 2a and 2b (2026-10-22 23:11 BST)
+
+**R30-20261022-c27323 is Lean Verified** (L757, 23:06 BST): the verifier's own kernel replay accepts the module, 207
+constants, standard axioms, four headlines. The owner, here: "Local has completed the first submission and the module
+is lean verified." Next stage: Human Verified. NOW.md says so.
+
+**The four minutes, measured twice.**
+- *Local's measurement (L756) is the decisive one:* of the notebook's 201 s on the M5, two `TypeForm` cells placed
+  after `KernelCheck` cost 105 s, because the kernel replay drops LeanLink's elaboration state and each fresh `Open`
+  set rebuilds it. The fix is cell order: displays first, one `Open` set, `KernelCheck` last. Adopted: the white-end
+  template is reordered (essay.md re-assembled; the submitted notebook stays the one at 51436b05), and every later
+  essay is written in that order. Thank you, Local: measured, not guessed.
+- *My own attempt, a measured failure, retained:* I rewrote the finite part to visit only the states present (a loop
+  popping set bits with `Nat.log2` and `% 2^k`; 4.9× fewer state-evaluations in Python). In the kernel it is
+  **slower**: one `checkQ 10` takes 12 s against 6 s, so `Nat.log2` is not evaluated natively there and the
+  256-state scan was never the cost. Abandoned; the file stays in Cloud's scratch, not in the record.
+- *What does help in the module:* column c+1 is determined after **two** warm-up periods, not three, for every
+  q = 10..40 (Python, `min_n0`), and for all 128 words the minimal warm-up is 1–5 periods (96 of them 2) against
+  JenRoute's 2–6; with the fixed-point test replaced by a subset test `run S ⊆ S` (monotone images; one bitmask
+  `&&&`), and the ticks walk merged with it, the kernel steps for q = 10..25 fall from 1,480 to 888 (1.67×).
+
+**Plan for submissions 2a and 2b** (the 128 words the kit lacks, lengths 11–16 and 17–18; both modules already pass
+the checker, at 165/145 s and 172/154 s here): restructure the check as above, regenerate, re-check; one essay each
+in the fast order; Local builds and times; the owner reads and decides. Submission 1 is not resubmitted.

@@ -11,8 +11,9 @@
   partly, 17 absent (Theorem E and E″, G131–136, B1–B3, A⁗, Corollary F, the channel bound, the white-end family).
 - *Submission 1, SUBMITTED (2026-10-22 22:50 BST, L754):* the white end, 1 0^q for every q ≥ 10 (PROOFS.md entry 40),
   restated on the kit's definitions; the kit's checker passes here and on the M5. Built on the Mac by Local, read by the
-  owner, submitted on the owner's yes: **id R30-20261022-c27323**, status Lean Unverified, verifier queued. Local follows
-  the status; a verifier `error` on the four-minute limit means a maintainer's rerun, not a failure.
+  owner, submitted on the owner's yes: **id R30-20261022-c27323**, **LEAN VERIFIED at 23:06 BST** (the verifier's kernel replay, 207 constants, standard axioms,
+  four headlines; the automatic check had hit the four-minute clock twice and a maintainer reran it). Next stage: Human
+  Verified, a reviewer's read.
   *Dated note (Local, 2026-10-22 23:30 BST, L757): the automatic check timed out twice; the maintainer's rerun passed at
   23:06 BST. **Status now Lean Verified** (kernel replay, standard axioms, 4 headlines; kit cc1e0e0). Human Verified
   pending. Lesson for every essay: KernelCheck last (L756).*

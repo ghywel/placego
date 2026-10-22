@@ -94,8 +94,9 @@ rule30Submission = LeanImportString["@@LEAN_SOURCE@@", "ProjectDir" -> $Rule30Pr
 The headline theorem, as Lean prints it. For every `q ≥ 10`, the center column is not eventually the word `1 0^q`:
 
 ```wl
+opens = {"Ruliology.CellularAutomata.Rule30StripCertificates", "Ruliology.CellularAutomata.Rule30Realization", "Rule30Submission"};
 thm = rule30Submission["Rule30Submission.not_eventuallyWord_white_end"];
-thm["TypeForm", "Open" -> {"Ruliology.CellularAutomata.Rule30StripCertificates", "Rule30Submission"}]
+thm["TypeForm", "Open" -> opens]
 ```
 
 Its axioms are the three standard ones and nothing else:
@@ -104,40 +105,40 @@ Its axioms are the three standard ones and nothing else:
 thm["Axioms"]
 ```
 
-The kernel accepts every declaration of the module again. This is the replay the verifier runs:
-
-```wl
-thm["KernelCheck"]
-```
-
 The general statement, for every column of every configuration with a leftmost black cell. `Reads x0 c q a` says that column `c` of the evolution of `x0` reads `1 0^q` from time `a`, the `1` first:
 
 ```wl
-rule30Submission["Rule30Submission.white_end"]["TypeForm", "Open" -> {"Ruliology.CellularAutomata.Rule30Realization", "Rule30Submission"}]
+rule30Submission["Rule30Submission.white_end"]["TypeForm", "Open" -> opens]
 ```
 
 The same for finite nonzero configurations (a left bound and one black cell; the right side may be infinite), and for every column of the single seed:
 
 ```wl
-{rule30Submission["Rule30Submission.white_end_finite"]["TypeForm", "Open" -> {"Ruliology.CellularAutomata.Rule30Realization", "Rule30Submission"}], rule30Submission["Rule30Submission.white_end_seed"]["TypeForm", "Open" -> {"Ruliology.CellularAutomata.Rule30Realization", "Rule30Submission"}]}
+{rule30Submission["Rule30Submission.white_end_finite"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.white_end_seed"]["TypeForm", "Open" -> opens]}
 ```
 
 Jen's theorem with a clock, the lemma that finishes the argument:
 
 ```wl
-rule30Submission["Rule30Submission.theorem_A"]["TypeForm", "Open" -> {"Ruliology.CellularAutomata.Rule30Realization", "Rule30Submission"}]
+rule30Submission["Rule30Submission.theorem_A"]["TypeForm", "Open" -> opens]
 ```
 
 The control: the finite check fails at `q = 9`, so the checks are not vacuous:
 
 ```wl
-rule30Submission["Rule30Submission.control_q9"]["TypeForm", "Open" -> {"Rule30Submission"}]
+rule30Submission["Rule30Submission.control_q9"]["TypeForm", "Open" -> opens]
 ```
 
 The proof's structure, one level down from the headline:
 
 ```wl
 thm["CallGraph", "Depth" -> 1]
+```
+
+The kernel accepts every declaration of the module again. This is the replay the verifier runs; it comes last because it resets LeanLink's elaboration state, after which every fresh display costs a minute:
+
+```wl
+thm["KernelCheck"]
 ```
 
 ## What is not proved
