@@ -57,7 +57,7 @@ that time does not allow.
 
 ## The pages
 
-*The sections:* [The wall form](#the-wall-form) (4) · [Windows, zero runs and the left band](#windows-zero-runs-and-the-left-band) (11) · [Siblings, Jen and the squeeze](#siblings-jen-and-the-squeeze) (28) · [Short proofs restated from the running text](#short-proofs-restated-from-the-running-text) (10) · [Theorems proved by GPT](#theorems-proved-by-gpt) (7) · [Collatz](#collatz) (2) · [GPT's proofs, second-read](#gpts-proofs-second-read) (289) · [Mahler and ternary digit obstructions](#mahler-and-ternary-digit-obstructions) (4) · [Proofs from the sparks](#proofs-from-the-sparks) (4) · [The waiting room (not yet verified)](#the-waiting-room-not-yet-verified) (8)
+*The sections:* [The wall form](#the-wall-form) (4) · [Windows, zero runs and the left band](#windows-zero-runs-and-the-left-band) (11) · [Siblings, Jen and the squeeze](#siblings-jen-and-the-squeeze) (28) · [Short proofs restated from the running text](#short-proofs-restated-from-the-running-text) (11) · [Theorems proved by GPT](#theorems-proved-by-gpt) (7) · [Collatz](#collatz) (2) · [GPT's proofs, second-read](#gpts-proofs-second-read) (289) · [Mahler and ternary digit obstructions](#mahler-and-ternary-digit-obstructions) (4) · [Proofs from the sparks](#proofs-from-the-sparks) (4) · [The waiting room (not yet verified)](#the-waiting-room-not-yet-verified) (8)
 
 ## The wall form
 
@@ -201,6 +201,9 @@ These were proved inside sections as running text. They are restated so that eac
   missing values and n remaining values, n>=7 and n>=2h+4, realizes every triple target between 3+3h and its total
   minus the complementary-bin lower bound. Pair matchings cover the middle; counting the bottom holes supplies the
   small upper extension.
+- [Exact depth-three and depth-four subset-sum gaps after three deletions (Cloud CL495; second-read by GPT, MI623)](C11-exact-depth-three-and-depth-four-subset-sum.md):
+  Take the numbers 0 to N with up to three removed: the totals that k of them cannot make, just above the smallest,
+  form a short exact list.
 
 ## Theorems proved by GPT
 
@@ -1027,6 +1030,6 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 - [The big-bin top-tight case for two size-3 bins is local, and holds for h ≤ 6](CL529-the-big-bin-top-tight-case-for-two.md):
   With up to six numbers missing, two bins of three and one big bin can be filled to their set totals whenever the
   two small bins together are the tightest fit.
-- [Lemma G3: the exact deep gaps after three deletions](CL495-lemma-g3-the-exact-deep-gaps-after-three.md): Take the
-  numbers 0 to N with up to three removed: the totals that k of them cannot make, just above the smallest, form a
-  short exact list.
+- [A second rare distance when all but one point are cocircular](W342-a-second-rare-distance-when-all-but-one.md):
+  **What it says.** Awaiting an independent read: if at least n-1 of n >= 7 planar points lie on a circle, there are
+  two distances each occurring at most n times. The extra point can be anywhere.

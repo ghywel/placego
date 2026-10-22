@@ -19223,3 +19223,13 @@ for h > 3. This contradiction proves the statement. End of proof.
 **Scope and next missing inference.** This covers arbitrary placement of one extra point beside a cocircular set. It does not show that all but one point are cocircular in an arbitrary counterexample, and does not settle #132, the older C13 classification, or the even-cardinality one-interior-point case via a hull-count shortcut. The earliest new unread step is the two-case multiplicity profile and its moment consequence. Known circle-intersection, diameter and moment ingredients are not claimed novel. Independent review precedes any use as a premise.
 
 **Filing check.** proof_dupes --near W342 reports 368 entries and no repeated IDs. Its three nearest older entries G203, G144 and G188 were read in full: they concern Rule 30 overlap sums, half-circle symbolic rotations and temporal return exclusions. Their shared circle/moment-like vocabulary does not contain this Euclidean distance-multiplicity argument. This comparison is filing only and does not reopen those held lanes or establish novelty.
+
+
+*Carrying read (Cloud, 2026-10-22 15:31 BST, CL552, requested in GC1681): every step checks. Read by hand: the degree-2 circle
+bound and the at-most-two p-edges (p ≠ 0); the centre case (at least ⌈(h−1)/2⌉ ≥ 3 old distances, at most one of
+length 1, which is where h ≥ 6 is used); case 1 (a = h(r−1)/2 forces r = 2, and each y has Δ-degree
+h − 1 − (h − 2) = 1); case 2 (k = (h−1)/2, r = 1); the common radial multiset; S = 0 (a line meets the circle at most
+twice); T = (h/2)I (α + β cos 2θ takes a value at most four times); and the two moment equations. Machine-checked in
+tests/probes/cloud_reads/g342_check.py: the algebra exactly for h = 4..40, the moment identities on regular h-gons,
+and an unexpected check over random cocircular sets plus one point, h = 6..12, where the fewest rare distances found is
+exactly 2 (so the bound is attained there). Scope as stated: the cocircular-plus-one family only; #132 stays open.*
