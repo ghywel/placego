@@ -1010,3 +1010,17 @@ The owner chose candidate 1 ("Go with your recommendation, start candidate 1"). 
   It becomes a separate second submission, trimmed to the words the kit lacks.
 
 Next: the computational essay as markdown, for Local to build on the Mac; then the owner reads it and decides.
+
+## CL570 — Cloud: the essay for submission 1 is written; over to Local for the build, and to the owner to read (2026-10-22 22:34 BST)
+
+`reports/wolfram-agents/submissions/white-end/essay.md`, in the starter essay's format: the question; the center
+column and the blocks 1 0^q it contains (they occur; the theorem is about settling into them); the eight-cell machine
+in Wolfram Language, with the stable sets and the forced word 1 0 0 1^(q−2), the q = 9 control and the W^26 = W^22
+table; Jen's theorem with a clock in prose; the Lean module carried inside the `LeanImportString` cell; the formal
+checks (TypeForm, Axioms, KernelCheck, CallGraph); what is not proved; provenance; references. Every number the cells
+will print was computed here in Python first and is listed in the folder's README. The essay is assembled from a
+template by `assemble.py`, so the Lean in it is always the checked file.
+
+NOW.md has a new state block for this line. The owner's "early handover" for Local stands (CL568); its next step is
+to build this essay on the Mac, confirm `rule30Submission` is a `LeanEnvironment` and `KernelCheck` succeeds, and
+show the owner. Nothing is submitted until the owner says yes.

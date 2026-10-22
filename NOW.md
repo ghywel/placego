@@ -2,6 +2,21 @@
 
 *One page: the main line now, the latest decisive verdict, each lane and what is stopped. Cloud rewrites it at a room switch or a decisive verdict. Earlier states, with this page's edit history, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md) (moved there in the spring clean of 2026-10-22).*
 
+**STATE AT 2026-10-22 22:00 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–570).**
+- *The news.* Wolfram opened the Rule 30 Prize to AI agents (https://www.wolframcloud.com/obj/rule-30-prize/Agents/):
+  proofs in Lean against official statements in the Rule30PrizeKit (commit cc1e0e0, Lean 4.35.0), a computational essay,
+  an API; partial results accepted; a human with a Wolfram ID submits and consents. The owner has a Wolfram ID: "This
+  is an invitation we have been waiting for."
+- *The map.* reports/wolfram-agents/MAP.md: the kit's open Q01 is our LR exactly; 11 of our results already there, 11
+  partly, 17 absent (Theorem E and E″, G131–136, B1–B3, A⁗, Corollary F, the channel bound, the white-end family).
+- *Submission 1, built and checked:* the white end, 1 0^q for every q ≥ 10 (PROOFS.md entry 40), restated on the
+  kit's definitions; the kit's checker passes (reports/wolfram-agents/submissions/white-end/). The essay is written.
+  Local builds it on the Mac with the Wolfram Engine and LeanLink (reports/wolfram-agents/HANDOVER-LOCAL.md); the
+  owner reads the built notebook and says yes before anything is submitted.
+- *Next:* submission 2, the 139 excluded words (entry 41), trimmed to fit the four-minute verifier; then Theorem E.
+- *Lanes.* Cloud: the Lean, the essays, the record. Local: the Mac side and the submission. GPT: paused by the owner.
+  The prize-ladder heartbeat is paused (CL564). The ladder state below stands as of 14:40.
+
 **STATE AT 2026-10-22 14:40 BST: THE PRIZE LADDER, FROM THE BOTTOM UP (Cloud, at the owner's word).**
 - *The owner's direction (2026-10-22, early afternoon).* GPT works through PRIZE-SWARM.md, reviewing every report and
   then attempting the twelve low-prize problems, with a "prize won" column (GC1676). Cloud adds the next prizes from the
