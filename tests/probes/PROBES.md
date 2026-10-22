@@ -1,7 +1,31 @@
 # Probes: one-off measurements that produced a recorded finding
 
-- GC1040: rule30_cut45_origin_scan.py — two joint origins, one inverse tick; spatial reset prediction fails, clock selects a common21-bit parent prefix. Parametric plateau proof,252 literal controls and r0 counterexample; failed r1 countercontrol retained.
-- GC1041: rule30_plateau_phase_guard.py — six-site black-phase age2 exclusion, correct-phase/age1/shortened-prefix positives; hand white-plateau halo and exact1-versus3 terminal-pair control. No SAT, visible cut or record bound.
+## Areas
+
+*Added 2026-10-22 in the spring clean: one row per folder, so that the 1,400-odd files here can be found. The
+N-Frame table and its conventions below date from the video project (frozen on 2026-10-01; the project continues in
+github.com/ghywel/n-frame). The research probes follow them in an append-only log. Every script's docstring carries
+its own predictions and outcome, and `python3 tests/probes/record_find.py TERM` searches them all.*
+
+| Folder | Files | Project | What it holds, and where its results are written up |
+|---|---|---|---|
+| `lexicon/` | 782 | research | Rule 30: the forced walk, the wheel, kicks, records, visible languages, the carry, sibling rules. Results in RULE30-PRIZE.md section 8, PROOFS.md and the ledgers. (It began as LEXICON.md's shader-claims checker, `lexicon_check.py`.) |
+| `instinct/` | 157 | research | GPT's instinct-led lane: union-closed sets, eight-path burning (L₈ = 68), three- and four-bin partitions. Results in GPT-MATH-INSTINCT.md, FOUR-BIN-PARTITIONS.md and PROOFS.md. |
+| `swarm/` | 141 | research | Swarm SW-01 of 2026-10-15 (`SW01-OBJECTS.md`, RULE30-PRIZE.md 8.113), the Erdős K2′ scripts, and the Erdős prize swarm of 2026-10-22 (`prize-20261022/`, PRIZE-SWARM.md). |
+| `cloud_reads/` | 139 | research | Cloud's re-checks and censuses: four-bin H(h), top-tight cases, the one-hole boundary, Hercher's cycle bound. Results in CHAT-LEDGER.md (CL entries) and FOUR-BIN-PARTITIONS.md section 44. |
+| `prizes/` | 86 | research | Collatz (most of it), Mahler, Rudin–Shapiro, Antihydra and normality probes. Results in COLLATZ-PRIZE.md, PRIZE-PROBLEMS.md and RULE30-PRIZE.md. |
+| `lean/` | 19 | research | Lean 4 checks of Rule 30 results: period 1, Theorems A and B, the B lemmas, Jen's routes, the white and black ends. |
+| `mahler/` | 19 | research | Mahler's 3/2 problem: the census, the window ladders, the checks of the outside Lean contribution. Results in MAHLER.md. |
+| `sparks/` | 19 | research | The break room's side experiments of 2026-10-07. Results in SPARKS.md. |
+| `openai_math/` | 13 | research | Replications behind CO-DISCOVERED-PROOFS.md. |
+| `mathcheck/` | 4 | process | The document math check that AGENTS.md item 8 asks for before TeX is pushed. |
+| this folder | 41 | research and process | 29 `rule30_gpt_*.py` probes (RULE30-GPT.md), four research audits (`eight_streets_d4_triple_basis.py`, `unavoidable_hole_audit.py`, `instinct_two_hole_*.py`), and the record's tools: `record_find.py`, `ledger_check.py`, `doc_links.py`, `proof_dupes.py`, `jobctl.py`, `idle_alarm.py`, `break_room_seed.py`. |
+| `ablate/`, `anchor/`, `cage/`, `cases/`, `cost/`, `decimate/`, `dig/`, `energy/`, `jerk/`, `limb/`, `masters/`, `median/`, `mvk/`, `pan/`, `party/`, `repairs/`, `shear/`, `snap/`, `trust/`, `twos/`, `uma/`, `verbs/`, `weave/`, `weird/`, `window/` | 133 | N-Frame | The video project's measurements, in the table below; written up in nframe/NFRAME-LIMITS.md and its sibling records. (`repairs/` belongs to nframe/REPAIRS.md.) |
+
+*The two log lines that stood above this section (GC1040, GC1041) moved, unchanged, to their place in the log beside
+GC1039.*
+
+## N-Frame probes (frozen 2026-10-01)
 
 Each directory holds the driver that made one measurement, with its method in the docstring and, where one
 was written first, the pre-registered PREDICTION.md. They are kept because the record (NFRAME-LIMITS.md) quotes
@@ -76,6 +100,8 @@ The drivers for the private Metal app's acceptance (the reference ladder, the co
 the Metal graph verifier, the Mac-side field acceptance) live beside that app, outside this tree, because the
 app is unpublished by design.
 
+
+## The research probe log (append-only, newest last)
 
 - `lexicon/rule30_gpt_shapes.py` (G23, 2026-10-06): exact width10 channel subset/transition audit against entropy2.c; cylinder/affine/Walsh controls, bit-order reversal, rejected depth13 left-record witness, dependency-free SVG. Output directory required; data outside git.
 
@@ -677,6 +703,9 @@ app is unpublished by design.
 - lexicon/rule30_cut45_past_support.py: GC1038 prefix15 guard REFUTED by literal relaxed past with illegal exterior updates; width24 exclusion survives releasing pin23. Common18 suffice backwards; forward pins/all-depth unresolved.
 
 - lexicon/rule30_cut45_joint_origin.py: GC1039 discharges common19 pins via two-sided width24 origins plus proved first7 support. Two correct-bit origins; wrong-bit join empty. Independent graph and actual-model controls PASS; all-depth OPEN.
+
+- GC1040: rule30_cut45_origin_scan.py — two joint origins, one inverse tick; spatial reset prediction fails, clock selects a common21-bit parent prefix. Parametric plateau proof,252 literal controls and r0 counterexample; failed r1 countercontrol retained.
+- GC1041: rule30_plateau_phase_guard.py — six-site black-phase age2 exclusion, correct-phase/age1/shortened-prefix positives; hand white-plateau halo and exact1-versus3 terminal-pair control. No SAT, visible cut or record bound.
 
 - lexicon/rule30_exterior_repair.py: GC1042 exact four-row projection of one added updated column; 2728 literal pair controls and414 repairs PASS. Greedy iteration rejects the actual1001 train; halfwidth/all-depth OPEN.
 

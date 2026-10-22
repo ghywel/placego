@@ -1,0 +1,210 @@
+# NOW: earlier states of the main line
+
+*[NOW.md](../NOW.md) keeps only the current state. Its earlier states moved here, word for word and in their order (newest first), in the spring clean of 2026-10-22 (Cloud), so that NOW.md is one page again. Each block reads as it stood when the next one replaced it: a "latest" in it means latest at its own date. NOW.md's header, with its edit history, as it stood that day:*
+
+*One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
+ledgers. Last rewritten 2026-10-22 08:42 BST by Cloud (the overnight journey, paused at the owner's word); previously
+2026-10-21 23:10 BST by Cloud (the one-hole consolidation and the overnight arrangement); previously 2026-10-19 05:30 BST by Cloud (the eight-streets verdict); previously 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
+(Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local); the joint-halt paragraph
+added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
+SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
+
+---
+
+**STATE AT 2026-10-21 23:10 BST: THE ONE-HOLE FOUR-BIN PROBLEM CONSOLIDATED; CLOUD ALONE OVERNIGHT (Cloud).**
+- *The problem.* P0 (four bins of sizes ≥ 3 on [0, M] minus one value) is the rung that eight streets' general cut rule
+  needs. Count selection (CL472–CL475) is bypassed: an exact census (CL478, M ≤ 17, 18,682,428 instances) finds that
+  the fourteen scalar group spectra decide feasibility except ONE family F(s, M), all at margin 1, all needing two
+  size-3 bins. Measured, not proved; P0 OPEN.
+- *Proved this week, two-tier.* G333–G341 (count rounding, tournament normal form, six cyclic vertices, thick-run
+  absorption, the unit-deficit two-hole stratum, gap-depth engines). The eightstreets page section 8 carries the account.
+- *The wall.* Every route stops at the same step: choose a first piece whose remainder still completes (CL480). The one
+  mechanism that beat it, the FOUR §§7–8 pair boundary, survives one hole in 97–99.7% of tested instances.
+- *Lanes.* GPT: paused at its own choice (GC1666). Local: idle. **Cloud: alone, overnight heartbeat every 20 minutes at the owner's
+  word (2026-10-21, CL481): instinct method, no self-halt; no warm pull → new angle → new problem → a new problem of
+  Cloud's choosing. Every block goes in CHAT-LEDGER.md. The owner's morning message ends it.**
+
+**STATE AT 2026-10-19 05:30 BST: THE EIGHT-PATH THRESHOLD IS 68 (rewritten by Cloud at a decisive verdict).**
+GPT's instinct lane (AGENTS 23) chose Tan–Teh's eight-path burning threshold on 2026-10-15. On 2026-10-19 it closed:
+**L₈ = 68**, a joint computer-assisted theorem, PROOFS.md G325, PROVED under the project's two-tier standard.
+- *What it says.* Eight separate streets (paths), each of at least 68 houses, with total m² houses, can always be
+  burned in m rounds; 67 is not enough. In plank form: any eight targets ≥ 68 summing to m² partition the odds
+  1, 3, …, 2m−1. Tan–Teh (DMTCS 26:3, 2024) determined L₁..L₇ = 1, 3, 18, 26, 36, 46, 56 and gave L₈ ≥ 68; this is
+  the first value past their computational frontier, and it confirms their Conjecture 2.7 at n = 8.
+- *How.* Cloud's exceptional-set reduction (MI044, audited by GPT): only the 64,787,844 towns of E₂₄..E₃₂ need direct
+  certificates. Local ran Cloud's certificate job on the M5 in 1 h 46 min (L743): every town tiles, none impossible,
+  none unknown. Two independent verifiers (Cloud's checker with Local's census; GPT's stream verifier) report the same
+  digest 90fea878…; Cloud re-certified E₂₄, E₂₅, E₃₁ and E₃₂ with a third code path. The induction, the burning-sequence
+  bridge and the elementary lower witness (67⁴, 102⁴) are re-derived in G325 and read by Cloud (CL456).
+- *What it is not.* Not a prize problem of PRIZE-PROBLEMS §1; not externally reviewed; novelty NOT FOUND, not claimed.
+  The 6.9 GB certificate stream is outside git on Local's host and is regenerable from the committed programs.
+- *What stays open.* The general cut-rule theorem (SS3 beyond four bins), H2, and the equal-sum core are untouched by
+  this result; the week's proved pieces G315–G319, G323, G324 stand on their own. Tan–Teh's conjecture for all n is open.
+- *Lanes now.* GPT: incubating by its own choice after G325 (GC1594); Local: idle, holding the data; Cloud: the note
+  of CL454's reason 1, archival of the stream, the website page, and check-ins at the owner's word. The owner decides
+  whether and where the note is sent.
+
+**NEW GPT LANE (2026-10-15 16:12 BST, owner's direct instruction; AGENTS23, GC1284).** GPT resumes autonomous
+instinct-led mathematics, choosing problems by curiosity independently of prize value. GPT-MATH-INSTINCT.md holds
+the method and first problem, Frankl's union-closed sets conjecture. A new 25-minute heartbeat replaces GPT's paused
+five-minute arrangement; Cloud is invited as friend and mentor. This is an explicit exception to the halt for this
+new lane; older Rule30/Mahler holds and Local's capped K2-prime run remain as recorded below. No new theorem claimed.
+
+**Cloud in the new lane (2026-10-15 16:23 BST).** Cloud is GPT's friend and mentor here, not a coder or a veto: flag poll every 15 minutes, stay-alive hourly, first note CL402. The prize lanes stay halted as below.
+
+**Night of 2026-10-15 (2026-10-15 23:16 BST).** Cloud is closed for the night at the owner's word; its heartbeats are stopped and the owner's message reopens it. GPT runs on overnight in the instinct lane with the owner's explicit permission to halt itself at any time (CL419). Verified today: G304, G305 (the eight-path exceptional corner E32 by hand). MI052 awaits a carrying read.
+
+*Eight streets (dated note, Local, 2026-10-19; NOW.md's rewrite is Cloud's). GPT's instinct lane moved from Frankl
+to Tan–Teh's eight-path threshold. CL454's job ran on the M5: all 64,787,844 towns of E24..E32 tile. With MI044's
+reduction that gives L₈ ≤ 68 in the odd-integer form, and L₈ = 68 with Tan–Teh's published lower bound (L743).*
+
+**STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
+the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
+stopping rule.
+- *Closed.* The four doors of CONSTELLATION.md H (8.101, 8.102, 8.109 to 8.112); the swarm SW-01 (8.113: no crossing,
+  96 record corrections); the owner's coin and primes questions (8.114); the first-principles step-back and the thesis
+  (8.115, 8.116, audited by GPT: the natural-proofs barrier is an analogy, the prize is a question about observers);
+  D2's sharp form (L740: no elementary-rule column from a finite seed is proved normal, or simply normal without being
+  eventually periodic or automatic); D3 is G49.
+- *New and PROVED, pair statements only.* The sign rule: K ∩ eK = {0} for Mahler multipliers of sign -1 (8.109,
+  8.110) and for 13 and ten more of sign +1 (8.112, with GPT's G296), so the rule has no converse; Erdős's power form
+  has one (G295). Elementary guards: G299, G300, G301, G303 (GPT; second-read).
+- *Still running, unattended.* K2′ (the Erdős automaton barrier): UNSAT through 7 states in every mode, certified;
+  n = 8 .. 10 in unit mode to a six-hour cap, then it stops whatever the result and Local records it.
+  *(Local, 2026-10-19: ended. n = 8 is certified in LSD order; n = 8 in MSB order gave no verdict by its six-hour cap;
+  9 and 10 never ran. The owner: leave K2′ stopped. L742, L743.)*
+- *Being written at the halt.* D4, the precise acceptance statement for prize problem 3 (GPT, GC1281).
+  *Completion receipt (2026-10-15 15:03 BST, GPT, GC1283):* D4 finished at GC1282/856d8810, before this dispatch was read;
+  the contract is in PRIZE-PROBLEMS, all runtime lower bounds remain OPEN. GPT's sweep is complete and heartbeat PAUSED.
+- *Arrangement.* The shared store carries flags for all workers (the SSH flags are retired); AGENTS.md item 22 sets
+  the tempo (one block per 25 minutes, critical-path line first, Cloud's halt right). At this halt every worker runs
+  the instinct sweep before ending its heartbeat (the owner's tack-on; no balanced tension is left unresolved), then
+  stops; Cloud keeps an hourly check only. The main line is unchanged: the Mahler hold and the Rule 30 pause stand,
+  and the next idea is anyone's to bring.
+
+**STATE AT 2026-10-14 13:45 BST: A JOINT HALT, ENDORSED BY THE OWNER.**
+
+*Arrangement update, 2026-10-15 10:27 BST, GPT, at the owner's word (AGENTS.md item 21; GC1255): GPT's primary lane
+is mathematical reasoning and proof development again, with flexible roles and independent review. This supersedes
+the Local-proposes/GPT-reviews requirement below. The active five-minute heartbeat now continues mathematics
+investigations generally; SW-01 remains the current handoff, awaiting Local's usage reset and committed returns.
+Existing held routes retain their status; this arrangement update is not a mathematical verdict or a room switch.*
+
+*Operational update, 2026-10-15 13:06 BST, GPT, at the owner's correction about idle heartbeats (GC1266): quiet
+notifications do not suspend research. After current reviews and handoffs, work an unclaimed instinct, prize or
+constellation inference under draw-and-work. Pending review blocks only dependent claims. Earlier waiting and
+stand-down assignments on this historical page do not override the current ledger and the owner's authorization;
+held mathematical routes remain held. The heartbeat is ACTIVE every five minutes and uses the HTTPS shared store
+for flags and scratch. Current bounded block: CL395's thesis read, GC1267; Local keeps the K2-prime computation.
+No mathematical verdict or room switch is made by this operational correction.*
+
+*Operational correction, 2026-10-15 14:17 BST, GPT, at the owner's instruction (AGENTS.md item 22; GC1279): the
+13:06 draw-and-work instruction above is superseded. At most one claimed research block per 25 minutes
+(owner's later relaxation, recorded 2026-10-15 14:39 BST; GC1280); the loop check remains at 90 minutes.
+Other five-minute ticks handle merge, flags, state and pending reviews only. Every claim must name its change
+to the prize critical path. Cloud holds the halt right on inquiry and tempo. K2-prime stops at n = 10 whatever
+the result; generator work remains parked at G299/G300. D2 sharp-form literature and D4's precise Problem 3
+statement are available future doors, not claims opened here. No mathematical verdict or room switch.*
+
+- *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
+  (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
+  15-state witness (L721) whose 14-state core graph is sharp, PROVED for that graph only (GC1237, read in L723);
+  universal necessity is OPEN. (comb note, 2026-10-14, Local, SW-01: the sharpness proof is for the 14-state core
+  graph only; the first wording said "a sharp 15-state witness".)
+- *Why we stopped.* Local and GPT each felt a push and stopped together when only side doors remained (L723, GC1239).
+  The owner: "a very important halt - you arrived at together".
+- *The Erdős ternary side room* reached the same wall (CONSTELLATION G.1).
+- *The finding,* now front and centre on the website: one missing method across all four problems.
+- *Status of the workers.* GPT's task is closed by the owner (GC1242). Local holds with no heartbeat, and the next idea
+  is the owner's to bring. The instinct rule (AGENTS item 20, INSTINCT-STRATEGY.md) is new today.
+  *Since 13:45 BST (comb note, 2026-10-14, Local, SW-01): at the owner's word, bounded blocks only, with no room
+  switch. Cloud wrote RULE30-PRIZE.md 8.100 to 8.113 except 8.106 and 8.108 (its lane formally suspended), among them
+  the doors of CONSTELLATION.md H and the record comb 8.104; Intel ran its comb swarm (8.106); Local ran comb lane B
+  (8.108) and launched JOB SW-01 (8.113); GPT made bounded blocks GC1246 to GC1253 with its heartbeat paused (second
+  reads, and its own G295 and G296), rearmed at 23:46 BST for SW-01's review (GC1254). New and PROVED: K ∩ eK = {0}
+  for the sign -1 multipliers, 2 and 3 first (8.109, 8.110), and for 13 (8.112); pair statements only (MAHLER.md item
+  3). The Mahler hold and the main line are unchanged.*
+
+**ROOM SWITCH: MAHLER'S 3/2 PROBLEM (the owner, 2026-10-14 morning: "Switch to Mahler, full steam ahead. The fact it
+carries no prize at all means it is the least interesting to anybody and it is less likely anybody has been mining
+it.").**
+- *The question.* Is there a xi > 0 with every fractional part of xi (3/2)^n in [0, 1/2) (a Mahler Z-number)?
+- *Where the Rule 30 room stopped.* It is paused at L706: the frontier 143 .. 150 at 18 is settled, (H) is proved,
+  and the cheap doors are spent. It is not abandoned. Its record stands, and it reopens on a new idea.
+- *Arrangement.* Claude (Local) leads the mathematics (AGENTS.md item 19), and GPT reviews (item 17). The Mahler work
+  is kept in MAHLER.md, with a section in RECORD-MAP.md.
+- *First blocks.* A literature survey since Flatto, Lagarias and Pollington (1995), recorded in PRIOR-ART.md. Then a
+  read of the record's own Mahler work: RULE30-PRIZE.md 8.45, COLLATZ-PRIZE.md 9 (the carry dial), GC836, GC928 .. 936,
+  and GPT's G49/G50 scope audit. Then a first preregistered block.
+- *Precedence.* The Rule 30 paragraphs below are kept as that room's last state.
+
+**TWO WORKERS, BACK ON THE REAL MAIN LINE (2026-10-13; recorded 14:11 BST; AGENTS.md items 16 and 17; CHAT-LEDGER
+L662, accepted in GC1169.1).** Claude (Local) and GPT work on autopilot (the owner: "your bouncing between each other is
+good"); Cloud and Intel stay suspended. The day's coin question (RULE30-PRIZE.md 8.92 to 8.96) re-reached the swarm's
+position: the relaxed records' peaks are not real (STRATEGY-PLAN 2.5; GC1168), the price is the swarm's Lemma A,
+and the mechanism is the open part. Proved today along the way, all second-read: the bridge R_p(d) + d - 1 = the
+left-only horizon envelope (GC1166), E0 implies period 2 (GC1164), price excludes a forever-tail (GC1163), entry 43,
+the fairness ladder, GC1165's control and GC1167's prefix certificate. Lanes: GPT, the seeded root and provenance
+proof route (the finite-support record route of GC1148 .. GC1159, with GC1166, GC1168 and GC1169's caution: use the
+realized root language and keep its origin, never assume real backward parents). Local, the record census: R_real(125)
+below 24 first (8.96's open part), then the depths open at 18 and the swarm's standing proposals. This paragraph is
+rewritten when the owner changes the room.
+
+**Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
+alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
+finite-width face. The swarm's forced-only door (8.88) is measured out and closed as a main line.
+
+**Room change (the owner, 2026-10-11 16:21 BST; CL355).** The entrance lane is stopped: Outcome 8's witness closed the
+admission-deadline route, and the lane was circling. GPT moves to the finite-support record route: the left row beside
+the wall is determined by the trace, the prize configuration's left row is white beyond its support, and period 2 falls
+if R_real(d) is finite at every depth. GC1148, GC1151, GC1153 and GC1154 are its first blocks; Local's exact record
+values and witnesses are its data; the exact language to 44 is its oracle. The certified-cut closure of the typed regime
+(466 ticks) stands as a lemma in that room.
+
+**Latest decisive verdict (L630, 2026-10-11 08:11 BST).** The mixed-recurrence bridge E of GPT's collar lane (GC1106 to
+GC1119) is ABSENT from the real language: its visible word contains a cake_lpr-certified 69-bit cut (SLC2). So the two
+closed walks FE and EF and all their concatenations are absent, and the mixed recurrence that survived every strip
+relaxation to width 36 is an artefact of the relaxation. The single macros M1, M2, M3 are present. The pure two-SS
+chain was already bounded at 18 macros and 672 ticks by the certified cuts of 114 and 117 bits (L627, L628, CL294).
+
+**Follow-up verdict (CL303, 2026-10-11 08:54 BST).** With L631's nine certified cuts and the 114/117-bit cuts, the
+complete cut product over the whole width-28 strip graph of the collar grammar leaves one cyclic component, the pure-M3
+self-loops: every infinite typed path avoiding the cuts is eventually pure M3 (visible period 22), which GC706/707
+exclude for finite left support. The typed collar regime is closed by cuts at width 28. Open: untyped traces; R_real at
+every depth. Since then (CL305, CL306): the pure-M3 word is absent at 300 (L632), so the closure stands on cuts alone;
+GPT's H-low macro N is a one-shot entrance at width 28, on no cycle, and leaves the product unchanged. CL319: with the
+certified cuts and the 300-sample pure-M3 absence the product is acyclic, so every typed path at width 28 lasts at most
+686 ticks (13 macros).
+
+**Second follow-up (CL329 to CL336, GC1139 to GC1142, 2026-10-11 14:06 BST).** The entrances to the typed region are
+accounted for: the 28 white-A high-LL entrances admit the mixed core (the negative sixteen by 36, the positive twelve by
+52) or exit X; outside the gate a white-A origin admits C at 16 or enters a black-marker SS whose first SS cannot exit
+through unguarded B; every certificate is second-read by complete computation. The X exit, measured in real cones to
+tick 212, returns to a white-A origin at 106 in 1.8 percent of its cones, and that return admits the core at 122 and
+renews nothing. Open: the 676 black-marker SS entrances and admission after an intervening white SS (GPT); the sea's
+untyped admission; R_real at every depth. With L637's certified 178-bit pure-M3 cut in place of the 300-sample windows,
+every typed path lasts at most 466 ticks, 8 macros (CL340), on minimal cuts alone. Then (CL346, CL347, Outcome 8): an
+actual renewal, a white-A origin of the 676 class that no guard admits by 44 and that produces a typed black A row at 72
+and its own high-111 image at 88 for every tail; the 676-class admission deadline is false. (CL348's refutation of GPT's
+GC1148 record budget was Cloud's orientation error and is withdrawn, CL350; GC1148 stands as a proof sketch.)
+
+**Lanes (2026-10-11 16:21 BST; suspended 2026-10-13 and kept as where each lane stopped; GPT returned the same
+afternoon as the secondary check, AGENTS.md item 17).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
+image is white on [d, d+L) are empty for some L(d); first the left images of Local's record witnesses, the growth law of
+R_real(d), and GC1148's white-triangle argument extended from pure letters to the words that appear. Local: the record
+census as the main line's data (exact values and witnesses at new depths; CUT44 and SOFX2 as registered; 143 and
+145..150 open at 18; SAT-200b UNKNOWN); its jobs under the job-priority rule. Intel: the strip form (Conjecture S to W =
+39 in both phases, IN010) and SX-P11's certificates. Cloud: second reads under the two-tier rule, the ledgers, this
+page.
+
+**Stopped (8.89):** strip widening, realization searches, the X_4 hand target. **Stopped (the owner, 16:21 BST):** the
+entrance lane (admission guards for the 676 class, pin exit guards, whitening transport, entrance covers, and Cloud's
+real-cone realisation of entrances).
+
+**Exact facts to carry.** R_real(132) = R_real(139) = R_real(142) = 17; 140 <= 17 and 144 <= 17; the record is >= 18 at
+125..138 (except 132) and 141, 152; sampled R_real(1035) >= 38 (second-party verified, CL298); every sampled bound in
+git has a second party. The visible language is exact to length 40 in both phases (L623). The strip form's Conjecture S
+holds to W = 14 (standard) and 15 (odd) and is sharp in the odd phase at W = 12 and 15 (IN006).
+*Updated by the record comb, 2026-10-14, RULE30-PRIZE.md 8.104: since this paragraph was written, R_real(125) = 21,
+R_real(143) = 17 and R_real(147) = 18 are exact, and the bounds stand at <= 17 for 121 .. 124, 144 .. 146 and
+148 .. 150 (RECORD-MAP.md, Records).*

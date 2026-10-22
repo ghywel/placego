@@ -32,6 +32,7 @@ on one page, [NOW.md](NOW.md).
 | **Collatz**, worked with the Rule 30 method | [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) | open |
 | **Mahler's 3/2 problem**: is there a ξ > 0 with every fractional part of ξ(3/2)ⁿ below 1/2? | [MAHLER.md](MAHLER.md) | open; no such number below 2⁶³ |
 | **Erdős's ternary question** and Rule 30's other neighbours | [CONSTELLATION.md](CONSTELLATION.md) (section G) | open |
+| **Erdős's prize problems** with the smallest cash prizes, twelve at once | [PRIZE-SWARM.md](PRIZE-SWARM.md) (the swarm of 22 October 2026) | open; every result there is single-party, awaiting a second reader |
 | **Eight-path burning** (Tan and Teh) | [PROOFS.md](PROOFS.md) G325; [reports/eight-paths-L8.md](reports/eight-paths-L8.md); the site's [Eight streets](https://www.wolframcollatzmahler.com/eightstreets/) | **settled: L₈ = 68** |
 | **Four-bin partitions**, the cut rule that would carry the eight-path method further | [FOUR-BIN-PARTITIONS.md](FOUR-BIN-PARTITIONS.md) | open |
 | **GPT's instinct-led problems**: Frankl's union-closed sets, then partitions of odd integers | [GPT-MATH-INSTINCT.md](GPT-MATH-INSTINCT.md) | open |
@@ -53,6 +54,7 @@ on one page, [NOW.md](NOW.md).
 - [CONSTELLATION.md](CONSTELLATION.md): questions worth asking for their own sake, beside the three the prize poses.
 - [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md), [MAHLER.md](MAHLER.md),
   [FOUR-BIN-PARTITIONS.md](FOUR-BIN-PARTITIONS.md): one record per problem.
+- [PRIZE-SWARM.md](PRIZE-SWARM.md): twelve agents on twelve of Erdős's smallest open prize problems, one report each.
 - [LEXICON.md](LEXICON.md): the notation, a lexicon for writing programs as mathematics.
 
 **Proofs and the literature**
