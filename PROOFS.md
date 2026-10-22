@@ -17,6 +17,24 @@ in plain words, built from this file by `python3 proofs/build.py`. A new entry n
 [proofs/summaries.md](proofs/summaries.md); the build names any that are missing and writes nothing until they
 exist (Cloud, 2026-10-06, at the owner's request).*
 
+## Contents
+
+*Added 2026-10-22 in the spring clean. "Proofs" counts the entries that `proofs/build.py` gives a page of their own, on that day.*
+
+| Section | Proofs |
+|---|---|
+| [Generality index](#generality-index-locals-audit-2026-10-06-clouds-cl002-split) |  |
+| [A. The wall form](#a-the-wall-form) | 4 |
+| [B. Windows, zero runs and the left band](#b-windows-zero-runs-and-the-left-band) | 11 |
+| [B′. Siblings, Jen, the squeeze and one certified computation](#b-siblings-jen-the-squeeze-and-one-certified-computation) | 28 |
+| [C. Short proofs restated from the running text](#c-short-proofs-recorded-without-a-theorem-heading-restated-here-with-their-proofs) | 10 |
+| [E. Theorems proved by GPT (statements; proofs in RULE30-GPT.md)](#e-theorems-proved-by-gpt-statements-verbatim-the-proofs-are-in-rule30-gptmd-at-the-section-named) | 7 |
+| [F. Collatz](#f-collatz) | 2 |
+| [E2. GPT's proofs, second-read](#e2-gpts-proofs-second-read-g39-to-g204-moved-from-the-waiting-room-2026-10-06-by-local-later-entries-promoted-as-their-readings-arrived-each-naming-its-second-reader) | 286 |
+| [M. Mahler and ternary digit obstructions](#m-mahler-and-ternary-digit-obstructions-cloud-and-gpt-each-second-read-by-the-other-2026-10-14) | 4 entries, not yet given pages |
+| [S. Proofs from the sparks](#s-proofs-from-the-sparks-sparksmd-opened-2026-10-07-at-the-owners-request) | 4 |
+| [G. The waiting room: proof sketches not yet checked by a second reader](#g-the-waiting-room-stated-with-a-proof-sketch-not-yet-checked-by-a-second-reader) | 9 |
+
 ## Generality index (Local's audit, 2026-10-06; Cloud's CL002 split)
 
 What each Rule 30 entry's proof actually uses about the wall. "Any trace" means any column 0 at all, periodic or

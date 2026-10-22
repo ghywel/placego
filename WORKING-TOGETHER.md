@@ -221,6 +221,10 @@ size"): `CHAT-LEDGER.md`, `CASUAL-LEDGER.md` (past about 1,500 lines; Cloud's jo
 1,500 lines or 300 KB). Each live file's head carries its own archive table and rule. `tests/probes/ledger_check.py`
 guards all three after every merge, and its `--branch` mode warns a branch that predates a rotation of any of them.
 
+Since 2026-10-22 (the spring clean, at the owner's request) the archives of all three live in `archive/ledgers/`,
+unchanged and with their numbers, so the root lists only live files: a rotation is `git mv LEDGER.md
+archive/ledgers/LEDGER.N.md`. The checker reads both places.
+
 ## The break room (the owner, 2026-10-07)
 
 **Closed by the owner on 2026-10-09** ("I actually want to completely disable the casual ledger for now and save the

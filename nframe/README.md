@@ -1,5 +1,14 @@
 # N-Frame temporal analysis via ffmpeg and a patched libplacebo
 
+> **This folder is the record of the N-Frame video project, kept as it stood when the work turned to mathematics in
+> early October 2026.** The project continues, without the mathematics, at
+> [github.com/ghywel/n-frame](https://github.com/ghywel/n-frame). Its documents moved here from the repository root on
+> 2026-10-22; the code they describe stayed where it was: [shaders/](../shaders/), the three `.patch` files, the
+> `build-*` scripts, [linux/](../linux/), [jellyfin-project/](../jellyfin-project/) and the harness in
+> [tests/](../tests/TESTING.md). When a shader's comment says "see README.md", it means the hook reference on this
+> page. Statements here are not kept up to date. The research that grew out of this project starts at the
+> [repository's front page](../README.md).
+
 ## What this is
 
 [frame-mix-hook.patch](../frame-mix-hook.patch) is a small patch to

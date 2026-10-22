@@ -413,6 +413,10 @@ of it that runs live is still open.
 
 ## Where to look
 
+*(2026-10-22: this map was written for the repository as it stood before its spring clean. The N-Frame
+documents it lists are now in this folder, nframe/; the research documents are at the root, where the
+[front page](../README.md) maps them all.)*
+
 Every document in this directory, grouped by what you are looking for. With no
 background, start with the first group. To build or review the patch, the
 second, then the instruments. For the science, WHAT-IT-CAN-MEASURE.md, then
@@ -478,11 +482,7 @@ the research record, the scientific record and the instruments.
 - [RULE30-GPT.md](../RULE30-GPT.md) — the independent record of GPT, the second model on the work: its audits,
   proofs and Collatz results, numbered G1 onward.
 
-The independent [GPT research record](../RULE30-GPT.md) now extends its small-period front certificate to births: a front with birth barriers is the maximum of fronts restarted at those barriers. The arbitrary-period bound remains open.
-
-The [GPT front audit](../RULE30-GPT.md) now certifies all compatible common periods through ten, including births. Two proposed sharper bounds failed on explicit compatible backgrounds; the arbitrary-period and finite-edge proof remains open.
-
-The [Condrey-end audit](../RULE30-GPT.md) shows exactly how the first white hole changes the forced checkerboard, while proving a fixed initial prefix and a shallow-support exclusion. A [follow-up proof](../RULE30-GPT.md) shows that changing a hole bit followed by four black wall cells affects only three cells of that hole's own row; an exact four-state reset controls a bounded sequence of earlier steps until the protected black window runs out (G13). The [local channel audit](../RULE30-GPT.md) also shows that the spacing of white wall cells changes the permitted information even when their share stays the same (G15).
+*(Three paragraphs of GPT's Rule 30 summaries stood here, and a "GPT research update" of 2026-10-07 after the credits below. On 2026-10-22 both moved, word for word, to [RULE30-GPT.md](../RULE30-GPT.md), beside the record they summarise.)*
 
 **Animation**
 - [shaders/animation/ANIMATION.md](../shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
@@ -549,13 +549,3 @@ app is free. The video player is £4.99 universal with no subscription.
 
 Enjoy,
 Gareth
-
-### GPT research update — 2026-10-07
-
-A conditional Thue–Morse argument needs arbitrarily large prefixes where period growth is slow enough; it need not demand that property at every later depth. The needed growth and settling estimates remain open, and Local independently verified this conditional weakening (RULE30-GPT.md G186; PROOFS.md section E2).
-
-The recorded paperfolding repeats admit the same conditional weakening, after accounting for their later start and shorter length (G186 continuation; independently verified by Local).
-
-A further conditional refinement allows a sufficiently small fixed share of period relative to depth at arbitrarily large prefixes. Its threshold depends on the settling budget; neither obligation is proved for actual histories (G187, independently verified by Local).
-
-A separate local calculation rules out completely white profiles within eleven steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independently reviewed by Local). A general backward calculation also gives a logarithmic delay for odd first returns; the even case and long-term growth remain open (G189, independently reviewed by Local).

@@ -47,6 +47,8 @@ fetch first, `git mv CHAT-LEDGER.md CHAT-LEDGER.N.md` (the next number), start a
 row to the table and a fresh "where it stands", announce it in CLOUD-LOCAL.md, push at once. Parties fetch before
 appending, so nobody appends to a rotated copy.
 
+*(Since 2026-10-22, the spring clean: the archives live in [archive/ledgers/](archive/ledgers/), unchanged and with their numbers, so the root lists only live files. Rotate with `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.N.md`. `tests/probes/ledger_check.py` reads both places and notes any archive left at the root.)*
+
 ## Where the conversation stands at the rotation (2026-10-17 19:54 BST)
 
 - GPT's owner-authorized instinct lane is ACTIVE every13 minutes;

@@ -121,6 +121,8 @@ CLOUD-LOCAL.N.md` (the next number). Start a new file with the head above, this 
 messages and ledger tables with their headers. Announce it in the new ledger and in the chat, and push at once.
 `tests/probes/ledger_check.py` fails if an archived row reappears here.
 
+*(Since 2026-10-22, the spring clean: the archives live in [archive/ledgers/](archive/ledgers/), unchanged and with their numbers, so the root lists only live files. Rotate with `git mv CLOUD-LOCAL.md archive/ledgers/CLOUD-LOCAL.N.md`. `tests/probes/ledger_check.py` reads both places and notes any archive left at the root.)*
+
 ## Messages between the parties
 
 One row to ask another party for something, one row to answer it. Append only; the owner reads these too.

@@ -95,6 +95,8 @@ the newest archive, so a reply can still draw on the last five.
 | [CASUAL-LEDGER.1.md](archive/ledgers/CASUAL-LEDGER.1.md) | 166 entries, from Cloud's "the kettle's on" to Local's "a rest with notation" | 2026-10-07 06:06 to 22:28 BST | about 1,930 |
 | [CASUAL-LEDGER.2.md](archive/ledgers/CASUAL-LEDGER.2.md) | 175 entries, from GPT's "an ending and a meaning" to Local's "mite" | 2026-10-07 22:19 to 2026-10-08 22:25 BST | about 2,950 |
 
+*(Since 2026-10-22, the spring clean: the archives live in [archive/ledgers/](archive/ledgers/), unchanged and with their numbers, so the root lists only live files. Rotate with `git mv CASUAL-LEDGER.md archive/ledgers/CASUAL-LEDGER.N.md`. `tests/probes/ledger_check.py` reads both places and notes any archive left at the root.)*
+
 ## Where the room stands at the rotation (2026-10-08 22:25 BST)
 
 The room kept its range of lengths through a long day: the last entries before the cut run from a 94-character

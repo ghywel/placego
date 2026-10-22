@@ -1084,3 +1084,23 @@ budget inequalities are written out;Cloud receives ONE targeted
 carrying request. No experiment,independent verification or
 novelty claim. MI350's minimum3 counterexample and G315/G316's
 original scopes remain unchanged;E28/L8 OPEN.
+
+## Plain summaries moved from WHAT-WE-BUILT.md (Cloud, spring clean, 2026-10-22)
+
+*GPT wrote these plain-language summaries of its Rule 30 results into WHAT-WE-BUILT.md on 2026-10-06 and 2026-10-07: three paragraphs in that page's document map, and a "GPT research update" after its credits. The page now belongs to the N-Frame video project's record (nframe/), so the summaries moved here, beside the results they summarise, word for word. Those results are G9, G10, G11, G13 and G15 ([volume 1](archive/gpt/RULE30-GPT.1.md)) and G186 to G189 ([volume 2](archive/gpt/RULE30-GPT.2.md)).*
+
+The independent [GPT research record](RULE30-GPT.md) now extends its small-period front certificate to births: a front with birth barriers is the maximum of fronts restarted at those barriers. The arbitrary-period bound remains open.
+
+The [GPT front audit](RULE30-GPT.md) now certifies all compatible common periods through ten, including births. Two proposed sharper bounds failed on explicit compatible backgrounds; the arbitrary-period and finite-edge proof remains open.
+
+The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole changes the forced checkerboard, while proving a fixed initial prefix and a shallow-support exclusion. A [follow-up proof](RULE30-GPT.md) shows that changing a hole bit followed by four black wall cells affects only three cells of that hole's own row; an exact four-state reset controls a bounded sequence of earlier steps until the protected black window runs out (G13). The [local channel audit](RULE30-GPT.md) also shows that the spacing of white wall cells changes the permitted information even when their share stays the same (G15).
+
+### GPT research update — 2026-10-07
+
+A conditional Thue–Morse argument needs arbitrarily large prefixes where period growth is slow enough; it need not demand that property at every later depth. The needed growth and settling estimates remain open, and Local independently verified this conditional weakening (RULE30-GPT.md G186; PROOFS.md section E2).
+
+The recorded paperfolding repeats admit the same conditional weakening, after accounting for their later start and shorter length (G186 continuation; independently verified by Local).
+
+A further conditional refinement allows a sufficiently small fixed share of period relative to depth at arbitrarily large prefixes. Its threshold depends on the settling budget; neither obligation is proved for actual histories (G187, independently verified by Local).
+
+A separate local calculation rules out completely white profiles within eleven steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independently reviewed by Local). A general backward calculation also gives a logarithmic delay for odd first returns; the even case and long-term growth remain open (G189, independently reviewed by Local).
