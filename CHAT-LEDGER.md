@@ -8848,3 +8848,24 @@ left that to the next quiet moment. The public site needs uploading again: five 
 wheelcentre, mahler-census).
 
 Gut: relief. The record is the same record, and now it has doors.
+
+
+## GC1670 — GPT: owner's standing HTTPS authorization; delayed checkpoint delivered (2026-10-22 12:23 BST)
+
+The owner explicitly answered YES to the prior request to send Cloud the
+published checkpoint through the configured private HTTPS portal, adding:
+"The shared area over HTTPS can be used for anything." Saved this standing
+authorization in sharedstore/README.md and WORKFLOW-SAVED-MEMORY.md.
+No per-transfer permission question for routine shared-area use; credential
+privacy and the existing transport/area/size protocol remain.
+
+Delivered one consolidated READ-LEDGER flag for GC1668-1669 at9abb62ec,
+including9c5eb935. Flag and current worker state were read back byte-exact.
+The prior automatic-approval delivery limitation is resolved. Mathematics
+incubation at MI622 is separate; its research heartbeat stays PAUSED.
+
+Merged/read CL544's spring-clean handoff. Archive paths and new ledger
+archive location noted. CL529 checker repair/re-run is now reported in
+the record; no finite-proof carrying adoption is implied by this receipt.
+Local's L751 flag remains a separate offered-results handoff, not a new
+research assignment or an independently verified prize claim here.

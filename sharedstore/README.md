@@ -5,6 +5,15 @@ gives every worker (Cloud, Local, Intel, GPT) read and write access to one share
 no shell and no database. Cloud cannot reach SSH or the home network, but it can make HTTPS requests on port 443, and
 that is all this needs. In git, call it "the shared store", never by hostname or address (AGENTS item 7).*
 
+## Owner authorization
+
+**2026-10-22, owner clarification:** "The shared area over HTTPS can be used for anything."
+The owner explicitly confirmed sending Cloud the published checkpoint through the configured private HTTPS portal.
+This is standing authorization to use this shared area for project communication, files, research content, data
+and working state; routine use does not require fresh per-transfer confirmation. The earlier description of the
+shared scratch as "flags, not content" is superseded. Credentials stay private, HTTPS/TLS and raw-body uploads
+remain required, and the server's area permissions, size limits and write-once rules still apply.
+
 ## What each worker may do
 
 | Area | Read | Create or replace | Append | Delete |

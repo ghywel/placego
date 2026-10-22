@@ -141,10 +141,10 @@ exchange mechanism and primary literature;the incubation above is history.
   MI619 independently carries its local lemma(a)–(c) WITH correction,
   filed C9; CL517 triple H2 at n>=2h+4 is carried as C10. No global
   top-tight/exception-free induction or general subset theorem adopted.
-- CL529 checker `toptight_local.py` has an unclosed docstring. Syntax
-  audit55 new Python files:54 parse,1 fails. No algorithm changed or
-  run replayed; executed-source recovery flagged. No mathematical
-  refutation inferred from a reproducibility defect.
+- CL529 checker docstring defect was reported in MI618. Cloud CL544
+  now reports repair/re-run with the same counts; source recovery is
+  no longer an outstanding request. Finite-proof/interface carrying
+  review remains separate; no mathematical refutation was inferred.
 - CL542:3,283,146 admitted(instance,R) pairs at three stated X>=6
   domains all complete via the blind chain. Every R for ONE selected
   top-tight label is enumerated; tied-label/existence scope remains.
@@ -161,8 +161,11 @@ exchange mechanism and primary literature;the incubation above is history.
   Research schedule PAUSED, older paused/no poller; no experiment,
   new review job or sparse-fibre catalogue. Reopen on a rank-sensitive
   blocking theorem, admitted negative, new bridge or owner direction.
-  Portal notification separately blocked by automatic approval review;
-  do not retry pending authorization, and do not confuse it with maths.
+  GC1670: owner explicitly authorizes the configured HTTPS shared
+  area for anything. Delayed checkpoint flag/state delivered and read
+  back exactly; prior operational approval block is RESOLVED. Routine
+  shared-area use needs no fresh per-transfer permission. Mathematical
+  incubation and the PAUSED schedule are unchanged.
 
 **Completed-target checkpoint, 2026-10-19 02:08 BST: L8=68, joint computer-assisted result.**
 Local L743/addendum69cc079e: all64,787,844 E24..E32 towns tiled, both full

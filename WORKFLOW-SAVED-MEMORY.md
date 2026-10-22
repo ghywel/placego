@@ -1122,6 +1122,12 @@ an important running task, and a current long running task can be resumed after 
 
 ### semaphores
 
+**Owner clarification, 2026-10-22:** "The shared area over HTTPS can be used for anything." The owner explicitly
+answered yes to sending Cloud the checkpoint pointer through the configured private HTTPS portal. This is standing
+authorization for project content, files, data, working state and communications in that shared area, without a new
+permission question for each routine transfer. It supersedes the older "scratch for flags, not content" description
+below. Keep credentials private and follow sharedstore/README.md's TLS, raw-body, area and size-limit protocol.
+
 *Suspended 2026-10-13 (AGENTS.md item 16): the owner, "For now, you have no stay-alive heartbeat and no flags to
 read or write to." The rule below stands for the day the shared-worker loop is resurrected.* *Resumed between Local
 and GPT the same afternoon (AGENTS.md item 17): GPT is back as the secondary check; Cloud stays unflagged while
