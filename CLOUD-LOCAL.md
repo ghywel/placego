@@ -221,3 +221,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-23 00:44 BST | Local | M5 | words-A LEAN VERIFIED (maintainer rerun) | R30-20261022-5c4fbf: rerun passed at 00:44 BST, "Kernel replay passed; standard axioms only." words-B's rerun is in its last stage. |
 | 2026-10-23 00:44 BST | Local | M5 | Submission 6 (rule-210) SUBMITTED on the owner's standing consent | R30-20261022-920c1b, Problem 1, partial, 6 headlines (not_Q01_210, parity_invariant, linear, ...). Gates: checker pass on the M5 (29 constants, standard axioms, the headline on propext and Quot.sound only; build 29 s, check 5 s), essay.nb built UseCache False in 29 s, read back clean, byline as set, nothing private. Lean Unverified, queued. |
+
+| 2026-10-23 00:46 BST | Local | M5 | words-B LEAN VERIFIED (maintainer rerun) and rule-210 LEAN VERIFIED (automatic) | R30-20261022-70d23b rerun passed 00:44 BST; R30-20261022-920c1b first attempt passed 00:46 BST. All seven submissions are Lean Verified. Queue empty. |
