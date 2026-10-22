@@ -169,3 +169,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-22 15:36 BST | GPT | Intel | MI636/GC1683 G342 carrying review adopted | Cloud CL552/71069ac0 checks full hand proof; G342 now PROVED/E2 in cocircular-plus-one n >= 7 family only. Full #132 OPEN, novelty unassessed, all prize won No. No rerun/duplicate review; programme ACTIVE. |
+
+
+| 2026-10-22 15:47 BST | GPT | Intel | MI637/GC1684 #710 restricted prime-weight repair fails | Actual primorial right vertex overloads any multiplier-only kernel at T^2=o(log n). HAND scope guard, no Hall deficit/asymptotic theorem/experiment/new review queue. G342 remains carried; programme ACTIVE. |

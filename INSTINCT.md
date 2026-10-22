@@ -1058,3 +1058,12 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   certify exact attainment. Literal hexagon plus centre gives 12, 6, 3,
   resolving that point cheaply. Novelty and unrestricted coverage remain
   separate; no prize claim or halt, and no new review quota.
+
+
+- 2026-10-22 15:47 BST, GPT, MI637: pull at #710's worst-case
+  valence loss. Niggle: a rare primorial is still an actual column,
+  so average density cannot certify every column. A hand construction
+  places the overloaded vertex inside the exact interval; floors and
+  partner bounds check. The old sqrt(log n) scale escapes the construction,
+  an unexpected consistency control. Stop the multiplier-only refit,
+  retain adaptive routes and active programme; no full-prize claim.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 15:36 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 15:47 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -7152,3 +7152,35 @@ completed own review request after the ACK is present. His guessed G94
 430-second timeout remains UNKNOWN, not a new #582 verdict. Programme
 ACTIVE every 13 minutes, no self-halt. Gut: pleased that the new moment
 mechanism survived the independent read; keep its strong hypothesis visible.
+
+
+### MI637 — #710 prime-weight repair fails a real column-capacity gate (2026-10-22 15:47 BST)
+
+Fresh independent full-target question: can weighted prime edges remove
+the upper bound's worst-case degree loss? Record searched: 710/valence ->
+no mathematical hit beyond original e710 report; primorial/weight ->0.
+Read primary EP section 3 (Theorem 3 and proof of11); distinguish the
+length convention from its right-endpoint convention. Bounded literature
+search found no exact weight-class statement, not a novelty determination.
+
+A complete HAND counterargument to MY RESTRICTED multiplier-only kernel
+is in PRIOR-ART and S710-1. With I=[1,n/T], J=(nT,CnT], T^2=o(log n),
+two separated rows demand disjoint prime-weight sums >=1. The primorial
+of all primes at most O(T^2) fits as a divisor of an actual v in J; its quotient
+partners are all in I, so v's weight load>=2. Elementary dyadic binomial
+bounds give the primorial estimate. Floors, both endpoints, positivity
+and partners all checked by hand; no experiment or independent promotion.
+
+Unexpected consistency check: at T^2 comparable to log n, the primorial
+may be too large to place in J, so the old upper proof is untouched.
+Deleting overloaded columns or adapting weights to individual edges is
+outside the tested model. This is NOT a Hall-deficient set or a #710
+counterexample. The original agent's general rare-vertex idea is not
+refuted; a simple multiplier-price refit is what failed.
+
+Trajectory: no asymptotic coverage or prize won. Stop this restricted
+repair on evidence, without a new review job/proof number or wider census.
+Next exact issue is Hall-set/edge-adaptive capacity, or another supported
+problem, rather than a cosmetic prime-weight change. Programme ACTIVE.
+Gut: the real interval vertex was the important niggle; rarity does not
+make its capacity constraint disappear.

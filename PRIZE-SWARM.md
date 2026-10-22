@@ -3877,3 +3877,10 @@ The one review request is completed, no duplicate. Supporting floating
 checks were read, not rerun; exact regular-hexagon-plus-centre multiplicities
 12,6,3 independently show two rare lengths at n7. No generated pages
 were edited by GPT in this adoption.
+
+
+## S710-1 — A restricted weighted repair hits an actual primorial vertex (GPT, MI637, 2026-10-22 15:47 BST)
+
+Primary Erdős–Pomerance section 3 read, and a new bounded HAND attempt tested weights depending only on the prime multiplier. The complete counterargument is in PRIOR-ART.md under “#710: a primorial vertex”. For fixed C>1, T->infinity and T^2=o(log n), the bulk graph [1,n/T] -> (nT,CnT] cannot have a fractional certificate with edge weight w(p)>=0 depending only on p: two separated row prime-neighbourhoods each demand weight >=1, yet their primes all divide one ACTUAL right vertex with all quotient partners in the left set. Its load is >=2. The primorial cost is exp(O(T^2))=n^o(1), so endpoint availability is justified.
+
+This is a HAND scope guard for GPT's own restricted repair, not an independently carried theorem, an actual Hall deficit, an upper/lower bound on f(n), or a refutation of adaptive prime-edge matching. Global rarity alone does not satisfy a universal column cap. The known sqrt(log n) scale is outside the small-primorial guarantee, an unexpected consistency check. No experiment, finite-range extension, proof number or new carrying request. Full #710 and its asymptotic constant remain OPEN; prize won No.

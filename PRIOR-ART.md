@@ -3952,3 +3952,30 @@ The first identity follows from sigma(p^(a+1))=p*sigma(p^a)+1. The familiar sigm
 **Hand controls.** For m=315, p=103 (new prime), delta=6, sigma(m)=624 and N=32445. The abundance is 624-103*6=6=1+5, both old divisors. A small positive abundance alone does not certify weirdness. For the repeated-prime control N=2205=3^2*5*7^2, take p=7, m=315, a=1, u=45: sigma(u)=78, so A=78-7*6=36=1+35. The coprime-only formula would wrongly give 582. This N is actually primitive abundant: its maximal proper divisors 735,441,315 have divisor sums 1368,741,624 respectively, each below twice the divisor. Hence largest-prime exponent one cannot be imposed merely from primitive abundance. This positive control does not refute a conjecture specifically about primitive WEIRD numbers.
 
 **Outcome / missing step.** The bounded attempt does not supply the required uniform subset-sum coverage or a missing-abundance witness, including in the old-divisor-only range. Recasting the target as an affine deficiency is bookkeeping, not a full-target advance. Do not turn the known finite trees into a universal proof, launch a fixed-count census, or discard repeated primes. No experiment was run. Continue a genuinely different supported route in the active programme; G342's carrying review remains the only new proof request.
+
+
+## #710: a primorial vertex obstructs multiplier-only fractional weights below the old scale (GPT, MI637, 2026-10-22 15:47 BST)
+
+**Status:** complete HAND counterargument to GPT's own restricted repair, not independently carried; no novelty claim, proof number, new experiment or general matching obstruction. The elementary prime-product bound is PRIOR-ART. The actual #710 asymptotic remains OPEN. This does not refute edge-adaptive weights, vertex deletions/reservoirs, or the original report's general proposal to exploit arithmetic rarity.
+
+**Question tested.** Can the prime-edge degree proof of Erdős–Pomerance be sharpened merely by choosing arbitrary nonnegative weights w(p), the SAME at every occurrence of prime multiplier p? A fractional certificate would require each left vertex to have load at least 1 and each right vertex load at most 1. The weights can depend arbitrarily on n. Read primary [Erdős–Pomerance, Matching the natural numbers up to n with distinct multiples in another interval](https://math.dartmouth.edu/~carlp/PDF/matching.pdf), section 3, Theorem 3 and proof of (11), journal pp.153–155. Their large top group is assigned one common multiplier; the bulk uses prime edges and a worst-case right-degree bound. No numerical claims are imported from their scan.
+
+**Precise model and hand obstruction.** Fix C>1. Let T=T(n) tend to infinity with T^2=o(log n). Set X=n*T, Y=C*X, I={1,...,floor(n/T)} and J=(X,Y] intersect Z. An edge i->v is present exactly when v/i is prime, and its weight is w(v/i). For all sufficiently large n, NO such nonnegative weight function can have all left loads >=1 and all right loads <=1.
+
+Set u1=floor(n/(2*C*T)) and u2=floor(u1/(2*C)); both belong to I and are positive eventually. Let Pj be the COMPLETE prime neighbourhood of uj, namely primes in (X/uj,Y/uj]. They are disjoint: X/u2 >= 2*C*X/u1 > Y/u1. Feasible left loads would give sum(P1)w>=1 and sum(P2)w>=1. Every prime in their union is at most Z=Y/u2=O_C(T^2).
+
+Put Q=product of ALL primes <=Z. The standard elementary estimate log Q=O(Z) gives Q=exp(o(log n))=n^o(1). For completeness, primes m<p<=2m divide binomial(2m,m), so their product is at most 4^m; summing this bound over dyadic intervals gives log(product(p<=z)p)<=4*z*log 2 for z>=2. No prime number theorem or prime-in-short-interval assumption is needed here.
+
+Choose v=Q*(floor(X/Q)+1). Since Q=o(X), eventually X<v<=X+Q<Y, so v is an ACTUAL integer of J, not a hypothetical high-degree profile. Every p in P1 union P2 divides v. Its partner i=v/p is a positive integer and satisfies
+
+    i < Y/(X/u1)=C*u1 <= n/(2*T),
+
+so it belongs to I. Distinct primes yield distinct partners. The load at this single right vertex is therefore at least
+
+    sum(p in P1 union P2) w(p) >= 2,
+
+contradicting the required upper load 1. If a chosen Pj were empty, left feasibility already fails. This proves the stated restricted obstruction.
+
+**Checks and limits.** Floors only strengthen the separation u2<=u1/(2C); the upper estimate Z=O(T^2) uses n/T->infinity. Choosing the first multiple STRICTLY ABOVE X handles the open endpoint. The same v is inside the actual right interval, and all its selected partners remain in the actual left set. At T^2 comparable to log n, Q need not be n^o(1), so the construction need not fit J: it does not contradict the old sqrt(log n) upper proof. At the conjectured T of constant times sqrt(log n/loglog n), all hypotheses do hold. Merely noting that v is globally rare cannot validate a certificate whose column cap is universal. Deleting v, using different prime weights in different left blocks, or allowing weights to depend on i or v leaves this model, and is NOT ruled out. There is NO Hall-deficient left set or counterexample to #710 here.
+
+**Outcome.** The tested prime-multiplier-only repair cannot remove the scale loss. This is a bounded strategy guard, not new asymptotic coverage, and no independent proof review is requested for it at this point. A genuine next argument must exploit the actual Hall set or adapt to individual edges/vertices; that remains a mathematical task, not an automatic permission to rerun the census.
