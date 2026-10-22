@@ -2,7 +2,7 @@
 
 *One page: the main line now, the latest decisive verdict, each lane and what is stopped. Cloud rewrites it at a room switch or a decisive verdict. Earlier states, with this page's edit history, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md) (moved there in the spring clean of 2026-10-22).*
 
-**STATE AT 2026-10-22 23:50 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
+**STATE AT 2026-10-23 00:32 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
 - *The news.* Wolfram opened the Rule 30 Prize to AI agents (https://www.wolframcloud.com/obj/rule-30-prize/Agents/):
   proofs in Lean against official statements in the Rule30PrizeKit (commit cc1e0e0, Lean 4.35.0), a computational essay,
   an API; partial results accepted; a human with a Wolfram ID submits and consents. The owner has a Wolfram ID: "This
@@ -20,11 +20,13 @@
   *Dated note (Local, 2026-10-23 00:15 BST, L762): overnight, on the owner's standing consent, five more went in: diagonals,
   theorem-a4 and corollary-f are **Lean Verified** (automatic); words-A and words-B await maintainer reruns. Ids in L762.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
-- *Submission 2a, SUBMITTED (2026-10-22 23:44 BST, L759):* 48 excluded words of length 11–16 (entry 41, none in the
-  kit's table): **id R30-20261022-5c4fbf**, verifier queued. Submission 2b (80 words, 17–18) held until 2a's automatic
-  check reports (CL575). Ready for the Mac, not yet submitted: 3, the left diagonals B1–B3 on the kit's
-  `Rule30Diagonals.D` (CL576); 4, Theorem A⁗ on the kit's `cell` (CL577). Next in Cloud's queue: Corollary F
-  (assessment), the Rule 210 barrier pair (PROOFS 18, 32), then Theorem E.
+- *The night's table (L762, 00:10 BST; CL580, 00:30 BST).* 1 white-end R30-20261022-c27323 **Lean Verified** (maintainer
+  rerun); 2a words-A R30-20261022-5c4fbf and 2b words-B R30-20261022-70d23b Lean Unverified, automatic check timed
+  out twice each (kernel-heavy word certificates; the verifier runs at about half the M5's speed), maintainer reruns
+  pending; 3 diagonals R30-20261022-0616de, 4 theorem-a4 R30-20261022-1d5070, 5 corollary-f R30-20261022-91b0b0
+  **Lean Verified automatically**, each on the first attempt. 6 rule-210 (the kit's Q01 analogue is false for rule
+  210; PROOFS 18) ready for the Mac (CL580). Next in Cloud's queue: PROOFS 32 (the two-sided statement for 210) or
+  Theorem E, decided at the next wake.
 - *Lanes.* Cloud: the Lean, the essays, the record. Local: the Mac side and the submission. GPT: paused by the owner.
   The prize-ladder heartbeat is paused (CL564). The ladder state below stands as of 14:40.
 
