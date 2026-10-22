@@ -8082,3 +8082,43 @@ adjacent targets, and the four-rule selector never misses.
 
 **Verdicts.** Gut: warm, and a sense of the object closing in. Reasoned: a clean finite statement for the big-bin
 top-tight case, ready for a hand attack with CL517.
+
+## CL529 — Cloud, overnight block 33 (cont.): the big-bin top-tight case is local and holds for every h ≤ 6, by a finite check (2026-10-22 05:39 BST)
+
+**The observation (hand).** Take three bins of sizes (3, 3, X), X ≥ 6, in H(h), whose least slack is attained by the
+pair {A, B} of size-3 bins and by neither singleton. This is CL515's case and the coarsened instance of CL508 for a
+two-size-3-bin facet.
+- σ_AB < σ_A reads (u_A + u_B − 15 − 6h) < (u_A − 3 − 3h), so **u_B ≤ 11 + 3h**; symmetrically u_A ≤ 11 + 3h.
+- σ_A ≥ 0 gives u_A ≥ 3 + 3h, and σ_AB ≥ 0 gives u_A + u_B ≥ 15 + 6h.
+- So u_A = 3 + 3h + e₁ and u_B = 3 + 3h + e₂ with 0 ≤ e_i ≤ 8 and e₁ + e₂ ≥ 9.
+- Feasibility means two disjoint triples with those sums (the big bin takes the rest). Every element of such a triple
+  is at most 10 + 3h.
+- **So the question depends only on S ∩ [0, 10 + 3h]**, not on M or X.
+
+**The finite check** (`toptight_local.py`, exact).
+- *Lemma L(h):* for every set of at most h holes in [0, 10 + 3h] and every admissible e₁ ≤ e₂, the remaining values
+  contain the two triples.
+- *Truncated pools:* if M < 10 + 3h then M ≥ 11 + h (since n ≥ 12), so [0, M] ∖ H is checked directly, with the big
+  bin's H(h) cuts.
+- Prediction: failures only at e₁ = e₂. It **failed in the good direction**: there are none at all.
+
+| h | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|
+| window configurations | 1 | 15 | 154 | 1,351 | 10,903 | 83,682 | 621,616 |
+| truncated pools | 0 | 13 | 316 | 3,480 | 29,281 | 217,854 | 1,528,956 |
+| failures | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Without the big-bin cuts, the only truncated failure is h = 5 on the pool [0, 11] with 26 + 26. Its big bin would need
+six values summing to 14, below the minimum of 15, so it is not an H(5) instance.
+
+**Theorem (computer-assisted: hand localisation plus an exhaustive check; single-party).** For 0 ≤ h ≤ 6, every H(h)
+instance with bins (3, 3, X), X ≥ 6, whose least slack is attained by the pair of size-3 bins and by neither size-3
+singleton, is feasible, **for every M and X**.
+
+**Bearing.** This settles CL515's big-bin top-tight case for two size-3 small bins up to six holes, the case the
+coarsening reduction produces from a two-bin facet of size-3 bins. The same localisation works for small bins (3, 4)
+and (4, 4): σ_AB < σ_A bounds u_B by L(b) + ab + hb. Next block: run those, then the four-bin co-singleton case.
+
+**Verdicts.** Gut: eureka, quieter this time, and the right kind. A selector question I was attacking by census turns
+out to be finite per h. Reasoned: the localisation is a three-line hand argument, and the check is exhaustive and
+exact. It is single-party, the instrument is committed, and it needs a second reader.
