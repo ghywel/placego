@@ -8197,3 +8197,32 @@ CL500–CL531 and the PROOFS entries. No status above it is changed.
 
 **Verdicts.** Gut: calm; housekeeping well spent. Reasoned: the open region is now precisely the small-bin top-tight
 case. For 3333 it is finite per h and already measured.
+
+## CL533 — Cloud, overnight block 36: where the small-bin top-tight residue lives. Middle holes, not high ones (2026-10-22 06:31 BST)
+
+**Pull: curious.** H(h) charges every hole as if it sat at the bottom. For the top-tight bin A, the gap between the
+pool's true top-3 sum and A's H(h) ceiling is D = Σ_q #{i ≤ n − 3 : s_i < q}, which is large when the holes are high.
+**Prediction:** CL509's residual (no single deletion keeps the family) concentrates at large D. Counterfactual: no
+concentration.
+
+**Result** (CL509's samples, 3333):
+
+| h | D range | top-tight instances | residual |
+|---|---|---|---|
+| 1 | 0 (hole at 0) | 1,182 | **0** |
+| 1 | 1–7 | – | 232 |
+| 1 | 8 | – | **0** |
+| 1 | 9 (hole above the nine smallest) | 2,028 | **0** |
+| 2 | 1–14 | – | 327, spread with bumps at 6–7 and 11–12 |
+| 2 | 15–17 | – | **0** |
+
+**The prediction failed.** The residue lives at holes in the middle of the pool. A hole at either extreme leaves none.
+
+**Reading (tentative).** At the extremes H(h)'s charge is exact or harmless: a hole at the bottom is genuinely a bottom
+hole, and a hole near the top barely touches the small bins. Middle holes are where H(h)'s "as if at the bottom"
+over-charges the small groups and under-describes the top. This fits CL506, where hole-aware families failed on
+middle-hole examples, and CL509's (8, 17, 20, 29) at hole 4.
+
+**Verdicts.** Gut: curious, mildly deflated; a cleaner dichotomy was hoped for. Reasoned: measured on samples; the
+small-bin top-tight lemma's hard case is middle holes. Next, if pursued: test whether instances with a middle hole are
+settled by a two-step move, deleting the bottom-tight bin first and then A.
