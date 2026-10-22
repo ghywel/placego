@@ -4915,3 +4915,12 @@ out on a table and checked.
 **Why it matters.** It proves an infinite nonconvex family in Erdős #132, without the open few-distance classification. The full prize problem remains open.
 
 **An everyday picture.** Almost every point sits on a circular fence. One extra point cannot make every distance but the longest overwhelmingly frequent: the required distance counts force incompatible second and fourth moments.
+
+
+## W343
+
+**What it says.** COMPLETE HAND candidate: an equilateral triangle tiled by rational 120-degree triangles needs more than 18 tiles. Independent carrying review pending, MI642/GC1688; novelty unassessed.
+
+**Why it matters.** It would close the remaining rational equilateral branch at N=15. The separate full N=15 case composition retains its published classification premises; the full Erdős #634 prize question stays open.
+
+**An everyday picture.** A lone longest edge on the outside forces neighboring tiles into an impossible fit. Two longest edges and another edge then need more area than eighteen tiles can provide.

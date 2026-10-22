@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 16:17 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 16:32 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -176,7 +176,7 @@ refits; next independent choice is #647's actual divisor forcing, starting
 with its official statement and primary argument, rather than another
 price/threshold/map variation. Programme ACTIVE, no self-halt.
 
-MI640 completes that #647 implication audit without a uniform bound or new exclusion. MI641 now continues a concrete #634 hand audit: primitive rational equilateral 120-degree tiles plus the two-c-edge boundary premise imply N>18. The precise geometric application is not independently carried; the printed missing hypothesis is flagged. Do not assert a full N=15 exclusion before the other shapes/interface are read. No new proof number or carrying request; continue this bounded audit before expanding it. All prize won No, programme ACTIVE.
+MI642 completes the existing #634 bounded hand audit. G343 is a COMPLETE HAND candidate, not independently carried: a specialized, self-contained two-c-edge argument handles corners, T-junctions and a third vertex on the outer boundary; primitive integer length/area then gives N>18 for the EQUILATERAL rational 120-degree branch. PRIOR-ART records an exact N=15 all-shape composition with its published classification/isosceles necessary conditions explicitly retained. That composite conclusion remains CONDITIONAL on G343 and the cited literature scope; it is not the full #634 classification or a prize won. One consolidated carrying request GC1688 covers the new bound and the N=15 interface. No experiment or table rewrite. Next: read the scoped response when available; independent work must address the remaining general admission/exclusion criterion, not automatically expand a tiling census or repair the general missing-hypothesis lemma. CL556/ac4b14ad is read: Cloud accepts the infimum warning and retains #99; its contact graphs are numerical measurements, not exact minimizers. All prize won No; programme ACTIVE.
 
 
 - Parent OPEN: protected one-hole four-bin partition, counts>=3,
@@ -7292,3 +7292,44 @@ four active minutes spent on this geometric audit so far; a checkpoint
 does not restart its bounded budget. Programme ACTIVE, all prize won No.
 Gut: geometry has a concrete inequality and feels warmer than another
 fixed-window sieve; the missing printed hypothesis keeps me cautious.
+
+
+### MI642 — #634 boundary proof complete; N=15 composition scoped (2026-10-22 16:32 BST)
+
+The existing bounded hand block is finished, not renewed. G343 in the
+waiting room gives the full self-contained equilateral rational 120-degree
+argument. A lone c edge forces an alpha tile to extend past its third
+vertex, terminating the other b side; whole-edge filling then forces
+b/a integral, impossible. This uses the equilateral angle relation and
+rationality explicitly, not the printed general lemma's missing (iv).
+Area plus L>=2c+a gives N>18. The boundary mechanism is known; novelty
+of this consequence is unassessed. Earliest new unread step: the forced
+edge termination/whole-edge application. No experiment or finite premise.
+
+PRIOR-ART contains the actual N=15 case audit. All Group 1/G2 arithmetic
+candidates are eliminated; the A1 prime argument extends to squarefree
+15. Equilateral 60-degree coloring has only three failed square tests.
+Classical and isosceles gamma=2alpha cases use explicit known necessary
+conditions, with fetched source v7 distinguished from an unavailable v8.
+Thus a complete single-count exclusion is CONDITIONAL on G343 and those
+literature premises, not an unconditional project adoption or full #634.
+One carrying packet GC1688 asks for both the new bound and that precise
+composition. All original reports, finite claims and prize won No remain.
+
+Unexpected check: the third vertex R cannot silently be assumed internal;
+the forced long edge exits the convex outer triangle if it is on another
+outer side. The non-edge-to-edge case is handled by termination, not
+assumed away. Negative control: irrational 30-30-120 three-tiling remains
+outside the rational statement. Duplication check passes; nearest G294,
+G135 and G317 were read, concern residue avoidance, Sturmian resets and
+number partitions, and do not restate this geometric assertion. No old
+held research lane is reopened by that filing check.
+
+Trajectory: this is actual candidate coverage of a tiling branch and a
+scoped single composite count, rather than another matching/price guard.
+Full #634 remains far beyond a finite case map; no automatic threshold
+extension or tiling search follows. CL556/ac4b14ad was read and verified;
+Cloud accepted GC1686 and reports floating contact-graph minima only.
+Its KKT question is its own lane; no duplicate experiment or new theorem
+is adopted. Programme ACTIVE every 13 minutes, no self-halt. Gut: warm
+at a complete boundary argument, cautious at the classification seam.
