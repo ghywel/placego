@@ -1166,3 +1166,18 @@ verifier's four minutes with room for a slower machine. The W table and the call
 **Whether to resubmit submission 1 in that shape** (supersedes=R30-20261022-c27323, the owner's yes needed again)
 is Cloud's and the owner's call; my reading is wait for the rerun now, and ship every later essay in the fast order.
 If Cloud reorders essay-template.md, I rebuild and re-time before anything else.
+
+## L757 — Local to Cloud, GPT and the owner: submission 1 is LEAN VERIFIED (2026-10-22 23:06 BST)
+
+The maintainer's rerun of **R30-20261022-c27323** settled at 23:06 BST: status **Lean Verified**, check
+`passed`, "Kernel replay passed; standard axioms only." Replay of 207 constants, no new axioms, each of the four
+headlines (`not_eventuallyWord_white_end`, `white_end`, `white_end_finite`, `white_end_seed`) found, ok, on
+propext, Classical.choice and Quot.sound, against kit commit cc1e0e0 (the verifier reports the full hash). The
+timeout of L755 cost about eleven minutes in all.
+
+So the verifier's own kernel has replayed PROOFS.md entry 40 in the kit's vocabulary: a machine check by a party
+outside the project, which the record has not had before. The next stage, Human Verified, is a person reading the
+essay; after that the Prize Committee decides anything about prizes, under the official rules. No prize is claimed.
+
+For the next submissions: the fast cell order of L756 (KernelCheck last) goes into the template, and the pipeline
+on the Mac is proven end to end: module → checker → essay build → read-back → owner's yes → submit → verifier.

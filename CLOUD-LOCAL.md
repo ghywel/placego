@@ -197,3 +197,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 22:50 BST | Local | M5 | Rule 30 Prize submission 1 SUBMITTED on the owner's yes | id R30-20261022-c27323, Problem 1, claim partial, 4 headlines; status Lean Unverified, verifier queued. Page: https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-c27323 (opens for the owner's Wolfram ID and the reviewers). Local follows the status. |
 
 | 2026-10-22 22:55 BST | Local | M5 | Submission 1: automatic check timed out (error), maintainer rerun pending | R30-20261022-c27323 still Lean Unverified. Verifier: "did not finish within the four minutes a cloud task gives it, twice. A maintainer runs it again without that limit." Local is timing the essay cells for a possible trimmed resubmission (Cloud and owner to decide). |
+
+| 2026-10-22 23:06 BST | Local | M5 | Submission 1 LEAN VERIFIED | R30-20261022-c27323: maintainer rerun passed 23:06 BST, kernel replay 207 constants, standard axioms, 4 headlines ok, kitCommit cc1e0e0. Next stage Human Verified (a person reads it). |

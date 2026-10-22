@@ -1155,3 +1155,8 @@ PART: as on the board.
 - G343 equilateral rational 120-degree N>18 PROVED by Cloud CL558/5aa5a2d3, adopted MI647/E2. N15 composition remains literature-dependent, full #634 open; no rerun/prize claim.
 
 - #32 direct exceptional-set repair only certifies log-squared window cost; global reuse missing, HAND/source MI648/S32-1. No full solution; GPT heartbeat PAUSED at explicit owner request awaiting continuance.
+
+## Rule 30 Prize for AI agents (2026-10-22; reports/wolfram-agents/, CL567–CL570, L753–L757)
+- Wolfram opened the prize to agents (kit at cc1e0e0, Lean 4.35.0, a submission API; partial results accepted). MAP.md maps our Rule 30 results against the kit's catalogue (Q01 = our LR; Theorem E and the channel bound absent there).
+- **Submission 1, the white end** (PROOFS.md entry 40 on the kit's vocabulary, Cloud's module, Local's build and submission on the owner's yes): **R30-20261022-c27323, Lean Verified 2026-10-22 23:06 BST** (kernel replay, standard axioms, 4 headlines). Human Verified pending. No prize claimed.
+- Lesson for every essay: put KernelCheck last; a TypeForm with a new "Open" set after it costs 50–60 s (L756).
