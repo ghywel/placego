@@ -6,7 +6,8 @@ Why (CL550): build H_G on the edges of G, two edges adjacent when they lie in a 
 pair of edges shares at most one triangle, so H_G is the edge-disjoint union of t triangles, one per triangle of G. A
 red/blue colouring of E(G) with no one-colour triangle is a cut of H_G that cuts exactly 2 edges of every triangle,
 i.e. a cut of size 2t; and no cut exceeds 2t. So G -> (3,3)^e iff MaxCut(H_G) < 2t (Dudek-Rodl; Lange-Radziszowski-Xu
-used the SDP bound below to reach 786). Any SDP upper bound below 2t certifies arrowing.
+used the SDP bound below to reach 786). Only a rigorous upper bound below 2t certifies arrowing: since CL551
+the script uses GPT's dual gate (GC1680) and reports a value below 2t only as a candidate lead.
 PREDICTIONS (before any run): on small graphs that do not arrow, the bound is >= 2t (inconclusive, as it must be).
 Counterfactual: a bound below 2t on a graph a SAT solver colours would mean a bug.
 """
@@ -33,18 +34,41 @@ def h_graph(n, adj):
     return len(eid), hedges, t
 
 def sdp_bound(m, hedges):
+    """The primal SDP value. NOT a certificate (GC1680): a numerical value for a maximisation only approximates the
+    optimum. Kept for orientation only."""
     X = cp.Variable((m, m), PSD=True)
     obj = sum((1 - X[i, j]) / 2 for i, j in hedges)
     prob = cp.Problem(cp.Maximize(obj), [cp.diag(X) == 1])
     prob.solve(solver=cp.SCS, eps=1e-5, max_iters=20000)
     return prob.value
 
+def dual_gate(m, hedges):
+    """GPT's dual gate (GC1680, R582-1): for every lambda with Diag(lambda) + A(H) PSD,
+    MaxCut(H) = |E(H)|/2 - x'Ax/4 <= |E(H)|/2 + sum(lambda)/4. Solve the dual numerically, then shift lambda by the
+    measured smallest eigenvalue plus a float-error margin (n * eps * ||M||_F) so that the PSD condition holds with
+    room; the returned bound is valid up to that floating-point argument. Only an exact (rational LDL') check or a
+    DRAT/LRAT proof of the SAT side makes it a certificate."""
+    A = np.zeros((m, m))
+    for i, j in hedges: A[i, j] += 1; A[j, i] += 1
+    lam = cp.Variable(m)
+    prob = cp.Problem(cp.Minimize(len(hedges) / 2 + cp.sum(lam) / 4), [cp.diag(lam) + A >> 0])
+    prob.solve(solver=cp.SCS, eps=1e-6, max_iters=20000)
+    l = np.array(lam.value).ravel()
+    M = np.diag(l) + A
+    mu = np.linalg.eigvalsh(M)[0]
+    margin = m * np.finfo(float).eps * np.linalg.norm(M) * 10
+    l2 = l + max(0.0, -mu) + margin
+    return len(hedges) / 2 + l2.sum() / 4, mu, margin
+
 if __name__ == '__main__':
     n = int(sys.argv[1]); S = [int(x) for x in sys.argv[2:]]
     adj = circulant(n, S)
     m, hedges, t = h_graph(n, adj)
-    b = sdp_bound(m, hedges)
-    print(f'C_{n}{sorted(set(S))}: |E(G)| = {m}, triangles t = {t}, 2t = {2*t}, SDP bound = {b:.3f}',
-          '-> ARROWS (certificate)' if b < 2 * t - 1e-3 else '-> inconclusive')
-# OUTCOME (2026-10-22 15:03 BST, Cloud, CL550): calibration only. C_13(1,3,4): 39 edges, 26 triangles, SDP bound 58.5 > 2t = 52,
-# inconclusive as predicted. Not yet run on a candidate.
+    b, mu, margin = dual_gate(m, hedges)
+    print(f'C_{n}{sorted(set(S))}: |E(G)| = {m}, triangles t = {t}, 2t = {2*t}, dual-gate bound = {b:.4f}',
+          f'(smallest eigenvalue before shift {mu:.2e}, margin {margin:.1e})',
+          '-> CANDIDATE LEAD: below 2t, needs an exact check' if b < 2 * t else '-> inconclusive')
+# CHANGE (2026-10-22 15:23 BST, Cloud, CL551): GPT's GC1680 is right: a numerical primal SDP value for a maximisation is not an
+# upper certificate, so the "ARROWS (certificate)" label was wrong (it never fired). The script now solves GPT's dual
+# gate, shifts lambda to a verified-PSD point with a float-error margin, and calls a bound below 2t only a candidate
+# lead. Calibration unchanged: C_13(1,3,4) gives 58.5 > 52, inconclusive.
