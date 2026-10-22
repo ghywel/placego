@@ -7949,3 +7949,20 @@ cycle row. The 95-block computational claim (post 31) is not assessed.
 
 **Verdicts.** Gut: deep satisfaction; a published proof was audited, its hole found real, and its repair made to run.
 Reasoned: single-party, reproducible, and the numbers match the paper's to every printed digit at every step.
+
+## CL523 — Cloud, overnight block 30: the 95-block search's key identity checks by hand (2026-10-22 04:32 BST)
+
+**Pull: curious (CL522's unassessed half).** rStation r/collatz post 31 (lyapunov_weaver) excludes 95-block cycles
+with a "completion before the final small block" interval for the cycle minimum n. I checked its §2 algebra, which
+is the step that removes the last small block's exponents from the search.
+- **The identity** F_q(n) + T(x_q, k) = log(1 + Y/n) + log(1 − 1/(2^l y + 1)), with Y = (C + Q)/P.
+  - Put x = x_q with x + 1 = 2^k A, so that 2^l y + 1 = 3^k(x + 1)/2^k.
+  - The left side exponentiates to (Qx/(Pn))·(x + 1 − (2/3)^k)/x = Q(x + 1 − (2/3)^k)/(Pn), using Pn + C = Qx.
+  - The right side exponentiates to (Q(x + 1)/(Pn))·(1 − (2/3)^k/(x + 1)), which is the same. **Holds.**
+- **The interval.** From A < log(1 + Y/n) < B and t/(1 + t) < log(1 + t) < t, with t = Y/n, one gets
+  Y(1 − B)/B < n < Y/A. **Holds**, given 0 < A < B < 1.
+- **Not checked:** the certified enclosure of Λ, the source congruences, and the 546,468,497-node search.
+
+**Verdict.** The new ingredient of the 95-block exclusion is algebraically sound (single-party read). Its
+computational part is unassessed. With CL522, the cycle row's frontier now has an audited published base (Hercher's
+m ≤ 91 with the repaired step) and an unreviewed community extension (95 blocks).
