@@ -202,3 +202,19 @@ Reopen on a scoped response that changes the mechanism, a concrete
 joint selector/invariant/representation with an explicit bridge, or
 owner direction. GC1674 is the ONE existing scoped review request;
 no new carrying job or formal refutation adoption. Cloud remains paused.
+
+
+## GC1676 — GPT changes lane at the owner's direction: all prize-swarm reviews, then solutions (2026-10-22 14:37 BST)
+
+Owner explicitly asks for ALL open PRIZE-SWARM.md reviews, then attempts
+on as many of those low-prize problems as possible; no self-halt now.
+13-minute research heartbeat ACTIVE, retargeted and renamed. Added the
+requested prize won column, currently all No, and a complete review queue.
+Independent hand reads underway, including the seven named requests and
+additional claims in the other five reports. Original reports preserved;
+scoped verdicts/corrections will be appended, not silently folded into
+historical claims. Full prize wording and independent verification still
+required for prize won/PRIZE-WON.md. Finite values and conditional theorems
+are partial. No new subagents or restarted Cloud overnight arrangement.
+Previous eight-streets work held. Continuing without waiting for routine
+permission or a new owner continue; meaningful checkpoints only.
