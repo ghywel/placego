@@ -13,8 +13,8 @@ below is among them. (Eleven other words of our list are, and are left out here.
 
 **The argument** is the one of the white-end submission, word by word: the `K` cells right of the column (`K = 8`,
 or `10` for a few words) with an arbitrary cell beyond them form a finite relaxation; after `n0` periods of the word
-its reachable set is fixed and the first cell of the strip takes a single value at every tick (`check K ws n0`,
-decided by the kernel); so columns `c` and `c + 1` are both periodic, which Jen's theorem with a clock forbids in a
+one more period maps its reachable set into itself while the first cell of the strip takes a single value at
+every tick (`check K ws n0`, decided by the kernel); so columns `c` and `c + 1` are both periodic, which Jen's theorem with a clock forbids in a
 configuration with a leftmost black cell. The words are least rotations; any rotation is the same column word.
 
 **Provenance.** Entry 41 of the Wolfram · Collatz · Mahler record (github.com/ghywel/placego, PROOFS.md), computed
@@ -155,9 +155,41 @@ def ticks (K : ℕ) : List ℕ → ℕ → Bool
   | [], _ => true
   | w :: ws, X => const0 K X && ticks K ws (img K w X)
 
-def check (K : ℕ) (ws : List ℕ) (n0 : ℕ) : Bool :=
-  run K ws (reach K ws n0) == reach K ws n0 && ticks K ws (reach K ws n0)
+/-- `A ⊆ B` as bitmasks: one `&&&`. -/
+def sub (A B : ℕ) : Bool := (A &&& B == A)
 
+lemma sub_spec (A B : ℕ) (h : sub A B = true) : ∀ s, A.testBit s = true → B.testBit s = true := by
+  intro s hs
+  simp only [sub, beq_iff_eq] at h
+  have := congrArg (fun x => x.testBit s) h
+  simp only [Nat.testBit_and, hs, Bool.true_and] at this
+  exact this
+
+/-- One period of the word from `X`: `none` if cell c + 1 is not constant at some tick, else the final set. -/
+def walk (K : ℕ) : List ℕ → ℕ → Option ℕ
+  | [], X => some X
+  | w :: ws, X => if const0 K X then walk K ws (img K w X) else none
+
+lemma walk_some (K : ℕ) : ∀ (ws : List ℕ) X Y, walk K ws X = some Y → Y = run K ws X ∧ ticks K ws X = true := by
+  intro ws
+  induction ws with
+  | nil => intro X Y h; simp only [walk, Option.some.injEq] at h; subst h; simp [run, ticks]
+  | cons w ws ih =>
+    intro X Y h
+    simp only [walk] at h
+    by_cases hc : const0 K X = true
+    · rw [if_pos hc] at h
+      obtain ⟨h1, h2⟩ := ih _ _ h
+      exact ⟨by simpa [run] using h1, by simp [ticks, hc, h2]⟩
+    · rw [if_neg hc] at h
+      exact absurd h (by simp)
+
+/-- The certificate for a word: after `n0` warm-up periods, one more period keeps cell c + 1 constant at every
+tick and maps the set into itself. -/
+def check (K : ℕ) (ws : List ℕ) (n0 : ℕ) : Bool :=
+  match walk K ws (reach K ws n0) with
+  | none => false
+  | some X => sub X (reach K ws n0)
 def StpOK (K : ℕ) : Prop := ∀ s < 2 ^ K, ∀ w u : Bool, ∀ j < K,
     (stp K w.toNat s u.toNat).testBit j =
       xor (if j = 0 then w else s.testBit (j - 1)) (s.testBit j || if j = K - 1 then u else s.testBit (j + 1))
@@ -206,6 +238,57 @@ lemma imgAux_mem (K w S u : ℕ) (hu : u ≤ 1) :
 lemma img_mem (K w S s u : ℕ) (hs : s < 2 ^ K) (hu : u ≤ 1) (hS : S.testBit s = true) :
     (img K w S).testBit (stp K w s u) = true :=
   imgAux_mem K w S u hu (2 ^ K) 0 s hs hS
+
+/-! ## Sets: everything in an image comes from a state of the set; images are monotone -/
+
+lemma imgAux_elim (K w S : ℕ) : ∀ n acc y, (imgAux K w S n acc).testBit y = true →
+    acc.testBit y = true ∨ ∃ s, s < n ∧ S.testBit s = true ∧ ∃ u, u ≤ 1 ∧ y = stp K w s u := by
+  intro n
+  induction n with
+  | zero => intro acc y h; exact Or.inl h
+  | succ n ih =>
+    intro acc y h
+    rw [imgAux_succ] at h
+    rcases ih _ y h with h' | ⟨s, hs, hS, u, hu, rfl⟩
+    · split_ifs at h' with hn
+      · simp only [Nat.testBit_or, Bool.or_eq_true] at h'
+        rcases h' with (h' | h') | h'
+        · exact Or.inl h'
+        · right; refine ⟨n, by omega, hn, 0, by omega, ?_⟩
+          rw [Nat.one_shiftLeft, Nat.testBit_two_pow] at h'
+          exact (decide_eq_true_iff.mp h').symm
+        · right; refine ⟨n, by omega, hn, 1, by omega, ?_⟩
+          rw [Nat.one_shiftLeft, Nat.testBit_two_pow] at h'
+          exact (decide_eq_true_iff.mp h').symm
+      · exact Or.inl h'
+    · exact Or.inr ⟨s, by omega, hS, u, hu, rfl⟩
+
+lemma img_mono (K w A B : ℕ) (hAB : ∀ s, A.testBit s = true → B.testBit s = true) :
+    ∀ y, (img K w A).testBit y = true → (img K w B).testBit y = true := by
+  intro y hy
+  rcases imgAux_elim K w A (2 ^ K) 0 y hy with h | ⟨s, hs, hA, u, hu, rfl⟩
+  · simp at h
+  · exact img_mem K w B s u hs hu (hAB s hA)
+
+lemma run_mono (K : ℕ) : ∀ (ws : List ℕ) (A B : ℕ), (∀ s, A.testBit s = true → B.testBit s = true) →
+    ∀ y, (run K ws A).testBit y = true → (run K ws B).testBit y = true := by
+  intro ws
+  induction ws with
+  | nil => intro A B h y hy; exact h y hy
+  | cons w ws ih => intro A B h y hy; exact ih _ _ (img_mono K w A B h) y hy
+
+/-- From a set that one period maps into itself, every later set stays inside it. -/
+lemma reach_sub (K : ℕ) (ws : List ℕ) (n0 : ℕ)
+    (hS : ∀ s, (run K ws (reach K ws n0)).testBit s = true → (reach K ws n0).testBit s = true) :
+    ∀ n, n0 ≤ n → ∀ y, (reach K ws n).testBit y = true → (reach K ws n0).testBit y = true := by
+  intro n hn
+  induction n, hn using Nat.le_induction with
+  | base => intro y hy; exact hy
+  | succ n _ ih =>
+    intro y hy
+    have hy' : (run K ws (reach K ws n)).testBit y = true := hy
+    exact hS y (run_mono K ws _ _ ih y hy')
+
 
 lemma const0_spec (K S : ℕ) (h : const0 K S = true) :
     ∃ b, ∀ s < 2 ^ K, S.testBit s = true → s.testBit 0 = b := by
@@ -324,17 +407,20 @@ lemma toNat_inj' {a b : Bool} (h : a.toNat = b.toNat) : a = b := by
 def ReadsW (x0 : ℤ → Bool) (c : ℤ) (ws : List ℕ) (a : ℕ) : Prop :=
   ∀ n i, i < ws.length → (evol x0 (a + n * ws.length + i) c).toNat = ws.getD i 0
 
-/-- The determination package for a word at width K. -/
+/-- The determination package for a word at width K: a set reached after `n0` periods that one period maps into
+itself, with cell c + 1 constant at every tick of the period. -/
 def Det (K : ℕ) (ws : List ℕ) : Prop :=
-  ∃ S n0, (∀ n, n0 ≤ n → reach K ws n = S) ∧ ∀ i < ws.length, const0 K (run K (ws.take i) S) = true
+  ∃ S n0, reach K ws n0 = S ∧ (∀ s, (run K ws S).testBit s = true → S.testBit s = true) ∧
+    ∀ i < ws.length, const0 K (run K (ws.take i) S) = true
 
 lemma det_of_check (K : ℕ) (ws : List ℕ) (n0 : ℕ) (h : check K ws n0 = true) : Det K ws := by
-  simp only [check, Bool.and_eq_true, beq_iff_eq] at h
-  refine ⟨reach K ws n0, n0, ?_, ticks_spec K ws _ h.2⟩
-  intro n hn
-  induction n, hn using Nat.le_induction with
-  | base => rfl
-  | succ n _ ih => show run K ws (reach K ws n) = reach K ws n0; rw [ih, h.1]
+  unfold check at h
+  split at h
+  · exact absurd h (by simp)
+  · rename_i X hX
+    obtain ⟨h1, h2⟩ := walk_some K ws _ _ hX
+    refine ⟨reach K ws n0, n0, rfl, ?_, ticks_spec K ws _ h2⟩
+    rw [← h1]; exact sub_spec _ _ h
 
 lemma orbit_mem (K : ℕ) (hK : StpOK K) (hK2 : 2 ≤ K) (x0 : ℤ → Bool) (c : ℤ) (ws : List ℕ) (a : ℕ)
     (hr : ReadsW x0 c ws a) : ∀ n, (reach K ws n).testBit (win K x0 c (a + n * ws.length)) = true := by
@@ -352,12 +438,13 @@ lemma orbit_mem (K : ℕ) (hK : StpOK K) (hK2 : 2 ≤ K) (x0 : ℤ → Bool) (c 
 lemma col1_eq (K : ℕ) (hK : StpOK K) (hK2 : 2 ≤ K) (x0 : ℤ → Bool) (c : ℤ) (ws : List ℕ) (a : ℕ)
     (hr : ReadsW x0 c ws a) (hd : Det K ws) : ∃ n0, ∀ n i, n0 ≤ n → i < ws.length →
       evol x0 (a + n * ws.length + i) (c + 1) = evol x0 (a + (n + 1) * ws.length + i) (c + 1) := by
-  obtain ⟨S, n0, hS, ht⟩ := hd
+  obtain ⟨S, n0, hS, hsub, ht⟩ := hd
   refine ⟨n0, fun n i hn hi => ?_⟩
   have mem : ∀ m, n0 ≤ m → (run K (ws.take i) S).testBit (win K x0 c (a + m * ws.length + i)) = true := by
     intro m hm
     have hm' := orbit_mem K hK hK2 x0 c ws a hr m
-    rw [hS m hm] at hm'
+    replace hm' := reach_sub K ws n0 (by rw [hS]; exact hsub) m hm _ hm'
+    rw [hS] at hm'
     have := run_mem K hK hK2 x0 c (ws.take i) _ _ hm' (fun k hk => by
       rw [getD_take ws i k (by simp at hk; omega)]
       exact hr m k (by simp at hk; omega))
@@ -418,85 +505,85 @@ theorem no_word (K : ℕ) (hK : StpOK K) (hK2 : 2 ≤ K) (ws : List ℕ) (hd : D
 
 def words8 : List (ℕ × List ℕ) := [
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1]),
   (4, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1]),
+  (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1]),
-  (5, [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
-  (2, [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1]),
+  (3, [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (1, [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1]),
-  (6, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1]),
+  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1]),
-  (4, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1]),
+  (3, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1]),
   (2, [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1]),
   (3, [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1]),
-  (3, [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
-  (6, [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
-  (3, [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
-  (4, [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (2, [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
+  (5, [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
+  (2, [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (3, [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
   (3, [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1]),
-  (2, [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
-  (5, [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
-  (5, [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
-  (2, [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])]
+  (1, [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (4, [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1]),
+  (4, [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]),
+  (1, [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])]
 
 def words10 : List (ℕ × List ℕ) := [
 ]
@@ -507,7 +594,7 @@ lemma w8_0 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] 2 = tru
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_1 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_1 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -515,15 +602,15 @@ lemma w8_2 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1] 2 = tru
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_3 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1] 3 = true := by decide +kernel
+lemma w8_3 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_4 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_4 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_5 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_5 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -531,11 +618,11 @@ lemma w8_6 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1] 2 = tru
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_7 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1] 3 = true := by decide +kernel
+lemma w8_7 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_8 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_8 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -547,11 +634,11 @@ lemma w8_10 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1] 2 = tr
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_11 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_11 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_12 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_12 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -559,7 +646,7 @@ lemma w8_13 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1] 2 = tr
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_14 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_14 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -567,27 +654,27 @@ lemma w8_15 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1] 2 = tr
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_16 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_16 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_17 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_17 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_18 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_18 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_19 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_19 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_20 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_20 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_21 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_21 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -595,11 +682,11 @@ lemma w8_22 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1] 4 = tr
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_23 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_23 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_24 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_24 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -607,31 +694,31 @@ lemma w8_25 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1] 3 = tr
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_26 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_26 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_27 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_27 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_28 : check 8 [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1] 5 = true := by decide +kernel
+lemma w8_28 : check 8 [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_29 : check 8 [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_29 : check 8 [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_30 : check 8 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
+lemma w8_30 : check 8 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 1 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_31 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] 3 = true := by decide +kernel
+lemma w8_31 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_32 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_32 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -639,15 +726,15 @@ lemma w8_33 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_34 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1] 3 = true := by decide +kernel
+lemma w8_34 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_35 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_35 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_36 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_36 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -655,11 +742,11 @@ lemma w8_37 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_38 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1] 3 = true := by decide +kernel
+lemma w8_38 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_39 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_39 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -667,11 +754,11 @@ lemma w8_40 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_41 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1] 6 = true := by decide +kernel
+lemma w8_41 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_42 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_42 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -683,11 +770,11 @@ lemma w8_44 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_45 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_45 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_46 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_46 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -699,7 +786,7 @@ lemma w8_48 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_49 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_49 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -715,7 +802,7 @@ lemma w8_52 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1] 3 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_53 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_53 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -723,11 +810,11 @@ lemma w8_54 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_55 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_55 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_56 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_56 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -735,7 +822,7 @@ lemma w8_57 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_58 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_58 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1] 3 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -747,7 +834,7 @@ lemma w8_60 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_61 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_61 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -759,11 +846,11 @@ lemma w8_63 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1] 2 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_64 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_64 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_65 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1] 4 = true := by decide +kernel
+lemma w8_65 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -787,19 +874,19 @@ lemma w8_70 : check 8 [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1] 3 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_71 : check 8 [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1] 3 = true := by decide +kernel
+lemma w8_71 : check 8 [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_72 : check 8 [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1] 6 = true := by decide +kernel
+lemma w8_72 : check 8 [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1] 5 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_73 : check 8 [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 3 = true := by decide +kernel
+lemma w8_73 : check 8 [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_74 : check 8 [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 4 = true := by decide +kernel
+lemma w8_74 : check 8 [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 3 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -807,19 +894,19 @@ lemma w8_75 : check 8 [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1] 3 =
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_76 : check 8 [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
+lemma w8_76 : check 8 [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 1 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_77 : check 8 [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1] 5 = true := by decide +kernel
+lemma w8_77 : check 8 [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1] 4 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_78 : check 8 [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 5 = true := by decide +kernel
+lemma w8_78 : check 8 [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 4 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma w8_79 : check 8 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 2 = true := by decide +kernel
+lemma w8_79 : check 8 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 1 = true := by decide +kernel
 
 lemma checks8 : (words8.all fun e => check 8 e.2 e.1) = true := by
   simp only [words8, List.all_cons, List.all_nil, Bool.and_true, w8_0, w8_1, w8_2, w8_3, w8_4, w8_5, w8_6, w8_7, w8_8, w8_9, w8_10, w8_11, w8_12, w8_13, w8_14, w8_15, w8_16, w8_17, w8_18, w8_19, w8_20, w8_21, w8_22, w8_23, w8_24, w8_25, w8_26, w8_27, w8_28, w8_29, w8_30, w8_31, w8_32, w8_33, w8_34, w8_35, w8_36, w8_37, w8_38, w8_39, w8_40, w8_41, w8_42, w8_43, w8_44, w8_45, w8_46, w8_47, w8_48, w8_49, w8_50, w8_51, w8_52, w8_53, w8_54, w8_55, w8_56, w8_57, w8_58, w8_59, w8_60, w8_61, w8_62, w8_63, w8_64, w8_65, w8_66, w8_67, w8_68, w8_69, w8_70, w8_71, w8_72, w8_73, w8_74, w8_75, w8_76, w8_77, w8_78, w8_79]

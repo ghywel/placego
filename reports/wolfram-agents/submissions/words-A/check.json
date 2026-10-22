@@ -118,6 +118,11 @@
   },
   {
    "kind": "theorem",
+   "name": "Rule30Submission.imgAux_elim",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
    "name": "Rule30Submission.imgAux_mem",
    "standardAxioms": true
   },
@@ -129,6 +134,11 @@
   {
    "kind": "theorem",
    "name": "Rule30Submission.img_mem",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.img_mono",
    "standardAxioms": true
   },
   {
@@ -173,6 +183,11 @@
   },
   {
    "kind": "theorem",
+   "name": "Rule30Submission.reach_sub",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
    "name": "Rule30Submission.readsW_of_eventuallyWord",
    "standardAxioms": true
   },
@@ -184,6 +199,11 @@
   {
    "kind": "theorem",
    "name": "Rule30Submission.run_mem",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.run_mono",
    "standardAxioms": true
   },
   {
@@ -214,6 +234,16 @@
   {
    "kind": "theorem",
    "name": "Rule30Submission.stp_lt",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sub",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sub_spec",
    "standardAxioms": true
   },
   {
@@ -478,6 +508,16 @@
   },
   {
    "kind": "def",
+   "name": "Rule30Submission.walk",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.walk_some",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
    "name": "Rule30Submission.win",
    "standardAxioms": true
   },
@@ -522,8 +562,8 @@
    "standardAxioms": true
   },
   {
-   "kind": "theorem",
-   "name": "Rule30Submission.check.eq_1",
+   "kind": "def",
+   "name": "Rule30Submission.check.match_1",
    "standardAxioms": true
   },
   {
@@ -578,6 +618,11 @@
   },
   {
    "kind": "theorem",
+   "name": "Rule30Submission.sub.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
    "name": "Rule30Submission.ticks.eq_1",
    "standardAxioms": true
   },
@@ -589,6 +634,21 @@
   {
    "kind": "theorem",
    "name": "Rule30Submission.ticks.eq_def",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.walk.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.walk.eq_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.walk.eq_def",
    "standardAxioms": true
   },
   {
@@ -646,7 +706,7 @@
  "official": [],
  "reasons": [],
  "replay": {
-  "constants": 235,
+  "constants": 257,
   "ok": true
  },
  "verdict": "pass",
