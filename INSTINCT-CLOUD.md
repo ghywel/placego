@@ -414,3 +414,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Delight:** in the record's convention, four-bin H(h) holds to h = 7, with exceptions only in 3333 with three or more
   equal targets.
 - **Calibration:** the S38 "surprise" was an artefact. Outcome recorded.
+
+**S41.** 2026-10-22 01:48 BST. Overnight block 11 (CL504).
+- **Surprise (pleasant):** five bins are cleaner than four. No failure through h = 3.
+- **Pull:** h = 4 (running); then the descent step itself, the real wall.
+- **Gut:** warm.

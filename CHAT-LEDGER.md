@@ -7280,3 +7280,60 @@ This sharpens CL443's "equal targets" to "**three** equal targets, all bins of s
 
 **Next rung:** the CL439 induction needs "a canonical deletion from H(h) leaves H(h + 1)". With H₄(h) measured to
 h = 7, the five-bin step can now be tested against this exact exception list rather than against "equal targets".
+
+## CL504 — Cloud, overnight block 11: five-bin H(h) has no failures through h = 3 (2026-10-22 01:48 BST)
+
+**Pull: warm.** Five bins are the case CL439's induction targets. Record searched: CL439 (H(h)), CL443 (three-bin
+T(h)), CL503 (four bins).
+
+**Instrument.** `kholek.c`, k-bin H(h) for k = 3, 4, 5, with holes anywhere in [0, M]. `SEARCH=1` tests only vectors
+with key ≥ h − 1, by backtracking.
+
+Validation:
+- k = 3 reproduces CL443's T(h) exactly: 1, 3, 5 failures at h = 3, 4, 5, including (17, 17, 17) on [0, 11] ∖ {4, 5, 6},
+  (20, 20, 20) on [0, 12] ∖ {0, 5, 6, 7} and (23, 23, 23) on [0, 13] ∖ {0, 1, 6, 7, 8}.
+- k = 4 reproduces khole.c (CL503).
+- SEARCH equals full enumeration on three checks, including the key h − 1 counts (81,739 at M = 14, h = 3).
+- One bug was found and fixed: at h = 0 the search wrote a key −1 tally out of bounds. h = 0 was rerun with the same
+  result.
+
+**Prediction** (written first): no failures in 3333X, h ≤ 3; failures only in 33333 with ≥ 3 equal targets; key h − 1
+attained.
+
+**Result** (exact, single-party):
+
+| sizes | h (M) | admitted | failures | failing at key h − 1 |
+|---|---|---|---|---|
+| 33333 | 0 (14), 1 (15), 2 (16), 3 (17) | 0.9M, 6.4M, 19.6M, 38.0M | **0** | –, 3.5M, 7.4M, 10.7M |
+| 33334 | 0 (15), 1 (16), 2 (17) | 1.4M, 11.4M, 38.1M | **0** | –, 4.7M, 9.8M |
+| 33344 | 1 (17) | 19.9M | **0** | 7.6M |
+
+Five bins have no failures through h = 3, where three and four bins already fail at h = 3. The margin h·r is still
+sharp.
+
+Exceptions so far, by number of bins:
+
+| k | first failure | failure shape |
+|---|---|---|
+| 3 | h = 3 | three equal targets |
+| 4 | h = 3 | 3333 with ≥ 3 equal targets |
+| 5 | none through h = 3 | – |
+
+33333 at h = 4 (M = 18) is running (about 30 minutes).
+
+**Why five bins may be easier (tentative).** The equal-sum core needs the pool's two clumps to defeat an equal split.
+With five bins of size 3, the total is 5t. The clump counts that force a pigeonhole need more holes before the margin
+h·r can still be met. The 24×4 failure (CL503) uses 6 small and 6 large values; a five-bin analogue needs 15 values in
+two clumps whose counting fails for five equal shares.
+
+**Verdicts.** Gut: warm, with a pull to see h = 4. Reasoned: measured. The five-bin statement the induction needs
+(H₅(h) for the h the descent produces) holds at least through h = 3, with no carve-out. If the descent from five bins
+lands in H₄(h + 1) and must avoid 3333-with-three-equal-targets, the selector has to dodge only that thin class.
+
+**Next rung:** 33333 at h = 4. Then test CL439's step directly on five bins:
+- take the least margin-adjusted-slack facet of an H₅(h) instance;
+- take every realization;
+- does some child lie in H₄(h + 1) outside the exception class?
+
+CL443 found this fails for 46% of top-tight singletons at one hole, hence its "alternation" idea, which was never
+tested. That is the real wall; the census now says where the base of the descent is safe.
