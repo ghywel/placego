@@ -7645,3 +7645,45 @@ pigeonhole. For eight streets, which needs H at the hole counts the descent actu
 the record's equal-sum core in every case seen.
 
 **Census.** k = 6 at n = 18 (333333) is still running at 45 minutes; SEARCH slows sharply with six bins.
+
+## CL513 — Cloud, overnight block 20: the equal-sum core's distance is about 1.5k holes, by a formula; SS3 k = 6 at n = 18 clean (2026-10-22 03:59 BST)
+
+**Pull: warm (CL512's witness looked like a family).** Record searched: CL443, CL503, CL512.
+
+**The family** (`clump_family.py`). The pool is a small clump [0, s − 1], then a run of h holes, then the large values
+up to M = 3k + h − 1. There are k bins of size 3: one light target t and k − 1 equal heavy targets T. For each k the
+search finds the least h with a member in H(h) that is infeasible (exact search).
+
+Prediction: it reproduces the census (3, 3, 7 for k = 3, 4, 5) and grows with k. **Held:**
+
+| k | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|
+| least failing h | 3 | 3 | 7 | 9 | 10 | 12 | 13 | 15 |
+| clump size s | 4 | 6 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+The first three values match the census exactly. Witnesses: (17×3), (21×4), (24, 43×4), (32, 53×5), (34, 61×6),
+(43, 71×7), (44, 79×8), (54, 89×9).
+
+**The formula for s = 2, by hand** (predicted 12, 13, 15 for k = 8, 9, 10 before the run). The pool is {0, 1} ∪ [h + 2, M].
+- The instance is infeasible when no heavy bin can hold 1, i.e. T ≥ 2M + 1 (then 0 is blocked too), and the light bin
+  cannot be {0, 1, x}, i.e. t ≥ M + 2.
+- With (k − 1)T + t = ΣS and ΣS = 1 + (3k − 2)(3k + 2h + 1)/2, the window for t is nonempty iff
+  ΣS − (k − 1)(2M + 1) − (M + 2) = −1.5k² + kh + 2.5k − h − 2 ≥ 0.
+- That is **h ≥ 1.5k − 1 + 1/(k − 1)**, giving ⌈·⌉ = 7, 9, 10, 12, 13, 15 for k = 5, …, 10.
+- The remaining H(h) cuts are checked by the program, not by hand.
+
+So for k ≥ 5 bins of size 3, **H(h) fails from h = ⌈1.5k − 1 + 1/(k − 1)⌉ at the latest**, always by an equal-sum
+pigeonhole.
+
+**SS3, k = 6** (n = 18, sizes 333333; CL507's census): **83,939,140 ordered cut-feasible vectors, 0 failures**.
+
+**What it means for the descent.** With size-3 bins, the uniform margin h·r is safe only up to an h that grows like
+1.5k. The equal-sum core is the only obstruction seen, and its distance is now known in closed form for the s = 2 shape.
+A descent that adds at most about 3 holes per deleted bin (MI368: h′ ≤ g + h) can reach the core: five bins at h = 0
+delete one bin and land in four bins at h′ ≤ 3, which is exactly where the four-bin core (21×4) lives. The proof
+therefore has to choose realizations that avoid it. That is a concrete, finite requirement, now stated.
+
+**Verdicts.** Gut: the night's quiet best moment; a closed form where I expected a table. Reasoned: the formula's
+window is proved by hand (single-party, a few lines); the full H(h) admission is machine-checked for k ≤ 10; the claim
+"first failure" is an upper bound on the true first failure, since other shapes could fail earlier for k ≥ 6. For
+k = 5 the census confirms 7 on two-run hole sets.

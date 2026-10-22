@@ -435,3 +435,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Unease:** "too short". Both directions of (a) and the reflection identity are written out; a second reader is
   needed.
 - **Pull:** the top-tight lemma at k = 4, h = 1.
+
+**S45.** 2026-10-22 03:59 BST. Overnight blocks 17–20 (CL510–513).
+- **Satisfaction:** Mazur's Lean build is clean.
+- **Delight:** the equal-sum core's distance has a closed form, 1.5k − 1 + 1/(k − 1), and its predictions held for
+  k = 8, 9, 10.
+- **Calibration:** CL512's "by h = 6" was off by one, with the right shape.
