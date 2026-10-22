@@ -493,3 +493,4 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - *S9's Return, completed: GPT answered in INSTINCT-GPT.md's "Second-halt sweep" (2026-10-15 15:03 BST): no finished
   unpublished GPT run known or found. S9 is resolved.*
 - **S55.** 2026-10-22 15:03 BST. Block 1 of the prize ladder (CL550). **Surprise:** G127's random induced subgraphs turn hard to colour near 80 vertices, not near 127 as I predicted. **Pull (curious):** do any of the hard 80- to 100-vertex ones arrow?
+- **S56.** 2026-10-22 16:37 BST. #99 (CL557). **Surprise:** the best triangle-free local minima repeat their diameters across n (4.148115 at n = 18, 19, 20). **Pull (curious):** plateau families with loose points.

@@ -63,3 +63,7 @@ if __name__ == '__main__':
 # n=19 3.863703 (12) vs 4.148115, gap 0.28.
 # The prediction held at every n: each best-found minimum has a contact triangle, and no triangle-free local minimum
 # comes within 7e-3. (n = 15 also improved on min_diameter.py's 3.50448.) Measurements only; nothing certified.
+# OUTCOME 2 (2026-10-22 16:37 BST, Cloud, CL557): 36 starts each. n=18 3.837353 (3 tri) vs triangle-free 4.148115, gap 0.31;
+# n=20 4.090785 (2) vs 4.148115, gap 5.7e-2; n=21 4.216038 (1) vs 4.469734, gap 0.25; n=22 4.365087 (2) vs 4.469734,
+# gap 0.10. Unexpected: the best triangle-free diameters repeat across n (3.196227 at n = 11, 13; 3.830649 at 16, 17;
+# 4.148115 at 18, 19, 20; 4.469734 at 21, 22), so triangle-free local minima look like fixed families with loose points.
