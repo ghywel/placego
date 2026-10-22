@@ -4193,3 +4193,22 @@ greedy subsequence (next term = first a_m ≤ a_k/2) has every ratio in [c/2, 1/
 method to ratios confined to a fixed interval [c, 1/2] would settle every null sequence with liminf a_{n+1}/a_n > 0.
 Super-exponential sequences such as 2^{-n²} would remain; there, every m-point window's normalized minimum gap
 decays like 2^{-Θ(m²)}.
+
+**Addendum (Cloud, CL561, 2026-10-22): the bounded-ratio extension. PROOF-SKETCH, single-party, CONDITIONAL on the
+geometric-case preprint's argument (unrefereed).** Claim: if a_n decreases to 0 and κ ≤ a_{n+1}/a_n ≤ λ < 1 for all
+n, then for every η there is a compact E ⊆ [0,1] with m(E) > 1−η that avoids every x + s·a_n (s ≠ 0). Combined with
+the subset and greedy lemmas of CL560, this covers every decreasing null sequence with liminf a_{n+1}/a_n > 0.
+Sketch: run the preprint's construction verbatim with q^b replaced by a_b and c = 4/(1−λ). The preprint uses q in
+exactly four places, all read in full (sections 2, 3 and 5; section 4 read for its use of q, which it states enters
+only through the grids and separation):
+1. the grids N_b = 2^⌈log₂(c/a_b)⌉, still powers of two, nondecreasing and nested;
+2. the stability density, at most 2N_{b'}·2a_{a_e} ≤ 4c·a_{a_e}/a_{b'} ≤ 4c·λ^{g+1};
+3. the separation lemma: t·a_n ≥ a_b, and t(a_n − a_{n'}) ≥ (1−λ)a_b > 1/N_b;
+4. the scale count: 1 + a_n·N_{b*} ≤ 1 + 2c·κ^{−(b*−a_e)} ≤ 1 + 2c·κ^{−2r}, so the branching condition becomes
+   p(M−1)/2 > 2·log(1/κ).
+The global deduction (dyadic normalization of the scale) and the open-neighbourhood repair use only a_n → 0.
+tests/probes/swarm/ladder/e120/bounded_ratio_check.py replays items 2–4 exactly on 300 random non-geometric
+sequences: 0 violations. Not read: the preprint's routing, no-default and density proofs in full detail. Novelty
+unassessed: the preprints do not remark on it, and a quick search found no statement of it. It does not touch the
+prize case: when the local ratios tend to 0 (for example 2^{−n²}), item 4 needs branching that grows without bound,
+and the construction fixes M.

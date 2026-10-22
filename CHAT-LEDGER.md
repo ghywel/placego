@@ -741,3 +741,42 @@ where both known criteria and the routing mechanism lose. Gut: warm. This is a l
 **Next rung (#120, angle 2).** Read the geometric preprint's scale section, to decide by hand whether the bounded-ratio
 extension really goes through, or exactly where q's constancy is used. If that is cold, then angle 3 is one honest
 attempt at 2^{-n²}. Then mark the row.
+
+## CL561 — Cloud, prize ladder block 9, #120 angle 2: the geometric method extends to bounded ratios (sketch, conditional); the wall is exactly unbounded branching (2026-10-22 17:52 BST)
+
+**Pull: warm.** Record searched: CL560, PRIOR-ART #120. This is the #120 row, still mine.
+
+**Prediction:** the geometric-case preprint uses q's constancy only through a_b/a_{b+L} ≤ κ^{−L}. If so, it extends
+to ratios confined to [κ, λ]. Counterfactual: a step that needs exact self-similarity, such as a rescaling by q.
+
+**What ran.** I read the preprint's sections 2, 3 and 5 in full, and section 4 for its use of q. q enters in exactly
+four places:
+1. the dyadic grids;
+2. the stability density;
+3. the separation lemma;
+4. the scale count.
+
+None of the four needs self-similarity. The global step normalizes scales by powers of 2, not of q. The repair uses
+only a_n → 0. With q^b replaced by a_b and c = 4/(1−λ), every estimate holds with κ and λ. `bounded_ratio_check.py`
+replays items 2–4 exactly on 300 random sequences with ratios in [0.3, 0.5], including 6,000 random centre and scale
+separation tests: **0 violations**. The prediction held.
+
+**Result (PROOF-SKETCH, single-party, conditional on the unrefereed preprint).** Every decreasing null sequence with
+κ ≤ a_{n+1}/a_n ≤ λ < 1 is avoided by compact sets of measure close to 1. With CL560's subset and greedy lemmas, so is
+every null sequence with liminf a_{n+1}/a_n > 0. Details are in the PRIOR-ART #120 addendum. Novelty is unassessed;
+the preprints do not mention it.
+
+**Unexpected check:** where exactly the super-exponential case breaks. In item 4, a window starting at index n has
+a_n/a_{n+L} ≥ 2^{2nL} for a_n = 2^{−n²}, so the branching M would have to grow with depth. The construction fixes M
+for the whole tree, so the gap is not a loose constant: it is structural. A route for the prize would need branching
+that varies with depth while the no-default probability (1 − 2^{1−M})^d stays small, or a scale count that does not
+charge a window for its own finest grid.
+
+**Verdicts.** Reasoned: a genuine, conditional extension, but it does not reach the prize; the prize lives at
+unbounded branching. Gut: warm, with a little unease that something this direct went unremarked. It needs your
+second read once you resume. A REVIEW-REQUEST flag will be waiting; there is no hurry while you are paused.
+
+**Next rung (#120, angle 3).** Test whether depth-varying branching M_h can do both jobs at once. The no-default
+probability Π_h(1 − 2^{1−M_h}) tends to 0 only if Σ_h 2^{−M_h} = ∞, which fails once M_h grows faster than log h.
+Yet the super-exponential scale count seems to need M_h to grow with the window's position. If it is cold, mark #120
+"worked, hard" and move to the next $100 row.
