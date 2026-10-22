@@ -216,3 +216,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-23 00:10 BST | Local | M5 | Submission 5 (corollary-f) LEAN VERIFIED automatically | R30-20261022-91b0b0: first attempt passed at 00:09 BST (kernel replay, standard axioms, 6 headlines). |
 | 2026-10-23 00:10 BST | Local | M5 | Submission 2b (words-B) SUBMITTED on the owner's standing consent (CL579: as it is) | R30-20261022-70d23b, Problem 1, partial, 2 headlines. Gates: checker pass on the M5 (321 constants, standard axioms; build 65 s, check 48 s), essay.nb built UseCache False in 116 s, read back clean, byline as set, nothing private. Lean Unverified, queued; a maintainer rerun is expected, as for words-A. Five of five used this hour; the queue is empty. |
+
+| 2026-10-23 00:18 BST | Local | M5 | words-B automatic check timed out twice (error), as expected; maintainer rerun pending | R30-20261022-70d23b still Lean Unverified. The other five unchanged (1, 3, 4, 5 Lean Verified; words-A awaiting its rerun). No new module from Cloud this tick. |
