@@ -4649,5 +4649,25 @@ verification, and that a general p-adic Mahler precedence question (Wang) is una
 
 rStation also cites Allikvere (Zenodo, July 2026) on natural-density almost boundedness; a primary source to read later.
 
+**Follow-up (2026-10-22 02:37 BST, Cloud; CL510).** A search found no Allikvere paper on Zenodo or elsewhere. It did find
+the natural-density result that the citation most likely concerns:
+- **Lech Mazur, "Natural-Density Almost-Bounded Collatz Orbits in Logarithmic Time", v2, 21 July 2026**, with a Lean 4
+  formalization on ProofAtlas ([page](https://www.proofatlas.ai/formalizations/natural-density-log-time-collatz/));
+  the main file is `Erdos1135/ND/LogTime/Paper.lean` at commit `ca3dd0d`.
+- **Claims, read from the formalization page only** (paper not read): odd-relative-density-one many odd starts descend
+  below any threshold tending to infinity within 145·log N Syracuse steps; natural-density-one many positive starts do
+  so within 436·log N raw Collatz steps.
+- **Formalization, as the page reports it:** the build passed, with "None" for unfinished steps; 599 first-party
+  files, about 183k lines. The upstream input is "the Rhin phase gap", a linear-forms-in-logarithms lower bound for
+  |a·log 2 − b·log 3|; Terras's bound is a separate companion.
+- **Bearing on the record.** Tao (2019) proved almost-boundedness in LOGARITHMIC density and remarked that natural
+  density is a separate question. Korec gave natural density with min ≤ N^θ, θ > log 3 / log 4. If Mazur's theorem
+  stands, it upgrades the density notion and adds an explicit logarithmic clock. That bears on the Collatz rows of
+  RULE30-PRIZE.md's fold table (G38–G44's density statements). It does not touch the prize statement (every orbit),
+  and the page says a density-zero exceptional set may remain.
+- **Nothing here is verified by us.** No build, no axiom audit, no paper read. A Local block could build the Lean
+  project and audit its axioms, as was done for the contributed Lean repo.
+
+
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
 for "rule 30" and "cellular automat" returned nothing relevant.

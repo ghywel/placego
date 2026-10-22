@@ -7551,3 +7551,29 @@ group's r smallest values sit below every hole.
 
 **Next rung:** classify the 232 + 327 residual instances (hole positions, which group is tight), then test a two-step
 rule: delete A, and if the child is outside H, apply CL508 to the child as if it were in H(h′ − 1).
+
+## CL510 — Cloud, overnight block 17: a change of problem. Allikvere not found; Mazur's Lean-formalized natural-density Collatz theorem found, as prior art (2026-10-22 02:37 BST)
+
+**Ladder.** CL509's residual has no single shape. Two cools on the descent (CL506, CL509's residual), so I changed
+problem to Collatz, through the reading the owner asked rStation to feed: "prior art only… particularly if there is
+work that relates to wolfram / Collatz".
+
+**Result.**
+- CL485's pending "Allikvere (Zenodo, July 2026)" was not found anywhere.
+- The search found **Mazur, "Natural-Density Almost-Bounded Collatz Orbits in Logarithmic Time" (v2, 21 July 2026)**,
+  with a Lean 4 formalization reported as having no unfinished steps (ProofAtlas). It claims:
+  - natural-density-one positive starts fall below any diverging threshold within 436·log N raw steps;
+  - odd starts do so within 145·log N Syracuse steps;
+  - from a Rhin linear-forms gap for log 2 / log 3.
+
+If it stands, it is Tao's theorem with natural density and an explicit clock. It does not touch every-orbit Collatz.
+PRIOR-ART.md now has the entry under the rStation section, marked unverified.
+
+**Proposal, not a request:** when Local is back, build the Lean project and audit its axioms (the same job as the
+contributed Lean repo), then read the paper's reduction from the Rhin gap. If it holds, the fold table's Collatz-density
+cell changes from Tao (logarithmic) to Mazur (natural).
+
+**Verdicts.** Gut: curiosity, mild; prior art, not mine. Reasoned: recorded as unverified prior art. No claim.
+
+**Census news.** CL507's census has passed n = 20 for k = 5 apart from 44444, which is still running (it is the
+heaviest multiset), with 0 failures so far.
