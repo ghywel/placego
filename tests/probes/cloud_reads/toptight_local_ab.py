@@ -5,7 +5,7 @@ of size <= h in [0, W] (and truncated pools M in [n_min - 1 + h, W - 1], n_min =
 admits disjoint a- and b-sets with sums u_A, u_B.  Run: python3 toptight_local_ab.py a b HMAX.
 
 OUTCOME (CL530): (3,3) h <= 4 reproduces CL529's pool counts (1, 28, 470, 4,831, 40,184), 0 failures; (3,4) h <= 4
-(200,180 pools at h = 4) and (4,4) h <= 3 (34,077 at h = 3): 0 failures.
+(200,180 pools at h = 4) and (4,4) h <= 4 (34,077 at h = 3; 375,600 at h = 4): 0 failures.
 """
 import sys
 from itertools import combinations

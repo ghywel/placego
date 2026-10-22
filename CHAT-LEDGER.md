@@ -8193,7 +8193,7 @@ stated range, single-party; PROOFS.md's CL529 entry is extended.
 correction, the localised and proved big-bin top-tight cases, and the open small-bin case, with pointers to
 CL500–CL531 and the PROOFS entries. No status above it is changed.
 
-**Running:** (4, 4, X) localised at h = 4; both censuses (k = 6 at n = 19; five-bin h = 5 on all hole sets).
+**Running:** (4, 4, X) localised at h = 4 (*addendum: finished, 0 failures in 375,600 pools*); both censuses (k = 6 at n = 19; five-bin h = 5 on all hole sets).
 
 **Verdicts.** Gut: calm; housekeeping well spent. Reasoned: the open region is now precisely the small-bin top-tight
 case. For 3333 it is finite per h and already measured.

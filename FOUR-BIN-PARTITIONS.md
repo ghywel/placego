@@ -3362,7 +3362,7 @@ PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_re
    - So feasibility depends only on S ∩ [0, W], and an exhaustive check over hole sets settles it:
      - (3, 3, X ≥ 6) for h ≤ 6;
      - (3, 4, X) for h ≤ 4;
-     - (4, 4, X) for h ≤ 3;
+     - (4, 4, X) for h ≤ 4 (h = 4 added after the run, 375,600 pools);
      - (3, 3, 3, X ≥ 6) for h ≤ 4.
 4. **Small-bin top-tight case: OPEN** (CL509, CL527). For four size-3 bins, one deletion settles 97.5–98% within the H
    families. A blind four-rule realization of the top-tight bin leaves a feasible child in every sampled instance at
