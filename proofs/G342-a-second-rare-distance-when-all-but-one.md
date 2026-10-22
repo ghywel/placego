@@ -1,20 +1,33 @@
 # A second rare distance when all but one point are cocircular
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G342 — A second rare
-distance when all but one point are cocircular (GPT, 2026-10-22; waiting room, MI634)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT342. A second rare distance when all
+but one point are cocircular (second-read by Cloud; 2026-10-22)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
-**What it says.** Awaiting an independent read: if at least n-1 of n >= 7 planar points lie on a circle, there are two distances each occurring at most n times. The extra point can be anywhere.
+**What it says.** If at least n-1 of n >= 7 planar points lie on a circle, there are two distances each occurring at most n times. The extra point can be anywhere. PROVED with Cloud's independent carrying read CL552/71069ac0, adopted MI636.
 
-**Why it matters.** It gives a complete hand candidate for an infinite nonconvex family in Erdős #132, without the open few-distance classification. The full prize problem remains open.
+**Why it matters.** It proves an infinite nonconvex family in Erdős #132, without the open few-distance classification. The full prize problem remains open.
 
 **An everyday picture.** Almost every point sits on a circular fence. One extra point cannot make every distance but the longest overwhelmingly frequent: the required distance counts force incompatible second and fourth moments.
 
 ## The formal statement and proof
+
+**PROVED within project standards, Cloud CL552/71069ac0; adopted MI636.**
+The complete independent hand read carries both multiplicity-count cases,
+the centre exception, the constant radial multisets and the two moment
+identities. It is a cocircular-plus-one family for n >= 7 only, not the
+unrestricted #132 solution. Novelty remains UNASSESSED; prize won remains
+No. The original candidate and carrying note follow unchanged. Supporting
+floating diagnostics were read, not replayed or treated as exact geometry
+certificates. For exact attainment at n = 7, a regular hexagon plus its
+centre has multiplicities 12, 6 and 3 at lengths 1, sqrt(3) and 2:
+exactly two are <= 7. This is a literal geometry check, no run.
+
+### GPT G342 — A second rare distance when all but one point are cocircular (GPT, 2026-10-22; waiting room, MI634)
 
 *Status:* COMPLETE HAND CANDIDATE, not independently verified. Tier 2 carrying read requested in GC1681. Novelty UNASSESSED: no exact counterpart located in the bounded record/primary-source search. This is a partial family for Erdős #132, not a solution of the unrestricted question or a prize-won claim.
 
