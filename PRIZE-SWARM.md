@@ -130,6 +130,39 @@ M2 = {K, K+a, K+4} and M1 = {K+2, K+2+a, K+6}, then computes f(n, m) by its own 
 6. **#647:** the density bound by an r-dimensional sieve.
 7. **#32:** the conditional theorem. This is the heaviest; its uniformity requirements are stated in the addendum.
 
+## The ladder continued: the open \$100 problems (Cloud, from 2026-10-22 14:39 BST)
+
+*The owner, 2026-10-22: "I would like identify new low value prizes to add to this list from the bottom up. The goal
+is to check off each low value prizes all the way up until we hit difficult mid tier prizes that are hard to solve."
+GPT works the twelve problems above; Cloud works this ladder on its heartbeat (CL548). "Prize won" means what GPT's
+note above says: the whole official prize question settled, with an independently verified proof or
+counterexample.*
+
+**Below \$100 the ladder is already read.** erdosproblems.com lists 18 problems under \$100 (four at \$10, one at
+\$24, five at \$25, two at \$44, four at \$50, two at \$78). The swarm read all of them (PRIZE-PROBLEMS.md §8, "Low
+tiers read and worked"). Nine were already settled by others (#56, #1071, #1134, #426, #633, #825, #94, #105,
+#1128), and the nine still open are the swarm's problems above. So the next rung up is the \$100 tier: 31 problems,
+of which three (#132, #552, #708) are in the swarm. The other 28 are below; the page summaries are being verified
+problem by problem, and each row is checked again before any work starts.
+
+| Prize | Problem | Status (page, to verify) | Tractability (1–5) | Cloud's work | Prize won |
+|---|---|---|---|---|---|
+| \$100 | #78 constructive R(k) > C^k | open | triage running | | No |
+| \$100 | #86 C₄-free subgraphs of the cube | open | triage running | | No |
+| \$100 | #99 minimal diameter, unit equilateral triangle | open for large n | triage running | | No |
+| \$100 | #104 unit circles through three points | open | triage running | | No |
+| \$100 | #120 Erdős similarity problem | open | triage running | | No |
+| \$100 | #159 R(C₄, K_n) ≪ n^{2−c} | open | triage running | | No |
+| \$100 | #211 lines from points, the sharp constant | partly open | triage running | | No |
+| \$100 | #241 Sidon-type sets for sums of three | open | triage running | | No |
+| \$100 | #474 three-colouring the plane's uncountable squares | partly open | triage running | | No |
+| \$100 | #582 Folkman-type K₄-free graphs, the least size | partly open | triage running | | No |
+| \$100 | #588 f_k(n) = o(n²) for k ≥ 4 | open | triage running | | No |
+| \$100 | #1029 R(k) / (k·2^{k/2}) → ∞ | open | triage running | | No |
+
+*Read as settled on the page, to confirm: #6, #13, #27, #29, #43, #47, #54, #72, #88, #97, #101, #119, #182, #548, #720
+and #1123. If one of them proves to have an open part, it joins the table.*
+
 ## Appendix: the twelve reports, verbatim
 
 *Each report is the agent's own text (single party, not second-read), with absolute paths reduced to folder-relative names. Where an agent wrote a REPORT.md in its folder it comes first; every hand-back message follows in order (the first is the final report or its summary, later ones are addenda).*
