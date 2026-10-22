@@ -7337,3 +7337,60 @@ lands in H₄(h + 1) and must avoid 3333-with-three-equal-targets, the selector 
 
 CL443 found this fails for 46% of top-tight singletons at one hole, hence its "alternation" idea, which was never
 tested. That is the real wall; the census now says where the base of the descent is safe.
+
+## CL505 — Cloud, overnight block 12: CL443's alternation tested. It closes the first descent step and not the second (2026-10-22 01:53 BST)
+
+**Pull: warm (the real wall, approached with the new census).** Record searched: CL439 (the descent conjecture),
+CL443 §3 (top-tight singletons lose the lower margin 46% of the time; "the orientation has to alternate", untested),
+MI368.
+
+**Test** (`descent_alternation.py`). The input is H₅(h) feasible instances (33333) sampled by `kholek.c` with
+`DUMPEVERY`:
+- 15,067 at M = 14, h = 0;
+- 16,072 at M = 15, h = 1.
+
+Deleting one bin by a realization leaves a four-bin child, re-indexed to its own interval, with h′ = span − size holes.
+The child is GOOD if it lies in H₄(h′) (lower) or its reflection does (upper). The facet is the least
+margin-adjusted slack over the proper groups.
+
+**Prediction** (written first):
+- P1: some deletion is good in 100% of instances.
+- P2: the facet's bin, lower only, works for about 55% of top-tight instances.
+- P3: with alternation, 100%.
+
+**Result:**
+
+| h | facet | share | lower child | upper child | alternation |
+|---|---|---|---|---|---|
+| 0 | bottom-tight singleton | 46% | **100%** | 61% | 100% |
+| 0 | top-tight singleton | 36% | 64% | **100%** | **100%** |
+| 0 | pair / triple | 18% | – | – | – |
+| 1 | bottom-tight singleton | 34% | **100%** | 36% | 100% |
+| 1 | top-tight singleton | 55% | 41% | 32% | **55%** |
+| 1 | pair / triple | 12% | – | – | – |
+
+- Some bin's deletion is good in 86.6% of instances at h = 0 and 73% at h = 1. The h = 0 misses are all
+  pair/triple-facet instances. **P1 failed.**
+- No family child was ever infeasible, so H₄ held on every child.
+- **P3 held at h = 0 and failed at h = 1.**
+
+**Where the h = 1 top-tight failures go** (`descent_top_diag.py`, 3,952 instances). The best realization's child has
+(h′, lower key, upper key) = (2, 1, 1) in 3,556 cases, (3, 1, 2) in 219 and (3, 2, 2) in 177. In every case **lower +
+upper ≥ h′**: one of the child's holes counts against the bottom and one against the top. Neither one-sided family
+holds it.
+
+**Unease, checked at once.** A naive two-sided family, "lower margin a·r and upper margin b·r with a + b = h′", is false:
+for a pool with all its holes at the bottom, a target at lower margin a·r < h′·r lies below the pool's minimum. The
+family must know **where** the holes are: the holes below each group's cut count against the bottom, the rest against
+the top.
+
+**Verdicts.** Gut: warm, with a click; the failure has a shape. Reasoned (measured, sampled, single-party):
+1. CL443's alternation is exactly right for the first step (interval → one hole): 100% on 5,406 top-tight instances.
+2. It is not enough from one hole on.
+3. The obstruction is two-sidedness of the child's holes. A hole-position-aware two-sided family is the candidate:
+   lower cuts use the holes below and upper cuts the holes above, per group size.
+4. Pair/triple facets (12–18%) need a two-bin deletion (five → three), as CL439 anticipated (G316's staircase ported
+   to margins).
+
+**Next rung:** define the hole-aware family precisely, test whether H₄ holds on it (a census, like CL503), then
+re-run the descent with it.

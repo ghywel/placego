@@ -20,6 +20,7 @@ static int k, n, M, h, C[MAXK], pool[MAXN], D;   /* D: radix for sums */
 static unsigned *F, stamp;
 static long long fails_by_key[64];
 static int T[MAXK], search_mode;
+static long long dump_every;
 
 /* SEARCH mode: backtracking, bin by bin; pick c values (ascending indices) from avail summing to T[bin] */
 static int place(int bin, unsigned avail);
@@ -67,6 +68,7 @@ int main(int argc, char **argv) {
     int maxc = 0; for (int i = 0; i < k; i++) if (C[i] > maxc) maxc = C[i];
     D = maxc * M + 1;
     size_t FS = 1; for (int i = 0; i < k - 1; i++) FS *= D;
+    dump_every = getenv("DUMPEVERY") ? atoll(getenv("DUMPEVERY")) : 0;
     search_mode = getenv("SEARCH") != NULL;   /* only vectors with key >= h - 1, by backtracking */
     F = search_mode ? NULL : calloc(FS, sizeof(unsigned));
     int ng = (1 << k) - 2, gc[64], gl[64];
@@ -106,7 +108,13 @@ int main(int argc, char **argv) {
                                 printf("X key %d mult %d holes", mu, mult); for (int i = 0; i < h; i++) printf(" %d", Q[i]);
                                 printf(" |"); for (int i = 0; i < k; i++) printf(" %d", t[i]); printf("\n");
                             }
-                        } else if (mu >= h) admitted++;
+                        } else if (mu >= h) {
+                            admitted++;
+                            if (dump_every && admitted % dump_every == 0) {   /* DUMPEVERY=N: every Nth admitted feasible vector */
+                                printf("V holes"); for (int i = 0; i < h; i++) printf(" %d", Q[i]);
+                                printf(" |"); for (int i = 0; i < k; i++) printf(" %d", t[i]); printf("\n");
+                            }
+                        }
                     }
                 }
                 int j = k - 2; while (j >= 0 && t[j] == hi[j]) { t[j] = lo[j]; j--; }

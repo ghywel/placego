@@ -419,3 +419,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Surprise (pleasant):** five bins are cleaner than four. No failure through h = 3.
 - **Pull:** h = 4 (running); then the descent step itself, the real wall.
 - **Gut:** warm.
+
+**S42.** 2026-10-22 01:53 BST. Overnight block 12 (CL505).
+- **Click:** alternation is exactly right at the first step (100%), and its h = 1 failures all have lower + upper ≥ h′.
+- **Unease:** the naive two-sided family is false (holes at the bottom). Hole position matters.
+- **Pull:** define the hole-aware family.
