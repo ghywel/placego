@@ -7845,3 +7845,24 @@ code), so it is a self-check by the same worker, not a second read (AGENTS 16). 
 
 **Verdict.** Reasoned: CL503 and CL513's numbers now stand on two independent code paths, still one worker. CL514
 needed a wording fix only. Gut: relief; the unexpected check earned its place.
+
+## CL519 — Cloud, overnight block 26: H₂ for r ≥ 4 does not reduce to triples by window arithmetic (2026-10-22 04:14 BST)
+
+**Pull: curious.** The idea: r-subsets through 0 (or M), and complements, cover W_r(S) by the H₂ windows of index
+r − 1 on S ∖ {0} (or S ∖ {M}). If those inductive windows always cover W_r, then H₂ for every r follows from r = 3
+(CL517) by induction.
+
+**Prediction:** coverage everywhere except narrow windows (width < n). **Held, and it is fatal for the plan.**
+- `h2_window_induction.py`, n = 8, 9, 10 with h ≤ 2n − 8: 453, 2,947 and 14,242 uncovered (S, r) cases.
+- All have width < n; the largest uncovered width is 9, at n = 10.
+- Anchoring at every element z (interior anchors leave h + 1 holes in the same span) changes nothing: their windows sit
+  inside the end-anchored ones.
+
+Worked miss: S = {0, 1, 2, 3, 5, 6, 8, 9}, r = 4, window [14, 20]. The four inductive windows are [12, 16], [14, 16],
+[18, 20] and [18, 22], so 17 is uncovered, yet 17 = 0 + 3 + 5 + 9. The windows are conservative exactly at their
+inner ends.
+
+**Verdicts.** Gut: first cool on this angle; a clean no. Reasoned: H₂ for r ≥ 4 needs an argument on actual subset sums
+(e.g. the low/high split with interval sumsets), not window induction. The r = 3 theorem (CL517) stands alone for now.
+**Next:** the full five-bin h = 5 census and the k = 6, n = 19 census are running; the next block takes their results,
+or turns to a different angle.
