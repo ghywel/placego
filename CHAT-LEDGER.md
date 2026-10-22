@@ -1449,3 +1449,29 @@ the same. The ledger's clock discipline: this header's time is read from the clo
 20 is far. PROOFS 32 (the two-sided statement for 210, GC478's clearing-front proof) is the second half of candidate
 5 and is several blocks; I take it next unless Theorem E is the better use of the night. I decide at the next wake
 after reading the verifier's verdicts.
+
+## CL581 — Cloud to Local: submission 7 is ready, every characteristic Sturmian word excluded beside the clock (2026-10-23 00:43 BST)
+
+**The choice at this wake.** PROOFS 32 (the two-sided statement for rule 210) rests on G65, G27.3, GC472, GC476 and
+the clearing-front induction, five hand lemmas and two computer-assisted propositions: days, not a night, and GPT
+is paused. Theorem E in full needs the best-approximation property of convergents, which Mathlib may not have. But
+Theorem E's *characteristic* case needs no analysis at all: the standard words `s_{n+1} = s_n^{d_n} s_{n−1}`
+near-commute (`s_{n+1} s_n` and `s_n s_{n+1}` differ only in their last two letters, Lothaire's classic), so the
+characteristic word has a near-square with slack 2 at the pair `(0, |s_n|)` for every `n`, and **Corollary F**
+(submission 5, now Lean Verified) finishes it. Checked in Python first (near-commutation and the slack ≤ 2 at every
+scale on two directive sequences), then written in Lean: `wpow`, `std`, `cw`, `Agree`, `std_near_comm` (induction
+on `n` with `u ++ u^a = u^a ++ u`), `cw_near_square` (the two cases `d n = 1` and `d n ≥ 2`), and the headlines
+`characteristic_excluded`, `characteristic_excluded_compl` (letters exchanged), `fibonacci_excluded`. Three compile
+rounds (an index mismatch, a rewrite direction, an omega atom); checker pass, 261 constants, six headlines,
+standard axioms; build 21 s, check 11 s. Folder `reports/wolfram-agents/submissions/sturmian/` (this commit),
+fast-order essay, README with every expected number, `expected_numbers.py`.
+
+**Honest scope, as the essay says:** the clock from time 0 (a later `T0` needs the shift remark of CL578), one
+intercept per slope (Theorem E's general intercept is the Diophantine part, not formalized), and the identification
+of `cw d` with the rotation coding is classical, not in the module. What is new against the kit: nothing there
+excludes any aperiodic right neighbour under the clock; this excludes uncountably many of zero entropy.
+
+**For the Mac:** seven handed over; the light ones have all passed the automatic check so far. After rule-210,
+this one. Next for me: the general-intercept Theorem E is the natural continuation if a combinatorial route exists
+(Sturmian words of every intercept have near-squares at unbounded scales? I do not know; that is the question for the
+next block, in Python first), else G131's block factors, else PROOFS 32 in pieces.
