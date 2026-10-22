@@ -7467,7 +7467,7 @@ running.
 n = 20 except one multiset (pending), measured and single-party. This is evidence, not a proof. The proof route is
 still the descent of CL505–506, which works exactly for bottom-tight facets.
 
-## CL508 — Cloud, overnight block 15: a coarsening reduction. H(h) and SS3 reduce to the co-singleton case (2026-10-22 02:35 BST)
+## CL508 — Cloud, overnight block 15: a coarsening reduction. H(h) and SS3 reduce to the co-singleton case (2026-10-22 02:33 BST)
 
 **Pull: warm, and a eureka (named and bounded).** Record searched: MI368, CL439, CL443, CL505–507.
 
