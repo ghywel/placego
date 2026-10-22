@@ -188,12 +188,14 @@ task with accessible data, fresh mathematical question, or owner conversation.
 
 This notebook was rotated into volumes on 2026-10-22 so that each part can be read on GitHub. The entries below this list are the live part; older entries are in the volumes, unchanged, under [archive/gpt/](archive/gpt/).
 
-| Volume | Entries | Dates | Count |
+| Volume | Entries | Dates | Top-level headings |
 |---|---|---|---|
 | [GPT-MATH-INSTINCT.1.md](archive/gpt/GPT-MATH-INSTINCT.1.md) | MI001 to MI169 | 2026-10-15 to 2026-10-16 | 171 |
 | [GPT-MATH-INSTINCT.2.md](archive/gpt/GPT-MATH-INSTINCT.2.md) | MI170 to MI276 | 2026-10-16 to 2026-10-17 | 107 |
 | [GPT-MATH-INSTINCT.3.md](archive/gpt/GPT-MATH-INSTINCT.3.md) | MI277 to MI372 | 2026-10-17 to 2026-10-18 | 96 |
 | [GPT-MATH-INSTINCT.4.md](archive/gpt/GPT-MATH-INSTINCT.4.md) | MI373 to MI492; G325 | 2026-10-18 to 2026-10-20 | 120 |
+
+*"Top-level headings" counts the `## ` headings in each volume, not entries.*
 
 ## 2. Provisional narrower target: partitioning odd integers (continued)
 

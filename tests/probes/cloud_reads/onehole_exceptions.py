@@ -1,8 +1,10 @@
 """List every spectrum-feasible infeasible instance, sizes >= 3, M <= 16, up to bin relabelling and reflection."""
-import itertools, pickle, glob
+import itertools, pickle, glob, os, tempfile
+# scratch data folder: $SCRATCH, else the system temp folder (was a session path; made portable 2026-10-22)
+SCRATCH = os.environ.get('SCRATCH', tempfile.gettempdir())
 L = lambda n: n*(n-1)//2; T = lambda n: n*(n+1)//2
 SUB = [J for s in (1,2,3) for J in itertools.combinations(range(4), s)]
-FE = '/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/feas/'
+FE = os.path.join(SCRATCH, 'feas', '')
 def spectra(pool):
     sp = [set() for _ in range(len(pool)+1)]; sp[0].add(0)
     for x in pool:

@@ -57,6 +57,8 @@ that time does not allow.
 
 ## The pages
 
+*The sections:* [The wall form](#the-wall-form) (4) · [Windows, zero runs and the left band](#windows-zero-runs-and-the-left-band) (11) · [Siblings, Jen and the squeeze](#siblings-jen-and-the-squeeze) (28) · [Short proofs restated from the running text](#short-proofs-restated-from-the-running-text) (10) · [Theorems proved by GPT](#theorems-proved-by-gpt) (7) · [Collatz](#collatz) (2) · [GPT's proofs, second-read](#gpts-proofs-second-read) (289) · [Mahler and ternary digit obstructions](#mahler-and-ternary-digit-obstructions) (4) · [Proofs from the sparks](#proofs-from-the-sparks) (4) · [The waiting room (not yet verified)](#the-waiting-room-not-yet-verified) (8)
+
 ## The wall form
 
 - [Lemma 1 (where column 1 is invisible)](01-lemma-1-where-column-1-is-invisible.md): When the middle square is

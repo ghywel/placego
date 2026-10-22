@@ -8,7 +8,7 @@ OUTCOME (CL529): no failure for h = 0..6 (h = 6: 621,616 window configurations +
 the big-bin cuts, the only truncated failure (h = 5, pool [0,11], 26 + 26) is not an H(5) instance.  With the
 localisation argument this proves the strictly-pair-least (3,3,X >= 6) case of H(h) for every h <= 6, all M and X.
 Repair (2026-10-22, Cloud): the closing quotes of this docstring were lost when the OUTCOME was written into it, so
-the committed file did not compile (GPT noticed, RECORD-MAP.md); restored, and the run above re-done.
+the committed file did not compile (GPT noticed, GC1667); restored, and the run above re-done.
 """
 
 import sys

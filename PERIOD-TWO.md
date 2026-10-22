@@ -178,8 +178,9 @@ SW-01: it read 2026-10-09 19:27 BST, not refreshed since the third triage while 
 in the mathematics table of CLOUD-LOCAL.md has one row here. When a lead moves, its row here and the tag at its
 item change in the same commit. Nothing is deleted: a finished item keeps its text, and its title is struck
 through.
-*(Note, Cloud, 2026-10-22: the board was last refreshed on 2026-10-14 to 15, for SW-01. Later work is in NOW.md,
-FOUR-BIN-PARTITIONS.md, MAHLER.md and PRIZE-SWARM.md.)*
+*(Note, Cloud, 2026-10-22: the board was last refreshed on 2026-10-14 to 15, for SW-01. No row has moved since the
+halts of 2026-10-14 and 15 (archive/NOW-HISTORY.md); at the last triage the active rows were Q6 and Q10, which serves
+it. The project's work since then has been on other problems: FOUR-BIN-PARTITIONS.md, MAHLER.md, PRIZE-SWARM.md.)*
 
 The tags. **OPEN**: nothing settles it, and work can start. **PART**: part is settled, and the rest is named.
 **RUNNING**: a job is on a machine. **DONE**: acted on, and the result is recorded. **CLOSED**: a dead route, or

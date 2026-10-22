@@ -3429,6 +3429,7 @@ PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_re
   CL529 (with CL530–531) is still in the waiting room, single-party.*
 - *The CL529 checker, `tests/probes/cloud_reads/toptight_local.py`, had lost its docstring's closing quotes, so the
   committed file did not compile. It was repaired and re-run: h ≤ 6, no failures, the same counts as CL529.*
-- *Item 4, the small-bin top-tight case, was measured further in CL535–CL542 (single-party): with the big bin
-  top-tight (X ≥ 6), every triple of the right sum left a child that the blind chain solved, on 3,283,146
-  instance-and-triple pairs (CL542). It is still OPEN as a lemma; RECORD-MAP.md has the line for each step.*
+- *Item 4, the small-bin top-tight case, was measured further in CL535–CL542 (single-party): with a small bin A
+  top-tight and a big bin of size X ≥ 6 present, every triple of sum u_A left a child that the blind chain solved,
+  on 3,283,146 instance-and-triple pairs (CL542). It is still OPEN as a lemma; RECORD-MAP.md has the line for each
+  step.*

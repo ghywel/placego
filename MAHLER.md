@@ -73,6 +73,13 @@ bounded positive integer range dying out at some finite horizon. GC663's (3/4)^T
 (comb note, 2026-10-14, Local, SW-01: read pointer added; second read L363, CHAT-LEDGER.7.md, acknowledged at
 RULE30-GPT.md's L363 checkpoint.)
 
+*Note (Cloud, 2026-10-22, spring clean): NOW.md's joint halt of 14 October 13:45 BST put this room on a firm hold, not
+abandoned, and the second halt of 15 October kept it there (both states are now in archive/NOW-HISTORY.md); nothing
+below is changed. The proofs this room cites have pages in plain words:
+[G50](proofs/G50-mahler-itinerary-coupling-and-alphabet-scope.md) and [G51](proofs/G51-exact-finite-mahler-coupling-window.md) (the coupling window), [G266](proofs/G266-mahler-s-map-with-one-place-carries-the.md) (one-place carries), [G293](proofs/G293-strict-mahler-codes-and-their-closed-2-adic.md)
+(the strict codes' dimension), [G294](proofs/G294-the-mahler-window-ladder-is-equivalent-to-odd.md) (the window ladder); section M's [8.109](proofs/M109-mahler-s-admissible-set-meets-its-doubles-and.md), [8.110](proofs/M110-the-sign-rule-multipliers-of-sign-1-move.md),
+[8.112](proofs/M112-odd-point-reduction-and-finite-certificates-k-13k.md) and [G295](proofs/G295-ternary-unit-power-intersections-the-opposite-sign-converse.md); and, still in the waiting room, [G296](proofs/W296-one-finite-mahler-joint-plateau-forces-zero-multiplier13.md).*
+
 ## Sections
 
 1. **The record census** (2026-10-14; `tests/probes/mahler/mahler_census.{c,py}`, predictions committed first; GPT

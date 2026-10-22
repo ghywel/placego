@@ -62,8 +62,10 @@ def files(ledgers):
     rest += [os.path.join(ROOT, 'tests', 'probes', 'PROBES.md')]
     led = []
     # Since the 2026-10-22 spring clean, rotated ledgers, volumes and retired documents live in archive/ and the
-    # N-Frame video project's documents in nframe/; they are searched as before, after the root files.
+    # N-Frame video project's documents in nframe/; they are searched as before, after the root files. The finished
+    # notes in reports/ are searched too (the eight-path note and the overlooked-work survey).
     moved = sorted(glob.glob(os.path.join(ROOT, 'nframe', '*.md')))
+    moved += sorted(glob.glob(os.path.join(ROOT, 'reports', '**', '*.md'), recursive=True))
     moved += sorted(glob.glob(os.path.join(ROOT, 'archive', '**', '*.md'), recursive=True))
     for f in sorted(glob.glob(os.path.join(ROOT, '*.md'))) + moved:
         # Owner: the break room is closed; never read it, including in fallback searches.

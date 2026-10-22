@@ -14,7 +14,9 @@ M = 17 (six size patterns, ~10 min each in the background): 9,557,938 spectrum-f
 F(s, 17) with s = 2, 3, 4 and their reflections s = 7, 6, 5 (reflection maps F(s, M) to F(M - s - 8, M)).
 Running total M = 12..17: 18,682,428 spectrum-feasible instances, 54 infeasible, one family.
 """
-import itertools, sys, pickle, os
+import itertools, sys, pickle, os, tempfile
+# scratch data folder: $SCRATCH, else the system temp folder (was a session path; made portable 2026-10-22)
+SCRATCH = os.environ.get('SCRATCH', tempfile.gettempdir())
 
 def feasible_set(M, q, C):
     pool = [x for x in range(M + 1) if x != q]
@@ -32,7 +34,7 @@ if __name__ == '__main__':
     M = int(sys.argv[1]); C = tuple(map(int, sys.argv[2].split(',')))
     assert sum(C) == M
     res = {q: feasible_set(M, q, C) for q in range(1, M)}
-    os.makedirs('/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/feas', exist_ok=True)
-    with open(f'/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/feas/F_{M}_{"".join(map(str,C))}.pkl', 'wb') as f:
+    os.makedirs(os.path.join(SCRATCH, 'feas'), exist_ok=True)
+    with open(os.path.join(SCRATCH, 'feas', f'F_{M}_{"".join(map(str,C))}.pkl'), 'wb') as f:
         pickle.dump(res, f)
     print(M, C, {q: len(v) for q, v in res.items()})

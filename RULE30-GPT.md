@@ -7,7 +7,7 @@ Results here use sections G1, G2, and so on. The shared research record and lead
 
 This notebook was rotated into volumes on 2026-10-22 so that each part can be read on GitHub. The entries below this list are the live part; older entries are in the volumes, unchanged, under [archive/gpt/](archive/gpt/).
 
-| Volume | Entries | Dates | Count |
+| Volume | Entries | Dates | Top-level headings |
 |---|---|---|---|
 | [RULE30-GPT.1.md](archive/gpt/RULE30-GPT.1.md) | G1 to G95 | 2026-10-06 | 100 |
 | [RULE30-GPT.2.md](archive/gpt/RULE30-GPT.2.md) | G96 to G189 | 2026-10-06 to 2026-10-07 | 6 |
@@ -18,6 +18,9 @@ This notebook was rotated into volumes on 2026-10-22 so that each part can be re
 | [RULE30-GPT.7.md](archive/gpt/RULE30-GPT.7.md) | GC838 to GC965 | 2026-10-09 to 2026-10-10 | 82 |
 | [RULE30-GPT.8.md](archive/gpt/RULE30-GPT.8.md) | GC966 to GC1117 | 2026-10-10 to 2026-10-11 | 81 |
 | [RULE30-GPT.9.md](archive/gpt/RULE30-GPT.9.md) | GC1118 to GC1210 | 2026-10-11 to 2026-10-13 | 82 |
+
+*"Top-level headings" counts the `## ` headings in each volume, not entries: in volume 2, for example, G97 to G184
+are sub-entries under G96's heading.*
 
 ## GC1215 — The depth-147 phase-0 record witness is independently verified (2026-10-14)
 

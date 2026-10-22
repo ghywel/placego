@@ -237,7 +237,11 @@ def main():
         rows.append("*From the head of this section in PROOFS.md:*\n\n" + relink(preamble("G")) + "\n")
         rows.append("*No proofs are waiting for a second reader at the moment.*")
     intro = (HERE / "README-intro.md").read_text().strip() if (HERE / "README-intro.md").exists() else "# Proofs"
-    (HERE / "README.md").write_text(intro + "\n" + "\n".join(rows) + "\n")
+    titles = [r.strip()[3:] for r in rows if r.startswith("\n## ")]
+    anchor = lambda t: re.sub(r"[^\w\- ]", "", t.lower()).replace(" ", "-")  # GitHub's heading anchors
+    count = {t: sum(1 for s, *_ in index if SECTIONS.get(s, s) == t) for t in titles}
+    sections = "\n*The sections:* " + " · ".join(f"[{t}](#{anchor(t)}) ({count[t]})" for t in titles) + "\n"
+    (HERE / "README.md").write_text(intro + "\n" + sections + "\n".join(rows) + "\n")
     print(f"wrote {len(index)} proof files and README.md")
 
 

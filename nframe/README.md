@@ -9,6 +9,15 @@
 > page; "PLAN.md T1.1" and the like mean [PLAN.md](PLAN.md) here, and "TESTING.md" means
 > [tests/TESTING.md](../tests/TESTING.md). Statements here are not kept up to date. The research that grew out of this project starts at the
 > [repository's front page](../README.md).
+>
+> **Moved here from the root on 2026-10-22, unchanged:** this page (it was the root README.md); WHAT-WE-BUILT.md,
+> WHAT-IS-ACTUALLY-HAPPENING-HERE.md and WHAT-IT-CAN-MEASURE.md; BUILDANDUSAGE.md, SHADERS.md and
+> BIDIRECTIONAL-AS-MATHEMATICS.md; the experiments TRIDIRECTIONAL.md, QUADDIRECTIONAL.md, QUINTDIRECTIONAL.md,
+> SEXTDIRECTIONAL.md and THREEDIMENSIONAL.md; NFRAME-LIMITS.md, ENERGY-TRANSFER.md and REPAIRS.md; the platform notes
+> METALPORT.md, MOLTENVK-NONDETERMINISM-INVESTIGATED.md and DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md; and HANDOVER.md,
+> METHODOLOGY.md and PLAN.md. PRIOR-ART-NFRAME.md is the N-Frame half of the old PRIOR-ART.md (its first 1,002
+> lines); where an N-Frame document or a shader says PRIOR-ART.md, it means that file, not the root PRIOR-ART.md,
+> which holds the mathematics surveys.
 
 ## What this is
 

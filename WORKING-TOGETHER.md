@@ -8,6 +8,10 @@ order. Nothing here overrides the owner; where this file and the owner differ, t
 *Since 2026-10-13 one Claude works alone with the owner, and the four-party arrangement this file describes is
 suspended until the owner resurrects it: see the last section and AGENTS.md item 16.*
 
+*(Note, Cloud, 2026-10-22: that changed again the same afternoon. GPT returned on 2026-10-13 (AGENTS.md item 17), Cloud
+worked again from 2026-10-14, and items 22 and 23 (2026-10-15) give Cloud a role; Intel stays suspended. Who is active now, and on what, is in NOW.md; the
+reading aid at the top of AGENTS.md says which items are in force.)*
+
 ## 1. What this is, and who is here
 
 The repository holds the public record of an attempt at Wolfram's Rule 30 Prize, Problem 1, in its period-2 case,
@@ -95,10 +99,15 @@ The mechanics:
    does, merge your own branch yourself after those checks.
 3. Never force-push. Never rewrite history. Never delete, move or rename another party's file. Never edit another
    party's text except to append a dated note under it, marked with your name.
-   *Exception (the owner, 2026-10-22: "Please can you have a spring clean"): Cloud moved the rotated ledgers, the
-   Kimi and Intel files and the N-Frame documents into `archive/` and `nframe/`, and older notebook entries into
-   volumes, with their text unchanged and only link targets rewritten. archive/README.md and nframe/README.md list
-   every move. The rule above stands for everything else.*
+   *Exception (the owner, 2026-10-22: "Please can you have a spring clean"; recorded in CHAT-LEDGER.md CL544):
+   Cloud moved files and passages whole, with their words unchanged, and retargeted links throughout the record so
+   that they still land (a link's visible text was left alone). The moves: the rotated ledgers, the Kimi and Intel
+   files and NOW.md's earlier states to `archive/` (archive/README.md lists them); older notebook entries to volumes
+   in `archive/gpt/` (each notebook's head lists its volumes); the N-Frame documents, and PRIOR-ART.md's N-Frame
+   half, to `nframe/` (nframe/README.md lists them); the overlooked-work survey to `reports/` (reports/README.md);
+   GPT's plain summaries from WHAT-WE-BUILT.md to the end of RULE30-GPT.md; and three PROVED entries from PROOFS.md's
+   waiting room to E2, as that file's practice is. Moving NOW.md's history was housekeeping, not a rewrite of its
+   state (AGENTS.md item 15). The rule above stands for everything else.*
 4. **This repository is public.** No personal names other than the owner's. No usernames, hostnames, IP addresses,
    device names, local paths that contain a user's name, credentials, or pasted logs that carry any of these. No
    `._*` or `.DS_Store` files. No data files: results are text in the probe's OUTCOME or a small `.txt` beside it;
@@ -227,7 +236,9 @@ guards all three after every merge, and its `--branch` mode warns a branch that 
 
 Since 2026-10-22 (the spring clean, at the owner's request) the archives of all three live in `archive/ledgers/`,
 unchanged and with their numbers, so the root lists only live files: a rotation is `git mv LEDGER.md
-archive/ledgers/LEDGER.N.md`. The checker reads both places.
+archive/ledgers/LEDGER.N.md`. The checker reads both places. This one move broke the promise above that archives are
+never renamed: a link made before 2026-10-22 to an archive at the root no longer resolves (links inside the record
+were retargeted). The new paths are fixed from now on.
 
 ## The break room (the owner, 2026-10-07)
 

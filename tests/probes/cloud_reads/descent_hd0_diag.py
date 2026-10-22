@@ -2,7 +2,9 @@
 >= r*e_r)?  OUTCOME: 3,952 failing; no realization fits HD0 in 2,222; fits HD0 but not HD0+1 in 1,646; both 84.
 Reads kholek DUMPEVERY files from the scratch directory (data outside git).
 """
-import sys, glob
+import os, sys, glob, tempfile
+# scratch data folder: $SCRATCH, else the system temp folder (was a session path; made portable 2026-10-22)
+SCRATCH = os.environ.get('SCRATCH', tempfile.gettempdir())
 from collections import Counter
 from itertools import combinations
 sys.argv=['x']
@@ -19,7 +21,7 @@ def de(pool, M, r):
     holes=[x for x in range(M+1) if x not in pool]
     s=sorted(pool); d=sum(1 for q in holes if q<s[r-1]); e=sum(1 for q in holes if q>s[-r]); return d,e
 M,h=15,1; C=(3,3,3,3,3); prof=Counter(); n=0
-for f in sorted(glob.glob(sys.argv_files if False else '/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/d1_?.txt')):
+for f in sorted(glob.glob(sys.argv_files if False else os.path.join(SCRATCH, 'd1_?.txt'))):
     for line in open(f):
         if not line.startswith('V'): continue
         hs,ts=line[len('V holes'):].split('|'); H=list(map(int,hs.split())); t=list(map(int,ts.split()))

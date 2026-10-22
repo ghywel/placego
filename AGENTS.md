@@ -9,11 +9,12 @@ amend earlier ones, so not every item reads as current. As written:
 | Items | State |
 |---|---|
 | 1-3, 5-9, 11, 14, 15, 20 | In force. In item 5, "the handover" is WORKING-TOGETHER.md §6, item 4 (`rule30_wall.py` and `rule30_merge.py`), not nframe/HANDOVER.md, which is the N-Frame project's. |
-| 4, 10 | Suspended by item 16, restored between Local and GPT by item 17. |
+| 4, 10 | Suspended by item 16, restored by item 17. Since items 22 and 23 Cloud is an active party again, so flags reach Cloud too (sharedstore/README.md); Intel stays suspended. |
 | 12, 13 | The break room is closed (12); item 13 is dormant until the owner reopens it. |
-| 16 | Partly superseded by 17. Its diary bullet (CHAT-LEDGER.md), record bullet and pushing bullet stand. |
-| 17 | In force as amended: 21 restores GPT's mathematics lane, 23 gives GPT its instinct-led lane. |
-| 18, 22 | In force for the prize work. Item 23 removes their seeded draws and Cloud's automatic halt in GPT's lane. |
+| 16 | Its first, third and fourth bullets are superseded by item 17; the second (CHAT-LEDGER.md as the diary, results into the research record) and the fifth (pushing to main) stand. |
+| 17 | In force as amended: 21 restores GPT's mathematics lane and 23 gives GPT its instinct-led lane. Its "Cloud and Intel stay suspended" is overtaken for Cloud, which items 22 and 23 give a role (the halt right; friend and mentor). |
+| 18 | In force everywhere. Item 23 drops its seeded draw in GPT's lane and keeps the 90-minute check there. |
+| 22 | In force outside GPT's instinct lane. In that lane item 23 removes its draws, its critical-path admission rule and Cloud's automatic halt; the older held lanes stay held. |
 | 19 | Relaxed by item 21. |
 | 21, 23 | In force. |
 

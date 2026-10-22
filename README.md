@@ -1,8 +1,8 @@
 # The Wolfram · Collatz · Mahler project
 
 The open research record of a small team, one person and several AI models, working on unsolved problems in
-mathematics that carry prizes: Stephen Wolfram's three Rule 30 problems, the Collatz conjecture, Mahler's 3/2
-problem, and questions of Erdős and their neighbours. Everything is kept: each claim with its status, each
+mathematics, most of them carrying prizes: Stephen Wolfram's three Rule 30 problems, the Collatz conjecture and
+questions of Erdős and their neighbours, together with Mahler's 3/2 problem, which carries none. Everything is kept: each claim with its status, each
 prediction written before its experiment, each failure, and every proof with the name of the one who checked it.
 
 **For a general reader**, the website **[www.wolframcollatzmahler.com](https://www.wolframcollatzmahler.com)** tells
@@ -10,7 +10,7 @@ the story in plain words, with live pictures. This repository is the record behi
 
 **Where things stand.** No prize problem has been solved. One open question has been settled along the way: Tan and
 Teh's eight-path burning threshold is **L₈ = 68**, a computer-assisted theorem of 19 October 2026
-([PROOFS.md](PROOFS.md) G325, and [the note](reports/eight-paths-L8.md)). The state of every line of work today is
+([its page in proofs/](proofs/G325-the-eight-path-threshold-is-68.md), PROOFS.md G325, and [the note](reports/eight-paths-L8.md)). The state of every line of work today is
 on one page, [NOW.md](NOW.md).
 
 ## Start here
@@ -94,7 +94,7 @@ on one page, [NOW.md](NOW.md).
 - [WORKING-TOGETHER.md](WORKING-TOGETHER.md): the handover for a model joining the work: lanes, method, git.
 - [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md): the named rules the work follows (predictions first,
   failures retained, two-tier review and the rest).
-- [STRATEGY-PLAN.md](STRATEGY-PLAN.md): Intel's strategy swarm of 11 October 2026, ranking routes on Rule 30's period
+- [STRATEGY-PLAN.md](STRATEGY-PLAN.md): Intel's strategy swarm of the night of 10 to 11 October 2026, ranking routes on Rule 30's period
   2; superseded as a plan, still cited for its facts.
 - The method itself began in the N-Frame work: [nframe/METHODOLOGY.md](nframe/METHODOLOGY.md).
 - "The handover" in AGENTS.md item 5 is WORKING-TOGETHER.md; its two startup checks are in its section 6, item 4.
@@ -118,7 +118,7 @@ on one page, [NOW.md](NOW.md).
   failures stay in the record.
 - **Literature first.** Before a new route, the record and the published work are searched
   (`tests/probes/record_find.py`, [PRIOR-ART.md](PRIOR-ART.md)).
-- **Ledgers rotate.** When a ledger grows long its older part moves, unchanged, to
+- **Ledgers rotate.** When a ledger grows long, the whole live file moves, unchanged, under the next number, to
   [archive/ledgers/](archive/README.md); `tests/probes/ledger_check.py` guards the rotation, and
   `tests/probes/doc_links.py` checks that every link between documents still lands.
 
@@ -126,7 +126,7 @@ on one page, [NOW.md](NOW.md).
 
 | Tool | What it does |
 |---|---|
-| `record_find.py TERM ...` | Searches the whole record, live files first, then volumes and archives. Run before any new run or proof attempt. |
+| `record_find.py TERM ...` | Searches the record: the live files first, then the notebook volumes, proofs/, the probes, nframe/, reports/ and archive/ (never the break room's archives). Run before any new run or proof attempt. |
 | `mathcheck/check.py FILE` | The math check after editing a document with TeX in it. |
 | `ledger_check.py` | Checks the three ledgers and their archives after every merge; `--branch` warns a branch that predates a rotation. |
 | `doc_links.py` | Checks every relative link and heading anchor in the documents. |
@@ -143,8 +143,11 @@ once, and a family of shaders that measure motion from them. The mathematics gre
 N-Frame continues in its own repository, [github.com/ghywel/n-frame](https://github.com/ghywel/n-frame). Its
 documents here are kept in [nframe/](nframe/README.md); its code stays where it was: [shaders/](shaders/), the
 three `.patch` files, the `build-*` scripts, [linux/](linux/), [jellyfin-project/](jellyfin-project/) and the
-ground-truth harness in [tests/](tests/TESTING.md). A shader comment that says "see README.md" means the hook
-reference in [nframe/README.md](nframe/README.md).
+ground-truth harness in [tests/](tests/TESTING.md). Every document a shader, patch or build script cites by name is in
+nframe/ under the same name (a comment's "see README.md" means the hook reference in
+[nframe/README.md](nframe/README.md)), with three exceptions: TESTING.md and TOOLS.md are in tests/, and PRIOR-ART.md
+means [nframe/PRIOR-ART-NFRAME.md](nframe/PRIOR-ART-NFRAME.md), not the root PRIOR-ART.md, which now holds the
+mathematics surveys.
 
 ## Who
 

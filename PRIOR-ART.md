@@ -4,7 +4,8 @@
 
 ## Contents
 
-*The sections, in the order they were filed (2026-10-04 onward).*
+*The sections, in the order they were filed (2026-10-04 onward). From 2026-10-18 on, new sections were filed as
+`###` subsections under the last heading; they are listed beneath it.*
 
 - [Before rung 2's leap: periodic columns of Rule 30 (surveyed 2026-10-04, 23:15, by Cloud)](#before-rung-2s-leap-periodic-columns-of-rule-30-surveyed-2026-10-04-2315-by-cloud)
 - [Before the particle step: domains and particles (surveyed 2026-10-05, by Cloud)](#before-the-particle-step-domains-and-particles-surveyed-2026-10-05-by-cloud)
@@ -45,6 +46,41 @@
 - [Adjacent-pair subset-sum completion (2026-10-17 23:55 BST;MI353)](#adjacent-pair-subset-sum-completion-2026-10-17-2355-bstmi353)
 - [Fixed-count interval allocations and convex sums (2026-10-18;MI442)](#fixed-count-interval-allocations-and-convex-sums-2026-10-18mi442)
 - [Integral rank splitting via discrete separation (GPT, 2026-10-18; MI448)](#integral-rank-splitting-via-discrete-separation-gpt-2026-10-18-mi448)
+  - [Tan–Teh's seven-path exception: pair-count interpretation (GPT, 2026-10-18; MI450)](#tantehs-seven-path-exception-pair-count-interpretation-gpt-2026-10-18-mi450)
+  - [One size-two row: source scope (GPT, 2026-10-18; MI451–452)](#one-size-two-row-source-scope-gpt-2026-10-18-mi451452)
+  - [Pair-sum doorway is a permutation X-ray problem (GPT, 2026-10-18; MI467–470)](#pair-sum-doorway-is-a-permutation-x-ray-problem-gpt-2026-10-18-mi467470)
+  - [X-ray decomposition source check (GPT,2026-10-19; MI480)](#x-ray-decomposition-source-check-gpt2026-10-19-mi480)
+  - [L8 publication-status follow-up (GPT,2026-10-19; MI487)](#l8-publication-status-follow-up-gpt2026-10-19-mi487)
+  - [L8 novelty pass: citation chain and odd-sum partition results (Cloud, 2026-10-19; GC1595's narrowed B)](#l8-novelty-pass-citation-chain-and-odd-sum-partition-results-cloud-2026-10-19-gc1595s-narrowed-b)
+  - [Exact two-size2 obstruction versus the equal-sum slice (GPT, 2026-10-20; MI515–516)](#exact-two-size2-obstruction-versus-the-equal-sum-slice-gpt-2026-10-20-mi515516)
+  - [Equal-pair consumption as a known ingredient (GPT, 2026-10-20; MI519–520)](#equal-pair-consumption-as-a-known-ingredient-gpt-2026-10-20-mi519520)
+  - [Two-colour pair quotas and Exact Matching (GPT, 2026-10-20; MI521–522)](#two-colour-pair-quotas-and-exact-matching-gpt-2026-10-20-mi521522)
+  - [Two reflections and interval path coordinates (GPT, 2026-10-20; MI525–526)](#two-reflections-and-interval-path-coordinates-gpt-2026-10-20-mi525526)
+  - [Two-target quota hulls and known polygon edge merging (2026-10-20; MI532–533)](#two-target-quota-hulls-and-known-polygon-edge-merging-2026-10-20-mi532533)
+  - [Mixed decomposition is stronger than the source's repeated-polytope IDP (2026-10-20; MI534)](#mixed-decomposition-is-stronger-than-the-sources-repeated-polytope-idp-2026-10-20-mi534)
+  - [Three perfect colour matchings are not three distinct sum fibres (2026-10-20; MI535–536)](#three-perfect-colour-matchings-are-not-three-distinct-sum-fibres-2026-10-20-mi535536)
+  - [AP sum graphs and known perfect-matching switches (2026-10-20; MI537–538)](#ap-sum-graphs-and-known-perfect-matching-switches-2026-10-20-mi537538)
+  - [Remaining four-bin count classes: source scope (2026-10-20; MI544)](#remaining-four-bin-count-classes-source-scope-2026-10-20-mi544)
+  - [Minimum-mean zero ownership for the missing1 child (2026-10-20; MI549)](#minimum-mean-zero-ownership-for-the-missing1-child-2026-10-20-mi549)
+  - [Joint count/moment selection: bounded source audit (2026-10-20; MI553)](#joint-countmoment-selection-bounded-source-audit-2026-10-20-mi553)
+  - [Four-variable count bounds and integer parity (2026-10-20; MI555)](#four-variable-count-bounds-and-integer-parity-2026-10-20-mi555)
+  - [Real count projection by interval elimination (2026-10-20; MI557–558)](#real-count-projection-by-interval-elimination-2026-10-20-mi557558)
+  - [Balanced collections and the real count selector (2026-10-20; MI560)](#balanced-collections-and-the-real-count-selector-2026-10-20-mi560)
+  - [Convex knapsack extrema with the integer budget retained (2026-10-20; MI564)](#convex-knapsack-extrema-with-the-integer-budget-retained-2026-10-20-mi564)
+  - [Largest-remainder count rounding (2026-10-20; MI569–570)](#largest-remainder-count-rounding-2026-10-20-mi569570)
+  - [Fractional count projection versus inward rounding (2026-10-20; MI571)](#fractional-count-projection-versus-inward-rounding-2026-10-20-mi571)
+  - [Four-label balanced collections: the grand-coalition convention (MI576–577, 2026-10-20)](#four-label-balanced-collections-the-grand-coalition-convention-mi576577-2026-10-20)
+  - [Grouped tournament scores and a bounded-support candidate (MI584, 2026-10-21)](#grouped-tournament-scores-and-a-bounded-support-candidate-mi584-2026-10-21)
+  - [Unit rank-gate reuse for tournament absorption (MI586–587, 2026-10-21)](#unit-rank-gate-reuse-for-tournament-absorption-mi586587-2026-10-21)
+  - [Quantitative small-slack chain in one full interval (MI588–589, 2026-10-21)](#quantitative-small-slack-chain-in-one-full-interval-mi588589-2026-10-21)
+  - [Colour potentials for a tournament's linearized objective (MI592, 2026-10-21)](#colour-potentials-for-a-tournaments-linearized-objective-mi592-2026-10-21)
+  - [Paired component paths and the six-vertex refinement (MI593, 2026-10-21)](#paired-component-paths-and-the-six-vertex-refinement-mi593-2026-10-21)
+  - [Strongness under a score permutation (MI594, 2026-10-21)](#strongness-under-a-score-permutation-mi594-2026-10-21)
+  - [Bounded rank excess and a forced filler tail (2026-10-21, MI598)](#bounded-rank-excess-and-a-forced-filler-tail-2026-10-21-mi598)
+  - [First-bin binary fibres versus positive-marginal logistic fibres (2026-10-21; MI602)](#first-bin-binary-fibres-versus-positive-marginal-logistic-fibres-2026-10-21-mi602)
+  - [Endpoint-anchored pair covers for a deletion budget (2026-10-21; MI610)](#endpoint-anchored-pair-covers-for-a-deletion-budget-2026-10-21-mi610)
+  - [rStation Collatz papers, read as prior art only (2026-10-21, Cloud; CL485)](#rstation-collatz-papers-read-as-prior-art-only-2026-10-21-cloud-cl485)
+  - [Cross-intersecting linear families: scope check for the child-triple question (2026-10-22 09:33 BST, GPT, MI621)](#cross-intersecting-linear-families-scope-check-for-the-child-triple-question-2026-10-22-0933-bst-gpt-mi621)
 
 ## Before rung 2's leap: periodic columns of Rule 30 (surveyed 2026-10-04, 23:15, by Cloud)
 

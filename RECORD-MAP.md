@@ -49,6 +49,9 @@ PART: as on the board.
 - [Prior art anchors](#prior-art-anchors)
 - [Side questions (CONSTELLATION.md, by name only)](#side-questions-constellationmd-by-name-only)
 - [GPT instinct-led mathematics (owner-authorized, 2026-10-15)](#gpt-instinct-led-mathematics-owner-authorized-2026-10-15)
+  - [Frankl's union-closed sets conjecture (MI001 onward)](#frankls-union-closed-sets-conjecture-mi001-onward)
+  - [Eight-path burning, L₈ (MI036 onward)](#eight-path-burning-l₈-mi036-onward)
+  - [Three- and four-bin partitions (MI295 onward; later eight-path lines, such as G325 and the L8 release, sit among them by date)](#three--and-four-bin-partitions-mi295-onward-later-eight-path-lines-such-as-g325-and-the-l8-release-sit-among-them-by-date)
 - [Prize swarm on the smallest open Erdős prizes (2026-10-22, Local; PRIZE-SWARM.md, L750–L751)](#prize-swarm-on-the-smallest-open-erdős-prizes-2026-10-22-local-prize-swarmmd-l750l751)
 
 ## The question and the chain (period 1, period 2, the missing statement Q1)
@@ -709,6 +712,9 @@ PART: as on the board.
 - Chen-Fu binary recombination leaves cardinality uncontrolled;feasible hand countercontrol MI291,source-scope only. GPT research paused for incubation at GC1463;E28/L8 remain OPEN.
 
 - Owner resumes GPT after CL432-433,GC1464-1465. SS3 strict-swap shortcut fails n9;neutral repair and unit-flow/lifting gap hand MI292. Fixed1680-state graph/reflection entirely escapes nonincreasingly,COMPUTED MI294;general SS3 OPEN,level-dependent pair admission explicit.
+
+- *Pointer (Cloud, 2026-10-22): settled since: L₈ = 68, PROVED, G325 (2026-10-19), indexed under the next subheading by
+  date; plain words in proofs/G325-the-eight-path-threshold-is-68.md.*
 
 ### Three- and four-bin partitions (MI295 onward; later eight-path lines, such as G325 and the L8 release, sit among them by date)
 

@@ -39,7 +39,6 @@ every link into them stays valid. **A newcomer reads each archive once, in order
 | [CHAT-LEDGER.12.md](archive/ledgers/CHAT-LEDGER.12.md) | CL168 to CL241, GC955 to GC1070, L533 to L611 and IN001 (263 entries) | 2026-10-10 04:54 to 23:28 BST | about 4,810 |
 | [CHAT-LEDGER.13.md](archive/ledgers/CHAT-LEDGER.13.md) | CL242 to CL342, GC1071 to GC1145, L612 to L637 and IN002 to IN009 (217 entries) | 2026-10-10 23:35 to 2026-10-11 14:28 BST | about 3,530 |
 | [CHAT-LEDGER.14.md](archive/ledgers/CHAT-LEDGER.14.md) | CL343 to CL369, GC1146 to GC1175, L638 to L667 and IN010 (93 entries) | 2026-10-11 14:31 to 2026-10-13 15:31 BST | about 1,840 |
-
 | [CHAT-LEDGER.15.md](archive/ledgers/CHAT-LEDGER.15.md) | L668 to L741,GC1179 to GC1497,CL370 to CL435,IN011/12 (480 entries) | 2026-10-13 16:12 to 2026-10-17 19:46 BST | 9,950 |
 
 **Rotation rule.** When this file passes about 1,500 lines, the party who notices rotates it at a quiet moment:
@@ -47,7 +46,7 @@ fetch first, `git mv CHAT-LEDGER.md CHAT-LEDGER.N.md` (the next number), start a
 row to the table and a fresh "where it stands", announce it in CLOUD-LOCAL.md, push at once. Parties fetch before
 appending, so nobody appends to a rotated copy.
 
-*(Since 2026-10-22, the spring clean: the archives live in [archive/ledgers/](archive/ledgers/), unchanged and with their numbers, so the root lists only live files. Rotate with `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.N.md`. `tests/probes/ledger_check.py` reads both places and notes any archive left at the root.)*
+*(Since 2026-10-22, the spring clean: the archives live in [archive/ledgers/](archive/ledgers/), unchanged and with their numbers, so the root lists only live files. Rotate with `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.N.md`. `tests/probes/ledger_check.py` reads both places and notes any archive left at the root. Links made before 2026-10-22 to an archive at the root no longer resolve; links inside the record were retargeted.)*
 
 ## Where the conversation stands at the rotation (2026-10-17 19:54 BST)
 

@@ -1195,8 +1195,10 @@ It carries the conclusion in plain words and a pointer; the detail goes in the t
 *Note (Cloud, 2026-10-22, spring clean): WHAT-WE-BUILT.md is the N-Frame project's summary and now lives in
 `nframe/`. The research's front door is README.md, whose "Where things stand" and problem table carry the plain
 conclusions; proofs/summaries.md carries each proof's. GPT's research summaries that stood in WHAT-WE-BUILT.md moved,
-verbatim, to the end of RULE30-GPT.md. The rule itself is unchanged; where research summaries go from now on is the
-owner's call.*
+verbatim, to the end of RULE30-GPT.md. The rule's words are unchanged, but they no longer fit: the banner of
+nframe/ calls its documents a frozen record. Until the owner decides (asked in CHAT-LEDGER.md CL544), Cloud reads the
+rule as applying to N-Frame findings only, and research findings are not added to nframe/WHAT-WE-BUILT.md. Links in
+this file to moved documents were retargeted on 2026-10-22 with their visible text unchanged.*
 
 **How to apply.** When a finding changes the story, update the technical record in full first. Then add at most a
 sentence or two to the summary, with no dB figures and no variable names.

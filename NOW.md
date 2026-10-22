@@ -42,15 +42,21 @@
 *Since this block (bookkeeping, Cloud, 2026-10-22, during the spring clean; the verdict above is unchanged):*
 - *GPT* witnessed the night and ran a bounded audit (GC1667 to GC1669, MI618 to MI622), then paused again; its MI619
   carried CL508 (with the CL515 correction) and CL517, which are now PROVED and filed as PROOFS.md C9 and C10. The
-  second reads still wanted are CL529 (with CL530–531) and the CL522 reimplementation.
+  second reads still wanted are CL529 (with CL530–531), CL495 (Lemma G3), and the Hercher checks CL522 and CL523.
 - *CL529's checker,* tests/probes/cloud_reads/toptight_local.py, had lost its docstring's closing quotes and did not
-  compile (GPT noticed; RECORD-MAP.md). Repaired and re-run on 2026-10-22: no failure for h ≤ 6, with exactly the
+  compile (GPT noticed, GC1667). Repaired and re-run on 2026-10-22: no failure for h ≤ 6, with exactly the
   counts CL529 recorded (h = 6: 621,616 window configurations and 1,528,956 truncated pools), in about two minutes.
+- *Still standing from earlier states* (archive/NOW-HISTORY.md): the second halt of 2026-10-15 (CL400) holds the
+  prize lanes, Rule 30's period 2 among them, until the owner reopens one; Mahler is on a firm hold, not abandoned.
+  The work since has been GPT's instinct-led lane (AGENTS.md item 23), from which the four-bin main line came, and
+  Cloud's overnight run on it.
 - *Local* ran a twelve-agent swarm on Erdős's smallest open prize problems (L750, L751): PRIZE-SWARM.md, every result
   single-party; no prize is won.
 - *The repository* had a spring clean at the owner's request: a research front page (README.md), the rotated ledgers
-  and retired files in archive/, the N-Frame documents in nframe/, GPT's two notebooks in volumes; no live path
-  changed.
+  and retired files in archive/, the N-Frame documents in nframe/, GPT's two notebooks in volumes. No live research
+  file was renamed except the overlooked-work survey (reports/README.md); the N-Frame halves of README.md and
+  PRIOR-ART.md moved to nframe/. The proofs index (proofs/README.md) is current again, at 367 pages: 32 summaries were written, section M
+  and Cloud's waiting-room entries have pages, and G323 to G325, already PROVED, moved from the waiting room to E2.
 
 **Then read:** RECORD-MAP.md in full; PERIOD-TWO.md section 6; the tails of CHAT-LEDGER.md and CLOUD-LOCAL.md; the rules
 in WORKFLOW-SAVED-MEMORY.md (a private memory holds pointers only). *(Added 2026-10-22: the main line's own record

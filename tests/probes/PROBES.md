@@ -25,7 +25,11 @@ its own predictions and outcome, and `python3 tests/probes/record_find.py TERM` 
 *The two log lines that stood above this section (GC1040, GC1041) moved, unchanged, to their place in the log beside
 GC1039.*
 
-## N-Frame probes (frozen 2026-10-01)
+## The probe table: the N-Frame folders (frozen 2026-10-01), then the first research rows
+
+*Heading added 2026-10-22 (spring clean). The text below was written for the N-Frame folders, from `anchor/` to
+`mvk/`; the `lexicon/` and `prizes/` rows at the end of the table are research, and later research probes are in the
+log that follows.*
 
 Each directory holds the driver that made one measurement, with its method in the docstring and, where one
 was written first, the pre-registered PREDICTION.md. They are kept because the record (NFRAME-LIMITS.md) quotes

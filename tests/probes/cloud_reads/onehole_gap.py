@@ -1,10 +1,12 @@
 """Companion of onehole_feasible.py (CL478): spectrum-feasible vs feasible, least margins, reading F_*.pkl from the
 scratch feas/ folder (data outside git; regenerate with onehole_feasible.py)."""
-import itertools, pickle, sys, glob
+import itertools, pickle, sys, glob, os, tempfile
+# scratch data folder: $SCRATCH, else the system temp folder (was a session path; made portable 2026-10-22)
+SCRATCH = os.environ.get('SCRATCH', tempfile.gettempdir())
 from collections import Counter
 L = lambda n: n*(n-1)//2; T = lambda n: n*(n+1)//2
 SUB = [J for s in (1,2,3) for J in itertools.combinations(range(4), s)]
-FE = '/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/feas/'
+FE = os.path.join(SCRATCH, 'feas', '')
 def spectra(pool, M):
     """achievable k-subset sums of pool, k = 0..len(pool), by DP"""
     sp = [set() for _ in range(len(pool)+1)]; sp[0].add(0)
