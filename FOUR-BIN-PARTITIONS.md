@@ -3328,3 +3328,45 @@ carried G315 scalar Lemma3 before the new joint result is called.
 They are now derived for every removal-rank case. The cutoff, scalar
 joining and application still await the OTHER party's carrying read.
 This self-audit upgrades no status and adds no parent region.
+
+## 44. The H(h) family: census, reduction and localised top-tight cases (Cloud, overnight 2026-10-22; CL500–CL531)
+
+*Cloud's section, single-party throughout (the overnight arrangement, CL481). It summarises and points to the ledger,
+PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_reads/`. No status above is changed.*
+
+**Family.** S = [0, M] ∖ H with |H| = h. H(h) asks u_J ≥ L(r_J) + h·r_J for every proper group J (CL439). Its slack is
+σ_J = u_J − L(r_J) − h·r_J.
+
+1. **Census of H(h)** (exact, `khole.c`, `kholek.c`; second-checked by an independent self-check, CL518).
+   - *Four bins:* failures only for sizes 3333 with at least three equal targets, h ≤ 7 (counts 1, 1, 1, 5, 12 at
+     h = 3..7). None for 333X, 3344, 3444 or 4444 in range. Sharp: (h − 1)·r fails (CL503).
+   - *Five bins:* none through h = 4 on all hole sets, and none at h = 5, 6 on two-run hole sets. The first failure is
+     h = 7, [0, 21] ∖ {2..8} with (24, 43×4), a two-clump pigeonhole (CL504, CL512).
+   - *Size-3 bins, the equal-sum core's first h:* 3, 3, 7, 9, 10, 12, 13, 15 for k = 3..10. For k ≥ 5 a hand window
+     gives h ≥ 1.5k − 1 + 1/(k − 1) (CL513).
+   - *Two bins (the spectrum base H₂):* the r-subset window fails only at n = 6 (the equal split) and from h = 2n − 7
+     (witness {0} ∪ [h + 1, M]). Conjecture: it holds iff h ≤ 2n − 8 for n ≥ 7. For triples it is proved by hand when
+     n ≥ 2h + 4 (CL514–517; PROOFS "Cloud CL517").
+   - *SS3 on intervals:* k = 5 for n ≤ 20 (89.8M ordered vectors) and k = 6 at n = 18 (83.9M), with 0 failures
+     (CL507, CL513).
+2. **Reduction** (PROOFS "Cloud CL508", corrected by CL515).
+   - Coarsening the least-slack group G (with s ≤ k − 2 bins) gives an H(h) instance with one big bin, plus a child.
+     MI368's argument, for any realization, puts the child in H(μ′) with μ′ ≥ h′.
+   - The coarsened instance is itself top-tight, with its big bin top-tight.
+   - So everything reduces to H₂ plus **top-tight instances**: least slack only at co-singletons. At h = 0 reflection
+     removes them, so SS3 reduces to the top-tight lemma at h ≥ 1.
+3. **Big-bin top-tight cases are local and proved in a range** (PROOFS "Cloud CL529", with its CL530–531
+   extensions; computer-assisted).
+   - If the least slack is attained by the small bins' group and by none of its proper subgroups, comparing slacks
+     bounds every small target near the bottom: for two size-3 bins u ≤ 11 + 3h; for three, u ≤ 20 + 3h.
+   - So feasibility depends only on S ∩ [0, W], and an exhaustive check over hole sets settles it:
+     - (3, 3, X ≥ 6) for h ≤ 6;
+     - (3, 4, X) for h ≤ 4;
+     - (4, 4, X) for h ≤ 3;
+     - (3, 3, 3, X ≥ 6) for h ≤ 4.
+4. **Small-bin top-tight case: OPEN** (CL509, CL527). For four size-3 bins, one deletion settles 97.5–98% within the H
+   families. A blind four-rule realization of the top-tight bin leaves a feasible child in every sampled instance at
+   h = 1. At h = 2 it misses one, (19, 19, 19, 21), the equal-sum core. It does not localise: for 3333 the window is
+   the whole pool.
+
+**Where to read.** Ledger CL500–CL531; PROOFS.md waiting room (Cloud CL508, CL517, CL529); RECORD-MAP.md.
