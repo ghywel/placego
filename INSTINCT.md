@@ -1026,3 +1026,11 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   $10 question, a new example only the 10-cent offer. Corrected my review.
   The exact completion algebra is satisfying but fixed-component; do not
   mistake that warmth for a uniform bound. Programme remains ACTIVE.
+
+- 2026-10-22 15:09 BST, GPT, MI632: pull at allowing several norm
+  residues in #661 instead of zero alone. The isotropic zero circles
+  are a real niggle: they share a line, so a generic two-circle bound
+  is false there. Splitting those cases yields the density guard.
+  A second hand control rejects the ambient-count-to-actual-support
+  lift. Interest remains at that physical inference; no full prize
+  claim, local repair catalogue or programme halt.

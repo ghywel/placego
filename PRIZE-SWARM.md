@@ -3781,3 +3781,72 @@ It does not prove our fixed-largest-power distinct-host statement. The
 external upper-bound/Lean claims were read, not built or adopted. Change
 representation/problem when no concrete budget is available; keep the
 owner's programme and its 13-minute heartbeat ACTIVE.
+
+
+## S661-1: test multi-residue filters before searching them (MI632, 2026-10-22 15:09 BST)
+
+**Full target:** #661 asks for o(n/sqrt(log n)) cross-distances for every
+large n. The reviewed all-zero norm filter did not supply such a
+construction. New bounded HAND question: can an arbitrary allowed
+norm-residue set at each split prime buy a density saving?
+
+For p = 1 mod 4, norm(P-Q) contained in S implies
+
+    |P|*|Q| <= p^2*|S|^2.
+
+A complete elementary proof, including isotropic zero-circle degeneracy,
+is in PRIOR-ART.md, MI632. Its squarefree CRT product gives point density
+sqrt(|P|*|Q|)/m^2 <= product(|S_p|/p). Thus this primewise multi-residue
+mechanism cannot make its POINT density cost smaller than its uniform
+NORM residue saving. Original zero-residue statement is a special case.
+Known-method HAND reproof, not independently carried or a novelty claim;
+no new proof number, experiment, census or carrying request.
+
+The fixed-prime represented-norm equidistribution statement was checked
+in David–Devin–Nam–Schlitt, Theorem 2.2 (quoting Rieger). No uniformity
+for growing moduli was assumed. Even with such equidistribution, an
+ambient allowed norm pool is an upper bound for actual cross-distances,
+not a lower bound. Hand control: Pbar = Qbar = {0} mod 5 permits norms
+0 mod 5, but actual lattice differences are in 5Z^2 and have norm
+0 mod 25; norm 5 cannot occur. This blocks the attempted universal
+physical-support inference before any local prime-power repairs.
+
+**Coverage and next gate:** the density-arbitrage premise of this
+particular construction route fails. #661 itself gains no solved
+family or lower bound. A useful continuation must address actual
+Gaussian representation/difference support, or choose a different
+whole-target route; do not claim that this guard settles all congruence
+constructions. The programme remains ACTIVE, with all prize won cells No.
+
+
+### Supplemental review R582-1: CL550's numerical SDP is diagnostic, not a certificate (MI633, 2026-10-22 15:10 BST)
+
+**Independent hand/source audit, no replay.** Cloud CL550's identity
+MaxCut(H_G) = 2*(t - minimum monochromatic triangles) carries: H_G's
+vertices are edges of G; each G triangle contributes its own three
+H edges. These edge triples are disjoint, even when G triangles share
+an edge. Each two-coloured triangle cuts either 0 or 2 of its three
+H edges. Thus G arrows exactly when MaxCut(H_G) < 2t. K4-freeness is
+a separate necessary property of a prize witness.
+
+**Certificate gap in the instrument.** maxcut_sdp.py maximizes a PSD
+primal with diagonal one via SCS, returns prob.value, and prints
+ARROWS (certificate) when this floating value is below 2t-0.001. An
+approximate maximization objective is not a certified UPPER bound on
+the optimum; the fixed 0.001 margin does not enclose solver error.
+Even an exactly feasible primal supplies a LOWER bound on the SDP
+optimum, not the required dual upper bound. No actual CL550 positive
+result is refuted: its only SDP calibration was inconclusive.
+
+A sufficient rigorous certificate is a rational vector lambda with
+Diag(lambda)+Adj(H_G) positive semidefinite and
+
+    |E(H_G)|/2 + sum(lambda)/4 < 2t.
+
+For every PSD X with diagonal one, the PSD pairing gives
+-tr(Adj*X) <= sum(lambda), proving this upper bound for the displayed
+primal objective. Exact/rational PSD verification or rigorous error
+enclosures are required; an independently checked DRAT/LRAT proof
+from the edge-colouring CNF is another route. This does not request
+a fresh search or change Cloud's problem ownership. Original source
+untouched; notify the author before relying on its positive label.

@@ -1133,3 +1133,7 @@ PART: as on the board.
 - Owner-directed GPT prize-swarm programme ACTIVE/no self-halt, MI628–630/REVIEW-1: all reports scoped reviewed, all prize won No. Exact #470 criterion carried; Corollary B counterexample k9,a55,b51 pending author response. R708 host assembly carried, global grouped-Hall admission OPEN; source/finite-receipt qualifications explicit.
 
 - #1052 review scope corrected MI631/S1052-1: $10 asks FINITENESS, not a sixth example (separate 10 cents). Fixed-v2/component finiteness known; uniform bound OPEN. No prize won or new scan.
+
+- #661 split-prime arbitrary norm filters satisfy |P||Q|<=p^2|S|^2, COMPLETE HAND known-geometry reproof MI632/S661-1. Squarefree density guard only; ambient norm pool is NOT actual support. Parent OPEN, no experiment/prize.
+
+- CL550 #582 SDP gate audit MI633/R582-1: MaxCut reduction carried; floating SCS primal objective is NOT a rigorous upper certificate. Exact PSD dual condition supplied; no positive reported/refuted or new search.

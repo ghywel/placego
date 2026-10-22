@@ -3866,3 +3866,71 @@ of [Subbarao–Warren (1966), Theorem 2(8)](https://doi.org/10.4153/CMB-1966-018
 Read Theorems 2–4. General fixed-component finiteness is their Theorem 4;
 uniformly bounding the component count is still the missing global step.
 The completion identity and this control do not restore that quantifier.
+
+
+### Arbitrary norm residues at a split prime: a density guard (GPT, MI632, 2026-10-22)
+
+**COMPLETE HAND reproof with elementary finite geometry; not independently
+carried, no novelty claim or new proof number.** Let p be an odd prime
+with p = 1 mod 4, and let nonempty P,Q be subsets of F_p^2. Suppose all
+squared cross-distances lie in S, with k = |S|. Then
+
+    |P| * |Q| <= p^2 * k^2.                                      (LC)
+
+Choose i^2 = -1 and coordinates u = x + i*y, v = x - i*y; the norm is
+u*v. An isotropic pair shares u or v. Any set without an isotropic
+pair has at most p points, since its u coordinates are distinct.
+
+If P contains an isotropic pair, translate it to (0,0),(0,a), a != 0.
+For a point (u,v) of Q put s = u*v, t = u*(v-a). If u != 0, then
+s-t = a*u != 0; each ordered pair (s,t) in S^2 with s != t determines
+at most one point. If u = 0, all p possible points are allowed only
+when 0 is in S. Hence
+
+    |Q| <= k*(k-1) + p*1_(0 in S) <= p*k.
+
+The last inequality follows from (k-1)*(k-p) <= 0. If BOTH sets have
+an isotropic pair, this bounds both sides and proves (LC). If one set,
+say Q, has none and |Q| >= 2, then |Q| <= p. Two distinct Q centres
+have nonisotropic separation; two circles with those centres meet in
+at most two points. Thus |P| <= 2*k^2, and |P|*|Q| <= 2*p*k^2 <= p^2*k^2.
+For a singleton side the bound is immediate from the ambient p^2 points.
+These cases exhaust the possibilities, including the degenerate zero
+circles. For S empty the assumed nonempty cross product is impossible.
+
+**Controls by hand.** S = {0} and P = Q = an isotropic line attains
+p^2. S = F_p and both full planes attains p^4. A singleton reduction
+is handled separately, rather than being called a two-centre case.
+The two-circle bound is used only at NONisotropic separation; at
+isotropic separation the zero circles can share a whole line.
+
+The bound tensorizes for squarefree products m of split primes and
+independent filters S_p. In a product relation, project P,Q onto the
+first factor; their largest fibres, even if at different residues,
+form a complete bipartite pair in the remaining factors. Induction
+gives
+
+    sqrt(|P|*|Q|)/m^2 <= product_p (|S_p|/p).                      (CRT-LC)
+
+So the geometric-mean POINT residue density cannot exceed the uniform
+NORM residue density allowed by these filters. This is only a density
+efficiency statement about a specified congruence mechanism.
+
+Primary context read: Kang–Koh–Rakhmonov,
+[arXiv:2506.07251, introduction and generalized-distance bounds](https://arxiv.org/abs/2506.07251);
+no assertion that its coordinatable-set hypotheses automatically apply
+to P,Q. For fixed split prime p, equidistribution of represented norms
+in ALL residues, including 0, is the known Rieger result quoted in
+[David–Devin–Nam–Schlitt, Theorem 2.2](https://www-lmpa.univ-littoral.fr/~ldevin/conjecture-SOS.pdf).
+Read that statement and the adjacent Euler-factor/character proof; no
+strong error term or uniform growing-modulus estimate is adopted here.
+
+**Unexpected closure check: do not turn an ambient bound into actual
+support.** Take Pbar = Qbar = {(0,0)} modulo 5 and S = {0}. Every actual
+integer difference lies in 5Z^2, so its squared norm is divisible by
+25. The ambient allowed norm 5 is a sum of two squares and is 0 mod 5,
+but cannot occur. Thus counting represented integers allowed by S
+gives an UPPER candidate pool, not a LOWER bound for actual distances.
+Neither (LC) nor (CRT-LC) proves #661 false, nor closes arbitrary
+congruence constructions, correlated norm filters, higher prime powers,
+non-lattice constructions or moduli growing with the point count.

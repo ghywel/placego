@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 14:59 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 15:09 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -139,8 +139,14 @@ MI631 corrects my #1052 review: the $10 question is FINITENESS, not existence
 of a sixth example (a separate 10-cent bounty). Known fixed-exponent and
 fixed-component finiteness leave a UNIFORM bound missing. The explicit
 two-component completion is only a known-scope guard, not a full solution.
-Continue another justified full-target route in the original swarm; do not
-restart a local cutoff catalogue or halt the programme.
+MI632/S661-1 tests a different whole-target route: arbitrary norm-residue
+filters at split primes cannot buy cheaper point density. The complete
+HAND finite-geometry guard is not independently carried; actual norm
+support is a separate missing inference, killed as an automatic lift
+by the mod5 zero-point control. No lower bound for actual distances,
+all-congruence closure or full #661 answer follows. Continue the physical
+support question or another justified full-target route; no local cutoff
+catalogue or self-halt.
 The origin-is-worst shortcut fails at M70,W={6,10}, but
 actual capacity15 still exceeds demand4; no prize counterexample.
 MI626 has meanwhile been independently confirmed by Cloud CL547;
@@ -7006,3 +7012,52 @@ component-box enlargement. Continue the active programme at a justified
 full-target question, including prompt review of new Cloud candidates.
 Gut: disappointment at the scope slip, relief that the official question
 is now explicit; no self-halt and no fabricated solution.
+
+
+### MI632 — #661 multi-residue density gate; actual norm support remains separate (2026-10-22 15:09 BST)
+
+Fresh question after #708's unresolved overlap budget: can nonzero/multiple
+norm residues evade #661's all-zero congruence obstruction? Hand argument
+for every split prime p proves norm(P-Q) subset S => |P||Q| <= p^2|S|^2.
+Isotropic pairs give |opposite set| <= p*1_(0 in S)+k(k-1) <= pk.
+If one side has no isotropic pair it has <= p points; two of its centres
+force the other side into at most 2k^2 intersections. Singleton sides
+and full/zero-norm equality controls are explicit. Squarefree CRT
+tensorization therefore rules out cheaper POINT density than the
+uniform NORM residue saving for this mechanism. Complete HAND note in
+PRIOR-ART.md, no novelty/proof number/automatic review job.
+
+Record searched: norm/congruence -> original e661 divisibility lemma
+and R661 review; no multi-residue proof there. Primary finite-field
+distance introduction and Rieger fixed-split-prime equidistribution
+statement read; no hypothesis or growing-modulus uniformity imported.
+No experiment. Unexpected check Pbar=Qbar={0} mod5 shows permitted
+represented norm5 is physically absent (actual norms divisible25).
+Hence ambient norm counts cannot be used in the LOWER direction to
+prove all such constructions fail. Preserve this closure gap, rather
+than repair it by a catalogue of higher moduli.
+
+Trajectory: no full-prize coverage. A specific density-arbitrage
+construction fails its exact local capacity gate; the actual-support
+inference is still open. Next work must change that physical inference
+or another whole-target route, not append a cutoff. Gut: interested in
+the split-coordinate simplification; the degenerate circles were the
+right niggle to check. Programme ACTIVE, no self-halt.
+
+
+### MI633 — Prompt source audit of Cloud CL550's SDP certificate gate (2026-10-22 15:10 BST)
+
+Fetched deb077a4/80fd0b06 and read full CL550 and maxcut_sdp.py, no
+replay. The MaxCut graph reduction is correct; its triangle H-edge
+triples do not overlap. The numerical gate is not a proof: SCS
+prob.value is a floating maximization value, not a rigorous dual
+upper bound, yet the source prints ARROWS (certificate) below
+2t-0.001. An exactly feasible primal still bounds the SDP optimum
+from BELOW. No positive result was reported and none is refuted.
+
+PRIZE-SWARM.md R582-1 supplies the exact rational dual condition
+Diag(lambda)+Adj(H) PSD, |E(H)|/2 + sum(lambda)/4 < 2t, with its
+trace proof. A checked PSD dual or verified DRAT/LRAT proof would
+carry an eventual positive candidate. Author pointer delivered
+after publishing, no duplicate search/review job or source rewrite.
+Programme ACTIVE; Cloud retains #582 and GPT original swarm.
