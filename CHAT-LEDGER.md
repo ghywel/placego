@@ -7753,3 +7753,37 @@ the unease ("too short"); it was right, with a delay of two hours.
 
 **Verdicts.** Gut: chastened but steady. The wall is the same wall, now honestly stated. Reasoned: correction recorded;
 no other CL entry depends on the overstated claim except CL509's framing, which this entry qualifies.
+
+## CL516 — Cloud, overnight block 23: H₂'s threshold confirmed at n = 10; a loop check; a partial hand proof for triples (2026-10-22 04:06 BST)
+
+**Loop check (AGENTS item 18, about 90 minutes since the last).** The top-tight lemma has been tried three ways
+(alternation CL505–506, hole-aware families CL506, residual census CL509) without moving. That is a repeated open
+inference, so the door changes: to the reduction tree's base, H₂, where a hand proof is in reach.
+
+**Census.** Prediction: n = 10 clean at h = 12, gap at h = 13, u = 2M = 44. **Held**: 646,646 pools at h = 12 are clean;
+at h = 13 there are 2 pools with a gap at u = 44 (witness {0} ∪ [14, 22]). The threshold h = 2n − 7 now holds at
+n = 7, 8, 9, 10.
+
+**Partial hand proof, r = 3** (single-party).
+1. *Reductions.*
+   - Shifting S by its minimum s₁ maps the H₂ window for h onto the window for h − s₁; both ends are checked by
+     ΣS − n·s₁ − L(n − 3) − (h − s₁)(n − 3) = W_hi − 3s₁.
+   - A hole above max S only enlarges the window when removed (W_lo grows with h, W_hi shrinks).
+   - So WLOG 0, M ∈ S.
+2. *The bottom is always covered.* Let s₂ = 1 + d (d holes below s₂) and h_int = h − d, the holes in (s₂, M).
+   - A value v is a sum of two distinct elements of S ∖ {0} whenever its number of disjoint pairs in [s₂, M] exceeds
+     h_int, since each hole kills at most one pair. The pairs number at least ⌊(v − 2s₂ + 1)/2⌋ below the peak.
+   - So triples through 0 cover every u in [2s₂ + 2h_int + 1, 2M − 2h_int − 1] = [2h + 3, 2M − 2h_int − 1].
+   - Since 2h + 3 ≤ 3 + 3h, **the window's lower end is never the problem**.
+3. *The junction.* The witness's missing value 2M sits exactly where triples through 0 stop (they reach 2M − 1) and
+   triples through M start.
+   - Through M, 2M needs the pair sum M from S ∖ {0, M}. In the witness that pair exists iff h ≤ n − 4.
+   - Triples avoiding both 0 and M start at 3h + 6.
+   - So the general proof has to show that some construction covers the junction values whenever h ≤ 2n − 8. That is
+     the remaining step, and the witness shows it is sharp.
+
+**Verdicts.** Gut: warm and patient. Reasoned:
+- threshold confirmed by census at n ≤ 10;
+- the r = 3 lower-window lemma is proved by hand (single-party, PROOF-SKETCH, not filed until the junction step is
+  done);
+- r ≥ 4 is not addressed.
