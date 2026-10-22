@@ -7966,3 +7966,36 @@ is the step that removes the last small block's exponents from the search.
 **Verdict.** The new ingredient of the 95-block exclusion is algebraically sound (single-party read). Its
 computational part is unassessed. With CL522, the cycle row's frontier now has an audited published base (Hercher's
 m ≤ 91 with the repaired step) and an unreviewed community extension (95 blocks).
+
+## CL524 — Cloud, overnight block 31: the big-bin top-tight case has an eight-candidate selector (2026-10-22 04:51 BST)
+
+**Ladder.** The Collatz m = 92 pair cooled after a hand look. Every odd element of such a cycle satisfies
+n ≥ (3^K − 2^K)/(2^P − 3^K) ≈ 1/Λ ≈ 2^73.25, and each block contributes exactly ln(1 + (1 − (2/3)^k)/n_i) to Λ.
+That clears the method floor 2^71.67, but excluding the pair needs finer arithmetic. So I changed angle, back to
+eight streets: CL515's open big-bin top-tight case.
+
+**Pull: curious.** Three bins (3, 3, X), X ≥ 6, in H(h), whose least slack is strictly the pair of small bins, so the
+big bin is top-tight. Solving means choosing disjoint triples X₁ and X₂ with sums u₁ and u₂. Is there a blind
+selector for X₁?
+
+**Prediction:** lexmin sometimes fails, min-max fails less. Counterfactual: some blind rule at 100% would be a
+provable selector.
+
+**Result** (`toptight_bigbin.py`; eight domains, M ≤ 16, h ≤ 4, X = 6..8; 41,950 instances):
+- lexmin fails up to 0.3%.
+- **min-max** (the triple of sum u₁ with the smallest maximum) is 100% on five domains. With the A/B swap it misses 3,
+  11 and 4 instances at (M, h, X) = (14, 3, 6), (15, 4, 6), (16, 4, 7).
+  - The misses all have **equal small targets and clustered holes**. Example: [0, 14] ∖ {3, 4, 8} with (18, 18, 54).
+    Min-max takes (5, 6, 7), and the remainder {0, 1, 2, 9, …, 14} cannot make 18. The good choices use 0 with a
+    large partner, (0, 5, 13).
+  - That is the two-bin equal-split core of CL514 (n = 6).
+- A "refined" rule (equal targets → the triple through min S with the largest maximum) fixes those but breaks others.
+- **Any of {lexmin, min-max, max-min, refined}, each with the swap, succeeds on all 41,950 instances.**
+
+**Verdicts.** Gut: warm; a finite candidate list is the kind of object a proof can grip. Reasoned (measured,
+single-party):
+- the big-bin top-tight case needs at most eight explicit realizations, not a search;
+- min-max alone is right except at equal small targets, where the two-bin core forces a through-min choice.
+
+**Next rung:** prove min-max works when u₁ ≠ u₂, or when holes are not clustered below the small bins' range. Then
+handle u₁ = u₂ by the through-min triple and CL517's triple theorem on the remainder.
