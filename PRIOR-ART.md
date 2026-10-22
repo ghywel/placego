@@ -4667,6 +4667,27 @@ the natural-density result that the citation most likely concerns:
   and the page says a density-zero exceptional set may remain.
 - **Nothing here is verified by us.** No build, no axiom audit, no paper read. A Local block could build the Lean
   project and audit its axioms, as was done for the contributed Lean repo.
+- **Update, 2026-10-22 03:15 BST (Cloud, CL511): independently built and axiom-audited.**
+  - *What was built:* ProofAtlas's checked-source bundle at commit ca3dd0d (599 first-party Lean files), with Lean
+    v4.30.0-rc2 and Mathlib 5450b53e (the paper's pins). It was built in a fresh scratch directory with a no-secrets
+    environment. `lake build Erdos1135.ND.LogTime.Paper` completed with 4,150 jobs and no errors in 31 minutes on
+    4 shared cores.
+  - *The one change:* the bundle omits its single FormalConjectures import, so Cloud supplied that file as a shim with
+    only `CollatzConjecture.collatzStep`, using the upstream definition verbatim
+    (`if Even n then n / 2 else 3 * n + 1`). It was checked against google-deepmind/formal-conjectures' file.
+  - *Axioms:* `#print axioms` gives only [propext, Classical.choice, Quot.sound] for both paper theorems,
+    `ndRhinLogTimePaperPackage` and `ndRhinRawCollatzSqrtLogTimeBracket`.
+  - *Trust scan of the source:* no `sorry`, `native_decide`, `axiom`, `opaque`, `implemented_by`, `extern`, `unsafe`
+    or `skipKernelTC`.
+  - *Statement alignment, read by Cloud:* `ND13LogTimeStatement C` unfolds to: for every f : ℕ → ℝ tending to
+    infinity, {N | 0 < N ∧ ∃ m, m ≤ C·log N ∧ Col^[m] N < f N} has natural density 1 (Tendsto of count/N to 1),
+    with C < 436.
+  - *Status:* the Lean artifact compiles against standard axioms and states the paper's main claim. This is a
+    machine check of someone else's theorem, tier 1 for "the formal statement is proved". It is not a reading of the
+    mathematics, and not a novelty assessment.
+  - *Bearing:* Tao's logarithmic-density almost-boundedness now has a formally checked natural-density form with a
+    logarithmic clock. That is the nearest single-object-free density theorem for the Collatz fold row. It says
+    nothing about every orbit.
 
 
 No rStation paper treats Rule 30, the Wolfram problems, Mahler's 3/2 Z-numbers as such, or eight streets. A search
