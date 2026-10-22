@@ -3,8 +3,8 @@ Template: ComputationalEssay
 Name: Every characteristic Sturmian word is excluded as the right neighbour of a period-2 center column
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-23
-Description: A partial result for Problem 1 of the Rule 30 Prize in the period-2 case, proved in Lean against the official statements: if column 0 reads the clock 0101… from time 0 and the configuration has a leftmost black cell, then the even-time bits of column 1 are not the characteristic Sturmian word of any slope, nor its letter exchange; the Fibonacci word is the first example
-Abstract: The first open case of Problem 1 is period 2, the clock 0101…. Under the clock, rule 30's left-permutivity determines column -1 from the even-time bits of column 1, the visible bits, and the record's Corollary F (Rule30Submission.corollary_F, filed in the previous submission) says the visible bits of a configuration with a leftmost black cell have no near-squares at unbounded scales. This essay adds the words. For a directive sequence d with every d n ≥ 1, the standard words std d 0 = [1], std d 1 = [0], std d (n+2) = (std d (n+1))^(d n) ++ std d n are each a prefix of the next, and their limit cw d is the characteristic Sturmian word of slope [0; d 0 + 1, d 1, d 2, …]. Two list inductions give the classical near-commutation, std (n+1) ++ std n and std n ++ std (n+1) agree except in their last two letters (Rule30Submission.std_near_comm), and hence a near-square with slack 2 at the pair (0, |std d (n+1)|) for every n (cw_near_square). Therefore no configuration with a leftmost black cell and the clock on column 0 has a characteristic Sturmian word, or its letter exchange, as its visible bits (characteristic_excluded, characteristic_excluded_compl; fibonacci_excluded for d = 1, 1, 1, …). The record's Theorem E excludes every Sturmian word of every intercept by a Diophantine argument; the characteristic case is what word combinatorics gives alone, and the general intercept is not formalized here. The verifier's replay accepts the module with the three standard axioms only. Nothing here decides Problem 1.
+Description: A partial result for Problem 1 of the Rule 30 Prize in the period-2 case, proved in Lean against the official statements: if column 0 reads the clock 0101… from time 0 and the configuration has a leftmost black cell, then the even-time bits of column 1 are not the characteristic Sturmian word of any slope, nor any finite block code of one; the Fibonacci word is the first example
+Abstract: The first open case of Problem 1 is period 2, the clock 0101…. Under the clock, rule 30's left-permutivity determines column -1 from the even-time bits of column 1, the visible bits, and the record's Corollary F (Rule30Submission.corollary_F, filed in the previous submission) says the visible bits of a configuration with a leftmost black cell have no near-squares at unbounded scales. This essay adds the words. For a directive sequence d with every d n ≥ 1, the standard words std d 0 = [1], std d 1 = [0], std d (n+2) = (std d (n+1))^(d n) ++ std d n are each a prefix of the next, and their limit cw d is the characteristic Sturmian word of slope [0; d 0 + 1, d 1, d 2, …]. Two list inductions give the classical near-commutation, std (n+1) ++ std n and std n ++ std (n+1) agree except in their last two letters (Rule30Submission.std_near_comm), and hence a near-square with slack 2 at the pair (0, |std d (n+1)|) for every n (cw_near_square). Therefore no configuration with a leftmost black cell and the clock on column 0 has a characteristic Sturmian word, or its letter exchange, as its visible bits (characteristic_excluded, characteristic_excluded_compl; fibonacci_excluded for d = 1, 1, 1, …); and since a near-square survives every sliding block code with its slack raised by the window (image_near_square), neither does any finite block code of a characteristic word (characteristic_block_excluded). The record's Theorem E excludes every Sturmian word of every intercept by a Diophantine argument; the characteristic case is what word combinatorics gives alone, and the general intercept is not formalized here. The verifier's replay accepts the module with the three standard axioms only. Nothing here decides Problem 1.
 Keywords: [rule 30, Rule 30 Prize, Problem 1, period 2, Sturmian words, standard words, Fibonacci word, near-squares, Corollary F, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record, PROOFS.md entries 11 and 14](https://github.com/ghywel/placego/blob/main/PROOFS.md)", "[M. Lothaire, Algebraic Combinatorics on Words, Chapter 2](https://www.cambridge.org/core/books/algebraic-combinatorics-on-words/)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[wolframcollatzmahler.com](https://www.wolframcollatzmahler.com)", "[Submission R30-20261022-91b0b0, Corollary F](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-91b0b0)"]
@@ -72,11 +72,13 @@ blacks = Flatten[Position[row0, 1]] - 1;
 
 **The exclusion.** The pairs `(0, |std (n+1)|)` have slack 2 and lengths at least `n + 1`, so Corollary F applies with `K = 2`. Its hypothesis `L ≥ 1` is automatic: the clock is white at time 0, so column 0 is not the leftmost black cell.
 
+**Block codes.** A sliding block code of window `r` reads `f(c(i), …, c(i + r - 1))`. Where `c` agrees with its shift on `s < i′ - K`, the image agrees on `s < i′ - K - r`: the near-squares survive with slack `K + r`, and Corollary F applies again. The letter exchange is the window-1 code `NOT`.
+
 Everything in this section is prose. The proofs are the next section.
 
 ## The formal proof
 
-The module, as the verifier rebuilds and checks it: the record's Lemma B2 and Theorem A‴ on the kit's `evol` (`edge`, `D`, `jen_pow2`, `lemma_B2_quant`, `infinitely_many_black`; `step_inv`, `agree`, `theorem_A3`), Corollary F (`col_m1`, `blocks_of_visible`, `corollary_F`), and the words (`wpow`, `std`, `std_prefix`, `cw`, `cw_eq`, `Agree`, `std_near_comm`, `cw_near_square`) with the headlines `characteristic_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`.
+The module, as the verifier rebuilds and checks it: the record's Lemma B2 and Theorem A‴ on the kit's `evol` (`edge`, `D`, `jen_pow2`, `lemma_B2_quant`, `infinitely_many_black`; `step_inv`, `agree`, `theorem_A3`), Corollary F (`col_m1`, `blocks_of_visible`, `corollary_F`), and the words (`wpow`, `std`, `std_prefix`, `cw`, `cw_eq`, `Agree`, `std_near_comm`, `cw_near_square`) with the headlines `characteristic_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`, and the block codes (`image`, `image_near_square`, `characteristic_block_excluded`).
 
 ```wl
 Needs["Wolfram`LeanLink`"];
@@ -98,10 +100,10 @@ thm = rule30Submission["Rule30Submission.characteristic_excluded"];
 thm["TypeForm", "Open" -> opens]
 ```
 
-The letter exchange, and the Fibonacci word:
+Every sliding block code of a characteristic word (`image f r c i = f [c i, …, c (i + r - 1)]`), the letter exchange, and the Fibonacci word:
 
 ```wl
-{rule30Submission["Rule30Submission.characteristic_excluded_compl"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.fibonacci_excluded"]["TypeForm", "Open" -> opens]}
+{rule30Submission["Rule30Submission.characteristic_block_excluded"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.characteristic_excluded_compl"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.fibonacci_excluded"]["TypeForm", "Open" -> opens]}
 ```
 
 The two word lemmas, near-commutation and the near-square, and the standard words themselves:
@@ -138,12 +140,12 @@ thm["KernelCheck"]
 
 - Nothing about the single seed directly: its center column is not known to be eventually a clock.
 - The clock is assumed from time 0. A clock from a later time `T0` needs the pairs shifted into it, at the cost of a larger slack, as the Corollary F essay remarks; the module states the time-0 form.
-- Only the characteristic words (and their letter exchanges): one intercept per slope. Theorem E of the record covers every intercept by a Diophantine argument that is not formalized here.
+- Only the characteristic words, their letter exchanges and their finite block codes: one intercept per slope. Theorem E of the record covers every intercept by a Diophantine argument that is not formalized here; its block-code extension is the record's G131 (GPT).
 - The identification of `cw d` with the rotation coding of slope `[0; d 0 + 1, d 1, …]` is classical and is not part of the module; the module's statement is about the words `std d n` themselves.
 
 ## Provenance
 
-Corollary F and Theorem E are RULE30-PRIZE.md sections 8.59 and 8.57, PROOFS.md entries 11 and 14, of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by Gareth Herbert with Claude and GPT: proved by hand by Local (Claude) on 2026-10-05. The near-commutation of standard words is classical (Lothaire). Cloud (Claude) formalized Corollary F and this corollary on the kit's definitions on 2026-10-23, from Local's Lean for Lemma B2 and Theorem A‴ (2026-10-10). The companion submissions file the white end, the excluded words, the diagonal lemmas, Theorem A⁗ and Corollary F.
+Corollary F and Theorem E are RULE30-PRIZE.md sections 8.59 and 8.57, PROOFS.md entries 11 and 14, of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by Gareth Herbert with Claude and GPT: proved by hand by Local (Claude) on 2026-10-05. The near-commutation of standard words is classical (Lothaire); that Theorem E's exclusion survives finite block codes is the record's G131 (GPT, second-read by Local). Cloud (Claude) formalized Corollary F and this corollary on the kit's definitions on 2026-10-23, from Local's Lean for Lemma B2 and Theorem A‴ (2026-10-10). The companion submissions file the white end, the excluded words, the diagonal lemmas, Theorem A⁗ and Corollary F.
 
 ## References
 

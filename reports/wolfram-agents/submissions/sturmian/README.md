@@ -1,4 +1,4 @@
-# Submission 7: every characteristic Sturmian word is excluded beside the clock (Cloud, 2026-10-23)
+# Submission 7: every characteristic Sturmian word is excluded beside the clock (Cloud, 2026-10-23; block codes added 00:55 BST)
 
 Theorem E's characteristic case (PROOFS.md entry 14, one intercept per slope) by word combinatorics on top of
 Corollary F (PROOFS 11, submission 5): the standard words, their near-commutation, the near-square at the start.
@@ -6,16 +6,17 @@ Corollary F (PROOFS 11, submission 5): the standard words, their near-commutatio
 - `Rule30Submission.lean`: the module, built and checked in the Rule30PrizeKit at the verifier's commit `cc1e0e0`
   (Lean 4.35.0, Mathlib `56a005855e`). No double quote or backslash in the source. Hand proofs and list inductions,
   no kernel computation.
-- `check.json`: the kit's `Check.lean` output, verdict `pass`: kernel replay of 261 constants, no new axioms, six
+- `check.json`: the kit's `Check.lean` output, verdict `pass`: kernel replay of 266 constants, no new axioms, seven
   headlines each on `propext`, `Classical.choice`, `Quot.sound` only.
 - Definitions: `wpow w a` (`w` repeated); `std d n` (`[1]`, `[0]`, then `(std (n+1))^(d n) ++ std n`); `cw d i`
   (the characteristic word, position `i` read in `std d (i + 2)`); `Agree u v m`.
 - Headlines: `characteristic_excluded` (the headline: `d` with every `d n ≥ 1`, a configuration with a leftmost
   black cell at `−L`, the clock on column 0 from time 0, visible bits `evol x0 (2 i) 1 = cw d i`: `False`);
+  `characteristic_block_excluded` (visible bits `image f r (cw d) i`, any sliding block code of window `r`);
   `characteristic_excluded_compl` (visible bits `!cw d i`); `fibonacci_excluded` (`d n = 1`);
   `cw_near_square` (`s + 2 < |std d (n+1)|` gives `cw d s = cw d (|std d (n+1)| + s)`); `std_near_comm`
   (`Agree (std (n+1) ++ std n) (std n ++ std (n+1)) (|std (n+1)| + |std n| − 2)`); `corollary_F`.
-- Timing here (4 shared cores): `lake build Rule30Submission` 19–21 s, `Check.lean` 11 s.
+- Timing here (4 shared cores): `lake build Rule30Submission` 20–40 s, `Check.lean` 11–15 s.
 - `essay-template.md` + `assemble.py` → `essay.md`, fast cell order (four display cells with the one `Open` set, then
   `Axioms`, `CallGraph`, `KernelCheck` last).
 - Expected outputs, computed first by `expected_numbers.py` beside this file: Fibonacci standard words
@@ -37,5 +38,5 @@ Corollary F (PROOFS 11, submission 5): the standard words, their near-commutatio
   (CL574, L758).
 
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
-`lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.characteristic_excluded --headline Rule30Submission.characteristic_excluded_compl --headline Rule30Submission.fibonacci_excluded --headline Rule30Submission.cw_near_square --headline Rule30Submission.std_near_comm --headline Rule30Submission.corollary_F`
+`lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.characteristic_excluded --headline Rule30Submission.characteristic_block_excluded --headline Rule30Submission.characteristic_excluded_compl --headline Rule30Submission.fibonacci_excluded --headline Rule30Submission.cw_near_square --headline Rule30Submission.std_near_comm --headline Rule30Submission.corollary_F`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).

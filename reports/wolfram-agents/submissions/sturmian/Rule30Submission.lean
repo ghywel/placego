@@ -23,7 +23,9 @@ letters gives the slopes above `1/2`). Two facts about them, proved by induction
 Hence (`characteristic_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`): **no configuration with a
 leftmost black cell and the clock on column `0` has a characteristic Sturmian word, or its letter exchange, as its
 visible bits**, for every directive sequence, so for every irrational slope. The Fibonacci word (`d n = 1`) is the
-first example.
+first example. A near-square survives every sliding block code with its slack raised by the window
+(`image_near_square`), so **every finite block code of a characteristic word is excluded too**
+(`characteristic_block_excluded`; the record's G131, by GPT, is the same observation for Theorem E).
 
 **What is new relative to the kit.** The kit's `Rule30ZeroBoundary.Q01` asks the period-2 question for the single
 seed; `Rule30DrivenLeft.no_periodic_column` excludes eventually periodic drivers; its CATALOG remarks that Sturmian
@@ -938,5 +940,52 @@ theorem fibonacci_excluded (x0 : ℤ → Bool) (L : ℕ) (hc : x0 (-(L : ℤ)) =
     (hclock : ∀ t, evol x0 t 0 = decide (t % 2 = 1)) (hvis : ∀ i, evol x0 (2 * i) 1 = cw (fun _ => 1) i) :
     False :=
   characteristic_excluded (fun _ => 1) (fun _ => le_rfl) x0 L hc hl hclock hvis
+
+/-! ## Sliding block codes of the characteristic words are excluded too -/
+
+/-- A sliding block code of window `r`: `image f r c i = f [c i, …, c (i + r - 1)]`. The letter exchange is the
+window-`1` code `f = not`; every finite block factor of the word is one of these. -/
+def image (f : List Bool → Bool) (r : ℕ) (c : ℕ → Bool) (i : ℕ) : Bool :=
+  f ((List.range r).map fun j => c (i + j))
+
+theorem image_congr (f : List Bool → Bool) (r : ℕ) (c : ℕ → Bool) (i i' : ℕ)
+    (h : ∀ j, j < r → c (i + j) = c (i' + j)) : image f r c i = image f r c i' := by
+  unfold image
+  congr 1
+  apply List.map_congr_left
+  intro j hj
+  rw [List.mem_range] at hj
+  exact h j hj
+
+/-- A near-square of slack `K` in `c` is a near-square of slack `K + r` in its window-`r` code. -/
+theorem image_near_square (f : List Bool → Bool) (r : ℕ) (c : ℕ → Bool) (K i i' : ℕ)
+    (hc : ∀ s, s + K < i' → c (i + s) = c (i' + s)) :
+    ∀ s, s + (K + r) < i' → image f r c (i + s) = image f r c (i' + s) := by
+  intro s hs
+  apply image_congr
+  intro j hj
+  rw [Nat.add_assoc, Nat.add_assoc]
+  exact hc (s + j) (by omega)
+
+/-- **Every sliding block code of a characteristic Sturmian word is excluded** as the visible bits beside the
+clock. -/
+theorem characteristic_block_excluded (d : ℕ → ℕ) (hd : ∀ n, 1 ≤ d n) (f : List Bool → Bool) (r : ℕ)
+    (x0 : ℤ → Bool) (L : ℕ) (hc : x0 (-(L : ℤ)) = true) (hl : ∀ j < -(L : ℤ), x0 j = false)
+    (hclock : ∀ t, evol x0 t 0 = decide (t % 2 = 1))
+    (hvis : ∀ i, evol x0 (2 * i) 1 = image f r (cw d) i) : False := by
+  have hL : 1 ≤ L := by
+    by_contra h0
+    have hL0 : L = 0 := by omega
+    subst hL0
+    have h := hclock 0
+    rw [show evol x0 0 0 = x0 0 from rfl] at h
+    have hc0 : x0 0 = true := by simpa using hc
+    rw [hc0] at h
+    exact absurd h (by decide)
+  refine corollary_F x0 L hL hc hl 0 (fun t _ => hclock t) (2 + r) (fun N => ?_)
+  refine ⟨0, (std d (N + 1)).length, std_length_pos d (N + 1), by have := std_length_ge d hd N; omega,
+    by omega, fun s hs => ?_⟩
+  rw [hvis, hvis]
+  exact image_near_square f r (cw d) 2 0 _ (fun s hs => by rw [Nat.zero_add]; exact cw_near_square d hd N s hs) s hs
 
 end Rule30Submission

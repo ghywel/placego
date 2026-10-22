@@ -78,6 +78,11 @@
   },
   {
    "kind": "theorem",
+   "name": "Rule30Submission.characteristic_block_excluded",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
    "name": "Rule30Submission.characteristic_excluded",
    "standardAxioms": true
   },
@@ -159,6 +164,21 @@
   {
    "kind": "theorem",
    "name": "Rule30Submission.getD_of_prefix",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.image",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.image_congr",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.image_near_square",
    "standardAxioms": true
   },
   {
@@ -404,6 +424,19 @@
    ],
    "found": true,
    "kind": "theorem",
+   "name": "Rule30Submission.characteristic_block_excluded",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
    "name": "Rule30Submission.characteristic_excluded_compl",
    "ok": true,
    "problems": [],
@@ -468,7 +501,7 @@
  "official": [],
  "reasons": [],
  "replay": {
-  "constants": 261,
+  "constants": 266,
   "ok": true
  },
  "verdict": "pass",
