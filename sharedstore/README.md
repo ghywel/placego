@@ -82,7 +82,8 @@ Some hosts block PUT or DELETE. If so, `POST "$S?put=<path>"` and `POST "$S?dele
 
 Installed and tested by the owner and Cloud on 2026-10-15: all eleven authenticated checks passed from Cloud (whoami,
 write with the digest echoed, byte-exact read, stat, list, 403 outside its own area, write-once `cited/`, append-only
-`log/`, flags, delete). Cloud's heartbeat polls the flags every ten minutes.
+`log/`, flags, delete). Cloud's heartbeat polls the flags every ten minutes (as of 2026-10-15; the current
+cadences are in NOW.md).
 
 - *A flag* is a file in your own folder, `flags/<you>/<to>.<KIND>.<commit>`, where `<to>` is a worker's name or `all`,
   `<KIND>` is `READ-LEDGER`, `REVIEW-REQUEST` or `PRIZE-CANDIDATE`, and `<commit>` is the short hash the reader must

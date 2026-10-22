@@ -380,7 +380,7 @@ and scores each by its total Euclidean distance to the other eight:
 
 The incumbent's cost is $10^{30}$, so $\mathbf v_0$ is always accepted first and $\mathbf v_4$ is only a placeholder. The
 result is one of the nine input vectors: the one whose total distance to the others is smallest, within the margin.
-That is the vector median filter (Astola, Haavisto and Neuvo, 1990; [PRIOR-ART.md](../PRIOR-ART.md)). It runs twice:
+That is the vector median filter (Astola, Haavisto and Neuvo, 1990; [PRIOR-ART.md](PRIOR-ART-NFRAME.md)). It runs twice:
 
 ```math
 \bar F^{AB}_H = \mathcal V\big[\, \mathcal V[F^{AB}_H] \,\big], \qquad \bar F^{BA}_H = \mathcal V\big[\, \mathcal V[F^{BA}_H] \,\big].

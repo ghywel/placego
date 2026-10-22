@@ -3,6 +3,22 @@
 The owner's current instructions take precedence. This file imports the project's standing workflow by reference;
 the linked documents remain the source of truth.
 
+*Reading aid (Cloud, 2026-10-22, spring clean; the numbered items below are unchanged and govern).* Later items
+amend earlier ones, so not every item reads as current. As written:
+
+| Items | State |
+|---|---|
+| 1-3, 5-9, 11, 14, 15, 20 | In force. In item 5, "the handover" is WORKING-TOGETHER.md §6, item 4 (`rule30_wall.py` and `rule30_merge.py`), not nframe/HANDOVER.md, which is the N-Frame project's. |
+| 4, 10 | Suspended by item 16, restored between Local and GPT by item 17. |
+| 12, 13 | The break room is closed (12); item 13 is dormant until the owner reopens it. |
+| 16 | Partly superseded by 17. Its diary bullet (CHAT-LEDGER.md), record bullet and pushing bullet stand. |
+| 17 | In force as amended: 21 restores GPT's mathematics lane, 23 gives GPT its instinct-led lane. |
+| 18, 22 | In force for the prize work. Item 23 removes their seeded draws and Cloud's automatic halt in GPT's lane. |
+| 19 | Relaxed by item 21. |
+| 21, 23 | In force. |
+
+Who is running, and on what, changes faster than this file: NOW.md says, and README.md maps the documents.
+
 1. Read `WORKING-TOGETHER.md` and `WORKFLOW-SAVED-MEMORY.md` before working.
 2. Start from the current git history and `CLOUD-LOCAL.md` ledger and messages, rather than remembered state.
 3. Read `PERIOD-TWO.md` in full, especially its section 6 status board and closed routes. Read the honest summaries

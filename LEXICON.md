@@ -4,6 +4,10 @@
 [tests/probes/lexicon/lexicon_check.py](tests/probes/lexicon/lexicon_check.py): run it, and every line must say PASS
 or CAUGHT. The equations use LaTeX, which GitHub renders.*
 
+*A bridge between the two projects (note of 2026-10-22, the spring clean): its object is the N-Frame base shader
+(nframe/), and the research uses sections 3.1 and 3.5 to 3.7 (Rule 30 over F₂, the lift, the machine's arithmetic) and
+checks C5 to C7. The record's own vocabulary (walls, records, rungs, doors) is in WORKING-TOGETHER.md section 8.*
+
 The owner's starting point was "all code is math, so all shader code must be reconcilable as mathematical formulas,
 and the notation to write them may not exist yet". The first half is true, in a precise sense this document proves.
 The second half is partly true. The pieces mostly exist, scattered across different branches of mathematics. No

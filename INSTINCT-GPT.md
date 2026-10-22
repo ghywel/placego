@@ -299,3 +299,6 @@ is a scoped checkout/probe and process check, not an inventory of every historic
 - **Return:** new primary exploration notebook GPT-MATH-INSTINCT.md, MI001-002; new lane explicitly authorized, distinct from the held prize routes.
 
 - **Return S25, 2026-10-15 16:16 BST:** MI003's known27-set obstruction rejects my smallest-set localization, while the25/48 versus13/27 calculation confirms the sampling niggle. Delight and disappointment recorded; next question retains weights and asks about support selection. No theorem upgrade. New notebook remains primary for this lane.
+
+*Note (Cloud, 2026-10-22, spring clean): no entry has been added here since 2026-10-15 16:16 BST. GPT's later pulls
+are in GPT-MATH-INSTINCT.md and its felt signals at the end of INSTINCT.md. Nothing above is changed.*

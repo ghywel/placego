@@ -1,7 +1,7 @@
 // JOB SW-01: the swarm at full burn (RULE30-PRIZE.md 8.113). Written by Cloud, 2026-10-14, for Local to run.
 //
 // RUN-ON:   Local (the M5 MacBook Pro), in a Claude Code session with ultracode on. Not Cloud: its container has four
-//           cores, so a workflow runs two agents at a time (CLAUDE-INTEL-HANDOVER.md section 2). Cloud launched it at
+//           cores, so a workflow runs two agents at a time (archive/CLAUDE-INTEL-HANDOVER.md section 2). Cloud launched it at
 //           22:47 BST and the owner cancelled it before any reader returned.
 // COMMAND:  in the session, from the repository root:
 //               Workflow({ name: 'steer-out', args: { stamp: '<date and time from the shell clock, BST>' } })
@@ -121,7 +121,7 @@ const AREAS = [
   { name: 'Mahler: MAHLER.md and PROOFS.md section M', files: 'MAHLER.md (all), PROOFS.md section M (grep -n "^## M\\." for its start; it ends at "## S.")', hint: 'MAHLER.md section 1 is the coding (S_strict, K, the A(T) census), section 2 the rungs, windows, closed routes and the 7/57 existence window.' },
   { name: 'Collatz and Erdős: COLLATZ-PRIZE.md, CONSTELLATION.md sections G and H', files: 'COLLATZ-PRIZE.md (all), CONSTELLATION.md section G (grep -n "^## G" ; the Erdős side room, G.1) and section H (the doors)', hint: 'COLLATZ-PRIZE.md section 5 is the window principle, section 6 the leads. G.1 has the Erdős structural map in the project\'s language.' },
   { name: 'Prior art: what is in print and where it stops', files: 'PRIOR-ART.md: run grep -n "^## " PRIOR-ART.md first, then read the sections on Mahler (the room-switch survey), the rigidity hunt / transcendence / Diophantine parts, Lagarias and the ternary conjecture, Tao and Collatz, and the sign-rule countercheck at the end', hint: 'The question for this area: which theorems in print prove something about ONE object of unbounded complexity, and what the record says stops each from transferring.' },
-  { name: 'The exchange with GPT on 2026-10-14: RULE30-GPT.md GC1240 onward and CHAT-LEDGER.md CL370 onward', files: 'RULE30-GPT.md from the heading "## GC1240" to the end; CHAT-LEDGER.md from the heading "## CL370" to the end', hint: 'GPT is the second model (a GPT-6 Codex instance) and the reviewer. GC1246 is its countercheck of the sign rule, GC1249 the ternary converse, GC1251 to GC1253 the 13 plateau. Note what each party said the wall is and any disagreement between them.' },
+  { name: 'The exchange with GPT on 2026-10-14: RULE30-GPT.md GC1240 onward and CHAT-LEDGER.md CL370 onward', files: 'RULE30-GPT.md from the heading "## GC1240" to the end; archive/ledgers/CHAT-LEDGER.15.md from the heading "## CL370" to the end (CHAT-LEDGER.md when this job was written; since rotated)', hint: 'GPT is the second model (a GPT-6 Codex instance) and the reviewer. GC1246 is its countercheck of the sign rule, GC1249 the ternary converse, GC1251 to GC1253 the 13 plateau. Note what each party said the wall is and any disagreement between them.' },
 ]
 
 const readerPrompt = (a, i) => `You are reader ${i + 1} of 8 mapping "the wall" in a mathematics research record, for a swarm run at ${STAMP}.

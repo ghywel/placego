@@ -3859,7 +3859,7 @@ meets the same cylinders. PROVED after Local L737; small exact controls pass.
 **Why it matters.** A regular invariant would need mixed terminal components in MSB as well as LSD order.
 Bounded information at both ends cannot decide it; finite middle memory and multiplication remain open.
 
-## G303
+## W303
 
 A set closed under multiplication by4 and containing a unit1 cannot avoid ternary01 if membership on
 that unit slice depends only on digit counts. Legal unit-preserving permutations and explicit carry
@@ -3949,7 +3949,7 @@ matchings or compact translation. PROVED after Cloud CL425/8e631206 carrying rea
 **Why it matters.** Removes search from the complete-cancellation building block
 for even E28; larger mixed components and the full eight-path problem remain open.
 
-## W314
+## G314
 
 A primitive six-move zero-sum component with two positive or two negative moves,
 extrema sum<=28, fits in0..27 with any cancelling gap1..14 using eight different
@@ -3987,7 +3987,7 @@ Choose zero's owner first,then apply the one-hole three-group theorem.
 inequalities control ownership without assuming compatible partitions exist.
 
 
-## W318
+## G318
 Deleting up to three numbers still leaves a guaranteed middle interval of fixed-size sums.
 
 **What it says.** Start with the integers from zero through at least nine and delete up to three. Choose at least three numbers and leave at least three behind. Every total in an explicit central interval can still be made with the required number of choices.
@@ -4003,7 +4003,7 @@ Three groups can partition two labelled integer intervals with positive prescrib
 **Why it matters.** A feasible division of the sums between the intervals can be repaired when singleton choices collide. This proves compatibility for fixed positive count rows;it does not choose those counts for a larger partition problem. Independently verified by Cloud in CL442;novelty unassessed.
 
 
-## W325
+## G325
 
 For eight disjoint paths,68 is the exact minimum path order that guarantees
 burning within the ceiling of the square root of their total order.
@@ -4145,3 +4145,501 @@ counting the bottom holes supplies the small upper extension.
 **Why it matters.** This verifies the first-triple existence premise in
 that range. It does not partition three or more bins or prove the full
 conjectured spectrum threshold.
+
+## G289
+Holes, two white squares side by side, are gained and lost with exact bookkeeping from one slanting path to the
+next, but their number can rise or fall.
+
+**What it says.** Suppose the middle column keeps its black-white beat for long enough, and a wide white stretch in
+the left half shrinks into a white triangle. Paths slant from the triangle's black inner edge in to the middle, each
+arriving just before a black beat; count each path's holes, leaving out the last pair, which records what the right
+side must supply. On the next path, a tick later and a square further out, a new hole appears where there was none
+exactly when the two squares just beyond the old pair were both black, and an old hole survives exactly when both
+were white. So the count changes by exactly holes made minus holes lost inside the path; the ends add nothing,
+thanks to the triangle's edge (proof G287) and the black beat. On one real example, a white stretch starting 125
+squares out, the count went 26, 31, 26 on three paths in a row.
+
+**Why it matters.** A proof that the beat cannot last for ever could use a meter that only moves one way. This gives
+the hole count exact bookkeeping, then shows that on its own it is no such meter. It does not show that the beat
+fails or rule out richer meters, and the return to 26 is gains and losses cancelling in one finite example, not the
+whole pattern coming back round.
+
+**An everyday picture.** A bus's passenger count: from stop to stop it changes by exactly those who got on minus
+those who got off, yet it can climb from 26 to 31 and fall back to 26. Unlike the mileage counter on the dashboard,
+it cannot tell you how far the bus has come.
+
+## G290
+The right side demands a minimum number of changes beside a white triangle, but the triangle's ordinary edge
+supplies that many for free, so the count rules nothing out.
+
+**What it says.** Suppose the wall, the middle column, blinks black and white, and take a run of white cells in the
+starting row that begins eight or more cells left of the wall and has a black cell on its wall side; the run shrinks
+into a white triangle. For each black beat, draw a diagonal from the triangle's edge to the wall. A change is a pair
+of neighbouring white cells that appears or vanishes from one diagonal to the next. At the wall's white beats the
+right side never shows two blacks or five whites in a row, so N consecutive diagonals (from the fifth onward, and
+only while the run reaches far enough) hold at least (2N − 6)/5 changes away from their ends. But the triangle's
+black edge alone, whose settled pattern is already known, puts a change at the first counted spot of every diagonal
+or of every other one, depending on the band's phase, missing at most the first two: always enough.
+
+**Why it matters.** It closes one hoped-for way to cap how long such white runs can be: treating the count of these
+changes as a toll that impossible left halves might fail to pay. The triangle's ordinary edge pays it automatically,
+so the count cannot tell real left halves from impossible ones. Other routes stay open, such as where the changes
+fall, tied to the actual starting row, and nothing here settles whether the middle column can blink for ever.
+
+**An everyday picture.** A rain gauge left under a dripping garden tap: the drip alone fills it past the least a
+rainy day would leave, so the gauge can never show that a day was dry. The pattern of wet patches on the patio might
+still tell; the level in the gauge cannot.
+
+## G291
+Inside the left half, whether two neighbouring counts come out odd or even spells out one bit that the middle column
+hears from the right.
+
+**What it says.** Suppose the middle column blinks black and white, and the left half's starting row has a long
+white stretch that begins, just after a black square, at least eight squares out. Slanting lines run inward from the
+white triangle it makes toward the middle column, one for each white beat. Give each line a reading: away from its
+two ends, count the spots where two white squares side by side appear or disappear between that line and the next,
+and write 1 if the count is odd, 0 if it is even. From the fifth line on, provided the stretch is long enough and
+the blinking keeps going a few ticks beyond the next line, the known fact that the middle never hears two 1s in a
+row gives this: the middle hears a 1 at a line's white beat exactly when that line reads 1 and the next reads 0, so
+N neighbouring lines give N − 1 heard bits. Apart from the ends this translation loses nothing either way, and a
+proven ban on a run of heard bits, kept with its own side conditions, becomes a ban on a window of readings one
+longer: never five heard 0s in a row becomes never four 0s in a row.
+
+**Why it matters.** It carries what is known about the heard bits into the inside of the left half, on lines that
+reach ever deeper. But a translation that loses nothing is a new way to read the same information, not a new
+obstacle: it puts no limit on how long the white stretch can be, and does not show that the blinking must break.
+
+**An everyday picture.** A church clock striking the hour: you only know a stroke was the last when the next beat
+stays silent. Likewise, the middle hears a 1 exactly where a run of 1s among the readings ends, which shows once the
+next line reads 0.
+
+## G292
+Inside a white band on Rule 30's left side, each slanted path of cell pairs turns into the next in one pass that
+remembers only four states.
+
+**What it says.** Start Rule 30 with a band of white cells on the left. The band begins at least two cells from the
+middle, with a black cell on its side nearer the middle. Inside the white triangle this band opens, follow a slanted
+path of neighbouring cell pairs from the triangle's edge to the middle column, and write it as a word whose
+"letters" are those pairs. One left-to-right pass gives the next path's word. It starts with the same fixed first
+letter. Each new letter comes from the old letter below it and the letter just written: each of its two cells is one
+ordinary Rule 30 update. One extra letter is added at the middle column. The only memory carried along is that last
+letter, so there are four possible states, and every old letter shuffles them without merging any two. The rule
+holds only while the starting white band reaches at least three cells further from the middle than the number of
+steps the current path has taken, and the first word must come from the actual starting row.
+
+**Why it matters.** It replaces the single counts and parities of earlier attempts with an exact rule for the whole
+path, and those earlier counts can be read back from the words. It does not bound how long the band lasts. The word
+grows by one letter every step, so this is not a finite machine for the whole row. The four-state memory never
+resets, and its cycling alone gives no bound.
+
+**An everyday picture.** Knitting a scarf from the row below: each new stitch depends on the stitch beneath it and
+the one just made, and every row ends with one extra stitch, so the scarf keeps widening. The knitter's only memory
+is a four-position dial that each stitch turns or flips, but never jams two positions into one.
+
+## W296
+No whole number except 0 passes Mahler's 3/2 test together with 13 times itself, and a count that stops growing just
+once is enough to prove it.
+
+**What it says.** Mahler asked whether some positive number, multiplied by 3/2 again and again, can keep the part
+after the decimal point below a half for ever. A whole number passes the test if some fraction below a half, added
+to it, does this; that depends only on which numbers are odd in the chain made from it by "times 3/2, rounded up",
+and its last n binary digits settle the first n of those. For an odd multiplier, list the n-digit endings that let a
+number and its multiple both pass n steps: the even endings match the previous list one for one, so the list grows
+by exactly the number of its odd endings, and any passing pair other than 0, once its chain reaches an odd number,
+would put an odd ending on every list. So one length with no growth rules out every such pair, and 13 has one: its
+list has 11 endings at both six and seven digits, and exact fractions confirm that no odd seven-digit ending
+survives.
+
+**Why it matters.** An earlier result showed that multipliers leaving remainder 3 on division by 4 forbid such
+pairs, and it had been proposed that remainder 1 always allows them; 13 leaves remainder 1, so that proposal is
+false. When the count stalls, a finite check settles an endless question, with no guessing about longer lengths. It
+is about pairs, not any single number: if numbers of Mahler's kind exist, no two have whole parts in the ratio 1 to
+13, but his problem stays open, and the multipliers 5 and 9 remain undecided.
+
+**An everyday picture.** A bucket under a tap that might be leaking: no water ever leaves, and the level rises only
+when a fresh drop (an odd ending) falls, so a leaking tap would raise it between any two looks. Two looks that find
+the same level prove the tap is not leaking, with no need to watch it for ever; the water already in the bucket,
+like the 11 endings left at every length from six digits on, is old water, not a sign of a leak.
+
+## G297
+If a digit-reading machine accepts a base-3 number ending in zeros, an equally small machine accepts one ending in
+the digit 1.
+
+**What it says.** Write whole numbers in base 3, using only the digits 0, 1 and 2. Take a set of numbers that stays
+inside itself when every member is multiplied by 4, contains no number written only with 0s and 1s, and is
+recognised by a finite automaton. A finite automaton is a simple machine with a fixed number of internal states that
+reads a number's digits one at a time, here either lowest digit first or highest first, and answers yes or no.
+Suppose the set contains a number, called the witness, whose last nonzero digit is 1. Then there is another set with
+the same three properties that contains a number whose very last digit is 1, so one that leaves remainder 1 when
+divided by 3; its machine has no more states and reads in the same direction. The new set is made by keeping the
+members of the old set that end in at least as many zeros as the witness does and removing those zeros, and the
+machine changes only where it starts (lowest digit first) or which of its states count as yes (highest digit first).
+
+**Why it matters.** The record is looking for small machines of this kind as part of an approach to Erdős's question
+of whether every large enough power of 2 has a digit 2 in base 3. This result lets that search assume the witness
+ends in the digit 1, at no cost in machine size. It does not show whether such machines exist and says nothing
+either way about Erdős's question. It also does not keep a particular starting number, such as 1024, in the set.
+
+**An everyday picture.** Think of a ticket reader at a car park gate. Keep only the tickets that end in a certain
+row of zeros and tear that row off: the short tickets need no bigger reader. You set its dial as if the zeros had
+already gone through, or, if it reads the other way, you light the green lamp wherever the zeros would have taken
+it.
+
+## G298
+Every base-3 ending whose last nonzero digit is 1 is shared by infinitely many numbers that, multiplied by some
+power of 4, have no digit 2.
+
+**What it says.** In base 3 (counting in 1s, 3s, 9s, 27s and so on), 64 is 2101 and 256, four times 64, is 100111.
+Numbers like 64, which times some power of 4 have no 2, never have 2 as their last nonzero digit, yet every ending
+whose last nonzero digit is 1 is shared by infinitely many of them. A set that holds 4n whenever it holds n, and has
+a 2 in every member, can hold none of them; if it also holds a number ending in 1, that number times 1, 4, 16, ...
+gives it members with every ending that finishes in 1, so no such ending tells members from non-members. A machine
+with a fixed number of settings, reading from the last digit back, can therefore pick out such a set only if every
+group of settings it can reach after a last digit 1, and never leave, holds both yes and no settings.
+
+**Why it matters.** Such a machine whose set held 1024 would prove what the mathematician Paul Erdős expected: that
+256 is the last power of 2 written in base 3 without a 2. This is only a test any such machine must pass; it does
+not show whether one exists, and Erdős's question stays open. Passing is not enough: the set of numbers that end in
+1 and start with 2 passes, yet holds 64 but not 256, four times 64.
+
+**An everyday picture.** A doorman reads each ticket number from the right-hand end. If every ending, however long,
+turns up on both real tickets and fakes, he cannot wave anyone in or turn anyone away before he reaches the
+left-hand end, however good his notes.
+
+## W320
+When three groups share a run of numbers with three missing, they can agree how many large numbers each takes,
+provided zero's group has the least spare room.
+
+**What it says.** Take the whole numbers from 0 to M and remove 1 and two neighbours p and p+1. The aim is to split
+what is left into three groups A, B and C, each with a set size of at least three and a requested total, where the
+totals add up to the whole pool. Suppose every group, and every pair of groups, asks for at least what its count of
+numbers would make if they were 3, 4, 5 and so on. Call the amount above that floor its spare room, and suppose A
+has the least spare room of all six (the three single groups and the three pairs). Put 0 in A. The missing pair p,
+p+1 then splits the rest into a low run and a high run. The result is that each group can be given a number of high
+numbers so that its total lies between the smallest and largest sums its remaining numbers could make with that mix,
+and those numbers use up the high run exactly.
+
+**Why it matters.** It shows that workable counts of large numbers exist in one case of a larger many-group
+splitting problem. Turning those counts into an actual split also needs G319 and a separate argument for groups that
+get no large numbers. It does not solve the larger problem. It fails if A has the least room only among the single
+groups: on 0 to 11 without 1, 5 and 6, with three numbers per group, totals 16, 19 and 19 can be split, but never
+with 0 in the group that totals 16.
+
+**An everyday picture.** Three teams share a box of numbered raffle tickets that has a gap in the middle, so the
+tickets fall into a low pile and a high pile. Before anyone picks a ticket, the teams agree how many each will take
+from the high pile. When the team holding ticket 0 has the least room to spare, they can always choose those numbers
+so that the high pile is used up exactly and each team's score stays within the range its mix of tickets allows.
+Dealing the actual tickets is a separate step.
+
+## W321
+Three bins, each holding at least three, can share the numbers from 0 to a top number, minus 1 and two neighbours
+such as 5 and 6, given a safety margin.
+
+**What it says.** Take the whole numbers from 0 up to some top number and remove 1 and two neighbouring numbers
+lying between 1 and the top, say 0 to 11 without 1, 5 and 6. Share the rest among three bins, each to hold an agreed
+count of at least three numbers adding up to an agreed total, with the three totals adding up to the sum of all the
+numbers. Suppose every bin, and every pair of bins, is asked for a total no smaller than 3 + 4 + 5 + ..., with one
+term per number it holds (12 for a bin of three); this floor leaves a safety margin above the smallest total that
+many of the numbers could make. Because the three totals use up the whole sum, the floor on pairs also caps what any
+single bin can be asked for. Then the sharing can always be done.
+
+**Why it matters.** It deals with one of the cases that can remain when a larger open question, about sharing a full
+run of numbers among five bins, is cut down by filling two of the bins first. An earlier proof (W320) worked only
+when a single bin was the tightest fit, with the least room above its floor of any bin or pair, and gave that bin
+the 0; this one lets the 0 go to whichever bin suits, so it needs no such assumption. It covers only this pattern of
+missing numbers, and the five-bin question stays open.
+
+**An everyday picture.** A shop has one item at each whole-pound price from a free sample to £11, but the £1, £5 and
+£6 items have sold out. Three shoppers who must each buy three items for exactly £18 can still clear it: £3, £4 and
+£11; £2, £7 and £9; the free sample, £8 and £10. The proof works like a manager who first settles who gets the free
+sample and how many items each shopper takes from the cheap shelf below the sold-out pair and the dear shelf above
+it, and only then picks the items.
+
+## W322
+A run of numbers from 0, missing 1 and one other, can be split into any three groups of three or more whose totals
+keep a safety margin.
+
+**What it says.** Take the whole numbers from 0 up to some top number, and remove 1 and any one larger number.
+Choose three group sizes, each at least three, that together account for every remaining number, and three target
+totals that add up to the sum of those numbers. The safety margin asks that each group's target, and the combined
+target of each pair of groups, be at least 2 + 3 + 4 + ..., with one term for each number held: at least 9 for a
+group of three, and 27 for two groups of three together. That floor always sits above the smallest total that many
+of the numbers could make. Whenever the margin holds, the numbers can be split into groups of exactly those sizes
+and totals.
+
+**Why it matters.** Proof G317 handles the same kind of run for groups of four or more, asking only that each total
+be possible on its own. For groups of three that is not enough, and this result reaches them by asking for the
+margin on pairs of groups as well as on single groups. It says nothing about targets that miss the margin, does not
+cover two missing numbers placed anywhere (one of them must be 1), and does not settle the larger five-group
+splitting question behind this work.
+
+**An everyday picture.** Three players share out a set of numbered pool balls, counting the white cue ball as 0,
+after the 1 ball and one other have rolled under the sofa. Each is promised three or more balls whose numbers add up
+to a set score, and the three scores add up to the total of the numbers on all the balls left. If the 4 is the lost
+ball, two players each promised three balls with a score of 12 can never both be paid, because any two such trios
+share a ball; the margin forbids that pair of promises, since 12 + 12 falls short of 27, and whenever it holds,
+every promise can be kept.
+
+## G323
+With six or more numbers per row, four bins (one left-only, three taking one left number plus equal-sized right
+shares) can meet any target sums passing the obvious checks.
+
+**What it says.** Two rows of consecutive whole numbers, each at least six long and the right one's length a
+multiple of three, are shared out among four bins (boxes): A takes all but three of the left row, and B, C and D
+each take one left number and a third of the right row's numbers. Each bin has a target sum, and two checks are
+plainly needed: the targets add up to the grand total, and every group of bins asks for a sum within the range
+possible for that many numbers from each row. These checks are also enough: whenever they pass, all four targets can
+be met at once. The proof nudges the three lone left numbers up one step at a time, each within the range its bin
+allows, until the numbers left for A sum to A's target; an earlier result for three bins sharing one unbroken row
+then deals out the right row.
+
+**Why it matters.** The result survives sliding either row along the number line, so the rows can be the two sides
+of one missing number in a longer row; dealing such a row into four bins of given sizes and sums is the wider
+problem this serves. It covers only this one way of dividing each bin's numbers between the two sides, not right
+shares of different sizes or bins taking several left numbers as well as right ones, and it does not show that a
+workable division can always be chosen, so it does not solve that wider problem.
+
+**An everyday picture.** Three friends must take different seats in one numbered cinema row, each within their own
+stretch. From the lowest seats they may take, the friend furthest along who still has room moves up one seat, again
+and again. Each move adds exactly one to their seat-number total, so it passes every total between their lowest and
+highest seatings, and the checks ensure the wanted one is among them.
+
+## G324
+Four bins sharing two rows of consecutive numbers, one taking a lone number from the first, all other counts at
+least three, reach any totals within the obvious limits.
+
+**What it says.** Two separate rows of consecutive whole numbers are shared out among four bins, each bin taking a
+fixed count of numbers from each row; a bin's total is the sum of everything it receives. In the first row one bin
+takes a lone number and the others at least three each, and in the second row every bin takes at least three.
+Requested whole-number totals can then be met exactly when they keep within the obvious limits: they add up to the
+sum of all the numbers in both rows, and each bin, pair of bins and trio of bins asks for no less than it would get
+from the lowest numbers of each row and no more than from the highest.
+
+**Why it matters.** A known theorem splits each total between the rows so that each row keeps within its own limits,
+but the lone number can still make the first row's split impossible to carry out. A one-unit trade between the lone
+number's bin and the bin it blocks, one way in the first row and back in the second, always repairs the split in one
+direction or the other. It needs the counts fixed in advance, with no other count below three, so it does not settle
+the larger, unsolved problem it was built for, where the rows are the stretches either side of a missing number and
+the counts must be chosen.
+
+**An everyday picture.** Lay out tiles numbered 0 to 9 and let a friend take just tile 3: you can no longer pick
+three tiles adding up to 4, since 0, 1 and 3 is the only way. So trade one point: your friend takes tile 2 and you
+take 0, 1 and 4, while in a second row your friend's tiles add up to one more than planned and yours to one less, so
+both grand totals stay the same. Either way round the trade mends the first row, and the second row always accepts
+at least one of the two.
+
+## G326
+Remove one middle number from 0, 1, 2, ... and the rest can be dealt into a pair and two bigger groups with any
+agreed totals, if no group, or two groups together, asks for too little.
+
+**What it says.** Take the whole numbers from 0 to some largest number M, and remove one number that is neither 0
+nor M (the "hole"). Split all the rest into three bins: one holds exactly two numbers, and the other two hold at
+least three each. Ask for any three whole-number totals that add up to the sum of what is left. If every bin, and
+every two bins taken together, asks for at least 1 + 2 + ... + n, where n is how many numbers it holds, the split
+can always be made. That floor is n above 0 + 1 + ... + (n − 1), the smallest total that n of the numbers 0 to M
+could have. Because the three totals are fixed, a floor on two bins together also caps the third bin from above.
+
+**Why it matters.** Proof G315 makes the same kind of split when every bin holds at least three numbers, and there
+it only needs each total to be possible on its own. With a bin of two, that weaker condition is not enough, and this
+result shows that asking for this small margin above the smallest possible totals makes up for it. It is one step
+toward splitting into four or five bins with a bin of two, and it does not settle those larger cases.
+
+**An everyday picture.** A sack of weights marked 0 kg, 1 kg, 2 kg and so on up to the heaviest, with one weight
+lost (neither the lightest nor the heaviest), to be loaded, every weight, into a two-weight bag and two bigger bags
+so that each bag hits its own target. Provided no bag, and no two bags together, is asked to come in lighter than
+the 1 kg, 2 kg, 3 kg ... weights would make if it held just those, one of each up to its count, there is always a
+way to load them.
+
+## G327
+Four bins with set counts and set totals can share out a run of numbers from 0 exactly when no group of bins asks
+for too little, even with one bin of two.
+
+**What it says.** Take the numbers 0, 1, 2, … up to some last number, and four bins that between them must hold
+every number exactly once. Each bin is told how many numbers it gets (at least two, with at most one bin getting
+exactly two) and what they must add up to. The counts add up to how many numbers there are, and the totals add up to
+the sum of all of them. One check is obviously needed: any one, two or three bins taken together must ask for at
+least as much as that many of the smallest numbers would give. There are fourteen such groups, and the result says
+these fourteen checks are also enough. The earlier proof G316 settled the case where every bin holds at least three
+numbers; this one allows a single bin of two by starting from the tightest check, either filling one bin first and
+handing the other three to the three-bin results G315 and G326, or splitting the run into its two ends and letting a
+pair of bins share each end.
+
+**Why it matters.** Each bin's total can be reachable on its own while the bins still get in each other's way, and
+here fourteen simple sums settle whether all four can be filled together. It does not cover two or more bins of two:
+on 0 to 9, bins of sizes 3, 2, 2 and 3 with totals 4, 8, 10 and 23 pass every check but cannot be filled. It says
+nothing about five or more bins.
+
+**An everyday picture.** Dealing every one of a run of raffle tickets numbered from 0 into four envelopes, each with
+a set count of at least two and a set total of ticket numbers, and at most one envelope taking just two. As long as
+no envelope, or group of envelopes, asks for less than its lowest tickets would make, the deal can always be done.
+With two envelopes of just two tickets each, a pair of envelopes can still jam it.
+
+## G328
+Given a small margin, a run of numbers with one gap can be split into two pairs and a big bin with requested totals,
+except in three cases.
+
+**What it says.** Take the run of whole numbers from 0 up to some top number and remove one that is not at either
+end, leaving a gap. Divide what is left among two pairs and one big bin of at least three numbers, each bin with a
+requested total, the three totals adding up to the sum of all the numbers. Suppose every bin, and every two bins
+together, asks for at least 1 + 2 + ... + r, where r is how many numbers they hold: a small margin above the least
+that many numbers could add up to (so a pair asks for at least 3, and both pairs together for at least 10). Then it
+can always be done, except in exactly three cases: the gap is at 1 and the pairs ask for 4 and 6, however long the
+run; or the run is 0 to 7, the gap is at 3, and the pairs ask for 3 and 8, or for 4 and 10. In each, one pair total
+can be made only one way, and that pair shares a number with every pair that could make the other.
+
+**Why it matters.** With one pair and two bins of at least three numbers, the same margin is always enough (proof
+G326); with two pairs it is not, and this result lists every failure. Each failure sits exactly on the edge of one
+margin, so asking for strictly more than 1 + 2 + ... + r everywhere always works. It covers three bins only: a
+four-bin result uses it as one step, but on its own it settles no four-bin case and solves no prize problem.
+
+**An everyday picture.** The opposite faces of a die pair off to make 7 (1 and 6, 2 and 5, 3 and 4), and no face is
+in two of those pairs, because each face has only one partner; in the same way, no number in the run is in two pairs
+that make the same total. That is the heart of the proof: if each pair total can be made in two or more ways, a pair
+for each can always be found with no number in common, and the leftover numbers then make up the big bin's total by
+themselves.
+
+## G329
+Under a safety margin, pairs aiming at totals one apart fit around a missing number except in two listed situations,
+both ruled out by a big enough leftover bin.
+
+**What it says.** Take the whole numbers from 0 up to some top value, remove one that is not at either end, and
+share out the rest: some pairs of numbers must each add up to one total, some to the next total up, and one more
+bin, the filler, takes every leftover number and has a total of its own. Suppose the requested totals add up to the
+sum of the numbers, and a safety margin holds: every group of bins, short of all of them, asks for at least 1 + 2 +
+... + n, where n is how many numbers it holds. Then the share-out fails in exactly two families of cases, and every
+case in them does meet the margin. In the first family the pair totals are as high as the margin allows, in the
+second they are one lower, and in each the missing number lies in a window fixed by how many pairs of each kind
+there are and the filler's size. So the share-out always succeeds when the filler holds more numbers than there are
+pairs, and, if no group sits exactly on its margin, when it holds as many.
+
+**Why it matters.** The list of failures is complete and every case in it meets the margin, so both size rules are
+exact: however many pairs of each kind there are, a filler one number smaller can fail under the same conditions. It
+says nothing about pair totals further apart or about more than one filler.
+
+**An everyday picture.** Among 0 to 9, the numbers that can pair up to 11 or 12 line up in a single row, 6, 5, 7, 4,
+8, 3, 9, 2, where neighbours add to 11 and 12 in turn, so every such pair is a domino covering two neighbouring
+squares. Take out 5, which cuts 6 off, and ask for two pairs making 11 and one making 12: the three dominoes must
+cover 7, 4, 8, 3, 9, 2 exactly, and the only way, 7+4, 8+3 and 9+2, gives three 11s. A long row leaves squares to
+spare for any mix; a row with almost none to spare lets the gap force too many dominoes of one kind.
+
+## G330
+When pairs are picked from a pool of different numbers to hit two different totals, simple checks decide exactly
+which mixes of the two kinds are possible.
+
+**What it says.** Take a finite pool of different numbers, whole or not, and ask for a given number of pairs adding
+up to one total and a given number adding up to a different total, with no number used twice. Each number has at
+most one partner for each total (the total minus itself), so the possible pairs link the numbers into chains whose
+links alternate between the two totals, and never into loops, since every two steps along a chain add the same
+amount, the difference between the totals. The request can be met exactly when it passes a plain count of the
+available pairs of each kind and one weighted check for each chain that has links of both kinds: score each kind of
+pair by that chain's number of links of the other kind, and the request must not score more than the best allowed
+choice of pairs could. On squared paper, with the first kind counted across and the second up, the possible mixes
+are exactly the grid points inside or on the edge of one many-sided shape, with no gaps.
+
+**Why it matters.** Plain counts are not enough: there can be enough pairs of each kind, and room for that many
+pairs in all, while the mix asked for is impossible; the weighted checks catch every such case. If the leftover
+numbers form one more group, counting and adding up fix its size and total, so the pool splits into the pairs plus
+that group exactly when the size and total asked for match what is left and the same checks pass. It does not go
+further: with three different totals, gaps can appear among the possible mixes, and a split with several leftover
+groups is not covered.
+
+**An everyday picture.** Write 1, 8, 2 and 7 on four floor tiles in a row, so neighbours add up to 9, 10 and 9, and
+cover each chosen pair with a domino; dominoes may not overlap. Two dominoes fit only on the two pairs making 9, and
+the domino making 10, in the middle, leaves no room for another. Score a domino making 9 at one point and one making
+10 at two, as the rule says: the row can score at most two, but one of each would score three.
+
+## G331
+Split 0 to M into three pairs and a larger leftover group with chosen totals: the obvious checks suffice, except
+pair totals 2, 6, 8 and their mirror image.
+
+**What it says.** Split the numbers 0 to M, with M at least 8, into three pairs with chosen totals and a leftover
+group of the other M − 5 numbers (at least three), which takes whatever total remains. The obvious checks require
+each group, and each combination of groups, to total between the least and the most that the same count of numbers
+from 0 to M can add up to: a pair, for instance, between 1 and 2M − 1. Whenever these checks pass, the split exists,
+except when the pair totals are 2, 6 and 8 in some order, or their mirror image 2M − 8, 2M − 6 and 2M − 2, got by
+flipping the numbers 0 to M end to end (each number n becomes M − n). Both pass every check, yet no split exists:
+for 2, 6 and 8, only 0 and 2 make 2, then only 1 and 5 are left to make 6, and every pair making 8 has a number
+already taken. A pencil-and-paper argument shows that a passing case always splits if even one pair total can be
+made by five or more different pairs, as every total from 9 to 2M − 9 can, and brings the rest down to finitely many
+cases; a complete computer check of those finds no other failure.
+
+**Why it matters.** Earlier proofs showed the obvious checks always suffice for four groups of at least three
+numbers each (G316), or with just one pair among them (G327); with three pairs, exactly this trap and its mirror
+image slip through. The trap itself, a chain of forced choices, had turned up earlier in the project, so what this
+adds is the proof that nothing else goes wrong. It does not reach five or more groups, several leftover groups, or
+the general puzzle of fires spreading along streets that this line of work grew from.
+
+**An everyday picture.** For any one total, the pairs that make it are like pairs of socks in a drawer: no sock
+belongs to two pairs. The other two pairs hold just four numbers, like four socks taken out, so with five or more
+pairs in the drawer a whole pair is always left. Total 8 has only four pairs, 0+8, 1+7, 2+6 and 3+5, and the forced
+picks for 2 and 6 (0, 2, 1 and 5) take one sock from each.
+
+## G332
+The numbers 0 to M with 1 missing can be shared exactly among four bins of at least three numbers, whenever every
+group of bins asks for enough.
+
+**What it says.** Take the numbers 0, 2, 3, ..., up to some number M, with 1 left out, and four bins. Each bin is to
+get a chosen count of at least three numbers and a chosen total, with the counts using every number once and the
+totals adding up to the sum of the list. Suppose every group of one, two or three bins asks, in all, for at least
+one more than the smallest total that its combined count of numbers could make from the list; then the numbers can
+be shared out with exactly the requested counts and totals. The proof gives 0 to the bin that asks the least per
+number, leaving the unbroken run 2 to M for the earlier full-run result G327 to share out. Choosing that bin is what
+keeps every remaining demand within G327's limits.
+
+**Why it matters.** It settles this one case, four bins with the gap at 1, with a short argument, and its key step
+can be tried elsewhere: decide who gets 0 by lowest average, then call on a theorem for an unbroken run. The
+three-number minimum cannot simply be dropped: a small example with three two-number bins meets every group demand
+yet cannot be shared out. It says nothing about a gap at another place or about five or more bins, and it solves no
+prize problem.
+
+**An everyday picture.** Four people share a set of numbered tiles, 0 to M, with tile 1 lost, and each asks for a
+set number of tiles adding up to a set score. Hand the blank 0 tile to whoever asks the least per tile. The tiles
+that are left form an unbroken row, and there is already a known way to deal out an unbroken row.
+
+## G333
+If fractions can meet whole-number limits on four numbers and their sums, whole numbers can too, except when the
+limits pin everything to one answer made of halves.
+
+**What it says.** Take four numbers whose total is a fixed whole number, and set a whole-number lower and upper
+limit on the sum of every group of one, two or three of them. Suppose some choice of the four with that total,
+fractions allowed, keeps every sum within its limits. Then some choice of four whole numbers does too, with one
+exception. The exception is when the limits pin every sum of two of the numbers to a single value, and the three
+pinned sums that include the first number add up to an odd number while the total is even, or to an even number
+while it is odd. Only one choice then fits, and each of its four numbers lies halfway between two whole numbers,
+such as 1/2 or 3/2.
+
+**Why it matters.** It serves the project's puzzle of sharing out a run of whole numbers, one of them missing, among
+four bins of chosen sizes and totals, where the four numbers are how many of each bin's members lie above the
+missing number. There it turns the hunt for whole-number counts into a hunt for fractional ones, plus a check for
+the one exception. It does not show that fractional counts exist, does not by itself rule the exception out in that
+puzzle (that is left to proof G334), does not say which numbers go in which bin, and is not claimed for five or more
+numbers in place of four.
+
+**An everyday picture.** Four children share four sweets. If Ann and Ben must have one sweet between them, Ann and
+Cat two, and Ann and Dan two, the only share that fits is half a sweet each for Ann and Ben and one and a half each
+for Cat and Dan, so sweets must be cut. Let Ann and Ben have one or two between them and one whole sweet each fits;
+for four children and rules in whole sweets, the knife is only ever needed when the rules leave just one possible
+share.
+
+## G334
+Four bins of three or more numbers sharing a run with one gap: given a margin, if fractional counts above the gap
+fit, whole counts fit too.
+
+**What it says.** Share a run of whole numbers from 0 with one gap (a missing number, not at either end) among four
+bins with given sizes and target totals, at least three numbers to a bin. Each bin, and each group of two or three
+bins, can reach its target only if the count of its numbers above the gap lies in a certain range. Suppose, as a
+margin, that every such bin or group of n numbers wants at least 1 + 2 + ... + n (at least 6 for a bin of three).
+Then if fractional counts can meet every range while sharing out all the numbers above the gap, whole-number counts
+can too. The only way this could fail, found in G333, is a trap that pins every pair of bins to one exact count and
+leaves every count ending in a half; here, pins like that need the missing number to be 5, 6 or 7, and even then
+they cannot all hold at once.
+
+**Why it matters.** It means the first step of one plan, choosing these counts before handing out the actual
+numbers, never fails merely because counts must be whole. It does not show that suitable counts exist, even as
+fractions, or that the bins can then be filled, so whether the margin always allows a sharing stays open. With four
+bins of two numbers each, the trap really can happen, even with the margin.
+
+**An everyday picture.** Four children share four marbles: Ann and Ben must have exactly one between them, Ann and
+Cat two, and Ann and Dan two. On paper, only halves work (half a marble each for Ann and Ben, one and a half each
+for Cat and Dan), and a marble cannot be split; loosen any one rule by one marble and whole marbles do. With three
+or more numbers to a bin and the margin, the proof shows the bins are never cornered like this.

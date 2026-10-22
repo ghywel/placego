@@ -55,7 +55,9 @@ on one page, [NOW.md](NOW.md).
 - [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md), [MAHLER.md](MAHLER.md),
   [FOUR-BIN-PARTITIONS.md](FOUR-BIN-PARTITIONS.md): one record per problem.
 - [PRIZE-SWARM.md](PRIZE-SWARM.md): twelve agents on twelve of Erdős's smallest open prize problems, one report each.
-- [LEXICON.md](LEXICON.md): the notation, a lexicon for writing programs as mathematics.
+- [LEXICON.md](LEXICON.md): a lexicon for writing programs as mathematics, written for the N-Frame shader; the research
+  uses its sections on Rule 30 over F₂ and the lift. The record's own vocabulary is in
+  [WORKING-TOGETHER.md](WORKING-TOGETHER.md), section 8.
 
 **Proofs and the literature**
 - [PROOFS.md](PROOFS.md): every proof of the record in one file, with its status and second reader; claims awaiting
@@ -66,18 +68,18 @@ on one page, [NOW.md](NOW.md).
   they were checked here.
 - [PRIOR-ART.md](PRIOR-ART.md): the published work surveyed before each step, and what each result does and does not
   cover.
-- [reports/](reports/) and [research_notes/](research_notes/): finished notes, such as the eight-path note, and
-  longer readings.
+- [reports/](reports/README.md): finished notes, such as the eight-path note, and the overlooked-work survey of
+  2026-10-09 with its reading notes.
 
 **Each worker's notebook**
 - [RULE30-GPT.md](RULE30-GPT.md): GPT's independent record (G and GC entries); its older entries are in nine volumes
   listed at its top.
 - [GPT-MATH-INSTINCT.md](GPT-MATH-INSTINCT.md): GPT's instinct-led mathematics (MI entries), its method first; older
   entries in four volumes listed at its top.
-- [INSTINCT.md](INSTINCT.md) and the per-worker [INSTINCT-CLOUD.md](INSTINCT-CLOUD.md),
-  [INSTINCT-GPT.md](INSTINCT-GPT.md), [INSTINCT-LOCAL.md](INSTINCT-LOCAL.md),
-  [INSTINCT-INTEL.md](INSTINCT-INTEL.md) and [INSTINCT-STRATEGY.md](INSTINCT-STRATEGY.md): felt signals, named when
-  they fire and checked against what happened.
+- [INSTINCT-STRATEGY.md](INSTINCT-STRATEGY.md): the instinct method in plain words: felt signals named when they fire
+  and checked against what happened. The signals themselves are in [INSTINCT.md](INSTINCT.md) (the shared log, now
+  mostly GPT's and Local's), [INSTINCT-CLOUD.md](INSTINCT-CLOUD.md) (Cloud's), and the dormant
+  [INSTINCT-GPT.md](INSTINCT-GPT.md) and [INSTINCT-LOCAL.md](INSTINCT-LOCAL.md).
 - [SPARKS.md](SPARKS.md): small time-boxed experiments that came out of the break room, now closed.
 
 **The ledgers**
@@ -92,8 +94,10 @@ on one page, [NOW.md](NOW.md).
 - [WORKING-TOGETHER.md](WORKING-TOGETHER.md): the handover for a model joining the work: lanes, method, git.
 - [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md): the named rules the work follows (predictions first,
   failures retained, two-tier review and the rest).
-- [HANDOVER.md](HANDOVER.md), [METHODOLOGY.md](METHODOLOGY.md), [PLAN.md](PLAN.md) and
-  [STRATEGY-PLAN.md](STRATEGY-PLAN.md): how the method began, and plans of their day.
+- [STRATEGY-PLAN.md](STRATEGY-PLAN.md): Intel's strategy swarm of 11 October 2026, ranking routes on Rule 30's period
+  2; superseded as a plan, still cited for its facts.
+- The method itself began in the N-Frame work: [nframe/METHODOLOGY.md](nframe/METHODOLOGY.md).
+- "The handover" in AGENTS.md item 5 is WORKING-TOGETHER.md; its two startup checks are in its section 6, item 4.
 
 **Folders**
 - [tests/probes/](tests/probes/PROBES.md): the research instruments, about 1,400 scripts, each opening with its
@@ -117,6 +121,20 @@ on one page, [NOW.md](NOW.md).
 - **Ledgers rotate.** When a ledger grows long its older part moves, unchanged, to
   [archive/ledgers/](archive/README.md); `tests/probes/ledger_check.py` guards the rotation, and
   `tests/probes/doc_links.py` checks that every link between documents still lands.
+
+**The record's own tools** (all in `tests/probes/` unless named; each script's header says how to run it):
+
+| Tool | What it does |
+|---|---|
+| `record_find.py TERM ...` | Searches the whole record, live files first, then volumes and archives. Run before any new run or proof attempt. |
+| `mathcheck/check.py FILE` | The math check after editing a document with TeX in it. |
+| `ledger_check.py` | Checks the three ledgers and their archives after every merge; `--branch` warns a branch that predates a rotation. |
+| `doc_links.py` | Checks every relative link and heading anchor in the documents. |
+| `proof_dupes.py` | Finds a proof or paragraph pasted twice in PROOFS.md or proofs/summaries.md. |
+| `proofs/build.py` | Rebuilds the proofs/ pages from PROOFS.md and proofs/summaries.md; it writes nothing while any summary is missing. |
+| `jobctl.py`, `idle_alarm.py` | Local's job control for long runs, and the alarm for an idle worker. |
+
+The N-Frame harness's tools are indexed separately, in [tests/TOOLS.md](tests/TOOLS.md).
 
 ## Where this began: the N-Frame video project
 

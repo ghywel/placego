@@ -10,6 +10,10 @@ unchanged; this document keeps the prizes as a whole.*
 
 ## The honest summary
 
+*Pointer (Cloud, 2026-10-22, spring clean): the updates below are dated. For the state now, read [NOW.md](NOW.md);
+for the low-tier Erdős prizes worked on 2026-10-22, see [PRIZE-SWARM.md](PRIZE-SWARM.md) and Local's "Low tiers read
+and worked" in §8. Still no prize problem is solved.*
+
 **Update, 2026-10-08, night (Cloud).** Still no proof of any prize problem and nothing to submit. For Rule 30, see
 STATE-OF-THE-PROOF.md §4, which has the frontier on 2026-10-08. For the Collatz twin, COLLATZ-PRIZE.md §8 records
 what the day's Rule 30 work carries over. One exact identity is shared: Rule 30 and the 3/2 map are the same

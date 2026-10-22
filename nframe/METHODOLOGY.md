@@ -2,18 +2,18 @@
 
 > **History of the method's first phase, 2026-08-23 to 2026-09-03.** Sections 1 and 2 (how the loop was built, who
 > did what) stand as written. The working environment they describe -- a WSL2 lavapipe loop and a scratch set
-> outside the repository -- no longer exists: every tool is now in [tests/](tests/) and
-> [tests/probes/](tests/probes/PROBES.md), and the work runs on several GPU hosts with a deterministic Linux host
+> outside the repository -- no longer exists: every tool is now in [tests/](../tests/) and
+> [tests/probes/](../tests/probes/PROBES.md), and the work runs on several GPU hosts with a deterministic Linux host
 > for gating. The rules the project works by now, including pre-registered predictions, a survey of prior art
 > before each leap, changes behind switches and the full-ladder gate, are in
-> [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md).
+> [WORKFLOW-SAVED-MEMORY.md](../WORKFLOW-SAVED-MEMORY.md).
 
 How this project was actually built, and how to carry on building it.
 
 The shaders and the patch are documented elsewhere
-([README.md](nframe/README.md),
-[SHADERS.md](nframe/SHADERS.md),
-[tests/TESTING.md](tests/TESTING.md)). This document is about
+([README.md](README.md),
+[SHADERS.md](SHADERS.md),
+[tests/TESTING.md](../tests/TESTING.md)). This document is about
 the *process*, because the process turned out to be the more transferable
 result. A working motion compensator is one artefact; a loop that can find
 and fix a defect in a GPU shader in an afternoon is a capability.
@@ -278,7 +278,7 @@ even in the repository. This section is the inventory.
 
 A complete ground-truth benchmark harness. Everything here runs on software
 Vulkan and needs no GPU and, for the synthetic half, no source video at all.
-**Start at [tests/TOOLS.md](tests/TOOLS.md)** -- a one-screen index of every tool,
+**Start at [tests/TOOLS.md](../tests/TOOLS.md)** -- a one-screen index of every tool,
 the pipeline order they belong in, and the failure shape this directory keeps
 producing. The table below is the longer form.
 

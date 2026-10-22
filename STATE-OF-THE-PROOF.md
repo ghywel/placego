@@ -1,5 +1,10 @@
 # The state of the proof: Rule 30, 2026-10-07 (section 4 updated 2026-10-08)
 
+> **A snapshot, kept as it was written** (note added 2026-10-22). This page describes the Rule 30 work on 7 and
+> 8 October 2026. The Rule 30 room paused on 14 October and the work stopped at the second halt on 15 October;
+> nothing here has been updated since. The state of the work today is [NOW.md](NOW.md), and period 2's leads and
+> closed routes are in [PERIOD-TWO.md](PERIOD-TWO.md), sections 6 and 4.
+
 *Written by Cloud on 2026-10-07 at the owner's request: "an accurate 'State of the proof' - which is not to say a
 proof exists - but where we currently 'stand'. How much closer are we to the proof than when we started. Can we
 project some sort of prediction based on our closeness and our rate of discovery." Every claim names the section of

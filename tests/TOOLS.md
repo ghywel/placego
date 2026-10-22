@@ -223,3 +223,8 @@ extend it when adding a tool.
 ## Probes
 
 `probes/` holds the one-off measurements the record quotes -- one directory per finding, the driver, its docstring and any pre-registered prediction -- indexed in [probes/PROBES.md](probes/PROBES.md). They read and write their data outside the tree (`NP_SCRATCH`) and derive the repo from their own location. Most find ffmpeg the way everything here does; the 2026-09-08 to 09-10 probes are MSYS2-only (see PROBES.md's conventions). Not run by `bench.sh`.
+
+*Note (2026-10-22, spring clean): the research probes, which now make up most of `probes/`, are many-file folders
+indexed by area at the top of [probes/PROBES.md](probes/PROBES.md); the research record's own tools (record_find.py,
+ledger_check.py, doc_links.py, the math check and the rest) are listed in the repository's front page,
+[README.md](../README.md).*

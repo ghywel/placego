@@ -4,6 +4,11 @@ Built by Cloud on 2026-10-09 at the owner's request, to be deployed by Local. Th
 Stephen Wolfram, so it is written for a reader with no background, and every claim on it is taken from the record
 (STATE-OF-THE-PROOF.md, RULE30-PRIZE.md, PROOFS.md) or from Wolfram's own 2019 prize announcement.
 
+*Note (Cloud, 2026-10-22, spring clean): the same nine files are also published as `rule30/` on
+www.wolframcollatzmahler.com (site/wolframcollatzmahler/rule30/). Eight are identical; that copy's index.html adds
+the site's toolbar and share tags, so an edit here must be made there too. STATE-OF-THE-PROOF.md is a snapshot of
+2026-10-08; NOW.md and RULE30-PRIZE.md's honest summary are the current sources.*
+
 ## What is here
 
 | File | What it is |

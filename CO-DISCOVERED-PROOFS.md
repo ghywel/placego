@@ -30,20 +30,24 @@ Where the release says a Lean formalisation exists, the entry says so; Cloud has
 **Imported so far (2026-10-07): 12 entries from 10 of the 372 families, 9 at level A and 3 at level B.** Batch 1
 was 088, 049, 205, 189 and 119; batch 2 is 049b, 186 (with its graph companion), 175, 175c, 235, 332 and 003b.
 
+*Note (Cloud, 2026-10-22, spring clean): there have been no imports since batch 2. Since 2026-10-08 the rule is "no
+further imports unless the owner asks Cloud" (WORKFLOW-SAVED-MEMORY.md, `cloud-off-pool`). The family numbers in
+the table now link to their entries.*
+
 | Family | Result | Level | Script |
 |---|---|---|---|
-| 088 | A product of simplices beats the simplex for projection-body volume | A | `om088_projection_body.py` |
-| 049 | A polynomial whose zero set is flat 3-space but which is not a coordinate | A | `om049_noncoordinate.py` |
-| 049b | A degree-5 stable coordinate that is not a coordinate; every fibre flat | A | `om049b_stable_coordinate.py` |
-| 186 | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
-| 175 | Discrete convexity: $2^{75}$ unions leave only a $p$-small family | A | `om175_discrete_convexity.py` |
-| 235 | Random 3-SAT's hitting time has variance $\Theta(n)$ (upper bound read in full) | A | `om235_sat_variance.py` |
-| 175c | Fractional and integral thresholds agree within $25 \cdot 512^4$ | A | `om175c_expectation_thresholds.py` |
-| 332 | $\ell_1$ has metric Markov cotype two, $N_2(\ell_1) \le 12\sqrt{21}$ | A | `om332_markov_cotype.py` |
-| 003b | No Landau–Siegel zeros, $(1 - \beta)\log q \ge c$ (see its warning) | A | `om003b_siegel_determinant.py` |
-| 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
-| 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
-| 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
+| [088](#088-a-product-of-simplices-beats-the-simplex-level-a) | A product of simplices beats the simplex for projection-body volume | A | `om088_projection_body.py` |
+| [049](#049-a-flat-3-space-that-cannot-be-straightened-level-a) | A polynomial whose zero set is flat 3-space but which is not a coordinate | A | `om049_noncoordinate.py` |
+| [049b](#049b-a-degree-5-stable-coordinate-that-is-not-a-coordinate-level-a) | A degree-5 stable coordinate that is not a coordinate; every fibre flat | A | `om049b_stable_coordinate.py` |
+| [186](#186-symmetry-forces-influence-a-uniform-bound-for-hypergraph-properties-level-a) | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
+| [175](#175-talagrands-discrete-convexity-275-unions-suffice-level-a) | Discrete convexity: $2^{75}$ unions leave only a $p$-small family | A | `om175_discrete_convexity.py` |
+| [235](#235-random-3-sats-transition-window-has-width-thetasqrt-n-level-a-upper-bound) | Random 3-SAT's hitting time has variance $\Theta(n)$ (upper bound read in full) | A | `om235_sat_variance.py` |
+| [175c](#175c-integral-and-fractional-expectation-thresholds-agree-within-25-cdot-5124-level-a) | Fractional and integral thresholds agree within $25 \cdot 512^4$ | A | `om175c_expectation_thresholds.py` |
+| [332](#332-ell_1-has-metric-markov-cotype-two-constant-12sqrt21-level-a) | $\ell_1$ has metric Markov cotype two, $N_2(\ell_1) \le 12\sqrt{21}$ | A | `om332_markov_cotype.py` |
+| [003b](#003b-no-landausiegel-zeros-by-an-interpolation-determinant-level-a-with-a-warning) | No Landau–Siegel zeros, $(1 - \beta)\log q \ge c$ (see its warning) | A | `om003b_siegel_determinant.py` |
+| [205](#205-universal-tensor-squares-for-the-symmetric-groups-level-b) | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
+| [189](#189-cycleclique-ramsey-numbers-level-b) | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
+| [119](#119-the-most-informative-boolean-function-courtadekumar-level-b) | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
 
 ---
 

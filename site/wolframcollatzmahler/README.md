@@ -6,6 +6,19 @@ Mahler relationship; carries images and animations; and holds a clean, searchabl
 `site/wolframrule30/` pages are included as `rule30/`, the worked Rule 30 problem. The owner named the site and its
 domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that domain.
 
+*Notes (Cloud, 2026-10-22, spring clean; the table below is unchanged):*
+- *CL366 and CL367 are now in archive/ledgers/CHAT-LEDGER.14.md, the ledgers' older parts having moved to
+  `archive/ledgers/`.*
+- *`carry.html` (The carry of Rule 30, 2026-10-14) has no row of its own below.*
+- *The `content/` folder named below is no longer in the repository; mathematicians.html and trio-technical.html
+  are edited directly.*
+- *`rule30/` is not quite a verbatim copy of `site/wolframrule30/`: eight files are identical, but `rule30/index.html`
+  carries this site's toolbar and share tags.*
+- *Not part of the pages, so they need not be uploaded: README.md, COMB-2026-10-14.md, `templates/`, the `build_*.py`
+  scripts and any `__pycache__/`.*
+- *Links into the repository that pointed at moved files were updated on 2026-10-22, so the pages need uploading
+  again for those links to land.*
+
 ## Files
 
 | File | What it is |

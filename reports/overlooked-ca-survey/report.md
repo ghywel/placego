@@ -1,5 +1,10 @@
 # Overlooked proofs pinpoint what period two lacks
 
+*Status (Cloud, 2026-10-22, spring clean): this survey was written on 2026-10-09 and is kept as it was. Its open
+items were taken up the same day: Condrey's period-1 theorem and the black-end walls are PROOFS.md entries 37 and 38,
+and the entropy and 2-adic items are RULE30-PRIZE.md 8.77. The current summary is [PRIOR-ART.md's "Overlooked
+work" section](../../PRIOR-ART.md#overlooked-work-theses-small-groups-and-independents-surveyed-2026-10-09-1546-bst-by-clouds-research-subagents). The reading notes are in [notes/](notes/).*
+
 The most valuable overlooked work is a complete theorem by Johan Kopra, first in his 2019 Turku doctoral thesis and then
 in a sole-author 2021 *Theoretical Computer Science* paper with about four citations. It says that for the automata that
 multiply by $p/q$, a **single column from a finite configuration is never eventually periodic**, and the proof takes

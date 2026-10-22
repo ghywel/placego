@@ -6,6 +6,57 @@ in CL436 and CL437, commits `55448489` and `7bfdfe34`.
 This exposition reorganizes their carrying arguments; it makes no new mathematical claim.
 The review's precise scope and the unresolved literature novelty are stated in Section 10.
 
+## Contents
+
+*Added by Cloud on 2026-10-22 (spring clean); nothing below was moved. Sections 1-10 are the theorem's
+exposition; 11 onward were appended as the work went on, each with its notebook entries.*
+
+- [Current verification map (2026-10-20, MI543)](#current-verification-map-2026-10-20-mi543)
+- [1. Statement and notation](#1-statement-and-notation)
+- [2. Scalar sums after one deletion](#2-scalar-sums-after-one-deletion)
+- [3. Scalar sums after two deletions](#3-scalar-sums-after-two-deletions)
+- [4. A structured three-deletion spectrum](#4-a-structured-three-deletion-spectrum)
+- [5. Least-slack selection and the full-interval three-bin base](#5-least-slack-selection-and-the-full-interval-three-bin-base)
+- [6. Three bins on a one-hole pool](#6-three-bins-on-a-one-hole-pool)
+- [7. Central spectra of a staircase and its conjugate](#7-central-spectra-of-a-staircase-and-its-conjugate)
+- [8. The two scalar pools are an actual complementary pair](#8-the-two-scalar-pools-are-an-actual-complementary-pair)
+- [9. Proof of the four-bin theorem](#9-proof-of-the-four-bin-theorem)
+- [10. Scope,prior art,and verification](#10-scopeprior-artand-verification)
+- [11. Exactly two bins of size two: verified classification](#11-exactly-two-bins-of-size-two-verified-classification)
+- [12. Elementary matching application: repeated equal pairs and one filler](#12-elementary-matching-application-repeated-equal-pairs-and-one-filler)
+- [13. Two distinct pair sums: path components and a colour-quota obstruction](#13-two-distinct-pair-sums-path-components-and-a-colour-quota-obstruction)
+- [14. Exact two-colour quotas on a forest of alternating paths](#14-exact-two-colour-quotas-on-a-forest-of-alternating-paths)
+- [15. Read the two-sum components directly from interval arithmetic](#15-read-the-two-sum-components-directly-from-interval-arithmetic)
+- [16. Protection for adjacent pair targets: verified classification](#16-protection-for-adjacent-pair-targets-verified-classification)
+- [17. A large filler cannot cure every gap: strict counterfamily](#17-a-large-filler-cannot-cure-every-gap-strict-counterfamily)
+- [18. Weighted capacities are complete for the two-target path model](#18-weighted-capacities-are-complete-for-the-two-target-path-model)
+- [19. Three AP targets: perfect quotas form a lattice interval (MI537–538)](#19-three-ap-targets-perfect-quotas-form-a-lattice-interval-mi537538)
+- [20. Three unequal-gap targets really can have an integer quota hole (MI539–540)](#20-three-unequal-gap-targets-really-can-have-an-integer-quota-hole-mi539540)
+- [21. Even consecutive AP targets have a partial-quota hole (MI541–542)](#21-even-consecutive-ap-targets-have-a-partial-quota-hole-mi541542)
+- [22. Three pair bins and one filler: reduction to endpoint fibres (MI545–546)](#22-three-pair-bins-and-one-filler-reduction-to-endpoint-fibres-mi545546)
+- [23. A direct punctured-pool bridge: protected missing1 four-bin case (MI549)](#23-a-direct-punctured-pool-bridge-protected-missing1-four-bin-case-mi549)
+- [24. Global count selection: the only conditional lattice obstruction (MI555–556)](#24-global-count-selection-the-only-conditional-lattice-obstruction-mi555556)
+- [25. A uniform count-budget argument before imposing pair cuts (MI557)](#25-a-uniform-count-budget-argument-before-imposing-pair-cuts-mi557)
+- [26. Protected count rounding: no pinned parity obstruction (MI565–566)](#26-protected-count-rounding-no-pinned-parity-obstruction-mi565566)
+- [27. An explicit central-region selector by mean counts (MI569–570)](#27-an-explicit-central-region-selector-by-mean-counts-mi569570)
+- [28. Why an arbitrary fractional point cannot be rounded (MI572–573)](#28-why-an-arbitrary-fractional-point-cannot-be-rounded-mi572573)
+- [29. The corrected finite core checklist (CL474, MI576–577)](#29-the-corrected-finite-core-checklist-cl474-mi576577)
+- [30. Replicating the pool does not preserve the singleton budget (MI580–581)](#30-replicating-the-pool-does-not-preserve-the-singleton-budget-mi580581)
+- [31. A different representation: bounded cyclic support (MI584/G335, 2026-10-21)](#31-a-different-representation-bounded-cyclic-support-mi584g335-2026-10-21)
+- [32. Absorbing a distinguished triangle with one thick run (MI586–587/G336)](#32-absorbing-a-distinguished-triangle-with-one-thick-run-mi586587g336)
+- [33. A five-unit defect and a nine-unit separation (MI588–589/G337)](#33-a-five-unit-defect-and-a-nine-unit-separation-mi588589g337)
+- [34. Two opposite paths leave at most six cyclic vertices (MI593/G338)](#34-two-opposite-paths-leave-at-most-six-cyclic-vertices-mi593g338)
+- [35. Scope of the two-hole base and an exact forced-tail reduction (MI597–598)](#35-scope-of-the-two-hole-base-and-an-exact-forced-tail-reduction-mi597598)
+- [36. The unit-deficit filler with two triples (MI599–600/G339)](#36-the-unit-deficit-filler-with-two-triples-mi599600g339)
+- [37. Three-deletion scalar engine and its margin gate (MI607/G340)](#37-three-deletion-scalar-engine-and-its-margin-gate-mi607g340)
+- [38. A large-pool scalar engine for arbitrary deletion budget (MI610/G341)](#38-a-large-pool-scalar-engine-for-arbitrary-deletion-budget-mi610g341)
+- [39. Actual missing-pivot margin budget, two holes (MI611)](#39-actual-missing-pivot-margin-budget-two-holes-mi611)
+- [40. The exact finite question that would remove the D4 count gate (MI612)](#40-the-exact-finite-question-that-would-remove-the-d4-count-gate-mi612)
+- [41. Complete D4 triple basis and conditional all-size composition (MI614)](#41-complete-d4-triple-basis-and-conditional-all-size-composition-mi614)
+- [42. An actual parent bridge, and the selector limit (MI615)](#42-an-actual-parent-bridge-and-the-selector-limit-mi615)
+- [43. Explicit replacement-rank audit of FOUR39 (MI616)](#43-explicit-replacement-rank-audit-of-four39-mi616)
+- [44. The H(h) family: census, reduction and localised top-tight cases (Cloud, overnight 2026-10-22; CL500–CL531)](#44-the-hh-family-census-reduction-and-localised-top-tight-cases-cloud-overnight-2026-10-22-cl500cl531)
+
 ## Current verification map (2026-10-20, MI543)
 
 This packet now includes later results as well as the original G315/G316
@@ -3370,3 +3421,14 @@ PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_re
    the whole pool.
 
 **Where to read.** Ledger CL500–CL531; PROOFS.md waiting room (Cloud CL508, CL517, CL529); RECORD-MAP.md.
+
+*Update (Cloud, 2026-10-22, after the overnight run; the text above is unchanged):*
+- *GPT's carrying reads in MI619 made the reduction (CL508 with CL515's correction) and the triple H₂ window (CL517)
+  PROVED. They are now PROOFS.md [C.9](PROOFS.md#c9-group-coarsening-with-any-realization-margin-inheritance-cloud-cl508515-second-read-by-gpt-mi619)
+  and [C.10](PROOFS.md#c10-triple-h2-window-at-n-at-least-2h4-cloud-cl517-second-read-by-gpt-mi619).
+  CL529 (with CL530–531) is still in the waiting room, single-party.*
+- *The CL529 checker, `tests/probes/cloud_reads/toptight_local.py`, had lost its docstring's closing quotes, so the
+  committed file did not compile. It was repaired and re-run: h ≤ 6, no failures, the same counts as CL529.*
+- *Item 4, the small-bin top-tight case, was measured further in CL535–CL542 (single-party): with the big bin
+  top-tight (X ≥ 6), every triple of the right sum left a child that the blind chain solved, on 3,283,146
+  instance-and-triple pairs (CL542). It is still OPEN as a lemma; RECORD-MAP.md has the line for each step.*

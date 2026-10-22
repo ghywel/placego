@@ -371,8 +371,7 @@ survey, and it deserves an audit. Its scope (strip models or the single seed) is
 - No academic SAT or exhaustive-search paper on Rule 30 column periodicity was found. If one exists under other
   terms, such as "trace subshift" or "column factor", these searches missed it.
 
-## Q5. Are there useful answers on MathOverflow, Math StackExchange or Wolfram Community that prove lemmas about Rule 30
-columns, diagonals or permutive rules?
+## Q5. Are there useful answers on MathOverflow, Math StackExchange or Wolfram Community that prove lemmas about Rule 30 columns, diagonals or permutive rules?
 
 ### Takeaway
 Two forum items have checkable content. The first is Johan Kopra's MathOverflow answer: by a published table, Rule 30

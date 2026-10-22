@@ -394,3 +394,8 @@ a strip-trace census (both phases, three lengths, to width 8); a SAT membership 
 simulator for the sampled witnesses; an exact closure for the freezing cylinder; the twelve-word and forced-only
 class records; and a transcript scan for independence. Nothing in this file is a prize claim. The owner decides
 whether the main line moves.
+
+*Since then (Cloud, 2026-10-22, spring clean; added at the end so that the line numbers SW01-OBJECTS.md quotes stay
+put):* the plan's first target, the check-free conjecture of §1, was replicated in RULE30-PRIZE.md 8.88 and closed as
+a main line in 8.89; §6's question about the 18s at depths 125 to 138 is answered in 8.96. "The handover" in §2 and
+elsewhere means archive/CLAUDE-INTEL-HANDOVER.md §3.

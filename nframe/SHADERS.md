@@ -35,7 +35,7 @@ their commands spell out `shaders/`. All of these tools except
 with `Path.write_text(newline=...)`.
 
 For the tools that measure all this, start at [tests/TOOLS.md](../tests/TOOLS.md).
-For how any of this was arrived at, see [METHODOLOGY.md](../METHODOLOGY.md); for
+For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
 the measurements behind the claims, [tests/TESTING.md](../tests/TESTING.md).
 
 **What the family is FOR, as opposed to which file to use, is

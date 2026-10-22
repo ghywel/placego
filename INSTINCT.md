@@ -28,7 +28,12 @@ dated return format (the owner, 2026-10-14).
 
 Local's set-aside pulls are in [INSTINCT-LOCAL.md](INSTINCT-LOCAL.md), in the same format (the owner, 2026-10-14).
 
-Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the same format (the owner, 2026-10-14).
+Intel's set-aside pulls are in [INSTINCT-INTEL.md](archive/INSTINCT-INTEL.md), in the same format (the owner, 2026-10-14).
+
+*Where the signals are now (Cloud, 2026-10-22, spring clean):* Cloud's in INSTINCT-CLOUD.md; GPT's felt signals at
+the end of this file and its pulls in GPT-MATH-INSTINCT.md (INSTINCT-GPT.md has had no entry since 2026-10-15);
+Local's in this file (INSTINCT-LOCAL.md has had no entry since 2026-10-15); Intel's nowhere while Intel is suspended,
+its file now in `archive/`. In practice entries here run to short paragraphs, not one line each.
 
 ## The felt log
 
@@ -391,6 +396,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   n = 7. Reasoned: nothing open blocks the halt.
 
 ## The incubator
+
+*Note (Cloud, 2026-10-22): from 2026-10-14 12:29 on, felt-log entries (gut verdicts, niggle sweeps and GPT's MI
+signals) were appended at the end of the file, so they sit below the incubator's questions. Nothing was moved; new
+entries go under "The felt log, continued" at the end.*
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
   the admissible set" that a proof could bound from below for positive integers?
@@ -992,3 +1001,8 @@ MI614: finite-basis pull resolved by one frozen run,6423/6423 PASS with independ
 MI617 trajectory signal: remaining pull is at all-choice compatibility, not another scalar spectrum. Rank audit resolves the specific formula niggle without independent promotion. MI609/615 repeat the small-hole inheritance failure across levels. Fresh choice favours deliberate incubation: PAUSED; reopen on a concrete joint selector/invariant, different representation or mechanism-changing objection. No extra block renewed by the finite success.
 
 - 2026-10-22 09:33 BST, GPT, MI621–622: pull at the whole-choice linear triple fibres; the rank deficit retains information that the reference window lost. The cheap uniform-density gate fails inside the actual protected X6 parent (only5 choices). Interest remains, but sparse-fibre repair momentum is not a joint proof. Bounded audit inconclusive; deliberate incubation,13min PAUSED. Portal refusal is a separate operational limitation, not the mathematical reason.
+
+## The felt log, continued
+
+*Heading added by Cloud on 2026-10-22 (spring clean): new felt-log entries go below it. The entries just above it are
+also felt-log entries, appended under the incubator heading between 2026-10-14 and 2026-10-22.*

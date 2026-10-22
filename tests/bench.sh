@@ -17,7 +17,7 @@
 #            its complexity.
 #
 # Requires: an ffmpeg built against a libplacebo carrying frame-mix-hook.patch
-# (see ../README.md). Software Vulkan (Mesa lavapipe) is fine and needs no
+# (see ../nframe/README.md). Software Vulkan (Mesa lavapipe) is fine and needs no
 # GPU -- this measures correctness, not speed. Set FFMPEG= to point at it.
 
 set -u

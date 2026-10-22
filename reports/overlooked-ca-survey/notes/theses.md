@@ -256,8 +256,7 @@ Rules 86, 135 and 149 appear in no thesis found.
 - Works citing Powley's thesis could not be listed. Citation APIs were blocked, and web search returned only Powley
   and Stepney's own JCA 2010 paper (vol. 5, pp. 353–381) as a companion.
 
-## Which theses give results on eventual periodicity of columns from finite configurations, or on the interplay of
-left-finiteness and right dynamics?
+## Which theses give results on eventual periodicity of columns from finite configurations, or on the interplay of left-finiteness and right dynamics?
 
 ### Takeaway
 **Tahay (2020)** is the find here. It is a whole thesis on columns of CA from finite configurations, and with Dolce

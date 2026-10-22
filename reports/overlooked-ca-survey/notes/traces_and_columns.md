@@ -18,8 +18,7 @@ that Rule 30 from a single seed is the orbit of 1 under a 2-adic "T-function". T
 
 ---
 
-## Key Question 1: What is known about trace subshifts of CA (Cervelle, Formenti, Guillon, Gilman, Kůrka, Sablik, Di
-Lena, Margara and students), and does any of it decide eventual periodicity of a column for permutive rules?
+## Key Question 1: What is known about trace subshifts of CA (Cervelle, Formenti, Guillon, Gilman, Kůrka, Sablik, Di Lena, Margara and students), and does any of it decide eventual periodicity of a column for permutive rules?
 
 ### Takeaway
 The trace-subshift literature from 2007 to 2023 has two parts. The first, by the French-Chilean group around Cervelle,
@@ -171,8 +170,7 @@ references](https://www.math.univ-toulouse.fr/~msablik/article/2008-TCS.pdf)
 
 ---
 
-## Key Question 2: Who wrote the TCS (2022) paper "Rapid left expansivity, a commonality between Wolfram's Rule 30 and
-powers of p/q" (pii S0304397522007502), what does it prove, and is there a full-text arXiv version?
+## Key Question 2: Who wrote the TCS (2022) paper "Rapid left expansivity, a commonality between Wolfram's Rule 30 and powers of p/q" (pii S0304397522007502), what does it prove, and is there a full-text arXiv version?
 
 ### Takeaway
 The sole author is **Johan Kopra** (University of Turku; PhD 2019 supervised by Jarkko Kari). It is **[IN PRIOR-ART,
@@ -217,8 +215,7 @@ others" (v1, 28 Feb 2022, 12 pages). It has about 2 citations, which is strong e
 
 ---
 
-## Key Question 3: What has appeared in AUTOMATA proceedings (LNCS, EPTCS, 2008-2025), Journal of Cellular Automata,
-Complex Systems, Natural Computing and Fundamenta Informaticae on columns, traces or Rule 30?
+## Key Question 3: What has appeared in AUTOMATA proceedings (LNCS, EPTCS, 2008-2025), Journal of Cellular Automata, Complex Systems, Natural Computing and Fundamenta Informaticae on columns, traces or Rule 30?
 
 ### Takeaway
 The relevant venue papers are on traces and expansivity (Jalonen–Kari, AUTOMATA 2018 and Fundamenta Informaticae 2020),
@@ -319,8 +316,7 @@ Rudin–Shapiro sequences"** (PhD, Université de Lorraine, 2020; HAL tel-031845
 
 ---
 
-## Key Question 4: Are there results on "sideways" or "vertical" dynamics (time and space swapped) that apply to Rule
-30?
+## Key Question 4: Are there results on "sideways" or "vertical" dynamics (time and space swapped) that apply to Rule 30?
 
 ### Takeaway
 Yes, in three separate literatures that do not cite each other:
@@ -388,8 +384,7 @@ so $\Psi(c_j,c_{j+1}) = (\sigma c_j\oplus(c_j\vee c_{j+1}),\ c_j)$.
 
 ---
 
-## Key Question 5 (objective e): Links between permutive CA and arithmetic (p-adic expansions, powers of p/q, Mahler's
-3/2 problem, Collatz)
+## Key Question 5 (objective e): Links between permutive CA and arithmetic (p-adic expansions, powers of p/q, Mahler's 3/2 problem, Collatz)
 
 ### Takeaway
 The arithmetic line runs Kari 2012 → Kari–Kopra 2017 → Kopra 2021 → Kopra 2023, all **[IN PRIOR-ART]** except that Kopra

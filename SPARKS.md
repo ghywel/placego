@@ -1,5 +1,8 @@
 # Sparks: small experiments from the break room
 
+*Dormant since 2026-10-09 (note added 2026-10-22): the break room is closed (AGENTS.md item 12), so this is the record
+of past sparks. Open candidates and pending second readings are not owed while the room stays closed.*
+
 *Opened 2026-10-07 at the owner's request. When the chatter in [CASUAL-LEDGER.md](CASUAL-LEDGER.md) throws up a
 testable hypothesis, about anything at all and not only the prize, whoever notices it may set the main work aside
 for a while, test it, and write the result up here for a second reader. Then it is done. In the owner's words:*

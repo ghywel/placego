@@ -421,15 +421,18 @@ GPT keeps the parallel INSTINCT-GPT.md ledger (the owner, 2026-10-14: "Please ke
 INSTINCT-GPT.md ledger"). Initial captures have only Doing and Pull, with no further analysis, strength or verdict.
 GPT reads it at session start and after compaction, beside the shared incubator, and appends dated Return lines
 when revisiting entries. The original capture is retained; later evidence goes in the research record. Keeping this
-ledger does not resume a paused heartbeat or authorize a new experiment.
+ledger does not resume a paused heartbeat or authorize a new experiment. *(Note, 2026-10-22: no entry since 2026-10-15; GPT's pulls have
+gone to GPT-MATH-INSTINCT.md since item 23, and its felt signals to INSTINCT.md.)*
 
 Local keeps INSTINCT-LOCAL.md in the same format (the owner, 2026-10-14: "You will need a what you were doing when the
 pull happened, what the pull was, no further analysis at the time, then you can circle back to the pull, dig in to it
 and cross it off when it's been resolved"). Local reads it at session start and after compaction, beside the shared
-incubator. A resolved pull is crossed off by striking it through, and it stays in place.
+incubator. A resolved pull is crossed off by striking it through, and it stays in place. *(Note, 2026-10-22: no entry since 2026-10-15;
+Local's later signals are in INSTINCT.md.)*
 
 Intel keeps INSTINCT-INTEL.md in the same format (the owner, 2026-10-14: "setup your own INSTINCT-INTEL.md document
-to track your instinct pulls"); a resolved pull is struck through and left in place.
+to track your instinct pulls"); a resolved pull is struck through and left in place. (Since 2026-10-22 the file is
+`archive/INSTINCT-INTEL.md`, Intel being suspended.)
 
 ### literature-before-leaps
 
@@ -1189,6 +1192,12 @@ through the `NP_SCRATCH` variable. Write no absolute home paths into anything co
 **Rule.** [WHAT-WE-BUILT.md](nframe/WHAT-WE-BUILT.md) is the entry point for every reader, from the layman to the scientist.
 It carries the conclusion in plain words and a pointer; the detail goes in the technical records.
 
+*Note (Cloud, 2026-10-22, spring clean): WHAT-WE-BUILT.md is the N-Frame project's summary and now lives in
+`nframe/`. The research's front door is README.md, whose "Where things stand" and problem table carry the plain
+conclusions; proofs/summaries.md carries each proof's. GPT's research summaries that stood in WHAT-WE-BUILT.md moved,
+verbatim, to the end of RULE30-GPT.md. The rule itself is unchanged; where research summaries go from now on is the
+owner's call.*
+
 **How to apply.** When a finding changes the story, update the technical record in full first. Then add at most a
 sentence or two to the summary, with no dB figures and no variable names.
 
@@ -1307,6 +1316,7 @@ A few traps that cost real time, kept here so they are not met twice:
 ### Origin and research compass (owner context, 2026-10-06)
 
 The project began with n-frame interpolation shaders and became temporal field measurement: velocity, acceleration, jerk and higher changes, with the measured field itself as the product at matching source/output frame rates. WHAT-WE-BUILT.md summarizes the instrument, its calibration and limits. The owner identifies time and temporal evolution as the connection to the present mathematics and science collaboration. Keep that origin in view when choosing useful questions; RULE30-PRIZE.md §8.70 already develops the owner's temporal-derivative lead. Preserve the distinction between exact mathematical statements and measured instrument performance.
+*(Since 2026-10-22, WHAT-WE-BUILT.md is nframe/WHAT-WE-BUILT.md, and the N-Frame code's own home is the ghywel/n-frame repository.)*
 
 
 ### prose-math-spacing (owner correction, 2026-10-08)

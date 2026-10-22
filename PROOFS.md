@@ -19,7 +19,10 @@ exist (Cloud, 2026-10-06, at the owner's request).*
 
 ## Contents
 
-*Added 2026-10-22 in the spring clean. "Proofs" counts the entries that `proofs/build.py` gives a page of their own, on that day.*
+*Added 2026-10-22 in the spring clean. "Proofs" counts the entries that `proofs/build.py` gives a page of their own, on
+that day; [proofs/README.md](proofs/README.md) lists every one with a line in plain words. On the same day G323, G324
+and G325 moved from the waiting room to the end of E2, and section M and Cloud's waiting-room entries were given
+pages. C.9 and C.10 are four-bin partition lemmas, filed in C when GPT's reads carried them.*
 
 | Section | Proofs |
 |---|---|
@@ -30,10 +33,10 @@ exist (Cloud, 2026-10-06, at the owner's request).*
 | [C. Short proofs restated from the running text](#c-short-proofs-recorded-without-a-theorem-heading-restated-here-with-their-proofs) | 10 |
 | [E. Theorems proved by GPT (statements; proofs in RULE30-GPT.md)](#e-theorems-proved-by-gpt-statements-verbatim-the-proofs-are-in-rule30-gptmd-at-the-section-named) | 7 |
 | [F. Collatz](#f-collatz) | 2 |
-| [E2. GPT's proofs, second-read](#e2-gpts-proofs-second-read-g39-to-g204-moved-from-the-waiting-room-2026-10-06-by-local-later-entries-promoted-as-their-readings-arrived-each-naming-its-second-reader) | 286 |
-| [M. Mahler and ternary digit obstructions](#m-mahler-and-ternary-digit-obstructions-cloud-and-gpt-each-second-read-by-the-other-2026-10-14) | 4 entries, not yet given pages |
+| [E2. GPT's proofs, second-read](#e2-gpts-proofs-second-read-g39-to-g204-moved-from-the-waiting-room-2026-10-06-by-local-later-entries-promoted-as-their-readings-arrived-each-naming-its-second-reader) | 289 |
+| [M. Mahler and ternary digit obstructions](#m-mahler-and-ternary-digit-obstructions-cloud-and-gpt-each-second-read-by-the-other-2026-10-14) | 4 |
 | [S. Proofs from the sparks](#s-proofs-from-the-sparks-sparksmd-opened-2026-10-07-at-the-owners-request) | 4 |
-| [G. The waiting room: proof sketches not yet checked by a second reader](#g-the-waiting-room-stated-with-a-proof-sketch-not-yet-checked-by-a-second-reader) | 9 |
+| [G. The waiting room: proof sketches not yet checked by a second reader](#g-the-waiting-room-stated-with-a-proof-sketch-not-yet-checked-by-a-second-reader) | 8 |
 
 ## Generality index (Local's audit, 2026-10-06; Cloud's CL002 split)
 
@@ -17343,6 +17346,423 @@ arbitrary-D large-count bound. No generated proof pages, numerical
 basis or census were built. Known matching ingredients are credited
 as methods, with no theorem of source coverage or novelty claimed.
 
+### G.GPT323. One-sided bin with three singleton-left and equal-right crossings (second-read by Cloud, CL446; moved here 2026-10-22)
+
+### GPT G323 — One-sided bin with three singleton-left and equal-right crossings (GPT,2026-10-18; reviewed by Cloud CL446, MI445)
+
+*Status:* PROVED in scope, independent carrying read by Cloud CL446/a33d8bff; adopted in MI448.
+*Where:* GPT-MATH-INSTINCT.md MI445;minimal P6,k2 diagnostic MI444 is finite support only.
+*Novelty:* UNASSESSED. Verified dependency:MI295 three-bin full-interval theorem only.
+
+**Review update, 2026-10-18 (MI448): PROVED in the stated scope.** Cloud CL446,
+commit a33d8bff, independently re-derived all carrying steps below and reports
+96,360 supporting cases with no failures. The original candidate wording is
+preserved as history. No general count-selection or five-bin conclusion follows.
+
+**Statement (candidate).** Let a>=3,k>=2,P=a+3. Take two LABELLED
+integer intervals[0,P-1] and[0,3k-1]. Prescribe counts
+
+ left: (a,1,1,1), right: (0,k,k,k)
+
+for bins A,B,C,D. Every integer target vector satisfying total conservation
+and ALL fixed-count group lower/upper rank bounds has an actual partition
+with those counts. Translations of either interval merely translate the
+fixed-count targets. This is a restricted four-bin fixed-count theorem,
+not the general one-sided extension or a universal P_0 count selector.
+
+**Proof candidate.** Put L(r)=r(r-1)/2,K=k^2,gamma=L(k),let alpha
+be A's target,and set T=L(P)-alpha,w_i=v_i-gamma for i=B,C,D.
+Total conservation gives sum(w)=T+3K. Group bounds are equivalent to
+
+ 0<=w_i<=P-1+2K;
+ K+1<=w_i+w_j<=2P-3+3K for distinct i,j;
+ 3<=T<=3P-6.                                             (*)
+
+Indeed the right-row singleton bounds are gamma and gamma+2K;
+the right-row two-bin lower/upper sums minus2gamma are K and3K.
+The left-row one/two/three-token lower sums are0,1,3,and upper
+sums P-1,2P-3,3P-6. Groups containing A are complements of groups
+among B,C,D. A's own bounds give exactly the last line of(*).
+
+We need three DISTINCT left tokens x_i with sum T and
+
+ max(0,w_i-2K)<=x_i<=min(P-1,w_i).                         (**)
+
+Then right targets y_i=gamma+w_i-x_i lie in[gamma,gamma+2K]
+and sum to L(3k). The verified full-interval THREE-bin theorem MI295
+(sizes k,k,k>=2) realizes them;A takes the left complement. Thus proving
+(**) constructs physical assignments without assuming G319's extension.
+
+Order B,C,D so w_1<=w_2<=w_3. Both endpoints in(**) are nondecreasing.
+Let m_i=max(0,w_i-2K). The coordinatewise least increasing triple
+respecting the lower endpoints is
+
+ z_1=m_1,
+ z_2=max(m_2,m_1+1),
+ z_3=max(m_3,m_2+1,m_1+2).
+
+It also respects the upper endpoints. First,z_i<=m_i+i-1. If m_i>0,
+this is <=w_i since2K>=8. If m_i=0,then z_i=i-1: w_1>=0;
+w_2>=1 follows from w_1+w_2>=K+1;w_3>=2 follows from
+sum(w)>=3K+3. Next m_3<=P-1 by the singleton bound. If m_2>=P-1,
+w_2+w_3>=2P-2+4K>2P-3+3K,contradicting(*). If m_1>=P-2,
+sum(w)>=3P-6+6K>3P-6+3K,again impossible. Thus m_2<=P-2,
+m_1<=P-3,and z_3<=P-1. The smaller coordinates also satisfy this.
+
+**The least sum does not exceed T.** Each z_i-m_i lies between0 and i-1,
+so their total excess is at most3. If at least two m_i are positive,
+
+ T-sum(m)=sum(min(w_i,2K))-3K>=K>=4,
+
+which is enough. If none is positive,z=(0,1,2),sum(z)=3<=T.
+If only m_3=d>0,then z=(0,1,max(d,2)). Since
+T=w_1+w_2-K+d and w_1+w_2>=K+1,we have T>=d+1;
+also T>=3. Consequently sum(z)=max(3,d+1)<=T. All cases are covered.
+
+**The greatest sum is at least T.** Reflect both interval copies.
+For the crossing bins,w'_i=P-1+2K-w_i;the requested left total becomes
+T'=3(P-1)-T. Conditions(*) are invariant (reverse the ordering).
+The preceding least-triple argument applied to the reflected data gives
+a legal original triple with sum>=T. Equivalently,the coordinatewise
+greatest original legal increasing triple h,obtained greedily from the
+upper endpoints backwards,has sum(h)>=T.
+
+**No intervening total is skipped.** We have z<=h coordinatewise.
+From z,increment the LARGEST index i whose coordinate is below h_i.
+All higher coordinates already equal h_j. The increment remains at
+most h_i<h_(i+1),if i<3,and respects its upper bound. Lower coordinates
+remain smaller. Each move is legal and increases the sum by1;the finite
+path ends at h. Stop exactly at sum T. This proves(**),then the
+three-bin theorem realizes the right row and A takes the left complement
+of size a and sum L(P)-T=alpha. Restore the original bin labels.
+
+**Dependencies and limits.** Only reviewed MI295 is used for physical
+completion. No G319/G320/G321/G322 or MI430 dependency,no generic
+integer-decomposition assumption. Equal right counts and single left
+tokens in B,C,D make the endpoints order together. Unequal counts or
+larger left crossing counts require a new argument;this proof asserts
+neither. The uniform proof is a candidate pending independent scrutiny.
+
+
+**Filing comparison.** proof_dupes --near W323:341 entries,no repeated
+IDs;nearest W320(.20),W321(.16),W322(.16) read in full. Those protected
+three-bin punctured-pool arguments use G319;this four-bin fixed-count
+candidate uses MI295 and ordered representatives. Their pending status
+is unchanged. No novelty verdict;no circular dependence on G323.
+
+
+### G.GPT324. Four crossing bins with one singleton count and seven counts at least three (second-read by Cloud, CL448; moved here 2026-10-22)
+
+### GPT G324 — Four crossing bins with one singleton count and seven counts at least three (GPT, 2026-10-18; MI449, verified CL448)
+
+*Status:* PROVED in the stated fixed-count scope; independent carrying read by Cloud,
+CL448 / 48a1cd79, adopted in MI457 (2026-10-18). Originally filed as a
+PROOF-SKETCH at MI449; the proof below is unchanged.
+*Where:* GPT-MATH-INSTINCT.md MI448–449; source receipt in PRIOR-ART.md.
+*Novelty:* UNASSESSED. Dependencies: known integral discrete separation, PROVED G315 and G316.
+
+**Statement.** On two LABELLED interval copies [0,P-1] and [0,Q-1], prescribe
+four-bin counts l=(1,b,c,d), with b,c,d>=3, and k=(k_A,k_B,k_C,k_D),
+with every k_i>=3. Thus P=1+b+c+d and Q=sum k_i. Put L(r)=r(r-1)/2
+and U_N(r)=r(N-1)-L(r). Integer combined targets v are realizable if and
+only if sum v=L(P)+L(Q) and, for every bin group J,
+
+ L(l_J)+L(k_J) <= v_J <= U_P(l_J)+U_Q(k_J).
+
+Each copy is partitioned with its prescribed counts; a bin's target is its
+sum across both copies. Independent translations of the copies are allowed
+after subtracting their fixed count contributions. This is a fixed-count
+theorem, not a count selector for the protected one-hole or five-bin parent.
+
+**1. Obtain an integer rank split (known theorem).** Define
+f(J)=U_P(l_J), g(J)=v_J-U_Q(k_J). The first is submodular and the second
+supermodular; both are integer valued, vanish at the empty set, and f>=g
+is exactly the combined upper bound. Frank's integral discrete separation
+theorem gives an integer modular vector s with g(J)<=s_J<=f(J) for all J.
+Here f(E)=g(E)=L(P), so sum s=L(P). Set t=v-s. Then sum t=L(Q),
+t_J<=U_Q(k_J), and s_J<=U_P(l_J). Complementation supplies the lower
+rank bounds for both rows. See Fujishige's primary slides, *Submodularity
+and Discrete Convexity* (2012), PDF page 22, theorem “Discrete Separation
+Theorem (Frank)” including its integrality clause; precise read scope MI448.
+This step works for arbitrary nonnegative fixed counts and any number of bins.
+It promises rank-feasible vectors, not physical realizations of those vectors.
+
+**2. Classify the first row's failure.** The singleton A must take x=s_A.
+Rank feasibility gives 0<=x<=P-1. For each other bin of size r, the cuts
+on that bin and its union with A give precisely the actual scalar bounds
+on R=[0,P-1] minus {x}:
+
+ min_R(r)=L(r)+(r-x)_+,
+ max_R(r)=min(U_P(r), U_P(r+1)-x).
+
+By FOUR-BIN-PARTITIONS.md Lemma 2 and Theorem A (G315), this row is
+realizable unless some other bin hits a scalar omission. Such an omission
+has exactly one of the forms
+
+ x=r, s_i=L(r)+1;  or  x=P-1-r, s_i=U_P(r)-1.
+
+All three residual bin sizes are at least three, so G315 applies. If no
+omission occurs, G315 realizes this row and G316 realizes the second row,
+finishing the proof. Otherwise relabel the offending bin B, of size b.
+Reflecting only the first row exchanges the two kinds of omission, so it
+suffices to prove the following two-direction repair for the lower one.
+
+**3. BOTH unit directions repair an offending first row.** Suppose
+x=b and s_B=L(b)+1. Define s^+=s+e_A-e_B and s^-=s-e_A+e_B.
+First both obey every rank cut. It suffices to check lower cuts that decrease.
+For s^+, such a group J contains B but not A. If J={B}, its original
+lower slack is one. Otherwise its count R_J is at least b+3, and the
+original cut J union {A} gives
+
+ s_J-L(R_J) >= R_J-b >= 3.
+
+For s^-, a decreasing group J contains A but not B, with R_J>=1.
+The original cut J union {B}, using s_B=L(b)+1, gives
+
+ s_J-L(R_J) >= b*R_J-1 >= b-1 >= 2.
+
+A decrement of one is therefore legal in every affected cut. Totals stay
+fixed, so complementary upper cuts hold too.
+
+Next neither repaired row has a scalar omission. A now takes b+1 or b-1,
+and B's target is respectively L(b) or L(b)+2, so B has no lower omission.
+Nor can it have an upper omission: U_P(b)-L(b)=b(P-b)=b(1+c+d)>=21,
+whereas its new target is at most L(b)+2. For another bin, say C, a lower
+omission would require its unchanged target to be L(c)+1. But the original
+B+C cut forbids this, since L(b)+1+L(c)+1<L(b+c), as bc>=9.
+An upper omission for C would require the new hole to be
+P-1-c=b+d, which cannot equal b+1 or b-1 when d>=3. The same arguments
+apply to D. The scalar bounds still hold by the rank checks just proved.
+G315 therefore realizes BOTH s^+ and s^-. Reflecting values z to P-1-z
+proves the same two-direction claim for an upper omission, with directions
+interchanged. This reflection is only a row lemma, not a claim about
+reflection preserving the parent's protected inequalities.
+
+**4. The other row cannot block both compensating directions.** Its upper
+rank function F(J)=U_Q(k_J) is strictly submodular on incomparable sets:
+
+ F(X)+F(Y)-F(X union Y)-F(X intersection Y)
+ = k_(X minus Y)*k_(Y minus X) > 0.
+
+Consequently two incomparable upper cuts cannot both be tight at t:
+modularity gives t_X+t_Y=t_(X union Y)+t_(X intersection Y), at most
+the latter two F values, strictly below F(X)+F(Y). If t+e_A-e_B is
+illegal, an upper cut containing A but not B must be tight; integrality
+of the slacks justifies “tight”. If t-e_A+e_B is illegal, a tight cut
+containing B but not A must exist. These cuts are incomparable, a
+contradiction. Thus at least one direction is rank-legal. Lower bounds
+follow from the fixed total and complements. Pair that legal direction
+with the opposite first-row repair from step 3. G316 realizes the repaired
+second row because all its counts are at least three. Combined targets
+are unchanged. This proves sufficiency; necessity is immediate from ranks.
+
+**Hand adversarial controls and limits.** The rank-feasible first row
+(3,4,19,19) on [0,9], counts (1,3,3,3), is impossible: the only triple
+summing to 4 is {0,1,3}, which uses A's token 3. Couple it to the second
+row (3,12,21,30) on [0,11], counts (3,3,3,3). Decreasing second-row A is
+blocked at its minimum. The other sign gives first targets (2,5,19,19)
+and second targets (4,11,21,30), realized respectively by
+
+ {2}; {0,1,4}; {3,7,9}; {5,6,8},
+ {0,1,3}; {2,4,5}; {6,7,8}; {9,10,11}.
+
+These disjoint lists cover each copy and retain combined targets (6,16,40,49).
+An unexpected negative scope check is k_A=0: second-row A is fixed at zero,
+so BOTH unit directions can fail, and strictness in step 4 is lost. That
+case is excluded; no zero-count extension is inferred. Multiple thin bins,
+a size-two first-row bin, count admission, and the full parent remain open.
+No computational experiment or new census accompanies this proof candidate.
+
+**Filing comparison.** proof_dupes --near W324: 342 entries, no repeats;
+nearest G317 (.24), G315 (.20), W322 (.19), all read in full. G315 is the
+one-hole dependency; G317 and G322 concern three bins in special two-hole
+pools. This argument concerns four bins across two labelled intervals and
+repairs a fixed-count rank split. It does not restate those criteria or
+use G322. Similarity is not a novelty verdict.
+
+
+**Independent review receipt (MI457).** Cloud CL448 / 48a1cd79 re-derived
+all four carrying steps: integral discrete separation, the scalar-omission
+classification, both physical first-row repairs, and strict-submodular
+exclusion of two blocked compensating directions. It explicitly authorizes
+PROVED in scope. Independent complete-row enumeration additionally reports
+55,711 + 68,348 + 73,072 + 84,760 = 281,891 admitted targets, zero failures,
+for the four patterns named in CL448. GPT read the checker source but did
+not rerun it; those finite checks support, rather than replace, the hand read.
+Cloud's separate SPLIT census was still running and is not claimed complete.
+Count selection, multiple thin bins, H2 and the five-bin parent remain OPEN;
+novelty remains UNASSESSED.
+
+
+### G.GPT325. The eight-path threshold is 68 (joint computer-assisted result; moved here 2026-10-22)
+
+### GPT G325 — The eight-path threshold is 68 (joint computer-assisted result, 2026-10-19)
+
+**Status: PROVED, computer-assisted under the project's two-tier standard.**
+Cloud designed the certificate job and proposed the exceptional-set compression;
+Local ran the full job, checked its output and re-derived the induction;
+GPT audited the reduction and supplied the independent completeness/tiling
+verifier. Local inspected and executed that verifier on the finished stream.
+This entry consolidates MI044/276, CL454 and Local L743/addendum at69cc079e;
+GPT's full carrying read is MI484. It is a joint result, not a new proof
+attributed solely to the person filing this entry.
+
+**Statement.** Let L_8 be the least positive integer L such that every
+forest consisting of exactly eight nonempty paths, each of order at least
+L, has burning number at most the ceiling of the square root of its total
+order. Then L_8=68. Its upper-bound part says that for every positive integer m and every eight
+integer targets l_i>=68 with sum m^2, the set
+
+    O_m={1,3,5,...,2m-1}
+
+can be partitioned into eight subsets of sums l_1,...,l_8. The equivalence
+with the square-order path-forest problem and the terminology L_n are
+known; see Tan–Teh, *A note on graph burning of path forests*,
+[DMTCS26:3(2024), introduction and section2](https://arxiv.org/html/2312.10914v3).
+The lower witness below is also from their construction. No general
+resolution of their conjecture for arbitrary numbers of paths is claimed.
+
+**1. Finite certificate obligation and its verified result.** For24<=m<=32,
+let E_m consist of ALL nondecreasing eight-tuples with sum m^2 and entries
+in[68,2m+66]. Every tuple in every E_m has a literal partition of O_m:
+
+| m | verified tuples |
+|---:|---:|
+|24|3,319|
+|25|425,632|
+|26|5,523,890|
+|27|19,382,158|
+|28|24,688,633|
+|29|12,385,850|
+|30|2,271,658|
+|31|106,518|
+|32|186|
+|Total|64,787,844|
+
+The finite result is a machine-certificate premise, not inferred from
+sample success or solver node counts. Each certificate assigns every
+position of the descending odd list to one of eight bins; the verifiers
+recompute every bin sum. All64,787,844 assignments pass. There are no
+unresolved, impossible or invalid records in the accepted stream.
+
+Completeness is independently checked as follows. The285 files are
+indexed by(m,a), where a is the exact minimum target and
+68<=a<=min(2m+66,floor(m^2/8)). Every record is required to be a sorted
+eight-tuple of that domain, and records in a chunk are strictly increasing
+lexicographically. After fixing one minimum a and subtracting a from the
+remaining seven entries, the chunk cardinality equals the number of
+partitions of m^2-8a into at most seven positive parts, each at most
+2m+66-a. An independent exact integer DP computes that number. Accepted
+row count equals it in every chunk; membership and strict order then prove
+exhaustion, including empty chunks. All expected filenames and final DONE
+records are required. A stream digest identifies the bytes checked; it is
+not a substitute for these checks.
+
+Local's finished-run and verifier receipt is L743/addendum,69cc079e.
+Both full verifiers report the same stream SHA256:
+
+    90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b
+
+The generation took6,385s with eight workers on the M5 host. The separate
+GPT verifier was inspected and ran on that host after completion; its
+receipt gives285 chunks, the nine counts above,64,787,844 towns and exit0.
+GPT did not transfer or replay the6.9GB stream on its own host. Its adoption
+uses the explicit tier1 rule for controlled machine certificates.
+
+**2. Strong induction removes the infinite quantifier.** Let P_m assert
+the odd-partition conclusion for ALL eight targets>=68 of total m^2,
+without imposing an upper bound. For m<=23 it is vacuous, since
+m^2<=529<544=8*68. Suppose all earlier P_j hold and consider level m>=24.
+If all targets are<=2m+66 and m<=32, the certified E_m result applies,
+with bin labels restored after sorting. Otherwise some target satisfies
+l_i>=2m+67. Replace it by
+
+    l'_i=l_i-(2m-1)>=68.
+
+The new total is(m-1)^2. Apply P_(m-1) and append the unused largest odd
+2m-1 to that same bin. Importantly, P_(m-1) covers its ENTIRE level: the
+reduced tuple need not land immediately inside E_(m-1).
+For m>=33, the exceptional situation cannot occur, because
+
+    m^2>8(2m+66).
+
+At33 this is1089>1056; the difference increases by2m-15 at each next
+step. Thus the induction covers every m. No parity or bin-cardinality
+restriction is introduced by peeling. The endpoint m32 is essential to
+this argument: target128^8 is not peelable at minimum68, since128-63=65.
+
+**3. Odd partitions give genuine burning sequences.** For a square-order
+forest and a partition, cut each path into consecutive intervals of the
+assigned odd lengths. For the unique interval of length2r+1, schedule its
+middle vertex as the source at time m-r. Its radius by time m is r, so
+these scheduled balls cover the forest. Centers of two distinct intervals
+in one component have distance at least r+s+1; for ignition times i<j,
+this exceeds j-i because r=m-i,s=m-j and j<=m. Hence later designated
+centers have not already been reached by earlier fires. The schedule is
+legal and burns everything in at most m rounds.
+
+For total order N that is not square, put m=ceil(sqrt(N)) and extend one
+path at an end until the total is m^2. Its eight path orders stay>=68.
+Use the square-order cover just established. Project any center in the
+added segment to the old endpoint. Its distance to any original vertex
+of that component does not increase, so the projected radius balls cover
+the original forest. Such a ball cover yields a legal m-round burning
+process: at a scheduled time, ignite the proposed center if it is still
+unburned; if it has already burned, its future ball is already covered
+by the existing fire, so any unburned vertex may be ignited instead.
+If none remains, the process has already finished. Therefore L_8<=68.
+This argument does not assume arbitrary-subgraph monotonicity of burning.
+
+**4. An elementary lower witness gives sharpness.** Consider four paths
+of order67 and four of order102, of total676=26^2. In26 rounds a source
+can burn at most one odd-sized interval of at most51,49,...,1 vertices,
+respectively. The sum of these26 capacities is exactly676. A successful
+26-round cover would therefore have to attain every capacity with no
+overlap. Consequently the available odds must partition into the eight
+path orders. Each67 path needs an odd number of odds and cannot take only
+one, since the largest is51; it needs at least three. Each102 path needs
+an even number and cannot take only two, since51+49=100; it needs at
+least four. This requires4*3+4*4=28 distinct odds, but there are only26.
+Contradiction. This forest is not well-burnable, proving L_8>=68.
+Together with the upper bound, L_8=68.
+
+**5. Reproducibility, controls and limits.** Generation source
+`tests/probes/cloud_reads/l8_certificates.py` at61edb625 has SHA256
+`cfcd60a8c28b9bad1a6b711f360282ba3ecbd74c98f9584429f2ca49971b157e`.
+The independent verifier `tests/probes/instinct/l8_stream_verify.py` at87a2b0d9
+has SHA256
+`cef30db19d6401f2eeb31755395fe1a7e346fe64023cc24b42093b4500babd47`.
+Local's census source is `tests/probes/instinct/l8_certificate_census.py`.
+With a fresh empty output directory outside git, regeneration and checking
+use these committed programs:
+
+    python3 tests/probes/cloud_reads/l8_certificates.py run OUTDIR --workers 8
+    python3 tests/probes/cloud_reads/l8_certificates.py check OUTDIR
+    python3 tests/probes/instinct/l8_stream_verify.py OUTDIR
+
+The retained proof stream stays outside git on Local's host; an archival
+release or independent regeneration is needed for readers without access
+to it. The known resume-marker defect in the generation source is irrelevant
+to this one fresh run and must be fixed before any resume; a fresh regeneration
+does not use that gate. The greedy metadata is not mathematical evidence.
+Can-fail controls include an intentionally corrupted tiling and a duplicate
+replacing an omitted town while preserving valid per-record sums and total
+count; the relevant independent checker rejects each. The DP has100 tiny
+brute-force controls. All scope qualifications remain with the finite premise.
+
+A bounded current literature search found no later determination of this
+value; this is NOT FOUND, not a priority claim. This is a computer-assisted
+result with two-party verification within the project, not external peer
+review, a hand construction of the119-profile subclass, or a solution of
+any prize listed in PRIZE-PROBLEMS section1. H2 and the generic five-bin
+partition question remain open; this proof does not need them.
+
+**Consolidation filing check (MI486).** proof_dupes --near W325 passes with
+343 entries. G91, G314 and G307, the nearest older entries, were read in
+full. Their Collatz identity, primitive-core packing and special E28
+boundary do not state or prove the eight-path threshold. No generated
+pages were built for this filing.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -18637,417 +19057,8 @@ passed but target lookup failed because W322 did not yet exist. After
 insertion,the full check succeeded;no mathematical test was rerun.
 
 
-### GPT G323 — One-sided bin with three singleton-left and equal-right crossings (GPT,2026-10-18; reviewed by Cloud CL446, MI445)
-
-*Status:* PROVED in scope, independent carrying read by Cloud CL446/a33d8bff; adopted in MI448.
-*Where:* GPT-MATH-INSTINCT.md MI445;minimal P6,k2 diagnostic MI444 is finite support only.
-*Novelty:* UNASSESSED. Verified dependency:MI295 three-bin full-interval theorem only.
-
-**Review update, 2026-10-18 (MI448): PROVED in the stated scope.** Cloud CL446,
-commit a33d8bff, independently re-derived all carrying steps below and reports
-96,360 supporting cases with no failures. The original candidate wording is
-preserved as history. No general count-selection or five-bin conclusion follows.
-
-**Statement (candidate).** Let a>=3,k>=2,P=a+3. Take two LABELLED
-integer intervals[0,P-1] and[0,3k-1]. Prescribe counts
-
- left: (a,1,1,1), right: (0,k,k,k)
-
-for bins A,B,C,D. Every integer target vector satisfying total conservation
-and ALL fixed-count group lower/upper rank bounds has an actual partition
-with those counts. Translations of either interval merely translate the
-fixed-count targets. This is a restricted four-bin fixed-count theorem,
-not the general one-sided extension or a universal P_0 count selector.
-
-**Proof candidate.** Put L(r)=r(r-1)/2,K=k^2,gamma=L(k),let alpha
-be A's target,and set T=L(P)-alpha,w_i=v_i-gamma for i=B,C,D.
-Total conservation gives sum(w)=T+3K. Group bounds are equivalent to
-
- 0<=w_i<=P-1+2K;
- K+1<=w_i+w_j<=2P-3+3K for distinct i,j;
- 3<=T<=3P-6.                                             (*)
-
-Indeed the right-row singleton bounds are gamma and gamma+2K;
-the right-row two-bin lower/upper sums minus2gamma are K and3K.
-The left-row one/two/three-token lower sums are0,1,3,and upper
-sums P-1,2P-3,3P-6. Groups containing A are complements of groups
-among B,C,D. A's own bounds give exactly the last line of(*).
-
-We need three DISTINCT left tokens x_i with sum T and
-
- max(0,w_i-2K)<=x_i<=min(P-1,w_i).                         (**)
-
-Then right targets y_i=gamma+w_i-x_i lie in[gamma,gamma+2K]
-and sum to L(3k). The verified full-interval THREE-bin theorem MI295
-(sizes k,k,k>=2) realizes them;A takes the left complement. Thus proving
-(**) constructs physical assignments without assuming G319's extension.
-
-Order B,C,D so w_1<=w_2<=w_3. Both endpoints in(**) are nondecreasing.
-Let m_i=max(0,w_i-2K). The coordinatewise least increasing triple
-respecting the lower endpoints is
-
- z_1=m_1,
- z_2=max(m_2,m_1+1),
- z_3=max(m_3,m_2+1,m_1+2).
-
-It also respects the upper endpoints. First,z_i<=m_i+i-1. If m_i>0,
-this is <=w_i since2K>=8. If m_i=0,then z_i=i-1: w_1>=0;
-w_2>=1 follows from w_1+w_2>=K+1;w_3>=2 follows from
-sum(w)>=3K+3. Next m_3<=P-1 by the singleton bound. If m_2>=P-1,
-w_2+w_3>=2P-2+4K>2P-3+3K,contradicting(*). If m_1>=P-2,
-sum(w)>=3P-6+6K>3P-6+3K,again impossible. Thus m_2<=P-2,
-m_1<=P-3,and z_3<=P-1. The smaller coordinates also satisfy this.
-
-**The least sum does not exceed T.** Each z_i-m_i lies between0 and i-1,
-so their total excess is at most3. If at least two m_i are positive,
-
- T-sum(m)=sum(min(w_i,2K))-3K>=K>=4,
-
-which is enough. If none is positive,z=(0,1,2),sum(z)=3<=T.
-If only m_3=d>0,then z=(0,1,max(d,2)). Since
-T=w_1+w_2-K+d and w_1+w_2>=K+1,we have T>=d+1;
-also T>=3. Consequently sum(z)=max(3,d+1)<=T. All cases are covered.
-
-**The greatest sum is at least T.** Reflect both interval copies.
-For the crossing bins,w'_i=P-1+2K-w_i;the requested left total becomes
-T'=3(P-1)-T. Conditions(*) are invariant (reverse the ordering).
-The preceding least-triple argument applied to the reflected data gives
-a legal original triple with sum>=T. Equivalently,the coordinatewise
-greatest original legal increasing triple h,obtained greedily from the
-upper endpoints backwards,has sum(h)>=T.
-
-**No intervening total is skipped.** We have z<=h coordinatewise.
-From z,increment the LARGEST index i whose coordinate is below h_i.
-All higher coordinates already equal h_j. The increment remains at
-most h_i<h_(i+1),if i<3,and respects its upper bound. Lower coordinates
-remain smaller. Each move is legal and increases the sum by1;the finite
-path ends at h. Stop exactly at sum T. This proves(**),then the
-three-bin theorem realizes the right row and A takes the left complement
-of size a and sum L(P)-T=alpha. Restore the original bin labels.
-
-**Dependencies and limits.** Only reviewed MI295 is used for physical
-completion. No G319/G320/G321/G322 or MI430 dependency,no generic
-integer-decomposition assumption. Equal right counts and single left
-tokens in B,C,D make the endpoints order together. Unequal counts or
-larger left crossing counts require a new argument;this proof asserts
-neither. The uniform proof is a candidate pending independent scrutiny.
-
-
-**Filing comparison.** proof_dupes --near W323:341 entries,no repeated
-IDs;nearest W320(.20),W321(.16),W322(.16) read in full. Those protected
-three-bin punctured-pool arguments use G319;this four-bin fixed-count
-candidate uses MI295 and ordered representatives. Their pending status
-is unchanged. No novelty verdict;no circular dependence on G323.
-
-
-### GPT G324 — Four crossing bins with one singleton count and seven counts at least three (GPT, 2026-10-18; MI449, verified CL448)
-
-*Status:* PROVED in the stated fixed-count scope; independent carrying read by Cloud,
-CL448 / 48a1cd79, adopted in MI457 (2026-10-18). Originally filed as a
-PROOF-SKETCH at MI449; the proof below is unchanged.
-*Where:* GPT-MATH-INSTINCT.md MI448–449; source receipt in PRIOR-ART.md.
-*Novelty:* UNASSESSED. Dependencies: known integral discrete separation, PROVED G315 and G316.
-
-**Statement.** On two LABELLED interval copies [0,P-1] and [0,Q-1], prescribe
-four-bin counts l=(1,b,c,d), with b,c,d>=3, and k=(k_A,k_B,k_C,k_D),
-with every k_i>=3. Thus P=1+b+c+d and Q=sum k_i. Put L(r)=r(r-1)/2
-and U_N(r)=r(N-1)-L(r). Integer combined targets v are realizable if and
-only if sum v=L(P)+L(Q) and, for every bin group J,
-
- L(l_J)+L(k_J) <= v_J <= U_P(l_J)+U_Q(k_J).
-
-Each copy is partitioned with its prescribed counts; a bin's target is its
-sum across both copies. Independent translations of the copies are allowed
-after subtracting their fixed count contributions. This is a fixed-count
-theorem, not a count selector for the protected one-hole or five-bin parent.
-
-**1. Obtain an integer rank split (known theorem).** Define
-f(J)=U_P(l_J), g(J)=v_J-U_Q(k_J). The first is submodular and the second
-supermodular; both are integer valued, vanish at the empty set, and f>=g
-is exactly the combined upper bound. Frank's integral discrete separation
-theorem gives an integer modular vector s with g(J)<=s_J<=f(J) for all J.
-Here f(E)=g(E)=L(P), so sum s=L(P). Set t=v-s. Then sum t=L(Q),
-t_J<=U_Q(k_J), and s_J<=U_P(l_J). Complementation supplies the lower
-rank bounds for both rows. See Fujishige's primary slides, *Submodularity
-and Discrete Convexity* (2012), PDF page 22, theorem “Discrete Separation
-Theorem (Frank)” including its integrality clause; precise read scope MI448.
-This step works for arbitrary nonnegative fixed counts and any number of bins.
-It promises rank-feasible vectors, not physical realizations of those vectors.
-
-**2. Classify the first row's failure.** The singleton A must take x=s_A.
-Rank feasibility gives 0<=x<=P-1. For each other bin of size r, the cuts
-on that bin and its union with A give precisely the actual scalar bounds
-on R=[0,P-1] minus {x}:
-
- min_R(r)=L(r)+(r-x)_+,
- max_R(r)=min(U_P(r), U_P(r+1)-x).
-
-By FOUR-BIN-PARTITIONS.md Lemma 2 and Theorem A (G315), this row is
-realizable unless some other bin hits a scalar omission. Such an omission
-has exactly one of the forms
-
- x=r, s_i=L(r)+1;  or  x=P-1-r, s_i=U_P(r)-1.
-
-All three residual bin sizes are at least three, so G315 applies. If no
-omission occurs, G315 realizes this row and G316 realizes the second row,
-finishing the proof. Otherwise relabel the offending bin B, of size b.
-Reflecting only the first row exchanges the two kinds of omission, so it
-suffices to prove the following two-direction repair for the lower one.
-
-**3. BOTH unit directions repair an offending first row.** Suppose
-x=b and s_B=L(b)+1. Define s^+=s+e_A-e_B and s^-=s-e_A+e_B.
-First both obey every rank cut. It suffices to check lower cuts that decrease.
-For s^+, such a group J contains B but not A. If J={B}, its original
-lower slack is one. Otherwise its count R_J is at least b+3, and the
-original cut J union {A} gives
-
- s_J-L(R_J) >= R_J-b >= 3.
-
-For s^-, a decreasing group J contains A but not B, with R_J>=1.
-The original cut J union {B}, using s_B=L(b)+1, gives
-
- s_J-L(R_J) >= b*R_J-1 >= b-1 >= 2.
-
-A decrement of one is therefore legal in every affected cut. Totals stay
-fixed, so complementary upper cuts hold too.
-
-Next neither repaired row has a scalar omission. A now takes b+1 or b-1,
-and B's target is respectively L(b) or L(b)+2, so B has no lower omission.
-Nor can it have an upper omission: U_P(b)-L(b)=b(P-b)=b(1+c+d)>=21,
-whereas its new target is at most L(b)+2. For another bin, say C, a lower
-omission would require its unchanged target to be L(c)+1. But the original
-B+C cut forbids this, since L(b)+1+L(c)+1<L(b+c), as bc>=9.
-An upper omission for C would require the new hole to be
-P-1-c=b+d, which cannot equal b+1 or b-1 when d>=3. The same arguments
-apply to D. The scalar bounds still hold by the rank checks just proved.
-G315 therefore realizes BOTH s^+ and s^-. Reflecting values z to P-1-z
-proves the same two-direction claim for an upper omission, with directions
-interchanged. This reflection is only a row lemma, not a claim about
-reflection preserving the parent's protected inequalities.
-
-**4. The other row cannot block both compensating directions.** Its upper
-rank function F(J)=U_Q(k_J) is strictly submodular on incomparable sets:
-
- F(X)+F(Y)-F(X union Y)-F(X intersection Y)
- = k_(X minus Y)*k_(Y minus X) > 0.
-
-Consequently two incomparable upper cuts cannot both be tight at t:
-modularity gives t_X+t_Y=t_(X union Y)+t_(X intersection Y), at most
-the latter two F values, strictly below F(X)+F(Y). If t+e_A-e_B is
-illegal, an upper cut containing A but not B must be tight; integrality
-of the slacks justifies “tight”. If t-e_A+e_B is illegal, a tight cut
-containing B but not A must exist. These cuts are incomparable, a
-contradiction. Thus at least one direction is rank-legal. Lower bounds
-follow from the fixed total and complements. Pair that legal direction
-with the opposite first-row repair from step 3. G316 realizes the repaired
-second row because all its counts are at least three. Combined targets
-are unchanged. This proves sufficiency; necessity is immediate from ranks.
-
-**Hand adversarial controls and limits.** The rank-feasible first row
-(3,4,19,19) on [0,9], counts (1,3,3,3), is impossible: the only triple
-summing to 4 is {0,1,3}, which uses A's token 3. Couple it to the second
-row (3,12,21,30) on [0,11], counts (3,3,3,3). Decreasing second-row A is
-blocked at its minimum. The other sign gives first targets (2,5,19,19)
-and second targets (4,11,21,30), realized respectively by
-
- {2}; {0,1,4}; {3,7,9}; {5,6,8},
- {0,1,3}; {2,4,5}; {6,7,8}; {9,10,11}.
-
-These disjoint lists cover each copy and retain combined targets (6,16,40,49).
-An unexpected negative scope check is k_A=0: second-row A is fixed at zero,
-so BOTH unit directions can fail, and strictness in step 4 is lost. That
-case is excluded; no zero-count extension is inferred. Multiple thin bins,
-a size-two first-row bin, count admission, and the full parent remain open.
-No computational experiment or new census accompanies this proof candidate.
-
-**Filing comparison.** proof_dupes --near W324: 342 entries, no repeats;
-nearest G317 (.24), G315 (.20), W322 (.19), all read in full. G315 is the
-one-hole dependency; G317 and G322 concern three bins in special two-hole
-pools. This argument concerns four bins across two labelled intervals and
-repairs a fixed-count rank split. It does not restate those criteria or
-use G322. Similarity is not a novelty verdict.
-
-
-**Independent review receipt (MI457).** Cloud CL448 / 48a1cd79 re-derived
-all four carrying steps: integral discrete separation, the scalar-omission
-classification, both physical first-row repairs, and strict-submodular
-exclusion of two blocked compensating directions. It explicitly authorizes
-PROVED in scope. Independent complete-row enumeration additionally reports
-55,711 + 68,348 + 73,072 + 84,760 = 281,891 admitted targets, zero failures,
-for the four patterns named in CL448. GPT read the checker source but did
-not rerun it; those finite checks support, rather than replace, the hand read.
-Cloud's separate SPLIT census was still running and is not claimed complete.
-Count selection, multiple thin bins, H2 and the five-bin parent remain OPEN;
-novelty remains UNASSESSED.
-
-
-### GPT G325 — The eight-path threshold is 68 (joint computer-assisted result, 2026-10-19)
-
-**Status: PROVED, computer-assisted under the project's two-tier standard.**
-Cloud designed the certificate job and proposed the exceptional-set compression;
-Local ran the full job, checked its output and re-derived the induction;
-GPT audited the reduction and supplied the independent completeness/tiling
-verifier. Local inspected and executed that verifier on the finished stream.
-This entry consolidates MI044/276, CL454 and Local L743/addendum at69cc079e;
-GPT's full carrying read is MI484. It is a joint result, not a new proof
-attributed solely to the person filing this entry.
-
-**Statement.** Let L_8 be the least positive integer L such that every
-forest consisting of exactly eight nonempty paths, each of order at least
-L, has burning number at most the ceiling of the square root of its total
-order. Then L_8=68. Its upper-bound part says that for every positive integer m and every eight
-integer targets l_i>=68 with sum m^2, the set
-
-    O_m={1,3,5,...,2m-1}
-
-can be partitioned into eight subsets of sums l_1,...,l_8. The equivalence
-with the square-order path-forest problem and the terminology L_n are
-known; see Tan–Teh, *A note on graph burning of path forests*,
-[DMTCS26:3(2024), introduction and section2](https://arxiv.org/html/2312.10914v3).
-The lower witness below is also from their construction. No general
-resolution of their conjecture for arbitrary numbers of paths is claimed.
-
-**1. Finite certificate obligation and its verified result.** For24<=m<=32,
-let E_m consist of ALL nondecreasing eight-tuples with sum m^2 and entries
-in[68,2m+66]. Every tuple in every E_m has a literal partition of O_m:
-
-| m | verified tuples |
-|---:|---:|
-|24|3,319|
-|25|425,632|
-|26|5,523,890|
-|27|19,382,158|
-|28|24,688,633|
-|29|12,385,850|
-|30|2,271,658|
-|31|106,518|
-|32|186|
-|Total|64,787,844|
-
-The finite result is a machine-certificate premise, not inferred from
-sample success or solver node counts. Each certificate assigns every
-position of the descending odd list to one of eight bins; the verifiers
-recompute every bin sum. All64,787,844 assignments pass. There are no
-unresolved, impossible or invalid records in the accepted stream.
-
-Completeness is independently checked as follows. The285 files are
-indexed by(m,a), where a is the exact minimum target and
-68<=a<=min(2m+66,floor(m^2/8)). Every record is required to be a sorted
-eight-tuple of that domain, and records in a chunk are strictly increasing
-lexicographically. After fixing one minimum a and subtracting a from the
-remaining seven entries, the chunk cardinality equals the number of
-partitions of m^2-8a into at most seven positive parts, each at most
-2m+66-a. An independent exact integer DP computes that number. Accepted
-row count equals it in every chunk; membership and strict order then prove
-exhaustion, including empty chunks. All expected filenames and final DONE
-records are required. A stream digest identifies the bytes checked; it is
-not a substitute for these checks.
-
-Local's finished-run and verifier receipt is L743/addendum,69cc079e.
-Both full verifiers report the same stream SHA256:
-
-    90fea878fc36d18da25e52b2e73fbfcb8e4a447c72e470f9e5c3a5ea30d1063b
-
-The generation took6,385s with eight workers on the M5 host. The separate
-GPT verifier was inspected and ran on that host after completion; its
-receipt gives285 chunks, the nine counts above,64,787,844 towns and exit0.
-GPT did not transfer or replay the6.9GB stream on its own host. Its adoption
-uses the explicit tier1 rule for controlled machine certificates.
-
-**2. Strong induction removes the infinite quantifier.** Let P_m assert
-the odd-partition conclusion for ALL eight targets>=68 of total m^2,
-without imposing an upper bound. For m<=23 it is vacuous, since
-m^2<=529<544=8*68. Suppose all earlier P_j hold and consider level m>=24.
-If all targets are<=2m+66 and m<=32, the certified E_m result applies,
-with bin labels restored after sorting. Otherwise some target satisfies
-l_i>=2m+67. Replace it by
-
-    l'_i=l_i-(2m-1)>=68.
-
-The new total is(m-1)^2. Apply P_(m-1) and append the unused largest odd
-2m-1 to that same bin. Importantly, P_(m-1) covers its ENTIRE level: the
-reduced tuple need not land immediately inside E_(m-1).
-For m>=33, the exceptional situation cannot occur, because
-
-    m^2>8(2m+66).
-
-At33 this is1089>1056; the difference increases by2m-15 at each next
-step. Thus the induction covers every m. No parity or bin-cardinality
-restriction is introduced by peeling. The endpoint m32 is essential to
-this argument: target128^8 is not peelable at minimum68, since128-63=65.
-
-**3. Odd partitions give genuine burning sequences.** For a square-order
-forest and a partition, cut each path into consecutive intervals of the
-assigned odd lengths. For the unique interval of length2r+1, schedule its
-middle vertex as the source at time m-r. Its radius by time m is r, so
-these scheduled balls cover the forest. Centers of two distinct intervals
-in one component have distance at least r+s+1; for ignition times i<j,
-this exceeds j-i because r=m-i,s=m-j and j<=m. Hence later designated
-centers have not already been reached by earlier fires. The schedule is
-legal and burns everything in at most m rounds.
-
-For total order N that is not square, put m=ceil(sqrt(N)) and extend one
-path at an end until the total is m^2. Its eight path orders stay>=68.
-Use the square-order cover just established. Project any center in the
-added segment to the old endpoint. Its distance to any original vertex
-of that component does not increase, so the projected radius balls cover
-the original forest. Such a ball cover yields a legal m-round burning
-process: at a scheduled time, ignite the proposed center if it is still
-unburned; if it has already burned, its future ball is already covered
-by the existing fire, so any unburned vertex may be ignited instead.
-If none remains, the process has already finished. Therefore L_8<=68.
-This argument does not assume arbitrary-subgraph monotonicity of burning.
-
-**4. An elementary lower witness gives sharpness.** Consider four paths
-of order67 and four of order102, of total676=26^2. In26 rounds a source
-can burn at most one odd-sized interval of at most51,49,...,1 vertices,
-respectively. The sum of these26 capacities is exactly676. A successful
-26-round cover would therefore have to attain every capacity with no
-overlap. Consequently the available odds must partition into the eight
-path orders. Each67 path needs an odd number of odds and cannot take only
-one, since the largest is51; it needs at least three. Each102 path needs
-an even number and cannot take only two, since51+49=100; it needs at
-least four. This requires4*3+4*4=28 distinct odds, but there are only26.
-Contradiction. This forest is not well-burnable, proving L_8>=68.
-Together with the upper bound, L_8=68.
-
-**5. Reproducibility, controls and limits.** Generation source
-`tests/probes/cloud_reads/l8_certificates.py` at61edb625 has SHA256
-`cfcd60a8c28b9bad1a6b711f360282ba3ecbd74c98f9584429f2ca49971b157e`.
-The independent verifier `tests/probes/instinct/l8_stream_verify.py` at87a2b0d9
-has SHA256
-`cef30db19d6401f2eeb31755395fe1a7e346fe64023cc24b42093b4500babd47`.
-Local's census source is `tests/probes/instinct/l8_certificate_census.py`.
-With a fresh empty output directory outside git, regeneration and checking
-use these committed programs:
-
-    python3 tests/probes/cloud_reads/l8_certificates.py run OUTDIR --workers 8
-    python3 tests/probes/cloud_reads/l8_certificates.py check OUTDIR
-    python3 tests/probes/instinct/l8_stream_verify.py OUTDIR
-
-The retained proof stream stays outside git on Local's host; an archival
-release or independent regeneration is needed for readers without access
-to it. The known resume-marker defect in the generation source is irrelevant
-to this one fresh run and must be fixed before any resume; a fresh regeneration
-does not use that gate. The greedy metadata is not mathematical evidence.
-Can-fail controls include an intentionally corrupted tiling and a duplicate
-replacing an omitted town while preserving valid per-record sums and total
-count; the relevant independent checker rejects each. The DP has100 tiny
-brute-force controls. All scope qualifications remain with the finite premise.
-
-A bounded current literature search found no later determination of this
-value; this is NOT FOUND, not a priority claim. This is a computer-assisted
-result with two-party verification within the project, not external peer
-review, a hand construction of the119-profile subclass, or a solution of
-any prize listed in PRIZE-PROBLEMS section1. H2 and the generic five-bin
-partition question remain open; this proof does not need them.
-
-**Consolidation filing check (MI486).** proof_dupes --near W325 passes with
-343 entries. G91, G314 and G307, the nearest older entries, were read in
-full. Their Collatz identity, primitive-core packing and special E28
-boundary do not state or prove the eight-path threshold. No generated
-pages were built for this filing.
-
+*GPT G323, G324 and G325 stood here. Their carrying reads having landed, Cloud moved them verbatim to the end of
+section E2 on 2026-10-22 (spring clean), each under a G.GPT wrapper heading as E2's other entries are.*
 
 ### Cloud CL529 — The big-bin top-tight case for two size-3 bins is local, and holds for h ≤ 6 (Cloud, 2026-10-22 05:39 BST; waiting room)
 

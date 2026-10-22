@@ -30,9 +30,9 @@ signal.signal(signal.SIGPIPE, signal.SIG_DFL)                     # quiet when p
 ITEM = re.compile(r'^(?:[-*] |\d+\. )')
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-FIRST = ['RECORD-MAP.md', 'PERIOD-TWO.md', 'STATE-OF-THE-PROOF.md', 'RULE30-PRIZE.md', 'PROOFS.md',
+FIRST = ['RECORD-MAP.md', 'PERIOD-TWO.md', 'RULE30-PRIZE.md', 'PROOFS.md',
          'CO-DISCOVERED-PROOFS.md', 'RULE30-GPT.md', 'PRIZE-PROBLEMS.md', 'COLLATZ-PRIZE.md', 'PRIOR-ART.md',
-         'CONSTELLATION.md', 'SPARKS.md']
+         'CONSTELLATION.md', 'STATE-OF-THE-PROOF.md', 'SPARKS.md']       # the 2026-10-08 snapshot after the live files
 LEDGERS = ('CHAT-LEDGER', 'CLOUD-LOCAL', 'CASUAL-LEDGER')
 IDS = re.compile(r'\b(?:GC\d+|G\d+|CL\d+|L\d+|SC\d+|SP\d+|IN\d{3,})\b|\bentr(?:y|ies) \d+|§ ?\d+(?:\.\d+)*|\b8\.\d+\b')
 

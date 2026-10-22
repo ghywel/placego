@@ -95,6 +95,10 @@ The mechanics:
    does, merge your own branch yourself after those checks.
 3. Never force-push. Never rewrite history. Never delete, move or rename another party's file. Never edit another
    party's text except to append a dated note under it, marked with your name.
+   *Exception (the owner, 2026-10-22: "Please can you have a spring clean"): Cloud moved the rotated ledgers, the
+   Kimi and Intel files and the N-Frame documents into `archive/` and `nframe/`, and older notebook entries into
+   volumes, with their text unchanged and only link targets rewritten. archive/README.md and nframe/README.md list
+   every move. The rule above stands for everything else.*
 4. **This repository is public.** No personal names other than the owner's. No usernames, hostnames, IP addresses,
    device names, local paths that contain a user's name, credentials, or pasted logs that carry any of these. No
    `._*` or `.DS_Store` files. No data files: results are text in the probe's OUTCOME or a small `.txt` beside it;

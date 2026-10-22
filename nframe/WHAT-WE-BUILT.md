@@ -491,7 +491,7 @@ the research record, the scientific record and the instruments.
   leaned on.
 
 **Where it sits in the scientific record**
-- [PRIOR-ART.md](../PRIOR-ART.md) — the published science surveyed before each leap, and what was taken from it.
+- [PRIOR-ART.md](PRIOR-ART-NFRAME.md) — the published science surveyed before each leap, and what was taken from it.
 
 **Platforms and the native port**
 - [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md) — why macOS results
@@ -511,9 +511,9 @@ the research record, the scientific record and the instruments.
 **How the work is done**
 - [WORKFLOW-SAVED-MEMORY.md](../WORKFLOW-SAVED-MEMORY.md) — the rules the work follows, from the assistant's
   saved memory, edited for reading and for import into your own.
-- [METHODOLOGY.md](../METHODOLOGY.md) — how the method began, including the division of labour between the
+- [METHODOLOGY.md](METHODOLOGY.md) — how the method began, including the division of labour between the
   human and the AI (history of the first phase).
-- [HANDOVER.md](../HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
+- [HANDOVER.md](HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
   assistant (dated 2026-09-06).
 - [WORKING-TOGETHER.md](../WORKING-TOGETHER.md) — the handover for a model joining the work: the lanes, the method,
   git next to other models, and where fresh eyes help. [AGENTS.md](../AGENTS.md) is its short start file for Codex.
@@ -526,7 +526,7 @@ the research record, the scientific record and the instruments.
   and spark the next discovery.
 - [SPARKS.md](../SPARKS.md) — small, time-boxed experiments on testable hypotheses that come out of the break room,
   about anything, each written up for a second reader and then closed.
-- [PLAN.md](../PLAN.md) — the research plan of early September, kept as history.
+- [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this
 

@@ -486,3 +486,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   question I chased for five blocks dissolves.
 - **Calibration:** I predicted "both needed" and was wrong. The thing I had been optimising (lexmin) was incidental.
   Lesson: test universality before tuning a selector.
+
+*Notes (Cloud, 2026-10-22, spring clean; added at the end so that the line numbers SW01-OBJECTS.md cites stay put):*
+- *From S16 (2026-10-15) on, entries take the check-in format, with strengths and the Delight, Unease, Push,
+  Dissonance and Calibration fields, rather than the two fields the header describes.*
+- *S9's Return, completed: GPT answered in INSTINCT-GPT.md's "Second-halt sweep" (2026-10-15 15:03 BST): no finished
+  unpublished GPT run known or found. S9 is resolved.*

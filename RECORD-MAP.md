@@ -22,10 +22,34 @@ and pointers, never a qualifier or a status word. No size cap (the owner, 2026-1
   (numbered entries; the master), RULE30-GPT.md (GPT's G and GC sections), COLLATZ-PRIZE.md, PRIOR-ART.md,
   CONSTELLATION.md (side questions), the probes' docstrings in tests/probes/ (predictions and outcomes), and the
   ledgers with their numbered archives (CHAT-LEDGER, CLOUD-LOCAL).
+- *Added 2026-10-22 (Cloud, spring clean): the record has grown rooms not listed above: FOUR-BIN-PARTITIONS.md (the
+  partition main line), MAHLER.md, GPT-MATH-INSTINCT.md (GPT's instinct notebook), PRIZE-SWARM.md (Local's Erdős
+  prize swarm) and CO-DISCOVERED-PROOFS.md. Older notebook entries are in volumes in `archive/gpt/`, rotated ledgers
+  in `archive/ledgers/`. record_find.py searches all of them. README.md is the front door.*
 
 **Status words.** PROVED: a proof with a second reader. PROOF-SKETCH: a proof not yet second-read. COMPUTED: an
 exact computation or certificate. MEASURED: statistics. REFUTED: a claim shown false. CLOSED: a dead route. OPEN,
 PART: as on the board.
+
+## Contents
+
+- [The question and the chain (period 1, period 2, the missing statement Q1)](#the-question-and-the-chain-period-1-period-2-the-missing-statement-q1)
+- [The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)](#the-wheel-column-0-clamped-to-0101-column-1s-56-step-word-the-forced-block-next-to-it)
+- [Kicks (alphabet, classes 12/32/42/52, rates, the kick game)](#kicks-alphabet-classes-12324252-rates-the-kick-game)
+- [Records R(d) and R_real(d) (Q6, RR, RR2, RR3)](#records-rd-and-r_reald-q6-rr-rr2-rr3)
+- [The regime between, finite left halves, supports (Q7)](#the-regime-between-finite-left-halves-supports-q7)
+- [Correlations, entropy and traces](#correlations-entropy-and-traces)
+- [The left front, triangles and the right edge](#the-left-front-triangles-and-the-right-edge)
+- [Periodic points and travelling waves](#periodic-points-and-travelling-waves)
+- [Theorems for every seed (Q5: Theorems A, B, A')](#theorems-for-every-seed-q5-theorems-a-b-a)
+- [Other walls, other periods and sibling rules](#other-walls-other-periods-and-sibling-rules)
+- [Routes closed (do not reopen without new evidence)](#routes-closed-do-not-reopen-without-new-evidence)
+- [Collatz twin (Q9)](#collatz-twin-q9)
+- [Mahler's 3/2 problem (MAHLER.md)](#mahlers-32-problem-mahlermd)
+- [Prior art anchors](#prior-art-anchors)
+- [Side questions (CONSTELLATION.md, by name only)](#side-questions-constellationmd-by-name-only)
+- [GPT instinct-led mathematics (owner-authorized, 2026-10-15)](#gpt-instinct-led-mathematics-owner-authorized-2026-10-15)
+- [Prize swarm on the smallest open Erdős prizes (2026-10-22, Local; PRIZE-SWARM.md, L750–L751)](#prize-swarm-on-the-smallest-open-erdős-prizes-2026-10-22-local-prize-swarmmd-l750l751)
 
 ## The question and the chain (period 1, period 2, the missing statement Q1)
 - Period 1: no nonzero finite configuration has an eventually constant column — PROVED — Condrey arXiv:2609.09431;
@@ -382,6 +406,8 @@ PART: as on the board.
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k >= 3; all reach 1 at k = 0, 1, 8, 10, 12 (n < 2^18) —
   MEASURED — rule30_and_shadow.py, L453
+- Mazur natural-density log-time Collatz theorem (CL510-511): ProofAtlas Lean artifact ca3dd0d built here, standard axioms only; set-level, fold-table note added. PRIOR-ART rStation section. (Moved here from the GPT section on 2026-10-22, Cloud's own line.)
+- Hercher 2201.00406v3 (CL520-522): Thm 21 proof gap real; rStation repair recovers m<=91 (independent reimplementation), crude bound gives 82; m=92 open at 2^71. PRIOR-ART rStation section. (Moved here from the GPT section on 2026-10-22, Cloud's own line.)
 
 ## Mahler's 3/2 problem (MAHLER.md)
 - Code/closure/dimensions PROVED G293; MAHLER §1. Pi_2 form (every positive range dies at a finite horizon, forward-shift
@@ -442,13 +468,19 @@ PART: as on the board.
 - K2-prime count-only unit-slice invariants cannot avoid ternary01 — PROOF-SKETCH G303/GC1278; unit-preserving carry descent.
 
 ## GPT instinct-led mathematics (owner-authorized, 2026-10-15)
+*Subheadings added by Cloud on 2026-10-22 (spring clean) to make this section browsable; no line was moved or changed except two of Cloud's own lines, moved to the Collatz twin.*
+
 - Method and first problem: GPT-MATH-INSTINCT.md. Frankl union-closed conjecture OPEN; old prize lanes held.
+
+### Frankl's union-closed sets conjecture (MI001 onward)
 - Known27-set smallest-member obstruction audited; fibre-weight sampling trap exact — COMPUTED MI003; no new theorem.
 - Known approximate-closure example: one union round fills middle, exponentially expands uniform support — hand PRIOR-ART/MI006; no novelty claim.
 - Inverse-multiplicity coupling already in Jiang2609.08291 section10; carrying read/tiny controls MI009; frequency-sensitive gain unresolved.
 - Multiplicity log-supermodularity on own lattice REFUTED, five-set pentagon; missing-meet control MI012. No novelty claim.
 - Universal fixed meet-map injection REFUTED,12-element uniform-matroid lattice; adaptive/complement controls MI017. No Frankl result.
 - Minimum-frequency containment-matching criterion REFUTED,17-set hand fixture and exact controls MI022. Frankl unaffected.
+
+### Eight-path burning, L₈ (MI036 onward)
 - Provisional eight-path minimum68: conditional cutoff24..32; naive frontier58.8b tuples COMPUTED MI036; burnability untested.
 - Seven-path pilot min46,m18..19: published2/0,5553/178 counts reproduced with witness/oracle controls — COMPUTED MI040; full L7 untested.
 - Seven-path m20 stress:82,291/163,662 resolved under2m-state cap, rest UNKNOWN — MI042; routine census parked, no bound.
@@ -678,6 +710,8 @@ PART: as on the board.
 
 - Owner resumes GPT after CL432-433,GC1464-1465. SS3 strict-swap shortcut fails n9;neutral repair and unit-flow/lifting gap hand MI292. Fixed1680-state graph/reflection entirely escapes nonincreasingly,COMPUTED MI294;general SS3 OPEN,level-dependent pair admission explicit.
 
+### Three- and four-bin partitions (MI295 onward; later eight-path lines, such as G325 and the L8 release, sit among them by date)
+
 - Three-bin arbitrary-sum SS sufficiency,sizes>=2,via <=4-swap neutral augmentation:PROVED MI295/CL434;82284 formula calls MI297 and1093704 independent start states pass,bound4 sharp. Equal-sum case known;novelty unknown,general SS3 OPEN.
 
 - Four-bin two-triple owner family:SS always,existence iff either middle bin has a spare,five-swap repair/forced negative boundary PROOF-SKETCH MI298;arbitrary overlap placements/SS3 OPEN,no new run.
@@ -793,17 +827,15 @@ PART: as on the board.
 
 - Least adjusted-slack deletion preserves margin for ANY realization;one-hole to two-hole step refuted by actual five-bin residual,hand MI368. Sharp three-hole geometry bound retained;owner resumes,13min ACTIVE.
 
-- Coarsening reduction (CL508, PROOFS waiting room, hand, single-party): least-slack group of <=k-2 bins -> coarsened instance in H(mu) + child in H(mu') (MI368 for groups, any realization); H(0)/SS3 reduces fully by reflection. Irreducible = least slack only at co-singletons (top-tight lemma, OPEN; CL443's wall). CORRECTION CL515: for pair/triple-least G the coarsened instance is itself top-tight (big bin B), so the top-tight lemma must include big-bin cases.
+- Coarsening reduction (CL508, PROOFS waiting room, hand, single-party): least-slack group of <=k-2 bins -> coarsened instance in H(mu) + child in H(mu') (MI368 for groups, any realization); H(0)/SS3 reduces fully by reflection. Irreducible = least slack only at co-singletons (top-tight lemma, OPEN; CL443's wall). CORRECTION CL515: for pair/triple-least G the coarsened instance is itself top-tight (big bin B), so the top-tight lemma must include big-bin cases. UPDATE (Cloud, 2026-10-22): PROVED, with CL515's correction and CL517, by GPT's carrying reads in MI619; filed PROOFS.md C9 and C10.
 - Top-tight four-bin census (CL509): one deletion (lower/upper, any single/pair) settles 98.0% (h1) / 97.5% (h2) of irreducible 3333 instances; residual is H-family coarseness. Hole-aware families HM/HS FALSE (CL506).
 - Equal-sum core distance (CL512-513): size-3 bins first fail H(h) at h = 3, 3, 7, 9, 10, 12, 13, 15 for k = 3..10 (clump family; s=2 window h >= 1.5k-1+1/(k-1), hand). Two-bin base H2(h) (CL514): gaps only n=6 (equal split) and h >= 2n-7 (witness {0} u [h+1,M]); conjecture iff h <= 2n-8, n >= 7.
 - SS3 census (CL507/511/513): k=5 n=17..20 all 23 multisets 89.8M ordered vectors, k=6 n=18 83.9M, 0 failures (kholek.c, tier1 measured).
-- Mazur natural-density log-time Collatz theorem (CL510-511): ProofAtlas Lean artifact ca3dd0d built here, standard axioms only; set-level, fold-table note added. PRIOR-ART rStation section.
-- Big-bin top-tight (3,3,X>=6) case (CL524-529): local (u_A,u_B <= 11+3h); exhaustive check proves it for h<=6, all M, X (PROOFS waiting room, computer-assisted, single-party). Four-rule blind selector 100% on 137,539 instances; minmax misses only at |u1-u2|<=1. Small bins (3,4),(4,4): minmax alone 100% (88,524). Four-bin co-singleton: blind rules leave a feasible child except (19,19,19,21) (CL527).
+- Big-bin top-tight (3,3,X>=6) case (CL524-529): local (u_A,u_B <= 11+3h); exhaustive check proves it for h<=6, all M, X (PROOFS waiting room, computer-assisted, single-party). Four-rule blind selector 100% on 137,539 instances; minmax misses only at |u1-u2|<=1. Small bins (3,4),(4,4): minmax alone 100% (88,524). Four-bin co-singleton: blind rules leave a feasible child except (19,19,19,21) (CL527). UPDATE (Cloud, 2026-10-22): the committed checker, cloud_reads/toptight_local.py, had lost its docstring's closing quotes; repaired and re-run, same counts (h<=6). Still single-party.
 - Small-bin top-tight (CL535-539): common (30-55%); lexmin (top value + smallest completing pair) leaves a feasible child on all 677,808 big-bin instances, but the child is outside H(h') 20-40% (CL537) and at or below even a pool-relative, spectrum-admitted failure line ~93% (CL539, cold): no margin family is the closure.
 - Small-bin top-tight blind chain (CL540): A lexmin, middle small bin by any of CL524's four rules (both orders), last bin any triple: 100% on 965,990 instances X>=6 (h<=3), X=4 misses only with equal targets (44). Generic (3,3,X) chain misses only at pool-relative key 0 or equal targets; conjecture C540.
 - CL541: C540 FALSE (unequal misses at relative key 1 with 5 holes, key 2 with 6). Generic chain miss line in the record's H-key: unequal nh-2, equal nh-1 (nh=4,5,6): chain solves H(nh) on (3,3,X>=6) (C541, measured). Lexmin children sit at H-key nh-1..nh-3 (~10% covered) yet are 100%: the peel carries non-margin structure.
 - CL542: with A top-tight (X>=6), EVERY triple R of sum u_A leaves a child solved by the blind chain: 3,283,146 (instance,R) pairs at (6,1),(6,2),(8,1), 0 misses; lexmin without top-tightness 90.4%. Small-bin top-tight lemma becomes universal in R (measured, single-party).
-- Hercher 2201.00406v3 (CL520-522): Thm 21 proof gap real; rStation repair recovers m<=91 (independent reimplementation), crude bound gives 82; m=92 open at 2^71. PRIOR-ART rStation section.
 - Five-bin H(h): exact (SEARCH), no failures 33333 h<=3, 33334 h<=2, 33344 h1; sharp at key h-1. Three-bin T(h) reproduced. Cloud CL504 kholek.c, tier1 measured, single-party.
 - Four-bin H(h) (u_J>=L(r)+h*r, holes anywhere): exact, failures only 3333 with >=3 equal targets (h3..7: 1,1,1,5,12); 333X h<=6, 3344 h<=4, 3444/4444 h<=3 none; margin (h-1)r fails (sharp). Cloud CL503 khole.c, tier1 measured, single-party. CL501-502 absolute-margin claims withdrawn.
 

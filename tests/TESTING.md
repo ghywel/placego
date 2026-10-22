@@ -54,7 +54,7 @@ from this directory:
    case), then `./analyze.py --variants`, and read the CAPPED mean. `./bench.sh <case> ...` runs one case; the
    cases outside the default ladder (see the ladder table below) run only by name. Results go to `$OUTROOT`
    (default `$TMPDIR/interp-bench`); use a fresh one per experiment. bench.sh's default shader is the plain
-   base; the recommendation is `bidirectional-interpolation-variational-propagated.glsl` (../SHADERS.md).
+   base; the recommendation is `bidirectional-interpolation-variational-propagated.glsl` (../nframe/SHADERS.md).
    After any edit to scenes.sh: `./scenecheck.sh [case...]`.
 3. **Gating a variant:** `CONTROL=<label> TAG=<name> probes/limb/gateset.sh "<label>:<absolute path> ..." [runs]`
    runs every shader in the set over the whole ladder and tables the per-case means against the control (set

@@ -6,7 +6,8 @@
 > 2026-10-22; the code they describe stayed where it was: [shaders/](../shaders/), the three `.patch` files, the
 > `build-*` scripts, [linux/](../linux/), [jellyfin-project/](../jellyfin-project/) and the harness in
 > [tests/](../tests/TESTING.md). When a shader's comment says "see README.md", it means the hook reference on this
-> page. Statements here are not kept up to date. The research that grew out of this project starts at the
+> page; "PLAN.md T1.1" and the like mean [PLAN.md](PLAN.md) here, and "TESTING.md" means
+> [tests/TESTING.md](../tests/TESTING.md). Statements here are not kept up to date. The research that grew out of this project starts at the
 > [repository's front page](../README.md).
 
 ## What this is

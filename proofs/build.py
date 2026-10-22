@@ -17,7 +17,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 HERE = ROOT / "proofs"
 SECTIONS = {"A": "The wall form", "B": "Windows, zero runs and the left band", "B′": "Siblings, Jen and the squeeze",
             "C": "Short proofs restated from the running text", "E": "Theorems proved by GPT", "F": "Collatz",
-            "E2": "GPT's proofs, second-read", "S": "Proofs from the sparks",
+            "E2": "GPT's proofs, second-read", "M": "Mahler and ternary digit obstructions",
+            "S": "Proofs from the sparks",
             "G": "The waiting room (not yet verified)"}
 
 
@@ -64,6 +65,11 @@ def units():
                     start = f"W{n.group(1)}"
                 elif nm:  # Local's numbered entries wait here under their final number ("21. Proposition 8 ...")
                     start = f"{int(nm.group(1)):02d}"
+                elif re.match(r"Cloud CL\d+ —", h):  # Cloud's waiting-room entries, "Cloud CL529 — ..." (2026-10-22)
+                    start = "CL" + re.match(r"Cloud CL(\d+)", h).group(1)
+            elif sec == "M":  # "Cloud 8.109 — ..." and "GPT G295 — ...", moved here after their reads (2026-10-22)
+                mm = re.match(r"(?:Cloud 8\.(\d+)|GPT G(\d+)) —", h)
+                start = (f"M{mm.group(1)}" if mm.group(1) else f"G{mm.group(2)}") if mm else None
             elif sec == "S":  # spark proofs, "SP01. ..." (S1, S2, ... already name Local's checks)
                 sp = re.match(r"(SP\d+)\. ", h)
                 start = sp.group(1) if sp else None
@@ -128,6 +134,10 @@ def summaries():
 def status(sec, body, head=""):
     if sec == "G":
         return "in the waiting room: stated with a proof, not yet checked by a second reader"
+    if sec == "M":
+        return "second-read (the head of PROOFS.md section M gives each entry's current status, quoted on its index)"
+    if sec == "E2" and "joint" in head:  # G325, filed as a joint computer-assisted result (2026-10-22)
+        return "proved, a joint computer-assisted result under the project's two-tier standard"
     if sec == "E2":  # the reader is named in the heading from 2026-10-08 (GC620); G39 to G204 were all Local's
         m = re.search(r"\(second-read by ([A-Za-z]+(?: and [A-Za-z]+)?)", head)
         return "proved by GPT and second-read by " + (m.group(1) if m else "Local")
@@ -160,11 +170,11 @@ def main():
     if stale:
         print("note: summaries with no proof in PROOFS.md (renamed or moved?): " + ", ".join(stale))
     for old in HERE.glob("*.md"):  # only generated pages: an id such as 01, C1, G48C, W77 or SP1, then a slug
-        if re.match(r"^(\d\d|[CEFGW]\d+[A-Z]?|SP\d+)-.+\.md$", old.name):
+        if re.match(r"^(\d\d|[CEFGMW]\d+[A-Z]?|CL\d+|SP\d+)-.+\.md$", old.name):
             old.unlink()
     index = []
     for i, s, h, b in us:
-        lead = r"^(\d+\.|[CEF]\.\d+\.?|G\.GPT\d+[A-Z]?\.|GPT G\d+ —|G\d+\.(?!\d)|SP\d+\.)\s*"
+        lead = r"^(\d+\.|[CEF]\.\d+\.?|G\.GPT\d+[A-Z]?\.|GPT G\d+ —|Cloud (?:8\.\d+|CL\d+) —|G\d+\.(?!\d)|SP\d+\.)\s*"
         title = re.sub(PROVENANCE, "", re.sub(lead, "", h))
         name = f"{i}-{slug(title)}.md"
         note = (f"*{SECTIONS.get(s, s)}. Derived from [PROOFS.md](../PROOFS.md), entry \"{h}\"; rebuild with "

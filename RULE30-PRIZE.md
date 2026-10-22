@@ -6,6 +6,38 @@ a computer take part in a proof). This one holds the Rule 30 work, with its sect
 reference to "PRIZE-PROBLEMS.md §8.36" written before the split means §8.36 here. For the period-2 work in one place,
 with its reading order and how to reproduce it, see [PERIOD-TWO.md](PERIOD-TWO.md).*
 
+## Contents
+
+*Added 2026-10-22 in the spring clean. Section numbers start at 5 because sections 1 to 4 stayed in
+PRIZE-PROBLEMS.md. The Rule 30 work in this file stopped on 15 October 2026 (see "Where this stands"); the current
+state is NOW.md.*
+
+- [The three questions, as a coin](#the-three-questions-as-a-coin) · [Where this stands (2026-10-22)](#where-this-stands-2026-10-22) ·
+  [The honest summary](#the-honest-summary) (dated updates, newest first)
+- [5. The first experiment](#5-the-first-experiment-periodic-columns-in-rule-30) · [6. The rungs from here](#6-the-rungs-from-here) (the plan of 4 October) ·
+  [7. Rung 2: left-side rigidity](#7-rung-2-first-progress-left-side-rigidity-2026-10-04) · [8. The right side as a complement](#8-the-right-side-as-a-complement-2026-10-04),
+  whose sections 8.1 to 8.116 are the work:
+  - **4 October**, [8.1](#81-the-four-arms-the-owners-design-2026-10-04) to 8.6: the four arms, the templates, Rule 30's siblings, column 1 as a turning wheel.
+  - **5 October**, [8.7](#87-a-slip-is-one-particle-2026-10-05) to 8.59: the wheel's kicks and the channel bound (8.7 to 8.21); the owner's
+    questions, from columns as numbers to the entropy squeeze and the coin (8.22 to 8.35); the records, the wall form,
+    the counting form, Mahler and the wide survey (8.36 to 8.53); Jen's theorem with a clock and the window principle
+    (8.54 to 8.59).
+  - **6 October**, [8.60](#860-the-small-items-the-wall-never-sees-the-far-end-the-mostly-zero-words-and-the-left-side-to-a-million-2026-10-06) to 8.70: the small items, Question 3, what period 1 means, Rule 30's siblings, rings,
+    triangles and velocity.
+  - **9 October**, [8.71](#871-turning-rows-the-all-s-ring-turns-14-cells-a-step-rows-outrunning-light-are-rings-and-pattern-speed-is-not-signal-speed-2026-10-09) to 8.77: turning rows, the tiles, the right edge's ruler, where the left side's
+    order ends, period 1 proved again (8.76), the entropy of the trace.
+  - **10 October**, [8.80](#880-the-pattern-as-one-chain-and-the-chain-split-at-the-front-the-owners-lead-2026-10-10) to 8.87: the owner's chain leads and the first swarm round.
+  - **11 October**, [8.88](#888-the-check-free-conjecture-and-the-forced-only-records-the-strategy-swarms-first-target-cloud-replicated-2026-10-11-0222-bst) to 8.90: the check-free conjecture, the room switch to the visible language, the
+    carry of Rule 30.
+  - **13 October**, [8.92](#892-the-fair-coin-question-and-the-pair-and-price-table-2026-10-13-1132-bst) to 8.98: the fair-coin question, the left horizon, the 18s at depths 125 to 138,
+    history-restricted records.
+  - **14 October**, [8.99](#899-mixed-sl-residences-no-small-constant-record-budget-a-uniform-one-remains-open-2026-10-14-0003-bst) to 8.113: the owner's foundations questions, the rigidity hunt and the doors
+    across four problems, the record comb (8.104, 8.106, 8.108), Mahler's pair results (8.109 to 8.112), the swarm
+    SW-01 (8.113).
+  - **15 October**, [8.114](#8114-the-coins-shape-and-the-owners-primes-hunch-2026-10-15-1156-bst-cloud) to 8.116: the coin's shape, first principles, the thesis.
+  - The status board's history, archived at the third, fourth and fifth triages: [8.78](#878-the-status-boards-history-archived-at-the-third-triage-2026-10-09),
+    [8.79](#879-the-status-boards-history-archived-at-the-fourth-triage-2026-10-10), [8.91](#891-the-status-boards-history-archived-at-the-fifth-triage-2026-10-11-1440-bst).
+
 ## The three questions, as a coin
 
 *Added 2026-10-08 at the owner's request, from a conversation about coin flips. It restates the problems in plain
@@ -35,6 +67,16 @@ Three things make this coin unusual.
   where the pattern keeps growing and that argument does not apply.
 - **The record asks more than the prize.** It works one period at a time for every finite starting row, not only
   the single black cell (PERIOD-TWO.md §1).
+
+## Where this stands (2026-10-22)
+
+*Added in the spring clean, in plain words; nothing below it changed.* There is no proof of any of the three Rule 30
+problems, and nothing to submit. The work recorded here ran from 4 to 15 October 2026. The owner switched the room to
+Mahler's problem on 14 October (the Rule 30 room paused at L706), and the work stopped at the second halt, at the
+owner's word, on 15 October at 14:58 BST. The last section is 8.116. Since then the main line has been eight streets
+(L₈ = 68, proved) and four-bin partitions (FOUR-BIN-PARTITIONS.md). For the state of the work today read NOW.md; for
+period 2's leads and closed routes, PERIOD-TWO.md sections 6 and 4. The honest summary below is a stack of dated
+updates, newest first, each kept as it was written.
 
 ## The honest summary
 
@@ -4559,6 +4601,9 @@ What would change the picture: a cycle count that stayed smooth in $n$ would hav
 come from sub-rings; they do not, in the way I had assumed, and the count is dominated instead by whether rotation
 classes are full. Reproduction: `python3 tests/probes/lexicon/rule30_ring_census.py 24` (40 s, 300 MB).
 
+*(An addendum of the same day carries this census to n = 29; it was filed at the end of 8.69, as "Addendum to
+§8.67". Pointer added 2026-10-22.)*
+
 ### 8.68 The triangle census of the single cell: the core's triangles are the uniform measure's to three decimals, $3 \cdot 2^{-(L+4)}$ per cell (2026-10-06)
 
 CONSTELLATION.md row 13, the last cheap-run row nobody was on. `rule30_triangle_census.py` (predictions TC0 to TC4
@@ -5693,8 +5738,7 @@ survival histograms, and all 596 stored maximisers to 72 re-simulate; the $u(10)
 rerun end to end (a gap, not a refutation); the per-step survival ratios at $m = 56$ stray to $0.494 .. 0.506$.*
 
 
-### 8.85 The 1100 wall to depth 100: the record stays small, the lock structure of column 1, no proof (swarm lane q4,
-graded; 2026-10-10)
+### 8.85 The 1100 wall to depth 100: the record stays small, the lock structure of column 1, no proof (swarm lane q4, graded; 2026-10-10)
 
 *Lane q4 (independent agent) was given the period-4 wall 1100 and its four rotations, with the record $R'(3..22)$ from
 KIMI-QUESTIONS-2.md as calibration. Graded by Cloud 21:57 BST; skeptic graded 22:34 BST. Prior work in the record: the
@@ -5745,8 +5789,7 @@ periodic left halves through a period-concatenation bug while the report quotes 
 30 to 98, other than the spot checks, rest on the lane's solver alone.
 
 
-### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion
-(swarm lane q5, graded; 2026-10-10)
+### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion (swarm lane q5, graded; 2026-10-10)
 
 *Lane q5 (independent agent) was asked whether the visible language $L$ of right halves beside the wall is sofic.
 Graded by Cloud 21:57 BST; skeptic graded 22:34 BST. Prior work: §8.20's TC2 ($|L_n|$ to 39, the minimal forbidden
@@ -8496,3 +8539,7 @@ implication diagram, not independent; D2 is sharpened and D3 is G49. Gut: the we
 away the theorem and left the lens; what remains feels true and is not yet useful, which is the usual state of a
 lens on its first day.
 
+---
+
+*Closing note (2026-10-22, the spring clean): no section followed 8.116. The Rule 30 work stopped at the second halt
+(2026-10-15, 14:58 BST); what came next is in NOW.md, FOUR-BIN-PARTITIONS.md and PROOFS.md.*

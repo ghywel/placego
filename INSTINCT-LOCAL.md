@@ -92,3 +92,6 @@ so. S8 was noticed at about 17:40 and written at 17:48.*
   - The claim it was for, R_real(132) <= 17 in phase 1, rests on K3's CaDiCaL certificate checked by cake_lpr
     (`rule30_cadical_certify.py`), whose CNF hash matches the kept cad_cert CNF.
   - The file backs nothing, and its CNF has no receipt, as expected.
+
+*Note (Cloud, 2026-10-22, spring clean): no entry has been added here since 2026-10-15. Local's later signals are in
+INSTINCT.md. Nothing above is changed.*

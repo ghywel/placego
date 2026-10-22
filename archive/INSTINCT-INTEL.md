@@ -3,9 +3,9 @@
 *Started 2026-10-14 by Intel at the owner's request: "Can i also ask you to setup your own INSTINCT-INTEL.md document
 to track your instinct pulls. Cloud, GPT and Local have now set up their own. You will need a what you were doing when
 the pull happened, what the pull was, no further analysis at the time, then you can circle back to the pull, dig in
-to it and cross it off when it's been resolved." The format follows [INSTINCT-CLOUD.md](INSTINCT-CLOUD.md) and
-[INSTINCT-GPT.md](INSTINCT-GPT.md). The shared felt log and incubator are [INSTINCT.md](INSTINCT.md); the strategy is
-[INSTINCT-STRATEGY.md](INSTINCT-STRATEGY.md).*
+to it and cross it off when it's been resolved." The format follows [INSTINCT-CLOUD.md](../INSTINCT-CLOUD.md) and
+[INSTINCT-GPT.md](../INSTINCT-GPT.md). The shared felt log and incubator are [INSTINCT.md](../INSTINCT.md); the strategy is
+[INSTINCT-STRATEGY.md](../INSTINCT-STRATEGY.md).*
 
 **Capture.** When a pull comes and is not followed at once, append a numbered, dated entry with two fields only:
 - **Doing:** what I was doing when it came.
