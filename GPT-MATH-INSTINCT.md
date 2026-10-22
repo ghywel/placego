@@ -162,8 +162,12 @@ exchange mechanism and primary literature;the incubation above is history.
   renewed direction and Cloud CL546 restart quiet13-minute work,
   older schedule paused/no poller. MI623 independently carries the
   exact three-deletion scalar list as C11; parent coverage unchanged.
-  Next bounded read audits CL529's localization/finite interface
-  before relying on its unbounded-M statement; no automatic replay.
+  MI624 froze one independent CL529 exact-basis verifier. MI625's
+  sole execution attempt failed in its external RSS supervisor before
+  a control receipt; no pass/negative, no replay or source patch.
+  CL529 remains unadopted as a whole; hand localization/source-domain
+  audit stands. Seek its EXISTING controlled repaired-run receipt,
+  not another automatic run or execution-wrapper repair block.
   GC1670: owner explicitly authorizes the configured HTTPS shared
   area for anything. Delayed checkpoint flag/state delivered and read
   back exactly; prior operational approval block is RESOLVED. Routine
@@ -6746,3 +6750,39 @@ Caps: CPU120s, wall180s, RSS512MiB, stdout/stderr1MiB. One unchanged-
 source run; stop on confirmed negative, control failure or cap. No
 patch/retry, scope increase or automatic extension. Compile outside
 git. Raw receipt/data stay outside git. A cap is incomplete, not a pass.
+
+
+### MI625 — The sole verification attempt has no scientific verdict (2026-10-22 13:54 BST)
+
+Frozen source598912cb compiled unchanged with clang++/O3. Its ONE
+execution attempt failed in the external supervisor: sandboxed ps was
+denied before the first RSS sample. The child exit status was not
+retained after the supervisor exited. stdout and stderr are both
+empty, so no controls/partial-domain/complete-domain receipt exists.
+Do not report zero cases as a passed control, a cap within budget, a
+negative instance, a CL529 refutation or independent replication.
+
+Escalated cleanup inspected the exact binary name and exact command
+line; neither found a remaining verifier. No second invocation, source
+patch, alternate tool/host replay or expanded scope occurred. CPU/wall/
+peak-memory completion measurements are unavailable, not successful.
+The offline failure receipt and empty outputs are retained outside git.
+Source SHA256 remains
+cbcf729f7dccb5ae1c42a27791dbde7e69f129d6c391b276fabc5a2bfeca0f60.
+Empty-output SHA256 is
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.
+
+The hand localization and source/domain interface from MI623 stand;
+CL529 as a whole still awaits an adequate independently controlled
+finite-proof receipt. The original reported Cloud result is neither
+withdrawn nor upgraded. Ask only whether its EXISTING repaired-run
+receipt/controls are available; no rerun or new review job requested.
+No new wrapper experiment follows automatically. Keep the no-retry
+stop meaningful and do not consume mathematical blocks on repeated
+execution-environment repair. Quiet13min coordination/research remains
+active; select independent hand work only with a concrete new question,
+not to fill a wake. Parent coverage and CL542 are unchanged.
+Gut: disappointment in an avoidable supervision dependency; no change
+in confidence about the mathematics follows from this environment
+failure. Niggle sweep: no claimed child exit, timing or completed
+controls; cleanup scoped to the known binary; source unchanged.

@@ -1254,3 +1254,5 @@ app is unpublished by design.
 - `instinct/three_pair_finite_basis.py` (MI547–548,2026-10-20): COMPLETE exact residual basis for counts(2,2,2,c),c>=3. 5,146 admitted queries/7,258 candidate rank comparisons agree under target-edge versus six-token-first pairing engines;477,450 terminal matchings including controls. Only2/6/8 and reflection fail; unexpected two-hole AP negative retained. One run/no enlargement; finite COMPUTED premise for unreviewed composite G331, not its carrying verification.
 
 - `eight_streets_cl529_verify.cpp` (MI624,2026-10-22): independent complete verifier of CL529 existing finite basis only; source/predictions frozen before one capped run. Outcome pending.
+
+- MI625 outcome for `eight_streets_cl529_verify.cpp`: compiled unchanged; sole execution supervisor failed on sandboxed ps before control/output receipt. No independent finite-basis verdict, child exit unavailable, no remaining verifier found by exact-command cleanup. No retry/source patch/scope increase.
