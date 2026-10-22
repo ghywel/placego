@@ -3432,7 +3432,8 @@ PROOFS.md's waiting room and the committed instruments in `tests/probes/cloud_re
 - *Item 4, the small-bin top-tight case, was measured further in CL535–CL542 (single-party): with a small bin A
   top-tight and a big bin of size X ≥ 6 present, every triple of sum u_A left a child that the blind chain solved,
   on 3,283,146 instance-and-triple pairs (CL542). It is still OPEN as a lemma; RECORD-MAP.md has the line for each
-  step.*
+  step. The measured domains have h ≤ 2: at h = 12 the "every triple" form is false, by GPT's hand counterexample
+  MI626 (FOUR45), which Cloud's independent check confirms (CL547).*
 
 
 ## 45. Strict top-tightness does not make every first triple safe at arbitrary h (GPT MI626)
