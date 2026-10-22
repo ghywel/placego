@@ -138,8 +138,9 @@ exchange mechanism and primary literature;the incubation above is history.
   are waiting-room candidates, not universally promoted.
 - CL508/515 coarsening reduces to H2 plus TOP-TIGHT instances, including
   coarsened big bins; it does not make the pair branch disappear.
-  CL517 is triple H2 at n>=2h+4 only. First targeted carrying reads
-  are their exact algebra before they are used as new premises.
+  MI619 independently carries its local lemma(a)–(c) WITH correction,
+  filed C9; CL517 triple H2 at n>=2h+4 is carried as C10. No global
+  top-tight/exception-free induction or general subset theorem adopted.
 - CL529 checker `toptight_local.py` has an unclosed docstring. Syntax
   audit55 new Python files:54 parse,1 fails. No algorithm changed or
   run replayed; executed-source recovery flagged. No mathematical
@@ -152,9 +153,11 @@ exchange mechanism and primary literature;the incubation above is history.
 - Specific pull: TOP-TIGHTNESS may replace the need to select R.
   Next ONE bounded hand audit: child proper groups satisfy rank bounds
   of[h,M-3], but their total exceeds that reference by sigma_(co-A).
-  Preserve actual holes,total and first-triple existence; no monotonicity
-  or family inheritance imported. Prove compatibility or retain a hand
-  obstruction before any repair/next door. No confirming census/basis.
+  MI619 supplies first-triple existence only for h<=floor((X+5)/2).
+  MI620 retains ALL14 parent cuts, Delta/rho and rank deficit D with
+  rho+Delta=3N-D; no child compatibility follows just from the reference
+  window. Next hand kill test targets that actual image and disjoint
+  small-bin realizations; no new relaxation, repair catalogue or census.
 - Rhythm: existing research heartbeat ACTIVE every13 minutes, quiet
   unless meaningful change; older schedule paused, no separate poller.
   MI617 incubation is superseded by owner request and new CL542 evidence,
@@ -41604,3 +41607,75 @@ triggers the trajectory check before a new door. No seeded choices,
 forced output, census/basis expansion or duplicate review request.
 Gut: a specific pull at replacing existential choice by universal
 compatibility; no manufactured enthusiasm for more confirming runs.
+
+
+### MI619 — Carrying reads of the actual prerequisites (2026-10-22 09:18 BST)
+
+No experiment. Read CL508/515 and CL517 full candidate proofs, source
+context and MI368. Record searched: top.tight|co.singleton|CL542 AND
+triple|window ->27 hits/16 files, including failures of window induction.
+Targeted independent carrying reads PASS for CL508 lemma(a)–(c), with
+CL515 correction, and for CL517's triple-only n>=2h+4 theorem.
+Filed C9/C10 in PROOFS with precise receipts and retained candidates.
+The former verifies a local cut/shift implication, not universal top-tight
+feasibility or exception-free induction. The latter's upper-tail pair
+count and smallest endpoint re-derived exactly. No machine run needed.
+This is review of Cloud's contributions, not new GPT proofs.
+Filing audit: proof_dupes hard checks and adversarial controls pass for
+C9/C10 (361 entries). Nearest04/32/C6 and C9/24/07 read in full;
+they concern different objects. No generated proof pages rebuilt.
+
+For CL542 first-triple existence: parent H(h) puts u_A EXACTLY in
+CL517's window since complement G has size n-3 and target>=L(n-3)+h(n-3).
+Thus there is an actual R whenever n=X+9>=2h+4, equivalently
+h<=floor((X+5)/2). This covers the finite ALLR domains, but not arbitrary
+h. The arbitrary-h universal claim still needs a separate existence
+argument or an explicitly restricted statement; no vacuous quantifier.
+
+
+### MI620 — Full parent cuts carry more than the reference window (2026-10-22 09:18 BST)
+
+HAND scope derivation, no proof number, experiment or parent coverage.
+This continues the ONE bounded audit; it is not a new local repair.
+Write N=n-3, G=A^c, Delta=sigma_G>=0, rho=sigma_A, and
+Q_m=L(m)+h*m. Strict top-tightness means rho>=Delta+1 and every
+proper child group J (one or two bins) has sigma_J>=Delta+1.
+Let m=r_J and epsilon_J=1 when J is one child bin,0 when it is two.
+The original A union J cut has sigma>=Delta+epsilon_J. Therefore
+
+    u_J >= max(Q_m+Delta+1,
+               Q_m+3m+Delta+epsilon_J-rho).             (L)
+
+By conservation, with K=G minus J,
+
+    u_J <= min(B_m-1,
+               B_m-3(N-m)+rho-epsilon_K),
+    B_m=L(N)-L(N-m)+h*m.                               (U)
+
+Together with total u_G=Q_N+Delta and rho>=Delta+1, these inequalities
+are EXACTLY the parent cut/slack-order conditions: A, G, six proper
+child groups and six groups containing A account for all14. Several
+co-singletons may tie; no singleton or pair may do so. This retains
+constraints lost by routing only through the reference-window bound.
+
+Define the parent's rank deficit D=L(n)+h*n-sum(S)>=0; each actual
+ordered value is at most its full shifted rank. Direct total arithmetic
+then gives the useful identity rho+Delta=3N-D. It is independent of
+which actual R realizes A. Thus the proposed carrier is a joint
+hole-moment/slack condition, not ordinary domination. It is necessary
+information; sufficiency for the actual child remains OPEN.
+
+Unexpected check: when rho is small, the second term in(L) is ACTIVE;
+the simple reference lower bound Q_m discards it. When Delta>0, even
+the first term is stronger by Delta+1. The sigma=0 case does not license
+forgetting the actual holes or total. No full-fibre inheritance imported.
+
+Coverage change: first-triple existence verified in an explicit range;
+no universal child partition or new parent family proved. Earliest open
+step is whether (L)/(U), the fixed total and the ACTUAL removed triple
+force simultaneous disjoint small-bin realizations. Next discriminating
+hand test must attack that implication itself, or exhibit an admitted
+parent/R counterexample. No confirming census or scalar table. Gut:
+pull at the retained rank deficit, tempered by the absence of a joint
+proof. If this is merely another margin relaxation, fail it before any
+repair; prior CL539/541 failures remain the guards.

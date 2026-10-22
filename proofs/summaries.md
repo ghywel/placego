@@ -4121,3 +4121,27 @@ and a justified finite cutoff for its remaining small scalar cases.
 Cloud CL480 carried this argument; it is PROVED in its stated range. Actual
 selection margins still need their separate proof. Neither the
 sharp small-pool thresholds nor universal A2 admission follows.
+
+
+## C9
+
+**A least-slack group can be merged without losing the precise child margins.**
+Coarsening the other bins preserves the original cut conditions. Every
+actual realization of the least-slack group then leaves the outside bins
+with a shifted per-number margin at least their actual hole count.
+
+**Why it matters.** This removes a hidden canonical-choice assumption in
+that inheritance step. It still requires the smaller instances to be
+feasible, including top-tight coarsenings and any exceptional children.
+
+## C10
+
+**Triple sums fill the prescribed total-dependent window when the pool is large enough.**
+An interval with h missing values and n remaining values, n>=7 and
+n>=2h+4, realizes every triple target between 3+3h and its total minus
+the complementary-bin lower bound. Pair matchings cover the middle;
+counting the bottom holes supplies the small upper extension.
+
+**Why it matters.** This verifies the first-triple existence premise in
+that range. It does not partition three or more bins or prove the full
+conjectured spectrum threshold.
