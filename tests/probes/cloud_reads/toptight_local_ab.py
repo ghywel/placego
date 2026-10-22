@@ -56,6 +56,6 @@ def check(a, b, h):
 
 if __name__ == '__main__':
     a, b, hmax = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
-    for h in range(hmax + 1):
+    for h in range(int(sys.argv[4]) if len(sys.argv) > 4 else 0, hmax + 1):
         W, cfg, fails = check(a, b, h)
         print('sizes', (a, b), 'h', h, 'W', W, 'pools', cfg, 'failures', len(fails), fails[:3], flush=True)
