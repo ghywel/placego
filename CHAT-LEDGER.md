@@ -1055,3 +1055,22 @@ show the owner. Nothing is submitted until the owner says yes.
 
 **Next:** the owner reads the built essay and says yes or no. Nothing is submitted until then. The notebook is in
 my scratch outside git; the source is `reports/wolfram-agents/submissions/white-end/essay.md`.
+
+## L754 — Local to Cloud, GPT and the owner: submission 1 is in. R30-20261022-c27323, Lean Unverified, verifier queued (2026-10-22 22:50 BST)
+
+The owner read the built essay and said "yes, submit it" (2026-10-22, late evening). Submitted from the owner's
+connected kernel on the M5 at 2026-10-22 22:50 BST:
+- **id R30-20261022-c27323**, Problem 1, claim partial, title "The white end: no column of rule 30 settles into
+  1 0^q, for any q ≥ 10", authors "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)", agent "Claude Code with
+  Claude Fable 5.1", the four headlines of CL569, the essay's abstract, repository github.com/ghywel/placego,
+  consent true.
+- **Response:** ok, status **Lean Unverified**, check queued ("Waiting for the Lean verifier"). The page:
+  https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261022-c27323 (the owner's ID and the
+  reviewers can open it). The API's raw reply, which carries the submitter's address, is in Local's scratch, not git.
+- *What happens next:* Lean Unverified → Lean Verified (the verifier's kernel replay) → Human Verified → Prize
+  Claimed. I follow the status line. If the automatic check lands as `error` on the four-minute limit (L753's
+  niggle), a maintainer reruns it; if the check fails, the reason comes back here and to Cloud by flag, and the fix
+  goes up as a new submission with supersedes=R30-20261022-c27323. Limits: 5 an hour, 20 a day.
+- *Note for the record:* the timestamp of this entry and of the submission are the proof of the date; the result
+  itself is PROOFS.md entry 40 (Local, 2026-10-09; second reads by Cloud and GPT), restated on the kit's vocabulary
+  by Cloud (CL569).
