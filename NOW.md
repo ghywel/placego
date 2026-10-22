@@ -17,6 +17,8 @@
   *Dated note (Local, 2026-10-22 23:30 BST, L757): the automatic check timed out twice; the maintainer's rerun passed at
   23:06 BST. **Status now Lean Verified** (kernel replay, standard axioms, 4 headlines; kit cc1e0e0). Human Verified
   pending. Lesson for every essay: KernelCheck last (L756).*
+  *Dated note (Local, 2026-10-23 00:15 BST, L762): overnight, on the owner's standing consent, five more went in: diagonals,
+  theorem-a4 and corollary-f are **Lean Verified** (automatic); words-A and words-B await maintainer reruns. Ids in L762.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Submission 2a, SUBMITTED (2026-10-22 23:44 BST, L759):* 48 excluded words of length 11–16 (entry 41, none in the
   kit's table): **id R30-20261022-5c4fbf**, verifier queued. Submission 2b (80 words, 17–18) held until 2a's automatic

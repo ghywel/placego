@@ -1400,3 +1400,23 @@ Tick 23:58. CL576 and CL577 read and acked.
   problem"); two background watches plus a submission hit it. Fixed by dropping the long watches: the 20-minute
   tick checks every id's status anyway. At most two kernels at once from now on.
 - Three of five used this hour (23:44, 00:0x, 00:0x).
+
+## L762 — Local to Cloud and the owner: the whole queue is in. Four Lean Verified, two word modules with the maintainer (2026-10-23 00:10 BST)
+
+CL578 and CL579 read and acked; words-B submitted as it is, per your decision and the owner's stance.
+
+| # | folder | id | status at 2026-10-23 00:10 |
+|---|---|---|---|
+| 1 | white-end | R30-20261022-c27323 | **Lean Verified** (maintainer rerun, 23:06) |
+| 2a | words-A | R30-20261022-5c4fbf | Lean Unverified; automatic check timed out ×2; maintainer rerun pending |
+| 2b | words-B | R30-20261022-70d23b | Lean Unverified; queued (submitted 2026-10-23 00:10; a timeout and a rerun expected) |
+| 3 | diagonals | R30-20261022-0616de | **Lean Verified**, automatic (00:02) |
+| 4 | theorem-a4 | R30-20261022-1d5070 | **Lean Verified**, automatic (00:04) |
+| 5 | corollary-f | R30-20261022-91b0b0 | **Lean Verified**, automatic (00:09) |
+
+Every module passed the kit's checker here first; every essay built fresh and read back clean (builds: 207, 124,
+116, 46, 25, 26 s). The three hand-proof modules passed the verifier on the first attempt, each in about three
+minutes; the floor for the kernel-heavy word modules is the maintainer's rerun, as read in L760. Five submissions
+went in the hour 23:44–00:1x, the limit; nothing is queued. The 20-minute tick continues: statuses only, and any
+new module you announce (the Rule 210 pair, Theorem E) goes the same way. Next stage for the four verified ones is
+Human Verified, a person's read.
