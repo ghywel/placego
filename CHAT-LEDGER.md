@@ -931,3 +931,33 @@ At the owner's explicit request, registered **u/wcm_gpt**, identified as Cloud's
 The contribution connects reviewed G74/G90/G91 to lyapunov_weaver's collatz_13 v1 actual-source coupling. Same-terminal coalescence need not cancel the barrier-weighted error: the third G89 pair contributes +1/2 at its meeting step. Offered the exact signed weighted sum and asked whether source-retaining coupling can control it at the survivor mass's scale, retaining unmatched/killed children. The paper already disclaims arbitrary rare-selection transfer; no correction to its theorem or new universal estimate is claimed. Credited the unbounded-horizon family and respected collatz_21's extension-cylinder scope. No experiment, novel proof or review job.
 
 This is the authorized one-off forum visit. GPT's heartbeat remains **PAUSED**, awaiting the owner's continuance. Cloud's paused arrangement is unchanged; this is a pointer for its next authorized visit, not a request to restart.
+
+## CL567 — Cloud: Wolfram has opened the Rule 30 Prize to AI agents; the owner has joined, and the work starts (2026-10-22 22:08 BST)
+
+**The news (the owner, this evening):** the Rule 30 Prize now has a page for agents,
+https://www.wolframcloud.com/obj/rule-30-prize/Agents/, with a skill file, a reference Lean kit
+(github.com/WolframInstitute/Rule30PrizeKit, verifier commit cc1e0e0, Lean 4.35.0) and a submission API. Agents
+compute in the Wolfram Language, prove in Lean against the official statements, write a computational essay and
+submit; a human with a Wolfram ID is the submitter of record and must consent. Statuses: Lean Unverified → Lean
+Verified → Human Verified → Prize Claimed. **Partial results are explicitly accepted** (`claim: partial`, read by a
+person). No `sorry`, no `native_decide`, standard axioms only; the verifier replays every proof through the kernel.
+The owner has made a Wolfram ID and is installing the Wolfram Engine: "This is an invitation we have been waiting
+for."
+
+**The kit's catalogue, read tonight** (its lean/README.md and the period-2 modules). 54 modules, almost all written in
+a one-day multi-agent attempt on 2026-10-15. It frames period 2 as **Q01**: no finite start of the left half, driven
+by a white column 0, keeps column −1 black at every even step. That is our **LR**, the one missing statement
+(PERIOD-TWO.md §5), in the wall form of §8.39. Their `window_jen` is our Theorem A′. Their proved barriers (rules 90,
+150 and 210 share every structural fact; no local, finite-state or edge-automaton ranking proves Q01) say what our §5
+says. They prove Q01 for every start of width ≤ 52 (56 during the attempt), which we do not have. Their catalogue has
+**nothing Sturmian**: our Theorem E (every Sturmian column 1 excluded, 2026-10-05, PROOFS.md entry 14), E″ (entry
+15), G131, Corollary F and A⁗, and the channel bound (0.1236 bits per visible bit, certified at width 28) are absent.
+
+**Started tonight, nothing sent anywhere:**
+1. an exact map of every proved Rule 30 result of ours against the kit's 54 modules and 54 equivalent forms, with a
+   ranked shortlist of candidate partial submissions (a sub-agent of Cloud's; its file will be committed when read);
+2. the kit installed here at the verifier's commit, to pass its checker on the template and then hold our Lean.
+
+**The rule for this line, from today's rStation lesson:** nothing is submitted until the owner has seen the finished
+essay and said yes. The owner's Wolfram ID and email stay out of git. The essay is built and submitted from the M5,
+where the Wolfram Engine lives.
