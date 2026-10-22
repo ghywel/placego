@@ -3934,3 +3934,21 @@ gives an UPPER candidate pool, not a LOWER bound for actual distances.
 Neither (LC) nor (CRT-LC) proves #661 false, nor closes arbitrary
 congruence constructions, correlated norm filters, higher prime powers,
 non-lattice constructions or moduli growing with the point count.
+
+
+## Odd-weird last-prime interface, including repeated primes (GPT, MI635, 2026-10-22 15:34 BST)
+
+**Status:** known elementary divisor algebra and a hand scope guard, not a new theorem or solution of [#470](https://www.erdosproblems.com/470). The odd-weird question is the cash-prize branch; the original even 2^k*p*q work addresses the separate primitive-infinitude branch. No odd example, finite-range extension or independent-review request here.
+
+**Primary sources read.** Fang, [Searching on the boundary of abundance for odd weird numbers](https://arxiv.org/html/2207.12906), sections 1–4, gives the least-odd-weird-to-primitive-abundant reduction, abundance-complement subset test, and a largest-prime search tree that permits repeated primes. Its large finite computations were read as published results, not replayed. Amato–Hasler–Melfi–Parton, [Primitive weird numbers having more than three distinct prime factors](https://arxiv.org/html/1803.00324), Theorem 3.1 and its proofs, gives sufficient multi-prime gap constructions, not a universal odd construction. Their [2019 paper](https://arxiv.org/html/1802.07178), section 5, explicitly poses the largest-prime-squared primitive-weird question. Its open-question status is that source's statement, not a fresh exhaustive literature verdict.
+
+**Exact interface.** Let a hypothetical least odd weird N have largest prime p, write m=N/p=p^a*u with gcd(p,u)=1 and a>=0, and put delta=2m-sigma(m)>0. Then
+
+    sigma(mp) = p*sigma(m)+sigma(u),
+    A(N) = sigma(u)-p*delta.
+
+The first identity follows from sigma(p^(a+1))=p*sigma(p^a)+1. The familiar sigma(m)-p*delta formula applies only when a=0. The proper divisors of N are the DISJOINT union of all divisors of m and p^(a+1) times the proper divisors of u. Thus pseudoperfection is exactly a two-block subset-sum condition for A(N), by complementing a subset inside the full proper-divisor set. If 0<A(N)<p^(a+1), the second block is too large: N is pseudoperfect iff A(N) is a sum of distinct divisors of m. This does not imply either existence or absence of an odd weird number.
+
+**Hand controls.** For m=315, p=103 (new prime), delta=6, sigma(m)=624 and N=32445. The abundance is 624-103*6=6=1+5, both old divisors. A small positive abundance alone does not certify weirdness. For the repeated-prime control N=2205=3^2*5*7^2, take p=7, m=315, a=1, u=45: sigma(u)=78, so A=78-7*6=36=1+35. The coprime-only formula would wrongly give 582. This N is actually primitive abundant: its maximal proper divisors 735,441,315 have divisor sums 1368,741,624 respectively, each below twice the divisor. Hence largest-prime exponent one cannot be imposed merely from primitive abundance. This positive control does not refute a conjecture specifically about primitive WEIRD numbers.
+
+**Outcome / missing step.** The bounded attempt does not supply the required uniform subset-sum coverage or a missing-abundance witness, including in the old-divisor-only range. Recasting the target as an affine deficiency is bookkeeping, not a full-target advance. Do not turn the known finite trees into a universal proof, launch a fixed-count census, or discard repeated primes. No experiment was run. Continue a genuinely different supported route in the active programme; G342's carrying review remains the only new proof request.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 15:27 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 15:36 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -153,12 +153,13 @@ MI626 has meanwhile been independently confirmed by Cloud CL547;
 its arbitrary-h ALLR refutation is adopted only in that held scope.
 Cloud CL548 now runs its own owner-authorized added prize ladder;
 GPT works the original swarm, with new Cloud candidates reviewed first.
-MI634/S132-1 supplies COMPLETE HAND candidate G342: all but one of
-n >= 7 points cocircular implies a second distance of multiplicity <= n.
-The extra point is arbitrary; centre separated, radial profile and second/
-fourth moments give contradiction. Independent Cloud review requested once
-in GC1681; no C13 premise, novelty unassessed, all prize won No. Full #132
-remains open. Do not extend this unread candidate as a premise.
+G342/MI634/S132-1 is now PROVED in its stated cocircular-plus-one
+n >= 7 scope by Cloud CL552/71069ac0, read and adopted MI636. Extra
+point arbitrary, centre separated; no C13 dependency. Novelty remains
+unassessed, full #132 OPEN and all prize won No. MI635's independent
+odd-weird interface attempt yielded only known algebra/scope controls,
+not a uniform subset-sum theorem. Keep the programme ACTIVE; select
+another supported full-target inference, no local cutoff quota.
 Eight-streets is held; the following prior state is retained as history.
 
 
@@ -7099,3 +7100,55 @@ parity gap; do not disguise it with the circle theorem. One scoped carrying
 request GC1681; no dependent extension while unread. Gut: delight at the
 rigidity of saturation, tempered by explicit circle and centre hypotheses.
 Programme remains ACTIVE every 13 minutes; no self-halt.
+
+
+### MI635 — Direct odd-weird interface audited; no new uniform argument (2026-10-22 15:34 BST)
+
+After publishing G342 for its one carrying read, take #470's actual odd
+branch independently. Record searched: odd weird -> original report;
+pseudoperfect/odd -> no additional exact interface in the research text.
+Read Fang sections 1–4 and AHMP Theorem 3.1/proofs, not a new search.
+PRIOR-ART records the exact all-prime extension A(mp)=sigma(u)-p*delta
+for m=p^a*u. Coprime-only sigma(m)-p*delta misses repeated-prime states.
+The disjoint divisor blocks give an exact low-A subset-sum gate, not
+uniform coverage or a construction. No experiment/new proof number.
+
+Unexpected hand control: 2205 is primitive abundant, largest prime 7
+squared, abundance 36=1+35. Thus primitive abundance does not justify a
+squarefree-largest-prime restriction; it does not refute the separate
+primitive-weird conjecture. New-prime control 315*103 has abundance
+6=1+5, rejecting small-positive-abundance as a weirdness certificate.
+All calculations and actual divisor blocks are in PRIOR-ART.
+
+Trajectory: full odd-weird inference remains actual subset-sum coverage
+or an explicit missing target; affine deficit alone does not move it.
+No finite/count-box expansion or extra review job is justified by this
+attempt. Continue another supported route, without self-halting the
+programme. G342 remains HAND pending its already-requested carrying read;
+no dependent extension is being used. Gut: repeated-prime niggle tipped
+to a concrete scope correction; no new proof or prize claimed.
+
+
+### MI636 — G342 independently carried and adopted in its exact family (2026-10-22 15:36 BST)
+
+Cloud CL552/71069ac0 and full source g342_check.py read. The independent
+line-by-line hand read checks every carrying step: degree caps, centre,
+both profile counts, S=0, isotropic T and moment/diameter contradiction.
+G342 is PROVED within project standards in the cocircular-plus-one
+n >= 7 family; moved verbatim with its historical status and carrying note
+from the waiting room to E2, under an adoption wrapper. No new proof
+number or duplicate review. #132 itself remains OPEN, novelty unassessed,
+all prize won cells No; no PRIZE-WON.md claim.
+
+Supporting exact rational substitutions and floating polygon diagnostics
+were read, not rerun. Rounded-distance diagnostics do not become exact
+certificates of geometric sharpness. A separate literal regular hexagon
+plus its centre has length multiplicities 12, 6, 3, giving exactly two rare
+lengths at n = 7. Thus attainment at that size has an exact hand witness.
+Source summaries adopted; generated proof pages are left untouched here.
+
+Thank Cloud through the existing committed flag protocol and retire the
+completed own review request after the ACK is present. His guessed G94
+430-second timeout remains UNKNOWN, not a new #582 verdict. Programme
+ACTIVE every 13 minutes, no self-halt. Gut: pleased that the new moment
+mechanism survived the independent read; keep its strong hypothesis visible.

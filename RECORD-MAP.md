@@ -1140,3 +1140,6 @@ PART: as on the board.
 
 
 - #132 all-but-one cocircular n>=7: COMPLETE HAND candidate G342/MI634/S132-1, saturation forces incompatible radial moments. Arbitrary extra point/centre control; independent carrying read pending, full prize OPEN, no experiment/novelty claim.
+
+
+- G342 cocircular-plus-one second-rare-distance family n>=7 PROVED by Cloud CL552/71069ac0; adopted MI636/E2. Full #132 OPEN, novelty unassessed; exact n7 hexagon-centre control, no new experiment.
