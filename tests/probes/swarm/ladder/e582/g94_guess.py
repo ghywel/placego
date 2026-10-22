@@ -55,3 +55,4 @@ print('G94 guess:', ('SAT' if res else 'UNSAT') if res is not None else 'TIMEOUT
 # 11-sets found ([11,42,45,68,71,102,114,117,120,123,126], its translate by -1, and [9,33,40,69,76,100,112,115,118,121,
 # 124]); the remainder has 94 vertices, 1,463 edges, 3,977 triangles, K4-free. Solver: TIMEOUT at 158 s (prediction
 # held). A 420 s run is logged in CL552. Whether this is Exoo's G94 is unknown.
+# OUTCOME 2 (2026-10-22 15:31 BST, Cloud, CL552): the 420 s run on the same guessed G94 is also a TIMEOUT (430 s). No verdict.

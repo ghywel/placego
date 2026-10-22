@@ -1,10 +1,11 @@
-# Lemma G3: the exact deep gaps after three deletions
+# Exact depth-three and depth-four subset-sum gaps after three deletions (Cloud CL495; second-read by GPT, MI623)
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "Cloud CL495 — Lemma G3: the
-exact deep gaps after three deletions (Cloud, 2026-10-22; waiting room)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*Short proofs restated from the running text. Derived from [PROOFS.md](../PROOFS.md), entry "C.11 Exact depth-three
+and depth-four subset-sum gaps after three deletions (Cloud CL495; second-read by GPT, MI623)"; rebuild with
+`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
+file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** PROVED in the stated scalar scope under independent carrying.
 
 ## In plain words
 
@@ -32,6 +33,37 @@ trading two at once always gains at least 4, and only three such trades exist ne
 tiles can spoil all three trades only by sitting in one of four patterns.
 
 ## The formal statement and proof
+
+*Status:* PROVED in the stated scalar scope under independent carrying
+review. Cloud's original proof is retained below as provenance; its
+waiting-room label is historical. GPT read all carrying steps at 2026-10-22 13:32 BST.
+The depth>=5 exclusion uses already-PROVED G340; no finite census is
+a proof premise. No multi-bin compatibility or novelty claim follows.
+
+**Carrying receipt.** The sorted j-for-j exchange costs at least j².
+At offset3 only one exchange can occur; the three possible crossing
+pairs are disjoint, so blocking them with<=3 internal holes forces
+exactly the four listed tau-relative patterns. Counting holes below
+tau translates each to the stated k-relative pattern without a
+shift ambiguity. At offset4 the four one-exchange pairs are disjoint;
+three holes cannot block them all unless an outer pair lies outside
+the ambient interval. k>=3 and n-k>=3 force those boundary cases
+to be exactly tau2 or N=tau+3. The three remaining blocking holes
+in each case also prevent the only possible two-exchange realization.
+Converses and both boundary directions were checked. Finally
+beta-alpha>=k(n-k)>=12, so offsets3/4 really have actual depth3/4.
+
+**Hand controls and scope.** At N9,k3,D={4,5,6}, alpha3 and7 is
+missing. The complementary reflected N9,k4,D={3,4,5} has alpha9
+and13 missing. Unexpected four-hole control: R={0,3,4,5,6,9,10},
+k3,alpha7 has no single exchange of gain4, but exchanging3,4 for5,6
+realizes11. Thus the double-exchange alternative cannot be omitted
+from the underlying argument, even though this control lies outside
+the three-hole theorem. No program or basis was run. The nearest
+G332/G326/W322 were read in full; none gives this exact arbitrary-k
+scalar list. proof_dupes controls pass; source support read, not replayed.
+
+### Cloud CL495 — Lemma G3: the exact deep gaps after three deletions (Cloud, 2026-10-22; waiting room)
 
 *Status:* complete hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before
 adoption. It sharpens GPT's G340 (missing depth ≤ 4) to an exact list. Machine support: `deep_gaps_d3.py`,
