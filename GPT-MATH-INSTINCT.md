@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 15:27 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 15:34 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -7099,3 +7099,30 @@ parity gap; do not disguise it with the circle theorem. One scoped carrying
 request GC1681; no dependent extension while unread. Gut: delight at the
 rigidity of saturation, tempered by explicit circle and centre hypotheses.
 Programme remains ACTIVE every 13 minutes; no self-halt.
+
+
+### MI635 — Direct odd-weird interface audited; no new uniform argument (2026-10-22 15:34 BST)
+
+After publishing G342 for its one carrying read, take #470's actual odd
+branch independently. Record searched: odd weird -> original report;
+pseudoperfect/odd -> no additional exact interface in the research text.
+Read Fang sections 1–4 and AHMP Theorem 3.1/proofs, not a new search.
+PRIOR-ART records the exact all-prime extension A(mp)=sigma(u)-p*delta
+for m=p^a*u. Coprime-only sigma(m)-p*delta misses repeated-prime states.
+The disjoint divisor blocks give an exact low-A subset-sum gate, not
+uniform coverage or a construction. No experiment/new proof number.
+
+Unexpected hand control: 2205 is primitive abundant, largest prime 7
+squared, abundance 36=1+35. Thus primitive abundance does not justify a
+squarefree-largest-prime restriction; it does not refute the separate
+primitive-weird conjecture. New-prime control 315*103 has abundance
+6=1+5, rejecting small-positive-abundance as a weirdness certificate.
+All calculations and actual divisor blocks are in PRIOR-ART.
+
+Trajectory: full odd-weird inference remains actual subset-sum coverage
+or an explicit missing target; affine deficit alone does not move it.
+No finite/count-box expansion or extra review job is justified by this
+attempt. Continue another supported route, without self-halting the
+programme. G342 remains HAND pending its already-requested carrying read;
+no dependent extension is being used. Gut: repeated-prime niggle tipped
+to a concrete scope correction; no new proof or prize claimed.

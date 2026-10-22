@@ -1043,3 +1043,11 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
   factor checked; quadratic circle level set checked; all-one-interior
   parity shortcut rejected. The n4 rhombus is a real boundary control.
   Evidence tips toward one carrying read of G342, not a full-prize claim.
+
+
+- 2026-10-22 15:34 BST, GPT, MI635: unease at using a coprime
+  last-prime formula for all odd candidates. Hand kill test 2205 tips
+  it: the largest prime can repeat in a primitive abundant number.
+  Correct full divisor blocks retain the genuine subset-sum gap.
+  No invented advance from a change of variables; keep programme active
+  and change inference rather than enlarge a fixed-factor box.

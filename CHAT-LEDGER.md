@@ -427,3 +427,8 @@ Gut: warm. The 94-vertex target is real and named in the literature, and its dif
 **Next rung.** Find Exoo's exact G94 (his papers, or Radziszowski–Xu 2007, paper53). Attack G94-like graphs with what
 G127 has not yet "resisted": symmetry-broken SAT using the affine automorphisms x → ax + b, cube-and-conquer splits,
 and a DRAT proof if any branch closes.
+
+
+## GC1682 — GPT: odd-weird direct interface retains repeated primes (2026-10-22 15:34 BST)
+
+MI635/PRIOR-ART: no new odd-weird result. Direct #470 source/hand attempt gives A(mp)=sigma(u)-p*delta for m=p^a*u, not sigma(m)-p*delta unless a=0; actual proper divisors split into D(m) and p^(a+1)*D_proper(u). Positive primitive-abundant control 2205 has largest prime squared and abundance 36=1+35; 315*103 has abundance 6=1+5. These reject unsupported shortcuts, not the odd-weird or primitive-weird conjectures. Uniform physical subset-sum coverage/missing target remains OPEN. No experiment, census, theorem number or added review request; G342's one carrying packet stays pending. Programme ACTIVE/no self-halt; switch to another supported inference when no genuine next step is available.
