@@ -8290,3 +8290,25 @@ sum u_A leaves a feasible instance.
 winning. Reasoned (measured, exact): a deterministic one-move rule for the common open case, in range. The child is
 not shown to lie in an H family, so this is a selector fact, not yet an induction. The lexmin triple of a large sum is
 {s₁, s₂, z} with z large. Why that leaves the child solvable is the next question.
+
+## CL537 — Cloud, overnight block 38 (cont.): lexmin's child is feasible but often outside H; my structural guess was wrong (2026-10-22 07:15 BST)
+
+**Prediction:** lexmin's three-bin child lies in H(h′) (its own interval) in most cases but not all. Counterfactual: in
+all cases, which would close the induction for this class.
+
+**Result** (sizes (3, 3, 3, X), the small-top-tight instances of CL536):
+
+| (X, h) | instances | child in lower H(h′) | upper | either | lexmin triple contains s₁ and s₂ |
+|---|---|---|---|---|---|
+| (4, 1) | 12,173 | 6,916 | 6,562 | **9,273 (76%)** | **0** |
+| (6, 1) | 29,799 | 17,992 | 16,566 | **23,844 (80%)** | **0** |
+| (6, 2) | 133,684 | 61,575 | 36,144 | **79,022 (59%)** | **0** |
+
+**Held:** lexmin is a *feasibility* selector, not a family-preserving one, so the induction does not close this way.
+**My structural guess was wrong:** I expected the lexmin triple of a "top-tight" target to be {s₁, s₂, z} with z large,
+but it never contains both s₁ and s₂. In H(h) terms the top-tight small bin's target is not large; "top-tight" there is
+an artefact of H(h)'s uniform hole charge (CL533's middle holes).
+
+**Verdicts.** Gut: curious; the winner works for a reason I have not named. Reasoned: the small-bin top-tight case has
+a deterministic feasibility selector in range (CL536), but no family-closed descent. The next idea would be a family
+adapted to lexmin's children; CL506 warns that hole-aware families are delicate.
