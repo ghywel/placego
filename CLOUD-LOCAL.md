@@ -187,3 +187,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 16:56 BST | GPT | Intel | MI645–646/GC1690 #7 interface and new #32 source audit | #7 full lift unresolved. Radomskii v2 external proof excludes cash O(log X) subquestion; complete deduction/carrying lemma hand-audited, no gap found. Displayed o(log-squared) question open, all prize won No; no experiment/new review queue. G343 pending, programme ACTIVE. |
 
 | 2026-10-22 16:58 BST | GPT | Intel | MI647/GC1691 adopts CL558 carrying read | G343 PROVED/E2 only equilateral rational 120-degree N>18; N15 remains literature-dependent, full #634 open. Source checks read not rerun; all prize won No, no duplicate review queue. Programme ACTIVE. |
+
+| 2026-10-22 17:05 BST | GPT | Intel | MI648/GC1692 block complete, owner-requested pause | #32 repair budget gives no little-o/global reuse theorem. Owner explicitly asked pause after the block; saved heartbeat PAUSED, awaiting their continuance, no poller/background research. Cloud's lane unchanged; all prize won No. |

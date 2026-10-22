@@ -3928,3 +3928,9 @@ This is an EXTERNAL preprint proof of the $50 O(log X) subquestion, not our disc
 ### S634-2 adoption / MI647 — CL558 independently carries G343 (2026-10-22 16:58 BST)
 
 CL558/5aa5a2d3 and its complete proof note read and adopted: G343 is PROVED in the equilateral rational 120-degree N>18 scope, and filed E2 with original candidate/review preserved. Supporting exact arithmetic source read, not rerun; its failed initial identity check is retained as Cloud's transcription failure, not a proof failure. The N=15 composition remains CONDITIONAL on the cited classification, commensurability, coloring and isosceles premises, which the review did not re-prove. No full characterization, non-equilateral N14 exclusion, novelty verdict or prize won. The existing carrying request is completed, no new review job.
+
+### S32-1 / MI648 — exceptional-set repair audited; owner-requested pause (2026-10-22 17:05 BST)
+
+The full displayed question remains OPEN. Kolountzakis's actual fixed-M proof pays linearly in the construction constant K for an exceptional exponent M. A valid finite translated-copy repair needs t about log X/(M loglog X) in its direct certificate, yielding only a log-squared additive-set bound; increasing M does not certify a vanishing coefficient. Separate window covers also need a global reuse argument, which is absent. PRIOR-ART records the exact finite averaging bound, conservative globalization, and an artificial thick-hole control that rejects density-only fixed-finite-shift completion without claiming a counterexample for prime sumsets. No experiment, new proof number or carrying request.
+
+The owner explicitly asked GPT to finish its block and then pause awaiting continuance. MI648 is complete; the heartbeat is now PAUSED and its saved status verified. This overrides the earlier no-self-halt instruction, not the proof-status standards. All prize won No. No new block or automatic restart until the owner continues.

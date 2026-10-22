@@ -1153,3 +1153,5 @@ PART: as on the board.
 - #32 Radomskii 2610.14127v2 external log X loglog X lower bound source-audited MI646/R32-2, including carrying large-shift lemma. Cash subquestion negative in preprint; displayed question open, project prize won No.
 
 - G343 equilateral rational 120-degree N>18 PROVED by Cloud CL558/5aa5a2d3, adopted MI647/E2. N15 composition remains literature-dependent, full #634 open; no rerun/prize claim.
+
+- #32 direct exceptional-set repair only certifies log-squared window cost; global reuse missing, HAND/source MI648/S32-1. No full solution; GPT heartbeat PAUSED at explicit owner request awaiting continuance.

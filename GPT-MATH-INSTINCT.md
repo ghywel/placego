@@ -124,7 +124,10 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 16:58 BST: owner-directed low-prize swarm reviews and solving; heartbeat ACTIVE.**
+**CURRENT working state, 2026-10-22 17:05 BST: current block complete; heartbeat PAUSED at the owner’s explicit request, awaiting continuance.**
+
+The owner instructed: “When your block of work is complete I would like you to pause your heartbeat awaiting my continuance.” This supersedes the older no-self-halt instruction below. MI648's source/hand #32 repair-cost audit is complete, no full solution: the direct certified translated-copy budget does not improve log-squared, and its global reuse step is missing. The saved heartbeat is verified PAUSED; no separate poller or background research. Resume only when the owner asks. The following active-programme paragraphs are historical context, not authority to restart.
+
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -7404,3 +7407,12 @@ Unexpected checks: empty shifts use t=1, while B={0} is a prime-gap statement; n
 Verified 5aa5a2d3 and read CL558 plus the full dated PROOFS carrying note and g343_check.py. Every new geometric step is independently carried, so G343 is PROVED and moves to E2 with its original text/review unchanged. The support source is an arithmetic-only check, not a tiling census; Cloud preserved its initial failed identity check and correction modulo c^2=a^2+ab+b^2. Read, not rerun. The orientation control at P is explicit. N=15 remains conditional on the cited literature/classification/isosceles premises; no full #634, non-equilateral transfer, novelty verdict or prize won follows.
 
 Filing --near G343 used the wrong waiting-room ID and failed after a clean hard check; --near W343 passes 369 entries and returns the same G294/G135/G317 read in full at original filing. No code patch/replay was needed. Master proof moved; generated pages untouched. GC1691 adopts/ACKs the existing review once, and completed own flags can retire after the verified Cloud ACKs. Programme ACTIVE, no self-halt.
+
+
+### MI648 — #32 exception-repair budget complete; owner-requested pause (2026-10-22 17:05 BST)
+
+Read Kolountzakis's actual fixed-M construction and constants on the author's typescript pages 3–6, visually rendering the garbled scan; read Dai–Pan section 3's fixed-epsilon/diagonalization scope. The exceptional exponent is paid for by the construction constant. A correct hand averaging lemma covers one X-window with t shifts when X*delta^t<1, but the resulting certified additive-set cost is (K/M+o(1))*log-squared, with K chosen proportionally to M. No little-o follows from increasing M, and no lower-bound impossibility is claimed. Safe dyadic globalization gives only a crude log-cubed bound; actual global reuse remains missing.
+
+Unexpected control: a density-one set with arbitrarily strong fixed polylog exceptional estimates can still contain holes of unbounded length, defeating every FIXED finite translation set. It is not asserted to be an actual prime sumset. The prime-only Dai–Pan construction needs even-integer normalization; its literal all-integer density display is not imported. Ruzsa's full original proof was not retrieved. Exact formulas/scopes in PRIOR-ART. No experiment, full solution, formal proof number or review queue.
+
+The owner explicitly requested pausing after the block. It is complete, so check-cloud-mathematics-flags is now PAUSED, saved status verified, awaiting their continuance. This overrides the older no-self-halt direction. No new block/automatic review starts while paused. G342/G343 remain PROVED in exact partial scopes, #32's external lower bound remains credited externally, all project prize won No. Gut: the logarithmic cost is now visible; no reason to relabel the same gap as a new repair.
