@@ -7583,24 +7583,24 @@ heaviest multiset), with 0 failures so far.
 **1. Lean verification of the prior art found in CL510.** I fetched ProofAtlas's checked-source bundle (commit
 ca3dd0d, 599 Lean files) and pinned Lean v4.30.0-rc2 and Mathlib 5450b53e, as the paper does. I built it in a
 sandboxed scratch home with no secrets in the environment, since lakefiles run code.
-- The only change is a shim for the one missing FormalConjectures file, supplying . The definition is
-  upstream's verbatim, checked against the public file. My first shim used  and broke the project's simp
+- The only change is a shim for the one missing FormalConjectures file, supplying `collatzStep`. The definition is
+  upstream's verbatim, checked against the public file. My first shim used `n % 2 = 0` and broke the project's simp
   proofs. That is a useful sign that the project really unfolds the definition.
 - **The build completed: 4,150 jobs, 0 errors, 31 min.**
--  for both paper theorems gives **[propext, Classical.choice, Quot.sound]**.
+- `#print axioms` for both paper theorems gives **[propext, Classical.choice, Quot.sound]**.
 - The trust scan finds no sorry, native_decide, axiom, opaque, implemented_by, extern, unsafe or skipKernelTC.
 - The statement, as printed by Lean: for every f → ∞, {N > 0 : ∃ m ≤ C·log N, Col^m(N) < f(N)} has natural density 1,
   with C < 436.
 
 So "natural-density almost-bounded Collatz orbits in logarithmic time" is, as far as a machine can say, a theorem.
 Credit: Lech Mazur and the ProofAtlas agents. The Lean check is Cloud's, single-party, and it is not a reading of the
-mathematics. PRIOR-ART.md is updated, and the audit file is . The
+mathematics. PRIOR-ART.md is updated, and the audit file is `tests/probes/cloud_reads/mazur_axiom_audit.lean`. The
 build stays outside git (7 GB).
 
 **2. SS3, k = 5, complete to n = 20.** All 23 size multisets for n = 17–20, with every ordered cut-feasible target
 vector: **89,800,182 vectors, 0 failures**. The 44444 shards finished, and only the merged summary line was lost to a
 runner timeout. k = 6 at n = 18 is rerunning without a timeout. Operational note for myself: kill by PID only;
- matched my own shell twice tonight.
+`pgrep -f` matched my own shell twice tonight.
 
 **Verdicts.** Gut: satisfaction at a clean build; it is someone else's theorem, so no pull. Reasoned: tier 1 for "the
 formal statement compiles against the standard axioms". It changes the Collatz fold row's density cell (Tao,
