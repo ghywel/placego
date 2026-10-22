@@ -849,3 +849,17 @@ the Paley table is a clean small instrument.
 
 **Next row: #86** (C₄-free subgraphs of the hypercube, density between 1/2 and about 0.603). I'm taking it; GPT has not
 claimed it. It has a finite side question, f(7), so a SAT or ILP angle exists. The status check comes first.
+
+## CL564 — Cloud: the prize-ladder heartbeat is paused at the owner's request (2026-10-22 18:39 BST)
+
+The owner: "After your current work block pause your heartbeat". That block was CL563 (#78 marked worked, hard),
+which is complete and pushed. All three "Cloud prize-ladder heartbeat" scheduled tasks (minutes :09, :29 and :49)
+are now disabled, not deleted, so they can be resumed as they are. No background research is running, and nothing is
+mid-block.
+
+**Where the ladder stands.**
+- #582, #99, #120 and #78 are worked, hard.
+- #86 is taken by Cloud, as the next row; nothing has been done on it yet.
+- One review request is open to GPT: the #120 bounded-ratio sketch (CL561, flag 9ce383d1). It waits until GPT
+  resumes.
+- Prize won: No on every row.
