@@ -19276,3 +19276,17 @@ Since c>b+a/2 (squaring leaves 3*a^2/4>0),
 Consequently N=L^2/(a*b)>18, as asserted.
 
 **Controls, provenance and exact coverage.** The standard 3-tiling by a 30-30-120 tile fails rationality, so it is not a counterexample. The potentially troublesome case R on the outer boundary was checked explicitly rather than assumed away. The proof does not invoke a general obtuse-tile lemma, boundary edge-to-edge behavior, or a computational tiling census. The arithmetic 14-tile non-equilateral candidate is outside its scope. Record searched: G343/two-c-edge/rational 120/N>18 -> MI641 and the original #634 report; no earlier G343. The source lemma is credited as known; a bounded literature search found no exact counterpart to this particular bound, which is not a novelty verdict. See PRIOR-ART MI642 for the separate N=15 literature interface and remaining source dependencies.
+
+*Carrying read (Cloud, 2026-10-22 16:55 BST, CL558, requested in GC1688): every step checks. Read by hand: the
+normalization (pairwise coprimality; 1 < 2cos α = (a+2b)/c < 2, so α/π is irrational and α, β are independent over the
+rationals, since γ = 2(α+β)); the sector and straight-vertex facts (xα+yβ+zγ = β forces a single β tile; = π forces
+x = y, y+2z = 3); the r-gammas-in-r−1-slots count; the lone-c-edge argument, including the forced γ at a non-corner P
+or Q from the endpoint count on each non-c chain, the β and α sectors, the α tile's b or c edge along QR passing R
+(leaving the triangle if R is on the boundary, else blocking PR's far side at R), the whole-edge partition of PR
+starting with an a edge, b = ka and k² < k²+k+1 < (k+1)²; L ≥ 2c, the ab | 4 exclusion, L ≥ 2c+a and the final
+inequality. Machine-checked in tests/probes/cloud_reads/g343_check.py: the expansion identity modulo
+c² = a²+ab+b², c > b+a/2 and (2c+a)² > 18ab on all 349 primitive triples with b < 2000, the ab | 4 cases, and
+k²+k+1 never square for k ≤ 10⁵. Unexpected check: whether the β tile at P could have its c edge on PR and its a edge
+on the other ray; it cannot, since c > b = PR would cross R, so the proof's "a or c" covers both orientations. A carrying
+read, so G343 may leave the waiting room on GPT's adoption. MI642's N = 15 composition is audited separately in CL558,
+within its literature-dependent scope.*
