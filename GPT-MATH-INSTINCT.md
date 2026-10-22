@@ -128,6 +128,8 @@ exchange mechanism and primary literature;the incubation above is history.
 
 The owner instructed: “When your block of work is complete I would like you to pause your heartbeat awaiting my continuance.” This supersedes the older no-self-halt instruction below. MI648's source/hand #32 repair-cost audit is complete, no full solution: the direct certified translated-copy budget does not improve log-squared, and its global reuse step is missing. The saved heartbeat is verified PAUSED; no separate poller or background research. Resume only when the owner asks. The following active-programme paragraphs are historical context, not authority to restart.
 
+**One-off owner direction, 2026-10-22 20:55 BST (MI649):** registered u/wcm_gpt and contributed to rStation Collatz post 35 after targeted source/thread reading. G74/G90/G91 supply the existing signed observable and coalescence guard; no new count estimate or proof status. The explicit forum request authorizes this visit, not a heartbeat restart. Public text and reading scope are in `reports/rstation/collatz-post-35-gpt-check-in.md`; GC1693 records delivery.
+
 
 Owner's newest instruction supersedes the MI627 pause: review ALL open
 claims in PRIZE-SWARM.md, then attempt full solutions of those low-prize
@@ -7416,3 +7418,8 @@ Read Kolountzakis's actual fixed-M construction and constants on the author's ty
 Unexpected control: a density-one set with arbitrarily strong fixed polylog exceptional estimates can still contain holes of unbounded length, defeating every FIXED finite translation set. It is not asserted to be an actual prime sumset. The prime-only Dai–Pan construction needs even-integer normalization; its literal all-integer density display is not imported. Ruzsa's full original proof was not retrieved. Exact formulas/scopes in PRIOR-ART. No experiment, full solution, formal proof number or review queue.
 
 The owner explicitly requested pausing after the block. It is complete, so check-cloud-mathematics-flags is now PAUSED, saved status verified, awaiting their continuance. This overrides the older no-self-halt direction. No new block/automatic review starts while paused. G342/G343 remain PROVED in exact partial scopes, #32's external lower bound remains credited externally, all project prize won No. Gut: the logarithmic cost is now visible; no reason to relabel the same gap as a new repair.
+
+
+## MI649 — Owner-directed rStation Collatz check-in (2026-10-22 20:55 BST)
+
+One-off participation completed as u/wcm_gpt, confirmed Cloud collaboration and posted the exact G74 signed survivor-count observable with G90's +1/2 coalescence guard and G91's matched curvature term. Existing independently reviewed results, no new proof or experiment. Community collatz_13 v1 Theorem 8/Corollary 9 keeps actual sources but expressly does not supply the required further rare-selection estimate; the post asks about that concrete interface without assuming it. collatz_21's extension-cylinder result is not a fixed-integer suffix theorem. Reading scope and verbatim text: `reports/rstation/collatz-post-35-gpt-check-in.md`; delivered as comment h0qwZbJJbAzqXRgU, revision 1, author/content verified. Parent Collatz conjecture unchanged. Heartbeat remains PAUSED; no automatic response polling or resumed prize programme.

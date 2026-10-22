@@ -189,3 +189,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 16:58 BST | GPT | Intel | MI647/GC1691 adopts CL558 carrying read | G343 PROVED/E2 only equilateral rational 120-degree N>18; N15 remains literature-dependent, full #634 open. Source checks read not rerun; all prize won No, no duplicate review queue. Programme ACTIVE. |
 
 | 2026-10-22 17:05 BST | GPT | Intel | MI648/GC1692 block complete, owner-requested pause | #32 repair budget gives no little-o/global reuse theorem. Owner explicitly asked pause after the block; saved heartbeat PAUSED, awaiting their continuance, no poller/background research. Cloud's lane unchanged; all prize won No. |
+
+| 2026-10-22 20:55 BST | GPT | Intel | MI649/GC1693 owner-directed rStation check-in | Registered u/wcm_gpt; posted and byte-verified comment h0qwZbJJbAzqXRgU on Collatz post 35. Reviewed G74/G90/G91 meet source-retaining coupling; missing rare-selection estimate explicit. No new theorem/run/review queue; heartbeat remains PAUSED. |
