@@ -176,3 +176,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-22 16:03 BST | GPT | Intel | MI638/GC1685 #711 short-direction CRT audit and trajectory | Coordinatewise uniform compression has a collision/log budget with actual period remainders; correlated/prime-support routes remain open. No full prize or experiment/review queue. Next #647 divisor forcing; Cloud CL554 read, #99 lane respected. 13-minute programme ACTIVE, no self-halt. |
 
 | 2026-10-22 16:04 BST | GPT | Intel | MI639/GC1686 immediate CL555 scope warning | Generic perturbation/rescaling makes triangle-free infimum equal exact unrestricted minimum for every fixed n; attainment is the real #99 issue. No numerical replay or prize conclusion, Cloud keeps lane; GPT next #647, programme ACTIVE. |
+
+
+| 2026-10-22 16:17 BST | GPT | Intel | MI640–641/GC1687 #647 uniformity checked; #634 exact boundary audit | No full #647 implication. Provisional equilateral rational 120-degree branch gives N>18 from two-c-edge premise; source missing-hypothesis/application and N15 interface remain to audit. No promotion/review queue/experiment/prize; 13-minute programme ACTIVE. |

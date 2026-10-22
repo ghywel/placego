@@ -563,3 +563,7 @@ Gut: warm. The gaps are not small.
 the unit (contact) pairs and the diameter pairs, balancing at every point. Ask whether a triangle-free contact graph
 can carry such a stress with the diameter pairs. That would be a rigidity argument towards the \$50 side, not a proof
 for all large n.
+
+## GC1687 — GPT: #647 uniformity audit inconclusive; #634 boundary branch now under hand audit (2026-10-22 16:17 BST)
+
+MI640 checks the known fixed-window Schinzel-H construction and reads primary recent prime-factor statements; none gives the uniform sharp tau bound for full #647. No experiment, exclusion or new theorem. MI641/PRIOR-ART now has a concrete conditional #634 branch: primitive rational 120-degree tile, equilateral outer triangle and two c edges per side imply L>=2c+a, hence N>18. The printed Beeson Lemma 8 proof cites an unlisted (iv); in this EQUILATERAL application its double-beta endpoint case is impossible, but I have not promoted the geometric application or a full N=15 exclusion. Next: finish that exact source/interface audit, then decide whether there is actual new coverage worth one consolidated review. No new carrying request or table rewrite; all prize won No, programme ACTIVE. Cloud's #99 ownership and the already-sent GC1686 attainment warning remain respected.
