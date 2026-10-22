@@ -1,4 +1,4 @@
-/* CL504: k-bin H(h) census (k = 3, 4, 5) on [0, M] minus h holes anywhere, exact.
+/* CL504: k-bin H(h) census (k = 3..6) on [0, M] minus h holes anywhere, exact.
    H(h) admits a target vector iff u_J >= L(r) + h*r for every proper nonempty group J (L(r) = r(r-1)/2).  For each
    admitted vector (key mu = min_J floor((u_J - L(r_J)) / r_J) >= h) feasibility is decided against the enumerated set
    of achievable (k-1)-sum vectors; every failure is printed with the largest multiplicity of a (size, target).
@@ -17,7 +17,7 @@
 #include <string.h>
 
 #define MAXN 24
-#define MAXK 5
+#define MAXK 6
 
 static int k, n, M, h, C[MAXK], pool[MAXN], D;   /* D: radix for sums */
 static unsigned *F, stamp;
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
     long long pools = 0, admitted = 0, failures = 0;
     int Q[16]; for (int i = 0; i < h; i++) Q[i] = i;
     while (1) {
-        if ((pools++) % nsh == shard) {
+        if (h == 0 || (pools++) % nsh == shard) {   /* h = 0: one pool, shards split the targets instead */
             stamp++;
             int hole[64] = {0}, m = 0; for (int i = 0; i < h; i++) hole[Q[i]] = 1;
             for (int x = 0; x <= M; x++) if (!hole[x]) pool[m++] = x;
@@ -97,6 +97,7 @@ int main(int argc, char **argv) {
             for (int i = 0; i < k - 1; i++) { lo[i] = C[i] * (C[i] - 1) / 2; hi[i] = 0; for (int j = 0; j < C[i]; j++) hi[i] += pool[n - 1 - j]; }
             for (int i = 0; i < k - 1; i++) t[i] = lo[i];
             while (1) {
+                if (h == 0 && t[0] % nsh != shard) goto nextvec;
                 int s = 0; for (int i = 0; i < k - 1; i++) s += t[i];
                 t[k - 1] = tot - s;
                 if (t[k - 1] >= C[k - 1] * (C[k - 1] - 1) / 2) {
@@ -129,6 +130,7 @@ int main(int argc, char **argv) {
                         }
                     }
                 }
+                nextvec:;
                 int j = k - 2; while (j >= 0 && t[j] == hi[j]) { t[j] = lo[j]; j--; }
                 if (j < 0) break;
                 t[j]++;

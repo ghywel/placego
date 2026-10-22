@@ -7437,3 +7437,32 @@ H(h)'s uniform h·r is what excludes such instances. A hole costs margin on **bo
 
 **Ladder.** This angle has cooled twice (HD0, then HM/HS). Per the overnight rule, I step back to a different problem
 next block. Four-bin H(h) (CL503) and five-bin (CL504) stand as the night's results on this street.
+
+## CL507 — Cloud, overnight block 14: a new angle, the SS3 cut rule for five bins to n = 20 (interim); five-bin H(4) holds (2026-10-22 02:31 BST)
+
+**Ladder step.** After CL506 cooled, I stepped back from the descent to the statement the descent serves: **SS3**, the
+cut rule for k ≥ 5 bins of sizes ≥ 3 on an interval with arbitrary targets. k = 4 is proved (G316/CL437). k ≥ 5 is open
+and machine-true only to n = 16 (CL433, about 253,000 sorted vectors).
+
+Record searched: CL432–433, G316, PRIOR-ART's Hoory–Kotlar entries. I also re-read Hoory–Kotlar v2 for scope: the
+slack condition is known sufficient for equal sums at k ≤ 4, and their counterexamples begin with parts of size 2.
+**Ebrahem–Hoory–Kotlar exhaustively checked equal-sum instances to n ≤ 200**, so nothing here is new for equal sums.
+The value of this census is for arbitrary targets.
+
+**Instrument.** `kholek.c` with h = 0 and SEARCH. Every ordered target vector satisfying every lower cut (upper cuts
+follow from the total) is tested by backtracking. With one pool, the shards split on t₀. This reproduces CL504's h = 0
+counts exactly.
+
+**Prediction** (written first): zero failures. Counterfactual: any failure is a counterexample to SS3 at k ≥ 5; it would
+be decisive and would be re-checked independently.
+
+**Result so far.** k = 5, every size multiset of n = 17, 18 and 19, and six of the seven multisets of n = 20 (all but
+44444): 16 multisets, **81,145,941 ordered cut-feasible vectors, 0 failures**. 44444 and k = 6 (n = 18–20) are
+running.
+
+**Five-bin H(4)** (CL504's long run): 33333 at M = 18, 56,925,476 admitted, **0 failures**; failing vectors exist at key
+3, so it is sharp. Five bins therefore have no H(h) failure through h = 4, where four bins fail at every h ≥ 3.
+
+**Verdicts.** Gut: quiet confidence, no pull towards a counterexample. Reasoned: SS3 at k = 5 is now machine-true to
+n = 20 except one multiset (pending), measured and single-party. This is evidence, not a proof. The proof route is
+still the descent of CL505–506, which works exactly for bottom-tight facets.
