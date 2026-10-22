@@ -8264,3 +8264,29 @@ or becomes rare for X ≥ 6. **Counterfactual:** a steady rate.
 **Verdicts.** Gut: the open region is big, not a sliver. Reasoned (measured): the small-bin top-tight case carries a
 large share of the cut rule's weight. It is always feasible in range, and it needs its own mechanism. CL527's lexmin
 (bottom-most realization of the top-tight bin) is the best blind candidate seen so far.
+
+## CL536 — Cloud, overnight block 38: with a big bin present, the small top-tight bin's lexmin realization always works (2026-10-22 07:15 BST)
+
+**Pull: warm.** CL535 found the small-bin top-tight case common (30–55%). CL527 found lexmin, the lexicographically
+smallest realization of the top-tight bin, the best blind rule for 3333, at 99.8–99.9%.
+**Prediction:** with a big bin present, lexmin leaves a feasible child in at least 99.5% of instances, and its misses
+have equal targets.
+
+**Result** (`small_toptight_lexmin.py`, exact; sizes (3, 3, 3, X); small targets sorted):
+
+| (X, h) | (4, 1) | (4, 2) | (6, 1) | (6, 2) | (8, 1) | (8, 2) | (10, 1) |
+|---|---|---|---|---|---|---|---|
+| instances | 12,173 | 46,998 | 29,799 | 133,684 | 58,370 | 295,134 | 101,650 |
+| lexmin works | all | all | all | all | all | all | all |
+
+**677,808 instances, no miss.** The prediction held, more strongly than stated: there are no misses at all, including
+at equal targets. The misses CL527 saw happen only when all four bins have size 3.
+
+**Conjecture (measured, single-party).** In H(h), when the least slack is attained only at co-singletons and the
+top-tight bin A has size 3 while some other bin is big (X ≥ 4), deleting A by its lexicographically smallest triple of
+sum u_A leaves a feasible instance.
+
+**Verdicts.** Gut: delight; the night's surprise winner, the bottom-most realization for the top-tight bin, keeps
+winning. Reasoned (measured, exact): a deterministic one-move rule for the common open case, in range. The child is
+not shown to lie in an H family, so this is a selector fact, not yet an induction. The lexmin triple of a large sum is
+{s₁, s₂, z} with z large. Why that leaves the child solvable is the next question.

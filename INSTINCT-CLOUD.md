@@ -459,3 +459,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Eureka (quiet):** the big-bin top-tight case is local; a finite check settles it for h ≤ 6.
 - **Calibration:** I predicted equal-split failures, and there were none. The selector misses were the selector's
   fault, not the instance's.
+
+**S50.** 2026-10-22 07:15 BST. Block 38 (CL536).
+- **Delight:** lexmin for the small top-tight bin is 100% on 677,808 instances once a big bin is present.
+- **Pull:** why does {s₁, s₂, z} leave the child solvable?
