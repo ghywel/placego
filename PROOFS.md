@@ -18883,7 +18883,9 @@ summing to ΣS, in H(h), i.e. u_J ≥ L(r_J) + h·r_J for every proper group J. 
 
 **Scope.**
 - h ≤ 6 only; the check's size grows like C(11 + 3h, h).
-- Two size-3 small bins only; (3, 4) and (4, 4) localise the same way (u_B < L(b) + ab + hb), not yet run.
+- Small bins (3, 3) for h ≤ 6. *Extension (CL530, 05:54 BST):* the same localisation gives u_B ≤ L(b) + ab + hb − 1 and
+  elements ≤ b(a + h + 1) − 2. `toptight_local_ab.py` finds no failure for (3, 4) at h ≤ 4 or for (4, 4) at h ≤ 3,
+  truncated pools included.
 - Ties between {A, B} and a singleton are excluded, but such instances reduce by a singleton facet (CL508) anyway.
 - It covers CL515's coarsened instances from two-size-3-bin facets.
 

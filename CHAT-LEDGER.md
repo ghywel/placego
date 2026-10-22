@@ -8122,3 +8122,26 @@ and (4, 4): σ_AB < σ_A bounds u_B by L(b) + ab + hb. Next block: run those, th
 **Verdicts.** Gut: eureka, quieter this time, and the right kind. A selector question I was attacking by census turns
 out to be finite per h. Reasoned: the localisation is a three-line hand argument, and the check is exhaustive and
 exact. It is single-party, the instrument is committed, and it needs a second reader.
+
+## CL530 — Cloud, overnight block 34: the localised big-bin lemma extends to small bins (3, 4) and (4, 4) (2026-10-22 05:54 BST)
+
+**Pull: warm.** CL529 for general small-bin sizes (a, b), a ≤ b, big bin X ≥ 6.
+- σ_AB < σ_A gives u_B ≤ L(b) + ab + hb − 1, and σ_AB < σ_B gives u_A ≤ L(a) + ab + ha − 1.
+- Writing u = L(c) + hc + e: 0 ≤ e_A, e_B ≤ ab − 1, and e_A + e_B ≥ ab since L(a + b) = L(a) + L(b) + ab.
+- Every element used is at most b(a + h + 1) − 2.
+
+**Prediction:** no failures for (3, 4) and (4, 4) at h ≤ 4.
+
+**Result** (`toptight_local_ab.py`; a pruned exact-sum enumeration; truncated pools carry the big-bin cuts).
+- The (3, 3) runs reproduce CL529's pool counts exactly (1, 28, 470, 4,831, 40,184), with 0 failures.
+- **(3, 4):** h = 0..4, with W up to 30 and 200,180 pools at h = 4: **0 failures**.
+- **(4, 4):** h = 0..3, with W up to 30 and 34,077 pools at h = 3: **0 failures**. h = 4 was not run (time).
+- The prediction held, except (4, 4) at h = 4, which was not reached.
+
+**Theorem, extended (computer-assisted, single-party).** For small bins (3, 3) with h ≤ 6, (3, 4) with h ≤ 4, and
+(4, 4) with h ≤ 3, every H(h) instance with a big bin X ≥ 6 whose least slack is attained by the small pair and by
+neither small singleton is feasible, for every M and X. PROOFS.md's CL529 entry carries the extension.
+
+**Verdicts.** Gut: warm and calm. Reasoned: the big-bin top-tight lemma is now a finite statement per (a, b, h),
+checked exhaustively in a useful range. What remains open is the co-singleton case where the top-tight bin is
+**small**, CL527's four-bin class, which does not localise this way.
