@@ -7511,3 +7511,43 @@ directions of (a) and the reflection identity L(n) − L(n − r) = rM − L(r) 
 **Next rung:** attack the top-tight lemma directly at k = 4, h = 1 (P0's own co-singleton instances). What do the
 irreducible instances look like, and does deleting the top-tight bin by its top-most realization keep the lower family
 whenever the least slack is strictly co-singleton?
+
+## CL509 — Cloud, overnight block 16: the top-tight lemma at four bins; one deletion settles 97.5–98%, and the rest are family-coarseness cases (2026-10-22 02:47 BST)
+
+**Pull: warm (the isolated wall).** Record searched: CL443 §3, CL508.
+
+**An exact criterion** (from CL508's notation). Let A be top-tight, and realize it with a set whose remainder has
+maximum c. Then the child is in H(h′) iff **σ_K ≥ (a − (M − c))·r_K for every proper group K of A's complement**. This
+follows from u_K = L(r) + h·r + σ_K and h′ = a + h − b − (M − c). Realizations that clear the top (large M − c) are
+therefore best. Failure needs both a tight inner group K and an uncleared top: the "tight at both ends" case of CL443.
+
+**Census** (`toptight4.py`, 3333, kholek samples). Prediction: A-deletion (lower) about 54%; one deletion of any kind,
+with alternation, ≥ 95%.
+
+| | h = 1 (M = 12) | h = 2 (M = 13) |
+|---|---|---|
+| instances / reducible by CL508 | 21,085 / 9,379 | 19,871 / 6,645 |
+| top-tight (irreducible) | 11,706 | 13,226 |
+| A deleted, lower child | 6,255 (53%) | 5,244 (40%) |
+| A deleted, upper child | 1,992 | 1,672 |
+| another singleton deleted | 1,162 | 3,498 |
+| another pair deleted | 2,065 | 2,485 |
+| **residual** | **232 (2.0%)** | **327 (2.5%)** |
+
+Both predictions held: 53% matches CL443's 54%, and 98.0% / 97.5% are settled.
+
+**The residual is the family's coarseness, not infeasibility.** All residual instances are feasible by construction.
+Example: [0, 12] ∖ {4}, targets (8, 17, 20, 29), with 29 top-tight (σ = 0 at the triple 8, 17, 20).
+- Every realization of 29 leaves a three-bin child with h′ = 2, and 8 < L(3) + 2·3 = 9.
+- The child is feasible: 8 = {0, 3, 5} or {1, 2, 5}.
+- H(2) charges the high hole against the bottom. CL506 showed that hole-aware families are false in general, so the fix
+  cannot be a blanket relaxation. It has to be a sharper bottom statement for small groups when a child's holes all lie
+  above its three smallest values.
+
+**Verdicts.** Gut: warm and steady. The wall has shrunk from "the top-tight half" to a 2% residue with a recognisable
+shape. Reasoned (measured on samples, single-party): one-deletion moves within H and its reflection settle 97.5–98% of
+irreducible four-bin instances at h = 1, 2. The residual needs either a two-step move or a family that knows when a
+group's r smallest values sit below every hole.
+
+**Next rung:** classify the 232 + 327 residual instances (hole positions, which group is tight), then test a two-step
+rule: delete A, and if the child is outside H, apply CL508 to the child as if it were in H(h′ − 1).
