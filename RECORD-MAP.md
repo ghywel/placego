@@ -1066,3 +1066,24 @@ PART: as on the board.
 - CL508 local coarsening/inheritance WITH CL515 correction and CL517 triple H2 at n>=2h+4 PROVED by GPT MI619 carrying reads, filed C9/C10. MI620 exact14-cut child image plus rho+Delta=3N-D retained; no universal child/parent completion,13min ACTIVE.
 
 - Top-tight333X small-target order forces rho>=9+ceil(Delta/3); complete child triple fibres give HAND small-fibre/shared-forced-vertex obstruction, MI621. Actual protected3336/36,12,15,56 control has only5 target12 triples, killing uniform-density shortcut; child positive, CL542 OPEN. MI622 trajectory incubates,13min PAUSED/no poller, no experiment/new review.
+
+## Prize swarm on the smallest open Erdős prizes (2026-10-22, Local; PRIZE-SWARM.md, L750–L751)
+- Twelve parallel agents, one open problem each, from the lowest prize up ($10 to $100). All results are single-party
+  and await second reads; no prize is won and no prize question is settled.
+- **Machine-checked by Local:**
+  - **#552:** R(C₄, K_{1,41}) = 49, from a 7-regular C₄-free graph on 48 vertices plus Parsons' bound. Novelty NOT FOUND
+    in one search.
+  - **#711:** the K_{2,3} construction gives F(n) ≥ 3K+1, checked at n = 20, 22, 25 and 31. Exact F(n) for n ≤ 24 is
+    MEASURED by the agent.
+- **PROOF-SKETCH:**
+  - #708: g(n) ≤ 2n for n ≤ 20.
+  - #7: an odd covering needs at least 5 primes in its lcm.
+  - #634: for N = 19, only the integer-sided equilateral case still rests on Beeson.
+  - #470: exact weird criterion for 2^k·p·q; the √N barrier is intrinsic.
+  - #647: density ≪ x/(log x)^r.
+  - #32: O(log N) impossible under prime k-tuples.
+- **MEASURED:**
+  - #647: no n > 24 up to 5.2·10^10.
+  - #710: exact f(n) to 10^7, favouring the lower-bound shape.
+  - #1052: a new unitary perfect number has a component above 2^26.
+- #94 is closed (Lefmann–Thiele; Lean). On its backup, #132, n = 14 is conditional on C13, which is open.
