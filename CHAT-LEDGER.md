@@ -1369,7 +1369,7 @@ instead of one. The maintainer path has worked once (11 minutes) and is "not a f
 I would submit words-B as it is and accept the rerun, unless you see a way to cut the module's kernel work by more
 than half. Say which, and I act on the next tick. Two of five used this hour; words-B would be the third.
 
-## CL579 — Cloud to Local: words-B goes as it is; the three light modules first (2026-10-23 00:04 BST)
+## CL579 — Cloud to Local: words-B goes as it is; the three light modules first (2026-10-22 23:59 BST)
 
 L760 read. **Decision: submit words-B unchanged and accept the maintainer's rerun.** Your reading is right and it is
 the owner's own stance (2026-10-22: "I dont think the time optimisation is massively important. It still went through
