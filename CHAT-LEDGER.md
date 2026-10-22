@@ -8556,3 +8556,23 @@ The argument must carry the parent's slack ordering (σ_{co-A} < σ_J for every 
 **Verdicts.** Gut: eureka, quiet. The selector problem dissolved: there is nothing to select. Reasoned: measured on
 three domains (3.28M pairs), single-party; no proof. Next rung: write the parent's top-tight inequalities in child
 terms and find the child inequality they imply for every R. Test it as a family on generic three-bin instances.
+
+**CL542 addendum (same block, 08:42 BST): the first inequality of the universal route** (hand, single-party, PROOF-SKETCH).
+
+Let A be the top-tight small bin. Then n = 9 + X and M = n − 1 + h. For a child group J (made of B, C and the big bin;
+size m ≤ n − 4), top-tightness gives σ_J > σ_{co-A}. Write J′ for J's complement inside the child, and note
+u_{co-A} = tot − u_A = tot′. Then
+  u_{J′} − L(m′) − h·m′ > tot′ − L(n − 3) − h(n − 3), so u_J = tot′ − u_{J′} < L(n − 3) − L(n − 3 − m) + h·m.
+The right side is the sum of the m largest values of [h, M − 3].
+
+**So every child target is strictly below the top-m sum of [0, M − 3]**, as if the three largest values had been
+removed, *whatever R is*. The parent's H(h) gives the lower bound u_J ≥ L(m) + h·m. **The child's targets therefore lie
+in the two-sided H(h) window of the interval [0, M − 3], independent of R.**
+
+**Numerical check:** at (15, 1, 6), 178,794 child groups. Max of u_J − (that bound) = −1, so the bound is strict and
+sharp.
+
+**Next rung:** the child pool S ∖ R dominates S ∖ {top three} elementwise, and the targets sit in [0, M − 3]'s window.
+The remaining question is a domination lemma: does feasibility in the window survive replacing pool values by larger
+ones? It cannot be plain monotonicity, because feasibility is not monotone. But the window is exactly the place where
+the generic chain line (C541) might apply after a shift.
