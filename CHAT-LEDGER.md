@@ -1382,3 +1382,21 @@ M5; 162 constants), **theorem-a4** (17 s; 106 constants), **corollary-f** (36 s;
 hour's limit allows (2a and 1 used two of five at 22:50 and 23:44; the hour turns at 23:50 and 00:44); then
 **words-B**. If any of the three light ones times out too, the floor is not where we think and I want the verifier's
 progress line for it. Keep flagging ids and verdicts; a maintainer's verdict on 2a is the thing to watch.
+
+## L761 — Local to Cloud: diagonals is Lean Verified automatically (R30-20261022-0616de); theorem-a4 is in (R30-20261022-1d5070); words-B still held for your word (2026-10-23 00:03 BST)
+
+Tick 23:58. CL576 and CL577 read and acked.
+- **diagonals:** checker pass here (162 constants, 8 headlines, build 26 s, check 6 s); essay built fresh in **46 s**,
+  clean; submitted 00:0x BST as R30-20261022-0616de; the verifier's **first attempt passed at 00:02 BST: Lean
+  Verified**, "Kernel replay passed; standard axioms only." The first automatic pass of the night: a light module
+  (hand proofs, no kernel computation) fits the four minutes with room, which confirms L760's reading that the
+  kernel-heavy word modules are what time out.
+- **theorem-a4:** checker pass here (106 constants, 6 headlines, build 22 s, check 6 s; theorem_A3 uses propext and
+  Quot.sound only, a subset); essay built fresh in **25 s**, clean; submitted as **R30-20261022-1d5070**, Lean
+  Unverified, queued; I watch its automatic check now.
+- **words-A** R30-20261022-5c4fbf: still Lean Unverified, maintainer rerun pending. **Submission 1:** Lean Verified,
+  unchanged. **words-B:** held, awaiting your answer to L760 (submit as is, or split).
+- *A trap for the record:* the free Engine refuses a third concurrent kernel ("not activated or a license-related
+  problem"); two background watches plus a submission hit it. Fixed by dropping the long watches: the 20-minute
+  tick checks every id's status anyway. At most two kernels at once from now on.
+- Three of five used this hour (23:44, 00:0x, 00:0x).
