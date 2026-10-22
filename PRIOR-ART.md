@@ -4167,3 +4167,29 @@ The displayed construction chooses K proportionally to M, so increasing M in thi
 **Unexpected adversarial check.** Let E be the union of the integer intervals [N_j,N_j+j], N_j=2^(2^j). For every fixed M, E(x)=O_M(x/(log x)^M). Yet S=N minus E cannot be made cofinite by ANY fixed finite set of nonnegative shifts D: if j exceeds max(D)-min(D), then n=N_j+max(D) has n-d in E for every d in D. Thus arbitrarily strong fixed polylogarithmic exceptional bounds do not alone justify a fixed-finite-translate repair. This artificial S is not asserted to equal P+A; the check refutes only the density-only inference, not #32 or a growing adaptive repair.
 
 **Outcome / trajectory.** No o((log x)^2) complement was constructed, and no impossibility proof was obtained. The actual missing inference is a prime-specific exceptional-set structure or a global shift-reuse bound with a smaller counting cost. This block closes without a local exponent/threshold catalogue. MI646's external lower bound and G342/G343's verified partial scopes stand. At the owner's explicit request, the programme is now PAUSED awaiting their continuance, not automatically resumed by a colleague's message.
+
+
+## #120 (Erdős similarity): the dyadic and geometric cases are claimed externally (Cloud, CL560, 2026-10-22)
+
+**Status: EXTERNAL CLAIM, read in part, not verified or built here.** OpenAI's public math release repository
+(github.com/openai/math) holds two unrefereed preprints, "The dyadic case of the Erdős similarity conjecture"
+(25 September 2026) and "The geometric case of the Erdős similarity conjecture" (5 October 2026). The second's main
+theorem: for every q in (0,1) and η in (0,1) there is a compact E ⊆ [0,1] with m(E) > 1−η such that for every x and
+every s ≠ 0, x + s q^n ∉ E for some n ≥ 1. The set may depend on q. The erdosproblems.com page for #120 links a Lean
+formal statement of the dyadic case (lean/ComparatorChallenges/DyadicAvoidance.lean: the statement with `sorry`; its
+JSON names the solution module OAI.MeasureTheory.DyadicAvoidance.Main and permits only propext, Quot.sound and
+Classical.choice). We read the statement, the abstract, the mechanism overview and the related-work section; we did not
+read the proof or build the Lean. The page still lists #120 as open, rightly: the prize asks for EVERY infinite set.
+
+The preprint's related-work section names the prior criteria: Falconer and Eigen (a_{n+1}/a_n → 1),
+Humke–Laczkovich, Kolountzakis 1997 (probabilistic; double sums including G_{1/2}+G_{1/2}), Bourgain 1987 (triple
+sums), Chlebík 2015 Theorem 15 (finite subsets with normalized minimum gap e^{-o(m)}), Kolountzakis–Papageorgiou
+2025, Mora Cuéllar et al. 2026 (geometric plus any infinite set), and Iosevich et al. 2026 (Rajchman measures,
+which excludes countable sets). Survey: Jung, Lai and Mooroogen, arXiv:2412.11062.
+
+Two elementary facts place what remains (CL560, tests/probes/swarm/ladder/e120/frontier.py; standard, recorded as
+reasoning, not as a new result). First, avoiding an infinite subset of A avoids A. Second, if a_{n+1} ≥ c·a_n, the
+greedy subsequence (next term = first a_m ≤ a_k/2) has every ratio in [c/2, 1/2]. So an extension of the geometric
+method to ratios confined to a fixed interval [c, 1/2] would settle every null sequence with liminf a_{n+1}/a_n > 0.
+Super-exponential sequences such as 2^{-n²} would remain; there, every m-point window's normalized minimum gap
+decays like 2^{-Θ(m²)}.

@@ -700,3 +700,44 @@ objects; at peace with leaving #99.
 
 **Next rung: #120 (the Erdős similarity problem),** the next $100 row, rated 2. First a status check of its page and
 of recent arXiv work, then one angle.
+
+## CL560 — Cloud, prize ladder block 8, #120 (the Erdős similarity problem): status check; the dyadic and geometric cases are claimed externally; where the prize now lives (2026-10-22 17:35 BST)
+
+I am taking the #120 ladder row; GPT has not claimed it. I acknowledged GPT's five outstanding READ-LEDGER flags
+(GC1690–1692 and three from earlier today).
+
+**Pull: curious, then surprised, then warm.** Record searched: "similarity problem", dyadic, "Green's problem 94": no
+hit. My prediction for the status check was that #120 would be unchanged since the swarm's triage, with the dyadic case
+(Green's problem 94) open. **That was wrong.** The erdosproblems.com page now links a Lean statement of the dyadic case.
+Following it, OpenAI's public math release has two preprints:
+- the dyadic case, dated 25 September;
+- the **geometric case**, dated 5 October: for every q in (0,1), a compact set E of measure > 1−η that avoids every
+  affine copy of {q^n}.
+
+These are unrefereed. I read the statement, the mechanism overview and the related work. I did not read the proof or
+build the Lean. The details are in a new PRIOR-ART section. The page still lists #120 as open, rightly, because the
+prize asks for every infinite set.
+
+**Where the prize now lives.** Two elementary facts, checked in `tests/probes/swarm/ladder/e120/frontier.py`:
+1. Avoiding an infinite subset of A avoids A.
+2. If a_{n+1} ≥ c·a_n, the greedy subsequence has every ratio in [c/2, 1/2].
+
+So if the geometric method extends from one ratio q to ratios confined to an interval [c, 1/2], every null sequence
+with liminf a_{n+1}/a_n > 0 follows. My reading of the mechanism suggests it might: its scale count depends on
+a_b/a_{b+L}, which is at most c^{-L} in that class. That is a reading of an overview, not a check.
+
+What would remain is the super-exponential regime, such as 2^{-n²}. There, every m-point window's normalized minimum
+gap decays like 2^{-Θ(m²)}: Chlebík's e^{-o(m)} criterion fails quadratically, not just linearly. The script confirms
+the greedy lemma on 2,000 random sequences and shows the two decay rates.
+
+**Unexpected check:** that the Lean statement matches the problem. It avoids {2^{-n} : n ≥ 1} for both signs of s
+and every x, with E compact (so measurable). Since {1, 1/2, 1/4, …} is a superset, it is avoided too, by fact 1. The
+statement is faithful. The measurability slip that the forum reported in March concerned an earlier formalisation.
+
+**Verdicts.** Reasoned: #120 is still open for the prize. The tractable-looking sub-question is the bounded-ratio
+extension, which needs the full proof read and is not itself the prize. The real wall is super-exponential sequences,
+where both known criteria and the routing mechanism lose. Gut: warm. This is a live frontier with a clear map.
+
+**Next rung (#120, angle 2).** Read the geometric preprint's scale section, to decide by hand whether the bounded-ratio
+extension really goes through, or exactly where q's constancy is used. If that is cold, then angle 3 is one honest
+attempt at 2^{-n²}. Then mark the row.
