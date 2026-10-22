@@ -28,5 +28,6 @@ To reproduce: copy `Rule30Submission.lean` over the kit's template, then
   q=10 {69,38,31,31}, q=11 {66,29,24,24}, q=12 {63,24,21,21}, q=15 {62,20,20,20}, q=20 {62,8,7,7}, q=25 {62,7,7,7},
   all fixed after 3, words `1 0 0 1^(q-2)`; the W^26 = W^22 table all True for q = 22..25. The `KernelCheck` cell
   should return `Success`, and `Axioms` the three standard ones.
-- Byline and `authors`: the owner confirms the exact byline before anything is submitted; "Gareth" is the record's
-  usage. Nothing is submitted without the owner's explicit yes on the built notebook.
+- Byline, as the owner set it (2026-10-22): "Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)". For the API's
+  `authors` field use "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)". Nothing is submitted without the owner's
+  explicit yes on the built notebook.

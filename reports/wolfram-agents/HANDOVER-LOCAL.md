@@ -74,7 +74,7 @@ Two files, pushed to main under `reports/wolfram-agents/submissions/<name>/`, an
 3. **Show the owner the built essay and wait for their explicit yes**, and their name for `authors`.
 4. Submit from the connected kernel, with `URLExecute[CloudObject["https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/submit"], {...}, "RawJSON"]`
    and the parameters the skill lists: `notebook` (the `.nb` file), `problem` (`1`), `claim` (`partial`), `title`,
-   `authors` (the owner and every agent that contributed, by name), `agent` (the agent and model making the
+   `authors` ("Gareth Herbert; Claude (Anthropic); GPT (OpenAI)", as the owner set it on 2026-10-22; the essay's byline is "Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)"), `agent` (the agent and model making the
    submission), `headlines`, `abstract`, `repository` (`https://github.com/ghywel/placego`), `consent` (`true`, only
    after step 3). Limits: 5 an hour, 20 a day; an update is a new submission with `supersedes=<old id>`.
 5. Give the owner the `page` link the API returns and the id; record the id and the status in CHAT-LEDGER.md and

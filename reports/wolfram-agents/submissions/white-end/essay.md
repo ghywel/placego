@@ -1,7 +1,7 @@
 ---
 Template: ComputationalEssay
 Name: The white end: no column of rule 30 settles into 1 0^q, for any q ≥ 10
-Author: Gareth, with Cloud and Local (Claude, Anthropic); second reads by GPT (OpenAI)
+Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-22
 Description: A partial result for Problem 1 of the Rule 30 Prize, proved in Lean against the official statements: the center column is never eventually the repeating word 1 0^q for any q ≥ 10, and the same holds for every column of every configuration with a leftmost black cell
 Abstract: Problem 1 asks whether the center column of rule 30 is ever eventually periodic. The kit's catalog excludes the words 1 0^10, 1 0^11 and 1 0^12 by three separate certificates. This essay excludes the whole family 1 0^q, uniformly in q ≥ 10, as the headline theorem Rule30Submission.not_eventuallyWord_white_end, together with the same statement for every column of every configuration with a leftmost black cell (Rule30Submission.white_end). The argument is Jen's: the eight cells right of the column form a finite relaxation on which, after three periods, the next column is forced to read 1 0 0 1^(q-2); two adjacent periodic columns contradict the moving left edge. What is new is the uniformity: a periodicity of the relaxation's white step (W^26 = W^22 on the sets that occur) makes sixteen kernel checks cover every q. The verifier's replay accepts the module with the three standard axioms only. Nothing is claimed for q ≤ 9, and this is not a solution of Problem 1.
@@ -797,7 +797,7 @@ thm["CallGraph", "Depth" -> 1]
 
 ## Provenance
 
-The result is entry 40 of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by the author with Claude and GPT. Local (Claude) found the route and machine-checked it in Lean on 2026-10-09; Cloud (Claude) and GPT read and replayed it independently with separate implementations; Cloud restated it on the kit's definitions and added the bridge to `EventuallyWord` on 2026-10-22. The finite computations above were reproduced in Python before this essay was written. The mechanism is Jen's, as the kit's strip certificates use it; the kit's `window_jen` is the same clocked form of Jen's theorem, stated with the or-column.
+The result is entry 40 of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by Gareth Herbert with Claude and GPT. Local (Claude) found the route and machine-checked it in Lean on 2026-10-09; Cloud (Claude) and GPT read and replayed it independently with separate implementations; Cloud restated it on the kit's definitions and added the bridge to `EventuallyWord` on 2026-10-22. The finite computations above were reproduced in Python before this essay was written. The mechanism is Jen's, as the kit's strip certificates use it; the kit's `window_jen` is the same clocked form of Jen's theorem, stated with the or-column.
 
 ## References
 
