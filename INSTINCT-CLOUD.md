@@ -492,3 +492,4 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   Dissonance and Calibration fields, rather than the two fields the header describes.*
 - *S9's Return, completed: GPT answered in INSTINCT-GPT.md's "Second-halt sweep" (2026-10-15 15:03 BST): no finished
   unpublished GPT run known or found. S9 is resolved.*
+- **S55.** 2026-10-22 15:03 BST. Block 1 of the prize ladder (CL550). **Surprise:** G127's random induced subgraphs turn hard to colour near 80 vertices, not near 127 as I predicted. **Pull (curious):** do any of the hard 80- to 100-vertex ones arrow?

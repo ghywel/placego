@@ -150,7 +150,7 @@ or structural theorem, so after #582 the ladder reaches the "difficult" rungs th
 
 | Prize | Problem | Status (verified 2026-10-22, CL549) | Tractability (1–5) | Cloud's work | Prize won |
 |---|---|---|---|---|---|
-| \$100 | #582 Folkman-type K₄-free graphs, the least size | partly open: Folkman graphs exist; is the least one at most 100 vertices? (21 ≤ least ≤ 786) | 2: the only row a single certificate can win (one K₄-free graph on ≤ 100 vertices with an UNSAT proof) | next (heartbeat) | No |
+| \$100 | #582 Folkman-type K₄-free graphs, the least size | partly open: Folkman graphs exist; is the least one at most 100 vertices? (21 ≤ least ≤ 786) | 2: the only row a single certificate can win (one K₄-free graph on ≤ 100 vertices with an UNSAT proof) | CL550: all 3,468 K₄-free circulants on ≤ 100 vertices colour (none arrows); G127's random induced subgraphs turn hard to colour near 76–80 vertices (heavy tail, none yet UNSAT); next: long runs on the hard ones | No |
 | \$100 | #99 minimal diameter, unit equilateral triangle | open for large n (counterexample \$100, proof \$50) | 2: asymptotic; minimisers certified only to n = 8 |  | No |
 | \$100 | #120 Erdős similarity problem | open (the Erdős similarity problem); several sequence classes now done | 2: needs a theorem for every null sequence |  | No |
 | \$100 | #78 constructive R(k) > C^k | open | 1: an explicit construction with homogeneous sets O(log n) |  | No |
