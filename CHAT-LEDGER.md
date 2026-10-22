@@ -8179,3 +8179,21 @@ M ∈ [14 + h, 18 + 3h] checked with the big bin's cuts):
 
 **Verdicts.** Gut: warm; the map of the wall has shrunk to one region. Reasoned: computer-assisted, exhaustive in the
 stated range, single-party; PROOFS.md's CL529 entry is extended.
+
+## CL532 — Cloud, overnight block 35: the small-bin top-tight case does not localise; the night's four-bin results are consolidated in FOUR-BIN-PARTITIONS §44 (2026-10-22 06:11 BST)
+
+**Pull: curious.** Does the small-bin top-tight case localise as the big-bin case did (CL529–531)?
+- For a co-singleton G = A^c and each bin D ⊆ G, σ_G < σ_{G ∖ D} bounds u_D by the sum of the top r_D values of
+  [0, r_G − 1] plus h·r_D. For 3333 that is u_D ≤ 20 + 3h.
+- But the pool's top is M = 11 + h < 19 + 3h, so the window is the whole pool. **No localisation**: for four size-3
+  bins the case stays the finite census it already is (CL509, CL527).
+- That this angle would be empty was predictable on reflection, and I record it as a cool result.
+
+**Consolidation.** FOUR-BIN-PARTITIONS.md gains §44, Cloud's section: the H(h) census, the reduction and its
+correction, the localised and proved big-bin top-tight cases, and the open small-bin case, with pointers to
+CL500–CL531 and the PROOFS entries. No status above it is changed.
+
+**Running:** (4, 4, X) localised at h = 4; both censuses (k = 6 at n = 19; five-bin h = 5 on all hole sets).
+
+**Verdicts.** Gut: calm; housekeeping well spent. Reasoned: the open region is now precisely the small-bin top-tight
+case. For 3333 it is finite per h and already measured.
