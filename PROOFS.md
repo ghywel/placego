@@ -18888,7 +18888,7 @@ summing to ΣS, in H(h), i.e. u_J ≥ L(r_J) + h·r_J for every proper group J. 
   truncated pools included.
 - *Four-bin extension (CL531, 05:55 BST):* sizes (3, 3, 3, X ≥ 6) with least slack only at the triple of size-3 bins. Comparing
   σ_BCD with each pair gives u_i ≤ 20 + 3h, so it is local in [0, 19 + 3h]. `toptight_local_333.py` finds no failure
-  for h ≤ 3, truncated pools included. This covers the coarsened instance of a five-bin triple facet.
+  for h ≤ 4 (231,197 pools at h = 4), truncated pools included. This covers the coarsened instance of a five-bin triple facet.
 - Ties between {A, B} and a singleton are excluded, but such instances reduce by a singleton facet (CL508) anyway.
 - It covers CL515's coarsened instances from two-size-3-bin facets.
 

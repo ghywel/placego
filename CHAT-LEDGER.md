@@ -8165,6 +8165,7 @@ M ∈ [14 + h, 18 + 3h] checked with the big bin's cuts):
 | failures | 0 | 0 | 0 | 0 |
 
 **Held, with no exceptions at all.** h = 4 is running.
+*Addendum (05:00 UTC):* h = 4 also has 0 failures (231,197 pools).
 
 **Where the reduction now stands** (single-party):
 - By CL508, an H(h) instance whose least slack is at a group of at most k − 2 size-3 bins reduces to a child plus a

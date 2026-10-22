@@ -4,7 +4,7 @@ element used is <= 19 + 3h: LOCAL.  Check every hole set of size <= h in [0, 19 
 (M in [14 + h, 18 + 3h]) with the big bin's cuts: three disjoint triples with the three sums exist.
 Run: python3 toptight_local_333.py HMAX [HMIN].
 
-OUTCOME (CL531): h = 0..3, 235 admissible target triples each, pools 6 / 157 / 2,272 / 24,781: 0 failures.
+OUTCOME (CL531): h = 0..4, 235 admissible target triples each, pools 6 / 157 / 2,272 / 24,781 / 231,197: 0 failures.
 """
 import sys
 from itertools import combinations
