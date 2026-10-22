@@ -8444,3 +8444,56 @@ small bin sits at the top. But the generic-miss profiles also occur:
 The chain solves all of these. **Prediction half right:** the profiles differ in bulk, but which group is tight does not
 by itself explain the peel's help. The next rung is finer: compare a generic pair-at-the-end miss with a child of the
 same profile, element by element.
+
+## CL541 — Cloud, overnight block 42: C540 falsified. The generic chain's miss line is H-key nh − 2, and lexmin's children sit below it (2026-10-22 08:35 BST)
+
+**Pull: warm** (C540). Falsify first.
+**Predictions:**
+- P1: no unequal miss at pool-relative key ≥ 1 for X ≥ 6;
+- P2: X = 5 has such misses.
+
+**Counterfactual:** an unequal key-1 miss at X ≥ 6 kills C540.
+
+**Result 1** (chain_general.py, [0, M] minus nh holes):
+
+| Holes, X | Unequal misses | Pool-relative key |
+|---|---|---|
+| 5 holes, X = 6 | 32 | 1 |
+| 5 holes, X = 7 | 23 | 1 |
+| 5 holes, X = 8 | 23 | 1 |
+| 6 holes, X = 6 | 2 | 2 |
+
+**C540 is false as stated. The counterfactual happened.** P2 held: X = 4 and X = 5 have unequal misses at key 1.
+
+The key-1 misses have one to four solutions in all, with both targets low. For example, holes {1, 2, 7, 9, 12} in
+[0, 16], targets (15, 20). The rules pick (0, 4, 11) or (4, 5, 6), but the solutions need (0, 5, 10) or (3, 4, 8).
+
+**Result 2** (the record's per-number H-key, CL439). The miss line is clean:
+
+| nh | Max H-key, unequal miss | Max H-key, equal miss |
+|---|---|---|
+| 4 | 2 | 1 |
+| 5 | 3 | 3 |
+| 6 | 4 | 5 |
+
+So the unequal line is nh − 2 every time, and equal-target misses reach nh − 1. Domains: 4 holes X = 6; 5 holes X = 6, 7;
+6 holes X = 6. **Measured:** the four-rule chain solves every feasible (3, 3, X ≥ 6) instance in H(nh), and in H(nh − 1)
+when the small targets differ. This is a cleaner replacement for C540, labelled **C541**.
+
+**Unexpected check** (prediction 50/50). Do lexmin's children fall in C541's covered zone? **No.**
+- A child has nh = h + 3 holes, and its H-key sits at nh − 1, nh − 2 or nh − 3, mostly nh − 2.
+- Only about 10% are covered: 890 of 12,173 at (4, 1); 3,414 of 29,799 at (6, 1); 13,442 of 133,684 at (6, 2).
+- Yet the chain solves 100% of children at X ≥ 6 (CL540), including those at nh − 3, deep inside the generic miss
+  zone.
+
+**Reading.** Two separate things are now measured:
+1. The generic chain is an H(nh) statement for (3, 3, X ≥ 6) with a sharp line (C541).
+2. Lexmin's peel produces children far below that line that the chain still solves.
+
+So the peel carries structure that no margin captures. This agrees with CL539 from the other side. A proof of the
+small-bin case cannot route through a margin family on the child. It must use how the child was made: three of the
+child's holes are one top value and a low pair, chosen by lexmin.
+
+**Verdicts.** Gut: curious. Being falsified quickly felt right, and the replacement line nh − 2 is satisfyingly sharp.
+Reasoned: C540 is refuted; C541 is measured on four domains; the children are confirmed special. Next rung: compare a
+generic miss and a child with the same pool shape (h + 3 holes of the peel's kind) to find what the peel's holes do.

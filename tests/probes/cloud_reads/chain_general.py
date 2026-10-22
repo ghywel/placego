@@ -8,6 +8,11 @@ small targets, e.g. holes 0 1 6 11 | 14, 18; holes 0 2 6 11 | 33, 37; targets ne
 By pool-relative key (CL539): misses at key 0: 274 of 276 ([0,15]-4, X = 6), 379 of 380 ([0,17]-4, X = 8); the three
 key-1 misses all have EQUAL small targets (holes 1 5 8 12 | 14 14; holes 3 7 10 14 | 31 31).  So every unequal miss
 sits at key 0, at the ends of the spectrum.
+OUTCOME (CL541): that "key 0" was the 4-hole case only.  Unequal misses by pool-relative key: 5 holes reach key 1
+([0,16] X = 6: 32; [0,17] X = 7: 23; [0,18] X = 8: 23), 6 holes key 2 ([0,17] X = 6: 2): C540 as stated is FALSE.
+In the record's per-number H-key (CL439) the line is clean: max H-key of an unequal miss = nh - 2, of an equal miss
+nh - 1, for nh = 4, 5, 6 (X = 6, 7).  Measured: the chain solves every feasible (3, 3, X >= 6) instance in H(nh).
+X = 4, 5 ([0,13]-4, [0,14]-4, [0,15]-5) also have unequal misses at relative key 1.
 """
 import sys
 from itertools import combinations
@@ -47,7 +52,9 @@ def run(M, nh, X):
                     t = (u1, u2, sum(S) - u1 - u2); key = 1 << 30   # pool-relative key (CL539)
                     for J, r in (((0,), 3), ((1,), 3), ((2,), X), ((0, 1), 6), ((0, 2), 3 + X), ((1, 2), 3 + X)):
                         key = min(key, (sum(t[i] for i in J) - sum(S[:r])) // r)
-                    cnt['miss_key%d' % key] += 1
+                    cnt['miss_key%d_%s' % (key, 'eq' if u1 == u2 else 'neq')] += 1
+                    hk = min((sum(t[i] for i in J) - r * (r - 1) // 2) // r for J, r in (((0,), 3), ((1,), 3), ((2,), X), ((0, 1), 6), ((0, 2), 3 + X), ((1, 2), 3 + X)))
+                    cnt['miss_Hkey%d_%s' % (hk, 'eq' if u1 == u2 else 'neq')] += 1   # the record's per-number key (CL439)
                     if len(ex) < 6 and u1 != u2: ex.append((H, u1, u2))
     return cnt, ex
 
