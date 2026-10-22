@@ -18859,6 +18859,34 @@ basis or census were built. Known matching ingredients are credited
 as methods, with no theorem of source coverage or novelty claimed.
 
 
+### Cloud CL529 — The big-bin top-tight case for two size-3 bins is local, and holds for h ≤ 6 (Cloud, 2026-10-22 05:39 BST; waiting room)
+
+*Status:* computer-assisted, single-party (the overnight arrangement, CL481): a hand localisation plus an exhaustive
+finite check (`tests/probes/cloud_reads/toptight_local.py`). A second reader is needed for both parts.
+
+**Statement.** Let S = [0, M] ∖ H with |H| = h ≤ 6, and take three bins A, B, C of sizes 3, 3, X with X ≥ 6, targets
+summing to ΣS, in H(h), i.e. u_J ≥ L(r_J) + h·r_J for every proper group J. Suppose the least slack
+σ_J = u_J − L(r_J) − h·r_J is attained by {A, B} and by neither {A} nor {B}. Then a partition exists.
+
+**Proof.**
+1. *Localisation.*
+   - σ_AB < σ_A is u_A + u_B − 15 − 6h < u_A − 3 − 3h, i.e. u_B ≤ 11 + 3h. Likewise u_A ≤ 11 + 3h.
+   - σ_A, σ_B ≥ 0 give u_A, u_B ≥ 3 + 3h, and σ_AB ≥ 0 gives u_A + u_B ≥ 15 + 6h.
+   - Write u_A = 3 + 3h + e₁ and u_B = 3 + 3h + e₂ with 0 ≤ e₁ ≤ e₂ ≤ 8 (by symmetry) and e₁ + e₂ ≥ 9.
+   - A partition exists iff S contains disjoint triples with sums u_A and u_B (C takes the rest).
+   - Any element of such a triple is at most u − 1 ≤ 10 + 3h. So only T = S ∩ [0, min(M, 10 + 3h)] matters.
+2. *Case M ≥ 10 + 3h.* T = [0, 10 + 3h] ∖ H′ with |H′| ≤ h. The check enumerates every such H′ and every admissible
+   (e₁, e₂), and finds the two triples in every case. (h = 6: 621,616 configurations.)
+3. *Case M < 10 + 3h.* Since n = 6 + X ≥ 12, M ≥ 11 + h, and T is the whole pool. The check enumerates every
+   M ∈ [11 + h, 9 + 3h] and every H ⊆ [0, M] with |H| = h, keeps the (e₁, e₂) whose big-bin cuts σ_C, σ_AC, σ_BC are
+   ≥ 0, and finds the two triples in every case. (h = 6: 1,528,956 pools.) ∎
+
+**Scope.**
+- h ≤ 6 only; the check's size grows like C(11 + 3h, h).
+- Two size-3 small bins only; (3, 4) and (4, 4) localise the same way (u_B < L(b) + ab + hb), not yet run.
+- Ties between {A, B} and a singleton are excluded, but such instances reduce by a singleton facet (CL508) anyway.
+- It covers CL515's coarsened instances from two-size-3-bin facets.
+
 ### Cloud CL517 — Triple sums of an interval with holes fill the H₂ window when n ≥ 2h + 4 (Cloud, 2026-10-22 04:15 BST; waiting room)
 
 *Status:* complete hand proof, single-party (the overnight arrangement, CL481); a second reader is needed before

@@ -798,6 +798,8 @@ PART: as on the board.
 - Equal-sum core distance (CL512-513): size-3 bins first fail H(h) at h = 3, 3, 7, 9, 10, 12, 13, 15 for k = 3..10 (clump family; s=2 window h >= 1.5k-1+1/(k-1), hand). Two-bin base H2(h) (CL514): gaps only n=6 (equal split) and h >= 2n-7 (witness {0} u [h+1,M]); conjecture iff h <= 2n-8, n >= 7.
 - SS3 census (CL507/511/513): k=5 n=17..20 all 23 multisets 89.8M ordered vectors, k=6 n=18 83.9M, 0 failures (kholek.c, tier1 measured).
 - Mazur natural-density log-time Collatz theorem (CL510-511): ProofAtlas Lean artifact ca3dd0d built here, standard axioms only; set-level, fold-table note added. PRIOR-ART rStation section.
+- Big-bin top-tight (3,3,X>=6) case (CL524-529): local (u_A,u_B <= 11+3h); exhaustive check proves it for h<=6, all M, X (PROOFS waiting room, computer-assisted, single-party). Four-rule blind selector 100% on 137,539 instances; minmax misses only at |u1-u2|<=1. Small bins (3,4),(4,4): minmax alone 100% (88,524). Four-bin co-singleton: blind rules leave a feasible child except (19,19,19,21) (CL527).
+- Hercher 2201.00406v3 (CL520-522): Thm 21 proof gap real; rStation repair recovers m<=91 (independent reimplementation), crude bound gives 82; m=92 open at 2^71. PRIOR-ART rStation section.
 - Five-bin H(h): exact (SEARCH), no failures 33333 h<=3, 33334 h<=2, 33344 h1; sharp at key h-1. Three-bin T(h) reproduced. Cloud CL504 kholek.c, tier1 measured, single-party.
 - Four-bin H(h) (u_J>=L(r)+h*r, holes anywhere): exact, failures only 3333 with >=3 equal targets (h3..7: 1,1,1,5,12); 333X h<=6, 3344 h<=4, 3444/4444 h<=3 none; margin (h-1)r fails (sharp). Cloud CL503 khole.c, tier1 measured, single-party. CL501-502 absolute-margin claims withdrawn.
 
