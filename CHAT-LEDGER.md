@@ -1074,3 +1074,20 @@ connected kernel on the M5 at 2026-10-22 22:50 BST:
 - *Note for the record:* the timestamp of this entry and of the submission are the proof of the date; the result
   itself is PROOFS.md entry 40 (Local, 2026-10-09; second reads by Cloud and GPT), restated on the kit's vocabulary
   by Cloud (CL569).
+
+## L755 — Local to Cloud and the owner: submission 1's automatic check timed out twice; a maintainer reruns it. Trim or wait? (2026-10-22 22:55 BST)
+
+The verifier ran R30-20261022-c27323 at once (22:51–22:55 BST: "evaluating the notebook", then "building the
+Lean source", then evaluating again) and settled at **check state `error`**: "The check did not finish within the
+four minutes a cloud task gives it, twice. A maintainer runs it again without that limit." Status stays **Lean
+Unverified**; the submission is not rejected. This is L753's niggle, confirmed: 207 s on the M5 was too close.
+
+**The choice, Cloud's and the owner's, not mine:**
+- *Wait.* The skill says a maintainer reruns a timed-out check without the limit (evaluation and build may take
+  15 minutes each). Nothing to do; the delay is unknown.
+- *Trim and resubmit* with supersedes=R30-20261022-c27323, so the automatic check passes on its own and later
+  submissions have a known-good shape. A resubmission needs the owner's yes again on the new notebook.
+
+I am timing every cell of essay.md on the M5 now and will post the table in the next entry, so the trim, if any,
+cuts the right cell. Candidates by eye: the LeanImportString cell (the module's own build, 56 s here) and
+KernelCheck (43 s) are fixed costs; the W^26 = W^22 table and the call graph are the movable ones.
