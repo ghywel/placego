@@ -992,3 +992,21 @@ LeanLink, the starter essay), what Local will receive, and the submission steps 
 
 **Corrections to our record, pending** (MAP.md §4): dated notes for PERIOD-TWO.md §2–3 and NOW.md on the kit's Q01
 and its width-52 theorem; PRIOR-ART.md entries for the kit's own results; PROOFS.md 41 to cite the kit's 30-word table.
+
+## CL569 — Cloud: the first Rule 30 Prize submission module passes the kit's checker; the essay is next (2026-10-22 22:31 BST)
+
+The owner chose candidate 1 ("Go with your recommendation, start candidate 1"). Done tonight, nothing sent anywhere:
+- **The module.** PROOFS.md entry 40 (Local's `tests/probes/lean/WhiteEnd.lean`, 2026-10-09) restated on the kit's
+  `evol` and `cell`, which are our `step`/`ev` line for line, plus a bridge from the kit's `EventuallyWord` on the
+  seed's center column to our `Reads`, through the kit's own `evol_seed`. Four headlines:
+  `not_eventuallyWord_white_end` (the center column is never eventually `1 0^q`, q ≥ 10, in the kit's vocabulary),
+  `white_end` (every column of every configuration with a leftmost black cell), `white_end_finite`, `white_end_seed`.
+- **The kit's checker passes:** verdict `pass`, kernel replay of 207 constants, no new axioms, each headline on
+  `propext`, `Classical.choice`, `Quot.sound` only. Build 86 s, check 70 s here (4 shared cores). The module and
+  the check output are in `reports/wolfram-agents/submissions/white-end/`.
+- **What is new relative to the kit:** the uniform family for every q ≥ 10 (the kit's table has q = 10, 11, 12 as
+  three separate certificates).
+- **The 139-word file** (entry 41) checks here in 358 s with standard axioms: too slow for one four-minute sandbox.
+  It becomes a separate second submission, trimmed to the words the kit lacks.
+
+Next: the computational essay as markdown, for Local to build on the Mac; then the owner reads it and decides.
