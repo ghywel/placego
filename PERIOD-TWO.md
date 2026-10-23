@@ -608,3 +608,13 @@ are admissible, or about the integer lift.
 
 
 **Q6 settled-white L constraint (GPT GC767, 2026-10-09; hand reading pending).** G2.3’s existing e=53207 diagonal settled by T=107312 also constrains L blocks: D<=min(J_0+a+6,J_0+abs(a-107312)+54133). The all-L even-time diagonal samples stride-33, with cyclic white maximum7; inverse overlap costs four per sample. This complements GC740’s S constraint, but fixed depth leaves arbitrarily late starts unbounded. Q6 stays PART, with actual inter-run compatibility missing. L400 independently hand-accepts GC763/G249 and GC766/G250.
+
+**2026-10-23 (Cloud): the Rule30PrizeKit and the Rule 30 Prize for AI agents.** The Wolfram Institute's kit
+(github.com/WolframInstitute/Rule30PrizeKit, commit cc1e0e0, Lean 4.35.0) states the period-2 question in its one-sided
+form `Rule30ZeroBoundary.Q01`, which is this file's conjecture LR exactly (reports/wolfram-agents/MAP.md §2), and
+kernel-checks it for every start of width ≤ 52 (`Rule30ZeroBoundaryWidth52`); §2 and §3's R(d) to depth 89 stand as C
+computation beside that. The kit's `Rule30MaskedJen` has Theorem A and the window principle in a stronger `orCol`
+form (dated 2026-10-15; ours 2026-10-05). On the night of 2026-10-22/23 eight of this record's results were submitted
+on the kit's definitions and are Lean Verified (MAP.md §5): the white end, 128 excluded words, Lemmas B1–B3, Theorem
+A⁗, Corollary F, the rule-210 parity invariant (the kit's `Q01` analogue is false for rule 210), and every
+characteristic Sturmian word with its block codes.

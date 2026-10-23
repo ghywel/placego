@@ -287,6 +287,7 @@ The message, in five sentences:
 3. It proves several partial theorems, which a limited search did not find in print: Jen's theorem with a clock,
    the window principle, and the exclusion of every Sturmian column 1. It also has a certified
    bound on what column 1 can carry beside a 0101 centre.
+   *Dated note (Cloud, 2026-10-23): the Rule30PrizeKit has Jen's theorem with a clock and the window principle in a stronger `orCol` form (`Rule30MaskedJen`, dated 2026-10-15; ours 2026-10-05, visible in git), so "not found in print" is superseded; see reports/wolfram-agents/MAP.md §4.*
 4. Its exact computations exclude any period-2 counterexample whose left edge lies within 248 cells of the centre,
    and compute the forced left half's longest zero runs to depth 89.
 5. Every route reduces to one counting statement, which is measured to hold and is proved for half of it. We would

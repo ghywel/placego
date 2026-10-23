@@ -182,3 +182,27 @@ kick propositions (outside the kit's framing); Theorem B (vacuous for finite sta
 - **Mechanics to note in NOW.md:** submissions need a Wolfram kernel on the owner's machine signed in with the owner's Wolfram
   ID (Local's job), Lean v4.35.0 and Mathlib 56a005855e at kit commit cc1e0e0, no `native_decide`, a four-minute
   automatic check, and the owner's explicit consent per submission.
+
+## 5. Submitted on the night of 2026-10-22/23 (Cloud, 2026-10-23 01:11 BST)
+
+Eight submissions, each a module passing the kit's `Check.lean` with the three standard axioms and a computational
+essay in the fast cell order, built by Local on the M5 and submitted on the owner's standing consent (CL574, L758).
+All eight stand at **Lean Verified** (the verifier's kernel replay); Human Verified is pending for all. Folders under
+`reports/wolfram-agents/submissions/`.
+
+| # | folder | id | headlines | map row / candidate | verifier |
+|---|---|---|---|---|---|
+| 1 | white-end | R30-20261022-c27323 | `not_eventuallyWord_white_end`, `white_end`, `white_end_finite`, `white_end_seed` | entry 40; candidate 1 | maintainer rerun (two timeouts), 23:06 |
+| 2a | words-A | R30-20261022-5c4fbf | `not_eventuallyWord_words`, `words_general` (48 words, lengths 11–16) | entry 41; candidate 1 | maintainer rerun, 00:44 |
+| 2b | words-B | R30-20261022-70d23b | the same for 80 words of lengths 17–18 | entry 41; candidate 1 | maintainer rerun, 00:44 |
+| 3 | diagonals | R30-20261022-0616de | `seed_no_adjacent_white`, `seed_white_then_black`, `seed_periods_unbounded(_quant)`, `seed_infinitely_many_white/black`, `lemma_B2`, `lemma_B3_sharp` | entries 8, 9, 12; candidate 4 | automatic, first attempt, 00:02 |
+| 4 | theorem-a4 | R30-20261022-1d5070 | `center_A4_sharp`, `center_A4`, `theorem_A4(_sharp)`, `theorem_A3`, `lemma_B3_sharp` | entries 10, 12, 13; candidate 4 | automatic, 00:04 |
+| 5 | corollary-f | R30-20261022-91b0b0 | `corollary_F`, `col_m1`, `blocks_of_visible`, `theorem_A3`, `infinitely_many_black`, `lemma_B2` | entry 11; candidate 4 (first formalization) | automatic, 00:09 |
+| 6 | rule-210 | R30-20261022-920c1b | `not_Q01_210`, `parity_invariant`, `linear`, `white_start_inX`, `white_start_parity`, `no_adjacent` | entry 18, §8.65; candidate 5, first half (first formalization) | automatic, 00:46 |
+| 7 | sturmian | R30-20261023-e872a3 | `characteristic_excluded`, `characteristic_block_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`, `cw_near_square`, `std_near_comm`, `corollary_F` | entry 14's characteristic case with G131's block codes; candidate 3 in part (first formalization) | automatic, 01:02 |
+
+The verifier runs at about half the M5's speed (L760): the two kernel-heavy word modules time out at four minutes
+and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 2
+(the channel bound), 6 and 7 were not attempted; candidate 5's second half (PROOFS 32) and Theorem E's general
+intercept (CL582: the Diophantine steps, not a corollary of Corollary F) remain. The record's corrections of §4
+were applied with dated notes on 2026-10-23 (PROOFS 41, PERIOD-TWO §11, PRIOR-ART).

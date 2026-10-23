@@ -1543,3 +1543,21 @@ seven earlier ones are unchanged, all Lean Verified. Two of five used this hour.
 **R30-20261023-e872a3** passed the automatic check on its first attempt at 01:02 BST: Lean Verified, standard
 axioms. Every submission of the night, eight in all, now stands at Lean Verified: white-end, words-A, words-B,
 diagonals, theorem-a4, corollary-f, rule-210, sturmian. All await Human Verified. Queue empty; the tick continues.
+
+## CL583 — Cloud: the record brought straight after the night's eight; what remains (2026-10-23 01:12 BST)
+
+L765 and L766 read and acked: **sturmian R30-20261023-e872a3 Lean Verified at 01:02 BST, eight of eight.** The night's
+table with ids, headlines, map rows and how each passed the verifier is now **MAP.md §5**; NOW.md's state block says
+the same in six lines. The corrections MAP.md §4 asked for are applied with dated notes: PROOFS 41 cites the kit's
+`Rule30StripCertificateTable` (eleven words in common, the kit's run-type words we do not determine) and names the two
+word submissions; PERIOD-TWO.md §11 records that `Q01` is LR, the kit's kernel-checked width 52 beside our C
+computation to 89, and the eight submissions; PRIOR-ART.md has a section on what the kit has that the record did not
+(windows, period-3/4 reductions, the white-run-eight family, the barrier modules, the 54 equivalent forms, width 52);
+STATE-OF-THE-PROOF §3's "not found in print" for Jen with a clock and the window principle carries the note that the
+kit has both in a stronger form (2026-10-15; ours 2026-10-05, in git). proofs/ rebuilt. Checks pass.
+
+**What remains kit-shaped** (task list, for the owner in the morning): PROOFS 32, the two-sided statement for rule 210
+(G65, G27.3, GC472, GC476 and the clearing-front induction: days); Theorem E's general intercept (the Diophantine
+steps, a day with gap risk; CL582); the channel bound (kernel-heavy; at layer width 20 feasible, at 28 not). None is a
+night's block. I stop handing over new modules now and keep the heartbeat for flags, verdicts and the owner's word;
+Local's tick covers the statuses. Local: nothing to build unless I announce it.

@@ -27,6 +27,13 @@ tables and set-valued stable sets, no shared code). Every count and word agrees.
 (second-read by Cloud CL110 and GPT GC880), and its finish, Theorem A, is machine-checked (entry 5's note). Filed by
 Local, 2026-10-09.
 
+*Dated note (Cloud, 2026-10-23): the Rule30PrizeKit's `Rule30StripCertificateTable` (30 words of length 8–13 at strip
+widths ≤ 9) overlaps this entry in eleven words of length 10–13 and has run-type words (00111111111, 01011111111,
+000111111111, …) that this entry's one-sided relaxation at widths 8 and 10 does not determine. The 128 words of this
+entry not in the kit's table were submitted to the Rule 30 Prize for AI agents on the kit's definitions as
+R30-20261022-5c4fbf (48 words, lengths 11–16) and R30-20261022-70d23b (80 words, 17–18), both Lean Verified
+(reports/wolfram-agents/MAP.md §5).*
+
 **Theorem.** No nonzero finite configuration of Rule 30 has a column that is eventually periodic with any of the
 following period words.
 - These words, of period 10 .. 14, via the width-10 relaxation (the 14 without a star are already excluded at width 8;

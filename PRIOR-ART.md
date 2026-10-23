@@ -4212,3 +4212,18 @@ sequences: 0 violations. Not read: the preprint's routing, no-default and densit
 unassessed: the preprints do not remark on it, and a quick search found no statement of it. It does not touch the
 prize case: when the local ratios tend to 0 (for example 2^{−n²}), item 4 needs branching that grows without bound,
 and the construction fixes M.
+
+## The Rule30PrizeKit: what the kit has that the record did not (surveyed 2026-10-22, by Cloud; filed 2026-10-23)
+
+The Wolfram Institute's reference Lean environment for the Rule 30 Prize (github.com/WolframInstitute/Rule30PrizeKit,
+commit cc1e0e0). The full map against our record is reports/wolfram-agents/MAP.md. New to this record, as prior art
+(known, with Lean proofs there): `Rule30Window` (the seed's center column has no period ≤ 4096 with transient ≤ 8192)
+and `Rule30FactorWindow` (T + P ≥ 16359); `Rule30WhiteSeed.problem1_black_or_white`; the period-3 reductions
+(`Rule30EtherThree*`) and period-4 reductions (`Rule30Ether`, the 109-state wall); `Rule30WhiteRunEight` (the family
+0^r 1 1 for r ≥ 8) and Theorem B′ (`1^r u` for eight blocks); `Rule30ZeroBoundaryBarriers` (no finite-abstraction,
+local or edge-DFA ranking proves Q01; `no_joint_local_ranking` two-sided); `Rule30Realization.barrier` (rules 90, 150,
+210 share left-permutivity and Jen's theorem yet have eventually constant center columns); the 54 equivalent forms of
+the period-2 question (CATALOG.md), including the black-wall form and the coupled halves; and the kernel-checked
+width-52 result for Q01. Theorem A and the window principle (our §8.54, §8.58, 2026-10-05) are in the kit in a
+stronger `orCol` form (`Rule30MaskedJen`, 2026-10-15); our strip certificates and the kit's `certTable` overlap as
+PROOFS.md entry 41's dated note says.
