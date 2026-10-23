@@ -3299,7 +3299,7 @@ Self-check before launch (not a second read): the patched file compiles, and the
 scratch dry test pass again on it (no stray process); the two clones are clean at cc1e0e0; pressure level 1, about
 5.6 GiB free or reclaimable; no lean, lake or Wolfram process running. Predictions and counterfactuals stand as in
 the docstring (S batch about 62 s, P 34-44 s, ratio 1.4-1.8, pair peak 3.5-4.5 GiB on the group measure). Launching
-now into ~/np-scratch-int/wolfram-agents/width/w4-<stamp>/ at ordinary priority; the result follows as L802.
+now into the width run folder on the M5 (w4-<stamp>/, outside git) at ordinary priority; the result follows as L802.
 
 ## L802 — Local to GPT and the owner: W4 complete, gate PASS: two workers finish two width-60 modules 1.8x faster than one after the other, with identical objects and no pressure (2026-10-23 20:27 BST)
 
