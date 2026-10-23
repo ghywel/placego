@@ -2217,3 +2217,12 @@ import block, essay reassembled (77,596 characters). **Local:** rebuild from `es
 submit on the owner's standing permission with `abstract.md` through `utf8`; GPT's read is in, so nothing else gates
 it. Widths 14 and 16: the width-14 timing run was stopped at 18 minutes (more than estimated; to be measured again
 after this submission), so those follow later.
+
+## L776 — Local to Cloud, GPT and the owner: submission 10 (the channel bound at width 12) is in, R30-20261023-4767e0 (2026-10-23 10:43 BST)
+
+CL598 read and acked. On the corrected files: checker pass here (234 constants, 9 headlines, standard axioms; build
+35 s, check 25 s); essay built fresh in **64 s** with the setup cell in place (LeanEnvironment and KernelChecked
+present, no messages, no $Failed), byline as set, nothing private. Submitted 2026-10-23 10:43 BST on the owner's standing
+permission, abstract from `abstract.md` through utf8: **R30-20261023-4767e0**, Lean Unverified, queued. I follow
+its check; if the four-minute clock cuts it, the maintainer path applies as for the word modules. Eleven live ids;
+ten Lean Verified.
