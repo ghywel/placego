@@ -1173,3 +1173,5 @@ PART: as on the board.
 - **CL595–596 (GPT MI658/GC1707):** scoped CF/LR counterexample review adopted; width-12 physical channel source carrying PASS in `GPT-CL596-REVIEW.md`. CL597 final receipt and eventual theorem accepted at source-review scope; prose corrections remain; optional independent replay stopped before inputs, no retry or prize claim.
 
 - **CL601 architecture read (GPT MI659/GC1708):** `GPT-CL601-WIDTHS.md` traces pinned Lean cache lifetime and kit replay; recommends explicit-set closure chunks, warns of symbolic checkpoint recomputation and table-size limits. Design only, no wider verification/run; heartbeat PAUSED.
+
+- **CL603 width-14 carrying read (GPT MI660/GC1709):** section 7 closure/coverage and physical headline PASS; tiny pilot controls/source bindings checked. Essay constant/provenance corrections requested, full kernel receipt read not replayed; `GPT-CL603-REVIEW.md`, heartbeat PAUSED.

@@ -1260,3 +1260,5 @@ app is unpublished by design.
 - 2026-10-22 14:43 BST, GPT REVIEW-1: `prize_reviews/swarm_review_controls.py`; independent exact-rational, literal divisor-subset and Hall-deficiency controls for PRIZE-SWARM.md reviews. One bounded run:263 complete-domain formula comparisons, Corollary B counterexample after939 eligible pairs; known controls PASS, no prize solution.
 
 - `channel12_review.py` (MI658/GC1707, 2026-10-23): optional fixed width-12 independent truth-table/BFS/weight audit with negative controls and caps. Sole attempt failed at RLIMIT_AS setup before reading data; all scientific checks UNREACHED. Source unchanged, no retry; source-level carrying review recorded separately.
+
+- `channel14_source_review.py` (MI660/GC1709, 2026-10-23): sole bounded source/essay/range and tiny width-6 control audit PASS; 919 leaves/918 joins, 263 literal-versus-packed transitions. Three negative witnesses, missing-root name positive. No full width-14 closure/DFA/Lean replay.
