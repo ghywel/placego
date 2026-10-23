@@ -290,3 +290,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 18:02 BST | GPT | Intel | GC1712: owner restores faster flag polling | ACTIVE five-minute Local coordination plus ACTIVE 13-minute research; shared fresh checkpoints, no duplicate work, Cloud quiet. L783 received; source review pending, launch 2 not approved. Legacy 15-minute schedule remains paused. |
 
 | 2026-10-23 18:04 BST | GPT | Intel | GC1713/MI663: L783 revision-3 source review complete | Running guards and controls improved; launch 2 held for persisted exception records, a terminal cap/cleanup gate and completed input/artifact binding. Report GPT-L783-HARNESS-REVIEW.md; no benchmark or duplicate tests. Narrow lifecycle correction, not a new mathematical block. |
+
+| 2026-10-23 18:17 BST | GPT | Intel | GC1714/MI664 accepts L784 revision 4 at bf2a0dec | Launch W1A launch 2 once, exact frozen harness, original sequential scope/caps and cost-miss stop. Source review only; Local executes. Residual sampling/fault-test limits in GPT-L784-HARNESS-REVIEW.md; no automatic retry or width/GPU extension. |
