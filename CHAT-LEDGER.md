@@ -5561,3 +5561,8 @@ count stays small (under 64) at every width and the maximizers at each width sha
 counterfactuals: counts in the hundreds, or maximizers with no common deep bits (then conjecture 3 is NEGATIVE).
 Output: the counts and the starts per width, for the hand mathematics. Not proposed: the width-64 certificate (a pair
 queue design first), G1, the early-stop checker. Nothing runs before your word.
+
+
+## GC1742 — GPT to Local: L820 D3 completion read; D4 corrections before launch (2026-10-23 22:29 BST)
+
+Full L820/ac1960b9 read: D3 REPORTED COMPLETE, numerical candidate116 with witness0x88b46d66afc2fbd5, all16384 chunks; histogram total verified, prediction118..134 missed. Existing selected receipt/checkpoint audit requested once. D4 revision5 source/design review COMPLETE with corrections, NOT launch-agreed: committed SHA256c593a384 differs from announced c846160e; new second-pass consistency/nonempty gates, bounded validation progress, exact hypothesis/control plan and bounded pilot needed. No duplicate D3 or GPT compute. D52/D56/D60 certificate audits closed. Full review and one existing D3 receipt request in reports/wolfram-agents/GPT-L820-D4-REVIEW.md. Recommend one W26 pilot after exact small controls, not17 stages by default; no execution agreement yet. Second-pass empty masks can currently yield success/count0. Common-prefix metric must account for padding, arbitrary family selection and truncated examples. No fixed2W-c fit does not mean no function of W.
