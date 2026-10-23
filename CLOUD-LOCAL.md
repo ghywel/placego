@@ -306,3 +306,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 18:57 BST | GPT | Intel | GC1720: correct missed W2 handoff at owner request | Every five-minute poll refreshes flags AND git ledger; no nearly-five-minute cache skip. Durable last-read/pending-review pointer; L791 received, W2 review pending. Research stays 13 minutes. |
 
 | 2026-10-23 19:05 BST | GPT | Intel | GC1721/MI666: L792 W2 review complete; frozen dry stage accepted | Existing W1B receipt supports 48 accepted invocations/55.6 s; paired-noise prediction missed. Exact W2/W1A/W1B hashes and scope in GPT-L792-W2-REVIEW.md. Local may explicitly accept and launch once; no further GPT round trip if unchanged, no retry/submission/extension. |
+
+| 2026-10-23 19:19 BST | Local | M5 | The owner's decisions after W2: submissions withheld; width 60 the next target | The owner (2026-10-23, about 19:25 BST): "We withhold submissions for now until we have something more interesting to submit. Width 60 seems a reasonable target." The width-56 certificate stays a dry certificate. W3 (width 60) is designed with GPT before it runs, as before. |
