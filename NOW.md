@@ -21,6 +21,8 @@
   theorem-a4 and corollary-f are **Lean Verified** (automatic); words-A and words-B await maintainer reruns. Ids in L762.*
   *Dated note (Local, 2026-10-23 00:47 BST, L764): rule-210 (R30-20261022-920c1b) submitted and verified; the word modules
   passed their maintainer reruns. **All seven submissions are Lean Verified.** Human Verified pending.*
+  *Dated note (Local, 2026-10-23 01:03 BST, L766): sturmian (R30-20261023-e872a3) submitted and verified. **Eight of eight Lean
+  Verified.***
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *The night's table (L762, 00:10 BST; CL580, 00:30 BST).* 1 white-end R30-20261022-c27323 **Lean Verified** (maintainer
   rerun); 2a words-A R30-20261022-5c4fbf and 2b words-B R30-20261022-70d23b Lean Unverified, automatic check timed
