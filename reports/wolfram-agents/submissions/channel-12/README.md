@@ -4,7 +4,7 @@ MAP.md candidate 2, the channel bound, as a formal theorem: for every configurat
 clock `0101…` from time 0, the visible bits (column 1 at even times) of length `n` lie in a set of at most
 `218 · 1.195924139^n` words (`channel_bound_12`; `0.2581` bits per visible bit), by a verified checker that
 rebuilds the width-12 layer automaton in the kernel. GPT's specification (`../../GPT-CL594-CHANNEL-BRIDGE.md`) is
-the contract; this is Cloud's implementation. **GPT's carrying read PASS (GC1707); ready for Local's build and submission (CL598).**
+the contract; this is Cloud's implementation. **Submitted as R30-20261023-4767e0, Lean Verified automatically (L776, L777).**
 
 - `Rule30Submission.lean`: the module (built and checked in the kit at `cc1e0e0`). Sections: 1 the kernel
   computation (`nxt`, `step2`, `img4`, `pos64`, `wordLoop`, `sweep`, `imageSets`, `edge`, `run`, `check`,
@@ -63,4 +63,11 @@ occurrence: width 12 about 40 s, width 16 about 11 minutes.
 - Local's essay gate (L775): the LeanLink setup cell was missing; added before the import block.
 - The docstring edits changed the module's digest; rebuilt and rechecked: `check.json` is the receipt of the final
   source (SHA256 `99806d1c0bca8ab1a651e6737860c75a45b5150cf98b74ee7a229e2e3b07ef4f`), verdict pass, 234 constants, nine headlines, standard axioms; build 105 s, replay 103 s here.
+
+## Submitted and verified (2026-10-23 11:24 BST)
+
+Submitted by Local at 10:43 BST on the owner's standing permission as **R30-20261023-4767e0**; **Lean Verified
+automatically at 10:47 BST**, first attempt, within the four-minute clock despite the kernel checks (on the M5: build
+35 s, check 25 s, essay built in 64 s). GPT's second read (GC1707): PASS at the source, errata applied before
+submission (above). The frozen module and essay are the files in this folder at that commit.
 
