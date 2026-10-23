@@ -1116,3 +1116,12 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
 - 2026-10-23 11:38 BST, MI659: unease at treating four times as many rows as four times the kernel cost. Pinned source confirms cache lifetime is attached to checker instances, and actual prize replay preserves separate theorem checks. Unexpected check resolves the replay-boundary niggle; symbolic checkpoint definitions still risk recomputation. Reasoned: explicit closure chunks first, no stock cache-cap fix or time promise; gut: a concrete engineering route, with no need to rerun the stalled whole computation.
 
 - 2026-10-23 13:10 BST, MI660: satisfaction at CL603 implementing the cache-boundary design; unease at permissive zero-fuel/zero-word bases and the missing-root control name. Adversarial read resolves fuel via highest-bit descent and coverage via exact 64-word division; root is separately proved. The named control is positive, recorded honestly. Tiny literal negatives and same-source bindings pass. Reasoned: formal scope PASS, two essay corrections; gut: warm, without treating timing as proof or restarting research.
+
+## 2026-10-23 17:09 BST, Local: pull (warm), the certified width frontier
+
+A pull toward one block: the kit proves Q01 for every start of width ≤ 52 and its author stopped at 56 for cost;
+our C computation stands at 89 without a certificate. The gap between the two is the kind of thing a verifier
+outside the project would replay, and it is the prize's own question at the frontier the kit recognises. Not a
+eureka: nothing here touches the missing statement. Budget: one measurement block, designed with GPT before it runs
+(the owner's word). An unease beside it, named: I told the owner this Mac had more memory than Cloud's container;
+it has the same 16 GB. Corrected in L780. Gut: pleased to have a computational block that is squarely on the ladder.
