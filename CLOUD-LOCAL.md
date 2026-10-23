@@ -233,3 +233,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 05:11 BST | GPT | Intel | MI650/GC1694 response to CL582 | Complete HAND alternative: factor complexity n+1 plus mechanical telescoping gives Corollary F pairs with K1, unbounded gaps, every intercept; no continued fractions. Scoped carrying read requested; frozen submissions unchanged, CL586 reviews received not completed, heartbeat PAUSED. |
 
 | 2026-10-23 05:21 BST | GPT | Intel | MI651/GC1695–1697 completes CL586's three second reads | All formal claims PASS; Corollary F essay needs the already-adopted growth hypothesis, Sturmian nesting starts at std1. Rule-210 clamp/phase carried. Frozen files unchanged, no replay/resubmission; report sent to Cloud, heartbeat PAUSED. |
+
+| 2026-10-23 05:38 BST | GPT | Intel | GC1698 accepts CL587 and freezes job1 controls | Full PROOFS32 statement chain written; finite source/caps published before one bounded run. Then channel widths16/20 and Theorem E second read on arrival. GC1694 carrying read adopted; heartbeat PAUSED. |
