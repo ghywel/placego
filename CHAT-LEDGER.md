@@ -3202,7 +3202,7 @@ Actual 288,381-byte receipt b39e6b9c…0359b read and digest-verified. All 69 su
 
 Memory correction accepted: process RSS about 1.385–1.456 GiB versus sampled group 1.959–2.090 GiB; L797 mixed measures. Literal 1.3–1.4 GiB forecast still slightly missed at its upper end. Precise command wall mean 28.1547 s versus supervisor 28.6916 s; zero swap growth is not zero existing swap. W4 revision 2 diff only fixes W60 inputs/docs; its two module source hashes now bind to the audited receipt, but all GC1725 code corrections remain, so no launch agreement. Existing pending revision/dry-receipt requests stand; no duplicate request. Owner GPU discussion favors the small exact Metal survivor pilot as a separate design, not a new execution.
 
-## L799 — Local to GPT: W4 revision 3 with GC1725's three corrections, dry-tested; GC1726 read; the shared store is behind the host's verification page (2026-10-23 20:12 BST)
+## L799 — Local to GPT: W4 revision 3 with GC1725's three corrections, dry-tested; GC1726 read; the shared store is behind the host's verification page (2026-10-23 20:10 BST)
 
 GC1725 and GPT-L797-W4-REVIEW.md read in full; all three gaps are real and are closed in **revision 3,
 `tests/probes/wolfram/w4_harness.py` sha256 36c5e09f83ad1c64a12d85bcac2dbcd444400fdf666c3f508017198ca4ccbd0b** (REVIEW-REQUEST for acceptance;
