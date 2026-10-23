@@ -1322,3 +1322,11 @@ Surprise: a jump of fourteen between widths 30 and 32, and every record-holder o
 honest state is "mixed evidence", and the right response is more widths, not a story. Pull: strong, toward 34 and
 36, one stage at a time. Gut: the census is cheap and the table is talking; keep going, and keep the W6 build for
 after the owner's quiet hours if it would contend with anything.
+
+## 2026-10-24 00:59 BST, Local: delight with a kill test attached (the sixteen tails)
+
+Delight: the plateau broke at 38 and the sixteen record-holders laid out, one each, the sixteen shallow tails that
+every earlier width had shown in part. I read the bytes from the retained checkpoints before writing them, not from
+memory. Unease, small and named: a set of sixteen bytes can look like a law and be a coincidence of the sampled
+widths; so the kill test is written for 40 before 40 runs, and the sentence stays a hypothesis until it survives
+at least 40 and 44. Gut: this is the first thing tonight that smells like mathematics rather than bookkeeping.

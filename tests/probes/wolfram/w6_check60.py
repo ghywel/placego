@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""W6, revision 4 (GC1753's remaining failure path closed: the checker gate is total, every field type-checked before use, replay.ok must be exactly True, and any exception inside the gate is a FAIL so the step's finalization and receipt always run; seven more gate controls). Revision 3 was (GC1752's corrections of revision 2: the build object's digest retained and compared before and after the checker, a status-specific checked runner with exit 0 required and empty output allowed, the artifact baseline taken over the build trees only before preservation and deletion with the deleted targets removed from it so every preserved copy, export and receipt byte counts, the .hash files preserved too, real paths for the containment checks, the matcher requiring typed fields and failing closed on malformed JSON, the final gate an explicit list of predicates with retained values and the per-step cleanup evidence instead of a parent-group sample). Revision 2 was (GPT's four corrections of GC1751 on revision 1): the supervised local build and check of the width-60
+"""W6, revision 5 (GC1754: the whole production tail, from the build step to the final predicates, inside a try block whose handler persists an explicit stopped reason "post-setup exception" with the receipt; nothing else changed). Revision 4 was (GC1753's remaining failure path closed: the checker gate is total, every field type-checked before use, replay.ok must be exactly True, and any exception inside the gate is a FAIL so the step's finalization and receipt always run; seven more gate controls). Revision 3 was (GC1752's corrections of revision 2: the build object's digest retained and compared before and after the checker, a status-specific checked runner with exit 0 required and empty output allowed, the artifact baseline taken over the build trees only before preservation and deletion with the deleted targets removed from it so every preserved copy, export and receipt byte counts, the .hash files preserved too, real paths for the containment checks, the matcher requiring typed fields and failing closed on malformed JSON, the final gate an explicit list of predicates with retained values and the per-step cleanup evidence instead of a parent-group sample). Revision 2 was (GPT's four corrections of GC1751 on revision 1): the supervised local build and check of the width-60
 single-module submission (reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean: 4,096 kernel-decided
 chunk checks, the wrapper, the witness, `death_time_60_exact`) in the kit copy used by the submission pipeline, under
 the unchanged W1A supervisor with an explicit resource envelope. NOT an agreed job until GPT accepts this exact file;
@@ -185,37 +185,42 @@ def main():
         raise
     except BaseException as e:
         R['stopped'] = 'setup exception: %r' % e; R['setup_exception'] = repr(e); sup.save(); print('STOP:', R['stopped']); sys.exit(1)
-    rb = sup.run_step('build_Rule30Submission', ['lake', 'build', 'Rule30Submission'], kit, STEP_WALL_S, STEP_CPU_S, H.m_pass)
-    olean = os.path.join(kit, '.lake/build/lib/lean/Rule30Submission.olean')
-    rb['olean'] = {'exists_after': os.path.exists(olean), 'sha256': H.digest(olean) if os.path.exists(olean) else None, 'bytes': os.path.getsize(olean) if os.path.exists(olean) else None}
-    sup.save()
-    if rb['verdict'] != 'pass' or not rb['olean']['exists_after']: stop('build: %s (%s)' % (rb['verdict'], rb['reason']))
-    build_olean_sha = rb['olean']['sha256']
-    R['w6']['object_before_checker'] = H.digest(olean)
-    if R['w6']['object_before_checker'] != build_olean_sha: stop('object changed between build and checker')
-    cmd = ['lake', 'env', 'lean', '--run', 'Check.lean', 'Rule30Submission', '--claim', 'partial'] + sum([['--headline', h] for h in HEADLINES], [])
-    r = sup.run_step('checker', cmd, kit, STEP_WALL_S, STEP_CPU_S, checker_gate)
-    if r['verdict'] != 'pass': stop('checker: %s (%s) %s' % (r['verdict'], r['reason'], r.get('match_note')))
-    text = open(os.path.join(out, 'checker.log'), errors='replace').read()
-    open(os.path.join(out, 'check.json'), 'w').write([l for l in text.splitlines() if l.startswith('{')][-1] + '\n')
-    object_after = H.digest(olean) if os.path.exists(olean) else None
-    try: m_final = H.metrics(kit)
-    except H.MonitorError as e: m_final = {'error': str(e)}
-    arts = H.new_artifact_bytes(kit, out, sup.art_baseline)
-    predicates = {
-        'module_unchanged_after_checker': H.digest(os.path.join(kit, 'Rule30Submission.lean')) == MODULE_SHA256,
-        'object_unchanged_after_checker': object_after == build_olean_sha,
-        'build_step_cleanup': rb.get('group_members_after') == 0 and rb.get('final_problems') == [],
-        'checker_step_cleanup': r.get('group_members_after') == 0 and r.get('final_problems') == [],
-        'stage_within_deadline': sup.remaining() >= 0,
-        'artifacts_within_cap': arts <= H.CAPS['artifacts_max_bytes'],
-        'pressure_ok_after': isinstance(m_final, dict) and 'error' not in m_final and not H.pressure_bad(m_final),
-        'swap_growth_within_cap': isinstance(m_final, dict) and 'swap_used_bytes' in m_final and m_final['swap_used_bytes'] - sup.baseline['swap_used_bytes'] <= H.CAPS['swap_growth_bytes'],
-        'disk_above_floor': isinstance(m_final, dict) and m_final.get('disk_free_bytes', 0) >= H.CAPS['disk_free_min_bytes'],
-    }
-    R['final'] = {'predicates': predicates, 'values': {'object_build': build_olean_sha, 'object_after': object_after, 'artifact_bytes': arts, 'metrics_after': m_final, 'stage_remaining_s': round(sup.remaining(), 1)}}
-    sup.save()
-    if not all(predicates.values()): stop('final validation failed: %s' % [k for k, v in predicates.items() if not v])
+    try:
+        rb = sup.run_step('build_Rule30Submission', ['lake', 'build', 'Rule30Submission'], kit, STEP_WALL_S, STEP_CPU_S, H.m_pass)
+        olean = os.path.join(kit, '.lake/build/lib/lean/Rule30Submission.olean')
+        rb['olean'] = {'exists_after': os.path.exists(olean), 'sha256': H.digest(olean) if os.path.exists(olean) else None, 'bytes': os.path.getsize(olean) if os.path.exists(olean) else None}
+        sup.save()
+        if rb['verdict'] != 'pass' or not rb['olean']['exists_after']: stop('build: %s (%s)' % (rb['verdict'], rb['reason']))
+        build_olean_sha = rb['olean']['sha256']
+        R['w6']['object_before_checker'] = H.digest(olean)
+        if R['w6']['object_before_checker'] != build_olean_sha: stop('object changed between build and checker')
+        cmd = ['lake', 'env', 'lean', '--run', 'Check.lean', 'Rule30Submission', '--claim', 'partial'] + sum([['--headline', h] for h in HEADLINES], [])
+        r = sup.run_step('checker', cmd, kit, STEP_WALL_S, STEP_CPU_S, checker_gate)
+        if r['verdict'] != 'pass': stop('checker: %s (%s) %s' % (r['verdict'], r['reason'], r.get('match_note')))
+        text = open(os.path.join(out, 'checker.log'), errors='replace').read()
+        open(os.path.join(out, 'check.json'), 'w').write([l for l in text.splitlines() if l.startswith('{')][-1] + '\n')
+        object_after = H.digest(olean) if os.path.exists(olean) else None
+        try: m_final = H.metrics(kit)
+        except H.MonitorError as e: m_final = {'error': str(e)}
+        arts = H.new_artifact_bytes(kit, out, sup.art_baseline)
+        predicates = {
+            'module_unchanged_after_checker': H.digest(os.path.join(kit, 'Rule30Submission.lean')) == MODULE_SHA256,
+            'object_unchanged_after_checker': object_after == build_olean_sha,
+            'build_step_cleanup': rb.get('group_members_after') == 0 and rb.get('final_problems') == [],
+            'checker_step_cleanup': r.get('group_members_after') == 0 and r.get('final_problems') == [],
+            'stage_within_deadline': sup.remaining() >= 0,
+            'artifacts_within_cap': arts <= H.CAPS['artifacts_max_bytes'],
+            'pressure_ok_after': isinstance(m_final, dict) and 'error' not in m_final and not H.pressure_bad(m_final),
+            'swap_growth_within_cap': isinstance(m_final, dict) and 'swap_used_bytes' in m_final and m_final['swap_used_bytes'] - sup.baseline['swap_used_bytes'] <= H.CAPS['swap_growth_bytes'],
+            'disk_above_floor': isinstance(m_final, dict) and m_final.get('disk_free_bytes', 0) >= H.CAPS['disk_free_min_bytes'],
+        }
+        R['final'] = {'predicates': predicates, 'values': {'object_build': build_olean_sha, 'object_after': object_after, 'artifact_bytes': arts, 'metrics_after': m_final, 'stage_remaining_s': round(sup.remaining(), 1)}}
+        sup.save()
+        if not all(predicates.values()): stop('final validation failed: %s' % [k for k, v in predicates.items() if not v])
+    except SystemExit:
+        raise
+    except BaseException as e:
+        R['stopped'] = 'post-setup exception: %r' % e; R['post_setup_exception'] = repr(e); sup.save(); print('STOP:', R['stopped']); sys.exit(1)
     R['complete'] = True; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
     print('DONE: width-60 submission module built and checked here (not submitted)')
 
