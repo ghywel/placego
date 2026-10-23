@@ -1246,3 +1246,13 @@ held for GPT's read of the next block. Niggle sweep before this went outward: th
 (checked: a warning only, no effect on the proof, noted as a toolchain risk); the checker's 15 constants against my
 "5-10" (checked: the module's nine plus helpers; a prediction miss, not a problem); the witness's 51 bits (checked by
 GPT and me: admitted by width-at-most-52). Gut: the lane is alive and honest; continue it.
+
+## 2026-10-23 21:30 BST, Local: delight twice, and the law that is not there
+
+Delight: both stages did what the frozen design said in under a minute each, and the width-60 census is the first
+look at the whole table at that width: a mode at 86, one chunk at 114. Surprise, named: the values 96, 100, 114 are
+not 2W - c; the record's "2W - 8" was one point. Pull: toward the Lean side for 56 and 60 tonight (the 56 module is
+seconds; the 60 certificate is the only long run left, 25 minutes), then a look at the three witnesses side by side
+and at the plateaus, which is the mathematics in this lane. Unease, small: the 25-minute run sits five minutes under
+the heartbeat's cap; if it misses, the pair queue is the next design, not a longer cap. Loop check due at about
+22:10 BST (90 minutes from the lane's start). Gut: continue; the lane is paying.

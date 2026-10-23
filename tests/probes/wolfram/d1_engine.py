@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D1, revision 3 (revision 2, the executed version a5f331d3…, plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound; nothing else changed): a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
+"""D1, revision 4 (revision 3, the executed version 27eb852c…, with the stale MISS sentence corrected and the stage outcomes below; code unchanged): revision 3 was revision 2 (the executed a5f331d3…) plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
 pinned source, with the kit's packed physical evaluator (`Rule30ZeroBoundarySmall.pstep`) beside it, for the lane
 "D-exact": the exact death time D(W) of a width, kernel-checked above (a chunk certificate at K = D + 1) and below (an
 explicit witness start evolved by the kit's `prun`, bridged to `zrow` by `run_toFun`). Lane chosen by Local on the
@@ -63,7 +63,7 @@ start/finish times, this file's sha256, the Python version, and the terminal ver
 completed chunk identifiers. Predictions: W = 52, U = 96: ATTAINED within the 256 chunks (D(52) = 96 is the kit's
 observed value; counterfactual: MISS, which would mean the kit's table or this engine is wrong, stop); cost about
 0.6 s per chunk at K = 97, so under 2 minutes at 2 workers even if the witness is in the last chunk. W = 56, U = 100:
-ATTAINED or MISS both informative (MISS means D(56) < 100 and the author's bound is loose; counterfactual stated);
+ATTAINED or MISS both informative (a MISS is inconclusive for exactness: D(56) < 100 would need a tighter full certificate; corrected in revision 4 after GC1734);
 about 0.9 s per chunk, 1,024 chunks, about 8 minutes at 2 workers. W = 60 is not proposed in this revision (4,096
 chunks at 1.2 s is beyond a 30-minute stage at 2 workers; a C engine or a later agreement).
 
@@ -84,7 +84,20 @@ w1a_harness afterwards; 32 chunks consumed of 256 (the first qualifying chunk in
 recurrence 12 ms per chunk; revision 1's "1.2 s per width-60 chunk" was the bitwise pattern setup, which the kit's
 doubling removes (a width-60 chunk's recurrence is 27 ms). So a full census at width 60 is minutes, not an hour.
 Group RSS sampled at 1 MiB (the step lasted one sample). D(52) = 96 is now a physically validated candidate pending
-the Lean lower proof (block D2, d2_witness.py).
+the Lean lower proof (block D2, d2_witness.py); D2 then kernel-checked D(52) = 96 (L810).
+
+OUTCOME of revision 3's two stages (MEASURED, GC1734's accepted versions, nice 5, two workers, L812): stage 1
+d1-w56-20261023-2125, `run 56 100 2`: ATTAINED at chunk 820 of 1,024 (821 consumed), witness 0x93d4b223f5b9b5 (56
+bits), physical death 100 (validator and, afterwards, the list-of-bools engine); step pass, final problems [], wall
+6.25 s, user 12.47 s, sys 0.38 s, sampled group peak 155 MiB with 5 members, groups clean; per-chunk maxima 76 .. 100
+(one chunk at 98, one at 100). Stage 2 d1-w60-20261023-2125, `runcensus 60 129 2`: CENSUS-ATTAINED, all 4,096
+chunks covered, no lane alive at 129, maximum level 114 attained by exactly one chunk (1400, lane 1995), witness
+0xe77a4e77b8f99b5 (60 bits), physical death 114 (validator and the list engine); step pass, final problems [], wall
+50.0 s, user 98.7 s, sys 1.0 s, sampled group peak 190 MiB, groups clean; maxima histogram 78:1, 80:45, 82:386,
+84:884, 86:1034, 88:737, 90:456, 92:254, 94:136, 96:87, 98:44, 100:17, 102:5, 104:3, 106:2, 108:1, 110:3, 114:1.
+Against the predictions: 56 under a minute (6 s); 60 about two minutes with M in [102, 116] (50 s; M = 114).
+So the candidates are D(56) = 100 (the W2 bound attained) and D(60) = 114 (the W3 bound 128 is loose by 14);
+neither is a law of the form 2W - c (D - 2W = -8, -12, -6 at 52, 56, 60).
 """
 import hashlib, json, os, platform, sys, time
 

@@ -59,6 +59,10 @@
   the kit's width-52 theorem plus the witness 0x7dc2ff6fcc4fd through the kit's `prun`; Check.lean pass, 15 constants
   replayed, standard axioms). The kit's "tightness observed, not proved" entry is proved at 52. Next: 56 and 60 on
   GPT's read (d1_engine.py revision 3, census mode).*
+  *Dated note (Local, 2026-10-23 21:30 BST, L812): the two numerical stages ran: **D(56) = 100** (the W2 bound
+  attained by 0x93d4b223f5b9b5) and **D(60) = 114** (census over all 4,096 chunks; witness 0xe77a4e77b8f99b5), both
+  physically validated candidates; the Lean side (d2_witness.py revision 2 for 56 and 60; w5_harness.py, the width-60
+  certificate at K = 115) awaits GPT's read. The values 96, 100, 114 are not 2W - c.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

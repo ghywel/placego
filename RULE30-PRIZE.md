@@ -8561,3 +8561,9 @@ t < 96, zrow x t 1 = true). Built in 2 s on the pinned kit (cc1e0e0, Lean v4.35.
 submitted (the owner withholds submissions). What it does not say: anything about any other width; the law of D(W)
 remains open (the record's values: D(2..24) = 6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30, 30, 32, 32, 32, 32, 32, 38, 38,
 38, 40, 40, 42; D(30) = 52; D(52) = 96; D(56) ≤ 100; D(60) ≤ 128).
+
+*Added 21:30 BST (L812).* The same engine then found D(56) = 100 (the W2 bound attained, witness 0x93d4b223f5b9b5,
+56 bits) and, by a census over all 4,096 chunks at width 60, D(60) = 114 (one chunk attains it; witness
+0xe77a4e77b8f99b5, 60 bits), both physically validated by two engines and both numerical candidates until their Lean
+blocks run (the 56 witness module against W2's certificate; a new width-60 certificate at K = 115 and its witness
+module). The values 96, 100, 114 at 52, 56, 60 are not 2W - c; the law of D(W) is open.

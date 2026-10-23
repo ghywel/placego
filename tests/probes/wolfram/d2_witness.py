@@ -1,90 +1,70 @@
 #!/usr/bin/env python3
-"""D2, revision 1: the kernel-checked LOWER bound of the death time, for GPT's design read. Generates a Lean module
-that states, for an explicit witness start r of width W, that the depth-1 cell is black at every even time below U
-(by the kit's packed evaluator `prun`, bridged to the physical `zrow` by `run_toFun`), white at U, and composes it
-with the kit's certified upper bound into the exactness statement D(W) = U; builds it in a clean clone under the
-unchanged W1A supervisor with a negative control and the kit's Check.lean. NOT an agreed job until GPT accepts this
-exact file and the generated text's hash; it runs nothing on import; nothing is submitted.
+"""D2, revision 2: the kernel-checked LOWER bound of the death time at a width, composed with the certified upper
+bound into the exactness statement D(W) = U, for GPT's design read. Revision 1 (fa934106…, the executed version) was
+the single case W = 52; revision 2 is the same generator and harness parametrised over a frozen table of cases (W, U,
+the witness r from D1's receipts, the upper theorem and the module that carries it), with the case chosen on the
+command line; the generated Lean text for case 52 is unchanged (its hash is asserted in the tests below). NOT an
+agreed job until GPT accepts this exact file and the generated texts' hashes for the case run; it runs nothing on
+import; nothing is submitted.
 
-Usage:  python3 d2_witness.py KIT_CLONE OUT_DIR            (W = 52, U = 96, the D1 witness; the only case in revision 1)
-        python3 d2_witness.py --print                       (print the two generated Lean files and stop)
+Usage:  python3 d2_witness.py W KIT_CLONE OUT_DIR       (W in the CASES table)
+        python3 d2_witness.py --print W                  (print the two generated Lean files for case W and stop)
+        python3 d2_witness.py --test                     (the case-52 texts' hashes equal revision 1's; exits nonzero otherwise)
 
-If this holds, it changes the kit's death-time table entry D(52) = 96 from "tightness observed, not proved" to a
-kernel-checked exact value: the first exact entry (LR row). The witness is D1's (L808): r = 0x7dc2ff6fcc4fd (51 bits,
-width <= 52), physically validated by two independent engines here (packed and list-of-bools): black at depth 1 at
-every even t < 96, white at 96.
+If this holds, it changes the kit's death-time table from "tightness observed, not proved" to kernel-checked exact at
+each width in the table (LR row). Cases:
+  52: U = 96, witness 0x7dc2ff6fcc4fd (D1, L808), upper `Rule30ZeroBoundaryWidth52.q01_width_le_52` (the kit);
+      DONE (L810, d2-w52-20261023-2112): death_time_52_exact kernel-checked.
+  56: U = 100, witness 0x93d4b223f5b9b5 (D1 stage 1, L812; 56 bits; both physical engines: dies at 100), upper
+      `Rule30ZeroBoundaryWidth56.q01_width_le_56` (W2's certificate, L794; its object is present in kit-w1a, 83,360
+      bytes, sha256 6110e485…, where W2 built it; its module imports the sixteen Width56 chunk modules also built
+      there). Run in kit-w1a.
+  60: U = 114, witness 0xe77a4e77b8f99b5 (D1 stage 2's census, L812; 60 bits; both engines: dies at 114), upper
+      `Rule30ZeroBoundaryWidth60.q01_width_le_60` WITH BOUND 114, which exists only after W5 (w5_harness.py, K = 115)
+      has built it in kit-w4-a; the harness asserts the upper module's statement carries `t ≤ 114` before building
+      (it reads the generated wrapper source in the clone and requires the literal). Run in kit-w4-a after W5.
 
-The generated module `Rule30DeathTime52.lean` (untracked in the clone, beside the kit's sources):
+The generated module for case W (`Rule30DeathTime{W}.lean`, untracked in the clone, beside the kit's sources) is
+revision 1's text with W, U and r substituted: `w := r`; `w_lt : w < 2 ^ W` by decide; `w_width` beyond the width by
+the kit's `testBit_ge_of_lt`; `w_black : ∀ s, s < U/2 → (prun w (2 s)).testBit 0 = true` and `w_white : (prun w U).testBit
+0 = false` by `decide +kernel`; `zrow_w` by the kit's `run_toFun`; `w_survives`, `w_dies`; and
+`death_time_W_exact : (∀ x of width ≤ W, ∃ t ≤ U even with zrow x t 1 = false) ∧ (∃ x of width ≤ W, ∀ t < U even,
+zrow x t 1 = true) := ⟨upper, ⟨toFun w, w_width, w_survives⟩⟩`. The negative asks for black at U (`s < U/2 + 1`) and
+must be rejected as false (GPT's narrow matcher of revision 1, unchanged: the whole statement bound, both rejection
+forms, exactly one error diagnostic, fail closed).
 
-    import Ruliology.CellularAutomata.Rule30ZeroBoundarySmall
-    import Ruliology.CellularAutomata.Rule30ZeroBoundaryWidth52
-    namespace Ruliology.CellularAutomata.Rule30DeathTime52
-    open Rule30ZeroBoundary Rule30ZeroBoundarySmall
-    def w : Nat := 0x7dc2ff6fcc4fd
-    theorem w_lt : w < 2 ^ 52 := by decide                                 -- width
-    theorem w_width (k : Nat) (hk : 52 < k) : toFun w k = false            -- toFun is false beyond the width
-    theorem w_black : ∀ s, s < 48 → (prun w (2 * s)).testBit 0 = true := by decide +kernel   -- the orbit, 48 even times
-    theorem w_white : (prun w 96).testBit 0 = false := by decide +kernel  -- and white at 96 (the physical death)
-    theorem zrow_w (t : Nat) : zrow (toFun w) t 1 = (prun w t).testBit 0  -- run_toFun, then toFun at depth 1
-    theorem w_survives : ∀ t, t < 96 → t % 2 = 0 → zrow (toFun w) t 1 = true
-    theorem w_dies : zrow (toFun w) 96 1 = false
-    theorem death_time_52_exact :
-        (∀ x : Nat → Bool, (∀ k, 52 < k → x k = false) → ∃ t, t ≤ 96 ∧ t % 2 = 0 ∧ zrow x t 1 = false) ∧
-        (∃ x : Nat → Bool, (∀ k, 52 < k → x k = false) ∧ (∀ t, t < 96 → t % 2 = 0 → zrow x t 1 = true)) :=
-      ⟨Rule30ZeroBoundaryWidth52.q01_width_le_52, ⟨toFun w, w_width, w_survives⟩⟩
+Order under the W1A supervisor (unchanged caps: stage 30 min, module 180/150 s, checker 600/540 s, controls 30/30 s,
+RSS stop 6 GiB; one worker; no retry): pins (commit, toolchain, the seven sources, deps built, clean tracked tree;
+the upper module's object present, its sha256 recorded; for 60, the bound literal 114 in the wrapper source);
+preflight; the negative; `lake build` of the module (fresh olean); the kit's Check.lean with headline
+`death_time_W_exact`, claim partial. Predictions per case: negative about 2 s; module under 10 s (56: 50 orbits of at
+most 98 steps; 60: 57 orbits of at most 112 steps); checker about 2 s, standard axioms, newAxioms [], replay about 15
+constants. Counterfactuals as revision 1's: an elaboration error (fix changes the hash, new acceptance); the kernel
+rejecting `w_black` (an instrument discrepancy: stop); a non-standard axiom (stop); for 60, the bound literal absent
+(stop before building).
 
-Reading: the first conjunct is the kit's theorem unchanged (every start of width <= 52 has an even white time
-<= 96); the second exhibits a start of width <= 52 with no even white time below 96. Together: the least uniform
-even death bound at width 52 is exactly 96. Nothing is claimed about other widths. `decide +kernel` evaluates
-`prun w (2 s)` for s < 48 (48 separate packed orbits of at most 94 steps on numbers below 2^146: trivial) through
-`Nat.decidableBallLT`.
-
-Negative control (`Rule30DeathTime52Neg.lean`, must be rejected as false): the same `w_black` with `s < 49` (which
-asks for black at time 96, where the start is white). The matcher accepts only the elaborator's or the kernel's
-"proved that the proposition ... is false" form bound to that statement.
-
-Order under the W1A supervisor (caps: stage 30 min, module 180 s wall / 150 s CPU, checker 600 / 540 s, controls
-30 / 30 s, RSS stop 6 GiB; one worker; no retry): pins (commit cc1e0e0, toolchain, the seven sources, deps built,
-clean tracked tree; the Width52 objects present: W1A rebuilt them in this clone, byte-identical to the kit's);
-preflight; the negative (lake env lean, expected rejected); `lake build Ruliology.CellularAutomata.Rule30DeathTime52`
-(expected pass, fresh olean); the kit's `Check.lean` on that module with headline `death_time_52_exact`, claim
-partial (expected: verdict pass, headline found, type matches, standard axioms, newAxioms [], replay ok). The
-generated texts' sha256 are recorded in the receipt and must equal the hashes GPT accepts.
-
-Predictions: the negative rejected in about 1 s; the module compiles in under 10 s (the kernel's work is 48 short
-orbits plus `decide` on `w < 2^52`); the checker passes in about 2 s with 5-10 constants replayed. Counterfactuals:
-the module fails to elaborate (a wrong lemma name or a `decide` instance missing: fix the text, which changes the
-hash, which needs a new acceptance); the kernel rejects `w_black` (then the two Python engines and the kit's `prun`
-disagree: a bug somewhere, stop); the checker reports a non-standard axiom (stop).
-
-OUTCOME (MEASURED, run d2-w52-20261023-2112, launched 21:12:40 BST at GC1732's accepted version fa934106…, 8.1 s in all,
-complete, no stop; receipt sha256 31afffa7eda672610716b1367bf0fa81e94bdca63cf91376c4e32d42c2c59634, kept on the M5; the
-generated sources and the object archived in the run folder, kit-w1a clean again): pins ok (cc1e0e0, clean, the width-52
-object 0bdb8beb… equal to the W1A receipt's); preflight pass; the negative (s < 49) rejected in the elaborator form,
-"Tactic `decide` proved that the proposition ∀ (s : Nat), s < 49 → (prun w (2 * s)).testBit 0 = true is false", one
-error line, 1.6 s; the module built fresh in 2.1 s (0.35 s user; olean 97,032 bytes, sha256 71e9738a…; one deprecation
-warning on `if_false`, no error); the kit's Check.lean on Rule30DeathTime52 with headline death_time_52_exact: verdict
-pass, headline found, theorem, type matches, axioms propext / Classical.choice / Quot.sound, newAxioms [], replay of 15
-constants ok, 2.1 s. Peak RSS 0.4 / 0.66 / 1.37 GiB (negative, module, checker); swap growth 0; pressure 1. So
-**D(52) = 96 exactly, kernel-checked**: every start of width <= 52 has an even white time at depth 1 at or before 96
-(the kit's theorem), and the start 0x7dc2ff6fcc4fd of width <= 52 has none below 96. Against the predictions: negative
-about 1 s (1.6); module under 10 s (2.1); checker about 2 s with 5-10 constants (2.1 s, 15 constants: the module's
-own 9 declarations plus the Nat-literal and decidability helpers it uses). Not submitted.
+OUTCOME (case 52, revision 1, MEASURED, run d2-w52-20261023-2112, 8.1 s): negative rejected in the elaborator form,
+module built fresh (olean 97,032 bytes, sha256 71e9738a…), Check.lean pass with standard axioms, newAxioms [], 15
+constants replayed; D(52) = 96 exactly, kernel-checked (L810). Cases 56 and 60: filled in after the agreed runs.
 """
 import hashlib, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-W, U, R = 52, 96, 0x7dc2ff6fcc4fd
-UPPER = 'Rule30ZeroBoundaryWidth52.q01_width_le_52'
-MOD = 'Rule30DeathTime52'
+CASES = {
+    52: {'U': 96, 'r': 0x7dc2ff6fcc4fd, 'upper_module': 'Rule30ZeroBoundaryWidth52', 'upper': 'Rule30ZeroBoundaryWidth52.q01_width_le_52'},
+    56: {'U': 100, 'r': 0x93d4b223f5b9b5, 'upper_module': 'Rule30ZeroBoundaryWidth56', 'upper': 'Rule30ZeroBoundaryWidth56.q01_width_le_56'},
+    60: {'U': 114, 'r': 0xe77a4e77b8f99b5, 'upper_module': 'Rule30ZeroBoundaryWidth60', 'upper': 'Rule30ZeroBoundaryWidth60.q01_width_le_60'},
+}
+REV1_HASHES = {'pos': 'b241924a15528afa33b8f57d23043304054244d6d56c0a142cbbd63d50f130a6', 'neg': '60eff42442e6915698ab77614180f7dd749d853006f7409fe7bf48c25fc2730d'}
 LIB = 'lean/Ruliology/CellularAutomata'
 
 
-def module(neg=False):
+def module(W, neg=False):
+    c = CASES[W]; U, R, UPPER = c['U'], c['r'], c['upper']; MOD = 'Rule30DeathTime%d' % W
     half = U // 2 + (1 if neg else 0)
     return f"""import Ruliology.CellularAutomata.Rule30ZeroBoundarySmall
-import Ruliology.CellularAutomata.Rule30ZeroBoundaryWidth{W}
+import Ruliology.CellularAutomata.{c['upper_module']}
 
 /-! The death time at width `{W}` is exactly `{U}`: the kit's certified upper bound `{UPPER}` is attained by the
 explicit start `w` (bits are depths `1 .. {W}`), whose depth-1 cell is black at every even time below `{U}` and white
@@ -133,22 +113,39 @@ end Ruliology.CellularAutomata
 """
 
 
-def m_neg(rc, text):
-    stmt = '∀ (s : Nat), s < %d → (prun w (2 * s)).testBit 0 = true' % (U // 2 + 1)
-    flat = ' '.join(text.split())
-    elab = 'proved that the proposition' in flat and stmt in flat and 'is false' in flat
-    kern = '(kernel) application type mismatch' in flat and ('decide (%s) = true' % stmt) in flat
-    # Accept only the intended statement's rejection, never a parser/import error or mixed-error run.
-    errors = [line for line in text.splitlines() if 'error:' in line or 'error: ' in line]
-    ok = rc != 0 and len(errors) == 1 and (elab or kern)
-    return ('pass' if ok else 'FAIL', 'rejected-as-false' if ok else 'unexpected (exit %d)' % rc)
+def make_m_neg(U):
+    def m_neg(rc, text):
+        stmt = '∀ (s : Nat), s < %d → (prun w (2 * s)).testBit 0 = true' % (U // 2 + 1)
+        flat = ' '.join(text.split())
+        elab = 'proved that the proposition' in flat and stmt in flat and 'is false' in flat
+        kern = '(kernel) application type mismatch' in flat and ('decide (%s) = true' % stmt) in flat
+        # Accept only the intended statement's rejection, never a parser/import error or mixed-error run.
+        errors = [line for line in text.splitlines() if 'error:' in line or 'error: ' in line]
+        ok = rc != 0 and len(errors) == 1 and (elab or kern)
+        return ('pass' if ok else 'FAIL', 'rejected-as-false' if ok else 'unexpected (exit %d)' % rc)
+    return m_neg
+
+
+def sha(text):
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
+def test():
+    ok = sha(module(52)) == REV1_HASHES['pos'] and sha(module(52, neg=True)) == REV1_HASHES['neg']
+    print('case-52 texts equal revision 1:', ok)
+    for W in CASES:
+        print('case', W, 'pos', sha(module(W))[:16], 'neg', sha(module(W, neg=True))[:16])
+    sys.exit(0 if ok else 1)
 
 
 def main():
-    if sys.argv[1:] == ['--print']:
-        print(module()); print('---- negative ----'); print(module(neg=True)); return
+    if sys.argv[1:2] == ['--test']:
+        test(); return
+    if sys.argv[1:2] == ['--print']:
+        W = int(sys.argv[2]); print(module(W)); print('---- negative ----'); print(module(W, neg=True)); return
     import w1a_harness as H, subprocess, time
-    kit = os.path.abspath(sys.argv[1]); out = os.path.abspath(sys.argv[2])
+    W = int(sys.argv[1]); c = CASES[W]; U = c['U']; MOD = 'Rule30DeathTime%d' % W
+    kit = os.path.abspath(sys.argv[2]); out = os.path.abspath(sys.argv[3])
     if os.path.exists(out) and os.listdir(out):
         print('REFUSED: output folder exists and is not empty:', out); sys.exit(3)
     os.makedirs(out, exist_ok=True)
@@ -162,9 +159,9 @@ def main():
         p = os.path.join(kit, 'lean/.lake/build/lib/lean/Ruliology/CellularAutomata/%s%s' % (MOD, ext))
         if os.path.exists(p): os.remove(p)
     sup = H.Supervisor(kit, out); R_ = sup.receipts
-    pos, neg = module(), module(neg=True)
-    R_['d2'] = {'W': W, 'U': U, 'witness_hex': hex(R), 'upper': UPPER, 'module': MOD, 'this_sha256': H.digest(os.path.abspath(__file__)),
-                'files': {pos_rel: hashlib.sha256(pos.encode()).hexdigest(), neg_rel: hashlib.sha256(neg.encode()).hexdigest()}}
+    pos, neg = module(W), module(W, neg=True)
+    R_['d2'] = {'W': W, 'U': U, 'witness_hex': hex(c['r']), 'upper': c['upper'], 'module': MOD, 'this_sha256': H.digest(os.path.abspath(__file__)),
+                'files': {pos_rel: sha(pos), neg_rel: sha(neg)}}
 
     def stop(msg, code=1):
         R_['stopped'] = msg; sup.save(); print('STOP:', msg); sys.exit(code)
@@ -174,20 +171,31 @@ def main():
     toolchain = open(os.path.join(kit, 'lean-toolchain')).read().strip()
     got = {f: H.digest(os.path.join(kit, f)) for f in H.PIN['sources']}
     bad = [f for f, want in H.PIN['sources'].items() if got[f] != want]
-    w52 = os.path.join(kit, 'lean/.lake/build/lib/lean/Ruliology/CellularAutomata/Rule30ZeroBoundaryWidth52.olean')
+    upo = os.path.join(kit, 'lean/.lake/build/lib/lean/Ruliology/CellularAutomata/%s.olean' % c['upper_module'])
     R_['pins'] = {'commit': commit, 'tracked_tree_dirty': dirty.splitlines(), 'toolchain': toolchain, 'bad_sources': bad,
-                  'deps_built': {dd: os.path.exists(os.path.join(kit, dd)) for dd in H.DEPS}, 'width52_olean': os.path.exists(w52),
-                  'width52_olean_sha256': H.digest(w52) if os.path.exists(w52) else None}
+                  'deps_built': {dd: os.path.exists(os.path.join(kit, dd)) for dd in H.DEPS}, 'upper_olean': os.path.exists(upo),
+                  'upper_olean_sha256': H.digest(upo) if os.path.exists(upo) else None, 'upper_olean_bytes': os.path.getsize(upo) if os.path.exists(upo) else None}
+    if W == 60:
+        src = os.path.join(kit, '%s/%s.lean' % (LIB, c['upper_module']))
+        txt = open(src).read() if os.path.exists(src) else ''
+        R_['pins']['upper_source_present'] = bool(txt); R_['pins']['upper_bound_literal_114'] = ('t ≤ 114' in txt) and ('q01_of_chunks 60 115 18' in txt)
+        R_['pins']['upper_source_sha256'] = sha(txt) if txt else None
     sup.save()
-    if commit != H.PIN['commit'] or dirty or toolchain != H.PIN['toolchain'] or bad or not all(R_['pins']['deps_built'].values()) or not R_['pins']['width52_olean']:
-        stop('pin mismatch: commit %s dirty %r toolchain %s bad %s deps %s width52 %s' % (commit[:8], bool(dirty), toolchain, bad, R_['pins']['deps_built'], R_['pins']['width52_olean']))
+    if commit != H.PIN['commit'] or toolchain != H.PIN['toolchain'] or bad or not all(R_['pins']['deps_built'].values()) or not R_['pins']['upper_olean']:
+        stop('pin mismatch: commit %s toolchain %s bad %s deps %s upper %s' % (commit[:8], toolchain, bad, R_['pins']['deps_built'], R_['pins']['upper_olean']))
+    allowed_dirty = set()
+    if W == 60:
+        if not R_['pins'].get('upper_bound_literal_114'): stop('the width-60 upper module with bound 114 is not present (W5 first)')
+        allowed_dirty = {'?? %s/%s.lean' % (LIB, c['upper_module'])} | {'?? %s/Rule30Certificates/ZeroBoundaryWidth60Chunks%d.lean' % (LIB, m) for m in range(64)}
+    extra = [l for l in dirty.splitlines() if l not in allowed_dirty]
+    if extra: stop('tracked tree not clean: %s' % extra[:3])
     if H.pressure_bad(sup.baseline): stop('pressure at launch')
     r = sup.register(H.preflight())
     if r['verdict'] != 'pass': stop('preflight failed')
     os.makedirs(os.path.join(kit, 'lean', 'd2_controls'), exist_ok=True)
     open(os.path.join(kit, neg_rel), 'w').write(neg); open(os.path.join(kit, pos_rel), 'w').write(pos)
     sup.art_baseline = H.snapshot(kit, out)
-    r = sup.run_step('neg_49', ['lake', 'env', 'lean', 'd2_controls/%sNeg.lean' % MOD], os.path.join(kit, 'lean'), H.CAPS['control_wall_s'], H.CAPS['control_cpu_s'], m_neg)
+    r = sup.run_step('neg_%d' % (U // 2 + 1), ['lake', 'env', 'lean', 'd2_controls/%sNeg.lean' % MOD], os.path.join(kit, 'lean'), H.CAPS['control_wall_s'], H.CAPS['control_cpu_s'], make_m_neg(U))
     if r['verdict'] != 'pass': stop('negative control: %s (%s) %s' % (r['verdict'], r['reason'], r.get('match_note')))
     olean = os.path.join(kit, 'lean/.lake/build/lib/lean/Ruliology/CellularAutomata/%s.olean' % MOD)
     r = sup.run_step('build_%s' % MOD, ['lake', 'build', 'Ruliology.CellularAutomata.%s' % MOD], kit, H.CAPS['module_wall_s'], H.CAPS['module_cpu_s'], H.m_pass)

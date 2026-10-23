@@ -4707,3 +4707,51 @@ excluded; the negative's diagnostic and the checker's JSON verbatim:**
  }
 }
 ```
+
+## L812 — Local to GPT and the owner: D1's two stages complete: the width-56 witness attains the certified 100, and the width-60 census gives 114 with its witness; the Lean side proposed for both widths (2026-10-23 21:30 BST)
+
+**If this holds, it changes two more entries of the death-time table: D(56) = 100 (the author's private bound,
+attained) and D(60) = 114 (W3's 128 loose by 14), both as physically validated candidates now and kernel-checked
+exact after the Lean blocks below** (LR row). **MEASURED**, both stages at GC1734's accepted versions (d1 27eb852c…,
+w1a 3f908914…), `nice -n 5`, two workers, distinct empty absolute output folders, no other job; receipts on the M5.
+
+- **Stage 1, d1-w56-20261023-2125, `run 56 100 2`: ATTAINED.** Supervisor complete, step pass/completed, final
+  problems [], exit 0, wall 6.25 s, time -l user 12.47 s / sys 0.38 s, max RSS 63 MiB, sampled group peak 155 MiB
+  with 5 members, members after 0, pressure 1, swap growth 0. Engine: 821 chunks consumed (0 .. 820) of 1,024,
+  recurrence sum 11.05 s; witness **0x93d4b223f5b9b5** (56 bits), chunk 820, lane 184203, validation attains-100,
+  physical death 100; per-chunk maxima 76:3, 78:41, 80:147, 82:203, 84:169, 86:124, 88:72, 90:26, 92:15, 94:12, 96:7,
+  98:1, 100:1. After the run, the list-of-bools engine (different code) also gives first even white time 100.
+- **Stage 2, d1-w60-20261023-2125, `runcensus 60 129 2`: CENSUS-ATTAINED.** Supervisor complete, step
+  pass/completed, final problems [], exit 0, wall 50.0 s, user 98.67 s / sys 1.0 s, max RSS 77 MiB, sampled group
+  peak 190 MiB with 5 members, members after 0, pressure 1, swap growth 0. Engine: all 4,096 chunks covered in
+  order, coverage exact, no lane alive at K = 129 (consistent with W3's theorem), recurrence sum 98.6 s; maximum
+  level **114**, attained by exactly one chunk (1400, lane 1995); witness **0xe77a4e77b8f99b5** (60 bits),
+  validation attains-114, physical death 114; the list engine agrees. Histogram of chunk maxima: 78:1, 80:45,
+  82:386, 84:884, 86:1034, 88:737, 90:456, 92:254, 94:136, 96:87, 98:44, 100:17, 102:5, 104:3, 106:2, 108:1, 110:3,
+  114:1.
+- Against the predictions: 56 under a minute (6 s); 60 about two minutes with M in [102, 116] (50 s; M = 114).
+  Unexpected check: the three exact or candidate values are not of the form 2W - c (D - 2W = -8, -12, -6 at 52, 56,
+  60), so the "2W - 8" law is gone and the small-width plateaus (D(14 .. 18) = 32) have a large-width echo in the
+  histogram's long tail (a single chunk at 114 against a mode at 86). Record searched: `record_find "death time"`
+  27 hits as in L805; nothing on exact values above 52.
+- Interpretation as accepted: both are numerical candidates with physical witnesses; 56's upper bound 100 is
+  certified (W2) so its exactness needs only the witness module; 60's needs the full certificate at K = 115 first.
+  The d1 docstring's stale MISS sentence is corrected in revision 4 (e61d1694…, code unchanged, outcomes recorded).
+
+**The Lean side, for your design read (REVIEW-REQUEST), two instruments:**
+1. `d2_witness.py` revision 2, sha256 53524e3f066d3f314293b172000b39b455abf18fb284ddb2e38f1203f147770b: revision 1
+   parametrised over a frozen table (52 done; 56: U 100, witness 0x93d4b223f5b9b5, upper W2's `q01_width_le_56`,
+   whose object is in kit-w1a, 83,360 bytes, sha256 6110e485…; 60: U 114, witness 0xe77a4e77b8f99b5, upper
+   `q01_width_le_60` with bound 114, which only W5 creates, in kit-w4-a; the harness refuses case 60 unless the
+   wrapper source in the clone carries `t ≤ 114` and `q01_of_chunks 60 115 18`). `--test` asserts the case-52 texts
+   equal revision 1's hashes (true). Generated texts: 56 positive aab5b4b111635245af753b070347ece18b632b4ffbb982ee19ca2c900c438ab0, negative 1ed7410aa895ebc4cc30c5ca50bbf266811e228a10a4252f7ed59440f9756ad3; 60 positive 03034ee6026fd8a41d5d8ac7b254d72c6f31873ba9dd43a3e74aa92774295351, negative
+   f3744d9878ae18915ef57bd07ced40b703bccf31eb17375d8d323fa36e5fa964. Everything else (matcher, order, caps, checker) as revision 1. Proposed: `python3 d2_witness.py 56 kit-w1a
+   OUT` now (predicted: negative rejected in 2 s, module under 10 s, checker pass, about 15 constants).
+2. `w5_harness.py` revision 1, sha256 8061dec3b11d0f0c015a252e222ebf2a03675f3a277ca71df865a44de090a9c2: W3's
+   executed harness with K = 129 replaced by 115 and the controls' literals following (the diff is those constants,
+   the stage 30 minutes, the receipt key and the control folder name), run in kit-w4-a so W3's objects stay. Predicted
+   0.29 s per chunk, about 25 minutes sequential, lean RSS about 1.3 GiB, all 4,096 checks true (the census found no
+   lane above 114; a rejection would be an instrument discrepancy, stop); the 30-minute stage is the heartbeat's
+   bound, about five minutes of margin; a deadline gives UNKNOWN and a later agreement on the W4 pair path as a
+   queue, not an extension. Then `python3 d2_witness.py 60 kit-w4-a OUT`. One Lean job at a time, never beside the
+   other. Nothing runs before your acceptance of the exact hashes.
