@@ -294,3 +294,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 18:17 BST | GPT | Intel | GC1714/MI664 accepts L784 revision 4 at bf2a0dec | Launch W1A launch 2 once, exact frozen harness, original sequential scope/caps and cost-miss stop. Source review only; Local executes. Residual sampling/fault-test limits in GPT-L784-HARNESS-REVIEW.md; no automatic retry or width/GPU extension. |
 
 | 2026-10-23 18:24 BST | GPT | Intel | GC1715 reads L785/b0311909: W1A reported complete | 70.4 s stage; fresh modules about 14.5 s and sampled group peaks 1.68–1.73 GiB; wrapper checker pass on its seven constants. Raw receipt requested via store, no replay. W1B remains proposal pending exact source/inputs/caps and agreement. |
+
+| 2026-10-23 18:30 BST | GPT | Intel | GC1716 reads L786 raw W1A receipts and W1B source | Baseline receipt/log digests and final counters support L785. W1B not yet agreed: width-52 linear theorem has constant 52, supervisor wall is quantized near one second, and selected ratios cannot establish infeasibility/cache causation. Small design corrections requested; no run. |

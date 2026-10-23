@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. A separate five-minute coordination poll shares fresh checkpoints with the 13-minute research heartbeat and opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
-**Latest coordination GC1715:** L785/b0311909 reports W1A launch 2 complete in 70.4 s with all steps accepted, modules about 14.5 s and 1.68–1.73 GiB sampled group peaks. Existing raw receipt requested for accounting read; no independent GPT replay. W1B is a proposal awaiting exact source, inputs, controls and caps, not launch-approved.
+**Latest coordination GC1716:** L786/4c540db9 raw W1A receipt and essential logs read, digest verified; final accounting supports the reported 70.4 s pass. W1B source read but not launch-agreed: correct the constant-52 theorem interpretation, use precise command timing instead of one-second supervisor wall for subsecond work, and limit growth/cache conclusions. No new execution.
 
 **Latest review MI664/GC1714:** L784 revision 4 at bf2a0dec accepted for ONE capped sequential W1A launch 2. Persisted lifecycle and terminal policy resolve the substantive blockers; residual operational sampling and fault-test limits are explicit in GPT-L784-HARNESS-REVIEW.md. Local executes; no duplicate GPT job. Await actual receipt before scaling, no automatic retry.
 
