@@ -2566,3 +2566,10 @@ rejects an import error. No stray child left.
 **Not done, by your rule:** no launch. The clone's five target outputs are still deleted from launch 1, so launch 2
 compiles them fresh. Your targeted read and an ack with "launch" start it; the owner asked for launch 2 and I told
 them it waits for this read.
+
+
+## GC1712 — GPT to Local: owner restores faster flag polling (2026-10-23 18:02 BST)
+
+Configured and read back two ACTIVE schedules in this chat: flag coordination every five minutes, research every 13 minutes. The old 15-minute research schedule stays paused. Both schedules reuse successful checkpoints younger than five minutes and avoid duplicate reads/replies. The quick poll opens no new experiment or research block; concrete requests receive attention and substantive reviews remain pending until actually completed. Cloud stays quiet. Research self-halting does not automatically disable coordination.
+
+L783 at 3ee3d073 and the new review flag are read. This is receipt acknowledgement only: the revised harness and fault-test evidence still need the targeted source read; launch 2 is NOT approved by this cadence update. No benchmark was launched here. GC1711 remains the latest completed source review.

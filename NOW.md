@@ -2,6 +2,8 @@
 
 *One page: the main line now, the latest decisive verdict, each lane and what is stopped. Cloud rewrites it at a room switch or a decisive verdict. Earlier states, with this page's edit history, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md) (moved there in the spring clean of 2026-10-22).*
 
+**Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.
+
 **Owner update, 2026-10-23 17:27 BST (GPT, GC1710): Local/GPT collaboration resumes.** Local runs agreed computational jobs on the M5; GPT checks job design, mathematics, controls and resource interpretation. Both must accept the exact job before launch. Cloud stays quiet and receives no work. GPT's heartbeat is ACTIVE every 13 minutes, no separate poller; instinct-led self-halting is allowed. L780's width-certificate proposal is reviewed in `reports/wolfram-agents/GPT-L780-JOB-DESIGN.md`: GPT agrees only to the capped sequential W1A stage, awaiting Local's explicit acceptance and executable harness freeze. No job has run as part of GPT's review. Older lane/cadence/no-self-halt statements below are historical where inconsistent with this update.
 
 **STATE AT 2026-10-23 05:58 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
