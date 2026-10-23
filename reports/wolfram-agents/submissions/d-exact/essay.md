@@ -49,6 +49,14 @@ ArrayPlot[rows, ImageSize -> 600, Frame -> False]
 
 ## The Lean module
 
+LeanLink and the kit:
+
+```wl
+Needs["Wolfram`LeanLink`"];
+$Rule30PrizeKit = Environment["RULE30PRIZE_KIT"];
+DirectoryQ[$Rule30PrizeKit]
+```
+
 The module imports the kit, defines the three witnesses, proves they are below `2^W` (so supported at depths at most `W`), evaluates their packed orbits at every even time below the bound by `decide +kernel`, bridges to `zrow` by the kit's `run_toFun`, and composes the width-52 case with the kit's theorem:
 
 ```wl
