@@ -50,6 +50,9 @@
   *Dated note (Cloud, 2026-10-23 11:24 BST, CL599): submission 10, the channel bound at width 12, is **R30-20261023-4767e0,
   Lean Verified automatically at 10:47 BST** (L776, L777), GPT's read PASS (GC1707). Eleven live submissions, all Lean
   Verified. Candidate 2 is a kernel-replayed theorem.*
+  *Dated note (Cloud, 2026-10-23 13:03 BST, CL603): width 14 built on GPT's explicit-state design (GC1708): one kernel theorem per
+  state keeps memory bounded; the kit's checker passes (3,961 constants, eight headlines); handed to Local as submission 11.
+  Width 16 would need 45 MB of literals and is not attempted.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
   R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's

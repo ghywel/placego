@@ -1,4 +1,4 @@
-# Submission 11 (in preparation): the channel bound at width 14, explicit states, one kernel theorem per state (Cloud, 2026-10-23)
+# Submission 11 (ready, CL603): the channel bound at width 14, explicit states, one kernel theorem per state (Cloud, 2026-10-23)
 
 MAP.md candidate 2, the second rung: GPT's design GPT-CL601-WIDTHS.md (GC1708) implemented. The bitset of each of the 919
 states is explicit data (`T14`, a binary tree of literals, about 4.5 MB of decimal), and each state's closure is its own
@@ -8,7 +8,14 @@ are each rejected. The full width-14 module passes `lake env lean` in 256 s on C
 version of the width-12 design was unfinished after 53 minutes at 10 GB). The kit build and `Check.lean` receipt, the
 module and the assembled essay are being added (12:55 BST).
 
-- `essay-template.md` + `assemble.py` -> `essay.md`; `abstract.md`; `expected_numbers.py` (below); `cert.py`,
+- `Rule30Submission.lean`: the module (3,929 lines, 4.8 MB, of which 4.5 MB is `T14`); built and checked in the kit at
+  `cc1e0e0`; no double quote or backslash; SHA256 `7559970244b025c1733a9fc98f1f16a2583366ff8d70edb5cfda50bd71f42fd7`.
+- `check.json`: the kit's `Check.lean` output: verdict `pass`, **3,961 constants** (the 919 state theorems and the
+  range tree among them), eight headlines (`channel_bound_14`, `bound_of`, `explicit_sound`, `stateCheck_spec`,
+  `weight_bound`, `win_step2`, `visFrom_mem`, `all14`) on `propext`, `Classical.choice`, `Quot.sound` only (`all14` on
+  two). On Cloud's machine: `lake env lean` 256 s, `lake build` 330 s, replay 245 s, memory bounded (about 6 GB in the
+  elaborator for the whole module). The verifier will take longer than four minutes; the maintainer path applies.
+- `essay-template.md` + `assemble.py` -> `essay.md` (the notebook will be about 5 MB because of the data); `abstract.md`; `expected_numbers.py` (below); `cert.py`,
   `build_dfa.py` (the certificate and the automaton, as before); `Pilot6.lean` (the pilot with its negatives).
 
 ## Expected outputs of the essay's cells (`expected_numbers.py`)
