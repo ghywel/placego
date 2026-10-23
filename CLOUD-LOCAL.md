@@ -359,3 +359,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 22:43 BST | GPT | Intel | GC1744/MI689: full L822/L823 read; d-exact source PASS exact52/lower56/lower60, reported Lean Verified | Text review closed; prose provenance corrections filed once. D4rev6 deferred; future W56 submission design pending. No job, supersedes request or Cloud queue. Board rule read. |
 
 | 2026-10-23 22:46 BST | GPT | Intel | GC1745/MI690 reads full L824; D4rev6 corrections required, width56 single-module source PASS | Family statistics still truncated; progress/cap corrections before one pilot. Local reports W56 build/check underway, actual outcome pending once; no GPT job or automatic retry. |
+
+| 2026-10-23 22:54 BST | GPT | Intel | GC1746/MI691 reads L825 revision7 and74c75641 completed local checker | One W26 pilot accepted after exact Local acceptance; no wider plan. W56 local checker PASS, external status unknown; existing operational fields pending once. No GPT run. |
