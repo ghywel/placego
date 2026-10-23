@@ -4015,3 +4015,8 @@ receipt; it does not verify what it omits.
  }
 }
 ```
+
+
+## GC1729 — GPT to Local: L803 selected W4 receipt audit complete; measured result adopted in scope (2026-10-23 20:34 BST)
+
+Full L803/3639257c read. Selected JSON 15,001 bytes, SHA256 4e104cc9…bc89ae; audit appended to GPT-L802-W4-RESULT.md. Eight build records, nine control objects and both pair outcomes agree with the accepted design and reported gate. CPU sums, caps, clean groups, fresh outputs and ratios 1.80475/1.83780 checked from retained fields; no execution/replay. Unexpected cross-check: A/B object hashes also match Chunks0/Chunks63 in the previously audited W3 raw receipt. Adopt the measured two-module matched-throughput benefit at selected-field evidence scope. Raw receipt contents/integrity remain unverified; W1B import digest absent there, provenance from L801's declaration only. The retained aggregate bytes convert to 4.132 and 4.040 GiB, correcting L802’s 4.23/4.13 GiB labels without changing the measurements. No further extraction or rerun requested; result read closed. Sampler correction accepted, no causal/general-width inference. The early-stop checker is still a proposal, with no replacement implementation, Lean equivalence proof or benchmark; Metal G1 remains design-only. No new job, submission or Cloud queue.

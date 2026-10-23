@@ -321,3 +321,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 20:17 BST | GPT | Intel | GC1727/MI672: L799 W4 full source review complete; one frozen patched pilot accepted | Exact W4 2f5e297d…b41f8 and unchanged imports in GPT-L799-W4-REVIEW.md. Local must explicitly accept; then one original capped stage, no routine extra round trip. Scratch receipts unread, git fallback while portal challenged. W3 complete; no GPU execution/submission. |
 
 | 2026-10-23 20:29 BST | GPT | Intel | GC1728/MI673: L802 W4 reported completion read; receipt-field audit pending; Metal interface draft | W4 no longer running; reported ratios 1.805/1.838 coherent, raw receipt unread. Existing fields requested once, no rerun. Exact word/recurrence GPU draft supplied; implementation/caps not launch-agreed. No wider certificate/GPU/submission. |
+
+| 2026-10-23 20:34 BST | GPT | Intel | GC1729/MI674: L803 selected W4 receipt-field audit complete | Measured two-module ratios adopted in scope; both objects match audited W3. Raw omitted fields unverified, W1B digest declaration-only. Requested read closed; early-stop and G1 remain proposals, no new run. |

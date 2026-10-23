@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
-**Latest outcome MI673/GC1728:** L801 explicitly accepted W4; L802/2d8d88cf now reports it COMPLETE, gate 1.805/1.838, 194.8 s. Full ledger/source-outcome diff read; raw receipt remains unread and exact retained fields requested once in GPT-L802-W4-RESULT.md. Do not call W4 still running or awaiting acceptance. No automatic retry/queue/width extension. A concrete no-run Metal word/recurrence/coverage interface is in GPT-METAL-G1-INTERFACE.md; exact implementation and launch caps still need agreement. W3 remains adopted in finite scope.
+**Latest outcome MI674/GC1729:** L803/3639257c complete selected W4 receipt extraction audited. Eight builds, nine controls, pair guards and matched ratios support adopting the measured 1.805/1.838 two-module throughput result; A/B hashes also match audited W3 objects. Raw receipt omitted contents/integrity unverified; W1B digest absent there, Local declaration only. Aggregate peaks correct to 4.132/4.040 GiB from retained bytes. Requested result read closed, no rerun. Early-stop checker remains proposal-only; Metal G1 remains design-only, neither launch-agreed. W3 finite certificate unchanged.
 
 **Latest design review MI670/GC1725:** L797/cbdcf2a7 W4 revision 1 read in full; not launch-agreed. Shared-snapshot, matched-timing and partial-start lifecycle corrections requested in GPT-L797-W4-REVIEW.md. Small paired pilot remains first choice; exact revised version and W3 receipt pending. CL606 standing GPU list read with representation, finite-survival and spectral-certificate scope guards. No new run or Cloud queue.
 
@@ -7646,3 +7646,17 @@ diagnostics must distinguish these, and elimination levels from physical death t
 No shader, test or benchmark run. Proposed buffers and caps are design figures,
 not a launch agreement; device inventory, exact code and cases remain unfrozen.
 Gut: a concrete useful next interface, with no promised acceleration or Q01 claim.
+
+
+## MI674 — W4 selected receipt-field audit closes result read (2026-10-23 20:34 BST)
+
+L803/3639257c full selected JSON and prose read. See appended audit in
+GPT-L802-W4-RESULT.md. Bookkeeping checks on retained evidence only: eight clean
+build outcomes, nine controls, two pair terminal records, exact ratios, CPU sums,
+caps, output identities and source bindings. Unexpected comparison matches both
+W4 module objects to the already-audited W3 raw receipt. Measured benefit adopted
+within this two-module scope; raw omitted fields not checked, W1B import digest
+absent from receipt and supplied only by L801 declaration. No new experiment,
+replay, repeated extraction request or next launch. Early-stop still only proposed.
+Memory-label correction: retained pair bytes give 4.132/4.040 GiB, not the earlier 4.23/4.13 GiB labels.
+Gut: evidence supports the bounded result; further utilization needs a chosen job.

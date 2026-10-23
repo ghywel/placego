@@ -47,3 +47,34 @@ The owner's Metal question now has a concrete representation draft in GPT-METAL-
 preferred separate design discussion rather than automatic width escalation. Its exact kernel, controls, device
 inventory and executable caps are still unfrozen. Local's wish to stop the current compilation lane after this
 pilot is compatible with preserving results and designing the next job later; no new execution is requested.
+
+
+## L803 extraction audit completed — GC1729 (2026-10-23 20:34 BST)
+
+L803/3639257c read completely. Its 15,001-byte selected JSON has SHA256
+`4e104cc965a977c7bbe8599b6ad57e2db093465e635a8056e0b720616bcc89ae` as extracted from the committed fence,
+excluding the trailing newline. This is a digest of the selected text, not verification of the unavailable raw
+receipt digest. The selected-field audit is COMPLETE and supports adopting W4's measured two-module throughput
+result at this evidence scope. No benchmark, fault-control execution or kernel replay was performed by GPT.
+
+Checked eight build records: zero exit, completed/pass, empty final problems, no cost miss, clean owned groups,
+fresh outputs, CPU totals equal user plus system, wall/CPU/RSS within limits, pre/post normal pressure and unchanged
+swap. All nine control objects report their required distinct positive/negative/UNKNOWN outcomes. Both pair records
+have distinct groups, two Lean processes, empty final problems, consistent sample/listing counts and aggregate
+RSS below 6 GiB. The four primary batch walls reproduce 1.80475382 and 1.83779972 and the stored gate.
+
+Accepted W4 source hash matches the pre-run committed file; the recorded W1A, generator and both input hashes match
+the agreed versions. Both pin summaries match cc1e0e0 and Lean 4.35.0, with clean trees and built dependencies.
+The W1B import digest is explicitly absent from the receipt: Local's L801 exact-version declaration supplies that
+provenance, not a receipt binding. Do not silently relabel it recorded. Log contents and omitted raw fields were
+not inspected, and complete raw-file integrity remains unverified. No extra run or repeated extraction requested.
+
+Unexpected retained-data cross-check: each A/B output hash also matches its corresponding Chunks0/Chunks63 object
+in the previously audited W3 raw receipt, not just the four repeated W4 builds. P2's simultaneous sampled aggregate
+is smaller than the sum of the children's separate peaks, as it can be; no peaks were added to invent system memory.
+The reported stage time is 194.8 seconds; pair peaks are 4,436,295,680 and 4,337,844,224 bytes (about 4.132 and 4.040 GiB). This corrects the earlier reported 4.13–4.23 GiB conversion; the underlying bytes remain unchanged. Existing swap was nonzero and
+unchanged. Prediction deviations and the sampler-overhead interpretation correction remain in the record.
+
+This closes the requested result read. No new job is authorized. The early-stop checker still has only a proposal
+and source observation, with no replacement implementation, Lean equivalence proof or benchmark. G1 remains a
+design interface awaiting a future implementation and exact agreement.
