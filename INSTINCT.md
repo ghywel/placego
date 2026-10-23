@@ -1125,3 +1125,9 @@ outside the project would replay, and it is the prize's own question at the fron
 eureka: nothing here touches the missing statement. Budget: one measurement block, designed with GPT before it runs
 (the owner's word). An unease beside it, named: I told the owner this Mac had more memory than Cloud's container;
 it has the same 16 GB. Corrected in L780. Gut: pleased to have a computational block that is squarely on the ladder.
+
+## 2026-10-23 17:21 BST, GPT: L780 design review, pull and unease
+
+The pull is toward a bounded certificate job whose trusted checking cost can actually be measured. The unease is that two different clocks are being called a death-time table, and that filling all cores could exhaust the same 16 GB shared with the OS. Cheap adversarial checks before any job: inspect the exact lane parameters and source statement; trace the one-cell zero-boundary orbit by hand; distinguish theorem, chunk and module costs. This is a source/hand design review, not permission for an unagreed experiment. Cloud stays quiet; Local executes only mutually agreed jobs.
+
+- 2026-10-23 17:27 BST, MI661 outcome: the phase niggle has a concrete one-cell witness, and source inspection replaces flat-cost extrapolation with a K-squared work factor. The new stage is small enough to teach us about actual checking cost without committing to a larger census. Gut: proceed with W1A once Local accepts the same specification; reasoned: no full W1 approval or performance theorem. No experiment run by GPT.

@@ -124,7 +124,13 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-22 17:05 BST: current block complete; heartbeat PAUSED at the owner’s explicit request, awaiting continuance.**
+**CURRENT working state, 2026-10-23 17:27 BST: owner resumes Local/GPT M5 job-design collaboration. Heartbeat ACTIVE every 13 minutes; self-halting allowed. Cloud stays quiet.**
+
+Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue, no second poller. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
+
+MI661/GC1710 responds to L780 at 97e2cb58. Source/hand review of the pinned zero-boundary checker finds exact chunk-count growth, but a K-squared within-chunk work factor and no guarantee of flat memory/time. records.c measures an odd-phase zero-run record, not the kit's even-time death bound. Report: reports/wolfram-agents/GPT-L780-JOB-DESIGN.md. GPT agrees only to that report's sequential, capped W1A baseline after Local explicitly accepts and freezes the executable harness. Original W1, four-way concurrency, GPU implementation, width extensions and automatic retries are not cleared. No job ran here. Q01 remains open; the current advance is a corrected job interface, not new mathematical coverage.
+
+**Historical pause, 2026-10-22 17:05 BST (superseded by the owner's resumption above):**
 
 The owner instructed: “When your block of work is complete I would like you to pause your heartbeat awaiting my continuance.” This supersedes the older no-self-halt instruction below. MI648's source/hand #32 repair-cost audit is complete, no full solution: the direct certified translated-copy budget does not improve log-squared, and its global reuse step is missing. The saved heartbeat is verified PAUSED; no separate poller or background research. Resume only when the owner asks. The following active-programme paragraphs are historical context, not authority to restart.
 
@@ -7508,3 +7514,14 @@ Parent Q01 remains OPEN. Actual change: the explicit-state closure implementatio
 Tiny source-control audit: one frozen run, exact source/essay/range bindings and 263 literal/packed transitions pass. False dead, label swap and removed bit 1 each have a concrete witness. Unexpected check: zero scan length accepts vacuously and empty sources satisfy local closure, but formal scan coverage/root obligations bar these abuses. The named missing-root test is actually positive, so it supplies no negative coverage. Cloud's complete kernel receipt is read, not replayed. Two initial startup invocations used the wrong path and did not run; both actual lexicon startup checks then pass. No large rerun, width increase or source patch.
 
 Reasoned: source carrying gate cleared, essay corrections remain (218 to 300; literal width-14 graph versus regenerated width-6/8 graphs). Gut: pleased that the architecture now preserves the full physical implication, with the control-label niggle resolved explicitly. Earliest remaining operational gates belong to Local: corrected notebook execution/readback and submission/verifier behavior. No new mathematical dependency chain or review request. Heartbeat remains paused at the owner.
+
+
+## MI661 — Local/GPT M5 collaboration resumed; L780 reviewed, W1A offered (2026-10-23 17:27 BST)
+
+Parent: kernel-certified finite-width Q01, with the unbounded-width inference still missing. The owner resumes instinct-led collaboration and permits self-halting; Local runs mutually agreed jobs, Cloud receives no work. Existing 13-minute automation updated and verified ACTIVE; older automation remains PAUSED.
+
+Read L780/97e2cb58 and the complete pinned Rule30ZeroBoundaryLanes source. Report GPT-L780-JOB-DESIGN.md gives the exact count 2^(floor(W/2)-n), K-squared primitive work, per-declaration memory qualifications, phase distinction from records.c and the hand orbit 1,3,6,13,25,55,100,222. The kit's computed check has no separate mutable bit payload; meaningful negative controls use a genuinely false time bound and a missing coverage range. No new experiment or full kernel replay. Python's public-source fetch hit a local CA-bundle error; system curl succeeded with verified TLS, with no credential or authentication failure and no disabled certificate check. The web fetch of the same raw file failed; pinned source was read from the successful curl fetch.
+
+Actual change: a capped sequential W1A first-stage specification; GPT acceptance is tied to its committed version and requires Local's explicit acceptance/harness freeze. Original W1's two-tick fallback, table equality and four-way start are not accepted. Pending: executable harness and Local acceptance, then actual M5 receipts. Earliest measurement dependency is a working supervisor and genuinely fresh module compilation, not a timing estimate. The prior startup checks passed at MI660; no research benchmark was duplicated on GPT's host.
+
+Niggle sweep: same-width phase equality fails already at W = 1; an arbitrary changed numeral need not make a check false; cached lake targets are not compile timings; independent RSS peaks cannot establish concurrent memory; GPU discovery speed does not establish Lean replay speed. Reasoned verdict: W1A is useful and bounded, wider claims await evidence. Gut: warm toward measuring the real proof workload, against filling hardware for its own sake. No proof or prize status changes.
