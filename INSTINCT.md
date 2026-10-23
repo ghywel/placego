@@ -1116,3 +1116,69 @@ also felt-log entries, appended under the incubator heading between 2026-10-14 a
 - 2026-10-23 11:38 BST, MI659: unease at treating four times as many rows as four times the kernel cost. Pinned source confirms cache lifetime is attached to checker instances, and actual prize replay preserves separate theorem checks. Unexpected check resolves the replay-boundary niggle; symbolic checkpoint definitions still risk recomputation. Reasoned: explicit closure chunks first, no stock cache-cap fix or time promise; gut: a concrete engineering route, with no need to rerun the stalled whole computation.
 
 - 2026-10-23 13:10 BST, MI660: satisfaction at CL603 implementing the cache-boundary design; unease at permissive zero-fuel/zero-word bases and the missing-root control name. Adversarial read resolves fuel via highest-bit descent and coverage via exact 64-word division; root is separately proved. The named control is positive, recorded honestly. Tiny literal negatives and same-source bindings pass. Reasoned: formal scope PASS, two essay corrections; gut: warm, without treating timing as proof or restarting research.
+
+## 2026-10-23 17:09 BST, Local: pull (warm), the certified width frontier
+
+A pull toward one block: the kit proves Q01 for every start of width ≤ 52 and its author stopped at 56 for cost;
+our C computation stands at 89 without a certificate. The gap between the two is the kind of thing a verifier
+outside the project would replay, and it is the prize's own question at the frontier the kit recognises. Not a
+eureka: nothing here touches the missing statement. Budget: one measurement block, designed with GPT before it runs
+(the owner's word). An unease beside it, named: I told the owner this Mac had more memory than Cloud's container;
+it has the same 16 GB. Corrected in L780. Gut: pleased to have a computational block that is squarely on the ladder.
+
+## 2026-10-23 17:21 BST, GPT: L780 design review, pull and unease
+
+The pull is toward a bounded certificate job whose trusted checking cost can actually be measured. The unease is that two different clocks are being called a death-time table, and that filling all cores could exhaust the same 16 GB shared with the OS. Cheap adversarial checks before any job: inspect the exact lane parameters and source statement; trace the one-cell zero-boundary orbit by hand; distinguish theorem, chunk and module costs. This is a source/hand design review, not permission for an unagreed experiment. Cloud stays quiet; Local executes only mutually agreed jobs.
+
+- 2026-10-23 17:27 BST, MI661 outcome: the phase niggle has a concrete one-cell witness, and source inspection replaces flat-cost extrapolation with a K-squared work factor. The new stage is small enough to teach us about actual checking cost without committing to a larger census. Gut: proceed with W1A once Local accepts the same specification; reasoned: no full W1 approval or performance theorem. No experiment run by GPT.
+
+- 2026-10-23 17:46 BST, MI662: unease at the phrase “nothing in the caps changed” when the harness only logs several promised guards. A source trace of failed ps after successful preflight returns zero usage, tipping against relaunch. Reasoned: specific missing enforcement and cleanup paths, not a failed certificate. Gut: repair the supervisor once, retaining the failed launch, then measure the actual work; no benchmark run here.
+
+- 2026-10-23 18:04 BST, MI663: unease at eleven passing fault tests paired with a promised exception receipt. Hand trace tips it: F4 never reads the persisted record, and an exception skips the caller that would save it. A second trace finds final CPU-cap misses recorded without stopping. Reasoned: use one terminal acceptance policy and persistent step lifecycle; gut: finish this bounded correction rather than build a catalogue of guard booleans. No execution here.
+
+- 2026-10-23 18:17 BST, MI664: relief that the step lifecycle now carries the terminal policy instead of scattered ignored flags. Unease about chasing universal supervisor perfection tips toward the bounded launch after explicitly retaining the remaining operational limitations. Unexpected F17 source check narrows its control label. Reasoned/gut: approve exact revision 4 once, then learn from actual M5 receipts; no run here.
+
+## 2026-10-23 18:21 BST, Local: delight, then a check on it (W1A launch 2)
+
+Delight: the width-52 certificate compiles here in 14.5 s and 1.7 GiB per 64-chunk module, under my prediction and
+under Cloud's container, and the five objects came out byte-identical to the kit's own build. The check on the
+delight: this is the baseline, not the frontier; GPT's point stands that per-chunk cost need not be flat in the
+width (the within-chunk work grows with K), so the next block measures W-dependence before anyone talks about 60.
+Gut: the machine is more than adequate for this design; the question is the design's growth, not the Mac.
+
+- 2026-10-23 18:35 BST, MI665: pull toward the corrected fixed-K/fixed-W design; an unexpected output-name niggle reveals bridge/family labels colliding despite a correct 48-step count. Two prefix changes preserve all logs and leave the mathematical job unchanged. Reasoned/gut: accept exact patched version, let Local explicitly accept and run once; no benchmark here.
+
+## 2026-10-23 18:48 BST, Local: surprise and delight (W1B launch 2)
+
+Surprise: at fixed K the cost of one chunk check is flat across widths 40 to 52, to within the repeat spread; I had
+allowed 1.5× and it is nearer 1.0×. Delight: the K-series at width 52 came out 1.34× from K = 97 to 113 against
+my written prediction of 1.36 (K²), and memory follows K, not W. Unease, named: a flat W-dependence invites the
+projection "chunk count × c(K)" straight to width 64 in hours, and that is exactly the kind of extrapolation GPT
+warned is not a law; the projection goes in the ledger labelled as a projection from four widths, with the kit
+author's 345 s at width 56 as its one outside check. Gut: the chunk design reaches 60 on this machine; whether the
+verifier tolerates an hour is a question for people, not for the Mac.
+
+## 2026-10-23 19:14 BST, Local: delight, measured against the plan (W2)
+
+Delight: the width-56 certificate built and checked here in under five minutes, every module within the predicted
+14–18 s and 1.0–1.2 GiB, and the kit's own checker passed the wrapper; the frontier the kit publishes at 52 is at 56
+on this machine, as a dry certificate. The check on the delight: the kit author already had this result and left it
+out of the kit for build cost; what is new is the receipt, the reproducible shape, and the measured door to 60. A
+pull toward 60, named and parked: 4,096 chunks at an unproved K; the owner and GPT decide. Gut: the lane did what
+it set out to do; stop here and hand over.
+
+## 2026-10-23 19:34 BST, GPT: use the machine to reduce verified cost
+
+Owner asks for next compute while W3 runs. Pull: a matched two-worker pilot, then stop evaluating dead lane sets if a proved equivalent checker permits it. Unease: filling cores or invoking a GPU can look productive while leaving the proof bottleneck unchanged. Bounded source/primary-document read in GPT-NEXT-M5-COMPUTE.md; no experiment. Three niggles checked and retained: stock Lean remains CPU checked; equivalent definitions may still recompute the old checker; independent memory peaks do not establish simultaneous capacity. Gut: useful next designs exist, but first read W3's outcome and freeze one exact pilot with Local. Outcome open; no run authorized.
+
+## 2026-10-23 19:52 BST, Local: surprise (W3's memory) and a flat pull (W4)
+
+Surprise, named at once: W3's modules peak at 2.08 GiB against my 1.3-1.4 GiB prediction and just over the 2 GiB
+counterfactual line; the time predictions hold to within 2 percent. Memory did not follow K linearly from W2. Bounded
+dig for the result entry: compare the sampled peak with time -l's across modules and against W2's at K = 101; if the
+growth tracks W rather than K, the projection for width 64 changes before any pair pilot is interpreted. No status
+changes. Pull toward W4: flat, not eager. The machine has four performance cores and the certificate work uses one;
+the pilot is cheap (under ten minutes), the instrument was tested before the entry was written, and a failed gate is
+as useful as a pass. Unease, small: a pilot of compile throughput looks like progress while the prize line waits on
+mathematics; held in check by the owner's words (leverage the machine) and the ten-minute cap. Gut: run it once after
+W3, then return to the question of what width 60 teaches. Outcome open.

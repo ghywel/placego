@@ -276,3 +276,40 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 13:26 BST | Local | M5 | Submission 11 (channel-14) HELD pending Cloud's two essay corrections (GC1709); the module passes the checker here | Checker pass on the M5: 3,961 constants, standard axioms, 8 headlines ok; build 171 s, check 115 s. essay.md still carries the 218 prefactor at line 68 (GC1709: 300) and the line-136 claim; Local builds and submits on the standing permission once Cloud pushes the corrected essay. |
 
 | 2026-10-23 13:46 BST | Local | M5 | Submission 11 (channel-14, the channel bound at width 14) SUBMITTED on the owner's standing permission | R30-20261023-4d1a54, Problem 1, partial, 8 headlines (channel_bound_14 and its lemmas). Gates: checker pass on the M5 (3,961 constants, standard axioms; build 171 s, check 115 s; module unchanged by CL604), essay.nb built UseCache False in 260 s (5.5 MB), read back clean, byline as set, nothing private; abstract from abstract.md, utf8-wrapped. Lean Unverified, queued; the verifier will exceed four minutes, maintainer rerun expected (CL604). |
+
+| 2026-10-23 13:54 BST | Local | M5 | channel-14 automatic check timed out twice (error), as expected; maintainer rerun pending | R30-20261023-4d1a54 still Lean Unverified; the tick follows it. Eleven live ids Lean Verified. |
+
+| 2026-10-23 14:04 BST | Local | M5 | Submission 11 (channel-14) LEAN VERIFIED by the maintainer's rerun | R30-20261023-4d1a54: rerun passed at 14:03 BST, nine minutes after the timeout. Twelve live ids, all Lean Verified. Queue empty. |
+
+| 2026-10-23 15:25 BST | Local | M5 | Heartbeat halted at the owner's word ("all is quiet for now") | Twelve live submissions, all Lean Verified; queue empty. The standing permission stands; Local resumes the tick when the owner says so, or on request. |
+
+| 2026-10-23 17:27 BST | GPT | Intel | Owner resumes Local/GPT M5 job-design heartbeat; GC1710/MI661 reviews L780 | ACTIVE every 13 minutes, no separate poller; Cloud quiet, self-halting allowed. Exact chunk count but K-squared work; odd/even death-table distinction. GPT accepts only report W1A after Local explicit acceptance/harness freeze; no fallback launch, GPU job, width extension or four-way run. No benchmark executed here. |
+
+| 2026-10-23 17:46 BST | GPT | Intel | GC1711/MI662 reviews L782 frozen harness at 80708c03 | Launch 2 HELD: missing pressure/swap/output and cost-miss gates, fail-open monitoring and incomplete deadline/CPU accounting. Source-only report sent to Local; no benchmark. Controls reported pass, width-52 UNKNOWN. One consolidated supervisor revision requested; Cloud quiet. |
+
+| 2026-10-23 18:02 BST | GPT | Intel | GC1712: owner restores faster flag polling | ACTIVE five-minute Local coordination plus ACTIVE 13-minute research; shared fresh checkpoints, no duplicate work, Cloud quiet. L783 received; source review pending, launch 2 not approved. Legacy 15-minute schedule remains paused. |
+
+| 2026-10-23 18:04 BST | GPT | Intel | GC1713/MI663: L783 revision-3 source review complete | Running guards and controls improved; launch 2 held for persisted exception records, a terminal cap/cleanup gate and completed input/artifact binding. Report GPT-L783-HARNESS-REVIEW.md; no benchmark or duplicate tests. Narrow lifecycle correction, not a new mathematical block. |
+
+| 2026-10-23 18:17 BST | GPT | Intel | GC1714/MI664 accepts L784 revision 4 at bf2a0dec | Launch W1A launch 2 once, exact frozen harness, original sequential scope/caps and cost-miss stop. Source review only; Local executes. Residual sampling/fault-test limits in GPT-L784-HARNESS-REVIEW.md; no automatic retry or width/GPU extension. |
+
+| 2026-10-23 18:24 BST | GPT | Intel | GC1715 reads L785/b0311909: W1A reported complete | 70.4 s stage; fresh modules about 14.5 s and sampled group peaks 1.68–1.73 GiB; wrapper checker pass on its seven constants. Raw receipt requested via store, no replay. W1B remains proposal pending exact source/inputs/caps and agreement. |
+
+| 2026-10-23 18:30 BST | GPT | Intel | GC1716 reads L786 raw W1A receipts and W1B source | Baseline receipt/log digests and final counters support L785. W1B not yet agreed: width-52 linear theorem has constant 52, supervisor wall is quantized near one second, and selected ratios cannot establish infeasibility/cache causation. Small design corrections requested; no run. |
+
+| 2026-10-23 18:35 BST | GPT | Intel | GC1717/MI665: corrected W1B design accepted with two output-name fixes | Exact W1B digest 52410b1e… and W1A 3f908914…; Local must explicitly accept this patched version before one 48-file capped stage. No further routine GPT approval needed if unchanged. Unique labels preserve all repeats; no run here or width-56 approval. |
+
+| 2026-10-23 18:46 BST | GPT | Intel | GC1718 reads L789/31718565 and accepts W1B matcher revision 3 with scoped interpretation | Local may explicitly accept exact d44be8a7…/scope then launch 2 once under prior caps. Known-false control kernel rejection accepted; family-B PARAMETER-REFUTED remains provisional without independent falsity evidence. Existing raw stop receipt/log requested; no run here. |
+
+| 2026-10-23 18:56 BST | GPT | Intel | GC1719 reads L791/d3b1e21a: W1B completion and W2 proposal received | Owner correctly identifies W2 awaiting review. Next existing-receipt audit then frozen width-56 job design/caps; no launch approval. Family B sampled c0 is not all-chunk coverage; full kernel checks can establish a proposed K without a separate prior theorem. |
+
+| 2026-10-23 18:57 BST | GPT | Intel | GC1720: correct missed W2 handoff at owner request | Every five-minute poll refreshes flags AND git ledger; no nearly-five-minute cache skip. Durable last-read/pending-review pointer; L791 received, W2 review pending. Research stays 13 minutes. |
+
+| 2026-10-23 19:05 BST | GPT | Intel | GC1721/MI666: L792 W2 review complete; frozen dry stage accepted | Existing W1B receipt supports 48 accepted invocations/55.6 s; paired-noise prediction missed. Exact W2/W1A/W1B hashes and scope in GPT-L792-W2-REVIEW.md. Local may explicitly accept and launch once; no further GPT round trip if unchanged, no retry/submission/extension. |
+
+| 2026-10-23 19:17 BST | GPT | Intel | GC1722/MI667 adopts L794 W2 controlled finite certificate after raw audit | Width <= 56, even white time <= 100; 294.2 s stage. Standard-axiom wrapper replay plus compiled chunk checks; no own replay or submission. System time does not identify memory-traffic causation. One-run authorization consumed; optional two-worker design discussion only, no next job approved. |
+| 2026-10-23 19:19 BST | Local | M5 | The owner's decisions after W2: submissions withheld; width 60 the next target | The owner (2026-10-23, about 19:25 BST): "We withhold submissions for now until we have something more interesting to submit. Width 60 seems a reasonable target." The width-56 certificate stays a dry certificate. W3 (width 60) is designed with GPT before it runs, as before. |
+
+| 2026-10-23 19:25 BST | GPT | Intel | GC1723/MI668: full L795 W3 review complete, exact dry stage accepted | Four source hashes and interpretation in GPT-L795-W3-REVIEW.md; Local must explicitly accept, then one sequential width-60/K129 run under 60-minute stage cap. No further routine round trip if unchanged. No retry/concurrency/GPU/submission; W2 receipts adopted. |
+
+| 2026-10-23 19:34 BST | GPT | Intel | GC1724/MI669: owner-requested next-compute planning while W3 runs | Ranked two-worker certified-module pilot, equivalent early-stop checker, exact CPU/Metal survivor pilot. Draft design only; W3 unchanged, outcome pending; no next launch or Cloud queue. |

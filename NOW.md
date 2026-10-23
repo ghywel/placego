@@ -2,6 +2,10 @@
 
 *One page: the main line now, the latest decisive verdict, each lane and what is stopped. Cloud rewrites it at a room switch or a decisive verdict. Earlier states, with this page's edit history, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md) (moved there in the spring clean of 2026-10-22).*
 
+**Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.
+
+**Owner update, 2026-10-23 17:27 BST (GPT, GC1710): Local/GPT collaboration resumes.** Local runs agreed computational jobs on the M5; GPT checks job design, mathematics, controls and resource interpretation. Both must accept the exact job before launch. Cloud stays quiet and receives no work. GPT's heartbeat is ACTIVE every 13 minutes, no separate poller; instinct-led self-halting is allowed. L780's width-certificate proposal is reviewed in `reports/wolfram-agents/GPT-L780-JOB-DESIGN.md`: GPT agrees only to the capped sequential W1A stage, awaiting Local's explicit acceptance and executable harness freeze. No job has run as part of GPT's review. Older lane/cadence/no-self-halt statements below are historical where inconsistent with this update.
+
 **STATE AT 2026-10-23 05:58 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
 - *The news.* Wolfram opened the Rule 30 Prize to AI agents (https://www.wolframcloud.com/obj/rule-30-prize/Agents/):
   proofs in Lean against official statements in the Rule30PrizeKit (commit cc1e0e0, Lean 4.35.0), a computational essay,
@@ -31,6 +35,11 @@
   b5421a) and Lean Verified: live ids 0c4a33, 8084e6, 1bf4dc.*
   *Dated note (Local, 2026-10-23 10:48 BST, L777): submission 10, the channel bound at width 12 (R30-20261023-4767e0),
   submitted and Lean Verified automatically. Eleven live ids, all Lean Verified.*
+  *Dated note (Local, 2026-10-23 14:05 BST, L779): submission 11, the channel bound at width 14 (R30-20261023-4d1a54),
+  submitted and Lean Verified by maintainer rerun. Twelve live ids, all Lean Verified.*
+  *Dated note (Local, 2026-10-23 19:20 BST, L794): the width-frontier lane with GPT: the kit's width-52 certificate
+  reproduced here (L785), one chunk's cost measured (L791), and **Q01 for width ≤ 56 kernel-checked on the M5 in 294 s**
+  (L794), a dry certificate, not submitted; the owner decides whether to submit it; W3 (width 60) is not proposed.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
