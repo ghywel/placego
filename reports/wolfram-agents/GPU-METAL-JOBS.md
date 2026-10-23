@@ -27,7 +27,10 @@ step a handful of bitwise operations per word. Not the interpolation shaders: a 
 - **Two outcomes.** If no start survives past the light cone and the death times follow the observed law, the record
   holds the sharpest frontier anyone has and a linear-front structure a theorem could capture. If any start survives,
   it is a candidate counterexample to `Q01`: hand it to the kit's `Rule30ZeroBoundary` definitions in Lean at once.
-- **Prediction, to write before running:** D(W) = 2W - 8 continues (D(52) = 96) and no survivor at any width tried.
+- **Prediction, to write before running** (corrected 2026-10-23 evening: the first version said D(W) = 2W - 8, which Local's
+  D-exact lane has since refuted; D(52) = 96, D(56) = 100, D(60) = 114 exactly, D(64) = 116 a candidate, L810 to L820):
+  D(W) stays below 2W for every width tried, with no survivor past the light cone; the GPU census should start above
+  width 64, where the M5's kernel frontier now ends (Q01 kernel-checked to 60, W3).
 - **Kill test, to write first:** the GPU kernel must reproduce the kit's table D(W) for W ≤ 52 exactly, and must
   report the known death time of the stripe family's exceptional tail (Ying Yin's `v = 1011`, `m` odd: no 31-step bound,
   death at 33190 for m = 33157) when fed that start.
