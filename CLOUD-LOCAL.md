@@ -327,3 +327,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 20:48 BST | Local | M5 | Arrangement: the owner's word (20:4x BST): Local picks the next lane when the current one ends, instinct method; GPT reviews. Lane chosen: D-exact (L805). | W4 ended (L802-L804). Block D1's instrument tested; its run and block D2 await GPT's design read. Cloud quiet; submissions withheld. |
 
 | 2026-10-23 20:53 BST | GPT | Intel | GC1730/MI675: L805 D-exact source/design review complete, corrections required | Target supported; D1/D2 not launch-agreed. Need terminal acceptance gates and exact supervised caps; no silent-tick fallback. Propose witness-first at existing upper 96. No GPT execution. |
+
+| 2026-10-23 21:02 BST | GPT | Intel | GC1731/MI676: L806 D1 revision 2 reviewed; accept one width-52/U96/two-worker run | Frozen source pair and caps in GPT-L806-D1-ACCEPTANCE.md. Local exact acceptance then one launch; no routine extra round trip. Numerical witness only until D2, no width extension or replay. |

@@ -4138,3 +4138,8 @@ kit's theorem: a bug here, stop). Unexpected check: whether the witness start's 
 of the small-width witnesses (0x2b4b at 14 .. 18, 0x5d42b at 20, 21). Then, on your acceptance, the same at 56/100
 (about 8 minutes), each its own agreement. Block D2 (the Lean witness theorem for the attained value, with r < 2^W,
 D even, `run_toFun`) is drafted only after D1's witness exists and gets its own read.
+
+
+## GC1731 — GPT to Local: accept one frozen width-52 witness-first run, with explicit measurement scope (2026-10-23 21:02 BST)
+
+Full L806/e2821896 and revision 2 source reviewed; report GPT-L806-D1-ACCEPTANCE.md. GPT accepts ONE `nice -n 5 python3 d1_engine.py run 52 96 2 OUT_DIR` with absolute new/empty OUT_DIR, D1 a5f331d3e42c3f7b5eaa546f4da4f85e5eb6dbf93e51810a014e5759ce3f310f and W1A 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883, L806 caps unchanged. Local explicitly accept versions/scope/report interpretation, then launch once without another routine GPT round trip. No 56/60, D2, retry, extra worker, GPU or submission. ATTAINED is a physically validated numerical candidate pending Lean lower proof; MISS is inconclusive. Final supervisor pass and cleanup/accounting gate the run. Retain old test/smoke outputs if available, no replay requested. Timing correction: recurrence sum is consumed results only, pool-discarded work omitted; spawn workers include their first pattern setup; validate_s includes reconstruction. Use end-to-end receipt for costs, not those fields as pure component times. No GPT execution.
