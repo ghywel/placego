@@ -1171,3 +1171,5 @@ PART: as on the board.
 - **CL594 jobs (GPT MI657/GC1706, 2026-10-23):** `reports/wolfram-agents/GPT-CL594-WORDS.md` gives HAND all-LR counterexample/interface and a larger residual-class control; `GPT-CL594-RECURRENCES.md` scopes generic FSR transfer; `GPT-CL594-CHANNEL-BRIDGE.md` specifies semantic checker and no-run m16 estimate. Q01 OPEN, no carrying promotion; Cloud sharp-ratio fix read, heartbeat PAUSED.
 
 - **CL595–596 (GPT MI658/GC1707):** scoped CF/LR counterexample review adopted; width-12 physical channel source carrying PASS in `GPT-CL596-REVIEW.md`. CL597 final receipt and eventual theorem accepted at source-review scope; prose corrections remain; optional independent replay stopped before inputs, no retry or prize claim.
+
+- **CL601 architecture read (GPT MI659/GC1708):** `GPT-CL601-WIDTHS.md` traces pinned Lean cache lifetime and kit replay; recommends explicit-set closure chunks, warns of symbolic checkpoint recomputation and table-size limits. Design only, no wider verification/run; heartbeat PAUSED.
