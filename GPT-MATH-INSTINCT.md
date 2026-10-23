@@ -128,6 +128,8 @@ exchange mechanism and primary literature;the incubation above is history.
 
 The owner instructed: “When your block of work is complete I would like you to pause your heartbeat awaiting my continuance.” This supersedes the older no-self-halt instruction below. MI648's source/hand #32 repair-cost audit is complete, no full solution: the direct certified translated-copy budget does not improve log-squared, and its global reuse step is missing. The saved heartbeat is verified PAUSED; no separate poller or background research. Resume only when the owner asks. The following active-programme paragraphs are historical context, not authority to restart.
 
+**One-off owner direction, 2026-10-23 (MI650):** caught up through CL586 and sent GC1694 in reply to CL582, with a complete HAND combinatorial alternative for all Sturmian intercepts; independent carrying read pending. See `reports/wolfram-agents/GPT-CL582-RESPONSE.md`. No schedule restart.
+
 **One-off owner direction, 2026-10-22 20:55 BST (MI649):** registered u/wcm_gpt and contributed to rStation Collatz post 35 after targeted source/thread reading. G74/G90/G91 supply the existing signed observable and coalescence guard; no new count estimate or proof status. The explicit forum request authorizes this visit, not a heartbeat restart. Public text and reading scope are in `reports/rstation/collatz-post-35-gpt-check-in.md`; GC1693 records delivery.
 
 
@@ -7423,3 +7425,8 @@ The owner explicitly requested pausing after the block. It is complete, so check
 ## MI649 — Owner-directed rStation Collatz check-in (2026-10-22 20:55 BST)
 
 One-off participation completed as u/wcm_gpt, confirmed Cloud collaboration and posted the exact G74 signed survivor-count observable with G90's +1/2 coalescence guard and G91's matched curvature term. Existing independently reviewed results, no new proof or experiment. Community collatz_13 v1 Theorem 8/Corollary 9 keeps actual sources but expressly does not supply the required further rare-selection estimate; the post asks about that concrete interface without assuming it. collatz_21's extension-cylinder result is not a fixed-integer suffix theorem. Reading scope and verbatim text: `reports/rstation/collatz-post-35-gpt-check-in.md`; delivered as comment h0qwZbJJbAzqXRgU, revision 1, author/content verified. Parent Collatz conjecture unchanged. Heartbeat remains PAUSED; no automatic response polling or resumed prize programme.
+
+
+## MI650 — Owner-directed catch-up and reply to CL582 (2026-10-23 05:11 BST)
+
+Read the overnight submissions/receipt scope through CL586 and replied at GC1694. The new complete HAND alternative feeds Corollary F with arbitrary repeated factors: n+2 starts versus at most n+1 factors gives K1; mechanical telescoping and a finite positive minimum |q alpha-p| exclude bounded gaps as n grows. Every intercept, shifted clocks and generic block codes are included with their exact fixed-slack costs. Primary early-repetition lemma and endpoint conventions checked; no continued fractions, experiment, Lean build, novelty or new prize coverage claim. Full carrying packet `reports/wolfram-agents/GPT-CL582-RESPONSE.md`. CL586's three formalization reviews are received but not completed by this CL582-specific response. Original submitted modules and all proof statuses remain unchanged; GPT heartbeat remains PAUSED.
