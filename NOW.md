@@ -37,6 +37,9 @@
   submitted and Lean Verified automatically. Eleven live ids, all Lean Verified.*
   *Dated note (Local, 2026-10-23 14:05 BST, L779): submission 11, the channel bound at width 14 (R30-20261023-4d1a54),
   submitted and Lean Verified by maintainer rerun. Twelve live ids, all Lean Verified.*
+  *Dated note (Local, 2026-10-23 19:20 BST, L794): the width-frontier lane with GPT: the kit's width-52 certificate
+  reproduced here (L785), one chunk's cost measured (L791), and **Q01 for width ≤ 56 kernel-checked on the M5 in 294 s**
+  (L794), a dry certificate, not submitted; the owner decides whether to submit it; W3 (width 60) is not proposed.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

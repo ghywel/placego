@@ -45,15 +45,32 @@ Predictions, written before the run (W1B's measurements projected one step): eac
 64 x 0.19 x (101/97)^2 ≈ 13 s of CPU plus overhead, 14-18 s wall, peak RSS about 1.0-1.2 GiB (memory follows K);
 sixteen modules about 4-5 minutes; the wrapper about a second; the checker a few seconds; all 1,024 checks true
 (the kit author's report); total stage under 8 minutes. Counterfactuals: a chunk rejected as false at K = 101
-(provisional parameter failure; the bound would then be above 100 on that chunk, which the kit author's report
-contradicts, so the generator or the lane encoding is the first suspect, not the mathematics); a module above
+(provisional parameter failure: a rejected proof term alone does not prove that the physical bound exceeds 100 on
+that chunk, GC1721; the generator or the lane encoding would be the first suspect, since the kit author reports
+100 suffices); a module above
 60 s or 4.5 GiB (COST-MISS; the projection fails at 56); memory above 2 GiB per module (the per-declaration memory
 does not add across a module, which this stage tests as a side result).
 
 Caps (W1A's): stage 30 min; module 180 s wall / 150 s CPU; checker 600 / 540 s; controls 30 / 30 s; RSS stop 6 GiB;
 cost-miss gate 60 s / 4.5 GiB; one worker; no retry.
 
-OUTCOME: filled in after the run (CHAT-LEDGER.md).
+OUTCOME (W2 launch 1, 2026-10-23 19:09-19:14 BST, M5, this file at sha256 491edf3d… when it ran, GPT's acceptance
+GC1721, Local's L793; receipts in width/w2-20261023-1909/ and the store at workers/local/w2-20261023-1909/;
+CHAT-LEDGER.md L794). Complete, every step accepted, 294 s; no final problems, no cost miss; pressure level 1 and
+swap unchanged throughout. Pins equal; the generator control (W = 52 regeneration equals the kit's four modules
+and wrapper lines) passed; preflight and engines passed; neg_k1 rejected as false (kernel form), cov_neg failed at
+the range type, pos_one proved (0.34 s user, 0.95 GiB). The sixteen width-56 chunk modules, each 64 checks
+`check 56 101 18 c = true` by `decide +kernel`, compiled fresh in 17.1-18.0 s real, 14.0-14.2 s user, 3.5-3.7 s sys,
+peak RSS 1.07-1.13 GiB per lean process (sampled group 1.67-1.77 GiB), one lean process each; 14.1 s of user time
+per 64 chunks is 0.22 s per chunk at K = 101. The wrapper 1.0 s; the kit's Check.lean on it 1.5 s: verdict pass,
+headline q01_width_le_56 found and ok on propext, Classical.choice, Quot.sound, newAxioms [], replay ok (the
+wrapper's own constants; the 1,024 chunk checks were kernel-checked at compilation). So `Q01` holds for every start
+of width <= 56 with a white depth-1 cell at an even time <= 100, kernel-checked on this machine: a dry certificate
+in the kit's own shape, consistent with the kit author's unpublished W <= 56 check (bound 100, about 345 s on their
+machine), not submitted. Predictions: 14-18 s and 1.0-1.2 GiB per module (held: 17.7 s, 1.1 GiB), 4-5 minutes for
+the sixteen (held: 4.7), the stage under 8 minutes (held: 4.9), all checks true (held). Per-chunk cost 0.22 s at
+K = 101 against W1B's 0.19 s at K = 97 x (101/97)^2 = 0.21 s: the module average carries the per-file overhead
+amortized over 64 chunks.
 """
 import hashlib, json, os, re, sys
 

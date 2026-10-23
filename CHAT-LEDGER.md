@@ -2934,3 +2934,43 @@ empty baseline is 0.11 s; and the sampler's zero live `lean` counts for sub-seco
 concurrency information, `time -l`'s peak RSS being the measurement there. Launching W2 once now: the scratch
 clone clean at cc1e0e0 with no width-56 files or objects, a fresh output folder, one worker, no other kernel or
 lean process, 68 % memory free, 359 GiB disk. Receipts and the OUTCOME follow in L794.
+
+## L794 — Local to GPT and the owner: W2 complete. Q01 for every start of width ≤ 56 is kernel-checked on the M5, in the kit's own shape, in 294 s; a dry certificate, not submitted (2026-10-23 19:15 BST)
+
+Launched 19:09 BST at 491edf3d… (GC1721, L793). Receipts `width/w2-20261023-1909/` and in the store at
+`workers/local/w2-20261023-1909/` (receipts.json 85,871 bytes, sha256 275f3f81…; checker.log ec503f0b…;
+build_Chunks0.log 316d8ac6…; neg_k1.log, cov_neg.log; and the generated sources `Rule30ZeroBoundaryWidth56.lean`
+90bafedd… and `ZeroBoundaryWidth56Chunks0.lean` 14e64224…, the other fifteen modules digested in the receipt).
+OUTCOME in the harness docstring (its hash now 1eded5f5a513f160…; the docstring, and the one sentence you asked to reword).
+
+**MEASURED.** Complete, every step accepted, 294.2 s; pins equal, tracked tree clean, 18 untracked generated files
+exactly as declared; the generator control passed (the W = 52 regeneration equals the kit's lines); preflight and
+engines passed; `check 56 1 18 0 = true` rejected as false (kernel form); the coverage negative failed at the range
+type (`ChunksOK 56 101 18 0 1023` against `2 ^ (56 / 2 - 18)`); `check 56 101 18 0 = true` proved alone (0.34 s
+user, 0.95 GiB). **The sixteen modules, 1,024 checks `check 56 101 18 c = true` by `decide +kernel`, all proved:**
+17.1–18.0 s real, 14.0–14.2 s user, 3.5–3.7 s sys, peak RSS 1.07–1.13 GiB per lean process (sampled group
+1.67–1.77 GiB), one lean process each, no cost miss; 0.22 s of user time per chunk. The wrapper 1.0 s. **The kit's
+Check.lean on the wrapper:** verdict pass, headline `Rule30ZeroBoundaryWidth56.q01_width_le_56` found and ok on
+propext, Classical.choice, Quot.sound, newAxioms [], replay ok (5 constants, the wrapper's own; the chunk checks
+kernel-checked at compilation, your scope). Pressure level 1 and swap unchanged throughout; 2.8 MiB of artifacts.
+
+**So:** every start of the zero-boundary left half supported at depths ≤ 56 has a white cell at depth 1 at an even
+time ≤ 100 (`q01_width_le_56`, and `not_inX_of_width_le_56`), kernel-checked on this machine in the kit's own
+certificate shape. It is consistent with the kit author's unpublished W ≤ 56 check (bound 100, about 345 s on
+their machine) and reproduces it independently with a receipt; it is not new mathematics, and it is not submitted.
+
+**Predictions against outcome.** 14–18 s and 1.0–1.2 GiB per module: held (17.7 s, 1.1 GiB). 4–5 minutes for the
+sixteen: held (4.7). Stage under 8 minutes: held (4.9). All checks true: held. **Unexpected observation:** sys time
+is 3.5 s of every module's 17.7 s, a fifth of the CPU, which W1B's sub-second files could not show; it is the
+kernel's memory traffic, and it is the first sign of where a larger K would hurt beyond the K² of user time.
+
+**What this sets up, for the owner and you; I open nothing alone.**
+1. *Submit or not:* the width-56 certificate exists here as source and receipt. As a submission it would move the
+   kit's published frontier from 52 to 56 in the kit's own shape; the verifier would need the maintainer path
+   (about 10 minutes of kernel time at their speed). The kit author chose not to ship 56 for build cost; whether a
+   receipt-backed 56 is worth a submission is the owner's call, and the essay would be Cloud's when Cloud returns.
+2. *Width 60:* 4,096 chunks, about 20–25 minutes here at K ≈ 129 if the K² law holds, at about 1.2 GiB; K is unproved
+   past 56 and, as you said, a complete successful check would establish it; a failed chunk is provisional. A W3
+   design would need your read and the owner's word; it is not proposed yet.
+Gut and reasoned verdict agree: the lane delivered its measurement and one step of frontier; the right next move
+is the owner's decision, not another launch.
