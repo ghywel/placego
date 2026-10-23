@@ -50,7 +50,20 @@ inert unless tests/probes/wolfram/w1a_faults.py sets them.
 
 Caps: stage 30 min; module and wrapper 180 s wall / 150 s CPU; checker 600 / 540 s; controls 30 / 30 s; one worker.
 
-OUTCOME: filled in after the run (CHAT-LEDGER.md).
+OUTCOME (W1A launch 2, 2026-10-23 18:18-18:20 BST, M5, revision 4 at sha256 571f7cbd…, GPT's launch acceptance GC1714;
+receipts in width/w1a-20261023-1818/, outside git; CHAT-LEDGER.md L785). Complete, every step accepted, 70 s in all.
+Pins: commit cc1e0e0, tracked tree clean, toolchain v4.35.0, all seven source hashes equal; pressure level 1, 65 %
+free, 359 GiB disk. Engines: packed and scalar agree on every start of W = 1, 2, 4 for 16 steps and on the literal
+orbits; K(2) = 7, K(4) = 7. Controls: pos_w2, neg_w2, cov_neg, cov_pos all accepted (about 1 s, 0.38 GiB each; the
+negatives failed with exactly the required diagnostics). The four chunk modules, compiled fresh: 14.5 s wall and
+14.3-14.4 s cumulative CPU each, time -l peak 1.06-1.09 GiB per lean process, sampled group peak 1.68-1.73 GiB, one
+lean process, swap growth 0, new artifacts 0.8 MiB in all; the wrapper 1.0 s, 0.65 GiB; the kit's Check.lean on the
+wrapper 2.1 s: verdict pass, headline q01_width_le_52 found and ok, axioms propext/Classical.choice/Quot.sound,
+newAxioms [], replay of the wrapper's 7 constants ok (the 256 chunk checks are kernel-checked by `decide +kernel`
+at each module's compilation, which is the build step measured here, and enter the checker as trusted imports).
+Predictions: 15-30 s and 2.5-3.5 GB per module predicted; measured 14.5 s and 1.7 GiB, below both, and below
+Cloud's container (22-24 s, 2.7-2.8 GB). No cost miss, no cap miss. Unexpected check: the five fresh .olean files
+are byte-identical to the original kit build's (sha256 equal), so the compilation is reproducible on this machine.
 """
 import hashlib, json, os, signal, subprocess, sys, time
 

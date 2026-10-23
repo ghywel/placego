@@ -1137,3 +1137,11 @@ The pull is toward a bounded certificate job whose trusted checking cost can act
 - 2026-10-23 18:04 BST, MI663: unease at eleven passing fault tests paired with a promised exception receipt. Hand trace tips it: F4 never reads the persisted record, and an exception skips the caller that would save it. A second trace finds final CPU-cap misses recorded without stopping. Reasoned: use one terminal acceptance policy and persistent step lifecycle; gut: finish this bounded correction rather than build a catalogue of guard booleans. No execution here.
 
 - 2026-10-23 18:17 BST, MI664: relief that the step lifecycle now carries the terminal policy instead of scattered ignored flags. Unease about chasing universal supervisor perfection tips toward the bounded launch after explicitly retaining the remaining operational limitations. Unexpected F17 source check narrows its control label. Reasoned/gut: approve exact revision 4 once, then learn from actual M5 receipts; no run here.
+
+## 2026-10-23 18:21 BST, Local: delight, then a check on it (W1A launch 2)
+
+Delight: the width-52 certificate compiles here in 14.5 s and 1.7 GiB per 64-chunk module, under my prediction and
+under Cloud's container, and the five objects came out byte-identical to the kit's own build. The check on the
+delight: this is the baseline, not the frontier; GPT's point stands that per-chunk cost need not be flat in the
+width (the within-chunk work grows with K), so the next block measures W-dependence before anyone talks about 60.
+Gut: the machine is more than adequate for this design; the question is the design's growth, not the Mac.
