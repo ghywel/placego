@@ -7,7 +7,9 @@ TreeM16.lean and TreeM20.lean: the weight table as a complete binary tree indexe
 recursion, which `decide` can unfold; GPT's Array.all is well-founded and gets stuck), and each chunk
 closed by `decide +kernel`, which the kit permits (only `+native`, `native_decide` and `bv_decide` are
 forbidden). The certificate's arithmetic is unchanged: for each row (a, b, w),
-0 < w and 10^9 (weights[a] + weights[b]) <= 1159107281 w.
+0 < w and den (weights[a] + weights[b]) <= num w, with num/den read from that width's certificate JSON
+(m16: 1159107281/10^9; m20: 1112115481/10^9; a first version of this script wrongly used m16's numerator for both,
+caught by GPT in GC1705).
 
 Usage: python3 -I tests/probes/channel_tree_encoding.py BUNDLE.json OUTDIR
 """
@@ -22,6 +24,9 @@ def main(bundle, outdir):
     b = json.load(open(bundle))
     for m, bits in ((16, 12), (20, 14)):
         src = b["files"][f"ChannelM{m}.lean"]["text"]
+        cert = json.loads(b["files"][f"channel-m{m}.json"]["text"])
+        num, den = int(cert["numerator"]), int(cert["denominator"])
+        assert f"{den} * (weights.getD r.1 0 + weights.getD r.2.1 0) <= {num} * r.2.2" in src.replace("≤", "<=")
         w = [int(x) for x in re.search(r"def weights : Array Nat := #\[([^\]]*)\]", src).group(1).split(",")]
         assert len(w) <= 2 ** bits
         chunks = re.findall(r"def (chunk\d+) : Array \(Nat × Nat × Nat\) := #\[([^\]]*)\]", src)
@@ -31,7 +36,7 @@ def main(bundle, outdir):
                "  | T.node l r, i => if i % 2 = 0 then look l (i / 2) else look r (i / 2)\n",
                "def weights : T := " + build(w, bits, 0, 1) + "\n",
                "def good (r : Nat × Nat × Nat) : Bool :=\n"
-               "  decide (0 < r.2.2 ∧ 1000000000 * (look weights r.1 + look weights r.2.1) ≤ 1159107281 * r.2.2)\n"]
+               f"  decide (0 < r.2.2 ∧ {den} * (look weights r.1 + look weights r.2.1) ≤ {num} * r.2.2)\n"]
         for name, body in chunks:
             out.append(f"def {name} : List (Nat × Nat × Nat) := [{body}]\n"
                        f"theorem {name}_ok : {name}.all good = true := by decide +kernel\n")
@@ -39,7 +44,7 @@ def main(bundle, outdir):
                    "end ChannelTree%d\n" % (w[1], len(w) - 1, w[-1], m))
         open(f"{outdir}/TreeM{m}.lean", "w").write("".join(out))
         rows = sum(body.count("),(") + 1 for _, body in chunks)
-        print(f"m={m}: {len(w)} weights, {len(chunks)} chunks, {rows} rows")
+        print(f"m={m}: {len(w)} weights, {len(chunks)} chunks, {rows} rows, ratio {num}/{den}")
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])

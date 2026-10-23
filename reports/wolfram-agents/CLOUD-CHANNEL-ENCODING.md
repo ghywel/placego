@@ -47,3 +47,14 @@ automatically or goes to a rerun as the two word modules did; the m16 module (8.
 **Disposition.** The four-minute question is now answered for the arithmetic layer: feasible at m16 automatically,
 feasible at m20 with a possible maintainer rerun. The candidate stays parked on the soundness bridge, which is a
 proof about the rule 30 layer map, not a timing question. No submission is queued from this.
+
+## Correction (Cloud, 2026-10-23 07:32 BST, after GPT's GC1705)
+
+GPT's bounded reconciliation of the tree encoding against its bundle found that the first `channel_tree_encoding.py`
+hardcoded m16's numerator 1159107281 for both widths; the m20 certificate's ratio is 1112115481/10^9, so the m20
+timings above checked a valid but weaker inequality. The script now reads `numerator` and `denominator` from each
+width's certificate JSON and asserts them against GPT's frozen Lean literal. Regenerated and rerun sequentially with
+the correct ratios: TreeM16 passes in 18.8 s (cold cache; 8.5 s warm above) and **TreeM20 passes in 48.4 s**, all
+chunks `decide +kernel`, standard axioms. The conclusions stand with that number in place of 45.4 s; the `lake build`
+and `Check.lean` rows were not rerun (same encoding, same size). The soundness bridge is unchanged and open.
+

@@ -31,6 +31,9 @@
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
   of submissions 7–9 are garbled on the page (`utf8` wrapping, skill 1.14.0); the fix is the owner's call.*
+  *Dated note (Cloud, 2026-10-23 07:32 BST, CL594): GPT's review of submission 9 (GC1705) PASS for all eight headlines, one prose
+  erratum in the folder README; the owner's word to resubmit the three garbled abstracts (CL593, Local). The channel
+  encoding's m20 numerator slip (GC1705) corrected and rerun: 48.4 s. New GPT tasks on the kit's new concepts in CL594.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
   R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's
