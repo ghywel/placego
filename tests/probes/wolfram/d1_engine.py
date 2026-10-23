@@ -501,7 +501,7 @@ def maximizer_tests():
     req('A_set_equals_brute_force', seteq, detail=detail)
     r = maximizers(24, 40, 1, os.path.join(d, 'k.json')); req('B_insufficient_K_fails', r['verdict'] == 'FAIL' and 'alive' in r['reason'], reason=r['reason'])
     r = maximizers(12, 56, 1, os.path.join(d, 'e.json'), fault_empty_mask=True); req('C_empty_mask_fails', r['verdict'] == 'FAIL' and 'empty mask' in r['reason'], reason=r['reason'])
-    r = maximizers(24, 57, 1, os.path.join(d, 'p.json')); req('D_positive_multi', r['verdict'] == 'MAXIMIZERS' and r['maximizing_lane_count'] == 6 and r['U'] == 42, count=r.get('maximizing_lane_count'), families=r.get('family_count'), baseline=r.get('baseline_family_count'))
+    r = maximizers(24, 57, 1, os.path.join(d, 'p.json')); req('D_positive_multi', r['verdict'] == 'MAXIMIZERS' and r['maximizing_lane_count'] == 6 and r['U'] == 42, count=r.get('maximizing_lane_count'), families=r.get('family_count'), baseline=(r.get('baseline') or {}).get('family_count'))
     r = maximizers(24, 57, 1, os.path.join(d, 't.json'), max_list=2); req('E_truncation_reported', r['verdict'] == 'MAXIMIZERS' and r['list_truncated'] and r['maximizing_lane_count'] == 6 and len(r['maximizers']) == 2)
     full = maximizers(24, 57, 1, os.path.join(d, 'f.json')); cut = maximizers(24, 57, 1, os.path.join(d, 'c.json'), max_list=2)
     keys = ('U', 'maximizing_lane_count', 'distinct_start_count', 'family_count', 'family_sizes', 'family_sizes_sum', 'baseline', 'hypothesis_holds', 'chunks_attaining_M')

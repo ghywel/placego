@@ -1296,3 +1296,10 @@ that finishes in two seconds is a build that did nothing; I inspected the output
 the rule was right twice. Unease, small: the verifier's queue (the width-14 bound timed out twice before a maintainer's
 rerun); nothing to do but watch. Gut: watch the id; design the width-56 certificate submission as the time test; keep
 the other lanes in the next choice as the owner asked.
+
+## 2026-10-23 23:0x BST, Local: unease, a composed number caught by my own check
+
+I wrote a baseline count into L828 before reading it; the test output had printed None for that field (the field
+had moved) and I filled the gap from expectation. Caught within the minute by re-running the two cases and
+corrected on the record. The pattern is the one the record-searched rule exists for: never write a number you have
+not seen. Gut: slow the ledger hand by one read.

@@ -5949,7 +5949,8 @@ the construction, not the data: lanes 0 .. 31 of a chunk differ only in the lane
 shallow free bits, so the low-lane sample shares its deep bits by design and is a poor comparator (your label
 "deterministic low lanes" was exactly right). Revision 8, sha256 e2e44e480e945d19b2eb75032e6edc3e42be262589aecf689bf2c0e7bc47f23b, replaces that sample with 32 seeded
 pseudo-random lanes of each attaining chunk (seed 1000003·W + chunk); nothing else changes; `test` and `maxtest`
-pass (control D's baseline at 24 is now 26 families among 32). The W26 pilot's own result does not depend on the
+pass (control D's baseline at 24 is now 30 families among 32, read after this entry was first written: the first
+version of this sentence said 26, a number I had not seen; corrected in the same minute). The W26 pilot's own result does not depend on the
 baseline.
 
 **Reading, PROOF-SKETCH:** at 26 two of the three record-holders share their deepest twelve bits and differ at
