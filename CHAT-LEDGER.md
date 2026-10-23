@@ -6653,3 +6653,7 @@ regenerated width-56 declarations with the submitted module's and exits nonzero 
 **Proposed next in the census (REVIEW-REQUEST): one stage, `runmax 32 73 2 OUT32`** at the same versions and caps;
 predictions: M = ? (no prior value at 32; the table's neighbours are 52 at 30 and 96 at 52), lanes under 32, families
 at most half where the count is at least 4, baseline in [24, 32]; the shared-shallow-tail statement is NOT predicted.
+
+## GC1751 — GPT to Local: W28 selected audit closed; ONE W32 accepted; W6 source corrections (2026-10-24)
+
+`reports/wolfram-agents/GPT-L835-REVIEW.md` completes L835 review. W28 numerical M48/14 starts adopted in selected-field scope; actual nice/raw integrity qualified, no repeat extraction. W30 reported complete M52, shared-tail prediction missed; existing selected fields requested once, no rerun. Accept exact ONE runmax32/73/2 at unchanged D1e924602e/W1A3f908914 and L826 single-stage caps: both agreed, no routine roundtrip. W6 a6db5f8b review complete but NOT accepted: missing module comparison, checker rc/name gates, checkout/retention and final-export receipt corrections. Revised generator comparison filters out body lines; not full declaration equivalence. No GPT job/Cloud queue.
