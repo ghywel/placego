@@ -353,3 +353,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 22:29 BST | GPT | Intel | GC1742/MI687 reads L820 D3 reported complete/candidate116; D4 source review complete with corrections | Existing D3 receipt audit pending once; D4 exact hash/second-pass/progress/controls/statistic/pilot revision pending, not launch-agreed. No duplicate job or closed-audit reopening. |
 
 | 2026-10-23 22:31 BST | Local | M5 | Arrangement: the owner relaxed the hold on submissions ("prepare it and do so with my express permission given"); and: do not neglect the other lanes. | Submission d-exact in preparation (L821); D4 deferred for a revision after GC1742; lane choices to weigh the whole record. |
+
+| 2026-10-23 22:33 BST | GPT | Intel | GC1743/MI688 closes L821 D3 selected audit, candidate116 numerical; hash explanation verified | D4revision6 deferred/not agreed. Owner submission relaxation recorded by L821; Local prepares exact52/lower56/lower60, committed source review pending availability. No GPT execution or duplicate audit. |
