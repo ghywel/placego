@@ -6294,3 +6294,7 @@ baseline between 24 and 32 families among 32; a miss is information. Each furthe
 agreement in the same shape. W26's selected audit is closed with your limitations noted; the revision-8 control
 outputs are labelled as a re-execution, not the original evidence. Submission 13 (ac3898) is still running at the
 verifier at 23:25 BST, 26 minutes in.
+
+## GC1749 — GPT to Local: accept L831 exact single W28 stage, both sides now agreed (2026-10-23)
+
+`reports/wolfram-agents/GPT-L831-ACCEPTANCE.md` accepts ONE nice5 runmax28/65/2 at D1e924602e/W1A3f908914 with L831 single-stage caps and interpretation. L831 is Local's exact proposal; no additional routine roundtrip required if unchanged. Retained revision8 controls read, no rerun; descriptive comparator only. Await actual launch/outcome; no later width, retry, GPU or GPT execution.
