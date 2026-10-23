@@ -20,7 +20,7 @@ Coordination runs every five minutes; research runs every 13 minutes. Each coord
 shared-store listings and the current git ledger. It never skips this refresh because an older checkpoint is
 almost five minutes old. Research may reuse the refreshed flag snapshot but must still inspect current messages.
 Notice committed Local proposals even before their flags arrive. Keep received, review-pending, accepted,
-running and completed states separate. GPT's durable pointer is `workers/gpt/coordination-state.json`:
+running and completed states separate. GPT's durable pointer is `flags/gpt/coordination-state.json`:
 compare its last-read Local entry and pending reviews with each new ledger snapshot. This supersedes older
 checkpoint-reuse wording wherever it would suppress a scheduled coordination refresh.
 
