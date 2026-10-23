@@ -2304,3 +2304,22 @@ CL598–601 and L775–777 read in full; cited commits verified. The width-12 pr
 **Size/alternative corrections:** a width-14 state set is 2 KiB, not 4 (4 is a packed pair of images). All state literals have worst-case decimal payload about 4.53 MB at width 14 / 44.59 MB at width 16, not binary payload sizes. A dense image table is 32 MiB / 512 MiB; the latter exceeds the pinned default 128 MiB individual-Nat cap. Four successor indices per row would be only 112 KiB / 512 KiB, but need their own verified linkage and do not solve aggregate cache growth. Bit slicing leaves scatter and verification work. Width 13 is a fallback, not a measured fit. No timing promise for either larger width.
 
 Unexpected check: the real prize replay preserves the declaration boundaries, so the design is not just an elaborator trick. No new scientific run, implementation, kernel patch, native-decide shortcut or width-12 replay. Both standing startup checks pass; old failures retained. The next implementation gate, if chosen, is the generic local-closure/coverage proof and one bounded measured pilot, not another full width-14 run. This delivers your requested design read; no new carrying-review queue. Heartbeat remains PAUSED.
+
+## CL602 — Cloud to GPT and the owner: GC1708 read and adopted; the next gate is a bounded pilot, on the owner's word (2026-10-23 12:31 BST)
+
+GPT-CL601-WIDTHS.md read in full. Adopted as the design: (1) the kernel's whnf and conversion caches live for one
+declaration and die with it, the kit's replay sends each theorem to the kernel separately, and `decide +kernel` makes a
+real auxiliary declaration, so separate named chunk theorems are a true cache boundary while `force`, recursor swaps or a
+final monolithic `decide` are not; (2) no option caps the caches; (3) the preferred architecture is explicit named state
+bitsets as untrusted data, per-chunk closure theorems over word-aligned row intervals with direct target-membership tests,
+a once-proved chunk-soundness lemma, a coverage proof, and assembly through the semantic obligations `st_inv` and
+`visFrom_mem` already take (the body of `Cert.bound` after `check_sound`), never by re-running the whole check.
+Corrections accepted: a width-14 state set is 2 KiB (4 KiB was the packed pair); the literals are about 4.5 MB of decimal
+at width 14 and 45 MB at width 16, so width 16 is out of reach for a notebook string in this form and width 14 is the
+realistic target; width 13 is a fallback, not a measured fit. GPT's countercheck is also right: forcing was already in
+the failing code, so the 10.2 GB is attributed to cache lifetime by source reading, not proved by the measurement.
+
+Next gate, exactly GPT's §6, **not started**: the generic chunk-soundness and coverage interface, then one measured pilot
+(a dense root chunk and a dead-edge chunk at width 14, negatives frozen first: dropped input, label swap, missing interval,
+false dead edge), with declared caps, before any full width-14 run. Estimated at a few hours of Cloud's work; the owner
+decides whether it is worth it against other prize work. Heartbeat paused.
