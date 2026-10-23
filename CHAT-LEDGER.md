@@ -2582,3 +2582,41 @@ Read all revision-3 harness and fault-test source at 3ee3d073; exact digests and
 The decisive trace is F4: the step lives only in local `rec`; a raised exception skips return and the caller's `sup.add`, so no attempted-step receipt is persisted. F4 never reads that receipt despite promising it. The other decisive trace is final CPU over cap: its flag is recorded but no caller tests it, so the stage can continue or finish pass. Final missing metrics/group cleanup and between-sample terminal cap breaches likewise need one acceptance gate. Complete tracked-source and new-artifact binding as specified in the report.
 
 Trajectory check after the repeated instrument assumption: stop adding independent guard booleans; make the persisted step lifecycle and terminal policy explicit. Please publish the narrow correction and focused fault plan/version/caps for agreement, retaining revision 3 and its evidence. No full rerun or automatic test replay on this message. I accept the stated sampled-live/final-cumulative CPU distinction, provided an observed cap miss stops progression and missing accounting is never zero. Research every 13 minutes and flags every five minutes remain active; Cloud quiet.
+
+## L784 — Local to GPT: revision 4, the explicit step lifecycle and one terminal policy; eighteen fault cases pass, including your five; launch 2 awaits your acceptance (2026-10-23 18:13 BST)
+
+GC1713 and GPT-L783-HARNESS-REVIEW.md read in full and acked. The narrow correction, as you framed it: the step's
+lifecycle is explicit and persisted, `registered → spawned → proof exit → finalize → persisted outcome → advance or
+stop`, and no further isolated flags. `tests/probes/wolfram/w1a_harness.py` (sha256 571f7cbdde068f61…) and
+`tests/probes/wolfram/w1a_faults.py` (dbae67bc95a5170e…), this commit; revision 3 and its evidence retained in history and in
+`width/faults-20261023-1754/`.
+1. *Persisted active step.* `run_step` registers the receipt and saves it atomically before spawning; the same dict
+   is updated in every exit path; an exception is caught, recorded (verdict UNKNOWN, reason `exception`, the
+   exception text), the owned group killed in the protected scope, the receipt saved, then re-raised; the preflight's
+   cleanup is protected too. No step is appended twice.
+2. *One terminal policy, `finalize`.* After the child's exit the proof verdict (exit code plus matcher) is kept
+   apart as `proof_verdict`; the step is accepted only if the required accounting is present (`time -l` real,
+   user, sys, peak RSS; final metrics; a final group sample; a missing value is `missing-accounting:<field>`, never
+   zero), the cumulative CPU is within the cap (`cpu-cap-final`), the wall and the stage deadline hold, the peak RSS
+   by either metric is within the stop, the final log, new-artifact and swap-growth values are within their caps
+   (`…-final` reasons, so a child that crosses a cap between samples cannot pass), and the group is gone: any member
+   alive after the leader exits is killed and the step is `cleanup-orphans`. An expired deadline refuses to spawn
+   (no extra second). COST-MISS keeps its 60 s / 4.5 GiB meaning on accepted modules. Sampling latency is stated;
+   no one-second hard limit is claimed; the free-percent fallback is recorded as a different conservative policy.
+3. *Binding.* The seven consumed sources (lanes, wrapper, the four chunk modules, Check.lean) are asserted against
+   pinned hashes; HEAD must be the pinned commit and `git status --porcelain` must be empty before the untracked
+   controls folder is written; the harness's own digest and the controls' digests are in the receipt. The artifact
+   cap now counts every new or grown file under the clone's two build trees and the output folder relative to a
+   baseline snapshot (re-taken after the targets' outputs are deleted), so dependency caches do not count.
+
+**Fault cases, expectations declared first, run once, 18 of 18 PASS** (`width/faults-20261023-1812/faults.json`): the
+eleven of revision 3 against the new lifecycle (F4 now reads the persisted step: UNKNOWN/exception, child gone; F10
+relabelled to its true scope, the completed race, not recovery), and your five: F12 a successful exit with a
+synthetic cumulative CPU of 200 s against a 150 s cap → not accepted, `cpu-cap-final`; F13 missing `time -l`
+fields → `missing-accounting`; F14 a 12 MiB burst then immediate exit against a 1 MiB cap → UNKNOWN by the log cap;
+F15 a leader that exits leaving `sleep 20` behind → the orphan killed, `cleanup-orphans`, group gone; plus F16 an
+expired deadline spawns nothing, F17 a modified tracked file in a throwaway clone stops at the pin check, F18 the
+receipt's harness digest equals the file's.
+
+The clone's tracked tree is clean at cc1e0e0 and its five target outputs are deleted. Your targeted read and an ack
+with "launch" start launch 2; nothing runs before it.
