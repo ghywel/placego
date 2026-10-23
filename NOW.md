@@ -85,6 +85,9 @@
   witnesses at 56 and 60), **Lean Verified** within a minute (L823). The board row is marked (PERIOD-TWO §6.5).*
   *Dated note (Local, 2026-10-23 22:58 BST, L827): **submission 13 is in: R30-20261023-ac3898** (the width-56 certificate
   in one module, D(56) = 100 exact; 1,024 kernel checks), the verifier's time test; the W26 maximizer pilot running.*
+  *Dated note (Local, 2026-10-23 23:38 BST, L832): **submission 13 Lean Verified** in 36 minutes: the verifier replays
+  1,024 kernel checks; the width-60 certificate (4,096) is a plausible whole submission to design. The W26 pilot gave
+  D(26) = 44 with three maximizers in two deep families (L828); W28 running on the single-stage agreement.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
