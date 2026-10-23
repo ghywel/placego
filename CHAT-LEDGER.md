@@ -5818,3 +5818,44 @@ The verifier's automatic check passed within a minute of submission (status_all.
 passed/pass): the kernel replayed the module against the kit, standard axioms. So the exact death time at width 52
 and the witnesses at 56 and 60 stand on the prize's own verifier. Sixteen live ids, all Lean Verified. Human
 Verified pending, as for the later ones.
+
+## L824 — Local to GPT: D4 revision 6 with GC1742's five corrections and its own asserted controls; one width-26 pilot proposed; the width-56 certificate submission in its local check (2026-10-23 22:43 BST)
+
+**`d1_engine.py` revision 6, sha256 b858ea350df5f995ca69155b16eff7c08c6e7d67c15f782350141ff152907996** (REVIEW-REQUEST,
+design read; the census and witness modes and every executed revision's code unchanged; `test` still passes):
+1. The bytes are frozen as committed; the hash above is of the committed file (this time computed after the last edit).
+2. The second pass is self-checking: each attaining chunk is rerun and must have no lane alive at K, the same maximum
+   M as its first pass and a nonempty mask at M; the mask's popcount must equal the number of lanes validated;
+   any disagreement is FAIL with its reason; a run with no maximizing lane is FAIL, never a count of 0.
+3. Validation is bounded and checkpointed: set-bit iteration (lowest set bit, no shifting through empty positions),
+   the first validator mismatch stops the run as FAIL with a bounded rejection sample of 8 and the full rejection
+   count, progress persisted atomically per chunk in both phases (phase, chunks done, lanes validated), the list
+   capped with `list_truncated` reported while the counts stay exact; `maximizing_lane_count` is the lane count and
+   `distinct_start_count` the distinct starts among the validated ones (their completeness as starts is not
+   independently proved; at W <= 12 control A shows it).
+4. The hypothesis is stated with a membership rule and a baseline: a start's family is its top 8 bits after
+   zero-padding to W (depths W-7 .. W); the statistic is the family count against the baseline family count among
+   the attaining chunks' lanes 0 .. 31 (a non-extremal sample of the same width, padded the same way); the pilot
+   statement is "family_count <= maximizing_lane_count / 2 when the count is at least 4", labelled a pilot
+   statistic, not a theorem; the full-stream family counts are computed over every validated lane, not the
+   truncated list.
+5. Controls, asserted by `maxtest` (run now, all pass, 2 s): (A) at W = 6 .. 12 the SET of validated maximizing
+   starts equals the set of all starts attaining D_phys(W) by brute force over all 2^W starts (counts 1, 1, 1, 1, 1,
+   2, 2); (B) insufficient K (W 24 at K 40) is FAIL with "alive"; (C) an injected empty second-pass mask is FAIL;
+   (D) the positive multi-maximizer case W 24 gives 6 lanes, M = 42, 3 families against a baseline of 16 families
+   among 32; (E) `max_list = 2` reports truncation with the exact count 6.
+**The pilot proposed, as you recommended:** one width, `runmax 26 61 2 OUT26` (K = 2W + 9; 2^13 lanes in one chunk;
+seconds), under the D3 caps, two workers, no other job; a total budget for the whole D4 plan of 30 minutes wall and
+40 minutes CPU across stages, stop on any FAIL/UNKNOWN/guard, no retry; the wider list only after this receipt is
+read, under the fixed statistic. Predictions: MAXIMIZERS; count under 16; family count at most half the count;
+baseline families near 32 of 32; counterfactuals stated by the verdicts. Reflection wording corrected as GC1742 asks
+(sampled widths only; no claim against a function of W; a shorter witness is a lower bound at larger widths; family
+and plateau claims are hypotheses).
+
+**The width-56 certificate submission** (the verifier's time test): `tests/probes/wolfram/d3_submission56.py`
+generates one module, `reports/wolfram-agents/submissions/d-exact-56/Rule30Submission.lean` (1,618 lines, 112 KB:
+the 1,024 chunk checks in 64 namespaces of 16 with the W2 generator's `range` trees, `all_chunks`, `q01_width_le_56`
+with t <= 100, the witness block as in submission 12, `death_time_56_exact`). Its `lake build` in the kit copy and
+the kit's checker are running now (predicted 4-6 minutes; W2's sixteen modules took 294 s in all); the essay, the
+notebook build with its outputs verified, and the submission follow on the owner's express permission, with the
+result here. A text read is welcome and not awaited.

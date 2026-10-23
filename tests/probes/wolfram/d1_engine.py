@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D1, revision 5 (revision 4, the executed version e61d1694… for the width-64 census, plus a `maximizers` mode and its `runmax` launcher: every lane at the maximal level, each start validated; nothing else changed). Revision 4 was (revision 3, the executed version 27eb852c…, with the stale MISS sentence corrected and the stage outcomes below; code unchanged): revision 3 was revision 2 (the executed a5f331d3…) plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
+"""D1, revision 6 (revision 5 with GC1742's corrections to the `maximizers` mode: a self-checking second pass, set-bit iteration with a first-mismatch stop and bounded rejection sample, atomic progress in both phases, exact lane and distinct-start counts with truncation reported, the deep-prefix statistic as a stated family rule with a baseline, and `maxtest`, the mode's own asserted controls; the census and witness modes and the executed revisions' code unchanged). Revision 5 was (revision 4, the executed version e61d1694… for the width-64 census, plus a `maximizers` mode and its `runmax` launcher: every lane at the maximal level, each start validated; nothing else changed). Revision 4 was (revision 3, the executed version 27eb852c…, with the stale MISS sentence corrected and the stage outcomes below; code unchanged): revision 3 was revision 2 (the executed a5f331d3…) plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
 pinned source, with the kit's packed physical evaluator (`Rule30ZeroBoundarySmall.pstep`) beside it, for the lane
 "D-exact": the exact death time D(W) of a width, kernel-checked above (a chunk certificate at K = D + 1) and below (an
 explicit witness start evolved by the kit's `prun`, bridged to `zrow` by `run_toFun`). Lane chosen by Local on the
@@ -387,17 +387,30 @@ def census(W, K, workers, out_path):
     return res
 
 
-def maximizers(W, K, workers, out_path, max_list=4096):
-    """Revision 5 (for GPT's read): the census, keeping EVERY lane at the maximal elimination level M over all chunks
-    (not one), with each such lane's reconstructed start validated physically at M; the count of maximizers and
-    their starts (hex) are the output, for the question what the extremal starts have in common. Verdicts as census;
-    FAIL if any maximizer's start fails the validator. max_list caps the retained list (the count is always exact)."""
+def top_family(r, W, bits=8):
+    """The membership rule of the deep-prefix statistic: a start's family is its top `bits` bits after zero-padding
+    to W bits (depths W - bits + 1 .. W)."""
+    return (r >> max(0, W - bits)) & ((1 << bits) - 1)
+
+
+def maximizers(W, K, workers, out_path, max_list=4096, fault_empty_mask=False):
+    """Revision 6 (GC1742's corrections): the census, then a self-checking second pass over every chunk attaining the
+    maximal level M: the rerun must have no lane alive at K, the same maximum M, a nonempty elimination mask at M,
+    and its popcount must equal the number of lanes validated; every maximizing lane's start is validated at M by
+    the physical validator (set-bit iteration, the first mismatch stops the run as FAIL with a bounded rejection
+    sample); progress is persisted atomically per chunk in both phases. Outputs: `maximizing_lane_count` (exact),
+    `distinct_start_count` among the validated starts (identity of starts is not independently proved complete),
+    the retained list (capped at max_list, with `list_truncated`), and the deep-prefix statistic: the family
+    partition by `top_family` (top 8 bits after zero-padding to W), its family count and sizes, against the
+    baseline of the same statistic over the first max(count, 32) starts of the maximizing chunks' lane 0 .. (a
+    non-extremal sample of the same width). Verdicts MAXIMIZERS or FAIL."""
     import multiprocessing as mp
     n = min(W // 2, 18); chunks = 1 << (W // 2 - n)
     t0 = time.monotonic()
     res = {'mode': 'maximizers', 'W': W, 'U': None, 'K': K, 'n': n, 'chunks': chunks, 'workers': workers,
            'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'python': platform.python_version(),
-           'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'verdict': 'RUNNING', 'reason': None, 'completed': [], 'per_chunk': {}, 'setup_s': None, 'elapsed_s': 0.0}
+           'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'verdict': 'RUNNING', 'phase': 'census', 'reason': None, 'completed': [], 'per_chunk': {},
+           'setup_s': None, 'elapsed_s': 0.0, 'second_pass': {'chunks_total': None, 'chunks_done': 0, 'lanes_validated': 0, 'rejected_count': 0, 'rejected_sample': []}}
     ts = time.monotonic(); pats_of(n); res['setup_s'] = round(time.monotonic() - ts, 3); atomic_write(out_path, res)
     verdict, reason = 'RUNNING', None; M = -1
     with mp.Pool(workers) as pool:
@@ -411,23 +424,79 @@ def maximizers(W, K, workers, out_path, max_list=4096):
     if verdict == 'RUNNING':
         cov = sorted(res['completed']) == list(range(chunks)); res['coverage_exact'] = cov
         if not cov: verdict, reason = 'FAIL', 'coverage incomplete'
-        else:
-            top = [c for c, v in res['per_chunk'].items() if v['max_level'] == M]
-            starts = []; count = 0; bad = []
-            for c in top:
-                _, elim, lasts = run_lanes(W, n, c, K, record=True); mask = elim.get(M, 0); p = 0
-                while mask:
-                    if mask & 1:
-                        count += 1; r = reconstruct(W, lasts, p)
-                        ok, why = validate_witness(W, M, r)
-                        if not ok: bad.append((c, p, hex(r), why))
-                        elif len(starts) < max_list: starts.append({'chunk': c, 'lane': p, 'start_hex': hex(r), 'bits': r.bit_length()})
-                    mask >>= 1; p += 1
-            res.update({'U': M, 'maximizer_count': count, 'maximizers': starts, 'chunks_attaining_M': len(top), 'rejected': bad[:16]})
-            verdict, reason = ('MAXIMIZERS', 'M = %d, %d maximizing lanes over %d chunks, all validated' % (M, count, len(top))) if not bad else ('FAIL', '%d maximizers rejected by the validator' % len(bad))
-    res.update({'verdict': verdict, 'reason': reason, 'elapsed_s': round(time.monotonic() - t0, 1), 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'), 'recurrence_s_total': round(sum(j['seconds'] for j in res['per_chunk'].values()), 2)})
+        elif M < 0: verdict, reason = 'FAIL', 'no maximum level recorded'
+    if verdict == 'RUNNING':
+        top = sorted(c for c, v in res['per_chunk'].items() if v['max_level'] == M)
+        res['U'] = M; res['phase'] = 'second-pass'; sp = res['second_pass']; sp['chunks_total'] = len(top); atomic_write(out_path, res)
+        starts = []; seen = set(); count = 0; truncated = False; baseline = []
+        for c in top:
+            alive2, elim2, lasts = run_lanes(W, n, c, K, record=True)
+            k2, _ = max_elim(elim2); mask = elim2.get(M, 0)
+            if fault_empty_mask: mask = 0
+            if alive2 != 0: verdict, reason = 'FAIL', 'second pass: chunk %d has a lane alive' % c; break
+            if k2 != M: verdict, reason = 'FAIL', 'second pass: chunk %d maximum %s differs from M = %d' % (c, k2, M); break
+            if mask == 0: verdict, reason = 'FAIL', 'second pass: chunk %d has an empty mask at M' % c; break
+            pop = bin(mask).count('1'); validated = 0; m = mask
+            while m:
+                low = m & -m; p = low.bit_length() - 1; m ^= low
+                r = reconstruct(W, lasts, p); ok, why = validate_witness(W, M, r)
+                if not ok:
+                    sp['rejected_count'] += 1
+                    if len(sp['rejected_sample']) < 8: sp['rejected_sample'].append({'chunk': c, 'lane': p, 'start_hex': hex(r), 'why': why})
+                    verdict, reason = 'FAIL', 'second pass: a maximizing lane rejected by the validator (chunk %d, lane %d)' % (c, p); break
+                validated += 1; count += 1; seen.add(r)
+                if len(starts) < max_list: starts.append({'chunk': c, 'lane': p, 'start_hex': hex(r), 'bits': r.bit_length(), 'family': top_family(r, W)})
+                else: truncated = True
+            if verdict == 'FAIL': break
+            if validated != pop: verdict, reason = 'FAIL', 'second pass: chunk %d validated %d lanes against a mask popcount of %d' % (c, validated, pop); break
+            for p in range(min(32, 1 << n)):                     # the baseline sample: the chunk's lanes 0 .. 31, non-extremal in general
+                baseline.append(top_family(reconstruct(W, lasts, p), W))
+            sp['chunks_done'] += 1; sp['lanes_validated'] = count; res['elapsed_s'] = round(time.monotonic() - t0, 1); atomic_write(out_path, res)
+        if verdict == 'RUNNING':
+            if count == 0: verdict, reason = 'FAIL', 'second pass: no maximizing lane found'
+            else:
+                fams = {}
+                for st_ in starts: fams[st_['family']] = fams.get(st_['family'], 0) + 1
+                bfams = {}
+                for f in baseline[:max(count, 32)]: bfams[f] = bfams.get(f, 0) + 1
+                res.update({'maximizing_lane_count': count, 'distinct_start_count': len(seen), 'maximizers': starts, 'list_truncated': truncated,
+                            'chunks_attaining_M': len(top), 'family_rule': 'top 8 bits after zero-padding to W (depths W-7 .. W)',
+                            'family_count': len(fams), 'family_sizes': sorted(fams.values(), reverse=True),
+                            'baseline_sample_size': min(len(baseline), max(count, 32)), 'baseline_family_count': len(bfams),
+                            'hypothesis': 'maximizers share deep bits: family_count <= maximizing_lane_count / 2 when the count is at least 4 (a pilot statistic, not a theorem)',
+                            'hypothesis_holds': (count >= 4 and len(fams) * 2 <= count)})
+                verdict, reason = 'MAXIMIZERS', 'M = %d, %d maximizing lanes (%d distinct starts) over %d chunks, all validated; families %d (baseline %d of %d)' % (M, count, len(seen), len(top), len(fams), len(bfams), min(len(baseline), max(count, 32)))
+    res.update({'verdict': verdict, 'reason': reason, 'phase': 'done', 'elapsed_s': round(time.monotonic() - t0, 1), 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'),
+                'recurrence_s_total': round(sum(j['seconds'] for j in res['per_chunk'].values()), 2)})
     atomic_write(out_path, res)
     return res
+
+
+def maximizer_tests():
+    """The mode's controls (GC1742 item 5), asserted: (a) at W = 6 .. 12 the SET of validated maximizing starts equals the
+    set of all starts attaining D_phys(W) by brute force; (b) insufficient K fails; (c) an empty second-pass mask fails;
+    (d) a positive multi-maximizer case (W = 24: 6 lanes); (e) truncation is reported (max_list = 2 at W = 24)."""
+    import tempfile
+    out = {}; fails = []
+    def req(name, cond, **d):
+        out[name] = {'ok': bool(cond), **d}
+        if not cond: fails.append(name)
+    d = tempfile.mkdtemp()
+    seteq = True; detail = {}
+    for W in range(6, 13):
+        r = maximizers(W, 4 * W + 8, 1, os.path.join(d, 'm%d.json' % W))
+        Dp, _ = D_phys(W, 4 * W + 8)
+        brute = {x for x in range(1, 1 << W) if death_phys(x, 4 * W + 8) == Dp}
+        got = {int(m['start_hex'], 16) for m in r['maximizers']}
+        detail[W] = {'D': r['U'], 'D_phys': Dp, 'lanes': r.get('maximizing_lane_count'), 'brute': len(brute), 'equal': got == brute}
+        if r['verdict'] != 'MAXIMIZERS' or r['U'] != Dp or got != brute: seteq = False
+    req('A_set_equals_brute_force', seteq, detail=detail)
+    r = maximizers(24, 40, 1, os.path.join(d, 'k.json')); req('B_insufficient_K_fails', r['verdict'] == 'FAIL' and 'alive' in r['reason'], reason=r['reason'])
+    r = maximizers(12, 56, 1, os.path.join(d, 'e.json'), fault_empty_mask=True); req('C_empty_mask_fails', r['verdict'] == 'FAIL' and 'empty mask' in r['reason'], reason=r['reason'])
+    r = maximizers(24, 57, 1, os.path.join(d, 'p.json')); req('D_positive_multi', r['verdict'] == 'MAXIMIZERS' and r['maximizing_lane_count'] == 6 and r['U'] == 42, count=r.get('maximizing_lane_count'), families=r.get('family_count'), baseline=r.get('baseline_family_count'))
+    r = maximizers(24, 57, 1, os.path.join(d, 't.json'), max_list=2); req('E_truncation_reported', r['verdict'] == 'MAXIMIZERS' and r['list_truncated'] and r['maximizing_lane_count'] == 6 and len(r['maximizers']) == 2)
+    out['fails'] = fails
+    return out, not fails
 
 
 def supervised(W, U, workers, out_dir, kit=None, mode='witness'):
@@ -462,6 +531,8 @@ if __name__ == '__main__':
     a = sys.argv[1:]
     if not a or a[0] == 'test':
         out, ok = tests(); print(json.dumps(out, indent=1, default=str)); print('TESTS', 'PASS' if ok else 'FAIL'); sys.exit(0 if ok else 1)
+    if a[0] == 'maxtest':
+        out, ok = maximizer_tests(); print(json.dumps(out, indent=1, default=str)); print('MAXTESTS', 'PASS' if ok else 'FAIL'); sys.exit(0 if ok else 1)
     if a[0] == 'witness' and len(a) == 5:
         r = witness_first(int(a[1]), int(a[2]), int(a[3]), a[4])
         print(r['verdict'], r['reason'], r.get('witness'), r['elapsed_s'], 's'); sys.exit(0 if r['verdict'] in ('ATTAINED', 'MISS') else 1)
