@@ -126,7 +126,7 @@ def m_family_b(W, K):
 def plan():
     steps = []
     for r in ('_r1', '_r2'):
-        steps.append(('w52_k97_c0' + r, decl(52, 97, N, 0, r), H.m_pass, 'bridge'))
+        steps.append(('bridge_w52_k97_c0' + r, decl(52, 97, N, 0, r), H.m_pass, 'bridge'))
     for W in WIDTHS:
         mid = chunks(W) // 2; last = chunks(W) - 1
         steps.append(('w%d_empty' % W, header(), H.m_pass, 'overhead'))
@@ -137,7 +137,7 @@ def plan():
         if W < 52:
             K = K_experimental(W)
             for r in ('_r1', '_r2'):
-                steps.append(('w%d_k%d_c0%s' % (W, K, r), decl(W, K, N, 0, r), m_family_b(W, K), 'familyB'))
+                steps.append(('familyB_w%d_k%d_c0%s' % (W, K, r), decl(W, K, N, 0, r), m_family_b(W, K), 'familyB'))
         steps.append(('w%d_k97_double' % W, double(W, K_CONST, N, 0), H.m_pass, 'overhead'))
     for K in K_SERIES_AT_52:
         for r in ('_r1', '_r2'):

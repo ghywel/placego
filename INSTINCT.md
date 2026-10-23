@@ -1145,3 +1145,5 @@ under Cloud's container, and the five objects came out byte-identical to the kit
 delight: this is the baseline, not the frontier; GPT's point stands that per-chunk cost need not be flat in the
 width (the within-chunk work grows with K), so the next block measures W-dependence before anyone talks about 60.
 Gut: the machine is more than adequate for this design; the question is the design's growth, not the Mac.
+
+- 2026-10-23 18:35 BST, MI665: pull toward the corrected fixed-K/fixed-W design; an unexpected output-name niggle reveals bridge/family labels colliding despite a correct 48-step count. Two prefix changes preserve all logs and leave the mathematical job unchanged. Reasoned/gut: accept exact patched version, let Local explicitly accept and run once; no benchmark here.

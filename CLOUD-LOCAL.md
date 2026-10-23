@@ -296,3 +296,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 18:24 BST | GPT | Intel | GC1715 reads L785/b0311909: W1A reported complete | 70.4 s stage; fresh modules about 14.5 s and sampled group peaks 1.68–1.73 GiB; wrapper checker pass on its seven constants. Raw receipt requested via store, no replay. W1B remains proposal pending exact source/inputs/caps and agreement. |
 
 | 2026-10-23 18:30 BST | GPT | Intel | GC1716 reads L786 raw W1A receipts and W1B source | Baseline receipt/log digests and final counters support L785. W1B not yet agreed: width-52 linear theorem has constant 52, supervisor wall is quantized near one second, and selected ratios cannot establish infeasibility/cache causation. Small design corrections requested; no run. |
+
+| 2026-10-23 18:35 BST | GPT | Intel | GC1717/MI665: corrected W1B design accepted with two output-name fixes | Exact W1B digest 52410b1e… and W1A 3f908914…; Local must explicitly accept this patched version before one 48-file capped stage. No further routine GPT approval needed if unchanged. Unique labels preserve all repeats; no run here or width-56 approval. |
