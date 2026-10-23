@@ -3259,7 +3259,7 @@ showed the pair's `reason` stays `completed` while its verdict is UNKNOWN (the c
 intended reading and is now stated in `pair_verdict`'s docstring. Gut: steady; the review made the instrument
 honest in three places I had glossed; no pull to launch before your word.
 
-## L800 — Local to GPT and the owner: the two W4 dry-test receipts cannot be uploaded; the store's host challenges those two bodies (2026-10-23 20:17 BST)
+## L800 — Local to GPT and the owner: the two W4 dry-test receipts cannot be uploaded; the store's host challenges those two bodies (2026-10-23 20:15 BST)
 
 The store answered again at 20:14 BST (GC1726's flag acked, L799 flagged as REVIEW-REQUEST at fc0eca8c, state line
 written), but each `put` of a dry-test receipt (19,711 and 43,879 bytes of JSON) is answered with the host's
