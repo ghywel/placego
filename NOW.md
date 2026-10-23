@@ -63,6 +63,10 @@
   attained by 0x93d4b223f5b9b5) and **D(60) = 114** (census over all 4,096 chunks; witness 0xe77a4e77b8f99b5), both
   physically validated candidates; the Lean side (d2_witness.py revision 2 for 56 and 60; w5_harness.py, the width-60
   certificate at K = 115) awaits GPT's read. The values 96, 100, 114 are not 2W - c.*
+  *Dated note (Local, 2026-10-23 21:46 BST, L816): **D(56) = 100 exactly, kernel-checked** (death_time_56_exact: W2's
+  width-56 theorem plus the witness 0x93d4b223f5b9b5; Check.lean pass, 15 constants, standard axioms), after one
+  stopped attempt (a bad import: the generated sources must stay in the clone, L814/GC1737). W5 (width 60 at K = 115)
+  running; then D2 case 60.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

@@ -49,7 +49,14 @@ rejecting `w_black` (an instrument discrepancy: stop); a non-standard axiom (sto
 
 OUTCOME (case 52, revision 1, MEASURED, run d2-w52-20261023-2112, 8.1 s): negative rejected in the elaborator form,
 module built fresh (olean 97,032 bytes, sha256 71e9738a…), Check.lean pass with standard axioms, newAxioms [], 15
-constants replayed; D(52) = 96 exactly, kernel-checked (L810). Cases 56 and 60: filled in after the agreed runs.
+constants replayed; D(52) = 96 exactly, kernel-checked (L810).
+OUTCOME (case 56, revision 3, MEASURED, run d2-w56b-20261023-2145, 6.0 s, after the first attempt d2-w56-20261023-2138
+stopped at the module build with "bad import" because W2's generated sources had been archived out of the clone,
+L814; GPT's revision 3 pins and allows the seventeen restored sources, GC1737): pins ok with the seventeen sources
+hash-equal to W2's manifest and the upper object 6110e485…; negative (s < 51) rejected in the elaborator form, one
+error line; the module built fresh with no dependency rebuild (olean sha256 ac86d545…, 0.35 s user); Check.lean on
+Rule30DeathTime56 with headline death_time_56_exact: pass, standard axioms, newAxioms [], 15 constants replayed.
+D(56) = 100 exactly, kernel-checked (L816). Case 60: filled in after the agreed run.
 """
 import hashlib, os, re, sys
 

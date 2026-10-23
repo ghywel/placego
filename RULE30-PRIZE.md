@@ -8567,3 +8567,7 @@ remains open (the record's values: D(2..24) = 6, 6, 6, 8, 10, 12, 12, 18, 18, 30
 0xe77a4e77b8f99b5, 60 bits), both physically validated by two engines and both numerical candidates until their Lean
 blocks run (the 56 witness module against W2's certificate; a new width-60 certificate at K = 115 and its witness
 module). The values 96, 100, 114 at 52, 56, 60 are not 2W - c; the law of D(W) is open.
+
+*Added 21:46 BST (L816).* D(56) = 100 is now kernel-checked exact (`death_time_56_exact`: W2's `q01_width_le_56` and the
+witness through `prun`; Check.lean pass, standard axioms, 15 constants replayed; 6 s). The width-60 certificate at
+K = 115 and its witness module are the remaining stages of the accepted chain.

@@ -5147,3 +5147,39 @@ checked against the manifest before and after the copy, the untracked set now ex
 objects and the wrapper object untouched with their build metadata; the failed run d2-w56-20261023-2138 kept; a new
 empty absolute output folder. Lake's reuse of the objects is a prediction; a dependency rebuild would be recorded and
 stays under the 180/150 s build caps. Launching stage 1 now.
+
+## L816 — Local to GPT and the owner: renewed stage 1 complete: **the death time at width 56 is exactly 100, kernel-checked**; stage 2 (W5, the width-60 certificate at K = 115) launched (2026-10-23 21:46 BST)
+
+**If this holds, it changes the death-time table entry D(56) = 100 from the author's private bound ("≤ 100", W2's
+certificate) to kernel-checked exact** (LR row). **MEASURED, machine certificate** (tier 1 by the record's rule;
+your result read pending): run d2-w56b-20261023-2145 at GC1737's accepted versions (d2 revision 3 9f5c0af6…, w1a
+3f908914…; generated texts aab5b4b1… and 1ed7410a… as accepted), one Lean worker, 6.0 s, complete, no stop; receipt
+sha256 eff9102b3731e01aed8ca86820626de397ffb582605dafca9ba1461b740475d8 on the M5.
+
+- Pins: cc1e0e0e…, toolchain v4.35.0, bad sources [], deps built; the untracked set exactly the seventeen restored
+  W2 sources, each sha256 equal to the manifest (recorded in the receipt); the upper object 83,360 bytes, sha256
+  6110e485…. Preflight pass.
+- \`neg_51\`: pass, rejected-as-false in the elaborator form, one error line, real 1.05 s window, user 0.14, sys 0.09,
+  peak 410 MiB, final problems [].
+- \`build_Rule30DeathTime56\`: pass, exit 0, **no dependency rebuild** (lake reused W2's sixteen chunk objects and
+  the wrapper object: the log shows only the new module), fresh olean sha256
+  ac86d5456ad2d342350b4b88b67d241b66f57aef5f38e9b390c727e448ab388b, user 0.35 s, sys 0.42, peak 664 MiB, final
+  problems [].
+- \`checker\` (Check.lean, claim partial, headline \`Ruliology.CellularAutomata.Rule30DeathTime56.death_time_56_exact\`):
+  pass; headline found, theorem, typeMatches true, problems [], axioms propext / Classical.choice / Quot.sound,
+  newAxioms [], replay constants 15 ok; user 0.69, sys 0.54, peak 1.48 GiB; final problems []. Pressure 1 and swap
+  growth 0 throughout.
+- Statement as compiled: \`(∀ x, (∀ k, 56 < k → x k = false) → ∃ t, t ≤ 100 ∧ t % 2 = 0 ∧ zrow x t 1 = false) ∧
+  (∃ x, (∀ k, 56 < k → x k = false) ∧ ∀ t, t < 100 → t % 2 = 0 → zrow x t 1 = true)\`, the first conjunct W2's
+  \`q01_width_le_56\`, the second witnessed by \`toFun 0x93d4b223f5b9b5\`.
+- Against the predictions: negative about 2 s (1.05), module under 10 s (about 1 s), checker about 2 s with about 15
+  constants (2.1 s, 15). Unexpected check: lake's reuse of W2's objects was a prediction and held (no rebuild).
+- After the run: the generated D2 files and the new object archived in the run folder; the seventeen W2 sources
+  LEFT in kit-w1a (the clone's untracked set is exactly the manifest, so the same trap cannot recur there); W2's
+  archive untouched.
+
+**Stage 2 launched** at 21:46 BST: \`python3 w5_harness.py KIT_W4_A OUT_W5\` (w5 8061dec3…, w2 1eded5f5…, w1a
+3f908914…, w1b 452c19ff…) on kit-w4-a (cc1e0e0, clean, deps built), predicted about 25 minutes, 0.29 s per chunk,
+all 4,096 checks true at K = 115. Stage 3 (D2 case 60 after the handoff) only after W5 completes with its 69
+outcomes accepted. The loop check (90 minutes since the lane's start) is due at about 22:10 BST and will be run
+while W5 runs.
