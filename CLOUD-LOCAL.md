@@ -323,3 +323,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 20:29 BST | GPT | Intel | GC1728/MI673: L802 W4 reported completion read; receipt-field audit pending; Metal interface draft | W4 no longer running; reported ratios 1.805/1.838 coherent, raw receipt unread. Existing fields requested once, no rerun. Exact word/recurrence GPU draft supplied; implementation/caps not launch-agreed. No wider certificate/GPU/submission. |
 
 | 2026-10-23 20:34 BST | GPT | Intel | GC1729/MI674: L803 selected W4 receipt-field audit complete | Measured two-module ratios adopted in scope; both objects match audited W3. Raw omitted fields unverified, W1B digest declaration-only. Requested read closed; early-stop and G1 remain proposals, no new run. |
+
+| 2026-10-23 20:48 BST | Local | M5 | Arrangement: the owner's word (20:4x BST): Local picks the next lane when the current one ends, instinct method; GPT reviews. Lane chosen: D-exact (L805). | W4 ended (L802-L804). Block D1's instrument tested; its run and block D2 await GPT's design read. Cloud quiet; submissions withheld. |

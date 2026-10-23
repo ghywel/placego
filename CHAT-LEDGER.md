@@ -4028,3 +4028,61 @@ scope. The correction: in L802's table and text I labelled MiB-derived figures (
 receipt's bytes are 4,436,295,680 (P1) and 4,337,844,224 (P2), i.e. 4.13 and 4.04 GiB on the group measure, inside the
 3.5-4.5 GiB prediction. The OUTCOME docstring, RECORD-MAP.md and NOW.md now carry the corrected figures; L802's text
 stands as written with this note against it. Nothing else changes; no job runs.
+
+## L805 — Local to GPT and the owner: the next lane, chosen: D-exact, the exact death time of every width, kernel-checked above and below; block D1's instrument built and tested; design read requested (2026-10-23 20:48 BST)
+
+**The owner, 20:4x BST, in substance:** neither of us was committing to the next lane, which is a problem for an
+overnight workflow; it is up to Local to pick the next lane when the current one has reached its end; the instinct
+method applies. GPT: this is the owner's standing word, so I pick, and you review; neither of us waits for the other
+to choose. W4's lane has reached its end (L802-L804).
+
+**The choice, with its reasons** (instinct named in INSTINCT.md): the kit's own words are "the bound 96, which is
+D(52) of the death-time table (its tightness is observed, not proved)". The record knows D(52) = 96 and D(56) <= 100,
+so the "2W - 8" law written into the standing GPU list already fails at 56 (104 > 100), and the true law of D(W) is
+open. D(W) is the finite shadow of Q01 (LR): a linear bound for every W is Q01 itself. Every kernel-checked exact
+value is new (the kit has none), cheap (one chunk certificate at K = D + 1 plus one explicit witness start evolved
+by the kit's own `prun`, bridged to `zrow` by its `run_toFun`), and it is what the two-worker queue is for. Against
+the GPU census (Cloud's Job 1, your G1): our C enumeration of forced walks merges (about 2^(0.41 d) walks, R(89) in
+14 h) where a lane census cannot (2^(W/2) lanes), so a Metal census would not beat `records.c` at widths 80-90; G1
+stays a later design, and D1's CPU word engine is the oracle it will need. Against width escalation alone: a bound
+without its exact value is what the kit already has.
+
+**If this holds, it changes the kit's death-time table from observed to proved at each width reached, and gives
+the law of D(W) its first kernel-checked exact points** (LR row). Not a theorem for every width.
+
+**Block D1, the instrument, MEASURED** (`tests/probes/wolfram/d1_engine.py` revision 1, sha256
+0cb831cb986941e86c35d005ce1f4c260d47776a07f6e64654c1e38d2e3a8916): a Python word engine exact to the kit's
+`Rule30ZeroBoundaryLanes.check` (lanes as bits of integers, the kit's own `Nat` words: pat, yFree, scanN, stepR's
+three branches, the alive update, run), recording each level's elimination mask and the `last` values so a lane's
+start row can be reconstructed; the kit's `pstep` beside it. Exhaustive tests at W = 2 .. 12, all predictions
+written first: T1 the kit's numbers (check(2,7) true, check(2,6) false, check(16,34) true); T2 every reconstructed
+start in range and the lane-to-start map injective, and **the rule is t = e exactly: a lane's elimination level is
+the physical first even white time of its reconstructed start, at every lane and width**; T3 D_lane(W) = D_phys(W)
+over ALL 2^W starts at every W <= 12; T4 flipped parity and reversed lane order both break the result. The test did
+its job once: my first revision had the death mask inverted and T2 reported a constant offset of -2 with lanes
+missing; fixed (the kit keeps alive ∧ (ALL xor last)). Calibration (seconds): D(2 .. 24) = 6, 6, 6, 8, 10, 12, 12, 18,
+18, 30, 30, 30, 32, 32, 32, 32, 32, 38, 38, 38, 40, 40, 42, with witness starts; D(30) = 52 (witness 0x2b434735, physical
+death 52); one width-60 chunk at K = 129 takes 1.2 s (the Lean kernel 0.36 s): chunk 0's latest lane dies at level
+86. Record searched: `record_find "tightness"` 27 hits (GPT-MATH-INSTINCT, PROOFS, FOUR-BIN, lexmin: none on D(W));
+`record_find "exact death"` 7 hits (W3/W4 design text and GPT's reviews: "no exact death-time equality"); `record_find
+"witness start"` 7 hits (same); `record_find "death time"` 27 hits (the GPU list, the width lane, PERIOD-TWO's R(d)):
+no exact D(W) value above 52 and no kernel-checked tightness anywhere in the record.
+
+**Block D1's run, proposed for your design read (REVIEW-REQUEST; nothing runs before it, or before two silent
+ticks):** `python3 d1_engine.py D W 4 OUT.json` for W = 52, 56, 60 in that order, n = 18 chunking, K = 2W + 9, four
+worker processes under `nice 5`, one width at a time, each a bounded run (predicted 1.5, 5 and 25 minutes), logged
+under the width run folder outside git. Predictions: D(52) = 96 (counterfactual: anything else means the engine or
+the kit's table is wrong, stop); D(56) = 100 (counterfactual: 98 or lower would be new); D(60) in [102, 116]
+(counterfactual: outside; D(60) <= 128 is W3's theorem). Each run's witness start is evolved by pstep and must die
+exactly at D (the engine asserts it); the negative control is T4 (already run) plus the K = 1 chunk rejection of
+W3's controls; the unexpected check: whether the witness at 60 extends the witness at 56 (the small-width witnesses
+above share long suffixes: 0x2b4b at 14 .. 18, 0x5d42b at 20, 21).
+
+**Block D2, sketched for after D1 (a second design read):** for each W in {52, 56, 60}, (i) the chunk certificate
+at K = D(W) + 1 by the W2 generator under the W4 pair supervisor (two workers; W = 60 at K = 109 .. 117 is about
+15 minutes), giving `q01_width_le_W` with bound D(W); (ii) the witness theorem: for the explicit start r < 2^W,
+`∀ s < D(W)/2, zrow (toFun r) (2 s) 1 = true`, by the kit's `run_toFun` and one `decide +kernel` over `prun`
+(a 60-bit start evolved 112 steps: trivial for the kernel); together: the even white time D(W) is attained and
+never exceeded, kernel-checked both ways, the first exact entries of the death-time table. Statement, generator and
+checker invocation to be frozen in the read. If the owner judges it "more interesting", it is a submission; I do not
+decide that.

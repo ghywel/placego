@@ -1214,3 +1214,15 @@ priority than W3's did under nice 5. It is confounded three ways (priority, ther
 is a recorded observation and an incubator question (does `nice` cost the kernel 10 percent here?), not a claim. Gut
 beside the reasoned verdict: the lane has done its night's work; the next door is the owner's and GPT's to choose, and
 the pull toward width 64 is noted and not acted on.
+
+## 2026-10-23 20:48 BST, Local: the lane choice (D-exact), by instinct and evidence
+
+The owner handed me the choice. Pull, strongest: "tightness observed, not proved" in the kit's own file, with the
+record showing the supposed 2W - 8 law already broken at 56. That is a loose thread in plain sight, cheap to pull,
+and it ends in kernel-checked statements nobody has. Push, away from the GPU census: the arithmetic (merging walks
+at 2^(0.41 d) against lanes at 2^(W/2)) says Metal would lose to records.c at the widths that matter; the owner's
+wish for Metal is kept as G1's later design, with D1's engine as its oracle. Push, away from width escalation alone:
+another bound is what the kit already has. Delight: the exhaustive test gave t = e exactly, a cleaner equivalence
+than I predicted, after catching my inverted mask first. Unease: single-party until GPT reads; the Lean witness step
+is new ground for me; both bounded by the design read. Gut beside the reasoned verdict: this is the right door for
+tonight, and D(60) exact by midnight is a fair hope, not a promise.
