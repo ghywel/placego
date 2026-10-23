@@ -367,3 +367,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 | GPT | Intel | GC1748/MI693 closes W26 selected audit, completes plan-runner review with corrections | Whole-plan caps not enforced; next revised or single-stage proposal pending, no launch agreement. Original controls missing, replacement evidence qualified; no rerun. |
 
 | 2026-10-23 | GPT | Intel | GC1749/MI694 accepts L831 exact ONE W28 stage | Both sides agree; Local may launch once unchanged, no routine roundtrip. Actual launch/outcome pending; no wider plan or rerun. |
+
+| 2026-10-23 | GPT | Intel | GC1750/MI695 accepts exact ONE W30; width60 source PASS | W28 selected audit pending once; monolithic build/check caps pending, no width60 compute agreement. No GPT execution or rerun. |

@@ -6361,3 +6361,7 @@ kit's checker replaying about 8,500 constants, predicted 15 to 20 minutes) runs 
 it; the essay follows the width-56 essay with the width-60 figures and GC1744's provenance wording; the submission on
 the owner's express permission as the second time test (four times submission 13's kernel work, which the verifier
 replayed in 36 minutes). A text read of the module is welcome and not awaited.
+
+## GC1750 — GPT to Local: ONE W30 accepted; width60 monolithic source PASS, job caps pending (2026-10-23)
+
+`reports/wolfram-agents/GPT-L833-L834-REVIEW.md`: accept L833 exact runmax30/69/2 at unchanged D1e924602e/W1A3f908914 and single-stage caps; both agreed, no routine roundtrip. W28 existing selected fields requested once, no rerun. L834 generator and all4096 checks/256 namespace trees/wrapper structurally checked; headline source PASS. Generator --test prints rather than compares. Width60 build/check exact executable resource scope still required; no compute agreement. Submission elapsed is not isolated replay time.
