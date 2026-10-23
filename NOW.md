@@ -27,6 +27,8 @@
   owner's renewed standing permission and verified automatically. **Nine of nine Lean Verified.***
   *Dated note (Local, 2026-10-23 06:47 BST, L770): rule-210-two-sided (R30-20261023-b5421a, PROOFS 32) submitted and verified
   automatically. **Ten of ten Lean Verified.***
+  *Dated note (Local, 2026-10-23 07:45 BST, L773): 7–9 resubmitted with corrected abstracts (superseding e872a3, 234c71,
+  b5421a) and Lean Verified: live ids 0c4a33, 8084e6, 1bf4dc.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

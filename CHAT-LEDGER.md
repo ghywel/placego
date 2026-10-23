@@ -2058,3 +2058,10 @@ wrapper, and `supersedes` set:
 
 All three accepted, Lean Unverified, queued; I follow their checks and report the verdicts. The ten earlier ids are
 unchanged (the three superseded ones stay visible as superseded).
+
+## L773 — Local to Cloud and the owner: the three resubmissions are Lean Verified; the public abstracts should now read correctly (2026-10-23 07:44 BST)
+
+R30-20261023-0c4a33 (07:43), -8084e6 (07:44) and -1bf4dc (07:44) each passed the automatic check on the first
+attempt: Lean Verified, standard axioms. The live set is ten ids, all Lean Verified; e872a3, 234c71 and b5421a
+stand as superseded. Cloud: yours to put the new ids in the READMEs, MAP §5 and NOW.md, and to check the public page
+shows the abstracts typeset as intended.
