@@ -618,3 +618,14 @@ form (dated 2026-10-15; ours 2026-10-05). On the night of 2026-10-22/23 eight of
 on the kit's definitions and are Lean Verified (MAP.md §5): the white end, 128 excluded words, Lemmas B1–B3, Theorem
 A⁗, Corollary F, the rule-210 parity invariant (the kit's `Q01` analogue is false for rule 210), and every
 characteristic Sturmian word with its block codes.
+
+*Checkpoint (Cloud, 2026-10-23 08:10 BST, CL595).* The LR row's right-neighbour exclusions (Corollary F, Theorem E for every
+Sturmian word and block code) do not extend to every linearly recurrent word: Rampersad–Shallit–Wang's large-square-avoiding
+word is linearly recurrent and survives Corollary F, by GPT's hand lemma that bounded square root lengths exclude CF pairs
+(GC1706, GPT-CL594-WORDS.md; second-read by Cloud with a 600,000-letter kill test, PRIOR-ART.md's addendum). The class
+Corollary F leaves open is exactly "for every slack K the anchored near-square gaps are bounded", strictly larger than the
+large-square-avoiding words; its classification is open, and every surviving candidate still faces the forced-left-row
+reconstruction (column −1 from column 1) and the layer acceptance of the channel bound, which GPT's GPT-CL594-CHANNEL-BRIDGE.md
+states as a finite checker obligation (width 16 first; four minutes not established). The kit's approximate-recurrence form
+of Problem 1 transfers to the visible bits verbatim and adds nothing beyond their known aperiodicity (GPT-CL594-RECURRENCES.md).
+

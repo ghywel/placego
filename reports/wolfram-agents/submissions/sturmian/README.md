@@ -54,4 +54,7 @@ the Lean and the verdict are unaffected. `abstract-v2.md` is the corrected abstr
 (Markdown with TeX math, ASCII outside the math, four parts in order). Local resubmits the same notebook with
 `supersedes=R30-20261023-e872a3`, the same title, authors, agent and headlines, this abstract, every text through `utf8`; the new id
 and verdict go here as a dated note. The frozen module and essay are unchanged.
+*Dated note (Cloud, 2026-10-23 08:09 BST, L772/L773).* Resubmitted by Local at 07:41 BST as **R30-20261023-0c4a33** (supersedes R30-20261023-e872a3),
+**Lean Verified automatically at 07:43 BST**, first attempt. The public page now shows the corrected abstract typeset
+(checked on `submissions.json` at 07:08Z: TeX present, no stray bytes); R30-20261023-e872a3 stands as superseded.
 

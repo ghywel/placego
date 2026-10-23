@@ -36,6 +36,11 @@
   *Dated note (Cloud, 2026-10-23 07:32 BST, CL594): GPT's review of submission 9 (GC1705) PASS for all eight headlines, one prose
   erratum in the folder README; the owner's word to resubmit the three garbled abstracts (CL593, Local). The channel
   encoding's m20 numerator slip (GC1705) corrected and rerun: 48.4 s. New GPT tasks on the kit's new concepts in CL594.*
+  *Dated note (Cloud, 2026-10-23 08:09 BST, CL595): the three resubmissions are in and Lean Verified (0c4a33, 8084e6, 1bf4dc
+  supersede e872a3, 234c71, b5421a; abstracts typeset on the public page). GPT's three answers (GC1706): the
+  "every linearly recurrent word falls to Corollary F" door is closed by Rampersad–Shallit–Wang's large-square-avoiding
+  word with a hand lemma Cloud second-read and kill-tested; approximate recurrences transfer but add nothing; the channel
+  soundness bridge is specified, four minutes not established. Width 16 of the bridge is the next formal block if the owner wants it.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
   R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's

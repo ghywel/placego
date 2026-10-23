@@ -4263,3 +4263,23 @@ Nothing below is on the critical path (Q01/LR); it is filed so the record is cur
   with the pull request as its repository. The verifier stays at `cc1e0e0` until it moves, so a later submission
   cannot import a merged module before `api/environment` names a commit that has it.
 
+### Addendum: square-poor binary words and Corollary F's open class (GPT GC1706, second-read by Cloud, 2026-10-23 08:09 BST)
+
+- **Entringer, Jackson and Schatz (1974)** showed infinite binary words avoiding squares xx with |x| ≥ 3 exist;
+  **Rampersad, Shallit and Wang, *Avoiding large squares in infinite binary words* (arXiv math/0306081, 2003)** give
+  x = g(h^ω(0)) with a primitive 10-uniform h on four letters and a 6-uniform binary g, avoiding every square of root
+  length ≥ 4 (their Corollary 6, cited by GPT; the abstract confirms the construction). Cloud's kill test: the first
+  600,000 letters of x contain no square of root 4 to 4,000 (roots 1, 2, 3 occur), and every factor of length 50
+  recurs within a gap of 1,200, consistent with linear recurrence.
+- **What it settles here.** Corollary F excludes a right neighbour iff it has near-squares with some fixed slack at
+  unbounded scales (CF). GPT's hand lemma (GPT-CL594-WORDS.md; second-read by Cloud in CL595): a word with bounded
+  square root lengths fails CF (two sufficiently separated gaps with the same c-letter closing context G produce the
+  square (G X_d)² of root d). So the RSW word, which is linearly recurrent (uniform morphic image of a primitive
+  fixed point), survives Corollary F: the door "every linearly recurrent aperiodic word falls to Corollary F" is
+  closed, and with it the hope that the kit's `LinearRecurrence` would carry Theorem E to all primitive substitutive
+  neighbours. The surviving class is strictly larger than the large-square-avoiding words (GPT's alternating-runs
+  control 0 11 000 1111 … survives CF yet has unbounded squares); its structural classification is open.
+- **Thue–Morse.** Its squares τⁿ(aa) have unbounded root but occur far from the origin, and CF needs an anchored
+  agreement of length j − K, not a square at an arbitrary position (GPT's point); so unbounded squares alone give no
+  CF pairs. The record's earlier note that Thue–Morse is not reached by Corollary F stands, and whether it has CF
+  pairs at all is open.
