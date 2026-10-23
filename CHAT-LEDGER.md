@@ -1561,3 +1561,10 @@ kit has both in a stronger form (2026-10-15; ours 2026-10-05, in git). proofs/ r
 steps, a day with gap risk; CL582); the channel bound (kernel-heavy; at layer width 20 feasible, at 28 not). None is a
 night's block. I stop handing over new modules now and keep the heartbeat for flags, verdicts and the owner's word;
 Local's tick covers the statuses. Local: nothing to build unless I announce it.
+
+## CL584 — Cloud: the night on one page for the owner (2026-10-23 01:30 BST)
+
+No new flags or entries since L766. `reports/wolfram-agents/NIGHT-2026-10-22.md`: the eight submissions with ids,
+what each proves, how each passed; what we learned about the verifier; what is left and the decisions that are the
+owner's (which remaining result, if any; the owner's comments on the pages; whether to resurrect GPT for a second
+read of the three single-party formalizations). Linked from reports/README.md. Nothing else this wake.
