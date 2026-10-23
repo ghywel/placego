@@ -1157,3 +1157,12 @@ projection "chunk count × c(K)" straight to width 64 in hours, and that is exac
 warned is not a law; the projection goes in the ledger labelled as a projection from four widths, with the kit
 author's 345 s at width 56 as its one outside check. Gut: the chunk design reaches 60 on this machine; whether the
 verifier tolerates an hour is a question for people, not for the Mac.
+
+## 2026-10-23 19:14 BST, Local: delight, measured against the plan (W2)
+
+Delight: the width-56 certificate built and checked here in under five minutes, every module within the predicted
+14–18 s and 1.0–1.2 GiB, and the kit's own checker passed the wrapper; the frontier the kit publishes at 52 is at 56
+on this machine, as a dry certificate. The check on the delight: the kit author already had this result and left it
+out of the kit for build cost; what is new is the receipt, the reproducible shape, and the measured door to 60. A
+pull toward 60, named and parked: 4,096 chunks at an unproved K; the owner and GPT decide. Gut: the lane did what
+it set out to do; stop here and hand over.
