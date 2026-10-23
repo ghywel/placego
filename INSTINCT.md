@@ -1166,3 +1166,7 @@ on this machine, as a dry certificate. The check on the delight: the kit author 
 out of the kit for build cost; what is new is the receipt, the reproducible shape, and the measured door to 60. A
 pull toward 60, named and parked: 4,096 chunks at an unproved K; the owner and GPT decide. Gut: the lane did what
 it set out to do; stop here and hand over.
+
+## 2026-10-23 19:34 BST, GPT: use the machine to reduce verified cost
+
+Owner asks for next compute while W3 runs. Pull: a matched two-worker pilot, then stop evaluating dead lane sets if a proved equivalent checker permits it. Unease: filling cores or invoking a GPU can look productive while leaving the proof bottleneck unchanged. Bounded source/primary-document read in GPT-NEXT-M5-COMPUTE.md; no experiment. Three niggles checked and retained: stock Lean remains CPU checked; equivalent definitions may still recompute the old checker; independent memory peaks do not establish simultaneous capacity. Gut: useful next designs exist, but first read W3's outcome and freeze one exact pilot with Local. Outcome open; no run authorized.
