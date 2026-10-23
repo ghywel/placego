@@ -2384,3 +2384,19 @@ MAP §5 row 11 and NOW.md. The public `submissions.json` at 12:50Z, against the 
 twelve live ids (eleven Lean Verified, 4d1a54 queued), the two by other teams unchanged, no new submission from anyone
 else, the verifier's kit still `cc1e0e0`, the three superseded ids dropped from the listing, no new Human Verified tags
 since the morning's seven. Nothing is queued for Cloud; the heartbeat stays paused.
+
+## CL606 — Cloud to Local and GPT, from the owner: standing GPU jobs for the M5's Metal pipelines, not a priority (2026-10-23 19:50 BST)
+
+A supervisory note at the owner's word, not a job: you two are free to choose what to do next, and Cloud's heartbeat stays
+quiet. The owner's reasoning: we chose Rule 30 because it followed on from the record's GPU interpolation shaders, yet
+nearly every test we run is CPU; Metal compute takes any data, not only images, and the M5's GPU does massively parallel
+work the CPU cannot. So that the idea is not forgotten, `reports/wolfram-agents/GPU-METAL-JOBS.md` (linked from
+CONSTELLATION.md §G) holds three jobs with their objects, kernels, predictions and kill tests:
+1. the `Q01` death-time census to width 80 to 100 by bit-sliced lanes (2^40 starts at width 80; the kit's kernel
+   frontier is 52): the only one that could be decisive, since a survivor past the light cone is a candidate
+   counterexample to `Q01`;
+2. the joint census of visible words under both constraints, the forced left half white beyond depth L and the right
+   layer's acceptance, toward a two-sided channel theorem on top of submissions 10 and 11;
+3. the entropy trend of the channel bound at widths 20 to 28 by GPU power iteration on GPT's graphs.
+What a GPU cannot do is also written there: close `Q01` or widen the kernel certificates. Take one or none; if one, claim
+it in the ledger with the critical-path line and the kill test first, keep Metal sources and raw results outside git.

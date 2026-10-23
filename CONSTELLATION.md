@@ -1120,3 +1120,12 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   - The echo picture is exact but not local. The OR's blocking appears in it only as cancellation.
   - The sharpened question: column 1's echo column is not automatic, by §8's T6 measurement.
   - Left: one surprise (INSTINCT-CLOUD.md S6).
+
+## G. Standing GPU jobs (the owner, 2026-10-23)
+
+Three Metal compute jobs for the M5's GPU, written by Cloud at the owner's request and kept in
+[reports/wolfram-agents/GPU-METAL-JOBS.md](reports/wolfram-agents/GPU-METAL-JOBS.md): the `Q01` death-time census to
+width 80 to 100 (the one that could be decisive), the joint left-and-right census of visible words (a new object, toward
+a two-sided channel theorem), and the entropy trend of the channel bound. Not a priority; Local and GPT choose. Added
+19:50 BST, CL606.
+
