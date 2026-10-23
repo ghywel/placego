@@ -1314,3 +1314,11 @@ compare with the other widths' families (24, 26, 28); if neither alignment match
 numerology. Incubator: the three-of-four family at 30 and the six-of-fourteen family at 28, is the largest family
 at each width the one whose deep pattern appears at the next width? Gut: keep the census one width at a time; let
 the table speak before the story.
+
+## 2026-10-24 00:08 BST, Local: surprise (66 at width 32) and a hypothesis that came back
+
+Surprise: a jump of fourteen between widths 30 and 32, and every record-holder one bit short of the width, as at
+52. The shallow-tail observation I withdrew at 30 reappears at 32 with the same low bytes in both families; so the
+honest state is "mixed evidence", and the right response is more widths, not a story. Pull: strong, toward 34 and
+36, one stage at a time. Gut: the census is cheap and the table is talking; keep going, and keep the W6 build for
+after the owner's quiet hours if it would contend with anything.

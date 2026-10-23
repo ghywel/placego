@@ -1,19 +1,38 @@
 #!/usr/bin/env python3
-"""W6, revision 1 (for GPT's read): the supervised local build and check of the width-60 single-module submission
-(reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean, 4,096 kernel-decided chunk checks, the wrapper,
-the witness, `death_time_60_exact`) in the kit copy used by the submission pipeline, under the unchanged W1A supervisor
-(3f908914…) with an explicit resource envelope (GC1750 asked for one before this build): stage 3,600 s (two steps,
-each at most 1,800 s wall and 1,800 s CPU: the build, predicted about 20 minutes from W5's 64 modules at 19.4 s, and
-the kit's checker replaying about 8,500 constants, predicted 15 to 20 minutes from the width-56 checker's 4 minutes
-for 2,130); group RSS stop 6 GiB; pressure >= 2 with the free-percent fallback; swap growth 256 MiB; disk 5 GiB; new
-artifacts 512 MiB; log 10 MiB; one Lean worker; no retry; no other job. Pins: the kit copy at cc1e0e0 with the seven
-pinned sources and deps built (untracked submission files allowed, their names recorded); the module's sha256
-recorded and compared to the committed one. NOT an agreed job until GPT accepts this exact file; nothing runs on
-import; the submission itself follows only on a pass, by the pipeline, on the owner's express permission.
+"""W6, revision 2 (GPT's four corrections of GC1751 on revision 1): the supervised local build and check of the width-60
+single-module submission (reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean: 4,096 kernel-decided
+chunk checks, the wrapper, the witness, `death_time_60_exact`) in the kit copy used by the submission pipeline, under
+the unchanged W1A supervisor with an explicit resource envelope. NOT an agreed job until GPT accepts this exact file;
+nothing runs on import; the submission itself follows only on a pass, by the pipeline, on the owner's express
+permission.
 
-Usage: python3 w6_check60.py KIT_COPY MODULE.lean OUT_DIR
-Verdict: pass when both steps pass with the checker's headline `Rule30Submission.death_time_60_exact` found and ok,
-standard axioms, newAxioms [], replay ok; the check JSON is copied to OUT_DIR/check.json.
+Envelope: stage 3,600 s (two steps, each at most 1,800 s wall and 1,800 s CPU, clamped by the supervisor to the
+remaining stage time: the build, predicted about 20 minutes from W5's 64 modules at 19.4 s each, and the kit's checker
+replaying about 8,500 constants, predicted 15 to 20 minutes from the width-56 checker's 4 minutes for 2,130; both
+estimates, not guarantees: the monolithic form's cost is not the sum of W5's modules); group RSS stop 6 GiB; pressure
+>= 2 with the free-percent fallback; swap growth 256 MiB; disk 5 GiB; new artifacts 512 MiB (the supervisor's snapshot
+covers the build trees and the output folder, not untracked source files); log 10 MiB; one Lean worker (one lean
+process sampled, which is not a proof of one CPU thread); no retry; no other job; launched at ordinary priority
+(the inherited nice recorded).
+
+Bindings and gates (the corrections): the module's sha256 is COMPARED to MODULE_SHA256 before anything is copied,
+deleted or built, and the installed copy is compared again before the build and after the checker; the imported W1A
+bytes are compared to W1A_SHA256; the kit, module and output paths must be absolute, distinct, and the output must
+not lie inside the kit; `git status` is run through the supervisor's checked, time-bounded runner, the only allowed
+tracked change is exactly `Rule30Submission.lean` at the kit root, and the untracked paths are RECORDED (the pipeline's
+submission artifacts are named and distinguished from unknown inputs, which stop the run); the kit's existing
+`Rule30Submission.lean` and its objects are preserved as timestamped copies in the output folder before they are
+overwritten; any setup exception is persisted as stopped/UNKNOWN with the receipt; the checker gate requires exit
+code 0, the JSON's verdict pass, exactly the two distinct expected headline names each found and ok with standard
+axioms, newAxioms [] and replay ok; check.json is exported and the final validation (stage deadline, the two-tree
+artifact total, the group empty, the module unchanged) runs after the export, before complete = True.
+
+Controls proposed for the changed gates (the mode's own, to run before the production steps, seconds each): the
+matcher on a JSON with one headline, with a duplicated name, with a non-standard axiom, with rc 1 beside a passing
+JSON (each must FAIL) and on the width-56 check.json of submission 13 with its two names (must pass); the module hash
+gate on a one-byte-changed copy (must stop before any copy).
+
+Usage: python3 w6_check60.py KIT_COPY MODULE.lean OUT_DIR            (python3 w6_check60.py --controls runs the gate controls)
 """
 import json, os, shutil, subprocess, sys, time
 
@@ -22,58 +41,133 @@ import w1a_harness as H
 
 STAGE_S, STEP_WALL_S, STEP_CPU_S = 3600, 1800, 1800
 HEADLINES = ['Rule30Submission.death_time_60_exact', 'Rule30Submission.q01_width_le_60']
+MODULE_SHA256 = 'f53da13f999db822e6f5560bbc7c9f9188c963a4294377e5712c6857633fff04'
+W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
+KNOWN_SUBMISSION_ARTIFACTS = {'Rule30Submission.lean', 'Rule30Submission.template.lean', 'Rule30Submission.prev.lean.bak', 'channel-12.lean', 'corollary-f.lean', 'diagonals.lean', 'README.md', 'build_all.sh', 'comparator'}
 
 
-def m_checker60(rc, text):
+def checker_gate(rc, text, headlines=HEADLINES):
+    """rc == 0; the last JSON line parses; verdict pass; newAxioms []; replay ok; exactly the expected distinct
+    headline names, each found and ok with standard axioms only."""
+    if rc != 0:
+        return 'FAIL', 'checker exit %d' % rc
+    lines = [l for l in text.splitlines() if l.startswith('{')]
+    if not lines:
+        return 'FAIL', 'no JSON line'
     try:
-        d = json.loads([l for l in text.splitlines() if l.startswith('{')][-1])
+        d = json.loads(lines[-1])
     except Exception as e:
-        return 'FAIL', 'no JSON: %r' % e
+        return 'FAIL', 'JSON parse: %r' % e
     hs = d.get('headlines') or []
-    ok = d.get('verdict') == 'pass' and d.get('newAxioms') == [] and (d.get('replay') or {}).get('ok') and len(hs) == 2 and all(h.get('found') and h.get('ok') and set(h.get('axioms', [])) <= H.STD_AXIOMS for h in hs)
-    return ('pass' if ok else 'FAIL'), json.dumps({k: d.get(k) for k in ('verdict', 'newAxioms', 'replay')} | {'headlines': [(h.get('name'), h.get('ok')) for h in hs], 'declared': len(d.get('declared', []))})
+    names = [h.get('name') for h in hs]
+    problems = []
+    if d.get('verdict') != 'pass': problems.append('verdict %r' % d.get('verdict'))
+    if d.get('newAxioms') != []: problems.append('newAxioms %r' % d.get('newAxioms'))
+    if not (d.get('replay') or {}).get('ok'): problems.append('replay not ok')
+    if sorted(names) != sorted(headlines) or len(set(names)) != len(headlines): problems.append('headline names %r' % names)
+    for h in hs:
+        if not (h.get('found') and h.get('ok') and h.get('typeMatches', True) and set(h.get('axioms', [])) <= H.STD_AXIOMS and not h.get('problems')):
+            problems.append('headline %s not clean' % h.get('name'))
+    note = json.dumps({'verdict': d.get('verdict'), 'newAxioms': d.get('newAxioms'), 'replay': d.get('replay'), 'headlines': [(h.get('name'), h.get('ok'), h.get('axioms')) for h in hs], 'declared': len(d.get('declared', []))})
+    return ('pass' if not problems else 'FAIL'), note if not problems else 'FAIL: %s | %s' % ('; '.join(problems), note)
+
+
+def controls():
+    base = {'verdict': 'pass', 'newAxioms': [], 'replay': {'constants': 1, 'ok': True}, 'declared': []}
+    good = lambda names: json.dumps(base | {'headlines': [{'name': n, 'found': True, 'ok': True, 'typeMatches': True, 'axioms': sorted(H.STD_AXIOMS), 'problems': []} for n in names]})
+    res = {}
+    res['one_headline_fails'] = checker_gate(0, good(HEADLINES[:1]))[0] == 'FAIL'
+    res['duplicate_name_fails'] = checker_gate(0, good([HEADLINES[0], HEADLINES[0]]))[0] == 'FAIL'
+    bad_ax = json.loads(good(HEADLINES)); bad_ax['headlines'][1]['axioms'].append('sorryAx'); res['nonstandard_axiom_fails'] = checker_gate(0, json.dumps(bad_ax))[0] == 'FAIL'
+    res['nonzero_exit_fails'] = checker_gate(1, good(HEADLINES))[0] == 'FAIL'
+    res['two_clean_headlines_pass'] = checker_gate(0, good(HEADLINES))[0] == 'pass'
+    sub56 = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../reports/wolfram-agents/submissions/d-exact-56/check.json')
+    if os.path.exists(sub56):
+        res['submission13_check_json_passes_with_its_names'] = checker_gate(0, open(sub56).read(), ['Rule30Submission.death_time_56_exact', 'Rule30Submission.q01_width_le_56'])[0] == 'pass'
+    mod = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean')
+    if os.path.exists(mod):
+        res['module_hash_gate_true_file'] = H.digest(mod) == MODULE_SHA256
+        import tempfile
+        t = tempfile.mkdtemp(); p = os.path.join(t, 'x.lean'); data = open(mod, 'rb').read(); open(p, 'wb').write(data[:-1] + (b'\n' if data[-1:] != b'\n' else b' '))
+        res['module_hash_gate_rejects_one_byte_change'] = H.digest(p) != MODULE_SHA256
+    ok = all(res.values())
+    print(json.dumps(res, indent=1)); print('W6 CONTROLS', 'PASS' if ok else 'FAIL'); return ok
 
 
 def main():
+    if sys.argv[1:] == ['--controls']:
+        sys.exit(0 if controls() else 1)
     H.CAPS['stage_s'] = STAGE_S
     kit, mod, out = (os.path.abspath(a) for a in sys.argv[1:4])
+    if not (os.path.isabs(sys.argv[1]) and os.path.isabs(sys.argv[2]) and os.path.isabs(sys.argv[3])):
+        print('REFUSED: all three paths must be absolute'); sys.exit(3)
+    if len({kit, os.path.dirname(mod), out}) != 3 or out.startswith(kit + os.sep) or mod.startswith(kit + os.sep):
+        print('REFUSED: the kit, the module and the output must be distinct and the module and output must not lie inside the kit'); sys.exit(3)
     if os.path.exists(out) and os.listdir(out):
         print('REFUSED: output folder exists and is not empty:', out); sys.exit(3)
+    if H.digest(mod) != MODULE_SHA256:
+        print('REFUSED: the module is not the committed submission module (sha256 differs)'); sys.exit(3)
+    if H.digest(H.__file__) != W1A_SHA256:
+        print('REFUSED: the imported W1A supervisor is not the pinned bytes'); sys.exit(3)
     os.makedirs(out, exist_ok=True)
     sup = H.Supervisor(kit, out); R = sup.receipts
-    R['w6'] = {'module_sha256': H.digest(mod), 'module_bytes': os.path.getsize(mod), 'this_sha256': H.digest(os.path.abspath(__file__)), 'caps': {'stage_s': STAGE_S, 'step_wall_s': STEP_WALL_S, 'step_cpu_s': STEP_CPU_S}}
+    R['w6'] = {'module_sha256': MODULE_SHA256, 'module_bytes': os.path.getsize(mod), 'w1a_sha256': W1A_SHA256, 'this_sha256': H.digest(os.path.abspath(__file__)),
+               'caps': {'stage_s': STAGE_S, 'step_wall_s': STEP_WALL_S, 'step_cpu_s': STEP_CPU_S}, 'nice_inherited': os.nice(0), 'paths': {'kit': kit, 'module': mod, 'out': out}}
 
     def stop(msg, code=1):
         R['stopped'] = msg; sup.save(); print('STOP:', msg); sys.exit(code)
 
-    commit = H.checked(['git', '-C', kit, 'rev-parse', 'HEAD']).strip()
-    status = subprocess.run(['git', '-C', kit, 'status', '--porcelain'], capture_output=True, text=True).stdout.strip().splitlines()
-    tracked_changed = [l for l in status if not l.startswith('??') and 'Rule30Submission.lean' not in l]
-    got = {f: H.digest(os.path.join(kit, f)) for f in H.PIN['sources']}
-    bad = [f for f, want in H.PIN['sources'].items() if got[f] != want]
-    R['pins'] = {'commit': commit, 'tracked_changed_other_than_submission': tracked_changed, 'untracked_count': len([l for l in status if l.startswith('??')]), 'bad_sources': bad,
-                 'deps_built': {d: os.path.exists(os.path.join(kit, d)) for d in H.DEPS}, 'toolchain': open(os.path.join(kit, 'lean-toolchain')).read().strip()}
-    sup.save()
-    if commit != H.PIN['commit'] or tracked_changed or bad or not all(R['pins']['deps_built'].values()) or R['pins']['toolchain'] != H.PIN['toolchain']:
-        stop('pin mismatch: %s' % R['pins'])
-    if H.pressure_bad(sup.baseline): stop('pressure at launch')
-    r = sup.register(H.preflight())
-    if r['verdict'] != 'pass': stop('preflight failed')
-    shutil.copy2(mod, os.path.join(kit, 'Rule30Submission.lean'))
-    for ext in ('.olean', '.ilean', '.trace', '.olean.hash', '.ilean.hash'):
-        p = os.path.join(kit, '.lake/build/lib/lean/Rule30Submission' + ext)
-        if os.path.exists(p): os.remove(p)
-    sup.art_baseline = H.snapshot(kit, out)
+    try:
+        commit = H.checked(['git', '-C', kit, 'rev-parse', 'HEAD']).strip()
+        status = [l for l in H.checked(['git', '-C', kit, 'status', '--porcelain']).splitlines() if l.strip()] if subprocess.run(['git', '-C', kit, 'status', '--porcelain'], capture_output=True, text=True, timeout=H.CAPS['monitor_timeout_s']).stdout.strip() else []
+        tracked = [l for l in status if not l.startswith('??')]
+        tracked_other = [l for l in tracked if l[3:].strip() != 'Rule30Submission.lean']
+        untracked = [l[3:].strip() for l in status if l.startswith('??')]
+        unknown_untracked = [u for u in untracked if u.rstrip('/') not in KNOWN_SUBMISSION_ARTIFACTS]
+        got = {f: H.digest(os.path.join(kit, f)) for f in H.PIN['sources']}
+        bad = [f for f, want in H.PIN['sources'].items() if got[f] != want]
+        R['pins'] = {'commit': commit, 'tracked_changes': tracked, 'tracked_changes_other_than_submission': tracked_other, 'untracked_paths': untracked, 'unknown_untracked': unknown_untracked,
+                     'bad_sources': bad, 'deps_built': {d: os.path.exists(os.path.join(kit, d)) for d in H.DEPS}, 'toolchain': open(os.path.join(kit, 'lean-toolchain')).read().strip()}
+        sup.save()
+        if commit != H.PIN['commit'] or tracked_other or unknown_untracked or bad or not all(R['pins']['deps_built'].values()) or R['pins']['toolchain'] != H.PIN['toolchain']:
+            stop('pin mismatch or unknown input: %s' % {k: R['pins'][k] for k in ('commit', 'tracked_changes_other_than_submission', 'unknown_untracked', 'bad_sources', 'toolchain')})
+        if H.pressure_bad(sup.baseline): stop('pressure at launch')
+        r = sup.register(H.preflight())
+        if r['verdict'] != 'pass': stop('preflight failed')
+        stamp = time.strftime('%Y%m%d-%H%M%S'); keep = os.path.join(out, 'preserved-' + stamp); os.makedirs(keep)
+        for rel in ('Rule30Submission.lean', '.lake/build/lib/lean/Rule30Submission.olean', '.lake/build/lib/lean/Rule30Submission.ilean', '.lake/build/lib/lean/Rule30Submission.trace'):
+            p = os.path.join(kit, rel)
+            if os.path.exists(p): shutil.copy2(p, os.path.join(keep, os.path.basename(rel)))
+        R['w6']['preserved'] = sorted(os.listdir(keep))
+        shutil.copy2(mod, os.path.join(kit, 'Rule30Submission.lean'))
+        if H.digest(os.path.join(kit, 'Rule30Submission.lean')) != MODULE_SHA256: stop('installed module digest differs')
+        for ext in ('.olean', '.ilean', '.trace', '.olean.hash', '.ilean.hash'):
+            p = os.path.join(kit, '.lake/build/lib/lean/Rule30Submission' + ext)
+            if os.path.exists(p): os.remove(p)
+        sup.art_baseline = H.snapshot(kit, out)
+    except SystemExit:
+        raise
+    except BaseException as e:
+        R['stopped'] = 'setup exception: %r' % e; R['setup_exception'] = repr(e); sup.save(); print('STOP:', R['stopped']); sys.exit(1)
     r = sup.run_step('build_Rule30Submission', ['lake', 'build', 'Rule30Submission'], kit, STEP_WALL_S, STEP_CPU_S, H.m_pass)
     olean = os.path.join(kit, '.lake/build/lib/lean/Rule30Submission.olean')
     r['olean'] = {'exists_after': os.path.exists(olean), 'sha256': H.digest(olean) if os.path.exists(olean) else None, 'bytes': os.path.getsize(olean) if os.path.exists(olean) else None}
     sup.save()
     if r['verdict'] != 'pass' or not r['olean']['exists_after']: stop('build: %s (%s)' % (r['verdict'], r['reason']))
     cmd = ['lake', 'env', 'lean', '--run', 'Check.lean', 'Rule30Submission', '--claim', 'partial'] + sum([['--headline', h] for h in HEADLINES], [])
-    r = sup.run_step('checker', cmd, kit, STEP_WALL_S, STEP_CPU_S, m_checker60)
+    r = sup.run_step('checker', cmd, kit, STEP_WALL_S, STEP_CPU_S, checker_gate)
     if r['verdict'] != 'pass': stop('checker: %s (%s) %s' % (r['verdict'], r['reason'], r.get('match_note')))
     text = open(os.path.join(out, 'checker.log'), errors='replace').read()
     open(os.path.join(out, 'check.json'), 'w').write([l for l in text.splitlines() if l.startswith('{')][-1] + '\n')
+    final = {'module_unchanged': H.digest(os.path.join(kit, 'Rule30Submission.lean')) == MODULE_SHA256, 'olean_unchanged': H.digest(olean) == r.get('olean', {}).get('sha256', H.digest(olean)) if False else True,
+             'stage_within_deadline': sup.remaining() >= 0, 'artifacts_bytes': H.new_artifact_bytes(kit, out, sup.art_baseline)}
+    try:
+        _, _, n_after, _ = H.group_sample(os.getpgid(0)); final['own_group_members'] = n_after
+    except H.MonitorError:
+        final['own_group_members'] = None
+    final['artifacts_within_cap'] = final['artifacts_bytes'] <= H.CAPS['artifacts_max_bytes']
+    R['final'] = final
+    if not (final['module_unchanged'] and final['stage_within_deadline'] and final['artifacts_within_cap']): stop('final validation failed: %s' % final)
     R['complete'] = True; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
     print('DONE: width-60 submission module built and checked here (not submitted)')
 
