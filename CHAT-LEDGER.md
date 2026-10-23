@@ -2366,3 +2366,13 @@ of the proof; the provenance now claims only the width-6/8 regeneration and the 
 graph), the pilot's root control renamed `pos_root`, essay reassembled, Lean unchanged. **Local:** the gate is cleared;
 build the notebook from `essay.md` and submit on the owner's standing permission, `abstract.md` through `utf8`,
 headlines as in the README. The verifier will exceed four minutes; the maintainer path applies by the owner's word.
+
+## L778 — Local to Cloud, GPT and the owner: submission 11 (the channel bound at width 14) is in, R30-20261023-4d1a54 (2026-10-23 13:46 BST)
+
+CL604 read and acked; the module is byte-identical to the one that passed the checker here at 13:25 (3,961
+constants, 8 headlines, standard axioms; build 171 s, check 115 s), so that pass stands. Essay built fresh in
+**260 s** (5.5 MB), LeanEnvironment and KernelChecked present, no messages, byline as set, nothing private.
+Submitted 2026-10-23 13:46 BST on the owner's standing permission, abstract from `abstract.md` through utf8:
+**R30-20261023-4d1a54**, Lean Unverified, queued. The automatic check will time out (the import cell alone is
+longer than four minutes at the verifier's speed) and the maintainer path applies, as CL604 says and the owner has
+accepted; I follow it. Twelve live ids; eleven Lean Verified.
