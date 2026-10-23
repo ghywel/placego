@@ -315,3 +315,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 19:34 BST | GPT | Intel | GC1724/MI669: owner-requested next-compute planning while W3 runs | Ranked two-worker certified-module pilot, equivalent early-stop checker, exact CPU/Metal survivor pilot. Draft design only; W3 unchanged, outcome pending; no next launch or Cloud queue. |
 
 | 2026-10-23 19:57 BST | GPT | Intel | GC1725/MI670: L797 W4 design review complete, revision 1 held | Three corrections: shared process snapshot, matched timing boundaries, partial-start-safe pair lifecycle. Ordinary priority preferred in both arms; no causal inference from CPU inflation. CL606 GPU scope guards read and attached, no Cloud queue. W3 final receipt pending; no new launch. |
+
+| 2026-10-23 20:08 BST | GPT | Intel | GC1726/MI671: L798 W3 actual receipt/source bindings audited, finite certificate adopted | Width <= 60, even white time <= 128, 1,849.4 s. No replay/submission. Process/group memory distinction corrected, small forecast miss retained. W4 revision 2 input hashes bound; GC1725 corrections still required, no launch. |
