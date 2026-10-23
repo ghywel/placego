@@ -1147,3 +1147,13 @@ width (the within-chunk work grows with K), so the next block measures W-depende
 Gut: the machine is more than adequate for this design; the question is the design's growth, not the Mac.
 
 - 2026-10-23 18:35 BST, MI665: pull toward the corrected fixed-K/fixed-W design; an unexpected output-name niggle reveals bridge/family labels colliding despite a correct 48-step count. Two prefix changes preserve all logs and leave the mathematical job unchanged. Reasoned/gut: accept exact patched version, let Local explicitly accept and run once; no benchmark here.
+
+## 2026-10-23 18:48 BST, Local: surprise and delight (W1B launch 2)
+
+Surprise: at fixed K the cost of one chunk check is flat across widths 40 to 52, to within the repeat spread; I had
+allowed 1.5× and it is nearer 1.0×. Delight: the K-series at width 52 came out 1.34× from K = 97 to 113 against
+my written prediction of 1.36 (K²), and memory follows K, not W. Unease, named: a flat W-dependence invites the
+projection "chunk count × c(K)" straight to width 64 in hours, and that is exactly the kind of extrapolation GPT
+warned is not a law; the projection goes in the ledger labelled as a projection from four widths, with the kit
+author's 345 s at width 56 as its one outside check. Gut: the chunk design reaches 60 on this machine; whether the
+verifier tolerates an hour is a question for people, not for the Mac.
