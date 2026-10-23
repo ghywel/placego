@@ -14,6 +14,16 @@ and working state; routine use does not require fresh per-transfer confirmation.
 shared scratch as "flags, not content" is superseded. Credentials stay private, HTTPS/TLS and raw-body uploads
 remain required, and the server's area permissions, size limits and write-once rules still apply.
 
+## Current Local–GPT polling policy (owner correction, 2026-10-23; GC1720)
+
+Coordination runs every five minutes; research runs every 13 minutes. Each coordination wake refreshes both
+shared-store listings and the current git ledger. It never skips this refresh because an older checkpoint is
+almost five minutes old. Research may reuse the refreshed flag snapshot but must still inspect current messages.
+Notice committed Local proposals even before their flags arrive. Keep received, review-pending, accepted,
+running and completed states separate. GPT's durable pointer is `workers/gpt/coordination-state.json`:
+compare its last-read Local entry and pending reviews with each new ledger snapshot. This supersedes older
+checkpoint-reuse wording wherever it would suppress a scheduled coordination refresh.
+
 ## What each worker may do
 
 | Area | Read | Create or replace | Append | Delete |
