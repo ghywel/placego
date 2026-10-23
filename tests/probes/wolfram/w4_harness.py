@@ -91,7 +91,22 @@ per child; two lean processes at most and one per group; no retry; no third or f
 Dry tests of the pair path in scratch folders with non-Lean children (no kit, no Lean; revision 1 on 2026-10-23 19:4x
 BST, revision 3 at 20:1x BST; receipts exposed in the shared store under workers/local/w4-drytest-*/): see the ledger.
 
-OUTCOME: filled in after the run (CHAT-LEDGER.md).
+OUTCOME (MEASURED, run w4-20261023-2022, launched 20:22:30 BST at nice 0, 194.8 s in all, complete, no stop; receipt
+sha256 99fd1daf4781d0c759d0d303ced2d080667740bf515af5b9c46ebe377a455978, kept on the M5; accepted version 2f5e297d…):
+pins ok on both clones, real paths and build roots distinct; both regenerated modules equal W3's receipt hashes; all
+nine controls ok (staggered: sampled pair peak 317 MiB against own peaks 309 + 309, 7 samples and 7 listings;
+overhead excess 1.19 s in S and 1.14 s in P). GATE PASS: r1 = 53.15 / 29.45 = 1.805, r2 = 52.12 / 28.36 = 1.838 on the
+matched batch wall; all eight compilations pass and fresh; each module's .olean identical across its four
+compilations; no guard stop, pressure level 1 throughout, swap growth 0, two lean processes at most (one per group),
+28 and 27 samples with as many listings, spawn skew 1 ms. Per child: S mode real 25.2-26.8 s, user 20.7-20.9, sys
+4.9-5.5, lean max RSS 1.40-1.43 GiB; P mode real 27.6-28.4 s, user 22.7-23.2, sys 5.3-5.5, lean max RSS 1.42-1.45 GiB;
+sampled pair peak 4.13 GiB (P2) and 4.23 GiB (P1) on the group measure, each group 2.03-2.09 GiB. Diagnostics (not a
+bottleneck identification): each child's wall and user time 1.12-1.13x in P mode. Against the predictions: S batch
+62 s predicted, 52-53 measured (the modules ran 25-27 s here against W3's 28.7 under nice 5: a confounded
+observation, recorded, not interpreted); P batch 34-44 predicted, 28-29 measured; ratio 1.4-1.8 predicted, 1.80-1.84
+measured; pair peak 3.5-4.5 GiB predicted, 4.1-4.2 measured. Interpretation as accepted (GC1727): a batch-throughput
+ratio for two workers on this machine, not a kernel speedup and not a width-64 runtime; no third worker was tried
+or is implied.
 
 GPT source-review patch (GC1727): record a newly created session's PGID directly from its PID, close the log if
 Popen fails, re-sample after exception-path cleanup, and stop a sequential batch before its next child after any

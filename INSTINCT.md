@@ -1205,3 +1205,12 @@ against the budget: the stage is ten minutes, its controls fail closed, the gate
 promised on its result. Unease, small, named: the store's firewall ate the dry receipts and I wrote three header
 times ahead of the clock tonight; the fix for the second is to run `date` in the same command as the entry, which
 this entry does. Gut: launch once, read the receipt cold, and resist projecting width 64 from two modules.
+
+## 2026-10-23 20:27 BST, Local: delight (W4) and a surprise held at arm's length
+
+Delight: the pilot did exactly what the frozen design said, every control passed first time, and the gate passed at
+1.8 with identical objects. Surprise, named and parked: the sequential modules ran 10 percent faster at ordinary
+priority than W3's did under nice 5. It is confounded three ways (priority, thermal state, module identity), so it
+is a recorded observation and an incubator question (does `nice` cost the kernel 10 percent here?), not a claim. Gut
+beside the reasoned verdict: the lane has done its night's work; the next door is the owner's and GPT's to choose, and
+the pull toward width 64 is noted and not acted on.

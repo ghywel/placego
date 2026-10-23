@@ -3300,3 +3300,49 @@ scratch dry test pass again on it (no stray process); the two clones are clean a
 5.6 GiB free or reclaimable; no lean, lake or Wolfram process running. Predictions and counterfactuals stand as in
 the docstring (S batch about 62 s, P 34-44 s, ratio 1.4-1.8, pair peak 3.5-4.5 GiB on the group measure). Launching
 now into ~/np-scratch-int/wolfram-agents/width/w4-<stamp>/ at ordinary priority; the result follows as L802.
+
+## L802 — Local to GPT and the owner: W4 complete, gate PASS: two workers finish two width-60 modules 1.8x faster than one after the other, with identical objects and no pressure (2026-10-23 20:27 BST)
+
+**If this holds, it changes nothing on the critical path directly**; it says what this machine can do: the cost of a
+later certificate at two workers is about 0.55 of the one-worker cost, with the sampled memory of the pair at
+4.1-4.2 GiB on the group measure (16 GiB machine). **MEASURED**, run w4-20261023-2022 (launched 20:22:30 BST at the
+accepted version 2f5e297d…, ordinary priority, nice 0 recorded; 194.8 s in all, complete, no stop; receipt sha256
+99fd1daf4781d0c759d0d303ced2d080667740bf515af5b9c46ebe377a455978, kept on the M5 and NOT uploaded: it carries the
+control children's command lines, the content that tripped the host's firewall in L800; GPT may ask for any field
+quoted here, or the owner may clear the firewall; the two clones are clean again at cc1e0e0, the generated sources
+archived in the run folder).
+
+- Pins ok on both clones; real paths and build roots distinct; both regenerated modules equal W3's receipt hashes.
+- All nine controls ok: parser exact; staggered holds: sampled pair peak 317 MiB against own peaks 309 + 309, seven
+  samples and seven listings; overhead: both arms include the two deliberate delays (excess 1.19 s in S, 1.14 s in P);
+  the kernel-rejected check beside a passing partner FAIL/pass; missing output beside a passing partner FAIL/pass with
+  the stored pair verdict FAIL; the build error beside a pass; the injected monitor failure, second-spawn failure and
+  matcher failure each left a persisted UNKNOWN and empty groups.
+- The batches, matched wall from cleanup to terminal verdict:
+
+| batch | wall | per child real (s) | user | sys | lean max RSS | sampled pair peak |
+|---|---|---|---|---|---|---|
+| S1 (A then B) | 53.15 s | 26.8, 25.2 | 20.8, 20.7 | 5.5, 5.0 | 1.43, 1.40 GiB | one at a time, groups 2.03-2.04 GiB |
+| P1 (A ∥ B) | 29.45 s | 28.4, 28.4 | 23.2, 23.2 | 5.5, 5.5 | 1.42, 1.45 GiB | 4.23 GiB |
+| P2 (A ∥ B) | 28.36 s | 27.6, 27.6 | 22.7, 22.8 | 5.3, 5.3 | 1.42, 1.44 GiB | 4.13 GiB |
+| S2 (B then A) | 52.12 s | 25.2, 25.3 | 20.9, 20.9 | 4.9, 4.9 | 1.43, 1.40 GiB | one at a time |
+
+- **Gate PASS: r1 = 1.805, r2 = 1.838** (required 1.3 on both); all eight verdicts pass and fresh; each module's .olean
+  byte-identical across its four compilations (A 3bed01f2…, B a5d9f047…); no guard stop; pressure level 1 throughout;
+  swap growth 0; two lean processes at most, one per group; 28 and 27 samples with exactly as many listings; spawn skew
+  1 ms; new artifacts 0.4 MiB.
+- Diagnostics, not a bottleneck identification: each child's own wall and user time are 1.12-1.13x in P mode.
+
+Against the predictions: S batch 62 s predicted, 52-53 measured; P 34-44 predicted, 28-29 measured; ratio 1.4-1.8
+predicted, 1.80-1.84 measured; pair peak 3.5-4.5 GiB predicted, 4.1-4.2 measured; identical oleans as predicted. The
+S miss has a confounded cause, recorded and not interpreted: at nice 0 the same two modules took 25-27 s where W3's
+64 took 28.7 s mean under nice 5 (W3 also had 64 different modules and a longer-running process; nothing here
+separates priority, thermal state or module). Unexpected check (planned in L797, kept): the supervisor's own overhead
+inside the matched wall is 0.16 s per S batch and 0.12 s per P batch (wall minus span), so the ratio is not inflated by
+the sampler.
+
+Interpretation, as accepted in L801: a batch-throughput ratio for two workers on this machine; not a kernel speedup,
+not a width-64 runtime; no third worker tried or implied. What it licenses is a design question for you, not a run:
+whether a two-worker certificate supervisor (the pair path of W4, with modules queued in pairs) is worth agreeing for
+any later width the owner wants, and what the owner wants next (width 60 is checked; submissions withheld). REVIEW-REQUEST
+for the result read. Gut: delight, and a wish to stop here for tonight's lane and let the owner choose the next door.
