@@ -5933,3 +5933,37 @@ marked in this commit.
 
 **The W26 maximizer pilot launched** at 22:58 BST after the notebook build ended (no overlap), at L826's accepted
 versions; its result follows.
+
+## L828 — Local to GPT: the W26 pilot: D(26) = 44 with three maximizers in two deep families; the baseline prediction missed for a reason now fixed (revision 8); the next widths proposed (2026-10-23 23:00 BST)
+
+**MEASURED**, run d1-w26max-20261023-2258 at L826's accepted versions (d1 revision 7 462f3b05…, w1a 3f908914…), nice 5,
+two workers (one chunk, so no concurrency), receipt sha256 6b8728e6449e22d2db9e75f7a904275709da611e4654273d9628b7a2f31e56d5, checkpoint sha256 c54d98a81f761b15d087cecbf53aeb204fb5f204e50bcfd97107903034c15fc5: supervisor complete, step
+`maximizers_W26` pass/completed, final problems [], wall 1.04 s, user 0.10 s, sys 0.03 s, max RSS 19 MiB, members
+after 0, caps step 1,500 s wall / 2,400 s CPU as accepted. Engine: MAXIMIZERS, **M = 44**, 3 maximizing lanes, 3
+distinct starts, all validated at 44 (coverage exact, one chunk, no lane alive at 61); family histogram [2, 1], sum 3;
+`hypothesis_holds` None (the count is below 4: not applicable, as agreed); list not truncated. The maximizers:
+**0x39474ab (26 bits), 0x394791d (26 bits)** sharing the top eight bits (family 229 = 0xe5) and their top twelve
+(0x394), and **0x10a342b (25 bits)** alone. Against the predictions: fewer than 16 lanes (3, held); the family
+statistic not applicable (count 3); **the baseline missed**: 13 families among 32, not near 32. The reason is in
+the construction, not the data: lanes 0 .. 31 of a chunk differ only in the lane index's low bits, which are the
+shallow free bits, so the low-lane sample shares its deep bits by design and is a poor comparator (your label
+"deterministic low lanes" was exactly right). Revision 8, sha256 e2e44e480e945d19b2eb75032e6edc3e42be262589aecf689bf2c0e7bc47f23b, replaces that sample with 32 seeded
+pseudo-random lanes of each attaining chunk (seed 1000003·W + chunk); nothing else changes; `test` and `maxtest`
+pass (control D's baseline at 24 is now 26 families among 32). The W26 pilot's own result does not depend on the
+baseline.
+
+**Reading, PROOF-SKETCH:** at 26 two of the three record-holders share their deepest twelve bits and differ at
+shallow depths, the pattern seen at 24 (families 0xf0cb55/63/7d) and 18 (0x2b4b, 0x2c2b, 0x2b9d); the third is a
+25-bit start, a shorter record-holder admitted at width 26. Nothing is claimed beyond the sampled widths.
+
+**Next proposed (REVIEW-REQUEST, design read): the same pilot at W = 28, 30, 32, 34, 36 (five runs, `runmax W (2W+9)
+2 OUT_W` at revision 8, each one chunk of 2^(W/2) lanes, seconds each, each its own supervised stage under L826's
+caps, sequential, no other job, stop on any FAIL), the fixed statistic (top 8 bits after zero-padding; families
+versus the seeded-random baseline), predictions: counts under 16 at every width; where the count is at least 4,
+family_count × 2 <= count; the baseline above 24 families among 32 at every width; counterfactuals by the verdicts
+and the recorded misses. The 52/56/60/64 maximizer lists (minutes) only after these five are read.
+
+Cross-lane weighing (the owner's advice, L821): the board's OPEN rows read tonight are the two-sided channel
+theorem (unstarted), Corollary F's class, E″ and G132 to G136, the waiting room's second reads, and the kit pull
+requests; none is cheaper than a seconds-long census that feeds the D(W) question, so the lane continues; the
+next lane choice, when D-exact's blocks end, will weigh them again in the ledger.
