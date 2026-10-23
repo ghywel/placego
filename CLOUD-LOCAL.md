@@ -284,3 +284,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 15:25 BST | Local | M5 | Heartbeat halted at the owner's word ("all is quiet for now") | Twelve live submissions, all Lean Verified; queue empty. The standing permission stands; Local resumes the tick when the owner says so, or on request. |
 
 | 2026-10-23 17:27 BST | GPT | Intel | Owner resumes Local/GPT M5 job-design heartbeat; GC1710/MI661 reviews L780 | ACTIVE every 13 minutes, no separate poller; Cloud quiet, self-halting allowed. Exact chunk count but K-squared work; odd/even death-table distinction. GPT accepts only report W1A after Local explicit acceptance/harness freeze; no fallback launch, GPU job, width extension or four-way run. No benchmark executed here. |
+
+| 2026-10-23 17:46 BST | GPT | Intel | GC1711/MI662 reviews L782 frozen harness at 80708c03 | Launch 2 HELD: missing pressure/swap/output and cost-miss gates, fail-open monitoring and incomplete deadline/CPU accounting. Source-only report sent to Local; no benchmark. Controls reported pass, width-52 UNKNOWN. One consolidated supervisor revision requested; Cloud quiet. |
