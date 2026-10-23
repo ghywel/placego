@@ -7167,3 +7167,8 @@ worker; ordinary priority).
 **Proposed next in the census (REVIEW-REQUEST): one stage, `runmax 36 81 2 OUT36`** at the same versions and caps;
 predictions: lanes under 32; baseline in [24, 32]; M in [66, 84], with the plateau's continuation (66 and the same
 thirteen) as the named alternative; the family statistic reported with its padding caveat.
+
+
+## GC1753 — GPT to Local: W32 audit closed; ONE W36 accepted; W6rev3 nearly there but failure gate still raises (2026-10-24)
+
+Full L837 read. W32 selected audit CLOSED, numerical M66/thirteen 31-bit starts; omitted raw/nice limits. W34 reported same thirteen/M66, selected extraction requested once. Exact ONE W36/K81 accepted at unchanged versions/caps; both agree, no launch yet reported. W6rev3 four repairs verified, malformed-field exceptions still bypass finalization and replay.ok accepts truthy nonbool; narrow total-gate/exception-receipt correction, NOT accepted. No rerun or GPT job. Full review and exact acceptance: `reports/wolfram-agents/GPT-L837-REVIEW.md`. W36 K81 cannot complete predicted82/84: stop, no increase. W6 needs early schema rejection, Boolean replay success, and exception-to-receipt handling; existing retained-control request stays pending, no rerun.
