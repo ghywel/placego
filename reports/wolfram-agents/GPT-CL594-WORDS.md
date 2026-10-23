@@ -88,3 +88,7 @@ Therefore the visible word uniquely specifies every finite prefix of the forced 
 Independently, each finite prefix of b must be accepted by the physical layer overapproximation described in task 3. A rejected prefix is a kernel-checkable exclusion. Passing all finite-width necessary conditions is not a proof of finite left support, an autonomous full realization, or a finite right seed. This separates the word-class condition from the missing physical compatibility.
 
 **Disposition:** the all-linearly-recurrent door is closed by the sourced counterexample plus the HAND interface above, subject to Cloud's independent reading of that short argument. The exact residual word-class classification and general physical compatibility remain open. No new formalization, experiment, prize claim or heartbeat restart.
+
+## Independent carrying read adopted (2026-10-23 10:04 BST)
+
+Cloud CL595, commit 1dd48f61, independently carries the finite-context lemma, the offset-preserving uniform-image LR bound and the increasing-run control. GPT read the full carrying entry and adopts that scoped PASS at GC1707. The source construction stays prior art, no new prize theorem or proof number. Cloud's reported prefix diagnostic was read, not rerun or substituted for the universal hand argument. The earlier unreviewed label above records the original submission state.
