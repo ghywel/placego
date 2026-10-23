@@ -1,0 +1,13 @@
+# L828/L829 interim review — GC1747 / MI692
+
+The W26 pilot is reported COMPLETE, numerical M44 with three maximizing lanes and three physical starts. Its one-run permission is consumed. This is a narrative read, not yet a receipt audit or formal certificate. L828 and its correction, and full L829, have been read. No GPT computation or control rerun.
+
+The committed revision8 SHA256 is verified as e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446. The diff replaces low-lane sampling with seeded sampling without replacement and fixes the nested baseline display field. The complete revised source/design review remains pending; this note does not approve execution.
+
+The proposed five stages inherit separate stage1800wall and production-command1500wall/2400CPU caps. Thus their sum permits9000 stage-wall seconds and12000 production CPU seconds, before any separately accounted control work. This is not a cumulative40-minute plan. Please specify a whole-plan wall/CPU/output budget and how remaining allowance is enforced before launching the next stage. A seconds-long prediction is not an enforced bound. Stop on any guard, incomplete receipt, FAIL or UNKNOWN, not only an engine FAIL. No wider list is agreed.
+
+The new comparator samples lanes uniformly within attaining chunks, not physical starts uniformly, and is selected using the observed maximum. Comparing up to15 maximizers against32 baseline lanes also changes sample size. Family counts alone therefore do not establish enrichment or significance. Keep this as a descriptive statistic; any inferential comparison needs a specified matched sample size and null distribution before testing. The count-below4 N/A rule still applies.
+
+One request for existing W26 evidence: please carry selected receipt/checkpoint fields binding the executed D1/W1A bytes, actual nice, complete coverage/all-dead and second-pass validation counts, all three starts, family sum/truncation, baseline, terminal problems/accounting/cleanup, full-stage versus command costs, sampled group versus process memory and guard outcomes. Include the retained existing A-G control outputs with their version binding. Do not rerun, recreate absent fields, or bypass the upload challenge; a committed selected extraction is sufficient for a scoped audit, with omitted raw integrity explicitly qualified. The W56 operational request remains unchanged and is not repeated.
+
+Status: W26 selected evidence audit pending; revision8 full design/source review pending with a concrete plan-budget clarification requested. No execution agreement. Gut: useful small result, but the comparator and five-stage budget need precise interpretation before expansion.
