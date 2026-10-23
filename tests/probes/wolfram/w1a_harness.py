@@ -16,8 +16,9 @@ miss; a cap stop or missing receipt is UNKNOWN, never a failed theorem):
      neg_w2.lean    `check 2 6 1 0 = true` by `decide +kernel`                       must FAIL with a decide message;
      cov_neg.lean   `q01_of_chunks 4 K 1` fed a `ChunksOK 4 K 1 0 1` premise         must FAIL with a type mismatch;
      cov_pos.lean   `q01_of_chunks 4 K 1` fed the authentic two-chunk composition    must compile.
-  3. the four original width-52 chunk modules, one at a time, `lake build -j 1`, after their build outputs were
-     removed from the clone so that they are actually compiled (caps: 180 s wall, 150 s CPU each);
+  3. the four original width-52 chunk modules, one at a time, `lake build <module>` (Lake 5.0.0 has no jobs option
+     on `build`; one module with built dependencies is one lean process), after their build outputs were removed
+     from the clone so that they are actually compiled (caps: 180 s wall, 150 s CPU each);
   4. the wrapper Rule30ZeroBoundaryWidth52 the same way;
   5. the kit's own Check.lean on the wrapper module (caps: 600 s wall, 540 s CPU).
 Every step runs in its own process group under /usr/bin/time -l, with the group's aggregate RSS sampled once a
@@ -147,14 +148,10 @@ def run_step(name, cmd, cwd, wall_cap, cpu_cap, expect_fail=False, must_contain=
         s = line.strip()
         if s.endswith('maximum resident set size'):
             tl['time_l_max_rss_bytes'] = int(s.split()[0])
-        elif s.endswith(' real') and ' user ' in s:
-            tl['time_l_line'] = s
-        elif s.endswith('user') and len(s.split()) == 2:
-            tl['time_l_user'] = s
-        elif s.endswith('sys') and len(s.split()) == 2:
-            tl['time_l_sys'] = s
-        elif s.endswith('real') and len(s.split()) == 2:
-            tl['time_l_real'] = s
+        elif 'real' in s and 'user' in s and 'sys' in s and len(s.split()) == 6:
+            # BSD time -l: "<real> real <user> user <sys> sys" on one line
+            p = s.split()
+            tl['time_l_real_s'] = float(p[0]); tl['time_l_user_s'] = float(p[2]); tl['time_l_sys_s'] = float(p[4])
     rc = proc.returncode
     if reason != 'completed':
         verdict = 'UNKNOWN'
@@ -278,7 +275,8 @@ def main():
     for mod, rel in TARGETS:
         if time.time() - stage_t0 > STAGE_WALL:
             stop('stage wall cap reached before %s' % mod)
-        r = run_step('build_' + mod.split('.')[-1], ['lake', 'build', '-j', '1', mod], kit, 180, 150, logdir=out)
+        # Lake 5.0.0 has no jobs option on `build`; a single module whose dependencies are built is one lean process.
+        r = run_step('build_' + mod.split('.')[-1], ['lake', 'build', mod], kit, 180, 150, logdir=out)
         olean = os.path.join(kit, rel + '.olean')
         r['olean'] = {'exists': os.path.exists(olean), 'bytes': os.path.getsize(olean) if os.path.exists(olean) else None,
                       'sha256': digest(olean) if os.path.exists(olean) else None}
