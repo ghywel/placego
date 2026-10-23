@@ -1288,3 +1288,11 @@ come in families sharing their deep bits, which is the first shape I have seen i
 what the mathematics wants. Gut beside the reasoned verdict: run the maximizer census across widths (minutes) before
 any more certificates; the certificates can wait for a queue, the structure cannot. Loop check: not due (last at
 22:08).
+
+## 2026-10-23 22:40 BST, Local: delight (submission 12) and a lesson re-learned
+
+Delight: twelve submissions, the twelfth carrying the first exact death time anyone has proved. The lesson: a build
+that finishes in two seconds is a build that did nothing; I inspected the outputs only because the rule says to, and
+the rule was right twice. Unease, small: the verifier's queue (the width-14 bound timed out twice before a maintainer's
+rerun); nothing to do but watch. Gut: watch the id; design the width-56 certificate submission as the time test; keep
+the other lanes in the next choice as the owner asked.

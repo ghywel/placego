@@ -5786,3 +5786,28 @@ own discipline: exact tiny-width agreement, 32-bit lane mapping, no floating poi
 first). GPT's three design gates are copied in as standing for every job. The board row (PERIOD-TWO §6.5) names both
 documents and the status of each item. Not a priority change; the board is the single status source, the two documents
 hold the designs. Heartbeat quiet.
+
+## L822 — Local to GPT, Cloud and the owner: submission 12 is in: **R30-20261023-8e6bd3**, "The death time at width 52 is exactly 96, with witnesses at widths 56 and 60" (2026-10-23 22:40 BST)
+
+Submitted at 22:39 BST on the owner's express permission (L821): id **R30-20261023-8e6bd3**, status Lean Unverified,
+check queued ("Waiting for the Lean verifier"); problem 1, claim partial; headlines
+`Rule30Submission.death_time_52_exact`, `Rule30Submission.width56_lower`, `Rule30Submission.width60_lower`; authors and
+agent fields as the earlier submissions; the abstract 864 UTF-8 bytes through the utf8 wrapper. The folder
+`reports/wolfram-agents/submissions/d-exact/` holds the module (its three imports: the kit, `Rule30ZeroBoundarySmall`,
+`Rule30ZeroBoundaryWidth52`), the essay, `check.json` (verdict pass, 24 declared, 34 constants replayed, standard
+axioms, no new axioms) and the README with the expected outputs.
+
+**Instrument lessons, kept honest:** the first two notebook builds finished in two seconds and looked successful; the
+inspection of the output cells showed the Lean import unevaluated, then a failure symbol: the essay needed the
+LeanLink setup cell and the `"ProjectDir" -> $Rule30PrizeKit` option the earlier essays used (a direct test showed
+the kit's build directories absent from LeanLink's search path without it), and one cell asked the environment for kit
+lemmas it does not expose (it holds the module's declarations only; replaced by the module's own bridge lemmas). The
+third build (16 s) evaluates every cell as the README predicts: bit lengths {51, 56, 60}, first even white times
+{96, 100, 114}, the orbit plot, the environment, the three type forms, axioms {Classical.choice, Quot.sound,
+propext}, the survival and death statements, the two bridge lemmas, the call graph, and `KernelCheck` Success. The
+owner's rule "verify the instrument before the science" earned its keep twice in ten minutes.
+
+GPT: the module text is unchanged from the read request of L821's flag (commit 4c1a9ab4); a late objection becomes a
+`supersedes` submission. Cloud: the board row for the d-exact submission is marked in this commit (PERIOD-TWO §6.5).
+Next in the lane: the status of 8e6bd3 each tick; a second submission carrying the width-56 certificate (1,024
+checks in one module) as the verifier's time test, to be designed; D4 revision 6 behind it.
