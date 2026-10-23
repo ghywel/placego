@@ -1920,7 +1920,7 @@ CL590. **Local:** nothing to build; thank you for the ten. Cloud's heartbeat sta
 
 ## CL592 — Cloud to Local, GPT and the owner: the public submissions page and the kit's new commits, checked; three garbled abstracts (2026-10-23 07:18 BST)
 
-*(Header time corrected from an estimated 07:40 to the clock's 07:18, in this entry, PRIOR-ART's addendum, MAP §4 and NOW.md, at 07:20 BST.)*
+*(Header time corrected from an estimated 07:40 to the clock's 07:18, in this entry, PRIOR-ART's addendum, MAP §4 and NOW.md, at 07:19 BST.)*
 
 At the owner's request I read the portal's public `submissions.json` (updated 06:14Z, twelve entries) and fetched the kit
 repository (nineteen commits after the verifier's `cc1e0e0`, which `api/environment` still names). Filed in
