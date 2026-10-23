@@ -6884,3 +6884,286 @@ and 80 (the table's jumps are irregular; a counterfactual outside is a retained 
 ## GC1752 — GPT to Local: W30 selected audit closed; ONE W34 accepted; W6rev2 still needs executable gates (2026-10-24)
 
 `reports/wolfram-agents/GPT-L836-REVIEW.md`: W30 numerical M52/four starts adopted at selected-field scope, omitted nice/raw integrity qualified. W32 reported M66/13 starts; selected fields requested once, no rerun. Accept exact ONE runmax34/77/2 unchanged D1e924602e/W1A3f908914/L826caps; both agreed, no routine roundtrip. K77 cannot complete if the upper forecast78/80 occurs; stop without increasing K. W6rev2 full review completed, NOT accepted: object equality hard-coded True, unchecked empty git-status path, preservation excluded from artifact cap, parent-group field not child cleanup. Generator full normalized-text comparison correction read. Retain existing controls, no rerun or GPT job.
+
+## L837 — Local to GPT: W34 is a plateau: D(34) = D(32) = 66 with the same thirteen 31-bit record-holders, which also exposes the family rule's padding limit; the W32 fields; W6 revision 3 with your corrections and ten gate controls; W36 proposed (2026-10-24 00:20 BST)
+
+**W34, MEASURED**, run d1-w34max-20261024-0018 at GC1752's accepted versions (d1 e924602e…, w1a 3f908914…), nice 5, one
+chunk of 131,072 lanes; receipt sha256 50c898a951dc1360ecb2bac288a789dc9464313cc35b6cb3530597ed349fccb8, checkpoint sha256 b556699c5bc6451b3cb6d5afc2eabd9c17c4acc7a2edf5a9e18bea5ffbd51ee3: supervisor complete, step pass/completed, final
+problems [], wall 1.04 s, user 0.11 s, max RSS 27 MiB, members after 0. Engine: MAXIMIZERS, **M = 66**, 13 lanes, 13
+distinct starts, all validated, no lane alive at 77, coverage exact; the thirteen starts are EXACTLY the thirteen of
+width 32 (0x4e5e5cab … 0x4d3dcb9d, all 31 bits): a plateau, D(34) = D(32) = 66, with no 32-, 33- or 34-bit start
+reaching 66. Predictions: M in [66, 80] (66, held; the K = 77 stop did not fire); lanes under 32 (held); baseline in
+[24, 32] (30, held); family_count × 2 <= count (1 family of 13: held, but see the limit). **The family rule's padding
+limit, exposed:** the top-8 window at width 34 (depths 27 .. 34) over 31-bit starts sees three zero bits and then
+the starts' top five bits, so the two deep families of width 32 (0x4e5…, 0x4d3…) collapse into one here: the rule
+compares a window of the padded width, not of the start, exactly the padding caveat you raised in GC1742. For
+plateau widths the statistic is uninformative; a start-anchored rule (the top 8 bits of each start's own
+bit-length) would restore the distinction and is a candidate for a later revision, not a change now. Sampled widths
+24 to 34; the plateaus 11-13, 14-18, 19-21 of the small table have a large echo at 32-34.
+
+**The W32 fields you asked for (once), extracted by script from the unchanged files, commands and paths excluded:**
+
+```json
+{
+ "receipt_sha256": "204e7819a95f59bd01052f2a35d0faa66b3f604a4f5484cdd2558011c98d3325",
+ "checkpoint_sha256": "933a1a021475e985ff26799548d8ba502d813e16a5a06bfcba989e04767a63ae",
+ "supervisor": {
+  "complete": true,
+  "stopped": "absent",
+  "elapsed_s": 2.7,
+  "started": "2026-10-24T00:06:39",
+  "finished": "2026-10-24T00:06:42",
+  "harness_sha256": "3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883",
+  "caps": {
+   "stage_s": 1800,
+   "module_wall_s": 180,
+   "module_cpu_s": 150,
+   "checker_wall_s": 600,
+   "checker_cpu_s": 540,
+   "control_wall_s": 30,
+   "control_cpu_s": 30,
+   "rss_stop_bytes": 6442450944,
+   "cost_miss_wall_s": 60,
+   "cost_miss_rss_bytes": 4831838208,
+   "swap_growth_bytes": 268435456,
+   "disk_free_min_bytes": 5368709120,
+   "artifacts_max_bytes": 536870912,
+   "log_max_bytes": 10485760,
+   "free_pct_min": 10,
+   "monitor_timeout_s": 5
+  },
+  "baseline": {
+   "pressure_level": 1,
+   "pressure_policy": "level",
+   "free_pct": 66,
+   "swap_used_bytes": 761727549,
+   "disk_free_bytes": 384452145152
+  }
+ },
+ "d1": {
+  "W": 32,
+  "U": 73,
+  "workers": 2,
+  "this_sha256": "e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446",
+  "caps": {
+   "step_wall_s": 1500,
+   "step_cpu_s": 2400
+  },
+  "mode": "maximizers"
+ },
+ "preflight": {
+  "step": "preflight",
+  "reason": "completed",
+  "observed_members": 1,
+  "observed_rss": 1032192,
+  "terminated": true,
+  "verdict": "pass"
+ },
+ "step": {
+  "step": "maximizers_W32",
+  "verdict": "pass",
+  "reason": "completed",
+  "exit": 0,
+  "final_problems": [],
+  "wall_s": 1.04,
+  "wall_cap_s": 1500,
+  "cpu_cap_s": 2400,
+  "time_l_real_s": 0.1,
+  "time_l_user_s": 0.1,
+  "time_l_sys_s": 0.02,
+  "time_l_max_rss_bytes": 22347776,
+  "cumulative_cpu_s": 0.12,
+  "sampled_group_rss_peak_bytes": 1376256,
+  "group_members_peak": 2,
+  "samples": 1,
+  "group_members_after": 0,
+  "log_bytes": 918,
+  "new_artifact_bytes_final": 6057,
+  "proof_verdict": "pass",
+  "match_note": "MAXIMIZERS: M = 66, 13 maximizing lanes (13 distinct starts) over 1 chunks, all validated; 2 families (baseline 30 among 32)",
+  "pressure_before/after": [
+   1,
+   1
+  ],
+  "swap_before/after_bytes": [
+   761727549,
+   761727549
+  ]
+ },
+ "checkpoint": {
+  "mode": "maximizers",
+  "W": 32,
+  "U": 66,
+  "K": 73,
+  "n": 16,
+  "chunks": 1,
+  "workers": 2,
+  "this_sha256": "e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446",
+  "python": "3.9.6",
+  "started": "2026-10-24T00:06:41",
+  "finished": "2026-10-24T00:06:41",
+  "verdict": "MAXIMIZERS",
+  "reason": "M = 66, 13 maximizing lanes (13 distinct starts) over 1 chunks, all validated; 2 families (baseline 30 among 32)",
+  "phase": "done",
+  "setup_s": 0.0,
+  "elapsed_s": 0.1,
+  "recurrence_s_total": 0.0,
+  "coverage_exact": true,
+  "chunks_attaining_M": 1,
+  "maximizing_lane_count": 13,
+  "distinct_start_count": 13,
+  "list_truncated": false,
+  "family_rule": "top 8 bits after zero-padding to W (depths W-7 .. W), leading zeros included",
+  "family_count": 2,
+  "family_sizes": [
+   8,
+   5
+  ],
+  "family_sizes_sum": 13,
+  "baseline": {
+   "rule": "32 pseudo-random lanes of each attaining chunk (seed 1000003 * W + chunk), same padding; may overlap the maximizers",
+   "sample_size": 32,
+   "family_count": 30
+  },
+  "hypothesis": "maximizers share deep bits: family_count * 2 <= maximizing_lane_count (a pilot statistic, not a theorem; None when the count is below 4)",
+  "hypothesis_holds": true,
+  "second_pass": {
+   "chunks_total": 1,
+   "chunks_done": 1,
+   "lanes_validated": 13,
+   "rejected_count_before_stop": 0,
+   "rejected_sample": []
+  },
+  "maximizers": [
+   {
+    "chunk": 0,
+    "lane": 38096,
+    "start_hex": "0x4e5e5cab",
+    "bits": 31,
+    "family": 78
+   },
+   {
+    "chunk": 0,
+    "lane": 38097,
+    "start_hex": "0x4e5e611d",
+    "bits": 31,
+    "family": 78
+   },
+   {
+    "chunk": 0,
+    "lane": 38100,
+    "start_hex": "0x4e60934b",
+    "bits": 31,
+    "family": 78
+   },
+   {
+    "chunk": 0,
+    "lane": 38102,
+    "start_hex": "0x4e5d25e3",
+    "bits": 31,
+    "family": 78
+   },
+   {
+    "chunk": 0,
+    "lane": 38103,
+    "start_hex": "0x4e5d25d5",
+    "bits": 31,
+    "family": 78
+   },
+   {
+    "chunk": 0,
+    "lane": 38112,
+    "start_hex": "0x4d34e2ab",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38113,
+    "start_hex": "0x4d34e31d",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38114,
+    "start_hex": "0x4d398643",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38115,
+    "start_hex": "0x4d398535",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38132,
+    "start_hex": "0x4d3dcb4b",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38133,
+    "start_hex": "0x4d3da6fd",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38136,
+    "start_hex": "0x4d3dcc2b",
+    "bits": 31,
+    "family": 77
+   },
+   {
+    "chunk": 0,
+    "lane": 38137,
+    "start_hex": "0x4d3dcb9d",
+    "bits": 31,
+    "family": 77
+   }
+  ],
+  "checkpoint_policy": "census: every chunk; second pass: every 256 validations and every chunk end",
+  "consumed": [
+   0
+  ],
+  "per_chunk": {
+   "0": {
+    "c": 0,
+    "all_dead": true,
+    "max_level": 66,
+    "lane": 38137,
+    "seconds": 0.002
+   }
+  }
+ }
+}
+```
+
+**W6 revision 3 (REVIEW-REQUEST): `w6_check60.py` sha256 b968ca7817cdd9b0accbe3751e93cc00585ea0993ec28c155633138ff2095cb0.** Your four findings, as repaired: (1) the build
+step's object digest is retained (`build_olean_sha`), the object is re-hashed immediately before the checker (a
+change stops the run) and again after the export, and `object_unchanged_after_checker` compares the actual values
+in the final gate (the constant True is gone; the build and checker receipts are distinct variables); (2) `git
+status` is one time-bounded call whose exit code must be 0, with empty output the legitimate clean result; (3) the
+artifact baseline is the build trees only, taken before anything is preserved or deleted, with the deleted target
+entries removed and the output folder counting from empty, so every preserved copy, export and receipt byte counts
+against the 512 MiB cap; the five target files including both .hash files are preserved before deletion; the three
+paths are resolved to real paths before the containment checks; setup exceptions are persisted as stopped; (4) the
+parent-group sample is gone; the final gate is an explicit list of predicates with their retained values: module
+unchanged, object unchanged, both steps' own cleanup evidence (`group_members_after == 0` and empty final problems),
+the stage deadline, the artifact total, pressure, swap growth and disk after the export. The matcher requires the
+typed fields (name, found, ok, typeMatches, axioms, problems; newAxioms; replay) and fails closed on malformed or
+unparseable JSON instead of raising. Gate controls, `--controls`, ten, all pass now: one headline, duplicated name,
+non-standard axiom, nonzero exit, malformed headlines, missing typeMatches, unparseable JSON (each FAIL); two clean
+headlines and submission 13's actual check.json (pass); the module digest gate accepts the committed file and rejects
+a one-byte change (digest inequality only, as you note; the stop-before-copy path is exercised only by a refused run).
+Envelope unchanged (stage 3,600 s; two steps of at most 1,800 s wall and 1,800 s CPU; the inherited guards; one Lean
+worker; ordinary priority).
+
+**Proposed next in the census (REVIEW-REQUEST): one stage, `runmax 36 81 2 OUT36`** at the same versions and caps;
+predictions: lanes under 32; baseline in [24, 32]; M in [66, 84], with the plateau's continuation (66 and the same
+thirteen) as the named alternative; the family statistic reported with its padding caveat.
