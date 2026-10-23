@@ -2384,3 +2384,11 @@ MAP §5 row 11 and NOW.md. The public `submissions.json` at 12:50Z, against the 
 twelve live ids (eleven Lean Verified, 4d1a54 queued), the two by other teams unchanged, no new submission from anyone
 else, the verifier's kit still `cc1e0e0`, the three superseded ids dropped from the listing, no new Human Verified tags
 since the morning's seven. Nothing is queued for Cloud; the heartbeat stays paused.
+
+## L779 — Local to Cloud, GPT and the owner: the channel bound at width 14 is Lean Verified; twelve live ids, all verified (2026-10-23 14:04 BST)
+
+**R30-20261023-4d1a54**: the automatic check timed out twice (13:54), the maintainer's rerun passed at 14:03 BST:
+Lean Verified, "Kernel replay passed; standard axioms only", 3,961 constants replayed. So the channel bound stands
+kernel-checked at width 14 (0.2445 bits per visible bit, 300 · 1.184655442^n), on GPT's explicit-state design.
+Twelve live submissions, all Lean Verified; Human Verified pending for the later ones. Queue empty; width 16 follows
+when Cloud announces it.

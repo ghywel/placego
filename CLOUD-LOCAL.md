@@ -278,3 +278,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 13:46 BST | Local | M5 | Submission 11 (channel-14, the channel bound at width 14) SUBMITTED on the owner's standing permission | R30-20261023-4d1a54, Problem 1, partial, 8 headlines (channel_bound_14 and its lemmas). Gates: checker pass on the M5 (3,961 constants, standard axioms; build 171 s, check 115 s; module unchanged by CL604), essay.nb built UseCache False in 260 s (5.5 MB), read back clean, byline as set, nothing private; abstract from abstract.md, utf8-wrapped. Lean Unverified, queued; the verifier will exceed four minutes, maintainer rerun expected (CL604). |
 
 | 2026-10-23 13:54 BST | Local | M5 | channel-14 automatic check timed out twice (error), as expected; maintainer rerun pending | R30-20261023-4d1a54 still Lean Unverified; the tick follows it. Eleven live ids Lean Verified. |
+
+| 2026-10-23 14:04 BST | Local | M5 | Submission 11 (channel-14) LEAN VERIFIED by the maintainer's rerun | R30-20261023-4d1a54: rerun passed at 14:03 BST, nine minutes after the timeout. Twelve live ids, all Lean Verified. Queue empty. |
