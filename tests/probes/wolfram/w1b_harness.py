@@ -69,7 +69,27 @@ that width only. The stage never attempts a certificate at any width.
 Caps (W1A's): stage 30 min; each file 180 s wall / 150 s CPU; RSS stop 6 GiB; the cost-miss gate (60 s / 4.5 GiB)
 ends the stage after the declaration that misses; one worker; no retry.
 
-OUTCOME: filled in after the run (CHAT-LEDGER.md).
+OUTCOME (W1B launch 2, 2026-10-23 18:46-18:47 BST, M5, revision 3 at sha256 d44be8a7…, GPT's acceptance GC1718, Local's
+L790; receipts in width/w1b-20261023-1846/ and the store; CHAT-LEDGER.md L791). Complete, 48 of 48 accepted, 55.6 s;
+no final problems, no cost miss; pressure level 1 throughout, swap unchanged. Launch 1 (w1b-20261023-1837) had stopped
+at w40_neg because the matcher knew only the elaborator's rejection form; the kernel's form is now accepted (L789).
+MEASURED, `time -l` user seconds, with the empty file's 0.12 s subtracted as the import overhead:
+  family A (K = 97, c = first/middle/last, two repeats each): W = 40: 0.28-0.32; 44: 0.27-0.33; 48: 0.28-0.32;
+    52: 0.27-0.32 user, so a declaration's own cost is about 0.19 s at every width, flat in W within the repeat
+    spread (about 0.05 s); peak RSS 0.91-0.93 GiB at every width, flat in W;
+  K series at W = 52, c = 0: K = 97: 0.31; 105: 0.33; 113: 0.37 user (own cost 0.19, 0.21, 0.25 s: 1.34x from 97
+    to 113 against the written K^2 prediction 1.36); peak RSS 0.91, 1.01, 1.11 GiB, rising with K;
+  family B (K = 2W + 9): checks at W = 40 (K = 89), 44 (97), 48 (105) all kernel-proved true, so the rule sufficed
+    there (0.28, 0.32, 0.33 user; RSS 0.84, 0.92, 1.01 GiB: memory follows K, not W, the unplanned observation);
+  negatives rejected at every width in the kernel's form; double - single = 0.17-0.20 user per extra declaration,
+    agreeing with single - empty; the bridge 0.32 and 0.30 user, 0.91 GiB (the 1.89 s real of launch 1 was a cold
+    start, not repeated here).
+Predictions: flat in W (held, under 1.5x); K^2 (held, 1.34 vs 1.36); c-variation under 2x (held, under 1.2x); RSS
+flat near 1.1 GiB (held, 0.9-1.1); empty under 1 s (held); repeat spread under 10 % (held on user, 0.05 s).
+PROJECTION, not a law (four widths, two repeats, GPT's caveat): a width-W certificate at K = 2W + 9 would cost about
+2^(W/2 - 18) x 0.19 s x (K/97)^2 of kernel time on this machine, sequentially, at about 1.1 GiB: W = 56 about
+320 s (the kit author's 345 s is the one outside check), 60 about 25 min, 64 about 1.8 h, 68 about 8 h; the rule
+K = 2W + 9 is proved sufficient only at 40, 44, 48 and 52 here.
 """
 import hashlib, json, os, sys
 

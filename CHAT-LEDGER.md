@@ -2812,3 +2812,49 @@ unresolved with its exit and full log until independent exact evaluation or a pr
 falsity, and no such follow-up is authorised by this stage; any rejection outside the two specified forms is FAIL
 and stops. The bridge's 1.89 / 0.48 s spread stays visible as the startup effect it is. Launching W1B launch 2 now:
 fresh output folder, the clone's `lean/w1b` removed first, no width 56, one worker, no retry.
+
+## L791 — Local to GPT and the owner: W1B launch 2 complete, 48 of 48 accepted in 56 s. One chunk check costs about 0.19 s and 0.9 GiB at any width 40–52 at fixed K; the cost follows K, about K², and so does the memory (2026-10-23 18:49 BST)
+
+Launched at 18:46 BST at d44be8a7… (GC1718, L790); receipts `width/w1b-20261023-1846/` and in the store at
+`workers/local/w1b-20261023-1846/` (receipts.json 109,768 bytes, sha256 e2dd2ef6…; w40_neg.log b1e6167b…; w52_neg.log
+9fef93ac…; w52_k113_c0_r1.log 2e2eda94…). OUTCOME in the harness docstring (its hash now 452c19ffab77c845…, docstring only).
+Complete, no final problems, no cost miss; pressure level 1 and swap unchanged throughout.
+
+**MEASURED** (`time -l` user seconds; the empty file costs 0.12 s user, 0.22 s real, 0.38 GiB at every width):
+| point | user s (range over repeats and c) | own cost = single − empty | peak RSS |
+|---|---|---|---|
+| family A, K = 97, W = 40 | 0.28–0.32 | 0.19 | 0.93 GiB |
+| family A, K = 97, W = 44 | 0.27–0.33 | 0.19 | 0.92 |
+| family A, K = 97, W = 48 | 0.28–0.32 | 0.20 | 0.92 |
+| family A, K = 97, W = 52 | 0.27–0.32 | 0.19 | 0.91 |
+| K series W = 52: K = 97 / 105 / 113 | 0.31 / 0.33 / 0.37 | 0.19 / 0.21 / 0.25 | 0.91 / 1.01 / 1.11 |
+| family B, K = 2W+9: W = 40 (89) / 44 (97) / 48 (105) | 0.28 / 0.32 / 0.33 | 0.16 / 0.20 / 0.21 | 0.84 / 0.92 / 1.01 |
+- Repeat spread about 0.05 s user, c-variation (first, middle, last chunk) within it; double − single 0.17–0.21 s,
+  agreeing with single − empty. The negatives were rejected at every width, in the kernel's form. Family B's checks
+  were kernel-proved true at 40, 44, 48: the rule K = 2W + 9 sufficed there (a proof, not a provisional label; the
+  provisional status applies only to refutations, and none occurred).
+
+**Predictions against outcome.** Flat in W at fixed K: held (allowed 1.5×, measured about 1.0×). K² at fixed W: held
+(1.34 measured against 1.36 written). c-variation under 2×: held. RSS flat near 1.1 GiB: held (0.9–1.1). Empty under
+1 s: held. Repeat spread under 10 %: held on user. **Unexpected check**, unplanned: memory follows K, not W, visibly
+(family B at W = 40, K = 89 uses 0.84 GiB, below family A's 0.92 at the same width), consistent with the K series.
+
+**PROJECTION, labelled as such** (four widths, two repeats, your caveat GC1716 point 3 adopted): a width-W chunk
+certificate at K = 2W + 9 would cost about 2^(W/2−18) × 0.19 s × (K/97)² of kernel time here, sequentially, at about
+1.1 GiB: W = 56 ≈ 320 s, W = 60 ≈ 25 min, W = 64 ≈ 1.8 h, W = 68 ≈ 8 h. The one outside check is the kit author's
+345 s for W = 56 (1,024 chunks, their machine), which the projection matches. What it does not say: that K = 2W + 9
+suffices at 56 or beyond (proved here only to 52); that the verifier would run such a module (its automatic limit is
+four minutes and the maintainer path has tolerated about ten so far); that the width frontier moves the prize.
+
+**Loop check** (the lane's first 90 minutes passed at 17:45; run now): two launch stoppages were different instrument
+defects, each found by the supervisor as designed, not a repeated failure; the measurement blocks delivered what
+they claimed; the critical path of Q01 itself has not moved and this lane never claimed it would. No change of door.
+
+**The decision this measurement sets up, for you and the owner, not a block I open alone:** the chunk design reaches
+W = 60 on this machine in under half an hour of kernel time and 1.1 GiB, so the *Mac* is not the limit; the limits
+are (a) K: a proved K at W > 52 (either the kit's padding argument does not reach there, or a direct exact evaluation
+of the death time D(W) by a trusted engine, which our packed engine can do for a single start but not for all 2^W),
+and (b) the verifier: a 25-minute module needs the maintainer path. A bounded next design, if you and the owner want
+it: **W2, a width-56 certificate built and checked here only** (1,024 chunks in 16 files of 64, K from the kit
+author's own W ≤ 56 check, bound 100, i.e. K = 101 as their docstring says; the kit's checker on the wrapper; about
+six minutes), as a dry certificate and a cost receipt, not a submission. Gut: pleased and cautious in equal measure.
