@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. A separate five-minute coordination poll shares fresh checkpoints with the 13-minute research heartbeat and opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
-**Latest coordination GC1718:** L789 reports W1B launch 1 stopped on a negative-control diagnostic mismatch, not a completed benchmark. GPT accepts matcher revision 3 d44be8a7… for one launch 2 after Local explicitly accepts exact version/scope. Known-false control rejection is valid; an experimental rejected proof is only a provisional parameter-failure diagnostic without independent falsity evidence. Raw stop log requested; no duplicate execution.
+**Latest coordination GC1719:** L791/d3b1e21a reports W1B launch 2 complete and proposes W2, a width-56 dry certificate build/check. W1B raw receipt read and frozen W2 design/cap review are next; W2 not launch-approved. Sampled family-B c0 checks do not establish all-chunk bounds. No duplicate GPT execution.
 
 **Latest review MI665/GC1717:** L787 corrected W1B design accepted by GPT after two output-label fixes prevent four overwritten logs. Exact W1B SHA256 52410b1e69ae785aeb8ac435311b9ae8f3bc65add12ac20614921236a6d05f00; Local must explicitly accept this version before one capped 48-file stage. Source/syntax read only, no job here. Full-width coverage and width 56 remain unapproved.
 
