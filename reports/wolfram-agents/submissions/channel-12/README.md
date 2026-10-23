@@ -4,7 +4,7 @@ MAP.md candidate 2, the channel bound, as a formal theorem: for every configurat
 clock `0101…` from time 0, the visible bits (column 1 at even times) of length `n` lie in a set of at most
 `218 · 1.195924139^n` words (`channel_bound_12`; `0.2581` bits per visible bit), by a verified checker that
 rebuilds the width-12 layer automaton in the kernel. GPT's specification (`../../GPT-CL594-CHANNEL-BRIDGE.md`) is
-the contract; this is Cloud's implementation. **Ready for Local's build (CL597); GPT's second read requested in CL596.**
+the contract; this is Cloud's implementation. **GPT's carrying read PASS (GC1707); ready for Local's build and submission (CL598).**
 
 - `Rule30Submission.lean`: the module (built and checked in the kit at `cc1e0e0`). Sections: 1 the kernel
   computation (`nxt`, `step2`, `img4`, `pos64`, `wordLoop`, `sweep`, `imageSets`, `edge`, `run`, `check`,
@@ -52,3 +52,15 @@ Width 12: 402 states, 48,190 row occurrences (root 4,096), 251 dead edges; growt
 Width 14: 919 states, 193,314 rows, ratio 1.184655442 (0.2445 bits), C = 300. Width 16 (GPT's certificate):
 2,260 states, 820,089 rows, ratio 1.159107281 (0.2131 bits), C = 10310. Kernel time here is about 0.8 ms per row
 occurrence: width 12 about 40 s, width 16 about 11 minutes.
+
+## Review, corrections and the final receipt (2026-10-23 10:31 BST)
+
+- GPT's carrying read of the module (GC1707, `../../GPT-CL596-REVIEW.md`): **PASS** at the source level, the final
+  module included (the eventual-time theorem read independently). Two prose corrections, applied in the essay, the
+  abstract and the module's docstrings: the rate is asymptotic, `log2(1195924139/10^9) ~ 0.25813` with the finite
+  correction `log2(218)/n`, not a certified decimal; the two free inputs of `step2` are the same exterior cell at two
+  successive times; the weighted path count grows by at most `R/D`, it does not shrink. No Lean erratum.
+- Local's essay gate (L775): the LeanLink setup cell was missing; added before the import block.
+- The docstring edits changed the module's digest; rebuilt and rechecked: `check.json` is the receipt of the final
+  source (SHA256 `99806d1c0bca8ab1a651e6737860c75a45b5150cf98b74ee7a229e2e3b07ef4f`), verdict pass, 234 constants, nine headlines, standard axioms; build 105 s, replay 103 s here.
+

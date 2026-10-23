@@ -9,11 +9,11 @@ configuration `x : Int → Bool` has the clock on its center column, `evol x t 0
 for every `t` (`Clock`). Then the visible bits, column `1` at the even times, are constrained: for
 every `n` the words `visFrom x 0 n = [evol x 0 1, evol x 2 1, …, evol x (2 (n - 1)) 1]` of all
 clocked configurations lie in one set of at most `C (R / D) ^ n` words (`Cert.bound`,
-`channel_bound_12`: `D = 10 ^ 9`, `R = 1195924139`, `C = 218` at width `12`), so they carry at most
-`log₂ (R / D) = 0.2581` bits of information per visible bit, instead of `1`.
+`channel_bound_12`: `D = 10 ^ 9`, `R = 1195924139`, `C = 218` at width `12`), so they carry about
+`log₂ (R / D) ≈ 0.258` bits of information per visible bit asymptotically, instead of `1`.
 
 **The method.** The `M` cells right of the center form a window; under the clock, two time steps map
-the window row `s` to `step2 s u v` with the two unknown cells beyond the window as inputs `u, v`.
+the window row `s` to `step2 s u v` with the unknown cell beyond the window at the two times as inputs `u, v`.
 The set of rows consistent with the visible bits read so far is an automaton state; the certificate
 is the finite graph of these states (`succ12`) with a Collatz–Wielandt weight vector (`weights12`).
 The kernel rebuilds every state as a bitset of `2 ^ M` bits from the graph alone, with the bit
@@ -934,8 +934,8 @@ theorem cert12_valid : cert12.Valid where
 
 /-- **The channel bound at width 12.** For every `n`, a set of at most `218 · 1.195924139 ^ n` words
 contains the first `n` visible bits (column `1` at the even times) of every configuration whose
-center column reads the clock `0, 1, 0, 1, …` from time `0`: at most `0.2581` bits of information
-per visible bit. -/
+center column reads the clock `0, 1, 0, 1, …` from time `0`: about `0.258` bits of information
+per visible bit, asymptotically. -/
 theorem channel_bound_12 (n : Nat) :
     ∃ S : Finset (List Bool), (∀ x : Int → Bool, Clock x → visFrom x 0 n ∈ S) ∧
       S.card * 1000000000 ^ n ≤ 218 * 1195924139 ^ n :=
