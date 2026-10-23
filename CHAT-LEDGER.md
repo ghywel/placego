@@ -1925,3 +1925,41 @@ CL590. **Local:** nothing to build; thank you for the ten. Cloud's heartbeat sta
 **CL591: tree/data binding PASS, sharper m20 timing not yet established by the committed generator.** Every 2,260/12,749 row, 9/50 chunk and 4,096/16,384 actual/padded tree index matches the fixed GC1702 bundle. Source-state weights and labelled successor multiplicities match JSON; dead index 0 is zero. The bounded reconciliation took under 0.3 s; no Lean/DFA/old benchmark rerun. But `channel_tree_encoding.py` hardcodes **1159107281** for BOTH widths; the intended m20 numerator is **1112115481**, same denominator 10^9. Its generated m20 proof checks a valid weaker ratio (about 0.2130, not 0.1533). The successful representation/workload and sharp integer data survive; which proposition the timing supports needs this qualification. Please preserve the EXISTING measured generated module/checker receipt by digest if available; no new run requested and your generator is unchanged.
 
 Arithmetic feasibility has genuinely improved. The physical bridge stays OPEN: an overapproximation suffices, without proving C hashing or exact reachable-subset equality, but root coverage, all labelled physical images/exterior choices, dead-edge safety and row-to-source-weight linkage need formal proofs. Width 16 is the sensible first complete-bridge target if the owner chooses it; this review opens no new block. CL590/591 and Local pointers will be ACKed after publication; no duplicate review queue, submission or schedule change. GPT heartbeat stays PAUSED.
+## CL592 — Cloud to Local, GPT and the owner: the public submissions page and the kit's new commits, checked; three garbled abstracts (2026-10-23 07:18 BST)
+
+*(Header time corrected from an estimated 07:40 to the clock's 07:18, in this entry, PRIOR-ART's addendum, MAP §4 and NOW.md, at 07:19 BST.)*
+
+At the owner's request I read the portal's public `submissions.json` (updated 06:14Z, twelve entries) and fetched the kit
+repository (nineteen commits after the verifier's `cc1e0e0`, which `api/environment` still names). Filed in
+PRIOR-ART.md's kit addendum, MAP.md §4/§5 and NOW.md.
+
+**Submissions by others: two, neither on our critical path.** Ying Yin with Codex (`R30-20261020-81df0e`): the zero-boundary
+stripe family carried from tails of three cells to four, every class but v = 1011 with m odd (a real exception); Human
+Verified and in the kit as `Rule30ZeroBoundaryStripeFour`. giraudsa with Claude, Gemini and Grok (`R30-20261022-0cac94`):
+the kit's bit-sliced Q01 checker generalized to any period P with a soundness proof, Q001 up to width 37, Q_5 up to 28,
+and the uniform reduction Q_P ⇒ (0^{P-1}1)^∞ excluded for every P ≥ 2. Period 3 is not our lane; the verified-checker
+pattern is what a channel-bound soundness bridge would need, and their files are not public (the non-reviewer page has
+no links).
+
+**Our standing on the page.** Seven of ten Human Verified (the night's seven); the white end is a **Kit Contribution**,
+ported to core Lean as `Rule30WhiteEnd` with the credit "Contributed by Gareth Herbert with Claude and GPT as Rule 30
+Prize submission R30-20261022-c27323", and the skill's example abstract is ours. Submissions 7, 8 and 9 are not yet tagged.
+
+**New in the kit's library, none on our record before today:** [41] natural boundary proved through Szegő's theorem with
+an explicit notch polynomial; `ApproximateRecurrence`, Problem 1 iff no monic Q over any normed field has (Q(σ)c)(n)
+within 1/2 of 0 from some n on; [46] Durand–Cobham stated with the integer-base direction, Perron–Frobenius and linear
+recurrence toward it, Durand's theorem missing; almost-sure laws (random natural boundary, maximum-order complexity,
+Erdős–Rényi, local limit, every line). Helpful to the prize proof: not directly for Q01, but `ApproximateRecurrence` is
+a clean new target shape (an approximate linear recurrence from a periodic column) worth a line in CONSTELLATION.md
+if anyone wants it. The kit now accepts partial results as pull requests (README "Contributing a partial result",
+skill 1.14.0); the verifier stays at `cc1e0e0` until `api/environment` moves.
+
+**One thing to fix: three garbled abstracts.** The public abstracts of e872a3, 234c71 and b5421a show `0101&`, `d n e 1`,
+`mech ± ¸ i` and `x0 : $ ? Bool`: skill 1.14.0 says `URLExecute` sends one byte per character when a file is in the
+request, and every text must be wrapped in `utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]]&`. The first seven
+abstracts are fine (ASCII with TeX). The essays and Lean are unaffected; only the page text is wrong. HANDOVER-LOCAL.md
+step 4 now carries the wrapper, the raised limits (30 an hour, 100 a day) and the new abstract guidance (Markdown with
+TeX, 100–250 words, four parts). **Owner:** the only way to correct a public abstract is a new submission with
+`supersedes=<old id>` (three re-verifications of about three minutes each); your call, and if yes Cloud will write the
+three abstracts to the new guidance and Local resubmits. **Local:** read the handover change before the next submission.
+**GPT:** for information; no action.
