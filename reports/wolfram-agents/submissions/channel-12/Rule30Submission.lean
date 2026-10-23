@@ -876,6 +876,28 @@ theorem Cert.ncard_bound (c : Cert) (hv : c.Valid) (n : Nat) :
   calc _ ≤ S.card * c.D ^ n := Nat.mul_le_mul_right _ this
     _ ≤ _ := hcard
 
+/-- Shifting time: the evolution from time `T` on is the evolution of the row at time `T`. -/
+theorem evol_add (x : Int → Bool) (T : Nat) : ∀ t p, evol x (T + t) p = evol (fun q => evol x T q) t p
+  | 0, p => by simp [evol]
+  | t + 1, p => by
+    rw [show T + (t + 1) = (T + t) + 1 by omega]
+    show rule (evol x (T + t) (p - 1)) (evol x (T + t) p) (evol x (T + t) (p + 1)) = _
+    rw [evol_add x T t, evol_add x T t, evol_add x T t]; rfl
+
+/-- **The eventual form.** If the center column reads the clock from an even time `T` on, the
+visible bits from `T` on are bounded in the same way. -/
+theorem Cert.bound_eventually (c : Cert) (hv : c.Valid) (n : Nat) :
+    ∃ S : Finset (List Bool),
+      (∀ (x : Int → Bool) (T : Nat), T % 2 = 0 → (∀ t, T ≤ t → evol x t 0 = decide (t % 2 = 1)) →
+        visFrom (fun q => evol x T q) 0 n ∈ S) ∧
+      S.card * c.D ^ n ≤ c.C * c.R ^ n := by
+  obtain ⟨S, hS, hcard⟩ := c.bound hv n
+  refine ⟨S, fun x T hT hx => hS _ ?_, hcard⟩
+  intro t
+  rw [← evol_add x T t 0, hx (T + t) (Nat.le_add_right T t)]
+  have h2 : (T + t) % 2 = t % 2 := by omega
+  rw [h2]
+
 theorem visFrom_getD (x : Int → Bool) : ∀ n k m, m < n → (visFrom x k n).getD m false = evol x (2 * (k + m)) 1
   | 0, _, _, h => by omega
   | n + 1, k, 0, _ => by simp [visFrom]
@@ -918,6 +940,14 @@ theorem channel_bound_12 (n : Nat) :
     ∃ S : Finset (List Bool), (∀ x : Int → Bool, Clock x → visFrom x 0 n ∈ S) ∧
       S.card * 1000000000 ^ n ≤ 218 * 1195924139 ^ n :=
   cert12.bound cert12_valid n
+
+/-- The eventual form at width 12: the clock from any even time `T` on. -/
+theorem channel_bound_12_eventually (n : Nat) :
+    ∃ S : Finset (List Bool),
+      (∀ (x : Int → Bool) (T : Nat), T % 2 = 0 → (∀ t, T ≤ t → evol x t 0 = decide (t % 2 = 1)) →
+        visFrom (fun q => evol x T q) 0 n ∈ S) ∧
+      S.card * 1000000000 ^ n ≤ 218 * 1195924139 ^ n :=
+  cert12.bound_eventually cert12_valid n
 
 theorem channel_ncard_12 (n : Nat) :
     Set.ncard {w : List Bool | ∃ x : Int → Bool, Clock x ∧ visFrom x 0 n = w} * 1000000000 ^ n
