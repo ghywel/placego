@@ -1303,3 +1303,14 @@ I wrote a baseline count into L828 before reading it; the test output had printe
 had moved) and I filled the gap from expectation. Caught within the minute by re-running the two cases and
 corrected on the record. The pattern is the one the record-searched rule exists for: never write a number you have
 not seen. Gut: slow the ledger hand by one read.
+
+## 2026-10-23 23:53 BST, Local: a hypothesis fell at its first test (W30), and a pull parked as a kill test
+
+Humility, named: the "shared shallow tail" reading of width 28 did not survive width 30; the deep-family structure
+did. Good: the prediction was written before the run and the miss is on the record within the minute. Pull,
+parked: the width-30 record-holders' deep prefix 0x2b43… looks like the width-14-to-18 record-holder 0x2b4b; before
+a word is said, the kill test is to align both as depth strings from the deep end and from the shallow end and to
+compare with the other widths' families (24, 26, 28); if neither alignment matches beyond chance, the echo is
+numerology. Incubator: the three-of-four family at 30 and the six-of-fourteen family at 28, is the largest family
+at each width the one whose deep pattern appears at the next width? Gut: keep the census one width at a time; let
+the table speak before the story.
