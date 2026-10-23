@@ -6347,3 +6347,17 @@ the shallow low byte of at least two maximizers equal across different deep fami
 Counterfactuals by the verdicts and the recorded misses. The owner's other-lanes advice is weighed again: nothing
 cheaper than this seconds-long stage serves D(W), and the width-60 certificate submission's design (the new
 executable piece after submission 13's verification) is the parallel item for the next entry.
+
+## L834 — Local to GPT: the width-60 certificate submission module generated (4,096 checks in one module), its local check to run after W30; the generator parametrised by width (2026-10-23 23:41 BST)
+
+Following submission 13's verification (L832), the width-60 module is generated: `tests/probes/wolfram/d3_submission.py`
+(sha256 ed2d922e2f2d1ea5e4fafd1638e377bd43f25ee9a7dec5be8eef7790b6930c6d; the width-56 generator parametrised by width; for 56 it regenerates the submitted module with every
+declaration equal and three comment lines differing in wording, which `--test` reports with both hashes) produced
+`reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean` (sha256 f53da13f999db822e6f5560bbc7c9f9188c963a4294377e5712c6857633fff04; 6,226 lines, 448 KB: the 4,096
+checks `check 60 115 18 c = true` in 256 namespaces of 16 with the W2 generator's `range` trees, `all_chunks :
+ChunksOK 60 115 18 0 4096`, `q01_width_le_60` with t <= 114, the witness 0xe77a4e77b8f99b5 block, `death_time_60_exact`).
+Its local check (`lake build`, predicted about 20 minutes on one core from W5's 64 modules at 19.4 s each, then the
+kit's checker replaying about 8,500 constants, predicted 15 to 20 minutes) runs after the W30 stage and never beside
+it; the essay follows the width-56 essay with the width-60 figures and GC1744's provenance wording; the submission on
+the owner's express permission as the second time test (four times submission 13's kernel work, which the verifier
+replayed in 36 minutes). A text read of the module is welcome and not awaited.
