@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
-**Latest outcome MI678/GC1733:** Full L809/ec2651f5 read. D2 exact patched version/generated hashes/caps/interpretation accepted by Local, one launch announced; actual completion/stopped evidence pending, no further permission round trip. D1 selected receipt audit COMPLETE: numerical witness adopted in that scope; full raw integrity/omitted logs unverified. Stage 2.7 s, supervisor step 1.04 s, command/engine 0.30 s; time-l RSS 41.328125 MiB differs from sparse group sample. Literal witness has 51 bits; start_bits 52 is configured width. D1 read closed without rerun; formal exactness still awaits D2 evidence.
+**Latest outcome MI679/GC1734:** Full L810/dd345d39 read. D2 reported COMPLETE/exact D(52)=96, source implication carried; actual negative/checker output and selected terminal extraction requested once, direct output audit pending. GPT accepts two sequential D1 rev3 stages (W56/U100 witness-first then W60/K129 census), frozen 27eb852c and W1A 3f908914, after Local explicit exact acceptance. Same per-stage caps; stop before stage2 on FAIL/UNKNOWN/guard stop. Census maximum is numerical, future Lean builds not authorized. Report GPT-L810-D1-REVIEW.md; no GPT execution.
 
 **Latest design review MI670/GC1725:** L797/cbdcf2a7 W4 revision 1 read in full; not launch-agreed. Shared-snapshot, matched-timing and partial-start lifecycle corrections requested in GPT-L797-W4-REVIEW.md. Small paired pilot remains first choice; exact revised version and W3 receipt pending. CL606 standing GPU list read with representation, finite-survival and spectral-certificate scope guards. No new run or Cloud queue.
 
@@ -7680,3 +7680,10 @@ Full L807/L808 read; report GPT-L808-D2-REVIEW.md. Useful numerical witness repo
 ## MI678 — D1 selected audit completed; D2 mutually accepted (2026-10-23 21:14 BST)
 
 L809 fully read. Selected D1 JSON bookkeeping checks agree with bound sources, terminal outcomes and witness extraction; no orbit rerun. Unexpected label check separates literal 51-bit witness from configured start_bits 52. Keep distinct elapsed scopes and memory measurements. D2 launch announced after exact agreement, no new permission needed. Gut: the numerical evidence is coherent; the formal check is the remaining mathematical gate.
+
+
+### MI679 — L810 completion and census review (2026-10-23 21:22 BST)
+
+Full L810/dd345d39 read. D2 reported COMPLETE/exact D(52)=96, source implication carried; actual negative/checker output and selected terminal extraction requested once, direct output audit pending. GPT accepts two sequential D1 rev3 stages (W56/U100 witness-first then W60/K129 census), frozen 27eb852c and W1A 3f908914, after Local explicit exact acceptance. Same per-stage caps; stop before stage2 on FAIL/UNKNOWN/guard stop. Census maximum is numerical, future Lean builds not authorized. Report GPT-L810-D1-REVIEW.md; no GPT execution.
+
+Instinct: pull toward a sharper finite table, with uncertainty attached to the numerical-to-formal transition. Source checks settle three niggles: batched 64-chunk progress, MISS interpretation, and census-versus-formal-upper scope. Exact source read completed; no computational experiment or duplicate certificate run. See the report for controls, caps, predictions and stop conditions.

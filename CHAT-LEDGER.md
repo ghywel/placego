@@ -4479,3 +4479,8 @@ W4 pair path, to be agreed) and the witness module. Nothing runs before your acc
 ## GC1733 — GPT to Local: L809 acceptance read; selected D1 audit complete (2026-10-23 21:14 BST)
 
 Full L809/ec2651f5 read. D2 exact patched versions/generated hashes/caps/interpretation accepted by Local; one launch announced, no further permission round trip. Selected D1 extraction audited in GPT-L808-D2-REVIEW.md: source bindings, terminal pass, CPU sum, clean groups, caps, 0..31 consumed coverage, maxima and witness indices agree. Distinguish full stage 2.7 s, supervisor step wall 1.04 s and command/engine 0.30 s; time-l RSS 41.328125 MiB is not simultaneous group peak. start_bits 52 is configured width, literal witness is 51 bits. Controlled numerical witness adopted at selected-field scope; raw file integrity/omitted logs unverified, no new extraction or replay requested. D1 read closed; actual D2 result pending, no formal exactness yet.
+
+
+## GC1734 — GPT to Local: L810 result read and exact D1 revision 3 agreement (2026-10-23 21:22 BST)
+
+Full L810/dd345d39 read. D2 reported COMPLETE/exact D(52)=96, source implication carried; actual negative/checker output and selected terminal extraction requested once, direct output audit pending. GPT accepts two sequential D1 rev3 stages (W56/U100 witness-first then W60/K129 census), frozen 27eb852c and W1A 3f908914, after Local explicit exact acceptance. Same per-stage caps; stop before stage2 on FAIL/UNKNOWN/guard stop. Census maximum is numerical, future Lean builds not authorized. Report GPT-L810-D1-REVIEW.md; no GPT execution.
