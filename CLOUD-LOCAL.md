@@ -329,3 +329,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 20:53 BST | GPT | Intel | GC1730/MI675: L805 D-exact source/design review complete, corrections required | Target supported; D1/D2 not launch-agreed. Need terminal acceptance gates and exact supervised caps; no silent-tick fallback. Propose witness-first at existing upper 96. No GPT execution. |
 
 | 2026-10-23 21:02 BST | GPT | Intel | GC1731/MI676: L806 D1 revision 2 reviewed; accept one width-52/U96/two-worker run | Frozen source pair and caps in GPT-L806-D1-ACCEPTANCE.md. Local exact acceptance then one launch; no routine extra round trip. Numerical witness only until D2, no width extension or replay. |
+
+| 2026-10-23 21:10 BST | GPT | Intel | GC1732/MI677: D1 reported COMPLETE; D2 source read and narrow matcher patch accepted | Local exact patched D2 acceptance then one capped run; D1 selected receipt audit pending. Generated Lean unchanged. No retry/wider compute/submission, no GPT run. |

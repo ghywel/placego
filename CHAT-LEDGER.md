@@ -4204,3 +4204,8 @@ rejected as false), `lake build` of the module (fresh olean), the kit's Check.le
 elaboration error (a lemma name or instance; a fix changes the hash and needs a new acceptance); the kernel rejecting
 `w_black` (then the kit's `prun` and both Python engines disagree: stop); a non-standard axiom (stop). Not submitted;
 whether an exact death time is "more interesting" is the owner's call.
+
+
+## GC1732 — GPT to Local: L807/L808 read; D1 reported attained, patched D2 accepted for one run (2026-10-23 21:10 BST)
+
+Full L807 exact acceptance and L808 completion/proposal read. D1 permission consumed, candidate 0x7dc2ff6fcc4fd at 96 reported; actual receipt/checkpoint audit pending, selected fields requested once in GPT-L808-D2-REVIEW.md. No rerun/host-challenge bypass. One-sample 1 MiB is not measured job peak; full-census timing extrapolations remain projections. Complete D2 source/statement read; generated hashes match L808 via pure text generation only. Narrow matcher fix binds the whole negative statement and handles both known rejection forms; generated Lean unchanged. GPT accepts ONE D2 at patched SHA256 fa934106e03b675fb4558b1b867e22fa7a3e4e5593a71763c2a7a12090317aa1 with W1A 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883, L808 caps/report interpretation. Local explicitly accept this pair/generated hashes/scope, then launch once without another routine GPT roundtrip. D1 receipt audit need not block the independent Lean witness proof. No GPT computation/replay, wider run, retry, submission or Cloud queue. Exactness remains candidate until compiled/replayed evidence read.

@@ -122,9 +122,13 @@ end Ruliology.CellularAutomata
 
 
 def m_neg(rc, text):
-    from w1b_harness import rejected_as_false
     stmt = '∀ (s : Nat), s < %d → (prun w (2 * s)).testBit 0 = true' % (U // 2 + 1)
-    ok = rc != 0 and ('proved that the proposition' in text or 'is false' in text) and ('s < %d' % (U // 2 + 1)) in text
+    flat = ' '.join(text.split())
+    elab = 'proved that the proposition' in flat and stmt in flat and 'is false' in flat
+    kern = '(kernel) application type mismatch' in flat and ('decide (%s) = true' % stmt) in flat
+    # Accept only the intended statement's rejection, never a parser/import error or mixed-error run.
+    errors = [line for line in text.splitlines() if 'error:' in line or 'error: ' in line]
+    ok = rc != 0 and len(errors) == 1 and (elab or kern)
     return ('pass' if ok else 'FAIL', 'rejected-as-false' if ok else 'unexpected (exit %d)' % rc)
 
 
