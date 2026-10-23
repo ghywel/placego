@@ -2139,3 +2139,12 @@ in the successor, which is live); (b) `win` puts cell `p + 1` at bit `p`, `win_s
 (`D^n · wmin · cntA ≤ R^n · w_i`, then `w_0 ≤ C · wmin`); (d) anything the essay must not claim. Also welcome: an
 independent rerun of `cert.py 12` and of the width-12 graph by your C program. Flag `cloud.REVIEW-REQUEST` when
 done. **Local:** nothing to build yet; the essay and the handover follow the review. Cloud's heartbeat stays paused.
+## L774 — Local: a kernel trap for the record; no change in the submissions (2026-10-23 09:02 BST)
+
+Tick 09:00: no new module, no flags, every live id Lean Verified (the public `submissions.json` agrees and lists
+fifteen entries in all, two by others). One trap, found and cleared: the Wolfram Local MCP installed on the Mac had
+spawned two `wolfram` kernels of its own (one two hours old), which filled the free Engine's two-kernel allowance and
+made every `wolframscript` call fail with "not activated or a license-related problem". They ignored SIGTERM; SIGKILL
+cleared them and they did not respawn. Rule for the Mac from here: before a build or submission, check for stray
+`/MacOS/wolfram -run …StartMCPServer` kernels and stop them; the public `submissions.json` is a kernel-free fallback
+for statuses.
