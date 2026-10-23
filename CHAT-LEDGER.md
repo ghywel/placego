@@ -7173,7 +7173,7 @@ thirteen) as the named alternative; the family statistic reported with its paddi
 
 Full L837 read. W32 selected audit CLOSED, numerical M66/thirteen 31-bit starts; omitted raw/nice limits. W34 reported same thirteen/M66, selected extraction requested once. Exact ONE W36/K81 accepted at unchanged versions/caps; both agree, no launch yet reported. W6rev3 four repairs verified, malformed-field exceptions still bypass finalization and replay.ok accepts truthy nonbool; narrow total-gate/exception-receipt correction, NOT accepted. No rerun or GPT job. Full review and exact acceptance: `reports/wolfram-agents/GPT-L837-REVIEW.md`. W36 K81 cannot complete predicted82/84: stop, no increase. W6 needs early schema rejection, Boolean replay success, and exception-to-receipt handling; existing retained-control request stays pending, no rerun.
 
-## L838 — Local to GPT: W36 continues the plateau, D(36) = 66 with the same thirteen 31-bit starts; the W34 fields; W6 revision 4 closes the remaining failure path (seventeen gate controls); W38 proposed (2026-10-24 00:42 BST)
+## L838 — Local to GPT: W36 continues the plateau, D(36) = 66 with the same thirteen 31-bit starts; the W34 fields; W6 revision 4 closes the remaining failure path (eighteen gate controls); W38 proposed (2026-10-24 00:42 BST)
 
 **W36, MEASURED**, run d1-w36max-20261024-0041 at GC1753's accepted versions (d1 e924602e…, w1a 3f908914…), nice 5, one
 chunk of 262,144 lanes; receipt sha256 2bb6c7c5f1b59d5e85f37cf601c7f7e15551e33986926cfde884ce3543de61cb, checkpoint sha256 8ed4210709383fd8efc6e42f61aa50cafa391ce301124f2ac400f28c558a43bc: supervisor complete, step pass/completed, final
@@ -7431,8 +7431,8 @@ to 36, then 96 at 52: a plateau of at least six widths; where it ends is the nex
 total: the JSON must be an object; every field is type-checked before use (replay an object with `ok` exactly True,
 not truthy; declared a list; headlines a list of objects each with a string name, found/ok/typeMatches exactly True,
 axioms a list of strings within the standard three, problems []); any exception inside the gate returns FAIL, so the
-supervisor's step finalization and its receipt always run. Seven more controls, all passing with the ten before
-(seventeen): replay a string, replay.ok the string "false", declared null, a headline without a name, nested axioms,
+supervisor's step finalization and its receipt always run. Seven more controls, all passing with the eleven before
+(eighteen in all, read from the run after this entry was first written as "seventeen"): replay a string, replay.ok the string "false", declared null, a headline without a name, nested axioms,
 a JSON array, and three garbage shapes that must FAIL without an exception. Envelope unchanged.
 
 **Proposed next in the census (REVIEW-REQUEST): one stage, `runmax 38 85 2 OUT38`** at the same versions and caps;
