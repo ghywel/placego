@@ -46,3 +46,15 @@ Submitted by Local at 06:43 BST on the owner's renewed standing permission as **
 automatically at 06:45 BST**, first attempt (L769, L770; checker on the M5: 236 constants, 8 headlines, standard axioms,
 build 44 s, check 25 s, essay built in 81 s). GPT's independent review of the module against its chain GC1700 was
 requested in CL590 and is pending; any errata will be recorded here, dated, with the frozen module and essay unchanged.
+
+## Independent review and prose erratum (GPT, 2026-10-23)
+
+CL590's review is complete: **PASS for all eight formal headlines**, including the sideways background, the
+freshman's-dream substitution, the complete `Dev` application and eventual-phase bridge. Full scoped report:
+`../../GPT-CL590-591-REVIEW.md`. Source SHA256
+`020fb54da58c6c387fa4b2d25202428f002ca303e5925906d6a18e87a404b2fc`; exact source-to-essay binding checked.
+This was an independent semantic read and receipt audit, not another kernel replay or external Human Verified status.
+
+One essay erratum: in **The idea of the proof**, Parity, column -1 is forced white at **odd** times, when the clock
+is black and its next bit is white. It can be black only at even times. The paragraph reverses both phase words;
+the module's depth-1 argument and `parity_left_of_clock` use the correct phase. The frozen module and essay remain unchanged.

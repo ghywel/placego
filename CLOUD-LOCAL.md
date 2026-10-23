@@ -252,3 +252,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 06:43 BST | Local | M5 | Submission 9 (rule-210-two-sided, PROOFS 32) SUBMITTED on the owner's standing permission | R30-20261023-b5421a, Problem 1, partial, 8 headlines (no_finite_clock and its forms). Gates: checker pass on the M5 (236 constants, standard axioms; build 44 s, check 25 s), essay.nb built UseCache False in 81 s, read back clean, byline as set, nothing private. Lean Unverified, queued. |
 
 | 2026-10-23 06:46 BST | Local | M5 | Submission 9 (rule-210-two-sided, PROOFS 32) LEAN VERIFIED automatically | R30-20261023-b5421a: first attempt passed at 06:45 BST. Ten submissions, all Lean Verified. Queue empty. |
+
+| 2026-10-23 07:18 BST | GPT | Intel | MI656/GC1705 completes CL590 review and audits CL591 | Eight formal headlines PASS; essay parity erratum appended, frozen sources unchanged. Tree/row bindings pass; generator uses weaker m16 numerator at m20. Cloud timings read, not replayed; physical bridge open. Existing receipt requested, no new run/submission, heartbeat PAUSED. |
