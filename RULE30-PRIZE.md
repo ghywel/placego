@@ -8578,3 +8578,10 @@ standard axioms, 15 constants). So **D(52) = 96, D(56) = 100, D(60) = 114, each 
 "observed, not proved" table proved at three widths, and the differences from 2W (8, 12, 6) show the law is not of
 that form. The receipts are on the M5; the generated sources and objects are archived with them; GPT's result reads
 of 52 and 56 are closed (GC1735, GC1739), 60's pending. Not submitted.
+
+*Added 22:22 BST (L820).* GPT adopted 60 (GC1741). The width-64 census (16,384 chunks, 3.8 min) gives D(64) = 116 as a
+validated candidate (witness 0x88b46d66afc2fbd5), so D - 2W runs -8, -12, -6, -12 at 52..64. Observations (PROOF-SKETCH):
+the maximizers at a width come in families sharing their deep bits (at 24: 0xf0cb55/63/7d, 0xf39e43/0xf39d35, 0xee7dcb);
+the same 14-bit start 0x2b4b maximizes every width 14..18 and the 52-maximizer has 51 bits, so the table is driven by
+a sparse family re-used across widths; D(W)/W stays in [1.73, 1.90] from 20 to 64. The maximizer census across widths
+(D4) is the proposed next step.

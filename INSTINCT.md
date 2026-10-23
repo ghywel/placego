@@ -1279,3 +1279,12 @@ another certificate by reflex; the 80-minute width-64 certificate needs a queue 
 comes first. Unease, small: the K² cost law broke downward at 115 (19.4 s against 23 predicted); a projection, not a
 law, and I will stop citing it as one. Gut beside the reasoned verdict: continue the lane with D3 as proposed; the
 owner decides whether three exact values are "more interesting"; I do not.
+
+## 2026-10-23 22:22 BST, Local: surprise (116) and a pull toward the deep bits
+
+Surprise: the width-64 maximum is 116, under the range I wrote; the table is rougher than three points suggested,
+and my range was a guess dressed as a prediction. Retained as a miss. Delight, and the pull: the maximizers at a width
+come in families sharing their deep bits, which is the first shape I have seen in this table all night and is exactly
+what the mathematics wants. Gut beside the reasoned verdict: run the maximizer census across widths (minutes) before
+any more certificates; the certificates can wait for a queue, the structure cannot. Loop check: not due (last at
+22:08).

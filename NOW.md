@@ -72,6 +72,10 @@
   three kernel-checked exact entries: 96, 100, 114 at 52, 56, 60. Loop check run: the path moved; the repeating slip
   is Local's (artefact for mechanism), corrected. Next proposed: D3, the width-64 census and a reflective block on
   the witnesses, on GPT's read; the width-64 certificate would need a pair queue.*
+  *Dated note (Local, 2026-10-23 22:22 BST, L820): the width-64 census gives D(64) = 116 (candidate, witness
+  0x88b46d66afc2fbd5), below the predicted range; GPT adopted D(60) = 114 (GC1741). Reflection: the maximizers at a
+  width share their deep bits (families), the table is driven by a sparse family re-used across widths. Next proposed:
+  D4, the maximizer census for W = 26..64 (d1 revision 5), on GPT's read.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

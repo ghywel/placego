@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D1, revision 4 (revision 3, the executed version 27eb852c…, with the stale MISS sentence corrected and the stage outcomes below; code unchanged): revision 3 was revision 2 (the executed a5f331d3…) plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
+"""D1, revision 5 (revision 4, the executed version e61d1694… for the width-64 census, plus a `maximizers` mode and its `runmax` launcher: every lane at the maximal level, each start validated; nothing else changed). Revision 4 was (revision 3, the executed version 27eb852c…, with the stale MISS sentence corrected and the stage outcomes below; code unchanged): revision 3 was revision 2 (the executed a5f331d3…) plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
 pinned source, with the kit's packed physical evaluator (`Rule30ZeroBoundarySmall.pstep`) beside it, for the lane
 "D-exact": the exact death time D(W) of a width, kernel-checked above (a chunk certificate at K = D + 1) and below (an
 explicit witness start evolved by the kit's `prun`, bridged to `zrow` by `run_toFun`). Lane chosen by Local on the
@@ -98,6 +98,14 @@ chunks covered, no lane alive at 129, maximum level 114 attained by exactly one 
 Against the predictions: 56 under a minute (6 s); 60 about two minutes with M in [102, 116] (50 s; M = 114).
 So the candidates are D(56) = 100 (the W2 bound attained) and D(60) = 114 (the W3 bound 128 is loose by 14);
 neither is a law of the form 2W - c (D - 2W = -8, -12, -6 at 52, 56, 60).
+OUTCOME of revision 4's width-64 census (MEASURED, GC1740's accepted version e61d1694…, run d1-w64-20261023-2216,
+`runcensus 64 137 2`, nice 5, two workers; receipt sha256 7b269d16895710fa6aa0fca17b665c3896b810cd3db7f25cfefab04a30e53162; checkpoint sha256
+1dcd9f1ccc4dda5f4ce1ea6e81e0f63865696aed2177052027fb844fd8d79866): CENSUS-ATTAINED, all 16,384 chunks covered, no lane alive at 137, maximum level
+116 attained by exactly one chunk (10686, lane 42727), witness 0x88b46d66afc2fbd5 (64 bits), physical death 116
+(validator and the list engine); step pass, final problems [], wall 229.0 s, user 460.9 s, sys 4.4 s, max RSS 81
+MiB, sampled group peak 204 MiB with 5 members, groups clean; recurrence sum 454 s (28 ms per chunk). Against the
+predictions: about four minutes (3.8); group RSS under 1 GiB (0.2); M in [118, 134]: MISS, M = 116 is below the
+range (D - 2W = -12 at 64). So the candidates are D(64) = 116 with the certified 96, 100, 114 before it.
 """
 import hashlib, json, os, platform, sys, time
 
@@ -379,6 +387,49 @@ def census(W, K, workers, out_path):
     return res
 
 
+def maximizers(W, K, workers, out_path, max_list=4096):
+    """Revision 5 (for GPT's read): the census, keeping EVERY lane at the maximal elimination level M over all chunks
+    (not one), with each such lane's reconstructed start validated physically at M; the count of maximizers and
+    their starts (hex) are the output, for the question what the extremal starts have in common. Verdicts as census;
+    FAIL if any maximizer's start fails the validator. max_list caps the retained list (the count is always exact)."""
+    import multiprocessing as mp
+    n = min(W // 2, 18); chunks = 1 << (W // 2 - n)
+    t0 = time.monotonic()
+    res = {'mode': 'maximizers', 'W': W, 'U': None, 'K': K, 'n': n, 'chunks': chunks, 'workers': workers,
+           'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'python': platform.python_version(),
+           'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'verdict': 'RUNNING', 'reason': None, 'completed': [], 'per_chunk': {}, 'setup_s': None, 'elapsed_s': 0.0}
+    ts = time.monotonic(); pats_of(n); res['setup_s'] = round(time.monotonic() - ts, 3); atomic_write(out_path, res)
+    verdict, reason = 'RUNNING', None; M = -1
+    with mp.Pool(workers) as pool:
+        for job in pool.imap(chunk_job, [(W, n, c, K) for c in range(chunks)], chunksize=1):
+            c = job['c']
+            if c in res['per_chunk']: verdict, reason = 'FAIL', 'duplicate chunk %d' % c; break
+            res['per_chunk'][c] = job; res['completed'].append(c); res['elapsed_s'] = round(time.monotonic() - t0, 1)
+            if not job['all_dead']: verdict, reason = 'FAIL', 'chunk %d has a lane alive at K = %d' % (c, K); atomic_write(out_path, res); break
+            if job['max_level'] is not None and job['max_level'] > M: M = job['max_level']
+            if len(res['completed']) % 64 == 0 or len(res['completed']) == chunks: atomic_write(out_path, res)
+    if verdict == 'RUNNING':
+        cov = sorted(res['completed']) == list(range(chunks)); res['coverage_exact'] = cov
+        if not cov: verdict, reason = 'FAIL', 'coverage incomplete'
+        else:
+            top = [c for c, v in res['per_chunk'].items() if v['max_level'] == M]
+            starts = []; count = 0; bad = []
+            for c in top:
+                _, elim, lasts = run_lanes(W, n, c, K, record=True); mask = elim.get(M, 0); p = 0
+                while mask:
+                    if mask & 1:
+                        count += 1; r = reconstruct(W, lasts, p)
+                        ok, why = validate_witness(W, M, r)
+                        if not ok: bad.append((c, p, hex(r), why))
+                        elif len(starts) < max_list: starts.append({'chunk': c, 'lane': p, 'start_hex': hex(r), 'bits': r.bit_length()})
+                    mask >>= 1; p += 1
+            res.update({'U': M, 'maximizer_count': count, 'maximizers': starts, 'chunks_attaining_M': len(top), 'rejected': bad[:16]})
+            verdict, reason = ('MAXIMIZERS', 'M = %d, %d maximizing lanes over %d chunks, all validated' % (M, count, len(top))) if not bad else ('FAIL', '%d maximizers rejected by the validator' % len(bad))
+    res.update({'verdict': verdict, 'reason': reason, 'elapsed_s': round(time.monotonic() - t0, 1), 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'), 'recurrence_s_total': round(sum(j['seconds'] for j in res['per_chunk'].values()), 2)})
+    atomic_write(out_path, res)
+    return res
+
+
 def supervised(W, U, workers, out_dir, kit=None, mode='witness'):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import w1a_harness as H
@@ -400,7 +451,7 @@ def supervised(W, U, workers, out_dir, kit=None, mode='witness'):
     def m_witness(rc, text):
         try: d = json.load(open(outj))
         except Exception as e: return 'FAIL', 'no checkpoint: %r' % e
-        return ('pass' if d.get('verdict') in ('ATTAINED', 'MISS', 'CENSUS-ATTAINED') and rc == 0 else 'FAIL'), '%s: %s' % (d.get('verdict'), d.get('reason'))
+        return ('pass' if d.get('verdict') in ('ATTAINED', 'MISS', 'CENSUS-ATTAINED', 'MAXIMIZERS') and rc == 0 else 'FAIL'), '%s: %s' % (d.get('verdict'), d.get('reason'))
     r = sup.run_step('%s_W%d' % (mode, W), [sys.executable, os.path.abspath(__file__), mode, str(W), str(U), str(workers), outj], out_dir, 25 * 60, 50 * 60, m_witness)
     R['complete'] = r['verdict'] == 'pass'; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
     print('DONE' if R['complete'] else 'STOP', r['verdict'], r['reason'], r.get('match_note'))
@@ -417,6 +468,9 @@ if __name__ == '__main__':
     if a[0] == 'census' and len(a) == 5:
         r = census(int(a[1]), int(a[2]), int(a[3]), a[4])
         print(r['verdict'], r['reason'], r.get('witness'), r['elapsed_s'], 's'); sys.exit(0 if r['verdict'] == 'CENSUS-ATTAINED' else 1)
-    if a[0] in ('run', 'runcensus') and len(a) in (5, 6):
-        supervised(int(a[1]), int(a[2]), int(a[3]), a[4], a[5] if len(a) == 6 else None, mode='witness' if a[0] == 'run' else 'census')
+    if a[0] == 'maximizers' and len(a) == 5:
+        r = maximizers(int(a[1]), int(a[2]), int(a[3]), a[4])
+        print(r['verdict'], r['reason'], 'count', r.get('maximizer_count'), r['elapsed_s'], 's'); sys.exit(0 if r['verdict'] == 'MAXIMIZERS' else 1)
+    if a[0] in ('run', 'runcensus', 'runmax') and len(a) in (5, 6):
+        supervised(int(a[1]), int(a[2]), int(a[3]), a[4], a[5] if len(a) == 6 else None, mode={'run': 'witness', 'runcensus': 'census', 'runmax': 'maximizers'}[a[0]])
     print('usage: d1_engine.py test | witness W U WORKERS OUT.json | census W K WORKERS OUT.json | run W U WORKERS OUT_DIR [KIT] | runcensus W K WORKERS OUT_DIR [KIT]'); sys.exit(2)

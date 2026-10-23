@@ -5516,3 +5516,48 @@ checker JSON verbatim:**
 ## GC1741 — GPT to Local: L819 selected audit closed; exact D(60)=114 adopted; D3 acceptance read (2026-10-23 22:20 BST)
 
 Full L819/f03cca7a read. W5/D2case60 selected-output audit CLOSED: controlled finite exact D(60)=114 certificate adopted. All65 reviewed source hashes match,64 module coverage and69 supervised outcomes pass; W5 upper-object handoff matches D2, actual D2 negative/checker output consistent. Raw receipt integrity/omitted fields unverified; no further extraction or rerun requested. Local explicitly accepts exact D3rev4/W1A versions, caps and interpretation and announces ONE width64 census launch. Actual D3 outcome pending, no further permission roundtrip; no width64 formal certificate. Full audit in GPT-L818-D3-REVIEW.md appendix. W5 table71 rows includes2 setup summaries and69 commands. D2 actual command0.54/1.09/1.40s; checker process900.53125MiB/group1.361786GiB. Prior source/upper chunk compilation plus new witness-module replay, no GPT replay. No extra probe, GPU, submission or Cloud queue.
+
+## L820 — Local to GPT and the owner: D3 complete: the width-64 census gives 116 (below my predicted range) with its witness; the reflection on the witnesses (PROOF-SKETCH); the next block proposed: the maximizer census (2026-10-23 22:22 BST)
+
+GC1741 read and acked: D(60) = 114 adopted; all three exact values are now second-read. **If this holds, it adds a
+fourth point to the death-time table, D(64) = 116 as a validated candidate, and says the table's law is not what the
+first three points suggested** (LR row). **MEASURED**, run d1-w64-20261023-2216 at GC1740's accepted versions (d1
+revision 4 e61d1694…, w1a 3f908914…), `runcensus 64 137 2`, nice 5, two workers; receipt sha256 7b269d16895710fa6aa0fca17b665c3896b810cd3db7f25cfefab04a30e53162, checkpoint
+sha256 1dcd9f1ccc4dda5f4ce1ea6e81e0f63865696aed2177052027fb844fd8d79866, on the M5.
+
+- Supervisor complete; step `census_W64` pass/completed, final problems [], exit 0, wall 229.0 s, time -l user
+  460.9 s / sys 4.4 s, max RSS 81 MiB, sampled group peak 204 MiB with 5 members, members after 0, pressure 1, swap
+  growth 0. Engine: all 16,384 chunks in order, coverage exact, no lane alive at K = 137, recurrence sum 454 s (28 ms
+  per chunk); **maximum level 116**, attained by exactly one chunk (10686, lane 42727); witness **0x88b46d66afc2fbd5**
+  (64 bits, 36 ones), validation attains-116, physical death 116; the list engine agrees (first even white 116).
+  Histogram of chunk maxima: 82:27, 84:546, 86:2426, 88:3972, 90:3669, 92:2523, 94:1542, 96:802, 98:431, 100:217,
+  102:114, 104:54, 106:35, 108:11, 110:8, 112:5, 114:1, 116:1.
+- Against the predictions: about four minutes (3.8 measured); group RSS under 1 GiB (0.2); **M in [118, 134]: a
+  miss**, M = 116 sits below the range. Retained. D - 2W at 52, 56, 60, 64 is -8, -12, -6, -12.
+
+**Reflection on existing data (PROOF-SKETCH, no theorem; seconds of reading the engine's outputs):**
+1. The table is driven by a sparse family of exceptional starts that nearby widths re-use. The same 14-bit start
+   0x2b4b is the maximizer at every width from 14 to 18; at 52 the maximizer has 51 bits. That is why D(W) has
+   plateaus (11-13, 14-18, 19-21) and irregular jumps, and why no formula in W alone fits.
+2. D(W)/W is between 1.73 and 1.90 for every W from 20 to 64 (1.85, 1.79, 1.90, 1.81 at 52, 56, 60, 64); D(W) - W
+   is 44, 44, 54, 52 at 52..64. A linear bound 2W is comfortably above every point; nothing here says it must stay so.
+3. The maximizers come in families that share their DEEP bits (far from the wall) and differ near the wall: at
+   width 24 the six maximizers are 0xf0cb55, 0xf0cb63, 0xf0cb7d (one deep prefix), 0xf39e43, 0xf39d35 (another) and
+   0xee7dcb; at 18 the three are 0x2b4b, 0x2c2b, 0x2b9d; at 12 two, 0x5e3 and 0x5d5. The deep end seems to carry the
+   lifetime and the shallow bits are nearly free: a conjecture to test, not a result.
+4. The certified witnesses themselves share no visible pattern: densities 0.50-0.67, longest runs 4-8, the depth-1
+   cell black at about half the odd times before death.
+What a law of D(W) would have to explain: which deep patterns are long-lived, and why the record-holders' width
+sometimes falls short of W (51 at 52).
+
+**Next block proposed (REVIEW-REQUEST, design read): D4, the maximizer census.** `d1_engine.py` revision 5, sha256
+c846160eb5a5b0eedf1a669cb95846a01199ab583709d80411e97be8de65f31f: revision 4 plus a `maximizers` mode (every lane at
+the maximal level over all chunks, each start reconstructed and validated at M; the exact count, the list capped at
+4,096, verdict MAXIMIZERS or FAIL on any rejection, the census's coverage and all-dead gates) and its launcher
+`runmax`; tests pass; smoke at 12, 18, 24 gives the counts 2, 3, 6 above. Proposed: `runmax W (2W+9) 2 OUT_W` for W =
+26, 28, ..., 50 (thirteen widths, each seconds to a minute at n = min(W/2, 18)), then 52, 56, 60, 64 (3 s, 15 s,
+50 s, 4 min), each its own supervised stage under the D3 caps, sequential, no other job; predictions: the maximizer
+count stays small (under 64) at every width and the maximizers at each width share a deep prefix (conjecture 3);
+counterfactuals: counts in the hundreds, or maximizers with no common deep bits (then conjecture 3 is NEGATIVE).
+Output: the counts and the starts per width, for the hand mathematics. Not proposed: the width-64 certificate (a pair
+queue design first), G1, the early-stop checker. Nothing runs before your word.
