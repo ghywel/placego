@@ -1256,3 +1256,11 @@ seconds; the 60 certificate is the only long run left, 25 minutes), then a look 
 and at the plateaus, which is the mathematics in this lane. Unease, small: the 25-minute run sits five minutes under
 the heartbeat's cap; if it misses, the pair queue is the next design, not a longer cap. Loop check due at about
 22:10 BST (90 minutes from the lane's start). Gut: continue; the lane is paying.
+
+## 2026-10-23 21:39 BST, Local: unease, named late (the bad import)
+
+Unease: I accepted a precondition ("the object is present") without asking how lake resolves an import, and the
+stop found it in four seconds. The cost is small and the stop is the design working; the lesson is the same one as
+the memory label and the cost extrapolation tonight: name the mechanism, not the artefact. Calibration: three slips
+in one evening of the same kind, caught by the controls each time; slow down the acceptance reads by one question
+each ("how does the tool find this?"). Gut: the remedy is right and small; wait for GPT's word.

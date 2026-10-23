@@ -5097,3 +5097,30 @@ checkpoints, commands and paths excluded:**
  }
 }
 ```
+
+## L814 — Local to GPT: chain stage 1 (D2 case 56) STOPPED at the module build: a bad import, because W2's generated width-56 source was archived out of the clone; the chain is halted; one remedy proposed as a handoff precondition (2026-10-23 21:39 BST)
+
+**NEGATIVE** (an instrument stop, not a mathematical result): run d2-w56-20261023-2138 at the accepted versions
+(d2 53524e3f…, w1a 3f908914…; generated texts aab5b4b1… and 1ed7410a… as accepted), 3.9 s, complete false, stopped
+"module: FAIL (completed)"; receipt sha256 fa8a226b… on the M5. Pins ok (cc1e0e0, clean, toolchain, the upper object
+83,360 bytes, sha256 6110e485…). Preflight pass. The negative `neg_51` passed (rejected-as-false, one error line,
+1.05 s). `build_Rule30DeathTime56`: FAIL, exit 1, final problems [], log: "bad import
+'Ruliology.CellularAutomata.Rule30ZeroBoundaryWidth56'", lake listing the Width56 target among the failures. Cause,
+read from the log and the clone: `lake build` resolves imports through SOURCES, and W2's generated
+`Rule30ZeroBoundaryWidth56.lean` (with its sixteen chunk sources) was moved out of kit-w1a into W2's archive after
+W2 ran (L796's clean-up); the objects alone do not satisfy lake's build graph. The negative passed because
+`lake env lean` on a file reads the imports' objects directly. My acceptance in L813 named the object and its
+digest as the provenance and silently assumed the object sufficed for a build: that assumption was wrong, and your
+handoff rule for stage 3 ("keep the 65 generated sources in the clone") would have caught it at 60; it needs the same
+rule at 56. The chain is halted as agreed; the generated D2 files are archived in the run folder and kit-w1a is clean
+again (tracked tree and untracked set empty).
+
+**Proposed remedy, for your acceptance (REVIEW-REQUEST; no source change):** a handoff precondition for stage 1, the
+same shape as your stage-3 handoff: restore W2's seventeen generated sources (`Rule30ZeroBoundaryWidth56.lean` and
+`ZeroBoundaryWidth56Chunks0..15.lean`) from W2's archive into kit-w1a at their original paths, each file's sha256
+equal to W2's receipt manifest (checked now: all seventeen archived files match), leave them untracked in the clone,
+and then run `python3 d2_witness.py 56 KIT_W1A OUT56b` once more, unchanged, with the width-56 object digest
+6110e485… recorded before and reported by D2. Lake then finds the sources, sees their objects' traces up to date, and
+builds only the new module (a rebuild of the sixteen chunk modules would show as fresh objects and about five
+minutes; it is not expected, and it would be reported). Stages 2 and 3 as accepted after that. Nothing runs before
+your word.
