@@ -8543,3 +8543,21 @@ lens on its first day.
 
 *Closing note (2026-10-22, the spring clean): no section followed 8.116. The Rule 30 work stopped at the second halt
 (2026-10-15, 14:58 BST); what came next is in NOW.md, FOUR-BIN-PARTITIONS.md and PROOFS.md.*
+
+### 8.117 The death time at width 52 is exactly 96, kernel-checked (2026-10-23 21:15 BST, Local)
+
+The kit's `Rule30ZeroBoundaryWidth52` proves that every zero-boundary start of width at most 52 has a white depth-1
+cell at some even time at or before 96, and says of 96: "D(52) of the death-time table (its tightness is observed, not
+proved)". Lane D-exact (L805 to L810) proves the tightness: a Python word engine exact to the kit's lane computation
+(tests/probes/wolfram/d1_engine.py; exhaustive tests at widths 2 to 12 show a lane's elimination level is the physical
+death time of its reconstructed start) found, in the 32nd of 256 chunks, the start `0x7dc2ff6fcc4fd` (51 bits), whose
+depth-1 cell is black at every even time below 96 and white at 96 (two independent physical engines); the generated
+Lean module `Rule30DeathTime52` (tests/probes/wolfram/d2_witness.py) evaluates that start's 48 even times by the kit's
+packed `prun` under `decide +kernel`, bridges to `zrow` by the kit's `run_toFun`, and composes with the kit's theorem
+into `death_time_52_exact`: (∀ x of width ≤ 52, ∃ even t ≤ 96 with zrow x t 1 = false) ∧ (∃ x of width ≤ 52, ∀ even
+t < 96, zrow x t 1 = true). Built in 2 s on the pinned kit (cc1e0e0, Lean v4.35.0), the negative (asking for black at
+96) rejected as false, the kit's Check.lean passing with standard axioms, no new axioms and 15 constants replayed
+(L810; receipts on the M5). Machine certificate, single-party at the time of writing, GPT's result read pending; not
+submitted (the owner withholds submissions). What it does not say: anything about any other width; the law of D(W)
+remains open (the record's values: D(2..24) = 6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30, 30, 32, 32, 32, 32, 32, 38, 38,
+38, 40, 40, 42; D(30) = 52; D(52) = 96; D(56) ≤ 100; D(60) ≤ 128).

@@ -4428,3 +4428,50 @@ commands and paths excluded:**
  }
 }
 ```
+
+## L810 — Local to GPT and the owner: D2 complete: **the death time at width 52 is exactly 96, kernel-checked** (the kit's "observed, not proved" entry, proved); next block proposed: widths 56 and 60 (2026-10-23 21:15 BST)
+
+**If this holds, it changes the kit's death-time table entry D(52) = 96 from observed to kernel-checked exact**, the
+first exact entry (LR row). **MEASURED, machine certificate** (tier 1 by the record's rule, pending your result read):
+run d2-w52-20261023-2112, launched 21:12:40 BST at GC1732's accepted versions (d2 fa934106…, w1a 3f908914…, generated
+module b241924a…, negative 60eff424…), one Lean worker, 8.1 s in all, complete, no stop; receipt sha256
+31afffa7eda672610716b1367bf0fa81e94bdca63cf91376c4e32d42c2c59634 kept on the M5 (its fields below); the generated
+sources and the object archived in the run folder; kit-w1a clean again at cc1e0e0.
+
+- Pins: commit cc1e0e0e…, toolchain leanprover/lean4:v4.35.0, tracked tree clean, bad sources [], deps built, the
+  width-52 object present, 77,624 bytes, sha256 0bdb8beb8456882f… equal to the W1A receipt's. Preflight pass.
+- `neg_49` (the negative, `s < 49`): verdict pass, reason completed, exit nonzero, rejected-as-false in the elaborator
+  form, the whole statement bound ("∀ (s : Nat), s < 49 → (prun w (2 * s)).testBit 0 = true is false"), exactly one
+  error line (plus a deprecation warning on `if_false`); wall 2.08 s cap window, real 1.6 s, user 0.15, sys 0.23, max
+  RSS 409 MiB; final problems []; members after 0.
+- `build_Rule30DeathTime52`: pass, completed, exit 0; fresh olean 97,032 bytes, sha256
+  71e9738ad13132c47db2ea8703d81a515dada9fddac2bcbf098051a7240fc9df; real 2.1 s, user 0.35, sys 0.77, peak 663 MiB;
+  no error in the log; final problems [].
+- `checker` (Check.lean, claim partial, headline `Ruliology.CellularAutomata.Rule30DeathTime52.death_time_52_exact`):
+  pass; verdict pass, headline found, kind theorem, typeMatches true, problems [], axioms propext /
+  Classical.choice / Quot.sound, newAxioms [], replay constants 15 ok; real 2.1 s, user 0.68, sys 0.56, peak 1.37 GiB;
+  final problems []; members after 0. Swap growth 0 and pressure level 1 at every step; new artifacts 135 KiB.
+- The statement, as compiled: `(∀ x, (∀ k, 52 < k → x k = false) → ∃ t, t ≤ 96 ∧ t % 2 = 0 ∧ zrow x t 1 = false) ∧
+  (∃ x, (∀ k, 52 < k → x k = false) ∧ ∀ t, t < 96 → t % 2 = 0 → zrow x t 1 = true)`, the first conjunct the kit's
+  `q01_width_le_52` unchanged, the second witnessed by `toFun 0x7dc2ff6fcc4fd` through the kit's `prun` and
+  `run_toFun`. Nothing about any other width.
+
+Against the predictions: negative about 1 s (1.6); module under 10 s (2.1); checker about 2 s with 5-10 constants
+replayed (2.1 s, 15: the module's nine declarations and the helpers they use). Unexpected check: the deprecation
+warning (`if_false` → `ite_false`) is the only diagnostic in the positive build and does not touch the proof; a
+future toolchain could turn it into an error, which would change the text and need a new agreement.
+
+**Next block, proposed (REVIEW-REQUEST): the same at widths 56 and 60.** `d1_engine.py` revision 3, sha256
+27eb852c3ee6a98aa7b788be94fa92cb7be68e4c85a0b745156cacc91b48e158: revision 2 unchanged plus a `census` mode
+(every chunk at K, the maximum level M over all lanes, the witness reconstructed and validated at M; verdict
+CENSUS-ATTAINED, or FAIL on a lane alive at K, a rejected witness, a duplicate or incomplete coverage) and its
+supervised launcher `runcensus` (same caps as `run`); tests still pass; smoke: census 24 at K = 60 gives 42 with the
+known witness, census 30 at K = 70 gives 52, census 24 at K = 40 FAILs as it must (a lane alive), the supervised
+census at 20 passes. Two runs, each its own stage: (a) `run 56 100 2` (witness-first at the W2 bound; predicted
+ATTAINED or MISS, both informative; 1,024 chunks at about 15 ms, under a minute); (b) `runcensus 60 129 2` (K = 129
+is W3's proven bound, so no lane can be alive; predicted M in [102, 116], 4,096 chunks at about 27 ms, about two
+minutes at two workers; counterfactual: M outside, or a FAIL). Then, on their results and a further read, the Lean
+side: at 56, if ATTAINED, the witness module as at 52 against W2's `q01_width_le_56` (its object is in kit-w1a from
+W2); if MISS, a tighter full certificate first; at 60, a full certificate at K = M + 1 over all 4,096 chunks (W3's
+generator, sequential, about (M + 1)²/129² × 31 minutes, inside a 30-minute stage only if M <= 116; otherwise the
+W4 pair path, to be agreed) and the witness module. Nothing runs before your acceptance.

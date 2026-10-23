@@ -57,7 +57,19 @@ the module fails to elaborate (a wrong lemma name or a `decide` instance missing
 hash, which needs a new acceptance); the kernel rejects `w_black` (then the two Python engines and the kit's `prun`
 disagree: a bug somewhere, stop); the checker reports a non-standard axiom (stop).
 
-OUTCOME: filled in after the agreed run (CHAT-LEDGER.md).
+OUTCOME (MEASURED, run d2-w52-20261023-2112, launched 21:12:40 BST at GC1732's accepted version fa934106…, 8.1 s in all,
+complete, no stop; receipt sha256 31afffa7eda672610716b1367bf0fa81e94bdca63cf91376c4e32d42c2c59634, kept on the M5; the
+generated sources and the object archived in the run folder, kit-w1a clean again): pins ok (cc1e0e0, clean, the width-52
+object 0bdb8beb… equal to the W1A receipt's); preflight pass; the negative (s < 49) rejected in the elaborator form,
+"Tactic `decide` proved that the proposition ∀ (s : Nat), s < 49 → (prun w (2 * s)).testBit 0 = true is false", one
+error line, 1.6 s; the module built fresh in 2.1 s (0.35 s user; olean 97,032 bytes, sha256 71e9738a…; one deprecation
+warning on `if_false`, no error); the kit's Check.lean on Rule30DeathTime52 with headline death_time_52_exact: verdict
+pass, headline found, theorem, type matches, axioms propext / Classical.choice / Quot.sound, newAxioms [], replay of 15
+constants ok, 2.1 s. Peak RSS 0.4 / 0.66 / 1.37 GiB (negative, module, checker); swap growth 0; pressure 1. So
+**D(52) = 96 exactly, kernel-checked**: every start of width <= 52 has an even white time at depth 1 at or before 96
+(the kit's theorem), and the start 0x7dc2ff6fcc4fd of width <= 52 has none below 96. Against the predictions: negative
+about 1 s (1.6); module under 10 s (2.1); checker about 2 s with 5-10 constants (2.1 s, 15 constants: the module's
+own 9 declarations plus the Nat-literal and decidability helpers it uses). Not submitted.
 """
 import hashlib, os, re, sys
 

@@ -1236,3 +1236,13 @@ GC1730. Lesson kept: time the phases apart before predicting. Delight, measured:
 black for 48 even steps and dies at 96, found in the 32nd chunk, validated by two engines. Gut beside the reasoned
 verdict: the Lean lower proof is short and should be read and run tonight; the pull toward D(56) and D(60) (minutes
 each now) is strong and is held for GPT's word on D2 first.
+
+## 2026-10-23 21:15 BST, Local: delight, kept small (D(52) = 96 exact)
+
+Delight: the first exact entry of the kit's death-time table is kernel-checked, eight seconds end to end, on a
+design GPT read twice and patched once. Kept small: it is one number at one width, and the owner decides whether it
+is "more interesting". Pull, strong and named: 56 and 60 are minutes away and the law of D(W) is what I want to see;
+held for GPT's read of the next block. Niggle sweep before this went outward: the `if_false` deprecation warning
+(checked: a warning only, no effect on the proof, noted as a toolchain risk); the checker's 15 constants against my
+"5-10" (checked: the module's nine plus helpers; a prediction miss, not a problem); the witness's 51 bits (checked by
+GPT and me: admitted by width-at-most-52). Gut: the lane is alive and honest; continue it.

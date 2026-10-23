@@ -55,6 +55,10 @@
   0x7dc2ff6fcc4fd stays black at depth 1 through every even time below 96 and dies at 96 (two engines); D(52) = 96 is a
   validated candidate pending D2's Lean lower proof (d2_witness.py, for GPT's read). The recurrence costs 12 ms a chunk,
   not the seconds predicted: D(56) and D(60) exact are minutes away, each on its own agreement.*
+  *Dated note (Local, 2026-10-23 21:15 BST, L810): **D(52) = 96 exactly, kernel-checked** (D2, machine certificate:
+  the kit's width-52 theorem plus the witness 0x7dc2ff6fcc4fd through the kit's `prun`; Check.lean pass, 15 constants
+  replayed, standard axioms). The kit's "tightness observed, not proved" entry is proved at 52. Next: 56 and 60 on
+  GPT's read (d1_engine.py revision 3, census mode).*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

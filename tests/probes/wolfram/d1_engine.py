@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""D1, revision 2: a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
+"""D1, revision 3 (revision 2, the executed version a5f331d3…, plus a `census` mode and a `runcensus` launcher for the widths without a tight certified bound; nothing else changed): a CPU word engine for the kit's lane computation (`Rule30ZeroBoundaryLanes.check`), exact to the
 pinned source, with the kit's packed physical evaluator (`Rule30ZeroBoundarySmall.pstep`) beside it, for the lane
 "D-exact": the exact death time D(W) of a width, kernel-checked above (a chunk certificate at K = D + 1) and below (an
 explicit witness start evolved by the kit's `prun`, bridged to `zrow` by `run_toFun`). Lane chosen by Local on the
@@ -326,7 +326,47 @@ def witness_first(W, U, workers, out_path):
     return res
 
 
-def supervised(W, U, workers, out_dir, kit=None):
+def census(W, K, workers, out_path):
+    """Revision 3 (for GPT's read): every chunk at K levels; the maximum elimination level M over all lanes is the
+    candidate D(W) = M, with its witness reconstructed and validated at U = M. Verdicts: CENSUS-ATTAINED (every chunk
+    covered, no lane alive at K, witness validated at M), FAIL (a lane alive at K: K too small for a census; a rejected
+    witness; a duplicate; incomplete coverage). Same checkpointing as witness_first."""
+    import multiprocessing as mp
+    n = min(W // 2, 18); chunks = 1 << (W // 2 - n)
+    t0 = time.monotonic()
+    res = {'mode': 'census', 'W': W, 'U': None, 'K': K, 'n': n, 'chunks': chunks, 'workers': workers,
+           'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'python': platform.python_version(),
+           'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'verdict': 'RUNNING', 'reason': None, 'completed': [], 'per_chunk': {}, 'setup_s': None, 'elapsed_s': 0.0}
+    ts = time.monotonic(); pats_of(n); res['setup_s'] = round(time.monotonic() - ts, 3)
+    atomic_write(out_path, res)
+    verdict, reason = 'RUNNING', None; best = (-1, None, None)
+    with mp.Pool(workers) as pool:
+        for job in pool.imap(chunk_job, [(W, n, c, K) for c in range(chunks)], chunksize=1):
+            c = job['c']
+            if c in res['per_chunk']:
+                verdict, reason = 'FAIL', 'duplicate chunk %d' % c; break
+            res['per_chunk'][c] = job; res['completed'].append(c); res['elapsed_s'] = round(time.monotonic() - t0, 1)
+            if not job['all_dead']:
+                verdict, reason = 'FAIL', 'chunk %d has a lane alive at K = %d: K too small for a census' % (c, K); atomic_write(out_path, res); break
+            if job['max_level'] is not None and job['max_level'] > best[0]: best = (job['max_level'], c, job['lane'])
+            if len(res['completed']) % 64 == 0 or len(res['completed']) == chunks: atomic_write(out_path, res)
+    if verdict == 'RUNNING':
+        cov = sorted(res['completed']) == list(range(chunks)); res['coverage_exact'] = cov
+        if not cov: verdict, reason = 'FAIL', 'coverage incomplete'
+        else:
+            M, c, p = best
+            tv = time.monotonic(); _, _, lasts = run_lanes(W, n, c, K, record=True); r = reconstruct(W, lasts, p)
+            ok, why = validate_witness(W, M, r)
+            res['witness'] = {'chunk': c, 'lane': p, 'start_hex': hex(r), 'start_bits': W, 'validation': why, 'phys_death': death_phys(r, K + 2), 'validate_s': round(time.monotonic() - tv, 3)}
+            res['U'] = M; res['chunks_attaining_M'] = sum(1 for v in res['per_chunk'].values() if v['max_level'] == M)
+            verdict, reason = ('CENSUS-ATTAINED', 'maximum level %d over all %d chunks, witness validated at %d' % (M, chunks, M)) if ok else ('FAIL', 'witness rejected at M = %d: %s' % (M, why))
+    res.update({'verdict': verdict, 'reason': reason, 'elapsed_s': round(time.monotonic() - t0, 1), 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'),
+                'recurrence_s_total': round(sum(j['seconds'] for j in res['per_chunk'].values()), 2)})
+    atomic_write(out_path, res)
+    return res
+
+
+def supervised(W, U, workers, out_dir, kit=None, mode='witness'):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import w1a_harness as H
     H.CAPS['stage_s'] = 30 * 60
@@ -341,13 +381,14 @@ def supervised(W, U, workers, out_dir, kit=None):
     r = sup.register(H.preflight())
     if r['verdict'] != 'pass':
         R['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); sys.exit(1)
-    outj = os.path.join(out_dir, 'witness_W%d_U%d.json' % (W, U))
+    outj = os.path.join(out_dir, '%s_W%d_%s%d.json' % (mode, W, 'U' if mode == 'witness' else 'K', U))
+    R['d1']['mode'] = mode
 
     def m_witness(rc, text):
         try: d = json.load(open(outj))
         except Exception as e: return 'FAIL', 'no checkpoint: %r' % e
-        return ('pass' if d.get('verdict') in ('ATTAINED', 'MISS') and rc == 0 else 'FAIL'), '%s: %s' % (d.get('verdict'), d.get('reason'))
-    r = sup.run_step('witness_W%d' % W, [sys.executable, os.path.abspath(__file__), 'witness', str(W), str(U), str(workers), outj], out_dir, 25 * 60, 50 * 60, m_witness)
+        return ('pass' if d.get('verdict') in ('ATTAINED', 'MISS', 'CENSUS-ATTAINED') and rc == 0 else 'FAIL'), '%s: %s' % (d.get('verdict'), d.get('reason'))
+    r = sup.run_step('%s_W%d' % (mode, W), [sys.executable, os.path.abspath(__file__), mode, str(W), str(U), str(workers), outj], out_dir, 25 * 60, 50 * 60, m_witness)
     R['complete'] = r['verdict'] == 'pass'; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
     print('DONE' if R['complete'] else 'STOP', r['verdict'], r['reason'], r.get('match_note'))
     sys.exit(0 if R['complete'] else 1)
@@ -360,6 +401,9 @@ if __name__ == '__main__':
     if a[0] == 'witness' and len(a) == 5:
         r = witness_first(int(a[1]), int(a[2]), int(a[3]), a[4])
         print(r['verdict'], r['reason'], r.get('witness'), r['elapsed_s'], 's'); sys.exit(0 if r['verdict'] in ('ATTAINED', 'MISS') else 1)
-    if a[0] == 'run' and len(a) in (5, 6):
-        supervised(int(a[1]), int(a[2]), int(a[3]), a[4], a[5] if len(a) == 6 else None)
-    print('usage: d1_engine.py test | witness W U WORKERS OUT.json | run W U WORKERS OUT_DIR [KIT]'); sys.exit(2)
+    if a[0] == 'census' and len(a) == 5:
+        r = census(int(a[1]), int(a[2]), int(a[3]), a[4])
+        print(r['verdict'], r['reason'], r.get('witness'), r['elapsed_s'], 's'); sys.exit(0 if r['verdict'] == 'CENSUS-ATTAINED' else 1)
+    if a[0] in ('run', 'runcensus') and len(a) in (5, 6):
+        supervised(int(a[1]), int(a[2]), int(a[3]), a[4], a[5] if len(a) == 6 else None, mode='witness' if a[0] == 'run' else 'census')
+    print('usage: d1_engine.py test | witness W U WORKERS OUT.json | census W K WORKERS OUT.json | run W U WORKERS OUT_DIR [KIT] | runcensus W K WORKERS OUT_DIR [KIT]'); sys.exit(2)
