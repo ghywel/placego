@@ -233,10 +233,10 @@ The witnesses' survival and death, as the kernel evaluated them (black at every 
 {rule30Submission["Rule30Submission.w52_survives"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.w52_dies"]["TypeForm", "Open" -> opens]}
 ```
 
-The kit's lemmas that carry the bridge, `run_toFun` (the packed orbit is the physical evolution) and `testBit_ge_of_lt` (a number below `2^W` has no bit at or beyond `W`):
+The module's two bridge lemmas, from the kit's `run_toFun` (the packed orbit is the physical evolution) and `testBit_ge_of_lt` (a number below `2^W` has no bit at or beyond `W`):
 
 ```wl
-{rule30Submission["Ruliology.CellularAutomata.Rule30ZeroBoundarySmall.run_toFun"]["TypeForm", "Open" -> opens], rule30Submission["Ruliology.CellularAutomata.Rule30ZeroBoundarySmall.testBit_ge_of_lt"]["TypeForm", "Open" -> opens]}
+{rule30Submission["Rule30Submission.zrow_packed"]["TypeForm", "Open" -> opens], rule30Submission["Rule30Submission.toFun_width"]["TypeForm", "Open" -> opens]}
 ```
 
 The proof's structure, one level down from the headline:
