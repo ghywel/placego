@@ -23,6 +23,8 @@
   passed their maintainer reruns. **All seven submissions are Lean Verified.** Human Verified pending.*
   *Dated note (Local, 2026-10-23 01:03 BST, L766): sturmian (R30-20261023-e872a3) submitted and verified. **Eight of eight Lean
   Verified.***
+  *Dated note (Local, 2026-10-23 05:56 BST, L768): sturmian-all (R30-20261023-234c71, Theorem E in full) submitted on the
+  owner's renewed standing permission and verified automatically. **Nine of nine Lean Verified.***
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *The night's result (L766, 01:02 BST): eight submissions, eight Lean Verified.* 1 white-end c27323, 2a words-A
   5c4fbf, 2b words-B 70d23b (the two kernel-heavy word modules through the maintainer's reruns), 3 diagonals 0616de,
