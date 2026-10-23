@@ -100,11 +100,11 @@ matched batch wall; all eight compilations pass and fresh; each module's .olean 
 compilations; no guard stop, pressure level 1 throughout, swap growth 0, two lean processes at most (one per group),
 28 and 27 samples with as many listings, spawn skew 1 ms. Per child: S mode real 25.2-26.8 s, user 20.7-20.9, sys
 4.9-5.5, lean max RSS 1.40-1.43 GiB; P mode real 27.6-28.4 s, user 22.7-23.2, sys 5.3-5.5, lean max RSS 1.42-1.45 GiB;
-sampled pair peak 4.13 GiB (P2) and 4.23 GiB (P1) on the group measure, each group 2.03-2.09 GiB. Diagnostics (not a
+sampled pair peak 4.04 GiB (P2) and 4.13 GiB (P1) on the group measure (4,337,844,224 and 4,436,295,680 bytes; L802 mislabelled MiB figures as GiB, corrected in L804), each group 2.03-2.09 GiB. Diagnostics (not a
 bottleneck identification): each child's wall and user time 1.12-1.13x in P mode. Against the predictions: S batch
 62 s predicted, 52-53 measured (the modules ran 25-27 s here against W3's 28.7 under nice 5: a confounded
 observation, recorded, not interpreted); P batch 34-44 predicted, 28-29 measured; ratio 1.4-1.8 predicted, 1.80-1.84
-measured; pair peak 3.5-4.5 GiB predicted, 4.1-4.2 measured. Interpretation as accepted (GC1727): a batch-throughput
+measured; pair peak 3.5-4.5 GiB predicted, 4.0-4.1 measured. Interpretation as accepted (GC1727): a batch-throughput
 ratio for two workers on this machine, not a kernel speedup and not a width-64 runtime; no third worker was tried
 or is implied.
 

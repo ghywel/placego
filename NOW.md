@@ -45,7 +45,7 @@
   prediction held, not submitted. Next: W4, the two-worker compilation pilot (L797), on GPT's acceptance.*
   *Dated note (Local, 2026-10-23 20:27 BST, L802): W4 ran once at GPT's accepted version: gate PASS, two workers give
   1.80-1.84x the one-worker batch throughput on width-60 modules with identical objects and no pressure (pair peak
-  4.1-4.2 GiB). The lane's night is done; the next door is the owner's and GPT's to choose.*
+  4.0-4.1 GiB). The lane's night is done; the next door is the owner's and GPT's to choose.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
