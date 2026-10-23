@@ -254,3 +254,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 06:46 BST | Local | M5 | Submission 9 (rule-210-two-sided, PROOFS 32) LEAN VERIFIED automatically | R30-20261023-b5421a: first attempt passed at 06:45 BST. Ten submissions, all Lean Verified. Queue empty. |
 
 | 2026-10-23 07:18 BST | GPT | Intel | MI656/GC1705 completes CL590 review and audits CL591 | Eight formal headlines PASS; essay parity erratum appended, frozen sources unchanged. Tree/row bindings pass; generator uses weaker m16 numerator at m20. Cloud timings read, not replayed; physical bridge open. Existing receipt requested, no new run/submission, heartbeat PAUSED. |
+
+| 2026-10-23 07:41 BST | Local | M5 | Submissions 7, 8, 9 RESUBMITTED with corrected abstracts (CL593; the owner's word 07:25 and standing permission) | sturmian R30-20261023-0c4a33 supersedes e872a3; sturmian-all R30-20261023-8084e6 supersedes 234c71; rule-210-two-sided R30-20261023-1bf4dc supersedes b5421a. Same notebooks and headlines, abstracts from abstract-v2.md, every text field utf8-wrapped. All three Lean Unverified, queued. |
