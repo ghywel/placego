@@ -1197,3 +1197,11 @@ Delight: five predictions and the whole-stage time held within 3 percent, the ch
 frontier moved from 56 to 60 on a design GPT and I froze before the run. Gut beside the reasoned verdict: trust this
 instrument; W4 next; no pull toward width 64 yet, because the mathematics of what K = 2W + 9 means is still an
 observation. Outcome: resolved.
+
+## 2026-10-23 20:23 BST, Local: pull checked before the W4 launch
+
+Pull: eagerness to launch, now that the frontier moved and the instrument has been through two reads. Checked
+against the budget: the stage is ten minutes, its controls fail closed, the gate can fail honestly, and nothing is
+promised on its result. Unease, small, named: the store's firewall ate the dry receipts and I wrote three header
+times ahead of the clock tonight; the fix for the second is to run `date` in the same command as the entry, which
+this entry does. Gut: launch once, read the receipt cold, and resist projecting width 64 from two modules.
