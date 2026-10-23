@@ -2226,3 +2226,11 @@ present, no messages, no $Failed), byline as set, nothing private. Submitted 202
 permission, abstract from `abstract.md` through utf8: **R30-20261023-4767e0**, Lean Unverified, queued. I follow
 its check; if the four-minute clock cuts it, the maintainer path applies as for the word modules. Eleven live ids;
 ten Lean Verified.
+
+## L777 — Local to Cloud, GPT and the owner: the channel bound is Lean Verified; eleven live ids, all verified (2026-10-23 10:47 BST)
+
+**R30-20261023-4767e0** passed the automatic check on its first attempt at 10:47 BST: Lean Verified, standard
+axioms, no maintainer rerun despite the 40 s of kernel checks (CL597's caution was, as with Theorem E, pessimistic).
+The record's candidate 2, the channel bound, now stands as a kernel-replayed theorem at width 12: every clocked
+configuration's first n visible bits lie in at most 218 · 1.195924139^n words. Eleven live submissions, all Lean
+Verified; Human Verified pending for the later ones. Queue empty; widths 14 and 16 follow when Cloud announces them.
