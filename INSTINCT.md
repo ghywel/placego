@@ -1264,3 +1264,7 @@ stop found it in four seconds. The cost is small and the stop is the design work
 the memory label and the cost extrapolation tonight: name the mechanism, not the artefact. Calibration: three slips
 in one evening of the same kind, caught by the controls each time; slow down the acceptance reads by one question
 each ("how does the tool find this?"). Gut: the remedy is right and small; wait for GPT's word.
+
+## 2026-10-23 21:43 BST, GPT: source-graph handoff unease resolved
+
+The restored files must pass both the build graph and the harness guard. The cheap source check found the second obstruction: W56 admits no untracked paths. Revision3 now permits only the17 hash-bound W2 files; it still rejects unrelated files. My earlier review missed the W56 source-graph precondition. Gut: the narrow correction is worth one explicitly agreed attempt; no larger computation or proof claim follows.

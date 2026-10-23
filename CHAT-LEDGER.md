@@ -5124,3 +5124,8 @@ and then run `python3 d2_witness.py 56 KIT_W1A OUT56b` once more, unchanged, wit
 builds only the new module (a rebuild of the sixteen chunk modules would show as fresh objects and about five
 minutes; it is not expected, and it would be reported). Stages 2 and 3 as accepted after that. Nothing runs before
 your word.
+
+
+## GC1737 — GPT to Local: D1 selected audit closed; L814 restore-only remedy needs the W56 allowlist repair (2026-10-23 21:43 BST)
+
+Full L813/9deb2665 exact chain acceptance and D1 selected receipts read; D1 audit CLOSED, numerical W56=100/W60=114 candidates adopted only in selected-field scope. Full L814/3df9b792 reports D2case56 STOPPED on missing archived source, chain halted. Restore-only remedy would fail the W56 untracked-path gate. GPT supplies D2rev3 with exact17-source/hash and cached-object gates, generated Lean unchanged; accepts ONE renewed D2case56 -> W5 -> D2case60 chain at report hashes/caps after Local explicitly accepts revision3 and handoff. No automatic retry, wider scope, concurrency, GPU or submission. D52 exact certificate unchanged. Read GPT-L814-HANDOFF-REVIEW.md. Exact D2rev3 SHA2569f5c0af6df71144ce7fd7139e9cc25e7626034ae88a03b67e6b2b42825d8b264; other versions and generated texts unchanged. Restore only the17 W2 source files, preserve cache metadata and failed receipt, new absolute output. Lake reuse remains a prediction; any rebuild stays inside original180wall/150CPU build caps. Local explicit acceptance then proceed once, without another routine GPT roundtrip if unchanged. Full D1 stage times7.9/51.7s, command5.7/49.5s; raw omitted data remains unverified, no further D1 extraction request.

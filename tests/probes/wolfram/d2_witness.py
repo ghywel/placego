@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""D2, revision 2: the kernel-checked LOWER bound of the death time at a width, composed with the certified upper
+"""D2, revision 3: the kernel-checked LOWER bound of the death time at a width, composed with the certified upper
 bound into the exactness statement D(W) = U, for GPT's design read. Revision 1 (fa934106…, the executed version) was
 the single case W = 52; revision 2 is the same generator and harness parametrised over a frozen table of cases (W, U,
 the witness r from D1's receipts, the upper theorem and the module that carries it), with the case chosen on the
 command line; the generated Lean text for case 52 is unchanged (its hash is asserted in the tests below). NOT an
 agreed job until GPT accepts this exact file and the generated texts' hashes for the case run; it runs nothing on
 import; nothing is submitted.
+
+Revision 3 repairs only the width-56 source handoff after L814: restore and hash-check W2's seventeen
+generated sources and allow exactly those untracked paths. The generated Lean and every execution cap are unchanged.
+A stopped run is retained; this revision requires explicit mutual acceptance before one renewed launch.
 
 Usage:  python3 d2_witness.py W KIT_CLONE OUT_DIR       (W in the CASES table)
         python3 d2_witness.py --print W                  (print the two generated Lean files for case W and stop)
@@ -58,6 +62,27 @@ CASES = {
 }
 REV1_HASHES = {'pos': 'b241924a15528afa33b8f57d23043304054244d6d56c0a142cbbd63d50f130a6', 'neg': '60eff42442e6915698ab77614180f7dd749d853006f7409fe7bf48c25fc2730d'}
 LIB = 'lean/Ruliology/CellularAutomata'
+
+# Exact retained W2 source manifest, independently read at GC1722 and GC1737.
+W56_SOURCES = {
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks0.lean': '14e64224e17b9ea6f3191be4c41ed9c96e6d6dfc10eb858773be2aa2dfb552f9',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks1.lean': '364532fa21eac6b4fb051a6bdc21e2af0c5baf1a847d61e8f687fa0d4a6981be',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks2.lean': '52562eb96e4bf994b5d8b77bb5598e4201017ad1e06d0762c2798526b0f9b258',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks3.lean': 'e1393cd564397c608f76dbc559e83d44a8349d138c91249025ad880931ba9fb9',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks4.lean': '4ce88b462061557d824e452d9706b925382363679562ddd154f23bb7d5270af5',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks5.lean': '8cbeba98408a0cdfe24793bd7f38a9b36d51e7c3010144837b72e5bdb8f29606',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks6.lean': 'b04f32985e2f1b36da7bf5816e3429237b9e9778937bf04fe7af74e43e8196a5',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks7.lean': '58e4aab66ccff56db926d18cf208b0e0d48e6058891684fcc76331896f89fc15',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks8.lean': '10e646cb359f0310d0ce130e45d8ab6413d5339d009268adfe81a6413486b11f',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks9.lean': '33f0ab0ff3ade67393b541f31c8fd049b233f7b15549201aa3beff644549271c',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks10.lean': '9f6371683e444d61df36e69efc9da83dc9dba3b34f69c45d3021ff7086a8a996',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks11.lean': 'f9ce0a54590e93b78142e5e216e6f0527e6ae0e18027f15562630a3c6a5f1396',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks12.lean': 'fa6c1ccc0d9d61405d1cb16cfe67d5b8ec28ed2a5436fe0c039e35f41619941f',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks13.lean': 'bbd63716d194447f6b209b00b9c33e64caa8b819c2f601db78c475de5e3fcae2',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks14.lean': '5936cb532c7352639ba3c3dc2a8577cb5a129365dd820bd366b64f4c04a06353',
+    'lean/Ruliology/CellularAutomata/Rule30Certificates/ZeroBoundaryWidth56Chunks15.lean': '67a4d37ae757ecd4390b493f8260d36932345328db9f39a2bf8ae2033d5b15e1',
+    'lean/Ruliology/CellularAutomata/Rule30ZeroBoundaryWidth56.lean': '90bafedde1ebd998a57da1eb186ffaa2b62dc94f0893306ee90f7d6db6587108',
+}
 
 
 def module(W, neg=False):
@@ -184,6 +209,16 @@ def main():
     if commit != H.PIN['commit'] or toolchain != H.PIN['toolchain'] or bad or not all(R_['pins']['deps_built'].values()) or not R_['pins']['upper_olean']:
         stop('pin mismatch: commit %s toolchain %s bad %s deps %s upper %s' % (commit[:8], toolchain, bad, R_['pins']['deps_built'], R_['pins']['upper_olean']))
     allowed_dirty = set()
+    if W == 56:
+        source_hashes = {rel: H.digest(os.path.join(kit, rel)) if os.path.isfile(os.path.join(kit, rel)) else None
+                         for rel in W56_SOURCES}
+        R_['pins']['upper_source_hashes'] = source_hashes
+        sup.save()
+        if source_hashes != W56_SOURCES:
+            stop('width-56 source handoff does not match retained W2 manifest')
+        if R_['pins']['upper_olean_sha256'] != '6110e48543eaab8ab975692b2689a9a9f5e439618ca17d819350bd336b8bf1a3':
+            stop('width-56 upper object does not match retained W2 object')
+        allowed_dirty = {'?? ' + rel for rel in W56_SOURCES}
     if W == 60:
         if not R_['pins'].get('upper_bound_literal_114'): stop('the width-60 upper module with bound 114 is not present (W5 first)')
         allowed_dirty = {'?? %s/%s.lean' % (LIB, c['upper_module'])} | {'?? %s/Rule30Certificates/ZeroBoundaryWidth60Chunks%d.lean' % (LIB, m) for m in range(64)}

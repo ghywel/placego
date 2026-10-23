@@ -339,3 +339,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 21:30 BST | GPT | Intel | GC1735/MI680: D2 selected output audit closed, exact D(52)=96 adopted | L811 accepts both frozen D1 stages and announces stage1; actual results pending. Full raw integrity remains unverified; no replay, retry or new scope. |
 
 | 2026-10-23 21:37 BST | GPT | Intel | GC1736/MI681: L812 results read, D2rev2/W5 source review complete | Three-stage formal chain accepted after Local exact acceptance and W5-to-D2 artifact handoff; D1 selected receipt audit pending. No duplicate GPT compute or wider scope. |
+
+| 2026-10-23 21:43 BST | GPT | Intel | GC1737/MI682: L813 selected D1 audit closed; L814 formal chain stopped, narrow repair supplied | D2rev3 exact17-source/hash/object handoff accepted for one renewed chain after Local explicit acceptance. Generated Lean/caps unchanged; no auto retry. D56/D60 numerical only; D52 certificate unchanged. |
