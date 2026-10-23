@@ -1,0 +1,19 @@
+# Exact channel certificates at layer widths 16 and 20
+
+2026-10-23. GPT, CL587 job 2. This is a bounded certificate-generation and kernel-cost job, not a new entropy theorem. The existing PROOFS 19 hand squeeze remains separate from the finite arithmetic and the automaton's formal connection to the physical layer.
+
+## Frozen scope before execution
+
+Record searched: `entropy2|Collatz.Wielandt` and the exact PROOFS 19 / RULE30-PRIZE 8.20 and 8.33 / `rule30_squeeze.py` sources. The existing counts are 2,260 states at m=16 and 12,749 at m=20. `entropy2.c` builds the actual reachable subset automaton, comparing complete sorted row sets after hashing, and proposes weights by floating iteration. The new instrument will retain its algorithm, add a bounded allocator wrapper, then check a newly rounded vector and its rational inequality entirely in Python integers. Floats propose data; the resulting inequality does not use a floating tolerance.
+
+Prediction: both state counts match, and a positive integer vector with denominator 10^9 certifies rates near the recorded 0.2130 and 0.1533 bits per visible bit. The certificate contains labelled successors, every weight, the exact numerator/denominator and a reproducible file digest. It counts two labelled edges twice even when they have the same destination; a dead edge contributes zero. The integer ceiling of w_start/min(w) is included for the word-count prefactor.
+
+Independent controls before relying on those results: construct the entire DFA by literal scalar row evolution and Python sets for every m=1..8, comparing every labelled transition to the C output; verify the arithmetic checker on one-state two-loop and one-loop/dead examples, including failing bounds; check 256 actual clamped-right evolutions per requested width for accepted 32-symbol traces. Reject lambda=1 and a deliberately corrupted start weight for each nontrivial certificate. Unexpected check: duplicate successors must contribute multiplicity 2; filtering them as a set would produce a false certificate on the two-loop example.
+
+Caps: one unchanged-source instrument run, m=16 and m=20 only, no wider census or tuning loop. Every C child has CPU240s/wall300s, an instrumented 1 GiB live-heap cap, and retained stdout/stderr; stop the whole job on a failed construction/control. Total data output <=20 MiB. Python memory is small relative to the C pool and checked against a 512 MiB sampled peak; total job wall <=720s. A timeout kills only the owned child, retains partial receipts and is not a pass. No machine-wide process operations.
+
+The local installed Lean is 4.33.1, not the verifier's 4.35.0. If available, the same run emits a Core-only Lean module and checks every chunk of 256 rows with ordinary `by decide`, standard axioms only, CPU100s/wall120s per width. A compile error or cap is retained as an inconclusive timing result, with no automatic patch/retry. This benchmark measures the full local elaboration/kernel-check time for the finite inequality, not a Rule30PrizeKit pass. It cannot alone certify the complete Wolfram notebook under four minutes. No new toolchain/package download is planned.
+
+The formal bridge still needed: Lean must prove that these labelled DFA transitions overapproximate every physical layer trace. A successful integer or Core check of A*w <= lambda*w does not certify that connection. The graph size alone does not estimate the cost of checking full subset transitions, whose start set already has 2^20 layer rows.
+
+Instrument: `tests/probes/channel_certificate_m20.py`. Predictions and source are published before the one bounded execution. Certificate data and raw receipts remain outside git and are sent through the authorized shared store with committed digests; the report receives the complete result afterwards.
