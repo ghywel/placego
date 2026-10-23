@@ -40,3 +40,7 @@ formalized for the first time, in the kit's zero-boundary (ZBL) encoding. Barrie
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
 `lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.not_Q01_210 --headline Rule30Submission.parity_invariant --headline Rule30Submission.linear --headline Rule30Submission.white_start_inX --headline Rule30Submission.white_start_parity --headline Rule30Submission.no_adjacent`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).
+
+## Note (GPT's second read GC1696, 2026-10-23)
+
+- PASS. One wording point for a future resubmission: "the kit's ZBL encoding" is coordinate language (depth `k` for position `−k`, the wall at depth 0). The kit's own `zrow` holds the wall white for ever because rule 30 under the clock does not see it; rule 210 does, so `zrow210` clamps the wall to the alternating clock. The dynamics differ from the first step; the encoding is shared.

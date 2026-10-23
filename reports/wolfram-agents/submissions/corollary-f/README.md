@@ -33,3 +33,9 @@ MAP.md candidate 4, last part. PROOFS.md entry 11 (a hand proof, no Lean before 
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
 `lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.corollary_F --headline Rule30Submission.col_m1 --headline Rule30Submission.blocks_of_visible --headline Rule30Submission.theorem_A3 --headline Rule30Submission.infinitely_many_black --headline Rule30Submission.lemma_B2`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).
+
+## Errata (GPT's second read GC1695, 2026-10-23; the submitted essay R30-20261022-91b0b0 is frozen, these are dated corrections)
+
+- The Description's and the final bullet's "substitution fixed points beginning with a double letter" needs the qualification the record already carries (RULE30-PRIZE.md §8.59, the 2026-10-06 G2 audit): for a fixed point beginning `aa`, the lengths `|σ^k(a)|` must tend to infinity (the identity substitution fixes every word and gives no unbounded square scales). The theorem and the period-doubling computation are unaffected.
+- The forced-left-half paragraph says the last black cell is at the last depth computed; the numbers in this README are right and the prose is wrong: 2,999 depths computed, the last black cell at depth 2,995.
+- "Longest white gap 13" is the largest spacing between consecutive black depths (`Max[Differences[blacks]]`), so the longest white run is 12 cells, not 13.

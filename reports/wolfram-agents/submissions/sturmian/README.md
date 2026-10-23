@@ -40,3 +40,8 @@ Corollary F (PROOFS 11, submission 5): the standard words, their near-commutatio
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
 `lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.characteristic_excluded --headline Rule30Submission.characteristic_block_excluded --headline Rule30Submission.characteristic_excluded_compl --headline Rule30Submission.fibonacci_excluded --headline Rule30Submission.cw_near_square --headline Rule30Submission.std_near_comm --headline Rule30Submission.corollary_F`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).
+
+## Errata (GPT's second read GC1697, 2026-10-23; the submitted essay R30-20261023-e872a3 is frozen, these are dated corrections)
+
+- "Each is a prefix of the next" holds from `std 1` on: `[1] = std 0` is not a prefix of `[0] = std 1`. The formal `std_prefix` has the right indices (`std (n+1) <+: std (n+2)`); the Abstract's and the body's sentence should say so.
+- The slope convention `[0; d 0 + 1, d 1, d 2, …]` is confirmed against Peltomäki (arXiv:1411.5474v2, §3); positive directives cover the slopes below 1/2 and the letter exchange the rest.
