@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""W6, revision 3 (GC1752's corrections of revision 2: the build object's digest retained and compared before and after the checker, a status-specific checked runner with exit 0 required and empty output allowed, the artifact baseline taken over the build trees only before preservation and deletion with the deleted targets removed from it so every preserved copy, export and receipt byte counts, the .hash files preserved too, real paths for the containment checks, the matcher requiring typed fields and failing closed on malformed JSON, the final gate an explicit list of predicates with retained values and the per-step cleanup evidence instead of a parent-group sample). Revision 2 was (GPT's four corrections of GC1751 on revision 1): the supervised local build and check of the width-60
+"""W6, revision 4 (GC1753's remaining failure path closed: the checker gate is total, every field type-checked before use, replay.ok must be exactly True, and any exception inside the gate is a FAIL so the step's finalization and receipt always run; seven more gate controls). Revision 3 was (GC1752's corrections of revision 2: the build object's digest retained and compared before and after the checker, a status-specific checked runner with exit 0 required and empty output allowed, the artifact baseline taken over the build trees only before preservation and deletion with the deleted targets removed from it so every preserved copy, export and receipt byte counts, the .hash files preserved too, real paths for the containment checks, the matcher requiring typed fields and failing closed on malformed JSON, the final gate an explicit list of predicates with retained values and the per-step cleanup evidence instead of a parent-group sample). Revision 2 was (GPT's four corrections of GC1751 on revision 1): the supervised local build and check of the width-60
 single-module submission (reports/wolfram-agents/submissions/d-exact-60/Rule30Submission.lean: 4,096 kernel-decided
 chunk checks, the wrapper, the witness, `death_time_60_exact`) in the kit copy used by the submission pipeline, under
 the unchanged W1A supervisor with an explicit resource envelope. NOT an agreed job until GPT accepts this exact file;
@@ -47,36 +47,49 @@ KNOWN_SUBMISSION_ARTIFACTS = {'Rule30Submission.lean', 'Rule30Submission.templat
 
 
 def checker_gate(rc, text, headlines=HEADLINES):
-    """rc == 0; the last JSON line parses; verdict pass; newAxioms []; replay ok; exactly the expected distinct
-    headline names, each found and ok with standard axioms only."""
-    if rc != 0:
-        return 'FAIL', 'checker exit %d' % rc
-    lines = [l for l in text.splitlines() if l.startswith('{')]
-    if not lines:
-        return 'FAIL', 'no JSON line'
+    """Revision 4: a total gate. rc == 0; the last JSON line parses to an object; every field used is checked for its
+    type before use; verdict pass; newAxioms == []; replay is an object with ok exactly True; exactly the expected
+    distinct headline names, each an object with name (str), found (True), ok (True), typeMatches (True), axioms (a
+    list of strings within the standard three), problems ([]); any exception inside the gate is itself a FAIL, so the
+    supervisor's step finalization always runs."""
     try:
-        d = json.loads(lines[-1])
+        if rc != 0:
+            return 'FAIL', 'checker exit %d' % rc
+        lines = [l for l in text.splitlines() if l.startswith('{')]
+        if not lines:
+            return 'FAIL', 'no JSON line'
+        try:
+            d = json.loads(lines[-1])
+        except Exception as e:
+            return 'FAIL', 'JSON parse: %r' % e
+        if not isinstance(d, dict):
+            return 'FAIL', 'JSON is not an object'
+        problems = []
+        if d.get('verdict') != 'pass': problems.append('verdict %r' % d.get('verdict'))
+        if d.get('newAxioms') != []: problems.append('newAxioms %r' % d.get('newAxioms'))
+        rep = d.get('replay')
+        if not (isinstance(rep, dict) and rep.get('ok') is True): problems.append('replay not an object with ok True')
+        dec = d.get('declared')
+        if not isinstance(dec, list): problems.append('declared not a list')
+        hs = d.get('headlines')
+        if not (isinstance(hs, list) and all(isinstance(h, dict) for h in hs)):
+            return 'FAIL', 'malformed headlines field; ' + '; '.join(problems)
+        names = []
+        for h in hs:
+            nm = h.get('name')
+            if not isinstance(nm, str): problems.append('a headline without a string name'); continue
+            names.append(nm)
+            for key in ('found', 'ok', 'typeMatches'):
+                if h.get(key) is not True: problems.append('headline %s: %s is not True' % (nm, key))
+            ax = h.get('axioms')
+            if not (isinstance(ax, list) and all(isinstance(a, str) for a in ax) and set(ax) <= H.STD_AXIOMS): problems.append('headline %s: axioms not a list of standard axiom names' % nm)
+            if h.get('problems') != []: problems.append('headline %s: problems %r' % (nm, h.get('problems')))
+        if sorted(names) != sorted(headlines) or len(set(names)) != len(headlines): problems.append('headline names %r' % names)
+        note = json.dumps({'verdict': d.get('verdict'), 'newAxioms': d.get('newAxioms'), 'replay': rep if isinstance(rep, dict) else repr(rep),
+                           'headlines': [(h.get('name'), h.get('ok'), h.get('axioms')) for h in hs], 'declared': len(dec) if isinstance(dec, list) else repr(dec)})
+        return ('pass' if not problems else 'FAIL'), note if not problems else 'FAIL: %s | %s' % ('; '.join(problems), note)
     except Exception as e:
-        return 'FAIL', 'JSON parse: %r' % e
-    hs = d.get('headlines')
-    if not isinstance(hs, list) or not all(isinstance(h, dict) for h in hs):
-        return 'FAIL', 'malformed headlines field'
-    names = [h.get('name') for h in hs]
-    problems = []
-    for h in hs:
-        for key, typ in (('name', str), ('found', bool), ('ok', bool), ('typeMatches', bool), ('axioms', list), ('problems', list)):
-            if not isinstance(h.get(key), typ): problems.append('headline %s: field %s missing or untyped' % (h.get('name'), key))
-    if not isinstance(d.get('newAxioms'), list): problems.append('newAxioms missing')
-    if not isinstance(d.get('replay'), dict): problems.append('replay missing')
-    if d.get('verdict') != 'pass': problems.append('verdict %r' % d.get('verdict'))
-    if d.get('newAxioms') != []: problems.append('newAxioms %r' % d.get('newAxioms'))
-    if not (d.get('replay') or {}).get('ok'): problems.append('replay not ok')
-    if sorted(names) != sorted(headlines) or len(set(names)) != len(headlines): problems.append('headline names %r' % names)
-    for h in hs:
-        if not (h.get('found') is True and h.get('ok') is True and h.get('typeMatches') is True and isinstance(h.get('axioms'), list) and set(h['axioms']) <= H.STD_AXIOMS and h.get('problems') == []):
-            problems.append('headline %s not clean' % h.get('name'))
-    note = json.dumps({'verdict': d.get('verdict'), 'newAxioms': d.get('newAxioms'), 'replay': d.get('replay'), 'headlines': [(h.get('name'), h.get('ok'), h.get('axioms')) for h in hs], 'declared': len(d.get('declared', []))})
-    return ('pass' if not problems else 'FAIL'), note if not problems else 'FAIL: %s | %s' % ('; '.join(problems), note)
+        return 'FAIL', 'gate exception: %r' % e
 
 
 def controls():
@@ -90,6 +103,13 @@ def controls():
     res['malformed_json_fails'] = checker_gate(0, '{"verdict": "pass", "headlines": "oops"}')[0] == 'FAIL'
     no_tm = json.loads(good(HEADLINES)); del no_tm['headlines'][0]['typeMatches']; res['missing_typeMatches_fails'] = checker_gate(0, json.dumps(no_tm))[0] == 'FAIL'
     res['unparseable_json_fails'] = checker_gate(0, '{not json')[0] == 'FAIL'
+    rs = json.loads(good(HEADLINES)); rs['replay'] = 'ok'; res['replay_string_fails'] = checker_gate(0, json.dumps(rs))[0] == 'FAIL'
+    rf = json.loads(good(HEADLINES)); rf['replay'] = {'ok': 'false'}; res['replay_ok_string_fails'] = checker_gate(0, json.dumps(rf))[0] == 'FAIL'
+    dn = json.loads(good(HEADLINES)); dn['declared'] = None; res['declared_null_fails'] = checker_gate(0, json.dumps(dn))[0] == 'FAIL'
+    mn = json.loads(good(HEADLINES)); del mn['headlines'][0]['name']; res['missing_name_fails'] = checker_gate(0, json.dumps(mn))[0] == 'FAIL'
+    na = json.loads(good(HEADLINES)); na['headlines'][0]['axioms'] = [['propext']]; res['nested_axioms_fails'] = checker_gate(0, json.dumps(na))[0] == 'FAIL'
+    res['json_array_fails'] = checker_gate(0, '[1, 2]')[0] == 'FAIL'
+    res['no_gate_exception_on_garbage'] = all(checker_gate(0, t)[0] == 'FAIL' for t in ('{"headlines": [1]}', '{"headlines": [{"name": 5}]}', '{"headlines": [], "replay": null}'))
     res['two_clean_headlines_pass'] = checker_gate(0, good(HEADLINES))[0] == 'pass'
     sub56 = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../reports/wolfram-agents/submissions/d-exact-56/check.json')
     if os.path.exists(sub56):
