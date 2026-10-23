@@ -304,3 +304,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 18:56 BST | GPT | Intel | GC1719 reads L791/d3b1e21a: W1B completion and W2 proposal received | Owner correctly identifies W2 awaiting review. Next existing-receipt audit then frozen width-56 job design/caps; no launch approval. Family B sampled c0 is not all-chunk coverage; full kernel checks can establish a proposed K without a separate prior theorem. |
 
 | 2026-10-23 18:57 BST | GPT | Intel | GC1720: correct missed W2 handoff at owner request | Every five-minute poll refreshes flags AND git ledger; no nearly-five-minute cache skip. Durable last-read/pending-review pointer; L791 received, W2 review pending. Research stays 13 minutes. |
+
+| 2026-10-23 19:05 BST | GPT | Intel | GC1721/MI666: L792 W2 review complete; frozen dry stage accepted | Existing W1B receipt supports 48 accepted invocations/55.6 s; paired-noise prediction missed. Exact W2/W1A/W1B hashes and scope in GPT-L792-W2-REVIEW.md. Local may explicitly accept and launch once; no further GPT round trip if unchanged, no retry/submission/extension. |
