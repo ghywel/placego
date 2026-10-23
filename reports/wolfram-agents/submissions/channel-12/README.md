@@ -4,7 +4,7 @@ MAP.md candidate 2, the channel bound, as a formal theorem: for every configurat
 clock `0101…` from time 0, the visible bits (column 1 at even times) of length `n` lie in a set of at most
 `218 · 1.195924139^n` words (`channel_bound_12`; `0.2581` bits per visible bit), by a verified checker that
 rebuilds the width-12 layer automaton in the kernel. GPT's specification (`../../GPT-CL594-CHANNEL-BRIDGE.md`) is
-the contract; this is Cloud's implementation. **Draft: under GPT's review (CL596); the essay follows.**
+the contract; this is Cloud's implementation. **Ready for Local's build (CL597); GPT's second read requested in CL596.**
 
 - `Rule30Submission.lean`: the module (built and checked in the kit at `cc1e0e0`). Sections: 1 the kernel
   computation (`nxt`, `step2`, `img4`, `pos64`, `wordLoop`, `sweep`, `imageSets`, `edge`, `run`, `check`,
@@ -13,11 +13,16 @@ the contract; this is Cloud's implementation. **Draft: under GPT's review (CL596
   4 the walk and the count (`st_inv`, `AccF`, `cntA`, `visFrom`, `visFrom_mem`, `wcheck_sound`, `weight_bound`);
   5 the certificate (`Cert`, `Cert.Valid`, `Cert.bound`, `Cert.ncard_bound`); 6 width 12 (`succ12`, `weights12`,
   `check12`, `wcheck12`, `cert12_valid`, `channel_bound_12`, `channel_ncard_12`).
-- `check.json`: the kit's `Check.lean` output on the previous revision (before the shared first step in `img4`):
-  verdict `pass`, 224 constants, eight headlines on `propext`, `Classical.choice`, `Quot.sound` only
-  (`cert12_valid` on `propext`). Build 98 s, replay 99 s in Cloud's container.
+- `check.json`: the kit's `Check.lean` output on the final module: verdict `pass`, 234 constants, nine headlines
+  (`channel_bound_12`, `channel_bound_12_eventually`, `channel_ncard_12`, `Cert.bound`, `check_sound`,
+  `weight_bound`, `win_step2`, `visFrom_mem`, `cert12_valid`) on `propext`, `Classical.choice`, `Quot.sound` only
+  (`cert12_valid` on `propext`). Build 114 s, replay 107 s in Cloud's container; no double quote or backslash.
+- `essay-template.md` + `assemble.py` -> `essay.md` (77,092 characters), fast cell order: three display cells with the
+  one `Open` set, `Axioms`, `CallGraph`, `KernelCheck` last. `abstract.md`: the API abstract (Markdown with TeX,
+  ASCII outside the math, four parts), to go through the `utf8` wrapper with every text parameter.
+- `expected_numbers.py`: every number the essay's Wolfram Language cells print, computed in Python first (below).
 - `build_dfa.py`: the automaton by the C program's BFS (same order, same numbering); at width 16 it reproduces
-  GPT's graph exactly. `cert.py`: the integer Collatz–Wielandt certificates (widths 12 and 14 computed here; 16 is
+  GPT's graph exactly. `cert.py`: the integer Collatz-Wielandt certificates (widths 12 and 14 computed here; 16 is
   GPT's, verified exactly).
 
 ## What the kernel does
@@ -31,6 +36,14 @@ the image sets of the two labels. A new target state is defined as that image; a
 equality); a dead edge must have an empty image; at the end every discovered state must have been processed. Every
 loop variable is forced to a literal before the recursive call (`force`, a `Nat.casesOn`), because the kernel is lazy
 and would otherwise stack unevaluated expressions. `wcheck` is the weight inequality per state.
+
+## Expected outputs of the essay's cells (`expected_numbers.py`)
+
+- Widths 6 and 8 automaton cell: `{{6, 31, 18, 1.358}, {8, 56, 29, 1.28006}}` (growth by 300 power iterations;
+  Python gives 1.358001 and 1.280057).
+- Certificate cell: `{402, 251, True}`.
+- Growth cell: `{1.19568, 0.25813, {2, 3, 5, 8, 12, 17, 25, 36, 50, 68, 91, 119}, 1866.}` (Python: growth 1.1956850,
+  `log2(R/D) = 0.25813`, the bound `218 (R/D)^12 = 1866.0`).
 
 ## Numbers (computed by `cert.py` and `build_dfa.py`)
 

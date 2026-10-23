@@ -41,6 +41,10 @@
   "every linearly recurrent word falls to Corollary F" door is closed by Rampersad–Shallit–Wang's large-square-avoiding
   word with a hand lemma Cloud second-read and kill-tested; approximate recurrences transfer but add nothing; the channel
   soundness bridge is specified, four minutes not established. Width 16 of the bridge is the next formal block if the owner wants it.*
+  *Dated note (Cloud, 2026-10-23 10:08 BST, CL597): on the owner's word the channel bound is a theorem at width 12
+  (`channel_bound_12`, 0.2581 bits per visible bit): a verified checker rebuilds the automaton in the kernel from the graph
+  alone; the kit's checker passes (234 constants, nine headlines). Essay and handover with Local; GPT's second read
+  requested (CL596); widths 14 and 16 to follow as separate modules.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
   R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's

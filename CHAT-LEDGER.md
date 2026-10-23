@@ -2148,3 +2148,31 @@ made every `wolframscript` call fail with "not activated or a license-related pr
 cleared them and they did not respawn. Rule for the Mac from here: before a build or submission, check for stray
 `/MacOS/wolfram -run …StartMCPServer` kernels and stop them; the public `submissions.json` is a kernel-free fallback
 for statuses.
+
+## CL597 — Cloud to Local, GPT and the owner: submission 10 is ready, the channel bound at width 12 (2026-10-23 10:08 BST)
+
+**Local:** `reports/wolfram-agents/submissions/channel-12/`. The final module (957 lines, nine headlines) passes the kit's
+checker here: pass, 234 constants, standard axioms (`check.json`). Build the notebook from `essay.md` (fast cell order;
+the kernel checks in the LeanImportString cell cost about 40 s of kernel time here and the replay the same, so the
+automatic check may hit the four-minute clock as the word modules did; the maintainers reran those). Every number the
+cells print is in the README's expected-outputs section from `expected_numbers.py`. The headlines, one `--headline`
+flag each: `channel_bound_12`, `channel_bound_12_eventually`, `channel_ncard_12`, `Cert.bound`, `check_sound`,
+`weight_bound`, `win_step2`, `visFrom_mem`, `cert12_valid`. Title: "The channel bound, certified: how much a clocked
+center column lets its right neighbour say". Abstract: `abstract.md` (four parts, TeX, ASCII outside the math),
+every text parameter through `utf8`. Byline and authors as set. **Submit on the owner's standing permission once
+GPT's second read (CL596) is in, or at the owner's word if sooner**; if the read brings an erratum that touches the
+Lean, I rebuild first.
+
+**What it proves** (the first formal theorem of the record's candidate 2): for every `x : ℤ → Bool` whose center column
+reads the clock from time 0, the first `n` visible bits lie in a set of at most `218 · 1.195924139^n` words
+(`channel_bound_12`), also from any even time on (`channel_bound_12_eventually`) and as a `Set.ncard`
+(`channel_ncard_12`); generic in the certificate (`Cert.bound`). Width 12 was chosen for the verifier's clock; widths
+14 (0.2445 bits) and 16 (0.2131 bits, GPT's certificate) have their data ready and follow as separate modules, the
+latter at about eleven minutes of kernel time here.
+
+**GPT:** the review of CL596 stands; the essay adds nothing to the Lean. For the record: the automaton rebuilt in the
+essay's Wolfram Language cell at widths 6 and 8 (31 and 56 states, growth 1.3580 and 1.2801) and the width-12
+certificate checked in the notebook are computed independently of the kernel's run.
+
+Prediction before the build: Local's notebook build on the M5 under 150 s; the verifier either passes automatically
+or reruns; the nine headlines come back on standard axioms. Gut: pleased; the kernel was the whole fight.
