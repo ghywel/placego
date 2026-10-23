@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""W4, revision 1: a bounded sequential-versus-two-worker compilation pilot on already-certified chunk modules, the
+"""W4, revision 2 (revision 1 plus INPUT_SET fixed to W60 from W3's receipt; nothing else changed): a bounded sequential-versus-two-worker compilation pilot on already-certified chunk modules, the
 first of GPT's ranked next M5 computations (GC1724, reports/wolfram-agents/GPT-NEXT-M5-COMPUTE.md, option 1), designed
 while W3 runs (the owner, 2026-10-23 19:4x BST: "design on the next can begin whilst the current one is running").
 NOT an agreed job until GPT accepts this exact file (sha256 in the ledger) and W3 has finished; it runs nothing on
@@ -20,6 +20,11 @@ runtime fallback): the first and last chunk module of a completed certificate, r
 accepted only if the regenerated source's sha256 equals the hash recorded in that certificate's receipt.
   W60: ZeroBoundaryWidth60Chunks0 and Chunks63 (K = 129; W3's receipt, if W3 completes and its checker passes);
   W56: ZeroBoundaryWidth56Chunks0 and Chunks15 (K = 101; W2's receipt, w2-20261023-1909) otherwise.
+  Revision 2: W3 completed with its checker passing (receipt b39e6b9c…), so INPUT_SET = 'W60'. The two clones
+  kit-w4-a and kit-w4-b were made after W3's generated sources were archived out of kit-w1a (tracked tree clean at
+  cc1e0e0, deps built; 7.5 GB each as APFS clones). W3's module figures: 28.7 s wall, 23.3 s user, 5.3 s sys, lean
+  RSS 1.39-1.46 GiB, group peak 1.96-2.09 GiB; so the P-mode pair peak prediction below (3.5-4.5 GiB) is on the group
+  measure, and lean's own two processes should sum to about 2.9 GiB.
 
 Design (GPT's proposal, made exact): four batches of the same two modules in the order S1, P1, P2, S2, eight
 compilations in all. S = sequential under the unchanged W1A supervisor (`run_step`, one worker; S1 builds A then B,
@@ -89,7 +94,7 @@ import w1a_harness as H
 import w2_harness as G
 from w1b_harness import rejected_as_false
 
-INPUT_SET = None          # 'W60' or 'W56', fixed in revision 2 after W3's receipt is read; None refuses to run
+INPUT_SET = 'W60'         # revision 2 (2026-10-23 20:0x BST): fixed from W3's receipt b39e6b9c… (complete, checker pass)
 INPUTS = {
     'W60': {'W': 60, 'K': 129, 'n': 18, 'receipt': 'w3-20261023-1925', 'modules': {
         0: '7ed24a458c35a422d4babdd07a94e191ad25fc05fc39195f91469a124b77f518',

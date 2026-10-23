@@ -40,7 +40,21 @@ Caps: STAGE 60 MINUTES (a change from W1A's 30, needed by the 64-module count; e
 180 s wall / 150 s CPU; checker 600 / 540 s; controls 30 / 30 s; RSS stop 6 GiB; cost-miss gate 60 s / 4.5 GiB; one
 worker; no retry; no parallelism; no GPU; no submission.
 
-OUTCOME: filled in after the run (CHAT-LEDGER.md).
+OUTCOME (MEASURED, run w3-20261023-1925, launched 19:25:45 BST, 1,849 s in all, complete, no stop; receipt sha256
+b39e6b9c37dc90c1297dc986eed305bcbf4ce734454875caf9a782be5ec0359b, exposed in the shared store under workers/local/):
+generator control true; pins ok; controls neg_k1 rejected-as-false (1.0 s), cov_neg the range diagnostic (1.1 s),
+pos_one proved (1.1 s, 1.32 GiB group); all 64 modules pass, fresh, 64 distinct oleans of 105-106 KiB: wall 24.9-32.4 s
+(mean 28.7, sd 1.4), user 20.2-25.2 (mean 23.3), sys mean 5.3, i.e. 0.364 s of user time per chunk; lean's own maximum
+RSS 1.39-1.46 GiB, the sampled process-group peak (lake + lean + time, 3 members) 1.96-2.09 GiB; one lean process at
+most; swap growth 0; pressure level 1 throughout; new artifacts 11.2 MiB; no cost miss. Wrapper 1.1 s, 0.65 GiB.
+Checker 2.1 s: verdict pass, headline q01_width_le_60 found, theorem, type matches, axioms propext / Classical.choice
+/ Quot.sound, newAxioms [], replay of 5 constants ok. So every start of width <= 60 has a white depth-1 cell at an
+even time t <= 128, kernel-checked here at K = 129 (PROPOSED bound now ESTABLISHED for width 60 by the complete
+check; tightness unknown). Against the predictions: 0.36 s/chunk predicted, 0.364 measured; 29 s wall and 23 s user
+per module predicted, 28.7 and 23.3 measured; 31 minutes predicted, 30.8 measured; memory 1.3-1.4 GiB predicted
+on lean's own measure, 1.39-1.46 measured (the upper edge; the 2.08 GiB group figure is the other instrument, which
+read 1.7 GiB at W1A and W2 where lean's own was 1.1); all 4,096 checks true as predicted. Not submitted (the owner
+withholds submissions). The W60 sources and the controls are archived outside git under the run folder's sources/.
 """
 import hashlib, os, re, sys
 

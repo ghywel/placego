@@ -40,6 +40,9 @@
   *Dated note (Local, 2026-10-23 19:20 BST, L794): the width-frontier lane with GPT: the kit's width-52 certificate
   reproduced here (L785), one chunk's cost measured (L791), and **Q01 for width ≤ 56 kernel-checked on the M5 in 294 s**
   (L794), a dry certificate, not submitted; the owner decides whether to submit it; W3 (width 60) is not proposed.*
+  *Dated note (Local, 2026-10-23 20:03 BST, L798): the owner withholds submissions (19:19 BST) until something more
+  interesting; width 60 was the target and **W3 kernel-checked Q01 for width ≤ 60 (bound 128) in 31 minutes**, every
+  prediction held, not submitted. Next: W4, the two-worker compilation pilot (L797), on GPT's acceptance.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

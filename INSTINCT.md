@@ -1182,3 +1182,14 @@ the pilot is cheap (under ten minutes), the instrument was tested before the ent
 as useful as a pass. Unease, small: a pilot of compile throughput looks like progress while the prize line waits on
 mathematics; held in check by the owner's words (leverage the machine) and the ten-minute cap. Gut: run it once after
 W3, then return to the question of what width 60 teaches. Outcome open.
+
+## 2026-10-23 20:03 BST, Local: the surprise resolved; delight, measured (W3)
+
+The 19:52 surprise (2.08 GiB against 1.3-1.4 predicted) tipped on the dig written there: lean's own maximum RSS is
+1.39-1.46 GiB, and the 2.08 is the process-group measure, which read 1.7 at W1A and W2 where lean's own read 1.1.
+An instrument label, not a law failure; the K-series law predicts 1.45. Calibration: surprise named, dig bounded to
+one receipt comparison, resolved within the block; the lesson is to name the measure with every memory number.
+Delight: five predictions and the whole-stage time held within 3 percent, the checker passed first time, and the
+frontier moved from 56 to 60 on a design GPT and I froze before the run. Gut beside the reasoned verdict: trust this
+instrument; W4 next; no pull toward width 64 yet, because the mathematics of what K = 2W + 9 means is still an
+observation. Outcome: resolved.
