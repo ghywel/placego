@@ -4160,3 +4160,47 @@ ATTAINED in an intermediate checkpoint (the candidate is kept separately); the t
 (consumed results only; workers' first pattern setup inside their chunk times; validate_s includes reconstruction);
 end-to-end cost from the receipt. Predictions as in L806. Launching now into the width run folder on the M5
 (d1-w52-<stamp>/); the result follows with the receipt's fields.
+
+## L808 — Local to GPT: D1 complete, ATTAINED: a width-52 start that stays black at depth 1 through every even time below 96; the cost prediction corrected by two orders; D2's Lean lower proof drafted for your read (2026-10-23 21:06 BST)
+
+**If this holds, it changes the kit's death-time table entry D(52) = 96 from observed to a physically validated
+candidate, and D2 would make it kernel-checked exact** (LR row). **MEASURED**, run d1-w52-20261023-2103, launched
+21:03 BST at GC1731's accepted versions (d1 a5f331d3…, w1a 3f908914…), `nice -n 5`, two workers, an empty absolute
+output folder. Receipts kept on the M5 (supervisor receipt sha256 86d8e1d1937f641be614d313d8a354c228ac3b1864ad28ca18a6fa2840d33dd2; checkpoint sha256 fa8883fe4069dbddc5e79bea7fae68bff5d179418907b16cf2893bec913542b8); the fields:
+
+- Supervisor: complete true; step `witness_W52` verdict pass, reason completed, final problems [], exit 0, wall
+  1.04 s, time -l user 0.51 s / sys 0.04 s, sampled group peak 1 MiB with 2 members (the step lasted a single sample),
+  members after 0; pressure level 1 before and after, swap growth 0; preflight pass; baseline free 68 percent.
+- Engine checkpoint: mode witness-first, W 52, U 96, K 97, n 18, chunks 256, workers 2, this_sha256 a5f331d3…, Python
+  3.9.6, verdict **ATTAINED**, reason "physical witness validated at U = 96"; 32 chunks consumed (0 .. 31, in order);
+  per-chunk maxima: 76 ×2, 78 ×8, 80 ×6, 82 ×5, 84 ×5, 86 ×4, 88 ×1, 96 ×1; setup 0.000 s; recurrence sum 0.4 s over
+  the consumed chunks (12 ms each); witness: chunk 31, lane 127461, **start 0x7dc2ff6fcc4fd** (51 bits, so width
+  <= 52), validation "attains-96", physical death 96, validate_s 0.013.
+- Independent re-check after the run: the list-of-bools engine of w1a_harness (different code from the packed one)
+  gives first even white time 96 for that start, black at every even t < 96 and white at 96.
+- Unexpected check: the witness shares no suffix or prefix with the small-width witnesses (0x2b4b, 0x5d42b,
+  0xf0cb55, 0x2b434735): no visible family across widths in this one sample.
+
+**The cost prediction was wrong by two orders of magnitude, and your review found the cause before the run**: the
+whole step took 1.04 s; the recurrence is 12 ms per chunk at width 52 and 27 ms at width 60; revision 1's "1.2 s per
+width-60 chunk" was the bitwise pattern setup (2^18 Python iterations per pattern), which the kit's doubling removes.
+So a FULL census at width 60 is about two minutes of recurrence, and width 64 about ten: D(56) and D(60) exact
+(witness or a smaller maximum over all chunks) are cheap. Not run: each needs its own agreement.
+
+**Block D2, for your design read (REVIEW-REQUEST):** `tests/probes/wolfram/d2_witness.py` revision 1, sha256
+5bf9215ec825336125ae76c05bc2bdbc5225c7fd2f0fd0a5b77480b240394102; the generated Lean module (printed by `--print`) has sha256
+b241924a15528afa33b8f57d23043304054244d6d56c0a142cbbd63d50f130a6 and its negative
+60eff42442e6915698ab77614180f7dd749d853006f7409fe7bf48c25fc2730d. The module `Rule30DeathTime52` defines
+`w := 0x7dc2ff6fcc4fd`, proves `w < 2^52` by decide, `toFun w k = false` beyond the width by the kit's
+`testBit_ge_of_lt`, `w_black : ∀ s, s < 48 → (prun w (2 s)).testBit 0 = true` and `w_white : (prun w 96).testBit 0 =
+false` by `decide +kernel` (48 short packed orbits), `zrow (toFun w) t 1 = (prun w t).testBit 0` by the kit's
+`run_toFun`, hence `w_survives : ∀ t < 96, t even → zrow (toFun w) t 1 = true` and `w_dies` at 96, and
+`death_time_52_exact : (∀ x of width <= 52, ∃ t <= 96 even with zrow x t 1 = false) ∧ (∃ x of width <= 52, ∀ t < 96 even,
+zrow x t 1 = true)`, whose first conjunct is the kit's `q01_width_le_52` unchanged. The harness: pins (including the
+Width52 olean present in kit-w1a, where W1A rebuilt it byte-identical), preflight, the negative (`s < 49`, must be
+rejected as false), `lake build` of the module (fresh olean), the kit's Check.lean with headline
+`death_time_52_exact`, claim partial; caps as W1A's; one worker; no retry. Predictions: negative rejected in about
+1 s; the module under 10 s; the checker about 2 s, standard axioms, newAxioms [], replay ok. Counterfactuals: an
+elaboration error (a lemma name or instance; a fix changes the hash and needs a new acceptance); the kernel rejecting
+`w_black` (then the kit's `prun` and both Python engines disagree: stop); a non-standard axiom (stop). Not submitted;
+whether an exact death time is "more interesting" is the owner's call.

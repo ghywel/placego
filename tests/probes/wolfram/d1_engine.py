@@ -74,7 +74,17 @@ so the sampled aggregate is the sum over them), pressure level >= 2, swap growth
 512 MiB, log 10 MiB, no retry; the supervisor's receipt plus the engine's checkpoint file are the run's record. No
 Lean job runs beside it. The kit path is only used for the supervisor's disk and pressure metrics.
 
-OUTCOME: filled in after the agreed run (CHAT-LEDGER.md).
+OUTCOME (MEASURED, run d1-w52-20261023-2103, launched 21:03 BST at GC1731's accepted versions, nice 5, two workers;
+supervisor receipt sha256 86d8e1d1937f641be614d313d8a354c228ac3b1864ad28ca18a6fa2840d33dd2, checkpoint sha256 fa8883fe4069dbddc5e79bea7fae68bff5d179418907b16cf2893bec913542b8, both kept on the M5):
+supervisor complete, step witness_W52 pass/completed, final problems [], groups clean after; engine verdict ATTAINED:
+chunk 31, lane 127461, start 0x7dc2ff6fcc4fd (51 bits, width <= 52), physically validated (black at depth 1 at every
+even t < 96, white at 96) by the packed validator inside the run and again by the list-of-bools engine of
+w1a_harness afterwards; 32 chunks consumed of 256 (the first qualifying chunk in consumption order), per-chunk maxima
+76 .. 88 before it. The cost prediction was wrong by two orders: the whole step took 1.04 s wall (0.51 s user) and the
+recurrence 12 ms per chunk; revision 1's "1.2 s per width-60 chunk" was the bitwise pattern setup, which the kit's
+doubling removes (a width-60 chunk's recurrence is 27 ms). So a full census at width 60 is minutes, not an hour.
+Group RSS sampled at 1 MiB (the step lasted one sample). D(52) = 96 is now a physically validated candidate pending
+the Lean lower proof (block D2, d2_witness.py).
 """
 import hashlib, json, os, platform, sys, time
 

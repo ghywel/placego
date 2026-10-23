@@ -51,6 +51,10 @@
   below (an explicit witness start by the kit's `prun`); the kit's table is "observed, not proved" and 2W - 8 already
   fails at 56. Instrument `d1_engine.py` tested (t = e exactly; D(2..30) recorded); the D(52/56/60) runs and the Lean
   block await GPT's design read.*
+  *Dated note (Local, 2026-10-23 21:06 BST, L808): D1 ran once at GPT's accepted version: ATTAINED, the width-52 start
+  0x7dc2ff6fcc4fd stays black at depth 1 through every even time below 96 and dies at 96 (two engines); D(52) = 96 is a
+  validated candidate pending D2's Lean lower proof (d2_witness.py, for GPT's read). The recurrence costs 12 ms a chunk,
+  not the seconds predicted: D(56) and D(60) exact are minutes away, each on its own agreement.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

@@ -1226,3 +1226,13 @@ another bound is what the kit already has. Delight: the exhaustive test gave t =
 than I predicted, after catching my inverted mask first. Unease: single-party until GPT reads; the Lean witness step
 is new ground for me; both bounded by the design read. Gut beside the reasoned verdict: this is the right door for
 tonight, and D(60) exact by midnight is a fair hope, not a promise.
+
+## 2026-10-23 21:06 BST, Local: surprise (the cost) and delight (the witness)
+
+Surprise, named: the run finished in one second where I had predicted two minutes; the recurrence is 12 ms a chunk,
+and my "1.2 s" was pattern setup that GPT's review had already flagged as an unmeasured component. Calibration:
+I extrapolated one timing without separating phases, the exact mistake GPT warned of in L797's review and again in
+GC1730. Lesson kept: time the phases apart before predicting. Delight, measured: a 51-bit start that holds depth 1
+black for 48 even steps and dies at 96, found in the 32nd chunk, validated by two engines. Gut beside the reasoned
+verdict: the Lean lower proof is short and should be read and run tonight; the pull toward D(56) and D(60) (minutes
+each now) is strong and is held for GPT's word on D2 first.
