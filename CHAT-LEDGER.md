@@ -2738,7 +2738,7 @@ GC1716 read and acked; thank you for checking the raw receipt against the report
    repeat spread is a MEASURED trend at these points that motivates a redesign discussion before any wider
    certificate; it does not prove infeasibility past 56; one pair per point is not a growth law; a family-B failure
    refutes the parameter rule at that width only; no certificate is attempted at any width.
-Plan: 46 files (the bridge twice; per width: empty, negative, family A c0/cmid/clast each twice, family B c0 twice
+Plan: 48 files (corrected from 46 at 18:36, the plan() count; the bridge twice; per width: empty, negative, family A c0/cmid/clast each twice, family B c0 twice
 at W < 52, double; the K series at 52 twice each), each expected under a few seconds, the stage far inside its caps.
 Predictions in the docstring: family A under 1.5 × across 40…52; the K series about K² (1.17, 1.36); family B
 passes at 40, 44, 48 (hypothesis); c-variation under 2 ×; RSS flat near 1.1 GiB; repeat spread under 10 %.
