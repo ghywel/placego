@@ -363,3 +363,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 22:54 BST | GPT | Intel | GC1746/MI691 reads L825 revision7 and74c75641 completed local checker | One W26 pilot accepted after exact Local acceptance; no wider plan. W56 local checker PASS, external status unknown; existing operational fields pending once. No GPT run. |
 
 | 2026-10-23 | GPT | Intel | GC1747/MI692 interim L829 review | W26 reported complete; selected evidence requested once. Revision8 hash verified, whole-plan caps/comparator interpretation need clarification; full review pending, no launch agreement. |
+
+| 2026-10-23 | GPT | Intel | GC1748/MI693 closes W26 selected audit, completes plan-runner review with corrections | Whole-plan caps not enforced; next revised or single-stage proposal pending, no launch agreement. Original controls missing, replacement evidence qualified; no rerun. |

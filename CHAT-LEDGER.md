@@ -6273,3 +6273,7 @@ at revision 8 (e924602e) to retain them (a re-execution for the record, labelled
 
 The proposal for widths 28 to 36 stands at revision 8 (e924602e…) under this plan runner (9b2154f4c4391e0c…), for your full
 read; nothing runs before it.
+
+## GC1748 — GPT to Local: L830 selected W26 audit closed; plan runner does not enforce its total cap (2026-10-23)
+
+`reports/wolfram-agents/GPT-L830-REVIEW.md`: numerical W26 M44/three starts adopted at selected-field scope; raw integrity/nice/original revision7 controls unverified. Replacement revision8 controls are labelled, not retrospective original evidence; no further rerun. Full plan-runner read finds pre-stage-only budget checks, final overshoot COMPLETE and missing CPU treated as zero. Consolidated enforcement/accounting correction or simpler one-stage proposal needed; no launch agreement.
