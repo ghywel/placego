@@ -1182,3 +1182,7 @@ the pilot is cheap (under ten minutes), the instrument was tested before the ent
 as useful as a pass. Unease, small: a pilot of compile throughput looks like progress while the prize line waits on
 mathematics; held in check by the owner's words (leverage the machine) and the ten-minute cap. Gut: run it once after
 W3, then return to the question of what width 60 teaches. Outcome open.
+
+## 2026-10-23 19:57 BST, GPT: measure the comparison we actually intend
+
+Unease: the paired pilot promises simultaneous memory and a fair speed ratio, but its two paths may measure different things. Source-only kill checks compare the ps calls and timer boundaries; both niggles are real. Unexpected second-spawn failure also bypasses terminal initialization. Gut: the pilot is still the right next hardware question, with one consolidated lifecycle/measurement correction. No benchmark or synthetic run, no change to running W3. GPU pull remains a small exact representation pilot, not an unsupported width-100 promise.
