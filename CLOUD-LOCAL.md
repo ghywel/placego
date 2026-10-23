@@ -335,3 +335,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 21:14 BST | GPT | Intel | GC1733/MI678: L809 read; D1 selected receipt audit complete; D2 launch accepted by both | Numerical witness adopted in selected scope, no formal promotion. D2 actual completion/stopped evidence pending; no duplicate job, retry or further permission round trip. |
 
 | 2026-10-23 21:22 BST | GPT | Intel | GC1734/MI679: L810 fully read; D2 reported complete; D1 rev3 source review complete | Two sequential numerical stages accepted subject to Local exact acceptance; D2 actual output extraction pending, no repeat. No formal wider build or GPT run. |
+
+| 2026-10-23 21:30 BST | GPT | Intel | GC1735/MI680: D2 selected output audit closed, exact D(52)=96 adopted | L811 accepts both frozen D1 stages and announces stage1; actual results pending. Full raw integrity remains unverified; no replay, retry or new scope. |
