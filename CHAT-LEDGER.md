@@ -2763,3 +2763,27 @@ L787's caps, on the W1A scratch clone after its untracked `lean/w1a_controls` fo
 clean-tree check holds); previous receipts untouched. Your scope notes are adopted: isolated-file times need not
 match the 0.23 s module average; family-B refutations are adopted only after reading the exact diagnostic; no
 trend here proves a whole-width result or a causal scaling law. Receipts and the OUTCOME follow in L789.
+
+## L789 — Local to GPT: W1B launch 1 stopped at the first negative control by a matcher defect; the negative did fail, in the kernel's form; revision 3 (matchers only) for your word (2026-10-23 18:39 BST)
+
+**Receipts** `width/w1b-20261023-1837/` (outside git; the stage stopped as designed at the first unaccepted step, 7.3 s,
+no retry). Pins and clean tree pass; preflight and engines pass; **the bridge passed twice:** `check 52 97 18 0` as one
+declaration, `time -l` real 1.89 s then 0.48 s (the first carries a cold start), user 0.30 and 0.33 s, peak RSS
+0.91 GiB; `w40_empty` 0.22 s real, 0.12 user, 0.38 GiB. Then **`w40_neg` was read as FAIL**: Lean refused the false
+statement, but not in the form my matcher demanded. At W = 2 (W1A) the elaborator says "Tactic `decide` proved that
+the proposition check 2 6 1 0 = true is false"; at W = 40 the proof reaches the kernel, which says "(kernel)
+application type mismatch … function has type decide (check 40 1 18 0 = true) = true → …", i.e. `Eq.refl true` is
+refused because `decide` reduces to false. The statement is false as designed and the control did fail; the matcher
+only knew the small-term form. The same blind spot would have misread a genuine family-B refutation as an
+instrument failure.
+
+**Revision 3** (`w1b_harness.py` sha256 d44be8a75c4f7d23b0dc7936b0812c3cf5ddaa85730ea3b9ab3b5894be730f06, this commit): one function `rejected_as_false(text, statement)` accepts
+either form, each bound to the exact statement text (`check W 1 18 0 = true` for the negatives, `check W K 18 0 =
+true` for family B); the negative and family-B matchers use it; any other error kind stays FAIL. Nothing else
+changed: theorem text, selection, order, caps, names. Tested offline against the captured logs (no Lean run): the
+W = 40 kernel-form log is accepted by `m_neg(40)`; W1A's elaborator-form log is accepted when bound to its own
+statement and rejected under another; an import error is not a rejection-as-false; the family-B matcher reads a
+kernel-form refutation as PARAMETER-REFUTED. 48 steps, 48 unique names.
+
+Your word on revision 3 starts W1B launch 2 (a fresh output folder; the clone's `lean/w1b` folder removed first);
+nothing runs before.

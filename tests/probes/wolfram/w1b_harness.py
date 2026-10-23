@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""W1B, revision 2: the W- and K-dependence of one chunk declaration of the kit's lane checker, measured on the M5
+"""W1B, revision 3 (revision 2 plus one matcher correction after launch 1, L789: a false `decide +kernel` statement is
+rejected in one of two forms, the elaborator's "proved that the proposition … is false" at small terms and the
+kernel's "(kernel) application type mismatch … decide (<statement>) = true" at larger ones; the negative and
+family-B matchers now accept either, each bound to the exact statement; nothing else changed):
+the W- and K-dependence of one chunk declaration of the kit's lane checker, measured on the M5
 under the W1A supervisor (tests/probes/wolfram/w1a_harness.py revision 4: its Supervisor, guards, caps and terminal
 policy), proposed in CHAT-LEDGER.md L785, frozen in L786, corrected per GPT's GC1716 (three interpretation points)
 in L787. NOT an agreed job until GPT accepts this exact file; it runs nothing on import.
@@ -103,21 +107,33 @@ def negative(W):
                        "example : check %d 1 %d 0 = true := by decide +kernel\n" % (W, N))
 
 
+def rejected_as_false(text, statement):
+    """True if Lean rejected `statement` by `decide +kernel` BECAUSE it evaluates to false, in either of its two forms
+    (seen in W1A and W1B launch 1): the elaborator's "Tactic `decide` proved that the proposition <statement> is
+    false", or the kernel's "(kernel) application type mismatch" whose expected type names
+    "decide (<statement>) = true" (the proof `Eq.refl true` is refused because `decide` reduces to false).
+    Any other error kind is not a rejection-as-false."""
+    elab = 'proved that the proposition' in text and statement in text and 'is false' in text
+    kern = '(kernel) application type mismatch' in text and ('decide (%s) = true' % statement) in text
+    return elab or kern
+
+
 def m_neg(W):
+    statement = 'check %d 1 %d 0 = true' % (W, N)
     def m(rc, text):
-        want = ['proved that the proposition', 'check %d 1 %d 0 = true' % (W, N), 'is false']
-        ok = rc != 0 and all(w in text for w in want)
-        other = [l for l in text.splitlines() if 'error' in l and 'decide' not in l and 'proposition' not in l]
-        return ('pass' if ok and not other else 'FAIL', 'expected diagnostic %s; other errors %d' % (ok, len(other)))
+        ok = rc != 0 and rejected_as_false(text, statement)
+        other = [l for l in text.splitlines() if 'error' in l and 'decide' not in l and 'proposition' not in l and 'type mismatch' not in l]
+        return ('pass' if ok and not other else 'FAIL', 'rejected-as-false %s; other errors %d' % (ok, len(other)))
     return m
 
 
 def m_family_b(W, K):
     """A false check at an experimental K refutes the parameter rule, not the instrument: recorded, not FAIL."""
+    statement = 'check %d %d %d 0 = true' % (W, K, N)
     def m(rc, text):
         if rc == 0 and 'error' not in text:
             return 'pass', 'K = %d suffices at W = %d' % (K, W)
-        if 'proved that the proposition' in text and 'is false' in text:
+        if rejected_as_false(text, statement):
             return 'pass', 'PARAMETER-REFUTED: K = %d does not suffice at W = %d (not an instrument failure)' % (K, W)
         return 'FAIL', 'unexpected error kind (exit %d)' % rc
     return m
