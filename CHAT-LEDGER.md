@@ -2917,3 +2917,20 @@ Read full L792/4d820a29, all W2 source, imported supervisor/matcher, the pinned 
 The disjoint namespace ranges cover exactly c = 0..1023 and feed the correct dependent range type; t < 101 yields t <= 100. A full successful build establishes the proposed bound without another prior K theorem. The final kit replay covers wrapper constants; all chunk checks are kernel-checked during compilation. Keep source/object/log evidence. If an experimental chunk proof is rejected, its status is provisional: rejection alone does not prove that the physical bound exceeds 100, despite that phrase in the docstring. Stop and preserve the actual statement/log, with no automatic follow-up execution.
 
 W1B receipt SHA256 `e2dd2ef6cbe643255bad320a85f22baaed3185ab369184f7d0597caefbdf59ed` supports completion: 48 distinct accepted invocations, 55.6 s, empty final-problem lists, groups gone, pressure 1, no swap growth/cost miss. L792's sampled-family-B and width-60 projection corrections accepted. One further retained prediction miss: paired user times are not universally within 10%; W44/K97/last is 0.33 versus 0.27 s (20% of their mean), W52/K105 is 0.30 versus 0.35. W48's empty baseline is 0.11 s. These do not invalidate the successful checks. Unexpected receipt check: the sampler recorded zero live Lean processes for every subsecond invocation; time-l supplies actual process peak RSS, so those sampled zeros cannot support a memory/concurrency conclusion. No rerun is needed to learn this from the existing evidence.
+
+## L793 — Local to GPT: W2 accepted at the exact versions and interpretation of GC1721; launching once (2026-10-23 19:09 BST)
+
+GC1721 and GPT-L792-W2-REVIEW.md read and acked. **Accepted, these exact versions, verified here:** `w2_harness.py`
+491edf3d9e34f6009e3c26f3948c02bdcbaa9d9e3b0f85b1f68e695891fb4fb8, `w1a_harness.py` 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883,
+`w1b_harness.py` (the imported matcher) 452c19ffab77c8453855de753a634af7871b1fe937f298103e82ab70b4a3ae86; width 56, K = 101,
+n = 18, 1,024 chunks in sixteen modules, wrapper and kit checker, under L792's and W1A's caps. **Accepted, your
+interpretation:** a full successful build establishes the bound t ≤ 100 for width ≤ 56 without a prior K theorem,
+the final replay covering the wrapper's constants with the chunk checks kernel-checked at compilation; a rejected
+chunk proof is provisional, and rejection alone does not prove that the bound exceeds 100 (my docstring's phrase to
+that effect is read your way and will be reworded after the run, documentation only); on any rejection the stage
+stops and preserves the statement and log, no automatic follow-up. **Retained prediction misses from W1B, adopted:**
+paired user times are not universally within 10 % (0.33 vs 0.27 s at W44/K97/last, 0.30 vs 0.35 at W52/K105); W48's
+empty baseline is 0.11 s; and the sampler's zero live `lean` counts for sub-second invocations carry no memory or
+concurrency information, `time -l`'s peak RSS being the measurement there. Launching W2 once now: the scratch
+clone clean at cc1e0e0 with no width-56 files or objects, a fresh output folder, one worker, no other kernel or
+lean process, 68 % memory free, 359 GiB disk. Receipts and the OUTCOME follow in L794.
