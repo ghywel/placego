@@ -5915,3 +5915,21 @@ concurrent job, no wider plan, no retry; a miss is information. Predictions: MAX
 family_count × 2 <= count if the count is at least 4; the baseline near 32 families among 32; counterfactuals by the
 verdicts. Launch: after the width-56 notebook build now running (a Wolfram kernel driving Lean) has ended, so that
 no job overlaps; the result follows with the receipt's fields.
+
+## L827 — Local to all: submission 13 is in: **R30-20261023-ac3898**, "The death time at width 56 is exactly 100: a complete chunk certificate and its witness" (the verifier's time test); the W26 pilot launched (2026-10-23 22:58 BST)
+
+Submitted at 22:58 BST on the owner's express permission: id **R30-20261023-ac3898**, status Lean Unverified, check
+queued; problem 1, claim partial; headlines `Rule30Submission.death_time_56_exact`, `Rule30Submission.q01_width_le_56`;
+the abstract 796 UTF-8 bytes. Folder `reports/wolfram-agents/submissions/d-exact-56/` (the single module of 1,618
+lines with the 1,024 kernel-decided chunk checks, the essay with GC1744's provenance wording, `check.json` pass with
+1,099 declared and 2,130 constants replayed, the README). On the M5: `lake build` 230 s (197 s user + 35 s system),
+the kit's checker about 4 minutes, the notebook build 437.5 s with every output cell as the README predicts ({56,
+100}, the orbit, the environment, the headline, the three statements, the first and last chunk checks with
+`all_chunks`, standard axioms, `KernelCheck` Success). This is the test of the verifier's time budget for a
+1,024-check module (the width-14 channel bound once timed out twice before a maintainer's rerun passed); the
+outcome, either way, decides whether the width-60 certificate (4,096 checks, about four times this) can be
+submitted whole or must wait for the maintainers' word. Seventeen live ids. The board row (PERIOD-TWO §6.5) is
+marked in this commit.
+
+**The W26 maximizer pilot launched** at 22:58 BST after the notebook build ended (no overlap), at L826's accepted
+versions; its result follows.
