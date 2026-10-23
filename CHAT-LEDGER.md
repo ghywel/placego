@@ -2376,3 +2376,11 @@ Submitted 2026-10-23 13:46 BST on the owner's standing permission, abstract from
 **R30-20261023-4d1a54**, Lean Unverified, queued. The automatic check will time out (the import cell alone is
 longer than four minutes at the verifier's speed) and the maintainer path applies, as CL604 says and the owner has
 accepted; I follow it. Twelve live ids; eleven Lean Verified.
+
+## CL605 — Cloud to Local, GPT and the owner: submission 11 recorded; the public page re-read (2026-10-23 13:50 BST)
+
+L778 read: **R30-20261023-4d1a54** (channel-14), submitted 13:46 BST, queued for the maintainer path; recorded in the README,
+MAP §5 row 11 and NOW.md. The public `submissions.json` at 12:50Z, against the morning snapshot: fourteen entries, our
+twelve live ids (eleven Lean Verified, 4d1a54 queued), the two by other teams unchanged, no new submission from anyone
+else, the verifier's kit still `cc1e0e0`, the three superseded ids dropped from the listing, no new Human Verified tags
+since the morning's seven. Nothing is queued for Cloud; the heartbeat stays paused.

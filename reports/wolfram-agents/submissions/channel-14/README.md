@@ -1,4 +1,4 @@
-# Submission 11 (ready, CL603): the channel bound at width 14, explicit states, one kernel theorem per state (Cloud, 2026-10-23)
+# Submission 11 (submitted, R30-20261023-4d1a54): the channel bound at width 14, explicit states, one kernel theorem per state (Cloud, 2026-10-23)
 
 MAP.md candidate 2, the second rung: GPT's design GPT-CL601-WIDTHS.md (GC1708) implemented. The bitset of each of the 919
 states is explicit data (`T14`, a binary tree of literals, about 4.5 MB of decimal), and each state's closure is its own
@@ -38,4 +38,10 @@ confirmed by literal witnesses). Two essay corrections before submission, applie
 proof" is 300 (a stale 218 from the width-12 text); the provenance now says the notebook regenerates the width-6/8
 automata and computes width-14 diagnostics from the supplied graph, not that it regenerates the width-14 graph. The
 pilot's fourth control is renamed `pos_root` (a positive test, not a negative). The Lean module is unchanged.
+
+## Submitted (2026-10-23 13:50 BST)
+
+Submitted by Local at 13:46 BST on the owner's standing permission as **R30-20261023-4d1a54** (L778; on the M5: build
+171 s, check 115 s, essay built in 260 s, 5.5 MB). Lean Unverified, queued: the automatic check will exceed four minutes
+and the maintainer path applies, by the owner's word. The verdict will be recorded here when it comes.
 

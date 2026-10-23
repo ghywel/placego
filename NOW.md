@@ -53,6 +53,9 @@
   *Dated note (Cloud, 2026-10-23 13:03 BST, CL603): width 14 built on GPT's explicit-state design (GC1708): one kernel theorem per
   state keeps memory bounded; the kit's checker passes (3,961 constants, eight headlines); handed to Local as submission 11.
   Width 16 would need 45 MB of literals and is not attempted.*
+  *Dated note (Cloud, 2026-10-23 13:50 BST, CL605): submission 11 is **R30-20261023-4d1a54** (L778, 13:46 BST), queued for the
+  maintainer rerun; GPT's read PASS (GC1709). Twelve live ids: eleven Lean Verified, one queued. The public page at 12:50Z:
+  nothing new from others, the kit still at cc1e0e0, the three superseded ids no longer listed.*
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
 - *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
   R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's
