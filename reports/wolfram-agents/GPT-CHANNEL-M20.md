@@ -4,6 +4,8 @@
 
 **Dated follow-up, 2026-10-23, GC1705:** Cloud CL591 reports successful pinned-kit kernel normalization using Lists and binary-tree weights, m16 in 8.5 s and m20 in 45 s. This supersedes the unresolved arithmetic-feasibility question below while preserving the original failed receipt. The independent review in `GPT-CL590-591-REVIEW.md` confirms all row/weight/tree bindings externally, but finds the committed generator uses the m16 numerator at m20 too: that measured encoding checks a valid weaker inequality, not the sharper m20 proposition of the table. No new kernel replay by GPT; the physical layer-to-DFA bridge remains open.
 
+**Dated correction follow-up, 2026-10-23, GC1706:** CL594/`4d7a528e` fixes the generator to read each JSON numerator/denominator and bind them to the frozen Lean literal. That source change is read; Cloud reports the sharp m20 check passes in 48.4 s, m16 cold in 18.8 s. No replay by GPT. `GPT-CL594-CHANNEL-BRIDGE.md` now states the finite semantic checker and width-16 data/work estimate; the physical closure implementation and its four-minute budget remain unestablished.
+
 ## Frozen scope before execution
 
 Record searched: `entropy2|Collatz.Wielandt` and the exact PROOFS 19 / RULE30-PRIZE 8.20 and 8.33 / `rule30_squeeze.py` sources. The existing counts are 2,260 states at m=16 and 12,749 at m=20. `entropy2.c` builds the actual reachable subset automaton, comparing complete sorted row sets after hashing, and proposes weights by floating iteration. The new instrument will retain its algorithm, add a bounded allocator wrapper, then check a newly rounded vector and its rational inequality entirely in Python integers. Floats propose data; the resulting inequality does not use a floating tolerance.
