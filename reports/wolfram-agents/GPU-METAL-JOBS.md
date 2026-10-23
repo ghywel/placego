@@ -13,7 +13,38 @@ pipeline with **bit-sliced lanes**: one candidate per bit of a 32- or 64-bit wor
 width-52 kernel check, `Rule30ZeroBoundaryLanes`), a hundred thousand threads each holding a word per cell, every rule 30
 step a handful of bitwise operations per word. Not the interpolation shaders: a compute kernel over integer buffers.
 
-## Job 1. The Q01 death-time census to width 80 to 100 (first; the only one that could be decisive)
+## Relation to GPT-NEXT-M5-COMPUTE.md (added 22:37 BST, CL608)
+
+GPT's note of 19:35 BST (GC1724, `GPT-NEXT-M5-COMPUTE.md`), written before this list, ranks three M5 compute designs.
+They are the same family; this is the map, so that neither document is read without the other:
+
+| GPT's item (GC1724) | Status | Here |
+|---|---|---|
+| 1. A bounded sequential-versus-two-worker certificate pilot | **DONE** as W4 (L802, GC1729): two workers give 1.8x on width-60 modules | Not a GPU job; its result feeds the kernel-cost side of the board |
+| 2. A semantics-preserving early-stop checker (the kit's `run` advances all K levels after `alive` is zero; a short-circuit with a proved equality) | **OPEN**, no owner's word; appears in Local's menus (L812, L821) | **Job 0 below**: a kernel-side design, no GPU; it lowers the cost of every width certificate and of job 1's cross-checks |
+| 3. A small exact CPU-versus-Metal survivor-engine pilot (the anti-diagonal reconstruction over lane words, 32-bit lanes mapped to the kit's chunk numbering, no floating point, exhaustive tiny-width agreement with a scalar engine, GPU identity and buffer caps read first) | **OPEN**, not started | **The pilot that job 1 requires** before any census: job 1 is GPT's item 3 taken to scale, under its discipline |
+
+Jobs 2 and 3 below are not in GPT's note. GPT's three design gates stand for every job here: GPU speed cannot
+accelerate the Lean kernel; an early-stop equality can still trigger costly reduction of the old definition; apparent
+concurrency capacity cannot be inferred by summing process peaks.
+
+## Job 0. The early-stop checker (GPT's item 2; kernel side, no GPU)
+
+- **Object.** The kit's `Rule30ZeroBoundaryLanes.run` keeps stepping after every lane is dead. GPT's source reading:
+  `alive` only ever stays or is ANDed, so zero is absorbing; a checker that returns at zero is semantically equal.
+- **Work.** The equality lemma against the pinned definition, then a measured comparison on already-certified chunks.
+  Prediction: work falls when the last survivor dies well before K. Can fail: late extinction, or the conversion
+  path erasing the shortcut (GPT's gate).
+- **Why it is here.** Every width certificate (W2 to W5, D-exact, the d-exact submission) pays for the dead levels; and
+  job 1's CPU cross-checks run the same engine.
+
+## Job 1. The Q01 death-time census to width 80 to 100 (first of the GPU jobs; the only one that could be decisive)
+
+- **Pilot first, GPT's item 3 as written:** exact agreement between the Metal engine and a scalar engine at tiny
+  exhaustive widths and with the CPU bit-sliced engine on frozen inputs spanning first/last chunks and word boundaries
+  (31/32, 63/64); 32-bit lane words mapped bit by bit to the kit's lane and chunk numbering; no floating point;
+  the M5's GPU identity, feature family and memory baseline read before any cap is proposed; explicit GPU buffers capped
+  (GPT's example: 256 MiB) under a separate process-and-system pressure budget. Only a passing pilot earns the census.
 
 - **Object.** The kit's `Q01`: every finite start of the zero-boundary left half (driven by the clock at column 0) has
   column -1 white at some even time. Kernel-checked to width 52 with death within 96 steps (`Rule30ZeroBoundaryWidth52`);
