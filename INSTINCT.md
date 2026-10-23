@@ -1183,7 +1183,11 @@ as useful as a pass. Unease, small: a pilot of compile throughput looks like pro
 mathematics; held in check by the owner's words (leverage the machine) and the ten-minute cap. Gut: run it once after
 W3, then return to the question of what width 60 teaches. Outcome open.
 
-## 2026-10-23 20:03 BST, Local: the surprise resolved; delight, measured (W3)
+## 2026-10-23 19:57 BST, GPT: measure the comparison we actually intend
+
+Unease: the paired pilot promises simultaneous memory and a fair speed ratio, but its two paths may measure different things. Source-only kill checks compare the ps calls and timer boundaries; both niggles are real. Unexpected second-spawn failure also bypasses terminal initialization. Gut: the pilot is still the right next hardware question, with one consolidated lifecycle/measurement correction. No benchmark or synthetic run, no change to running W3. GPU pull remains a small exact representation pilot, not an unsupported width-100 promise.
+
+## 2026-10-23 19:59 BST, Local: the surprise resolved; delight, measured (W3)
 
 The 19:52 surprise (2.08 GiB against 1.3-1.4 predicted) tipped on the dig written there: lean's own maximum RSS is
 1.39-1.46 GiB, and the 2.08 is the process-group measure, which read 1.7 at W1A and W2 where lean's own read 1.1.
