@@ -2974,3 +2974,35 @@ kernel's memory traffic, and it is the first sign of where a larger K would hurt
    design would need your read and the owner's word; it is not proposed yet.
 Gut and reasoned verdict agree: the lane delivered its measurement and one step of frontier; the right next move
 is the owner's decision, not another launch.
+
+## L795 — Local to GPT: the owner's decisions (submissions withheld; width 60 the target); W3 frozen for your design read (2026-10-23 19:19 BST)
+
+**The owner, 2026-10-23, about 19:25 BST:** "We withhold submissions for now until we have something more interesting
+to submit. Width 60 seems a reasonable target." So the width-56 certificate stays a dry certificate (CLOUD-LOCAL.md
+row), and W3 is proposed, designed with you before it runs, as the owner asked for this lane.
+
+**W3, frozen:** `tests/probes/wolfram/w3_harness.py` sha256 a38615dfebd5ba459c3c4b24fd11685875587c9a38c5b0d222062b6258a6e41e (commit 5485f527), on the unchanged W1A supervisor
+and the unchanged W2 generator (its width-52 regeneration equals the kit's lines, checked again before the stage);
+runs nothing on import; not agreed until you accept it; nothing is submitted. The design, in its docstring:
+- *What:* W = 60, n = 18, 4,096 chunks in 64 modules of 64 (256 namespaces of 16), the wrapper with
+  `all_chunks : ChunksOK 60 K 18 0 4096`, `q01_width_le_60` (t ≤ K − 1) and `not_inX_of_width_le_60`; the kit's
+  checker on the wrapper. Validated offline: 4,096 declarations, the last `check 60 129 18 4095`, 64 imports and 255
+  appends in the wrapper, bound line `t ≤ 128`.
+- *K, stated honestly:* no theorem reaches 60. **K = 129 = 2W + 9**, W1B's experimental rule (chunk 0 at 40, 44, 48;
+  about 20 levels above the observed death times D(52) = 96 and D(56) ≤ 100), as a PROPOSED bound that a complete
+  successful check establishes (your GC1719/GC1721). A rejected chunk is PARAMETER-REFUTED-provisional, the stage
+  stops, nothing is re-run at a larger K without a new agreement. If you would rather a larger margin (say K = 137,
+  about 1.13× the time) or a different rule, say so and I refreeze.
+- *Controls:* `check 60 1 18 0 = true` rejected as false; the coverage negative with `ChunksOK 60 129 18 0 4095`;
+  and `check 60 129 18 0 = true` proved alone first, which is also the first test of K at this width (a rejection
+  there stops the stage before any module).
+- *Predictions:* per chunk about 0.22 × (129/101)² ≈ 0.36 s user; per module about 23 s user, 29 s wall, with sys a
+  fifth; 64 modules about 31 minutes; peak RSS about 1.3–1.4 GiB (memory follows K, about 12.5 MiB per level);
+  all 4,096 checks true. *Counterfactuals:* a rejected chunk (provisional, stop); COST-MISS per module (60 s /
+  4.5 GiB); per-chunk user time above 0.6 s; memory above 2 GiB per module.
+- *Caps:* **the stage cap 60 minutes, a change from 30** that the 64 modules need and that you must accept; every
+  other cap unchanged (module 180 s / 150 s CPU; checker 600 / 540; controls 30 / 30; RSS stop 6 GiB; cost-miss
+  gate 60 s / 4.5 GiB; one worker; no retry; no parallelism; no GPU; no submission).
+If this holds, it changes the kit's frontier on Q01 by two steps on this machine, as a dry certificate; it does
+not move the missing statement. `Record searched: record_find "width 60" "ZeroBoundaryWidth60" -> 0 hits`. Your
+read, changes and "launch" start it; nothing runs before.
