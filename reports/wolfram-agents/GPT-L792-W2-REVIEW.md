@@ -86,3 +86,40 @@ out-of-sample cost check; it does not justify further scaling without a new agre
 Reasoned verdict: the mathematical coverage and bounded execution design are sufficient for this dry run.
 Gut verdict: proceed; retain the missed repeat-noise prediction and avoid turning the review into another
 general supervisor project. Await actual W2 receipts before claiming any new checked width or cost result.
+
+## Completed receipt audit — GC1722, 2026-10-23 19:17 BST
+
+Local's L793/8046ee27 explicitly accepts all three source versions, caps and interpretation; L794/6d63bfdb reports
+completion. Read the existing store receipt at `workers/local/w2-20261023-1909/receipts.json` (85,871 bytes), SHA256
+`275f3f81a2d5e620bad61e114b91e510bde413ad2325f801f046f452cd3da16e`. Also read and matched store digests for
+`checker.log`, `build_Chunks0.log`, `neg_k1.log`, `cov_neg.log`, the generated wrapper and chunk module 0. The
+wrapper/source digests match the receipt. All sixteen module rows occur exactly once with nonempty object hashes.
+The actual executed generator and supervisor match this agreement; the post-run source diff changes only its
+docstring. The other fifteen source/object digests are retained in Local's receipt, not independently replayed here.
+
+All 21 supervised commands plus preflight and engine controls pass their intended roles; no final problems,
+unremoved group members or module cost miss. The known-false control and missing-last-chunk control have the
+expected distinct diagnostics. The generated wrapper imports all sixteen modules and assembles all 64 ranges.
+Check.lean reports pass, standard axioms only, no new axioms, and replay of five wrapper constants. This is enough
+to adopt the controlled finite certificate under tier 1 with the source/interface audit above: for every supported
+zero-boundary start of width <= 56, an even white time <= 100 exists. No novelty, exact worst-case time, all-width
+theorem, submission acceptance or independent GPT kernel replay is claimed.
+
+Stage 294.2 s; sum of sixteen command real times 275.75 s, user times 226.04 s, system times 56.91 s. These are
+distinct from wrapper replay and full-stage costs. Maximum per-process RSS is 1.132 GiB; maximum sampled process-
+group RSS is 1.766 GiB. Neither is a total-machine memory peak. All final pressure readings are 1, swap growth 0,
+and minimum final free disk 385,802,297,344 bytes. The maximum recorded new-artifact total is 3,066,721 bytes.
+The receipt's 18 untracked status entries comprise 17 certificate source files and one controls directory; the
+file digest map has 20 entries, including the three controls, so these counts are consistent.
+
+One interpretation correction to L794: measured system CPU time does not establish that the cost is specifically
+Lean kernel memory traffic, or that bandwidth is the bottleneck. W1B also retained system times; its files showed
+0.11–0.17 s for many positive checks. They lacked the same module aggregation, not system-time observability.
+Any causal claim needs evidence beyond these counters. This does not affect the certificate or completion.
+
+The agreed run is complete and its launch authorization consumed. For the owner's M5 utilization goal, the next
+useful design question is whether two independent module checks gain throughput while maintaining actual simultaneous
+memory/pressure headroom. Prefer that bounded question to an automatic wider certificate. A future design must
+freeze inputs, isolate output artifacts, measure the union of both live process groups, retain each proof outcome,
+and compare like-for-like sequential/parallel work under its own caps. This is a direction for discussion with
+Local, not a frozen job or authorization to run it. No need to restart Cloud or decide publication to discuss it.
