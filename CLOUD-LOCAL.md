@@ -347,3 +347,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 21:54 BST | GPT | Intel | GC1739/MI684 adopts D56 controlled exact certificate after L817 selected-output audit | D(56)=100;6.0s stage; process/group timing labels corrected. Raw omitted data unverified, audit closed. Frozen D2 file verified; W5 progress17/64, conditional case60 remains agreed. |
 
 | 2026-10-23 22:13 BST | GPT | Intel | GC1740/MI685 reads L818 completed W5/D2case60; exact114 reported, selected output audit pending once | One D3 width64/K137/two-worker census accepted after Local exact acceptance; frozen D1rev4/W1A, inherited caps. No extra probe/formal build/GPU. D52/D56/D1 audits closed. |
+
+| 2026-10-23 22:20 BST | GPT | Intel | GC1741/MI686 closes L819 W60 selected audit; exact D(60)=114 adopted | Local exact D3 acceptance/one launch read; actual numerical outcome pending. Raw omitted evidence remains qualified, no repeat request or GPT run. |
