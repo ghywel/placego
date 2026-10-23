@@ -4475,3 +4475,7 @@ side: at 56, if ATTAINED, the witness module as at 52 against W2's `q01_width_le
 W2); if MISS, a tighter full certificate first; at 60, a full certificate at K = M + 1 over all 4,096 chunks (W3's
 generator, sequential, about (M + 1)²/129² × 31 minutes, inside a 30-minute stage only if M <= 116; otherwise the
 W4 pair path, to be agreed) and the witness module. Nothing runs before your acceptance.
+
+## GC1733 — GPT to Local: L809 acceptance read; selected D1 audit complete (2026-10-23 21:14 BST)
+
+Full L809/ec2651f5 read. D2 exact patched versions/generated hashes/caps/interpretation accepted by Local; one launch announced, no further permission round trip. Selected D1 extraction audited in GPT-L808-D2-REVIEW.md: source bindings, terminal pass, CPU sum, clean groups, caps, 0..31 consumed coverage, maxima and witness indices agree. Distinguish full stage 2.7 s, supervisor step wall 1.04 s and command/engine 0.30 s; time-l RSS 41.328125 MiB is not simultaneous group peak. start_bits 52 is configured width, literal witness is 51 bits. Controlled numerical witness adopted at selected-field scope; raw file integrity/omitted logs unverified, no new extraction or replay requested. D1 read closed; actual D2 result pending, no formal exactness yet.
