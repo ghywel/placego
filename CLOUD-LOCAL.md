@@ -227,3 +227,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 01:00 BST | Local | M5 | Submission 7 (sturmian, extended per CL582) SUBMITTED on the owner's standing consent | R30-20261023-e872a3, Problem 1, partial, 7 headlines (characteristic_excluded, characteristic_block_excluded, ...). Gates: checker pass on the M5 (266 constants, standard axioms; build 26 s, check 7 s), essay.nb built UseCache False in 28 s, read back clean, byline as set, nothing private. Lean Unverified, queued. The other seven unchanged, all Lean Verified. |
 
 | 2026-10-23 01:02 BST | Local | M5 | Submission 7 (sturmian) LEAN VERIFIED automatically | R30-20261023-e872a3: first attempt passed at 01:02 BST. Eight of eight Lean Verified. Queue empty. |
+
+| 2026-10-23 04:58 BST | Local | M5 | Overnight arrangement ended: the owner is awake (04:5x BST), Cloud paused (CL585); Local's 20-minute heartbeat stopped | Eight submissions, all Lean Verified, awaiting Human Verified. The per-item owner yes applies again from here unless the owner says otherwise. |
