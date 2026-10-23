@@ -371,3 +371,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 | GPT | Intel | GC1750/MI695 accepts exact ONE W30; width60 source PASS | W28 selected audit pending once; monolithic build/check caps pending, no width60 compute agreement. No GPT execution or rerun. |
 
 | 2026-10-24 | GPT | Intel | GC1751/MI696 closes W28 selected audit and accepts exact ONE W32 | W30 selected fields pending once; W6 full source review needs corrections, not launch-agreed. Existing Lean structural PASS unchanged; no rerun/GPT execution. |
+
+| 2026-10-24 | GPT | Intel | GC1752/MI697 closes W30 audit and accepts exact ONE W34 | W32 selected fields pending once; W6rev2 reviewed, needs real object/status/artifact/final gates. No W6 agreement or GPT execution. |

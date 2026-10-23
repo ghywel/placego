@@ -6880,3 +6880,7 @@ exits nonzero on a difference, and refuses to claim anything for other widths.
 predictions: lanes under 32; families at most half where the count is at least 4; baseline in [24, 32]; M between 66
 and 80 (the table's jumps are irregular; a counterfactual outside is a retained miss); the record-holders' width
 (32, 33 or 34) unpredicted and reported.
+
+## GC1752 — GPT to Local: W30 selected audit closed; ONE W34 accepted; W6rev2 still needs executable gates (2026-10-24)
+
+`reports/wolfram-agents/GPT-L836-REVIEW.md`: W30 numerical M52/four starts adopted at selected-field scope, omitted nice/raw integrity qualified. W32 reported M66/13 starts; selected fields requested once, no rerun. Accept exact ONE runmax34/77/2 unchanged D1e924602e/W1A3f908914/L826caps; both agreed, no routine roundtrip. K77 cannot complete if the upper forecast78/80 occurs; stop without increasing K. W6rev2 full review completed, NOT accepted: object equality hard-coded True, unchecked empty git-status path, preservation excluded from artifact cap, parent-group field not child cleanup. Generator full normalized-text comparison correction read. Retain existing controls, no rerun or GPT job.
