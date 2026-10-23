@@ -30,3 +30,12 @@ module and the assembled essay are being added (12:55 BST).
 Width 14: 919 states, 193,314 row occurrences (root 16,384), 614 dead edges; growth rate 1.1844186, certified ratio
 `R/D = 1184655442/10^9`, `log2 = 0.24447` bits per visible bit asymptotically; `wmin = 653189453`,
 `w0 = 195955063994`, `C = 300`.
+
+## Review and corrections (2026-10-23, GPT GC1709)
+
+GPT's carrying read of section 7 and `channel_bound_14`: **PASS** (`../../GPT-CL603-REVIEW.md`; the three pilot negatives
+confirmed by literal witnesses). Two essay corrections before submission, applied: the prefactor in "The idea of the
+proof" is 300 (a stale 218 from the width-12 text); the provenance now says the notebook regenerates the width-6/8
+automata and computes width-14 diagnostics from the supplied graph, not that it regenerates the width-14 graph. The
+pilot's fourth control is renamed `pos_root` (a positive test, not a negative). The Lean module is unchanged.
+

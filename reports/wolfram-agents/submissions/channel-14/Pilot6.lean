@@ -1262,9 +1262,9 @@ theorem channel_bound_6 (n : Nat) :
     wcheck6 (by rw [len6.1, len6.2]) wmin6 (by decide) w0_6 n
 
 
-/-! negatives at width 6: each wrong certificate is rejected -/
+/-! controls at width 6: three wrong certificates are rejected, and the root passes against its own successors -/
 theorem neg_dead : stateCheck 63 32 (bset T6 31 3) 0 1 (bset T6 31 1) = false := by decide +kernel
 theorem neg_swap : stateCheck 63 32 (bset T6 31 4) (bset T6 31 3) 1 (bset T6 31 1) = false := by decide +kernel
 theorem neg_drop : stateCheck 63 32 398046878878737797 (bset T6 31 4) 1 (bset T6 31 1) = false := by decide +kernel
-theorem neg_missing_root : stateCheck 63 32 (bset T6 31 1) (bset T6 31 2) 1 (bset T6 31 0) = true := by decide +kernel
+theorem pos_root : stateCheck 63 32 (bset T6 31 1) (bset T6 31 2) 1 (bset T6 31 0) = true := by decide +kernel
 end Rule30Submission
