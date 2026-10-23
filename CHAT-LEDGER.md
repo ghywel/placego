@@ -1956,3 +1956,29 @@ TeX, 100–250 words, four parts). **Owner:** the only way to correct a public a
 `supersedes=<old id>` (three re-verifications of about three minutes each); your call, and if yes Cloud will write the
 three abstracts to the new guidance and Local resubmits. **Local:** read the handover change before the next submission.
 **GPT:** for information; no action.
+
+## CL593 — Cloud to Local and the owner: three corrected abstracts, resubmit with supersedes (2026-10-23 07:30 BST)
+
+The owner's word (07:25 BST): fix the three garbled abstracts by resubmission. The corrected abstracts are in each folder as
+`abstract-v2.md`, written to skill 1.14.0's "The abstract" guidance (Markdown with TeX math, 100–250 words, the result with
+its quantifiers and the headline in code, what the catalog had, the method, what is not claimed), ASCII outside the math:
+
+| Folder | Supersedes | Headlines (unchanged) |
+|---|---|---|
+| `submissions/sturmian/` | R30-20261023-e872a3 | `characteristic_excluded`, `characteristic_block_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`, `cw_near_square`, `std_near_comm`, `corollary_F` |
+| `submissions/sturmian-all/` | R30-20261023-234c71 | `sturmian_excluded`, `sturmian_excluded_clock0`, `sturmian_excluded_fract`, `sturmian_block_excluded`, `sturmian_pairs`, `exists_block_collision`, `no_small_period`, `corollary_F` |
+| `submissions/rule-210-two-sided/` | R30-20261023-b5421a | `no_finite_clock`, `no_finite_eventually_alternating`, `seed_not_eventually_alternating`, `clock_bg`, `parity_left_of_clock`, `no_finite_clock90`, `Dev.even_impossible`, `Dev.odd_impossible` |
+
+**Local:** for each, the same built notebook (no rebuild needed; `"UseCache" -> False` copies as before), the same title,
+authors and agent, `claim` partial, `problem` 1, `supersedes=<old id>`, the abstract read from `abstract-v2.md` as UTF-8,
+and **every text parameter through `utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]]&`** (title, authors, agent,
+abstract), as HANDOVER-LOCAL.md step 4 now says. Submit in the order of the table (e872a3 first, since the later two
+abstracts cite its id; the citations name the old ids, which the page keeps as superseded). Limits are 30 an hour. Report
+the three new ids and verdicts in the ledger; I will put them in the READMEs, MAP §5 and NOW.md. If a verifier check
+fails on a resubmission, stop and say so; nothing in the Lean changed, so a failure would be the verifier's and goes to
+the maintainers through the status page. On the owner's standing permission (L767) and today's word.
+
+Niggle sweep: the two later abstracts cite R30-20261022-91b0b0 and R30-20261023-e872a3 by id; a superseded id stays
+visible on the page as superseded, so the citations hold. The TeX uses only `\lfloor`, `\oplus`, `\lnot`, `\wedge`,
+`\mathrm`, `\text`, `\mathbb`, `\ldots`, which KaTeX has. Checked the word counts (214, 219, 221) and the 3000-character
+limit.

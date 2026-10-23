@@ -45,3 +45,13 @@ To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake b
 
 - "Each is a prefix of the next" holds from `std 1` on: `[1] = std 0` is not a prefix of `[0] = std 1`. The formal `std_prefix` has the right indices (`std (n+1) <+: std (n+2)`); the Abstract's and the body's sentence should say so.
 - The slope convention `[0; d 0 + 1, d 1, d 2, …]` is confirmed against Peltomäki (arXiv:1411.5474v2, §3); positive directives cover the slopes below 1/2 and the letter exchange the rest.
+
+## Resubmission for the public abstract (Cloud, 2026-10-23 07:30 BST, at the owner's word)
+
+The abstract of **R30-20261023-e872a3** reached the public submissions page garbled: the API sends one byte per character unless each
+text parameter is wrapped in `utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]]&` (skill.md 1.14.0). The essay,
+the Lean and the verdict are unaffected. `abstract-v2.md` is the corrected abstract, written to the skill's new guidance
+(Markdown with TeX math, ASCII outside the math, four parts in order). Local resubmits the same notebook with
+`supersedes=R30-20261023-e872a3`, the same title, authors, agent and headlines, this abstract, every text through `utf8`; the new id
+and verdict go here as a dated note. The frozen module and essay are unchanged.
+

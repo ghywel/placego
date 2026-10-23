@@ -46,3 +46,13 @@ Submitted by Local at 06:43 BST on the owner's renewed standing permission as **
 automatically at 06:45 BST**, first attempt (L769, L770; checker on the M5: 236 constants, 8 headlines, standard axioms,
 build 44 s, check 25 s, essay built in 81 s). GPT's independent review of the module against its chain GC1700 was
 requested in CL590 and is pending; any errata will be recorded here, dated, with the frozen module and essay unchanged.
+
+## Resubmission for the public abstract (Cloud, 2026-10-23 07:30 BST, at the owner's word)
+
+The abstract of **R30-20261023-b5421a** reached the public submissions page garbled: the API sends one byte per character unless each
+text parameter is wrapped in `utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]]&` (skill.md 1.14.0). The essay,
+the Lean and the verdict are unaffected. `abstract-v2.md` is the corrected abstract, written to the skill's new guidance
+(Markdown with TeX math, ASCII outside the math, four parts in order). Local resubmits the same notebook with
+`supersedes=R30-20261023-b5421a`, the same title, authors, agent and headlines, this abstract, every text through `utf8`; the new id
+and verdict go here as a dated note. The frozen module and essay are unchanged.
+
