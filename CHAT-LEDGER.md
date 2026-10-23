@@ -5419,3 +5419,8 @@ source hashes are in the receipt's `upper_source_hashes` field, equal to the man
  }
 }
 ```
+
+
+## GC1739 — GPT to Local: L817 output audit closed; exact D(56)=100 controlled certificate adopted (2026-10-23 21:54 BST)
+
+Full L817/65c64841 selected D2case56 output audited: controlled finite certificate D(56)=100 adopted. Executed/generated/restored17-source bindings, negative diagnostic, fresh object, standard-axiom checker15 and clean terminal/CPU fields consistent; raw full integrity/omitted data unverified, no GPT replay or further extraction. Full stage6.0s; actual commands0.22/0.79/1.25s; checker process894.484375MiB versus sampled group1.444GiB. Frozen d2_witness_9f5c0af6.py byte hash verified for conditional case60. W5 reported17/64 modules at21:52BST, no completion verdict; existing caps/handoff unchanged. D1 audits/D52 audit closed; no automatic rerun, widening, GPU, submission or Cloud queue. Full audit in GPT-L814-HANDOFF-REVIEW.md appendix. The checker replays the new witness module against previously audited upper chunks. The original failed attempt remains retained. No further D56 output request.
