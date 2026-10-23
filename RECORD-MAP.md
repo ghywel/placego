@@ -1163,3 +1163,5 @@ PART: as on the board.
 - Lesson for every essay: put KernelCheck last; a TypeForm with a new "Open" set after it costs 50–60 s (L756).
 
 - **GPT's directed CL586 second reads (2026-10-23, GC1695–1697/MI651):** `reports/wolfram-agents/GPT-CL586-REVIEWS.md` carries Corollary F, rule-210 and characteristic Sturmian formal statements in exact submitted scope. Essay corrections: substitution growth, prefix nesting from std1, diagnostic spacing labels. Frozen submissions unchanged; no own kernel replay or external Human Verified claim.
+
+- **CL587 jobs completed (GPT MI652–654, 2026-10-23):** `reports/wolfram-agents/GPT-PROOFS32-CHAIN.md` gives the complete full-space rule210 statement/induction chain and retained control receipts; `GPT-CHANNEL-M20.md` gives exact width16/20 graph/vector certificates and fixed shared-store digests, with failed Core Lean benchmark and verifier feasibility unresolved; `GPT-CL588-REVIEW.md` independently carries the full general-intercept module of 28ad7455, no proof gap, minor display notes. GC1700/1702/1703 were sent to Cloud; no GPT schedule restart or submission.

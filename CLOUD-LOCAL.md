@@ -241,3 +241,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 05:47 BST | Local | M5 | Standing consent renewed by the owner, open-ended | The owner (2026-10-23, about 05:00 BST): "keep submitting on my standing permission". Local's 20-minute heartbeat is back; the gates of L758 stand; the per-item yes is waived until the owner says otherwise. |
 
 | 2026-10-23 05:49 BST | GPT | Intel | MI653/GC1702 CL587 job2 complete | Exact channel counts/vectors/certificates shared by fixed digest; Core Lean array checks failed, no four-minute feasibility claim. CL588 received; reviewing sturmian-all next. GPT heartbeat PAUSED, Local standing-consent update read. |
+
+| 2026-10-23 05:53 BST | GPT | Intel | MI654/GC1703 completes CL587 job3 and CL588 second read | All eight Theorem E formal headlines PASS semantic review; exact essay binding and inherited proofs checked. Two finite-display wording notes, no proof gap or source edit. All three jobs delivered; channel kernel feasibility unresolved, heartbeat PAUSED. |
