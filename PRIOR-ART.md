@@ -4227,3 +4227,39 @@ the period-2 question (CATALOG.md), including the black-wall form and the couple
 width-52 result for Q01. Theorem A and the window principle (our §8.54, §8.58, 2026-10-05) are in the kit in a
 stronger `orCol` form (`Rule30MaskedJen`, 2026-10-15); our strip certificates and the kit's `certTable` overlap as
 PROOFS.md entry 41's dated note says.
+
+### Addendum: the kit's commits of 2026-10-21 to 2026-10-23 and the public submissions page (Cloud, 2026-10-23 07:40 BST)
+
+Checked at the owner's request against the portal's public `submissions.json` (updated 2026-10-23 06:14Z, 12 entries) and
+the kit repository at `9679f83` (19 commits after the verifier's `cc1e0e0`, which `api/environment` still names).
+Nothing below is on the critical path (Q01/LR); it is filed so the record is current.
+
+- **Two submissions by others, both partial results for Problem 1.** (1) `R30-20261020-81df0e`, Ying Yin with Codex:
+  the zero-boundary stripe family with four tail cells, first deviation at depth ≤ m + 6 and depth 1 white within 31
+  steps, every class except v = 1011 with m odd (a real exception, m = 33157); Human Verified and ported into the kit
+  as `Rule30ZeroBoundaryStripeFour`. It extends `Rule30ZeroBoundaryStripeFamily` (tails ≤ 3), a family of Q01 starts;
+  our LR work does not use the stripe family. (2) `R30-20261022-0cac94`, giraudsa with Claude, Gemini and Grok: the
+  kit's bit-sliced kernel checker for Q01 generalized to multiples of any period P with a soundness proof; Q001 holds
+  up to width 37, Q_5 up to width 28, and the uniform reduction that Q_P excludes (0^{P-1} 1)^∞ as a tail of the
+  center column for every P ≥ 2 (new for P ≥ 5 other than 11, 12, 13). Lean Verified, not yet tagged. Period 3 is
+  not our lane; the verified-checker pattern is the one a channel-bound soundness bridge would need.
+- **Our white end is a Kit Contribution** (`Rule30WhiteEnd` and `Rule30Certificates/WhiteEndChecks`, "Contributed by
+  Gareth Herbert with Claude and GPT as Rule 30 Prize submission R30-20261022-c27323, and ported to core Lean"), and
+  the skill's example abstract is ours. Seven of our ten are Human Verified (the night's seven); the three of
+  2026-10-23 are not yet tagged.
+- **New library modules in `equivalents/`, none on our record before this note:** [41] is now proved, Problem 1 iff the
+  unit circle is a natural boundary of Σ c(t) zᵗ, through Szegő's theorem for 0/1 sequences with an explicit notch
+  polynomial in place of logarithmic capacity (`Szego`, `SzegoContour`, `SzegoPolynomial`); its last step is
+  `ApproximateRecurrence`: Problem 1 iff for every monic Q over any normed field the values (Q(σ)c)(n) stay at
+  least 1/2 from 0 infinitely often (`problem1_iff_no_approx_recurrence`), a feedback-shift-register argument. [46]
+  (Durand–Cobham, not both α- and β-substitutive) is stated, with the sufficient direction for integer bases and the
+  uniform case proved (`Substitutive`, `UniformMorphic`), and `PerronFrobenius` and `LinearRecurrence` (primitive
+  substitutive sequences are linearly recurrent, Durand–Host–Skau bound) toward it; Durand's theorem itself is
+  missing. Almost-sure laws for the fair-coin measure: `RandomNaturalBoundary` (Steinhaus, Paley–Zygmund),
+  `MaxOrderComplexity` (M_n = 2 log₂ n (1 + o(1)), birthday paradox), `ErdosRenyi`, `LocalLimit`, `Lines`. The
+  catalog counts 163 `problem1_iff_*` equivalences and 48 `problem1_of_*` sufficient conditions.
+- **The kit now takes contributions** (README "Contributing a partial result", skill.md 1.14.0 step 6): a core-Lean
+  module under `lean/Ruliology/CellularAutomata/`, a row in "Added in the kit", a pull request, and the essay submitted
+  with the pull request as its repository. The verifier stays at `cc1e0e0` until it moves, so a later submission
+  cannot import a merged module before `api/environment` names a commit that has it.
+

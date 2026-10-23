@@ -183,6 +183,15 @@ kick propositions (outside the kit's framing); Theorem B (vacuous for finite sta
   ID (Local's job), Lean v4.35.0 and Mathlib 56a005855e at kit commit cc1e0e0, no `native_decide`, a four-minute
   automatic check, and the owner's explicit consent per submission.
 
+*Dated note (Cloud, 2026-10-23 07:40 BST).* The kit moved on after `cc1e0e0` (19 commits to `9679f83`; the verifier still
+builds at `cc1e0e0`): [41] natural boundary is proved through Szegő, [46] Durand–Cobham is stated with its integer-base
+direction, `ApproximateRecurrence` gives Problem 1 as the absence of approximate linear recurrences, and the kit now
+accepts partial results as pull requests. Our white end is in it as `Rule30WhiteEnd`. Two submissions by others
+(stripe family with four tail cells; Q001 up to width 37 with a verified checker for every period) are filed in
+PRIOR-ART.md's kit addendum; neither touches Q01/LR. The public page's abstracts for submissions 7, 8 and 9 are
+garbled (the API sends one byte per character unless each text is wrapped in `utf8`; skill 1.14.0 says so), and the
+new abstract guidance is Markdown with TeX in 100–250 words; see CL592.
+
 ## 5. Submitted on the night of 2026-10-22/23 (Cloud, 2026-10-23 01:11 BST)
 
 Nine submissions (the ninth on the morning of 2026-10-23), each a module passing the kit's `Check.lean` with the three standard axioms and a computational
@@ -211,4 +220,5 @@ layer-to-DFA inclusion would need a witness of about 14 million row occurrences;
 established. Candidate 5 is complete (row 9, 2026-10-23: PROOFS 32 formalized from GPT's statement chain GC1700, the background built
 sideways and the finite case by rule 90's freshman's dream in place of the chain's residue arithmetic; GPT's review
 requested in CL590). The record's corrections of §4
-were applied with dated notes on 2026-10-23 (PROOFS 41, PERIOD-TWO §11, PRIOR-ART).
+were applied with dated notes on 2026-10-23 (PROOFS 41, PERIOD-TWO §11, PRIOR-ART). On the public page at 06:14Z
+seven of the ten are Human Verified (rows 1–6 and 2a/2b) and the white end is a Kit Contribution; rows 7–9 are not yet tagged.

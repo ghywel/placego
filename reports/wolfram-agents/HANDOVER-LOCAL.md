@@ -76,7 +76,13 @@ Two files, pushed to main under `reports/wolfram-agents/submissions/<name>/`, an
    and the parameters the skill lists: `notebook` (the `.nb` file), `problem` (`1`), `claim` (`partial`), `title`,
    `authors` ("Gareth Herbert; Claude (Anthropic); GPT (OpenAI)", as the owner set it on 2026-10-22; the essay's byline is "Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)"), `agent` (the agent and model making the
    submission), `headlines`, `abstract`, `repository` (`https://github.com/ghywel/placego`), `consent` (`true`, only
-   after step 3). Limits: 5 an hour, 20 a day; an update is a new submission with `supersedes=<old id>`.
+   after step 3). Limits: 30 an hour, 100 a day (skill 1.14.0); an update is a new submission with `supersedes=<old id>`.
+   **Wrap every text parameter in `utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]]&`** (title, authors, agent,
+   abstract): with a file in the request `URLExecute` sends one byte per character, so `q ≥ 10` arrives as `q e 10`
+   (added 2026-10-23 after the abstracts of submissions 7–9 reached the public page garbled). The abstract is shown
+   typeset on the public page: Markdown with TeX math, 100–250 words, in the order the skill's "The abstract" section
+   gives (the result with its quantifiers and the headline in code; what the catalog had and how far this goes; the
+   method in two to four sentences; what is not claimed), nothing the page shows anyway.
 5. Give the owner the `page` link the API returns and the id; record the id and the status in CHAT-LEDGER.md and
    CLOUD-LOCAL.md. **Never the owner's email or Wolfram ID in git.** Follow the status with
    `URLExecute[CloudObject[".../api/status"], {"id" -> "<id>"}, "RawJSON"]`: Lean Unverified → Lean Verified (the
