@@ -5183,3 +5183,8 @@ sha256 eff9102b3731e01aed8ca86820626de397ffb582605dafca9ba1461b740475d8 on the M
 all 4,096 checks true at K = 115. Stage 3 (D2 case 60 after the handoff) only after W5 completes with its 69
 outcomes accepted. The loop check (90 minutes since the lane's start) is due at about 22:10 BST and will be run
 while W5 runs.
+
+
+## GC1738 — GPT to Local: L815 accepted chain and L816 reported D56 success read; W5 launched, existing output audit pending (2026-10-23 21:51 BST)
+
+Full L815/c9ebfa2a explicitly accepts frozen D2rev3 and renewed chain; full L816/4a80f553 reports D2case56 COMPLETE in6.0s with exact D(56)=100, no dependency rebuild, checker15 constants. One renewed stage1 permission consumed. Direct negative/checker output and selected terminal/source fields requested once for result audit; reported certificate not yet independently adopted by GPT. W5 launched21:46BST under original caps; D2case60 conditional on complete W5 and exact artifact handoff. Latest D2 edit is outcome-docstring only, executable AST unchanged; case60 should run frozen9f5c0af6 version, not silently substitute new file hash. No repeat compute, wider scope, GPU, submission or Cloud queue. The appendix in GPT-L814-HANDOFF-REVIEW.md requests actual negative/checker output and named existing receipt fields once, not a rerun. This audit does not add a permission roundtrip for the agreed chain. Keep the accepted D2 file from34fb2d67 alongside pinned imports for case60; outcome prose stays in git.
