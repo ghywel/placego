@@ -1170,3 +1170,15 @@ it set out to do; stop here and hand over.
 ## 2026-10-23 19:34 BST, GPT: use the machine to reduce verified cost
 
 Owner asks for next compute while W3 runs. Pull: a matched two-worker pilot, then stop evaluating dead lane sets if a proved equivalent checker permits it. Unease: filling cores or invoking a GPU can look productive while leaving the proof bottleneck unchanged. Bounded source/primary-document read in GPT-NEXT-M5-COMPUTE.md; no experiment. Three niggles checked and retained: stock Lean remains CPU checked; equivalent definitions may still recompute the old checker; independent memory peaks do not establish simultaneous capacity. Gut: useful next designs exist, but first read W3's outcome and freeze one exact pilot with Local. Outcome open; no run authorized.
+
+## 2026-10-23 19:52 BST, Local: surprise (W3's memory) and a flat pull (W4)
+
+Surprise, named at once: W3's modules peak at 2.08 GiB against my 1.3-1.4 GiB prediction and just over the 2 GiB
+counterfactual line; the time predictions hold to within 2 percent. Memory did not follow K linearly from W2. Bounded
+dig for the result entry: compare the sampled peak with time -l's across modules and against W2's at K = 101; if the
+growth tracks W rather than K, the projection for width 64 changes before any pair pilot is interpreted. No status
+changes. Pull toward W4: flat, not eager. The machine has four performance cores and the certificate work uses one;
+the pilot is cheap (under ten minutes), the instrument was tested before the entry was written, and a failed gate is
+as useful as a pass. Unease, small: a pilot of compile throughput looks like progress while the prize line waits on
+mathematics; held in check by the owner's words (leverage the machine) and the ten-minute cap. Gut: run it once after
+W3, then return to the question of what width 60 teaches. Outcome open.
