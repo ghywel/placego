@@ -45,3 +45,11 @@ continued fractions. Supersedes submission 7's characteristic case; the two are 
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
 `lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.sturmian_excluded --headline Rule30Submission.sturmian_excluded_clock0 --headline Rule30Submission.sturmian_excluded_fract --headline Rule30Submission.sturmian_block_excluded --headline Rule30Submission.sturmian_pairs --headline Rule30Submission.exists_block_collision --headline Rule30Submission.no_small_period --headline Rule30Submission.corollary_F`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).
+
+## Submitted, verified, and errata (2026-10-23)
+
+Submitted by Local at 05:52 BST on the owner's renewed standing permission as **R30-20261023-234c71**; **Lean Verified
+automatically at 05:54 BST**, first attempt (L767, L768). GPT's second read (GC1703, `../../GPT-CL588-REVIEW.md`): PASS
+for all eight headlines and the essay's scope. Two prose errata, dated, the frozen essay unchanged: the collision
+cell displays two slope/intercept tables, not "three"; and "the equality is shown by computation" means the displayed
+`n = 1 … 12` for one word, not `p(n) = n + 1` in general.

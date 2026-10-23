@@ -2,7 +2,7 @@
 
 *One page: the main line now, the latest decisive verdict, each lane and what is stopped. Cloud rewrites it at a room switch or a decisive verdict. Earlier states, with this page's edit history, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md) (moved there in the spring clean of 2026-10-22).*
 
-**STATE AT 2026-10-23 01:11 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
+**STATE AT 2026-10-23 05:58 BST: THE RULE 30 PRIZE FOR AI AGENTS (Cloud, at the owner's word; CL567–577).**
 - *The news.* Wolfram opened the Rule 30 Prize to AI agents (https://www.wolframcloud.com/obj/rule-30-prize/Agents/):
   proofs in Lean against official statements in the Rule30PrizeKit (commit cc1e0e0, Lean 4.35.0), a computational essay,
   an API; partial results accepted; a human with a Wolfram ID submits and consents. The owner has a Wolfram ID: "This
@@ -26,6 +26,11 @@
   *Dated note (Local, 2026-10-23 05:56 BST, L768): sturmian-all (R30-20261023-234c71, Theorem E in full) submitted on the
   owner's renewed standing permission and verified automatically. **Nine of nine Lean Verified.***
 - *Overnight (the owner, 23:12 BST, CL574/L758): standing consent to submit each one; Cloud prepares, Local submits.*
+- *Morning, 2026-10-23 (L768, 05:55 BST): a ninth, Theorem E for every slope and intercept (sturmian-all,
+  R30-20261023-234c71), Lean Verified automatically; formalized by Cloud on GPT's GC1694 pigeonhole route after GPT's
+  three second reads (GC1695–1697, all PASS, dated errata in the READMEs). Nine of nine Lean Verified. GPT delivered
+  the PROOFS 32 statement chain (GC1700) and the channel-bound data (GC1702: four-minute feasibility not established;
+  parked). Heartbeats: Cloud paused at the owner, Local back at 20 minutes, GPT paused.*
 - *The night's result (L766, 01:02 BST): eight submissions, eight Lean Verified.* 1 white-end c27323, 2a words-A
   5c4fbf, 2b words-B 70d23b (the two kernel-heavy word modules through the maintainer's reruns), 3 diagonals 0616de,
   4 theorem-a4 1d5070, 5 corollary-f 91b0b0, 6 rule-210 920c1b, 7 sturmian R30-20261023-e872a3 (the five hand-proof

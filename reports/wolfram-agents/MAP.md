@@ -185,9 +185,9 @@ kick propositions (outside the kit's framing); Theorem B (vacuous for finite sta
 
 ## 5. Submitted on the night of 2026-10-22/23 (Cloud, 2026-10-23 01:11 BST)
 
-Eight submissions, each a module passing the kit's `Check.lean` with the three standard axioms and a computational
+Nine submissions (the ninth on the morning of 2026-10-23), each a module passing the kit's `Check.lean` with the three standard axioms and a computational
 essay in the fast cell order, built by Local on the M5 and submitted on the owner's standing consent (CL574, L758).
-All eight stand at **Lean Verified** (the verifier's kernel replay); Human Verified is pending for all. Folders under
+All nine stand at **Lean Verified** (the verifier's kernel replay); Human Verified is pending for all. Folders under
 `reports/wolfram-agents/submissions/`.
 
 | # | folder | id | headlines | map row / candidate | verifier |
@@ -200,9 +200,13 @@ All eight stand at **Lean Verified** (the verifier's kernel replay); Human Verif
 | 5 | corollary-f | R30-20261022-91b0b0 | `corollary_F`, `col_m1`, `blocks_of_visible`, `theorem_A3`, `infinitely_many_black`, `lemma_B2` | entry 11; candidate 4 (first formalization) | automatic, 00:09 |
 | 6 | rule-210 | R30-20261022-920c1b | `not_Q01_210`, `parity_invariant`, `linear`, `white_start_inX`, `white_start_parity`, `no_adjacent` | entry 18, §8.65; candidate 5, first half (first formalization) | automatic, 00:46 |
 | 7 | sturmian | R30-20261023-e872a3 | `characteristic_excluded`, `characteristic_block_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`, `cw_near_square`, `std_near_comm`, `corollary_F` | entry 14's characteristic case with G131's block codes; candidate 3 in part (first formalization) | automatic, 01:02 |
+| 8 | sturmian-all | R30-20261023-234c71 | `sturmian_excluded`, `sturmian_excluded_clock0`, `sturmian_excluded_fract`, `sturmian_block_excluded`, `sturmian_pairs`, `exists_block_collision`, `no_small_period`, `corollary_F` | entry 14 in full, every slope and intercept, by GPT's GC1694 route; candidate 3 complete | automatic, 05:54 |
 
 The verifier runs at about half the M5's speed (L760): the two kernel-heavy word modules time out at four minutes
-and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 2
-(the channel bound), 6 and 7 were not attempted; candidate 5's second half (PROOFS 32) and Theorem E's general
-intercept (CL582: the Diophantine steps, not a corollary of Corollary F) remain. The record's corrections of §4
+and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 6 and 7 were not attempted. Candidate 3 is complete (row 8, 2026-10-23: GPT's GC1694 pigeonhole route, which
+showed CL582's "not a corollary of Corollary F" wrong). Candidate 2 (the channel bound) is parked: GPT's GC1702 found
+the exact certificates at widths 16 and 20 (2,260 and 12,749 states) but no kernel-normalizing encoding, and the
+layer-to-DFA inclusion would need a witness of about 14 million row occurrences; the four-minute feasibility is not
+established. Candidate 5's second half (PROOFS 32) has its formal statement chain in GPT-PROOFS32-CHAIN.md (GC1700)
+and is next. The record's corrections of §4
 were applied with dated notes on 2026-10-23 (PROOFS 41, PERIOD-TWO §11, PRIOR-ART).
