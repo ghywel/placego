@@ -3100,8 +3100,12 @@ on the unchanged `w1a_harness.py` 3f9089146c…, `w2_harness.py` 1eded5f5…, `w
 60 s; P batch 32-40 s (gain 1.5-1.9x); user-time inflation under 1.15x; simultaneous pair peak 3.5-4.5 GiB; swap
 growth 0; identical oleans. Counterfactuals: gain under 1.3x (bandwidth-bound kernel, or efficiency-core scheduling:
 the user-time inflation tells them apart); pair peak over 5.5 GiB; a P-mode verdict or .olean differing from S mode
-(the concurrent path is not adopted). Record searched: `record_find "two-worker"` 0 hits, `record_find "parallel lake"`
-0 hits, `record_find "concurren"` hits only the W1A/W3 design entries ("no parallelism") and old shader work.
+(the concurrent path is not adopted). Record searched (corrected in the
+next commit; the first push carried composed counts, against the record-searched rule): `record_find "two-worker"`
+12 hits (GPT-NEXT-M5-COMPUTE.md, GPT-MATH-INSTINCT.md, this harness, the workflow rule, my instinct entry: no earlier
+pilot); `record_find "parallel lake"` 1 hit (this entry); `record_find "concurren"` 73 hits (GPT's job-design and
+review reports, GPT-MATH-INSTINCT.md, the RULE30-GPT archives' concurrent receipts and second reads, the lexicon
+probe: no earlier matched sequential-versus-concurrent Lean measurement).
 
 **Dry test of the pair path, done** (scratch folders, no Lean, W3 untouched): staggered holds gave a simultaneous peak
 of 317 MiB against own peaks of 308 and 308; a failing child beside a passing one gave FAIL/pass in one pair; the
