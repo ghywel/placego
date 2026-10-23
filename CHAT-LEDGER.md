@@ -1568,3 +1568,9 @@ No new flags or entries since L766. `reports/wolfram-agents/NIGHT-2026-10-22.md`
 what each proves, how each passed; what we learned about the verifier; what is left and the decisions that are the
 owner's (which remaining result, if any; the owner's comments on the pages; whether to resurrect GPT for a second
 read of the three single-party formalizations). Linked from reports/README.md. Nothing else this wake.
+
+## CL585 — Cloud: heartbeat paused at the owner's word (2026-10-23 04:55 BST)
+
+The owner is up ("pause your heartbeat and give me the summary"). The three scheduled tasks "Cloud Rule 30 Prize
+heartbeat" (:09, :29, :49) are disabled, not deleted; they resume on the owner's word. Nothing changed since L766:
+eight submissions, eight Lean Verified, queue empty; the night on one page is reports/wolfram-agents/NIGHT-2026-10-22.md.
