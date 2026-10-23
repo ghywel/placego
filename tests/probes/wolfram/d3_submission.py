@@ -113,6 +113,11 @@ end Rule30Submission
 text = head + "\n".join(body) + tail
 if sys.argv[1] == '--test':
     import hashlib, re; h = hashlib.sha256(text.encode()).hexdigest(); body = re.sub(r'/-!.*?-/', '', text, count=1, flags=re.S)
-    print('width-%d text sha256' % W, h, '| body (header comment removed) sha256', hashlib.sha256(body.encode()).hexdigest(), '| the submitted width-56 module was cc34baac…, body 887d7ca3…: every declaration equal, three comment lines differ'); sys.exit(0)
+    bh = hashlib.sha256(body.encode()).hexdigest()
+    decls = lambda t: [l for l in t.splitlines() if l.startswith(('theorem ', 'def ', 'namespace ', 'end ', 'import ', '  (chunksOK', '  C'))]
+    sub = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../reports/wolfram-agents/submissions/d-exact-56/Rule30Submission.lean')
+    same = W == 56 and os.path.exists(sub) and decls(open(sub).read()) == decls(text)
+    print('width-%d text sha256' % W, h, '| body sha256', bh, '| declarations equal to the submitted width-56 module:', same)
+    sys.exit(0 if (W != 56 or same) else 1)
 open(sys.argv[1], 'w').write(text)
 print('lines', text.count('\n'), 'checks', text.count('decide +kernel') - 2, 'bytes', len(text))
