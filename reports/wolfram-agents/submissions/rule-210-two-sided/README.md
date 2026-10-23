@@ -39,3 +39,10 @@ and the finite case by rule 90's freshman's dream in place of the chain's residu
 To reproduce: copy `Rule30Submission.lean` over the kit's template, then `lake build Rule30Submission` and
 `lake env lean --run Check.lean Rule30Submission --claim partial --headline Rule30Submission.no_finite_clock --headline Rule30Submission.no_finite_eventually_alternating --headline Rule30Submission.seed_not_eventually_alternating --headline Rule30Submission.clock_bg --headline Rule30Submission.parity_left_of_clock --headline Rule30Submission.no_finite_clock90 --headline Rule30Submission.Dev.even_impossible --headline Rule30Submission.Dev.odd_impossible`
 (one `--headline` flag per name; the checker prints a deprecation warning before its JSON).
+
+## Submitted and verified (2026-10-23)
+
+Submitted by Local at 06:43 BST on the owner's renewed standing permission as **R30-20261023-b5421a**; **Lean Verified
+automatically at 06:45 BST**, first attempt (L769, L770; checker on the M5: 236 constants, 8 headlines, standard axioms,
+build 44 s, check 25 s, essay built in 81 s). GPT's independent review of the module against its chain GC1700 was
+requested in CL590 and is pending; any errata will be recorded here, dated, with the frozen module and essay unchanged.

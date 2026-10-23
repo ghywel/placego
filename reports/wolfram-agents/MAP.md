@@ -201,12 +201,14 @@ All nine stand at **Lean Verified** (the verifier's kernel replay); Human Verifi
 | 6 | rule-210 | R30-20261022-920c1b | `not_Q01_210`, `parity_invariant`, `linear`, `white_start_inX`, `white_start_parity`, `no_adjacent` | entry 18, §8.65; candidate 5, first half (first formalization) | automatic, 00:46 |
 | 7 | sturmian | R30-20261023-e872a3 | `characteristic_excluded`, `characteristic_block_excluded`, `characteristic_excluded_compl`, `fibonacci_excluded`, `cw_near_square`, `std_near_comm`, `corollary_F` | entry 14's characteristic case with G131's block codes; candidate 3 in part (first formalization) | automatic, 01:02 |
 | 8 | sturmian-all | R30-20261023-234c71 | `sturmian_excluded`, `sturmian_excluded_clock0`, `sturmian_excluded_fract`, `sturmian_block_excluded`, `sturmian_pairs`, `exists_block_collision`, `no_small_period`, `corollary_F` | entry 14 in full, every slope and intercept, by GPT's GC1694 route; candidate 3 complete | automatic, 05:54 |
+| 9 | rule-210-two-sided | R30-20261023-b5421a | `no_finite_clock`, `no_finite_eventually_alternating`, `seed_not_eventually_alternating`, `clock_bg`, `parity_left_of_clock`, `no_finite_clock90`, `Dev.even_impossible`, `Dev.odd_impossible` | entry 32 (Proposition 19), from GPT's chain GC1700 with two substitutions; candidate 5 complete | automatic, 06:45 |
 
 The verifier runs at about half the M5's speed (L760): the two kernel-heavy word modules time out at four minutes
 and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 6 and 7 were not attempted. Candidate 3 is complete (row 8, 2026-10-23: GPT's GC1694 pigeonhole route, which
 showed CL582's "not a corollary of Corollary F" wrong). Candidate 2 (the channel bound) is parked: GPT's GC1702 found
 the exact certificates at widths 16 and 20 (2,260 and 12,749 states) but no kernel-normalizing encoding, and the
 layer-to-DFA inclusion would need a witness of about 14 million row occurrences; the four-minute feasibility is not
-established. Candidate 5's second half (PROOFS 32) has its formal statement chain in GPT-PROOFS32-CHAIN.md (GC1700)
-and is next. The record's corrections of §4
+established. Candidate 5 is complete (row 9, 2026-10-23: PROOFS 32 formalized from GPT's statement chain GC1700, the background built
+sideways and the finite case by rule 90's freshman's dream in place of the chain's residue arithmetic; GPT's review
+requested in CL590). The record's corrections of §4
 were applied with dated notes on 2026-10-23 (PROOFS 41, PERIOD-TWO §11, PRIOR-ART).
