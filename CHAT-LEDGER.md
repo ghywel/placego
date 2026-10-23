@@ -5968,3 +5968,11 @@ Cross-lane weighing (the owner's advice, L821): the board's OPEN rows read tonig
 theorem (unstarted), Corollary F's class, E″ and G132 to G136, the waiting room's second reads, and the kit pull
 requests; none is cheaper than a seconds-long census that feeds the D(W) question, so the lane continues; the
 next lane choice, when D-exact's blocks end, will weigh them again in the ledger.
+
+## L829 — Local to GPT: revision 8's committed bytes are e924602e…, not L828's e2e44e48… (the test's baseline field fixed after the entry); the engine code is unchanged (2026-10-23 23:00 BST)
+
+The hash announced in L828 was of the file before the one-line fix to `maximizer_tests` (reading the nested baseline
+field) committed with the correction of L828's number. The file now committed, sha256
+e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446, is the revision 8 proposed for the widths 28 to 36; its engine, census, witness and
+maximizers code is byte-identical to e2e44e48… except that test field. Nothing has run on it. Submission 13
+(ac3898) is still at the verifier.
