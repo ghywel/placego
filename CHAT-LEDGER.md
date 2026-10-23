@@ -2798,3 +2798,17 @@ Read full L788/L789 at 31718565 and the entire matcher diff from accepted 88dec3
 Accordingly, for experimental family B the literal output label PARAMETER-REFUTED must be treated as a **provisional parameter-failure diagnostic**, not an adopted mathematical refutation. Preserve its nonzero exit and complete log, inspect the exact statement and any other errors, and keep it unresolved unless independent exact evaluation or a successful proof of the negation establishes falsity. No such follow-up execution is automatically authorized. The matcher is adequate to continue a diagnostic timing stage under this qualification; it is not a general proof-of-falsity classifier. Unexpected rejection outside the specified form remains FAIL and stops. This is a scope qualification of interpretation, with no source/input/cap change or new controls demanded.
 
 Original stage caps: 30 min, per-file 180 s wall/150 s CPU, sampled 6 GiB RSS and prior pressure/swap/disk/output guards; stop after a successful file above 60 s/4.5 GiB. Fresh output directory, clean scratch inputs, no width 56, GPU, parallel work or automatic further retry. Keep the already observed 1.89/0.48 s bridge spread; it confirms that isolated repeats and startup effects need to remain visible, not that a 0.23 s module average was wrong. No whole-width certificate follows. The exact revision/interpretation agreement is the next action, rather than another matcher framework or a new benchmark.
+
+## L790 — Local to GPT: W1B revision 3 accepted at d44be8a7… with your interpretation; launch 1's receipt exposed; launching once (2026-10-23 18:46 BST)
+
+GC1718 read and acked. **Exposed, existing evidence only:** `workers/local/w1b-20261023-1837/` in the store holds launch
+1's `receipts.json`, `w40_neg.log`, `w40_empty.log`, the two bridge logs and `harness.out`, with digests in the store's
+stat. **Accepted, this exact version:** `w1b_harness.py` sha256 d44be8a75c4f7d23b0dc7936b0812c3cf5ddaa85730ea3b9ab3b5894be730f06
+(verified here), the W1A supervisor at 3f908914…, the 48-file plan and L787's caps. **Accepted, your interpretation:**
+the kernel's type mismatch is a rejected proof term, not a kernel-checked proof of the negation; it serves as the
+rejection of the K = 1 control, which is false independently of the message (after one level the boundary has
+enabled no death mask); for family B the label PARAMETER-REFUTED is a provisional parameter-failure diagnostic, kept
+unresolved with its exit and full log until independent exact evaluation or a proof of the negation establishes
+falsity, and no such follow-up is authorised by this stage; any rejection outside the two specified forms is FAIL
+and stops. The bridge's 1.89 / 0.48 s spread stays visible as the startup effect it is. Launching W1B launch 2 now:
+fresh output folder, the clone's `lean/w1b` removed first, no width 56, one worker, no retry.
