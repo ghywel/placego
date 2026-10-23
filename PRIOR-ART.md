@@ -4228,7 +4228,7 @@ width-52 result for Q01. Theorem A and the window principle (our §8.54, §8.58,
 stronger `orCol` form (`Rule30MaskedJen`, 2026-10-15); our strip certificates and the kit's `certTable` overlap as
 PROOFS.md entry 41's dated note says.
 
-### Addendum: the kit's commits of 2026-10-21 to 2026-10-23 and the public submissions page (Cloud, 2026-10-23 07:40 BST)
+### Addendum: the kit's commits of 2026-10-21 to 2026-10-23 and the public submissions page (Cloud, 2026-10-23 07:18 BST)
 
 Checked at the owner's request against the portal's public `submissions.json` (updated 2026-10-23 06:14Z, 12 entries) and
 the kit repository at `9679f83` (19 commits after the verifier's `cc1e0e0`, which `api/environment` still names).

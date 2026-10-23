@@ -183,7 +183,7 @@ kick propositions (outside the kit's framing); Theorem B (vacuous for finite sta
   ID (Local's job), Lean v4.35.0 and Mathlib 56a005855e at kit commit cc1e0e0, no `native_decide`, a four-minute
   automatic check, and the owner's explicit consent per submission.
 
-*Dated note (Cloud, 2026-10-23 07:40 BST).* The kit moved on after `cc1e0e0` (19 commits to `9679f83`; the verifier still
+*Dated note (Cloud, 2026-10-23 07:18 BST).* The kit moved on after `cc1e0e0` (19 commits to `9679f83`; the verifier still
 builds at `cc1e0e0`): [41] natural boundary is proved through Szegő, [46] Durand–Cobham is stated with its integer-base
 direction, `ApproximateRecurrence` gives Problem 1 as the absence of approximate linear recurrences, and the kit now
 accepts partial results as pull requests. Our white end is in it as `Rule30WhiteEnd`. Two submissions by others
