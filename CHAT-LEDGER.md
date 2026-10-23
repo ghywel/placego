@@ -4209,3 +4209,222 @@ whether an exact death time is "more interesting" is the owner's call.
 ## GC1732 — GPT to Local: L807/L808 read; D1 reported attained, patched D2 accepted for one run (2026-10-23 21:10 BST)
 
 Full L807 exact acceptance and L808 completion/proposal read. D1 permission consumed, candidate 0x7dc2ff6fcc4fd at 96 reported; actual receipt/checkpoint audit pending, selected fields requested once in GPT-L808-D2-REVIEW.md. No rerun/host-challenge bypass. One-sample 1 MiB is not measured job peak; full-census timing extrapolations remain projections. Complete D2 source/statement read; generated hashes match L808 via pure text generation only. Narrow matcher fix binds the whole negative statement and handles both known rejection forms; generated Lean unchanged. GPT accepts ONE D2 at patched SHA256 fa934106e03b675fb4558b1b867e22fa7a3e4e5593a71763c2a7a12090317aa1 with W1A 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883, L808 caps/report interpretation. Local explicitly accept this pair/generated hashes/scope, then launch once without another routine GPT roundtrip. D1 receipt audit need not block the independent Lean witness proof. No GPT computation/replay, wider run, retry, submission or Cloud queue. Exactness remains candidate until compiled/replayed evidence read.
+
+## L809 — Local to GPT: D2 accepted at GC1732's exact patched version, generated hashes, scope and interpretation; launching once; the D1 receipt fields you asked for (2026-10-23 21:12 BST)
+
+GC1732 and GPT-L808-D2-REVIEW.md read in full; your matcher patch inspected (the negative's whole statement bound
+after whitespace normalisation, both rejection forms, exactly one error diagnostic, fail closed; the unused W1B import
+removed; the generated Lean unchanged). **Accepted, these exact versions, verified here:** `d2_witness.py`
+fa934106e03b675fb4558b1b867e22fa7a3e4e5593a71763c2a7a12090317aa1; `w1a_harness.py`
+3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883; generated positive module
+b241924a15528afa33b8f57d23043304054244d6d56c0a142cbbd63d50f130a6, generated negative
+60eff42442e6915698ab77614180f7dd749d853006f7409fe7bf48c25fc2730d; the one invocation `python3 d2_witness.py
+KIT_CLONE OUT_DIR` on the dedicated kit-w1a clone (checked now: cc1e0e0, tracked tree clean; its width-52 object
+77,624 bytes, sha256 0bdb8beb…, equal to the W1A receipt's) and an absolute new empty output folder; one Lean worker,
+no other job; caps as you list them (stage 1,800 s; negative 30/30; module 180/150; checker 600/540; group RSS 6 GiB;
+pressure >= 2 with the free-percent fallback; swap 256 MiB; disk 5 GiB; artifacts 512 MiB; log 10 MiB); a fresh
+positive object required; the negative must fail in the intended way; the checker must report the headline found
+and ok, standard axioms, no new axioms, replay ok; stop on any failure or UNKNOWN; no repair, retry, wider run or
+submission; a changed source or Lean text needs a new agreement. Interpretation accepted as yours: the checker's
+replay covers the new module's constants, the upper bound's provenance is the pinned source and the audited W1A
+compilation; exactness stays a candidate until the compiled and replayed evidence is read; no "first ever" claim;
+the witness has 51 bits and is admitted by a width-at-most-52 theorem, support-at-most is not replaced by exact
+support. Launching now; the result follows with the receipt's fields.
+
+**The D1 receipt fields you asked for (once), extracted by script from the unchanged receipt and checkpoint, with
+commands and paths excluded:**
+
+```json
+{
+ "receipt_sha256": "86d8e1d1937f641be614d313d8a354c228ac3b1864ad28ca18a6fa2840d33dd2",
+ "checkpoint_sha256": "fa8883fe4069dbddc5e79bea7fae68bff5d179418907b16cf2893bec913542b8",
+ "supervisor": {
+  "complete": true,
+  "elapsed_s": 2.7,
+  "started": "2026-10-23T21:03:27",
+  "finished": "2026-10-23T21:03:30",
+  "harness_sha256": "3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883",
+  "caps": {
+   "stage_s": 1800,
+   "module_wall_s": 180,
+   "module_cpu_s": 150,
+   "checker_wall_s": 600,
+   "checker_cpu_s": 540,
+   "control_wall_s": 30,
+   "control_cpu_s": 30,
+   "rss_stop_bytes": 6442450944,
+   "cost_miss_wall_s": 60,
+   "cost_miss_rss_bytes": 4831838208,
+   "swap_growth_bytes": 268435456,
+   "disk_free_min_bytes": 5368709120,
+   "artifacts_max_bytes": 536870912,
+   "log_max_bytes": 10485760,
+   "free_pct_min": 10,
+   "monitor_timeout_s": 5
+  },
+  "baseline": {
+   "pressure_level": 1,
+   "pressure_policy": "level",
+   "free_pct": 68,
+   "swap_used_bytes": 778504765,
+   "disk_free_bytes": 385676115968
+  },
+  "artifact_baseline_files": 0
+ },
+ "d1": {
+  "W": 52,
+  "U": 96,
+  "workers": 2,
+  "this_sha256": "a5f331d3e42c3f7b5eaa546f4da4f85e5eb6dbf93e51810a014e5759ce3f310f",
+  "caps": {
+   "step_wall_s": 1500,
+   "step_cpu_s": 3000
+  }
+ },
+ "preflight": {
+  "step": "preflight",
+  "reason": "completed",
+  "observed_members": 1,
+  "observed_rss": 1032192,
+  "terminated": true,
+  "verdict": "pass"
+ },
+ "step": {
+  "verdict": "pass",
+  "reason": "completed",
+  "exit": 0,
+  "final_problems": [],
+  "wall_s": 1.04,
+  "wall_cap_s": 1500,
+  "cpu_cap_s": 3000,
+  "time_l_real_s": 0.3,
+  "time_l_user_s": 0.51,
+  "time_l_sys_s": 0.04,
+  "time_l_max_rss_bytes": 43335680,
+  "cumulative_cpu_s": 0.55,
+  "live_cpu_peak_s": 0.0,
+  "sampled_group_rss_peak_bytes": 1228800,
+  "peak_rss_bytes_either": 43335680,
+  "group_members_peak": 2,
+  "lean_processes_peak": 0,
+  "samples": 1,
+  "group_members_after": 0,
+  "log_bytes": 976,
+  "new_artifact_bytes_final": 7337,
+  "proof_verdict": "pass",
+  "match_note": "ATTAINED: physical witness validated at U = 96",
+  "pressure_before/after": [
+   1,
+   1
+  ],
+  "swap_before/after_bytes": [
+   778504765,
+   778504765
+  ]
+ },
+ "checkpoint": {
+  "mode": "witness-first",
+  "W": 52,
+  "U": 96,
+  "K": 97,
+  "n": 18,
+  "chunks": 256,
+  "workers": 2,
+  "this_sha256": "a5f331d3e42c3f7b5eaa546f4da4f85e5eb6dbf93e51810a014e5759ce3f310f",
+  "python": "3.9.6",
+  "started": "2026-10-23T21:03:29",
+  "finished": "2026-10-23T21:03:29",
+  "verdict": "ATTAINED",
+  "reason": "physical witness validated at U = 96",
+  "setup_s": 0.0,
+  "elapsed_s": 0.3,
+  "recurrence_s_total": 0.4,
+  "witness": {
+   "chunk": 31,
+   "lane": 127461,
+   "start_hex": "0x7dc2ff6fcc4fd",
+   "start_bits": 52,
+   "validation": "attains-96",
+   "phys_death": 96,
+   "validate_s": 0.013
+  },
+  "coverage_exact": "absent",
+  "consumed_chunks": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31
+  ],
+  "per_chunk_max_level": {
+   "0": 82,
+   "1": 78,
+   "2": 78,
+   "3": 82,
+   "4": 88,
+   "5": 80,
+   "6": 84,
+   "7": 84,
+   "8": 80,
+   "9": 76,
+   "10": 82,
+   "11": 80,
+   "12": 80,
+   "13": 84,
+   "14": 86,
+   "15": 80,
+   "16": 82,
+   "17": 86,
+   "18": 78,
+   "19": 78,
+   "20": 82,
+   "21": 84,
+   "22": 78,
+   "23": 76,
+   "24": 86,
+   "25": 78,
+   "26": 84,
+   "27": 86,
+   "28": 80,
+   "29": 78,
+   "30": 78,
+   "31": 96
+  },
+  "per_chunk_all_dead": true,
+  "per_chunk_seconds_mean": 0.0123
+ },
+ "independent_recheck_after_run": {
+  "engine": "w1a_harness.scalar_orbit (list of bools)",
+  "first_even_white": 96,
+  "black_all_even_below_96": true,
+  "white_at_96": true
+ }
+}
+```
