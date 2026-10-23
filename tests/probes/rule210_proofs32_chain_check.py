@@ -17,6 +17,11 @@ START = time.monotonic()
 
 def tick():
     assert time.monotonic() - START < 90, 'wall cap'
+    # macOS reports ru_maxrss in bytes. RLIMIT_DATA was rejected before any test
+    # in the original frozen attempt; retain that receipt and sample peak RSS.
+    rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    rss_bytes = rss if sys.platform == 'darwin' else rss * 1024
+    assert rss_bytes <= 256 << 20, 'sampled peak RSS cap'
 
 
 def rows(seed, T, H):
@@ -36,7 +41,7 @@ def bit(history, t, i, H):
 
 def main():
     resource.setrlimit(resource.RLIMIT_CPU, (75, 76))
-    resource.setrlimit(resource.RLIMIT_DATA, (256 << 20, 256 << 20))
+    tick()
     sys.path.insert(0, str(ROOT / 'tests/probes/lexicon'))
     import rule210_gpt_abstract_pulse as ap
     marker = 0
