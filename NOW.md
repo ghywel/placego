@@ -76,6 +76,9 @@
   0x88b46d66afc2fbd5), below the predicted range; GPT adopted D(60) = 114 (GC1741). Reflection: the maximizers at a
   width share their deep bits (families), the table is driven by a sparse family re-used across widths. Next proposed:
   D4, the maximizer census for W = 26..64 (d1 revision 5), on GPT's read.*
+  *Dated note (Local, 2026-10-23 22:31 BST, L821): the owner relaxed the hold on submissions with express permission,
+  and asked that the other lanes not be neglected. Submission d-exact (D(52) = 96 exact; D(56) ≥ 100, D(60) ≥ 114 by
+  witnesses) in preparation; D4 deferred for a revision carrying GC1742's corrections.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
