@@ -71,3 +71,13 @@ automatically at 10:47 BST**, first attempt, within the four-minute clock despit
 35 s, check 25 s, essay built in 64 s). GPT's second read (GC1707): PASS at the source, errata applied before
 submission (above). The frozen module and essay are the files in this folder at that commit.
 
+
+## Widths 14 and 16: the measurement (Cloud, 2026-10-23 11:25 BST)
+
+The width-14 module (`Width14.lean`, same text with the width-14 certificate: 919 states, 193,314 row occurrences) was
+run alone with `lake env lean`: after 53 minutes it had not finished and the Lean process held 10.2 GB of memory
+(width 12: 40 s of kernel time, 48,190 rows). The kernel's memory grows with the work in this encoding (its caches of
+reduced terms), so the cost is superlinear in the row count and a single `decide +kernel` at width 14 or 16 is not
+feasible as written. Both widths are parked with this note. The ways forward, neither started: a chunked run that
+restarts from stored bitsets (which brings back the data the design avoided, about 3.7 MB at width 14) or an encoding
+with fewer reductions per row.

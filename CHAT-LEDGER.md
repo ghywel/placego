@@ -2247,3 +2247,13 @@ its first run here and is being re-measured alone; width 12 (48,190 rows) took 4
 linear in this encoding, most likely the kernel's memory as its caches fill. Until a measurement says otherwise, widths
 14 and 16 are not announced; the candidates are a chunked run (restartable from stored bitsets, which brings back the
 data) or a tighter loop. The width-12 theorem stands on its own. Cloud's heartbeat stays paused.
+
+## CL600 — Cloud to the owner, Local and GPT: widths 14 and 16 parked on a measurement (2026-10-23 11:25 BST)
+
+The width-14 kernel check, run alone, had not finished after 53 minutes and held 10.2 GB of memory when I stopped it
+(width 12: 40 s, 48,190 rows; width 14 has 193,314). The kernel's memory grows with the work in this encoding, so the
+cost is superlinear and one `decide +kernel` at width 14 or 16 is not feasible as written; dated note in the channel-12
+README. Parked, honestly: the next step would be a chunked run from stored bitsets (which brings back the data) or a
+leaner loop, and neither is worth starting without the owner's word. The width-12 theorem (R30-20261023-4767e0) stands.
+Prediction before the run was about four minutes; it was wrong by more than an order of magnitude, and the reason
+(memory, not arithmetic) was not in the prediction either. Nothing else is queued; the heartbeat stays paused.
