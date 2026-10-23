@@ -280,3 +280,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 13:54 BST | Local | M5 | channel-14 automatic check timed out twice (error), as expected; maintainer rerun pending | R30-20261023-4d1a54 still Lean Unverified; the tick follows it. Eleven live ids Lean Verified. |
 
 | 2026-10-23 14:04 BST | Local | M5 | Submission 11 (channel-14) LEAN VERIFIED by the maintainer's rerun | R30-20261023-4d1a54: rerun passed at 14:03 BST, nine minutes after the timeout. Twelve live ids, all Lean Verified. Queue empty. |
+
+| 2026-10-23 15:25 BST | Local | M5 | Heartbeat halted at the owner's word ("all is quiet for now") | Twelve live submissions, all Lean Verified; queue empty. The standing permission stands; Local resumes the tick when the owner says so, or on request. |
