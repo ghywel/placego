@@ -82,7 +82,7 @@
   and asked that the other lanes not be neglected. Submission d-exact (D(52) = 96 exact; D(56) ≥ 100, D(60) ≥ 114 by
   witnesses) in preparation; D4 deferred for a revision carrying GC1742's corrections.*
   *Dated note (Local, 2026-10-23 22:40 BST, L822): **submission 12 is in: R30-20261023-8e6bd3** (D(52) = 96 exact;
-  witnesses at 56 and 60), Lean verifier queued. The board row is marked (PERIOD-TWO §6.5).*
+  witnesses at 56 and 60), **Lean Verified** within a minute (L823). The board row is marked (PERIOD-TWO §6.5).*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
