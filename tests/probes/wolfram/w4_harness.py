@@ -92,6 +92,11 @@ Dry tests of the pair path in scratch folders with non-Lean children (no kit, no
 BST, revision 3 at 20:1x BST; receipts exposed in the shared store under workers/local/w4-drytest-*/): see the ledger.
 
 OUTCOME: filled in after the run (CHAT-LEDGER.md).
+
+GPT source-review patch (GC1727): record a newly created session's PGID directly from its PID, close the log if
+Popen fails, re-sample after exception-path cleanup, and stop a sequential batch before its next child after any
+non-pass or cost miss. No input, control workload, cap, timing boundary or measurement gate changed. Local must
+explicitly accept this patched hash and interpretation before the one pilot launch.
 """
 import hashlib, os, re, subprocess, sys, time
 
@@ -265,8 +270,14 @@ class PairSupervisor(H.Supervisor):
                     raise OSError('injected spawn failure for child %d' % i)
                 logpath = os.path.join(self.out, s['name'] + '.log'); log = open(logpath, 'w')
                 t = time.monotonic(); r['started_at'] = time.time()
-                p = subprocess.Popen(['/usr/bin/time', '-l'] + s['cmd'], cwd=s['cwd'], stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
-                owned.append({'i': i, 'proc': p, 'pgid': os.getpgid(p.pid), 'log': log, 'logpath': logpath, 't_start': t, 'peak_rss': 0,
+                try:
+                    p = subprocess.Popen(['/usr/bin/time', '-l'] + s['cmd'], cwd=s['cwd'], stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+                except BaseException:
+                    log.close()
+                    raise
+                # start_new_session calls setsid before exec: PID is the new PGID. Do not put a fallible
+                # getpgid lookup between successful creation and registering cleanup ownership.
+                owned.append({'i': i, 'proc': p, 'pgid': p.pid, 'log': log, 'logpath': logpath, 't_start': t, 'peak_rss': 0,
                               'peak_members': 0, 'peak_lean': 0, 'live_cpu_peak': 0.0, 'samples': 0, 'done_at': None, 'reason': None})
                 r['reason'] = 'spawned'; r['pgid'] = owned[-1]['pgid']
             pair['spawn_skew_s'] = round(owned[-1]['t_start'] - owned[0]['t_start'], 3)
@@ -360,7 +371,8 @@ class PairSupervisor(H.Supervisor):
                         r['verdict'] = 'UNKNOWN'
                         try:
                             _, g = groups_sample([o['pgid']])
-                            if g[o['pgid']][2]: H.kill_group(o['pgid'])
+                            if g[o['pgid']][2]:
+                                H.kill_group(o['pgid']); time.sleep(0.3); _, g = groups_sample([o['pgid']])
                             r['group_members_after'] = g[o['pgid']][2]
                         except H.MonitorError:
                             r['group_members_after'] = None
@@ -435,6 +447,9 @@ def run_batch(sup, bname, mode, specs):
         for s in specs:
             r = sup.run_step(s['name'], s['cmd'], s['cwd'], s['wall_cap'], s['cpu_cap'], s['matcher'])
             r['absent_before'] = s.get('absent_before'); post_step(r, s.get('kit'), s.get('rel')); recs.append(r); sup.save()
+            if r['verdict'] != 'pass' or r['cost_miss']:
+                b['not_started'] = [pending['name'] for pending in specs[len(recs):]]
+                break
         b['verdict'] = 'pass' if all(r['verdict'] == 'pass' for r in recs) else ('UNKNOWN' if any(r['verdict'] == 'UNKNOWN' for r in recs) else 'FAIL')
         b['span_s'] = round(sum(r.get('wall_s') or 0 for r in recs), 2)
     else:

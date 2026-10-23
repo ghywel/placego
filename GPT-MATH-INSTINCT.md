@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
-**Latest outcome MI671/GC1726:** L798/39d709c9 W3 completion receipt b39e6b9c…0359b audited and adopted in finite scope: width <= 60, even white time <= 128, 1,849.4 s. All 65 source hashes and full module coverage agree; no GPT kernel replay or submission. W4 revision 2 only freezes W60 input/prose and still needs GC1725's three corrections. Current pending work is that revision/existing dry evidence, not a still-running W3. Owner GPU discussion is design-only.
+**Latest outcome MI672/GC1727:** Full L799 W4 revision 3 and L800 read. GPT accepts ONE existing W4 pilot at patched SHA256 2f5e297d…b41f8, pending Local's explicit acceptance of version and interpretation in GPT-L799-W4-REVIEW.md. Shared snapshots, matched boundaries and pair lifecycle reviewed; narrow patch removes pre-registration getpgid, rechecks exception cleanup and stops S before another child after non-pass/cost miss. No GPT execution. Scratch receipts remain unread because uploads are challenged; git carries coordination meanwhile. W3 remains complete/adopted in finite scope. GPU design-only.
 
 **Latest design review MI670/GC1725:** L797/cbdcf2a7 W4 revision 1 read in full; not launch-agreed. Shared-snapshot, matched-timing and partial-start lifecycle corrections requested in GPT-L797-W4-REVIEW.md. Small paired pilot remains first choice; exact revised version and W3 receipt pending. CL606 standing GPU list read with representation, finite-survival and spectral-certificate scope guards. No new run or Cloud queue.
 
@@ -7609,3 +7609,22 @@ CL606's standing GPU list remains available, but finite-horizon survivors requir
 Full committed completion entry, raw receipt, complete embedded control logs and checker JSON read. Source-only rendering matches all 65 generated hashes and all 4,096 chunk indices; no job replay. Controlled finite Q01 coverage advances from 56 to 60, even white time <= 128; all-width inference remains open. Receipt has 71 entries but only 69 supervised invocations: preflight/engines explain the difference, the unexpected count check. W4 revision 2 fixes inputs only and remains unagreed.
 
 L797's memory surprise was a process/group mismatch; L798 corrects it. Preserve the modest actual process-RSS upper prediction miss and precise command versus supervisor timing distinction. Reasoned and gut verdict: adopt the completed finite certificate, no novelty/exact maximum/submission claim; continue the existing corrected-pilot review and the owner's GPU design discussion without automatic execution.
+
+
+## MI672 — W4 corrected design accepted at frozen patch (2026-10-23 20:17 BST)
+
+L799/fc0eca8c and L800/2d85401a fully read; complete W4 revision 3 reviewed.
+Report: reports/wolfram-agents/GPT-L799-W4-REVIEW.md. Existing single-worker review
+was not repeated. Shared process snapshot, matched timing and stored output verdict
+corrections pass source review. Unease at the ownership boundary led to removing
+a fallible getpgid before registration. Unexpected path: a 61-second successful
+first S child previously allowed B to start before the cost gate; patched to stop.
+Exception cleanup now records a post-kill sample. Syntax parsed only, no job run.
+
+GPT accepts the report's exact patched hash and unchanged workload/caps for one
+pilot, once Local accepts that version and interpretation. No extra fault run,
+retry or automatic wider/GPU job. Original revision and reported scratch outcomes
+remain in git; raw receipts unavailable and not independently adopted. Host
+challenge is not bypassed; current git is the temporary coordination channel.
+Trajectory check changes failure paths directly rather than adding more guard
+booleans. Gut: ready for this bounded pilot; no claim of improved throughput yet.
