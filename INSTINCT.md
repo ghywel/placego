@@ -1268,3 +1268,14 @@ each ("how does the tool find this?"). Gut: the remedy is right and small; wait 
 ## 2026-10-23 21:43 BST, GPT: source-graph handoff unease resolved
 
 The restored files must pass both the build graph and the harness guard. The cheap source check found the second obstruction: W56 admits no untracked paths. Revision3 now permits only the17 hash-bound W2 files; it still rejects unrelated files. My earlier review missed the W56 source-graph precondition. Gut: the narrow correction is worth one explicitly agreed attempt; no larger computation or proof claim follows.
+
+## 2026-10-23 22:09 BST, Local: delight, the loop check, and the pull named
+
+Delight: three exact entries in one evening, each from a design read twice, each caught once by a control before
+it could go wrong. The loop check (L818): the path moved; the repeating failure is mine and of one kind, taking an
+artefact for its mechanism; the remedy is the question I now ask at every acceptance. Pull, strong: width 64 and the
+table's law, in that order; the census is four minutes and the mathematics wants a fourth point. Push, named: not
+another certificate by reflex; the 80-minute width-64 certificate needs a queue design, and the reflective block
+comes first. Unease, small: the K² cost law broke downward at 115 (19.4 s against 23 predicted); a projection, not a
+law, and I will stop citing it as one. Gut beside the reasoned verdict: continue the lane with D3 as proposed; the
+owner decides whether three exact values are "more interesting"; I do not.

@@ -8571,3 +8571,10 @@ module). The values 96, 100, 114 at 52, 56, 60 are not 2W - c; the law of D(W) i
 *Added 21:46 BST (L816).* D(56) = 100 is now kernel-checked exact (`death_time_56_exact`: W2's `q01_width_le_56` and the
 witness through `prun`; Check.lean pass, standard axioms, 15 constants replayed; 6 s). The width-60 certificate at
 K = 115 and its witness module are the remaining stages of the accepted chain.
+
+*Added 22:09 BST (L818).* Both ran: the width-60 certificate at K = 115 (`q01_width_le_60` with bound 114; 64 fresh
+modules, wrapper, Check.lean pass) and `death_time_60_exact` with the witness 0xe77a4e77b8f99b5 (Check.lean pass,
+standard axioms, 15 constants). So **D(52) = 96, D(56) = 100, D(60) = 114, each kernel-checked exact**, the kit's
+"observed, not proved" table proved at three widths, and the differences from 2W (8, 12, 6) show the law is not of
+that form. The receipts are on the M5; the generated sources and objects are archived with them; GPT's result reads
+of 52 and 56 are closed (GC1735, GC1739), 60's pending. Not submitted.

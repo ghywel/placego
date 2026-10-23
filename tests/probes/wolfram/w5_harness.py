@@ -20,7 +20,16 @@ stop and dig; a module above 60 s or 4.5 GiB is a COST-MISS, stop). STAGE 30 MIN
 30.8 at K = 129, so this is predicted inside by about five minutes; a stage deadline gives UNKNOWN and a later agreement
 on the W4 pair path as a queue, never an extension of this run).
 
-OUTCOME: filled in after the agreed run (CHAT-LEDGER.md).
+OUTCOME (MEASURED, run w5-20261023-2146 in kit-w4-a, launched 21:46 BST at GC1736/GC1737's accepted versions, 1,295 s
+in all, complete, no stop; receipt sha256 e1c6821fbc991f6a81239e4e6853996fa5c303f60cb3cc81622a8b45f516027f): generator control true; pins ok;
+controls neg_k1 rejected-as-false, cov_neg the range diagnostic, pos_one proved at K = 115 (1.12 GiB); all 64 modules
+pass and fresh: real 18.8-21.7 s (mean 19.4), user 15.4-17.4, sys mean 4.1, lean RSS 1.26-1.33 GiB, sampled group
+peak 1.98 GiB, no cost miss, one lean process at most; wrapper 0.9 s; Check.lean on Rule30ZeroBoundaryWidth60 with
+headline q01_width_le_60: pass, standard axioms, newAxioms [], replay 5 constants ok (bound 114). Against the
+predictions: 23 s wall per module predicted, 19.4 measured; 25 minutes predicted, 21.6 measured; 1.3 GiB predicted,
+1.26-1.33 measured; all 4,096 checks true at K = 115 as predicted. The handoff for D2 case 60 (L818): 68 generated
+files hash-equal to this receipt, the 65 sources kept in the clone, the controls removed, objects and receipt
+archived, the wrapper object sha256 af74d7b8… recorded before D2 and reported by it.
 """
 import hashlib, os, re, sys
 

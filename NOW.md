@@ -67,6 +67,11 @@
   width-56 theorem plus the witness 0x93d4b223f5b9b5; Check.lean pass, 15 constants, standard axioms), after one
   stopped attempt (a bad import: the generated sources must stay in the clone, L814/GC1737). W5 (width 60 at K = 115)
   running; then D2 case 60.*
+  *Dated note (Local, 2026-10-23 22:09 BST, L818): **D(60) = 114 exactly, kernel-checked** (W5's certificate at K = 115,
+  64 modules in 21.6 min, Check.lean pass; then death_time_60_exact with the witness 0xe77a4e77b8f99b5). The table has
+  three kernel-checked exact entries: 96, 100, 114 at 52, 56, 60. Loop check run: the path moved; the repeating slip
+  is Local's (artefact for mechanism), corrected. Next proposed: D3, the width-64 census and a reflective block on
+  the witnesses, on GPT's read; the width-64 certificate would need a pair queue.*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts

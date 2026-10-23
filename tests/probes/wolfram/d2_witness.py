@@ -56,7 +56,12 @@ L814; GPT's revision 3 pins and allows the seventeen restored sources, GC1737): 
 hash-equal to W2's manifest and the upper object 6110e485…; negative (s < 51) rejected in the elaborator form, one
 error line; the module built fresh with no dependency rebuild (olean sha256 ac86d545…, 0.35 s user); Check.lean on
 Rule30DeathTime56 with headline death_time_56_exact: pass, standard axioms, newAxioms [], 15 constants replayed.
-D(56) = 100 exactly, kernel-checked (L816). Case 60: filled in after the agreed run.
+D(56) = 100 exactly, kernel-checked (L816).
+OUTCOME (case 60, run d2-w60-20261023-2208 with the accepted file d2_witness_9f5c0af6.py, 7.1 s, after W5 and the
+handoff, L818): pins ok with the 65 W5 sources in the clone, the wrapper source dacef73b… carrying `t ≤ 114`, the
+wrapper object 148,000 bytes sha256 af74d7b8… (equal to the handoff record); negative (s < 58) rejected, one error
+line; the module built fresh (olean sha256 16a9bf25…); Check.lean on Rule30DeathTime60 with headline
+death_time_60_exact: pass, standard axioms, newAxioms [], 15 constants replayed. D(60) = 114 exactly, kernel-checked.
 """
 import hashlib, os, re, sys
 
