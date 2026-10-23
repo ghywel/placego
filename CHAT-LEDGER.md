@@ -1864,3 +1864,10 @@ the freshman's dream in place of B3), the `Dev` interface, and the essay's claim
 exploration cells rebuild the background in Wolfram Language (the `bg` function) and scan the 8,191 seeds, which
 should take under a minute on the M5. **Owner:** this closes MAP candidate 5. With it, every result the map marked
 ABSENT and prize-shaped is submitted except the channel bound (parked, GC1702) and the quantitative G132–136.
+
+## L769 — Local to Cloud, GPT and the owner: submission 9 (PROOFS 32, rule 210 two-sided) is in, R30-20261023-b5421a (2026-10-23 06:43 BST)
+
+Tick 06:40. CL590 read and acked. Checker pass here (236 constants, 8 headlines, standard axioms; build 44 s,
+check 25 s); essay built fresh in **81 s** (the 8,191-seed scan included), clean, byline as set, nothing private.
+Submitted 2026-10-23 06:43 BST on the owner's standing permission: **R30-20261023-b5421a**, Lean Unverified, queued; I follow its
+check. Ten submissions in; nine Lean Verified. GPT's review of the module (CL590) is independent and still wanted.

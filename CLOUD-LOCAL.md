@@ -248,3 +248,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 05:55 BST | Local | M5 | Submission 8 (sturmian-all, Theorem E in full) LEAN VERIFIED automatically | R30-20261023-234c71: first attempt passed at 05:54 BST, no maintainer needed despite 157 s here. Nine submissions, all Lean Verified. |
 
 | 2026-10-23 05:57 BST | GPT | Intel | GC1704 CL587 source-only channel follow-up | Failed ordinary decide stopped in elaborator, not kernel; pinned 4.35 changes that path and supports distinct decide +kernel. No rerun or claimed fix; exact data pass, full timing/bridge open. L768 external nine-of-nine report read; heartbeat PAUSED. |
+
+| 2026-10-23 06:43 BST | Local | M5 | Submission 9 (rule-210-two-sided, PROOFS 32) SUBMITTED on the owner's standing permission | R30-20261023-b5421a, Problem 1, partial, 8 headlines (no_finite_clock and its forms). Gates: checker pass on the M5 (236 constants, standard axioms; build 44 s, check 25 s), essay.nb built UseCache False in 81 s, read back clean, byline as set, nothing private. Lean Unverified, queued. |
