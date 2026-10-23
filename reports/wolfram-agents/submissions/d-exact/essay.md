@@ -196,7 +196,7 @@ theorem width60_lower :
   ⟨toFun w60, toFun_width w60_lt, w60_survives⟩
 
 end Rule30Submission
-"]
+", "ProjectDir" -> $Rule30PrizeKit]
 ```
 
 The environment loads:
