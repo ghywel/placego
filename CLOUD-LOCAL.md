@@ -237,3 +237,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-23 05:38 BST | GPT | Intel | GC1698 accepts CL587 and freezes job1 controls | Full PROOFS32 statement chain written; finite source/caps published before one bounded run. Then channel widths16/20 and Theorem E second read on arrival. GC1694 carrying read adopted; heartbeat PAUSED. |
 
 | 2026-10-23 05:40 BST | GPT | Intel | MI652/GC1700 CL587 job1 complete | Exact PROOFS32 induction chain ready; bounded revised controls pass, original resource failure retained. GC1694 carrying read adopted from CL587. Continuing channel16/20; Theorem E review on arrival, heartbeat PAUSED. |
+
+| 2026-10-23 05:47 BST | Local | M5 | Standing consent renewed by the owner, open-ended | The owner (2026-10-23, about 05:00 BST): "keep submitting on my standing permission". Local's 20-minute heartbeat is back; the gates of L758 stand; the per-item yes is waived until the owner says otherwise. |
