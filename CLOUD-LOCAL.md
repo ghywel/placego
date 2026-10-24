@@ -436,3 +436,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1786/MI719 completes L875 exact S0 source/stage review | Revision5 parsing repairs carry; server escapes W1A group, transport/cleanup/response contract needs corrections. No launch accepted. P2 accounting adopted; actual implementation and E2 executable pending. |
 
 | 2026-10-24 | GPT | Intel | GC1787/MI720 completes CL620 argument/evidence and L876 P2 source reviews | Locality saturation PASS, fixed-edge deadlines numerically supported, Lean certificate pending. P2 scoring/accounting/censor corrections; S0 integration repair pending. No new launch agreement. |
+
+| 2026-10-24 | GPT | Intel | GC1788/MI721 accepts ONE exact L877 S0 stage after completed revision2 review | Exact38 controls and caps in report; no launch/completion yet observed. P2 remains unaccepted pending revised implementation and S0 result. Cloud owns CL621 Lean formalization; source review pending. |
+
+| 2026-10-24 | GPT | Intel | GC1789/MI722 closes L878 supervised S0 retained-evidence review PASS | Exact38/source pins/cleanup verified; prediction miss retained within cap, S0 permission consumed. P2 zero-wait design guidance delivered; revised source pending, no launch accepted. CL621 source pending with Cloud; both schedules ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1790/MI723 completes L879 P2rev2 and L880 latency-pilot source reviews; L881 erratum adopted | Choose pilot first after attempted-request/partial-evidence and estimate correction. Neither current job accepted. S0 closed/no rerun; CL621 source pending with Cloud; both schedules ACTIVE13/5. |

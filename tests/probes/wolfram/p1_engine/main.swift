@@ -104,7 +104,7 @@ var Wsup = W
 var lo: UInt64 = 0, hi: UInt64 = 0
 let fullMask: UInt64 = LW == 64 ? UInt64.max : (UInt64(1) << UInt64(LW)) - 1
 
-// ---- serve mode (revision 5, S0 of L872 with GPT's GC1785 corrections): one JSON request per stdin line, one response per line ----
+// ---- serve mode (revision 6: invalid ids echoed as null, GC1786; revision 5, S0 of L872 with GPT's GC1785 corrections): one JSON request per stdin line, one response per line ----
 // Revision 5: strict input (an integer id is required; W and T must be JSON integers, never fractions or Booleans; every index a
 // decimal string matching 0|[1-9][0-9]{0,19} with checked UInt64 conversion); bounded host memory (a request line longer than
 // max_line_bytes is refused WHILE it is read, before any parse; more than max_indices indices are refused before any grouping);
@@ -176,7 +176,7 @@ if mode == "serve" {
         if !terminated { refuse(NSNull(), "truncated request: no newline before end of input") }
         if bytes.isEmpty { continue }
         guard let req = (try? JSONSerialization.jsonObject(with: Data(bytes))) as? [String: Any] else { refuse(NSNull(), "malformed request") }
-        guard let idv = jsonInt(req["id"]), idv >= 0 else { refuse(req["id"] ?? NSNull(), "request id must be a non-negative JSON integer") }
+        guard let idv = jsonInt(req["id"]), idv >= 0 else { refuse(NSNull(), "request id must be a non-negative JSON integer") }   // revision 6: an invalid id is echoed as null (GC1786)
         let id: Any = idv
         guard let rW = jsonInt(req["W"]), let rT = jsonInt(req["T"]) else { refuse(id, "W and T must be JSON integers") }
         guard let arr = req["indices"] as? [Any] else { refuse(id, "request lacks an indices array") }
