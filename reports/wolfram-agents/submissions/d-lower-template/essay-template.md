@@ -35,7 +35,7 @@ The first even time at which depth 1 is white:
 
 ```wl
 firstEvenWhite[r_, n_] := First[Select[Range[0, n, 2], depth1[r, n][[# + 1]] == 0 &]];
-firstEvenWhite[#, 400] & /@ {w@@W@@}
+firstEvenWhite[#, @@D@@] & /@ {w@@W@@}
 ```
 
 The orbit of `w@@W@@` for @@STEPS@@ steps, depth 1 at the left:

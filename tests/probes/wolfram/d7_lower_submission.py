@@ -9,7 +9,8 @@ scope W, horizon 4W and coverage 2^(W/2); zero censored; a complete, unique, in-
 W; the selected witness equal to the retained, validated census witness entry); the witness the smallest-lane maximizer; the census
 result pinned by digest once known; the ratio range floored and ceiled exactly.
 
-New: W is a parameter; the prior table and the prior submissions are named in PRIOR and PRIOR_SUBMISSIONS; the essay comes from the
+Revision 2 (GC1801): the witness cell's horizon is the frozen D, not a fixed 400; PROVENANCE is frozen with the result, not
+named in advance; every check runs before either file is written. New in revision 1: W is a parameter; the prior table and the prior submissions are named in PRIOR and PRIOR_SUBMISSIONS; the essay comes from the
 width-parametric template submissions/d-lower-template/essay-template.md.
 
 Usage:
@@ -29,7 +30,7 @@ CENSUS_SHA256 = None              # filled from `pick` after the census
 WITNESSES = []                    # [(W, D, start)], filled from `pick` after the census
 PRIOR = [(52, 96), (56, 100), (60, 114), (64, 116), (66, 120), (68, 122), (70, 124), (72, 130), (74, 134)]   # the table below W
 PRIOR_SUBMISSIONS = 'submissions R30-20261024-b16332 and R30-20261024-a129c3 proved `D(64) >= 116` to `D(74) >= 134`'
-PROVENANCE = 'L887 to L892'
+PROVENANCE = None                 # the actual carrying ledger entries, frozen with the result (GC1801)
 TEMPLATE = os.path.join(HERE, '..', '..', '..', 'reports', 'wolfram-agents', 'submissions', 'd-lower-template', 'essay-template.md')
 
 HEAD = """import Rule30PrizeKit
@@ -91,6 +92,7 @@ def pick(W, stage_dir):
 
 def module(wit):
     (W, Dv, s), = wit
+    assert PROVENANCE, 'freeze PROVENANCE with the actual ledger entries first'
     text = D5.module(wit)
     i = text.index('set_option Elab.async false')
     head = HEAD.replace('@@W@@', str(W)).replace('@@D@@', str(Dv)).replace('@@PRIORSUBS@@', PRIOR_SUBMISSIONS).replace('@@PROV@@', PROVENANCE)
@@ -114,26 +116,27 @@ def write(W, out, stage_dir, check_path=None):
     assert Ww == W and Dv == c['max'] and s == s0, 'the witness is not the smallest-lane census maximizer'
     assert 0 < s < (1 << W) and P.death(s, 4 * W) == Dv, 'scalar death'
     ok, why = E.validate_witness(W, Dv, s); assert ok, why
-    os.makedirs(out, exist_ok=True)
-    src = module(WITNESSES); open(os.path.join(out, 'Rule30Submission.lean'), 'w').write(src)
+    prev = d.get('prev') or {}
+    assert prev.get('W') == W - 2, 'the census must have carried the previous width (--prev)'
+    src = module(WITNESSES)                # every check above runs before either file is written (GC1801)
     consts = 'N' if not check_path else str(json.load(open(check_path))['replay']['constants'])
     table = PRIOR + [(W, Dv)]
     ratios = [Fraction(b, a) for a, b in table]
     lo, hi = min(ratios), max(ratios)
     rlo = Fraction(math.floor(lo * 100), 100); rhi = Fraction(math.ceil(hi * 100), 100)
     assert rlo <= lo and hi <= rhi
-    prev = d.get('prev') or {}
     fill = {'@@W@@': str(W), '@@D@@': str(Dv), '@@HEX@@': '%x' % s, '@@COUNT@@': str(c['max_count']), '@@BLOCKS@@': str(len({i >> 12 for i in mx})),
             '@@GPUMIN@@': str(round(d['gpu_total_s'] / 60)), '@@CONSTANTS@@': consts, '@@STEPS@@': str(Dv + 2), '@@DIGITS@@': str(W + Dv + 10),
             '@@HALF@@': str(W // 2), '@@LANESTXT@@': lanes_text(W // 2), '@@CHUNKEXP@@': str(W // 2 - 18), '@@PREVW@@': str(prev.get('W')),
             '@@PREVCOUNT@@': str(prev.get('witnesses')), '@@PREVMAX@@': str(prev.get('max')), '@@TABLE@@': ', '.join(str(b) for _, b in table),
             '@@PRIORSUBS@@': PRIOR_SUBMISSIONS, '@@PROV@@': PROVENANCE,
             '@@RLO@@': '%d.%02d' % divmod(int(rlo * 100), 100), '@@RHI@@': '%d.%02d' % divmod(int(rhi * 100), 100)}
-    assert prev.get('W') == W - 2, 'the census must have carried the previous width (--prev)'
     tpl = open(TEMPLATE, encoding='utf-8').read()
     for k, v in fill.items(): tpl = tpl.replace(k, v)
     assert tpl.count('@@LEAN_SOURCE@@') == 1 and '@@' not in tpl.replace('@@LEAN_SOURCE@@', ''), 'an unfilled placeholder'
     essay = tpl.replace('@@LEAN_SOURCE@@', src.rstrip('\n') + '\n')
+    os.makedirs(out, exist_ok=True)
+    open(os.path.join(out, 'Rule30Submission.lean'), 'w').write(src)
     open(os.path.join(out, 'essay.md'), 'w', encoding='utf-8').write(essay)
     for n in ('Rule30Submission.lean', 'essay.md'):
         print(n, hashlib.sha256(open(os.path.join(out, n), 'rb').read()).hexdigest())
