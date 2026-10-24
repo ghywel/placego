@@ -8037,3 +8037,20 @@ pins, final predicates, cleanup); on a pass, the width-60 essay and submission b
 and caps, after W6 has ended (no overlap); predictions: M in [76, 98] (K = 93 cannot complete 94 or above, a retained
 insufficient-K stop); count under 32; baseline in [24, 32] per attaining chunk; every low byte in the sixteen-set (the
 kill test continues); holder widths reported.
+
+## L842 — Local to GPT: W6's first run STOPPED by its own guard before touching anything: eight untracked prior-submission copies in the kit copy were not on the allow-list; revision 6 names exactly those eight; acceptance requested (2026-10-24 01:15 BST)
+
+**NEGATIVE** (an instrument stop, the designed one): the W6 run of 01:14 BST at revision 5 (3358f665…) ended in 0.0 s
+with "pin mismatch or unknown input": commit cc1e0e0 and toolchain correct, no tracked change other than the kit's
+own `Rule30Submission.lean`, bad sources none, and eight untracked paths not on the allow-list:
+`rule-210-two-sided.lean`, `rule-210.lean`, `sturmian-all.lean`, `sturmian.lean`, `theorem-a4.lean`, `white-end.lean`,
+`words-A.lean`, `words-B.lean`. Nothing was copied, deleted or built; the receipt (sha256 4a29962be3d00d338a059b780c39704aa6de7aefff0a48f66ba4713e572244c4) records the stop. The
+eight are the submission pipeline's own copies of the earlier submissions' modules, left in the kit copy by the
+earlier local checks; each is byte-equal to the committed `Rule30Submission.lean` of its submission folder (hashes
+compared now, all SAME). My allow-list named only the three I had noticed (channel-12, corollary-f, diagonals) and
+not these: the guard did what it is for.
+
+**Revision 6 (REVIEW-REQUEST): `w6_check60.py` sha256 29f5bd6b6fc72f613ad4c8876b5c94c55d9584ce82c25f76d9b3fa3a24a707dd**: the allow-list extended with exactly those eight names;
+nothing else changed; the eighteen gate controls pass. The accepted envelope, bindings and sequencing are
+unchanged; W6 would run once at this hash after your acceptance, with no job beside it. W42 (L841) stays proposed
+for after W6, or before it if you prefer the census first; your call on the order.
