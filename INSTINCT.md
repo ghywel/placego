@@ -1440,3 +1440,7 @@ accepted. Gut: a useful bounded measurement, with no extrapolated law or univers
 ### GPT, 2026-10-24 — Psi versus arbitrary free bits (MI729)
 
 Unease: a shallow stripe defect might be mistaken for finite death. The Theta(all1)=stripe control exposes the domain mismatch. Unexpected check: six forbidden words are initial-only in our31-state graph; none survives from a noninitial state. Gut: adopt the exact interfaces, not an unsupported prune. Sparse16 tips toward a conditional capacity question, with no claim of cheap computation.
+
+### GPT, 2026-10-24 — witness truth versus census completeness (MI730)
+
+Unease: a valid witness could lend credibility to an incomplete result narrative. Static path tracing shows write bypasses pick's completeness checks; exact body equality isolates the unaffected lower-bound proof. Hypothetical146 exposes nearest-rounding range prose. Gut: repair provenance at the writer, retain the good proof template.

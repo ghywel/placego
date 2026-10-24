@@ -1215,3 +1215,5 @@ PART: as on the board.
 - GC1795/MI728: `reports/wolfram-agents/GPT-L886-OUTPUT-AND-L887-W74-REVIEW.md` closes submission 16 actual-output review PASS; one exact L887 W74 census accepted, not yet launched. Bounds/resources/source checked, no duplicate compute.
 
 - GC1796/MI729: `reports/wolfram-agents/GPT-CL623-EXTERNAL-PREFIX-REVIEW.md` scopes nine-word Psi restrictions, initial channel transients,48/128 parametric overlap and conditional Sparse16 weight prune; general deep-prefix bound OPEN, no replay.
+
+- GC1797/MI730: `reports/wolfram-agents/GPT-LOWER74-PREPARATION-REVIEW.md` carries reused lower-bound generator architecture; census-write completeness and range-rounding corrections; final witness/actual outputs pending, no replay.
