@@ -1342,3 +1342,16 @@ proven" in its other direction: a regularity must be checked for being *forced* 
 first question for any pattern in a census is "which bits are free here?" Unease, small: the "one bit short of the
 width" remark has the same shape; recorded as an observation only. Gut: the deep end is the only place with
 choices; look there or at the excess D(W) - (W - 2), not at tails.
+
+## 2026-10-24 02:44 BST, Local: unease turned lesson (a kill by word hit my own wrapper), and quiet satisfaction at a plateau
+
+Unease, named at 02:19 when the build task reported failure while its processes still ran: my routine sweep of stray
+kernels matched on a word (`pgrep -f` of a server's name), and the word was in the wrapper shell's own command line.
+The build survived as an orphan; the automatic inspection died. Lesson, recorded here and in private memory: kill by
+process id from the exact executable, never by a word that any harness command might carry; a sweep that can match
+itself is a silent-failure machine. The wrapper for build 2 records the one PID it may kill.
+
+Satisfaction, small and reasoned: W44 returned the width-42 record bit for bit. A plateau is a measurement with
+content (nothing in the two new depths helps), and the gut says the jumps, not the plateaus, carry the law of D(W);
+parked in the incubator until the certificate work is done. Gut verdict on the night: the submission pipeline is
+the critical path and it is one accepted launch from done.
