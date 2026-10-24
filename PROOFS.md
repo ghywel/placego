@@ -19320,3 +19320,41 @@ summing to ΣS, in H(h), i.e. u_J ≥ L(r_J) + h·r_J for every proper group J. 
   for h ≤ 4 (231,197 pools at h = 4), truncated pools included. This covers the coarsened instance of a five-bin triple facet.
 - Ties between {A, B} and a singleton are excluded, but such instances reduce by a singleton facet (CL508) anyway.
 - It covers CL515's coarsened instances from two-size-3-bin facets.
+
+
+### L910 — The right-end moves leave the visible word, hence Psi R, unchanged (Local, 2026-10-24; waiting room)
+
+*Status:* HAND PROOF-SKETCH, single-party; GPT's carrying read requested (L910). *Where:* CHAT-LEDGER.md L910; data
+`cited/cq01-collisions-20261024-2157/` (the GC1822 stage, and Local's disclosed move checks). *Novelty:* UNASSESSED outside the record.
+Related in the record: G141's finite boundary guard (two finite rows with the same image at a white wall, one step); this lemma is
+different: the two configurations never become equal, they agree near the wall forever.
+
+**Setting.** The driven right half of the kit's sideways construction: cells x >= 1, column 0 forced black at even times and white at
+odd times, new(x) = old(x - 1) xor (old(x) or old(x + 1)). A finite right half R has last black cell m >= 1. At time 0 put
+l = R(m - 1) for m >= 2, and l = 1 (the black wall) for m = 1.
+  - move (a), when l = 0: R' = R + {m + 1};
+  - move (b), when l = 1: R' = R - {m} + {m + 1}.
+
+**Lemma.** For every t >= 0 the two configurations x_t (from R) and x'_t (from R') agree on cells 1..m + t - 1, and they are again
+related by a move at the right end, with x_t's last black at m + t, the move types alternating. Consequently cell 1 agrees at every time
+t >= 1, so u R s = u R' s for every s, and Psi R = Psi R' at every depth (the kit's Psi_col and recon).
+
+**Proof.** Induction on t, with M = m + t the last black of x_t. Cells at most M - 2 update from equal neighbourhoods. For t >= 1,
+M >= 2 and cell M - 1 is a real cell; at t = 0 with M = 1 only move (b) occurs, with the wall black.
+  - (a) x = ... y 0 1 0 0 and x' = ... y 0 1 1 0 at cells M - 2..M + 2. New cell M - 1 is y xor (0 or 1) = not y in both; new cell M is
+    0 xor (1 or 0) = 1 = 0 xor (1 or 1); new cell M + 1 is 1 in x and 0 in x'; new cell M + 2 is 0 in x and 1 in x'; beyond, white.
+    So the new rows agree on 1..M, x's new last black is M + 1 with cell M black, and x' = x - {M + 1} + {M + 2}: move (b) at M + 1.
+  - (b) x = ... a 1 1 0 and x' = ... a 1 0 1 at cells M - 2..M + 1 (cell M - 1 black, or the black wall when M = 1). New cell M - 1 is
+    a xor (1 or 1) = a xor (1 or 0) = not a, because the black cell M - 1 masks cell M through the OR; new cell M is
+    1 xor (1 or 0) = 0 = 1 xor (0 or 1); new cell M + 1 is 1 xor 0 = 1 = 0 xor (1 or 0); new cell M + 2 is 0 in x and 1 in x'.
+    So the new rows agree on 1..M + 1, x's new last black is M + 1 with cell M white, and x' = x + {M + 2}: move (a) at M + 1.
+Cell 1 lies in the agreement range at every t >= 1 (M >= 2), so all visible bits agree. QED (sketch; second reader wanted).
+
+**Checks (Local, outside any stage, retained):** every R supported in 1..12 with m < 12 (2,047 pairs) stays move-related for 120 steps
+with equal visible words, no failure; the negative control (partner R + {m + 2}) fails for all 2,047 and changes the visible word every
+time. In the GC1822 stage data every applicable move holds (32,767 pairs, R supported in 1..16, m < 16).
+
+**Corollary.** R -> Psi R is not injective on finite right halves, at infinite depth: for example R = {1} and R' = {2}. The move classes
+among supports in 1..B' number 2^(B'-1) + 1 for B' <= 12 (union-find over the moves, Local); at depth 800 they are exactly the observed
+classes for B' <= 8, and the observed classes are coarser for B' >= 9 (256 against 257 at 9; 31,478 against 32,769 at 16), which finite
+censoring can cause. **Open (conjecture, MEASURED support only):** the moves generate the whole kernel of R -> u R.

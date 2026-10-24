@@ -72,6 +72,14 @@ rejects these exploratory statistical predictions, not section 8.66's identity o
 first-step front healing but does not establish it as the cause (GC1821). Results between the margins are inconclusive. No finite run settles infinite
 injectivity: a pair equal at depth 800 may differ deeper (GC1818, GC1820).
 Usage: python3 cq01_collisions.py --controls | run OUT B K | stage OUT B K
+OUTCOME (the one GC1822-accepted stage at revision 2, af4b7a7c, 2026-10-24 21:57:30 to 21:57:40 BST, L910): W1A pass, the strict gate
+PASS, both stage bindings held; child wall 7.21 s, sampled group RSS 358,891,520 bytes. The u partition equals the Psi partition (31,478
+classes): HELD. Restricted class counts 1, 2, 3, 5, 9, 17, 33, 65, 129, 256, 511, 1,010, 2,005, 3,984, 7,921, 15,781, 31,478 for
+B' = 0..16, growth 1.977 to 1.996 per cell from B' = 8: HELD. f_p rises with p, from f_1 = f_2 = 0 to f_16 = 0.381 (rank correlation
++0.999): PREDICTION FAILED, counterfactual met (my first draft's direction was right; the B = 3, 4 exposure misled me). Left-black above
+left-white for p = 3..16, a tie at zero for p = 2: INCONCLUSIVE. Largest class 236 (least lane 31): PREDICTION FAILED. All 12 whole-line
+pairs agree: HELD. The depth-2 truth table exact (16,384, 16,384, 0). Read afterwards from the retained labels: two right-end moves
+generate the partition exactly for B' <= 8 and hold for every applicable right half (L910).
 """
 import hashlib, json, math, os, sys, time
 
