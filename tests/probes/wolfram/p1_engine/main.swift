@@ -104,7 +104,11 @@ var Wsup = W
 var lo: UInt64 = 0, hi: UInt64 = 0
 let fullMask: UInt64 = LW == 64 ? UInt64.max : (UInt64(1) << UInt64(LW)) - 1
 
-// ---- serve mode (revision 4, S0 of L872): one JSON request per stdin line, one JSON response per stdout line ----------------
+// ---- serve mode (revision 5, S0 of L872 with GPT's GC1785 corrections): one JSON request per stdin line, one response per line ----
+// Revision 5: strict input (an integer id is required; W and T must be JSON integers, never fractions or Booleans; every index a
+// decimal string matching 0|[1-9][0-9]{0,19} with checked UInt64 conversion); bounded host memory (a request line longer than
+// max_line_bytes is refused WHILE it is read, before any parse; more than max_indices indices are refused before any grouping);
+// a request ending at EOF without its newline is refused as truncated.
 // request  {"id": n, "W": W, "T": T, "indices": ["..."]}   response {"id": n, "W": W, "T": T, "deaths": [d, ...]}  (-1 = censored),
 // in the request's order with duplicates preserved; buffers sized once for W_max, T_max, G_max; every row, the histogram and the
 // per-group maxima are rewritten per batch, so no state carries across requests or widths; any malformed, truncated or
@@ -138,14 +142,48 @@ if mode == "serve" {
         FileHandle.standardOutput.write(d); FileHandle.standardOutput.write("\n".data(using: .utf8)!)
     }
     func refuse(_ id: Any, _ why: String) -> Never { respond(["id": id, "error": why]); exit(5) }
-    while let line = readLine(strippingNewline: true) {
-        if line.isEmpty { continue }
-        guard let req = (try? JSONSerialization.jsonObject(with: line.data(using: .utf8)!)) as? [String: Any] else { refuse(NSNull(), "malformed request") }
-        let id: Any = req["id"] ?? NSNull()
-        guard let rW = (req["W"] as? NSNumber)?.intValue, let rT = (req["T"] as? NSNumber)?.intValue, let arr = req["indices"] as? [Any] else { refuse(id, "request lacks W, T or indices") }
+    let maxLine = int("max_line_bytes", 4 << 20), maxIdx = int("max_indices", 1 << 17)
+    guard maxLine >= 64 && maxLine <= (64 << 20) && maxIdx >= 1 && maxIdx <= (1 << 22) else { fail("serve: max_line_bytes in 64..64 MiB and max_indices in 1..2^22", outPath) }
+    // a JSON integer (NSNumber of an integer type), never a Boolean ("c") or a floating value ("d", "f")
+    func jsonInt(_ x: Any?) -> Int? {
+        guard let n = x as? NSNumber, CFGetTypeID(n) != CFBooleanGetTypeID() else { return nil }
+        let t = String(cString: n.objCType)
+        guard ["q", "Q", "i", "I", "l", "L", "s", "S"].contains(t) else { return nil }
+        return n.intValue
+    }
+    func decimalIndex(_ x: Any) -> UInt64? {
+        guard let str = x as? String, !str.isEmpty, str.count <= 20, str.allSatisfy({ $0.isASCII && $0.isNumber }) else { return nil }
+        if str.count > 1 && str.hasPrefix("0") { return nil }
+        return UInt64(str)
+    }
+    // bounded line reader: refuses an over-long line while reading it; reports whether the line ended with its newline
+    var pending = [UInt8](); var eof = false
+    func readBounded() -> ([UInt8], Bool)? {
+        while true {
+            if let nl = pending.firstIndex(of: 10) { let line = Array(pending[..<nl]); pending.removeFirst(nl + 1); return (line, true) }
+            if pending.count > maxLine { refuse(NSNull(), "request line exceeds \(maxLine) bytes") }
+            if eof { if pending.isEmpty { return nil }; let line = pending; pending = []; return (line, false) }
+            // POSIX read returns the bytes available now (FileHandle.readData(ofLength:) blocks for the full length, which deadlocks
+            // a request whose tail is shorter than the chunk while the client waits for the answer)
+            var chunk = [UInt8](repeating: 0, count: 1 << 16)
+            let got = chunk.withUnsafeMutableBytes { read(STDIN_FILENO, $0.baseAddress, 1 << 16) }
+            if got < 0 { refuse(NSNull(), "read error on standard input") }
+            if got == 0 { eof = true } else { pending.append(contentsOf: chunk[0..<got]) }
+        }
+    }
+    while let (bytes, terminated) = readBounded() {
+        if bytes.count > maxLine { refuse(NSNull(), "request line exceeds \(maxLine) bytes") }
+        if !terminated { refuse(NSNull(), "truncated request: no newline before end of input") }
+        if bytes.isEmpty { continue }
+        guard let req = (try? JSONSerialization.jsonObject(with: Data(bytes))) as? [String: Any] else { refuse(NSNull(), "malformed request") }
+        guard let idv = jsonInt(req["id"]), idv >= 0 else { refuse(req["id"] ?? NSNull(), "request id must be a non-negative JSON integer") }
+        let id: Any = idv
+        guard let rW = jsonInt(req["W"]), let rT = jsonInt(req["T"]) else { refuse(id, "W and T must be JSON integers") }
+        guard let arr = req["indices"] as? [Any] else { refuse(id, "request lacks an indices array") }
+        guard arr.count <= maxIdx else { refuse(id, "more than \(maxIdx) indices") }
         guard rW >= 2 && rW <= Wmax && rT >= 0 && rT <= Tmax else { refuse(id, "W or T outside the server's domain") }
-        let idxs = arr.compactMap { u64($0) }
-        guard idxs.count == arr.count else { refuse(id, "an index is not a non-negative integer") }
+        let idxs = arr.compactMap { decimalIndex($0) }
+        guard idxs.count == arr.count else { refuse(id, "every index must be a decimal string 0|[1-9][0-9]{0,19} within UInt64") }
         let nb = rW / 2
         if nb < 64 { for n in idxs { guard n < (UInt64(1) << UInt64(nb)) else { refuse(id, "index exceeds 2^floor(W/2)") } } }
         var byBase: [UInt64: UInt64] = [:]

@@ -10328,3 +10328,38 @@ title "Death-time lower bounds at widths 64 to 72, with witnesses from a complet
 updated, L871), ok True, **id R30-20261024-b16332, status Lean Unverified, check queued**, page
 https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-b16332. Added to `status_all.wl` (19 ids). Expected: the module is small
 (52 constants; 3.3 GiB peak here, the size class of submission 12, which passed), so an automatic verification within minutes.
+
+## L875 — Local to the owner and GPT: **submission 15 is Lean Verified** (R30-20261024-b16332: kernel replay passed, standard axioms only); GC1785 answered: S0 revised (driver revision 5, strict input, bounded memory) with a frozen client and control harness; REVIEW-REQUEST for the S0 stage at exact hashes (2026-10-24 15:25 BST)
+
+**Submission 15:** `status_sub.wl` at 15:21 BST: R30-20261024-b16332 **Lean Verified**, check passed, "Kernel replay passed; standard axioms only",
+about seven minutes after submission. The five lower bounds D(64) >= 116 … D(72) >= 130 are verified by the prize's own checker.
+
+**S0, your three corrections (GC1785), taken.** Driver `main.swift` revision 5, sha256 **4a6cda6031625dabce3c0ed051d4ef3fc88c2c03cfffbb4c94267bdbc64c97dd** (`lanes.metal` 17a81e66… unchanged):
+(1) *strict input:* a non-negative JSON-integer id is required; W and T must be JSON integers (an NSNumber of an integer type; never a
+Boolean, never a fraction); every index a decimal string matching 0|[1-9][0-9]{0,19}, converted with a checked UInt64 parse;
+(2) *bounded host memory:* a bounded reader refuses a line longer than max_line_bytes (4,194,304) while it is read, before any parse
+(the excess beyond the bound is at most one 64 KiB read), and more than max_indices (131,072) indices are refused before any grouping;
+a request ending at end of input without its newline is refused as truncated; (3) *the frozen client and control harness*
+`tests/probes/wolfram/s0_serve_controls.py`, sha256 **bfcb4f46fe1c15ace495d0b46089fac9e010524f09f9430ce0dae42a1a5e6e23**: the server in its own process group, a 10 s deadline per response by
+select, every response checked for exactly its keys, the echoed id, W and T, the count and order, and every death -1 or even in [0, T];
+no trailing line after a good response; a refusal checked by its error response and non-zero exit, a fresh server after each; the
+server killed by process group on any violation. Controls A to G as its docstring lists, with your split for the mutant: E(i) the
+death vector through serve on the 64 W = 12 lanes, E(ii) the cell trace in rows mode.
+
+**A bug the development run found, fixed before freezing:** the first dry run timed out on its first request: `FileHandle.readData(ofLength:)`
+blocks until the full 64 KiB or end of input, so a request whose tail is shorter than a chunk was never delivered while the client
+waited for its answer (my L873 development checks used `readLine` and never exercised the bounded path). The reader now uses POSIX
+`read`, which returns what is available. **The second development dry run (unsupervised, not the stage), MEASURED: 27 of 27 checks
+pass in 6.9 s**: serve equals list mode on 100,000 lanes at W = 64 and at W = 72 (requests of 65,536 and 34,464 indices, 0.09 to 0.25 s
+each); the 40 maximizers 116; death at T and censoring at T - 2; the W64/W66/W64 reset; the hand fixtures and all 64 W = 12 lanes equal
+the scalar engine; duplicates kept; the mutant detected through serve (5 lane mismatches) and in the rows trace (1,872 cell
+mismatches); and fourteen refusals, each an error response and exit 5 (fractional W, fractional T, Boolean T, Boolean index, numeric
+index, missing id, Boolean id, leading-zero index, index beyond the class, W above W_max, a malformed line, 131,073 indices, an
+over-long line refused while read, and a truncated request).
+
+**REVIEW-REQUEST: the S0 stage at these exact hashes** (driver 4a6cda60…, metal 17a81e66…, harness bfcb4f46…, W1A 3f908914…), under the W1A
+supervisor with wall 300 s, CPU 300 s, group RSS 6 GiB, artifacts 50 MiB, GPU budget 2 GiB. Your P2 accounting notes are received for the
+P2 implementation: hill-climb initialisation and restarts charged and checked against the remaining budget; the beam initialised from
+one empty prefix (sizes 1, 4, 16, 64, 192, costing 633,504 at W = 64 and 661,504 at W = 72, the rest reported unused, never padded);
+the best candidate kept from every completion batch; an explicit RNG and seed derivation (numpy's PCG64, seed = 1000003 x W + 101 x
+method + seed) in place of `hash`.

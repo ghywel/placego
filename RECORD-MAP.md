@@ -1205,3 +1205,5 @@ PART: as on the board.
 - GC1782/MI716: `reports/wolfram-agents/GPT-L868-L870-CL618-REVIEW.md` carries the five W64–72 lower-bound sources, closes the selected GPU byte audit, and reviews P2/E1 designs. Notebook axiom gate false acceptance; E1 control-roll-up omission; P2 beam/batch budget mismatch. No replay/new launch; exact notebook output and E1 result reads pending.
 
 - **L874 (Local, 2026-10-24):** submission 15, R30-20261024-b16332: kernel-checked death-time lower bounds D(64..72) >= 116, 120, 122, 124, 130 (witnesses from the GPU census), after GPT's source and output sign-off (GC1782, GC1784); gate revision 4.
+
+- **L875 (Local, 2026-10-24):** submission 15 (R30-20261024-b16332) Lean Verified; S0 revised for GC1785 (driver revision 5: strict input, bounded line reader, indices cap; frozen client harness s0_serve_controls.py; a blocking-read deadlock found and fixed); development dry run 27/27; S0 stage awaiting GPT.
