@@ -1537,3 +1537,8 @@ Kill test, written before the next job's source: if per-R densities cluster with
 run follows the geometric law at its own density, the stall is fluctuation plus correlation, and the coin reading stands. If densities
 spread wider than binomial, or longest runs exceed their law, there is structure. Budget: one job, designed with GPT.
 Gut beside the reasoned verdict: reasoned, a clean finite extension. Gut, the coin fit is real and the stall is the thread to pull.
+
+*Addendum (20:59 BST, L905; GC1817):* the kill test above is replaced. "Each R's longest white run follows the geometric law" was wrong:
+an individual gap is geometric under iid bits, the longest run is not. The test is now the finite ensemble statistic of
+cq01_per_r_stats.py: D = max |G - F| against GPT's exact run-avoidance reference at one declared p, with the mean, the count spread and
+the pooled gap law, by the margins in its predictions. No per-R tests.
