@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""P1, revision 1 (Local, 2026-10-24): the exact lane engine for Q01 death times on the M5's GPU (GPU-METAL-JOBS.md §J.1
+"""P1, revision 2 (Local, 2026-10-24; revision 1 passed as run p1-pilot-20261024-1330, L863; revision 2 adds the GPU-side
+reduction to the engine and the control R below): the exact lane engine for Q01 death times on the M5's GPU (GPU-METAL-JOBS.md §J.1
 revision 2, with GPT's GC1775/GC1776 corrections and the owner's memory clarification GC1777). The engine is
 `p1_engine/lanes.metal` (two compute kernels: `build_start`, the kit's trace reconstruction; `simulate`, the forward
 evolution with even-time death detection) driven by `p1_engine/main.swift` (built with swiftc at run time into the output
@@ -30,12 +31,17 @@ Controls (all must pass; the first failure stops the pilot):
   C4  Sparse16 (negative control, exact statement): every lane alive at all even times 0..110 has an initial row with at
       least 17 black cells among depths 1..111; a violation is an engine bug.
   C5  two engines: every census batch's 64 sampled lanes re-simulated by the scalar engine; one disagreement stops.
+  R   the GPU reduction (revision 2: a threadgroup histogram with one atomic add per death event, per-group maxima, the
+      maximizers found from the groups whose maximum attains) equals the CPU reduction (revision 1's per-lane loop) on every
+      C1 census and on the W = 60 measurement batch: histogram, maximum, its count, censored lanes, lanes, maximizer set.
   N   the mutant (compile-time MUTANT_DROP_EDGE, the first draft's bug: the new edge cell not computed) must be DETECTED by
       the C3 edge trace and by a C1 census; a mutant that passes means the controls are blind, and the pilot fails.
 Measurement (not a census): one batch at W = 60, T = 240, lanes [0, 2^24) (d1 chunks 0..63), on 32-lane words (G = 2^19)
 and on 64-lane words (G = 2^18), every lane's death compared with d1's exact level; prep, build, simulate (GPU time and
-wall) and reduce reported separately; a short threadgroup-size comparison on [0, 2^22). Only timing and the agreement
-count are reported from these runs: no maximum, histogram or multiplicity claim.
+wall) and reduce reported separately, with the GPU and the CPU reduction, and a dump-free timing run (the engine as a census would
+run it); a short threadgroup-size comparison on [0, 2^22);
+and d1 on the same 64 chunks across 10 worker processes (the CPU engine on all cores) for the comparison. Only timing and
+agreement counts are reported from these runs: no maximum, histogram or multiplicity claim.
 
 Caps (§J.1 revision 2): GPU budget 2 GiB (enforced by the driver from the live allocations); process-group RSS stop 6 GiB,
 pressure, swap growth 256 MiB (the W1A supervisor in `stage`); 120 s per engine call; pilot wall <= 1,800 s; outputs <=
@@ -201,6 +207,15 @@ class Stop(Exception):
     pass
 
 
+def same_reduction(a, b):
+    return all(a[k] == b[k] for k in ('histogram', 'max', 'max_count', 'censored', 'lanes_total')) and sorted(a['maximizers']) == sorted(b['maximizers'])
+
+
+def _d1_chunk(args):
+    W, c, K = args
+    t = time.perf_counter(); E.run_lanes(W, 18, c, K, record=True); return time.perf_counter() - t
+
+
 def pilot(out):
     import numpy as np
     t_start = time.monotonic()
@@ -252,6 +267,8 @@ def pilot(out):
         for LB in (32, 64):
             dp = os.path.join(out, 'dump_C1.u16')
             res = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(1 << nb), 'deaths_out': dp}, 'C1_W%d_L%d' % (W, LB))
+            rc = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(1 << nb), 'reduce': 'cpu'}, 'C1_W%d_L%d_cpu_reduce' % (W, LB))
+            check('R_C1_W%d_L%d' % (W, LB), res['reduce'] == 'gpu' and rc['reduce'] == 'cpu' and same_reduction(res, rc))
             dump = read_dump(dp); os.remove(dp)
             lane_ok = len(dump) == (1 << nb) and all(int(dump[n]) == bf[recon(W, n)] for n in range(1 << nb))
             gpu_max = sorted(recon(W, int(x)) for x in res['maximizers'])
@@ -380,6 +397,22 @@ def pilot(out):
                                             't_build_wall_s': b['t_build_wall_s'], 't_sim_gpu_s': b['t_sim_gpu_s'], 't_sim_wall_s': b['t_sim_wall_s'],
                                             't_reduce_s': b['t_reduce_s'], 'engine_wall_s': res['wall_total_s'], 'agree_with_d1': agree, 'dump_sha256': dd}
         check('M_W60_L%d_agrees_with_d1' % LB, agree == len(lv) and not bad, agree=agree, lanes=int(len(lv)))
+        rc = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(1 << 24), 'G_max': G, 'reduce': 'cpu'}, 'M_W60_L%d_cpu_reduce' % LB)
+        bc = rc['batches'][0]
+        R['measurement']['W60_L%d' % LB].update({'cpu_reduce_t_reduce_s': bc['t_reduce_s'], 'cpu_reduce_engine_wall_s': rc['wall_total_s']})
+        check('R_W60_L%d' % LB, same_reduction(res, rc))
+        rt = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(1 << 24), 'G_max': G}, 'M_W60_L%d_timing' % LB)   # no dump: the engine as a census would run it
+        bt = rt['batches'][0]
+        R['measurement']['W60_L%d' % LB].update({'timing_run': {'t_build_gpu_s': bt['t_build_gpu_s'], 't_sim_gpu_s': bt['t_sim_gpu_s'], 't_reduce_s': bt['t_reduce_s'],
+                                                  'engine_wall_s': rt['wall_total_s'], 'lanes_per_s': round((1 << 24) / rt['wall_total_s'])}})
+        check('R_W60_L%d_timing_run_same' % LB, same_reduction(res, rt))
+    import multiprocessing as mp
+    t = time.perf_counter()
+    with mp.get_context('spawn').Pool(10) as pool:
+        per = pool.map(_d1_chunk, [(W, c, 115) for c in range(64)])
+    wall = time.perf_counter() - t
+    R['measurement']['d1_all_cores'] = {'workers': 10, 'chunks': 64, 'lanes': 1 << 24, 'wall_s': round(wall, 3), 'sum_chunk_s': round(sum(per), 3),
+                                        'lanes_per_s': round((1 << 24) / wall), 'note': 'includes pool start-up; record=True (per-lane levels), the same output as the engine'}
     R['measurement']['threadgroup_scan'] = {}
     for tg in (64, 256, 1024):
         res = eng.run({'lane_bits': 32, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(1 << 22), 'G_max': 1 << 17, 'tg': tg}, 'M_tg%d' % tg)

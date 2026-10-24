@@ -49,6 +49,10 @@ let Gmax = int("G_max", 1 << 16)
 let tgReq = int("tg", 0)
 let budget = int("gpu_budget_bytes", 2 << 30)
 let traceSteps = int("trace_steps", 0)
+let reduceMode = (job["reduce"] as? String) ?? "gpu"     // revision 2: "gpu" (the histogram and per-group maxima on the GPU) or "cpu" (revision 1's per-lane loop)
+guard reduceMode == "gpu" || reduceMode == "cpu" else { fail("reduce must be gpu or cpu", outPath) }
+let HB = 2048
+guard reduceMode == "cpu" || T <= 2 * (HB - 2) else { fail("T too large for the GPU histogram", outPath) }
 let samplePerBatch = int("sample_per_batch", 64)
 let sampleSeed = UInt64(int("sample_seed", 1))
 guard let metalPath = job["metal"] as? String, let src = try? String(contentsOfFile: metalPath, encoding: .utf8) else { fail("cannot read metal source", outPath) }
@@ -145,7 +149,7 @@ default:
 let L = Wsup + T + 2
 let Gtotal = groupBase.count
 let Gbatch = min(Gmax, Gtotal)
-let liveBytes = Gbatch * (L * laneBytes + 8 + laneBytes + 2 * (W + 1) * laneBytes + LW * 2) + (traceSteps + 1) * L * laneBytes
+let liveBytes = Gbatch * (L * laneBytes + 8 + laneBytes + 2 * (W + 1) * laneBytes + LW * 2 + 2) + (traceSteps + 1) * L * laneBytes + 2048 * 4
 guard liveBytes <= budget else { fail("live allocation \(liveBytes) bytes exceeds the GPU budget \(budget)", outPath) }
 guard L * Gbatch * laneBytes <= device.maxBufferLength else { fail("row buffer exceeds maxBufferLength", outPath) }
 
@@ -154,7 +158,9 @@ guard let bRows = device.makeBuffer(length: max(L * Gbatch * laneBytes, 16), opt
       let bValid = device.makeBuffer(length: max(Gbatch * laneBytes, 16), options: .storageModeShared),
       let bWs = device.makeBuffer(length: max(2 * (W + 1) * Gbatch * laneBytes, 16), options: .storageModeShared),
       let bDeath = device.makeBuffer(length: max(Gbatch * LW * 2, 16), options: .storageModeShared),
-      let bTrace = device.makeBuffer(length: max((traceSteps + 1) * L * laneBytes, 16), options: .storageModeShared)
+      let bTrace = device.makeBuffer(length: max((traceSteps + 1) * L * laneBytes, 16), options: .storageModeShared),
+      let bHist = device.makeBuffer(length: HB * 4, options: .storageModeShared),
+      let bGmax = device.makeBuffer(length: max(Gbatch * 2, 16), options: .storageModeShared)
 else { fail("buffer allocation failed", outPath) }
 
 func tgSize(_ p: MTLComputePipelineState, _ n: Int) -> Int {
@@ -223,28 +229,54 @@ while g0 < Gtotal {
     if mode != "rows" {
         (tBuildGpu, tBuildWall) = runKernel(pBuild, [(0, bRows), (1, bBase), (2, bWs)], &params, paramIndex: 3, n: G)
     }
-    let (tSimGpu, tSimWall) = runKernel(pSim, [(0, bRows), (1, bValid), (2, bDeath), (4, bTrace)], &params, paramIndex: 3, n: G)
+    memset(bHist.contents(), 0, HB * 4)
+    let (tSimGpu, tSimWall) = runKernel(pSim, [(0, bRows), (1, bValid), (2, bDeath), (4, bTrace), (5, bHist), (6, bGmax)], &params, paramIndex: 3, n: G)
     let tr0 = Date()
     let pd = bDeath.contents().bindMemory(to: UInt16.self, capacity: G * LW)
     var bMax = -1, bMaxCount: UInt64 = 0, bCens: UInt64 = 0, bLanes: UInt64 = 0
     var samples: [[String]] = []
     var firstValid: (UInt64, Int)? = nil, lastValid: (UInt64, Int)? = nil
-    for gi in 0..<G {
+    var validCount: UInt64 = 0
+    for gi in 0..<G { validCount += UInt64(groupValid[g0 + gi].nonzeroBitCount) }
+    if let gf = (0..<G).first(where: { groupValid[g0 + $0] != 0 }) {
+        let l = groupValid[g0 + gf].trailingZeroBitCount; firstValid = (groupBase[g0 + gf] + UInt64(l), Int(pd[gf * LW + l]))
+    }
+    if let gl = (0..<G).last(where: { groupValid[g0 + $0] != 0 }) {
+        let l = 63 - groupValid[g0 + gl].leadingZeroBitCount; lastValid = (groupBase[g0 + gl] + UInt64(l), Int(pd[gl * LW + l]))
+    }
+    if reduceMode == "gpu" {
+        let ph = bHist.contents().bindMemory(to: UInt32.self, capacity: HB)
+        let pg = bGmax.contents().bindMemory(to: UInt16.self, capacity: G)
+        for i in 0..<HB { bLanes += UInt64(ph[i]) }
+        bCens = UInt64(ph[HB - 1])
+        guard bLanes == validCount else { fail("GPU histogram counts \(bLanes) lanes, the valid masks \(validCount)", outPath) }
+        for i in 0..<(HB - 1) where ph[i] > 0 { histogram[2 * i, default: 0] += UInt64(ph[i]); bMax = 2 * i; bMaxCount = UInt64(ph[i]) }
+        if bMax >= 0 && bMax >= maxDeath {
+            if bMax > maxDeath { maxDeath = bMax; maxCount = 0; maximizers = [] }
+            maxCount += bMaxCount
+            for gi in 0..<G where Int(pg[gi]) == bMax || pg[gi] == 0xFFFF {
+                let m = groupValid[g0 + gi]
+                for l in 0..<LW where (m >> UInt64(l)) & 1 == 1 && Int(pd[gi * LW + l]) == bMax {
+                    if maximizers.count < 4096 { maximizers.append(String(groupBase[g0 + gi] + UInt64(l))) }
+                }
+            }
+        }
+    }
+    for gi in 0..<G where reduceMode == "cpu" || mode != "census" {
         let m = groupValid[g0 + gi]; if m == 0 { continue }
         let b = groupBase[g0 + gi]
         for l in 0..<LW where (m >> UInt64(l)) & 1 == 1 {
             let d = Int(pd[gi * LW + l]); let n = b + UInt64(l)
+            if mode == "list" { listDeaths.append(["index": String(n), "death": d == 0xFFFF ? -1 : d]) }
+            if mode == "rows" { rowDeaths.append(d == 0xFFFF ? -1 : d) }
+            if reduceMode == "gpu" { continue }
             bLanes += 1
-            if firstValid == nil { firstValid = (n, d) }
-            lastValid = (n, d)
             if d == 0xFFFF { bCens += 1 } else {
                 histogram[d, default: 0] += 1
                 if d > bMax { bMax = d; bMaxCount = 1 } else if d == bMax { bMaxCount += 1 }
                 if d > maxDeath { maxDeath = d; maxCount = 1; maximizers = [String(n)] }
                 else if d == maxDeath { maxCount += 1; if maximizers.count < 4096 { maximizers.append(String(n)) } }
             }
-            if mode == "list" { listDeaths.append(["index": String(n), "death": d == 0xFFFF ? -1 : d]) }
-            if mode == "rows" { rowDeaths.append(d == 0xFFFF ? -1 : d) }
         }
     }
     // deterministic sample: first and last valid lanes, the lanes either side of the first group boundary, then seeded picks
@@ -280,7 +312,7 @@ while g0 < Gtotal {
     censored += bCens; lanesTotal += bLanes
     batches.append(["batch": batchNo, "first_group_base": String(groupBase[g0]), "groups": G, "lanes": bLanes, "t_prep_s": tPrep,
                     "t_build_gpu_s": tBuildGpu, "t_build_wall_s": tBuildWall, "t_sim_gpu_s": tSimGpu, "t_sim_wall_s": tSimWall,
-                    "t_reduce_s": tReduce, "max": bMax, "max_count": bMaxCount, "censored": bCens, "samples": samples])
+                    "t_reduce_s": tReduce, "reduce": reduceMode, "max": bMax, "max_count": bMaxCount, "censored": bCens, "samples": samples])
     g0 += G; batchNo += 1
 }
 try? deathsHandle?.close()
@@ -302,7 +334,7 @@ if traceSteps > 0 && mode == "rows" {
 var hist: [String: UInt64] = [:]
 for (k, v) in histogram { hist[String(k)] = v }
 var result: [String: Any] = [
-    "status": "ok", "mode": mode, "lane_bits": LW, "mutant": mutant, "W": W, "T": T, "Wsup": Wsup, "L": L,
+    "status": "ok", "mode": mode, "lane_bits": LW, "mutant": mutant, "reduce": reduceMode, "W": W, "T": T, "Wsup": Wsup, "L": L,
     "groups_total": Gtotal, "G_batch": Gbatch, "live_bytes": liveBytes, "gpu_budget_bytes": budget,
     "threadgroup_build": tgSize(pBuild, Gbatch), "threadgroup_sim": tgSize(pSim, Gbatch),
     "device": deviceInfo, "pipeline": pipelineInfo, "batches": batches,

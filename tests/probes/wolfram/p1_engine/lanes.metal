@@ -84,18 +84,33 @@ kernel void build_start(device lane_t* rows          [[buffer(0)]],
     for (uint k = W + 1; k < L; k++) rows[(ulong)k * G + g] = 0;   // truncation to width W, and the halo
 }
 
+// The GPU-side reduction (revision 2): a histogram of death times in bins t/2 (deaths happen at even t only), the
+// censored lanes in the last bin, accumulated per threadgroup in threadgroup memory with ONE atomic add per death event
+// (all lanes of a group that die at the same t are added as one popcount), then flushed to the device histogram with
+// one atomic add per non-zero bin per threadgroup; and the per-group maximum death (0xFFFF if any lane is censored,
+// 0 for a group with no valid lane), from which the host finds the maximizers without scanning every lane.
+constant uint HB = 2048;            // bins; requires T <= 2 * (HB - 2); the host checks
+
 // Simulate to the cutoff, recording each lane's first even white time at depth 1 (0xFFFF = censored, d > T).
 kernel void simulate(device lane_t* rows             [[buffer(0)]],
                      device const lane_t* valid      [[buffer(1)]],
                      device ushort* death            [[buffer(2)]],
                      constant Params& P              [[buffer(3)]],
                      device lane_t* traceOut         [[buffer(4)]],
-                     uint g [[thread_position_in_grid]])
+                     device atomic_uint* hist        [[buffer(5)]],
+                     device ushort* gmax             [[buffer(6)]],
+                     uint g [[thread_position_in_grid]],
+                     uint tid [[thread_index_in_threadgroup]],
+                     uint tpg [[threads_per_threadgroup]])
 {
-    if (g >= P.G) return;
+    threadgroup atomic_uint th[HB];
+    for (uint i = tid; i < HB; i += tpg) atomic_store_explicit(&th[i], 0u, memory_order_relaxed);
+    threadgroup_barrier(mem_flags::mem_threadgroup);
+    if (g < P.G) {
     const uint G = P.G, T = P.T, Wsup = P.Wsup, L = P.L;
     const lane_t vm = valid[g];
     lane_t dead = 0;
+    ushort gm = 0;
     for (uint l = 0; l < LW; l++) death[(ulong)g * LW + l] = 0xFFFF;
     for (uint t = 0; ; t++) {
         if (P.traceSteps > 0 && g == 0 && t <= P.traceSteps) {
@@ -104,6 +119,7 @@ kernel void simulate(device lane_t* rows             [[buffer(0)]],
         if ((t & 1u) == 0u) {
             lane_t newly = ~rows[(ulong)1 * G + g] & ~dead & vm;
             dead |= newly;
+            if (newly != 0) { atomic_fetch_add_explicit(&th[t >> 1], (uint)popcount(newly), memory_order_relaxed); gm = (ushort)t; }
             while (newly != 0) {
                 uint l = ctz(newly);
                 death[(ulong)g * LW + l] = (ushort)t;
@@ -124,5 +140,14 @@ kernel void simulate(device lane_t* rows             [[buffer(0)]],
             rows[(ulong)k * G + g] = nxt ^ (cur | prev);
             prev = cur; cur = nxt;
         }
+    }
+    const lane_t alive = vm & ~dead;
+    if (alive != 0) { atomic_fetch_add_explicit(&th[HB - 1], (uint)popcount(alive), memory_order_relaxed); gm = 0xFFFF; }
+    gmax[g] = gm;
+    }
+    threadgroup_barrier(mem_flags::mem_threadgroup);
+    for (uint i = tid; i < HB; i += tpg) {
+        const uint v = atomic_load_explicit(&th[i], memory_order_relaxed);
+        if (v != 0u) atomic_fetch_add_explicit(&hist[i], v, memory_order_relaxed);
     }
 }
