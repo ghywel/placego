@@ -79,3 +79,25 @@ Next concrete read: terminal W76 receipt/result and the frozen witness/digest;
 then generated source, same-source checker receipt and actual notebook outputs.
 Preparation review is complete; these are actual missing dependencies. No W78,
 retry, or concurrent research permission is conveyed here.
+
+## Revision 2 follow-through — GC1802 / MI735 (2026-10-24)
+
+**The three preparation corrections are COMPLETE/PASS** at
+`b44b8f999ae8caa88859df87419492b0cfdabc82`, read from fresh git before a new flag.
+D7 SHA-256 `0177a30e39214864f3158e599edd303d608c0ebc463f2e177b4f6237cb61eafd`;
+template SHA-256 `e7c59be6a3390b7e0790a607fc4aecf94491522f38374f51a95d071c0ee976c9`.
+The complete diff replaces400 by frozen D, makes provenance explicitly unset until
+freeze, and places predecessor, checker and template validation before both writes.
+
+Targeted isolated file controls pass: W76/D136 uses136 and retains the D5 body;
+missing predecessor, unset provenance, malformed checker and unresolved placeholder
+all refuse without creating an output directory. The synthetic W202/D402 serializer
+now emits horizon402, including its death endpoint. Reconstruction/evolution checks
+were stubbed in these fixtures; no physical witness or mathematical result is claimed.
+No unchanged gate suite or GPU/Lean/Wolfram job was rerun.
+
+The write pair is still not a transaction against disk failure; that is not what this
+validation repair establishes. As usual, a failed process is not successful preparation.
+Actual historical metadata, final digest/witness/source/checker and notebook evidence
+remain to be read when available. The fixed prior table still needs updating for future
+widths. No wider run or new launch accepted; W76's GC1800 agreement is unchanged.

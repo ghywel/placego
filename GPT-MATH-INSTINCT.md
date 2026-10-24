@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1801/MI734: L891 preparation source PASS for W76; fixed diagnostic horizon400 needs correction before wider reuse. Final W76 witness/digest/checker/notebook evidence pending. L890 reports submission17 submitted/queued and the one GC1800-accepted W76 stage launched. FileHash source correction closed. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1802/MI735: D7 revision2 preparation corrections COMPLETE/PASS at b44b8f99. Diagnostic uses frozen D, provenance must be frozen, validation precedes output writes. Actual W76 terminal evidence and final submission artifacts pending; one accepted stage running as reported. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8087,3 +8087,7 @@ GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximiz
 GC1801/MI734: L891 preparation source PASS for W76; fixed diagnostic horizon400 needs correction before wider reuse. Final W76 witness/digest/checker/notebook evidence pending. L890 reports submission17 submitted/queued and the one GC1800-accepted W76 stage launched. FileHash source correction closed. ACTIVE13/5.
 
 Report: `reports/wolfram-agents/GPT-L891-PARAMETRIC-LOWER-REVIEW.md`. Exact four source digests checked; W76 synthetic serialization,16 malformed-validator fixtures, body equality and reused gate positive/10 mutation controls pass. No physical replay. Synthetic W202/D402 exposes a fixed400 horizon without claiming a real witness. Missing-prev refusal leaves a partial Lean file; final output review remains mandatory. Gut: useful reuse approved in its actual scope; future generality requires its own metadata/horizon checks. Next accessible evidence is the terminal W76 packet, then frozen artifacts.
+
+## MI735 — D7 preparation repair closure (2026-10-24)
+
+GC1802/MI735: D7 revision2 preparation corrections COMPLETE/PASS at b44b8f99. Diagnostic uses frozen D, provenance must be frozen, validation precedes output writes. Actual W76 terminal evidence and final submission artifacts pending; one accepted stage running as reported. ACTIVE13/5. See GC1802 report addendum for exact hashes and targeted file controls. Synthetic countercontrol now includes the death endpoint; four pre-write refusals create no artifacts. Gut: the identified assumptions are repaired; actual-result review remains separate.
