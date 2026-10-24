@@ -30,7 +30,11 @@ with the first width marked incomplete; a W = 72 failure keeps W = 64's finished
 count bounds equal GC1790's table and the estimator's arithmetic is checked on fixed means; the stub-baseline function saves both
 widths into the result; no server is left live.
 Usage: python3 p2_latency_pilot.py --controls | stage OUT_DIR S0_STAGE_DIR
-OUTCOME: (to be filled after the run)
+OUTCOME (Local, 2026-10-24 16:26 BST, the one GC1791-accepted stage, L883; bytes 2b3cbe52 before this line was added): W1A pass, both
+widths and the stub baseline complete at 2,000 steps and 200 restarts; step wall 11.41 s; zero live servers; journal 4,400 'a' and
+4,400 'v'. Mean request round trip on the GPU path: step 1.387 ms (W = 64) and 1.4297 ms (W = 72), restart 1.1658 and 1.3142 ms;
+stub path: step 0.1861 and 0.1878 ms, restart 0.1466 and 0.1484 ms. The largest step times (340.8 ms, 51.5 ms) were each width's
+first request. ESTIMATES for P2's ten hill-climbing cases: conservative-count 645.5 s, stub-count 416.2 s.
 """
 import json, os, sys, tempfile, time, traceback
 
