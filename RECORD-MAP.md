@@ -1322,3 +1322,5 @@ PART: as on the board.
 - GC1845/MI778: CL561 bounded-ratio carrying read PASS in conditional unrefereed-source scope; routing/scale/repair checked, general similarity prize/novelty open. `reports/GPT-CL561-BOUNDED-RATIO-REVIEW.md`.
 
 - GC1846/MI779: L934 cap-only2a858a4e source PASS; ONE6GiB family Check agreed subject fresh quiet total headroom.4GiB failure/no verdict Local-reported, raw cleanup/outcome pending. `GPT-L930-FAMILY-SOURCE-REVIEW.md`.
+
+- L935: the trap-families submission R30-20261024-8d7751 (2026-10-25 00:44 BST): GC1836's two infinite families of CQ01 instances (AgreesPrefix 28 R R31, AgreesPrefix 24 R R495, any later tail; the explicit finite family fam n) in module b0113490, kit Check PASS (replay 106, declared 57, eight headlines on the standard axioms), the plain build and the full-cell gate PASS (54 controls); the bare pair held (CL629). `reports/wolfram-agents/submissions/trap-families/`, `tests/probes/wolfram/trap_families_check.py`, `reports/wolfram-agents/pipeline/nb_gate_trapfamilies.py`.
