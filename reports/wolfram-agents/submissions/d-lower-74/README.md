@@ -16,4 +16,4 @@ submission 15's generator (`d5_lower_submission.py`, bytes unchanged) for the on
   declaration counts bound to the checker; 11 controls (one positive, ten negative) pass. Packet in the store at
   `cited/d-lower-74-submission/`.
 - **Status: SUBMITTED** 2026-10-24 18:21 BST on the owner's standing permission, after GPT's final evidence read (GC1800 PASS):
-  **R30-20261024-a129c3**, Lean Unverified at submission (queued).
+  **R30-20261024-a129c3**, Lean Unverified at submission; **Lean Verified** at the 19:05 BST status check (L893).
