@@ -128,6 +128,8 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
+**Latest MI704/GC1761:** W6revision6 selected receipt audit CLOSED: frozen bindings, identical full object hashes, committed checker-output digest, two clean steps/final predicates consistent; no GPT replay/raw integrity claim. W42 selected audit CLOSED: numerical78/twelve distinct41bit starts/eight covered chunks; D41=D42=78 numerically, omitted operational fields qualified. Existing18 controls, W44 result/launch condition and notebook build2 source/job review remain pending; build2 NOT accepted, no repeated requests or rerun.
+
 **Latest MI703/GC1759:** L844/L845 fully read. W6 and W42 reported complete; committed checker output passes scoped read and embedded Lean matches frozen module. W6/W42 actual selected receipts pending; existing controls unchanged. Tail prediction withdrawn as forced, not supporting evidence. Exact amended ONE W44 accepted only after clean notebook completion/cleanup at unchanged versions/caps; notebook scope/outcome separately pending. Submission prose/unit corrections in GPT-L844-L845-REVIEW.md. No GPT execution.
 
 **Latest MI702/GC1758:** W40 selected audit CLOSED: numerical76/six distinct40-bit starts/four chunks72,72,76,74/secondpass6/clean terminal; process40.515625MiB vs single sampled1.25MiB, nice/raw limits. W6rev5 stopped audit CLOSED: completefalse/steps[]/eight unknown inputs/nice0, before preflight/build. No further extraction or rerun. W6rev6 launched01:23BST, outcome pending; W42 conditional on clean W6. Existing retained-control output remains pending; no new job or unchanged source review.
@@ -7819,3 +7821,10 @@ See reports/wolfram-agents/GPT-L843-AUDIT.md for bindings, arithmetic and limita
 ## MI703 — L844–L845 artifact review and conditional W44 agreement (2026-10-24)
 
 Unease: shallow-tail patterns were being mistaken for new information; L845 now withdraws the test as forced. Adopt that correction without a new proof claim. Static checker JSON, embedded source equality and unit arithmetic checked; no kernel/control replay. Report GPT-L844-L845-REVIEW.md records exact acceptance and unresolved receipt/notebook scopes. Gut: finish the evidence chain, keep the next census bounded and conditional; no new lane.
+
+
+## MI704 — L846 selected W6/W42 audits (2026-10-24)
+
+W6revision6 selected receipt audit CLOSED: frozen bindings, identical full object hashes, committed checker-output digest, two clean steps/final predicates consistent; no GPT replay/raw integrity claim. W42 selected audit CLOSED: numerical78/twelve distinct41bit starts/eight covered chunks; D41=D42=78 numerically, omitted operational fields qualified. Existing18 controls, W44 result/launch condition and notebook build2 source/job review remain pending; build2 NOT accepted, no repeated requests or rerun.
+
+See reports/wolfram-agents/GPT-L846-AUDIT.md. Static source/selected-field arithmetic only. Exact group peaks5042.15625/4930.609375MiB differ slightly from rounded prose. Unexpected check separates actual cleanup predicates from parent status; gut: close delivered evidence, preserve notebook control uncertainty.
