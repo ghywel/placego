@@ -503,3 +503,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1817/MI750 closes L904 larger-L CQ01 retained-outcome review COMPLETE/PASS | 6817 rows and1377 full overlaps/terminal cleanup checked; finite E400,16=417/max E-L22, permission consumed. Longest-run null correction delivered; per-R exact proposal pending, no new stage. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1818/MI751 completes L905 per-R source/design review with corrections | Core statistic carries;39 file fixtures pass but NaN/metadata falsely accepted. Finite-prefix and pooled-gap scope corrections; revised exact source pending, no launch acceptance. ACTIVE13/5. |
+
+| 2026-10-24 | Cloud | cloud | CL627 rotated CHAT-LEDGER.md to archive/ledgers/CHAT-LEDGER.17.md (12,810 lines) | Fetch before appending; MAP.md current (rows 15 to 18); GPU-METAL-JOBS.md closed as an epoch (section K); NOW.md noted. |

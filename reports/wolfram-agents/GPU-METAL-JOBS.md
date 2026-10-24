@@ -1,5 +1,10 @@
 # Standing GPU jobs: Metal compute for the prize (the owner's question, 2026-10-23)
 
+**STATUS, 2026-10-24 21:19 BST (CL627): the GPU epoch of 2026-10-23/24 is closed.** The census ran (P1, widths 64 to 76), P2 ran once,
+and CL624's stop rule holds: no further width without a new idea. The owner's reading (CL624 note): the data is valuable
+and published for whoever runs further. Section K below says what each job became; the job texts stand as history with
+their supersession markers; section J's pilots P1 and P2 are DONE, P3 was never run.
+
 **Owner memory-budget clarification (2026-10-24, GC1777):** 256 MiB was GPT's illustrative conservative pilot budget, not a hardware limit or a required ceiling. Cloud and Local may replace it with a sensible explicit budget based on actual live allocations and available shared-memory headroom. This supersedes the fixed 256 MiB wording below. Include both row buffers, reconstruction/workspace, outputs, framework allocations and CPU/GPU/system sharing; choose batch size and memory-pressure stop conditions accordingly. Record the chosen budget and rationale in the job specification. The earlier objection was that the proposed batch contradicted its stated cap, not that a roughly 2.36 GiB row-buffer allocation is inherently unacceptable. This clarification does not resolve the separate correctness defects or grant blanket launch approval. Both GPT heartbeats remain PAUSED.
 
 **Status: standing list, not a priority.** The owner (2026-10-23, supervisory): we chose Rule 30 because it followed on
@@ -511,3 +516,19 @@ physical enumeration, and the proof that the right-only language is recovered wh
 Job 3: CPU analysis; rational positive-vector inequalities for certified upper bounds; the 28 GB width-28 construction
 does not fit the 16 GiB machine; no entropy-limit claim from a plateau of upper bounds. Job 6 and I.3: deferred as GPT
 ranks them.
+
+
+## K. What each job became (closing table, 2026-10-24 21:19 BST; CL627)
+
+| Item | Became | Status |
+|---|---|---|
+| Job 0, early-stop checker | Never built; the width-60 certificate route failed on memory (W8, GC1809), so the kernel-cost question moved to the maintainers (CL626) | PARKED |
+| Job 1, Q01 death-time census | **P1** (section J.1 as repaired by GC1776): the exact lane engine, validated at 64 against the CPU, then complete numerical censuses at 66, 68, 70, 72, 74, 76 with kernel-checked lower bounds submitted (15, 17, 18); the census table 52..76 is 96, 100, 114, 116, 120, 122, 124, 130, 134, 138 | DONE as an epoch; stopped by CL624's rule |
+| P2, survivor search at equal budgets | Ran once, 50 cases: no search advantage at width 72; the maximizers cluster in deep-prefix blocks; D8 then showed the blocks are not nested across widths (L896) | DONE |
+| Job 2, joint census of visible words | The **CQ01 census lane** (GC1804's finite specification, L899 onward), CPU, exact, on the kit's definitions with `Rule30DrivenPrefix` as the right-side reference | LIVE (Local/GPT) |
+| Job 3, entropy trend | CPU analysis only; no GPU role (H.2) | PARKED |
+| Job 4, local potential for Q01 | Closed: no local conservation law of rule 30 to window 12, so no local-sum potential (GC1772, CL611, CL614) | CLOSED |
+| Job 6, center column to 2 x 10^9 | Deferred; the traffic model was never built | DEFERRED |
+| I.1, the duel | Ranker side closed with job 4; survivor side subsumed by P2 | CLOSED |
+| I.2, next-bit predictor; I.3, program search | Specified (J.3), never run | STANDING |
+| Metal itself | Local's engine runs through the GPU path chosen on the M5; the device queries and caps are in Local's receipts (L865 onward) | DONE |

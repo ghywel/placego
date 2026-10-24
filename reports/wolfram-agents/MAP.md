@@ -216,6 +216,10 @@ All nine stand at **Lean Verified** (the verifier's kernel replay); Human Verifi
 | 12 | d-exact | R30-20261023-8e6bd3 | `death_time_52_exact`, `width56_lower`, `width60_lower` | the kit's `Q01` frontier: D(52) = 96 exactly (the kit had the upper bound), witnesses at 56 and 60 (Local's D-exact lane, L810–L822; GPT's read GPT-D-EXACT-SUBMISSION-REVIEW.md) | automatic, 22:41; Human Verified by 2026-10-24 |
 | 13 | d-exact-56 | R30-20261023-ac3898 | the width-56 certificate: D(56) = 100 exactly, 1,024 chunk checks in one module (the verifier's time test, L827, L832) | `Q01` frontier at width 56 | automatic, 23:38; Human Verified by 2026-10-24 |
 | 14 | d-exact-60 | R30-20261024-71f858 | `death_time_60_exact`, `q01_width_le_60`: D(60) = 114 exactly, 4,096 chunk checks and the witness (L859; the plain build on the owner's word, CL609's scope clarification, L858) | `Q01` frontier at width 60, the M5's kernel frontier | submitted 09:00, Lean Unverified (queued) at 08:16Z |
+| 15 | d-lower-64-72 (Local) | R30-20261024-b16332 | `width64_lower` to `width72_lower`: D(64..72) >= 116, 120, 122, 124, 130, witnesses from the GPU census (L874) | `Q01` frontier: kernel-checked lower bounds where the kit has no statement | automatic, Lean Verified 2026-10-24 |
+| 16 | edge-sep (Cloud) | R30-20261024-991a71 | `sep_8`, `sep_13`, `sep_14`, `attained_8/13/14`, `separationB`, `centers_spec`: three exact negative-edge cases of the kit's `EdgeObservable`, deadlines 8, 13, 14 (CL622, L886) | the trace-edge conjecture, first instances | automatic, Lean Verified 2026-10-24 (L888) |
+| 17 | d-lower-74 (Local) | R30-20261024-a129c3 | `width74_lower`: D(74) >= 134, witness from the width-74 GPU census (L890) | `Q01` frontier | automatic, Lean Verified 2026-10-24 (L893) |
+| 18 | d-lower-76 (Local) | R30-20261024-4dcf69 | `width76_lower`: D(76) >= 138, witness from the width-76 GPU census (L896) | `Q01` frontier; the census epoch's last width (CL624 stop rule) | automatic, Lean Verified 2026-10-24 (L897) |
 
 The verifier runs at about half the M5's speed (L760): the two kernel-heavy word modules time out at four minutes
 and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 6 and 7 were not attempted. Candidate 3 is complete (row 8, 2026-10-23: GPT's GC1694 pigeonhole route, which
@@ -265,6 +269,18 @@ Contributions** and now modules of the kit (§7). One new entry, Lean Unverified
 |---|---|---|---|
 | R30-20261024-1e1b3b | G.P.J.W. Quint with Gemini | Under an alternating center (`Rule30PeriodTwo`), closed forms for the forced left skeleton through column -10 in terms of the odd column -1 bits s(k): four even-step OR gates saturate to true by `golden` (s(k) = false implies s(k+1) = true), column duplications (-5 even equals -3 even; -6 odd equals -4 even shifted), and s not eventually periodic by Jen. Nothing claimed for `Q01`. | Our period-2 line, but nothing to adopt: `golden` is our Lemma 3 (visible bits never 11, free bits never 00; MAP §1 row "ALREADY"), the forced left half is §5 of RULE30-PRIZE.md (Condrey's triangular uniqueness), and the channel automaton computes every such closed form mechanically. Do not spend time re-deriving skeleton columns by hand. |
 
+### 6.2 The page at 16:38Z, 2026-10-24 (Cloud, 2026-10-24 17:39 BST; status review)
+
+Thirty-three entries. Ours: seventeen; 1 to 13 Human Verified; 14 (71f858) failed on the sandbox's memory, tagged Human
+Verified; **15 (R30-20261024-b16332, the death-time lower bounds D(64..72) from the GPU census) and 16 (R30-20261024-991a71,
+the three exact negative-edge cases of `EdgeObservable`, deadlines 8, 13, 14) are Lean Verified**, not yet tagged. Gemini's
+1e1b3b is now Lean Verified. Two new foreign entries:
+
+| id | team | what it proves | touches us |
+|---|---|---|---|
+| R30-20261024-ddbfbd | AIOvernight (Claude Code) | The pointwise XOR of two rule 30 histories is a history iff one is zero or they are equal (`xor_history_iff`); a general superposition classification, proposed as a kit contribution. | Not our line; prior art for any "linearity" idea (our record has none). |
+| R30-20261024-9d92a2 | Emerson Villafuerte with Antigravity (Google DeepMind) | 74 headlines in five families: semigroup-saturated strip certificates excluding 8 white-run and 14 black-run word families for every column of every nonzero finite configuration; unconditional `CQEmpty` for period 4 and period-3 `001` (no left-finite configuration coupled with the empty right half); a **period-2 sideways dichotomy** (`isR30_bad_or_periodic`, `Psi_free_constraints_width6_of_finSupp`, `Psi_even_first_defect_le_10`, `Psi_black_in_window_16`). | **Yes, the period-2 family**: the third family works on the kit's sideways (free-bit) form of `Q01`, the object of our D-exact and channel lines. Read by GPT (task 6, GC1796/GC1798, GPT-CL623-EXTERNAL-PREFIX-REVIEW.md; CL625, 2026-10-24 20:19 BST): Psi is `Theta` of the complementary right-driven trace, a smaller domain than the census's free bits; the depth-10 stripe defect is not death; the kit list has **nine** forbidden words, not thirteen, and all nine are rejected by our 31-state width-6 channel automaton after its initial state (six are admitted as initial words), replicated independently by Cloud; the parametric word families cover 48 of our 128 excluded words up to rotation, a later generalization, not prior art against submissions 2a/2b; Sparse16 cannot prune coarse high-prefix cylinders (GC1798: a branch with 16 free low bits contains a stripe completion of weight 17). No prefix bound for the census came out of it. |
+
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 
 The verifier still pins cc1e0e0 (`api/environment`); the catalog has moved to 86 modules in seven commits since 9679f83:
@@ -287,14 +303,3 @@ the 0^9 1 and 0^q 10111 exclusions; the forced left skeleton's closed forms. **T
 `EdgeObservable` as a GPT mathematics task; the kit's finite-clock and driven-prefix modules as the reference for `CQ01`
 work; the Human Verified tag on 71f858 as the sign that the content was read.
 
-### 6.2 The page at 16:38Z, 2026-10-24 (Cloud, 2026-10-24 17:39 BST; status review)
-
-Thirty-three entries. Ours: seventeen; 1 to 13 Human Verified; 14 (71f858) failed on the sandbox's memory, tagged Human
-Verified; **15 (R30-20261024-b16332, the death-time lower bounds D(64..72) from the GPU census) and 16 (R30-20261024-991a71,
-the three exact negative-edge cases of `EdgeObservable`, deadlines 8, 13, 14) are Lean Verified**, not yet tagged. Gemini's
-1e1b3b is now Lean Verified. Two new foreign entries:
-
-| id | team | what it proves | touches us |
-|---|---|---|---|
-| R30-20261024-ddbfbd | AIOvernight (Claude Code) | The pointwise XOR of two rule 30 histories is a history iff one is zero or they are equal (`xor_history_iff`); a general superposition classification, proposed as a kit contribution. | Not our line; prior art for any "linearity" idea (our record has none). |
-| R30-20261024-9d92a2 | Emerson Villafuerte with Antigravity (Google DeepMind) | 74 headlines in five families: semigroup-saturated strip certificates excluding 8 white-run and 14 black-run word families for every column of every nonzero finite configuration; unconditional `CQEmpty` for period 4 and period-3 `001` (no left-finite configuration coupled with the empty right half); a **period-2 sideways dichotomy** (`isR30_bad_or_periodic`, `Psi_free_constraints_width6_of_finSupp`, `Psi_even_first_defect_le_10`, `Psi_black_in_window_16`). | **Yes, the period-2 family**: the third family works on the kit's sideways (free-bit) form of `Q01`, the object of our D-exact and channel lines. Read by GPT (task 6, GC1796/GC1798, GPT-CL623-EXTERNAL-PREFIX-REVIEW.md; CL625, 2026-10-24 20:19 BST): Psi is `Theta` of the complementary right-driven trace, a smaller domain than the census's free bits; the depth-10 stripe defect is not death; the kit list has **nine** forbidden words, not thirteen, and all nine are rejected by our 31-state width-6 channel automaton after its initial state (six are admitted as initial words), replicated independently by Cloud; the parametric word families cover 48 of our 128 excluded words up to rotation, a later generalization, not prior art against submissions 2a/2b; Sparse16 cannot prune coarse high-prefix cylinders (GC1798: a branch with 16 free low bits contains a stripe completion of weight 17). No prefix bound for the census came out of it. |
