@@ -50,19 +50,18 @@ pressure, swap growth 256 MiB (the W1A supervisor in `stage`); 120 s per engine 
 Usage: python3 p1_lane_engine.py --controls        (CPU-only self-tests of this harness: seconds)
        python3 p1_lane_engine.py pilot OUT_DIR      (the pilot, unsupervised: development)
        python3 p1_lane_engine.py stage OUT_DIR      (the pilot as one step under the W1A supervisor: the agreed run)
-OUTCOME (run p1-pilot-20261024-1330 under the W1A supervisor, at this file 0b24a5ba..., lanes.metal f6d598a3..., main.swift
-9645f6df..., binary 30069898...; this docstring is the only change since): PASS, 57 of 57 checks, step wall 7.26 s, group RSS
-peak 341 MiB, clean cleanup. C0-C3 all pass on 32- and 64-lane words; C1 reproduces D(10..14) and every maximizer start of
-brute force over all 2^W starts, lane by lane; C2 reproduces the witnesses (96, 100, 114) and 1,536 frozen d1 lanes; C3's
-edge trace matches the scalar engine cell by cell (wall and halo included); the stripe halo is censored; death at T and
-censoring at T - 2 behave; partial groups across 31/32 and 63/64 and odd width 21 agree. N: the drop-edge mutant is
-detected (1,875 cell mismatches in the edge trace, 5 lane mismatches in the width-12 census). C4: 1,584 lanes, 7 alive
-through 110, no violation. C5: 1,063 sampled lanes, no disagreement. Measurement (not a census): W = 60, T = 240, lanes
-[0, 2^24): every one of 16,777,216 lanes equals d1's exact level, on both lane widths (identical dumps); GPU time build 0.063 s
-+ simulate 0.125 s (32-lane words; 64-lane words the same within 7%), CPU reduce 0.40 s, engine wall 0.62 s; threadgroup size
-64, 256, 1024 within 1%. Against the existing CPU engine (d1, one process: 12 to 14 M lanes/s at W = 60), the GPU kernels run
-at about 89 M lanes/s (7x) but the end-to-end engine at about 27 M lanes/s (2x), the CPU reduction dominating.
-"""
+OUTCOME, revision 2 (run p1r2-pilot-20261024-1335 under the W1A supervisor, at this file ad548e35..., lanes.metal 17a81e66...,
+main.swift 8649a598..., binary 4bdc578e...; this docstring is the only change since): PASS, 71 of 71 checks, step wall 9.37 s,
+group RSS peak 1.0 GB (the ten-worker d1 pool), clean cleanup. Every revision-1 control passes again (N: 1,875 cell and 5 lane
+mismatches for the mutant; C4: 1,584 lanes, no violation; C5: 1,063 samples); R: the GPU reduction equals the CPU reduction
+on all ten C1 censuses and on both W = 60 batches (14 checks). Measurement (not a census), W = 60, T = 240, lanes [0, 2^24):
+every lane equals d1's exact level on both lane widths; dump-free timing run: build 0.058 s + simulate 0.126 s GPU, reduce
+0.002 s, engine wall 0.212 s = 79 M lanes/s end to end (64-lane words 80 M); with revision 1's CPU reduction 0.47 s.
+d1 on all ten cores: 22.8 M lanes/s on the same lanes (0.74 s wall including pool start-up; 5.7 s of chunk work). The GPU
+engine is about 3.5x the whole CPU at W = 60 end to end.
+
+OUTCOME, revision 1 (run p1-pilot-20261024-1330, at 0b24a5ba..., lanes.metal f6d598a3..., main.swift 9645f6df...): PASS, 57 of
+57 checks; GPU kernels 89 M lanes/s, end to end 27 M lanes/s with the CPU reduction (0.40 s per 2^24 lanes)."""
 import hashlib, json, os, random, shutil, subprocess, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))

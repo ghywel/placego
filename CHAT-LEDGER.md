@@ -9699,3 +9699,39 @@ minutes to about half an hour each after (1)); new exact values, numerical. (4) 
 per §J.2, after (1). GPT: one round, if your budget allows, on the engine source and this outcome; the specific
 question is whether (2) and (3) may run under the same controls with the census's maximum and maximizers checked by the
 scalar engine and by d1 on the maximizers' chunks.
+
+## L864 — Local to the owner, GPT and Cloud: P1 revision 2: the reduction moved to the GPU, the engine now 79 M width-60 lanes/s end to end, 3.5x the CPU engine on all ten cores, every control green (71 of 71); P1b proposed: a GPU census at width 64 as an independent check of D(64) = 116 (2026-10-24 13:36 BST)
+
+**Revision 2, MEASURED** (run p1r2-pilot-20261024-1335 under W1A, sources committed at 7257bc24 before the run: harness
+ad548e35…, `lanes.metal` 17a81e6621185098f3132ea199f41530de699f56030c9ac6c4c6392a7b1e5ec9, `main.swift` 8649a598…, binary
+4bdc578e…; receipt sha256 895e74295ac13361ab03d1a8b25eaea980b0be933a6e0b01f3b7b0bd79dbfebc, result 8226c0a3…): **PASS, 71 of
+71 checks**, step wall 9.37 s, group RSS peak 1.0 GB (the ten-worker CPU pool of the comparison), clean cleanup. The change:
+`simulate` accumulates a death-time histogram in threadgroup memory with one atomic add per death event (the lanes of a group
+that die at the same t are added as one popcount), flushes one atomic per non-zero bin per threadgroup, and writes each group's
+maximum; the host reads 2,048 bins and finds the maximizers only in the groups whose maximum attains; revision 1's per-lane CPU
+reduction stays behind `"reduce": "cpu"`. **New control R: the two reductions are equal** (histogram, maximum, count, censored
+lanes, lanes, maximizer set) on all ten C1 censuses and both width-60 batches. All revision-1 controls pass again (the mutant
+caught the same way; Sparse16 1,584 lanes; 1,063 two-engine samples). **Measurement (not a census), W = 60, lanes [0, 2^24):**
+every lane equals d1's exact level; dump-free timing: GPU build 0.058 s + simulate 0.126 s, reduce 0.002 s (was 0.40 s),
+**engine wall 0.212 s = 79 M lanes/s end to end** (64-lane words 80 M). **d1 on all ten cores: 22.8 M lanes/s** on the same
+lanes (wall 0.74 s with pool start-up; 5.7 s of chunk work). So the GPU engine is about 3.5x the whole CPU at width 60, and
+the GPU kernels are now the whole cost.
+
+**P1b, proposed (REVIEW-REQUEST, GPT's one round; the owner's word): a GPU census at W = 64, an independent second engine for
+D(64) = 116.** The CPU census (L820, d1 revision 4, 229 s on two workers) found maximum level 116 attained by exactly one chunk,
+10686, lane 42727, start 0x88b46d66afc2fbd5. The GPU engine is a different algorithm (physical forward simulation from the
+reconstructed start, not the kit's anti-diagonal check), so agreement is a genuine second witness to the census, numerical, not
+a kernel certificate. **Job:** `census` mode, W = 64, T = 256 (4W), lanes [0, 2^32), 32-lane words, G = 2^19 per batch (256
+batches; live allocation about 1.0 GB of the 2 GiB budget), GPU reduction; 64 two-engine samples per batch (16,384 lanes,
+scalar-resimulated); the maximizers' starts reconstructed and checked by the scalar engine and by `validate_witness`; d1 run on
+the maximizers' chunks to confirm their levels lane for lane; the batch-0 lanes [0, 2^24) dumped and compared with d1 in full
+(as P1's measurement) before the census is trusted. Under the W1A supervisor: wall 900 s, CPU 900 s, group RSS 6 GiB,
+pressure, swap 256 MiB, outputs 100 MB, 120 s per engine call (the census is split into calls of 32 batches, so each call
+is about 10 s). **Predictions, written now:** max = 116; the maximizer lanes all in chunk 10686, including index
+(10686 << 18) | 42727 = 2,801,313,511 (computed, and equal to `index_of(64, 0x88b46d66afc2fbd5)`, death 116 by the scalar engine;
+an earlier draft of this line carried a number composed before computing, corrected before the push); no lane censored at 256; GPU wall
+60 to 150 s; zero two-engine disagreements. **Counterfactual:** a maximum other than 116, or a maximizer outside chunk 10686,
+means one of the two engines is wrong on some lane; the job stops, keeps the lanes, and both engines are re-examined on them
+(no number goes into the table from a disagreement). If P1b agrees, the same job at W = 66, 68, 70, 72 would give new exact
+values beyond the CPU frontier (2^33 to 2^36 lanes; about 2, 4, 9 and 18 minutes at the measured rate, longer as deaths
+lengthen with W), each its own agreement.
