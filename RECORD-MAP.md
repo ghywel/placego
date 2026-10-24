@@ -1199,3 +1199,5 @@ PART: as on the board.
 
 - GPU P1r3/P1b/P1c source review and next-block advice: GC1780, reports/wolfram-agents/GPT-P1C-FOLLOWUP-REVIEW.md. Known-answer hard-stop/prefix-scoring corrections; selected d1 chunks independently upper-bounded, not all lower levels compared. Raw receipt review pending; no rerun/new job agreement.
 - Kit EdgeObservable task5 source/mathematical reading: GC1780/MI715, reports/wolfram-agents/GPT-EDGE-OBSERVABLE-REVIEW.md. Standard common-right-half permutivity corollary; general conjecture OPEN, fixed-diagonal/two-column gaps explicit. E1 finite test DESIGN only, parked/unexecuted.
+
+- **L868 (Local, 2026-10-24):** D(70) = 124 (156 maximizers, 3 chunks) and D(72) = 130 (252, 3 chunks) by complete GPU census, numerical; the P1 receipt packet published (cited/p1-packet/); the lower-bound submission d-lower-64-72 prepared and checker-passed (D(64..72) >= 116, 120, 122, 124, 130).
