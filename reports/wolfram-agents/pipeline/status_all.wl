@@ -1,0 +1,4 @@
+If[$CloudBase === Automatic, $CloudBase = "https://www.wolframcloud.com/"];
+ids = {"R30-20261022-c27323", "R30-20261022-5c4fbf", "R30-20261022-70d23b", "R30-20261022-0616de", "R30-20261022-1d5070", "R30-20261022-91b0b0", "R30-20261022-920c1b", "R30-20261023-e872a3", "R30-20261023-234c71", "R30-20261023-b5421a", "R30-20261023-0c4a33", "R30-20261023-8084e6", "R30-20261023-1bf4dc", "R30-20261023-4767e0", "R30-20261023-4d1a54", "R30-20261023-8e6bd3", "R30-20261023-ac3898"};
+Do[r = Quiet@URLExecute[CloudObject["https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/status"], {"id" -> id}, "RawJSON"];
+  If[AssociationQ[r], c = Lookup[r, "check", <||>]; Print[id, "  ", r["status"], "  ", Lookup[c, "state", "-"], "/", Lookup[c, "verdict", "-"]], Print[id, "  bad reply"]], {id, ids}];
