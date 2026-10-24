@@ -1261,3 +1261,5 @@ PART: as on the board.
 - GC1817/MI750: L904 larger-L CQ016817-row/1377-overlap/terminal audit PASS; E400,16=417,max E-L22,stage consumed. Individual geometric gap differs from finite longest-run law; per-R proposal pending. `GPT-L904-CQ01-LARGE-OUTCOME.md`.
 
 - GC1818/MI751: L905 per-R source review COMPLETE WITH CORRECTIONS; window/recurrence carries, NaN gate hole and finite-prefix/pooled-gap qualifications. No launch acceptance; `GPT-L905-PER-R-REVIEW.md`.
+
+- GC1819/MI752: L906 per-R revision4 repairs PASS;72 gate fixtures/45 added nonfinite mutations; ONE exact16/800 stage accepted, launch unreported/outcome pending. `GPT-L905-PER-R-REVIEW.md` addendum.

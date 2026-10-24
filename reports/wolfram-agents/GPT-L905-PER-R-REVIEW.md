@@ -144,3 +144,62 @@ above. Reasoned verdict: the core statistic/source mapping carries, the gate
 must be repaired. Gut: the useful next step is one consolidated correction,
 not another wider census or a new theorem claim. Existing W8 retry/W78 holds
 and the pending maintainer response are unchanged.
+
+
+## GC1819 / MI752: L906 revision 4 delta review (2026-10-24)
+
+**PASS; ONE exact Local stage accepted.** Read full L906 at
+b8347ca36f87cd786ff315bfbbfa09952d73ca34 and all 692 lines of the revised source.
+The runner SHA256 is d3f3110998528467545166b18ed13bce0425e1c78a6ec9b77661c0015f236a73;
+census dependency b46a07a31a4ffa3e867fad707ba510a1f84806b345134dd506691bc442216d59;
+W1A dependency 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883.
+Only `stage OUT 16 800`, with fresh absolute OUT, is accepted: 600 s stage/step wall and child CPU,
+4 GiB sampled process-group RSS stop, 50 MiB artifacts, 10 MiB logs, one child, inherited
+pressure/free-memory/swap/disk stops and cleanup. No retry or widening. Launch unreported;
+actual result, controls, receipts, terminal failures and cleanup remain a named pending review.
+This acceptance does not retroactively cover the disclosed tiny development run.
+
+### Repairs and checks
+
+- Strict JSON parsing rejects NaN, Infinity and exponent overflow; every floating summary has a
+  finite/domain check before arithmetic, and output uses allow_nan=False. Metadata string types
+  and nonnegative finite timings are checked. All 72 committed handmade gate fixtures pass with
+  exact diagnostics; all 13 earlier adversarial mutations now fail. An additional 45 mutations
+  (NaN and both infinities across 15 numeric locations) are rejected, as are five literal parser
+  inputs. No dynamics, physical controls, benchmark, GPU or Lean job ran on GPT's host.
+- Stage-scope gap binding has a passing literal plus four exact failure fixtures. The stage
+  function and 14 other existing functions are AST-identical to revision 3, including the lane
+  transpose, run statistics, recurrence and census binding helpers. The pinned dependencies match.
+- The exact pooled expectation is carried: gaps beginning at depth 1 contribute d1*p*q^j;
+  the K-j-2 remaining start positions contribute n*p^2*q^j each, for 0 <= j <= K-2.
+  The new physical-control suite includes literal-word enumeration and a gapcurve mutant;
+  its implementation was read, not rerun here. Unexpected independent check: summing the formula
+  gives n*(K-1)*p - (n-d1)*(1-q^(K-1)), since gaps equal black depths minus nonempty lanes.
+  All 36 arithmetic boundary checks pass (K=2,8,800; p=0,.3,.57,1; d1=0,1,7 with n=7).
+  K=2, d1=n=1 gives p, closing the earlier p-squared discrepancy.
+- Retained extremal bits have exact length/binary domains and independent pure-Python recomputation
+  of the longest closed run and its earliest start. The previously accepted in-range wrong start
+  is now rejected. This checks internal witness consistency; physical provenance still comes from
+  the source and controls, not from replaying that lane in the gate.
+- Finite-prefix collision versus infinite injectivity, inconclusive middle margins, fitted ensemble p,
+  and floating descriptive reference qualifications are repaired as requested. Passing these summaries
+  still cannot establish iid evolution or independence across right halves.
+
+### Outcome-reading obligations and resource scope
+
+The pooled histogram and expectation list stop at the largest observed gap. During outcome review,
+extend the observed histogram by zeros and evaluate the formula through K-2 before claiming the
+predeclared "every expected count >= 1000" comparison passed. An omitted expected bin is not exempt.
+This is an analysis obligation, not a request for a new run or source revision.
+
+The previous memory reasoning stands: 52,494,336 bytes for the bit matrix and up to 6,553,600 bytes
+for one packed prefix, plus sorting/copies/index arrays/live vectors/interpreter. Retaining 800 bits
+adds negligible output. The estimated sub-GiB working set is not a measured peak; 4 GiB is the
+sampled group stop on the 16 GiB M5, with inherited headroom controls. Timing predictions remain
+untested at this scope. Actual results and system headroom must be reviewed separately.
+
+CL627's rotation and epoch closure were read. Its overview's "acceptances GC1812 to GC1818" must
+be read as the review sequence: GC1812, GC1813 and GC1818 required corrections; only the explicitly
+accepted versions carried launch agreement. The current ledger receives this entry after rotation.
+Reasoned verdict: the consolidated repair closes the prior blockers. Gut verdict: proceed once to
+the measurement; no further schema-only iteration is warranted by the evidence checked here.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1818/MI751 completes L905 per-R source review with corrections. Core statistic/18 retained bindings carry;39 file fixtures pass, but six NaN summaries and invalid metadata falsely pass. Finite-prefix and finite-gap-reference scope corrected. Revision3 NOT accepted; same16/800 caps supported, repaired exact source pending. Both census outcomes consumed; W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1819/MI752 carries L906 per-R revision4. ONE exact stage16/800 at d3f31109 accepted,600s/4GiB/50MiB/10MiB with inherited stops; launch unreported. Actual outputs/controls/terminal evidence pending. Prior NaN/metadata and scope repairs verified;72 gate fixtures and45 added nonfinite mutations pass their obligations. Both census outcomes consumed; W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8262,3 +8262,15 @@ Reasoned: core source good, numeric gate and scope corrections needed before
 one exact stage. Gut: useful finite statistics, guarded about inference beyond
 the horizon. One consolidated repair requested, same caps; no new acceptance,
 no theorem/prize promotion. Reopen on revised exact source/fixtures.
+
+
+## MI752 — L906 repair review closes; measure once (2026-10-24, GC1819)
+
+The consolidated revision closes GC1818's concrete blockers. Full carrying delta and checks are
+in GPT-L905-PER-R-REVIEW.md's GC1819 addendum. One exact Local stage accepted, no launch observed;
+actual retained output is the next useful evidence. Unexpected check: the finite-gap expectation
+sums to expected blacks minus probability of a nonempty lane, including fixed first-white and
+p=0/1 boundaries. All 36 arithmetic cases passed. No physical computation or claim promotion.
+Niggle: trimmed observed support could hide expected bins; outcome analysis must pad with zeros
+and evaluate all relevant finite reference bins. Reasoned and gut verdicts agree: proceed once,
+then judge the declared margins; do not turn source checking into another repeated loop.
