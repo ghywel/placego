@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""D8, revision 3 (Local, 2026-10-24, L895; GPT's GC1805: a supervised `stage` taking an exact input manifest of all seven widths
+"""D8, revision 4 (Local, 2026-10-24, L895; GPT's GC1806: the final matcher binds every output input digest to the manifest, exactly
+the seven keys; parsing and hashing share one bounded byte buffer; input paths absolute regular files resolved once; the manifest read
+once; manifest and input sizes bounded before the supervisor starts; GC1806's five matcher fixtures and its two-read case are controls).
+Revision 3 (Local, 2026-10-24, L895; GPT's GC1805: a supervised `stage` taking an exact input manifest of all seven widths
 64..76 with their digests, requiring all six steps, under the W1A supervisor with explicit caps; the median labelled as the UPPER median
 of the row-best runs). Revision 2 (Local, 2026-10-24, L895; GPT's GC1804: the comparison labelled, the counterfactual narrowed, the coincidence count named
 precisely with a multiplicity beside it, a typical-pair measure beside the maximum, input domains validated, an occupied output refused,
@@ -43,16 +46,26 @@ KS = (4, 8, 12, 16, 20)
 REQUIRED_WIDTHS = (64, 66, 68, 70, 72, 74, 76)
 W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
 STAGE_S = 300
+MAX_INPUT_BYTES = 16 << 20
+MAX_MANIFEST_BYTES = 64 << 10
+
+
+def bounded_read(path, cap):
+    assert os.path.isabs(path) and os.path.isfile(path) and not os.path.islink(path), 'input must be an absolute regular file: %s' % path
+    with open(path, 'rb') as f:
+        raw = f.read(cap + 1)
+    assert len(raw) <= cap, 'input exceeds %d bytes: %s' % (cap, path)
+    return raw
 WIDTHS_ALLOWED = range(64, 77, 2)
 PAIR_CAP = 10 ** 6
 
 
 def load(W, path):
-    d = json.load(open(path)); c = d['census']
+    raw = bounded_read(path, MAX_INPUT_BYTES); d = json.loads(raw); c = d['census']     # one buffer for the parse and the digest (GC1806)
     assert d.get('complete') is True and d['scope']['W'] == W and c['censored'] == 0 and c['maximizer_list_complete'] is True, path
     mx = sorted(int(i) for i in c['maximizers']); assert len(mx) == c['max_count'] and len(set(mx)) == len(mx)
     assert mx and all(0 <= i < (1 << (W // 2)) for i in mx), 'empty or out-of-range maximizer list'
-    return {'W': W, 'D': c['max'], 'maximizers': mx, 'sha256': hashlib.sha256(open(path, 'rb').read()).hexdigest()}
+    return {'W': W, 'D': c['max'], 'maximizers': mx, 'sha256': hashlib.sha256(raw).hexdigest()}
 
 
 def shared_top(a, b, n):
@@ -91,7 +104,47 @@ def controls():
     q = pair(A, B3); res['disjoint_top_bit_not_nested'] = not q['k']['4']['nested'] and q['longest_shared_top_bits_max_over_pairs'] == 0
     B4 = {'W': 66, 'D': 120, 'maximizers': [3, (1 << n) | 7]}
     q = pair(A, B4); res['low_bit_change_still_nested_at_20'] = q['k']['20']['nested'] and q['distinct_projected_coincidences'] == 0
+    # GC1806's five matcher fixtures and its two-read case
+    import tempfile
+    with tempfile.TemporaryDirectory() as t:
+        man = {str(w): 'a%02d' % w for w in REQUIRED_WIDTHS}
+        good = {'inputs': {str(w): {'sha256': 'a%02d' % w} for w in REQUIRED_WIDTHS}, 'pairs': [{'W': w, 'W2': w + 2} for w in REQUIRED_WIDTHS[:-1]]}
+        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, man)
+        def verdict(doc, rc=0):
+            json.dump(doc, open(rp, 'w')); return m(rc, '')[0]
+        import copy
+        res['matcher_six_steps_seven_digests_pass'] = verdict(good) == 'pass'
+        bad = copy.deepcopy(good); bad['inputs']['76']['sha256'] = 'zz'; res['matcher_w76_digest_changed_fails'] = verdict(bad) == 'FAIL'
+        bad = copy.deepcopy(good); del bad['inputs']; res['matcher_inputs_absent_fails'] = verdict(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['pairs'].pop(); res['matcher_last_step_absent_fails'] = verdict(bad) == 'FAIL'
+        res['matcher_nonzero_exit_fails'] = verdict(good, rc=1) == 'FAIL'
+        # the two-read case: load's parse and digest come from one buffer, so a file replaced between them cannot mix
+        fp = os.path.join(t, 'c.json')
+        doc = {'complete': True, 'scope': {'W': 64}, 'census': {'censored': 0, 'maximizer_list_complete': True, 'max': 116, 'max_count': 1, 'maximizers': ['5']}}
+        open(fp, 'w').write(json.dumps(doc)); r = load(64, fp)
+        res['load_digest_is_of_the_parsed_bytes'] = r['sha256'] == hashlib.sha256(open(fp, 'rb').read()).hexdigest() and r['D'] == 116
+        try:
+            load(64, 'relative.json'); res['relative_path_refused'] = False
+        except AssertionError:
+            res['relative_path_refused'] = True
     ok = all(res.values()); print(json.dumps(res, indent=1)); print('D8 CONTROLS', 'PASS' if ok else 'FAIL', len(res)); return ok
+
+
+def make_matcher(result_path, manifest_digests):
+    """The final gate (GC1806): exit 0, exactly the six steps, and the output's seven input digests equal to the manifest's."""
+    def matcher(rc, text):
+        try:
+            d = json.load(open(result_path))
+        except Exception as e:
+            return 'FAIL', 'no result: %r' % e
+        steps = [(q.get('W'), q.get('W2')) for q in d.get('pairs', [])] if isinstance(d.get('pairs'), list) else None
+        inp = d.get('inputs')
+        dig_ok = (isinstance(inp, dict) and sorted(inp) == sorted(manifest_digests)
+                  and all(isinstance(inp[w], dict) and inp[w].get('sha256') == manifest_digests[w] for w in manifest_digests))
+        if rc != 0 or steps != [(w, w + 2) for w in REQUIRED_WIDTHS[:-1]] or not dig_ok:
+            return 'FAIL', 'rc %s steps %s digests bound %s' % (rc, steps, dig_ok)
+        return 'pass', 'D8 complete: all six steps 64 to 76, inputs bound to the manifest'
+    return matcher
 
 
 def stage(out, manifest_path):
@@ -101,17 +154,18 @@ def stage(out, manifest_path):
         print('REFUSED: W1A is not the pinned bytes'); return 3
     if not os.path.isabs(out) or (os.path.exists(out) and os.listdir(out)):
         print('REFUSED: OUT must be absolute and new or empty'); return 3
-    man = json.load(open(manifest_path))
-    if sorted(int(w) for w in man) != list(REQUIRED_WIDTHS):
-        print('REFUSED: the manifest must name exactly the widths', REQUIRED_WIDTHS); return 3
-    for w, e in man.items():
-        if hashlib.sha256(open(e['path'], 'rb').read()).hexdigest() != e['sha256']:
-            print('REFUSED: width %s input is not the manifest bytes' % w); return 3
+    try:
+        mraw = bounded_read(os.path.abspath(manifest_path), MAX_MANIFEST_BYTES); man = json.loads(mraw); msha = hashlib.sha256(mraw).hexdigest()
+        assert sorted(man, key=int) == [str(w) for w in REQUIRED_WIDTHS], 'the manifest must name exactly the widths %s' % (REQUIRED_WIDTHS,)
+        for w, e in man.items():
+            assert hashlib.sha256(bounded_read(e['path'], MAX_INPUT_BYTES)).hexdigest() == e['sha256'], 'width %s input is not the manifest bytes' % w
+    except (AssertionError, ValueError, KeyError, OSError) as ex:
+        print('REFUSED (preparation):', ex); return 3
     os.makedirs(out, exist_ok=True)
     H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 2 << 30; H.CAPS['artifacts_max_bytes'] = 10 << 20; H.CAPS['log_max_bytes'] = 10 << 20
     sup = H.Supervisor(out, out); Rc = sup.receipts
     Rc['d8'] = {'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'w1a_sha256': W1A_SHA256,
-                'manifest': {w: e['sha256'] for w, e in man.items()}, 'manifest_sha256': hashlib.sha256(open(manifest_path, 'rb').read()).hexdigest(),
+                'manifest': {w: e['sha256'] for w, e in man.items()}, 'manifest_sha256': msha, 'max_input_bytes': MAX_INPUT_BYTES,
                 'caps': {'stage_s': STAGE_S, 'step_wall_s': STAGE_S, 'step_cpu_s': STAGE_S, 'group_rss_stop_bytes': 2 << 30, 'artifacts_max_bytes': 10 << 20}}
     sup.save()
     if H.pressure_bad(sup.baseline):
@@ -121,16 +175,8 @@ def stage(out, manifest_path):
         Rc['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); return 1
     rdir = os.path.join(out, 'run')
 
-    def matcher(rc, text):
-        try:
-            d = json.load(open(os.path.join(rdir, 'd8_nesting.json')))
-        except Exception as e:
-            return 'FAIL', 'no result: %r' % e
-        steps = [(q['W'], q['W2']) for q in d.get('pairs', [])]
-        if rc != 0 or steps != [(w, w + 2) for w in REQUIRED_WIDTHS[:-1]]:
-            return 'FAIL', 'rc %s steps %s' % (rc, steps)
-        return 'pass', 'D8 complete: all six steps 64 to 76'
-    cmd = [sys.executable, os.path.abspath(__file__), rdir] + ['%s=%s' % (w, man[w]['path']) for w in sorted(man, key=int)]
+    matcher = make_matcher(os.path.join(rdir, 'd8_nesting.json'), {w: e['sha256'] for w, e in man.items()})
+    cmd = [sys.executable, os.path.abspath(__file__), rdir] + ['%s=%s' % (w, os.path.realpath(man[w]['path'])) for w in sorted(man, key=int)]
     rec = sup.run_step('d8_nesting', cmd, out, STAGE_S, STAGE_S, matcher)
     Rc['complete'] = rec['verdict'] == 'pass'; sup.save()
     print('DONE' if Rc['complete'] else 'STOP', rec['verdict'], rec['reason'], rec.get('match_note'))
