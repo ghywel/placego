@@ -1,4 +1,4 @@
-# Submission edge-sep (ready for GPT's read, Cloud, 2026-10-24 16:35 BST): exact edge deadlines for three edge pairs
+# Submission edge-sep (Cloud's module, 2026-10-24; SUBMITTED by Local 2026-10-24 17:04 BST as R30-20261024-991a71): exact edge deadlines for three edge pairs
 
 Three exact negative-edge cases of the kit's `EdgeObservable` conjecture (`Rule30TraceEdge`, added after cc1e0e0), with exact
 deadlines: two configurations with leftmost black cells at -2 and -1 have center columns that differ by time 8; at -4
@@ -20,8 +20,8 @@ witnesses, R = m); the light-cone saturation argument and the finite searches E1
   `Quot.sound` only, no new axioms. On Cloud's machine: `lake env lean` 206 s, `lake build` 11 min wall (3 min CPU),
   the checker's replay 170 s. At the verifier's half speed the replay alone is near six minutes: the maintainer path
   applies, as for submission 11.
-- `essay-template.md` + `assemble.py` -> `essay.md` (SHA256 `92c8528bc3beb338a5afe3a2c46cd466bd29ae9e38ba3600de194500d8922505`); `abstract.md` (246 words, four parts, ASCII outside
-  the math); `expected_numbers.py` (independent scalar Python, below).
+- `essay-template.md` + `assemble.py` -> `essay.md` (SHA256 `c8aee65530e8a387aa4b9e1145b3dae62432804ac433ff6ce1646e0b8eca4c36` after GC1793's two prose repairs;
+  it was `92c8528b...` at GPT's source read); `abstract.md` (247 words after the repair, four parts, ASCII outside the math); `expected_numbers.py` (independent scalar Python, below).
 
 ## Expected outputs of the essay's cells (`expected_numbers.py`)
 
@@ -46,5 +46,16 @@ depth at 16,384 iterations.
 
 ## Status
 
-GPT's module read requested (CL622). Local builds the notebook after GPT's read; the standing permission covers the
-submission. Byline and API fields as for the earlier submissions.
+**SUBMITTED** 2026-10-24 17:04 BST on the owner's standing permission: **R30-20261024-991a71**, problem 1, claim partial, the eight
+headlines above, status at submission Lean Unverified (queued for the verifier). GPT's source review GC1793: PASS, with the two prose
+repairs made by Local in commit 4a277e71. The M5 pipeline (L886):
+- the kit's checker on the M5 (kit copy cc1e0e0): `lake build Rule30Submission` 65.5 s, maximum resident set 4,061,773,824 bytes;
+  `Check.lean` 54.2 s, 3,903,848,448 bytes; verdict pass, 583 constants replayed; the parsed JSON equals Cloud's `check.json` in
+  every field (the files differ only in formatting);
+- the notebook (`build_sub.wl` revision 3): 111.8 s, 333,142 bytes, nine output cells;
+- the full-cell gate (`pipeline/nb_gate_edgesep.py`): PASS; cells 1, 2, 3, 5, 6 and 7 exact, cell 4's counts bound to the checker
+  (the summary omits the 18 compiler-generated `match_` auxiliaries the checker lists), cell 8 the call graph of `sep_8`, cell 9
+  Success with 583 declarations in every displayed copy; its 16 negative controls pass;
+- retained in the shared store at `cited/edge-sep-submission/` (the nine cells, the checker JSON, the gate's outputs, the notebook).
+The checker's 3.9 GB resident set lies inside the band where the verifier's sandbox has both passed and failed submissions, so a
+maintainer rerun may be needed, as CL622 anticipated.

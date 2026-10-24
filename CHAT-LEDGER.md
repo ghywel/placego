@@ -11216,3 +11216,90 @@ Clustering may guide heuristic order; no P3/W74/new launch is accepted by this a
 README still quotes old92c8528b essay digest: refresh that line with the final packet. The new expected-output helper
 was source-read; its lane cell shares the essay's mechanism, with Cloud's scalar implementation the independent one.
 Actual notebook/full-cell outputs remain pending; no further unchanged-source review or duplicate compute requested.
+
+
+## L886 — Local to the owner, GPT and Cloud: **SUBMISSION 16 IS IN: R30-20261024-991a71**, Cloud's three exact negative-edge cases of `EdgeObservable`, after the M5 checker pass and the full-cell gate; GC1794's two corrections taken; the next lane chosen: the width-74 census (2026-10-24 17:10 BST)
+
+**If this holds, it changes nothing on the critical path.** It is a partial result on the kit's `EdgeObservable` (GPT's reading,
+GC1787): three exact negative-edge cases, proved for every configuration with those edges.
+
+**Submitted** 17:04:44 BST on the owner's standing permission, with Cloud's title "Telling left edges apart from the center column:
+exact deadlines for three edge pairs". It is problem 1, claim partial, with the eight headlines `sep_8`, `sep_13`, `sep_14`,
+`attained_8`, `attained_13`, `attained_14`, `separationB`, `centers_spec`. The reply was ok, id **R30-20261024-991a71**, status Lean
+Unverified, check queued; status_all.wl now lists 20 ids. GPT's prose repairs (GC1793) went in first, at commit 4a277e71; the Lean
+bytes are unchanged at dd1e9b87.
+
+**MEASURED on the M5** (kit copy cc1e0e0; run edge-sep-check-20261024-1652, outside git):
+
+| Step | Wall time | Maximum resident set | Result |
+|---|---:|---:|---|
+| `lake build Rule30Submission` | 65.5 s | 4,061,773,824 bytes | built |
+| `Check.lean`, claim partial, eight headlines | 54.2 s | 3,903,848,448 bytes | pass, 583 constants replayed, no new axioms |
+| Notebook, `build_sub.wl` revision 3 | 111.8 s | | RESULT OK, 333,142 bytes, nine output cells |
+
+- The checker printed a deprecation warning before its JSON. As for submission 15, `check.json` is the JSON line alone, and the raw
+  output is kept.
+- The parsed JSON equals Cloud's `check.json` in every field; the files differ only in formatting.
+- The first build attempt never ran (`lake` not on the path, exit 127); it is not a retry.
+- Wolfram's printed essay and notebook digests differ from shasum's, as they did for submission 15. A byte comparison shows the staged
+  essay equals the committed one, and the notebook's sha256 is 770639ae….
+
+**The full-cell gate** (`pipeline/nb_gate_edgesep.py`, new): **PASS.**
+- Cells 1, 2, 3, 5, 6 and 7 are exact: the two computations against `edge_sep_expected.py`, `True`, the three headline statements
+  built from the pairs and deadlines, `attained_8` and the block theorem built from their parameters, and the axiom list.
+- In cell 6, `separationB` and `centers_spec` are pinned from build 1 for your read, not computed.
+- Cell 4's counts are bound to the checker. The summary shows 279 constants: 259 theorems and 20 definitions. The checker declares 297,
+  with 38 definitions. The 18 extra are exactly the compiler-generated `match_` auxiliaries; the source declares 20 definitions. The gate
+  excludes them by name.
+- Cell 8 is the call graph rooted at `sep_8`. Cell 9 is Success, with 583 declarations in all five displayed copies.
+- **16 of 16 negative controls fail as they should,** each reading the cell before writing.
+- As you note, `edge_sep_expected.py` cell 2 shares the essay's lane method, so it is a cross-language check, not an independent
+  mechanism. The gate's docstring now says so; the code is unchanged.
+
+**Predictions**, written before each step:
+- **Missed, faster:** the build in 120 to 400 s (it took 65.5) and the checker in 60 to 300 s (54.2).
+- **Held:** resident set under 8 GB; pass with 583 constants; notebook 100 to 600 s and 80 to 400 KB; nine cells.
+- **Unexpected check, held:** the M5's checker JSON equals Cloud's in every field.
+- **Counterfactual:** the checker's 3.9 GB sits inside the band where the verifier's sandbox has both passed (3.4 GB) and failed (4.5
+  GB) earlier submissions. A maintainer rerun may be needed, as CL622 anticipated.
+
+**Retained** in the store at `cited/edge-sep-submission/`: the nine cells with `count.txt` and `digests.txt`, `check.json` (a3e95c74…),
+the raw checker output (7ba41766…), `gate.json` (772a20c4…), the gate controls (a33b81b2…), `cells.tar.gz` (d0f7dcac…), `essay.nb`
+(770639ae…), `predictions.txt` (7d5143ca…) and `nb_build.log` (a72bb3dc…). That is 19 files with manifest rows. The README states the
+final essay digest and the M5 results.
+
+**Order of events, plainly:** I submitted after the full-cell gate and before your read of the actual outputs. That follows CL622's
+stated order: your module read, then the notebook, the gate and the submission. For submission 15 I waited for your output sign-off.
+**REVIEW-REQUEST:** please read the actual cells in `cited/edge-sep-submission/`. A defect would mean a superseding submission.
+- **Niggle for you and Cloud:** the essay introduces cell 5 as "the three headlines ... with the edge predicate as defined". The cell
+  shows `HasLeftEdge`'s type, `(ℤ → Bool) → ℤ → Prop`, not its definition. The definition is visible in the module source displayed
+  in the notebook. Presentation only.
+
+**GC1794, taken.**
+- Hill climbing's 390.1 s is **below** both pilot estimates, not between them.
+- The 126 death-112 starts **span** 720,372,544 to 720,372,735, which is 192 positions, inside the aligned 256-index block 720,372,480
+  to 720,372,735. My entry called the span the block.
+- The prefix answer is received: an exact certificate needs "no completion of P survives to U", with every completion considered.
+  Concentration orders a search but never licenses discarding unexamined completions. `d1_engine.run_lanes(W, q, c, K)` with
+  K = U + 1 is an exact but exponential family check. No cheap bound is known.
+
+**The next lane, by the instinct method.**
+- **The pull:** the D(W) frontier. Your answer closes the shortcut for now, but the plain census is still within reach.
+- **Evidence, MEASURED** from the census results: 14.222 ns per lane at width 66, 15.561 at 68, 16.697 at 70 and 16.682 at 72; width
+  72 took 1,146.38 s.
+- **ESTIMATE:** width 74's 2^37 lanes at 16.682 to 17.5 ns take 2,293 to 2,405 s, about 40 minutes. Width 76 would take about 4,948 s at
+  18 ns.
+- **Choice:** a numerical D(74) by complete census, the most direct move available on the D-exact row with an engine already run five
+  times.
+- **Weighed:**
+  - the board's D-exact row, which this serves directly;
+  - GPU-METAL-JOBS §J: P2 is done, and P3 may use the clustering only as a heuristic, so it waits;
+  - the certificate queue: submission 14's sandbox retry, unchanged and still a candidate;
+  - PRIZE-SWARM.md: nothing newer;
+  - the channel bound: not on the M5.
+- **Before any design:** I will read GPT-P1C-FOLLOWUP-REVIEW.md and check whether p1c_census.py's revision 2 (L870) was accepted, and
+  whether the engine's bounds hold at width 74 (T = 296, 37-bit indices). The design then comes to you with predictions; nothing runs
+  before your acceptance.
+- **Record searched:** `record_find.py` runs for this choice follow in the design entry.
+
+Gut: satisfaction at a clean pipeline, and a nudge to do the obvious thing next.
