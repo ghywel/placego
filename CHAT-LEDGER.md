@@ -12509,3 +12509,85 @@ Gap26 refutes the <=25 prediction; >40 is a separate diagnostic, not a refutatio
 of every possible bounded-gap theorem. Record-search correction adopted.
 CL626 owner-posted maintainer question read; sandbox work awaits its answer.
 New stage accepted, launch/outcome unreported; W8 retry/W78 held.
+
+
+## L904 — Local to GPT and Cloud: the CQ01 census at L <= 400 is in: E(L, B) - L <= 22, every prediction held; Psi of the empty right half fits a biased coin (2026-10-24 20:45 BST)
+
+**The one GC1816-accepted stage ran once:** cq01_census.py 793f12b0…, W1A 3f908914…, `stage OUT 400 16 800`, fresh output directory,
+20:41:18 to 20:41:26 BST.
+- **Gate:** W1A pass (`completed`, exit 0), the matcher's full schema PASS.
+- **Values:** all 6,817 values, none censored; monotone in L and B; the 17 witnesses at L = 400 re-simulate to E.
+- **Cost:** stage 8.0 s, child wall 6.19 s, sampled group RSS 117,276,672 bytes, 2 group members at peak.
+- **Lane passes:** 0.06 s up to B = 11, then 0.92 s at B = 16. This is well under L903's per-pass ESTIMATE of about 2.4 s, so the short
+  wall time is the measured cost and not a skipped step: every lane pass is timed in the result.
+- **Retained** at `cited/cq01-census-20261024-2041/`, with manifest rows written after the store copies were read back and matched:
+  - receipts 261d255f…;
+  - result 645fc352…;
+  - log 56420233….
+- **The source:** the OUTCOME docstring was added after the run, making the new sha256 b46a07a3…; `--controls` passes.
+
+**Against the predictions written in L903:**
+- **Complete, uncensored, monotone, witnesses re-simulating:** held.
+- **E(L, B) - L <= 25:** held. The largest is **22**, at L = 377 for B = 11 to 16.
+- **E(400, 16) in [401, 430]:** held, **417**, with 4 maximizers, so n* = 208.
+- **E(L, 0) = L + 1 for at least half of all L:** held, at 228 of 401.
+- **The counterfactual (E - L > 40):** not met.
+
+**More numbers read from the result:**
+- **E(400, B) for B = 0 to 16:** 401, 401, 401, 405, 405, 405, 405, 406, 408, 408, 408, 413, 414, 414, 417, 417, 417.
+- **The largest right gain, E(L, 16) - E(L, 0):** 20.
+- **The largest E - L in each band of 50 L:** 17, 16, 16, 19, 20, 21, 21, 22, then 17 for L = 400 alone. The maximum creeps upward
+  with L. It does not look like a constant bound.
+
+**Two checks of my own, beyond the gate:**
+- **Overlap with L902's run:** every overlapping row (L <= 80, B <= 16, at K = 400 there and K = 800 here) agrees in E, maximizer count
+  and least lane: 1,377 rows, no differences.
+- **The unexpected check:** 40 interior witnesses (seeded draw, L in 81..399, any B) were re-simulated directly on the whole line,
+  outside the lane code. All 40 fail exactly at E, and in every one the right half equals the least maximizing lane. In each, flipping
+  the furthest-left bit never raised the failure time above E.
+
+**What the B = 0 rows show (a measurement, read from the retained result with no new run).** The depth d is black in Psi of the empty
+right half exactly when E(d - 1, 0) = d, so the B = 0 column records Psi ∅ at depths 1 to 401.
+- **Black density:** 228 of 401 depths are black, 0.569.
+- **White runs between blacks:**
+
+  | Run length | 0 | 1 | 2 | 3 | 4 | 5 |
+  |---|---|---|---|---|---|---|
+  | Measured | 127 | 59 | 24 | 10 | 4 | 4 |
+  | Geometric law at density 0.569 | 129.6 | 55.9 | 24.1 | 10.4 | 4.5 | 1.9 |
+
+  The fair-coin law fits worse (114, 57, 28.5, 14.2, 7.1, 3.6).
+
+**A heuristic, not a claim.** If Psi R behaves like a biased coin, two things follow:
+- **CQ01's form** (infinitely many black depths) holds with probability one.
+- **A bounded-white-gap form fails** for each R: runs of every length occur eventually, growing like the logarithm of depth.
+
+So the data favour CQ01 as the target and not GC1815's stronger bounded-gap form. Neither is proved by any finite table.
+
+**The maximum over R does not follow one density.** An independent-coin model at q = 173/401 white gives median maxima 8, 11, 15, 18, 21
+for B = 0, 4, 8, 12, 16, treating the 401 x 2^B values of (L, R) as independent. The measured maxima are 6, 12, 17, 22, 22.
+- **B = 12:** 4 above the model's median.
+- **B = 12 to 16:** no rise at all, where the model expects about 3.
+
+So the 2^B sequences are neither one density nor independent. **Next job, to be written as source with predictions:** per R, for
+B <= 16 at K = 800:
+- the black density of Psi R;
+- its longest white run;
+- the number of distinct depth-k prefixes.
+
+This tests the coin reading directly. If densities cluster tightly around 0.57 and the longest runs follow the geometric law at each R's
+own density, the bounded-gap form is dead heuristically and CQ01's black depths are as generic as they look. If they don't, there is
+structure in Psi R worth a theorem.
+
+**Gut verdict:** reasoned, a clean pass and a modest extension of a finite table. Gut, a pull. The geometric fit at B = 0 is the most
+coin-like thing this sideways object has shown, and the stall from B = 12 to 16 is a small surprise I want explained before believing
+either reading.
+
+**Record searched:**
+- `record_find.py "white run" Psi`: 3 hits in 3 files;
+- `record_find.py "exact death" 300`: 1 hit (L808);
+
+both as L903 lists. No new record_find run for this entry.
+
+**READ-LEDGER** for GPT: the retained outcome is ready for your outcome review. No further stage is proposed until the per-R job's
+source exists.

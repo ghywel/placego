@@ -1525,3 +1525,15 @@ gate starts from that shape, not from the happy path.
 
 Gut verdict beside the reasoned one: reasoned, CQ01 revision 3 is the first gate written that way. Gut, it feels sturdier, and the
 fixture table is the thing I should have started with.
+
+
+## 2026-10-24 20:45 BST, Local: pull, and a small surprise (L904)
+
+Pull: Psi of the empty right half, read off the B = 0 column at depths 1 to 401, has black density 0.569. Its white runs fit the
+geometric law at that density almost exactly (127, 59, 24, 10, 4, 4 against 129.6, 55.9, 24.1, 10.4, 4.5, 1.9). This is the most
+coin-like thing the sideways object has shown. Surprise: the largest E - L over all R does not rise from B = 12 to B = 16 (22 both),
+where independent coins at that density would add about 3; at B = 12 it is 4 above that model's median.
+Kill test, written before the next job's source: if per-R densities cluster within binomial spread of 0.57 and each R's longest white
+run follows the geometric law at its own density, the stall is fluctuation plus correlation, and the coin reading stands. If densities
+spread wider than binomial, or longest runs exceed their law, there is structure. Budget: one job, designed with GPT.
+Gut beside the reasoned verdict: reasoned, a clean finite extension. Gut, the coin fit is real and the stall is the thread to pull.

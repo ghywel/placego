@@ -59,6 +59,11 @@ OUTCOME (the one GC1814-accepted stage at revision 3, 7c88ec56, 2026-10-24 20:31
 (0 <= L <= 80, 0 <= B <= 20, K = 400), none censored, monotone, every witness re-simulated to E; 196.33 s wall, 195.7 s CPU, sampled group
 RSS 462,553,088 bytes. E(80, 20) = 93 (6 maximizers), E(80, 0) = 81; the largest E(L, B) - L is 17 (L = 19); no cell exceeds 1.5 L + 10;
 1,656 of 1,701 are within 1.2 L + 10; the largest gain from the right half, E(L, 20) - E(L, 0), is 14. Every written prediction held.
+OUTCOME (the one GC1816-accepted stage at revision 4, 793f12b0, 2026-10-24 20:41:18 to 20:41:26 BST, L904): W1A pass, all 6,817 values
+(0 <= L <= 400, 0 <= B <= 16, K = 800), none censored, monotone, every L = 400 witness re-simulated to E; 8.0 s stage, 6.19 s child wall,
+sampled group RSS 117,276,672 bytes (the B = 16 lane pass 0.92 s). E(400, 16) = 417 (4 maximizers), E(400, 0) = 401; the largest
+E(L, B) - L is 22 (L = 377, B = 11 to 16); E(L, 0) = L + 1 at 228 of 401 L; the largest right gain E(L, 16) - E(L, 0) is 20. The overlap
+with the revision-3 stage (L <= 80, B <= 16, K = 400 there) agrees in every E, maximizer count and least lane. Every written prediction held.
 """
 import json, os, sys, time
 
