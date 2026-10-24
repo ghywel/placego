@@ -122,3 +122,67 @@ All **11 committed literal controls PASS**. Seven additional pure-file checks PA
 The executable review is now closed; do not repeat the repaired control review. The remaining launch input is the actual frozen seven-file manifest including the terminal W76 result. Review that manifest against retained census identities/completeness and retain the exact invocation and preparation log before recording a one-stage agreement. No D8 launch has yet been accepted or observed. Preparation refusals are not analysis outcomes. W76 and W8 keep their existing agreements; W78 remains held.
 
 The CL624 addendum at `35d905302b9e0eeafb00beb1f6b886e7ddda69a9` was also read in full. The owner's emphasis is adopted: the completed GPU census, engine, fixtures and digests are useful reusable data; the stop concerns the marginal cost of another width here, not the worth of the completed work. This review makes no independent global-record claim about the table. Gut: the binding issue is resolved, and the next useful evidence is the terminal packet, not more wrapper refinement.
+
+
+## GC1811 / MI744: L898 adopted; exact meaning of the capped horizon
+
+L898 at `9b639796383db7d74e828be3bd4182c22e4dda01` independently carries the
+three steps of section 2 against the kit statements. **The finite-horizon
+specification is now PROVED (hand, independently second-read).** This promotes
+only that characterization, not CQ01 or an executable implementation. GPT's source
+pin remains `2f63afda261888e04ec57237290e723190914a1d`; Local reports the same
+nonpacked lemmas in its newer read-only kit. No new Lean replay was performed.
+
+The sufficiency argument includes both possibilities: a first discrepancy beyond
+2n, and no discrepancy at all. In the latter case `Psi_col` supplies `Meets` for
+every time, hence `alternates_iff_meets` gives perpetual alternation. Excluding
+that case by assuming a finite row must differ from Psi would assume the question
+under investigation. The existing argument by finite light cones needs no such
+assumption. Rechecked carrying statements: `history_eq_recon`, `recon_local`,
+`alternates_iff_meets` and `exact_death_center` in the retained source files.
+
+Local's proposed n*(L,B) is a useful output, with this precise definition:
+
+`n*(L,B) = sup { n in N : J(L,B,n) is nonempty }`, taking values in `N union {infinity}`.
+
+Include n=0: the empty word is always admitted. Prefix restriction sends every
+member of J(L,B,n+1) into J(L,B,n), using the same right witness; reconstruction
+at depths <=2n is unchanged. Thus nonemptiness is downward closed, and emptiness
+persists at every later horizon. This statement does not imply that the numbers
+of distinct words are nonincreasing: one prefix can have multiple extensions.
+
+For fixed L,B there are exactly 2^(L+B) possible black-center starts. If each
+fails alternation at a finite time, the maximum of those finitely many first
+failure times is finite. Conversely, if arbitrarily large horizons are admitted,
+at least one of those finitely many starts survives arbitrarily long, hence
+forever. This is the finite-family quantifier argument; it does not establish
+that every start fails. Claiming finiteness for all supports would still require
+the missing CQ01 argument.
+
+Keep the unit explicit. If tau(x) is the first time the center disagrees with
+altCol, and T=max_x tau(x) is finite, then
+
+`n*(L,B) = floor((T-1)/2)`.
+
+It counts completed two-step horizons, not physical ticks. Exact n*=m pins T only
+to {2m+1,2m+2}; the longest inclusive agreement horizon is T-1. A census capped at
+N that still has survivors reports **n* >= N, right-censored**, not n*=N and not
+infinity. Nonempty J at m and empty J at m+1 certify exact m. An incomplete
+right-start enumeration cannot certify emptiness or that maximum.
+
+**Unexpected endpoint check, by hand:** at L=0, F_v(1)=1 for every n>=1, so the
+required zero at depth 1 fails regardless of B. Therefore n*(0,B)=0. Physically,
+the initially white left neighbor and black center give rule(0,1,r)=1 at time 1,
+failing the required white center. This checks the empty horizon and the odd
+failure-time convention without a census. The prior {-1,0,1} control still
+survives through time 2 and fails at 3, as section 2 states.
+
+The proposed scalar enumeration, reconstruction and independent whole-line
+comparison have the right mathematical scope. Next input is Local's frozen
+executable, exact grid/horizon limits, control and mutation expectations,
+source pins and stage-wide resource contract. The whole-line control must
+compare distinct visible-word sets, not just counts. Retain an actual compatible
+start for each reported nonempty case and distinguish exact/censored/refused
+outputs. If packed modules enter, their source/soundness interface needs its own
+read; this adoption is not acceptance of an unseen implementation or a launch.
+No new computation, review request or all-support theorem is created here.

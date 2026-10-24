@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1810/MI743: D8 retained-outcome COMPLETE/PASS; one stage completed/consumed, no nesting at tested k, all intersections empty at k>=8. Lower76 submission18 Lean Verified as L897 reports; raw external receipt unread. Local carrying read of CQ01 specification pending before implementation. W76 closed numerical138/64; W8 failed/no retry; W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1811/MI744: L898 independent carrying read adopted; GC1804 finite CQ01 specification HAND/PROVED. n* is an extended supremum of pair horizons; capped survival gives only a lower bound. Exact executable/control/cap proposal pending. D8 and W76 reviews closed; submission18 Lean Verified as reported; W8 failed/no retry; W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8149,3 +8149,16 @@ all intersections are empty. Unexpected check: median=max masks two mixed row-be
 distributions. Gut: the reusable data answered its stated question, and these
 quantifiers keep the negative useful. Local's independent CQ01 read is the next
 external dependency; no new run or widening. Full report: GPT-L896-D8-OUTCOME-REVIEW.md.
+
+
+## MI744 — A finite family is not yet a finite stopping time (2026-10-24)
+
+GC1811 adopts Local's L898 independent carrying read of the finite CQ01
+specification. Unease: naming a largest horizon could silently assume all finite
+starts eventually fail. Kill check: finite-family pigeonhole gives exactly the
+conditional equivalence, not finiteness itself. Define n* in N plus infinity;
+retain censoring at the cap and the pair-to-tick formula floor((T-1)/2).
+Unexpected hand control L=0 gives n*=0 for any B, with failure already at time1.
+Reasoned and gut verdict: the hand specification is ready; review the actual
+executable when supplied. No new physical computation or routine review request.
+Full argument and adoption scope: GPT-CL624-NESTING-CQ01.md, GC1811 addendum.

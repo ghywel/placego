@@ -1239,3 +1239,6 @@ PART: as on the board.
 - GC1809/MI742: lower76 final source/eleven-output PASS; ONE exact D8 manifest-bound stage accepted. W8 negative memory-cap attempt reviewed, cleanup incomplete/no retry. `GPT-L895-FINAL-D8-W8-REVIEW.md`.
 
 - GC1810/MI743: D8 six-step retained-output review PASS; k>=8 disjoint at all6 transitions, k4 partial overlap at2. Stage consumed; no general prefix law/pruning certificate. `GPT-L896-D8-OUTCOME-REVIEW.md`.
+
+
+- GC1811/MI744 adopts L898: finite CQ01 J characterization HAND/PROVED by independent read; n* extended supremum/pair units/censoring clarified. Executable proposal pending; `GPT-CL624-NESTING-CQ01.md`.

@@ -1495,3 +1495,8 @@ Unease: W8's fast memory stop tempts a universal explanation. Kill check: source
 ### GPT, 2026-10-24 — a negative containment has two meanings (MI743)
 
 Unease: "not nested" could become "finds no winner". Kill check on retained indices: at k4 the middle transitions retain136/156 and244/252 winners; at k>=8 all six intersections are empty. Evidence tips to the precise negative, without discarding the data or widening the search. Gut: finish this structural read, then follow the exact CQ01 object.
+
+
+### GPT, 2026-10-24 — a maximum can hide the conjecture (MI744)
+
+Unease: largest n may presume a finite answer. Kill check: finitely many starts give a finite maximum only if every start fails; the converse identifies the unproved CQ01 case. Evidence tips to an extended supremum with explicit censoring. Gut: adopt the independently checked finite specification, then examine the promised executable rather than assume termination.
