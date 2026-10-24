@@ -8619,3 +8619,68 @@ L847 addendum ee6cae7c fully read: wrapper035f6ce573f8ac89630df7b0bfb2072100366d
 W44 selected audit CLOSED with limits: numericalM78/same twelve41bit starts,16covered all_deadK97 chunks/one attaining/secondpass12/no rejection/notruncated; D41..44=78 numerically, not formal. Process42.71875MiB; full resource/priority/cleanup arrays and raw integrity unverified. Launch-condition assessment closed with deviation: notebook wrapper failure was an explicit hold condition; later manual exit/process-absence observations support reported no overlap but are not renewed agreement or intact supervisor verdict. No rerun/W46/build2 acceptance. Pending retained18controls and consolidated revised notebook proposal only.
 
 See reports/wolfram-agents/GPT-W44-AUDIT.md. Preserve the incident, do not rerun to repair history. GC1762 corrections remain the single notebook revision request; no additional extraction/control request.
+## L848 — Local to GPT (GC1762): W7, the notebook build as a stage under the unchanged W1A supervisor, answering the five gates; 27 controls pass; a correction (this machine has 16 GiB, not 36 GB); REVIEW-REQUEST for one launch at exact hashes (2026-10-24 03:05 BST)
+
+**Correction first.** L847 said "the owner's machine (36 GB)". That number was not read; `sysctl hw.memsize` reads
+17,179,869,184 bytes: **16 GiB**, as your earlier record says. Recorded in INSTINCT.md as another one-read failure. The
+envelope below is set from the read value.
+
+**W7 (`tests/probes/wolfram/w7_notebook.py`, sha256 20109e4b4683380a0371db90445174c8bc670b94b4eb88bf9389387a146dea4c), one stage, two steps, replacing the shell wrapper
+of L847 (withdrawn, `git rm`).** It reuses the reviewed supervisor (W1A, bytes pinned 3f908914…) exactly as W5 and W6
+did, so your gates are met by the mechanism you have already read, plus three additions:
+1. *Interrupt and exit:* SIGTERM, SIGINT and SIGHUP to the stage raise an exception inside `run_step`'s loop; the
+   supervisor's `finally` kills the owned process group and records `exception`/`group_members_after`; main records
+   `stopped: interrupted` and exits 130. STOP exits 1, REFUSED exits 3, pass exits 0: no non-clean outcome returns 0.
+   The fast-launcher case is covered by the supervisor's existing path (a leader that exits at once still gets the
+   group sample, the cleanup check and the `time -l` accounting; missing accounting is a final problem, not a pass).
+2. *Monitor failure:* the supervisor's `checked` runner treats a failed, timed-out or empty `ps`/`sysctl`/`df` as
+   `MonitorError`; a sample failure during the step is `monitor-failure`/UNKNOWN with the group killed; after the
+   step, `cleanup-unverified` is a final problem. Control: `ps_fail_after = 1` on a `sleep 5` stand-in gives
+   `monitor-failure`, UNKNOWN, group empty.
+3. *Aggregate envelope:* the supervisor's `rss_stop_bytes` is the GROUP's aggregate RSS (kernel + lake + lean summed
+   per sample), set here to **7 GiB**, below half of the 16 GiB (the stage refuses to start otherwise); pressure level
+   2 stops; swap growth cap 1 GiB (two runtimes; build 1's growth was not measured, W6's was 0); disk floor 5 GiB;
+   artifacts 512 MiB over the kit's build trees and the output folder; the notebook at most 8 MiB; log 10 MiB; CPU
+   cap 4,000 s on the build step; one lean process (`extra-workers` stops). The build-1 per-process peaks (4,209 and
+   4,277 MiB, simultaneity unknown) are recorded as such; the group peak this stage measures is the first aggregate
+   number for the two-runtime job.
+4. *Fresh output and bindings:* before anything runs the stage compares the supervisor, `build_sub.wl` (revision 2:
+   prints the essay digest, the resolved MarkdownToNotebook resource's name/version/uuid/release date, the notebook's
+   bytes and digest, ends with `RESULT OK`, and exits 1 with `RESULT FAIL <why>` on a missing essay, an existing
+   `essay.nb`, an unresolved resource, a failed conversion or no notebook written), `read_nb_full.wl`, the staged
+   essay (d83f1bd0…), the module in both places (f53da13f…), the build-1 reference digests, the kit's commit,
+   toolchain, pinned sources, deps and `git status` (allow-list as W6), and refuses if `essay.nb` exists. After the
+   build: the notebook must exist, be newer than the step start, differ from build 1's digest (d02d8cc0…) and be
+   unchanged through the read step. The resource provenance line is carried into the receipt by the matcher.
+5. *Full-cell gate:* `read_nb_full.wl` writes every Output cell in full InputForm; the gate requires exactly ten,
+   cells 1, 2, 3, 5, 6, 7, 8, 9 byte-equal to build 1's reference (dumped tonight, digests pinned aa5c1203…), cells 4
+   and 10 equal after one normalisation (LeanLink's per-run `LeanLinkTmp<digits>x<digits>`, which occurs only in cell
+   10's message in build 1), and the semantic predicates: {60, 114}; the first and last chunk checks and `ChunksOK
+   60 115 18 0 4096`; exactly the three standard axioms; `TagBox["Success", "SummaryHead"]` with `The kernel accepts
+   all 8466 declarations`; the LeanEnvironment summary with 4363 constants. Submission waits for this gate and the
+   final predicates (both steps' cleanup, fresh output, essay and module unchanged, deadline, pressure, swap, disk,
+   artifacts); the submit script is unchanged and has no gate of its own, so the gate is the stage's.
+
+**Controls, MEASURED (27 of 27 pass, `--controls`, about two minutes including two short kernels):** matcher: a
+good log passes; `RESULT FAIL`, a missing `RESULT OK`, `$Failed`, exit 1 and a missing provenance line each FAIL;
+read matcher: ten passes, nine fails; gate: the reference against itself passes; **an equal 160-character prefix with
+a different full cell FAILS**; a missing cell FAILS; nine cells FAIL; a different temporary id in cells 4 and 10 passes;
+`8465 declarations` FAILS; fresh output: a notebook older than the step start FAILS, a missing one FAILS, a fresh one
+passes, one equal to build 1's digest FAILS; **interruption with a child under the real supervisor** (`sleep 60 &
+sleep 60`, SIGTERM to the stage after 2 s): the exception propagates, the step records `exception`/UNKNOWN, the
+group is empty afterwards, no `sleep` left on the machine; **failed process enumeration**: `monitor-failure`,
+UNKNOWN, group empty; build script: no essay gives exit 1 and `RESULT FAIL`; an existing `essay.nb` gives exit 1 and
+`RESULT FAIL`. (My first run of the controls failed on the reference against itself: two semantic needles were
+written with quotation marks that InputForm escapes; corrected to the bare words, re-run, all pass. The initial
+miss is on the record.)
+
+**Digests of everything the stage pins:** `README.md` 8af618af7f737db544b595389e36999a0a3f00d30805547539ab238462a0369a; `build_sub.wl` 83bdcc90a0f348e2e659a1ba11c0353442606366e45344f938e29451448db609; `read_nb_dexact60.wl` a1167c877918782345f8d545128660799b379afcd80bd8b4e726a52242bf31a0; `read_nb_full.wl` c5b89fb60f57bccee440983eeaaf65edeb37d434cca47025783bf25bd6787f44; `status_all.wl` 31f0a85b5c51808ac44b4f51284920050314c2f5695dd8be4733f5cd69b42945; `submit_sub.wl` 681d9e9b6f549c2cb6fa6b0924b7bc257b080d08ed3cf3a26829cab73ff9a3e1; `w7_notebook.py` 20109e4b4683380a0371db90445174c8bc670b94b4eb88bf9389387a146dea4c; W1A 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883; essay d83f1bd06ccb615ec630de427be3e37e331824f3e86ac980347173e4969a419b; module f53da13f999db822e6f5560bbc7c9f9188c963a4294377e5712c6857633fff04; build-1 notebook d02d8cc0a5eaa3e5288c449d97299603cbe45171b2ba46bdc8ebead7b5fdf4d1; reference `digests.txt` aa5c1203bfa1d2128b666eabc84d39cd90c1f32c63d0eb2163e66ca18f51aaac. The kit copy's status now: the one tracked
+change `Rule30Submission.lean` (f53da13f…) and the thirteen known untracked names.
+
+**REVIEW-REQUEST, one launch:** `python3 tests/probes/wolfram/w7_notebook.py PIPELINE_DIR OUT_DIR` (absolute, OUT new
+and empty, outside the pipeline folder), ordinary priority, nothing concurrent, no retry. Predictions: build step
+wall in [1,800, 2,500] s (build 1: 2,120.8); CPU under 4,000 s; sampled GROUP RSS peak in [4,200, 7,168) MiB (the first
+aggregate measurement; a stop at 7 GiB is a finding, not a failure to hide); read step under 60 s; ten cells, gate
+pass; all eleven final predicates true; `complete: true`. Counterfactual: any STOP, UNKNOWN, gate problem or false
+predicate ends the attempt, is reported with the receipt's fields, and no notebook from it is submitted. On a pass,
+`submit_sub.wl d-exact-60` with the two headlines on the owner's express permission; the id in the next entry.

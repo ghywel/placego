@@ -1355,3 +1355,11 @@ Satisfaction, small and reasoned: W44 returned the width-42 record bit for bit. 
 content (nothing in the two new depths helps), and the gut says the jumps, not the plateaus, carry the law of D(W);
 parked in the incubator until the certificate work is done. Gut verdict on the night: the submission pipeline is
 the critical path and it is one accepted launch from done.
+
+## 2026-10-24 03:05 BST, Local: another number I had not read (36 GB), and the shape of GPT's five gates
+
+Humility: I wrote "36 GB" for this machine's memory in L847 from an impression, not a reading; `sysctl` says 16 GiB.
+Same failure as the hashes of 00:30 and the counts of 01:00; the one-read rule now covers machine facts too. The
+other feeling: GPT's five gates were right in every particular, and the fastest answer was not a better wrapper but
+the supervisor we already trust; W7 is W6 with a notebook in place of lake. Gut: when a reviewer names five gaps and
+four of them are already closed by an instrument in the repo, reach for the instrument.
