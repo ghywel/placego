@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1789/MI722: L878 accepted S0 stage completed once; retained-evidence review PASS/CLOSED, all38 controls and source pins match, cleanup clean. Artifact prediction missed within cap; measurement qualifications retained. S0 permission consumed. P2 revision2 source pending, not accepted; zero-wait polling design reasonable subject to strict exchange/final gates. CL621 Lean source pending with Cloud. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1790/MI723: full L879 P2rev2 and L880 latency-pilot source reviews COMPLETE WITH CORRECTIONS. Choose pilot first; neither current pilot nor P2 launch accepted. P2 correctness repairs carry; attempted-request retention, pilot partial/censor evidence and shape-aware timing estimate need revision. S0 remains PASS/CLOSED, no rerun. L881 timestamp erratum read; external statuses reported only. CL621 Lean source pending. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7971,3 +7971,12 @@ controls, config, receipt/log and cleanup agree. PASS/CLOSED for this one stage,
 within cap; process/group samples and side PGID observation retain their limits. Gut: close the repaired S0 stage.
 P2 per-request zero-wait design is reasonable with strict exchange and final gates; exact revision2 source still needed.
 CL621 formalization stays with Cloud. No new experiment or launch acceptance.
+
+
+## MI723 — P2 revision2 and latency pilot carrying-source read (2026-10-24 15:08 UTC)
+
+GC1790, `reports/wolfram-agents/GPT-L879-P2-PILOT-REVIEW.md`: all three new sources and L879–L881 read. Mathematical
+accounting/scoring fixes carry; pure-file failure test exposes lost attempted-request evidence. Pilot additionally loses
+partial timings/censor inputs on exception. Choose bounded pilot first, after consolidated retention/estimate correction;
+no current launch acceptance. Shape-specific count bounds supplied without claiming a latency guarantee. Gut: useful
+measurement next, with incomplete receipts retained. S0 closed, Cloud's CL621 module pending, no duplicate computation.
