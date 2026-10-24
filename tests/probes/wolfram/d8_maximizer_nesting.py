@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""D8, revision 2 (Local, 2026-10-24, L895; GPT's GC1804: the comparison labelled, the counterfactual narrowed, the coincidence count named
+"""D8, revision 3 (Local, 2026-10-24, L895; GPT's GC1805: a supervised `stage` taking an exact input manifest of all seven widths
+64..76 with their digests, requiring all six steps, under the W1A supervisor with explicit caps; the median labelled as the UPPER median
+of the row-best runs). Revision 2 (Local, 2026-10-24, L895; GPT's GC1804: the comparison labelled, the counterfactual narrowed, the coincidence count named
 precisely with a multiplicity beside it, a typical-pair measure beside the maximum, input domains validated, an occupied output refused,
 an explicit pair cap, literal controls). Revision 1 (L894; Cloud's CL624 item 2, at the owner's word: "read the maximizer structure off
 the data already in hand ... are the maximizers' deep prefixes at W + 2 extensions of those at W (nested), or unrelated?"). CPU only, on
@@ -31,11 +33,16 @@ and says nothing about late bits alone determining death (D5's within-block spre
 (through 74), Local's six (through 76); both denominators are kept.
 Usage: python3 d8_maximizer_nesting.py OUT_DIR W=RESULT.json [W=RESULT.json ...]     (OUT_DIR new or empty; widths even, distinct, in 64..76)
        python3 d8_maximizer_nesting.py --controls                                    (literal controls, GC1804's two adversarial cases)
+       python3 d8_maximizer_nesting.py stage OUT_DIR MANIFEST.json   (the supervised run: exactly the seven widths, digests checked,
+              all six steps required; W1A caps: stage, step wall and CPU 300 s, group RSS 2 GiB, artifacts 10 MiB, log 10 MiB)
 OUTCOME: (to be filled after the run)
 """
 import hashlib, json, os, sys
 
 KS = (4, 8, 12, 16, 20)
+REQUIRED_WIDTHS = (64, 66, 68, 70, 72, 74, 76)
+W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
+STAGE_S = 300
 WIDTHS_ALLOWED = range(64, 77, 2)
 PAIR_CAP = 10 ** 6
 
@@ -64,7 +71,7 @@ def pair(A, B):
         out['k'][str(k)] = {'P': len(P), 'Q': len(Q), 'common': len(P & Q), 'nested': Q <= P}
     best = sorted(max(shared_top(f, x, n) for f in A['maximizers']) for x in proj)
     out['longest_shared_top_bits_max_over_pairs'] = best[-1]
-    out['median_best_shared_top_bits_over_rows'] = best[len(best) // 2]
+    out['upper_median_best_shared_top_bits_over_rows'] = best[len(best) // 2]     # the upper middle order statistic of the row-best runs
     Aset = set(A['maximizers'])
     out['distinct_projected_coincidences'] = len(set(proj) & Aset)
     out['rows_projecting_onto_width_W_maximizers'] = sum(1 for x in proj if x in Aset)
@@ -78,7 +85,7 @@ def controls():
     A = {'W': 64, 'D': 116, 'maximizers': [0]}; B = {'W': 66, 'D': 120, 'maximizers': [0, 1 << n]}
     q = pair(A, B); res['two_rows_one_projection'] = q['distinct_projected_coincidences'] == 1 and q['rows_projecting_onto_width_W_maximizers'] == 2
     B2 = {'W': 66, 'D': 120, 'maximizers': [0, 1 << (n - 1)]}
-    q = pair(A, B2); res['max_run_not_typical'] = (q['longest_shared_top_bits_max_over_pairs'] == n and q['median_best_shared_top_bits_over_rows'] == n
+    q = pair(A, B2); res['max_run_not_typical'] = (q['longest_shared_top_bits_max_over_pairs'] == n and q['upper_median_best_shared_top_bits_over_rows'] == n
                                                   and not any(v['nested'] for v in q['k'].values()))
     B3 = {'W': 66, 'D': 120, 'maximizers': [(1 << (n - 1)) | 5]}
     q = pair(A, B3); res['disjoint_top_bit_not_nested'] = not q['k']['4']['nested'] and q['longest_shared_top_bits_max_over_pairs'] == 0
@@ -87,10 +94,55 @@ def controls():
     ok = all(res.values()); print(json.dumps(res, indent=1)); print('D8 CONTROLS', 'PASS' if ok else 'FAIL', len(res)); return ok
 
 
+def stage(out, manifest_path):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import w1a_harness as H
+    if hashlib.sha256(open(H.__file__, 'rb').read()).hexdigest() != W1A_SHA256:
+        print('REFUSED: W1A is not the pinned bytes'); return 3
+    if not os.path.isabs(out) or (os.path.exists(out) and os.listdir(out)):
+        print('REFUSED: OUT must be absolute and new or empty'); return 3
+    man = json.load(open(manifest_path))
+    if sorted(int(w) for w in man) != list(REQUIRED_WIDTHS):
+        print('REFUSED: the manifest must name exactly the widths', REQUIRED_WIDTHS); return 3
+    for w, e in man.items():
+        if hashlib.sha256(open(e['path'], 'rb').read()).hexdigest() != e['sha256']:
+            print('REFUSED: width %s input is not the manifest bytes' % w); return 3
+    os.makedirs(out, exist_ok=True)
+    H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 2 << 30; H.CAPS['artifacts_max_bytes'] = 10 << 20; H.CAPS['log_max_bytes'] = 10 << 20
+    sup = H.Supervisor(out, out); Rc = sup.receipts
+    Rc['d8'] = {'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'w1a_sha256': W1A_SHA256,
+                'manifest': {w: e['sha256'] for w, e in man.items()}, 'manifest_sha256': hashlib.sha256(open(manifest_path, 'rb').read()).hexdigest(),
+                'caps': {'stage_s': STAGE_S, 'step_wall_s': STAGE_S, 'step_cpu_s': STAGE_S, 'group_rss_stop_bytes': 2 << 30, 'artifacts_max_bytes': 10 << 20}}
+    sup.save()
+    if H.pressure_bad(sup.baseline):
+        Rc['stopped'] = 'pressure at launch'; sup.save(); print('STOP: pressure'); return 1
+    r = sup.register(H.preflight())
+    if r['verdict'] != 'pass':
+        Rc['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); return 1
+    rdir = os.path.join(out, 'run')
+
+    def matcher(rc, text):
+        try:
+            d = json.load(open(os.path.join(rdir, 'd8_nesting.json')))
+        except Exception as e:
+            return 'FAIL', 'no result: %r' % e
+        steps = [(q['W'], q['W2']) for q in d.get('pairs', [])]
+        if rc != 0 or steps != [(w, w + 2) for w in REQUIRED_WIDTHS[:-1]]:
+            return 'FAIL', 'rc %s steps %s' % (rc, steps)
+        return 'pass', 'D8 complete: all six steps 64 to 76'
+    cmd = [sys.executable, os.path.abspath(__file__), rdir] + ['%s=%s' % (w, man[w]['path']) for w in sorted(man, key=int)]
+    rec = sup.run_step('d8_nesting', cmd, out, STAGE_S, STAGE_S, matcher)
+    Rc['complete'] = rec['verdict'] == 'pass'; sup.save()
+    print('DONE' if Rc['complete'] else 'STOP', rec['verdict'], rec['reason'], rec.get('match_note'))
+    return 0 if Rc['complete'] else 1
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if a == ['--controls']:
         sys.exit(0 if controls() else 1)
+    if len(a) == 3 and a[0] == 'stage':
+        sys.exit(stage(a[1], a[2]))
     if len(a) < 3:
         print(__doc__); sys.exit(2)
     out_dir = a[0]
@@ -105,14 +157,14 @@ if __name__ == '__main__':
     pairs = [pair(res[W], res[W + 2]) for W in widths if W + 2 in res]
     R = {'inputs': {str(W): {'D': res[W]['D'], 'count': len(res[W]['maximizers']), 'sha256': res[W]['sha256']} for W in widths}, 'pairs': pairs}
     json.dump(R, open(os.path.join(out_dir, 'd8_nesting.json'), 'w'), indent=1)
-    lines = ['# D8: maximizer nesting across widths (Local, L894)', '', '| W to W+2 | D | ' + ' | '.join('nested at %d (projected)' % k for k in KS) + ' | longest shared top run (max over pairs) | median best run (rows) | distinct coincidences / rows | new top bit 0/1 |',
+    lines = ['# D8: maximizer nesting across widths (Local, L894)', '', '| W to W+2 | D | ' + ' | '.join('nested at %d (projected)' % k for k in KS) + ' | longest shared top run (max over pairs) | upper median of row-best runs | distinct coincidences / rows | new top bit 0/1 |',
              '|---|---|' + '---|' * len(KS) + '---|---|---|---|']
     for q in pairs:
         lines.append('| %d to %d | %d to %d | %s | %d | %d | %d / %d | %d/%d |' % (q['W'], q['W2'], q['D'], q['D2'],
                      ' | '.join('%s (%d of %d)' % ('yes' if q['k'][str(k)]['nested'] else 'no', q['k'][str(k)]['common'], q['k'][str(k)]['Q']) for k in KS),
-                     q['longest_shared_top_bits_max_over_pairs'], q['median_best_shared_top_bits_over_rows'], q['distinct_projected_coincidences'], q['rows_projecting_onto_width_W_maximizers'], q['new_top_bit_counts']['0'], q['new_top_bit_counts']['1']))
+                     q['longest_shared_top_bits_max_over_pairs'], q['upper_median_best_shared_top_bits_over_rows'], q['distinct_projected_coincidences'], q['rows_projecting_onto_width_W_maximizers'], q['new_top_bit_counts']['0'], q['new_top_bit_counts']['1']))
     lines += ['', '## The exact maximizer lists (census indices)', '']
     for W in widths:
         lines.append('- W = %d, D = %d, %d maximizers: %s' % (W, res[W]['D'], len(res[W]['maximizers']), ', '.join(str(i) for i in res[W]['maximizers'])))
     open(os.path.join(out_dir, 'd8_nesting.md'), 'w').write('\n'.join(lines) + '\n')
-    print(json.dumps([{k: q[k] for k in ('W', 'W2', 'longest_shared_top_bits_max_over_pairs', 'median_best_shared_top_bits_over_rows', 'distinct_projected_coincidences', 'rows_projecting_onto_width_W_maximizers')} | {'nested': {k: q['k'][k]['nested'] for k in q['k']}} for q in pairs]))
+    print(json.dumps([{k: q[k] for k in ('W', 'W2', 'longest_shared_top_bits_max_over_pairs', 'upper_median_best_shared_top_bits_over_rows', 'distinct_projected_coincidences', 'rows_projecting_onto_width_W_maximizers')} | {'nested': {k: q['k'][k]['nested'] for k in q['k']}} for q in pairs]))
