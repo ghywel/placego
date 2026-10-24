@@ -96,3 +96,56 @@ Other qualifications, not reasons for a new mathematical block:
 checks and defining the Wolfram process/count/cleanup contract, with the added
 file/mock controls. Then accept or decline one notebook stage at its exact
 scope. No notebook build, retry or submission is accepted by this review.
+
+## L927 revision 2 delta (GC1837 / MI770)
+
+Read complete L927 at `015352d8be770999cbde8f024ac540d6fc75f532` and the entire
+revision1-to2 diff (all added/changed paths). Revision2 has332 lines and SHA256
+`8dd94b2e0261e93ea424d3b0d745b3b48833bf0ae918bf2fd7ac9097a0b7f0cf`.
+All27 committed file/mock controls pass. Unknown-untracked admission, terminal
+installed-script hashes, count/file binding and disclosed recovery locations
+close their GC1835 issues. The six input/source/script hashes remain the reviewed
+ones; no mathematical source reread is needed.
+
+**Not accepted yet: the new live watcher does not fail closed.** Two direct
+mock tests use the exact source methods and decision expression:
+
+1. An inventory call raises H.MonitorError. KernelWatch.run records an event
+   containing monitor_error. The main post-watch condition tests only whether
+   an event contains killed_owned_groups; it evaluates false for this real event.
+   If later inventory succeeds, the stage can continue and even complete despite
+   an interval with unavailable kernel monitoring. Treat any monitor failure as
+   UNKNOWN and terminate the owned step through the supervisor's cleanup path;
+   do not wait900s for a nominally passing build before recognizing the gap.
+2. KernelWatch.__exit__ calls join(5) and returns without checking is_alive.
+   A mock thread still alive after join is silently accepted. This is feasible:
+   one iteration can perform two H.checked ps calls, each with a5s timeout.
+   The watcher may therefore outlive its context, and its owned_groups snapshot/
+   killpg action can occur after that step's ownership lifetime. Require verified
+   watcher termination before the next phase/terminal success, and eliminate any
+   possibility of a late watcher signal. A timeout is not evidence of shutdown.
+
+Related failure-path gap: after_step is called only after run_step returns
+normally. A signal/exception crosses directly to the outer finally, which records
+recovery paths and time but no final kernel inventory/uncertainty. Retain an
+inventory/cleanup outcome on every exit, including monitor failure and interruption;
+unknown ownership stays un-signalled and the stage incomplete. This does not
+require killing an external baseline kernel or inventing successful cleanup.
+
+**Trajectory check:** this is the second process-contract review, and the added
+side watcher creates a new ownership lifetime instead of closing the existing
+step's. Change approach: route additional inventory/worker-limit failures through
+one owned-step supervision/cleanup path, preferably a main-thread monitoring
+hook or equivalent single-owner design. An independent daemon that discovers
+whatever session-leading children happen to exist and sends signals is harder
+to justify. Do not patch only the final boolean and leave possible late signals.
+The unchanged W1A group scan still supports only its explicit process-group scope;
+no claim that arbitrary detached descendants cannot exist is inferred.
+
+Added controls should exercise the actual watcher-to-step decision path:
+inventory failure causes UNKNOWN/owned cleanup, over-limit causes the same,
+shutdown cannot return while a signal-capable monitor is alive, and failure/
+interruption preserves final inventory or explicit uncertainty. All may be mocked;
+no Wolfram/Lean or physical signal test is requested before the exact revised
+source is reviewable. Existing27 successes remain successes, not whole-stage
+acceptance. No notebook launch/retry is accepted. Revised exact source pending.
