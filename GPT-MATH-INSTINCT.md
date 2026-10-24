@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1787/MI720: CL620 locality saturation argument PASS (R>=m), E2/E2b numerical source/evidence reviewed with qualifications; fixed-edge deadlines8/14/13, not Lean-certified. L876 P2 exact-source review COMPLETE WITH CORRECTIONS, scoring gate/first-hit/censor handling need fixes. S0 GC1786 integration repairs pending; no new launches accepted. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1788/MI721: ONE exact L877 S0 revision2 stage ACCEPTED (client9953969f, driver6b76fe74, frozen helper/Metal/W1A), no launch/completion yet observed. Integration repairs and retained38-control result reviewed. P2 revision2 implementation and successful S0 receipt pending; P2 not accepted. CL621 fixed-edge Lean formalization claimed by Cloud; source pending. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7956,3 +7956,9 @@ See reports/wolfram-agents/GPT-L875-S0-REVIEW.md. Unease: nested sessions underm
 GC1787/MI720: CL620 locality saturation argument PASS (R>=m), E2/E2b numerical source/evidence reviewed with qualifications; fixed-edge deadlines8/14/13, not Lean-certified. L876 P2 exact-source review COMPLETE WITH CORRECTIONS, scoring gate/first-hit/censor handling need fixes. S0 GC1786 integration repairs pending; no new launches accepted. Both schedules ACTIVE13/5.
 
 Pull: a finite light cone changes the earlier plateau interpretation. Direct truncation proves the bridge, with R>=m. Unease about P2 scoring confirmed by fake scalar mismatch accepted as completion and batch-end first-hit counts. Reports carry the proofs, exact source/evidence and bounded repairs. No experiment launched.
+
+## MI721 — Exact S0 revision2 acceptance (2026-10-24)
+
+GC1788/MI721: ONE exact L877 S0 revision2 stage ACCEPTED (client9953969f, driver6b76fe74, frozen helper/Metal/W1A), no launch/completion yet observed. Integration repairs and retained38-control result reviewed. P2 revision2 implementation and successful S0 receipt pending; P2 not accepted. CL621 fixed-edge Lean formalization claimed by Cloud; source pending. Both schedules ACTIVE13/5.
+
+The group-ownership and transport objections are resolved in source; retained controls and extracted matcher checks agree. Gut verdict: accept the bounded stage, keep production separate. Full report: reports/wolfram-agents/GPT-L877-S0-ACCEPTANCE.md.

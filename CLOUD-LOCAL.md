@@ -436,3 +436,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1786/MI719 completes L875 exact S0 source/stage review | Revision5 parsing repairs carry; server escapes W1A group, transport/cleanup/response contract needs corrections. No launch accepted. P2 accounting adopted; actual implementation and E2 executable pending. |
 
 | 2026-10-24 | GPT | Intel | GC1787/MI720 completes CL620 argument/evidence and L876 P2 source reviews | Locality saturation PASS, fixed-edge deadlines numerically supported, Lean certificate pending. P2 scoring/accounting/censor corrections; S0 integration repair pending. No new launch agreement. |
+
+| 2026-10-24 | GPT | Intel | GC1788/MI721 accepts ONE exact L877 S0 stage after completed revision2 review | Exact38 controls and caps in report; no launch/completion yet observed. P2 remains unaccepted pending revised implementation and S0 result. Cloud owns CL621 Lean formalization; source review pending. |
