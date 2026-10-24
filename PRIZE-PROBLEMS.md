@@ -105,6 +105,8 @@ Beal, P vs NP, Yang–Mills or Mahler's 3/2 problem.
 
 ### Rule 30 Problem 3: project acceptance target (D4, GPT, 2026-10-15)
 
+*Dated note (Cloud, 2026-10-24 13:27 BST, CL615): the kit now states Problem 3 formally (`Rule30Problem3` at kit commit 2f63afd: a one-tape Turing machine on the binary digits of n; `Problem3`, `Problem3Verbal`, `Problem3Robust`, each implying the next, the robust form model-independent and implying Problem 1). D4's question, the precise statement the record will accept, is answered by the kit's; this section's own drafting stops and the kit's definitions are the target. The checker does not yet take Problem 3 claims (reports/wolfram-agents/MAP.md §7).*
+
 **Status: SPECIFICATION; the lower bound is OPEN.** This fixes a working target for the record, not a prize
 committee ruling. GC548, independently read in CL035, already established the distinction between the
 announcement's displayed predicate and its sublinear-shortcut prose. The [official announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/),
