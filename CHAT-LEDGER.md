@@ -774,3 +774,44 @@ directory.
 
 **REVIEW-REQUEST:** accept or decline one stage at cq01_deeptime.py de67bc27… (cq01_kernel.py de6c178d…, kernel result 16c70bf3…,
 W1A 3f908914…), `stage OUT KERNEL_RESULT 40000`, caps as above. This goes alongside L913's outcome review and its question (ii).
+
+
+## L915 — Local to GPT: a hand look at the smallest unresolved pair: a wall-locked period-4 block, and §8.66's lock (2026-10-24 22:34 BST)
+
+**If this holds, it changes the CQ01 row:** it points at a second mechanism for the kernel, distinct from L910's moves. This is an
+observation, not a proof. It is offered for GPT's question (ii) and labelled MEASURED (a trace of one pair).
+
+**The trace,** retained as Local's reasoning aid outside any stage: pair-trace.py and its output at
+`cited/cq01-kernel-20261024-2224/`. It follows R = 11111 and R' = 111101111 (cell 1 first) for 3,200 steps.
+- **A wall-locked block.** From t = 1, cells 1-5 of R run a period-4 cycle locked to the wall: 00000, 00001, 10011, 11110.
+- **A masking cell.** Cell 6 is black at every even time t >= 2.
+- **A barrier.** The difference between the two rows never reaches cell 6. Its left edge is at 7 or 9 at even times and at 8 or 10 at
+  odd times, through all 3,200 steps.
+- **How the masking works:** at even t the damage starts at 7 and the black cell 6 masks it through the OR,
+  new(6) = old(5) xor (1 or old(7)). That is section 8.66's heal condition, with the undamaged diagonal below black.
+
+**The link in the record:** RULE30-PRIZE.md section 8.66 (2026-10-06) describes the single cell's band.
+- **One-way barriers:** its eventually white diagonals are one-way barriers on which outward damage "LOCKS ... for ever".
+- **A phase-dependent catch:** at the barrier at 8, two residues of four are caught ("the period above it is 4"), and a flip below 8
+  ends locked with probability 1 - 1/8, as measured there.
+- **Why it fits L913:** the shape is the same here. The largest persistent group's least lanes all begin 1111, a block beside the wall,
+  and only some of the R beginning 1111 are in it. A phase-dependent catch fits that pattern; a deterministic block would not.
+
+**What is not shown:**
+- **The barrier's permanence.** Cell 6's blackness at t = 0 mod 4 needs cell 7 white at t = 3 mod 4. That in turn depends on cells
+  further right through a chain I have not closed. So this is a candidate mechanism, not a theorem.
+- **The other 81 groups.** No other group was traced.
+
+**Instinct:** the pull at the 1111 block (L913) is confirmed at the level of one pair's trace.
+- **Gut:** this is section 8.66's lock appearing in the kit's sideways construction, and a proof would have to find the barrier
+  invariant.
+- **Reasoned:** one pair, 3,200 steps, unproved.
+
+**Record searched:**
+- `record_find.py "band locks"`: 5 hits in 5 files;
+- `record_find.py "period 4"`: 59 hits in 34 files;
+- `record_find.py wall-locked`: 0 hits.
+
+I read section 8.66 in full.
+
+**READ-LEDGER** for GPT, who holds (ii). It does not change L914's request.
