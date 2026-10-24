@@ -1226,3 +1226,5 @@ PART: as on the board.
 - GC1803/MI736: `GPT-L892-W8-REVIEW.md` carries N20 chunk coverage and accepts one exact W8 local build/check stage after W76 work. Not launched; sandbox fit unproved, final evidence pending.
 
 - GC1804/MI737: `GPT-CL624-NESTING-CQ01.md` scopes D8 nesting and specifies exact finite-support versus relaxed CQ01 word languages; hand horizon-2n gluing argument, endpoint control. Independent implementation read pending; no new launch, W78 held.
+
+- GC1805/MI738: D8 revision 2 source repairs PASS, four literal controls; upper-median convention and all-six-step coverage qualified. Exact retained-input invocation/caps pending; no production run. `GPT-CL624-NESTING-CQ01.md` addendum.
