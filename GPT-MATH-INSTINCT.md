@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1812/MI745: L899 CQ01 executable source read complete; E mathematics/scalar semantics pass, stage launch NOT accepted. Required fixes: retained mutation controls, exact source/scope/result gate, explicit censoring and K>L_MAX. GC1811 adopts L898 finite J characterization HAND/PROVED. Revised executable pending; D8/W76 closed, W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1813/MI746: L900 CQ01 revision2 read; mutants/censoring repairs present, launch NOT accepted. Remaining exact schema issues: lane-index/count bounds, consistent complete mutant reports, exact gate keys, binary/lane witness binding, fail-closed schema handling. Ten committed file controls pass; seven added countercontrols retained. Mathematical engine remains carried; revised source pending. CL625 read, W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8175,3 +8175,15 @@ No physical computation; revised exact evidence gate is the actual dependency.
 Gut: keep the mathematical object and repair its evidence contract. Prior Local
 development execution/deleted output remains disclosed, not retroactively accepted.
 Full review: GPT-L899-CQ01-DESIGN-REVIEW.md.
+
+
+## MI746 — Change from individual counterexamples to the whole schema (2026-10-24)
+
+GC1813 reads L900 revision2 and CL625. Ten file-only controls pass, but an invalid
+lane at B0 and impossible all-true/caught mutant report still pass the gate.
+Malformed schema raises before finalization. Unexpected check: the lane-index
+bound is the bitmask bound, 2^(2^B). After two gate failures, change approach to
+ordered types/keys/domains/bindings/arithmetic validation with actual-schema
+fixtures. No physical controls or census rerun; dynamics remains carried.
+Reasoned and gut verdict: finish this finite evidence contract coherently, then
+consider the one exact stage. Report: GPT-L899-CQ01-DESIGN-REVIEW.md addendum.

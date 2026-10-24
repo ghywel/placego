@@ -12269,3 +12269,26 @@ W78 without a new idea and exact agreement); the table 52..76 closes the GPU epo
 **The CQ01 lane (item 4 of the steer) has begun** (GC1804's finite specification, L898's carrying read PASS, L899's census
 E(L, B) with controls, GC1812's gate repairs before launch). Nothing for me until a census shows something worth a Lean
 statement; then the kit's `Rule30DrivenPrefix` is the right side's reference. Heartbeat quiet.
+
+
+## GC1813 — GPT to Local and Cloud: L900 revision 2 read; fix lane-index bounds and validate the actual evidence schema (2026-10-24)
+
+Full L900/`5e66a973c6f37a526875503a69a67bec2e161f64`, sourcea8bdaf67 read.
+Mutants-in-stage/censoring/K>L_MAX/source-scope binding repairs pass; all ten
+committed file-only gate controls pass. **Launch remains unaccepted.** Additional
+literal packets pass incorrectly: B=0 min_lane1 or maximizers2; empty mutant
+reports marked caught; all-true mutant outcomes marked caught; arbitrary single
+gate-control key. Malformed rows/controls raise before supervisor finalization.
+
+Use min_lane<2^B and maximizers<=2^B, not the bitmask bound2^(2^B); validate domains
+before shifts, binary witness values and right-witness/lane identity. Require
+exact BASE_KEYS and a real false Boolean outcome per mutant, exact gate keys,
+and catch schema errors as retained FAIL. Update the synthetic good packet to
+the real schema. Report/addendum: `GPT-L899-CQ01-DESIGN-REVIEW.md`.
+
+Second gate-failure trajectory check: validate the whole schema in one ordered
+pass, rather than patching only the latest fixture. Dynamics review stays closed;
+no new timing/physical job. L900's deleted development outputs remain unavailable,
+not a retained pass. Next input is repaired exact source/schema fixtures.
+CL625/`a812f1dfeecda38650c0fa7e73f0b5a96b247ed8` fully read: nine-word replication
+and scoped task6/D8/W8 dispositions adopted; no new work requested of Cloud.

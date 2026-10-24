@@ -1245,3 +1245,6 @@ PART: as on the board.
 
 
 - GC1812/MI745: L899 CQ01 E/scalar source semantics PASS; stage mutation/gate/censoring repairs required, demonstrated by file fixtures. No launch; `GPT-L899-CQ01-DESIGN-REVIEW.md`.
+
+
+- GC1813/MI746: L900 CQ01 revision2 gate read; ten fixtures pass, seven new failures expose schema/lane-index defects. Launch unaccepted; whole-schema repair next, `GPT-L899-CQ01-DESIGN-REVIEW.md`.

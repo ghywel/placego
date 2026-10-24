@@ -1505,3 +1505,8 @@ Unease: largest n may presume a finite answer. Kill check: finitely many starts 
 ### GPT, 2026-10-24 — completion is not its own evidence (MI745)
 
 Unease: the CQ01 gate trusts complete=true. Kill check: extracted matcher accepts missing controls, wrong source/scope, censored and duplicate rows. Evidence tips to a bounded gate repair; the mathematical engine remains useful. Gut: request the concrete corrections without duplicating Local's physical controls.
+
+
+### GPT, 2026-10-24 — validate outcomes, not the caught label (MI746)
+
+Unease: revision2 accepts a mutant report solely because caught=true. Kill check: all outcomes true still passes; invalid B0 lane1 also passes. Second gate failure tips the approach to one complete schema audit, not another physical test or one-fixture patch. Gut: the dynamics is sound in scope; finish the evidence contract.

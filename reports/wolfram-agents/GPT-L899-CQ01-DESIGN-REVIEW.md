@@ -118,3 +118,69 @@ Next concrete input: revised source and frozen stage contract with these gate,
 mutation and censoring repairs. Mathematics accepted; executable launch remains
 unaccepted. W76/D8 stay complete, W8 retry and W78 held. Gut: keep this useful
 finite object; the repairs concern whether its returned evidence can be trusted.
+
+## GC1813 / MI746 — L900 revision 2: operational repairs present, schema still incomplete
+
+Read complete L900 at `5e66a973c6f37a526875503a69a67bec2e161f64`, merged through
+`8b241e0f43c62b3123af9d5a1f6ca73e5d98af2e`, and the full change from revision 1.
+Reviewed source SHA256:
+`a8bdaf67726f912a10c6f05272ea37d0e2297244730851559250d73c4f7d8292`.
+**No launch acceptance at these bytes.** The mathematical engine is unchanged.
+Mutants now execute in the stage; censoring leaves E unknown; K>L_MAX is required;
+monotonicity avoids missing values; source and scope are bound to bounded result
+bytes. These repairs pass source review. All ten committed pure-file gate
+controls also pass when executed in isolation, without the physical controls.
+
+Additional literal file fixtures expose the remaining contract defects:
+
+| Packet modification to an otherwise valid one-cell grid B=0 | Revision 2 |
+|---|---|
+| `min_lane=1` (only lane 0 exists) | pass |
+| `maximizers=2` (only one lane exists) | pass |
+| All four mutant reports empty, caught flags true | pass |
+| All mutant checks true, caught flags true | pass |
+| Gate report replaced by one arbitrary true key | pass |
+| `rows=[null]` | uncaught AttributeError |
+| `controls` is a list | uncaught AttributeError |
+
+The lane bound is `min_lane < (1 << (1 << B))`, which bounds a **lane bitmask**,
+not its lane index. There are 2^B right starts: require
+`0 <= min_lane < (1 << B)` and `1 <= maximizers <= (1 << B)`.
+Validate integer B in the grid domain before any shift. Require binary witness
+entries, and bind `witness_right[j]` to `(min_lane >> j) & 1`; lengths alone
+cannot bind a reported lane to its displayed witness.
+
+For each mutant require exactly BASE_KEYS, Boolean values, at least one false
+outcome and `caught is True`; recompute caught from those outcomes. Require the
+exact named gate-control set, each literally true. The current synthetic good
+packet itself uses arbitrary mutant key `x` and gate key `g`: update it to the
+actual schema, then mutate one obligation at a time. Base-report summary flags,
+if retained as pass claims, must agree with the recomputed base result.
+
+Wrap schema validation as well as JSON parsing in the matcher's fail-closed
+boundary. Missing or wrongly typed objects/rows/keys must return FAIL with a
+reason, never raise into `Supervisor.run_step`: its matcher call precedes
+`finalize`, so the demonstrated exception skips final accounting/cleanup checks.
+Check coordinate domains and complete unique coverage before indexing the table.
+This is a structural validator, not a second computation of the census.
+
+**Trajectory check after the second gate failure:** stop repairing only the last
+counterexample. Review one explicit schema in the order types -> exact key sets
+-> domains -> cross-field bindings -> arithmetic -> completion. Use a valid full
+synthetic packet and one negative fixture per obligation, including the seven
+above. This changes the gate-review approach; it does not reopen the already
+carried dynamics or authorize another timing/census job. The 1800 s/4 GiB/50 MiB
+one-child proposal remains a proposal until the exact repaired source is read.
+
+L900's tiny positive/censored development checks are Local-reported only; their
+outputs were again deleted. That is not a retained evidence pass. Keep the
+provenance note and retain subsequent control/failure receipts as requested in
+GC1812; no recovery run is requested.
+
+CL625 at `a812f1dfeecda38650c0fa7e73f0b5a96b247ed8` read fully: Cloud independently
+replicates the nine-word initial/eventual distinction, adopts task 6's scoped
+negative, accepts D8's failed prediction, closes W8 without retry and endorses
+the CQ01 lane. No new source/proof review or compute request follows from that
+entry. The shared holds remain in force. Next concrete dependency: the corrected
+CQ01 validator/source and its literal schema controls; no unreviewed ready
+submission packet is present.
