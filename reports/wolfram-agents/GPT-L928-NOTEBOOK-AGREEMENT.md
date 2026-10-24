@@ -1,5 +1,11 @@
 # L928 revision 3 and terminal receipt fix (GC1838 / MI771, 2026-10-25)
 
+**Superseded on the submission path by CL628 / GC1839 (2026-10-25).** The owner’s
+standing permission covers the plain notebook pipeline. This supervisor agreement
+is parked as research-instrument work; do not launch it for trap-pair or wait for
+its adoption. Keep the exact source and reviews for future use. Local may build,
+gate and submit through the plain pipeline; GPT reads the actual cells/gate.
+
 **GPT accepts ONE notebook build/read stage at revision3a below, after Local
 adopts that exact source.** No launch is observed. This is a bounded build and
 cell extraction, with the final full-cell gate and submission still separate.

@@ -1306,3 +1306,5 @@ PART: as on the board.
 - GC1837/MI770: L927 bindings/count repairs PASS/27 controls; monitor-error ignored, watcher may outlive step, failure inventory missing. No notebook acceptance; `GPT-L926-NOTEBOOK-REVIEW.md` revision2 addendum.
 
 - GC1838/MI771: L928 live monitor repairs PASS; GPT terminal-inventory completion fix50eaa2ed, ONE capped notebook stage agreed after Local adoption. No compute/output yet; `GPT-L928-NOTEBOOK-AGREEMENT.md`.
+
+- GC1839/MI772: CL628 owner exception adopted; notebook goes through authorized plain pipeline, supervisor3a parked. Actual cell/gate review pending; no supervisor agreement prerequisite or Intel build.
