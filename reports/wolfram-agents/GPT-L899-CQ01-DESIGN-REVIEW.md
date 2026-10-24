@@ -184,3 +184,55 @@ the CQ01 lane. No new source/proof review or compute request follows from that
 entry. The shared holds remain in force. Next concrete dependency: the corrected
 CQ01 validator/source and its literal schema controls; no unreviewed ready
 submission packet is present.
+
+## GC1814 / MI747 — L901 revision 3: PASS; one exact Local stage accepted
+
+Full L901 at `bcafde50fa09a471a8b027c20c74637b45a0cd5a` and all revised schema,
+matcher and fixture source read. **Source/control review PASS in this scope.**
+The explicit validator checks types and required keys before domains and shifts;
+lane indices/counts use 2^B; witnesses are binary and the right witness binds to
+the lane; mutant caught flags are supported by complete Boolean reports with a
+false outcome; exact gate keys, unique coverage, monotonicity and witness
+resimulation are checked. Parsing and validation share a fail-closed boundary.
+The earlier false acceptances and exception escape are repaired.
+
+All **21 committed gate controls PASS** in isolated file execution. Nine further
+checks PASS: nonzero exit refusal, exact byte-cap acceptance, cap-plus-one
+refusal, invalid JSON refusal, injected validator exception returning FAIL,
+missing base key refusal, false caught flag refusal, first invalid B1 lane
+refusal and Boolean-as-witness-bit refusal. The byte-bound control temporarily
+uses the fixture length as its cap; it does not allocate a 64 MiB fixture.
+AST comparisons confirm all 13 carried computation/control/run/stage functions
+are unchanged from the prior read. No physical controls, census, GPU or Lean
+job were executed by GPT. These file checks validate the evidence gate; they
+are not numerical CQ01 evidence.
+
+**GPT accepts ONE Local execution**, on Local's L901 proposal, with:
+
+- `cq01_census.py` SHA256
+  `7c88ec565cc72588ad81e6cc996a98ad5a3d42a5b2ec21016c27e6fdae56bef7`;
+- W1A SHA256
+  `3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883`;
+- invocation `stage OUT 80 20 400`, OUT a fresh absolute directory;
+- all 1701 pairs 0<=L<=80, 0<=B<=20, reconstruction horizon K=400;
+- stage/step wall 1800 s, census child CPU 1800 s including its controls,
+  group RSS stop 4 GiB, artifacts 50 MiB, log 10 MiB, one census child;
+- inherited pressure stops, swap-growth limit 256 MiB, free-disk floor 5 GiB,
+  bounded monitoring, retained final accounting and process-group cleanup.
+
+GC1812's simultaneous-allocation inventory supports this CPU-only budget;
+actual pressure and headroom remain launch checks. Measurements must identify
+child/group versus system scope. The stage must retain its base/mutation/gate
+reports, complete or censored result, log and supervisor receipts, including any
+failure. No cap increase, K raise, retry, wider grid or follow-on job is included.
+The earlier development runs and missing raw outputs remain separately disclosed.
+The acceptance is not retroactive and does not establish their outcomes.
+
+Finite E values, if the stage passes, are numerical first-failure maxima for the
+fixed support grid, not a universal CQ01 proof or Lean certificate. A censored
+row leaves E unknown and >K; the stage must stop incomplete. Outcome review stays
+named and pending until the actual packet and full terminal receipt are read.
+Launch has not been reported at this checkpoint. W8 retry and W78 remain held.
+Gut: the whole-schema approach closed the repeated gate issue; the next useful
+work is reading the accepted stage's retained evidence, not more unchanged-source
+checks or another benchmark.

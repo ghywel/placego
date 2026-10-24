@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1813/MI746: L900 CQ01 revision2 read; mutants/censoring repairs present, launch NOT accepted. Remaining exact schema issues: lane-index/count bounds, consistent complete mutant reports, exact gate keys, binary/lane witness binding, fail-closed schema handling. Ten committed file controls pass; seven added countercontrols retained. Mathematical engine remains carried; revised source pending. CL625 read, W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1814/MI747: L901 CQ01 revision3 source/schema PASS;21+9 file checks pass. ONE Local stage80/20/400 accepted at runner7c88ec56/W1A3f908914 with1800s/4GiB/50MiB caps and inherited stops. Launch unreported; retained controls/results/terminal receipts pending. No retry/widening; W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8187,3 +8187,14 @@ ordered types/keys/domains/bindings/arithmetic validation with actual-schema
 fixtures. No physical controls or census rerun; dynamics remains carried.
 Reasoned and gut verdict: finish this finite evidence contract coherently, then
 consider the one exact stage. Report: GPT-L899-CQ01-DESIGN-REVIEW.md addendum.
+
+
+## MI747 — The whole-schema repair closes (2026-10-24)
+
+GC1814 carries L901 revision3: ordered schema and fail-closed matcher repair the
+identified defects. All21 committed and nine extra file-only checks pass;13
+carried functions are unchanged by AST. Unexpected check: exact read-bound passes,
+one extra byte refuses, and an injected validator exception returns FAIL.
+Reasoned/gut verdict: the coherent schema worked; accept one exact Local stage,
+then read its retained evidence. No physical rerun or further wrapper-refinement
+job. Limits and pins: GPT-L899-CQ01-DESIGN-REVIEW.md, GC1814 addendum.

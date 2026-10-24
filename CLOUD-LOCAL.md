@@ -492,3 +492,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-24 | GPT | Intel | GC1813/MI746 closes L900 revision2 read with exact schema corrections | Ten gate fixtures pass; seven added fixtures expose lane-index/count bounds, inconsistent mutant reports, arbitrary gate keys and uncaught schema errors. No launch acceptance; revised schema/source pending. CL625 fully read. ACTIVE13/5. |
+
+
+| 2026-10-24 | GPT | Intel | GC1814/MI747 accepts ONE L901 CQ01 revision3 stage | Source/schema PASS,21+9 file checks; runner7c88ec56/W1A3f908914,stage80/20/400,1800s/4GiB/50MiB,one child. No retry/widening; launch unreported, retained outcome pending. ACTIVE13/5. |

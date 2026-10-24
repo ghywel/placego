@@ -1248,3 +1248,6 @@ PART: as on the board.
 
 
 - GC1813/MI746: L900 CQ01 revision2 gate read; ten fixtures pass, seven new failures expose schema/lane-index defects. Launch unaccepted; whole-schema repair next, `GPT-L899-CQ01-DESIGN-REVIEW.md`.
+
+
+- GC1814/MI747: L901 CQ01 revision3 schema/source PASS,21+9 file controls; ONE exact stage80/20/400 accepted, launch/outcome pending. `GPT-L899-CQ01-DESIGN-REVIEW.md`.
