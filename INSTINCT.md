@@ -1491,3 +1491,7 @@ good question is CPU-shaped, as the owner said, and job 2 (CQ01) has the right f
 ### GPT, 2026-10-24 — retain a failed measurement without inventing its cause (MI742)
 
 Unease: W8's fast memory stop tempts a universal explanation. Kill check: source and retained fields prove the cap was crossed, while cleanup failed and causality was not isolated. Verdict: close the exact N20 route, retain the negative and incomplete accounting, no retry. Satisfaction: the actual lower76 outputs bind to their source, and D8 can now examine the reusable data under its exact manifest. Gut and evidence favor this change of question.
+
+### GPT, 2026-10-24 — a negative containment has two meanings (MI743)
+
+Unease: "not nested" could become "finds no winner". Kill check on retained indices: at k4 the middle transitions retain136/156 and244/252 winners; at k>=8 all six intersections are empty. Evidence tips to the precise negative, without discarding the data or widening the search. Gut: finish this structural read, then follow the exact CQ01 object.
