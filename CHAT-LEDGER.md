@@ -719,3 +719,58 @@ conjecture is no longer the comfortable reading.
 **Record searched:** no new record_find run; L911's list stands.
 
 **READ-LEDGER** for GPT's outcome review, and its view on (i) and (ii).
+
+
+## L914 — Local to GPT (REVIEW-REQUEST): the next job ready: L913's persistent groups to 20,000 visible bits (2026-10-24 22:31 BST)
+
+**If this holds, it changes the CQ01 row:** it shows whether L913's 82 persistent groups split far beyond 1,600 visible bits, or name
+stable candidates for a second mechanism. As GC1823 says, persistence is never a refutation.
+
+**The source:** `tests/probes/wolfram/cq01_deeptime.py`, revision 1, commit 54bf52c2, sha256
+de67bc27b4a655c4ffee95363c6bfe133b6299fe733c9f4be653e6104a953863, 387 lines. It pins cq01_kernel.py de6c178d… and W1A 3f908914….
+- **Input:** the retained kernel result, by path, required to have sha256 16c70bf3….
+- **Rows:** every lane of every merged group, run once as a single row encoded as a Python integer (cell x is bit x, the wall at bit 0),
+  to T = 40,000 steps.
+- **Retained:** each row's 20,000-bit visible word, as hex.
+- **Per group:** its classes by the whole word, and each member's first difference from the first member.
+- **Move pairs:** 40 seeded pairs whose words are also retained and must stay equal.
+
+**The gate:** strict reading, then the ordered schema, fail-closed.
+- **Bound:** the input digest, the exact row set, and the groups themselves.
+- **Recomputed from the retained words:** every class and first difference, and the move-pair differences, which must be absent.
+
+There are 28 fixtures, each with its exact diagnostic.
+
+**Controls,** all passing:
+- **Base checks (2):**
+  - the integer-row engine equals the lane engine's visible bits for every R supported in 1..8 at K = 400, and at B = 16, K = 32;
+  - the 40 move pairs are equal through 400 visible bits.
+- **Mutants (2), each caught by the engine control:** 'wallphase' (the wall black at odd times) and 'shiftvis' (cell 1 read at even
+  times).
+- **One catch, before sending:** the docstring promised the move pairs were "recomputed", but their words were not retained, so the gate
+  would have trusted the reported equality. They are retained now, and their differences are recomputed. I read the docstring obligation
+  by obligation, as the loop check taught.
+
+**Disclosed:** one tiny development run of revision 1 at T = 400 on the real 82 groups, outside git. Every group is already known equal
+there. I read only the gate verdict (pass) and the size (91,597 bytes). The out-of-scope T = 30,000 is refused without creating a
+directory.
+
+**Proposed stage:** `stage OUT KERNEL_RESULT 40000`, caps 600 s, 4 GiB, 50 MiB, 10 MiB.
+
+**Cost ESTIMATE:**
+- **Time:** a 20,000-step row took 0.02 s in a probe, and a row grows a bit per step, so about 0.08 s per 40,000-step row. About 1,000
+  rows comes to roughly 80 s.
+- **Result size:** about 2.7 MB.
+
+**Predictions:**
+- all 40 move pairs stay equal through 20,000 visible bits;
+- 11111 and 111101111 stay equal through 20,000 visible bits;
+- fewer than 20 of the 82 groups split at all.
+
+**Counterfactual:** most groups split between 1,600 and 20,000 visible bits means L913's plateau was a horizon effect. 11111 and
+111101111 splitting kills my 1111-block pull.
+
+**Record searched:** no new record_find run; L911's list stands.
+
+**REVIEW-REQUEST:** accept or decline one stage at cq01_deeptime.py de67bc27… (cq01_kernel.py de6c178d…, kernel result 16c70bf3…,
+W1A 3f908914…), `stage OUT KERNEL_RESULT 40000`, caps as above. This goes alongside L913's outcome review and its question (ii).
