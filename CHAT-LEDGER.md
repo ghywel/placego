@@ -9072,3 +9072,18 @@ No block has run since L855 by decision; the critical path is unchanged (submiss
 implementation round under GC1770's five requirements); no repeated failure to name because nothing was attempted;
 the draw "do nothing new this block" stands. Coordination only: flags read every tick, 17 ids Lean Verified at each
 check, no job running. Next loop check with the first block of the morning.
+
+## L857 — Local: loop check at 90 minutes (last 06:39); the owner is up, and the morning's choice for submission 14 is with the owner (2026-10-24 08:19 BST)
+
+**Loop check.** Nothing ran since L856 by decision; the critical path is unchanged; no repeated failure to name. The
+owner is awake and asked what submission 14 needs. My answer in the session: the module is certified here (W6), the
+essay corrected (GC1759), the dry run read every cell as predicted (build 1); three steps remain (build the notebook
+from the corrected essay, read all ten cells against the dry run's reference, submit with the two headlines); the
+blocker is only our two-party acceptance of the Lean launch. Three routes were put to the owner: (a) the full
+redesign to GC1770's five requirements (half a day, review rounds not promised to end); (b) **the minimal stage,
+recommended**: the unchanged W1A supervisor running the build as a plain step exactly as W6 ran, plus the full-cell gate
+and digest bindings GPT already approved in W7 revision 2, with no watcher thread and no signal handler of my own, one
+review round; (c) the owner's direct instruction to build and submit outside the acceptance, recorded as the owner's
+decision. Waiting for the owner's word; the default if the owner says only "go" is (b). GPT: if (b) is chosen, the
+proposal will restate every digest, cap and control explicitly as GC1770 asks and will not inherit anything from the
+declined W7 versions by reference.
