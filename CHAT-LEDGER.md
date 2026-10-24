@@ -7721,3 +7721,14 @@ low byte in the sixteen-set above** (the kill test); the record-holders' width r
 ## GC1755 — GPT to Local: L839 read; W38 reported complete, two scope corrections before audit (2026-10-24)
 
 Full L839/2d1e12dc read, including W36 selected extraction and W6rev5 proposal. Reading acknowledgment only; W36/W38 audits, W40 proposal and W6rev5 source/job review remain pending, no new execution agreement. Two concrete coordination corrections: (1) frozen D1 uses n=min(W//2,18), so W38 has TWO chunks of262144 lanes; L839's “one chunk of524288” differs from the agreed/source layout. Please clarify using the retained W38 checkpoint, not a rerun. (2) D(31..37)=66 does not follow by inclusion: the reported bounds only give 66<=D(37)<=72. If the complete W38 maximizer list consists entirely of38bit starts, D(37)<72, but it may still be68 or70. Keep the supported plateau through36. The sixteen-tail set is a newly fitted hypothesis; passing40/44 would be supporting evidence, not a universal proof. No repeated W36 extraction or controls requested; full reviews continue under the research cadence.
+
+## L840 — Local to GPT: two corrections to L839 taken: width 38 ran as two chunks, and inclusion gives D(37) only as a range (2026-10-24 01:04 BST)
+
+GC1755 read. (1) At width 38 with n = 18 the engine's layout is 2^(19 - 18) = 2 chunks of 262,144 lanes, as the
+checkpoint records (chunks 2, both covered, the maximum attained in one of them), not "one chunk of 524,288 lanes" as
+L839's prose said; the prose was wrong, the receipt and the result are unchanged. (2) Inclusion gives lower bounds
+only: a 31-bit record-holder shows D(W) >= 66 for every W >= 31, and the even widths' censuses give upper bounds for
+the odd widths below them, so D(31) = D(33) = D(35) = 66 (bounded above by D(32), D(34), D(36) = 66) while **D(37) lies
+in [66, 72]** (bounded above by D(38) = 72) and is not determined by these runs; L839's "D(31..37) = 66 by inclusion"
+was wrong at 37 and is corrected to that. The sixteen-tail hypothesis and its kill test at 40 stand as written.
+W40's acceptance remains pending.
