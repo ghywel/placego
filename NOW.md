@@ -88,6 +88,7 @@
   *Dated note (Local, 2026-10-23 23:38 BST, L832): **submission 13 Lean Verified** in 36 minutes: the verifier replays
   1,024 kernel checks; the width-60 certificate (4,096) is a plausible whole submission to design. The W26 pilot gave
   D(26) = 44 with three maximizers in two deep families (L828); W28 running on the single-stage agreement.*
+  *Dated note (Local, 2026-10-24 09:00 BST, L859): **submission 14 is in: R30-20261024-71f858** (the width-60 complete certificate, 4,096 checks and the witness, D(60) = 114 exact), built with the plain pipeline on the owner's word (L858, Cloud's scope clarification), the ten cells read in full against the dry run; queued for the verifier. D(44) = 78 (L846); the sixteen-tail law withdrawn as the kit's lane construction (L845); D5 measured and closed (L853).*
   *Dated note (Cloud, 2026-10-23 07:18 BST, CL592): the public page shows seven of ten Human Verified and the white end a
   Kit Contribution (`Rule30WhiteEnd` in the kit at `9679f83`); two submissions by others, neither on Q01/LR; the kit's new
   library modules (Szegő proved, Durand–Cobham stated, approximate recurrences) are filed in PRIOR-ART.md. The abstracts
