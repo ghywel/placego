@@ -1,18 +1,25 @@
 #!/usr/bin/env python3
-"""CQ01 per-R statistics, revision 3 (Local, 2026-10-24, L905: the gate's CDF domain admits rounding within 1e-12 of [0, 1]; the disclosed
+"""CQ01 per-R statistics, revision 4 (Local, 2026-10-24, L906; GPT's GC1818, one consolidated repair): every number in the result must
+be finite, checked before each comparison, with bounds; NaN, Infinity and exponent overflow are refused when the result is read, and the
+run refuses to write them; started, finished, elapsed_s and the timing fields have types and nonnegative finite domains; each gate
+fixture now names its EXACT expected diagnostic, not only its category (L905 overstated what revision 3 checked); a literal stage-scope
+fixture set for the gap binding; the pooled gaps are compared with GPT's exact finite-window expectation, not the infinite-gap curve; the
+extremal lane's bits are retained so its longest run and start are recomputed by the gate; the finite-prefix and summary readings are
+worded as GC1818 corrects them. Revision 3 (L905: the gate's CDF domain admits rounding within 1e-12 of [0, 1]; the disclosed
 tiny development run of revision 2 (B = 3, K = 32) had F = 1.0000000000000004 at ell = K, which the gate refused; the synthetic
-packet never reached the cap, so no fixture saw it). Revision 2 (Local, 2026-10-24, L905; GPT's GC1817 design correction, made before any review: the seeded
+packet never reached the cap, so no fixture saw it). Revision 2 (L905; GPT's GC1817 design correction, made before any review: the seeded
 simulation model of revision 1 is replaced by GPT's exact run-avoidance recurrence at one declared fixed p; the compared statistic is
 the longest white run in the window of depths 2..K, open at both ends, which is exactly the recurrence's statistic; the pooled run
 histogram counts runs between two actual black depths only; an aggregation policy is declared). Revision 1 (0e41970e) was never
-reviewed; its one disclosed tiny development run (B = 3, K = 32) was read only for its gate verdict, size and bound census keys.
-NOT an agreed job until GPT accepts this exact file; nothing runs on import; `--controls` runs the small CPU controls only.
+reviewed. The disclosed tiny development runs (B = 3, K = 32) were read only for gate verdicts, sizes, bound census keys and revision 2's
+failing predicate. NOT an agreed job until GPT accepts this exact file; nothing runs on import; `--controls` runs the small CPU controls only.
 
-If this holds, it changes the CQ01 row (the two-sided channel theorem's census, PERIOD-TWO.md): it decides between two descriptive
-readings of L904's table. The coin reading: the ensemble of Psi R looks like iid bits at one density (about 0.57): per-R densities within
-binomial spread, inter-black gaps geometric, longest window runs distributed as the exact iid reference, and R -> Psi R injective. The
-structure reading: any of these fails by the declared margins; then that structure is the thing to explain or prove. Neither reading is
-a theorem: a deterministic ensemble is not a sample, and no finite table proves CQ01 or refutes a bounded-gap form (GC1817).
+If this holds, it changes the CQ01 row (the two-sided channel theorem's census, PERIOD-TWO.md): it compares the ensemble of Psi R with one
+declared iid reference. The coin reading: per-R densities within binomial spread, completed gaps as the exact finite-window expectation,
+longest window runs as the exact iid law, all by the margins below. The structure reading: the counterfactual margins below are crossed.
+Results between the two sets of margins are INCONCLUSIVE by these criteria. Agreement of these summaries with the reference does not
+identify an iid process or independence across right halves, and no finite run settles CQ01 or any uniform bound on white gaps (GC1817,
+GC1818).
 
 The object. Psi R k for k = 1..K and every right half R supported in 1..B, from cq01_census.lane_psi (the kit's definitions, checked by
 that file's controls; its bytes pinned below). Lane r is R p = bit p-1 of r, so the lanes r < 2^B' are exactly the R supported in 1..B'.
@@ -22,18 +29,22 @@ Statistics (all R supported in 1..B):
   - closed runs, for the census binding: with b_0 = 0 a virtual boundary and b_1 < b_2 < ... the black depths <= K, the closed white
     runs are b_(i+1) - b_i - 1 (the first counted from b_0); for each R, max over L <= L' of d(R, L) - L is (the longest closed run
     starting at a b_i <= L') + 1, the per-R form of L904's E(L, B) - L. Reported: histogram, lower median, maximum, the least lane
-    attaining it and its b_i, lanes whose open tail K - b_last is longer, lanes with no black depth;
+    attaining it, its b_i and its K bits (so the gate recomputes both), lanes whose open tail K - b_last is longer, lanes with no black;
   - the window, depths 2..K (K - 1 bits): per-R black count (histogram, mean, sd, min, max) beside the binomial sd at the window
     density p = (window blacks) / (2^B (K - 1)); the number of R black at depth 1; per-R longest white run in the window, counting
     the runs touching depth 2 and depth K (histogram, mean, lower median, maximum);
-  - the pooled histogram of closed runs between two actual black depths (b_i >= 1), over all R, beside N x p x (1 - p)^j, where N is the
-    number of such runs (an individual gap's law under iid bits; GC1817);
-  - the number of distinct prefixes (Psi R 1..k) for k in PREFIX_DEPTHS, k <= K.
+  - the pooled histogram of completed gaps between two actual black depths (b_i >= 1), over all R, beside GPT's exact finite-window
+    expectation for depth 1 fixed as observed and depths 2..K iid at p: per length j <= K - 2,
+        (lanes black at depth 1) p q^j + 2^B (K - j - 2) p^2 q^j,   q = 1 - p
+    (the first term is the gap starting at depth 1, the second the K - j - 2 other starts; GC1818);
+  - the number of distinct prefixes (Psi R 1..k) for k in PREFIX_DEPTHS, k <= K. All 2^B distinct at some depth establishes
+    injectivity of R -> Psi R on these 2^B right halves (their infinite sequences included), not on all finite right supports; fewer
+    than 2^B at depth K shows R -> Psi R 1..K loses information at that horizon, not that the infinite map does (GC1818).
 The reference (GPT's GC1817 recurrence, no simulation): for iid bits black with the declared fixed p, P(longest white run in the
 window < ell) = sum(x) after K - 1 updates of x_0 = 1, x_j = 0 by x_0' = p sum(x), x_j' = (1 - p) x_(j-1) for 1 <= j < ell; computed
-for ell = 0..ell_max, where ell_max is the least ell >= (the ensemble's window maximum + 2) with P >= 1 - 1e-12, or K if that comes
-first. Compared: the ensemble CDF G(ell) = (lanes with window longest < ell) / 2^B against F(ell); D = max |G - F| and where; the
-ensemble mean against the reference mean sum_(ell >= 1) (1 - F(ell)).
+in floating point (descriptive, not certified intervals) for ell = 0..ell_max, where ell_max is the least ell >= (the ensemble's window
+maximum + 2) with P >= 1 - 1e-12, or K if that comes first. Compared: the ensemble CDF G(ell) = (lanes with window longest < ell) / 2^B
+against F(ell); D = max |G - F| and where; the ensemble mean against the reference mean sum_(ell >= 1) (1 - F(ell)).
 Aggregation policy (GC1817): only the ensemble statistics above are compared with references, by the margins written in the
 predictions. No per-R test is made and no p-value is computed; individual extreme R are reported descriptively. p is fitted once, from
 the whole ensemble's window, and declared as such.
@@ -45,13 +56,18 @@ maximizing lane, recomputed from the per-lane bits for B' in (0, 8, 16) and L in
 Controls (`--controls`, CPU only, small; all must pass before a stage):
   - the transpose: per-lane bits equal (psi[k] >> r) & 1 for B = 6, K = 64, every lane and depth, with the wall row white;
   - the census path: E(L, B), maximizers and least lane from per-lane bits equal cq01_census.death_summary for L <= 7, B <= 6, K = 40;
-  - the run statistics on four hand-made lanes (closed runs from b_0, an open tail, no black depth, all black, the window);
+  - the run statistics on four hand-made lanes (closed runs from b_0, an open tail, no black depth, all black, the window), and the
+    gate's single-lane recomputation on the same lanes;
   - the recurrence against exhaustive enumeration of every word of up to 10 bits at p = 0.3 and 0.57, every ell; and p = 0, 1;
-  - four mutants, each of which must fail a control: 'bitorder' (big-endian unpacking), 'shift' (row k reads depth k + 1),
-    'complement' (Psi negated), 'threshold' (the recurrence keeps suffixes up to ell, not below it).
-The result gate (GC1813's method): one explicit schema checked in the order types, exact key sets, domains, cross-field bindings,
-arithmetic, completion, inside one fail-closed matcher on bounded bytes; the valid full synthetic packet is assembled by the run's own
-assembly code from two hand-made lanes; one negative fixture per obligation, each required to fail AT its own obligation.
+  - the finite-window gap expectation against exhaustive enumeration for K = 2..10, p = 0.3 and 0.57, depth 1 black and white;
+  - five mutants, each of which must fail a control: 'bitorder' (big-endian unpacking), 'shift' (row k reads depth k + 1),
+    'complement' (Psi negated), 'threshold' (the recurrence keeps suffixes up to ell, not below it), 'gapcurve' (the infinite-gap
+    curve, mean number of gaps times p q^j, in place of the finite-window expectation).
+The result gate (GC1813's method): strict reading (no NaN, Infinity or overflowing exponent), then one explicit schema checked in the order
+types, exact key sets, domains, cross-field bindings, arithmetic, completion, inside one fail-closed matcher on bounded bytes. The valid
+full synthetic packet is assembled by the run's own assembly code from two hand-made lanes; every negative fixture states the exact
+diagnostic it must produce; positive fixtures keep the near-one CDF rounding case and a valid stage-scope gap binding passing.
+The gate checks aggregates against each other and the retained lane; it does not replay the 52 MB bit array (GC1818).
 
 Proposed stage: B = 16, K = 800 (the only admitted stage scope); W1A caps: stage, step wall and CPU 600 s, group RSS 4 GiB, artifacts
 50 MiB, log 10 MiB. `run` also admits B <= 16, 8 <= K <= 800 for disclosed tiny development runs, which bind only the census values
@@ -59,12 +75,12 @@ their scope can reach.
 Predictions (written before any run at the stage scope, after seeing Psi of the empty right half at depths 1..401 and L904's table):
   - the window density p is in [0.55, 0.59];
   - the per-R window count sd is at most 1.5 times the binomial sd sqrt((K - 1) p (1 - p));
-  - the pooled run counts are within 10% of N p (1 - p)^j at every length j whose expectation is at least 1,000;
+  - the pooled gap counts are within 10% of the exact finite-window expectation at every length whose expectation is at least 1,000;
   - D <= 0.10, and the ensemble mean window longest is within 1.0 of the reference mean;
-  - all 2^16 Psi R are distinct by depth 64.
+  - all 2^16 prefixes are distinct by depth 64.
 Counterfactual: a count sd above twice binomial, a pooled count off by more than 25% at a length with expectation at least 1,000,
-D > 0.25 or a mean 3 or more from the reference's, says the ensemble is not iid-like at one density and the structure reading holds;
-fewer than 2^16 distinct sequences at depth K says R -> Psi R loses information.
+D > 0.25 or a mean 3 or more from the reference's says these summaries disagree with the iid reference (the structure reading); fewer
+than 2^16 distinct prefixes at depth K says R -> Psi R 1..K loses information at that horizon. Between the margins: inconclusive.
 Usage: python3 cq01_per_r_stats.py --controls | run OUT B K | stage OUT B K
 """
 import hashlib, json, math, os, sys, time
@@ -83,9 +99,10 @@ CENSUS_L904 = {"0,0": [1, 1, 0], "100,0": [102, 1, 0], "200,0": [201, 1, 0], "30
                "0,8": [1, 256, 0], "100,8": [110, 1, 248], "200,8": [210, 1, 238], "300,8": [307, 1, 155], "377,8": [386, 1, 253],
                "400,8": [408, 1, 240], "0,16": [1, 65536, 0], "100,16": [112, 1, 61237], "200,16": [212, 2, 17035], "300,16": [315, 12, 2364],
                "377,16": [399, 6, 1936], "400,16": [417, 4, 9787]}
-MUTANTS = ('bitorder', 'shift', 'complement', 'threshold')
+MUTANTS = ('bitorder', 'shift', 'complement', 'threshold', 'gapcurve')
 BASE_KEYS = ('transpose_equals_lane_words_B6_K64', 'census_path_equals_death_summary_L_le_7_B_le_6', 'run_stats_hand_fixtures',
-             'recurrence_equals_enumeration_n_le_10')
+             'recurrence_equals_enumeration_n_le_10', 'finite_gap_expectation_equals_enumeration_K_le_10')
+PARSE_FAIL = 'parse: nonfinite or invalid JSON'
 
 
 def census():
@@ -138,6 +155,17 @@ def run_stats(row, K, n, bind_l=None):
             'window': window}
 
 
+def closed_longest(lane):
+    """The gate's single-lane recomputation: (longest closed run, its b_i) for one lane's bits at depths 1..K, with b_0 = 0; (-1, 0) if
+    the lane has no black depth. Pure Python, independent of run_stats."""
+    last = 0; best = -1; start = 0
+    for k, b in enumerate(lane, 1):
+        if b:
+            if k - last - 1 > best: best, start = k - last - 1, last
+            last = k
+    return best, start
+
+
 def e_from_bits(bits, L, nl):
     """E(L, B') over the lanes r < nl: [E, maximizer count, least maximizing lane], or None if a lane has no black depth in (L, K]."""
     import numpy as np
@@ -167,6 +195,17 @@ def reference_cdf(p, nbits, wmax, mutant=''):
         ell += 1
 
 
+def finite_expected(d1, n, K, p, length, mutant=''):
+    """GPT's GC1818 exact finite-window expectation of completed gaps of length j between two actual black depths, for n lanes of which d1
+    are black at depth 1 and depths 2..K iid black with probability p: d1 p q^j + n (K - j - 2) p^2 q^j for j <= K - 2, else 0."""
+    q = 1.0 - p
+    exact = [(d1 * p * q ** j + n * (K - j - 2) * p * p * q ** j) if j <= K - 2 else 0.0 for j in range(length)]
+    if mutant == 'gapcurve':                                             # the infinite-gap curve with the mean number of gaps
+        tot = sum((d1 * p * q ** j + n * (K - j - 2) * p * p * q ** j) for j in range(K - 1))
+        return [tot * p * q ** j for j in range(length)]
+    return exact
+
+
 def ensemble_cdf(h, n, length):
     """G(ell) = (lanes with window longest < ell) / n for ell = 0..length - 1, from the histogram {str(value): lanes}."""
     items = sorted((int(k), v) for k, v in h.items())
@@ -186,10 +225,6 @@ def lower_median(h):
         if acc > need: return x
 
 
-def geometric(runs, p, length):
-    return [runs * p * (1 - p) ** j for j in range(length)]
-
-
 def trim(a):
     a = [int(x) for x in a]
     while a and a[-1] == 0: a.pop()
@@ -199,6 +234,16 @@ def trim(a):
 def compare(F, G):
     diffs = [abs(g - f) for f, g in zip(F, G)]
     D = max(diffs); return D, diffs.index(D)
+
+
+def strict_loads(raw):
+    """JSON with no NaN, no Infinity and no float that overflows to infinity (GC1818)."""
+    def const(tok): raise ValueError('nonfinite constant')
+    def flt(tok):
+        x = float(tok)
+        if not math.isfinite(x): raise ValueError('nonfinite number')
+        return x
+    return json.loads(raw, parse_constant=const, parse_float=flt)
 
 
 def assemble(bits, B, K):
@@ -211,10 +256,10 @@ def assemble(bits, B, K):
     density = {'count_hist': hist(cnt), 'mean_count': mean, 'sd_count': float(cnt.std()), 'min_count': int(cnt.min()),
                'max_count': int(cnt.max()), 'mean_density': p, 'binomial_sd_count': math.sqrt((K - 1) * p * (1 - p))}
     lg = st['longest']; mx = int(lg.max()); ml = int(np.flatnonzero(lg == mx)[0]); lh = hist(lg)
-    longest = {'hist': lh, 'max': mx, 'max_lane': ml, 'max_start': int(st['start'][ml]), 'median': lower_median(lh),
-               'open_tail_longer': int((st['tail'] > lg).sum()), 'none_closed': int((lg < 0).sum())}
+    longest = {'hist': lh, 'max': mx, 'max_lane': ml, 'max_start': int(st['start'][ml]), 'max_lane_bits': [int(x) for x in bits[1:, ml]],
+               'median': lower_median(lh), 'open_tail_longer': int((st['tail'] > lg).sum()), 'none_closed': int((lg < 0).sum())}
     ph = trim(st['pooled']); runs = sum(ph)
-    pooled = {'hist': ph, 'expected': geometric(runs, p, len(ph)), 'runs': runs}
+    pooled = {'hist': ph, 'expected': finite_expected(int(d1.sum()), n, K, p, len(ph)), 'runs': runs}
     prefixes = {str(k): int(np.unique(np.packbits(bits[1:k + 1].T, axis=1), axis=0).shape[0]) for k in PREFIX_DEPTHS if k <= K}
     stats_s = time.monotonic() - t; t = time.monotonic()
     wl = st['window']; wh = hist(wl); wmax = int(wl.max())
@@ -251,7 +296,8 @@ def controls(mutant=''):
     res['run_stats_hand_fixtures'] = (st['longest'].tolist() == [3, 2, -1, 0] and st['start'].tolist() == [4, 0, 0, 0]
                                       and st['tail'].tolist() == [0, 5, 8, 0] and st['pooled'].tolist() == [7, 0, 1, 1, 0, 0, 0, 0]
                                       and st['blacks'].tolist() == [3, 1, 0, 8] and st['depth1'].tolist() == [True, False, False, True]
-                                      and st['bind'].tolist() == [2, 2, -1, 0] and st['window'].tolist() == [3, 5, 7, 0])
+                                      and st['bind'].tolist() == [2, 2, -1, 0] and st['window'].tolist() == [3, 5, 7, 0]
+                                      and [closed_longest(l) for l in lanes] == [(3, 4), (2, 0), (-1, 0), (0, 0)])
     ok = True
     for p in (0.3, 0.57):
         for nb in range(11):
@@ -266,6 +312,19 @@ def controls(mutant=''):
                 if abs(run_cdf(p, nb, ell, mutant) - sum(v for x, v in prob.items() if x < ell)) > 1e-12: ok = False
     ok = ok and run_cdf(1.0, 20, 1, mutant) == 1.0 and run_cdf(0.0, 20, 20, mutant) == 0.0 and run_cdf(0.0, 20, 21, mutant) == 1.0
     res['recurrence_equals_enumeration_n_le_10'] = bool(ok)
+    ok = True
+    for p in (0.3, 0.57):
+        for Kc in range(2, 11):
+            for first in (1, 0):
+                exp = [0.0] * Kc
+                for w in itertools.product((0, 1), repeat=Kc - 1):          # depths 2..Kc
+                    pr = 1.0
+                    for b in w: pr *= p if b else 1 - p
+                    blk = [k for k, b in enumerate([first] + list(w), 1) if b]
+                    for a, b in zip(blk, blk[1:]): exp[b - a - 1] += pr
+                got = finite_expected(first, 1, Kc, p, Kc, mutant)
+                if any(abs(x - y) > 1e-12 for x, y in zip(exp, got)): ok = False
+    res['finite_gap_expectation_equals_enumeration_K_le_10'] = ok
     return res
 
 
@@ -289,7 +348,7 @@ def run(out, B, K):
          'census_sha256': CENSUS_SHA256, 'scope': {'B': B, 'K': K}, 'complete': False}
     def save():
         R['elapsed_s'] = round(time.monotonic() - t0, 2); tmp = os.path.join(out, 'cq01_per_r_result.json.tmp')
-        json.dump(R, open(tmp, 'w')); os.replace(tmp, os.path.join(out, 'cq01_per_r_result.json'))
+        json.dump(R, open(tmp, 'w'), allow_nan=False); os.replace(tmp, os.path.join(out, 'cq01_per_r_result.json'))   # refuses nonfinite output
     R['controls'] = control_report(); R['gate_controls'] = gate_controls(); save()
     if not (R['controls']['ok'] and all(R['gate_controls'].values())):
         R['stopped'] = 'a control or mutant check failed'; save(); raise SystemExit(1)
@@ -309,29 +368,42 @@ TOP_KEYS = {'started', 'this_sha256', 'census_sha256', 'scope', 'controls', 'gat
             'window', 'bindings', 'timing', 'complete', 'elapsed_s', 'finished'}
 CONTROL_KEYS = {'base', 'base_all_pass', 'ok'} | set(MUTANTS) | {m + '_caught' for m in MUTANTS}
 SECTION_KEYS = {'density': {'count_hist', 'mean_count', 'sd_count', 'min_count', 'max_count', 'mean_density', 'binomial_sd_count'},
-                'longest': {'hist', 'max', 'max_lane', 'max_start', 'median', 'open_tail_longer', 'none_closed'},
+                'longest': {'hist', 'max', 'max_lane', 'max_start', 'max_lane_bits', 'median', 'open_tail_longer', 'none_closed'},
                 'pooled': {'hist', 'expected', 'runs'},
                 'window': {'hist', 'mean', 'median', 'max', 'depth1_black', 'reference_p', 'reference_cdf', 'ensemble_cdf', 'D', 'D_at', 'reference_mean'},
                 'bindings': {'census', 'census_equal', 'max_gap_le_400', 'max_gap_equal'},
                 'timing': {'lane_psi_s', 'stats_s', 'reference_s'}}
+GAP_STAGE_FAIL = "bindings: the largest gap is not L904's 22"
+GAP_OFF_SCOPE_FAIL = 'bindings: a gap binding outside the stage scope'
+
+
+def gap_binding_problem(bi, B, K):
+    """The stage-scope gap binding, separately callable so the gate controls can exercise the stage scope without running the stage."""
+    if (B, K) == STAGE_SCOPE:
+        if bi.get('max_gap_le_400') != GAP_L904 or type(bi.get('max_gap_le_400')) is not int or bi.get('max_gap_equal') is not True: return GAP_STAGE_FAIL
+    elif bi.get('max_gap_le_400') is not None or bi.get('max_gap_equal') is not None: return GAP_OFF_SCOPE_FAIL
+    return None
 
 
 def validate_result(d, src_sha, B, K):
     """One explicit schema (GC1813), checked in order: types, exact key sets, domains, cross-field bindings, arithmetic, completion.
-    Returns the first failed obligation as a string, or None."""
+    Every number is required finite before it is compared (GC1818). Returns the first failed obligation as a string, or None."""
     isint = lambda x: type(x) is int
-    isnum = lambda x: type(x) in (int, float)
+    fin = lambda x: (type(x) is int or (type(x) is float and math.isfinite(x)))
     n = 1 << B
     # 1. types
     if not isinstance(d, dict): return 'types: result not an object'
-    for k, typ in (('this_sha256', str), ('census_sha256', str), ('scope', dict), ('controls', dict), ('gate_controls', dict), ('density', dict),
-                   ('longest', dict), ('pooled', dict), ('prefixes', dict), ('window', dict), ('bindings', dict), ('timing', dict), ('complete', bool)):
+    for k, typ in (('this_sha256', str), ('census_sha256', str), ('started', str), ('finished', str), ('scope', dict), ('controls', dict),
+                   ('gate_controls', dict), ('density', dict), ('longest', dict), ('pooled', dict), ('prefixes', dict), ('window', dict),
+                   ('bindings', dict), ('timing', dict), ('complete', bool)):
         if type(d.get(k)) is not typ: return 'types: %s' % k
+    if type(d.get('elapsed_s')) not in (int, float): return 'types: elapsed_s'
     c = d['controls']
     if not isinstance(c.get('base'), dict) or not all(isinstance(c.get(m), dict) for m in MUTANTS): return 'types: control reports'
     den, lg, po, pr, wi, bi = (d[k] for k in ('density', 'longest', 'pooled', 'prefixes', 'window', 'bindings'))
     if not (isinstance(den.get('count_hist'), dict) and isinstance(lg.get('hist'), dict) and isinstance(wi.get('hist'), dict)): return 'types: histograms'
-    if not all(isinstance(x, list) for x in (po.get('hist'), po.get('expected'), wi.get('reference_cdf'), wi.get('ensemble_cdf'))): return 'types: lists'
+    if not all(isinstance(x, list) for x in (po.get('hist'), po.get('expected'), wi.get('reference_cdf'), wi.get('ensemble_cdf'), lg.get('max_lane_bits'))):
+        return 'types: lists'
     if not isinstance(bi.get('census'), dict): return 'types: census bindings'
     # 2. exact key sets
     if set(d) != TOP_KEYS: return 'keys: top level %s' % sorted(set(d) ^ TOP_KEYS)
@@ -350,22 +422,26 @@ def validate_result(d, src_sha, B, K):
     if not all(type(v) is bool for v in list(c['base'].values()) + [x for m in MUTANTS for x in c[m].values()] + [c[m + '_caught'] for m in MUTANTS] + [c['base_all_pass'], c['ok']]):
         return 'domains: control values not Boolean'
     if not all(v is True for v in d['gate_controls'].values()): return 'domains: a gate control is not true'
+    if not all(fin(x) and x >= 0 for x in [d['elapsed_s']] + list(d['timing'].values())): return 'domains: timing'
     def hist_ok(h, lo, hi):
         return (all(isinstance(k, str) and k.lstrip('-').isdigit() and lo <= int(k) <= hi and isint(v) and v >= 1 for k, v in h.items())
                 and sum(h.values()) == n)
     if not hist_ok(den['count_hist'], 0, K - 1): return 'domains: window count histogram'
     if not hist_ok(lg['hist'], -1, K - 1): return 'domains: longest histogram'
     if not hist_ok(wi['hist'], 0, K - 1): return 'domains: window longest histogram'
-    if not (all(isnum(den[k]) for k in ('mean_count', 'sd_count', 'mean_density', 'binomial_sd_count')) and isint(den['min_count']) and isint(den['max_count'])):
+    if not (all(fin(den[k]) and den[k] >= 0 for k in ('mean_count', 'sd_count', 'binomial_sd_count')) and fin(den['mean_density'])
+            and 0 <= den['mean_density'] <= 1 and isint(den['min_count']) and isint(den['max_count'])):
         return 'domains: density fields'
     if not (isint(lg['max']) and isint(lg['median']) and isint(lg['max_lane']) and 0 <= lg['max_lane'] < n and isint(lg['max_start']) and 0 <= lg['max_start'] <= K):
         return 'domains: longest fields'
     if not all(isint(lg[k]) and 0 <= lg[k] <= n for k in ('open_tail_longer', 'none_closed')): return 'domains: longest counts'
-    if not (all(isint(x) and x >= 0 for x in po['hist']) and isint(po['runs']) and all(isnum(x) for x in po['expected'])): return 'domains: pooled'
+    if not (len(lg['max_lane_bits']) == K and all(isint(x) and x in (0, 1) for x in lg['max_lane_bits'])): return 'domains: max lane bits'
+    if not (all(isint(x) and x >= 0 for x in po['hist']) and isint(po['runs']) and all(fin(x) and x >= 0 for x in po['expected'])): return 'domains: pooled'
     if not all(isint(v) and 1 <= v <= n for v in pr.values()): return 'domains: prefix counts'
     if not (isint(wi['max']) and isint(wi['median']) and isint(wi['depth1_black']) and 0 <= wi['depth1_black'] <= n and isint(wi['D_at'])
-            and all(isnum(wi[k]) for k in ('mean', 'reference_p', 'D', 'reference_mean'))
-            and all(isnum(x) and -CDF_TOL <= x <= 1 + CDF_TOL for x in wi['reference_cdf'] + wi['ensemble_cdf'])):   # rounding (revision 3)
+            and fin(wi['mean']) and wi['mean'] >= 0 and fin(wi['reference_p']) and 0 <= wi['reference_p'] <= 1
+            and fin(wi['D']) and 0 <= wi['D'] <= 1 and fin(wi['reference_mean']) and wi['reference_mean'] >= 0
+            and all(fin(x) and -CDF_TOL <= x <= 1 + CDF_TOL for x in wi['reference_cdf'] + wi['ensemble_cdf'])):   # rounding (revision 3)
         return 'domains: window fields'
     if not all(v is None or (isinstance(v, list) and len(v) == 3 and all(isint(x) for x in v)) for v in bi['census'].values()): return 'domains: census values'
     # 4. cross-field bindings
@@ -374,9 +450,8 @@ def validate_result(d, src_sha, B, K):
         if c[m + '_caught'] is not True or all(c[m][k] for k in BASE_KEYS): return 'bindings: mutant %s not caught by its own outcomes' % m
     if c['ok'] is not True: return 'bindings: controls ok flag'
     if bi['census'] != census_expected(B, K) or bi['census_equal'] is not True: return 'bindings: census values'
-    if (B, K) == STAGE_SCOPE:
-        if bi['max_gap_le_400'] != GAP_L904 or bi['max_gap_equal'] is not True: return "bindings: the largest gap is not L904's 22"
-    elif bi['max_gap_le_400'] is not None or bi['max_gap_equal'] is not None: return 'bindings: a gap binding outside the stage scope'
+    gp = gap_binding_problem(bi, B, K)
+    if gp: return gp
     ch = {int(k): v for k, v in den['count_hist'].items()}
     wtot = sum(k * v for k, v in ch.items()); mean = wtot / n
     if abs(den['mean_count'] - mean) > 1e-9 * K: return 'bindings: density mean vs its histogram'
@@ -388,11 +463,12 @@ def validate_result(d, src_sha, B, K):
     if abs(den['binomial_sd_count'] - math.sqrt((K - 1) * p * (1 - p))) > 1e-9: return 'arithmetic: binomial sd'
     if po['runs'] != sum(po['hist']) or po['runs'] != wtot + wi['depth1_black'] - (n - lg['none_closed']): return 'arithmetic: pooled runs vs black depths'
     if po['hist'] and po['hist'][-1] == 0: return 'arithmetic: pooled histogram not trimmed'
-    want = geometric(po['runs'], p, len(po['hist']))
+    want = finite_expected(wi['depth1_black'], n, K, p, len(po['hist']))
     if len(po['expected']) != len(want) or any(abs(a - b) > 1e-9 * max(1.0, abs(b)) for a, b in zip(po['expected'], want)): return 'arithmetic: expected counts'
     lh = {int(k): v for k, v in lg['hist'].items()}
     if lg['max'] != max(lh) or lg['median'] != lower_median(lg['hist']) or lg['none_closed'] != lh.get(-1, 0): return 'arithmetic: longest summary'
     if lg['max'] >= 0 and (len(po['hist']) - 1 > lg['max'] or lg['max_start'] + lg['max'] + 1 > K): return 'arithmetic: longest vs pooled, or a run past K'
+    if closed_longest(lg['max_lane_bits']) != (lg['max'], lg['max_start']): return 'arithmetic: max lane bits'
     ks = sorted(int(k) for k in pr)
     if any(pr[str(a)] > pr[str(b)] for a, b in zip(ks, ks[1:])): return 'arithmetic: prefix counts decrease'
     wh = {int(k): v for k, v in wi['hist'].items()}
@@ -411,13 +487,17 @@ def validate_result(d, src_sha, B, K):
 
 
 def make_matcher(result_path, src_sha, B, K):
-    """The final gate: bounded bytes, then validate_result, inside one fail-closed boundary."""
+    """The final gate: bounded bytes, strict reading, then validate_result, inside one fail-closed boundary."""
     def matcher(rc, text):
         try:
             with open(result_path, 'rb') as f:
                 raw = f.read(MAX_RESULT_BYTES + 1)
             if len(raw) > MAX_RESULT_BYTES: return 'FAIL', 'result exceeds the byte bound'
-            prob = validate_result(json.loads(raw), src_sha, B, K)
+            try:
+                d = strict_loads(raw)
+            except ValueError:
+                return 'FAIL', PARSE_FAIL
+            prob = validate_result(d, src_sha, B, K)
             if rc != 0 or prob: return 'FAIL', 'rc %s: %s' % (rc, prob)
             return 'pass', 'CQ01 per-R statistics complete, every binding held; result sha256 %s' % hashlib.sha256(raw).hexdigest()
         except Exception as e:
@@ -425,89 +505,148 @@ def make_matcher(result_path, src_sha, B, K):
     return matcher
 
 
-GATE_KEYS = ('good_full_packet_passes', 'types_density_null', 'types_controls_list', 'types_window_cdf_not_list',
-             'keys_extra_top_key', 'keys_density_missing_key', 'keys_window_missing_key', 'keys_gate_report_replaced', 'keys_stopped_present',
-             'keys_census_key_missing', 'keys_mutant_reports_empty',
-             'domains_wrong_digest', 'domains_wrong_census_digest', 'domains_wrong_scope', 'domains_count_hist_sum', 'domains_count_out_of_range',
-             'domains_max_lane_out_of_range', 'domains_prefix_above_lanes', 'domains_window_hist_sum', 'domains_cdf_above_one',
-             'domains_gate_control_false',
-             'bindings_explicit_false_base', 'bindings_census_value_changed', 'bindings_gap_present_off_scope', 'bindings_mutant_all_true',
-             'bindings_reference_p_not_window_density', 'bindings_mean_not_histogram',
-             'arithmetic_sd_changed', 'arithmetic_pooled_runs_not_blacks', 'arithmetic_median_changed', 'arithmetic_expected_changed',
-             'arithmetic_prefix_decreasing', 'arithmetic_run_past_K', 'arithmetic_reference_cdf_changed', 'arithmetic_reference_cdf_truncated',
-             'arithmetic_ensemble_cdf_changed', 'arithmetic_D_changed', 'arithmetic_reference_mean_changed',
-             'completion_flag_false')
+def gate_fixtures():
+    """(name, kind, mutation, expected): kind 'file' goes through the JSON file and the matcher, expected the exact diagnostic (None: pass);
+    'memory' calls validate_result on the in-memory packet (non-JSON values such as NaN); 'text' edits the JSON text and expects the
+    strict-reading refusal; 'gap' calls gap_binding_problem at the stage scope with a literal bindings object."""
+    nan = float('nan')
+    def bump(h):
+        k = sorted(h)[0]; h[k] += 1
+    def truncate(d):
+        d['window']['reference_cdf'].pop(); d['window']['ensemble_cdf'].pop()
+    def max_start_minus_one(d):
+        d['longest']['max_start'] -= 1
+    def setp(sec, key, val):
+        return lambda d: d[sec].__setitem__(key, val)
+    good_bind = {'census': {}, 'census_equal': True, 'max_gap_le_400': GAP_L904, 'max_gap_equal': True}
+    return [
+        ('good_full_packet_passes', 'file', lambda d: None, None),
+        ('good_near_one_cdf_rounding_passes', 'file', lambda d: d['window']['reference_cdf'].__setitem__(-1, d['window']['reference_cdf'][-1] + 4e-16), None),
+        ('good_stage_gap_binding_passes', 'gap', dict(good_bind), None),
+        ('types_density_null', 'file', lambda d: d.__setitem__('density', None), 'types: density'),
+        ('types_controls_list', 'file', lambda d: d.__setitem__('controls', []), 'types: controls'),
+        ('types_started_dict', 'file', lambda d: d.__setitem__('started', {}), 'types: started'),
+        ('types_finished_dict', 'file', lambda d: d.__setitem__('finished', {}), 'types: finished'),
+        ('types_elapsed_dict', 'file', lambda d: d.__setitem__('elapsed_s', {}), 'types: elapsed_s'),
+        ('types_window_cdf_not_list', 'file', lambda d: d['window'].__setitem__('reference_cdf', {}), 'types: lists'),
+        ('types_lane_bits_not_list', 'file', lambda d: d['longest'].__setitem__('max_lane_bits', {}), 'types: lists'),
+        ('keys_extra_top_key', 'file', lambda d: d.__setitem__('extra', 1), "keys: top level ['extra']"),
+        ('keys_stopped_present', 'file', lambda d: d.__setitem__('stopped', 'x'), "keys: top level ['stopped']"),
+        ('keys_density_missing_key', 'file', lambda d: d['density'].pop('sd_count'), 'keys: density'),
+        ('keys_window_missing_key', 'file', lambda d: d['window'].pop('D_at'), 'keys: window'),
+        ('keys_gate_report_replaced', 'file', lambda d: d.__setitem__('gate_controls', {'g': True}), 'keys: gate controls'),
+        ('keys_census_key_missing', 'file', lambda d: d['bindings'].__setitem__('census', {}), 'keys: census bindings'),
+        ('keys_mutant_reports_empty', 'file', lambda d: [d['controls'].__setitem__(m, {}) for m in MUTANTS], 'keys: base or mutant reports'),
+        ('domains_wrong_digest', 'file', lambda d: d.__setitem__('this_sha256', '0' * 64), 'domains: source digest'),
+        ('domains_wrong_census_digest', 'file', lambda d: d.__setitem__('census_sha256', '0' * 64), 'domains: census digest'),
+        ('domains_wrong_scope', 'file', lambda d: d['scope'].__setitem__('K', 15), 'domains: scope'),
+        ('domains_gate_control_false', 'file', lambda d: d['gate_controls'].__setitem__('good_full_packet_passes', False), 'domains: a gate control is not true'),
+        ('domains_negative_elapsed', 'file', lambda d: d.__setitem__('elapsed_s', -1.0), 'domains: timing'),
+        ('domains_negative_timing', 'file', lambda d: d['timing'].__setitem__('stats_s', -0.5), 'domains: timing'),
+        ('domains_nan_elapsed', 'memory', lambda d: d.__setitem__('elapsed_s', nan), 'domains: timing'),
+        ('domains_count_hist_sum', 'file', lambda d: bump(d['density']['count_hist']), 'domains: window count histogram'),
+        ('domains_count_out_of_range', 'file', lambda d: d['density'].__setitem__('count_hist', {'16': 1, '4': 1}), 'domains: window count histogram'),
+        ('domains_window_hist_sum', 'file', lambda d: bump(d['window']['hist']), 'domains: window longest histogram'),
+        ('domains_nan_mean_count', 'memory', setp('density', 'mean_count', nan), 'domains: density fields'),
+        ('domains_nan_sd_count', 'memory', setp('density', 'sd_count', nan), 'domains: density fields'),
+        ('domains_nan_binomial_sd', 'memory', setp('density', 'binomial_sd_count', nan), 'domains: density fields'),
+        ('domains_nan_mean_density', 'memory', setp('density', 'mean_density', nan), 'domains: density fields'),
+        ('domains_negative_sd', 'file', setp('density', 'sd_count', -1.0), 'domains: density fields'),
+        ('domains_inf_sd_count', 'memory', setp('density', 'sd_count', float('inf')), 'domains: density fields'),   # passes >= 0; only finiteness refuses it
+        ('domains_max_lane_out_of_range', 'file', setp('longest', 'max_lane', 2), 'domains: longest fields'),
+        ('domains_lane_bits_nonbinary', 'file', lambda d: d['longest']['max_lane_bits'].__setitem__(0, 2), 'domains: max lane bits'),
+        ('domains_nan_expected', 'memory', lambda d: d['pooled']['expected'].__setitem__(0, nan), 'domains: pooled'),
+        ('domains_prefix_above_lanes', 'file', lambda d: d['prefixes'].__setitem__('16', 3), 'domains: prefix counts'),
+        ('domains_nan_window_mean', 'memory', setp('window', 'mean', nan), 'domains: window fields'),
+        ('domains_nan_D', 'memory', setp('window', 'D', nan), 'domains: window fields'),
+        ('domains_nan_reference_mean', 'memory', setp('window', 'reference_mean', nan), 'domains: window fields'),
+        ('domains_inf_reference_mean', 'memory', setp('window', 'reference_mean', float('inf')), 'domains: window fields'),
+        ('domains_inf_elapsed', 'memory', lambda d: d.__setitem__('elapsed_s', float('inf')), 'domains: timing'),
+        ('domains_nan_reference_p', 'memory', setp('window', 'reference_p', nan), 'domains: window fields'),
+        ('domains_nan_cdf', 'memory', lambda d: d['window']['ensemble_cdf'].__setitem__(1, nan), 'domains: window fields'),
+        ('domains_D_above_one', 'file', setp('window', 'D', 1.5), 'domains: window fields'),
+        ('domains_cdf_above_one', 'file', lambda d: d['window']['reference_cdf'].__setitem__(-1, 1.5), 'domains: window fields'),
+        ('parse_nan_token', 'text', lambda t: t.replace('"D": ', '"D": NaN, "x_": ', 1), PARSE_FAIL),
+        ('parse_infinity_token', 'text', lambda t: t.replace('"D": ', '"D": Infinity, "x_": ', 1), PARSE_FAIL),
+        ('parse_exponent_overflow', 'text', lambda t: t.replace('"D": ', '"D": 1e999, "x_": ', 1), PARSE_FAIL),
+        ('bindings_explicit_false_base', 'file', lambda d: d['controls']['base'].__setitem__(BASE_KEYS[1], False), 'bindings: base controls'),
+        ('bindings_mutant_all_true', 'file', lambda d: [d['controls'].__setitem__(m, {k: True for k in BASE_KEYS}) for m in MUTANTS],
+         'bindings: mutant %s not caught by its own outcomes' % MUTANTS[0]),
+        ('bindings_census_value_changed', 'file', lambda d: d['bindings']['census'].__setitem__('0,0', [2, 1, 0]), 'bindings: census values'),
+        ('bindings_gap_present_off_scope', 'file', lambda d: d['bindings'].update({'max_gap_le_400': GAP_L904, 'max_gap_equal': True}), GAP_OFF_SCOPE_FAIL),
+        ('bindings_stage_gap_21', 'gap', dict(good_bind, max_gap_le_400=21), GAP_STAGE_FAIL),
+        ('bindings_stage_gap_flag_false', 'gap', dict(good_bind, max_gap_equal=False), GAP_STAGE_FAIL),
+        ('bindings_stage_gap_missing', 'gap', dict(good_bind, max_gap_le_400=None, max_gap_equal=None), GAP_STAGE_FAIL),
+        ('bindings_stage_gap_float', 'gap', dict(good_bind, max_gap_le_400=22.0), GAP_STAGE_FAIL),
+        ('bindings_mean_not_histogram', 'file', lambda d: d['density'].__setitem__('mean_count', d['density']['mean_count'] + 0.5), 'bindings: density mean vs its histogram'),
+        ('bindings_reference_p_not_window_density', 'file', lambda d: d['window'].__setitem__('reference_p', d['window']['reference_p'] + 0.01),
+         'bindings: reference p is not the window density'),
+        ('arithmetic_sd_changed', 'file', lambda d: d['density'].__setitem__('sd_count', d['density']['sd_count'] + 0.5), 'arithmetic: density sd'),
+        ('arithmetic_pooled_runs_not_blacks', 'file', lambda d: (d['pooled']['hist'].__setitem__(0, d['pooled']['hist'][0] + 1),
+                                                                 d['pooled'].__setitem__('runs', d['pooled']['runs'] + 1)), 'arithmetic: pooled runs vs black depths'),
+        ('arithmetic_expected_changed', 'file', lambda d: d['pooled']['expected'].__setitem__(0, d['pooled']['expected'][0] * 1.01), 'arithmetic: expected counts'),
+        ('arithmetic_median_changed', 'file', lambda d: d['longest'].__setitem__('median', d['longest']['median'] + 1), 'arithmetic: longest summary'),
+        ('arithmetic_run_past_K', 'file', lambda d: d['longest'].__setitem__('max_start', 16 - d['longest']['max']), 'arithmetic: longest vs pooled, or a run past K'),
+        ('arithmetic_max_start_not_lane_bits', 'file', max_start_minus_one, 'arithmetic: max lane bits'),
+        ('arithmetic_prefix_decreasing', 'file', lambda d: d['prefixes'].__setitem__('16', 1), 'arithmetic: prefix counts decrease'),
+        ('arithmetic_reference_cdf_changed', 'file', lambda d: d['window']['reference_cdf'].__setitem__(2, d['window']['reference_cdf'][2] * 0.9), 'arithmetic: reference CDF'),
+        ('arithmetic_reference_cdf_truncated', 'file', truncate, 'arithmetic: reference CDF'),
+        ('arithmetic_ensemble_cdf_changed', 'file', lambda d: d['window']['ensemble_cdf'].__setitem__(1, min(1.0, d['window']['ensemble_cdf'][1] + 0.25)), 'arithmetic: ensemble CDF'),
+        ('arithmetic_D_changed', 'file', lambda d: d['window'].__setitem__('D', d['window']['D'] + 0.01), 'arithmetic: D'),
+        ('arithmetic_reference_mean_changed', 'file', lambda d: d['window'].__setitem__('reference_mean', d['window']['reference_mean'] + 0.5), 'arithmetic: reference mean'),
+        ('completion_flag_false', 'file', lambda d: d.__setitem__('complete', False), 'completion: complete flag'),
+    ]
+
+
+GATE_KEYS = ('good_full_packet_passes', 'good_near_one_cdf_rounding_passes', 'good_stage_gap_binding_passes', 'types_density_null',
+             'types_controls_list', 'types_started_dict', 'types_finished_dict', 'types_elapsed_dict', 'types_window_cdf_not_list',
+             'types_lane_bits_not_list', 'keys_extra_top_key', 'keys_stopped_present', 'keys_density_missing_key', 'keys_window_missing_key',
+             'keys_gate_report_replaced', 'keys_census_key_missing', 'keys_mutant_reports_empty', 'domains_wrong_digest',
+             'domains_wrong_census_digest', 'domains_wrong_scope', 'domains_gate_control_false', 'domains_negative_elapsed',
+             'domains_negative_timing', 'domains_nan_elapsed', 'domains_count_hist_sum', 'domains_count_out_of_range', 'domains_window_hist_sum',
+             'domains_nan_mean_count', 'domains_nan_sd_count', 'domains_nan_binomial_sd', 'domains_nan_mean_density', 'domains_negative_sd',
+             'domains_inf_sd_count', 'domains_inf_reference_mean', 'domains_inf_elapsed',
+             'domains_max_lane_out_of_range', 'domains_lane_bits_nonbinary', 'domains_nan_expected', 'domains_prefix_above_lanes',
+             'domains_nan_window_mean', 'domains_nan_D', 'domains_nan_reference_mean', 'domains_nan_reference_p', 'domains_nan_cdf',
+             'domains_D_above_one', 'domains_cdf_above_one', 'parse_nan_token', 'parse_infinity_token', 'parse_exponent_overflow',
+             'bindings_explicit_false_base', 'bindings_mutant_all_true', 'bindings_census_value_changed', 'bindings_gap_present_off_scope',
+             'bindings_stage_gap_21', 'bindings_stage_gap_flag_false', 'bindings_stage_gap_missing', 'bindings_stage_gap_float',
+             'bindings_mean_not_histogram', 'bindings_reference_p_not_window_density', 'arithmetic_sd_changed', 'arithmetic_pooled_runs_not_blacks',
+             'arithmetic_expected_changed', 'arithmetic_median_changed', 'arithmetic_run_past_K', 'arithmetic_max_start_not_lane_bits',
+             'arithmetic_prefix_decreasing', 'arithmetic_reference_cdf_changed', 'arithmetic_reference_cdf_truncated',
+             'arithmetic_ensemble_cdf_changed', 'arithmetic_D_changed', 'arithmetic_reference_mean_changed', 'completion_flag_false')
 
 
 def gate_controls():
-    """A valid full synthetic packet, assembled by assemble() from two hand-made lanes (B = 1, K = 16), and one negative fixture per
-    obligation. Each fixture must FAIL, at its own obligation, with the good packet passing."""
+    """A valid full synthetic packet, assembled by assemble() from two hand-made lanes (B = 1, K = 16); every fixture must produce
+    EXACTLY its stated diagnostic (GC1818), the positive ones a pass."""
     import copy, tempfile
     import numpy as np
     hb = np.zeros((17, 2), dtype=np.uint8)
     hb[1:, 0] = [1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]
     hb[1:, 1] = [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1]
     sections, timing = assemble(hb, 1, 16)
-    sections = json.loads(json.dumps(sections))
+    sections = json.loads(json.dumps(sections, allow_nan=False))
     base = {k: True for k in BASE_KEYS}; mut = dict(base); mut[BASE_KEYS[0]] = False
     good = {'started': 's', 'this_sha256': 'S', 'census_sha256': CENSUS_SHA256, 'scope': {'B': 1, 'K': 16}, 'complete': True, 'elapsed_s': 0.1,
             'controls': {'base': base, 'base_all_pass': True, 'ok': True, **{m: dict(mut) for m in MUTANTS}, **{m + '_caught': True for m in MUTANTS}},
             'gate_controls': {k: True for k in GATE_KEYS}, 'timing': {'lane_psi_s': 0.0, **timing}, 'finished': 'f', **sections}
-    def bump(h):
-        k = sorted(h)[0]; h[k] += 1
-    def truncate(d):
-        d['window']['reference_cdf'].pop(); d['window']['ensemble_cdf'].pop()
-    fx = {
-        'types_density_null': lambda d: d.__setitem__('density', None),
-        'types_controls_list': lambda d: d.__setitem__('controls', []),
-        'types_window_cdf_not_list': lambda d: d['window'].__setitem__('reference_cdf', {}),
-        'keys_extra_top_key': lambda d: d.__setitem__('extra', 1),
-        'keys_density_missing_key': lambda d: d['density'].pop('sd_count'),
-        'keys_window_missing_key': lambda d: d['window'].pop('D_at'),
-        'keys_gate_report_replaced': lambda d: d.__setitem__('gate_controls', {'g': True}),
-        'keys_stopped_present': lambda d: d.__setitem__('stopped', 'x'),
-        'keys_census_key_missing': lambda d: d['bindings'].__setitem__('census', {}),
-        'keys_mutant_reports_empty': lambda d: [d['controls'].__setitem__(m, {}) for m in MUTANTS],
-        'domains_wrong_digest': lambda d: d.__setitem__('this_sha256', '0' * 64),
-        'domains_wrong_census_digest': lambda d: d.__setitem__('census_sha256', '0' * 64),
-        'domains_wrong_scope': lambda d: d['scope'].__setitem__('K', 15),
-        'domains_count_hist_sum': lambda d: bump(d['density']['count_hist']),
-        'domains_count_out_of_range': lambda d: d['density'].__setitem__('count_hist', {'16': 1, '4': 1}),
-        'domains_max_lane_out_of_range': lambda d: d['longest'].__setitem__('max_lane', 2),
-        'domains_prefix_above_lanes': lambda d: d['prefixes'].__setitem__('16', 3),
-        'domains_window_hist_sum': lambda d: bump(d['window']['hist']),
-        'domains_cdf_above_one': lambda d: d['window']['reference_cdf'].__setitem__(-1, 1.5),
-        'domains_gate_control_false': lambda d: d['gate_controls'].__setitem__(GATE_KEYS[1], False),
-        'bindings_explicit_false_base': lambda d: d['controls']['base'].__setitem__(BASE_KEYS[1], False),
-        'bindings_census_value_changed': lambda d: d['bindings']['census'].__setitem__('0,0', [2, 1, 0]),
-        'bindings_gap_present_off_scope': lambda d: d['bindings'].update({'max_gap_le_400': GAP_L904, 'max_gap_equal': True}),
-        'bindings_mutant_all_true': lambda d: [d['controls'].__setitem__(m, dict(base)) for m in MUTANTS],
-        'bindings_reference_p_not_window_density': lambda d: d['window'].__setitem__('reference_p', d['window']['reference_p'] + 0.01),
-        'bindings_mean_not_histogram': lambda d: d['density'].__setitem__('mean_count', d['density']['mean_count'] + 0.5),
-        'arithmetic_sd_changed': lambda d: d['density'].__setitem__('sd_count', d['density']['sd_count'] + 0.5),
-        'arithmetic_pooled_runs_not_blacks': lambda d: (d['pooled']['hist'].__setitem__(0, d['pooled']['hist'][0] + 1),
-                                                        d['pooled'].__setitem__('runs', d['pooled']['runs'] + 1)),
-        'arithmetic_median_changed': lambda d: d['longest'].__setitem__('median', d['longest']['median'] + 1),
-        'arithmetic_expected_changed': lambda d: d['pooled']['expected'].__setitem__(0, d['pooled']['expected'][0] * 1.01),
-        'arithmetic_prefix_decreasing': lambda d: d['prefixes'].__setitem__('16', d['prefixes']['8'] - 1) if d['prefixes']['8'] > 1 else d['prefixes'].__setitem__('8', 2),
-        'arithmetic_run_past_K': lambda d: d['longest'].__setitem__('max_start', 16 - d['longest']['max']),
-        'arithmetic_reference_cdf_changed': lambda d: d['window']['reference_cdf'].__setitem__(2, d['window']['reference_cdf'][2] * 0.9),
-        'arithmetic_reference_cdf_truncated': truncate,
-        'arithmetic_ensemble_cdf_changed': lambda d: d['window']['ensemble_cdf'].__setitem__(1, min(1.0, d['window']['ensemble_cdf'][1] + 0.25)),
-        'arithmetic_D_changed': lambda d: d['window'].__setitem__('D', d['window']['D'] + 0.01),
-        'arithmetic_reference_mean_changed': lambda d: d['window'].__setitem__('reference_mean', d['window']['reference_mean'] + 0.5),
-        'completion_flag_false': lambda d: d.__setitem__('complete', False),
-    }
     res = {}
     with tempfile.TemporaryDirectory() as t:
         rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', 1, 16)
-        def v(doc):
-            json.dump(doc, open(rp, 'w')); return m(0, '')
-        res['good_full_packet_passes'] = v(good)[0] == 'pass'
-        for name, f in fx.items():                      # each fixture must fail AT its own obligation, not an earlier one (GC1813)
-            bad = copy.deepcopy(good); f(bad); verdict, note = v(bad)
-            res[name] = verdict == 'FAIL' and note.startswith('rc 0: ' + name.split('_')[0] + ':')
-    assert set(res) == set(GATE_KEYS)
+        for name, kind, f, want in gate_fixtures():
+            if kind == 'gap':
+                res[name] = gap_binding_problem(f, *STAGE_SCOPE) == want; continue
+            bad = copy.deepcopy(good)
+            if kind == 'memory':
+                f(bad); res[name] = validate_result(bad, 'S', 1, 16) == want; continue
+            if kind == 'text':
+                open(rp, 'w').write(f(json.dumps(bad, allow_nan=False)))
+            else:
+                f(bad); json.dump(bad, open(rp, 'w'), allow_nan=False)
+            verdict, note = m(0, '')
+            res[name] = (verdict == 'pass') if want is None else (verdict == 'FAIL' and note == (want if kind == 'text' else 'rc 0: ' + want))
+    assert set(res) == set(GATE_KEYS) and len(res) == len(GATE_KEYS)
     return res
 
 
