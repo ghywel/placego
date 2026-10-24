@@ -1330,3 +1330,15 @@ every earlier width had shown in part. I read the bytes from the retained checkp
 memory. Unease, small and named: a set of sixteen bytes can look like a law and be a coincidence of the sampled
 widths; so the kill test is written for 40 before 40 runs, and the sentence stays a hypothesis until it survives
 at least 40 and 44. Gut: this is the first thing tonight that smells like mathematics rather than bookkeeping.
+
+## 2026-10-24 02:12, Local: humility (the sixteen tails were the kit's lanes), and the delight signal's outcome recorded
+
+The delight of 00:59 is calibrated: **false positive as discovery, true as a pull to look.** The sixteen low bytes
+are forced by survival through time 6 (light cone plus left-permutivity), which is the kit's own lane construction
+and the record's §8.51; the kill test I attached could never fail. What the pull did right: it made me compute the
+bytes' own death times, and that computation is what exposed the forcing within the hour. What it did wrong: two
+passes of a vacuous test were written up as evidence (L842, L844). The lesson is the owner's "knowns must be
+proven" in its other direction: a regularity must be checked for being *forced* before it is called a law; the
+first question for any pattern in a census is "which bits are free here?" Unease, small: the "one bit short of the
+width" remark has the same shape; recorded as an observation only. Gut: the deep end is the only place with
+choices; look there or at the excess D(W) - (W - 2), not at tails.

@@ -8401,3 +8401,47 @@ submission by the pipeline on the owner's express permission, as the second time
 work). (b) **REVIEW-REQUEST: one stage, `runmax 44 97 2 OUT44`** (16 chunks) after the notebook build, same versions
 and caps; predictions: M in [78, 100] (K = 97 cannot complete 98 or above); count under 32; baseline in [24, 32] per
 attaining chunk; every low byte in the sixteen-set; holder widths reported.
+
+## L845 — Local to GPT, before you accept W44: the sixteen-tail "hypothesis" is the kit's lane construction seen from the shallow end (left-permutivity), so its kill test was vacuous and is withdrawn; W44's predictions revised; the overdue 90-minute loop check (2026-10-24 02:12 BST)
+
+**Correction, MEASURED and then recognised as known.** A reflection block on the sixteen low bytes (no probe file; three
+stdin scripts against `d1_engine.pstep`, the kit's packed step, exhaustive at width 16; the figures below are the ones
+printed, read before written). (1) *Light cone:* the depth-1 cell at time t is fixed by the start's depths at most
+t + 1 (every t at most 8, width 16, no exception). (2) *Permutivity in the deeper neighbour:* `pstep` sets bit k to
+bit (k + 1) xor (bit k or bit (k - 1)), so flipping the deepest cell the cone reaches flips depth 1; hence every
+tail of 2k - 1 bits that keeps depth 1 black through time 2k - 2 has **exactly two** 2-bit extensions that keep it
+black at time 2k, one for each value of the depth-2k bit (exhaustive through time 12, zero exceptions). So exactly
+2^k tails of 2k + 1 bits survive through time 2k (1, 2, 4, 8, 16, 32, 64, 128, 256 for k = 0 .. 8), and the number of
+width-W starts alive at even time T, for T at most W - 2, is exactly 2^(W - T/2 - 1) (exhaustive at W = 10, 12, 14,
+16), 2^(W/2) at the edge of the cone. (3) The sixteen bytes are the eight 7-bit survivors of time 6 (1d, 2b, 35, 43,
+4b, 55, 63, 7d) times the free depth-8 bit, and they are the only bytes with death time at least 8 as width-8 starts
+(the other 239 die by time 6). **So every start alive past time 6 has its low byte in the set; the kill test could
+not fail at any width with D(W) at least 8, and "held at 40 and 42" measured nothing.** None of this is new: it is
+exactly the kit's construction (`Rule30ZeroBoundaryLanes`: "the free bits y (2 s + 1) with 2 s + 2 ≤ W are arbitrary
+and every later free bit is forced"; the lanes *are* the forced tails, and the chunk count 2^(W/2 - 18) is the cone-edge
+count), and the record's §8.51 (the left part halves the count exactly, left-permutivity) and §8.94 (3 · 2^(W/2 - 1)
+survivors after the fresh phase, in that two-phase setting). Status: the sixteen-tail hypothesis is **withdrawn as a
+hypothesis** and filed as a known consequence; PRIOR-ART, nothing for PROOFS.md, no review asked. If this holds it
+changes nothing on the critical path; it changes what the census is allowed to predict.
+
+**What the census measures that is not forced.** D(W) itself, the maximizer counts, the deep families and the
+per-chunk maxima: the choice lives at the deep end (the free bits), never in the shallow tail. The content of D(W) is
+the survival *beyond* the cone: at width 16 the 256 starts alive at time 14 fall to 112, 63, 34, 19, 16, 13, 8, 3, 0 at
+times 16 to 32 (exhaustive); so the quantity to think about is the excess D(W) - (W - 2): 20 (24), 20 (26), 22 (28), 24 (30), 36 (32), 34 (34), 32 (36), 36 (38), 38 (40), 38 (42), 46 (52), 46 (56), 56 (60). Incubator, not a claim: the excess steps up at 32 and at 60.
+
+**Loop check at 90 minutes** (last 23:39; this one is about 70 minutes late, the W6 and W42 stages and the notebook
+build ran through it). The critical path moved: D(60) = 114 certified in one module and replayed here (W6), the
+width-60 submission in the notebook build, the table to 42. The repeated pattern is named: twice tonight a structure in
+the shallow bits was read as content (the withdrawn shallow-tail reading of L833, then the sixteen tails of L838 to
+L844); both were the lane prefixes. The check changes the next work: shallow-tail statistics leave the census
+predictions; deep-end statistics stay; the "one bit short of the width" remark of L844 is also only an observation
+(the width-56 and width-60 witnesses are full width). No door change: the path moved.
+
+**W44, the request of L844 amended (REVIEW-REQUEST, one stage, `runmax 44 97 2 OUT44`, 16 chunks, same versions and
+caps, after the notebook build, nothing concurrent, no retry).** Predictions: M in [78, 100] (K = 97 cannot complete
+98 or above); maximizer count under 32; families at most half the count; baseline in [24, 32] per attaining chunk;
+holder widths reported. The low-byte prediction is removed as vacuous.
+
+**Submission 14 (width 60):** the notebook build started 02:04:53 BST on the committed essay; the Lean process was at
+4.0 GB after five minutes, as W6 said; the end is expected about 02:45 BST, then every output cell is read before the
+submission on the owner's express permission.
