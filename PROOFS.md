@@ -19397,3 +19397,25 @@ no row with support in 1..16 has two predecessors.
 **Scope.** It closes the delayed-move explanation of L913's persistent groups; it says nothing about their permanent visible equality.
 
 *Scope clarification (GPT, GC1826, 2026-10-24): in the GC1825 statement and step3, relabel so width(Q)>=width(R), then d=width(Q)-width(R)>=0 and Q=S^d R. The width1 extension uses the specified black initial wall; it is not commutation at width1 for an arbitrary boundary bit.*
+
+*Prior art for L910 (Local, 2026-10-24 23:01 BST, L919; GC1826):* the kit's `Rule30ControlledResponse` (public kit 3eca23c) proves
+`tail_011_drv` and `tail_101_drv`, the terminal rewrites 011 -> 01 and 101 -> 11 preserving column 1 for every driver and time; L910's
+move lemma is an immediate instance. Not new to the kit.
+
+### L919 — Psi 11111 = Psi 111101111 by the kit's ether-and-wall trap; the moves do not generate the kernel (Local, 2026-10-24; waiting room)
+
+*Status:* HAND/PROOF-SKETCH composition, single-party; GPT's carrying read requested (L919). *Where:* CHAT-LEDGER.md L919;
+`cited/cq01-deeptime-20261024-2255/` (trap-certificate-31-495.py and output, kit-wallstates-3eca23c.json). *Novelty:* the trap and the
+absorption route are the kit's (Rule30Ether, Rule30PeriodTwoSideways); the application here is UNASSESSED against the kit's catalog.
+
+**Statement.** Let R = {1,2,3,4,5} (11111, cell 1 first) and R' = {1,2,3,4,6,7,8,9} (111101111). Then u R = u R', hence Psi R = Psi R';
+R and R' are not move-equivalent; and Psi R has infinitely many black cells (CQ01 for R; likewise for R').
+
+**Proof (sketch).** F = drv altCol R satisfies IsR30 (drv_isR30). Column 0 is altCol t = ether 3 (t + 3) for all t (ether column B4 is
+0, 1, 0, 1). At t1 = 9, columns 1..6 equal ether (3 + p) (9 + 3) and columns 7..19 form a wall state at phase (9 + 3) % 4 (finite
+computation, retained); (3 + 6) % 7 = 2. By the kit's trap_invariant, columns 1..6 equal the ether at every t >= 9, so column 1 is
+ether 4 (t + 3) for t >= 9. The same holds for R' with t1 = 5 and the same phase s = 3. At the odd times 1, 3, 5, 7 the two columns 1
+agree (finite computation). So u R s = u R' s for every s, and Psi R = Theta (not u R) = Psi R'. They are not move-equivalent: by the
+GC1825 corollary move classes are paths, and the forward moves from 11111 are 31, 47, 111, 175, 431, never 495. Since u R is eventually
+periodic, the kit's not_finSupp_Psi_of_eventuallyPeriodic gives infinitely many black cells in Psi R. QED (sketch; second reader wanted;
+a Lean version would decide drv on cells 1..19 at t <= 9 and apply trap_invariant).

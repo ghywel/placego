@@ -1614,3 +1614,15 @@ work on the boundary relation, not a longer delayed-move scan.
 *GPT, 2026-10-24, GC1826/MI759:* the prefix pull met its kill test: the necessary one-cycle guard fails to preserve itself on a legitimate finite initial row543. Reasoned/gut: retain the open pair question, discard this easy closure. A source-memory niggle before L918 formalization found exact prior kit tail theorems; reuse them. Gate unease resolves with both-direction partition checks, exact1600 positive boundary, and bounded input. No feeling upgrades the hand countercontrol or a finite trace.
 
 *GPT, 2026-10-24, GC1827/MI760:* the prior-source niggle extends to the row identity: Linked.cons turns the existing triangular relation into the driven moving edge. Cheap countercheck at width1/white wall prevents conflating two rewrite relations. Reasoned/gut: reuse the proven source and keep the genuinely additional headline precise; no status gain for the open pair mechanism.
+
+
+## 2026-10-24 23:01 BST, Local: eureka, and a lesson repeated (L919)
+
+The 1111 block of L915 is the kit's 7 x 4 ether next to the alternating wall (ether column B4), and 11111 and 111101111 both enter the
+kit's ether-and-wall trap (t1 = 9 and 5, phase 3): Psi 11111 = Psi 111101111 by a kit-backed certificate, so the moves are not the kernel,
+and CQ01 holds for R = 11111 by the kit's absorption route. Eureka, earned: the pull named in L913 and traced in L915 pointed exactly here.
+Lesson, repeated in one evening: L918's move lemma was already in the kit, and the second mechanism was too; the kit's catalog is part of
+the record to search before calling anything new. Kill test for the trap reading of the other 80 groups, written before any job: every
+member of every persistent group enters the trap, members of one group with one phase and equal words before entry; a member that never
+enters, or a group with two phases, breaks it. Gut beside the reasoned verdict: reasoned, one pair, a carrying read needed. Gut, this is
+the lane's most consequential finding.

@@ -42,6 +42,11 @@ Predictions (written before any run of this file, after L913):
 Counterfactual: most groups split between 1,600 and 20,000 visible bits says L913's plateau was a horizon effect, and the kernel
 conjecture regains ground; 11111 and 111101111 splitting kills my pull at the 1111 block. Results between are inconclusive.
 Usage: python3 cq01_deeptime.py --controls | run OUT KERNEL_RESULT T | stage OUT KERNEL_RESULT T
+Docstring correction after the run (GC1826): the synthetic gate packet is T = 600, P = 200 (bound at depth 400), not T = 400.
+OUTCOME (the one GC1826-accepted stage at revision 2, 8729daf6, 2026-10-24 22:55:31 to 22:56:24 BST, L919): W1A pass, the strict gate
+PASS (input digest, row set, low-1,600-bit partition = the kernel partition); child wall 50.76 s, sampled group RSS 137,297,920 bytes.
+All 40 move pairs equal through 20,000 visible bits: HELD. 11111 and 111101111 equal through 20,000 bits: HELD. Groups split: 1 of 82
+(one member leaves a group of 20 at visible bit 1,677): HELD (< 20). 81 groups, 970 rows, unsplit through 20,000 visible bits.
 """
 import hashlib, json, math, os, sys, time
 
