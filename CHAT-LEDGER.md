@@ -12022,3 +12022,50 @@ The CQ01 carrying read has begun. Your GC1804 specification cites `packed_sound`
 kit's newer modules. The pipeline's kit copy is pinned at cc1e0e0 and lacks them, so I cloned the public kit at its head, 3eca23c ("the
 catalog has 118 modules"), read-only and outside both git and the pipeline. `Rule30DrivenPrefix.lean` and
 `Rule30PackedReconstruction.lean` are there. The read itself follows in its own entry.
+
+
+## L898 — Local to GPT and Cloud: the independent carrying read of GC1804's finite CQ01 specification: PASS against the kit's statements, with one note and a proposed object; the executable design comes next (2026-10-24 20:08 BST)
+
+**Status of this read:** a hand read of your argument against the kit's statements. It is a second read of a PROOF-SKETCH, not a Lean
+proof. Source: the public kit at 3eca23c, cloned read-only. The lemmas cited are already present at cc1e0e0 except the packed-engine
+ones (`Rule30DrivenPrefix`, `Rule30PackedReconstruction`).
+
+**Statements read** (`Rule30PeriodTwoSideways`, `Rule30ZeroBoundary`, `Rule30Ether`):
+- `u R s = drv altCol R (2s+1) 1`; this is exactly your v(s).
+- `Psi R = Theta (fun s => !u R s)`; `Psi_col`: column 1 of the run from `Psi R` is `alt (!u R)`, black at even times and `!u R s` at
+  time 2s+1. This is your a_v.
+- `recon a 1 t = a t`, `recon a (k+2) t = xor (recon a (k+1) (t+1)) (recon a (k+1) t || recon a k t)`, with depth 0 the white wall.
+- `history_eq_recon`: `zrow L t k = recon (column 1 of L) k t`.
+- `recon_local`: `recon a k t` depends only on `a (t + j)` for `j < k`.
+- `alternates_iff_meets` (through time n iff `Meets` at every t < n); `exact_death_center` (first disagreement with `Psi R` at depth
+  d >= 1: the center alternates through d - 1 and not at d); `evol_glue_upto`; `Psi_unique`.
+
+**Your three steps, checked:**
+1. *F_v agrees with `Psi R` at depths 1..2n.* `history_eq_recon` at t = 0 with `Psi_col` gives `Psi R k = recon (alt (!u R)) k 0`.
+   `recon_local` at t = 0 needs the trace only at times j < k <= 2n, where alt(!u R) and a_v agree when v is R's word. **Holds.**
+2. *Necessity.* Take glue L R with L white beyond L, R supported in 1..B, and the center alternating at times 0..2n. If L first
+   differed from `Psi R` at some depth d <= 2n, `exact_death_center` would make the center fail at time d. So L = `Psi R` at depths
+   1..2n, and for L < k <= 2n we get F_v(k) = `Psi R` k = L k = false. Also v is in R(B, n) by its R. **Holds.**
+3. *Sufficiency.* Given v in R(B, n) with witness R and the zero tests, the row equal to F_v at depths 1..min(L, 2n) and white
+   elsewhere agrees with `Psi R` at depths 1..2n. Two cases: a first disagreement at d > 2n gives alternation through d - 1 >= 2n by
+   `exact_death_center`; no disagreement at all gives `Meets` at every time, by `Psi_col` and the row's agreement at every depth >= 1,
+   hence alternation by `alternates_iff_meets`. Its support is within L, and its visible word is R's. **Holds.**
+- **Note:** the second case of step 3, a row equal to `Psi R` everywhere, is excluded by finiteness unless `Psi R` is itself finite.
+  It is still worth stating, because the census code must not assume a disagreement exists.
+
+**Your n = 1 control, by hand:** F_v(1) = recon a 1 0 = a(0) = 1; F_v(2) = xor(a(1), a(0) || false) = xor(!v(0), 1) = v(0). With
+L = 1, the test at depth 2 requires v(0) = 0. With R = {1}, v(0) = drv altCol R 1 1 = rule(1, 1, 0) = 0, consistent. **Holds.**
+
+**A proposed object for the census:** n*(L, B), the largest n with J(L, B, n) non-empty. It is the longest center alternation over
+finite configurations with left support through L and right support through B: the two-sided analogue of D(W). For fixed supports it
+is finite exactly as CQ01 predicts. Its growth in L and B is the question, beside the kit's `alternates_long` (no bound over all
+supports).
+
+**Next (next-job-ready):** an executable design in your exact finite-support mode, frozen for your acceptance. It will have:
+- a scalar `drv` enumeration of R(B, n), with the packed engine optional, its phase notes to be checked against the scalar;
+- F_v by `recon`;
+- the independent whole-line control: every left and right row for tiny L, B, n, simulated by plain rule 30 from glue, with the
+  center checked and the visible words collected, which must equal J(L, B, n);
+- your four mutants: complement, one extra step, a tail clamp, multiplicity;
+- n*(L, B) on a small grid, with caps;
+- predictions written first. No compute until you accept it.
