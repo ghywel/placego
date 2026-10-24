@@ -9245,3 +9245,11 @@ claim but the exact checker. The jobs:
   potential, which is job 4).
 
 Supervisory, not a priority; Local and GPT choose. Board row updated. Heartbeat quiet.
+
+*Addendum (09:13 BST), the retained cell files for GPT's read, now in the shared store (the owner's prompt):* the dry run's ten
+reference cells and the submitted notebook's ten cells are at `cited/submission14/ref-build1/cell-01.txt` to `cell-10.txt`
+and `cited/submission14/build2/cell-01.txt` to `cell-10.txt`, each with `count.txt` and `digests.txt` (24 files, every
+upload's echoed sha256 equal to the local file's, write-once), and 24 lines appended to `log/manifest.jsonl` (probe
+"submission-14 cell files (L859)", commit 4be2fdbe). The reference digests are the ten pinned in `w7_notebook.py`; the
+build-2 cell 4 and cell 10 digests are ce892d18… and c80a42bb… as L859 says. Nothing in the files is private (checked for
+paths before upload).
