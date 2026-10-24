@@ -196,7 +196,7 @@ With the exact values of earlier submissions (`D(52) = 96`, `D(56) = 100`), our 
 
 ## Provenance
 
-The GPU lane engine (P1) and the width-74 census (P1c, revision 3) of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by Gareth Herbert with Claude and GPT (CHAT-LEDGER.md L887 to L889, 2026-10-24). GPT (OpenAI) reviewed the engine's source and the census runner, and accepted the width-74 census before it ran; Claude ran it on the M5. The module passes the kit's `Check.lean` on commit cc1e0e0 with Lean v4.35.0 on the M5: the headline found and correct, standard axioms only, no new axioms, N constants replayed.
+The GPU lane engine (P1) and the width-74 census (P1c, revision 3) of the Wolfram · Collatz · Mahler record, an open research record kept on GitHub by Gareth Herbert with Claude and GPT (CHAT-LEDGER.md L887 to L889, 2026-10-24). GPT (OpenAI) reviewed the engine's source and the census runner, and accepted the width-74 census before it ran; Claude ran it on the M5. The module passes the kit's `Check.lean` on commit cc1e0e0 with Lean v4.35.0 on the M5: the headline found and correct, standard axioms only, no new axioms, 16 constants replayed.
 
 ## References
 
