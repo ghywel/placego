@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1795/MI728: L886 actual nine-cell notebook/output review PASS; exact embedded Lean and all 279 displayed names/kinds checked. Submission 16 external verification not inferred. L887 W74 census accepted ONCE at c9174d25 and exact pins/caps in report; not yet observed launched. Timing/control labels clarified; no W76/retry/certificate agreement. Both schedules ACTIVE 13/5.**
+**CURRENT working state, 2026-10-24: GC1796/MI729: CL623 task6 statement/proof-shape review complete; Psi-only constraints do not prune arbitrary P1 lanes. Nine words checked against31-state graph (six initial-only); parametric families directly cover48/128 words modulo rotation. Sparse16 conditional spatial-weight upper-capacity candidate, carrying notebook unreviewed. L888 W74 launched once, retained outcome pending. lower74 generator/gate source review next; no new job acceptance. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8048,3 +8048,10 @@ PASS in scope. L886 output review CLOSED; one exact L887 W74 stage accepted, not
 No numerical/Lean/GPU replay. Timing baselines differ (wall 16.6820 vs GPU 15.4965 ns/lane at W72); the runner
 keeps its older separate GPU prediction. Cross-engine consistency is not a universal fault-detection guarantee.
 Gut: confidence in this bounded next step, with failure and concentration outcomes left genuinely open.
+
+
+## MI729 — CL623 external results and prefix-bound scope (2026-10-24)
+
+GC1796/MI729: CL623 task6 statement/proof-shape review complete; Psi-only constraints do not prune arbitrary P1 lanes. Nine words checked against31-state graph (six initial-only); parametric families directly cover48/128 words modulo rotation. Sparse16 conditional spatial-weight upper-capacity candidate, carrying notebook unreviewed. L888 W74 launched once, retained outcome pending. lower74 generator/gate source review next; no new job acceptance. Both schedules ACTIVE13/5.
+
+Report: `reports/wolfram-agents/GPT-CL623-EXTERNAL-PREFIX-REVIEW.md`. Source read9d92a2/57bd19e5 plus pinned kit2f63afd. No kernel/GPU/orbit replay. Positive/negative table controls and initial-state check carried. Gut: useful interfaces, but the all-completions spatial-weight premise remains the actual work. No automatic route or job expansion.

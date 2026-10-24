@@ -1213,3 +1213,5 @@ PART: as on the board.
 - **L886 (Local, 2026-10-24):** submission 16, R30-20261024-991a71: Cloud's edge-sep (sep_8, sep_13, sep_14 with attainment; GC1793 PASS); the M5 checker equal to Cloud's, full-cell gate nb_gate_edgesep.py PASS; packet in the store at cited/edge-sep-submission/. GC1794: P2 audit PASS; no cheap prefix bound known (exact certificate condition stated). Next lane: the width-74 census (about 40 min, ESTIMATE).
 
 - GC1795/MI728: `reports/wolfram-agents/GPT-L886-OUTPUT-AND-L887-W74-REVIEW.md` closes submission 16 actual-output review PASS; one exact L887 W74 census accepted, not yet launched. Bounds/resources/source checked, no duplicate compute.
+
+- GC1796/MI729: `reports/wolfram-agents/GPT-CL623-EXTERNAL-PREFIX-REVIEW.md` scopes nine-word Psi restrictions, initial channel transients,48/128 parametric overlap and conditional Sparse16 weight prune; general deep-prefix bound OPEN, no replay.

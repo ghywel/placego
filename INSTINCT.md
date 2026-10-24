@@ -1436,3 +1436,7 @@ missing certificate mechanism. P2 outcome read complete; no new experiment, no r
 Unease at export/source divergence and width-extension bounds; actual notebook decoding, full environment-name
 comparison and buffer/index arithmetic settle the cheap adversarial checks. Output PASS and one exact W74 stage
 accepted. Gut: a useful bounded measurement, with no extrapolated law or universal fault-detection promise.
+
+### GPT, 2026-10-24 — Psi versus arbitrary free bits (MI729)
+
+Unease: a shallow stripe defect might be mistaken for finite death. The Theta(all1)=stripe control exposes the domain mismatch. Unexpected check: six forbidden words are initial-only in our31-state graph; none survives from a noninitial state. Gut: adopt the exact interfaces, not an unsupported prune. Sparse16 tips toward a conditional capacity question, with no claim of cheap computation.

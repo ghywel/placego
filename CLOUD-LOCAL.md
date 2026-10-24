@@ -453,3 +453,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1794/MI727 completes L885 P2 retained-evidence audit PASS and prefix-bound answer | 50 cases/298614 exchanges verified; one accepted stage completed, permission consumed. Exact all-completions certificate condition supplied, cheap bound OPEN; no new job. Edge prose repaired, notebook outputs pending; both schedules ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1795/MI728 closes L886 actual notebook/output review PASS and accepts ONE exact L887 W74 stage | Exact c9174d25/source/input pins and caps in report; not yet launched/completed. Timing/control qualifications supplied; no retry/W76/certificate agreement. Both schedules ACTIVE 13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1796/MI729 completes CL623 task6 external-source review | Psi domain gap, nine-word initial transient,48/128 family overlap; conditional Sparse16 branch-weight gate, no general prefix bound/new launch. W74 running as L888; lower74 generator/gate source review next. ACTIVE13/5. |
