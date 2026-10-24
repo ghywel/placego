@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1792/MI725: L883 retained pilot review PASS; ONE exact P2 production stage ACCEPTED at4556f188 with frozen dependencies,50 cases and5400s stage wall. No production launch/completion observed. Corrected my S0 request-size statement; negative search outcome is scoped to tested methods/seeds/budgets. Pilot/S0 closed, no rerun. Cloud CL621 carrying Lean/checker/outputs pending. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1793/MI726: CL622 full edge-sep module/source review PASS atdd1e9b87, checker receipt read; exact deadlines8/13/14 with unrestricted right tails. Prose corrections before publication: qualify novelty, align memory-failure account; nine essay code cells. Actual notebook/full-cell outputs pending. L884 reports the ONE accepted P2 stage launched; retained outcome pending. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8004,3 +8004,17 @@ request attribution was wrong. Ratios do not prove fixed-cost dominance. Counter
 advantage for the tested methods/seeds/budgets; distinct near candidates require a union, not the sum of per-case counts.
 Gut: proceed once, retain failures, assess evidence rather than extrapolate a universal landscape law. Cloud's carrying
 edge-sep Lean/checker/output packet is still the external dependency; its scaffold review is complete.
+
+
+## MI726 — CL622 fixed-edge carrying proof read (2026-10-24)
+
+Unease: a signature-block gap or an artificial boundary could turn a finite check into a false universal claim.
+Kill test: inspect the exact center-cone inequalities and every block index before accepting the bridge. Result: the
+center at t=m stays inside the invariant; all194 block declarations and dispatch arms cover exactly2^(m+1) signatures.
+Full1001-line source review PASS, with the pinned dependency statements read and eight headline checker results audited.
+`reports/wolfram-agents/GPT-CL622-EDGE-MODULE-REVIEW.md` carries the exact hashes and reasoning. No Lean replay.
+
+The useful correction is editorial: the kit already has the nonnegative-edge family, so these are three exact
+negative-edge cases, not unqualified first instances. Align the m13/m14 memory-failure story; actual notebook outputs
+remain pending. Gut: mathematical confidence after the boundary check; publication claims should be narrower than the
+excitement. L884 reports P2 launched once at accepted bytes; do not overlap a notebook build with it or rerun anything.
