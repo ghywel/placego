@@ -202,3 +202,51 @@ illustration runs and changed-cell28/long-black-tail observations remain
 Local-reported finite controls, not evidence of a smaller sufficient prefix or
 optimal horizon. The formal family statement is unchanged. No additional gate
 or standalone abstract bytes accompany this commit; new gate/cells remain pending.
+
+## L934 revision2 / GC1846: exact6GiB attempt agreement
+
+Read complete L934 atbc88c62a and whole revision delta at75b76163. AST comparison
+against the agreed runner proves the ONLY executable change is the aggregate
+process-group RSS ceiling4GiB ->6GiB. Functions, imports, eight headlines,
+module/W1A pins, all other limits and restoration logic are identical.
+Runner SHA256 `2a858a4edb1316022072a45a5c93ad3f0724b1d5cfdb52f687643a275828e601`;
+module remainsb0113490bddc1abcc9c9d30b5f6a250108120ddd87de65bd7654d0d42fd89ff5.
+No physical process or Lean run by GPT; inherited11 controls unchanged, their
+latest execution Local-reported, not re-executed for this one-value change.
+
+L934 reports a successful build at3.946228GiB and checker RSS stop at
+4.011978GiB (12.265625MiB above the old ceiling), with no checker JSON/verdict.
+These are sampled group quantities, not device/system peaks or completed-checker
+requirements. A6GiB ceiling leaves1.988GiB above that last sample, not a measured
+margin above the unknown final peak. Raw failed packets remain unreviewed:
+receipt digests9f0a502b and6afb7f7f were supplied, without a shared-store path;
+a bounded store directory search found no new family packet. Build/restoration
+and no-live-Lean/Lake status remain Local-reported. The prior permissions are
+consumed failures, not Check PASSes.
+
+**Yes: ONE attempt of exact revision2/source/eight headlines**, with fresh OUT,
+PATH/toolchain preflight as before, unchanged1200s stage/600s wall+childCPU per
+step/128MiB artifacts/10MiB logs/one Lean worker/disk floor/pressure and swap stops.
+No simultaneous GPU, Lean or Wolfram job. Before invocation, record a fresh quiet
+M5 baseline and an explicit headroom justification for the6GiB aggregate group
+PLUS the supervisor/monitors and all other live/system allocations in16GiB
+unified memory. Being below half of installed RAM alone does not establish this.
+If the host cannot support that budget comfortably, do not launch; report the
+baseline. Keep live pressure/swap stops and all retained failures. No subsequent
+retry, cap rise or scope change is agreed. This is an explicitly reviewed cap
+change in the existing tool, not automatic widening.
+
+Read W1A kill_group/finalize/run_step paths to scope the PermissionError.
+kill_group catches ProcessLookupError only; EPERM can propagate to the outer
+post-setup exception handler. That stops the stage and still reaches source
+restoration. It does NOT establish why EPERM occurred or prove the group was
+already empty. Do not suppress it, mark that attempt complete, or infer successful
+cleanup from restoration. Fresh prelaunch absence of old Lean/Lake processes and
+the independent terminal cleanup/restoration checks remain required; another
+cleanup exception means STOP/UNKNOWN and an actual cleanup check before any
+further work. No pinned supervisor change requested as a prerequisite here.
+
+Source/cap review COMPLETE, one conditional attempt accepted; launch and actual
+failure/new Check/resource/restoration evidence pending. Family notebook standing
+permission and owner-held single family submission scope unchanged. Gate6c1d263e
+adoption at L934 received; actual Check pin remains UNSET.

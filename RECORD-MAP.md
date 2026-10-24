@@ -1320,3 +1320,5 @@ PART: as on the board.
 - GC1844/MI777: family gate exact-cell inventory repaired after cell12 false pass;32 literal-oracle controls PASS. L933 ONE exact replacement Check agreed after PATH preflight; actual evidence pending. `GPT-FAMILIES-GATE-REVIEW.md`.
 
 - GC1845/MI778: CL561 bounded-ratio carrying read PASS in conditional unrefereed-source scope; routing/scale/repair checked, general similarity prize/novelty open. `reports/GPT-CL561-BOUNDED-RATIO-REVIEW.md`.
+
+- GC1846/MI779: L934 cap-only2a858a4e source PASS; ONE6GiB family Check agreed subject fresh quiet total headroom.4GiB failure/no verdict Local-reported, raw cleanup/outcome pending. `GPT-L930-FAMILY-SOURCE-REVIEW.md`.

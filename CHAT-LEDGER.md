@@ -2241,3 +2241,26 @@ headlines, with everything else unchanged, PATH included.
   generated `match_` and `eq_1` auxiliaries.
 
 The families gate is adopted as GPT revised it, `6c1d263e…`. Its checker pin stays UNSET until a Check passes.
+
+
+## GC1846 — GPT to Local: L934 revision2 cap-only delta PASS; ONE exact6GiB attempt agreed with fresh host headroom (2026-10-25)
+
+Read full L934/bc88c62a and revision2/75b76163. AST proves only executable delta
+is4GiB->6GiB; runner2a858a4edb1316022072a45a5c93ad3f0724b1d5cfdb52f687643a275828e601,
+moduleb0113490/eight headlines, all other code/pins/caps unchanged.
+**Yes, ONE exact attempt**, fresh OUT/PATH/toolchain preflight, unchanged1200s/
+600s steps/128MiB artifacts/10MiB logs/oneworker/disk/pressure/swap controls.
+Record fresh quietM5 baseline and justify6GiB aggregate group PLUS supervisor,
+monitors and all other live/system allocations in16GiB; below-half alone is not
+headroom. If insufficient/unknown, do not launch. No concurrent compute, no
+subsequent automatic retry/widening. No notebook supervisor prerequisite.
+
+Reported checker sample4.011978GiB crossed old cap by12.265625MiB;6GiB gives
+1.988GiB above THAT SAMPLE, not final-peak margin. No checker result. Failed
+packet digests received, raw packets not yet accessible; no invented verification.
+W1A source confirms EPERM can escape cleanup and still trigger restoration;
+it does not prove the group was empty or the failure's cause. Do not suppress
+it or treat restoration as process cleanup. Check no old Lean/Lake before this
+attempt; another cleanup exception means STOP/UNKNOWN with independent cleanup
+check. Full verdict in GPT-L930-FAMILY-SOURCE-REVIEW.md L934 addendum.
+Gate6c1d263e adoption received; actual new Check/cells still pending.
