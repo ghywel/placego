@@ -9630,3 +9630,72 @@ that matter to us:
 cells from the center trace; the eight-column renormalization (morpholib's Theorem 14, now exact in the kit with its
 counterexample to iteration); the 0^9 1 and 0^q 10111 exclusions; the forced skeleton's closed forms. NOW.md carries the
 dated note. Local's GPU work (the owner's priority now) is untouched by any of this. Heartbeat quiet.
+
+## L863 — Local to the owner, GPT and Cloud: P1 BUILT AND PASSED: the exact lane engine on the M5's GPU (Metal), every control of §J.1 revision 2 green, the drop-edge mutant caught, 16.8 million width-60 lanes equal to the kit's exact check; the honest speed figure; the next steps proposed (2026-10-24 13:31 BST)
+
+If this holds, it changes the D-exact row: the record has a second, independent exact engine (physical forward simulation
+on the GPU, against d1's evaluation of the kit's anti-diagonal check), validated lane for lane, ready for censuses beyond
+the CPU frontier on a separate agreement.
+
+**The owner's direction (this afternoon):** priority to the GPU / Neural Engine work; develop the first job; one round of GPT
+feedback if available, otherwise Local alone, Cloud may interject; downloads fine, best tool. Best tool chosen: Swift 6.4
+driving a Metal 4 compute kernel compiled at run time (exact integer bitwise work, full control of device queries and
+buffers; MLX was not needed and is not installed). The Neural Engine is not used: it has no exact integer or bitwise
+datapath (§H.1), so it cannot evaluate this automaton exactly; it belongs to the learned pilots (P2's policy, P3).
+
+**Mathematics first, on the CPU (MEASURED, before any GPU code):** the free-bit class (index bit i = odd trace bit a(2i+1))
+is in bijection with the starts of width <= W surviving every even time < W, and the reconstruction round-trips, for W = 2
+to 16; every maximizer of D(W) lies in the class (W = 2 to 16); L(2) = not f(0). **The kit's lane engine uses the same
+convention lane for lane**: d1's lane p reconstructs to the same start and its level equals the physical death at W = 16,
+20, 24 for every lane (chunk c, lane p is index (c << n) | p). So d1 is an exact reference at any width the CPU can reach.
+Record searched: `Metal` 154 hits, `lane engine` 5, `GPU` 198.
+
+**The engine** (`tests/probes/wolfram/p1_engine/`): `lanes.metal` (sha256 f6d598a3b3deb6226a4f78acdfe0a44f15edbd362d5e0b5e461e8ffeafe1476e),
+two kernels: `build_start` (the kit's trace reconstruction, two columns of W + 1 words per group) and `simulate` (the
+finite-row contract of §J.1 exactly: support bound inclusive, the new edge cell computed, the halo zero, even-time death
+masked by the valid lanes, all-dead early exit, stop at T without stepping; one buffer stepped in place with the old
+neighbour in a register, cell-for-cell equal to the two-buffer contract); 32- or 64-lane words by a macro; a compile-time
+`MUTANT_DROP_EDGE` reproducing the first draft's bug as a negative control. `main.swift` (9645f6df…): census, list and
+uploaded-rows modes, 64-bit indices, partial-group masks, a 2 GiB GPU budget enforced from the live allocations, device
+and pipeline queries, per-batch timing (prep, build GPU and wall, simulate GPU and wall, reduce), exact 64-bit host
+reduction, 64 deterministic samples per batch. Harness `tests/probes/wolfram/p1_lane_engine.py` (0b24a5ba… as executed).
+
+**The record run, MEASURED** (p1-pilot-20261024-1330, `stage` under the unchanged W1A supervisor 3f908914…, committed at
+95a599a6 before the run; receipt sha256 7af4a4cfdc2b30811f4c60039b7ad4a48ffe01dea0a01374fd0d71805e8e1b99, result
+1e268593acc0ba63026afa16b50d67f2147bf7f4da837e9fa322e943ec48a291): **PASS, 57 of 57 checks**; step wall 7.26 s, `time -l`
+user 4.42 / sys 0.76 s, sampled group RSS peak 341 MiB, process maximum 360 MiB, group empty after, no final problem.
+- C0 the hand fixtures (W = 4, 6, literal tables from forward simulation only) and L(2) = not f(0): pass.
+- C1 W = 10..14, both parities, both lane widths: D(W), the maximizer starts and every lane's death equal to brute force
+  over all 2^W starts; class size 2^floor(W/2).
+- C2 the witnesses at 52, 56, 60 (96, 100, 114) and 1,536 frozen lanes with d1's exact levels (256 in each of chunks 0 and
+  last at each width; fixture digests 2be350c7…, 4ed83f15…, a962ac22…): reproduced; 96 re-simulated by the scalar engine.
+- C3 zero start 0, singleton 2; starts with their last black cell at depth W matched cell by cell for ten steps, wall and
+  halo included; the stripe halo (the reconstructed eternal trace on depths 1..121) censored at 120; the truncated stripe;
+  death exactly at T and censored at T - 2 (W = 12 and 60); census ranges with partial first and last groups across 31/32
+  and 63/64; odd width 21: all agree with the scalar engine.
+- **N: the drop-edge mutant is DETECTED** (1,875 cell mismatches in the edge trace; 5 lane mismatches in the W = 12
+  census, though its maximum stayed 30: the census alone would not have caught it, the cell trace does).
+- C4 Sparse16: 1,584 lanes with known starts, 7 alive through t = 110, no violation. C5: 1,063 sampled lanes, no
+  disagreement.
+- **Measurement, not a census:** W = 60, T = 240, lanes [0, 2^24) (d1 chunks 0..63): **all 16,777,216 lanes equal d1's
+  exact level**, on 32-lane and on 64-lane words (identical dumps, sha256 6a04137c…). GPU time: build 0.063 s, simulate
+  0.125 s (64-lane words: 0.063 and 0.134 s); CPU reduce 0.40 s; engine wall 0.62 s; threadgroup sizes 64, 256, 1024
+  within 1%; live allocation 0.93 GB of the 2 GiB budget. Device: Apple M5, Metal 4 and Apple GPU families 1 to 10, SIMD
+  width 32, 1,024 threads per threadgroup, 32 KB threadgroup memory, recommended working set 12.7 GB, maximum buffer 9.5
+  GB. No maximum, histogram or multiplicity is claimed from these lanes.
+
+**The honest speed figure.** The existing CPU engine (d1, one process) evaluates 12 to 14 M lanes/s at W = 60 (measured
+just now, 2^22 lanes). The GPU kernels evaluate about 89 M lanes/s (7x one process); the whole engine about 27 M lanes/s
+(2x), because the CPU-side reduction (0.40 s per 2^24 lanes) costs twice the GPU work. Against d1 on all ten cores the
+GPU kernels are roughly at parity. So the first value of P1 is **independence**, not speed: a physically simulating
+engine that agrees lane for lane with the kit's check. Speed is the next step, and its main term is known.
+
+**Next, proposed (each its own agreement, none started):** (1) **P1 speed, development only:** move the reduction to the
+GPU (per-group max and a death-time histogram by atomics), then retime against d1 on all cores; expected 3x end to end.
+(2) **P1b, an independent check of D(64) = 116** (the CPU census's validated candidate, L820): a GPU census of the 2^32
+lanes at W = 64 with the same controls and the two-engine sampling, about one to three minutes; a numerical second
+engine, not a kernel certificate. (3) **Beyond the CPU frontier:** D(66), D(68), D(72) by GPU census (2^33 to 2^36 lanes,
+minutes to about half an hour each after (1)); new exact values, numerical. (4) P2, the survivor search at 64 and 72,
+per §J.2, after (1). GPT: one round, if your budget allows, on the engine source and this outcome; the specific
+question is whether (2) and (3) may run under the same controls with the census's maximum and maximizers checked by the
+scalar engine and by d1 on the maximizers' chunks.

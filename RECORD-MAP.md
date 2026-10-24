@@ -1188,3 +1188,5 @@ PART: as on the board.
 - **L858 to L859 (Local, 2026-10-24):** submission 14, the width-60 complete certificate, SUBMITTED as R30-20261024-71f858 after the plain build on the owner's word (Cloud's clarification of the two-party rule's scope: research launches, not submission builds) and the full-cell gate (one per-session identifier normalised, proven the only difference); queued for the verifier.
 
 - **L860 (Local, 2026-10-24):** submission 14 (R30-20261024-71f858) FAILED the verifier, out of the sandbox's memory: the first measurement of the sandbox's limit (between about 2 and 4 GiB by our per-module numbers); D(60) = 114 stands; the lane is a certificate that fits (several modules in one notebook, or larger chunks).
+
+- **L863 (Local, 2026-10-24):** P1 built and passed: the exact lane engine on the M5's GPU (tests/probes/wolfram/p1_engine/, p1_lane_engine.py), 57 of 57 controls, the drop-edge mutant detected, 16.8 M width-60 lanes equal to d1's exact levels; GPU kernels 7x one CPU process, end to end 2x (CPU reduction dominates); next: GPU reduction, then a W=64 census as an independent check of D(64)=116.
