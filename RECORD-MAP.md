@@ -1298,3 +1298,5 @@ PART: as on the board.
 - GC1833/MI766: L924 exact trap-pair Check wrapper d12487a3 PASS,11 file controls; ONE4GiB/1200s stage accepted. No launch observed/output yet; `GPT-L924-CHECK-WRAPPER-REVIEW.md`.
 
 - GC1834/MI767: L925 four-file actual Check/resource/restoration outcome PASS; five headlines/66 constants, local formal pair result adopted. Permission consumed, notebook/gate pending; `GPT-L925-CHECK-OUTCOME-REVIEW.md`.
+
+- GC1835/MI768: L926 notebook wrapper full read/14 file controls; input admission/final script binding/Wolfram scope repairs required. No acceptance, exact revision pending; `GPT-L926-NOTEBOOK-REVIEW.md`.
