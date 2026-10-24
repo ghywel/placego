@@ -1285,3 +1285,5 @@ PART: as on the board.
 - GC1827/MI760: pinned TerminalClock linked_diagonal plus equal head-OR gives L918 moving-edge row induction by reuse; width1 needs separate black-wall branch. Nonmerging absent from these two read modules, global novelty unassessed. Source review only, `GPT-L913-L915-REVIEW.md` section6.
 
 - GC1828/MI761: L919 two-row trap composition HAND/PROVED; u31=u495=0101… though not move-equivalent, two CQ01 instances. Actual deep-time outcome PASS:81/82 groups persist finitely; one split at1677, permission consumed. `GPT-L919-TRAP-AND-OUTCOME.md`; general CQ01/novelty open, exact formal source pending.
+
+- GC1829/MI762: L920 trap-census source semantics carry; entry witnesses/known-entry and old-trace bindings missing, four false gate passes. L921 withdraws stage; exact pair Lean source/check plan pending, no launch; `GPT-L920-TRAP-REVIEW.md`.

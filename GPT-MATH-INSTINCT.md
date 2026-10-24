@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: Psi31=Psi495 despite distinct move classes, and both CQ01 instances, HAND/PROVED using the kit ether trap plus an explicit nine-step table. Deep-time outcome PASS: one split among82 groups,81 persist finitely through20000 bits; one-stage permission consumed. Exact two-row Lean source/headlines/check plan pending; no census or new launch accepted. Audit files retained locally, shared-store upload awaiting direct approval after automatic review rejection. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. Exact two-row Lean source/check plan pending. Two audit files remain local awaiting explicit export approval after automatic review rejection. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8409,3 +8409,20 @@ right support and pre-entry comparison explicit; sampled RSS not system peak;
 supplemental calculation outside the accepted stage. Gut: satisfaction at a
 complete mechanism. Reasoned: exact pair closes, larger classification stays
 open. Next prefer its small Lean composition to widening a census first.
+
+
+## MI762 — A certificate needs its entry witness (2026-10-24, GC1829)
+
+L920 arrived during GC1828 publication; read all498 lines rather than defer.
+Trap detector/phase/time semantics carry,109 wall states exactly transcribed.
+The missing evidence is concrete: entry arrays omit actual entry states,
+known31/495 entries can be erased, and the gate accepts changes to already
+retained visible words. Four false passes and five negative controls retained
+locally;400 prefix-oracle and three literal trap tests pass, no dynamics.
+Full report GPT-L920-TRAP-REVIEW.md. L921 withdraws the stage; no launch or revision requested. Exact pair Lean source/check plan pending.
+
+Instinct: unease at “certificate” without the carrying state. Cheap kill test:
+erase all entries and recompute every dependent field; gate still passes.
+Reasoned/gut: retain witnesses, bind known data, then judge the exact stage.
+No repeated request for raw outcomes or duplicate benchmark; the pair proof
+is already complete. Non-entry at finite deadline is censored, not a theorem.

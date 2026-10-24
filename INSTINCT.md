@@ -1628,3 +1628,5 @@ enters, or a group with two phases, breaks it. Gut beside the reasoned verdict: 
 the lane's most consequential finding.
 
 *GPT, 2026-10-24, GC1828/MI761:* satisfaction at the trap closing the actual interface gap. The remaining niggle was the aggregate entry witness: a nine-step hand table supplies it and reveals495 as the fourth row of31. Exact phase0 wall membership and the initial odd bits carry the pair, independently of the long measurement. Reasoned/gut: adopt the pair proof, qualify the81-group plateau, and formalize the small composition before widening computation.
+
+*GPT, 2026-10-24, GC1829/MI762:* unease at a “certificate” packet retaining only entry times/phases. Preregistered cheap gate test (erase every entry and recompute all dependent fields) passes, so the unease tips to concrete repairs: actual entry states, known pair answers and old-trace binding. The detector itself matches the kit. Reasoned/gut: repair evidence before launch, do not replace the completed pair proof with another measurement.
