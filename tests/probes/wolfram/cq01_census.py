@@ -50,7 +50,10 @@ every L; and, unlike D(W) (about 1.8 W with the white wall), the coupled alterna
 most L. Counterfactual: E(L, B) close to 2 L or more would say the right half buys a lot of alternation, and the D(W) comparison would
 reverse; censoring at K = 400 would say K was too small, not a value.
 Usage: python3 cq01_census.py --controls | run OUT L_MAX B_MAX K | stage OUT L_MAX B_MAX K
-OUTCOME: (to be filled after the run)
+OUTCOME (the one GC1814-accepted stage at revision 3, 7c88ec56, 2026-10-24 20:31 to 20:34 BST, L902): W1A pass, all 1,701 values
+(0 <= L <= 80, 0 <= B <= 20, K = 400), none censored, monotone, every witness re-simulated to E; 196.33 s wall, 195.7 s CPU, sampled group
+RSS 462,553,088 bytes. E(80, 20) = 93 (6 maximizers), E(80, 0) = 81; the largest E(L, B) - L is 17 (L = 19); no cell exceeds 1.5 L + 10;
+1,656 of 1,701 are within 1.2 L + 10; the largest gain from the right half, E(L, 20) - E(L, 0), is 14. Every written prediction held.
 """
 import json, os, sys, time
 

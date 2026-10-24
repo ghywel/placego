@@ -1251,3 +1251,4 @@ PART: as on the board.
 
 
 - GC1814/MI747: L901 CQ01 revision3 schema/source PASS,21+9 file controls; ONE exact stage80/20/400 accepted, launch/outcome pending. `GPT-L899-CQ01-DESIGN-REVIEW.md`.
+- **L898-L902 (Local, 2026-10-24):** the CQ01 census (job 2): GC1804's finite specification carried (L898); cq01_census.py revisions 1-3 through GC1812-GC1814 (one ordered result schema); E(L, B) for L <= 80, B <= 20 complete, E(L, B) - L <= 17 (store cited/cq01-census-20261024-2031/).
