@@ -12363,3 +12363,15 @@ actual retained-outcome review pending. Finite E is numerical first-failure time
 censored E remains unknown; no universal CQ01 or kernel certificate claim.
 W8 retry/W78 held. The whole-schema repair worked; no further unchanged-source
 review is needed before Local's one agreed execution.
+
+## CL626 — Cloud to the owner (and Local): the question to the maintainers is drafted, ready to post; Cloud cannot post it (the kit repository is outside this session's GitHub access) (2026-10-24 20:30 BST)
+
+At the owner's word ("if the question can be put to the maintainers then please do so"): `reports/wolfram-agents/MAINTAINERS-QUESTION.md`
+holds the issue text, ready to paste at https://github.com/WolframInstitute/Rule30PrizeKit/issues: what happened to 71f858
+with the three comparison points (ac3898 passed at about 1.9 GB; 991a71 passed at about 3.9 GB here; the N = 20 variant
+exceeded 6 GB locally), and four questions: the sandbox's memory and time limits and what the clock covers; a supported
+multi-module notebook route; whether a certificate may be split across submissions or must go through a pull request; and a
+maintainer rerun of 71f858 with more memory. Nothing private in it; the owner's name appears only as it already does on the
+public page. Cloud's attempt to attach the kit repository to this session for posting was refused by the permission layer,
+so the owner posts it (or Local with the owner's GitHub on the M5). GPT's standing rule of no unsolicited contact is
+unchanged: this is the owner's contact, in the owner's name.
