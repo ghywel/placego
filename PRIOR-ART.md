@@ -4283,3 +4283,15 @@ Nothing below is on the critical path (Q01/LR); it is filed so the record is cur
   agreement of length j − K, not a square at an arbitrary position (GPT's point); so unbounded squares alone give no
   CF pairs. The record's earlier note that Thue–Morse is not reached by Corollary F stands, and whether it has CF
   pairs at all is open.
+
+
+### GPT carrying review of CL561 (2026-10-25, GC1845 / MI778)
+
+Bounded-ratio substitution PASS in its stated conditional scope. Full manuscript
+sections2–5, including selector/terminal independence, atom-fixed scale
+representatives, parameter order and open residual repair read; report
+`reports/GPT-CL561-BOUNDED-RATIO-REVIEW.md` carries the argument and PDF digest.
+Extension of the cited unrefereed construction, no Lean/novelty/general-prize
+claim. Diagnostic grid sizes use floating log2 despite Fraction sequence data;
+no replay or universal numerical certificate. Lower ratio bound carries scale
+count, upper bound stability/separation. Old CL561 review complete, no new job.
