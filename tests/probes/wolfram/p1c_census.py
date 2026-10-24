@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""P1c, revision 1 (Local, 2026-10-24, L866): GPU censuses beyond the CPU frontier, W = 66, 68, 70, 72, each giving the exact
+"""P1c, revision 2 (Local, 2026-10-24, L870; revision 1 ran W66..W72, L866/L868; revision 2 applies GPT's GC1780 corrections for
+reuse: JSON invariants per call, the deep-prefix statistic descriptive only, a gate mismatch packet kept before the dump is deleted): GPU censuses beyond the CPU frontier, W = 66, 68, 70, 72, each giving the exact
 D(W) numerically (complete coverage of the class, every maximizer validated), with no known answer to compare against.
 The owner's word (2026-10-24 afternoon): proceed, Local solo, without GPT or Cloud. P1b's runner (GC1778's six requirements)
 generalized; the known-answer checks are replaced by checks that need no known answer. Nothing runs on import.
@@ -26,8 +27,8 @@ RSS 6 GiB; pressure; swap 256 MiB; artifacts 100 MiB), each engine call at most 
 
 Predictions (written before the runs; the table so far 52: 96, 56: 100, 60: 114, 64: 116, D(W)/W between 1.73 and 1.90 for
 W = 20..64): D(66) in [116, 126]; D(68) in [D(66), 130]; D(70) in [D(68), 134]; D(72) in [D(70), 138]; no censoring at 4W;
-the fraction dying at W within 0.001 of one half at every width; the maximizers of each width share one deep free-bit prefix
-(differ only in their shallowest free bits), as at 64; GPU time per lane within 20% of W = 64's 12.9 ns, so about 2, 4.5, 9
+the fraction dying at W within 0.001 of one half at every width; (revision 2: the shared-prefix length is reported descriptively,
+not scored, GC1780); GPU time per lane within 20% of W = 64's 12.9 ns, so about 2, 4.5, 9
 and 19 minutes. Counterfactual: a maximum below the previous width's, a carried witness not at its death, or any
 two-engine disagreement is an engine fault, and the run stops.
 
@@ -82,6 +83,23 @@ def run(W, out, prev_path=None):
     eng = P.Engine(out)
     R['build'] = eng.build(); save()
 
+    def invariants(res, lo, hi):
+        """GC1780 item 4: cheap consistency of the driver's JSON, independent of how it was produced."""
+        h = {int(k): int(v) for k, v in res['histogram'].items()}
+        probs = []
+        if any(v < 0 for v in h.values()) or int(res['censored']) < 0: probs.append('negative count')
+        if any(k % 2 or k < 0 or k > T for k in h): probs.append('histogram level odd or out of [0, T]')
+        populated = [k for k, v in h.items() if v > 0]
+        mx = max(populated) if populated else -1
+        if res['max'] != mx: probs.append('max %s != largest populated level %s' % (res['max'], mx))
+        if mx >= 0 and int(res['max_count']) != h[mx]: probs.append('max_count != histogram[max]')
+        idx = [int(n) for n in res['maximizers']]
+        if len(set(idx)) != len(idx) or any(not (lo <= n < hi) for n in idx): probs.append('maximizers not distinct or out of range')
+        for b in res['batches']:
+            bl = int(b['first_group_base']); sm = [int(n) for n, _ in b['samples']]
+            if len(set(sm)) != len(sm) or any(not (bl <= n < bl + int(b['lanes'])) for n in sm): probs.append('batch %s samples not distinct or outside the batch' % b['batch'])
+        return probs
+
     def validate_call(res, lo, hi, nbatches):
         hsum = sum(int(v) for v in res['histogram'].values()) + int(res['censored'])
         ok_fields = (res['status'] == 'ok' and res['mode'] == 'census' and res['W'] == W and res['T'] == T and res['lane_bits'] == LB
@@ -103,10 +121,16 @@ def run(W, out, prev_path=None):
     dp = os.path.join(out, 'gate_dump.u16')
     res = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': T, 'lo': '0', 'hi': str(BATCH_LANES), 'G_max': G, 'deaths_out': dp}, 'gate_W%d' % W)
     ok_fields, contiguous, bad, nsamp = validate_call(res, 0, BATCH_LANES, 1)
-    dump = P.read_dump(dp); dd = P.digest(dp); os.remove(dp)
+    dump = P.read_dump(dp); dd = P.digest(dp)
     t_ref = time.monotonic()
     lv = np.concatenate([P.d1_levels(W, c, T + 1) for c in range(64)])
     agree = int((dump == lv).sum())
+    if agree != BATCH_LANES:      # GC1780 item 3: keep a diagnostic packet and the dump before anything is deleted
+        bad_idx = np.nonzero(dump != lv)[0][:1000]
+        json.dump([{'index': int(i), 'start': hex(P.recon(W, int(i))), 'gpu': int(dump[i]), 'd1': int(lv[i])} for i in bad_idx],
+                  open(os.path.join(out, 'gate_mismatches.json'), 'w'))
+    else:
+        os.remove(dp)
     R['gate'] = {'lanes': int(len(dump)), 'agree_with_d1': agree, 'dump_sha256': dd, 'd1_reference_s': round(time.monotonic() - t_ref, 2), 'samples': nsamp}
     check('gate_fields', ok_fields and contiguous)
     check('gate_two_engine', not bad, disagreements=bad[:10])
@@ -141,6 +165,8 @@ def run(W, out, prev_path=None):
                            'censored': int(res['censored']), 'maximizers': res['maximizers'], 'maximizers_truncated': res['maximizers_truncated'],
                            'samples': nsamp, 'gpu_s': round(gpu, 3), 'engine_wall_s': round(res['wall_total_s'], 3), 'process_wall_s': round(res['process_wall_s'], 3)})
         check('call%d_fields' % j, ok_fields and contiguous)
+        inv = invariants(res, lo, hi)
+        check('call%d_invariants' % j, not inv, problems=inv[:5])
         check('call%d_two_engine' % j, not bad, disagreements=bad[:10])
         for k, v in res['histogram'].items():
             hist[int(k)] = hist.get(int(k), 0) + int(v)
@@ -175,7 +201,7 @@ def run(W, out, prev_path=None):
         lvc = P.d1_levels(W, c, M + 1)
         d1_at_max += [(c << 18) | int(p) for p in np.nonzero(lvc == M)[0]]
     check('d1_on_maximizer_chunks', sorted(d1_at_max) == sorted(mx), chunks=chunks, d1_lanes_at_max=len(d1_at_max))
-    # the deep-prefix observation (reported, not a check): the number of shallowest free bits in which the maximizers vary
+    # the deep-prefix observation, DESCRIPTIVE only (GC1780 item 2: any finite set agrees above some k; no threshold was predeclared)
     k = 0
     while len({n >> k for n in mx}) > 1:
         k += 1
@@ -183,7 +209,7 @@ def run(W, out, prev_path=None):
     lo_p, hi_p = PREDICTED[W]
     R['predictions'] = {'max_in_range': (M >= (lo_p if lo_p is not None else prev_max)) and M <= hi_p, 'predicted_range': [lo_p if lo_p is not None else prev_max, hi_p],
                         'no_censoring': censored == 0, 'fraction_at_W_within_0.001_of_half': abs(hist.get(W, 0) / nlanes - 0.5) <= 0.001,
-                        'maximizers_share_a_deep_prefix': True, 'maximizers_vary_in_lowest_free_bits': k,
+                        'maximizers_vary_in_lowest_free_bits_DESCRIPTIVE': k, 'common_prefix_free_bits_DESCRIPTIVE': W // 2 - k,
                         'gpu_ns_per_lane': round(gpu_total / nlanes * 1e9, 2), 'gpu_ns_per_lane_within_20pct_of_12.9': abs(gpu_total / nlanes * 1e9 - 12.9) <= 0.2 * 12.9}
     R['gpu_total_s'] = round(gpu_total, 2); R['engine_calls'] = len(eng.log)
     R['complete'] = True; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); save()

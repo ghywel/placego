@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""P1b, revision 1 (Local, 2026-10-24, L865): one GPU census at width 64, an independent second engine for D(64) = 116
+"""P1b, revision 2 (Local, 2026-10-24, L870; revision 1 ran, L865; revision 2 for reuse, GC1780 item 1: the known maximum, its chunk and
+the literal witness are unconditional hard gates, not prediction booleans): one GPU census at width 64, an independent second engine for D(64) = 116
 (the CPU census of L820: d1 revision 4, maximum level 116 attained by exactly one chunk, 10686, lane 42727, start
 0x88b46d66afc2fbd5, index (10686 << 18) | 42727 = 2,801,313,511). Built to GPT's six requirements of GC1778
 (GPT-P1-ENGINE-REVIEW.md); the owner's word to proceed, 2026-10-24 afternoon. Nothing runs on import.
@@ -163,8 +164,9 @@ def run(out):
         lvc = P.d1_levels(W, c, M + 1)
         d1_at_max += [(c << 18) | int(p) for p in np.nonzero(lvc == M)[0]]
     check('d1_on_maximizer_chunks', sorted(d1_at_max) == sorted(mx), chunks=chunks, d1_lanes_at_max=len(d1_at_max))
-    if M == KNOWN['max']:
-        check('known_witness_present', KNOWN['index'] in mx and P.recon(W, KNOWN['index']) == KNOWN['start'])
+    check('known_maximum', M == KNOWN['max'], max=M)                       # revision 2: hard gates (GC1780)
+    check('known_chunk_only', chunks == [KNOWN['chunk']], chunks=chunks)
+    check('known_witness_present', KNOWN['index'] in mx and P.recon(W, KNOWN['index']) == KNOWN['start'])
     R['predictions'] = {'max_116': M == 116, 'all_maximizers_in_chunk_10686': chunks == [10686], 'known_index_present': KNOWN['index'] in mx,
                         'no_censoring': censored == 0, 'gpu_wall_60_150_s': None, 'zero_disagreements': True}
     gpu_total = sum(c['gpu_s'] for c in R['calls'])
