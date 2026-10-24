@@ -1247,3 +1247,66 @@ against the public kit (3eca23c):
 
 The source, exact hashes and a capped check plan come to GPT before any accepted Check or submission. Development compiles will be small,
 capped and disclosed.
+
+
+## L922 — Local to GPT (REVIEW-REQUEST): the pair in Lean: submission source trap-pair, for source review and acceptance of a Check (2026-10-24 23:18 BST)
+
+**If this holds, it changes the CQ01 row:**
+- the two CQ01 instances, the Psi collision and the non-move statement would become kernel-checked theorems against the kit;
+- it would be a Rule 30 Prize submission, claim partial on problem 1, under the owner's standing permission.
+
+**The source:** `reports/wolfram-agents/submissions/trap-pair/Rule30Submission.lean`, commit ae6764e2, sha256
+27f799f47eecf22f138967ac27ccbc14ab0dffb20f55f5dc29be800aa6b44fd6, 183 lines, 9,141 bytes, no double quote or backslash.
+- **Imports:** `Rule30PrizeKit` and `Rule30PeriodTwoSideways`.
+- **Developed against** the pipeline kit cc1e0e0, the copy submissions 16-18 were verified against today. The public kit 3eca23c has the
+  same definitions under its new module syntax.
+
+**Proposed headlines:**
+- `CQ01_R31 : ¬ FinSupp (Psi R31)` and `CQ01_R495 : ¬ FinSupp (Psi R495)`. These go through the kit's
+  `not_finSupp_Psi_of_eventuallyPeriodic`.
+- `Psi_eq : Psi R31 = Psi R495`.
+- `u_R31 : ∀ q, u R31 q = (q % 2 == 1)`. u_R495 is the same, and is not a headline.
+- `not_move_equivalent : ¬ Relation.EqvGen Move cells31.reverse cells495.reverse`.
+
+**The proofs:**
+- **Right halves:** `R31 = ofCells [1,1,1,1,1]` and `R495 = ofCells [1,1,1,1,0,1,1,1,1]`.
+- **The wall:** `altCol t = ether 3 (t + 3)`, by cases on t % 4.
+- **Trap entry,** decided: at t = 9 for R31 and t = 5 for R495, columns 1..6 equal `ether (3 + p) (t + 3)`, and
+  `((t + 3) % 4, rowOf (drv altCol R) t 6 13) ∈ wallStates`.
+- **Then the kit's lemmas:** `trap_invariant (drv_isR30 altCol R) 3 3 6 t1` gives column 1 = `ether 4 (t + 3)` from t1 on. The parity
+  lemma `ether 4 (2 q + 4) = (q % 2 == 1)` and decided early values give the closed form for every q. Periodicity is P = 2, and
+  `not_finSupp_Psi_of_eventuallyPeriodic` finishes.
+- **The non-move statement:**
+  - **The move:** S works on cell lists reversed, so the head is the last black cell: `1 0 r -> 1 1 0 r`, `1 1 r -> 1 0 1 r`, and
+    `[1] -> [1, 0]` at the black wall. This is L910's move, and the inverse of the kit's terminal rewrites.
+  - **The root:** its inverse P undoes exactly those three shapes, so `P (S a) = some a`. The root of the chain (iterate P, with fuel
+    the length) is therefore invariant under `Move a b := Valid a ∧ b = S a`, and so under `EqvGen Move`.
+  - **The conclusion:** the two roots are the lists themselves, and they differ, by decide. This formalizes GC1821/GC1825's path
+    structure as far as this statement needs, which answers GC1829's point.
+  - **A check of mine:** the S-chain from [1] evaluates to L910's B' = 5 class, 10000, 01000, 01100, 01010 and 01011, read
+    right-to-left.
+
+**Novelty, within the kit catalog at 3eca23c:**
+- `not_finSupp_Psi_of_eventuallyPeriodic` is stated but used by no other module.
+- No explicit nonempty R is shown to satisfy it, and CQ01Empty is open.
+- The kit's only "absorbed" result is period 3 (t001).
+
+So these appear to be the first explicit uses of the absorption route in the catalog. Outside the catalog, novelty is UNASSESSED.
+
+**Disclosed development compiles:** four `lake env lean` runs on drafts in the pipeline kit, each under a 300 s CPU limit and under 20 s
+wall. `#print axioms` shows propext, Classical.choice and Quot.sound on the CQ01, Psi and u headlines, and propext alone on
+not_move_equivalent.
+
+**Proposed Check plan,** after acceptance of the exact hash, all in the pipeline kit, one process at a time, 600 s CPU each, logs retained:
+- **(1)** back up the kit root's Rule30Submission.lean and copy in this file, checking its sha256;
+- **(2)** `lake build Rule30Submission`;
+- **(3)** `lake env lean --run Check.lean Rule30Submission --claim partial`, with the five `--headline` arguments, into check.json;
+- **(4)** restore the backup.
+
+The essay, abstract, notebook and its gate follow after a passing check, for their own reads before any submission.
+
+**Record searched:** the kit catalog was searched directly for CQ01, absorption, trap_invariant and the absorption-route theorem. No new
+record_find run.
+
+**REVIEW-REQUEST:** source review of trap-pair/Rule30Submission.lean 27f799f4…, and accept or decline the Check plan above at that exact
+hash.
