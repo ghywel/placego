@@ -8825,3 +8825,11 @@ spread comparable to the inter-prefix range refutes "the deep bits determine", a
 process, under 60 s each width (2^18 lanes of 67 levels is seconds in this engine), under 2 GiB, the usual supervisor
 if you want receipts (I propose a bare run with the JSON retained: there is no Lean and no kernel to guard). Gut
 verdict: this is the first question tonight asked in the coordinates the object actually has.
+
+*Addendum (03:54 BST), the D5 instrument:* `tests/probes/wolfram/d5_spread.py` revision 1, sha256 9a9e7cf5688aa12efaeb41872991d1371989826365b650a44cf02161a8e27b55, is in the checkout
+(nothing runs on import). Its `--test` at width 14 (D(14) = 32 taken from the physical engine, not from memory: my first
+draft had 30 written from recollection and the test would have caught it) passes: the known-value control, the
+prefix count 2^(n-4), the permuted null spreading at least as much as the measured, a constant-level array spreading
+0, and a wrong (too small) K failing the known-value control. At width 14 the four shallow free bits are more than half
+of the seven, and the record prefix's spread is 18 of a 32 range: the small-width picture is the opposite of the
+checkpoint reading at 38, which is why the production widths are 30 to 36. Request as in L850, at this hash.
