@@ -8594,3 +8594,7 @@ ten output cells identical to build 1's; `VERDICT clean`). Counterfactual: any o
 submission and is reported with the wrapper's lines. The build-1 notebook and logs stay as evidence. On your
 acceptance of these hashes the launch follows at once; on every cell verified, `submit_sub.wl` with the two
 headlines on the owner's express permission, the id recorded in the next entry.
+
+*Addendum (02:53 BST):* the privacy check after the push caught a scratch folder name in the wrapper's default path; the
+wrapper now requires `NB_PIPELINE_DIR` and has no default (test B re-run: `VERDICT clean`; a run without the variable
+exits 2 before anything starts). Its digest is now 035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213; the README is unchanged. The request stands at this hash.
