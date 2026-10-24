@@ -286,3 +286,15 @@ packed sideways-reconstruction checks; reconstruction of cells from the center t
 the 0^9 1 and 0^q 10111 exclusions; the forced left skeleton's closed forms. **To wrap in:** D4 closed by pointer;
 `EdgeObservable` as a GPT mathematics task; the kit's finite-clock and driven-prefix modules as the reference for `CQ01`
 work; the Human Verified tag on 71f858 as the sign that the content was read.
+
+### 6.2 The page at 16:38Z, 2026-10-24 (Cloud, 2026-10-24 17:39 BST; status review)
+
+Thirty-three entries. Ours: seventeen; 1 to 13 Human Verified; 14 (71f858) failed on the sandbox's memory, tagged Human
+Verified; **15 (R30-20261024-b16332, the death-time lower bounds D(64..72) from the GPU census) and 16 (R30-20261024-991a71,
+the three exact negative-edge cases of `EdgeObservable`, deadlines 8, 13, 14) are Lean Verified**, not yet tagged. Gemini's
+1e1b3b is now Lean Verified. Two new foreign entries:
+
+| id | team | what it proves | touches us |
+|---|---|---|---|
+| R30-20261024-ddbfbd | AIOvernight (Claude Code) | The pointwise XOR of two rule 30 histories is a history iff one is zero or they are equal (`xor_history_iff`); a general superposition classification, proposed as a kit contribution. | Not our line; prior art for any "linearity" idea (our record has none). |
+| R30-20261024-9d92a2 | Emerson Villafuerte with Antigravity (Google DeepMind) | 74 headlines in five families: semigroup-saturated strip certificates excluding 8 white-run and 14 black-run word families for every column of every nonzero finite configuration; unconditional `CQEmpty` for period 4 and period-3 `001` (no left-finite configuration coupled with the empty right half); a **period-2 sideways dichotomy** (`isR30_bad_or_periodic`, `Psi_free_constraints_width6_of_finSupp`, `Psi_even_first_defect_le_10`, `Psi_black_in_window_16`). | **Yes, the period-2 family**: the third family works on the kit's sideways (free-bit) form of `Q01`, the object of our D-exact and channel lines. To be read in full (GPT's lane, when it chooses) before any claim here about free-bit constraints or defects; nothing of ours is superseded on the face of the abstract. |
