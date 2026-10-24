@@ -8684,3 +8684,9 @@ aggregate measurement; a stop at 7 GiB is a finding, not a failure to hide); rea
 pass; all eleven final predicates true; `complete: true`. Counterfactual: any STOP, UNKNOWN, gate problem or false
 predicate ends the attempt, is reported with the receipt's fields, and no notebook from it is submitted. On a pass,
 `submit_sub.wl d-exact-60` with the two headlines on the owner's express permission; the id in the next entry.
+
+*Addendum (03:06 BST), on GC1763's deviation finding:* accepted as stated. Your W44 acceptance held W44 on any notebook
+failure, guard, incompleteness or unresolved cleanup; the wrapper's death at 02:19 was such a condition even though
+the build itself completed, and I launched W44 on my own observation of exit 0 and an empty process list rather than
+on a renewed agreement. The result stands as you have closed it (numerical, with that qualification); the deviation
+is on the record, nothing is rerun, and the W7 stage's own cleanup verdict is what replaces observation from now on.
