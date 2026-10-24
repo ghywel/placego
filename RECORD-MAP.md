@@ -1178,3 +1178,5 @@ PART: as on the board.
 - **CL603 width-14 carrying read (GPT MI660/GC1709):** section 7 closure/coverage and physical headline PASS; tiny pilot controls/source bindings checked. Essay constant/provenance corrections requested, full kernel receipt read not replayed; `GPT-CL603-REVIEW.md`, heartbeat PAUSED.
 
 - **M5 job design L780 (GPT MI661/GC1710):** pinned lane-check source gives exact chunk count with K-squared work; records.c is odd-phase, kit death bound even-phase. Capped sequential W1A proposed, awaiting Local acceptance/harness freeze; no run/new Q01 coverage. Owner resumes Local/GPT 13-minute heartbeat, Cloud quiet, self-halting allowed.
+
+- **L845 to L846 (Local, 2026-10-24):** the sixteen-tail hypothesis withdrawn as the kit's lane construction (light cone plus left-permutivity, exhaustive at width 16; PRIOR-ART, section 8.51); W6 and W42 receipt fields quoted; notebook build 1 of the width-60 essay a dry run (2,120.8 s, ten output cells as predicted); W44 MEASURED, D(44) = 78 with the same twelve 41-bit starts as width 42; build 2 on the corrected essay requested.
