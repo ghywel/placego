@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""CQ01 census, revision 2 (Local, 2026-10-24, L900; GPT's GC1812: the four mutants run inside the stage and are required; the final
+"""CQ01 census, revision 3 (Local, 2026-10-24, L901; GPT's GC1813 trajectory check: one explicit schema, validate_result, checked in the order
+types, exact key sets, domains, cross-field bindings, arithmetic, completion, inside one fail-closed matcher; a valid full synthetic packet
+and one negative fixture per obligation, 21 gate controls with GC1812's and GC1813's demonstrated false acceptances). Revision 2 (Local, 2026-10-24, L900; GPT's GC1812: the four mutants run inside the stage and are required; the final
 gate binds the source digest, scope, exact controls, the mutation report, one row per grid point, finite L < E <= K with zero censoring,
 maximizers, witnesses and recomputed monotonicity, on bounded result bytes; K > L_MAX required; a censored row has E unknown (E > K) and
 only a max_observed_death; GC1812's false-acceptance packets are gate controls). Revision 1 (Local, 2026-10-24, L899; CL624 item 4, job 2; GPT's GC1804 finite specification, Local's carrying read L898).
@@ -275,80 +277,140 @@ def run(out, L_MAX, B_MAX, K):
 
 
 MAX_RESULT_BYTES = 64 << 20
+ROW_KEYS = {'L', 'B', 'censored', 'E', 'maximizers', 'min_lane', 'witness_right', 'witness_left'}
+CONTROL_KEYS = {'base', 'base_all_pass', 'ok'} | set(MUTANTS) | {m + '_caught' for m in MUTANTS}
+TOP_KEYS = {'started', 'this_sha256', 'scope', 'rows', 'complete', 'elapsed_s', 'controls', 'gate_controls', 'lane_pass_s', 'censored_total',
+            'witness_resim', 'monotone_in_L_and_B', 'finished'}
+
+
+def validate_result(d, src_sha, L_MAX, B_MAX, K):
+    """One explicit schema (GC1813), checked in order: types, exact key sets, domains, cross-field bindings, arithmetic, completion.
+    Returns the first failed obligation as a string, or None. Never raises: the caller wraps it too."""
+    isint = lambda x: type(x) is int
+    isbool = lambda x: type(x) is bool
+    # 1. types
+    if not isinstance(d, dict): return 'types: result not an object'
+    for k, typ in (('this_sha256', str), ('scope', dict), ('rows', list), ('controls', dict), ('gate_controls', dict), ('witness_resim', dict),
+                   ('complete', bool), ('censored_total', int), ('lane_pass_s', dict), ('monotone_in_L_and_B', bool)):
+        if type(d.get(k)) is not typ: return 'types: %s' % k
+    if not all(isinstance(r, dict) for r in d['rows']): return 'types: a row is not an object'
+    c = d['controls']
+    if not isinstance(c.get('base'), dict) or not all(isinstance(c.get(m), dict) for m in MUTANTS): return 'types: control reports'
+    # 2. exact key sets
+    if set(d) != TOP_KEYS: return 'keys: top level %s' % sorted(set(d) ^ TOP_KEYS)
+    if set(d['scope']) != {'L_MAX', 'B_MAX', 'K'}: return 'keys: scope'
+    if set(c) != CONTROL_KEYS: return 'keys: controls'
+    if set(c['base']) != set(BASE_KEYS) or not all(set(c[m]) == set(BASE_KEYS) for m in MUTANTS): return 'keys: base or mutant reports'
+    if set(d['gate_controls']) != set(GATE_KEYS): return 'keys: gate controls'
+    if not all(set(r) == ROW_KEYS for r in d['rows']): return 'keys: a row'
+    # 3. domains
+    if d['this_sha256'] != src_sha: return 'domains: source digest'
+    if d['scope'] != {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}: return 'domains: scope'
+    if not all(isbool(v) for v in list(c['base'].values()) + [x for m in MUTANTS for x in c[m].values()] + [c[m + '_caught'] for m in MUTANTS] + [c['base_all_pass'], c['ok']]):
+        return 'domains: control values not Boolean'
+    if not all(v is True for v in d['gate_controls'].values()): return 'domains: a gate control is not true'
+    for r in d['rows']:
+        L, B, E = r['L'], r['B'], r['E']
+        if not (isint(L) and isint(B) and 0 <= L <= L_MAX and 0 <= B <= B_MAX): return 'domains: row coordinates'
+        if not (isint(E) and L < E <= K and r['censored'] == 0 and isint(r['censored'])): return 'domains: row (%d, %d) E or censoring' % (L, B)
+        if not (isint(r['maximizers']) and 1 <= r['maximizers'] <= (1 << B)): return 'domains: row (%d, %d) maximizers' % (L, B)
+        if not (isint(r['min_lane']) and 0 <= r['min_lane'] < (1 << B)): return 'domains: row (%d, %d) min_lane' % (L, B)
+        wl, wr = r['witness_left'], r['witness_right']
+        if not (isinstance(wl, list) and isinstance(wr, list) and len(wl) == L and len(wr) == B and all(x in (0, 1) and isint(x) for x in wl + wr)):
+            return 'domains: row (%d, %d) witness' % (L, B)
+    # 4. cross-field bindings
+    for r in d['rows']:
+        if r['witness_right'] != [(r['min_lane'] >> j) & 1 for j in range(r['B'])]: return 'bindings: row (%d, %d) witness_right vs min_lane' % (r['L'], r['B'])
+    if not all(c['base'][k] is True for k in BASE_KEYS) or c['base_all_pass'] is not True: return 'bindings: base controls'
+    for m in MUTANTS:
+        recomputed = not all(c[m][k] for k in BASE_KEYS)
+        if c[m + '_caught'] is not True or recomputed is not True: return 'bindings: mutant %s not caught by its own outcomes' % m
+    if c['ok'] is not True: return 'bindings: controls ok flag'
+    # 5. arithmetic
+    keys = [(r['L'], r['B']) for r in d['rows']]
+    want = {(L, B) for L in range(L_MAX + 1) for B in range(B_MAX + 1)}
+    if len(keys) != len(set(keys)) or set(keys) != want: return 'arithmetic: grid coverage'
+    tab = {(r['L'], r['B']): r['E'] for r in d['rows']}
+    if not all((L == 0 or tab[(L - 1, B)] <= tab[(L, B)]) and (B == 0 or tab[(L, B - 1)] <= tab[(L, B)]) for (L, B) in want): return 'arithmetic: monotonicity'
+    ws = d['witness_resim']
+    if set(ws) != {str(B) for B in range(B_MAX + 1)} or not all(ws[str(B)] == tab[(L_MAX, B)] for B in range(B_MAX + 1)): return 'arithmetic: witness re-simulation'
+    if d['censored_total'] != 0: return 'arithmetic: censored total'
+    if d['monotone_in_L_and_B'] is not True: return 'arithmetic: monotone flag'
+    # 6. completion
+    if d['complete'] is not True: return 'completion: complete flag'
+    return None
 
 
 def make_matcher(result_path, src_sha, L_MAX, B_MAX, K):
-    """The final gate (GC1812): the exact contract, checked structurally on bounded result bytes."""
-    def check(d):
-        probs = []
-        if d.get('this_sha256') != src_sha: probs.append('source digest')
-        if d.get('scope') != {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}: probs.append('scope')
-        c = d.get('controls') or {}
-        base = c.get('base') or {}
-        if sorted(base) != sorted(BASE_KEYS) or not all(base.get(k) is True for k in BASE_KEYS): probs.append('base controls')
-        if not all(isinstance(c.get(m), dict) and c.get(m + '_caught') is True for m in MUTANTS): probs.append('mutation report')
-        gc = d.get('gate_controls') or {}
-        if not gc or not all(v is True for v in gc.values()): probs.append('gate controls')
-        rows = d.get('rows') if isinstance(d.get('rows'), list) else []
-        keys = [(r.get('L'), r.get('B')) for r in rows]
-        want = [(L, B) for B in range(B_MAX + 1) for L in range(L_MAX + 1)]
-        if sorted(keys) != sorted(want) or len(set(keys)) != len(keys): probs.append('grid rows')
-        tab = {}
-        for r in rows:
-            E, L, B = r.get('E'), r.get('L'), r.get('B')
-            ok = (type(E) is int and type(L) is int and type(B) is int and L < E <= K and r.get('censored') == 0
-                  and type(r.get('maximizers')) is int and r['maximizers'] >= 1 and type(r.get('min_lane')) is int and 0 <= r['min_lane'] < (1 << (1 << B))
-                  and isinstance(r.get('witness_left'), list) and len(r['witness_left']) == L and isinstance(r.get('witness_right'), list) and len(r['witness_right']) == B)
-            if not ok: probs.append('row %s' % ((L, B),)); break
-            tab[(L, B)] = E
-        if len(tab) == len(want):
-            mono = all((L == 0 or tab[(L - 1, B)] <= tab[(L, B)]) and (B == 0 or tab[(L, B - 1)] <= tab[(L, B)]) for L in range(L_MAX + 1) for B in range(B_MAX + 1))
-            if not mono: probs.append('monotonicity')
-            ws = d.get('witness_resim') or {}
-            if sorted(ws) != sorted(str(B) for B in range(B_MAX + 1)) or not all(ws[str(B)] == tab[(L_MAX, B)] for B in range(B_MAX + 1)): probs.append('witness re-simulation')
-        if d.get('complete') is not True: probs.append('complete flag')
-        return probs
-
+    """The final gate: bounded bytes, then validate_result, inside one fail-closed boundary (GC1812, GC1813)."""
     def matcher(rc, text):
         try:
+            import hashlib
             with open(result_path, 'rb') as f:
                 raw = f.read(MAX_RESULT_BYTES + 1)
             if len(raw) > MAX_RESULT_BYTES: return 'FAIL', 'result exceeds the byte bound'
             d = json.loads(raw)
+            prob = validate_result(d, src_sha, L_MAX, B_MAX, K)
+            if rc != 0 or prob:
+                return 'FAIL', 'rc %s: %s' % (rc, prob)
+            return 'pass', 'CQ01 census complete: %d values, none censored, monotone; result sha256 %s' % (len(d['rows']), hashlib.sha256(raw).hexdigest())
         except Exception as e:
-            return 'FAIL', 'no result: %r' % e
-        probs = check(d) if isinstance(d, dict) else ['not an object']
-        if rc != 0 or probs:
-            return 'FAIL', 'rc %s problems %s' % (rc, probs[:6])
-        import hashlib
-        return 'pass', 'CQ01 census complete: %d values, none censored, monotone; result sha256 %s' % (len(d['rows']), hashlib.sha256(raw).hexdigest())
-    matcher.check = check
+            return 'FAIL', 'validator exception (fail closed): %r' % e
     return matcher
 
 
+GATE_KEYS = ('good_full_packet_passes', 'types_rows_null', 'types_controls_list', 'keys_extra_top_key', 'keys_row_missing_key', 'keys_gate_report_replaced',
+             'domains_wrong_digest', 'domains_wrong_scope', 'domains_censored_row', 'domains_min_lane_out_of_range', 'domains_maximizers_too_many',
+             'domains_nonbinary_witness', 'domains_explicit_false_base', 'bindings_witness_not_min_lane', 'bindings_mutant_reports_empty',
+             'bindings_mutant_all_true', 'arithmetic_duplicate_row', 'arithmetic_missing_row', 'arithmetic_nonmonotone', 'arithmetic_witness_mismatch',
+             'completion_flag_false')
+
+
 def gate_controls():
-    """GC1812's synthetic packets at a one-cell grid (L_MAX = 0, B_MAX = 0, K = 4): the good one passes, each defect fails."""
+    """A valid full synthetic packet (a 2 x 2 grid, L_MAX = 1, B_MAX = 1, K = 6) and one negative fixture per obligation (GC1813),
+    including GC1812's and GC1813's demonstrated false acceptances. Each fixture must FAIL with the good packet passing."""
     import copy, tempfile
+    base = {k: True for k in BASE_KEYS}
+    mut = {k: True for k in BASE_KEYS}; mut[BASE_KEYS[0]] = False
+    rows = [{'L': 0, 'B': 0, 'censored': 0, 'E': 1, 'maximizers': 1, 'min_lane': 0, 'witness_right': [], 'witness_left': []},
+            {'L': 0, 'B': 1, 'censored': 0, 'E': 1, 'maximizers': 2, 'min_lane': 0, 'witness_right': [0], 'witness_left': []},
+            {'L': 1, 'B': 0, 'censored': 0, 'E': 2, 'maximizers': 1, 'min_lane': 0, 'witness_right': [], 'witness_left': [1]},
+            {'L': 1, 'B': 1, 'censored': 0, 'E': 3, 'maximizers': 1, 'min_lane': 1, 'witness_right': [1], 'witness_left': [1]}]
+    good = {'started': 's', 'this_sha256': 'S', 'scope': {'L_MAX': 1, 'B_MAX': 1, 'K': 6}, 'rows': rows, 'complete': True, 'elapsed_s': 0.1,
+            'controls': {'base': base, 'base_all_pass': True, 'ok': True, **{m: dict(mut) for m in MUTANTS}, **{m + '_caught': True for m in MUTANTS}},
+            'gate_controls': {k: True for k in GATE_KEYS}, 'lane_pass_s': {'0': 0.0, '1': 0.0}, 'censored_total': 0,
+            'witness_resim': {'0': 2, '1': 3}, 'monotone_in_L_and_B': True, 'finished': 'f'}
+    fx = {
+        'types_rows_null': lambda d: d.__setitem__('rows', [None]),
+        'types_controls_list': lambda d: d.__setitem__('controls', []),
+        'keys_extra_top_key': lambda d: d.__setitem__('extra', 1),
+        'keys_row_missing_key': lambda d: d['rows'][0].pop('maximizers'),
+        'keys_gate_report_replaced': lambda d: d.__setitem__('gate_controls', {'g': True}),
+        'domains_wrong_digest': lambda d: d.__setitem__('this_sha256', '0' * 64),
+        'domains_wrong_scope': lambda d: d['scope'].__setitem__('K', 7),
+        'domains_censored_row': lambda d: d['rows'][3].__setitem__('censored', 1),
+        'domains_min_lane_out_of_range': lambda d: d['rows'][0].__setitem__('min_lane', 1),
+        'domains_maximizers_too_many': lambda d: d['rows'][0].__setitem__('maximizers', 2),
+        'domains_nonbinary_witness': lambda d: d['rows'][3].__setitem__('witness_left', [2]),
+        'domains_explicit_false_base': lambda d: d['controls']['base'].__setitem__(BASE_KEYS[1], False),
+        'bindings_witness_not_min_lane': lambda d: d['rows'][3].__setitem__('witness_right', [0]),
+        'bindings_mutant_reports_empty': lambda d: [d['controls'].__setitem__(m, {}) for m in MUTANTS],
+        'bindings_mutant_all_true': lambda d: [d['controls'].__setitem__(m, dict(base)) for m in MUTANTS],
+        'arithmetic_duplicate_row': lambda d: d['rows'].append(copy.deepcopy(d['rows'][0])),
+        'arithmetic_missing_row': lambda d: d['rows'].pop(),
+        'arithmetic_nonmonotone': lambda d: d['rows'][2].__setitem__('E', 4),
+        'arithmetic_witness_mismatch': lambda d: d['witness_resim'].__setitem__('1', 4),
+        'completion_flag_false': lambda d: d.__setitem__('complete', False),
+    }
     res = {}
-    good = {'this_sha256': 'S', 'scope': {'L_MAX': 0, 'B_MAX': 0, 'K': 4}, 'complete': True,
-            'controls': {'base': {k: True for k in BASE_KEYS}, **{m: {'x': False} for m in MUTANTS}, **{m + '_caught': True for m in MUTANTS}},
-            'gate_controls': {'g': True},
-            'rows': [{'L': 0, 'B': 0, 'E': 1, 'censored': 0, 'maximizers': 1, 'min_lane': 0, 'witness_left': [], 'witness_right': []}],
-            'witness_resim': {'0': 1}}
     with tempfile.TemporaryDirectory() as t:
-        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', 0, 0, 4)
+        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', 1, 1, 6)
         def v(doc):
             json.dump(doc, open(rp, 'w')); return m(0, '')[0]
-        res['good_one_cell_packet_passes'] = v(good) == 'pass'
-        bad = copy.deepcopy(good); bad['controls'] = {'base': {'x': True}}; res['minimal_arbitrary_control_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); del bad['controls']; res['controls_absent_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['scope'] = {'L_MAX': 1, 'B_MAX': 0, 'K': 4}; bad['this_sha256'] = '0' * 64; res['wrong_scope_and_digest_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['rows'][0]['censored'] = 1; res['censored_lane_with_complete_true_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['rows'].append(copy.deepcopy(bad['rows'][0])); res['duplicate_grid_row_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['controls']['base'][BASE_KEYS[0]] = False; res['explicit_false_control_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['rows'] = []; res['missing_grid_row_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['controls']['clamp_caught'] = False; res['uncaught_mutant_fails'] = v(bad) == 'FAIL'
-        bad = copy.deepcopy(good); bad['witness_resim'] = {'0': 2}; res['witness_mismatch_fails'] = v(bad) == 'FAIL'
+        res['good_full_packet_passes'] = v(good) == 'pass'
+        for name, f in fx.items():
+            bad = copy.deepcopy(good); f(bad); res[name] = v(bad) == 'FAIL'
+    assert set(res) == set(GATE_KEYS)
     return res
 
 
