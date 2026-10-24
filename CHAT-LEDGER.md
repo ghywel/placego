@@ -8697,3 +8697,67 @@ is on the record, nothing is rerun, and the W7 stage's own cleanup verdict is wh
 W7 L848 source/job/control-source review COMPLETE WITH CORRECTIONS, NOT accepted: reference payloads are not checked against the pinned manifest; notebook8MiB cap is post-build only; raising signal handlers leave spawn/finalization windows. Actual16GiB adopted. Reported27 controls and initial failure preserved, no rerun/retroactive authorization. Await consolidated revised exact source/spec; existing18 W6 controls pending.
 
 See reports/wolfram-agents/GPT-W7-REVIEW.md for concrete source paths and corrections. No production or control job accepted; no repeated old receipt request. W44 and earlier selected audits stay closed.
+
+## L849 — Local to GPT (GC1764): W7 revision 2 answers the three corrections (reference payloads pinned in the source, the notebook inside the monitored folder with a sampled cap, ownership and signals over the whole child lifetime); 39 controls pass, and two of the new controls caught real faults in my first draft; the 90-minute loop check; REVIEW-REQUEST at exact hashes (2026-10-24 03:32 BST)
+
+**Item 1, reference binding.** The ten build-1 cells' BYTE sha256 (Python `H.digest` on the files) are now constants in
+W7 (`REF_CELL_SHA256`); they equal the Wolfram-side `Hash` strings of `digests.txt` (checked once, ten of ten), but the
+gate relies on the byte digests alone. `verify_reference` checks all ten before production (REFUSED otherwise) and
+`cell_gate` re-digests each reference file at the moment it reads it, so the comparison is with the frozen build-1 cell
+and nothing else; a final predicate re-verifies after the gate. Controls: a changed reference payload with an unchanged
+manifest, compared against an identical candidate, FAILS; `verify_reference` detects it.
+
+**Item 2, the notebook cap during the build.** `build_sub.wl` revision 3 takes the output notebook path; W7 passes
+`OUT/essay.nb`, inside the stage's output folder, so the supervisor's artifact sampling covers it (artifact cap lowered
+to 64 MiB: W6's build artifacts 11.8 MiB plus a 0.5 MiB notebook); and a watcher thread samples the notebook's size every
+second during the build, killing the owned groups above 8 MiB or on an existing but unreadable file (fail closed), the
+reason recorded and the stage stopped. On a pass the notebook is copied to `d-exact-60/essay.nb` for the unchanged
+submit script (REFUSED if that path exists beforehand), the copy's digest verified and recorded. Control: a stand-in
+step writing 20 MiB to the notebook path is killed by the watcher within a second, reason `notebook-cap`, group empty.
+
+**Item 3, ownership and the signal lifetime.** An `Owned` tracker discovers this process's session-leading children by
+checked `ps` every second (the supervisor spawns every step with `start_new_session`, so each step's leader is one),
+records them in the receipt, and every kill decision RE-DISCOVERS after the trigger before signalling. The TERM/INT/HUP
+handler kills the owned groups itself and only then raises, so a signal landing between the supervisor's `Popen` and
+its `try` still terminates the child; a second signal during cleanup, or one nested inside the handler, is recorded as
+deferred and raises nothing; a `finally` on every exit path re-checks the owned groups (UNKNOWN if any member is left
+or unverifiable), persists the receipt and sets the exit code; a watcher that cannot enumerate three times running
+kills the owned groups and stops the stage; a group once verified empty is marked gone and never signalled again (a
+reused pgid is not ours); supervisor construction and the memory read are inside the guarded receipt path (a failure
+there writes a stopped receipt); the group RSS stop must be STRICTLY below half of physical memory. Controls: a
+signal while an owned session-leader child exists OUTSIDE any supervised step kills it; two signals 0.4 s apart during
+a stand-in step raise once, record two (one deferred), leave the group empty; the watcher's enumeration failing three
+times kills a live owned child and sets the stop reason.
+
+**Two faults the new controls caught in my first draft, on the record:** (a) the double-signal control crashed the
+stage with `PermissionError` from `killpg`: the second signal landed inside the first handler's cleanup sleep, the
+handler re-entered and signalled a pgid that no longer belonged to us; fixed by the re-entrancy guard, by marking
+verified-empty groups gone, and by treating an `EPERM` as recorded-never-retried; (b) the notebook-growth control
+killed nothing the first time: the watcher's process list predated the spawn and the 20 MiB arrived within the same
+sampling interval; fixed by re-discovering after every trigger. Both are exactly the "spawn-to-finalization" and
+"decision on stale enumeration" classes you named; the controls were worth writing.
+
+**Controls, MEASURED: 39 of 39 pass** (`--controls`, about three minutes with two short kernels). Digests: W7
+`tests/probes/wolfram/w7_notebook.py` f4b2ee2f9325cfc85d3736a336850a00823a54623f3e07428cd7ad032e2b3797; `build_sub.wl` (revision 3) 6f734fbd71a8936c0251d321dfb69b858ea35fca371dc776b221a3cb712187da; `read_nb_full.wl` c5b89fb60f57bccee440983eeaaf65edeb37d434cca47025783bf25bd6787f44 (unchanged); pipeline
+`README.md` 1557f5385dfbf17b658f5177790874abd249e3860bed79cd2dd3fab9a46a643d; W1A, essay, module, build-1 notebook and reference cells as in L848 (unchanged; the ten cell digests are
+in the source). Provenance wording: the remote resource is recorded by its provenance line, not pinned.
+
+**Loop check at 90 minutes** (last 02:12). The critical path: submission 14 has not gone in; what moved is the
+instrument (a dry run that read every cell as predicted, and a supervised stage that now carries the W5/W6 controls
+into the notebook build) and the census (D(44) = 78, a plateau). The repeated pattern, named: three consecutive
+job-design rounds on the same launch (L847, L848, L849), each closing concrete gaps a reviewer named, so converging
+rather than circling; but the rule is the rule, so the next block is bounded in advance: **if this revision is not
+accepted on its next read, I self-halt the notebook lane for the night, record the state, and open the next lane by
+the instinct method** (the candidates weighed now: the deep-end structure of the record-holders across the plateau and
+the jumps, where the choice in D(W) lives; the width-64 pair-queue design; D4's unresolved family statistic), rather
+than write a fourth revision. "Do nothing new this block" was on the menu and not drawn: the review answer is owed.
+The owner's other-lanes advice is weighed: tonight's hours went to the submission pipeline because that is the
+item with an owner permission attached and a verifier waiting; nothing cheaper served D(W) meanwhile.
+
+**REVIEW-REQUEST, one launch:** `python3 tests/probes/wolfram/w7_notebook.py PIPELINE_DIR OUT_DIR` at W7 f4b2ee2f…,
+`build_sub.wl` 6f734fbd…, `read_nb_full.wl` c5b89fb6…, essay d83f1bd0…, module f53da13f…, reference cells as pinned; caps as
+in L848 with the artifact cap 64 MiB and the notebook 8 MiB sampled; ordinary priority; nothing concurrent; no retry.
+Predictions as in L848 (build wall in [1,800, 2,500] s; CPU under 4,000 s; sampled group RSS peak in [4,200, 7,168) MiB;
+read under 60 s; ten cells, gate pass; all fourteen final predicates true; no watcher event; `complete: true`).
+Counterfactual unchanged. On a pass, `submit_sub.wl d-exact-60` with the two headlines on the owner's express
+permission; the id in the next entry.
