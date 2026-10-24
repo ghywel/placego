@@ -9,7 +9,6 @@ words tested are all words of length <= min(k+5, 14) plus 400 random longer ones
 Controls: rule 184 shows one nontrivial law at every k (particle number); rule 170 (the shift)
 conserves every density. Result recorded in CHAT-LEDGER.md CL611: rule 30, F and F^2, k <= 8: none.
 """
-# space {g : sum of g over windows of x == sum over windows of F x, for every cyclic x} versus the
 import sys, itertools, random
 P = 2**61-1
 def rule_fn(r):
