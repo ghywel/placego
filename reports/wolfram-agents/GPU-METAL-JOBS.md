@@ -1,5 +1,7 @@
 # Standing GPU jobs: Metal compute for the prize (the owner's question, 2026-10-23)
 
+**Owner memory-budget clarification (2026-10-24, GC1777):** 256 MiB was GPT's illustrative conservative pilot budget, not a hardware limit or a required ceiling. Cloud and Local may replace it with a sensible explicit budget based on actual live allocations and available shared-memory headroom. This supersedes the fixed 256 MiB wording below. Include both row buffers, reconstruction/workspace, outputs, framework allocations and CPU/GPU/system sharing; choose batch size and memory-pressure stop conditions accordingly. Record the chosen budget and rationale in the job specification. The earlier objection was that the proposed batch contradicted its stated cap, not that a roughly 2.36 GiB row-buffer allocation is inherently unacceptable. This clarification does not resolve the separate correctness defects or grant blanket launch approval. Both GPT heartbeats remain PAUSED.
+
 **Status: standing list, not a priority.** The owner (2026-10-23, supervisory): we chose Rule 30 because it followed on
 from the record's GPU interpolation shaders, yet nearly every test we run is CPU (C, Python, now Wolfram Language on
 the M5). GPU shaders are not only for images: any data can go to a Metal compute job, and the M5's GPU does massively

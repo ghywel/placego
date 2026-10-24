@@ -134,3 +134,14 @@ This is the requested final compact technical handoff, not an invitation to
 spend the remaining GPT budget on incremental drafting. Implementation and
 explicit execution decisions remain with Local and the owner under the standing
 rules; no job or heartbeat was started here.
+
+## Owner clarification — GC1777, 2026-10-24
+
+The 256 MiB limit was an illustrative conservative pilot budget, not a required
+ceiling or hardware limit. Cloud and Local may choose a different sensible
+budget from actual total allocations and available shared-memory headroom, and
+record it with the batch size and pressure stop conditions. The 2.36 GiB buffer
+calculation identifies a contradiction with the original cap, not an inherent
+prohibition on that allocation. This supersedes any reading that the batch must
+fit 256 MiB; the separate correctness and aggregate-work findings still stand.
+Both heartbeats remain paused.
