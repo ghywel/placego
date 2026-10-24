@@ -12,11 +12,11 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[wolframcollatzmahler.com
 
 ## The question
 
-The kit reduces the period-2 question of Problem 1 to `Q01`: every finite start of the zero-boundary left half, driven by the clock at column 0, has a white cell at depth 1 at some even time. Write `D(W)` for the largest, over starts supported at depths 1 to `W`, of the first even time at which the depth-1 cell is white; `Q01` says `D(W)` is finite for every `W`. The kit proves `D(52) <= 96` by 256 kernel-checked chunk computations and has nothing above width 52. Our earlier submissions proved `D(52) = 96` and `D(56) = 100` exactly. This essay proves lower bounds at five larger widths: `D(64) >= 116`, `D(66) >= 120`, `D(68) >= 122`, `D(70) >= 124`, `D(72) >= 130`.
+The kit reduces the period-2 question of Problem 1 to `Q01`: every finite start of the zero-boundary left half, driven by the clock at column 0, has a white cell at depth 1 at some even time. Write `D(W)` for the largest, over starts supported at depths 1 to `W`, of the first even time at which the depth-1 cell is white; `Q01` says `D(W)` is finite for every `W`. The kit at the pinned commit cc1e0e0 proves `D(52) <= 96` by 256 kernel-checked chunk computations and has nothing above width 52. Our earlier submissions proved `D(52) = 96` and `D(56) = 100` exactly. This essay proves lower bounds at five larger widths: `D(64) >= 116`, `D(66) >= 120`, `D(68) >= 122`, `D(70) >= 124`, `D(72) >= 130`.
 
 ## The zero-boundary half-line
 
-A start is a row of cells at depths `1, 2, 3, …`, the wall at depth 0 always white, evolved by rule 30 with the wall as the left neighbour. The kit's `Rule30ZeroBoundarySmall` packs a row into a natural number (bit `j` is depth `j + 1`) and steps it by `pstep r = (r >>> 1) xor (r ||| (r <<< 1))`; its theorem `run_toFun` says this packed orbit is the physical evolution `zrow`. The same step in the Wolfram Language:
+A start is a row of cells at depths `1, 2, 3, …`; depth `k` sits at position `-k`, so depth `k + 1` is the left neighbour of depth `k` and the wall at depth 0, always white, is the right neighbour of depth 1. Rule 30 then reads `new(k) = old(k + 1) xor (old(k) or old(k - 1))` for `k >= 1`, with `new(0) = false`. The kit's `Rule30ZeroBoundarySmall` packs a row into a natural number (bit `j` is depth `j + 1`) and steps it by `pstep r = (r >>> 1) xor (r ||| (r <<< 1))`; its theorem `run_toFun` says this packed orbit is the physical evolution `zrow`. The same step in the Wolfram Language:
 
 ```wl
 pstep[r_] := BitXor[BitShiftRight[r, 1], BitOr[r, BitShiftLeft[r, 1]]];
@@ -66,14 +66,16 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundarySmall
 
 **Partial result on the kit's `Q01` (the period-2 question, Problem 1 of the Rule 30 Prize), proved against the kit's own
 definitions.** Write `D(W)` for the largest, over zero-boundary starts supported at depths at most `W`, of the first even time at
-which the depth-1 cell is white. The kit proves `D(52) <= 96` (`Rule30ZeroBoundaryWidth52`) and has no statement at any width
-above 52. This module proves the lower bounds `D(64) >= 116`, `D(66) >= 120`, `D(68) >= 122`, `D(70) >= 124`, `D(72) >= 130`: for each width an explicit start,
+which the depth-1 cell is white. The kit at the pinned commit cc1e0e0 proves `D(52) <= 96` (`Rule30ZeroBoundaryWidth52`) and has no
+statement at any width above 52. This module proves the lower bounds `D(64) >= 116`, `D(66) >= 120`, `D(68) >= 122`, `D(70) >= 124`, `D(72) >= 130`: for each width an explicit start,
 supported at depths at most `W`, is black at depth 1 at every even time below the bound and white at the bound, by the kit's
 packed evaluator `prun` and its bridge `run_toFun` (`width64_lower`, `width66_lower`, `width68_lower`, `width70_lower`, `width72_lower`).
 
-**Where the witnesses come from.** A complete numerical census of every start of each width on a GPU (an exact lane engine in
-Metal, validated lane for lane against an independent CPU evaluation of the kit's lane check) found these values to be the
-maxima: each witness attains its width's census maximum. The census is numerical; this module proves only the lower bounds.
+**Where the witnesses come from.** A complete numerical census on a GPU of every reconstructed start of each width that
+survives the even times below `W` (every maximizer lies among them, since the values exceed `W`) found these values to be the
+maxima, each witness attaining its width's census maximum. The engine is an exact lane engine in Metal; at each width a batch of
+2^24 starts, a sample of further starts, every maximizer and every chunk holding one were checked against an independent CPU
+evaluation of the kit's lane check. The census is numerical; this module proves only the lower bounds.
 
 **The argument** is a kernel computation and the kit's own lemmas: `w < 2 ^ W` by `decide`; `toFun w k = false` beyond the width
 by the kit's `testBit_ge_of_lt`; the packed orbit `prun w (2 s)` tested at depth 1 for every `s < D / 2` by `decide +kernel`;
@@ -275,7 +277,7 @@ thm["KernelCheck"]
 
 ## Where the witnesses come from: a complete GPU census (numerical)
 
-Every start of width at most `W` that survives the even times below `W` is fixed by its `W/2` odd trace bits (the kit's free bits), and every maximizer of `D(W)` is among them. An exact lane engine on the GPU (Metal, 32 starts per machine word) reconstructed and evolved all `2^(W/2)` of them at each width: `2^32` starts at width 64 up to `2^36` (68.7 billion) at width 72, about 18 minutes of GPU at width 72. The engine was validated before it was trusted: exhaustive agreement with brute force over all starts at widths 10 to 14; a cell-by-cell comparison of the evolution at the moving edge; a deliberately broken build (the edge cell not computed) detected; and, at every width, a batch of 16,777,216 starts compared lane for lane with an independent CPU evaluation of the kit's own lane check (`Rule30ZeroBoundaryLanes.check`). Every maximizer was re-simulated by a scalar evaluator and the CPU evaluation of the kit's check was run on every chunk holding one, finding exactly the same maximizers. At width 64 the value 116 agrees with an earlier CPU census.
+Every start of width at most `W` that survives the even times below `W` is fixed by its `W/2` odd trace bits (the kit's free bits), and every maximizer of `D(W)` is among them, because the values found exceed `W` and a start dying earlier cannot reach them. An exact lane engine on the GPU (Metal, 32 starts per machine word) reconstructed and evolved all `2^(W/2)` of these surviving starts at each width (not all `2^W` bit strings, which the reduction makes unnecessary): `2^32` starts at width 64 up to `2^36` (68.7 billion) at width 72, about 18 minutes of GPU at width 72. The engine was validated before it was trusted: exhaustive agreement with brute force over all starts at widths 10 to 14; a cell-by-cell comparison of the evolution at the moving edge; a deliberately broken build (the edge cell not computed) detected; and, at every width, a batch of 16,777,216 starts compared lane for lane with an independent CPU evaluation of the kit's own lane check (`Rule30ZeroBoundaryLanes.check`), with 64 further starts per batch of 2^24 re-simulated by a scalar evaluator. Every maximizer was re-simulated by the scalar evaluator, and the CPU evaluation of the kit's check was run on every chunk holding one, finding exactly the same maximizers there. The remaining starts rest on the GPU engine and those samples; they did not each receive an independent CPU replay. At width 64 the value 116 also agrees with an earlier complete CPU census.
 
 | width W | census maximum | starts attaining it | proved here |
 |---|---|---|---|

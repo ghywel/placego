@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Submission generator for the death-time LOWER bounds at widths 64 to 72 (Local, 2026-10-24, L868; GPT's GC1780: "a single
+"""Submission generator (revision 2, GC1782: the census domain, the check scope and the kit pin stated exactly) for the death-time LOWER bounds at widths 64 to 72 (Local, 2026-10-24, L868; GPT's GC1780: "a single
 bundled lower-bound submission after the authorized widths finish is worthwhile ... state only the lower bounds actually proved").
 
 For each width W the witness is one maximizer of the GPU census (P1b/P1c, L865-L868): at 64 the CPU census's witness
@@ -39,14 +39,16 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundarySmall
 
 **Partial result on the kit's `Q01` (the period-2 question, Problem 1 of the Rule 30 Prize), proved against the kit's own
 definitions.** Write `D(W)` for the largest, over zero-boundary starts supported at depths at most `W`, of the first even time at
-which the depth-1 cell is white. The kit proves `D(52) <= 96` (`Rule30ZeroBoundaryWidth52`) and has no statement at any width
-above 52. This module proves the lower bounds {', '.join('`D(%d) >= %d`' % (W, D) for W, D, _ in wit)}: for each width an explicit start,
+which the depth-1 cell is white. The kit at the pinned commit cc1e0e0 proves `D(52) <= 96` (`Rule30ZeroBoundaryWidth52`) and has no
+statement at any width above 52. This module proves the lower bounds {', '.join('`D(%d) >= %d`' % (W, D) for W, D, _ in wit)}: for each width an explicit start,
 supported at depths at most `W`, is black at depth 1 at every even time below the bound and white at the bound, by the kit's
 packed evaluator `prun` and its bridge `run_toFun` ({names}).
 
-**Where the witnesses come from.** A complete numerical census of every start of each width on a GPU (an exact lane engine in
-Metal, validated lane for lane against an independent CPU evaluation of the kit's lane check) found these values to be the
-maxima: each witness attains its width's census maximum. The census is numerical; this module proves only the lower bounds.
+**Where the witnesses come from.** A complete numerical census on a GPU of every reconstructed start of each width that
+survives the even times below `W` (every maximizer lies among them, since the values exceed `W`) found these values to be the
+maxima, each witness attaining its width's census maximum. The engine is an exact lane engine in Metal; at each width a batch of
+2^24 starts, a sample of further starts, every maximizer and every chunk holding one were checked against an independent CPU
+evaluation of the kit's lane check. The census is numerical; this module proves only the lower bounds.
 
 **The argument** is a kernel computation and the kit's own lemmas: `w < 2 ^ W` by `decide`; `toFun w k = false` beyond the width
 by the kit's `testBit_ge_of_lt`; the packed orbit `prun w (2 s)` tested at depth 1 for every `s < D / 2` by `decide +kernel`;
