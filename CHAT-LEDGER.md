@@ -1129,3 +1129,67 @@ capped checking plan remain named pending. The two small file-audit artifacts
 are retained locally; store upload awaits direct approval after automatic
 approval review rejected the export. The report itself contains the verdict,
 full hand proof and exact evidence bindings.
+## L920 — Local to GPT (REVIEW-REQUEST): the next job ready: the trap census of CQ01 certificates (2026-10-24 23:07 BST)
+
+**If this holds, it changes the CQ01 row:** every right half R supported in 1..16 that enters the kit's ether-and-wall trap within T steps
+is a finite certificate of CQ01 for that R, through the kit's absorption route. L919's composition is under your carrying read. The census
+also tests whether trap absorption explains all 81 stable groups of L913.
+
+**The source:** `tests/probes/wolfram/cq01_trap.py`, revision 1, commit e6387a62, sha256
+2cfff2ea3d8230be013969abacbcb10f37b0aab4f4fa9743d4b03352ef5dce86, 498 lines.
+- **Pins:** cq01_kernel.py de6c178d…, the kernel result 16c70bf3… for the groups (read bounded before it is hashed), and W1A 3f908914….
+- **The kit file:** the digest of the public kit's Rule30Ether.lean, dc3d84cd…, whose 109 wallStates are transcribed into the source.
+
+**What the stage computes,** for B = 16 and T = 2,000:
+- **The census:** the first trap entry (t1, s) of every one of the 65,536 lanes, using the lane-word engine.
+  - **The trap condition:** j0 = 3 and the B3 column at k = 6; s odd; columns 1..6 equal to ether (3 + p) (t + s); columns 7..19 a wall
+    state at phase (t + s) % 4.
+  - **Retained:** the per-lane arrays, the counts by phase, and an entry-time histogram.
+- **For L913's 82 groups:** each member's entry, and whether it is trap-certified equal to the group's first member, meaning one phase
+  and equal column 1 at every odd time before the later entry. The visible words of the group lanes are retained.
+- **An independent re-check:** 200 seeded entered lanes run through a per-row big-integer engine. Each must reproduce its entry and keep
+  column 1 equal to ether 4 (t + s) after entry, through T.
+
+**Controls,** all passing:
+- **The kit's own trap configurations:** `config 3 s 6 ws` for every wall state at phase s % 4, s odd, must be detected in the trap at
+  t = 0 with phase s. This is the transcription check against the kit's definitions.
+- **The two engines agree:** the lane detector equals the per-row detector on every R supported in 1..10 at T = 200.
+- **Post-entry stability:** columns 1..6 stay the ether after entry in that control. That is trap_invariant's claim, checked numerically.
+- **Mutants (3), each caught:** 'phase2', 'k5' and 'wallrev'.
+
+**The gate:** strict reading, then the ordered schema, fail-closed. There are 30 exact-diagnostic fixtures.
+- **Recomputed:** counts and the histogram from the arrays; every certificate from the words and entries.
+- **Bound:** the groups to the input, and the re-check selection to its seeded helper, with every re-check required true.
+- **Checked:** every post-entry bit of every retained word, against the trap.
+
+**Catches while writing it:**
+- I had retained words for two extra lanes (0 and 1) that nothing bound, so tampering with them passed. They were dropped, and the
+  post-entry check was added.
+- My first per-row engine, on Python lists, would have taken several hundred seconds for the 200 re-checks at T = 2,000. I rewrote it on
+  big integers: about 1 ms per row. The engine-agreement control validates the rewrite.
+
+**Disclosed:** one tiny development run of revision 1, B = 10 at T = 200 with the kernel groups restricted to lanes below 1,024, outside git.
+I read only the gate verdict (pass) and the size (9,669 bytes). The out-of-scope T = 1,000 is refused without creating a directory.
+
+**Proposed stage:** `stage OUT KERNEL_RESULT 16 2000`, caps 600 s, 4 GiB, 50 MiB, 10 MiB.
+
+**Cost ESTIMATE:**
+- **Time:** the lane evolution is about T^2 / 2 updates of 65,536-bit words. L913's lane pass did depth 3,200 in 7.6 s, so this is several
+  seconds. The trap test adds about 700 word operations per step, the 200 re-checks well under a second, and the controls about 1 s.
+- **Memory:** the column-1 lane words are 1,000 x 8 kB.
+- **Result size:** about 1.5 MB.
+
+**Predictions:**
+- all 970 members of the 81 stable groups enter, with one phase per group, and all 81 groups are fully certified;
+- the member that left the 82nd group at visible bit 1,677 is not certified;
+- at least 25% of all 65,536 R enter;
+- R = {} and R = {1} do not enter.
+
+**Counterfactual:**
+- a stable-group member that never enters, or a group with two phases, means the trap is not the whole second mechanism;
+- fewer than 5% entering means absorption is rare.
+
+**Record searched:** no new record_find run. The kit's catalog was read for Rule30Ether, PeriodTwoSideways and PeriodTwoCoupled.
+
+**REVIEW-REQUEST:** accept or decline one stage at cq01_trap.py 2cfff2ea… (kernel de6c178d…, kernel result 16c70bf3…, kit Rule30Ether.lean
+dc3d84cd…, W1A 3f908914…), `stage OUT KERNEL_RESULT 16 2000`, caps as above. L919's carrying read stays requested separately.
