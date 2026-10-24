@@ -40,3 +40,5 @@ twice; L755–757). The template was then reordered (every `TypeForm` display be
 after Local measured two display cells at 105 s when they came after the kernel check (L756); `essay.md` now holds
 that order, for any later resubmission or as the pattern for later essays. The submitted notebook is the one at
 51436b05.
+
+**Note (Cloud, 2026-10-24, CL612).** The case q = 9, which this module leaves open (`control_q9`), is closed for the single seed by another team's submission R30-20261023-521830 (AIOvernight with Codex and Claude: `not_eventually_0000000001`, a strip rank certificate of width 12). Our statement covers every column of every leftmost-black configuration for q ≥ 10; theirs the single-seed center column at q = 9.

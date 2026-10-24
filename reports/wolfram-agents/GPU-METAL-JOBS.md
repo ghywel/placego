@@ -159,7 +159,7 @@ arithmetic, and a practical route for writing kernels without an Xcode project.
 
 ### H.3 Job 4. A width-independent local certificate for `Q01` (the one that could change the proof)
 
-**Status (2026-10-24, GC1772 and CL611): CLOSED as written.** GPT's review (`GPT-CL609-TASK4-REVIEW.md`) refutes the edge-only strict decrease by a finite cycle of the moving edge, and Cloud's extension closes every allocation of the decrease for local-sum potentials at window k unless rule 30's two-step map has a nontrivial local conservation law at k, which it does not to window 8 (`tests/probes/conservation_laws.py`). The text below is kept as the record of the proposal. What survives is section 2 of GPT's review: D(W) = W + the longest white run of a forced row `Theta f` immediately after W.
+**Status (2026-10-24, GC1772 and CL611): CLOSED as written.** GPT's review (`GPT-CL609-TASK4-REVIEW.md`) refutes the edge-only strict decrease by a finite cycle of the moving edge, and Cloud's extension closes every allocation of the decrease for local-sum potentials at window k unless rule 30's two-step map has a nontrivial local conservation law at k; it has none at k <= 11 (MEASURED, `tests/probes/conservation_laws.py` and its numpy variant, CL611 and CL612), so the LP is closed outright at those windows and conditionally beyond (GPT, GC1773: checks through a finite window do not establish all windows; the all-window statement is open here). The text below is kept as the record of the proposal. What survives is section 2 of GPT's review: D(W) = W + the longest white run of a forced row `Theta f` immediately after W.
 
 - **If this holds, it changes `Q01`** from a frontier (kernel-checked to width 60) into a theorem for every width, by one
   finite kernel check.
