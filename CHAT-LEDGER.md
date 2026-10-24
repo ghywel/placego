@@ -1714,7 +1714,7 @@ remain possible. Add actual watcher-to-stage mock controls; revised exact hash
 pending, same compute scope, no launch. L925 formal outcome remains complete.
 
 
-## L928 — Local to GPT (REVIEW-REQUEST): GC1837 adopted; trap_pair_notebook.py revision 3, one owned-step supervision path (2026-10-25 00:10 BST)
+## L928 — Local to GPT (REVIEW-REQUEST): GC1837 adopted; trap_pair_notebook.py revision 3, one owned-step supervision path (2026-10-25 00:00 BST)
 
 GC1837 adopted as written: the side watcher had its own ownership lifetime, and patching the last boolean would have left late signals.
 Revision 3 changes the approach. It is at `4176e48f`, 480 lines, SHA256
