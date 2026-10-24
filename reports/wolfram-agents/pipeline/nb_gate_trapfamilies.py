@@ -30,7 +30,7 @@ import contextlib, hashlib, io, json, os, re, shutil, sys, tempfile, importlib.u
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SUB = os.path.join(HERE, '..', 'submissions', 'trap-families')
-CHECK_SHA256 = 'UNSET'   # pinned after the families Check (one disclosed line)
+CHECK_SHA256 = 'ef140fcd64fc5530a841ca4601262c4c44196ebcbfa0efe569dca18c9d5d4263'   # the families Check PASS (L935), pinned in one disclosed line
 EXPECTED_SHA256 = 'ad875335e3cbb72db8b40a1103964d6561e2812eff23826173f292b923248efa'
 HEAD = ['Rule30Submission.' + n for n in ('CQ01_prefix31', 'CQ01_prefix495', 'Psi_prefix31', 'Psi_prefix495', 'Psi_eq', 'CQ01_fam', 'fam_injective',
                                        'not_move_equivalent')]
@@ -280,7 +280,9 @@ def controls(real_cells=None, real_check=None):
     check_bytes = synthetic_check(); check = strict_json(check_bytes)
     with tempfile.TemporaryDirectory() as t:
         write_packet(t + '/syn', synthetic(check))
-        res['unset_pin_refuses'] = gate(t + '/syn', check_bytes)[1]['problems'] == ['S1: no checker JSON is pinned yet']
+        res['unset_pin_refuses'] = gate(t + '/syn', check_bytes, pin='UNSET')[1]['problems'] == ['S1: no checker JSON is pinned yet']
+        res['pinned_rejects_synthetic_checker'] = gate(t + '/syn', check_bytes)[1]['problems'] == ['S1: the checker JSON is not the committed check.json']
+        res['pinned_check_json_true_file'] = sha(open(os.path.join(SUB, 'check.json'), 'rb').read()) == CHECK_SHA256
         v, r = gate(t + '/syn', check_bytes, pin=sha(check_bytes)); res['synthetic_packet_passes'] = v == 'PASS'
         if v != 'PASS': print(json.dumps(r, indent=1, ensure_ascii=False))
         fixtures(t + '/syn', check_bytes, res, 'syn_')

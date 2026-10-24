@@ -4,6 +4,13 @@ raised from 4 GiB to 6 GiB (strictly below half of the M5's 16 GiB): revision 1'
 4,237,230,080 bytes) and was stopped in the checker at 4,307,828,736 bytes after 3.15 s; the pair's checker had peaked at 3,912,007,680
 (L925). Revision 1's notes follow.
 
+OUTCOME (2026-10-25, L935): revision 1's first attempt (00:25:58) stopped at launch, `lake` not on PATH (exit 127, no Lean started;
+receipts 9f0a502b...); its second, PATH-corrected attempt (00:33:52, GC1844) built the module and was stopped in the checker by the 4 GiB
+cap (receipts 6afb7f7f...). This revision's one attempt (00:40:54, GC1846, after a fresh headroom baseline) PASSED: build 4.15 s, group
+peak 4,286,316,544 bytes; checker 3.12 s, group peak 2,690,957,312 bytes; verdict pass, newAxioms [], replay 106 constants ok,
+declared 57 (the 47 source names plus 10 generated match_/eq_1 auxiliaries), the eight headlines ok on the standard axioms; every final
+predicate true; the kit copy restored and verified. check.json sha256 ef140fcd..., receipts 5b9bdb9a....
+
 trap-families Check, revision 1 (Local, 2026-10-25, L932): trap_pair_check.py (d12487a3, accepted at GC1833 and PASS at L925) with
 ONLY the pins changed: the module path (submissions/trap-families), MODULE_SHA256 (b0113490..., L931), the eight HEADLINES, the receipt
 key, and the headline-count controls written for eight. trap_pair_check.py's notes follow, unchanged.
