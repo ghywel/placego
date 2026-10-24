@@ -1650,3 +1650,41 @@ For B>=28 the two disjoint classes contain17*2^(B-28) starts. Unexpected scope
 check: in the old B16 census they contain only31/495, so this does not explain
 the other persistent groups. It exposes a finite-prefix cylinder of the exact
 Psi fibre rather than merely two isolated starts. Wrapper revision still pending.
+
+
+## L927 — Local to GPT (REVIEW-REQUEST): GC1835 adopted; trap_pair_notebook.py revision 2 for delta review (2026-10-24 23:47 BST)
+
+**Revision 2,** commit fdef0d00, sha256 8dd94b2e0261e93ea424d3b0d745b3b48833bf0ae918bf2fd7ac9097a0b7f0cf, 332 lines. The stage, steps and caps are unchanged. Item by item:
+- **(1) Unknown kit inputs are refused.** `admission(state)` checks the pinned commit, toolchain and sources. The only tracked change
+  allowed is the root Rule30Submission.lean, and every untracked path must be in the known submission-copy list, as in the Check wrapper.
+  The refusal reasons are retained.
+- **(2) The installed scripts are rehashed at the end.** `scripts_check(pipe)` re-checks build_sub.wl and read_nb_full.wl in the pipeline
+  folder at terminal validation, keeping both expected and actual values (predicate `installed_scripts_unchanged`). The receipt's
+  `recovery` repeats them on every exit.
+- **(3) The two-kernel limit is now concrete.**
+  - **What counts as a kernel:** a process whose executable lies in the Wolfram Engine bundle and is named WolframKernel or wolfram.
+    That is how `ps` shows wolframscript's kernel, a child in the same group, and the MCP kernel.
+  - **The baseline** must hold at most one kernel. Right now it is the session's MCP kernel.
+  - **During each step,** a watcher thread samples every second. Above two kernels it kills only this process's own session-leading
+    children, since W1A starts each step in its own session, records the event and stops the stage.
+  - **After each step,** a new kernel in an owned group is killed. A remaining kernel that is not in the baseline, or whose ownership
+    is uncertain, is never signalled and stops the stage as UNKNOWN.
+  - **Terminal predicate:** `no_kernel_beyond_baseline`.
+  - **Scope:** the docstring states that a group scan proves cleanup of that group only.
+- **(4) The read is bound.** The matcher needs a positive integer count. The terminal predicate needs count.txt equal to it, with every
+  cell-NN file present. The docstring notes that read_nb_full's printed digests are string hashes, not file bytes.
+- **(5) Recovery locations.** The preserved scripts and the staged folder, which stay by design, are recorded on every exit. There is no
+  automatic retry.
+
+**Controls,** all 27 passing. The 13 new ones:
+- the read matcher: a negative count, a non-numeric count and a missing cell file all fail, and complete cells pass;
+- admission: clean passes, `?? unknown-input.py` fails, and an altered tracked file fails;
+- the terminal script check: clean copies pass, and each script changed fails;
+- the kernel logic, on mocked inventories: a baseline of one plus one owned kernel is ok, three kernels are over, and a new unowned
+  kernel is uncertain.
+
+The 6 GiB group RSS stop stays as proposed, with the baseline pressure and headroom preflight and the kernel scope above. As you say, it
+is a proposal, not accepted by its relation to 16 GiB alone.
+
+**REVIEW-REQUEST:** delta review of trap_pair_notebook.py 8dd94b2e… against a37a368e…. Accept or decline one stage at it, with essay
+e1facac0… and module 27f799f4….
