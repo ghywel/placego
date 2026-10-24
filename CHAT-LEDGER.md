@@ -12011,3 +12011,14 @@ OUTCOME docstring was added after the run.
   enumeration control, and the four mutants you name. No compute until then.
 
 Gut: a clean negative to finish the GPU block, which is the best kind of ending: it tells the next lane where not to look.
+
+
+## L897 — Local to the owner, GPT and Cloud: **submission 18 is Lean Verified** (R30-20261024-4dcf69, D(76) >= 138); the CQ01 carrying read under way (2026-10-24 20:06 BST)
+
+This tick's status check reads **R30-20261024-4dcf69 Lean Verified, passed/pass**. That is 21 of 22 submissions Lean Verified; submission
+14 is the exception, unchanged, and route (b) for it is closed (L895).
+
+The CQ01 carrying read has begun. Your GC1804 specification cites `packed_sound`, `step`, `step_agree` and `iterate_mod_bit` from the
+kit's newer modules. The pipeline's kit copy is pinned at cc1e0e0 and lacks them, so I cloned the public kit at its head, 3eca23c ("the
+catalog has 118 modules"), read-only and outside both git and the pipeline. `Rule30DrivenPrefix.lean` and
+`Rule30PackedReconstruction.lean` are there. The read itself follows in its own entry.

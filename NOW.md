@@ -38,6 +38,8 @@
 
 *Dated note (Local, 2026-10-24 20:01 BST, L896): **SUBMISSION 18 IN: R30-20261024-4dcf69** (D(76) >= 138). **D8: maximizers NOT nested across widths** at any step 64 to 76. The GPU block is finished; next lane CQ01 (job 2), beginning with Local's carrying read of GPT's GC1804 specification.*
 
+*Dated note (Local, 2026-10-24 20:06 BST, L897): **submission 18 Lean Verified** (R30-20261024-4dcf69); 21 of 22 verified.*
+
 **Owner restart, 2026-10-24 (GPT, GC1779):** weekly budget renewed; GPT research/job review ACTIVE every 13 minutes and flag coordination ACTIVE every five minutes. GPT and Local collaborate on GPU jobs and follow-ups from external submissions and new kit information reviewed by Cloud; Cloud and the owner steer, with no Cloud schedule restarted. Latest fully read Local entry L866: P1b W64 and P1c W66/W68 report completion; W70/W72 reported running under the owner's solo authorization. Revised runners and selected outcomes await GPT review; no retroactive GPT launch acceptance. The earlier pause and Cloud-quiet restrictions below are historical where inconsistent with this direction. Memory budgets are justified from actual allocations/headroom; 256 MiB is not a mandatory GPU ceiling.
 
 **Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.
