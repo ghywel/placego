@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""P2, revision 2 (Local, 2026-10-24, L879; revision 1 was L876's, reviewed by GPT in GC1787: "Source/design review COMPLETE WITH
-CORRECTIONS; not launch-accepted"): the survivor search at equal budgets (GPU-METAL-JOBS.md §J.2; the allocation of L872 with GPT's
+"""P2, revision 3 (Local, 2026-10-24, L882; revision 2 was L879's, reviewed in GPT's GC1790: the correctness repairs carry, failure
+retention needs narrow changes; revision 1 was L876's, reviewed in GC1787): the survivor search at equal budgets (GPU-METAL-JOBS.md §J.2; the allocation of L872 with GPT's
 GC1785 accounting). NOT an agreed job until GPT accepts this exact file; nothing runs on import.
 
 Question: how cheaply can a search that does not know the answer find a start attaining D(W), or near it, at W = 64 and 72? The census
@@ -42,7 +42,13 @@ Revision 2, GPT's GC1787 fixes, each with controls:
     budget; random and cross-entropy spend it all; beams cost exactly 633,504 / 661,504; hill climbing leaves fewer than W/2), valid
     counts, an exact scored set, zero correctness failures, no censor event, no interruption, the S0 and census bindings, and zero live
     servers. `complete` alone is not enough.
-Also new: poll_quiet, a zero-wait poll after each response (S0's accepted quiet() waits 0.2 s, which after each of the 32,045 small hill-
+Revision 3, GC1790's retention correction: every request is recorded BEFORE it is sent (Recorder): one atomically replaced
+current_request.json (state 'sent', case, width, horizon, request id, lane count and indices) and a compact journal
+(request_journal.jsonl: 'a' before the send, 'v' after validation, 'f' with the failure kind; a 'sent' request's completion is its 'v' line). A transport, contract or stream failure
+rewrites the current request as failed, with the observed response bytes (bounded to 4 KiB). Budgeted counts the lanes and exchanges
+ATTEMPTED (sent) apart from the gross lanes VALIDATED and charged; an unreturned result is never charged or ranked; the gate requires
+attempted = gross for every finished case. The pending evidence is on disk before the send, so it survives an outer supervisor stop.
+Also (revision 2): poll_quiet, a zero-wait poll after each response (S0's accepted quiet() waits 0.2 s, which after each of the 32,045 small hill-
 climbing requests of the W = 64, seed 1 case (counted against a stub) would cost about 1.8 hours for that case; a stray byte arriving after the poll still fails the next exchange as
 an unparsable line or a wrong id). The near-candidate record per case keeps each index once with death >= W + 32, capped at 65,536 by
 death (ties by the lowest index) when it passes twice that; the largest pruned death is recorded and must be below D - 4 (the whole
@@ -51,7 +57,10 @@ case's full record is its own file (cases/case_NN.json, digest in the result).
 
 Controls (`--controls`, CPU only: mocks, fakes and Python protocol stubs, no GPU): revision 1's 17, and for revision 2 the ordered first
 reach, censoring (direct and inside a method), short, non-integer, odd and inconsistent evaluator results, every scoring failure kind and
-the non-failures, census validation, S0 receipt validation, the terminal gate's mutations, the evaluator path against S0's stubs
+the non-failures, census validation, S0 receipt validation, the terminal gate's mutations (revision 3: attempted lanes != validated),
+revision 3's retention (the attempt is on disk, state 'sent', when the exchange starts; a transport failure leaves the failed attempt
+with its indices and observed bytes and counts it attempted, not validated; the clean end-to-end journal balances 'a' and 'v'; the
+dead-server run leaves its failed request on disk), the evaluator path against S0's stubs
 (valid, trailing, malformed, bool echo, end of stream), and six end-to-end runs of the real search loop (guarded_search) against a stub server
 through S0's transport at a small budget: a clean run that passes the case gate with the small budget's exact costs, a censor at a
 known request (stopped, retained, servers closed), a server that dies mid-case (stopped, interrupted case saved, servers closed),
@@ -126,6 +135,7 @@ class Budgeted:
         self.gross = 0; self.requests = 0; self.unique = set(); self.best = -2; self.best_index = None
         self.first_reach = None; self.first_batch_gross = None; self.first_batch_s = None
         self.curve = []; self.high = {}; self.high_pruned = 0; self.high_pruned_max = None; self.censor = None; self.t0 = time.monotonic()
+        self.attempted = 0; self.attempted_exchanges = 0                # lanes and exchanges SENT, validated or not
 
     def remaining(self):
         return self.budget - self.gross
@@ -149,7 +159,7 @@ class Budgeted:
             raise Stop('request of %d exceeds the remaining budget %d' % (len(idx), self.remaining()))
         out = []
         for k in range(0, len(idx), MAX_REQ):
-            part = idx[k:k + MAX_REQ]; got = self.evaluate(part)
+            part = idx[k:k + MAX_REQ]; self.attempted += len(part); self.attempted_exchanges += 1; got = self.evaluate(part)
             if type(got) is not list or len(got) != len(part):
                 raise Stop('the evaluator returned %s results for %d lanes' % (len(got) if type(got) is list else type(got).__name__, len(part)))
             out += got
@@ -252,7 +262,7 @@ RUN = {1: m_random, 2: m_hill, 3: lambda ev, rng, W: m_beam(ev, rng, W, 'deep'),
 
 def case_record(ev, W, method, seed, budget, wall):
     return {'W': W, 'method': METHODS[method], 'seed': seed, 'budget': budget, 'gross': ev.gross, 'unused': ev.remaining(),
-            'unique': len(ev.unique), 'requests': ev.requests, 'best': ev.best, 'best_index': None if ev.best_index is None else str(ev.best_index),
+            'unique': len(ev.unique), 'requests': ev.requests, 'attempted_lanes': ev.attempted, 'attempted_exchanges': ev.attempted_exchanges, 'best': ev.best, 'best_index': None if ev.best_index is None else str(ev.best_index),
             'first_reach_ordered': ev.first_reach, 'first_reach_batch_end_gross': ev.first_batch_gross, 'first_reach_batch_s': ev.first_batch_s,
             'wall_s': round(wall, 3), 'curve_columns': CURVE_COLUMNS, 'curve': ev.curve,
             'high': {str(k): v for k, v in sorted(ev.high.items())}, 'high_pruned': ev.high_pruned, 'high_pruned_max_death': ev.high_pruned_max,
@@ -370,7 +380,7 @@ def gate_cases(cases, budget=PER_CASE, beam_cost=BEAM_COST):
     probs = []; want = expected_cases()
     keys = [(c.get('W'), c.get('method'), c.get('seed')) for c in cases]
     if len(keys) != len(want) or set(keys) != want: probs.append('the case set is not exactly the %d (width, method, seed) cases' % len(want))
-    ints = ('W', 'seed', 'budget', 'gross', 'unused', 'unique', 'requests', 'best', 'first_reach_ordered', 'first_reach_batch_end_gross')
+    ints = ('W', 'seed', 'budget', 'gross', 'unused', 'unique', 'requests', 'attempted_lanes', 'best', 'first_reach_ordered', 'first_reach_batch_end_gross')
     for c in cases:
         k = (c.get('W'), c.get('method'), c.get('seed'))
         if any(type(c.get(f)) is not int for f in ints) or c.get('W') not in WIDTHS or c.get('method') not in METHODS.values():
@@ -378,6 +388,7 @@ def gate_cases(cases, budget=PER_CASE, beam_cost=BEAM_COST):
         W, n, m = c['W'], c['W'] // 2, c['method']
         if c['budget'] != budget or c['gross'] + c['unused'] != budget or not 0 < c['gross'] <= budget: probs.append('%s: budget accounting' % (k,))
         if not 0 < c['unique'] <= c['gross'] or not 0 < c['requests'] <= c['gross']: probs.append('%s: unique or request counts' % (k,))
+        if c['attempted_lanes'] != c['gross']: probs.append('%s: attempted lanes %d != validated %d' % (k, c['attempted_lanes'], c['gross']))
         if not 1 <= c['first_reach_ordered'] <= c['first_reach_batch_end_gross'] <= c['gross']: probs.append('%s: first-reach counts' % (k,))
         if not (0 <= c['best'] <= WIDTHS[W] and c['best'] % 2 == 0) or c.get('censor') is not None: probs.append('%s: best or censor' % (k,))
         if m in ('random', 'cem') and c['gross'] != budget: probs.append('%s: did not spend the budget' % (k,))
@@ -417,19 +428,58 @@ def poll_quiet(srv):
     return 'trailing'
 
 
-def make_evaluator(srv, W, T):
-    """The one evaluator path: S0's transport and response check, then the zero-wait silence poll."""
+class Recorder:
+    """Attempted-request evidence, written BEFORE each send (GC1790): current_request.json, atomically replaced, and request_journal.jsonl,
+    line-buffered: ['a', case, W, T, id, lanes, t] before the send, ['v', id] after validation, ['f', id, kind] on a failure. A 'sent'
+    current request is complete exactly when the journal holds its 'v' line."""
+
+    def __init__(self, out):
+        self.cur = os.path.join(out, 'current_request.json'); self.j = open(os.path.join(out, 'request_journal.jsonl'), 'a', buffering=1)
+        self.case = None; self.t0 = time.monotonic()
+
+    def _doc(self, state, W, T, rid, idx):
+        return {'state': state, 'case': self.case, 'W': W, 'T': T, 'id': rid, 'lanes': len(idx), 'indices': [str(i) for i in idx]}
+
+    def attempt(self, W, T, rid, idx):
+        atomic_json(self.cur, self._doc('sent', W, T, rid, idx))
+        self.j.write(json.dumps(['a', self.case, W, T, rid, len(idx), round(time.monotonic() - self.t0, 3)]) + '\n')
+
+    def validated(self, rid):
+        self.j.write(json.dumps(['v', rid]) + '\n')
+
+    def failed(self, W, T, rid, idx, kind, detail, observed):
+        d = self._doc('failed', W, T, rid, idx); d.update(failure=kind, detail=str(detail)[:500], observed_bytes=(observed or b'')[:4096].decode(errors='replace'))
+        atomic_json(self.cur, d); self.j.write(json.dumps(['f', rid, kind]) + '\n')
+
+    def close(self):
+        try: self.j.close()
+        except Exception: pass
+
+
+def make_evaluator(srv, W, T, rec=None):
+    """The one evaluator path: the attempt recorded before the send, S0's transport and response check, then the zero-wait silence poll."""
     rid = [0]
 
     def evaluate(idx):
         rid[0] += 1; req = {'id': rid[0], 'W': W, 'T': T, 'indices': [str(i) for i in idx]}
-        st, res, raw = srv.exchange((json.dumps(req) + '\n').encode())
+        if rec: rec.attempt(W, T, rid[0], idx)
+        try:
+            st, res, raw = srv.exchange((json.dumps(req) + '\n').encode())
+        except Exception as e:
+            if rec: rec.failed(W, T, rid[0], idx, 'transport', repr(e), srv.buf)
+            raise Stop('evaluator transport: %r' % e)
         if st != 'ok' or res is None or res == 'MALFORMED':
+            if rec: rec.failed(W, T, rid[0], idx, 'transport', 'send %s' % st, (raw or b'') + srv.buf)
             raise Stop('evaluator transport: send %s, line %r' % (st, (raw or b'')[:200]))
         probs = S0.check_response(req, res)
-        if probs: raise Stop('evaluator response contract: %s' % probs)
+        if probs:
+            if rec: rec.failed(W, T, rid[0], idx, 'contract', probs, raw)
+            raise Stop('evaluator response contract: %s' % probs)
         q = poll_quiet(srv)
-        if q != 'silence': raise Stop('evaluator stream after a response: %s' % q)
+        if q != 'silence':
+            if rec: rec.failed(W, T, rid[0], idx, 'stream', q, srv.buf)
+            raise Stop('evaluator stream after a response: %s' % q)
+        if rec: rec.validated(rid[0])
         return res['deaths']
     return evaluate
 
@@ -437,20 +487,20 @@ def make_evaluator(srv, W, T):
 def guarded_search(out, R, save, server_for, budget=PER_CASE):
     """The 50 searches with per-request progress, per-case files, failure capture and the run-wide finally (S0.close_all)."""
     holder = {}; cdir = os.path.join(out, 'cases'); os.makedirs(cdir, exist_ok=True)
-    prog = open(os.path.join(out, 'p2_progress.jsonl'), 'a', buffering=1); R['progress_columns'] = PROGRESS_COLUMNS
+    prog = open(os.path.join(out, 'p2_progress.jsonl'), 'a', buffering=1); R['progress_columns'] = PROGRESS_COLUMNS; rec = Recorder(out)
     try:
         for W, T in WIDTHS.items():
-            srv = server_for(W); evaluate = make_evaluator(srv, W, T)
+            srv = server_for(W); evaluate = make_evaluator(srv, W, T, rec)
             for m in METHODS:
                 for seed in SEEDS:
-                    case_no = len(R['cases']) + 1; holder.clear(); holder['key'] = (W, m, seed)
+                    case_no = len(R['cases']) + 1; holder.clear(); holder['key'] = (W, m, seed); rec.case = case_no
 
                     def on_request(ev, n, t, case_no=case_no):
                         prog.write(json.dumps([case_no, ev.requests, n, ev.gross, t, ev.best]) + '\n')
-                    rec = run_case(evaluate, W, m, seed, budget, on_request, holder); holder.clear()
-                    cp = os.path.join(cdir, 'case_%02d.json' % case_no); atomic_json(cp, rec)
-                    light = {k: v for k, v in rec.items() if k != 'high'}
-                    light.update(case_file='cases/case_%02d.json' % case_no, case_sha256=P.digest(cp), high_count=len(rec['high']))
+                    crec = run_case(evaluate, W, m, seed, budget, on_request, holder); holder.clear()
+                    cp = os.path.join(cdir, 'case_%02d.json' % case_no); atomic_json(cp, crec)
+                    light = {k: v for k, v in crec.items() if k != 'high'}
+                    light.update(case_file='cases/case_%02d.json' % case_no, case_sha256=P.digest(cp), high_count=len(crec['high']))
                     R['cases'].append(light); save()
             q = srv.quiet()
             if q != 'silence': raise Stop('the W = %d server was not live and silent before closing: %s' % (W, q))
@@ -468,6 +518,7 @@ def guarded_search(out, R, save, server_for, budget=PER_CASE):
     finally:
         try: prog.close()
         except Exception: pass
+        rec.close()
         R['live_servers_at_finally'] = len(S0.LIVE)
         R['live_servers_closed_dead'] = S0.close_all()
         save()
@@ -611,7 +662,7 @@ def controls():
             for m in METHODS.values():
                 for s in SEEDS:
                     g = PER_CASE if m in ('random', 'cem') else BEAM_COST[W] if m.startswith('beam') else PER_CASE - 5
-                    cases.append({'W': W, 'method': m, 'seed': s, 'budget': PER_CASE, 'gross': g, 'unused': PER_CASE - g, 'unique': g // 2, 'requests': 10,
+                    cases.append({'W': W, 'method': m, 'seed': s, 'budget': PER_CASE, 'gross': g, 'unused': PER_CASE - g, 'unique': g // 2, 'requests': 10, 'attempted_lanes': g,
                                   'best': 100, 'first_reach_ordered': 3, 'first_reach_batch_end_gross': 10, 'censor': None})
         dgood = {'complete': True, 'failures': [], 'censor_event': None, 'interrupted_case': None, 'live_servers_at_finally': 0, 's0_receipt_ok': True,
                  'census_rehash_ok': True, 'cases': cases, 'scored': [{'W': c['W'], 'method': c['method'], 'seed': c['seed']} for c in cases]}
@@ -629,6 +680,30 @@ def controls():
         res['gate_incomplete_fails'] = gate_verdict(lambda d: d.update(complete=False)) == 'FAIL'
         res['gate_live_server_fails'] = gate_verdict(lambda d: d.update(live_servers_at_finally=1)) == 'FAIL'
         res['gate_missing_scored_row_fails'] = gate_verdict(lambda d: d['scored'].pop()) == 'FAIL'
+        res['gate_attempted_not_validated_fails'] = gate_verdict(lambda d: d['cases'][0].update(attempted_lanes=d['cases'][0]['gross'] + 7)) == 'FAIL'
+        # --- GC1790: the attempt is on disk before the send; a failure keeps it, with the observed bytes; attempted apart from validated
+        import types
+        def fake_srv(exchange):
+            r_fd, w_fd = os.pipe(); f = types.SimpleNamespace(buf=b'', p=types.SimpleNamespace(stdout=os.fdopen(r_fd, 'rb')), _w=w_fd)
+            f.exchange = lambda payload: exchange(f, payload); return f
+        rdir = tempfile.mkdtemp(dir=tmp); rec = Recorder(rdir); rec.case = 9; seen = {}
+        def look_then_answer(f, payload):
+            seen['doc'] = json.load(open(rec.cur)) if os.path.exists(rec.cur) else {}; req = json.loads(payload)
+            return 'ok', {'id': req['id'], 'W': 64, 'T': 256, 'deaths': [100] * len(req['indices'])}, b'line'
+        try:
+            r = make_evaluator(fake_srv(look_then_answer), 64, 256, rec)([11, 12, 13])
+        except Stop:
+            r = None
+        res['attempt_on_disk_before_send'] = (r == [100] * 3 and seen.get('doc', {}).get('state') == 'sent' and seen['doc'].get('indices') == ['11', '12', '13']
+                                              and seen['doc'].get('case') == 9 and seen['doc'].get('W') == 64)
+        def die_mid_response(f, payload):
+            f.buf = b'{"id": 2, "W"'; return 'ok', None, None
+        ev = Budgeted(make_evaluator(fake_srv(die_mid_response), 64, 256, rec), 64, 100)
+        ok = _raises(lambda: ev([7, 8]), Stop); rec.close(); doc = json.load(open(rec.cur))
+        jr = [json.loads(x) for x in open(os.path.join(rdir, 'request_journal.jsonl'))]
+        res['transport_failure_retains_attempt'] = (ok and doc.get('state') == 'failed' and doc.get('failure') == 'transport' and doc.get('indices') == ['7', '8']
+                                                    and '"id": 2' in doc.get('observed_bytes', '') and ev.attempted == 2 and ev.attempted_exchanges == 1 and ev.gross == 0
+                                                    and [x[0] for x in jr] == ['a', 'v', 'a', 'f'])
         # --- fix 4: the evaluator path against S0's protocol stubs
         def stub_server(code, name, *args):
             p = os.path.join(tmp, name + '.py'); open(p, 'w').write(code)
@@ -660,6 +735,8 @@ def controls():
             return R, err, nprog, out
         R, err, nprog, out = e2e('ok', 0)
         files_ok = all(P.digest(os.path.join(out, c['case_file'])) == c['case_sha256'] for c in R['cases'])
+        jr = [json.loads(x)[0] for x in open(os.path.join(out, 'request_journal.jsonl'))]
+        files_ok = files_ok and jr.count('a') == jr.count('v') == sum(c['attempted_exchanges'] for c in R['cases']) and 'f' not in jr
         res['e2e_clean_run_passes_case_gate'] = (err is None and gate_cases(R['cases'], small, small_beam) == [] and nprog == sum(c['requests'] for c in R['cases'])
                                                  and files_ok and R['live_servers_at_finally'] == 0 and not S0.LIVE)
         n64 = sum(c['requests'] for c in R['cases'] if c['W'] == 64)
@@ -679,8 +756,11 @@ def controls():
                                                        and R['live_servers_at_finally'] == 1 and R['live_servers_closed_dead'] == [True] and not S0.LIVE)
         R, err, nprog, out = e2e('die', 3)
         ic = R.get('interrupted_case') or {}
+        cur = json.load(open(os.path.join(out, 'current_request.json')))
         res['e2e_dead_server_stops_saved_and_closed'] = (isinstance(err, Stop) and 'transport' in str(err) and len(R['cases']) == 2 and ic.get('seed') == 3
-                                                         and ic.get('gross') == 0 and R.get('failure', {}).get('type') == 'Stop' and nprog == 2 and not S0.LIVE)
+                                                         and ic.get('gross') == 0 and ic.get('attempted_lanes') == small and R.get('failure', {}).get('type') == 'Stop'
+                                                         and nprog == 2 and cur.get('state') == 'failed' and cur.get('case') == 3 and cur.get('lanes') == small
+                                                         and len(cur.get('indices', [])) == small and not S0.LIVE)
     ok = all(res.values()); print(json.dumps(res, indent=1)); print('P2 CONTROLS', 'PASS' if ok else 'FAIL', len(res)); return ok
 
 
