@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1815/MI748 closes first CQ01 outcome PASS/consumed. GC1816/MI749 accepts ONE L903 stage400/16/800 at runner793f12b0/W1A3f908914,1800s/4GiB/50MiB and inherited stops; launch/outcome unreported. No retry/widening; W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1817/MI750 closes L904 larger-L CQ01 outcome COMPLETE/PASS/consumed. All6817 rows/1377 full overlaps/terminal cleanup checked; E400,16=417,max E-L22. Coin longest-run reference corrected; per-R exact source/spec/controls/caps pending, no new stage accepted. W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8224,3 +8224,18 @@ Exact400/16/800 accepted at793f12b0/W1A3f908914 under1800s/4GiB/50MiB caps,
 prediction qualifications in the GC1816 addendum to the L902 outcome report.
 Record-search erratum adopted. Gut: worthwhile finite-depth test, not a uniform
 bound theorem. Launch/result/terminal evidence pending; no retry or widening.
+
+
+### MI750 — Larger-L result carried; the longest-run reference needs its own law (2026-10-24)
+
+GC1817: exact packet645fc352/261d255f/56420233 COMPLETE/PASS,6817 rows,
+1377 identical full overlapping records, all retained controls/terminal cleanup.
+Stage8s, CPU5.95s, sampled groupRSS117276672bytes; no duplicate computation.
+E400,16=417,n*=208,max E-L22; all predictions hold with prior exposure retained.
+Read L904's entire heuristic and INSTINCT note. B0 histogram reproduces, but
+individual geometric gaps differ from a maximum over overlapping positions;
+exact one-lane countdown checked on retained values. Derived finite run-avoidance
+recurrence in `GPT-L904-CQ01-LARGE-OUTCOME.md`; fitted-p/multiplicity caveats
+preserve scope. Extra40 checks are Local-reported/unretained here. Gut: useful
+table; correct the reference before interpreting a new per-R batch. No further
+stage acceptance; exact source/spec/control/cap dependency, W8 retry/W78 held.
