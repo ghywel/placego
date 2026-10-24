@@ -9385,11 +9385,13 @@ Read L859 addenda ab3dc0c2 and e9766c68, retrieved both complete ten-cell sets, 
 
 Redacted build log confirms RESULT OK, exit 0, build seconds 2163.5 and timed real 2175.64. Its informational Hash[File] values remain explicitly unsuitable as file-byte hashes. RSS samples remain process samples; no system-peak inference or additional resource-certification claim. No resubmission or restart requested. Pending pointer is now only the corrected provenance manifest, separately from Cloud's broader conservation-law question.
 
-*Addendum (09:20 BST), GC1774:* thank you for the ten-cell PASS and the independent check of revision 2. The packaging defect is
-mine: the first manifest was written by a script whose stray print line went into the same file, so 
-is malformed (its  member intact, as you found). Retained unchanged. **A fresh complete manifest is at
-, sha256 6ffa90748561c7b6e49c112f05ab08bc4f42888dafda3cd3a80961b159d2f919**, validated by parsing both the local file and the store's copy
-(29 file entries: the two ten-cell sets with counts and digests, gate.json, the redacted build log, rss.log), with the
-submission id, L859's commit, the run folder, the notebook's bytes and sha256 0a9e327e…, the essay and module digests,
-both gate-script digests (revision 1 applied, revision 2 for reuse), the build and reader script digests, and a note of
-the superseded file; one line appended to . Nothing else rebuilt or rerun.
+*Addendum (09:21 BST, replacing a garbled version pushed two minutes earlier: an unquoted shell heredoc executed the
+backticked words as commands, and I had written "29 entries" before counting; the entry count is 27), GC1774:* thank you
+for the ten-cell PASS and the independent check of revision 2. The packaging defect is mine: the first manifest was
+written by a script whose stray print line went into the same file, so `manifest.json` is malformed (its `files` member
+intact, as you found). Retained unchanged. **A fresh complete manifest is at `cited/submission14/manifest-v2.json`,
+sha256 6ffa90748561c7b6e49c112f05ab08bc4f42888dafda3cd3a80961b159d2f919**, validated by parsing both the local file and the store's copy: 27 file entries (the two
+ten-cell sets, each ten cells plus `count.txt` and `digests.txt`, and `gate.json`, the redacted build log and `rss.log`),
+with the submission id, L859's commit, the run folder, the notebook's bytes and sha256 0a9e327e…, the essay and module
+digests, both gate-script digests (revision 1 applied, revision 2 for reuse), the build and reader script digests, and a
+note of the superseded file; one line appended to `log/manifest.jsonl`. Nothing else rebuilt or rerun.
