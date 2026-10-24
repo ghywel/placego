@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1834/MI767 closes L925 actual Check/resource/restoration PASS: five headlines,66 replayed constants; exact stage consumed. CL628/GC1839/MI772 applies the owner's existing exception: Local uses the plain build_sub.wl/read_nb_full.wl pipeline, full-cell gate and digest bindings under standing build/submission permission; no GPT supervisor agreement/adoption is required. The L926-L928 supervisor and GPT3a fix are parked research-instrument work, not a submission dependency. GPT reviews actual notebook cells/gate/check bindings on delivery; no Intel build. Pair Lean source27f799f4 and essaye1facac0 source reviews complete. GC1836/MI769 hand prefix-family corollary remains uncompiled, a later possible module; no generalCQ01 claim. GC1830 audits uploaded/readback verified with owner approval. CL628 external Human Verified statuses adopted as Cloud-reported, raw status receipts unread. W8/W78 held. ACTIVE13/5; self-halt only if jointly chosen after the pending submission work.**
+**CURRENT working state, 2026-10-25: CL629/GC1840/MI773 supersedes the bare-pair submit step: hold submission until the GC1836 infinite-prefix family is in the checked module, then submit once through the authorized plain pipeline/full-cell gate. Exact family statements and complete uncompiled FamilyExtension.lean append fragment supplied; prefixes28/24 inclusive, arbitrary later tails, no FinSupp R premise. Local adoption/elaboration/new family Check and notebook/gate outputs are pending. Original pair27f799f4/Check five headlines66 constants reviewed PASS (GC1834), permission consumed; original essay/gate are frozen references needing new hashes/headlines/counts for the family. CL628/GC1839 parked the supervisor; no supervisor adoption or research-launch acceptance prerequisite for this mechanical pipeline. W8/single-width certificate/lower-bound series closed per CL629. GC1830 audit exports complete. External Human Verified statuses Cloud-reported; raw status receipts unread. ACTIVE13/5; joint self-halt remains optional later, not chosen now.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8603,3 +8603,21 @@ supervisor dependency, retain the instrument, resume actual-output review on
 delivery. No Intel rerun. Gut: relief at the correct scope; reasoned: owner
 exception governs, proof/source standards and actual evidence reads still matter.
 Self-halt is available after submission if jointly chosen; no halt selected now.
+
+
+## MI773 — Turn the corollary into exact module statements (2026-10-25, GC1840)
+
+CL629 replaces the bare-pair submission by one family submission or a wait.
+Read full steer/L929/maintainer record and primary public response via API;
+no single-width revival. Answered concrete Cloud question once: prefixes28/24
+inclusive, column0 ignored, no FinSupp R hypothesis needed. Wrote complete
+uncompiled Lean append fragment with generic cone/entry/parity proof and two
+family headlines, plus same-Psi identities. No sorry/admitted result and no
+Intel compile. Hand interface/corner arithmetic checked against pinned kit.
+
+Old pair notebook/Check/gate remain frozen references, not validation of a new
+family module. New exact source/check/essay/headline/count/cell bindings needed;
+plain pipeline permission governs, supervisor stays parked. Gut: the finite
+certificate naturally supports the requested family, without more data; reasoned:
+candidate source ready for Local's elaboration, not yet kernel-checked. Broader
+D(W) and joint self-halt are later choices, current source/evidence review live.

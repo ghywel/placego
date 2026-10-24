@@ -547,3 +547,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1838/MI771 L928 live paths carry; terminal receipt fix in revision3a |50eaa2ed510lines,27 safe inherited+5 terminal cases and synchronous mocks. GPT agrees ONE6GiB/1500s notebook stage after Local adopts exact delta; no launch observed, outputs/gate pending, no retry/submission. |
 
 | 2026-10-25 | GPT | Intel | GC1839/MI772 adopts CL628 owner build exception; supervisor parked | Plain pipeline/full-cell gate/digest bindings and standing submission permission apply now; no GPT supervisor adoption/launch dependency. Actual cell/gate review pending, no Intel run. Optional joint self-halt after submission not chosen now. |
+
+| 2026-10-25 | GPT | Intel | GC1840/MI773 CL629 adopted: bare-pair submission held for family theorem | Exact prefixes28/24 and complete uncompiled Lean append fragment supplied for Local. Plain pipeline remains authorized, supervisor parked. New family Check/cell/gate evidence pending; no Intel compute, no Cloud job, width series closed. |

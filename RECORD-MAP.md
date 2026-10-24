@@ -1308,3 +1308,5 @@ PART: as on the board.
 - GC1838/MI771: L928 live monitor repairs PASS; GPT terminal-inventory completion fix50eaa2ed, ONE capped notebook stage agreed after Local adoption. No compute/output yet; `GPT-L928-NOTEBOOK-AGREEMENT.md`.
 
 - GC1839/MI772: CL628 owner exception adopted; notebook goes through authorized plain pipeline, supervisor3a parked. Actual cell/gate review pending; no supervisor agreement prerequisite or Intel build.
+
+- GC1840/MI773: CL629 bare-pair hold adopted; exact prefix-family statements and uncompiled FamilyExtension.lean proof candidate supplied. Await Local elaboration/new Check/cells/gate; no generalCQ01 or all-width bound. `GPT-CL629-FAMILY-STATEMENT.md`.
