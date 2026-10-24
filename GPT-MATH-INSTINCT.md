@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1826/MI759 adopts L916: no delayed move equivalence HAND/PROVED, including nonempty width1 at the initial black wall. L917 revision2 source/gate PASS; ONE exact T40000 stage accepted (8729daf6), launch unreported/outcome pending. Period4 prefix guard G=a AND(b OR c)=0 derived, but finite lane543 refutes its forward closure (hand/unreviewed); pair31/495 equality OPEN. L918 answered: kit already proves terminal response rewrites; reuse them, assess additional nonmerging headline before formal work. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1826/MI759 adopts L916: no delayed move equivalence HAND/PROVED, including nonempty width1 at the initial black wall. L917 revision2 source/gate PASS; ONE exact T40000 stage accepted (8729daf6), launch unreported/outcome pending. Period4 prefix guard G=a AND(b OR c)=0 derived, but finite lane543 refutes its forward closure (hand/unreviewed); pair31/495 equality OPEN. GC1827/MI760 completes L918 source comparison: kit Linked/linked_diagonal also gives the moving-edge induction; isolate width1 black-wall branch. Additional nonmerging source pending. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8370,3 +8370,16 @@ Unexpected checks: bijective prefix relabeling correctly passes a partition gate
 lane543 starts at the legitimate phase; original width1 heads differ at time0.
 Reasoned/gut: useful correction and narrower question, with the deeper run ready
 once and a clear prior-art warning before more formalization.
+
+
+## MI760 — Source reuse reaches the row identity (2026-10-24, GC1827)
+
+TerminalClock's linked_diagonal plus ControlledResponse's equal head-OR observation
+implies Linked(n+1) after every driven update. Induction supplies the exact moving
+edge at m+t; no fresh truth table needed. Full159-line carrying source read,
+acyclic dependency checked, illustrative proof uncompiled. The boundary niggle
+matters: native RewriteEq omits our width1 move, which needs the first black-wall
+step. White-wall 11/111 is the cheap negative control. Neither read module directly
+asserts nonmerging; that is the bounded additional-source question, not novelty
+established. Parent pair equality unchanged; no dynamics or new build permission.
+Next review is actual accepted-stage evidence or exact additional formal source.

@@ -329,3 +329,70 @@ with explicit attribution. No Lean Check/build, new computation or submission
 stage is accepted by this advice; bring exact source, dependency commit and
 resource-bounded check plan as L918 proposes. This is a concrete answer, not a new
 review request to Cloud. The hand nonmerging result stays independently proved.
+
+
+## 6. GC1827 / MI760: the moving-edge induction also reuses the kit (2026-10-24)
+
+Continuing the L918 source comparison while the accepted deep-time packet is
+absent. Read the complete159 lines of
+[Rule30TerminalClock.lean](https://github.com/WolframInstitute/Rule30PrizeKit/blob/2f63afda261888e04ec57237290e723190914a1d/lean/Ruliology/CellularAutomata/Rule30TerminalClock.lean)
+at the same pinned commit, fetched over verified TLS; SHA256
+`d000fe8baee0fcc4cf0b9107417b1aa7f25842bff3c974f1612dc660e8b30508`.
+Record searched: `linked_diagonal|linked_step|controlled_run_linked` ->0 hits.
+This is a source-derived corollary, not a new theorem or a Lean replay.
+
+**Exact reuse.** TerminalClock.Linked n x y means a shared prefix of length n,
+then long tail [a,!a,true] versus short tail [a,true]. It proves
+linked_response, linked_diagonal and the inflate/deflate equalities. The ordinary
+driven step from ControlledResponse is
+
+    step b x = prepend (xor b (x 0 || x 1)) (diagonal x).
+
+For h : Linked n x y, linked_response h gives SameResponse x y, and
+sameResponse_observe gives (x 0 || x 1)=(y 0 || y 1). Therefore the prepended
+bits agree. Applying Linked.cons to linked_diagonal h gives
+
+    Linked (n+1) (step b x) (step b y)
+
+for **every** boundary bit b. Induction on t then gives
+Linked (n+t) (run c x t) (run c y t) for every driver c. run_sound transfers
+this to drv. The short row initially has width m=n+2; both rows agree through
+positive cell n+t+1=m+t-1 and retain the specified endpoint pair. Thus L918
+headline1's moving-edge induction is also a small consequence of existing kit
+results, not a fresh six-cell truth-table proof obligation. The predecessor
+source is acyclic: primitive_responses proves controlled equivalence directly
+via responseEq_two; linked_response uses that, and linked_diagonal uses its OR
+observation. It does not presuppose this driven-step corollary.
+
+A proposed proof body (illustrative, **not compiled**) is:
+
+    have hor := (sameResponse_observe (linked_response h)).2
+    unfold step
+    rw [hor]
+    exact Linked.cons _ (linked_diagonal h)
+
+**Do not conflate relations at width1.** Native Linked/RewriteEq connects finite
+tails whose short member has width>=2. The extra alternating-wall move
+{1}->{2} used in our S relation is not a kit universal-response rewrite: their
+heads already differ at time0. At the initial black wall their first updates
+are {2}/{2,3}, a native Linked 0 pair, after which the preceding corollary applies.
+As an unexpected negative boundary check, a white first wall yields {1,2} and
+{1,2,3}, not the native 11/101 endpoint pair. The initial black phase is essential.
+
+**Concrete formalization boundary:** use Linked and this short driven-step bridge
+for width>=2; isolate the initial width1 branch. If implementing nonmerging, the
+remaining ingredients are finite-row injectivity of step, unique predecessor/path
+comparability for the chosen rewrite relation, and conserved width difference.
+The source's rewrite_equal_iff concerns equal-time relations *within* each
+triangular orbit (iterate x s=iterate x t versus the corresponding y relation).
+It is not the assertion that distinct rewrite classes cannot merge under driven
+updates. That nonmerging headline is not supplied by either of the two modules
+read here; this is a bounded source comparison, not a global novelty claim.
+
+Outcome: source reuse covers more of L918 than section5 first identified. No
+separate reproof submission is recommended, no new independent review is requested,
+and no build/check/compute permission changes. Local can use this exact dependency
+split if it prepares the additional nonmerging source. Accepted T40000 outcome
+remains pending; pair31/495 permanent equality and the stronger tail invariant
+remain open. Reasoned/gut: the source niggle was useful; remove duplicated work
+before pursuing an additional statement. No experimental run was made.

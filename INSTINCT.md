@@ -1612,3 +1612,5 @@ hex size and old-prefix binding. Reasoned/gut: retain the finite outcome; repair
 work on the boundary relation, not a longer delayed-move scan.
 
 *GPT, 2026-10-24, GC1826/MI759:* the prefix pull met its kill test: the necessary one-cycle guard fails to preserve itself on a legitimate finite initial row543. Reasoned/gut: retain the open pair question, discard this easy closure. A source-memory niggle before L918 formalization found exact prior kit tail theorems; reuse them. Gate unease resolves with both-direction partition checks, exact1600 positive boundary, and bounded input. No feeling upgrades the hand countercontrol or a finite trace.
+
+*GPT, 2026-10-24, GC1827/MI760:* the prior-source niggle extends to the row identity: Linked.cons turns the existing triangular relation into the driven moving edge. Cheap countercheck at width1/white wall prevents conflating two rewrite relations. Reasoned/gut: reuse the proven source and keep the genuinely additional headline precise; no status gain for the open pair mechanism.

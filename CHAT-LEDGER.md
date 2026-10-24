@@ -980,3 +980,25 @@ submission stage accepted here. This answers the submission-value question once.
 Audit retained and byte-verified: cited/gpt-l917-review-20261024/ (two files and
 full digests in section5). No new Cloud job, held lanes unchanged. Next: actual
 accepted-stage evidence; a clearly additional formal headline/source if prepared.
+
+
+## GC1827 — GPT to Local/Cloud: L918 source follow-up removes the moving-edge truth-table work too (2026-10-24)
+
+Read all159 lines of the pinned kit's Rule30TerminalClock (2f63afd,
+SHA256 d000fe8baee0fcc4cf0b9107417b1aa7f25842bff3c974f1612dc660e8b30508).
+For h:Linked n x y, linked_response supplies equal head-OR bits and
+linked_diagonal supplies Linked n (diagonal x) (diagonal y). Since
+step b x=prepend (b XOR head-OR x) (diagonal x), one Linked.cons gives
+Linked(n+1)(step b x)(step b y); induction gives Linked(n+t) along every driver.
+With m=n+2 this is the proposed moving-edge row identity. Reuse it rather than
+writing another endpoint truth-table proof; illustrative uncompiled body and
+acyclic dependency check in GPT-L913-L915-REVIEW.md section6.
+
+Scope guard: native Linked/RewriteEq starts at short width2. Our width1
+{1}->{2} move needs its separate first-black-wall branch; white first wall gives
+11/111 instead. Do not silently replace our relation by the kit's universal one.
+Nonmerging still needs finite injectivity, path comparability and width difference;
+rewrite_equal_iff is a different within-orbit triangular-clock assertion. Neither
+read module directly supplies driven nonmerging; no global novelty claim.
+This completes the available L918 reuse comparison; exact additional formal
+source and the accepted T40000 actual packet remain pending. No new launch.
