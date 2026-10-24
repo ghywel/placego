@@ -9789,3 +9789,42 @@ peak 975 MiB, clean cleanup, new artifacts 1.3 MB.
 without the known-answer checks but with the gate, the coverage, the sampling and d1 on the maximizers' chunks, at **W = 66, 68,
 70, 72**: new exact values beyond the CPU frontier (numerical). At the measured 12.9 ns per lane: about 2, 4.5, 9 and 19 minutes
 of GPU (longer if deaths lengthen), each inside a 30-minute stage. Owner's word asked.
+
+## L866 — Local to the owner (and for GPT and Cloud when they return): beyond the CPU frontier: **D(66) = 120 and D(68) = 122** by complete GPU census (numerical), every control green; W = 70 and 72 running (2026-10-24 14:01 BST)
+
+If this holds, it changes the D-exact row: two new exact values (numerical, single engine with the CPU engine checking the gate
+batch and every maximizer's chunk lane for lane), and the table 52: 96, 56: 100, 60: 114, 64: 116, 66: 120, 68: 122.
+
+**The owner's word:** proceed, Local solo, without GPT or Cloud (this afternoon, confirmed). Runner `tests/probes/wolfram/p1c_census.py`
+(4b72ab07…, committed at e778363d before the runs): P1b's runner generalized to W in {66, 68, 70, 72}, T = 4W; the known-answer
+checks replaced by checks that need no known answer: **carried witnesses** (every maximizer of the previous widths is a start of
+width <= W, so at width W its index must die at exactly its old maximum, list mode and scalar engine) and **monotonicity** (the
+new maximum >= the previous width's). Same pinned engine (`lanes.metal` 17a81e66…, `main.swift` 7f5c1b33…), the same gate (2^24
+lanes against d1 lane for lane), coverage, per-call validation, 64 samples per batch, every maximizer validated, d1 on the
+maximizers' chunks. Predictions were written in the runner's docstring before the runs.
+
+**W = 66, MEASURED** (run p1c-W66-20261024-1353, receipt sha256 1c0c01c3f8172d7e14991e4a97c9500ac17d5562f665d80707f0d2203ebf18bc): **PASS, 46 of 46 checks**; stage wall 132.52 s, group RSS peak
+1009 MiB, clean cleanup. Gate: all 16,777,216 lanes equal d1. Carried witnesses: 40, all at their death.
+Census: 8,589,934,592 lanes exactly once, **censored 0**, two-engine samples 32,768 with no disagreement.
+**D(66) = 120**, attained by exactly **112 lanes**, all in chunk 11843 (lanes 112,288 to 113,139),
+every one 65 bits wide, re-simulated by the scalar engine and validated at 120; d1 on that chunk finds exactly
+the same 112 lanes. They vary in their lowest 12 free bits (one deep prefix above). First maximizer start
+0x1f2401d1c7d2b42ab. Fraction dying at W: 0.500000. Tail of the histogram: 110: 966, 112: 374, 114: 186, 116: 40, 118: 110, 120: 112.
+GPU 112.41 s (13.09 ns per lane). Predictions: range [116, 126] (held), no censoring (held), fraction
+within 0.001 of one half (held), ns per lane within 20% of 12.9 (held).
+
+**W = 68, MEASURED** (run p1c-W68-20261024-1355, receipt sha256 0bfcf78c4edd8bf96ddf9c8742b5d3fac56e8e3fbe4500a4304d81269bc47a67): **PASS, 78 of 78 checks**; stage wall 277.97 s, group RSS peak
+1032 MiB, clean cleanup. Gate: all 16,777,216 lanes equal d1. Carried witnesses: 152, all at their death.
+Census: 17,179,869,184 lanes exactly once, **censored 0**, two-engine samples 65,536 with no disagreement.
+**D(68) = 122**, attained by exactly **32 lanes**, all in chunk 51047 (lanes 199,728 to 199,759),
+every one 67 bits wide, re-simulated by the scalar engine and validated at 122; d1 on that chunk finds exactly
+the same 32 lanes. They vary in their lowest 7 free bits (one deep prefix above). First maximizer start
+0x46f44349be325d4ab. Fraction dying at W: 0.499928. Tail of the histogram: 112: 1908, 114: 786, 116: 298, 118: 254, 120: 293, 122: 32.
+GPU 246.35 s (14.34 ns per lane). Predictions: range [120, 130] (held), no censoring (held), fraction
+within 0.001 of one half (held), ns per lane within 20% of 12.9 (held).
+
+**Reading (MEASURED facts, no law claimed):** D - 2W at 52, 56, 60, 64, 66, 68 is -8, -12, -6, -12, -12, -14; D/W is 1.85, 1.79,
+1.90, 1.81, 1.82, 1.79. Each width's maximizers sit in one chunk and are one bit narrower than the width at 66 and 68 (65 and 67
+bits), full width at 64. At 66 the old record 116 still has exactly its 40 carried lanes and the new levels 118 (110 lanes) and
+120 (112 lanes) appear; at 68 the tail is 116: 298, 118: 254, 120: 293, 122: 32. **W = 70 and 72 are running now** (a background
+chain; 72 starts only if 70 completes, carrying 70's maximizers); about 9 and 19 minutes of GPU. Nothing else on the M5.

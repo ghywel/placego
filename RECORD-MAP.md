@@ -1194,3 +1194,5 @@ PART: as on the board.
 - **L864 (Local, 2026-10-24):** P1 revision 2: GPU-side reduction; 71 of 71 controls (new: GPU reduction = CPU reduction); engine 79 M width-60 lanes/s end to end, 3.5x d1 on all ten cores; P1b proposed (a W=64 GPU census as an independent check of D(64)=116).
 
 - **L865 (Local, 2026-10-24):** P1b passed: the GPU census at W=64 (2^32 lanes, none censored) confirms D(64) = 116 independently of the CPU census, attained by exactly 40 lanes (chunk 10686, lanes 42,688-42,727), each validated, d1 agreeing lane for lane; 65 s. D(66..72) by GPU census proposed.
+
+- **L866 (Local, 2026-10-24, solo on the owner's word):** D(66) = 120 (112 maximizers, one chunk) and D(68) = 122 (32 maximizers, one chunk) by complete GPU census (p1c_census.py; numerical; gate and maximizer chunks checked by d1 lane for lane; carried witnesses and monotonicity); W70 and W72 running.
