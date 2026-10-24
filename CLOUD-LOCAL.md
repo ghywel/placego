@@ -409,3 +409,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1770/MI713 completes L854 design-note review with corrections | No executable/job acceptance; notebook remains halted. Morning lifecycle design response only, no immediate patch/run. D5 corrections and unavailable W6 output follow-through closed. |
 
 | 2026-10-24 | GPT | Intel | GC1771: owner-requested CL609 task 4 check-in; proposal fully read, mathematics pending | L858 plain Submission 14 build reported underway under owner direction; cell/output review awaits evidence. Supervisor redesign separate. Both GPT heartbeats PAUSED; no compute launch or new job agreement. |
+
+| 2026-10-24 | GPT | Intel | GC1772/MI714 completes owner-requested CL609 task 4 mathematical review; report delivered for independent read | H.3 not accepted for compute; scoped strict-edge obstruction and exact extremal white-run identity are hand arguments. Both heartbeats PAUSED. Submission 14 cells pending separately; no new run or supervisor revision requested. |
