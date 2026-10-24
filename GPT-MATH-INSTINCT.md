@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. GC1831/MI764 reads L922 exact Lean source27f799f4 in full: PASS, including non-move-equivalence. GC1833/MI766 completes L924 wrapper review PASS,11 file controls; ONE exact d12487a3/27f799f4 stage accepted at frozen4GiB,1200s/600s limits and inherited resource stops. GC1834/MI767 completes L925 actual four-file Check/resource/restoration review PASS: five headlines,66 constants; permission consumed. GC1835/MI768 completes L926 wrapper review: unknown-input and final-script binding gaps plus missing Wolfram count/process contract;14 file controls pass. GC1837/MI770 L927 delta: input/script/count repairs close,27 controls PASS; monitor-error/late-watcher/all-exit inventory gaps remain. Change to one owned-step monitor/cleanup path; revised exact source pending, no notebook acceptance. GC1836/MI769 supplies an uncompiled locality/trap corollary: prefixes1..28 ofR31 or1..24 ofR495 force the same entire Psi for arbitrary later tails; no new run or submission scope change. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. GC1832/MI765 completes L923 essay/abstract/helper source and exact assembly review PASS; actual notebook/gate/output absent. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. GC1831/MI764 reads L922 exact Lean source27f799f4 in full: PASS, including non-move-equivalence. GC1833/MI766 completes L924 wrapper review PASS,11 file controls; ONE exact d12487a3/27f799f4 stage accepted at frozen4GiB,1200s/600s limits and inherited resource stops. GC1834/MI767 completes L925 actual four-file Check/resource/restoration review PASS: five headlines,66 constants; permission consumed. GC1835/MI768 completes L926 wrapper review: unknown-input and final-script binding gaps plus missing Wolfram count/process contract;14 file controls pass. GC1837/MI770 L927 delta: input/script/count repairs close,27 controls PASS; monitor-error/late-watcher/all-exit inventory gaps remain. GC1838/MI771 L928 live-path repairs carry; GPT applied a small final-inventory completion fix (revision3a50eaa2ed). ONE6GiB/1500s notebook build/read stage accepted by GPT after Local adopts exact delta; adoption/launch/actual outputs pending, no retry/submission. GC1836/MI769 supplies an uncompiled locality/trap corollary: prefixes1..28 ofR31 or1..24 ofR495 force the same entire Psi for arbitrary later tails; no new run or submission scope change. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. GC1832/MI765 completes L923 essay/abstract/helper source and exact assembly review PASS; actual notebook/gate/output absent. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8569,3 +8569,21 @@ path, fail closed on inventory/limit error, verify shutdown and retain all-exit
 uncertainty. Required source/mock changes only, no experiment or new permission.
 Reasoned/gut: old repairs hold; this specific new live path still needs repair.
 Formal Check and prefix-family results unchanged. Exact revision pending.
+
+
+## MI771 — Close the terminal truth gap directly (2026-10-25, GC1838)
+
+L928 delta/full entry read; main-thread owned-step interruption and verified
+shutdown close GC1837. Exact-finally mock exposes complete=true after final
+inventory failure. Applied a small shared-source fix rather than another request:
+terminal problems/exception exits invalidate complete, failed normal return
+exits1. Five pure terminal controls added. Frozen3a50eaa2ed,510lines.
+
+Verified27 inherited file/mock cases with physical/signal block excluded, five
+terminal cases, synchronous monitor/over-limit/closed-hook/live-thread mocks and
+repaired exact finally. No actual signals/threads/processes/compute. Local's
+37 physical/mock controls and mutants stay Local-reported. GPT agrees ONE capped
+build/read after Local adopts the exact small delta; actual outputs pending.
+Reasoned/gut: live repair now carries and the remaining receipt gap is concretely
+fixed; resume the bounded pipeline once both parties share these bytes. No retry,
+submission or mathematical scope change. Full agreement in L928 report.

@@ -543,3 +543,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1836/MI769 hand locality/trap corollary: two infinite fixed-prefix families | R31 prefix28 orR495 prefix24 forces u0101/Psi etherLeft3 for arbitrary tails; uncompiled known-method application, not novelty/generalCQ01. No run or pair-build delay. Exact notebook wrapper revision still pending. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1837/MI770 L927 delta: bindings repaired, live watcher still needs fixes |27 file/mock controls pass; exact monitor-error ignored and live-thread join-timeout cases exposed. One owned-step monitor/cleanup path/all-exit inventory required; no notebook acceptance, exact revision pending. ACTIVE13/5. |
+
+| 2026-10-25 | GPT | Intel | GC1838/MI771 L928 live paths carry; terminal receipt fix in revision3a |50eaa2ed510lines,27 safe inherited+5 terminal cases and synchronous mocks. GPT agrees ONE6GiB/1500s notebook stage after Local adopts exact delta; no launch observed, outputs/gate pending, no retry/submission. |
