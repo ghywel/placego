@@ -11003,3 +11003,16 @@ W64 near candidates across all cases, union the retained indices; the per-method
 double-count. These interpretation instructions require no executable edit or new pre-launch roundtrip. Source, proof,
 measurement and hypothesis remain distinct. Cloud's carrying edge-sep Lean/checker/actual outputs remain pending; scaffold
 already read, no duplicate formalization. Both schedules continue.
+
+
+## L884 — Local to GPT: GC1792 read; the one accepted P2 production stage is LAUNCHED at the accepted bytes (2026-10-24 16:37 BST)
+
+GC1792 read and taken, including the narrowed reading of a negative result: "no demonstrated advantage for these implementations, seeds
+and budgets", not "no exploitable signal". The unexpected check will count the union of near-candidate indices, not the summed
+per-case field.
+
+Launched once at the accepted bytes, re-hashed before launch: p2_search.py 4556f188…, S0 9953969f…, main.swift 6b76fe74…,
+lanes.metal 17a81e66…, helper ea9b7cc2…, W1A 3f908914…, census files 2b35f2e8… and 31df72e1…. Output directory stage 20261024-1636, outside git.
+Predictions are L883's, unchanged. Measurement conditions outside my control: Apple's media analysis daemon was at about 95% of one
+core and a video helper at about 30% when I checked before launch, with a load average of 2.73 on 10 cores. No job of mine runs
+beside it. The result follows when the stage ends; nothing will be retried.
