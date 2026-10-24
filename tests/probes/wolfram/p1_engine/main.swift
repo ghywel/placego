@@ -10,6 +10,8 @@
 import Foundation
 import Metal
 
+let processStart = Date()
+
 struct Params { var W: UInt32; var T: UInt32; var Wsup: UInt32; var L: UInt32; var G: UInt32; var traceSteps: UInt32 }
 
 func fail(_ msg: String, _ out: String?) -> Never {
@@ -52,7 +54,11 @@ let traceSteps = int("trace_steps", 0)
 let reduceMode = (job["reduce"] as? String) ?? "gpu"     // revision 2: "gpu" (the histogram and per-group maxima on the GPU) or "cpu" (revision 1's per-lane loop)
 guard reduceMode == "gpu" || reduceMode == "cpu" else { fail("reduce must be gpu or cpu", outPath) }
 let HB = 2048
-guard reduceMode == "cpu" || T <= 2 * (HB - 2) else { fail("T too large for the GPU histogram", outPath) }
+guard T <= 2 * (HB - 2) else { fail("T exceeds the histogram bound 2*(HB-2) (enforced in both reduce modes: the kernel always writes it)", outPath) }
+// parameter validation (GC1778): the driver refuses values outside the reviewed domain
+guard Gmax >= 1 else { fail("G_max must be positive", outPath) }
+guard traceSteps >= 0 && traceSteps <= T else { fail("trace_steps must lie in 0..T", outPath) }
+guard tgReq >= 0 && tgReq <= 1024 else { fail("tg must lie in 0..1024", outPath) }
 let samplePerBatch = int("sample_per_batch", 64)
 let sampleSeed = UInt64(int("sample_seed", 1))
 guard let metalPath = job["metal"] as? String, let src = try? String(contentsOfFile: metalPath, encoding: .utf8) else { fail("cannot read metal source", outPath) }
@@ -97,6 +103,8 @@ var Wsup = W
 var lo: UInt64 = 0, hi: UInt64 = 0
 let fullMask: UInt64 = LW == 64 ? UInt64.max : (UInt64(1) << UInt64(LW)) - 1
 
+guard W >= 0 && W <= 126 else { fail("W must lie in 0..126 (at most 63 index bits)", outPath) }
+if mode != "rows" { guard W >= 2 else { fail("W must be at least 2 for census and list modes", outPath) } }
 switch mode {
 case "census":
     guard let l = u64(job["lo"]), let h = u64(job["hi"]), h > l else { fail("census needs lo < hi", outPath) }
@@ -121,6 +129,7 @@ case "list":
 case "rows":
     guard let arr = job["starts"] as? [String], !arr.isEmpty else { fail("rows needs starts", outPath) }
     Wsup = int("Wsup")
+    guard Wsup >= 1 && Wsup <= 4096 else { fail("Wsup must lie in 1..4096", outPath) }
     for s in arr {
         var hex = s.lowercased(); if hex.hasPrefix("0x") { hex.removeFirst(2) }
         var words = [UInt64](repeating: 0, count: (Wsup + 63) / 64 + 1)
@@ -151,7 +160,11 @@ let Gtotal = groupBase.count
 let Gbatch = min(Gmax, Gtotal)
 let liveBytes = Gbatch * (L * laneBytes + 8 + laneBytes + 2 * (W + 1) * laneBytes + LW * 2 + 2) + (traceSteps + 1) * L * laneBytes + 2048 * 4
 guard liveBytes <= budget else { fail("live allocation \(liveBytes) bytes exceeds the GPU budget \(budget)", outPath) }
-guard L * Gbatch * laneBytes <= device.maxBufferLength else { fail("row buffer exceeds maxBufferLength", outPath) }
+for (nm, bytes) in [("rows", L * Gbatch * laneBytes), ("workspace", 2 * (W + 1) * Gbatch * laneBytes), ("death", Gbatch * LW * 2),
+                   ("trace", (traceSteps + 1) * L * laneBytes)] {
+    guard bytes <= device.maxBufferLength else { fail("\(nm) buffer exceeds maxBufferLength", outPath) }
+}
+guard Gbatch * LW <= Int(UInt32.max) else { fail("a batch's lanes must fit the 32-bit histogram bins", outPath) }
 
 guard let bRows = device.makeBuffer(length: max(L * Gbatch * laneBytes, 16), options: .storageModeShared),
       let bBase = device.makeBuffer(length: max(Gbatch * 8, 16), options: .storageModeShared),
@@ -200,6 +213,7 @@ var lcg = sampleSeed &* 6364136223846793005 &+ 1442695040888963407
 func rnd() -> UInt64 { lcg = lcg &* 6364136223846793005 &+ 1442695040888963407; return lcg >> 11 }
 
 let t0 = Date()
+let setupSeconds = t0.timeIntervalSince(processStart)   // compilation, range construction and buffer allocation (GC1778)
 var g0 = 0
 var batchNo = 0
 while g0 < Gtotal {
@@ -286,10 +300,11 @@ while g0 < Gtotal {
         if let l = lastValid { picks.append(l.0) }
         if G >= 2 { picks.append(groupBase[g0] + UInt64(LW - 1)); picks.append(groupBase[g0 + 1]) }
         var tries = 0
-        while picks.count < samplePerBatch && tries < samplePerBatch * 8 {
+        var uniq = Set(picks)
+        while uniq.count < min(samplePerBatch, Int(validCount)) && tries < samplePerBatch * 64 {
             tries += 1
             let gi = Int(rnd() % UInt64(G)); let l = Int(rnd() % UInt64(LW))
-            if (groupValid[g0 + gi] >> UInt64(l)) & 1 == 1 { picks.append(groupBase[g0 + gi] + UInt64(l)) }
+            if (groupValid[g0 + gi] >> UInt64(l)) & 1 == 1 { let n = groupBase[g0 + gi] + UInt64(l); if !uniq.contains(n) { uniq.insert(n); picks.append(n) } }
         }
         var seen = Set<UInt64>()
         for n in picks where !seen.contains(n) {
@@ -304,7 +319,7 @@ while g0 < Gtotal {
         var out = Data(capacity: Int(bLanes) * 2)
         for gi in 0..<G {
             let m = groupValid[g0 + gi]
-            for l in 0..<LW where (m >> UInt64(l)) & 1 == 1 { var v = pd[gi * LW + l]; withUnsafeBytes(of: &v) { out.append(contentsOf: $0) } }
+            for l in 0..<LW where (m >> UInt64(l)) & 1 == 1 { var v = pd[gi * LW + l].littleEndian; withUnsafeBytes(of: &v) { out.append(contentsOf: $0) } }
         }
         h.write(out)
     }
@@ -340,6 +355,7 @@ var result: [String: Any] = [
     "device": deviceInfo, "pipeline": pipelineInfo, "batches": batches,
     "lanes_total": lanesTotal, "histogram": hist, "max": maxDeath, "max_count": maxCount, "censored": censored,
     "maximizers": maximizers, "maximizers_truncated": maxCount > UInt64(maximizers.count), "wall_total_s": Date().timeIntervalSince(t0),
+    "setup_s": setupSeconds, "process_wall_s": Date().timeIntervalSince(processStart), "dump_format": "uint16 little endian, 0xFFFF = censored, range order",
 ]
 if mode == "census" { result["lo"] = String(lo); result["hi"] = String(hi) }
 if mode == "list" { result["deaths"] = listDeaths }

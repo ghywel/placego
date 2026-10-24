@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""P1, revision 2 (Local, 2026-10-24; revision 1 passed as run p1-pilot-20261024-1330, L863; revision 2 adds the GPU-side
-reduction to the engine and the control R below): the exact lane engine for Q01 death times on the M5's GPU (GPU-METAL-JOBS.md §J.1
+"""P1, revision 3 (Local, 2026-10-24; revision 1 passed as run p1-pilot-20261024-1330, L863; revision 2 added the GPU-side
+reduction and the control R, run p1r2-pilot-20261024-1335, L864; revision 3 applies GPT's GC1778 source fixes to the driver
+(the histogram bound in both reduce modes, parameter validation, every buffer size checked, samples filled back to 64
+unique lanes, an explicitly little-endian dump, setup time recorded) and adds the control V below): the exact lane engine for Q01 death times on the M5's GPU (GPU-METAL-JOBS.md §J.1
 revision 2, with GPT's GC1775/GC1776 corrections and the owner's memory clarification GC1777). The engine is
 `p1_engine/lanes.metal` (two compute kernels: `build_start`, the kit's trace reconstruction; `simulate`, the forward
 evolution with even-time death detection) driven by `p1_engine/main.swift` (built with swiftc at run time into the output
@@ -34,6 +36,8 @@ Controls (all must pass; the first failure stops the pilot):
   R   the GPU reduction (revision 2: a threadgroup histogram with one atomic add per death event, per-group maxima, the
       maximizers found from the groups whose maximum attains) equals the CPU reduction (revision 1's per-lane loop) on every
       C1 census and on the W = 60 measurement batch: histogram, maximum, its count, censored lanes, lanes, maximizer set.
+  V   the driver refuses out-of-domain jobs (revision 3): T beyond the histogram bound in the CPU-reduction mode (GC1778's
+      latent bug), G_max = 0, trace_steps > T; each must exit non-zero with its stated reason.
   N   the mutant (compile-time MUTANT_DROP_EDGE, the first draft's bug: the new edge cell not computed) must be DETECTED by
       the C3 edge trace and by a C1 census; a mutant that passes means the controls are blind, and the pilot fails.
 Measurement (not a census): one batch at W = 60, T = 240, lanes [0, 2^24) (d1 chunks 0..63), on 32-lane words (G = 2^19)
@@ -171,6 +175,17 @@ class Engine:
         v = subprocess.run(['swiftc', '--version'], capture_output=True, text=True).stdout.strip().splitlines()[0]
         return {'swift_sha256': digest(SWIFT), 'metal_sha256': digest(METAL), 'binary_sha256': digest(self.bin),
                 'swiftc': v, 'build_s': round(time.monotonic() - t, 2)}
+
+    def run_expect_fail(self, job, name, needle):
+        """True if the engine refuses the job (non-zero exit) with `needle` in its stderr."""
+        self.calls += 1
+        jp = os.path.join(self.out, 'jobs', '%03d_%s.json' % (self.calls, name)); op = jp.replace('.json', '.out.json')
+        os.makedirs(os.path.dirname(jp), exist_ok=True)
+        job = dict(job); job.setdefault('metal', METAL); job.setdefault('gpu_budget_bytes', GPU_BUDGET)
+        json.dump(job, open(jp, 'w'))
+        r = subprocess.run([self.bin, jp, op], capture_output=True, text=True, timeout=CALL_TIMEOUT_S)
+        self.log.append({'name': name, 'refused': r.returncode != 0})
+        return r.returncode != 0 and needle in r.stderr
 
     def run(self, job, name):
         self.calls += 1
@@ -367,6 +382,12 @@ def pilot(out):
         res = eng.run({'lane_bits': LB, 'mode': 'census', 'W': W, 'T': 4 * W, 'lo': '0', 'hi': str(1 << 10), 'deaths_out': dp}, 'C3_odd21_L%d' % LB)
         dump = read_dump(dp); os.remove(dp)
         check('C3_odd_W21_L%d' % LB, all(int(dump[n]) == death(recon(W, n), 4 * W) for n in range(1 << 10)) and not two_engine(res, W, 4 * W))
+
+    # V: refusals (GC1778)
+    base12 = {'lane_bits': 32, 'mode': 'census', 'W': 12, 'lo': '0', 'hi': '64'}
+    check('V_refuses_T_beyond_histogram_cpu_mode', eng.run_expect_fail(dict(base12, T=5000, reduce='cpu'), 'V_T5000_cpu', 'histogram bound'))
+    check('V_refuses_G_max_0', eng.run_expect_fail(dict(base12, T=48, G_max=0), 'V_Gmax0', 'G_max must be positive'))
+    check('V_refuses_trace_beyond_T', eng.run_expect_fail(dict(base12, T=48, trace_steps=99), 'V_trace99', 'trace_steps must lie'))
 
     # N: the mutant must be detected
     mism, dmis, _, _, _ = edge_trace(32, mutant='drop_edge')
