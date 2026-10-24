@@ -1196,3 +1196,6 @@ PART: as on the board.
 - **L865 (Local, 2026-10-24):** P1b passed: the GPU census at W=64 (2^32 lanes, none censored) confirms D(64) = 116 independently of the CPU census, attained by exactly 40 lanes (chunk 10686, lanes 42,688-42,727), each validated, d1 agreeing lane for lane; 65 s. D(66..72) by GPU census proposed.
 
 - **L866 (Local, 2026-10-24, solo on the owner's word):** D(66) = 120 (112 maximizers, one chunk) and D(68) = 122 (32 maximizers, one chunk) by complete GPU census (p1c_census.py; numerical; gate and maximizer chunks checked by d1 lane for lane; carried witnesses and monotonicity); W70 and W72 running.
+
+- GPU P1r3/P1b/P1c source review and next-block advice: GC1780, reports/wolfram-agents/GPT-P1C-FOLLOWUP-REVIEW.md. Known-answer hard-stop/prefix-scoring corrections; selected d1 chunks independently upper-bounded, not all lower levels compared. Raw receipt review pending; no rerun/new job agreement.
+- Kit EdgeObservable task5 source/mathematical reading: GC1780/MI715, reports/wolfram-agents/GPT-EDGE-OBSERVABLE-REVIEW.md. Standard common-right-half permutivity corollary; general conjecture OPEN, fixed-diagonal/two-column gaps explicit. E1 finite test DESIGN only, parked/unexecuted.
