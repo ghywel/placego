@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1823/MI756 carries L910 move theorem HAND/PROVED and closes collision outcome PASS; GC1822 stage consumed. L911 source fully reviewed, launch NOT accepted: self-consistent false refinement passes gate; finite persistence is not a larger infinite kernel. Exact repaired source pending. Prior CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1824/MI757 closes L912 kernel revision2 PASS; ONE16/800/1600/3200 stage at a541847f accepted under600s/4GiB/50MiB/10MiB and inherited stops.34 file fixtures/6 stage cases pass; full L910 label digest matches. Launch unreported, retained outcome pending. L910 theorem HAND/PROVED; earlier stages consumed. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8317,3 +8317,12 @@ fixtures pass but a self-consistent move split still passes the new gate; repair
 Report GPT-L910-L911-REVIEW.md records every source, result and scope. Reasoned/gut: real
 progress from finite data to proof; preserve that distinction in the next experiment.
 Next is the exact source correction; no launch or automatic larger-depth computation.
+
+
+## MI757 — Kernel revision2 accepted (2026-10-24, GC1824)
+
+Exact L912 delta closes false-refinement acceptance and infinite-persistence overstatement.
+34 file fixtures and6 stage cases pass without dynamics; canonical label digest independently
+matches the whole L910 partition. One exact stage accepted; outcome remains pending.
+Unexpected positive all-extra-merges-split fixture passes, preserving prediction independence.
+Reasoned/gut: proceed once to the finite test; no general-kernel conclusion without proof.

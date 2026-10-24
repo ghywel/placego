@@ -149,3 +149,57 @@ instrument must distinguish a falsified invariant, finite persistence and an inf
 - `negative-visible.out.json`: 86 bytes, SHA256 `0344c8ec6407fe86a46b2854fb41438a8b860128ffd92c2d3314e3d9f84c8d54`.
 
 GPT file audits and their outputs: `cited/gpt-l910-l911-review-20261024/` (no dynamics).
+
+
+## L912 revision2 delta review — GC1824 / MI757 (2026-10-24)
+
+**PASS. Accept ONE exact Local stage**, `stage OUT 16 800 1600 3200`, at kernel runner
+SHA256 **a541847fcf3b91f586d0ae0d91ef1ae8666eee3459a6cb7591e493dd11426549**.
+Complete L912 at8e2bb58a31344901f8f69544dbe4552fea584666 and the entire revision1-to2
+delta read. GC1823's required repairs are closed; launch is unreported, outcome review pending.
+
+The gate now requires every per-depth moves_refine flag to be literally true and independently
+recomputes refinement from the labels. The original exact-stage self-consistent split of lane2
+from lane1 fails at the1600 binding; changing the false flags to true instead fails arithmetic.
+The complete34 committed fixtures pass with exact diagnostics on handmade B6 labels, without
+calling physical controls. Six actual-stage file cases pass their expectations: two positives
+(unchanged observed partitions and refinement all the way to move classes), the original split,
+the dishonest split, a false label-binding flag and changed labels claiming the binding true.
+This also confirms the gate does not require an exploratory prediction to succeed.
+
+The independent comma-separated least-lane canonicalization of all65,536 L910 labels gives
+SHA256 **35b013a093fb5f4c065a23c904bbd0291714f61f08d37d374b82c71733bb79ed**,
+exactly the new pinned constant. The gate hashes the actual retained800 labels, not merely a
+reported digest or success Boolean. Counts and restricted counts remain separate obligations.
+The source now correctly describes persistence as unresolved finite-depth candidate pairs;
+no infinite-kernel conclusion follows from failure to split by3200. Interpret the move-count
+formula for B>=1; B0 has one class. L912's adoption of the path observation is recorded, without
+claiming an independent carrying derivation that its entry does not provide.
+
+AST comparison leaves13 functions unchanged, including dependency loading, stage supervision,
+move construction/union-find, canonical labeling, refinement, merged groups, physical controls,
+matcher and gate-control orchestration. Changes are confined to the reviewed binding/completion
+logic, fixtures and explanatory text. No physical computation, GPU or Lean replay ran here.
+The prior memory and time accounting stands:209,780,736-byte bit matrix plus a209,715,200-byte
+transpose,26,214,400-byte packed array, sort/index/object allocations, and earlier integer-row
+work. Under1GB remains an estimate. The4GiB sampled group RSS threshold is a stop trigger,
+not a guarantee against overshoot or a system-memory bound; require current headroom on the
+16GiB execution machine and all inherited pressure checks.
+
+Frozen dependencies:
+
+- collisions: dd943133c1eb806706b0d01ac3c0545e71047f50d6b416b560ffb3be159fde16;
+- per-R: b46f509fb6052dec5dc026a895edddad1c6c2fe40b52ca59fe2ad70d8472b6fe;
+- census: b46a07a31a4ffa3e867fad707ba510a1f84806b345134dd506691bc442216d59;
+- W1A: 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883.
+
+Keep600s stage and step wall/CPU,4GiB sampled group RSS stop,50MiB artifacts,
+10MiB log,16MiB result-read bound, one sequential child, inherited free-memory/swap/disk
+stops, failure retention and terminal cleanup. No retry or scope widening. This acceptance is
+not a launch or outcome; read the source-bound result, log and supervisor receipt next,
+including all three label arrays, merged groups and terminal cleanup.
+
+Unexpected check: a synthetic complete split of all extra merges passes, so the repair does
+not accidentally freeze the old partition at deeper depths. Reasoned/gut verdict: the specified
+finite experiment is ready for its one attempt; the conjecture remains open.
+File audits retained at `cited/gpt-l912-review-20261024/`.

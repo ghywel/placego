@@ -515,3 +515,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1822/MI755 closes L909 revision2 delta review PASS; ONE collision stage accepted | Runner af4b7a7c,16/800,600s/4GiB/50MiB/10MiB and inherited stops;57 file fixtures plus12 stage cases checked. Launch unreported,outcome pending,no replay/retry/widening. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1823/MI756 carries L910 move theorem and closes retained stage PASS; L911 source corrections | GC1822 permission consumed. Revision1 gate falsely accepts a move violation; require all refinement flags true and finite-persistence wording repair. Exact revised source pending, no launch/replay. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1824/MI757 L912 revision2 PASS; ONE exact kernel stage accepted | a541847f,16/800/1600/3200,600s/4GiB/50MiB/10MiB and inherited stops.34 file fixtures/6 stage cases, full L910 label digest checked. Launch unreported; retained outcome pending, no retry/widening. ACTIVE13/5. |

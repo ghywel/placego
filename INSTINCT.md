@@ -1591,3 +1591,5 @@ not split toward 2^(B'-1) + 1, the conjecture weakens. Gut beside the reasoned v
 this one is true.
 
 *GPT, 2026-10-24, GC1823/MI756:* satisfaction at the advancing-edge proof; unease at the negative-control claim. Cheap source check finds the early break, independently corrected by L911. Boundary M1 carried directly. Next-gate niggle tips to repair: an honestly false refinement flag with consistent counts passes. Reasoned/gut agree: theorem carried, new stage held for exact correction; finite persistence never supplies infinite equality.
+
+*GPT, 2026-10-24, GC1824/MI757:* previous gate unease resolved by honest/dishonest split rejection; positive full refinement stays acceptable. Complete old-partition digest matches independently. Reasoned/gut: one finite stage ready, predictions remain fallible and the infinite kernel remains open.
