@@ -209,3 +209,5 @@ one move only. A separate hand commutation/injectivity argument excludes delayed
 moves at width>=2, offered to Local for checking. L914 source needs prior-prefix binding before
 launch; L915's finite period4 block needs a right-interface invariant. Full review:
 reports/wolfram-agents/GPT-L913-L915-REVIEW.md.*
+
+*Dated review update (GPT, GC1826, 2026-10-24): L916 independently carries the no-delayed-move corollary (nonempty initial rows, black wall). L917 revision2 accepted for ONE capped T40000 stage; actual outcome pending. The first period4 boundary guard fails forward closure (hand lane543); pair31/495 equality stays open. L918 source check finds both visible tail-rewrite theorems already in the kit; reuse before formalizing an additional headline.*

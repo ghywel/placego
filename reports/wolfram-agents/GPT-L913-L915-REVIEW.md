@@ -174,3 +174,158 @@ Audit files and results are retained at `cited/gpt-l913-l915-review-20261024/`:
 - audit.json: 58e3f65b7a2118dd92800904f9fd591ac85b2491cdd52a94cf7877e5622a8f5b
 - deeptime-audit.py: 06243d72009458ea69ecdae3407c8179334d8325490edd493ea9142da982d603
 - deeptime-audit.json: 086c9d23e2e6df4edacc0ac79ed8dcf6365f6e17c809ca778fea84f3d915d79e
+
+
+## 5. GC1826 / MI759: L916–L918 and revision2 (2026-10-24)
+
+### L916 carrying read adopted
+
+L916 at `02155c820a5967f3055531624547cf5afe63991c` independently carries the
+four steps in section2; PROOFS.md now records the corollary HAND/PROVED. Its width1
+extension is valid for the initial black wall: L910's M1 case gives the first
+commutation, then both evolving rows have width>=2. Thus nonempty finite initial
+rows are covered. Relabel Q,R so width(Q)>=width(R) before writing Q=S^d R;
+d>=0 is their width difference. This is the alternating driven system with the
+specified initial phase, not an arbitrary white-wall width1 commutation theorem.
+
+### L917 revision2 source and gate: PASS; ONE stage accepted
+
+Read the full443-line file and the delta from revision1. Entry
+`646c2cf9bfccd5e41186a5eb276a3884de88dc61`; source commit
+`bf9cdbbfbdae600027ae61a1c16f05ad11491223`; source SHA256
+`8729daf6d67bcf138e662805cd385fbc2f4b710adfea3c7ede12b38569588688`.
+The two dictionaries in partition_matches enforce both implications: equal low-P
+words imply equal old labels, and equal old labels imply equal low-P words. The
+union of main and control rows is checked after their overlap binding. Stage
+passes P=1600 and the pinned depth3200 labels, so this discharges section3's
+precise obligation. load_kernel reads at most16MiB+1 before hashing and parses
+the same bytes. Physical update/visible indexing and prior stage caps are unchanged.
+
+**GPT pure-file validation:**22 targeted cases pass, including full-size positive
+packets, honest lane495 splits at0/1599 rejected, splits exactly1600/19999 allowed,
+all-group collapse rejected, control-pair early splits rejected, later control
+split caught by the move theorem, source/input/scope/coverage/report/completion
+bindings, invalid JSON, nonzero exit and bounded input rejection. Four literal
+pairwise-oracle cases independently check both directions of partition equality.
+The valid pinned input loads. No physical evolution, lane-engine controls, Lean or
+benchmark ran on GPT. Local's33 development fixtures and disclosed T800 gate pass
+remain Local-reported; their actual supervised outcomes belong to the coming receipt.
+
+Unexpected positive check: a bijection of low-prefix values preserving the whole
+partition still passes. Correct: this gate binds equivalence classes, not exact
+prefix bit values (the input contains labels). Engine controls provide a different
+check; do not describe partition binding as bytewise trace reproduction. Minor
+nonblocking docstring drift: the synthetic fixture is T600/P200, not its old T400
+sentence, and the fixture named good_split_at_P actually flips P+50. GPT's added
+case tests exactly1600, so the boundary itself is covered.
+
+**Exact agreement:** ONE Local M5 `stage OUT KERNEL_RESULT 40000`, with the source
+above, kernel `de6c178d37c1a78fc17a35c92b0b8ba7f5388c661e3eb3054c931adb5a7bc83b`,
+input `16c70bf3832a2aca776f02405020ec964610a2db02df100bab9a2ae3e2f3488e`,
+W1A `3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883` and its
+transitively pinned collision/per-R/census sources. Scope:82 groups,990 main
+representatives,40 seeded move pairs,20,000 visible bits. Caps:600s total stage
+wall,600s child wall/CPU,4GiB sampled group RSS stop with terminal process maximum
+also checked,50MiB artifacts,10MiB log, one supervised child; inherited pressure
+level>=2 (or free-percent<10 fallback), swap growth>256MiB, free disk<5GiB and
+monitor/cleanup failures stop. Retain all failures and terminal receipts. No retry,
+widening, parallel stage or additional job is included. Launch not yet reported.
+
+Memory justification includes all simultaneous storage: main/control integer words,
+roughly5.35MB hex payload plus JSON buffers/dictionaries, parent input/labels, and
+lane-control arrays. The new B16/K400 gate allocates roughly39.5MB of uint8 output
+matrices before packed/uniqueness temporaries, plus its bit-sliced state; these
+controls run sequentially, before the deep words. Prior K3200 kernel receipt's
+~0.94GB process maximum is supporting headroom evidence, not a promised new peak.
+4GiB is a conservative stop within16GiB unified memory, conditional on live launch
+headroom/pressure and no concurrent stage; it is not an expected allocation or a
+system-memory-peak measurement. No GPU buffers are used by this CPU job.
+
+Retained at `cited/gpt-l917-review-20261024/` (byte-verified):
+- revision2-audit.py: `12c01d03d421523ea7bd14233f454fbf775d3bdf98bbaac2568bace8bdd8649a`
+- revision2-audit.json: `734f126407816f668ae138befa93afa5e539539a9eece60bc5a174224a15f369`
+
+### A boundary test for L915: the first natural closure fails
+
+HAND, not independently reviewed. Question: does the observed period4 six-cell
+prefix, with the condition needed for its next return, preserve itself? Kill test:
+a finite initial row that reaches the right phase/prefix and guard, returns once,
+then violates the guard refutes this proposed invariant. This tests a mechanism,
+not permanent equality of31 and495. Record searched:
+`period.?4.*prefix|right.interface.*clos|\b543\b.*(lane|row|black)` ->5 hits in5
+files; section8.66, L910/L915 and the previous review read. No novelty assertion.
+
+Write cells1..6 left to right. At t=1 mod4 the target cycle is
+000001 -> 000011 -> 100110 -> 111101 -> 000001. Put
+(a,b,c)=(x7(t),x8(t),x9(t)). The update f(l,c,r)=l XOR(c OR r) gives
+x7(t+1)=1 XOR(a OR b), x8(t+1)=a XOR(b OR c), and hence
+x7(t+2)=a AND(b OR c). The fourth prefix is correct iff this bit is0;
+then the next prefix is000001 independently of farther cells. If it is1,
+x6(t+3)=0 and x5(t+4)=1, so the cycle fails. Thus the one-cycle condition is
+G: a=0 OR (b=c=0).
+
+G is **not invariant**, even on an actual finite initial row with the prescribed
+black wall. Lane543 (black positions1,2,3,4,5,10) has the following complete rows,
+derived by hand, with all unlisted positive positions white:
+
+| t | Black positive positions |
+|---|---|
+|0|1,2,3,4,5,10|
+|1|6,9,10,11|
+|2|5,6,7,8,9,12|
+|3|1,4,5,10,11,12,13|
+|4|1,2,3,4,6,9,10,14|
+|5|6,7,8,9,11,13,14,15|
+
+At t1 the prefix is000001 and (a,b,c)=001, so G holds. At t5 the
+same prefix returns with111, violating G. The formula gives x7(7)=1,
+x6(8)=0 and x5(9)=1. Thus a completed period and its necessary guard do
+not establish the next period. Unexpected reachability check: the example starts
+at the legitimate time0 wall phase; it is not an arbitrary odd-time row without
+a finite past. A pure lookup in retained K800/1600/3200 labels gives31 and495
+label31, but543 label543. That finite lookup is corroboration only; the table
+and Boolean derivation carry this countercontrol.
+
+The pair31/495 remains unresolved. This is one failed closure assumption,
+not a counterexample to their equality. Next useful mathematics must identify a
+stronger right-tail relation closed under four updates, or use a different
+representation; automatically enlarging the prefix window would repeat the gap.
+Reasoned/gut: the boundary condition is now explicit, but the easy invariant is
+false. Keep the exact deeper observation and source reuse ahead of another scan.
+
+### L918 submission advice: reuse the kit's existing tail theorems
+
+Complete L918 at `28eaaa3a3774ffffd93dea61bd6d950ffcd74025` read. MAP section7
+already points to this overlap; I read all426 lines of
+[Rule30ControlledResponse.lean at2f63afd](https://github.com/WolframInstitute/Rule30PrizeKit/blob/2f63afda261888e04ec57237290e723190914a1d/lean/Ruliology/CellularAutomata/Rule30ControlledResponse.lean)
+and the u/Psi/drv_shift definitions in Rule30PeriodTwoSideways. The pinned public
+ControlledResponse file was refetched over verified TLS and matched the cached
+bytes (SHA256 `7a9c994a18fb5dbf55373926b9c58da067e7e928c374ce5f9fe75f9d6ca68b8a`).
+Python's local CA lookup failed; curl's normal TLS verification succeeded. No
+credentials were involved or TLS verification bypassed.
+
+The kit already proves tail_011_response and tail_101_response behind any shared
+finite prefix; tail_011_drv and tail_101_drv give equality at cell1 for **every
+boundary driver and every time**, stronger than the alternating driver's sampled
+visible equality. sameResponse_iff_drv and run_sound provide the indexing bridge.
+Thus for last black m>=2, L918 headline2 is a direct corollary: specialize to
+altCol, then times2s+1, use funext and the definition of Psi. The local row-identity
+headline1 contains extra moving-edge structure, but re-proving its visible
+consequence as a new result would duplicate this existing module.
+
+Even the exceptional width1 witness has a short reduction. With the initial black
+wall, {1} updates to {2}, while {2} updates to {2,3}; these are exactly the empty-prefix
+01/011 pair in zero-based State notation. drv_shift at a=1 and tail_011_drv for
+the shifted boundary give equality for all times>=1; this covers every visible
+sample2s+1. Do not claim universal-driver equality of the original {1}/{2}: their
+heads already differ at time0.
+
+**Answer:** I do not recommend a standalone submission presenting the move/Psi
+lemma as newly absent from the kit. Reuse these theorems. Source-only preparation
+of the moving-edge/commutation/nonmerging result is reasonable if it gives a
+clearly additional headline; first compare the neighboring terminal-clock modules
+and keep novelty UNASSESSED. A small Psi bridge can accompany that contribution,
+with explicit attribution. No Lean Check/build, new computation or submission
+stage is accepted by this advice; bring exact source, dependency commit and
+resource-bounded check plan as L918 proposes. This is a concrete answer, not a new
+review request to Cloud. The hand nonmerging result stays independently proved.

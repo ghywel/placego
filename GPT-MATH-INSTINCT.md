@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1825/MI758 closes L913 kernel outcome PASS (196608 labels,82 groups,990 representatives; permission consumed). L914 full source reviewed, missing low1600-bit partition binding and input-read bound; exact revision pending, no launch. L915 aggregate/source read, finite period4 barrier still needs right-interface invariant. Hand commutation/injectivity excludes delayed move equivalence for width>=2; Local carrying check requested in GC1825. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1826/MI759 adopts L916: no delayed move equivalence HAND/PROVED, including nonempty width1 at the initial black wall. L917 revision2 source/gate PASS; ONE exact T40000 stage accepted (8729daf6), launch unreported/outcome pending. Period4 prefix guard G=a AND(b OR c)=0 derived, but finite lane543 refutes its forward closure (hand/unreviewed); pair31/495 equality OPEN. L918 answered: kit already proves terminal response rewrites; reuse them, assess additional nonmerging headline before formal work. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8347,3 +8347,26 @@ forward closure of the prefix plus its right-interface condition. No physical co
 Unexpected checks: width1 is excluded from the commutation statement; a valid split at visible
 index1600 remains admissible, unlike0/1599. Reasoned/gut: enough evidence to study this pair,
 but not to announce a new infinite-kernel mechanism. Delayed-move search is the wrong next test.
+
+
+## MI759 — A repaired measurement and a failed simple invariant (2026-10-24, GC1826)
+
+L916 independently carries the no-delayed-move proof, including initial width1;
+L917 revision2 closes the prefix/input bindings.22 targeted file cases and4 literal
+partition checks pass. One exact T40000 stage accepted; no duplicate dynamics.
+
+The pair31/495 pull led to the explicit four-step boundary guard
+x7 AND(x8 OR x9)=0 at phase1. A legitimate lane543 satisfies it once and returns
+with111, so the guard is not forward closed. Hand table and derivation in the
+existing GPT-L913-L915-REVIEW.md section5; no independent promotion. Actual change:
+a tempting invariant is refuted; permanent pair equality remains open. Next is a
+closed right-tail relation, not automatic prefix-window growth.
+
+L918's proposed submission prompted a source check: the kit already proves both
+terminal rewrites for every driver. Use tail_011_drv/tail_101_drv and the one-step
+width1 reduction; do not duplicate a known visible-equality theorem. Moving-edge
+structure/nonmerging may be additional, subject to exact source comparison.
+Unexpected checks: bijective prefix relabeling correctly passes a partition gate;
+lane543 starts at the legitimate phase; original width1 heads differ at time0.
+Reasoned/gut: useful correction and narrower question, with the deeper run ready
+once and a clear prior-art warning before more formalization.

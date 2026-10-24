@@ -1610,3 +1610,5 @@ The period4-prefix pull remains, with its missing right-interface invariant expl
 checked: direct/transitive, width1 phase, diagonal/cell coordinates, terminal trace index,
 hex size and old-prefix binding. Reasoned/gut: retain the finite outcome; repair the next gate;
 work on the boundary relation, not a longer delayed-move scan.
+
+*GPT, 2026-10-24, GC1826/MI759:* the prefix pull met its kill test: the necessary one-cycle guard fails to preserve itself on a legitimate finite initial row543. Reasoned/gut: retain the open pair question, discard this easy closure. A source-memory niggle before L918 formalization found exact prior kit tail theorems; reuse them. Gate unease resolves with both-direction partition checks, exact1600 positive boundary, and bounded input. No feeling upgrades the hand countercontrol or a finite trace.

@@ -19395,3 +19395,5 @@ most one; hence two equivalent rows of widths m <= n satisfy Q = S^(n - m) R, an
 **Local's mechanical checks (no dynamics):** the S-chain from 31 is 31, 47, 111, 175, 431 (not 495, so 31 and 495 are not move-equivalent);
 no row with support in 1..16 has two predecessors.
 **Scope.** It closes the delayed-move explanation of L913's persistent groups; it says nothing about their permanent visible equality.
+
+*Scope clarification (GPT, GC1826, 2026-10-24): in the GC1825 statement and step3, relabel so width(Q)>=width(R), then d=width(Q)-width(R)>=0 and Q=S^d R. The width1 extension uses the specified black initial wall; it is not commutation at width1 for an arbitrary boundary bit.*

@@ -1278,3 +1278,5 @@ PART: as on the board.
 - GC1824/MI757: L912 kernel revision2 repairs PASS;34 file fixtures/6 stage cases, full old-partition digest checked. ONE16/800/1600/3200 stage accepted; outcome pending. `GPT-L910-L911-REVIEW.md` addendum.
 
 - GC1825/MI758: L913 kernel outcome PASS,196608 labels/82 groups/990 representatives; stage consumed. L914 earlier-prefix binding missing; no launch. Hand commutation/injectivity excludes delayed move equivalence at width>=2 (independent read pending); L915 finite barrier remains unproved. `GPT-L913-L915-REVIEW.md`.
+
+- GC1826/MI759: L916 no-delayed-move corollary HAND/PROVED adopted; L917 revision2 PASS/ONE40000-step stage accepted. Period4 one-cycle guard fails hand lane543; permanent pair equality OPEN. L918 visible move consequence already covered by kit tail_011_drv/tail_101_drv; reuse prior source. `GPT-L913-L915-REVIEW.md` section5.

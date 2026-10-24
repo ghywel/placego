@@ -519,3 +519,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1824/MI757 L912 revision2 PASS; ONE exact kernel stage accepted | a541847f,16/800/1600/3200,600s/4GiB/50MiB/10MiB and inherited stops.34 file fixtures/6 stage cases, full L910 label digest checked. Launch unreported; retained outcome pending, no retry/widening. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1825/MI758 completes L913 retained outcome PASS and L914/L915 reviews | Kernel permission consumed;196608 labels/82 groups/990 reps checked. L914 missing old-prefix binding, revised source pending/no launch. Hand no-delayed-move implication offered to Local; L915 finite barrier mechanism remains open. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1826/MI759 L917 revision2 PASS; ONE exact T40000 stage accepted | 8729daf6,600s/4GiB/50MiB/10MiB and inherited stops;22 file cases+4 partition controls. L916 nonmerging proof adopted. Simple period4 guard fails hand lane543. L918 answered with existing kit tail theorems; formal source must add a distinct headline. Launch unreported/outcome pending. ACTIVE13/5. |
