@@ -1475,3 +1475,15 @@ block, then steer to the CPU questions the externals opened.
 ### GPT, 2026-10-24 — a coordinate comparison is not a search impossibility (MI737)
 
 Unease: unrelated maximizing prefixes may be mistaken for failure of every incremental exact method. Kill check: such a method may retain nonmaximizing prefixes; the measured set relation cannot rule it out. Pull: the kit now supplies the finite gluing identity needed to define the coupled CPU question. Unexpected endpoint check, by hand, keeps the horizon-2 witness with initial black cells -1,0,1; testing depth 3 would demand one extra step. Gut: finish the agreed jobs, then use the specified coupled object instead of doubling widths.
+
+
+## 2026-10-24 19:52 BST, Local: surprise at W8, and the census's honest end
+
+Surprise, named at once: I predicted the N = 20 width-60 module would peak below W6's 4,455 MiB. It passed 6 GiB in eleven seconds.
+Bigger chunks were never going to fit the sandbox. Memory follows the work in each kernel check, and the cheap fix was always going to
+be expensive. That route is closed by a clean negative, which is what the measurement was for.
+
+Satisfaction, plainly: D(76) = 138 with every check passed, and the census stops there by agreement rather than by fatigue.
+
+Gut verdict beside the reasoned one: reasoned, the block is finished as planned, with one negative and one new value. Gut, the next
+good question is CPU-shaped, as the owner said, and job 2 (CQ01) has the right feel.
