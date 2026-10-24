@@ -17,13 +17,13 @@ column `B4` (index `3`) at phase `t + 3`; at time `9` (for `R31`) and `5` (for `
 column `6` is a `B3`, and columns `7..19` form one of the kit's wall states (decided). The kit's `trap_invariant` then keeps columns
 `1..6` in the ether for ever, so column `1` is the ether column `B5` from then on, and with four (resp. two) decided early values the
 visible column is the parity of the step: `u R31 q = u R495 q = (q % 2 == 1)` for every `q`. Radius-one locality of the driven
-right half (`drv_local`) carries both trap entries and the early values to every member of the two families (the entry rows
+right half (`drv_prefix_agree`) carries both trap entries and the early values to every member of the two families (the entry rows
 reach column `19` at times `9` and `5`, inside the cones of `28` and `24` cells), and the trap invariant allows any later tail,
 so every member has the same visible column.
 
-Consequences: `CQ01` for every finite member of either family (`CQ01_of_agree31`, `CQ01_of_agree495`), among them the explicit
+Consequences: `CQ01` for every finite member of either family (`CQ01_prefix31`, `CQ01_prefix495`), among them the explicit
 right halves `fam n` (`R31` with one more black cell at `29 + n`), finitely supported and pairwise distinct (`CQ01_fam`,
-`fam_injective`); one sideways row for all of them, `Psi R = Psi R31` (`Psi_eq_of_agree31`, `Psi_eq_of_agree495`); and the
+`fam_injective`); one sideways row for all of them (`Psi_prefix31`, `Psi_prefix495`, `Psi_eq`); and the
 two right halves `R31` and `R495` are not related by the right-end moves
 (the inverse of the kit's terminal rewrites `011 -> 01`, `101 -> 11`, with the black wall counted as a cell left of cell `1`), so the
 moves do not account for every collision of `R -> Psi R`. The move relation is formalized below on reversed cell lists; its chains
@@ -195,19 +195,24 @@ Radius-one locality: under the common driver, two right halves that agree on cel
 inside that cone, and so do the early visible samples, so the whole visible column transfers; after the entry the trap
 invariant allows any later tail, finite or not. -/
 
+/-- Two right halves agree on cells `1..M`. -/
+def AgreesPrefix (M : Nat) (R S : Nat → Bool) : Prop :=
+  ∀ p, 1 ≤ p → p ≤ M → R p = S p
+
 /-- **Locality** of the driven right half: agreement on cells `1..M` gives agreement at `(t, p)` when `p + t ≤ M`. -/
-theorem drv_local (c x y : Nat → Bool) (M : Nat) (h : ∀ p, 1 ≤ p → p ≤ M → x p = y p) :
+theorem drv_prefix_agree (c x y : Nat → Bool) (M : Nat) (h : AgreesPrefix M x y) :
     ∀ t p, p + t ≤ M → drv c x t p = drv c y t p
   | 0, 0, _ => by rw [drv_col0, drv_col0]
   | 0, p + 1, hp => by rw [drv_init c x (p + 1) (by omega), drv_init c y (p + 1) (by omega)]; exact h (p + 1) (by omega) (by omega)
   | t + 1, 0, _ => by rw [drv_col0, drv_col0]
   | t + 1, p + 1, hp => by
-    rw [drv_isR30 c x t p, drv_isR30 c y t p, drv_local c x y M h t p (by omega),
-      drv_local c x y M h t (p + 1) (by omega), drv_local c x y M h t (p + 2) (by omega)]
+    rw [drv_isR30 c x t p, drv_isR30 c y t p, drv_prefix_agree c x y M h t p (by omega),
+      drv_prefix_agree c x y M h t (p + 1) (by omega), drv_prefix_agree c x y M h t (p + 2) (by omega)]
 
 /-- **The first family**: every right half agreeing with `R31` on cells `1..28` has the visible column of `R31`. -/
-theorem u_of_agree31 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 28 → R p = R31 p) (q : Nat) : u R q = (q % 2 == 1) := by
-  have loc := drv_local altCol R R31 28 h
+theorem u_prefix31 (R : Nat → Bool) (h : AgreesPrefix 28 R R31) : ∀ q, u R q = (q % 2 == 1) := by
+  intro q
+  have loc := drv_prefix_agree altCol R R31 28 h
   have hE : ∀ p, 1 ≤ p → p ≤ 6 → drv altCol R 9 p = ether (3 + p) (9 + 3) := fun p h1 h2 => by
     rw [loc 9 p (by omega)]; exact trap31_E p h1 h2
   have hW : ((9 + 3) % 4, rowOf (drv altCol R) 9 6 13) ∈ wallStates := by
@@ -224,8 +229,9 @@ theorem u_of_agree31 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 28 → R p
     rw [h1, show 2 * q + 1 + 3 = 2 * q + 4 by omega]; exact ether4_parity q
 
 /-- **The second family**: every right half agreeing with `R495` on cells `1..24` has the visible column of `R495`. -/
-theorem u_of_agree495 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 24 → R p = R495 p) (q : Nat) : u R q = (q % 2 == 1) := by
-  have loc := drv_local altCol R R495 24 h
+theorem u_prefix495 (R : Nat → Bool) (h : AgreesPrefix 24 R R495) : ∀ q, u R q = (q % 2 == 1) := by
+  intro q
+  have loc := drv_prefix_agree altCol R R495 24 h
   have hE : ∀ p, 1 ≤ p → p ≤ 6 → drv altCol R 5 p = ether (3 + p) (5 + 3) := fun p h1 h2 => by
     rw [loc 5 p (by omega)]; exact trap495_E p h1 h2
   have hW : ((5 + 3) % 4, rowOf (drv altCol R) 5 6 13) ∈ wallStates := by
@@ -242,20 +248,20 @@ theorem u_of_agree495 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 24 → R 
     rw [h1, show 2 * q + 1 + 3 = 2 * q + 4 by omega]; exact ether4_parity q
 
 /-- **Equal sideways rows across the first family.** -/
-theorem Psi_eq_of_agree31 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 28 → R p = R31 p) : Psi R = Psi R31 := by
-  unfold Psi; rw [show u R = u R31 from funext fun q => by rw [u_of_agree31 R h, u_R31]]
+theorem Psi_prefix31 (R : Nat → Bool) (h : AgreesPrefix 28 R R31) : Psi R = Psi R31 := by
+  unfold Psi; rw [show u R = u R31 from funext fun q => by rw [u_prefix31 R h, u_R31]]
 
 /-- **Equal sideways rows across the second family.** -/
-theorem Psi_eq_of_agree495 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 24 → R p = R495 p) : Psi R = Psi R31 := by
-  unfold Psi; rw [show u R = u R31 from funext fun q => by rw [u_of_agree495 R h, u_R31]]
+theorem Psi_prefix495 (R : Nat → Bool) (h : AgreesPrefix 24 R R495) : Psi R = Psi R495 := by
+  unfold Psi; rw [show u R = u R495 from funext fun q => by rw [u_prefix495 R h, u_R495]]
 
 /-- **CQ01 across the first family**: `Psi R` has infinitely many black cells for every `R` agreeing with `R31` on `1..28`. -/
-theorem CQ01_of_agree31 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 28 → R p = R31 p) : ¬ FinSupp (Psi R) :=
-  not_finSupp_Psi_of_eventuallyPeriodic R ⟨0, 2, by decide, fun t _ => by rw [u_of_agree31 R h, u_of_agree31 R h]; simp⟩
+theorem CQ01_prefix31 (R : Nat → Bool) (h : AgreesPrefix 28 R R31) : ¬ FinSupp (Psi R) :=
+  not_finSupp_Psi_of_eventuallyPeriodic R ⟨0, 2, by decide, fun t _ => by rw [u_prefix31 R h, u_prefix31 R h]; simp⟩
 
 /-- **CQ01 across the second family.** -/
-theorem CQ01_of_agree495 (R : Nat → Bool) (h : ∀ p, 1 ≤ p → p ≤ 24 → R p = R495 p) : ¬ FinSupp (Psi R) :=
-  not_finSupp_Psi_of_eventuallyPeriodic R ⟨0, 2, by decide, fun t _ => by rw [u_of_agree495 R h, u_of_agree495 R h]; simp⟩
+theorem CQ01_prefix495 (R : Nat → Bool) (h : AgreesPrefix 24 R R495) : ¬ FinSupp (Psi R) :=
+  not_finSupp_Psi_of_eventuallyPeriodic R ⟨0, 2, by decide, fun t _ => by rw [u_prefix495 R h, u_prefix495 R h]; simp⟩
 
 /-- An explicit infinite family of FINITE right halves in the first class: `R31` with one more black cell at `29 + n`. -/
 def fam (n : Nat) (p : Nat) : Bool := R31 p || p == 29 + n
@@ -264,7 +270,7 @@ theorem R31_far (p : Nat) (hp : 5 < p) : R31 p = false := by
   unfold R31 ofCells
   rw [List.getD_eq_default _ _ (by simp [cells31]; omega)]; simp
 
-theorem fam_agree (n : Nat) : ∀ p, 1 ≤ p → p ≤ 28 → fam n p = R31 p := fun p _ hp => by
+theorem fam_agree (n : Nat) : AgreesPrefix 28 (fam n) R31 := fun p _ hp => by
   simp only [fam, show (p == 29 + n) = false from by simp; omega, Bool.or_false]
 
 theorem fam_finSupp (n : Nat) : FinSupp (fam n) :=
@@ -278,6 +284,6 @@ theorem fam_injective : Function.Injective fam := fun m n hmn => by
 /-- **Infinitely many finite CQ01 instances**: the right halves `fam n` are pairwise distinct, each finitely supported, and
 each satisfies `CQ01` with the sideways row of `R31`. -/
 theorem CQ01_fam (n : Nat) : FinSupp (fam n) ∧ ¬ FinSupp (Psi (fam n)) ∧ Psi (fam n) = Psi R31 :=
-  ⟨fam_finSupp n, CQ01_of_agree31 (fam n) (fam_agree n), Psi_eq_of_agree31 (fam n) (fam_agree n)⟩
+  ⟨fam_finSupp n, CQ01_prefix31 (fam n) (fam_agree n), Psi_prefix31 (fam n) (fam_agree n)⟩
 
 end Rule30Submission
