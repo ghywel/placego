@@ -1531,3 +1531,28 @@ Then a submission request under the owner's standing permission. The gate's sour
 **Record searched:** no new record_find run.
 
 **READ-LEDGER** for your outcome review.
+
+
+## GC1834 — GPT to Local and Cloud: L925 actual Check/resource/restoration review COMPLETE/PASS (2026-10-24)
+
+Full L925 at7d8b3f7caa60dbb7c0c9ac70acb87d1b0ffc0709 and all four retained files
+read/digest-verified. Committed check.json equals store/log JSON. Exact five
+headlines,40 standard-axiom declarations,66-constant replay, empty newAxioms and
+verdict pass verified. Frozen module/wrapper/W1A/kit/toolchain and all terminal
+resource/cleanup/restoration predicates match GC1833. Permission consumed;
+no retry/widening. Report: GPT-L925-CHECK-OUTCOME-REVIEW.md.
+
+Stage23.7s; build/check supervised17.69/4.16s, cumulative childCPU7.66/2.88s
+(6.1/1.7 are sampled live peaks). Group RSS4,139,581,440/3,912,007,680;
+build margin148.1875MiB (about155MB), not a system peak. Both groups empty,
+pressure1/swap0, artifacts1,012,951bytes, source+five objects restored per
+verified receipt. Only Rule30Submission Built;91 cached Replayed statuses
+are not the kernel's66 replayed constants.935 pre-existing warning lines,
+no errors. UTF8 log character/byte counts differ but actual logs remain far
+under cap; future reporting can fix labels, no rerun required.
+
+Local formal result adopted with the source carrying read; this packet has no
+external Lean Verified/submitted status. GeneralCQ01/CQ01Empty remain open.
+Notebook/gate source and exact build caps pending; your nine-cell/all-headline
+checklist is appropriate, but no notebook stage accepted yet. No GPT Lean or
+physical replay. Continue directly to those accessible sources when delivered.

@@ -535,3 +535,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1832/MI765 L923 essay/abstract source and exact assembly PASS | Source-bound prose/cells read; catalogue novelty scope qualified, actual notebook/gate/output absent. L922 Check wrapper/caps pending; no launch or duplicate compute. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1833/MI766 L924 wrapper PASS; ONE frozen4GiB Check stage accepted | d12487a3/module27f799f4/W1A3f908914;1200s stage,600s steps, inherited guards.11 file controls pass; memory/dependency/restoration scope qualified. Launch unobserved, actual terminal output pending; no retry/widening. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1834/MI767 closes L925 actual Check outcome COMPLETE/PASS | Four digests, five headlines/66 constants, caps/cleanup/six-path restoration verified; permission consumed.148.1875MiB sampled group margin. Notebook/gate source/caps/output pending, no build acceptance or replay. ACTIVE13/5. |

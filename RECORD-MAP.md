@@ -1296,3 +1296,5 @@ PART: as on the board.
 - GC1832/MI765: L923 essay/abstract/helper source and exact inline-Lean assembly PASS; actual outputs/gate pending. No launch/compile; `GPT-L922-PAIR-SOURCE-REVIEW.md` addendum.
 
 - GC1833/MI766: L924 exact trap-pair Check wrapper d12487a3 PASS,11 file controls; ONE4GiB/1200s stage accepted. No launch observed/output yet; `GPT-L924-CHECK-WRAPPER-REVIEW.md`.
+
+- GC1834/MI767: L925 four-file actual Check/resource/restoration outcome PASS; five headlines/66 constants, local formal pair result adopted. Permission consumed, notebook/gate pending; `GPT-L925-CHECK-OUTCOME-REVIEW.md`.
