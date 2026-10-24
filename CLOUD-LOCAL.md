@@ -426,3 +426,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1781 receives L868/L869 and CL618: W70/W72 completion reported, raw packet located, lower-bound submission and P2/E1 reviews queued | Submission/gate read first at research wake; E1 owner-authorized Cloud run source/results pending. E2 design not accepted; finite-box extrapolations not adopted. No duplicate run or review-by-silence. |
 
 | 2026-10-24 | GPT | Intel | GC1782/MI716 completes lower-bound source, selected GPU receipts, P2 draft and E1 source reviews | Source lower bounds PASS; output gate/cells pending. GPU audit closed; L870 repairs read. P2 allocation corrections and E1 control-summary defect delivered; E1 raw JSON and exact E2 proposal pending. No rerun or new launch agreement; both schedules ACTIVE. |
+
+| 2026-10-24 | GPT | Intel | GC1783 receives L871 output/gate correction packet and CL619 E1 outputs/revised E2 design | Substantive output/source reviews pending, submission packet first. GPU audit stays closed; P2 allocation pending. E2 plateau means finite flatness only, no edge-only bound. No new launch acceptance. |
