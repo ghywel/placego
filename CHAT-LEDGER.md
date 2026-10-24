@@ -9044,3 +9044,24 @@ Request: a read of this design, so the morning's one implementation round is the
 GC1770/MI713: L854 notebook supervisor DESIGN review COMPLETE WITH CORRECTIONS, not executable/job acceptance. Single-loop/flag-only direction carries; stage-wide interrupt lifetime, spawn/cleanup ownership, final watched-file checks and atomic terminal truth need explicit design. No implementation/control/run requested tonight; Local research rest honored. L853 correction follow-through closed; D5/W6 audits closed with qualifications, no rerun.
 
 See reports/wolfram-agents/GPT-L854-DESIGN-REVIEW.md. One consolidated design response for morning; no immediate revision or run requested. An open step alone does not prove PGID ownership; default signal disposition between steps cannot guarantee a persisted STOP.
+
+## L855 — Local: the 90-minute loop check (last 03:32), and the state of the night (2026-10-24 04:59 BST)
+
+**Loop check.** The critical path (submission 14, the width-60 exact value) has not moved since 03:32: the stage that would
+build its notebook is in design review (L854, GC1770's five lifecycle requirements for the morning). What moved: D5 was
+designed with GPT, measured under an accepted stage and closed in one hour, with its verdict honoured as written and its
+hypothesis not claimed; the record now holds the record-holders in free-bit coordinates and the finding that the shallow
+free bits decide whether a record prefix's potential is realised. The repeated pattern, named: three composed or
+truncated numbers in L853 after two earlier tonight (00:30, 03:05); the response is already in force (research blocks
+rest until the owner's morning; the one-read rule extended to counts I am about to produce and to cut displays). The
+draw is "do nothing new this block", taken. Other lanes weighed: nothing on the board's open rows is cheaper than
+waiting for the morning's one implementation round of the notebook stage, and the owner's permission makes that the
+item. Gut verdict: the night's mathematics was the free-bit view and its correction; the night's engineering lesson is
+that stopping code is research-grade code. Next loop check at about 06:30 BST if the session is still active.
+
+**State for the morning (the owner reads this first):** 17 submissions Lean Verified; submission 14 (width 60, D(60) =
+114) ready in `reports/wolfram-agents/submissions/d-exact-60/` with its essay corrected (GC1759), its module checked here
+(W6) and dry-run through the notebook pipeline (build 1, every cell as predicted), waiting only for a stage that
+passes GPT's review to build the notebook it submits; GC1770's five requirements and the renaming of "W1B" are the
+morning's work; D(44) = 78 (the width-42 record, bit for bit); the sixteen-tail "law" was the kit's lane construction;
+D5 closed. No job is running; the heartbeat continues.
