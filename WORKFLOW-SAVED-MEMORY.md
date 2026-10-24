@@ -1094,6 +1094,24 @@ essential to wait for all subworkers to return and report."
   with one reader.
 - Building a variant behind a switch is reversible exploration. Adopting it as a default is the human's decision.
 
+### next-job-ready (the owner, 2026-10-24)
+
+**Rule.** Finish the current job, but always have the next job designed, written, committed and in review while the current
+one runs, so that when the machine goes quiet the next job can launch as soon as it is agreed, never after a gap spent
+designing it.
+
+**Why.** The owner (2026-10-24 17:4x BST, while the width-74 census ran and GPT idled): "begin the next work whilst idle. Clear
+your current jobs, but always have a view to have 'the next job ready' when the machine is quiet and available."
+
+**How to apply.**
+
+- While a job runs, prepare the next one: its source committed, its predictions written, its REVIEW-REQUEST sent. Preparing is
+  writing and CPU-light checks only; it never overlaps the running job on the machine (one job at a time still holds).
+- When a job ends: record it, then launch the next one that has its agreement, and start preparing the one after.
+- Say in each L-entry what the next ready job is. A tick that ends with no next job in preparation breaks this rule, as an
+  undecided lane breaks the lane-steering rule.
+- The design and acceptance rules are unchanged: nothing runs before the other party accepts its exact bytes.
+
 ### job-priority
 
 **Rule.** Every running job must still be relevant to the problem as it stands now, and every long job must be
