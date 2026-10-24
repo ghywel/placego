@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""CQ01 deep-time rows, revision 1 (Local, 2026-10-24, L914; L913's next job (i)). NOT an agreed job until GPT accepts this exact file;
+"""CQ01 deep-time rows, revision 2 (Local, 2026-10-24, L917; GPT's GC1825: the low 1,600-bit partition of every retained row and every
+control-pair row must equal the pinned kernel partition at depth 3,200, while a split at visible bit 1,600 or later stays admissible; the
+input read is bounded before hashing; the size estimate corrected). Revision 1 (L914; L913's next job (i)). NOT an agreed job until GPT accepts this exact file;
 nothing runs on import; `--controls` runs the small CPU controls only.
 
 If this holds, it changes the CQ01 row: L913 left 82 groups of move classes merged through 1,600 visible bits (depth 3,200), none of them
 a delayed move. This job runs each group's members far deeper, as single rows encoded as Python integers (cell x is bit x; the wall at
 bit 0), to T = 40,000 steps, that is 20,000 visible bits, and reports which pairs split and when. Persistence through 20,000 bits is still
 only unresolved (GC1823): it names candidates for a second mechanism; only a proof of permanent equality refutes the kernel conjecture.
+Delayed moves are excluded by proof (PROOFS.md 'GC1825 corollary'): distinct move classes never become move-equivalent.
 
 Input: the retained kernel result (cited/cq01-kernel-20261024-2224/cq01_kernel_result.json), given by path and required to have the
 sha256 KERNEL_RESULT_SHA256; its merged groups (82, each a sorted list of move-class least lanes, cell p = bit p - 1) are the rows.
@@ -20,14 +23,17 @@ Controls inside the run and in `--controls`:
   - a mutant 'wallphase' (the wall black at odd times) must fail the engine control, and a mutant 'shiftvis' (cell 1 read at even times)
     must fail it too.
 The result gate (GC1813, GC1818, GC1821, GC1823): strict reading, one explicit schema in the order types, exact key sets, domains,
-cross-field bindings, arithmetic, completion, fail-closed, on bounded bytes; the input digest and the exact row set (every lane of every
-group, once) bound; every per-group class and first-difference recomputed from the retained words; the 40 move pairs selected by the same
+cross-field bindings, arithmetic, completion, fail-closed, on bounded bytes; the input read bounded before it is hashed; the input digest
+and the exact row set (every lane of every group, once) bound; the partition of all retained rows by their low P visible bits (P = 1,600,
+depth 3,200) equal to the kernel's depth-3,200 partition of those lanes (GC1825), so an early split or a collapse fails and a split at bit
+P or later is admissible; every per-group class and first-difference recomputed from the retained words; the 40 move pairs selected by the same
 seeded helper, their words retained too, their differences recomputed from those words and required absent. The valid synthetic packet is a real tiny computation (T = 400 on four retained groups); every
 negative fixture states its exact diagnostic.
 
 Proposed stage: T = 40,000 (the only admitted stage scope); W1A caps: stage, step wall and CPU 600 s, group RSS 4 GiB, artifacts 50 MiB,
 log 10 MiB. Cost ESTIMATE: one row of 20,000 steps took 0.02 s in a probe; the row grows one bit per step, so a 40,000-step row is about
-0.08 s, and about 1,000 rows near 80 s; the retained words are about 1,000 x 2,500 bytes of hex (2.5 MB). `run` also admits 400 <= T
+0.08 s, and about 1,000 rows near 80 s; each retained word is 20,000 bits, 5,000 hex characters, and there are at most 1,070 words (990
+group representatives and at most 80 control-pair lanes), about 5.35 MB (GC1825's correction of my 2.5 MB). `run` also admits 400 <= T
 <= 40,000, even, for disclosed tiny development runs.
 Predictions (written before any run of this file, after L913):
   - every one of the 40 move pairs stays equal through 20,000 visible bits (the lemma);
@@ -45,6 +51,8 @@ KERNEL_SHA256 = 'de6c178d37c1a78fc17a35c92b0b8ba7f5388c661e3eb3054c931adb5a7bc83
 KERNEL_RESULT_SHA256 = '16c70bf3832a2aca776f02405020ec964610a2db02df100bab9a2ae3e2f3488e'
 W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
 STAGE_T = 40000
+STAGE_P = 1600
+MAX_INPUT_BYTES = 16 << 20
 STAGE_S = 600
 SEED = 20261024
 N_MOVE_PAIRS = 40
@@ -104,12 +112,27 @@ def group_report(groups, words, V):
     return out
 
 
-def load_groups(path):
-    raw = open(path, 'rb').read()
+def load_kernel(path):
+    """The retained kernel result: read with a size bound before hashing (GC1825); its merged groups and canonical depth-3,200 labels."""
+    with open(path, 'rb') as f:
+        raw = f.read(MAX_INPUT_BYTES + 1)
+    if len(raw) > MAX_INPUT_BYTES: raise SystemExit('REFUSED: the kernel result exceeds the input bound')
     if hashlib.sha256(raw).hexdigest() != KERNEL_RESULT_SHA256: raise SystemExit('REFUSED: the kernel result is not the pinned bytes')
     d = json.loads(raw)
     assert d['merged']['total'] == len(d['merged']['groups'])
-    return d['merged']['groups']
+    return d['merged']['groups'], d['per_k']['3200']['labels']
+
+
+def load_groups(path):
+    return load_kernel(path)[0]
+
+
+def partition_matches(words, klabels, P):
+    """True if the lanes in words have the same partition by their low P bits as by klabels (pair-free, both directions)."""
+    mask = (1 << P) - 1; a, b = {}, {}
+    for r, w in words.items():
+        if a.setdefault(w & mask, klabels[r]) != klabels[r] or b.setdefault(klabels[r], w & mask) != (w & mask): return False
+    return True
 
 
 def assemble(groups, T, mutant=''):
@@ -178,7 +201,10 @@ TOP_KEYS = {'started', 'finished', 'elapsed_s', 'this_sha256', 'kernel_result_sh
 CONTROL_KEYS = {'base', 'base_all_pass', 'ok'} | set(MUTANTS) | {m + '_caught' for m in MUTANTS}
 
 
-def validate_result(d, src_sha, T, groups_in):
+PARTITION_FAIL = 'bindings: the low-P partition is not the kernel partition'
+
+
+def validate_result(d, src_sha, T, groups_in, klabels, P):
     isint = lambda x: type(x) is int
     fin = lambda x: (type(x) is int or (type(x) is float and math.isfinite(x)))
     V = T // 2; hexlen = (V + 3) // 4
@@ -229,6 +255,8 @@ def validate_result(d, src_sha, T, groups_in):
     if d['move_pairs']['pairs'] != mp_sel: return 'bindings: move pairs are not the seeded selection'
     for x, v in d['move_pairs']['rows'].items():
         if x in d['rows'] and d['rows'][x] != v: return 'bindings: a lane has two different words'
+    allw = {int(k): int(v, 16) for k, v in list(d['rows'].items()) + list(d['move_pairs']['rows'].items())}
+    if not partition_matches(allw, klabels, P): return PARTITION_FAIL
     # 5. arithmetic
     words = {int(k): int(v, 16) for k, v in d['rows'].items()}
     if d['report'] != group_report(groups_in, words, V): return 'arithmetic: group report vs retained words'
@@ -242,7 +270,7 @@ def validate_result(d, src_sha, T, groups_in):
     return None
 
 
-def make_matcher(result_path, src_sha, T, groups_in):
+def make_matcher(result_path, src_sha, T, groups_in, klabels, P):
     KX, X, M = deps()
     def matcher(rc, text):
         try:
@@ -253,7 +281,7 @@ def make_matcher(result_path, src_sha, T, groups_in):
                 d = M.strict_loads(raw)
             except ValueError:
                 return 'FAIL', PARSE_FAIL
-            prob = validate_result(d, src_sha, T, groups_in)
+            prob = validate_result(d, src_sha, T, groups_in, klabels, P)
             if rc != 0 or prob: return 'FAIL', 'rc %s: %s' % (rc, prob)
             return 'pass', 'CQ01 deep-time rows complete, every move pair equal; result sha256 %s' % hashlib.sha256(raw).hexdigest()
         except Exception as e:
@@ -261,7 +289,7 @@ def make_matcher(result_path, src_sha, T, groups_in):
     return matcher
 
 
-GATE_T = 400
+GATE_T, GATE_P = 600, 200        # the synthetic packet's partition is bound at depth 400 from a real lane pass
 GATE_GROUPS = [[31, 495, 1167], [37, 39051], [112, 944], [62, 495]]   # synthetic: real lanes, not required to be merged
 
 
@@ -271,14 +299,32 @@ def gate_fixtures():
         k = sorted(d['rows'], key=int)[1]; v = int(d['rows'][k], 16) ^ 1; d['rows'][k] = format(v, 'x').rjust(len(d['rows'][k]), '0')
     def drop_group(d): d['groups'].pop()
     def stale_report(d): d['report'][0]['first_diff'] = [0] * len(d['report'][0]['first_diff'])
-    def split_move(d):                # a move pair whose retained words really differ, its difference reported honestly
-        r, q = d['move_pairs']['pairs'][0]; w = d['move_pairs']['rows'][str(q)]
-        nv = int(w, 16) ^ (1 << 3); d['move_pairs']['rows'][str(q)] = format(nv, 'x').rjust(len(w), '0')
-        if str(q) in d['rows']: d['rows'][str(q)] = d['move_pairs']['rows'][str(q)]
-        d['move_pairs']['first_diff'][0] = 3
+    def split_move_at(d, bit):        # a move pair whose retained words really differ at bit, reported honestly
+        r, q = d['move_pairs']['pairs'][0]
+        reword(d, q, lambda v: v ^ (1 << bit))
+        mw = {int(x): int(v, 16) for x, v in d['move_pairs']['rows'].items()}
+        d['move_pairs']['first_diff'] = [first_diff(mw[a], mw[b]) for a, b in d['move_pairs']['pairs']]
     def bad_pairs(d): d['move_pairs']['pairs'][0] = [1, 3]
+    def reword(d, lane, fn):          # change one lane's word everywhere it is retained, then recompute the report and summary honestly
+        V = GATE_T // 2; k = str(lane)
+        for tab in (d['rows'], d['move_pairs']['rows']):
+            if k in tab: tab[k] = format(fn(int(tab[k], 16)), 'x').rjust((V + 3) // 4, '0')
+        words = {int(x): int(v, 16) for x, v in d['rows'].items()}
+        d['report'] = group_report(GATE_GROUPS, words, V)
+        d['summary']['groups_split'] = sum(1 for g in d['report'] if len(g['classes']) > 1)
+    def collapse(d):                  # every retained word the same, honestly reported
+        V = GATE_T // 2; w = sorted(d['rows'].values())[0]
+        for tab in (d['rows'], d['move_pairs']['rows']):
+            for k in tab: tab[k] = w
+        words = {int(x): int(v, 16) for x, v in d['rows'].items()}
+        d['report'] = group_report(GATE_GROUPS, words, V); d['summary']['groups_split'] = sum(1 for g in d['report'] if len(g['classes']) > 1)
+        d['move_pairs']['first_diff'] = [None] * len(d['move_pairs']['pairs'])
     return [
         ('good_full_packet_passes', 'file', lambda d: None, None),
+        ('good_split_at_P_passes', 'file', lambda d: reword(d, 495, lambda v: v ^ (1 << (GATE_P + 50))), None),
+        ('bindings_early_split_index0', 'file', lambda d: reword(d, 495, lambda v: v ^ 1), PARTITION_FAIL),
+        ('bindings_early_split_index_P_minus_1', 'file', lambda d: reword(d, 495, lambda v: v ^ (1 << (GATE_P - 1))), PARTITION_FAIL),
+        ('bindings_total_collapse', 'file', collapse, PARTITION_FAIL),
         ('types_rows_list', 'file', lambda d: d.__setitem__('rows', []), 'types: rows'),
         ('types_started_dict', 'file', lambda d: d.__setitem__('started', {}), 'types: started'),
         ('types_elapsed_string', 'file', lambda d: d.__setitem__('elapsed_s', '1'), 'types: elapsed_s'),
@@ -302,7 +348,8 @@ def gate_fixtures():
         ('bindings_move_pairs_changed', 'file', bad_pairs, 'bindings: move pairs are not the seeded selection'),
         ('arithmetic_word_changed', 'file', flip_word, 'arithmetic: group report vs retained words'),
         ('arithmetic_stale_report', 'file', stale_report, 'arithmetic: group report vs retained words'),
-        ('arithmetic_move_pair_split', 'file', split_move, 'arithmetic: a move pair split'),
+        ('arithmetic_move_pair_split', 'file', lambda d: split_move_at(d, GATE_P + 10), 'arithmetic: a move pair split'),
+        ('bindings_move_pair_early_split', 'file', lambda d: split_move_at(d, 3), PARTITION_FAIL),
         ('arithmetic_move_pair_unbacked', 'file', lambda d: d['move_pairs']['first_diff'].__setitem__(0, 3), 'arithmetic: move-pair differences vs retained words'),
         ('keys_move_row_missing', 'file', lambda d: d['move_pairs']['rows'].pop(sorted(d['move_pairs']['rows'], key=int)[0]), 'keys: move-pair rows'),
         ('arithmetic_summary', 'file', lambda d: d['summary'].__setitem__('groups_split', d['summary']['groups_split'] + 1), 'arithmetic: summary'),
@@ -310,7 +357,8 @@ def gate_fixtures():
     ]
 
 
-GATE_KEYS = tuple(f[0] for f in [('good_full_packet_passes',), ('types_rows_list',), ('types_started_dict',), ('types_elapsed_string',),
+GATE_KEYS = tuple(f[0] for f in [('good_full_packet_passes',), ('good_split_at_P_passes',), ('bindings_early_split_index0',),
+                                 ('bindings_early_split_index_P_minus_1',), ('bindings_total_collapse',), ('bindings_move_pair_early_split',), ('types_rows_list',), ('types_started_dict',), ('types_elapsed_string',),
                                  ('keys_extra_top_key',), ('keys_stopped_present',), ('keys_row_missing',), ('domains_wrong_digest',),
                                  ('domains_wrong_input',), ('domains_wrong_scope',), ('domains_negative_timing',), ('domains_nan_elapsed',),
                                  ('domains_inf_timing',), ('domains_row_not_hex',), ('domains_first_diff_range',), ('parse_nan_token',),
@@ -320,8 +368,16 @@ GATE_KEYS = tuple(f[0] for f in [('good_full_packet_passes',), ('types_rows_list
                                  ('keys_move_row_missing',), ('arithmetic_summary',), ('completion_flag_false',)])
 
 
+def gate_klabels():
+    """Canonical depth-2P labels of all lanes from a real lane pass (B = 16, K = 2 GATE_P), for the synthetic packet's partition binding."""
+    KX, X, M = deps()
+    bits, _ = X.compute(B, 2 * GATE_P)
+    return KX.labels_at(bits, 2 * GATE_P)
+
+
 def gate_controls():
     import copy, tempfile
+    kl = gate_klabels()
     sections, timing = assemble(GATE_GROUPS, GATE_T)
     sections = json.loads(json.dumps(sections, allow_nan=False))
     base = {k: True for k in BASE_KEYS}; mut = dict(base); mut[BASE_KEYS[0]] = False
@@ -330,11 +386,11 @@ def gate_controls():
             'gate_controls': {k: True for k in GATE_KEYS}, 'timing': timing, 'complete': True, **sections}
     res = {}
     with tempfile.TemporaryDirectory() as t:
-        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', GATE_T, GATE_GROUPS)
+        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', GATE_T, GATE_GROUPS, kl, GATE_P)
         for name, kind, f, want in gate_fixtures():
             bad = copy.deepcopy(good)
             if kind == 'memory':
-                f(bad); res[name] = validate_result(bad, 'S', GATE_T, GATE_GROUPS) == want; continue
+                f(bad); res[name] = validate_result(bad, 'S', GATE_T, GATE_GROUPS, kl, GATE_P) == want; continue
             if kind == 'text':
                 open(rp, 'w').write(f(json.dumps(bad, allow_nan=False)))
             else:
@@ -353,7 +409,7 @@ def stage(out, kpath, T):
         print('REFUSED: OUT must be absolute and new or empty'); return 3
     if T != STAGE_T:
         print('REFUSED: the only admitted stage scope is T = 40000'); return 3
-    groups = load_groups(kpath); deps()
+    groups, klabels = load_kernel(kpath); deps()
     os.makedirs(out, exist_ok=True)
     src_sha = hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest()
     H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 4 << 30; H.CAPS['artifacts_max_bytes'] = 50 << 20; H.CAPS['log_max_bytes'] = 10 << 20
@@ -367,7 +423,7 @@ def stage(out, kpath, T):
     if r['verdict'] != 'pass':
         Rc['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); return 1
     rdir = os.path.join(out, 'run')
-    matcher = make_matcher(os.path.join(rdir, 'cq01_deeptime_result.json'), src_sha, T, groups)
+    matcher = make_matcher(os.path.join(rdir, 'cq01_deeptime_result.json'), src_sha, T, groups, klabels, STAGE_P)
     rec = sup.run_step('cq01_deeptime', [sys.executable, os.path.abspath(__file__), 'run', rdir, os.path.abspath(kpath), str(T)], out, STAGE_S, STAGE_S, matcher)
     Rc['complete'] = rec['verdict'] == 'pass'; sup.save()
     print('DONE' if Rc['complete'] else 'STOP', rec['verdict'], rec['reason'], rec.get('match_note'))
