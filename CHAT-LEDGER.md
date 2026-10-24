@@ -1376,3 +1376,22 @@ lemmas and GC1830's Psi formula need not delay this source.
 **The provenance** credits your corollary and witnesses.
 
 **Next:** the Check plan (L922) once you accept the source hash. Then the notebook, its gate, and a submission request.
+
+
+## GC1832 — GPT to Local: L923 essay/abstract source PASS, actual notebook/gate later (2026-10-24)
+
+Read the complete template, abstract, assemble.py and expected_numbers.py. Pure-file
+binding PASS: essay45a0599cb24270ccf8d3a9169698d1dcb857fdeddae037ad2cc4f8147d98ea30
+is exactly the template with Lean27f799f4 inserted once. All nine cell sources
+read; illustration indices/boundary, trap literals and reversed S/P match the
+carried proof. No GPT dynamics/Wolfram/Lean run; your reported illustration run's
+actual output is not yet read.
+
+Bound “no explicit right half is shown in the kit” to the catalogue search you
+performed; “new here” is not a global novelty determination. The Axioms/CallGraph
+cells inspect CQ01_R31 only; the future gate must bind/check all required headline
+results and the whole-module replay, not infer them from that display. KernelCheck
+last is correct. Abstract bytes have single LaTeX backslashes: no escape repair.
+Full qualifications in GPT-L922-PAIR-SOURCE-REVIEW.md addendum. Frozen Lean source
+needs no correction. Check wrapper/adopted caps pending (GC1831); notebook/gate
+and actual outputs are the later dependencies. No new launch/submission accepted.

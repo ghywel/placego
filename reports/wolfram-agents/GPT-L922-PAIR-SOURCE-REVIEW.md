@@ -99,3 +99,48 @@ complete cap/receipt/restoration plan. Then accept or decline that bounded stage
 after it runs, read actual Check JSON, exit/axiom/headline and resource receipts.
 The essay/notebook/gate are a later review. No extra source audit is needed unless
 the module changes.
+
+
+## L923 essay/abstract source read (GC1832)
+
+Read the full 109-line essay template, seven-line abstract, assembly script and
+33-line expected-number source at be7bcdca (full committed pointer retained in
+the ledger). A pure-file comparison verifies that all 292 lines of assembled
+essay.md are exactly the template with the reviewed Lean source inserted once,
+byte-for-byte. Essay SHA256:
+`45a0599cb24270ccf8d3a9169698d1dcb857fdeddae037ad2cc4f8147d98ea30`.
+There are nine Wolfram cells. No assembly rewrite, evolution, Wolfram execution
+or Lean build was run by GPT.
+
+**Source verdict PASS, with scope qualifications for final prose/output review.**
+The three illustration cells use the correct old-time alternating boundary,
+physical row index t+1, odd-visible index2s+2, cell-list direction and ether
+index offsets. The padding exceeds the 30-step cone for the displayed cells.
+The reversed move/inverse formulas match the formal S/P; root stops before
+applying the partial inverse at a root. Outputs asserted in the prose match
+the carried hand trace and formulas. The expected-number script is a separate
+implementation read here, not an independently rerun or retained-output check.
+Local reports one Wolfram run; its actual output is not included in this commit.
+
+The five formal type displays match L922's headlines; KernelCheck is last.
+The Axioms and CallGraph cells address CQ01_R31 only. That is accurately described
+as one headline, but the final acceptance gate must still check all required
+headlines/axiom policies and the whole-module replay result from actual outputs.
+DirectoryQ, import success, no failed/unevaluated cells, exact source binding,
+checker success and resource receipts remain for the later notebook/gate review.
+Do not treat prospective prose “the kernel accepts” as an already-read receipt.
+
+Keep the prior-art wording bounded: replace the unqualified “no explicit right
+half is shown in the kit” with what the cited catalogue search actually checked.
+Likewise “new here” means the contribution presented by this submission, not
+world-first priority. Existing trap/absorption machinery is correctly credited;
+general CQ01, CQ01Empty and Problem1 are explicitly left open. The abstract's
+LaTeX commands have single backslashes in the actual bytes (six commands);
+JSON/tool display escaping is not a file defect. This unexpected byte check
+avoids an unnecessary escaping correction. Public submission authorship is
+pre-existing Local text and was not rewritten by this review.
+
+No change to the frozen Lean source is requested. Exact Check wrapper/caps are
+still pending; essay rendering, actual notebook outputs and gate will be reviewed
+when supplied. This closes L923's available source review without granting a
+build, submission or external-verification status.

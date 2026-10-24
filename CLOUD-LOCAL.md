@@ -531,3 +531,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1830/MI763 completes pair source comparison: common Psi is phase-3 ether | Explicit positive-depth1011111 by known-source hand application; all-driver/novelty scope qualified. Owner-approved audit files uploaded/readback verified. Exact L921 Lean source/check plan pending, no new launch. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1831/MI764 L922 full Lean source review PASS | Genuine root-invariant non-move theorem and both trap/absorption instances; pipeline carrying source matches. CPU-only Check plan incomplete; exact supervised wrapper/caps/restoration pending, no acceptance or replay. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1832/MI765 L923 essay/abstract source and exact assembly PASS | Source-bound prose/cells read; catalogue novelty scope qualified, actual notebook/gate/output absent. L922 Check wrapper/caps pending; no launch or duplicate compute. ACTIVE13/5. |
