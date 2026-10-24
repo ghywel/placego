@@ -9486,3 +9486,37 @@ certificate per submission is not a certificate at all. Record searched: `sandbo
 four-minute clock, never the memory). GPT's budget is short and its heartbeats paused: I will put the design, not the
 exploration, in front of GPT, and ask the owner for the measurement launch if GPT is silent two ticks, as the
 heartbeat's rule allows for measurement controls.
+
+## L861 — Local to the owner and GPT: the sandbox question settled to one measurement; the N = 20 candidate module generated (1,024 checks of 2^20 lanes); W8 = W6 with that module pinned; REVIEW-REQUEST for one launch, or the owner's word (2026-10-24 09:44 BST)
+
+**Route (a), several modules in one notebook, is not available as the pipeline stands.** LeanLink 1.2.2's `LeanImportString`
+has no module-naming option (a list of sources is joined into ONE module); the only multi-module path is `LeanBuild[dir,
+modules]` on files inside the project, which would need the notebook to write our chunk sources into the verifier's kit
+copy, a thing the sandbox is not known to allow and the maintainers have not been asked. Parked; a question for the
+maintainers if (b) fails.
+
+**Route (b), fewer and larger checks, is one measurement away.** `d3_submission.py` revision 3 takes the chunk bits N on the
+command line (default 18; its width-56 self-test still reproduces submission 13's text). The N = 20 candidate for width 60:
+`reports/wolfram-agents/submissions/d-exact-60-n20/Rule30Submission.lean`, sha256
+790ecabb598358d903fdcb5d5bbe4017db0fa816f8f924b47ecae3029af654d7, 112,279 bytes, 1,024 checks `check 60 115 20 c` in 64
+namespaces of 16, `all_chunks : ChunksOK 60 115 20 0 1024`, `q01_of_chunks 60 115 20` (the kit's lemma takes any n <=
+W/2), the same witness and headlines as submission 14; submission 13's declaration count, four times its work per
+check. **W8** (`tests/probes/wolfram/w8_check60n20.py`, sha256 c849e46d3694715de5d8cb79440b0820cb8fc13dc63767468af9b991ac11faa9) is W6 revision 6 verbatim with the
+pinned module digest, the control path and the labels changed (the diff against W6 is those lines only); its 18
+controls pass. Same envelope as W6: stage 3,600 s, build and checker steps 1,800 s wall and CPU each, group RSS stop 6
+GiB, pressure, swap, disk, artifacts, log, one lean process, ordinary priority, the pipeline's kit copy (the installed
+`Rule30Submission.lean` is replaced for the build and preserved as W6 did; the checker replays it; nothing is
+submitted).
+
+**Predictions, written before the run.** The question is whether a module's memory follows its number of checks or its
+total work. A (declarations): peak RSS under 2.5 GiB in both steps, roughly submission 13's footprint, and the N = 20
+form fits the sandbox with room. B (work): peak near W6's 4.5 GiB, and larger chunks gain nothing. Wall 1,200 to 2,600 s
+per step (the same 2^30 lane-levels as W6, in 1,024 kernel evaluations instead of 4,096). The checker's verdict pass with
+the two headlines and standard axioms either way (the mathematics does not depend on N). Counterfactual: B closes route
+(b); then the choice is between a question to the maintainers (sandbox limit; multi-module), a half-width retreat (no:
+D(60) needs all 4,096 chunks' worth), or N = 22 as a last measurement. If A, submission 15 supersedes 14 through the
+API's `supersedes` field after the notebook pipeline and the full-cell gate, on the owner's permission.
+
+**REVIEW-REQUEST to GPT at the hashes above, and the owner's word asked in the session:** GPT's heartbeats are paused and
+its budget is short, so if GPT is silent for two ticks I would treat this W6-identical stage on a new module as a
+measurement control under the heartbeat's rule and run it on the owner's word; the owner can also simply say go.

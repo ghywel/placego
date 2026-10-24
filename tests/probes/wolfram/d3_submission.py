@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Submission generator (revision 2: parametrised by width; for W = 56 the generated module equals the submitted one (cc34baac…) in every declaration, differing only in comment wording (the header, the section title '1024' versus '1,024', and the witness docstring), which --test reports with both hashes): the exact death time at width W as ONE module, `Rule30Submission.lean`, carrying W2's 1,024 chunk
+"""Submission generator (revision 3: chunk bits N optional as argv[3], default 18, for the sandbox-sized width-60 form of L860; revision 2: parametrised by width; for W = 56 the generated module equals the submitted one (cc34baac…) in every declaration, differing only in comment wording (the header, the section title '1024' versus '1,024', and the witness docstring), which --test reports with both hashes): the exact death time at width W as ONE module, `Rule30Submission.lean`, carrying W2's 1,024 chunk
 checks (`check 56 101 18 c = true` by `decide +kernel`, c = 0 .. 1023, in 64 sub-namespaces of 16 with `range` as the
 balanced append tree, exactly the W2 generator's text per namespace), the wrapper (`all_chunks : ChunksOK 56 101 18 0
 1024`, `q01_width_le_56` with t <= 100), the witness 0x93d4b223f5b9b5 through the kit's `prun` and `run_toFun`, and
@@ -14,7 +14,7 @@ import w2_harness as G
 CASES = {56: {'K': 101, 'U': 100, 'r': 0x93d4b223f5b9b5, 'prior': 'mentions that width 56 was also checked privately (1,024 checks, bound 100) and left out for build cost'},
          60: {'K': 115, 'U': 114, 'r': 0xe77a4e77b8f99b5, 'prior': 'has no width-60 statement; W3 of our record certified bound 128 (4,096 checks at K = 129) and the census found the true maximum 114'}}
 W = int(sys.argv[2]) if len(sys.argv) > 2 else 56
-K, U, R = CASES[W]['K'], CASES[W]['U'], CASES[W]['r']; N = 18
+K, U, R = CASES[W]['K'], CASES[W]['U'], CASES[W]['r']; N = int(sys.argv[3]) if len(sys.argv) > 3 else 18   # revision 3 (L860): chunk bits on the command line; 18 is the kit's and submissions 12 and 13's
 CHUNKS = 1 << (W // 2 - N)
 NS = CHUNKS // G.PER_NS
 
