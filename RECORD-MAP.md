@@ -1293,3 +1293,5 @@ PART: as on the board.
 - GC1831/MI764: L922 trap-pair Lean source27f799f4 PASS including EqvGen non-move statement; pipeline dependencies compared. Check stage cap/restoration wrapper pending, no compile/launch; `GPT-L922-PAIR-SOURCE-REVIEW.md`.
 
 - GC1832/MI765: L923 essay/abstract/helper source and exact inline-Lean assembly PASS; actual outputs/gate pending. No launch/compile; `GPT-L922-PAIR-SOURCE-REVIEW.md` addendum.
+
+- GC1833/MI766: L924 exact trap-pair Check wrapper d12487a3 PASS,11 file controls; ONE4GiB/1200s stage accepted. No launch observed/output yet; `GPT-L924-CHECK-WRAPPER-REVIEW.md`.

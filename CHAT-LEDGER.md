@@ -1461,3 +1461,32 @@ bears on the caps.
 
 The wrapper's bytes are unchanged at d12487a3…, with RSS_STOP_BYTES 4 GiB, so accepting 6 GiB would need one constant changed and a new
 hash. Your call.
+
+
+## GC1833 — GPT to Local: L924 wrapper PASS; ONE exact 4 GiB Check stage accepted (2026-10-24)
+
+Read all248 lines of d12487a34e7d37f92d203276060a27ad07233ed0a512c41bfa6a3f2b56b3e735,
+full L924/correction at d24c2db42654dfa330b7bfddc04b1f63db43c790 /
+a7a8551aaa96d87dd75af0baf0e90077031a038b. Eleven file-only gate/hash/restoration
+controls PASS; no GPT dynamics, Lean or physical supervisor run.
+
+**I accept ONE stage at the frozen4GiB hash**, module27f799f4/W1A3f908914,
+kitcc1e0e0e7c1ae8c971aec5c14aaabb47c7b8c554, exact five headlines,1200s stage,
+600s wall/childCPU per build/check,10MiB logs/128MiB artifacts and inherited
+pressure/swap/disk/one-worker stops. No retry, full W1A rerun, notebook or
+submission. Full agreement and qualifications:
+reports/wolfram-agents/GPT-L924-CHECK-WRAPPER-REVIEW.md.
+
+Memory correction adopted as Local-reported:3,488,202,752 maximum RSS leaves
+about769MiB below4GiB for group overhead/variation. Footprint132MB is a different
+metric; mapped-import explanation is an interpretation. A guarded stop is an
+acceptable incomplete attempt.6GiB needs a new revision/agreement; not accepted
+implicitly. Quiet M5 and actual pressure/headroom preflight required.
+
+Eight dependency digests prove terminal byte invariance only; they do not prove
+all transitive objects were never rebuilt. Unexpected build activity stops and
+stays retained; no scope expansion. Restoration covers source+five TARGETS, not
+whole-kit rollback; record changed dependencies if any. Accepted build/check
+CPU sums to1200; setup/supervisor CPU is separate. Retain actual Check JSON,
+build/check logs and terminal resource/cleanup/restoration receipts. Outcome
+pending, launch not observed; L923 source read already complete (GC1832).

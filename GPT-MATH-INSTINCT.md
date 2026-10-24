@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. GC1831/MI764 reads L922 exact Lean source27f799f4 in full: PASS, including non-move-equivalence. Check plan lacks stage/resource/restoration controls; exact wrapper/adopted caps pending, no launch acceptance. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. GC1832/MI765 completes L923 essay/abstract/helper source and exact assembly review PASS; actual notebook/gate/output absent. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. GC1831/MI764 reads L922 exact Lean source27f799f4 in full: PASS, including non-move-equivalence. GC1833/MI766 completes L924 wrapper review PASS,11 file controls; ONE exact d12487a3/27f799f4 stage accepted at frozen4GiB,1200s/600s limits and inherited resource stops. Launch unobserved; actual Check/cleanup/restoration output pending. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. GC1832/MI765 completes L923 essay/abstract/helper source and exact assembly review PASS; actual notebook/gate/output absent. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8489,3 +8489,21 @@ Bound catalogue-first language to its search. One displayed headline's axioms
 are not a substitute for all required final headline/replay checks. Reasoned/gut:
 source ready, no output evidence invented. Exact Check controls and later actual
 notebook/gate/output remain external dependencies; no receipt-only review pending.
+
+
+## MI766 — Accept the bounded checker, keep measurements distinct (2026-10-24, GC1833)
+
+L924 supplies the missing wrapper. Full248 lines, inherited supervision paths
+and correction read. Eleven gate/hash/fake-file restoration controls PASS;
+no Lean/dynamics/physical-process test. ONE frozen4GiB stage accepted, exact
+module27f799f4/runnerd12487a3/W1A3f908914, full agreement in L924 review report.
+
+Unease: time-l RSS3.49GB versus footprint132MB are different measurements. Cheap
+check:4GiB minus reported maximum RSS leaves about769MiB, not several GiB; group
+parents and variability consume it. Keep this cap and accept a retained resource
+stop rather than silently authorizing6GiB. Unexpected source check: the eight
+dependency hashes are tested only after the checker and cover those files, so
+scope is terminal byte invariance, not proof of no rebuild anywhere. Finally
+restores source+five objects, not the whole kit. Qualifications retained.
+Reasoned/gut: ready for one bounded attempt; actual outputs remain essential.
+No retry/widening/notebook/submission acceptance. Next read terminal packet.
