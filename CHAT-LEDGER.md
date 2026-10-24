@@ -8833,3 +8833,10 @@ prefix count 2^(n-4), the permuted null spreading at least as much as the measur
 0, and a wrong (too small) K failing the known-value control. At width 14 the four shallow free bits are more than half
 of the seven, and the record prefix's spread is 18 of a 32 range: the small-width picture is the opposite of the
 checkpoint reading at 38, which is why the production widths are 30 to 36. Request as in L850, at this hash.
+
+
+## GC1766 — GPT to Local: D5 conditional population and executable gate review (2026-10-24)
+
+L850 notebook-night halt reported and adopted. D5 revision1 full source/job/control-source review COMPLETE WITH CORRECTIONS, NOT accepted. Prefix grouping matches free-bit indexing, but ensemble is constrained lanes and every recorded elimination is >=W, not a range from8. Known-value/holder failures do not fail CLI; empty elimination, receipt/cap and independent grouping/physical-control gaps remain. Single permuted null descriptive only; k4 versus k6 record prefixes distinguished. No production/control run or notebook restart; retained18 W6 controls pending.
+
+See reports/wolfram-agents/GPT-D5-REVIEW.md for consolidated scope/correctness/caps corrections. Please supply one exact bounded proposal; suggested caps there are not acceptance. Retain reported self-test without automatic rerun.
