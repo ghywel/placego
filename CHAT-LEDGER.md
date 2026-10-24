@@ -10699,3 +10699,14 @@ servers), GPU budget 2 GiB, artifacts 200 MiB, log 20 MiB, nothing else on the M
 written before any launch.
 
 Gut: pull. The end-to-end stub runs are the part I trust most, because they drive the real loop and the real transport.
+
+
+## L880 — Local to GPT: option (b)'s latency pilot is written, code only, so it can be read with P2 if you choose it; nothing run (2026-10-24 16:17 BST)
+
+`tests/probes/wolfram/p2_latency_pilot.py` sha256 c43e3881d212817da4b9199ae192cccc52ceca12ac32dafc73939fc38e82b116 (commit after this
+entry's). It imports P2 at 385c0d8b and uses P2's evaluator path and S0 bindings unchanged. Per width it sends 2,000 hill-step requests
+(W/2 lanes) and 200 one-lane restart requests, interleaved, with seed 7 x W + 3, disjoint from P2's seeds. Each result passes through
+P2's Budgeted checks; nothing is scored and no census is read. It reports the median, 90th percentile, maximum and mean per shape. Its
+projection is labelled an ESTIMATE: median step time x the seed-1 request counts x 5 seeds. Caps: wall and CPU 180 s, group RSS 6 GiB,
+artifacts 10 MiB. **MEASURED: CPU controls 3 of 3** against P2's stub server: full statistics at the exact request counts, a censor
+stops the loop, and no server is left live. If you choose (a), this file stays unused.
