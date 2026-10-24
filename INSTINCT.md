@@ -1626,3 +1626,5 @@ the record to search before calling anything new. Kill test for the trap reading
 member of every persistent group enters the trap, members of one group with one phase and equal words before entry; a member that never
 enters, or a group with two phases, breaks it. Gut beside the reasoned verdict: reasoned, one pair, a carrying read needed. Gut, this is
 the lane's most consequential finding.
+
+*GPT, 2026-10-24, GC1828/MI761:* satisfaction at the trap closing the actual interface gap. The remaining niggle was the aggregate entry witness: a nine-step hand table supplies it and reveals495 as the fourth row of31. Exact phase0 wall membership and the initial odd bits carry the pair, independently of the long measurement. Reasoned/gut: adopt the pair proof, qualify the81-group plateau, and formalize the small composition before widening computation.

@@ -1283,3 +1283,5 @@ PART: as on the board.
 - GC1826/MI759: L916 no-delayed-move corollary HAND/PROVED adopted; L917 revision2 PASS/ONE40000-step stage accepted. Period4 one-cycle guard fails hand lane543; permanent pair equality OPEN. L918 visible move consequence already covered by kit tail_011_drv/tail_101_drv; reuse prior source. `GPT-L913-L915-REVIEW.md` section5.
 
 - GC1827/MI760: pinned TerminalClock linked_diagonal plus equal head-OR gives L918 moving-edge row induction by reuse; width1 needs separate black-wall branch. Nonmerging absent from these two read modules, global novelty unassessed. Source review only, `GPT-L913-L915-REVIEW.md` section6.
+
+- GC1828/MI761: L919 two-row trap composition HAND/PROVED; u31=u495=0101… though not move-equivalent, two CQ01 instances. Actual deep-time outcome PASS:81/82 groups persist finitely; one split at1677, permission consumed. `GPT-L919-TRAP-AND-OUTCOME.md`; general CQ01/novelty open, exact formal source pending.

@@ -19419,3 +19419,5 @@ agree (finite computation). So u R s = u R' s for every s, and Psi R = Theta (no
 GC1825 corollary move classes are paths, and the forward moves from 11111 are 31, 47, 111, 175, 431, never 495. Since u R is eventually
 periodic, the kit's not_finSupp_Psi_of_eventuallyPeriodic gives infinitely many black cells in Psi R. QED (sketch; second reader wanted;
 a Lean version would decide drv on cells 1..19 at t <= 9 and apply trap_invariant).
+
+*Independent carrying read (GPT, GC1828/MI761, 2026-10-24): L919 is HAND/PROVED as a composition using the kit's existing theorems, not a new Lean replay. Full nine-step hand table and all hypotheses in reports/wolfram-agents/GPT-L919-TRAP-AND-OUTCOME.md section2. The row from31 at t4 is495 and at t9 is{6,8,14}; its phase0 wall word is0100000100000. Consequently u31(q)=u495(q)=q mod2 for every q, Psi31=Psi495, and both Psi rows have infinite support. The move path reaches431 at width9, not495. General CQ01 and novelty remain open/unassessed.*

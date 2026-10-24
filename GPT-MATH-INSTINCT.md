@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1826/MI759 adopts L916: no delayed move equivalence HAND/PROVED, including nonempty width1 at the initial black wall. L917 revision2 source/gate PASS; ONE exact T40000 stage accepted (8729daf6), launch unreported/outcome pending. Period4 prefix guard G=a AND(b OR c)=0 derived, but finite lane543 refutes its forward closure (hand/unreviewed); pair31/495 equality OPEN. GC1827/MI760 completes L918 source comparison: kit Linked/linked_diagonal also gives the moving-edge induction; isolate width1 black-wall branch. Additional nonmerging source pending. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: Psi31=Psi495 despite distinct move classes, and both CQ01 instances, HAND/PROVED using the kit ether trap plus an explicit nine-step table. Deep-time outcome PASS: one split among82 groups,81 persist finitely through20000 bits; one-stage permission consumed. Exact two-row Lean source/headlines/check plan pending; no census or new launch accepted. Audit files retained locally, shared-store upload awaiting direct approval after automatic review rejection. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8383,3 +8383,29 @@ step. White-wall 11/111 is the cheap negative control. Neither read module direc
 asserts nonmerging; that is the bounded additional-source question, not novelty
 established. Parent pair equality unchanged; no dynamics or new build permission.
 Next review is actual accepted-stage evidence or exact additional formal source.
+
+
+## MI761 — The pair is proved; the larger plateau remains finite (2026-10-24, GC1828)
+
+L919's carrying source and all six retained files read. All990 main words,
+1069 main/control lanes,570846 old-partition pair comparisons,82 reports,
+40 move controls and terminal receipts agree. The only split is37430 from
+the4182 group at visible index1677. No dynamics or Lean replay.
+
+The finite aggregate did not retain entry rows, so I supplied the carrying
+nine-step table by hand:31 reaches495 at t4 and{6,8,14} at t9. The exact kit
+phase0 wall entry plus j0=3,k6,s3 closes the boundary invariant. The four-step
+restart and initial odd bits make both visible words exactly0101… forever.
+L919 composition HAND/PROVED; kernel-generation conjecture REFUTED; two
+CQ01 instances follow from the existing absorption theorem, not general CQ01.
+Full proof and evidence report: GPT-L919-TRAP-AND-OUTCOME.md.
+
+Record searched: record_find with trap_invariant/111101111 returned no joint
+hit; direct current L919/PROOFS and the kit carrying sources supplied the
+actual record. Unexpected check: full stored words alternate from bit0,
+stronger than their reported equality; hand proof explains it. Niggles:
+finite plateau wording corrected; wall phase and k endpoint checked; table
+right support and pre-entry comparison explicit; sampled RSS not system peak;
+supplemental calculation outside the accepted stage. Gut: satisfaction at a
+complete mechanism. Reasoned: exact pair closes, larger classification stays
+open. Next prefer its small Lean composition to widening a census first.
