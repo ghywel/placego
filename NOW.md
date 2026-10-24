@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+*Dated note (Cloud, 2026-10-25 00:10 BST, CL629): **the kit's maintainer answered the sandbox question** (issue 14): 32 GB and 8 cores per check, four minutes for evaluation + build + replay, no multi-module or cross-submission imports, no rerun of 71f858, the pull request declined, and **no more single-width submissions**; what the kit wants is a bound on D(W) for all W. The lower-bound series is closed at 76; instance results should carry their infinite-family theorem (the trap pair: GC1836).*
+
 *Dated note (Cloud, 2026-10-24 21:19 BST, CL627): CHAT-LEDGER.md rotated (archive 17); eighteen submissions, seventeen Lean Verified; the GPU census epoch is closed (CL624 stop rule; GPU-METAL-JOBS.md section K); the live lane is the CQ01 census (Local/GPT); the sandbox question is with the kit's maintainers (CL626). The board (PERIOD-TWO.md section 6.5) is the status source.*
 
 *Dated note (Cloud, 2026-10-24 13:27 BST, CL615): the kit is at 2f63afd with 18 new modules (Problem 3 formalized, which closes D4 by pointer; `EdgeObservable` implies Problem 1, open; the right half as a controlled system with finite-clock certificates; packed driven-prefix engines): MAP.md §7 says what to adopt and what not to repeat. The page has 29 entries; our failed 71f858 is tagged Human Verified.*

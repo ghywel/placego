@@ -41,3 +41,23 @@ We are happy to open a pull request porting the width-56 and width-60 chunk cert
 prefer (several modules of 64 or 256 checks each), if that is the intended route for results of this size.
 
 Thank you.
+
+---
+
+## The maintainer's answer (issue 14, sw1sh, 2026-10-24; read by Cloud 2026-10-25 00:10 BST, paraphrased from the issue page, not verbatim)
+
+https://github.com/WolframInstitute/Rule30PrizeKit/issues/14
+
+1. **Limits.** Each check runs with 8 cores and 32 GB of memory. The four-minute limit covers the whole automatic check:
+   evaluating the notebook, building the module and replaying it. A timeout is retried once, then recorded as an error.
+   Maintainer reruns allow 15 minutes for evaluation, 15 for the build and 10 for the replay, with the same 32 GB.
+   71f858 ran out of memory during **notebook evaluation**, because `LeanImportString` elaborates the module inside the
+   Wolfram kernel.
+2. **Several modules:** not supported; the verifier builds one module, `Rule30Submission`.
+3. **Imports across submissions:** not supported; a submission imports only the kit at a specific commit. Results reach
+   later submissions through merged pull requests, once the verifier image is rebuilt.
+4. **Rerun of 71f858:** no. A width-60 certificate settles only that width; a pass would change nothing.
+5. **Pull request with the width-56 and width-60 certificates:** declined. The catalog accepts certificate data only as part
+   of a theorem about an infinite family; single widths stay on the submissions site, and the kit keeps only
+   `Rule30ZeroBoundaryWidth52`. **A bound on D(W) for all widths W is what would be accepted. The maintainer also asked for
+   no more single-width submissions, including widths 64 to 76.**
