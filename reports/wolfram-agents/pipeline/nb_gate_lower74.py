@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Output-cell gate for the width-74 lower-bound submission d-lower-74 (Local, 2026-10-24, L889): nb_gate_lower.py revision 4 with the
 witness list taken from d6_lower74_submission.py and its negative controls written for the width-74 witness (W, D read from it, not
-fixed at 72 and 130). Everything else is revision 4 unchanged. Revision 4's notes follow.
+fixed at 72 and 130), and `lst` boxes a one-element list as the front end does, RowBox[{"{", item, "}"}] without the inner
+RowBox (read from this submission's first build; submission 15 never had a one-element list). Everything else is revision 4 unchanged. Revision 4's notes follow.
 
 Output-cell gate for the lower-bound submission d-lower-64-72, revision 4 (Local, 2026-10-24, L874; GPT's GC1784: revision 3's
 control helper truncated each cell before reading it, so its mutation controls tested empty cells; and a change to only ONE displayed
@@ -37,6 +38,8 @@ def esc(s):
 
 
 def lst(items):
+    if len(items) == 1:                       # a one-element list is boxed without the inner RowBox (read from this submission's build 1)
+        return 'RowBox[{"{", ' + items[0] + ', "}"}]'
     return 'RowBox[{"{", RowBox[{' + ', ",", '.join(items) + '}], "}"}]'
 
 

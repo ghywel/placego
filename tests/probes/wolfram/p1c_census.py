@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""P1c, revision 3 (Local, 2026-10-24, L887: the width-74 census proposed to GPT; three changes only, listed below). Revision 2 (Local, 2026-10-24, L870; revision 1 ran W66..W72, L866/L868; revision 2 applies GPT's GC1780 corrections for
+"""P1c, revision 4 (Local, 2026-10-24, L889: the width-76 census proposed to GPT; W = 76 admitted with its cap and predicted range, nothing
+else changed). Revision 3 (Local, 2026-10-24, L887: the width-74 census, run once under GC1795, D(74) = 134; three changes only, listed below). Revision 2 (Local, 2026-10-24, L870; revision 1 ran W66..W72, L866/L868; revision 2 applies GPT's GC1780 corrections for
 reuse: JSON invariants per call, the deep-prefix statistic descriptive only, a gate mismatch packet kept before the dump is deleted): GPU censuses beyond the CPU frontier, W = 66, 68, 70, 72, each giving the exact
 D(W) numerically (complete coverage of the class, every maximizer validated), with no known answer to compare against.
 The owner's word (2026-10-24 afternoon): proceed, Local solo, without GPT or Cloud. P1b's runner (GC1778's six requirements)
@@ -40,9 +41,14 @@ Revision 3 (L887), for the one width W = 74, nothing else changed in the census 
      and one changed comment line (the list of modes). The kernels (17a81e66), d1 (e924602e) and W1A (3f908914) are unchanged.
   3. One DESCRIPTIVE field, never a gate: `occupied_4096_blocks`, the number of distinct (index >> 12) among the maximizers, for
      L885's concentration observation (GC1794: not implied at W = 74). Predicted at most 8.
+Revision 4 (L889): W = 76 in scope, stage cap 7,200 s. ESTIMATE from width 74's MEASURED 17.194 ns per lane of census wall time: 2^38
+lanes take 4,726 to 4,948 s at 17.194 to 18.0 ns, in 512 calls of 2^29 lanes, each about 9 to 10 s against the 120 s call cap.
+Predicted range [D(74) = 134, 146] (ratio 1.76 to 1.92). Run with --prev the width-74 result, so its 178 maximizers are carried at 134.
 Usage: python3 p1c_census.py stage W OUT_DIR [--prev PREV_RESULT.json]
        python3 p1c_census.py run W OUT_DIR [--prev PREV_RESULT.json]     (the step the stage runs)
-OUTCOME: (to be filled after the runs)
+OUTCOME (W = 74, the one GC1795-accepted stage at revision 3, c9174d25, 2026-10-24 17:26 to 18:06 BST, L889): W1A pass; complete,
+782 checks passed, zero censored; D(74) = 134 with 178 maximizers in 2 blocks of 4,096 indices; census wall 2,363.12 s (17.194 ns
+per lane), GPU 2,206.02 s (16.051 ns per lane); fraction dying at W 0.4999942. Earlier widths' outcomes are in L866 and L868.
 """
 import json, os, sys, time
 
@@ -55,11 +61,11 @@ METAL_SHA256 = '17a81e6621185098f3132ea199f41530de699f56030c9ac6c4c6392a7b1e5ec9
 SWIFT_SHA256 = '6b76fe740856c3e01c5bc2baffe68de6b9022bf8dfafb1ce8241ce4c0c3bd1ec'   # driver revision 6; census path identical to revision 3 (L887)
 D1_SHA256 = 'e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446'
 W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
-STAGE_CAP = {66: 900, 68: 1200, 70: 1800, 72: 2700, 74: 3600}
+STAGE_CAP = {66: 900, 68: 1200, 70: 1800, 72: 2700, 74: 3600, 76: 7200}
 LB, G = 32, 1 << 19
 CALL_LANES, BATCH_LANES = 1 << 29, 1 << 24
 W64_MAXIMIZER_INDICES = range(2801313472, 2801313512)   # P1b, L865: the 40 lanes of chunk 10686 at death 116
-PREDICTED = {66: (116, 126), 68: (None, 130), 70: (None, 134), 72: (None, 138), 74: (None, 140)}
+PREDICTED = {66: (116, 126), 68: (None, 130), 70: (None, 134), 72: (None, 138), 74: (None, 140), 76: (None, 146)}
 
 
 class Stop(Exception):
