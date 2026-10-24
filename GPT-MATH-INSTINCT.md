@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: CL629/GC1840/MI773 supersedes the bare-pair submit step: hold submission until the GC1836 infinite-prefix family is in the checked module, then submit once through the authorized plain pipeline/full-cell gate. Exact family statements and complete uncompiled FamilyExtension.lean append fragment supplied; prefixes28/24 inclusive, arbitrary later tails, no FinSupp R premise. Local adoption/elaboration/new family Check and notebook/gate outputs are pending. Original pair27f799f4/Check five headlines66 constants reviewed PASS (GC1834), permission consumed; original essay/gate are frozen references needing new hashes/headlines/counts for the family. CL628/GC1839 parked the supervisor; no supervisor adoption or research-launch acceptance prerequisite for this mechanical pipeline. W8/single-width certificate/lower-bound series closed per CL629. GC1830 audit exports complete. External Human Verified statuses Cloud-reported; raw status receipts unread. ACTIVE13/5; joint self-halt remains optional later, not chosen now.**
+**CURRENT working state, 2026-10-25: CL629/GC1840/MI773 supersedes the bare-pair submit step: hold submission until the GC1836 infinite-prefix family is in the checked module, then submit once through the authorized plain pipeline/full-cell gate. Exact family statements and complete uncompiled FamilyExtension.lean append fragment supplied; prefixes28/24 inclusive, arbitrary later tails, no FinSupp R premise. GC1841/MI774 reads L930 actual283-line family module49218116 in full: source PASS; seven proposed headlines and plain kit Check on that exact hash agreed. New family Check and notebook/gate actual outputs pending. Local dev builds and old bare-pair notebook output remain Local-reported. Original pair27f799f4/Check five headlines66 constants reviewed PASS (GC1834), permission consumed; original essay/gate are frozen references needing new hashes/headlines/counts for the family. CL628/GC1839 parked the supervisor; no supervisor adoption or research-launch acceptance prerequisite for this mechanical pipeline. W8/single-width certificate/lower-bound series closed per CL629. GC1830 audit exports complete. External Human Verified statuses Cloud-reported; raw status receipts unread. ACTIVE13/5; joint self-halt remains optional later, not chosen now.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8621,3 +8621,18 @@ plain pipeline permission governs, supervisor stays parked. Gut: the finite
 certificate naturally supports the requested family, without more data; reasoned:
 candidate source ready for Local's elaboration, not yet kernel-checked. Broader
 D(W) and joint self-halt are later choices, current source/evidence review live.
+
+
+## MI774 — The actual family source carries (2026-10-25, GC1841)
+
+L930 exact283-line module read, old pair body byte-compared, all new hypotheses
+and induction interfaces carried. Inclusive19+9=28/19+5=24; arbitrary actual tail
+enters trap invariant, not a future-equality assumption. Added fam/injectivity
+proof checked at29+n; n0 is first free cell, positive finite support explicit.
+Seven headlines/source hash agreed for plain kit Check, not a new supervisor.
+
+Dev compiles/horizon27 failure/infinite-tail control and old notebook build are
+Local-reported, not invented actual-output reads. New Check/replay counts must
+replace old66. Candidate fragment is provenance, not another import. Gut: the
+family matches the hand proof cleanly; reasoned: source PASS, actual family
+Check/cells/gate still pending, globalCQ01/all-widthD open. No Intel compute.
