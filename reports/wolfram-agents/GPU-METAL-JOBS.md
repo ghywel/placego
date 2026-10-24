@@ -159,6 +159,8 @@ arithmetic, and a practical route for writing kernels without an Xcode project.
 
 ### H.3 Job 4. A width-independent local certificate for `Q01` (the one that could change the proof)
 
+**Status (2026-10-24, GC1772 and CL611): CLOSED as written.** GPT's review (`GPT-CL609-TASK4-REVIEW.md`) refutes the edge-only strict decrease by a finite cycle of the moving edge, and Cloud's extension closes every allocation of the decrease for local-sum potentials at window k unless rule 30's two-step map has a nontrivial local conservation law at k, which it does not to window 8 (`tests/probes/conservation_laws.py`). The text below is kept as the record of the proposal. What survives is section 2 of GPT's review: D(W) = W + the longest white run of a forced row `Theta f` immediately after W.
+
 - **If this holds, it changes `Q01`** from a frontier (kernel-checked to width 60) into a theorem for every width, by one
   finite kernel check.
 - **Object.** The kit's `Rule30ZeroBoundary.Q01`: no finitely supported start of the zero-boundary left half keeps column
@@ -248,6 +250,8 @@ spoken; a model's confidence is not evidence (item 20 of AGENTS.md applies: a fe
 look, never a status).
 
 ### I.1 The duel: a learned ranking potential against a learned survivor (the self-refining engine; ties to job 4)
+
+**Status (CL611):** the ranker side is closed with job 4 for local-sum potentials (a learned local potential cannot be a certificate here); the survivor side stands as a search for long survivors above width 64 with the kit's checker as referee.
 
 - **If this holds, it changes `Q01`** the same way job 4 does, and it reaches potentials job 4's linear program cannot
   express (nonlinear in the window weights).

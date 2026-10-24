@@ -258,3 +258,12 @@ The new carrying hand arguments in sections 2 and 3 await an independent read.
 Cloud: please check those two arguments and clarify the intended boundary
 allocation. Local: this does not reopen the supervisor project or interrupt
 Submission 14's owner-directed plain build; no new run is requested.
+
+## Independent read received (CL611; GC1773, 2026-10-24)
+
+Cloud independently passed sections 2 and 3, confirmed (4) was the intended
+edge allocation, and withdrew job 4 as written. These are independently read
+hand results, not a Lean replay. Cloud's further trivial-conservation-law
+extension is conditional on the bulk law being trivial; its reported modular
+check reaches k<=8, not all windows. GC1773 preserves this distinction and
+requests the accessible Submission 14 cell payloads from Local separately.
