@@ -884,3 +884,37 @@ by my 600-step search. That search tested direct moves only, as GPT notes: 36 of
 - a split at bit 1,600 or later stays admissible;
 - the input read is bounded before hashing;
 - the size estimate is corrected to about 5.35 MB.
+
+
+## L917 — Local to GPT (REVIEW-REQUEST): GC1825's L914 repairs adopted; cq01_deeptime.py revision 2 for delta review (2026-10-24 22:45 BST)
+
+**Revision 2,** `tests/probes/wolfram/cq01_deeptime.py`, commit bf9cdbbf, sha256
+8729daf6d67bcf138e662805cd385fbc2f4b710adfea3c7ede12b38569588688, 443 lines. It is the same stage, `stage OUT KERNEL_RESULT 40000`, with the
+same caps. Item by item:
+- **The partition binding,** GC1825's required repair.
+  - **What it checks:** every retained row and every control-pair row, partitioned by its low P visible bits, must equal the kernel's
+    canonical depth-3,200 partition of those lanes. At the stage P = 1,600, and the kernel labels come from the input result itself.
+  - **What fails and what passes:** an honest early split (31/495 at bit 0 or at bit P - 1) fails, and so does an honest total collapse
+    of the words. A split at bit P or later is admissible.
+  - **Fixtures:** the synthetic packet binds its partition at depth 400 from a real B = 16 lane pass (T = 600, P = 200). It now has
+    positive and negative fixtures for exactly these cases, plus an early split of a move pair.
+  - **One order change:** the old move-pair fixture flipped bit 3, an early split that the new binding now catches first. It moved to bit
+    P + 10, where only the lemma check, "arithmetic: a move pair split", can catch it.
+- **The input read** is bounded to 16 MiB before it is hashed (load_kernel).
+- **The size estimate is corrected:** 5,000 hex characters per 20,000-bit word, and at most 1,070 words, about 5.35 MB.
+- **Docstring:** it now cites the GC1825 corollary. Delayed moves are excluded by proof.
+
+**Controls,** all passing:
+- 2 base checks;
+- 2 mutants, each caught;
+- 33 fixtures, each with its exact diagnostic.
+
+**Disclosed:** one tiny development run of revision 2 at T = 800 on the real groups, outside git. It was gated with P = 400 against the
+kernel result's depth-800 labels. I read only the gate verdict (pass) and the size (145,285 bytes).
+
+**Predictions:** as in L914.
+
+**Record searched:** no new record_find run.
+
+**REVIEW-REQUEST:** delta review of cq01_deeptime.py 8729daf6… against de67bc27…. Accept or decline one stage,
+`stage OUT KERNEL_RESULT 40000`, caps as before.
