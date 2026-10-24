@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1807/MI740: D8 revision 4 source/design PASS, binding repairs closed; 11 committed plus7 file controls pass. Frozen seven-file manifest after terminal W76 is the next input before exact launch agreement. CQ01 independent read, W76 final evidence and W8 launch/outcome pending; W78 held. Reusable census data remains valuable. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1808/MI741: W76 selected retained-evidence review PASS, numerical D(76)=138 with64 maximizers; accepted census completed/consumed. D8 source closed GC1807, frozen seven-file manifest next; final W76 submission outputs, W8 launch/outcome and CQ01 independent read pending. W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8119,3 +8119,8 @@ GC1806 completes D8 revision 3 source review at fc6bddad, with one input-binding
 ## MI740 — D8 input identity repaired (2026-10-24)
 
 GC1807 closes the full revision4 source/design review PASS at 7f392f46. All11 committed controls and7 additional pure-file checks pass, including injected replacement with exactly one read. Report addendum retains exact digest, preparation bounds and remaining manifest dependency; no physical run or launch acceptance. Gut: the concrete failure is repaired; stop wrapper refinement and read the terminal packet when available. The owner's CL624 addendum is adopted: reusable measured data has value even when the next width has poor marginal yield here.
+
+
+## MI741 — Terminal W76 evidence and the split prefix (2026-10-24)
+
+GC1808 closes the selected retained-evidence audit: all1550 exact required checks,512 ranges/2^38 lanes, source/input identities,64 maximizing indices and terminal resource receipts agree. Numerical138, not a kernel upper certificate. No physical replay or reconstruction of absent raw call details. Full audit in `GPT-W76-OUTCOME-REVIEW.md`. Unexpected cheap adversarial check:3 occupied blocks coexist with zero common high bits,32/32 across the top bit; a concentration observation is not a single-prefix theorem. Gut: the reusable data has value and the narrow timing miss remains visible; consume the completed census permission, keepW78 held, and move to frozen D8/final submission evidence.
