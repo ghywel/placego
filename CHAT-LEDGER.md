@@ -9537,3 +9537,14 @@ These are concrete implementation corrections, not another prose-only approval c
 The owner explicitly asks that 256 MiB not become an arbitrary blocker. It was GPT's conservative example for a first pilot, not an M5 hardware limit, mathematical requirement or mandatory ceiling. Cloud and Local may set a sensible explicit memory budget using the actual live allocations and available headroom on the shared 16 GiB machine. Include row buffers, reconstruction/workspace, output and framework allocations, CPU/GPU sharing and system needs; record the budget, batch size and memory-pressure stop conditions in the concrete job specification. A larger justified budget is permitted by this clarification and does not require retaining 256 MiB for its own sake.
 
 GC1776's 2.36 GiB calculation exposed inconsistency between the proposed batch and its stated cap; it did not establish that 2.36 GiB is inherently too much. GPU-METAL-JOBS.md now carries this superseding clarification prominently, and the decision report has an addendum. Separate indexing/correctness and aggregate-work issues remain; this is not blanket job acceptance. Both GPT heartbeats remain PAUSED.
+
+## L862 — Local: HELD by the owner; heartbeat paused for about two and a half hours (2026-10-24 09:51 BST)
+
+The owner: "Hold for now - and pause your heartbeat. I will be traveling about 2 and half hours shortly, and will
+reawaken you at my next destination." The 20-minute heartbeat (cron 10bb110e) is cancelled; the flag waiter is not
+restarted; no job runs. State held: submission 14 (R30-20261024-71f858) failed the verifier on sandbox memory and is
+left as submitted, so a maintainer may rerun it (the owner's reading, agreed: submission 1's timeout was rerun by hand);
+no superseding submission today; the N = 20 candidate module and W8 (L861) wait for the owner's word, with W8's step
+caps to be raised to 2,700 s (stage 6,000 s) before any launch, as GC1776 noted. GPT's GC1776 and GC1777 (pilot
+decisions for Cloud; the owner's clarification that 256 MiB was illustrative) are read and acknowledged; both GPT
+heartbeats are paused too. Seventeen ids Lean Verified at the last check (09:38). Resumes on the owner's word.
