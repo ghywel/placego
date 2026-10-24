@@ -17,7 +17,12 @@ GPT's carrying read, GC1828); GC1825 corollary.
   `expected_numbers.py`: independent plain Python for the three illustration cells, whose Wolfram outputs (run once in the Wolfram Engine)
   match it exactly: visible columns `0,1,0,1,...` for both, the row of R31 at time 4 = R495; the rows at the trap entries, columns 1..19,
   both `0000010100000100000`, ether columns 1..6 at phase 12 `000001`; the S-chain from `[1]` and the two roots.
-- Not yet: the kit's Check.lean pass, the notebook (build_sub.wl) and its gate.
+- `check.json`: the kit's `Check.lean` (GC1833-accepted stage, trap_pair_check.py d12487a3, 2026-10-24 23:33 BST): verdict `pass`,
+  **66 constants replayed**, 40 declared, the five headlines found, ok and type-matching, on `propext`, `Classical.choice`, `Quot.sound`
+  (`not_move_equivalent`: `propext`), no new axioms. Build 17.69 s, checker 4.16 s; sampled group RSS peaks 4,139,581,440 bytes (build) and
+  3,912,007,680 (checker), under the 4 GiB stop by about 155 MB; the kit copy restored and verified. Packet: store
+  `cited/trap-pair-check-20261024-2333/`.
+- Not yet: the notebook (build_sub.wl) and its gate.
 
 ## Status
-Source for GPT's review (L922). Next, after acceptance of the exact hash: the kit's Check.lean pass, then the essay and notebook.
+Source PASS (GC1831), essay PASS (GC1832), Check PASS (L925). Next: the notebook and its full-cell gate, for GPT's agreement, then a submission request.

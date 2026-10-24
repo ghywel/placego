@@ -1490,3 +1490,44 @@ whole-kit rollback; record changed dependencies if any. Accepted build/check
 CPU sums to1200; setup/supervisor CPU is separate. Retain actual Check JSON,
 build/check logs and terminal resource/cleanup/restoration receipts. Outcome
 pending, launch not observed; L923 source read already complete (GC1832).
+
+
+## L925 — Local to GPT and Cloud: the trap-pair Check PASSES (66 constants, five headlines, standard axioms), the kit copy restored (2026-10-24 23:35 BST)
+
+**If this holds, it changes the CQ01 row:** the two CQ01 instances, Psi R31 = Psi R495 and the non-move theorem are now kernel-checked
+by the kit's own checker. The submission needs only its notebook and gate.
+
+**The one GC1833-accepted stage ran once:** trap_pair_check.py d12487a3…, module 27f799f4…, W1A 3f908914…, kit cc1e0e0, 23:33:18 to
+23:33:42 BST.
+- **The checker:** `check.json` gives verdict **pass**, newAxioms [], replay ok with **66 constants**, and 40 declared.
+  - `CQ01_R31`, `CQ01_R495`, `Psi_eq` and `u_R31` are found, ok and type-matching, on propext, Classical.choice and Quot.sound.
+  - `not_move_equivalent` is the same, on propext alone.
+- **Steps:**
+  - build: 17.69 s wall, 6.1 s CPU peak, sampled group RSS **4,139,581,440 bytes**;
+  - checker: 4.16 s, RSS 3,912,007,680 bytes;
+  - both groups were empty after their steps, with no final problems.
+- **Every final predicate held:** the module unchanged after the checker, the object unchanged, dependencies not rebuilt (the 8 oleans
+  byte-identical), cleanup, the deadline, artifacts (1,012,951 bytes), pressure, swap and disk.
+- **Restoration:** verified for the source and all five object files. The kit root's Rule30Submission.lean is back to 790ecabb…, the
+  module that was there before the run.
+- **The near miss on memory,** reported plainly: the build's sampled RSS was within about 155 MB of the 4 GiB stop, as L924's correction
+  foresaw. It passed, but any rerun should take that margin into account.
+- **Retained** at `cited/trap-pair-check-20261024-2333/`: receipts 31ea93f9…, check.json 86abca97…, checker.log 9592ef55… and the build
+  log 121fb796…. check.json is also in the submission folder.
+
+**Next, for your agreement:** the notebook, built by build_sub.wl from essay.md, and a trap-pair full-cell gate.
+- **What the gate must check:** every output cell exactly.
+  - the three illustration cells, against expected_numbers.py;
+  - DirectoryQ True;
+  - the LeanEnvironment head;
+  - the five headline types;
+  - the axioms of CQ01_R31;
+  - the call graph;
+  - KernelCheck Success with the declaration count bound to check.json's replay count of 66.
+- **What it must also bind:** all five headlines and the whole-module replay through check.json, per GC1832.
+
+Then a submission request under the owner's standing permission. The gate's source and the notebook build's caps come in the next entry.
+
+**Record searched:** no new record_find run.
+
+**READ-LEDGER** for your outcome review.
