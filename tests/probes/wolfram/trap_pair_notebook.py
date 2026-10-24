@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""trap-pair notebook, revision 3 (Local, 2026-10-24, L928; GPT's GC1837: one owned-step supervision and cleanup path in the main
+"""trap-pair notebook, revision 3a (GPT, 2026-10-25, GC1838: final kernel inventory/ownership uncertainty clears complete and fails
+the terminal stage; five file-only terminal-record controls added). Revision 3 (Local, 2026-10-24, L928;  GPT's GC1837: one owned-step supervision and cleanup path in the main
 thread. The kernel watcher never signals another process: on a monitor error or a sample above two kernels it asks the MAIN thread to
 stop, once, by SIGUSR1 to this process; the main-thread hook raises KernelLimit only while the main thread holds the watch open, so W1A's
 run_step kills its own step group and the stage stops UNKNOWN; a request after the watch closed is only counted. A watcher still alive
@@ -235,6 +236,19 @@ def final_kernel_record(baseline_pids, me, kill=True):
     return rec
 
 
+def terminal_kernel_problems(rec):
+    """Final inventory/ownership evidence participates in completion, including late failures after the earlier final predicates."""
+    problems = []
+    if rec.get('owned_groups_error'): problems.append('owned-groups-monitor-failed')
+    if rec.get('inventory_error'): problems.append('kernel-inventory-failed')
+    if not isinstance(rec.get('owned_groups_at_exit'), list): problems.append('owned-groups-unavailable')
+    elif rec['owned_groups_at_exit']: problems.append('owned-groups-remained-at-exit')
+    if not isinstance(rec.get('inventory'), list): problems.append('kernel-inventory-unavailable')
+    if not isinstance(rec.get('uncertain'), list): problems.append('kernel-ownership-unavailable')
+    elif rec['uncertain']: problems.append('kernel-ownership-uncertain')
+    return problems
+
+
 def controls():
     import tempfile
     res = {}
@@ -342,6 +356,12 @@ def controls():
         signal.signal(signal.SIGUSR1, prev_usr1)
     fk = final_kernel_record({base_pid}, os.getpid(), kill=False)
     res['final_record_has_inventory_and_uncertainty'] = 'inventory' in fk and 'uncertain' in fk
+    terminal_clean = {'owned_groups_at_exit': [], 'inventory': [], 'uncertain': []}
+    res['terminal_clean_passes'] = terminal_kernel_problems(terminal_clean) == []
+    res['terminal_inventory_error_fails'] = bool(terminal_kernel_problems(terminal_clean | {'inventory_error': 'mock ps failed'}))
+    res['terminal_uncertain_kernel_fails'] = bool(terminal_kernel_problems(terminal_clean | {'uncertain': [123]}))
+    res['terminal_owned_groups_fails'] = bool(terminal_kernel_problems(terminal_clean | {'owned_groups_at_exit': [456]}))
+    res['terminal_missing_fields_fails'] = bool(terminal_kernel_problems({}))
     here = os.path.dirname(os.path.abspath(__file__)); repo = os.path.realpath(os.path.join(here, '../../..'))
     files = {'essay': (os.path.join(repo, 'reports/wolfram-agents/submissions', NAME, 'essay.md'), ESSAY_SHA256),
              'module': (os.path.join(repo, 'reports/wolfram-agents/submissions', NAME, 'Rule30Submission.lean'), MODULE_SHA256)}
@@ -460,19 +480,29 @@ def main():
         if not all(predicates.values()): stop('final validation failed: %s' % [k for k, v in predicates.items() if not v])
         R['complete'] = True
     except SystemExit:
+        R['complete'] = False
+        R.setdefault('stopped', 'UNKNOWN: interrupted or stopped before finalization')
         raise
     except KernelLimit:
+        R['complete'] = False
         R['stopped'] = 'UNKNOWN: the kernel watch stopped the running step (kernel_watch_build / kernel_watch_read)'; sup.save()
         print('STOP:', R['stopped']); sys.exit(1)
     except BaseException as e:
+        R['complete'] = False
         R['stopped'] = 'exception: %r' % e; sup.save(); print('STOP:', R['stopped']); sys.exit(1)
     finally:
         R['final_kernels'] = final_kernel_record(R.get('_baseline_pids'), os.getpid())
         R['final_kernels']['late_stop_requests'] = WATCH['late']
+        R['final_kernels']['problems'] = terminal_kernel_problems(R['final_kernels'])
+        if R['final_kernels']['problems']:
+            R['complete'] = False
+            R.setdefault('stopped', 'UNKNOWN: final kernel inventory/cleanup: %s' % R['final_kernels']['problems'])
         R.pop('_baseline_pids', None)
         R['recovery'] = {'preserved_scripts': os.path.join(out, 'preserved-scripts'), 'staged_folder': os.path.join(pipe, NAME),
                          'installed_scripts': scripts_check(pipe), 'note': 'the staged folder and installed scripts stay by design; no automatic retry'}
         R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
+    if not R.get('complete'):
+        print('STOP:', R.get('stopped', 'UNKNOWN: incomplete terminal receipt')); sys.exit(1)
     print('DONE: the trap-pair notebook built and its cells read (not submitted)')
 
 

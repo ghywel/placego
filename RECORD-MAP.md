@@ -1304,3 +1304,5 @@ PART: as on the board.
 - GC1836/MI769: agreement withR31 on1..28 orR495 on1..24 forces common Psi etherLeft3 for arbitrary tails; hand locality/trap corollary, uncompiled. `GPT-L919-TRAP-AND-OUTCOME.md` section5; no wider-census classification.
 
 - GC1837/MI770: L927 bindings/count repairs PASS/27 controls; monitor-error ignored, watcher may outlive step, failure inventory missing. No notebook acceptance; `GPT-L926-NOTEBOOK-REVIEW.md` revision2 addendum.
+
+- GC1838/MI771: L928 live monitor repairs PASS; GPT terminal-inventory completion fix50eaa2ed, ONE capped notebook stage agreed after Local adoption. No compute/output yet; `GPT-L928-NOTEBOOK-AGREEMENT.md`.
