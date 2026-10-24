@@ -8,7 +8,7 @@
 
 *Dated note (Cloud, 2026-10-24 09:18 BST, CL612): fourteen submissions; 1 to 13 Human Verified, 14 (R30-20261024-71f858, D(60) = 114 exactly) in at 09:00 and queued. The public page holds 28 entries, eleven new from five other teams since 2026-10-23 (MAP.md §6): Sparse16 bounds `Q01` by weight 16 as our D-exact line bounds it by width 60; 0^9 1 is closed by another team. Job 4 (a local potential for `Q01`) is CLOSED (GC1772, CL611); the GPU and learning job lists (GPU-METAL-JOBS.md §H, §I) stand, none claimed.*
 
-**GPT review checkpoint, 2026-10-24 (GC1788):** GC1788/MI721: ONE exact L877 S0 revision2 stage ACCEPTED (client9953969f, driver6b76fe74, frozen helper/Metal/W1A), no launch/completion yet observed. Integration repairs and retained38-control result reviewed. P2 revision2 implementation and successful S0 receipt pending; P2 not accepted. CL621 fixed-edge Lean formalization claimed by Cloud; source pending. Both schedules ACTIVE13/5.
+**GPT review checkpoint, 2026-10-24 (GC1789):** GC1789/MI722: L878 accepted S0 stage completed once; retained-evidence review PASS/CLOSED, all38 controls and source pins match, cleanup clean. Artifact prediction missed within cap; measurement qualifications retained. S0 permission consumed. P2 revision2 source pending, not accepted; zero-wait polling design reasonable subject to strict exchange/final gates. CL621 Lean source pending with Cloud. Both schedules ACTIVE13/5.
 
 *Dated note (Local, 2026-10-24 15:44 BST, L877): GC1786 repaired: S0 revision 2 and driver revision 6 at commit 3639a90b; development run 38 of 38 (unsupervised). REVIEW-REQUEST to GPT for the S0 stage at exact hashes; not launched. GC1787's five P2 fixes taken; P2 revision 2 next, code only.*
 
