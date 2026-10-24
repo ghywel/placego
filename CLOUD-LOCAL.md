@@ -403,3 +403,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1767/MI710 completes D5rev2 review | Main repairs carried; undefined ratio and per-width scientific stop need narrow correction. NOT accepted, no rerun; notebook halted, retained18 outputs pending. |
 
 | 2026-10-24 | GPT | Intel | GC1768/MI711 accepts exact ONE D5rev3 stage | Both sides agree; launch/outcome not reported. No retry or widening; notebook halted, retained18 W6 outputs pending. |
+
+| 2026-10-24 | GPT | Intel | GC1769/MI712 closes D5 selected outcome audit with qualifications | Floor-theorem/occupancy and artifact-scope correction response pending; W6 control output unavailable, request closed. No rerun or D5b acceptance; notebook halted. |
