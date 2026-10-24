@@ -4,7 +4,8 @@
 // reduces on the CPU with exact 64-bit counts, and writes one JSON result. Nothing is claimed by the driver: the
 // Python harness (p1_lane_engine.py) checks every result against independent scalar code.
 //
-// Modes: "census" lanes n in [lo, hi) (decimal strings, 64-bit); "list" the given indices; "rows" uploaded starts
+// Modes: "census" lanes n in [lo, hi) (decimal strings, 64-bit); "list" the given indices; "serve" (revision 4) a persistent
+// request loop on stdin/stdout; "rows" uploaded starts
 // (hex, depth j+1 = bit j) with an explicit support bound Wsup, no reconstruction (edge-case controls).
 
 import Foundation
@@ -102,6 +103,78 @@ var rowStarts: [[UInt64]] = []          // rows mode: per lane, the start's word
 var Wsup = W
 var lo: UInt64 = 0, hi: UInt64 = 0
 let fullMask: UInt64 = LW == 64 ? UInt64.max : (UInt64(1) << UInt64(LW)) - 1
+
+// ---- serve mode (revision 4, S0 of L872): one JSON request per stdin line, one JSON response per stdout line ----------------
+// request  {"id": n, "W": W, "T": T, "indices": ["..."]}   response {"id": n, "W": W, "T": T, "deaths": [d, ...]}  (-1 = censored),
+// in the request's order with duplicates preserved; buffers sized once for W_max, T_max, G_max; every row, the histogram and the
+// per-group maxima are rewritten per batch, so no state carries across requests or widths; any malformed, truncated or
+// out-of-domain request is answered {"id": n, "error": "..."} and the server exits non-zero.
+if mode == "serve" {
+    let Wmax = int("W_max"), Tmax = int("T_max")
+    guard Wmax >= 2 && Wmax <= 126 && Tmax >= 0 && Tmax <= 2 * (HB - 2) else { fail("serve: W_max in 2..126 and T_max within the histogram bound", outPath) }
+    let Lmax = Wmax + Tmax + 2, G = Gmax
+    let live = G * (Lmax * laneBytes + 8 + laneBytes + 2 * (Wmax + 1) * laneBytes + LW * 2 + 2) + 2048 * 4 + 16
+    guard live <= budget else { fail("serve: live allocation \(live) exceeds the GPU budget \(budget)", outPath) }
+    guard let sRows = device.makeBuffer(length: Lmax * G * laneBytes, options: .storageModeShared),
+          let sBase = device.makeBuffer(length: G * 8, options: .storageModeShared),
+          let sValid = device.makeBuffer(length: G * laneBytes, options: .storageModeShared),
+          let sWs = device.makeBuffer(length: 2 * (Wmax + 1) * G * laneBytes, options: .storageModeShared),
+          let sDeath = device.makeBuffer(length: G * LW * 2, options: .storageModeShared),
+          let sTrace = device.makeBuffer(length: 16, options: .storageModeShared),
+          let sHist = device.makeBuffer(length: HB * 4, options: .storageModeShared),
+          let sGmax = device.makeBuffer(length: G * 2, options: .storageModeShared) else { fail("serve: buffer allocation failed", outPath) }
+    func dispatch(_ p: MTLComputePipelineState, _ bufs: [(Int, MTLBuffer)], _ params: inout Params, _ n: Int) {
+        let cb = queue.makeCommandBuffer()!, enc = cb.makeComputeCommandEncoder()!
+        enc.setComputePipelineState(p)
+        for (i, b) in bufs { enc.setBuffer(b, offset: 0, index: i) }
+        enc.setBytes(&params, length: MemoryLayout<Params>.stride, index: 3)
+        let t = max(1, min(tgReq > 0 ? tgReq : 256, p.maxTotalThreadsPerThreadgroup, n))
+        enc.dispatchThreads(MTLSize(width: n, height: 1, depth: 1), threadsPerThreadgroup: MTLSize(width: t, height: 1, depth: 1))
+        enc.endEncoding(); cb.commit(); cb.waitUntilCompleted()
+        if let e = cb.error { FileHandle.standardError.write("serve: command buffer error \(e)\n".data(using: .utf8)!); exit(4) }
+    }
+    func respond(_ obj: [String: Any]) {
+        let d = try! JSONSerialization.data(withJSONObject: obj, options: [.sortedKeys])
+        FileHandle.standardOutput.write(d); FileHandle.standardOutput.write("\n".data(using: .utf8)!)
+    }
+    func refuse(_ id: Any, _ why: String) -> Never { respond(["id": id, "error": why]); exit(5) }
+    while let line = readLine(strippingNewline: true) {
+        if line.isEmpty { continue }
+        guard let req = (try? JSONSerialization.jsonObject(with: line.data(using: .utf8)!)) as? [String: Any] else { refuse(NSNull(), "malformed request") }
+        let id: Any = req["id"] ?? NSNull()
+        guard let rW = (req["W"] as? NSNumber)?.intValue, let rT = (req["T"] as? NSNumber)?.intValue, let arr = req["indices"] as? [Any] else { refuse(id, "request lacks W, T or indices") }
+        guard rW >= 2 && rW <= Wmax && rT >= 0 && rT <= Tmax else { refuse(id, "W or T outside the server's domain") }
+        let idxs = arr.compactMap { u64($0) }
+        guard idxs.count == arr.count else { refuse(id, "an index is not a non-negative integer") }
+        let nb = rW / 2
+        if nb < 64 { for n in idxs { guard n < (UInt64(1) << UInt64(nb)) else { refuse(id, "index exceeds 2^floor(W/2)") } } }
+        var byBase: [UInt64: UInt64] = [:]
+        for n in idxs { let b = (n / UInt64(LW)) * UInt64(LW); byBase[b, default: 0] |= UInt64(1) << (n - b) }
+        let bases = byBase.keys.sorted()
+        var deathOf: [UInt64: Int] = [:]
+        let rL = rW + rT + 2
+        var g0 = 0
+        while g0 < bases.count {
+            let n = min(G, bases.count - g0)
+            let pb = sBase.contents().bindMemory(to: UInt64.self, capacity: n)
+            for i in 0..<n { pb[i] = bases[g0 + i] }
+            if LW == 64 { let pv = sValid.contents().bindMemory(to: UInt64.self, capacity: n); for i in 0..<n { pv[i] = byBase[bases[g0 + i]]! } }
+            else { let pv = sValid.contents().bindMemory(to: UInt32.self, capacity: n); for i in 0..<n { pv[i] = UInt32(truncatingIfNeeded: byBase[bases[g0 + i]]!) } }
+            var prm = Params(W: UInt32(rW), T: UInt32(rT), Wsup: UInt32(rW), L: UInt32(rL), G: UInt32(n), traceSteps: 0)
+            memset(sHist.contents(), 0, HB * 4)
+            dispatch(pBuild, [(0, sRows), (1, sBase), (2, sWs)], &prm, n)
+            dispatch(pSim, [(0, sRows), (1, sValid), (2, sDeath), (4, sTrace), (5, sHist), (6, sGmax)], &prm, n)
+            let pd = sDeath.contents().bindMemory(to: UInt16.self, capacity: n * LW)
+            for i in 0..<n {
+                let m = byBase[bases[g0 + i]]!
+                for l in 0..<LW where (m >> UInt64(l)) & 1 == 1 { let d = Int(pd[i * LW + l]); deathOf[bases[g0 + i] + UInt64(l)] = d == 0xFFFF ? -1 : d }
+            }
+            g0 += n
+        }
+        respond(["id": id, "W": rW, "T": rT, "deaths": idxs.map { deathOf[$0]! }])
+    }
+    exit(0)
+}
 
 guard W >= 0 && W <= 126 else { fail("W must lie in 0..126 (at most 63 index bits)", outPath) }
 if mode != "rows" { guard W >= 2 else { fail("W must be at least 2 for census and list modes", outPath) } }

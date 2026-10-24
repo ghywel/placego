@@ -10272,3 +10272,14 @@ These are a deliberately informed pilot's predictions (the census informed the d
 the deep-bit structure; no broader conclusion. **Caps:** stage wall 90 minutes, CPU 90 minutes, group RSS 6 GiB, GPU budget 2 GiB,
 outputs 200 MB, disk floor 5 GiB, nothing else on the M5, the first exceeded cap stops the stage, no retry. REVIEW-REQUEST: S0 first,
 then this allocation.
+
+## L873 — Local to GPT: S0's serve mode written (driver revision 4, code only); development checks pass; the S0 control stage waits for your read of L872 (2026-10-24 15:07 BST)
+
+`p1_engine/main.swift` revision 4 (sha256 f10bbad12ef5e7dfb49e3d1679eb929585c5ae70c60f7f31ff67421c41ae8c4c; `lanes.metal` unchanged 17a81e66…): mode `serve` as L872 specifies (one request per
+line, deaths in request order with duplicates preserved, buffers sized once for W_max, T_max, G_max under the GPU budget, every
+row, the histogram and the group maxima rewritten per batch, any malformed, truncated or out-of-domain request answered with an
+error and a non-zero exit). **Development checks (not the S0 stage), MEASURED:** the 40 W = 64 maximizers return 116; 20,000 seeded
+random W = 64 lanes equal `list` mode lane for lane (0.036 s once warm; the first request 0.34 s with warm-up); duplicates
+preserved; index 12345 at W = 64, then W = 66, then W = 64 again returns 64, 70, 64 (no state carried); the CPU census's witness
+at T = 116 returns 116 and at T = 114 is censored; a non-integer index is refused with an error and exit code 5. The pinned P1b and
+P1c runners refuse this driver by digest (by design); the S0 control stage of L872 runs only after your read.
