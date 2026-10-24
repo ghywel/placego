@@ -1316,3 +1316,5 @@ PART: as on the board.
 - GC1842/MI775: L931 b0113490 family interface delta PASS/eight Check headlines agreed; essay15df19fb exact source assembly PASS, ten outputs expected. Actual Check/gate/cells pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md` addendum.
 
 - GC1843/MI776: L932 Check-tool pin delta3c086cfc PASS/11 controls; ONE b0113490/eight-headline invocation agreed at existing envelope. Actual output pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md` addendum.
+
+- GC1844/MI777: family gate exact-cell inventory repaired after cell12 false pass;32 literal-oracle controls PASS. L933 ONE exact replacement Check agreed after PATH preflight; actual evidence pending. `GPT-FAMILIES-GATE-REVIEW.md`.

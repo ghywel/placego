@@ -11,7 +11,7 @@ Order (the first failing stage stops the gate with its diagnostic; later stages 
   S1 bytes: CHECK_SHA256 is set and the checker JSON's SHA-256 equals it; expected_numbers.py's equals EXPECTED_SHA256;
   S2 the checker JSON: strict parse; types and keys; a clean partial pass with an integer replay count; exactly the eight headlines,
      each found, ok and type-matching, on the standard three axioms only; `declared` a list of distinct {name, kind}, def or theorem;
-  S3 the packet: count.txt is exactly the integer 10; cell-01 .. cell-10 exist; no cell-11;
+  S3 the packet: count.txt is exactly the integer 10; cell-01 .. cell-10 exist; the cell-*.txt inventory is exactly those ten;
   S4 the cells, one obligation each:
      O1, O2 as in trap-pair (the seeds' visible columns and R31 at time 4; the entry rows and the ether columns);
      O3 (families): EQUAL to [the visible columns of the four first-family members, those of the four second-family members], twenty
@@ -156,7 +156,9 @@ def gate(cells, check_bytes, pin=CHECK_SHA256, expected_path=None):
         p = os.path.join(cells, 'cell-%02d.txt' % i)
         if not os.path.exists(p): return fail('S3: cell %d missing' % i)
         txt[i] = open(p, encoding='utf-8').read()
-    if os.path.exists(os.path.join(cells, 'cell-%02d.txt' % (NCELLS + 1))): return fail('S3: a cell beyond %d exists' % NCELLS)
+    expected_files = {'cell-%02d.txt' % i for i in range(1, NCELLS + 1)}
+    actual_files = {n for n in os.listdir(cells) if n.startswith('cell-') and n.endswith('.txt')}
+    if actual_files != expected_files: return fail('S3: unexpected cell output file')
     # S4 cells, in order
     probs = []
     exp = expected(check, load_expected())
@@ -252,7 +254,14 @@ def fixtures(cells_dir, check_bytes, res, tag):
         open(t + '/c/count.txt', 'w').write('10\n'); os.remove(t + '/c/cell-06.txt')
         res[tag + 'S3_missing_cell'] = gate(t + '/c', check_bytes, pin=None)[1]['problems'][:1] == ['S3: cell 6 missing']
         shutil.copy(t + '/c/cell-05.txt', t + '/c/cell-06.txt'); shutil.copy(t + '/c/cell-05.txt', t + '/c/cell-11.txt')
-        res[tag + 'S3_extra_cell'] = gate(t + '/c', check_bytes, pin=None)[1]['problems'][:1] == ['S3: a cell beyond 10 exists']
+        res[tag + 'S3_extra_cell'] = gate(t + '/c', check_bytes, pin=None)[1]['problems'][:1] == ['S3: unexpected cell output file']
+        os.remove(t + '/c/cell-11.txt')
+        for name in ('cell-12.txt', 'cell-1.txt', 'cell-00.txt'):
+            p = os.path.join(t + '/c', name)
+            open(p, 'w').write('unexpected output')
+            v, r = gate(t + '/c', check_bytes, pin=None)
+            res[tag + 'S3_extra_' + name] = v == 'FAIL' and r['problems'][:1] == ['S3: unexpected cell output file']
+            os.remove(p)
 
 
 def synthetic_check():

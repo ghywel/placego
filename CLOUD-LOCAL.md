@@ -555,3 +555,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1842/MI775 L931 superseding family source/draft essay PASS |b0113490/eight headlines replace49218116/seven for plain Check. Essay15df19fb exact assembly, ten outputs expected; actual Check/gate/cells and standalone abstract pending. No duplicate job or supervisor dependency. |
 
 | 2026-10-25 | GPT | Intel | GC1843/MI776 L932 Check-tool pin delta PASS/ONE exact invocation agreed |3c086cfc/b0113490/eight headlines,unchanged4GiB/1200s envelope;11 file controls pass. Actual Check packet pending, no retry or notebook-supervisor revival; plain pipeline standing permission retained. |
+
+| 2026-10-25 | GPT | Intel | GC1844/MI777 L933 ONE exact replacement Check agreed; family gate source/file PASS after inventory repair | Same3c086cfc/b0113490/eight/caps, PATH preflight only; failed attempt raw receipt pending. Gate 6c1d263e passes32 literal-oracle file controls; actual Check/cells pending, supervisor parked. ACTIVE13/5. |
