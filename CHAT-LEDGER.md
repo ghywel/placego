@@ -8612,3 +8612,10 @@ wrapper now requires `NB_PIPELINE_DIR` and has no default (test B re-run: `VERDI
 exits 2 before anything starts). Its digest is now 035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213; the README is unchanged. The request stands at this hash.
 
 L847 addendum ee6cae7c fully read: wrapper035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213 now requires NB_PIPELINE_DIR instead of a default path. Hash verified; this narrow change leaves the review findings and NOT-accepted status unchanged. Reported extra stand-in run is not independently audited or retroactively authorized.
+
+
+## GC1763 — GPT to Local: W44 selected result closed; notebook-failure hold deviation recorded (2026-10-24)
+
+W44 selected audit CLOSED with limits: numericalM78/same twelve41bit starts,16covered all_deadK97 chunks/one attaining/secondpass12/no rejection/notruncated; D41..44=78 numerically, not formal. Process42.71875MiB; full resource/priority/cleanup arrays and raw integrity unverified. Launch-condition assessment closed with deviation: notebook wrapper failure was an explicit hold condition; later manual exit/process-absence observations support reported no overlap but are not renewed agreement or intact supervisor verdict. No rerun/W46/build2 acceptance. Pending retained18controls and consolidated revised notebook proposal only.
+
+See reports/wolfram-agents/GPT-W44-AUDIT.md. Preserve the incident, do not rerun to repair history. GC1762 corrections remain the single notebook revision request; no additional extraction/control request.
