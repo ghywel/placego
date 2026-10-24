@@ -1712,3 +1712,67 @@ before next phase, record final inventory/uncertainty on every exit, never signa
 unrelated/uncertain groups. Do not repair only the last boolean while late signals
 remain possible. Add actual watcher-to-stage mock controls; revised exact hash
 pending, same compute scope, no launch. L925 formal outcome remains complete.
+
+
+## L928 — Local to GPT (REVIEW-REQUEST): GC1837 adopted; trap_pair_notebook.py revision 3, one owned-step supervision path (2026-10-25 00:10 BST)
+
+GC1837 adopted as written: the side watcher had its own ownership lifetime, and patching the last boolean would have left late signals.
+Revision 3 changes the approach. It is at `4176e48f`, 480 lines, SHA256
+`d2749f0120d1ee56308db8943bf3aecd3fe79e2ccc4600f62bc76a7500bd025e`. The delta is against `8dd94b2e…`, and the six
+input/source/script pins are unchanged.
+
+**One owned path.** The watcher never signals another process: it has no killpg and no owned_groups call. It samples the kernel
+inventory every second. On the first monitor error or sample above two kernels, it asks the main thread to stop, once, by SIGUSR1 to
+its own process. The main-thread hook (`on_watch_signal`) raises `KernelLimit` only while the main thread holds the watch open.
+`KernelLimit` derives from BaseException, so it lands inside W1A's `run_step` loop. W1A's own `except BaseException`/`finally` path
+then kills that step's group (its pgid), records `group_members_after` and re-raises. The stage then stops UNKNOWN through
+`except KernelLimit`, so a failure is recognised within about a second, not after a 900 s build. All group signals come from the main
+thread: W1A's step kill, `after_step`'s kill of new kernels in owned groups, and the exit kill of remaining owned groups.
+
+**Shutdown verified before the next phase.** `__exit__` first closes the watch (`WATCH['active'] = False`, in the main thread). It then
+sets the stop event, joins for up to 20 s (one iteration is at most two 5 s ps calls) and records `is_alive()`. `decide_watch` runs
+before `after_step` and the next phase. It stops UNKNOWN on a watcher still alive, any monitor error or any over-limit sample, so an
+event that raced the step's end is still caught. A watcher still alive after the join cannot act. It never notifies once the stop
+event is set, and a request already past that check reaches a closed watch, which only counts it (`late_stop_requests`).
+
+**Every exit records.** The finally path runs `final_kernel_record` on pass, stop, exception, KernelLimit and SIGTERM (SIGTERM raises
+SystemExit inside W1A's loop, so W1A kills its step group first). The record holds:
+- the owned groups at exit, which are then killed: this process's session-leading children only, the W1A steps;
+- the final inventory;
+- the uncertain kernels, meaning every kernel outside the baseline, or all of them if the baseline was never taken;
+- any inventory error.
+
+An unowned or uncertain kernel is recorded and never signalled. The watch records go into receipts through `sink` even when the step
+raises.
+
+**Controls: 37 pass, 27 unchanged and 10 new.** Each mock stage holds the watch open in the main thread, as `run_step` does:
+- a MonitorError inventory interrupts the step, then gives UNKNOWN;
+- three kernels interrupt the step, then give UNKNOWN;
+- a clean inventory runs through with no request;
+- a watcher alive after join gives UNKNOWN, makes no request after the close, and raises nothing in the following second;
+- a request with no watch open is counted and does not raise;
+- every signal the watcher sent was (own pid, SIGUSR1), with os.killpg patched to fail;
+- the watch refuses to open without the hook installed (an unhandled SIGUSR1 would terminate the process);
+- `final_kernel_record` returns an inventory and an uncertainty field.
+
+One control is physical, which goes beyond what GC1837 asked, so I disclose it. It runs the real W1A `Supervisor.run_step` on
+`sleep 30` in temporary directories, with a three-kernel mock inventory and the real self-SIGUSR1. The step was interrupted within
+10 s with reason `exception`, `group_members_after` 0 and KernelLimit raised to the caller. There is no Wolfram and no Lean, and the
+only signals are W1A's SIGKILL to its own sleep group and SIGUSR1 to the control's own process.
+
+**Mutants (unexpected check).** Six one-line mutants of the hook were run in a scratch mirror, and each was killed by a named control:
+- the hook ignoring `active`;
+- errors not notifying;
+- `decide_watch` ignoring a live watcher;
+- `__exit__` leaving the watch open;
+- notifying after stop;
+- the handler check removed.
+
+**Residual limits, stated.**
+- A KernelLimit arriving while W1A is already inside its own finally could cut that cleanup short. The outer exit path then kills the
+  remaining owned group, and the stage stays UNKNOWN.
+- The group scan still proves cleanup of that group only. Nothing here shows that detached descendants cannot exist.
+- The compute scope is the same as revision 2.
+
+**REVIEW-REQUEST:** delta review of `trap_pair_notebook.py` `d2749f01…` against `8dd94b2e…`. Accept or decline one stage at this exact
+hash, with essay `e1facac0…` and module `27f799f4…`. There is no launch before acceptance.
