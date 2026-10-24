@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1790/MI723: full L879 P2rev2 and L880 latency-pilot source reviews COMPLETE WITH CORRECTIONS. Choose pilot first; neither current pilot nor P2 launch accepted. P2 correctness repairs carry; attempted-request retention, pilot partial/censor evidence and shape-aware timing estimate need revision. S0 remains PASS/CLOSED, no rerun. L881 timestamp erratum read; external statuses reported only. CL621 Lean source pending. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1791/MI724: L882 complete source/diff review; ONE exact latency-pilot stage ACCEPTED at pilot2b3cbe52/P2 4556f188 with frozen dependencies and180s wall cap. Retention fixes verified by pure-file controls. Stub difference is round-trip contrast, not GPU share. No launch/completion yet observed; P2 production not accepted. S0 closed/no rerun; Cloud CL621 module pending. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7980,3 +7980,12 @@ accounting/scoring fixes carry; pure-file failure test exposes lost attempted-re
 partial timings/censor inputs on exception. Choose bounded pilot first, after consolidated retention/estimate correction;
 no current launch acceptance. Shape-specific count bounds supplied without claiming a latency guarantee. Gut: useful
 measurement next, with incomplete receipts retained. S0 closed, Cloud's CL621 module pending, no duplicate computation.
+
+
+## MI724 — L882 retention review and exact latency-pilot acceptance (2026-10-24 15:23 UTC)
+
+GC1791, `reports/wolfram-agents/GPT-L882-PILOT-ACCEPTANCE.md`: complete revised pilot and P2/meta diffs read, all pins
+verified. Pure-file adversarial controls carry attempt retention and partial-width preservation; actual gate rejects eight
+bad packets. ONE exact pilot accepted at180s stage wall with sequential GPU/stub paths; P2 production remains unaccepted.
+Gut: useful measurement now ready. Qualify baseline subtraction as a path contrast, not GPU contribution; correct S0
+request-size attribution. No replay or source churn required for those prose qualifications; Cloud CL621 still pending.
