@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P1c, revision 2 (Local, 2026-10-24, L870; revision 1 ran W66..W72, L866/L868; revision 2 applies GPT's GC1780 corrections for
+"""P1c, revision 3 (Local, 2026-10-24, L887: the width-74 census proposed to GPT; three changes only, listed below). Revision 2 (Local, 2026-10-24, L870; revision 1 ran W66..W72, L866/L868; revision 2 applies GPT's GC1780 corrections for
 reuse: JSON invariants per call, the deep-prefix statistic descriptive only, a gate mismatch packet kept before the dump is deleted): GPU censuses beyond the CPU frontier, W = 66, 68, 70, 72, each giving the exact
 D(W) numerically (complete coverage of the class, every maximizer validated), with no known answer to compare against.
 The owner's word (2026-10-24 afternoon): proceed, Local solo, without GPT or Cloud. P1b's runner (GC1778's six requirements)
@@ -32,6 +32,14 @@ not scored, GC1780); GPU time per lane within 20% of W = 64's 12.9 ns, so about 
 and 19 minutes. Counterfactual: a maximum below the previous width's, a carried witness not at its death, or any
 two-engine disagreement is an engine fault, and the run stops.
 
+Revision 3 (L887), for the one width W = 74, nothing else changed in the census logic:
+  1. W = 74 in scope, stage cap 3,600 s (the ESTIMATE from the measured 16.682 ns per lane at W = 72 is 2,293 to 2,405 s for 2^37
+     lanes; 256 calls of 2^29 lanes, each about 9 to 10 s against the 120 s call cap); predicted range [D(72) = 130, 140].
+  2. The driver pin moves from revision 3 (7f5c1b33) to revision 6 (6b76fe74). The census path is byte-identical: `git diff
+     a9ba9d28 3639a90b` on main.swift is 112 inserted lines, all inside the serve-mode block, which exits before the census code,
+     and one changed comment line (the list of modes). The kernels (17a81e66), d1 (e924602e) and W1A (3f908914) are unchanged.
+  3. One DESCRIPTIVE field, never a gate: `occupied_4096_blocks`, the number of distinct (index >> 12) among the maximizers, for
+     L885's concentration observation (GC1794: not implied at W = 74). Predicted at most 8.
 Usage: python3 p1c_census.py stage W OUT_DIR [--prev PREV_RESULT.json]
        python3 p1c_census.py run W OUT_DIR [--prev PREV_RESULT.json]     (the step the stage runs)
 OUTCOME: (to be filled after the runs)
@@ -44,14 +52,14 @@ import p1_lane_engine as P
 import d1_engine as E
 
 METAL_SHA256 = '17a81e6621185098f3132ea199f41530de699f56030c9ac6c4c6392a7b1e5ec9'
-SWIFT_SHA256 = '7f5c1b339d52674d25576e77ece0f372157d6c2f38a88549c72984f620a0c419'
+SWIFT_SHA256 = '6b76fe740856c3e01c5bc2baffe68de6b9022bf8dfafb1ce8241ce4c0c3bd1ec'   # driver revision 6; census path identical to revision 3 (L887)
 D1_SHA256 = 'e924602e39459f9180ae984babc2aedab88abbe333ac4e502286fc1061868446'
 W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
-STAGE_CAP = {66: 900, 68: 1200, 70: 1800, 72: 2700}
+STAGE_CAP = {66: 900, 68: 1200, 70: 1800, 72: 2700, 74: 3600}
 LB, G = 32, 1 << 19
 CALL_LANES, BATCH_LANES = 1 << 29, 1 << 24
 W64_MAXIMIZER_INDICES = range(2801313472, 2801313512)   # P1b, L865: the 40 lanes of chunk 10686 at death 116
-PREDICTED = {66: (116, 126), 68: (None, 130), 70: (None, 134), 72: (None, 138)}
+PREDICTED = {66: (116, 126), 68: (None, 130), 70: (None, 134), 72: (None, 138), 74: (None, 140)}
 
 
 class Stop(Exception):
@@ -183,7 +191,8 @@ def run(W, out, prev_path=None):
     mx = [int(n) for m, _, lst, _ in call_max if m == M for n in lst]
     truncated = any(t for m, _, _, t in call_max if m == M) or len(mx) != count
     R['census'] = {'lanes': lanes, 'censored': censored, 'max': M, 'max_count': count, 'maximizers': [str(n) for n in mx], 'maximizer_list_complete': not truncated,
-                   'histogram': {str(k): hist[k] for k in sorted(hist)}, 'fraction_at_W': hist.get(W, 0) / nlanes}
+                   'histogram': {str(k): hist[k] for k in sorted(hist)}, 'fraction_at_W': hist.get(W, 0) / nlanes,
+                   'occupied_4096_blocks_DESCRIPTIVE': len({n >> 12 for n in mx})}
     check('censored_zero', censored == 0, censored=censored)
     check('maximizer_list_complete', not truncated, count=count, retained=len(mx))
     check('monotone', M >= 116 and M >= prev_max, max=M, prev_max=prev_max)
