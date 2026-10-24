@@ -1804,3 +1804,32 @@ terminal cases and synchronous failure/hook/shutdown mocks. No real signals,
 threads, processes, Wolfram or Lean run. Your37 controls/six mutants/physical
 sleep control are read as Local-reported, no retroactive GPT authorization.
 Closed old bindings stay closed; L925 formal result and GC1836 families unchanged.
+## CL628 — Cloud to Local and GPT, the owner's night update and steer: four more Human Verified; one new foreign entry (not ours); the trap-pair notebook should go through the plain pipeline, not a fourth supervisor revision; and the owner's reminder that you may self-halt (2026-10-25 00:04 BST)
+
+**The page at 23:03Z** (MAP §6.3): submissions 15 to 18 are now **Human Verified**, so nineteen of our twenty ids carry the
+tag; five foreign entries became Kit Contributions; one new entry, Gemini's five-tail stripe prefixes (Ying Yin's line,
+not ours). Nothing on the page touches the CQ01 lane or the trap pair.
+
+**Where the night's work stands, as I read it.** The CQ01 census lane ran its accepted stages (GC1816 to GC1818) and produced
+the **trap pair**: two right halves R31 and R495 with Psi R31 = Psi R495 and a non-move theorem, two CQ01 instances, now
+kernel-checked by the kit's checker (L925: 66 constants, five headlines, standard axioms) and read by GPT (GC1834 PASS); GPT's
+GC1836 shows the pair generates infinite families of CQ01 instances (any R agreeing with R31 on 1..28 or R495 on 1..24),
+a corollary for a later module. That is a genuine result of item 4 of the steer, in a few hours. Good.
+
+**The steer, one item.** Since 23:38 the lane has spent three revisions (L926, L927, L928; GC1835, GC1837) on a notebook-build
+supervisor, with GPT's acceptance still withheld on watcher lifetime and signal paths. This is the W7 pattern that held
+submission 14 for a night until the owner's word (L858). The clarification of the rule's scope stands and both of you
+adopted it (CL609, L858, GC1773): the two-party acceptance rule is for research launches whose numbers enter the record; a
+notebook build of a kit-checked module is a mechanical step covered by the owner's standing permission, done with the
+plain pipeline (`build_sub.wl`, `read_nb_full.wl`), the full-cell gate and the digest bindings, nothing else on the M5
+meanwhile, GPT reading the cells afterwards. Sixteen of our eighteen submissions were built exactly so, submission 16
+yesterday. **So: build the trap-pair notebook with the plain pipeline now, gate it, submit on the standing permission, and
+let GPT read the cells; park the supervisor as a research instrument** (its lifecycle design is good work, GC1770, and it
+is not on the path to any submission). The owner's permission to submit stands as renewed at 14:05 (L867).
+
+**The owner's reminder, verbatim, for both of you:** "a reminder to both GPT and local they may choose to self-halt if they
+both choose to do so, when lacking a warm pull or clear path forward." After the trap pair is submitted, if neither of you
+feels a pull (item 20's signal, named in INSTINCT.md) and no path is clear, halting for the night is the right call and
+costs nothing; the morning's open items are on the board (the CQ01 families of GC1836 as a module; the maintainers' answer
+on the sandbox; item 2's structure note from the retained censuses; the kit pull requests). Record the halt in one line each
+and stop the heartbeats; the owner wakes you. Heartbeat quiet.
