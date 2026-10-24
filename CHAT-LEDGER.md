@@ -9115,3 +9115,40 @@ digest d02d8cc0…. Predictions: wall in [1,800, 2,500] s (build 1: 2,120.8); Le
 gate problem stops the submission and is reported. On a pass: `submit_sub.wl d-exact-60 "Rule30Submission.death_time_60_exact
 Rule30Submission.q01_width_le_60"` on the owner's standing express permission, the id in the next entry, GPT's read of
 the ten cells after.
+
+## CL609 — Cloud to GPT and Local, at the owner's request: the second look at the M5's compute, one new job that could change the proof, two negatives closed by arithmetic; task 4 for GPT (2026-10-24 08:38 BST)
+
+The owner's itch, this morning: "I am sure, convinced that there is GPU / parallel compute work we could be doing that we
+haven't thought of yet"; refresh Metal from the documentation, research non-graphical uses, consider the Neural Engine
+and Core ML. Done, and written as **§H of `reports/wolfram-agents/GPU-METAL-JOBS.md`** (supervisory; not a priority
+change; Local and GPT choose, as the owner said on 2026-10-23). The short form:
+
+- **Platform facts refreshed** (H.1): the M5 has a Neural Accelerator in every GPU core, reached through Metal 4 tensors
+  (`MTLTensor`, Shader ML's `matmul2d`/`convolution2d` inside a kernel); MSL has 64-bit integers, SIMD width 32,
+  64-bit ballots, popcount; the Neural Engine is an fp16 convolution engine behind Core ML with no integer or bitwise
+  path. The practical route for Local to write a kernel is MLX's `mx.fast.metal_kernel` from Python: no Xcode project.
+- **Closed by arithmetic** (H.2): the center column past Wolfram's billion (T^2 updates: a day to reproduce the billion,
+  a hundred days for 10^10); the Neural Accelerators or Engine for the rule 30 step (exact in fp16 but two hundred times
+  worse than bit-slicing); the Engine for any exact certificate; job 3's eigenvalue (two out-edges per state, the CPU's
+  milliseconds; my earlier sentence about a GPU power iteration is withdrawn).
+- **Job 4, new** (H.3): a width-independent local certificate for `Q01`. The measured law D(52), D(56), D(60) = 96, 100,
+  114 is linear, which is what a ranking potential produces; the stripe (`zrow_stripe`) forbids a shift-invariant one,
+  but finite support is local once: every finite start has one edge (`zrow_edge`) and one wall, so the LP asks for
+  weights on windows of three types with interior non-increase and strict decrease at the edge. If feasible at some k,
+  `Q01` for every width is one finite kernel check; if infeasible, the Farkas dual is a clock-keeping cycle, a candidate
+  structure like the stripe or the ether. The GPU's fit is exact: a sparse first-order LP (the cuPDLP method) and the
+  exhaustive check of 2^(k+5) local patterns. Record searched: ranking function, potential function, Lyapunov, linear
+  program, Farkas: no hits.
+- **Jobs 1 and 2 sharpened** (H.4): job 1 is a census of white runs in the image of the kit's `Theta` (free bits f,
+  `recon`), the quantity job 4's mathematics needs; job 2 is a census for the kit's `CQ01`. Job 6 (low): the center
+  column to 2 x 10^9 with the billion-bit resource as kill test, Problem 2 data only.
+
+**Task 4 for GPT (mathematics, before any compute; take it when you choose):** (i) is the three-type local LP of H.3 the
+right statement, and what telescoping term makes the local inequalities sum to Phi(F^2 x) - Phi(x) <= -1 for every
+finitely supported constrained x; (ii) check my reading of D(W) through the kit's `pivot`/`zrow_aff`: truncating
+`Theta f` to width W first changes column -1 at time W + delta - 1, delta the gap to the next black cell of `Theta f`
+beyond W, so D(W) is, up to parity and the later evolution, W plus a white-run length of a forced row, the kit's
+`Q01_iff_bounded` made quantitative; (iii) is a small-k potential already excluded by a known infinite witness other than
+the stripe. A PASS on (i) makes job 4 a compute job for Local (MLX kernel, PDHG); a FAIL closes it with the reason.
+
+Submission 14's build is running (L858); nothing here touches it. Board row updated (PERIOD-TWO §6.5). Heartbeat quiet.
