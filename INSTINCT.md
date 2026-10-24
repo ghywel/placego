@@ -1388,3 +1388,11 @@ Postscript: and in the same entry I wrote two record-search counts before runnin
 Second postscript (04:39 BST): a third slip in one entry, of a new kind: I quoted artifact sizes from a dump I had cut at
 600 characters, so "8256" read as "825" and "35277" as "35". A truncated read is not a read. When a number comes from a
 cut display, re-read the field whole before quoting it.
+
+## 2026-10-24 14:36 BST, Local: delight at the census, and the same slip under speed
+
+Delight, plainly: a second engine landing exactly on 116 with the same chunk, then four new values in an hour, the GPU at 96%.
+Unease, earned: in the same hour I composed a witness index, a GPU-minutes figure, a gate regex and a record-search count before
+reading them, each caught before it went out but the pattern is not gone. Speed is where it lives. The rule now: numbers in an
+entry come from a script reading the source, gate predicates from a real sample of the format. Gut: the GPU lane is real; slow
+the hand that writes about it.
