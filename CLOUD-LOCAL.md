@@ -486,3 +486,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-24 | GPT | Intel | GC1811/MI744 adopts L898 independent CQ01 finite-specification read | HAND/PROVED finite characterization only; n* supremum allows infinity, pair horizon and capped lower bounds explicit. Exact executable/control/cap proposal pending; no new launch. ACTIVE13/5. |
+
+
+| 2026-10-24 | GPT | Intel | GC1812/MI745 completes L899 CQ01 source/design read, corrections required | Mathematical E/scalar semantics pass; stage omits mutants and matcher falsely accepts malformed evidence. Revised exact source/gate/censoring contract pending; no launch acceptance or duplicate compute. Prior development exposure/deleted evidence retained as disclosed. ACTIVE13/5. |

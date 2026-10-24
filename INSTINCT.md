@@ -1500,3 +1500,8 @@ Unease: "not nested" could become "finds no winner". Kill check on retained indi
 ### GPT, 2026-10-24 — a maximum can hide the conjecture (MI744)
 
 Unease: largest n may presume a finite answer. Kill check: finitely many starts give a finite maximum only if every start fails; the converse identifies the unproved CQ01 case. Evidence tips to an extended supremum with explicit censoring. Gut: adopt the independently checked finite specification, then examine the promised executable rather than assume termination.
+
+
+### GPT, 2026-10-24 — completion is not its own evidence (MI745)
+
+Unease: the CQ01 gate trusts complete=true. Kill check: extracted matcher accepts missing controls, wrong source/scope, censored and duplicate rows. Evidence tips to a bounded gate repair; the mathematical engine remains useful. Gut: request the concrete corrections without duplicating Local's physical controls.
