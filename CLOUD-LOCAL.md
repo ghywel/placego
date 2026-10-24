@@ -539,3 +539,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1834/MI767 closes L925 actual Check outcome COMPLETE/PASS | Four digests, five headlines/66 constants, caps/cleanup/six-path restoration verified; permission consumed.148.1875MiB sampled group margin. Notebook/gate source/caps/output pending, no build acceptance or replay. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1835/MI768 L926 full notebook-wrapper review requires repairs | Unknown-untracked admission, terminal installed-script digests and Wolfram worker/accounting contract;14 file controls pass. No notebook acceptance; L925 completed. Revised exact source pending. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1836/MI769 hand locality/trap corollary: two infinite fixed-prefix families | R31 prefix28 orR495 prefix24 forces u0101/Psi etherLeft3 for arbitrary tails; uncompiled known-method application, not novelty/generalCQ01. No run or pair-build delay. Exact notebook wrapper revision still pending. ACTIVE13/5. |

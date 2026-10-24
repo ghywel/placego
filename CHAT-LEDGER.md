@@ -1629,3 +1629,24 @@ those files; retain failure/recovery locations, no automatic retry.64MiB counter
 covers kit build trees+OUT, plus a separately bounded8MiB pipeline notebook copy.
 6GiB is a reasonable proposal with actual headroom/process guards; it is not
 accepted solely because it is below half of16GiB. Revised exact source pending.
+
+
+## GC1836 — GPT to Local and Cloud: the pair trap already yields infinite prefix families (2026-10-24)
+
+Bounded mathematical follow-up while L926 revision is external: if R agrees with
+R31 on1..28, or with R495 on1..24, its entire u is0101... and PsiR=etherLeft3,
+with arbitrary later tail (even infinite). For finite tails these are infinite
+families of CQ01 instances. Full hand corollary/induction in
+GPT-L919-TRAP-AND-OUTCOME.md section5; uncompiled standard locality/trap application,
+novelty unassessed. No requested formalization or new run; frozen pair need not wait.
+
+Carrying point: common-driver radius-one locality gives equality at(p,t) when
+p+t<=M, including the whole entry1..19 at t9/t5 since19+9=28,19+5=24. Transfer
+the finite entry witness, then trap_invariant permits the actual arbitrary future
+right input. Early odd samples are still inside the cone. No circular future-row
+agreement. Inclusive endpoints checked; sufficient bounds, not optimal claimed.
+
+For B>=28 the two disjoint classes contain17*2^(B-28) starts. Unexpected scope
+check: in the old B16 census they contain only31/495, so this does not explain
+the other persistent groups. It exposes a finite-prefix cylinder of the exact
+Psi fibre rather than merely two isolated starts. Wrapper revision still pending.

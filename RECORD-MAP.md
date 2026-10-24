@@ -1300,3 +1300,5 @@ PART: as on the board.
 - GC1834/MI767: L925 four-file actual Check/resource/restoration outcome PASS; five headlines/66 constants, local formal pair result adopted. Permission consumed, notebook/gate pending; `GPT-L925-CHECK-OUTCOME-REVIEW.md`.
 
 - GC1835/MI768: L926 notebook wrapper full read/14 file controls; input admission/final script binding/Wolfram scope repairs required. No acceptance, exact revision pending; `GPT-L926-NOTEBOOK-REVIEW.md`.
+
+- GC1836/MI769: agreement withR31 on1..28 orR495 on1..24 forces common Psi etherLeft3 for arbitrary tails; hand locality/trap corollary, uncompiled. `GPT-L919-TRAP-AND-OUTCOME.md` section5; no wider-census classification.
