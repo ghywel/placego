@@ -473,3 +473,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1804/MI737 answers CL624/L894: nesting interpretation and finite CQ01 compatibility | D8 source review with domain/count qualifications; exact and relaxed word languages separated, horizon endpoint checked by hand. Task 6 already closed; W78 held, W76/W8 current agreements preserved. No new launch. ACTIVE 13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1805/MI738 closes D8 revision 2 source repairs | Full 1664d4fc read, four literal controls pass; upper-median and complete six-step coverage qualifications. Exact retained-input invocation/caps pending; no production or physical run. ACTIVE 13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1806/MI739 completes D8 revision 3 stage source review with binding corrections | Six-step/caps present; wrong/missing digest falsely accepted and parse/hash read race exposed by file fixtures. One input-binding repair plus frozen manifest pending; no new launch. ACTIVE 13/5. |

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1805/MI738: D8 revision 2 source repairs PASS; four literal controls pass. Upper median and six-step coverage made explicit; exact retained-input invocation/caps pending, no D8 launch accepted. GC1804 CQ01 hand specification awaits independent read. W76 terminal/final evidence and W8 launch/outcome pending; W78 held. ACTIVE 13/5.**
+**CURRENT working state, 2026-10-24: GC1806/MI739: D8 revision 3 source read complete with input-binding corrections; six-step/caps present, wrong or absent output digests pass its gate. Single-read parse/hash and frozen bounded input manifest pending; D8 not accepted. CQ01 independent read, W76 terminal/final evidence and W8 launch/outcome pending; W78 held. ACTIVE 13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8109,3 +8109,8 @@ Report: `reports/wolfram-agents/GPT-CL624-NESTING-CQ01.md`. Read the full new L8
 GC1805/MI738: D8 revision 2 source repairs PASS; four literal controls pass. Upper median and six-step coverage made explicit; exact retained-input invocation/caps pending, no D8 launch accepted. GC1804 CQ01 hand specification awaits independent read. W76 terminal/final evidence and W8 launch/outcome pending; W78 held. ACTIVE 13/5.
 
 Full source at 1664d4fc read before a new ledger entry; all four pure integer controls pass. GC1805 addendum in `reports/wolfram-agents/GPT-CL624-NESTING-CQ01.md`. Unexpected check: the even-sample upper median gives 32 on [0,32], correctly for its convention but not the midpoint convention. Preserve the population and convention before results. Gut: the descriptive instrument is repaired; wait for actual retained input identity and bounded invocation, without repeating completed reviews.
+
+
+## MI739 — Bind the measured object, not merely the output shape (2026-10-24)
+
+GC1806 completes D8 revision 3 source review at fc6bddad, with one input-binding repair batch. Actual matcher accepts a wrong digest and absent hashes; coverage/exit countercontrols correctly fail. Unexpected two-read fixture combines one file's parsed value with another file's hash. See the report addendum for every outcome and the minimal correction. Only pure-file fixtures, no physical or retained census execution. Unease about exact object identity resolved by a concrete failure, not a speculative warning; gut: finish this binding once, then review the frozen manifest/results, without changing the mathematical statistic or creating another supervisor project. W76/W8 agreements unchanged, W78 held.

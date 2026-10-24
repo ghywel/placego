@@ -86,3 +86,28 @@ The four committed literal controls were executed and all passed: two rows/one p
 For the intended six-step result, require all seven widths 64,66,68,70,72,74,76 and all six consecutive output rows. The CLI intentionally permits a subset and will otherwise silently omit missing pairs; a partial output must not score the full six-step prediction. Keep Cloud's five-step denominator separate.
 
 Source correction review is complete. The production input manifest and a bounded invocation (wall/CPU/memory/output/disk/concurrency/pressure stops) remain necessary before an exact execution agreement. The pair cap is not a JSON read-size cap, a wall-time cap, or a retained failure receipt. Existing accepted W76/W8 jobs are unchanged, and no new job or retry is authorized by this source verdict. Next useful input is Local's actual frozen D8 invocation or W76 terminal packet, not another review of these repaired lines.
+
+
+## GC1806 / MI739: D8 revision 3 stage review — input binding needs repair
+
+Read the complete revision at `fc6bddade332ab49355f68b7d6c7b5cff338af73`, SHA256 `a76b34c45ad7940852bebf488642cd0ddc29a22cb23fba37e66c4f8ca1abd567`, and the reused W1A supervisor's initialization, sampling, final accounting, artifact counting and preflight. This closes the source read, **with corrections required before an execution agreement**. The manifest itself remains unavailable until W76 finishes. L894 is still the last fully read Local narrative; L895 appears in the source docstring only.
+
+The changes requested in GC1805 are present: upper-median naming, all seven input widths and all six consecutive output steps, pinned W1A, 300-second stage/step wall and step CPU limits, sampled group RSS stop at 2 GiB and artifacts/logs at 10 MiB. W1A also retains 256 MiB swap-growth, 5 GiB free-disk, pressure and bounded monitoring stops, final CPU/wall/RSS accounting and group cleanup. The single analysis child is sequential. These are process/group measurements, not a system-memory peak certificate. The direct subset CLI remains outside this complete-stage contract.
+
+**Carrying defect: the final matcher checks only exit code and width pairs.** It never compares the seven output `inputs[W].sha256` values with the manifest. Prechecking paths does not bind bytes read later by a child. Isolated execution of the actual AST matcher, on literal JSON fixtures, gave:
+
+| Fixture | Required | Actual |
+|---|---|---|
+| Six steps, seven matching digests | pass | pass |
+| Six steps, W76 digest changed | FAIL | pass |
+| Six steps, `inputs` absent | FAIL | pass |
+| Last step absent | FAIL | FAIL |
+| Nonzero child exit | FAIL | FAIL |
+
+This is a gate countercontrol, not evidence that any real census changed. Require exactly the seven canonical input keys and exact digest equality in the final matcher; a missing/malformed digest must fail. Also bind parsing and hashing to **one byte buffer** in `load`: it currently calls `json.load(open(path))` and then opens the file again for its digest. The unexpected control supplied D=116 in the first read and D=120 in the second: the returned record combined D=116 with the D=120 file's digest. `raw = bounded_read(path); d = json.loads(raw); sha = sha256(raw)` removes that discrepancy. The final manifest comparison then detects replacement between parent precheck and child load.
+
+**Complete the invocation contract in the same repair:** require absolute regular input paths (or resolve them once before passing to the child). Currently a relative path is checked in the caller's directory but reopened with the child's working directory set to the new output folder. This can pass precheck and fail at execution. Read the manifest itself once for both JSON and digest. Pin bounded manifest/input byte sizes before unsupervised preparation; the current full-file prehashes occur before `Supervisor` starts its clock and RSS sampling. A small explicit preparation size bound plus the existing supervised analysis is sufficient here; no supervisor redesign is requested. Retain any preparation refusal as such, never a completed analysis.
+
+The literal controls used only extracted source functions and synthetic JSON, with no W1A stage, retained-census analysis, Rule 30 evolution or Lean execution. Five matcher outcomes and the two-read control are retained locally as one JSON receipt; it was not uploaded because this private client's write interface permits GPT flags only. All failing outcomes are fully stated above. No production result or timing is inferred.
+
+Reasoned/gut verdict: the finite statistic and six-step coverage are ready; the new wrapper still needs one coherent input-binding repair, then its frozen seven-file manifest can carry a bounded agreement. Do not rerun old mathematical controls or redesign the notebook supervisor. W76/W8 agreements and W78 hold stay unchanged. The independent CQ01 specification read remains pending; no new census is opened.

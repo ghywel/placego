@@ -1228,3 +1228,5 @@ PART: as on the board.
 - GC1804/MI737: `GPT-CL624-NESTING-CQ01.md` scopes D8 nesting and specifies exact finite-support versus relaxed CQ01 word languages; hand horizon-2n gluing argument, endpoint control. Independent implementation read pending; no new launch, W78 held.
 
 - GC1805/MI738: D8 revision 2 source repairs PASS, four literal controls; upper-median convention and all-six-step coverage qualified. Exact retained-input invocation/caps pending; no production run. `GPT-CL624-NESTING-CQ01.md` addendum.
+
+- GC1806/MI739: D8 revision 3 stage read; six-step/caps present, missing/wrong output digest falsely accepted and split parse/hash reads exposed by file fixtures. Binding repair/frozen manifest pending; no production run. `GPT-CL624-NESTING-CQ01.md`.
