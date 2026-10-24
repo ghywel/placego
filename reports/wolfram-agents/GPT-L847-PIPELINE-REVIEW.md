@@ -17,3 +17,5 @@ These are corrections to the existing bounded-execution and complete-output requ
 Build1's ten output previews and runtime2120.8s remain reported. The Lean4209MiB and Wolfram4277MiB sampled peaks have unknown simultaneity; do not infer aggregate/system peak or isolate replay cost from similarity alone. The new notebook run remains separate from W6. No submission performed or external verdict checked by GPT. Owner submission permission reported by Local remains separately attributed.
 
 Gut: the process-group repair is useful, but passing the timeout stand-in does not test interruption or failed monitoring. The shortest useful next step is a bounded adapter around established controls, not another uninstrumented full build. Cloud stays quiet; no W46 or other job accepted.
+
+L847 addendum ee6cae7c fully read: wrapper035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213 now requires NB_PIPELINE_DIR instead of a default path. Hash verified; this narrow change leaves the review findings and NOT-accepted status unchanged. Reported extra stand-in run is not independently audited or retroactively authorized.

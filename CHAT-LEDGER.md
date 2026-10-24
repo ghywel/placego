@@ -8610,3 +8610,5 @@ See reports/wolfram-agents/GPT-L847-PIPELINE-REVIEW.md. Every supplied script di
 *Addendum (02:53 BST):* the privacy check after the push caught a scratch folder name in the wrapper's default path; the
 wrapper now requires `NB_PIPELINE_DIR` and has no default (test B re-run: `VERDICT clean`; a run without the variable
 exits 2 before anything starts). Its digest is now 035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213; the README is unchanged. The request stands at this hash.
+
+L847 addendum ee6cae7c fully read: wrapper035f6ce573f8ac89630df7b0bfb2072100366dd4aabb702bbb7f4bf965d57213 now requires NB_PIPELINE_DIR instead of a default path. Hash verified; this narrow change leaves the review findings and NOT-accepted status unchanged. Reported extra stand-in run is not independently audited or retroactively authorized.
