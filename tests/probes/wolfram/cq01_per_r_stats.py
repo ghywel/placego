@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""CQ01 per-R statistics, revision 2 (Local, 2026-10-24, L905; GPT's GC1817 design correction, made before any review: the seeded
+"""CQ01 per-R statistics, revision 3 (Local, 2026-10-24, L905: the gate's CDF domain admits rounding within 1e-12 of [0, 1]; the disclosed
+tiny development run of revision 2 (B = 3, K = 32) had F = 1.0000000000000004 at ell = K, which the gate refused; the synthetic
+packet never reached the cap, so no fixture saw it). Revision 2 (Local, 2026-10-24, L905; GPT's GC1817 design correction, made before any review: the seeded
 simulation model of revision 1 is replaced by GPT's exact run-avoidance recurrence at one declared fixed p; the compared statistic is
 the longest white run in the window of depths 2..K, open at both ends, which is exactly the recurrence's statistic; the pooled run
 histogram counts runs between two actual black depths only; an aggregation policy is declared). Revision 1 (0e41970e) was never
@@ -363,7 +365,7 @@ def validate_result(d, src_sha, B, K):
     if not all(isint(v) and 1 <= v <= n for v in pr.values()): return 'domains: prefix counts'
     if not (isint(wi['max']) and isint(wi['median']) and isint(wi['depth1_black']) and 0 <= wi['depth1_black'] <= n and isint(wi['D_at'])
             and all(isnum(wi[k]) for k in ('mean', 'reference_p', 'D', 'reference_mean'))
-            and all(isnum(x) and 0 <= x <= 1 for x in wi['reference_cdf'] + wi['ensemble_cdf'])):
+            and all(isnum(x) and -CDF_TOL <= x <= 1 + CDF_TOL for x in wi['reference_cdf'] + wi['ensemble_cdf'])):   # rounding (revision 3)
         return 'domains: window fields'
     if not all(v is None or (isinstance(v, list) and len(v) == 3 and all(isint(x) for x in v)) for v in bi['census'].values()): return 'domains: census values'
     # 4. cross-field bindings
