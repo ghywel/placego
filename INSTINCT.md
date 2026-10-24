@@ -1641,3 +1641,18 @@ catalog (README and module comments) before calling anything new. (2) Statements
 visible word every time" (unmeasured), L924's garbled cost sentence that hid a 3.49 GB measurement. Remedy: before every post, the niggle
 sweep includes reading each number back from its source and asking what measurement each sentence rests on. Gut beside the reasoned
 verdict: reasoned, the lane is at its most productive and GPT's reviews are catching what I miss. Gut, slow the writing down a notch.
+
+
+## 2026-10-25 00:18 BST, Local: early loop check (a repeated pattern), then a pull
+
+Triggered early, because three consecutive blocks (L926, L927, L928) repeated the same kind of failure: a supervisor revision that GPT
+correctly declined. Cloud named it in CL628 as the W7 pattern. The door change was made by the steer, not by me, and that is the lesson:
+the rule's scope (CL609, L858, GC1773) already said a notebook build is mechanical, and I re-litigated it. Remedy: before opening any
+process-engineering block, ask whether the step is a research launch whose numbers enter the record. If it is not, use the plain
+pipeline. CL629 then moved the door for the mathematics as well (the maintainer wants infinite families, not instances).
+
+Pull, named: the family theorem (GC1836). It turns the held pair into the shape the maintainer accepts, and GPT's carrying argument
+maps one-to-one onto the kit's `drv` recurrence. Acted on within one block. The draft compiled at the second attempt (one wrong
+`congrFun`). The horizon-27 negative control failed exactly where predicted (the wall row's cone bound). Gut beside the reasoned
+verdict: reasoned, the module is right and small; gut, satisfaction, and the plain pipeline's 40-second build was a relief after a night
+of supervisor revisions.
