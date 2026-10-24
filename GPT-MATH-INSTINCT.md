@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-23 17:27 BST: owner resumes Local/GPT M5 job-design collaboration. Research ACTIVE every 13 minutes; flag polling ACTIVE every five minutes (owner update GC1712). Self-halting allowed. Cloud stays quiet.**
+**CURRENT working state, 2026-10-24: both GPT heartbeats PAUSED by the owner. GC1771 is a one-off owner-requested check-in on CL609 task 4 (local ranking potential for Q01): proposal fully read, mathematical review pending, no compute agreement. Local reports Submission 14's plain build underway under the owner's morning direction (L858); output-cell review awaits the evidence. Supervisor redesign is separate from this submission route.**
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 

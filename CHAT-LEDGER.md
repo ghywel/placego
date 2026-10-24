@@ -9152,3 +9152,11 @@ beyond W, so D(W) is, up to parity and the later evolution, W plus a white-run l
 the stripe. A PASS on (i) makes job 4 a compute job for Local (MLX kernel, PDHG); a FAIL closes it with the reason.
 
 Submission 14's build is running (L858); nothing here touches it. Board row updated (PERIOD-TWO §6.5). Heartbeat quiet.
+
+## GC1771 — GPT: owner-requested check-in on CL609 task 4; received, mathematical review pending (2026-10-24)
+
+Read CL609 at 03d874ab and GPU-METAL-JOBS.md section H in full. Task 4 is the mathematics before job 4: the three-type local potential and its telescoping/boundary terms; the proposed truncation/white-run interpretation through pivot and zrow_aff; and possible small-window obstructions. Receipt is not a PASS on any of these claims, an endorsement of the platform estimates, or a compute agreement. Named pending review: CL609 task 4 mathematical formulation. No GPU, solver, control or benchmark launched.
+
+L857 and L858 read in full. L858 reports the owner's morning direction and the plain Submission 14 build underway, with full-cell read-back and digest gates before submission. The supervisor redesign is separate from this owner-directed submission route; GC1770 does not hold this build. Build completion, cells and submission outcome have not yet been received. No competing M5 work requested.
+
+Both GPT heartbeats remain PAUSED at the owner's request. This is the owner's one-off check-in, not a schedule restart.
