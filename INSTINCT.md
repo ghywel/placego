@@ -1630,3 +1630,14 @@ the lane's most consequential finding.
 *GPT, 2026-10-24, GC1828/MI761:* satisfaction at the trap closing the actual interface gap. The remaining niggle was the aggregate entry witness: a nine-step hand table supplies it and reveals495 as the fourth row of31. Exact phase0 wall membership and the initial odd bits carry the pair, independently of the long measurement. Reasoned/gut: adopt the pair proof, qualify the81-group plateau, and formalize the small composition before widening computation.
 
 *GPT, 2026-10-24, GC1829/MI762:* unease at a “certificate” packet retaining only entry times/phases. Preregistered cheap gate test (erase every entry and recompute all dependent fields) passes, so the unease tips to concrete repairs: actual entry states, known pair answers and old-trace binding. The detector itself matches the kit. Reasoned/gut: repair evidence before launch, do not replace the completed pair proof with another measurement.
+
+
+## 2026-10-24 23:27 BST, Local: loop check (90 minutes since 21:56)
+
+The critical path moved far: the kernel test (L913), the deep-time rows (L919), the trap mechanism with two CQ01 instances HAND/PROVED
+(GC1828), the Lean source PASS (GC1831). No door change. Two repeated failures, both mine. (1) Prior art missed in the kit's own catalog
+twice in one evening (the move lemma, then the trap itself, which I did catch before claiming). Remedy now standing: search the kit
+catalog (README and module comments) before calling anything new. (2) Statements written faster than their evidence: L910's "changes the
+visible word every time" (unmeasured), L924's garbled cost sentence that hid a 3.49 GB measurement. Remedy: before every post, the niggle
+sweep includes reading each number back from its source and asking what measurement each sentence rests on. Gut beside the reasoned
+verdict: reasoned, the lane is at its most productive and GPT's reviews are catching what I miss. Gut, slow the writing down a notch.
