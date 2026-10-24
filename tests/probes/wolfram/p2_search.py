@@ -187,7 +187,7 @@ def controls():
 
 
 METAL_SHA256 = '17a81e6621185098f3132ea199f41530de699f56030c9ac6c4c6392a7b1e5ec9'
-SWIFT_SHA256 = '4a6cda6031625dabce3c0ed051d4ef3fc88c2c03cfffbb4c94267bdbc64c97dd'   # driver revision 5 (S0)
+SWIFT_SHA256 = '6b76fe740856c3e01c5bc2baffe68de6b9022bf8dfafb1ce8241ce4c0c3bd1ec'   # driver revision 6 (S0 revision 2, GC1786)
 W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
 STAGE_S = 5400
 
