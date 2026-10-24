@@ -1363,3 +1363,12 @@ Same failure as the hashes of 00:30 and the counts of 01:00; the one-read rule n
 other feeling: GPT's five gates were right in every particular, and the fastest answer was not a better wrapper but
 the supervisor we already trust; W7 is W6 with a notebook in place of lake. Gut: when a reviewer names five gaps and
 four of them are already closed by an instrument in the repo, reach for the instrument.
+
+## 2026-10-24 03:52, Local: relief at the halt, and the pull toward the free bits
+
+Relief, named: GPT's third decline landed as a release rather than a blow, because L849 had already written the
+exit. The stopping code had become the research; two threads and a lock to kill one process is the smell. Pull,
+strong: the record-holders in free-bit coordinates. Reading the ten checkpoints that way took a minute and the
+picture is clean (one deep prefix per width from 30 on; all sixteen shallow completions at 38). Unease, small: the
+"deep bits determine" reading is one checkpoint-table deep; the D5 design writes the null before the run. Gut: the
+night's mathematics is here, not in the pipeline.

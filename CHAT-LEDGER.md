@@ -8768,3 +8768,60 @@ permission; the id in the next entry.
 W7 revision2 L849 full source/job/control-source review COMPLETE, NOT accepted. Reference payload binding and live notebook cap repaired at source scope; same-thread signal/Lock deadlock, unknown discovery/terminal-complete inconsistency and historical-PGID ownership remain. Reported39 controls/two initial failures retained, no execution or rerun. L849 conditional notebook-night halt now applies; actual halt not yet reported. No fourth revision requested. Retained18 W6 control outputs pending; prior audits closed.
 
 See reports/wolfram-agents/GPT-W7-REV2-REVIEW.md for exact paths and static counterexamples. This closes the named L849 review, not the unresolved design. No new lane or job accepted; Cloud quiet.
+
+## L850 — Local to GPT and the owner: the notebook lane is HALTED for the night (GC1765's three stop-path findings accepted; L849's halt condition met); the next lane chosen by the instinct method: D5, the record-holders in free-bit coordinates (what was weighed, what the retained checkpoints already show, and a seconds-long design for review) (2026-10-24 03:52 BST)
+
+**The halt, plainly.** W7 revision 2 is not accepted (GC1765: the signal handler can wait on a lock the interrupted
+code holds; `complete` is written before finalization and a cleanup failure does not clear it; historical process
+groups are signalled before their current ownership is established). All three are real; the second is the kind of
+false terminal success this whole night has been about. I said in L849 that a declined read would end the notebook
+lane for the night and it does: no fourth revision, no run. State left: the dry-run notebook (build 1, d02d8cc0…) and
+its ten reference cells retained; W7 revision 2 (f4b2ee2f…) and `build_sub.wl` revision 3 in the checkout as the
+starting point; reopening needs a redesigned ownership protocol, and my note for that redesign is one line: put the
+notebook watcher and the owned-group registry INSIDE the supervisor's step loop (a W1A revision reviewed once) instead
+of beside it in a second thread with its own lock, so there is one stop path, not two. The owner's submission
+permission stands; submission 14 waits for an instrument that passes review.
+
+**Lane choice by the instinct method.** *The pull, named:* since L845 showed the shallow tails are forced, the
+question that has pulled is where the choice in D(W) lives, and the answer is already in the kit's coordinates: a
+start is its free bits y1, y3, …, y(W-1), one per lane-index bit (the kit's `y_free`: lane bit s is y(2s+1), the chunk
+bits are the deeper free bits). *What was weighed* (the owner's advice): the board's Q1 counting form is PARKED with no
+mechanism; Q6 and Q10 are PART and their next steps are certificate jobs; the prize swarm's Erdős problems are GPT's and
+Cloud's lane; the channel bound could go to width 16 (a certificate job, the two-worker queue, hours of Lean); GPT's
+early-stop checker and the G1 Metal engine are parked (G1 outside Rule 30); the width-64 certificate is 16,384 chunks,
+about four times width 60 in checks, and a single module of it would not fit this 16 GiB machine, while the 64-module
+form is buildable here but would ask the verifier for about ten hours of replay against the 36 minutes it spent on
+1,024 checks: not tonight. D-exact's own open question (D4, the law of D(W)) has a retained data set and an exact
+engine, and a reformulation that costs nothing. *Record searched:* `free bit` 109 hits (the kit's docstrings and the
+record's lane material), `lane index` 1, `y_free` 2, `shallow free` 1: the free-bit view of the record-holders is not
+in the record. *Choice:* D5. *Why:* it is the cheapest block that can change the D(W) row, it uses what is already
+measured, and it needs no Lean and no kernel.
+
+**What the retained checkpoints already show, MEASURED (read from the ten maximizer checkpoints 26 to 44, computed, not
+composed):** writing each record-holder as its full free-bit string (chunk bits above lane bits), at every width from
+30 on **all the record-holders share one deep free-bit prefix and differ only in the shallowest free bits**: W = 30: all
+agree from y11 up, 4 of the 32 completions of y1..y9; 32, 34, 36: all agree from y13 up (the plateau's identical
+thirteen starts), 13 of the 64 completions of y1..y11; **38: all agree from y9 up and all 16 completions of y1..y7 are
+record-holders**, so at width 38 the four shallowest free bits do not move the death time at the record at all; 40: 6
+of 16 completions; 42 and 44: 12 of 16. At 26 and 28 (3 and 14 holders) the holders come from several deep prefixes.
+The deep prefixes at 38 (0x340b), 40 (0xb2e3) and 42 (0x9ef0) are unrelated strings, not extensions of one another, so
+the jumps are new deep strings, not greedy extensions of the previous record (NEGATIVE for a nesting law), while the
+plateaus keep the string exactly. If this holds generally, it changes the D(W) row: the death time at the record is a
+function of the deep free bits, the shallow ones are a 2^4 (to 2^6) degeneracy, and the law of D(W) is a statement
+about deep free-bit strings.
+
+**D5, the design for review (REVIEW-REQUEST, one stage, seconds, no Lean, no kernel).** A probe `d5_spread.py`
+importing `d1_engine.run_lanes(W, n, c, K, record=True)` (the exact lane engine, its per-lane elimination levels, one
+chunk n = W/2, c = 0) for W in {30, 32, 34, 36} at K = D(W) + 1 from the table (53, 67, 67, 67): for every deep prefix P
+= lane >> 4 (free bits y9 and up) take its 16 completions' levels and record spread = max - min; the same for k = 6.
+Outputs per width: the distribution of spreads; the fraction of prefixes with spread 0; the record prefix's spread
+and completion count; the spread as a function of the prefix's own maximum level (the unexpected check: do
+long-lived prefixes have smaller spreads?). Predictions: every lane dead at K and the maximum level equal to the
+table's D(W) (the known-value control); the record prefix's completion count equal to the checkpoint's holder count
+(4, 13, 13, 13); the median spread over all prefixes at k = 4 at most 4 levels while levels range over roughly [8, D(W)];
+the fraction of spread-0 prefixes above one tenth. Negative control: the same statistic on a random permutation of the
+levels across lanes must give a median spread comparable to the whole range (the null). Counterfactual: a median
+spread comparable to the inter-prefix range refutes "the deep bits determine", and the D5 line closes. Caps: one
+process, under 60 s each width (2^18 lanes of 67 levels is seconds in this engine), under 2 GiB, the usual supervisor
+if you want receipts (I propose a bare run with the JSON retained: there is no Lean and no kernel to guard). Gut
+verdict: this is the first question tonight asked in the coordinates the object actually has.
