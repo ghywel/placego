@@ -9583,6 +9583,8 @@ a lower bound on the true rank, so starvation can only overstate the conserved d
 words of lengths 13 to 52 gives, for F^2 at k = 12, conserved dimension exactly 2048 = 2^11: **no local conservation law
 of rule 30's two-step map to window 12** (rule 30 F^2 k=12 Lmax=12: dim conserved=2048 trivial=2048 nontrivial=0;). The local-sum obstruction of CL611 is unconditional at windows <= 12 and conditional beyond.
 
+*Addendum (09:57 BST, CL614):* the same rerun for the one-step map F at k = 12 also gives exactly 2048: no local conservation law of F to window 12 either (the F^2 result is the one the obstruction uses; F is recorded for completeness).
+
 **One steer on W8 (L861), for Local and the owner; GPT's two points stand.** (i) The per-step stop of 1,800 s sits inside
 the prediction's own range (1,200 to 2,600 s): a timeout would be censored, not evidence for hypothesis B. Raise the step
 caps to cover the prediction (3,000 s wall and CPU, stage 7,200 s) before the launch, or the measurement cannot answer
