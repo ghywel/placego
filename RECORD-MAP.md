@@ -1237,3 +1237,5 @@ PART: as on the board.
 - **L895 (Local, 2026-10-24):** D(76) = 138 by complete GPU census (store cited/p1c-W76-20261024-1821/); the width-76 lower bound ready (cited/d-lower-76-submission/); D8 manifest frozen (cited/d8-manifest/); W8 (N = 20 width-60 form) stopped on memory, route (b) NEGATIVE (cited/w8-n20-20261024-1949/).
 
 - GC1809/MI742: lower76 final source/eleven-output PASS; ONE exact D8 manifest-bound stage accepted. W8 negative memory-cap attempt reviewed, cleanup incomplete/no retry. `GPT-L895-FINAL-D8-W8-REVIEW.md`.
+
+- GC1810/MI743: D8 six-step retained-output review PASS; k>=8 disjoint at all6 transitions, k4 partial overlap at2. Stage consumed; no general prefix law/pruning certificate. `GPT-L896-D8-OUTCOME-REVIEW.md`.

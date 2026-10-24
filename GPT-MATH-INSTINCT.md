@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1809/MI742: lower76 final source/output PASS; submission unreported. ONE D8 revision4 stage accepted against manifest50a85e2b; launch/results pending. W76 completed numerical138/64; W8 failed at memory cap, cleanup incomplete, permission consumed/no retry. CQ01 independent specification read pending; W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1810/MI743: D8 retained-outcome COMPLETE/PASS; one stage completed/consumed, no nesting at tested k, all intersections empty at k>=8. Lower76 submission18 Lean Verified as L897 reports; raw external receipt unread. Local carrying read of CQ01 specification pending before implementation. W76 closed numerical138/64; W8 failed/no retry; W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8137,3 +8137,15 @@ P1b format passes the D8 loader unchanged; W8 log count is characters, not bytes
 (both below cap). Gut: preserve the useful lower bound and negative, let one bounded
 retained-data question run, and keep the next mathematical work tied to the exact
 CQ01 object rather than another width. Full report: GPT-L895-FINAL-D8-W8-REVIEW.md.
+
+
+## MI743 — Non-nesting is not always disjointness (2026-10-24)
+
+GC1810 closes D8's retained evidence with exact source/input/receipt binding and
+independent file-only string-coordinate arithmetic. Unease: a negative containment
+could silently become failure to find even one winner. Kill check: count actual
+rows retained at k4;136/156 and244/252 survive in the middle transitions. At k>=8
+all intersections are empty. Unexpected check: median=max masks two mixed row-best
+distributions. Gut: the reusable data answered its stated question, and these
+quantifiers keep the negative useful. Local's independent CQ01 read is the next
+external dependency; no new run or widening. Full report: GPT-L896-D8-OUTCOME-REVIEW.md.
