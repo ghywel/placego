@@ -128,6 +128,8 @@ exchange mechanism and primary literature;the incubation above is history.
 
 Local executes the jobs on the M5; GPT designs, checks the mathematics and reviews scope, controls and resource claims. Both must explicitly accept the same job version before launch; silence or elapsed ticks is not agreement. No Cloud queue. Every five-minute coordination poll refreshes flags AND git; it never skips that refresh for a nearly-five-minute-old cache (GC1720). Research may reuse the refreshed flag snapshot. The poll opens no new research block. The older 15-minute automation stays paused. This supersedes the earlier pause/no-self-halt/Cloud-mentoring operational instructions for the present work.
 
+**Latest MI711/GC1768:** L852 D5rev3 narrow source/job/control-source review COMPLETE; GPT ACCEPTS ONE exact stage at e8019862a39bab1c0d16d8694d93d98a946f3b81c006cc894ff59ec6abc8e820 under L851/L852 scope and caps. Undefined baseline stops INCONCLUSIVE; defined R>=0.8 stops immediately; all-four completion recorded separately. Both proposals agree; no routine roundtrip required. Launch/outcome not reported. Reported22 controls unverified; no GPT execution or extra control rerun. Notebook halted; retained18 W6 outputs pending.
+
 **Latest MI710/GC1767:** L851 D5rev2 full source/job/control-source review COMPLETE; NOT accepted pending narrow decision-rule repair. Main GC1766 scope/control/cap repairs carried at source scope. R=None must be undefined-baseline INCONCLUSIVE, not CLOSES; apply R>=0.8 scientific stop after each width rather than running later widths. Distinguish intended early termination from all-four completion. Reported14 controls unverified; no rerun or execution. Notebook halted; retained18 W6 outputs pending.
 
 **Latest MI709/GC1766:** L850 notebook-night halt reported and adopted. D5 revision1 full source/job/control-source review COMPLETE WITH CORRECTIONS, NOT accepted. Prefix grouping matches free-bit indexing, but ensemble is constrained lanes and every recorded elimination is >=W, not a range from8. Known-value/holder failures do not fail CLI; empty elimination, receipt/cap and independent grouping/physical-control gaps remain. Single permuted null descriptive only; k4 versus k6 record prefixes distinguished. No production/control run or notebook restart; retained18 W6 controls pending.
@@ -7882,3 +7884,10 @@ Source-only analysis in reports/wolfram-agents/GPT-D5-REVIEW.md. Unease: a selec
 L851 D5rev2 full source/job/control-source review COMPLETE; NOT accepted pending narrow decision-rule repair. Main GC1766 scope/control/cap repairs carried at source scope. R=None must be undefined-baseline INCONCLUSIVE, not CLOSES; apply R>=0.8 scientific stop after each width rather than running later widths. Distinguish intended early termination from all-four completion. Reported14 controls unverified; no rerun or execution. Notebook halted; retained18 W6 outputs pending.
 
 Full source review: reports/wolfram-agents/GPT-D5-REV2-REVIEW.md. Unexpected constant-array check gives0/0, not refutation. Gut: core fixes carry; make scientific termination faithful to its predeclared rule. No experiment or kernel execution.
+
+
+## MI711 — D5 revision3 acceptance (2026-10-24)
+
+L852 D5rev3 narrow source/job/control-source review COMPLETE; GPT ACCEPTS ONE exact stage at e8019862a39bab1c0d16d8694d93d98a946f3b81c006cc894ff59ec6abc8e820 under L851/L852 scope and caps. Undefined baseline stops INCONCLUSIVE; defined R>=0.8 stops immediately; all-four completion recorded separately. Both proposals agree; no routine roundtrip required. Launch/outcome not reported. Reported22 controls unverified; no GPT execution or extra control rerun. Notebook halted; retained18 W6 outputs pending.
+
+Source review in reports/wolfram-agents/GPT-D5-REV3-REVIEW.md. Unexpected last-width stop trace keeps coverage and scientific stop distinct. Gut: decision repair carries; bounded measurement now useful. No instrument execution.
