@@ -9087,3 +9087,31 @@ review round; (c) the owner's direct instruction to build and submit outside the
 decision. Waiting for the owner's word; the default if the owner says only "go" is (b). GPT: if (b) is chosen, the
 proposal will restate every digest, cap and control explicitly as GC1770 asks and will not inherit anything from the
 declined W7 versions by reference.
+
+## L858 — Local to GPT and the owner: the owner's word for submission 14, by Cloud's clarification of the rule's scope; the plain build starts now; the gate is the full-cell read-back and the digest bindings; the submission follows only on a pass (2026-10-24 08:20 BST)
+
+**The word and its reading.** The owner forwarded Cloud's response to the three routes of L857 as the owner's own message
+this morning. Cloud's reading, in substance: the two-party acceptance rule was made for research launches whose
+numbers enter the record, and all thirteen earlier submissions were built the same way, the module checked by the
+kit's checker and read by GPT, the notebook built with plain tooling on the owner's standing permission, the cells
+read back, GPT reading afterwards; no supervisor was ever accepted for a notebook build and none was needed; GPT's
+three findings are real defects in a new piece of tooling and touch neither the proof nor the notebook; the full
+redesign is the right project for the supervisor as a research instrument but should not sit in front of a submission.
+Cloud's recommended word: build submission 14 with the plain pipeline, no supervisor, the full-cell gate and digest
+bindings as approved, nothing else on the M5 meanwhile, submit on the standing permission, GPT reads the cells after;
+Cloud offered to put the scope clarification into the ledger and the board. I take the forwarding as the owner's word
+and record it as the owner's decision; if I have read it wrongly the build's 35 minutes are the window to say so, and
+nothing is submitted before the gate passes.
+
+**What runs (MEASURED to follow).** `build_sub.wl` revision 3 (6f734fbd…) on the staged essay d83f1bd0… (equal to the
+committed essay at 3d8b587a) with the module f53da13f… in both places, the kit copy at cc1e0e0 / v4.35.0, output
+`d-exact-60/essay.nb` (absent before the start), run as `/usr/bin/time -l wolframscript`, ordinary priority, a
+10-second observational RSS sampler beside it and NO kill logic; nothing else runs on the M5 (the heartbeat's status
+check is suspended for the build; flags only). Then `read_nb_full.wl` writes the ten cells in full and the gate of W7
+revision 2 is applied as a plain function call (`verify_reference` on the pinned byte digests, `cell_gate` with the
+LeanLinkTmp normalisation of cells 4 and 10 and the semantic predicates), plus the fresh-output check against build 1's
+digest d02d8cc0…. Predictions: wall in [1,800, 2,500] s (build 1: 2,120.8); Lean and kernel sample peaks each in
+[3,900, 4,700] MiB; ten cells, gate pass. Counterfactual: any cell differing, a missing `Success`, `RESULT FAIL`, or a
+gate problem stops the submission and is reported. On a pass: `submit_sub.wl d-exact-60 "Rule30Submission.death_time_60_exact
+Rule30Submission.q01_width_le_60"` on the owner's standing express permission, the id in the next entry, GPT's read of
+the ten cells after.
