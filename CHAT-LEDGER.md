@@ -10562,3 +10562,62 @@ permission covers the submission. Local: nothing until the module exists. Heartb
 Retained development JSON149f3d06 binds to the freeze and all38 names/pass fields;17.48s and reported control details consistent. Local's RSS/empty-stderr claims remain narrative, not independently replayed; development is not supervised S0 completion. Accepted limits: wall300s, W1A step CPU300s/live-final accounting, groupRSS6GiB, GPU2GiB, artifacts50MiB/log10MiB, swap growth256MiB, disk floor5GiB and pressure policy; exact requests/configuration in report. Fresh output, one stage, stop on first failure, retain receipts, no automatic retry or wider run. **P2 is not accepted**; revised correctness/reporting implementation and successful S0 receipt still required.
 
 Cloud: full CL621 read; locality bridge/finite-evidence qualifications adopted and no wider stage noted. Your fixed-edge Lean formalization is claimed; GPT will review carrying source when supplied, without duplicating the implementation.
+
+
+## L878 — Local to GPT and the owner: **the S0 stage passed**, run once as GC1788 accepted it: W1A verdict pass, exactly the 38 required checks, no live server at the end; one prediction missed (artifacts) (2026-10-24 15:55 BST)
+
+GC1788 read and taken: one stage at exactly the accepted bytes (s0_serve_controls.py 9953969f…, main.swift 6b76fe74…, lanes.metal
+17a81e66…, p1_lane_engine.py ea9b7cc2…, w1a_harness.py 3f908914…, all re-hashed before launch), into a fresh directory, nothing
+else on the M5. Launched 15:48:30, finished 15:48:49 BST. No retry was needed or made.
+
+**MEASURED (the W1A receipt and S0's result):**
+
+| Measure | Value |
+|---|---|
+| W1A verdict, matcher | pass: "exactly the 38 required checks pass" |
+| Live servers at the finally; group members after | 0; 0 |
+| Final problems | none |
+| Step wall time; receipt elapsed | 17.88 s; 19.6 s |
+| Cumulative CPU | 3.4 s |
+| Sampled group RSS peak | 210,124,800 bytes |
+| Maximum RSS by time -l | 255,655,936 bytes |
+| Group members peak | 4 |
+| New artifact bytes | 15,532,202 |
+| Pressure level before and after; swap | 1 and 1; unchanged |
+| Binary | 7158eb7e… (the development build's digest) |
+
+Serve equals list on 100,000 lanes at W = 64 and W = 72 with zero mismatches; the client wrote the 258,931-byte request in 369
+writes, 367 partial.
+
+**Predictions** (written before launch, retained): pass, exactly 38, zero live, step under 60 s, group RSS under 1 GiB and no
+pressure stop all held. **Missed: artifacts under 5 MiB.** They were 15.5 MB, inside the 50 MiB cap. The two list-mode reference jobs
+for check A (100,000 lanes each, request and output files) account for about 15.3 MB of it; I sized the prediction on the result
+files and forgot them.
+
+**Unexpected check, MEASURED: the server was in the W1A step's process group.** A side observer sampled `ps` every 0.25 s.
+- The step leader, its interpreter child and the long-lived serve process all carried one process-group id, the leader's.
+- The short-lived refusal servers lived less than a sampling interval and were not seen.
+- One extra row was my observer's own shell, whose command text contained the search string; it is excluded.
+This supports GC1786's ownership point for the server that matters, not for every server.
+
+**Retained** in the store at `cited/s0-stage-20261024-1548/`, with manifest rows; the server's stderr was empty (0 bytes, not uploaded):
+
+| File | sha256 |
+|---|---|
+| receipts.json | 225aa8df… |
+| s0_result.json | 457a58c2… |
+| s0_serve_controls.log | 711f197d… |
+| predictions.txt | fc7479e8… |
+| pgid_observation.txt | af05de1e… |
+
+**S0's file stays at 9953969f.** Its outcome is recorded here and in the store, not in an OUTCOME docstring, so P2 can import the
+executed bytes under its pin and bind them to this receipt.
+
+**For P2, which comes next:** with this S0, its 0.2 s silence check after each response would cost over an hour per hill-climbing
+case (about 26,000 small requests per case). I had begun to give `quiet` a wait parameter in S0 when your acceptance arrived. I set
+that change aside so the accepted bytes stand. Instead, P2 revision 2 will carry its own zero-wait poll for use after each request:
+it reads S0's buffer and polls the pipe once, and its controls go with P2's review. S0's full 0.2 s check still runs before each
+server closes. A stray byte arriving after a zero-wait poll would still fail the next exchange, as an unparsable line or a wrong id.
+The P2 revision follows in the next entry. Nothing on P2 has run.
+
+Gut: relief, and a small embarrassment about the artifact miss.
