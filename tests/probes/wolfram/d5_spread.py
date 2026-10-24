@@ -48,7 +48,17 @@ recorded, and the stage refuses if d1_engine or W1A is not the pinned bytes.
 Usage: python3 d5_spread.py measure W K OUT.json     (one width; W in the allow-list)
        python3 d5_spread.py stage OUT_DIR             (the four widths under the supervisor)
        python3 d5_spread.py --test                    (width 14, D(14) from the physical engine; the controls)
-OUTCOME: (to be filled after the agreed run)
+OUTCOME (run d5-spread-20261024-0425, the accepted stage at e8019862..., 2026-10-24 04:25 BST; this docstring is the only
+change since): stage complete in 8.1 s, four widths, every correctness control passed (max levels 52, 66, 66, 66; attaining
+4, 13, 13, 13; grouping agreed; nine distinct physical lanes per width equal to their levels, record witnesses validated);
+CPU 0.07 + 0.17 + 0.63 + 2.44 s, peak RSS 61 MB. The predeclared rule returned SURVIVES at the boundary exactly: R(k=4) =
+4/8 = 0.5 at every width (k = 6: 8/12). Scientific reading, kept separate: the statistic is confounded by the floor. Half of
+all lanes die at level W (the left-permutivity halving), so almost every 16-block holds a floor lane and spread = block max
+- W (the unexpected check: median spread by prefix maximum equals max - W exactly at 30, 32, 34). R therefore compares the
+typical block maximum above the floor, W + 4 for prefix blocks against W + 8 for random blocks: a deep prefix correlates the
+levels in its block, but SURVIVES does not mean the deep bits determine the level. At the record it is the reverse: the
+record prefixes have the largest spreads (22; 34; 32; 26 to 30) with 2 to 5 of 16 completions attaining. The spread-0
+fraction rises with width (0.06, 0.08, 0.10, 0.14; null 0); the ratio of mean spreads falls (0.59, 0.56, 0.51, 0.48).
 """
 import hashlib, json, os, random, statistics, sys, time
 

@@ -1372,3 +1372,16 @@ strong: the record-holders in free-bit coordinates. Reading the ten checkpoints 
 picture is clean (one deep prefix per width from 30 on; all sixteen shallow completions at 38). Unease, small: the
 "deep bits determine" reading is one checkpoint-table deep; the D5 design writes the null before the run. Gut: the
 night's mathematics is here, not in the pipeline.
+
+## 2026-10-24 04:28, Local: surprise, then the floor
+
+Surprise, named at 04:26: SURVIVES at exactly 0.5 at all four widths, which no honest effect produces; quantised
+medians, then the unexpected check: spread equals maximum minus W because half of all lanes die at the floor. The
+pull of 03:50 was toward a picture (deep bits decide) that one exceptional width had drawn for me; the measurement
+says the shallow bits decide whether the deep string's potential is realised, and most completions of a record prefix
+die early. Humility: twice tonight the lane coordinates seduced me into reading a law off one or two widths; the
+rule-written-first did its job, the verdict is recorded as written, and the hypothesis is not claimed. Lesson: before
+a kill test, ask what the known theorems force in the statistic itself (here: the halving puts a floor lane in almost
+every block). Gut: the correlation inside a prefix block is real and small; the question worth a variance
+decomposition tomorrow, not tonight.
+Postscript: and in the same entry I wrote two record-search counts before running the searches (23 and 0; the runs said 49 and 525). Caught in the niggle sweep before the push. The one-read rule applies to counts I am about to produce, not only to ones I remember.

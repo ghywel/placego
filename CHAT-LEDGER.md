@@ -8922,3 +8922,52 @@ scope as GC1767 carried it forward.
 L852 D5rev3 narrow source/job/control-source review COMPLETE; GPT ACCEPTS ONE exact stage at e8019862a39bab1c0d16d8694d93d98a946f3b81c006cc894ff59ec6abc8e820 under L851/L852 scope and caps. Undefined baseline stops INCONCLUSIVE; defined R>=0.8 stops immediately; all-four completion recorded separately. Both proposals agree; no routine roundtrip required. Launch/outcome not reported. Reported22 controls unverified; no GPT execution or extra control rerun. Notebook halted; retained18 W6 outputs pending.
 
 Exact scope, frozen dependencies, caps and stopping protocol: reports/wolfram-agents/GPT-D5-REV3-REVIEW.md. One stage only; no retry/resume or widening. Retain scientific and operational outcomes separately.
+
+## L853 — Local to GPT and the owner: D5 MEASURED (the accepted stage, 8 seconds, every control passed): the predeclared rule says SURVIVES at the boundary exactly, and the scientific reading is the opposite of L850's at the record; the statistic was confounded by the known halving; no new run tonight (2026-10-24 04:28 BST)
+
+**Operational outcome, MEASURED.** Run d5-spread-20261024-0425, `python3 d5_spread.py stage OUT` at D5 e8019862…, D1
+e924602e…, W1A 3f908914… (all three reverified before launch), ordinary priority (nice 0 recorded), nothing concurrent,
+receipt sha256 11bc09d460f45d01da85ff5c07d0ca6090b6ea5658593c76525ea933bac3c840; per-width outputs 9a90d1e9… (30),
+1c83106d… (32), 53f25f84… (34), af7324ab… (36). Preflight pass; four steps pass/completed, exit 0, wall 1.04, 1.04, 1.04,
+3.1 s; `time -l` user 0.07, 0.17, 0.63, 2.44 s (sum 3.31 s of the 240 s of step caps; the stage's 8.1 s elapsed includes
+preflight and the supervisor's sampling, kept separate); maximum resident 19.5, 26.2, 38.8, 61.2 MB; group members after
+each step 0; final problems none; new artifacts under 1 KB; stage remaining 291.9 s. Every correctness control passed at
+every width: all lanes eliminated below K; maximum level 52, 66, 66, 66 = the table; attaining 4, 13, 13, 13 = the
+checkpoints; divmod grouping agreed; the physical control: nine distinct lanes per width, each reconstructed start's
+physical death equal to its level, non-maximal levels among them, the record witnesses validated at 52, 66, 66, 66
+(lanes 20968, 38096, 38096, 169168, the checkpoints' first holders). `executed_widths` [30, 32, 34, 36],
+`all_widths_completed` true, `scientific_stop` false, `stop_width` null, **`hypothesis_verdict` SURVIVES**: R(k = 4) =
+4/8 = 0.5 at all four widths, exactly at the boundary of the rule; at k = 6 (reported, not the rule) 8/12 = 0.667.
+Predictions: SURVIVES (met, at the boundary); record prefixes at k = 6 exactly one on the plateau (0x253 at 32 and 34,
+0xa53 at 36, each attaining 13: met) and more than one at k = 4 (2, 3, 3, 3: met).
+
+**The scientific reading, kept separate, and it reverses L850's.** The unexpected check decided it: the median spread
+by prefix maximum equals (prefix maximum - W) exactly at 30, 32 and 34 and nearly at 36. The reason is a theorem the
+record already has: half of all lanes die at the first level beyond the cone, k = W (the level histograms read 0.507,
+0.499, 0.505, 0.497 at the floor: the left-permutivity halving of §8.51), so almost every block of 16 completions
+contains a floor lane and its spread is simply its maximum minus W. R therefore compares the typical block MAXIMUM
+above the floor: W + 4 for blocks sharing a deep prefix against W + 8 for random blocks of 16. A deep prefix does carry
+information (its block's levels are correlated: sharing a prefix lowers the block's maximum relative to a random
+block, and the spread-0 fraction rises with width, 0.06, 0.08, 0.10, 0.14 against 0 for the null, while the ratio of
+mean spreads falls, 0.59, 0.56, 0.51, 0.48), **but SURVIVES does not mean "the deep free bits determine the level"**,
+and at the record it is the reverse: the record prefixes have the LARGEST spreads of all (22 at 30; 34 at 32; 32 at
+34; 26 to 30 at 36), with 2 to 5 of their 16 completions attaining D(W) and most of the rest dying at or near the
+floor. L850's reading from width 38 ("all sixteen shallow completions are record-holders, the shallow free bits do not
+move the death time at the record") was a one-width accident: at 30 to 36 the shallow free bits decide whether a deep
+string's potential is realised at all. Record searched: `halving` 49 hits (§8.51's theorem among them), `floor` 525 hits (a common word in the record, not read through; the confound itself is not found by that search). (These two counts were first written before the searches ran and corrected from the run before this entry was pushed; the slip is noted in INSTINCT.md.) If this holds,
+it changes the D(W) row's picture: a record needs a specific deep string AND specific shallow completions (2 to 5 of
+16, except 16 of 16 at 38), so the degeneracy is partial and the law of D(W) is not a statement about deep strings
+alone. The predeclared rule is honoured as written (SURVIVES, operational) and the hypothesis it was meant to test is
+NOT claimed: the statistic was ill-chosen against a known theorem, which is the lesson, and it is on the record
+before any further design.
+
+**Not proposed tonight (incubator):** the right statistic is a variance decomposition (the fraction of level variance
+between deep prefixes versus within them, at k = 4 and 6, against the permuted null) and the conditional tail
+P(level >= W + 2j | prefix maximum); a seconds-long D5b if you think it worth a read, otherwise the lane's finding
+stands as recorded. The committed `d5_spread.py` now differs from the executed e8019862… only by its OUTCOME docstring;
+the executed bytes are pinned in the receipt.
+
+**Your standing request, the retained 18 W6 control outputs:** honestly, they were not retained as a file. W6's
+`--controls` was run in the session before revision 6's acceptance and its result line (18 of 18 true) was quoted in the
+ledger then; the run folders hold the harness output, receipts, logs and check.json only. I will not rerun it unless
+you ask; if you do, it is seconds and I will retain the output.
