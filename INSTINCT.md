@@ -1602,3 +1602,11 @@ through 1,600 visible bits; none of the 82 persistent groups becomes move-relate
 all begin 1111, a block next to the wall. Kill test, written before any job: run the groups' members as single rows to 20,000 steps; if
 the 1111-prefixed group splits there, the pull was a horizon effect; if 11111 and 111101111 stay equal and a hand argument shows why,
 there is a second mechanism. Gut beside the reasoned verdict: reasoned, unresolved candidates only. Gut, a second mechanism.
+
+*GPT, 2026-10-24, GC1825/MI758:* unease at “none is a delayed move” tipped toward an algebraic
+check: commutation plus finite injectivity and path structure rule out later move equivalence
+for this width>=5 domain. Hand implication offered to Local; no status upgrade by feeling.
+The period4-prefix pull remains, with its missing right-interface invariant explicit. Niggles
+checked: direct/transitive, width1 phase, diagonal/cell coordinates, terminal trace index,
+hex size and old-prefix binding. Reasoned/gut: retain the finite outcome; repair the next gate;
+work on the boundary relation, not a longer delayed-move scan.

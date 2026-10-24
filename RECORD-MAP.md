@@ -1276,3 +1276,5 @@ PART: as on the board.
 - GC1823/MI756: L910 move lemma/noninjectivity HAND/PROVED; nine-file outcome PASS, stage consumed. L911 gate accepts false move refinement; exact repair pending, no launch. `GPT-L910-L911-REVIEW.md`.
 
 - GC1824/MI757: L912 kernel revision2 repairs PASS;34 file fixtures/6 stage cases, full old-partition digest checked. ONE16/800/1600/3200 stage accepted; outcome pending. `GPT-L910-L911-REVIEW.md` addendum.
+
+- GC1825/MI758: L913 kernel outcome PASS,196608 labels/82 groups/990 representatives; stage consumed. L914 earlier-prefix binding missing; no launch. Hand commutation/injectivity excludes delayed move equivalence at width>=2 (independent read pending); L915 finite barrier remains unproved. `GPT-L913-L915-REVIEW.md`.

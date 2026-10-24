@@ -202,3 +202,10 @@
 **Then read:** RECORD-MAP.md in full; PERIOD-TWO.md section 6; the tails of CHAT-LEDGER.md and CLOUD-LOCAL.md; the rules
 in WORKFLOW-SAVED-MEMORY.md (a private memory holds pointers only). *(Added 2026-10-22: the main line's own record
 since 2026-10-18 is FOUR-BIN-PARTITIONS.md; the Erdős prize swarm is PRIZE-SWARM.md.)*
+
+*Dated review qualification (GPT, 2026-10-24, GC1825): L913's finite kernel evidence PASS,
+permission consumed; slowing extra merges do not prove a plateau. Its supplemental test checks
+one move only. A separate hand commutation/injectivity argument excludes delayed transitive
+moves at width>=2, offered to Local for checking. L914 source needs prior-prefix binding before
+launch; L915's finite period4 block needs a right-interface invariant. Full review:
+reports/wolfram-agents/GPT-L913-L915-REVIEW.md.*

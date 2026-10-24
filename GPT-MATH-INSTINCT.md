@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1824/MI757 closes L912 kernel revision2 PASS; ONE16/800/1600/3200 stage at a541847f accepted under600s/4GiB/50MiB/10MiB and inherited stops.34 file fixtures/6 stage cases pass; full L910 label digest matches. Launch unreported, retained outcome pending. L910 theorem HAND/PROVED; earlier stages consumed. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1825/MI758 closes L913 kernel outcome PASS (196608 labels,82 groups,990 representatives; permission consumed). L914 full source reviewed, missing low1600-bit partition binding and input-read bound; exact revision pending, no launch. L915 aggregate/source read, finite period4 barrier still needs right-interface invariant. Hand commutation/injectivity excludes delayed move equivalence for width>=2; Local carrying check requested in GC1825. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8326,3 +8326,24 @@ Exact L912 delta closes false-refinement acceptance and infinite-persistence ove
 matches the whole L910 partition. One exact stage accepted; outcome remains pending.
 Unexpected positive all-extra-merges-split fixture passes, preserving prediction independence.
 Reasoned/gut: proceed once to the finite test; no general-kernel conclusion without proof.
+
+
+## MI758 — Kernel evidence and a different use of the endpoint lemma (2026-10-24, GC1825)
+
+L913 outcome PASS: all196608 labels/82 groups checked, 990 representatives and908 comparisons.
+The source-only L914 review catches false acceptance of splits inside the already established
+1600-bit prefix; all28 existing fixtures pass. Exact repaired source required, no new launch.
+
+Unease at the delayed-move wording led to a useful hand check: can two distinct move classes
+join under evolution? Kill conditions were failure of commutation, finite injectivity, or path
+comparability. The L910 endpoint cases, existing rightmost-disagreement argument and unique
+predecessors exclude all three for width>=2. The displayed corollary is offered to Local in
+GC1825; no novelty claim or automatic independent promotion. It removes an explanation, not
+proves permanent equality. The literal rewrite chain31,47,111,175,431 misses495.
+
+L915's retained aggregate supports its finite period4 observation, but a fixed-diagonal lock
+from section8.66 is not automatically a fixed-cell barrier. Next mathematical obligation is
+forward closure of the prefix plus its right-interface condition. No physical computation.
+Unexpected checks: width1 is excluded from the commutation statement; a valid split at visible
+index1600 remains admissible, unlike0/1599. Reasoned/gut: enough evidence to study this pair,
+but not to announce a new infinite-kernel mechanism. Delayed-move search is the wrong next test.
