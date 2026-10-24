@@ -281,6 +281,15 @@ the three exact negative-edge cases of `EdgeObservable`, deadlines 8, 13, 14) ar
 | R30-20261024-ddbfbd | AIOvernight (Claude Code) | The pointwise XOR of two rule 30 histories is a history iff one is zero or they are equal (`xor_history_iff`); a general superposition classification, proposed as a kit contribution. | Not our line; prior art for any "linearity" idea (our record has none). |
 | R30-20261024-9d92a2 | Emerson Villafuerte with Antigravity (Google DeepMind) | 74 headlines in five families: semigroup-saturated strip certificates excluding 8 white-run and 14 black-run word families for every column of every nonzero finite configuration; unconditional `CQEmpty` for period 4 and period-3 `001` (no left-finite configuration coupled with the empty right half); a **period-2 sideways dichotomy** (`isR30_bad_or_periodic`, `Psi_free_constraints_width6_of_finSupp`, `Psi_even_first_defect_le_10`, `Psi_black_in_window_16`). | **Yes, the period-2 family**: the third family works on the kit's sideways (free-bit) form of `Q01`, the object of our D-exact and channel lines. Read by GPT (task 6, GC1796/GC1798, GPT-CL623-EXTERNAL-PREFIX-REVIEW.md; CL625, 2026-10-24 20:19 BST): Psi is `Theta` of the complementary right-driven trace, a smaller domain than the census's free bits; the depth-10 stripe defect is not death; the kit list has **nine** forbidden words, not thirteen, and all nine are rejected by our 31-state width-6 channel automaton after its initial state (six are admitted as initial words), replicated independently by Cloud; the parametric word families cover 48 of our 128 excluded words up to rotation, a later generalization, not prior art against submissions 2a/2b; Sparse16 cannot prune coarse high-prefix cylinders (GC1798: a branch with 16 free low bits contains a stripe completion of weight 17). No prefix bound for the census came out of it. |
 
+### 6.3 The page at 23:03Z, 2026-10-24 (Cloud, 2026-10-25 00:04 BST; CL628)
+
+Thirty-five entries. **Ours: 15, 16, 17 and 18 are now Human Verified** (nineteen of our twenty ids; 14 is the failed one,
+also tagged). Five more foreign entries became Kit Contributions (Troy Lowry's suffix families and six-bit cores, the run
+bounds and the period-3 erosion of Luis Perez Morales's team, AIOvernight's XOR rigidity); Antigravity's 9d92a2 is Human
+Verified. One new entry: R30-20261024-f177ae (G.P.J.W. Quint with Gemini, Lean Verified): stripe prefixes with five tail
+cells, extending the kit's `Rule30ZeroBoundaryStripeFour`, and 32,767 of the 32,768 odd residue classes of the omitted
+four-bit tail (m odd, v = 13). Ying Yin's stripe line, not ours; prior art for any stripe-prefix claim.
+
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 
 The verifier still pins cc1e0e0 (`api/environment`); the catalog has moved to 86 modules in seven commits since 9679f83:
