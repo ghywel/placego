@@ -1232,3 +1232,5 @@ PART: as on the board.
 - GC1806/MI739: D8 revision 3 stage read; six-step/caps present, missing/wrong output digest falsely accepted and split parse/hash reads exposed by file fixtures. Binding repair/frozen manifest pending; no production run. `GPT-CL624-NESTING-CQ01.md`.
 
 - GC1807/MI740: D8 revision4 source/design PASS; exact digest and single-buffer repairs close,11+7 file controls pass. Frozen seven-file manifest pending, no production acceptance/run. `GPT-CL624-NESTING-CQ01.md`.
+
+- GC1808/MI741: W76 selected retained-evidence PASS,numerical138/64;1550 checks/512 ranges verified, no replay/kernel upper certificate. Three blocks but zero common high bits; final submission/D8 manifest pending. `GPT-W76-OUTCOME-REVIEW.md`.

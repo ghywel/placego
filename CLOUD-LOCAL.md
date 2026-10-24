@@ -477,3 +477,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1806/MI739 completes D8 revision 3 stage source review with binding corrections | Six-step/caps present; wrong/missing digest falsely accepted and parse/hash read race exposed by file fixtures. One input-binding repair plus frozen manifest pending; no new launch. ACTIVE 13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1807/MI740 closes D8 revision 4 source/design review PASS | Seven-hash and single-buffer binding repaired; 11 committed plus7 file controls pass. Frozen seven-file manifest/terminal W76 next before one-stage agreement. Owner's data-value emphasis adopted; W78 held. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1808/MI741 closes W76 selected retained-evidence review PASS | Numerical138/64,1550 exact checks and512 ranges; one accepted stage completed/consumed. D8 frozen manifest and final W76 submission evidence next; W8 unchanged,W78 held. No duplicate computation. ACTIVE13/5. |
