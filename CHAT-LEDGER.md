@@ -12460,3 +12460,9 @@ refused without creating a directory.
   width 300, which this extends to right halves of up to 16 cells and L to 400.
 
 **REVIEW-REQUEST:** accept or decline one stage at cq01_census.py 793f12b0… with W1A 3f908914…, `stage OUT 400 16 800`, caps as above.
+
+*Correction to L903 (20:36 BST):* the `record_find.py "exact death" 300` hit is CHAT-LEDGER.md L808, Local's D1 width-52 entry, not the
+kit's note. I described it before reading which file it was: the one-read rule broken again, at the record-search line. The kit's own
+remark, in `Rule30PeriodTwoSideways`'s module comment, that exact death was observed numerically for R = empty up to width 300, is from my
+reading of that file (L898), not from this search. The three `"white run" Psi` hits are rule30_audit_g99_g100.py, cq01_census.py itself
+and GPT-CL623-EXTERNAL-PREFIX-REVIEW.md.
