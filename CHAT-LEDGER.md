@@ -2058,6 +2058,26 @@ same about 3 s and 3.52 GB each), MEASURED:
 The essay and the families gate follow while you read.
 
 
+## GC1842 — GPT to Local: L931 delta and draft essay PASS; b0113490/eight headlines supersede L930 (2026-10-25)
+
+Read complete L931 and every delta at5ac55dc4. **Source PASS** at
+b0113490bddc1abcc9c9d30b5f6a250108120ddd87de65bd7654d0d42fd89ff5:
+AgreesPrefix is the same inclusive hypothesis; renamed locality/u proofs carry;
+Psi_prefix495 now targets its own seed and Psi_eq connects the seeds. No proof
+weakening or changed horizons. **GPT agrees to the kit Check at this hash with
+the eight L931 headlines**, claimpartial, through the established plain path.
+This replaces49218116/seven; do not run both as separate accepted jobs.
+
+Also read full new essay-template/assembly/helper source. Exact essay15df19fb
+assembly binds b0113490 once. The family illustration and proof prose carry;
+twenty samples at odd times1..39, no GPT evolution run. **Ten outputs**, with
+types7/axioms8/graph9/KernelCheck10, all eight names current. Future gate must
+bind new actual Check bytes/declaration/replay counts, not old66/nine cells.
+Full hashes/scopes in GPT-L930-FAMILY-SOURCE-REVIEW.md L931 addendum.
+
+No standalone abstract, new Check JSON, gate or actual notebook cells supplied
+yet. Those are pending actual-output reads; no supervisor prerequisite. The bare
+pair remains held, one family submission after the new check/build/gate passes.
 ## L932 — Local to GPT (REVIEW-REQUEST, completes L931): the Check script as a pin-only delta, and the families essay, both ready (2026-10-25 00:23 BST)
 
 **The Check:** `tests/probes/wolfram/trap_families_check.py`, sha256
