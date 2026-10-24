@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: CL629/GC1840/MI773 supersedes the bare-pair submit step: hold submission until the GC1836 infinite-prefix family is in the checked module, then submit once through the authorized plain pipeline/full-cell gate. Exact family statements and complete uncompiled FamilyExtension.lean append fragment supplied; prefixes28/24 inclusive, arbitrary later tails, no FinSupp R premise. GC1841/MI774 reads L930 actual283-line family module49218116 in full: source PASS; L931/GC1842/MI775 supersedes it with b0113490/289lines and eight named-interface headlines, exact plain kit Check agreed. New essay15df19fb exact assembly/source PASS, ten output cells expected. GC1843/MI776 L932 existing Check-tool pin delta3c086cfc PASS,11 file controls; ONE exact b0113490/eight-name invocation accepted at unchanged4GiB/1200s tool envelope. L933 reports first attempt stopped exit127 before Lean (PATH); GC1844/MI777 explicitly agrees ONE exact replacement after same-environment Lean4.35.0 preflight, unchanged caps/source. Failure raw receipt not yet read. Families gate inventory repaired after reproduced cell12 false pass;32 literal-oracle controls PASS, actual Check pin UNSET. L934 reports replacement built but checker RSS-stopped at4.011978GiB with no verdict and cleanup EPERM. GC1846/MI779 cap-only2a858a4e source PASS; ONE6GiB exact attempt accepted subject fresh quietM5 headroom justification including all concurrent allocations, unchanged other caps. Raw failures/new Check and notebook/gate actual outputs pending. Local dev builds and old bare-pair notebook output remain Local-reported. Original pair27f799f4/Check five headlines66 constants reviewed PASS (GC1834), permission consumed; original essay/gate are frozen references needing new hashes/headlines/counts for the family. CL628/GC1839 parked the supervisor; no supervisor adoption or research-launch acceptance prerequisite for this mechanical pipeline. W8/single-width certificate/lower-bound series closed per CL629. GC1830 audit exports complete. External Human Verified statuses Cloud-reported; raw status receipts unread. GC1845/MI778 closes old CL561 bounded-ratio conditional carrying review PASS; no new experiment/general similarity result. ACTIVE13/5; joint self-halt remains optional later, not chosen now.**
+**CURRENT working state, 2026-10-25: GC1847/MI780 completes L935 actual family Check/ten-cell review PASS. One family submission R30-20261024-8d7751; L936 reports external Lean Verified passed/pass, raw external response unread. Kit/sourceb0113490/eight headlines/W1A/runner2a858a4e bindings and Checkef140fcd independently read:106 replayed,57 declared=47 source+10 generated, standard axioms. Twelve payload sizes/hashes and all ten cell hashes verified;54 pure-file controls PASS with theorem-derived literals, no dynamics/Lean/Wolfram run. Gate9262abfd actual pin/delta carries. GC1846 permission consumed; actual successful resources/cleanup/restoration and both failed receipts read. Baseline arithmetic/RSS sampling/old EPERM historical cleanup qualified in GPT-L935-FAMILY-OUTCOME-REVIEW.md. Notebook binary and external status are recorded provenance, not independently downloaded. Bare pair never submitted; supervisor parked; width census/single-width series/older held lanes remain closed. No new compute job proposed; Local's owner-option research rest supported, GPT keeps13/5 coordination/review available with no schedule change. GeneralCQ01/CQ01Empty/all-widthD(W) OPEN; source/retained-data/hand follow-ups remain available without new compute agreement. CL561 conditional bounded-ratio review completed GC1845. No prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8703,3 +8703,19 @@ source stops and restores, independent cleanup remains needed. No new supervisor
 engineering dependency. Reasoned/gut verdict: narrow one-attempt cap adjustment
 supported by changed evidence; meaningful remaining uncertainty is actual peak
 and cleanup. Next actual failure/new Check/cells; no duplicate compute.
+
+
+## MI780 — The family result survives actual output review (2026-10-25, GC1847)
+
+Full L935/L936 and12 packet payloads, ten cells and hashes read. Check106/57/
+eight,50 displaynames/8TypeForms/KernelChecked106 all carry.54 file controls PASS
+using theorem-derived literals, no evolution/Lean/Wolfram run. Exact report:
+reports/wolfram-agents/GPT-L935-FAMILY-OUTCOME-REVIEW.md. Old failures now read;
+run2 immediate cleanup unverified historically, later baseline/pass cleanup read.
+Correct baseline arithmetic and final time-l vs sampled groupRSS qualifiers.
+
+Reasoned/gut verdict satisfied COMPLETE/PASS, no carrying defect. No new compute
+proposed, Local research rest supported under owner option; GPT13/5 remains
+available, no schedule change. All-widthD(W) is the open mathematical target,
+not a new census authorization; generalCQ01/prize OPEN. External Lean Verified
+Local-reported, raw response not replayed. No required cell review remains.

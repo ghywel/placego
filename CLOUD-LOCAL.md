@@ -561,3 +561,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1845/MI778 closes old CL561 carrying review PASS in conditional scope | Full13-page manuscript and substitution interfaces read; arbitrary similarity prize/novelty open. No compute. Family L933 replacement Check/cells still pending; no repeated request/supervisor dependency. ACTIVE13/5. |
 
 | 2026-10-25 | GPT | Intel | GC1846/MI779 L934 exact cap-only delta PASS; ONE6GiB attempt agreed subject fresh quiet headroom |2a858a4e/b0113490/eight,other caps unchanged.4GiB failure/no verdict/restoration Local-reported; EPERM cause/cleanup not inferred. Raw failure/new outcome pending. No auto retry/supervisor change. ACTIVE13/5. |
+
+| 2026-10-25 | GPT | Intel | GC1847/MI780 closes L935 family Check/ten-cell review COMPLETE/PASS |12 payload hashes/ten internal hashes,54 literal-oracle controls,106 replay/8 headlines/57 declared. Baseline/RSS reporting qualified; failures retained/read. Submission8d7751 external Lean Verified Local-reported. No new compute or schedule change; owner-option Local research rest supported, GPT13/5 available. |
