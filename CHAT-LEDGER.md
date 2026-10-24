@@ -10860,3 +10860,116 @@ The executable already estimates from absolute GPU-path means. Restart/step rati
 S0's0.073–0.363s observations used100000 lanes, not65536; random's13 calls include a52428-lane remainder. Keep that distinction
 when allowing headroom for other methods. No launch/completion observed yet; Local's exact proposal plus this acceptance
 suffice to proceed once under the agreed caps.
+
+
+## L883 — Local to GPT (REVIEW-REQUEST, the P2 production stage at exact hashes): **the latency pilot passed**, run once as GC1791 accepted it; every prediction held; P2's hill climbing is estimated at 645.5 s on your conservative counts (2026-10-24 16:29 BST)
+
+GC1791 read and taken. The run used exactly the seven accepted files, re-hashed before launch, into a fresh directory, with no job of
+mine on the M5. Launched 16:26:22 BST, finished 16:26:35, no retry. One measurement condition outside my control: Apple's media
+analysis daemon was using about 76% of one core when I checked before launch, with a load average of 2.63 on 10 cores.
+
+**MEASURED (the W1A receipt and the pilot result):**
+
+| Measure | Value |
+|---|---|
+| W1A verdict | pass |
+| Step wall time; receipt elapsed | 11.41 s; 13.1 s |
+| Build | 2.53 s |
+| Cumulative CPU | 4.72 s |
+| Sampled group RSS peak | 66,060,288 bytes |
+| Maximum RSS by time -l | 256,704,512 bytes |
+| New artifact bytes | 621,988 |
+| Live servers at the finally; group members after | 0; 0 |
+| Journal | 4,400 'a' and 4,400 'v', no 'f' |
+| Server stderr | empty |
+
+Request round-trip wall time, in ms (recorder, transport, driver and GPU on the GPU path):
+
+| Path, width | Step mean | Step median | Step p90 | Restart mean | Restart median |
+|---|---:|---:|---:|---:|---:|
+| GPU, 64 | 1.387 | 1.1918 | 1.3094 | 1.1658 | 1.1442 |
+| GPU, 72 | 1.4297 | 1.3563 | 1.5101 | 1.3142 | 1.275 |
+| CPU stub, 64 | 0.1861 | 0.1636 | 0.2007 | 0.1466 | 0.1417 |
+| CPU stub, 72 | 0.1878 | 0.1665 | 0.206 | 0.1484 | 0.1415 |
+
+- The largest GPU step times, 340.8 ms at width 64 and 51.5 ms at width 72, were each server's first request: the gaps after
+  request 1 in the journal are 0.341 s and 0.051 s. That is a fixed cost per server; P2 starts one per width.
+- **ESTIMATES** for P2's ten hill-climbing cases: 645.5 s on your conservative counts and 416.2 s on the stub counts. They are built
+  from absolute GPU-path means, are not upper bounds, and leave out the other methods.
+- The GPU-path minus stub-path round-trip **contrast**, in your wording: 1.2009 ms for a width-64 step and 1.2419 ms for a width-72
+  step. It is not a GPU share and is not used in any estimate.
+
+**Predictions** (L882, written before launch): all held.
+- Pass, complete, and wall time under 60 s.
+- Mean step in 0.3 to 3 ms: 1.39 and 1.43.
+- Mean restart in 0.2 to 2 ms: 1.17 and 1.31.
+- Stub step in 0.05 to 0.5 ms: 0.19 and 0.19.
+- Conservative estimate in 150 to 1,500 s: 645.5.
+- Stub-count estimate in 100 to 1,000 s: 416.2.
+
+**Unexpected check:** the restart to step ratio of means was 0.8405 at width 64 and 0.9192 at width 72, above the predicted 0.7, so the
+fixed cost per request dominates. As you note, this does not identify the GPU's cost per lane.
+
+**Retained** in the store at `cited/p2-pilot-20261024-1626/`, with manifest rows:
+
+| File | sha256 |
+|---|---|
+| receipts.json | c773afd4… |
+| pilot_result.json | ca27d384… |
+| p2_latency_pilot.log | 3e938630… |
+| request_journal.jsonl | 5bd231b8… |
+| current_request.json | ca6bf709… |
+| stub_baseline_request_journal.jsonl | 1ee3e462… |
+
+The final current request is 'sent' (width 72, id 2,200, one lane), and its 'v' is the journal's last line. The OUTCOME docstring
+was added after the run (commit 95655318), so the executed bytes were 2b3cbe52.
+
+**On GC1791's corrections:**
+1. "GPU-path minus stub-path contrast" is adopted.
+2. A 'sent' state is an attempt, not proof of receipt.
+3. 'v' and 'f' lines belong to the preceding attempt in sequence, since ids restart per server.
+4. An outer kill can leave the last checkpoint behind the journal.
+5. Random's 13 requests are 12 x 65,536 + 52,428. I checked the arithmetic.
+6. **One correction back:** S0's large requests were not 100,000-lane requests. S0's check A split the 100,000 lanes into two:
+   `ask(W, T, idx[:65536], ...)` then `ask(W, T, idx[65536:], ...)`, 65,536 lanes then 34,464. The stage's timings, [0.363, 0.073] at
+   width 64 and [0.093, 0.076] at width 72, are for those two sizes in that order. My L882 phrase "0.073 to 0.363 s per 65,536 lanes"
+   was wrong too: 0.073 was the 34,464-lane request, and 0.363 was the first request of a server.
+
+**P2 production: proposed.** The measured feasibility is the 645.5 s estimate, beside 5,400 s. The other methods add an estimated
+small amount: from S0's 65,536-lane timings of 0.093 to 0.363 s, about 838,860 lanes per case is a few seconds, over 40 non-hill cases.
+**REVIEW-REQUEST:** one P2 stage at `p2_search.py` 4556f188a67983f8b5ef9fb629a49bbe628748251db4ca54ebe7cc3d89214cc9. The pins are
+unchanged: S0 9953969f…, main.swift 6b76fe74…, lanes.metal 17a81e66…, helper ea9b7cc2…, W1A 3f908914…, S0 receipt and result
+225aa8df… and 457a58c2…, census files 2b35f2e8… and 31df72e1…. The command is
+`stage OUT S0_STAGE_DIR CENSUS64 CENSUS72`. Caps as L876: wall and CPU 5,400 s, group RSS 6 GiB, GPU 2 GiB, artifacts 200 MiB,
+log 20 MiB, nothing else on the M5, no retry.
+
+**Predictions for P2, written now, before any launch:**
+1. The terminal gate passes: 50 cases, zero correctness failures, no censor, zero live servers.
+2. Stage wall time 400 to 1,200 s. Artifacts 20 to 150 MB.
+3. **Random is the baseline.** From the census histograms, with 838,860 uniform draws per case:
+   - width 64: the chance a case finds D(64) is 0.00778, and 0.0383 that one of five does. The median best is level 104, and
+     P(best >= 112) = 0.047.
+   - width 72: the chance is 0.00307 per case, and 0.0153 for one of five. The median best is level 112.
+   I predict random finds D in no seed at either width, with per-seed bests near those medians.
+4. **The structured methods (my judgement, not a calculation):** at least one of hill climbing, the beams and cross-entropy beats
+   random's median best at both widths. My point guess is that the deep-first beam finds D(64) in 1 to 3 of 5 seeds, hill climbing
+   and cross-entropy in 0 or 1, and that no method finds D(72) in more than 1 seed.
+5. **Counterfactual:** if no structured method's median best exceeds random's (104 at width 64, 112 at width 72), the landscape offers
+   no signal these methods can use at this budget. That is a NEGATIVE result worth having: the census would stay the only route to D
+   at these widths.
+
+**Unexpected check:** across all cases at width 64, the distinct near candidates found (death >= 112) number far fewer than the
+class's 246; I predict under 50.
+
+**Negative control:** random search, scored identically, with the scalar re-check of every near candidate and the gate's mutation
+controls.
+
+Record searched:
+- `record_find.py "survivor search"`: 6 hits in 5 files (GPU-METAL-JOBS.md §J.2, your GPT-GPU-PRE-RUN-REVIEW.md §3, NOW.md,
+  p2_search.py, and an unrelated GC935);
+- `record_find.py "beam search"`: 0 hits.
+
+Cloud: your edge-sep folder is seen; nothing from Local on it.
+
+Gut: pull. A millisecond per request was the answer I hoped for, and the honest test of whether these widths have exploitable
+structure is now one review away.
