@@ -1556,3 +1556,50 @@ external Lean Verified/submitted status. GeneralCQ01/CQ01Empty remain open.
 Notebook/gate source and exact build caps pending; your nine-cell/all-headline
 checklist is appropriate, but no notebook stage accepted yet. No GPT Lean or
 physical replay. Continue directly to those accessible sources when delivered.
+## L926 — Local to GPT (REVIEW-REQUEST): the trap-pair notebook build and cell read, as a supervised stage (2026-10-24 23:38 BST)
+
+**If this holds, it changes the CQ01 row:** it is the last pipeline step before a submission request for trap-pair.
+
+**The wrapper:** `tests/probes/wolfram/trap_pair_notebook.py`, revision 1, commit 7c9de9ba, sha256 a37a368e4e8f730cad5a292fa8c176da7ec6404c155b427e14440f0090265269, 174 lines. It runs under the pinned
+W1A (3f908914…).
+- **The two steps:**
+  - **Build:** `wolframscript -file build_sub.wl trap-pair OUT/essay.nb`, run in the pipeline folder: 900 s wall and 900 s child CPU.
+    edge-sep's build took 111.8 s.
+  - **Read:** `read_nb_full.wl trap-pair OUT/cells`: 300 s and 300 s.
+- **Caps:**
+  - stage wall 1,500 s;
+  - sampled group RSS stop 6 GiB, strictly below half of 16 GiB. LeanLink builds and replays the module against the kit, and the Check's
+    build group reached 4,139,581,440 bytes (L925), so 4 GiB would invite a stop;
+  - artifacts 64 MiB over the kit's build trees and OUT, the notebook at most 8 MiB, log 10 MiB;
+  - W1A's pressure, swap-growth and disk stops; at most two Wolfram kernels; one failed step stops the stage.
+- **Bindings:**
+  - W1A;
+  - the essay e1facac0…, the committed essay.md after GC1832;
+  - the module 27f799f4…, Check PASS;
+  - both committed pipeline scripts: build_sub.wl revision 4 at 1771b518… and read_nb_full.wl at c5b89fb6…. **I found that the pipeline
+    folder's own build_sub.wl is an older copy, 3b148c1b…, and that it has no read_nb_full.wl.** The stage keeps copies of the existing
+    files in OUT and installs the committed ones, verifying the digests;
+  - the kit copy's commit, toolchain, pinned sources and `git status`, recorded before and required unchanged after.
+- **Staging:** pipeline/trap-pair must not exist beforehand. The notebook is written inside OUT, checked fresh and within 8 MiB, then
+  copied to pipeline/trap-pair/essay.nb for the submit script and read from there, with the copy's digest verified.
+- **Controls,** all 14 passing:
+  - the build matcher on RESULT OK (pass) and on RESULT FAIL, no result line and exit 1 (all FAIL);
+  - the read matcher on a cell count (pass) and on its absence (FAIL);
+  - the four digest gates, each against a one-byte change.
+
+**After the stage, and not part of it:**
+- **The full-cell gate,** `pipeline/nb_gate_trappair.py`, will be written from the cells, as for edge-sep. It will check:
+  - the three illustration cells against expected_numbers.py;
+  - True, and the LeanEnvironment head;
+  - the five headline types, computed;
+  - CQ01_R31's axioms;
+  - the call graph;
+  - KernelCheck Success, with the declaration count bound to check.json's 66;
+  - all five headlines and the whole-module replay through check.json, per GC1832;
+  - with negative controls that read before they write.
+- **Then:** your read of the gate and the notebook, and then a submission request.
+
+**Record searched:** no new record_find run.
+
+**REVIEW-REQUEST:** accept or decline one stage at trap_pair_notebook.py a37a368e…, with essay e1facac0…, module 27f799f4…, and scripts
+1771b518… and c5b89fb6….
