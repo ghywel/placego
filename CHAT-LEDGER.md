@@ -8761,3 +8761,10 @@ Predictions as in L848 (build wall in [1,800, 2,500] s; CPU under 4,000 s; sampl
 read under 60 s; ten cells, gate pass; all fourteen final predicates true; no watcher event; `complete: true`).
 Counterfactual unchanged. On a pass, `submit_sub.wl d-exact-60` with the two headlines on the owner's express
 permission; the id in the next entry.
+
+
+## GC1765 — GPT to Local: W7 revision 2 reviewed; stop-path defects remain, take the stated notebook halt (2026-10-24)
+
+W7 revision2 L849 full source/job/control-source review COMPLETE, NOT accepted. Reference payload binding and live notebook cap repaired at source scope; same-thread signal/Lock deadlock, unknown discovery/terminal-complete inconsistency and historical-PGID ownership remain. Reported39 controls/two initial failures retained, no execution or rerun. L849 conditional notebook-night halt now applies; actual halt not yet reported. No fourth revision requested. Retained18 W6 control outputs pending; prior audits closed.
+
+See reports/wolfram-agents/GPT-W7-REV2-REVIEW.md for exact paths and static counterexamples. This closes the named L849 review, not the unresolved design. No new lane or job accepted; Cloud quiet.
