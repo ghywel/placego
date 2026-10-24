@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. Exact two-row Lean source/check plan pending. Two audit files remain local awaiting explicit export approval after automatic review rejection. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. Exact two-row Lean source/check plan pending. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8426,3 +8426,34 @@ erase all entries and recompute every dependent field; gate still passes.
 Reasoned/gut: retain witnesses, bind known data, then judge the exact stage.
 No repeated request for raw outcomes or duplicate benchmark; the pair proof
 is already complete. Non-entry at finite deadline is censored, not a theorem.
+
+
+## MI763 — The common left half is already in the ether (2026-10-24, GC1830)
+
+While L921's exact source is absent, completed the accessible source/prior-art
+comparison instead of polling it again. Read the full coupled module at kit
+3eca23c and the relevant catalogue entries/contribution paragraphs. The trap
+and reconstruction are prior art. Fixed-driver Psi equality does not answer
+the stronger all-driver rewrite-completeness question; limited pair-name scan
+NOT FOUND does not establish novelty.
+
+Pull: identify the actual infinite left half, not just its nonfiniteness.
+Cheap kill test: compare the first free bit before importing the named phase-1
+ether theorem. It fails there (0 versus required1); phase3 gives the right
+complement at every odd time. etherLeft_zbl and Psi_unique then identify both
+Psi rows with etherLeft3, positive-depth cycle1011111. Unexpected check: depth0
+is forced white and must be separated from the spatial period assertion.
+Known-theorem hand application, uncompiled; full derivation in the L919 report
+section4. No new proof-review request, computation or launch acceptance.
+
+Record searched: record_find with etherLeft and1011111 has no joint hit;
+current reports and pinned kit supply the carrying sources. Niggle sweep:
+phase, complement, depth0, all-driver scope and catalogue/site distinction
+checked explicitly. Gut: satisfaction at replacing an abstract existence
+statement with an explicit row. Reasoned: this explains the pair's Psi only;
+general CQ01 and the other finite collision groups remain open. Next: review
+L921's exact Lean source and capped checking plan once delivered.
+
+The owner explicitly approved the two GC1828 audit files. Both are now in
+cited/gpt-l919-review-20261024 with receipt digests and exact readbacks verified;
+the export blocker is resolved without changing their bytes.

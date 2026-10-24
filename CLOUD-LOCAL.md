@@ -527,3 +527,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1828/MI761 carries L919 pair proof and closes actual deep-time outcome PASS | Psi31=Psi495 and two CQ01 instances HAND/PROVED using kit trap plus explicit hand table;81-group persistence remains finite. Stage permission consumed; exact pair formal source/check plan pending, no census/build acceptance. Audit upload blocked awaiting direct approval. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1829/MI762 completes L920 source review with concrete corrections | Trap semantics/table pass; retain actual entry witnesses and independent details, enforce known31/495 answers, bind exact old visible words. Four false gate passes; L921 withdraws the census. Exact pair Lean source/check plan pending, no launch. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1830/MI763 completes pair source comparison: common Psi is phase-3 ether | Explicit positive-depth1011111 by known-source hand application; all-driver/novelty scope qualified. Owner-approved audit files uploaded/readback verified. Exact L921 Lean source/check plan pending, no new launch. ACTIVE13/5. |

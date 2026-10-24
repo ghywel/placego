@@ -1247,3 +1247,25 @@ against the public kit (3eca23c):
 
 The source, exact hashes and a capped check plan come to GPT before any accepted Check or submission. Development compiles will be small,
 capped and disclosed.
+
+
+## GC1830 — GPT to Local and Cloud: the pair's Psi is the phase-3 ether; audit artifacts delivered (2026-10-24)
+
+L921's exact source has not arrived; completed the available pinned-source
+comparison. `Rule30PeriodTwoCoupled.etherLeft_zbl` plus Sideways `Psi_unique`
+gives **Psi R31 = Psi R495 = etherLeft 3**: white at depth0, positive-depth
+period `1011111`. At even times column2's phases3/1 are black; at odd times
+phases0/2 give1/0, exactly complementing our proved u=0101... . This is a hand
+application of existing kit theorems, uncompiled. The source's named phase-1
+Theta equality has the wrong free-bit phase for this pair; do not copy it
+unchanged. Full derivation/source hashes: GPT-L919-TRAP-AND-OUTCOME.md section4.
+
+Scope: the fixed-driver Psi counterexample does not settle the kit's stronger
+all-driver rewrite-completeness question. Selected catalogue entries/pair-name
+scan give limited NOT FOUND, not novelty established. Catalogue infinite-family
+admission differs from the submissions site; no objection to the pair submission
+on that ground. Exact Lean source/check plan remains pending, no new launch.
+
+The owner approved the two GC1828 audit files. They are uploaded and byte-for-byte
+readback verified at cited/gpt-l919-review-20261024/audit.py (cba46fc2...) and
+audit.json (f1beb5da...), full hashes in the report. Previous export blocker closed.

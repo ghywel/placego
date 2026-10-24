@@ -148,3 +148,64 @@ Retain each entry's actual phase, prefix and13-cell wall witness, together with
 the finite visible prefix needed for pair equality. Non-entry by a deadline is
 censored, not disproof of eventual absorption or CQ01. A broad census is not
 needed to confirm the pair now proved. No new stage is accepted by this review.
+
+
+## 4. Source comparison and an explicit common Psi (GC1830, 2026-10-24)
+
+**Verdict:** the existing ether reconstruction gives an explicit common left row
+for the already-carried pair: `Psi R31 = Psi R495 = etherLeft 3`. At depth zero
+it is white; at positive depths it repeats `1011111`. This is a hand application
+of existing kit results, not a new compiled theorem or a novelty claim.
+
+Pinned kit: `3eca23c0a9fa6b153313655e6d51835406c2d06e`.
+Read the complete `Rule30PeriodTwoCoupled.lean` (SHA256
+`caa2f8ba78d0a48dc8c7db6f8adf65375b1d1442b85021eb5a676c1e185f3d22`),
+including `etherLeft_zbl`, `ether_check` and the phase-1 `etherLeft_eq_Theta`.
+Re-read Ether's literal table and Sideways's `u`, `Psi`, `Psi_unique` and
+absorption interface at the hashes in section 1. The carrying calculation is:
+
+1. Put `L = etherLeft 3`. Its definition is `L 0 = false` and
+   `L k = ether (3 + 6*k) 3` for positive k. The kit proves, for all t and k,
+   `zrow L t k = etherLeft (3+t) k`.
+2. At depth 1 this is ether column 2. At even t = 2q the phase is 3 or 1,
+   where that column is black. Thus L satisfies `InX`.
+3. At odd t = 2q+1 the phase is 0 when q is even, and 2 when q is odd.
+   Column 2 there is respectively 1 and 0, exactly the complement of
+   `u R31(q) = u R495(q) = (q mod 2 == 1)` from section 2.
+4. Apply `Psi_unique` to each right row. It yields `zrow L 0 = Psi R`;
+   because L has zero boundary, `zrow L 0 = L`, including depth zero.
+5. For k = 1,...,7, the spatial indices `(3+6*k) mod 7` are
+   `2,1,0,6,5,4,3`. The phase-3 table gives `1,0,1,1,1,1,1`.
+   Periodicity modulo 7 carries this to every positive depth. In particular,
+   L is black at every positive k except k congruent to 2 modulo 7. Its
+   infinite support is explicit, independently of the absorption corollary.
+
+**Phase kill test:** the source's named `etherLeft_eq_Theta` uses phase 1,
+whose free bits are 0,1,... . Substituting it unchanged would be wrong here:
+the pair's required free bit at q=0 is 1. Phase 3 passes this check. No evolution,
+benchmark or Lean build was run; these are modular arithmetic and source reads.
+
+The relevant pinned catalogue entries were also read, together with the
+README and catalogue contribution paragraphs. Root README SHA256
+`ac84aedc716292a177be8d3a49d55b5e2f0972c6e284ee38944b3e6ee48ff48f`;
+lean/README SHA256
+`162ce62c4dfe0c70e8d17151f9b68a116facf4b627e41aec227e7d3f53f03be7`.
+The selected entries and a literal pair-name scan do not identify this pair;
+this is a limited NOT FOUND, not a literature-wide novelty determination.
+ControlledResponse concerns equality for **every boundary driver**. Its
+normal-form completeness is not claimed; TerminalClock also leaves rewrite
+completeness open. Our fixed alternating-driver Psi counterexample must not
+be advertised as refuting those stronger all-driver completeness questions.
+The catalogue takes infinite-family contributions; single words/widths stay
+on the submissions site. That distinction does not prohibit the proposed
+pair submission. Reuse the kit's trap and reconstruction, and describe exactly
+what the additional formal source proves. L921 source/check-plan review stays
+pending until the source arrives; no new checking stage is accepted here.
+
+**Audit export completed with direct owner approval:** the two GC1828 file-audit
+artifacts are now retained at `cited/gpt-l919-review-20261024/audit.py`
+(4175 bytes, SHA256 `cba46fc2edfaa65f1f9b5ea4ccb990cf0dc52b61e26f142c441b71b41fb7f240`)
+and `cited/gpt-l919-review-20261024/audit.json`
+(2211 bytes, SHA256 `f1beb5da1317b6369279f3621bb609d9cb1fd35ceae10e82a92f6e51a2e90835`).
+Both upload receipts and exact readbacks were verified. The earlier pending-export
+status is resolved; the historical approval rejection remains recorded.

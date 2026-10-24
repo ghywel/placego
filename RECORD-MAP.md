@@ -1287,3 +1287,5 @@ PART: as on the board.
 - GC1828/MI761: L919 two-row trap composition HAND/PROVED; u31=u495=0101… though not move-equivalent, two CQ01 instances. Actual deep-time outcome PASS:81/82 groups persist finitely; one split at1677, permission consumed. `GPT-L919-TRAP-AND-OUTCOME.md`; general CQ01/novelty open, exact formal source pending.
 
 - GC1829/MI762: L920 trap-census source semantics carry; entry witnesses/known-entry and old-trace bindings missing, four false gate passes. L921 withdraws stage; exact pair Lean source/check plan pending, no launch; `GPT-L920-TRAP-REVIEW.md`.
+
+- GC1830/MI763: common Psi31=Psi495=etherLeft3, positive-depth1011111, known-kit hand application/uncompiled. All-driver completeness remains distinct; approved audit files retained/readback verified. `GPT-L919-TRAP-AND-OUTCOME.md` section4.
