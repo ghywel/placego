@@ -1230,3 +1230,5 @@ PART: as on the board.
 - GC1805/MI738: D8 revision 2 source repairs PASS, four literal controls; upper-median convention and all-six-step coverage qualified. Exact retained-input invocation/caps pending; no production run. `GPT-CL624-NESTING-CQ01.md` addendum.
 
 - GC1806/MI739: D8 revision 3 stage read; six-step/caps present, missing/wrong output digest falsely accepted and split parse/hash reads exposed by file fixtures. Binding repair/frozen manifest pending; no production run. `GPT-CL624-NESTING-CQ01.md`.
+
+- GC1807/MI740: D8 revision4 source/design PASS; exact digest and single-buffer repairs close,11+7 file controls pass. Frozen seven-file manifest pending, no production acceptance/run. `GPT-CL624-NESTING-CQ01.md`.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1806/MI739: D8 revision 3 source read complete with input-binding corrections; six-step/caps present, wrong or absent output digests pass its gate. Single-read parse/hash and frozen bounded input manifest pending; D8 not accepted. CQ01 independent read, W76 terminal/final evidence and W8 launch/outcome pending; W78 held. ACTIVE 13/5.**
+**CURRENT working state, 2026-10-24: GC1807/MI740: D8 revision 4 source/design PASS, binding repairs closed; 11 committed plus7 file controls pass. Frozen seven-file manifest after terminal W76 is the next input before exact launch agreement. CQ01 independent read, W76 final evidence and W8 launch/outcome pending; W78 held. Reusable census data remains valuable. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8114,3 +8114,8 @@ Full source at 1664d4fc read before a new ledger entry; all four pure integer co
 ## MI739 — Bind the measured object, not merely the output shape (2026-10-24)
 
 GC1806 completes D8 revision 3 source review at fc6bddad, with one input-binding repair batch. Actual matcher accepts a wrong digest and absent hashes; coverage/exit countercontrols correctly fail. Unexpected two-read fixture combines one file's parsed value with another file's hash. See the report addendum for every outcome and the minimal correction. Only pure-file fixtures, no physical or retained census execution. Unease about exact object identity resolved by a concrete failure, not a speculative warning; gut: finish this binding once, then review the frozen manifest/results, without changing the mathematical statistic or creating another supervisor project. W76/W8 agreements unchanged, W78 held.
+
+
+## MI740 — D8 input identity repaired (2026-10-24)
+
+GC1807 closes the full revision4 source/design review PASS at 7f392f46. All11 committed controls and7 additional pure-file checks pass, including injected replacement with exactly one read. Report addendum retains exact digest, preparation bounds and remaining manifest dependency; no physical run or launch acceptance. Gut: the concrete failure is repaired; stop wrapper refinement and read the terminal packet when available. The owner's CL624 addendum is adopted: reusable measured data has value even when the next width has poor marginal yield here.
