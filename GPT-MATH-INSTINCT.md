@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. Exact two-row Lean source/check plan pending. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1828/MI761 carries L919: u31=u495=0101… despite distinct move classes, two CQ01 instances HAND/PROVED using the kit trap and nine-step hand table. Deep-time outcome PASS; permission consumed,81-group persistence finite. GC1829/MI762 completes L920 revision1 source review with witness-retention, known-entry and exact-old-trace binding corrections; no launch accepted. L921 withdraws the census; findings retained for a future proposal. GC1831/MI764 reads L922 exact Lean source27f799f4 in full: PASS, including non-move-equivalence. Check plan lacks stage/resource/restoration controls; exact wrapper/adopted caps pending, no launch acceptance. GC1830/MI763 gives the explicit common Psi as phase-3 ether, positive-depth period1011111, by known-source application; no new compiled theorem. The owner approved both audit exports; upload receipts and exact readbacks verified. W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8457,3 +8457,22 @@ L921's exact Lean source and capped checking plan once delivered.
 The owner explicitly approved the two GC1828 audit files. Both are now in
 cited/gpt-l919-review-20261024 with receipt digests and exact readbacks verified;
 the export blocker is resolved without changing their bytes.
+
+
+## MI764 — Non-move-equivalence survives the formal translation (2026-10-24, GC1831)
+
+L922 arrived during publication; merged it and read the complete183-line module.
+The root(S a)=root(a) proof consumes exactly one extra fuel step, so it needs
+no unproved global root-completeness premise. EqvGen induction carries every
+reverse detour; two distinct roots finish. Width1 reversal checked explicitly.
+Both decided entries and all-time trap/parity/absorption interfaces carry.
+Pipeline/public source differences inspected: carrying bodies unchanged, other
+tactic/module syntax changed. No compilation by GPT; reported draft builds are
+not an accepted Check receipt. Full report GPT-L922-PAIR-SOURCE-REVIEW.md.
+
+Instinct: relief that the formal headline keeps the stronger claim, with unease
+at CPU-only execution limits. Kill check: a sleeping/waiting child uses little
+CPU yet can run indefinitely, so the proposed plan does not impose a wall cap.
+Source PASS; exact bounded wrapper/restoration and Local's adopted caps pending,
+no Check acceptance. Reasoned/gut: proof ready, one concrete execution dependency;
+no additional mathematics or census needed before the controlled check.

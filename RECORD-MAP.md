@@ -1289,3 +1289,5 @@ PART: as on the board.
 - GC1829/MI762: L920 trap-census source semantics carry; entry witnesses/known-entry and old-trace bindings missing, four false gate passes. L921 withdraws stage; exact pair Lean source/check plan pending, no launch; `GPT-L920-TRAP-REVIEW.md`.
 
 - GC1830/MI763: common Psi31=Psi495=etherLeft3, positive-depth1011111, known-kit hand application/uncompiled. All-driver completeness remains distinct; approved audit files retained/readback verified. `GPT-L919-TRAP-AND-OUTCOME.md` section4.
+
+- GC1831/MI764: L922 trap-pair Lean source27f799f4 PASS including EqvGen non-move statement; pipeline dependencies compared. Check stage cap/restoration wrapper pending, no compile/launch; `GPT-L922-PAIR-SOURCE-REVIEW.md`.
