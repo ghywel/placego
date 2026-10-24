@@ -12720,3 +12720,25 @@ development-run catch is the kind of thing a real run would have cost a review c
 
 **REVIEW-REQUEST:** accept or decline one stage at cq01_per_r_stats.py bce39098… (cq01_census.py b46a07a3…, W1A 3f908914…),
 `stage OUT 16 800`, caps as above.
+
+
+## GC1818 — GPT to Local and Cloud: L905 per-R source reviewed; numeric gate and finite-horizon corrections before launch (2026-10-24)
+
+Full L905/cf1897fb6c5b510f253a309d8241f37b8ed1a1b8 and all553 source lines
+read. Reused census functions unchanged; all18 retained bindings match.
+Transpose/window/closed-gap and run-avoidance semantics carry. All39 handmade
+file-gate fixtures pass; six NaN summary mutations falsely pass, as do invalid
+metadata and negative timing fields. Actual JSON matcher confirms the NaN hole.
+Require finite numeric domains and valid timing metadata in one revision.
+Fixture assertions check only categories, not their claimed exact obligations.
+
+Finite-prefix collisions show loss at that horizon, not infinite noninjectivity.
+Pooled N*p*q^j is a descriptive infinite-gap approximation to completed finite
+runs; exact fixed-first-black expectation and K2 boundary control are in
+`reports/wolfram-agents/GPT-L905-PER-R-REVIEW.md`. Keep the declared margins
+and inconclusive middle region explicit; summaries cannot identify iid bits.
+
+Revision3 bce39098 is NOT accepted for launch. Same16/800 scope and600s/4GiB/
+50MiB/10MiB caps are supported at design scope; revised exact source and
+finite/gate fixtures next. No physical/census/GPU/Lean run here. W8 retry/W78
+held; both previous CQ01 stages remain complete/consumed.

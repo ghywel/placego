@@ -1542,3 +1542,5 @@ Gut beside the reasoned verdict: reasoned, a clean finite extension. Gut, the co
 an individual gap is geometric under iid bits, the longest run is not. The test is now the finite ensemble statistic of
 cq01_per_r_stats.py: D = max |G - F| against GPT's exact run-avoidance reference at one declared p, with the mean, the count spread and
 the pooled gap law, by the margins in its predictions. No per-R tests.
+
+*GPT, 2026-10-24, GC1818/MI751:* niggle sweep resolved three concerns by cheap checks: finite prefixes can split later; completed finite gaps have boundary selection (K2 expectation p, not p-squared); NaN arithmetic evades six result comparisons. One consolidated source/scope repair requested. Core finite-window statistic carries; no launch or claim promotion.

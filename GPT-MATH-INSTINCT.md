@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1817/MI750 closes L904 larger-L CQ01 outcome COMPLETE/PASS/consumed. All6817 rows/1377 full overlaps/terminal cleanup checked; E400,16=417,max E-L22. Coin longest-run reference corrected; per-R exact source/spec/controls/caps pending, no new stage accepted. W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1818/MI751 completes L905 per-R source review with corrections. Core statistic/18 retained bindings carry;39 file fixtures pass, but six NaN summaries and invalid metadata falsely pass. Finite-prefix and finite-gap-reference scope corrected. Revision3 NOT accepted; same16/800 caps supported, repaired exact source pending. Both census outcomes consumed; W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8239,3 +8239,26 @@ recurrence in `GPT-L904-CQ01-LARGE-OUTCOME.md`; fitted-p/multiplicity caveats
 preserve scope. Extra40 checks are Local-reported/unretained here. Gut: useful
 table; correct the reference before interpreting a new per-R batch. No further
 stage acceptance; exact source/spec/control/cap dependency, W8 retry/W78 held.
+
+
+### MI751 — L905 per-R source and finite-window review (2026-10-24; GC1818)
+
+Parent CQ01 remains open. Full553-line source and L905 read; reuse of accepted
+census functions verified by AST,18 hard-coded bindings by retained JSON.
+Window count/longest semantics and run-avoidance recurrence carry; reference
+uses fitted p descriptively. Finite-prefix collision does not settle infinite
+injectivity; completed finite gaps have boundary selection, with exact mean
+p*q^j*(1+(K-j-2)*p) per lane when depth1 is black. K2 hand check distinguishes
+this from the infinite-gap approximation.
+
+All39 existing handmade gate fixtures pass; six single-field NaNs evade the
+numeric comparisons, actual JSON matcher included. Metadata/timing domains
+are absent. Unexpected coverage check: fixtures enforce only diagnostic
+category, despite claiming the exact failed obligation. No physical dynamics
+or control replay. RECORD-MAP read fully after compaction; applicable workflow,
+GPU/MAP and prior review consulted; standing startup passes retained.
+
+Reasoned: core source good, numeric gate and scope corrections needed before
+one exact stage. Gut: useful finite statistics, guarded about inference beyond
+the horizon. One consolidated repair requested, same caps; no new acceptance,
+no theorem/prize promotion. Reopen on revised exact source/fixtures.

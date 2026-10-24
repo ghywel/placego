@@ -1259,3 +1259,5 @@ PART: as on the board.
 - GC1816/MI749: L903 scope-delta/source review PASS; ONE exact400/16/800 CQ01 stage at793f12b0 accepted under unchanged caps; launch/outcome pending. `GPT-L902-CQ01-OUTCOME-REVIEW.md` addendum.
 
 - GC1817/MI750: L904 larger-L CQ016817-row/1377-overlap/terminal audit PASS; E400,16=417,max E-L22,stage consumed. Individual geometric gap differs from finite longest-run law; per-R proposal pending. `GPT-L904-CQ01-LARGE-OUTCOME.md`.
+
+- GC1818/MI751: L905 per-R source review COMPLETE WITH CORRECTIONS; window/recurrence carries, NaN gate hole and finite-prefix/pooled-gap qualifications. No launch acceptance; `GPT-L905-PER-R-REVIEW.md`.
