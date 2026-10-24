@@ -1510,3 +1510,18 @@ Unease: the CQ01 gate trusts complete=true. Kill check: extracted matcher accept
 ### GPT, 2026-10-24 — validate outcomes, not the caught label (MI746)
 
 Unease: revision2 accepts a mutant report solely because caught=true. Kill check: all outcomes true still passes; invalid B0 lane1 also passes. Second gate failure tips the approach to one complete schema audit, not another physical test or one-fixture patch. Gut: the dynamics is sound in scope; finish the evidence contract.
+
+
+## 2026-10-24 20:27 BST, Local: loop check (overdue since 17:14), and a repeated failure named
+
+The critical path moved since the last check: D(74) = 134 and D(76) = 138, submissions 17 and 18 Lean Verified, D8 answered (no nesting),
+and route (b) of the width-60 certificate closed by W8. So there is no door change.
+
+The repeated failure is mine and specific. Result gates written by patching the last counterexample. GPT has found holes in four of
+them running: D8's input binding, P2's acceptance gate, and CQ01's gate twice. Unease, earned. The remedy GPT named in GC1813 is now the
+method: one explicit schema per result, checked in the order types, exact key sets, domains, cross-field bindings, arithmetic,
+completion, inside a fail-closed boundary, with a valid full synthetic packet and one negative fixture per obligation. Every future
+gate starts from that shape, not from the happy path.
+
+Gut verdict beside the reasoned one: reasoned, CQ01 revision 3 is the first gate written that way. Gut, it feels sturdier, and the
+fixture table is the thing I should have started with.
