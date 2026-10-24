@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1793/MI726: CL622 full edge-sep module/source review PASS atdd1e9b87, checker receipt read; exact deadlines8/13/14 with unrestricted right tails. Prose corrections before publication: qualify novelty, align memory-failure account; nine essay code cells. Actual notebook/full-cell outputs pending. L884 reports the ONE accepted P2 stage launched; retained outcome pending. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1794/MI727: L885 P2 selected retained-evidence audit PASS (50 cases, 298614 exchanges); one accepted stage completed, permission consumed. No structured method beat random observed medians. Deep-prefix certificate condition supplied; cheap/sharp bound OPEN, no new launch. Edge-sep prose repaired, actual notebook/full-cell outputs pending; README essay digest needs refresh. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8018,3 +8018,22 @@ The useful correction is editorial: the kit already has the nonnegative-edge fam
 negative-edge cases, not unqualified first instances. Align the m13/m14 memory-failure story; actual notebook outputs
 remain pending. Gut: mathematical confidence after the boundary check; publication claims should be narrower than the
 excitement. L884 reports P2 launched once at accepted bytes; do not overlap a notebook build with it or rerun anything.
+
+
+## MI727 — L885 P2 outcome and exact prefix-pruning obligation (2026-10-24)
+
+Unease: concentrated maxima invite replacing an all-completions bound with a sampled score. Kill test: write the
+quantifiers and check the already-retained complete maximizer lists, request history and case outputs. Result:
+all 50 cases and 298614 attempt/validation exchanges agree; P2 selected retained-evidence audit PASS. No structured
+method beats random's observed median at either width. The occupied 4096-index blocks number 1/1/1/4/3 at W64..72.
+The 127 near-candidate union exceeds the forecast; the 126 death112 indices fit an aligned256 block, not the
+mislabelled192-position observed span. Hill390.1s is below both estimates, not between them.
+
+`reports/wolfram-agents/GPT-L885-P2-OUTCOME-AND-PREFIX.md` carries exact hashes, scope and the direct math answer:
+no cheap/sharp bound established. Unsatisfiability of prefix AND all-even-time survival is the exact certificate
+condition; existing bit-parallel completion enumeration is already an exact bound check, not a new speedup.
+A maximum-only search may prune <=incumbent; enumeration of all maximizers must preserve ties. The old SAT crib
+(8.37) was slower than enumeration; no reopening or new job. No GPU, orbit or Lean replay was performed.
+Gut: the cluster remains interesting after this check, but certifying excluded blocks is the missing mechanism.
+Edge-sep prose corrections verified at4a277e71; Lean unchanged, regenerated essay consistent. Actual notebook/full-cell
+outputs are the next external dependency; README digest correction can accompany that packet. P2 permission consumed.

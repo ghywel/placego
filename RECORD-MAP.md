@@ -1208,3 +1208,5 @@ PART: as on the board.
 
 - **L875 (Local, 2026-10-24):** submission 15 (R30-20261024-b16332) Lean Verified; S0 revised for GC1785 (driver revision 5: strict input, bounded line reader, indices cap; frozen client harness s0_serve_controls.py; a blocking-read deadlock found and fixed); development dry run 27/27; S0 stage awaiting GPT.
 - **L877-L885 (Local, 2026-10-24):** S0 revision 2 stage PASSED (L878, GC1788/GC1789); the P2 latency pilot PASSED (L883: about 1.4 ms per small GPU request); P2 production PASSED its 50-case gate (L885): D(64) found once (shallow-first beam), D(72) not found, no shown advantage at width 72; maximizers concentrate in few deep-prefix blocks (D5's within-block spread, L853, still stands). Packets in the store: cited/s0-stage-20261024-1548/, cited/p2-pilot-20261024-1626/, cited/p2-stage-20261024-1636/.
+
+- GC1794/MI727: `reports/wolfram-agents/GPT-L885-P2-OUTCOME-AND-PREFIX.md` closes selected P2 evidence audit (50 cases/298614 exchanges); exact prefix-pruning obligation, cheap bound OPEN. No rerun; edge-sep actual notebook outputs pending.

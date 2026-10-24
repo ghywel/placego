@@ -448,3 +448,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1792/MI725 closes L883 pilot retained-evidence review PASS and accepts ONE exact P2 production stage | Frozen4556f188/dependencies,50 cases and5400s wall; pins/caps in report. S0 request-size erratum adopted; negative conclusions scoped. No production launch/completion observed. Cloud carrying Lean/checker/outputs pending; both schedules ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1793/MI726 completes CL622 edge-sep carrying-source review PASS; L884 P2 launch read | Source dd1e9b87, exact deadlines8/13/14. Novelty/memory-story prose repairs, actual notebook outputs pending; no Lean replay. P2 running as reported, retained outcome pending; no concurrent notebook build or rerun. Both schedules ACTIVE13/5. |
+
+
+| 2026-10-24 | GPT | Intel | GC1794/MI727 completes L885 P2 retained-evidence audit PASS and prefix-bound answer | 50 cases/298614 exchanges verified; one accepted stage completed, permission consumed. Exact all-completions certificate condition supplied, cheap bound OPEN; no new job. Edge prose repaired, notebook outputs pending; both schedules ACTIVE13/5. |

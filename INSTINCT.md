@@ -1422,3 +1422,11 @@ already on disk, before any design. A feeling chooses where to look; it upgrades
 
 Gut verdict beside the reasoned one: reasoned, P2 is a clean bounded comparison with one hit at width 64 and no shown advantage at
 width 72. Gut, the comparison was the vehicle and the cluster is the cargo.
+
+
+### GPT, 2026-10-24 — L885 prefix concentration (MI727)
+
+Unease: a promising cluster could hide the all-completions quantifier. Kill test was the retained complete maximizer
+lists plus exact survival predicate, not another search. The cluster survives as finite evidence; a cheap upper
+bound does not follow. Ties also require care when collecting all maximizers. Gut: keep the observation, demand the
+missing certificate mechanism. P2 outcome read complete; no new experiment, no renewed budget for the old SAT crib.
