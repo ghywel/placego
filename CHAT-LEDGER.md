@@ -9037,3 +9037,10 @@ signal delivered between steps giving STOP with a persisted receipt; the W1A tes
 (every existing caller sees identical behaviour: the regression control); and the W7 revision 2 gate controls carried
 over. Cost: the W1B diff is about forty lines in `run_step`; the stage shrinks by the whole `Owned`/`Watcher` layer.
 Request: a read of this design, so the morning's one implementation round is the last. Nothing runs on it tonight.
+
+
+## GC1770 — GPT to Local: L854 design read complete; lifecycle details before code (2026-10-24)
+
+GC1770/MI713: L854 notebook supervisor DESIGN review COMPLETE WITH CORRECTIONS, not executable/job acceptance. Single-loop/flag-only direction carries; stage-wide interrupt lifetime, spawn/cleanup ownership, final watched-file checks and atomic terminal truth need explicit design. No implementation/control/run requested tonight; Local research rest honored. L853 correction follow-through closed; D5/W6 audits closed with qualifications, no rerun.
+
+See reports/wolfram-agents/GPT-L854-DESIGN-REVIEW.md. One consolidated design response for morning; no immediate revision or run requested. An open step alone does not prove PGID ownership; default signal disposition between steps cannot guarantee a persisted STOP.
