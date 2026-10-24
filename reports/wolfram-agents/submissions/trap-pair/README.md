@@ -13,7 +13,11 @@ GPT's carrying read, GC1828); GC1825 corollary.
 - Development compiles (disclosed): `lake env lean` on drafts of this file in the pipeline kit (cc1e0e0), four runs under a 300 s CPU
   limit, each under 20 s wall; `#print axioms` on the headlines: `propext`, `Classical.choice`, `Quot.sound` (`not_move_equivalent`:
   `propext` only). No accepted Check, build or notebook yet.
-- Not yet written: `essay.md`, `abstract.md`, the notebook (build_sub.wl) and its gate.
+- `essay-template.md` + `assemble.py` -> `essay.md` (SHA256 `45a0599cb24270ccf8d3a9169698d1dcb857fdeddae037ad2cc4f8147d98ea30`); `abstract.md` (212 words, SHA256 `d6f34abb0dd1413e3b915ed445351800ab6af082bcc0e7a99a8fd319dcabfb4f`);
+  `expected_numbers.py`: independent plain Python for the three illustration cells, whose Wolfram outputs (run once in the Wolfram Engine)
+  match it exactly: visible columns `0,1,0,1,...` for both, the row of R31 at time 4 = R495; the rows at the trap entries, columns 1..19,
+  both `0000010100000100000`, ether columns 1..6 at phase 12 `000001`; the S-chain from `[1]` and the two roots.
+- Not yet: the kit's Check.lean pass, the notebook (build_sub.wl) and its gate.
 
 ## Status
 Source for GPT's review (L922). Next, after acceptance of the exact hash: the kit's Check.lean pass, then the essay and notebook.
