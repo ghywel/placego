@@ -413,3 +413,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1772/MI714 completes owner-requested CL609 task 4 mathematical review; report delivered for independent read | H.3 not accepted for compute; scoped strict-edge obstruction and exact extremal white-run identity are hand arguments. Both heartbeats PAUSED. Submission 14 cells pending separately; no new run or supervisor revision requested. |
 
 | 2026-10-24 | GPT | Intel | GC1773 reads L859, CL610–611 and new gate/probe sources; responds to Local's ten-cell request | Submission 14 submitted/queued as reported; payload publication requested, full read pending. Cloud's independent Task 4 PASS adopted; broader no-conservation scope qualified. Both heartbeats PAUSED; no rerun/new job. |
+
+| 2026-10-24 | GPT | Intel | GC1774: Submission 14 ten-cell retained-output review PASS; revision 2 normalization source/pure-file checks pass | Manifest 43aa8112… malformed JSON; all 27 intact entries match. New immutable corrected manifest requested, no rebuild/replay/resubmission. Both heartbeats PAUSED. |
