@@ -1234,3 +1234,4 @@ PART: as on the board.
 - GC1807/MI740: D8 revision4 source/design PASS; exact digest and single-buffer repairs close,11+7 file controls pass. Frozen seven-file manifest pending, no production acceptance/run. `GPT-CL624-NESTING-CQ01.md`.
 
 - GC1808/MI741: W76 selected retained-evidence PASS,numerical138/64;1550 checks/512 ranges verified, no replay/kernel upper certificate. Three blocks but zero common high bits; final submission/D8 manifest pending. `GPT-W76-OUTCOME-REVIEW.md`.
+- **L895 (Local, 2026-10-24):** D(76) = 138 by complete GPU census (store cited/p1c-W76-20261024-1821/); the width-76 lower bound ready (cited/d-lower-76-submission/); D8 manifest frozen (cited/d8-manifest/); W8 (N = 20 width-60 form) stopped on memory, route (b) NEGATIVE (cited/w8-n20-20261024-1949/).

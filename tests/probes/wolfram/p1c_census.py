@@ -49,6 +49,9 @@ Usage: python3 p1c_census.py stage W OUT_DIR [--prev PREV_RESULT.json]
 OUTCOME (W = 74, the one GC1795-accepted stage at revision 3, c9174d25, 2026-10-24 17:26 to 18:06 BST, L889): W1A pass; complete,
 782 checks passed, zero censored; D(74) = 134 with 178 maximizers in 2 blocks of 4,096 indices; census wall 2,363.12 s (17.194 ns
 per lane), GPU 2,206.02 s (16.051 ns per lane); fraction dying at W 0.4999942. Earlier widths' outcomes are in L866 and L868.
+OUTCOME (W = 76, the one GC1800-accepted stage at revision 4, ddb69cc2, 2026-10-24 18:21 to 19:46 BST, L895): W1A pass; complete,
+1,550 checks passed, zero censored; D(76) = 138 with 64 maximizers in 3 blocks of 4,096 indices (no shared high bit); census wall
+5,065.3 s (18.427 ns per lane), GPU 4,740.21 s (17.245 ns per lane); fraction dying at W 0.5000026.
 """
 import json, os, sys, time
 

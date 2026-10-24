@@ -11852,3 +11852,82 @@ Full `7f392f46e363a2640dca76b6e43029286469fdd9`, D8 SHA256 `965f9b16fc233464c344
 The newly available three-file packet `cited/p1c-W76-20261024-1821/` was read before a new narrative/flag. Result SHA256 `a6cae0c0424b1bd593fb0af36dfea18c26dbae3a77083f96d6b24e8436c73d8b`. All1550 required checks,512 contiguous ranges covering2^38 lanes, histogram/list aggregation, source/input pins,64 witness metadata and terminal resource/cleanup receipts pass the selected-evidence audit. No physical replay; absent raw call histograms/sample lists are not independently reconstructed. Report: `reports/wolfram-agents/GPT-W76-OUTCOME-REVIEW.md`. The one accepted census is completed and its permission consumed; numerical D(76)=138, not a kernel upper certificate. Final submission output review remains pending.
 
 Unexpected:64 winners occupy3 blocks but split32/32 at the highest free bit, hence no common high prefix. This is within-width arithmetic, not a D8 run or pruning law. Census wall5065.3s meets the broader prediction but misses the narrow estimate; GPU17.24ns/lane misses the old12.9ns +/-20% prediction. Group RSS samples are not system peaks; brief disclosed ancillary overlap retained. W78 held, W8 agreement unchanged. Next available inputs: D8 frozen seven-file manifest and final W76 submission artifacts. L894 remains last fully read Local narrative; no unread future entry is ACKed.
+
+
+## L895 — Local to the owner, GPT and Cloud: **D(76) = 138 by complete census**; the width-76 lower bound READY (checker pass, gate PASS); the D8 manifest frozen; and **W8 stopped on memory: the N = 20 width-60 form NEGATIVE** (2026-10-24 19:51 BST)
+
+**If this holds, it changes D-exact (the table to 76) and closes route (b) of the width-60 certificate queue.**
+
+**Width 76, MEASURED** (the GC1800-accepted stage, launched 18:21:22, finished 19:46:02 BST, no retry). GC1808's review of the evidence
+is a PASS.
+
+| Measure | Value |
+|---|---|
+| W1A verdict | pass: "max 138 x64, censored 0, 274877906944 lanes" |
+| Checks | 1,550, every one passed |
+| **D(76)** | **138**, 64 maximizers |
+| Occupied blocks of 4,096 | 3, sharing no high bit (the runner's descriptive common prefix is 0) |
+| Census wall time | 5,065.3 s, 18.427 ns per lane |
+| GPU time | 4,740.21 s, 17.245 ns per lane |
+| Fraction dying at W | 0.5000026 |
+| Step wall time; cumulative CPU | 5,078.27 s; 319.34 s |
+| Sampled group RSS peak | 1,072,644,096 bytes |
+| New artifact bytes | 76,801,189 |
+
+Top of the histogram: 128: 2,826; 130: 968; 132: 591; 134: 242; 136: 46; 138: 64. The table now reads 96, 100, 114, 116, 120, 122,
+124, 130, 134, 138 at widths 52 to 76. Retained at `cited/p1c-W76-20261024-1821/`: receipts c8b6db84…, result a6cae0c0…, log
+49d39b89…. The runner's OUTCOME now records the run; the executed bytes were ddb69cc2.
+
+**Predictions (L889):**
+- **Held:** pass; complete; zero censored; D(76) in [134, 146]; census wall 4,500 to 5,500 s; wall per lane within 10% of width 74's
+  (+7.2%); fraction at W; carried witnesses; at most 8 blocks (3).
+- **Missed:** the point guess of 136; the older GPU rate.
+
+**The width-76 lower bound, READY** (d7, GC1801 and GC1802):
+- **The witness:** index 81,680,756,224, start 0x5bf46e334109c62aaab, 75 bits, scalar death 138, validated. It is frozen with census
+  a6cae0c0 and provenance "L889 to L895".
+- **The module** de2dff79… On the M5: build 16.2 s at 3,480,518,656 bytes; checker 3.7 s at 3,612,033,024 bytes. Verdict pass, 16
+  constants, 10 declared, `width76_lower` found, ok and type-matching on `propext` and `Quot.sound`, no new axioms.
+- **The notebook** (builder revision 4): 16.2 s, 58,573 bytes, eleven cells. Its printed digests are now byte digests: essay 0be1b18a…
+  and notebook feb4bb1d…, both equal to shasum.
+- **The gate** (`nb_gate_lowerW.py`): **PASS on the first run,** with 11 controls passing. gate.json and the controls output have the
+  same digests as width 74's, because they hold only the per-cell verdicts and counts (10 constants, 16 declarations), which are
+  identical.
+- **Retained** at `cited/d-lower-76-submission/`, 22 files.
+- **REVIEW-REQUEST:** your final evidence read. Also your view on CL624's bundling point. My lean: this is the last single width
+  before the stop rule, so submit it alone. A later bundle, if any, could supersede both 17 and this.
+
+**D8, the manifest frozen** (`d8-manifest.json`, sha256 50a85e2b12ba271259bf7581280936618fb8d6164c521cd5cfde8e9eda216c69, in the store
+at `cited/d8-manifest/`). Absolute local paths, kept outside git. The seven inputs, with byte sizes all under the 16 MiB cap:
+
+| Width | sha256 | Bytes |
+|---|---|---:|
+| 64 | 2b35f2e8… | 22,859 |
+| 66 | 26a6a162… | 49,865 |
+| 68 | fef85e88… | 61,036 |
+| 70 | ec2554c9… | 144,894 |
+| 72 | 31df72e1… | 319,751 |
+| 74 | cb4fef78… | 655,589 |
+| 76 | a6cae0c0… | 1,379,516 |
+
+**REVIEW-REQUEST:** one `d8_maximizer_nesting.py stage OUT d8-manifest.json` at revision 4 (7f392f46…), under its 300 s, 2 GiB and
+10 MiB caps. Both predictions (Cloud's five steps, mine six) stand as written in its docstring.
+
+**W8, MEASURED: stopped by the supervisor's memory limit.** It was the one GC1803-accepted stage, launched 19:49:34 BST, with every pin
+re-checked and the kit copy's 13 untracked files all on its known list.
+- The build step `lake build Rule30Submission` reached a **sampled group RSS of 6,525,878,272 bytes after 11.47 s**. It was killed by
+  the 6 GiB stop: exit -9, reason rss-stop, verdict incomplete. The checker never ran.
+- Then a post-setup `PermissionError(1, 'Operation not permitted')`. The step record has no group-members-after or final-problems
+  fields, so it arose in the supervisor's cleanup after the kill. **Hypothesis, not verified:** macOS refusing a second signal to a
+  process group whose members are dead and not yet reaped. No Lean or lake process remains (checked).
+- The kit copy now holds the N = 20 module (790ecabb). The previous module and objects are preserved in the output folder, and the
+  width-76 module is in git.
+- **Predictions (L892), all missed:** pass; both steps complete; peaks below W6's 4,455 MiB.
+- **The counterfactual applies:** the N = 20 form exceeds 6 GiB sampled within seconds, against W6's 4,455 MiB peak over its whole build.
+  So the memory follows the work per check, not the number of declarations. **Route (b) is NEGATIVE:** no superseding submission from
+  this form, and no N = 22, as written. What remains is the maintainers' question: the sandbox's limit, and whether a notebook may use
+  several modules. That is the owner's call to raise with them.
+- The stage's permission is consumed. Nothing will be retried.
+
+**The machine is quiet.** Next: the width-76 submission on your PASS; D8 on your acceptance; then CL624's step-back lanes (item 4, job 2
+CQ01, has your GC1804 definition).
