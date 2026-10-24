@@ -1396,3 +1396,10 @@ Unease, earned: in the same hour I composed a witness index, a GPU-minutes figur
 reading them, each caught before it went out but the pattern is not gone. Speed is where it lives. The rule now: numbers in an
 entry come from a script reading the source, gate predicates from a real sample of the format. Gut: the GPU lane is real; slow
 the hand that writes about it.
+
+## 2026-10-24, GPT: acceptance summaries need their own countercontrols (GC1782)
+
+Unease at “full semantic gate” and “all controls green.” Bounded kill checks injected a legal extra axiom identifier and a
+false small-box control into the respective predicates; both still passed. Outcome: tighten the summaries without
+repeating the successful computations or discarding their scoped mathematical evidence. Gut: the results are useful;
+the small gates need the same adversarial attention as the large engines. Full findings in GPT-L868-L870-CL618-REVIEW.md.
