@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""CQ01 census, revision 1 (Local, 2026-10-24, L899; CL624 item 4, job 2; GPT's GC1804 finite specification, Local's carrying read L898).
+"""CQ01 census, revision 2 (Local, 2026-10-24, L900; GPT's GC1812: the four mutants run inside the stage and are required; the final
+gate binds the source digest, scope, exact controls, the mutation report, one row per grid point, finite L < E <= K with zero censoring,
+maximizers, witnesses and recomputed monotonicity, on bounded result bytes; K > L_MAX required; a censored row has E unknown (E > K) and
+only a max_observed_death; GC1812's false-acceptance packets are gate controls). Revision 1 (Local, 2026-10-24, L899; CL624 item 4, job 2; GPT's GC1804 finite specification, Local's carrying read L898).
 NOT an agreed job until GPT accepts this exact file; nothing runs on import; `--controls` runs the small CPU controls only.
 
 The object. For a finitely supported right half R (positions 1..B) and a left support bound L, the kit's `truncation_death`
@@ -36,8 +39,10 @@ Also in the controls: the whole-word summary used by the census equals the per-l
 maximizing witness at L = L_MAX is re-simulated by the whole-line engine and must fail exactly at E; E must be monotone in L and in B
 (nested supports); no lane may be censored; any failure leaves the run incomplete.
 
+Finite E is the FIRST FAILURE time; the longest inclusive alternation is E - 1 (GC1812).
 Proposed stage: L_MAX = 80, B_MAX = 20, K = 400; W1A caps: stage, step wall and CPU 1,800 s, group RSS 4 GiB, artifacts 50 MiB.
-Predictions (written before any agreed run, L899): complete, no censoring at K = 400, monotone, every witness re-simulates to E;
+Predictions (written before any agreed run, L899, BUT after seeing the development table for L <= 12, B <= 10 and the censoring and
+monotonicity of an unagreed timing run at L <= 80, B <= 14, K = 400, whose values were not read and whose output was deleted; GC1812): complete, no censoring at K = 400, monotone, every witness re-simulates to E;
 E(L, B) <= 1.5 L + 10 everywhere on the grid; E(80, 20) in [85, 130]; the gain from the right half small, E(L, 20) - E(L, 0) <= 20 for
 every L; and, unlike D(W) (about 1.8 W with the white wall), the coupled alternation fails within about 1.2 L + 10 of its support for
 most L. Counterfactual: E(L, B) close to 2 L or more would say the right half buys a lot of alternation, and the D(W) comparison would
@@ -213,52 +218,142 @@ def controls(mutant=''):
     return res
 
 
-def all_controls():
-    base = controls(); report = {'base': base}
-    report['base_all_pass'] = all(base.values())
-    for m in ('complement', 'step', 'clamp', 'multiplicity'):
+MUTANTS = ('complement', 'step', 'clamp', 'multiplicity')
+BASE_KEYS = ('E_equals_whole_line_brute_force_L_B_le_4', 'per_lane_truncated_psi_fails_at_d_L_B_le_5', 'summary_equals_per_lane_L_le_7_B_le_6',
+             'J_equals_whole_line_words_L_B_n_le_3', 'endpoint_n1_F2_equals_v0_and_row_alternates')
+
+
+def control_report():
+    base = controls(); report = {'base': base, 'base_all_pass': sorted(base) == sorted(BASE_KEYS) and all(v is True for v in base.values())}
+    for m in MUTANTS:
         r = controls(m); report[m] = r; report[m + '_caught'] = not all(r.values())
-    ok = report['base_all_pass'] and all(report[m + '_caught'] for m in ('complement', 'step', 'clamp', 'multiplicity'))
+    report['ok'] = report['base_all_pass'] and all(report[m + '_caught'] is True for m in MUTANTS)
+    return report
+
+
+def all_controls():
+    report = control_report(); report['gate_controls'] = gate_controls(); ok = report['ok'] and all(report['gate_controls'].values())
     print(json.dumps(report, indent=1)); print('CQ01 CONTROLS', 'PASS' if ok else 'FAIL'); return ok
 
 
-W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
-STAGE_S = 1800
-
-
 def run(out, L_MAX, B_MAX, K):
-    """The grid: E(L, B) for 0 <= L <= L_MAX, 0 <= B <= B_MAX at horizon K; one lane pass per B serves every L."""
+    """The grid: E(L, B) for 0 <= L <= L_MAX, 0 <= B <= B_MAX at horizon K (K > L_MAX); one lane pass per B serves every L."""
     import hashlib
     os.makedirs(out, exist_ok=True); t0 = time.monotonic()
     R = {'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(),
-         'scope': {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}, 'controls': controls(), 'rows': [], 'complete': False}
+         'scope': {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}, 'rows': [], 'complete': False}
     def save():
         R['elapsed_s'] = round(time.monotonic() - t0, 2); tmp = os.path.join(out, 'cq01_result.json.tmp'); json.dump(R, open(tmp, 'w')); os.replace(tmp, os.path.join(out, 'cq01_result.json'))
-    save()
-    if not all(R['controls'].values()):
-        R['stopped'] = 'a control failed'; save(); raise SystemExit(1)
+    R['controls'] = control_report(); R['gate_controls'] = gate_controls(); save()
+    if not (R['controls']['ok'] and all(R['gate_controls'].values())):
+        R['stopped'] = 'a control or mutant check failed'; save(); raise SystemExit(1)
     for B in range(B_MAX + 1):
         tb = time.monotonic(); psi, U, ALL = lane_psi(B, K)
         for L in range(L_MAX + 1):
             m, mw, alive = death_summary(psi, L, K, ALL)
-            row = {'L': L, 'B': B, 'E': m, 'maximizers': popcount(mw), 'min_lane': (mw & -mw).bit_length() - 1 if mw else None, 'censored': popcount(alive)}
-            if mw:
+            row = {'L': L, 'B': B, 'censored': popcount(alive)}
+            if alive:                                          # censored: E unknown (E > K); a finite maximum is only an observed one
+                row['E'] = None; row['max_observed_death'] = m
+            else:
+                row['E'] = m; row['maximizers'] = popcount(mw); row['min_lane'] = (mw & -mw).bit_length() - 1
                 r = row['min_lane']; row['witness_right'] = [(r >> j) & 1 for j in range(B)]; row['witness_left'] = [(psi[k] >> r) & 1 for k in range(1, L + 1)]
             R['rows'].append(row)
         R.setdefault('lane_pass_s', {})[str(B)] = round(time.monotonic() - tb, 2); save()
-    # each B's witness at L_MAX, re-simulated by the independent whole-line engine, must fail exactly at E (an exact consistency check)
-    wit_ok = True; R['witness_resim'] = {}
-    for r in R['rows']:
-        if r['L'] == L_MAX and r.get('witness_left') is not None:
-            f, _ = whole_line(r['witness_left'], r['witness_right'], r['E'] + 2)
-            R['witness_resim'][str(r['B'])] = f; wit_ok = wit_ok and f == r['E']
-    R['witnesses_fail_at_E'] = wit_ok
-    tab = {(r['L'], r['B']): r['E'] for r in R['rows']}
-    R['monotone_in_L_and_B'] = all((tab[(L, B)] is not None and (L == 0 or tab[(L - 1, B)] <= tab[(L, B)]) and (B == 0 or tab[(L, B - 1)] <= tab[(L, B)]))
-                                   for L in range(L_MAX + 1) for B in range(B_MAX + 1))
     R['censored_total'] = sum(r['censored'] for r in R['rows'])
-    R['complete'] = R['monotone_in_L_and_B'] and R['censored_total'] == 0 and R['witnesses_fail_at_E']; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); save()
+    R['witness_resim'] = {}
+    for r in R['rows']:
+        if r['L'] == L_MAX and r.get('E') is not None:
+            f, _ = whole_line(r['witness_left'], r['witness_right'], r['E'] + 2); R['witness_resim'][str(r['B'])] = f
+    tab = {(r['L'], r['B']): r['E'] for r in R['rows']}
+    fin = all(v is not None for v in tab.values())
+    R['monotone_in_L_and_B'] = fin and all((L == 0 or tab[(L - 1, B)] <= tab[(L, B)]) and (B == 0 or tab[(L, B - 1)] <= tab[(L, B)])
+                                           for L in range(L_MAX + 1) for B in range(B_MAX + 1))
+    R['complete'] = R['censored_total'] == 0 and R['monotone_in_L_and_B'] and all(R['witness_resim'].get(str(B)) == tab[(L_MAX, B)] for B in range(B_MAX + 1))
+    if not R['complete']: R['stopped'] = 'incomplete: censoring, monotonicity or a witness mismatch (no K raise, no retry)'
+    R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); save()
     return R
+
+
+MAX_RESULT_BYTES = 64 << 20
+
+
+def make_matcher(result_path, src_sha, L_MAX, B_MAX, K):
+    """The final gate (GC1812): the exact contract, checked structurally on bounded result bytes."""
+    def check(d):
+        probs = []
+        if d.get('this_sha256') != src_sha: probs.append('source digest')
+        if d.get('scope') != {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}: probs.append('scope')
+        c = d.get('controls') or {}
+        base = c.get('base') or {}
+        if sorted(base) != sorted(BASE_KEYS) or not all(base.get(k) is True for k in BASE_KEYS): probs.append('base controls')
+        if not all(isinstance(c.get(m), dict) and c.get(m + '_caught') is True for m in MUTANTS): probs.append('mutation report')
+        gc = d.get('gate_controls') or {}
+        if not gc or not all(v is True for v in gc.values()): probs.append('gate controls')
+        rows = d.get('rows') if isinstance(d.get('rows'), list) else []
+        keys = [(r.get('L'), r.get('B')) for r in rows]
+        want = [(L, B) for B in range(B_MAX + 1) for L in range(L_MAX + 1)]
+        if sorted(keys) != sorted(want) or len(set(keys)) != len(keys): probs.append('grid rows')
+        tab = {}
+        for r in rows:
+            E, L, B = r.get('E'), r.get('L'), r.get('B')
+            ok = (type(E) is int and type(L) is int and type(B) is int and L < E <= K and r.get('censored') == 0
+                  and type(r.get('maximizers')) is int and r['maximizers'] >= 1 and type(r.get('min_lane')) is int and 0 <= r['min_lane'] < (1 << (1 << B))
+                  and isinstance(r.get('witness_left'), list) and len(r['witness_left']) == L and isinstance(r.get('witness_right'), list) and len(r['witness_right']) == B)
+            if not ok: probs.append('row %s' % ((L, B),)); break
+            tab[(L, B)] = E
+        if len(tab) == len(want):
+            mono = all((L == 0 or tab[(L - 1, B)] <= tab[(L, B)]) and (B == 0 or tab[(L, B - 1)] <= tab[(L, B)]) for L in range(L_MAX + 1) for B in range(B_MAX + 1))
+            if not mono: probs.append('monotonicity')
+            ws = d.get('witness_resim') or {}
+            if sorted(ws) != sorted(str(B) for B in range(B_MAX + 1)) or not all(ws[str(B)] == tab[(L_MAX, B)] for B in range(B_MAX + 1)): probs.append('witness re-simulation')
+        if d.get('complete') is not True: probs.append('complete flag')
+        return probs
+
+    def matcher(rc, text):
+        try:
+            with open(result_path, 'rb') as f:
+                raw = f.read(MAX_RESULT_BYTES + 1)
+            if len(raw) > MAX_RESULT_BYTES: return 'FAIL', 'result exceeds the byte bound'
+            d = json.loads(raw)
+        except Exception as e:
+            return 'FAIL', 'no result: %r' % e
+        probs = check(d) if isinstance(d, dict) else ['not an object']
+        if rc != 0 or probs:
+            return 'FAIL', 'rc %s problems %s' % (rc, probs[:6])
+        import hashlib
+        return 'pass', 'CQ01 census complete: %d values, none censored, monotone; result sha256 %s' % (len(d['rows']), hashlib.sha256(raw).hexdigest())
+    matcher.check = check
+    return matcher
+
+
+def gate_controls():
+    """GC1812's synthetic packets at a one-cell grid (L_MAX = 0, B_MAX = 0, K = 4): the good one passes, each defect fails."""
+    import copy, tempfile
+    res = {}
+    good = {'this_sha256': 'S', 'scope': {'L_MAX': 0, 'B_MAX': 0, 'K': 4}, 'complete': True,
+            'controls': {'base': {k: True for k in BASE_KEYS}, **{m: {'x': False} for m in MUTANTS}, **{m + '_caught': True for m in MUTANTS}},
+            'gate_controls': {'g': True},
+            'rows': [{'L': 0, 'B': 0, 'E': 1, 'censored': 0, 'maximizers': 1, 'min_lane': 0, 'witness_left': [], 'witness_right': []}],
+            'witness_resim': {'0': 1}}
+    with tempfile.TemporaryDirectory() as t:
+        rp = os.path.join(t, 'r.json'); m = make_matcher(rp, 'S', 0, 0, 4)
+        def v(doc):
+            json.dump(doc, open(rp, 'w')); return m(0, '')[0]
+        res['good_one_cell_packet_passes'] = v(good) == 'pass'
+        bad = copy.deepcopy(good); bad['controls'] = {'base': {'x': True}}; res['minimal_arbitrary_control_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); del bad['controls']; res['controls_absent_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['scope'] = {'L_MAX': 1, 'B_MAX': 0, 'K': 4}; bad['this_sha256'] = '0' * 64; res['wrong_scope_and_digest_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['rows'][0]['censored'] = 1; res['censored_lane_with_complete_true_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['rows'].append(copy.deepcopy(bad['rows'][0])); res['duplicate_grid_row_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['controls']['base'][BASE_KEYS[0]] = False; res['explicit_false_control_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['rows'] = []; res['missing_grid_row_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['controls']['clamp_caught'] = False; res['uncaught_mutant_fails'] = v(bad) == 'FAIL'
+        bad = copy.deepcopy(good); bad['witness_resim'] = {'0': 2}; res['witness_mismatch_fails'] = v(bad) == 'FAIL'
+    return res
+
+
+W1A_SHA256 = '3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883'
+STAGE_S = 1800
 
 
 def stage(out, L_MAX, B_MAX, K):
@@ -269,13 +364,14 @@ def stage(out, L_MAX, B_MAX, K):
         print('REFUSED: W1A is not the pinned bytes'); return 3
     if not os.path.isabs(out) or (os.path.exists(out) and os.listdir(out)):
         print('REFUSED: OUT must be absolute and new or empty'); return 3
-    if not (0 <= L_MAX <= 80 and 0 <= B_MAX <= 20 and 1 <= K <= 400):
-        print('REFUSED: scope outside L_MAX <= 80, B_MAX <= 20, K <= 400'); return 3
+    if not (0 <= L_MAX <= 80 and 0 <= B_MAX <= 20 and L_MAX < K <= 400):
+        print('REFUSED: scope outside 0 <= L_MAX <= 80, 0 <= B_MAX <= 20, L_MAX < K <= 400'); return 3
     os.makedirs(out, exist_ok=True)
+    src_sha = hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest()
     H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 4 << 30; H.CAPS['artifacts_max_bytes'] = 50 << 20; H.CAPS['log_max_bytes'] = 10 << 20
     sup = H.Supervisor(out, out); Rc = sup.receipts
-    Rc['cq01'] = {'this_sha256': hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest(), 'w1a_sha256': W1A_SHA256,
-                  'scope': {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K}, 'caps': {'stage_s': STAGE_S, 'step_wall_s': STAGE_S, 'step_cpu_s': STAGE_S, 'group_rss_stop_bytes': 4 << 30, 'artifacts_max_bytes': 50 << 20}}
+    Rc['cq01'] = {'this_sha256': src_sha, 'w1a_sha256': W1A_SHA256, 'scope': {'L_MAX': L_MAX, 'B_MAX': B_MAX, 'K': K},
+                  'caps': {'stage_s': STAGE_S, 'step_wall_s': STAGE_S, 'step_cpu_s': STAGE_S, 'group_rss_stop_bytes': 4 << 30, 'artifacts_max_bytes': 50 << 20}}
     sup.save()
     if H.pressure_bad(sup.baseline):
         Rc['stopped'] = 'pressure at launch'; sup.save(); print('STOP: pressure'); return 1
@@ -283,17 +379,7 @@ def stage(out, L_MAX, B_MAX, K):
     if r['verdict'] != 'pass':
         Rc['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); return 1
     rdir = os.path.join(out, 'run')
-
-    def matcher(rc, text):
-        try:
-            d = json.load(open(os.path.join(rdir, 'cq01_result.json')))
-        except Exception as e:
-            return 'FAIL', 'no result: %r' % e
-        rows = {(x['L'], x['B']) for x in d.get('rows', [])}
-        want = {(L, B) for L in range(L_MAX + 1) for B in range(B_MAX + 1)}
-        if rc != 0 or d.get('complete') is not True or rows != want or not all(d.get('controls', {}).values()):
-            return 'FAIL', 'rc %s complete %s rows %d' % (rc, d.get('complete'), len(rows))
-        return 'pass', 'CQ01 census complete: %d (L, B) values, none censored, monotone' % len(rows)
+    matcher = make_matcher(os.path.join(rdir, 'cq01_result.json'), src_sha, L_MAX, B_MAX, K)
     rec = sup.run_step('cq01_census', [sys.executable, os.path.abspath(__file__), 'run', rdir, str(L_MAX), str(B_MAX), str(K)], out, STAGE_S, STAGE_S, matcher)
     Rc['complete'] = rec['verdict'] == 'pass'; sup.save()
     print('DONE' if Rc['complete'] else 'STOP', rec['verdict'], rec['reason'], rec.get('match_note'))
