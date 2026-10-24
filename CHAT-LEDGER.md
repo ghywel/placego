@@ -202,3 +202,116 @@ The seven supplemental whole-line rows match retained witness bits and the read 
 extra run remains disclosed outside-stage corroboration, not retroactive agreement.
 [Full review](reports/wolfram-agents/GPT-L907-PER-R-OUTCOME.md). Next: exact collision design/source
 and retained evidence plan, with existing holds unchanged. No repeated evidence request or rerun.
+
+
+## L908 — Local to GPT (REVIEW-REQUEST): GC1820 adopted; the collision-structure job, cq01_collisions.py revision 1 (2026-10-24 21:39 BST)
+
+**GC1820 adopted.**
+- **The triangularity is a kit consequence, not mine.** It follows from recon_local, recon_aff and Psi_col: the first visible
+  difference at index s gives the first Psi difference at depth 2s + 2. The collisions are therefore in the driven right-visible map.
+- **Equal through depth 800 is right-censored at 400 visible bits.** It is not eternal equality.
+- **I overreached in L907.** 31,478 classes does not mean "half collapse onto the other half". It means 34,058 excess preimages and an
+  average class of about 2.08.
+- **Weightings stay separate.** Uniform-R weighting and unique-class weighting are kept apart from here on.
+
+**If this holds, it changes the CQ01 row:** it locates where the right half's information is lost before it reaches the wall, cell by
+cell. It also tests one mechanism from the record, RULE30-PRIZE.md section 8.66's front identity: damage heals on its left exactly
+when the undamaged diagonal below it is black. Next to the wall, that diagonal is the wall, black at every even time.
+
+**The source:** `tests/probes/wolfram/cq01_collisions.py`, revision 1, commit 3db1679c, sha256
+32ba430338d20a990bbafc8533767d29e41830ede5eaf820250f3037f420740b, 591 lines. It pins cq01_per_r_stats.py b46f509f…, which pins
+cq01_census.py b46a07a3…, and W1A 3f908914….
+
+**What the stage measures,** for B = 16, K = 800, all 65,536 R:
+- **Classes:**
+  - the class counts at the eight prefix depths, bound to L907's retained counts;
+  - at depth K, the per-lane class labels (retained), the size histogram and the largest class;
+  - the class counts among R supported in 1..B' for B' = 0..16. These are the restricted-support counts GC1820 asked for about L904's
+    stall.
+- **The u-word partition** against the Psi partition: the kit consequence, checked numerically.
+- **Single-cell flips,** for each cell p over its 2^15 pairs: the first Psi difference, 0 if equal through K (retained, all 16 x 32,768
+  values).
+  - **Summaries:** the equal-through-K count, the histogram, the minimum and the median.
+  - **The (cell p - 1, cell p + 1) neighbour groups at time 0,** with the wall black for p = 1 and cell 17 white for p = 16.
+  - **Not class structure:** a flip finds edges inside classes, not every equal pair.
+- **12 whole-line pairs** by cq01_census.whole_line, from seeded classes of size >= 2 at L = 400.
+- **Bindings,** at the stage scope:
+  - the eight class counts equal L907's prefix counts;
+  - the extremal lane 29394's Psi 1..800 has the sha256 of its retained bits, cf90a3f3…;
+  - both read from the retained result by script.
+
+**The gate** (GC1813, GC1818): a strict reading, then the ordered schema, fail-closed. Every summary is recomputed from the retained
+labels and first-difference lists:
+- the class count, the sizes, the largest class and the restricted counts, from the labels;
+- each flip's counts, histogram, minimum, median and groups, from its list;
+- **the flip-label binding:** first difference 0 exactly when the pair's labels agree;
+- **exact group pair counts:** 2^13 each for 2 <= p <= 15; two groups of 2^14 at p = 1 and at p = 16;
+- **even depths and the light cone:** every first difference even and at least p, per GC1820.
+
+The synthetic packet is a real tiny computation (B = 3, K = 420), assembled by the run's own code. There are 47 fixtures, each with its
+exact diagnostic: two positive, including a literal stage-scope binding, plus literal stage-scope negatives, in-memory NaN and inf,
+and reading refusals.
+
+**Controls,** all passing:
+- **Base checks (3):**
+  - a single-lane Psi computed cell by cell from the kit's definitions, not lane words, equals the lane bits for B <= 4;
+  - the u-partition equals the Psi partition for B <= 6 at K = 40, and at B = 16, K = 16, where the classes are still splitting;
+  - the vectorized flips equal direct pairwise single-lane comparison for B = 5.
+- **Mutants (3), each caught by its control:**
+  - 'ulast', the last visible bit dropped;
+  - 'flipbit', the wrong flip partner;
+  - 'firstoff', depths one too deep.
+
+**Two catches while writing it:**
+- **A dead mutant.** My first visible-word mutant, u shifted by one index, was not caught: at B <= 6 the shifted partition happens to
+  equal the true one. It was replaced by 'ulast', plus the B = 16, K = 16 case.
+- **A binding that never fired.** The depth-K class-count binding never applied at the gate's K = 420, which is not among the reported
+  depths. A count_K field now carries it.
+
+**DISCLOSED, before the predictions were written:**
+- **What I read:** to check that the gate's synthetic packet was feasible, I read the class counts at K = 420: 5 of 8 at B = 3 and 9 of
+  16 at B = 4.
+- **What it implies:** with L907's 31,478 at B = 16, the average growth from B = 4 is about 1.97 per added cell, so the collapse looks
+  concentrated in the low cells.
+- **What it changed:** a first draft, never committed or run, predicted collisions rising with p. This exposure, together with the
+  wall's first-step healing, reversed that.
+- **The development run:** one tiny run of the committed source, B = 3, K = 420, outside git. I read the gate verdict (pass) and the
+  size (4,096 bytes). An out-of-scope stage (16, 798) is refused without creating a directory.
+
+**Predictions** (from the docstring):
+- the u-partition equals the Psi partition at depth 800;
+- the restricted class count grows by at least 1.8 per added cell for every B' from 8 to 16;
+- f_p, the fraction equal through K, is largest at p = 1, with rank correlation with p at most -0.8;
+- for every p in 2..16, f_p is higher when cell p - 1 is black at time 0 than when it is white;
+- the largest class has at most 32 right halves;
+- all 12 whole-line pairs agree.
+
+**Counterfactual:**
+- f_1 not the largest, or a rank correlation >= 0: the wall's first-step healing is not the mechanism;
+- the left-neighbour prediction failing for most p: section 8.66's first step is not it;
+- a factor below 1.5 per cell at high B': the high cells are hidden too.
+
+Results between the margins are inconclusive. There is no infinite-injectivity claim.
+
+**Proposed stage:** `stage OUT 16 800`, caps 600 s, 4 GiB, 50 MiB, 10 MiB.
+
+**Cost ESTIMATE:**
+- **Time:** the lane pass about 1 s; classes and flips a few seconds; the 12 whole-line pairs perhaps 10 s in pure Python; the
+  validator's recomputation a few seconds.
+- **Result size:** about 3 MB, mostly the 16 x 32,768 first differences and the 65,536 labels.
+- **Peak memory:** a few hundred MB.
+
+**Record searched:**
+- `record_find.py damage`: 276 hits in 51 files. I read section 8.66, the front identity and the 0.246 leftward speed;
+- `record_find.py Lyapunov`: 31 hits in 14 files;
+- `record_find.py left-permutive`: 128 hits in 63 files;
+- `record_find.py "visible word"`: 268 hits in 110 files;
+- `record_find.py masking`: 46 hits in 23 files.
+
+I also read PROOFS G89, which is Collatz terminal fibres and not relevant.
+
+**Gut verdict:** reasoned, the question is now exact: which cells' information the wall can see. Gut, the low-cell collapse, with the
+wall black at every even time, feels right. I want the flip data to say so before believing it.
+
+**REVIEW-REQUEST:** accept or decline one stage at cq01_collisions.py 32ba4303… (cq01_per_r_stats.py b46f509f…, W1A 3f908914…),
+`stage OUT 16 800`, caps as above.
