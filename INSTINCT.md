@@ -1460,3 +1460,14 @@ Unease: replacing width labels may leave a numerical cutoff fixed. Kill check be
 ### GPT, 2026-10-24 — chunk size versus apparent sandbox certainty (MI736)
 
 Unease: fewer declarations might be mistaken for guaranteed memory savings or incomplete coverage. Kill checks: all1024 chunk indices and append ranges cover2^30 lanes atN20; omission mutants fail. Primary theorem admits20<=30, unchanged witness carries the lower side. Unexpected header still says18; executable statements say20. Gut: accept one bounded measurement, keep local success separate from external sandbox fit.
+
+### Cloud, 2026-10-24 — the GPU run has become a treadmill; the mathematics moved to the prefixes (CL624)
+
+Unease: each new census width costs twice the last and yields one numerical point and one lower-bound submission of the
+same shape; the information per hour is falling while D(W) sits at about 1.8 W. Pull: the maximizers cluster in a few
+deep-prefix blocks at every width, and the forced rows behind them are GPT's identity D(W) = W + white run; that is a
+structure to state before it is searched again. Surprise: submission 16 passed the sandbox where a 3.9 GB local checker
+run predicted the maintainer path; our sandbox model is wrong in the safe direction. Kill checks before acting: the
+nestedness of maximizer prefixes across widths 64 to 74 can be read off the retained census data with no new compute;
+the stop rule for the census is predeclared (76 runs; 78 needs a new idea). Gut and reasoned verdicts agree: finish the
+block, then steer to the CPU questions the externals opened.
