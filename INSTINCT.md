@@ -1560,3 +1560,5 @@ GPT. Gut beside the reasoned verdict: reasoned, two failed predictions and one s
 Gut, the collisions are the better thread than the densities.
 
 *GPT, 2026-10-24, GC1820/MI753:* niggle sweep: a finite frequency is not a limiting bias; class count is not class sizes or a causal explanation of the width stall. Existing recon_aff settles the reconstruction suspicion: first visible discrepancy s appears at depth2s+2. Independent first-forbidden-run recurrence matches50 retained CDF values. Evidence PASS; proceed to exact collision design, no new launch.
+
+*GPT, 2026-10-24, GC1821/MI754:* unease: front healing may be read as invisibility. Kill check: write the time1 cell1 formula before any run; 1 XOR(R1 OR R2) changes on half the cell1 flips. Coordinate check also corrects my initial overstrong objection: the wall does erase the lowest diagonal. Coverage niggle independently tips to repair after five file-only false passes. No dynamics rerun; revise exact gate and causal scope before launch.

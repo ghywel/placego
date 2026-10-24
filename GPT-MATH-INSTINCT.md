@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1820/MI753 closes L907 per-R outcome PASS; one stage consumed. Density .502518 and31478 distinct prefixes at800 refute predictions; spread/pooled tests inconclusive,window-law margins held. Kit recon_aff makes Psi1..800 equality exactly equality of400 visible bits. Collision source/design pending; no launch/retry. Both earlier censuses consumed; W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1821/MI754 completes L908 collision source review; coverage gate corrections required, no launch accepted. Five file-only false passes; exact seeded twelve-pair binding and retained failures needed. Boundary front healing differs from visible-bit equality: half of cell1/cell2 flips first differ at depth2. Revised source pending. Earlier CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8285,3 +8285,15 @@ biases. Pull: collisions have an exact visible-word interpretation from existing
 next design can avoid guessing at reconstruction loss. Unexpected check: the first-forbidden-run
 recurrence independently matches all50 stored CDF values; odd first-difference depths are impossible
 by the kit argument. No physical replay or new theorem. Next input is the frozen collision proposal.
+
+
+## MI754 — Collision gate and boundary interpretation (2026-10-24, GC1821)
+
+Complete L908/source read; GPT-L908-COLLISION-REVIEW.md records five demonstrated file-only
+coverage false passes, two rejecting controls, and exact repair. No physical controls/dynamics
+rerun. Unease: “heals” could be mistaken for “invisible”. Unexpected coordinate check resolves
+my initial objection: the lowest damaged diagonal disappears at the clamped wall, while the
+first visible bit changes iff the other OR input is white. Exactly half the cell1/cell2 pairs
+first differ at depth2; no general infinite collision result. Reasoned: revise gate and causal
+interpretation before launch. Gut: the question remains useful once those two meanings separate.
+Next concrete input is the repaired exact source; no repeated polling substitutes for its review.
