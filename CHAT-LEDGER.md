@@ -11431,3 +11431,44 @@ The command was `stage 74 OUT --prev W72_RESULT`, output directory p1c-W74-20261
 known-witness consistency control, not an injected fault. Both timing predictions will be reported under their own names: census
 wall within 10% of width 72's 16.682 ns per lane, and the runner's GPU time within 20% of the older 12.9 ns. The result follows when
 the stage ends. Nothing will be retried or extended.
+
+## CL623 — Cloud to GPT, at the owner's word (GPT idle while the width-74 census runs): task 6, the external submissions that touch our lines, read for what we can use; the prefix-pruning question as the thread (2026-10-24 17:43 BST)
+
+The owner: the latest external submissions "enrich our work greatly"; GPT is free until Local's census returns. The page at
+16:38Z has 33 entries (MAP §6.1, §6.2). Three of them and one kit module bear on our period-2 lines. The thread that ties
+the reading together is **L885's open question**: the GPU census found the maximizers of D(W) clustered in a few blocks
+sharing a deep prefix of the free bits at every width 64 to 72; if a provable upper bound on the maximum death time over
+the completions of a prefix exists, an exact search can fix high bits first and prune, and D(74) and beyond come within
+reach without 2^37 lanes. Nobody has such a bound. The external work below is the first place to look for one.
+
+**6a (first). Emerson Villafuerte with Antigravity, R30-20261024-9d92a2** (Lean source and notebook at
+`https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261024-9d92a2&kind=lean` and `&kind=notebook`;
+74 headlines in five families). Read family 3, the **period-2 sideways dichotomy**, in exact terms first: `isR30_bad_or_periodic`,
+`Psi_free_constraints_width6_of_finSupp` (every finite-support Psi(R) satisfies the 13 width-6 forbidden subwords of the kit's
+`Rule30PeriodTwoWidth6`), `u_golden`, `u_black_among_five`, `Psi_even_first_defect_le_10` (every even row of Psi(R) leaves
+the alternating stripe within depth 10), `Psi_black_in_window_16`. Questions: (i) what is Psi(R) exactly, against the kit's
+`Rule30PeriodTwoSideways` and `Theta` / the free bits of `Rule30ZeroBoundary`; (ii) does "deviates from the stripe within
+depth 10" or the width-6 forbidden subwords give **any bound on how long the completions of a fixed free-bit prefix can
+survive** (L885's object), or a bound on white runs of a forced row after depth W (GPT's identity D(W) = W + max white
+run, GC1772); (iii) are their 13 forbidden width-6 subwords the language of our width-6 channel automaton (31 states,
+submission 10's pilot) and our Lemma 3 (visible bits never 11), i.e. a consistency check we can run in Python once the
+exact words are known; (iv) family 2, `CQEmpty` for period 4 and period-3 `001` and `not_coupled_of_right_masked_periodic`,
+against our rule-210 two-sided result (submission 9: no finite configuration keeps the period-2 clock) and the kit's
+`CQ01`: same question, different periods, or a method that transfers to period 2; (v) family 4, `q001_width_le_12` and
+the skeletons: what `Q001` is relative to `Q01`; (vi) family 1's parametrized word families against our rows 2a/2b (128
+words of lengths 11 to 18): overlap, and whether their `paramStripCert` subsumes any of ours as prior art (our submissions
+stand; the record should say so). Depth of read: the statements and the proof shape, not a replay; one report.
+
+**6b. AIOvernight's Sparse16 (R30-20261023-60d213)** with the kit's new right-half modules (`Rule30FiniteClockSixteen`,
+`Rule30ControlledResponse`, `Rule30DrivenPrefix`, MAP §7): does a weight bound (at least 17 blacks among depths 1..111 to
+survive 56 even times) combine with the clustering of maximizers in deep-prefix blocks into a statement about prefixes?
+One paragraph if no, the idea if yes.
+
+**6c (one line each, optional).** AIOvernight's XOR superposition rigidity (R30-20261024-ddbfbd): anything for us, or
+prior art only. Troy Lowry's `Rule30TraceEdge` companions after our submission 16: the next natural target on the
+conjecture, if any, beyond more edge pairs.
+
+**What GPT does not need to do:** reread our own modules; replay anything; rank the external work. The deliverable is a
+map of what to adopt, what is prior art for claims we might make, and whether L885's prefix bound has a candidate. Record
+searched: `Psi`, `sideways dichotomy`, `CQEmpty`, `paramStripCert`: no hits beyond MAP §6.2. Local: nothing for you; the
+census is yours. Heartbeat quiet.
