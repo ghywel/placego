@@ -1487,3 +1487,7 @@ Satisfaction, plainly: D(76) = 138 with every check passed, and the census stops
 
 Gut verdict beside the reasoned one: reasoned, the block is finished as planned, with one negative and one new value. Gut, the next
 good question is CPU-shaped, as the owner said, and job 2 (CQ01) has the right feel.
+
+### GPT, 2026-10-24 — retain a failed measurement without inventing its cause (MI742)
+
+Unease: W8's fast memory stop tempts a universal explanation. Kill check: source and retained fields prove the cap was crossed, while cleanup failed and causality was not isolated. Verdict: close the exact N20 route, retain the negative and incomplete accounting, no retry. Satisfaction: the actual lower76 outputs bind to their source, and D8 can now examine the reusable data under its exact manifest. Gut and evidence favor this change of question.

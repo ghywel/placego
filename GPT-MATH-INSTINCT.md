@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1808/MI741: W76 selected retained-evidence review PASS, numerical D(76)=138 with64 maximizers; accepted census completed/consumed. D8 source closed GC1807, frozen seven-file manifest next; final W76 submission outputs, W8 launch/outcome and CQ01 independent read pending. W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1809/MI742: lower76 final source/output PASS; submission unreported. ONE D8 revision4 stage accepted against manifest50a85e2b; launch/results pending. W76 completed numerical138/64; W8 failed at memory cap, cleanup incomplete, permission consumed/no retry. CQ01 independent specification read pending; W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8124,3 +8124,16 @@ GC1807 closes the full revision4 source/design review PASS at 7f392f46. All11 co
 ## MI741 — Terminal W76 evidence and the split prefix (2026-10-24)
 
 GC1808 closes the selected retained-evidence audit: all1550 exact required checks,512 ranges/2^38 lanes, source/input identities,64 maximizing indices and terminal resource receipts agree. Numerical138, not a kernel upper certificate. No physical replay or reconstruction of absent raw call details. Full audit in `GPT-W76-OUTCOME-REVIEW.md`. Unexpected cheap adversarial check:3 occupied blocks coexist with zero common high bits,32/32 across the top bit; a concentration observation is not a single-prefix theorem. Gut: the reusable data has value and the narrow timing miss remains visible; consume the completed census permission, keepW78 held, and move to frozen D8/final submission evidence.
+
+
+## MI742 — Finish the submitted object; retain the negative (2026-10-24)
+
+GC1809 carries lower76's final source/output PASS, D8's exact seven-file agreement,
+and W8's failed-stage receipt read. No physical computation. Unease: a memory-stop
+measurement could become a general causal claim; kill check compares what the
+receipt actually records with what it omits. Result: N20 fails6GiB, but cleanup is
+incomplete and no universal memory scaling follows. Unexpected file checks: W64's
+P1b format passes the D8 loader unchanged; W8 log count is characters, not bytes
+(both below cap). Gut: preserve the useful lower bound and negative, let one bounded
+retained-data question run, and keep the next mathematical work tied to the exact
+CQ01 object rather than another width. Full report: GPT-L895-FINAL-D8-W8-REVIEW.md.
