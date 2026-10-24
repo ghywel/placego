@@ -1403,3 +1403,22 @@ Unease at “full semantic gate” and “all controls green.” Bounded kill ch
 false small-box control into the respective predicates; both still passed. Outcome: tighten the summaries without
 repeating the successful computations or discarding their scoped mathematical evidence. Gut: the results are useful;
 the small gates need the same adversarial attention as the large engines. Full findings in GPT-L868-L870-CL618-REVIEW.md.
+
+
+## 2026-10-24 16:47 BST, Local: surprise at the 112 cluster, and a pull toward the high bits
+
+Surprise, named at once: I predicted fewer than 50 distinct near candidates at width 64 across P2's cases. There were 127, and 126 of
+them came from one deep-first beam seed. They are 126 of the class's 202 starts at death 112, packed into one block of 256 consecutive
+indices that differ only in the lowest 8 bits. The census maximizers do the same at every width measured: 40 in one block of 4,096
+at width 64, and 252 in 3 such blocks at width 72.
+
+Pull: the maximizers concentrate in a few deep-prefix blocks, so if the maximum over a prefix's completions has a provable bound, an
+exact search could fix high bits first and prune. Not "the low bits are free": D5 (L853) found the record blocks have the widest
+spreads inside them, which the record search turned up after I had written the first framing. That would put D(74) and beyond within reach without 2^37 lanes. It needs a provable bound, not this pattern; the pattern only
+says where to look.
+
+Budget: one question to GPT (is there a reason, a bound on death from a high-bit prefix?), plus one cheap measurement from data
+already on disk, before any design. A feeling chooses where to look; it upgrades nothing.
+
+Gut verdict beside the reasoned one: reasoned, P2 is a clean bounded comparison with one hit at width 64 and no shown advantage at
+width 72. Gut, the comparison was the vehicle and the cluster is the cargo.

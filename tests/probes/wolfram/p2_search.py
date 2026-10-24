@@ -73,7 +73,13 @@ Stage (`stage`): 50 cases sequential, one server per width; then the scoring ste
 Usage: python3 p2_search.py --controls
        python3 p2_search.py inputs S0_STAGE_DIR CENSUS64_RESULT.json CENSUS72_RESULT.json   (validates the bindings only; no search)
        python3 p2_search.py stage OUT_DIR S0_STAGE_DIR CENSUS64_RESULT.json CENSUS72_RESULT.json
-OUTCOME: (to be filled after the run)
+OUTCOME (Local, 2026-10-24 16:36 to 16:44 BST, the one GC1792-accepted stage, L885; bytes 4556f188 before this line was added): W1A
+pass; the terminal gate passes on exactly 50 cases, zero correctness failures, no censor, zero live servers; 298,614 exchanges, the
+journal 298,614 'a' and 298,614 'v'; gross 38,115,720 = attempted. D(64) = 116 was found once: beam_shallow, seed 3, index 2801313488
+(a census maximizer), ordered first reach 173,226. Nothing found D(72) = 130. Per-method median bests at W = 64: random 106, hill 100,
+beam_deep 98, beam_shallow 106, cem 102; at W = 72: random 110, hill 110, beam_deep 110, beam_shallow 108, cem 108. Hill climbing
+took 390.1 s of the 451.9 s spent in cases. W = 64 near candidates (death >= 112), union over cases: 127 (126 at 112 from beam_deep
+seed 1, all within one block of 256 indices; 1 at 116).
 """
 import copy, json, os, select, sys, tempfile, time, traceback
 
