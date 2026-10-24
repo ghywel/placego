@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""trap-pair notebook, revision 2 (Local, 2026-10-24, L927; GPT's GC1835: unknown untracked kit paths refused; the installed pipeline
+"""trap-pair notebook, revision 3 (Local, 2026-10-24, L928; GPT's GC1837: one owned-step supervision and cleanup path in the main
+thread. The kernel watcher never signals another process: on a monitor error or a sample above two kernels it asks the MAIN thread to
+stop, once, by SIGUSR1 to this process; the main-thread hook raises KernelLimit only while the main thread holds the watch open, so W1A's
+run_step kills its own step group and the stage stops UNKNOWN; a request after the watch closed is only counted. A watcher still alive
+after shutdown, or any recorded event, also stops the stage UNKNOWN before the next phase; cleanup of owned groups and the final kernel
+inventory with any uncertainty are recorded in the main thread on every exit, including failures and interrupts). Revision 2
+(L927; GPT's GC1835: unknown untracked kit paths refused; the installed pipeline
 scripts rehashed at the terminal gate; the two-kernel limit made concrete by a Wolfram process inventory with a quiet baseline, a
 one-second watcher that stops only this stage's own process groups above two kernels, and a post-step check that every new kernel is
 gone (a remaining kernel whose ownership is uncertain is never signalled and stops the stage); the read matcher binds a positive
@@ -22,9 +28,14 @@ notebook is written inside OUT (covered by artifact sampling), checked fresh and
 the submit script and read from there; the copy's digest is verified.
 Kernel scope: a Wolfram kernel is a process whose executable lies in the Wolfram Engine bundle and is named WolframKernel or wolfram (the
 form `ps` shows for wolframscript's kernel and for a LeanLink or MCP kernel). The baseline must hold at most one kernel (so the stage's own
-kernel keeps the total within two); during each step a watcher samples every second and, above two, kills only this process's own
-session-leading children (W1A spawns each step in its own session) and records the reason; after each step every kernel not in the
-baseline must be gone, else the stage stops UNKNOWN without signalling it. A process-group scan proves cleanup of that group only.
+kernel keeps the total within two). During each step a watcher samples the inventory every second; on a monitor error or a sample above
+two kernels it requests a stop of the running step through the main-thread hook (above). After the step the MAIN thread closes the watch
+(from then on a request is only counted), stops the watcher, verifies it has ended (join, then is_alive), and stops the stage UNKNOWN on
+a monitor error, a sample above two kernels, or a watcher still alive. Cleanup is in the main thread only: W1A's own group termination at each step's end;
+after each step, new kernels in this process's own groups (its session-leading children; W1A spawns each step in its own session) are
+killed and every kernel outside the baseline must be gone, else UNKNOWN; on every exit (pass, stop, exception, SIGTERM) the finally path
+kills only remaining owned groups, then records the final kernel inventory, the owned groups and any uncertain kernel, never signalling
+an unowned or uncertain process. A process-group scan proves cleanup of that group only.
 read_nb_full.wl's printed digests are Wolfram string hashes, not file-byte digests; the later gate uses byte digests.
 Persistence and recovery: the staged folder and the installed pipeline scripts stay in place by design (disclosed); the receipt records the
 preserved copies and the staged folder as recovery locations on every exit; no automatic retry.
@@ -146,27 +157,82 @@ def kit_state(kit):
             'sources': {f: H.digest(os.path.join(kit, f)) for f in H.PIN['sources']}, 'toolchain': open(os.path.join(kit, 'lean-toolchain')).read().strip()}
 
 
+class KernelLimit(BaseException):
+    """Raised in the main thread by the watch hook; W1A's run_step then kills its own step group and re-raises."""
+
+
+WATCH = {'active': False, 'fired': False, 'late': 0}
+
+
+def on_watch_signal(signum, frame):
+    """The main-thread hook (SIGUSR1): interrupt the running step once, and only while the main thread holds a watch open."""
+    if WATCH['active'] and not WATCH['fired']:
+        WATCH['fired'] = True; raise KernelLimit('the kernel watch requested a stop')
+    WATCH['late'] += 1
+
+
+def own_stop_request():
+    os.kill(os.getpid(), signal.SIGUSR1)
+
+
 class KernelWatch:
-    """Samples the kernel inventory every second during a step; above the limit it kills only this process's own session-leading
-    children (the step's group) and records the event. Never signals a process outside the owned groups."""
-    def __init__(self, R):
-        self.R = R; self.stop_evt = threading.Event(); self.events = []; self.max_seen = 0
+    """Samples inv_fn every `period` seconds during a step and records the largest count, every sample above the limit and every
+    monitor error; on the first such event it calls `notify` once (by default SIGUSR1 to this process: the main-thread hook). It never
+    signals another process. The main thread closes the watch, stops the thread and checks that it has ended (decide_watch)."""
+    def __init__(self, inv_fn=None, period=1.0, join_s=20.0, notify=None, sink=None, key=None):
+        self.inv_fn = inv_fn or kernel_inventory; self.period = period; self.join_s = join_s
+        self.notify = notify or own_stop_request; self.sink = sink; self.key = key
+        self.stop_evt = threading.Event(); self.over = []; self.errors = []; self.max_seen = 0; self.alive_after = None; self.requested = False
     def run(self):
-        while not self.stop_evt.wait(1.0):
+        while not self.stop_evt.wait(self.period):
             try:
-                inv = kernel_inventory(); self.max_seen = max(self.max_seen, len(inv))
-                if len(inv) > KERNEL_LIMIT:
-                    gs = owned_groups(os.getpid())
-                    for g in gs:
-                        try: os.killpg(g, signal.SIGKILL)
-                        except ProcessLookupError: pass
-                    self.events.append({'time': time.strftime('%H:%M:%S'), 'kernels': [k[0] for k in inv], 'killed_owned_groups': sorted(gs)})
+                inv = self.inv_fn(); self.max_seen = max(self.max_seen, len(inv))
+                if len(inv) > KERNEL_LIMIT: self.over.append({'time': time.strftime('%H:%M:%S'), 'kernels': [k[0] for k in inv]})
             except Exception as e:
-                self.events.append({'time': time.strftime('%H:%M:%S'), 'monitor_error': repr(e)})
+                self.errors.append({'time': time.strftime('%H:%M:%S'), 'monitor_error': repr(e)})
+            if (self.over or self.errors) and not self.requested and not self.stop_evt.is_set():
+                self.requested = True; self.notify()
     def __enter__(self):
+        if self.notify is own_stop_request and signal.getsignal(signal.SIGUSR1) is not on_watch_signal:
+            raise RuntimeError('the main-thread watch hook is not installed')
+        WATCH['fired'] = False; WATCH['active'] = True
         self.t = threading.Thread(target=self.run, daemon=True); self.t.start(); return self
     def __exit__(self, *a):
-        self.stop_evt.set(); self.t.join(5)
+        WATCH['active'] = False                     # main thread: from here a stop request is only counted
+        self.stop_evt.set(); self.t.join(self.join_s); self.alive_after = self.t.is_alive()
+        if self.sink is not None: self.sink[self.key] = self.record()
+        return False
+    def record(self):
+        return {'max_kernels_seen': self.max_seen, 'over_limit': self.over, 'monitor_errors': self.errors, 'stop_requested': self.requested,
+                'alive_after_join': self.alive_after}
+
+
+def decide_watch(kw):
+    """The main thread's verdict on a finished watch: None if clean, else the UNKNOWN reason."""
+    if kw.alive_after is not False: return 'UNKNOWN: the kernel watcher did not stop'
+    if kw.errors: return 'UNKNOWN: kernel monitoring failed during the step'
+    if kw.over: return 'UNKNOWN: more than two Wolfram kernels during the step'
+    return None
+
+
+def final_kernel_record(baseline_pids, me, kill=True):
+    """On every exit: kill only this process's own remaining groups, then record the inventory and any uncertain kernel."""
+    rec = {}
+    try:
+        gs = owned_groups(me); rec['owned_groups_at_exit'] = sorted(gs)
+        if kill:
+            for g in gs:
+                try: os.killpg(g, signal.SIGKILL)
+                except ProcessLookupError: pass
+    except Exception as e:
+        rec['owned_groups_error'] = repr(e)
+    try:
+        inv = kernel_inventory(); rec['inventory'] = inv
+        bp = set(baseline_pids) if baseline_pids is not None else None
+        rec['uncertain'] = [k[0] for k in inv if bp is None or k[0] not in bp]
+    except Exception as e:
+        rec['inventory_error'] = repr(e); rec['uncertain'] = 'unknown: inventory failed'
+    return rec
 
 
 def controls():
@@ -203,6 +269,79 @@ def controls():
     res['kernels_baseline_plus_owned_ok'] = kernel_verdict(inv_ok, {base_pid}, {own_g})[0] == 'ok'
     res['kernels_three_over'] = kernel_verdict(inv_ok + [(777, 1, 777, '/Applications/Wolfram Engine.app/x/WolframKernel')], {base_pid}, {own_g})[0] == 'over'
     res['kernels_new_unowned_uncertain'] = kernel_verdict([(base_pid, 1, 90, 'p'), (888, 1, 888, 'q')], {base_pid}, {own_g})[0] == 'uncertain'
+    real_killpg, real_kill, prev_usr1 = os.killpg, os.kill, signal.getsignal(signal.SIGUSR1)
+    targets = []
+    def no_killpg(*a): raise AssertionError('the watcher signalled a group')
+    def own_only(pid, sig):
+        targets.append((pid, sig))
+        if pid != os.getpid() or sig != signal.SIGUSR1: raise AssertionError('the watcher signalled another process')
+        real_kill(pid, sig)
+    os.killpg, os.kill = no_killpg, own_only
+    signal.signal(signal.SIGUSR1, on_watch_signal)
+    def stage(inv_fn, hold=1.5, join_s=2):
+        """A mock stage step: the main thread holds the watch open while it waits, as during run_step."""
+        kw = KernelWatch(inv_fn=inv_fn, period=0.05, join_s=join_s)
+        try:
+            with kw:
+                t1 = time.time()
+                while time.time() - t1 < hold: time.sleep(0.02)
+            return kw, None
+        except KernelLimit as e:
+            return kw, e
+    try:
+        def raising(): raise H.MonitorError('ps failed')
+        kw, e = stage(raising)
+        res['hook_monitor_error_interrupts_step'] = e is not None and (decide_watch(kw) or '').startswith('UNKNOWN: kernel monitoring failed')
+        three = lambda: [(1, 0, 1, 'a'), (2, 0, 2, 'b'), (3, 0, 3, 'c')]
+        kw, e = stage(three)
+        res['hook_three_kernels_interrupts_step'] = e is not None and (decide_watch(kw) or '').startswith('UNKNOWN: more than two')
+        one = lambda: [(1, 0, 1, 'a')]
+        kw, e = stage(one, hold=0.4)
+        res['hook_clean_runs_through'] = e is None and decide_watch(kw) is None and not kw.requested
+        late0 = WATCH['late']
+        def slow_three(): time.sleep(0.4); return three()
+        kw, e = stage(slow_three, hold=0.05, join_s=0.05)
+        alive = kw.alive_after
+        t1 = time.time(); raised_late = False
+        try:
+            while time.time() - t1 < 1.0: time.sleep(0.02)
+        except KernelLimit:
+            raised_late = True
+        res['hook_alive_watcher_is_unknown'] = e is None and alive is True and (decide_watch(kw) or '').startswith('UNKNOWN: the kernel watcher did not stop')
+        res['hook_no_request_after_close'] = not raised_late and not kw.requested and WATCH['late'] == late0
+        try:
+            own_stop_request(); time.sleep(0.1); raised_late = False
+        except KernelLimit:
+            raised_late = True
+        res['hook_late_request_only_counted'] = not raised_late and WATCH['late'] == late0 + 1
+        res['watcher_signals_only_this_process'] = bool(targets) and all(t == (os.getpid(), signal.SIGUSR1) for t in targets)
+    except AssertionError:
+        res['watcher_signals_only_this_process'] = False
+    finally:
+        os.killpg, os.kill = real_killpg, real_kill
+        signal.signal(signal.SIGUSR1, prev_usr1)
+    res['hook_refuses_without_handler'] = False
+    try:
+        with KernelWatch(inv_fn=lambda: [], period=0.05): pass
+    except RuntimeError:
+        res['hook_refuses_without_handler'] = True
+    import tempfile
+    signal.signal(signal.SIGUSR1, on_watch_signal)
+    try:
+        with tempfile.TemporaryDirectory() as tk, tempfile.TemporaryDirectory() as to:
+            sup = H.Supervisor(tk, to); rec, got = None, None
+            try:
+                with KernelWatch(inv_fn=lambda: [(1, 0, 1, 'a'), (2, 0, 2, 'b'), (3, 0, 3, 'c')], period=0.2, join_s=2) as kw:
+                    rec = sup.run_step('mock_step', ['sleep', '30'], to, 60, 60, H.m_pass)
+            except KernelLimit as e:
+                got = e
+            st = sup.receipts['steps'][-1] if sup.receipts['steps'] else {}
+            res['w1a_step_interrupted_and_group_killed'] = (got is not None and rec is None and st.get('reason') == 'exception'
+                                                            and st.get('group_members_after') == 0 and st.get('wall_s', 99) < 10)
+    finally:
+        signal.signal(signal.SIGUSR1, prev_usr1)
+    fk = final_kernel_record({base_pid}, os.getpid(), kill=False)
+    res['final_record_has_inventory_and_uncertainty'] = 'inventory' in fk and 'uncertain' in fk
     here = os.path.dirname(os.path.abspath(__file__)); repo = os.path.realpath(os.path.join(here, '../../..'))
     files = {'essay': (os.path.join(repo, 'reports/wolfram-agents/submissions', NAME, 'essay.md'), ESSAY_SHA256),
              'module': (os.path.join(repo, 'reports/wolfram-agents/submissions', NAME, 'Rule30Submission.lean'), MODULE_SHA256)}
@@ -241,13 +380,14 @@ def main():
     def on_term(signum, frame):
         raise SystemExit('SIGTERM')
     signal.signal(signal.SIGTERM, on_term)
+    signal.signal(signal.SIGUSR1, on_watch_signal)
     try:
         before = kit_state(kit); R['kit_before'] = before; sup.save()
         why = admission(before)
         if why: R['kit_refusal'] = why; stop('kit admission failed: %s' % why)
         inv0 = kernel_inventory(); R['kernels_baseline'] = inv0; sup.save()
         if len(inv0) > KERNEL_LIMIT - 1: stop('more than one Wolfram kernel at baseline: %s' % [k[0] for k in inv0])
-        baseline_pids = {k[0] for k in inv0}
+        baseline_pids = {k[0] for k in inv0}; R['_baseline_pids'] = sorted(baseline_pids)
         def after_step(label):
             inv = kernel_inventory(); new = [k for k in inv if k[0] not in baseline_pids]
             gs = owned_groups(os.getpid()); unowned = [k for k in new if k[2] not in gs]
@@ -275,11 +415,12 @@ def main():
         sup.art_baseline = {p: n for p, n in H.snapshot(kit, out).items() if not p.startswith(out + os.sep)}
         sup.save()
         nb_out = os.path.join(out, 'essay.nb'); t0 = time.time()
-        with KernelWatch(R) as kw:
+        with KernelWatch(sink=R, key='kernel_watch_build') as kw:
             rb = sup.run_step('build_notebook', ['wolframscript', '-file', 'build_sub.wl', NAME, nb_out], pipe, BUILD_WALL_S, BUILD_CPU_S, build_matcher)
-        R['kernel_watch_build'] = {'max_kernels_seen': kw.max_seen, 'events': kw.events}; sup.save()
+        sup.save()
+        why_w = decide_watch(kw)
+        if why_w: stop(why_w + ' (build)')
         after_step('build')
-        if kw.events and any('killed_owned_groups' in e for e in kw.events): stop('more than two Wolfram kernels during the build')
         if rb['verdict'] != 'pass': stop('build: %s (%s) %s' % (rb['verdict'], rb['reason'], rb.get('match_note')))
         if not (os.path.exists(nb_out) and os.path.getmtime(nb_out) >= t0 - 1): stop('no fresh notebook')
         nb_bytes = os.path.getsize(nb_out); nb_sha = H.digest(nb_out)
@@ -287,11 +428,12 @@ def main():
         shutil.copy2(nb_out, os.path.join(pipe, NAME, 'essay.nb'))
         if H.digest(os.path.join(pipe, NAME, 'essay.nb')) != nb_sha: stop('notebook copy digest differs')
         R['notebook'] = {'bytes': nb_bytes, 'sha256': nb_sha}; sup.save()
-        with KernelWatch(R) as kw2:
+        with KernelWatch(sink=R, key='kernel_watch_read') as kw2:
             rr = sup.run_step('read_cells', ['wolframscript', '-file', 'read_nb_full.wl', NAME, os.path.join(out, 'cells')], pipe, READ_WALL_S, READ_CPU_S, read_matcher)
-        R['kernel_watch_read'] = {'max_kernels_seen': kw2.max_seen, 'events': kw2.events}; sup.save()
+        sup.save()
+        why_w = decide_watch(kw2)
+        if why_w: stop(why_w + ' (read)')
         after_step('read')
-        if kw2.events and any('killed_owned_groups' in e for e in kw2.events): stop('more than two Wolfram kernels during the read')
         if rr['verdict'] != 'pass': stop('read: %s (%s) %s' % (rr['verdict'], rr['reason'], rr.get('match_note')))
         n_cells = read_count(open(os.path.join(out, 'read_cells.log'), errors='replace').read()) if os.path.exists(os.path.join(out, 'read_cells.log')) else None
         R['cells'] = {'count': n_cells}
@@ -319,9 +461,15 @@ def main():
         R['complete'] = True
     except SystemExit:
         raise
+    except KernelLimit:
+        R['stopped'] = 'UNKNOWN: the kernel watch stopped the running step (kernel_watch_build / kernel_watch_read)'; sup.save()
+        print('STOP:', R['stopped']); sys.exit(1)
     except BaseException as e:
         R['stopped'] = 'exception: %r' % e; sup.save(); print('STOP:', R['stopped']); sys.exit(1)
     finally:
+        R['final_kernels'] = final_kernel_record(R.get('_baseline_pids'), os.getpid())
+        R['final_kernels']['late_stop_requests'] = WATCH['late']
+        R.pop('_baseline_pids', None)
         R['recovery'] = {'preserved_scripts': os.path.join(out, 'preserved-scripts'), 'staged_folder': os.path.join(pipe, NAME),
                          'installed_scripts': scripts_check(pipe), 'note': 'the staged folder and installed scripts stay by design; no automatic retry'}
         R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
