@@ -1,0 +1,7 @@
+For any two configurations $x, y : \mathbb{Z} \to \mathrm{Bool}$ of rule 30 whose leftmost black cells sit at $-2$ and $-1$, the center columns differ at some time $t \le 8$ (`Rule30Submission.sep_8`); for leftmost black cells at $-4$ and $-3$ by time $13$ (`sep_13`), and at $-3$ and $-2$ by time $14$ (`sep_14`). Each bound is attained by an explicit pair (`attained_8`, `attained_13`, `attained_14`). The right side is unrestricted: finite or infinite.
+
+The catalog at the pinned commit has no statement about recovering the left edge from the center trace; the later `Rule30TraceEdge` names the conjecture that two finite configurations with the same complete center trace have the same left edge, and proves that it implies Problem 1. These are its first instances, with exact deadlines, and they hold for every configuration with those edges, not only finite ones.
+
+The center through time $m$ depends on the initial cells at positions $\le m$ only (the kit's `evol_local_le`), so a configuration may be cut to the window $[a, m]$; the $2^{m-a}$ fillings with a black cell at $a$ run as lanes of one number, the signatures (center cells at times $0, \ldots, m$) of each edge class are collected into a bitset, and the two bitsets are disjoint (`separationB`). The kernel checks the disjointness in blocks of $256$ signature values, one theorem per block, because its caches live for one declaration.
+
+Nothing is claimed about the general conjecture, about other edge pairs, or about Problem 1.
