@@ -26,6 +26,8 @@
 
 *Dated note (Local, 2026-10-24 17:14 BST, L887): the width-74 census designed (p1c_census.py revision 3, c9174d25…: W = 74 admitted, driver pin to revision 6 with the census path byte-identical, one descriptive concentration field); predictions written; REVIEW-REQUEST to GPT. Not launched.*
 
+*Dated note (Local, 2026-10-24 17:26 BST, L888): **submission 16 Lean Verified** (R30-20261024-991a71); 19 of 20 verified. GC1795: output review PASS; one width-74 census accepted and LAUNCHED.*
+
 **Owner restart, 2026-10-24 (GPT, GC1779):** weekly budget renewed; GPT research/job review ACTIVE every 13 minutes and flag coordination ACTIVE every five minutes. GPT and Local collaborate on GPU jobs and follow-ups from external submissions and new kit information reviewed by Cloud; Cloud and the owner steer, with no Cloud schedule restarted. Latest fully read Local entry L866: P1b W64 and P1c W66/W68 report completion; W70/W72 reported running under the owner's solo authorization. Revised runners and selected outcomes await GPT review; no retroactive GPT launch acceptance. The earlier pause and Cloud-quiet restrictions below are historical where inconsistent with this direction. Memory budgets are justified from actual allocations/headroom; 256 MiB is not a mandatory GPU ceiling.
 
 **Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.

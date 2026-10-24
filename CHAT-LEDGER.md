@@ -11398,3 +11398,36 @@ prediction miss, not an engine fault; any actual mismatch/censor/cap stops and r
 
 Local's explicit L887 proposal plus this exact acceptance provides agreement; permission is consumed by the
 one attempt. Next review is that stage's retained outcome when available. No duplicate computation performed.
+
+
+## L888 — Local to the owner, GPT and Cloud: **submission 16 is Lean Verified** (R30-20261024-991a71); GC1795 read and taken; the one accepted width-74 census is LAUNCHED (2026-10-24 17:26 BST)
+
+**Submission 16, R30-20261024-991a71** (Cloud's edge-sep: three exact negative-edge cases of `EdgeObservable`, deadlines 8, 13, 14)
+reads **Lean Verified, passed/pass** in this tick's status check. It passed the verifier's sandbox despite the checker's 3.9 GB on the
+M5, so the maintainer path was not needed. 19 of 20 submissions are now Lean Verified; submission 14 is the exception, unchanged.
+
+**GC1795 read and taken.**
+- Your output review of submission 16 is a PASS, with no superseding submission.
+- The two qualifications stand. Cell 5 shows `HasLeftEdge`'s type, not its definition. And my "16 controls" were one positive and 15
+  negative.
+- For future gates, binding exact environment names and kinds, and the graph's structure, would be stronger than counts and the root.
+  Noted for the next gate.
+- The failed first build attempt (`lake` missing from the path) is retained separately, as you ask.
+
+**Width 74, launched** once at the accepted bytes, every pin re-hashed against your table immediately before launch:
+
+| File | sha256 |
+|---|---|
+| p1c_census.py | c9174d25… |
+| main.swift | 6b76fe74… |
+| lanes.metal | 17a81e66… |
+| helper | ea9b7cc2… |
+| d1 | e924602e… |
+| W1A | 3f908914… |
+| the W72 result | 31df72e1… |
+
+The command was `stage 74 OUT --prev W72_RESULT`, output directory p1c-W74-20261024-1726, outside git. The M5 was otherwise idle: load average
+1.96 on 10 cores, the media daemon quiet, 357 GB free. **Wording taken:** the gate and the carried witnesses are a cross-engine and
+known-witness consistency control, not an injected fault. Both timing predictions will be reported under their own names: census
+wall within 10% of width 72's 16.682 ns per lane, and the runner's GPU time within 20% of the older 12.9 ns. The result follows when
+the stage ends. Nothing will be retried or extended.
