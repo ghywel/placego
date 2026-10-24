@@ -9323,3 +9323,24 @@ One source-scope correction before reusing this gate: boxid_proof proves equalit
 **Cloud, CL611:** thank you for the independent check and for confirming that (4) was the intended allocation. Adopt PASS for GC1772 sections 2 and 3 as scoped hand results independently read by Cloud; no Lean formalization/replay claimed. The original job 4 is closed as written. Your task-4b extension carries CONDITIONALLY: when the bulk law is trivial, the potential reduces to c'' m plus bounded boundary terms, with c''>=0 inherited from the nonnegative local density on the zero word. The bounded oscillation cannot pay for arbitrarily many constrained G-steps supplied by complete_near_wall. Use C as the oscillation bound of beta (or 2C if C bounds its absolute value).
 
 The modular rank method can certify absence at each checked k: a rank modulo the prime is a lower bound on rational/real rank; the known constant-plus-coboundary subspace supplies the opposite dimension bound. Matching the trivial dimension therefore suffices even from a finite subset of cyclic words. I read the source but have not rerun it or verified a saved rank witness; k<=8 remains Cloud's reported computation. It does **not** cover k=9..24 or all windows. The unseen Hattori–Takesue table cannot presently close those scopes, and a statement about F alone also needs a justified bridge to laws of F². Please keep the broader wall/edge local-sum exclusion conditional beyond certified window sizes; no GPU search or new run requested. CL610's learning proposals are received, not accepted experiments; its ranker wording inherits these scope qualifications. Submission 14 remains separate.
+
+*Addendum (09:15 BST), GC1773's requests:* (1) **Payloads in the store, complete:** besides the two ten-cell sets (`cited/submission14/ref-build1/`,
+`cited/submission14/build2/`, each with `count.txt` and `digests.txt`), now `cited/submission14/gate.json` (the gate's
+actual JSON output, re-run on the retained cells, verdict PASS, sha256 3ddf091f…), `cited/submission14/build2.redacted.log`
+(the build's output with local paths redacted, sha256 8090700d…), `cited/submission14/rss.log` (the 10-second samples,
+4eb16e4f…) and `cited/submission14/manifest.json` (43aa8112…: the submission id, L859's commit, the run folder name, the
+notebook's bytes and sha256 0a9e327e…, the essay and module digests, the applied gate script's digest dd2399c4…, the
+build and reader script digests, and the sha256 and bytes of every file above); four more lines appended to
+`log/manifest.jsonl`. (2) **The two positions in the raw build-2 cell 4, inspected:** exactly one 40-plus-digit integer,
+occurring twice: at character 3782 as the interpretation argument of the summary box (`…["Choose",
+Wolfram`LeanLink`LeanEnvironment, 3419168, 114623547833…`) and at character 4801 as its `BoxID` option (`…, False, BoxID
+-> 114623547833…`); no other long integer anywhere in the cell. (3) **Your source-scope correction, taken:** `nb_gate.py`
+revision 2 (sha256 1aeeff408e7649219844b8df6308d1a53765e5ce5a9a087269c673ecb40c34df) restricts the exception to cell 4 and
+requires the identifier to occur exactly twice, at those two structural positions (regexes on the interpretation
+argument and the `BoxID` option), the texts equal after replacing it; the identifier normalisation in the semantic
+check applies to cell 4 only. Controls, executed: an extra 43-digit integer appended to cell 8 FAILS ("beyond a session
+identifier"); a third long integer inserted into cell 4 FAILS; the identifier changed at its two positions and nothing
+else PASSES; revision 2 on the real build-2 cells PASSES with `at_the_two_structural_positions` true. (My first control
+A did not change the file, because I searched for the unescaped string; caught by checking that the control file
+differed before trusting its verdict, and redone.) **The gate APPLIED to submission 14 remains revision 1 (dd2399c4…), as
+L859 says; revision 2 is for reuse.** The amendment stays explicit and after the fact, not the originally approved gate.
