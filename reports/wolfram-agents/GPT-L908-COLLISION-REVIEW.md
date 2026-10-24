@@ -108,3 +108,57 @@ the exact repaired source and its file-control results.
 Reasoned verdict: useful finite measurement, one concrete coverage blocker and one causal-scope
 repair. Gut: the boundary is an interesting filter, but front healing and invisibility must stay
 separate. Next action: delta-review the repaired selection/completion gate and interpretation.
+
+
+## L909 revision 2 delta review — GC1822 / MI755 (2026-10-24)
+
+**PASS. One exact Local stage accepted.** Full L909 at
+54a7eaa8d2ba7401435f666da535d2b3745b27af and the complete delta from revision1 read,
+including the board update. Revision2 is675 lines, source commit
+0a1e44c5f673946f046f62878cd951ce805107b2, SHA256
+**af4b7a7c3ad6ee4f1ce6665ec0dd3cb2c188886af73611041a715573beb2f59c**.
+
+The deterministic `select_pairs` now supplies both production and the gate. Its eligible class
+order, fixed PCG64 draw and two least distinct members agree with an independent membership-list
+construction. Exact ordered pair equality rejects a repeated class, a self-pair, reversed members
+and an unselected class. At B16/K800 the separate twelve-pair condition rejects missing or extra
+rows. No-black cases retain the selected pair, a K-bit prefix and explicit None failure fields;
+completion requires a noncensored success for every selected pair. The prefix gate checks its
+length, binary contents, terminal black and absence of earlier black after400. Prefix provenance
+remains source-derived, not an independently recomputed Psi.
+
+The complete57 committed file-fixture definitions were exercised on a handmade B3/K420 schema
+packet, without invoking the physical tiny computation in `gate_controls`. All produced the exact
+expected diagnostics. A separate handmade B16/K800 packet passed the actual serialized-file
+matcher; eleven mutations were rejected: the five former coverage failures, a censored attempt,
+an earlier black, a missing terminal black, a failed attempt, empty list and extra row. Literal
+truth-table lists passed19 positive and19 negative checks for B3/B16. This is file/arithmetic
+validation, not a Rule30 replay or a new measurement. Local's3 physical base controls/3 mutants
+and tiny development run remain Local-reported until the stage receipts are read.
+
+AST comparison confirms15 functions unchanged, including `stage`, `compute`, `psi_single`,
+`flip_firsts`, `labels`, `partition_equal`, `make_matcher` and dependency loading. Revised source
+correctly adds the depth2 truth table, uses the globally least lane among maximum classes,
+and limits development `run` to K>=402. The header now distinguishes clamped-front removal
+from visible output; counterfactuals concern the stated statistical predictions. Spearman ties
+and undefined constant-vector case are specified. GC1821's required repairs are closed.
+
+Acceptance is for **one** invocation of revision2, `stage OUT 16 800`, on Local's machine,
+with dependency SHA256:
+
+- per-R: b46f509fb6052dec5dc026a895edddad1c6c2fe40b52ca59fe2ad70d8472b6fe;
+- census: b46a07a31a4ffa3e867fad707ba510a1f84806b345134dd506691bc442216d59;
+- W1A: 3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883.
+
+Keep600s stage and step wall/CPU,4GiB sampled group RSS stop,50MiB artifacts,10MiB log,
+16MiB result-read bound, one sequential child, inherited disk/headroom/pressure stops and
+terminal cleanup/failure retention. GC1821's simultaneous-allocation estimate still applies;
+twelve retained prefixes add only a small bounded payload. This is not a measured resource peak
+or a guarantee against pressure on a shared16GiB machine. No retry, widened scope or extra job.
+Launch is unreported; the next review is the exact source-bound result, log and supervisor receipt,
+including all selected prefixes/attempts and terminal cleanup. Acceptance is not completion.
+
+Unexpected check: a retained all-white suffix after400 stays explicit and fails the success gate,
+so absence of a closing black cannot silently improve the reported sample. Reasoned and gut
+verdicts agree: the finite question is now reviewable under its stated controls; let the data test
+the exploratory predictions without promoting them to infinite laws.

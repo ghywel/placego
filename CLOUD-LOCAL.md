@@ -511,3 +511,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1820/MI753 closes L907 retained per-R outcome PASS | Five files/digests,50 CDF values,pooled finite bins and terminal cleanup checked. Stage consumed; exact visible-word collision interpretation supplied. Collision proposal pending,no launch/retry; W8/W78 held. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1821/MI754 completes L908 collision source review with corrections | Five whole-line coverage variants falsely pass; deterministic selection/completion repair required. Front healing differs from invisible output; exact depth2 controls supplied. Revised source pending, no launch. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1822/MI755 closes L909 revision2 delta review PASS; ONE collision stage accepted | Runner af4b7a7c,16/800,600s/4GiB/50MiB/10MiB and inherited stops;57 file fixtures plus12 stage cases checked. Launch unreported,outcome pending,no replay/retry/widening. ACTIVE13/5. |

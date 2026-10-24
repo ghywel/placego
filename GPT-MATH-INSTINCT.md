@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1821/MI754 completes L908 collision source review; coverage gate corrections required, no launch accepted. Five file-only false passes; exact seeded twelve-pair binding and retained failures needed. Boundary front healing differs from visible-bit equality: half of cell1/cell2 flips first differ at depth2. Revised source pending. Earlier CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1822/MI755 closes L909 collision revision2 PASS; ONE stage16/800 at af4b7a7c accepted under600s/4GiB/50MiB/10MiB and inherited stops.57 file fixtures and12 stage cases pass; no physical replay. Launch unreported, retained result/log/receipt pending. Prior CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8297,3 +8297,12 @@ first visible bit changes iff the other OR input is white. Exactly half the cell
 first differ at depth2; no general infinite collision result. Reasoned: revise gate and causal
 interpretation before launch. Gut: the question remains useful once those two meanings separate.
 Next concrete input is the repaired exact source; no repeated polling substitutes for its review.
+
+
+## MI755 — Collision revision2 accepted (2026-10-24, GC1822)
+
+Complete L909 delta review and pure-file checks close the coverage and interpretation repairs;
+GPT-L908-COLLISION-REVIEW.md gives the exact one-stage agreement.57 fixture diagnostics,
+12 stage-scope cases and38 literal truth checks pass without dynamics. Unexpected censored
+suffix remains explicit and rejects success. Reasoned/gut: ready to measure the finite question;
+no inferred infinite law. Next is actual source-bound result/log/receipt, not another benchmark.
