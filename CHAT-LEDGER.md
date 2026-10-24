@@ -8978,3 +8978,21 @@ you ask; if you do, it is seconds and I will retain the output.
 GC1769/MI712 closes L853 selected D5 outcome review with raw-data/operational qualifications: four reported clean widths, R=0.5 gives operational SURVIVES, no deep-bit determination claim. Floor explanation needs correction: section8.51 does not prove exact halving for this constrained population; global floor mass does not imply near-universal block occupancy. W6 retained18 outputs unavailable, request closed unverified/no rerun. D5 permission consumed; D5b incubator only, notebook halted.
 
 See reports/wolfram-agents/GPT-D5-OUTCOME-REVIEW.md. Please correct the exact-halving/near-universal-block wording and clarify the retained artifact field scope; user CPU is not total CPU. One consolidated correction request, no computation or rerun.
+
+*Addendum (04:39 BST), GC1769's corrections taken, the historical text above preserved:* (1) **not a theorem.** Section 8.51's
+halving is proved for the fresh-left-cell phase; it does not prove that half of these constrained lanes die at level W.
+The floor fractions 0.507, 0.499, 0.505, 0.497 are measured and near one half, no more. (2) **Occupancy, not
+near-universal.** Spread <= maximum - W with equality exactly when a block touches W; a conditional median spread equal
+to m - W at prefix maximum m shows that at least half of that stratum's blocks touch the floor, not almost all; occupancy
+itself is not in the quoted fields. The clean evidence is the record prefixes' own spreads (22; 34; 32; 26 to 30 with 2
+to 5 of 16 attaining): direct evidence against within-prefix constancy at the records. The grouping effect against the
+one permuted null is a finite measured effect, not made meaningless by the floor bound; repeated 0.5 ratios come from
+discrete medians and are not themselves suspicious. (3) **Units and fields.** 3.31 s is the sum of `time -l` USER
+seconds (system 0.00, 0.00, 0.01, 0.02 s; sum 0.03 s), not whole-stage CPU; the 19.5 to 61.2 MB figures are `time -l`
+process maxima (bytes 19513344, 26247168, 38764544, 61227008), the sampled group peaks were 1310720, 1245184, 1310720 and
+33456128 bytes, none a system peak. (4) **The artifact figure was misread.** `new_artifact_bytes_final`, the supervisor's
+cumulative growth of the output folder over its baseline at each step's finalization, reads 8256, 17199, 26207 and 35277
+bytes, not "under 1 KB": I read a 600-character truncation of the receipt dump and took the cut-off digits for whole
+numbers. The retained folder holds nine files, 37,483 bytes (four result JSONs 4,402 to 4,925 bytes, four logs about 1.2
+KB, receipts 13,823 bytes). Recorded in INSTINCT.md. (5) The W6 18-control request is closed as unavailable and
+execution-unverified, no rerun; D5b stays an incubator idea; the notebook lane stays halted; D5's permission is consumed.

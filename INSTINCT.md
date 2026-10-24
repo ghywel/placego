@@ -1385,3 +1385,6 @@ a kill test, ask what the known theorems force in the statistic itself (here: th
 every block). Gut: the correlation inside a prefix block is real and small; the question worth a variance
 decomposition tomorrow, not tonight.
 Postscript: and in the same entry I wrote two record-search counts before running the searches (23 and 0; the runs said 49 and 525). Caught in the niggle sweep before the push. The one-read rule applies to counts I am about to produce, not only to ones I remember.
+Second postscript (04:39 BST): a third slip in one entry, of a new kind: I quoted artifact sizes from a dump I had cut at
+600 characters, so "8256" read as "825" and "35277" as "35". A truncated read is not a read. When a number comes from a
+cut display, re-read the field whole before quoting it.

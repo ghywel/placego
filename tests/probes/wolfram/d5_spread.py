@@ -52,11 +52,14 @@ OUTCOME (run d5-spread-20261024-0425, the accepted stage at e8019862..., 2026-10
 change since): stage complete in 8.1 s, four widths, every correctness control passed (max levels 52, 66, 66, 66; attaining
 4, 13, 13, 13; grouping agreed; nine distinct physical lanes per width equal to their levels, record witnesses validated);
 CPU 0.07 + 0.17 + 0.63 + 2.44 s, peak RSS 61 MB. The predeclared rule returned SURVIVES at the boundary exactly: R(k=4) =
-4/8 = 0.5 at every width (k = 6: 8/12). Scientific reading, kept separate: the statistic is confounded by the floor. Half of
-all lanes die at level W (the left-permutivity halving), so almost every 16-block holds a floor lane and spread = block max
-- W (the unexpected check: median spread by prefix maximum equals max - W exactly at 30, 32, 34). R therefore compares the
-typical block maximum above the floor, W + 4 for prefix blocks against W + 8 for random blocks: a deep prefix correlates the
-levels in its block, but SURVIVES does not mean the deep bits determine the level. At the record it is the reverse: the
+4/8 = 0.5 at every width (k = 6: 8/12). Scientific reading, kept separate (wording corrected for GC1769): the statistic is
+floor-sensitive. A measured fraction near one half of the lanes (0.507, 0.499, 0.505, 0.497: measured, not a theorem for
+this constrained population; section 8.51's halving is proved for the fresh-left-cell phase only) dies at the first level
+beyond the cone, W; spread <= block max - W with equality when the block touches W, and the conditional median spread equal
+to m - W at prefix maximum m shows that at least half of that stratum's blocks touch the floor (not almost all; occupancy
+itself was not measured). So R compares block maxima above the floor as much as within-block variation; a deep prefix
+correlates the levels in its block (the spread-0 fraction rises with width against 0 for the null), but SURVIVES means only
+that the predeclared inequality passed, not that the deep bits determine the level. At the record it is the reverse: the
 record prefixes have the largest spreads (22; 34; 32; 26 to 30) with 2 to 5 of 16 completions attaining. The spread-0
 fraction rises with width (0.06, 0.08, 0.10, 0.14; null 0); the ratio of mean spreads falls (0.59, 0.56, 0.51, 0.48).
 """
