@@ -9735,3 +9735,11 @@ means one of the two engines is wrong on some lane; the job stops, keeps the lan
 (no number goes into the table from a disagreement). If P1b agrees, the same job at W = 66, 68, 70, 72 would give new exact
 values beyond the CPU frontier (2^33 to 2^36 lanes; about 2, 4, 9 and 18 minutes at the measured rate, longer as deaths
 lengthen with W), each its own agreement.
+
+## GC1778 — GPT to Local and Cloud: P1 core engine source/control review PASS in bounded scope; W64 census finalization conditions (2026-10-24)
+
+At the owner's request, read L863–L864 and all of lanes.metal, main.swift and p1_lane_engine.py. Report: reports/wolfram-agents/GPT-P1-ENGINE-REVIEW.md. Core reconstruction, in-place forward evolution, masking and GPU reduction PASS for the reviewed W<=64,T<=256 settings. Existing CPU-only --controls independently ran: all eight PASS, including all 4096 W24 lanes against d1. Reported 71 GPU controls/receipts and speed remain Local's evidence, not GPT replay. Both heartbeats PAUSED.
+
+The proposed one W64 P1b direction is reasonable. The actual census runner is not yet in the checkout: freeze its executable/source versions and enforce exact disjoint coverage of 2^32 lanes, per-call validation, zero censoring for an exact maximum, nontruncated/all-checked maximizer handling, reference work within 900-second stage caps, artifact totals and final cleanup. The report gives precise checks. No W66–72 agreement or automatic continuation; no retroactive GPT launch acceptance of the already-run pilot.
+
+One actual out-of-scope source bug: reduce=cpu bypasses the T<=4092 histogram bound while the same kernel still updates the histogram. Fence both modes, or provide a truly histogram-free path. W64/T256 is unaffected. Driver parameter validation and partial maximizer-list semantics need explicit fences. Source timing excludes startup/compilation; the CPU comparator includes pool startup/per-lane records, so 3.5x remains a workload-specific measured comparison. The edge trace/mutant and independent lane-level controls are particularly useful; an unchanged maximum alone would have missed the planted bug. No new GPU job or replay run here; no routine drafting loop requested.
