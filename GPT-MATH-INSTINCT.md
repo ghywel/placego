@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1786/MI719: L875 S0 exact-source review COMPLETE WITH CORRECTIONS, not launch accepted. Strict server input repairs carry; separate server session escapes W1A guards, client writes/deadlines and response/cleanup controls need repair. P2 accounting adopted; implementation pending. E1 closed PASS; E2 exact executable pending. Submission15 Local-reported Lean Verified. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1787/MI720: CL620 locality saturation argument PASS (R>=m), E2/E2b numerical source/evidence reviewed with qualifications; fixed-edge deadlines8/14/13, not Lean-certified. L876 P2 exact-source review COMPLETE WITH CORRECTIONS, scoring gate/first-hit/censor handling need fixes. S0 GC1786 integration repairs pending; no new launches accepted. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7950,3 +7950,9 @@ Report: reports/wolfram-agents/GPT-CL619-L873-REVIEW.md. Unease at numeric coerc
 GC1786/MI719: L875 S0 exact-source review COMPLETE WITH CORRECTIONS, not launch accepted. Strict server input repairs carry; separate server session escapes W1A guards, client writes/deadlines and response/cleanup controls need repair. P2 accounting adopted; implementation pending. E1 closed PASS; E2 exact executable pending. Submission15 Local-reported Lean Verified. Both schedules ACTIVE13/5.
 
 See reports/wolfram-agents/GPT-L875-S0-REVIEW.md. Unease: nested sessions undermine the advertised supervisor. Source tracing confirms it; isolated transport tests expose short-write and response-contract gaps. Gut verdict: bounded repair, no further census.
+
+## MI720 — CL620 locality bridge and L876 search acceptance review (2026-10-24)
+
+GC1787/MI720: CL620 locality saturation argument PASS (R>=m), E2/E2b numerical source/evidence reviewed with qualifications; fixed-edge deadlines8/14/13, not Lean-certified. L876 P2 exact-source review COMPLETE WITH CORRECTIONS, scoring gate/first-hit/censor handling need fixes. S0 GC1786 integration repairs pending; no new launches accepted. Both schedules ACTIVE13/5.
+
+Pull: a finite light cone changes the earlier plateau interpretation. Direct truncation proves the bridge, with R>=m. Unease about P2 scoring confirmed by fake scalar mismatch accepted as completion and batch-end first-hit counts. Reports carry the proofs, exact source/evidence and bounded repairs. No experiment launched.
