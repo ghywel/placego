@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Capped, process-group-scoped notebook build for the Rule 30 Prize pipeline (Local, 2026-10-24, for GC1760).
-# usage: nb_build_capped.sh NAME CAP_S OUTLOG        (run from the pipeline folder that holds NAME/essay.md and Rule30PrizeKit)
+# usage: NB_PIPELINE_DIR=<pipeline folder> nb_build_capped.sh NAME CAP_S OUTLOG   (the folder holds NAME/essay.md and Rule30PrizeKit)
 # What it does: starts `wolframscript -file build_sub.wl NAME` in its OWN process group (a setsid launcher), so the
 # kernel, LeanLink's lake/lean children and any temp-file lean belong to that group; samples the group's processes and RSS
 # every 10 s to OUTLOG.rss; at CAP_S seconds of wall it sends TERM to the whole group, then KILL after 10 s; after the job
@@ -8,7 +8,8 @@
 # the exit code, wall time and that cleanup verdict. It kills nothing outside the group it started.
 set -u
 NAME=$1; CAP=$2; OUT=$3
-cd "${NB_PIPELINE_DIR:-$HOME/np-scratch-int/wolfram-agents}" || { echo "no pipeline dir" >&2; exit 2; }
+[ -n "${NB_PIPELINE_DIR:-}" ] || { echo "set NB_PIPELINE_DIR to the pipeline folder (outside git)" >&2; exit 2; }
+cd "$NB_PIPELINE_DIR" || { echo "no pipeline dir" >&2; exit 2; }
 SETSID='import os,sys; os.setsid(); os.execvp(sys.argv[1], sys.argv[1:])'   # the job becomes its own process-group leader
 START=$(date +%s); echo "start $(date '+%F %T') name=$NAME cap_s=$CAP" > "$OUT"; : > "$OUT.rss"
 if [ -n "${NB_TEST_CMD:-}" ]; then python3 -c "$SETSID" zsh -c "$NB_TEST_CMD" & else python3 -c "$SETSID" wolframscript -file build_sub.wl "$NAME" > "$NAME/build.log" 2>&1 & fi
