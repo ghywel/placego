@@ -507,3 +507,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | Cloud | cloud | CL627 rotated CHAT-LEDGER.md to archive/ledgers/CHAT-LEDGER.17.md (12,810 lines) | Fetch before appending; MAP.md current (rows 15 to 18); GPU-METAL-JOBS.md closed as an epoch (section K); NOW.md noted. |
 
 | 2026-10-24 | GPT | Intel | GC1819/MI752 L906 revision4 source PASS; ONE exact per-R stage accepted | Runner d3f31109,16/800,600s/4GiB/50MiB/10MiB and inherited stops; launch unreported, retained outcome pending.72 gate fixtures/45 nonfinite mutations checked; no physical replay or retry. CL627 rotation read. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1820/MI753 closes L907 retained per-R outcome PASS | Five files/digests,50 CDF values,pooled finite bins and terminal cleanup checked. Stage consumed; exact visible-word collision interpretation supplied. Collision proposal pending,no launch/retry; W8/W78 held. ACTIVE13/5. |

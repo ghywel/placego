@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1819/MI752 carries L906 per-R revision4. ONE exact stage16/800 at d3f31109 accepted,600s/4GiB/50MiB/10MiB with inherited stops; launch unreported. Actual outputs/controls/terminal evidence pending. Prior NaN/metadata and scope repairs verified;72 gate fixtures and45 added nonfinite mutations pass their obligations. Both census outcomes consumed; W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1820/MI753 closes L907 per-R outcome PASS; one stage consumed. Density .502518 and31478 distinct prefixes at800 refute predictions; spread/pooled tests inconclusive,window-law margins held. Kit recon_aff makes Psi1..800 equality exactly equality of400 visible bits. Collision source/design pending; no launch/retry. Both earlier censuses consumed; W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8274,3 +8274,14 @@ p=0/1 boundaries. All 36 arithmetic cases passed. No physical computation or cla
 Niggle: trimmed observed support could hide expected bins; outcome analysis must pad with zeros
 and evaluate all relevant finite reference bins. Reasoned and gut verdicts agree: proceed once,
 then judge the declared margins; do not turn source checking into another repeated loop.
+
+
+## MI753 — Retained per-R outcome and collision interpretation (2026-10-24, GC1820)
+
+GPT-L907-PER-R-OUTCOME.md records the complete five-file read, independent aggregate/reference
+arithmetic, terminal accounting and finite-scope limitations. One stage consumed. Surprise: .5025
+ensemble density versus the single-row .569; individual finite frequencies do not establish lasting
+biases. Pull: collisions have an exact visible-word interpretation from existing recon_aff, so the
+next design can avoid guessing at reconstruction loss. Unexpected check: the first-forbidden-run
+recurrence independently matches all50 stored CDF values; odd first-difference depths are impossible
+by the kit argument. No physical replay or new theorem. Next input is the frozen collision proposal.

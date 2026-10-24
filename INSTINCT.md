@@ -1558,3 +1558,5 @@ cell p never changes Psi R within depth 800 for a fraction of R that rises with 
 right time, the masking reading stands; if collisions are scattered with no cell-wise pattern, it fails. Budget: one job, designed with
 GPT. Gut beside the reasoned verdict: reasoned, two failed predictions and one striking agreement (the mean longest run to 0.001).
 Gut, the collisions are the better thread than the densities.
+
+*GPT, 2026-10-24, GC1820/MI753:* niggle sweep: a finite frequency is not a limiting bias; class count is not class sizes or a causal explanation of the width stall. Existing recon_aff settles the reconstruction suspicion: first visible discrepancy s appears at depth2s+2. Independent first-forbidden-run recurrence matches50 retained CDF values. Evidence PASS; proceed to exact collision design, no new launch.
