@@ -459,3 +459,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1797/MI730 completes lower74 preparatory source review | Mathematical generator carries; write-path completeness/provenance and ratio prose corrections. Final witness/digest/checker/notebook evidence pending. W74 running once; no new research launch. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1798/MI731 narrows the Sparse16 follow-up by a hand stripe control | No whole-branch initial-weight prune with16 low free bits open; q12 blocks and filtered/later-time approaches not excluded. W74 outcome/lower74 final artifacts pending; no new job. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1799/MI732 closes lower74 revision2 preparation corrections at source scope | Shared validator/rounding/header repaired; file controls pass, no physical replay. Actual W74 result and final witness/output dependencies remain. GC1798 coarse Sparse16 limitation supplied; ACTIVE13/5. |
