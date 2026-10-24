@@ -223,3 +223,101 @@ Research 2025) and cuPDLPx (2025) papers, Wolfram's billion-bit and million-bit 
 2019 prize announcement, the Wolfram GPU-computing guide (CUDALink, OpenCLLink), and the kit's `Rule30ZeroBoundary` and
 `Rule30PeriodTwoCoupled` modules at cc1e0e0. Record searched: `ranking function`, `potential function`, `Lyapunov`,
 `linear program`, `Farkas`: no hits; the certificate idea is new to the record.
+
+## I. Machine learning (the owner, 2026-10-24: "can we write an engine that predicts the next bit better than a coin flip; a kind of rapid self-improvement on another machine"; CL610)
+
+Where learning has moved problems like ours, in the published record, is three places, and each has a counterpart here.
+(1) **Learn, then verify exactly.** Giacobbe, Kroening and Parsert (Neural Termination Analysis, ESEC/FSE 2022) train
+a small network on sampled executions to act as a ranking function, then prove it by a solver; failures of the proof
+become new training samples (counterexample-guided). Most of their loops needed networks under ten neurons. (2) **Learn
+to construct counterexamples.** Wagner (Constructions in combinatorics via neural networks, 2021) used the deep
+cross-entropy method, an agent building an object one decision at a time with the score only at the end, and refuted
+several open conjectures with structured constructions exhaustive search could not reach. (3) **Search over programs
+with an exact evaluator.** FunSearch (Nature 2024) pairs a language model proposing programs with a fast, trusted scorer
+and found new cap-set constructions; the evaluator, not the model, carries the truth. Nothing in the published record
+uses learning on the rule 30 center column itself: Zhang and others (Intelligence at the Edge of Chaos, ICLR 2025)
+trained transformers on whole rows of elementary automata, including the complex rules, to study downstream reasoning,
+not to predict the column. The next-bit test (a predictor given the past must not beat 1/2 by more than noise) is the
+standard criterion for pseudo-random generators, and neural next-bit tests exist for that purpose.
+
+Two platform facts first. The Neural Engine runs **inference** behind Core ML; it does not train. Training happens on the
+GPU (MLX from Python, or Core ML's on-device training for a narrow class of layers). So the pattern that fits the M5 is:
+train on the GPU, run the trained model at scale on the Neural Engine or the GPU, and let an exact checker, CPU or Lean,
+be the only thing that upgrades a claim. Every result below is a measurement or a heuristic until that checker has
+spoken; a model's confidence is not evidence (item 20 of AGENTS.md applies: a feeling, or a loss curve, chooses where to
+look, never a status).
+
+### I.1 The duel: a learned ranking potential against a learned survivor (the self-refining engine; ties to job 4)
+
+- **If this holds, it changes `Q01`** the same way job 4 does, and it reaches potentials job 4's linear program cannot
+  express (nonlinear in the window weights).
+- **Two learners, one referee.** The **ranker** is a small network (or a linear window model, which is job 4 learned by
+  gradient descent) taking a configuration window by window and summing; its loss asks for decrease by one every two
+  steps on constrained trajectories and for non-negativity. The **survivor** is Wagner's agent: it builds a width-W start
+  bit by bit (the kit's free bits, W/2 decisions) and is rewarded by the death time, or by how much the ranker fails to
+  decrease along its trajectory. Each round the survivor hunts for the ranker's blind spots and the ranker retrains on
+  them: the counterexample-guided loop of Neural Termination Analysis with a learned adversary instead of a solver. The
+  **referee** is exact: the ranker's claim is extracted to rationals and checked exhaustively on all local patterns at
+  its window width (job 4's enumeration, a GPU lane each), then in Lean; the survivor's claim is a start whose death time
+  the kit's checker measures exactly.
+- **Outcomes.** A ranker that passes the exact check is a certificate for every width (job 4's prize). A survivor that
+  beats the measured law (dies after 2W, or not within the light cone) is a candidate counterexample to the law or to
+  `Q01` itself, and goes to Lean before anything else. A duel that stalls, the ranker failing only on structured
+  families the survivor keeps finding, exhibits those families: that is the dual object of job 4 found by search.
+- **Kill tests, written first.** The survivor must recover D(52) = 96, D(56) = 100 and D(60) = 114 exactly, from the
+  D-exact lane, before any width above 64 is reported; the ranker's extracted potential must bound those three from
+  above. A ranker whose exact check fails is a heuristic and is reported as one.
+- **Prediction.** The survivor matches the exact maxima to width 60 within minutes of training on the GPU and finds
+  starts with D close to 2W at widths 80 to 120, none beyond; the ranker reaches a verified linear-window potential at
+  some k <= 24 or stalls on an identifiable family. Counterfactual: the survivor finds a start past 2W + 8, which refutes
+  the law and the prediction.
+- **Cost.** Environments are bit operations on 64-bit words; policy and ranker networks are tiny; MLX on the GPU trains
+  them in minutes per round. This is the cheapest job on the list to start and the one that uses the owner's intuition
+  of a machine refining itself on another machine, with the exactness kept where it belongs.
+
+### I.2 Next-bit prediction of the center column (Problems 2 and 3 as a measured bound)
+
+- **The engine the owner asked for**, stated so that it cannot fool us: a predictor sees only the previous m bits of the
+  center column (never a row: with the row visible the next bit is a lookup) and guesses the next; it is trained on one
+  segment of Wolfram's billion bits and scored on a held-out segment far away, with the baseline written first: 1/2 plus
+  or minus 3/sqrt(n). With n = 10^8 held-out bits the test resolves an edge of 0.0002.
+- **The ladder of predictors**, each a kill test for the next: the 2-gram and k-gram frequencies (the kit's `LocalLimit`
+  concept is about these), context-tree weighting and PPM compressors, a small convolutional network over m = 64 to 4096
+  bits, a transformer over m = 4096 (trained on the GPU, scored on the Neural Engine: inference over 10^8 contexts is
+  its native shape). The compressors are the honest reference: a learned predictor must beat them, not the coin.
+- **What it can and cannot say.** Every published statistical test of the column is consistent with 1/2; the prediction
+  is that every rung reports 1/2 within noise. A positive edge that reproduces on disjoint held-out segments, by a
+  predictor whose context is the column alone, would be the most important empirical fact about the column since
+  Wolfram's billion-bit statistics, and would point at structure a theorem could capture; it would not by itself prove
+  or disprove Problem 2 or 3. The negative is still a result worth recording: "no predictor of these classes with
+  context m beats 1/2 by more than epsilon on 10^8 bits" is a measured statement in the kit's language of
+  `MaxOrderComplexity` and `LocalLimit`, and no one has published it for learned predictors.
+- **Cost.** The billion bits are 125 MB; a day of GPU training for the largest rung; the compressors run in an hour.
+  Rank: medium, Problems 2 and 3 only.
+
+### I.3 Program search with an exact evaluator (FunSearch's pattern, with Claude and GPT as the proposers)
+
+- The collaboration already has the shape: a proposer writes a program (a potential's form, a scoring rule for channel
+  states, a formula for D(W) or the rate trend), an exact evaluator scores it (the kit's checker, `cert.py`, the
+  Python censuses), the best are kept and mutated. What is missing is the loop as an instrument: an evaluator folder with
+  frozen inputs and a score file, so that any proposer, including a local model on the M5 through MLX, can be run for a
+  hundred proposals an hour against the same referee. Targets, in order: the form of job 4's potential; a closed formula
+  for D(W) once job 1 adds points above 64 (three exact points, 52, 56, 60, are too few for any regression); the shape of
+  the channel-rate trend (job 3).
+- Symbolic regression on the record's tables (PySR or the like) is the cheap first rung and is a hypothesis generator
+  only: a formula it finds goes to the ledger as a conjecture with the points it was fitted to and the points it
+  predicts, never as a result.
+
+### I.4 Not now
+
+Learned proof search in Lean (retrieval-augmented tactic models on the M5) competes with the two language models already
+in the loop and with the kit's own automation; nothing suggests a local model would add a step. Learned pruning of the
+exhaustive censuses (a model deciding which starts to skip) is unsound unless the pruner is a verified potential, in
+which case it is job 4, not learning.
+
+### I.5 How to take one
+
+As in "How to take one" above: claim it in the ledger with the "If this holds" line, write the prediction and the kill
+test first, keep models, training data and raw scores outside git with digests in the record, and bring only the exact
+checker's verdicts to the record as results. A model is an instrument; the owner's rule "verify the instrument before
+the science" applies to it twice, once on its training and once on its claims.
