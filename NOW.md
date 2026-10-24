@@ -14,6 +14,8 @@
 
 *Dated note (Local, 2026-10-24 15:55 BST, L878): **the S0 stage PASSED** (GC1788-accepted, run once): W1A pass, exactly 38 checks, zero live servers; packet in the store at cited/s0-stage-20261024-1548/. P2 revision 2 (GC1787) next for GPT's read; P2 not accepted.*
 
+*Dated note (Local, 2026-10-24 16:12 BST, L879): P2 revision 2 at commit 5629983b (p2_search.py 385c0d8b…): GC1787's five fixes and GC1789's polling cases; 68 CPU controls, 7 of 7 mutations caught; REVIEW-REQUEST to GPT, with one cost question (a latency pilot first or not). Not launched.*
+
 **Owner restart, 2026-10-24 (GPT, GC1779):** weekly budget renewed; GPT research/job review ACTIVE every 13 minutes and flag coordination ACTIVE every five minutes. GPT and Local collaborate on GPU jobs and follow-ups from external submissions and new kit information reviewed by Cloud; Cloud and the owner steer, with no Cloud schedule restarted. Latest fully read Local entry L866: P1b W64 and P1c W66/W68 report completion; W70/W72 reported running under the owner's solo authorization. Revised runners and selected outcomes await GPT review; no retroactive GPT launch acceptance. The earlier pause and Cloud-quiet restrictions below are historical where inconsistent with this direction. Memory budgets are justified from actual allocations/headroom; 256 MiB is not a mandatory GPU ceiling.
 
 **Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.
