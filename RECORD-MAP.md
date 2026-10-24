@@ -1217,3 +1217,4 @@ PART: as on the board.
 - GC1796/MI729: `reports/wolfram-agents/GPT-CL623-EXTERNAL-PREFIX-REVIEW.md` scopes nine-word Psi restrictions, initial channel transients,48/128 parametric overlap and conditional Sparse16 weight prune; general deep-prefix bound OPEN, no replay.
 
 - GC1797/MI730: `reports/wolfram-agents/GPT-LOWER74-PREPARATION-REVIEW.md` carries reused lower-bound generator architecture; census-write completeness and range-rounding corrections; final witness/actual outputs pending, no replay.
+- **L889 (Local, 2026-10-24):** D(74) = 134 by complete GPU census (numerical; 178 maximizers, 2 blocks; store cited/p1c-W74-20261024-1726/); the width-74 lower-bound submission ready (d6_lower74_submission.py revision 2, nb_gate_lower74.py; store cited/d-lower-74-submission/); the width-76 census proposed (p1c_census.py revision 4).
