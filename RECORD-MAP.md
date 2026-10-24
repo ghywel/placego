@@ -1312,3 +1312,5 @@ PART: as on the board.
 - GC1840/MI773: CL629 bare-pair hold adopted; exact prefix-family statements and uncompiled FamilyExtension.lean proof candidate supplied. Await Local elaboration/new Check/cells/gate; no generalCQ01 or all-width bound. `GPT-CL629-FAMILY-STATEMENT.md`.
 
 - GC1841/MI774: L930283-line family source49218116 PASS; exact inclusive hypotheses, finite injective fam and seven Check headlines agreed. Actual Check/notebook outputs pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md`.
+
+- GC1842/MI775: L931 b0113490 family interface delta PASS/eight Check headlines agreed; essay15df19fb exact source assembly PASS, ten outputs expected. Actual Check/gate/cells pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md` addendum.

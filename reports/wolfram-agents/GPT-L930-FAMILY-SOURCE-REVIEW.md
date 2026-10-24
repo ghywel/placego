@@ -98,3 +98,62 @@ Local-reported, not an independently completed notebook-output review. They can
 be kept as format references; this gap does not block the family source/Check
 agreement or justify another bare-pair build. The new family Check/notebook/gate
 packet is the useful next actual-output review.
+
+## L931 superseding source and draft essay (GC1842 / MI775)
+
+**Latest source/hash/headline agreement replaces L930:**289 lines, SHA256
+`b0113490bddc1abcc9c9d30b5f6a250108120ddd87de65bd7654d0d42fd89ff5`, with
+the eight L931 headline names below. Full L931 and the entire source delta at
+5ac55dc4 read. This is the requested named AgreesPrefix interface applied to
+Local's carried proofs, not a reason to refactor them into GPT's optional fragment.
+
+AgreesPrefix is definitionally the same positive inclusive agreement hypothesis.
+drv_local is renamed drv_prefix_agree with recursive calls updated; u lemmas take
+q under an explicit forall. The proof content and inclusive28/24 bounds are
+unchanged. Psi_prefix495 now compares with Psi R495 rather than Psi R31, exactly
+as the requested interface; its proof uses u_R495. The existing Psi_eq supplies
+the equality between the seeds, and hence all members of the two families.
+The finite family/injectivity proofs are unchanged except theorem names and the
+named hypothesis. All eight theorem declarations occur once. **Delta PASS.**
+
+The currently agreed exact Check is claim partial at b0113490 with:
+CQ01_prefix31, CQ01_prefix495, Psi_prefix31, Psi_prefix495, Psi_eq, CQ01_fam,
+fam_injective and not_move_equivalent (all in Rule30Submission). No Check at the
+superseded49218116 hash is needed for this submission. Use the established plain
+procedure and retain the actual new Check JSON/logs/bindings; supervisor parked.
+The seven-headline L930 agreement is historical, not an extra job permission.
+
+Also read all124 lines of the new essay template, the assembly source and all37
+expected-number helper lines. Pure-file exact assembly PASS: the413-line essay
+contains the frozen289-line Lean module once, with no escaping ambiguity. Hashes:
+
+| File | SHA256 |
+|---|---|
+| essay-template.md | `48db1c71f888f01cbbf549af6344fe7424a8f9055530413aeeb3c98c91c79e7e` |
+| essay.md | `15df19fba1a8dd465f894609e393eeb6d81156e238a62a7f7f2fd09556f04ed8` |
+| expected_numbers.py | `ad875335e3cbb72db8b40a1103964d6561e2812eff23826173f292b923248efa` |
+| assemble.py | `6b7613ea4d3d8127f4efcb712f220670376804456b7bd2415787c8bfaf9afc39` |
+
+The new third illustration uses the fixed28-/24-cell prefixes plus four arbitrary
+tails. Its twenty white samples are at physical times1..39 and the40-step finite
+padding safely covers their cones. The generic family proof already determines
+the displayed words as0101..., so no duplicate evolution is needed for this source
+read. The helper is a separate implementation read here, not executed by GPT.
+The intuitive note about leftward influence is consistent with Rule30's right-input
+mask: a change in the right input affects the next cell only when its centre is
+white. The actual proof still rests on the whole trap invariant, not that sentence.
+
+The template has **ten** Wolfram cells: original illustrations1/2, families3,
+moves4, kit directory5, import6, eight types7, one displayed axiom list8, graph9,
+KernelCheck10. The printed type list agrees with the eight current headline names;
+the displayed root is CQ01_prefix31. The statement of universal families, explicit
+finite injective subfamily, arbitrary tail, sufficient horizons and fixed-driver
+scope is accurate. No global novelty, generalCQ01 or all-widthD claim is added.
+The phase3 exact Psi description remains explicitly a hand corollary outside
+these module headlines. **Draft essay/helper source review PASS.**
+
+Future full-cell gate must use the new actual Check digest, eight types, the
+new declaration/replay counts and all ten cells. Old nine-cell/66-count gates
+cannot validate this build. Standalone abstract source and actual new notebook/
+gate/Check outputs have not been supplied in this commit. No build/gate execution
+or external submission status is inferred from this source/assembly read.
