@@ -57,7 +57,7 @@ concurrency capacity cannot be inferred by summing process peaks.
   as a zero-boundary half of width W + T; a lane dies at the first even time with column -1 white; the reduction keeps
   the maximal death time and the surviving lanes per block. Cost: unmeasured until the pilot of §J runs; the work model
   is lanes x steps x row words (§J.1), and widths 80 and 100 differ by 2^10 in lane count alone (GC1775).
-- **Two outcomes.** If no start survives the cutoff T (a survivor at the cutoff is right-censored data, never a
+- **Two outcomes** *(superseded by §J.1 and GC1775/1776: a cutoff survivor is censored data and is re-checked exactly; it is never a candidate counterexample; the text is kept as history)*. If no start survives the cutoff T (a survivor at the cutoff is right-censored data, never a
   counterexample: `Q01` is refuted only by a finite start with a proof of survival at all even times, GC1775) and the death times follow the observed law, the record
   holds the sharpest frontier anyone has and a linear-front structure a theorem could capture. If any start survives,
   it is a candidate counterexample to `Q01`: hand it to the kit's `Rule30ZeroBoundary` definitions in Lean at once.
@@ -78,7 +78,7 @@ concurrency capacity cannot be inferred by summing process peaks.
 - **Kernel.** Enumerate the 2^n visible prefixes (n to about 36) as lanes; for each, rebuild the forced left row to
   depth L + n and test that it is white beyond L, and run the width-m right layer with free inputs (the channel
   automaton's acceptance) for n steps; tabulate the survivors S(n, L, m).
-- **Outcome.** If S collapses much faster than (R/D)^n, that is the first evidence for a **two-sided channel theorem**,
+- **Outcome** *(superseded by §J.4 and GC1775: the specification is incomplete, the languages are overapproximations, and "the right half is the whole story" does not follow from a plateau; kept as history)*. If S collapses much faster than (R/D)^n, that is the first evidence for a **two-sided channel theorem**,
   a new target on top of submissions 10 and 11, and the shape of the collapse says where the obstruction lives. If S
   tracks the one-sided bound, the left half adds nothing and the right half is the whole story.
 - **Prediction:** the joint count is strictly smaller from n ≈ 2L on, by a factor growing with n.
@@ -90,7 +90,7 @@ concurrency capacity cannot be inferred by summing process peaks.
 - **Object.** The certified rates are 0.316, 0.258, 0.245, 0.213 bits per visible bit at widths 10, 12, 14, 16. The
   question is whether they tend to zero. GPT's C program builds the automaton to width 28 on CPU (28 GB at 28; memory
   bound, not a GPU job); the growth rate at each width is a sparse power iteration the GPU does in seconds.
-- **Outcome.** A fall like 1/m means the visible bits carry zero entropy in the limit, a theorem worth chasing; a
+- **Outcome** *(superseded by §J.4 and GC1775: these are upper bounds; a finite trend proves no limit, and a plateau proves neither positive entropy nor a free right half; kept as history)*. A fall like 1/m means the visible bits carry zero entropy in the limit, a theorem worth chasing; a
   plateau means the right half is free and the obstruction must come from the left, which points at job 2.
 - **Kill test:** the GPU power iteration must reproduce 1.1956850, 1.1844186 and 1.1591 at widths 12, 14, 16 before
   any new width is trusted.
@@ -206,7 +206,7 @@ arithmetic, and a practical route for writing kernels without an Xcode project.
 
 ### H.4 Sharpening job 1 and job 2 through the kit's definitions; job 6
 
-- **Job 1 is a census of white runs in the image of `Theta`.** Enumerating starts of width W and stepping them is the same
+- **Job 1 is a census of white runs in the image of `Theta`** *(the "one more histogram" below is withdrawn, CL611 and GC1775: with the canonical continuation it is the death histogram shifted by W)*. Enumerating starts of width W and stepping them is the same
   as enumerating free-bit sequences f (the kit's `yFree`; W/2 bits) and reading `Theta f` to depth about 3W by the sideways
   reconstruction `recon`, the anti-diagonal scan GPT's item 3 already specifies. The quantity to tabulate is not only
   the death time but the distribution of white-run lengths of `Theta f` beyond depth W: that is the object job 4's
@@ -349,58 +349,84 @@ ordinary time at which depth 1 is white (infinity if none), on the kit's zero-bo
 at depth 0 held white, `(Fx)_k = x_{k+1} xor (x_k or x_{k-1})`, `(Fx)_0 = 0`. Output per start: d(L) if d(L) <= T, else
 "censored at T". A censored lane is reported as d(L) > T and nothing more.
 
-**Input domain and the bijection.** By the kit's `pivot`, depth 1 at time t is affine in the start's depth t + 1 given
-depths <= t; so for even t the start's depth t + 1 is forced (black at depth 1 at time t) and for odd t it is free. The
-starts of width <= W surviving every even time < W are therefore in bijection with the free bits f at depths
-2, 4, ..., 2 floor(W/2) (the kit's `count_constrained`: exactly 2^floor(W/2) of them). A start outside this class dies
-before time W - 1 < W <= D(W) (`complete_near_wall` gives D(W) >= W), so the maximum over all 2^W starts is attained in
-the class, and the census over the class is exact for D(W). The engine enumerates f, builds L by the sideways
+**Input domain and the bijection (revision 2, GC1776).** The free coordinates are the kit's: **index bit i is the odd
+trace bit a(2i + 1)**, the value of depth 1 at time 2i + 1, for i = 0..floor(W/2) - 1; the even trace bits are 1. They
+are not the initial cells at even depths (already L(2) = a(1) xor a(0) = not f(0)); the start is obtained from the trace
+by the triangular reconstruction below, and a tiny literal fixture (W <= 6, the table of f against L written by hand)
+is kept independent of the reconstruction code. By the kit's `pivot`, depth 1 at time t is affine in the start's depth
+t + 1 given depths <= t, so the starts of width <= W surviving every even time < W are in bijection with these
+floor(W/2) bits (`count_constrained`: exactly 2^floor(W/2) of them). A start outside the class has d(L) < W (for odd W
+possibly d(L) = W - 1), and `complete_near_wall` gives D(W) >= W, so the maximum over all 2^W starts is attained in the
+class and the class census is exact for D(W). The engine enumerates f, builds L by the sideways
 recurrence `cell(t, k+1) = cell(t+1, k) xor (cell(t, k) or cell(t, k-1))` from the trace a(t) = 1 at even t, f at odd t
 (this is the kit's `lam`/`Theta` read to depth W), then truncates L to depths <= W (depths above W white) and simulates
 forward. The parity convention: ordinary time, depth 1 checked at even t, death at the first even failure. Odd W: the
 free bits are the even depths <= W; the last forced depth is W when W is odd.
 
-**Lane layout.** 32 lanes per 32-bit word (64 per 64-bit word if `ulong` is confirmed on the device); a lane is one f.
-Rows are stored depth-major: `row[k]` is a word whose bit l is lane l's cell at depth k. One step is then pure bitwise
-across lanes, no shifts and no carries: `new[k] = row[k+1] ^ (row[k] | row[k-1])` for k = 1..K-1 with `row[0] = 0`
-and `row[K] = 0` beyond the live depth K = W + t (the edge moves out one depth per step, `zrow_edge`). Death:
-`newly = ~row[1] & ~dead` at even t; `deathTime[lane] = t` for newly dead lanes; `dead |= newly`; the group stops when
-`dead` is all ones or t = T. Lane-group index g (64-bit on the host) and lane l give f = bits of (g << 5 | l) in a fixed
+**Lane layout and the finite-row contract (revision 2, GC1776: the first draft dropped the edge).** 32 lanes per
+32-bit word (64 per `ulong` word if the device confirms it); a lane is one f. Rows are depth-major: `row[k]` is a word
+whose bit l is lane l's cell at depth k. Two buffers indexed 0..W + T + 1. Invariant at time t: `row[0] = 0` (the wall),
+`row[k] = 0` for every k > W + t (the support bound K = W + t is **inclusive**: the last black cell is at depth W + t,
+`zrow_edge`). Step: `new[k] = row[k+1] ^ (row[k] | row[k-1])` for **1 <= k <= W + t + 1** (so the new edge cell at
+W + t + 1 is computed, from `row[W+t+2] = 0`, `row[W+t+1] = 0`, `row[W+t]`), `new[0] = 0`, `new[k] = 0` above
+W + t + 1 (the halo is maintained, never read uninitialised). Stop at t = T without stepping again. Lane masks: a
+`valid` word marks the lanes present in the group (the last group of a batch may be partial); death at even t is
+`newly = ~row[1] & ~dead & valid`, `deathTime[lane] = t` for newly dead lanes, `dead |= newly`; the all-dead test is
+`(dead & valid) == valid`. A singleton/edge-position control (depth 1 only, d = 2; a start with its last black at W,
+checked cell by cell against the scalar engine for ten steps) runs before any performance figure is taken. Lane-group index g (64-bit on the host) and lane l give f = bits of (g << 5 | l) in a fixed
 order (bit i of the index is the free bit at depth 2(i + 1)). No per-thread array spans a row: one thread owns one
 lane-group and loops over depths in device memory, or a threadgroup owns a tile of depths; the choice is measured.
 
 ```
-# host (Python, MLX custom kernel or a Swift driver), per batch of 2^20 lane-groups
-for g in batch: f_bits = index(g, l) for l in 0..31          # manifest records [g_lo, g_hi), W, T, engine digest
-kernel build_start(g):   fill the triangle cell(t,k) for t + k <= W from a(t) by the sideways recurrence; row0[k] = cell(0,k) for k <= W; zero above
-kernel simulate(g):      for t in 0..T: if t even: record deaths; if all dead: break; new = step(row); swap
-kernel reduce(batch):    max death time, count of lanes attaining it, count censored, histogram of death times
-host:                    re-simulate 64 random lanes of the batch in scalar Python; any disagreement stops the run and keeps the lane
+# host (Python with an MLX custom kernel, or a Swift driver), per batch of G lane-groups (G from the memory budget below)
+for g in batch: lane l of group g has index n = (g << 5) | l; bit i of n is a(2i+1)      # manifest: [g_lo, g_hi), W, T, engine digest, G
+kernel build_start(g):   # the kit's lam/Theta read to depth W, two columns of W+1 words as workspace
+    col[k] holds cell(t,k) for t = 0..W-k as words over lanes; col[0] = 0 (the wall); col[1][t] = a(t) (1 at even t, index bits at odd t)
+    for k in 1..W-1: for t in 0..W-k-1: col[k+1][t] = col[k][t+1] ^ (col[k][t] | col[k-1][t])     # x_{k+1} = (Fx)_k xor (x_k or x_{k-1}) at time t
+    row[k] = col[k][0] for k <= W; row[k] = 0 for k > W (truncation to width W)
+kernel simulate(g):      for t in 0..T: if t even: record deaths (masked by valid); if all valid lanes dead: break; if t == T: break; step (1 <= k <= W+t+1); swap
+kernel reduce(batch):    max death time, number of lanes attaining it, number censored, histogram of death times (exact integers, 64-bit on the host)
+host:                    re-simulate min(64, lanes in batch) lanes, chosen deterministically from the batch seed plus the fixed edge cases, in scalar Python; any disagreement stops the run and keeps the lane
 ```
 
-**Work model (to be measured, not assumed).** Word-steps per lane-group about T x (W + T) / 1; words of traffic about
-2 (W + T) per step; lanes per word 32. At W = 60, T = 4W: about 7 x 10^4 word-steps per group, 2^25 groups: 2.5 x 10^9
-word-steps for the full census. Report measured wall, GPU time, transfer and reduction separately; nominal ALU rates
-are not estimates.
+**Work model (to be measured, not assumed; revision 2 corrects the first draft's arithmetic, GC1776).** Word-steps per
+lane-group about T x (W + T); words of traffic about 2 (W + T) per step; lanes per word 32. At W = 60, T = 4W = 240:
+about 7.2 x 10^4 word-steps per group, and a full class census of 2^30 lanes is 2^25 groups, about **2.4 x 10^12
+word-steps** (the first draft wrote 2.5 x 10^9, a factor 2^10 short). Early extinction reduces the measured work and
+repairs nothing in that count. **P1 does not run a full census at 52, 56 or 60**: those widths are tested on frozen
+fixtures (Local's known maximizers and a sample of non-maximizers with their exact death times), which checks the
+evaluator on known inputs and establishes nothing about other maximizers. Report measured wall, GPU time, transfer
+and reduction separately; nominal ALU rates are not estimates.
 
 **Controls (written first; all must pass before any new width is reported).**
 1. Exhaustive tiny widths W <= 14: the engine's class census against an independently written scalar census of all
    2^W starts (brute force, no free-bit construction): equal D(W), equal set of maximizers, class size 2^floor(W/2).
-2. Frozen witnesses: D(52) = 96, D(56) = 100, D(60) = 114 (Local's D-exact lane) reproduced exactly, with the number
-   of maximizers Local holds; this is a check of the evaluator on known maximizers, not of any search.
-3. Edge cases: the zero start (dies at t = 0); the singleton (depth 1 only: d = 2); the truncated stripe; a lane with
-   death exactly at T; a synthetic never-dying lane (the stripe untruncated, fed directly) reported censored; lanes at
-   positions 31/32 and 63/64 of their words; the last partial word of a batch; W odd and W even.
-4. Sparse16 as a negative control, with its exact statement only: a start black at depth 1 at all even times
-   0..110 has at least 17 black cells among depths 1..111; so any lane the engine reports alive at t = 110 must have
-   weight >= 17 in depths 1..111. A violation is an engine bug, never a discovery.
+2. Frozen fixtures: Local's known maximizers at 52, 56, 60 (d = 96, 100, 114) and a frozen sample of other starts
+   with their exact death times from the D-exact lane, reproduced exactly; a check of the evaluator on known inputs, not
+   a census and not a statement about multiplicities.
+3. Edge cases: the zero start (dies at t = 0); the singleton (depth 1 only: d = 2); a start with its last black cell at
+   depth W (edge-position control, cell by cell for ten steps); the truncated stripe; a lane with death exactly at T;
+   the censoring logic tested by a stripe **halo** (initial depths through T + 1 carry the stripe, which suffices for
+   depth 1 through time T) reported censored at T, and recorded as a test of censoring, not as an infinite support in a
+   finite census; lanes at positions 31/32 and 63/64 of their words; the last partial group of a batch (lane masks); W
+   odd and W even. At small W fewer than 64 lanes exist: sample what exists and keep the deterministic edge cases.
+4. Sparse16 as a negative control, with its exact statement only: if the evolution is black at depth 1 at all 56 even
+   times 0..110 then the **initial row** has at least 17 black cells among depths 1..111 (any farther tail). So any
+   lane the engine reports alive through t = 110 must have an initial row of weight >= 17 in depths 1..111; the
+   initial row, not an evolved row. A violation is an engine bug, never a discovery.
 5. The two-engine rule: every batch has 64 lanes re-simulated on the CPU; a single disagreement stops the run.
 
-**Caps and stop rules.** GPU buffers <= 256 MiB; one batch in flight; wall <= 60 s per batch, else the batch is marked
-timed out and the run stops; total pilot wall <= 30 min; process RSS <= 4 GiB; outputs <= 100 MB; everything outside
-git with digests in the record; no concurrency with other M5 jobs; no automatic continuation past the planned widths.
-Pilot widths: 10..14 (control 1), then 52, 56, 60 (control 2). **No census above width 60 is part of P1.** A later
-census at 64 or 72 is a separate claim with its own agreement; widths 80 to 100 are not proposed.
+**Memory budget and caps (revision 2; the owner's clarification GC1777 replaces the illustrative 256 MiB).** The live
+allocations per lane-group at W = 60, T = 240 are two row buffers of W + T + 2 = 302 words, the reconstruction
+workspace of 2 (W + 1) = 122 words, the `dead` and `valid` words, and 32 death times of 2 bytes: about 2.9 KB. The
+**explicit GPU budget is 2 GiB** on the 16 GiB shared machine with nothing else running, so G = 2^19 lane-groups per
+batch (about 1.5 GiB live, the rest headroom for framework allocations), one batch in flight; the budget, G and the
+measured peak go in the receipt. Stops: process RSS > 6 GiB, memory pressure warning, swap growth > 256 MiB, wall >
+120 s per batch (the batch is marked timed out and the run stops), total pilot wall <= 30 min, outputs <= 100 MB.
+Everything outside git with digests in the record; no concurrency with other M5 jobs; no automatic continuation.
+Pilot inputs: all classes at W = 10..14 (control 1), then the frozen fixtures at 52, 56, 60 (control 2) and the edge
+cases (controls 3 and 4). **No census above width 14 is part of P1.** A census at 52 or 60 (2^26 to 2^30 lanes) or
+beyond is a separate claim with its own agreement; widths 80 to 100 are not proposed.
 
 ### J.2 Pilot P2: the survivor search, simple against learned, at equal budgets
 
@@ -421,9 +447,16 @@ best witness per method with its record; censored counts. Recovering the exact m
 target to report, not a soundness gate on new witnesses, which are checked by the scalar engine and, if they matter,
 by the kit's checker in Lean.
 
-**Caps.** Evaluator budget 2^24 unique starts per method per width; wall <= 20 min per method per width; training
-wall counted inside it; the same memory cap as P1; widths 64, 72, 80 only; a survivor at the cutoff T = 4W is re-run
-on the CPU to 16W and still reported censored if alive, never as a counterexample.
+**One aggregate budget (revision 2, GC1776).** P2 starts only after P1 passes. The whole first comparison is **one stage
+of 90 minutes wall** covering every method, seed, width, training, evaluation and CPU extension, with subordinate
+caps: 2^22 unique starts per method per width **in total across its five seeds**; two widths only (64 and 72; 80 is a
+later stage); memory and pressure stops as P1; outputs <= 200 MB. The first exceeded cap stops the stage. Equal caps,
+not equal achieved figures: fixed-call and fixed-time comparisons are reported separately when one cap binds first.
+Censored lanes are deduplicated and counted; a predeclared subset of at most 64 distinct censored witnesses per width
+(the longest-lived by free-bit order) is extended on the CPU to 16W inside the stage budget, the rest stay censored.
+Frozen executable parameters before launch: beam width and completion/scoring rule, mutation and restart schedule,
+network size and training steps, cross-entropy elite fraction and batch; without them these are method names, not
+versions.
 
 ### J.3 Pilot P3: the next-bit predictor, protocol frozen before any result
 
@@ -444,15 +477,26 @@ three seeds at most per rung; one pre-registered final configuration per rung go
 
 **Rungs and baselines.** Majority; persistence (predict the previous bit); Markov orders 1 to 16; CTW and PPM with
 prequential (causal) scores, never whole-file compression; a small causal CNN over contexts 64 to 4096; a transformer
-only if a rung below shows z >= 3 on validation, with the quadratic context cost stated. Positive controls: an LFSR
-stream and the bits of a rule 30 row (both predictable); negative control: a CSPRNG stream through the same pipeline.
+only if a rung below shows z >= 3 on validation, with the quadratic context cost stated. Positive controls (revision 2,
+GC1776): an alternating stream and a period-7 stream, each with its explicitly correct predictor (persistence fails on
+the first and a Markov order >= 7 is exact on the second), so the control is demonstrably predictable by a baseline
+under test; an LFSR only after its recurrence, order and a sufficient context are fixed. Negative control: a CSPRNG
+stream through the same pipeline, an engineering check of the pipeline, not a proof of the test's level. "Beats the
+baselines" is a separate, predeclared paired comparison: per-10^7-block differences of accuracy and log loss against
+each frozen baseline, with the rule (a sign test over blocks at a stated level) fixed before the test block is read;
+the coin z-score alone shows advantage over a coin, nothing about the fitted baselines.
 
 **Claim wording.** "No tested model in this list beat the baselines on the untouched test block" or "model X beat
 them with z = ..., reproduced on every tenth of the block". Nothing about MaxOrderComplexity, LocalLimit, normality or
 computational unpredictability follows from either outcome.
 
-**Caps.** Training on the GPU through MLX; <= 2 h per rung; the Neural Engine is an optional inference target to
-benchmark, never a success condition; memory as P1.
+**Complete-stage caps (revision 2, GC1776: training-only caps left 399 million test predictions unbounded).** The
+first stage uses a **fixed slice**: train on 10^8 bits, validate on 10^7, test on the first 10^7 bits of the test
+block; the full resource is a later, separately agreed stage. One stage budget of 3 hours wall covering data
+verification (the independent evolution of the first 10^5 center bits, done by the kit's own bit-sliced method, not a
+literal quadratic simulation), control generation, every validation configuration (at most 45 per rung), final
+inference and the baselines' prequential passes; per-rung training <= 40 min; memory and pressure stops as P1; outputs
+<= 500 MB. The Neural Engine is an optional inference target to benchmark, never a success condition.
 
 ### J.4 Jobs kept as design notes
 
