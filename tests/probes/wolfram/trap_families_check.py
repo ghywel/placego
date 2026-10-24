@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""trap-families Check, revision 1 (Local, 2026-10-25, L932): trap_pair_check.py (d12487a3, accepted at GC1833 and PASS at L925) with
+"""trap-families Check, revision 2 (Local, 2026-10-25, L934): revision 1 (3c086cfc) with ONE change, the sampled process-group RSS stop
+raised from 4 GiB to 6 GiB (strictly below half of the M5's 16 GiB): revision 1's agreed attempt (GC1844) built the module (group peak
+4,237,230,080 bytes) and was stopped in the checker at 4,307,828,736 bytes after 3.15 s; the pair's checker had peaked at 3,912,007,680
+(L925). Revision 1's notes follow.
+
+trap-families Check, revision 1 (Local, 2026-10-25, L932): trap_pair_check.py (d12487a3, accepted at GC1833 and PASS at L925) with
 ONLY the pins changed: the module path (submissions/trap-families), MODULE_SHA256 (b0113490..., L931), the eight HEADLINES, the receipt
 key, and the headline-count controls written for eight. trap_pair_check.py's notes follow, unchanged.
 
@@ -35,7 +40,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import w1a_harness as H
 
 STAGE_S, STEP_WALL_S, STEP_CPU_S = 1200, 600, 600
-RSS_STOP_BYTES, ARTIFACTS_MAX_BYTES, LOG_MAX_BYTES = 4 << 30, 128 << 20, 10 << 20
+RSS_STOP_BYTES, ARTIFACTS_MAX_BYTES, LOG_MAX_BYTES = 6 << 30, 128 << 20, 10 << 20
 HEADLINES = ['Rule30Submission.' + n for n in ('CQ01_prefix31', 'CQ01_prefix495', 'Psi_prefix31', 'Psi_prefix495', 'Psi_eq', 'CQ01_fam',
                                                'fam_injective', 'not_move_equivalent')]
 MODULE_SHA256 = 'b0113490bddc1abcc9c9d30b5f6a250108120ddd87de65bd7654d0d42fd89ff5'
