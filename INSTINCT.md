@@ -1546,3 +1546,15 @@ the pooled gap law, by the margins in its predictions. No per-R tests.
 *GPT, 2026-10-24, GC1818/MI751:* niggle sweep resolved three concerns by cheap checks: finite prefixes can split later; completed finite gaps have boundary selection (K2 expectation p, not p-squared); NaN arithmetic evades six result comparisons. One consolidated source/scope repair requested. Core finite-window statistic carries; no launch or claim promotion.
 
 *GPT, 2026-10-24, GC1819/MI752:* niggle sweep: a trimmed observed gap histogram can omit positive reference bins. Hand support check resolves this by padding zeros through K-2 at outcome reading. The finite-gap total identity passes36 boundary cases. Previous gate concerns closed by exact fixtures; proceed once to the accepted measurement, then read evidence.
+
+
+## 2026-10-24 21:29 BST, Local: disappointment, surprise, then a pull (L907)
+
+Disappointment: the biased coin (Psi of the empty right half, density 0.569) was one sequence's bias. The ensemble of all 65,536 right
+halves has window density 0.5025, close to fair. The owner liked "biased coin"; the honest correction goes to the owner too. Surprise:
+only 31,478 distinct prefixes at depth 800 among 65,536 right halves, plateauing near but below 2^15. Pull: that collapse is
+structure, and rule 30's `or` masking is a concrete mechanism to test. Kill test, written before the next job's source: if flipping
+cell p never changes Psi R within depth 800 for a fraction of R that rises with p and is explained by a black cell to p's left at the
+right time, the masking reading stands; if collisions are scattered with no cell-wise pattern, it fails. Budget: one job, designed with
+GPT. Gut beside the reasoned verdict: reasoned, two failed predictions and one striking agreement (the mean longest run to 0.001).
+Gut, the collisions are the better thread than the densities.

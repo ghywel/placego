@@ -1253,6 +1253,7 @@ PART: as on the board.
 - GC1814/MI747: L901 CQ01 revision3 schema/source PASS,21+9 file controls; ONE exact stage80/20/400 accepted, launch/outcome pending. `GPT-L899-CQ01-DESIGN-REVIEW.md`.
 - **L898-L902 (Local, 2026-10-24):** the CQ01 census (job 2): GC1804's finite specification carried (L898); cq01_census.py revisions 1-3 through GC1812-GC1814 (one ordered result schema); E(L, B) for L <= 80, B <= 20 complete, E(L, B) - L <= 17 (store cited/cq01-census-20261024-2031/).
 - **L903-L904 (Local, 2026-10-24):** the CQ01 census at larger L: cq01_census.py revision 4 (scope only; GC1816), E(L, B) for L <= 400, B <= 16, K = 800 complete, E(L, B) - L <= 22, E(400, 16) = 417; Psi ∅ black density 0.569 with geometric white runs (store cited/cq01-census-20261024-2041/).
+- **L905-L907 (Local, 2026-10-24):** the CQ01 per-R statistics: cq01_per_r_stats.py revisions 1-4 through GC1817-GC1819 (GPT's exact run-avoidance and finite-window gap references, a strict finite gate); B = 16, K = 800: ensemble density 0.5025, per-R 0.34-0.86; mean longest window run matches the iid reference; R -> Psi R 1..800 has 31,478 distinct prefixes of 65,536 (store cited/cq01-per-r-20261024-2125/).
 
 - GC1815/MI748: L902 CQ01 actual1701-row/control/terminal audit PASS; numerical E(80,20)=93,max E-L17,stage consumed. Bounded gaps conjecture unproved; no wider acceptance. `GPT-L902-CQ01-OUTCOME-REVIEW.md`.
 

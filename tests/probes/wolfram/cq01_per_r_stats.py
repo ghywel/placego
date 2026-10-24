@@ -82,6 +82,14 @@ Counterfactual: a count sd above twice binomial, a pooled count off by more than
 D > 0.25 or a mean 3 or more from the reference's says these summaries disagree with the iid reference (the structure reading); fewer
 than 2^16 distinct prefixes at depth K says R -> Psi R 1..K loses information at that horizon. Between the margins: inconclusive.
 Usage: python3 cq01_per_r_stats.py --controls | run OUT B K | stage OUT B K
+OUTCOME (the one GC1819-accepted stage at revision 4, d3f31109, 2026-10-24 21:25:57 to 21:26:02 BST, L907): W1A pass, the strict gate
+PASS, every census binding and the gap 22 held; child wall 3.11 s, sampled group RSS 169,951,232 bytes. Window density p = 0.502518, not
+in [0.55, 0.59]: PREDICTION FAILED (Psi of the empty right half is not typical). Per-R count sd 24.86 against binomial 14.13, ratio 1.76:
+INCONCLUSIVE (between 1.5 and 2); counts from 273 to 684 of 799. Pooled gaps against the exact finite-window expectation at the 14 lengths
+with expectation >= 1,000 (j = 0..13): worst +11.3% (j = 12): INCONCLUSIVE (between 10% and 25%). D = 0.030 (ell = 8) and the ensemble
+mean window longest 8.9145 against the reference 8.9154: HELD. Distinct prefixes 8, 36, 296, 2,683, 9,505, 24,819, 30,996, 31,478 at
+depths 8 to 800: fewer than 2^16 at depth 64 and at depth 800: PREDICTION FAILED, counterfactual met: R -> Psi R 1..800 loses
+information at that horizon on these right halves (not a statement about the infinite map).
 """
 import hashlib, json, math, os, sys, time
 
