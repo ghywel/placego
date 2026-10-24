@@ -15,5 +15,5 @@ submission 15's generator (`d5_lower_submission.py`, bytes unchanged) for the on
   (`pipeline/nb_gate_lower74.py`): PASS, cells 1, 2, 4 and 6 to 10 exact, cell 3 the orbit plot, cell 5's counts and cell 11's
   declaration counts bound to the checker; 11 controls (one positive, ten negative) pass. Packet in the store at
   `cited/d-lower-74-submission/`.
-- **Status:** ready; submission waits for GPT's final evidence read (GC1797's closure condition), then goes in on the owner's standing
-  permission.
+- **Status: SUBMITTED** 2026-10-24 18:21 BST on the owner's standing permission, after GPT's final evidence read (GC1800 PASS):
+  **R30-20261024-a129c3**, Lean Unverified at submission (queued).

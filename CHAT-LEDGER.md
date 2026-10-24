@@ -11601,3 +11601,41 @@ See `reports/wolfram-agents/GPT-L889-W74-LOWER74-W76-REVIEW.md` for full byte pi
 W76: GPT explicitly accepts ONE supervised stage at8522ee37/ddb69cc2, previous resultcb4fef78, unchanged five supporting pins, W76/T304/2^38 lanes,512 sequential calls,7200s stage/step wall and sampledCPU,2GiB device/6GiB groupRSS, existing pressure/swap/disk/output stops. Launch after submission work and when quiet; no retry/W78/concurrency. Exact buffers1164977656bytes plus256MiB logical host arrays and other runtime allocations; actual headroom required. Full agreement is in the report.
 
 Nonblocking future builder fix: build_sub.wl hashes File expressions, not file bytes; use FileHash for log labels. Actual files were separately byte-verified and embedded source/outputs compared, so no rebuild or delay requested. Both timing predictions remain distinct, and missed predictions are retained.
+
+
+## L890 — Local to the owner, GPT and Cloud: **SUBMISSION 17 IS IN: R30-20261024-a129c3** (D(74) >= 134, kernel-checked witness); GC1800 taken; the one accepted width-76 census is LAUNCHED (2026-10-24 18:21 BST)
+
+**Submitted** 18:21:05 BST on the owner's standing permission, after GPT's final evidence read (GC1800: "Lower74 final source and
+actual-output review COMPLETE/PASS"). Title "A death-time lower bound at width 74, with a witness from a complete GPU census", problem
+1, claim partial, headline `Rule30Submission.width74_lower`. The reply was ok, id **R30-20261024-a129c3**, status Lean Unverified,
+queued. The notebook submitted is essay.nb 017ee431… and the essay 0541366e…, both re-hashed against GPT's table first. status_all.wl
+now lists 21 ids.
+
+**GC1800 read and taken.**
+- W74's evidence: PASS. The 782-check set was confirmed exactly.
+- The two misses stay recorded: the point guess of 132, and the older GPU rate.
+- **Provenance note taken:** `build_sub.wl` prints `Hash[File[path], "SHA256"]`, which hashes the File expression, not the bytes. That
+  explains the mismatched digests in L886 and L889. I will move it to `FileHash[path, "SHA256", "HexString"]` as the builder's next
+  revision, with no rebuild of anything submitted.
+
+**Width 76, launched** once, at the accepted bytes, every pin re-hashed against your table immediately before launch:
+
+| File | sha256 |
+|---|---|
+| p1c revision 4 | ddb69cc2… |
+| main.swift | 6b76fe74… |
+| lanes.metal | 17a81e66… |
+| helper | ea9b7cc2… |
+| d1 | e924602e… |
+| W1A | 3f908914… |
+| the W74 result | cb4fef78… |
+
+The command was `stage 76 OUT --prev W74_RESULT`, output directory p1c-W76-20261024-1821, outside git. The machine was quiet after the
+submission: load average 2.12, no Wolfram, Lean or engine process. Predictions are L889's. Both timing predictions will be scored under
+their own names. Nothing will be retried or chained.
+
+**The next job, in preparation while it runs (next-job-ready):**
+- a width-parametric version of the lower-bound generator and gate, so a width-76 lower bound can follow the census the way width 74's
+  did;
+- the builder's FileHash revision.
+Both are CPU-light writing only, and both come to you as source before any use.
