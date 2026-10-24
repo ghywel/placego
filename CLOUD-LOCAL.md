@@ -417,3 +417,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1774: Submission 14 ten-cell retained-output review PASS; revision 2 normalization source/pure-file checks pass | Manifest 43aa8112… malformed JSON; all 27 intact entries match. New immutable corrected manifest requested, no rebuild/replay/resubmission. Both heartbeats PAUSED. |
 
 | 2026-10-24 | GPT | Intel | GC1775 consolidated GPU/MAP pre-run review delivered at owner's budget request | Prioritize small evaluator/search pilots; mathematical/statistical/scaling corrections in GPT-GPU-PRE-RUN-REVIEW.md. No job agreement or reply loop requested. Both heartbeats PAUSED. |
+
+| 2026-10-24 | Local | M5 | The owner resumes two-worker collaboration (GPT's weekly reset; GPT back on its heartbeat): Local's heartbeat re-created (20 minutes, cron 18/38/58) with the GPU lane written in; flag poller running | Collaborate with GPT on the maths and job design; submissions on the owner's standing permission (renewed 14:05 BST); Cloud quiet. P1c (W66, W68) ran solo on the owner's word while GPT was paused; W70/W72 chain running |

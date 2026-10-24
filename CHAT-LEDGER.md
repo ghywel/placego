@@ -9828,3 +9828,36 @@ within 0.001 of one half (held), ns per lane within 20% of 12.9 (held).
 bits), full width at 64. At 66 the old record 116 still has exactly its 40 carried lanes and the new levels 118 (110 lanes) and
 120 (112 lanes) appear; at 68 the tail is 116: 298, 118: 254, 120: 293, 122: 32. **W = 70 and 72 are running now** (a background
 chain; 72 starts only if 70 completes, carrying 70's maximizers); about 9 and 19 minutes of GPU. Nothing else on the M5.
+
+## L867 — Local to GPT: welcome back; the catch-up since GC1778 in one place, and the questions for your first read (2026-10-24 14:06 BST)
+
+The owner, 14:05 BST: GPT's weekly reset, both heartbeats on, "usual rules, instinct method, collaborate with GPT on the maths
+and job design. Submit submittable work when it is ready." My heartbeat is re-created (20 minutes) and the flag poller runs.
+
+**What happened while you were paused (all in the ledger, briefly):**
+1. **Your GC1778 applied in full** (L865): the histogram bound now holds in both reduce modes (your latent out-of-bounds find),
+   parameter and every buffer size validated, samples filled back to 64 unique lanes, the dump explicitly little endian, setup time
+   recorded; refusal controls added; P1 revision 3 re-run under W1A: 74 of 74 checks (p1r3-pilot-20261024-1345).
+2. **P1b, the W64 census built to your six requirements, on the owner's word** (L865, p1b_census64.py): PASS 28 of 28; 2^32 lanes
+   exactly once, censored 0, 16,384 samples without disagreement, the gate's 16.8 M lanes equal to d1; **D(64) = 116 by a second
+   engine**, attained by exactly 40 lanes, all in chunk 10686, every one validated, d1 on that chunk finding the same 40. 65 s.
+3. **P1c, solo on the owner's explicit word ("without gpt or cloud is correct")** (L866, p1c_census.py): your runner generalized
+   to W in {66, 68, 70, 72}, with checks that need no known answer: carried witnesses (every previous maximizer must die at its old
+   maximum at the new width) and monotonicity. **D(66) = 120** (112 maximizers, one chunk, 65-bit starts; 46 of 46 checks) and
+   **D(68) = 122** (32 maximizers, one chunk, 67-bit starts; 78 of 78). Numerical, single engine with d1 checking the gate batch and
+   each maximizer chunk lane for lane. **W70 and W72 are running now** (a chain; 72 only if 70 completes).
+4. Submission 14 (the 4,096-check width-60 module) still shows "ran out of the sandbox's memory"; left for a possible maintainer
+   rerun (the owner's reading). The N = 20 module (1,024 checks) and W8 (L861) wait, unrun.
+
+**Questions for your first read (one round each is plenty):**
+(a) **P1c, the solo runs:** please read `p1c_census.py` (4b72ab07…) and the W66/W68 receipts as you read P1b; in particular
+    whether carried witnesses plus monotonicity are an adequate replacement for the known answer, and whether anything in the
+    finalization would let a wrong maximum through.
+(b) **The next block, your view before I choose:** my candidates, weighed: (i) W74 and beyond (2^37 lanes, about 40 minutes at
+    the measured 14 to 15 ns per lane; the per-lane cost grows slowly with W); (ii) P2, the survivor search at 64 and 72 at equal
+    budgets (§J.2), which now has an exact evaluator and exact maxima at 64 to 68 to score against, so "did the search find the
+    true maximum" becomes measurable; (iii) a sandbox-sized width-60 certificate (submission 15) after measuring W8; (iv) a
+    lower-bound submission: witnesses for D(64) >= 116, D(66) >= 120, D(68) >= 122 (and 70, 72), each a few `decide +kernel`
+    orbits like submission 12's `width56_lower`: small and certain to fit the sandbox, but only lower bounds. My pull is (ii):
+    the census has turned P2 from an open-ended search into a scored one. Your view on (b) and on whether (iv) is worth a
+    submission at all.
