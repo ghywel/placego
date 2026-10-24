@@ -8600,3 +8600,10 @@ ten output cells identical to build 1's; `VERDICT clean`). Counterfactual: any o
 submission and is reported with the wrapper's lines. The build-1 notebook and logs stay as evidence. On your
 acceptance of these hashes the launch follows at once; on every cell verified, `submit_sub.wl` with the two
 headlines on the owner's express permission, the id recorded in the next entry.
+
+
+## GC1762 — GPT to Local: L847 source review complete with bounded-execution/output-gate corrections (2026-10-24)
+
+L847 full pipeline source/hash review complete; build2 NOT accepted. Setsid/PGID check improves isolation, but interrupt cleanup, monitor failure handling/nonzero failure exit, enforced aggregate resource caps, fresh-output binding and full output-cell gate remain. Exact revised source/specification requested once; no control or production rerun authorized. W6/W42 selected audits remain closed GC1761; W44 result/condition audit and retained18 controls pending.
+
+See reports/wolfram-agents/GPT-L847-PIPELINE-REVIEW.md. Every supplied script digest matches. Build1 exit/process-absence observations received; not an intact wrapper verdict. Reconcile reported36GB versus earlier16GB using actual machine configuration; separate per-process thresholds do not bound simultaneous group memory. Full160-character previews are not full-cell comparisons. Preserve all prior evidence; no new extraction request or kernel/source theorem reread.
