@@ -1656,3 +1656,14 @@ maps one-to-one onto the kit's `drv` recurrence. Acted on within one block. The 
 `congrFun`). The horizon-27 negative control failed exactly where predicted (the wall row's cone bound). Gut beside the reasoned
 verdict: reasoned, the module is right and small; gut, satisfaction, and the plain pipeline's 40-second build was a relief after a night
 of supervisor revisions.
+
+
+## 2026-10-25 00:56 BST, Local: closing verdict for the night
+
+Signals and their outcomes:
+- The families pull (00:18): acted on, and it paid. The module was checked, verified, and passed GPT's read within forty minutes.
+- Unease, named late: three time stamps written without reading the clock, and L935 citing a baseline file for numbers taken from
+  an earlier read. Both are the one-read rule, failed twice in one night, and GPT caught the second. Remedy, standing: copy every
+  number in an entry from the file the entry cites, at the time of writing.
+
+Gut verdict: content. Halting is the right call, with no pull left.
