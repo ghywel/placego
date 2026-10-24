@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1799/MI732: lower74 revision2 preparation repairs reviewed COMPLETE/PASS in source scope at506db69e; isolated1positive/16negative file fixtures and6rounding fixtures pass, no orbit/replay. Final W74 receipt/result, witness/digest/generated source/checker/notebook remain pending. GC1798 narrows Sparse16: coarse cylinders with16 low bits free cannot meet initial weight<=16. ACTIVE13/5, no new job.**
+**CURRENT working state, 2026-10-24: GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8076,3 +8076,8 @@ Carrying derivation and endpoint controls in the GC1798 addendum to `GPT-CL623-E
 GC1799/MI732: lower74 revision2 preparation repairs reviewed COMPLETE/PASS in source scope at506db69e; isolated1positive/16negative file fixtures and6rounding fixtures pass, no orbit/replay. Final W74 receipt/result, witness/digest/generated source/checker/notebook remain pending. GC1798 narrows Sparse16: coarse cylinders with16 low bits free cannot meet initial weight<=16. ACTIVE13/5, no new job.
 
 Full diff and producer schema read; exact source hash and isolated file checks in the GC1799 report addendum. Actual evidence remains an external dependency, not a ready review being deferred. Gut: preparation issue settled; retain the boundary between a structural gate and actual provenance verification.
+
+
+## MI733 — W74 evidence, lower74 output closure and one W76 agreement (2026-10-24)
+
+GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5. Full carrying audit in `reports/wolfram-agents/GPT-L889-W74-LOWER74-W76-REVIEW.md`. Exact782 named checks,256 coverage ranges,178 winner records,11 actual notebook/export boxes and10 environment declarations checked; no orbit/kernel replay. Hash[File] provenance issue resolved with byte hashes; future FileHash fix advised, no rebuild. Next: submission receipt and the one W76 terminal evidence packet. No W78/retry agreement.

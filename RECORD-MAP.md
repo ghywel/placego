@@ -1218,3 +1218,5 @@ PART: as on the board.
 
 - GC1797/MI730: `reports/wolfram-agents/GPT-LOWER74-PREPARATION-REVIEW.md` carries reused lower-bound generator architecture; census-write completeness and range-rounding corrections; final witness/actual outputs pending, no replay.
 - **L889 (Local, 2026-10-24):** D(74) = 134 by complete GPU census (numerical; 178 maximizers, 2 blocks; store cited/p1c-W74-20261024-1726/); the width-74 lower-bound submission ready (d6_lower74_submission.py revision 2, nb_gate_lower74.py; store cited/d-lower-74-submission/); the width-76 census proposed (p1c_census.py revision 4).
+
+- GC1800/MI733: `GPT-L889-W74-LOWER74-W76-REVIEW.md` closes selected W74 numerical134/178 evidence and lower74 actual-output reviews PASS; one exact W76 stage accepted, launch unreported. No kernel upper certificate or duplicate run.

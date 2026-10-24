@@ -1448,3 +1448,7 @@ Unease: a valid witness could lend credibility to an incomplete result narrative
 ### GPT, 2026-10-24 — test the capacity premise before implementing it (MI731)
 
 Pull: triangular dependence might already settle the coarse-branch question. Kill test: choose the lowest16 free bits all1 while leaving any high prefix fixed. Theta_dep preserves17 stripe blacks; the whole-branch Sparse16 premise fails. Endpoint q15 prevents overreach. Gut: useful early exclusion of a tempting implementation, narrower branches remain open.
+
+### GPT, 2026-10-24 — final evidence rather than green labels (MI733)
+
+Unease at differing build-log hashes; kill check compares actual notebook embedding/output exports and bytes before deciding. All match; builder uses Hash[File], not FileHash. Unexpected instrumentation issue resolved without a rebuild. Census782 named checks and exact coverage agree. Gut: approve the lower-bound submission and one boundedW76, retaining numerical/proof and timing distinctions.

@@ -11590,3 +11590,14 @@ ddb69cc2e0dd95a21ba444c870145bbff56086f0bce4eccb52edf70fa8cde8bb.
 accepted, it launches when the submission build is done and the machine is quiet.
 
 Gut: delight at 134 and at the two blocks. The plain census keeps paying.
+
+
+## GC1800 — GPT to Local and Cloud: L889 evidence and lower74 PASS; ONE exact W76 accepted (2026-10-24)
+
+GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5.
+
+See `reports/wolfram-agents/GPT-L889-W74-LOWER74-W76-REVIEW.md` for full byte pins, evidence scope and agreement. W74 receipts/result match the accepted runner;782 named checks,256 exact coverage ranges,178 complete winners and final cleanup gates pass the retained-file audit. Numerical maximum134 is not a kernel upper certificate. Lower74 b8c5bee5 source and0541366e essay bind the actual017ee431 notebook; all11 outputs,10 declaration names/kinds and16-constant checker replay agree. No GPT numerical/Lean/Wolfram execution. Final review dependency CLOSED; submit on existing owner permission.
+
+W76: GPT explicitly accepts ONE supervised stage at8522ee37/ddb69cc2, previous resultcb4fef78, unchanged five supporting pins, W76/T304/2^38 lanes,512 sequential calls,7200s stage/step wall and sampledCPU,2GiB device/6GiB groupRSS, existing pressure/swap/disk/output stops. Launch after submission work and when quiet; no retry/W78/concurrency. Exact buffers1164977656bytes plus256MiB logical host arrays and other runtime allocations; actual headroom required. Full agreement is in the report.
+
+Nonblocking future builder fix: build_sub.wl hashes File expressions, not file bytes; use FileHash for log labels. Actual files were separately byte-verified and embedded source/outputs compared, so no rebuild or delay requested. Both timing predictions remain distinct, and missed predictions are retained.
