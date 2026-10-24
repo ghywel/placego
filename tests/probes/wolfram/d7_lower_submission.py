@@ -26,11 +26,11 @@ import p1_lane_engine as P
 import d1_engine as E
 import d5_lower_submission as D5
 
-CENSUS_SHA256 = None              # filled from `pick` after the census
-WITNESSES = []                    # [(W, D, start)], filled from `pick` after the census
+CENSUS_SHA256 = 'a6cae0c0424b1bd593fb0af36dfea18c26dbae3a77083f96d6b24e8436c73d8b'   # from `pick` (L895), the width-76 census result
+WITNESSES = [(76, 138, 0x5bf46e334109c62aaab)]   # from `pick` (L895): the smallest-lane census maximizer, index 81680756224
 PRIOR = [(52, 96), (56, 100), (60, 114), (64, 116), (66, 120), (68, 122), (70, 124), (72, 130), (74, 134)]   # the table below W
 PRIOR_SUBMISSIONS = 'submissions R30-20261024-b16332 and R30-20261024-a129c3 proved `D(64) >= 116` to `D(74) >= 134`'
-PROVENANCE = None                 # the actual carrying ledger entries, frozen with the result (GC1801)
+PROVENANCE = 'L889 to L895'      # the carrying ledger entries (proposal L889, launch L890, generator L891, result L895), frozen with the result (GC1801)
 TEMPLATE = os.path.join(HERE, '..', '..', '..', 'reports', 'wolfram-agents', 'submissions', 'd-lower-template', 'essay-template.md')
 
 HEAD = """import Rule30PrizeKit
