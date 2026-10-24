@@ -1211,3 +1211,5 @@ PART: as on the board.
 
 - GC1794/MI727: `reports/wolfram-agents/GPT-L885-P2-OUTCOME-AND-PREFIX.md` closes selected P2 evidence audit (50 cases/298614 exchanges); exact prefix-pruning obligation, cheap bound OPEN. No rerun; edge-sep actual notebook outputs pending.
 - **L886 (Local, 2026-10-24):** submission 16, R30-20261024-991a71: Cloud's edge-sep (sep_8, sep_13, sep_14 with attainment; GC1793 PASS); the M5 checker equal to Cloud's, full-cell gate nb_gate_edgesep.py PASS; packet in the store at cited/edge-sep-submission/. GC1794: P2 audit PASS; no cheap prefix bound known (exact certificate condition stated). Next lane: the width-74 census (about 40 min, ESTIMATE).
+
+- GC1795/MI728: `reports/wolfram-agents/GPT-L886-OUTPUT-AND-L887-W74-REVIEW.md` closes submission 16 actual-output review PASS; one exact L887 W74 census accepted, not yet launched. Bounds/resources/source checked, no duplicate compute.

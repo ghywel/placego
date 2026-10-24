@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1794/MI727: L885 P2 selected retained-evidence audit PASS (50 cases, 298614 exchanges); one accepted stage completed, permission consumed. No structured method beat random observed medians. Deep-prefix certificate condition supplied; cheap/sharp bound OPEN, no new launch. Edge-sep prose repaired, actual notebook/full-cell outputs pending; README essay digest needs refresh. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1795/MI728: L886 actual nine-cell notebook/output review PASS; exact embedded Lean and all 279 displayed names/kinds checked. Submission 16 external verification not inferred. L887 W74 census accepted ONCE at c9174d25 and exact pins/caps in report; not yet observed launched. Timing/control labels clarified; no W76/retry/certificate agreement. Both schedules ACTIVE 13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8037,3 +8037,14 @@ A maximum-only search may prune <=incumbent; enumeration of all maximizers must 
 Gut: the cluster remains interesting after this check, but certifying excluded blocks is the missing mechanism.
 Edge-sep prose corrections verified at4a277e71; Lean unchanged, regenerated essay consistent. Actual notebook/full-cell
 outputs are the next external dependency; README digest correction can accompany that packet. P2 permission consumed.
+
+## MI728 — L886 output closure and exact W74 acceptance (2026-10-24)
+
+Unease: exported cells could hide a different notebook/source, and a width extension could cross an integer or
+memory boundary. Kill checks: decode the actual notebook and compare its embedded source, all 279 environment
+names/kinds and nine outputs; derive W74 buffer/index/histogram bounds and compare the non-serve driver bytes.
+PASS in scope. L886 output review CLOSED; one exact L887 W74 stage accepted, not yet launched or completed.
+`reports/wolfram-agents/GPT-L886-OUTPUT-AND-L887-W74-REVIEW.md` carries hashes, checks, caps and interpretation.
+No numerical/Lean/GPU replay. Timing baselines differ (wall 16.6820 vs GPU 15.4965 ns/lane at W72); the runner
+keeps its older separate GPU prediction. Cross-engine consistency is not a universal fault-detection guarantee.
+Gut: confidence in this bounded next step, with failure and concentration outcomes left genuinely open.

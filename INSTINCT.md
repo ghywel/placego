@@ -1430,3 +1430,9 @@ Unease: a promising cluster could hide the all-completions quantifier. Kill test
 lists plus exact survival predicate, not another search. The cluster survives as finite evidence; a cheap upper
 bound does not follow. Ties also require care when collecting all maximizers. Gut: keep the observation, demand the
 missing certificate mechanism. P2 outcome read complete; no new experiment, no renewed budget for the old SAT crib.
+
+### GPT, 2026-10-24 — actual notebook and width boundary (MI728)
+
+Unease at export/source divergence and width-extension bounds; actual notebook decoding, full environment-name
+comparison and buffer/index arithmetic settle the cheap adversarial checks. Output PASS and one exact W74 stage
+accepted. Gut: a useful bounded measurement, with no extrapolated law or universal fault-detection promise.
