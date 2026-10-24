@@ -1,0 +1,1607 @@
+{
+ "claim": "partial",
+ "declared": [
+  {
+   "kind": "def",
+   "name": "Rule30Submission.BlocksDisjoint",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.HasLeftEdge",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.attained",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.blk",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.blocks13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.blocks14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.blocks8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.blocksDisjoint_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.blocksDisjoint_zero",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.center_eq_lane",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.centers",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.centers_getD",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.centers_spec",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.centers_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.centers_zero",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.cfg",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.cfg_hasLeftEdge",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.cfg_laneOf",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_0",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_10",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_11",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_12",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_15",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_16",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_17",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_18",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_19",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_20",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_21",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_22",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_23",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_24",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_25",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_26",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_27",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_28",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_29",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_3",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_30",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_31",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_32",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_33",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_34",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_35",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_36",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_37",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_38",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_39",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_4",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_40",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_41",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_42",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_43",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_44",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_45",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_46",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_47",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_48",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_49",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_5",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_50",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_51",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_52",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_53",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_54",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_55",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_56",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_57",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_58",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_59",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_6",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_60",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_61",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_62",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_63",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_7",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d13_9",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_0",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_10",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_100",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_101",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_102",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_103",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_104",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_105",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_106",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_107",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_108",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_109",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_11",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_110",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_111",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_112",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_113",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_114",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_115",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_116",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_117",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_118",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_119",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_12",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_120",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_121",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_122",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_123",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_124",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_125",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_126",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_127",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_15",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_16",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_17",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_18",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_19",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_20",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_21",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_22",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_23",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_24",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_25",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_26",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_27",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_28",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_29",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_3",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_30",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_31",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_32",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_33",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_34",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_35",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_36",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_37",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_38",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_39",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_4",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_40",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_41",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_42",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_43",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_44",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_45",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_46",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_47",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_48",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_49",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_5",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_50",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_51",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_52",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_53",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_54",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_55",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_56",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_57",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_58",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_59",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_6",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_60",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_61",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_62",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_63",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_64",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_65",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_66",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_67",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_68",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_69",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_7",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_70",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_71",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_72",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_73",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_74",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_75",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_76",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_77",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_78",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_79",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_80",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_81",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_82",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_83",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_84",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_85",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_86",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_87",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_88",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_89",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_9",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_90",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_91",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_92",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_93",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_94",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_95",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_96",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_97",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_98",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d14_99",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d8_0",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.d8_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.force",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.forceL",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.forceL_eq",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.force_eq",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.initWord",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.initWords",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.initWords_getD",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.initWords_length",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.iter",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.iter_length",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.iter_succ'",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.laneCode",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneCode_testBit_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneCode_testBit_zero",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.laneInv",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneInv_init",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneInv_iter",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneInv_step",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.laneOf",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneOf_lt",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.memb",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.memb_block",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.memb_testBit",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.ne_zero_of_testBit",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.partSet",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.partSet_eq",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.separation",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.separationB",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sig",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sigSet",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sigSet_mono",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sigSet_range",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sigSet_succ",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sigSet_testBit",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sigSet_zero",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sig_mem",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.stepL",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepL_getD",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepL_length",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.stepW",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepW_testBit",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.wit13",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.wit14",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.wit8",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.witCheck",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.witCheck_eq",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.blocks13.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.blocks14.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.blocks8.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.centers_getD.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.cfg.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.forceL.match_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.forceL_eq.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.force_eq.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.initWord.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.initWords.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.iter.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.iter.eq_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.iter.eq_def",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.iter.match_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.iter_length.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.iter_succ'.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneCode.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.laneOf.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.memb.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.memb.eq_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.memb.eq_def",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.memb.match_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.memb_testBit.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.sig.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sigSet_mono.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sigSet_range.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.sigSet_testBit.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepL.eq_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepL.eq_2",
+   "standardAxioms": true
+  },
+  {
+   "kind": "theorem",
+   "name": "Rule30Submission.stepL.eq_def",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.stepL.match_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.stepL_getD.match_1_1",
+   "standardAxioms": true
+  },
+  {
+   "kind": "def",
+   "name": "Rule30Submission.stepL_length.match_1_1",
+   "standardAxioms": true
+  }
+ ],
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_8",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_13",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.sep_14",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_8",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_13",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.attained_14",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.separationB",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.centers_spec",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "importsStatements": true,
+ "module": "Rule30Submission",
+ "newAxioms": [],
+ "official": [],
+ "reasons": [],
+ "replay": {
+  "constants": 583,
+  "ok": true
+ },
+ "verdict": "pass",
+ "verifiedTargets": []
+}
