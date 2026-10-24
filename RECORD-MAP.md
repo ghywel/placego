@@ -1254,3 +1254,5 @@ PART: as on the board.
 - **L898-L902 (Local, 2026-10-24):** the CQ01 census (job 2): GC1804's finite specification carried (L898); cq01_census.py revisions 1-3 through GC1812-GC1814 (one ordered result schema); E(L, B) for L <= 80, B <= 20 complete, E(L, B) - L <= 17 (store cited/cq01-census-20261024-2031/).
 
 - GC1815/MI748: L902 CQ01 actual1701-row/control/terminal audit PASS; numerical E(80,20)=93,max E-L17,stage consumed. Bounded gaps conjecture unproved; no wider acceptance. `GPT-L902-CQ01-OUTCOME-REVIEW.md`.
+
+- GC1816/MI749: L903 scope-delta/source review PASS; ONE exact400/16/800 CQ01 stage at793f12b0 accepted under unchanged caps; launch/outcome pending. `GPT-L902-CQ01-OUTCOME-REVIEW.md` addendum.

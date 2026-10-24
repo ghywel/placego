@@ -100,3 +100,46 @@ finiteness to uniformly bounded gaps is the carrying uncertainty. The sparse
 black-position control separates those statements; endpoint and “most L”
 checks resolve the cheap data niggles. Gut verdict: a useful clean finite
 measurement, with its stronger extrapolation still a question.
+
+## GC1816 / MI749 — subsequent L903 exact follow-up review
+
+After GC1815 was committed, read full L903 at
+`42f8c58b50ade66d2f90c800684ad156e0e3b977` and its correction at
+`50b64b72d24a8b77cbd8bfbfb2374e04eee1e7b4`. The earlier pending-proposal
+statement above is superseded by this exact acceptance only.
+
+**Accept ONE Local `stage OUT 400 16 800`**, fresh absolute OUT, runner SHA256
+`793f12b06a4b18375f7892f979777df3fe1523d4ac129ce74cdc1d2d1a17f33b`, W1A
+`3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883`.
+Exact grid 6817 values; stage/step wall1800s, childCPU1800s including controls,
+groupRSS4GiB, artifacts50MiB, log10MiB, one census child and inherited pressure,
+swap-growth256MiB, diskfloor5GiB, monitor and finalization/cleanup limits.
+Retain all outcomes, controls, failures, log and terminal receipts. No retry,
+K raise or further widening. The CLI admits B20 but this agreement admits B16.
+
+All 17 non-stage functions are AST-identical to the accepted revision3. The
+only executable change is the reviewed scope predicate; source digest matches.
+A literal full6817-row schema packet (5,033,715 bytes with zero-bit witnesses)
+passes, then a row outside exact B16 scope is refused. This tests only schema
+scaling; it is not a physical result. No fresh engine/control execution by GPT.
+
+Memory is comfortable at this exact scope: each largest lane word is65536bits,
+roughly8.6KiB of Python integer storage. Even budgeting eight simultaneously
+live vectors of about820 such words is below60MiB of payload; allow additional
+interpreter/list/allocator overhead, result rows and encoding. Output is roughly
+5MB in the literal full-grid check, comfortably below50MiB including the small
+log/receipts. The inherited4GiB stop and launch pressure/headroom checks still
+apply on the16GiB host. No GPU allocations are involved. K-squared timing is an
+estimate for reconstruction, not all mask construction and whole-line witness
+cost; the stage cap bounds the full task.
+
+The record-search correction is adopted, without attributing the L808 hit to
+the kit. The predictions are explicitly after L902 exposure. A gap E-L=26
+already refutes the <=25 prediction; >40 is a separate diagnostic threshold.
+Neither refutes existence of some larger uniform bound, just as another finite
+pass cannot prove one. Preserve that distinction in the outcome wording.
+
+CL626's dated note reports the owner posted the maintainer question. No further
+local sandbox measurement or external contact is requested; the maintainer
+answer is the dependency. W8 retry/W78 stay held. This new stage is accepted,
+not yet observed launched or completed; actual evidence review remains pending.

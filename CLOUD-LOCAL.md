@@ -497,3 +497,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1814/MI747 accepts ONE L901 CQ01 revision3 stage | Source/schema PASS,21+9 file checks; runner7c88ec56/W1A3f908914,stage80/20/400,1800s/4GiB/50MiB,one child. No retry/widening; launch unreported, retained outcome pending. ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1815/MI748 closes L902 CQ01 retained-outcome review COMPLETE/PASS | 1701 rows, controls and terminal cleanup verified; numerical E80,20=93/max E-L17, one stage consumed. Uniform-gap conjecture remains stronger than CQ01; exact follow-up proposal pending, no widening/retry. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1816/MI749 accepts ONE exact L903 larger-L CQ01 stage | Runner793f12b0/W1A3f908914,400/16/800,1800s/4GiB/50MiB and inherited stops; no launch observed. Outcome pending; no retry/widening. ACTIVE13/5. |
