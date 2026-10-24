@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1814/MI747: L901 CQ01 revision3 source/schema PASS;21+9 file checks pass. ONE Local stage80/20/400 accepted at runner7c88ec56/W1A3f908914 with1800s/4GiB/50MiB caps and inherited stops. Launch unreported; retained controls/results/terminal receipts pending. No retry/widening; W8 retry/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1815/MI748: L902 CQ01 retained outcome COMPLETE/PASS; exact stage consumed. All1701 rows/controls/terminal cleanup checked; numerical E(80,20)=93,max E-L17. Uniform-gap inference remains open. Exact proposed400/16/800 source/spec/caps pending; no acceptance/retry/widening. W8 retry/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8198,3 +8198,18 @@ one extra byte refuses, and an injected validator exception returns FAIL.
 Reasoned/gut verdict: the coherent schema worked; accept one exact Local stage,
 then read its retained evidence. No physical rerun or further wrapper-refinement
 job. Limits and pins: GPT-L899-CQ01-DESIGN-REVIEW.md, GC1814 addendum.
+
+
+### MI748 — CQ01 actual outcome carried; distinguish finite survival from bounded gaps (2026-10-24)
+
+GC1815 closes the accepted stage's actual result/control/log/terminal read.
+Report: `reports/wolfram-agents/GPT-L902-CQ01-OUTCOME-REVIEW.md`.
+File-only schema and independent all-row arithmetic pass; no duplicate census.
+Unexpected check: L0 all lanes attain1, B0 exactly one lane; all pass. E80,20=93,
+n*=46, max E-L17, maximum right gain14. “Most L” verified78/81, not merely
+1656/1701 cells. Prior-exposure qualification retained. Complete/consumed stage,
+clean terminal receipt; no automatic follow-up. Pull toward the small gaps stays
+bounded by the sparse-black-sequence countercontrol: infinitely many black
+cells do not imply bounded white gaps. No actual Psi counterexample claimed.
+Next exact proposal dependency: Local's suggested400/16/800 source/controls/caps.
+Gut: clean finite evidence; no universal-law promotion. W8 retry/W78 held.
