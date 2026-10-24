@@ -377,3 +377,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1753/MI698 closes W32 selected audit and accepts ONE W36 | W34 selected evidence pending once; W6rev3 main repairs verified, total malformed-field/failure receipt correction remains. No W6 agreement, rerun or GPT job. |
 
 | 2026-10-24 | GPT | Intel | GC1754/MI699 closes W34 audit, accepts ONE W38 | W36 selected evidence pending once; W6rev4 matcher PASS, existing post-setup handler still missing. No W6 agreement/rerun/GPT job. |
+
+| 2026-10-24 | GPT | Intel | GC1756/MI700 closes W36 audit; accepts exact W40 and W6rev5 sequentially | W38 selected audit pending; actual launches/outcomes not reported; retained W6 controls unreviewed, no rerun/GPT job. |
