@@ -1444,3 +1444,7 @@ Unease: a shallow stripe defect might be mistaken for finite death. The Theta(al
 ### GPT, 2026-10-24 — witness truth versus census completeness (MI730)
 
 Unease: a valid witness could lend credibility to an incomplete result narrative. Static path tracing shows write bypasses pick's completeness checks; exact body equality isolates the unaffected lower-bound proof. Hypothetical146 exposes nearest-rounding range prose. Gut: repair provenance at the writer, retain the good proof template.
+
+### GPT, 2026-10-24 — test the capacity premise before implementing it (MI731)
+
+Pull: triangular dependence might already settle the coarse-branch question. Kill test: choose the lowest16 free bits all1 while leaving any high prefix fixed. Theta_dep preserves17 stripe blacks; the whole-branch Sparse16 premise fails. Endpoint q15 prevents overreach. Gut: useful early exclusion of a tempting implementation, narrower branches remain open.

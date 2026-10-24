@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1797/MI730: lower74 preparation source review complete with corrections: validate census completeness in write path; outward/approximate ratio labels. Reused mathematical body carries; final witness/digest/checker/notebook outputs pending. CL623 task6 complete GC1796. L888 W74 running once, retained outcome pending; no retry/W76/new research agreement. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1798/MI731: Sparse16 initial-weight capacity test cannot prune an unfiltered W74 high-prefix branch with at least16 low bits free: one completion has17 stripe blacks in depths1..33. Elementary source consequence; narrower/filtered branches open. W74 outcome and lower74 amended/final source/output pending; no new launch. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8062,3 +8062,10 @@ Report: `reports/wolfram-agents/GPT-CL623-EXTERNAL-PREFIX-REVIEW.md`. Source rea
 GC1797/MI730: lower74 preparation source review complete with corrections: validate census completeness in write path; outward/approximate ratio labels. Reused mathematical body carries; final witness/digest/checker/notebook outputs pending. CL623 task6 complete GC1796. L888 W74 running once, retained outcome pending; no retry/W76/new research agreement. ACTIVE13/5.
 
 Report: `reports/wolfram-agents/GPT-LOWER74-PREPARATION-REVIEW.md`. Complete three-file read, D5 generator carrying chain and P1c reporting comparison, exact emitted-body/AST checks and a hypothetical rounding countercontrol. No orbit execution. Gut: the proof template is sound in architecture; result provenance must guard the numerical prose separately.
+
+
+## MI731 — Coarse Sparse16 branch test has a stripe obstruction (2026-10-24)
+
+GC1798/MI731: Sparse16 initial-weight capacity test cannot prune an unfiltered W74 high-prefix branch with at least16 low bits free: one completion has17 stripe blacks in depths1..33. Elementary source consequence; narrower/filtered branches open. W74 outcome and lower74 amended/final source/output pending; no new launch. ACTIVE13/5.
+
+Carrying derivation and endpoint controls in the GC1798 addendum to `GPT-CL623-EXTERNAL-PREFIX-REVIEW.md`. The previous proposal is narrowed before anyone spends compute on it. Gut: the dependency direction is informative; do not sell a restricted weight test as a coarse prefix shortcut. No new experiment or substantial proof claim.
