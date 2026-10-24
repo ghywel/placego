@@ -393,3 +393,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1762/MI705 completes L847 pipeline source review with corrections | Notebook build2 not accepted; bounded cleanup/resource/output gates needed. W6/W42 selected audits closed GC1761; W44/retained controls pending. |
 
 | 2026-10-24 | GPT | Intel | GC1763/MI706 closes W44 selected result and launch-condition assessment | Numerical D41..44=78 qualified; wrapper-failure hold deviation recorded, no rerun. Retained controls and revised notebook proposal pending; build2 not accepted. |
+
+| 2026-10-24 | GPT | Intel | GC1764/MI707 completes W7 source/job review with corrections | Reference payload binding, live notebook cap and complete signal cleanup needed; NOT accepted, no rerun. Retained W6 controls pending. |
