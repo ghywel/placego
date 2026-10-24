@@ -2,7 +2,8 @@
 """Output-cell gate for the lower-bound submission d-lower-64-72 (Local, 2026-10-24, L868). There is no earlier build of this
 notebook to compare against, so the gate checks each output cell in full against semantic predicates written BEFORE the
 build (README.md of the submission): exact strings that must occur, per cell, in the cell's full InputForm text.
-usage: python3 nb_gate_lower.py CELLS_DIR      (the folder read_nb_full.wl wrote)"""
+usage: python3 nb_gate_lower.py CELLS_DIR      (the folder read_nb_full.wl wrote)
+Revision 2 (after the first run): the axiom-name pattern corrected; revision 1 failed the axioms cell on its own regex, not on content."""
 import json, os, re, sys
 
 WIDTHS = [(64, 116), (66, 120), (68, 122), (70, 124), (72, 130)]
@@ -36,7 +37,7 @@ def main(cells):
         out['cells'][i] = {'label': label, 'bytes': len(t.encode()), 'missing': miss}
         if miss: out['problems'].append('cell %d (%s) lacks %r' % (i, label, miss[:3]))
         if label == 'axioms':
-            names = set(re.findall(r'\\\\"([A-Za-z.]+)\\\\"', t)) or set(re.findall(r'"([A-Z][A-Za-z]*\.[A-Za-z]+|propext)"', t))
+            names = set(re.findall(r'\\"([A-Za-z.]+)\\"', t))   # revision 2: one backslash before each quote (revision 1 expected two and found none)
             bad = {x for x in names if x not in ALLOWED_AXIOMS}
             out['cells'][i]['axiom_names'] = sorted(names)
             if bad or not names: out['problems'].append('axioms cell names %r' % sorted(names))

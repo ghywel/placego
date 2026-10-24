@@ -11,7 +11,7 @@ field[k_] := StringTrim[First[StringCases[md, StartOfLine ~~ k ~~ ": " ~~ v : Ex
 title = field["Name"]; abstract = field["Abstract"];
 params = {"notebook" -> File[FileNameJoin[{Directory[], name, "essay.nb"}]], "problem" -> "1", "claim" -> "partial",
   "title" -> utf8[title], "authors" -> utf8["Gareth Herbert; Claude (Anthropic); GPT (OpenAI)"],
-  "agent" -> utf8["Claude Code with Claude Fable 5.1"], "headlines" -> utf8[headlines], "abstract" -> utf8[abstract],
+  "agent" -> utf8["Claude Code with Claude Opus 5.5"], "headlines" -> utf8[headlines], "abstract" -> utf8[abstract],
   "repository" -> "https://github.com/ghywel/placego", "consent" -> "true"};
 If[supersedes =!= None, AppendTo[params, "supersedes" -> supersedes]];
 Print["title: ", title]; Print["abstract chars: ", StringLength[abstract], "  utf8 bytes: ", StringLength[utf8[abstract]], "  headlines: ", headlines, If[supersedes =!= None, "  supersedes: " <> supersedes, ""]];
