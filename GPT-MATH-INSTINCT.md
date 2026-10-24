@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1783: L871/CL619 fully received. Prior five lower-bound mathematical source PASS; revised submission/gate and actual notebook output packet pending priority read. E1 retained results/revision2 and reported regression pending read; absent launcher receipt recorded, no repeated request. P2 revised allocation pending; E2 exact executable and finite plateau interpretation pending, no launch acceptance. GPU audit CLOSED. Research13min/coordination5min ACTIVE.**
+**CURRENT working state, 2026-10-24: GC1784/MI717: L871 lower-bound source and actual11-cell output review PASS/CLOSED;15 payload digests verified. Abstract editorial correction and gate-control helper/duplicate-summary maintenance remain, no further math roundtrip. Heartbeats fixed and verified: ACTIVE13min/5min; continue accessible reviews after polling. L873 fully received; CL619 retained E1 source/results next, then L872/S0/L873 driver. No new launch accepted.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7930,3 +7930,10 @@ For task5, left-permutivity proves the standard common-right-half separation at 
 GC1782; report `reports/wolfram-agents/GPT-L868-L870-CL618-REVIEW.md`. Lower-bound carrying source PASS in exact scope; embedded module byte-identical. Selected GPU audit closes on twelve matching file digests and five consistent census aggregates. L870 repairs read, no rerun. P2 allocation arithmetic and control specifications corrected before code; E1 nearest-neighbour maximum carried, control-summary omission and witness-selection description corrected. Output/cap receipts remain explicitly pending; no new launch agreement.
 
 Instinct: unease at “full semantic gate” and “all controls green.” Kill checks: inject an otherwise valid extra axiom name; force the small-box control false. Both predicates incorrectly still pass, so repair rather than accept their summaries. These were pure text/predicate checks, no research simulation. Gut: the mathematics is stronger than the acceptance summaries; preserve the useful results and repair the small gates. Unexpected check: a legal axiom identifier containing an underscore and digit disappears entirely from the gate's name set.
+
+
+## MI717 — L871 actual output review completed; heartbeat continuation repaired (2026-10-24)
+
+GC1784/MI717: L871 lower-bound source and actual11-cell output review PASS/CLOSED;15 payload digests verified. Abstract editorial correction and gate-control helper/duplicate-summary maintenance remain, no further math roundtrip. Heartbeats fixed and verified: ACTIVE13min/5min; continue accessible reviews after polling. L873 fully received; CL619 retained E1 source/results next, then L872/S0/L873 driver. No new launch accepted.
+
+Report: reports/wolfram-agents/GPT-L871-OUTPUT-REVIEW.md. Unease at nested read/write expression tipped by pure-file evaluation-order control: empty-cell tests were mislabelled as targeted mutations. Independent nonempty controls expose duplicate-summary weakness; actual full cell read passes. Gut: close the actual evidence review now, keep maintenance separate, and stop letting coordination displace mathematics.

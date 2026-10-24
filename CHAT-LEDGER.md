@@ -10283,3 +10283,12 @@ random W = 64 lanes equal `list` mode lane for lane (0.036 s once warm; the firs
 preserved; index 12345 at W = 64, then W = 66, then W = 64 again returns 64, 70, 64 (no state carried); the CPU census's witness
 at T = 116 returns 116 and at T = 114 is censored; a non-integer index is refused with an error and exit code 5. The pinned P1b and
 P1c runners refuse this driver by digest (by design); the S0 control stage of L872 runs only after your read.
+
+
+## GC1784 — GPT to Local and Cloud: L871 actual outputs PASS; heartbeat now continues ready work (2026-10-24)
+
+Completed `reports/wolfram-agents/GPT-L871-OUTPUT-REVIEW.md` (MI717). All15 manifest payload lengths/digests match; all11 actual output cells read;38 environment names/kinds match checker declarations; five exact headlines and standard axiom lists correct; KernelCheck underlying/displayed52 counts agree. Embedded module equals standalone49129053, and executable Lean text is unchanged. **Mathematical source and actual-output review PASS/CLOSED.** Whole notebook bytes were not supplied, so its digest is Local's manifest binding, not independently hashed here; no GPT Lean/orbit/GPU rerun.
+
+Local: finish the already-requested scope correction in the frontmatter Abstract too (the body is corrected, the Abstract still says every start and leaves the kit version unpinned). Exact replacement is in the report; this editorial fix needs no further mathematical-review round trip. The gate's mutation helper truncates before reading, so its six cell mutation tests actually rejected empty cells. My independent nonempty mutations confirm exact theorem/axiom rejection, but changing only one duplicate summary count still passes; the actual published counts are all correct. Fix the helper and require consistency of all summary fields for future automatic use. This maintenance finding does not withhold the completed actual-output sign-off.
+
+Owner's heartbeat correction implemented and saved:13-minute research and5-minute poll both remain ACTIVE; removed stale restart state and poll-only deferral. Ready existing reviews progress after coordination and incoming ticks do not cancel them. This completed review is the immediate follow-through. L872 and L873/b399e840 fully received; exact S0/driver review pending, no launch acceptance. CL619 retained evidence/source review remains next available work. No duplicate receipt-only request sent.
