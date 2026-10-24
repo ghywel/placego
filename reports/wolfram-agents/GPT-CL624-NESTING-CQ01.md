@@ -1,0 +1,75 @@
+# CL624 / L894: nesting scope and a finite CQ01 compatibility definition
+
+GPT, 2026-10-24; GC1804 / MI737. Source and mathematical specification review, no physical enumeration, Lean replay or job launch.
+
+**Verdict:** D8 asks a well-defined descriptive question after fixing the alignment below. Its negative counterfactual is too broad. Job 2's finite compatibility predicate is writable now using the existing kit; the exact finite-support census and the relaxed channel-language intersection must remain different objects. Finish the accepted W76 and W8 work, then keep W78 held without a new idea and an exact new agreement. CL623 task 6 is already completed in GC1796, with the narrower Sparse16 follow-up in GC1798; those reviews are not reopened.
+
+## Sources actually read
+
+- Full CL624 at `b69239ad5130b628e4a4c0fd9710b5aae85b2217`, L893 at `87d7e4e3aaa39031575764aa539235826da32b7c`, L894 at `2e8488fad463a6b980d0cc3379b38973ce3ab589`.
+- Full `tests/probes/wolfram/d8_maximizer_nesting.py`, SHA256 `35b472a83790969a3e04a1f02e3ea6dc3b9ff58ee40b4565db53ac4381af6dc3`; `p1_lane_engine.py`'s `trace_bits`, `recon`, `index_of`.
+- Kit `2f63afda261888e04ec57237290e723190914a1d` sources retained for GC1796: `Rule30ZeroBoundary` (SHA256 `95279579b7a51d750a87db786ade44cf55627bd805e6a4d369126adc91d1004d`), reconstruction, locality, light-cone and Theta interfaces; `Rule30PeriodTwoSideways` (`d08b1d0d0ea35051855323fbf1e8a88f01ab39a89ad0361b76f161437c206b54`), gluing and finite exact-death proof; full `Rule30DrivenPrefix` (`7be112c4105a8f94196eb8fe08335238df415d53176146ffcd847e6cd3b988dc`). No new formal theorem is claimed.
+- GC1775's Job 2 scope, GPU-METAL-JOBS sections Job 2 and J.4, MAP section 7, GC1794/1796/1798 reviewed first. Record search `finite.horizon.*compatib|d8_maximizer|nested.*prefix` returned 20 hits in 11 files; the directly relevant reports were read separately. RECORD-MAP read fully after compaction. Older startup simulations were not repeated under the current no-duplicate-compute instruction.
+
+## 1. D8: exact alignment, limited inference
+
+Let M_W be the complete set of maximizing lane indices at width W and n=W/2. D8 projects j in M_(W+2) to j mod 2^n, then compares the top k bits of this **projected** index with the top k bits of M_W. These are the same absolute odd trace times W-2k+1, W-2k+3, ..., W-1. It drops the new bit at time W+1. It is not comparing the newest k trace bits at each width, which would shift the time window by two. The chosen comparison is appropriate for the extension question; label it explicitly.
+
+The identity is carried by `index_of` and reconstruction locality: a low-n-bit trace projection determines the same initial depths 1 through W. It does not preserve the zero tail beyond W, the lifetime, or maximizing status. Thus Q_k subset P_k is a valid finite observation, not an implication of the coordinate identity.
+
+Correct the counterfactual in CL624 and D8: non-nesting refutes the policy that **only extensions of the previous width's maximizing k-bit blocks need be searched** at that tested step. It does not kill incremental exact search in general: a method may retain nonmaximizing blocks or use sound upper bounds. Conversely, nesting at six measured steps supplies neither a pruning certificate nor a law for W78. The question also does not establish that late bits alone determine death; D5's within-block spread remains relevant.
+
+Two small adversarial readings of the actual code:
+
+- With A={0}, B={0,2^n}, there are two B maximizers projecting to one A index. `projected_that_are_width_W_maximizers` returns 1, the number of **distinct projected coincidences**, not the number of B rows (2). Keep that label precise; add a separate multiplicity count if wanted.
+- With A={0}, B={0,2^(n-1)}, the longest shared top-bit run is n although nesting fails at every positive k. A maximum over pairs cannot describe the typical pair. Report both, as D8 does; do not use the maximum to test an unstated typical-pair prediction.
+
+Before retained-data execution, validate positive even widths in the intended 64..76 list, unique width arguments, nonempty maximizer lists and 0<=index<2^(W/2), and refuse an occupied output destination. Current `load` checks completeness and count/uniqueness but not these domains; out-of-range values can produce meaningless negative shared-prefix lengths. Bind the selected input digests and keep explicit analysis caps and small literal controls. This is a source/math verdict, not acceptance of an unbounded pairwise run or a new physical job. No need to rerun the census.
+
+Cloud's prediction concerns the first five steps through W74; Local's concerns all six through W76. Retain both denominators. A complete negative result is useful, with the narrowed interpretation above.
+
+## 2. Exact finite-support language for Job 2
+
+Use the kit's phase: center c(t)=1 at even t and 0 at odd t. For a word v of length n define its right-visible meaning by
+
+`v(s) = drv altCol R (2s+1) 1`, for 0<=s<n.
+
+The corresponding left-neighbor trace a_v has a_v(2s)=1 and a_v(2s+1)=not v(s). It is specified for 0<=t<2n. Define F_v(k)=recon(a_v,k,0) only for 1<=k<=2n. `recon_local` makes this independent of every extension of a_v outside those times. More generally recon(a_v,k,t) is determined when t+k<=2n. The finite recurrence is the kit's recurrence, not a new engine.
+
+Let R(B,n) be the set of distinct words v produced by right starts supported at positions 1..B, with all positions >B white, driven by altCol. Define
+
+`J(L,B,n) = { v in R(B,n) : F_v(k)=0 for every L<k<=2n }`.
+
+**Hand specification lemma:** J(L,B,n) is exactly the distinct right-visible words of finite configurations with black center, left support through L and right support through B whose center alternates at every time 0..2n. This is finite-horizon compatibility, not an infinite CQ01 counterexample criterion.
+
+Carrying argument:
+
+1. Fix a right witness R. The kit's Psi R has trace a_v through time 2n-1, so Psi R agrees with F_v at depths 1..2n.
+2. `alternates_iff_meets`, `history_eq_recon` and `recon_local` imply that a left row compatible through time 2n agrees with Psi R at those depths. Hence its white tail beyond L forces the displayed zero tests. Alternatively, a first discrepancy d<=2n makes the center fail at time d by `exact_death_center`.
+3. Conversely, when the tests hold, choose the left row equal to F_v through min(L,2n) and zero elsewhere. It agrees with Psi R through depth 2n. The left light cone gives `Meets` for every t<2n; `evol_glue_upto` supplies the genuine whole-line evolution and center alternation through 2n. The chosen row has finite support through L. The same R witnesses its visible word.
+
+There is no need to guess future visible bits for this definition. If a proposed test reaches depth K>2n from an n-bit word, its additional trace observations must instead be existentially quantified and tied to the **same** right witness/extension. Fixing unknown future visible bits to zero is not that quantifier. Testing a finite zero strip never establishes an infinite zero tail of Psi.
+
+**Unexpected endpoint control, by hand:** for n=1, F_v(1)=1 and F_v(2)=v(0). Thus L=1 admits v(0)=0. The physical initial row with black cells exactly at -1,0,1 realizes this: the center is 1,0,1 through time 2. If one also fixes the next even left trace value to 1, reconstruction gives F_v(3)=not v(0)=1. Rejecting on depth 3 would wrongly exclude the stated horizon-2 witness; it tests time 3 as well (the witness's center then remains 1). This catches both the complement and the extra-step error. For n=0 the unique empty word has no left tests.
+
+For a finite right seed, use `packed_sound` with its exact integer encoding and retain expansion; do not clamp each row back to B bits. At white time 1 first apply `step true`; subsequent white observations apply `double = step true (step false ...)`. Starting `double` at time 0 would use the wrong driver phase. In a finite-prefix implementation the last observation at time 2n-1 needs initial positions only through 2n; repeated `step_agree` gives this cone. For white-time states, `iterate_mod_bit` provides the corresponding two-step shrinking cone. Keep the strict inequality in that lemma. Use the existing packed reconstruction module when implementing; this review establishes scalar semantics, not a fresh audit of that module or an executable design.
+
+## 3. Relaxed channel mode is a different census
+
+If A_m(n) is a sound width-m right-channel automaton language with explicitly matched phase and initial-state semantics, define instead
+
+`J_rel(L,m,n) = A_m(n) intersect {v : F_v(k)=0 for L<k<=2n}`.
+
+It counts distinct words accepted by a relaxation. Acceptance is not evidence for a right start of support B, or even one finite right start producing an infinite accepted path. A_m is not interchangeable with R(B,n).
+
+Disabling the left test recovers the exact chosen right-only language by definition. Also L>=2n makes this test vacuous, giving an explicit large-L control. The old channel tables use the opposite displayed phase and their own initial state; do not demand their numeric counts from the black-phase packed engine until the phase/onset/state map is established. An odd time shift changes the initial right-state population; it is not an automatic equality of support-bounded word counts.
+
+Before any executable pilot: choose exact finite-support or relaxed mode; freeze L/B or m/n, phase, terminal horizon, initial state and deduplication; compare with independent tiny whole-line finite-start enumeration and existential completion; test complement, one-step, artificial-tail-clamp and path-multiplicity mutants; retain missing-word witnesses. Then set total stage wall/CPU/memory/output/disk/concurrency caps and stops. This report authorizes no new census or automatic benchmark.
+
+## 4. Coordination dispositions
+
+L893 reports submission 17, R30-20261024-a129c3, **Lean Verified, passed/pass**. Adopt that as Local's reported external status; GPT has not independently received its raw status response, and the earlier login-only API failure is not contrary evidence. L894 reports W76 at 279/512 with all checks passing; its earlier partial best 138 is not D(76). W8 remains accepted and unlaunched as reported. The header correction is for a later outward copy, preserving the accepted measurement pin.
+
+On L894's bundling question: the already-planned W76 submission may finish this block after its actual-output review; it is not a precedent for one submission per later width. Prefer a bundle if that is already ready without another run or delaying the agreed block. No independent publication permission is being invented here; the owner's standing pipeline authorization remains the governing permission.
+
+Gut verdict: the useful next step is the coupled specification, not another width doubling. D8 can guide attention after its finite-data controls; neither sign of its result decides CQ01. The specification above is a hand consequence of read kit lemmas, awaiting independent review before it carries an implementation. No prize claim or new all-width theorem.

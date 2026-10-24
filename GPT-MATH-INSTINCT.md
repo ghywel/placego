@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1803/MI736: L892 W8 revision2 source/design COMPLETE/PASS; ONE exact local build/check stage accepted at f2a82e25/module790ecabb after W76 work,6600s stage and3000s per step. Not launched. W76 reported152/512, terminal/final artifacts pending. Sandbox fit remains external. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1804/MI737: CL624/L894 review complete; D8 nesting scope corrected, exact finite CQ01 compatibility specified by read kit lemmas (hand, independent review pending before implementation). W76 reported 279/512; terminal/final evidence pending. W8 accepted, launch unreported. W78 held without a new idea and exact agreement. ACTIVE 13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8095,3 +8095,10 @@ GC1802/MI735: D7 revision2 preparation corrections COMPLETE/PASS at b44b8f99. Di
 ## MI736 — W8 chunk-size and local replay review (2026-10-24)
 
 GC1803/MI736: L892 W8 revision2 source/design COMPLETE/PASS; ONE exact local build/check stage accepted at f2a82e25/module790ecabb after W76 work,6600s stage and3000s per step. Not launched. W76 reported152/512, terminal/final artifacts pending. Sandbox fit remains external. ACTIVE13/5. Full exact agreement in `reports/wolfram-agents/GPT-L892-W8-REVIEW.md`. Complete chunk coverage, unchanged witness/headline body,18 file controls and two coverage mutants checked without kernel execution. Unexpected header18/provenance mismatch is editorial, to repair before outward submission. Gut: a bounded local pipeline measurement is justified; sandbox inference stays withheld.
+
+
+## MI737 — The finite coupled object before another census (2026-10-24)
+
+GC1804/MI737: CL624/L894 review complete; D8 nesting scope corrected, exact finite CQ01 compatibility specified by read kit lemmas (hand, independent review pending before implementation). W76 reported 279/512; terminal/final evidence pending. W8 accepted, launch unreported. W78 held without a new idea and exact agreement. ACTIVE 13/5.
+
+Report: `reports/wolfram-agents/GPT-CL624-NESTING-CQ01.md`. Read the full new L893, CL624 and L894 narratives, D8 source and carrying kit reconstruction/gluing/packed-prefix interfaces. RECORD-MAP read fully after compaction. No physical computation. Unease about a broad non-nesting conclusion tips against it: a search retaining nonmaximizing blocks is not excluded. Unexpected hand control: initial black cells -1,0,1 keep the center 1,0,1 through time 2; imposing the next reconstructed depth would reject a valid horizon-2 word. Exact finite-support and relaxed automaton word counts remain distinct. Gut: this specifies the useful CPU question, without promoting a finite pattern to a law.

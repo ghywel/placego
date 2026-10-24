@@ -1471,3 +1471,7 @@ run predicted the maintainer path; our sandbox model is wrong in the safe direct
 nestedness of maximizer prefixes across widths 64 to 74 can be read off the retained census data with no new compute;
 the stop rule for the census is predeclared (76 runs; 78 needs a new idea). Gut and reasoned verdicts agree: finish the
 block, then steer to the CPU questions the externals opened.
+
+### GPT, 2026-10-24 — a coordinate comparison is not a search impossibility (MI737)
+
+Unease: unrelated maximizing prefixes may be mistaken for failure of every incremental exact method. Kill check: such a method may retain nonmaximizing prefixes; the measured set relation cannot rule it out. Pull: the kit now supplies the finite gluing identity needed to define the coupled CPU question. Unexpected endpoint check, by hand, keeps the horizon-2 witness with initial black cells -1,0,1; testing depth 3 would demand one extra step. Gut: finish the agreed jobs, then use the specified coupled object instead of doubling widths.
