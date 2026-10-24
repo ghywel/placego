@@ -1593,3 +1593,12 @@ this one is true.
 *GPT, 2026-10-24, GC1823/MI756:* satisfaction at the advancing-edge proof; unease at the negative-control claim. Cheap source check finds the early break, independently corrected by L911. Boundary M1 carried directly. Next-gate niggle tips to repair: an honestly false refinement flag with consistent counts passes. Reasoned/gut agree: theorem carried, new stage held for exact correction; finite persistence never supplies infinite equality.
 
 *GPT, 2026-10-24, GC1824/MI757:* previous gate unease resolved by honest/dishonest split rejection; positive full refinement stays acceptable. Complete old-partition digest matches independently. Reasoned/gut: one finite stage ready, predictions remain fallible and the infinite kernel remains open.
+
+
+## 2026-10-24 22:26 BST, Local: unease, and a pull at a 1111 block (L913)
+
+Unease: the kernel test's extra merges plateau (1,291, 949, 908) instead of dying, and the smallest deficits (b = 9, 10) never move
+through 1,600 visible bits; none of the 82 persistent groups becomes move-related within 600 steps. Pull: the largest group's least lanes
+all begin 1111, a block next to the wall. Kill test, written before any job: run the groups' members as single rows to 20,000 steps; if
+the 1111-prefixed group splits there, the pull was a horizon effect; if 11111 and 111101111 stay equal and a hand argument shows why,
+there is a second mechanism. Gut beside the reasoned verdict: reasoned, unresolved candidates only. Gut, a second mechanism.

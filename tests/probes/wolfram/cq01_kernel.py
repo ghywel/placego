@@ -59,6 +59,13 @@ Counterfactual: restricted counts for B' = 9..12 unchanged from K = 800 to 3,200
 unresolved candidate pairs, named by the retained groups, not a refutation; a move pair with unequal labels contradicts the proved lemma
 and means a bug. Results between are inconclusive. No finite depth proves or refutes the kernel conjecture.
 Usage: python3 cq01_kernel.py --controls | run OUT B K1 K2 K3 | stage OUT B K1 K2 K3
+OUTCOME (the one GC1824-accepted stage at revision 2, a541847f, 2026-10-24 22:24:12 to 22:24:26 BST, L913): W1A pass, the strict gate
+PASS, all three bindings held (L910's count, restricted counts and canonical-label digest); child wall 12.48 s, sampled group RSS
+906,674,176 bytes. Every move pair equal at every depth: HELD. Extra merges 1,291, 949, 908 at depths 800, 1,600, 3,200: strictly
+decreasing, HELD, but plateauing. Restricted counts at 3,200 short of 2^(b - 1) + 1 by 1, 2, 12, 33 at b = 9..12 (b = 9 and 10 unchanged
+since depth 800): PREDICTION FAILED. Count at 3,200 is 31,861, not >= 32,500: PREDICTION FAILED. 82 merged groups persist through 1,600
+visible bits: unresolved candidate pairs (e.g. 11111 and 111101111). Local's afterwards check: none of their least pairs becomes
+move-related within 600 steps (the checker certifies all 511 true move pairs at B = 10 at t = 1).
 """
 import hashlib, json, math, os, sys, time
 
