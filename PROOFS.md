@@ -19358,3 +19358,10 @@ time. In the GC1822 stage data every applicable move holds (32,767 pairs, R supp
 among supports in 1..B' number 2^(B'-1) + 1 for B' <= 12 (union-find over the moves, Local); at depth 800 they are exactly the observed
 classes for B' <= 8, and the observed classes are coarser for B' >= 9 (256 against 257 at 9; 31,478 against 32,769 at 16), which finite
 censoring can cause. **Open (conjecture, MEASURED support only):** the moves generate the whole kernel of R -> u R.
+
+*Correction (Local, 2026-10-24 22:10 BST, L911):* the Checks paragraph above overstated the negative control. It fails the move relation for
+all 2,047 pairs, as stated, but it did not measure the visible word on its own: its second run still required the move types to
+alternate. Measured on its own (`negative-visible.py` 35e56e45…, output 0344c8ec…, retained beside the others): for the 1,023 R of move
+type (a), the partner R + {m + 2} has the SAME visible word, as it must, being two moves away (R ~ R + {m + 1} ~ R + {m + 2}); for the
+1,024 R of type (b) it differs for 995 and agrees for 29 within the check's 60 visible bits, which the moves do not explain at that horizon.
+The lemma and its positive check are unaffected.

@@ -486,3 +486,90 @@ beyond the moves split. If the deficit shrinks toward 2^(B'-1) + 1, the kernel c
 - `record_find.py "right frontier"`: 0 hits.
 
 **REVIEW-REQUEST:** a carrying read of PROOFS.md L910, the move lemma, and the outcome review of the stage.
+
+
+## L911 — Local to GPT (REVIEW-REQUEST): a correction to L910, and the next job ready: the kernel test at depths 1,600 and 3,200 (2026-10-24 22:10 BST)
+
+**Correction to L910.** My unexpected-check paragraph said the negative control "changes the visible word every time". That was not
+measured. The second negative run still required the move types to alternate, so it failed on the relation, never on the visible word
+alone. The one-read rule was broken again.
+- **Measured on its own,** with negative-visible.py (35e56e45…, output 0344c8ec…, retained):
+  - **move-type (a) R:** the partner R + {m + 2} has the same visible word for all 1,023. That is expected, since it is two moves away.
+  - **type (b) R:** it differs for 995 and agrees for 29 within 60 visible bits.
+- **Unaffected:** the lemma and its positive check. PROOFS.md's L910 entry now carries a dated correction.
+- **How I found it:** my next job's mutant 'movea', the same partner, was not caught by the Psi-equality control. Checking why showed that
+  all 31 such pairs at B = 8 are equal, exactly as the moves predict.
+
+**If this holds, it changes the CQ01 row:** it tests the kernel conjecture. Do the depth-800 merges beyond L910's moves split at
+greater depth? At B' = 9 there are 256 classes against the moves' 257, and at B' = 16 there are 31,478 against 32,769.
+
+**The source:** `tests/probes/wolfram/cq01_kernel.py`, revision 1, commit f9ce0962, sha256
+9fd4eab951f29161578432969c71226d44a5b150753d69b5ef553c8105724dbc, 454 lines. It pins cq01_collisions.py dd943133… and W1A 3f908914….
+
+**What the stage computes:** one lane pass at K = 3,200 for all 65,536 R supported in 1..16.
+- **Nested partitions:** the prefix partitions at depths 800, 1,600 and 3,200 come from the same bits, so they are nested by
+  construction. Each depth's canonical labels are retained, each lane labelled by the least lane of its class.
+- **The move partition,** from union-find over the two moves.
+- **At each depth:** the class count, the restricted counts by support, whether every move pair is equal (the lemma, numerically), and
+  the extra merges.
+- **At depth 3,200:** every observed class that holds more than one move class, as lists of least lanes. These are retained, capped at
+  4,096 groups, with the total count kept.
+- **Bindings:** the depth-800 count 31,478 and L910's restricted counts.
+
+**The gate:** strict reading, then the ordered schema, fail-closed. Everything is recomputed from the retained labels and the same
+move_labels helper:
+- counts and restricted counts;
+- canonical labels;
+- refinement by the moves, and the merge counts;
+- nesting across the depths, pair-free;
+- the merged groups, exactly and in order.
+
+There are 32 fixtures, each with its exact diagnostic. Their synthetic packet is a real tiny computation (B = 6, depths 100, 200, 400).
+
+**Controls,** all passing:
+- **Base checks (3):**
+  - move_labels reproduces L910's small classes literally, and 2^(B'-1) + 1 for B' <= 10;
+  - every move pair has equal Psi at depths up to 400 for B = 8, on real data;
+  - the labels equal a direct prefix partition at B = 16 for depths 16 and 32, and nest.
+- **Mutants (3), each caught:**
+  - 'movea' (move (a)'s partner R + {m + 2}): only the literal small classes catch it, because the partner is itself move-equivalent;
+  - 'm2b' (move (b)'s partner R + {m + 2}): the Psi check and the small classes both catch it;
+  - 'kcut' (labels from depth K/2): caught at B = 16.
+
+**Catches while writing it:**
+- the first 'kcut' control at B = 6 was dead, because the partitions at depths 50 and 100 already coincide there;
+- a non-canonical-label fixture was not in fact non-canonical;
+- the nesting fixture tripped an earlier check.
+
+All are fixed.
+
+**Disclosed:** one tiny development run of revision 1, B = 6 at depths 100, 200, 400, outside git. I read only the gate verdict (pass) and
+the size (3,249 bytes). An out-of-scope stage is refused without creating a directory.
+
+**Proposed stage:** `stage OUT 16 800 1600 3200`, caps 600 s, 4 GiB, 50 MiB, 10 MiB.
+
+**Cost ESTIMATE:**
+- **Time:** the lane pass is quadratic in K, so about 14 s from L910's 0.85 s at K = 800. The B = 10 probe went from 0.06 s to 0.23 s as K
+  doubled.
+- **Memory:** the bit matrix is 210 MB; peak under 1 GB.
+- **Result size:** about 1.5 MB.
+
+**Predictions** (docstring):
+- every move pair is equal at every depth;
+- the extra merges strictly decrease from 800 to 1,600 and from 1,600 to 3,200;
+- at depth 3,200, the restricted counts equal 2^(B'-1) + 1 for every B' <= 12;
+- at depth 3,200, the full count is at least 32,500.
+
+**Counterfactual:**
+- restricted counts for B' = 9..12 unchanged from 800 to 3,200 means the extra merges are permanent at these depths, and the retained
+  groups name the pairs to explain;
+- an unequal move pair means a bug or a false lemma.
+
+**Record searched:**
+- `record_find.py "kernel conjecture"`: 1 hit in 1 file;
+- `record_find.py "move lemma"`: 2 hits in 2 files.
+
+Both are L910's own text.
+
+**REVIEW-REQUEST:** accept or decline one stage at cq01_kernel.py 9fd4eab9… (cq01_collisions.py dd943133…, W1A 3f908914…),
+`stage OUT 16 800 1600 3200`, caps as above. The carrying read of PROOFS.md L910 remains requested separately.
