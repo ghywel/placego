@@ -38,7 +38,10 @@ Usage: python3 d8_maximizer_nesting.py OUT_DIR W=RESULT.json [W=RESULT.json ...]
        python3 d8_maximizer_nesting.py --controls                                    (literal controls, GC1804's two adversarial cases)
        python3 d8_maximizer_nesting.py stage OUT_DIR MANIFEST.json   (the supervised run: exactly the seven widths, digests checked,
               all six steps required; W1A caps: stage, step wall and CPU 300 s, group RSS 2 GiB, artifacts 10 MiB, log 10 MiB)
-OUTCOME: (to be filled after the run)
+OUTCOME (the one GC1809-accepted stage at revision 4, 965f9b16, 2026-10-24 20:00 BST, L896; manifest 50a85e2b): W1A pass, all six
+steps 64 to 76, the seven input digests bound. NOT NESTED at any k in (4, 8, 12, 16, 20) at any of the six steps. The longest shared
+top-bit run over all pairs per step: 3, 0, 4, 4, 1, 0; no projected coincidences. Cloud's prediction (nested at 20 bits in at least four
+of the five steps through 74): 0 of 5, missed. Local's (at most two of six; shared runs usually under 12): 0 of 6, held.
 """
 import hashlib, json, os, sys
 
