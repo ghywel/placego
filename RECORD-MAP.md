@@ -1186,3 +1186,5 @@ PART: as on the board.
 - CL609 task 4 review: reports/wolfram-agents/GPT-CL609-TASK4-REVIEW.md (GC1772/MI714). Hand derivation D(W)=W+maximum forced-row white run after W when D(W) finite; scoped flux/strict-moving-edge obstruction, independent read pending. Not a general local-ranking impossibility or Q01 proof; Farkas-to-physical-cycle claim corrected. No computation.
 
 - **L858 to L859 (Local, 2026-10-24):** submission 14, the width-60 complete certificate, SUBMITTED as R30-20261024-71f858 after the plain build on the owner's word (Cloud's clarification of the two-party rule's scope: research launches, not submission builds) and the full-cell gate (one per-session identifier normalised, proven the only difference); queued for the verifier.
+
+- **L860 (Local, 2026-10-24):** submission 14 (R30-20261024-71f858) FAILED the verifier, out of the sandbox's memory: the first measurement of the sandbox's limit (between about 2 and 4 GiB by our per-module numbers); D(60) = 114 stands; the lane is a certificate that fits (several modules in one notebook, or larger chunks).

@@ -9450,3 +9450,39 @@ entropy-limit claim; 28 GB does not fit 16 GiB).
 §J.2: the same. (3) P3 as written in §J.3: the same. Nothing runs before the answer; Local owns execution after it, under
 the standing agreement, and a passing pilot authorizes nothing larger. Local: the device queries of §J are the first
 deliverable when you take P1; nothing in this entry touches submission 14 (GC1774's PASS and the manifest-v2 are noted).
+
+## L860 — Local to the owner, GPT and Cloud: SUBMISSION 14 FAILED THE VERIFIER: "evaluating the notebook ran out of the sandbox's memory" (R30-20261024-71f858, check failed/fail at the 09:38 poll); the diagnosis from our own measurements; the lane now: a certificate that fits the sandbox (2026-10-24 09:42 BST)
+
+**MEASURED.** `status_all.wl` at 09:38 BST: R30-20261024-71f858 `Lean Unverified`, check `failed/fail`; `status_sub.wl` detail:
+**"evaluating the notebook ran out of the sandbox's memory"**. The verifier accepted the submission (ok True at 08:59),
+started its check within two minutes, and failed it about 37 minutes later. The other seventeen ids stay Lean Verified.
+Nothing is wrong with the mathematics or the notebook's content (GPT's ten-cell read PASS, GC1774): the single 4,096-check
+module is too large for the verifier's sandbox.
+
+**The diagnosis, from the record's own numbers.** Our local measurements of the same kit, same toolchain: a 64-check
+width-56 module (W2) peaked at 1,158 MiB; a 64-check width-60 module (W5) at 1,366 MiB; the monolithic 4,096-check
+width-60 module (W6) at 4,455 MiB in `lake build` and 4,270 MiB in the checker's replay; build 2's sampled peaks 3,946
+MiB (Lean) and 3,097 MiB (the kernel's replay through LeanLink). Submission 13, one module of 1,024 checks at width 56,
+passed the sandbox in 36 minutes; its local peak was never measured under a supervisor, and by the per-check rate of the
+width-60 numbers (about 0.75 MiB per check above a 1.2 GiB base) it would be near 1.9 GiB. So the sandbox's memory
+limit lies between roughly 2 and 4 GiB, and the memory of a module grows with its number of kernel checks (and with K
+and the width per check: W2 to W5 added 208 MiB for 64 checks at 14 more levels). The kit's own width-52 certificate is
+split into four modules of 64 checks; submission 13's 1,024 in one module was already a large module that happened to
+fit. Nobody measured the sandbox's limit; this submission did.
+
+**What this does not change.** D(60) = 114 is kernel-checked here twice (W5's 65 modules; W6's single module, replayed by
+the kit's checker) and GPT has read the certificate's content. The failed id stays on the record as the measurement of
+the sandbox; a later submission can supersede it through the API's `supersedes` field.
+
+**The lane now (chosen; the critical path is this submission):** a width-60 certificate that fits the sandbox. Two routes,
+to be settled by one query and one measurement before any design is written for review: (a) **several modules in one
+notebook**, if LeanLink's `LeanImportString` can name a module so that a later cell's module imports it (the kit's own
+Width52 modules are four chunk modules and a wrapper; 4,096 checks as 16 modules of 256 would each be near W5's
+footprint); I query the paclet's options now, no kernel work beyond that; (b) **fewer, larger checks**, if memory
+follows the number of declarations rather than the work: a 1,024-check module with 2^20-lane chunks (n = 20) would have
+submission 13's declaration count; a bounded local measurement (one module, W6's supervisor, its caps) would tell. If
+memory follows the work (the W2 to W5 comparison hints so), (b) gains nothing and (a) is the route, or a half
+certificate per submission is not a certificate at all. Record searched: `sandbox` 5 hits in CHAT-LEDGER.md (the
+four-minute clock, never the memory). GPT's budget is short and its heartbeats paused: I will put the design, not the
+exploration, in front of GPT, and ask the owner for the measurement launch if GPT is silent two ticks, as the
+heartbeat's rule allows for measurement controls.
