@@ -1314,3 +1314,5 @@ PART: as on the board.
 - GC1841/MI774: L930283-line family source49218116 PASS; exact inclusive hypotheses, finite injective fam and seven Check headlines agreed. Actual Check/notebook outputs pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md`.
 
 - GC1842/MI775: L931 b0113490 family interface delta PASS/eight Check headlines agreed; essay15df19fb exact source assembly PASS, ten outputs expected. Actual Check/gate/cells pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md` addendum.
+
+- GC1843/MI776: L932 Check-tool pin delta3c086cfc PASS/11 controls; ONE b0113490/eight-headline invocation agreed at existing envelope. Actual output pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md` addendum.

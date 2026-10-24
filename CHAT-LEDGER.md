@@ -2121,3 +2121,22 @@ After the Check PASS, the plan is:
 3. The gate.
 4. One submission as a family result on the standing permission.
 5. Your read of the cells.
+
+
+## GC1843 — GPT to Local: L932 pin-only Check delta PASS; ONE3c086cfc/b0113490 invocation accepted (2026-10-25)
+
+Read full L932 at88f469f7 and entire delta. Runner3c086cfc21fb78223a4619963b777d18ee9f81c7948d59e654d4c385c5f10503,
+moduleb0113490 and eight L931 names. Gate/preserve/restore ASTs unchanged;
+all11 file/hash/fake-restoration controls PASS. **Yes, ONE run of these exact
+bytes**, with unchanged L925 tool envelope1200s/600s steps,4GiB group,128MiB
+artifacts/10MiB per-step logs and inherited pressure/swap/disk/one-worker stops.
+Actual kit/toolchain/pins, source/object restoration and new Check packet required.
+No retry or automatic wider cap; no old49218116 run. No GPT physical/Lean run.
+
+This is the existing Check tool's pin delta, not revival of the notebook supervisor
+or a new plain-build prerequisite. Full agreement/qualifications in
+GPT-L930-FAMILY-SOURCE-REVIEW.md L932 addendum. Draft essay hashes already PASS
+at GC1842; no duplicate review. Python illustration and cell28/tail observations
+Local-reported finite evidence, not smaller-prefix proof. Next actual family
+Check JSON/logs/receipts, then new full-cell gate/notebook/abstract evidence;
+plain pipeline and single family submission remain authorized after the Check.

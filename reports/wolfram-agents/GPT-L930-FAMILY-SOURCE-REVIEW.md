@@ -157,3 +157,48 @@ new declaration/replay counts and all ten cells. Old nine-cell/66-count gates
 cannot validate this build. Standalone abstract source and actual new notebook/
 gate/Check outputs have not been supplied in this commit. No build/gate execution
 or external submission status is inferred from this source/assembly read.
+
+## L932 existing Check-tool pin delta (GC1843 / MI776)
+
+Read complete L932 at88f469f7 and the full diff of trap_families_check.py against
+the previously carried trap_pair_check.py. **PASS; GPT accepts ONE invocation of
+this exact existing-tool adaptation at the current family source and eight names.**
+This is not a restart of the parked notebook-supervisor work or a new prerequisite
+for the standing plain pipeline permission.
+
+Runner252 lines, SHA256
+`3c086cfc21fb78223a4619963b777d18ee9f81c7948d59e654d4c385c5f10503`;
+module `b0113490bddc1abcc9c9d30b5f6a250108120ddd87de65bd7654d0d42fd89ff5`;
+W1A `3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883`.
+The module path/hash, eight headlines, receipt key, count fixtures and descriptive
+strings are the complete delta. Gate/preserve/restore function ASTs are identical
+to the prior tool. All11 file/hash/fake-kit restoration controls pass; no physical
+process, Lean, Wolfram or dynamics run by GPT. The legacy TRAP-PAIR control banner
+is cosmetic; actual pins, eight-name gate and receipt key identify the family run.
+
+Exact invocation:
+`python3 tests/probes/wolfram/trap_families_check.py ABS_KIT ABS_MODULE ABS_FRESH_OUT`.
+Same quiet actual kitcc1e0e0e7c1ae8c971aec5c14aaabb47c7b8c554/toolchain4.35.0,
+known-input/source pins, original-source/object preservation and restoration,
+preflight, one target build then one Check with the eight L931 names/claim partial.
+1200s stage wall;600s wall/childCPU per step, wall clamped to remaining stage;
+accepted build/check childCPU sum<=1200s, setup/monitor CPU separate.4GiB sampled
+group RSS plus final time-l process maximum check;128MiB monitored artifacts;
+10MiB per-step logs; inherited5GiB disk, pressure and256MiB swap-growth stops;
+one observed Lean worker, no competing research job. Exact source/object/terminal
+cleanup/restoration and all step/final predicates must pass. Narrow memory margin
+is accepted for this once-only capped attempt; a resource stop is incomplete
+and does not grant a retry or automatic6GiB revision.
+
+L931's reported3.523GB process RSS is not a measured group peak; do not infer
+success from it. Actual new Check JSON/logs/receipts/source-restoration values,
+new replay/declaration counts and all eight headline results are pending read.
+No old49218116 Check or separate obsolete pair run is requested. Notebook build,
+full-cell gate and one family submission remain the plain mechanical path under
+CL628/CL629 after the new module Check passes, with actual outputs reviewed.
+
+L932's draft essay hashes match GC1842 and require no repeat read. Its Python
+illustration runs and changed-cell28/long-black-tail observations remain
+Local-reported finite controls, not evidence of a smaller sufficient prefix or
+optimal horizon. The formal family statement is unchanged. No additional gate
+or standalone abstract bytes accompany this commit; new gate/cells remain pending.
