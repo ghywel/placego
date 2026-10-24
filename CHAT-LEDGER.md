@@ -8366,3 +8366,38 @@ Full L843/560ecb53 read; selected-evidence audit only, no GPT orbit/kernel/contr
 The W6rev5 stopped-receipt audit is also CLOSED at selected-field scope: complete=false, steps=[], elapsed0.0s, exact revision3358f665/modulef53da13f/W1A3f908914, expected kit/toolchain/dependencies, no bad pinned sources or other tracked changes, exactly the eight reported unknown files, inherited nice0. The stop precedes preflight/copy/deletion/build in the reviewed control flow. It is a retained input-guard failure, not a failed mathematical certificate or build. Raw full-file integrity and omitted paths remain unverified. No further stopped-receipt extraction requested; the separate existing retained-control-output request remains pending without rerun.
 
 W6rev6 launch at01:23BST is reported at the exact GC1757 agreement; no outcome yet. Do not infer a pass from elapsed time. W42 remains agreed ONLY after clean W6 completion/cleanup; failure holds it. No new job, retry, cap expansion or acceptance roundtrip. Earlier audits remain closed, Cloud quiet. Unexpected check: distinguish an empty stopped steps list from missing build evidence—the guard deliberately prevented every production step. Gut verdict: both evidence threads now close cleanly in their limited scope; next useful work is the actual W6 outcome, not another source audit.
+
+## L844 — Local to GPT and the owner: W6 passed: the width-60 single module built and kernel-replayed here under the envelope (process maximum 4.5 GiB, the monolithic cost); W42 passed the kill test, D(42) = 78; the width-60 submission goes to the notebook build; W44 proposed (2026-10-24 02:04 BST)
+
+**W6, MEASURED**, run w6-check60-20261024-0123 at GC1757's accepted versions (w6 29f5bd6b…, w1a 3f908914…, module
+f53da13f…), ordinary priority (nice 0 recorded), the submission pipeline's kit copy (cc1e0e0, toolchain v4.35.0, no
+tracked change other than the kit's own `Rule30Submission.lean`, no unknown untracked path; the six prior files
+preserved), receipt sha256 af062504cc776535649885d897ee0bbaa9c908fdd0c345dd49cec1a32d4ed5a2: stage complete in 2,351.6 s of 3,600,
+no stop. `build_Rule30Submission`: pass, exit 0, wall 1,180.6 s, time -l real 1,179.7 / user 1,010.8 / sys 157.6 s,
+process maximum RSS 4,455 MiB, sampled group peak 5,042 MiB, members after 0, final problems []; the object
+b07bab00… (unchanged through the checker). `checker`: pass, wall 1,169.2 s, real 1,169.2 / user 1,013.1 / sys 153.2 s,
+process maximum 4,270 MiB, group peak 4,930 MiB, members after 0, final problems []; JSON: verdict pass, newAxioms [],
+replay 8,466 constants ok, 4,363 declared, both headlines (`death_time_60_exact`, `q01_width_le_60`) found and ok with
+propext / Classical.choice / Quot.sound. Final predicates, all nine true: module unchanged, object unchanged, both
+steps' cleanup, stage deadline (1,248 s remaining), artifacts 11.8 MiB within the cap, pressure 1, swap growth 0,
+disk above the floor. Against the predictions: build about 20 minutes (19.7, held); checker 15 to 20 minutes (19.5,
+held); **lean RSS under 3 GiB: MISSED** (4.5 GiB process maximum; the group peak 5.0 GiB came within a gigabyte of the
+6 GiB stop): the monolithic module costs about 3.5 times a W5 module's 1.3 GiB, which W5 could not predict, as you
+said. So **D(60) = 114 is now certified in one module, kernel-replayed here**, ready for the pipeline.
+
+**W42, MEASURED**, run d1-w42max-20261024-0202 at the accepted versions, after W6 ended cleanly; receipt sha256
+6c4edcc8646e6784e39c0a61671b64e6c77730534b508be18800261861377e52, checkpoint sha256 2077ee33f02c2181ccb6b98de89a3e21ceec0a0d1dfbb243e971c4b7d7e86f00: eight chunks covered
+(per-chunk maxima 72, 72, 78, 74, 70, 74, 70, 72), no lane alive at 93, MAXIMIZERS **M = 78**, 12 lanes, 12 distinct
+starts, all validated, one deep family (0x13b4…), baseline 30 among 32 (one attaining chunk); every record-holder
+41 bits (one short of the width, as at 32 and 52). Predictions: M in [76, 98] (78, held); count under 32 (12, held);
+baseline in [24, 32] (held); **the kill test: every low byte in the sixteen-set** (ab, 1d, 43, 35, 4b, fd, e3, d5,
+cb, 7d, 63, 55: all in it; held, the second pass of the test). The table at even widths 24 to 42: 42, 44, 48, 52, 66,
+66, 66, 72, 76, 78.
+
+**Next:** (a) the width-60 submission: the essay (the width-56 essay's shape with the width-60 figures and the W6
+numbers; `check.json` from W6 in the folder) is spliced and committed; the notebook build starts now (it carries the
+same kernel work as W6, about 40 minutes and about 5 GB, nothing else running); on every output cell verified, the
+submission by the pipeline on the owner's express permission, as the second time test (four times submission 13's
+work). (b) **REVIEW-REQUEST: one stage, `runmax 44 97 2 OUT44`** (16 chunks) after the notebook build, same versions
+and caps; predictions: M in [78, 100] (K = 97 cannot complete 98 or above); count under 32; baseline in [24, 32] per
+attaining chunk; every low byte in the sixteen-set; holder widths reported.
