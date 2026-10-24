@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""CQ01 census, revision 3 (Local, 2026-10-24, L901; GPT's GC1813 trajectory check: one explicit schema, validate_result, checked in the order
+"""CQ01 census, revision 4 (Local, 2026-10-24, L903: the admitted scope widened for the larger-L stage, L_MAX <= 400, B_MAX <= 20, K <= 800,
+K > L_MAX; nothing else changed). Revision 3 (Local, 2026-10-24, L901; GPT's GC1813 trajectory check: one explicit schema, validate_result, checked in the order
 types, exact key sets, domains, cross-field bindings, arithmetic, completion, inside one fail-closed matcher; a valid full synthetic packet
 and one negative fixture per obligation, 21 gate controls with GC1812's and GC1813's demonstrated false acceptances). Revision 2 (Local, 2026-10-24, L900; GPT's GC1812: the four mutants run inside the stage and are required; the final
 gate binds the source digest, scope, exact controls, the mutation report, one row per grid point, finite L < E <= K with zero censoring,
@@ -49,6 +50,10 @@ E(L, B) <= 1.5 L + 10 everywhere on the grid; E(80, 20) in [85, 130]; the gain f
 every L; and, unlike D(W) (about 1.8 W with the white wall), the coupled alternation fails within about 1.2 L + 10 of its support for
 most L. Counterfactual: E(L, B) close to 2 L or more would say the right half buys a lot of alternation, and the D(W) comparison would
 reverse; censoring at K = 400 would say K was too small, not a value.
+Revision 4's proposed stage (L903): L_MAX = 400, B_MAX = 16, K = 800; W1A caps as before (1,800 s, 4 GiB, 50 MiB). Predictions, written
+before it runs and after seeing the L <= 80 census (L902): complete and uncensored at K = 800, monotone, every witness re-simulating;
+E(L, B) - L <= 25 for every L <= 400 and B <= 16; E(400, 16) in [401, 430]; E(L, 0) = L + 1 for at least half of all L. Counterfactual:
+a cell with E(L, B) - L > 40 would say the short white runs of Psi R at L <= 80 do not persist, and the bounded-run reading fails.
 Usage: python3 cq01_census.py --controls | run OUT L_MAX B_MAX K | stage OUT L_MAX B_MAX K
 OUTCOME (the one GC1814-accepted stage at revision 3, 7c88ec56, 2026-10-24 20:31 to 20:34 BST, L902): W1A pass, all 1,701 values
 (0 <= L <= 80, 0 <= B <= 20, K = 400), none censored, monotone, every witness re-simulated to E; 196.33 s wall, 195.7 s CPU, sampled group
@@ -429,8 +434,8 @@ def stage(out, L_MAX, B_MAX, K):
         print('REFUSED: W1A is not the pinned bytes'); return 3
     if not os.path.isabs(out) or (os.path.exists(out) and os.listdir(out)):
         print('REFUSED: OUT must be absolute and new or empty'); return 3
-    if not (0 <= L_MAX <= 80 and 0 <= B_MAX <= 20 and L_MAX < K <= 400):
-        print('REFUSED: scope outside 0 <= L_MAX <= 80, 0 <= B_MAX <= 20, L_MAX < K <= 400'); return 3
+    if not (0 <= L_MAX <= 400 and 0 <= B_MAX <= 20 and L_MAX < K <= 800):
+        print('REFUSED: scope outside 0 <= L_MAX <= 400, 0 <= B_MAX <= 20, L_MAX < K <= 800'); return 3
     os.makedirs(out, exist_ok=True)
     src_sha = hashlib.sha256(open(os.path.abspath(__file__), 'rb').read()).hexdigest()
     H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 4 << 30; H.CAPS['artifacts_max_bytes'] = 50 << 20; H.CAPS['log_max_bytes'] = 10 << 20
