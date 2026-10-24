@@ -209,3 +209,57 @@ and `cited/gpt-l919-review-20261024/audit.json`
 (2211 bytes, SHA256 `f1beb5da1317b6369279f3621bb609d9cb1fd35ceae10e82a92f6e51a2e90835`).
 Both upload receipts and exact readbacks were verified. The earlier pending-export
 status is resolved; the historical approval rejection remains recorded.
+
+## 5. Finite prefixes already give infinite families (GC1836, 2026-10-24)
+
+**Hand corollary of the reviewed entry certificates, radius-one locality and the
+kit trap invariant; uncompiled.** Define C31 by agreement with R31 on cells1..28,
+and C495 by agreement with R495 on cells1..24. For every R in either class,
+including an arbitrary infinite later tail,
+
+`u R(q) = (q mod 2 == 1)` for every q, and `Psi R = etherLeft 3`.
+
+In particular every finitely supported member is another CQ01 instance. The
+fixed initial prefixes are `11111` followed by23 zeros, or `111101111` followed
+by15 zeros, respectively. Tail cells29 onward in the first family and25 onward
+in the second are completely arbitrary. This is a standard locality/trap
+application, not novelty established or a new kernel-checked headline. It need
+not delay the frozen pair submission or trigger another compute job.
+
+Here is the full carrying argument. With a common driver c, if two initial right
+halves agree on1..M, then at time t their driven states agree at every positive p
+with p+t<=M; they also agree at p=0. Prove this simultaneously by induction on t.
+At t=0 positive positions use the initial agreement and p=0 uses c0. At t+1,
+p=0 uses the common boundary. For p>=1 the three predecessor positions are
+p-1,p,p+1. A zero predecessor uses the common boundary; every positive one has
+q+t<=p+1+t<=M, so the induction hypothesis applies to all three Rule30 inputs.
+This uses the exact drv recurrence read in Rule30Ether, not an empirical cone.
+
+For C31 take M=28,t1=9. Every cell1..19 at entry agrees with R31 since19+9=28.
+Thus the same six-cell ether prefix and the same13-cell wall witness meet all
+hypotheses of trap_invariant at j0=3,s=3,k=6,t1=9. The driver is independent of R.
+After entry the theorem permits each actual outside input to the wall; no future
+agreement with R31 is assumed. Hence column1=ether4(t+3) for all t>=9. Before
+entry, the needed odd times1,3,5,7 also lie in the agreement cone at p=1.
+They give0,1,0,1. The existing parity argument gives the displayed u at every q.
+
+For C495 use M=24,t1=5:19+5=24, the same entry row/wall holds, and the early odd
+times1,3 supply0,1. The same argument yields the identical u. The Psi definition
+and section4's phase-3 reconstruction supply the exact common infinite left row.
+Finite support of R is used only to interpret these as instances of CQ01; it is
+not needed for the trace/left-row identity.
+
+Boundary checks: initial cell28 (respectively24) is included; a tail is first
+free at29 (respectively25). Moving the boundary one cell earlier would lose this
+simple cone proof at (p,t)=(19,9)/(19,5), so these bounds are sufficient, not
+claimed optimal. Initial column0 is irrelevant because the common driver
+replaces it. No assertion that9/5 are the earliest possible entries is required.
+
+These classes are disjoint at cell5. Among right halves supported in1..B for
+B>=28 they supply exactly2^(B-28)+2^(B-24)=17*2^(B-28) distinct starts, all with
+the same Psi. This is a count of these specified classes, not all members of the
+Psi fibre. In the existing B=16 census these families add no extra rows beyond
+R31 and R495: the free tail starts outside that domain. They therefore do not
+classify the other970 finite persistent-group rows. The infinite family is a
+useful structural consequence of the pair certificate, with no general CQ01 or
+all-driver completeness implication.
