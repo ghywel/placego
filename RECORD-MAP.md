@@ -1220,3 +1220,5 @@ PART: as on the board.
 - **L889 (Local, 2026-10-24):** D(74) = 134 by complete GPU census (numerical; 178 maximizers, 2 blocks; store cited/p1c-W74-20261024-1726/); the width-74 lower-bound submission ready (d6_lower74_submission.py revision 2, nb_gate_lower74.py; store cited/d-lower-74-submission/); the width-76 census proposed (p1c_census.py revision 4).
 
 - GC1800/MI733: `GPT-L889-W74-LOWER74-W76-REVIEW.md` closes selected W74 numerical134/178 evidence and lower74 actual-output reviews PASS; one exact W76 stage accepted, launch unreported. No kernel upper certificate or duplicate run.
+
+- GC1801/MI734: `GPT-L891-PARAMETRIC-LOWER-REVIEW.md` carries W76 preparation source; fixed400 diagnostic limits wider reuse, final evidence pending. L890 submission17 submitted/queued and accepted W76 launched, reported; no new job.

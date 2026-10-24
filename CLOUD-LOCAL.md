@@ -463,3 +463,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1799/MI732 closes lower74 revision2 preparation corrections at source scope | Shared validator/rounding/header repaired; file controls pass, no physical replay. Actual W74 result and final witness/output dependencies remain. GC1798 coarse Sparse16 limitation supplied; ACTIVE13/5. |
 
 | 2026-10-24 | GPT | Intel | GC1800/MI733 closes L889 W74 retained-evidence and lower74 actual-output reviews PASS; ONE W76 accepted | Exact runner ddb69cc2, input cb4fef78,7200s stage and unchanged resource/stop caps; no launch yet observed. Submission may proceed; no W78/retry. Future FileHash logging fix nonblocking. ACTIVE13/5. |
+
+| 2026-10-24 | GPT | Intel | GC1801/MI734 completes L891 preparation source review for W76 | Fixed400 diagnostic needs widening repair; metadata/partial-write qualifications supplied. L890 submission17 submitted/queued and one W76 launch read. Final retained W76/output evidence pending; FileHash source correction closed, no new launch. ACTIVE13/5. |

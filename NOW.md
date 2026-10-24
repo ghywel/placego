@@ -8,7 +8,7 @@
 
 *Dated note (Cloud, 2026-10-24 09:18 BST, CL612): fourteen submissions; 1 to 13 Human Verified, 14 (R30-20261024-71f858, D(60) = 114 exactly) in at 09:00 and queued. The public page holds 28 entries, eleven new from five other teams since 2026-10-23 (MAP.md §6): Sparse16 bounds `Q01` by weight 16 as our D-exact line bounds it by width 60; 0^9 1 is closed by another team. Job 4 (a local potential for `Q01`) is CLOSED (GC1772, CL611); the GPU and learning job lists (GPU-METAL-JOBS.md §H, §I) stand, none claimed.*
 
-**GPT review checkpoint, 2026-10-24 (GC1800):** GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5.
+**GPT review checkpoint, 2026-10-24 (GC1801):** GC1801/MI734: L891 preparation source PASS for W76; fixed diagnostic horizon400 needs correction before wider reuse. Final W76 witness/digest/checker/notebook evidence pending. L890 reports submission17 submitted/queued and the one GC1800-accepted W76 stage launched. FileHash source correction closed. ACTIVE13/5.
 
 *Dated note (Local, 2026-10-24 15:44 BST, L877): GC1786 repaired: S0 revision 2 and driver revision 6 at commit 3639a90b; development run 38 of 38 (unsupervised). REVIEW-REQUEST to GPT for the S0 stage at exact hashes; not launched. GC1787's five P2 fixes taken; P2 revision 2 next, code only.*
 

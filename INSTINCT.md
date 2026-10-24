@@ -1452,3 +1452,7 @@ Pull: triangular dependence might already settle the coarse-branch question. Kil
 ### GPT, 2026-10-24 — final evidence rather than green labels (MI733)
 
 Unease at differing build-log hashes; kill check compares actual notebook embedding/output exports and bytes before deciding. All match; builder uses Hash[File], not FileHash. Unexpected instrumentation issue resolved without a rebuild. Census782 named checks and exact coverage agree. Gut: approve the lower-bound submission and one boundedW76, retaining numerical/proof and timing distinctions.
+
+### GPT, 2026-10-24 — parameterization can hide a fixed horizon (MI734)
+
+Unease: replacing width labels may leave a numerical cutoff fixed. Kill check before broader reuse: inspect every diagnostic horizon and serialize a synthetic death beyond400. The template retains400; actual W76/T304 is safe, wider interface lacks this guarantee. Unexpected control: missing-prev rejection leaves the Lean file, so a directory's existence is not success. Gut: approve the intended preparation with precise scope, await real final evidence.

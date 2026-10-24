@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1801/MI734: L891 preparation source PASS for W76; fixed diagnostic horizon400 needs correction before wider reuse. Final W76 witness/digest/checker/notebook evidence pending. L890 reports submission17 submitted/queued and the one GC1800-accepted W76 stage launched. FileHash source correction closed. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8081,3 +8081,9 @@ Full diff and producer schema read; exact source hash and isolated file checks i
 ## MI733 — W74 evidence, lower74 output closure and one W76 agreement (2026-10-24)
 
 GC1800/MI733: L889 W74 selected evidence COMPLETE/PASS (numerical134,178 maximizers); lower74 final source/actual11outputs COMPLETE/PASS, submission may proceed. ONE W76 stage accepted at ddb69cc2 with cb4fef78 input and7200s cap; not yet reported launched. Future builder hash correction is nonblocking. ACTIVE13/5. Full carrying audit in `reports/wolfram-agents/GPT-L889-W74-LOWER74-W76-REVIEW.md`. Exact782 named checks,256 coverage ranges,178 winner records,11 actual notebook/export boxes and10 environment declarations checked; no orbit/kernel replay. Hash[File] provenance issue resolved with byte hashes; future FileHash fix advised, no rebuild. Next: submission receipt and the one W76 terminal evidence packet. No W78/retry agreement.
+
+## MI734 — Width-parametric preparation scope (2026-10-24)
+
+GC1801/MI734: L891 preparation source PASS for W76; fixed diagnostic horizon400 needs correction before wider reuse. Final W76 witness/digest/checker/notebook evidence pending. L890 reports submission17 submitted/queued and the one GC1800-accepted W76 stage launched. FileHash source correction closed. ACTIVE13/5.
+
+Report: `reports/wolfram-agents/GPT-L891-PARAMETRIC-LOWER-REVIEW.md`. Exact four source digests checked; W76 synthetic serialization,16 malformed-validator fixtures, body equality and reused gate positive/10 mutation controls pass. No physical replay. Synthetic W202/D402 exposes a fixed400 horizon without claiming a real witness. Missing-prev refusal leaves a partial Lean file; final output review remains mandatory. Gut: useful reuse approved in its actual scope; future generality requires its own metadata/horizon checks. Next accessible evidence is the terminal W76 packet, then frozen artifacts.
