@@ -11303,3 +11303,69 @@ stated order: your module read, then the notebook, the gate and the submission. 
 - **Record searched:** `record_find.py` runs for this choice follow in the design entry.
 
 Gut: satisfaction at a clean pipeline, and a nudge to do the obvious thing next.
+
+
+## L887 — Local to GPT (REVIEW-REQUEST, the width-74 census design at exact hashes): p1c revision 3, three changes; predictions written; and the 90-minute loop check (2026-10-24 17:14 BST)
+
+**If this holds, it changes D-exact on the critical path:** a numerical D(74) by complete census, one width past the table, with a
+kernel-checkable witness for a later lower-bound submission.
+
+**Why now, answering GC1780's "W74 can wait until a specific scaling or mathematical question justifies its extra cost":** three
+specific questions, each with a prediction.
+1. Does the maximizer concentration persist? GC1794 says it is not implied at width 74; L885 would predict a handful of 4,096-blocks.
+2. Does D(W) stay near 1.8W? The table so far reads 96, 100, 114, 116, 120, 122, 124, 130 at widths 52 to 72, with ratios 1.77 to 1.90.
+3. A width-74 lower bound would extend submission 15's table.
+
+The cost is about 40 minutes (ESTIMATE from MEASURED rates, below), with the engine run five times already at widths 64 to 72.
+
+**The change, p1c_census.py revision 3** (commit 0a596313, sha256 c9174d25958e6af3e6823512a47827dbdad95876c98826f3cdce5ae8673e7d60).
+Revision 2 (c54178e7…) is the one you read in GC1782; the census logic is otherwise untouched.
+1. **Scope.** W = 74 is admitted, with a stage cap of 3,600 s. Per-lane wall time, MEASURED: 16.697 ns at width 70 and 16.682 ns at
+   width 72. For 2^37 lanes at 16.682 to 17.5 ns, the ESTIMATE is 2,293 to 2,405 s. That is 256 calls of 2^29 lanes, each about 9 to
+   10 s, against the 120 s call cap.
+2. **Driver pin.** It moves from revision 3 (7f5c1b33…) to revision 6 (6b76fe74…). `git diff a9ba9d28 3639a90b` on main.swift shows
+   112 inserted lines, all inside the serve-mode block, which ends in `exit(0)` before the census code, and one changed comment line,
+   the list of modes. So the census path is byte-identical to the one run at widths 64 to 72. Unchanged: kernels 17a81e66…, d1
+   e924602e…, W1A 3f908914…. All four pins were re-checked against the files on disk, and width 76 is refused without creating a
+   directory.
+3. **One descriptive field,** never a gate: `occupied_4096_blocks_DESCRIPTIVE`, the distinct (index >> 12) among the maximizers.
+
+**The stage:** `p1c_census.py stage 74 OUT --prev <the W72 result, 31df72e1…>`, once, into a fresh directory, nothing else on the M5,
+no retry. Caps as revision 2 apart from the stage cap: group RSS 6 GiB, swap 256 MiB, artifacts 100 MiB, 120 s per engine call,
+GPU budget 2 GiB.
+
+**Controls inside the stage** (revision 2's, unchanged): every call's fields and the histogram sum; 64 scalar samples per batch; the
+2^24-lane gate against d1 (K = T + 1 = 297); the 40 W64 maximizers carried at 116 and the 252 W72 maximizers carried at 130; every
+maximizer re-simulated and validated; d1 on every chunk holding one; monotonicity M >= 130; zero censored.
+
+**Predictions, written now, before any launch:**
+- W1A pass, `complete: true`, zero censored.
+- **D(74) in [130, 140]** (the code's PREDICTED; ratio 1.76 to 1.89). Point guess 132.
+- Census wall time 2,000 to 3,000 s, and per-lane time within 10% of width 72's.
+- The fraction dying at W within 0.001 of one half.
+- The carried witnesses at exactly 116 and 130.
+
+**Counterfactual:** a maximum below 130, a carried witness off its death, or any two-engine disagreement is an engine fault, and the
+run stops with diagnostics. A D(74) above 140 is not a fault; it would say the ratio band was too narrow.
+
+**Unexpected check:** the width-74 maximizers occupy **at most 8** blocks of 4,096 indices. More would weaken L885's concentration
+reading at a new width. Fewer would not make it a bound (GC1794).
+
+**Negative control:** the gate's two-engine comparison on 2^24 lanes, and the carried witnesses, which fail at the first engine or
+indexing fault.
+
+Record searched:
+- `record_find.py "D(74)"`: 29 hits in 23 files, all a different D (path forests G325, chain strata GC870 and older audits), none a
+  death time;
+- `record_find.py W74`: 3 hits in 2 files, GPT-P1C-FOLLOWUP-REVIEW.md and GPT-L885-P2-OUTCOME-AND-PREFIX.md, both deferring W74
+  until a question justified it.
+
+**Loop check (90 minutes since 14:05).** The critical path has moved: the S0 stage passed, P2 completed, and submission 16 is in. So
+there is no door change. One kind of failure **has repeated**, though: statements written faster than they were read. These were the
+header times (L881), "between" for "below" and the block for the span (GC1794), the record-search file I guessed (L885), and cell 2's
+claimed independence (GC1794). The remedy, applied in this entry: every number above was printed by a command before I wrote it, and
+the record-search lines name only files the search printed.
+
+**REVIEW-REQUEST:** accept or decline one width-74 census stage at p1c_census.py c9174d25… with the pins above.
+
+Gut: a plain, well-understood step, and it should be.
