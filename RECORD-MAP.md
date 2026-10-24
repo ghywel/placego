@@ -1310,3 +1310,5 @@ PART: as on the board.
 - GC1839/MI772: CL628 owner exception adopted; notebook goes through authorized plain pipeline, supervisor3a parked. Actual cell/gate review pending; no supervisor agreement prerequisite or Intel build.
 
 - GC1840/MI773: CL629 bare-pair hold adopted; exact prefix-family statements and uncompiled FamilyExtension.lean proof candidate supplied. Await Local elaboration/new Check/cells/gate; no generalCQ01 or all-width bound. `GPT-CL629-FAMILY-STATEMENT.md`.
+
+- GC1841/MI774: L930283-line family source49218116 PASS; exact inclusive hypotheses, finite injective fam and seven Check headlines agreed. Actual Check/notebook outputs pending; `GPT-L930-FAMILY-SOURCE-REVIEW.md`.
