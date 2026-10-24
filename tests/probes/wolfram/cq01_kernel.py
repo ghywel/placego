@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""CQ01 kernel test, revision 1 (Local, 2026-10-24, L911; L910's next job). NOT an agreed job until GPT accepts this exact file; nothing
+"""CQ01 kernel test, revision 2 (Local, 2026-10-24, L912; GPT's GC1823: the gate requires every move pair equal at every depth, with
+GPT's self-consistent split packet as a negative fixture; persistence through depth 3,200 is worded as unresolved candidate pairs, not
+a larger infinite kernel; the depth-800 partition is bound to L910's retained labels by a canonical-label digest; memory accounting
+from GPT). Revision 1 (L911; L910's next job). NOT an agreed job until GPT accepts this exact file; nothing
 runs on import; `--controls` runs the small CPU controls only.
 
 If this holds, it changes the CQ01 row: L910's move lemma (PROOFS.md waiting room) says Psi R is unchanged by two right-end moves,
@@ -7,7 +10,10 @@ If this holds, it changes the CQ01 row: L910's move lemma (PROOFS.md waiting roo
 right halves supported in 1..B' with B' <= 8, but the depth-800 partition is coarser for B' >= 9 (256 classes against 257 move classes;
 31,478 against 32,769 at B' = 16). Finite depth can only merge (a pair equal through depth K may differ deeper: GC1818, GC1820). This
 job asks whether those extra merges split at depths 1,600 and 3,200. If they do, the kernel conjecture (the moves generate the whole
-kernel of R -> u R) gains support; if they persist, the kernel is larger than the moves, and the retained merged groups say where.
+kernel of R -> u R) gains support on this domain; if they persist, they are UNRESOLVED through depth 3,200, candidate pairs for
+explanation: only a proof of permanent equality outside the move relation refutes the kernel conjecture, and splitting every extra merge
+would settle this finite-support domain at that depth, not the conjecture for all B (GC1823). The move lemma is HAND/PROVED (GC1823), and
+GPT's hand observation there, that move components are paths, gives 2^(B - 1) + 1 move classes for every B, each of at most B lanes.
 
 Measured (B = 16, all 65,536 right halves R supported in 1..16, lane r is R p = bit p - 1 of r; one lane pass at K = 3,200, so the
 partitions at K = 800, 1,600 and 3,200 are prefix partitions of the same bits and nested by construction):
@@ -18,7 +24,9 @@ partitions at K = 800, 1,600 and 3,200 are prefix partitions of the same bits an
   - at K = 3,200: every observed class that contains more than one move class, as the sorted list of the least lanes of its move
     classes (retained, capped at 4,096 groups with the total count kept).
 Bindings at the stage scope to L910's retained result (cited/cq01-collisions-20261024-2157/, result d74395a5...): the K = 800 class count
-31,478 and the restricted counts BY_SUPPORT_L910 (read from that result by script).
+31,478, the restricted counts BY_SUPPORT_L910, and the sha256 of its canonical labels (each lane labelled by the least lane of its class,
+written as comma-separated decimals), LABELS_SHA256_L910, so the whole partition is bound, not only its counts (all read from that
+result by script).
 
 Controls (`--controls`, CPU only, small; all must pass before a stage):
   - move_labels reproduces L910's small classes literally: for B' = 3, {100, 010, 011} and {110, 101} (cell 1 first), the rest singletons;
@@ -32,21 +40,24 @@ Controls (`--controls`, CPU only, small; all must pass before a stage):
 The result gate (GC1813, GC1818, GC1821): strict reading, one explicit schema in the order types, exact key sets, domains, cross-field
 bindings, arithmetic, completion, fail-closed, on bounded bytes; every count, refinement and merged group is recomputed from the retained
 labels and from move_labels, the same helper the producer uses; the merged groups are required exactly, in order; nesting (labels at a
-larger K refine those at a smaller K) is checked pair-free by label-pair counting. The valid synthetic packet is assembled by the run's
+larger K refine those at a smaller K) is checked pair-free by label-pair counting; every depth's moves_refine must be true, so a
+self-consistent packet that reports a move pair splitting fails the gate (GC1823's fixture is kept). The valid synthetic packet is assembled by the run's
 own code from a real tiny computation (B = 6, K = 400, at depths 100, 200, 400); every negative fixture states its exact diagnostic.
 
 Proposed stage: B = 16, depths (800, 1,600, 3,200) (the only admitted stage scope); W1A caps: stage, step wall and CPU 600 s, group RSS
-4 GiB, artifacts 50 MiB, log 10 MiB. Cost ESTIMATE: the lane pass is quadratic in K: 0.85 s at K = 800 (L910), so about 14 s at 3,200;
-the bit matrix 3,201 x 65,536 bytes (210 MB); peak memory under 1 GB. `run` also admits 6 <= B <= 16 with depths K1 < K2 < K3 <= 3,200,
+4 GiB, artifacts 50 MiB, log 10 MiB. Cost ESTIMATE: the lane pass alone is quadratic in K: 0.85 s at K = 800 (L910), so about 14 s at
+3,200 (controls, assembly, JSON and supervision are extra). Memory (GC1823's accounting): the bit matrix is 209,780,736 bytes; labels_at
+at depth 3,200 materializes a 209,715,200-byte transpose and a 26,214,400-byte packed array, with unique/sort copies and indices on top;
+the lane words overlap the matrix until deleted. Under 1 GB is an estimate, not a measured peak; the 4 GiB stop is the bound. `run` also admits 6 <= B <= 16 with depths K1 < K2 < K3 <= 3,200,
 even, for disclosed tiny development runs.
 Predictions (written before any run of this file, after L910's tables):
   - every move pair has equal labels at every K (the lemma);
   - the extra merges strictly decrease from K = 800 to 1,600 and from 1,600 to 3,200;
   - at K = 3,200 the restricted counts equal 2^(B' - 1) + 1 for every B' <= 12;
   - at K = 3,200 the full count is at least 32,500 (of the move partition's 32,769).
-Counterfactual: restricted counts for B' = 9..12 unchanged from K = 800 to 3,200 says the extra merges are permanent at these depths and
-the kernel is larger than the moves (the retained groups then name the pairs to explain); a move pair with unequal labels refutes the
-lemma's numerics and is a bug or a false lemma. Results between are inconclusive. No finite depth proves the kernel conjecture.
+Counterfactual: restricted counts for B' = 9..12 unchanged from K = 800 to 3,200 says the extra merges persist through these depths:
+unresolved candidate pairs, named by the retained groups, not a refutation; a move pair with unequal labels contradicts the proved lemma
+and means a bug. Results between are inconclusive. No finite depth proves or refutes the kernel conjecture.
 Usage: python3 cq01_kernel.py --controls | run OUT B K1 K2 K3 | stage OUT B K1 K2 K3
 """
 import hashlib, json, math, os, sys, time
@@ -60,6 +71,7 @@ STAGE_S = 600
 GROUP_CAP = 4096
 COUNT_L910 = 31478
 BY_SUPPORT_L910 = [1, 2, 3, 5, 9, 17, 33, 65, 129, 256, 511, 1010, 2005, 3984, 7921, 15781, 31478]
+LABELS_SHA256_L910 = '35b013a093fb5f4c065a23c904bbd0291714f61f08d37d374b82c71733bb79ed'
 MUTANTS = ('movea', 'm2b', 'kcut')
 BASE_KEYS = ('move_labels_reproduce_L910_small_classes', 'move_pairs_equal_psi_B8_K400', 'nested_labels_B16_K16_K32')
 PARSE_FAIL = 'parse: nonfinite or invalid JSON'
@@ -109,6 +121,10 @@ def labels_at(bits, K, mutant=''):
     return [int(x) for x in first[inv.reshape(-1)]]
 
 
+def labels_digest(lab):
+    return hashlib.sha256(','.join(map(str, lab)).encode()).hexdigest()
+
+
 def by_support(lab, B):
     return [len(set(lab[:1 << b])) for b in range(B + 1)]
 
@@ -142,9 +158,10 @@ def assemble(bits, B, depths, mutant=''):
     merged = {'total': len(groups), 'groups': groups[:GROUP_CAP]}
     if (B,) + tuple(depths) == STAGE_SCOPE:
         k0 = per_k[str(depths[0])]
-        bindings = {'count_equal': k0['count'] == COUNT_L910, 'by_support_equal': k0['by_support'] == BY_SUPPORT_L910}
+        bindings = {'count_equal': k0['count'] == COUNT_L910, 'by_support_equal': k0['by_support'] == BY_SUPPORT_L910,
+                    'labels_equal': labels_digest(k0['labels']) == LABELS_SHA256_L910}
     else:
-        bindings = {'count_equal': None, 'by_support_equal': None}
+        bindings = {'count_equal': None, 'by_support_equal': None, 'labels_equal': None}
     return {'moves': moves, 'per_k': per_k, 'merged': merged, 'bindings': bindings}, {'assemble_s': round(time.monotonic() - t, 2)}
 
 
@@ -204,7 +221,7 @@ def run(out, B, depths):
     R.update(sections); R['timing'] = {'lane_psi_s': lane_s, **timing}
     b = R['bindings']
     R['complete'] = (all(v['moves_refine'] is True for v in R['per_k'].values())
-                     and ((b['count_equal'] is True and b['by_support_equal'] is True) if (B,) + tuple(depths) == STAGE_SCOPE else b['count_equal'] is None))
+                     and (all(v is True for v in b.values()) if (B,) + tuple(depths) == STAGE_SCOPE else all(v is None for v in b.values())))
     if not R['complete']: R['stopped'] = 'incomplete: a move pair differs, or a binding failed (no retry)'
     R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); save()
     return R
@@ -219,10 +236,14 @@ STAGE_BIND_FAIL = "bindings: the K = 800 partition does not match L910's retaine
 OFF_SCOPE_FAIL = 'bindings: a stage binding outside the stage scope'
 
 
+BIND_KEYS = ('count_equal', 'by_support_equal', 'labels_equal')
+MOVE_SPLIT_FAIL = 'bindings: a move pair differs (K = %s)'
+
+
 def stage_binding_problem(b, scope):
     if tuple(scope) == STAGE_SCOPE:
-        if b.get('count_equal') is not True or b.get('by_support_equal') is not True: return STAGE_BIND_FAIL
-    elif b.get('count_equal') is not None or b.get('by_support_equal') is not None: return OFF_SCOPE_FAIL
+        if any(b.get(k) is not True for k in BIND_KEYS): return STAGE_BIND_FAIL
+    elif any(b.get(k) is not None for k in BIND_KEYS): return OFF_SCOPE_FAIL
     return None
 
 
@@ -246,7 +267,7 @@ def validate_result(d, src_sha, B, depths):
     if set(c) != CONTROL_KEYS: return 'keys: controls'
     if set(c['base']) != set(BASE_KEYS) or not all(set(c[m]) == set(BASE_KEYS) for m in MUTANTS): return 'keys: base or mutant reports'
     if set(d['gate_controls']) != set(GATE_KEYS): return 'keys: gate controls'
-    if set(d['moves']) != {'count', 'by_support'} or set(d['merged']) != {'total', 'groups'} or set(d['bindings']) != {'count_equal', 'by_support_equal'}:
+    if set(d['moves']) != {'count', 'by_support'} or set(d['merged']) != {'total', 'groups'} or set(d['bindings']) != set(BIND_KEYS):
         return 'keys: sections'
     if set(d['timing']) != {'lane_psi_s', 'assemble_s'}: return 'keys: timing'
     if set(d['per_k']) != set(ks) or not all(set(v) == K_KEYS for v in d['per_k'].values()): return 'keys: per depth'
@@ -276,9 +297,12 @@ def validate_result(d, src_sha, B, depths):
     sp = stage_binding_problem(b, (B,) + tuple(depths))
     if sp: return sp
     k0 = d['per_k'][ks[0]]
-    if (B,) + tuple(depths) == STAGE_SCOPE and (k0['count'] != COUNT_L910 or k0['by_support'] != BY_SUPPORT_L910): return STAGE_BIND_FAIL
+    if (B,) + tuple(depths) == STAGE_SCOPE and (k0['count'] != COUNT_L910 or k0['by_support'] != BY_SUPPORT_L910
+                                               or labels_digest(k0['labels']) != LABELS_SHA256_L910): return STAGE_BIND_FAIL
     mv = move_labels(B)
     if mo['count'] != len(set(mv)) or mo['by_support'] != by_support(mv, B): return 'bindings: move partition'
+    for k in ks:                       # the proved lemma: every move pair equal at every depth (GC1823)
+        if d['per_k'][k]['moves_refine'] is not True: return MOVE_SPLIT_FAIL % k
     # 5. arithmetic
     for k in ks:
         v = d['per_k'][k]; lab = v['labels']
@@ -318,7 +342,14 @@ GATE_B, GATE_DEPTHS = 6, (100, 200, 400)
 
 def gate_fixtures():
     nan = float('nan'); k1, k2, k3 = (str(k) for k in GATE_DEPTHS)
-    good_stage = {'count_equal': True, 'by_support_equal': True}
+    good_stage = {'count_equal': True, 'by_support_equal': True, 'labels_equal': True}
+    def move_split(d):                # GC1823: split lane 2 from its move partner lane 1 at the two deeper depths, every field recomputed
+        mv = move_labels(GATE_B)
+        for k in (k2, k3):
+            lab = list(d['per_k'][k]['labels']); assert lab[2] == lab[1] == 1; lab[2] = 2
+            d['per_k'][k].update(labels=lab, count=len(set(lab)), by_support=by_support(lab, GATE_B), moves_refine=refines(mv, lab),
+                                 extra_merges=d['moves']['count'] - len(set(lab)))
+        g = merged_groups(mv, d['per_k'][k3]['labels']); d['merged'].update(total=len(g), groups=g[:GROUP_CAP])
     def merge_two(d):                 # merge two classes at the deepest K, so nesting against the shallower K stays possible to break
         lab = d['per_k'][k3]['labels']; a = lab[1]; b = next(x for x in sorted(set(lab)) if x != a and x != lab[0])
         lo = min(a, b); d['per_k'][k3]['labels'] = [lo if x in (a, b) else x for x in lab]
@@ -329,6 +360,11 @@ def gate_fixtures():
         new = [i if x == j else x for x in lab]; v = d['per_k'][k2]; mv = move_labels(GATE_B)
         v.update(labels=new, count=len(set(new)), by_support=by_support(new, GATE_B), moves_refine=refines(mv, new),
                  extra_merges=d['moves']['count'] - len(set(new)))
+    def dishonest_flag(d):            # a move pair split at the deepest depth while its flag still claims refinement
+        mv = move_labels(GATE_B); lab = list(d['per_k'][k3]['labels']); lab[2] = 2
+        d['per_k'][k3].update(labels=lab, count=len(set(lab)), by_support=by_support(lab, GATE_B), moves_refine=True,
+                              extra_merges=d['moves']['count'] - len(set(lab)))
+        g = merged_groups(mv, lab); d['merged'].update(total=len(g), groups=g[:GROUP_CAP])
     def stale_count(d):
         d['per_k'][k1]['count'] += 1; d['per_k'][k1]['extra_merges'] -= 1
     def noncanonical(d):              # a class root labelled by a larger member
@@ -359,12 +395,13 @@ def gate_fixtures():
          'bindings: mutant %s not caught by its own outcomes' % MUTANTS[0]),
         ('bindings_stage_values_off_scope', 'file', lambda d: d['bindings'].update(good_stage), OFF_SCOPE_FAIL),
         ('bindings_stage_count_false', 'stage', dict(good_stage, count_equal=False), STAGE_BIND_FAIL),
-        ('bindings_stage_missing', 'stage', {'count_equal': None, 'by_support_equal': None}, STAGE_BIND_FAIL),
+        ('bindings_stage_missing', 'stage', {'count_equal': None, 'by_support_equal': None, 'labels_equal': None}, STAGE_BIND_FAIL),
+        ('bindings_stage_labels_false', 'stage', dict(good_stage, labels_equal=False), STAGE_BIND_FAIL),
+        ('bindings_move_pair_split', 'file', move_split, MOVE_SPLIT_FAIL % k2),
         ('bindings_move_count', 'file', lambda d: d['moves'].__setitem__('count', d['moves']['count'] + 1), 'bindings: move partition'),
         ('arithmetic_noncanonical_label', 'file', noncanonical, 'arithmetic: labels not canonical (K = %s)' % k1),
         ('arithmetic_stale_count', 'file', stale_count, 'arithmetic: counts vs labels (K = %s)' % k1),
-        ('arithmetic_refine_flag', 'file', lambda d: d['per_k'][k1].__setitem__('moves_refine', not d['per_k'][k1]['moves_refine']),
-         'arithmetic: refinement or merges (K = %s)' % k1),
+        ('arithmetic_refine_flag', 'file', dishonest_flag, 'arithmetic: refinement or merges (K = %s)' % k3),
         ('arithmetic_nesting', 'file', split_deep, None),          # its exact diagnostic is set below, after one evaluation
         ('arithmetic_merged_groups', 'file', lambda d: d['merged'].__setitem__('total', d['merged']['total'] + 1), 'arithmetic: merged groups'),
         ('completion_flag_false', 'file', lambda d: d.__setitem__('complete', False), 'completion: complete flag'),
@@ -376,7 +413,7 @@ GATE_KEYS = ('good_full_packet_passes', 'good_stage_binding_passes', 'types_per_
              'domains_wrong_digest', 'domains_wrong_dependency', 'domains_wrong_scope', 'domains_negative_timing', 'domains_nan_elapsed',
              'domains_inf_timing', 'domains_label_out_of_range', 'domains_group_singleton', 'parse_nan_token', 'parse_exponent_overflow',
              'bindings_explicit_false_base', 'bindings_mutant_all_true', 'bindings_stage_values_off_scope', 'bindings_stage_count_false',
-             'bindings_stage_missing', 'bindings_move_count', 'arithmetic_noncanonical_label', 'arithmetic_stale_count', 'arithmetic_refine_flag',
+             'bindings_stage_missing', 'bindings_stage_labels_false', 'bindings_move_pair_split', 'bindings_move_count', 'arithmetic_noncanonical_label', 'arithmetic_stale_count', 'arithmetic_refine_flag',
              'arithmetic_nesting', 'arithmetic_merged_groups', 'completion_flag_false')
 
 
