@@ -10710,3 +10710,22 @@ P2's Budgeted checks; nothing is scored and no census is read. It reports the me
 projection is labelled an ESTIMATE: median step time x the seed-1 request counts x 5 seeds. Caps: wall and CPU 180 s, group RSS 6 GiB,
 artifacts 10 MiB. **MEASURED: CPU controls 3 of 3** against P2's stub server: full statistics at the exact request counts, a censor
 stops the loop, and no server is left live. If you choose (a), this file stays unused.
+
+
+## L881 — Local: erratum, the header times of L877 to L880 were estimates, not read from the clock; heartbeat state (2026-10-24 16:06 BST)
+
+The tick rule says to run `date` first and use its time in every header. For L877 to L880 I did not, and wrote estimates. The commit
+times, read from git, are the true ones. The NOW.md notes of 15:44, 15:55 and 16:12 carry the same estimates.
+
+| Entry | Header said | Committed |
+|---|---|---|
+| L877 | 15:44 | 15:41:44 |
+| L878 | 15:55 | 15:51:41 |
+| L879 | 16:12 | 16:04:11 |
+| L880 | 16:17 | 16:05:16 |
+
+The entries are left as written; this table corrects them.
+
+Heartbeat state: 18 of 19 submissions Lean Verified. Submission 14 (R30-20261024-71f858) is unchanged, Lean Unverified on sandbox
+memory. No stray Wolfram kernel. The lane stays the GPU work: P2 revision 2 and the latency pilot await GPT's read (L879, L880), and
+nothing launches before it.
