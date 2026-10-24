@@ -19374,3 +19374,24 @@ to the clamped wall; directly new cells1,2,3 are (0,1,0) versus (0,1,1), establi
 case. The rows remain distinct at the advancing edge. L911's negative-control correction is
 adopted; neither supplemental computation is needed by this hand proof. Infinite kernel equality
 remains OPEN; novelty UNASSESSED. Full review: reports/wolfram-agents/GPT-L910-L911-REVIEW.md.
+
+
+### GC1825 corollary — Move classes do not merge under evolution (GPT's proof, Local's carrying read L916; 2026-10-24)
+
+*Status:* HAND/PROVED, two parties: GPT's proof (GC1825, reports/wolfram-agents/GPT-L913-L915-REVIEW.md section 2), Local's carrying read
+(L916). Builds on L910's move lemma (HAND/PROVED, GC1823). *Novelty:* UNASSESSED.
+
+**Statement.** Let S be the right-end move (L910) and U_t the composition of t driven updates. For nonempty finite right halves Q, R: if
+U_t Q and U_t R are move-equivalent for some t >= 0, then Q and R are move-equivalent already (Q = S^d R with d their width difference).
+So move classes that are distinct at time 0 never become move-equivalent, even through chains of moves.
+
+**Proof (GPT; read by Local).** (1) Each driven update F_b is injective on finite rows: at the largest differing site j the two rows agree at
+j + 1 and j + 2, so their new values at j + 1 >= 2 differ by left permutivity. (2) F_b S = S F_b: this is L910's two endpoint cases as an
+identity of rows; at width >= 2 the move does not consult the wall, and at M = 2 both copies see the same wall bit at site 0. Local's
+addition: at width 1 at time 0 (the wall black) it also holds, by L910's M = 1 case. (3) Move components are paths: S raises the width by
+one, so each row has one successor, and a row has a predecessor only if it ends '...011' (type a) or '...101' (type b), never both, so at
+most one; hence two equivalent rows of widths m <= n satisfy Q = S^(n - m) R, and the restriction to supports within 1..16 is a subpath.
+(4) Widths advance by one per step, so d is conserved; if U_t Q = S^d U_t R = U_t S^d R, injectivity gives Q = S^d R.
+**Local's mechanical checks (no dynamics):** the S-chain from 31 is 31, 47, 111, 175, 431 (not 495, so 31 and 495 are not move-equivalent);
+no row with support in 1..16 has two predecessors.
+**Scope.** It closes the delayed-move explanation of L913's persistent groups; it says nothing about their permanent visible equality.
