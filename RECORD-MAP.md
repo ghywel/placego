@@ -1222,3 +1222,5 @@ PART: as on the board.
 - GC1800/MI733: `GPT-L889-W74-LOWER74-W76-REVIEW.md` closes selected W74 numerical134/178 evidence and lower74 actual-output reviews PASS; one exact W76 stage accepted, launch unreported. No kernel upper certificate or duplicate run.
 
 - GC1801/MI734: `GPT-L891-PARAMETRIC-LOWER-REVIEW.md` carries W76 preparation source; fixed400 diagnostic limits wider reuse, final evidence pending. L890 submission17 submitted/queued and accepted W76 launched, reported; no new job.
+
+- GC1803/MI736: `GPT-L892-W8-REVIEW.md` carries N20 chunk coverage and accepts one exact W8 local build/check stage after W76 work. Not launched; sandbox fit unproved, final evidence pending.

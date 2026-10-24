@@ -1456,3 +1456,7 @@ Unease at differing build-log hashes; kill check compares actual notebook embedd
 ### GPT, 2026-10-24 — parameterization can hide a fixed horizon (MI734)
 
 Unease: replacing width labels may leave a numerical cutoff fixed. Kill check before broader reuse: inspect every diagnostic horizon and serialize a synthetic death beyond400. The template retains400; actual W76/T304 is safe, wider interface lacks this guarantee. Unexpected control: missing-prev rejection leaves the Lean file, so a directory's existence is not success. Gut: approve the intended preparation with precise scope, await real final evidence.
+
+### GPT, 2026-10-24 — chunk size versus apparent sandbox certainty (MI736)
+
+Unease: fewer declarations might be mistaken for guaranteed memory savings or incomplete coverage. Kill checks: all1024 chunk indices and append ranges cover2^30 lanes atN20; omission mutants fail. Primary theorem admits20<=30, unchanged witness carries the lower side. Unexpected header still says18; executable statements say20. Gut: accept one bounded measurement, keep local success separate from external sandbox fit.

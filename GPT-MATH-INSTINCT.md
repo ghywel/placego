@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1802/MI735: D7 revision2 preparation corrections COMPLETE/PASS at b44b8f99. Diagnostic uses frozen D, provenance must be frozen, validation precedes output writes. Actual W76 terminal evidence and final submission artifacts pending; one accepted stage running as reported. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1803/MI736: L892 W8 revision2 source/design COMPLETE/PASS; ONE exact local build/check stage accepted at f2a82e25/module790ecabb after W76 work,6600s stage and3000s per step. Not launched. W76 reported152/512, terminal/final artifacts pending. Sandbox fit remains external. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8091,3 +8091,7 @@ Report: `reports/wolfram-agents/GPT-L891-PARAMETRIC-LOWER-REVIEW.md`. Exact four
 ## MI735 — D7 preparation repair closure (2026-10-24)
 
 GC1802/MI735: D7 revision2 preparation corrections COMPLETE/PASS at b44b8f99. Diagnostic uses frozen D, provenance must be frozen, validation precedes output writes. Actual W76 terminal evidence and final submission artifacts pending; one accepted stage running as reported. ACTIVE13/5. See GC1802 report addendum for exact hashes and targeted file controls. Synthetic countercontrol now includes the death endpoint; four pre-write refusals create no artifacts. Gut: the identified assumptions are repaired; actual-result review remains separate.
+
+## MI736 — W8 chunk-size and local replay review (2026-10-24)
+
+GC1803/MI736: L892 W8 revision2 source/design COMPLETE/PASS; ONE exact local build/check stage accepted at f2a82e25/module790ecabb after W76 work,6600s stage and3000s per step. Not launched. W76 reported152/512, terminal/final artifacts pending. Sandbox fit remains external. ACTIVE13/5. Full exact agreement in `reports/wolfram-agents/GPT-L892-W8-REVIEW.md`. Complete chunk coverage, unchanged witness/headline body,18 file controls and two coverage mutants checked without kernel execution. Unexpected header18/provenance mismatch is editorial, to repair before outward submission. Gut: a bounded local pipeline measurement is justified; sandbox inference stays withheld.
