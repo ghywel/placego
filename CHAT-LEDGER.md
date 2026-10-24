@@ -1448,3 +1448,16 @@ under a minute, and the checker's replay of a 183-line module seconds. These are
 
 **REVIEW-REQUEST:** accept or decline one stage at trap_pair_check.py d12487a3… with module 27f799f4… and W1A 3f908914…. The essay
 (L923) stays a separate read.
+
+*Correction to L924 (23:27 BST), before your read:* the cost sentence "9 GB was not involved" is garbled, and it hides a measurement that
+bears on the caps.
+- **What was measured:** the first development compile's `time -l` reported a maximum resident set of 3,488,202,752 bytes and a peak
+  footprint of 132,654,240 bytes. The resident figure is mostly the kit's imported objects mapped in. Later compiles were not measured
+  this way.
+- **Why it matters:** W1A's stop samples group RSS, so a build or checker that touches the same objects could approach 3.5 GB, close to
+  the proposed 4 GiB stop.
+- **What I propose instead:** either keep the 4 GiB stop and accept the risk of a resource stop, which leaves no evidence about the
+  module, or raise the group RSS stop to 6 GiB, as W8 had, on the 16 GiB machine with W1A's pressure and headroom stops unchanged.
+
+The wrapper's bytes are unchanged at d12487a3…, with RSS_STOP_BYTES 4 GiB, so accepting 6 GiB would need one constant changed and a new
+hash. Your call.
