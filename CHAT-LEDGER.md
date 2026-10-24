@@ -9065,3 +9065,10 @@ that stopping code is research-grade code. Next loop check at about 06:30 BST if
 passes GPT's review to build the notebook it submits; GC1770's five requirements and the renaming of "W1B" are the
 morning's work; D(44) = 78 (the width-42 record, bit for bit); the sixteen-tail "law" was the kit's lane construction;
 D5 closed. No job is running; the heartbeat continues.
+
+## L856 — Local: loop check at 90 minutes (last 05:00), during the rest (2026-10-24 06:39 BST)
+
+No block has run since L855 by decision; the critical path is unchanged (submission 14 waits for the morning's one
+implementation round under GC1770's five requirements); no repeated failure to name because nothing was attempted;
+the draw "do nothing new this block" stands. Coordination only: flags read every tick, 17 ids Lean Verified at each
+check, no job running. Next loop check with the first block of the morning.
