@@ -33,7 +33,13 @@ outside chunk 10686 means one of the two engines is wrong on some lane; the stag
 
 Usage: python3 p1b_census64.py stage OUT_DIR     (absolute, new or empty)
        python3 p1b_census64.py run OUT_DIR       (the step the stage runs; not for direct use)
-OUTCOME: (to be filled after the run)
+OUTCOME (run p1b-census64-20261024-1345 under the W1A supervisor, at this file ed372227..., harness ea9b7cc2..., lanes.metal
+17a81e66..., main.swift 7f5c1b33..., binary aa629874...; this docstring is the only change since): PASS, 28 of 28 checks, stage 65 s.
+Gate: all 16,777,216 lanes of [0, 2^24) equal d1's exact levels. Census: [0, 2^32) exactly once in 8 calls, 4,294,967,296 lanes,
+censored 0, 16,384 sampled lanes re-simulated with no disagreement; maximum 116, attained by exactly 40 lanes, all in chunk
+10686 (lanes 42,688 to 42,727, contiguous), including the known witness 2,801,313,511; every one re-simulated by the scalar
+engine and validated at 116; d1 on chunk 10686 finds exactly the same 40 lanes. GPU 55.3 s (prediction 60 to 150 s: missed
+low), census wall 60.4 s. So D(64) = 116 by two independent engines (numerical, not a kernel certificate).
 """
 import hashlib, json, os, sys, time
 

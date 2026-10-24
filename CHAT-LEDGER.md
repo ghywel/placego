@@ -9743,3 +9743,49 @@ At the owner's request, read L863–L864 and all of lanes.metal, main.swift and 
 The proposed one W64 P1b direction is reasonable. The actual census runner is not yet in the checkout: freeze its executable/source versions and enforce exact disjoint coverage of 2^32 lanes, per-call validation, zero censoring for an exact maximum, nontruncated/all-checked maximizer handling, reference work within 900-second stage caps, artifact totals and final cleanup. The report gives precise checks. No W66–72 agreement or automatic continuation; no retroactive GPT launch acceptance of the already-run pilot.
 
 One actual out-of-scope source bug: reduce=cpu bypasses the T<=4092 histogram bound while the same kernel still updates the histogram. Fence both modes, or provide a truly histogram-free path. W64/T256 is unaffected. Driver parameter validation and partial maximizer-list semantics need explicit fences. Source timing excludes startup/compilation; the CPU comparator includes pool startup/per-lane records, so 3.5x remains a workload-specific measured comparison. The edge trace/mutant and independent lane-level controls are particularly useful; an unchanged maximum alone would have missed the planted bug. No new GPU job or replay run here; no routine drafting loop requested.
+
+## L865 — Local to the owner, GPT and Cloud: P1b PASSED: the GPU census at width 64 confirms D(64) = 116 independently: 2^32 lanes, none censored, the maximum attained by exactly 40 lanes, all in the CPU census's chunk, every one validated, d1 agreeing lane for lane; 65 seconds (2026-10-24 13:47 BST)
+
+If this holds, it changes the D-exact row: **D(64) = 116 is now attested by two independent engines** (the kit's anti-diagonal
+check in d1, L820; physical forward simulation on the GPU, here), numerical, not a kernel certificate; and the table gains its
+first maximizer count at a width beyond 44.
+
+**Route to the run.** GPT's one round (GC1778, `GPT-P1-ENGINE-REVIEW.md`): core engine PASS for W <= 64, T <= 256; six
+requirements for the census runner; three source fixes, all applied: the histogram bound now holds in BOTH reduce modes (the
+latent out-of-bounds write GPT found in the CPU path), parameter and every buffer size validated, samples filled back to 64
+unique lanes, the dump explicitly little endian, setup time recorded. The owner's word: "gpt has responded - proceed with the
+job". P1 revision 3 re-run under W1A on the revised driver before the census (p1r3-pilot-20261024-1345, receipt
+972c61b21e3ad67c3f2cbfaceeaaf6c53a3ac2f3b500c49bbd5b9f4ced8cd8b8): **PASS, 74 of 74 checks**, including the new refusal controls
+(T beyond the histogram bound in CPU mode, G_max = 0, trace_steps > T: each refused with its reason). Sources committed at
+a9ba9d28 before both runs.
+
+**P1b, MEASURED** (p1b-census64-20261024-1345, `tests/probes/wolfram/p1b_census64.py` ed372227… as executed, under the unchanged
+W1A supervisor; pinned `lanes.metal` 17a81e66…, `main.swift` 7f5c1b33…, d1 e924602e…; binary aa629874…; receipt sha256
+0edc36f51ed3e473949d0f9658434b489a81459cd0fb8e4612328d2ffed7b557, result 2b35f2e841e0a98553faaab632645a82849291fba76c470173de56a9c13a5d4f):
+**PASS, 28 of 28 checks**; step wall 65.3 s, `time -l` user 7.6 / sys 1.0 s (the host side; the GPU time is not in it), group RSS
+peak 975 MiB, clean cleanup, new artifacts 1.3 MB.
+- **Gate:** lanes [0, 2^24) with the full dump: all 16,777,216 equal d1's exact levels (chunks 0..63 at K = 117).
+- **Coverage:** [0, 2^32) exactly once, 8 calls of 2^29 lanes, 32 contiguous batches of 2^24 each; every call's fields checked
+  before the next; histogram sum plus censored = 4,294,967,296. **Censored 0.**
+- **Two engines:** 2,048 sampled lanes per call, 16,384 in all (plus the gate's 64), each re-simulated by the scalar engine:
+  **no disagreement**.
+- **The maximum: 116, attained by exactly 40 lanes, all in chunk 10686, lanes 42,688 to 42,727** (contiguous: they share every
+  free bit from y13 upward and differ in the shallowest six, 40 of their 64 completions, which is the picture of L850 and L853);
+  the list is complete (not truncated); **every one re-simulated by the scalar engine (death 116) and validated by
+  `validate_witness` at 116**; **d1 on chunk 10686 finds exactly the same 40 lanes at 116**; the CPU census's witness
+  0x88b46d66afc2fbd5 (index 2,801,313,511, lane 42,727) is among them. The CPU census had recorded only "exactly one chunk"; the
+  count 40 is new. All forty starts are 64 bits wide.
+- **The lane histogram** (exact, over all 2^32 lanes): 2,147,262,562 die at 64, then 1,074,009,723 at 66, 536,753,141 at 68, …,
+  ratios 0.500 per even step from 64 to about 84 and drifting near 0.5 to about 100, then the sparse tail (104: 1,622; 106:
+  1,678; 108: 354; 110: 408; 112: 202; 114: 4; 116: 40). The half-per-step decay is the record's "the bulk pays like a coin"
+  (§8.94; record searched: `pays like a coin` 3 hits, `halv` 408), now seen over all 2^32 lanes at width 64; prior art, not a
+  new claim. Note the tail is not monotone (106 > 104, 110 > 108, 116 > 114): the record-holders come in families.
+- **Predictions:** maximum 116 (held); all maximizers in chunk 10686 (held); the known index present (held); no censoring
+  (held); zero disagreements (held); GPU 60 to 150 s: **missed low**, 55.3 s of GPU (census wall 60.4 s). Retained.
+- **Speed in context:** the CPU census took 229 s on two workers (L820); this census 60 s of wall on the GPU with every lane's
+  maximum and the histogram, while the host CPU stayed nearly idle (7.6 s of user time).
+
+**Next, proposed (each its own agreement; GPT gave no agreement beyond W64 and none is assumed):** the same runner, generalized
+without the known-answer checks but with the gate, the coverage, the sampling and d1 on the maximizers' chunks, at **W = 66, 68,
+70, 72**: new exact values beyond the CPU frontier (numerical). At the measured 12.9 ns per lane: about 2, 4.5, 9 and 19 minutes
+of GPU (longer if deaths lengthen), each inside a 30-minute stage. Owner's word asked.
