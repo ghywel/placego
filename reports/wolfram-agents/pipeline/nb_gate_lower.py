@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Output-cell gate for the lower-bound submission d-lower-64-72, revision 3 (Local, 2026-10-24, L871; GPT's GC1782: revision 2's
+"""Output-cell gate for the lower-bound submission d-lower-64-72, revision 4 (Local, 2026-10-24, L874; GPT's GC1784: revision 3's
+control helper truncated each cell before reading it, so its mutation controls tested empty cells; and a change to only ONE displayed
+copy of a count in cells 5 or 11 passed the substring test. Revision 4 requires EVERY displayed copy to agree and its controls read
+before they write. Revision 3 notes: (Local, 2026-10-24, L871; GPT's GC1782: revision 2's
 axiom extractor dropped identifiers with underscores or digits, so an extra axiom could pass, and its substring checks were
 presence tests, not a full output check).
 
@@ -15,7 +18,7 @@ JSON for the same module:
   - cell 11 (KernelCheck): `Success`, and "The kernel accepts all N declarations" with N equal to the checker's `replay.constants`.
 usage: python3 nb_gate_lower.py CELLS_DIR CHECK_JSON      (exit 0 only on PASS)
        python3 nb_gate_lower.py --controls CELLS_DIR CHECK_JSON   (negative controls on copies of the cells)"""
-import json, os, shutil, sys, tempfile
+import json, os, re, shutil, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', '..', '..', 'tests', 'probes', 'wolfram'))
@@ -74,13 +77,22 @@ def gate(cells, check):
     dec = check.get('declared', []); nd = len(dec)
     nk = {k: sum(1 for x in dec if x['kind'] == k) for k in ('def', 'theorem')}
     t5 = txt.get(5) or ''
-    need5 = ['TagBox["%d", "SummaryItem"]' % nd, '"%d", "\\" \\"", StyleBox["\\"def\\""' % nk['def'], '"%d", "\\" \\"", StyleBox["\\"theorem\\""' % nk['theorem']]
-    rep[5] = 'bound to the checker (%d constants: %d def, %d theorem)' % (nd, nk['def'], nk['theorem']) if all(x in t5 for x in need5) and 'LeanEnvironment' in t5 else 'MISMATCH'
-    if rep[5].startswith('MISMATCH'): probs.append('cell 5 summary counts differ from the checker JSON')
+    totals = re.findall(r'TagBox\["(\d+)", "SummaryItem"\]', t5)                       # every displayed total (collapsed and expanded views)
+    kinds = re.findall(r'"(\d+)", "\\" \\"", StyleBox\["\\"(def|theorem)\\""', t5)   # every displayed per-kind count
+    ok5 = ('LeanEnvironment' in t5 and totals and all(int(x) == nd for x in totals)
+           and {k for _, k in kinds} == {'def', 'theorem'} and all(int(c) == nk[k] for c, k in kinds))
+    rep[5] = 'bound to the checker, every copy (%d constants: %d def, %d theorem; %d total copies, %d kind copies)' % (nd, nk['def'], nk['theorem'], len(totals), len(kinds)) if ok5 else 'MISMATCH'
+    if not ok5: probs.append('cell 5 summary counts differ from the checker JSON in some displayed copy')
     t11 = txt.get(11) or ''
     rc = check.get('replay', {}).get('constants')
-    ok11 = 'TagBox["Success", "SummaryHead"]' in t11 and ('The kernel accepts all %d declarations' % rc) in t11
-    rep[11] = 'Success, %d declarations (= checker replay)' % rc if ok11 else 'MISMATCH'
+    msgs = re.findall(r'accepts all (\d+) declarations', t11)
+    items = re.findall(r'TagBox\["(\d+)", "SummaryItem"\]', t11)
+    params = re.findall(r'"MessageParameters" -> \{(\d+),', t11)
+    decls = re.findall(r'"Declarations" -> (\d+)', t11)
+    every = msgs + items + params + decls
+    ok11 = ('TagBox["Success", "SummaryHead"]' in t11 and 'Failure' not in t11 and msgs and params and decls
+            and all(int(x) == rc for x in every))
+    rep[11] = 'Success, %d declarations (= checker replay) in every one of %d displayed copies' % (rc, len(every)) if ok11 else 'MISMATCH'
     if not ok11: probs.append('cell 11 is not Success with the checker replay count')
     return ('PASS' if not probs else 'FAIL'), {'cells': rep, 'problems': probs}
 
@@ -89,15 +101,24 @@ def controls(cells, check):
     res = {}
     v, _ = gate(cells, check); res['real_cells_pass'] = v == 'PASS'
     def mutated(i, f):
-        t = tempfile.mkdtemp(); shutil.copytree(cells, t + '/c'); p = t + '/c/cell-%02d.txt' % i
-        open(p, 'w', encoding='utf-8').write(f(open(p, encoding='utf-8').read())); return gate(t + '/c', check)[0]
+        with tempfile.TemporaryDirectory() as t:
+            shutil.copytree(cells, t + '/c'); p = t + '/c/cell-%02d.txt' % i
+            before = open(p, encoding='utf-8').read()            # read FIRST (revision 3 opened for writing first and truncated the cell)
+            after = f(before)
+            assert after and after != before, 'control %d did not change the cell' % i
+            open(p, 'w', encoding='utf-8').write(after)
+            return gate(t + '/c', check)[0]
     # GPT's counterexample: an extra axiom with an underscore and digit in one list
     res['extra_axiom_fails'] = mutated(8, lambda s: s.replace('"\\"propext\\""', '"\\"propext\\"", ",", "\\"unexpected_axiom1\\""', 1)) == 'FAIL'
     res['changed_bound_fails'] = mutated(7, lambda s: s.replace('t < 130', 't < 128', 1)) == 'FAIL'
     res['changed_width_fails'] = mutated(7, lambda s: s.replace('72 < k', '71 < k', 1)) == 'FAIL'
-    res['wrong_declaration_count_fails'] = mutated(11, lambda s: s.replace('accepts all %d' % check['replay']['constants'], 'accepts all %d' % (check['replay']['constants'] - 1))) == 'FAIL'
+    res['wrong_declaration_count_fails'] = mutated(11, lambda s: s.replace('accepts all %d' % check['replay']['constants'], 'accepts all %d' % (check['replay']['constants'] - 1))) == 'FAIL'   # every copy
     res['wrong_summary_count_fails'] = mutated(5, lambda s: s.replace('TagBox["%d", "SummaryItem"]' % len(check['declared']), 'TagBox["%d", "SummaryItem"]' % (len(check['declared']) + 1))) == 'FAIL'
     res['changed_death_list_fails'] = mutated(2, lambda s: s.replace('"130"', '"128"')) == 'FAIL'
+    nd = len(check['declared']); rc = check['replay']['constants']
+    res['first_copy_only_cell5_total_fails'] = mutated(5, lambda s: s.replace('TagBox["%d", "SummaryItem"]' % nd, 'TagBox["%d", "SummaryItem"]' % (nd + 1), 1)) == 'FAIL'
+    res['first_copy_only_cell11_message_fails'] = mutated(11, lambda s: s.replace('accepts all %d declarations' % rc, 'accepts all %d declarations' % (rc - 1), 1)) == 'FAIL'
+    res['cell11_declarations_field_only_fails'] = mutated(11, lambda s: s.replace('"Declarations" -> %d' % rc, '"Declarations" -> %d' % (rc + 7), 1)) == 'FAIL'
     bad = dict(check); bad['headlines'] = [dict(h, axioms=h['axioms'] + ['sorryAx']) if i == 0 else h for i, h in enumerate(check['headlines'])]
     res['checker_json_with_bad_axiom_fails'] = gate(cells, bad)[0] == 'FAIL'
     ok = all(res.values()); print(json.dumps(res, indent=1)); print('GATE CONTROLS', 'PASS' if ok else 'FAIL', len(res)); return ok

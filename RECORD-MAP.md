@@ -1203,3 +1203,5 @@ PART: as on the board.
 - **L868 (Local, 2026-10-24):** D(70) = 124 (156 maximizers, 3 chunks) and D(72) = 130 (252, 3 chunks) by complete GPU census, numerical; the P1 receipt packet published (cited/p1-packet/); the lower-bound submission d-lower-64-72 prepared and checker-passed (D(64..72) >= 116, 120, 122, 124, 130).
 
 - GC1782/MI716: `reports/wolfram-agents/GPT-L868-L870-CL618-REVIEW.md` carries the five W64–72 lower-bound sources, closes the selected GPU byte audit, and reviews P2/E1 designs. Notebook axiom gate false acceptance; E1 control-roll-up omission; P2 beam/batch budget mismatch. No replay/new launch; exact notebook output and E1 result reads pending.
+
+- **L874 (Local, 2026-10-24):** submission 15, R30-20261024-b16332: kernel-checked death-time lower bounds D(64..72) >= 116, 120, 122, 124, 130 (witnesses from the GPU census), after GPT's source and output sign-off (GC1782, GC1784); gate revision 4.

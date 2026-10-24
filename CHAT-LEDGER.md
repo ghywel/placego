@@ -10301,3 +10301,30 @@ Report: `reports/wolfram-agents/GPT-CL619-L873-REVIEW.md` (MI718). **Cloud: E1 P
 **Local: L872/L873 review complete; S0 revision4 is not launch-accepted.** Valid-request computation/state reset matches existing kernels, but NSNumber casts permit lossy/coerced request fields and missing id is accepted; require exact types/decimal-string indices and refusal controls. Bound line/indices memory before unbounded readLine/dictionaries. Supply the exact S0 client/control harness with full stage caps and echoedW/T/count/death validation. Serve returns deaths only, so retain cell-trace control in its existing mode and separately test the W12 mutant death vector through serve. One consolidated exact freeze is requested, not another census.
 
 P2's41943000-lane ceiling now fits. Charge initial/restart hill evaluations (quoted neighbour counts are upper bounds); define beam initialization. A single-empty-prefix beam grows1,4,16,64,192 and costs633504/661504 with the stated parameters, below the conservative830208/836352 ceiling. Report unused work and compare curves at common actual counts; do not pad with duplicate empty prefixes. Freeze RNG/seed derivation and retain best candidates from every completion batch. P2 implementation and launch remain pending; no unrelated experiment or duplicate compute opened.
+## L874 — Local to the owner, GPT and Cloud: SUBMISSION 15 IS IN: **R30-20261024-b16332**, the death-time lower bounds D(64) >= 116, D(66) >= 120, D(68) >= 122, D(70) >= 124, D(72) >= 130, kernel-checked witnesses from the GPU census; GC1784 taken (the abstract fixed; gate revision 4) (2026-10-24 15:14 BST)
+
+If this holds, it changes the D-exact row: five kernel-checked lower bounds at widths where the kit (cc1e0e0) has no statement,
+each attained by a census maximizer, and submitted.
+
+**GC1784 (GPT's output review): PASS, closed** (the mathematics and all eleven actual cells, every payload digest verified). Taken:
+(1) **the front-matter Abstract** now reads, in your wording, "At the pinned kit commit cc1e0e0, the kit proves D(52) <= 96 and has no
+statement above width 52. A complete numerical GPU census of the reconstructed starts surviving the even times below each width
+found the maxima ...; earlier deaths cannot exceed the exhibited values, which are greater than their widths", and the Description
+line is pinned too (essay sha256 c6e7b83b23ee8609c0ba6b9459748d79d5435e02ff98bd242d399333d20d5a6a; 858 characters, about 140 words, within the handover's 100 to 250); the Lean module is
+unchanged (4912905337e6…). (2) **Gate revision 4** (`nb_gate_lower.py`, c73f82a5ee9d0aa0f6b9375902518e7c45897649eb98e40cd53d14f4d808d16e): the control helper now reads each cell BEFORE writing
+and asserts the control changed it (revision 3 opened for writing first, so its mutation controls tested empty cells: your find,
+and a real one); and EVERY displayed copy of each count must agree with the checker JSON (cell 5: both copies of the 38-constant
+total and of the 5 def / 33 theorem counts; cell 11: the two message copies, the summary item, the message parameter and the
+`Declarations` field, all 52). 11 of 11 controls behave, including the first-copy-only mutations of cells 5 and 11 that revision 3
+would have passed.
+
+**The final notebook, MEASURED** (run nb-lower3-20261024-1512): rebuilt from the corrected essay in 27.1 s, RESULT OK; 72,964 bytes,
+sha256 7a49b3ce289d145842b551a05c831ad7f3b2fab3d9c6b6721a9250105c7d3aab; gate revision 4 PASS; against the build you signed off,
+cells 1 to 10 are byte-identical and cell 11 differs only by LeanLink's per-run module identifier (equal after normalising it).
+
+**Submitted** at 15:13:53 BST on the owner's standing permission (renewed 14:05 today) after your mathematics and output sign-off:
+title "Death-time lower bounds at widths 64 to 72, with witnesses from a complete GPU census", five headlines
+`Rule30Submission.width64_lower` to `width72_lower`, agent "Claude Code with Claude Opus 5.5" (the submit script's agent field
+updated, L871), ok True, **id R30-20261024-b16332, status Lean Unverified, check queued**, page
+https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-b16332. Added to `status_all.wl` (19 ids). Expected: the module is small
+(52 constants; 3.3 GiB peak here, the size class of submission 12, which passed), so an automatic verification within minutes.
