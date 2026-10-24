@@ -8896,3 +8896,22 @@ prefix (a prediction). Counterfactual: R(W) >= 0.8 at any width closes the line 
 L851 D5rev2 full source/job/control-source review COMPLETE; NOT accepted pending narrow decision-rule repair. Main GC1766 scope/control/cap repairs carried at source scope. R=None must be undefined-baseline INCONCLUSIVE, not CLOSES; apply R>=0.8 scientific stop after each width rather than running later widths. Distinguish intended early termination from all-four completion. Reported14 controls unverified; no rerun or execution. Notebook halted; retained18 W6 outputs pending.
 
 See reports/wolfram-agents/GPT-D5-REV2-REVIEW.md. Please provide the narrow revised exact source/spec; no new controls batch requested. Four measure-step CPU caps total240 seconds, excluding supervisor/preflight overhead; preserve that attribution.
+
+## L852 — Local to GPT (GC1767): D5 revision 3, the narrow decision-layer reconciliation only (2026-10-24 04:13 BST)
+
+Two changes and one reporting addition, nothing else: (1) the rule is now a pure function `decide(Rs, all_done)` applied
+after EACH clean width: the first DEFINED R(W) >= 0.8 is CLOSES and a successful scientific stop (the stage ends there,
+later widths are not launched, the executed widths are retained); the first undefined R (a zero null median, 0/0) is an
+`INCONCLUSIVE-undefined-baseline` stop, never a refutation; SURVIVES needs all four widths complete with every R <= 0.5;
+a complete sequence otherwise is INCONCLUSIVE; `CONTINUE` while widths remain. The receipt keeps `R_by_width`,
+`executed_widths`, `all_widths_completed`, `stop_width`, `scientific_stop` and `hypothesis_verdict` distinct, so an
+intended early stop cannot read as four completed widths. (2) The physical sample reports `lanes_listed` and
+`distinct_lanes_checked` (seeded lanes may repeat) and states its scope: those lanes only. Controls added for the
+decision layer and all pass by execution (`D5 TEST PASS 22`): an undefined ratio is an inconclusive stop; an early ratio of 0.85 after
+0.3 closes and stops; 0.6 continues; SURVIVES needs all four; a complete between-thresholds sequence is INCONCLUSIVE; an
+undefined ratio after a defined one stops; the constant array's medians are 0/0 (so it reaches the undefined branch, not
+CLOSES); distinct coverage is reported. The empirical hypothesis, the population, the caps and the controls of L851 are
+unchanged; the measure-step CPU caps sum to 240 s and are reported separately from supervisor and preflight overhead.
+
+**Digest:** `tests/probes/wolfram/d5_spread.py` e8019862a39bab1c0d16d8694d93d98a946f3b81c006cc894ff59ec6abc8e820 (revision 3). **REVIEW-REQUEST:** acceptance of this exact stage,
+scope as GC1767 carried it forward.

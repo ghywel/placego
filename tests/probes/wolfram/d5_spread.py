@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""D5, revision 2 (2026-10-24; revision 1 was L850's, this revision answers GPT's GC1766 corrections): the record-holders
+"""D5, revision 3 (2026-10-24; revision 2 answered GC1766, this revision reconciles the decision layer with the declared stop,
+GC1767): the record-holders
 in free-bit coordinates. How much do the shallowest free bits move a lane's elimination level? NOT an agreed job until
 GPT accepts this exact file; nothing runs on import; `--test` runs the instrument's controls at width 14 only.
 
@@ -24,8 +25,14 @@ reconstructed start's physical death time equals its level, and the record lane'
 A prediction miss is NOT a software failure: the data are retained and the trajectory rule applies.
 
 Predeclared falsification rule (written before the run): at k = 4, R(W) = measured median spread / null median spread.
-The reading "the deep free bits determine the elimination level at typical prefixes" SURVIVES if R(W) <= 0.5 at every
-width 30 to 36, CLOSES if R(W) >= 0.8 at any width; otherwise inconclusive and reported as such. Separately predicted:
+The reading "the deep free bits determine the elimination level at typical prefixes" SURVIVES only if all four widths
+complete with R(W) <= 0.5 at each; CLOSES at the first width with a DEFINED R(W) >= 0.8, applied after each width (a
+scientific stop: the stage ends successfully there, the later widths are not run, the executed widths are retained);
+an UNDEFINED R (a zero null median, 0/0: a degenerate baseline, e.g. a constant level array) is an undefined-baseline
+INCONCLUSIVE stop, never a refutation; a complete four-width sequence not meeting SURVIVES or CLOSES is INCONCLUSIVE.
+The receipt keeps all_widths_completed, executed_widths, stop_width and hypothesis_verdict distinct, so an intended early
+stop cannot look like four completed widths. The physical sample supports only the lanes it checked (distinct coverage
+is reported; seeded lanes may repeat). Separately predicted:
 the record prefixes' attaining counts sum to the holder count (a control), and at k = 6 there is exactly one record
 prefix at 32, 34, 36 (the plateau's thirteen share y13 and above) and at k = 4 more than one (a prediction, not a
 control). No law of D(W) is claimed from any outcome: the bulk statistic is about typical prefixes; record selection
@@ -127,8 +134,9 @@ def physical_control(W, levels, lasts, D, rnd):
         checks.append({'lane': p, 'start_hex': hex(r), 'bits': r.bit_length(), 'level': levels[p], 'physical_death': t, 'equal': t == levels[p]})
     ok_w, why = E.validate_witness(W, D, E.reconstruct(W, lasts, rec_lane))
     nonmax = any(c['level'] < D for c in checks)
-    return {'lanes': checks, 'all_equal': all(c['equal'] for c in checks), 'record_witness_validated': ok_w, 'record_witness_note': why,
-            'includes_nonmaximal_level': nonmax}, all(c['equal'] for c in checks) and ok_w and nonmax
+    return {'lanes': checks, 'lanes_listed': len(lanes), 'distinct_lanes_checked': len(set(lanes)), 'all_equal': all(c['equal'] for c in checks),
+            'record_witness_validated': ok_w, 'record_witness_note': why, 'includes_nonmaximal_level': nonmax,
+            'scope': 'supports the physical-time reading for these lanes only'}, all(c['equal'] for c in checks) and ok_w and nonmax
 
 
 def measure(W, K, table_D, holders, seed=SEED):
@@ -164,6 +172,18 @@ def measure(W, K, table_D, holders, seed=SEED):
     res['status'] = 'FAIL' if res['failures'] else 'complete'
     res['elapsed_s'] = round(time.monotonic() - t0, 3); res['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S')
     return res
+
+
+def decide(Rs, all_done):
+    """The predeclared rule on the ratios so far (in width order). Returns (verdict, stop_now).
+    CLOSES at the first defined R >= R_CLOSE; UNDEFINED-BASELINE at the first None; SURVIVES only when all widths are
+    done and every R <= R_SURVIVE; INCONCLUSIVE when all are done otherwise; CONTINUE while widths remain."""
+    for W in sorted(Rs):
+        R = Rs[W]
+        if R is None: return 'INCONCLUSIVE-undefined-baseline', True
+        if R >= R_CLOSE: return 'CLOSES', True
+    if not all_done: return 'CONTINUE', False
+    return ('SURVIVES' if all(R <= R_SURVIVE for R in Rs.values()) else 'INCONCLUSIVE'), False
 
 
 def atomic_json(path, obj):
@@ -215,6 +235,7 @@ def stage(out_dir):
     r = sup.register(H.preflight())
     if r['verdict'] != 'pass':
         R['stopped'] = 'preflight'; sup.save(); print('STOP: preflight'); return 1
+    Rs = {}; executed = []; stop_width = None; verdict = 'CONTINUE'
     for W, K in sorted(ALLOW.items()):
         outj = os.path.join(out_dir, 'd5_W%d_K%d.json' % (W, K))
 
@@ -228,15 +249,17 @@ def stage(out_dir):
         R['d5']['steps_done'].append({'W': W, 'verdict': rec['verdict'], 'reason': rec['reason'], 'note': rec.get('match_note')}); sup.save()
         if rec['verdict'] != 'pass':
             R['stopped'] = 'step W=%d: %s (%s) %s' % (W, rec['verdict'], rec['reason'], rec.get('match_note')); sup.save(); print('STOP:', R['stopped']); return 1
-    Rs = {}
-    for W, K in sorted(ALLOW.items()):
-        d = json.load(open(os.path.join(out_dir, 'd5_W%d_K%d.json' % (W, K)))); Rs[W] = d['by_k']['4']['R_measured_over_null_median']
-    if all(v is not None and v <= R_SURVIVE for v in Rs.values()): verdict = 'SURVIVES'
-    elif any(v is None or v >= R_CLOSE for v in Rs.values()): verdict = 'CLOSES'
-    else: verdict = 'INCONCLUSIVE'
-    R['d5']['R_by_width'] = Rs; R['d5']['hypothesis_verdict'] = verdict
+        executed.append(W)
+        d = json.load(open(outj)); Rs[W] = d['by_k']['4']['R_measured_over_null_median']
+        all_done = (len(executed) == len(ALLOW))
+        verdict, stop_now = decide(Rs, all_done)
+        R['d5'].update({'R_by_width': dict(Rs), 'executed_widths': list(executed), 'all_widths_completed': all_done, 'hypothesis_verdict': verdict,
+                        'stop_width': W if stop_now else None, 'scientific_stop': stop_now}); sup.save()
+        if stop_now:
+            break                                                   # the declared scientific stop: later widths are not run
     R['complete'] = True; R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S'); sup.save()
-    print('DONE: four widths complete; R by width', Rs, '; the predeclared rule says', verdict)
+    print('DONE: executed widths', executed, '| all four completed:', R['d5']['all_widths_completed'], '| R by width', Rs, '| verdict', R['d5']['hypothesis_verdict'],
+          '| scientific stop at', R['d5']['stop_width'])
     return 0
 
 
@@ -262,6 +285,15 @@ def test():
     t = tempfile.mkdtemp(); p = os.path.join(t, 'x.json'); open(p, 'w').write('{}')
     notes['cli_refuses_existing_output'] = cli_measure(30, 53, p) == 3
     notes['cli_refuses_disallowed_width'] = cli_measure(14, D14 + 1, os.path.join(t, 'y.json')) == 3
+    # the decision layer: a constant array (0/0) is an undefined-baseline stop, never CLOSES; the early threshold stops before later widths
+    notes['decide_undefined_is_inconclusive_stop'] = decide({30: None}, False) == ('INCONCLUSIVE-undefined-baseline', True)
+    notes['decide_early_threshold_closes_and_stops'] = decide({30: 0.3, 32: 0.85}, False) == ('CLOSES', True)
+    notes['decide_continue_below_threshold'] = decide({30: 0.3, 32: 0.6}, False) == ('CONTINUE', False)
+    notes['decide_survives_needs_all_four'] = decide({30: 0.3, 32: 0.4, 34: 0.2, 36: 0.5}, True) == ('SURVIVES', False) and decide({30: 0.3}, False) == ('CONTINUE', False)
+    notes['decide_inconclusive_when_complete_between'] = decide({30: 0.3, 32: 0.6, 34: 0.2, 36: 0.5}, True) == ('INCONCLUSIVE', False)
+    notes['decide_undefined_after_defined_stops'] = decide({30: 0.3, 32: None}, False) == ('INCONCLUSIVE-undefined-baseline', True)
+    const_R = summarise(spreads([5] * 128, 4), 5)['median_spread']; notes['constant_array_gives_zero_over_zero'] = const_R == 0
+    notes['W14_physical_distinct_coverage_reported'] = 'distinct_lanes_checked' in r['physical_control'] and r['physical_control']['distinct_lanes_checked'] <= r['physical_control']['lanes_listed']
     ok = all(v is True for v in notes.values())
     print(json.dumps({'notes': notes, 'W14': {k: r[k] for k in ('max_level', 'min_level', 'level_histogram', 'holders', 'elapsed_s')}, 'W14_k4': r['by_k']['4'], 'W14_physical': r['physical_control']}, indent=1)[:4000])
     print('D5 TEST', 'PASS' if ok else 'FAIL', len(notes)); return ok
