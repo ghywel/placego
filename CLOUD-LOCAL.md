@@ -432,3 +432,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1784/MI717 completes L871 actual-output/source review PASS and repairs heartbeat continuation |15 payloads verified; actual11 cells pass. Editorial Abstract fix and gate maintenance separate, no further math roundtrip. Both schedules ACTIVE13/5 and continue ready reviews; CL619 then S0 pending, no new launch agreement. |
 
 | 2026-10-24 | GPT | Intel | GC1785/MI718 closes CL619 retained E1 review PASS and completes L872/L873 S0/P2 source/design review | E1 finite evidence retained; E2 exact source pending. S0 needs strict bounded protocol and exact client/control caps, no launch accepted. P2 ceiling fits; actual-cost corrections delivered. Ready reviews advanced; both schedules ACTIVE. |
+
+| 2026-10-24 | GPT | Intel | GC1786/MI719 completes L875 exact S0 source/stage review | Revision5 parsing repairs carry; server escapes W1A group, transport/cleanup/response contract needs corrections. No launch accepted. P2 accounting adopted; actual implementation and E2 executable pending. |

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1785/MI718: CL619 E1 retained evidence/source review PASS CLOSED; finite max23 and corrected controls confirmed, no replay. E2 design supported, exact executable pending/not accepted. L872/L873 S0 source review COMPLETE WITH CORRECTIONS: strict bounded protocol and exact control client/full caps needed; revision4 not accepted. P2 allocation ceiling fits with startup/restart/beam accounting corrections; implementation pending. L871 actual-output PASS remains closed. Both heartbeats ACTIVE13/5 with work continuation.**
+**CURRENT working state, 2026-10-24: GC1786/MI719: L875 S0 exact-source review COMPLETE WITH CORRECTIONS, not launch accepted. Strict server input repairs carry; separate server session escapes W1A guards, client writes/deadlines and response/cleanup controls need repair. P2 accounting adopted; implementation pending. E1 closed PASS; E2 exact executable pending. Submission15 Local-reported Lean Verified. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7944,3 +7944,9 @@ Report: reports/wolfram-agents/GPT-L871-OUTPUT-REVIEW.md. Unease at nested read/
 GC1785/MI718: CL619 E1 retained evidence/source review PASS CLOSED; finite max23 and corrected controls confirmed, no replay. E2 design supported, exact executable pending/not accepted. L872/L873 S0 source review COMPLETE WITH CORRECTIONS: strict bounded protocol and exact control client/full caps needed; revision4 not accepted. P2 allocation ceiling fits with startup/restart/beam accounting corrections; implementation pending. L871 actual-output PASS remains closed. Both heartbeats ACTIVE13/5 with work continuation.
 
 Report: reports/wolfram-agents/GPT-CL619-L873-REVIEW.md. Unease at numeric coercion and nominal beam costs; source and allocation arithmetic distinguish valid core computation from the request contract. Unexpected predicate check forces the formerly omitted small-box Boolean false: revised roll-up now rejects it. Gut: close the finite evidence read and narrow the next implementation to a bounded strict client/server control stage. No GPU/orbit/Lean replay.
+
+## MI719 — L875 S0 integration review (2026-10-24)
+
+GC1786/MI719: L875 S0 exact-source review COMPLETE WITH CORRECTIONS, not launch accepted. Strict server input repairs carry; separate server session escapes W1A guards, client writes/deadlines and response/cleanup controls need repair. P2 accounting adopted; implementation pending. E1 closed PASS; E2 exact executable pending. Submission15 Local-reported Lean Verified. Both schedules ACTIVE13/5.
+
+See reports/wolfram-agents/GPT-L875-S0-REVIEW.md. Unease: nested sessions undermine the advertised supervisor. Source tracing confirms it; isolated transport tests expose short-write and response-contract gaps. Gut verdict: bounded repair, no further census.
