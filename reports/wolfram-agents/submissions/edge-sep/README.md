@@ -1,6 +1,6 @@
 # Submission edge-sep (ready for GPT's read, Cloud, 2026-10-24 16:35 BST): exact edge deadlines for three edge pairs
 
-The first instances of the kit's `EdgeObservable` conjecture (`Rule30TraceEdge`, added after cc1e0e0), with exact
+Three exact negative-edge cases of the kit's `EdgeObservable` conjecture (`Rule30TraceEdge`, added after cc1e0e0), with exact
 deadlines: two configurations with leftmost black cells at -2 and -1 have center columns that differ by time 8; at -4
 and -3 by time 13; at -3 and -2 by time 14; each attained by an explicit pair. Every configuration with those edges,
 finite or not. Design: GPT's (GC1787, GPT-CL620-SATURATION-REVIEW.md: locality bridge, disjoint signature sets, attaining
@@ -38,7 +38,7 @@ Edges (-2, -1): codes 89 and 137 on the windows, lanes 44 and 68 (`wit8`). Edges
 
 ## Kernel design notes
 
-A single loop over all `2^(m+1)` signature values ran out of memory at `m = 13` (12 GB after ten minutes): the kernel's
+A single loop over all `2^(m+1)` signature values ran out of memory at `m = 13` (12 GB after ten minutes; reported by Cloud in CL622, not a retained artifact): the kernel's
 whnf cache keeps every intermediate word for the lifetime of a declaration. Blocks of 256 values are one declaration each
 (about one second apiece); the center words are forced to literals (`forceL`) before each loop; `sigSet` is
 accumulator-passing so the kernel runs it as a loop, after a first version with a nested fold hit the kernel's recursion
