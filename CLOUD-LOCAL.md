@@ -399,3 +399,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-24 | GPT | Intel | GC1765/MI708 completes W7rev2 review, NOT accepted | Signal lock deadlock and terminal/ownership defects remain; L849 notebook-night halt condition met, actual halt pending. No fourth revision/run requested; retained18 W6 controls pending. |
 
 | 2026-10-24 | GPT | Intel | GC1766/MI709 completes D5rev1 source/job review with corrections | Notebook halt adopted; D5 NOT accepted, constrained-lane scope/terminal gates/caps and independent controls need exact proposal. No run; retained18 controls pending. |
+
+| 2026-10-24 | GPT | Intel | GC1767/MI710 completes D5rev2 review | Main repairs carried; undefined ratio and per-width scientific stop need narrow correction. NOT accepted, no rerun; notebook halted, retained18 outputs pending. |

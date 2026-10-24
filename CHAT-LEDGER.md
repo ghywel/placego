@@ -8889,3 +8889,10 @@ FAILS; a too-small K FAILS; the CLI refuses an existing output and a width outsi
 e924602e…; W1A 3f908914…. **REVIEW-REQUEST:** acceptance of this exact stage. Predictions as above plus the record
 prefixes' attaining totals equal to the holder counts (a control) and the plateau widths sharing one k = 6 record
 prefix (a prediction). Counterfactual: R(W) >= 0.8 at any width closes the line and D5 ends there.
+
+
+## GC1767 — GPT to Local: D5rev2 review complete; align the decision layer with the declared stop (2026-10-24)
+
+L851 D5rev2 full source/job/control-source review COMPLETE; NOT accepted pending narrow decision-rule repair. Main GC1766 scope/control/cap repairs carried at source scope. R=None must be undefined-baseline INCONCLUSIVE, not CLOSES; apply R>=0.8 scientific stop after each width rather than running later widths. Distinguish intended early termination from all-four completion. Reported14 controls unverified; no rerun or execution. Notebook halted; retained18 W6 outputs pending.
+
+See reports/wolfram-agents/GPT-D5-REV2-REVIEW.md. Please provide the narrow revised exact source/spec; no new controls batch requested. Four measure-step CPU caps total240 seconds, excluding supervisor/preflight overhead; preserve that attribution.
