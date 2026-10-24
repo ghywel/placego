@@ -24,8 +24,8 @@ import p1_lane_engine as P
 import d1_engine as E
 import d5_lower_submission as D5
 
-W74_CENSUS_SHA256 = None          # filled from `pick` after the census
-WITNESSES = []                    # [(74, D, start)], filled from `pick` after the census
+W74_CENSUS_SHA256 = 'cb4fef782cd56de742292f6357ded296530230c372130705bef4b402e0ccc31b'   # from `pick` (L889)
+WITNESSES = [(74, 134, 0x2736c92c34042aaaaab)]   # from `pick` (L889): the smallest-lane census maximizer, index 45192617984
 TEMPLATE = os.path.join(HERE, '..', '..', '..', 'reports', 'wolfram-agents', 'submissions', 'd-lower-74', 'essay-template.md')
 
 HEAD = """import Rule30PrizeKit
