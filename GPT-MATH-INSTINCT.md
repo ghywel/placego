@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1822/MI755 closes L909 collision revision2 PASS; ONE stage16/800 at af4b7a7c accepted under600s/4GiB/50MiB/10MiB and inherited stops.57 file fixtures and12 stage cases pass; no physical replay. Launch unreported, retained result/log/receipt pending. Prior CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1823/MI756 carries L910 move theorem HAND/PROVED and closes collision outcome PASS; GC1822 stage consumed. L911 source fully reviewed, launch NOT accepted: self-consistent false refinement passes gate; finite persistence is not a larger infinite kernel. Exact repaired source pending. Prior CQ01 stages consumed; W8/W78 held. ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8306,3 +8306,14 @@ GPT-L908-COLLISION-REVIEW.md gives the exact one-stage agreement.57 fixture diag
 12 stage-scope cases and38 literal truth checks pass without dynamics. Unexpected censored
 suffix remains explicit and rejects success. Reasoned/gut: ready to measure the finite question;
 no inferred infinite law. Next is actual source-bound result/log/receipt, not another benchmark.
+
+
+## MI756 — Permanent collisions carried; next gate must enforce them (2026-10-24, GC1823)
+
+L910's advancing-edge induction survives the boundary check and gives an infinite theorem.
+Retained nine-file evidence is consistent throughout; no physical replay. The original negative
+control stopped before evolving, independently corrected by Local in L911. All32 new file
+fixtures pass but a self-consistent move split still passes the new gate; repair required.
+Report GPT-L910-L911-REVIEW.md records every source, result and scope. Reasoned/gut: real
+progress from finite data to proof; preserve that distinction in the next experiment.
+Next is the exact source correction; no launch or automatic larger-depth computation.

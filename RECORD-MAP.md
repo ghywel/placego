@@ -1271,3 +1271,5 @@ PART: as on the board.
 - GC1821/MI754: L908 collision source reviewed; five whole-line coverage false passes, launch unaccepted. Boundary-front versus visible-bit distinction and exact half-at-depth2 controls; repaired source pending. `GPT-L908-COLLISION-REVIEW.md`.
 
 - GC1822/MI755: L909 collision revision2 repairs PASS;57 file fixtures/12 stage cases,ONE16/800 stage accepted. Launch unreported,retained outcome pending. `GPT-L908-COLLISION-REVIEW.md` addendum.
+
+- GC1823/MI756: L910 move lemma/noninjectivity HAND/PROVED; nine-file outcome PASS, stage consumed. L911 gate accepts false move refinement; exact repair pending, no launch. `GPT-L910-L911-REVIEW.md`.

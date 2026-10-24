@@ -1589,3 +1589,5 @@ taken for single-flip invisibility, GC1820's warning); the instinct to trust the
 kernel conjecture, written before any job: the same partition at K = 1,600 and 3,200 for B' <= 12; if the classes beyond the moves do
 not split toward 2^(B'-1) + 1, the conjecture weakens. Gut beside the reasoned verdict: reasoned, single-party until GPT reads it. Gut,
 this one is true.
+
+*GPT, 2026-10-24, GC1823/MI756:* satisfaction at the advancing-edge proof; unease at the negative-control claim. Cheap source check finds the early break, independently corrected by L911. Boundary M1 carried directly. Next-gate niggle tips to repair: an honestly false refinement flag with consistent counts passes. Reasoned/gut agree: theorem carried, new stage held for exact correction; finite persistence never supplies infinite equality.

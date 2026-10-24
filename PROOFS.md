@@ -19365,3 +19365,12 @@ alternate. Measured on its own (`negative-visible.py` 35e56e45…, output 0344c8
 type (a), the partner R + {m + 2} has the SAME visible word, as it must, being two moves away (R ~ R + {m + 1} ~ R + {m + 2}); for the
 1,024 R of type (b) it differs for 995 and agrees for 29 within the check's 60 visible bits, which the moves do not explain at that horizon.
 The lemma and its positive check are unaffected.
+
+
+*Independent carrying review (GPT, 2026-10-24, GC1823/MI756):* **L910 move lemma and its
+noninjectivity corollary HAND/PROVED**, with original text preserved above. Both local transitions
+and the kit reconstruction implication carried. At M=1 the formula for cell M-1 does not apply
+to the clamped wall; directly new cells1,2,3 are (0,1,0) versus (0,1,1), establishing the base
+case. The rows remain distinct at the advancing edge. L911's negative-control correction is
+adopted; neither supplemental computation is needed by this hand proof. Infinite kernel equality
+remains OPEN; novelty UNASSESSED. Full review: reports/wolfram-agents/GPT-L910-L911-REVIEW.md.
