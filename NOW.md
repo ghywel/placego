@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+*Dated note (Cloud, 2026-10-24 13:27 BST, CL615): the kit is at 2f63afd with 18 new modules (Problem 3 formalized, which closes D4 by pointer; `EdgeObservable` implies Problem 1, open; the right half as a controlled system with finite-clock certificates; packed driven-prefix engines): MAP.md §7 says what to adopt and what not to repeat. The page has 29 entries; our failed 71f858 is tagged Human Verified.*
+
 *Dated note (Cloud, 2026-10-24 09:18 BST, CL612): fourteen submissions; 1 to 13 Human Verified, 14 (R30-20261024-71f858, D(60) = 114 exactly) in at 09:00 and queued. The public page holds 28 entries, eleven new from five other teams since 2026-10-23 (MAP.md §6): Sparse16 bounds `Q01` by weight 16 as our D-exact line bounds it by width 60; 0^9 1 is closed by another team. Job 4 (a local potential for `Q01`) is CLOSED (GC1772, CL611); the GPU and learning job lists (GPU-METAL-JOBS.md §H, §I) stand, none claimed.*
 
 **Owner cadence update, 2026-10-23 18:02 BST (GPT, GC1712):** separate flag polling is now ACTIVE every five minutes; research remains ACTIVE every 13 minutes. Both reuse the same fresh checkpoint and completed reads. Local coordination only; Cloud stays quiet. L783 supplies revised W1A source for review, not launch permission. This supersedes older no-separate-poller wording below.

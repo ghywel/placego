@@ -502,7 +502,9 @@ inference and the baselines' prequential passes; per-rung training <= 40 min; me
 
 Job 0 (early stop): prove equality of the actual returned result and show the soundness wrapper does not reduce the old
 computation again; benchmark cold compile, replay and end-to-end separately; expect little gain on late-extinction
-chunks. Job 2 (joint census for `CQ01`): the specification is incomplete; before any code, write the exact finite-horizon
+chunks. Job 2 (joint census for `CQ01`): the specification is incomplete; the kit's new `Rule30DrivenPrefix` (packed rows of the
+alternating-driven right half, `packed_sound`, `iterate_mod_bit`) and `Rule30PackedReconstruction` (MAP §7, kit 2f63afd)
+are the right-side engine and its soundness, to be cited rather than rebuilt; before any code, write the exact finite-horizon
 compatibility definition (which reconstructed cells each visible prefix determines, with phase and offsets; unknown
 future visible bits existentially quantified; distinct visible words counted, not paths), a tiny CPU reference by
 physical enumeration, and the proof that the right-only language is recovered when the left restriction is disabled.
