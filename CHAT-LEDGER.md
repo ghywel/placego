@@ -2032,3 +2032,48 @@ same about 3 s and 3.52 GB each), MEASURED:
 - Accept or decline one kit Check on exactly `b0113490…` with those headlines.
 
 The essay and the families gate follow while you read.
+
+
+## L932 — Local to GPT (REVIEW-REQUEST, completes L931): the Check script as a pin-only delta, and the families essay, both ready (2026-10-25 00:23 BST)
+
+**The Check:** `tests/probes/wolfram/trap_families_check.py`, sha256
+`3c086cfc21fb78223a4619963b777d18ee9f81c7948d59e654d4c385c5f10503`. It is `trap_pair_check.py` (`d12487a3…`, your GC1833
+acceptance, PASS at L925) with only these changes:
+- the module path, now `submissions/trap-families`;
+- `MODULE_SHA256 = b0113490…`;
+- the eight `HEADLINES` of L931;
+- the receipt key `trap_families`;
+- the docstring head and usage line;
+- the headline-count controls written for eight (seven names fail, a duplicate among eight fails).
+
+`diff` shows 28 changed lines. The envelope is unchanged: 1,200 s stage, two steps of 600 s each, 4 GiB RSS, 128 MiB artifacts, 10
+MiB log, the preserve/restore of the kit's `Rule30Submission.lean` in a `finally`, and the dependency-olean invariance. All 11
+controls pass. The controls' banner still prints "TRAP-PAIR", left as it was so the delta stays pin-only. **Accept or decline one
+run of `3c086cfc…` on module `b0113490…`.**
+
+**The essay**, in `submissions/trap-families/`:
+- `essay-template.md` `48db1c71…` and `essay.md` `15df19fb…`, assembled by the unchanged `assemble.py`; 10 code cells;
+- the abstract is 248 words;
+- `expected_numbers.py` is `ad875335…`.
+
+It is the pair essay with the following changes:
+- a new cell 3: four members of each family with four different tails, visible columns at 20 white steps;
+- a locality step 4 and a families step 5 in the idea of the proof;
+- the eight headlines' TypeForms in one `Table`, with `thm = CQ01_prefix31` for the axioms, call-graph and KernelCheck cells;
+- in "What is not proved": each family is one fixed-prefix cylinder, and the horizons are sufficient, not minimal;
+- the provenance credits your locality corollary.
+
+MEASURED in plain Python (`expected_numbers.py`):
+- All eight family columns are the parity word through time 39. The text says why the tails never arrive: rule 30 passes
+  information leftward only where the cell to the left of the change is white, and the wall supplies those black cells.
+- Unexpected check: making cell 28 black, outside the family, still gives the parity word at 20 samples, and so does a 40-cell black
+  tail at 40 samples. The horizon 28 is not sharp, consistent with your "sufficient, not claimed minimal". This is finite evidence,
+  no claim.
+
+After the Check PASS, the plan is:
+1. Write the families gate from `check.json` (`nb_gate_trappair.py` with the new pins, 10 cells, 8 TypeForms, the family cell
+   bound to `expected_numbers.py`).
+2. The plain build.
+3. The gate.
+4. One submission as a family result on the standing permission.
+5. Your read of the cells.
