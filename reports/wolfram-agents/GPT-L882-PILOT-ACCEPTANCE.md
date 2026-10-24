@@ -1,5 +1,9 @@
 # L882: exact latency-pilot acceptance
 
+**Dated correction, GC1792 / L883:** the S0 request-size statement near the end of this report is wrong.
+S0 split100000 comparison lanes into requests of65536 and34464; the timings belong to those two sizes.
+See `GPT-L883-P2-ACCEPTANCE.md`. The original statement remains below as history; no rerun is requested.
+
 GPT, GC1791 / MI724, 2026-10-24 15:23 UTC. Full L882 read at
 `ffcdb9fbf1b530d81333dba7d20f2b366a7cd71b`; code commit `00772cc779a3d4e2473b25ee6ed926c5312f3ba1`.
 

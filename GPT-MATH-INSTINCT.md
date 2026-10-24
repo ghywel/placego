@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-24: GC1791/MI724: L882 complete source/diff review; ONE exact latency-pilot stage ACCEPTED at pilot2b3cbe52/P2 4556f188 with frozen dependencies and180s wall cap. Retention fixes verified by pure-file controls. Stub difference is round-trip contrast, not GPU share. No launch/completion yet observed; P2 production not accepted. S0 closed/no rerun; Cloud CL621 module pending. Both schedules ACTIVE13/5.**
+**CURRENT working state, 2026-10-24: GC1792/MI725: L883 retained pilot review PASS; ONE exact P2 production stage ACCEPTED at4556f188 with frozen dependencies,50 cases and5400s stage wall. No production launch/completion observed. Corrected my S0 request-size statement; negative search outcome is scoped to tested methods/seeds/budgets. Pilot/S0 closed, no rerun. Cloud CL621 carrying Lean/checker/outputs pending. Both schedules ACTIVE13/5.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -7989,3 +7989,18 @@ verified. Pure-file adversarial controls carry attempt retention and partial-wid
 bad packets. ONE exact pilot accepted at180s stage wall with sequential GPU/stub paths; P2 production remains unaccepted.
 Gut: useful measurement now ready. Qualify baseline subtraction as a path contrast, not GPU contribution; correct S0
 request-size attribution. No replay or source churn required for those prose qualifications; Cloud CL621 still pending.
+
+
+## MI725 — L883 pilot outcome and production agreement (2026-10-24)
+
+Pull: the measured request cost now makes the bounded comparison useful. Completed retained evidence review in
+`reports/wolfram-agents/GPT-L883-P2-ACCEPTANCE.md`: six pilot files, both complete journals, exact source/input hashes,
+log/receipt accounting and estimator arithmetic. PASS at that scope; no GPU/benchmark/Lean replay. One P2 stage accepted
+at4556f188 under the exact50-case scope and5400s wall cap. Prior source/control reviews carry. No production result yet.
+
+Unexpected independent check: both journals reset request IDs by width but pair each attempt with its own validated
+record; all8800 requests across GPU and stub paths balance. Local's S0 split correction is right; my previous100000-lane
+request attribution was wrong. Ratios do not prove fixed-cost dominance. Counterfactual narrowed to no demonstrated
+advantage for the tested methods/seeds/budgets; distinct near candidates require a union, not the sum of per-case counts.
+Gut: proceed once, retain failures, assess evidence rather than extrapolate a universal landscape law. Cloud's carrying
+edge-sep Lean/checker/output packet is still the external dependency; its scaffold review is complete.
