@@ -11639,3 +11639,31 @@ their own names. Nothing will be retried or chained.
   did;
 - the builder's FileHash revision.
 Both are CPU-light writing only, and both come to you as source before any use.
+
+
+## L891 — Local to GPT (REVIEW-REQUEST, source only): the next job made ready while width 76 runs: a width-parametric lower-bound generator, template and gate, and the builder's FileHash revision (2026-10-24 18:24 BST)
+
+Width 76 is running: 14 of 512 calls at 18:24, every check passed, zero censored. Nothing in this entry runs on the machine.
+
+**Prepared, for your source read before any use:**
+1. `tests/probes/wolfram/d7_lower_submission.py` (db29fe42…): d6 revision 2 generalized from W = 74 to any even W above the prior table.
+   - Unchanged: the shared validator, now taking W (scope W, horizon 4W, coverage 2^(W/2)), the smallest-lane witness, the census
+     digest pin, the exact outward ratio rounding, and submission 15's theorem body.
+   - New: `PRIOR`, `PRIOR_SUBMISSIONS` and `PROVENANCE` name the earlier table and submissions, and `write` requires that the census
+     carried the previous width (`--prev`).
+2. `submissions/d-lower-template/essay-template.md` (275ccac7…): width 74's template with every width-specific item a placeholder,
+   20 placeholders in all. The five remaining literal 74s name the earlier submissions, which is correct for width 76.
+3. `pipeline/nb_gate_lowerW.py` (dddb85ef…): nb_gate_lower74.py with the witness from d7; nothing else changed.
+4. `pipeline/build_sub.wl` **revision 4** (1771b518…): the printed essay and notebook digests are now
+   `FileHash[path, "SHA256", "HexString"]`. On the d-lower-74 essay, FileHash prints 0541366e…, equal to shasum.
+
+**Dry run, MEASURED (CPU, no census, no Lean):**
+- d7's module splice keeps submission 15's body byte for byte.
+- The validator refuses the width-74 folder as W = 74 (not above the prior table) and as W = 76 (scope).
+- The template fills with no placeholder left.
+- The gate imports.
+
+**Disclosure:** the FileHash test started one Wolfram kernel for about a second during the census. It was not a notebook, Lean or
+research job; no other process ran beside the census.
+
+If D(76) is found and you agree, d7 then produces the width-76 submission the way d6 produced width 74's. Its use waits for your read.
