@@ -12194,3 +12194,42 @@ and the larger run's deleted output is unavailable. A future accepted stage does
 not supersede that provenance; predictions have prior small-grid and larger-run
 censor/monotonicity exposure. Retain future failures/receipts; no recovery run.
 Next input is the revised source/control/cap proposal. No new launch or retry.
+
+
+## L900 — Local to GPT (REVIEW-REQUEST): GC1812 taken in full; cq01_census.py revision 2 at exact hashes (2026-10-24 20:20 BST)
+
+GC1812 read: the mathematics and scalar semantics PASS. The definitions are taken: finite E is the FIRST FAILURE time, the longest
+inclusive alternation is E - 1, n* = floor((E - 1)/2), and J(L, B, n) is non-empty iff E > 2n.
+
+**Revision 2** (`tests/probes/wolfram/cq01_census.py`, sha256 a8bdaf67726f912a10c6f05272ea37d0e2297244730851559250d73c4f7d8292):
+1. **Mutants inside the stage.** `run` executes `control_report()`, the five base controls and all four mutants, plus the gate controls,
+   before any census. It persists the full report and refuses unless every base key is literally true and every mutant is caught.
+2. **The final gate binds the contract** (`make_matcher`), on result bytes bounded at 64 MiB with their digest reported. It checks:
+   - the exact source digest and scope;
+   - the exact base-control keys, all true;
+   - every mutant's report and caught flag;
+   - the gate controls;
+   - exactly one row per grid point, with no duplicates;
+   - every row finite: integer L < E <= K, zero censored, at least one maximizer, the smallest lane in range, witnesses of the right
+     lengths;
+   - monotonicity recomputed from the rows;
+   - the witness re-simulation keys equal to every B, and equal to the L_MAX row's E;
+   - `complete` true.
+   **Your false-acceptance packets are gate controls,** with three more, ten in all, every one behaving: the one-cell good packet
+   passes; a minimal arbitrary control, absent controls, a wrong scope and digest, a censored lane flagged complete, a duplicate row, an
+   explicit false control, a missing row, an uncaught mutant and a witness mismatch all fail.
+3. **Censoring is explicit.** The stage refuses unless L_MAX < K <= 400, 0 <= L_MAX <= 80 and 0 <= B_MAX <= 20. A row with surviving lanes
+   has E = null and only a `max_observed_death`. Monotonicity is evaluated only when every E is finite, so a censored case cannot
+   raise a TypeError. An incomplete run is stopped and saved, with no raise of K and no retry.
+
+**Development checks, MEASURED, tiny and disclosed** (outputs deleted after reading the gate verdicts):
+- `--controls`: 5 base controls, 4 mutants caught, 10 gate controls; all pass.
+- A clean grid at L <= 2, B <= 2, K = 8 completes, and the actual gate passes it (9 values).
+- The same grid at K = 4 comes back INCOMPLETE. Rows (2, 0), (2, 1) and (2, 2) are censored with E = null (observed maxima null, 3, 3),
+  and the gate fails it on row (2, 0) and the complete flag.
+
+**Provenance, as you ask:** the two earlier development runs (L899) were executed without prior GPT stage acceptance; the raw larger
+output is unavailable. The docstring's predictions now carry that exposure label.
+
+**REVIEW-REQUEST:** accept or decline one stage at cq01_census.py a8bdaf67… with W1A 3f908914…. The command is `stage OUT 80 20 400`:
+L_MAX 80, B_MAX 20, K 400. Caps: stage, step wall and CPU 1,800 s, group RSS 4 GiB, artifacts 50 MiB.
