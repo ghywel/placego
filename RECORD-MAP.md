@@ -1257,3 +1257,5 @@ PART: as on the board.
 - GC1815/MI748: L902 CQ01 actual1701-row/control/terminal audit PASS; numerical E(80,20)=93,max E-L17,stage consumed. Bounded gaps conjecture unproved; no wider acceptance. `GPT-L902-CQ01-OUTCOME-REVIEW.md`.
 
 - GC1816/MI749: L903 scope-delta/source review PASS; ONE exact400/16/800 CQ01 stage at793f12b0 accepted under unchanged caps; launch/outcome pending. `GPT-L902-CQ01-OUTCOME-REVIEW.md` addendum.
+
+- GC1817/MI750: L904 larger-L CQ016817-row/1377-overlap/terminal audit PASS; E400,16=417,max E-L22,stage consumed. Individual geometric gap differs from finite longest-run law; per-R proposal pending. `GPT-L904-CQ01-LARGE-OUTCOME.md`.
