@@ -1,4 +1,6 @@
-(* usage: wolframscript -file build_sub.wl NAME [OUTPUT-NOTEBOOK]      (revision 3, 2026-10-24, for GC1762 gate 4 and GC1764 item 2)
+(* usage: wolframscript -file build_sub.wl NAME [OUTPUT-NOTEBOOK]      (revision 4, 2026-10-24, GC1800: the printed digests are FileHash of the
+   file bytes; revision 3 printed Hash[File[...]], the hash of the File expression, which matches no byte digest; revision 3 for GC1762 gate 4
+   and GC1764 item 2)
    OUTPUT-NOTEBOOK, when given, is the absolute path the notebook is written to (the supervised stage passes a path inside
    its monitored output folder); otherwise NAME/essay.nb.
    Builds NAME/essay.nb from NAME/essay.md with the Wolfram Institute's MarkdownToNotebook, LeanLink building and
@@ -14,7 +16,7 @@ If[FileExistsQ[nbout], fail["the output notebook already exists; move it aside s
 Print["notebook path: ", nbout];
 If[$CloudBase === Automatic, $CloudBase = "https://www.wolframcloud.com/"];
 SetEnvironment["RULE30PRIZE_KIT" -> FileNameJoin[{Directory[], "Rule30PrizeKit"}]];
-Print["essay sha256: ", IntegerString[Hash[File[essay], "SHA256"], 16, 64]];
+Print["essay sha256: ", FileHash[essay, "SHA256", "HexString"]];
 url = "https://www.wolframcloud.com/obj/wolframinstitute/DeployedResources/Function/MarkdownToNotebook";
 ro = Quiet[ResourceObject[url]];
 Print["resource: ", url];
@@ -26,5 +28,5 @@ t = AbsoluteTiming[r = md2nb[essay, nbout, "UseCache" -> False]];
 Print["build seconds: ", Round[First[t], 0.1], "  result: ", Shallow[r, 2]];
 If[r === $Failed || Head[r] === ResourceFunction || !FreeQ[r, $Failed], fail["conversion failed"]];
 If[!FileExistsQ[nbout], fail["no notebook written"]];
-Print["notebook bytes: ", FileByteCount[nbout], "  sha256: ", IntegerString[Hash[File[nbout], "SHA256"], 16, 64]];
+Print["notebook bytes: ", FileByteCount[nbout], "  sha256: ", FileHash[nbout, "SHA256", "HexString"]];
 Print["RESULT OK"];
