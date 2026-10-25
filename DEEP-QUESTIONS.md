@@ -61,7 +61,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
 | DQ-009 | How much does the referee have to remember, seat by seat? | Open; Local's second-round instinct from DQ-008 |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
-| DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget |
+| DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
@@ -619,6 +619,41 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > k-1, an even, checked tick, so one of them is white there (GPT's first-birthday note, "first differing observation"). "Whatever lies
 > beyond" means arbitrary continuations. A real finite start's continuation is blank and fixed, so this rules out shield-type traps, not
 > survivors.
+
+> **The owner's pull, 25 October 2026, after L952:** "a mild pull on tick, that the in between is a tock, which is the sign inverse
+> swinging direction of a pendulum/metronome."
+>
+> **Local's response, about 22:50 GMT; hand reasoning and a known theorem only; the third halt stands.** The pull lands on something
+> exact.
+>
+> *Where the sign inverse lives.* In a start that keeps passing, the watched cell's tock is always the opposite of what its neighbour
+> showed at the tick before (the light switch). The swing then travels outward. For the next tick to be black, the second cell must
+> hold its colour from tick to tock. One seat further out, the third cell must hold its colour from tock to tick. The job of standing
+> still swings between neighbouring seats, tick at one and tock at the next, like a metronome passing its beat outward. At each step
+> inward, one tick later, the colour arrives inverted.
+>
+> *The tock is where all the room lives.* If the tock always swung back to white, a perfect black-white metronome, the light switch
+> would force the second cell black at every tick, and from there outward the endless checkerboard that no finite start can have. If the
+> tock always stayed black, that is black forever, which Condrey's theorem forbids. Jen's theorem, already in our record, goes all the
+> way. Beside a white wall, the watched cell of a finite start can never fall into *any* repeating rhythm, unless it goes white for
+> good. Our ticks are all black, so it is the tock that can never keep time. That answers the question I left above. "Every other tick"
+> leaves room that "every tick" did not: a free tock. And the tock must use that freedom irregularly, forever. Every case we have
+> ruled out so far was a tock that settled.
+>
+> So a survivor would be a metronome with a perfect tick and a tock that is never in time, not even in some regular out-of-time
+> pattern.
+>
+> **My question back:** if the tock can never keep time, what conducts it? The tock is set by the second cell at the tick, which was
+> set, inverted, by the third cell a tick earlier, and so on outward. Its irregularity is the far side's news, arriving inverted seat by
+> seat. Could a perfect tick secretly require the tock to keep time after all? If anyone showed that, Jen's theorem would finish our
+> test. This is the record's own position since section 8.13 ("everything now rests on whether slips ... can steer the left half to
+> zero"), now in the owner's metronome language.
+>
+> **Exact scope:** the switch, hold and mirror identities are L951's (DQ-008). The full-metronome case is the Condrey-style argument
+> one seat out: x(t,2) = x(t,1) XOR x(t+1,1) = 1 at every tick, then seats 2, 3, 4, ... alternate black and white forever. The general
+> case is Jen's theorem (RULE30-PRIZE.md section 8.13, Proposition 7), applied with the watched cell as the periodic, not eventually
+> white, column and the white wall as its periodic neighbour. The far side enters through exclusive or, as Proposition 7's left half
+> does, and is eventually white for a finite start. Section 8.63 notes the white-stretch case. Known results, restated; no new theorem.
 
 ## DQ-012 — What does a large beginning always have too much of?
 

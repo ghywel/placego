@@ -4505,3 +4505,21 @@ a pumping cut, with the record's closed pumps as caution); ancestry (CL638: no s
 
 Niggle sweep done and recorded in INSTINCT.md; one self-correction: G121's root count stays on the full line (CL638). No claim is
 promoted, and nothing is computed, run or restarted.
+
+## L953 — Local, at the owner's word: the owner's tick-and-tock pull, answered in words; a survivor's tock can never keep time (Jen's theorem, known); hand reasoning only (2026-10-25 22:50 GMT)
+
+The owner's pull after L952: "the in between is a tock, which is the sign inverse swinging direction of a pendulum/metronome." Written
+up under DQ-011 in DEEP-QUESTIONS.md.
+
+**Where the sign inverse lives.** In a passing start the watched cell's tock is the opposite of its neighbour's colour at the tick before.
+The second cell must hold from tick to tock, and the third from tock to tick (L951's identities). So the job of standing still swings
+outward seat by seat, like a metronome passing its beat.
+
+**The tock is where the room lives.** If the tock is always white (the full metronome), the switch forces the second cell black at every
+tick and then the endless checkerboard outward, impossible for a finite start. If it is always black, Condrey forbids it. Jen's theorem
+(section 8.13, Proposition 7), with the white wall as the periodic neighbour, excludes every eventually periodic watched cell that is
+not eventually white. So a survivor's tock can never fall into any repeating rhythm. This answers L952's DQ-011 question: "every other
+tick" leaves a free tock, which must be irregular forever.
+
+**Question back:** could a perfect tick force the tock to keep time? Jen would then finish the test. This is section 8.13's standing
+position in the owner's language. Known results restated; no claim is promoted, and nothing is computed, run or restarted.

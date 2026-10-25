@@ -2161,3 +2161,11 @@ wall no finite pattern can shield survival (first arrival on a checked tick), so
 Niggle sweep before going outward: the lane bijection, the Condrey wall form, Q10's 466 wording and CL638's non-import of G121 were each
 re-read at source. One correction was made: G121's three-quarters root count stays on the full line. Gut beside reasoned: warm on DQ-012
 (what a large start must have too much of); cooler on any coverage-by-checking route. No status upgraded; nothing computed or run.
+
+## 2026-10-25 — the owner's tick-and-tock pull (L953)
+
+**Owner's signal, recorded by Local about 22:50 GMT:** a mild pull that the in-between tick is a tock, the sign-inverse swing of a
+metronome. Kill test, before writing: does the tock carry any exact constraint, or is it free? Outcome: it is exactly where the room is.
+A settled tock (all white, all black, or any repeating rhythm) is excluded by Jen's theorem with the white wall as its neighbour, so a
+survivor's tock must be irregular forever. Calibration: the owner's pull pointed straight at a known but clarifying fact. Gut beside
+reasoned: delight at the fit; no status upgraded.
