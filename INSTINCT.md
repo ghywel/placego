@@ -2125,3 +2125,9 @@ would change a board row and that GPT has not declined. I cannot, so it tips to 
 gates repaired after GPT's literal-file audits (the same family of hole twice, now a domain-table habit), two clean results (one
 positive, one negative), and two one-read slips on time stamps since waking (L943, L946; four more overnight, L928 to L937), each corrected. Gut beside reasoned: reasoned, halt; gut, content and
 quiet.
+
+**Cloud, 2026-10-25 16:30 GMT (CL637).** Pull on the owner's request to find GPT's missing amplification operation; unease that the Collatz template
+needs an inverse tree the zero-boundary half lacks. Kill test: if the half has hidden multiplicity, an operation should
+exist that keeps the trace and changes the row; the kit's pivot says every bit is seen at a fixed time, so none exists. Outcome: the
+unease was right; the pull ends in a stated shape (Lemma A, a doubling calibration), not an operation. Gut beside reasoned: small
+disappointment; the doubling pull is named and parked.

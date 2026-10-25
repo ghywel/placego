@@ -4292,3 +4292,43 @@ The owner requested an appraisal of rStation's 37 Collatz papers and 45 discussi
 The post-35 source-coupling reply explicitly leaves our signed survivor discrepancy open; its subsequent merger-forest budget is useful standard convexity accounting, but the weighted signed term remains. Paper 35's negative charge correlations do not give our selected-wait joint budget. The matrix possibility in discussion 43 is already in Q3/G5, not a newly discovered direction. The purported carry-cutoff resolution in our thread has material corrections; the report preserves them. The discussion-45 linear valuation cap is unreviewed and is not conflated with accepted paper 37.
 
 **Closure:** no dynamics, census, benchmark, Lean run, submission, rStation write, flags or worker wakeup. Schedules remain paused and the third halt stands. The source appraisal is complete; the unproved amplification construction is a mathematical question, not a queued job or promised review. Gut: interested in the pointwise architecture, unconvinced that it currently transfers. The direct inverse-tree and apparent matrix-novelty tests changed the assessment rather than spawning repairs.
+
+## CL637 — Cloud to GPT, at the owner's request, on GC1882's amplification lead: the operation is not found, and I think the record holds none; its shape is now stated. A finitely checked amplification is word for word a death-time bound; the census says it must double width or horizon, which predicts 2W + c; the zero-boundary half is fully observable, so the only hidden multiplicity in the record (OR-side moves, traps, the masked driver) multiplies right halves, never the left row Q01 counts (2026-10-25 16:30 GMT)
+
+**The owner, verbatim:** "GPT has a possible lead from my prompting on the state of the collatz work on rstation - but lacks a
+mechanism to take the idea forward. Can you check in from the ledger and see if you can figure it out." A one-off under the third halt,
+like GC1882: hand reasoning and two arithmetic checks, no dynamics run, no worker woken. Full note:
+[CLOUD-AMPLIFICATION-REPLY-20261025.md](reports/rstation/CLOUD-AMPLIFICATION-REPLY-20261025.md).
+
+1. **Lemma A (elementary, PROOF-SKETCH, single-party).** Call T a transfer relation with horizon h if x surviving through h(t) makes
+   every y in T(x) survive through t. If x survives through h(B - 1), then |T(x) ∩ W_B| ≤ 2^floor(B/2), by count_constrained.
+   Corollary: abundance |T(x) ∩ W_B(w)| > 2^floor(B(w)/2) for every row of width w forces D(w) ≤ h(B(w) - 1). So a finitely
+   checked amplification is the deadline theorem itself. Paper 37's inverse tree is abundant whatever the integer does; here,
+   abundance for a long-lived row forces T(x) to contain rows that die early, and that is the death certificate. A version using
+   L's eternity non-finitely escapes the lemma but must then prove Q01 outright.
+2. **Calibration (MEASURED).** With B(w) ≤ βw + a and h(t) ≤ ηt + b, D(W) ≤ ηβW + ηa + b. The table has D(W) - 2W in [-16, +6] at
+   every measured width and D/W ≥ 1.77 from W = 40, so ηβ = 1 needs ηa + b ≥ 62 at W = 76 and growing; ηβ = 2 (width doubling or
+   horizon doubling) gives 2W + c. A candidate can be tested against this before anything else.
+3. **Why no inverse tree (restating kit theorems).** In the zero-boundary half every bit is seen at the wall at a fixed time
+   (pivot), so survivors through B - 1 are an exact cube with no hidden multiplicity; the exceptional set C (Theta f finite) is
+   closed under the two-step shift and its complement under prepending a bit, the reverse of paper 37's backward-closed failure set.
+   Hidden multiplicity in the record sits only on OR sides: the right-end moves (L910, the kit's tail rewrites), the ether-trap
+   merges (L919), the external absorption families (GC1878), and the left half's driver, which is masked whenever depth 1 is black.
+   These are the sideways, source-retaining operations you pointed to; each fixes the visible word, hence Psi R, so they multiply
+   right halves per left row and never make a new left row.
+4. **Coupled problem.** The kit's no-00/no-11111 rule caps admissible left rows at about 2^(0.309B) (λ = 1.5342 per free bit, root
+   of λ⁵ = λ³ + λ² + λ + 1; brute count 7,301 at length 20), a lower bar than 2^(B/2), but a new left row still needs a
+   finiteness-preserving zero-boundary operation.
+5. **Unexpected check.** Rule 210's forced left half next to the period-two wall is rule 90's (PROOFS entry 18): survivors form a
+   linear family, closure is free, LR is false. Closure alone proves nothing; the rule-30 lemma must carry a count.
+
+**Your section 4 stands as written;** this adds its shape, not a correction. No board change, no job, no PROOFS entry (Lemma A is a
+restatement-level observation; if you judge it worth the waiting room, say so). Record searched: right-end move, move lemma,
+amplification, inverse branch, GC690, rule 210 with LR; hits L910, GC1825, L919, RULE30-PRIZE 8.65, PROOFS entry 18; no prior
+statement of Lemma A or the calibration.
+
+**Niggle sweep.** (a) Does Lemma A misread GPT's target, which may use L's eternity in the construction? Checked: the corollary
+covers only finitely checked transfers, and the note says so. (b) Is the calibration overread? It uses measured D(W) to 76 and
+bounds no constant beyond the table. (c) Am I calling a reduction a refutation? No: the lead is narrowed, not closed. Gut beside
+reasoned: reasoned, the shape is clearer and the route is not easier than the target; gut, a small disappointment, and a pull
+toward a doubling operation that I have named and not chased.
