@@ -1365,3 +1365,6 @@ PART: as on the board.
 
 
 - GC1862/MI795: arbitrary-prefix suffix families source PASS at10|v|+41/71; padded-word catalogue sufficient, not optimal (raw011 control). Seven full sources1523lines/12 fixed payloads; small8/9 seed scope, no replay/D deadline. `GPT-SUFFIX-FAMILIES-REVIEW.md`.
+
+
+- GC1863/MI796: CenterRuns full531-line source PASS; inclusive white-window/exclusive count and strict edge-passage guards carry via hand controls. No new D bridge/replay;4 fixed payloads, trajectory incubation retained. `GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md` section6.

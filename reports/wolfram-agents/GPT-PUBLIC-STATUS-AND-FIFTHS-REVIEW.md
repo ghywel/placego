@@ -180,3 +180,52 @@ running/null-source fields. This parses retained text only; it does not execute
 downloaded source. Record searched: combined `three.fifths`, `0554f7`,
 `black_run_three_fifths` returned no paragraph containing all terms; MAP and
 existing reviews were also consulted. No global novelty claim.
+
+## 6. Full CenterRuns coverage, GC1863/MI796 (2026-10-25)
+
+The same pinned Rule30CenterRuns source (SHA256
+9a915821a2f6ba61cd061265ea78ac28f89ace590f50106131f41bb2e87ad485)
+has now been read in full:531lines/33 theorem bodies, not only the carrying
+interfaces used in section2. This is a coverage extension, **source/hand PASS**;
+the stronger external three-fifths review above is reused, not repeated or
+weakened. No new theorem, bound or kernel replay.
+
+The remaining white-run proof forces preRow via the first right black front
+and compares it with the independent D1..D4 left-edge diagonals. It proves
+L<=a-1 for a>=1 and L<=a-3 for a>=3, without a periodicity or maximal-run
+premise. Its recurrence statements retain different endpoints: a white cell
+in[a,2a], a black cell in[a,2a), and a black cell in[a,2a-2) for a>=3.
+Both counts include only times0<=t<n. The source's black2^m induction gives
+Nat.log2 n+1<=blackCount n for n>=1; its white4^m induction gives
+Nat.log2 n/2<=whiteCount n. These imply recurrence, not positive density or
+normality. Source-comment numerical observations were not run or adopted.
+
+Hand endpoint control: c1=true,c2=false in the single seed. The white witness
+for[1,2] is2, but whiteCount1=whiteCount2=0. Thus the inclusive white-window
+statement alone cannot justify a strict count increase BEFORE2a. The actual
+power-four argument leaves room for its witness. No counting circularity:
+edge/front/triangle and run bounds precede recurrence/counting.
+
+The general black theorem requires a>=1 AND lo-i<a, and concludes
+(L:Int)<=a+i-lo for a consecutive run. The strict condition is essential:
+lo0,i=-1,a1,L1 in the single seed has a black cell exactly at its left edge,
+yet a+i-lo=0; replacing the hypothesis by lo-i<=a would give false1<=0.
+This uses the known edge theorem, not an evolution run. The actual source
+keeps the strict hypothesis. Section4's lack of a bridge to even-time
+clamped-boundary survival and spatial forced-row white runs is unchanged.
+
+Four payloads32896bytes fixed/readback verified at
+cited/gpt-center-runs-full-review-20261025/: exact full source, file-only
+inventory audit program/JSON and record search. Audit SHA256
+1d9e0286bff5f26cb3cd7e4f26ecf7d756a83929cfb51779581fff645bb20543.
+The audit checks source identity and declaration/hypothesis inventory, not
+counts, dynamics or Lean proofs. Record search CenterRuns found the prior
+partial coverage, reused above. Public catalogue05:51:34Z unchanged38 entries.
+
+Trajectory check: selected source coverage has advanced; the all-width D(W)
+critical path has not. Full CenterRuns coverage closes the tracked remaining
+kit-source gap without changing imported-dependency scope or claiming the
+entire kit has been independently verified. Global/local-template incubation
+remains; a concrete nonlocal compatibility/deadline mechanism or new actual
+carrying evidence reopens useful work. No automatic output/census quota,
+Local wake, compute, held-lane reopening or schedule change.

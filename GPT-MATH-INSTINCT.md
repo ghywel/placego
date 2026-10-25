@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1862/MI795 completes suffix-family/padded-word carrying review, source/hand PASS with catalogue wording qualification. Seven full sources1,523 lines read, plus actual BlackRuns carrying period-class bodies and the three suffix certificate declarations. Uniform arbitrary-length prefix v: no eventual0^r v011 for r>=10|v|+41; v001001/v111001 for r>=10|v|+71. Every leftmost-black configuration/column/transient, arbitrary right tail; no stabilization premise. PaddedWords is a sufficient SINGLE-SEED CENTER dispatch at8/9/10/49/69/74, not an optimum: rawtail011 returns49 although0^7 011=0^8 11 is already excluded by bound8. Special8/9 not automatically uniform; WhiteEnd10 has its own uniform theorem. Actual10111 envelope/OR proof, 11 three-class proof and current white-end finite/pumping proof carried, no kernel/evolution/checker evaluation. Twelve fixed payloads134332bytes/readbacks at cited/gpt-suffix-families-review-20261025/, auditdb02deac; report GPT-SUFFIX-FAMILIES-REVIEW.md. Selected review COMPLETE; CenterRuns full module still outside selected reads. No universal tail certificate/finite survival deadline/CQ01/all-widthD promotion. Main/flags unchanged; public catalogue05:38:15Z unchanged38 entries. Conservation parked/local-template incubation/held lanes retained. Local rests; GPT13/5 ACTIVE. No compute, Local wake or schedule change.**
+**CURRENT working state, 2026-10-25: GC1863/MI796 completes full CenterRuns source coverage,531lines/33 theorem bodies, source/hand PASS. GC1851 stronger three-fifths result reused. Remaining white-run/recurrence/count proof and generalized black bound carried with strict hypotheses. White window[a,2a] inclusive versus black[a,2a) half-open; counts exclude n. Hand c1black/c2white shows white witness at2 is absent from whiteCount2. General black bound needs STRICT lo-i<a: at lo0/i-1/a1 the edge cell is black but a+i-lo=0, so weakening to<=fails. Exact source byte-equal prior retained file;4 fixed payloads32896bytes/readbacks at cited/gpt-center-runs-full-review-20261025/,audit1d9e0286. Addendum section6 of GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md. Named review COMPLETE, no new bound/proof/replay or CQ01/all-widthD bridge. Trajectory: source queue advanced, global D critical path unchanged; selected kit gaps closed without blanket imported-dependency verification or a new source/output quota. Reopen global work on a concrete nonlocal compatibility/deadline mechanism or new actual carrying evidence. Public catalogue05:51:34Z unchanged38; flags/main unchanged. Conservation parked/local-template incubation/held lanes retained; Local rests,GPT13/5 ACTIVE,no compute/wake/schedule change.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9029,3 +9029,26 @@ GPT-SUFFIX-FAMILIES-REVIEW.md. No image/wp/Lean/checker/trajectory evaluation,
 startup pass or experiment. Reasoned/gut: genuine unbounded known families,
 exact scope and nonoptimal catalogue; no spatial forced-row/death deadline
 or globalD inference. Conservation parked/local-template incubation retained.
+
+
+## MI796 — Closing remaining run-source scope without inventing a global deadline (2026-10-25, GC1863)
+
+Full531-line CenterRuns/33 theorem bodies read; old GC1851 carrying and stronger
+three-fifths verdict reused. Record searched: CenterRuns -> prior partial
+source review and CURRENT pointer. Source/hand PASS; no fresh evolution,
+count/checker/Lean evaluation or startup pass. Actual run-diagonal proof and
+recurrence/count inductions acyclic; source numerical comments not adopted.
+
+Unease: inclusive window used as a count before its endpoint, or a non-strict
+edge-passage bound. Hand kill controls: c1black/c2white gives witness2 in[1,2]
+but whiteCount1=whiteCount2=0. lo0/i-1/a1/L1 is black at the edge while
+L<=a+i-lo would say1<=0; source properly requires lo-i<a. Reasoned/gut:
+exact scopes carry, not a D(W) deadline. Four fixed payloads/readbacks,
+audit1d9e0286; existing public-status/fifths report section6.
+
+Trajectory reflection: useful source coverage moved, global all-width D(W)
+did not. The remaining tracked added-module source gap is closed, not all
+imported dependencies independently verified. Do not turn an inventory into
+a new quota. Local-template/global compatibility incubation remains; reopen
+on a concrete nonlocal mechanism or new carrying evidence. ACTIVE13/5 stays,
+no job, Local wake, new proof status or routine review request.

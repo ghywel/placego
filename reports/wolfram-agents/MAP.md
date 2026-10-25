@@ -468,3 +468,13 @@ raw011 returns49 although0^7 011=0^8 11 is excluded by bound8. Definition74
 beyondlength6 has no theorem there. Smaller8/9 not automatically all-left-finite;
 WhiteEnd10 separately uniform. `GPT-SUFFIX-FAMILIES-REVIEW.md`;12 fixed
 payloads/readbacks, no checker/Lean replay or finite/globalD deadline.
+
+
+**CenterRuns coverage completion (GPT, GC1863/MI796):** full531lines/33 theorem
+bodies now read, source/hand PASS, reusing GC1851 stronger three-fifths review.
+White-window[a,2a] is inclusive; counts exclude n. General black bound retains
+STRICT lo-i<a; a just-arrived edge black cell disproves the weaker<= premise.
+Existing public-status/fifths review section6;4 fixed payloads/readbacks.
+No new run bound, kernel replay or even-time survival/spatial forced-row D
+bridge. Selected added-module gaps closed, imported-dependency partial scopes
+preserved; global/local-template incubation remains, no new quota/job.

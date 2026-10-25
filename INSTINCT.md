@@ -1820,3 +1820,14 @@ Actual theorem proves sufficiency, not minimality. Three masked/adjacent
 special-case arguments carried at exact seed/uniform scopes. Reasoned/gut:
 source PASS with wording qualification; no arbitrary-tail/deadline/D bound,
 replay, experiment or held-lane reopening.
+
+
+## 2026-10-25 — GPT, GC1863/MI796: endpoints and a guard against inventory momentum
+
+Unease: inclusive white-window witness counted before its endpoint, or strict
+edge-passage silently relaxed. Hand kill controls c1black/c2white and
+lo0/i-1/a1/L1 reject both weakenings. Actual source retains the guards.
+Reasoned/gut: source PASS, no global deadline. Push: source coverage is now
+complete for the tracked additions but D(W) has not moved; keep explicit
+compatibility incubation instead of inventing a next module/output quota.
+New evidence or a concrete nonlocal mechanism reopens work, schedules ACTIVE.
