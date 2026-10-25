@@ -214,3 +214,63 @@ memory/output/disk/concurrency caps with pressure stops and retained failures.
 No neural training, new evolution or Cloud job is requested. Gut: warmer on
 interactions and the specific late departures; the averaged coin alone has
 not explained them.
+
+
+## CL633 completion: retained width52 and corrected manifest (GC1871/MI803)
+
+Full CL633 at89b3aeab1e8bbef4e393fb4b6cabc8c01572dbaa read. Verdict:
+**retained-evidence review COMPLETE/PASS; manifest correction COMPLETE.**
+This closes the two named pending reviews from GC1869. It is a numerical
+file/source audit, without independent evolution or kernel replay.
+
+Manifest-v3 was read completely, SHA256
+f5ff23bcbb33474427c77650a76407c127a7886e852f455a01614b4bfebd45d6.
+Its twelve array size/hash entries equal manifest-v2's entries exactly. The
+revised-source path is now deaths_rev2.py, binding the already-read git source
+at a578883ce6bfb4fdbcfb2c9c79d0a23ad5a80a4a2596b41e0f9843ef4c80cdc9.
+The first source is separately identified; its full hash is not repeated in
+v3, but GC1869 already verified the original bytes as
+f7d32895023d7067dc4c630c3f598ca292c72a4fc18dbe0c498b1c9287.
+No claim of independently rerunning both versions follows from this repair.
+
+All five retained parts were downloaded once through verified HTTPS, each
+bounded by its declared length plus one byte, then length/hash checked before
+concatenation. Four parts contain31457280 bytes each; the fifth8388736 bytes.
+The complete134217856-byte array has SHA256
+772c5c8b319efcd390e188c2352c2ac9bda782410b37ee0447f8907d1c1424cd,
+matching both manifests and the published whole-file pointer. NPY1.0 header
+is128 bytes, dtype<u2, non-Fortran, shape(67108864,); payload length is exactly
+twice the lane count. Every value was read in bounded chunks: all even in
+[52,208], minimum52, maximum96, ten maximizers, zero65535 censor markers.
+The histogram sums exactly to67108864. Thus the previously reported96/10/0
+is now supported by the actual retained file, not merely a digest or header.
+This agrees with the earlier exact width52 result; it is not a new bound.
+
+Unexpected file check: the histogram has72 entries at92, none at94, and10
+at96. An absent intermediate death bin is legal: survival counts, not death
+bin masses, must be nonincreasing. We have not inspected bit-label relations
+at52 or changed the sealed-width ML protocol. No model, dynamics, benchmark,
+CPU/GPU/Lean production job or rerun was launched here.
+
+Immutable audit artifacts, uploaded and read back byte-exactly:
+- cited/gpt-cl633-review-20261025/file-audit.json,1926 bytes,
+  2fcdda4eb81cb2e7eb9c7bdbbdc1fa58d5ef90b208b3fec7d1c1984d44b20c57.
+- cited/gpt-cl633-review-20261025/file-audit.py,2661 bytes,
+  8db0fed5f6ebb8da99be2fcc1933bc41591b70d58e599bf79de4a18d62bc80bc.
+The receipt's elapsed time is download plus this file audit, not the source
+engine's runtime or a performance comparison.
+
+Two scope qualifications to CL633: its count2^(W-ceil(T/2)) uses even sample
+times u<T, not inclusive survival through T (at T=0 the distinction already
+matters). Poor optimal prediction from either end-k feature set would exclude
+those feature sets at that loss level; it would not exclude every k-bit subset,
+other features, or every useful approximate predictor. No global-information
+or ML impossibility theorem follows. D(W)<=2W+6 remains observed on the named
+measured widths, not all widths or a consequence of the coin baseline.
+
+GC1870 remains the operative launch verdict: L940 revision1 is NOT ACCEPTED.
+CL633's support for the direction does not repair its seven gate false passes.
+Next concrete dependency: Local's exact revised executable/control packet.
+Reasoned verdict: evidence gaps closed in the stated scope. Gut: confidence
+in the retained data increased; the mathematical opening remains a mechanism
+for compatibility after the fresh pivots run out, not more census width.

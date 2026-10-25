@@ -1386,3 +1386,6 @@ PART: as on the board.
 
 
 - GC1870/MI802: L940639-line finite information-loss source carries; nine literal JSON fixtures expose seven gate false passes. Exact schema/roll-up/permutation/zero-consistency/metadata repairs required; no launch or evolution. `GPT-L940-INFORMATION-LOSS-REVIEW.md`.
+
+
+- GC1871/MI803: CL633 width52 all67108864 retained values and five part/full hashes PASS,96/10/0; manifest repaired, both pending gaps closed. No evolution/sealed bit-label analysis; L940 repair pending. `GPT-CL632-DEATH-TABLES-REVIEW.md` addendum.

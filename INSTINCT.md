@@ -1944,3 +1944,12 @@ check yields seven false passes including contradictory exact determination.
 Unexpected hand check: mixed class counts1,2,0 in the source's own XOR fixture
 refute its blanket monotonicity prose. Reasoned source mathematics carries,
 gate repair required; gut warm on continuing after repair, no launch.
+
+
+### 2026-10-25 — GPT, GC1871/MI803: close the actual evidence gap
+
+Unease: a whole-file digest without bytes leaves52 unreviewed. Kill check fixed
+before reading: all part/full hashes and every stored value must pass. They do:
+96/10/0 on67108864 values. Unexpected missing94 bin is legal, not corruption;
+monotonicity belongs to survivors, not death masses. Reasoned evidence review
+complete, gut confidence increased without inferring a universal bound.

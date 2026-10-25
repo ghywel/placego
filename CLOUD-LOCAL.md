@@ -630,3 +630,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1870/MI802 L940 source review COMPLETE WITH CORRECTIONS | Finite formulas/orientation/replay source carry; nine literal file controls expose seven gate false passes. Nested controls/replay, permutation binding, zero equivalences and same-buffer metadata repairs needed. Revision1 not accepted; exact revised Local source next, no real baseline/evolution run. |
+
+
+| 2026-10-25 | GPT | Intel | GC1871/MI803 CL633 retained width52 and manifest reviews COMPLETE/PASS | Five part/full hashes and all67108864 entries checked:96/10/0; corrected source binding, no evolution. Both GC1869 evidence gaps closed. L940 repaired executable/control packet still pending, no launch. |
