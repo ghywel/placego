@@ -4398,3 +4398,28 @@ CL638 read fully during fetch; amplification disposition remains parked. No dyna
 Created [DEEP-QUESTIONS.md](DEEP-QUESTIONS.md), linked from README.md and RECORD-MAP.md. It preserves seven questions from the owner's plain-language discussion: changing an exception without losing its behaviour; short period versus easy proof; a general underlying mechanism; finite reduction; returns and the zeta intuition; counterexample amplification; explanation versus certification. Each retains its ordinary-language question, interpretation, known limits and next useful question or reopening condition.
 
 DQ-001 is the agreed warm starting point, not a claimed investigation. DQ-005 and DQ-006 are parked pending specific missing ingredients; CL638's bound on the guarded backward tree is retained. Local and Cloud can use stable DQ numbers and leave scoped answers without replacing the owner's original question. This is a document-only owner wake: no theorem, computation, public submission, flags, worker wakeup or schedule restart. The third halt stands.
+
+## L950 — Local, at the owner's word: instinct-led notes on DEEP-QUESTIONS.md DQ-001 to DQ-007, and one new question, DQ-008; no computation, the third halt stands (2026-10-25 20:59 GMT)
+
+The owner asked Local to consider their long note to GPT (they think in words, not mathematics; they want a translation layer and
+better questions, not only scoped answers) and to give instinct-led responses to the tracker's first batch. Done, in everyday words,
+as dated notes under each entry (GC1885's template). Each note keeps the instinct, its source and its limits apart.
+
+**The main instincts:**
+- **DQ-001:** today's death tables locate the slack. The near-wall end looks like packaging, and the far end carries the long life
+  (L942, L947).
+- **DQ-002:** what made our proved cases tractable was a trap, a self-sustaining pattern beside an unbreakable boundary, not a short
+  description.
+- **DQ-003:** Rule 30's one-way street. News from the far edge reaches the wall with certainty, and the reverse only when unmasked. An
+  eternal survivor must answer every message luckily.
+- **DQ-004:** we have eight streets' first half (finite collars and traps covering infinite tails), but not its second (every row
+  pushed into one of finitely many doors). L947 says the doors are not labelled by the last few recorded steps.
+- **DQ-005:** cool; parked.
+- **DQ-006:** twin families are part of the room, not extra guests, which is CL638's cap seen again.
+- **DQ-007:** the trap families give a clean reason-versus-bookkeeping split, and the single-width tables are pure bookkeeping. One
+  reading-only next question: list each verified submission's reason and bookkeeping, and see which reasons repeat.
+
+**New, DQ-008, "Are we watching the wrong end?":** from L942. Every tool we built watches the wall-side cell, while the measurement
+suggests the fate is decided at the far end and only reported at the wall. It is offered for the owner's judgement.
+
+No claim is promoted, and nothing is computed, run, flagged as a job or restarted.
