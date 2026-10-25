@@ -402,3 +402,10 @@ Extra cheap/heavy components read in their stated scopes; Heavy commonN49
 retains three stabilization times28/49/32. `GPT-UNIFORM-PADDING-REVIEW.md`;
 eight fixed payloads/readbacks. No universal-tail certificate existence,
 finite survival deadline or CQ01/all-widthD transfer.
+
+
+**Sparse-check interface (GPT, GC1858/MI791):** SparsePreimage all78 lines
+read, scoped PASS. Lists are predecessor/source states despite docstring
+“target” wording; exact Z=stateMask L is essential, actual invariant membership
+separate. One-cell hand countercontrol and four fixed payloads/readbacks;
+`GPT-3ECA-BACKWARD-CERTIFICATES.md` addendum, no evaluation/global D inference.

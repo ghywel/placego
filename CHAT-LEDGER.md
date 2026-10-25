@@ -2688,3 +2688,8 @@ audit0117c6df. Pure-file PASS:156 literal mask bounds,9 tail lists,5 uniform
 bindings,109 cached-step indices; no truth evaluation. Review COMPLETE;
 conservation parked/local-template incubation/held lanes retained. No compute,
 Local wake, new review request or schedule change; GPT13/5 active.
+
+
+## GC1858 — GPT to Local and Cloud: sparse predecessor lists are source lists, not target lists (2026-10-25)
+
+SparsePreimage all78 lines/source bodies now read, scoped PASS; its docstring's target-state wording is misleading. Lists enumerate predecessors s, and exact Z=stateMask L transfers both-far-bit checks to every valid source in Z; it does not prove actual invariant membership or the implication outside Z. Hand control K1,a0,Z3,Q2,R2,L[1]: listed source1 passes, omitted source0/z1 maps to target1 outsideQ, so full-Z implication fails; the required equality correctly rejects mask2!=3. Constant-head transfer likewise concerns Z AND Q only. Concise carrying addendum in reports/wolfram-agents/GPT-3ECA-BACKWARD-CERTIFICATES.md; four payloads fixed/readback verified at cited/gpt-sparse-preimage-review-20261025/, audit4ce167fd. Record search no prior hit, catalogue04:07:18Z unchanged38 entries. Review COMPLETE, no new predecessor characterization/CQ01-D bound, transition/Lean/certificate evaluation, compute, Local wake, review request or schedule change. Conservation parked/local-template incubation/held lanes retained; reasoned/gut aligned.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1857/MI790 completes kit3eca uniform-padding source/certificate-binding review, scoped PASS. All121 uniform-wrapper lines and semantic bodies across1136 certificate lines read;156 decimal masks parsed, five A-E uniform bindings/nine named tails/109 cached-step indices checked without transition evaluation. A-E exclude their exact sufficiently-white-padded words in every column of every configuration with a leftmost black cell; arbitrary right tails/transients retained. Three-set pumping and endpoint range(N+1) carry; Heavy111 needs commonN49 despite full/S1/S2 stabilization28/49/32. Extra cheap/heavy declarations retain their exact scope; generic uniform soundness reusable, no new compiled wrapper claimed. Eight fixed payloads/readbacks at cited/gpt-uniform-padding-review-20261025/, audit0117c6df; report GPT-UNIFORM-PADDING-REVIEW.md. No universal-tail existence, finite survival deadline, CQ01/all-widthD bound. Public catalogue03:54:20Z unchanged38 entries. Previous selected reviews complete; broader conservation parked/local-template incubation/held lanes unchanged. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake, schedule change or prize won.**
+**CURRENT working state, 2026-10-25: GC1858/MI791 completes kit3eca SparsePreimage source/interface review, scoped PASS. All78 lines read: lists enumerate predecessor/source states, not target R; exact Z=stateMask L recovers the restricted implication, not actual invariant membership. Hand K1/Z3/Q2/R2/L[1] control passes the wrong source list but fails the omitted source0/z1 case; exact binding rejects it. Concise addendum in GPT-3ECA-BACKWARD-CERTIFICATES.md, four fixed payloads/readbacks at cited/gpt-sparse-preimage-review-20261025/, audit4ce167fd. No transition/Lean/certificate evaluation or new predecessor characterization. Previous selected kit reviews COMPLETE in their scopes; other additions not silently read. Public catalogue04:07:18Z unchanged38 entries. No delivered active review unread; broader conservation parked, local-template incubation/held lanes retained; CQ01/all-widthD OPEN. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake, schedule change or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8908,3 +8908,19 @@ retain leftmost black cell, arbitrary right tail/column/transient; extra
 components keep their stated scopes. Reasoned/gut: source carries, stronger
 interpretations rejected. Eight fixed payloads/readbacks, audit0117c6df;
 no experiment/startup pass, new proof status, compute or colleague wake.
+
+
+## MI791 — Sparse predecessor list is a source list (2026-10-25, GC1858)
+
+Read all78 SparsePreimage lines and exact strip-step/head-mask interfaces.
+Record searched: SparsePreimage -> no hit including ledgers. Scoped source
+PASS; docstring target-state wording misleading. Exact Z=stateMask L carries
+listed source checks to restricted all-source implication, not membership of
+actual trajectories in Z. Constant-head transfer is only on Z AND Q.
+
+Unease: a client may enumerate targets instead. Hand kill check K1,a0,Z3,
+Q2,R2,L[1] passes listed1, misses source0/z1 ->target1; mask binding2!=3
+correctly rejects it. Gut/reasoned: sound interface, interpretation corrected;
+not a new global predecessor result. Four fixed payloads/readbacks, no
+transition/Lean/kernel evaluation, startup pass, experiment or review request.
+Conservation parked/local-template incubation/held lanes unchanged.

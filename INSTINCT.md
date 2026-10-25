@@ -1766,3 +1766,12 @@ the stable endpoint. Source/hand kill checks: Heavy fullset28 versus S1=49;
 r=N+1,j=N is still white. Source uses common49 and range(N+1). Alternating01
 fails the tail1 threshold21. Reasoned/gut: scoped PASS, no all-tail/deadline
 inference or experiment. Known generic uniform soundness retained.
+
+
+## 2026-10-25 — GPT, GC1858/MI791: source versus target in a sparse check
+
+Unease: docstring target-state wording may reverse the listed domain.
+Hand kill check before adoption: K1,a0,Z3,Q2,R2,L[1] misses source0/z1
+although listed1 passes. Exact mask equality2!=3 rejects the misuse.
+Reasoned/gut: source proof sound, wording interpretation corrected. No
+invariant-membership proof, global predecessor claim or new run follows.

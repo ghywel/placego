@@ -589,3 +589,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1857/MI790 completes uniform-padding source/certificate-binding review | Full wrapper/semantic bundle,156 literal masks,9 tails/5 uniform bindings/109 cached-step indices scoped PASS. Exact left-finite/transient/pumping thresholds retained; Heavy commonN49,endpointN included. Eight fixed payloads/readbacks; no replay/CQ01-D deadline/compute/Local wake/schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1858/MI791 sparse predecessor source/interface review complete | All78 lines scoped PASS; lists enumerate sources, exact mask binding essential, actual invariant membership remains separate. One-cell hand target-list countercontrol; four fixed payloads/readbacks, no evaluation/compute/Local wake/schedule change. |

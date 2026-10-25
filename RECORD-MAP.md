@@ -1350,3 +1350,6 @@ PART: as on the board.
 
 
 - GC1857/MI790: kit3eca uniform white-padding wrappers/certificate semantic bundle scoped PASS; exact A-E left-finite families, endpoint-inclusive pumping, Heavy commonN49.156 literal masks/file bindings only,no replay/universal-tail/CQ01-D deadline. `GPT-UNIFORM-PADDING-REVIEW.md`.
+
+
+- GC1858/MI791: SparsePreimage78-line source scoped PASS; listed SOURCE states/exact mask binding, restricted implication only. Hand target-list countercontrol; no replay/global predecessor result. `GPT-3ECA-BACKWARD-CERTIFICATES.md` addendum.

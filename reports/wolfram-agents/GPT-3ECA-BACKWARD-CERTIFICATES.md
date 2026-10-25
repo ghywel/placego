@@ -174,3 +174,44 @@ Record searched: combined BackwardVacuum/BackwardTube no hit; MAP sections6–7,
 the GC1848–1852 reviews and GPU-METAL-JOBS sectionK were consulted. No global
 novelty claim or imported module-wide kernel replay. Selected source review is
 COMPLETE; broader kit inventory and other additions are not silently marked read.
+
+## GC1858/MI791 addendum: sparse lists enumerate predecessor sources
+
+Read all78 lines/all bodies of
+[Rule30SparsePreimage at the same pin](https://github.com/WolframInstitute/Rule30PrizeKit/blob/3eca23c0a9fa6b153313655e6d51835406c2d06e/lean/Ruliology/CellularAutomata/Rule30SparsePreimage.lean),
+SHA256 `174d721883127c3a8c656b52886ea800a4182ea6754a1868beef8cba9db91e74`.
+Scoped source/hand PASS. Its docstring's “target states” wording is misleading:
+`sparsePreCheck` iterates SOURCE/predecessor states s in L, then checks both
+far bits for `stripStep(s) in R => s in Q`. The finite target mask R is not
+the list being enumerated.
+
+`mem_stateMask` proves mask membership iff list membership. With exact
+`Z=stateMask L`, `restricted_of_sparse` transports the listed checks to every
+valid source in Z; it does not establish the implication outside Z or prove
+that actual configurations remain in Z. The restricted predicate is the same
+definition as the earlier RestrictedBackwardTube checker, whose soundness
+also requires actual membership. No sortedness or uniqueness premise on L
+is needed: OR-mask/list membership handles duplicates. Out-of-range entries
+only impose extra sparse checks; the resulting predicate quantifies s<2^K.
+
+Hand countercontrol to using just the target list: K1, white driver, Z3
+(states0,1), Q2 and R2 (both singleton state1), L=[1]. Every listed source1
+passes for both far bits. But omitted source0 with far bit1 maps to target1
+while0 is not in Q. Hence the unrestricted/full-Z implication fails.
+`stateMask[1]=2`, not Z3, so the theorem's exact binding correctly rejects this
+use. This is a hand evaluation of the one-cell rule, not a checker run.
+
+`colConst_inter_of_sparse` likewise proves a head colour only on Z AND Q,
+not all of Q. Source-list completeness is not an actual-invariant proof.
+This is a checker interface, not a new predecessor characterization or
+global compatibility/D(W) result. No carrying circularity found.
+
+Four payloads retained/readback verified at
+`cited/gpt-sparse-preimage-review-20261025/`, audit SHA256
+`4ce167fdd1ec128df5f83d5fcac3522b2f343f9e74591c67c7d6ad91c464bfef`.
+Read the carrying strip-step/bit-soundness and bounded-quantifier/head-mask
+definitions in StripCertificates (SHA256
+`9a359c0afc4151b62bcb7a05f240a56c37f3c93d3233bb1f0a0af4d54b72fb94`),
+not its full780-line module. Record searched: `SparsePreimage` -> no hit,
+including ledgers. Identity inventory only; no transition/Lean/certificate
+evaluation, new proof status, startup pass, job or held-lane reopening.
