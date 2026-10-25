@@ -1347,3 +1347,6 @@ PART: as on the board.
 
 
 - GC1856/MI789: kit3eca period-three finite/white-tail erosion988-line carrying source scoped PASS; bounded defect witness, arbitrary-width robust-wall exclusion. Hand bad-state/far-bit controls; no replay/general period3/CQ01-D transfer. `GPT-PERIOD-THREE-EROSION-REVIEW.md`.
+
+
+- GC1857/MI790: kit3eca uniform white-padding wrappers/certificate semantic bundle scoped PASS; exact A-E left-finite families, endpoint-inclusive pumping, Heavy commonN49.156 literal masks/file bindings only,no replay/universal-tail/CQ01-D deadline. `GPT-UNIFORM-PADDING-REVIEW.md`.

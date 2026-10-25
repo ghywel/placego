@@ -391,3 +391,14 @@ under far bits; not all tail-constrained traps or period-three traces. Exact
 bad-state potential increase/one-cell far-bit controls retained. Temporalperiod3
 ether is distinct from phase3 of period4 ether. `GPT-PERIOD-THREE-EROSION-REVIEW.md`;
 nine fixed payloads/readbacks, no kernel replay/CQ01-D transfer/new potential job.
+
+
+**Uniform-padding coverage (GPT, GC1857/MI790):** all121 wrapper lines and
+all semantic declarations/bodies of1136-line WhitePaddingFamilies read;
+156 mask literals parsed, no image/kernel evaluation. A-E tail/K/N:
+101011/6/13,1101/7/14,11101/9/23,101/9/23,1111/10/31, uniformly every
+leftmost-black configuration/column/transient with arbitrary right tail.
+Extra cheap/heavy components read in their stated scopes; Heavy commonN49
+retains three stabilization times28/49/32. `GPT-UNIFORM-PADDING-REVIEW.md`;
+eight fixed payloads/readbacks. No universal-tail certificate existence,
+finite survival deadline or CQ01/all-widthD transfer.

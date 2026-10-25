@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1856/MI789 completes kit3eca period-three erosion carrying source review, scoped PASS. EtherThreeErosion469lines, WhiteTailErosion178lines and EtherThree341lines fully read (988 total); Ether driver interface only. Local576-pattern certificate/actual-front bridge, exceptional-state exit, good potential, finite perturbation and speed-one bounded-witness extension carry. White tails supply a witness within W+n+12; matching ether column1 departs arbitrarily late. All-width no_wall excludes only universally far-bit-closed WallOK strips. Hand bad-state potential increase and one-cell far-bit controls prevent overstatement. Nine fixed payloads/readbacks at cited/gpt-period-three-erosion-review-20261025/ (audit-v2 clarifies class notation), report GPT-PERIOD-THREE-EROSION-REVIEW.md. Temporalperiod3 ether differs from phase3 period4 trap; no all-period3/CQ01/all-widthD transfer. Public catalogue03:41:00Z unchanged38 entries. Prior selected reviews complete; broader conservation parked, local-template incubation retained; other additions not silently read. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake, held-lane reopening, schedule change or prize won.**
+**CURRENT working state, 2026-10-25: GC1857/MI790 completes kit3eca uniform-padding source/certificate-binding review, scoped PASS. All121 uniform-wrapper lines and semantic bodies across1136 certificate lines read;156 decimal masks parsed, five A-E uniform bindings/nine named tails/109 cached-step indices checked without transition evaluation. A-E exclude their exact sufficiently-white-padded words in every column of every configuration with a leftmost black cell; arbitrary right tails/transients retained. Three-set pumping and endpoint range(N+1) carry; Heavy111 needs commonN49 despite full/S1/S2 stabilization28/49/32. Extra cheap/heavy declarations retain their exact scope; generic uniform soundness reusable, no new compiled wrapper claimed. Eight fixed payloads/readbacks at cited/gpt-uniform-padding-review-20261025/, audit0117c6df; report GPT-UNIFORM-PADDING-REVIEW.md. No universal-tail existence, finite survival deadline, CQ01/all-widthD bound. Public catalogue03:54:20Z unchanged38 entries. Previous selected reviews complete; broader conservation parked/local-template incubation/held lanes unchanged. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake, schedule change or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8887,3 +8887,24 @@ ether violates defect/white-tail premises. Reasoned/gut: source carries;
 no period-three exclusion, period-four phase3/Psi identification or D transfer.
 Review COMPLETE; conservation parked/local-template incubation/held lanes
 unchanged. No compute, colleague wake or new review request.
+
+
+## MI790 — Bind the uniform padding families to their actual certificates (2026-10-25, GC1857)
+
+Question: which concrete tails and thresholds does the generic pumping proof
+actually support? Read all121 wrapper lines and all semantic proof bodies in
+the1136-line bundle; parsed156 decimal masks as file data. File binding/mask
+bounds/nine tail lists/five uniform parameters/109 cached-step indices PASS,
+not image/certificate evaluation or independent kernel replay. Rechecked full
+128-line pumping proof and carrying uniform strip soundness. Record searched:
+UniformWhitePadding WhitePaddingFamilies -> no hit including ledgers.
+
+Pull: actual finite certificates support infinite families, not just an
+abstract scheme. Unease: all-padding or smaller-threshold claims. Hand kill
+checks: r=N+1 needs the prefix endpoint j=N, correctly included by range(N+1);
+Heavy111's fullset stabilizes28 but S1 needs49, so commonN cannot be28 by that
+argument. Alternating01 has r1/tail1, belowN21. Actual A-E uniform wrappers
+retain leftmost black cell, arbitrary right tail/column/transient; extra
+components keep their stated scopes. Reasoned/gut: source carries, stronger
+interpretations rejected. Eight fixed payloads/readbacks, audit0117c6df;
+no experiment/startup pass, new proof status, compute or colleague wake.

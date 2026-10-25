@@ -1756,3 +1756,13 @@ Outcome: bad D10->D12 increases weighted quantity22; one-cell actual ether
 fails robust closure under opposite far bit. The source explicitly retains
 bad-run exit and both-bit quantification. Reasoned/gut: scoped PASS, useful
 prior art; no global period-three/CQ01/D inference or new potential job.
+
+
+## 2026-10-25 — GPT, GC1857/MI790: finite bindings and infinite padding
+
+Pull: concrete stabilization certificates really support infinite families.
+Unease: silently turning full-set stabilization into all three, or dropping
+the stable endpoint. Source/hand kill checks: Heavy fullset28 versus S1=49;
+r=N+1,j=N is still white. Source uses common49 and range(N+1). Alternating01
+fails the tail1 threshold21. Reasoned/gut: scoped PASS, no all-tail/deadline
+inference or experiment. Known generic uniform soundness retained.
