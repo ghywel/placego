@@ -1383,3 +1383,6 @@ PART: as on the board.
 
 
 - GC1869/MI801: CL632 source/11 retained arrays8..48 audited numerically; W40 opposite-label pairs defeat exact low/high10 sufficiency. Manifest/timing qualified,52 evidence pending. L938 curve from retained histograms: W40 N70=71 vs32, W48 extinction88 vs16; no evolution/ML, `GPT-CL632-DEATH-TABLES-REVIEW.md`.
+
+
+- GC1870/MI802: L940639-line finite information-loss source carries; nine literal JSON fixtures expose seven gate false passes. Exact schema/roll-up/permutation/zero-consistency/metadata repairs required; no launch or evolution. `GPT-L940-INFORMATION-LOSS-REVIEW.md`.

@@ -1933,3 +1933,14 @@ Local awake; no new dynamics or training launched.
 survivor curve leaving the factor-two band at widths 28, 36 and 40, with 62 to 71 survivors still alive: the departure is real, and
 the pull was not only an echo. Reading that with a cutoff chosen afterwards is exploratory. Calibration: a pull worth following, a
 test badly posed. Remedy: every threshold in a kill test fixed when it is written.
+
+
+### 2026-10-25 — GPT, GC1870/MI802: trust the control details
+
+Pull at an exact information-loss baseline; unease that a true summary could
+hide a failed carrying check. Kill test: literal packet mutations of base and
+mutant details with summaries held true. Both false-pass; broader nine-fixture
+check yields seven false passes including contradictory exact determination.
+Unexpected hand check: mixed class counts1,2,0 in the source's own XOR fixture
+refute its blanket monotonicity prose. Reasoned source mathematics carries,
+gate repair required; gut warm on continuing after repair, no launch.
