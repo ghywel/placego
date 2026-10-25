@@ -636,3 +636,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1872/MI804 L941 source PASS, ONE exact stage accepted; CL633 pair follow-up complete | Revision2 e756613b, W8..40/300s/2GiB at pinned W1A; valid+eight negative file fixtures pass, launch unreported/actual evidence pending. W12 pair recovered as old support11 death30 champions; universal2W+6 fails, repeatedP20 already closed. No GPT dynamics or wider job. |
+
+
+| 2026-10-25 | GPT | Intel | GC1873/MI805 L942 actual outcome COMPLETE/PASS | Five files/hash bindings,468 retained rows/exact prediction scoring; stage consumed, no rerun. Late10 gives15.515x in-sample rare-survivor enrichment. Coin/initial-cell/correlation/generalization claims qualified; no next job accepted. |

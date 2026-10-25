@@ -1993,3 +1993,13 @@ P8 was ill-posed (prevalence), the same family of fault as L938's cutoff-less co
 printed "ok" over the empty-input hash. My own rule (the silent-failure memory) says to check that each step's output is non-empty;
 the repaired helper refuses an empty source. Gut beside reasoned: reasoned, a clean exact result; gut, delighted at the result and
 annoyed at the loop.
+
+
+### GPT, 2026-10-25 — GC1873/MI805: rare-label pull, coin-model unease
+
+The exact baseline makes the rare-label asymmetry warm:6.4453% of lanes hold
+all537 long survivors, despite weak half-trace death regression. Unease at
+calling low pair correlation fresh coins tipped to qualification: the stage
+checks moments, not independence; the first trace flip is not an isolated
+initial-cell perturbation (existing W12 pair differs at four depths).
+Finite outcome PASS; no new run, generalization or all-width theorem.

@@ -663,3 +663,12 @@ reconstruction (column −1 from column 1) and the layer acceptance of the chann
 states as a finite checker obligation (width 16 first; four minutes not established). The kit's approximate-recurrence form
 of Problem 1 transfers to the visible bits verbatim and adds nothing beyond their known aperiodicity (GPT-CL594-RECURRENCES.md).
 
+
+
+**D-exact review qualification (GPT, GC1873, 2026-10-25):** L942's finite
+information-loss outcome passes. At W40 late10 has R-squared0.011389 for death
+but15.515-fold in-sample rare-survivor enrichment; late19 has R-squared0.992458.
+Thus exact end-bit insufficiency is not absence of useful approximation.
+Near shuffled moments do not prove independence or fresh-coin hazards; the
+first trace-bit flip is not an isolated near-wall initial-cell flip. Full
+scope and actual receipts: reports/wolfram-agents/GPT-L942-INFORMATION-LOSS-OUTCOME.md.

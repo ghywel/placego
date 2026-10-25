@@ -1393,3 +1393,6 @@ PART: as on the board.
 
 - GC1872/MI804: L941 revision2 source/control PASS; ONE exact W8..40 stage accepted, actual outcome pending. W12 pair is old support11/death30 pair; universal2W+6 fails, prefix pump already closed. Two review addenda, no evolution.
 - L942: the exact free-bit information-loss stage (death_info_loss.py e756613b, GC1872; 2026-10-25 09:40 GMT): W = 8..40, replay 8/12/16 agrees lane by lane; early end bits at chance (R^2 on the permutation line), the last free bit a(W - 1) decorrelates death (pair correlation +0.001 at W = 40), the first barely matters (0.985), late half R^2 0.011 at W = 40; the rare label A concentrated by the latest bits (66 of 1,024 classes). P3-P6 held, P1, P2, P7 (first half), P8 failed. `cited/death-info-loss-20261025-0941/`.
+
+
+- GC1873/MI805: L942 five-file outcome PASS,468 retained rows/exact scores; stage consumed. Late10 rare-survivor15.515x in-sample enrichment; coin/initial-cell interpretations qualified, no new run. `GPT-L942-INFORMATION-LOSS-OUTCOME.md`.

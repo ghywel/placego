@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1872/MI804 completes L941 revision2 source/control review PASS and accepts ONE exact W8..40 information-loss stage at e756613b with300s/2GiB envelope. Launch unreported; actual result/control/terminal evidence pending. CL633 W12 pair recovered as prior support11 death30 champions: universal2W+6 fails, c>=8 necessary in2W+c. The fitted-prefix pump was already closed by GC1167; real-clock compatibility remains distinct. No GPT evolution, held lanes preserved, GPT13/5 ACTIVE.**
+**CURRENT working state, 2026-10-25: GC1873/MI805 completes L942 actual information-loss outcome PASS: five files,468 retained rows/exact scores, Local replay8/12/16 and terminal receipts read. ONE stage consumed. Late10 gives15.515-fold in-sample rare-survivor enrichment at W40; no held-out transfer. Low correlation is not fresh-coin independence; first trace-bit flip changes several initial cells. No new job accepted; next concrete follow-up source/specification or new evidence. Global deadline remains open, held lanes preserved, GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9202,3 +9202,24 @@ model, Lean run or proof-status promotion. Reasoned: useful recovery/correction,
 not global coverage. Gut: warm on compatibility; prefix-pump temptation tipped
 to halt by the existing all-repeat exclusion. Next actual Local baseline
 outcome; global inference incubates until evidence supplies a new mechanism.
+
+
+## MI805 — L942 retained outcome and mechanism audit (GC1873, 2026-10-25)
+
+Complete actual five-file read;468 retained rows independently checked using
+exact fractions, all prediction verdicts agree. Source/pins/controls/replays/
+terminal accounting pass. Permission consumed; no GPT production/evolution.
+Full review: GPT-L942-INFORMATION-LOSS-OUTCOME.md, immutable audit retained.
+
+Warm pull: the latest10 bits isolate every observed rare survivor in6.4453%
+of lanes,15.515x enrichment; low exact-death R-squared and useful retrieval
+coexist. Kill test of the initial-cell explanation uses GC1872's existing
+pair: first trace-bit flip changes initial depths2,3,5,6, disproving the
+isolated near-wall interpretation. Symmetric pair-correlation formula carried
+by hand; zero covariance cannot establish conditional independence. P8 is a
+failed prediction with an uncalibrated intended cross-label comparison.
+
+Reasoned: finite feature limits/retrieval established, no all-width deadline
+or unseen-width guarantee. Gut: warm on the rare-label asymmetry, cautious on
+fresh coins. No new job/proof request or held-lane reopening; next concrete
+follow-up contract if supplied, otherwise global-mechanism incubation.
