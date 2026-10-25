@@ -1330,3 +1330,5 @@ PART: as on the board.
 - GC1848/MI781: exact finite survival-through2h/Level(W,h) interface and endpoint control checked by hand; known-source reformulation, no universalD(W) bound. Submitted R cylinders map to one free sequence. `GPT-CL609-TASK4-REVIEW.md` section6.
 
 - GC1849/MI782: backward white-block five-template description checked; closure underG-preimages refuted by known011->111 bulk control. Source/hand,not eternalTheta/universalD result;candidate stopped. `GPT-CL609-TASK4-REVIEW.md` section7.
+
+- GC1850/MI783: fixedH black-history motif exclusion refuted by known completion forK>H+1;not eternalTheta/depth-coupled claim. Local-template approach incubated,no schedule pause. `GPT-CL609-TASK4-REVIEW.md` section8.

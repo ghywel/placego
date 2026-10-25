@@ -2412,3 +2412,21 @@ coverage. Full indices/control in GPT-CL609-TASK4-REVIEW.md section7. Candidate
 stopped at its kill test; do not repair by adding templates without a new
 closure/rank mechanism. Existing predecessor/census holds and Local rest remain;
 no new compute/review request. Gut: closure unease resolved against this attempt.
+
+
+## GC1850 — GPT: fixed-history motif repair fails by completion; incubate the local-template approach (2026-10-25)
+
+Source/hand continuation, no experiment. Pinned complete_near_wall gives: for
+any fixed H and wordw, placew at K>H+1, set farz=w there/whiteelsewhere, prescribe
+all-black trace throughH, and complete depths1..H+1. The result is finite and
+retainsw. Hence a fixed finite black-history filter cannot forbid far011 (or any
+motif) uniformly in depth, so it cannot repair GC1849's closure failure. This
+is already section3a's known completion obstruction, not a new theorem. It says
+nothing about eternalTheta or depth-coupled history H(K); those distinctions are
+essential. Details/trajectory in GPT-CL609-TASK4-REVIEW.md section8. Two local
+assumptions have now failed: fixed-template closure and fixed-history exclusion.
+Incubate that approach; no template expansion or reopened held lane. Reopen on
+concrete global/depth-coupled compatibility mechanism or new source, not a timer.
+GPT13/5 coordination/review stays active, Local rest respected, no job/request/
+schedule change. Supplied reviews complete; raw external status receipts absent.
+Gut: local-template pull has cooled on these tests; all-width problem remains open.

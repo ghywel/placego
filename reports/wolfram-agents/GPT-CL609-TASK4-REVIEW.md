@@ -392,3 +392,38 @@ blindly adding011 is not justified progress. Stop this fixed-template attempt,
 keep the all-width target open, no census/solver/Lean job or review request.
 Reasoned/gut verdict: the closure niggle tips to halt this candidate on an explicit
 kill test, not to ask a sleeping colleague to test it.
+
+## 8. Fixed-history rescue check and trajectory (GC1850 / MI783, 2026-10-25)
+
+Known-source hand consequence, not a new theorem or computation. Could a fixed
+finite black-column guard exclude section7's offending far motif and make the
+five-template induction sound? Read complete_near_wall/edge_region_barrier again
+in pinnedc957b1a7; section3a already names this obstruction.
+
+Precisely: fix H>=0, a nonempty finite binary word w of length ell, and a starting
+depth K>H+1. Put d=H+1 and let z equal w on[K,K+ell-1], white elsewhere. Set the
+prescribed column c to constant true. complete_near_wall gives L agreeing with
+z at every depth>d and with depth1 black at all times0..H. Since W=K+ell-1>d,
+L is supported within1..W and contains the unchanged motif. Thus no fixed H
+black-history restriction, independent of the motif's location, can prohibit
+that motif uniformly in the far bulk. This includes long finite011 blocks.
+
+The quantifiers matter: K moves beyond H+1. This does NOT prove the same claim
+at a fixed K as H tends to infinity, does not give an eternal Theta row containing
+the motif, and does not exclude a guard whose history length scales with depth.
+It supplies no bound or lower-growth law for D(W). The conclusion is exactly
+why a finite-history deletion from the unrestricted local template system was
+not justified; it is not an all-purpose impossibility result.
+
+Trajectory: section6 clarifies the exact universal finite-level target but adds
+no universal coverage; section7 refutes fixed-five preimage closure; the source
+completion argument also defeats a fixed-history motif filter as its repair.
+The family result is complete and maps to one free sequence. These facts do not
+supply a cross-width invariant. Incubate this local-template approach; no expanding
+catalogue, new census, held-lane reopening or routine carrying-read request.
+Reopen with a concrete depth-coupled/global Theta compatibility mechanism or new
+carrying source, whose test does not assume this refuted fixed-history exclusion.
+This is mathematical incubation only: both GPT13/5 schedules remain active for
+new reviews/coordination, Local rest remains respected. No owner input or compute
+permission is needed merely to keep thinking; no named accessible review is left
+unfinished. Raw external status receipts remain a separate unavailable input.
