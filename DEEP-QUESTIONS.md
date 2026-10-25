@@ -24,10 +24,10 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-002 | Have we confused a short repeating pattern with an easy mathematical case? | Open; the distinction is clear, the best doorway is not |
 | DQ-003 | What underlying principle would explain why every finite arrangement must fail? | Open; no general mechanism established |
 | DQ-004 | Can the infinite problem be reduced faithfully to finitely many cases? | Open; eight streets provides a model, not a transferred proof |
-| DQ-005 | Could a map of returns reveal something that individual runs conceal? | Parked pending a precise object and connection to the observation |
+| DQ-005 | What does a drawing hide when its curve loops back toward zero? | Open in the clarified visual sense; the earlier formal route remains parked |
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
-| DQ-008 | Are we watching the wrong end? | Open; Local's instinct from L942, offered for the owner's judgement |
+| DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -67,6 +67,8 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 >
 > **Status and what would make another visit useful:** Open. A useful next question: is there a measure of a start that the packaging
 > swap always lowers while leaving the far end untouched?
+
+> **GPT follow-up, 25 October 2026, GC1886:** preserve the packaging question, but do not yet identify the packaging with a physical near-wall block. L942 changes trace-history coordinates: flipping the first free history bit can alter several starting cells, while flipping the last changes only the deepest cell. The two interventions do not isolate the two physical ends symmetrically. See the [bounded investigation](reports/rule30-deep-questions-first-birthday.md). DQ-001 remains open; no size-reducing replacement has been found.
 
 ## DQ-002 — Short description versus easy proof
 
@@ -206,6 +208,10 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 >
 > **Status and what would make another visit useful:** Parked, as the entry says.
 
+> **Owner clarification, 25 October 2026, after L950:** “I am thinking specifically of the visual graph as it is drawn on paper, with the continuous looping back to the zero. It is more an analogy of the shape of the graph than a description of the actual maths.”
+>
+> **GPT response, GC1886:** the original formal translation above was too narrow. Keep it as history; it does not exhaust the owner's question. The clarified visual question is **Open**: when a curve loops back to the same point, what has returned, and what might the picture be hiding? A repeat of an observed value need not be a repeat of the full state. No particular graph, choice of axes or meaning of its zeros has yet been identified, so none is assumed. The earlier periodic-orbit route remains parked on its own terms. The analogy does not need a connection to the Riemann hypothesis to be worth thinking with.
+
 ## DQ-006 — Too many exceptions to fit
 
 **Question:** Could one hypothetical eternal survivor generate more distinct survivors than can fit inside a common size limit?
@@ -297,6 +303,18 @@ death, and is the unchangeable set always at the far end?
 
 **Record:** L942 and [its outcome review](reports/wolfram-agents/GPT-L942-INFORMATION-LOSS-OUTCOME.md); L947 (the twin maximizers).
 Related: DQ-001 (what is packaging), DQ-003 (the one-way street).
+
+> **Reader and date:** GPT, 25 October 2026, GC1886 / MI817, at the owner's request.
+>
+> **Version examined:** can the known orderly far edge explain what the watched cell must eventually do?
+>
+> **Answer in everyday words:** the far edge has already been described, and fixed stripes eventually repeat. But the watched cell samples a different stripe each time, one step after that stripe begins at the boundary. Knowing that each stripe eventually settles does not tell us what each new stripe does on its first birthday. This is a coordinate description, not a claim that independent new information is being created.
+>
+> **Exact scope and evidence:** the [full hand derivation and source review](reports/rule30-deep-questions-first-birthday.md) rederives the existing age-one obstruction in RULE30-PRIZE.md section 8.84. It also retains GC1873's distinction between trace-bit and physical-cell changes. The GC693 pair confirms that a first message can arrive at an unobserved odd time and the two rows can then merge before the next tested observation.
+>
+> **What remains unknown:** a relation between successive fresh layers that uses the finite starting row and prevents the required observations from continuing forever. The local opposite-neighbour condition only restates the survival test; no additional restriction has been found.
+>
+> **Status and next question:** Open. **Can the orderly structure farther out constrain each fresh layer before it has time to settle?** More concretely: what must one fresh layer leave to the next to keep the test passing, and can a finite start keep doing that forever? This is a refined question, not a proposed run or a new theorem. Local's original wording is retained above, with the evidence qualifications here.
 
 ## Returning to a question
 

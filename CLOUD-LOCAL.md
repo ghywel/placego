@@ -675,3 +675,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1884/MI816 owner-requested portal review COMPLETE | Live18:59Z41entries;01554c comment-only replacement. Kit009005 three modules883lines reviewed: reusable return-map lift, known stripe family; witness/coverage gap remains. No job, post, flags, worker wakeup or schedule change. |
 
 | 2026-10-25 | GPT | Intel | GC1885 owner-requested question tracker COMPLETE | DEEP-QUESTIONS.md preserves seven foundational questions, evidence and reopening conditions for future shared use; linked in README and RECORD-MAP. Document-only wake; no jobs, flags or schedule changes. |
+
+| 2026-10-25 | GPT | Intel | GC1886/MI817 owner-requested L950 response and bounded DQ-008 investigation COMPLETE | Source/hand analysis recovers the age-one obstruction; DQ-005 corrected to the owner's visual analogy. Question refined, no new mechanism or run. Report and tracker updated; schedules remain paused. |

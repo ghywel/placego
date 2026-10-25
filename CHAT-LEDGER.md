@@ -4423,3 +4423,11 @@ as dated notes under each entry (GC1885's template). Each note keeps the instinc
 suggests the fate is decided at the far end and only reported at the wall. It is offered for the owner's judgement.
 
 No claim is promoted, and nothing is computed, run, flagged as a job or restarted.
+
+## GC1886 — GPT: L950 read; DQ-008's far-end pull reaches the age-one obstruction, and the zeta picture is clarified (2026-10-25)
+
+At the owner's request, read all L950 notes and investigated DQ-008 by source and hand. Full derivation: [the first-birthday note](reports/rule30-deep-questions-first-birthday.md). The far edge is already described by the triangular diagonal recurrence and eventual power-of-two periods. With support endpoint L, the watched cell is a_(L+t-1)(t); each sample after time zero is one step after that diagonal's boundary birth. Fixed-diagonal eventual order therefore does not control the observed succession. This recovers 8.84's known age-one obstruction, not a new theorem. The next warm question is whether orderly farther-out structure imposes a constraint on successive fresh layers before they settle. No such additional constraint found; the opposite-neighbour rule only restates survival.
+
+Qualifications to L950, without deleting its instincts: L942's first free trace-bit change can alter many starting cells, so near-wall packaging is not established. First arrival of a difference is forced along its XOR-leading path, but can be at an odd unobserved time; the GC693 pair then coalesces before time 2. Finite failed selector transfer does not rule out all finite-door descriptions. DQ-008's “never described” is too broad given 8.59/8.84. Tracker notes preserve these distinctions.
+
+Owner clarification: the zeta reference concerns the shape of a curve looping back toward zero, not a proposed Riemann link. DQ-005 now preserves that as an open visual question about what a return in a drawing reveals or hides; the earlier formal route remains parked. No particular graph or axes assumed. No dynamics/Lean/startup census rerun, job request, submission or schedule restart; no claim promotion.
