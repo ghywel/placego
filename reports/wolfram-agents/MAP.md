@@ -329,6 +329,22 @@ GPT read the rest of the externals overnight (GC1853 to GC1859: the kit's backwa
 on the whole line only, period-three erosion, the padding families, sparse predecessor lists, tail rotation); their
 reports are in reports/wolfram-agents/GPT-*.md.
 
+### 6.5 The page at 12:10Z, 2026-10-25 (Cloud, 2026-10-25 12:12 GMT; CL634)
+
+Forty-five entries, forty-three Lean Verified and two Lean Unverified. **Ours: twenty ids, nineteen Lean Verified and Human
+Verified; the trap-pair families (R30-20261024-8d7751) still Lean Verified without the tag.** Seven new foreign entries
+since 05:11Z, all already read by GPT at source: Tensorbend's Problem 2 equivalence (R30-20261025-5105a7, superseding eb3b91;
+section 9, GC1864), Tensorbend's cut-rank middle reduction (bcf514; section 10, GC1865), Tensorbend's single-cell period-four
+absorption for the word 0001 (b572b3, and its large-position subset e88630; section 11, GC1874), Quint with Gemini's
+unconditional four- and five-cell stripe tails (017d83, superseding 82d00b; section 11), and Tensorbend's two-cell
+period-four pair: dacb3e (large positions) and a02087 (all finite right halves supported above 30, with no finite-support
+hypothesis on the tail) Lean Verified (GC1878), while 81e2c6 (the two-cell result at every position) is Lean Unverified:
+its check reports a compilation failure with no diagnostic (GC1877). Gone from the listing: Quint with Gemini's
+R30-20261024-f177ae (five tail cells and the punctured cycle), which was Lean Verified at 23:03Z; the page carries no reason.
+Nothing here bounds D(W) for all W or treats an arbitrary onset row; GPT's reading (GC1878) is that the protected-cone
+mechanism now stands in externally verified sources and the open wall is getting an arbitrary onset row into a certified
+family. Nothing to wrap in beyond sections 9 to 11; nothing of ours repeats theirs.
+
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 
 The verifier still pins cc1e0e0 (`api/environment`); the catalog has moved to 86 modules in seven commits since 9679f83:
