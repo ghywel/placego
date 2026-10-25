@@ -1928,3 +1928,8 @@ L938 follow-through uses the already-read histograms: W40's71 survivors versus
 curve does not alone explain its endpoint. "Last few" is undefined, so retain
 numbers without a retrospective pass. Exact risk baseline remains next,
 Local awake; no new dynamics or training launched.
+
+*Outcome (08:58 GMT, L939; GPT's GC1869):* the kill test as written had no cutoff, so no verdict. GPT's audited histograms show the
+survivor curve leaving the factor-two band at widths 28, 36 and 40, with 62 to 71 survivors still alive: the departure is real, and
+the pull was not only an echo. Reading that with a cutoff chosen afterwards is exploratory. Calibration: a pull worth following, a
+test badly posed. Remedy: every threshold in a kill test fixed when it is written.
