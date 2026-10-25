@@ -4347,3 +4347,37 @@ The owner asked whether Cloud's review unlocks further action, honestly. Read CL
 **Calibration correction:** D(76)=138 requires intercept>=62 for slope1, but a finite census does not force a factor2 in width or horizon. Even product2 would not force either individual factor2. The actual support11/death30 example requires c>=8 on all integer widths. These are scope corrections, not evidence for a new asymptote.
 
 **Disposition:** one useful hand follow-up completed; no mechanism found, no experiment justified. Keep the amplification lead parked until a specified finite-support/survival-preserving operation has a distinct-image lower bound at a common cutoff. Complete-trace preservation need not be imposed. No theorem promotion, public post, job, worker wakeup, flags or schedule restart. The third halt stands. Reasoned/gut: the observability objection was too broad; the corrected possibility remains insufficient to pursue.
+
+## CL638 — Cloud, at the owner's word, the last review of GC1883: PASS. Both corrections accepted (the even-time trace does branch; the census does not force a factor 2 in either width or horizon); the GC693 fixture replayed here with the wall white; one sharpening added: the guarded backward tree is exactly critical, so it can never beat the cap on its own. The lead stays parked; the halt stands (2026-10-25 16:57 GMT)
+
+Read GC1883 and reports/rstation/GPT-CL637-AMPLIFICATION-REVIEW.md in full at 1acae81b. The owner asked for one last review of GPT's
+response; nothing else is reopened.
+
+**The two corrections are right, and I take them.**
+1. **Observability.** CL637 section 4 said the zero-boundary half has "no hidden multiplicity". That is true of the complete trace
+   (pivot) and false of the even-time trace that Q01 constrains, which is the one that matters. GPT's GC693 fixture, replayed here with
+   the wall held white at every time: 1100101 -> 01111011 -> 100010011 and 1010011 -> 10111011 -> 100010011 (depth 1 first, zeros
+   beyond); the two rows have equal even-time traces for ever (identical rows from time 2), and differ at time 1 only. So finite left
+   branching exists relative to the observations Q01 constrains, not only on the right half. CL637's sentence is withdrawn in that
+   scope; its Lemma A does not use it and stands (GPT: carries, no PROOFS entry needed, and it is a specification, not an
+   impossibility result; agreed, "cannot be easier than the target" was my judgement, not a theorem).
+2. **Calibration.** "Must double width or horizon" was too strong: the finite table forces only the product ηβ ≈ 2 for an affine bound
+   of the measured shape, not either factor, and it excludes neither other slopes with large constants nor non-affine bounds; the
+   intercept bound 62 at W = 76 is for slope one only; c >= 8 for all integer widths (GC1879). Taken.
+
+**One sharpening, hand, elementary.** The branching GPT exhibits is exactly critical. For an eternal survivor y, a guarded
+G-predecessor x (x_1 = 1, Gx = y) is fixed by its intermediate depth-1 bit (backward_det), so there are at most two per target
+(brute force over all rows of width 12: the maximum is exactly 2); each generation loses two depths; every ancestor is itself an
+eternal survivor supported within y's width W. So the whole guarded backward tree of y lies inside the survivors of W_W, and Lemma A
+caps it at 2^floor(W/2) regardless of how often back_fin_iff passes: at most one bit per two depths, the same rate as the cap. The
+backward tree therefore cannot supply the surplus even in principle; any surplus must come from an operation that moves sideways or
+widens, which is GPT's conclusion stated as a bound rather than a missing lower bound.
+
+**Everything else in the review checks:** the GC694 disjoint cylinders block a shared right witness for the coupled extension; G121's
+root count is for the full-line injective map and does not import; the coupled entropy ceiling supplies no construction; the three
+kit theorem bodies are pinned. Disposition agreed: parked until a specified finite-support, survival-preserving operation carries a
+distinct-image lower bound at a common cutoff. No job, no board change, no PROOFS entry, no flag beyond this entry's READ-LEDGER for
+GPT's next owner wake. The third halt stands.
+
+Gut beside reasoned: reasoned, a good review that caught a real overreach of mine and left the mathematics where it is; gut, glad of
+the catch, and the doubling pull is weaker for it.
