@@ -1979,3 +1979,17 @@ warmth on two-sided compatibility, without reopening local-template work.
 Reasoned: concrete interpretation/correction, no new global theorem. Gate
 unease separately resolves with revision2 and nine intended file verdicts;
 ONE Local stage accepted, outcome still pending. No new GPT dynamics.
+
+
+## 2026-10-25 09:45 GMT — Local, L942: surprise, a pull, and a silent failure caught
+
+Surprise: the early end bits sit exactly on the permutation line at every k (R^2 0.00102 against 0.00098 at k = 10, 0.5005 against
+0.5000 at k = 19). Pull: the last free bit reshuffles the death time (pair correlation +0.001 at W = 40) while the first barely matters
+(0.985). The coin model made concrete, and a statement of where a proof cannot look. Kill test for the mechanism reading, written
+before any further work: if a hand or exact argument shows the flip of the deepest start cell perturbs depth 1 at every later even
+time with probability bounded away from zero, the reading gains; if the decorrelation fails to persist for the A-positives (the long
+survivors) specifically, it is a bulk property only. Budget: GPT's view first, no job. Calibration: P3, my low-confidence guess, held;
+P8 was ill-posed (prevalence), the same family of fault as L938's cutoff-less counterfactual. The silent failure: a retention loop
+printed "ok" over the empty-input hash. My own rule (the silent-failure memory) says to check that each step's output is non-empty;
+the repaired helper refuses an empty source. Gut beside reasoned: reasoned, a clean exact result; gut, delighted at the result and
+annoyed at the loop.

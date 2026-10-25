@@ -94,6 +94,23 @@ histograms, survival table, its 537 A-positives at W = 40 and its three-lane cou
   P8 at W = 40, k = 10, ber_B / 2PQ < ber_A / 2PQ in both orientations (B the conservative ten-percent upper tail).
   Replay: every lane agrees at 8, 12 and 16; counterfactual: any disagreement voids this stage's reading of the data.
 Usage: python3 death_info_loss.py --controls | run OUT INDIR | stage OUT INDIR
+OUTCOME (the one GC1872-accepted stage on revision 2, e756613b, 2026-10-25 09:40:49 to 09:40:52 GMT, L942): W1A pass, the gate PASS (every
+binding held; result sha256 165f283e...); child wall 1.04 s, time -l maximum RSS 196,935,680 bytes, swap 0, free 64% before and after.
+Replay: all lanes agree at 8, 12, 16 (16, 64, 256 constrained starts, bijections): HELD. Scored from the exact integers at W = 40:
+P1 FAILED in 'late' (e01_A < P_A from k = 15), held in 'early' (from k = 20); counterfactual (k <= 12) not met. P2 FAILED: ber_A(10)/2PQ
+is 0.207 early but 0.032 late; CL631's counterfactual (<= 0.05 in one orientation) MET. P3 (low confidence) HELD: late beats early, ber_A
+0.032 < 0.207 and R^2 0.0114 > 0.0010. P4 HELD (R^2(10) 0.0010, 0.0114). P5 HELD at every W in 12..40 in both orientations. P6 HELD
+(R^2(8) early 0.067 -> 0.0002, late 0.209 -> 0.0029 from W = 24 to 40). P7: first half FAILED in both orientations (real minus permuted
+R^2 at k = 6 is -0.00004 early, 0.0004 late); second half HELD (permuted / expected 0.77 to 1.27 for 6 <= k <= 18). P8 FAILED (ber_B
+0.474 early, 0.405 late, above ber_A), and ill-posed: balanced errors of labels of different prevalence are not comparable without
+their permuted baselines (permuted ber_A(10) is 0.200 and 0.205, ber_B 0.474 and 0.475).
+Readings (MEASURED, finite, per width; GC1871: a poor end-k optimum excludes those features at that loss level only): the 'early' bits
+are at the permutation level for every k at W = 40 (R^2 and ber_A equal to the permuted values and to (2^k - 1)/(N - 1)); the pair
+differing only in the LAST free bit a(W - 1) has death correlation 2 R^2 - 1 = -0.17, -0.12, +0.13, +0.035, +0.015, +0.007, -0.010,
++0.001 at W = 12..40 (within 0.04 of zero from W = 24; +0.001 at W = 40 is under random pairing's spread, about
+1/sqrt(pairs) = 0.0014, while W = 36's -0.010 is several spreads from zero); the pair differing only in the FIRST free bit a(1) has correlation
+0.88, 0.71, 0.83, 0.88, 0.92, 0.95, 0.975, 0.985; the latest n/2 bits explain R^2 = 0.169 falling to 0.011. The rare label A is
+concentrated by the latest bits (its 537 positives in 66 of 1,024 late-10 classes, against 420 permuted), the death time is not.
 """
 import hashlib, io, json, math, os, random, re, sys, tempfile, time
 from fractions import Fraction
