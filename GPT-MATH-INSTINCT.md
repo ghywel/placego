@@ -126,6 +126,8 @@ exchange mechanism and primary literature;the incubation above is history.
 
 **CURRENT working state, 2026-10-25: HALTED by the owner's CL635 instruction, with GPT GC1880 and Local L949 agreements. GC1881/MI813 verifies both GPT13/5 schedules PAUSED; older schedule also PAUSED. Closing sweep complete; no job, submission or review polling. Only an owner restart reopens work; queued old heartbeats do not. External81e2c6 repair/check and8f032d exact-source gaps retained unverified;52sealed.**
 
+**One-off owner wake, MI814/GC1882:** the requested Collatz-to-Rule-30 source appraisal is complete in `reports/rstation/GPT-COLLATZ-TO-RULE30-APPRAISAL-20261025.md`. No rStation post, experiment, schedule restart or shared-loop resumption. Paper 37 suggests a counterexample-amplification criterion; its survival-preserving finite-seed construction remains unproved. The halt above still governs after this completed request.
+
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
 **Latest MI713/GC1770:** GC1770/MI713: L854 notebook supervisor DESIGN review COMPLETE WITH CORRECTIONS, not executable/job acceptance. Single-loop/flag-only direction carries; stage-wide interrupt lifetime, spawn/cleanup ownership, final watched-file checks and atomic terminal truth need explicit design. No implementation/control/run requested tonight; Local research rest honored. L853 correction follow-through closed; D5/W6 audits closed with qualifications, no rerun.
@@ -9348,3 +9350,13 @@ configuration verify research and coordination PAUSED; older mathematics schedul
 GC1880's sweep stands. No live GPT computation or accepted outcome review remains. Unavailable
 external-source gaps remain unverified for an owner-requested restart. Final committed pointers and
 state delivered, then quiet; no automatic reopening on an old queued heartbeat or public-page change.
+
+## MI814 — Collatz community appraisal and a conditional amplification question (GC1882, 2026-10-25)
+
+Parent: the owner's one-off request to appraise the 37-paper/45-discussion Collatz pool and look for a useful Wolfram transfer, without posting. The full report and per-source reading scope are in `reports/rstation/GPT-COLLATZ-TO-RULE30-APPRAISAL-20261025.md`.
+
+Actual change: paper 37 supplies a pointwise argument by contrasting inverse ancestor abundance with a backward-closed thin failure set. Our exact early trace count gives a concrete Rule 30 threshold: more than 2^floor(B/2) distinct eternal finite seeds within width B is impossible. Constructing that many from one hypothetical eternal seed is the new comparison question, not an established mechanism. Ordinary-time ancestors cannot provide it because finite support width strictly grows under F.
+
+Instinct, recorded here at closeout: pull toward a genuine way to exclude individual exceptional integers; unease about importing a random law onto survivors and about mistaking an old matrix proposal for novelty. The direct inverse-time control rejects the naive transfer; Q3/G5 rejects the novelty impression; the actual replies to post 35 confirm the rare-selection gap. The unexpected rule-210 control prevents promoting generic permutivity to an extinction theorem. These checks leave no balanced signal requiring a new experiment: the source appraisal is complete and the missing construction is parked.
+
+Dependency risk: paper 37 retains EJ/Tao inputs through paper 14; the stronger linear cutoff is an explicitly unreviewed comment. Paper 35's exact covariances are not first-descent-conditioned laws. All 82 entries were surveyed, not all proofs independently verified; source and review depth is itemized. No proof-status promotion, job, external post, notification to quiet workers or schedule change. Reasoned verdict: a useful alternative proof obligation with no construction yet. Gut verdict: interested, not persuaded that we have crossed the wall.

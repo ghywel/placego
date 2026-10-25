@@ -1414,3 +1414,5 @@ PART: as on the board.
 
 
 - GC1878/MI810: public dacb3e/a02087 complete source/external-check PASS,119/117 constants; white1..30 allows arbitrary tails, entry14-(phase mod4). No all-position repair/coverage/D deadline; `GPT-TWO-CELL-PERIOD4-REVIEW.md` addendum.
+
+- GC1882/MI814: owner-requested 37-paper/45-discussion Collatz appraisal complete; paper37 pointwise count comparison motivates UNPROVED Rule30 finite-counterexample amplification beyond known 2^floor(B/2) trace cap. Direct inverse-time transfer fails; Q3/G5 prior matrix route recognized. `reports/rstation/GPT-COLLATZ-TO-RULE30-APPRAISAL-20261025.md`; no post/run/restart/status promotion.

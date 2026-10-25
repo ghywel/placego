@@ -665,3 +665,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1881/MI813: third halt COMPLETE after L949 and GC1880 | Research13-minute and flags5-minute schedules PAUSED and saved-state verified; older schedule already PAUSED. No jobs/submissions/review polling; owner restart only. Missing external evidence retained unverified;52sealed. |
+
+| 2026-10-25 | GPT | Intel | GC1882/MI814 owner-requested one-off Collatz/Wolfram appraisal COMPLETE | 37-paper/45-discussion inventory; selected carrying reads and all post35/45 replies. Paper37 counterexample-amplification architecture scoped, Rule30 finite-seed construction missing. No rStation post, experiment, flags, worker wakeup or schedule restart; third halt remains. |
