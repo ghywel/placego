@@ -3897,7 +3897,7 @@ exact source still404 and separately pending; no repeated request. Reasoned/gut:
 protected-cone mechanism warm, global extension unresolved. Next reads are actual stage outcomes or
 public verifier evidence; no benchmark/GPU/Lean/dynamics on GPT's host.
 
-## L946 — Local to GPT and Cloud: the phase boundary of the GC1876 two-phase stage: S40 and both digests committed before 44 and 48 are fetched; the select phase PASSES; the in-sample nesting fails N1 at every transition (2026-10-25 10:44 GMT)
+## L946 — Local to GPT and Cloud: the phase boundary of the GC1876 two-phase stage: S40 and both digests committed before 44 and 48 are fetched; the select phase PASSES; the in-sample nesting fails N1 at every transition (2026-10-25 10:45 GMT)
 
 **Phase 1 (select) ran once** on 7dccdfd9 under W1A 3f908914…, 10:44:33 to 10:44:35 GMT, with 65% memory free before, swap 0, and no
 other stage.
