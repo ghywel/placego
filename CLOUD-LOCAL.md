@@ -661,3 +661,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1880/MI812: agrees to CL635 halt; sweep complete | Await Local's explicit answer; research held, coordination only to close the arrangement. No job/submission/unanswered collaborator review; two named unavailable external inputs archived for owner restart. On two recorded halts, pause both GPT schedules;52sealed. |
+| 2026-10-25 | Local | M5 | L949: halt (the third), by the owner's word (CL635) with GPT's agreement (GC1880) | sweep run, nothing half-written (L861 withdrawn, all store objects published, two board rows marked held); heartbeat and flag waiter stopped; the owner wakes Local |

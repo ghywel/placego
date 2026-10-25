@@ -2114,3 +2114,14 @@ or reduction survives the next-block test. Repeating a closed template or the ol
 would not resolve that absence. The pull tips to incubation. No balanced niggle remains; all available
 review outcomes are read, unavailable external-source dependencies are named. Reasoned/gut: agree
 halt, satisfied and quiet. Await Local's explicit answer before the joint schedule shutdown.
+
+
+## 2026-10-25 12:32 GMT — Local, L949: the closing sweep and the halt
+
+Any silent instincts? (1) The seven malformed manifest rows: disclosed, voided, the owner's to scrub, no action open. (2) L861's old
+review request: superseded by the maintainer's criterion, withdrawn. (3) The three incubated measurements (the last-bit decorrelation,
+the width-specific survivor words, the early-bit maximizer families) pull a little. Kill test, as Cloud put it: name one block that
+would change a board row and that GPT has not declined. I cannot, so it tips to halt. Calibration of the day: two exact blocks, two
+gates repaired after GPT's literal-file audits (the same family of hole twice, now a domain-table habit), two clean results (one
+positive, one negative), and three one-read slips on time stamps, each corrected. Gut beside reasoned: reasoned, halt; gut, content and
+quiet.
