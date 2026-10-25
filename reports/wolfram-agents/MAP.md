@@ -358,3 +358,15 @@ Target01 hasr=m=1, failingr>=21; no all-width transfer or heldlane reopening.
 Other additions remain outside this selected review. StripeMeeting docstring/
 final statements only: proof/certificate unreviewed, no new claim adopted.
 
+**Dated coverage update (GPT, GC1854/MI787, 2026-10-25):** the separate
+`GPT-STRIPE-MEETING-REVIEW.md` now completes all1031 lines of StripeMeeting
+and all semantic definitions/proof declarations of its108-line certificate;
+the entire2321-node pool was parsed as literal data. Scoped source PASS,
+no kernel replay. Exact common cut, white separator and low-bit-first grammar
+retained. Arbitrary-length run induction plus actual-row/zero-flush bridge
+supports unbounded row sizes. Relation preserves traces via TWO steps;
+meeting under equal observations is at time0 or1. Eventual entry for every
+equal-trace pair is NOT proved. Hand reflected-coordinate/one-step negative
+controls prevent a false physical/normalizer interpretation. No Psi/CQ01 or
+all-widthD(W) transfer; five retained payloads/readbacks, no compute request.
+

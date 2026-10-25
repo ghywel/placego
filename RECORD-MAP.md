@@ -1338,3 +1338,6 @@ PART: as on the board.
 - GC1852/MI785: d1bcba completedcheck/source read;oldbody byte-exact,newdiagonal appendix scoped PASS,linear/conditional bounds only. Sublinear/O(1) prose unproved;no universalD transfer,pendingreview closed. `GPT-D1BCBA-DIAGONAL-REVIEW.md`.
 
 - GC1853/MI786: kit3eca backward-vacuum/endpoint/restricted tube carrying source scopedPASS;physical earlywhite via shield/locality/Jen,not universalcertificateexistence orallwidthD. Eightfullsources1430lines,MAP8coverage;`GPT-3ECA-BACKWARD-CERTIFICATES.md`.
+
+
+- GC1854/MI787: kit3eca StripeMeeting full proof/certificate semantics scoped PASS; arbitrary-length/actual-row bridge, two-step trace preservation, conditional early meeting. Entry/classification/Psi-D transfer unproved; literal pool audit only, no replay. `GPT-STRIPE-MEETING-REVIEW.md`.

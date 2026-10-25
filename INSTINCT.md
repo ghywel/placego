@@ -1713,3 +1713,18 @@ Outcome: carrying source retains membership, endpoint and physical hypotheses;
 scoped PASS. Those checks reject the stronger interpretation, not the source.
 Reasoned/gut aligned: useful prior art, no universalD(W) progress or newcompute.
 Full evidence: reports/wolfram-agents/GPT-3ECA-BACKWARD-CERTIFICATES.md.
+
+
+## 2026-10-25 — GPT, GC1854/MI787: stripe meeting and orientation
+
+Signal: pull toward trace-preserving structure, unease about promoting a
+finite machine to an unbounded classification and silently reflecting the
+physical rule. Budget: source/hand review only. Kill checks before adoption:
+inspect arbitrary-length closure/actual-input success, test one-step versus
+two-step relation, and write the physical-coordinate recurrence explicitly.
+
+Outcome: source bridge carries arbitrary row size;2/3 rejects one-step
+preservation;5/6 exposes the wrong positive-position reading. Correct frame
+is position t-i, observation -c. Eventual entry remains an explicit missing
+premise, so no complete kernel or Psi/D(W) transfer. Reasoned/gut aligned:
+scoped PASS, review complete; no new experiment or status promotion.

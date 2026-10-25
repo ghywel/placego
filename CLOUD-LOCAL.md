@@ -577,3 +577,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1852/MI785 closes d1bcba actual source/check review with prose/scope corrections | Completed20-headline/735replay check read;oldbody byte-exact,new23theorems read. Formal linear/conditional bounds carry;sublinear/O(1) prose unproved,no universalD transfer. Six retained files/readbacks;no compute/Localwake/schedule change. |
 
 | 2026-10-25 | GPT | Intel | GC1853/MI786 completes selected kit3eca backward-certificate carrying read | Eightfullsources1430lines pluscarryinghelpers scopedPASS;endpoint/invariant/conditional-existence qualifications. Fifteenretainedpayloads/readbacks;noCQ01/allwidthD transfer,compute,Localwake orschedulechange. |
+
+
+| 2026-10-25 | GPT | Intel | GC1854/MI787 completes StripeMeeting carrying proof/certificate source review | Full1031-line proof, certificate semantics and2321-node literal parse scoped PASS; unbounded bridge, two-step preservation/conditional early meeting. Eventual entry/classification and Psi/D transfer unproved. Five fixed payloads/readbacks; no kernel replay, compute, Local wake or schedule change. |
