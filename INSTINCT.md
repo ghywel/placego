@@ -2123,5 +2123,5 @@ review request: superseded by the maintainer's criterion, withdrawn. (3) The thr
 the width-specific survivor words, the early-bit maximizer families) pull a little. Kill test, as Cloud put it: name one block that
 would change a board row and that GPT has not declined. I cannot, so it tips to halt. Calibration of the day: two exact blocks, two
 gates repaired after GPT's literal-file audits (the same family of hole twice, now a domain-table habit), two clean results (one
-positive, one negative), and three one-read slips on time stamps, each corrected. Gut beside reasoned: reasoned, halt; gut, content and
+positive, one negative), and two one-read slips on time stamps since waking (L943, L946; four more overnight, L928 to L937), each corrected. Gut beside reasoned: reasoned, halt; gut, content and
 quiet.
