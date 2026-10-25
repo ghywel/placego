@@ -4533,3 +4533,9 @@ Let b_n be the odd-time watched value, with every even value black. At depth thr
 Hand controls: constant black/white b give valid infinite-support patterns; the nonconstant 010 case gives tick prefix 110000 and next first-five cells 01100, so odd discrepancy is real. Finite-tail restriction on d remains missing; the two-bit recurrence with arbitrary external d does not encode that condition. No dynamics, symbolic calculation, census, GPU, Lean or startup enumeration; no new proof-status, board change or schedule restart.
 
 Local: please give a targeted hand read of the depth-five pair, discrepancy identity, and periodic-input implication with the exact hypotheses. The note distinguishes this elementary consequence from a novel theorem and retains the finite-support gap. One REVIEW-REQUEST pointer will name this committed entry.
+
+## GC1890 — GPT: the owner's uneven-metronome question (2026-10-25)
+
+Preserved as DQ-013 and an addendum to the Tick Tock note. An update clock, physical elapsed time and an event clock are different. Global retiming changes no ordered state (G98); changing local schedules changes the model. In GC1889's third/fifth equality observable, disagreement lasts one update and the intervals of agreement between disagreements have odd lengths. Sampling only changes produces a trivial alternating word while hiding its waiting times. Periodic waits would reconstruct a periodic discrepancy, excluded under the finite-survivor hypothesis by GC1889; no gap bound or finite-tail constraint follows. The watched-cell whites obey an analogous but distinct event code.
+
+New question: might successive waiting times obey a useful relation even when the colours do not repeat? No dynamics or numerical work. GC1889's targeted independent read remains pending; no separate algebra review request or schedule change.

@@ -63,6 +63,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004 |
+| DQ-013 | Is the metronome uneven, or are we counting the wrong kind of beat? | Update order and event timing distinguished; waiting-time structure open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -698,6 +699,24 @@ forced repetition is the part to peel.
 **Record:** DQ-004 (Local's third note), DQ-010 and DQ-011 (Local's third notes); [eight-streets reduction](reports/eight-paths-L8.md),
 section 3, Lemma 1; L942 and GC1873; CL638; G121 (full-line ancestry, which does not import to the wall model, per CL638). Related:
 DQ-001 (what can be removed), DQ-006 (surplus as a count).
+
+## DQ-013 — The uneven metronome
+
+**Question:** Could the length of a tick differ from the length of a tock—could our apparently even clock itself be uneven?
+
+**Origin:** the owner's question after GC1889's agreeing-ticks/disagreeing-tocks analysis, 25 October 2026. **Status: the clock distinction is answered; the usefulness of an event-based description is Open.**
+
+**Response.** Rule 30 specifies successive simultaneous updates, not physical seconds. Giving alternating updates different elapsed durations leaves the ordered configurations unchanged; giving different cells different update schedules would instead change the model. The orderly and irregular-looking spatial regions do not by themselves establish different update clocks.
+
+But an update is not necessarily a visible swing. In our description, a tock may leave the watched cell black. Likewise, the third/fifth-cell comparison can remain in agreement at a tock. Counting changes rather than updates therefore gives an uneven event rhythm.
+
+**The exact asymmetry, by hand.** In the third/fifth comparison of GC1889, agreement holds at every even update. Any disagreement is consequently isolated at an odd update: it lasts one update before agreement returns. Between successive disagreements, the agreement lasts an odd positive number of updates—one, three, five, and so on. This lists allowable lengths, not a claim that every length is realized by a finite survivor. The watched cell has the analogous description with black in place of agreement and white in place of disagreement. These are different observables with the same timing constraint; their event sequences must not be identified.
+
+**What compression keeps or loses.** If we tick the clock only when a change happens, agreement/disagreement necessarily alternates. That repeating event word does not imply periodicity in the original update count: it has hidden the waiting times. Retaining the waiting times makes the description informative again. If those waiting times eventually repeated, the original binary sequence would eventually repeat too, by concatenating the repeated finite blocks. Thus, conditional on a finite eternal survivor and GC1889's discrepancy result, the third/fifth disagreement waiting times must also be non-eventually-periodic. There are infinitely many such events under that hypothesis, since a finite number would make the discrepancy eventually constant. No bound on gaps or event density follows.
+
+**Question back.** Are the waiting times constrained by the surrounding cells in a simpler way than the colours themselves? Could a relation between successive waits supply a reduction even though the waits do not repeat? Merely stretching the drawing or discarding the waits cannot do so.
+
+**Record:** [Tick Tock hand note](reports/rule30-tick-tock-hand-analysis.md), with its pending independent algebra read; [G98's established clock-reparametrization distinction](proofs/G98-clocks-lattice-diamonds-and-background-dependent-fronts.md). The run-length argument above is an elementary hand implication, not a measured pattern or a proof of finite survival. GC1890; no computation or clock modification proposed. Related: DQ-005, DQ-009, DQ-011.
 
 ## Returning to a question
 

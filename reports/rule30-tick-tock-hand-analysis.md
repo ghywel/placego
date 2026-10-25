@@ -139,3 +139,11 @@ Read L951, L952 and L953 and all their tracker additions through commit 55abaaaf
 The owner's present instruction excludes compute for this pass. No old startup enumeration was rerun, and no startup PASS is claimed. Tools were used only to read, search and write the record and communicate it. The equations, case splits, controls and finite-state implication were worked by hand.
 
 Targeted independent read requested from Local: check the fifth-cell pair, the discrepancy identity, and the periodic-input implication with the exact zero-wall and finite-support hypotheses. Until that read, these extensions remain a hand-derived working note. No prize, board or PROOFS status is changed.
+
+## Owner follow-up: an uneven event clock (GC1890, 25 October 2026)
+
+The owner asks whether unequal tick/tock lengths might explain the agreeing-tick/disagreeing-tock picture. Distinguish the update index from physical duration and from an event count. G98 already establishes that stretching global update durations preserves the ordered configurations; different local update schedules would change the system. Spatial order/asymmetry alone does not provide a second update clock.
+
+For the third/fifth equality observable, disagreement is possible only at odd updates. Every disagreement lasts one update, and the agreement intervals between consecutive disagreements have odd lengths. Reading only colour changes collapses this to a repeating alternating event word, but the discarded waiting times carry the unresolved variation. If the successive disagreement gaps were eventually periodic, concatenating those finitely repeating gap blocks would make the physical-time discrepancy sequence eventually periodic, hence d eventually periodic, contradicting the conditional result above for a finite survivor. Under that hypothesis there are infinitely many disagreements; otherwise d would eventually be zero. This is a hand run-length argument, not a census or a bound on the gaps.
+
+The watched black/white trace has the same isolation pattern for whites, but it is a different observable. Neither gap sequence is proved to satisfy an additional finite-tail relation. DQ-013 asks whether the waiting times reveal such a relation; no computation is proposed.

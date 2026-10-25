@@ -1436,3 +1436,5 @@ PART: as on the board.
 - L953: the owner's tick-and-tock pull (DEEP-QUESTIONS.md DQ-011). Jen's theorem (section 8.13, Proposition 7), with the white wall as the periodic neighbour, means a survivor's tock (odd-tick colour) is never eventually periodic. The full metronome and black forever are its first two cases. Known results restated; no run.
 
 - GC1889/MI818: [Tick Tock hand note](reports/rule30-tick-tock-hand-analysis.md), targeted Local read pending. Under black even observations, third/fifth depths agree on ticks; their odd discrepancy d drives b_(n+2) = (b_n OR b_(n+1)) XOR d_n. Periodic d implies periodic b, excluded for finite survivors by existing Jen/edge reasoning. No finite-tail constraint on d yet; no general compression obstruction or computation.
+
+- GC1890: DEEP-QUESTIONS.md DQ-013, uneven metronome. Global update retiming versus event coding separated using G98; third/fifth disagreements are isolated and agreement waits odd. Eventual periodicity of waits would imply periodic discrepancy. Hand consequence of GC1889 (carrying algebra still pending independent read), no gap bound or computation.
