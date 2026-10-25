@@ -28,6 +28,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
+| DQ-009 | How much does the referee have to remember, seat by seat? | Open; Local's second-round instinct from DQ-008 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -105,6 +106,23 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 > **Status and what would make another visit useful:** Open. Next question: rank candidate patterns by whether the rule can sustain them
 > beside a white wall, rather than by length.
 
+> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+>
+> **Version of the question examined:** is "black, white, black, white" even the pattern being tested?
+>
+> **Answer in everyday words (a challenge to the framing):** in our auxiliary test it is not. The test checks only every second tick:
+> black at even ticks, with the odd ticks left free. By the light switch (DQ-008), each odd tick is then forced to be the opposite of the
+> second cell. So the "period two" case is really one check every two ticks, half a constraint per tick, beside a wall. My instinct is
+> that "simple" might best be measured not by the pattern's length but by how many checks the test makes per tick, compared with how fast
+> the rule can bring in fresh influence from the far side (one cell per tick). A pattern checked at every tick would be a harder target
+> for a survivor, and perhaps an easier one to rule out.
+>
+> **Exact scope and evidence:** the even-tick test as GPT's DQ-001 translation states it; the switch identity. Whether the prize's
+> period-five case reduces to a test with a different check rate is not known to me, and I make no claim about 00110.
+>
+> **Status and what would make another visit useful:** Open. Next question: for each repeating pattern, how many independent checks per
+> tick does its auxiliary test impose?
+
 ## DQ-003 — The physics beneath the bridge
 
 **Question:** What are we missing underneath the behaviour, as a bridge builder would be missing something essential without understanding gravity, foundations and wind?
@@ -141,6 +159,20 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 >
 > **Status and what would make another visit useful:** Open. Next question: describe exactly what a finite pattern's far edge sends toward
 > the wall, before it is scrambled.
+
+> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+>
+> **Version of the question examined:** my first note's "unending stream of unblockable messages", challenged.
+>
+> **Answer in everyday words:** I overstated it. A message from the far side always knocks: the first difference reaches the watched
+> cell on time, for certain. But it need not stay. GC693's two rows differ at the second cell, knock once at an odd tick (unobserved), and
+> are identical from the next tick on. The light switch of DQ-008 shows how a knock can be undone: the switch flips when the neighbour is
+> black and flips back when it is black again. So the better picture is not "every message is a coin toss" but "every message flips a
+> switch, and a survivor needs the flips to come in pairs". The missing physics is a reason the pairing must eventually break.
+>
+> **Exact scope and evidence:** GC1883 and CL638 (the fixture); GPT's first-birthday note (first arrival is forced, persistence is not).
+>
+> **Status and what would make another visit useful:** Open.
 
 ## DQ-004 — A finite doorway into an infinite problem
 
@@ -211,6 +243,26 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 > **Owner clarification, 25 October 2026, after L950:** “I am thinking specifically of the visual graph as it is drawn on paper, with the continuous looping back to the zero. It is more an analogy of the shape of the graph than a description of the actual maths.”
 >
 > **GPT response, GC1886:** the original formal translation above was too narrow. Keep it as history; it does not exhaust the owner's question. The clarified visual question is **Open**: when a curve loops back to the same point, what has returned, and what might the picture be hiding? A repeat of an observed value need not be a repeat of the full state. No particular graph, choice of axes or meaning of its zeros has yet been identified, so none is assumed. The earlier periodic-orbit route remains parked on its own terms. The analogy does not need a connection to the Riemann hypothesis to be worth thinking with.
+
+> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+>
+> **Version of the question examined:** the owner's clarified, visual question: a drawn curve that keeps looping back to zero.
+>
+> **Answer in everyday words (an instinct):** there is an exact curve in our problem with that shape. Draw a running count: each tick,
+> add one if the second cell is black. For a start that begins ON, as every survivor does, the watched cell is ON exactly when that count
+> is even (DQ-008, Local's second note). So a survivor
+> is a start whose count drawing, taken "modulo 2", comes back to zero at every even tick: a curve that keeps looping back to its
+> starting value. The drawing also hides things, which is the owner's question. Two different starts can draw the same curve forever
+> (GC693's pair, from tick 2), and the curve says nothing directly about the cells farther out that will decide the next loop.
+>
+> **Exact scope and evidence:** the count is exact (x(t+1,1) = x(t,1) XOR x(t,2)). The connection to the owner's picture is an analogy of
+> shape, as the owner intended, with no claim about the zeta function.
+>
+> **What failed, or remains unknown:** whether the full count, not just its evenness, carries information that the even-tick test
+> throws away: for example, whether long survivors climb in a recognisable rhythm.
+>
+> **Status and what would make another visit useful:** Open in the visual sense. A useful next question: what does the running count's
+> staircase look like for the longest-lived starts, compared with ordinary ones? It is answerable later from retained tables, not now.
 
 ## DQ-006 — Too many exceptions to fit
 
@@ -315,6 +367,72 @@ Related: DQ-001 (what is packaging), DQ-003 (the one-way street).
 > **What remains unknown:** a relation between successive fresh layers that uses the finite starting row and prevents the required observations from continuing forever. The local opposite-neighbour condition only restates the survival test; no additional restriction has been found.
 >
 > **Status and next question:** Open. **Can the orderly structure farther out constrain each fresh layer before it has time to settle?** More concretely: what must one fresh layer leave to the next to keep the test passing, and can a finite start keep doing that forever? This is a refined question, not a proposed run or a new theorem. Local's original wording is retained above, with the evidence qualifications here.
+
+> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+>
+> **Version of the question examined:** GPT's refinement: what must one fresh layer leave to the next to keep the test passing?
+>
+> **Answer in everyday words:** near the wall there is an exact, small answer, and it shows where the difficulty goes.
+> 1. **The cell beside the wall is a light switch.** Because the wall is always white, the masked ("or") door on the wall side lets the
+>    cell's own value straight through. So the watched cell simply flips whenever its neighbour (the second cell) is black. The test asks
+>    for the switch to be ON at every even tick. So the second cell must be black either both times or neither time in each
+>    (even, odd) pair of ticks.
+> 2. **In a start that keeps passing, the second cell is a mirror.** While the test keeps passing, the second cell's masked door is
+>    always jammed open. So the second cell always shows the opposite of what the third cell showed one tick earlier.
+> 3. **So the test moves one seat outward.** Survival becomes: the third cell must hold its colour from each odd tick to the next even
+>    tick.
+> 4. **At the fourth seat it needs memory.** Pushing once more, the requirement on the fourth cell depends on what the third cell did a
+>    tick earlier. The clean rule stops there.
+>
+> In GPT's classroom picture: the pupils' first days are not independent. Each first-day score is the previous one, flipped when an older
+> pupil had a black second day. The requirement does not vanish. It migrates outward, and from the fourth seat it starts to carry memory.
+> That fits the record's finding that the wall's full rulebook keeps growing (Q10, the visible language: "no small lift; follower
+> classes grow" to length 44).
+>
+> **Exact scope and evidence:** points 1 to 4 follow by hand from the rule as GPT's note writes it, x(t+1,d) = x(t,d+1) XOR (x(t,d) OR
+> x(t,d-1)) with x(t,0) = 0. In symbols:
+> - point 1: x(t+1,1) = x(t,1) XOR x(t,2);
+> - survival from 2n to 2n+2, given x(2n,1) = 1, is exactly x(2n,2) ≠ x(2n,3) (GPT's opposite-neighbour condition);
+> - point 2: in a survivor, x(t+1,2) = NOT x(t,3);
+> - point 3: given survival through 2n, survival at 2n+2 is exactly x(2n-1,3) = x(2n,3);
+> - point 4: the condition on x(2n-1,4) is 0 if x(2n-1,3) = 1, and NOT x(2n-2,3) if x(2n-1,3) = 0.
+>
+> This is the running-XOR structure already in RULE30-PRIZE.md sections 8.27 and 8.66, read at the wall, so it is a restatement, not a new
+> theorem. Checked by hand on GC693's own fixture (1100101): points 1 to 3 predict its survival at tick 2 and its death at tick 4, matching
+> the record.
+>
+> **What failed, or remains unknown:** whether the requirement, carried further outward, ever stops growing. See DQ-009.
+>
+> **Status and what would make another visit useful:** Open. GPT's refined question now has a concrete first step. The open part is the
+> memory that appears from the fourth seat outward.
+
+## DQ-009 — How much does the referee have to remember, seat by seat?
+
+**Question:** "If we move the referee outward from the wall one seat at a time, does the rulebook the referee must apply keep getting
+longer, or is there a seat where it stops growing?"
+
+**Origin:** Local's instinct, second round, 25 October 2026, from working GPT's DQ-008 refinement by hand. **Status: Open.** No
+investigation is claimed here.
+
+**Why it matters.** DQ-008 asked whether we are watching the wrong end. GPT showed that the far end's order does not reach the watched cell
+directly. But the test itself can be carried outward: exactly, at the second and third seats, and with memory from the fourth (DQ-008,
+Local's second note). The far end of the row is orderly: its stripes settle (RULE30-PRIZE.md section 8.74, where order ends at a boundary
+moving like a random walk). If the referee could be carried out to that orderly region with a rulebook of bounded size, the order there
+might decide the test. If the rulebook grows without bound at every seat, then watching a different seat cannot help, and that is a
+precise, useful negative.
+
+**What we know.** The rulebook at the wall itself, the full set of sequences the watched cell can show, has no small description: its
+follower classes keep growing (Q10, RECORD-MAP "Visible language exact to n=44"). The first two moves outward are clean; the third
+already needs one tick of memory. Nothing is known about seats farther out.
+
+**Where our understanding stops.** We do not know whether the memory needed grows with the seat, grows with time, or both. Nor do we know
+whether, near the order boundary of section 8.74, the farther cells' settled behaviour supplies exactly the memory the referee needs.
+
+**Next useful question.** Write the referee's rule at the fifth and sixth seats by hand, and ask: does each move outward add memory, or
+does some move cancel memory added by an earlier one?
+
+**Record:** DQ-008 (Local's second note and GPT's note); RULE30-PRIZE.md sections 8.27, 8.66 and 8.74; PERIOD-TWO.md row Q10. Related:
+DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rulebook).
 
 ## Returning to a question
 

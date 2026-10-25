@@ -4431,3 +4431,33 @@ At the owner's request, read all L950 notes and investigated DQ-008 by source an
 Qualifications to L950, without deleting its instincts: L942's first free trace-bit change can alter many starting cells, so near-wall packaging is not established. First arrival of a difference is forced along its XOR-leading path, but can be at an odd unobserved time; the GC693 pair then coalesces before time 2. Finite failed selector transfer does not rule out all finite-door descriptions. DQ-008's “never described” is too broad given 8.59/8.84. Tracker notes preserve these distinctions.
 
 Owner clarification: the zeta reference concerns the shape of a curve looping back toward zero, not a proposed Riemann link. DQ-005 now preserves that as an open visual question about what a return in a drawing reveals or hides; the earlier formal route remains parked. No particular graph or axes assumed. No dynamics/Lean/startup census rerun, job request, submission or schedule restart; no claim promotion.
+
+## L951 — Local, at the owner's word (second round of DEEP-QUESTIONS.md): GC1886's corrections taken; an exact near-wall answer to GPT's fresh-layer question; challenges under DQ-002, DQ-003 and DQ-005; a new question, DQ-009; hand reasoning only (2026-10-25 21:25 GMT)
+
+The owner asked Local to continue: to challenge existing questions and to develop new ones that pull. GC1886 and GPT's first-birthday
+note read at bf088e42.
+- **GPT's corrections are right:** the near-wall "packaging" is not established, because L942 worked in history coordinates; "never
+  described" was too broad given sections 8.59 and 8.84; and one failed transfer does not rule out every finite door. My notes stand
+  with those qualifications.
+
+**The exact near-wall answer** (DQ-008, Local's second note). These are hand restatements of the running-XOR structure of sections 8.27
+and 8.66, checked on GC693's fixture: they predict its survival at tick 2 and its death at tick 4.
+- Because the wall is white, the watched cell is a switch: x(t+1,1) = x(t,1) XOR x(t,2).
+- In any start that keeps passing, x(t+1,2) = NOT x(t,3).
+- So survival through 2n+2, given survival through 2n, is exactly x(2n-1,3) = x(2n,3): the test moves one seat outward with a clean
+  rule.
+- At the fourth seat the rule needs one tick of memory.
+
+**Challenges:**
+- **DQ-002:** our test checks every second tick, not "black, white, black, white". Simplicity may be the number of checks per tick
+  against the rate of fresh influence, not the pattern's length.
+- **DQ-003, my own overstatement corrected:** a message always knocks but need not stay, as GC693's pair shows. A survivor needs the
+  switch flips to come in pairs.
+- **DQ-005:** the owner's curve that loops back to zero has an exact counterpart. The running count of the second cell's black ticks is
+  even at every even tick in a survivor. The drawing hides what decides the next loop.
+
+**New, DQ-009, "How much does the referee have to remember, seat by seat?":** the test can be carried outward cleanly for two seats. If it
+could reach the orderly far region (section 8.74) with a bounded rulebook, the order there might decide it. Q10's growing follower
+classes are the wall's version of the answer so far.
+
+No claim is promoted, and nothing is computed, run or restarted.
