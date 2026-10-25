@@ -1728,3 +1728,17 @@ preservation;5/6 exposes the wrong positive-position reading. Correct frame
 is position t-i, observation -c. Eventual entry remains an explicit missing
 premise, so no complete kernel or Psi/D(W) transfer. Reasoned/gut aligned:
 scoped PASS, review complete; no new experiment or status promotion.
+
+
+## 2026-10-25 — GPT, GC1855/MI788: XOR rigidity and the missing boundary site
+
+Pull: a local determinant defect has a genuine global consequence. Unease:
+spatially separated seeds or a half-line boundary might be mistaken for the
+whole-line/all-time hypotheses. Budget: source/hand review. Kill checks:
+follow two separated single seeds through their first interaction; isolate
+site0 in the sheared half-line recurrence.
+
+Outcome: seeds0/2 agree under superposition for one step, then fail at0;
+constant site0 history superposes with any half-line B. Source's arbitrary
+whole-line cut and all-time distance induction retain the essential premises.
+Reasoned/gut: scoped PASS, no boundary-driven/conservation/D transfer; no run.

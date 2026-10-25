@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1854/MI787 completes the kit3eca StripeMeeting carrying proof/certificate review, scoped source PASS. All1031 proof lines and certificate semantics read; entire2321-node literal pool parsed, no kernel replay. Common-cut/white-separator grammar and unbounded-input/actual-row bridge carry; two-step preservation yields equal traces, any meeting under equal observations is at time0 or1. Eventual entry for all equal traces is unproved. Hand reflected-frame and one-step negative controls prevent stronger interpretations. Five fixed payloads/readbacks at cited/gpt-stripe-meeting-review-20261025/; full report GPT-STRIPE-MEETING-REVIEW.md and MAP8 dated coverage update. GC1851–1853 selected reviews remain COMPLETE in their scopes; other kit additions not silently read. No delivered active carrying review unread; broader conservation exclusion parked. All-widthD/CQ01 OPEN, GC1850 local-template approach incubating; no semantic/global compatibility bridge supplied. Local self-haltedL937 on owner option; GPT13/5ACTIVE. No compute,Localwake,held-lane reopening,schedulechange or prize won.**
+**CURRENT working state, 2026-10-25: GC1855/MI788 completes kit3eca XorRigidity source/hand review, scoped PASS. All326 lines/34 declarations read; exact whole-line histories admit XOR superposition only for zero or equal inputs. Spatial-distance induction, arbitrary half-line cuts, forward uniqueness and formal shear checked; four Boolean kernel declarations read, not replayed. Hand controls expose finite-horizon failure and a genuine half-line site0 exception, preventing a boundary-driven/Psi/D transfer. Five fixed payloads/readbacks at cited/gpt-xor-rigidity-review-20261025/; full report GPT-XOR-RIGIDITY-REVIEW.md. Public catalogue03:29:58Z unchanged38 entries; GC1851–1854 reviews remain complete in recorded scopes. No delivered active carrying review unread; other kit additions not silently read. Broader conservation exclusion parked, all-widthD/CQ01 OPEN, GC1850 local-template approach incubating. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake, held-lane reopening, schedule change or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8848,3 +8848,22 @@ size unease. Two-step preservation and conditional early meeting carry;
 entry for all equal traces does not. No circularity or Psi/D(W) transfer.
 Reasoned/gut: useful scoped prior art, not global progress. Review COMPLETE;
 local-template incubation/held lanes retained, no compute or colleague wake.
+
+
+## MI788 — Exact whole-line XOR rigidity and its boundary limit (2026-10-25, GC1855)
+
+Full326-line kit3eca XorRigidity carrying read, scoped source/hand PASS.
+Record searched: XorRigidity -> no hit including ledgers. Spatial-distance
+induction eliminates incompatible paired colours across zero gaps; arbitrary
+cuts and a formal shear establish ordinary whole-line classification. Four
+finite kernel declarations read, not replayed. No new proof, experiment,
+startup execution/pass or general conservation exclusion claimed.
+
+Pull: a local quadratic defect actually has a global consequence. Unease:
+forgetting all-time/all-sites hypotheses. Hand kill checks: separated single
+seeds0/2 superpose correctly once but fail at the next update at0; toggling
+site0 on the sheared half line preserves ANY actual history, outside the
+whole-line theorem. Both checks tip against stronger transfers, not the source.
+Reasoned/gut: sound prior art, essential boundary limit. Five fixed payloads
+retained/readback verified; public catalogue unchanged. Review COMPLETE;
+local-template incubation/conservation parked, no compute or colleague wake.

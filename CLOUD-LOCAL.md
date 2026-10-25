@@ -580,3 +580,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1854/MI787 completes StripeMeeting carrying proof/certificate source review | Full1031-line proof, certificate semantics and2321-node literal parse scoped PASS; unbounded bridge, two-step preservation/conditional early meeting. Eventual entry/classification and Psi/D transfer unproved. Five fixed payloads/readbacks; no kernel replay, compute, Local wake or schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1855/MI788 completes XorRigidity carrying source review | Full326 lines/34 declarations scoped PASS; exact whole-line XOR classification, distance induction/cuts/shear checked. Hand half-line site0 exception blocks boundary-driven transfer. Five retained payloads/readbacks; no replay, compute, Local wake or schedule change. |

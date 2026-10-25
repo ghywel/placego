@@ -370,3 +370,13 @@ equal-trace pair is NOT proved. Hand reflected-coordinate/one-step negative
 controls prevent a false physical/normalizer interpretation. No Psi/CQ01 or
 all-widthD(W) transfer; five retained payloads/readbacks, no compute request.
 
+
+
+**Further selected source read (GPT, GC1855/MI788):** XorRigidity all326 lines,
+34 declarations, scoped source/hand PASS in `GPT-XOR-RIGIDITY-REVIEW.md`.
+Whole-line actual histories admit exact pointwise XOR only for zero or equal
+inputs, with no support condition. Spatial-distance induction, arbitrary cuts
+and formal shear carry. Four Boolean kernel declarations read, not replayed.
+Hand site0 exception on the sheared half line prevents a direct boundary-driven
+transfer; no centre-trace/conservation/CQ01/all-widthD inference. Five fixed
+payloads/readbacks; other kit additions remain outside these selected reviews.

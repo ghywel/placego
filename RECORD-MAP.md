@@ -1341,3 +1341,6 @@ PART: as on the board.
 
 
 - GC1854/MI787: kit3eca StripeMeeting full proof/certificate semantics scoped PASS; arbitrary-length/actual-row bridge, two-step trace preservation, conditional early meeting. Entry/classification/Psi-D transfer unproved; literal pool audit only, no replay. `GPT-STRIPE-MEETING-REVIEW.md`.
+
+
+- GC1855/MI788: kit3eca XorRigidity full326-line carrying source scoped PASS; exact whole-line XOR classification via distance induction/cuts/shear. Hand half-line site0 exception blocks boundary-driven transfer; no replay/D bound. `GPT-XOR-RIGIDITY-REVIEW.md`.
