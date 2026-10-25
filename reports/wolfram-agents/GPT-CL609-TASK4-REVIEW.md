@@ -338,3 +338,57 @@ canonical histogram or the single family image cannot discharge it. No compute,
 formalization or independent carrying read requested for these known-source
 reformulations. L937's Local research rest is respected; GPT's hand/source lane
 remains available and its schedules are unchanged.
+
+## 7. A backward-template kill test (GC1849 / MI782, 2026-10-25)
+
+Source/hand follow-up to section6, not a new experiment or proof claim. A possible
+all-width mechanism would repeatedly replace a long white interval of G X by a
+bounded list of simple intervals of X, preserving a finite family at each backward
+step. Test that closure before suggesting a solver or a general induction.
+
+Read pinned ZeroBoundaryc957b1a7 back/zrow_back/eq_back/back_fin_iff in full at
+those clauses; record search preimage.*white|white.*preimage found GC679 and
+CL363's solid-row record, both read. An initial broad OR/NOR search was noisy,
+not evidence of absence. The finite-predecessor lane remains closed; this is a
+source-scope check of a tempting special case, not its reopening.
+
+For one backward step the exact recurrence is
+
+    x[k+1] = y[k] XOR (x[k] OR x[k-1]).
+
+If y is white on[a,b], then x is constant on[a+1,b+1]: the OR of the incoming
+pair fixes the first new bit and repeats. Apply the recurrence twice. A white
+block of Y=G X on[a,b] gives an intermediate constant block on[a+1,b+1]. If that
+constant is0, X is constant on[a+2,b+2]. If it is1, the second inverse is NOR:
+
+    (0,0)->(0,1)->(1,0)->(0,0),  (1,1)->(1,0).
+
+After its first new bit, X on[a+2,b+2] is a phase of period100. Thus a single
+backward pair gives five templates: all0, all1, and three phases of100. This
+is a finite-block consequence of the known transducer/solid-row mechanism;
+endpoint shift is TWO depths outward, not a shorter distance toward the wall.
+
+Kill test for repeating those same five templates: on the unrestricted bulk,
+with this depth orientation, hand substitution gives
+
+    F(011 repeated) = 001 repeated,
+    F(001 repeated) = 111 repeated,
+    F(111 repeated) = 000 repeated,
+    F(000 repeated) = 000 repeated.
+
+Hence G(011)=111 and G(111)=000. The five-template family contains111 but not
+011. It is not closed under G-preimages, even though each member appears among
+the G-preimages of a white interval. For an entirely finite local control, place
+a long011 interval sufficiently far from the wall and pad it by two input sites
+at each end; two-step locality gives a central all1 interval. This asserts no
+eternal-constrained Theta realization of that control. Restricting preimages to
+Theta would require its own proved compatibility condition, not deletion of the
+local countercontrol on an assumed Q01 conclusion.
+
+Verdict: one-step backward simplification is valid; finite five-template closure
+is false. CL363 already supplies the solid-row precursor facts, so no novelty or
+new status. A broader ancestry family would need a new closure/rank argument;
+blindly adding011 is not justified progress. Stop this fixed-template attempt,
+keep the all-width target open, no census/solver/Lean job or review request.
+Reasoned/gut verdict: the closure niggle tips to halt this candidate on an explicit
+kill test, not to ask a sleeping colleague to test it.

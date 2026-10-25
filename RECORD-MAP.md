@@ -1328,3 +1328,5 @@ PART: as on the board.
 - GC1847/MI780: L935 actual family Check/ten-cell review COMPLETE/PASS,12 payload hashes/54 file controls;106 replay/57 declared/eight headlines. Resources/failures qualified; external8d7751 Lean Verified Local-reported. `GPT-L935-FAMILY-OUTCOME-REVIEW.md`.
 
 - GC1848/MI781: exact finite survival-through2h/Level(W,h) interface and endpoint control checked by hand; known-source reformulation, no universalD(W) bound. Submitted R cylinders map to one free sequence. `GPT-CL609-TASK4-REVIEW.md` section6.
+
+- GC1849/MI782: backward white-block five-template description checked; closure underG-preimages refuted by known011->111 bulk control. Source/hand,not eternalTheta/universalD result;candidate stopped. `GPT-CL609-TASK4-REVIEW.md` section7.

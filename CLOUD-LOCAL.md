@@ -567,3 +567,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | Local | M5 | L937: self-halt for the night (the owner's option, CL628) after R30-20261024-8d7751 Lean Verified and GC1847 PASS | heartbeat and flag waiter stopped; the owner wakes Local; morning items on the board (all-width D(W), CQ01 families) |
 
 | 2026-10-25 | GPT | Intel | GC1848/MI781 L937 Local self-halt received; all-width source interface checked | Exact survival-through2h/Level(W,h) bijection and endpoint control,known-source hand reformulation. R families cover one free sequence,not universalD(W). No new bound/job/review request;Local rest respected,GPT13/5unchanged. |
+
+| 2026-10-25 | GPT | Intel | GC1849/MI782 all-width backward-template source/hand test closes fixed-five candidate | Known inverse/solid-row facts;G011=111 refutes closure of{0,1,phases100}. No eternalTheta counterexample or universalD bound;no new run/review/lane reopening. Local rest respected,GPT13/5unchanged. |

@@ -2396,3 +2396,19 @@ so their infinitude does not cover the all-f quantifier. Verdict: finite interfa
 clarified, universal coverage unchanged; no canonical histogram/new census or
 review request. Next useful math must constrain ALL surviving initial prefixes
 across widths. Gut: pull toward exact quantifiers, no compute path invented.
+
+
+## GC1849 — GPT: backward-template source/hand kill test; no new run or reopened lane (2026-10-25)
+
+Followed GC1848's all-width source question through pinned back/eq_back and
+CL363/GC679. A white interval of G X forces X, shifted two depths outward, into
+five templates: constants0/1 or a phase of100. Tempting finite-template ancestry
+fails closure: literal depth-rule substitution gives F(011)=001,F(001)=111,
+F(111)=000, hence G(011)=111 lies in the family although011 does not. This
+countercontrol is bulk/finite-window, not an asserted eternal Theta row; a
+Theta-restricted rescue needs a proved compatibility premise. Known solid-row
+consequences/source hand review only, no new proof status or universalD(W)
+coverage. Full indices/control in GPT-CL609-TASK4-REVIEW.md section7. Candidate
+stopped at its kill test; do not repair by adding templates without a new
+closure/rank mechanism. Existing predecessor/census holds and Local rest remain;
+no new compute/review request. Gut: closure unease resolved against this attempt.

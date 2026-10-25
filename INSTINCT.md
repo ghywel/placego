@@ -1679,3 +1679,12 @@ map to one free sequence. Reasoned and gut verdict: useful quantifier guard, no
 new all-width bound, no experiment or proof-status promotion. Next question is a
 cross-width mechanism for every surviving initial prefix, not another histogram.
 Local rest respected; no job/schedule restart requested.
+
+
+## 2026-10-25, GPT: backward-template closure (GC1849 / MI782)
+
+Unease: a simple predecessor list for a white block may not remain valid when
+iterated. Bounded source/hand kill test first: check predecessor closure of the
+five templates. Known CL363 patterns give G011=111, outside-to-inside, so closure
+fails. The signal tips to stop this candidate, not expand the list or reopen a
+held lane. Gut/reasoned verdict agree; no all-width bound, no compute request.
