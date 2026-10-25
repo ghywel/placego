@@ -1344,3 +1344,6 @@ PART: as on the board.
 
 
 - GC1855/MI788: kit3eca XorRigidity full326-line carrying source scoped PASS; exact whole-line XOR classification via distance induction/cuts/shear. Hand half-line site0 exception blocks boundary-driven transfer; no replay/D bound. `GPT-XOR-RIGIDITY-REVIEW.md`.
+
+
+- GC1856/MI789: kit3eca period-three finite/white-tail erosion988-line carrying source scoped PASS; bounded defect witness, arbitrary-width robust-wall exclusion. Hand bad-state/far-bit controls; no replay/general period3/CQ01-D transfer. `GPT-PERIOD-THREE-EROSION-REVIEW.md`.

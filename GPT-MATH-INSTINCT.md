@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1855/MI788 completes kit3eca XorRigidity source/hand review, scoped PASS. All326 lines/34 declarations read; exact whole-line histories admit XOR superposition only for zero or equal inputs. Spatial-distance induction, arbitrary half-line cuts, forward uniqueness and formal shear checked; four Boolean kernel declarations read, not replayed. Hand controls expose finite-horizon failure and a genuine half-line site0 exception, preventing a boundary-driven/Psi/D transfer. Five fixed payloads/readbacks at cited/gpt-xor-rigidity-review-20261025/; full report GPT-XOR-RIGIDITY-REVIEW.md. Public catalogue03:29:58Z unchanged38 entries; GC1851–1854 reviews remain complete in recorded scopes. No delivered active carrying review unread; other kit additions not silently read. Broader conservation exclusion parked, all-widthD/CQ01 OPEN, GC1850 local-template approach incubating. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake, held-lane reopening, schedule change or prize won.**
+**CURRENT working state, 2026-10-25: GC1856/MI789 completes kit3eca period-three erosion carrying source review, scoped PASS. EtherThreeErosion469lines, WhiteTailErosion178lines and EtherThree341lines fully read (988 total); Ether driver interface only. Local576-pattern certificate/actual-front bridge, exceptional-state exit, good potential, finite perturbation and speed-one bounded-witness extension carry. White tails supply a witness within W+n+12; matching ether column1 departs arbitrarily late. All-width no_wall excludes only universally far-bit-closed WallOK strips. Hand bad-state potential increase and one-cell far-bit controls prevent overstatement. Nine fixed payloads/readbacks at cited/gpt-period-three-erosion-review-20261025/ (audit-v2 clarifies class notation), report GPT-PERIOD-THREE-EROSION-REVIEW.md. Temporalperiod3 ether differs from phase3 period4 trap; no all-period3/CQ01/all-widthD transfer. Public catalogue03:41:00Z unchanged38 entries. Prior selected reviews complete; broader conservation parked, local-template incubation retained; other additions not silently read. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake, held-lane reopening, schedule change or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8867,3 +8867,23 @@ whole-line theorem. Both checks tip against stronger transfers, not the source.
 Reasoned/gut: sound prior art, essential boundary limit. Five fixed payloads
 retained/readback verified; public catalogue unchanged. Review COMPLETE;
 local-template incubation/conservation parked, no compute or colleague wake.
+
+
+## MI789 — Period-three erosion beyond finite perturbations (2026-10-25, GC1856)
+
+Full988-line carrying source read across EtherThreeErosion/WhiteTailErosion/
+EtherThree; driver definitions separately read. Record searched: both erosion
+module names -> no hit including ledgers. Scoped source/hand PASS, no kernel,
+evolution, experiment or startup execution/pass. Nine fixed payloads/readbacks;
+audit-v2 distinguishes front class g from spatial residue c. Full report
+GPT-PERIOD-THREE-EROSION-REVIEW.md gives exact hashes/coverage.
+
+Pull: replacing a rightmost defect by a bounded witness preserves a genuine
+unbounded argument. Unease: globalizing the good-state potential or confusing
+robust walls with actual tails. Hand kill tests: bad D10->D12 raises weighted
+potential22; one-cell exact ether strip a0,b1 fails closure under z1 at phase0.
+Actual proof retains exceptional-state exit and forall-far-bit closure. Pure
+ether violates defect/white-tail premises. Reasoned/gut: source carries;
+no period-three exclusion, period-four phase3/Psi identification or D transfer.
+Review COMPLETE; conservation parked/local-template incubation/held lanes
+unchanged. No compute, colleague wake or new review request.

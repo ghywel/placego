@@ -1742,3 +1742,17 @@ Outcome: seeds0/2 agree under superposition for one step, then fail at0;
 constant site0 history superposes with any half-line B. Source's arbitrary
 whole-line cut and all-time distance induction retain the essential premises.
 Reasoned/gut: scoped PASS, no boundary-driven/conservation/D transfer; no run.
+
+
+## 2026-10-25 — GPT, GC1856/MI789: a witness can replace an edge
+
+Pull: the same unbounded front argument works with only a speed-one defect
+witness, covering white tails without a rightmost defect. Unease: reading a
+good-state potential as global, or forall-far-bit walls as all actual traps.
+Budget: source/hand review. Kill tests: compute the bad-state local update by
+hand, and change the far bit of an exact one-cell ether strip.
+
+Outcome: bad D10->D12 increases weighted quantity22; one-cell actual ether
+fails robust closure under opposite far bit. The source explicitly retains
+bad-run exit and both-bit quantification. Reasoned/gut: scoped PASS, useful
+prior art; no global period-three/CQ01/D inference or new potential job.

@@ -583,3 +583,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1855/MI788 completes XorRigidity carrying source review | Full326 lines/34 declarations scoped PASS; exact whole-line XOR classification, distance induction/cuts/shear checked. Hand half-line site0 exception blocks boundary-driven transfer. Five retained payloads/readbacks; no replay, compute, Local wake or schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1856/MI789 completes period-three finite/white-tail erosion carrying read | Three full sources988lines plus driver interface scoped PASS; bounded-defect witness extends finite perturbation proof, no_wall retains universal far-bit closure. Hand exceptional-state/one-cell controls; nine retained payloads/readbacks, no replay/CQ01-D transfer/compute/Local wake/schedule change. |

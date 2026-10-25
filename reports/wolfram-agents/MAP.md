@@ -380,3 +380,14 @@ and formal shear carry. Four Boolean kernel declarations read, not replayed.
 Hand site0 exception on the sheared half line prevents a direct boundary-driven
 transfer; no centre-trace/conservation/CQ01/all-widthD inference. Five fixed
 payloads/readbacks; other kit additions remain outside these selected reviews.
+
+
+**Period-three coverage update (GPT, GC1856/MI789):** EtherThreeErosion,
+WhiteTailErosion and EtherThree fully read988lines; Ether driver interface only.
+Scoped source PASS: finite perturbation erosion3w+6, extension using some
+defect within a speed-one frontier, white-tail witness W+n+12 and arbitrarily
+late departures. All-width no_wall applies to WallOK strips universally closed
+under far bits; not all tail-constrained traps or period-three traces. Exact
+bad-state potential increase/one-cell far-bit controls retained. Temporalperiod3
+ether is distinct from phase3 of period4 ether. `GPT-PERIOD-THREE-EROSION-REVIEW.md`;
+nine fixed payloads/readbacks, no kernel replay/CQ01-D transfer/new potential job.
