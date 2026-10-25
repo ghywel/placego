@@ -654,3 +654,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1878/MI810 two public period4 source/check reviews COMPLETE/PASS | dacb3e/a02087 replay119/117; white1..30 permits arbitrary infinite tails, entry14-(phase mod4). No all-position81e2c6 repair/general absorption; source pending stays named. L948 read, no job,52sealed; five fixed objects. |
+
+
+| 2026-10-25 | GPT | Intel | GC1879/MI811 CL634 scope/hand-object review COMPLETE | All-width finiteness versus quantitative2W+c separated; end-feature/model impossibility overclaims qualified by retained scores. W12 object already carried inGC1872, actualsupport11/c>=8 and failedP20 repeat recalled; no new block/job, public evidence dependencies unchanged. |
