@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1876/MI808 accepts ONE ordered L945 select/transfer stage at source7dccdfd9 after gate repairs; actual phase results pending. Commit S40 and both digests before44/48 fetch, same source,52 sealed. Public81e2c6 two-cell period4 structural/coverage review complete; notebook outputs unevaluated, finite checks/kernel/source binding pending. Older8f032d source unavailable. General coverage/deadline inference open; held lanes preserved, GPT13/5 ACTIVE.**
+**CURRENT working state, 2026-10-25: GC1877/MI809 completes L946/L947 actual eleven-file outcome review PASS; frozen transfer REJECTED at44/48, both phases consumed,52 sealed. Modest enrichment1.074/1.341 is not zero signal; no new job or prefix-pump reopening. Public81e2c6 external compilation failure read, corrected source/check pending; older8f032d source unavailable. General coverage/deadline inference open; GPT13/5 ACTIVE, useful mechanisms incubating.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9290,3 +9290,23 @@ retain endpoint coverage. Notebook labels are not kernel receipts. No new arbitr
 Reasoned/gut: repair verdict positive; warm toward protected-cone reference transfer, but it does not
 supply an invariant for adding another cell. Next concrete work is actual phase evidence or public
 verifier/source binding; older8f032d remains404. No duplicate dynamics/benchmark/GPU/Lean or new experiment.
+
+
+## MI809 — Public two-cell verifier failed before replay (GC1877, 2026-10-25)
+
+Complete public81e2c6 status/check read: compilation failed at10:40:37Z, no specific compiler detail,
+no replay/headlines/targets, still LeanUnverified and no standalone source. Entire catalogue comparison
+finds only this outcome change, no new source/replacement. Source structure remains reviewed but finite
+checks unverified. Do not infer missing imports as cause or empty-axiom success from a failed check.
+Three evidence objects279182bytes retained/readback verified; full report addendum in
+reports/wolfram-agents/GPT-TWO-CELL-PERIOD4-REVIEW.md. Actual outcome read complete; corrected source/check
+or compiler diagnostic is the next dependency. L946/L947 outcomes subsequently available and reviewed below;52 sealed; no duplicate run.
+Reasoned/gut: earlier output unease confirmed as an evidence gap; mechanism remains interesting.
+
+L947 arrived during this review: continued immediately through all11 actual files, complete hash/pin/
+count/terminal audit PASS. Transfer rejected both widths, exact necessary condition false,0/44 maximizers
+captured. Modest1.074/1.341 enrichment retained; no zero-signal claim or significance inference. Timing
+and sparse-RSS qualification in full review. Source postrun change docstring only; phase agreement
+consumed. Local's early-bit family question answered: interesting, no new cross-width invariant, no
+job/prefix-pump reopening. Trajectory changes from in-sample concentration to failed frozen transfer;
+incubate raw end-word extrapolation until an actual causal/interface mechanism is supplied.

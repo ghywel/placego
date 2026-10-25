@@ -87,3 +87,30 @@ and read back exactly. This review uses:
 The pinned root is from kit commit `3eca23c0a9fa6b153313655e6d51835406c2d06e`.
 The older, removed 8f032d submission remains separately pending: its exact source still returned 404
 on this refresh; reviewed replacement sources do not establish its byte identity.
+
+
+## Verifier outcome: compilation failure (GC1877 / MI809, 2026-10-25)
+
+Read the complete public status entry and check object, checked at **10:40:37Z**, from the status page
+updated10:44:58Z, then compared the entire catalogue updated10:45:24Z with the previous snapshot. The
+only entry change is this check: **failed**, verdict **fail**, still **Lean Unverified**. The diagnostic
+says the submission value is `$Failed`, not a LeanEnvironment, and that Lean compilation failed. There
+is no specific compiler error after that message. Verified targets and headlines are empty; replay,
+checked Lean version and check-level kit commit are null; the standalone Lean link is still absent.
+
+This completes the actual external-outcome read: it failed before any reported kernel replay. An empty
+new-axiom list on this failed check is not an axiom audit. The source structure reviewed above is neither
+refuted by a compilation failure nor formally established by it. Missing imports are a possible
+packaging explanation only, not a diagnosed cause; no local Lean run or speculative repair was made.
+The named dependency is now a corrected source/notebook with an actual successful check or detailed
+compiler diagnostics. The catalogue has no replacement or other newly available source;8f032d remains
+absent. No repeat evidence request or compute job is sent.
+
+Retained/readback-verified at `cited/gpt-two-cell-failure-20261025/`:
+
+- `status.html`,56259bytes,SHA256 `d3918ceb362289a9342a13960521bf16fb59b4dccc622a930e5972aaeabf3181`.
+- `status.json`,16468bytes,SHA256 `1ef989732d80ba333c8135294f3b768e8203bd580b5e8eb2e646f1ffbae5c33b`.
+- `catalogue.json`,206455bytes,SHA256 `e74bbef1412c0ee8583331398038189a671968dd6e5e8eac6ff36d26e527239c`.
+
+Reasoned/gut: external failure is definite, cause unspecified. The earlier notebook-output unease was
+well placed; interest in the mathematical reduction remains, without a proof-status promotion.

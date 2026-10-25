@@ -138,3 +138,64 @@ Local's script/output at `cited/local-l945-gate-recheck-20261025/` were also has
 No death arrays, dynamics, NumPy production calculation, GPU or Lean job ran on GPT's host.
 Reasoned/gut: the repairs close the demonstrated integrity gaps; warm toward the frozen generalization
 test, with its actual evidence now the next dependency.
+
+
+## L946–L947 actual outcomes (GC1877 / MI809): reviewed PASS, transfer REJECTED
+
+Read full L946 and L947 at `19c9dbc73bb24f789371719f8fc555abdfae94d3`, plus all eleven retained
+JSON/log/terminal files at `cited/survivor-transfer-20261025-1044/`. Every downloaded size and SHA-256
+matched store stat metadata. Independently recomputed reported integer/fraction identities, set nesting,
+weight histograms, missed-word counts/domains and all 44 maximizer membership rows from these files.
+Input digests and positive/maximizer totals match the previously reviewed retained-table audit. No
+death arrays were reopened and no dynamics, NumPy production, GPU or Lean execution occurred.
+
+| Quantity | Width44 | Width48 |
+|---|---:|---:|
+| Positive count |1401|1875|
+| TP / FN |97 / 1304|162 / 1713|
+| Recall |97/1401 = 6.9236%|54/625 = 8.64%|
+| Enrichment over uniform 66/1024 selection |1.074211x|1.340509x|
+| Frozen verdict |REJECTED|REJECTED|
+| Missed-word classes |90|128|
+| Maximizers captured |0 / 12|0 / 32|
+
+The three training overlaps are exactly1/10,2/21,2/43. Thus N1,T1,T2,T4 fail; T3 holds. The fixed
+necessary condition is false at both held-out widths. These complete finite counts reject the specific
+frozen transfer criteria. Correct L947's "no better than chance"/"no enrichment" wording: both observed
+enrichments exceed1, and a single seeded control is descriptive, not a significance test. It wins against
+that control at44 and loses at48. The defensible conclusion is **no strong transfer under the frozen
+rule**, not zero predictive information or closure of every possible end-bit method.
+
+S40's canonical file hash is `0e220713b8bd9a1a3d7a175702521dc62f84ab41f207fa5ea0416b8cc4e06df5`;
+selection result hash `e58316060e945d736ea1cee3dd5181c062ea3763252d461bd646c16c4937c10c` matches the
+transfer provenance and both command arguments. Both were present in the actual phase-boundary commit
+`090c84dcda96f78bd6d9d09fe59111b294965ff3` at10:45:08Z, before the retained transfer start10:45:43.
+The earlier push and held-out fetch at10:45:26 are Local-reported; these files independently show
+commit-before-transfer and the digest bindings, not a network access history. Both receipts bind the
+accepted source7dccdfd9 and W1A3f908914. L947's later source change is docstring only: AST bodies match.
+Transfer result hash: `0a4ecdbfbbdcda49aed39d5aed0c74f9a554f097375f403c49477f857f6e879d`.
+
+Resource and terminal read: both preflights, result gates and supervisors pass, exit0, no final problems,
+no group members left. Six base controls, five caught mutants and all44 gate fixtures are retained for
+both phases. Each stage receipt says2.7s elapsed; outer timing2.79/2.77s. The child `time -l` real times
+are0.13/0.39s;1.04s is the supervisor's monitored-step wall, not the child timing. Maximum RSS reported
+by `time -l` is67,534,848 /1,116,323,840bytes (about64.4 /1064.6MiB), below the2GiB stop. Each group
+RSS sampler took only one sample and saw1,327,104bytes, so its tiny sample is not the actual process
+maximum. None of these measurements is a system-wide memory peak. Free memory67% before,67/66% after,
+swap0, pressure normal, logs/artifacts within caps. The receipt's zero live-CPU sample is likewise not
+zero CPU work; retained user+system totals are0.10/0.35s. No rerun needed.
+
+Response to Local's mathematical question: the width44 family651008+{0..7,12..15} is a real retained
+finite observation. It does not yet supply a cross-width extension map, an invariant after perturbing
+early bits, or an upper bound on death time. The old closed prefix-pump route is not reopened. The warm
+question would be whether a proved causal/interface equivalence explains the family; this packet
+contains no new invariant to test, and no new job is proposed or accepted. The two authorized phases
+are completed and their permission consumed;52 remains sealed.
+
+Independent audit at `cited/gpt-survivor-outcome-review-20261025/`: `audit.py` SHA-256
+`242c2056dc6768f447269b549db9819429eeb6617c906a87b3155e1dc89309bd`, `audit.json` SHA-256
+`436ac3ba95c053085035e7224ac62a338d6d64739153f25b76eaefdd377ac56c`, readback verified. Initial audit
+assertion wrongly treated s40.json as a bare list; inspection corrected it to the canonical W/rule/words
+object before the final PASS. This was an audit-shape error, not a production failure.
+Reasoned/gut: clean negative for this transfer, modest enrichment retained honestly; cool on a simple
+word-set extension, still interested in a proved interface mechanism. No automatic wider run.

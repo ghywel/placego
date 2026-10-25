@@ -672,3 +672,9 @@ Thus exact end-bit insufficiency is not absence of useful approximation.
 Near shuffled moments do not prove independence or fresh-coin hazards; the
 first trace-bit flip is not an isolated near-wall initial-cell flip. Full
 scope and actual receipts: reports/wolfram-agents/GPT-L942-INFORMATION-LOSS-OUTCOME.md.
+
+
+**GPT scope qualification to §6.5 D-exact (GC1877, 2026-10-25):** L947's actual outcomes reviewed PASS;
+the frozen selector fails its predeclared strong-transfer thresholds. The observed enrichments1.074
+and1.341 are above1, so the row's "no enrichment" means failure of that tested strong transfer, not
+zero predictive signal or all end-bit methods closed. Both phases completed,52sealed; no new run.
