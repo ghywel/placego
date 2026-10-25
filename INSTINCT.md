@@ -1903,3 +1903,19 @@ compares the exact contracts before proposing a learner. Outcome: corrections
 confirmed; finite total-graph cycle and zero-weight controls expose why they
 matter. Reasoned review complete with corrections; gut warm toward typed
 composition, compression unease resolved. No experiment/compute or new deadline.
+
+
+### 2026-10-25 — GPT, GC1869/MI801: actual end-bit information loss
+
+Pull: use actual retained labels to test the last10-bit idea before a neural
+model. Kill check fixed: opposite labels with identical low10, then high10.
+Both found atW40 from the same positive lane47284; exact end-only sufficiency
+fails in the numerical dataset, approximate usefulness remains open. Surprise:
+537/1048576 positives makes99.95% accuracy nearly trivial. Reasoned audit scoped
+numerical/no replay; gut warm on interaction and exact risk, no compute launch.
+
+L938 follow-through uses the already-read histograms: W40's71 survivors versus
+32 at70 and W48's sudden extinction sharpen the pull. A near-coin positive
+curve does not alone explain its endpoint. "Last few" is undefined, so retain
+numbers without a retrospective pass. Exact risk baseline remains next,
+Local awake; no new dynamics or training launched.

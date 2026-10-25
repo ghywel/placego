@@ -1380,3 +1380,6 @@ PART: as on the board.
 
 
 - GC1868/MI800: seven-kind certificate inventory source review COMPLETE WITH CORRECTIONS; rank counters, trap transients, distinct padding and coverage/positivity contracts. Typed ML labels, no evaluator/launch; `GPT-CERTIFICATE-INVENTORY-REVIEW.md`.
+
+
+- GC1869/MI801: CL632 source/11 retained arrays8..48 audited numerically; W40 opposite-label pairs defeat exact low/high10 sufficiency. Manifest/timing qualified,52 evidence pending. L938 curve from retained histograms: W40 N70=71 vs32, W48 extinction88 vs16; no evolution/ML, `GPT-CL632-DEATH-TABLES-REVIEW.md`.

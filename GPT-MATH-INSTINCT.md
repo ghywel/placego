@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1868/MI800 completes the certificate inventory carrying-source review WITH CORRECTIONS. Rank needs nonincrease plus counter/checkG; trap entry differs from whole-Psi equality; padding pumping and suffix-image exclusion have different contracts and +41/+71 bounds. Chunk coverage, attainment and channel positivity/root hypotheses retained. Typed ML conclusions specified in GPT-CERTIFICATE-INVENTORY-REVIEW.md; no executable schema/compute accepted. Actual dataset specification/results are the next input. Prior completed reads, Local rest, held lanes and GPT13/5 preserved.**
+**CURRENT working state, 2026-10-25: GC1869/MI801 reviews CL632 source and all11 available death arrays8..48: complete byte/schema/histogram checks, numerical scope/no evolution replay. W40 same-low10/high10 opposite labels reject exact end-only sufficiency; positives537/1048576 require imbalance-aware ML baselines. Revised source path in manifest needs correction, timings exclude setup/output. Width52 actual array absent and remains named pending; request retained compressed/parted evidence once, no rerun. Report GPT-CL632-DEATH-TABLES-REVIEW.md. L938 curve appraisal supplied from existing histograms: W40 N70=71 versus32, W48 extinguishes at88 versus16. Exact death>=t convention; no duplicate curve job. Next Local exact conditional-risk source/spec; no launch/retroacceptance. Local awake per owner/L938, held lanes/GPT13/5 preserved.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9123,3 +9123,29 @@ Reasoned: completed with corrections, executable schema unaccepted. Gut: warm
 on typed certificate composition, uneasy about mixed labels; unease resolved by
 keeping each theorem's conclusion separate. No general D result or compute;
 actual dataset contract is next external input, global compatibility incubates.
+
+
+## MI801 — CL632 retained table audit and exact end-bit control (GC1869, 2026-10-25)
+
+Question: do actual tables support the supplied numerical/depth-importance
+claims? Prediction: existing maxima match but compact accuracy claims need exact
+label/bit conventions. Kill checks: full byte binding, complete shape/censor/
+histogram read; find an opposite-label pair sharing each10-bit end before any
+learning claim. Pure retained-file work, no evolution or experiment launched.
+Record consulted: full map/priorGC1867/1868, lane/counting source and P2/D8 outcomes.
+
+All11 arrays8..48 pass recorded checks. W40 pairs47284/180 and47284/47104 defeat
+exact sufficiency of either10-bit end fordeath>60; only537 positive labels among
+1048576. Source-path manifest mismatch and timing window corrected;52 raw array
+absent. Complete result/scope in GPT-CL632-DEATH-TABLES-REVIEW.md.
+Unexpected W2 hand indexing control: lane0->11/death6,lane1->10/death2.
+Reasoned: numerical dataset evidence, not independent dynamic proof. Gut: warm
+on an actual interaction witness; exact locality tipped negative, approximate
+prediction still open.52 review pending retained bytes; no rerun/new job.
+
+L938 refresh incorporated: Local awake by owner. Exact histogram arithmetic
+supplies the full proposed curve (report addendum): first breaches include
+62/128 atW28 and71/32 atW40, W48 all positive checkpoints within factor2 then
+extinction at88 against16. Undefined "last few" prevents compound pass/fail;
+no independence/tail-only inference. Next exact risk protocol/source from Local,
+no duplicate curve/evolution job. W40 already inspected, not blind holdout.
