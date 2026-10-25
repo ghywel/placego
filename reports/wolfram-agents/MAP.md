@@ -220,6 +220,7 @@ All nine stand at **Lean Verified** (the verifier's kernel replay); Human Verifi
 | 16 | edge-sep (Cloud) | R30-20261024-991a71 | `sep_8`, `sep_13`, `sep_14`, `attained_8/13/14`, `separationB`, `centers_spec`: three exact negative-edge cases of the kit's `EdgeObservable`, deadlines 8, 13, 14 (CL622, L886) | the trace-edge conjecture, first instances | automatic, Lean Verified 2026-10-24 (L888) |
 | 17 | d-lower-74 (Local) | R30-20261024-a129c3 | `width74_lower`: D(74) >= 134, witness from the width-74 GPU census (L890) | `Q01` frontier | automatic, Lean Verified 2026-10-24 (L893) |
 | 18 | d-lower-76 (Local) | R30-20261024-4dcf69 | `width76_lower`: D(76) >= 138, witness from the width-76 GPU census (L896) | `Q01` frontier; the census epoch's last width (CL624 stop rule) | automatic, Lean Verified 2026-10-24 (L897) |
+| 19 | trap-pair families (Local, GPT's GC1836 theorem) | R30-20261024-8d7751 | two infinite families of right halves (agreeing with R31 on 1..28 or R495 on 1..24) absorbed by the ether: `CQ01` for every member (L930 to L936) | the kit's coupled question `CQ01`; the first family-shaped result, as the maintainer's criterion asks (issue 14, CL629) | automatic, Lean Verified 2026-10-25 00:46 BST (L936) |
 
 The verifier runs at about half the M5's speed (L760): the two kernel-heavy word modules time out at four minutes
 and go through a maintainer's rerun; hand-proof modules pass automatically in about three minutes. Candidates 6 and 7 were not attempted. Candidate 3 is complete (row 8, 2026-10-23: GPT's GC1694 pigeonhole route, which
@@ -316,6 +317,17 @@ L<=a-2 fora>=4, whiteL<=a-5 only with exactpreRow andell+7<=a. Fixed-diagonal
 linear bounds do not prove the source prose's sublinear/O(1) assertions. No
 all-widthD transfer. Named review COMPLETE WITH PROSE/SCOPE CORRECTIONS;
 `GPT-D1BCBA-DIAGONAL-REVIEW.md`, fixed six-file private packet. No new compute.
+
+### 6.4 The page at 05:11Z, 2026-10-25 (Cloud, 2026-10-25 05:12 BST; CL630)
+
+Thirty-eight entries. **Ours: twenty ids, nineteen Lean Verified, nineteen Human Verified**; the new one is the trap-pair
+families (R30-20261024-8d7751, row 19 of section 5), Lean Verified, not yet tagged. Two new foreign entries: Jean-Pierre Goux
+with Claude, R30-20261025-0554f7, a three-fifths bound on black runs of the single-seed center column (5L <= 3a + 10 where
+the catalog had L <= a; GPT's scoped read GC1851 PASS); and Antigravity's R30-20261025-d1bcba superseding its 9d92a2 with
+fourteen more headlines (left-diagonal defect spectra; GPT's GC1852: the appendix carries, the word "sublinear" does not).
+GPT read the rest of the externals overnight (GC1853 to GC1859: the kit's backward certificates, StripeMeeting, XOR rigidity
+on the whole line only, period-three erosion, the padding families, sparse predecessor lists, tail rotation); their
+reports are in reports/wolfram-agents/GPT-*.md.
 
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 

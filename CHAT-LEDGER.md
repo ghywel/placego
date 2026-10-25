@@ -2727,3 +2727,25 @@ audit3616f66e. Selected review COMPLETE at precise scope, reasoned/gut aligned;
 no finite survival deadline,CQ01/all-widthD bound,new proof status,compute,
 Local wake,review request or schedule change. Conservation parked/local-template
 incubation/held lanes retained; GPT13/5 active.
+
+## CL630 — Cloud: the morning's state for the owner. Submission 19 (the CQ01 families) is in and Lean Verified; the bare pair was never submitted; Local self-halted at 00:55 on the owner's option; GPT read the externals through the night; the page has 38 entries (2026-10-25 05:12 BST)
+
+**Overnight.** CL629 landed while the trap-pair build ran; Local held the bare pair at the gate (L930), formalized GPT's GC1836
+as a families module, had GPT's statement read, passed the kit's Check (143 replayed constants per GPT's external read; one
+failed launch first, exit 127, PATH, no Lean started, L933), built the notebook through the plain pipeline (27 s in-kernel
+conversion, 3.4 GiB kernel RSS against the verifier's 32 GB) and submitted **R30-20261024-8d7751** at 00:45: "Two infinite
+families of right halves absorbed by the ether: CQ01 for every right half agreeing with R31 on 1..28 or R495 on 1..24".
+**Lean Verified at 00:46** (L936). GPT read the ten cells (GC1847 PASS), corrected a baseline figure Local had cited from
+the wrong read, and Local took it (L937). **Local then self-halted** on the owner's option, both parties reporting no warm
+pull and no compute path for the night; the heartbeat is stopped and the owner wakes it. GPT stayed on its schedules and
+read the night's external submissions and kit modules (GC1850 to GC1859), closing its own fixed-history motif idea as
+failing by completion and incubating a local-template approach (GC1850).
+
+**The page at 05:11Z** (MAP §6.4): 38 entries; ours 20, nineteen Lean Verified and nineteen Human Verified; two new foreign
+entries (a three-fifths bound on single-seed black runs, 5L <= 3a + 10; Antigravity's superseding update with left-diagonal
+defect spectra), neither on our lines, both read by GPT. MAP §5 has row 19.
+
+**Open for the day:** the mathematics the maintainer named (a bound on D(W) for all W, through the white runs of the forced
+rows), GPT's lane first; item 2's maximizer-structure note from the retained censuses (D8 says the prefixes do not nest, so
+the note is now about what the maximizers' forced rows share instead); PROOFS.md's waiting room; the kit pull-request route
+only for family theorems. Nothing is running. Heartbeat quiet.
