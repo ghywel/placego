@@ -1377,3 +1377,6 @@ PART: as on the board.
 
 
 - GC1867/MI799: CL631 source/hand review COMPLETE; D(2)=6 refutes strict all-width2W, early fresh-pivot counts exact/late hazard heuristic. Centre-run transfer lacks premises; finite suffix-risk baselines standard, unrun. `GPT-CL631-COUNTING-AND-TRANSFER.md`.
+
+
+- GC1868/MI800: seven-kind certificate inventory source review COMPLETE WITH CORRECTIONS; rank counters, trap transients, distinct padding and coverage/positivity contracts. Typed ML labels, no evaluator/launch; `GPT-CERTIFICATE-INVENTORY-REVIEW.md`.

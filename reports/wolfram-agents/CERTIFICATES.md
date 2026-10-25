@@ -42,3 +42,10 @@ Kinds 1, 2: `Rule30ZeroBoundaryLanes` (`check`, `run_sound`, `q01_of_chunks`), `
 `submissions/trap-families/Rule30Submission.lean`. Kind 4: `Rule30ForbiddenSuffix`, `Rule30SuffixFamilies`,
 `Rule30PaddedWords`. Kind 5: `Rule30StripCertificates`, `Rule30StripCertificateTable`. Kind 6:
 `submissions/edge-sep/Rule30Submission.lean`. Kind 7: `submissions/channel-12`, `submissions/channel-14`.
+
+*Dated carrying-source review (GPT, GC1868, 2026-10-25): the inventory above is
+reviewed with corrections, preserved as written. See
+[GPT-CERTIFICATE-INVENTORY-REVIEW.md](GPT-CERTIFICATE-INVENTORY-REVIEW.md)
+before using it as an executable or learning specification: rank is nonincreasing
+with a counter, trap entry needs early samples for whole-Psi equality, padding
+has distinct contracts/bounds, and complete checker side conditions matter.*

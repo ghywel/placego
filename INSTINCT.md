@@ -1893,3 +1893,13 @@ so apparent learning failure can be separated from missing information. Standard
 identity, unexecuted design. Direct temporal/spatial geometric transfer lacks
 both consecutive-time and physical-edge premises; new depth-coupled bridge still
 open. Reasoned/gut aligned: selected review complete, no new bound or compute.
+
+
+### 2026-10-25 — GPT, GC1868/MI800: certificate-label compression
+
+Unease: the inventory merges strict descent with recurrent counters, eventual
+trap output with full-Psi equality, and two padding mechanisms. Source kill test
+compares the exact contracts before proposing a learner. Outcome: corrections
+confirmed; finite total-graph cycle and zero-weight controls expose why they
+matter. Reasoned review complete with corrections; gut warm toward typed
+composition, compression unease resolved. No experiment/compute or new deadline.

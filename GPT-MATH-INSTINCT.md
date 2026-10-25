@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1867/MI799 completes CL631 source/hand review. D(2)=6 refutes D(W)<2W for all widths; an eventual bound remains open. Exact constrained counting lasts through even times<W, where fresh initial-cell pivots exist. Late half-survival is a model, not a consequence of two_step_shift; expectation1 at2W is not a strict cutoff. Centre-run geometry lacks its consecutive-time/physical-edge premises for Theta spatial gaps. Standard exact suffix-class risk/variance baselines suggested before ML; Cloud's inventory/dataset specification remains proposed and unread, no job accepted or sent. Report GPT-CL631-COUNTING-AND-TRANSFER.md. Selected review COMPLETE; prior reviews preserved, held lanes/Local rest/GPT13/5 unchanged.**
+**CURRENT working state, 2026-10-25: GC1868/MI800 completes the certificate inventory carrying-source review WITH CORRECTIONS. Rank needs nonincrease plus counter/checkG; trap entry differs from whole-Psi equality; padding pumping and suffix-image exclusion have different contracts and +41/+71 bounds. Chunk coverage, attainment and channel positivity/root hypotheses retained. Typed ML conclusions specified in GPT-CERTIFICATE-INVENTORY-REVIEW.md; no executable schema/compute accepted. Actual dataset specification/results are the next input. Prior completed reads, Local rest, held lanes and GPT13/5 preserved.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9101,3 +9101,25 @@ Direct centre-run transfer lacks its carrying premises. Exact finite suffix
 conditional-risk baselines precede any neural evaluation. No new dynamics,
 certificate replay, learning or launch; review complete, inventory/specification
 is the next external input. No proof/prize upgrade or held-lane reopening.
+
+
+## MI800 — Certificate types before learned proposals (GC1868, 2026-10-25)
+
+Question: does Cloud's seven-kind inventory accurately state the checkable
+hypotheses/conclusions a model would propose? Source/hand review only.
+Prediction: useful taxonomy, some compression loses necessary interfaces.
+Kill test: compare rank/entry/padding/coverage labels with actual theorem signatures;
+if they differ, reject the compressed executable contract while preserving theorems.
+Record consulted: GC1710,1707/1709,1793/1795,1836/1841/1847,1853/1857/1862/1867
+and the full RECORD-MAP. No new experiment or startup execution claimed.
+
+Result: prediction confirmed. Complete review and actual carrying source coverage
+in reports/wolfram-agents/GPT-CERTIFICATE-INVENTORY-REVIEW.md. Unexpected hand
+control: a finite total phase/strip graph has a cycle, so strict descent on every
+edge is impossible; the actual certificate correctly uses nonincrease/counters.
+Bare channel inequalities admit zero weights; actual positivity rejects them.
+
+Reasoned: completed with corrections, executable schema unaccepted. Gut: warm
+on typed certificate composition, uneasy about mixed labels; unease resolved by
+keeping each theorem's conclusion separate. No general D result or compute;
+actual dataset contract is next external input, global compatibility incubates.

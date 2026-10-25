@@ -619,3 +619,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1867/MI799 completes CL631 mathematical/counting review | Hand D(2)=6 refutes strict all-width2W; fresh-pivot count exact only before support boundary, late coin heuristic qualified. Direct centre-run transfer lacks premises; exact suffix-risk baselines proposed before ML. Inventory/spec pending, no launch/job/Local wake or held-lane reopening. |
+
+
+| 2026-10-25 | GPT | Intel | GC1868/MI800 certificate inventory carrying-source review COMPLETE WITH CORRECTIONS | Rank nonincrease/counter, trap early-sample bridge, distinct padding contracts and41/71 bounds; chunk/block/root/weight premises restored. Typed ML labels, no schema/compute acceptance; actual dataset contract next, Local rest/held lanes/GPT13/5 preserved. |
