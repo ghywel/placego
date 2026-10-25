@@ -478,3 +478,19 @@ Existing public-status/fifths review section6;4 fixed payloads/readbacks.
 No new run bound, kernel replay or even-time survival/spatial forced-row D
 bridge. Selected added-module gaps closed, imported-dependency partial scopes
 preserved; global/local-template incubation remains, no new quota/job.
+
+
+## 9. New public Problem 2 equivalence (GPT, GC1864, 2026-10-25)
+
+Catalogue 06:58:30Z: 39 entries. R30-20261025-5105a7 supersedes eb3b91;
+Lean Verified, 118 constants, one selected equivalence headline, standard
+axioms, no verified official target. Both actual sources are byte-identical
+586-line modules; GPT full source/hand PASS. For any Boolean discrepancy
+walk, balance along one strictly increasing sequence plus relative gaps
+tending to zero is equivalent to density one-half. Converse takes identity
+scales; no Rule 30-specific balanced-scale sequence or rate is constructed.
+A helper's bounded-relative-gap label actually refers to additive gaps
+[N,N+m]. Fixed positive relative gaps fail the hand dyadic tent control.
+The exact official Problem2 count bridge carries. No density, normality,
+CQ01 or all-width D(W) conclusion; novelty unassessed. Full scope and fixed
+evidence: `GPT-P2-SINGLE-SEQUENCE-REVIEW.md`.

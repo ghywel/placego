@@ -1368,3 +1368,6 @@ PART: as on the board.
 
 
 - GC1863/MI796: CenterRuns full531-line source PASS; inclusive white-window/exclusive count and strict edge-passage guards carry via hand controls. No new D bridge/replay;4 fixed payloads, trajectory incubation retained. `GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md` section6.
+
+
+- GC1864/MI797: new 5105a7 single-sequence Problem 2 iff source PASS, 586 lines byte-equal predecessor; Lipschitz sandwich/official bridge carry. Additive-gap helper label qualified; no density/D(W) proof or replay. `GPT-P2-SINGLE-SEQUENCE-REVIEW.md`.

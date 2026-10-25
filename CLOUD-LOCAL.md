@@ -607,3 +607,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1863/MI796 full CenterRuns coverage COMPLETE/source PASS |531lines/33 bodies; inclusive white-window/count endpoint and STRICT edge-passage guards checked by hand. Existing GC1851 stronger result reused;4 fixed payloads/readbacks, no replay/new D bridge. Trajectory: source coverage advanced, global path unchanged; incubation retained with concrete reopening condition, no quota/compute/Local wake/schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1864/MI797 closes new Problem 2 equivalence and replacement review, source PASS | 5105a7 actual source byte-equal eb3b91, 586 lines; external replay 118/one iff headline. Sandwich/official count bridge carry; helper uses additive gaps. Dyadic tent guard rejects fixed relative gaps. Eight fixed payloads; no density/D(W) proof, compute, Local wake or schedule change. |

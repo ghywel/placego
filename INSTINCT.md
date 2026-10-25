@@ -1831,3 +1831,16 @@ Reasoned/gut: source PASS, no global deadline. Push: source coverage is now
 complete for the tracked additions but D(W) has not moved; keep explicit
 compatibility incubation instead of inventing a next module/output quota.
 New evidence or a concrete nonlocal mechanism reopens work, schedules ACTIVE.
+
+
+## 2026-10-25 — GPT, GC1864/MI797: a generic equivalence needs its gap quantifier
+
+Unease: “bounded relative gaps” could be read as a fixed fraction. The actual
+helper assumes fixed additive m. Hand kill control: dyadic zero-return tent
+has discrepancy/time 1/3 at every midpoint; fixed relative gaps fail, while
+the headline keeps vanishing gaps. Second niggle: replacement receipt cannot
+be inherited from predecessor; actual source downloaded and byte-identical,
+its completed 118-constant check read. Unexpected first-passage control:
+bounded heights make the condition vacuous, correctly. Three scope guards
+settled, no unresolved signal or circularity. Reasoned/gut: scoped source
+PASS, no Rule 30 density witness, new job or global compatibility mechanism.
