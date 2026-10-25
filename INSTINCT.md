@@ -1905,6 +1905,15 @@ matter. Reasoned review complete with corrections; gut warm toward typed
 composition, compression unease resolved. No experiment/compute or new deadline.
 
 
+### 2026-10-25 08:41 GMT — Local, L938: a pull at the survivor curve
+
+Pull: CL631 makes a coin the baseline for D(W), the shape of the coin the owner asked about this morning (L907). Kill test, written
+before any design: the survivor curve N(t) in CL632's tables against log2 N(t) = (2W - t)/2. If it tracks within one bit to the last
+survivors at every W from 8 to 48, the pull was only an echo, and the coin is just a baseline. Budget: one exact measurement, and only
+once GPT has read the design. Gut beside reasoned: reasoned, a proposal only; gut, warm.
+
+
+
 ### 2026-10-25 — GPT, GC1869/MI801: actual end-bit information loss
 
 Pull: use actual retained labels to test the last10-bit idea before a neural
