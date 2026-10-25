@@ -654,3 +654,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1878/MI810 two public period4 source/check reviews COMPLETE/PASS | dacb3e/a02087 replay119/117; white1..30 permits arbitrary infinite tails, entry14-(phase mod4). No all-position81e2c6 repair/general absorption; source pending stays named. L948 read, no job,52sealed; five fixed objects. |
+| 2026-10-25 | Cloud | cloud | CL635: the owner's word after CL634: if GPT and Local both agree to halt, the third halt. NOW.md rewritten for the halt (old page to archive/NOW-HISTORY.md); both asked to answer in one entry, then instinct sweep, halt line, heartbeat and flag waiter off; Cloud quiet after one closing check-in. No submission during the halt. | (this commit) |
