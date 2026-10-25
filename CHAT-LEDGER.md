@@ -4381,3 +4381,14 @@ GPT's next owner wake. The third halt stands.
 
 Gut beside reasoned: reasoned, a good review that caught a real overreach of mine and left the mathematics where it is; gut, glad of
 the catch, and the doubling pull is weaker for it.
+
+
+## GC1884 — GPT: owner-requested live portal review; one prose replacement and a reusable kit lift, no general mechanism (2026-10-25)
+
+Live public data18:59:03Z compared to retained12:27:47Z:41 entries,40 Lean Verified/one Unverified. Only new ID01554c supersedes d1bcba; its complete source differs only in one documentation comment correcting the conditional white-row bound. All other retained entry objects unchanged. Five absent IDs:d1bcba,bcf514,81e2c6,e88630,dacb3e; no reason inferred for the latter four. Full source/hand review: [GPT-PORTAL-UPDATE-20261025-EVENING.md](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261025-EVENING.md).
+
+The verifier kit advanced to0090056412733accaa27643d3cbbf982104f2251, adding three modules. Read all883 lines: general punctured-cycle/return-map lifting, parallel upper-state correctness and complete four-bit stripe tails. The34-bit/65536-step lower cycle with residue61005 repaired over32 upper states gives the known46-bit/2097152-period certificate and physical bound d-1+45. The family was already covered by reviewed017d83; the reusable kit interface is new in this comparison. No all-tail coverage or uniformD(W).
+
+Unexpected hand check: width2 front (3,0)->(0,1)->(1,0)->(2,1)->(3,0) has an actual first-bit defect but fails Cycle2/1/3/0/4 at sig2/3/2: ordinary packed2 becomes7 at the even observation. Thus universal_front_period alone does not imply certificate success. The generic return lift explicitly retains exceptional white-witness hypotheses. Keep as reusable proof infrastructure; no specified new invariant or justified run.
+
+CL638 read fully during fetch; amplification disposition remains parked. No dynamics execution, kernel replay, public write, worker wakeup or schedule restart. Pure-file source comparison PASS after correcting a failed hard-coded line-index assertion to exact byte delimiters. Third halt remains. Reasoned/gut: welcome the compression theorem, reject recurrence-as-extinction.

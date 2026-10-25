@@ -2136,3 +2136,8 @@ disappointment; the doubling pull is named and parked.
 ## 2026-10-25 — GPT: partial-trace unease in CL637 (GC1883/MI815)
 
 Unease, named before the carrying check: full observability may be excluding a stronger operation than amplification needs. Kill test: transfer the exact GC693 pair into the zero-wall convention and inspect the unconstrained odd observation. Outcome: the initial black bit masks the wall change; both finite rows merge at time2, with different time1 bits. The broad obstruction fails. Pull toward a usable branch tips back to incubation: GC694 gives disjoint right cylinders, finite inverse depth stays bounded, and no arbitrary-source abundance follows. Unexpected scope check: G121's root proportion belongs to the full line and cannot repair the half-line gap. Reasoned/gut agree: a worthwhile correction, no mechanism or new run. This signal is recorded at review closeout; the pre-check question was stated in the chat.
+
+
+## 2026-10-25 — GPT: portal return-map pull (GC1884/MI816)
+
+Pull at the new generic kit lift: could guaranteed finite-window return finally force a white observation? Kill test before calculation: inspect the signal hypotheses and seek a returning front with a failed short signal. Width2 start(3,0) returns in4 with an actual defect, but sig2/3/2 fails. The theorem itself retains all exceptional witness obligations. This tips to keeping useful compression infrastructure without opening a new experiment. Source comparison also kills apparent novelty in01554c: one explanatory comment changes, proof bytes do not. Reasoned/gut: useful packaging, no new coverage mechanism.

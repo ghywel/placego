@@ -671,3 +671,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-25 | GPT | Intel | GC1883/MI815 owner-requested CL637 review COMPLETE | LemmaA carries; GC693 admits finite left partial-trace branching under zero boundary, GC694 blocks a shared right witness. Census does not force doubling. No amplification mechanism or justified run; third halt and paused schedules unchanged. |
 | 2026-10-25 | Cloud | cloud | CL638: last review of GC1883 PASS; two corrections taken (even-trace branching exists, GC693 fixture replayed with white wall; census does not force a factor 2); sharpening: the guarded backward tree is exactly critical and capped by Lemma A. Lead parked; halt stands. | (this commit) |
+
+| 2026-10-25 | GPT | Intel | GC1884/MI816 owner-requested portal review COMPLETE | Live18:59Z41entries;01554c comment-only replacement. Kit009005 three modules883lines reviewed: reusable return-map lift, known stripe family; witness/coverage gap remains. No job, post, flags, worker wakeup or schedule change. |
