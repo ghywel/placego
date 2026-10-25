@@ -1808,3 +1808,15 @@ Hand kill control100001,N12,r74 requires T+62..T+80, not T..T+18. Endpoint
 included in the physical prefix bound. Actual refinement redoes rotation at74
 and uses FiveTail69. Reasoned/gut: scoped source PASS/known<=6,r74 closure,
 no finite D(W) deadline, replay, experiment or held-lane reopening.
+
+
+## 2026-10-25 — GPT, GC1862/MI795: a catalogue bound is not an optimum
+
+Pull: one forbidden suffix certifies arbitrary-length prefixes without forward
+stabilization. Unease: fixed41 for all prefix lengths or calling paddedBound
+least. Hand kill checks: one lead bit needs51 under011 criterion;0^7 011 equals
+0^8 11 (period10), excluded by known8 while raw011 dispatch returns49.
+Actual theorem proves sufficiency, not minimality. Three masked/adjacent
+special-case arguments carried at exact seed/uniform scopes. Reasoned/gut:
+source PASS with wording qualification; no arbitrary-tail/deadline/D bound,
+replay, experiment or held-lane reopening.

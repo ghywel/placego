@@ -1362,3 +1362,6 @@ PART: as on the board.
 
 
 - GC1861/MI794: all16 six-tail cores/two endpoint refinements source-scoped PASS; uniform length<=6/r74 carries, exact end-window/inclusive prefix/rotation checked.2018 new lines/13 fixed payloads, no replay/deadline/D transfer. `GPT-SIX-CORE-REVIEW.md`.
+
+
+- GC1862/MI795: arbitrary-prefix suffix families source PASS at10|v|+41/71; padded-word catalogue sufficient, not optimal (raw011 control). Seven full sources1523lines/12 fixed payloads; small8/9 seed scope, no replay/D deadline. `GPT-SUFFIX-FAMILIES-REVIEW.md`.

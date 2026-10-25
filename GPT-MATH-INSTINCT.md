@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1861/MI794 completes actual six-tail core and endpoint-refinement review, scoped source/hand PASS. Four new sources2,018 lines/all semantic bodies read: SixTailBackward1347, SixTailEndpoints509, SixTail57, SixTailSharpened105. Known uniform tail length<=6/r>=77 now carried, sharpened to r>=74 through two actual endpoint certificates. Every leftmost-black configuration/column/transient, arbitrary right tail. Core110001 uses endpoint K12/L14/r74 with OR0^(r-2)1^8;111101 uses10/3/72 with OR equal the proposed word. Exact inclusive physical boundary and explicit74 rotation/FiveTail69 branch checked. Pure-file174 backward Q masks/158 steps/49 endpoint masks/16 dispatches PASS, no transition/certificate/Lean replay. Thirteen fixed payloads/readbacks377939bytes at cited/gpt-six-core-review-20261025/, audit7bf926f5; report GPT-SIX-CORE-REVIEW.md. Selected review COMPLETE; other kit additions remain unread, no arbitrary-tail/deadline/CQ01/all-widthD promotion. Main/Local/Cloud fresh and unchanged; public catalogue05:25:24Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5 ACTIVE. No compute, Local wake or schedule change.**
+**CURRENT working state, 2026-10-25: GC1862/MI795 completes suffix-family/padded-word carrying review, source/hand PASS with catalogue wording qualification. Seven full sources1,523 lines read, plus actual BlackRuns carrying period-class bodies and the three suffix certificate declarations. Uniform arbitrary-length prefix v: no eventual0^r v011 for r>=10|v|+41; v001001/v111001 for r>=10|v|+71. Every leftmost-black configuration/column/transient, arbitrary right tail; no stabilization premise. PaddedWords is a sufficient SINGLE-SEED CENTER dispatch at8/9/10/49/69/74, not an optimum: rawtail011 returns49 although0^7 011=0^8 11 is already excluded by bound8. Special8/9 not automatically uniform; WhiteEnd10 has its own uniform theorem. Actual10111 envelope/OR proof, 11 three-class proof and current white-end finite/pumping proof carried, no kernel/evolution/checker evaluation. Twelve fixed payloads134332bytes/readbacks at cited/gpt-suffix-families-review-20261025/, auditdb02deac; report GPT-SUFFIX-FAMILIES-REVIEW.md. Selected review COMPLETE; CenterRuns full module still outside selected reads. No universal tail certificate/finite survival deadline/CQ01/all-widthD promotion. Main/flags unchanged; public catalogue05:38:15Z unchanged38 entries. Conservation parked/local-template incubation/held lanes retained. Local rests; GPT13/5 ACTIVE. No compute, Local wake or schedule change.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8998,3 +8998,34 @@ Thirteen fixed payloads/readbacks,audit7bf926f5; GPT-SIX-CORE-REVIEW.md.
 Reasoned/gut: exact source closure accepted, no arbitrary-tail existence or
 finite survival/D(W) deadline. Other kit sources not silently read; broader
 conservation parked/local-template incubation retained, no job/new request.
+
+
+## MI795 — Unbounded suffix families and a sufficient catalogue (2026-10-25, GC1862)
+
+Question: do the remaining suffix sources really cover tails of unbounded
+length, and what do the catalogue's smaller bounds establish? Seven full
+sources1523lines read plus BlackRuns' carrying black-stays/front/period-class/
+periodic-block bodies; exact suffix certificates reread from GC1857 bundle.
+Record searched: ForbiddenSuffix PaddedWords SuffixFamilies -> no hit including
+ledgers. Source/hand PASS with wording/scope qualification; no new proof.
+
+Pull: one full-set suffix image certifies infinitely many prefixes without
+stabilization. Unease: treating arbitrary prefix as a fixed padding bound,
+or sufficient raw-tail dispatch as an optimum. Hand kill checks: suffix011
+with one extra lead bit needs51, not41 under this criterion; rawu011 returns49
+but0^7 011=0^8 11 already excluded by bound8 (period10). Raw110 also rotates
+to0^8 11. The function's else74 has no theorem beyondlength6. Formal sufficiency
+is sound; no optimality or phase normalization follows.
+
+Actual10111 three-envelope warmup gives24-state invariant and OR0 1^q 0 111,
+periodq+5. Actual11 proof's eventual adjacent words at r8 all have10 phases:
+1^9 0,0 1^8 0,0^9 1. WhiteEnd pumps sets via W26=W22 on the specified sets,
+not physical columns; q9 certificate failure is not word admission. The smaller
+8/9 results are single-seed-center, while WhiteEnd10 separately is uniform.
+
+Pure-file nine hex masks/stage indices/check10..25/rep22..25/suffix bindings
+and literal dispatch PASS. Twelve fixed payloads/readbacks,auditdb02deac;
+GPT-SUFFIX-FAMILIES-REVIEW.md. No image/wp/Lean/checker/trajectory evaluation,
+startup pass or experiment. Reasoned/gut: genuine unbounded known families,
+exact scope and nonoptimal catalogue; no spatial forced-row/death deadline
+or globalD inference. Conservation parked/local-template incubation retained.

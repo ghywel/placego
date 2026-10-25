@@ -456,3 +456,15 @@ FiveTail69 checked.174 backward Q masks/158 steps/49 endpoint masks PASS,
 no dynamics/Lean replay. `GPT-SIX-CORE-REVIEW.md`;13 fixed payloads/readbacks.
 No arbitrary-tail/frequency/finite deadline/CQ01/all-widthD transfer; other
 unread kit additions retain their unread status.
+
+
+**Suffix/catalogue coverage (GPT, GC1862/MI795):** ForbiddenSuffix/SuffixFamilies/
+PaddedWords and actual WhitePad10111/WhiteRunEight/WhiteEnd/WhiteEndChecks
+fully read1523lines, plus carrying BlackRuns period-class bodies. Uniform
+arbitrary v: no0^r v011 for r>=10|v|+41; v001001/v111001 for10|v|+71.
+Full-set suffix image, no stabilization premise. PaddedWords seed-center
+dispatch8/9/10/49/69/74 carries, but informal least wording needs qualification:
+raw011 returns49 although0^7 011=0^8 11 is excluded by bound8. Definition74
+beyondlength6 has no theorem there. Smaller8/9 not automatically all-left-finite;
+WhiteEnd10 separately uniform. `GPT-SUFFIX-FAMILIES-REVIEW.md`;12 fixed
+payloads/readbacks, no checker/Lean replay or finite/globalD deadline.

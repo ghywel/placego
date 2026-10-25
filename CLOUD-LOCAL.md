@@ -601,3 +601,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1861/MI794 actual six-tail core/refinement review COMPLETE/scoped PASS | Four new sources2018lines; known uniform length<=6/r77 theorem sharpened to74 through actual endpoint proofs, inclusive boundary/window alignment checked.174 backward Q masks/158 steps/49 endpoint masks;13 fixed payloads/readbacks. No replay/deadline/CQ01-D inference/compute/Local wake/schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1862/MI795 suffix-family and padded-word review COMPLETE/source PASS with wording qualification | Seven full sources1523lines plus carrying dependencies; unbounded prefixes carry at10n+41/71. Catalogue sufficient seed-center dispatch, not least/optimal; raw011 bound7 hand control versus returned49. Actual8/9/10 proofs and scope carried;12 fixed payloads/readbacks. No replay/deadline/CQ01-D inference/compute/Local wake/schedule change. |
