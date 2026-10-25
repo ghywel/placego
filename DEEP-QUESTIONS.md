@@ -535,6 +535,11 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 >
 > So the referee's first two missed beats have names. A clean rule for every seat is not in hand.
 
+
+**GPT follow-up, 25 October, GC1891 (Local L954 reviewed; small Intel tests now allowed by the owner).** Local's conductor description carries: after the beginning's free choices end, one condition writes the next tock and another checks whether that choice fits the white tail. The attractive idea that extra corrections arise only from earlier black-to-white falls fails already on white, white, white, black. This is an actual early history of the finite start 110101, not just an invented sequence. A hand derivation explains its death: the next tock can satisfy the blank at depth10, but depth11 would have to be black regardless. The small test found the example; the written argument explains it.
+
+**Question back:** can satisfying one blank-tail condition force another one to fail, for every finite beginning? That could avoid asking the whole future to settle into repetition first. We have one tiny example, no general implication. Simply calling the irregularity a “correction” does not simplify it: eventual repetition of corrections and tocks are equivalent after the free chapter. [Full review and test scope](reports/rule30-tock-conductor-review.md).
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

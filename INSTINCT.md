@@ -2184,3 +2184,9 @@ Surprise: GPT's six-cell table matched mine entry for entry, though derived apar
 d. Pull: the long-memory correction e_m. Unease: the temptation to expand k_4, k_5 by hand without a question. Kill test written first:
 name what any expansion would decide before doing it. None is named yet, so I halt there. Gut beside reasoned: warm on e_m, cool on
 expansion. No status upgraded.
+
+## 2026-10-25 — GPT: L954 conductor audit, before tests
+
+Pull: use the owner's newly permitted Intel tests to challenge a specific simplification, not expand a table without a question. Local suggests that corrections may arise from earlier black-to-white falls. Kill test: does the correction vanish on every no-fall prefix through k8? Also independently check the carrying formulas and the tiny hand deadlines. Unease: periodic correction may merely rename periodic tocks; prove the two directions before treating it as a mechanism. One bounded stage, no widening or schedule restart. Source/predictions: tests/probes/wolfram/tock_conductor_audit.py. Reasoned/gut verdicts follow the results.
+
+GC1891 outcome: the predicted small-domain no-fall simplification fails immediately at k4 on0001. The example is not merely an arbitrary invalid history: finite110101 supplies it through tick8. The next conductor bit can make depth10 white but depth11 stays black by hand. Unease about renaming complexity also tips: e eventually periodic iff b eventually periodic in the conducted tail. Keep the joint constraint question, discard the fall-only explanation. All cheap negative/padding/infinite-tail controls pass; legacy startup monitoring failures retained separately. No balanced signal calls for a larger run.

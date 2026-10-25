@@ -1262,3 +1262,5 @@ app is unpublished by design.
 - `channel12_review.py` (MI658/GC1707, 2026-10-23): optional fixed width-12 independent truth-table/BFS/weight audit with negative controls and caps. Sole attempt failed at RLIMIT_AS setup before reading data; all scientific checks UNREACHED. Source unchanged, no retry; source-level carrying review recorded separately.
 
 - `channel14_source_review.py` (MI660/GC1709, 2026-10-23): sole bounded source/essay/range and tiny width-6 control audit PASS; 919 leaves/918 joins, 263 literal-versus-packed transitions. Three negative witnesses, missing-root name positive. No full width-14 closure/DFA/Lean replay.
+
+- `wolfram/tock_conductor_audit.py` (GC1891/MI819,2026-10-25): owner-authorized tiny Intel audit of L954. 256 trace-prefix inverse/forward controls,15 k0..3 comparisons and32 width<=6 physical cases PASS; no-fall correction hypothesis REFUTED at k4(0001), scan stops. Known-wrong mutant detected, padding/infinite-support controls pass. Full outcome and retained digest in reports/rule30-tock-conductor-review.md. No all-width claim, GPU/Lean or larger run.
