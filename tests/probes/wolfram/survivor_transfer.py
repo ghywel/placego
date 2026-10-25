@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""The rare survivors' late-bit patterns: a frozen transfer test to the sealed widths 44 and 48, revision 1 (Local, 2026-10-25, L944;
-designed in L943, GC1874's scope repairs). NOT an agreed job until GPT accepts this exact file; nothing runs on import; `--controls`
+"""The rare survivors' late-bit patterns: a frozen transfer test to the sealed widths 44 and 48, revision 2 (Local, 2026-10-25, L945;
+designed in L943, GC1874's scope repairs; GC1875's gate repairs). Revision 2: the select result's digest is read once, bound into the
+parent and child gates and committed beside S40's; every count, word, lane and maximizer field has explicit domains (helpers int_in,
+ascending_in); missed-word keys canonical with strictly positive counts at most 2^(n-10); maximizer lanes distinct, ascending, in
+range, the whole list present (12 and 32 rows), in_S equal to its membership sum; the contingency bounds TP <= selected,
+FN <= N - selected and 0 <= control TP <= min(P, 66 * 2^(n-10)); nine new rejection fixtures (GPT's seven, the contingency bound and an
+independent nesting oracle as a base control); docstring claims corrected. Revision 1 (42774c81, L944): GC1875, seven false passes. NOT an agreed job until GPT accepts this exact file; nothing runs on import; `--controls`
 runs the small CPU controls only, with no data.
 
 If this holds, it changes the all-width D(W) row: L942 found the rare long survivors concentrated in few late-bit classes in-sample
@@ -18,11 +23,13 @@ Two supervised phases under one agreement, in this order (GC1874's training-befo
      Computes S_W at each, their sizes (bound to L942's retained counts 10, 21, 43, 66: the late-10 mixed-class counts with e01 = P_A,
      GC1873), the three adjacent nesting transitions |S_W ∩ S_(W+4)| / |S_W| (exploratory: they cannot change the selector), each set's
      word-weight histogram, and writes s40.json (canonical bytes) with its sha256.
-  2. Between the phases, Local records S40's 66 words and its sha256 in the ledger and commits; only then are deaths_44.npy and
-     deaths_48.npy fetched, into a separate HELDDIR.
+  2. Between the phases, Local records S40's 66 words, its sha256 and the select result's sha256 in the ledger and commits; only then
+     are deaths_44.npy and deaths_48.npy fetched, into a separate HELDDIR.
   The source must be byte-identical across both phases: the transfer re-validates the select result against its own digest.
-  3. `stage-transfer OUT INDIR HELDDIR SELECTOUT S40SHA`: re-validates the select result through its own gate, refuses unless s40.json's
-     sha256 equals S40SHA (the committed value), then opens the two held-out tables (pinned digests, histogram bound to GPT's
+  3. `stage-transfer OUT INDIR HELDDIR SELECTOUT S40SHA SELSHA`: the parent reads select_result.json once, requires its sha256 to be
+     SELSHA (committed) and the result to pass the select gate; the child repeats that single read and check before opening anything
+     held out, and refuses unless s40.json's sha256 equals S40SHA (committed); both gates bind the select digest; then the two held-out
+     tables are opened (pinned digests, histogram bound to GPT's
      file-audit.json) and scores the frozen selector. W = 52 stays sealed and is never opened.
 Scored per held-out width W (exact integers; fractions reduced [numerator, denominator]): N = 2^n; P = #A, the prevalence P/N; the
 selected lanes #{w(l) in S40} = 66 * 2^(n-10) by the product structure; TP = #{A and selected}; FN = P - TP; recall TP/P (null when
@@ -36,9 +43,11 @@ W = 48 corroborates with the same frozen rule: >= 3/10 SUPPORTED, <= 3/20 REJECT
 automatic follow-up.
 
 Controls (`--controls`, CPU, no data; all must pass before a stage):
-  - the word against first principles (each bit read by division) for n = 10..14, every lane; the label edge 2d = 3W is negative;
+  - the word against first principles (each bit read by division) for n = 10..14, on every 37th lane; the label edge 2d = 3W is
+    negative;
   - the selected count equals 66 * 2^(n - 10) on synthetic tables, and the scores against a direct per-lane count;
-  - S_W, the nesting and the weight histogram against brute force on synthetic tables at W = 20, 24;
+  - S_W and the weight histogram against brute force on synthetic tables at W = 20, 24; the nesting against an independent two-pointer
+    count over the sorted sets;
   - the control set's digest equals its pin; s40.json's canonical bytes round-trip;
   - five mutants, each of which must fail a control: 'wordlow' (the low ten bits), 'shift' (l >> (n - 9)), 'labelge' (2d >= 3W),
     'swap' (recall and precision exchanged), 'missed' (the missed positives counted among the selected).
@@ -48,15 +57,18 @@ the control roll-ups recomputed from their Boolean details; the select gate re-r
 and digest; the transfer gate recomputes every fraction and verdict from the integers. Valid synthetic packets for both phases are
 assembled by the phases' own code from synthetic tables; every negative fixture names its exact diagnostic.
 Caps for each phase: W1A stage, step wall and CPU 300 s, group RSS 2 GiB, artifacts 10 MiB, log 5 MiB, the inherited pressure,
-swap-growth, free-disk and monitor-failure stops; fresh host headroom and no other research stage.
+swap-growth, free-disk and monitor-failure stops; fresh host headroom and no other research stage. Simultaneous-allocation estimate for
+the transfer at W = 48 (the larger phase; an estimate, not a measurement): raw bytes and the uint16 array 64 MiB, the int64 table 128 MiB,
+lanes and words 256 MiB, four Boolean masks 64 MiB, the int64 temporary of 2d 128 MiB, np.isin's sort-based temporaries up to about
+384 MiB, W = 44's tables about 48 MiB alive alongside, the interpreter and NumPy about 60 MiB: about 1.1 GiB, under the 2 GiB stop.
 Predictions (written before any word or held-out value was seen; seen: L942's counts, GC1873's enrichment figures, GPT's histograms):
   N1 (exploratory) at each of the three transitions 28 -> 32, 32 -> 36, 36 -> 40, at least 80% of S_W lies in S_(W+4).
   T1 W = 44: recall >= 1/2 (SUPPORTED); counterfactual <= 3/20 (REJECTED).
   T2 W = 48: recall >= 3/10 (SUPPORTED); counterfactual <= 3/20 (REJECTED).
   T3 the exact S40 necessary condition FAILS at both widths (FN > 0): the set grows with W (10, 21, 43, 66).
   T4 (low confidence) every maximizer at W = 44 (12 lanes) and W = 48 (32 lanes) has its word in S40.
-Usage: python3 survivor_transfer.py --controls | select OUT INDIR | transfer OUT INDIR HELDDIR SELECTOUT S40SHA
-       | stage-select OUT INDIR | stage-transfer OUT INDIR HELDDIR SELECTOUT S40SHA
+Usage: python3 survivor_transfer.py --controls | select OUT INDIR | transfer OUT INDIR HELDDIR SELECTOUT S40SHA SELSHA
+       | stage-select OUT INDIR | stage-transfer OUT INDIR HELDDIR SELECTOUT S40SHA SELSHA
 """
 import hashlib, io, json, math, os, random, re, sys, tempfile, time
 from fractions import Fraction
@@ -86,7 +98,8 @@ STAGE_S = 300
 JSON_MAX_BYTES = 64 << 10
 MAX_RESULT_BYTES = 4 << 20
 MUTANTS = ('wordlow', 'shift', 'labelge', 'swap', 'missed')
-BASE_KEYS = ('word_first_principles', 'label_edge', 'scores_direct_count', 'select_brute_force', 'control_pin_and_canonical')
+BASE_KEYS = ('word_first_principles', 'label_edge', 'scores_direct_count', 'select_brute_force', 'control_pin_and_canonical',
+             'nesting_merge_oracle')
 PARSE_FAIL = 'parse: nonfinite or invalid JSON'
 HEX64 = re.compile(r'[0-9a-f]{64}')
 
@@ -127,6 +140,26 @@ def sha(path):
 
 def frac(x):
     return None if x is None else [x.numerator, x.denominator]
+
+
+def int_in(x, lo, hi):
+    """A true int (not a bool) with lo <= x <= hi (GC1875)."""
+    return type(x) is int and lo <= x <= hi
+
+
+def ascending_in(xs, lo, hi):
+    """Distinct ints in strictly ascending order, each in [lo, hi]."""
+    return all(int_in(x, lo, hi) for x in xs) and all(a < b for a, b in zip(xs, xs[1:]))
+
+
+def merge_count(a, b):
+    """|a ∩ b| for two ascending lists by a two-pointer walk: an oracle independent of set()."""
+    i = j = c = 0
+    while i < len(a) and j < len(b):
+        if a[i] == b[j]: c += 1; i += 1; j += 1
+        elif a[i] < b[j]: i += 1
+        else: j += 1
+    return c
 
 
 def control_words():
@@ -229,6 +262,9 @@ def controls(mutant=''):
     R[BASE_KEYS[3]] = got == sets and weights(sets[20]) == {str(c): sum(1 for w in sets[20] if bin(w).count('1') == c) for c in sorted({bin(w).count('1') for w in sets[20]})}
     cw = control_words()
     R[BASE_KEYS[4]] = words_digest(cw) == CONTROL_SHA256 and len(cw) == 66 and json.loads(canonical_s40([1, 2]))['words'] == [1, 2]
+    sec = assemble_select({20: synth_table(20, 1), 24: synth_table(24, 2)})
+    a, b = sec['widths']['20']['S'], sec['widths']['24']['S']
+    R[BASE_KEYS[5]] = sec['nesting']['20-24'] == [merge_count(a, b), len(a)] and merge_count([1, 3, 5, 9], [2, 3, 9, 10]) == 2
     return {k: bool(v) for k, v in R.items()}
 
 
@@ -380,7 +416,7 @@ def validate_select(d, src_sha, ex, outdir):
 
 # ---------- phase 3: transfer ----------
 
-def run_transfer(out, indir, helddir, selectout, s40sha):
+def run_transfer(out, indir, helddir, selectout, s40sha, selsha):
     os.makedirs(out, exist_ok=True); t0 = time.monotonic()
     R = {'started': time.strftime('%Y-%m-%dT%H:%M:%S'), 'this_sha256': sha(os.path.abspath(__file__)), 'phase': 'transfer', 'complete': False}
     def save():
@@ -392,6 +428,7 @@ def run_transfer(out, indir, helddir, selectout, s40sha):
     try:
         man, audit = manifest_and_audit(indir)
         raw = read_bounded(os.path.join(selectout, 'select_result.json'), MAX_RESULT_BYTES)
+        if hashlib.sha256(raw).hexdigest() != selsha: raise SystemExit('REFUSED: select_result.json is not the committed digest')
         sel = strict_loads(raw)
         prob = validate_select(sel, R['this_sha256'], expect_select(audit), selectout)
         if prob: raise SystemExit('REFUSED: the select result fails its gate: %s' % prob)
@@ -405,16 +442,16 @@ def run_transfer(out, indir, helddir, selectout, s40sha):
     R['control_words_sha256'] = words_digest(control_words())
     R['widths'] = {str(W): score(tabs[W], W, S, THRESH[W]) for W in HELDOUT}
     R['finished'] = time.strftime('%Y-%m-%dT%H:%M:%S')
-    prob = validate_transfer(R | {'complete': True, 'elapsed_s': 0.0}, R['this_sha256'], expect_transfer(audit, s40sha))
+    prob = validate_transfer(R | {'complete': True, 'elapsed_s': 0.0}, R['this_sha256'], expect_transfer(audit, s40sha, selsha))
     R['complete'] = prob is None
     if prob: R['stopped'] = 'incomplete: %s (no retry)' % prob
     save()
     return R
 
 
-def expect_transfer(audit, s40sha):
+def expect_transfer(audit, s40sha, selsha):
     return {'widths': HELDOUT, 'sha': {W: ARRAY_SHA256[W] for W in HELDOUT}, 'audit': {W: audit[W] for W in HELDOUT},
-            's40_sha256': s40sha, 'inputs': {'manifest_v2': MANIFEST_V2_SHA256, 'file_audit': FILE_AUDIT_SHA256}, 'thresh': THRESH}
+            's40_sha256': s40sha, 'select_sha256': selsha, 'inputs': {'manifest_v2': MANIFEST_V2_SHA256, 'file_audit': FILE_AUDIT_SHA256}, 'thresh': THRESH}
 
 
 TRANSFER_KEYS = {'started', 'this_sha256', 'phase', 'controls', 'gate_controls', 'inputs', 'select', 'control_words_sha256', 'widths', 'finished',
@@ -455,13 +492,24 @@ def validate_transfer(d, src_sha, ex):
     if set(d) != TRANSFER_KEYS or d['phase'] != 'transfer': return 'keys: top level'
     if set(d['widths']) != {str(W) for W in ex['widths']}: return 'keys: widths'
     S = sl['words']
-    if S != sorted(set(S)) or not all(0 <= x < (1 << K) for x in S) or not HEX64.fullmatch(sl['s40_sha256']): return 'domains: select'
+    if not ascending_in(S, 0, (1 << K) - 1) or not HEX64.fullmatch(sl['s40_sha256']) or not HEX64.fullmatch(sl['result_sha256']): return 'domains: select'
     for W in ex['widths']:
-        s = d['widths'][str(W)]; N = 1 << (W // 2)
-        if not (s['N'] == N and 0 <= s['TP'] <= s['P'] <= N and 0 <= s['FN'] and 0 <= s['selected'] <= N and s['verdict'] in ('SUPPORTED', 'REJECTED', 'INCONCLUSIVE', 'UNDEFINED')):
-            return 'domains: W=%d' % W
+        s = d['widths'][str(W)]; n = W // 2; N = 1 << n; m = 1 << (n - K)
+        if not (s['N'] == N and int_in(s['P'], 0, N) and int_in(s['selected'], 0, N) and int_in(s['TP'], 0, min(s['P'], s['selected']))
+                and int_in(s['FN'], 0, N - s['selected']) and int_in(s['control']['TP'], 0, min(s['P'], 66 * m))
+                and s['verdict'] in ('SUPPORTED', 'REJECTED', 'INCONCLUSIVE', 'UNDEFINED')):
+            return 'domains: W=%d counts' % W
+        mw = s['missed_words']
+        if not (all(k.isdigit() and str(int(k)) == k and 0 <= int(k) < (1 << K) for k in mw) and all(int_in(v, 1, m) for v in mw.values())
+                and (s['missed_example'] is None or int_in(s['missed_example'], 0, N - 1))):
+            return 'domains: W=%d missed' % W
+        mx = s['maximizers']; lanes = [r[0] for r in mx['lanes']]
+        if not (int_in(mx['count'], 1, N) and int_in(mx['in_S'], 0, mx['count']) and ascending_in(lanes, 0, N - 1)
+                and all(int_in(r[1], 0, (1 << K) - 1) for r in mx['lanes'])):
+            return 'domains: W=%d maximizers' % W
     if not same(d['inputs'], {**ex['inputs'], 'arrays': {str(W): ex['sha'][W] for W in ex['widths']}}): return 'bindings: input digests'
     if sl['s40_sha256'] != ex['s40_sha256'] or sl['s40_sha256'] != hashlib.sha256(canonical_s40(S)).hexdigest(): return 'bindings: s40 digest'
+    if sl['result_sha256'] != ex['select_sha256']: return 'bindings: select digest'
     if d['control_words_sha256'] != CONTROL_SHA256: return 'bindings: control words'
     for W in ex['widths']:
         s = d['widths'][str(W)]; a = ex['audit'][W]; n = W // 2
@@ -547,9 +595,10 @@ def synthetic_transfer():
     th = {24: (Fraction(1, 2), Fraction(3, 20)), 28: (Fraction(3, 10), Fraction(3, 20))}
     good = {'started': 's', 'this_sha256': 'S', 'phase': 'transfer', 'controls': c, 'gate_controls': gc, 'finished': 'f', 'complete': True,
             'elapsed_s': 0.1, 'inputs': {'manifest_v2': 'M', 'file_audit': 'F', 'arrays': {'24': 'b24', '28': 'b28'}},
-            'select': {'result_sha256': '0' * 64, 's40_sha256': s40sha, 'words': S}, 'control_words_sha256': CONTROL_SHA256,
+            'select': {'result_sha256': 'e' * 64, 's40_sha256': s40sha, 'words': S}, 'control_words_sha256': CONTROL_SHA256,
             'widths': {str(W): score(tabs[W], W, S, th[W]) for W in tabs}}
-    ex = {'widths': (24, 28), 'sha': {24: 'b24', 28: 'b28'}, 'audit': audit, 's40_sha256': s40sha, 'inputs': {'manifest_v2': 'M', 'file_audit': 'F'},
+    ex = {'widths': (24, 28), 'sha': {24: 'b24', 28: 'b28'}, 'audit': audit, 's40_sha256': s40sha, 'select_sha256': 'e' * 64,
+          'inputs': {'manifest_v2': 'M', 'file_audit': 'F'},
           'thresh': th}
     return json.loads(json.dumps(good, allow_nan=False)), ex
 
@@ -595,13 +644,27 @@ def transfer_fixtures():
         else: mw['1023'] = 1
     def mx(d):
         r = d['widths']['24']['maximizers']['lanes'][0]; r[2] = not r[2]
+    def control_negative(d):
+        c = d['widths']['24']['control']; c['TP'] = -1; c['recall'] = [-1, 10]
+    def missed_cancel(d):
+        s = d['widths']['28']; mw = s['missed_words']; S = set(d['select']['words'])
+        k = sorted(mw)[0]; mw[k] += 1; extra = next(str(w) for w in range(1024) if w not in S and str(w) not in mw); mw[extra] = -1
+    def missed_range(d):
+        s = d['widths']['24']; s['missed_words']['1024'] = 1; s['missed_example'] = 4096
+    def mx_repeat(d):
+        x = d['widths']['24']['maximizers']; r = list(x['lanes'][0]); r[2] = True; r[1] = r[0] >> 2
+        x['lanes'] = [list(r), list(r), list(r)]; x['count'] = 3; x['in_S'] = 3
+    def mx_range(d):
+        x = d['widths']['24']['maximizers']; x['lanes'] = [[4096 + i, (4096 + i) >> 2, False] for i in range(len(x['lanes']))]; x['in_S'] = 0
+    def tp_over(d):
+        s = d['widths']['24']; s['TP'] = s['selected'] + 1
     return [
         ('good_transfer_passes', put(['finished'], 'f'), None),
         ('types_select_null', put(['select'], None), 'types: select'),
         ('types_necessary_integer', put(['widths', '24', 'necessary'], 1), 'types: W=24'),
         ('types_recall_float', put(['widths', '24', 'recall'], 0.5), 'types: W=24'),
         ('keys_extra_score', put(['widths', '24', 'extra'], 1), 'keys: W=24'),
-        ('domains_verdict', put(['widths', '24', 'verdict'], 'MAYBE'), 'domains: W=24'),
+        ('domains_verdict', put(['widths', '24', 'verdict'], 'MAYBE'), 'domains: W=24 counts'),
         ('bindings_s40_digest', put(['select', 's40_sha256'], '0' * 64), 'bindings: s40 digest'),
         ('bindings_control_words', put(['control_words_sha256'], '0' * 64), 'bindings: control words'),
         ('bindings_P', lambda d: d['widths']['24'].__setitem__('P', d['widths']['24']['P'] + 1), 'bindings: P W=24'),
@@ -610,6 +673,14 @@ def transfer_fixtures():
         ('arithmetic_verdict', verdict, 'arithmetic: W=24 verdict'),
         ('arithmetic_missed', miss, 'arithmetic: W=28 missed'),
         ('arithmetic_maximizer_flag', mx, 'arithmetic: W=24 maximizers'),
+        ('gc1875_select_digest_empty', put(['select', 'result_sha256'], ''), 'domains: select'),
+        ('gc1875_select_digest_wrong_64hex', put(['select', 'result_sha256'], '0' * 64), 'bindings: select digest'),
+        ('gc1875_control_tp_negative', control_negative, 'domains: W=24 counts'),
+        ('gc1875_missed_cancelling_negative', missed_cancel, 'domains: W=28 missed'),
+        ('gc1875_missed_word_and_example_out_of_range', missed_range, 'domains: W=24 missed'),
+        ('gc1875_maximizers_repeated', mx_repeat, 'domains: W=24 maximizers'),
+        ('gc1875_maximizers_out_of_range', mx_range, 'domains: W=24 maximizers'),
+        ('contingency_tp_above_selected', tp_over, 'domains: W=24 counts'),
         ('completion_rollup', put(['controls', 'base', BASE_KEYS[1]], False), 'completion: control roll-ups'),
         ('completion_flag', put(['complete'], False), 'completion: complete flag'),
     ]
@@ -661,7 +732,7 @@ def supervised(out, step, argv, result_name, validate):
             'log_max_bytes': 5 << 20}
     H.CAPS['stage_s'] = STAGE_S; H.CAPS['rss_stop_bytes'] = 2 << 30; H.CAPS['artifacts_max_bytes'] = 10 << 20; H.CAPS['log_max_bytes'] = 5 << 20
     sup = H.Supervisor(out, out); Rc = sup.receipts
-    Rc['survivor_transfer'] = {'this_sha256': src_sha, 'w1a_sha256': W1A_SHA256, 'phase': step, 'argv_tail': argv[-3:] if step == 'transfer' else [],
+    Rc['survivor_transfer'] = {'this_sha256': src_sha, 'w1a_sha256': W1A_SHA256, 'phase': step, 'argv_tail': argv[-2:] if step == 'transfer' else [],
                                'sealed': list(SEALED), 'caps': caps}
     sup.save()
     if H.pressure_bad(sup.baseline):
@@ -686,15 +757,19 @@ def stage_select(out, indir):
     return supervised(out, 'select', [indir], 'select_result.json', lambda d, s, rdir: validate_select(d, s, expect_select(audit), rdir))
 
 
-def stage_transfer(out, indir, helddir, selectout, s40sha):
-    if not all(os.path.isabs(p) for p in (indir, helddir, selectout)) or not HEX64.fullmatch(s40sha):
-        print('REFUSED: INDIR, HELDDIR, SELECTOUT absolute and S40SHA 64-hex'); return 3
+def stage_transfer(out, indir, helddir, selectout, s40sha, selsha):
+    if not all(os.path.isabs(p) for p in (indir, helddir, selectout)) or not HEX64.fullmatch(s40sha) or not HEX64.fullmatch(selsha):
+        print('REFUSED: INDIR, HELDDIR, SELECTOUT absolute and S40SHA, SELSHA 64-hex'); return 3
     try:
         _, audit = manifest_and_audit(indir)
-    except SystemExit as e:
+        raw = read_bounded(os.path.join(selectout, 'select_result.json'), MAX_RESULT_BYTES)
+        if hashlib.sha256(raw).hexdigest() != selsha: raise SystemExit('REFUSED: select_result.json is not the committed digest')
+        prob = validate_select(strict_loads(raw), sha(os.path.abspath(__file__)), expect_select(audit), selectout)
+        if prob: raise SystemExit('REFUSED: the select result fails its gate: %s' % prob)
+    except (SystemExit, ValueError, OSError) as e:
         print('STOP:', e); return 1
-    return supervised(out, 'transfer', [indir, helddir, selectout, s40sha], 'transfer_result.json',
-                      lambda d, s, rdir: validate_transfer(d, s, expect_transfer(audit, s40sha)))
+    return supervised(out, 'transfer', [indir, helddir, selectout, s40sha, selsha], 'transfer_result.json',
+                      lambda d, s, rdir: validate_transfer(d, s, expect_transfer(audit, s40sha, selsha)))
 
 
 if __name__ == '__main__':
@@ -703,10 +778,10 @@ if __name__ == '__main__':
         sys.exit(0 if all_controls() else 1)
     if len(a) == 3 and a[0] == 'select':
         R = run_select(a[1], a[2]); print('SURVIVOR SELECT', 'COMPLETE' if R['complete'] else 'INCOMPLETE'); sys.exit(0 if R['complete'] else 1)
-    if len(a) == 6 and a[0] == 'transfer':
+    if len(a) == 7 and a[0] == 'transfer':
         R = run_transfer(*a[1:]); print('SURVIVOR TRANSFER', 'COMPLETE' if R['complete'] else 'INCOMPLETE'); sys.exit(0 if R['complete'] else 1)
     if len(a) == 3 and a[0] == 'stage-select':
         sys.exit(stage_select(a[1], a[2]))
-    if len(a) == 6 and a[0] == 'stage-transfer':
+    if len(a) == 7 and a[0] == 'stage-transfer':
         sys.exit(stage_transfer(*a[1:]))
     print(__doc__); sys.exit(2)

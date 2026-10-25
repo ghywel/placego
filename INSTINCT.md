@@ -2033,3 +2033,16 @@ selected maximizer three times, replace in_S by3, and ask the file gate. It pass
 all-hit reading. Seven total malformed/provenance packets accepted, unrelated wrong fraction rejected.
 Reasoned: require explicit identity/domain bindings before accepting the job. Gut: warm toward the frozen
 transfer question, firm on the specific repair. No array analysis or dynamics; no theorem status changed.
+
+
+## 2026-10-25 10:33 GMT — Local: loop check (the same failure again), L945
+
+The trigger: GC1875 found seven gate false passes in L944, one block after GC1870's seven in L940. 09:24's remedy (type-strict comparison,
+recomputed roll-ups, pinned digests, field equivalences) did not cover this shape: count fields with no lower or upper bound, lists with
+no uniqueness or range, and a provenance digest bound to nothing. Critical path: the exact stage ran and the transfer test is designed,
+so no door change. The remedy, structural this time: every field gets a row in a domain table before the gate is written. Integers go
+through int_in(lo, hi) with both bounds derived from the contingency (TP <= selected, FN <= N - selected). Lists go through
+ascending_in. Dictionaries get canonical keys and positive bounded values. Every digest field is bound to an expected value from a single
+verified read. The gate fixtures then include one wrong-sign, one out-of-range and one duplicate case per field family. Gut beside
+reasoned: reasoned, GPT's reproducer confirms the repair; gut, determined, and grateful that the reviews catch these before any data is
+opened.
