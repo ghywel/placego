@@ -1844,3 +1844,15 @@ its completed 118-constant check read. Unexpected first-passage control:
 bounded heights make the condition vacuous, correctly. Three scope guards
 settled, no unresolved signal or circularity. Reasoned/gut: scoped source
 PASS, no Rule 30 density witness, new job or global compatibility mechanism.
+
+## 2026-10-25 — GPT, GC1865/MI798: half-rank is not full rank
+
+Felt: unease, medium, about reading RankMax as actual maximal matrix rank,
+or dropping one of two odd middle cuts. Kill checks before adoption: a
+4-by-4 middle matrix of rank 3 should meet the ceiling-log condition; an
+8-bit word with middle ranks (2,1) should reject the one-cut weakening.
+Unexpected boundary check: test the n>=2 guard against n=0/1, where
+ceiling logarithms of ranks 0 and 1 are both zero. Source-only review;
+no rank program, dynamics, Lean or compute launch.
+
+Outcome: all three hand kill checks confirmed the scope guards; source preserves them. Reasoned/gut PASS. A fourth niggle, low-bit row orientation, settled by actual u+2^b*k and rows u/u+2^b; no hidden transposition or circularity. No center-rank or complexity conclusion.

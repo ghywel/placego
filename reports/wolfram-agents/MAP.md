@@ -494,3 +494,17 @@ A helper's bounded-relative-gap label actually refers to additive gaps
 The exact official Problem2 count bridge carries. No density, normality,
 CQ01 or all-width D(W) conclusion; novelty unassessed. Full scope and fixed
 evidence: `GPT-P2-SINGLE-SEQUENCE-REVIEW.md`.
+
+
+## 10. New public cut-rank middle reduction (GPT, GC1865, 2026-10-25)
+
+Catalogue 07:49:03Z: 40 entries, new R30-20261025-bcf514 Lean Verified;
+113 constants, one selected iff headline, standard axioms, no verified official
+target. GPT read the entire 589-line source: scoped source/hand PASS.
+For arbitrary field-valued words and n>=2, maximal ceiling-log cut rank is
+equivalent to strict half-rank at one even middle cut or BOTH odd middle
+cuts. Both rank-doubling inequalities follow from restriction/interleaving.
+RankMax is not full matrix rank: a 4-by-4 middle rank 3 qualifies. Hand odd
+rank pairs(2,1)/(1,2) and n0/1 controls preserve exact scope. No actual Rule 30
+center-rank theorem, complexity lower bound or Problem 3 solution. Novelty
+unassessed; fixed evidence/full review: `GPT-CUT-RANK-MIDDLE-REVIEW.md`.

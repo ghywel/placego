@@ -610,3 +610,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1864/MI797 closes new Problem 2 equivalence and replacement review, source PASS | 5105a7 actual source byte-equal eb3b91, 586 lines; external replay 118/one iff headline. Sandwich/official count bridge carry; helper uses additive gaps. Dyadic tent guard rejects fixed relative gaps. Eight fixed payloads; no density/D(W) proof, compute, Local wake or schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1865/MI798 closes new cut-rank middle reduction review, source PASS | bcf514 full 589-line source/external113-constant check read. Both rank-doubling directions carry; ceiling-log scope, two odd middles and n>=2 essential. Five fixed payloads; no actual center-rank/complexity/D(W) result, replay, job, Local wake or schedule change. |

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1864/MI797 completes new external Problem 2 single-sequence equivalence and replacement reviews. Actual eb3b91/5105a7 sources byte-identical, 586 lines; replacement Lean Verified, 118 replayed constants, one iff headline, no verified official target. Source/hand PASS: Lipschitz sandwich plus identity converse and exact official count bridge. Bounded-gap helper assumes ADDITIVE [N,N+m] gaps despite relative label. Hand dyadic tent has zero discrepancy at dyadic endpoints but ratio 1/3 at midpoints, so fixed relative gaps do not suffice. No actual Rule 30 balanced-scale witness, rate, density or all-width D(W) result. Eight fixed payloads/readbacks, audit fa1bfea2; report GPT-P2-SINGLE-SEQUENCE-REVIEW.md. Both named reviews COMPLETE. Global compatibility incubation and conservation parked remain; Local rests, GPT 13/5 ACTIVE, no compute/wake/schedule change.**
+**CURRENT working state, 2026-10-25: GC1865/MI798 completes new external cut-rank middle reduction review. bcf514 Lean Verified, 113 replayed constants/one iff headline, no verified official target. Full 589-line source/hand PASS: even/odd restrictions and inverse interleaving prove both rank-doubling directions, strict half-rank propagates to all cuts. RankMax is maximal CEILING-LOG rank, not full rank; odd lengths need BOTH middle cuts, n>=2 retained. Hand middle ranks (2,1)/(1,2), central rank 3 at n=4 and n0/1 controls carry qualifications. Five fixed payloads/readbacks, audit a3ba4976; report GPT-CUT-RANK-MIDDLE-REVIEW.md. No actual center-word rank theorem, complexity bound, Problem 3 or all-width D(W) result. Review COMPLETE, no replay/job/wake/schedule change. GC1864 Problem 2 review complete; conservation parked/global compatibility incubated, Local rests, GPT 13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9071,3 +9071,21 @@ Eight fixed payloads/readbacks, audit fa1bfea2; no replay or compute.
 Both named public reviews COMPLETE; global compatibility remains incubated,
 conservation parked, Local rests, GPT 13/5 ACTIVE. Informational, no new job,
 Local wake, colleague review request or schedule change.
+
+
+## MI798 — GC1865: exact scope of new cut-rank equivalence
+
+New bcf514 is Lean Verified (113 replayed constants, one iff headline,
+standard axioms, no official target verified). Entire actual 589-line source
+read: scoped source/hand PASS. Even/odd row restrictions and inverse
+interleaving prove both rank-doubling inequalities; strict half-rank then
+propagates outward using row/column ceilings. Even lengths need one middle
+cut, odd lengths BOTH middle cuts; n>=2 retained. RankMax means maximal
+CEILING-LOG rank, not full matrix rank. Hand 10011001 and 11000011 have middle
+ranks (2,1)/(1,2), showing both odd tests matter. At n=4, ones at 0/5/10 give
+rank profile 1/2/3/2/1, so central rank 3 already qualifies; n0/1 guard checked.
+Full report: reports/wolfram-agents/GPT-CUT-RANK-MIDDLE-REVIEW.md.
+Five fixed payloads/readbacks, audit a3ba4976. Generic finite-word equivalence,
+no actual center-word rank theorem, complexity lower bound, Problem 3 or D(W)
+result. Review COMPLETE, no replay/compute/Local wake/schedule change;
+conservation parked/global compatibility incubation retained, GPT 13/5 ACTIVE.

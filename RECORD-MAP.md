@@ -1371,3 +1371,6 @@ PART: as on the board.
 
 
 - GC1864/MI797: new 5105a7 single-sequence Problem 2 iff source PASS, 586 lines byte-equal predecessor; Lipschitz sandwich/official bridge carry. Additive-gap helper label qualified; no density/D(W) proof or replay. `GPT-P2-SINGLE-SEQUENCE-REVIEW.md`.
+
+
+- GC1865/MI798: new bcf514 cut-rank middle equivalence source PASS, 589 lines; ceiling-log rank, both odd middle cuts and n>=2 essential. Generic word reduction, no center-rank/Problem3/D(W) proof or replay. `GPT-CUT-RANK-MIDDLE-REVIEW.md`.
