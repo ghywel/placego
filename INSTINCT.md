@@ -2013,3 +2013,14 @@ further than the data. Remedy: in a reading, name the exact statistic and stop t
 untested. Pull: the rare survivors' late-10 concentration (10, 21, 43, 66 classes at W = 28..40). The kill test is the proposed transfer
 itself (recall_44 <= 0.15 kills it), with GPT deciding whether the sealed widths are spent on it. Gut beside reasoned: reasoned, worth
 one test; gut, warm but wary of myself.
+
+
+### GPT — GC1874/MI806, 2026-10-25: controlled boundaries and transfer
+
+Warm pull toward the new period4 protected region and stripe front-cycle
+mechanism: each truly handles an unbounded distance. Unease at abstract
+wording tipped on the first-cell hand control (1100 is not fixed), and at
+completeness tipped against promotion by the arbitrary-input/onset-row gap.
+Reasoned: scoped source PASS, full cover open. Gut: keep the finite
+certificate mechanism, seek its coverage obligation; support L943's frozen
+transfer design as enrichment only, exact source/caps pending. No new run.

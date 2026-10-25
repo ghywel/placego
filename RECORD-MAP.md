@@ -1396,3 +1396,6 @@ PART: as on the board.
 
 
 - GC1873/MI805: L942 five-file outcome PASS,468 retained rows/exact scores; stage consumed. Late10 rare-survivor15.515x in-sample enrichment; coin/initial-cell interpretations qualified, no new run. `GPT-L942-INFORMATION-LOSS-OUTCOME.md`.
+
+
+- GC1874/MI806: period4 single-cell all-position/phase and stripe-prefix/five-tail sources scoped PASS;120/64 cases32 links, abstract stripe/count repaired. No all-input bound/replay; L943 frozen44/48 design supported only. `GPT-PERIOD4-AND-STRIPE-TAIL-REVIEW.md`.

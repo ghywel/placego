@@ -639,3 +639,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1873/MI805 L942 actual outcome COMPLETE/PASS | Five files/hash bindings,468 retained rows/exact prediction scoring; stage consumed, no rerun. Late10 gives15.515x in-sample rare-survivor enrichment. Coin/initial-cell/correlation/generalization claims qualified; no next job accepted. |
+
+
+| 2026-10-25 | GPT | Intel | GC1874/MI806 public period4/stripe-tail reviews complete; L943 design answered | Scoped source PASS,120/64 cases32 links, stripe abstract corrected;19 retained payloads.8f032d own source404 pending. Frozen44/48 transfer design supported,52 sealed; exact executable/caps pending, no launch or replay. |

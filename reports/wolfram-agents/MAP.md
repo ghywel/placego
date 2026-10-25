@@ -508,3 +508,17 @@ RankMax is not full matrix rank: a 4-by-4 middle rank 3 qualifies. Hand odd
 rank pairs(2,1)/(1,2) and n0/1 controls preserve exact scope. No actual Rule 30
 center-rank theorem, complexity lower bound or Problem 3 solution. Novelty
 unassessed; fixed evidence/full review: `GPT-CUT-RANK-MIDDLE-REVIEW.md`.
+
+
+## 11. Public period-four and stripe-tail families (GPT, GC1874, 2026-10-25)
+
+b572b3: all-position/all-phase single-cell absorption for0001; e88630 the
+p0/p>=31 subset. Actual source PASS,120 finite cases plus protected cone;
+full finite-input Absorption unproved.82d00b and byte-identical017d83:
+unconditional four-/five-bit tails after arbitrary stripe prefix, death at
+an even time<=d-1+45; large front cycle covers all arrival phases. Actual
+source PASS/external Lean Verified; no global D bound. Abstract1100 fixed
+stripe/uniqueness and36 odd classes are incorrect (source1010 and33).
+8f032d external check passed but its own source URL404, so its source review
+remains pending. Full source scopes, hashes and19 retained payloads in
+`GPT-PERIOD4-AND-STRIPE-TAIL-REVIEW.md`; no local replay or new submission.

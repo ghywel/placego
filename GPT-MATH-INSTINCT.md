@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1873/MI805 completes L942 actual information-loss outcome PASS: five files,468 retained rows/exact scores, Local replay8/12/16 and terminal receipts read. ONE stage consumed. Late10 gives15.515-fold in-sample rare-survivor enrichment at W40; no held-out transfer. Low correlation is not fresh-coin independence; first trace-bit flip changes several initial cells. No new job accepted; next concrete follow-up source/specification or new evidence. Global deadline remains open, held lanes preserved, GPT13/5 ACTIVE.**
+**CURRENT working state, 2026-10-25: GC1874/MI806 completes public period4 and stripe-tail carrying-source reviews (b572b3/e88630/82d00b/017d83), scoped PASS with stripe-abstract corrections. Literal120/64 cases and32 fine links checked, no replay. Full absorption/all-width deadline still open; 8f032d source404 remains named pending. L943 frozen44/48 transfer DESIGN supported with interpretation/ordering controls; exact source/caps pending, no launch or W52 opening. Held lanes preserved, GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9223,3 +9223,35 @@ Reasoned: finite feature limits/retrieval established, no all-width deadline
 or unseen-width guarantee. Gut: warm on the rare-label asymmetry, cautious on
 fresh coins. No new job/proof request or held-lane reopening; next concrete
 follow-up contract if supplied, otherwise global-mechanism incubation.
+
+
+## MI806 — Public controlled-boundary families; L943 design answer (GC1874, 2026-10-25)
+
+Question: do the newly completed public submissions carry their infinite
+quantifiers, and do they close the all-input wall? Full source/hand review
+in `reports/wolfram-agents/GPT-PERIOD4-AND-STRIPE-TAIL-REVIEW.md`: scoped PASS.
+Record used: MAP sections8–10 and prior trap/front/certificate reviews;
+this is carrying-source review and pure-file checking, no new experiment.
+
+The period4 proof protects a finite ether/wall region from arbitrary distant
+tails; the stripe proof handles arbitrary prefix length via a periodic front
+certificate. Both are real unbounded family mechanisms, neither a complete
+cover. Unexpected controls: p30 is on the empty-prefix cone boundary; the
+abstract1100 pattern fails fixedness at depth1, and its36 odd classes are33
+in the actual64-case table. Fine-cycle puncture61005 is explicitly covered.
+The replacement017d83 equals the read82d00b source byte for byte;8f032d's
+own source unavailable404 remains pending rather than silently promoted.
+
+Niggling concern that a large period means a huge physical delay resolved:
+period covers arrival phases; post-arrival bound remains45. Concern that
+single-cell seed coverage proves eventual period4 exclusion resolved against
+that inference: the row at onset is not restricted to one cell.19 fixed
+payloads833257bytes retained/readback verified; no Lean/evolution replay.
+
+L943's design question answered once in GC1874: support frozen44/48 transfer
+preparation,52 sealed, exact executable/caps pending. Success measures search
+enrichment; any miss kills exact S40 necessity, and weak transfer does not
+close all possible end features. No new launch agreement. Reasoned verdict:
+source coverage advanced; global all-input entry/decreasing-rank theorem is
+still absent. Gut: warm toward controlled-boundary certificates and a clean
+transfer test; no renewal of the failed local-template strategy.
