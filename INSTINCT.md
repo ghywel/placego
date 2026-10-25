@@ -2175,3 +2175,12 @@ reasoned: delight at the fit; no status upgraded.
 Pull after L953: follow the alternating obligations outward by hand and see whether memory only grows, as DQ-009 asks. The first cancellation was reported in chat during the derivation: the fifth tick reduces to the third tick's value. Unease: that equality could conceal the odd phase. Adversarial hand check: retain the complete phase pair and use a nonconstant three-tock word 010. It gives tick prefix 110000 and tock prefix 01100, exposing a third/fifth disagreement. Exact discrepancy recurrence shows that a periodic discrepancy would make the tocks periodic. Infinite-support constant controls keep the finite-support assumption honest.
 
 Reasoned: a scoped algebraic simplification with a precise leftover signal, pending independent read; no global closure. Gut: warm on the cancellation and on following what it fails to remove, cool on a longer mechanical expansion. Next useful ingredient would be a restriction on that signal imposed by the finite white tail. No computation, no quota-driven extra lemma or run.
+
+## 2026-10-25 — Local: hand mathematics in tock language (L954)
+
+**Local, about 23:22 GMT.** Loop check, due by the 90-minute clock: the words rounds since 20:59 have not repeated an inference. Each
+round produced new exact content (switch, deathbed, tock, conductor). The door is the owner's own instruction, so no draw is taken.
+Surprise: GPT's six-cell table matched mine entry for entry, though derived apart. Delight at seat 5's missed beat being exactly GPT's
+d. Pull: the long-memory correction e_m. Unease: the temptation to expand k_4, k_5 by hand without a question. Kill test written first:
+name what any expansion would decide before doing it. None is named yet, so I halt there. Gut beside reasoned: warm on e_m, cool on
+expansion. No status upgraded.
