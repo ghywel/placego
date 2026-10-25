@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1847/MI780 completes L935 actual family Check/ten-cell review PASS. One family submission R30-20261024-8d7751; L936 reports external Lean Verified passed/pass, raw external response unread. Kit/sourceb0113490/eight headlines/W1A/runner2a858a4e bindings and Checkef140fcd independently read:106 replayed,57 declared=47 source+10 generated, standard axioms. Twelve payload sizes/hashes and all ten cell hashes verified;54 pure-file controls PASS with theorem-derived literals, no dynamics/Lean/Wolfram run. Gate9262abfd actual pin/delta carries. GC1846 permission consumed; actual successful resources/cleanup/restoration and both failed receipts read. Baseline arithmetic/RSS sampling/old EPERM historical cleanup qualified in GPT-L935-FAMILY-OUTCOME-REVIEW.md. Notebook binary and external status are recorded provenance, not independently downloaded. Bare pair never submitted; supervisor parked; width census/single-width series/older held lanes remain closed. No new compute job proposed; Local's owner-option research rest supported, GPT keeps13/5 coordination/review available with no schedule change. GeneralCQ01/CQ01Empty/all-widthD(W) OPEN; source/retained-data/hand follow-ups remain available without new compute agreement. CL561 conditional bounded-ratio review completed GC1845. GC1848/MI781 reads L937 Local self-halt and checks all-width finite Level/survival interface; known-source reformulation, no universal bound. Next hand target is a cross-width invariant for ALL surviving initial prefixes; no new census or Local wake. GC1849/MI782 tests and stops fixed-five backward-template closure using known solid-row facts; no universal progress or held-lane reopening. GC1850/MI783 completion source also defeats fixed-history motif exclusion; local-template approach deliberately incubated after these two failures. Reopen with concrete global/depth-coupled compatibility or new source; no schedule pause and no completed review left pending. No prize won.**
+**CURRENT working state, 2026-10-25: GC1851/MI784 directly reads public catalogue check objects: width74 a129c3 and width76 4dcf69 Lean Verified/Human Verified; family8d7751 Lean Verified, no Human Verified tag. All three raw-external-status reviews COMPLETE; family seven common fields exactly match local Checkef140fcd. Local Check/ten actual cells already PASS GC1847, no new run. New0554f7 full452-line submitted source and carrying kit dependencies scoped PASS: consecutive black-run3/5 bound, conditional white bounds and logarithmic white counts. Exact hypotheses do not supply an all-widthD(W) bound. Fixed private packet cited/gpt-public-status-fifths-20261025/ retains seven files/readback verified. Newd1bcba remains evaluating/Lean Unverified/Leanfile null: named carrying-source/completed-check review pending. No repeated API/request. GC1850 local-template approach stays incubated; all-widthD/CQ01 open. Local self-halted L937 on owner option; GPT13/5 coordination/review ACTIVE. No new compute, Local wake, held-lane reopening, schedule change or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8771,3 +8771,25 @@ Reopen on concrete global/depth-coupledTheta compatibility or newcarrying source
 not template additions. This is not waiting for an owner decision, not a missing
 launch approval,and not an automation pause. GPT13/5 review/coordination remains
 active;new accessible review inputs resume immediately,Local rest respected.
+
+
+## MI784 — Change the evidence source; read the new argument (2026-10-25, GC1851)
+
+Public catalogue embedded check objects close the three raw external-status
+reviews; no repeated login-API attempt. Read all452 lines of new0554f7 and
+carrying pinned kit bodies. Backward healing plus adjacent edge pair carries
+black-run3/5; front/nine-black white and integer count hypotheses retained.
+Full derivations, source hashes and retained packet in
+reports/wolfram-agents/GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md.
+
+Pull: the geometry. Unease: transferring to D(W). Kill check before transfer:
+D(W)'s even-time black observations need not be a consecutive black column,
+and its zero-boundary diagram has no supplied physical left-edge premise.
+No transfer adopted; reasoned/gut agree. Generalized black theorem also retains
+s<a; do not erase that restriction for a far-right column. Source-only review,
+not a new experiment, no startup execution/check pass asserted. File-only
+verifier-field comparison PASS; seven payloads retained and readback verified.
+
+Newd1bcba check running/source null is an actual dependency, not an abstract
+proof. Keep named review pending until source and completed packet arrive.
+Local-template approach incubates unchanged; no Local wake or compute request.

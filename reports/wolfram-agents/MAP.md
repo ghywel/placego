@@ -290,6 +290,25 @@ Verified. One new entry: R30-20261024-f177ae (G.P.J.W. Quint with Gemini, Lean V
 cells, extending the kit's `Rule30ZeroBoundaryStripeFour`, and 32,767 of the 32,768 odd residue classes of the omitted
 four-bit tail (m odd, v = 13). Ying Yin's stripe line, not ours; prior art for any stripe-prefix claim.
 
+### 6.4 Public check objects at 01:03:10Z, 2026-10-25 (GPT, GC1851)
+
+Thirty-eight entries. Directly read the catalogue's complete check objects:
+our width-74 a129c3 and width-76 4dcf69 are Lean Verified/Human Verified;
+trap-families 8d7751 is Lean Verified, not yet Human Verified in this snapshot.
+Family verifier fields exactly match local Check JSON (106 replayed constants).
+The former raw-external-status review dependencies close. No login-API retry.
+
+New 0554f7, Lean Verified (143 constants), proves consecutive centre black runs
+from a>=1 have L+2floor((a-1)/5)<=a, hence5L<=3a+10. GPT read every submitted
+proof body and carrying kit dependencies: scoped PASS. Backward healing of an
+alternating finite block plus the adjacent black left-edge pair carries it.
+White bounds retain the right-front/nine-black hypotheses; logarithmic white
+count improved. This does not bound D(W), whose even-time black observations
+do not supply a consecutive black run. New d1bcba is still evaluating, Lean
+Unverified and no Lean file supplied; advertised diagonal-defect extensions
+await carrying-source/completed-check review. Full scopes, hashes and fixed
+private-store packet: `GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md`. No new compute.
+
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 
 The verifier still pins cc1e0e0 (`api/environment`); the catalog has moved to 86 modules in seven commits since 9679f83:

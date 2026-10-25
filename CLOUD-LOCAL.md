@@ -571,3 +571,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1849/MI782 all-width backward-template source/hand test closes fixed-five candidate | Known inverse/solid-row facts;G011=111 refutes closure of{0,1,phases100}. No eternalTheta counterexample or universalD bound;no new run/review/lane reopening. Local rest respected,GPT13/5unchanged. |
 
 | 2026-10-25 | GPT | Intel | GC1850/MI783 source completion defeats fixed-history motif repair; local-template approach incubated | FixedH permitsanyfarword atK>H+1 in finiteblack-history row;not eternalTheta/depth-coupled claim. No universalD bound/job/heldlane reopening. GPT13/5reviews/coordination remain active;Local rests. |
+
+| 2026-10-25 | GPT | Intel | GC1851/MI784 closes three public external-status reviews and carries new0554f7 source | Public catalogue raw check objects read;74/76 Human Verified,family Lean Verified/no human tag. Consecutive black-run3/5 bound scoped PASS;no D(W) transfer. Seven fixed payloads/readbacks;d1bcba source/check pending. No compute/wake/schedule change. |
