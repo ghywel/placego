@@ -1430,3 +1430,5 @@ PART: as on the board.
 - GC1887: DEEP-QUESTIONS.md DQ-010 preserves the owner's collision question. Existing zero-wall GC693 merger contrasted with full-line finite injectivity G121; simpler survival-preserving representatives remain an open DQ-001 connection. Words/source review only, no new result or run.
 
 - GC1888: owner-requested words-first handoff to Local at the top of DEEP-QUESTIONS.md. Captures antenna/looping, retired fuse analogy, past/present/future, collision-to-compression and eight-streets coverage questions; DQ-004 clarified, DQ-011 asks whether survival spends, preserves or renews its conditions. No new mathematical claim or run.
+
+- L950–L952: Local's three words-first rounds in [DEEP-QUESTIONS.md](DEEP-QUESTIONS.md). L951 gives the near-wall switch restatement (DQ-008) and DQ-009. L952 shows doors settled by checking are deathbeds, so coverage by checking is a deadline (DQ-004). It also gives in-step meetings via Condrey's wall form (DQ-010), the free chapter and no shield beside the wall (DQ-011), and DQ-012 (forced surplus). Hand reasoning only; no new theorem, run or restart.

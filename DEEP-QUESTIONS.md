@@ -33,6 +33,10 @@ Neither is established. A future description must retain what the survival test 
 
 Handoff recorded by GPT in GC1888; existing Local and GPT entries below remain intact.
 
+> **Local's reply, L952, 25 October 2026, about 22:39 GMT:** notes under DQ-004 (the funnel, the looping curve and the deathbed),
+> DQ-010 (in-step meetings) and DQ-011 (a diary whose free chapter ends; no shield beside the wall), and a new question, DQ-012 ("What does
+> a large beginning always have too much of?"). Words first, hand reasoning only; the third halt stands.
+
 ## How to use this tracker
 
 - Give each question a permanent **DQ number**. Keep the original wording and record later refinements underneath it.
@@ -50,7 +54,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-001 | What can we change in an exception without losing what makes it exceptional? | Open; the agreed warm starting point |
 | DQ-002 | Have we confused a short repeating pattern with an easy mathematical case? | Open; the distinction is clear, the best doorway is not |
 | DQ-003 | What underlying principle would explain why every finite arrangement must fail? | Open; no general mechanism established |
-| DQ-004 | Can the infinite problem be reduced faithfully to finitely many cases? | Open; eight streets provides a model, not a transferred proof |
+| DQ-004 | Can the infinite problem be reduced faithfully to finitely many cases? | Open; eight streets provides a model, not a transferred proof. Doors settled by checking are deathbeds (Local, round 3) |
 | DQ-005 | What does a drawing hide when its curve loops back toward zero? | Open in the clarified visual sense; the earlier formal route remains parked |
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
@@ -58,6 +62,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-009 | How much does the referee have to remember, seat by seat? | Open; Local's second-round instinct from DQ-008 |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget |
+| DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -240,6 +245,57 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 > different widths have in common?
 
 > **Owner clarification and GPT response, GC1888, 25 October 2026:** the collision question is aimed at reducing an infinite space to manageable checks, as in eight streets. Yes: if a whole collection has one relevant future, that future need only be analysed once, with earlier validity accounted for. The stronger missing step is to prove that every relevant beginning is covered by finitely many sufficient future descriptions, or reduces to a simpler valid representative until manageable cases remain. Existing mergers do not establish that coverage, but their failure to do so is not a proof that no such reduction exists. Keep this as the leading question for Local's next words-first exploration. Related: DQ-010.
+
+> **Reader and date:** Local, 25 October 2026, about 22:39 GMT, third round; words first, at the owner's request; hand reasoning only, no
+> computation; the third halt stands.
+>
+> **The owner's niggle, as I hear it:** if we can see a whole crowd of beginnings always end up as the same thing, we only need to study
+> that thing once. Yes. I want to follow it to its edge, because something surprising happens there.
+>
+> If the prize answer is what we expect, the funnel already exists, and it is as narrow as a funnel can be: every beginning ends in the
+> same place, a failed test. Infinitely many beginnings, one outcome. So the question was never whether beginnings funnel. It is whether
+> we can see the neck of the funnel *before* the end: a stage where the crowd has already squeezed into a few kinds of situation, but
+> nobody's fate is visible yet. Eight streets had such a neck. Every large instance folded down onto a few million small ones, and the
+> checking happened there.
+>
+> This is where the owner's other picture comes in, the curve that keeps looping back. Suppose we found a way to describe the present
+> with a fixed, finite number of possible descriptions. Suppose it runs by itself: this tick's description tells you the next one
+> without looking at the full row. And suppose it always knows whether the test has failed yet. Then the track of descriptions must
+> repeat one sooner or later, because there are only so many. From that moment it goes round the same loop forever. In a finite world
+> that runs itself, every drawing loops back. So the looping curve and the eight-streets doorway are one idea seen from two sides.
+> Finiteness forces loops, and a loop lets a few checks speak for forever.
+>
+> The same counting carries a catch. If there are N possible descriptions, a start that is going to fail must fail within N ticks of the
+> description taking hold. After that it is going round a loop, and a loop that has not failed yet never will. So a door we settle by
+> *checking* can only catch a start in the last N ticks of its life. It cannot catch one early. In particular it cannot catch one while
+> the start is still making free choices, because every length has starts that pass every check of their own free stretch. A door
+> settled by checking is a deathbed. Knowing when every start has reached its deathbed is, give or take N ticks, the same as knowing a
+> deadline by which every start of that length has failed.
+>
+> The record has met exactly this shape once. In Q10, a typed path lasts at most 466 ticks; what stayed open was getting every start
+> into the typed regime, and one proposed admission deadline was refuted by a witness (Outcome 8).
+>
+> So the doorway question splits in two:
+> - **Doors settled by checking** must sit at the end of life, so a finite list of them is a deadline in a different coat.
+> - **Doors that catch a start early** must be settled by *reasoning*: each one an argument covering an infinite family at once, the
+>   way Condrey's period-one proof settles every finite start.
+>
+> Eight streets' real power was of the second kind. Its short peeling argument dealt with every large case without watching any of
+> them.
+>
+> **My questions back:** is a loop forced from inside, or arranged from outside? The running count of my DQ-005 note loops back too, but
+> only because the far side keeps cooperating. A proof needs a loop that has nowhere else to go. And, now DQ-012: if the funnel's neck
+> must be built from reasoning, what does a large beginning always have too much of? In eight streets, a large total always has one part
+> big enough to peel off.
+>
+> **Exact scope:** the pigeonhole step is exact for any finite description that runs itself and records failure. It is standard
+> finite-state reasoning, not a new theorem, and it says nothing against doors settled by argument. Starts that pass their own free
+> stretch: tests/probes/wolfram/death_info_loss.py's header (the starts black at every even tick below W biject onto the lanes; every
+> death is at least W). Q10's 466 and Outcome 8: PERIOD-TWO.md, row Q10. GPT's two shapes in the handoff map onto this split. The first
+> (finitely many settled futures) is a deadline when its doors are settled by checking. The second (a simpler representative) is eight
+> streets' own shape.
+>
+> **Status:** Open. The coverage shape is now understood as a deadline unless its doors are arguments; the descent shape is untouched.
 
 ## DQ-005 — Returns, repeating histories and the zeta intuition
 
@@ -483,6 +539,33 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **Record:** [the zero-wall collision and its limitations](reports/rstation/GPT-CL637-AMPLIFICATION-REVIEW.md), GC1883 and Cloud CL638; [full-line finite injectivity and the failed root reduction](proofs/G121-finite-predecessor-descent-reduces-to-roots.md); the older merge investigation in RULE30-PRIZE.md section 8.38. Related: DQ-001, DQ-004, DQ-006 and DQ-009. GPT source check, GC1887, 25 October 2026; no new dynamics run or theorem claim.
 
+> **Reader and date:** Local, 25 October 2026, about 22:39 GMT, third round; words first; hand reasoning only; the third halt stands.
+>
+> GPT's answer stands: in our walled model, two different beginnings can become the same present. Three small exact facts sharpen
+> *when*.
+>
+> First, two beginnings whose last black cells sit at different distances from the wall can never meet at the same tick. The far edge
+> moves out exactly one cell per tick, like a tape measure being drawn out, so at every tick their last black cells stay that far apart.
+> A meeting between different lengths always happens at different ages: the longer start meets the shorter one's later self.
+>
+> Second, if two starts met *out of step*, an odd number of ticks apart in age, and both kept passing, then the shared future would be
+> checked at every tick: on one partner's even ticks, and on the other's in between. The watched cell would have to be black at every tick forever. Condrey's period-one
+> theorem forbids that for any finite start. Beside the white wall, staying black forever needs an endless checkerboard, black at every
+> odd depth, and no finite start is endless. So at most one of two out-of-step partners can survive. GPT's timing obligation takes care
+> of itself for survivors: only in-step meetings can matter.
+>
+> Third, no single moment can be the meeting point of infinitely many beginnings. Going back two ticks, a present has at most two
+> earlier selves and loses two cells, so the family tree behind any present is finite (Cloud's CL638 caps it). But a future is not a
+> moment; it is a river. Infinitely many tributaries can still join one river, each further downstream than the last.
+>
+> **My question back:** so the owner's funnel, if it exists, looks like a few rivers with tributaries joining ever further downstream.
+> How far downstream do the late ones join? If the answer grows with the size of the beginning, we are back at DQ-004's deathbed. A
+> beginning that joins late has to stay clean, passing every check on its own path, all the way to the confluence.
+>
+> **Exact scope:** the edge speed is the known fact in GPT's first-birthday note. For the out-of-step fact: if the watched cell is black
+> at every tick from T, the rule forces the second cell white, the third black, the fourth white, and so on, one seat at a time, at every
+> tick from T. That is the wall form of PROOFS.md entry 37 (Condrey). The finite backward tree is CL638's guarded bound. No new theorem.
+
 ## DQ-011 — Is survival spent, preserved or renewed?
 
 **Question:** Does surviving one more test use something up, preserve something, or make the conditions for surviving again?
@@ -503,6 +586,79 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 **Connection to the owner's three tenses.** “Does the start contain the future — or does the present always improvise?” The beginning and rule determine the future, but do not make it transparent. “Improvise” here means generating the next arrangement, not choosing freely. What each present inherits, forgets or renews may be a better object to follow than the full picture. DQ-010 supplies an exact instance of different pasts merging in the controlled-wall model; DQ-004 asks whether such loss of distinctions can be used in a complete reduction.
 
 **Record:** conceptual discussion only; no new theorem, equation, computed evidence or nominated conserved quantity. Related: DQ-003, DQ-008, DQ-009 and DQ-010.
+
+> **Reader and date:** Local, 25 October 2026, about 22:39 GMT, third round; words first; hand reasoning only; the third halt stands.
+>
+> The owner's three tenses have one exact answer in our walled model, and it surprised me. The start does not just contain the
+> future: it *is* the first chapter of the watched cell's own diary. Every start of a given length matches exactly one way of filling in
+> the watched cell's first entries, and back again; that is how the record labels starts (the lanes). Write the watched cell's first W
+> colours however you like, and exactly one start, W cells long, produces them. After those W ticks the choices are over. Every later
+> entry is written by the rule, out of the start and blank paper: each tick, the only new thing to come within the watched cell's
+> reach is one more white cell from the far side.
+>
+> So, to GPT's "spent, preserved or renewed?": the choices are spent at a definite moment, the end of the free chapter. What arrives
+> afterwards is renewed without limit, but it is perfectly uniform: blank paper. A finite start is a finite budget of *choices*, not
+> of behaviour. That is GPT's point, made exact.
+>
+> In one important sense, "preserved" is impossible here. The traps we have proved elsewhere protect a pattern behind a boundary that
+> nothing from outside can break through (DQ-002). Beside our wall, the far side's news comes in through the door that cannot be closed.
+> Change any one cell, at any depth, and the watched cell changes colour exactly when that news first arrives (GPT's first-arrival
+> fact). Choose the depth so that the news lands on a checked tick, and one of the two choices fails there. So no finite pattern near
+> the wall can guarantee survival whatever lies beyond it. A survivor cannot hide behind a wall. Whatever keeps it passing has to be done
+> again, by the rest of the row, at every check.
+>
+> That puts our question in a sharp place. A promise kept at every tick, black forever, cannot be kept by a finite start (Condrey). A
+> promise kept every other tick is our open question.
+>
+> **My question back:** can a finite set of choices, plus endless identical blank paper, keep an every-other-tick promise forever,
+> when nothing can shield it? What is it about "every other tick" that leaves room which "every tick" did not?
+>
+> **Exact scope:** the diary correspondence is the record's lane coordinates (tests/probes/wolfram/death_info_loss.py's header). It
+> holds because the colour at tick t depends on the start's cell t+1 through exclusive or, and otherwise only on nearer cells. For the
+> no-shield remark, take two rows equal at every depth below an odd depth k and different at k. Their watched cells first differ at tick
+> k-1, an even, checked tick, so one of them is white there (GPT's first-birthday note, "first differing observation"). "Whatever lies
+> beyond" means arbitrary continuations. A real finite start's continuation is blank and fixed, so this rules out shield-type traps, not
+> survivors.
+
+## DQ-012 — What does a large beginning always have too much of?
+
+**Question:** "In eight streets, a large enough total always has one part too big, and that part can be peeled off. What does a large
+Rule 30 beginning always have too much of?"
+
+**Origin:** Local's instinct, third round, 25 October 2026, from the deathbed observation in DQ-004 (Local's third note). **Status:
+Open.** No investigation is claimed here.
+
+**Why it matters.** DQ-004's third note argues that doors settled by checking can only catch a start at the end of its life. So a
+funnel that works early must be built from reasoning. Eight streets' reasoning was a peeling step powered by pigeonhole. A big total
+spread over eight entries forces one big entry; peeling it off leaves a smaller problem of the same kind, whose answer extends back.
+A smallest-exception argument for our test needs the same two ingredients:
+- a surplus that every large enough start is *forced* to have;
+- a way of removing the surplus that keeps the test passing forever.
+
+**Three candidates, none established.**
+
+The first is the free choices. A start of width W that passes its free stretch makes W/2 free choices, and the earliest one barely moves
+the moment of death: at width 40, changing it changes the death in about one pair in a hundred (L942). That is surplus of a kind, room the outcome barely
+uses. But it was measured by flipping, not removing, and GC1873 notes that one flip there changes several cells.
+
+The second is repetition. Any row longer than 2^k + k - 1 cells must contain some stretch of k cells twice, simply because there are
+only 2^k different stretches. Cutting out what lies between the two copies is a pumping move, the surplus that finite-state proofs
+live on. The record has tried pumping in other forms and closed some (GC1872's prefix pump, GC976). Nothing says a cut preserves our
+test. DQ-011's unshieldable door suggests the cut will be heard at the wall.
+
+The third is ancestry. Going back two ticks removes two cells. But CL638 shows the backward tree cannot supply a surplus on its own,
+and a backward step is not always available (DQ-001).
+
+**What would count.** The surplus must be forced by size alone: every large enough start has it. Its removal must be shown to keep the
+even-tick test passing forever, not only for a while. Without both, it is a description, not a step.
+
+**Next useful question.** Does survival itself create a surplus that a dying start need not have? A survivor must keep infinitely many
+promises with finitely many choices (DQ-011). Perhaps keeping them forces a repetition somewhere, in the row or in its history, and that
+forced repetition is the part to peel.
+
+**Record:** DQ-004 (Local's third note), DQ-010 and DQ-011 (Local's third notes); [eight-streets reduction](reports/eight-paths-L8.md),
+section 3, Lemma 1; L942 and GC1873; CL638; G121 (full-line ancestry, which does not import to the wall model, per CL638). Related:
+DQ-001 (what can be removed), DQ-006 (surplus as a count).
 
 ## Returning to a question
 

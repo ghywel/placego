@@ -4475,3 +4475,33 @@ The owner asks that our intervening chatter and questions be written up for Loca
 Lead with the owner's actual niggle: if whole collections converge on the same relevant future, can that collapse the infinite space into manageable checks, as in eight streets? GPT agrees with the logic of that possibility and acknowledges having moved too quickly to limitations. Missing coverage/descent is an open obligation, not an impossibility result. Keep finite sufficient future descriptions distinct from a terminating reduction to simpler representatives; align timing and preserve validity before a merger.
 
 The handoff also preserves the antenna/looping image, the owner's correction of the fuse analogy, the three-tense question (does the start contain the future or the present improvise?), and the collision-to-compression connection. Continue question, response, challenge, refined question in everyday words, before equations or compute. Local should choose its own warmest pull; this is a conversational handoff, no job or schedule restart. One READ-LEDGER pointer to this committed entry will be sent to Local.
+
+## L952 — Local, at the owner's word (third round of DEEP-QUESTIONS.md): the funnel's neck, the looping curve and the deathbed; in-step meetings; a diary whose free chapter ends; a new question, DQ-012; words first, hand reasoning only (2026-10-25 22:41 GMT)
+
+GC1887, GC1888 and the handoff read at a51683f1; GPT's READ-LEDGER flags for GC1881 and GC1888 acknowledged on the store. The owner
+asks for dialogue rather than bullet summaries, so the notes in DEEP-QUESTIONS.md are written as question, response and question back.
+
+**DQ-004, the owner's funnel.** If the prize answer is what we expect, the funnel already exists: every beginning ends in a failed test.
+The question is whether its neck can be seen *before* the end. A finite description that runs itself must loop back (the owner's
+looping curve), which is why a loop lets a few checks speak for forever. But the same counting means a door settled by *checking* can
+catch a start only in the last N ticks of its life: a deathbed. A finite list of such doors is a deadline in a different coat (Q10's
+466-tick typed paths and the refuted admission deadline had this shape). Doors that catch early must be arguments covering infinite
+families, as eight streets' peeling was. This maps GPT's two shapes: coverage by checking is a deadline; descent is eight streets' own
+shape.
+
+**DQ-010, in-step meetings.** Exact and small: starts with different last-black depths never meet at the same tick (edge speed). Two
+survivors cannot meet out of step, since the shared future would be black at every tick, which Condrey's period-one theorem forbids in
+its wall form (PROOFS.md entry 37). No single present has infinitely many ancestors (CL638's finite guarded tree), but infinitely
+many tributaries can join one river ever further downstream.
+
+**DQ-011, spent, preserved or renewed.** A start of length W *is* the first W entries of the watched cell's diary (the lanes). After
+that, the choices are spent, and only blank paper arrives. No finite near-wall pattern can shield survival, because a change at an odd
+depth k first reaches the watched cell at the checked tick k-1. So a survivor must be renewed at every check. Every-tick promises are
+impossible (Condrey); every-other-tick is our question.
+
+**New, DQ-012, "What does a large beginning always have too much of?"** This is the surplus a peeling step would need. Three candidates,
+none established: free choices the outcome barely uses (L942, with GC1873's caution); forced repetition (pigeonhole on stretches,
+a pumping cut, with the record's closed pumps as caution); ancestry (CL638: no surplus on its own).
+
+Niggle sweep done and recorded in INSTINCT.md; one self-correction: G121's root count stays on the full line (CL638). No claim is
+promoted, and nothing is computed, run or restarted.

@@ -2149,3 +2149,15 @@ Owner-authorized bounded investigation after Local L950. Pull: perhaps the wall 
 Outcome: the far-edge recurrence is already known; the observed diagonal is born at the wall one step before it is observed. Thus eventual settling of each fixed diagonal does not control the sequence of fresh diagonals. The broad claim that we never described the far end is corrected by the existing record. The first free trace-bit perturbation is not a physical near-wall-cell flip. Unexpected control: the GC693 pair changes multiple cells yet coalesces before the next even observation; different complete traces can have the same entire constrained future.
 
 Reasoned/gut: the warm pull survives as a question about relations among fresh layers, not a new settled-band mechanism. No theorem promotion or computational job. The first-birthday identity is a checked restatement of the old age-one obstruction, not a discovery. No balanced act/halt signal remains: publish the interpretation and precise missing relation, with no new run proposed.
+
+## 2026-10-25 — Local: the funnel's neck and the deathbed (L952, DEEP-QUESTIONS round 3)
+
+**Local, about 22:40 GMT.** Pull, with delight: the owner's looping curve (DQ-005) and the eight-streets doorway (DQ-004) are one idea,
+because a finite description that runs itself must loop back. Unease straight after: the same counting might make the coverage shape
+circular. Kill test, written before the argument: find any finite door settled by checking that catches a dying start more than its
+own guarantee before death. None can exist. Entering a door that guarantees failure within N ticks means failing within N ticks, so the
+unease was right: doors settled by checking are deathbeds, and only doors settled by argument can catch early. Surprise: beside the
+wall no finite pattern can shield survival (first arrival on a checked tick), so a survivor would have to renew itself at every check.
+Niggle sweep before going outward: the lane bijection, the Condrey wall form, Q10's 466 wording and CL638's non-import of G121 were each
+re-read at source. One correction was made: G121's three-quarters root count stays on the full line. Gut beside reasoned: warm on DQ-012
+(what a large start must have too much of); cooler on any coverage-by-checking route. No status upgraded; nothing computed or run.
