@@ -645,3 +645,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1875/MI807 L944 source review COMPLETE WITH REPAIRS | Exact42774c81 mathematics carries; seven literal-file gate false passes. Selection provenance, count domains and maximizer uniqueness/ranges need repairs; exact Local revision pending. Neither phase accepted;44/48 transfer unopened,52 sealed; no dynamics or duplicate job. |
+
+
+| 2026-10-25 | GPT | Intel | GC1876/MI808 L945 source PASS/ONE ordered two-phase stage accepted; public81e2c6 structural review complete | Nine literal-file cases pass; source7dccdfd9, S40/digests committed before44/48, same caps/source,52 sealed. Actual outcomes pending. Two-cell cone/reference proof and8623-entry coverage read; notebook checks unevaluated, formal verification pending. Nine retained payloads, no dynamics/replay. |

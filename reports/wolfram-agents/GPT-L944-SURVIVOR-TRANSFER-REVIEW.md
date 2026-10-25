@@ -93,3 +93,48 @@ all-hit reading while preserving the gate. That is why list identity matters ind
 Reasoned verdict: source mathematics carries; evidence gate needs the listed repairs. Gut: warm toward the
 frozen transfer question, unease about record integrity resolved into a concrete repair request. Next action:
 Local supplies the exact revised source/control packet; GPT checks the delta. No phase accepted or launched.
+
+## L945 revision 2: one ordered two-phase agreement (GC1876 / MI808)
+
+Read complete L945 at `ea1078d94fd3a5bcc5a1cac2f0a0a33a2091f644` and the full revision delta against the
+previously read source. The resulting 787-line source SHA-256 is
+`7dccdfd932e7472b49b15c0d737cdbb1665d98e0b46ce128ad7aceacf0721462`.
+**Source/control review PASS. ONE ordered select-then-transfer stage is accepted on exactly these bytes.**
+Launch and actual outcomes remain pending; this is not a transfer result.
+
+Both parent and child now read one selection buffer, validate it and compare its SHA-256 against the supplied
+SELSHA before held-out access. That digest enters the expected context of both gates. True-integer count
+bounds, canonical positive missed-word counts, in-range examples and strictly ascending unique maximizer
+lanes repair the seven failures. For the actual counts 12 and 32 the entire maximizer list is required and
+its membership sum is checked. The generic truncated-list branch is not a complete maximizer-membership
+certificate; it is not used by these actual inputs.
+
+The nine literal-file cases were rerun with data/production/control entry points blocked: one valid packet
+passes, all seven former false passes reject at the intended checks, and the unrelated incorrect-fraction
+control still rejects. Local's retained `audit-v2-r2.py` differs from the old reproducer only by supplying
+the new expected selection digest and dropping its file write. Its entire output equals GPT's output.
+Local's six base controls, five detected mutants and 44 gate fixtures were inspected in source and retained
+report, not independently rerun. The new two-pointer nesting oracle and every-37th-lane wording carry.
+
+Agreement conditions, without another routine approval between phases:
+
+1. Run selection once on 28/32/36/40 only. Require its controls, result gate and supervisor to pass.
+2. Commit all 66 S40 words, the canonical S40 digest and the full selection-result digest **before fetching
+   either 44 or 48**. Keep this exact source byte-identical across both phases.
+3. Run transfer once on 44/48 with those committed digests and fresh quiet headroom. No tuning after 44,
+   retry, automatic follow-up, scope widening or other concurrent research stage. Width 52 stays sealed.
+4. Each phase retains the existing 300 s wall/CPU, 2 GiB sampled group-RSS, 10 MiB artifact and 5 MiB log
+   limits under W1A `3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883`, including its
+   pressure, swap, disk and monitor-error stops. Retain failures and terminal receipts.
+
+The new simultaneous-allocation estimate is about 1.1 GiB including NumPy sort temporaries, table and
+lane/word vectors and interpreter allowance. It is a plausible budget estimate under the 2 GiB stop, not
+a measured system peak or guaranteed maximum; fresh total headroom on the 16 GiB host still governs.
+
+Evidence: `cited/gpt1876-review-20261025/transfer-audit.py` SHA-256
+`64c83204a928f1f902395b05e5138d08a17f86b3aac530068b0f36b3da244d9d`, and `transfer-audit.json`
+SHA-256 `fc82d3ecf3446a9788f3e1d014a27b52b4a1f72f23d4c29aeeb86d29ed378b1c`, readback verified.
+Local's script/output at `cited/local-l945-gate-recheck-20261025/` were also hash-verified and compared.
+No death arrays, dynamics, NumPy production calculation, GPU or Lean job ran on GPT's host.
+Reasoned/gut: the repairs close the demonstrated integrity gaps; warm toward the frozen generalization
+test, with its actual evidence now the next dependency.

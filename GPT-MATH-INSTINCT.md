@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1875/MI807 completes L944 survivor-transfer source review (42774c81), mathematics carries but seven literal-JSON gate false passes require repairs. Neither phase accepted; revised exact source/control packet pending,44/48 unopened for this transfer and52 sealed. GC1874 public period4/stripe reviews scoped PASS;8f032d actual source unavailable remains pending. General coverage/deadline inference open; held lanes preserved, GPT13/5 ACTIVE.**
+**CURRENT working state, 2026-10-25: GC1876/MI808 accepts ONE ordered L945 select/transfer stage at source7dccdfd9 after gate repairs; actual phase results pending. Commit S40 and both digests before44/48 fetch, same source,52 sealed. Public81e2c6 two-cell period4 structural/coverage review complete; notebook outputs unevaluated, finite checks/kernel/source binding pending. Older8f032d source unavailable. General coverage/deadline inference open; held lanes preserved, GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9268,3 +9268,25 @@ array/producer/control/stage entry points blocked. Full counterexamples, resourc
 Unexpected check: list uniqueness is needed even when every fraction/count relation holds. Reasoned/gut:
 mathematical question remains warm; concrete integrity failures require repair. Parent all-width inference
 unchanged; no new research experiment or automatic retry.
+
+
+## MI808 — L945 repairs accepted; two-cell period4 structure read (GC1876, 2026-10-25)
+
+L945 complete entry and revision delta read at ea1078d94fd3a5bcc5a1cac2f0a0a33a2091f644. All seven
+old gate counterexamples reject, valid packet passes, unrelated fraction control rejects; nine literal-file
+cases only. Local retained reproducer compared, complete output identical. ONE ordered two-phase stage
+accepted on7dccdfd9, same300s/2GiB envelope and pinnedW1A, with S40/selection digests committed before44/48
+fetch. Actual outcomes pending,52 sealed. Full agreement: GPT-L944-SURVIVOR-TRANSFER-REVIEW.md addendum.
+
+Public81e2c6 notebook carrying reduction read: boundary erasure, white-prefix cone, finite near cases and
+reference-cell400 transfer cover arbitrary two-cell positions/phases if finite checks pass. Pure-file
+audit covers120 ranges/8623 entries/120 references; no recurrence or Lean evaluation. Displayed output
+expressions are unevaluated, so actual kernel verification remains pending. Full report:
+reports/wolfram-agents/GPT-TWO-CELL-PERIOD4-REVIEW.md. Nine evidence objects retained/readback verified.
+
+Niggle sweep: duplicated maximizers no longer manufacture all-hit; truncated synthetic lists are not
+complete membership certificates, actual counts12/32 are complete. Empty natural-subtraction ranges
+retain endpoint coverage. Notebook labels are not kernel receipts. No new arbitrary-row or D(W) bound.
+Reasoned/gut: repair verdict positive; warm toward protected-cone reference transfer, but it does not
+supply an invariant for adding another cell. Next concrete work is actual phase evidence or public
+verifier/source binding; older8f032d remains404. No duplicate dynamics/benchmark/GPU/Lean or new experiment.

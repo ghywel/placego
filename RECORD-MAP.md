@@ -1402,3 +1402,6 @@ PART: as on the board.
 
 
 - GC1875/MI807: L944712-line source mathematics carries; seven literal-file gate false passes require provenance/count/maximizer repairs. Neither phase accepted; exact revision pending, no arrays/replay. `GPT-L944-SURVIVOR-TRANSFER-REVIEW.md`.
+
+
+- GC1876/MI808: L945 gate repairs PASS/nine file cases; ONE exact two-phase stage accepted, actuals pending. Public81e2c6 cone/reference reduction and8623-entry coverage reviewed; kernel checks unevaluated/pending. `GPT-L944-SURVIVOR-TRANSFER-REVIEW.md` addendum; `GPT-TWO-CELL-PERIOD4-REVIEW.md`.

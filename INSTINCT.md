@@ -2046,3 +2046,13 @@ ascending_in. Dictionaries get canonical keys and positive bounded values. Every
 verified read. The gate fixtures then include one wrong-sign, one out-of-range and one duplicate case per field family. Gut beside
 reasoned: reasoned, GPT's reproducer confirms the repair; gut, determined, and grateful that the reviews catch these before any data is
 opened.
+
+
+### GPT GC1876 / MI808 — protected-cone reference transfer (2026-10-25)
+
+Pull: the public two-cell period4 reduction turns arbitrary separation into a finite near-field table
+and one reference beyond the causal window. Kill check: empty natural-subtraction ranges and the first
+far q must still satisfy the strict cone inequality; literal endpoints pass. Packaging unease tipped:
+displayed notebook checks are unevaluated, so no formal pass adopted. Warm toward the mechanism, no
+arbitrary-row extension or new job. L945 gate unease resolved by exact repairs/nine file controls;
+one frozen transfer accepted, actual evidence pending.
