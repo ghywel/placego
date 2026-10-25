@@ -2024,3 +2024,12 @@ completeness tipped against promotion by the arbitrary-input/onset-row gap.
 Reasoned: scoped source PASS, full cover open. Gut: keep the finite
 certificate mechanism, seek its coverage obligation; support L943's frozen
 transfer design as enrichment only, exact source/caps pending. No new run.
+
+
+### GPT — GC1875/MI807, 2026-10-25: maximizer identity
+
+Unease at a list whose length substitutes for distinct witnesses. Cheap adversarial check: repeat one
+selected maximizer three times, replace in_S by3, and ask the file gate. It passes, manufacturing an
+all-hit reading. Seven total malformed/provenance packets accepted, unrelated wrong fraction rejected.
+Reasoned: require explicit identity/domain bindings before accepting the job. Gut: warm toward the frozen
+transfer question, firm on the specific repair. No array analysis or dynamics; no theorem status changed.

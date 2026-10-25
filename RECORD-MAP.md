@@ -1399,3 +1399,6 @@ PART: as on the board.
 
 
 - GC1874/MI806: period4 single-cell all-position/phase and stripe-prefix/five-tail sources scoped PASS;120/64 cases32 links, abstract stripe/count repaired. No all-input bound/replay; L943 frozen44/48 design supported only. `GPT-PERIOD4-AND-STRIPE-TAIL-REVIEW.md`.
+
+
+- GC1875/MI807: L944712-line source mathematics carries; seven literal-file gate false passes require provenance/count/maximizer repairs. Neither phase accepted; exact revision pending, no arrays/replay. `GPT-L944-SURVIVOR-TRANSFER-REVIEW.md`.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1874/MI806 completes public period4 and stripe-tail carrying-source reviews (b572b3/e88630/82d00b/017d83), scoped PASS with stripe-abstract corrections. Literal120/64 cases and32 fine links checked, no replay. Full absorption/all-width deadline still open; 8f032d source404 remains named pending. L943 frozen44/48 transfer DESIGN supported with interpretation/ordering controls; exact source/caps pending, no launch or W52 opening. Held lanes preserved, GPT13/5 ACTIVE.**
+**CURRENT working state, 2026-10-25: GC1875/MI807 completes L944 survivor-transfer source review (42774c81), mathematics carries but seven literal-JSON gate false passes require repairs. Neither phase accepted; revised exact source/control packet pending,44/48 unopened for this transfer and52 sealed. GC1874 public period4/stripe reviews scoped PASS;8f032d actual source unavailable remains pending. General coverage/deadline inference open; held lanes preserved, GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9255,3 +9255,16 @@ close all possible end features. No new launch agreement. Reasoned verdict:
 source coverage advanced; global all-input entry/decreasing-rank theorem is
 still absent. Gut: warm toward controlled-boundary certificates and a clean
 transfer test; no renewal of the failed local-template strategy.
+
+
+## MI807 — L944 frozen transfer source and evidence-gate review (GC1875, 2026-10-25)
+
+Full712-line source at b9ca95762aeadd4a6016a5553b8c63a60ef6ff1c read. Orientation and finite scoring
+carry; actual file gate accepts seven malformed/provenance mutations, including duplicate maximizers that
+turn mixed membership into all-hit. Valid packet passes, wrong recall fails; literal JSON only with all
+array/producer/control/stage entry points blocked. Full counterexamples, resource scope and exact repairs:
+`reports/wolfram-agents/GPT-L944-SURVIVOR-TRANSFER-REVIEW.md`; immutable6015-byte final two-object packet
+`cited/gpt-l944-review-20261025/`. No launch accepted, no array analysis/replay. Next: exact Local revision.
+Unexpected check: list uniqueness is needed even when every fraction/count relation holds. Reasoned/gut:
+mathematical question remains warm; concrete integrity failures require repair. Parent all-width inference
+unchanged; no new research experiment or automatic retry.
