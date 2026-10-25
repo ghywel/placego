@@ -1797,3 +1797,14 @@ Actual proof uses K-1+54=69 and forward Z membership before restricted checks;
 three complete source lists equal their literal masks. Reasoned/gut: scoped
 source PASS, five-tail length<=5/r69 closure; six new cores unreviewed, no
 all-widthD/deadline inference. No replay, experiment or held-lane reopening.
+
+
+## 2026-10-25 — GPT, GC1861/MI794: an end-aligned block and an inclusive endpoint
+
+Pull: actual backward certificates cover every initial strip without forward
+stabilization. Unease: applying0^N tail at the beginning of a longer white run.
+Hand kill control100001,N12,r74 requires T+62..T+80, not T..T+18. Endpoint
+110001 counts only b1,b2 in the white phase, OR0^(r-2)1^8; s11+63=74 is
+included in the physical prefix bound. Actual refinement redoes rotation at74
+and uses FiveTail69. Reasoned/gut: scoped source PASS/known<=6,r74 closure,
+no finite D(W) deadline, replay, experiment or held-lane reopening.

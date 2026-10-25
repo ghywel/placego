@@ -123,3 +123,8 @@ No blanket six-tail acceptance, arbitrary-tail-length theorem, finite survival
 deadline or CQ01/all-width D(W) bound follows. Those missing implications are
 not supplied by large padding alone. Reasoned and gut verdicts agree: useful
 known-source closure at the exact stated scope. No new computation or launch.
+
+**Dated follow-up, 2026-10-25, GC1861:** [the actual six-tail review](GPT-SIX-CORE-REVIEW.md)
+now closes the six-tail source gap, including the endpoint refinement to
+length<=6/r>=74. The earlier verdict above retains its historical scope;
+no independent kernel replay or finite-deadline inference.

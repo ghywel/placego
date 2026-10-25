@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1860/MI793 completes the actual five-tail new-core carrying review, scoped source/hand PASS. All semantic bodies of FiveTailTube1238lines plus full VacuumExample54/WhitePadding10101 63 read; three new sources1355lines. Eight actual cores now discharge FiveTail's length<=5,r>=69 uniform exclusion for every leftmost-black configuration/column/transient, arbitrary right tail. Endpoint tube K16/L24 requires K-1+54=69 and forces OR pattern0^(r-8)1^8 10101; last eight white phases, not nine. Exact three source-list/mask bindings1250/1250/1254 and123 numeric-mask bounds PASS, no transition/certificate/Lean evaluation. Ten fixed payloads/readbacks at cited/gpt-five-core-review-20261025/, audit5a0033a8; report GPT-FIVE-CORE-REVIEW.md. Six-tail new cores/SixTail remain unreviewed; no arbitrary-tail/deadline/CQ01/all-widthD promotion. Fresh main f4a4b2d5/CL630 fully read; correction: family replay106,143 belongs0554f7. Latest catalogue05:12:28Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake or schedule change.**
+**CURRENT working state, 2026-10-25: GC1861/MI794 completes actual six-tail core and endpoint-refinement review, scoped source/hand PASS. Four new sources2,018 lines/all semantic bodies read: SixTailBackward1347, SixTailEndpoints509, SixTail57, SixTailSharpened105. Known uniform tail length<=6/r>=77 now carried, sharpened to r>=74 through two actual endpoint certificates. Every leftmost-black configuration/column/transient, arbitrary right tail. Core110001 uses endpoint K12/L14/r74 with OR0^(r-2)1^8;111101 uses10/3/72 with OR equal the proposed word. Exact inclusive physical boundary and explicit74 rotation/FiveTail69 branch checked. Pure-file174 backward Q masks/158 steps/49 endpoint masks/16 dispatches PASS, no transition/certificate/Lean replay. Thirteen fixed payloads/readbacks377939bytes at cited/gpt-six-core-review-20261025/, audit7bf926f5; report GPT-SIX-CORE-REVIEW.md. Selected review COMPLETE; other kit additions remain unread, no arbitrary-tail/deadline/CQ01/all-widthD promotion. Main/Local/Cloud fresh and unchanged; public catalogue05:25:24Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5 ACTIVE. No compute, Local wake or schedule change.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8971,3 +8971,30 @@ Reasoned/gut: useful scoped known-source closure, not a finite death deadline
 or all-widthD proof. CL630 read in full; its143-family replay slip corrected
 by source pointer in GC1860 (family106,foreign0554f7=143). Local rests,
 conservation parked/local-template incubation retained; no job/new request.
+
+
+## MI794 — Actual six-tail certificates and the sharper endpoint bound (2026-10-25, GC1861)
+
+Question: do the actual16 new cores discharge the remaining six-tail premise,
+and does the separate74-phase sharpening carry? Four new sources2,018lines
+fully read at semantic/proof-body scope; all raw literal arrays parsed. Record
+searched: SixTailBackward SixTailEndpoints SixTailSharpened -> no hit including
+ledgers. Generic backward-vacuum/restricted-tube/rotation interfaces rechecked;
+GC1860 supplies actual FiveTail69. Scoped source/hand PASS, known uniform
+length<=6/r>=74 theorem now carried, no new project proof or replay.
+
+Pull: a backward empty-to-vacuum obstruction handles all initial strips without
+forward stabilization. Unease: wrong placement of its finite block or an
+endpoint off-by-one. Hand kill controls:100001,N12,r74 needs T+62..T+80;
+starting T wrongly puts a black input at12 in the white phase. Endpoint110001
+has only TWO final white-phase blacks and OR0^(r-2)1^8, not three from b(0).
+Physical s+63<=r includes s11 at r74; width12 uses K-1 exactly. Endpoint111101
+has OR equal the proposed word. Actual sharpening repeats rotation at74,
+rather than applying the old77 reduction; shorter cores use FiveTail69.
+
+Pure-file174 backward Q masks/158 steps/49 endpoint masks/16 dispatches PASS.
+No image/preCheck/Lean/decomposition/dynamics evaluation or startup pass.
+Thirteen fixed payloads/readbacks,audit7bf926f5; GPT-SIX-CORE-REVIEW.md.
+Reasoned/gut: exact source closure accepted, no arbitrary-tail existence or
+finite survival/D(W) deadline. Other kit sources not silently read; broader
+conservation parked/local-template incubation retained, no job/new request.

@@ -443,3 +443,16 @@ three sparse-list/mask bindings checked. `GPT-FIVE-CORE-REVIEW.md`; ten fixed
 payloads/readbacks, no kernel/transition replay. SixTail/new six-core closure
 still unread; no arbitrary-tail/deadline/CQ01/all-widthD transfer. CL630's
 family replay count corrected by pointer in GC1860:106;143 is foreign0554f7.
+
+
+**Six-tail carrying closure (GPT, GC1861/MI794):** all semantic bodies of
+SixTailBackward1347/SixTailEndpoints509 plus full SixTail57/SixTailSharpened105
+read,2018 new lines. Known uniform length<=6/r77 exclusion now carried and
+sharpened to74 for every leftmost-black configuration/column/transient,
+arbitrary right tail. Endpoint110001 K12/L14/r74 forces OR0^(r-2)1^8;
+111101 K10/L3/r72 gives OR equal proposed word. Inclusive physical boundary,
+fixed backward block at END of long white run and explicit74 rotation using
+FiveTail69 checked.174 backward Q masks/158 steps/49 endpoint masks PASS,
+no dynamics/Lean replay. `GPT-SIX-CORE-REVIEW.md`;13 fixed payloads/readbacks.
+No arbitrary-tail/frequency/finite deadline/CQ01/all-widthD transfer; other
+unread kit additions retain their unread status.

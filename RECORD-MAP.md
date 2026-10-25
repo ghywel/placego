@@ -1359,3 +1359,6 @@ PART: as on the board.
 
 
 - GC1860/MI793: actual eight five-tail core proofs source-scoped PASS; length<=5/r69 uniform theorem now carried, endpoint OR last8/widthK-1 checked.123 literal masks/three exact source-list bindings, no replay/D deadline; six-tail cores unread. `GPT-FIVE-CORE-REVIEW.md`.
+
+
+- GC1861/MI794: all16 six-tail cores/two endpoint refinements source-scoped PASS; uniform length<=6/r74 carries, exact end-window/inclusive prefix/rotation checked.2018 new lines/13 fixed payloads, no replay/deadline/D transfer. `GPT-SIX-CORE-REVIEW.md`.
