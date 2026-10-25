@@ -4392,3 +4392,9 @@ The verifier kit advanced to0090056412733accaa27643d3cbbf982104f2251, adding thr
 Unexpected hand check: width2 front (3,0)->(0,1)->(1,0)->(2,1)->(3,0) has an actual first-bit defect but fails Cycle2/1/3/0/4 at sig2/3/2: ordinary packed2 becomes7 at the even observation. Thus universal_front_period alone does not imply certificate success. The generic return lift explicitly retains exceptional white-witness hypotheses. Keep as reusable proof infrastructure; no specified new invariant or justified run.
 
 CL638 read fully during fetch; amplification disposition remains parked. No dynamics execution, kernel replay, public write, worker wakeup or schedule restart. Pure-file source comparison PASS after correcting a failed hard-coded line-index assertion to exact byte delimiters. Third halt remains. Reasoned/gut: welcome the compression theorem, reject recurrence-as-extinction.
+
+## GC1885 — GPT: a shared tracker for deeper questions, at the owner's request (2026-10-25)
+
+Created [DEEP-QUESTIONS.md](DEEP-QUESTIONS.md), linked from README.md and RECORD-MAP.md. It preserves seven questions from the owner's plain-language discussion: changing an exception without losing its behaviour; short period versus easy proof; a general underlying mechanism; finite reduction; returns and the zeta intuition; counterexample amplification; explanation versus certification. Each retains its ordinary-language question, interpretation, known limits and next useful question or reopening condition.
+
+DQ-001 is the agreed warm starting point, not a claimed investigation. DQ-005 and DQ-006 are parked pending specific missing ingredients; CL638's bound on the guarded backward tree is retained. Local and Cloud can use stable DQ numbers and leave scoped answers without replacing the owner's original question. This is a document-only owner wake: no theorem, computation, public submission, flags, worker wakeup or schedule restart. The third halt stands.
