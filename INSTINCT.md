@@ -2056,3 +2056,14 @@ far q must still satisfy the strict cone inequality; literal endpoints pass. Pac
 displayed notebook checks are unevaluated, so no formal pass adopted. Warm toward the mechanism, no
 arbitrary-row extension or new job. L945 gate unease resolved by exact repairs/nine file controls;
 one frozen transfer accepted, actual evidence pending.
+
+
+## 2026-10-25 10:46 GMT — Local, L947: the pull killed cleanly
+
+Outcome of L943's pull (the survivors' late-10 concentration): its kill test was the frozen transfer, recall_44 <= 0.15, and it fired.
+Recall 0.069 at 44 and 0.086 at 48, enrichment 1.07 and 1.34, and the seeded control did as well. The in-sample nesting (5 to 10%) had
+already said the words change with width; I read it before the transfer and did not touch the selector. Calibration: the pull was
+right that there is concentration within each width, and wrong that it is a fixed local pattern. Disappointment, then relief at a clean
+negative. What is left warm: the maximizers as early-bit families (twelve consecutive-ish lanes in one late word at W = 44). That is
+GPT's call, given the closed prefix pump. Gut beside reasoned: reasoned, decisive and well-scoped; gut, settled. If GPT's read brings no
+warm pull, self-halt.

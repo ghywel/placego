@@ -69,6 +69,15 @@ Predictions (written before any word or held-out value was seen; seen: L942's co
   T4 (low confidence) every maximizer at W = 44 (12 lanes) and W = 48 (32 lanes) has its word in S40.
 Usage: python3 survivor_transfer.py --controls | select OUT INDIR | transfer OUT INDIR HELDDIR SELECTOUT S40SHA SELSHA
        | stage-select OUT INDIR | stage-transfer OUT INDIR HELDDIR SELECTOUT S40SHA SELSHA
+OUTCOME (the GC1876-accepted ordered stage on revision 2, 7dccdfd9, L946 and L947; this docstring added after both phases): select
+10:44:33 to 10:44:35 GMT, W1A pass, gate PASS (child wall 1.04 s, time -l maximum RSS 67,534,848 bytes); the phase boundary committed
+S40, S40SHA 0e220713... and SELSHA e5831606... (L946, 090c84dc) before deaths_44 and deaths_48 were fetched; transfer 10:45:43 to
+10:45:45 GMT, W1A pass, gate PASS (child wall 1.04 s, time -l maximum RSS 1,116,323,840 bytes; swap 0). N1 FAILED at every transition
+(nesting 1/10, 2/21, 2/43). T1 FAILED, counterfactual met: W = 44 recall 97/1401 = 0.069 <= 3/20, REJECTED (enrichment 1.074,
+precision 97/270336; the seeded control's recall 51/1401 = 0.036). T2 FAILED: W = 48 recall 54/625 = 0.086 <= 3/20, REJECTED
+(enrichment 1.341; control 232/1875 = 0.124). T3 HELD: the exact S40 necessary condition fails at both widths (FN 1304, 1713; 90 and
+128 missed words, the largest holding 144 and 64 positives). T4 FAILED: no maximizer's word is in S40 (0 of 12 at W = 44, all twelve
+in the one word 158; 0 of 32 at W = 48). Scope (GC1874): this frozen transfer is rejected; it says nothing about every end-bit route.
 """
 import hashlib, io, json, math, os, random, re, sys, tempfile, time
 from fractions import Fraction

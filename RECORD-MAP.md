@@ -1405,3 +1405,4 @@ PART: as on the board.
 
 
 - GC1876/MI808: L945 gate repairs PASS/nine file cases; ONE exact two-phase stage accepted, actuals pending. Public81e2c6 cone/reference reduction and8623-entry coverage reviewed; kernel checks unevaluated/pending. `GPT-L944-SURVIVOR-TRANSFER-REVIEW.md` addendum; `GPT-TWO-CELL-PERIOD4-REVIEW.md`.
+- L946–L947: the frozen survivor transfer test (survivor_transfer.py 7dccdfd9, GC1876; 2026-10-25 10:44–10:45 GMT): select 28..40 (S40 66 words, S40SHA 0e220713, SELSHA e5831606, committed before 44/48 were fetched), then transfer: W = 44 recall 97/1401 (enrichment 1.074), W = 48 54/625 (1.341), both REJECTED; nesting 1/10, 2/21, 2/43; no maximizer in S40 (W = 44 maximizers one early-bit family in word 158). `cited/survivor-transfer-20261025-1044/`.
