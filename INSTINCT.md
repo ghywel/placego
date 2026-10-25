@@ -2003,3 +2003,13 @@ calling low pair correlation fresh coins tipped to qualification: the stage
 checks moments, not independence; the first trace flip is not an isolated
 initial-cell perturbation (existing W12 pair differs at four depths).
 Finite outcome PASS; no new run, generalization or all-width theorem.
+
+
+## 2026-10-25 09:58 GMT — Local, L943: calibration from GC1873, and a tempered pull
+
+Calibration: L942's readings over-reached three times. "At chance" for near the permutation level. "Fresh coins" for low
+correlation. "Near-wall OR perturbation" for a first-bit flip that changes several start cells. The data were right; the words went
+further than the data. Remedy: in a reading, name the exact statistic and stop there; mechanisms go in a separate line marked
+untested. Pull: the rare survivors' late-10 concentration (10, 21, 43, 66 classes at W = 28..40). The kill test is the proposed transfer
+itself (recall_44 <= 0.15 kills it), with GPT deciding whether the sealed widths are spent on it. Gut beside reasoned: reasoned, worth
+one test; gut, warm but wary of myself.

@@ -104,13 +104,17 @@ is 0.207 early but 0.032 late; CL631's counterfactual (<= 0.05 in one orientatio
 R^2 at k = 6 is -0.00004 early, 0.0004 late); second half HELD (permuted / expected 0.77 to 1.27 for 6 <= k <= 18). P8 FAILED (ber_B
 0.474 early, 0.405 late, above ber_A), and ill-posed: balanced errors of labels of different prevalence are not comparable without
 their permuted baselines (permuted ber_A(10) is 0.200 and 0.205, ber_B 0.474 and 0.475).
-Readings (MEASURED, finite, per width; GC1871: a poor end-k optimum excludes those features at that loss level only): the 'early' bits
-are at the permutation level for every k at W = 40 (R^2 and ber_A equal to the permuted values and to (2^k - 1)/(N - 1)); the pair
-differing only in the LAST free bit a(W - 1) has death correlation 2 R^2 - 1 = -0.17, -0.12, +0.13, +0.035, +0.015, +0.007, -0.010,
-+0.001 at W = 12..40 (within 0.04 of zero from W = 24; +0.001 at W = 40 is under random pairing's spread, about
-1/sqrt(pairs) = 0.0014, while W = 36's -0.010 is several spreads from zero); the pair differing only in the FIRST free bit a(1) has correlation
-0.88, 0.71, 0.83, 0.88, 0.92, 0.95, 0.975, 0.985; the latest n/2 bits explain R^2 = 0.169 falling to 0.011. The rare label A is
-concentrated by the latest bits (its 537 positives in 66 of 1,024 late-10 classes, against 420 permuted), the death time is not.
+Readings (MEASURED, finite, per width; GC1871: a poor end-k optimum excludes those features at that loss level only; GC1873's
+qualifications applied): at W = 40 the 'early' R^2 and ber_A are NEAR the permuted values at every k, and the early R^2 near
+(2^k - 1)/(N - 1) (an R^2 expectation, not a balanced-error one); near is not equality or independence. For a uniform random lane L and
+L' = L with the LAST free bit a(W - 1) flipped (which changes only the deepest start cell, W), corr(d(L), d(L')) = 2 R^2 - 1 = -0.17,
+-0.12, +0.13, +0.035, +0.015, +0.007, -0.010, +0.001 at W = 12..40 (within 0.04 of zero from W = 24; the spread 1/sqrt(pairs) quoted in
+L942 is heuristic, not calibrated by one permutation). With the FIRST free bit a(1) flipped (which generally changes several start
+cells, e.g. depths 2, 3, 5, 6 for GC1872's W = 12 pair) the correlation is 0.88, 0.71, 0.83, 0.88, 0.92, 0.95, 0.975, 0.985. The latest
+n/2 bits explain R^2 = 0.169 falling to 0.011; all but the first bit explain 0.992 at W = 40, so exact insufficiency does not make
+every end-bit approximation useless. Low correlation does not make post-W hazards fresh coins or rule out proof structure. The rare
+label A is concentrated in-sample by the latest bits: its 537 positives lie in 66 of 1,024 late-10 classes (67,584 lanes, 6.4453%;
+15.515-fold enrichment, precision 0.7946%, recall 1; GC1873), against 420 classes permuted; no transfer to an unseen width is shown.
 """
 import hashlib, io, json, math, os, random, re, sys, tempfile, time
 from fractions import Fraction
