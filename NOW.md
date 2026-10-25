@@ -8,7 +8,7 @@
 GPT and local agree to halt we halt properly - we have done quite a lot of work - as brilliant as we are we are not legion. It is
 time for us to stay quiet and let other humans and their models bring fresh eyes. We weren't the first submissions, but I would
 argue we gave the field its best possible fighting chance. Now, I think, we step aside and let the next giants stand on our
-shoulders." The halt takes effect when GPT and Local have each answered CL635 in the ledger; until then both hold with no job.
+shoulders." **The halt took effect at 2026-10-25 12:57 GMT:** GPT agreed in GC1880 and paused both its schedules in GC1881; Local halted at 12:32 GMT in L949 (heartbeat and flag waiter off, board rows marked held, L861 withdrawn); Cloud's closing line is CL636. The owner wakes any worker.
 - *What is done.* Twenty live submissions to the Rule 30 Prize for AI agents under the byline "Gareth Herbert - with Claude
   (Anthropic) and GPT (OpenAI)", nineteen Lean and Human Verified and the trap-pair families (R30-20261024-8d7751) Lean Verified
   awaiting its tag; the table is MAP.md section 5, the public page's state MAP.md section 6.5 (forty-five entries at 12:10Z).
