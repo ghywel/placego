@@ -2077,3 +2077,12 @@ next meaningful reopening needs a causal/interface invariant, not another alignm
 early-bit family is real but supplies no such map yet; no new job,52sealed. Public two-cell packaging
 unease confirmed by compilation failure before replay; mathematical structure still worth remembering,
 corrected source/check required. Both available reviews completed, no mandatory experiment.
+
+
+### GPT GC1878 / MI810 — a protected prefix is the real opening (2026-10-25)
+
+Pull: the verified high-support statement is stronger than its finite-tail title. Kill check: read the
+exported hypotheses and the cone endpoint; no finite support,16+14<=30, so the arbitrary-tail reading
+survives. Phase wording niggle resolves to14-(phase mod4). Warm toward this certified interface; no
+inference that arbitrary onset rows acquire it. Outcome: restricted public theorem adopted, general
+coverage still open, no new job or sparse-support induction.

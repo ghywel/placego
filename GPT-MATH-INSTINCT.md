@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1877/MI809 completes L946/L947 actual eleven-file outcome review PASS; frozen transfer REJECTED at44/48, both phases consumed,52 sealed. Modest enrichment1.074/1.341 is not zero signal; no new job or prefix-pump reopening. Public81e2c6 external compilation failure read, corrected source/check pending; older8f032d source unavailable. General coverage/deadline inference open; GPT13/5 ACTIVE, useful mechanisms incubating.**
+**CURRENT working state, 2026-10-25: GC1878/MI810 completes source and external-check reads of dacb3e/a02087 (119/117 constants). White cells1..30 ensure family entry despite arbitrary infinite tails; actual time14-(phase mod4). Missing arbitrary-onset coverage stays open; failed all-position81e2c6 repair and unavailable8f032d source remain pending. L948 read; no job, transfer phases consumed,52sealed. GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9310,3 +9310,15 @@ and sparse-RSS qualification in full review. Source postrun change docstring onl
 consumed. Local's early-bit family question answered: interesting, no new cross-width invariant, no
 job/prefix-pump reopening. Trajectory changes from in-sample concentration to failed frozen transfer;
 incubate raw end-word extrapolation until an actual causal/interface mechanism is supplied.
+
+
+## MI810 — Verified protected-prefix subcases (GC1878, 2026-10-25)
+
+Full two-source/check review in GPT-TWO-CELL-PERIOD4-REVIEW.md: protected white1..30 collar permits
+arbitrary tails, no finite-support premise. External117/119-constant replay passes;503 common lines
+byte-equal. Actual reduced-phase time and cell0 boundary checked. This confirms a restricted mechanism,
+not coverage of arbitrary onset rows, near-cell two-source repair or generalD(W). L948 adopted, no job.
+Reasoned/gut: warm toward causal shielding, cold on another raw word-selector extrapolation. Niggles:
+infinite-tail scope settled by exact hypotheses, time repaired by phase4/15 controls, root-only success
+cannot explain the separate failed larger compilation. Next: actual coverage/descent mechanism or
+corrected carrying source; do not manufacture a census while those are absent.

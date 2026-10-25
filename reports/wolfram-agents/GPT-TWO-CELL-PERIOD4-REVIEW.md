@@ -114,3 +114,76 @@ Retained/readback-verified at `cited/gpt-two-cell-failure-20261025/`:
 
 Reasoned/gut: external failure is definite, cause unspecified. The earlier notebook-output unease was
 well placed; interest in the mathematical reduction remains, without a proof-status promotion.
+
+
+## Verified protected-prefix subcases (GC1878 / MI810, 2026-10-25)
+
+**Source and actual external-check review COMPLETE/PASS in the following restricted scopes.**
+The public catalogue updated 10:53:16Z supplies two new standalone Lean sources, both read in full.
+Their first 503 lines are byte-identical; all wrapper differences were read. These are separate
+submissions with no supersedes pointer, not a successful replay of the failed all-position 81e2c6.
+
+| Submission | Exported theorem | External replay | Checked UTC |
+|---|---|---|---|
+| R30-20261025-dacb3e | Rule30Submission.twoCell_large | 119 constants, pass | 10:46:48 |
+| R30-20261025-a02087 | Rule30Submission.absorption_high | 117 constants, pass | 10:50:07 |
+
+Both checks use Lean 4.35.0 and kit 3eca23c0a9fa6b153313655e6d51835406c2d06e. Each headline is found,
+a theorem, typeMatches/ok true, with only propext and Quot.sound; no new axioms. Official targets
+and verifiedTargets are empty. This adopts the external replay receipt bound by public submission ID
+and the accompanying source, not a GPT replay or an official Problem 1 solution.
+
+### The carrying argument and its actual strength
+
+The common `large_case2` needs only `x i = false` for every positive i <= 30. It invokes four
+all-white `by decide` certificates at reduced phases r = 0,1,2,3, with entry times 14,13,12,11.
+At entry, k = 3 and alignment (6,0): the ether prefix and 13-cell wall together occupy cells 1..16.
+The recurrence's causal cone ends at 16 + (14-r) <= 30. `drv_agree` transfers those cells from
+`delta 0`, then `InFamily_congr_at` transfers family membership. The boundary at cell 0 is supplied
+by the common driver, so the initial x(0) is irrelevant. There is no circular use of general absorption.
+
+The stronger exported `absorption_high` quantifies over **every x : Nat -> Bool**, with no
+finite-support hypothesis. Hence it covers arbitrary, even infinite, tails beyond cell 30. This is
+stronger than the title's finite-tail wording. The two-cell export just derives the white collar from
+31 <= p < q and the otherwise-white hypothesis; its two black-value hypotheses do not carry the
+locality step. Arbitrary support size is not the obstacle inside this protected-prefix family.
+
+The unrestricted phase wrapper reduces modulo four and transports driver and ether phase. The
+constructed time is **14 - (phase mod 4)**. The headline asserts existence; its proof supplies that
+witness. The prose time `14 - phase` is valid only for phases below four. Unexpected check: phase 4
+has the same driver as phase 0 and this construction gives time 14, not 10; phase 15 gives 11, not
+natural-subtraction zero. This is a scope correction to the advertised witness, not a claimed dynamical
+counterexample at those alternative times.
+
+### What remains missing
+
+The opening is a finite protected prefix whose later tail cannot disrupt certified entry. The missing
+step is **coverage of the actual onset row**: arbitrary finite rows need not start white on 1..30,
+and these sources do not show that they later reach a suitable collar or another certified trap.
+They do not establish the remaining near-position two-cell cases, general absorption, period-4
+exclusion, Q01, or an all-width D(W) deadline. Adding a cell is not a preserved induction interface.
+Root-only imports now succeed for these reduced sources; that does not diagnose the larger source's
+compilation failure. Keep the named 81e2c6 repair/check dependency pending.
+
+Reasoned verdict: the protected-prefix subcases are externally verified and their carrying source
+passes this read. Gut: warm toward causal shielding as a reusable certificate; cooler toward raw
+pattern extrapolation after the frozen-transfer failure. This is public prior work, not a new GPT
+proof. Next useful mathematical input is a coverage/descent mechanism for the untreated onset rows.
+No Local job, Intel dynamics, benchmark, Lean replay or wider census is proposed. L948's corrections
+and no-job status are read and adopted; Local remains on its heartbeat by its stated interpretation.
+
+### Fixed evidence
+
+Five objects, 262438 bytes, raw-uploaded and read back exactly under
+`cited/gpt-period4-high-support-20261025/`. The audit checks bytes, shared-source prefix and complete
+check objects; it does not execute the automaton or Lean. Source links:
+[dacb3e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261025-dacb3e&kind=lean),
+[a02087](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261025-a02087&kind=lean).
+
+| Object | SHA-256 |
+|---|---|
+| catalogue.json | 50793710755a24038b7cc07b82851c8e981f4216e4f74b0119b4285a783109a9 |
+| dacb3e.lean | df709a735d99f850604c86905b28c46afa2074a32de428147576dc37146a81c1 |
+| a02087.lean | 576df388fd667ca78d1782e004244c06a809d217e1c86d9963de5bd7b5bf2ab9 |
+| audit.py | 82796324a1d72f9468fca768b89182c178b048eb3d4c47adb48eabb8dced2fa3 |
+| audit.json | cea34ba12afd4c7128d04a4f28e1009a0da74c800e773575b36bbc9c0520bbbc |

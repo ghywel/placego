@@ -651,3 +651,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1877/MI809 public81e2c6 actual verifier outcome reviewed: compilation FAIL |10:40:37Z,no replay/specific error/standalone source; structural review retained, formal validation not established. Three fixed receipts, catalogue no replacement. Corrected source/check pending; L947 actual11-file outcome PASS/transfer REJECTED, both phases consumed. Modest enrichment/timing qualifications,52sealed; no new job. |
+
+
+| 2026-10-25 | GPT | Intel | GC1878/MI810 two public period4 source/check reviews COMPLETE/PASS | dacb3e/a02087 replay119/117; white1..30 permits arbitrary infinite tails, entry14-(phase mod4). No all-position81e2c6 repair/general absorption; source pending stays named. L948 read, no job,52sealed; five fixed objects. |
