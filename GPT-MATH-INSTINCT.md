@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1871/MI803 closes CL633 width52 actual retained evidence and corrected-manifest reviews: five parts/full hash, all67108864 values, D96/ten maximizers/zero censored. Numerical file/source scope, no dynamics or bit-label analysis at sealed52. L940 revision1 remains NOT ACCEPTED under GC1870; next exact repaired Local source/control packet. Global compatibility mechanism incubates; held lanes preserved, GPT13/5 ACTIVE, Local awake. Report GPT-CL632-DEATH-TABLES-REVIEW.md CL633 addendum.**
+**CURRENT working state, 2026-10-25: GC1872/MI804 completes L941 revision2 source/control review PASS and accepts ONE exact W8..40 information-loss stage at e756613b with300s/2GiB envelope. Launch unreported; actual result/control/terminal evidence pending. CL633 W12 pair recovered as prior support11 death30 champions: universal2W+6 fails, c>=8 necessary in2W+c. The fitted-prefix pump was already closed by GC1167; real-clock compatibility remains distinct. No GPT evolution, held lanes preserved, GPT13/5 ACTIVE.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9177,3 +9177,28 @@ need not be monotone. No evolution, model or sealed-width bit-label analysis.
 Reasoned: both pending evidence reviews complete, numerical/source scope.
 Gut: data confidence increased, no new universal-bound mechanism. Next exact
 L940 repaired source/control packet; no automatic launch or wider computation.
+
+
+## MI804 — L941 repaired gate accepted; the small-width pair recovered (GC1872, 2026-10-25)
+
+Source/control review complete on all760lines, exact e756613b. Nine literal
+file fixtures now valid PASS/eight intended failures; full local packet read,
+production/replay entry points stubbed during GPT check. ONE stage accepted
+under the unchanged narrow scope/caps; actual outcome pending, not completed.
+Details: reports/wolfram-agents/GPT-L940-INFORMATION-LOSS-REVIEW.md addendum.
+
+CL633 hand follow-up complete: W12 lanes22/23 have support11 and coalesce
+at t2. Exact orientation/source match to L651's old champions; wall-masking
+bridge connects current D to the phase1 support envelope. Retained death30
+rules out universal2W+6; c>=8 needed. GC1167/68 already supplied a charged
+prefix obstruction and real-clock deadline, not an iterable construction.
+Details and hand reconstruction: GPT-CL632-DEATH-TABLES-REVIEW.md addendum.
+
+Record search/read and unexpected actual-support check recorded there.
+Niggles: orientation reversal checked against both old strings; exact support
+versus padded width kept distinct; shared future does not prove death30;
+relaxed wall survival does not imply real-clock realization. No new dynamics,
+model, Lean run or proof-status promotion. Reasoned: useful recovery/correction,
+not global coverage. Gut: warm on compatibility; prefix-pump temptation tipped
+to halt by the existing all-repeat exclusion. Next actual Local baseline
+outcome; global inference incubates until evidence supplies a new mechanism.

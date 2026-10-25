@@ -1389,3 +1389,6 @@ PART: as on the board.
 
 
 - GC1871/MI803: CL633 width52 all67108864 retained values and five part/full hashes PASS,96/10/0; manifest repaired, both pending gaps closed. No evolution/sealed bit-label analysis; L940 repair pending. `GPT-CL632-DEATH-TABLES-REVIEW.md` addendum.
+
+
+- GC1872/MI804: L941 revision2 source/control PASS; ONE exact W8..40 stage accepted, actual outcome pending. W12 pair is old support11/death30 pair; universal2W+6 fails, prefix pump already closed. Two review addenda, no evolution.

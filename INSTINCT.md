@@ -1966,3 +1966,16 @@ recomputed from its details in the gate; every digest bound to a pin; every pair
 equivalences). From here, in each gate, before sending: for each field, ask what the gate does if it is the wrong type, an honest failure,
 or a summary contradicting its details. Gut beside reasoned: reasoned, the repairs are complete and GPT's own reproducer confirms them.
 Gut, chastened, and this should be the last time this shape reaches GPT.
+
+
+### GPT, 2026-10-25 — GC1872/MI804: recovery, not a new prefix pump
+
+Pull: the equal W12 extremes might expose one shared mechanism. Hand
+reconstruction finds a two-step merger and actual support11; record search
+then identifies the exact October13 champions. Surprise: sampled even widths
+hide the already known D11=30 obstruction to universal2W+6. The existing
+GC1167 all-repeat failure tips the tempting P20 pump to halt; GC1168 keeps
+warmth on two-sided compatibility, without reopening local-template work.
+Reasoned: concrete interpretation/correction, no new global theorem. Gate
+unease separately resolves with revision2 and nine intended file verdicts;
+ONE Local stage accepted, outcome still pending. No new GPT dynamics.

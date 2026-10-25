@@ -274,3 +274,93 @@ Next concrete dependency: Local's exact revised executable/control packet.
 Reasoned verdict: evidence gaps closed in the stated scope. Gut: confidence
 in the retained data increased; the mathematical opening remains a mechanism
 for compatibility after the fresh pivots run out, not more census width.
+
+
+## CL633 small-width question: the W12 pair is the old W11 pair (GC1872/MI804)
+
+2026-10-25. Retained-file extraction and hand/source review, **no new dynamics
+run**. The already verified deaths_12.npy has histogram
+{12:26,14:29,16:6,18:1,30:2}; its maxima are lane22 and lane23. Here the lane
+bits are the odd trace samples in increasing time. Put p=bit0 and q=1-p;
+the common remaining five bits are1,1,0,1,0. Thus the trace through time11 is
+`1 p 1 1 1 1 1 0 1 1 1 0`.
+
+Applying the source's sideways identity by hand,
+c_(j+1)(t)=c_j(t+1) XOR (c_j(t) OR c_(j-1)(t)), with c0=0, gives:
+
+| depth | available column values, earliest time first |
+|---|---|
+| 1 | 1 p 1 1 1 1 1 0 1 1 1 0 |
+| 2 | q q 0 0 0 0 1 1 0 0 1 |
+| 3 | p 1 1 1 1 0 0 1 1 0 |
+| 4 | 0 0 0 0 1 0 0 0 1 |
+| 5 | p 1 1 0 1 0 0 0 |
+| 6 | q 0 1 1 1 0 0 |
+| 7 | 1 0 0 0 1 0 |
+| 8 | 1 0 1 0 1 |
+| 9 | 1 1 1 1 |
+| 10 | 0 0 0 |
+| 11 | 1 1 |
+| 12 | 0 |
+
+The first entry of each column reconstructs the initial depth1..12 row:
+`1 q p 0 p q 1 1 1 0 1 0`. Removing the final white padding, the two starts
+are **11000111101** and **10101011101**, written nearest the wall first.
+Both have actual support11. Their first updates are respectively
+011010001011 and101010001011; their second updates coincide at
+1010110110011, followed by zeros. These two updates were checked by hand.
+The elementary identity F(011u)=F(101u) beside wall0 explains this merger:
+the first three outputs are1,0,(1 XOR u1) for both, and later inputs agree.
+It explains the equal future, not the death time30; that time is retained
+numerical evidence, not a new hand certificate or kernel replay.
+
+**Unexpected check: actual support, not just the sampled width.** These
+starts already fit W11. Consequently the retained W12 evidence implies
+D(11)>=30, and the existing d1 table records D(11)=30. An all-width bound
+D(W)<=2W+6 therefore fails at W11, where it would give28. Any universal
+bound of the form2W+c must have c>=8. The2W+6 envelope described in CL633
+and L941 concerns their sampled widths; it must not be extrapolated to every
+integer width. This is recovered evidence, not a new maximum calculation.
+
+### Exact link to the October13 record
+
+Record searched: record_find.py with the exact fragment1100011, after the
+initial multi-term AND query returned no hit. The carrying sources read were
+RULE30-PRIZE section8.94 (including addenda), RULE30-GPT archive9
+GC1166-GC1168, ledger archive14 L651/L658/L661, and the complete
+rule30_leftside_jump.py and rule30_prefix_arrival.py sources. The old strings
+are written deepest first: reversing ours gives10111100011 and10111010101,
+exactly L651's width11 phase1 champions.
+
+The wall conventions agree up to first death. In the older phase1 evolution,
+wall tau(t)=(1+t) mod2 is black at even times. Before the first failed even
+check, depth1 is black on those ticks and masks either wall value in the OR.
+On odd ticks tau=0 already equals the new constant-white wall. Induction
+therefore makes the two half-line evolutions identical through their first
+failed even check, including the zero/infinity cases. In GC1166's notation,
+D(W)=max_(0<=w<=W) H_L^(1)(w). The maximum is over exact supports; it is not
+H_L^(1)(W) alone. This hand bridge is an application of the recorded coding,
+not a newly established all-width deadline.
+
+The older work already provides both an attractive mechanism and its limit:
+- P20=10011100101110100100 (deepest first) before either old core gives a
+  support31 champion of reported death66. GC1167 identifies the corresponding
+  35-cell black-run parent and its white-run image. This explains a jump
+  geometrically, without supplying an iterable transport law.
+- Repeating P20 is **closed**, not an available construction: GC1167/L658's
+  proved depth35 defect certificate forces failure34 for every repetition
+  count>=2 and arbitrary farther tails in phase1. Changing the next bit only
+  repairs that one check, not all later checks.
+- GC1168/L661's proved real-clock restriction is stronger for that different
+  target: the fitted low20 prefixes demand visible black samples at both17
+  and19, forbidden on the genuine right side. Thus no actual centre clock
+  with those prefixes matches through tick20, even though its relaxed
+  left-only horizon is66. This does not invalidate a D(W) maximizer.
+
+Reasoned verdict: CL633's pair question has a concrete source/hand answer,
+and the universal2W+6 extrapolation is ruled out by already retained evidence.
+The missing global inference is still a bound on compatible black-run births
+or an entry/death deadline. Gut: warm toward the distinction between long
+relaxed survival and actual two-sided compatibility; cool on another fitted
+prefix search. The old repeated-prefix and local-template lanes stay closed.
+No new proof-review request, experiment, odd-width census or scope widening.

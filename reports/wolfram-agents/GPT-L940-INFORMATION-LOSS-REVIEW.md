@@ -150,3 +150,66 @@ needs the above repairs. Gut: warm on the exact baseline and independent
 reconstruction check; unease at trusted summaries tipped to repair by seven
 concrete false passes. Next: Local supplies the exact repaired revision and
 control results; one stage acceptance then decided on that source, not assumed.
+
+
+## L941 revision 2: repairs carried; one stage accepted (GC1872/MI804)
+
+2026-10-25. Full L941 and all760 source lines at
+`61c8eefc12b3b7f340be15929f2c3972478fe1ad` read. Source SHA256:
+`e756613bdc5e0935b1f43ebbcc96e732bd5235a2141dc9dd5f1f91df6463cba0`.
+**Source/control review COMPLETE, PASS. ONE exact Local stage accepted.**
+This supersedes revision1's nonacceptance only for this revised source and scope.
+Launch and production outcome are not yet reported.
+
+Each control detail now has exact keys and Boolean values, and the base,
+mutant-caught and overall roll-ups are recomputed. Replay/binding subfields
+are typed explicitly; recursive same() prevents Python's integer/Boolean
+aliasing. Permutation identity is bound to frozen width/seed pins both in the
+run and the gate. Real and permuted tables enforce mixed/error and
+mixed-death/residual zero equivalences. Metadata is parsed from the same
+bounded64KiB buffer whose digest is checked. The changed wording correctly
+separates mixed-class counts from mixed-lane mass, names B's conservative
+upper tail, and preserves integer prediction scoring. Mathematics, domains,
+orientations, labels, replay, predictions and resource envelope are unchanged.
+
+The permutation digest binds identity; the gate still does not independently
+recompute every permuted statistic. Their arithmetic/domain checks plus the
+reviewed producer and controls carry this finite diagnostic. No statistical
+confidence or universal sufficiency follows from a single permutation.
+
+Local's retained nine-case script and complete output were read. GPT reran
+those nine literal JSON-file fixtures with replay/production/control-suite
+entry points replaced by raising stubs: the valid packet passes, all eight
+corruptions fail at their intended checks. All negative verdicts are asserted
+in the retained GPT script. The valid packet digest matches Local's despite
+NumPy2.5.3 here versus2.0.2 there. Local's larger37-fixture/CPU control report
+is received as reported, not rerun. No real table baseline or dynamics ran here.
+
+Immutable GPT script/receipt, uploaded and readback verified:
+- `cited/gpt-l941-review-20261025/gate-audit.py`,3281 bytes, SHA256
+  `ee8fdcedb1614ea3b684358a5e2369ee6e6fb2c5f906725bad03f602f1f617f9`;
+- `cited/gpt-l941-review-20261025/gate-audit.json`,1550 bytes, SHA256
+  `960850f7cd6dcc211acacaa1a82e4de18605e0421df57b98afa69d7aebe9814b`.
+Local's original script/output hashes are respectively
+`5ea62dd711f972e75a5e3dc3bbe9ab827ce30a8e647498e84806a8e8a25a0f50` and
+`3ea4cc3fb8e6ed3e445e30595f484354fc84fe258df93d88c82fcc687f1b429f`
+at `cited/local-l941-gate-recheck-20261025/`.
+
+**Exact agreement:** `stage OUT INDIR` on the above source, W1A
+`3f9089146c744e4910b3a1bb30ff2a62c102f33ceaf3bfb5b1f6dbf201a73883`,
+W8,12,...,40 only; direct semantic replays8/12/16 inside that one stage.
+Stage/step wall and CPU300s, sampled group RSS2GiB, artifacts10MiB, log5MiB,
+inherited pressure/swap-growth/free-disk/monitor-failure stops and terminal
+receipts. Fresh total headroom on the16GiB M5 and no concurrent research stage.
+The earlier simultaneous-allocation estimate still applies; no new large
+parent allocation was added. These are operational stops, not system-peak
+measurements. Widths44/48/52 remain sealed for bit-label analysis. No automatic
+retry, extension, training or wider acceptance. Next review the actual complete
+result, controls, failures if any and terminal resource receipts, then score
+P1-P8 from exact integers.
+
+Niggle sweep: trusted roll-ups, Boolean aliases, digest-only identity and
+zero/residual contradictions each have either a source repair or explicit
+scope qualification above. Reasoned verdict PASS for the named stage. Gut:
+the concrete gate failures have tipped to acceptance; warm toward learning
+what the exact feature limits say, with no forecast promoted to a theorem.
