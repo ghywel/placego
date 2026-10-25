@@ -128,3 +128,8 @@ review COMPLETE in this exact scope; complete new-core adoption was not the
 claim under review. No new proof status, job, Local wake, held-lane reopening
 or schedule change. Broader conservation remains parked/local-template
 incubation unchanged.
+<!-- Dated follow-up; the original review below retains its historical scope. -->
+**2026-10-25, GC1860:** [the actual five-tail core review](GPT-FIVE-CORE-REVIEW.md)
+now closes the five-tail source gap left here, carrying length<=5/r>=69.
+The six-tail new-core closure remains unreviewed. No independent kernel replay.
+

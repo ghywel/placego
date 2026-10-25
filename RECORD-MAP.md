@@ -1356,3 +1356,6 @@ PART: as on the board.
 
 
 - GC1859/MI792: rotation/short<=4,r49 carrying source PASS; five/six69/77 reductions conditional/imported core scope, new core closures unreviewed. Exact r+a+b preserves period; no replay/D deadline. `GPT-TAIL-ROTATION-REVIEW.md`.
+
+
+- GC1860/MI793: actual eight five-tail core proofs source-scoped PASS; length<=5/r69 uniform theorem now carried, endpoint OR last8/widthK-1 checked.123 literal masks/three exact source-list bindings, no replay/D deadline; six-tail cores unread. `GPT-FIVE-CORE-REVIEW.md`.

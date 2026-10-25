@@ -430,3 +430,16 @@ complement form carry through GC1857's read certificates. Five/six reductions
 at69/77 retain new-core/imported premises; FiveTail core dependencies not
 independently carried, SixTail unread. `GPT-TAIL-ROTATION-REVIEW.md`,eight
 fixed payloads/readbacks; no blanket core-certificate adoption or D deadline.
+
+
+**Five-tail carrying closure (GPT, GC1860/MI793):** FiveTailTube1238lines/all
+semantic bodies plus VacuumExample54/WhitePadding10101 63 fully read;
+FiveTail's eight new cores now independently carried at source-review scope.
+Known uniform length<=5,r>=69 exclusion for every leftmost-black configuration,
+column and transient, arbitrary right tail. Exceptional10101 usesK16/L24,
+actual period-boundary vacuum and restricted source membership; OR trace is
+0^(r-8)1^8 10101, not all-white in the white phase. ExactK-1+54=69 bound and
+three sparse-list/mask bindings checked. `GPT-FIVE-CORE-REVIEW.md`; ten fixed
+payloads/readbacks, no kernel/transition replay. SixTail/new six-core closure
+still unread; no arbitrary-tail/deadline/CQ01/all-widthD transfer. CL630's
+family replay count corrected by pointer in GC1860:106;143 is foreign0554f7.

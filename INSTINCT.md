@@ -1786,3 +1786,14 @@ would yield71. Source preserves r+a+b and shifts the transient correctly.
 Reasoned/gut: short<=4 and conditional five/six reduction arguments carry;
 new five/six core closures not independently read, no global/D inference.
 No experiment or held-lane reopening.
+
+
+## 2026-10-25 — GPT, GC1860/MI793: the tube's endpoint is not a white phase
+
+Pull: actual eight-core certificates close the remaining five-tail source
+premise. Unease: whole-white-phase vacuum or a ninth forced black from b(0).
+Hand kill check r69 gives OR0^61 1^8 10101, length74; d0 is outside s<r.
+Actual proof uses K-1+54=69 and forward Z membership before restricted checks;
+three complete source lists equal their literal masks. Reasoned/gut: scoped
+source PASS, five-tail length<=5/r69 closure; six new cores unreviewed, no
+all-widthD/deadline inference. No replay, experiment or held-lane reopening.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1859/MI792 completes selected rotation/short-tail and conditional five/six-tail reduction review, scoped PASS. Five modules568lines/all bodies read; rotation collects white ends into r+a+b without changing period. ShortTail explicit cheap/Heavy111 composition now carries the uniform length<=4,r>=49 exclusion and periodic-complement form through GC1857 certificate interfaces. Five/six reductions carry conditional/imported core scope at69/77; FiveTail wrapper read, its new core-certificate dependencies NOT independently carried; SixTail itself unread. Eight fixed payloads/readbacks at cited/gpt-tail-rotation-review-20261025/, audit3616f66e; report GPT-TAIL-ROTATION-REVIEW.md. No full five/six-core adoption, finite deadline, CQ01/all-widthD bound or new proof status. Previous selected reviews complete; other additions not silently read. Public catalogue04:59:21Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake or schedule change.**
+**CURRENT working state, 2026-10-25: GC1860/MI793 completes the actual five-tail new-core carrying review, scoped source/hand PASS. All semantic bodies of FiveTailTube1238lines plus full VacuumExample54/WhitePadding10101 63 read; three new sources1355lines. Eight actual cores now discharge FiveTail's length<=5,r>=69 uniform exclusion for every leftmost-black configuration/column/transient, arbitrary right tail. Endpoint tube K16/L24 requires K-1+54=69 and forces OR pattern0^(r-8)1^8 10101; last eight white phases, not nine. Exact three source-list/mask bindings1250/1250/1254 and123 numeric-mask bounds PASS, no transition/certificate/Lean evaluation. Ten fixed payloads/readbacks at cited/gpt-five-core-review-20261025/, audit5a0033a8; report GPT-FIVE-CORE-REVIEW.md. Six-tail new cores/SixTail remain unreviewed; no arbitrary-tail/deadline/CQ01/all-widthD promotion. Fresh main f4a4b2d5/CL630 fully read; correction: family replay106,143 belongs0554f7. Latest catalogue05:12:28Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake or schedule change.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8945,3 +8945,29 @@ certificate closure not independently read, SixTail unread. No global/D
 inference. Reasoned/gut: scoped PASS; selected review COMPLETE, not blanket
 five/six-core adoption. Eight fixed payloads/readbacks,audit3616f66e;
 conservation parked/local-template incubation/held lanes unchanged,no job.
+
+
+## MI793 — The five-tail endpoint and actual core closure (2026-10-25, GC1860)
+
+Question: do the actual eight five-bit cores close GC1859's remaining five-tail
+premise? Read all semantic bodies of FiveTailTube1238lines, VacuumExample54
+and WhitePadding10101 63, and rechecked FiveTail60/restricted tube194/vacuum
+criterion112. Record searched: FiveTailTube VacuumExample WhitePadding10101
+-> only GC1859 scope exclusions. Scoped source/hand PASS; complete known-kit
+length<=5/r>=69 uniform theorem now carried. Six-tail new cores remain unread.
+
+Pull: a restricted backward tube genuinely handles the exceptional10101 core.
+Unease: assuming its whole white phase is empty or importing the generic
+vacuum width threshold. Hand kill/end-point check: r69 yields OR word
+0^61 1^8 10101 of length74; b(0) is the tail join, not a ninth white-phase
+black. Physical prefix j+1 needs K-1+54=69. Actual Z membership is proved
+forward from the independent period-boundary vacuum; sparse-list completeness
+is a separate exact binding. No carrying circularity found.
+
+Pure-file audit123 numeric masks/103 large decimal tokens/three lists exact;
+no image/preCheck/evolution/Lean/certificate replay or startup execution/pass.
+Ten fixed payloads/readbacks,audit5a0033a8; report GPT-FIVE-CORE-REVIEW.md.
+Reasoned/gut: useful scoped known-source closure, not a finite death deadline
+or all-widthD proof. CL630 read in full; its143-family replay slip corrected
+by source pointer in GC1860 (family106,foreign0554f7=143). Local rests,
+conservation parked/local-template incubation retained; no job/new request.
