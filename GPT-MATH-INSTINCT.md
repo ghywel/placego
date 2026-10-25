@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1851/MI784 directly reads public catalogue check objects: width74 a129c3 and width76 4dcf69 Lean Verified/Human Verified; family8d7751 Lean Verified, no Human Verified tag. All three raw-external-status reviews COMPLETE; family seven common fields exactly match local Checkef140fcd. Local Check/ten actual cells already PASS GC1847, no new run. New0554f7 full452-line submitted source and carrying kit dependencies scoped PASS: consecutive black-run3/5 bound, conditional white bounds and logarithmic white counts. Exact hypotheses do not supply an all-widthD(W) bound. Fixed private packet cited/gpt-public-status-fifths-20261025/ retains seven files/readback verified. Newd1bcba remains evaluating/Lean Unverified/Leanfile null: named carrying-source/completed-check review pending. No repeated API/request. GC1850 local-template approach stays incubated; all-widthD/CQ01 open. Local self-halted L937 on owner option; GPT13/5 coordination/review ACTIVE. No new compute, Local wake, held-lane reopening, schedule change or prize won.**
+**CURRENT working state, 2026-10-25: GC1852/MI785 closes d1bcba actual source/completed-check review WITH PROSE/SCOPE CORRECTIONS. Public catalogue01:13:39Z has Lean Verified,20selected/735replayed, no Human Verified tag. Old9d92a2 declaration body byte-exact; all23newtheorems/2defs and carrying pinned diagonal recurrence read. Formal linear black-run/conditional white bounds carry; sublinear/O(1) prose unproved, no all-widthD transfer. Six retained files/readbacks atcited/gpt-d1bcba-review-20261025/. GC1851 three raw external-status reviews already COMPLETE;0554f7 fullsource scoped PASS. No delivered carrying source left unread; broader conservation exclusion parked. All-widthD/CQ01 OPEN, GC1850 local-template approach incubating. Local self-haltedL937 on owner option; GPT13/5 coordination/review ACTIVE. No new compute,Localwake,held-lane reopening,schedulechange or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8793,3 +8793,20 @@ verifier-field comparison PASS; seven payloads retained and readback verified.
 Newd1bcba check running/source null is an actual dependency, not an abstract
 proof. Keep named review pending until source and completed packet arrive.
 Local-template approach incubates unchanged; no Local wake or compute request.
+
+
+## MI785 — Read the now-available diagonal-defect appendix (2026-10-25, GC1852)
+
+Fresh catalogue supplies d1bcba actual source and completed735replay check.
+Full new appendix read; prior9d92a2 body byte-exact throughPhase3. Scoped
+formal PASS, concrete prose/scope corrections in GPT-D1BCBA-DIAGONAL-REVIEW.md.
+Written kill check: fixedj envelopea-j hasratio tending1, so its label
+sublinear is unsupported. Temporalwhite wrapper also needs exactpreRow/front
+separation, not omittedell. DiagonalD(j,a) and widthdeathD(W) cannot be
+interchanged; consecutiveblack and even-timeblack hypotheses differ.
+
+Reasoned/gut: sound finite argument; reject strongerprose. Pendingreview
+COMPLETE; six fixedpayloads/readbacks, purefile checksPASS,no execution of
+downloadedsource/Lean/evolution. No newexperiment/startup-pass claim, no
+Localwake/compute/reviewrequest or schedulechange; localtemplate incubation
+retained and next useful work needs actual new source or global mechanism.

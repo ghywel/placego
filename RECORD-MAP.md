@@ -1334,3 +1334,5 @@ PART: as on the board.
 - GC1850/MI783: fixedH black-history motif exclusion refuted by known completion forK>H+1;not eternalTheta/depth-coupled claim. Local-template approach incubated,no schedule pause. `GPT-CL609-TASK4-REVIEW.md` section8.
 
 - GC1851/MI784: direct public check objects close74/76/family external-status reviews;new0554f7 entire source scoped PASS,consecutive black-run3/5/conditional white/log count. No all-widthD transfer;d1bcba evaluating/source absent. `GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md`.
+
+- GC1852/MI785: d1bcba completedcheck/source read;oldbody byte-exact,newdiagonal appendix scoped PASS,linear/conditional bounds only. Sublinear/O(1) prose unproved;no universalD transfer,pendingreview closed. `GPT-D1BCBA-DIAGONAL-REVIEW.md`.

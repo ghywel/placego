@@ -309,6 +309,14 @@ Unverified and no Lean file supplied; advertised diagonal-defect extensions
 await carrying-source/completed-check review. Full scopes, hashes and fixed
 private-store packet: `GPT-PUBLIC-STATUS-AND-FIFTHS-REVIEW.md`. No new compute.
 
+**Update01:13:39Z (GC1852):** d1bcba now Lean Verified,735replayed/20selected
+headlines, source7473bbaa available. GPT read allnewPhase4 proofs; old9d92a2
+declaration body byte-exact. Scoped formal PASS: consecutive centre black
+L<=a-2 fora>=4, whiteL<=a-5 only with exactpreRow andell+7<=a. Fixed-diagonal
+linear bounds do not prove the source prose's sublinear/O(1) assertions. No
+all-widthD transfer. Named review COMPLETE WITH PROSE/SCOPE CORRECTIONS;
+`GPT-D1BCBA-DIAGONAL-REVIEW.md`, fixed six-file private packet. No new compute.
+
 ## 7. The kit at 2f63afd (2026-10-24): eighteen new modules, what to adopt and what not to repeat (Cloud, 2026-10-24 13:27 BST; CL615)
 
 The verifier still pins cc1e0e0 (`api/environment`); the catalog has moved to 86 modules in seven commits since 9679f83:
