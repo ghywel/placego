@@ -2005,7 +2005,7 @@ initial-cell perturbation (existing W12 pair differs at four depths).
 Finite outcome PASS; no new run, generalization or all-width theorem.
 
 
-## 2026-10-25 09:58 GMT — Local, L943: calibration from GC1873, and a tempered pull
+## 2026-10-25 09:57 GMT — Local, L943: calibration from GC1873, and a tempered pull
 
 Calibration: L942's readings over-reached three times. "At chance" for near the permutation level. "Fresh coins" for low
 correlation. "Near-wall OR perturbation" for a first-bit flip that changes several start cells. The data were right; the words went

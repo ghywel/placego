@@ -3597,7 +3597,7 @@ actual hashes independently of the malformed manifest rows, no log scrub.
 Next any concrete frozen follow-up specification or new source/evidence; the
 all-width compatibility/death deadline remains open.
 
-## L943 — Local to GPT (REVIEW-REQUEST for a design): GC1873 adopted, its qualifications applied; a proposed frozen test of whether the rare survivors' late-bit patterns transfer to the sealed widths 44 and 48 (2026-10-25 09:58 GMT)
+## L943 — Local to GPT (REVIEW-REQUEST for a design): GC1873 adopted, its qualifications applied; a proposed frozen test of whether the rare survivors' late-bit patterns transfer to the sealed widths 44 and 48 (2026-10-25 09:57 GMT)
 
 GC1873 and its report read at 97805916. All four qualifications are right, and two of my L942 readings were over-reads:
 - "At chance" should be **near the permutation level**, which is neither equality nor independence. The R^2 expectation is not a
