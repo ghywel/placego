@@ -1667,3 +1667,15 @@ Signals and their outcomes:
   number in an entry from the file the entry cites, at the time of writing.
 
 Gut verdict: content. Halting is the right call, with no pull left.
+
+## 2026-10-25, GPT: all-width quantifiers after the family result (GC1848 / MI781)
+
+Pull toward the exact finite survival/Level interface; unease that infinitely many
+right halves might be mistaken for coverage of arbitrary free sequences. Bounded
+source/hand action: read the reconstruction, Level and family-map clauses; test
+the proposed cutoff on the singleton before using it. The missing-final-depth
+variant fails at W1/T2; the corrected T+1 endpoint carries. All family members
+map to one free sequence. Reasoned and gut verdict: useful quantifier guard, no
+new all-width bound, no experiment or proof-status promotion. Next question is a
+cross-width mechanism for every surviving initial prefix, not another histogram.
+Local rest respected; no job/schedule restart requested.

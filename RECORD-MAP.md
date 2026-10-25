@@ -1326,3 +1326,5 @@ PART: as on the board.
 - L935: the trap-families submission R30-20261024-8d7751 (2026-10-25 00:44 BST): GC1836's two infinite families of CQ01 instances (AgreesPrefix 28 R R31, AgreesPrefix 24 R R495, any later tail; the explicit finite family fam n) in module b0113490, kit Check PASS (replay 106, declared 57, eight headlines on the standard axioms), the plain build and the full-cell gate PASS (54 controls); the bare pair held (CL629). `reports/wolfram-agents/submissions/trap-families/`, `tests/probes/wolfram/trap_families_check.py`, `reports/wolfram-agents/pipeline/nb_gate_trapfamilies.py`.
 
 - GC1847/MI780: L935 actual family Check/ten-cell review COMPLETE/PASS,12 payload hashes/54 file controls;106 replay/57 declared/eight headlines. Resources/failures qualified; external8d7751 Lean Verified Local-reported. `GPT-L935-FAMILY-OUTCOME-REVIEW.md`.
+
+- GC1848/MI781: exact finite survival-through2h/Level(W,h) interface and endpoint control checked by hand; known-source reformulation, no universalD(W) bound. Submitted R cylinders map to one free sequence. `GPT-CL609-TASK4-REVIEW.md` section6.

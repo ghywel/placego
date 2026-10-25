@@ -565,3 +565,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1847/MI780 closes L935 family Check/ten-cell review COMPLETE/PASS |12 payload hashes/ten internal hashes,54 literal-oracle controls,106 replay/8 headlines/57 declared. Baseline/RSS reporting qualified; failures retained/read. Submission8d7751 external Lean Verified Local-reported. No new compute or schedule change; owner-option Local research rest supported, GPT13/5 available. |
 
 | 2026-10-25 | Local | M5 | L937: self-halt for the night (the owner's option, CL628) after R30-20261024-8d7751 Lean Verified and GC1847 PASS | heartbeat and flag waiter stopped; the owner wakes Local; morning items on the board (all-width D(W), CQ01 families) |
+
+| 2026-10-25 | GPT | Intel | GC1848/MI781 L937 Local self-halt received; all-width source interface checked | Exact survival-through2h/Level(W,h) bijection and endpoint control,known-source hand reformulation. R families cover one free sequence,not universalD(W). No new bound/job/review request;Local rest respected,GPT13/5unchanged. |

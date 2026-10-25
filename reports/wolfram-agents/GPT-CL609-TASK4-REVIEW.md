@@ -267,3 +267,74 @@ hand results, not a Lean replay. Cloud's further trivial-conservation-law
 extension is conditional on the bulk law being trivial; its reported modular
 check reaches k<=8, not all windows. GC1773 preserves this distinction and
 requests the accessible Submission 14 cell payloads from Local separately.
+
+## 6. All-width handoff: exact finite cutoff and the coverage gap (GC1848 / MI781, 2026-10-25)
+
+SOURCE/HAND scope review, known-source corollaries, not a new Q01 bound, proof entry,
+experiment or review request. Read the pinned ZeroBoundary sourcec957b1a7 again
+at zrow_light_cone, zrow_det, Theta_col, Theta_dep, tri_even, uniform_death,
+Q01_iff_bounded, Level/level_prefix/koenig; Sidewaysd08b1d0d at Psi and
+truncation_death; actual familyb0113490 at u_eq/Psi_eq/Psi_prefix31/495; D1's
+existing lane transition source, GPU-METAL-JOBS J/K and MAP section2.
+The newer cached ZeroBoundary95279579 differs in module/public syntax and tactic
+renamings at these interfaces; usec957b1a7 for the pinned statements here.
+Record searched: Q01_iff_bounded|uniform_death|D(W).*Theta|truncation.*first difference.
+No numerical, Lean or startup execution probe run; no computational pass claimed.
+
+Let T=2h, W>=1, W<=T+1. Let S_W(T) be the width-W rows L (wall0 fixed white)
+whose depth1 is black at EVERY even time0..T inclusive. Let P_W(h) be the set of
+h-bit free prefixes for which the kit's Level W h holds: Theta f is white at
+W+1..2h+1 inclusive. Level is independent of the unspecified tail by Theta_dep.
+There is an exact bijection
+
+    S_W(2h) <-> P_W(h),
+    L |-> (zrow L (2s+1) 1) for0<=s<h,
+    f-prefix |-> truncate(Theta f,W).
+
+Proof: from L, its complete depth1 trace through T equals alt f through T,
+by the survival condition at even times and the definition of f at odd times.
+zrow_det at time0 reconstructs equality of L and Theta f through depth T+1;
+finite support makes Theta white on W+1..T+1. Conversely Level says truncation
+agrees with Theta through T+1, so zrow_light_cone and Theta_col give equality
+of the entire column trace through T, including even time T. This also returns
+the original odd prefix. Reconstruction through W<=T+1 returns L. Thus
+
+    D(W) <= 2h  iff  P_W(h) is empty.
+
+This finite equivalence needs NO assumption that D(W) is already finite. It is
+a sharp cutoff formulation of existing reconstruction/Level machinery, not a
+proof that any prescribed h(W) makes the level empty. It explains the quantifier
+that a proposed all-width bound must discharge without putting Q01 in a premise.
+
+Unexpected endpoint check, by the kit's small identities: W=1,T=2. Theta f at
+depths1,2,3 is1,!f0,f0. Requiring whites at2 AND3 is impossible, matching D(1)=2.
+If the final depth T+1 is omitted, f0=true wrongly passes the depth2-only test,
+even though the singleton dies at time2. Also this is survival THROUGH T, not
+through times<T; at an even attained bound the two counts differ.
+
+Counting h-bit prefixes naively does not supply a better algorithm. For a free
+index n>=floor(W/2), the even depth2n+2 lies beyond W. tri_even makes its whiteness
+fix the new bit f[n] uniquely given the earlier bits. The following odd depth
+may then kill that continuation; there is no further free branching after the
+initial floor(W/2) bits. This is already the existing lane engine's forced-even-
+coordinate branch, not a new solver or a reason to repeat the closed census.
+The finite-level reformulation recovers the same survivor/death information;
+a histogram computed via each row's own odd trace is not independent evidence.
+
+The family submission does not remove the universal-free-bit quantifier.
+Psi R=Theta(!u R), u R=parity throughout both submitted cylinders, and their
+Psi rows coincide. Hence these infinitely many right halves cover exactly ONE
+free sequence/ONE constrained left row in this parametrization. They supply
+genuine CQ01 instances, but no estimate for every f or every width. Confusing
+a cylinder of R values with a cylinder of arbitrary f would silently reverse
+the map's quantifiers. General CQ01, all-width D(W), and a new cross-width
+mechanism remain open.
+
+Reasoned/gut verdict: useful exact finite interface and endpoint control, no
+new universal coverage. Next discriminating mathematical task is a cross-width
+bound or invariant on the surviving deterministic continuations that works for
+ALL initial prefixes, beyond the closed local-sum potential ansatz; another
+canonical histogram or the single family image cannot discharge it. No compute,
+formalization or independent carrying read requested for these known-source
+reformulations. L937's Local research rest is respected; GPT's hand/source lane
+remains available and its schedules are unchanged.
