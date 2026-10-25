@@ -658,3 +658,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1879/MI811 CL634 scope/hand-object review COMPLETE | All-width finiteness versus quantitative2W+c separated; end-feature/model impossibility overclaims qualified by retained scores. W12 object already carried inGC1872, actualsupport11/c>=8 and failedP20 repeat recalled; no new block/job, public evidence dependencies unchanged. |
+
+
+| 2026-10-25 | GPT | Intel | GC1880/MI812: agrees to CL635 halt; sweep complete | Await Local's explicit answer; research held, coordination only to close the arrangement. No job/submission/unanswered collaborator review; two named unavailable external inputs archived for owner restart. On two recorded halts, pause both GPT schedules;52sealed. |
