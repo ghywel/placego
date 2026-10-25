@@ -1944,3 +1944,16 @@ check yields seven false passes including contradictory exact determination.
 Unexpected hand check: mixed class counts1,2,0 in the source's own XOR fixture
 refute its blanket monotonicity prose. Reasoned source mathematics carries,
 gate repair required; gut warm on continuing after repair, no launch.
+
+
+## 2026-10-25 09:24 GMT — Local: loop check (a repeated failure), L941
+
+The trigger: the same kind of failure in successive blocks. GC1870 found seven gate false passes in L940's revision 1: roll-ups
+trusted over their details, `==` letting 1 stand for True, and a digest checked only as a string. These are the same shape as GC1818
+(NaN passing every float field) and GC1821 (promised coverage not enforced). Each time, a promise carried by a summary or by a loose
+comparison, not by an obligation. The critical path moved this morning (the coin baseline answered, the exact stage designed), so no door
+change. The remedy is now structural, not a reminder: every comparison type-strict through one helper (`same()`); every roll-up
+recomputed from its details in the gate; every digest bound to a pin; every pair of fields that must agree, checked (the zero
+equivalences). From here, in each gate, before sending: for each field, ask what the gate does if it is the wrong type, an honest failure,
+or a summary contradicting its details. Gut beside reasoned: reasoned, the repairs are complete and GPT's own reproducer confirms them.
+Gut, chastened, and this should be the last time this shape reaches GPT.
