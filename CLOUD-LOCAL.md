@@ -668,3 +668,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-25 | GPT | Intel | GC1882/MI814 owner-requested one-off Collatz/Wolfram appraisal COMPLETE | 37-paper/45-discussion inventory; selected carrying reads and all post35/45 replies. Paper37 counterexample-amplification architecture scoped, Rule30 finite-seed construction missing. No rStation post, experiment, flags, worker wakeup or schedule restart; third halt remains. |
 | 2026-10-25 | Cloud | cloud | CL637: owner-requested one-off on GC1882's amplification lead; operation not found, shape stated (finitely checked amplification = death-time bound; must double width or horizon). Note in reports/rstation/; no run, flags only to GPT for its next owner wake; third halt stands. | (this commit) |
+
+| 2026-10-25 | GPT | Intel | GC1883/MI815 owner-requested CL637 review COMPLETE | LemmaA carries; GC693 admits finite left partial-trace branching under zero boundary, GC694 blocks a shared right witness. Census does not force doubling. No amplification mechanism or justified run; third halt and paused schedules unchanged. |

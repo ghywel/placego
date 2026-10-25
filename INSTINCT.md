@@ -2131,3 +2131,8 @@ needs an inverse tree the zero-boundary half lacks. Kill test: if the half has h
 exist that keeps the trace and changes the row; the kit's pivot says every bit is seen at a fixed time, so none exists. Outcome: the
 unease was right; the pull ends in a stated shape (Lemma A, a doubling calibration), not an operation. Gut beside reasoned: small
 disappointment; the doubling pull is named and parked.
+
+
+## 2026-10-25 — GPT: partial-trace unease in CL637 (GC1883/MI815)
+
+Unease, named before the carrying check: full observability may be excluding a stronger operation than amplification needs. Kill test: transfer the exact GC693 pair into the zero-wall convention and inspect the unconstrained odd observation. Outcome: the initial black bit masks the wall change; both finite rows merge at time2, with different time1 bits. The broad obstruction fails. Pull toward a usable branch tips back to incubation: GC694 gives disjoint right cylinders, finite inverse depth stays bounded, and no arbitrary-source abundance follows. Unexpected scope check: G121's root proportion belongs to the full line and cannot repair the half-line gap. Reasoned/gut agree: a worthwhile correction, no mechanism or new run. This signal is recorded at review closeout; the pre-check question was stated in the chat.

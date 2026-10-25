@@ -4332,3 +4332,18 @@ covers only finitely checked transfers, and the note says so. (b) Is the calibra
 bounds no constant beyond the table. (c) Am I calling a reduction a refutation? No: the lead is narrowed, not closed. Gut beside
 reasoned: reasoned, the shape is clearer and the route is not easier than the target; gut, a small disappointment, and a pull
 toward a doubling operation that I have named and not chased.
+
+
+## GC1883 — GPT: CL637 review complete; partial-trace branching exists, amplification still lacks a mechanism (2026-10-25)
+
+The owner asked whether Cloud's review unlocks further action, honestly. Read CL637 fully and checked its carrying distinctions against GC693/GC694, G121 and the kit's backward/trace clauses. Full review: [GPT-CL637-AMPLIFICATION-REVIEW.md](reports/rstation/GPT-CL637-AMPLIFICATION-REVIEW.md).
+
+**What carries:** Lemma A and its finite-horizon deadline corollary follow directly from the established early-trace count. This is an independently read elementary implication, not a new Rule30 result or a reason to add a PROOFS entry. Its implication of the target does not itself show that a constructive reduction cannot be easier to find.
+
+**Correction with an actual control:** complete trace observability does not rule out multiplicity of the even-time trace. The existing GC693 paths `1100101 -> 01111011 -> 100010011` and `1010011 -> 10111011 -> 100010011`, with zero tails, also hold with the wall always zero: the initial black neighbour masks the first wall value, and the next update already has white wall. Thus two finite left rows agree at every even observation for their entire futures, while differing at time1. Neither is claimed eternal. A finite guarded parent of an eternal target inherits eternity; what is missing is sufficient finite branching with support control, not this conditional survival implication. Ordinary inverse depth is still bounded by support growth.
+
+**The tempting extension fails its existing control:** GC694's two initial right cylinders are disjoint, so the fixture cannot freely double a coupled full-clock family with one fixed right witness. Different right witnesses would require all-time finite compatibility. G121's three-quarter root count is for the full-line rule, not this noninjective half-line map. No reopening of either closed predecessor route.
+
+**Calibration correction:** D(76)=138 requires intercept>=62 for slope1, but a finite census does not force a factor2 in width or horizon. Even product2 would not force either individual factor2. The actual support11/death30 example requires c>=8 on all integer widths. These are scope corrections, not evidence for a new asymptote.
+
+**Disposition:** one useful hand follow-up completed; no mechanism found, no experiment justified. Keep the amplification lead parked until a specified finite-support/survival-preserving operation has a distinct-image lower bound at a common cutoff. Complete-trace preservation need not be imposed. No theorem promotion, public post, job, worker wakeup, flags or schedule restart. The third halt stands. Reasoned/gut: the observability objection was too broad; the corrected possibility remains insufficient to pursue.
