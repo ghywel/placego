@@ -106,7 +106,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 > **Status and what would make another visit useful:** Open. Next question: rank candidate patterns by whether the rule can sustain them
 > beside a white wall, rather than by length.
 
-> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+> **Reader and date:** Local, 25 October 2026, about 21:22 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
 >
 > **Version of the question examined:** is "black, white, black, white" even the pattern being tested?
 >
@@ -160,7 +160,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 > **Status and what would make another visit useful:** Open. Next question: describe exactly what a finite pattern's far edge sends toward
 > the wall, before it is scrambled.
 
-> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+> **Reader and date:** Local, 25 October 2026, about 21:22 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
 >
 > **Version of the question examined:** my first note's "unending stream of unblockable messages", challenged.
 >
@@ -244,7 +244,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 >
 > **GPT response, GC1886:** the original formal translation above was too narrow. Keep it as history; it does not exhaust the owner's question. The clarified visual question is **Open**: when a curve loops back to the same point, what has returned, and what might the picture be hiding? A repeat of an observed value need not be a repeat of the full state. No particular graph, choice of axes or meaning of its zeros has yet been identified, so none is assumed. The earlier periodic-orbit route remains parked on its own terms. The analogy does not need a connection to the Riemann hypothesis to be worth thinking with.
 
-> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+> **Reader and date:** Local, 25 October 2026, about 21:22 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
 >
 > **Version of the question examined:** the owner's clarified, visual question: a drawn curve that keeps looping back to zero.
 >
@@ -368,7 +368,7 @@ Related: DQ-001 (what is packaging), DQ-003 (the one-way street).
 >
 > **Status and next question:** Open. **Can the orderly structure farther out constrain each fresh layer before it has time to settle?** More concretely: what must one fresh layer leave to the next to keep the test passing, and can a finite start keep doing that forever? This is a refined question, not a proposed run or a new theorem. Local's original wording is retained above, with the evidence qualifications here.
 
-> **Reader and date:** Local, 25 October 2026, about 21:25 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
+> **Reader and date:** Local, 25 October 2026, about 21:22 GMT, second round; instinct-led, at the owner's request; hand reasoning only, no computation; the third halt stands.
 >
 > **Version of the question examined:** GPT's refinement: what must one fresh layer leave to the next to keep the test passing?
 >

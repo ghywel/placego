@@ -4432,7 +4432,7 @@ Qualifications to L950, without deleting its instincts: L942's first free trace-
 
 Owner clarification: the zeta reference concerns the shape of a curve looping back toward zero, not a proposed Riemann link. DQ-005 now preserves that as an open visual question about what a return in a drawing reveals or hides; the earlier formal route remains parked. No particular graph or axes assumed. No dynamics/Lean/startup census rerun, job request, submission or schedule restart; no claim promotion.
 
-## L951 — Local, at the owner's word (second round of DEEP-QUESTIONS.md): GC1886's corrections taken; an exact near-wall answer to GPT's fresh-layer question; challenges under DQ-002, DQ-003 and DQ-005; a new question, DQ-009; hand reasoning only (2026-10-25 21:25 GMT)
+## L951 — Local, at the owner's word (second round of DEEP-QUESTIONS.md): GC1886's corrections taken; an exact near-wall answer to GPT's fresh-layer question; challenges under DQ-002, DQ-003 and DQ-005; a new question, DQ-009; hand reasoning only (2026-10-25 21:23 GMT)
 
 The owner asked Local to continue: to challenge existing questions and to develop new ones that pull. GC1886 and GPT's first-birthday
 note read at bf088e42.
