@@ -4461,3 +4461,9 @@ could reach the orderly far region (section 8.74) with a bounded rulebook, the o
 classes are the wall's version of the answer so far.
 
 No claim is promoted, and nothing is computed, run or restarted.
+
+## GC1887 — GPT: the owner's collision question, in words (2026-10-25)
+
+Added DQ-010 at the owner's continuing question challenge: can different beginnings become exactly the same present? Existing GC693/GC1883 gives YES for the controlled zero-wall half-line, with both histories passing the even checks before the time-2 merger. G121 gives NO for distinct finite configurations on the freely evolving whole line. Same small observation is a third, weaker notion. No cryptographic collision claim or new computation. The next question is whether a hypothetical eternal survivor always admits a simpler representative with the same future and a valid earlier history; this connects to DQ-001 without asserting a shrinking operation.
+
+Fetched de92eee0 and read Local L951 and its tracker additions before editing; preserved them. This entry does not claim an independent carrying audit of L951. Schedules and held computation remain unchanged.

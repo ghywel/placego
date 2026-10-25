@@ -29,6 +29,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
 | DQ-009 | How much does the referee have to remember, seat by seat? | Open; Local's second-round instinct from DQ-008 |
+| DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -433,6 +434,24 @@ does some move cancel memory added by an earlier one?
 
 **Record:** DQ-008 (Local's second note and GPT's note); RULE30-PRIZE.md sections 8.27, 8.66 and 8.74; PERIOD-TWO.md row Q10. Related:
 DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rulebook).
+
+## DQ-010 — Different pasts, one present
+
+**Question:** “Could two different beginnings become exactly the same present?”
+
+**Origin:** a suggested chat prompt that caught the owner's attention, connected by the owner to hash collisions, 25 October 2026. **Status: Answered in the specified models; the reduction question remains Open.** This exchange stays in words.
+
+**Answer.** In our controlled-white-wall problem, yes. The recorded GC693 pair has different starting rows, different rows after one update, and exactly the same entire half-row after two updates. Both pass the even-time tests up to that meeting. From then on their futures agree, because they have the same present, rule and imposed boundary. This is an existing exact example, not a newly found rare collision. The shared future is not claimed to survive forever.
+
+**The scope changes the answer.** In ordinary Rule 30 on the whole line, distinct finite black-cell arrangements against a white background cannot become the same complete row: an outermost difference always forces a difference at the next step. Our auxiliary wall model retains one side and imposes a boundary; it does not retain the complete freely evolving system. Two full states sharing a small observation is a third, weaker kind of agreement. Keep all three apart.
+
+**What the hash analogy contributes.** Different inputs can have the same recorded output. But sharing a fingerprint is weaker than having identical full dynamical states. Here the controlled-wall example supplies equality of the actual retained state, so it gives equality of every future update. No SHA-256 collision or claim about current cryptanalytic progress is involved.
+
+**What this changes in our three-tense conversation.** A present can determine its future without uniquely identifying its past. Even when two presents agree, the histories before them may differ. For a survival argument, both histories must pass the required tests before the merger; otherwise agreement afterwards cannot repair an earlier failure.
+
+**Challenge and next question.** We have already used merging to avoid counting duplicate futures. That alone has not bounded every possible survivor. **Can every hypothetical eternal survivor be represented by a simpler beginning with the same future and a valid earlier history, or do some families resist every such simplification?** The operation, the meaning of simpler, and the preservation of the tested time phase must all be specified. An arbitrary later meeting does not automatically reduce width or provide a finite list of representatives. This is DQ-001 viewed through shared futures, not a new compute request.
+
+**Record:** [the zero-wall collision and its limitations](reports/rstation/GPT-CL637-AMPLIFICATION-REVIEW.md), GC1883 and Cloud CL638; [full-line finite injectivity and the failed root reduction](proofs/G121-finite-predecessor-descent-reduces-to-roots.md); the older merge investigation in RULE30-PRIZE.md section 8.38. Related: DQ-001, DQ-004, DQ-006 and DQ-009. GPT source check, GC1887, 25 October 2026; no new dynamics run or theorem claim.
 
 ## Returning to a question
 

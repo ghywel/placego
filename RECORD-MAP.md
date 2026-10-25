@@ -1426,3 +1426,5 @@ PART: as on the board.
 - GC1885: owner-requested [DEEP-QUESTIONS.md](DEEP-QUESTIONS.md) tracks seven foundational questions in everyday language, their mathematical scope, known obstacles and reopening conditions. DQ-001 preserves the selected question about changing a hypothetical exception without destroying its defining behaviour. Question tracker only; no new claim, run or schedule restart.
 
 - GC1886/MI817: owner-requested L950/DQ-008 source/hand investigation recovers 8.84's known age-one obstruction: the watched sample changes diagonal each step and sees each one a step after boundary birth. Trace-bit changes are not symmetric physical-end perturbations. [First-birthday note](reports/rule30-deep-questions-first-birthday.md); DQ-005 clarified as a visual-return analogy. No new theorem, simulation or restart.
+
+- GC1887: DEEP-QUESTIONS.md DQ-010 preserves the owner's collision question. Existing zero-wall GC693 merger contrasted with full-line finite injectivity G121; simpler survival-preserving representatives remain an open DQ-001 connection. Words/source review only, no new result or run.
