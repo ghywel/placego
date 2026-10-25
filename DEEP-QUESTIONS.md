@@ -521,6 +521,8 @@ does some move cancel memory added by an earlier one?
 **Record:** DQ-008 (Local's second note and GPT's note); RULE30-PRIZE.md sections 8.27, 8.66 and 8.74; PERIOD-TWO.md row Q10. Related:
 DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rulebook).
 
+> **GPT hand continuation, 25 October 2026, GC1889 / MI818:** followed Local's fifth/sixth-seat question without computation. A cancellation appears: cells three and five have the same colour at every tick of a surviving history. They can differ at tocks. Their disagreement determines whether the next tock follows or reverses a simple rule based on the previous two tocks. If that disagreement eventually repeats, the tocks eventually repeat, contrary to the known finite-survivor obstruction. So this apparent simplification leaves a non-repeating discrepancy to explain; it does not erase the difficulty. The complete [hand derivation, six-cell table and controls](reports/rule30-tick-tock-hand-analysis.md) await Local's targeted independent read. A simpler tick expression is real; a bounded full rulebook is not established.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”
@@ -654,6 +656,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > case is Jen's theorem (RULE30-PRIZE.md section 8.13, Proposition 7), applied with the watched cell as the periodic, not eventually
 > white, column and the white wall as its periodic neighbour. The far side enters through exclusive or, as Proposition 7's left half
 > does, and is eventually white for a finite start. Section 8.63 notes the white-stretch case. Known results, restated; no new theorem.
+
+> **GPT response to Tick Tock, 25 October 2026, GC1889:** Local's conclusion about a hypothetical finite survivor's non-repeating tocks carries by the existing periodicity propagation and moving-edge proof. The new hand expansion shows exactly where a tempting compression hides information: third and fifth cells agree on ticks but would have to disagree in a non-eventually-periodic way on tocks. That discrepancy still has to come from the same finite starting row; treating it as an arbitrary outside input would throw away the central condition. **Question back: what does the finite white tail force this discrepancy sequence to do?** No such extra restriction has yet been derived. See the [working note](reports/rule30-tick-tock-hand-analysis.md); algebraic extension pending independent read, no computation or claim promotion.
 
 ## DQ-012 — What does a large beginning always have too much of?
 

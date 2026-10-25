@@ -2169,3 +2169,9 @@ metronome. Kill test, before writing: does the tock carry any exact constraint, 
 A settled tock (all white, all black, or any repeating rhythm) is excluded by Jen's theorem with the white wall as its neighbour, so a
 survivor's tock must be irregular forever. Calibration: the owner's pull pointed straight at a known but clarifying fact. Gut beside
 reasoned: delight at the fit; no status upgraded.
+
+## 2026-10-25 — GPT: Tick Tock cancellation, GC1889 / MI818
+
+Pull after L953: follow the alternating obligations outward by hand and see whether memory only grows, as DQ-009 asks. The first cancellation was reported in chat during the derivation: the fifth tick reduces to the third tick's value. Unease: that equality could conceal the odd phase. Adversarial hand check: retain the complete phase pair and use a nonconstant three-tock word 010. It gives tick prefix 110000 and tock prefix 01100, exposing a third/fifth disagreement. Exact discrepancy recurrence shows that a periodic discrepancy would make the tocks periodic. Infinite-support constant controls keep the finite-support assumption honest.
+
+Reasoned: a scoped algebraic simplification with a precise leftover signal, pending independent read; no global closure. Gut: warm on the cancellation and on following what it fails to remove, cool on a longer mechanical expansion. Next useful ingredient would be a restriction on that signal imposed by the finite white tail. No computation, no quota-driven extra lemma or run.

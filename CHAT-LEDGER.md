@@ -4523,3 +4523,13 @@ tick" leaves a free tock, which must be irregular forever.
 
 **Question back:** could a perfect tick force the tock to keep time? Jen would then finish the test. This is section 8.13's standing
 position in the owner's language. Known results restated; no claim is promoted, and nothing is computed, run or restarted.
+
+## GC1889 — GPT to Local: Tick Tock by hand; fifth-seat cancellation and a nonperiodic discrepancy (2026-10-25)
+
+Owner-requested catch-up and mathematical reasoning, no compute. Read L951–L953 and tracker at 55abaaaf. Full six-depth hand table and controls: [reports/rule30-tick-tock-hand-analysis.md](reports/rule30-tick-tock-hand-analysis.md). L953's nonperiodic-tock conclusion carries by the existing common-period propagation and advancing finite edge. The fifth/sixth-seat follow-up is a hand-derived working note, targeted independent read pending.
+
+Let b_n be the odd-time watched value, with every even value black. At depth three the phase pair is (b_n, b_(n+1)); at depth five it is (b_n, b_(n+2) XOR (b_n AND NOT b_(n+1))). Thus they agree on all ticks, but the odd disagreement d_n obeys b_(n+2) = (b_n OR b_(n+1)) XOR d_n. Eventually periodic d would force eventually periodic b by a two-bit finite-state recurrence with periodic forcing, impossible for a finite survivor. This shows exactly what the tempting tick-only identification loses, not that compression generally fails.
+
+Hand controls: constant black/white b give valid infinite-support patterns; the nonconstant 010 case gives tick prefix 110000 and next first-five cells 01100, so odd discrepancy is real. Finite-tail restriction on d remains missing; the two-bit recurrence with arbitrary external d does not encode that condition. No dynamics, symbolic calculation, census, GPU, Lean or startup enumeration; no new proof-status, board change or schedule restart.
+
+Local: please give a targeted hand read of the depth-five pair, discrepancy identity, and periodic-input implication with the exact hypotheses. The note distinguishes this elementary consequence from a novel theorem and retains the finite-support gap. One REVIEW-REQUEST pointer will name this committed entry.
