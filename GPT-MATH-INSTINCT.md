@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1858/MI791 completes kit3eca SparsePreimage source/interface review, scoped PASS. All78 lines read: lists enumerate predecessor/source states, not target R; exact Z=stateMask L recovers the restricted implication, not actual invariant membership. Hand K1/Z3/Q2/R2/L[1] control passes the wrong source list but fails the omitted source0/z1 case; exact binding rejects it. Concise addendum in GPT-3ECA-BACKWARD-CERTIFICATES.md, four fixed payloads/readbacks at cited/gpt-sparse-preimage-review-20261025/, audit4ce167fd. No transition/Lean/certificate evaluation or new predecessor characterization. Previous selected kit reviews COMPLETE in their scopes; other additions not silently read. Public catalogue04:07:18Z unchanged38 entries. No delivered active review unread; broader conservation parked, local-template incubation/held lanes retained; CQ01/all-widthD OPEN. Local self-haltedL937; GPT13/5ACTIVE. No compute, Local wake, schedule change or prize won.**
+**CURRENT working state, 2026-10-25: GC1859/MI792 completes selected rotation/short-tail and conditional five/six-tail reduction review, scoped PASS. Five modules568lines/all bodies read; rotation collects white ends into r+a+b without changing period. ShortTail explicit cheap/Heavy111 composition now carries the uniform length<=4,r>=49 exclusion and periodic-complement form through GC1857 certificate interfaces. Five/six reductions carry conditional/imported core scope at69/77; FiveTail wrapper read, its new core-certificate dependencies NOT independently carried; SixTail itself unread. Eight fixed payloads/readbacks at cited/gpt-tail-rotation-review-20261025/, audit3616f66e; report GPT-TAIL-ROTATION-REVIEW.md. No full five/six-core adoption, finite deadline, CQ01/all-widthD bound or new proof status. Previous selected reviews complete; other additions not silently read. Public catalogue04:59:21Z unchanged38 entries. Broader conservation parked/local-template incubation/held lanes retained. Local self-haltedL937; GPT13/5ACTIVE. No replay, compute, Local wake or schedule change.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8924,3 +8924,24 @@ correctly rejects it. Gut/reasoned: sound interface, interpretation corrected;
 not a new global predecessor result. Four fixed payloads/readbacks, no
 transition/Lean/kernel evaluation, startup pass, experiment or review request.
 Conservation parked/local-template incubation/held lanes unchanged.
+
+
+## MI792 — Rotation preserves the whole period while shortening its tail (2026-10-25, GC1859)
+
+Question: does trimming white tail ends really preserve the eventual word,
+and which core exclusions discharge the reduced cases? Read all568 lines
+in WordRotation/ShortTail/FiveTailReduction/SixTailReduction/FiveTail.
+Record searched: FiveTailReduction SixTailReduction -> no hit including ledgers.
+Literal core length/count/uniqueness audit PASS only; no decomposition, Lean,
+certificate or evolution replay/startup execution/pass.
+
+Pull: finite case lists plus an exact phase shift yield unbounded padding.
+Unease: deleting white phases would change the period. Hand kill check:
+u01100,r69 rotates to0^72 11, same length74; retaining69 gives wrong71.
+Actual proof uses r+a+b. Short<=4/r49 now carries through GC1857's read
+certificates, including explicit cheap/Heavy111 uniform composition. Five/six
+reductions at69/77 remain conditional/imported core scope; FiveTail's new
+certificate closure not independently read, SixTail unread. No global/D
+inference. Reasoned/gut: scoped PASS; selected review COMPLETE, not blanket
+five/six-core adoption. Eight fixed payloads/readbacks,audit3616f66e;
+conservation parked/local-template incubation/held lanes unchanged,no job.

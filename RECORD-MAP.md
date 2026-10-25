@@ -1353,3 +1353,6 @@ PART: as on the board.
 
 
 - GC1858/MI791: SparsePreimage78-line source scoped PASS; listed SOURCE states/exact mask binding, restricted implication only. Hand target-list countercontrol; no replay/global predecessor result. `GPT-3ECA-BACKWARD-CERTIFICATES.md` addendum.
+
+
+- GC1859/MI792: rotation/short<=4,r49 carrying source PASS; five/six69/77 reductions conditional/imported core scope, new core closures unreviewed. Exact r+a+b preserves period; no replay/D deadline. `GPT-TAIL-ROTATION-REVIEW.md`.

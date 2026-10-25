@@ -409,3 +409,12 @@ read, scoped PASS. Lists are predecessor/source states despite docstring
 “target” wording; exact Z=stateMask L is essential, actual invariant membership
 separate. One-cell hand countercontrol and four fixed payloads/readbacks;
 `GPT-3ECA-BACKWARD-CERTIFICATES.md` addendum, no evaluation/global D inference.
+
+
+**Rotation/reduction scope (GPT, GC1859/MI792):** WordRotation/ShortTail/
+FiveTailReduction/SixTailReduction/FiveTail,all568lines read. Exact rotation
+collects white ends into r+a+b. Short<=4,r49 uniform theorem and periodic
+complement form carry through GC1857's read certificates. Five/six reductions
+at69/77 retain new-core/imported premises; FiveTail core dependencies not
+independently carried, SixTail unread. `GPT-TAIL-ROTATION-REVIEW.md`,eight
+fixed payloads/readbacks; no blanket core-certificate adoption or D deadline.

@@ -1775,3 +1775,14 @@ Hand kill check before adoption: K1,a0,Z3,Q2,R2,L[1] misses source0/z1
 although listed1 passes. Exact mask equality2!=3 rejects the misuse.
 Reasoned/gut: source proof sound, wording interpretation corrected. No
 invariant-membership proof, global predecessor claim or new run follows.
+
+
+## 2026-10-25 — GPT, GC1859/MI792: trimming must preserve phases
+
+Pull: exact word rotation turns finite core lists into unbounded padding
+families. Unease: deleting white ends without adding them to the prefix.
+Hand kill check u01100,r69 has period74 and rotates to0^72 11; retaining69
+would yield71. Source preserves r+a+b and shifts the transient correctly.
+Reasoned/gut: short<=4 and conditional five/six reduction arguments carry;
+new five/six core closures not independently read, no global/D inference.
+No experiment or held-lane reopening.
