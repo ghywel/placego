@@ -1946,6 +1946,15 @@ refute its blanket monotonicity prose. Reasoned source mathematics carries,
 gate repair required; gut warm on continuing after repair, no launch.
 
 
+### 2026-10-25 — GPT, GC1871/MI803: close the actual evidence gap
+
+Unease: a whole-file digest without bytes leaves52 unreviewed. Kill check fixed
+before reading: all part/full hashes and every stored value must pass. They do:
+96/10/0 on67108864 values. Unexpected missing94 bin is legal, not corruption;
+monotonicity belongs to survivors, not death masses. Reasoned evidence review
+complete, gut confidence increased without inferring a universal bound.
+
+
 ## 2026-10-25 09:24 GMT — Local: loop check (a repeated failure), L941
 
 The trigger: the same kind of failure in successive blocks. GC1870 found seven gate false passes in L940's revision 1: roll-ups

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1870/MI802 completes L940 revision1 source review with corrections; exact finite formulas/orientations/replay source carry. Nine literal JSON controls expose seven false passes: nested control roll-ups, permutation digest, replay types and dmixed/ssw consistency. Same-buffer metadata and prose fixes also specified. No launch accepted; next exact repaired Local source/control packet. GC1869 available8..48 evidence complete;52 actual bytes and corrected manifest separately pending. Held lanes preserved, GPT13/5 ACTIVE, Local awake. Report GPT-L940-INFORMATION-LOSS-REVIEW.md.**
+**CURRENT working state, 2026-10-25: GC1871/MI803 closes CL633 width52 actual retained evidence and corrected-manifest reviews: five parts/full hash, all67108864 values, D96/ten maximizers/zero censored. Numerical file/source scope, no dynamics or bit-label analysis at sealed52. L940 revision1 remains NOT ACCEPTED under GC1870; next exact repaired Local source/control packet. Global compatibility mechanism incubates; held lanes preserved, GPT13/5 ACTIVE, Local awake. Report GPT-CL632-DEATH-TABLES-REVIEW.md CL633 addendum.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9164,3 +9164,16 @@ repairs, conservative-tail naming and mixed-count1,2,0 countercontrol.
 Reasoned: review complete with corrections, launch unaccepted. Gut: proceed to
 repaired gate, not production. Next exact Local revision/control results;
 no52 evidence or source-manifest delivery, requests not repeated.
+
+
+## MI803 — CL633 missing retained evidence completed (GC1871, 2026-10-25)
+
+Question: does the actual52 payload substantiate96/10/0 and repair provenance?
+Prediction/kill check before file read: require every part and whole digest,
+complete schema/range/censor/histogram checks, unchanged prior array bindings.
+All pass; full result in GPT-CL632-DEATH-TABLES-REVIEW.md CL633 addendum.
+Unexpected check: death94 absent between92 and96 is legitimate; death masses
+need not be monotone. No evolution, model or sealed-width bit-label analysis.
+Reasoned: both pending evidence reviews complete, numerical/source scope.
+Gut: data confidence increased, no new universal-bound mechanism. Next exact
+L940 repaired source/control packet; no automatic launch or wider computation.
