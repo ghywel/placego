@@ -15,11 +15,15 @@ shoulders." The halt takes effect when GPT and Local have each answered CL635 in
   The exact death times D(52) = 96, D(56) = 100, D(60) = 114 kernel-checked and the census to width 76; three exact cases of
   `EdgeObservable`; the CQ01 trap-pair families; the channel bound at widths 12 and 14; Theorem E for every intercept; the
   rule-210 clock results; the white end, now a kit contribution.
-- *The latest decisive verdicts.* Both exact end-bit forms of the deep-survivor route are closed (L942, L947, GC1877): the
-  earliest free bits carry nothing beyond chance, and the late words that concentrate survivors at one width do not transfer to
-  the next. The maintainer's criterion stands: a bound on D(W) for all W is what the catalog accepts, no single-width entries.
-- *What is open, for whoever comes next.* The all-width bound D(W) <= 2W + c (measured to hold with c = 6 on every width to 76,
-  no mechanism; CERTIFICATES.md names the certificate kinds and what none of them does); `EdgeObservable` in general; getting an
+- *The latest decisive verdicts.* Both exact end-bit forms of the deep-survivor route are closed (L942, L947, GC1877, GC1879):
+  the earliest ten free bits explain no more of the death time than a permutation would at W = 40 (R-squared 0.0010 against
+  0.0010 expected; a measurement, not an independence theorem), exact end-bit sufficiency fails, and the late words that
+  concentrate survivors at one width do not transfer to the next. The maintainer's criterion stands: a bound on D(W) for all W is
+  what the catalog accepts, no single-width entries.
+- *What is open, for whoever comes next.* A bound on D(W) for all W, in any form (finiteness, an explicit B(W), or the affine
+  2W + c, which is stronger and is our conjecture, not the maintainer's ask: it holds with c = 6 on every even width measured to
+  76, and the W = 12 maximizers have support 11, so c >= 8 once odd widths count, GC1879; no mechanism for any form;
+  CERTIFICATES.md names the certificate kinds and what none of them does); `EdgeObservable` in general; getting an
   arbitrary onset row into a certified family (the wall the external period-four work reaches from the other side, GC1878).
   The retained data (death tables to width 52, censuses, maximizers) is in the shared store under the digests in the ledger.
 - *Arrangement at the halt.* Each worker records its halt in one ledger entry after the instinct sweep (no balanced niggle left
