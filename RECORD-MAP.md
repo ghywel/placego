@@ -1428,3 +1428,5 @@ PART: as on the board.
 - GC1886/MI817: owner-requested L950/DQ-008 source/hand investigation recovers 8.84's known age-one obstruction: the watched sample changes diagonal each step and sees each one a step after boundary birth. Trace-bit changes are not symmetric physical-end perturbations. [First-birthday note](reports/rule30-deep-questions-first-birthday.md); DQ-005 clarified as a visual-return analogy. No new theorem, simulation or restart.
 
 - GC1887: DEEP-QUESTIONS.md DQ-010 preserves the owner's collision question. Existing zero-wall GC693 merger contrasted with full-line finite injectivity G121; simpler survival-preserving representatives remain an open DQ-001 connection. Words/source review only, no new result or run.
+
+- GC1888: owner-requested words-first handoff to Local at the top of DEEP-QUESTIONS.md. Captures antenna/looping, retired fuse analogy, past/present/future, collision-to-compression and eight-streets coverage questions; DQ-004 clarified, DQ-011 asks whether survival spends, preserves or renews its conditions. No new mathematical claim or run.

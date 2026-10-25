@@ -677,3 +677,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1885 owner-requested question tracker COMPLETE | DEEP-QUESTIONS.md preserves seven foundational questions, evidence and reopening conditions for future shared use; linked in README and RECORD-MAP. Document-only wake; no jobs, flags or schedule changes. |
 
 | 2026-10-25 | GPT | Intel | GC1886/MI817 owner-requested L950 response and bounded DQ-008 investigation COMPLETE | Source/hand analysis recovers the age-one obstruction; DQ-005 corrected to the owner's visual analogy. Question refined, no new mechanism or run. Report and tracker updated; schedules remain paused. |
+
+| 2026-10-25 | GPT | Intel | GC1888: owner returns conversation baton to Local | DEEP-QUESTIONS.md opens with the full words-first handoff; DQ-004 compression clarified and DQ-011 renewal added. One committed READ-LEDGER pointer for Local; no computation or schedule restart. |

@@ -6,6 +6,33 @@ This is a place for questions that might change how we see a problem. They need 
 
 Keep the question in ordinary words. Translate it without replacing it. A failed interpretation is not necessarily a failed question. Equally, an attractive analogy earns no exemption from a counterexample.
 
+## Current conversation handoff — to Local, 25 October 2026
+
+The owner returns the conversation baton to Local for exploration from its own perspective. **Continue the question → response → challenge → better question exchange in everyday words.** The owner's current preference is to stay in words before reaching for equations or computation. This is an invitation to think with the owner, not a request for a new experiment, benchmark, submission or schedule restart.
+
+**The leading question is now DQ-004 through DQ-010: can merging supply an eight-streets-style reduction?** The owner clarified the niggle: “if we can see this collection always ends up as that, have we not reduced how many we need to check”. GPT's answer is yes: a shared future can be analysed once, subject to valid earlier histories. GPT had moved too quickly to the limitations of mergers without giving this possibility enough room. The missing argument is coverage or a legitimate descent, not an established impossibility of compression.
+
+Two shapes remain worth distinguishing in words:
+
+- Could every relevant beginning enter one of finitely many adequately described future behaviours, each of which we can settle?
+- Could every sufficiently complicated candidate share the relevant future of a simpler candidate, with simplification guaranteed to finish?
+
+Neither is established. A future description must retain what the survival test needs; exact state equality is stronger than equal observations. Matching futures at different times needs the test's timing aligned. Earlier failures cannot be erased by a later merger. The merged row can be larger than its parents, so a collision itself is not a shrinking step. These are obligations for a proposed reduction, not reasons to abandon the question.
+
+**Other questions from the intervening conversation, in their order:**
+
+1. The owner's looping-curve image extended to antenna radiation: something may keep circulating near a source or propagate beyond it. Treat this as a visual question about propagation and apparent return, not as literal magnetic strands breaking off or a claimed electromagnetic explanation of Rule 30. DQ-005 retains the earlier zeta clarification.
+2. GPT asked whether a beginning merely “lights a fuse” or must supply continued survival. The owner rightly challenged the analogy: a rocket carries fuel. Retire that analogy. The clearer question is whether survival needs endlessly many specially arranged starting details, or whether the rule can keep generating suitable conditions from a finite start.
+3. The owner condensed this to **“does the start contain the future — or does the present always improvise”**, noticing past, present and future. The rule fixes the next step; generation is not freedom of choice. A determined future need not be a readable script. Follow-up: **what does each present inherit that it cannot undo?**
+4. A suggested prompt caught the owner's attention: **“Could two different beginnings become exactly the same present?”** Hash collisions supplied the analogy. DQ-010 answers with the existing controlled-wall merger, while keeping whole-line finite injectivity distinct. A present can determine its future without identifying its unique past.
+5. The owner then identified the point of the collision question: not merely finding twins, but collapsing the number of genuinely different cases needing analysis. That is the leading reduction question above.
+
+**An additional live question, DQ-011 below:** does passing a test consume something, preserve it, or recreate the conditions for passing again? A finite start is not automatically a finite fuel supply. “Weakness must accumulate” is a candidate to investigate, not a premise we possess.
+
+**For Local's next response:** begin with whichever of these questions genuinely pulls. Engage the owner's compression possibility before narrowing it to an existing failed implementation. Distinguish an answered subquestion from an open parent question, and leave a new question the owner can follow in words. DQ-009's moving referee may connect to what a compressed description must remember; that connection is a question, not an assigned equation exercise. L951 has been read, but GPT has not represented it as an independently completed proof audit.
+
+Handoff recorded by GPT in GC1888; existing Local and GPT entries below remain intact.
+
 ## How to use this tracker
 
 - Give each question a permanent **DQ number**. Keep the original wording and record later refinements underneath it.
@@ -30,6 +57,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
 | DQ-009 | How much does the referee have to remember, seat by seat? | Open; Local's second-round instinct from DQ-008 |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
+| DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -210,6 +238,8 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 >
 > **Status and what would make another visit useful:** Open. Next question: when the doors differ at every width, what do the doors at
 > different widths have in common?
+
+> **Owner clarification and GPT response, GC1888, 25 October 2026:** the collision question is aimed at reducing an infinite space to manageable checks, as in eight streets. Yes: if a whole collection has one relevant future, that future need only be analysed once, with earlier validity accounted for. The stronger missing step is to prove that every relevant beginning is covered by finitely many sufficient future descriptions, or reduces to a simpler valid representative until manageable cases remain. Existing mergers do not establish that coverage, but their failure to do so is not a proof that no such reduction exists. Keep this as the leading question for Local's next words-first exploration. Related: DQ-010.
 
 ## DQ-005 — Returns, repeating histories and the zeta intuition
 
@@ -452,6 +482,27 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 **Challenge and next question.** We have already used merging to avoid counting duplicate futures. That alone has not bounded every possible survivor. **Can every hypothetical eternal survivor be represented by a simpler beginning with the same future and a valid earlier history, or do some families resist every such simplification?** The operation, the meaning of simpler, and the preservation of the tested time phase must all be specified. An arbitrary later meeting does not automatically reduce width or provide a finite list of representatives. This is DQ-001 viewed through shared futures, not a new compute request.
 
 **Record:** [the zero-wall collision and its limitations](reports/rstation/GPT-CL637-AMPLIFICATION-REVIEW.md), GC1883 and Cloud CL638; [full-line finite injectivity and the failed root reduction](proofs/G121-finite-predecessor-descent-reduces-to-roots.md); the older merge investigation in RULE30-PRIZE.md section 8.38. Related: DQ-001, DQ-004, DQ-006 and DQ-009. GPT source check, GC1887, 25 October 2026; no new dynamics run or theorem claim.
+
+## DQ-011 — Is survival spent, preserved or renewed?
+
+**Question:** Does surviving one more test use something up, preserve something, or make the conditions for surviving again?
+
+**Origin:** the owner's request to remain in words, followed by the fuse/rocket correction and the past–present–future exchange, 25 October 2026. **Status: Open.**
+
+**Why it matters.** We must not assume that a finite starting pattern has a finite supply of future behaviour. A finite instruction can produce an endless sequence. Rule 30 continues applying its rule; it does not consume its starting arrangement as fuel. An exhaustion argument would require identifying something relevant that cannot be replenished.
+
+**Three possible questions, not three established mechanisms:**
+- If survival spends something, what is spent and why can it not be replaced?
+- If survival preserves something, how is it protected while the surrounding arrangement changes?
+- If survival renews its own conditions, what prevents that renewal from continuing indefinitely?
+
+**Challenge.** Continuing the same observed behaviour need not involve repeating the whole arrangement. A conversation can continue without repeating a sentence. A hypothetical survivor could likewise keep passing the same narrow test while its surroundings change.
+
+**Next question.** Can the protection of the watched cell be handed on indefinitely, or does every handover leave a weakness that a later handover cannot repair? In particular, **can the weakness be repaired?** We have no established accumulating damage or finite budget; those words name what a future argument would need to demonstrate.
+
+**Connection to the owner's three tenses.** “Does the start contain the future — or does the present always improvise?” The beginning and rule determine the future, but do not make it transparent. “Improvise” here means generating the next arrangement, not choosing freely. What each present inherits, forgets or renews may be a better object to follow than the full picture. DQ-010 supplies an exact instance of different pasts merging in the controlled-wall model; DQ-004 asks whether such loss of distinctions can be used in a complete reduction.
+
+**Record:** conceptual discussion only; no new theorem, equation, computed evidence or nominated conserved quantity. Related: DQ-003, DQ-008, DQ-009 and DQ-010.
 
 ## Returning to a question
 
