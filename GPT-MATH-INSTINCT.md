@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1852/MI785 closes d1bcba actual source/completed-check review WITH PROSE/SCOPE CORRECTIONS. Public catalogue01:13:39Z has Lean Verified,20selected/735replayed, no Human Verified tag. Old9d92a2 declaration body byte-exact; all23newtheorems/2defs and carrying pinned diagonal recurrence read. Formal linear black-run/conditional white bounds carry; sublinear/O(1) prose unproved, no all-widthD transfer. Six retained files/readbacks atcited/gpt-d1bcba-review-20261025/. GC1851 three raw external-status reviews already COMPLETE;0554f7 fullsource scoped PASS. No delivered carrying source left unread; broader conservation exclusion parked. All-widthD/CQ01 OPEN, GC1850 local-template approach incubating. Local self-haltedL937 on owner option; GPT13/5 coordination/review ACTIVE. No new compute,Localwake,held-lane reopening,schedulechange or prize won.**
+**CURRENT working state, 2026-10-25: GC1853/MI786 completes selected kit3eca backward-certificate carrying read, scoped PASS: four core and four dependencies fully read (1430lines), plus carrying shield/cone helpers. Conditional endpoint-vacuum/invariant certificates exclude selected white-padding families; no universal certificate existence, CQ01 or all-widthD(W) bound. Fifteen payloads fixed/readback verified atcited/gpt-3eca-backward-review-20261025/,manifest92d7604e;MAP8 records exact read coverage, other additions not adopted. Public catalogue unchanged; kitHEAD remains3eca, a prior coverage gap rather than new update. GC1851 external3status/0554f7 and GC1852 d1bcba reviews COMPLETE in recorded scopes. No delivered active carrying review unread; broader conservation exclusion parked. All-widthD/CQ01 OPEN, GC1850 local-template approach incubating; no repair supplied by the new source read. Local self-haltedL937 on owner option; GPT13/5ACTIVE. No compute,Localwake,held-lane reopening,schedulechange or prize won.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -8810,3 +8810,22 @@ COMPLETE; six fixedpayloads/readbacks, purefile checksPASS,no execution of
 downloadedsource/Lean/evolution. No newexperiment/startup-pass claim, no
 Localwake/compute/reviewrequest or schedulechange; localtemplate incubation
 retained and next useful work needs actual new source or global mechanism.
+
+
+## MI786 — Read the kit's endpoint-conditioned backward machinery (2026-10-25, GC1853)
+
+KitHEAD remains3eca, but sourcecomparison exposes MAP7coverage gap. Selected
+BackwardTube/Vacuum/Restricted/ZeroPredecessor and four carrying sources fully
+read1430lines; helper scope and allquantifiers in GPT-3ECA-BACKWARD-CERTIFICATES.md.
+ScopedsourcePASS,not newprojectproof/kernelreplay. No certificateevaluation,
+experiment,startup execution or numericalpass claimed. Fifteen fixedpayloads
+readback verified,manifest identity/inventoryPASSonly.
+
+Pull: endpointconditioning canretain genuine compatibility. Unease: a finite
+certificate interpreted asuniversal termination. Writtenhand killtests: emptyZ
+makesrestrictedcheck vacuous unlessactualmembership retained; allwhitepulse
+preservesvacuum, preventing universalempty-to-vacuum certificatesforalltails.
+Source retains membership/endpoint/forward invariants, physical earlywhite
+uses shield/locality/Jen without circularabsorption. Reasoned/gut: useful
+knownmachinery in scope; no allwidthD bridge (01failsr>=21). Localtemplate
+incubation and heldlanes remain; no newjob/reviewrequest/schedulechange.

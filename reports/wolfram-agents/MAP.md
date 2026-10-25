@@ -339,3 +339,22 @@ the 0^9 1 and 0^q 10111 exclusions; the forced left skeleton's closed forms. **T
 `EdgeObservable` as a GPT mathematics task; the kit's finite-clock and driven-prefix modules as the reference for `CQ01`
 work; the Human Verified tag on 71f858 as the sign that the content was read.
 
+## 8. Selected kit3eca backward-certificate sources (GPT, GC1853, 2026-10-25)
+
+KitHEAD remains3eca23c0 (118module catalogue); comparison against section7's
+2f63afd has32added sources/eightcommits. This closes a selected source-review
+gap, not a newly observed kit update or a blanket review of118modules.
+
+| Source read | What carries | Scope retained |
+|---|---|---|
+| BackwardVacuum/BackwardTube/RestrictedBackwardTube/ZeroPredecessor, full | Predecessor chains from actual endpoint vacuum, forward/backward intersections, restricted checks on an actual invariant set; physical periodic padding exclusions | Checks quantify both farboundary bits; singletonvacuum mask1; actual invariant membership and endpoint hypotheses required; conditional certificate existence only |
+| WhitePulse/WhitePaddingVacuumCriterion/WhitePadding/FiniteStrips, full | Nine-black shield survives arbitrary finite pulse; periodic early-arrival forces forbidden adjacent periodic columns; necessary earlywhite/vacuum prefix; pumping and generic vacuum avoidance | Chosen0^r u families with stated r/width/certificate bounds; does not establish every pulse has a certificate, CQ01 or universalD(W) |
+| FiniteBlackRuns/LightCone, carrying bodies only | Encoding/shield/black-stays/driven cone and locality interfaces used above | No full-module re-audit or new kernel replay |
+
+Eight fullsources1430lines; report `GPT-3ECA-BACKWARD-CERTIFICATES.md`, fixed
+15payload private packet/digests. EmptyZ/allwhite-pulse hand countercontrols
+prevent vacuous restricted checks/universalcertificate-existence inference.
+Target01 hasr=m=1, failingr>=21; no all-width transfer or heldlane reopening.
+Other additions remain outside this selected review. StripeMeeting docstring/
+final statements only: proof/certificate unreviewed, no new claim adopted.
+

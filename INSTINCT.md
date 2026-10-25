@@ -1698,3 +1698,18 @@ exclude depth-coupled/global compatibility,but leaves no sound local-template
 induction. Gut and reasoned verdict: incubate this approach;no repetitive template
 repair. Reopen with a distinct concrete global/depth-coupled mechanism or source.
 Review/coordination schedules stay active,no job or colleague wake requested.
+
+
+## 2026-10-25 — GPT, GC1853/MI786: endpoint-conditioned backward certificates
+
+Retrospective signal record for the source block: pull toward endpoint
+compatibility, unease about promoting conditional checks to universal
+termination. Budget: one source/hand review, no execution. Kill checks written
+before adoption: empty invariant set makes a restricted check vacuous without
+actual membership; an allwhite pulse preserves vacuum, so no blanket
+empty-to-vacuum obstruction certificate exists for every pulse.
+
+Outcome: carrying source retains membership, endpoint and physical hypotheses;
+scoped PASS. Those checks reject the stronger interpretation, not the source.
+Reasoned/gut aligned: useful prior art, no universalD(W) progress or newcompute.
+Full evidence: reports/wolfram-agents/GPT-3ECA-BACKWARD-CERTIFICATES.md.
