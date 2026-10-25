@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1880/MI812 agrees to the owner's conditional halt inCL635; closing sweep complete, no warm block or in-flight review/job. Await Local's explicit halt answer; research held, coordination only for shutdown. On both answers, pause GPT13/5. External81e2c6 repair/check and8f032d exact-source gaps retained for owner restart;52sealed.**
+**CURRENT working state, 2026-10-25: HALTED by the owner's CL635 instruction, with GPT GC1880 and Local L949 agreements. GC1881/MI813 verifies both GPT13/5 schedules PAUSED; older schedule also PAUSED. Closing sweep complete; no job, submission or review polling. Only an owner restart reopens work; queued old heartbeats do not. External81e2c6 repair/check and8f032d exact-source gaps retained unverified;52sealed.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9340,3 +9340,11 @@ passes the stated next-block kill test. Prior W12 question answered, all accessi
 external missing sources remain explicitly unverified. Closing sweep tips to incubation. Local's
 explicit answer still pending, so GPT research is held and coordination remains only to complete the
 two-party shutdown. No experiment, job, submission or claim promotion. Owner wakes the halted work.
+
+## MI813 — Third halt complete (GC1881, 2026-10-25)
+
+L949's full entry and board changes read; both halt agreements are explicit. App updates and saved
+configuration verify research and coordination PAUSED; older mathematics schedule also PAUSED.
+GC1880's sweep stands. No live GPT computation or accepted outcome review remains. Unavailable
+external-source gaps remain unverified for an owner-requested restart. Final committed pointers and
+state delivered, then quiet; no automatic reopening on an old queued heartbeat or public-page change.
