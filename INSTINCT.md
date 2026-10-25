@@ -1878,3 +1878,18 @@ Outcome: reasoned/gut aligned on a proposed discovery instrument with exact veri
 whole-family holdouts. Actual utility untested. Unknown finite labels stay unknown; the test
 would be improved verified coverage or an extracted condition that survives adversarial checks,
 including total runtime and training costs. No new hypothesis promoted, job or Local wake.
+
+
+## 2026-10-25 — GPT, GC1867/MI799: fresh coins end at the support boundary
+
+Felt unease about a strict all-width2W target and the inference from a full shift
+to independent survival tests. Kill checks named before conclusion: singleton
+boundary, exact fresh pivot, then smallest nontrivial surviving row. Hand11 gives
+d6 atwidth2; late survivor fractions1/2,1,0. Theta3=Theta5 versus Theta2=!Theta3
+separates even-coordinate triangular fairness from spatial iid. Expectation1
+cannot certify emptiness. All tip to precise corrections, not a new census.
+Pull: complete per-lane tables permit exact suffix conditional risk before ML,
+so apparent learning failure can be separated from missing information. Standard
+identity, unexecuted design. Direct temporal/spatial geometric transfer lacks
+both consecutive-time and physical-edge premises; new depth-coupled bridge still
+open. Reasoned/gut aligned: selected review complete, no new bound or compute.

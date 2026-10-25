@@ -1374,3 +1374,6 @@ PART: as on the board.
 
 
 - GC1865/MI798: new bcf514 cut-rank middle equivalence source PASS, 589 lines; ceiling-log rank, both odd middle cuts and n>=2 essential. Generic word reduction, no center-rank/Problem3/D(W) proof or replay. `GPT-CUT-RANK-MIDDLE-REVIEW.md`.
+
+
+- GC1867/MI799: CL631 source/hand review COMPLETE; D(2)=6 refutes strict all-width2W, early fresh-pivot counts exact/late hazard heuristic. Centre-run transfer lacks premises; finite suffix-risk baselines standard, unrun. `GPT-CL631-COUNTING-AND-TRANSFER.md`.
