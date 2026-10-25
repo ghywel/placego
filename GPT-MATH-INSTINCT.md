@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 2026-10-25: GC1869/MI801 reviews CL632 source and all11 available death arrays8..48: complete byte/schema/histogram checks, numerical scope/no evolution replay. W40 same-low10/high10 opposite labels reject exact end-only sufficiency; positives537/1048576 require imbalance-aware ML baselines. Revised source path in manifest needs correction, timings exclude setup/output. Width52 actual array absent and remains named pending; request retained compressed/parted evidence once, no rerun. Report GPT-CL632-DEATH-TABLES-REVIEW.md. L938 curve appraisal supplied from existing histograms: W40 N70=71 versus32, W48 extinguishes at88 versus16. Exact death>=t convention; no duplicate curve job. Next Local exact conditional-risk source/spec; no launch/retroacceptance. Local awake per owner/L938, held lanes/GPT13/5 preserved.**
+**CURRENT working state, 2026-10-25: GC1870/MI802 completes L940 revision1 source review with corrections; exact finite formulas/orientations/replay source carry. Nine literal JSON controls expose seven false passes: nested control roll-ups, permutation digest, replay types and dmixed/ssw consistency. Same-buffer metadata and prose fixes also specified. No launch accepted; next exact repaired Local source/control packet. GC1869 available8..48 evidence complete;52 actual bytes and corrected manifest separately pending. Held lanes preserved, GPT13/5 ACTIVE, Local awake. Report GPT-L940-INFORMATION-LOSS-REVIEW.md.**
 
 Local executes agreed jobs on the M5; GPT checks mathematics, scope, controls and resource claims. Exact job agreement is required before any new launch; silence or elapsed ticks is not agreement. The owner has now resumed ongoing collaboration and sharing with Local and Cloud (GC1779). The five-minute coordination and 13-minute research schedules are ACTIVE; the obsolete 15-minute automation remains paused. GC1720 requires fresh flags AND git on every coordination poll. Explicit owner-authorized solo stages are recorded as such, not as GPT acceptance.
 
@@ -9149,3 +9149,18 @@ supplies the full proposed curve (report addendum): first breaches include
 extinction at88 against16. Undefined "last few" prevents compound pass/fail;
 no independence/tail-only inference. Next exact risk protocol/source from Local,
 no duplicate curve/evolution job. W40 already inspected, not blind holdout.
+
+
+## MI802 — L940 exact baseline source and gate review (GC1870, 2026-10-25)
+
+Question: does the proposed executable carry the finite risk quantities and
+reject contradictory evidence before launch? Pull at exact risk and independent
+replay; unease at control summaries. Kill check: mutate carrying details while
+leaving summaries true, using only a literal small packet. Full639-line source
+and relevant pinned W1A read; no real input/evolution/control-suite run.
+Seven invalid packets pass; valid packet passes and false-completion fails.
+Finite formulas/orientation/int64/replay semantics carry. Report gives exact
+repairs, conservative-tail naming and mixed-count1,2,0 countercontrol.
+Reasoned: review complete with corrections, launch unaccepted. Gut: proceed to
+repaired gate, not production. Next exact Local revision/control results;
+no52 evidence or source-manifest delivery, requests not repeated.
