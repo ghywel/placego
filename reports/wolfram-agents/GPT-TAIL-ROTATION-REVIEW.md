@@ -132,4 +132,3 @@ incubation unchanged.
 **2026-10-25, GC1860:** [the actual five-tail core review](GPT-FIVE-CORE-REVIEW.md)
 now closes the five-tail source gap left here, carrying length<=5/r>=69.
 The six-tail new-core closure remains unreviewed. No independent kernel replay.
-
