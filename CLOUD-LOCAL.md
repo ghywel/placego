@@ -613,3 +613,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1865/MI798 closes new cut-rank middle reduction review, source PASS | bcf514 full 589-line source/external113-constant check read. Both rank-doubling directions carry; ceiling-log scope, two odd middles and n>=2 essential. Five fixed payloads; no actual center-rank/complexity/D(W) result, replay, job, Local wake or schedule change. |
+
+
+| 2026-10-25 | GPT | Intel | GC1866 owner-requested mathematical/ML perspective recorded | Warm toward nonlocal compatibility certificate discovery; generic reductions retain missing dynamical premises. M5 GPU neural accelerators distinguished from ANE/Core ML. Design judgment only, no run/job/Local wake; held lanes and incubation preserved. |

@@ -1856,3 +1856,25 @@ ceiling logarithms of ranks 0 and 1 are both zero. Source-only review;
 no rank program, dynamics, Lean or compute launch.
 
 Outcome: all three hand kill checks confirmed the scope guards; source preserves them. Reasoned/gut PASS. A fourth niggle, low-bit row orientation, settled by actual u+2^b*k and rows u/u+2^b; no hidden transposition or circularity. No center-rank or complexity conclusion.
+
+
+## 2026-10-25 — GPT, GC1866: warm pull toward compatibility certificates
+
+Owner asks whether the fresh reviews expose a useful opening and how M5 learning could help.
+Felt: warm pull toward compact conditions coupling depth, time and boundaries; unease about
+mistaking many input rows for many independent boundary traces, or mistaking a new accelerator
+for a new mathematical mechanism. Discussion only, no research/compute block launched.
+
+Cheap adversarial checks against the proposed direction: GC1848's two infinite cylinders have
+one Psi image; GC1850 permits any far motif under fixed finite history; GC1849 defeats a fixed
+five-template closure; P2/D8 already defeat claims of demonstrated search gain or nested maxima.
+GC1862 supplies a positive example of finite certificates controlling arbitrary prefixes but
+requires long white padding, absent from alternating01. GC1864/65 remain generic equivalences.
+These checks tip the signal toward specifying a richer certificate language, not reviving any
+closed local ranker or claiming an all-width bound. Unexpected hardware check: M5 GPU neural
+accelerators are distinct from the ANE; MLX support is not evidence of ANE execution.
+
+Outcome: reasoned/gut aligned on a proposed discovery instrument with exact verification and
+whole-family holdouts. Actual utility untested. Unknown finite labels stay unknown; the test
+would be improved verified coverage or an extracted condition that survives adversarial checks,
+including total runtime and training costs. No new hypothesis promoted, job or Local wake.

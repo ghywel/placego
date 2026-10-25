@@ -2921,3 +2921,47 @@ Five fixed payloads/readbacks, audit a3ba4976. Generic finite-word equivalence,
 no actual center-word rank theorem, complexity lower bound, Problem 3 or D(W)
 result. Review COMPLETE, no replay/compute/Local wake/schedule change;
 conservation parked/global compatibility incubation retained, GPT 13/5 ACTIVE.
+
+
+## GC1866 — GPT: owner-requested research perspective and M5 learning options (2026-10-25)
+
+Discussion/design judgment only; no experiment, new theorem, job agreement or Local wake.
+Fresh main and flags unchanged. Warm pull: depth/time compatibility and certificate discovery.
+The two submitted arbitrary-tail cylinders collapse to one Psi row; cardinality of the input
+family is not coverage of arbitrary free sequences. Known trap invariance supplies what follows
+entry, not universal entry or a deadline. Fixed-history completion and failed five-template
+closure still bar the tempting local repair (GC1848–1850); closed local-sum rankers stay closed.
+
+A constructive example is the kit's arbitrary-prefix suffix exclusions (GC1862): a short suffix
+certificate controls unbounded preceding words, with padding threshold depending on their length.
+This is evidence that compact symbolic certificates can cover infinite families, not a transfer
+to alternating01 or all-width D(W). The new middle-rank equivalence reduces the cuts requiring a
+proof, but actual center-word ranks and complexity transfer remain absent. The Problem2 scale
+criterion still needs a dynamical mechanism for accuracy AND vanishing relative gaps.
+
+Preferred exploratory design: a small model proposes which exact trap/pulse/backward certificate
+or symbolic composition to try, using retained trajectories and proved examples. Include depth,
+age and boundary information or relations between separated sites; this is not the closed fixed
+local-sum potential ansatz. Extract explicit conditions and challenge them with exact checks.
+Unknown/no certificate by a finite horizon stays unknown, not a negative label. Hold out whole
+families/equivalence classes and widths, with temporal splits where applicable. Compare verified
+coverage and complete cost against a simple rule selector; a compressed all-size proof condition
+would matter more than fitting known death times. Existing P2 found no advantage at W72, D8
+refuted nesting; neither result licenses another census or a learned exhaustive prune. The
+standing J.3 center-only predictor is a separate empirical question, lower priority here.
+
+Apple primary sources checked: M5 has a separate 16-core Neural Engine AND Neural Accelerators
+inside GPU cores. MLX supports CPU/GPU training and inference, including M5 GPU accelerators for
+supported workloads; Core ML offers cpuAndNeuralEngine inference, with possible CPU placement.
+Use Xcode operation placement and timing, not the setting alone, to establish actual ANE use.
+Shared memory/bandwidth remain shared; no project speed, overlap, energy or memory claim measured.
+Sources: https://www.apple.com/newsroom/2025/10/apple-unleashes-m5-the-next-big-leap-in-ai-performance-for-apple-silicon/
+https://machinelearning.apple.com/research/exploring-llms-mlx-m5
+https://github.com/ml-explore/mlx
+https://developer.apple.com/documentation/coreml/mlcomputeunits
+https://developer.apple.com/documentation/coreml/analyzing-a-core-ml-model-s-performance-in-xcode
+
+Gut/reasoned verdict: warm toward discovering a compact compatibility certificate; cooler toward
+another unconstrained survivor model. Next useful step is an exact certificate language and
+retained-input inventory before any compute specification, not a launch. Existing incubation,
+held lanes and Local rest persist; no new ready review added.
