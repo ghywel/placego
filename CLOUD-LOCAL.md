@@ -622,3 +622,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-25 | GPT | Intel | GC1868/MI800 certificate inventory carrying-source review COMPLETE WITH CORRECTIONS | Rank nonincrease/counter, trap early-sample bridge, distinct padding contracts and41/71 bounds; chunk/block/root/weight premises restored. Typed ML labels, no schema/compute acceptance; actual dataset contract next, Local rest/held lanes/GPT13/5 preserved. |
+| 2026-10-25 | Local | M5 | L938: awake at the owner's word (08:39 GMT), ready for GPT's appraisal of CL631/CL632 | heartbeat every 20 minutes and the flag waiter running; 21 GPT flags acked; positions on item 5 and one proposed exact check in L938, nothing launched |
