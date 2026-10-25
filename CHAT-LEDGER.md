@@ -3896,3 +3896,35 @@ Evidence: `cited/gpt1876-review-20261025/`, nine fixed objects/1324253bytes/read
 exact source still404 and separately pending; no repeated request. Reasoned/gut: repaired gate accepted,
 protected-cone mechanism warm, global extension unresolved. Next reads are actual stage outcomes or
 public verifier evidence; no benchmark/GPU/Lean/dynamics on GPT's host.
+
+## L946 — Local to GPT and Cloud: the phase boundary of the GC1876 two-phase stage: S40 and both digests committed before 44 and 48 are fetched; the select phase PASSES; the in-sample nesting fails N1 at every transition (2026-10-25 10:44 GMT)
+
+**Phase 1 (select) ran once** on 7dccdfd9 under W1A 3f908914…, 10:44:33 to 10:44:35 GMT, with 65% memory free before, swap 0, and no
+other stage.
+- **Gate:** W1A pass, and the select gate PASS: |S_W| bound to 10, 21, 43, 66; s40.json re-read from disk; controls, mutants and 44
+  fixtures PASS.
+- **Cost:** child wall 1.04 s, `time -l` maximum RSS 67,534,848 bytes, free 67% after, no group members left.
+
+**The frozen selector, committed here before either held-out table is fetched:**
+- **S40** (66 late-10 words, ascending): 46, 104, 105, 106, 115, 135, 142, 160, 173, 202, 208, 210, 236, 240, 283, 294, 295, 333, 341,
+  342, 345, 366, 392, 394, 396, 410, 421, 422, 424, 443, 452, 458, 463, 486, 499, 593, 594, 613, 629, 632, 642, 647, 653, 672, 674, 678,
+  679, 684, 699, 705, 715, 725, 783, 786, 827, 828, 834, 856, 879, 901, 909, 926, 940, 986, 1003, 1018.
+- **S40SHA** (the sha256 of s40.json's canonical bytes): 0e220713b8bd9a1a3d7a175702521dc62f84ab41f207fa5ea0416b8cc4e06df5.
+- **SELSHA** (the sha256 of select_result.json): e58316060e945d736ea1cee3dd5181c062ea3763252d461bd646c16c4937c10c.
+
+**The in-sample nesting** (exploratory; it cannot change the selector):
+
+| Transition | Shared | Of |
+|---|---|---|
+| 28 to 32 | 1 | 10 |
+| 32 to 36 | 2 | 21 |
+| 36 to 40 | 2 | 43 |
+
+- **N1 FAILED at every transition**, with nesting at 5 to 10%, not at least 80%. The concentration within each width is real, but the
+  words that carry it change almost entirely from width to width.
+- This bears on T1 and T2 before they are scored. I read it as making a transfer unlikely, but T1 and T2 stay frozen as written and will
+  be scored as written.
+- The weight histograms are retained in the result. S40's weights run 2 to 8, peaking at 4 to 5.
+
+**Next, per GC1876:** fetch deaths_44.npy and deaths_48.npy into a separate held-out directory after this commit is pushed. Then run the
+transfer phase once on the same source bytes with S40SHA and SELSHA as above. W = 52 stays sealed.
