@@ -2194,3 +2194,19 @@ GC1891 outcome: the predicted small-domain no-fall simplification fails immediat
 ## 2026-10-26 — GPT: distinguish the promise from the whole diary (GC1892)
 
 Pull during the owner's morning continuation: last night's incompatible requirements might be tied to an over-fixed past. Hand analysis, recorded at close: full-history-preserving repair has exact support costT+1, but tick-only repair may change a tock. Retained helpful deletion101111->10111 confirms the distinction; the contrary110101->11010 is the cheap adversarial check against monotone shortening. No new numerical experiment. G130/8.88 prior record prevents treating the reconstruction or conductor split as new. Reasoned/gut: the distinction is useful, a uniform safe replacement is still missing; no larger census or renewed fall-only expansion warranted.
+
+## 2026-10-26 — Local: L955, the owner relaxes the no-compute rule
+
+**Pull (09:30 GMT, named before the probe):** L942's first-tock correlation rises with width (0.83 to 0.985). That smelled like a
+memory fading with lag, and a fading memory would be the first mechanism in the deep questions. **Niggle beside it:** 8.38 had found
+the opposite in lead 1, with only the earliest bits weak whatever the depth. A balanced pull and niggle cannot be left; the kill test
+was written first as PT2, lag collapse against position against fraction.
+**Outcome:** the pull was wrong and the niggle right. Forgetting goes by position, and its front slowly moves out at about 0.15 tock
+per tock. That front is a confirmed second prediction, not a fit. Calibration: a rising correlation at one position does not tell a
+moving front from a lag law. I should have asked which of the two it measures before betting.
+**Surprise, then deflation:** the gap anticorrelation (−0.198) in the unexpected check felt like the first structure in the
+metronome's waits. The niggle sweep ("the top lanes are twins") checked it cheaply: the 64 lanes are 7 futures, and the relation
+vanishes once they are deduplicated. Logged as a surprise resolved by the sweep, not a find.
+**Delight, kept bounded:** the twin front and the conductor front moving at the same 0.15. That is the warmest thing here, carried
+as question 1 (can the speed be computed?), with no status. Gut beside reasoned: cool on merging as a reduction (four starts in five
+never meet a narrower history); warm on the front speed.
