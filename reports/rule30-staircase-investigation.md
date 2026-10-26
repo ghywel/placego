@@ -50,3 +50,8 @@ Define the staircase in the identified coordinates. Derive its local transition
 and endpoint by hand, including margins and short cases. Only then freeze a
 small exact enumeration or finite-seed test with independent controls. An
 observed alternating segment is not an endless period-two column.
+
+Second pre-analysis failure: RLIMIT_DATA also rejected before image reading.
+Do not retry resource-limit variants. Final diagnostic uses fixed input/array
+bounds and measured peak RSS, with CPU/wall/file caps enforced; no OS memory
+cap is claimed. No large arrays or simulation are permitted in this stage.

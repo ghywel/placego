@@ -16,9 +16,8 @@ from PIL import Image
 
 def main():
     resource.setrlimit(resource.RLIMIT_CPU, (20, 20))
-    # macOS rejects RLIMIT_AS on this host. Bound the data segment instead;
-    # report peak RSS separately, never label this a total-memory hard cap.
-    resource.setrlimit(resource.RLIMIT_DATA, (128 * 1024**2, 128 * 1024**2))
+    # This host rejects AS and DATA limits; fixed input/array sizes bound work.
+    # Peak RSS is measurement, not a hard memory cap.
     resource.setrlimit(resource.RLIMIT_FSIZE, (2 * 1024**2, 2 * 1024**2))
     signal.alarm(30)
     p = argparse.ArgumentParser()
