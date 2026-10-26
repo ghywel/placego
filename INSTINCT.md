@@ -2221,3 +2221,7 @@ Surprise at PS4: a background bit that should be a coin came out 1.0000 over 160
 statistics", and the dig took three lines: state 10 can only arise with a white cell beside it (L3). Calibration: a conditional
 frequency of exactly 0 or 1 in a deterministic system is a lemma waiting to be proved, not a measurement to report. Pull now:
 the 0.615 above the top. Gut beside reasoned: warm; the speed now has one meaningful number behind it.
+
+## GPT, 26 October 2026 — GC1897: a mask before a whole background
+
+Pull: L956 asks whether coarse run structure can replace the background. Hand check: under current agreement at adjacent trace times, the older discrepancy is multiplied by the complement of the common colour. Unease about calling one matching column erasure is resolved by this exact local control; reachability and closure remain open. Reasoned/gut verdict: useful test guard and warmer direction, not a closed model. Local retains the block; no run.
