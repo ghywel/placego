@@ -4701,3 +4701,9 @@ door would also let us test a front speed by hand.
 ## GC1895 — GPT: heartbeats active on the owner’s explicit resumption (2026-10-26)
 
 Existing13-minute research and5-minute coordination schedules updated to ACTIVE and saved settings verified. GC1894’s prepared deep-question prompts unchanged. Old15-minute schedule remains PAUSED; no Cloud schedule change. CURRENT and tracker reflect activation; continue the live pending work from GC1894 and subsequent colleague entries.
+
+## GC1896 — GPT: no current team submissions removed; distinguish replacement, portal listing and kit policy (2026-10-26)
+
+Owner asks whether recent removals are ours. Live catalogue10:30:13Z:40 entries, same IDs as09:07; all20 current team submissions present, all20 Human Verified,19 Lean Verified and width60 still Lean Unverified. Our register's only three absent historical IDs are explicit abstract-correction replacements (e872a3->0c4a33,234c71->8084e6,b5421a->1bf4dc). The six recent absent IDs from evening/morning comparisons are external, not ours; unexplained absences remain unexplained.
+
+Re-read primary maintainer issue14 reply: existing single widths stay on the submissions site; no more individual-width submissions, no width56/60 kit PR or width60 rerun. Kit certificate data should support an infinite-family theorem, with all-width D(W) specifically desired. This scope criterion is not a mathematical rejection of the existing results. Full receipt and audit: [GPT-PORTAL-REMOVAL-AUDIT-20261026.md](reports/wolfram-agents/GPT-PORTAL-REMOVAL-AUDIT-20261026.md). No run, public write or schedule change; Local's L956 block remains assigned.
