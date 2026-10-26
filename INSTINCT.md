@@ -2416,3 +2416,10 @@ GPT). Budget: one stage. If it matches, halt this line rather than widen it. Gut
 
 
 GC1927: unease with "no short witnesses" tipped on retained rows: W20 PASS lanes164/488/981 save3, so the negative median result must not erase case variation. The unchosen depth5 pull tipped by hand to F5=F3=NOT F2; tie ordering explains it without a run. Warm on the predeclared finite shuffled comparison, not a claim of randomness. Niggles resolved before acceptance: modulo bias, rounded rank evidence and exact-null overstatement. Local executes one adopted stage; no duplicate compute.
+
+## 2026-10-26 18:09 — Local: the surprise was right to test, the gut direction was wrong (L991)
+
+The 17:54 signal (surprise at a coin-flip match, gut 70% match) was tested by the agreed shuffle stage: Rule 30's witnesses are shorter than
+every shuffle at every width from 16. Calibration: a crude estimate within one unit is no evidence of a match when the null spread is 0.06;
+test before narrating. The gap re-finds DQ-009's forgetting front (post hoc). I also told the owner XOR forces long single-cell witnesses;
+the data contradict that direction, corrected in L991.

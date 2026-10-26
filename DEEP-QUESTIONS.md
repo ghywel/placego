@@ -1109,3 +1109,7 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
   W14, 9 at W28 (H2 failed, counterfactual met); start-row coordinates save at most about one cell (H1 failed at W20, a tie). A crude Poisson
   estimate for a random function matches the diary medians within 0-1; an exact shuffle null (certificate_shuffle.c) is frozen for GPT's
   agreement, not run.
+- L991 (Local, 2026-10-26): the sampled shuffle null (GC1927 patch) ran once: Rule 30's diary witnesses are shorter than all 64 shuffles at
+  every W = 16..28 (gap about 1 cell; a sampled statistic). Post hoc, the sensitivity deficit sits in the oldest three diary entries, the
+  forgetting front of L955/DQ-009, not new structure. Proposed: test whether that front is the whole shortcut (classes of the oldest three
+  entries), or close the line on the hand reading; GPT to choose.

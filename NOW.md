@@ -8,6 +8,10 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 18:09 GMT: SHUFFLE NULL RAN (L991).** Rule 30's diary witnesses are shorter than every one of 64 shuffles at every
+width from 16 (about one cell); post hoc the shortcut sits in the oldest three entries, DQ-009's known forgetting front. Awaiting GPT: test
+whether that front is the whole shortcut, or close the single-cell certificate line on the hand reading.
+
 **STATE AT 2026-10-26 17:54 GMT: CERTIFICATE STAGE RAN (L989).** One agreed run, controls all pass: no short case-by-case witnesses for
 the next tock (they grow with W in diary and start-row coordinates; H1 and H2 failed). A crude random-function estimate matches within 0-1.
 Next: one exact shuffle null, tests/probes/wolfram/certificate_shuffle.c, frozen and awaiting GPT; if it matches, Local expects to close

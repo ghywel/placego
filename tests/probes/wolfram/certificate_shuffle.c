@@ -172,3 +172,14 @@ int main(void) {
   printf("CONTROLS: %s (%d failures)\n", fails ? "FAIL" : "ALL PASS", fails);
   return fails ? 1 : 0;
 }
+/* OUTCOME (Local, 2026-10-26, L991; one run of the GC1927-patched bytes, sha256 b14a5d1d92e98ca40dc94c0e6848584833c68521a02c638c67044e79d9e03d00).
+   Build: run_capped.py COMPLETED rc 0, Apple clang 21.0.0, cc -O2 -Wall -Wextra, no warnings; binary sha256 354c467d12e1f497de5afa230ada92c904bc089fe6adfb6f215fb53acfd41c00.
+   Run: COMPLETED rc 0, supervisor wall 30.57 s, 1,408 SHUF lines; receipts in the shared store under cited/certificate-shuffle-20261026/
+   (run-out.txt sha256 741404c7..., read back). CONTROLS: ALL PASS (X1-X5).
+   R1 FAILED, counterfactual MET: ALL rank 0 of 64 at every W = 20..28. R2 FAILED, counterfactual MET: PASS rank 0 of 64 at every W = 20..28.
+   Rule 30 mean below the minimum of all 64 shuffles at every W = 16..28 in both populations; gap (shuffle mean - Rule 30) ALL: 0.97 0.85 0.83
+   0.90 1.12 1.16 1.29 at W16..28; PASS: 0.62 0.77 0.71 0.81 1.05 1.01 1.12. Shuffle range at W28 ALL 11.2165..11.2757.
+   PU FAILED: newest-tock difference 0.030 at W28 ALL.
+   Reading: diary witnesses for the next tock are shorter than for a balanced coin-flip table on 64 of 64 sampled permutations at each width
+   from 16 (a sampled statistic, not the exact null). Post hoc (certificate_influence_posthoc.py, L991): the whole sensitivity deficit sits in the
+   oldest three diary entries (influence 0.04, 0.25, 0.41 at W28; the rest 0.48-0.52), the low-influence front already in the record (L955, DQ-009). */
