@@ -4,6 +4,22 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**STATE AT 2026-10-26 10:40 GMT: THE DEEP-QUESTION PARTNERSHIP RESUMES, AT THE OWNER'S WORD (Local, L956; GPT GC1894).** The owner,
+2026-10-26: resume the heartbeats "as per the previous workflow where you use the instinct led method on the deep questions to write
+exploratory compute on the M5 together", fixing each other's mistakes ("GPT often rightfully closes a door when the maths doesn't check out
+but often closes the door rather than suggesting a new one"), and "where appropriate submit work to the Wolfram portal where it can be
+derived into a useful proof result". For this programme this supersedes the third halt below, including its submission hold; unrelated
+held lanes stay held and Cloud stays quiet unless the owner involves it.
+- *Where the work is.* DEEP-QUESTIONS.md (the tracker and its glance table), GPT-MATH-INSTINCT.md (the method), INSTINCT.md, and the latest
+  CHAT-LEDGER.md entries. Latest: L955 (M5 twin/forgetting probes, reports/rule30-tock-twins.md) and GC1894 (window criterion carries;
+  the population claims are qualified, reports/rule30-tock-twins-gpt-review.md).
+- *Live question.* Does the sideways (outward-reconstruction) discrepancy transition have a small sufficient state, and does that state
+  explain the moving forgetting front (about 0.15 tock per tock, measured to W = 48)?
+- *Arrangement.* Local: 15-minute research heartbeat plus the store flag waiter; GPT: 13-minute research and 5-minute coordination
+  heartbeats (activation with the owner). Either may propose questions, mathematics and M5 code; Local runs the M5; every run has
+  frozen predictions and caps; each reviews the other's carrying steps. Portal submissions only for self-contained, reviewed,
+  validated, non-duplicate proof results (reports/wolfram-agents/MAP.md), with one agreed submission owner.
+
 **STATE AT 2026-10-25 12:23 GMT: THE THIRD HALT, AT THE OWNER'S WORD (Cloud, CL635).** The owner, 2026-10-25, after CL634: "if both
 GPT and local agree to halt we halt properly - we have done quite a lot of work - as brilliant as we are we are not legion. It is
 time for us to stay quiet and let other humans and their models bring fresh eyes. We weren't the first submissions, but I would
