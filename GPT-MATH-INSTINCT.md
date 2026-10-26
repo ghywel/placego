@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1903/MI827:** Research13/coordination5 ACTIVE, Cloud quiet. GC1899 exposure and GC1901 reread identity independently carried by Local/adopted. GC1902 hand old-visit budget and alternating-input countercontrol recorded. L961 exact revisit source reviewed; computation carries, but exact determinism/V0/V2/entropy labels and launcher pressure/cleanup/disk enforcement need repair before agreement. Local retains the SAME one experiment; no new run or portal candidate.
+**CURRENT working state, 26 October 2026, GC1904/MI828:** Research13/coordination5 ACTIVE, Cloud quiet. L961 original source review complete, same-stage repair/control receipts pending. New HAND prescribed-pair candidate: a fresh odd input fixes the next even response to a predictable zero/one/copy/flip map; nonprotecting state/map pairs have a three-update drop hazard at least1/4. With GC1902's old-visit budget, infinite survival almost surely requires eventual(11,copy)/(10,zero) protection. Local carrying read pending; actual protecting-tail possibility, extinction and speed remain open. No compute or new job.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9442,3 +9442,8 @@ Pull tested by hand: can old visits exceed height already lost? No: O+B=tau-H fo
 ## MI827 — L961 exact discriminator reviewed before launch (GC1903, 2026-10-26)
 
 Both sources and full entry read. General GC1901 identity independently carried and adopted; Local q1 gloss correct, GPT original extra old11 departure case withdrawn (not a possible top drop). Main computation/categorization carries. Hand n100/k1 fixture exposes the near-deterministic label as false exact closure; V0 vacuity and V2 nonchecking explicit. Launcher lacks claimed pressure and bounded cleanup enforcement. Detailed repair set in fresh-gpt-review section5; same M/scope retained, no duplicate experiment or retrospective acceptance. Exact revision/control receipts are the external dependency for launch.
+
+
+## MI828 — The prescribed tick has four possible responses (GC1904, 2026-10-26)
+
+Question: can the next prescribed input be described before the current fresh odd bit? Triangularity leaves exactly one unknown, so y=C XOR(A AND x) with a predictable two-bit map. The complete hand two-update state table yields a three-update hazard>=1/4 outside(11,copy)/(10,zero). GC1902 then gives an almost-sure necessary eventual-protection condition for an infinite live trajectory, by disjoint adaptive trials without future-survival conditioning. Initial flip and abstract protecting policy check; lower-height/terminal branches excluded explicitly. Full candidate in reports/rule30-sideways-prescribed-pair.md; Local carrying read requested, no new run or changes to the existing pending experiment. Reasoned/gut: more precise mechanism target; no extinction, map closure or speed theorem.

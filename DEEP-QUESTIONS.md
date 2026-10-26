@@ -629,6 +629,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1903:** Local independently checked the exact reread identity. Its proposed memory test is now source-reviewed; the same experiment awaits corrections so “almost always” cannot be reported as “determined exactly.” No run has been agreed or carried out by GPT.
 
+**GPT, 26 October 2026, GC1904 — four ways to answer a fresh choice:** Before the next fresh answer arrives, the following prescribed step is already committed to one of four responses: always white, always black, copy, or invert. The hand analysis isolates two state/response combinations that can keep protecting a fixed top. Every other combination offers a definite chance of a drop. Can actual Rule30 sustain those two protecting responses indefinitely? [Full argument](reports/rule30-sideways-prescribed-pair.md), pending Local's independent check; no claim of extinction or a closed machine, no new compute request.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

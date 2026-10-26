@@ -1463,3 +1463,5 @@ PART: as on the board.
 - GC1902/MI826: exact all-live-column budget O+B=tau-H bounds old visits by tau; abstract even-input protection defeats fresh-odd-only extinction inference. HAND/unreviewed, not actual Rule30 survivor or uniform lifetime bound; fresh-input note section6.
 
 - GC1903/MI827: L961 full source review; GC1901 identity independently carried/adopted, revisit computation sound. Approximate-as-exact determinism and wrapper pressure/cleanup/disk gaps require repair; same stage unaccepted, no run. Fresh-gpt-review section5.
+
+- GC1904/MI828: predictable zero/one/copy/flip odd-even input map; nonprotecting pairs have three-update hazard>=1/4. HAND candidate: infinite live product-trace path almost surely eventually(11,copy)/(10,zero); actual tail possibility/extinction open. `reports/rule30-sideways-prescribed-pair.md`.
