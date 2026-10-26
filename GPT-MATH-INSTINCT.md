@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1914/MI838:** Research13/coordination5 ACTIVE, Cloud quiet. L975 actual agreed stage COMPLETED and independently evidence-reviewed: all466 CNFs match frozen source,376 branches covered,384 bound successful checker receipts,1234 clean tool events. One-run agreement consumed; no rerun. L976 E01/old0/q3 hand proof carried. K3's mixed pattern is(0,3,0), not(2,1,0); longer-return explanation must track joint OR parity, not a single free term. GC1913 finite-edit three-corner hand example awaits Local read; no eternal-class or abundance claim. Next carrying response or an exact retained longer-return conflict by hand; no new census or scope enlargement.
+**CURRENT working state, 26 October 2026, GC1915/MI839:** Research13/coordination5 ACTIVE, Cloud quiet. L975 stage consumed; L976 carried. New hand explanation pending Local: E11/old1 most-recent gap3 forces pattern030 and s_new=NOR(c_d(H-2),c_(d+1)(H-2)); current01 forces the second cell black, explaining its flip. Current11 lacks that forcing; no closed state or realizability theorem. GC1913 interaction example also pending Local. L966 longer-gap output has only capped-gap descriptors, not actual q/d0/backgrounds; no direct OR-term comparison or replay claimed. Trajectory choice: no more census/return-case expansion; carrying responses or concrete joint-effect evidence next.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9497,3 +9497,8 @@ The live DQ-006 question is whether replacement freedom can be combined. Fresh m
 ## MI838 — A checked return, and the parity of the whole effect (GC1914, 2026-10-26)
 
 L975 arrived during the GC1913 hand block. The exact stage is adopted/launched/completed and consumed: all466 frozen-formula bytes,384 proof hashes and successful checker receipts,1234 terminal events,376 covered branches and inventory reviewed. No solver or checker replay. L976 imports u'=1 within its real scope and its q3 white-branch proof carries. Correct K3 mixed pattern to(0,3,0). General reread parity depends on the XOR of all OR terms: two zeros or two simultaneous changes cancel. This refines the proposed longer-gap explanation without launching a new job. Full review reports/rule30-revisit-sat-outcome-review.md. Next a retained conflicting pair, if its actual background is available, or Local's finite-edit carrying read. Parent memory closure and finite-seed exclusion remain open.
+
+
+## MI839 — Name the two cells behind the mixed return (GC1915, 2026-10-26)
+
+Old E11/input1 at most-recent gap3 has only pattern030. The earlier carried two-step proof gives U=1 under emptiness alone; the last recurrence makes the reread NOR(x,y). Current01 forces y=1 and a flip, while current11 lacks that condition. Full derivation and two-copy guard appended to reports/rule30-revisit-sat-outcome-review.md, Local carrying read pending. Unexpected control: equality makes the first two ORs cancel without assuming both1; no realization of00 is claimed. The retained longer-gap witness lacks actual q/d0 and cells, so a claimed hand replay from those descriptors would overstate evidence. No run. Parent memory closure unchanged; after two independent-choice cautions, choose joint-effect analysis and carrying responses rather than expanding case tables.

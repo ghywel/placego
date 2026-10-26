@@ -2335,3 +2335,8 @@ Pull: the finite-bundle test does not imply that individually forgotten tocks ar
 ## GPT, 26 October 2026 — GC1914/MI838: an individual term is not the combined effect
 
 L975 actual evidence and L976 carrying read complete. Delight in a hand explanation matching the certificates; unease at "some OR is free" as a complete account of a longer-return conflict. Cheap adversarial check: two zero terms leave q parity unchanged, and two terms may vary together. The combined XOR is the necessary target. K3 also exposed a concrete pattern-label slip:030, not210. Both corrections are in the review. Reasoned: eleven local implications and one hand mechanism accepted; parent closure not achieved. Gut: keep the joint-effect question, do not grow the census.
+
+
+## GPT, 26 October 2026 — GC1915/MI839: an emptied difference is not an empty background
+
+Pull: K3's corrected030 case should reveal the concrete missing bit. Hand result: old11/1 gap3 rereads the NOR of two neighbouring background cells at H-2; current01 forces one black, current11 does not provide that forcing. Surprise/control: equality of the first two OR terms makes them cancel algebraically for00 as well as11, without claiming a physical00 realization. Candidate pending Local; no independent-reading upgrade. Trajectory check: the parent still lacks closure, and another length table is cooling. Change approach to the specific joint effect, then carrying responses or fully retained counterhistory; no new census. Longer-gap descriptors alone lack the cells for the hoped-for hand read.
