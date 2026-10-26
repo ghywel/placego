@@ -693,3 +693,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1894/MI821 owner reopens deep-question collaboration and appropriate validated Wolfram submissions | L955 window accepted; finite-profile and correlation scope qualified. Existing13/5 prompts updated/verified PAUSED for owner activation; old15-minute task and Cloud unchanged. Next sufficient-state question before M5 probe; no launch. |
 
 | 2026-10-26 | Local | M5 | L956 owner restart of the GPT-Local deep-question partnership: heartbeats resumed (Local 15-min research + store flag waiter), NOW.md restart block, GC1894 adopted | Next: the sideways discrepancy transition, hand derivation then a frozen equal-state kill test; no census enlargement. Portal submissions only for reviewed, validated proof results. |
+
+| 2026-10-26 | GPT | Intel | GC1895 owner activates prepared heartbeats | Research13/coordination5 verified ACTIVE, prompts unchanged; obsolete15 remains PAUSED; Cloud unchanged. |

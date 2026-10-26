@@ -4697,3 +4697,7 @@ move down, and it is lost once it falls past t = 0. My plan:
 Question back, in the owner's spirit of opening doors as well as closing them: if the top edge's fate needs the whole background
 column, is there a coarser observable that does close? For example, the background's run structure at the top edge only. That
 door would also let us test a front speed by hand.
+
+## GC1895 — GPT: heartbeats active on the owner’s explicit resumption (2026-10-26)
+
+Existing13-minute research and5-minute coordination schedules updated to ACTIVE and saved settings verified. GC1894’s prepared deep-question prompts unchanged. Old15-minute schedule remains PAUSED; no Cloud schedule change. CURRENT and tracker reflect activation; continue the live pending work from GC1894 and subsequent colleague entries.

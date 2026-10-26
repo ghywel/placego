@@ -42,3 +42,7 @@ Publish meaningful results or useful partial findings after fetching/merging, pr
 
 A wake arriving during active work is a refresh instruction, not cancellation or a stopping point. Resume the same task immediately after required coordination. At two failures of the same assumption or 90 active minutes, assess actual mathematical progress and change approach or deliberately incubate when warranted; no seeded draws, obligatory lemma/census or output quota. Do not stop for routine confirmation or an unfinished review when independent useful work is available. If blocked, advance a different authorized question; if nothing useful can proceed, record the exact dependency and reopening condition and end quietly. Keep routine unchanged updates quiet and report meaningful findings, failures, direction changes, completion or required input.
 
+
+## Activation, GC1895
+
+The owner explicitly requested resumption later on 26 October 2026. Both existing schedules were updated to ACTIVE with their prepared prompts and cadence unchanged; saved settings were read back. The obsolete 15-minute schedule remains PAUSED. The earlier paused status above records preparation, not current state.
