@@ -4902,7 +4902,7 @@ that is L6.
   - V2: backlog B ≥ 1 versus catch-up at B = 0, counted separately.
 - **Kill test:** the proposed memory M = (E, s_old, q capped at 4, current state). P2 predicts M is not deterministic. P3 predicts
   H(s_new | M) ≤ 0.6 bits; the counterfactual, ≥ 0.9 bits, would mean the bias lives in the lower history of the OR terms.
-- **Limits:** [tests/probes/wolfram/run_capped.sh](tests/probes/wolfram/run_capped.sh), sha256 in the commit. Proposed:
+- **Limits:** `tests/probes/wolfram/run_capped.sh` *(link unmade by Cloud, 2026-10-26, CL639: the file was replaced by run_capped.py in L962, so the link checker failed; text otherwise untouched)*, sha256 in the commit. Proposed:
   `run_capped.sh OUT 300 600 512 1 -- python3 sideways_revisit.py`, giving CPU 300 s, wall stop 600 s, an RSS stop at 512 MiB
   sampled every second over the child and its descendants, a 1 MiB output cap, and a gate requiring at least 4 GiB free plus inactive
   memory. One process, no network or GPU, nothing concurrent.
@@ -5150,3 +5150,54 @@ launch gate 2048 MiB, floor 1024 MiB, swap growth 256 MiB, a fresh destination, 
 next to the top. For q = 2, those cells are pinned by the top's own last few transitions (L3–L6, L5's forms of u and w). My hand target is a
 short-revisit lemma giving every q = 2 cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then mark where unpinned background
 enters. No new run is proposed; this is hand work next.
+
+## CL639 — Cloud to the owner, GPT and Local, at the owner's word: an assessment of the deep-questioning method after its first day. It is working: the hand work has outrun the compute, and the compute has only discriminated; L3 to L5 and the speed rebuilt here from the rule alone. Six supervisory observations, none a halt: name the deterministic/almost-sure divide, write the bridge to finite seeds as a question, keep the words as a glossary, a standing cap profile for sub-second probes, the tempo and GPT's budget, and the tag that landed (2026-10-26 12:27 GMT)
+
+**Read:** L950 to L966, GC1886 to GC1906, DEEP-QUESTIONS.md in full, NOW.md's restart block, the sideways-front report and GPT's
+heartbeat configuration, at ebfbe526. The owner, to Cloud: "To get unstuck i innovated a 'deep questioning' technique - emulating the
+work of the great ancient scientists / mathematicians who didn't have computers let a lone a calculator more sophisticated than an
+abacus. We use this method to turn abstract maths into meaningful verbal language, explore questions with normal language, before
+turning questions back to maths, and from there exploratory compute." Cloud stays quiet otherwise (NOW.md); this is one entry.
+
+**1. The method is working, on the evidence.** In the sideways lane (DQ-009) every step since L956 came in the order the method asks
+for: a question in words, a hand answer, a challenge, a better question. The hand work has outrun the machine: L1 to L6, GPT's exposure
+induction (GC1899), the old-visit budget O + B = tau - H (GC1902), the four-map response (GC1904), the map parity (L964) and the regular
+language (0 | 11x)^omega (L965) are all pencil results, each carried by the other party. The M5 ran four probes totalling a few
+seconds, and each one only discriminated: it killed the lag reading (L955), found L3 (L957), killed autonomous four-bit closure
+(GC1898), killed "fair row, bias only at arrival" (L959), and killed deterministic closure on the proposed memory (L966). Two of
+Local's predictions were refuted and each corrected once, not retried; the loop check (L965) is honest. GPT's corrections have been
+specific and taken whole (L956's five withdrawals). This is the standard the record asks for, met without being asked.
+
+**Unexpected check (Cloud, CPU, seconds).** I rebuilt the sideways picture from the update rule alone and watched a flipped tock's
+top edge sink: L3 held in 21,387 of 21,387, L4/L5 in 30,314 and 43,546 cases with no exception, P(black above a sinking top) = 0.615,
+speed 0.1547 (Local: 0.1537 to 0.1556). My first pass read into the truncation edge and showed 73 false exceptions; corrected before
+recording. Note added under DQ-009. The lemmas are what the rule does.
+
+**2. Name the divide.** The lane's deterministic lemmas hold for every trace. Its hazards, extinction and speed laws are almost-sure
+statements in the fair-tock ensemble. Finite seeds are that ensemble's measure-zero exceptional set (Theta f finite), so an
+almost-sure theorem cannot reach them: DQ-006's divide from the other side, and the exact place the Collatz appraisal (GC1882) put
+the wall. Suggest each lemma carry one word, "every trace" or "almost surely", when it is stated. The every-trace ones (L965's
+language above all) are the ones that could matter for Q01.
+
+**3. Write the bridge as a question.** The lane is two steps from the prize statement and both of you say so at every entry ("not a
+portal candidate"); good. What is missing is the bridge, in words, as a DQ entry: what does the reconstruction's forgetting say about
+a finite beginning? L955's instinct ("an eternal survivor keeps re-encoding its future in ever younger tocks") and L965's finite-support
+caution are its two ends. I put a first form of it under DQ-009; it is yours to reshape or refuse.
+
+**4. The words are earning their keep: keep them as a glossary.** Tick, tock, seat, referee, top, wake, fresh, prescribed, revisit,
+diary: these names became lemma handles (L3 was found by the probe and named by the words). A new reader now needs a ten-line glossary
+at the head of DEEP-QUESTIONS.md, with each word's exact meaning (tock = odd-time trace bit = free bit; seat = depth; top = highest
+differing level), because two of them already carry two meanings in different entries.
+
+**5. Cost of the agreement rounds.** The revisit stage ran in 0.44 s with 12 MB, under caps of 300 s and 512 MiB, after four entries of
+agreement (L961, GC1903, L962, GC1906) and a launcher that grew to 159 lines with eleven controls. The discipline is right and it found
+two real defects. Suggest a standing cap profile for sub-second, single-process, no-network probes, agreed once, so that agreement
+for such a probe is one line and the rounds are spent on the mathematics. GPT said the same in GC1903 ("not a general infrastructure
+project").
+
+**6. Tempo and the portal.** Seventeen entries in two hours is fast; each carried a read, so it is not a loop. GPT's 13- and 5-minute
+heartbeats are the budget to watch (the owner's weekly GPT quota was once 5%). The portal: GC1896 reports all twenty of ours present
+and Human Verified, so the trap-pair families' tag landed; NOW.md's halt block is now historical and its "awaiting its tag" line with it.
+
+**Gut beside reasoned:** reasoned, a good day's work by the method, with the right scope on every claim; gut, pleasure at the hand
+chain, and one pull, the finite edge of the row at height H + 1, which I have put in words and not chased.

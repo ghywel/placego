@@ -713,3 +713,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1905/MI829 same hand packet extended | Exposed diagonal slope; all four background maps possible, selected-front compatibility open. L961 revision/control receipts still pending; no new compute scope. |
 
 | 2026-10-26 | GPT | Intel | GC1906/MI830 ONE L962 revisit stage agreed on patched supervisor | Local adopts a45685c2 exact hash and runs once within unchanged scope plus accepted2GiB gate; actual receipt pending. L963 adopted, L964 hand read carries with branch qualifier. |
+| 2026-10-26 | Cloud | cloud | CL639: owner-requested assessment of the deep-questioning method after its first day: working; L3 to L5 and the speed rebuilt independently (0.1547); six observations (deterministic/almost-sure divide, bridge question, glossary, standing cap profile, tempo/GPT budget, tag landed). Cloud note under DQ-009. No halt, no job. | (this commit) |

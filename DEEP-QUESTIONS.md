@@ -69,7 +69,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
-| DQ-009 | How much does the referee have to remember, seat by seat? | Open. L957–L960 and GC1898–GC1901: exact top decisions and fresh-input exposure carried; autonomous four-bit closure refuted. Revisited inputs differ by an exact OR correction; small memory and speed law remain open. Historical measurements and corrections below. |
+| DQ-009 | How much does the referee have to remember, seat by seat? | Open. L957–L960 and GC1898–GC1901: exact top decisions and fresh-input exposure carried; autonomous four-bit closure refuted. Revisited inputs differ by an exact OR correction; small memory and speed law remain open. Historical measurements and corrections below. L3 to L5 and the speed rebuilt independently by Cloud (CL639). |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955) |
@@ -634,6 +634,34 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 **GPT, GC1905 — permission is not reachability:** All four responses really can occur in valid Rule30 background patterns. That rules out the easy answer “copying is forbidden.” But a background pattern need not occur where our moving disagreement actually stands. The first explicit copy example fails that reachability check. We now have an exact earlier-history condition for copying versus ignoring the fresh choice; the question is what the front's own history permits. [Hand derivation and controls](reports/rule30-sideways-prescribed-pair.md#5-the-map-slope-is-an-exposed-diagonal-parity-gc1905--mi829).
 
 **GPT, GC1906:** Local independently verifies the finite reuse budget and the protecting-tail argument. Its diagonal-parity derivation agrees with ours. The repaired memory test is agreed for one bounded run. Next challenge: a condition that protects both possible next choices is stronger than one that protects the choice actually taken; the proof must keep those apart.
+
+> **Reader and date:** Cloud, 2026-10-26 12:27 GMT, CL639, at the owner's request (an assessment of the method, not a block).
+>
+> **Version examined:** do the sideways lemmas and the measured speed survive an independent rebuild from the recurrence alone?
+>
+> **Answer in everyday words:** yes. I rebuilt the sideways picture from the one update rule, with no code of Local's, and watched
+> the top edge of a flipped tock sink. Whenever the edge was in the state "differs now, not before", the cell beside it was white
+> every time (21,387 of 21,387), so that state always survived (L3). In the state "differed before, not now" the edge survived
+> exactly when the cell above it was black (30,314 cases, no exception), and that cell was black 0.615 of the time (L4, L5). In the
+> state "differs both times" the edge kept that state exactly when the cell above was white (43,546 cases, no exception). The edge
+> sank at 0.1547 levels per column (150 runs, tau = 101), beside Local's 0.1537. So the chain 10 -> 11 -> (11 | 01) -> (10 | vacate),
+> and the regular language (0 | 11x)^omega of L965, are exactly what the rule does, not an artefact of one implementation.
+>
+> **Exact scope and evidence:** random traces with black even tocks and fair odd tocks, one tock flipped, 700 trace steps, 1,100
+> columns, reads kept four cells clear of the truncation edge (my first pass read into it and showed 73 false exceptions, a
+> boundary artefact, corrected before this note). Single-party, finite, a check of Local's lemmas and not a new result.
+>
+> **What this reader adds:** a line between two kinds of statement in this lane. L1 to L6, the exposure induction (GC1899), the
+> old-visit budget O + B = tau - H (GC1902), the four-map response and its parity (GC1904, L964) and the language of L965 are
+> deterministic: they hold for every trace. The hazard of at least a quarter (GC1904) and any extinction or speed law are almost-sure
+> statements in the fair-tock ensemble. The prize asks about finite seeds, which are the measure-zero exceptional set of that
+> ensemble (the kit's Theta image with Theta f finite), so an almost-sure theorem says nothing about them: this is DQ-006's divide
+> seen from the other side. The deterministic lemmas are the ones that can reach a finite seed.
+>
+> **Next question, in words:** when the beginning is finite, the row the referee reads at height H + 1 is white beyond the
+> beginning's edge, and white means "stay in state 11" for ever. So for a finite beginning, is the tock remembered for ever past the
+> edge, and does that say anything about the beginning itself? (L965's finite-support caution says the pair is empty out there; the
+> question is what happens at the edge of the support, where the row stops being fair and starts being white.)
 
 ## DQ-010 — Different pasts, one present
 
