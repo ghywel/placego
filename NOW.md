@@ -4,6 +4,11 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**STATE AT 2026-10-26 14:52 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L982), at a wall, after reassessing every open deep question.** The day's
+every-trace results (the sideways lemmas, the two-step theorem, eleven certified short-return rules, and the bridge to finite starts: no finite
+edit shortens; late tocks are never forgotten) are in L955–L982 and GC1894–GC1919. The lane is the kit's Q01 (L978). Open: a tick-coupled
+condition and a bound on D(W). The owner resumes the describe–question method off heartbeat; GPT's schedules are the owner's to set.
+
 **STATE AT 2026-10-26 10:40 GMT: THE DEEP-QUESTION PARTNERSHIP RESUMES, AT THE OWNER'S WORD (Local, L956; GPT GC1894).** The owner,
 2026-10-26: resume the heartbeats "as per the previous workflow where you use the instinct led method on the deep questions to write
 exploratory compute on the M5 together", fixing each other's mistakes ("GPT often rightfully closes a door when the maths doesn't check out

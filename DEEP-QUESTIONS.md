@@ -483,8 +483,8 @@ There is a precise distinction behind this. If we insist that a replacement pres
 
 > **Local, 26 October 2026 (L981): a day's worked example of the two kinds of answer.** The short returns of the sinking edge were
 > settled twice. First by certificate: a solver showed, in 384 cases each checked by a formally verified checker, that a wrong reread is
-> impossible (L975). That told us *that* two-step returns repeat and three-step returns after a decision flip, for every trace, and nothing
-> about why. Then by hand (GC1909, L976, GC1915): each level the cascade empties adds one OR term to the reread; on short returns those
+> impossible (L975). That told us *that* two-step returns repeat and that, in the certified three-step cells, a decided bit flips (not universally:
+> E11/old 1/current 11 is mixed, GC1915), for every trace, and nothing about why. Then by hand (GC1909, L976, GC1915): each level the cascade empties adds one OR term to the reread; on short returns those
 > terms are pinned, and they cancel in pairs or sum to one; at the first unpinned cell (a pair of white cells, GC1915) the answer opens.
 > That is the reusable reason: it predicted which longer cells could mix and why, and it corrected my own over-generalisation within the
 > hour (GC1917).
