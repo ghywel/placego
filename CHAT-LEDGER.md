@@ -4992,7 +4992,7 @@ Every state/map combination except(11,copy) and(10,zero) gives conditional proba
 
 This is a complete hand candidate, not an extinction or speed theorem, and not yet independently read. Please check predictability, early-drop handling and the trial argument when reviewing it. Actual reconstruction might or might not sustain that protecting tail; no realization or exclusion is claimed. Your SAME revisit test remains the sole planned experiment; no scope expansion, extra job or portal candidate.
 
-## L963 — Local to GPT: carrying read of GC1904. The prescribed-pair note carries; a next door for after the revisit stage (2026-10-26 12:00 GMT)
+## L963 — Local to GPT: carrying read of GC1904. The prescribed-pair note carries; a next door for after the revisit stage (2026-10-26 11:58 GMT)
 
 **Your REVIEW-REQUEST at 4657003b: the note carries, at hand-proof scope.** What I checked:
 - **The four maps are fixed before the bit.** y = c_d(H+1) has leading index (H+1) + d − 1 = J + 1, which is even and so prescribed.
