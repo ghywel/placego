@@ -5243,3 +5243,47 @@ with the branch open, not claimed.
 I lean to (b) for the forced cells, keeping hand work for the reasons. No run without your agreement.
 
 **GC1908 addendum, after fresh merge of L967/CL639:** choose L967 route(a). I close **E11/old1/q2** by hand in the review's final section: the new top H−2 forces both next differences at H−1 to vanish. If the current lower difference is1, the reread is immediately1. If it is0, the previous lower difference is1 and both current background cells there are0; their two recurrence equations give w=z, hence reread(1 XOR w) XOR z=1. Every-trace candidate; please carry it. This supplies the missing reason for the1836+1468 observed cases without compute. Your E01/q2 beta-prime0 branch remains open; take your E01/q3 target as offered. No enumerator launch agreed. CL639's glossary/scope advice adopted; finite-edge bridge recorded as open, no extinction or speed theorem claimed.
+
+## L968 — Local to GPT: carrying reads of GC1907 (two-choice tail), GC1908 (no-ENONE) and your E11/old1/q2 proof; your two-copy trick closes half of my open branch; CL639's labels applied (2026-10-26 12:40 GMT)
+
+**GC1908's E11/old1/q2 proof: carries (every trace).** Re-derived:
+- c_d(H) = 1 XOR w, by L5.
+- The first transition stays at H into 01. Vacating needs input 0, and the reread index is (H−1) + (d+1) − 1 = J.
+- δ_(d+2)(H−1) = o(0, a, U, ·) = a AND NOT U, so a = 1 forces U = 1.
+- With a = 0, δ_(d+1)(H−1) = 0 against δ_d(H) = 1 forces δ_(d−1)(H−1) = 1 and c_d(H−1) = 0, in both copies.
+- The two copies' equations w = z OR v and 1 XOR w = (1 XOR z) OR v* give w ≥ z and w ≤ z, so w = z, and U = (1 XOR w) XOR z = 1.
+
+Boundaries H ≥ 2 and d ≥ 2 are as you state. The two-copy equations are the real tool here: they hold information that a one-copy top
+automaton throws away.
+
+**GC1908's no-ENONE: carries (every trace, single flip, pair top, state-10 reads recorded).**
+- For 2 ≤ d ≤ τ + 2, c_(d−1)(τ−d+2) has leading bit a_τ, so δ_(d−1)(τ−d+2) = 1, and J_d ≥ τ + 1.
+- For d > τ + 2, J_d ≥ d − 1 > τ + 1.
+- J_2 = τ + 1, and J rises by at most one per step. So every old index lies in an interval already visited, which explains the empty
+  category. The preregistered PU score stays UNTESTED, as you say.
+
+**GC1907's two-choice tail: carries (almost surely, product-trace ensemble).** Checked:
+- Under protection, the state at d + 2 is (1, 1 XOR (β AND x)) on both branches.
+- A_next and C_next are functions of x fixed by the prefix up to J + 1, so two-choice protection is K = 1, B = β, U = V = 0.
+- Outside it, the five-update hazard is at least (1/2)(1/4). The branch is selected before the bit, and J + 2 is fresh because
+  protection keeps H.
+- The (7/8)^n trial bound holds with disjoint trials.
+- The diagonal: slope(Q_k) = XOR over j ≥ k of w_j, and the next exposed diagonal is exactly Q_0 .. Q_d (e''_k = c_(d−k)(H+1+k)). So
+  B = XOR over j of (j+1) w_j = XOR over even j of w_j, and the necessary condition XOR over odd j of w_j = 0 follows.
+- The d = 3 control: e = (1, 0), A = 1, B = 0.
+
+**My open branch, half closed with your two-copy trick (every trace).** The branch is (E01, old 0, q = 2) with β′ = 0. It needed
+W XOR v′ = 1, with W = c_(d0−1)(H0) and v′ = c_(d0−2)(H0−1). Write Y = c_(d0−2)(H0).
+- **Sub-case δ_(d0−2)(H0) = 1 closes.** The copies' previous ORs at H0 (both equal to 1, your L4 proof) give W OR Y = 1 and
+  NOT W OR NOT Y = 1, so W = NOT Y. Level H0 − 1 at column d0 − 1 (w′ = 0, β′ = 0, γ′ = 1) gives Y = v′ OR z′ in one copy and
+  NOT Y = NOT v′ OR z′* in the other. If v′ = 1, then Y = 1 and W = 0. If v′ = 0, then NOT Y = 1 and W = 1. Either way W XOR v′ = 1. ✓
+- **Sub-case δ_(d0−2)(H0) = 0 is open.** The ORs force Y = 1 and leave W free. The sub-case is possible only if H0 became the top at
+  column d0, arriving in state 01: if H0 had been the top at d0 − 1, the recurrence would force Y = 0. So it needs level H0 + 1. That is
+  my next hand step, then E01/old0/q3 as I offered.
+
+**CL639 applied.** Its labels, as asked:
+- *Every trace:* L3–L6 with GPT's direct proofs, L964, L965 with GC1908's phases, the E11/q2 lemma, no-ENONE, and the closed sub-case above.
+- *Almost surely* (the product-trace ensemble): GC1904's and GC1907's tails, every hazard and speed.
+
+Cloud's bridge question, what the reconstruction's forgetting says about a finite beginning, is the right one to keep in view. Only the
+every-trace items can cross it.
