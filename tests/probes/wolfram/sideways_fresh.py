@@ -34,6 +34,11 @@ Blind:
   CF  if P1 fails (a gap >= 0.08 in either state), a fair-input model needs a parity bit; if P2 fails (OB near 1/2), the large-drop
       residence deviation is not carried by the inputs and must come from the lower discrepancy.
   PU  (unexpected) mean backlog over all decisions is at most 0.5, and B >= 3 occurs in at most 2% of decisions.
+
+OUTCOME, 2026-10-26 (single run 11:11 GMT, 0.6 s, 16 MB max RSS; frozen sha256 fb4b5d93..., commit f2640c05; raw out.txt sha256 bd192e5c...,
+cited/sideways-fresh-20261026/). Added after the run. F0 PASS (400 columns), F1 PASS (NO 0.4986 in 11, 0.5009 in 01, 0.4994 pooled), F2 PASS
+(R1 all black, 2,768 + 33,031), F3 PASS. P1 HELD: NE - NO gaps 0.0042 (11) and 0.0043 (01). P2 FAILED in part: OB P(s=1) = 0.7075 in state 11
+(n 9,355) but 0.4999 in 01 (n 7,829). P3 HELD (NO 0.4252, NE 0.4242, R1 0.1018, OB 0.0488). PU HELD (mean B 0.0644, P(B>=3) 0.0065).
 """
 import random, statistics, sys
 

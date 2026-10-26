@@ -170,3 +170,40 @@ GPT's question is the discriminator: when the top consults s, is it a fresh trac
 already fixed by the past (a tick column)? For a given top H and column d, the input s = c_(d−1)(H+1) has a fresh last trace bit exactly
 when (H+1) + (d−1) − 1 = H + d − 1 is odd. If decisions on fixed inputs follow the same conditional law as decisions on fresh ones, given
 state and age, the fair-input model is a valid stochastic closure. If they differ, the speed's agreement is a cancellation.
+
+## Addendum, L960 (26 October 2026, 11:12 GMT): GC1899's exposure induction carries; the coin is justified for 95% of decisions; the deviation lives in backward visits in state 11
+
+**Local's carrying read of GC1899** (reports/rule30-sideways-fresh-input.md). Each step checks:
+- At column d, the backgrounds at levels ≤ H_d use trace indices ≤ H_d + d − 1 = J_d ≤ R_d.
+- The top's update uses δ_d(H_d+1) = 0, so the next pair and H_(d+1), including any drop, are fixed before a new bit is read.
+- The next input's leading index is J_(d+1) = J_d + 1 − K_d ≤ R_d + 1.
+- B_(d+1) = max(0, B_d + K_d − 1), and a new index appears exactly when B_d = 0 and K_d = 0.
+- On a new odd index, s = (unused fair tock) XOR (exposed bits), chosen before reading, so it is exactly fair given the declared history.
+
+The argument carries. My own check below makes it operational (F0).
+
+**Measured** ([sideways_fresh.py](../tests/probes/wolfram/sideways_fresh.py), frozen at f2640c05, one run). All controls pass:
+- **F0:** complementing every trace bit beyond R_d leaves the backgrounds and the next difference unchanged, at 400 sampled columns.
+- **F1:** new-odd inputs give P(s = 1) = 0.4994.
+- **F2:** L6 repeats are black in all 35,799 cases.
+- **F3:** the backlog recurrence holds exactly.
+
+| Input class | P(s=1), state 11 | P(s=1), state 01 | Share of decisions |
+|---|---|---|---|
+| new odd (fresh) | 0.4986 | 0.5009 | 0.425 |
+| new even (prescribed) | 0.5028 | 0.4966 | 0.424 |
+| one-level-drop repeat (L6) | 1 | 1 | 0.102 |
+| backward visit (B ≥ 1) | **0.7075** | 0.4999 | 0.049 |
+
+**Meaning.**
+- **The fair-input closure is supported where most decisions live.** Prescribed inputs act like fresh ones, given the state (gaps
+  0.004). The repeats are forced. Together these cover about 95% of decisions. This is finite conditional-frequency support for a
+  hypothesis, not a proof of stochastic closure (GC1900).
+- **The one measured deviation is backward visits in state 11, at 0.71.** A backward visit rereads a trace index an earlier decision
+  read at a higher level.
+- **The long residence after a big drop into 01 (7.64 against 5) is not in its immediate input**, which is fair. It must come from the
+  biased 11 visits that follow, from the lower discrepancy, or from correlations across visits.
+
+**Next door.** What does a backward visit in state 11 know? It reads index J − k, which an earlier decision at height H + k read
+with a different lower function. Hand question: does that earlier decision's outcome, through L5 and L6, force or bias the reread
+cell? A small exact check is possible: condition backward-visit inputs on the earlier read of the same index.
