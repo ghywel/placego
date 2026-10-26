@@ -263,3 +263,47 @@ The branches:
 The second branch needs the previous column's structure at levels H0 and H0 − 1. It is open by hand.
 
 The other forced cells, (E11, 1, 2, ·), (E01, 0, 3, ·) and the q = 3 cells in state 01, follow the same template, with more OR terms.
+
+## Addendum, L975 (26 October 2026, 13:55 GMT): the short-revisit rules, machine-certified for every trace
+
+GPT agreed one stage in GC1912. [revisit_sat.py](../tests/probes/wolfram/revisit_sat.py) encodes both copies' backgrounds on a window
+clamped to the physical boundary, imposes the exact recurrences and the case's facts, and asks whether the wrong reread is possible.
+
+**Result: 466 queries; all 384 UNSATs verified by cake_lpr.** All eleven constant cells of L966 are certified over every boundary profile
+(d0 = 2, 3, 4, ≥ 5 crossed with H0 = q .. 3, ≥ 4) and every drop pattern:
+- q = 2: the reread repeats the old bit. This is GPT's GC1909 theorem, now also machine-checked.
+- q = 3, from a decided old read (E01 or E11): the reread is the opposite of the old bit.
+- q = 3, from an E10 read: the reread is 1.
+
+The mixed cell (E11, 1, 3, 11) is correctly not certified. All receipts and certificates are in `cited/revisit-sat-20261026/`.
+
+## Addendum, L976 (26 October 2026): why two steps repeat and three steps flip. A hand proof of (E01, old 0, q 3) by OR parity
+
+**Every-trace hand candidate, single-party, for GPT's read.** Notation as in GC1909 and L967: old read at column d0 with top H0, state 01,
+s_old = 0. By GC1901, with r = d0 − 1 and t = H0 + 1,
+
+    s_new = s_old XOR T1 XOR T2 XOR T3,   T_i = c_(r+i−1)(t−i) OR c_(r+i−2)(t−i),
+
+so T_i is the OR on the level H0 − i + 1, at the two columns where the cascade passes it.
+
+- **T1 = 1:** state 01, by GPT's direct L4 proof.
+- **T2 = u′ OR w′ = 1,** with u′ = c_(d0)(H0−1) = 1 in both β′ branches. This is from GC1909's white-branch derivation, which uses only
+  that the old state is 01 with input 0 and that level H0 − 1 is empty in columns d0 and d0 + 1. Both hold for every q = 3 pattern that
+  starts with a vacate.
+- **Patterns.** The first update vacates, with a first drop of 2 or 3.
+  - (2,1,0) is vacuous. At column d0 + 1 the top H0 − 2 has δ_(d0+1)(H0−2) = 0, forced by the emptiness at column d0 + 2, and so
+    δ_(d0)(H0−2) = 1: state 01. Its input c_(d0)(H0−1) = u′ = 1 makes it survive into state 10, contradicting the next drop.
+  - Only (3,0,0) is live.
+- **T3 = 1 in (3,0,0).** Level H0 − 2 is empty in columns d0 and d0 + 1. Write u2 = c_(d0)(H0−2), w2 = c_(d0−1)(H0−2),
+  β2 = δ_(d0−1)(H0−2) and γ2 = δ_(d0−2)(H0−2).
+  - The emptiness at d0 + 1 gives β2 AND NOT u2 = 0. The emptiness at d0 gives β′ XOR (o restricted to level H0 − 2) = 0.
+  - T3 = c_(d0+1)(H0−2) OR u2 = (u′ XOR (u2 OR w2)) OR u2 = (1 XOR (u2 OR w2)) OR u2.
+  - If u2 = 1, then T3 = 1.
+  - If u2 = 0, then β2 = 0. When β′ = 1, γ2 AND NOT w2 = 1 forces w2 = 0. When β′ = 0, GC1909's branch has w′ = 0, so
+    u2 = w′ XOR (w2 OR v2) = w2 OR v2 = 0 forces w2 = 0. Either way T3 = NOT w2 = 1.
+- **Hence s_new = 0 XOR 1 XOR 1 XOR 1 = 1,** whatever the current state. That matches both certified cells, (E01, 0, 3, 01) → 1 and
+  (E01, 0, 3, 11) → 1, and pattern (2,1,0)'s vacuity matches the stage's vacuous branches.
+
+**The mechanism, in words.** Each level the cascade empties contributes one OR term, and on these short returns every such term is forced
+to 1. So a q-step return reads s_old XOR (q mod 2): it repeats at q = 2 and flips at q = 3. The prediction for longer returns is that the
+rule breaks exactly when some emptied level's OR is not forced. That is a precise reason, still to be checked, for L966's q ≥ 4 conflicts.
