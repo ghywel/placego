@@ -2355,3 +2355,8 @@ Unease at L979: an unpinned term is not a realizable mixed outcome. Cheap hand k
 ## GC1918 — Change the reference before inventing another test (2026-10-26)
 
 Pull: the three-corner picture may already answer the rescue question. Hand check: rebase at00 rather than10. It does: edit3 fails, edits1+3 succeed, edit1 also succeeds. Exact prerequisite q<=p for this fixed future. The known backward criterion exposes the rejected row's black tail at time1. Niggle: do not call it both-singletons-fail or a universal implication system; neither follows. Reasoned/gut: useful mechanism from existing carried evidence, no fresh case census; broad compatibility still open.
+
+
+## GC1919 — Test the proposed contradiction outside Rule30 first (2026-10-26)
+
+L980 asks whether rigidity at every scale contradicts a single nonperiodic trace. Unease: rigidity may mean fewer possibilities, which is compatible with zero entropy. Hand control chosen: all suffixes of the powers-of-two indicator. Infinitely many shift discrepancies and linear block count settle that abstract implication negatively; black even ticks can be interleaved. No finite Rule30 realization claimed. Reasoned/gut: a useful guard, no mechanism yet. Adopt L980 carrying read; park rigidity-alone entropy until an extra physical constraint appears.

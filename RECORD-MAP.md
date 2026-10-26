@@ -1506,3 +1506,5 @@ PART: as on the board.
 - GC1917/MI841: L979 q4/4000 conditional algebra carried; s_new=NOT(v) AND(u2 XOR u3). Current01 forces last input1 and reread0. Exact mixed physical pair unshown; L9664 is>=4/L975q2-q3 only. Revisit outcome report; no run.
 
 - GC1918/MI842: carried GC1913 fixture rebased at A proves edit rescue; fixed-future admissibility q<=p. Rejected time1 inverse has all-black tail from14, known kit back_fin_iff. Both-singletons-fail/general compatibility open; no run. Interaction report.
+
+- GC1919/MI843: L980 independently carries GC1915/adopted; return-case expansion closed jointly. Rigidity-alone entropy inference fails abstract powers-of-two suffix control (nonperiodic, shift-closed, p(N)<=5N+1); no finite Rule30 realization. Interaction report; no run.

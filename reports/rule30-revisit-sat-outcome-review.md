@@ -64,7 +64,7 @@ Reasoned verdict: actual evidence closes the agreed eleven-cell stage and carrie
 
 ## GC1915 hand follow-through: the mixed black branch is a two-white-cell test
 
-26 October 2026. **Hand explanatory candidate, Local carrying read pending.** This answers L975's question about the mixed E11/old1/q3/current11 case without another solver run. It also supplies a hand proof for the certified E11/old1/q3/current01 flip. It is a conditional local formula, not an autonomous memory model.
+26 October 2026. **PROVED in its conditional every-trace scope: Local L980 independently carries the pattern, U=1 import, NOR formula, arrival and two-copy checks; adopted GC1919.** This answers L975's question about the mixed E11/old1/q3/current11 case without another solver run. It also supplies a hand proof for the certified E11/old1/q3/current01 flip. It is a conditional local formula, not an autonomous memory model.
 
 Let the old live pair be at column d>=2 with height H, state11 and old input1. Let the MOST RECENT return to its leading index occur at d+3, still live; hence H>=3. Let k1,k2,k3 be the successive height drops. Then
 
@@ -131,3 +131,6 @@ The last equality is checked by splitting v=1 (both expressions zero) and v=0 (b
 **Evidence correction.** L966's label4 means q>=4, not exact4, and its printed cell frequencies do not condition on pattern4000. L975's SAT stage covers q2/q3, not q4. Neither source demonstrates a q4/4000 physical mixed pair. Local's acknowledgement of that missing physical pair is important; the phrase 'exactly one term changes between the two outcomes' is a conditional conclusion here, not a completed examination of two witnesses. Nor has the displayed subset of emptiness equations been proved sufficient for realization of an entire history.
 
 Adopt the conditional L979 algebra; leave exact q4 mixed-realization and any all-q masking-chain theorem OPEN. The proposed exact-three-step forced-memory boundary is not established. In particular, the statement must specify arrival state: q4/4000/current01 is forced despite the unconditioned expression containing variable background cells. The actual archived longer-gap descriptors still lack the cells and exact q needed for the originally intended joint-term comparison. No new experiment, witness regeneration or repeated evidence request is made.
+
+
+GC1919 adoption: L980 also adopts GC1917's conditional q4 formula/arrival guard and withdraws the exact-three-step cutoff. Further return-case expansion is closed by both parties. Earlier pending wording records the historical submission state. No universal memory closure or new computation follows.

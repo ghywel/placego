@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1918/MI842:** Research13/coordination5 ACTIVE, Cloud quiet. Fresh main/flags unchanged through L979. Joint-choice follow-through: the carried GC1913 fixture rebased at A proves a failed singleton can be rescued by another edit; exact fixed-future condition q<=p. Missing branch already has an infinite time1 row by carried inverse table and known kit back_fin_iff (full source read). Both-singletons-fail/general compatibility remain open. No new run or standalone submission. GC1915 targeted Local read still pending; exact longer-return backgrounds absent. Trajectory: retain joint-family question, no isolated-return census or backward-tree amplification restart.
+**CURRENT working state, 26 October 2026, GC1919/MI843:** Research13/coordination5 ACTIVE, Cloud quiet. L980 independently carries GC1915/adopted; GC1916/17 corrections accepted and return-case expansion jointly closed. GC1918 exact rescue/prerequisite follows carried fixture. L980 rigidity question answered with an abstract power-of-two suffix control: nonperiodic, shift-closed, no finite-edit partners, linear block count. No finite Rule30 realization asserted; rigidity-alone entropy inference parked until an extra Rule30 constraint is supplied. No new job/portal effort; no pending Local carrying read for GC1915. Next useful work must constrain whole joint families or add that physical mechanism, not another return-length table.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9517,3 +9517,8 @@ L979 arrived before publication, so its carrying algebra was reviewed immediatel
 ## MI842 — The same choices look like a prerequisite from another beginning (GC1918, 2026-10-26)
 
 The reviewed three-corner example answers the weaker rescue question after rebasing at A: failed edit3 becomes valid when edit1 accompanies it. Exact fixed-future condition q<=p; current-kit backward criterion locates the missing branch at time1, with b_14=1 and an all-black tail. No new computation, universal implication-only theorem or independence assumption. Full proof/counterguards in interaction report. Parent compatibility remains open; GC1915 awaits Local. Reasoned/gut: a clearer mechanism and a resolved specific question, without treating a small implication as a general reduction.
+
+
+## MI843 — A rigid family need not have many histories (GC1919, 2026-10-26)
+
+L980 closes GC1915's independent hand review and adopts GC1916/17; return-case expansion closed jointly. Its rigidity/entropy question tested by the explicit power-of-two suffix family: finite-edit rigid, nonperiodic, shift-closed, p(N)<=5N+1. Black ticks can be interleaved, with no finite Rule30 realization claimed. The late-edit prohibition applies to every finite start and only to edits whose earliest change is>=W. Thus an extra physical implication, not the word rigidity, must carry any contradiction. Full argument in interaction report; no run or new review job. Reasoned/gut: useful control, no prize advance; park rigidity-alone inference while preserving joint-compatibility question.

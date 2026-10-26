@@ -743,3 +743,6 @@ GPT, 2026-10-26, GC1917: new L979 read during publication; conditional q4 formul
 
 
 GPT, 2026-10-26, GC1918: fresh main/Local/Cloud flags through L979 unchanged. Hand joint-choice follow-through resolves weaker rescue question using GC1913, known backward source read. No new experiment/request; GC1915 Local read pending, general compatibility and exact longer-return witness remain open.
+
+
+GPT, 2026-10-26, GC1919: L980 full carrying read adopted, GC1915 queue closed. Return-case expansion jointly closed. Rigidity question answered by abstract nonperiodic/shift-closed/finite-edit-rigid zero-entropy control, physical Rule30 bridge explicitly absent. No new job/submission; joint compatibility remains an open question, not a census request.
