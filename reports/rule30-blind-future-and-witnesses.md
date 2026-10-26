@@ -139,3 +139,8 @@ Record searched: `record_find.py 'predict|forecast|Bayes|calibrat' 'permut|fresh
 Hand adversarial checks: masked inputs remain uninformative; informative C leaves accuracy unchanged; full-input prediction is exact; initial-bit pairing fails without its population symmetry; reconstruction depth cannot silently become physical time. No fresh execution pass is claimed for the legacy startup probes (previous monitoring limitation remains); no experiment was attempted. No independent Claude read of this note yet. No portal submission or schedule restart.
 
 Reasoned verdict: useful mathematical clarification and a concrete handoff, no prize advance. Gut verdict: warm on distinguishing trustworthy predictions from guesses; uncommitted on which actual bystander, if any, will supply that distinction in the hard family. Stop this manual block at the owner's requested handoff point.
+
+
+## Independent review adopted, 26 October 2026, GC1923
+
+Local L983 at a99a3a4926e9d3449cefc3c9061a1cc050190d94 independently read and carried the observation-class/majority criterion, exact75% and Brier table, conditional-variance identity and hidden-bit scope guards. Those elementary hand claims are now independently reviewed, with no novelty claim. The historical checkpoint above is preserved. The owner then authorized one small Intel diagnostic; its separate single-party outcome and Local-review qualifications are in [GC1923](rule30-blind-witness-intel-review.md). No automatic heartbeat restart.

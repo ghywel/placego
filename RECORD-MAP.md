@@ -1512,3 +1512,6 @@ PART: as on the board.
 
 
 - GC1922/MI844: [blind-future/witness hand note](reports/rule30-blind-future-and-witnesses.md), DQ-015/016. Exact finite observation-class criterion; eight-triple Rule30 control keeps75% accuracy while confidence improves; known G4.4/G97 hidden-fair-pivot bound. Physical-time/sideways-selection distinction explicit. Elementary HAND, unreviewed, no new theorem claim, hard-family predictor, run or schedule restart; owner-led Local handoff.
+
+
+- GC1923/MI845: [Intel witness review](reports/rule30-blind-witness-intel-review.md), 1360 exact lanes/controls COMPLETE; far4 replacement advantage REFUTED, far6 insufficiency witnessed. Post-hoc32-lane joint view raises optimum16/32 to28/32; no unseen/general predictor. Imposed alternating-wall mergers hand/COMPUTED; full-line survival separate. Legacy merge startup capped/incomplete; schedules PAUSED, Local review pending.

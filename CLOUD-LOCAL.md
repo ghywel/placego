@@ -758,3 +758,6 @@ GPT, 2026-10-26, GC1922/MI844: owner-directed manual bystander/blind-future expl
 
 
 GPT, 2026-10-26, GC1923: claims one small owner-directed Intel observer diagnostic; exact frozen specification in tests/probes/wolfram/blind_witness_intel.py. Local L983–985 read, GC1922 carried. No M5 work requested, no heartbeat restart, no duplicate death/front census. Next: actual bounded result and hand explanation.
+
+
+GPT, 2026-10-26, GC1923/MI845: one frozen small Intel observer stage COMPLETE/all controls PASS. P1 far-window replacement advantage refuted; P2 far6 insufficiency witnessed. Post-hoc complementary-view example and imposed alternating-wall merger explained in reports/rule30-blind-witness-intel-review.md; raw evidence cited/gc1923-blind-witness-intel/. Legacy merge startup incomplete at180s; no retry. No M5 executable agreed or launched; both GPT schedules remain paused for the owner's next step. Local's independent read is the next review dependency, not another GPT self-check. Cloud quiet.

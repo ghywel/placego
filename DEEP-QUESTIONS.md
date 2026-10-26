@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-The owner has reopened discussion and a manual mathematical exploration, **without restarting heartbeats**, and will pass the flow to Local. DQ-015 records bystanders as witnesses; DQ-016 records predicting a hidden future and judging our confidence against the actual result. [The hand exploration](reports/rule30-blind-future-and-witnesses.md) derives exact controls and leaves a concrete next question: **which observation, available before the cutoff, tells us when our existing description is sufficient?** An informative witness may improve confidence without improving the hit rate. No actual predictor for the hard survivor family is established; no compute stage or automatic Local wake. Earlier restart/handoff sections below are historical.
+The owner has now authorized one small manual Intel exploration after Local L983–L985. [GC1923's review](reports/rule30-blind-witness-intel-review.md) records a failed far-window replacement prediction and an exact, post-hoc complementary-view example. The warm question is whether the seen diary can select a useful witness with a short Rule30 explanation. DQ-017–019 preserve Local's further questions. New results await Local's independent read. Both heartbeats remain paused; no M5 stage is agreed or launched. Earlier restart/handoff sections below are historical.
 
 ## Working glossary (26 October, following CL639)
 
@@ -94,8 +94,11 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955). Finite edits can never cut (L974); a descent needs infinitely many changed tocks or another measure |
 | DQ-013 | Is the metronome uneven, or are we counting the wrong kind of beat? | Update order and event timing distinguished; waiting-time structure open. No successive-wait relation once twins are deduplicated (L955) |
 | DQ-014 | Can Rule 30’s mirror and colour-exchanged relatives reveal a simpler mechanism? | Equivalence answered; a useful relationship-based description remains open |
-| DQ-015 | Can innocent bystanders reveal what the active cells are doing? | Exact observer question opened; no new computation |
-| DQ-016 | Can we predict a hidden future, and predict how often we will be right? | Blind prediction and calibration question opened; hand exploration |
+| DQ-015 | Can innocent bystanders reveal what the active cells are doing? | Far-window replacement fails; one finite complementary-view example, GC1923 |
+| DQ-016 | Can we predict a hidden future, and predict how often we will be right? | GC1922 carried by Local; small exact information diagnostic, no unseen predictor |
+| DQ-017 | Does one beginning have the same climate as the whole population? | Population-to-one-history bridge open |
+| DQ-018 | Can a nonrepeating diary repeat after a change of viewpoint? | Binary-clock/automatic question preserved; no new test |
+| DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1061,3 +1064,40 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 > lacking that tock can beat), a new tick (fixed), or a revisit (fixed; the short ones in closed form). In the fair-tock ensemble about 42.5%
 > are coins and 57.5% knowable (L960), so the best hit rate is about 0.79 per decision, with confidence known per decision in advance. For a
 > finite beginning nothing is a coin; the question becomes how much past is needed (L955: nearly all of it).
+
+
+**GC1923 review/outcome for DQ-015/016 (26 October 2026):** Local's independent GC1922 hand read is adopted. One frozen Intel diagnostic on1360 beginnings found far4 less informative than newest4 atW16/20; far6 is not exactly sufficient atW20. The report gives literal opposite-outcome witnesses. A post-hoc class of32 passing W20 beginnings has recent tocks0000 and16/16 next outcomes; adding far4 gives best28/32, with22/32 cases in pure subgroups. This is actual complementary information in a finite selected class, not an unseen forecasting success, a width-independent rule, or an advantage at equal total read budget. Tiny groups can be pure by accident of the restricted domain.
+
+**Question → response → challenge → better question:** Is the far end a shorter replacement for the diary? Not in the declared comparison. Can it nevertheless help the diary? Yes, in the retained class. But why should that help survive a change of width? Seek a context-selected witness with a short rule-based explanation before proposing a larger test. Source/results in [the full review](reports/rule30-blind-witness-intel-review.md); no M5 job or heartbeat restart.
+
+**Qualifications to Local L983 above:** the approximately0.79 score is a model-based estimate from the recorded fair-tock decision proportions, not an executed physical-time forecasting result. Determinism fixes the actual answer but does not make a restricted observer's probabilities0/100. Measured individual influence does not establish a minimum-memory theorem. Advancing spatial reconstruction is a different operation from advancing physical time.
+
+## DQ-017 — One history, one climate, or the whole region?
+
+**Owner's pull, recorded through Local L985:** the regional average may be75% while a particular location is certain one way or another. Might one sufficiently long history see the same proportions as the whole collection of beginnings, or does each beginning have its own climate?
+
+**Question in precise words:** for which specified observable and weighting, if any, do time averages on the chosen finite beginning agree with the chosen ensemble averages? The fair infinite-diary ensemble, finite-width lane population and actual single-seed orbit are different objects. No ergodic identification between them is established here.
+
+**Card-counting challenge:** long fair-coin runs owe no repayment. GC1904/07 require eventual protecting regimes on almost-sure infinite live product-trace paths; they do not exclude the regimes and do not prove extinction. Which actual finite-support constraint could prevent that protection, or justify a different individual-orbit argument? Normality by itself does not supply the conditional independence used by an arbitrary adaptive strategy.
+
+**Status:** OPEN question, no experiment. Return on a specified bridge or finite-support implication, not on a regional average alone.
+
+## DQ-018 — Repetition after a change of viewpoint
+
+**Owner's belt-trick pull, recorded through Local L985:** a pattern might return after a transformation even though it never simply repeats. Could a survivor's diary be generated by a small machine reading the clock written in binary?
+
+**Translation:** eventual periodicity and automatic generation are different properties. Known edge period doubling and particular automatic-family exclusions do not settle every possible automatic survivor diary. The existing powers-of-two abstract control is not a realized finite Rule30 survivor.
+
+**Useful next question:** name the transformation or machine, retain the boundary and finite-support conditions, and ask what new restriction it imposes on required ticks. A vague resemblance to doubling does not yet choose a test.
+
+**Status:** preserved/OPEN; no broad machine census or novelty claim. Consult existing G137/G487 and the periodic-column exclusions before a specific follow-up.
+
+## DQ-019 — A drain, a conveyor, or information leaving our view?
+
+**Owner's circular-drain pull, recorded through Local L985:** does an alternating wall let differences vanish, or merely move them outside the part we are watching?
+
+**Hand answer and small control, GC1923:** even an imposed alternating wall allows distinct finite half-rows to merge. First boundary0 merges integer starts5/6 to13; first boundary1 merges2/3 to6. Any common prescribed later wall keeps the merged halves equal. In the corresponding full-line update the boundary site itself would differ; clamping overrides that difference. Both alternating phases were checked in the frozen finite control; full-line finite injectivity remains intact.
+
+**Challenge:** this answers information loss for an externally imposed wall. It does not prove that both halves obey every required black tick or admit the same genuine right-side completion. The sideways single-edit bridge is also a different claim from direct forward half-row merging.
+
+**Better question:** when we put back the boundary's own update and the survival requirements, which apparent mergers remain possible? Inspect existing Q01/physical-completion work first; do not infer an all-width reduction from the tiny pairs. Hand calculation and finite control, new independent read pending; no new computation authorized by this entry.
