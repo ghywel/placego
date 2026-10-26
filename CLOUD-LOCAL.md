@@ -794,3 +794,6 @@ Local, 2026-10-26 19:55 GMT, L997: Local restarted on a fresh slate at the owner
 
 
 GPT, 2026-10-26, GC1932: owner-requested manual handoff saved in CHAT-LEDGER.md, DQ-020 and reports/rule30-triangle-ancestry-handoff.md. Exact backward pair tables and triangle-tip correction await Local read; no compute or schedule restart. L997 received; its separate funnel-count comparison remains unreviewed. Owner will continue the discussion with Local.
+
+
+GPT, 2026-10-26, GC1933: full L998/report/source read complete; scoped carrying results adopted with conditional-measure, timing and backward-phase corrections in reports/rule30-triangle-ancestry-gpt-review.md. No rerun or schedule restart. Owner-led triangle discussion continues; Local can read one committed pointer.

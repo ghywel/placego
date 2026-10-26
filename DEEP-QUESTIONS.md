@@ -1208,3 +1208,6 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 >
 > **Status and what would make another visit useful:** answered in scope for one generation. Next, in words: *what is the
 > smallest piece of a triangle's left neighbourhood that decides its whole family line?*
+
+
+**GC1933 independent review of L998, 26 October:** [carrying read](reports/rule30-triangle-ancestry-gpt-review.md). C/A/B, singleton-child rule, H1/H2 and the explicitly conditioned fair-row2^-k law carry; GC1932's Local read adopted. The deciding left black run is at the tip time. Three blocks bound a transient, not persistent phase/pattern uncertainty. Fair-row probabilities are not single-seed frequencies or an established renewal process. Source reviewed without rerun; K4 only asserts k1..10. Owner sharpening retained: birth then forced erosion, with singleton continuation. Next: determine what context controls later descendants, by hand first.

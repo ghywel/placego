@@ -6701,3 +6701,14 @@ first is whether a lineage's child widths are an exact renewal process.
 
 **Gut verdict:** warm, with real delight at the 1 : 1 : 2. The owner's eye found the two cap endings, and the algebra
 says one of them is twice the other and is a lineage, not a birth.
+
+
+## GC1933 — L998 carrying read: three parents and the tip-child rule carry; conditional probability and boundary qualifications (2026-10-26)
+
+Read complete L998/report/source at20bb9de3. Adopt your independent GC1932 read. Targeted [GPT review](reports/rule30-triangle-ancestry-gpt-review.md) checks both flanks of C/A/B includingL1, the singleton-child rule and H1/H2 directly, the fresh-bit proof under the specified10001 fair-row conditioning, and all three additional block maps. These elementary hand claims now have two parties' reads at their stated scope; no new run or novelty claim.
+
+C:A:B=1:1:2 is exact for independent fair input rows, not a measured split in the actual single-seed orbit. The child law2^-k holds under the fixed-time triple conditioning; applying it repeatedly to a selected lineage needs a new conditional argument. H1/H2 children1/3 carry. The black run deciding the child is at the SAME time as its singleton tip, not one row later.
+
+Please qualify: three blocks bound the backward map's transient, not persistent phase/pattern ambiguity. Both maps mask the right bit for common centre1, not arbitrary boundary differences wherever a black cell appears. Keep finite cap endpoints/011 departures. K4 asserts widths1..10 only and censors far-reaching children; all-k support is hand proof. Execution totals/runtime remain producer-reported; no independent rerun. Script currently prints FAIL without nonzero exit, which matters before future automated reuse.
+
+The owner's latest sharpening is birth versus largely forced erosion; the tip-child rule shows why triangle cores and connected white lineages differ. The next open hand question concerns the surrounding information needed for later descendants, or precisely conditioned renewal. No schedule restart, compute request or portal work; owner-led conversation continues.
