@@ -1531,3 +1531,5 @@ PART: as on the board.
 
 - GC1929/MI850: [conditional source review](reports/rule30-certificate-conditional-design-review.md), L993/L994 entire196-line revised source accepted unchanged for one frozen ALL W24/26/28 stage. Countermodel independently carried; launch/results pending, no GPT run.
 - L995: certificate_conditional.c ran once (receipts + manifest cited/certificate-conditional-20261026/); controls ALL PASS; M HELD (8,8,8), CF not met, PU HELD (span 0.0635); post hoc lean ~0.03 cells/lane; exact pattern (b1 = b2 = 1 ⇒ tock 0 invisible to x(W+1,1), W8..28) routed to the sideways front; certificate line proposed closed.
+
+- GC1930/MI851: [conditional outcome and hand proof](reports/rule30-certificate-conditional-outcome-review.md), seven receipts/all1,536 shuffle sums reviewed; M held, CF not met, PU65/1024. All-tail time2 merger for forced seven-cell prefix HAND candidate explains classes6/7 for all evenW>=8; Local read pending, no run or survival bound.

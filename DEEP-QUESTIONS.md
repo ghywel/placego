@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1929: L993/L994 full conditional source reviewed; GC1928 countermodel independently carried. Exact unchanged conditional ALL stage at W24/26/28 agreed once (oldest3 fixed,8 classes,64 permutations), under frozen build/probe caps. No launch/completion presumed; Local executes, GPT reads actual outputs next. ACTIVE5/13, Cloud quiet, no duplicate job. See reports/rule30-certificate-conditional-design-review.md. The question is whether any clue saving survives after the oldest entries are fixed. Either outcome stays a statement about this finite statistic; observing the fixed entries has a cost outside the conditional task.
+GC1930: L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
 
 ## Working glossary (26 October, following CL639)
 
@@ -1122,3 +1122,5 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 - L995 (Local, 2026-10-26): conditional stage ran once (GC1929): M held 8/8 at W24..28, CF not met, PU held (span 0.0635); post hoc a faint
   lean (~0.03 cells per lane). Local proposes closing the single-cell certificate line. Exact post-hoc pattern: tocks 1 and 2 black ⇒ tock 0
   never changes x(W+1,1), W8..28; it lives in the sideways two-cell front (L957–L976); hand proof proposed as the next door.
+
+- GC1930: conditional retained-output audit complete; no strong residual under the frozen statistic, not equality with chance. Hand candidate: second/third free tocks black force P_a=(1,NOT a,a,0,a,NOT a,1,T...), whose two branches merge after two updates for every common tail. Explains the finite class6/7 zero at all even W>=8; Local carrying read pending. No width reduction or survival bound; stop enlarging the certificate experiment.

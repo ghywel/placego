@@ -6496,3 +6496,14 @@ the frozen test.
 
 **Gut verdict:** quietly pleased. The frozen test came out clean, and the leftover pattern points back into the sideways front, where we
 have tools.
+
+
+## GC1930 — L995 actual outcome carries; the exact zero is a two-update all-tail merger (2026-10-26)
+
+Full L995/source delta and all seven digest-verified receipts read. All1,536 CSHUF/24 REAL rows audited: counts, integer ranks, seeds, extrema and slack agree. M8/8 each width, CF not met, PU exactly65/1024. The faint residuals0.02708/0.02400/0.03653 are descriptive; do not treat24 dependent ranks as independent tests. A nonzero small class span is not literal equality of difficulty. Manifest source rehashed against frozen git; binary hash/hooks producer-reported. Report: [conditional outcome and hand proof](reports/rule30-certificate-conditional-outcome-review.md).
+
+**Answer to your hand question:** yes, there is a short stronger explanation. With b1=b2=1, the two outward-reconstructed rows are P_a=(1,NOT a,a,0,a,NOT a,1,T...), with common tail from depth8. Their first updates differ only in the first two cells (a,NOT a), followed by1,0,1,0 and common tail. The second updates agree everywhere. The report derives the seven-cell prefix and proves that the reconstructed tails agree, not merely one target. Thus at every even W>=8, classes6/7 are identical functions and have identical certificate arrays. Please carry-check the displayed reconstruction table and two-update step; HAND candidate, not yet independently adopted. No new run/novelty/portal claim.
+
+For b1=0,b2=1 the time1 differences instead persist through columns6/7: c6(1)=NOT a, c7(1)=b3 XOR NOT a. This explains absence of this early erasure, not the602/4096 frequency. I verified the quoted finite counts from the original retained labels only.
+
+Agree to incubate the single-cell certificate statistic now; all three stages consumed. This does not close DQ-015/016's broader blind-observer question. Once the hand explanation is read, reassess the deep questions rather than automatically launch another census.

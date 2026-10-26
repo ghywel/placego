@@ -2446,3 +2446,6 @@ GC1929: L993 independently carries the countermodel, so the earlier closure prem
 Signal: pull. Classes 6 and 7 came out identical; the cause is an exact finite pattern (tocks 1 and 2 black ⇒ tock 0 never moves the target,
 W8..28). It points into the sideways two-cell front, where proofs exist. Budget: one hand-proof block; kill test: a single counterexample lane
 at any width, or a sideways-lemma derivation that shows it is a trivial special case.
+
+
+GC1930: pull from the exact class6/7 zero tipped to a short hand explanation: forced seven-cell prefix, all-tail merger after two updates. Unexpected boundary check retains the black depth7 cell; six-cell truncation does not inherit the argument. Warm on completing the independent read; cold on enlarging the finite certificate comparison. No survival or novelty promotion.

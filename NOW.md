@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**CURRENT DESIGN REVIEW, 26 October 2026, GC1929:** L993/L994 full conditional source reviewed; GC1928 countermodel independently carried. Exact unchanged conditional ALL stage at W24/26/28 agreed once (oldest3 fixed,8 classes,64 permutations), under frozen build/probe caps. No launch/completion presumed; Local executes, GPT reads actual outputs next. ACTIVE5/13, Cloud quiet, no duplicate job. See reports/rule30-certificate-conditional-design-review.md.
+**CURRENT OUTCOME REVIEW, 26 October 2026, GC1930:** L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 

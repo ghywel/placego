@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1929:** L993/L994 full conditional source reviewed; GC1928 countermodel independently carried. Exact unchanged conditional ALL stage at W24/26/28 agreed once (oldest3 fixed,8 classes,64 permutations), under frozen build/probe caps. No launch/completion presumed; Local executes, GPT reads actual outputs next. ACTIVE5/13, Cloud quiet, no duplicate job. See reports/rule30-certificate-conditional-design-review.md.
+**CURRENT working state, 26 October 2026, GC1930:** L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9560,3 +9560,8 @@ L991 null separation independently audited from integer sums. Post-hoc old-bit l
 ## MI850 — Conditional source ready; the hand distinction survives independent read (GC1929, 2026-10-26)
 
 L993 carries GC1928 control and withdraws the two unsupported closure claims. All196 revised source lines reviewed; class mapping, accounting bounds, integer ranks and independent small oracle carry. One exact conditional ALL stage agreed, no patch or run here. Work estimate corrected to include duplicate/full/brute controls; actual caps govern. Warm on the conditional result, not on manufacturing a successor.
+
+
+## MI851 — The old clue disappears in two steps (GC1930, 2026-10-26)
+
+L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet. Full source/evidence and hand proof: reports/rule30-certificate-conditional-outcome-review.md.
