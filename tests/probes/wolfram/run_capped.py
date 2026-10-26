@@ -18,7 +18,9 @@ What is enforced, and how:
     the cleanup outcome is recorded.  Supervisor's own CPU is reported separately.
 Receipts in DIR: out.txt (child stdout), time_receipt.txt (the full /usr/bin/time -l output = child stderr), launcher.json (limits, applied
 limits, launch gate values, samples summary and maxima, exit reason, child return code, cleanup outcome, supervisor CPU, file inventory).
-Exit reasons: COMPLETED, CPU_LIMIT (child killed by SIGXCPU), RSS_STOP, WALL_STOP, PRESSURE_STOP, DISK_STOP, MONITOR_FAILURE, REFUSED.
+Exit reasons: COMPLETED, CPU_LIMIT (child killed by SIGXCPU), RSS_STOP, WALL_STOP, PRESSURE_STOP, DISK_STOP, MONITOR_FAILURE, REFUSED,
+LEFTOVER_CLEANED (L974: the child exited but a member of its process group was still alive; the group is cleaned on this path too).
+L974: the child receives CAPPED_OUT = the resolved destination, so a driver can bind its artifacts to it.
 Test hooks (harmless controls only, read from the environment): CAPPED_TEST_PS=bogus (monitor failure), CAPPED_TEST_MINFREE_MIB (raise
 the pressure threshold).
 """
@@ -97,7 +99,8 @@ def main():
             os._exit(97)
     out = open(os.path.join(a.out, "out.txt"), "w"); err = open(os.path.join(a.out, "time_receipt.txt"), "w")
     try:
-        p = subprocess.Popen(["/usr/bin/time", "-l"] + cmd, stdout=out, stderr=err, preexec_fn=preexec, start_new_session=True)
+        env = dict(os.environ, CAPPED_OUT=os.path.realpath(a.out))      # L974: the child can bind its artifact directory to this destination
+        p = subprocess.Popen(["/usr/bin/time", "-l"] + cmd, stdout=out, stderr=err, preexec_fn=preexec, start_new_session=True, env=env)
     except Exception as e:
         return finish("REFUSED", extra={"spawn_error": repr(e)})
     pgid = p.pid
@@ -131,7 +134,14 @@ def main():
             return n
         except Exception as e:
             return f"unverified: {e!r}"
-    if reason:
+    if not reason:                                       # L974: the child ended by itself; any live group member is a leftover
+        try: p.wait(timeout=5)
+        except subprocess.TimeoutExpired: pass
+        if group_left() != 0: reason_leftover = True
+        else: reason_leftover = False
+    else:
+        reason_leftover = False
+    if reason or reason_leftover:
         sig = "TERM"
         try: os.killpg(pgid, signal.SIGTERM)
         except (ProcessLookupError, PermissionError): pass
@@ -148,6 +158,8 @@ def main():
         cleanup = {"signal": sig, "group_processes_left": group_left()}
     rc = p.returncode
     out.close(); err.close()
+    if not reason and reason_leftover:
+        reason = "LEFTOVER_CLEANED"                       # L974: a failure exit even if the child returned 0
     if not reason:
         reason = "CPU_LIMIT" if rc in (-signal.SIGXCPU, 128 + signal.SIGXCPU, 152) or "Cputime limit" in open(os.path.join(a.out, "time_receipt.txt")).read() else ("COMPLETED" if rc == 0 else "CHILD_FAILED")
     db = dir_bytes(a.out)

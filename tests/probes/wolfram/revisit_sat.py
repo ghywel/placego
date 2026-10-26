@@ -4,16 +4,20 @@
 
 STAGE (proposed): REVISIT_SAT_OUT=<dest> python3 tests/probes/wolfram/run_capped.py --out <dest> --cpu 900 --wall 900 --rss-mib 2048
           --file-mib 64 --disk-mib 256 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 256 -- python3 tests/probes/wolfram/revisit_sat.py
-  * REVISIT_SAT_OUT is REQUIRED and must be the supervisor's fresh destination (it must exist and contain no file except the supervisor's
-    out.txt / time_receipt.txt); otherwise the driver refuses (exit 3). All artifacts stay inside it (the 256 MiB envelope).
-  * one external tool at a time; each tool runs in its own process group with stdout/stderr redirected to retained files (bounded reads),
-    a per-call wall timeout (kissat 60 s, drat-trim 120 s, cake_lpr 120 s), and on timeout or driver exit the whole tool group gets SIGTERM,
-    then SIGKILL after 3 s, then a check that no process of the group remains (recorded).
-  * AGGREGATE CPU: after every tool call the driver adds its own CPU and all waited children's CPU (getrusage SELF + CHILDREN) and stops the
-    stage, before the next query, once the total exceeds 600 s (driver-enforced between calls; the supervisor's --cpu 900 is the inherited
-    per-process limit and the --wall 900 the outer stop).
-  * DISK: before each query the driver checks that the destination holds at most 256 MiB - 8 MiB (an 8 MiB per-query allowance); otherwise
-    it stops with DISK_BUDGET before starting the query.
+  * (L974, after GC1911: one supervised group) REVISIT_SAT_OUT is REQUIRED and must resolve to the supervisor's exported CAPPED_OUT (the
+    fresh destination; only the supervisor's out.txt / time_receipt.txt may be present); otherwise the driver refuses (exit 3).
+  * Tools run as plain children of the driver, in the SAME process group as the driver and the supervisor's time process (no new sessions),
+    so the supervisor's group RSS, pressure, disk and wall stops see them, and run_capped.py (L974) cleans that group on every terminal
+    path, including a normal exit with leftovers (LEFTOVER_CLEANED). One tool at a time; each tool's files are capped at 1 MiB by
+    RLIMIT_FSIZE set in the tool child (verified by getrlimit); streams go to retained files; parsing reads at most 64 KiB.
+  * The driver polls every 0.5 s while a tool runs: a per-call wall timeout (kissat 60 s, drat-trim 120 s, cake_lpr 120 s) or a breach
+    of the 600 s sampled aggregate CPU budget (all live members of the stage group by ps, plus reaped children by getrusage) kills the
+    tool's process tree (TERM, 3 s, KILL) and ENDS the stage; after every tool, any other live member of the group ends the stage
+    (LEFTOVER); a ps failure ends it (MONITOR_FAILURE); an unverified UNSAT ends it (UNVERIFIED). Every tool call is journalled at once
+    in events.jsonl. Sampled, not exact: overshoot up to one poll interval is possible and recorded.
+  * DISK: before admitting each query the driver requires at most 256 MiB - 16 MiB under the destination; a query writes at most nine
+    files (the CNF by the driver; DRAT, LRAT and six stdout/stderr files by tools, each at most 1 MiB), so the 16 MiB reservation is real.
+    A proof larger than 1 MiB stops the stage unverified, with its artifacts retained.
   * Tool identity, recorded in the receipt: kissat 4.0.4 (binary sha256 ef5bf56e...), drat-trim (sha256 86a8209e...), the cake_lpr wrapper
     (sha256 70be2e42...: three lines, `exec /usr/bin/lockf -k ~/np-scratch-int/cake_lpr.lock <dir>/cake_lpr.bin "$@"`, one check at a time)
     and cake_lpr.bin (sha256 d23c413b...). Harmless instrument control (L971): a trivial UNSAT CNF gave kissat rc 20, drat-trim rc 0 and
@@ -63,7 +67,7 @@ import json, os, resource, signal, subprocess, sys, time, hashlib
 KISSAT, DRAT_TRIM = "/opt/homebrew/bin/kissat", "/opt/homebrew/bin/drat-trim"
 CAKE = os.path.expanduser("~/np-build/cake_lpr/cake_lpr")
 TOOLS = [KISSAT, DRAT_TRIM, CAKE, CAKE + ".bin"]
-CPU_BUDGET, DISK_CAP, ALLOW = 600.0, 256 << 20, 8 << 20
+CPU_BUDGET, DISK_CAP, ALLOW, FILE_CAP = 600.0, 256 << 20, 16 << 20, 1 << 20
 OUT = os.environ.get("REVISIT_SAT_OUT")
 STATE = {"fail": [], "n": 0}
 
@@ -76,43 +80,75 @@ def sha(p):
 def dir_bytes(d):
     return sum(os.path.getsize(os.path.join(r, f)) for r, _, fs in os.walk(d) for f in fs)
 
-def cpu_used():
-    a, b = resource.getrusage(resource.RUSAGE_SELF), resource.getrusage(resource.RUSAGE_CHILDREN)
-    return a.ru_utime + a.ru_stime + b.ru_utime + b.ru_stime
-
-def group_alive(pgid):
-    r = subprocess.run(["ps", "-A", "-o", "pgid=,stat="], capture_output=True, text=True, timeout=5)
-    if r.returncode != 0 or not r.stdout.strip(): return "unverified"
-    n = 0
+def ps_rows():
+    r = subprocess.run(["ps", "-A", "-o", "pid=,ppid=,pgid=,time=,stat=,command="], capture_output=True, text=True, timeout=5)
+    if r.returncode != 0 or not r.stdout.strip(): raise SystemExit("MONITOR_FAILURE")
+    rows = []
     for line in r.stdout.splitlines():
-        f = line.split()
-        if len(f) != 2: return "unverified"
-        if int(f[0]) == pgid and not f[1].startswith("Z"): n += 1
-    return n
+        f = line.split(None, 5)
+        if len(f) < 5: raise SystemExit("MONITOR_FAILURE")
+        rows.append((int(f[0]), int(f[1]), int(f[2]), f[3], f[4], f[5] if len(f) > 5 else ""))
+    return rows
+
+def cputime_s(t):
+    parts = t.replace("-", ":").split(":")          # [[dd-]hh:]mm:ss.ss
+    v = 0.0
+    for x in parts: v = v * 60 + float(x)
+    return v
+
+def cpu_total():
+    """sampled aggregate CPU: every live process of this stage group (driver, the time process, live tools) plus reaped children."""
+    me = os.getpgrp(); live = sum(cputime_s(r[3]) for r in ps_rows() if r[2] == me and not r[4].startswith("Z"))
+    b = resource.getrusage(resource.RUSAGE_CHILDREN)
+    return live + b.ru_utime + b.ru_stime
+
+def strangers():
+    """live members of the stage group other than this driver, its parent (the time process) and ps itself."""
+    me, mine, par = os.getpgrp(), os.getpid(), os.getppid()
+    return [r for r in ps_rows() if r[2] == me and r[0] not in (mine, par) and not r[4].startswith("Z") and not r[5].startswith("ps ")]
+
+def kill_tree(pid):
+    rows = ps_rows(); kids = {pid}; grew = True
+    while grew:
+        grew = False
+        for r in rows:
+            if r[1] in kids and r[0] not in kids: kids.add(r[0]); grew = True
+    for k in kids:
+        try: os.kill(k, signal.SIGTERM)
+        except ProcessLookupError: pass
+    time.sleep(3)
+    for k in kids:
+        try: os.kill(k, signal.SIGKILL)
+        except ProcessLookupError: pass
+
+def journal(rec):
+    with open(os.path.join(OUT, "events.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n"); fh.flush()
+
+def tool_preexec():
+    resource.setrlimit(resource.RLIMIT_FSIZE, (FILE_CAP, FILE_CAP))
+    if resource.getrlimit(resource.RLIMIT_FSIZE) != (FILE_CAP, FILE_CAP): os._exit(97)
 
 def run_tool(argv, stem, timeout):
-    """one tool in its own process group, streams to files, bounded parse; returns (rc or 'TIMEOUT', stdout head, cleanup)."""
+    """one tool, in THIS stage's process group (no new session), 1 MiB per written file, streams to files; polled every 0.5 s for
+    wall timeout and the sampled aggregate CPU budget; a timeout, budget breach or leftover descendant ends the stage."""
     so, se = stem + ".stdout", stem + ".stderr"
+    t0 = time.time()
     with open(so, "w") as fo, open(se, "w") as fe:
-        p = subprocess.Popen(argv, stdout=fo, stderr=fe, start_new_session=True)
-        try:
-            rc = p.wait(timeout=timeout); cleanup = None
-        except subprocess.TimeoutExpired:
-            rc = "TIMEOUT"
-            try: os.killpg(p.pid, signal.SIGTERM)
-            except (ProcessLookupError, PermissionError): pass
-            t = time.time()
-            while time.time() - t < 3 and group_alive(p.pid) not in (0,): p.poll(); time.sleep(0.1)
-            if group_alive(p.pid) != 0:
-                try: os.killpg(p.pid, signal.SIGKILL)
-                except (ProcessLookupError, PermissionError): pass
-                time.sleep(0.3)
-            try: p.wait(timeout=5)
-            except subprocess.TimeoutExpired: pass
-    left = group_alive(p.pid)
-    if left != 0: STATE["fail"].append(f"group left after {os.path.basename(stem)}: {left}")
+        p = subprocess.Popen(argv, stdout=fo, stderr=fe, preexec_fn=tool_preexec)
+        stop = None
+        while p.poll() is None:
+            time.sleep(0.5)
+            if time.time() - t0 > timeout: stop = "TOOL_TIMEOUT"
+            elif cpu_total() > CPU_BUDGET: stop = "CPU_BUDGET"
+            if stop:
+                kill_tree(p.pid); p.wait(timeout=10)
+                journal({"tool": os.path.basename(stem), "stop": stop, "rc": p.returncode}); raise SystemExit(stop)
+    rc = p.returncode
+    left = strangers()
+    journal({"tool": os.path.basename(stem), "rc": rc, "wall_s": round(time.time() - t0, 3), "leftover": len(left)})
+    if left: raise SystemExit("LEFTOVER")
     with open(so) as f: head = f.read(65536)
-    return rc, head, left
+    return rc, head
 
 class CNF:
     def __init__(self): self.n = 0; self.cl = []
@@ -160,24 +196,28 @@ def build(cat, s_old, pattern, cur, assert_new, pd, ph, mutant=False):
     return f
 
 def query(f, tag):
-    if cpu_used() > CPU_BUDGET: raise SystemExit("CPU_BUDGET")
+    if cpu_total() > CPU_BUDGET: raise SystemExit("CPU_BUDGET")
     if dir_bytes(OUT) > DISK_CAP - ALLOW: raise SystemExit("DISK_BUDGET")
     STATE["n"] += 1
     stem = os.path.join(OUT, tag); cnf = stem + ".cnf"; drat = stem + ".drat"; lrat = stem + ".lrat"
     with open(cnf, "w") as fh: fh.write(f.text())
     rec = {"tag": tag, "cnf_sha256": sha(cnf)}
-    rc, _, _ = run_tool([KISSAT, "-q", "--no-binary", cnf, drat], stem + ".kissat", 60); rec["kissat_rc"] = rc
+    rc, _ = run_tool([KISSAT, "-q", "--no-binary", cnf, drat], stem + ".kissat", 60); rec["kissat_rc"] = rc
     if rc == 10: res = "SAT"
     elif rc == 20:
-        drc, dout, _ = run_tool([DRAT_TRIM, cnf, drat, "-L", lrat], stem + ".dratrim", 120); rec["drat_trim_rc"] = drc
+        drc, dout = run_tool([DRAT_TRIM, cnf, drat, "-L", lrat], stem + ".dratrim", 120); rec["drat_trim_rc"] = drc
         dok = drc == 0 and any(l.strip() == "s VERIFIED" for l in dout.splitlines())
         ok = False
         if dok and os.path.exists(lrat):
             rec["lrat_sha256"] = sha(lrat)
-            crc, cout, _ = run_tool([CAKE, cnf, lrat], stem + ".cake", 120); rec["cake_rc"] = crc
+            crc, cout = run_tool([CAKE, cnf, lrat], stem + ".cake", 120); rec["cake_rc"] = crc
             ok = crc == 0 and any(l.strip() == "s VERIFIED UNSAT" for l in cout.splitlines())
         res = "UNSAT_VERIFIED" if ok else "UNSAT_UNVERIFIED"
-        if not ok: STATE["fail"].append(f"unverified UNSAT {tag}")
+        if not ok:
+            STATE["fail"].append(f"unverified UNSAT {tag}")
+            rec["result"] = res
+            with open(os.path.join(OUT, "results.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n")
+            raise SystemExit("UNVERIFIED")
     else: res = "UNKNOWN"
     rec["result"] = res
     with open(os.path.join(OUT, "results.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n")
@@ -200,6 +240,7 @@ def cell(cat, s_old, q, cur, expected):
 
 def main():
     if not OUT or not os.path.isdir(OUT): print("REFUSED: REVISIT_SAT_OUT must name the existing fresh destination"); return 3
+    if os.path.realpath(OUT) != os.environ.get("CAPPED_OUT"): print("REFUSED: REVISIT_SAT_OUT is not the supervisor destination CAPPED_OUT"); return 3
     extra = set(os.listdir(OUT)) - {"out.txt", "time_receipt.txt"}
     if extra: print(f"REFUSED: destination not fresh: {sorted(extra)}"); return 3
     t0 = time.time()
@@ -220,6 +261,7 @@ def main():
         k4 = [query(build("E11", 1, (0, 2), cur, 0, ">=5", ">=4", mutant=True), f"K4_{cur}") for cur in ("11", "01")]
     except SystemExit as e:
         print(f"STOPPED: {e}"); STATE["fail"].append(str(e)); k3 = k4 = []
+        journal({"stage_stop": str(e)})
     q2 = [tg for tg in targets if tg[2] == 2]
     k1 = all(R.get(tg, {}).get("certified") for tg in q2)
     k2 = all(R.get(tg, {}).get("nonvacuous") for tg in targets)
@@ -237,7 +279,7 @@ def main():
         print(f"{name}: {'HELD' if all(R.get(tg, {}).get('certified') for tg in cs) else 'FAILED'} "
               f"({sum(bool(R.get(tg, {}).get('certified')) for tg in cs)}/{len(cs)} certified)")
     print("PU d0=2 profile certified, q=3 cells:", {tg: R[tg]["d2_certified"] for tg in targets if tg[2] == 3 and tg in R})
-    print(f"QUERIES {STATE['n']}; CPU {cpu_used():.1f} s; ELAPSED {time.time() - t0:.1f} s; DEST BYTES {dir_bytes(OUT)}")
+    print(f"QUERIES {STATE['n']}; CPU (sampled aggregate) {cpu_total():.1f} s; ELAPSED {time.time() - t0:.1f} s; DEST BYTES {dir_bytes(OUT)}")
     fails = (not k1) + (not k2) + (not k3ok) + (not k4ok) + (not k5)
     print(f"CONTROLS: {'ALL PASS' if fails == 0 else 'FAIL'} ({fails} failures)")
     return 1 if fails else 0
