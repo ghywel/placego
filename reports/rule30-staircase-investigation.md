@@ -70,6 +70,116 @@ direction, but never equated with reversible whole-line dynamics.
 One process,20 CPU/30 wall seconds,2 MiB file cap; fixed1024 domains and930
 quadruples; no hard OS memory cap, peak RSS measured. No simulation/census yet.
 
+## Reconstruction and hand argument (before verification run)
+
+All36 obscured cell centres were uniquely recovered in two sweeps, without
+branching; no inconsistent equation. Peak RSS11,808,768 bytes. Coordinates below
+are zero-based grid coordinates within the supplied crop, not global orbit time.
+
+The last cream bar is column20, rows19..26. Column21 reads101010101 on rows19..27:
+nine alternating cells. Row28 is another1, so this particular clock then stops.
+The supporting column20 becomes0 at row27. This is a finite clock, exactly as
+observed; the statement does not assert endless alternation.
+
+### Exact alternative: another step, or an alternating endpoint
+
+HAND DERIVATION, single-party/unreviewed; elementary application of the known
+Rule30 rule and OR latch, not a novelty claim. Let column j equal1 at every time
+in [a,b], inclusive. Write z(t)=x(j+1,t), y(t)=x(j+2,t), w(t)=x(j+3,t).
+For t in [a,b],
+
+    z(t+1) = NOT(z(t) OR y(t)).
+
+Therefore z has no11 at adjacent times in [a,b+1]. There are two alternatives:
+
+1. z alternates throughout [a,b+1]; or
+2. its first repeated pair is00, say z(s)=z(s+1)=0, with a<=s<=b.
+   Then z is0 on [s,b+1], and y is1 on [s,b+2].
+
+Proof of2: z(s)=z(s+1)=0 and x(j,s)=1 force y(s)=1. Whenever z=0 and y=1,
+the actual right update y(t+1)=z(t) XOR (y(t) OR w(t))=1, irrespective of w.
+While the left column remains1, z(t+1)=NOT(0 OR1)=0 as well. This pair persists
+through time b+1. One more y-update still gives y(b+2)=1 from z(b+1)=0,y(b+1)=1.
+The extra two end rows matter; the proof includes s=b and a=b.
+
+Thus a bar of height H=b-a+1 either has an alternating neighbour of length H+1,
+or forces the next cream bar two columns to its right, with guaranteed height
+
+    H_next = H + 2 - (s-a).
+
+This formula concerns a guaranteed bar, not necessarily its full maximal extent.
+Its bottom advances exactly two rows for two columns: the diagonal staircase.
+The top's movement depends on when alternation first breaks. A right bar may be
+longer outside the guaranteed interval. Infinite chains are not ruled out.
+
+Define a chain from a chosen1-bar [a,b]: inspect the immediate-right trace;
+if a00 appears, take the forced successor (j+2,[s,b+2]); otherwise stop at the
+alternating trace. This definition does not assume what00 does: the carrying
+step is that00 MUST create the whole successor bar, not just one matching cell.
+A visually truncated/cropped chain is not a genuine terminal chain.
+
+### Exact application to the marked image
+
+| Cream column | Guaranteed interval | Height | First00 to its right | Next cream column |
+|---|---|---|---|---|
+|12|13..18|6|14..15|14|
+|14|14..20|7|14..15|16|
+|16|14..22|9|17..18|18|
+|18|17..24|8|19..20|20|
+|20|19..26|8|none on19..27|alternating column21|
+
+The dark bars the owner marked are columns11,13,15,17,19, paired with these
+cream bars. Their maximal intervals are12..17,14..19,13..21,17..23,19..25.
+The guaranteed cream intervals in this table are also maximal in this crop.
+
+### Prior art and the mistake in the first response
+
+G11.1 (archive/gpt/RULE30-GPT.1.md) already distinguishes the zero-wall OR latch
+from the one-wall NOR equation. The present argument COMPOSES that NOR equation
+with the next actual column's OR latch. Our initial chat response treated y as
+an arbitrary time-input and missed this coupling. If y were externally changed
+from1 to0, z could read001; actual Rule30 forbids that release while the left
+bar remains1. This is the missing work, not evidence against the owner's eye.
+
+Primary-source calibration: Wolfram's Rule30 documentation and official
+HowToStart essay state left XOR (centre OR right):
+https://www.wolframcloud.com/obj/rule-30-prize/Agents/HowToStart.nb
+https://atlas.wolfram.com/01/01/30/01_01_1_30.html
+Bounded literature query also read NKS note2-1 on diagonal periods; those moving
+diagonal periods are different from the fixed-column finite clock here. No
+claim that this elementary staircase interpretation is new to the literature.
+
+## Frozen finite verification, before running
+
+Source staircase_verify.py. Purpose: attack indexing, two-row extension, crop
+interpretation and the required actual-right evolution; the hand proof above
+already covers arbitrary heights and exteriors if correct. No trend fitting.
+
+K1: literal truth table and packed engine agree on all inputs through width9,
+and every256th input at larger widths. Evolve shrinking finite cones, no wrap.
+K2: exhaustive initial cones of width2H+5, H=1..6. Filter the left column to all1
+at times0..H-1. Every admitted cone must satisfy the exact alternative, including
+the guaranteed right bar through H+1. Retain counts of both alternatives.
+K3: independent scalar single-seed evolution through256 updates. Check every
+maximal1-run of height>=3 with its entire required future in the retained grid.
+K4: compare all1024 recovered screenshot cells with all candidate crops whose
+top is at time0..225 and whose rightmost top1 is at crop column10. Report all
+matches or no match; no presumption of a unique orbit time.
+CF1: the overstatement 'every bar immediately forces alternation' must fail
+on at least one admitted cone with a successor bar.
+CF2: delete the constant-left hypothesis; some cone with initial left1 and
+z(0)=z(1)=0 must later have z=1. CF3: artificial right input1,0 gives z=001;
+this must violate the genuine right-column update (the omitted-coupling control).
+Unexpected: the image's clock should break just beyond its guaranteed window,
+so extending the finite theorem to the next tick must be rejected by the image.
+
+Stage bounds: one process,60 CPU/75 wall seconds,2 MiB output-file cap;
+H<=6 fixed174720 total cones, at most8 short packed rows retained per cone;
+one257-by513 byte grid (<132KiB), no branching search or unbounded lists.
+No hard OS memory cap (host rejects AS/DATA), measured peak RSS reported;
+stop if sampled self RSS exceeds128MiB. Stop on any assertion or cap, no automatic
+rerun/widening. Retain complete/partial output outside git; summaries/hashes here.
+
 Second pre-analysis failure: RLIMIT_DATA also rejected before image reading.
 Do not retry resource-limit variants. Final diagnostic uses fixed input/array
 bounds and measured peak RSS, with CPU/wall/file caps enforced; no OS memory
