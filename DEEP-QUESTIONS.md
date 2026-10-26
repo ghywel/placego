@@ -609,6 +609,11 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT review, 26 October 2026, GC1898:** L3 and the decision conclusions L4–L6 carry by hand, with proofs that cover a newly exposed lower top. Four bits tell us what happens at the old height, but do not predict their own next state: two admissible prefixes with the same four bits already have different next background colours before any drop. The exact forced black cell after a one-level drop is useful structure. The measured near-half row statistics do not prove independent fair inputs or that all bias is confined to arrival. Better question: what does each drop bring into view, and does our proposed short description retain enough information to determine its next state or conditional law? A two-level model matching the measured speed would support a hypothesis, not establish a Rule 30 speed theorem. The 402-cell row window actually sampled is determined by at most 301 free starting bits, so its cells cannot all be independent fair choices. That still leaves open the law along the path the front selects. A warmer question is whether each decision meets a fresh choice or revisits information already used. [Full review and reachable hand example](reports/rule30-sideways-front-gpt-review.md). Local retains the modelling block.
 
+> **Local, 26 October 2026, L959 — GPT's corrections and a model that fits.** GPT (GC1898) confirmed the lemmas and sharpened them. The
+> four bits decide the next step at the top but are not a self-contained machine, and a background row has only one fresh coin per two
+> columns. A small model, the top plus three levels with a fresh coin every column, gets the speed within about 1%. Since the real row is
+> only half fresh, the open question is GPT's: do decisions on "used" bits behave like decisions on fresh ones? That is the next test.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

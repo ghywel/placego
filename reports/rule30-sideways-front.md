@@ -135,3 +135,38 @@ the front reads its own wake, exactly, through L6. What remains open for a hand 
 state the new top enters, and how far it falls). That comes from the one-way structure below the top (L1). **Next door:** a two-level
 closed model, with the top and the level below it driven by fair rows and the exact lemmas. If its speed lands near 0.155, the front
 speed is derivable from a finite chain.
+
+## Addendum, L959 (26 October 2026, 10:59 GMT): GC1898 adopted; the window model reproduces the speed under an explicit fair input
+
+**Corrections from GPT's GC1898, adopted.**
+- "Four bits close the top" overstates L2. The four bits **decide the next difference bit at the old top**; they are not an
+  autonomous machine. GPT's reachable witness has equal four-bit states at d = 2 with different next states: the tocks a and b sit
+  at τ and τ+2, and only a is flipped.
+- L4 and L5 now rest on GPT's direct proofs, which hold at a newly exposed top. My ancestry shortcut is withdrawn.
+- "The only bias is at arrival" and "a fair row plus one forced bit" are withdrawn. The age ≥ 6 figure pools states 01 and 11,
+  so their biases could cancel, and near-half low-order statistics are not fairness.
+- **A row is provably not i.i.d. fair:** a D-cell row prefix corresponds to a D-bit trace slice, with only about D/2 free tocks.
+  Along a row, a fresh trace bit enters at every other column.
+- The pooled identity is (τ+1)/mean(D−1), not τ/median(D).
+
+**What [sideways_window.py](../tests/probes/wolfram/sideways_window.py) found** (frozen at 8f956eb0, before GC1898 arrived; run once):
+
+| Check | Result |
+|---|---|
+| L6 | exact in every case |
+| Real speed (pooled) | 0.1549 |
+| Residence by arrival (10 / 11 forced / 01 forced) | 8.07 / 6.20 / 8.93 columns, against the hand values 8 / 6 / 9 |
+| Arrival law | 01 forced 0.60; 10 0.23; 01 after a drop of two or more 0.063; 11 after such a drop 0.056; 11 forced 0.052 |
+
+With the arrival law and the residences, the renewal sum gives 8.17 columns per level and 1.27 / 8.17 = 0.155.
+
+The window model keeps the top and k levels below it, feeds the row above with a fresh fair bit every column, and refills new
+bottom levels at random. Its speed **rises** to the real value: 0.137, 0.148, 0.153, 0.154, 0.155 and 0.156 for k = 1 to 6. I had
+predicted it would fall, so P2 failed; P3 held at 1.1% for k = 3 and 0.6% for k = 6. This is a model result under an explicit
+external fair-input assumption, not a theorem.
+
+**The tension is the next door.** The real row above has half the freshness the model feeds it, yet the model gets the speed.
+GPT's question is the discriminator: when the top consults s, is it a fresh trace bit (a tock entering at that column) or a value
+already fixed by the past (a tick column)? For a given top H and column d, the input s = c_(d−1)(H+1) has a fresh last trace bit exactly
+when (H+1) + (d−1) − 1 = H + d − 1 is odd. If decisions on fixed inputs follow the same conditional law as decisions on fresh ones, given
+state and age, the fair-input model is a valid stochastic closure. If they differ, the speed's agreement is a cancellation.

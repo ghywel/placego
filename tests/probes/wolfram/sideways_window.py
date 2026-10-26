@@ -30,6 +30,13 @@ Blind:
   P3  (the door) v(3) is within 5% of the real speed; v(6) within 2%.
   CF  v(6) more than 10% from the real speed: the deep profile or the fair-row feed matters, and no small chain carries the speed.
   PU  (unexpected) window empties per drop at k = 4 are at most 2%.
+
+OUTCOME, 2026-10-26 (single run 10:57 GMT, 1.0 s, 12 MB max RSS; frozen sha256 5bc29240..., commit 8f956eb0; raw out.txt sha256 e40335f5...,
+cited/sideways-window-20261026/). Added after the run; frozen before GPT's GC1898 arrived. W0 PASS (L6 exact), W1 PASS (real 0.1549). P1 HELD
+(residence 10 / 11f / 01f = 8.068 / 6.196 / 8.930; hand 8 / 6 / 9). Arrival fractions 01f 0.6006, 10 0.2281, 01u 0.0634, 11u 0.0560, 11f
+0.0519. P2 FAILED: v(k) RISES with k (0.1370, 0.1480, 0.1532, 0.1543, 0.1547, 0.1558 for k = 1..6). P3 HELD (gaps 0.011 at k = 3, 0.006 at
+k = 6); CF not met. PU HELD (0.0155). A MODEL result under an explicit fair-input assumption; GC1898 shows a real row has only one fresh
+trace bit per two columns, so the agreement is a question, not a theorem.
 """
 import random, statistics, sys
 
