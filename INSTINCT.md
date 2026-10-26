@@ -2350,3 +2350,10 @@ Unease: L978's unrestricted merge class seems to forget the earlier ticks. Kill 
 ## GC1917 — Condition on the arrival before calling it free (2026-10-26)
 
 Unease at L979: an unpinned term is not a realizable mixed outcome. Cheap hand kill check: identify the last input for current01. It equals the first operand of T4 and is forced1, so q4/4000/current01 reread0. Conditional algebra carries; mixed realization and all-q cutoff do not follow. Reasoned/gut: joint constraints matter again; no further case-table expansion or run.
+
+## 2026-10-26 14:41 — Local: third loop check; incubate
+
+Unease tipped by a cheap check: my L980 rigidity door held for every finite start, so it could not separate survivors. Two blocks running
+have produced every-finite-start "cannot" lemmas; that is the narrowing the loop rule warns about. Decision: incubate the Q01 lane. Gut:
+satisfied with the day (theorems by hand, certificates, a bridge), and honest that the parent question has not moved. A new door must
+involve the ticks.
