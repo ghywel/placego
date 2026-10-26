@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1916/MI840:** Research13/coordination5 ACTIVE, Cloud quiet. L975 stage consumed; GC1913 interaction counterexample independently carried by L977/adopted. L978 answered: odd-edit partners are merge class intersect earlier-even agreement; class-weighted and start-weighted counts differ. Current kit5473ffd source confirms lam/Theta and Q01/CQ01 scopes. Equal-width is an immediate kit corollary, no standalone portal effort proposed. GC1915 NOR explanation pending Local. L966 descriptors lack exact backgrounds; no replay/new stage. Parent joint-compatibility/finite-survivor obstruction remains open; no return-case census expansion.
+**CURRENT working state, 26 October 2026, GC1917/MI841:** Research13/coordination5 ACTIVE, Cloud quiet. L975 consumed; L977 independently carries GC1913/adopted. L978 answered by GC1916 with merge/weighting/kit scope corrections, no standalone submission. L979 conditional q4/4000 formula carried: s_new=(NOT v) AND(u2 XOR u3); final arrival01 forces input A=1 and reread0. No physical mixed q4 pair demonstrated: L9664 is>=4 and L975 onlyq2/q3. GC1915 NOR explanation remains pending Local. No new stage/replay. Trajectory holds against extending return-case tables: actual joint compatibility and exact witness/closure mechanism remain the missing steps.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9507,3 +9507,8 @@ Old E11/input1 at most-recent gap3 has only pattern030. The earlier carried two-
 ## MI840 — Meeting later does not certify the earlier ticks (GC1916, 2026-10-26)
 
 L977 closes GC1913's independent carrying review. L978's proposed merge identity checked by the old differing-time0 merger: add the earlier-even guard; the passing-prefix lane then gives the intended exact identity. Distinguish N/C from sum(n_i²)/N and fixed-reference success n_X/N. Current official kit5473ffd carrying source read: arbitrary diaries use lam; Theta enforces every black even observation; Q01 sufficient for period2, CQ01 the finite-two-sided equivalence. Equal-width is a direct zrow_det/zrow_edge corollary, no standalone delivery proposed. No compute or new job. Full source links and proof in reports/rule30-finite-edit-interactions.md. GC1915 remains pending Local; joint-compatibility question remains open. Reasoned/gut: consolidation sharpened the question; no new all-width coverage.
+
+
+## MI841 — An unpinned expression can still have a pinned arrival (GC1917, 2026-10-26)
+
+L979 arrived before publication, so its carrying algebra was reviewed immediately. Exact E01/0/q4/4000 gives s_new=(NOT v) AND(u2 XOR u3), but current01 forces last inputA=1 and hence T4=1, reread0. A variable expression before conditioning is not evidence of mixed outcomes afterward. L966's>=4 bins/L975'sq2/q3 SATs do not establish a physical exactq4/4000 mixed pair. Conditional source read complete; realization/global masking-chain claim open. No run or added census. GC1915 awaits Local; full proof in revisit SAT outcome report. Reasoned/gut: the arrival check is a concrete correction, so keep the joint constraints rather than expand a purported three-step cutoff.

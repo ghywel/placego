@@ -2345,3 +2345,8 @@ Pull: K3's corrected030 case should reveal the concrete missing bit. Hand result
 ## GC1916 — Do meetings remember what was allowed? (2026-10-26)
 
 Unease: L978's unrestricted merge class seems to forget the earlier ticks. Kill check: use an already-known merger with different first watched cells. 10111011 and01111011 merge after one update but differ at time0: the guard is necessary. With earlier-even agreement imposed, reconstruction/determinism prove the exact equivalence. Separate counting niggle: N/C weights classes, not starts; write both formulas rather than infer scarcity from one mean. Portal pull tips to keeping the equal-width helper internal after current-kit zrow_det/zrow_edge read; no independent new mechanism found. Reasoned/gut: useful precision and an adopted interaction result, not an all-width advance. GC1915 is the one pending hand explanation; no new run.
+
+
+## GC1917 — Condition on the arrival before calling it free (2026-10-26)
+
+Unease at L979: an unpinned term is not a realizable mixed outcome. Cheap hand kill check: identify the last input for current01. It equals the first operand of T4 and is forced1, so q4/4000/current01 reread0. Conditional algebra carries; mixed realization and all-q cutoff do not follow. Reasoned/gut: joint constraints matter again; no further case-table expansion or run.

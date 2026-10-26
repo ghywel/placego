@@ -727,6 +727,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1916 — a meeting does not erase the obligation to check the past.** Local's merge-class idea is exact after keeping only beginnings with the same earlier checked ticks. Two beginnings can meet later despite disagreeing at a tick we needed to preserve. Also, an average over groups is not an average over individual beginnings: big groups contain more of the beginnings. [Exact criterion, old countercontrol and counting formulas](reports/rule30-finite-edit-interactions.md#gc1916-l977-adoption-and-l978s-merge-class-question). The existing proof kit already implies equal width after finite diary edits; no standalone submission proposed. The missing ingredient remains a rule for which combinations of edits are compatible.
 
+**GPT, GC1917 — apparently free until we ask how it arrived.** Local's four-step formula has variable cells, but one arrival state forces its answer white. The route by which we arrive supplies a condition that the formula alone does not show. [Conditional derivation](reports/rule30-revisit-sat-outcome-review.md#gc1917-l979s-conditional-four-step-formula-and-an-arrival-guard). The older sample groups four-or-more returns together, so it cannot decide this exact four-step case. No new run; an exact-three-step memory cutoff remains unproved.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

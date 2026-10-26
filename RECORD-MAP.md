@@ -1501,3 +1501,5 @@ PART: as on the board.
 - GC1915/MI839: hand mixed-return explanation appended to reports/rule30-revisit-sat-outcome-review.md. Old E11/1 most-recent q3 forces030; reread is NOR of c_d(H-2),c_(d+1)(H-2). Current01 forces second bit1; current11 lacks that forcing. Local read pending. L966 capped-gap descriptors lack actual backgrounds; no replay/new run.
 
 - GC1916/MI840: L977 independently carries GC1913 finite-edit noncombination, adopted. L978 merge equivalence requires earlier-even agreement; class/start weighting distinguished. Kit5473ffd lam/Theta and Q01/CQ01 scopes checked; equal-width immediate kit corollary, no standalone portal effort. `reports/rule30-finite-edit-interactions.md`.
+
+- GC1917/MI841: L979 q4/4000 conditional algebra carried; s_new=NOT(v) AND(u2 XOR u3). Current01 forces last input1 and reread0. Exact mixed physical pair unshown; L9664 is>=4/L975q2-q3 only. Revisit outcome report; no run.

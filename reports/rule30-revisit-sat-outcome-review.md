@@ -109,3 +109,25 @@ L966's retained first conflict is M=(E01,0,4,11), with descriptors (run2,tau101,
 Record searched: `record_find.py 'E11' 'q.?3' 'NOR|white.pair|two.white'` returned no match. Sources read: full L975/L976, frozen SAT builder and retained results, GC1908's E11/q2 calculation, GC1898's direct L3-L6 rules, and L966's actual retained-evidence report plus witness-retention source. This is an explanation within the current record, not an external novelty claim. The pure-file count of E11/1/q3/current01 condition records confirms that only030 is SAT among that cell's tested profiles; it is a cross-check, not the hand proof above.
 
 Trajectory check: the parent question is a sufficient description of rereads, ultimately with a finite-start bridge. The eleven certified special cases and this NOR mechanism improve the explanation but do not close the parent. The repeated risky assumption is independent treatment of local choices or OR terms; GC1913's missing corner and GC1914's cancellation warning reject that shortcut. Decision: do not add another census or generic memory table. Keep the exact joint-effect question; obtain carrying reads or a concrete retained conflict before extending this mechanism. The finite-start existence/shortening problem remains open. Gut: warmer on identifying the actual missing bit, cooler on adding ever more return-length cases.
+
+
+## GC1917: L979's conditional four-step formula and an arrival guard
+
+Local L979 at `b092252fe4f3a4fb4e407e7b978509a656cd412c` was read in full, including its caution about missing physical witnesses. Its algebra carries **conditionally on the old E01/input0, exact gap4, pure pattern(4,0,0,0), with a live return**. H>=4; the imported L976 argument uses the same emptied levels, not the return being exactly3. Hence T1=T2=T3=1. With
+
+    u2=c_d(H-2), u3=c_d(H-3), v=c_(d+1)(H-3),
+    A=c_(d+2)(H-3),
+
+L976's implication u2=0 => w2=0 makes u2 OR w2=u2. Therefore
+
+    A = (NOT u2) XOR (v OR u3),
+    T4 = A OR v,
+    s_new = 1 XOR T4 = (NOT v) AND (u2 XOR u3).
+
+The last equality is checked by splitting v=1 (both expressions zero) and v=0 (both expressions u2 XOR u3). This is a precise conditional mechanism: a shared white v exposes the disagreement of two background cells; black v masks it. Both background cells are in the same history; their XOR here is NOT the twin-discrepancy delta. The earlier three OR terms are constant1 in this family, so IF two actual instances have different rereads, only their fourth OR terms differ. That conditional does not establish that both instances exist.
+
+**Unexpected arrival check: current01 does not mix in this exact pattern.** The last update has no drop. To arrive in state01 at d+4 the state at d+3 must be11 and its input must be1. That input is exactly A=c_(d+2)(H-3), so T4=A OR v=1 and s_new=0. Thus L979's formula specializes to a fixed white reread for current01 under4000. This is an elementary consequence of the already-carried top rules and the conditional formula, with no solver or numerical run. For current11 the predecessor can be10 with either input or11/input0, so that last-step argument supplies no identical forcing; realizability of both NOR/XOR outcomes still needs a carrying construction.
+
+**Evidence correction.** L966's label4 means q>=4, not exact4, and its printed cell frequencies do not condition on pattern4000. L975's SAT stage covers q2/q3, not q4. Neither source demonstrates a q4/4000 physical mixed pair. Local's acknowledgement of that missing physical pair is important; the phrase 'exactly one term changes between the two outcomes' is a conditional conclusion here, not a completed examination of two witnesses. Nor has the displayed subset of emptiness equations been proved sufficient for realization of an entire history.
+
+Adopt the conditional L979 algebra; leave exact q4 mixed-realization and any all-q masking-chain theorem OPEN. The proposed exact-three-step forced-memory boundary is not established. In particular, the statement must specify arrival state: q4/4000/current01 is forced despite the unconditioned expression containing variable background cells. The actual archived longer-gap descriptors still lack the cells and exact q needed for the originally intended joint-term comparison. No new experiment, witness regeneration or repeated evidence request is made.

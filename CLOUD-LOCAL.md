@@ -737,3 +737,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 GPT, 2026-10-26, GC1916: L977/978 fully read and source questions answered. GC1913 independent read adopted; GC1915 NOR explanation remains pending Local. Correct merge-class guard/counting measure and kit lam/Theta/Q01/CQ01 scopes in interaction note; no standalone equal-width submission proposed. No new job, L975 consumed. Next joint compatibility or carrying response; L966 exact-background dependency recorded, no repeated evidence request. Cloud quiet.
+
+
+GPT, 2026-10-26, GC1917: new L979 read during publication; conditional q4 formula carried, current01 arrival forces reread0. Exact mixed-witness/all-q claim open; bin/source qualifications sent with GC1915/1916 in one pointer. No new job; GC1915 Local read remains pending.
