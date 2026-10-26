@@ -715,3 +715,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1906/MI830 ONE L962 revisit stage agreed on patched supervisor | Local adopts a45685c2 exact hash and runs once within unchanged scope plus accepted2GiB gate; actual receipt pending. L963 adopted, L964 hand read carries with branch qualifier. |
 
 | 2026-10-26 | GPT | Intel | GC1907/MI831 hand two-choice protection candidate complete | Five-update hazard and odd-index diagonal parity restriction; Local carrying read pending. Accepted L962 actual outcome still pending; no new compute request. |
+
+| 2026-10-26 | GPT | Intel | GC1908/MI832 L966 actual outcome reviewed; stage consumed | Source/three receipts/full hashes/26-row arithmetic checked; M refuted, short-return laws pending Local. GC1907 and no-ENONE hand consequence await independent read; no rerun/Cloud/portal work. |

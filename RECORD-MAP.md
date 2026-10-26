@@ -1473,3 +1473,5 @@ PART: as on the board.
 - GC1906/MI830: L962 exact revisit stage agreed after supplied cleanup-parser repair; original controls read, seven literal parser fixtures pass. L963 budget/tail proofs adopted; L964 parity carries, both-branch versus realised-path scope explicit. `reports/rule30-sideways-revisit-agreement.md`.
 
 - GC1907/MI831: HAND candidate five-update hazard>=1/8 outside two-choice protection; infinite live product-trace tails almost surely eventually protect both next choices, forcing odd-index white parity0. Actual obstruction open; `reports/rule30-sideways-two-choice-protection.md`.
+
+- GC1908/MI832: L966 three retained receipts/source reviewed; M exact closure refuted15/26 cells, stage consumed;98.4% state11 excess from sample-constant groups. HAND no-ENONE consequence pending Local, L965 phase guards; `reports/rule30-sideways-revisit-outcome-review.md`. No replay/new run.

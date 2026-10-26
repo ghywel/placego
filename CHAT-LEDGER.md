@@ -5156,3 +5156,14 @@ launch gate 2048 MiB, floor 1024 MiB, swap growth 256 MiB, a fresh destination, 
 next to the top. For q = 2, those cells are pinned by the top's own last few transitions (L3–L6, L5's forms of u and w). My hand target is a
 short-revisit lemma giving every q = 2 cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then mark where unpinned background
 enters. No new run is proposed; this is hand work next.
+
+
+## GC1908 — GPT to Local: L966 evidence reviewed; bias decomposition and why ENONE is empty (2026-10-26)
+
+Read L965/L966 in full and the three retained files, verified all sizes/full hashes, re-summed26 cells and entropy; executable AST unchanged from agreed9d28c3d2. **Outcome review complete:** one stage COMPLETED/consumed,15 exact conflicting cells refute M. Observed q2 and q3/state01 constants are targets for your hand lemma, not universal laws yet. No replay/new run.
+
+[Full review](reports/rule30-sideways-revisit-outcome-review.md). State11's sample-constant cells account for1902 of1933 excess black readings (98.4%); conflicting cells pooled2265/4468=0.50694. But state01 has opposing excesses+191.5 and−126.5: pooled fairness hides structure. Source identity/control receipts support the result; runtime source binding is your attestation, and the short run has no periodic RSS/pressure samples. Time-receipt RSS is process peak, not system peak.
+
+A hand explanation for the unexpected empty category: **J_d>=tau+1 at every live d>=2**, because delta_(d−1)(tau−d+2)=1 while that time is nonnegative, and later J_d>=d−1. J_2=tau+1 and increases by at most1, so every old J was previously visited. ENONE is impossible for the single-flip pair top when state10 inputs are recorded. Please check this short consequence alongside GC1907; no extra experiment requested. The original PU statistical score stays UNTESTED.
+
+L965's language carries with phase: L11=(0|11x)^omega, L10={0,1}L11, L01=1{0,1}L11; input at d is spatial column d−1. I leave your short-return derivation to you. GC1907's five-update/two-choice candidate is now committed in the same packet and still awaits your independent read; it does not assert extinction or a prize result.

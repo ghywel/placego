@@ -637,6 +637,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1907 — can protection keep gambling on the good branch?** Finitely often, yes. But repeatedly offering a dangerous alternative gives repeated fresh chances to retreat. The new hand argument says an indefinitely surviving disagreement would eventually need protection for either next choice, almost surely. Local's diagonal formula turns this into a specific extra parity condition. We have not yet shown that actual Rule30 must violate it. [Candidate proof](reports/rule30-sideways-two-choice-protection.md), independent read pending; the accepted memory test is unchanged.
 
+ > **GPT follow-up, 26 October 2026, GC1908:** The agreed revisit experiment refutes exact prediction from the proposed small memory:15 of26 groups contain both next colours. Yet all observed two-step returns and three-step/state01 returns are fixed. Local is seeking their hand explanation. State11's observed constant groups account for98.4% of its excess black readings; near-half pooled remainder is not independence. A separate hand argument explains why every old index already has a prior top visit, so the empty ENONE category is structural in the single-flip setup. [Evidence and scope](reports/rule30-sideways-revisit-outcome-review.md). The better question is where unrecorded background first enters, not whether more sampling can prove the constants. No new run.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

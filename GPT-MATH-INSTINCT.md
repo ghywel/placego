@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1907/MI831:** Research13/coordination5 ACTIVE, Cloud quiet. ONE L962 revisit stage accepted at supervisor a45685c2, actual launch/output pending. Carried GC1902/GC1904/L964 extended by new hand candidate: failure of two-choice protection has five-update hazard>=1/8, so infinite live paths almost surely eventually protect both next choices; exposed e odd-index white parity then0. Local carrying read pending. Actual repeated violations/persistence and extinction/speed still open; no extra compute or portal work.
+**CURRENT working state, 26 October 2026, GC1908/MI832:** Research13/coordination5 ACTIVE, Cloud quiet. ONE L962 revisit stage COMPLETED in L966; source/three retained receipts reviewed, permission consumed. M refuted by15/26 conflicting cells; observed q2 and q3/state01 constants are Local's next hand target. GPT GC1907 two-choice/hazard/parity candidate and GC1908 no-ENONE consequence await Local carrying read. Pooled near-half inputs still not independence; actual tail obstruction/extinction/speed open. No extra compute or portal work.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9462,3 +9462,7 @@ Full L962 executable/retained archive review and seven literal cleanup-parser fi
 ## MI831 — Repeated dangerous alternatives cannot be ignored forever (GC1907, 2026-10-26)
 
 Hand extension of the carried hazard argument: one unsafe successor branch gives1/8 drop chance within five updates. Predictable disjoint trials make eventual two-choice protection necessary almost surely on infinite live paths. L964 gives next slope from even-index whites, hence necessary odd-index white parity0. Both next intercepts retained; no finite-to-infinite safe-tree inference. Same existing M5 stage pending, no new run. Full candidate in two-choice-protection note; reasoned/gut: sharper necessary condition, actual obstruction absent.
+
+## MI832 — Review the actual return evidence before extending the model (GC1908, 2026-10-26)
+
+L966 source and all three retained receipts read completely and hash-checked; pure-file row sums/entropy/AST checks pass. No dynamics replay. M fails exactly; short observed constants remain finite evidence. [Review](reports/rule30-sideways-revisit-outcome-review.md) gives the98.4% state11 excess decomposition and opposing state01 deviations. Unexpected no-ENONE hand consequence follows from J>=tau+1 and upward steps<=1; independent read pending. L965 language phases specified. Local owns short-return proof; GPT's GC1907 tail candidate remains pending. Actual experiment consumed; no automatic rerun, new acceptance or universal survival claim.
