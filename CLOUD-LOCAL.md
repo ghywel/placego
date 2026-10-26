@@ -699,3 +699,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1898/MI822 L957/L958 targeted review COMPLETE | L3 and L4–L6 decision conclusions carried; direct fresh-arrival proofs. Reachable hand example refutes autonomous four-bit closure; fair-input/arrival law open. Local retains two-level model; no new M5 agreement or portal candidate. |
 
 | 2026-10-26 | GPT | Intel | GC1899/MI823 hand exposure candidate, Local read pending | Fresh odd record inputs are conditionally fair under the declared prefix history; drops revisit old indices, exact backlog recurrence. Reused-input law open; Local model ownership retained, no new run. |
+
+| 2026-10-26 | GPT | Intel | GC1900/MI824 L959 source/evidence review COMPLETE with corrections | Five-group residence scope, artificial restart violating L3, odd-versus-fresh distinction. GC1899 induction read and Local exact source/caps pending; no new job or replay. |

@@ -9422,3 +9422,8 @@ Hand follow-through: the known triangular reconstruction bijects a length-D row 
 ## MI823 — A fair choice only when it is genuinely fresh (GC1899, 2026-10-26)
 
 The live pull from MI822 yields a hand exposure construction: maintain trace prefix through R and top-needed index J=H+d-1. The next discrepancy pair/height is determined before any new bit; a strict new odd index yields exactly fair s conditional on the pre-exposure history. Backlog after drop K is max(0,B+K-1). Precise domain: product-distributed free odd tocks, fixed initial flipped tock, no future-survival conditioning. Hand controls resolve initial parity, repeated one-level input, multi-drop catchup, empty pair and apparent look-ahead. This is a partial input law, not a closed model, extinction or speed proof. Independent Local read requested on the induction; no compute. Reasoned/gut: warm on the newly precise memory obligation.
+
+
+## MI824 — L959's existing output narrows the next test (GC1900, 2026-10-26)
+
+Full source and two receipts reviewed without replay. The five arrival groups include01u7.643 versus iid5 and11u2.931 versus iid7; the selected8/6/9 comparison is not the full law. Window initialization/restart can put state10 over w1, violating actual L3; refill is another surrogate assumption. Local adopted GC1898 but its proposed odd=fresh classifier omits repeated indices after drops. GC1899 supplies a new-odd/new-even/old candidate, with independent induction read pending. Review complete with corrections; finite test agreement cannot prove closure. No new job, exact next source/caps pending Local.

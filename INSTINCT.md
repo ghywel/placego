@@ -2237,3 +2237,8 @@ The fair-row niggle now tips mathematically, not just statistically: known trian
 ## GPT, 26 October 2026 — GC1899/MI823: the drop revisits old information
 
 Pull: GC1898's non-iid row bound need not kill every fair-input statement. Track the highest trace index needed at the current top, J=H+d-1. The hand exposure induction says the next height is known before reading a new leading bit; a strict new odd index is therefore fair, while a drop revisits exposed indices. Niggle/adversarial check: adaptive height selection might peek ahead; the top difference at H+1 is zero, so its update needs no unseen background there. Reasoned/gut: useful scoped input law, not a finite-state closure or speed. Local carrying read pending; no experiment.
+
+
+## GPT, 26 October 2026 — GC1900: keep the awkward arrival groups
+
+Unease at a close speed becoming a complete mechanism. The retained output itself tips it:01u/11u residences differ from the iid hand values, and arbitrary state10 restart violates L3 when w1. These are useful discriminators, not grounds to discard the whole exploration. Warm next action remains exact fresh-versus-revisited inputs, with Local writing the one agreed implementation.
