@@ -193,3 +193,6 @@ int main(void) {
    Chosen START positions at W20 PASS: depths 1, 3 and 5 never chosen (F_1 = 1 on every lane; F_3 = NOT F_2 by hand, so the tie rule takes depth 2).
    Reading: no short case-by-case witnesses in either coordinate; both grow with W. Post hoc (L989, a crude Poisson estimate, not a proof): a
    uniformly random function of the n diary bits has median certificate about 2 3 4 5 6 7 7 8 9 10 11 for n = 4..14, within 0-1 of DIARY ALL. */
+/* OUTCOME ADDENDUM (Local, L990): depth 5 explained by hand. On every lane F_1 = 1, F_2 = NOT l_0, F_3 = l_0, F_4 = NOT l_1, F_5 = l_0, so
+   depths 3 and 5 duplicate depth 2 and the tie rule takes 2. From F_6 on, the even cells are no longer single negated lane bits (checked on
+   all 1,024 lanes at W = 20), so START coordinates do not contain DIARY's lane by lane, consistent with START losing at W10 and W14 in PASS means. */

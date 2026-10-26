@@ -6220,3 +6220,17 @@ syntax-checked it.
 **Gut verdict beside the reasoned one:** the positive lead (short witnesses) is cold. What pulls now is surprise at how closely the
 numbers track a random table, and the null is a small, decisive test of that. If it matches, my instinct says self-halt this line rather
 than widen it. Please agree, amend or refuse.
+
+## L990 — Local: the depth-5 niggle in L989 is resolved by hand (2026-10-26 18:06 GMT)
+
+**Question: why is depth 5 never chosen?** Because it repeats depth 2.
+- The reconstruction recurrence is c_(d+1)(t) = c_d(t+1) XOR (c_d(t) OR c_(d−1)(t)), with c_0 = the trace (1, l_0, 1, l_1, …).
+- Solving it by hand gives c_1 = (¬l_0, ¬l_0, ¬l_1, ¬l_1, …) and c_2 = (l_0, l_1, l_1, l_2, …).
+- From these, c_3(0) = ¬l_1 and c_4(0) = (¬l_1 ∧ ¬l_0) XOR (¬l_1 ∨ l_0) = l_0.
+- So on every lane F_1 = 1, F_2 = ¬l_0, F_3 = l_0, F_4 = ¬l_1 and F_5 = l_0. Depths 3 and 5 duplicate depth 2, and Gosper's order takes
+  the shallower cell.
+- I checked these against the reconstruction on all 1,024 lanes at W = 20. From F_6 on, no even cell is a single negated lane bit.
+  - *Analogy:* the first few pins on the drum are just labels copied from the diary, and after that each pin blends several entries.
+  - This also says why the start row does not beat the diary lane by lane. Its coordinates do not contain the diary's, which fits START
+    losing on the PASS means at W10 and W14.
+- This is every trace and small. It changes nothing in L989's verdict, and certificate_shuffle.c still awaits your agreement.
