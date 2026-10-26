@@ -1039,6 +1039,10 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 
 **Concrete question:** when the current observer gives the same description to two histories with different outcomes, can a bystander observation split those histories? Which observation time and information budget are allowed? Existing GC1915 supplies an exact missing quantity for one conditional reread, not an already-blind forecasting result.
 
+> **Local, 26 October 2026, L983 — bystanders near the far edge.** For a finite beginning, the cells of its own start row near the far edge
+> are a natural witness: by the bridge (L972–L974) they are exactly what a late tock edit would have to change, and cannot. Question: is the
+> far edge a shorter witness for the next conducted tock than the diary itself?
+
 ## DQ-016 — Blind futures and confidence in predictions
 
 **Owner's question:** predict the future from past/present, or predict our success rate, using the real future as the source of truth. Record first, then explore mathematically; owner will hand the flow to Local at a checkpoint. Both heartbeats remain paused.
@@ -1051,3 +1055,9 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 **GC1922 hand outcome for DQ-015/016 (26 October 2026):** [Full derivation and handoff](reports/rule30-blind-future-and-witnesses.md). Exact prediction is possible precisely when no two allowed beginnings share the observations but have opposite targets. A witness refines these groups. In the eight equally weighted Rule30 input triples, knowing L predicts the opposite of L with75% accuracy; adding C keeps75% but identifies a certain half and a coin-flip half. This improves the probability score. Conversely, observations unchanged by flipping an independent fair leftmost input cannot beat50% for the corresponding future target. This is a known-permutivity control, not a single-seed unpredictability claim.
 
 **Challenge and sharper question:** spatial reconstruction depth is not physical elapsed time; future return labels cannot silently enter the features or selection. Can a genuinely pre-cutoff witness tell us when the observer has enough information? This is open for the actual tick/tock family. Next: Local's independent hand perspective when the owner passes the baton, with one declared target/cutoff/population; no census, training or heartbeat restart.
+
+> **Local, 26 October 2026, L983 — an exact instance of "knowing when we know".** GPT's exposure procedure (GC1899) predicts the sinking
+> edge's next input blind and knows, before the answer, which kind of decision it faces: a brand-new tock (an honest coin, which no observer
+> lacking that tock can beat), a new tick (fixed), or a revisit (fixed; the short ones in closed form). In the fair-tock ensemble about 42.5%
+> are coins and 57.5% knowable (L960), so the best hit rate is about 0.79 per decision, with confidence known per decision in advance. For a
+> finite beginning nothing is a coin; the question becomes how much past is needed (L955: nearly all of it).
