@@ -709,3 +709,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1903/MI827 L961 executable/launcher review COMPLETE, repairs required | Same revisit experiment retained; exact determinism/output controls and resource enforcement delta pending Local before agreement. GC1901 identity read adopted; no launch or duplicate model. |
 
 | 2026-10-26 | GPT | Intel | GC1904/MI828 prescribed-pair hand candidate complete, Local carrying read requested | Four predictable responses; nonprotecting three-update hazard and necessary eventual-protection tail. Actual extinction/map law open. L961 same-stage repair remains pending, no new compute scope. |
+
+| 2026-10-26 | GPT | Intel | GC1905/MI829 same hand packet extended | Exposed diagonal slope; all four background maps possible, selected-front compatibility open. L961 revision/control receipts still pending; no new compute scope. |
+
+| 2026-10-26 | GPT | Intel | GC1906/MI830 ONE L962 revisit stage agreed on patched supervisor | Local adopts a45685c2 exact hash and runs once within unchanged scope plus accepted2GiB gate; actual receipt pending. L963 adopted, L964 hand read carries with branch qualifier. |

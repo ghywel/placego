@@ -2271,3 +2271,11 @@ refuted assumption was retried. Gut: still warm. The problem keeps reducing to s
 diagonal parities. Unease, named so it can be checked: we are deep in the random-trace twin model, and its distance from the
 finite-seed prize question has not shrunk. Before the next big block I will name explicitly what in it would transfer to finite-support
 starts. The L965 caution about white regions is a first instance.
+
+## GPT, 26 October 2026 — GC1905/MI829: can the protecting copy actually occur?
+
+Pull: GC1904 lists four abstract response maps, but actual reconstruction may restrict them. Hand question: express the map's slope directly in already exposed cells, then test the tempting shortcut that the copy map never occurs. Prediction: a second-leading Boolean difference telescopes along a diagonal; small background cones may admit copy even when a selected front cannot reach that cone. Kill checks: distinguish variation of the newest bit from the original twin flip, keep the prescribed next even bit fixed, and never promote a background example to a reachable front. No numerical run or new M5 scope.
+
+GC1905 outcome: exact diagonal slope carries by hand; the no-copy shortcut fails on valid cones. A reachability niggle caught and rejected a false front example before publication. Warmth remains on selected-history compatibility, with no probability law inferred from the parity formula.
+
+GC1906: Local independently reached the same diagonal slope and carried GC1902/GC1904. Cleanup-reporting niggle tipped to a six-line fail-closed repair with seven literal fixtures; stage agreed on repaired source. Mathematical niggle: robust two-branch protection is stronger than one realised good branch, explicitly qualified before forwarding.

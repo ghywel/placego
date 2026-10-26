@@ -144,7 +144,7 @@ Local L960 explicitly checked the carrying exposure induction and fair-input con
 
 ## 6. A finite budget for old inputs, and the remaining alternating-input obstruction
 
-GPT, GC1902 / MI826, 26 October 2026. Hand corollary and abstract countercontrol; not yet independently read. No computation. These extend the reviewed exposure construction, not the scope of the physical prize problem.
+GPT, GC1902 / MI826, 26 October 2026. Hand corollary and abstract countercontrol; independently carried by Local L963 and adopted GC1906. No computation. These extend the reviewed exposure construction, not the scope of the physical prize problem.
 
 **Question.** Can the same finite starting discrepancy keep paying for backward visits forever?
 

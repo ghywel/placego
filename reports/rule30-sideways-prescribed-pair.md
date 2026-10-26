@@ -1,6 +1,6 @@
 # What a prescribed step can do with the preceding fresh choice
 
-GPT, 26 October 2026, GC1904 / MI828. **Complete hand candidate, independent Local read pending.** No experiment, code change or new M5 specification. This continues GC1902's prescribed-input question; Local's already selected revisit test remains unchanged.
+GPT, 26 October 2026, GC1904 / MI828. **Sections1–4 independently carried by Local L963; adopted GC1906. Section5 added afterward; its slope agrees with Local L964, carried in GC1906.** No experiment, code change or new M5 specification. This continues GC1902's prescribed-input question; Local's already selected revisit test remains unchanged.
 
 **Question.** If every other new input is genuinely random, how can the intervening prescribed input keep protecting a disagreement?
 
@@ -80,3 +80,64 @@ For Local's carrying read: check the pre-bit predictability of the four-map clas
 The open structural question is whether actual reconstruction can sustain the required protecting-map tail with positive product probability, or at all. The four-map description names the missing constraint; it does not provide an autonomous evolution for the maps. Random-trace twin extinction is also distinct from a universal finite-seed prize theorem.
 
 Reasoned verdict: exact two-step input interface and a conditional-hazard restriction on possible infinite survival, pending independent review. Gut verdict: warmer; the missing behaviour can now be stated in two specific state/map combinations rather than an unspecified "bias".
+
+
+## 5. The map slope is an exposed diagonal parity (GC1905 / MI829)
+
+**Question.** Does actual reconstruction prohibit the copy response, leaving GC1904's protecting policy only an abstract possibility?
+
+**Response.** No such prohibition holds for arbitrary admissible background cones: all four maps occur. A selected twin front is a narrower domain, and the examples below deliberately do not settle its reachability. The exact slope formula gives a concrete condition to investigate there.
+
+Write r=d-1 and t=H+1 at a fresh odd leading index J=t+r-1. All Boolean sums below are XOR. For k>=2, let E_k(u) be the Boolean difference of c_k(u) when ONLY its second-leading trace bit a_(u+k-2) is flipped, keeping every other bit, including the leading one, fixed. Triangularity and the recurrence give
+
+    E_2(u) = 1,
+    E_k(u) = E_(k-1)(u+1) XOR (1 XOR c_(k-2)(u)).
+
+Indeed the second-leading bit enters c_(k-1)(u) with coefficient1 and does not enter c_(k-2)(u). Flipping the first input of an OR changes its output exactly when the second input is zero. The shifted first term contributes E_(k-1)(u+1). Each summand on the right is independent of the varied bit. Induction therefore gives the identity, including its lack of dependence on the two highest trace bits:
+
+    E_k(u) = ((k-1) mod2)
+             XOR XOR_{j=0,...,k-2} c_j(u+k-2-j).
+
+Here c_0 is the zero wall; its summand is zero. In GC1904, y=c_(r+1)(t), and changing the fresh input x is exactly changing a_J. Consequently the slope A in y=C XOR(A AND x) is
+
+    A = (r mod2) XOR XOR_{j=0,...,r-1} c_j(J-j).
+
+Every nonwall cell in this diagonal has leading index J-1. Hence this is genuinely a pre-bit observable, even when the front location was selected adaptively. The number of terms grows with r; the formula does not give a fixed-size autonomous state. Also this Boolean difference varies the newest trace bit, not the original twin's bit a_tau. Confusing those two differences would manufacture a false link to the top state.
+
+### Small exact background cones: none of the four maps disappears
+
+Take t odd, write a=a_t, b=a_(t+2), z=a_(t+4), and keep all even trace bits equal to1. Direct substitutions give
+
+    c_2(t)=1 XOR a,                  c_2(t+1)=1 XOR b,
+    c_3(t)=b,                       c_3(t+1)=b,
+    c_4(t)=(1-a)(1-b),              c_4(t+1)=1 XOR z,
+    c_5(t)=(1 XOR z) XOR (b OR (1-a)),
+    c_5(t+1)=b,
+    c_6(t)=b XOR (c_5(t) OR c_4(t)).
+
+Products here mean Boolean AND. For the fresh leading odd bit a_(t+4)=z at r5, put x=c_5(t), y=c_6(t). The complete four-case table for the already exposed pair a,b is:
+
+| a,b | x | y as a function of x |
+|---|---|---|
+| 0,0 | z | one |
+| 0,1 | z | flip |
+| 1,0 | 1 XOR z | copy |
+| 1,1 | z | flip |
+
+Zero occurs already at r3, odd t with a_t=1: x=c_3(t)=b and y=c_4(t)=0. Thus zero, one, copy and flip are all realised by valid black-even trace cones. In particular a_t=1, a_(t+2)=0 is an explicit copy cone, for either value of the fresh bit. No probability sampling was used.
+
+Controls for the slope: r1 gives A1 and the familiar flip; r3 gives A=1 XOR a, matching zero/flip; r5 gives A=a OR b, matching all four rows above (one has slope0; copy/flip slope1). These checks include a prescribed even leading bit, not a fictitious second fresh coin.
+
+**Unexpected reachability check.** The r5 copy cone at t=tau, a_tau=1, a_(tau+2)=0 does NOT give a protecting front at d6, H=tau-1. At d3 the original top tau sees s=1 XOR a_(tau+2)=1, so it survives into state10 at d4, then state11 at d5. Its d5 input is 1 XOR a_(tau+4), while its d6 input at that same top is c_5(tau+1)=a_(tau+2)=0. Whatever the fresh a_(tau+4), the pair still has height tau at column d6: the transition from state11 cannot vacate in one update. The valid copy cone is therefore below the requested input location at that column. This checks the distinction we need rather than silently claiming a reachable example.
+
+### A precise surviving constraint, not a closure
+
+Write the fresh-odd top state as (alpha,beta). GC1904's two protecting combinations are equivalently
+
+    alpha=1, C=0, A=beta.
+
+Thus a hypothetical infinite live path, outside GC1904's probability-zero exceptional set, eventually requires the exposed diagonal parity above to equal beta XOR (r mod2), as well as the zero intercept C. This is a concrete necessary condition conditional on the pending GC1902/GC1904 carrying read. It does not show that either condition fails, that their values are fair, or that their repeated occurrence is unlikely under the front's selected history.
+
+Record searched: second.leading+diagonal ->0 hits; prescribed+copy ->8 hits/6 files, including GC1904. Sources used: the reconstruction and triangularity in the independently carried GC1899 note, GC1898's top transitions, and the pending GC1904 map table. This is elementary Boolean algebra, with no external novelty claim. No numerical run, executable edit, additional M5 request or portal candidate.
+
+Reasoned verdict: the background-wide no-copy shortcut is refuted; the exact map slope is identified, and actual-front compatibility remains open. Gut verdict: useful resistance to an easy-looking shortcut. The next hand question is whether actual front history forces violations of C=0 or A=beta repeatedly; Local's existing finite revisit experiment remains separate and unchanged. This addendum belongs to the same pending carrying packet, not a second independent review job.
