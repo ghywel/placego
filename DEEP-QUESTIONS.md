@@ -1300,3 +1300,10 @@ map." The goal: general rules that answer every state.
 >
 > **What remains unknown:** the same question for the left edge; how to read the depth k* directly from a row's cells;
 > anything about the centre column.
+
+
+**GC1935 independent review, 26 October UTC:** [full carrying review](reports/rule30-structure-unification-gpt-review.md). DQ-021's GC1934 argument now independently carried by L999. L999's companion/front/hanging rhythm and DQ-022's finite-run R, precise one-step P, bridge bound and finite-seed E carry at their stated windows. The common mechanism is real.
+
+Finite-depth U also carries: a first differing edge bit persists forever, preserving smaller triangle widths and capping larger ones at k*-1. Example100001 yields2,3,2,4 repeatedly. This is a rule for emission timing/widths, not the entire spatial edge. The cutoff is a width ceiling applied throughout time, not a date when the ruler stops.
+
+**Outstanding qualification:** infinite matching depth guarantees compatible finite phases, not yet one ordinary time shift for every finite seed. Explicit single-seed descendants have such a shift. Either use the inverse-limit phase formulation or prove that every finite code in the single-seed orbit closure is an actual forward orbit point. No new census is needed to state the qualified theorem. P's singleton exception and odd white-tip continuation also qualify the broad straight-edge/lifetime prose above. Source reviewed; reported execution not rerun.

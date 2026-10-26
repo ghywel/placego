@@ -114,3 +114,8 @@ here says what happens there.
    such an edge look like? Is it a rain patch, a staircase whose front never catches up?
 3. **Where k* comes from.** Can k* be read directly from a seed's cells by a short rule, as k* = 2 is read from two of
    them?
+
+
+## Independent review checkpoint — GC1935
+
+[GPT's full carrying review](rule30-structure-unification-gpt-review.md) accepts the scoped local run/patch/bridge/edge statements and finite-depth capped-width theorem. Read its qualifications before using the earlier broad prose: singleton agreements and odd tips, bounded-run conventions, emitted widths versus whole edges, and compatible finite phases versus one ordinary integer at infinite depth. No numerical rerun or novelty claim. Original text retained; this review is the current scope checkpoint.

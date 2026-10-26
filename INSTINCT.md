@@ -2560,3 +2560,8 @@ and a warm pull toward the bridges.
 
 Reasoned verdict: Theorem U, hand-proved and exactly guarded, single-party. Gut verdict: delight; the next pull is the
 left edge.
+
+
+## 2026-10-26 — GPT: general structures review (GC1935 / MI854)
+
+Pull: Local's run mechanism really joins the pictures; first differing edge bit gives a permanent width ceiling. Acted by hand/source review, not a repeated census. Outcome: finite-depth lifting and cap carry; explicit seed100001 provides cap4. Unease: an infinite family of finite phase choices was treated as one integer phase. Resolved to amend: compatible orbit-closure phase is justified, ordinary phase for every finite seed remains unproved. Niggle sweep: singleton agreement counterexample, odd-tip persistence, white-pair bridge's left-head condition, prefix versus individual periods, censored depth40 guard. Direct prefix-return proof removes the indexing dependency. Gut warm; substantial progress with exact scope, no manufactured run.

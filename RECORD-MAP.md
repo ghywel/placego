@@ -1547,3 +1547,6 @@ PART: as on the board.
 
 
 - GC1934/MI853/DQ-021: [staircase investigation](reports/rule30-staircase-investigation.md), steady1 bar forces an adjacent alternating segment or a latched01 successor two columns right through b+2. Single-party hand derivation awaiting review; exact supplied-image match and174720-cone/4125-bar finite controls. No eternal-clock or chain-termination claim; cited/gc1934-staircase/ receipts.
+
+
+- GC1935/MI854: [L999–L1001 independent review](reports/rule30-structure-unification-gpt-review.md). Scoped run/patch/bridge/edge laws and finite-depth capped emitted-width ruler carried; direct prefix-return gap proof, seed100001 cap4. Infinite-depth ordinary-time shift not established; compatible-phase replacement and exact remaining obligation. GC1934 independent read adopted; no rerun.

@@ -6897,3 +6897,16 @@ Harness slips, all recorded in the headers and none touching a result:
 
 **Gut verdict:** delight, unreserved. The owner's first observation turns out to describe every finite seed; the only
 freedom at the right edge is one integer and a phase.
+
+
+## GC1935 — L999–L1001 carrying review: common run mechanism and finite-depth capped ruler carry; qualify infinite-depth phase (2026-10-26 23:53 UTC)
+
+Complete reports and actual checker/exploration sources read through04a5a3d1. [Independent review](reports/rule30-structure-unification-gpt-review.md). L999's independent GC1934 read adopted. Left companion, rain front and both front-hung rhythm directions carry with the remaining-window condition. L1000's finite-run R, exact one-step P, bridge bound and finite-seed E carry. Added an explicit bridge-unit proof and checked all four E5 suffix cases.
+
+**L1001 finite-depth U carries.** The next prefix cycle has length p or2p; doubling would include both lifts, so a first departure occurs at a non-doubling level. The first differing bit stays different forever. Timing agrees; smaller widths agree; larger widths cap at k*-1. A direct prefix-return proof verifies the gap: the first set bit j above bit0 means p_j divides time and p_(j+1) does not, so level j+1 doubles and width=j-1. No uncertain individual-diagonal/prefix-period identification is needed. Finite cap gives a purely periodic emitted-width sequence. Hand example100001 has k*=5, phase0, cap4 and widths2,3,2,4 repeated.
+
+**Required amendment, not a refutation of finite-depth U:** k*=infinity gives compatible finite phases s_k, not automatically one ordinary integer s0. CPY Theorems1/4 support the orbit-closure phase, not the missing assertion that every finite code in that closure is an actual forward orbit point of1. State the uncapped case using that compatible phase, or prove the extra assertion. Explicit later rows T^tau(1) already have ordinary phase tau, so not every non-single-cell seed has a finite cutoff. The theorem classifies emitted widths/timing, not the entire edge picture.
+
+**Prose guards:** P's singleton0 exception blocks 'every agreement left edge always moves'; odd triangle tips may persist, so distinguish shrinking core from white lineage; a white pair bridges the left black HEAD only when that left run is singleton. The crop's clock break is an example, not a universal immediate-break theorem after support ends. Preserve these scopes in the map.
+
+No numerical rerun. Reported counts/timings remain Local's; U's56 KMAX cases mean depth>=40, not infinity. U3 checks observed exclusions, not infinite completeness; Q2 has no separate assertion. New notes do not cite raw execution receipts or stage-wide containment, so no claim of verified resource enforcement. No broader compute is needed for this carrying read. Please amend the scope text and read the explicit bridge/gap arguments; no new job or heartbeat request. Gut: warm—real unification and a general classification, with one precise remaining phase obligation.

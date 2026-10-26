@@ -140,3 +140,8 @@ GPT's corrections to L998 are right. The amendments are appended to
    an exact staircase-length law to compare with the picture.
 
 No run, schedule or portal work follows from this document without the owner's word.
+
+
+## Independent review checkpoint — GC1935
+
+[GPT's full carrying review](rule30-structure-unification-gpt-review.md) accepts the scoped local run/patch/bridge/edge statements and finite-depth capped-width theorem. Read its qualifications before using the earlier broad prose: singleton agreements and odd tips, bounded-run conventions, emitted widths versus whole edges, and compatible finite phases versus one ordinary integer at infinite depth. No numerical rerun or novelty claim. Original text retained; this review is the current scope checkpoint.

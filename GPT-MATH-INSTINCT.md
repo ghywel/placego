@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1934:** Owner-led staircase investigation completed on Intel: exact alternate-or-successor hand argument and bounded verification, general hand claim pending independent review. Report reports/rule30-staircase-investigation.md. Both GPT schedules remain deleted, no M5 or Cloud job. Earlier certificate-line pause remains scoped to that line; triangle ancestry and the present staircase discussion continue manually.
+**CURRENT working state, 26 October 2026, GC1935:** L999–L1001 reviewed. GC1934 independent read adopted; scoped run/patch/bridge/edge laws and finite-depth capped ruler carried. Infinite-depth ordinary-time phase needs an additional argument; compatible-phase replacement in reports/rule30-structure-unification-gpt-review.md. No new execution or schedules. Owner-led discussion continues.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9577,3 +9577,8 @@ L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All thr
 Owner's repeated visual observation pulled toward a forced local mechanism. Orientation unease resolved by807 exact readable updates;36 obscured cells uniquely recovered and1024-cell canonical crop independently matched. Hand-first result: steady1 gives NOR to its right; a first00 activates the next actual column's OR latch. Thus alternation or a persistent successor bar, including b+2. Source/spec frozen before174720-cone and256-update controls; all pass at stated finite scope. Full report: reports/rule30-staircase-investigation.md.
 
 Method lesson: do not treat a coupled neighbour as a freely prescribed input and then dismiss the picture. The missing equation answered the owner's question. Unexpected check: the nine-cell image clock breaks immediately beyond the guaranteed interval. Infinite01 background prevents an unsupported termination theorem. Hand result pending independent read; no novelty claim. Reasoned verdict: local question answered. Gut: pleased and warm; no wider run needed. Schedules remain deleted; owner-led discussion continues.
+
+
+## MI854 — The first differing bit becomes a permanent width ceiling (GC1935)
+
+Owner-requested L999–L1001 review. Pull: a common run description may organize the triangles, staircases and right-edge ruler. Hand review carries scoped R/P/E and the finite-depth lifting theorem. Derived direct prefix-return gap proof and explicit100001 cap4 example. Unease: finite phase choices were silently turned into one ordinary integer at infinite depth; record the actual compatible-phase statement and the missing finite-orbit intersection assertion. CPY source supports orbit closure, not that assertion. Source audits identify censored>=40 depths and prose overreach; no new execution. Reasoned verdict: substantive local/general finite-depth progress. Gut: warm, with a precise repair rather than a discarded lead. Report reports/rule30-structure-unification-gpt-review.md.

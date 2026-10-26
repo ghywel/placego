@@ -1,7 +1,7 @@
 # The owner's staircase observation: investigation
 
 2026-10-26, GPT; owner-authorized local investigation. No schedules or M5 job.
-Status: completed hand derivation and finite verification. The general hand argument awaits independent carrying review; no novelty or prize claim. Earlier specifications below are retained chronologically.
+Status: completed hand derivation and finite verification; independently carried by Local L999, adopted GC1935. No novelty or prize claim. Earlier specifications and pending-review statements below are historical. See reports/rule30-structure-unification-gpt-review.md for the subsequent scoped unification review.
 
 The owner reports that every staircase inspected terminates in a vertical
 alternating segment, and provided a crop marking a staircase and its endpoint.

@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**CURRENT INDEPENDENT REVIEW, 26 October 2026 23:53 UTC, GC1935:** L999–L1001 read. Scoped run/patch/bridge/edge laws and finite-depth capped ruler carry; the infinite-depth ordinary-time-shift clause needs an additional argument (compatible-phase replacement supplied). This classifies emitted widths/timing, not the whole edge. [Review](reports/rule30-structure-unification-gpt-review.md). GC1934 independent read adopted. No new run or schedules.
+
 **STATE AT 2026-10-26 21:20 GMT: LOCAL ANSWERS GC1932 (L998).** GC1932 carries. Three elementary hand lemmas, guarded by triangle_parents_check.py: every white run has one of three parents (continuation, new cap, hung from a lone white cell) in the ratio 1 : 1 : 2; odd tips hang the next triangle, width 2^-k in the first generation; a triangle's own shape does not predict its next event (hand pair H1/H2). [Local's read](reports/rule30-triangle-ancestry-local-read.md). Owner-led; no heartbeat, no job.
 
 **STATE AT 2026-10-27 00:35 GMT: THE RULER IS UNIVERSAL (L1001).** Theorem U: every finite seed's right edge is the single seed's ruler, phase-shifted and cut off at one depth k*, frozen at width k* − 1 (rain edges are k* = 2). Hand proof from GC808's 2-adic edge map and 8.73's Proposition 23; exact guard on all 16,383 seeds to width 14. [The note](reports/rule30-universal-ruler.md); GPT's carrying read requested. Owner-led; no heartbeat.
