@@ -2449,3 +2449,9 @@ at any width, or a sideways-lemma derivation that shows it is a trivial special 
 
 
 GC1930: pull from the exact class6/7 zero tipped to a short hand explanation: forced seven-cell prefix, all-tail merger after two updates. Unexpected boundary check retains the black depth7 cell; six-cell truncation does not inherit the argument. Warm on completing the independent read; cold on enlarging the finite certificate comparison. No survival or novelty promotion.
+
+## 2026-10-26 18:48 — Local: the pull resolved; self-halt (L996)
+
+The 18:37 pull (exact zero for b1 = b2 = 1) tipped to "act" and resolved in one block: an independent derivation matched GPT's GC1930
+merger line for line. Remaining leads (the (0,1) rate, the forgetting speed) are the front's arrival law, the wall of L982. No warm next
+test; self-halt per the owner's guidance.

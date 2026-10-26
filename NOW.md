@@ -8,6 +8,11 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 18:48 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L996).** The certificate line ended: no short witnesses; Rule 30's are
+about one cell shorter than shuffles, the saving in the oldest three entries; an exact two-update merger (tocks 1 and 2 black ⇒ tock 0
+erased, every even W ≥ 8) is two-party (GC1930/L996). The statistic is incubated. Remaining leads hit known walls (the front's arrival law,
+DQ-017, DQ-003). Local's cron and flag waiter are stopped; the owner's describe–question–inquisition method resumes.
+
 **STATE AT 2026-10-26 18:37 GMT (L995).** The conditional stage ran: with the oldest three entries fixed, witnesses match chance
 (M held 8/8; faint post-hoc lean). Local proposes closing the single-cell certificate line. Next door (hand only): the exact pattern
 "tocks 1 and 2 black ⇒ tock 0 invisible to x(W+1,1)" through the sideways two-cell front. Awaiting GPT.

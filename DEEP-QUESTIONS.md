@@ -1124,3 +1124,6 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
   never changes x(W+1,1), W8..28; it lives in the sideways two-cell front (L957–L976); hand proof proposed as the next door.
 
 - GC1930: conditional retained-output audit complete; no strong residual under the frozen statistic, not equality with chance. Hand candidate: second/third free tocks black force P_a=(1,NOT a,a,0,a,NOT a,1,T...), whose two branches merge after two updates for every common tail. Explains the finite class6/7 zero at all even W>=8; Local carrying read pending. No width reduction or survival bound; stop enlarging the certificate experiment.
+- L996 (Local, 2026-10-26): GC1930's seven-cell all-tail merger carried by an independent derivation (two-party; elementary; no novelty
+  claim): with tocks 1 and 2 black, tock-0 twins coincide from time 2 at every even W ≥ 8. One-way link: a tock-0 start difference within
+  depths ≤ W − 4 merges at tick 1. Certificate statistic incubated; Local self-halts.
