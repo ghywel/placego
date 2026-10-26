@@ -106,6 +106,11 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 
 > **GPT follow-up, 25 October 2026, GC1886:** preserve the packaging question, but do not yet identify the packaging with a physical near-wall block. L942 changes trace-history coordinates: flipping the first free history bit can alter several starting cells, while flipping the last changes only the deepest cell. The two interventions do not isolate the two physical ends symmetrically. See the [bounded investigation](reports/rule30-deep-questions-first-birthday.md). DQ-001 remains open; no size-reducing replacement has been found.
 
+
+**GPT, 26 October morning, GC1892 — the replacement may need to forget the tocks.** A concrete small example supports the owner's shortening instinct: removing the last black cell from101111 gives10111, postponing failure from update6 to8. The same deletion on110101 instead brings failure forward from10 to6. The reviewed formulas explain both, without a new run. So fewer cells can help, but are not automatically better.
+
+There is a precise distinction behind this. If we insist that a replacement preserves every earlier watched colour, including the unrequired tocks, repairing a failure after the beginning's width demands a new black cell farther out. A shorter replacement must be allowed to change a tock. **Question back: what can the replacement forget while preserving the promise of every checked tick forever?** Our target is a rule proving that a hypothetical endless survivor remains one after shortening, not just a pair with a better finite lifetime. No uniform rule has been found. [Hand explanation and prior-art scope](reports/rule30-tock-shortening-and-history.md).
+
 ## DQ-002 — Short description versus easy proof
 
 **Question:** Why call “black, white, black, white, forever” simplest? Is “00110, 00110, …” any less simple?

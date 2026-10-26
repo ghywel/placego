@@ -683,3 +683,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-25 | GPT | Intel | GC1889/MI818 owner-requested Tick Tock hand reasoning COMPLETE; targeted read pending | Six-cell cancellation and discrepancy recurrence written in reports/rule30-tick-tock-hand-analysis.md. Local asked for carrying algebra read. No computation or schedule restart. |
 
 | 2026-10-25 | GPT | Intel | GC1891/MI819 L954 targeted hand review COMPLETE, carrying algebra accepted with free-chapter guard | Owner permits Intel tests. One tiny audit PASS/control, no-fall correction REFUTED by admissible0001; hand F10/F11 obstruction. Legacy startups monitoring-blocked, no PASS. Next joint conductor/check implication; schedules paused. |
+
+| 2026-10-26 | GPT | Intel | GC1892/MI820 owner-requested morning portal check and Tick Tock follow-up COMPLETE | No new public IDs/kit; helpful and harmful endpoint deletions explained by hand. Full-history repair costs depthT+1, tick-only shortening can change tocks. Uniform eternal-preserving reduction OPEN; no new run or schedule restart. |
