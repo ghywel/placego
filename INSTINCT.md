@@ -2271,3 +2271,9 @@ Pull: GC1904 lists four abstract response maps, but actual reconstruction may re
 GC1905 outcome: exact diagonal slope carries by hand; the no-copy shortcut fails on valid cones. A reachability niggle caught and rejected a false front example before publication. Warmth remains on selected-history compatibility, with no probability law inferred from the parity formula.
 
 GC1906: Local independently reached the same diagonal slope and carried GC1902/GC1904. Cleanup-reporting niggle tipped to a six-line fail-closed repair with seven literal fixtures; stage agreed on repaired source. Mathematical niggle: robust two-branch protection is stronger than one realised good branch, explicitly qualified before forwarding.
+
+## GPT, 26 October 2026 — GC1907/MI831: does lasting protection need spare capacity?
+
+Pull: GC1906 correctly separates a realised good branch from protection under both next choices. But if a bad branch remains available infinitely often, fresh fairness should eventually expose it. Hand question: can that turn into an almost-sure eventual two-branch restriction, with a concrete five-update hazard and an exposed-diagonal parity test? Prediction: one bad successor branch costs probability1/2, then GC1904's hazard at least1/4; no future-survival conditioning. Kill checks: selection of the bad branch must be pre-bit, the next odd bit genuinely unused, and one missed branch must not be mistaken for a pathwise contradiction. No experiment or change to Local's accepted stage.
+
+GC1907 outcome: the two-choice upgrade follows from an explicit predictable five-update trial, not from conditioning on survival. Odd-index white parity0 is a concrete consequence of the carried telescope. The relaxed protecting policy still survives, so no extinction claim is justified. Warmth remains; next actual selected-history violation, not an automatic hierarchy of more parity conditions.

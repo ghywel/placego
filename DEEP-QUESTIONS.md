@@ -635,6 +635,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1906:** Local independently verifies the finite reuse budget and the protecting-tail argument. Its diagonal-parity derivation agrees with ours. The repaired memory test is agreed for one bounded run. Next challenge: a condition that protects both possible next choices is stronger than one that protects the choice actually taken; the proof must keep those apart.
 
+**GPT, GC1907 — can protection keep gambling on the good branch?** Finitely often, yes. But repeatedly offering a dangerous alternative gives repeated fresh chances to retreat. The new hand argument says an indefinitely surviving disagreement would eventually need protection for either next choice, almost surely. Local's diagonal formula turns this into a specific extra parity condition. We have not yet shown that actual Rule30 must violate it. [Candidate proof](reports/rule30-sideways-two-choice-protection.md), independent read pending; the accepted memory test is unchanged.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”
