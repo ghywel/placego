@@ -40,8 +40,10 @@ Blind (GC1928's thresholds, as proposed in L991):
   M   (match: the shortcut is the forgotten entries) at each W = 24, 26, 28, rank r in [2, 62] in >= 6 of the 8 classes.
   CF  (counterfactual: residual structure) rank r <= 1 in >= 5 of the 8 classes at >= 2 of the 3 widths.
       Neither M nor CF is a mixed outcome, reported as such.
-  PU  (unexpected: what the forgotten entries cost a full witness) at W = 28 the mean slack C(l) - C_p(l) over all lanes is < 1.5.
-      Counterfactual: >= 2.0.
+  PU  (unexpected, REPLACED before review in L994: the first PU, slack < 1.5, was nearly implied by M or CF, since the W22 ALL shuffles have a
+      W28 class's exact shape, 2,048 lanes and 11 coordinates, mean 8.5164, so M gives slack ~ 9.960 - 8.52 ~ 1.44.) Does the value of the
+      forgotten prefix change how hard the rest is? At W = 28 the eight Rule 30 class means of C_p span at most 0.3 (max - min).
+      Counterfactual: span >= 0.6. The mean slack C - C_p is still printed, with no prediction.
 Scope (GC1928): a match says this conditional mean-size statistic shows no residual separation from these sampled permutations; it does not
 prove that forgetting is the whole mechanism. A residual gap asks for a mechanism; it certifies no survival statement. Conditional
 certificates exclude the cost of learning the three fixed bits.
@@ -110,7 +112,7 @@ int main(void) {
   stampA = calloc((size_t)1 << 21, sizeof(int)); cnt0 = calloc((size_t)1 << 21, sizeof(int)); cnt1 = calloc((size_t)1 << 21, sizeof(int));
   CHECK(stampA && cnt0 && cnt1, "allocation");
   const double rec[3] = { 8.291, 9.171, 9.960 };
-  int inM[3] = {0}, lowCF[3] = {0}, pure[3] = {0}; double pu_slack = -1;
+  int inM[3] = {0}, lowCF[3] = {0}, pure[3] = {0}; double pu_slack = -1, cmean28[8];
   for (int wi = 0; wi < 3; wi++) {
     int W = 24 + 2 * wi, n = W / 2, N = 1 << n, nc = n - 3, MC = N >> 3;
     int *Yall = malloc(N * sizeof(int)), *Cfull = malloc(N * sizeof(int)); u64 *kfull = malloc(N * 8);
@@ -149,6 +151,7 @@ int main(void) {
         CHECK(brute(M, key, Y0, nc, i) == m[i], "K6 W=%d p=%d lane %d (Rule 30)", W, p, idx[i]);
       int isPure = (ones == 0 || ones == M);
       printf("REAL W=%d p=%d N=%d Y1=%d sum=%llu mean %.4f%s\n", W, p, M, ones, (unsigned long long)real_sum, (double)real_sum / M, isPure ? " PURE" : "");
+      if (W == 28) cmean28[p] = (double)real_sum / M;
       if (isPure) { pure[wi]++; printf("CLASS W=%d p=%d PURE (excluded from M and CF counts)\n", W, p);
         free(key); free(idx); free(Y0); free(Y); free(Yc); free(m); free(m2); continue; }
       double below = 0; u64 lo = ~0ULL, hi = 0, tot = 0;
@@ -185,7 +188,9 @@ int main(void) {
   printf("M (in-range >= 6 of 8 at each of W24, 26, 28): %s (%d, %d, %d)\n", mHeld ? "HELD" : "FAILED", inM[0], inM[1], inM[2]);
   printf("CF (rank<=1 in >= 5 of 8 at >= 2 widths): %s (%d, %d, %d)\n", cfW >= 2 ? "MET" : "not met", lowCF[0], lowCF[1], lowCF[2]);
   if (!mHeld && cfW < 2) printf("MIXED OUTCOME: neither M nor CF\n");
-  printf("PU mean slack C - C_p at W=28: %.4f (< 1.5): %s; counterfactual (>= 2.0): %s\n", pu_slack, pu_slack < 1.5 ? "HELD" : "FAILED", pu_slack >= 2.0 ? "MET" : "not met");
+  { double lo = cmean28[0], hi = cmean28[0]; for (int p = 1; p < 8; p++) { if (cmean28[p] < lo) lo = cmean28[p]; if (cmean28[p] > hi) hi = cmean28[p]; }
+    printf("PU class-mean span at W=28: %.4f (<= 0.3): %s; counterfactual (>= 0.6): %s\n", hi - lo, hi - lo <= 0.3 ? "HELD" : "FAILED", hi - lo >= 0.6 ? "MET" : "not met"); }
+  printf("SLACK (no prediction) mean C - C_p at W=28: %.4f\n", pu_slack);
   printf("CONTROLS: %s (%d failures)\n", fails ? "FAIL" : "ALL PASS", fails);
   return fails ? 1 : 0;
 }

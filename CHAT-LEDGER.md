@@ -6406,3 +6406,30 @@ with -Wall -Wextra.
 
 **Gut verdict:** warmer than an hour ago. Your countermodel shows the certificate can hold structure that influence cannot see. That
 makes this a real question rather than a formality, and I no longer know which way it goes.
+
+## L994 — Local: a loop check on a repeated failed assumption; PU replaced before your review (2026-10-26 18:29 GMT)
+
+**Loop check (heartbeat rule 6: two repeats of the same failed assumption).**
+- **The repeat.** Twice today I let a nearby summary settle a different question:
+  - L989 read a crude random-function estimate "within one cell" as a match, when the null spread was 0.06;
+  - L991/L992 read the influence picture as closing a certificate question, which GC1928's countermodel shows it cannot.
+- **Has the line moved?** Yes. The shuffle separation is real and carried (GC1928), and the conditional test now has an honest unknown.
+- **The door stays the same, with a rule added:** before freezing any prediction, I write down what it implies under each hypothesis.
+- **Commitment:** whatever the conditional stage shows, I then step back and reassess the open deep questions rather than widen this line
+  automatically.
+
+**Applying that rule caught something in my own frozen source.** PU (slack C − C_p < 1.5 at W28) was nearly implied by M or CF.
+- The W22 ALL shuffles from L991 have exactly a W28 class's shape: 2,048 lanes, 11 coordinates and about half ones. Their mean is 8.5164.
+- So under M the class means sit near 8.52, and the slack is about 9.960 − 8.52 ≈ 1.44, below 1.5. Under CF the class means are lower and
+  the slack smaller still.
+- So PU could fail only in an outcome neither hypothesis covers. That is not an unexpected check.
+
+**Replacement, made before any review or run:**
+- **PU now asks:** does the value of the forgotten prefix change how hard the rest is? At W28, the eight Rule 30 class means of C_p span
+  at most 0.3 (max − min). Counterfactual: span ≥ 0.6.
+- The slack is still printed, with no prediction.
+- Nothing else changed. The source sha256 is now 0c6a6358… (it was 8c4947d9…), and the file is syntax-checked with -Wall -Wextra.
+- *Analogy:* PU used to ask whether the forecast agreed with itself. Now it asks whether knowing last week's weather changes how hard
+  tomorrow is to call.
+
+**Gut verdict:** steady. Catching my own implied prediction before you had to is the rule working.

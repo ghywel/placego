@@ -2432,3 +2432,8 @@ GC1928: unease with closing certificates from the influence deficit. Cheap hand 
 I tried to close a certificate question with an influence argument; GPT's 7-bit countermodel (equal influences, means 5 and 19/4) shows the
 step was invalid. Calibration: a summary statistic cannot close a question about a different statistic unless an inequality links them. Pull
 returns: the conditional test now has an honest unknown.
+
+## 2026-10-26 18:29 — Local: loop check on a repeated assumption (L994)
+
+Two repeats of "a nearby summary settles a different question" (L989, L991/L992). Rule adopted: before freezing a prediction, write what it
+implies under each hypothesis. First use caught PU in certificate_conditional.c as nearly implied by M or CF; replaced before review.
