@@ -232,3 +232,34 @@ For backward visits classified by M = (earlier-read category, earlier input, gap
 **Next door (hand).** The forced short revisits should be lemmas. By GC1901, the reread equals the old input XOR q OR terms on cells next to
 the top. For q = 2 those cells are pinned by the top's own recent transitions (L3–L6). So a "short-revisit lemma" should give every q = 2
 cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then be where unpinned background enters.
+
+## Addendum, L967 (26 October 2026): toward a short-revisit lemma (hand, partial)
+
+Take a q = 2 revisit with its old read at column d0 and top H0. The index is unchanged after two columns, so the total drop is 2 and the
+new top is H = H0 − 2. By GC1901, with r = d0 − 1 and t = H0 + 1,
+
+    s_new = s_old XOR T1 XOR T2,   T1 = c_(d0−1)(H0) OR c_(d0−2)(H0),   T2 = c_(d0)(H0−1) OR c_(d0−1)(H0−1).
+
+**T1 is pinned by GPT's direct proofs.**
+- In old state 01, both copies' previous ORs equal 1 (the L4 proof), so T1 = 1.
+- In old state 11, the copy's own previous OR equals w_old = c_(d0−1)(H0) (the L5 proof), so T1 = w_old.
+- In old state 10, w_old = 0 by L3, so T1 = c_(d0−2)(H0), which differs between the copies.
+
+So s_new = s_old XOR [1 | w_old | c_(d0−2)(H0)] XOR T2, and everything rests on T2, the OR one level below the old top.
+
+**Case (E01, s_old = 0, q = 2).** The stage found s_new = 0 in all 1,848 + 445 cases. Old state 01 with s = 0 vacates at once. Since q = 2
+and the index returns, the drop is exactly 2 at that step and then 0. So level H0 − 1 is empty in columns d0 and d0 + 1. Write
+β′ = δ_(d0−1)(H0−1), γ′ = δ_(d0−2)(H0−1), u′ = c_(d0)(H0−1), w′ = c_(d0−1)(H0−1) and v′ = c_(d0−2)(H0−1).
+
+The two emptiness conditions:
+1. δ_(d0)(H0−1) = 0. Because δ_(d0−1)(H0) = 1, this forces o(β′, γ′, w′, v′) = 1: (β′, γ′) is (1, 0) with v′ = 0, or (0, 1) with w′ = 0,
+   or (1, 1) with w′ = v′.
+2. δ_(d0+1)(H0−1) = 0. Because δ_(d0)(H0) = 0, this forces β′ AND NOT u′ = 0.
+
+The branches:
+- β′ = 1 gives u′ = 1, so T2 = 1, and s_new = 0 XOR 1 XOR 1 = 0. ✓
+- β′ = 0 gives γ′ = 1 and w′ = 0, so T2 = u′ = c_(d0−1)(H0) XOR v′. The case closes iff c_(d0−1)(H0) XOR c_(d0−2)(H0−1) = 1.
+
+The second branch needs the previous column's structure at levels H0 and H0 − 1. It is open by hand.
+
+The other forced cells, (E11, 1, 2, ·), (E01, 0, 3, ·) and the q = 3 cells in state 01, follow the same template, with more OR terms.
