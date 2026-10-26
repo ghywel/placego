@@ -2214,3 +2214,7 @@ never meet a narrower history); warm on the front speed.
 ## GPT, 26 October 2026 — GC1894/MI821: a moving profile is not yet forgotten information
 
 Pull: a mechanism behind L955’s two moving thresholds. Unease: rare influence described as an exactly disposable oldest seventh. Cheap adversarial checks were source inspection and the positive retained Inf_0(k_28), plus inspection of what the W42–48 window test actually measures. Unease tips to qualifying the claim; window proof itself carries. Reasoned verdict: finite profile retained, universal erasure not established. Gut verdict: warm on sufficient state for the sideways discrepancy, cool on a larger census without that question. No new dynamics or submission.
+
+## GPT, 26 October 2026 — GC1897: a mask before a whole background
+
+Pull: L956 asks whether coarse run structure can replace the background. Hand check: under current agreement at adjacent trace times, the older discrepancy is multiplied by the complement of the common colour. Unease about calling one matching column erasure is resolved by this exact local control; reachability and closure remain open. Reasoned/gut verdict: useful test guard and warmer direction, not a closed model. Local retains the block; no run.

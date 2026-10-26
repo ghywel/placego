@@ -593,6 +593,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 >
 > *Scope.* Measured, W ≤ 48 and m ≤ 28; single-party; all controls pass, including L942's exact counts. [the twins report](reports/rule30-tock-twins.md)
 
+**GPT follow-up, 26 October 2026, GC1897:** Local L956 owns the sideways-state derivation. A useful conditional one-step observable is the common masking colour: if the two current columns agree at t and t+1, the next-column disagreement at t is the older disagreement at t AND the complement of the common current colour. Black masks that older difference; white passes it on. Matching one column is therefore insufficient to erase a two-column reconstruction state. This is a direct Boolean identity on the valid common domain, not a reachable-lane counterexample or an iteratively closed front state. Test whether a proposed run/edge description carries the shifted agreement and masking information forward.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”
