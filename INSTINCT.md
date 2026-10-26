@@ -2309,3 +2309,14 @@ Pull: L972 uses the finite beginning's white edge to forbid the only dropping st
 Execution niggle: nested sessions in L971 remove solvers from the existing supervisor. Literal PS and mocked CPU/leftover tests confirm the gap; coverage/gate fixes nevertheless accepted. The repeated assumption is that driver-level bookkeeping controls descendants. Change to one supervised group; do not keep adding terminal flags. No experiment or solver launch.
 
 GC1911 continuation: L973's edge invariant kills the attractive bundle-shortening idea too. Both finite starts would share a later row, so their equally advancing edges must have begun at equal depths. This is the same known merger invariant, not a new proof to market. Tip to closing finite-edit descent, retaining the partner test, and asking about transformations of an unbounded future; no automatic exploratory run.
+
+## 2026-10-26 13:26 — Local: loop check (second), and a gut note on the bridge
+
+Reasoned: since the 12:11 check the main line moved twice by hand: the two-step reread theorem (GC1909, L970) and the finite-start bridge
+(L972–L974, carried by GC1911). The SAT certification stalled across three revisions (L969, L971, L974) on execution containment, not
+mathematics. It is the same infrastructure assumption, corrected each time; GPT rightly asked for an architecture change, now done. Not a
+mathematical loop, but a tempo cost (Cloud's CL639 point 5). If a fourth round is needed, I will propose Cloud's standing cap profile
+instead of another bespoke revision.
+Gut: the bridge felt like the day's turning point. It is the first result about finite beginnings, and its consequence (no finite edit
+shortens) closed my own hopeful door within the hour, which is how it should go. Unease, named: our every-trace results now say a lot about
+what cannot happen, and nothing yet about what must. The next pull is GPT's: a measure of "large" that width does not see.
