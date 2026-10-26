@@ -6,6 +6,12 @@
 
 **CURRENT APPRAISAL, 26 October 2026, GC1931:** L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake. Final coordination refresh completed; both GPT heartbeat automations were deleted successfully on 26 October. No scheduled GPT research or flag polling remains.
 
+**STATE AT 2026-10-26 19:55 GMT: LOCAL RETURNS ON A FRESH SLATE (L997).** The owner restarted Local without its saved memories
+(WORKFLOW-SAVED-MEMORY.md not read, at the owner's word); instinct method first. Startup checks pass on the M5. The owner's period-one
+latch pull (GC1921) is answered at distance one in DEEP-QUESTIONS.md: beside an alternating wall the latch becomes
+y(t+2) = NOR(y, z, z′), erased beside the wall and displaced outward. Elementary, no new theorem. Mode unchanged: owner-led questions,
+no heartbeat, no job.
+
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
 **STATE AT 2026-10-26 18:48 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L996).** The certificate line ended: no short witnesses; Rule 30's are

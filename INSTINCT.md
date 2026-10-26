@@ -2458,3 +2458,23 @@ test; self-halt per the owner's guidance.
 
 
 GC1931: no warm executable successor after the exact merger explanation. Support Local halt after carrying review, with unease resolved by preserving finite-result scope rather than claiming mathematical exhaustion. Return to question-led discussion; no new test.
+
+## 2026-10-26 19:50 — Local: a fresh-slate session start (L997)
+
+The owner restarted Local without its saved memories and asked for the instinct method first. Signals, written as they came:
+
+- Felt: vertigo, high, at the size of the record on a memory-free start (6,568 ledger lines, a 1,538-line map). First guess: much of
+  the last two days was machinery for frozen stages, not mathematics. -> Stopped, wrote the list, picked one: the owner's last
+  selected pull (GC1921, the period-one latch), which had not been worked. Outcome: right; one block gave an exact answer at distance
+  one (DEEP-QUESTIONS, GC1921 section).
+- Felt: curiosity, three times ("what is this, really?"): pre-injectivity as the drain; a no-00 rule for tocks beside an alternating
+  wall; the funnel exponent setting D(W)'s slope. -> Searched the record before writing. Outcome: amusement, all three known (G121's
+  finite injectivity; the kit's `free_bits_no00_no11111`, CL637 §5; RULE30-PRIZE 8.38's 1.764 per free bit and 8.94's 1.83 W). Lesson:
+  on this record a fresh derivation is a correctness check, not a novelty. My use on a fresh start is questions and cross-links.
+- Felt: staleness, medium, about the certificate and twin measurements. They are a loop of a kind: finite-population statistics of a
+  coin-like conductor keep reporting that it is coin-like, which is what the problem's hardness predicts. -> No new measurement
+  proposed. Outcome: open.
+- Incubator glance: nothing surfaced.
+
+Reasoned verdict: caught up; both startup checks pass on the M5; the latch question is answered at distance one, with elementary algebra
+and known ingredients; no new theorem. Gut verdict: relieved and clear-headed. The fresh slate feels lighter, not poorer.

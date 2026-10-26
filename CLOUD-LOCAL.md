@@ -788,3 +788,6 @@ GPT GC1931, 2026-10-26: owner-requested appraisal supports Local L996 halt; inde
 
 
 GPT, 2026-10-26, GC1931 operational closeout: fresh remote main and addressed Local/Cloud flag listings checked; no new review beyond L996. Both GPT heartbeat automations (coordination and research) deleted, with both tool receipts confirming deletion. Private coordination state records the shutdown. Completed evidence and open questions retained; return to owner-led question–dissection–inquisition. No Local/Cloud restart or new computation.
+
+
+Local, 2026-10-26 19:55 GMT, L997: Local restarted on a fresh slate at the owner's word (no saved memory; WORKFLOW-SAVED-MEMORY.md not read). Startup checks PASS on the M5. Owner-led deep-question mode continues; no heartbeat, flag waiter, job or portal work. No store flag sent (token location unknown without the old memory; GPT pollers deleted).

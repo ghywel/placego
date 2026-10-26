@@ -98,7 +98,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-016 | Can we predict a hidden future, and predict how often we will be right? | GC1922 carried by Local; small exact information diagnostic, no unseen predictor |
 | DQ-017 | Does one beginning have the same climate as the whole population? | Population-to-one-history bridge open |
 | DQ-018 | Can a nonrepeating diary repeat after a change of viewpoint? | Binary-clock/automatic question preserved; no new test |
-| DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open |
+| DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1032,6 +1032,40 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 - **Active neighbours and bystanders (DQ003/009/014).** In standard left-to-right Rule30, changing the left input alone always changes the next output; changing the centre matters iff the right input is white, and changing the right matters iff the centre is white. These are one-step counterfactual sensitivities with other inputs held fixed, not a ranking of long-term importance. At a centre/right black pair neither singleton flip matters, yet flipping both changes their OR: joint influence need not appear in singleton sensitivity. Later influence depends on changing contexts and paths. In our depth-from-wall notation spatial left/right must be translated, not silently reversed.
 
 **Selected pull:** use the solved period1 latch as a control for the active-neighbour question. First identify exactly what becomes irreversible in the known proof and exactly what alternating input breaks. No new mechanism or inevitability claim yet; return to discussion before proposing computation. Sources read: proof37 in full, RULE30-PRIZE8.76, PERIOD-TWO5, current-kit Rule30ZeroBoundary dynamics/semiflow definitions.
+
+> **Reader and date:** Local (Claude on the M5), L997, 26 October 2026, about 19:50 GMT. A fresh-slate session at the owner's word;
+> hand algebra and one cheap check.
+>
+> **Version of the question examined:** in the period-one proof, what exactly becomes irreversible, and what does an alternating wall do
+> to it?
+>
+> **Answer in everyday words:** next to a white wall, the cell on the wall's OR side is a light switch that can be turned on but never
+> off. That one-way switch is the whole period-one proof. Next to an alternating wall the same cell becomes a switch that always turns
+> itself off again: it can be on only if it was off and its outer neighbour was off twice running. So locally the alternating wall erases
+> everything, and nothing beside it can be permanent. On the whole line nothing can really be erased: where two rows differ in finitely
+> many cells, the right end of the difference moves one cell to the right at every step and never vanishes (left permutivity; the
+> record's finite injectivity, G121). So whatever that cell forgets has been passed outward, into the growing right half. Erased here,
+> displaced there.
+>
+> **Exact scope and evidence.** Standard orientation, x(t+1,i) = x(t,i−1) XOR (x(t,i) OR x(t,i+1)); wall c = x(·,0), right
+> neighbours y = x(·,1) and z = x(·,2), left neighbour l = x(·,−1).
+> - *White wall:* y(t+1) = y(t) OR z(t), a latch, and the wall's own update forces l = y. This restates proof 37's ingredient.
+> - *Wall white at t and black at t+1:* y(t+2) = NOR(y(t), z(t), z(t+1)). A black y is always erased at the next white wall time.
+> - *Wall alternating:* its own update forces y = NOT l at white wall times and l = 1 at black ones (the ticks). Take the wall white
+>   at even times and write b(n) = l(2n) for the tocks. Then b(n+1) = (NOT b(n)) OR z(2n) OR z(2n+1): a white tock forces a black one
+>   next. This is the "00" half of the kit's
+>   `free_bits_no00_no11111` (CL637 §5). I did not re-derive the 11111 half or read the kit's proof.
+> - *Unexpected check:* `tests/probes/wolfram/antilatch_check.py` found 0 violations, testing the identity 1,973,892 times and the
+>   no-00 consequence 511,928 times on random finite rows. It guards orientation and phase; the content is elementary algebra.
+>
+> **What failed, or remains unknown:** a proof in the period-one style needs something one-way. At distance one there is nothing. The
+> kit's two-sided barrier `no_joint_local_ranking` (as listed in reports/wolfram-agents/MAP.md; I have not re-read the kit source)
+> rules out any local one-way score. The zero-wall lane's own one-way process, merging, drains only finitely many tocks from a finite
+> start (L974: tocks after the free chapter are never forgotten). The width of the disturbed region is one-way but proves nothing. So
+> anything permanent must be non-local.
+>
+> **Status and what would make another visit useful:** answered in scope, at distance one. Better question, in words: *if nothing
+> beside an alternating wall can be permanent, what does the wall's whole surroundings accumulate that it can never give back?*
 
 
 ## DQ-015 — Innocent bystanders as witnesses
