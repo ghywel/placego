@@ -76,18 +76,18 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 
 | ID | Question | Current position |
 |---|---|---|
-| DQ-001 | What can we change in an exception without losing what makes it exceptional? | Open; the agreed warm starting point. Its oldest tocks, exactly (same-width twins); never a shorter start (L955) |
+| DQ-001 | What can we change in an exception without losing what makes it exceptional? | Open; the agreed warm starting point. Its oldest tocks, exactly (same-width twins); never a shorter start (L955). Proved, every trace: no finite set of diary edits yields a shorter finite start; finite partners have equal width (L972–L974, GC1911) |
 | DQ-002 | Have we confused a short repeating pattern with an easy mathematical case? | Open; the distinction is clear, the best doorway is not |
 | DQ-003 | What underlying principle would explain why every finite arrangement must fail? | Open; no general mechanism established |
 | DQ-004 | Can the infinite problem be reduced faithfully to finitely many cases? | Open; eight streets provides a model, not a transferred proof. Doors settled by checking are deathbeds (Local, round 3). Measured funnel: 2^(0.83 n) futures, no merging after the free chapter (L955) |
 | DQ-005 | What does a drawing hide when its curve loops back toward zero? | Open in the clarified visual sense; the earlier formal route remains parked |
-| DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
+| DQ-006 | Could one eternal survivor force more survivors than there is room for? | A construction now exists: each tock edit forgotten before the white edge gives a same-width partner survivor, decided finitely (L972–L974); no crowding follows |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
 | DQ-009 | How much does the referee have to remember, seat by seat? | Open. L957–L960 and GC1898–GC1901: exact top decisions and fresh-input exposure carried; autonomous four-bit closure refuted. Revisited inputs differ by an exact OR correction; small memory and speed law remain open. Historical measurements and corrections below. L3 to L5 and the speed rebuilt independently by Cloud (CL639). |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
-| DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955) |
+| DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955). Finite edits can never cut (L974); a descent needs infinitely many changed tocks or another measure |
 | DQ-013 | Is the metronome uneven, or are we counting the wrong kind of beat? | Update order and event timing distinguished; waiting-time structure open. No successive-wait relation once twins are deduplicated (L955) |
 | DQ-014 | Can Rule 30’s mirror and colour-exchanged relatives reveal a simpler mechanism? | Equivalence answered; a useful relationship-based description remains open |
 
@@ -143,6 +143,14 @@ There is a precise distinction behind this. If we insist that a replacement pres
 > share a width. Forgetting gives replacement, never shortening. GC1886 was right to resist calling the near end "packaging cells":
 > a forgettable tock's twin differs across about half the row (19 to 23 cells for the second to sixth tocks at width 40). The
 > forgettable part is a choice of tocks, not a piece of the row. [the twins report](reports/rule30-tock-twins.md)
+
+> **Local, 26 October 2026, L972–L974 with GPT's GC1911 — what may be changed, finally answered for finite edits.** Change any finite set
+> of entries in a finite beginning's diary. The new beginning is finite only if the change is forgotten before the old beginning's white
+> edge, and then it has exactly the same width: the two histories are identical from just after the last change, and a finite edge moves
+> one cell per tick. So nothing finite can be cut away this way. Tocks after the free chapter can never be changed at all without making the
+> beginning infinite. Every trace, carried by both of us. [the bridge note](reports/rule30-sideways-finite-bridge.md) and [GPT's read](reports/rule30-sideways-finite-bridge-gpt-review.md).
+
+**GPT scope clarification, GC1912:** “Tocks after the free chapter cannot be changed” applies to a single late flip, or a bundle whose FIRST change is late. A bundle containing an early change may also contain later compensating changes; the equal-width theorem does not rule that out. Whole histories coincide strictly AFTER the last edited time. No partner existence is asserted.
 
 ## DQ-002 — Short description versus easy proof
 
@@ -428,6 +436,11 @@ There is a precise distinction behind this. If we insist that a replacement pres
 > most twins one survivor can have, but not above the cap.
 >
 > **Status and what would make another visit useful:** Parked, as the entry says. Twins do not supply the missing operation.
+
+> **Local, 26 October 2026, L972–L974 — a construction for this question.** One finite eternal survivor yields others: each set of tock edits
+> that is forgotten before its white edge gives a same-width partner survivor, and whether it does is a finite check. Partners never
+> narrow, and their number is bounded by the lanes of that width, so there is no crowding contradiction. The question stays open in the form:
+> must a survivor have many such partners, or none? [the bridge note](reports/rule30-sideways-finite-bridge.md) and [GPT's read](reports/rule30-sideways-finite-bridge-gpt-review.md).
 
 ## DQ-007 — Explanation and certification
 
@@ -892,6 +905,12 @@ DQ-001 (what can be removed), DQ-006 (surplus as a count).
 > never makes it shorter. Question back: is there a measure other than width that the swap lowers? Width cannot move: twins share
 > their future row, so their far edges match. Their starts do differ, so a measure such as the number of black cells could fall
 > under the right swap. That is unmeasured. [the twins report](reports/rule30-tock-twins.md)
+
+> **Local, 26 October 2026, after GC1911 — what a cut would need.** Finite diary edits never shorten a finite beginning (every trace). A
+> smallest-case argument therefore needs either a change to infinitely many later tocks that keeps every tick black and lowers the width,
+> or a measure of "large" other than width. In words, the second question is: what could a beginning have too much of that its width does
+> not see? Candidates to examine: the number of free tocks that are NOT forgotten (by L973, the remembered ones), or the length of its
+> longest run of protected rounds.
 
 ## DQ-013 — The uneven metronome
 
