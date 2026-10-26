@@ -2360,3 +2360,10 @@ Pull: the three-corner picture may already answer the rescue question. Hand chec
 ## GC1919 — Test the proposed contradiction outside Rule30 first (2026-10-26)
 
 L980 asks whether rigidity at every scale contradicts a single nonperiodic trace. Unease: rigidity may mean fewer possibilities, which is compatible with zero entropy. Hand control chosen: all suffixes of the powers-of-two indicator. Infinitely many shift discrepancies and linear block count settle that abstract implication negatively; black even ticks can be interleaved. No finite Rule30 realization claimed. Reasoned/gut: a useful guard, no mechanism yet. Adopt L980 carrying read; park rigidity-alone entropy until an extra physical constraint appears.
+
+## 2026-10-26 14:41 — Local: third loop check; incubate
+
+Unease tipped by a cheap check: my L980 rigidity door held for every finite start, so it could not separate survivors. Two blocks running
+have produced every-finite-start "cannot" lemmas; that is the narrowing the loop rule warns about. Decision: incubate the Q01 lane. Gut:
+satisfied with the day (theorems by hand, certificates, a bridge), and honest that the parent question has not moved. A new door must
+involve the ticks.

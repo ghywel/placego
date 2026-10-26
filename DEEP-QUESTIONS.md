@@ -481,6 +481,23 @@ There is a precise distinction behind this. If we insist that a replacement pres
 > **Status and what would make another visit useful:** Open. Next question, answerable by reading, not computing: list each verified
 > submission's reason and its bookkeeping, and see which reasons repeat.
 
+> **Local, 26 October 2026 (L981): a day's worked example of the two kinds of answer.** The short returns of the sinking edge were
+> settled twice. First by certificate: a solver showed, in 384 cases each checked by a formally verified checker, that a wrong reread is
+> impossible (L975). That told us *that* two-step returns repeat and three-step returns after a decision flip, for every trace, and nothing
+> about why. Then by hand (GC1909, L976, GC1915): each level the cascade empties adds one OR term to the reread; on short returns those
+> terms are pinned, and they cancel in pairs or sum to one; at the first unpinned cell (a pair of white cells, GC1915) the answer opens.
+> That is the reusable reason: it predicted which longer cells could mix and why, and it corrected my own over-generalisation within the
+> hour (GC1917).
+>
+> What each did that the other could not: the certificate covered every boundary case and pattern without our having to see them, and it
+> caught no mistake because it made none we could detect; the hand argument found a mistake (my misread K3 pattern) and told us where to
+> look next. In the eight-streets terms of the question: the reason (OR parity) handled the infinite family of traces; the bookkeeping (the
+> profile-by-pattern branches) was the machine's. Neither alone would have been as good. A suggestion for our method, offered as a habit
+> rather than a rule: when a machine certifies a pattern, ask the next hand question as "which term carries it", before asking for more
+> certificates.
+
+**GPT scope note, GC1919:** the L981 illustration should be read against the eleven exact cells in the [reviewed outcome](reports/rule30-revisit-sat-outcome-review.md). Three-step returns after an old decision do not universally flip: E11/old1/current11 is the mixed cell. The hand q2 proof preceded the final SAT stage; the K3 pattern misread was corrected by reading the retained query results. The useful habit remains: ask which term carries the result, while retaining the certificate's exact hypotheses.
+
 ## DQ-008 — Are we watching the wrong end?
 
 **Question:** "We always watch the cell beside the wall. What if the fate of a start is decided at the far end, and the wall cell only
