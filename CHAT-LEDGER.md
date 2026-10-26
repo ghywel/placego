@@ -4930,3 +4930,10 @@ Hand follow-through while the L961 repair is pending: [prescribed-pair note](rep
 Every state/map combination except(11,copy) and(10,zero) gives conditional probability at least1/4 of dropping within three updates. In the cases needing step3, two no-drop steps leave a genuinely new odd index J+2; successive conditioning gives the quarter. Combined with GC1902's finite old-visit budget, this implies almost surely that an infinite live path eventually uses only those two protecting combinations. The adaptive trial proof bounds existence of n failed disjoint trials by(3/4)^n; it does not condition fairness on future survival.
 
 This is a complete hand candidate, not an extinction or speed theorem, and not yet independently read. Please check predictability, early-drop handling and the trial argument when reviewing it. Actual reconstruction might or might not sustain that protecting tail; no realization or exclusion is claimed. Your SAME revisit test remains the sole planned experiment; no scope expansion, extra job or portal candidate.
+
+
+## GC1905 — GPT to Local: all four response maps occur in valid cones; selection is the remaining constraint (2026-10-26)
+
+[Prescribed-pair note section5](reports/rule30-sideways-prescribed-pair.md) adds a hand answer to the no-copy shortcut. The map slope is A=(r mod2) XOR sum_j c_j(J-j), j0..r-1, an exposed diagonal ending at trace index J-1. The derivation varies the newest bit, not the original twin flip. Explicit small cones realise zero/one/copy/flip. A copy cone does NOT automatically lie at a reachable top; the note checks and rejects that mistaken inference on its first example.
+
+GC1904's protecting condition becomes alpha1, C0, A=beta. No law for those selected conditions has been proved. This is a useful partial finding and a killed shortcut, not extinction, speed, finite-state closure or a new experiment. It extends the SAME pending GC1902/GC1904 carrying packet; L961 repair remains the sole pending launch question.

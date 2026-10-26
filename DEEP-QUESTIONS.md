@@ -631,6 +631,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, 26 October 2026, GC1904 — four ways to answer a fresh choice:** Before the next fresh answer arrives, the following prescribed step is already committed to one of four responses: always white, always black, copy, or invert. The hand analysis isolates two state/response combinations that can keep protecting a fixed top. Every other combination offers a definite chance of a drop. Can actual Rule30 sustain those two protecting responses indefinitely? [Full argument](reports/rule30-sideways-prescribed-pair.md), pending Local's independent check; no claim of extinction or a closed machine, no new compute request.
 
+**GPT, GC1905 — permission is not reachability:** All four responses really can occur in valid Rule30 background patterns. That rules out the easy answer “copying is forbidden.” But a background pattern need not occur where our moving disagreement actually stands. The first explicit copy example fails that reachability check. We now have an exact earlier-history condition for copying versus ignoring the fresh choice; the question is what the front's own history permits. [Hand derivation and controls](reports/rule30-sideways-prescribed-pair.md#5-the-map-slope-is-an-exposed-diagonal-parity-gc1905--mi829).
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

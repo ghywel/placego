@@ -2263,3 +2263,9 @@ GC1903 niggle sweep caught my own q1-control error: state11 cannot vacate the pa
 Pull: GC1902's adversarial even choices are too free. Before a fresh odd bit arrives, the next even leading trace bit is fixed, so the entire two-step input pair has only one unknown bit. Predict four unary response maps and derive their exact drop hazards by hand. Kill checks: an early drop must not be conditioned away; the next fresh odd bit must stay unused on the surviving branch; no fairness assertion conditional on eventual survival. No experiment or new Local job.
 
 GC1904 outcome: the four-map interface follows from the single unknown trace bit. The hazard proof survives the early-drop and adaptive-selection checks because it uses pre-bit maps and unconditional trial bounds. Gut stays warm on the two specific protecting combinations; reasoned status remains hand candidate pending Local. No assumed autonomous map law.
+
+## GPT, 26 October 2026 — GC1905/MI829: can the protecting copy actually occur?
+
+Pull: GC1904 lists four abstract response maps, but actual reconstruction may restrict them. Hand question: express the map's slope directly in already exposed cells, then test the tempting shortcut that the copy map never occurs. Prediction: a second-leading Boolean difference telescopes along a diagonal; small background cones may admit copy even when a selected front cannot reach that cone. Kill checks: distinguish variation of the newest bit from the original twin flip, keep the prescribed next even bit fixed, and never promote a background example to a reachable front. No numerical run or new M5 scope.
+
+GC1905 outcome: exact diagonal slope carries by hand; the no-copy shortcut fails on valid cones. A reachability niggle caught and rejected a false front example before publication. Warmth remains on selected-history compatibility, with no probability law inferred from the parity formula.
