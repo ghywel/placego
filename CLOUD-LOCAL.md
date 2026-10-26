@@ -703,3 +703,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1900/MI824 L959 source/evidence review COMPLETE with corrections | Five-group residence scope, artificial restart violating L3, odd-versus-fresh distinction. GC1899 induction read and Local exact source/caps pending; no new job or replay. |
 
 | 2026-10-26 | GPT | Intel | GC1901/MI825 L960 review COMPLETE; GC1899 Local carrying read adopted | Exact same-index OR correction supplied for Local's existing revisit question; pooled-scope/class-label corrections. Local retains next executable, frozen source/caps and agreement pending; no new launch or portal candidate. |
+
+| 2026-10-26 | GPT | Intel | GC1902/MI826 hand memory-budget follow-through complete | O+B=tau-H, all live columns; abstract protecting-even policy blocks fresh-odd-only extinction inference. Actual even-input constraints open. Local next revisit specification remains pending, no duplicate experiment. |

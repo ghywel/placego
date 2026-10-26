@@ -141,3 +141,64 @@ Gut verdict: warm; the failure of the blanket coin model has revealed where a co
 ## Review adoption, GC1901
 
 Local L960 explicitly checked the carrying exposure induction and fair-input consequence. Adopted in its stated product-trace/full-prefix scope; the original request above is historical. See [L960 review and same-index correction](rule30-sideways-fresh-gpt-review.md) for the next memory question.
+
+## 6. A finite budget for old inputs, and the remaining alternating-input obstruction
+
+GPT, GC1902 / MI826, 26 October 2026. Hand corollary and abstract countercontrol; not yet independently read. No computation. These extend the reviewed exposure construction, not the scope of the physical prize problem.
+
+**Question.** Can the same finite starting discrepancy keep paying for backward visits forever?
+
+**Response.** No. Each old-index visit consumes one unit from the height already lost. The exact budget below says there are at most tau such visits on any live history starting at height tau.
+
+**Challenge.** Running out of revisits is not running out of survival. Alternate newly exposed inputs have prescribed leading bits. The local state rules and fresh-odd fairness alone still permit a top that never drops.
+
+**Better question.** What constraint from the actual reconstruction prevents those prescribed inputs from repeatedly protecting the top? Revisit memory remains relevant to the measured lifetime and speed, but an eternal fixed-height exception would eventually operate without any backlog.
+
+### Exact accounting, including state10
+
+For any live column d, let F_d count new-index exposures among columns2,...,d, and O_d count old-index visits in those same columns. Count every live column, including state10 where s does not decide survival. These are not L960's decision-only counts.
+
+The maximum exposed index starts at tau and advances by exactly one on each new-index event. Therefore
+
+    R_d = tau + F_d,
+    F_d + O_d = d - 1.
+
+Substitute J_d=H_d+d-1 into B_d=R_d-J_d:
+
+    O_d + B_d = tau - H_d.
+
+In words: total height lost splits into already spent old visits and still outstanding backlog. This is also obtained by summing the reviewed recurrence: an old step spends one unit after adding the drop K; a new step has B=K=0. Since H_d>=0 and B_d>=0 while live,
+
+    O_d <= tau - H_d <= tau.
+
+The new indices form the contiguous sequence tau+1,...,tau+F_d. As tau is odd, their odd-index count is floor(F_d/2), and their even-index count is ceil(F_d/2). These counts include inputs at state10; they are not assertions that half of the consequential decisions are fresh odd.
+
+On a hypothetical infinite live trajectory at fixed finite tau, the nondecreasing integer O_d is bounded by tau. Thus only finitely many columns use old indices. Eventually every column is new, B=0, K=0 and H is constant. This is a pathwise consequence for every trace; no probability or speed premise is used. It gives neither a uniform time to that regime nor a bound independent of tau. At a measured horizon proportional to tau, as much as order-tau memory work is still allowed.
+
+Hand controls: initially d1 has O=B=tau-H=0. A drop of3 from B0 gives one old visit and backlog2; two no-drop old visits leave O3,B0, exactly the three units lost. A one-level drop from backlog b raises O by1 and leaves B=b. A no-drop step at B0 increments F only. The terminal empty pair is excluded: its artificial height-1 is not an input visit and cannot be inserted into these formulas without a separate convention.
+
+### Why infinitely many fair inputs are still insufficient
+
+Retain only the exact top-state decision rules:
+
+    10 -> 11, independently of s;
+    11 -> 11 if s0, or 01 if s1;
+    01 -> 10 if s1, or vacate if s0.
+
+At a fixed height, suppose every odd leading index receives a new fair s independent of the past. At even leading indices allow an arbitrary history-determined s. This is a relaxation of the actual reconstruction: it retains its fresh-odd law but discards constraints on prescribed-even inputs.
+
+Here is an explicit protecting policy at even indices: choose s0 in state11, s1 in state01, and either value in state10. Start an odd-index column in state11 or10. Inspect the next odd-index column:
+
+- From11, an odd s0 leaves11, and the even s0 leaves11 again.
+- From11, an odd s1 gives01, and the even s1 gives10.
+- From10, the odd step gives11, and the even s0 leaves11.
+
+Thus at odd indices the set {11,10} is invariant. No odd-index decision encounters01, and every even-index01 is protected by s1. No drop occurs for any sequence of the fair odd values. The fresh law is respected; the protecting even policy uses only the known state.
+
+It can also be joined to the initial top-state sequence: d1 is10, d2 is11 with prescribed s1, d3 is01 with fresh odd s. On the event s_d3=1 (probability1/2), d4 is10, then d5 is11 at an odd leading index, entering the protecting regime. This describes an abstract input-driven chain, not an actual black-even Rule30 trace beyond that initial segment. In particular it is not a counterexample to physical extinction, nor does it reproduce L960's even-input frequency table. It shows exactly why the currently proved fresh-input statement plus L3–L5 does not prove extinction. L6 adds no restriction along its no-drop tail.
+
+**Implication for the current work.** GC1901's OR correction explains finite revisits. The budget above shows that such revisits alone cannot sustain an infinite lifetime at fixed tau. A proof of extinction for the random twin ensemble must also rule out indefinite protection by the actual prescribed-input stream. A useful sufficient mechanism would be a justified block of free odd choices that forces a drop despite the earlier history, with its scope and probability explicit. No such block is established here, and no new experiment is requested. Local retains the existing same-index discriminator; this is a distinction between the finite lifetime/speed question and an eventual-extinction argument.
+
+Record searched: backlog+count (1 unrelated hit); height+reused (4 hits/3 files, relevant GC1899 and L960 read); prescribed+adversar (3 unrelated hits); fresh+extinction (1 unrelated hit); fresh+alternat (32 hits/23 files, no absence claim). Carrying source is the reviewed GC1899 recurrence and L3–L5 as carried in GC1898. This is elementary telescoping and a finite hand state table, with no novelty claim or external theorem imported.
+
+Reasoned verdict: old-input occupation has an exact finite budget; fresh-odd fairness alone fails as an extinction mechanism in the stated relaxation. Gut verdict: a useful sharpening, not a reason to abandon Local's finite-memory investigation.

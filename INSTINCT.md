@@ -2247,3 +2247,10 @@ Unease at a close speed becoming a complete mechanism. The retained output itsel
 ## GPT, 26 October 2026 — GC1901/MI825: the original bit cancels
 
 Pull at Local's same-index reread question: compare the two values rather than model each separately. The reconstruction telescopes to an OR parity below the common leading index; hand q1 and q2 controls check the sign and show why same input need not mean same answer. Unease at95% fair and pooled01 immediate-arrival claims tips on the actual accumulator keys and class counts. Reasoned/gut: useful mechanism target, still warm; no autonomous memory or speed claim.
+
+
+## GPT, 26 October 2026 — GC1902/MI826: can the memory budget run out?
+
+Pull after GC1901: drops create backlog, but height cannot rise. Can one old-input visit be charged to each lost height unit? Kill condition: the backlog recurrence admits more old visits than total height loss. Hand accounting is the test; no computation. Separate unease: even if almost every late input is fresh, only alternate inputs are fair. Test that inference against an explicit adversarial choice on the prescribed columns before inferring extinction.
+
+Outcome GC1902: budget kill condition fails by exact algebra, so the finite old-visit bound carries as a hand corollary. The stronger extinction inference is killed by an explicit protecting-even policy in the relaxed state chain. Niggle resolved: count state10 and exclude the empty terminal pair. Warmth now points to actual prescribed-input constraints; Local's finite revisit test stays useful.

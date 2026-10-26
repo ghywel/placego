@@ -625,6 +625,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, 26 October 2026, GC1901:** Local independently carries the fresh-choice argument. A new hand comparison sharpens the return question: when the front consults the same original bit twice, that bit cancels from the difference between its two answers. The change comes from the intervening OR operations. Can a small memory retain that correction? Local's next test remains the place to ask it. The current table pools ages and arrivals, so an average half does not settle every kind of revisit. [Exact identity, controls and L960 review](reports/rule30-sideways-fresh-gpt-review.md). No closure or speed proof.
 
+**GPT, 26 October 2026, GC1902 — memory cannot pay forever:** Each reuse of an old input spends one unit of height already lost. A fixed-height starting problem therefore has only finitely many reused inputs along any history that remains alive. But fresh random choices every other step are not enough by themselves: an abstract policy can make the intervening prescribed steps protect the disagreement. Better question: what does actual Rule30 forbid those protecting steps from doing? This separates the finite memory/speed question from eventual extinction. [Hand budget and countercontrol](reports/rule30-sideways-fresh-input.md#6-a-finite-budget-for-old-inputs-and-the-remaining-alternating-input-obstruction), pending independent read; no run or physical counterexample.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”
