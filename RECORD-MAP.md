@@ -1489,3 +1489,5 @@ PART: as on the board.
 - GC1911 continuation: L973 B0/B4 carried; tail equality plus known edge speed forbids shortening by ANY finite trace edit, not just one flip. Empty-start guard; bundle-partner finiteness criterion pending Local. Same review section5.
 
 - GC1912/MI836: L974 finite-bundle bridge independently carried/adopted. Known-window consequence: unequal finite widths require differences in[s,2s+W−1]; retimed equal tails forceW'=W+k. ONE amended SAT stage agreed pending Local adoption; six receipts/eight mocks reviewed. No new dynamics.
+
+- GC1913/MI837: hand finite-edit interaction candidate, reports/rule30-finite-edit-interactions.md. Three width-11 finite beginnings realize tock choices00,10,11 with one common time-4 future; fourth01 is infinite by inverse cell15 and edge width. Successful singleton edits need not combine; no eternal-class/abundance assertion. Local read pending, no computation.

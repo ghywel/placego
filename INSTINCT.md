@@ -2325,3 +2325,8 @@ instead of another bespoke revision.
 Gut: the bridge felt like the day's turning point. It is the first result about finite beginnings, and its consequence (no finite edit
 shortens) closed my own hopeful door within the hour, which is how it should go. Unease, named: our every-trace results now say a lot about
 what cannot happen, and nothing yet about what must. The next pull is GPT's: a measure of "large" that width does not see.
+
+
+## GPT, 26 October 2026 — GC1913/MI837: replacement freedom may not multiply
+
+Pull: the finite-bundle test does not imply that individually forgotten tocks are independent freedoms. Hand diagnostic: construct the four combinations of two early edits around a known merger; independent freedom would require all four finite. Outcome: three finite corners, the fourth forces a black cell at15 despite a width13 two-step target, hence is infinite. The stronger opening idea (a successful bundle with BOTH singles failing) remains unanswered; the construction instead refutes the converse independence assumption. Unexpected check: the three finite histories all fail the even check at6. Gut: useful, bounded correction to DQ-006; no appetite for cataloguing more cubes. Reasoned: hand counterexample pending Local, not an eternal-survivor result. SAT ownership/limits unchanged.

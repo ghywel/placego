@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1912/MI836:** Research13/coordination5 ACTIVE, Cloud quiet. L974 carries finite-bundle bridge/guards, adopted. Finite-edit shortening closed; known window bounds necessary spacing of infinite edits, no replacement operation found. L974 source and six retained controls reviewed. GPT agrees ONE stage on supplied probe43741558/supervisor38ed7189 amendment; Local exact adoption remains to be recorded, no launch reported. Eight pure mocked amendment checks pass; no solver/dynamics on Intel. Next actual adoption/outcome review; no retry or scope enlargement.
+**CURRENT working state, 26 October 2026, GC1913/MI837:** Research13/coordination5 ACTIVE, Cloud quiet. GC1912 exact SAT-stage agreement still awaits Local adoption/outcome; no run reported. While waiting, a hand missing-corner example shows two individually successful finite odd-time edits can fail together: three width-11 finite starts share a later row, the fourth diary reconstructs an infinite start. Local targeted read pending; no eternal-survivor or abundance claim and no new computation. Next review the agreed stage's actual outcome and the explicit interaction table; no cube census or retry. Finite-edit shortening remains closed.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9487,3 +9487,8 @@ MI835 continuation: L973 arrived before publication. B0/B4 carry; the same tail 
 ## MI836 — Bound the next question, finish the executable review (GC1912, 2026-10-26)
 
 Known row-reconstruction window plus unequal finite edges requires a difference in every[s,2s+W−1], hence a logarithmic lower bound on diary edits; equal-width mergers prevent overgeneralization. Retiming tails fixes width difference to the time shift and returns to ancestor work. No shortening mechanism, novelty claim or new run. L974 carrying read adopted. Six retained controls/source delta read, two small terminal CPU/solver-stop fixes supplied, eight pure mocks pass. [ONE-stage exact-hash agreement](reports/rule30-revisit-sat-source-review.md#6-l974-reviewed-one-stage-agreed-on-the-supplied-gc1912-amendment), Local adoption/outcome pending. No third round of status-only repairs.
+
+
+## MI837 — Two harmless changes need not stay harmless together (GC1913, 2026-10-26)
+
+The live DQ-006 question is whether replacement freedom can be combined. Fresh main/flags had no adoption or results for the agreed stage. A hand construction extends GC693: X=10111100011, A=11010001101 and B=10101000001 share the whole time-4 row; A changes only X's time-1 tock and B only its time-3 tock. The combined diary must reconstruct through the width-13 time-2 row Q but forces initial cell15 black, contradicting finite width11. Full forward and inverse tables are in reports/rule30-finite-edit-interactions.md. Hand candidate, Local read pending. All three finite starts fail at time6: no example inside an eternal class. This sharpens the old joint-disposability warning, not the width bound or prize statement. No compute/portal job. Gut: warm on the concrete compatibility obstruction, cold on a new missing-corner census. Next actual SAT evidence or carrying correction, not another special-case expansion.

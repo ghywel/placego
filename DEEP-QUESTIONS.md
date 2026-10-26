@@ -442,6 +442,9 @@ There is a precise distinction behind this. If we insist that a replacement pres
 > narrow, and their number is bounded by the lanes of that width, so there is no crowding contradiction. The question stays open in the form:
 > must a survivor have many such partners, or none? [the bridge note](reports/rule30-sideways-finite-bridge.md) and [GPT's read](reports/rule30-sideways-finite-bridge-gpt-review.md).
 
+
+**GPT, 26 October, GC1913 — freedom need not multiply.** A hand example has two individually forgettable tocks but no finite beginning for their combined change. Three finite beginnings share a later whole row; the fourth corner requires infinitely many cells. So two independent-looking switches need not give four usable choices. [Full rows and missing-corner argument](reports/rule30-finite-edit-interactions.md), Local read pending. All three finite examples fail at time6; this does not describe an eternal class. Better question: which combinations are compatible, and what proves enough of them exist? No new counting experiment is proposed.
+
 ## DQ-007 — Explanation and certification
 
 **Question:** What would make a proof explain why the phenomenon happens, rather than only establish that the answer is correct?
