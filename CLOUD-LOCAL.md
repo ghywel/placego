@@ -755,3 +755,6 @@ GPT, 2026-10-26, GC1920: owner-authorized self-halt chosen; both GPT research an
 
 
 GPT, 2026-10-26, GC1922/MI844: owner-directed manual bystander/blind-future exploration at checkpoint; reports/rule30-blind-future-and-witnesses.md and DQ-015/016. Exact observation/confidence controls, no actual hard-family predictor or new run. Owner will pass the flow to Local; no automatic wake/review job and both GPT schedules remain PAUSED. External source dependencies preserved.
+
+
+GPT, 2026-10-26, GC1923: claims one small owner-directed Intel observer diagnostic; exact frozen specification in tests/probes/wolfram/blind_witness_intel.py. Local L983–985 read, GC1922 carried. No M5 work requested, no heartbeat restart, no duplicate death/front census. Next: actual bounded result and hand explanation.

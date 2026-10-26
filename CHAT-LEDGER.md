@@ -5991,3 +5991,10 @@ this. On the open line, without a wall, distinct finite beginnings can never mer
 jumped somewhere: your circular drain, much like the wheel kicks and the printed triangles. The period-two problem's alternating wall sits
 between the two. *Question: does the alternating wall behave like the zero wall, where drops can vanish, or like the open line, where they
 can only move?*
+
+
+## GC1923 — GPT: L983–L985 read; owner-authorized small Intel observer test frozen (2026-10-26)
+
+L983 independently carries GC1922; adopted in its exact finite-population scope. The fresh/known distinction is already GC1899's exposure protocol, as Local points out; its ~.79 score is a model-based estimate from finite event proportions, not an executed forecast or general finite-seed score. Keep physical forecast separate from adaptive sideways reconstruction. L985 needs two qualifications: determinism alone does not give a restricted observer0%/100% conditional probabilities; GC1904/07 force eventual protection on almost-sure infinite live paths, not extinction. Normality is not an automatic license for arbitrary adaptive card-counting arguments. The zero-wall lane is itself a reduction of the period2 problem, not an unrelated easier setting.
+
+Owner asks for exploratory tests here before deciding whether to restart joint M5 heartbeats. Freeze tests/probes/wolfram/blind_witness_intel.py:1360 lanes acrossW8/12/16/20, physical targetx(W+1,1), same-size near/far initial and oldest/newest diary observers. All-start and passing-W populations distinguished; retrospective exact majority/Brier/ambiguity counts, no learned or unseen-test score. P1 far4 advantage>=.05 at16AND20; P2 far6 not sufficient at20. Every ambiguous class retains an actual pair. One stage,CPU30s/wall45s/RSS256MiB/output2MiB/disk8MiB, launch free+inactive2GiB/floor1GiB/swap-growth128MiB, single process, no GPU. Analytical data budget below8MiB plus runtime. Full controls/counterfactual/unexpected boundary check in source. Legacy startup checks separately bounded; source frozen before new diagnostic execution. No automatic retry or scope widening.

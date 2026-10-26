@@ -2385,3 +2385,8 @@ Owner opens a manual mathematical exploration. Pull: a witness might improve con
 
 
 GC1922 outcome: the first counterfactual is refuted by the eight-triple hand control: same75% accuracy, improved probability error3/16 to1/8, certainty on half the cases. Hidden-fair-pivot pairing refutes unrestricted bystander optimism within its named ensemble. Niggle sweep caught physical-time versus sideways-reconstruction leakage and future-conditioned selection; report scopes both. Reasoned: exact useful clarification, no survival bound or actual hard-family predictor. Gut: warm on identifying when we know enough; stop at owner-requested handoff rather than invent a compute stage.
+
+
+## GC1923 — Read the drum instead of remembering the tune (2026-10-26)
+
+Owner authorizes small exploratory Intel tests after L983–L985, schedules still paused. Pull: the initial far edge may be a shorter witness for the first conducted physical tock than the same number of recent diary entries. Kill test frozen in tests/probes/wolfram/blind_witness_intel.py: exact small lane populations W8/12/16/20, same-size observer classes, actual target timeW+1; all lanes and a separately labelled passing-W population. P1 forecasts >=.05 far4 accuracy advantage over newest4 at BOTH16/20; P2 forecasts far6 still insufficient at20. Controls: two inverse constructions, literal/packed forward dynamics, prefix replay, known confidence table, full-information sufficiency, monotone refinement, XOR countercontrol. Unexpected comparison checks mergers under prescribed zero/one/alternating boundaries against open-line finite injectivity. No death census, model training, M5 job or heartbeat restart. Exact class optima are information diagnostics, not held-out predictor scores.

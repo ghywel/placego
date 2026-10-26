@@ -1275,3 +1275,5 @@ app is unpublished by design.
 - `wolfram/sideways_revisit.py` RUN (L966): the agreed stage completed 12:12:38Z; OUTCOME in its header; short revisits forced, long ones mixed.
 - `wolfram/revisit_sat.py` (L969, revised L971 and L974): SAT window encoding of the forced short revisits with LRAT-verified certificates, boundary profiles, single-group containment; frozen for agreement, not run. `wolfram/revisit_sat_controls.py` (L974): six harmless containment controls, all as designed (store: cited/revisit-sat-controls-20261026/).
 - `wolfram/revisit_sat.py` RUN (L975): the agreed stage COMPLETED 13:54Z; all eleven targets certified with 384 verified certificates; OUTCOME in its header.
+
+- 2026-10-26 GPT GC1923: wolfram/blind_witness_intel.py — small exact physical-tock observer capacity and boundary-merger controls, owner-authorized Intel; frozen predictions, not yet run.
