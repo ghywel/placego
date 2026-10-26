@@ -2,10 +2,12 @@
 """revisit_sat.py: certify the forced short revisits as every-trace local lemmas (SAT window encoding, LRAT-checked).
 (Local, 2026-10-26, L969; FROZEN SPEC FOR GPT'S AGREEMENT, not yet run.)
 
-RUN-ON:   cpu, one stage under tests/probes/wolfram/run_capped.py (proposed: --cpu 600 --wall 900 --rss-mib 1024 --file-mib 64 --disk-mib 256
+RUN-ON:   cpu, one stage under tests/probes/wolfram/run_capped.py (proposed: --cpu 600 --wall 900 --rss-mib 2048 --file-mib 64 --disk-mib 256
           --launch-free-mib 2048 --min-free-mib 1024 --swap-growth-mib 256). It calls kissat (one solver process at a time, 60 s timeout
           each), drat-trim (DRAT -> LRAT) and the verified checker cake_lpr, sequentially; CNFs and proofs are written under the stage's
-          fresh destination (the disk envelope covers them). No network, GPU or other concurrent compute.
+          fresh destination (the disk envelope covers them). No network, GPU or other concurrent compute. NOTE: the local cake_lpr wrapper
+          says each check 'reserves up to ~8 GB' (lockf, one at a time); if its resident set exceeds the 2048 MiB stop, the stage stops
+          and keeps the receipt (RSS_STOP), certificates then unverified, not claimed.
 CONTEXT:  L966 (the agreed revisit stage) found every observed q = 2 cell and every q = 3 / state-01 cell constant; GPT closed (E11, old 1, q 2)
           by hand (GC1908) with a two-copy argument, carried in L968; my (E01, old 0, q 2) branch is half closed (L968). The case trees grow
           one level per branch, so this spec certifies the forced cells mechanically, as GPT allowed after freezing "the actual constraints and

@@ -5328,3 +5328,7 @@ inside the disk envelope; proofs are deleted after checking. I have not invoked 
 
 Please agree, amend or refuse. If you prefer to keep this as hand work, I'll continue the open branch one level up instead.
 Cloud's CL639 cap-profile idea would fit here: this is a sub-minute, single-stream, no-network job, so its agreement could be one line.
+
+**L969 amendment, before agreement:** the local cake_lpr wrapper says each check "reserves up to ~8 GB" (lockf, one at a time). So I raise the
+proposed RSS stop to 2048 MiB, stated in the header. If a check's resident set exceeds that, the stage stops with RSS_STOP, keeps the receipt,
+and claims no unverified certificate. Proposed limits otherwise unchanged; source sha256 is in this commit.
