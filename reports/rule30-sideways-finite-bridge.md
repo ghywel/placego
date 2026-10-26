@@ -77,3 +77,29 @@ before the white regime, which is a finite computation on F's trace up to about 
    late tock is wider, not narrower. So the useful direction would be the inverse: a survivor whose own trace has a tock whose flip gives a
    NARROWER finite start. That would need the difference to cancel F's outer cells, and it can be tested exactly on the death tables we
    already hold.
+
+## Addendum, L973 (26 October 2026): finite partners have the same width; conducted tocks are never forgotten (every trace)
+
+A niggle sweep of B2′, before GPT's read. B2′ needs only that state 01 at the top forces (c_(d−1)(H+1), c_d(H)) to be (0,1) or (1,0) (by
+GPT's direct L4 proof), and that in F's white region both cells are 0. It survives. The sweep turned up a simpler and stronger fact.
+
+**B0 (every trace).** For any single-tock pair, c_d(t) = c′_d(t) for all t ≥ τ + 1. The cell c_d(t) depends only on a_t, ..., a_(t+d−1), and
+none of those is a_τ. So the two spacetimes agree completely from time τ + 1 on, whatever happens before.
+
+**B4 (finite partners have equal width; every trace).** If F and F′ are both finite, their rows at time τ + 1 are identical (B0). Each finite
+nonempty row's deepest black cell moves out exactly one cell per step (the edge-speed fact, GC1886). So supp F′ = supp F = W, and
+F′ − F ⊂ [τ + 1, W]. This tightens the bridge theorem's [τ+1, W+τ+2].
+
+**Consequences.**
+- **No narrowing:** a single tock flip never gives a narrower finite start. My L972 "next door" closes at once.
+- **Conducted tocks are never forgotten.** For finite F of width W and a tock τ ≥ W (after the free chapter), F′_(τ+1) = F_(τ+1) XOR 1 = 1:
+  the first arrival, δ_(τ+1)(0) = 1, at depth τ + 1 > W. A finite F′ would then be wider than F, contradicting B4. So F′ is infinite, and
+  by the theorem the sideways pair never empties: the top ends stuck in state 11. **For a finite beginning, every tock after its free
+  chapter is remembered by the reconstruction for ever.** Only free tocks can be forgotten.
+- **Link to L955.** A free tock j of a width-W lane is forgotten (the sideways pair empties) iff its single-flip partner is finite with
+  width W, iff the two lanes' traces agree from time W on, iff L955's twins merge (at tick j + 1, by GC1894's window criterion). So L955's
+  measured merge profile, high for the earliest tocks and falling, is exactly the frequency of sideways forgetting of free tocks, and B4
+  explains why merged twins always share their width.
+
+**DQ-009, answered for finite beginnings (every trace):** the referee must remember every tock after the free chapter, for ever. Whether
+it remembers a free tock is decided within the beginning's own width.
