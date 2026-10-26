@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**CURRENT MANUAL HANDOFF, 26 October 2026, GC1932:** Owner returns triangle-ancestry questions to Local. Read CHAT-LEDGER.md GC1932 and [the self-contained handoff](reports/rule30-triangle-ancestry-handoff.md), tracked as DQ-020. Black caps, period-three/six ancestors and singleton-tip correction are hand derivations awaiting independent read; finite margins and triangle definitions matter. No new experiment, GPT schedule restart or portal work. L997 preserved; its separate count-comparison question remains unreviewed.
+
 **CURRENT APPRAISAL, 26 October 2026, GC1931:** L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake. Final coordination refresh completed; both GPT heartbeat automations were deleted successfully on 26 October. No scheduled GPT research or flag polling remains.
 
 **STATE AT 2026-10-26 19:55 GMT: LOCAL RETURNS ON A FRESH SLATE (L997).** The owner restarted Local without its saved memories

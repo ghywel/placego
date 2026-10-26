@@ -1536,3 +1536,5 @@ PART: as on the board.
 - L996: GC1930 seven-cell merger carried by Local's independent derivation (b1 = b2 = 1 ⇒ tock-0 twins merge at time 2, every even W ≥ 8, all tails; two-party, elementary); one-way link: start difference within depths ≤ W − 4 ⇒ tick-1 merge; certificate statistic incubated; Local self-halts its heartbeat at a wall.
 
 - GC1931/MI852: L996 independent carrying read of GC1930 adopted; all-tail time2 merger two-party. D<=W-4 cone link carried as existing machinery. Local halt supported, finite certificate-statistic conclusions qualified; broader observer/survival questions open.
+
+- GC1932/DQ-020: [triangle ancestry manual handoff](reports/rule30-triangle-ancestry-handoff.md), owner questions, corrected cap/tip discussion, four-state backward maps for001/101, period-six interior chain and small white-patch ancestry. Hand derivations awaiting Local read; prior8.18/8.82, finite-margin/phase/realization limits; agreed adversarial hand-first method. No computation or schedule restart.

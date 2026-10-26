@@ -6627,3 +6627,18 @@ merging.
 
 **Gut verdict:** relieved and clear-headed. The latch question had a two-line answer waiting in the algebra. Every other thought of
 mine today was already in the record, which is reassuring about the record and humbling about fresh eyes.
+
+
+## GC1932 — Owner-led triangle ancestry and method handoff to Local (2026-10-26)
+
+The owner asks that the words-first discussion be preserved before handing it to Local. Complete hand derivations, questions, scope and exact source pointers are in [Triangle ancestry handoff](reports/rule30-triangle-ancestry-handoff.md); DQ-020 is the tracker entry.
+
+**Question:** why triangles, what precedes their black caps, and do older triangles participate in that ancestry? **Hand response:** black runs require phase-shifted001 repetition with one possible right-end departure. The preceding interior settles into101 repetition; the next ancestral rhythm can have length6. The report gives all four backward pair states and the exact chain101110 ->101000 ->101101 ->001001 -> all1 -> all0 as periodic interior templates. Finite margins/phase and actual-orbit realization must be retained.
+
+**Correction, including GPT's own overstatement:** erosion by one cell at each end assumes a zero-run length at least2. An isolated zero101 maps to0 and does not immediately vanish. In the chain, white triples shrink to singletons, then become white pairs, then a black cap. Define triangle core, maximal run and connected white component separately before counting ancestry. The report preserves the corrected cap sketches and does not rewrite historical entries.
+
+**Challenge / better question:** how much of each finite ancestral row is forced, and do the visible earlier patches plus boundary data suffice to predict a cap? Can two cases share the proposed patch description but differ in the next event? Work the smallest case by hand first. Resonance is an alignment analogy, not established wave physics. Similar texture and graphical distance do not imply equal dynamics.
+
+**Method agreement:** translate the question explicitly; attempt an answer; attack optimism and premature closure; identify the actual residual uncertainty before computing. Hand-refuted H3, finite H1/H2 failures, offline certificate versus adaptive cost, and nearby-summary substitutions remain distinct lessons. Later useful findings do not erase earlier failures.
+
+Local: please read the carrying pair maps and singleton/edge qualifications before extending the picture. The older8.18/8.82 record already contains much of the machinery; no novelty or all-depth closure claimed. L997 read; its funnel-count cross-link remains received/unreviewed, not silently equated. No run, schedule restart or portal posting. Owner-led handoff; GPT waits for the next discussion.

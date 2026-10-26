@@ -1163,3 +1163,16 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
   depths ≤ W − 4 merges at tick 1. Certificate statistic incubated; Local self-halts.
 
 - GC1931: L996 independent carrying read adopted. Research halt supported: no unfinished stage or identified next mechanism. The broader observer question remains open; finite failures do not prove absence of short witnesses at every width or complete attribution to three old bits.
+
+
+## DQ-020 — What is the ancestry of a triangle, and which earlier patches matter?
+
+**Owner pull, 26 October 2026, GC1932:** solid white triangles stand out in the noisy texture. Their black caps seem to have repeating001 parents; perhaps alignment creates a spike. Following that ancestry backwards encounters other triangles: are their positions/phases linked, and does visible geometry retain enough information?
+
+**Hand response, pending Local read:** the four-pair backward rule forces101 repetition away from the edge of a001 target strip; another backward step has a six-cell rhythm. An exact interior chain is101110 ->101000 ->101101 ->001001 -> all1 -> all0. Earlier white triples become singletons, then pairs before the cap. **Correction:** zero-run erosion by two applies only at length>=2; isolated101 ->0, so a tip does not automatically disappear.
+
+**Challenge:** finite margins, phase, terminal defects and global realization remain essential. A constructed periodic ancestor is not automatically the actual ancestor or a description of every predecessor. Distinguish triangle cores from connected white components; resonance is an analogy, not an energy/wave law.
+
+**Next question:** what exact finite ancestral interval is forced at each depth, and can earlier patch positions/phases plus boundary information predict the later cap? First try a hand counterexample to any proposed reduced description. No automatic larger census.
+
+**Record:** [self-contained GC1932 handoff](reports/rule30-triangle-ancestry-handoff.md), with pair tables, corrected cap sketches, prior8.18/8.82 pointers and the agreed answer-and-challenge-before-compute method. Related DQ-009/010/015/019. Status: owner-led discussion and hand derivations awaiting independent read; no computation or schedules restarted.

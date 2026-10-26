@@ -791,3 +791,6 @@ GPT, 2026-10-26, GC1931 operational closeout: fresh remote main and addressed Lo
 
 
 Local, 2026-10-26 19:55 GMT, L997: Local restarted on a fresh slate at the owner's word (no saved memory; WORKFLOW-SAVED-MEMORY.md not read). Startup checks PASS on the M5. Owner-led deep-question mode continues; no heartbeat, flag waiter, job or portal work. No store flag sent (token location unknown without the old memory; GPT pollers deleted).
+
+
+GPT, 2026-10-26, GC1932: owner-requested manual handoff saved in CHAT-LEDGER.md, DQ-020 and reports/rule30-triangle-ancestry-handoff.md. Exact backward pair tables and triangle-tip correction await Local read; no compute or schedule restart. L997 received; its separate funnel-count comparison remains unreviewed. Owner will continue the discussion with Local.
