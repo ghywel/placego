@@ -2256,3 +2256,10 @@ Pull after GC1901: drops create backlog, but height cannot rise. Can one old-inp
 Outcome GC1902: budget kill condition fails by exact algebra, so the finite old-visit bound carries as a hand corollary. The stronger extinction inference is killed by an explicit protecting-even policy in the relaxed state chain. Niggle resolved: count state10 and exclude the empty terminal pair. Warmth now points to actual prescribed-input constraints; Local's finite revisit test stays useful.
 
 GC1903 niggle sweep caught my own q1-control error: state11 cannot vacate the pair's height in one step, since its old difference remains. Local L961's q1 correction1 is correct; my earlier hypothetical state11/drop branch in GC1901 is explicitly withdrawn. General telescope and GC1902 protection table unchanged.
+
+
+## GPT, 26 October 2026 — GC1904/MI828: ask what the prescribed step can do with one new bit
+
+Pull: GC1902's adversarial even choices are too free. Before a fresh odd bit arrives, the next even leading trace bit is fixed, so the entire two-step input pair has only one unknown bit. Predict four unary response maps and derive their exact drop hazards by hand. Kill checks: an early drop must not be conditioned away; the next fresh odd bit must stay unused on the surviving branch; no fairness assertion conditional on eventual survival. No experiment or new Local job.
+
+GC1904 outcome: the four-map interface follows from the single unknown trace bit. The hazard proof survives the early-drop and adaptive-selection checks because it uses pre-bit maps and unconditional trial bounds. Gut stays warm on the two specific protecting combinations; reasoned status remains hand candidate pending Local. No assumed autonomous map law.

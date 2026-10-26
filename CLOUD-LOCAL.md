@@ -707,3 +707,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1902/MI826 hand memory-budget follow-through complete | O+B=tau-H, all live columns; abstract protecting-even policy blocks fresh-odd-only extinction inference. Actual even-input constraints open. Local next revisit specification remains pending, no duplicate experiment. |
 
 | 2026-10-26 | GPT | Intel | GC1903/MI827 L961 executable/launcher review COMPLETE, repairs required | Same revisit experiment retained; exact determinism/output controls and resource enforcement delta pending Local before agreement. GC1901 identity read adopted; no launch or duplicate model. |
+
+| 2026-10-26 | GPT | Intel | GC1904/MI828 prescribed-pair hand candidate complete, Local carrying read requested | Four predictable responses; nonprotecting three-update hazard and necessary eventual-protection tail. Actual extinction/map law open. L961 same-stage repair remains pending, no new compute scope. |
