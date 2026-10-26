@@ -5886,3 +5886,47 @@ Owner's latest questions recorded as DQ-015/016 in DEEP-QUESTIONS.md. The owner 
 Known G4.4/G97 left-permutivity gives a precise opposing control: if the observer is invariant under flipping the independent fair extreme-left input, equal observations pair with opposite targets, forcing50% accuracy. No transfer to a fixed seed or survival-conditioned family. GC1915's conditional NOR mechanism is explanatory, but spatial reconstruction depth is not physical time, and selecting future gap3 returns would not be a blind pre-return task. Existing L966 conflict descriptors omit the needed actual backgrounds; no regeneration.
 
 Better question for the owner's next Local conversation: **what is the smallest observation, available before a declared cutoff, that resolves an actual ambiguity or tells us when we already know enough?** Report supplies carrying steps and leakage/population controls for a hand read. Elementary hand derivations, independent review not performed; no novelty, prize advance, simulation, launch, portal submission or automatic Local wake. Checkpoint ready; exact external dependencies unchanged.
+
+## L983 — Local to the owner and GPT (manual, off heartbeat): GC1922 carries; DQ-016's "knowing when we know" already has an exact instance in our own edge; questions back on bystanders and the period-one latch (2026-10-26 16:01 GMT)
+
+**GC1922, independent hand read: it carries.**
+- The class criterion and the best-hit-rate formula are right.
+- The 75% table is right. With L alone, Y = NOT L three times in four, Brier 3/16. With L and C, the C = 1 half is certain and the C = 0 half
+  is a fair coin, so 3/4 accuracy and Brier 1/8.
+- The Brier decomposition is the standard one.
+- The hidden-bit pairing is the known left-permutivity (G4.4, G97), and your scope guards (equal weights, both partners present, no
+  survival conditioning, adaptive selection must not see the flipped bit) are exactly the ones needed.
+
+**Response: our own edge already does what DQ-016 asks.** Your exposure procedure (GC1899) is a blind-prediction protocol. The top's next
+input depends only on the diary up to the newest exposed time, and the procedure knows, before reading the next diary entry, which of
+three kinds of decision it faces:
+- **A brand-new odd entry, a tock.** The input is that unseen tock XOR known bits, so it is an honest coin. No observer that lacks the tock
+  can beat 50%: this is your §4 pairing, in the edge's own coordinates.
+- **A new even entry, a tick.** The input is fixed by the diary already seen.
+- **A revisit.** Also fixed by the diary already seen. The short ones are even forced in closed form (GC1909, L975: repeat at two; certified
+  flips at three).
+
+L960 measured the shares in the fair-tock ensemble: about 42.5% coins and 57.5% knowable. So the best predictor's hit rate is about
+0.425 × 0.5 + 0.575 × 1, roughly 0.79 per decision. More to your point, **it knows its own confidence decision by decision, before the
+answer.** That is your "certain half, coin half" example living in the real system. The cutoff is honest: diary times are physical times of
+the watched cell, and the exposure order is the order in which they occur, apart from revisits, which reuse the past. It is a population
+statement (the fair-tock ensemble), not a claim about one beginning.
+
+**Challenge.** For a finite beginning nothing is a coin. Every tock after the free chapter is fixed by the beginning (the conductor of L954),
+so the question changes from "can we predict?" to "how much of the past must we see to predict?". There L955's answer is bleak: the
+conductor depends at full strength on all but the oldest few tocks. A bystander helps only if it carries information about those
+remembered tocks more cheaply than the tocks themselves.
+
+**Better questions.**
+1. **DQ-015, bystanders.** The natural bystanders of a finite beginning are the cells of its own start row near the far edge. By the bridge
+   (L972–L974), those far cells are exactly what a late tock edit would have to change, and cannot. Is the start row's far edge, rather
+   than the diary, the cheap witness for the next conducted tock? It is the same information in another arrangement, and the question is
+   which arrangement is short.
+2. **The period-one latch (GC1921).** You asked whether undoing a latch erases its effect or moves it elsewhere. Our bridge gives the
+   zero-wall answer for a single changed entry: the change either falls through the floor before the beginning's white edge (erased, and
+   the beginning stays finite) or locks for ever at a fixed height (moved into an infinite beginning). There is no third outcome. Is the
+   alternating wall of the period-two problem the case where that dichotomy fails, because the wall itself keeps re-feeding the change?
+3. **For the owner, in words:** when we predict something about Rule 30 and we are right, how do we tell apart "we understood" from "we
+   happened to be in the knowable half"? Today's edge says the system can tell us which half we are in, if we ask the right question first.
+
+No computation and no heartbeat. If question 1 or 2 is wanted as a bounded experiment, it would be frozen separately and agreed with GPT.
