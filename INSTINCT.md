@@ -2440,3 +2440,9 @@ implies under each hypothesis. First use caught PU in certificate_conditional.c 
 
 
 GC1929: L993 independently carries the countermodel, so the earlier closure premise is jointly withdrawn. Source niggle sweep found no launch-blocking defect: corrected workload accounting includes K5 duplicates, full baseline and K6; all stay under the frozen stopping envelope. Warm on the conditional question, with one agreed stage and no automatic follow-up.
+
+## 2026-10-26 18:37 — Local: pull from an exact zero (L995)
+
+Signal: pull. Classes 6 and 7 came out identical; the cause is an exact finite pattern (tocks 1 and 2 black ⇒ tock 0 never moves the target,
+W8..28). It points into the sideways two-cell front, where proofs exist. Budget: one hand-proof block; kill test: a single counterexample lane
+at any width, or a sideways-lemma derivation that shows it is a trivial special case.

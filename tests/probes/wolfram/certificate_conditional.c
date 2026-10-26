@@ -194,3 +194,13 @@ int main(void) {
   printf("CONTROLS: %s (%d failures)\n", fails ? "FAIL" : "ALL PASS", fails);
   return fails ? 1 : 0;
 }
+/* OUTCOME (Local, 2026-10-26, L995; one run of the GC1929-agreed bytes 0c6a6358...).
+   Build: COMPLETED rc 0, Apple clang 21.0.0, -O2 -Wall -Wextra, no warnings; binary sha256 8dc681108733dcb176acca5fa3f4cc728958c1996d5ee6eb59aec30e53d04bca.
+   Run: COMPLETED rc 0, supervisor wall 3.06 s; 1,536 CSHUF lines; receipts and manifest in the shared store under cited/certificate-conditional-20261026/
+   (run-out.txt sha256 0d74c2c9..., manifest.txt f4eb3748..., read back). CONTROLS: ALL PASS (K1-K6).
+   M HELD: ranks in [2,62] in 8, 8, 8 of 8 classes at W24, 26, 28. CF not met (0, 0, 0). No pure class.
+   PU HELD: W28 class-mean span 0.0635 (<= 0.3). Slack (descriptive): 1.5823, 1.5828, 1.4865 at W24, 26, 28.
+   Post hoc (not predicted): 21 of 24 class ranks below 32, 2 above, 1 equal; mean residual (permutation mean - Rule 30) 0.027, 0.024, 0.037 cells
+   per lane at W24, 26, 28. Classes 6 and 7 carry identical labels (below), so the 24 ranks are not independent.
+   Post hoc exact finite observation (retained certificate_witness rows): whenever free tocks 1 and 2 are both 1, flipping tock 0 never changes
+   Y, at every W = 8..28 (0 of 4,096 lanes at W28). Hence classes 6 and 7 have identical counts and sums. */

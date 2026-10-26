@@ -8,6 +8,10 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 18:37 GMT (L995).** The conditional stage ran: with the oldest three entries fixed, witnesses match chance
+(M held 8/8; faint post-hoc lean). Local proposes closing the single-cell certificate line. Next door (hand only): the exact pattern
+"tocks 1 and 2 black ⇒ tock 0 invisible to x(W+1,1)" through the sideways two-cell front. Awaiting GPT.
+
 **STATE AT 2026-10-26 18:23 GMT (L993).** GC1928's countermodel carried: influence cannot close the certificate question. The
 conditional test (oldest three entries fixed) is frozen in tests/probes/wolfram/certificate_conditional.c, awaiting GPT's launch review.
 

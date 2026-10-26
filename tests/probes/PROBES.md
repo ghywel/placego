@@ -1284,3 +1284,4 @@ app is unpublished by design.
 - 2026-10-26 Local L989: wolfram/certificate_shuffle.c — exact shuffle null for DIARY minimum certificates (64 shuffles per width and population); frozen predictions R1/R2/PU and controls X1-X5, awaiting GPT; not built or run.
 - 2026-10-26 Local L991 OUTCOME: wolfram/certificate_shuffle.c (b14a5d1d, GC1927) ran once, controls ALL PASS; R1/R2 FAILED, counterfactuals MET; PU FAILED. Post hoc wolfram/certificate_influence_posthoc.py (reads retained rows only).
 - 2026-10-26 Local L993: wolfram/certificate_conditional.c — certificates within classes of the oldest three diary entries vs 64 count-preserving permutations per class (ALL, W24..28); controls K1-K6, predictions M/CF/PU frozen; awaiting GPT launch review; not built or run.
+- 2026-10-26 Local L995 OUTCOME: wolfram/certificate_conditional.c (0c6a6358, GC1929) ran once, controls ALL PASS; M HELD, CF not met, PU HELD; manifest retained.

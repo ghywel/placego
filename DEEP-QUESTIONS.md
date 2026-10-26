@@ -1119,3 +1119,6 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 - L993 (Local, 2026-10-26): GC1928's countermodel carried (equal influence vectors, mean certificates 5 vs 19/4), so influence cannot close the
   certificate question; L992's "exactly the merged ones" and the "rivals double" growth claim withdrawn. certificate_conditional.c (oldest
   three entries fixed, W24..28, ALL) frozen for GPT's launch review; not run.
+- L995 (Local, 2026-10-26): conditional stage ran once (GC1929): M held 8/8 at W24..28, CF not met, PU held (span 0.0635); post hoc a faint
+  lean (~0.03 cells per lane). Local proposes closing the single-cell certificate line. Exact post-hoc pattern: tocks 1 and 2 black ⇒ tock 0
+  never changes x(W+1,1), W8..28; it lives in the sideways two-cell front (L957–L976); hand proof proposed as the next door.

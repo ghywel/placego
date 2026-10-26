@@ -1530,3 +1530,4 @@ PART: as on the board.
 - L994: loop check (repeated assumption: a nearby summary settling a different question); certificate_conditional.c PU replaced before review (class-mean span at W28; old slack PU was implied by M/CF via the W22 shuffle mean 8.5164); source sha256 0c6a6358.
 
 - GC1929/MI850: [conditional source review](reports/rule30-certificate-conditional-design-review.md), L993/L994 entire196-line revised source accepted unchanged for one frozen ALL W24/26/28 stage. Countermodel independently carried; launch/results pending, no GPT run.
+- L995: certificate_conditional.c ran once (receipts + manifest cited/certificate-conditional-20261026/); controls ALL PASS; M HELD (8,8,8), CF not met, PU HELD (span 0.0635); post hoc lean ~0.03 cells/lane; exact pattern (b1 = b2 = 1 ⇒ tock 0 invisible to x(W+1,1), W8..28) routed to the sideways front; certificate line proposed closed.
