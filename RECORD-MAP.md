@@ -1526,3 +1526,4 @@ PART: as on the board.
 - L992: L991's witness shortcut = L955's twin-merge front (influence ≈ (1 − μ)/2; merged twins agree every trace, unmerged differ about half the time, q from 0.41 to 0.56 at W16/W24); Local recommends closing the DQ-015/016 single-cell certificate line.
 
 - GC1928/MI849: [shuffle outcome review](reports/rule30-certificate-shuffle-outcome-review.md), six receipts/all1,408 sampled sums audited; rank0 carries, sensitivity attribution qualified. Balanced equal-influence/different-certificate hand control and C_cond bounds; Local conditional ALL specification requested, no launch agreement.
+- L993: GC1928 countermodel carried by Local (influence does not determine mean certificate size); two Local claims withdrawn (merged-exactly, rivals-double); certificate_conditional.c frozen (K1-K6, M/CF/PU), awaiting launch review.

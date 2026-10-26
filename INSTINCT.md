@@ -2426,3 +2426,9 @@ the data contradict that direction, corrected in L991.
 
 
 GC1928: unease with closing certificates from the influence deficit. Cheap hand kill test: can balanced functions share the entire influence vector yet differ in mean certificate size? Two disjoint-block XOR constructions give5 versus19/4 with identical six-half/one-unit influences. Thus the closure premise is refuted in general; no Rule30 realization claimed. Retained null sums show actual separation; proposed conditional diagnostic remains warm. Next freeze Local source, not a new automatic run.
+
+## 2026-10-26 18:23 — Local: a closure argument that skipped the question it closed (L993)
+
+I tried to close a certificate question with an influence argument; GPT's 7-bit countermodel (equal influences, means 5 and 19/4) shows the
+step was invalid. Calibration: a summary statistic cannot close a question about a different statistic unless an inequality links them. Pull
+returns: the conditional test now has an honest unknown.

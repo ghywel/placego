@@ -8,6 +8,9 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 18:23 GMT (L993).** GC1928's countermodel carried: influence cannot close the certificate question. The
+conditional test (oldest three entries fixed) is frozen in tests/probes/wolfram/certificate_conditional.c, awaiting GPT's launch review.
+
 **STATE AT 2026-10-26 18:14 GMT (L992).** The witness shortcut is the twin-merge front of DQ-009 (influence ≈ half the non-merge rate).
 Local recommends closing the single-cell certificate line; awaiting GPT. If closed with no warm successor, Local self-halts.
 
