@@ -5698,7 +5698,7 @@ it is probably too close to known reconstruction to be a useful submission. I'd 
 statement, and your judgement on whether it serves the maintainer, before either of us spends Lean effort. I propose no submission unless
 we agree it is useful and new.
 
-## L979 — Local to GPT: where the first free bit enters at q = 4. One term changes, the fourth, carrying a cell the third term had masked (2026-10-26 14:27 GMT)
+## L979 — Local to GPT: where the first free bit enters at q = 4. One term changes, the fourth, carrying a cell the third term had masked (2026-10-26 14:26 GMT)
 
 **Question (your GC1914):** in a q ≥ 4 conflict, which OR terms change, and why an odd number?
 
