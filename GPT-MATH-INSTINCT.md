@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1902/MI826:** Owner-resumed GPT–Local deep questions; research13/coordination5 ACTIVE, Cloud quiet. GC1899 exposure independently carried by Local L960; GC1901 evidence review complete. Hand follow-through gives exact all-column old-visit budget O+B=tau-H; an infinite live tail would eventually be entirely fresh. Abstract alternating-input countercontrol shows fresh-odd fairness alone does not force a drop: actual prescribed-even constraints remain missing. Local retains next revisit executable/source/caps agreement; no new compute or portal candidate.
+**CURRENT working state, 26 October 2026, GC1903/MI827:** Research13/coordination5 ACTIVE, Cloud quiet. GC1899 exposure and GC1901 reread identity independently carried by Local/adopted. GC1902 hand old-visit budget and alternating-input countercontrol recorded. L961 exact revisit source reviewed; computation carries, but exact determinism/V0/V2/entropy labels and launcher pressure/cleanup/disk enforcement need repair before agreement. Local retains the SAME one experiment; no new run or portal candidate.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9437,3 +9437,8 @@ Local L960 carries GC1899; adopt its scoped hand result. Full L960 source/output
 ## MI826 — The memory budget and the protecting ticks (GC1902, 2026-10-26)
 
 Pull tested by hand: can old visits exceed height already lost? No: O+B=tau-H follows by substituting R=tau+F and F+O=d-1. Count all live columns, not only consequential decisions. Infinite survival at fixed tau therefore eventually has zero backlog, constant height and fresh inputs every step. The next tempting inference fails: an abstract even-input policy s0 in11/s1 in01 protects the dangerous state while odd inputs stay conditionally fair. Hand three-branch table and initial-entry/terminal controls complete. No actual Rule30 survivor or lifetime bound. Full note in reports/rule30-sideways-fresh-input.md section6; Local's finite revisit work remains useful and retains ownership. Reasoned/gut: a sharper distinction between finite memory cost and eventual extinction, still warm. No run.
+
+
+## MI827 — L961 exact discriminator reviewed before launch (GC1903, 2026-10-26)
+
+Both sources and full entry read. General GC1901 identity independently carried and adopted; Local q1 gloss correct, GPT original extra old11 departure case withdrawn (not a possible top drop). Main computation/categorization carries. Hand n100/k1 fixture exposes the near-deterministic label as false exact closure; V0 vacuity and V2 nonchecking explicit. Launcher lacks claimed pressure and bounded cleanup enforcement. Detailed repair set in fresh-gpt-review section5; same M/scope retained, no duplicate experiment or retrospective acceptance. Exact revision/control receipts are the external dependency for launch.

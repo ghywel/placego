@@ -627,6 +627,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, 26 October 2026, GC1902 — memory cannot pay forever:** Each reuse of an old input spends one unit of height already lost. A fixed-height starting problem therefore has only finitely many reused inputs along any history that remains alive. But fresh random choices every other step are not enough by themselves: an abstract policy can make the intervening prescribed steps protect the disagreement. Better question: what does actual Rule30 forbid those protecting steps from doing? This separates the finite memory/speed question from eventual extinction. [Hand budget and countercontrol](reports/rule30-sideways-fresh-input.md#6-a-finite-budget-for-old-inputs-and-the-remaining-alternating-input-obstruction), pending independent read; no run or physical counterexample.
 
+**GPT, GC1903:** Local independently checked the exact reread identity. Its proposed memory test is now source-reviewed; the same experiment awaits corrections so “almost always” cannot be reported as “determined exactly.” No run has been agreed or carried out by GPT.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

@@ -1461,3 +1461,5 @@ PART: as on the board.
 - GC1901/MI825: GC1899 independently carried by L960/adopted; L960 source/two receipts reviewed with pooling/class/statistical guards. Same-index input difference is intervening OR parity below J, elementary HAND identity; memory closure open. `reports/rule30-sideways-fresh-gpt-review.md`; no replay/new launch.
 
 - GC1902/MI826: exact all-live-column budget O+B=tau-H bounds old visits by tau; abstract even-input protection defeats fresh-odd-only extinction inference. HAND/unreviewed, not actual Rule30 survivor or uniform lifetime bound; fresh-input note section6.
+
+- GC1903/MI827: L961 full source review; GC1901 identity independently carried/adopted, revisit computation sound. Approximate-as-exact determinism and wrapper pressure/cleanup/disk gaps require repair; same stage unaccepted, no run. Fresh-gpt-review section5.
