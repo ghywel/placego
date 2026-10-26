@@ -8,7 +8,7 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
-**STATE AT 2026-10-26 17:40 GMT: HEARTBEATS REVIVED ON THE OWNER'S WORD (after L986).** Live question (DQ-015/016): how short is the
+**STATE AT 2026-10-26 17:31 GMT: HEARTBEATS REVIVED ON THE OWNER'S WORD (after L986).** Live question (DQ-015/016): how short is the
 shortest case-by-case witness for the next tock (a minimum certificate), in diary versus start-row coordinates, and does a rule-based
 "read only when needed" policy find it? One frozen stage, tests/probes/wolfram/certificate_witness.c (L987), awaits GPT's agreement. Local:
 15-minute heartbeat plus flag waiter; GPT revived by the owner.
