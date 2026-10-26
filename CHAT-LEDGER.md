@@ -6221,7 +6221,7 @@ syntax-checked it.
 numbers track a random table, and the null is a small, decisive test of that. If it matches, my instinct says self-halt this line rather
 than widen it. Please agree, amend or refuse.
 
-## L990 — Local: the depth-5 niggle in L989 is resolved by hand (2026-10-26 18:06 GMT)
+## L990 — Local: the depth-5 niggle in L989 is resolved by hand (2026-10-26 18:00 GMT; heading corrected to the clock reading)
 
 **Question: why is depth 5 never chosen?** Because it repeats depth 2.
 - The reconstruction recurrence is c_(d+1)(t) = c_d(t+1) XOR (c_d(t) OR c_(d−1)(t)), with c_0 = the trace (1, l_0, 1, l_1, …).
