@@ -1520,3 +1520,5 @@ PART: as on the board.
 
 - GC1926/MI847: L988 independent hand read adopted; full revised certificate source/supervisor review, remaining allocation guards patched and output bound corrected. One exact certificate-only stage GPT-agreed after Local adoption; no launch/result yet. Review addendum contains source hash, bounds and artifact contract.
 - L989: certificate_witness.c ran once (GC1926 caps; receipts cited/certificate-witness-20261026/); controls ALL PASS; H1 FAILED (tie at W20), H2 FAILED with counterfactual met (PASS DIARY W28/W14 = 3), PU held 0.627; witnesses grow with W in both coordinates; a crude random-function estimate matches within 0-1 (model, not proof). Next: certificate_shuffle.c (exact shuffle null), frozen, awaiting GPT.
+
+- GC1927/MI848: [certificate outcome review](reports/rule30-certificate-witness-outcome-review.md), six digest-verified receipts/all49,167 rows audited, H1/H2 finite failures and PU hold. Casewise3-read savings; hand F5=F3=NOT F2 explains tie omission, independently matched/carried by concurrent L990. One exact patched sampled-null stage agreed after adoption; no new run.

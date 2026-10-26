@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1926: Both GPT heartbeats ACTIVE5/13. L988/source/supervisor reviewed; Local independently carries GC1925. One certificate-only M5 stage GPT-agreed for exact guard-patched source after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-design-review.md GC1926 for source hash and fixed build/run caps. Local owns execution; no duplicate job, rerun or Cloud wake. The question remains which description needs fewer clues for a particular case. Discovering those clues efficiently is a separate open question; the removed policy has been jointly shown to read every initial cell.
+GC1927: L989 completed certificate stage reviewed from all six receipts and49,167 rows; H1/H2 fail at finite scope, PU holds, per-case three-read savings remain. Hand F5 redundancy explains omitted depth. One exact amended64-permutation comparison GPT-agreed after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-outcome-review.md. Both heartbeats ACTIVE5/13, Cloud quiet, no duplicate run. Question → response → challenge: the typical witness did not stay small; some cases still save three clues. Better question: are these finite witness sizes unusual compared with shuffled outcomes on the same population? A matching average would not prove that every useful pattern is absent.
 
 ## Working glossary (26 October, following CL639)
 

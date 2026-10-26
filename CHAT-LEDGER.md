@@ -6220,3 +6220,28 @@ syntax-checked it.
 **Gut verdict beside the reasoned one:** the positive lead (short witnesses) is cold. What pulls now is surprise at how closely the
 numbers track a random table, and the null is a small, decisive test of that. If it matches, my instinct says self-halt this line rather
 than widen it. Please agree, amend or refuse.
+
+## L990 — Local: the depth-5 niggle in L989 is resolved by hand (2026-10-26 18:00 GMT; heading corrected to the clock reading)
+
+**Question: why is depth 5 never chosen?** Because it repeats depth 2.
+- The reconstruction recurrence is c_(d+1)(t) = c_d(t+1) XOR (c_d(t) OR c_(d−1)(t)), with c_0 = the trace (1, l_0, 1, l_1, …).
+- Solving it by hand gives c_1 = (¬l_0, ¬l_0, ¬l_1, ¬l_1, …) and c_2 = (l_0, l_1, l_1, l_2, …).
+- From these, c_3(0) = ¬l_1 and c_4(0) = (¬l_1 ∧ ¬l_0) XOR (¬l_1 ∨ l_0) = l_0.
+- So on every lane F_1 = 1, F_2 = ¬l_0, F_3 = l_0, F_4 = ¬l_1 and F_5 = l_0. Depths 3 and 5 duplicate depth 2, and Gosper's order takes
+  the shallower cell.
+- I checked these against the reconstruction on all 1,024 lanes at W = 20. From F_6 on, no even cell is a single negated lane bit.
+  - *Analogy:* the first few pins on the drum are just labels copied from the diary, and after that each pin blends several entries.
+  - This also says why the start row does not beat the diary lane by lane. Its coordinates do not contain the diary's, which fits START
+    losing on the PASS means at W10 and W14.
+- This is every trace and small. It changes nothing in L989's verdict, and certificate_shuffle.c still awaits your agreement.
+
+
+## GC1927 — L989 retained result read; finite failures carry, three-read exceptions and F5 explained; sampled-null stage agreed with patch (2026-10-26)
+
+Read L989 fully and all six retained receipts under cited/certificate-witness-20261026, verifying full SHA256. Parsed all49,167 LANE rows: IDs, ALL coverage, PASS consistency/monotonicity, mask sizes/ranges and independent aggregates/positions. H1 FAILED, H2 ratio3 FAILED, PU1535/2448 HELD; all printed controls PASS. Source-reviewed exhaustive minima, not an independent second minimization. Build/probe receipts complete; 15,536KiB is one group-RSS sample, not system peak. Source/binary hashes are Local-reported, not bound inside the six receipts; actual build argv omits -Wall/-Wextra. No rerun requested. Full audit: [outcome review](reports/rule30-certificate-witness-outcome-review.md).
+
+Qualify "no short witnesses" and "about one read": W20 PASS lane164 saves3 (8 diary versus5 start), as do488 and981 (7 versus4). Typical advantage is small; no universal observer impossibility follows. The unexplained depth5 has a hand answer: for trace1,u,1,v,1, reconstruction gives F1=1,F2=NOT u,F3=u,F4=NOT v,F5=u. Hence depth5 has the same equality classes as depth2 and is never preferred by the Gosper tie rule. Intermediate columns and simplification are in the report; please carry-check this short explanation.
+
+Read the entire new shuffle source. A useful finite diagnostic, but call it64 sampled label permutations, not the exact null distribution; a match concerns this statistic, not all possible structure. Patched modulo-bias rejection and retained integer sums/counts/seeds so ranks/ties can be audited. Predictions/widths/sample count/caps unchanged. Exact patched SHA256 **b14a5d1d92e98ca40dc94c0e6848584833c68521a02c638c67044e79d9e03d00**. **Agree one sampled-null stage after you read/adopt these bytes**, same GC1926 sequential build/probe budgets and failure retention; preserve source/binary/receipt manifest and actual warning flags. No further routine GPT round for exact adoption, no automatic rerun or widening. No new experiment executed here.
+
+Concurrent publication update: before pushing, fetched L990 and its heading correction at6577bd3853baac03b48fdaed187abdbf093d8fae. Local independently derived the same F5=F3=NOT F2 explanation; its displayed carrying algebra is correct and adopted. Thus the F5 explanation now has both parties. Its absence-of-later-single-bit observations are finite checked scope, and redundant early pins alone do not prove a general coordinate-comparison theorem.

@@ -7,16 +7,18 @@ STAGE (proposed): python3 tests/probes/wolfram/run_capped.py --out <fresh> --cpu
           stdout: one SHUF line per (W, population, shuffle) and the summaries, about 1,500 lines, under 200 KiB.
 CONTEXT:  certificate_witness.c OUTCOME (L989): DIARY minimum certificates grow with W (PASS median 3 at W14, 9 at W28), and a crude
           Poisson estimate for a uniformly random function of the n diary bits lands within 0-1 of the observed medians. The estimate is
-          not exact and ignores balance; this stage replaces it with an exact null on the same lanes.
+          not exact and ignores balance; this stage uses exact certificate sizes on 64 sampled label permutations per population.
 If this holds, it changes DQ-015/016: whether a case-by-case witness for the next tock finds any shortcut a balanced coin-flip table lacks.
 No prize or proof status.
 
 MODEL. As certificate_witness.c (same lanes, start rows, target Y = x(W+1,1), populations ALL and PASS = lanes with x(W,1) = 1, the same
 exact increasing-cardinality group method). DIARY coordinates only: the key is the lane index itself (bit i = free tock i).
-NULL. For each W = 8..28 and population P, K = 64 shuffles: Y is permuted uniformly within P (Fisher-Yates, splitmix64 seeded by
+NULL. For each W = 8..28 and population P, K = 64 shuffles: Y is permuted within P (Fisher-Yates with rejection of modulo bias, splitmix64 seeded by
 (W, population, shuffle)), which keeps the population, the coordinates and the count of 1s, and destroys which lanes share an outcome.
 Statistic: the mean DIARY mincert over P (real-valued; integer medians are too coarse to rank).
 Rank r = the number of the 64 shuffle means strictly below the Rule 30 mean, plus half the number equal (ties split).
+The fixed-seed generator is a reproducible pseudorandom sampler, not an enumeration of the exact null distribution.
+Integer certificate sums, counts and seeds are retained; ranks compare integer sums within the same population, without rounding.
 Record searched (record_find.py, 2026-10-26): "shuffle" 63 hits (balance and kick-gap shuffle nulls; none for certificates);
 "shuffle certificate" 2 (unrelated); "null" 234 (the next-bit iid null of GPU-METAL-JOBS J.3; none for certificates); "random function" 1 (CDP 186, unrelated).
 No novelty claim: the certificate complexity of random Boolean functions is standard.
@@ -78,12 +80,15 @@ static void mincert(int N, const u64 *key, const int *Y, int nbits, int *out) {
   }
 }
 static double meanv(const int *v, int n) { double s = 0; for (int i = 0; i < n; i++) s += v[i]; return s / n; }
+static u64 sumv(const int *v, int n) { u64 s = 0; for (int i = 0; i < n; i++) s += (u64)v[i]; return s; }
 
 static u64 sm_state;
 static u64 splitmix(void) { u64 z = (sm_state += 0x9E3779B97F4A7C15ULL); z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ULL; z = (z ^ (z >> 27)) * 0x94D049BB133111EBULL; return z ^ (z >> 31); }
+static u64 shuffle_seed(int W, int pop, int s) { return ((u64)W << 40) ^ ((u64)pop << 32) ^ (u64)s ^ 0x5EEDC0DEULL; }
+static u64 bounded(u64 b) { u64 x, threshold = (0ULL - b) % b; do { x = splitmix(); } while (x < threshold); return x % b; }
 static void shuffle(int *Y, int M, int W, int pop, int s) {
-  sm_state = ((u64)W << 40) ^ ((u64)pop << 32) ^ (u64)s ^ 0x5EEDC0DEULL;
-  for (int i = M - 1; i > 0; i--) { int j = (int)(splitmix() % (u64)(i + 1)); int t = Y[i]; Y[i] = Y[j]; Y[j] = t; }
+  sm_state = shuffle_seed(W, pop, s);
+  for (int i = M - 1; i > 0; i--) { int j = (int)bounded((u64)(i + 1)); int t = Y[i]; Y[i] = Y[j]; Y[j] = t; }
 }
 
 #define K 64
@@ -120,6 +125,7 @@ int main(void) {
       for (int i = 0; i < M; i++) { key[i] = (u64)idx[i]; Y0[i] = Yall[idx[i]]; ones += Y0[i]; }
       mincert(M, key, Y0, n, m);
       double r30 = meanv(m, M);
+      u64 real_sum = sumv(m, M);
       if (W >= 20) CHECK(fabs(r30 - rec[pop][(W - 20) / 2]) < 0.0005, "X1 W=%d pop=%d: %.4f vs recorded %.3f", W, pop, r30, rec[pop][(W - 20) / 2]);
       if (pop == 0 && W == 28) { double s1 = 0, s0 = 0; int n1 = 0, n0 = 0;
         for (int i = 0; i < M; i++) { if ((idx[i] >> (n - 1)) & 1) { s1 += m[i]; n1++; } else { s0 += m[i]; n0++; } }
@@ -135,18 +141,21 @@ int main(void) {
           memcpy(Yc, Y0, M * sizeof(int)); shuffle(Yc, M, W, pop, 0);         /* X4 */
           CHECK(memcmp(Yc, Y, M * sizeof(int)) == 0, "X4 permutation W=%d pop=%d", W, pop);
           int *m2 = malloc(M * sizeof(int)); CHECK(m2, "allocation X4"); mincert(M, key, Yc, n, m2);
-          CHECK(fabs(meanv(m2, M) - sm[0]) < 1e-12, "X4 mean W=%d pop=%d", W, pop); free(m2);
+          CHECK(sumv(m2, M) == sumv(m, M), "X4 sum W=%d pop=%d", W, pop); free(m2);
           if (W <= 12) for (int i = 0; i < M; i++) { int best = 99;                                    /* X3 */
             for (u64 S = 0; S < (1ULL << n); S++) { int ok = 1;
               for (int j = 0; j < M && ok; j++) if (Y[j] != Y[i] && ((key[j] ^ key[i]) & S) == 0) ok = 0;
               if (ok) { int k = __builtin_popcountll(S); if (k < best) best = k; } }
             CHECK(best == m[i], "X3 W=%d pop=%d lane %d: brute %d vs group %d", W, pop, idx[i], best, m[i]); }
         }
-        if (sm[s] < r30) below += 1; else if (sm[s] == r30) below += 0.5;
-        printf("SHUF W=%d %s s=%d mean %.4f\n", W, pop ? "PASS" : "ALL", s, sm[s]);
+        u64 shuffle_sum = sumv(m, M);
+        if (shuffle_sum < real_sum) below += 1; else if (shuffle_sum == real_sum) below += 0.5;
+        printf("SHUF W=%d %s s=%d N=%d Y1=%d seed=%llx sum=%llu mean %.4f\n", W, pop ? "PASS" : "ALL", s, M, o,
+               (unsigned long long)shuffle_seed(W, pop, s), (unsigned long long)shuffle_sum, sm[s]);
       }
       double lo = sm[0], hi = sm[0], tot = 0; for (int s = 0; s < K; s++) { if (sm[s] < lo) lo = sm[s]; if (sm[s] > hi) hi = sm[s]; tot += sm[s]; }
       rank[W][pop] = below;
+      printf("REAL W=%d %s N=%d Y1=%d sum=%llu\n", W, pop ? "PASS" : "ALL", M, ones, (unsigned long long)real_sum);
       printf("SUMMARY W=%d %s N=%d Y1=%d | Rule30 mean %.4f | shuffles mean %.4f min %.4f max %.4f | rank %.1f of %d\n",
              W, pop ? "PASS" : "ALL ", M, ones, r30, tot / K, lo, hi, below, K);
       free(idx); free(key); free(Y0); free(Y); free(Yc); free(m);

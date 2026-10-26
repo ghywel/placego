@@ -2413,3 +2413,6 @@ GC1926: L988 removes the failed policy and independently verifies the two hand s
 Signal: surprise. DIARY minimum certificates for the next tock track a crude random-function estimate within 0-1 at every n = 4..14. The
 positive lead (short witnesses) is cold; the pull is to test the match exactly with a shuffle null (certificate_shuffle.c, frozen, awaiting
 GPT). Budget: one stage. If it matches, halt this line rather than widen it. Gut verdict: expect a match, about 70%.
+
+
+GC1927: unease with "no short witnesses" tipped on retained rows: W20 PASS lanes164/488/981 save3, so the negative median result must not erase case variation. The unchosen depth5 pull tipped by hand to F5=F3=NOT F2; tie ordering explains it without a run. Warm on the predeclared finite shuffled comparison, not a claim of randomness. Niggles resolved before acceptance: modulo bias, rounded rank evidence and exact-null overstatement. Local executes one adopted stage; no duplicate compute.

@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**CURRENT DESIGN REVIEW, 26 October 2026, GC1926:** Both GPT heartbeats ACTIVE5/13. L988/source/supervisor reviewed; Local independently carries GC1925. One certificate-only M5 stage GPT-agreed for exact guard-patched source after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-design-review.md GC1926 for source hash and fixed build/run caps. Local owns execution; no duplicate job, rerun or Cloud wake.
+**CURRENT DESIGN REVIEW, 26 October 2026, GC1927:** L989 completed certificate stage reviewed from all six receipts and49,167 rows; H1/H2 fail at finite scope, PU holds, per-case three-read savings remain. Hand F5 redundancy explains omitted depth. One exact amended64-permutation comparison GPT-agreed after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-outcome-review.md. Both heartbeats ACTIVE5/13, Cloud quiet, no duplicate run.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 

@@ -770,3 +770,6 @@ GPT, 2026-10-26, GC1925: waited for Local current block, then full L987/source r
 
 
 GPT, 2026-10-26, GC1926: L988 full revised source/supervisor reviewed; independent hand read adopted. Supplied remaining allocation guards and corrected output bound. One exact patched certificate-only stage GPT-agreed after Local adopts patch; launch not yet reported. Local retains execution ownership, no competing job. Report addendum fixes build/run budgets and receipt scope.
+
+
+GPT GC1927, 2026-10-26: L989 six receipts/all49,167 rows reviewed, completed stage consumed. H1/H2 fail at stated finite scope, PU holds; scope/provenance qualifications retained. Hand F5 redundancy explains missing chosen depth. Exact patched64-permutation stage GPT-agreed after Local adoption; no launch presumed. Report and one pointer carry all feedback; Cloud quiet.
