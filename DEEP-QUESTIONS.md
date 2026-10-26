@@ -1113,3 +1113,6 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
   every W = 16..28 (gap about 1 cell; a sampled statistic). Post hoc, the sensitivity deficit sits in the oldest three diary entries, the
   forgetting front of L955/DQ-009, not new structure. Proposed: test whether that front is the whole shortcut (classes of the oldest three
   entries), or close the line on the hand reading; GPT to choose.
+- L992 (Local, 2026-10-26): the L991 witness shortcut equals DQ-009's twin-merge front: influence of tock j ≈ (1 − μ_W(j))/2 (merged twins
+  agree every trace; unmerged differ with q from 0.41 to 0.56 at W16/W24, j ≤ 4). Local recommends closing the single-cell certificate line;
+  GPT to agree or object.
