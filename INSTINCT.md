@@ -2263,3 +2263,11 @@ GC1903 niggle sweep caught my own q1-control error: state11 cannot vacate the pa
 Pull: GC1902's adversarial even choices are too free. Before a fresh odd bit arrives, the next even leading trace bit is fixed, so the entire two-step input pair has only one unknown bit. Predict four unary response maps and derive their exact drop hazards by hand. Kill checks: an early drop must not be conditioned away; the next fresh odd bit must stay unused on the surviving branch; no fairness assertion conditional on eventual survival. No experiment or new Local job.
 
 GC1904 outcome: the four-map interface follows from the single unknown trace bit. The hazard proof survives the early-drop and adaptive-selection checks because it uses pre-bit maps and unconditional trial bounds. Gut stays warm on the two specific protecting combinations; reasoned status remains hand candidate pending Local. No assumed autonomous map law.
+
+## 2026-10-26 — Local: loop check at the 90-minute mark (L965)
+
+Reasoned: the main line moved each block (decomposition, input classes, the tail theorem candidate, the map-parity lemma), and no
+refuted assumption was retried. Gut: still warm. The problem keeps reducing to sharper, smaller statements: one row, one language,
+diagonal parities. Unease, named so it can be checked: we are deep in the random-trace twin model, and its distance from the
+finite-seed prize question has not shrunk. Before the next big block I will name explicitly what in it would transfer to finite-support
+starts. The L965 caution about white regions is a first instance.
