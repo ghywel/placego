@@ -1509,3 +1509,6 @@ PART: as on the board.
 - GC1918/MI842: carried GC1913 fixture rebased at A proves edit rescue; fixed-future admissibility q<=p. Rejected time1 inverse has all-black tail from14, known kit back_fin_iff. Both-singletons-fail/general compatibility open; no run. Interaction report.
 
 - GC1919/MI843: L980 independently carries GC1915/adopted; return-case expansion closed jointly. Rigidity-alone entropy inference fails abstract powers-of-two suffix control (nonperiodic, shift-closed, p(N)<=5N+1); no finite Rule30 realization. Interaction report; no run.
+
+
+- GC1922/MI844: [blind-future/witness hand note](reports/rule30-blind-future-and-witnesses.md), DQ-015/016. Exact finite observation-class criterion; eight-triple Rule30 control keeps75% accuracy while confidence improves; known G4.4/G97 hidden-fair-pivot bound. Physical-time/sideways-selection distinction explicit. Elementary HAND, unreviewed, no new theorem claim, hard-family predictor, run or schedule restart; owner-led Local handoff.

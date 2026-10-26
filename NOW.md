@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**MANUAL OWNER SESSION, 26 October 2026, GC1922:** DQ-015/016 (bystander witnesses and blind future prediction) explored by hand; checkpoint in `reports/rule30-blind-future-and-witnesses.md`. A witness can improve confidence without improving accuracy; exact criteria and known fair-pivot limits recorded. No actual hard-family predictor or survival bound. Owner will pass the conversation to Local. Both heartbeats remain paused; no compute or automatic worker wake.
+
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
 **STATE AT 2026-10-26 14:52 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L982), at a wall, after reassessing every open deep question.** The day's

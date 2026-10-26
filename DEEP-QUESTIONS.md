@@ -6,6 +6,10 @@ This is a place for questions that might change how we see a problem. They need 
 
 Keep the question in ordinary words. Translate it without replacing it. A failed interpretation is not necessarily a failed question. Equally, an attractive analogy earns no exemption from a counterexample.
 
+## Current manual checkpoint — 26 October 2026, GC1922
+
+The owner has reopened discussion and a manual mathematical exploration, **without restarting heartbeats**, and will pass the flow to Local. DQ-015 records bystanders as witnesses; DQ-016 records predicting a hidden future and judging our confidence against the actual result. [The hand exploration](reports/rule30-blind-future-and-witnesses.md) derives exact controls and leaves a concrete next question: **which observation, available before the cutoff, tells us when our existing description is sufficient?** An informative witness may improve confidence without improving the hit rate. No actual predictor for the hard survivor family is established; no compute stage or automatic Local wake. Earlier restart/handoff sections below are historical.
+
 ## Working glossary (26 October, following CL639)
 
 - **Tick:** an even-time observation, required black in this auxiliary survival test.
@@ -90,6 +94,8 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955). Finite edits can never cut (L974); a descent needs infinitely many changed tocks or another measure |
 | DQ-013 | Is the metronome uneven, or are we counting the wrong kind of beat? | Update order and event timing distinguished; waiting-time structure open. No successive-wait relation once twins are deduplicated (L955) |
 | DQ-014 | Can Rule 30’s mirror and colour-exchanged relatives reveal a simpler mechanism? | Equivalence answered; a useful relationship-based description remains open |
+| DQ-015 | Can innocent bystanders reveal what the active cells are doing? | Exact observer question opened; no new computation |
+| DQ-016 | Can we predict a hidden future, and predict how often we will be right? | Blind prediction and calibration question opened; hand exploration |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1023,3 +1029,25 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 - **Active neighbours and bystanders (DQ003/009/014).** In standard left-to-right Rule30, changing the left input alone always changes the next output; changing the centre matters iff the right input is white, and changing the right matters iff the centre is white. These are one-step counterfactual sensitivities with other inputs held fixed, not a ranking of long-term importance. At a centre/right black pair neither singleton flip matters, yet flipping both changes their OR: joint influence need not appear in singleton sensitivity. Later influence depends on changing contexts and paths. In our depth-from-wall notation spatial left/right must be translated, not silently reversed.
 
 **Selected pull:** use the solved period1 latch as a control for the active-neighbour question. First identify exactly what becomes irreversible in the known proof and exactly what alternating input breaks. No new mechanism or inevitability claim yet; return to discussion before proposing computation. Sources read: proof37 in full, RULE30-PRIZE8.76, PERIOD-TWO5, current-kit Rule30ZeroBoundary dynamics/semiflow definitions.
+
+
+## DQ-015 — Innocent bystanders as witnesses
+
+**Owner's question:** cells need not directly determine a watched update to signal relationships with its active neighbours. Consider displaced, diagonal or chess-knight-shaped observations as well as direct inputs.
+
+**Distinction:** shared causes, earlier consequences and constraints can make an indirect observation informative. A future observation used as an input is a different task from a prediction made before it exists. In a spacetime picture vertical displacement changes time. Full-row determinism does not make a restricted observer sufficient.
+
+**Concrete question:** when the current observer gives the same description to two histories with different outcomes, can a bystander observation split those histories? Which observation time and information budget are allowed? Existing GC1915 supplies an exact missing quantity for one conditional reread, not an already-blind forecasting result.
+
+## DQ-016 — Blind futures and confidence in predictions
+
+**Owner's question:** predict the future from past/present, or predict our success rate, using the real future as the source of truth. Record first, then explore mathematically; owner will hand the flow to Local at a checkpoint. Both heartbeats remain paused.
+
+**Initial formulation:** fix what the observer sees and when it must make its prediction. Keep the target hidden until after prediction. Distinguish exact determinacy, best average success in a specified population, and a claim about one finite beginning. A claimed probability needs a named population or other explicit uncertainty model.
+
+**Hand work selected (GC1922):** characterize when witnesses resolve ambiguity; derive a small Rule30 forecast/calibration control; check the exact limit imposed by an unseen free input. Search existing fresh-pivot and observer results before novelty claims. No simulation, learned model, benchmark or Local launch.
+
+
+**GC1922 hand outcome for DQ-015/016 (26 October 2026):** [Full derivation and handoff](reports/rule30-blind-future-and-witnesses.md). Exact prediction is possible precisely when no two allowed beginnings share the observations but have opposite targets. A witness refines these groups. In the eight equally weighted Rule30 input triples, knowing L predicts the opposite of L with75% accuracy; adding C keeps75% but identifies a certain half and a coin-flip half. This improves the probability score. Conversely, observations unchanged by flipping an independent fair leftmost input cannot beat50% for the corresponding future target. This is a known-permutivity control, not a single-seed unpredictability claim.
+
+**Challenge and sharper question:** spatial reconstruction depth is not physical elapsed time; future return labels cannot silently enter the features or selection. Can a genuinely pre-cutoff witness tell us when the observer has enough information? This is open for the actual tick/tock family. Next: Local's independent hand perspective when the owner passes the baton, with one declared target/cutoff/population; no census, training or heartbeat restart.

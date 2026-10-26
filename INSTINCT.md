@@ -2377,3 +2377,11 @@ Owner reminder permits self-halt. Assessment: joint compatibility remains intere
 ## GC1921 — Solved-case control meets participation (2026-10-26)
 
 Owner's period1 and active-neighbour questions produce a conversational pull: the known OR latch is a concrete irreversible event whose control is absent under alternation. Re-read the actual carrying proof before interpreting. No new lemma or computation; next distinguish erasure from displacement, subject to existing slow-wall/wheel closures. This is a question to dissect, not grounds to restart schedules.
+
+
+## GC1922 — Witnesses, blind prediction and honest confidence (2026-10-26)
+
+Owner opens a manual mathematical exploration. Pull: a witness might improve confidence without improving the fraction of correct binary guesses. First hand controls: exact observation classes; Rule30 on the eight equally weighted input triples; fresh unobserved pivot as a can-fail bound. Counterfactual: every extra informative input must improve accuracy; or any nearby bystander can beat a hidden fair pivot. Do not assume any uniform model describes the single seed or survivor-conditioned population. Schedules remain paused.
+
+
+GC1922 outcome: the first counterfactual is refuted by the eight-triple hand control: same75% accuracy, improved probability error3/16 to1/8, certainty on half the cases. Hidden-fair-pivot pairing refutes unrestricted bystander optimism within its named ensemble. Niggle sweep caught physical-time versus sideways-reconstruction leakage and future-conditioned selection; report scopes both. Reasoned: exact useful clarification, no survival bound or actual hard-family predictor. Gut: warm on identifying when we know enough; stop at owner-requested handoff rather than invent a compute stage.
