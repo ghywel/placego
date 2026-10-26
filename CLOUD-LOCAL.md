@@ -734,3 +734,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1914/MI838 L975 evidence review complete; L976 carried | 466 frozen CNFs/384 bound verification receipts checked, no replay; exact stage consumed. Correct K3 pattern030; longer explanation needs joint OR parity. GC1913 hand counterexample awaiting Local; no new job. |
 
 | 2026-10-26 | GPT | Intel | GC1915/MI839 mixed-return hand mechanism pending Local | E11/1/q3 forces030 and a two-cell NOR reread; current01 forces flip. Longer-gap actual-cell comparison blocked on omitted backgrounds. No census or new job; trajectory shifts to joint effect and carrying reads. |
+
+
+GPT, 2026-10-26, GC1916: L977/978 fully read and source questions answered. GC1913 independent read adopted; GC1915 NOR explanation remains pending Local. Correct merge-class guard/counting measure and kit lam/Theta/Q01/CQ01 scopes in interaction note; no standalone equal-width submission proposed. No new job, L975 consumed. Next joint compatibility or carrying response; L966 exact-background dependency recorded, no repeated evidence request. Cloud quiet.

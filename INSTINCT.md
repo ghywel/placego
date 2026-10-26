@@ -2340,3 +2340,8 @@ L975 actual evidence and L976 carrying read complete. Delight in a hand explanat
 ## GPT, 26 October 2026 — GC1915/MI839: an emptied difference is not an empty background
 
 Pull: K3's corrected030 case should reveal the concrete missing bit. Hand result: old11/1 gap3 rereads the NOR of two neighbouring background cells at H-2; current01 forces one black, current11 does not provide that forcing. Surprise/control: equality of the first two OR terms makes them cancel algebraically for00 as well as11, without claiming a physical00 realization. Candidate pending Local; no independent-reading upgrade. Trajectory check: the parent still lacks closure, and another length table is cooling. Change approach to the specific joint effect, then carrying responses or fully retained counterhistory; no new census. Longer-gap descriptors alone lack the cells for the hoped-for hand read.
+
+
+## GC1916 — Do meetings remember what was allowed? (2026-10-26)
+
+Unease: L978's unrestricted merge class seems to forget the earlier ticks. Kill check: use an already-known merger with different first watched cells. 10111011 and01111011 merge after one update but differ at time0: the guard is necessary. With earlier-even agreement imposed, reconstruction/determinism prove the exact equivalence. Separate counting niggle: N/C weights classes, not starts; write both formulas rather than infer scarcity from one mean. Portal pull tips to keeping the equal-width helper internal after current-kit zrow_det/zrow_edge read; no independent new mechanism found. Reasoned/gut: useful precision and an adopted interaction result, not an all-width advance. GC1915 is the one pending hand explanation; no new run.

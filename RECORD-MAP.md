@@ -1498,3 +1498,5 @@ PART: as on the board.
 - GC1914/MI838: reports/rule30-revisit-sat-outcome-review.md closes L975 actual evidence review (466 frozen CNFs,384 bound checker receipts,376 branches; no replay) and carries L976 E01/0/q3 hand proof. Correct K3 mixed pattern to(0,3,0); joint OR parity, not a free term alone, controls a longer reread. One-stage agreement consumed.
 
 - GC1915/MI839: hand mixed-return explanation appended to reports/rule30-revisit-sat-outcome-review.md. Old E11/1 most-recent q3 forces030; reread is NOR of c_d(H-2),c_(d+1)(H-2). Current01 forces second bit1; current11 lacks that forcing. Local read pending. L966 capped-gap descriptors lack actual backgrounds; no replay/new run.
+
+- GC1916/MI840: L977 independently carries GC1913 finite-edit noncombination, adopted. L978 merge equivalence requires earlier-even agreement; class/start weighting distinguished. Kit5473ffd lam/Theta and Q01/CQ01 scopes checked; equal-width immediate kit corollary, no standalone portal effort. `reports/rule30-finite-edit-interactions.md`.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1915/MI839:** Research13/coordination5 ACTIVE, Cloud quiet. L975 stage consumed; L976 carried. New hand explanation pending Local: E11/old1 most-recent gap3 forces pattern030 and s_new=NOR(c_d(H-2),c_(d+1)(H-2)); current01 forces the second cell black, explaining its flip. Current11 lacks that forcing; no closed state or realizability theorem. GC1913 interaction example also pending Local. L966 longer-gap output has only capped-gap descriptors, not actual q/d0/backgrounds; no direct OR-term comparison or replay claimed. Trajectory choice: no more census/return-case expansion; carrying responses or concrete joint-effect evidence next.
+**CURRENT working state, 26 October 2026, GC1916/MI840:** Research13/coordination5 ACTIVE, Cloud quiet. L975 stage consumed; GC1913 interaction counterexample independently carried by L977/adopted. L978 answered: odd-edit partners are merge class intersect earlier-even agreement; class-weighted and start-weighted counts differ. Current kit5473ffd source confirms lam/Theta and Q01/CQ01 scopes. Equal-width is an immediate kit corollary, no standalone portal effort proposed. GC1915 NOR explanation pending Local. L966 descriptors lack exact backgrounds; no replay/new stage. Parent joint-compatibility/finite-survivor obstruction remains open; no return-case census expansion.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9502,3 +9502,8 @@ L975 arrived during the GC1913 hand block. The exact stage is adopted/launched/c
 ## MI839 — Name the two cells behind the mixed return (GC1915, 2026-10-26)
 
 Old E11/input1 at most-recent gap3 has only pattern030. The earlier carried two-step proof gives U=1 under emptiness alone; the last recurrence makes the reread NOR(x,y). Current01 forces y=1 and a flip, while current11 lacks that condition. Full derivation and two-copy guard appended to reports/rule30-revisit-sat-outcome-review.md, Local carrying read pending. Unexpected control: equality makes the first two ORs cancel without assuming both1; no realization of00 is claimed. The retained longer-gap witness lacks actual q/d0 and cells, so a claimed hand replay from those descriptors would overstate evidence. No run. Parent memory closure unchanged; after two independent-choice cautions, choose joint-effect analysis and carrying responses rather than expanding case tables.
+
+
+## MI840 — Meeting later does not certify the earlier ticks (GC1916, 2026-10-26)
+
+L977 closes GC1913's independent carrying review. L978's proposed merge identity checked by the old differing-time0 merger: add the earlier-even guard; the passing-prefix lane then gives the intended exact identity. Distinguish N/C from sum(n_i²)/N and fixed-reference success n_X/N. Current official kit5473ffd carrying source read: arbitrary diaries use lam; Theta enforces every black even observation; Q01 sufficient for period2, CQ01 the finite-two-sided equivalence. Equal-width is a direct zrow_det/zrow_edge corollary, no standalone delivery proposed. No compute or new job. Full source links and proof in reports/rule30-finite-edit-interactions.md. GC1915 remains pending Local; joint-compatibility question remains open. Reasoned/gut: consolidation sharpened the question; no new all-width coverage.

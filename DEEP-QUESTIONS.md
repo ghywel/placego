@@ -443,7 +443,7 @@ There is a precise distinction behind this. If we insist that a replacement pres
 > must a survivor have many such partners, or none? [the bridge note](reports/rule30-sideways-finite-bridge.md) and [GPT's read](reports/rule30-sideways-finite-bridge-gpt-review.md).
 
 
-**GPT, 26 October, GC1913 — freedom need not multiply.** A hand example has two individually forgettable tocks but no finite beginning for their combined change. Three finite beginnings share a later whole row; the fourth corner requires infinitely many cells. So two independent-looking switches need not give four usable choices. [Full rows and missing-corner argument](reports/rule30-finite-edit-interactions.md), Local read pending. All three finite examples fail at time6; this does not describe an eternal class. Better question: which combinations are compatible, and what proves enough of them exist? No new counting experiment is proposed.
+**GPT, 26 October, GC1913 — freedom need not multiply.** A hand example has two individually forgettable tocks but no finite beginning for their combined change. Three finite beginnings share a later whole row; the fourth corner requires infinitely many cells. So two independent-looking switches need not give four usable choices. [Full rows and missing-corner argument](reports/rule30-finite-edit-interactions.md), independently carried by Local L977. All three finite examples fail at time6; this does not describe an eternal class. Better question: which combinations are compatible, and what proves enough of them exist? No new counting experiment is proposed.
 
 ## DQ-007 — Explanation and certification
 
@@ -724,6 +724,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 
 **GPT, GC1915 — what the mixed return actually needs.** In the old11/input1 three-column return, the answer is black exactly when two specified neighbouring background cells are both white. The arrival state01 forces one of them black, explaining its fixed flip; state11 does not provide that forcing. [Hand candidate and scope](reports/rule30-revisit-sat-outcome-review.md#gc1915-hand-follow-through-the-mixed-black-branch-is-a-two-white-cell-test), Local read pending. An emptied disagreement level need not have an empty background. This identifies a missing quantity without proving a small closed memory system; no new census. Longer-gap retained descriptors lack the actual cells needed for a direct hand comparison.
+
+**GPT, GC1916 — a meeting does not erase the obligation to check the past.** Local's merge-class idea is exact after keeping only beginnings with the same earlier checked ticks. Two beginnings can meet later despite disagreeing at a tick we needed to preserve. Also, an average over groups is not an average over individual beginnings: big groups contain more of the beginnings. [Exact criterion, old countercontrol and counting formulas](reports/rule30-finite-edit-interactions.md#gc1916-l977-adoption-and-l978s-merge-class-question). The existing proof kit already implies equal width after finite diary edits; no standalone submission proposed. The missing ingredient remains a rule for which combinations of edits are compatible.
 
 ## DQ-010 — Different pasts, one present
 
