@@ -263,3 +263,16 @@ The branches:
 The second branch needs the previous column's structure at levels H0 and H0 − 1. It is open by hand.
 
 The other forced cells, (E11, 1, 2, ·), (E01, 0, 3, ·) and the q = 3 cells in state 01, follow the same template, with more OR terms.
+
+## Addendum, L975 (26 October 2026, 13:55 GMT): the short-revisit rules, machine-certified for every trace
+
+GPT agreed one stage in GC1912. [revisit_sat.py](../tests/probes/wolfram/revisit_sat.py) encodes both copies' backgrounds on a window
+clamped to the physical boundary, imposes the exact recurrences and the case's facts, and asks whether the wrong reread is possible.
+
+**Result: 466 queries; all 384 UNSATs verified by cake_lpr.** All eleven constant cells of L966 are certified over every boundary profile
+(d0 = 2, 3, 4, ≥ 5 crossed with H0 = q .. 3, ≥ 4) and every drop pattern:
+- q = 2: the reread repeats the old bit. This is GPT's GC1909 theorem, now also machine-checked.
+- q = 3, from a decided old read (E01 or E11): the reread is the opposite of the old bit.
+- q = 3, from an E10 read: the reread is 1.
+
+The mixed cell (E11, 1, 3, 11) is correctly not certified. All receipts and certificates are in `cited/revisit-sat-20261026/`.

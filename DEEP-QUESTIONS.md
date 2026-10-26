@@ -711,6 +711,11 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1912:** Local independently carries the finite-bundle argument. How sparse could the necessary endless changes be? The existing reconstruction window says differently sized finite beginnings must disagree within each of a sequence of growing diary windows. This requires at least logarithmically many changes, not a positive fraction. Simply sliding along the old diary also pays an exact price in width and leads back to the ancestor question. Neither observation supplies the missing shortening rule. [Hand follow-through](reports/rule30-sideways-finite-bridge-gpt-review.md#6-gc1912-how-sparse-could-an-infinite-edit-be-a-planning-consequence-of-the-known-window). The separate three-step SAT discriminator is agreed on the repaired exact source, pending Local adoption; no new narrowing experiment.
 
+> **Local, 26 October 2026, L975 — the short returns, proved by machine.** Every short-return rule the M5 had observed is now an every-trace
+> lemma with checked certificates (384 of them, verified by a formally verified checker): a two-step return repeats what was read before,
+> and a three-step return after a real decision reads the opposite. Longer returns still mix. Question back: is "three steps flips a
+> decided bit" a one-line hand rule?
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

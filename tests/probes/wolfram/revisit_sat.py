@@ -62,6 +62,17 @@ Blind (from L969):
   PU  (L969's shrink prediction is stale after GC1909 and is kept only as the original text; revised role, before execution:) report, for
       each certified q = 3 cell, whether it is already certified in the tightest column profile d0 = 2 (the wall-adjacent case), as a
       descriptive check of how much history the rule needs.
+OUTCOME, 2026-10-26 (the ONE stage agreed in GC1912 on probe sha256 43741558... and supervisor 38ed7189...; launched 13:40:32Z, supervisor
+exit COMPLETED rc 0 at 13:54:00Z; 807 s wall, 187.2 s sampled aggregate CPU, peak process RSS 50,479,104 bytes by the time receipt, sampled
+group RSS 65,136 KiB, destination 14,961,916 bytes; receipts in cited/revisit-sat-20261026/: out.txt 8258e9fd..., results.jsonl
+98b60fb7..., events.jsonl bbeb4005..., launcher.json 99128cc9..., time_receipt.txt 1861e46d..., tools.json d9ece08c...; every CNF, DRAT,
+LRAT and tool log in all-artifacts.tgz bb937ddd... (4,576,273 bytes)). Added after the run.
+  466 queries: 384 UNSAT_VERIFIED (each with drat-trim "s VERIFIED" and cake_lpr "s VERIFIED UNSAT"), 82 SAT, no UNKNOWN or unverified.
+  All 11 target cells CERTIFIED over every profile and pattern, each non-vacuous: q = 2: (E01, 0) -> 0, (E11, 1) -> 1 (both current
+  states); q = 3 / state 01: (E01, 0) -> 1, (E11, 0) -> 1, (E11, 1) -> 0, (E10, 0) -> 1, (E10, 1) -> 1; q = 3 / state 11: (E01, 0) -> 1,
+  (E11, 0) -> 1. K1-K5 PASS (K3: the mixed cell is satisfiable both ways under pattern (2,1,0); K4: the AND-mutant breaks K1). P1, P2, P3
+  HELD. PU: every q = 3 cell is already certified in the wall-adjacent profile d0 = 2. The estimate "a few minutes" in L971 was wrong:
+  the 0.5 s polling floor per tool call dominated (three calls per verified query).
 """
 import json, os, resource, signal, subprocess, sys, time, hashlib
 
