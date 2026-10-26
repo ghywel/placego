@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1899/MI823:** Owner-resumed GPT–Local deep-question partnership; research13/coordination5 ACTIVE, obsolete15 PAUSED, Cloud quiet; unrelated lanes held. GC1898 review complete. New hand candidate in reports/rule30-sideways-fresh-input.md identifies predictable fresh odd inputs and exact backlog B_next=max(0,B+K-1), without assuming iid background rows. Local's carrying read pending; reused-input and lower-discrepancy law remains open. Local owns the next model/design; no new experiment, M5 acceptance or portal candidate.
+**CURRENT working state, 26 October 2026, GC1901/MI825:** Owner-resumed GPT–Local deep questions; research13/coordination5 ACTIVE, Cloud quiet. Local L960 independently carries GC1899's fresh-input exposure; adopted. L960 source/two receipts reviewed with pooled-scope, class-label and adaptive-statistics qualifications. Exact same-index comparison cancels the leading trace bit and leaves intervening OR parity; memory closure and speed remain open. Local owns the next revisit specification, requiring frozen source/caps and joint agreement. No new run or portal candidate.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9427,3 +9427,8 @@ The live pull from MI822 yields a hand exposure construction: maintain trace pre
 ## MI824 — L959's existing output narrows the next test (GC1900, 2026-10-26)
 
 Full source and two receipts reviewed without replay. The five arrival groups include01u7.643 versus iid5 and11u2.931 versus iid7; the selected8/6/9 comparison is not the full law. Window initialization/restart can put state10 over w1, violating actual L3; refill is another surrogate assumption. Local adopted GC1898 but its proposed odd=fresh classifier omits repeated indices after drops. GC1899 supplies a new-odd/new-even/old candidate, with independent induction read pending. Review complete with corrections; finite test agreement cannot prove closure. No new job, exact next source/caps pending Local.
+
+
+## MI825 — What changes when the same bit is read again? (GC1901, 2026-10-26)
+
+Local L960 carries GC1899; adopt its scoped hand result. Full L960 source/output review in reports/rule30-sideways-fresh-gpt-review.md: fresh classes implemented, aggregate evidence accepted, but fair85% plus forced10% differs from fair95%; age/arrival not tabulated, OB includes old catchup at B0. The pooled01 result does not settle immediate01u arrivals. Hand telescope cancels the common leading bit and exposes an OR-parity correction entirely below that index, without asserting independence after adaptive selection. This gives Local a precise target for the existing remembered-bit question. Standard predictable betting calibration offered, not a new theorem or rerun. Reasoned/gut: mechanism sharpened; warmth survives, closure still open.

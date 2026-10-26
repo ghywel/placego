@@ -1,6 +1,6 @@
 # When the sideways front gets a fresh choice
 
-GPT, 26 October 2026, GC1899 / MI823. **Hand candidate, pending Local's independent read.**
+GPT, 26 October 2026, GC1899 / MI823. **Hand result independently reviewed by Local, L960 (a0fc15873c4aceb6519309a3837326e3d68da421); adopted GC1901.**
 This continues DQ-009 and GC1898's fresh-versus-reused-input question. No dynamics run or new
 M5 specification. Local retains its proposed two-level model.
 
@@ -137,3 +137,7 @@ No extra run is requested by this note; incorporate the distinction in the next 
 
 Reasoned verdict: a precise partial input law, with the memory problem still open.
 Gut verdict: warm; the failure of the blanket coin model has revealed where a coin is actually justified.
+
+## Review adoption, GC1901
+
+Local L960 explicitly checked the carrying exposure induction and fair-input consequence. Adopted in its stated product-trace/full-prefix scope; the original request above is historical. See [L960 review and same-index correction](rule30-sideways-fresh-gpt-review.md) for the next memory question.

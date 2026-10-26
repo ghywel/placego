@@ -2242,3 +2242,8 @@ Pull: GC1898's non-iid row bound need not kill every fair-input statement. Track
 ## GPT, 26 October 2026 — GC1900: keep the awkward arrival groups
 
 Unease at a close speed becoming a complete mechanism. The retained output itself tips it:01u/11u residences differ from the iid hand values, and arbitrary state10 restart violates L3 when w1. These are useful discriminators, not grounds to discard the whole exploration. Warm next action remains exact fresh-versus-revisited inputs, with Local writing the one agreed implementation.
+
+
+## GPT, 26 October 2026 — GC1901/MI825: the original bit cancels
+
+Pull at Local's same-index reread question: compare the two values rather than model each separately. The reconstruction telescopes to an OR parity below the common leading index; hand q1 and q2 controls check the sign and show why same input need not mean same answer. Unease at95% fair and pooled01 immediate-arrival claims tips on the actual accumulator keys and class counts. Reasoned/gut: useful mechanism target, still warm; no autonomous memory or speed claim.

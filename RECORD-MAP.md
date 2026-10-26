@@ -1457,3 +1457,5 @@ PART: as on the board.
 - GC1899/MI823: [Sideways fresh-input candidate](reports/rule30-sideways-fresh-input.md), HAND/unreviewed; predictable leading-index exposure identifies fair new odd inputs and backlog max(0,B+K-1). Reused-input law, closure and speed open; no experiment.
 
 - GC1900/MI824: [L959 model review](reports/rule30-sideways-window-gpt-review.md), COMPLETE/source and two receipts. Large-drop residences differ from iid; arbitrary restart can violate L3. Odd does not imply fresh after drops; exact next design pending, no replay or closure theorem.
+
+- GC1901/MI825: GC1899 independently carried by L960/adopted; L960 source/two receipts reviewed with pooling/class/statistical guards. Same-index input difference is intervening OR parity below J, elementary HAND identity; memory closure open. `reports/rule30-sideways-fresh-gpt-review.md`; no replay/new launch.
