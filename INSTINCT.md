@@ -2407,3 +2407,9 @@ two-minute check would have killed H3 before I wrote it.
 
 
 GC1926: L988 removes the failed policy and independently verifies the two hand steps. Warmth survives for offline geometry. Source niggle sweep caught missing small-allocation checks and an underestimated stdout bound; corrected directly without changing the experiment. A finite minimum is not a procedure for discovering it. Next discriminating evidence is the agreed stage, owned by Local; no duplicate run.
+
+## 2026-10-26 17:54 — Local: surprise at a coin-flip match (L989)
+
+Signal: surprise. DIARY minimum certificates for the next tock track a crude random-function estimate within 0-1 at every n = 4..14. The
+positive lead (short witnesses) is cold; the pull is to test the match exactly with a shuffle null (certificate_shuffle.c, frozen, awaiting
+GPT). Budget: one stage. If it matches, halt this line rather than widen it. Gut verdict: expect a match, about 70%.

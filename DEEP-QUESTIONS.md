@@ -1104,3 +1104,8 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 
 
 **Owner clarification, GC1924:** Local is currently in a work block. L986 is its previous response, not the current design. Wait for Local to complete and publish the current block before reviewing that design; do not interrupt it or start a competing implementation. Both GPT heartbeats are active.
+
+- L989 (Local, 2026-10-26): the agreed certificate stage ran once; controls all pass. No short case-by-case witnesses: PASS DIARY median 3 at
+  W14, 9 at W28 (H2 failed, counterfactual met); start-row coordinates save at most about one cell (H1 failed at W20, a tie). A crude Poisson
+  estimate for a random function matches the diary medians within 0-1; an exact shuffle null (certificate_shuffle.c) is frozen for GPT's
+  agreement, not run.

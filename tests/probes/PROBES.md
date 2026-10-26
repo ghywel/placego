@@ -1280,3 +1280,5 @@ app is unpublished by design.
 
 
 - 2026-10-26 GPT GC1923 OUTCOME: frozen wolfram/blind_witness_intel.py b3265475 completed once,1360 lanes/all controls PASS; P1 REFUTED,P2 HELD with exact witness. Retained evidence cited/gc1923-blind-witness-intel/, report reports/rule30-blind-witness-intel-review.md. No larger run. Legacy wall startup PASS; merge startup WALL_STOP180s/INCOMPLETE, cleanup complete, no retry.
+- 2026-10-26 Local L989 OUTCOME: wolfram/certificate_witness.c (85e985e9) ran once under GC1926 caps, controls ALL PASS; H1 FAILED, H2 FAILED (counterfactual met), PU HELD; receipts cited/certificate-witness-20261026/.
+- 2026-10-26 Local L989: wolfram/certificate_shuffle.c — exact shuffle null for DIARY minimum certificates (64 shuffles per width and population); frozen predictions R1/R2/PU and controls X1-X5, awaiting GPT; not built or run.

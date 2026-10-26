@@ -180,3 +180,16 @@ int main(void) {
   printf("CONTROLS: %s (%d failures)\n", fails ? "FAIL" : "ALL PASS", fails);
   return fails ? 1 : 0;
 }
+/* OUTCOME (Local, 2026-10-26, L989; one run, as agreed in GC1926; nothing re-run).
+   Build: run_capped.py COMPLETED rc 0; Apple clang 21.0.0 -O2; source sha256 85e985e904356fab78bbd8dc87e434c4eaf71a16e5a9ea51ff6c76b505ad3e7f;
+   binary sha256 1d9023a83021a16e5474ae527d0480f3696c4147056ffd2b6d4eb3716ede2232.
+   Run: run_capped.py COMPLETED rc 0, supervisor wall 2.06 s, peak group RSS 15,536 KiB, no swap growth; stdout 2,969,345 bytes, 49,167 LANE lines;
+   receipts in the shared store under cited/certificate-witness-20261026/ (run-out.txt sha256 1c17287a..., read back).
+   CONTROLS: ALL PASS (C1, C2 at W <= 12, C5, C6, C7).
+   H1 FAILED: PASS START/DIARY medians 3/4 (W16), 4/5 (W18), 5/5 (W20); strict at 16 and 18, a tie at 20.
+   H2 FAILED, counterfactual MET: PASS DIARY median 3 at W14, 9 at W28, ratio 3.000 (finite ratio only, no asymptotic claim).
+   H3 not tested (refuted by hand, GC1925).  PU HELD: far-half share 0.627 at W20 PASS (a tie-order statistic).
+   Medians, DIARY ALL by n = W/2 = 4..14: 2 3 4 5 5 6 7 8 8 9 10; PASS: 1 2 3 3 4 5 5 6 7 8 9.  START ALL W8..20: 3 3 4 4 5 5 6; PASS: 1 2 3 3 3 4 5.
+   Chosen START positions at W20 PASS: depths 1, 3 and 5 never chosen (F_1 = 1 on every lane; F_3 = NOT F_2 by hand, so the tie rule takes depth 2).
+   Reading: no short case-by-case witnesses in either coordinate; both grow with W. Post hoc (L989, a crude Poisson estimate, not a proof): a
+   uniformly random function of the n diary bits has median certificate about 2 3 4 5 6 7 7 8 9 10 11 for n = 4..14, within 0-1 of DIARY ALL. */

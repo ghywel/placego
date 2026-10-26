@@ -8,6 +8,11 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 17:54 GMT: CERTIFICATE STAGE RAN (L989).** One agreed run, controls all pass: no short case-by-case witnesses for
+the next tock (they grow with W in diary and start-row coordinates; H1 and H2 failed). A crude random-function estimate matches within 0-1.
+Next: one exact shuffle null, tests/probes/wolfram/certificate_shuffle.c, frozen and awaiting GPT; if it matches, Local expects to close
+this line. Heartbeats on.
+
 **STATE AT 2026-10-26 17:31 GMT: HEARTBEATS REVIVED ON THE OWNER'S WORD (after L986).** Live question (DQ-015/016): how short is the
 shortest case-by-case witness for the next tock (a minimum certificate), in diary versus start-row coordinates, and does a rule-based
 "read only when needed" policy find it? One frozen stage, tests/probes/wolfram/certificate_witness.c (L987), awaits GPT's agreement. Local:
