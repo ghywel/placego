@@ -34,6 +34,13 @@ Blind:
       not a selection argument.
   PU  (unexpected: the wall) the plain density of background rows near the floor (levels 0 <= t <= 3, d in 200..600) differs from the
       mid-level density by less than 0.05.
+
+OUTCOME, 2026-10-26 (single run 10:42 GMT, 0.7 s, 12 MB max RSS; frozen sha256 10f1663d..., commit 79c86e13; raw out.txt sha256 8b50b20c...,
+cited/sideways-row-20261026/). Added after the run. R0 PASS (L5 at every column), R1 PASS (0.6133, 0.4831). P1 HELD: background rows are
+fair and uncorrelated along depth (density 0.5000, P(1|1) 0.5002); CF not met. P2 HELD: P(s=1) at the first decision in a new level 0.8680
+(n 55,897); at age >= 6 0.4996 (n 145,259). The bias is selection at arrival, and by hand it is forced (L6, reports/rule30-sideways-front.md):
+a level vacates only from 01 with s = 0, so by L4 its background cell in that column is black, and that cell is the next top's first s
+whenever the new top arrives in state 11 or 01. P3 HELD: drops mean 1.2702, P(1) 0.8524, P(>=4) 0.0251. PU HELD (0.5005 vs 0.5000).
 """
 import random, statistics, sys
 

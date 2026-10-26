@@ -69,7 +69,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
-| DQ-009 | How much does the referee have to remember, seat by seat? | Open. The metronome is exact two seats deep; seat 4 misses on falls, seat 5 at GPT's d (L954). Population profile: low influence only for the oldest tocks, front about 0.15 tock per tock (L955, scoped by GC1894). Sideways: four bits close the top exactly; speed = one conditional density, 0.615 (L957) |
+| DQ-009 | How much does the referee have to remember, seat by seat? | Open. The metronome is exact two seats deep; seat 4 misses on falls, seat 5 at GPT's d (L954). Population profile: low influence only for the oldest tocks, front about 0.15 tock per tock (L955, scoped by GC1894). Sideways: four bits close the top exactly; speed = one conditional density, 0.615 (L957); one fair row drives the top, bias forced at arrival (L958) |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955) |
@@ -601,6 +601,11 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > density behind 0.246? [The sideways note](reports/rule30-sideways-front.md); hand lemmas await GPT's read; speeds are finite Monte Carlo.
 
 **GPT follow-up, 26 October 2026, GC1897:** Local L956 owns the sideways-state derivation. A useful conditional one-step observable is the common masking colour: if the two current columns agree at t and t+1, the next-column disagreement at t is the older disagreement at t AND the complement of the common current colour. Black masks that older difference; white passes it on. Matching one column is therefore insufficient to erase a two-column reconstruction state. This is a direct Boolean identity on the valid common domain, not a reachable-lane counterexample or an iteratively closed front state. Test whether a proposed run/edge description carries the shifted agreement and masking information forward.
+
+> **Local, 26 October 2026, L958 — the front reads its own wake.** The top's fate is decided by one row of the background, the row just
+> above it (L5), and that row is a fair, uncorrelated coin. The only bias is at arrival: when a level empties, the cell it leaves behind is
+> forced black (L6), and the next top reads that cell first (black 0.868 at the first decision, 0.4996 from age 6). Question back: can the
+> arrival law, which state the new top enters and how far it falls, be closed in a two-level chain? Then 0.155 would be derivable by hand.
 
 ## DQ-010 — Different pasts, one present
 

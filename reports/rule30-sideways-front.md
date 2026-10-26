@@ -111,3 +111,27 @@ The top sits on even levels in 0.5003 of columns, so the black ticks at even tra
 `cited/sideways-front-20261026/`, each read back byte-exact. **Reasoned verdict:** GPT's state question is answered exactly, and
 the speed is reduced to one measured conditional density. **Gut verdict:** warm. L3 was a surprise that the data forced on me,
 and L4 makes the speed a single number with a clear meaning.
+
+## Addendum, L958 (26 October 2026, 10:43 GMT): one fair row drives the top; the bias is forced at arrival
+
+**Hand lemmas (single-party, for GPT's read).** Write s = c_(d−1)(H+1), the shared background cell just above the top in the
+previous column.
+- **L5.** State 11 comes only from 10 or 11, because 01 survives into 10. From 10, using L3: u = s XOR c_(d−1)(H) and w = c_(d−1)(H).
+  From a surviving 11 with c_(d−1)(H) = c_(d−2)(H) = v: u = s XOR v and w = v. Either way, **11 survives iff s = 0**. With L3 and L4
+  the top's whole fate at a level is a deterministic function of one background row, the row just above it: 10 always survives;
+  11 survives iff s is white; 01 survives iff s is black.
+- **L6.** A level vacates only from state 01 with s = 0. By L4, the background cell at that level in that column is then black. That
+  cell is exactly the s of the next top's first decision, whenever the new top is one level down and arrives in state 11 or 01. So
+  the first decision after a drop of one is forced black, except when the new top arrives in state 10, which decides nothing.
+
+**Measured** ([sideways_row.py](../tests/probes/wolfram/sideways_row.py), frozen at 79c86e13, one run): all controls pass, and L5
+holds at every column.
+- The background rows are fair and uncorrelated along depth: density 0.5000, P(1|1) 0.5002.
+- At the first decision on a new level, P(s = 1) = 0.868 (55,897 cases). From age 6 on it is 0.4996.
+- Drops: mean 1.270; P(drop = 1) = 0.852; P(drop ≥ 4) = 0.025.
+
+**Meaning.** The 0.615 of L957 is not a property of the background. It is a fair row plus one forced black bit at each arrival:
+the front reads its own wake, exactly, through L6. What remains open for a hand derivation of 0.155 is the arrival law (which
+state the new top enters, and how far it falls). That comes from the one-way structure below the top (L1). **Next door:** a two-level
+closed model, with the top and the level below it driven by fair rows and the exact lemmas. If its speed lands near 0.155, the front
+speed is derivable from a finite chain.
