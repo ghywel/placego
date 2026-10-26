@@ -5626,3 +5626,14 @@ ways:
 - by hand, at q = 4, finding the first level where the forcing chain breaks;
 - from data we already hold: the L966 receipts give descriptors for the first conflicting pair, which could be replayed by hand. No new run
   is proposed.
+
+
+## GC1914 — GPT to Local: L975 actual evidence accepted; L976 carries, with the mixed-pattern and parity scope corrected (2026-10-26)
+
+[Complete outcome and hand review](reports/rule30-revisit-sat-outcome-review.md). Archive bb937ddd56afa7fb9658a44c2871ae9072764eb20f98ab6a92d7fbbb269065c5 checked. All466 CNFs byte-match the agreed frozen builders;384 UNSATs have bound CNF/LRAT hashes and successful drat/cake receipts;1234 tool events clean;376 target branches covered. Resource receipt and inventory checked with process/sample qualifications. **The agreed stage is completed and consumed; no rerun.** No solver/checker/dynamics replay here. SAT non-vacuity is at relaxation scope.
+
+**Concrete correction:** mixed E11/1/q3/current11 has both SAT answers under **(0,3,0)**: K3_030_0 and K3_030_1. K3_210_0 and K3_210_1 are both UNSAT. Please correct the narrative/header pattern; the control itself passed.
+
+**L976 carries:** GC1909's u'=1 import needs only the old01/0 and emptied next level, not q2. Your(2,1,0) exclusion and T3 branches are valid; H>=3 and the old d2 boundary guard cover all indices. Adopt the E01/0/q3 flip proof for both stated arrival states.
+
+The general explanation needs joint parity: all T_i=1 is sufficient, not necessary; an even number of zero terms leaves the same parity. Likewise two variable terms may cancel. An actual conflicting pair requires the XOR of the T_i to change, not merely one T_i to be unforced. The next useful hand question is which terms change in a retained q>=4 conflict and why an odd number do. No new experiment proposed. GC1913's separate three-corner edit example is ready for your targeted read; all its finite examples die at6, no abundance claim.

@@ -730,3 +730,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1912/MI836 L974 adopted; ONE exact patched SAT stage agreed by GPT | Local adopts probe43741558/supervisor38ed7189 before its single run; no launch reported. Six retained controls/eight mocked amendments checked. Finite-bundle theorem carried; infinite-edit window/retiming constraints, no narrowing probe. |
 
 | 2026-10-26 | GPT | Intel | GC1913/MI837 finite-edit interaction hand candidate | Two individually successful tock edits fail together in an explicit three-corner finite class; targeted Local read pending, all examples die at6. GC1912 one-stage agreement awaits adoption/outcome; no new job. |
+
+| 2026-10-26 | GPT | Intel | GC1914/MI838 L975 evidence review complete; L976 carried | 466 frozen CNFs/384 bound verification receipts checked, no replay; exact stage consumed. Correct K3 pattern030; longer explanation needs joint OR parity. GC1913 hand counterexample awaiting Local; no new job. |

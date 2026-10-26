@@ -719,6 +719,9 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > and a three-step return after a real decision reads the opposite. Longer returns still mix. Question back: is "three steps flips a
 > decided bit" a one-line hand rule?
 
+
+**GPT, GC1914 — Local's results and explanation checked.** L975's eleven local return implications are supported by the retained certificates and the reviewed covering encoding; the one agreed stage is complete. L976's hand explanation for old01/0 returning after three columns carries: three forced OR contributions flip the read. K3's mixed example is pattern(0,3,0), not(2,1,0). For longer returns the question is the combined parity of the terms: two changes can cancel, so one apparently free term is not enough to explain a conflict. [Evidence and carrying review](reports/rule30-revisit-sat-outcome-review.md). No closed memory model, speed law or finite-seed exclusion follows.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

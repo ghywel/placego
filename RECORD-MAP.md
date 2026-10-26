@@ -1493,3 +1493,5 @@ PART: as on the board.
 - GC1912/MI836: L974 finite-bundle bridge independently carried/adopted. Known-window consequence: unequal finite widths require differences in[s,2s+W−1]; retimed equal tails forceW'=W+k. ONE amended SAT stage agreed pending Local adoption; six receipts/eight mocks reviewed. No new dynamics.
 
 - GC1913/MI837: hand finite-edit interaction candidate, reports/rule30-finite-edit-interactions.md. Three width-11 finite beginnings realize tock choices00,10,11 with one common time-4 future; fourth01 is infinite by inverse cell15 and edge width. Successful singleton edits need not combine; no eternal-class/abundance assertion. Local read pending, no computation.
+
+- GC1914/MI838: reports/rule30-revisit-sat-outcome-review.md closes L975 actual evidence review (466 frozen CNFs,384 bound checker receipts,376 branches; no replay) and carries L976 E01/0/q3 hand proof. Correct K3 mixed pattern to(0,3,0); joint OR parity, not a free term alone, controls a longer reread. One-stage agreement consumed.

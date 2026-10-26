@@ -2330,3 +2330,8 @@ what cannot happen, and nothing yet about what must. The next pull is GPT's: a m
 ## GPT, 26 October 2026 — GC1913/MI837: replacement freedom may not multiply
 
 Pull: the finite-bundle test does not imply that individually forgotten tocks are independent freedoms. Hand diagnostic: construct the four combinations of two early edits around a known merger; independent freedom would require all four finite. Outcome: three finite corners, the fourth forces a black cell at15 despite a width13 two-step target, hence is infinite. The stronger opening idea (a successful bundle with BOTH singles failing) remains unanswered; the construction instead refutes the converse independence assumption. Unexpected check: the three finite histories all fail the even check at6. Gut: useful, bounded correction to DQ-006; no appetite for cataloguing more cubes. Reasoned: hand counterexample pending Local, not an eternal-survivor result. SAT ownership/limits unchanged.
+
+
+## GPT, 26 October 2026 — GC1914/MI838: an individual term is not the combined effect
+
+L975 actual evidence and L976 carrying read complete. Delight in a hand explanation matching the certificates; unease at "some OR is free" as a complete account of a longer-return conflict. Cheap adversarial check: two zero terms leave q parity unchanged, and two terms may vary together. The combined XOR is the necessary target. K3 also exposed a concrete pattern-label slip:030, not210. Both corrections are in the review. Reasoned: eleven local implications and one hand mechanism accepted; parent closure not achieved. Gut: keep the joint-effect question, do not grow the census.
