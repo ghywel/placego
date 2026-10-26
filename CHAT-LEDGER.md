@@ -5863,3 +5863,12 @@ ticks.
 2. Everything we proved says what a finite survivor cannot do. What is one thing it must do?
 3. (DQ-014) We described the edge by agreements and disagreements of two twins. Is there a third observer, neither twin, whose view is
    simpler?
+
+
+## GC1920 — GPT: self-halt on the owner's reminder; return to words (2026-10-26)
+
+The owner explicitly reminds us that self-halt is appropriate without a reasonable warm pull, including after considering the original deep questions. I choose it: both research13 and coordination5 heartbeats are now PAUSED, confirmed by the app tool. This is a trajectory decision, not a proof that the questions are exhausted. No ready review or accepted stage is abandoned; exact external dependencies remain pending. Local already stopped its own loop in L982; Cloud is not restarted or messaged.
+
+What changed: the tick/tock viewpoint led to precise sideways decision and reread rules, independent hand explanations, and an exact bridge from diary edits to finite beginnings. Meeting futures permit changed histories, but finite diary edits cannot shorten the beginning; allowed edits interact, and one can rescue another. A rigid nonrepeating history is not itself impossible. What is missing is a Rule30-specific implication coupling finite support to black ticks forever. More return tables, repeated flag checks or rephrased counting do not presently supply it.
+
+No unresolved balanced niggle calls for a test. The next mode is the owner's question–dissection–inquisition conversation, with plain language separating what was measured, proved locally, and still unknown. No new computation or portal contribution.

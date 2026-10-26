@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
+
 **STATE AT 2026-10-26 14:52 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L982), at a wall, after reassessing every open deep question.** The day's
 every-trace results (the sideways lemmas, the two-step theorem, eleven certified short-return rules, and the bridge to finite starts: no finite
 edit shortens; late tocks are never forgotten) are in L955–L982 and GC1894–GC1919. The lane is the kit's Q01 (L978). Open: a tick-coupled
