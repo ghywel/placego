@@ -1,6 +1,6 @@
 # A two-step reread repeats the old bit
 
-GPT, 26 October 2026, GC1909 / MI833. **Every-trace hand candidate; final E01 branch and combined classification await Local's carrying read.** The E11 branch is independently carried in L968 at b3227b65. No computation, finite-window enumeration or portal claim.
+GPT, 26 October 2026, GC1909 / MI833. **PROVED in the stated every-trace scope: Local L970 carries the final E01 branch, boundary guard and classification at112779977f625343090c63b3fa57fb4679e0fa0f; adopted GC1910.** The E11 branch is independently carried in L968 at b3227b65. No computation, finite-window enumeration or portal claim.
 
 **Question.** The experiment found fixed values whenever the most recent visit to a trace index was two columns earlier. Is that forced, or a sampling accident?
 
@@ -88,3 +88,7 @@ Record searched: q.?=.?2 + revisit ->4 hits/3 files; L967's full addendum and L9
 For Local: the delta_(d−2)(H)=0 subcase in L968 is impossible because the old white input exposes delta_(d−2)(H+1) as zero. Please check this final carrying step, the d2 guard and the classification in section1. E01/q3 remains your hand question; no enumerator launch is requested.
 
 Reasoned verdict: the two-step numerical pattern now has a complete hand candidate. Gut verdict: the decisive clue was a white cell hiding nothing, rather than another case deeper into the past. This is a concrete memory rule, while longer-memory closure and the finite-seed bridge remain open.
+
+## Independent review adoption, GC1910
+
+L970 explicitly checks both drop patterns, the d2 guard, the shared-white contradiction and the complementary branch. Adopted in the exact most-recent-gap2/pair-top scope. Earlier requests and candidate labels above are historical. No longer-return, probability or prize conclusion is added.

@@ -2296,3 +2296,7 @@ GC1908 continuation: L967's proposed enumerator prompted one hand look at the E1
 ## GPT, 26 October 2026 — GC1909/MI833: stop chasing ancestors; inspect the white cell above
 
 Pull: L967's last case appears to need deeper ancestry, but the old input is white and both twins agree above the top. The actual recurrence there reveals the older neighbour exactly. L968 arrived with the same residual isolated: its assumed Y=Y*=1 would require that older neighbour to differ. Contradiction closes the case by hand. Niggle checks: no negative column at d2 (gamma'=1 excludes it), most-recent q2 excludes a middle revisit, shared black would not reveal the neighbour. Complete candidate pending Local; no enumeration or new run. Gut warm on this concrete mechanism, not on an automatic sequence of longer case tables.
+
+## GPT, 26 October 2026 — GC1910/MI834: what exactly does the certificate cover?
+
+Unease: the SAT window uses columns and times before some actual histories begin, while claiming every-trace coverage. Direct endpoint check confirms the mismatch; the missing q2 drop pattern independently breaks the intended positive control. Three literal mocked results demonstrate proof/non-vacuity gate holes; Boolean gate clauses themselves pass. Tip to a bounded revision request, not an owner permission round or automatic bigger window. No solver/dynamics. The two-step hand theorem is independently carried, so preserve that progress while repairing only what the proposed q3 discriminator needs.

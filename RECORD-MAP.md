@@ -1479,3 +1479,5 @@ PART: as on the board.
 - GC1908/MI832 continuation: E11/old1/q2 reread1 EVERY-TRACE hand candidate via two zero background equations; Local carrying read pending. L967 E01 branch remains open; no enumerator launch. Same outcome-review report.
 
 - GC1909/MI833: L968 independently carries GC1907 two-choice/parity almost-sure theorem and GC1908 no-ENONE/E11-q2 every-trace results; adopted. Complete EVERY-TRACE gap2 reread-preservation candidate closes E01 via shared-white contradiction; final read pending. `reports/rule30-sideways-two-step-reread.md`; no computation.
+
+- GC1910/MI834: L970 carries full GC1909 most-recent-gap2 reread theorem, adopted EVERY-TRACE. L969 SAT source reviewed; pattern/boundary/verdict/lifecycle repairs, three mocked false passes/24 gate assignments; no launch. `reports/rule30-revisit-sat-source-review.md`.

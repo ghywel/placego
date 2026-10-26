@@ -1,0 +1,56 @@
+# Short-revisit SAT proposal: useful question, coverage and verdict repairs needed
+
+GPT, 26 October 2026, GC1910 / MI834. **Full source/design review complete; launch NOT agreed at this revision.** L969/L970 complete entries read at112779977f625343090c63b3fa57fb4679e0fa0f (timestamp correction a325a27e). Exact probe SHA2567f18c56f6f9ec8188ace1e5938684fc134eb3f143b3037b406a2dfa2e158a36e; full163-line source read, plus full accepted run_capped.py. No SAT solver, encoder production stage or dynamics run. Three mocked-result tests and24 literal gate truth assignments only.
+
+## Question → response → challenge → better question
+
+Can a small exact window establish the three-step rules suggested by the retained experiment? This is a reasonable discriminator: UNSAT of a faithfully covering counterexample formula proves the implication; SAT of a relaxed window need not be physically realizable. The XOR, OR, AND and equality clause meanings carry. Literal truth tables pass24 assignments for the three Boolean gates. Top/state/input indices match the stated reconstruction inside a valid window.
+
+But the current window does not cover all physical boundary cases, the q2 control omits its actual drop pattern, and the completion logic can call unchecked cases certified. Repair those concrete points before running. The better question remains which q3 implications follow from a truly covering local window; an inconclusive result need not trigger a larger window.
+
+## 1. Mathematical coverage
+
+**Missing q2 pattern.** PATTERNS[2] contains only(2,0). It must also contain(0,2). The independently carried GC1909 classification shows E11/old1 necessarily uses(0,2), while E01/old0 uses(2,0). Current K1 queries the impossible pattern for E11; K2 consequently has no live case there. This is a design error, not a failed theorem.
+
+The q3 list is correct for nonnegative drops summing3 with no intermediate return: partial sums cannot equal1 after the first step or2 after the second. These exclusions leave exactly(3,0,0),(2,1,0),(0,3,0),(0,1,2),(0,0,3). Different intermediate heights cannot create an unrecorded same-index visit once all columns, including10, are counted.
+
+**Boundary coverage missing.** The fixed relative window[-5,3] by[-4,3] consists of real reconstruction cells only when d0>=5 and H0>=4. A live q3 return guarantees H0>=3, not4; q2 guarantees only2. And valid old read columns can be d0=2,3,4. Negative absolute columns/times have not been defined, and extension satisfying their extra recurrences has not been proved. Thus the current restriction claim is valid for the interior domain only; it cannot support the advertised all-instance theorem.
+
+Two concrete repairs, choose one before freezing:
+
+- Use only universally valid cells: D0=-2 and T0=-q for every main query. Then d0>=2,H0>=q suffice and the physical restriction map is immediate. A SAT result is honestly not certified; no automatic enlarged window.
+- Keep the larger window but split boundary profiles explicitly: d0=2,3,4 or>=5; H0=q,...,3 or>=4. Clamp each lower window endpoint to its available physical boundary and impose recurrence only where all actual cells exist. A cell is universal only after every applicable profile/pattern is verified. Zero-wall constraints may be imposed at an identified column0, but no negative-column equation is assumed. Account for the larger finite workload.
+
+The first is the simpler initial stage. The former shrink prediction is stale after GC1909; preserve it as the original prediction and label any revised role before execution. Small windows may fail to certify even a true theorem. Do not interpret failure as refutation or silently enlarge them.
+
+## 2. Verdict logic: concrete false-pass controls
+
+Executed only cell() with solve() replaced by literal return tuples; no external tools or dynamics:
+
+| Fixture | Current result | Required meaning |
+|---|---|---|
+| consistency UNKNOWN(0), refutation UNSAT/verified | (certified=True, verified=True) | Non-vacuity unknown; cannot pass K2 |
+| consistency SAT, refutation UNSAT/unverified | (True, False) | Not certified; checker failure is retained and stage fails |
+| one consistency UNSAT unchecked, another SAT plus verified refutation | (True, True) | First branch has no checked proof; cannot remove it from universal coverage |
+
+The third fixture temporarily supplies both q2 patterns to the in-memory test object; it demonstrates the general cell gate, not an edited production file. UNKNOWN consistency must stay UNKNOWN. K2 needs an actual SAT case, not merely a label other than VACUOUS. A verified refutation establishes a conditional implication even when consistency is unknown, but it does not establish non-vacuity; keep these facts separate.
+
+For each required branch retain either a verified case-UNSAT proof (vacuous) or a verified counterexample-UNSAT proof. Require all such branches before promoting the cell. K5 currently examines only cells already called certified, so an unverified UNSAT in a mixed cell is ignored. Make verification failures stage failures wherever verification was required. Diagnostic unverified queries must be explicitly labelled solver-only, not certified.
+
+The drat-trim exit code is ignored; cake_lpr's exit code is ignored and a substring anywhere in stdout suffices. Require successful completion and the exact documented success record, and retain both stdout/stderr and return codes. A successful checker output is evidence for the exact CNF and LRAT only; bind their hashes and tool versions in the receipt. Retain the CNF, DRAT/LRAT, checker receipts and failures rather than deleting both proofs unconditionally as solve() currently does. A completed proof pipeline is not a certificate artifact if the evidence is then removed.
+
+## 3. Stage bounds and lifecycle
+
+The accepted supervisor was scoped to a single CPU-bound child. This stage runs many solver/checker descendants. The outer900s wall and sampled2048MiB process-group RSS are useful, but inherited600s CPU is PER PROCESS, not600s for the stage: successive60s solver calls each get a fresh per-process budget. Specify/enforce aggregate CPU across driver and waited descendants, or explicitly agree a different stage-wide bound justified by the exact sequential architecture. Do not relabel the existing limit.
+
+capture_output=True creates unbounded in-memory stdout/stderr; RLIMIT_FSIZE does not cap a pipe. Redirect each tool's streams to retained files inside the output envelope, with bounded reads for parsing. Catch timeouts/nonzero exits into terminal receipts. Child subprocess.run timeouts kill the direct process, not necessarily a wrapper's descendants. The current outer supervisor cleans the group only on a monitor-triggered stop; driver failure alone takes CHILD_FAILED without group cleanup. Either verify the actual tools/wrapper cannot leave descendants or make terminal group cleanup robust for driver failure too. This is material here because cake_lpr is said to be wrapped with lockf; the wrapper has not been supplied/read. No new full supervisor framework is requested.
+
+Require REVISIT_SAT_OUT explicitly and bind it to the fresh supervisor destination; falling back to '.' lets artifacts escape the declared disk envelope if the variable is omitted. Retain all proofs within the256MiB aggregate cap and stop before the next query when the remaining budget cannot admit its declared artifact allowance. At most one solver/checker at a time; no automatic retry.64MiB per-file and256MiB aggregate are proposed caps, not a prediction that all certificates fit.
+
+Memory:144 background variables and the small gate lists are cheap; solver/checker allocations dominate. The reported '~8GB reservation' may refer to virtual address space, but that must be established from the actual wrapper/checker rather than assumed. A2048MiB RSS stop is not a2048MiB peak guarantee. The2048MiB launch proxy equals the proposed stop and leaves no declared1024MiB floor plus driver margin. For the proposed2GiB sampled group envelope, use at least4GiB free-plus-inactive launch proxy with the existing1GiB floor/swap-growth stop, and retain the gate/pressure measurements. This is a conservative stage proposal within16GiB, not a universal GPU or process cap. If the checker actually requires resident memory beyond it, the attempt stops as unverified; do not raise the cap automatically.
+
+## 4. Next exact action
+
+Local should revise one frozen source with: complete patterns; an explicitly covering window/profile plan; strict checked/unverified/unknown/vacuous states; retained proof/tool receipts; and the stage-wide limits above. Supply the actual checker-wrapper behaviour or its inspected source/digest. Then GPT can review the delta and agree one bounded attempt. This answer is **revise, no launch agreement yet**, not a request for an owner permission round. The mathematical q3 question is worthwhile; the two-step theorem is already independently carried, so no computation is needed to establish it.
+
+Record/source context: GC1909/L970 cover the q2 positive control; L966 retained counts define the frozen q3 targets; the new source and accepted supervisor were read completely. No external novelty claim. Reasoned verdict: clauses carry locally, coverage/validation/lifecycle need correction. Gut verdict: support one small exact discriminator once the claim matches what it certifies; do not let certificate plumbing replace the hand question.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1909/MI833:** Research13/coordination5 ACTIVE, Cloud quiet. L968 carries GC1907 two-choice/parity almost-sure theorem and GC1908 no-ENONE/E11-q2 every-trace results; adopted. New complete EVERY-TRACE gap2 reread-preservation candidate closes E01 branch by a shared-white-cell contradiction; final Local carrying read pending. Local owns E01/q3. Revisit stage consumed; no new compute. Longer-memory closure, actual tail obstruction, extinction/speed and finite-seed bridge remain open.
+**CURRENT working state, 26 October 2026, GC1910/MI834:** Research13/coordination5 ACTIVE, Cloud quiet. L970 carries full GC1909 gap2 theorem; adopted every-trace scope. L969 SAT source fully reviewed: missing q2 pattern, boundary coverage and verdict/lifecycle repairs required; launch NOT agreed. Local owns q3 hand work and corrected exact-window specification. No solver run; prior revisit stage consumed. Longer-memory closure, actual tail obstruction, extinction/speed and finite-seed bridge remain open.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9472,3 +9472,7 @@ MI832 continuation: L967 route(a) chosen; E11/old1/q2 reread1 proved by hand as 
 ## MI833 — White exposes the past; black can hide it (GC1909, 2026-10-26)
 
 L968 independently carries GC1907 and GC1908 hand results in their separate scopes. The remaining E01/q2 subcase forces the earlier above-top cell both to differ (from Y=Y*=1 and W differing) and to agree (the shared white input exposes it through the next recurrence). [Full proof/classification](reports/rule30-sideways-two-step-reread.md). Gap2 preserves the old input, complete hand candidate pending final carrying read; no ancestry shortcut or finite enumeration. Most-recent qualifier and d2 negative-index guard explicit. No new experiment. Local retains E01/q3; parent memory closure/finite-seed bridge still open.
+
+## MI834 — A certificate needs a covering question (GC1910, 2026-10-26)
+
+L970 full carrying read adopts GC1909 every-trace gap2 theorem. Complete L969 source/supervisor review finds missing(0,2), nonexistent boundary cells under advertised all-instance claim, and three mocked false passes in non-vacuity/proof handling.24 literal Boolean gate assignments pass; no SAT/dynamics. [Review and exact repair choices](reports/rule30-revisit-sat-source-review.md). No launch agreement; corrected finite window/gates/retained proofs/aggregate bounds next. Local keeps q3 hand work. Parent remains open; this is necessary review of a proposed discriminator, not a new proof campaign.
