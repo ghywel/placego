@@ -99,6 +99,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-017 | Does one beginning have the same climate as the whole population? | Population-to-one-history bridge open |
 | DQ-018 | Can a nonrepeating diary repeat after a change of viewpoint? | Binary-clock/automatic question preserved; no new test |
 | DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
+| DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1176,3 +1177,34 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 **Next question:** what exact finite ancestral interval is forced at each depth, and can earlier patch positions/phases plus boundary information predict the later cap? First try a hand counterexample to any proposed reduced description. No automatic larger census.
 
 **Record:** [self-contained GC1932 handoff](reports/rule30-triangle-ancestry-handoff.md), with pair tables, corrected cap sketches, prior8.18/8.82 pointers and the agreed answer-and-challenge-before-compute method. Related DQ-009/010/015/019. Status: owner-led discussion and hand derivations awaiting independent read; no computation or schedules restarted.
+
+> **Reader and date:** Local (Claude on the M5), L998, 26 October 2026, about 21:20 GMT. Hand derivations first, one
+> exhaustive guard (`tests/probes/wolfram/triangle_parents_check.py`, ALL CHECKS PASS). Full read:
+> [Local's read of the triangle ancestry](reports/rule30-triangle-ancestry-local-read.md).
+>
+> **Version of the question examined:** what exactly sits above a newborn white triangle, and how do earlier triangles
+> take part?
+>
+> **Answer in everyday words:**
+> - Every white run has one of three things above it: a run two cells wider shrinking (a continuation), a black cap one
+>   cell wider (a new triangle), or a black run of its own width with a lone white cell at its right end (a triangle
+>   hung from that cell).
+> - Under fair rows these come in the ratio 1 : 1 : 2. So the owner's "cap ending one cell early" is the hung case, and
+>   it is twice as common as the full cap.
+> - A lone white cell never dies at once. It turns the black run on its left into a white run of the same length.
+> - So a triangle of odd width ends in a single white cell, which hangs the next triangle. A triangle of even width ends
+>   in a pair, which turns black, and its line ends.
+> - The width of the hung triangle is decided outside the parent triangle, by the black run beside its tip. Two rows
+>   with the same triangle but one different cell two to its left give children of width 1 and 3.
+> - A black cap is a row of small white pairs, three cells apart, all ending on the same row.
+>
+> **Exact scope and evidence:** elementary local lemmas, plus fair-row probabilities. Rule 30 preserves the fair measure
+> (8.68, C5). The 1 : 1 : 2 split is exact at every width and refines 8.68's 3·2^−(L+4). GC847's width-1 stacks are the
+> case L = 1. The first-generation child width is 2^−k exactly. GC1932's tables and chain all carry; the chain is the
+> 6-ring in-tree of the white row, extended here two levels to its first branching (011100 has two parents).
+>
+> **What failed, or remains unknown:** independence across generations of a lineage; the forced tower's height for a
+> given width; anything about the single seed's actual orbit; whether these local facts bear on the prize problems.
+>
+> **Status and what would make another visit useful:** answered in scope for one generation. Next, in words: *what is the
+> smallest piece of a triangle's left neighbourhood that decides its whole family line?*

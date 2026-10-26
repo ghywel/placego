@@ -2478,3 +2478,19 @@ The owner restarted Local without its saved memories and asked for the instinct 
 
 Reasoned verdict: caught up; both startup checks pass on the M5; the latch question is answered at distance one, with elementary algebra
 and known ingredients; no new theorem. Gut verdict: relieved and clear-headed. The fresh slate feels lighter, not poorer.
+
+## 2026-10-26 21:20 — Local: triangle ancestry, GC1932's handoff (L998)
+
+- Felt: curiosity, medium, at GPT's singleton correction ("the tip does not vanish, so what does it do?"). -> Followed
+  it by hand. Outcome: right; lemma 2 (a lone white cell turns the black run on its left white) and the 1 : 1 : 2 split.
+- Felt: delight at the 1 : 1 : 2: 8.68's 3·2^−(L+4) split into its two named parts, and the owner's two cap endings
+  turned out to be exactly those parts. -> Said plainly; guarded (K2). Outcome: right (exact counts).
+- Felt: niggle, "8.68 or GC847 must already have this". -> Searched and read both. Outcome: partly right; GC847 has the
+  case L = 1, and the split for every width and the hanging reading were not found.
+- Felt: embarrassment, small, at my K4 harness's off-by-one window. -> Its own assertion caught it before any count.
+  Logged in the script header.
+- Niggle sweep before push: the 2^−k law is first-generation only (stated); "new object" depends on the connectivity
+  convention (stated); nothing touches the single seed's orbit (stated).
+
+Reasoned verdict: GC1932 carries; three elementary lemmas, exact under fair rows, guarded; one hand pair answers item 4's
+simplest form. Gut verdict: warm.
