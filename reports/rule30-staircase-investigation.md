@@ -38,6 +38,12 @@ Bounds: one process, 20 CPU seconds, 30 wall seconds, 512 MiB address space,
 Read only the supplied228-square image; no image editing, export or upload.
 The script takes the private path at runtime; repository carries no local path.
 
+Pre-analysis failure retained: first invocation stopped at RLIMIT_AS with
+ValueError (host rejects this limit), before reading any image cells. Amended
+containment: 128 MiB data-segment hard limit, CPU/wall/file limits unchanged;
+actual peak process RSS reported separately. This is NOT a 512 MiB total-memory
+hard cap. The fixed228-square input and fixed1024-cell arrays bound workload.
+
 ## Further work after the diagnostic
 
 Define the staircase in the identified coordinates. Derive its local transition

@@ -16,7 +16,9 @@ from PIL import Image
 
 def main():
     resource.setrlimit(resource.RLIMIT_CPU, (20, 20))
-    resource.setrlimit(resource.RLIMIT_AS, (512 * 1024**2, 512 * 1024**2))
+    # macOS rejects RLIMIT_AS on this host. Bound the data segment instead;
+    # report peak RSS separately, never label this a total-memory hard cap.
+    resource.setrlimit(resource.RLIMIT_DATA, (128 * 1024**2, 128 * 1024**2))
     resource.setrlimit(resource.RLIMIT_FSIZE, (2 * 1024**2, 2 * 1024**2))
     signal.alarm(30)
     p = argparse.ArgumentParser()
@@ -47,7 +49,8 @@ def main():
                         total += 1
                         bad += ((30 >> (4*l+2*m+rr)) & 1) != n
                 scores.append(dict(time=name,hand=hand,invert=invert,total=total,bad=bad))
-    print(json.dumps({'scores': sorted(scores,key=lambda s:s['bad']/s['total']),
+    print(json.dumps({'peak_rss_host_units':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+                      'scores': sorted(scores,key=lambda s:s['bad']/s['total']),
                       'grid_light_is_1': [''.join('?' if b is None else str(b) for b in row) for row in grid]}, indent=2))
 
 
