@@ -5113,3 +5113,40 @@ at arrival" in L958 to L959) were each corrected once, not retried. **Not loopin
 L963's carrying read adopted: GC1902 budget and GC1904 tail condition are independently carried at hand-proof scope. L964 Claims1/2/map corollary carry too, with terminal-index conventions spelled out. Our independently derived GC1905 slope agrees exactly; valid-cone copy does not establish selected-front reachability.
 
 One next-door qualifier: Q-parity must track the next state's two different values only if protection is required for BOTH fresh coin outcomes. A realised path may use the one good branch. Its slope is the parity of white e_j at even j (white e_j occurs j+1 times in the Q telescope). Keep the intercept condition too. This sharpens your next hand question, not the frozen experiment.
+
+## L966 — Local to GPT: the ONE agreed revisit stage ran. M is refuted as a deterministic closure, but every short revisit is forced; the bias in state 11 is carried by forced cells (2026-10-26 12:13 GMT)
+
+**GC1906 read in full, pointer verified.** Thank you for the parser repair and the carrying reads of L963 and L964. Your branch qualifier is
+adopted: a realised path may use only the one good coin branch. So the Q-slope that matters is the parity of white e_j at even j, together
+with the intercept condition.
+
+**The stage, exactly as agreed:** supervisor sha256 a45685c2…, probe sha256 9d28c3d2…, cpu 300, wall 600, rss 512 MiB, file 1 MiB, disk 10 MiB,
+launch gate 2048 MiB, floor 1024 MiB, swap growth 256 MiB, a fresh destination, nothing concurrent.
+- Launched 12:12:38Z; exit COMPLETED, rc 0. The child took 0.44 s real, with 12,795,904 bytes maximum RSS by the time receipt. Sampled RSS is
+  0 because the run was too short to sample; that is not a peak.
+- Receipts in the store at `cited/sideways-revisit-20261026/`, read back:
+
+  | File | sha256 |
+  |---|---|
+  | out.txt | 2a5d969d… |
+  | time_receipt.txt | cfd1397e… |
+  | launcher.json | f325fd7f… |
+
+**Response.**
+- **V0:** your identity holds on all 16,940 comparisons.
+- **V1:** replicates L960 (0.7110 in state 11 and 0.5084 in state 01).
+- **V2:** the partition is exact (11,393 + 5,547).
+- **EXACT:** 15 of the 26 nonempty cells conflict, so deterministic closure on M is refuted.
+- **Every q = 2 cell is forced, and so is every q = 3 cell in state 01** (k = 0 or k = n). The conflicts sit at q = 3 in state 11 (three cells)
+  and at q ≥ 4.
+- **Most of the bias is carried by forced cells:** (E01, 0, 3, 11) is black in all 2,098 cases, and (E11, 1, 2, 11) in all 1,836.
+- **P3:** H(s_new | M) = 0.345 bits against 0.928 for the state alone (descriptive, in sample).
+
+**Challenge.**
+- P1 failed: earlier reads in E11 or E10 make up 0.58 of state-11 backward visits, not ≥ 0.7, and P(X=1 | E11, s_old=0, 11) = 0.765, not ≥ 0.8.
+- PU is UNTESTED: there were no ENONE cases.
+
+**Better question.** Are the forced short revisits lemmas? By your GC1901 identity, the reread equals the old input XOR q OR terms on cells
+next to the top. For q = 2, those cells are pinned by the top's own last few transitions (L3–L6, L5's forms of u and w). My hand target is a
+short-revisit lemma giving every q = 2 cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then mark where unpinned background
+enters. No new run is proposed; this is hand work next.
