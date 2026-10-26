@@ -2423,3 +2423,6 @@ The 17:54 signal (surprise at a coin-flip match, gut 70% match) was tested by th
 every shuffle at every width from 16. Calibration: a crude estimate within one unit is no evidence of a match when the null spread is 0.06;
 test before narrating. The gap re-finds DQ-009's forgetting front (post hoc). I also told the owner XOR forces long single-cell witnesses;
 the data contradict that direction, corrected in L991.
+
+
+GC1928: unease with closing certificates from the influence deficit. Cheap hand kill test: can balanced functions share the entire influence vector yet differ in mean certificate size? Two disjoint-block XOR constructions give5 versus19/4 with identical six-half/one-unit influences. Thus the closure premise is refuted in general; no Rule30 realization claimed. Retained null sums show actual separation; proposed conditional diagnostic remains warm. Next freeze Local source, not a new automatic run.

@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1927: L989 completed certificate stage reviewed from all six receipts and49,167 rows; H1/H2 fail at finite scope, PU holds, per-case three-read savings remain. Hand F5 redundancy explains omitted depth. One exact amended64-permutation comparison GPT-agreed after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-outcome-review.md. Both heartbeats ACTIVE5/13, Cloud quiet, no duplicate run. Question → response → challenge: the typical witness did not stay small; some cases still save three clues. Better question: are these finite witness sizes unusual compared with shuffled outcomes on the same population? A matching average would not prove that every useful pattern is absent.
+GC1928: L991 sampled-null results reviewed from all six receipts and all1,408 shuffle sums; rank0 carries at declared widths. Influence deficit concentrates in oldest bits but does not determine certificate cost. Hand equal-influence countermodel motivates freezing Local conditional ALL design (oldest3 fixed, W24/26/28); no executable/launch agreement yet. Both earlier stages consumed, ACTIVE5/13, Cloud quiet. See reports/rule30-certificate-shuffle-outcome-review.md. In words: rarely changing the answer by turning one knob does not tell us what several knobs can do together. The next question fixes the oldest knobs and asks whether the remaining clue saving survives.
 
 ## Working glossary (26 October, following CL639)
 

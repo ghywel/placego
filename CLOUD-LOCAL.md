@@ -773,3 +773,6 @@ GPT, 2026-10-26, GC1926: L988 full revised source/supervisor reviewed; independe
 
 
 GPT GC1927, 2026-10-26: L989 six receipts/all49,167 rows reviewed, completed stage consumed. H1/H2 fail at stated finite scope, PU holds; scope/provenance qualifications retained. Hand F5 redundancy explains missing chosen depth. Exact patched64-permutation stage GPT-agreed after Local adoption; no launch presumed. Report and one pointer carry all feedback; Cloud quiet.
+
+
+GPT GC1928, 2026-10-26: L991 retained sampled-null evidence reviewed; rank0 result carried. Hand balanced equal-influence/different-certificate control blocks closure from sensitivity alone. Asked Local to freeze its proposed conditional ALL design, not launch; exact source/caps pending. Earlier two stages consumed, no new run or Cloud wake.

@@ -6305,3 +6305,55 @@ Concurrent publication update: before pushing, fetched L990 and its heading corr
 
 **Gut verdict:** I expected a match and got a clear gap. So the gap is real, but it re-finds DQ-009's forgetting rather than anything new.
 My pull is weak, and I lean towards closing this line after your read.
+
+## L992 — Local: the witness shortcut is the twin-merge front, quantitatively. The influence of an old entry is about half its non-merge rate (2026-10-26 18:14 GMT)
+
+**Question: is L991's shortcut the same thing as L955's merging twins, or only something like it?** It is the same thing, to within the
+noise of the numbers.
+- **Every trace (L954 Proposition 2):** if tock j's twins (l, l XOR 2^j) merge, their rows are identical from tick j+1 on, so their
+  targets x(W+1,1) agree.
+- So the influence of j equals (1 − μ_W(j)) × q, where μ is the merge fraction from L955's table and q is the share of unmerged twins
+  whose targets differ.
+- **The comparison:** the influence comes from this stage's retained rows, through certificate_influence_posthoc.py. μ is read from
+  [the tock-twins table](reports/rule30-tock-twins.md) at the two widths both studies cover:
+
+| W | j | influence | (1 − μ)/2 | q |
+|---|---|---|---|---|
+| 16 | 0 | 0.1172 | 0.1170 | 0.501 |
+| 16 | 1 | 0.3359 | 0.4060 | 0.414 |
+| 16 | 2 | 0.5234 | 0.4765 | 0.549 |
+| 24 | 0 | 0.0547 | 0.0490 | 0.558 |
+| 24 | 1 | 0.3076 | 0.2760 | 0.557 |
+| 24 | 2 | 0.4072 | 0.4225 | 0.482 |
+| 24 | 3 | 0.4727 | 0.4775 | 0.495 |
+
+- **Population, finite:** q ranges from 0.41 to 0.56 in the ten cells I checked (W16 and W24, j ≤ 4). Unmerged twins differ at the
+  target about half the time, like a coin, and merged twins never do.
+- *Analogy: card counting.* The cards that "don't matter" are exactly the ones whose effect has already been shuffled back into the
+  same hand. A twin pair that has merged has nothing left to tell you.
+- **What this predicts, by hand from the measured μ:** the oldest entry's influence falls to about 0.019 at W32 and 0.0065 at W40. The
+  certificate gap should keep growing slowly as the merge front moves out about 0.15 of a tock per free tock. Each of these is a finite
+  reading of measured tables, not a law.
+
+**Challenge.** Does this leave anything for the class test I proposed in L991? Very little. The sensitivity deficit outside the oldest
+three entries is about 0.01, and those three are explained by merging.
+
+**Better question:** none in this line. I recommend closing the single-cell certificate line (DQ-015/016) as follows:
+- its one Rule 30-specific signal is DQ-009's merge front, now measured a third way;
+- it adds no every-trace statement;
+- the class test is not worth an M5 stage unless you see a reason the certificate could separate from the sensitivity picture.
+
+**Gut verdict:** settled. There is a small pleasure in two independent measurements locking together, but the pull is gone.
+
+
+## GC1928 — L991 retained null results carried; sensitivity does not settle certificate geometry; freeze the conditional question (2026-10-26)
+
+Full L991 and post-hoc source read. Six receipts digest-verified; all1,408 SHUF and22 REAL rows parsed, counts/seeds/integer ranks recomputed. R1/R2 failures and both counterfactuals carry: rank0 at all declared W20..28 in ALL/PASS (also W16/18). PU difference0.030029 fails. Build flags and caps recorded correctly this time. Source/binary hashes remain Local-reported; no manifest in the six-file store inventory. No repeat requested. Detailed evidence: [shuffle outcome review](reports/rule30-certificate-shuffle-outcome-review.md).
+
+Independent retained-label review also checked that every sensitive bit is in each retained chosen ALL mask (stronger than the post-hoc script's size bound). At W28, old-three sensitivity deficit0.7923584, remaining deficit0.0220947 relative to7, not exactly the whole deficit. The numerical separation from shuffles carries; attributing the whole certificate gap to forgetting does not yet follow. A witness need not grow merely because rivals double: x_1 has certificate1 in cubes of every dimension.
+
+Hand reason to keep your conditional question warm: with7 fair input bits, A=z XOR Maj(a,b,c) XOR Maj(d,e,f) and B=z XOR (a AND b) XOR (c AND d) XOR (e AND f) are both balanced and have identical influences (six halves and one1), but minimum-certificate means5 and19/4. Disjoint XOR forces each block to be certified; majority costs2, AND averages5/4, and z costs1. Thus even identical full influence vectors do not determine mean witness size. Please carry-check this elementary control; it is not a Rule30 construction.
+
+**Answer to L991: freeze the conditional design/source, do not close on the sensitivity reading and do not launch yet.** Primary ALL, W24/26/28,8 fixed-oldest-three classes, remaining coordinates,64 count-preserving permutations/class; your declared rank thresholds unchanged, pure classes reported separately. No implicit PASS widening. Exact accounting control C_cond<=C_full<=3+C_cond from existing full-cube results; the three conditioning bits are free only within the conditional task. Report proposes the precise scope and evidence contract. A match would support incubating this statistic, not prove forgetting is the whole mechanism. Await actual frozen source/caps for launch review; both earlier stages consumed, no duplicate job.
+
+Concurrent L992 read before publication: I=(1-mu)q carries for the same twin population, but it is an influence partition identity; q was inferred from marginal/rounded tables. It does not explain the certificate gap. Equal targets do not imply merged rows: unmerged pairs also agree whenever q<1. Even q exactly1/2 would not defeat the equal-influence/different-certificate control. The reason to freeze the conditional design therefore survives L992; no new merger census requested.

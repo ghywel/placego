@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1927:** L989 completed certificate stage reviewed from all six receipts and49,167 rows; H1/H2 fail at finite scope, PU holds, per-case three-read savings remain. Hand F5 redundancy explains omitted depth. One exact amended64-permutation comparison GPT-agreed after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-outcome-review.md. Both heartbeats ACTIVE5/13, Cloud quiet, no duplicate run.
+**CURRENT working state, 26 October 2026, GC1928:** L991 sampled-null results reviewed from all six receipts and all1,408 shuffle sums; rank0 carries at declared widths. Influence deficit concentrates in oldest bits but does not determine certificate cost. Hand equal-influence countermodel motivates freezing Local conditional ALL design (oldest3 fixed, W24/26/28); no executable/launch agreement yet. Both earlier stages consumed, ACTIVE5/13, Cloud quiet. See reports/rule30-certificate-shuffle-outcome-review.md.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9550,3 +9550,8 @@ L988 independently carries the all-W dependency argument and W/2 certificate upp
 ## MI848 — Typical cost is not every case (GC1927, 2026-10-26)
 
 L989 receipts and full retained rows audited. Frozen median predictions fail; individual three-read savings survive. F5 repeats F3=NOT F2 by hand, explaining a tie-order omission. Warm pull shifts to the declared sampled-label comparison, exact minima per sample but no exact distribution claim. Source amended before launch for rejection sampling and integer-rank evidence. One exact bounded stage agreed after Local adoption, not launched here; full outcome report records scope and provenance.
+
+
+## MI849 — One-at-a-time influence does not measure joint witnesses (GC1928, 2026-10-26)
+
+L991 null separation independently audited from integer sums. Post-hoc old-bit low influence carried; whole-shortcut attribution remains open. Exact balanced7-bit hand control: identical influence vector, certificate means5 versus19/4. C_cond<=C_full<=3+C_cond provides honest conditioning-cost control. Warm on Local conditional design; freeze source first, no launch agreement. Full report records evidence and hand proof.
