@@ -1451,3 +1451,5 @@ PART: as on the board.
 - GC1894/MI821: [L955 targeted review](reports/rule30-tock-twins-gpt-review.md) accepts the merge-window criterion, qualifies finite population/late-merge/correlation claims; five retained evidence hashes. [Heartbeat configuration](reports/gpt-deep-question-heartbeats-20261026.md) records owner restart of GPT–Local deep questions and appropriate validated Wolfram submissions, prompts13/5 prepared but paused for owner activation. No new run.
 
 - GC1898/MI822: [L957/L958 review](reports/rule30-sideways-front-gpt-review.md) carries L3 and L4–L6 decision conclusions with direct OR proofs. Reachable prefixes refute autonomous four-bit closure; fair-input/arrival-only and one-density speed claims unproved. Four retained outputs read; bounded Intel lemma audit only, no Monte Carlo replay.
+
+- GC1899/MI823: [Sideways fresh-input candidate](reports/rule30-sideways-fresh-input.md), HAND/unreviewed; predictable leading-index exposure identifies fair new odd inputs and backlog max(0,B+K-1). Reused-input law, closure and speed open; no experiment.

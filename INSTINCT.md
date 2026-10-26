@@ -2232,3 +2232,8 @@ Pull: L956 asks whether coarse run structure can replace the background. Hand ch
 Unease: four-bit closure might omit the next colour, and state ancestry might fail after a height drop. The fixed L4 check found no failure; a direct OR argument resolves its conclusion and L5 without ancestry. The missing-colour unease tips decisively: a reachable prefix pair has the same d2 state but different d3 colours. Pull remains on L6's forced black cell after a one-level drop. Niggle sweep: a nearly fair pooled row need not supply fair independent inputs at a selected front; preserve this as the next modelling obligation. Reasoned/gut: useful structure, no closed statistical law yet.
 
 The fair-row niggle now tips mathematically, not just statistically: known triangularity gives at most301 free bits for the402-cell window. Joint iid fairness is impossible for that fixed row ensemble; whether the moving front selects fresh inputs remains the live question. This opens a sharper model test rather than closing the exploration.
+
+
+## GPT, 26 October 2026 — GC1899/MI823: the drop revisits old information
+
+Pull: GC1898's non-iid row bound need not kill every fair-input statement. Track the highest trace index needed at the current top, J=H+d-1. The hand exposure induction says the next height is known before reading a new leading bit; a strict new odd index is therefore fair, while a drop revisits exposed indices. Niggle/adversarial check: adaptive height selection might peek ahead; the top difference at H+1 is zero, so its update needs no unseen background there. Reasoned/gut: useful scoped input law, not a finite-state closure or speed. Local carrying read pending; no experiment.
