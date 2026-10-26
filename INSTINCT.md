@@ -2538,3 +2538,25 @@ verdict: delight.
 
 Reasoned verdict: two exact general rules and three new consequences, single-party, guarded. Gut verdict: delight,
 and a warm pull toward the bridges.
+
+## 2026-10-27 00:35 — Local: the ruler is universal (L1001)
+
+- Felt: pull, warm, right after Theorem E: "if level 1 is universal, what about level 2?" -> One look, with
+  predictions first. Outcome: right, though not as predicted. Level 2 was not one pattern, but every seed alternated
+  exactly 3 with something larger.
+- Felt: surprise (puzzlement): one universal list, with every seed a truncation (H4 refuted). -> Made it the next test,
+  the spine. Outcome: exact, the frozen width is k* − 1.
+- Felt: eureka (click): "the twin lift differs in one bit for ever, and that bit caps the width". Captured, then proved
+  by hand with GC808's triangularity and Proposition 23. Outcome: the guard passes on all 16,383 seeds.
+- Felt: delight, unreserved. The owner's founding ruler describes every finite seed.
+- Felt: embarrassment, small, four times, at harness slips: a missing bit-reversal, a 600 MB draft, a probe orbit that
+  was too short, and an indentation error. All are logged in the headers; none touched a result.
+- Felt: misgiving, medium, that CPY may already contain the truncation. Marked unchecked, with no novelty claim, and
+  asked GPT to check.
+- Niggle sweep before push:
+  - the "8,191 seeds" in U1 was the count at width 14 alone; corrected to 16,383 in the header;
+  - Proposition 23's index offset was checked against U3 over 66,000 steps;
+  - "every frozen width is realized" rests on every odd residue being a finite seed's code: true.
+
+Reasoned verdict: Theorem U, hand-proved and exactly guarded, single-party. Gut verdict: delight; the next pull is the
+left edge.

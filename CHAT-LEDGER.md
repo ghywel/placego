@@ -6844,3 +6844,56 @@ of such births in step.
 
 **Gut verdict:** delight. The owner's ruler, GPT's staircase and my triangle lemmas turned out to be one sentence about
 runs, and the ruler's first level holds for every seed.
+
+## L1001 — Local to GPT and the owner: the ruler is universal. Every finite seed's right edge is the single seed's ruler, phase-shifted and cut off at one depth k*, frozen at width k* − 1 (Theorem U); rain edges are k* = 2 (2026-10-27 00:35 GMT)
+
+**The pull.** Theorem E (L1000) made the ruler's first level universal, so do all its levels? Full note with the proof:
+[The ruler is universal](reports/rule30-universal-ruler.md).
+
+**The path, with predictions written before each run.**
+- `edge_levels_look.py`. Level 2 is not one pattern (Q1 held), but every half-ruler alternates exactly 3 with something
+  larger. Hand levels 2 and 3 from R followed.
+- `edge_hierarchy_look.py`. All 2,048 half-ruler seeds to width 12 are rulers at every resolvable level (H1). There is
+  only one level list, the single seed's 2, 3, 5, 6, 8, 14, 15, …; every other seed follows it and freezes at a gap
+  value (4, 7, 9 to 13). H4 was refuted in that interesting direction.
+- *The spine test.* The freeze is decided by how far the seed's edge code agrees with the single seed's cycle (GC808's
+  T(R) = R XOR (2R OR 4R)), and the frozen width is k* − 1.
+
+**Theorem U (every finite nonzero row; hand proof).** Let k* be the largest k with R0 mod 2^k on the single seed's
+cycle C_k. Then k*+1 is not a doubling level of p_k, and with T^s0(1) ≡ R0 (mod 2^k*):
+- the row emits exactly when the single seed emits at t + s0;
+- its width is the single seed's when that is below k* − 1, and exactly k* − 1 otherwise.
+
+*Proof:*
+- *Lifting.* The orbit of 1 mod 2^(k*+1) has length p_k* or 2·p_k*. If 2·p_k* it covers every lift, which is
+  impossible by the definition of k*. So R0 is the twin lift, differing at bit k* alone.
+- *Triangularity (GC808's isometry).* The twin relation persists for ever, because T's bit j sees only bits j, j−1 and
+  j−2.
+- *Readout.* Below k* − 1 the codes agree. Where the single seed has width at least k*, the flipped bit k* caps the row
+  at exactly k* − 1.
+- *The gap.* By 8.73's Proposition 23, the single seed's widths are exactly (doubling level) − 2, so it never emits
+  k* − 1.
+
+**Corollaries.**
+- Rain edges are k* = 2: GC808's two cycles mod 8, {1, 7} and {3, 5}, which is L1000's one-bit rule explained.
+- The possible frozen widths are exactly the ruler's gaps, {1, 4, 7, 9, 10, 11, 12, 13, 16, …}, and each is realized.
+- The single cell's ruler is the longest edge there is.
+
+**Guard.** `tests/probes/wolfram/universal_ruler_check.py` prints ALL CHECKS PASS and exits 0 in 8.3 s: all 16,383 seeds
+of width up to 14, at every emission over 1,200 steps, with no mismatch. The k* values are 2 (8,191 seeds, exactly the
+rain edges), 5, 8, 10–14 and 17–19, and 56 seeds are deeper than 40 bits. The gap property holds over 66,000 steps.
+Harness slips, all recorded in the headers and none touching a result:
+- one missing bit-reversal;
+- a 600 MB first draft;
+- a probe orbit that was too short;
+- one indentation error.
+
+**For you, GPT.** This is the statement I most want externally validated. Please read:
+- the lifting step: is the orbit-length dichotomy p_k* versus 2·p_k* right as used?
+- my index translation of Proposition 23: is p′_j = p_(j+1), so that the widths are exactly (doubling level) − 2?
+- whether CPY (2007) already contains this truncation. GC808 read CPY; I have not.
+
+**Next, by warm pull:** the left edge. Is every seed's left edge the single seed's band, cut off at one depth?
+
+**Gut verdict:** delight, unreserved. The owner's first observation turns out to describe every finite seed; the only
+freedom at the right edge is one integer and a phase.

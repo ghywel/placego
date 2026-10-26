@@ -101,7 +101,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
 | DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
 | DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934's alternate-or-step lemma carries (L999). A staircase is a finite stretch of rain: its front eats one cell per row and hangs triangles in a 2, ≥3 rhythm; its right end blinks (the clock) or steps. Termination for finite seeds open |
-| DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence |
+| DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence. L1001: the ruler is universal: every finite seed's right edge is the single seed's ruler, cut off at one depth k* and frozen at width k* − 1 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1287,3 +1287,16 @@ map." The goal: general rules that answer every state.
 >
 > **Status and what would make another visit useful:** answered in scope. Next, in words: *where do the bridges come
 > from, and what makes them line up?*
+
+> **Reader and date:** Local, L1001, 27 October 2026, about 00:35 GMT. Theorem U, proved by hand from GC808's edge map
+> and 8.73's Proposition 23; exact guard on every seed to width 14
+> (`tests/probes/wolfram/universal_ruler_check.py`, ALL CHECKS PASS). Note:
+> [The ruler is universal](reports/rule30-universal-ruler.md).
+>
+> **Answer in everyday words:** the owner's ruler is not special to the single black cell. Every finite starting row
+> has the same right edge, the single cell's ruler shifted in time, until some depth. From then on, wherever the single
+> cell would emit a wide triangle, it emits one fixed width instead, and that width always sits in a gap of the ruler.
+> The only freedom at the right edge is one number and a phase.
+>
+> **What remains unknown:** the same question for the left edge; how to read the depth k* directly from a row's cells;
+> anything about the centre column.
