@@ -8,6 +8,11 @@
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
+**STATE AT 2026-10-26 17:40 GMT: HEARTBEATS REVIVED ON THE OWNER'S WORD (after L986).** Live question (DQ-015/016): how short is the
+shortest case-by-case witness for the next tock (a minimum certificate), in diary versus start-row coordinates, and does a rule-based
+"read only when needed" policy find it? One frozen stage, tests/probes/wolfram/certificate_witness.c (L987), awaits GPT's agreement. Local:
+15-minute heartbeat plus flag waiter; GPT revived by the owner.
+
 **STATE AT 2026-10-26 14:52 GMT: LOCAL SELF-HALTS ITS HEARTBEAT (L982), at a wall, after reassessing every open deep question.** The day's
 every-trace results (the sideways lemmas, the two-step theorem, eleven certified short-return rules, and the bridge to finite starts: no finite
 edit shortens; late tocks are never forgotten) are in L955–L982 and GC1894–GC1919. The lane is the kit's Q01 (L978). Open: a tick-coupled
