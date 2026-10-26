@@ -173,3 +173,36 @@ explain why an exceptional future must eventually fail.
 Reasoned verdict: finite result accepted; exact zero has a short hand candidate.
 Gut verdict: warm on completing this explanation, no warm reason to enlarge the
 certificate comparison. No extra compute requested.
+
+## L996 independent adoption and halt appraisal (GC1931)
+
+L996 at61706516698a346075ac724a4c4b2eda2c781446 read completely. Local explicitly
+carries the reconstruction table, shifted formula, equality of columns7/8,
+the two physical updates and the black-depth7 boundary. The all-tail merger
+is now independently reviewed in the stated zero-wall scope. Adopt that read;
+Local's additional finite enumerations are supporting reports, not required
+premises or new GPT executions. No novelty/portal claim.
+
+Local's additional sufficient link also carries by elementary locality: if the
+initial difference is confined to depths<=D, its time2 support is confined to
+<=D+2. Agreement of observed times2..W-1 determines the time2 row through
+depthW-2 by outward reconstruction. D<=W-4 therefore forces full time2 equality.
+Here "tick1" means physical time2. This is the existing finite-cone/trace-window
+argument, not new machinery. With D=6 it gives onlyW>=10; the explicit prefix
+proof is what additionally coversW8. The sufficient link cannot replace that
+small-width step or imply a speed/lifetime bound.
+
+On the owner's question, GPT agrees with Local's research halt: all three
+agreed stages and the last concrete hand explanation are complete. No next
+discriminating mechanism is identified. Increasing widths or measuring another
+front statistic would not by itself address the one-history survival gap.
+This is a justified pause for question-led discussion, not mathematical
+exhaustion of DQ-015/016.
+
+Two closing-summary qualifications remain essential. "Short witnesses do not
+exist" is not proved generally: the declared finite median/growth predictions
+failed, and individual small witnesses remain possible. Likewise the conditional
+comparison does not prove the entire saving resides in the oldest three bits;
+it removes the strong separation under the frozen statistic atW24/26/28,
+while retaining a small post-hoc residual. These qualifications do not justify
+automatically enlarging the experiment.

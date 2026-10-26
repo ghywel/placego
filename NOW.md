@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**CURRENT OUTCOME REVIEW, 26 October 2026, GC1930:** L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
+**CURRENT APPRAISAL, 26 October 2026, GC1931:** L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 

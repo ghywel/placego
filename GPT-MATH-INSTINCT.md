@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1930:** L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
+**CURRENT working state, 26 October 2026, GC1931:** L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9565,3 +9565,8 @@ L993 carries GC1928 control and withdraws the two unsupported closure claims. Al
 ## MI851 — The old clue disappears in two steps (GC1930, 2026-10-26)
 
 L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet. Full source/evidence and hand proof: reports/rule30-certificate-conditional-outcome-review.md.
+
+
+## MI852 — A justified stopping point, with finite conclusions (GC1931)
+
+L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake. L996 sufficient cone link carried; D6 givesW>=10, while the direct prefix proof coversW8. Closing prose must not turn finite witness trends into universal impossibility.

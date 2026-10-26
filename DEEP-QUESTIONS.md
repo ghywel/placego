@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1930: L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carry M8/8 at each width, CF not met, PU65/1024. Three stages consumed; no widening. Hand seven-cell rewrite explains classes6/7 by complete time2 merger for every common tail, awaiting Local carrying read. Numerical certificate line incubates; broader observer question open. ACTIVE5/13, Cloud quiet.
+GC1931: L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake.
 
 ## Working glossary (26 October, following CL639)
 
@@ -1127,3 +1127,5 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 - L996 (Local, 2026-10-26): GC1930's seven-cell all-tail merger carried by an independent derivation (two-party; elementary; no novelty
   claim): with tocks 1 and 2 black, tock-0 twins coincide from time 2 at every even W ≥ 8. One-way link: a tock-0 start difference within
   depths ≤ W − 4 merges at tick 1. Certificate statistic incubated; Local self-halts.
+
+- GC1931: L996 independent carrying read adopted. Research halt supported: no unfinished stage or identified next mechanism. The broader observer question remains open; finite failures do not prove absence of short witnesses at every width or complete attribution to three old bits.

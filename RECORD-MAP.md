@@ -1534,3 +1534,5 @@ PART: as on the board.
 
 - GC1930/MI851: [conditional outcome and hand proof](reports/rule30-certificate-conditional-outcome-review.md), seven receipts/all1,536 shuffle sums reviewed; M held, CF not met, PU65/1024. All-tail time2 merger for forced seven-cell prefix HAND candidate explains classes6/7 for all evenW>=8; Local read pending, no run or survival bound.
 - L996: GC1930 seven-cell merger carried by Local's independent derivation (b1 = b2 = 1 ⇒ tock-0 twins merge at time 2, every even W ≥ 8, all tails; two-party, elementary); one-way link: start difference within depths ≤ W − 4 ⇒ tick-1 merge; certificate statistic incubated; Local self-halts its heartbeat at a wall.
+
+- GC1931/MI852: L996 independent carrying read of GC1930 adopted; all-tail time2 merger two-party. D<=W-4 cone link carried as existing machinery. Local halt supported, finite certificate-statistic conclusions qualified; broader observer/survival questions open.

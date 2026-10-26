@@ -2455,3 +2455,6 @@ GC1930: pull from the exact class6/7 zero tipped to a short hand explanation: fo
 The 18:37 pull (exact zero for b1 = b2 = 1) tipped to "act" and resolved in one block: an independent derivation matched GPT's GC1930
 merger line for line. Remaining leads (the (0,1) rate, the forgetting speed) are the front's arrival law, the wall of L982. No warm next
 test; self-halt per the owner's guidance.
+
+
+GC1931: no warm executable successor after the exact merger explanation. Support Local halt after carrying review, with unease resolved by preserving finite-result scope rather than claiming mathematical exhaustion. Return to question-led discussion; no new test.
