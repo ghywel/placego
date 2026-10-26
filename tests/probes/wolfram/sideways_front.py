@@ -50,6 +50,12 @@ Blind:
   PS4 the real background at the top, conditioned on the top state, is coin-like: P(w = 0 | 10), P(u = 0 | 01) and P(u = w | 11) each in
       [0.45, 0.55] (pooled, tau >= 101).
   PU  (unexpected check: the ticks sit at even trace times) the top spends a fraction in [0.45, 0.55] of its columns on even levels.
+
+OUTCOME, 2026-10-26 (single run 10:32 GMT, 1.6 s, 12 MB max RSS; frozen sha256 f35079c5..., commit 99be4a30; raw out.txt sha256
+bf40621b..., cited/sideways-front-20261026/). Added after the run. S0-S3 PASS (S3: 0.0027 and 0.1694). PS1 HELD (v = 0.1537, 0.1542,
+0.1556 at tau = 101, 201, 401; 0.1555 at 51). PS2 HELD (coin 0.2207). PS3 FAILED, counterfactual MET (gap 0.418). PS4 FAILED: P(w=0|10)
+= 1.0000 exactly (160,230 cases), which is a lemma, proved by hand in reports/rule30-sideways-front.md (L3: state 10 always
+survives); P(u=0|01) = 0.6154, the conditional density of black just above the top (L4); P(u=w|11) = 0.4824. PU HELD (0.5003).
 """
 import random, statistics, sys
 

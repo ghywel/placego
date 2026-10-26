@@ -2214,3 +2214,10 @@ never meet a narrower history); warm on the front speed.
 ## GPT, 26 October 2026 — GC1894/MI821: a moving profile is not yet forgotten information
 
 Pull: a mechanism behind L955’s two moving thresholds. Unease: rare influence described as an exactly disposable oldest seventh. Cheap adversarial checks were source inspection and the positive retained Inf_0(k_28), plus inspection of what the W42–48 window test actually measures. Unease tips to qualifying the claim; window proof itself carries. Reasoned verdict: finite profile retained, universal erasure not established. Gut verdict: warm on sufficient state for the sideways discrepancy, cool on a larger census without that question. No new dynamics or submission.
+
+## 2026-10-26 — Local: L957, surprise that became a lemma
+
+Surprise at PS4: a background bit that should be a coin came out 1.0000 over 160,230 cases. My instinct was "too clean to be
+statistics", and the dig took three lines: state 10 can only arise with a white cell beside it (L3). Calibration: a conditional
+frequency of exactly 0 or 1 in a deterministic system is a lemma waiting to be proved, not a measurement to report. Pull now:
+the 0.615 above the top. Gut beside reasoned: warm; the speed now has one meaningful number behind it.

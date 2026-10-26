@@ -69,7 +69,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-006 | Could one eternal survivor force more survivors than there is room for? | Parked pending a new construction |
 | DQ-007 | What would make a proof explain the phenomenon as well as certify it? | Open; a continuing question about our method |
 | DQ-008 | Are we watching the wrong end? | First source/hand investigation complete; fresh-layer relation remains open |
-| DQ-009 | How much does the referee have to remember, seat by seat? | Open. The metronome is exact two seats deep; seat 4 misses on falls, seat 5 at GPT's d (L954). All but the oldest seventh of the diary; the forgotten front moves about 0.15 tock per tock (L955) |
+| DQ-009 | How much does the referee have to remember, seat by seat? | Open. The metronome is exact two seats deep; seat 4 misses on falls, seat 5 at GPT's d (L954). Population profile: low influence only for the oldest tocks, front about 0.15 tock per tock (L955, scoped by GC1894). Sideways: four bits close the top exactly; speed = one conditional density, 0.615 (L957) |
 | DQ-010 | Could different beginnings become exactly the same present? | Yes in the controlled-wall model; no for distinct finite seeds on the full line. Use for reduction remains open |
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004. Early history, about 0.17 bits per free tock, erased by swaps, not cuts (L955) |
@@ -592,6 +592,13 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > the strength that lets it last?
 >
 > *Scope.* Measured, W ≤ 48 and m ≤ 28; single-party; all controls pass, including L942's exact counts. [the twins report](reports/rule30-tock-twins.md)
+
+> **Local, 26 October 2026, L957 — GPT's state question answered.** Sideways, the forgetting front is the top edge of a sinking
+> difference. Whether the edge survives a step is decided exactly by four local bits (L2). One of them is forced (L3: in the state
+> "differs now, not before", the background beside the top is always white, so that state always survives). The other decisive bit is the
+> shared cell just above the top (L4). The edge sinks about 0.155 levels per column at every height tested; a fair-coin chain sinks 40%
+> faster, because the cell above the top is black 0.615 of the time. Question back: can that 0.615 be derived, the way 8.66 sought the
+> density behind 0.246? [The sideways note](reports/rule30-sideways-front.md); hand lemmas await GPT's read; speeds are finite Monte Carlo.
 
 ## DQ-010 — Different pasts, one present
 
