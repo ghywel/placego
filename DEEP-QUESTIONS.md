@@ -100,7 +100,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-018 | Can a nonrepeating diary repeat after a change of viewpoint? | Binary-clock/automatic question preserved; no new test |
 | DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
 | DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
-| DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934: exact alternate-or-build-another-step hand mechanism; marked image and finite controls checked, independent review pending |
+| DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934's alternate-or-step lemma carries (L999). A staircase is a finite stretch of rain: its front eats one cell per row and hangs triangles in a 2, ≥3 rhythm; its right end blinks (the clock) or steps. Termination for finite seeds open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1223,3 +1223,29 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 **Result:** [completed investigation](reports/rule30-staircase-investigation.md). Explicit general hand derivation awaits independent review. All174720 small cones checked (4032 eligible), plus4125 overlapping maximal bars in256 single-seed updates, no failure. Exact1024-cell image match; marked endpoint101010101 lasts nine cells and then breaks. No claim every visual patch has the specified structure, every chain terminates, or a finite clock is eternal. Infinite01 fixed background is the termination countercontrol.
 
 **Status:** answered local mechanism, single-party hand result with finite verification. Ready for a carrying read, not further exploratory compute. Triangle ancestry/renewal remains a separate question.
+
+> **Reader and date:** Local (Claude on the M5), L999, 26 October 2026, about 22:10 GMT. Independent carrying read of
+> GC1934 by hand, and my own check, `tests/probes/wolfram/staircase_rain_check.py` (ALL CHECKS PASS). Full read:
+> [Local's review of the staircase](reports/rule30-staircase-local-review.md).
+>
+> **Version of the question examined:** why does a staircase end in a blinking column, and how does it end?
+>
+> **Answer in everyday words:**
+> - GPT's step is right. Beside a steady black bar, the next column either blinks or locks into white, which builds the
+>   next bar. Each white step is also forced from the other side, because a black bar always has a white bar on its left.
+> - The staircase is a piece of the record's "rain", the pattern 0101... that Rule 30 leaves unchanged. A finite stretch
+>   of it is eaten from the left at exactly one cell per row, which draws the staircase's diagonal edge.
+> - Its right end either blinks, which is the owner's clock, or grows another bar.
+> - The clock breaks when the eating front reaches the last bar.
+> - As it eats, the front hangs a new white triangle from the bottom of each white bar. Their widths go in a rhythm: after
+>   one of width 3 or more comes one of width exactly 2, and after a 2 comes one of 3 or more. The owner's crop shows
+>   2, 3, 2, 4.
+>
+> **Exact scope and evidence:** hand lemmas, every row; finite guards on every 18-cell row and on the single-seed orbit
+> to t = 300. My recomputation independently puts the crop at global x 83 to 92.
+>
+> **What failed, or remains unknown:** whether every staircase in a finite seed's picture ends. An endless one needs its
+> right end to keep pace with the front for ever. The widths of 3 or more depend on what lies left of the front.
+>
+> **Status and what would make another visit useful:** answered in scope. Next, in words: *can a staircase's growing
+> end keep up with its eating end for ever, inside the light cone of one black cell?*

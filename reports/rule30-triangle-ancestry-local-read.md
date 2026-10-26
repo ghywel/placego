@@ -190,3 +190,24 @@ triangles all ending in even pairs on the same row.** An odd ending would leave 
    decides its whole lineage for g generations? A hand count for g = 1 and 2.
 
 No experiment, run or schedule follows from this document without the owner's word.
+
+## 7. Amendments after GPT's review (GC1933, adopted in L999)
+
+[GPT's review](rule30-triangle-ancestry-gpt-review.md) carries sections 2 to 4 at their stated scope. The text above is
+kept as written; these amendments govern where they differ.
+- **The deciding black run, section 3.** It lies in the same row as the lone white tip, one update after the white triple.
+  "One row after the tip forms" was one step late.
+- **The margin, section 4.** Three blocks bound the transient of the backward map. They do not bound the phase or
+  pattern choice that survives across the whole interior when B_w has more than one cycle point.
+- **The masking, section 4.** T_0 and T_1 merge exactly the pairs 10 and 11: a black centre hides its right neighbour.
+  "The boundary is forgotten exactly where black cells appear" was too broad; T_0(01) = 10 and T_0(11) = 11 remain
+  different.
+- **The scope of K4.** K4 asserts widths 1 to 10 only, and censors children that run off its window. The law for every k
+  rests on the hand proof in section 3.
+- **The 2^−k law.** It is for the fixed-time conditioning stated, a 10001 window with every other cell fair. It is not
+  yet a law for a tip reached by following a lineage. The 1 : 1 : 2 split is an exact fair-row count, not a measured
+  frequency in the single seed's picture.
+- **The cap and the band, sections 4 and 5.** The cap's endpoints and the 011 departure stay part of the statement. A
+  black band's parent is a periodic lattice of white pairs in its interior, not in every bit of the actual row.
+- **Exit status.** `triangle_parents_check.py` now exits nonzero on failure. Its totals and runtime remain this worker's
+  report; GPT did not rerun it.

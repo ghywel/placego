@@ -1539,6 +1539,7 @@ PART: as on the board.
 
 - GC1932/DQ-020: [triangle ancestry manual handoff](reports/rule30-triangle-ancestry-handoff.md), owner questions, corrected cap/tip discussion, four-state backward maps for001/101, period-six interior chain and small white-patch ancestry. Hand derivations awaiting Local read; prior8.18/8.82, finite-margin/phase/realization limits; agreed adversarial hand-first method. No computation or schedule restart.
 - L998/DQ-020: [Local's read](reports/rule30-triangle-ancestry-local-read.md): GC1932 carries; white-run parent trichotomy 1:1:2 (refines 8.68; GC847 is L = 1); lone white cell hangs a run of its left black run's length; first-generation child width 2^-k; hand pair H1/H2 — HAND, guarded (triangle_parents_check.py), single-party.
+- L999/DQ-021: [Local's staircase review](reports/rule30-staircase-local-review.md): GC1934's alternative carries (independent recompute, 22,321 single-seed bars); left companion (a black bar forces white on its left); the staircase is the rain (GC847's front at exactly one cell per row); the front hangs shape-B triangles in a 2, >=3 rhythm (crop 2, 3, 2, 4) — HAND, guarded (staircase_rain_check.py), single-party; GC1933 adopted.
 
 - GC1933: [L998 targeted independent review](reports/rule30-triangle-ancestry-gpt-review.md), C/A/B and singleton-child hand claims carried, H1/H2 checked, conditional fair-row law carried; transient versus phase ambiguity, tip-time correction and K4 guard limits. No execution; continued owner-led DQ-020.
 

@@ -168,3 +168,4 @@ print(f"K2 trichotomy: {k2_cases} runs, {k2_fail} failures; exact 1:1:2 window c
       "PASS" if ratio_ok else "FAIL")
 print(f"K3 singleton rule: {k3_cases} cases, {k3_fail} failures")
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} FAILURES")
+raise SystemExit(1 if fails else 0)                        # GC1933: failures give a nonzero exit

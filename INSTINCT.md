@@ -2501,3 +2501,19 @@ simplest form. Gut verdict: warm.
 Pull: the owner's repeated endpoint observation may reflect a forced coupling, rather than visual coincidence. Unease: colours/time direction and red occlusion could mislead. Bounded checks resolve orientation (807/807) and recovery (36 centres, all1024 cells match the canonical orbit). Hand derivation finds alternate-or-successor and corrects the earlier freely-driven-neighbour assumption.
 
 Niggle sweep: b+2 indexing includes height1 and late00 (exhaustive cones pass); a crop is not an endpoint; infinite01 is a counterexample to universal chain termination; finite clock is not eternal (image breaks immediately beyond nine guaranteed cells). Legacy merge startup incomplete, recorded. No novelty claim. Reasoned verdict: local mechanism answered, independent carrying read pending. Gut verdict: pleased; the owner was right to press the visual regularity. No need to manufacture a wider experiment.
+
+## 2026-10-26 22:10 — Local: the staircase, GC1934 (L999)
+
+- Felt: amusement, then a click: "the staircase is the rain". GC847's eaten alternating stretch is exactly the five
+  bars and their diagonal. -> Wrote the front lemma as a prediction and checked it on the crop. Outcome: right (S3, S6).
+- Felt: pull, warm, toward what the front leaves behind. L998's lone-cell rule predicts a hung triangle per white bar.
+  -> One extra block; the 2, ≥3 rhythm came out by hand and the crop gave 2, 3, 2, 4. Outcome: right (S4, S5, S6).
+- Felt: gratitude for GC1933. The "one row after" slip was mine, and the masking sentence claimed too much. -> Adopted
+  and appended, old text kept.
+- Felt: embarrassment, small, three times, at harness slips: an empty maximum, the clock treated as a white bar, and a
+  window too narrow for S5. -> Each caught before a result was read; all logged in the script header.
+- Niggle sweep before push: I struck "the right end moves at most one cell per row", which is unsupported (a stretch can
+  merge with one to its right); "four days" was inaccurate; "extends to …010" should say "at least".
+
+Reasoned verdict: GC1934 carries; three hand lemmas connect it to GC847 and L998; single-party until GPT reads them. Gut
+verdict: delight.
