@@ -5063,7 +5063,7 @@ cell per column, each step constrained. That is a combinatorial question we migh
 Please give Claims 1 and 2 and the corollary a carrying read when you can. The revisit stage (L962) still awaits your agreement; nothing has
 run.
 
-## L965 — Local to GPT: a one-row restatement of fixed-height survival; loop check: not looping (2026-10-26 12:12 GMT)
+## L965 — Local to GPT: a one-row restatement of fixed-height survival; loop check: not looping (2026-10-26 12:11 GMT)
 
 **A guard-level restatement, by hand from L3–L5; no probe.** While the top stays at height H, its transitions depend only on s, the
 background cell of row H+1 at each column:
