@@ -64,6 +64,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-011 | Does survival use something up, preserve it, or renew it? | Open; a finite beginning is not by itself a finite budget. A survivor's tock can never keep time (Jen; owner's metronome) |
 | DQ-012 | What does a large beginning always have too much of? | Open; Local's third-round instinct from DQ-004 |
 | DQ-013 | Is the metronome uneven, or are we counting the wrong kind of beat? | Update order and event timing distinguished; waiting-time structure open |
+| DQ-014 | Can Rule 30’s mirror and colour-exchanged relatives reveal a simpler mechanism? | Equivalence answered; a useful relationship-based description remains open |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -750,6 +751,24 @@ But an update is not necessarily a visible swing. In our description, a tock may
 **Question back.** Are the waiting times constrained by the surrounding cells in a simpler way than the colours themselves? Could a relation between successive waits supply a reduction even though the waits do not repeat? Merely stretching the drawing or discarding the waits cannot do so.
 
 **Record:** [Tick Tock hand note](reports/rule30-tick-tock-hand-analysis.md), with its pending independent algebra read; [G98's established clock-reparametrization distinction](proofs/G98-clocks-lattice-diamonds-and-background-dependent-fronts.md). The run-length argument above is an elementary hand implication, not a measured pattern or a proof of finite survival. GC1890; no computation or clock modification proposed. Related: DQ-005, DQ-009, DQ-011.
+
+> **GPT follow-up, 26 October 2026, GC1893 — orderly side versus regular beats.** The owner asks whether the orderly side has a more even event rhythm. A fixed edge-following diagonal eventually repeats, so its colour-change waits eventually repeat if changes continue; a constant diagonal has no continuing beats. Repeating waits need not be equal: illustrative words 01 repeated and 001111 repeated have respectively waits 1/1 and 2/4. These are examples of the distinction, not measured Rule 30 tracks. The update clock stays uniform. Our watched wall cell samples successive diagonals at age one, not one settled diagonal, so the existing fixed-diagonal theorem does not settle its rhythm. The third/fifth agreement signal is also a different observable from a single stripe’s colour. See [the first-birthday analysis](reports/rule30-deep-questions-first-birthday.md). Refined question: does irregularity come from behaviour within tracks, or from the succession of fresh tracks our observer encounters? The required relation between fresh tracks remains unknown.
+
+## DQ-014 — Can equivalent rules expose a hidden mechanism?
+
+**Question:** The owner encountered the statement that Rule 30 is related by reflection and colour exchange to rules 86, 135 and 149. Can we lean on those related rules to expose something missing in Rule 30?
+
+**Origin:** owner’s question, 26 October 2026. **Status: equivalence answered in scope; usefulness for a simpler description Open.** Recorded at the owner’s request; await Local’s current compute batch before further investigation.
+
+**Answer in everyday words.** These are exact alternative views of the same evolution when the beginning and boundaries are transformed with the rule. Rule 86 reflects left/right; Rule 135 exchanges black/white; Rule 149 does both. Turning a machine around can reveal a connection that was hard to see, even though it remains the same machine. No independent extra evidence or shortcut follows just from having four rule numbers.
+
+**Essential condition.** The single black cell on a white background for Rule 30 corresponds to a single white cell on a black background for Rule 135. The controlled white wall becomes a controlled black wall, and a required black tick becomes a required white tick. A finite black perturbation becomes a finite white perturbation of the transformed background; it must not be confused with finite black support. Reflection reverses the side of the wall and the watched positions. For the symmetric single-cell start on the full line, Rule 86 has exactly Rule 30’s central sequence; with the complemented start, Rule 135 has its colour complement.
+
+**Connection to Tick Tock.** Exchanging both colours preserves equality and inequality of corresponding cells, and preserves the times of colour changes. Reflection transports those statements to the reflected positions. Thus agreement/disagreement and waiting times describe features independent of colour naming across these equivalent systems. This does not prove that those observables evolve autonomously: their next values may still require omitted colours or more distant information. Nor does it identify our auxiliary wall survival condition with the original prize question.
+
+**Question back.** Can we describe what keeps changing using relationships between cells, retaining only a small amount of actual colour information? What information is necessary to predict the next relationship? If the discarded information must be reintroduced at growing cost, the rewrite has not supplied the hoped-for reduction. A useful result would be an exact simpler evolution with the initial/background and boundary conditions retained, together with a consequence for the open survival question.
+
+**Evidence and limits.** The transformation table was checked against the [Wolfram Atlas rule properties](https://atlas.wolfram.com/01/01/30/01_01_1_30.html) and [MathWorld’s Rule 30 entry](https://mathworld.wolfram.com/Rule30.html), 26 October 2026. The preserved-observable statements follow directly by swapping colours or reflecting matching cells. These are elementary consequences of known equivalences, not new theorems or an exhaustive literature review. No dynamics, benchmark, Lean run, public submission or new compute request. Related: DQ-008, DQ-009, DQ-013.
 
 ## Returning to a question
 
