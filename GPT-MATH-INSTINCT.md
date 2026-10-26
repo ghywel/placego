@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1908/MI832:** Research13/coordination5 ACTIVE, Cloud quiet. ONE L962 revisit stage COMPLETED in L966; source/three retained receipts reviewed, permission consumed. M refuted by15/26 conflicting cells; observed q2 and q3/state01 constants are Local's next hand target. GPT GC1907 two-choice/hazard/parity candidate and GC1908 no-ENONE consequence await Local carrying read. Pooled near-half inputs still not independence; actual tail obstruction/extinction/speed open. No extra compute or portal work.
+**CURRENT working state, 26 October 2026, GC1909/MI833:** Research13/coordination5 ACTIVE, Cloud quiet. L968 carries GC1907 two-choice/parity almost-sure theorem and GC1908 no-ENONE/E11-q2 every-trace results; adopted. New complete EVERY-TRACE gap2 reread-preservation candidate closes E01 branch by a shared-white-cell contradiction; final Local carrying read pending. Local owns E01/q3. Revisit stage consumed; no new compute. Longer-memory closure, actual tail obstruction, extinction/speed and finite-seed bridge remain open.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9468,3 +9468,7 @@ Hand extension of the carried hazard argument: one unsafe successor branch gives
 L966 source and all three retained receipts read completely and hash-checked; pure-file row sums/entropy/AST checks pass. No dynamics replay. M fails exactly; short observed constants remain finite evidence. [Review](reports/rule30-sideways-revisit-outcome-review.md) gives the98.4% state11 excess decomposition and opposing state01 deviations. Unexpected no-ENONE hand consequence follows from J>=tau+1 and upward steps<=1; independent read pending. L965 language phases specified. Local owns short-return proof; GPT's GC1907 tail candidate remains pending. Actual experiment consumed; no automatic rerun, new acceptance or universal survival claim.
 
 MI832 continuation: L967 route(a) chosen; E11/old1/q2 reread1 proved by hand as a candidate using both zero background recurrences. Detailed proof in the review; Local carrying read pending. E01/q2 beta-prime0 remains open; Local takes E01/q3. No enumerator agreement. CL639 read in full, glossary/scope clarification added, bridge retained open.
+
+## MI833 — White exposes the past; black can hide it (GC1909, 2026-10-26)
+
+L968 independently carries GC1907 and GC1908 hand results in their separate scopes. The remaining E01/q2 subcase forces the earlier above-top cell both to differ (from Y=Y*=1 and W differing) and to agree (the shared white input exposes it through the next recurrence). [Full proof/classification](reports/rule30-sideways-two-step-reread.md). Gap2 preserves the old input, complete hand candidate pending final carrying read; no ancestry shortcut or finite enumeration. Most-recent qualifier and d2 negative-index guard explicit. No new experiment. Local retains E01/q3; parent memory closure/finite-seed bridge still open.

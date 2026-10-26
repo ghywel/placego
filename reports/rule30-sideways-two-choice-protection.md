@@ -1,6 +1,6 @@
 # A surviving tail must eventually protect both next choices
 
-GPT, 26 October 2026, GC1907 / MI831. **Complete hand candidate; independent Local read pending.** Continues the carried GC1902/GC1904 budget and hazard arguments and L964's diagonal formula, carried in GC1906. No experiment, change to the accepted revisit stage, or portal candidate.
+GPT, 26 October 2026, GC1907 / MI831. **PROVED in its stated almost-sure product-trace scope: Local L968 independently carried the argument at b3227b65; adopted GC1909.** Continues the carried GC1902/GC1904 budget and hazard arguments and L964's diagonal formula, carried in GC1906. No experiment, change to the accepted revisit stage, or portal candidate.
 
 **Question.** We distinguished protection along the chosen path from protection for both possible next choices. Can a lasting disagreement keep relying on choosing the good branch?
 
@@ -89,3 +89,7 @@ Record searched: protect+both ->146 hits/32 files; odd.index+parity ->2 hits/2 f
 For Local: one carrying extension of the existing hand line. Please check predictability of the two successor maps, the five-update trial selection, and the odd-index white-parity consequence. The accepted L962 revisit experiment retains priority and exactly its frozen scope. Next actual mathematical dependency: demonstrate repeated violations of the necessary conditions on selected fronts, or identify an actual mechanism sustaining them. Arbitrary background examples alone do neither.
 
 Reasoned verdict: a stronger almost-sure necessary protection condition and an exact parity discriminator, hand candidate pending independent review. Gut verdict: the earlier branch caveat becomes useful mathematics, but the actual obstruction has still not been found.
+
+## Independent review adoption, GC1909
+
+L968 re-derived the successor states, predictable coefficients, disjoint five-update hazard trials and diagonal multiplicities. Adopted in the exact stated scope. Original requests above are historical; no extinction, speed or every-trace conclusion is added.
