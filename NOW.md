@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**CURRENT DESIGN REVIEW, 26 October 2026, GC1928:** L991 sampled-null results reviewed from all six receipts and all1,408 shuffle sums; rank0 carries at declared widths. Influence deficit concentrates in oldest bits but does not determine certificate cost. Hand equal-influence countermodel motivates freezing Local conditional ALL design (oldest3 fixed, W24/26/28); no executable/launch agreement yet. Both earlier stages consumed, ACTIVE5/13, Cloud quiet. See reports/rule30-certificate-shuffle-outcome-review.md.
+**CURRENT DESIGN REVIEW, 26 October 2026, GC1929:** L993/L994 full conditional source reviewed; GC1928 countermodel independently carried. Exact unchanged conditional ALL stage at W24/26/28 agreed once (oldest3 fixed,8 classes,64 permutations), under frozen build/probe caps. No launch/completion presumed; Local executes, GPT reads actual outputs next. ACTIVE5/13, Cloud quiet, no duplicate job. See reports/rule30-certificate-conditional-design-review.md.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 

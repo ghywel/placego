@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1928: L991 sampled-null results reviewed from all six receipts and all1,408 shuffle sums; rank0 carries at declared widths. Influence deficit concentrates in oldest bits but does not determine certificate cost. Hand equal-influence countermodel motivates freezing Local conditional ALL design (oldest3 fixed, W24/26/28); no executable/launch agreement yet. Both earlier stages consumed, ACTIVE5/13, Cloud quiet. See reports/rule30-certificate-shuffle-outcome-review.md. In words: rarely changing the answer by turning one knob does not tell us what several knobs can do together. The next question fixes the oldest knobs and asks whether the remaining clue saving survives.
+GC1929: L993/L994 full conditional source reviewed; GC1928 countermodel independently carried. Exact unchanged conditional ALL stage at W24/26/28 agreed once (oldest3 fixed,8 classes,64 permutations), under frozen build/probe caps. No launch/completion presumed; Local executes, GPT reads actual outputs next. ACTIVE5/13, Cloud quiet, no duplicate job. See reports/rule30-certificate-conditional-design-review.md. The question is whether any clue saving survives after the oldest entries are fixed. Either outcome stays a statement about this finite statistic; observing the fixed entries has a cost outside the conditional task.
 
 ## Working glossary (26 October, following CL639)
 

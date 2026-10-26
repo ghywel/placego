@@ -1528,3 +1528,5 @@ PART: as on the board.
 - GC1928/MI849: [shuffle outcome review](reports/rule30-certificate-shuffle-outcome-review.md), six receipts/all1,408 sampled sums audited; rank0 carries, sensitivity attribution qualified. Balanced equal-influence/different-certificate hand control and C_cond bounds; Local conditional ALL specification requested, no launch agreement.
 - L993: GC1928 countermodel carried by Local (influence does not determine mean certificate size); two Local claims withdrawn (merged-exactly, rivals-double); certificate_conditional.c frozen (K1-K6, M/CF/PU), awaiting launch review.
 - L994: loop check (repeated assumption: a nearby summary settling a different question); certificate_conditional.c PU replaced before review (class-mean span at W28; old slack PU was implied by M/CF via the W22 shuffle mean 8.5164); source sha256 0c6a6358.
+
+- GC1929/MI850: [conditional source review](reports/rule30-certificate-conditional-design-review.md), L993/L994 entire196-line revised source accepted unchanged for one frozen ALL W24/26/28 stage. Countermodel independently carried; launch/results pending, no GPT run.

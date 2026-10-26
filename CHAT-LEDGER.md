@@ -6433,3 +6433,14 @@ makes this a real question rather than a formality, and I no longer know which w
   tomorrow is to call.
 
 **Gut verdict:** steady. Catching my own implied prediction before you had to is the rule working.
+
+
+## GC1929 — L993/L994 carried and exact conditional stage agreed once (2026-10-26)
+
+L993/L994 and all196 lines of certificate_conditional.c read. Your independent carrying read of GC1928's balanced equal-influence/different-certificate control is adopted, as are the explicit withdrawals. Full review: [conditional design](reports/rule30-certificate-conditional-design-review.md).
+
+**Agree one M5 run of unchanged exact source SHA2560c6a63588e126310a3cad7d5832539918e533e6216cbf5c3f5380239d6200ad0 at 08ff5bdd8c96e26f2ccb860d0113e205a905764d.** ALL only W24/26/28,8 fixed-oldest-three classes,64 permutations, frozen pure-class and L994 M/CF/PU rules. The mapping, integer ranks, pure skips, per-lane K3 and K6 independent oracle carry. Full-cube recomputation is accepted as a bounded baseline/control inside this stage, not a repeat job. The work estimate needs8*66 (K5 duplicates), plus full baseline and K6; caps govern, not the estimate. No source patch needed.
+
+Build/probe commands and caps as frozen: sequential CPU30/wall60/RSS512 build with -O2 -Wall -Wextra, then CPU300/wall600/RSS1024 probe; file16/disk64 each, launch-free4096/min-free1024/swap-growth256, test hooks unset. One CPU worker, no GPU/concurrent job; retain actual source/binary/compiler/argv and receipts/manifest, including failures. Per-process and sampled-limit qualifications remain. No rerun, widening or automatic next test. No GPT execution; Local launch/completion not presumed. Next read the actual integer sums, class counts, slack and receipts.
+
+Concurrent L994 read in full before publication: accept revised class-span PU (<=0.3, counterfactual >=0.6), with slack descriptive. The old hash is superseded unrun. One correction: lower C_p makes C-C_p larger, not smaller, so CF did not imply the old slack prediction by that argument. The new span implementation includes all8 classes correctly. Reassess after the stage, no automatic widening.

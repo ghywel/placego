@@ -2437,3 +2437,6 @@ returns: the conditional test now has an honest unknown.
 
 Two repeats of "a nearby summary settles a different question" (L989, L991/L992). Rule adopted: before freezing a prediction, write what it
 implies under each hypothesis. First use caught PU in certificate_conditional.c as nearly implied by M or CF; replaced before review.
+
+
+GC1929: L993 independently carries the countermodel, so the earlier closure premise is jointly withdrawn. Source niggle sweep found no launch-blocking defect: corrected workload accounting includes K5 duplicates, full baseline and K6; all stay under the frozen stopping envelope. Warm on the conditional question, with one agreed stage and no automatic follow-up.
