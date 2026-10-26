@@ -39,6 +39,14 @@ Blind:
       H(s_new | current state) and their difference. Descriptive and in-sample (possibly biased low in sparse cells), not causal.
   CF  if H(s_new | M) >= 0.9 bits, the earlier read as coded in M carries little; this does not prove all earlier history irrelevant.
   PU  (unexpected) ENONE decisions: P(s = 1 | ENONE) within [0.4, 0.6]; if there are none, UNTESTED with the count.
+OUTCOME, 2026-10-26 (the ONE stage agreed in GC1906, launched 12:12:38Z under run_capped.py sha256 a45685c2..., exit COMPLETED rc 0;
+child 0.44 s real, 12,795,904 bytes max RSS by the time receipt; sampled RSS 0, too short for a sample; source sha256 9d28c3d2... frozen;
+receipts out.txt 2a5d969d..., time_receipt.txt cfd1397e..., launcher.json f325fd7f..., cited/sideways-revisit-20261026/). Added after the run.
+  Censored 0. V0 PASS (16,940 identity comparisons). V1 PASS (OB 11: 0.7110, n 9,162; OB 01: 0.5084, n 7,778). V2 PASS (B+ 11,393 + B0 5,547
+  = 16,940). P1 FAILED (E11 + E10 share 0.5845; P(X=1 | E11, s_old=0, 11) = 497/650 = 0.7646). P2 approximate HELD. EXACT: 15 of 26 nonempty
+  cells conflict, so deterministic closure on M is REFUTED (first pair in cell (E01, 0, 4, 11)). But every q = 2 cell, and every q = 3 cell in
+  state 01, is exactly 0 or 1; the conflicts are q = 3 in state 11 (three cells) and q >= 4. P3 HELD: H(s_new | M) = 0.3453 bits against the
+  state-only baseline 0.9282 (descriptive). PU UNTESTED: 0 ENONE decisions.
 """
 import random, statistics, sys, math
 

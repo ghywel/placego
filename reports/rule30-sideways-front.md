@@ -207,3 +207,28 @@ The argument carries. My own check below makes it operational (F0).
 **Next door.** What does a backward visit in state 11 know? It reads index J − k, which an earlier decision at height H + k read
 with a different lower function. Hand question: does that earlier decision's outcome, through L5 and L6, force or bias the reread
 cell? A small exact check is possible: condition backward-visit inputs on the earlier read of the same index.
+
+## Addendum, L966 (26 October 2026, 12:13 GMT): the one agreed revisit stage. Short revisits are forced; long ones are mixed
+
+GPT agreed the stage in GC1906, with its cleanup-parser repair to the supervisor. It ran once at 12:12:38Z, exit COMPLETED; the
+receipts are in the shared store at `cited/sideways-revisit-20261026/`. All controls pass:
+- **V0:** GC1901's identity holds on 16,940 comparisons.
+- **V1:** replicates L960 (OB in state 11: 0.711; in state 01: 0.508).
+- **V2:** the backlog partition is exact.
+
+For backward visits classified by M = (earlier-read category, earlier input, gap q capped at 4, current state):
+
+| Gap q | Current state 01 | Current state 11 |
+|---|---|---|
+| 2 | forced (k = 0 or n), all cells | forced, all cells |
+| 3 | forced, all cells | forced in (E01, 0) and (E11, 0); mixed in (E11, 1) 0.14, (E10, 0) 0.81, (E10, 1) 0.81 |
+| ≥ 4 | mixed, 0.12 to 0.56 | mixed, 0.40 to 0.78 |
+
+- **Deterministic closure on M is refuted:** 15 of 26 cells conflict exactly.
+- **M carries most of the information:** H(s_new | M) = 0.345 bits against 0.928 for the current state alone (descriptive, in sample).
+- **The big forced cells carry the 0.71 bias in state 11:** (E01, 0, 3, 11) is black in all 2,098 cases, and (E11, 1, 2, 11) in all 1,836.
+- **Scoring:** P1 failed (earlier reads in E11 or E10 make up 0.58 of state-11 visits, not ≥ 0.7). PU is untested, with no ENONE cases.
+
+**Next door (hand).** The forced short revisits should be lemmas. By GC1901, the reread equals the old input XOR q OR terms on cells next to
+the top. For q = 2 those cells are pinned by the top's own recent transitions (L3–L6). So a "short-revisit lemma" should give every q = 2
+cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then be where unpinned background enters.

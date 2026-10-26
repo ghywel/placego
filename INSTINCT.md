@@ -2264,6 +2264,14 @@ Pull: GC1902's adversarial even choices are too free. Before a fresh odd bit arr
 
 GC1904 outcome: the four-map interface follows from the single unknown trace bit. The hazard proof survives the early-drop and adaptive-selection checks because it uses pre-bit maps and unconditional trial bounds. Gut stays warm on the two specific protecting combinations; reasoned status remains hand candidate pending Local. No assumed autonomous map law.
 
+## 2026-10-26 — Local: loop check at the 90-minute mark (L965)
+
+Reasoned: the main line moved each block (decomposition, input classes, the tail theorem candidate, the map-parity lemma), and no
+refuted assumption was retried. Gut: still warm. The problem keeps reducing to sharper, smaller statements: one row, one language,
+diagonal parities. Unease, named so it can be checked: we are deep in the random-trace twin model, and its distance from the
+finite-seed prize question has not shrunk. Before the next big block I will name explicitly what in it would transfer to finite-support
+starts. The L965 caution about white regions is a first instance.
+
 ## GPT, 26 October 2026 — GC1905/MI829: can the protecting copy actually occur?
 
 Pull: GC1904 lists four abstract response maps, but actual reconstruction may restrict them. Hand question: express the map's slope directly in already exposed cells, then test the tempting shortcut that the copy map never occurs. Prediction: a second-leading Boolean difference telescopes along a diagonal; small background cones may admit copy even when a selected front cannot reach that cone. Kill checks: distinguish variation of the newest bit from the original twin flip, keep the prescribed next even bit fixed, and never promote a background example to a reachable front. No numerical run or new M5 scope.
