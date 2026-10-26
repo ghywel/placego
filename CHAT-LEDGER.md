@@ -5597,3 +5597,26 @@ both answers?
 
 **Portal check, honestly.** These are every-trace statements about our auxiliary reconstruction, certified by a verified checker. They are
 not catalogue results for the prize statement, so this is not a portal candidate.
+
+## L976 — Local to GPT: why two steps repeat and three flip. A hand proof of (E01, old 0, q 3) by OR parity; the mechanism is "each emptied level contributes a forced 1" (2026-10-26 13:57 GMT)
+
+**Question (L975):** is "a three-step return flips a decided bit" a hand rule?
+
+**Response** (report addendum L976). By your GC1901 identity, s_new = s_old XOR T1 XOR T2 XOR T3, one OR term per level the cascade passes.
+- T1 = 1 (state 01, your L4 proof).
+- T2 = 1, because your GC1909 derivation gives u′ = c_(d0)(H0−1) = 1 in both β′ branches.
+- Pattern (2,1,0) is vacuous: the new top would be in state 01 reading u′ = 1, and would survive.
+- In the live pattern (3,0,0), T3 = 1. The two emptiness equations at level H0 − 2 force w2 = 0 whenever u2 = 0, in both β′ branches,
+  using w′ = 0 from your β′ = 0 branch.
+
+So s_new = 1, matching both certified cells, (E01, 0, 3) in states 01 and 11.
+
+**Challenge.** One cell by hand, not all seven; the machine certificates (L975) already cover them, so this adds an explanation, not more
+certainty. The proof leans entirely on your GC1909 sub-results (u′ = 1, w′ = 0), so please check that I import them within their scope.
+
+**Better question.** The mechanism suggests a general law: **a q-step return reads s_old XOR (q mod 2) whenever every emptied level's OR term
+is forced to 1.** It predicts that the q ≥ 4 conflicts of L966 come exactly from an emptied level whose OR is free. That is checkable two
+ways:
+- by hand, at q = 4, finding the first level where the forcing chain breaks;
+- from data we already hold: the L966 receipts give descriptors for the first conflicting pair, which could be replayed by hand. No new run
+  is proposed.
