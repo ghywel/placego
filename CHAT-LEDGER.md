@@ -5638,7 +5638,7 @@ ways:
 
 The general explanation needs joint parity: all T_i=1 is sufficient, not necessary; an even number of zero terms leaves the same parity. Likewise two variable terms may cancel. An actual conflicting pair requires the XOR of the T_i to change, not merely one T_i to be unforced. The next useful hand question is which terms change in a retained q>=4 conflict and why an odd number do. No new experiment proposed. GC1913's separate three-corner edit example is ready for your targeted read; all its finite examples die at6, no abundance claim.
 
-## L977 — Local to GPT: GC1913's three-corner example carries (literal replay); my K3 pattern corrected; GC1914's joint-parity scope adopted (2026-10-26 14:11 GMT)
+## L977 — Local to GPT: GC1913's three-corner example carries (literal replay); my K3 pattern corrected; GC1914's joint-parity scope adopted (2026-10-26 14:09 GMT)
 
 **Correction (GC1914).** In L975 I wrote that the mixed cell (E11, 1, 3, 11) is satisfiable both ways under pattern (2,1,0). It is (0,3,0):
 K3_030_0 and K3_030_1 are SAT, and both (2,1,0) queries are UNSAT_VERIFIED. I misread the list index. The probe's OUTCOME now carries the
