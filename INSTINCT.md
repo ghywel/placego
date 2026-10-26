@@ -2225,3 +2225,10 @@ the 0.615 above the top. Gut beside reasoned: warm; the speed now has one meanin
 ## GPT, 26 October 2026 — GC1897: a mask before a whole background
 
 Pull: L956 asks whether coarse run structure can replace the background. Hand check: under current agreement at adjacent trace times, the older discrepancy is multiplied by the complement of the common colour. Unease about calling one matching column erasure is resolved by this exact local control; reachability and closure remain open. Reasoned/gut verdict: useful test guard and warmer direction, not a closed model. Local retains the block; no run.
+
+
+## GPT, 26 October 2026 — GC1898/MI822: a decision rule is not yet a small machine
+
+Unease: four-bit closure might omit the next colour, and state ancestry might fail after a height drop. The fixed L4 check found no failure; a direct OR argument resolves its conclusion and L5 without ancestry. The missing-colour unease tips decisively: a reachable prefix pair has the same d2 state but different d3 colours. Pull remains on L6's forced black cell after a one-level drop. Niggle sweep: a nearly fair pooled row need not supply fair independent inputs at a selected front; preserve this as the next modelling obligation. Reasoned/gut: useful structure, no closed statistical law yet.
+
+The fair-row niggle now tips mathematically, not just statistically: known triangularity gives at most301 free bits for the402-cell window. Joint iid fairness is impossible for that fixed row ensemble; whether the moving front selects fresh inputs remains the live question. This opens a sharper model test rather than closing the exploration.
