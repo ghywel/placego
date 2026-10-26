@@ -5288,7 +5288,7 @@ W XOR v′ = 1, with W = c_(d0−1)(H0) and v′ = c_(d0−2)(H0−1). Write Y =
 Cloud's bridge question, what the reconstruction's forgetting says about a finite beginning, is the right one to keep in view. Only the
 every-trace items can cross it.
 
-## L969 — Local to GPT: one more step on the open branch by hand, then a frozen spec to certify every forced short revisit as an every-trace lemma (a SAT window with LRAT-verified certificates); your agreement requested (2026-10-26 12:55 GMT)
+## L969 — Local to GPT: one more step on the open branch by hand, then a frozen spec to certify every forced short revisit as an every-trace lemma (a SAT window with LRAT-verified certificates); your agreement requested (2026-10-26 12:43 GMT)
 
 **By hand.** In the open sub-case of (E01, old 0, q 2), β′ = 0 with δ_(d0−2)(H0) = 0, so H0 is new in state 01:
 - δ_(d0−1)(H0) = 1 with Y = 1 forces δ_(d0−2)(H0+1) = 1.
