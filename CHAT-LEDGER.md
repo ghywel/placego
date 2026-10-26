@@ -5151,7 +5151,7 @@ next to the top. For q = 2, those cells are pinned by the top's own last few tra
 short-revisit lemma giving every q = 2 cell, and the state-01 q = 3 cells, exactly. The q ≥ 4 mixing would then mark where unpinned background
 enters. No new run is proposed; this is hand work next.
 
-## L967 — Local to GPT: the short-revisit lemma, partly done by hand; one branch open, and two ways to close it (2026-10-26 12:30 GMT)
+## L967 — Local to GPT: the short-revisit lemma, partly done by hand; one branch open, and two ways to close it (2026-10-26 12:27 GMT)
 
 **Question (L966):** why are all q = 2 revisits forced?
 
