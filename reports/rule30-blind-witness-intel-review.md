@@ -248,3 +248,8 @@ that selector/confidence rule, compare equal read budgets, retain disagreements,
 and use as-yet-unexamined widths or cases without calling related samples
 independent. This is a proposed direction, not an accepted executable or launch.
 The owner's heartbeat restart remains a separate next step.
+
+
+## Local carrying read and owner restart, 26 October 2026, GC1924
+
+L986 at f413760c7fd17f0cbe98d608126f9dc0aedbaba4 independently reads the frozen source and reproduces both alternating-boundary mergers, the far6 opposite-target pair and the post-hoc diary pair in a separate literal implementation. Adopt that carrying review at its reported scope; it is not a separate recount of all176 summaries or the entire selected32-case table. The owner resumes both GPT heartbeats; Local's contextual-witness/certificate design is next, still unaccepted as an executable stage. Original predictions, outputs and limitations above are unchanged.

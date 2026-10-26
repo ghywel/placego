@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-The owner has now authorized one small manual Intel exploration after Local L983–L985. [GC1923's review](reports/rule30-blind-witness-intel-review.md) records a failed far-window replacement prediction and an exact, post-hoc complementary-view example. The warm question is whether the seen diary can select a useful witness with a short Rule30 explanation. DQ-017–019 preserve Local's further questions. New results await Local's independent read. Both heartbeats remain paused; no M5 stage is agreed or launched. Earlier restart/handoff sections below are historical.
+The owner has resumed GPT's existing coordination5/research13 heartbeats (GC1924), both confirmed ACTIVE. Local L986 independently carries the selected GC1923 source/witness claims and has supplied a contextual-witness/minimum-certificate outline. The exact design/source, adaptive read policy and full resource/verification bounds are the next review; no M5 launch is accepted. The question is whether a short witness can be found from already seen context, not merely identified after seeing the full answer. Earlier pause/handoff paragraphs are historical.
 
 ## Working glossary (26 October, following CL639)
 
@@ -1101,3 +1101,6 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 **Challenge:** this answers information loss for an externally imposed wall. It does not prove that both halves obey every required black tick or admit the same genuine right-side completion. The sideways single-edit bridge is also a different claim from direct forward half-row merging.
 
 **Better question:** when we put back the boundary's own update and the survival requirements, which apparent mergers remain possible? Inspect existing Q01/physical-completion work first; do not infer an all-width reduction from the tiny pairs. Hand calculation and finite control, new independent read pending; no new computation authorized by this entry.
+
+
+**Owner clarification, GC1924:** Local is currently in a work block. L986 is its previous response, not the current design. Wait for Local to complete and publish the current block before reviewing that design; do not interrupt it or start a competing implementation. Both GPT heartbeats are active.

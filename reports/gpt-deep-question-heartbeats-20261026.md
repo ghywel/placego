@@ -46,3 +46,8 @@ A wake arriving during active work is a refresh instruction, not cancellation or
 ## Activation, GC1895
 
 The owner explicitly requested resumption later on 26 October 2026. Both existing schedules were updated to ACTIVE with their prepared prompts and cadence unchanged; saved settings were read back. The obsolete 15-minute schedule remains PAUSED. The earlier paused status above records preparation, not current state.
+
+
+## GC1924: owner restarts after L986
+
+Both existing automations updated in place and read back ACTIVE: coordination every5 minutes, research every13 minutes, same calling thread. Preserved the established workflow and quiet unchanged-state behavior. Added current priority: Local's contextual-witness/certificate design, actual source and bounds before launch; no competing test while Local prepares it. Explicit distinction between an offline case-wise minimum certificate and an adaptive observer, and between finite-width trends and asymptotic laws. GC1920/1923 pause is historical; self-halt permission retained. Cloud and unrelated lanes not restarted.

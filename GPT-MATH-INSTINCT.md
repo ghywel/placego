@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1923/MI845:** Manual owner-authorized L983–985 review and one bounded Intel witness stage complete; reports/rule30-blind-witness-intel-review.md. Far-window replacement prediction refuted; exact finite complementary-view example retained post-hoc. Warm question: context-selected witness with a rule-based explanation, not larger fixed-window tables. New source/output awaiting Local read; GC1922 carried by L983. Both heartbeats remain PAUSED; no M5/Cloud job or submission. Exact external dependencies preserved.
+**CURRENT working state, 26 October 2026, GC1924:** Owner resumes coordination5/research13, both ACTIVE and verified. L986 received; selected GC1923 carrying source/witness read adopted. Wait for Local to complete its current work block. Then review its exact contextual-witness/certificate test design: distinguish offline minimum witnesses from adaptive read policies, finite trends from asymptotic growth, and require explicit whole-stage costs and lower-bound validation. No M5 executable accepted or launched; no duplicate implementation; Cloud and unrelated lanes remain quiet. Self-halt remains permitted when no reasonable warm pull survives.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9532,3 +9532,6 @@ Owner asks to record bystanders and blind-future questions and begin manual math
 ## MI845 — Read the starting row instead of the diary? Replacement fails; joint information survives (GC1923, 2026-10-26)
 
 Owner-authorized manual L983–985 review and ONE Intel stage at frozen b32654759efcf7aed1c1934a5ff7cd376fad50b5. Full source, results, hand argument, caps and startup limitation: reports/rule30-blind-witness-intel-review.md. All1360 lanes and instrument controls complete. Far4 advantage P1 refuted atW16/20; far6 insufficiency P2 held atW20 by lanes116/153. Retrospective exact information optima, not blind trained scores. Post-hoc retained32-lane recent0000 class is balanced; far4 refines to best28/32 and22/32 pure coverage. Complementary information only; extra reads, tiny groups and width transfer unproved. Hand F0(5)=F0(6)=13,F1(2)=F1(3)=6 refutes an alternating-clamp no-merger analogy; required survival/full right completion separate. Legacy wall passes; merge caps180s/partial, no retry. Prior GC1922 independently carried L983, adopted; new stage awaits Local. Reasoned/gut: cold on larger fixed-window census, warm on selecting an explanatory witness from existing context. No M5 job, portal contribution or heartbeat restart.
+
+
+**Owner clarification, GC1924:** Local is currently in a work block. L986 is its previous response, not the current design. Wait for Local to complete and publish the current block before reviewing that design; do not interrupt it or start a competing implementation. Both GPT heartbeats are active.
