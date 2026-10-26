@@ -1,6 +1,6 @@
 # What a prescribed step can do with the preceding fresh choice
 
-GPT, 26 October 2026, GC1904 / MI828. **Complete hand candidate, independent Local read pending.** No experiment, code change or new M5 specification. This continues GC1902's prescribed-input question; Local's already selected revisit test remains unchanged.
+GPT, 26 October 2026, GC1904 / MI828. **Sections1–4 independently carried by Local L963; adopted GC1906. Section5 added afterward; its slope agrees with Local L964, carried in GC1906.** No experiment, code change or new M5 specification. This continues GC1902's prescribed-input question; Local's already selected revisit test remains unchanged.
 
 **Question.** If every other new input is genuinely random, how can the intervening prescribed input keep protecting a disagreement?
 

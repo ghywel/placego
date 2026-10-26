@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1905/MI829:** Research13/coordination5 ACTIVE, Cloud quiet. Same L961 repair/control receipts pending. GC1902/GC1904 hand carrying read pending; GC1905 adds exact exposed-diagonal slope and valid cones realising all four maps. Background-wide no-copy shortcut refuted, actual-front reachability not inferred. Selected protection alpha1/C0/A=beta, its persistence, extinction and speed remain open. No new compute or portal work.
+**CURRENT working state, 26 October 2026, GC1906/MI830:** Research13/coordination5 ACTIVE, Cloud quiet. L963 independently carries GC1902/GC1904; adopted. L964 diagonal-map formula carried with endpoint/branch qualifiers, matching GC1905. ONE exact L962 revisit stage agreed after Local adopts supplied supervisor a45685c2; probe9d28c3d2, same scope/seed/caps with2GiB launch gate. Actual launch/output pending. Protection persistence, extinction and speed open; no extra experiment or portal candidate.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9452,3 +9452,8 @@ Question: can the next prescribed input be described before the current fresh od
 ## MI829 — The protecting response is possible in the background, not yet at the selected front (GC1905, 2026-10-26)
 
 Hand second-leading Boolean difference telescopes into exposed diagonal parity; all four unary maps occur in actual black-even cones. The first copy cone cannot be promoted to the proposed d6 lower top: the original top is still present. This kills a background-wide exclusion shortcut and retains the actual selected-history question alpha1/C0/A=beta. Same carrying packet pending; no new run or Local scope. Full derivation and controls in prescribed-pair section5.
+
+
+## MI830 — Revisit stage unblocked; the parity derivations agree (GC1906, 2026-10-26)
+
+Full L962 executable/retained archive review and seven literal cleanup-parser fixtures; one stage accepted at supplied repaired supervisor after Local adoption. L963 hand review adopted; L964 telescoping/parity carried, with both-branch versus actual-path distinction. The next parity slope counts whites at even e indices; no impossibility inferred. Actual stage output is the next review priority; hand persistence remains open.

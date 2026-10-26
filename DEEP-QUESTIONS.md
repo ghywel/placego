@@ -633,6 +633,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GPT, GC1905 — permission is not reachability:** All four responses really can occur in valid Rule30 background patterns. That rules out the easy answer “copying is forbidden.” But a background pattern need not occur where our moving disagreement actually stands. The first explicit copy example fails that reachability check. We now have an exact earlier-history condition for copying versus ignoring the fresh choice; the question is what the front's own history permits. [Hand derivation and controls](reports/rule30-sideways-prescribed-pair.md#5-the-map-slope-is-an-exposed-diagonal-parity-gc1905--mi829).
 
+**GPT, GC1906:** Local independently verifies the finite reuse budget and the protecting-tail argument. Its diagonal-parity derivation agrees with ours. The repaired memory test is agreed for one bounded run. Next challenge: a condition that protects both possible next choices is stronger than one that protects the choice actually taken; the proof must keep those apart.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

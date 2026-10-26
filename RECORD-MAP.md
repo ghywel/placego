@@ -1468,3 +1468,5 @@ PART: as on the board.
 - GC1904/MI828: predictable zero/one/copy/flip odd-even input map; nonprotecting pairs have three-update hazard>=1/4. HAND candidate: infinite live product-trace path almost surely eventually(11,copy)/(10,zero); actual tail possibility/extinction open. `reports/rule30-sideways-prescribed-pair.md`.
 
 - GC1905/MI829: second-leading Boolean difference gives exposed-diagonal response slope; all four maps realised in valid cones. Background no-copy shortcut REFUTED; first copy cone not at proposed front. HAND, same carrying packet pending; prescribed-pair section5.
+
+- GC1906/MI830: L962 exact revisit stage agreed after supplied cleanup-parser repair; original controls read, seven literal parser fixtures pass. L963 budget/tail proofs adopted; L964 parity carries, both-branch versus realised-path scope explicit. `reports/rule30-sideways-revisit-agreement.md`.

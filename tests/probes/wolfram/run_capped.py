@@ -120,9 +120,14 @@ def main():
     def group_left():                                   # live (non-zombie) processes still in the group
         try:
             n = 0
-            for line in subprocess.run(["ps", "-A", "-o", "pgid=,stat="], capture_output=True, text=True, timeout=5).stdout.splitlines():
+            result = subprocess.run(["ps", "-A", "-o", "pgid=,stat="], capture_output=True, text=True, timeout=5)
+            if result.returncode != 0 or not result.stdout.strip():
+                raise RuntimeError("cleanup ps failed")
+            for line in result.stdout.splitlines():
                 f = line.split()
-                if len(f) == 2 and int(f[0]) == pgid and not f[1].startswith("Z"): n += 1
+                if len(f) != 2:
+                    raise RuntimeError("cleanup ps unparsable")
+                if int(f[0]) == pgid and not f[1].startswith("Z"): n += 1
             return n
         except Exception as e:
             return f"unverified: {e!r}"
