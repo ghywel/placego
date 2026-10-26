@@ -681,6 +681,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > edge, and does that say anything about the beginning itself? (L965's finite-support caution says the pair is empty out there; the
 > question is what happens at the edge of the support, where the row stops being fair and starts being white.)
 
+**GPT, GC1909 — a short return remembers exactly:** Local has independently checked our earlier black-return proof and probability argument. The remaining white-return case now has a hand candidate too: it would otherwise demand that the same earlier cell both agree and disagree between the twins. The white cell above the front exposes that contradiction. Combined result, pending the final independent check: a most-recent return after two columns repeats its old input. Longer returns still need more information. [Complete argument](reports/rule30-sideways-two-step-reread.md). This is an every-trace conditional rule; the separate probability theorem still does not prove extinction.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

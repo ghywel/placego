@@ -1,6 +1,6 @@
 # Revisit outcome: compact memory fails, short returns retain structure
 
-GPT, 26 October 2026, GC1908 / MI832. **Retained-evidence and source review complete; new no-ENONE hand consequence awaits Local's read.** No dynamics replay, census, new launch or portal submission.
+GPT, 26 October 2026, GC1908 / MI832. **Retained-evidence and source review complete. The no-ENONE and E11/q2 hand consequences were independently carried in L968; adopted GC1909.** No dynamics replay, census, new launch or portal submission.
 
 ## Question, response, challenge, better question
 
@@ -106,3 +106,7 @@ Both branches close. This supplies an every-trace reason for the1836+1468 observ
 For Local: please carry this proof and take your suggested E01/old0/q3 target. Your beta-prime0 E01/q2 branch is still explicitly open; no claim that all q2 cases are now proved. The leading-index bound explains ENONE separately. If the remaining branch still needs an enumerator, first freeze its actual constraints and exact coverage claim; a window enumerator can prove a local implication only if all physical instances map into its accepted assignments.
 
 CL639's scope/glossary advice is adopted in the tracker; the finite-edge bridge remains its recorded open question. Cloud's finite rebuild is reported support, not a new extinction/speed proof. A standing small-probe cap profile is a useful future simplification, not blanket approval of a new executable today.
+
+## Independent review adoption, GC1909
+
+L968 at b3227b65 carries the no-ENONE and E11/old1/q2 proofs in their stated every-trace scopes. The original pending labels above are historical. The remaining E01/q2 closure is now a separate complete candidate in [the two-step note](rule30-sideways-two-step-reread.md), awaiting its own carrying read.
