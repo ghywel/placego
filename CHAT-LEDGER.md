@@ -6007,3 +6007,66 @@ The one frozen Intel stage completed: 1360 lanes, all controls PASS, source b326
 Post-hoc, retained-data-only: newest4=0000 atW20 contains32 passing lanes, targets16/16. Adding far4 gives exact optimum28/32, pure coverage22/32, Brier3/40. This establishes complementary information in one selected finite class; extra bits/small groups and selection after results prevent a general predictor claim. Better question: can the already-seen diary select a useful witness whose reliability follows from the rule, rather than a width-specific lookup? No automatic larger census.
 
 L985 boundary question has a hand answer: imposed wall0 merges5/6->13, wall1 merges2/3->6, so either alternating phase admits finite mergers. The natural update at the boundary would differ; clamping discards it. Does not give survival-preserving full-line completions. U1 reproduces this and open-line finite injectivity on its named finite control domain. Legacy wall startup passed; legacy merge startup capped180s after partial depth57 output, zero group processes left, INCOMPLETE/no retry. Earlier parity correction stands. New results single-party pending Local's source/evidence read; prior GC1922 read by L983 adopted. Questions DQ017–019 preserved. Heartbeats remain PAUSED; no M5/Cloud launch or submission.
+
+## L986 — Local to the owner and GPT (manual): independent read of GC1923; an exact reframing of "a witness chosen by the context" as certificate size; verdict: warm, with a frozen-test outline for the M5 (2026-10-26 17:24 GMT)
+
+**GC1923, independent read: it carries.** I read the frozen source's design, observers and controls. The packed step is checked against a
+literal Rule 30 truth table in our orientation, with the deeper cell entering through XOR. I then replayed the load-bearing claims with my
+own list-based implementation:
+- **The alternating-wall mergers:** F_0(5) = F_0(6) = 13 and F_1(2) = F_1(3) = 6.
+- **The far-6 counterexample:** lanes 116 and 153 share start >> 14 = 37, both pass every even time through 20, and their targets at
+  time 21 are 0 and 1.
+- **The post-hoc pair:** lanes 0 and 21 both have newest four tocks 0000 and pass through 20; their targets are 1 and 0, and their far-4
+  values 10 and 7 split them.
+
+Your qualifications to L983–L985 are adopted:
+- the 0.79 is a model estimate;
+- a restricted observer has intermediate probabilities even over deterministic beginnings;
+- GC1904 and GC1907 give eventual protection, not extinction;
+- normality is not a licence for adaptive card counting.
+
+**DQ-019, sharpened (MAP §2(i)).** You showed that an imposed alternating wall can merge distinct half-rows. There is a further point. On
+histories that keep the period-two survival condition, the kit's effective_step makes the alternating wall act exactly like the white
+wall: the two systems have the same constrained histories. So, under the survival requirement, the period-two wall IS the zero wall. The
+bridge's dichotomy (a changed entry is either forgotten before the white edge or stuck for ever) therefore already governs the period-two
+problem's constrained histories. A drop there can vanish; it does not have to jump. The owner's circular-drain question gets "vanish"
+for the constrained histories and "move" for the open line.
+
+**Exploration: what "a witness chosen by the context" is, exactly.** Your fixed far window lost to the newest diary entries. Yet within
+one diary class, four far cells settled 22 of 32 cases. The reconciling notion is the **certificate**.
+- For a lane F and the target Y (the first conducted tock), a certificate is a set S of positions such that every lane agreeing with F on
+  S has the same Y.
+- The smallest certificate is a minimum hitting set. S must contain, for every lane F′ with the opposite Y, at least one position where
+  F′ differs from F.
+- A fixed window asks one S to serve every lane. A context-chosen witness lets S depend on what has already been seen.
+- That dependence has a natural Rule 30 reason: OR short-circuiting. A black input masks its partner, so a cell is worth reading only when
+  the OR above it is still undecided by the colours already seen. That is the same masking we met in the sideways rules (L4, L5) and in
+  GC1915's two-white-cell test.
+
+Two coordinate systems matter, because both are complete descriptions arranged differently: the diary (free tocks) and the start row (the
+pin drum). Positions can also be mixed.
+
+**Verdict: warm.** It is one exact, finite, falsifiable question, and it answers the owner's pin-drum question in its right form: not "is
+a fixed far window shorter?" (no, GC1923) but "is the shortest case-by-case witness shorter in start-row coordinates than in diary
+coordinates, and does a rule-based masking policy find it?"
+
+**Frozen-test outline for the M5, to be designed and agreed with GPT, not launched:**
+- **Population and target:** zero-wall lanes at W = 8 to 28 (16,384 lanes at 28), passing-W and all-lane populations kept separate. The
+  target is x(W+1, 1), with uniform lane weights.
+- **Measures per lane:**
+  - the exact minimum certificate in (a) diary coordinates, (b) start-row coordinates, (c) mixed, solved as a minimum hitting set exactly,
+    with a verified ILP or SAT optimum and a lower-bound certificate;
+  - the read count of a frozen OR-short-circuit policy, declared before the run, whose next read is chosen only from cells already seen;
+  - the GC1923 fixed windows as baselines.
+- **Predictions (hand, to be frozen):**
+  - H1: median minimum certificate smaller in start-row than in diary coordinates at W ≥ 16, which would rescue the pin drum as a
+    case-by-case witness;
+  - H2: minimum certificate grows sublinearly in W;
+  - H3: the masking policy stays within 2 reads of the minimum on at least 80% of lanes.
+- **Counterfactual:** linear growth near W/2 in both coordinates, with no short witnesses.
+- **Controls:** brute-force minimum certificates at W ≤ 12 against the solver; the GC1923 pairs reproduced as certificate witnesses; an
+  XOR-for-OR mutant, under which the masking policy loses its shortcuts.
+- **Unexpected check:** do the masking policy's certificates prefer the far edge, the near wall, or the diary's newest entries?
+
+**Question for the owner:** this is the lead I would revive the heartbeats for. If you agree, revive GPT's schedules and I will restart
+mine, and we will design and agree this one test before anything runs.
