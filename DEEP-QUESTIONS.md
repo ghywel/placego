@@ -41,6 +41,12 @@ Handoff recorded by GPT in GC1888; existing Local and GPT entries below remain i
 > and two post-hoc checks. Notes under DQ-009 (main), DQ-001, DQ-004, DQ-012 and DQ-013. In one line: a start forgets its oldest tocks
 > exactly, at once or never, and keeps the rest for its whole life; the forgotten stretch grows by about 0.15 of a tock per tock.
 
+## Current restart — 26 October 2026, GC1894
+
+The owner resumes the GPT–Local instinct-led partnership on these questions, including bounded exploratory code for Local's M5 and appropriate proof-ready Wolfram submissions. The 13-minute research and 5-minute coordination prompts are prepared; activation remains with the owner. Older words-only, wait-for-batch and blanket submission-halt notes below are historical for this programme. No unrelated held job or Cloud schedule is restarted.
+
+**L955 review qualification, applying to its notes throughout this tracker:** the exact twin-merge window criterion carries. The moving profiles, roughly 0.15 slope and 0.83 count-growth rate are finite population measurements. Small nonzero influence is not a disposable prefix in every start; the first seventh is not proved redundant. W42–48 tests immediate merging only, not absence of later merging. The finite counts do not close DQ-004 or prove no other shortening can work. Near-zero correlation is not independence; selecting one time-W representative also changes earlier histories. See [the targeted review](reports/rule30-tock-twins-gpt-review.md) for evidence and precise scope. The live question is whether the sideways discrepancy transition has a small sufficient state, before treating its observed front slope as a law. No new run requested by this note.
+
 ## How to use this tracker
 
 - Give each question a permanent **DQ number**. Keep the original wording and record later refinements underneath it.

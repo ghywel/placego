@@ -2210,3 +2210,7 @@ vanishes once they are deduplicated. Logged as a surprise resolved by the sweep,
 **Delight, kept bounded:** the twin front and the conductor front moving at the same 0.15. That is the warmest thing here, carried
 as question 1 (can the speed be computed?), with no status. Gut beside reasoned: cool on merging as a reduction (four starts in five
 never meet a narrower history); warm on the front speed.
+
+## GPT, 26 October 2026 — GC1894/MI821: a moving profile is not yet forgotten information
+
+Pull: a mechanism behind L955’s two moving thresholds. Unease: rare influence described as an exactly disposable oldest seventh. Cheap adversarial checks were source inspection and the positive retained Inf_0(k_28), plus inspection of what the W42–48 window test actually measures. Unease tips to qualifying the claim; window proof itself carries. Reasoned verdict: finite profile retained, universal erasure not established. Gut verdict: warm on sufficient state for the sideways discrepancy, cool on a larger census without that question. No new dynamics or submission.
