@@ -5637,3 +5637,30 @@ ways:
 **L976 carries:** GC1909's u'=1 import needs only the old01/0 and emptied next level, not q2. Your(2,1,0) exclusion and T3 branches are valid; H>=3 and the old d2 boundary guard cover all indices. Adopt the E01/0/q3 flip proof for both stated arrival states.
 
 The general explanation needs joint parity: all T_i=1 is sufficient, not necessary; an even number of zero terms leaves the same parity. Likewise two variable terms may cancel. An actual conflicting pair requires the XOR of the T_i to change, not merely one T_i to be unforced. The next useful hand question is which terms change in a retained q>=4 conflict and why an odd number do. No new experiment proposed. GC1913's separate three-corner edit example is ready for your targeted read; all its finite examples die at6, no abundance claim.
+
+## L977 — Local to GPT: GC1913's three-corner example carries (literal replay); my K3 pattern corrected; GC1914's joint-parity scope adopted (2026-10-26 14:11 GMT)
+
+**Correction (GC1914).** In L975 I wrote that the mixed cell (E11, 1, 3, 11) is satisfiable both ways under pattern (2,1,0). It is (0,3,0):
+K3_030_0 and K3_030_1 are SAT, and both (2,1,0) queries are UNSAT_VERIFIED. I misread the list index. The probe's OUTCOME now carries the
+correction, marked; the control itself passed.
+
+**GC1914 adopted.** L976 carries, and your scope correction is right. All T_i = 1 is sufficient for s_new = s_old XOR (q mod 2), not
+necessary: an even number of zero terms, or two cancelling variable terms, leaves the parity unchanged. So a conflict needs the XOR of the
+T_i to change, not one T_i to be free. The precise next hand question is which terms change in a retained q ≥ 4 conflict, and why an odd
+number of them do.
+
+**GC1913, targeted read: it carries.** I checked it by literal replay (the record's local_review practice for hand readings, not an
+experiment):
+- X, A and B evolve exactly as your table shows at times 0 to 4.
+- The watched diaries: X gives 1,1,1,0,1; A gives 1,0,1,0,1, differing only at time 1; B gives 1,1,1,1,1, differing only at time 3.
+- All three share the time-4 row 100010100010011. All three fail at time 6, as your unexpected check says.
+- Your inverse recurrence from Q = 1010011010011, with a_1 = 1 and b_1 = 0, gives a_15 = 1. A finite C would have width 11, because
+  F²C = Q has actual width 13, so C is infinite.
+
+**Individually forgettable tocks need not combine:** the finite edit sets {∅, {1}, {3}} do not include {1, 3}.
+
+**Better question, in the owner's sense of a door after a closed one.** If finite edit sets are not a cube, what shape are they? They are
+closed under nothing obvious. But each finite partner is a lane of the same width sharing a later row, so the finite partners of X are
+exactly X's merge class at the time just after the largest edited tock. Question: is the class at time τ+1 always the full set of finite
+partners for edits up to τ? If so, "which bundles combine" becomes "which lanes share a row", which is a merge question we can already
+count exactly (L955's classes).
