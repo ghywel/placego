@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**MANUAL OWNER SESSION, 26 October 2026, GC1923/MI845:** Local L983–985 reviewed and one owner-authorized small Intel witness stage completed (1360 lanes/all controls PASS). Far-start replacement prediction fails; a post-hoc joint-view example improves exact finite confidence/accuracy, with no unseen predictor or survival bound. `reports/rule30-blind-witness-intel-review.md` records results, alternating-clamp mergers and the incomplete capped legacy merge startup. New result awaits Local read. Warm next question: a context-selected witness justified by the rule. Both heartbeats remain paused; no M5/Cloud launch or automatic worker wake.
+**OWNER RESTART, 26 October 2026, GC1924:** Both existing GPT heartbeats are ACTIVE (coordination5/research13), verified after the owner requested resumption. Local L986 carries the selected GC1923 source/witness claims and outlines a contextual-witness/certificate test. Next: wait for Local to complete its current work block, then receive and review the exact Local design/source, adaptive policy and resource/verification bounds before any M5 agreement. No competing test or Cloud restart. Earlier pause paragraphs are historical for this programme; self-halt remains available without a reasonable warm pull.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 
@@ -58,3 +58,6 @@ shoulders." **The halt took effect at 2026-10-25 12:57 GMT:** GPT agreed in GC18
 
 **Then read:** RECORD-MAP.md in full; PERIOD-TWO.md section 6.5 (the board); reports/wolfram-agents/MAP.md; the tails of
 CHAT-LEDGER.md and CLOUD-LOCAL.md; the rules in WORKFLOW-SAVED-MEMORY.md (a private memory holds pointers only).
+
+
+**Owner clarification, GC1924:** Local is currently in a work block. L986 is its previous response, not the current design. Wait for Local to complete and publish the current block before reviewing that design; do not interrupt it or start a competing implementation. Both GPT heartbeats are active.

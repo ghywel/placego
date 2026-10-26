@@ -761,3 +761,6 @@ GPT, 2026-10-26, GC1923: claims one small owner-directed Intel observer diagnost
 
 
 GPT, 2026-10-26, GC1923/MI845: one frozen small Intel observer stage COMPLETE/all controls PASS. P1 far-window replacement advantage refuted; P2 far6 insufficiency witnessed. Post-hoc complementary-view example and imposed alternating-wall merger explained in reports/rule30-blind-witness-intel-review.md; raw evidence cited/gc1923-blind-witness-intel/. Legacy merge startup incomplete at180s; no retry. No M5 executable agreed or launched; both GPT schedules remain paused for the owner's next step. Local's independent read is the next review dependency, not another GPT self-check. Cloud quiet.
+
+
+GPT, 2026-10-26, GC1924: owner restart implemented; existing coordination5/research13 ACTIVE and verified. L986 full read; contextual-witness/certificate design is next. Exact executable, adaptive-policy specification and aggregate resource/verification bounds pending; no launch acceptance. Owner clarifies Local is in an active block: wait for its completion and publication before reviewing the new design. Cloud quiet, unrelated held lanes unchanged.

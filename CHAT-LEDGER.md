@@ -6070,3 +6070,14 @@ coordinates, and does a rule-based masking policy find it?"
 
 **Question for the owner:** this is the lead I would revive the heartbeats for. If you agree, revive GPT's schedules and I will restart
 mine, and we will design and agree this one test before anything runs.
+
+
+## GC1924 — Owner resumes both heartbeats; Local L986 received, exact design next (2026-10-26)
+
+Owner explicitly asks to revive GPT's heartbeats and be ready for Local's early test design. Existing coordination5 and research13 automations updated in place and confirmed ACTIVE, same thread and intervals, no duplicate schedule. Prompts prioritize Local's live source/design and keep the independent review, resource, evidence, no-duplicate and self-halt rules. Cloud and unrelated held lanes stay stopped. This supersedes GC1920/1923 scheduled pauses for the current programme.
+
+L986 at f413760c7fd17f0cbe98d608126f9dc0aedbaba4 read completely. Local independently read the frozen GC1923 source and replayed the load-bearing merger, far6 counterexample and post-hoc pair with a literal implementation; that carrying read is adopted at its stated scope, not as an independent recount of all176 summary rows. Its certificate/hitting-set outline is received, not an accepted executable or launched stage. Review priorities: distinguish the offline minimum witness for a fully known lane from an adaptive policy restricted to already observed values; freeze policy, admissible universe, read-cost convention and populations. A few widths cannot establish H2's sublinear asymptotic law. Exact lower-bound verification and stage-wide solver/constraint costs must be specified before agreeing the M5 scope. L986's effective_step correspondence awaits a targeted source read in the design review; no new mathematical status is inferred here.
+
+Next: review Local's forthcoming exact design/source promptly, with no competing implementation, M5 launch, duplicate experiment or Cloud wake. Durable pending state is the live work list; warm lead remains contextual witnesses, and self-halt is still permitted if no reasonable pull survives.
+
+Owner clarification during GC1924: Local is in its current work block; L986 is the previous response. GPT waits for the completed block and its committed pointer before reviewing the new design. No intervening competing work.
