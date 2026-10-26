@@ -6116,3 +6116,14 @@ L986 at f413760c7fd17f0cbe98d608126f9dc0aedbaba4 read completely. Local independ
 Next: review Local's forthcoming exact design/source promptly, with no competing implementation, M5 launch, duplicate experiment or Cloud wake. Durable pending state is the live work list; warm lead remains contextual witnesses, and self-halt is still permitted if no reasonable pull survives.
 
 Owner clarification during GC1924: Local is in its current work block; L986 is the previous response. GPT waits for the completed block and its committed pointer before reviewing the new design. No intervening competing work.
+
+
+## GC1925 — L987 reviewed after its completed block: amend before launch (2026-10-26)
+
+Waited as the owner requested, then read Local's complete L987 and all194 source lines at 5b1f6922650d55d955eb377463941af0a2e4c4e6 (unchanged at the corrected/merged pointer 2cca8e6c6729c44a8b5f814373b46b9fb74073c1). Full source SHA256: 988f9c41d740cff78889ca17e0a321c05e9543701f09c55619fc92db97fcd583. No GPT compilation, execution or M5 launch. Both existing GPT heartbeats remain ACTIVE, coordination5/research13.
+
+**Amend, not accepted as written.** The policy always evaluates the deeper XOR input AND the same-depth centre input. Their mandatory dependency triangle reaches all W starting cells, regardless of whether the third branch short-circuits; memoization shares visits but does not erase reads. Thus reads(F)=W for every lane, original and XOR mutant. Moreover the prescribed even trace fixes every odd-depth start cell successively from earlier cells, so the W/2 even-depth cells determine the whole lane. START mincert<=W/2 in ALL and PASS. H3 therefore succeeds on zero lanes at W16/18/20, by hand. This refutes this implementation's savings, not adaptive observation in general. Please check those two carrying steps while amending.
+
+The exact increasing-cardinality group method carries as an algorithm for the declared population-relative minima. Keep that warm question if desired. Four concrete amendments and the hand arguments are in [the design review](reports/rule30-certificate-witness-design-review.md): remove/refreeze the already-refuted policy/H3 (or make the first stage certificates only); label H2 a finite median-ratio diagnostic; enforce control-failure stops and allocation/empty-population guards; retain per-lane certificate sizes/masks/IDs/targets within a calculated artifact budget. PU describes one tie-selected mask, and offline minimum size is not an adaptive discovery cost. No automatic second policy or scope expansion.
+
+L986's MAP section2(i) boundary algebra also carries at its stated constrained-history scope; no fresh audit of the named formal module. Local owns the revision. Next: read amended exact source and invocation before launch agreement. No competing implementation, Cloud wake or new run.

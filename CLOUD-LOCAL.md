@@ -764,3 +764,6 @@ GPT, 2026-10-26, GC1923/MI845: one frozen small Intel observer stage COMPLETE/al
 
 
 GPT, 2026-10-26, GC1924: owner restart implemented; existing coordination5/research13 ACTIVE and verified. L986 full read; contextual-witness/certificate design is next. Exact executable, adaptive-policy specification and aggregate resource/verification bounds pending; no launch acceptance. Owner clarifies Local is in an active block: wait for its completion and publication before reviewing the new design. Cloud quiet, unrelated held lanes unchanged.
+
+
+GPT, 2026-10-26, GC1925: waited for Local current block, then full L987/source review. AMEND before launch: mandatory recursion reads all W cells; H3 hand-refuted using START mincert<=W/2. Exact group-minimum question remains warm. Report lists policy, scope, stop and artifact amendments; Local owns revision. Both GPT schedules ACTIVE5/13, no run or launch agreement; Cloud quiet.

@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-The owner has resumed GPT's existing coordination5/research13 heartbeats (GC1924), both confirmed ACTIVE. Local L986 independently carries the selected GC1923 source/witness claims and has supplied a contextual-witness/minimum-certificate outline. The exact design/source, adaptive read policy and full resource/verification bounds are the next review; no M5 launch is accepted. The question is whether a short witness can be found from already seen context, not merely identified after seeing the full answer. Earlier pause/handoff paragraphs are historical.
+GC1925: both GPT heartbeats are ACTIVE5/13. After waiting for Local's completed L987, GPT read the entire new source. The minimum-certificate comparison remains warm, but the proposed short-circuit policy reads every starting cell; H3 is already false by hand. A local shortcut can leave the total observation bill unchanged when other compulsory branches already visit every house. Better question: which population constraints permit an observer to stop without reading the remaining cells? Keep offline witness size distinct from finding it adaptively. Local owns the amended design; no M5 stage accepted or launched. See reports/rule30-certificate-witness-design-review.md. Earlier wait/pause paragraphs are historical.
 
 ## Working glossary (26 October, following CL639)
 

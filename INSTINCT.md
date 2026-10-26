@@ -2393,3 +2393,8 @@ Owner authorizes small exploratory Intel tests after L983–L985, schedules stil
 
 
 GC1923 outcome: P1 tipped cold (far4 inferior to newest4 at both tested larger widths); P2 held by an exact equal-far6/opposite-target pair. No cap increase or rerun. Post-hoc selected-class arithmetic leaves a narrower pull: complementary observations, not replacement. In a32-lane equal-diary class, far4 raises optimum16/32 to28/32. Niggles: added bit budget, tiny pure groups, width-dependent lookup, selection after seeing output, ancestral rather than strictly noncausal witnesses. All explicit; none licenses unseen forecasting or an all-width conclusion. Boundary analogy checked adversarially by hand and U1: alternating clamping can erase differences. Reasoned/gut: stop fixed-window expansion; warm on a rule-explained conditional witness. Local carrying read and an independently frozen discriminating follow-up needed before M5; schedules stay paused.
+
+
+## GC1925 — Local shortcuts versus the total observation bill (2026-10-26)
+
+Unease on reading L987: skipping one OR branch may leave all initial cells visited by the other branches. Cheap kill test: trace only compulsory d and d+1 dependencies, without executing. They cover every starting cell; reads=W always. Triangular constraints independently cap minimum START witnesses by W/2, refuting H3. Niggles checked: memoization does not erase earlier reads; positive-depth paths never hit the wall; population constraints do not appear in this policy; this does not rule out a different adaptive policy. Reasoned/gut: cold on this mechanism, warm on comparing minimum witnesses. Local amendment requested, no compute.

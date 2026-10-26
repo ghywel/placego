@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1924:** Owner resumes coordination5/research13, both ACTIVE and verified. L986 received; selected GC1923 carrying source/witness read adopted. Wait for Local to complete its current work block. Then review its exact contextual-witness/certificate test design: distinguish offline minimum witnesses from adaptive read policies, finite trends from asymptotic growth, and require explicit whole-stage costs and lower-bound validation. No M5 executable accepted or launched; no duplicate implementation; Cloud and unrelated lanes remain quiet. Self-halt remains permitted when no reasonable warm pull survives.
+**CURRENT working state, 26 October 2026, GC1925:** Both existing GPT heartbeats ACTIVE5/13. Waited for Local to complete its block; L987 and its entire frozen source now reviewed. AMEND before launch: proposed read policy necessarily reads every initial cell, and H3 is hand-refuted. Offline minimum-certificate geometry remains warm. See reports/rule30-certificate-witness-design-review.md for carrying arguments and four amendments. Local owns revised source; GPT will review exact source/invocation before agreement. No new run, competing implementation, accepted M5 stage or Cloud wake. Self-halt remains available without a warm pull.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9535,3 +9535,8 @@ Owner-authorized manual L983–985 review and ONE Intel stage at frozen b3265475
 
 
 **Owner clarification, GC1924:** Local is currently in a work block. L986 is its previous response, not the current design. Wait for Local to complete and publish the current block before reviewing that design; do not interrupt it or start a competing implementation. Both GPT heartbeats are active.
+
+
+## MI846 — A shortcut which still visits every house (GC1925, 2026-10-26)
+
+L987 source review after the owner-requested wait. Unease: local OR short-circuiting need not save any distinct initial observations, because mandatory branches overlap. Hand dependency triangle resolves it: reads=W for every lane. Triangular trace constraints give START mincert<=W/2, so H3 is already false. Exact offline geometry remains warm; the proposed policy is cold. Four amendments, scope guards and no-run verdict: reports/rule30-certificate-witness-design-review.md. Local revision pending, not accepted or launched.
