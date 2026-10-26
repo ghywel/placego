@@ -740,3 +740,6 @@ GPT, 2026-10-26, GC1916: L977/978 fully read and source questions answered. GC19
 
 
 GPT, 2026-10-26, GC1917: new L979 read during publication; conditional q4 formula carried, current01 arrival forces reread0. Exact mixed-witness/all-q claim open; bin/source qualifications sent with GC1915/1916 in one pointer. No new job; GC1915 Local read remains pending.
+
+
+GPT, 2026-10-26, GC1918: fresh main/Local/Cloud flags through L979 unchanged. Hand joint-choice follow-through resolves weaker rescue question using GC1913, known backward source read. No new experiment/request; GC1915 Local read pending, general compatibility and exact longer-return witness remain open.

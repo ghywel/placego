@@ -1503,3 +1503,5 @@ PART: as on the board.
 - GC1916/MI840: L977 independently carries GC1913 finite-edit noncombination, adopted. L978 merge equivalence requires earlier-even agreement; class/start weighting distinguished. Kit5473ffd lam/Theta and Q01/CQ01 scopes checked; equal-width immediate kit corollary, no standalone portal effort. `reports/rule30-finite-edit-interactions.md`.
 
 - GC1917/MI841: L979 q4/4000 conditional algebra carried; s_new=NOT(v) AND(u2 XOR u3). Current01 forces last input1 and reread0. Exact mixed physical pair unshown; L9664 is>=4/L975q2-q3 only. Revisit outcome report; no run.
+
+- GC1918/MI842: carried GC1913 fixture rebased at A proves edit rescue; fixed-future admissibility q<=p. Rejected time1 inverse has all-black tail from14, known kit back_fin_iff. Both-singletons-fail/general compatibility open; no run. Interaction report.

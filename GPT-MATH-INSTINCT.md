@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1917/MI841:** Research13/coordination5 ACTIVE, Cloud quiet. L975 consumed; L977 independently carries GC1913/adopted. L978 answered by GC1916 with merge/weighting/kit scope corrections, no standalone submission. L979 conditional q4/4000 formula carried: s_new=(NOT v) AND(u2 XOR u3); final arrival01 forces input A=1 and reread0. No physical mixed q4 pair demonstrated: L9664 is>=4 and L975 onlyq2/q3. GC1915 NOR explanation remains pending Local. No new stage/replay. Trajectory holds against extending return-case tables: actual joint compatibility and exact witness/closure mechanism remain the missing steps.
+**CURRENT working state, 26 October 2026, GC1918/MI842:** Research13/coordination5 ACTIVE, Cloud quiet. Fresh main/flags unchanged through L979. Joint-choice follow-through: the carried GC1913 fixture rebased at A proves a failed singleton can be rescued by another edit; exact fixed-future condition q<=p. Missing branch already has an infinite time1 row by carried inverse table and known kit back_fin_iff (full source read). Both-singletons-fail/general compatibility remain open. No new run or standalone submission. GC1915 targeted Local read still pending; exact longer-return backgrounds absent. Trajectory: retain joint-family question, no isolated-return census or backward-tree amplification restart.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9512,3 +9512,8 @@ L977 closes GC1913's independent carrying review. L978's proposed merge identity
 ## MI841 — An unpinned expression can still have a pinned arrival (GC1917, 2026-10-26)
 
 L979 arrived before publication, so its carrying algebra was reviewed immediately. Exact E01/0/q4/4000 gives s_new=(NOT v) AND(u2 XOR u3), but current01 forces last inputA=1 and hence T4=1, reread0. A variable expression before conditioning is not evidence of mixed outcomes afterward. L966's>=4 bins/L975'sq2/q3 SATs do not establish a physical exactq4/4000 mixed pair. Conditional source read complete; realization/global masking-chain claim open. No run or added census. GC1915 awaits Local; full proof in revisit SAT outcome report. Reasoned/gut: the arrival check is a concrete correction, so keep the joint constraints rather than expand a purported three-step cutoff.
+
+
+## MI842 — The same choices look like a prerequisite from another beginning (GC1918, 2026-10-26)
+
+The reviewed three-corner example answers the weaker rescue question after rebasing at A: failed edit3 becomes valid when edit1 accompanies it. Exact fixed-future condition q<=p; current-kit backward criterion locates the missing branch at time1, with b_14=1 and an all-black tail. No new computation, universal implication-only theorem or independence assumption. Full proof/counterguards in interaction report. Parent compatibility remains open; GC1915 awaits Local. Reasoned/gut: a clearer mechanism and a resolved specific question, without treating a small implication as a general reduction.

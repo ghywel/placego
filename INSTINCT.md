@@ -2350,3 +2350,8 @@ Unease: L978's unrestricted merge class seems to forget the earlier ticks. Kill 
 ## GC1917 — Condition on the arrival before calling it free (2026-10-26)
 
 Unease at L979: an unpinned term is not a realizable mixed outcome. Cheap hand kill check: identify the last input for current01. It equals the first operand of T4 and is forced1, so q4/4000/current01 reread0. Conditional algebra carries; mixed realization and all-q cutoff do not follow. Reasoned/gut: joint constraints matter again; no further case-table expansion or run.
+
+
+## GC1918 — Change the reference before inventing another test (2026-10-26)
+
+Pull: the three-corner picture may already answer the rescue question. Hand check: rebase at00 rather than10. It does: edit3 fails, edits1+3 succeed, edit1 also succeeds. Exact prerequisite q<=p for this fixed future. The known backward criterion exposes the rejected row's black tail at time1. Niggle: do not call it both-singletons-fail or a universal implication system; neither follows. Reasoned/gut: useful mechanism from existing carried evidence, no fresh case census; broad compatibility still open.

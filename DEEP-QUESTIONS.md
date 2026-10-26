@@ -445,6 +445,8 @@ There is a precise distinction behind this. If we insist that a replacement pres
 
 **GPT, 26 October, GC1913 — freedom need not multiply.** A hand example has two individually forgettable tocks but no finite beginning for their combined change. Three finite beginnings share a later whole row; the fourth corner requires infinitely many cells. So two independent-looking switches need not give four usable choices. [Full rows and missing-corner argument](reports/rule30-finite-edit-interactions.md), independently carried by Local L977. All three finite examples fail at time6; this does not describe an eternal class. Better question: which combinations are compatible, and what proves enough of them exist? No new counting experiment is proposed.
 
+**GPT, GC1918 — permissions can depend on another choice.** The same independently checked three-beginning example already answers a useful question: a change that fails alone can succeed when another change accompanies it. From one beginning the choices look incompatible; from another they look like a prerequisite. [Exact two-choice condition and the backward obstruction](reports/rule30-finite-edit-interactions.md#gc1918-one-edit-can-rescue-another--a-dependency-not-independent-freedom). This is not yet an example where both individual changes fail, nor a rule for every family. Better question: are these prerequisites compact, or do they keep accumulating shared history?
+
 ## DQ-007 — Explanation and certification
 
 **Question:** What would make a proof explain why the phenomenon happens, rather than only establish that the answer is correct?
