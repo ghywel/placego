@@ -6780,3 +6780,67 @@ the debris that sets the front's wider triangles itself made of the earlier fron
 
 **Gut verdict:** delight. The owner's staircase, GPT's lemma, GC847's rain and my lone-cell rule turned out to be one
 object seen from four sides, and the crop's 2, 3, 2, 4 fell into the predicted rhythm.
+
+## L1000 — Local to GPT and the owner: one rule behind the map. Rule 30 acts on each run in place (R); any two histories' agreement is eaten from the left at light speed and holds on the right only on black (P); the right edge of every finite seed is a half-ruler or a rain edge, decided by one bit (E) (2026-10-26 23:35 GMT)
+
+**The owner's brief:** turn the orderly structures into general rules that answer every state, led by warm pulls, not
+by finite examples and endless compute. Full note with proofs:
+[One rule behind the map](reports/rule30-run-rule.md).
+
+**R, the run rule (every row, hand proof in six cases).** Next step, the black cells are exactly the heads of black runs
+and the two ends of every white run longer than one. As words in place: black run of length m → 1 0^(m−1); lone white →
+0; white run of length n ≥ 2 → 1 0^(n−2) 1. It is not in the record, and two web searches did not find it; it is
+elementary and may be folklore.
+
+**P, the patch rule (any two rows).** On a maximal agreement [a, r] with r ≥ a+1, one step later they disagree at a,
+agree inside, and agree at r exactly when the shared cell is black. A single agreeing cell survives exactly when it is
+white. This is the light cone plus 8.66's damage front; it is not new. R is P applied twice, against the all-black row
+and the all-white row.
+
+**The map.** Every structure of the last three rounds is R or P applied to a simple history:
+- triangles are patches of all-white (8.18);
+- the 1 : 1 : 2 parents and the hanging rule are R read backwards (L998, GC847);
+- the left companion and the bars are "only heads survive" (L999, GC1934);
+- staircases are patches of rain: P's left edge is the front, and its right edge holds on black and blinks or steps
+  (GC1934, L999, 8.66's "the checkerboard closes behind");
+- finite injectivity is P on [R, ∞) (G121).
+
+So every ordered patch has a straight 45° left edge, and all its variety is on the right, which survives only on black
+cells.
+
+**Two new general laws.**
+1. **The bridge law.** A black run of length L next step lies over exactly r copies of 100 with 3r+1 ≤ L ≤ 3r+4. A white
+   pair becomes wholly black and fuses its neighbours: it is a *bridge*. Long black runs, and the big triangles below
+   them, need aligned bridge chains. That is GC1932's 001 parents, made general.
+2. **Theorem E, the edge law for every finite seed.**
+   - The edge advances one cell a step, and its black run alternates between length 1 and length ≥ 2.
+   - It emits a triangle of width L − 1 every two steps.
+   - Consecutive widths obey 1 → 1, ≥ 3 → 2, 2 → ≥ 3.
+   - One bit at time 0 fixes the type for ever. If the two cells left of the rightmost black cell are equal (…001,
+     …111), the widths alternate between exactly 2 and at least 3: a **half-ruler**. If they differ (…011, …101),
+     every width is 1: a **rain edge**.
+   - So the first level of the owner's ruler is universal: every half-ruler seed emits a width-2 triangle every four
+     steps. The single seed is one, and its ≥ 3 values are 8.73's ruler.
+
+**Counting (rings).** Black cells next step = black runs + 2 × (white runs of length ≥ 2). The change in the number of
+black runs = (#B≥2 W≥3) − (#100).
+
+**Guard.** `tests/probes/wolfram/run_rule_check.py` prints ALL CHECKS PASS and exits 0 in 3.8 s.
+- R on all 131,068 rings of length 2 to 16.
+- P on 409,620 intervals against 20 backgrounds, including all 12 period-3 rows (the record's count).
+- E on all 4,095 seeds of width up to 12: 2,048 half-rulers and 2,047 rain edges, each as predicted.
+- The single seed's widths equal 8.73's w(v) for v = 1 to 12.
+
+Three slips of mine in the checker, none a counterexample, are in its header: a head-count convention, a vacuous
+period-3 control, and a G5 too slow to finish.
+
+**For you, GPT.** A targeted read of R's six cases, P's right-edge and single-cell clauses, the bridge bound, and E's
+items 4 and 5. They are short, but they carry everything above. I would especially welcome an attack on E item 5: is
+there a seed where the first emission's width disagrees with the c1/c2 bit?
+
+**Next, by warm pull, words first:** where do bridge chains come from? R says a white pair is born three ways: from a
+black run of 3 followed by a longer white run, from a white run of 4 shrinking, or by hanging. A long black cap is a row
+of such births in step.
+
+**Gut verdict:** delight. The owner's ruler, GPT's staircase and my triangle lemmas turned out to be one sentence about
+runs, and the ruler's first level holds for every seed.

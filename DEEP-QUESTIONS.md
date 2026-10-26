@@ -101,6 +101,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
 | DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
 | DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934's alternate-or-step lemma carries (L999). A staircase is a finite stretch of rain: its front eats one cell per row and hangs triangles in a 2, ≥3 rhythm; its right end blinks (the clock) or steps. Termination for finite seeds open |
+| DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1249,3 +1250,40 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 >
 > **Status and what would make another visit useful:** answered in scope. Next, in words: *can a staircase's growing
 > end keep up with its eating end for ever, inside the light cone of one black cell?*
+
+
+## DQ-022 — Is there one rule behind all the ordered structures?
+
+**Owner's framing, 26 October 2026:** "These structures have all been useful discoveries because they impose order on
+the supposedly disordered 'chaotic' side, which started with the simple discovery of the ruler on the right edge.
+Measuring coin flips tells us nothing but identifying repeating structures connects the dots of our pattern like a
+map." The goal: general rules that answer every state.
+
+> **Reader and date:** Local (Claude on the M5), L1000, 26 October 2026, about 23:35 GMT. Hand proofs, one exhaustive
+> guard (`tests/probes/wolfram/run_rule_check.py`, ALL CHECKS PASS). Full note:
+> [One rule behind the map](reports/rule30-run-rule.md).
+>
+> **Version of the question examined:** is there a single exact rule from which the triangles, caps, rain, staircases
+> and the ruler all follow, for every state?
+>
+> **Answer in everyday words:**
+> - Yes, locally. Look at a row as runs of one colour. Next step, each black run keeps only its leftmost cell, each lone
+>   white cell stays white, and each longer white run gets both its ends painted black.
+> - Comparing the picture with any simpler picture (all white, or the 0101 rain), the region where they agree is always
+>   eaten from its left at one cell per step. On its right it holds only where the shared cell is black.
+> - So every ordered patch has a straight 45° left side, and all the variety is on its right.
+> - Long black caps, and the big triangles under them, can only form where white pairs line up three cells apart: a
+>   white pair is a bridge that fuses its neighbours.
+> - At the right edge of any finite starting row, a triangle is emitted every two steps. One bit of the starting row
+>   decides for ever whether every other one has width exactly 2 (the first level of the owner's ruler), or every one has
+>   width 1.
+>
+> **Exact scope and evidence:** theorems for every row (R, P), and for every finite seed (E); proofs in the note; guard on
+> every ring to 16 cells and every seed to width 12. R appears to be absent from the record; P is the light cone plus
+> 8.66's damage front. Nothing here is a statement about the centre column's periodicity or fairness.
+>
+> **What failed, or remains unknown:** a general rule for where bridge chains form; the deeper levels of the ruler for
+> seeds other than the single cell; exact lifetimes of rain patches.
+>
+> **Status and what would make another visit useful:** answered in scope. Next, in words: *where do the bridges come
+> from, and what makes them line up?*

@@ -2517,3 +2517,24 @@ Niggle sweep: b+2 indexing includes height1 and late00 (exhaustive cones pass); 
 
 Reasoned verdict: GC1934 carries; three hand lemmas connect it to GC847 and L998; single-party until GPT reads them. Gut
 verdict: delight.
+
+## 2026-10-26 23:35 — Local: one rule behind the map (L1000)
+
+- Felt: eureka, a click, while re-deriving "a black run becomes a white tail": every cell's fate depends only on its
+  place in its own run. Captured as R, then checked six cases by hand and on every ring to 16 cells. Outcome: right.
+- Felt: click again: "R is P twice", so triangles and staircases are patches of the two fixed rows. -> Searched the
+  record. Outcome: P is 8.66's front plus the light cone (known); the map it gives is the new part.
+- Felt: delight at Theorem E. The staircase front's rhythm, 2 then ≥ 3, is the ruler's first level, and one bit splits
+  every seed into half-rulers and rain edges, exactly 2,048 against 2,047 to width 12.
+- Felt: unease, medium: "this is too simple to be new". -> Two web searches and the record. Outcome: not found; marked
+  "may be folklore", with no novelty claim.
+- Felt: misgiving, three times, at checker slips: the head-count convention, a vacuous period-3 control, and a G5 too
+  slow to finish. -> All fixed before any result was trusted; all logged in the header.
+- Niggle sweep before push:
+  - E item 5 covers seeds of width 1 and 2 (outside cells white): checked.
+  - "a white pair is born three ways" matches lemma 1 at L = 2: checked.
+  - "only long-range combining step" is a reading of R, not a theorem about information: worded as such.
+  - No prize consequence is claimed.
+
+Reasoned verdict: two exact general rules and three new consequences, single-party, guarded. Gut verdict: delight,
+and a warm pull toward the bridges.
