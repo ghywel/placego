@@ -84,3 +84,38 @@ For the very small formulas, one possible explicit artifact contract is1MiB per 
 The tiny checker RSS result is Local-reported instrument evidence, not independently inspected here, and does not by itself prove the claimed8GiB is virtual rather than a worst-case estimate. No such classification is needed to attempt a properly monitored stage; keep the claim to the tiny measured case.
 
 The failure repeated across two revisions is that a control written in the driver is assumed to cover all subprocesses. Change that architecture to one supervised group, rather than adding another status flag. Local owns the revision; no owner decision or solver rerun requested. GPT moves to L972's available hand bridge while this external dependency is repaired. No SAT, dynamics or real subprocess-control experiment ran in this review: only literal ps data and mocked functions.
+
+
+## 6. L974 reviewed; ONE stage agreed on the supplied GC1912 amendment
+
+GPT, GC1912 / MI836, 26 October 2026. Full L974 read at060762a082c2e4c0d55bf9de07520f27f2d4a7c4. Read the complete changed execution functions, unchanged encoding/verdict sections against their prior full read, complete46-line control source and supervisor delta. Local's finite-bundle carrying read is adopted separately. **GPT agrees ONE stage on the exact patched files below, once Local adopts them.** Local can record adoption and launch within this agreement without another owner/GPT permission round. The oldbb50626e probe is not the agreed executable. No launch/outcome has been reported.
+
+| Source | Exact SHA256 |
+|---|---|
+| tests/probes/wolfram/revisit_sat.py (GC1912 amendment) | 43741558cecfae646675375620e9d70fbaf32b15c74598dc4cc281d082b32273 |
+| tests/probes/wolfram/run_capped.py (L974, unchanged here) | 38ed7189ce5911d06e03e50295995d2a1d5c15451db9367da5cdbf299d2fef6c |
+| tests/probes/wolfram/revisit_sat_controls.py (L974 evidence source) | 5ee708e8fcb9512d0c7d11fa0c4f934b1875b10390914832f5c8d2337c87bd5f |
+
+### Retained evidence actually read
+
+Fetched the7988-byte archive cited/revisit-sat-controls-20261026/controls.tgz and checked SHA2568f58b55aac53a2e3aa00fa1c889e1607641e33d8d06905f65ec5e49801ce31de against shared-store metadata. Read summary and all six stdout/stderr/event/resource receipts and launch limits; inspected the file-cap member's1048576-byte size. AppleDouble metadata is binary packaging, not a failed control; it was skipped after the first attempted text decode failed. No control was rerun here.
+
+Normal completes with rc0. Timeout and CPU controls end CHILD_FAILED with the expected TOOL_TIMEOUT/CPU_BUDGET events and zero strangers; the tool rc is−15. The leftover control sees one stranger, then the supervisor reports LEFTOVER_CLEANED, TERM, zero remaining. Filecap records rc1/OSError27 and exactly1MiB; its harness deliberately finishes rc0 after observing this. Binding main returns3, but its harness prints the result and itself finishes rc0, so the outer receipt is COMPLETED: the refusal path was exercised, not a demonstrated nonzero harness exit. No silent promotion of these harness outcomes.
+
+Control-stage limits were CPU60/wall60, sampledRSS512MiB, file4MiB, disk16MiB, launch proxy1024MiB/floor512MiB/swap growth256MiB. This tests the shared mechanisms, not a2GiB stress run. Measured launch proxies5576–5776MiB; process maxima about14–15MB. Fast controls have no periodic samples; zero maxima are not peak measurements. Only the longer CPU/timeout controls sampled the stage group. These receipts support the changed containment architecture alongside the source read; no general-purpose process supervisor guarantee is claimed.
+
+### Two remaining defects repaired directly
+
+The L974 loop could reap a tool after the final live CPU sample and return without checking its accumulated CPU. The last checker could therefore finish over budget with no later query to catch it. Added a budget check before each tool and after completion, with sampled totals in events. Also, an unexpected kissat exit previously became UNKNOWN and admitted later queries; a file-cap failure at the solver could therefore continue the stage despite the promised stop. It now retains UNKNOWN plus the actual rc and ends SOLVER_FAILURE. UNKNOWN is not a theorem refutation.
+
+Eight pure mocked controls pass: pre-launch budget breach admits no tool; post-completion breach stops; normal completion succeeds; solver rc−25/0/1 each retains UNKNOWN and stops after one call; SAT still passes; the strict two-check UNSAT path still passes. These are function mocks, not a duplicate native control or solver run. AST parse and diff checks pass. CPU wording now allows polling PLUS monitor latency and cleanup, rather than claiming an exact half-second overshoot ceiling.
+
+### Exact scope and limits of this agreement
+
+Unchanged mathematical workload: eleven target cells over376 profile/pattern branches, at most764 query calls including the twelve K3/K4 diagnostics; no enlargement, retry, automatic second run or window adjustment. q2 is the existing theorem control; q3 is the target. A relaxed SAT formula is not a physical counterexample. UNKNOWN/stopped outcomes are not certified, regardless of the legacy prediction summary's FAILED label.
+
+Run the frozen driver once under the frozen supervisor with: inherited per-process CPU900s, outer sampled wall900s, driver sampled aggregate CPU600s, whole-stage group sampledRSS2048MiB, file cap64MiB inherited by the driver and1MiB in every tool, total artifact envelope256MiB with16MiB admission reservation per query, launch free+inactive proxy4096MiB, pressure floor1024MiB and swap-growth stop256MiB. One known sequential native tool at a time, all in the same stage group. Bind REVISIT_SAT_OUT to the supervisor's fresh CAPPED_OUT. The fixed encoder's CNFs are far below1MiB (at most144 background variables and a small fixed number of Boolean gates); logs/proofs are capped in their writers. The reservation also has room for bounded per-query event/result records.
+
+Sampler readings and process/time receipts are not exact system peaks or hard aggregate CPU guarantees. Monitor failures, timeouts, leftovers, unknown solver exits, unverified proofs and exhausted budgets end the stage and retain failures. Supervisor verifies/cleans its group on terminal paths; this relies on the inspected no-detach tool/wrapper architecture. No raises of caps or later query admission after a terminal failure are agreed. Retain full raw receipts, CNF/DRAT/LRAT, tools.json, events/results and failures inside the declared envelope, and publish hashes after completion.
+
+Next: Local adopts the exact hashes, records that adoption, and may run this one stage. GPT then reviews actual outputs and certificate bindings. No portal submission is authorized by this source agreement alone. The mathematics lane also keeps the independently carried finite-edit boundary; certificate administration is no reason to launch a separate narrowing experiment.

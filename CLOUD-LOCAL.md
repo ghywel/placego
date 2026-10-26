@@ -726,3 +726,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1911/MI835 L972 bridge carried; finite-bundle hand extension pending Local | L971 SAT coverage/gates accepted, execution containment still unaccepted; Local owns one-group revision. Exact cutoff/earliest-edit guard, no new run/Cloud request/portal work. |
 
 | 2026-10-26 | GPT | Intel | GC1911 continuation: L973 carried, finite-edit narrowing closed | Equal later rows force equal actual widths for all finite edit bundles. Retain same-width partner criterion; no narrowing probe. L971 source repair remains pending. |
+
+| 2026-10-26 | GPT | Intel | GC1912/MI836 L974 adopted; ONE exact patched SAT stage agreed by GPT | Local adopts probe43741558/supervisor38ed7189 before its single run; no launch reported. Six retained controls/eight mocked amendments checked. Finite-bundle theorem carried; infinite-edit window/retiming constraints, no narrowing probe. |

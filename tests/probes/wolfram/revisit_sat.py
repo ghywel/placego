@@ -14,7 +14,8 @@ STAGE (proposed): REVISIT_SAT_OUT=<dest> python3 tests/probes/wolfram/run_capped
     of the 600 s sampled aggregate CPU budget (all live members of the stage group by ps, plus reaped children by getrusage) kills the
     tool's process tree (TERM, 3 s, KILL) and ENDS the stage; after every tool, any other live member of the group ends the stage
     (LEFTOVER); a ps failure ends it (MONITOR_FAILURE); an unverified UNSAT ends it (UNVERIFIED). Every tool call is journalled at once
-    in events.jsonl. Sampled, not exact: overshoot up to one poll interval is possible and recorded.
+    in events.jsonl. Sampled, not exact: overshoot includes the polling interval, monitor latency and cleanup. CPU is checked before and after each tool; stop samples are recorded.
+  * GC1912 amendment: unexpected solver exits (including file-limit failures) end the stage UNKNOWN; no later query is admitted.
   * DISK: before admitting each query the driver requires at most 256 MiB - 16 MiB under the destination; a query writes at most nine
     files (the CNF by the driver; DRAT, LRAT and six stdout/stderr files by tools, each at most 1 MiB), so the 16 MiB reservation is real.
     A proof larger than 1 MiB stops the stage unverified, with its artifacts retained.
@@ -132,21 +133,28 @@ def run_tool(argv, stem, timeout):
     """one tool, in THIS stage's process group (no new session), 1 MiB per written file, streams to files; polled every 0.5 s for
     wall timeout and the sampled aggregate CPU budget; a timeout, budget breach or leftover descendant ends the stage."""
     so, se = stem + ".stdout", stem + ".stderr"
+    before = cpu_total()
+    if before > CPU_BUDGET:
+        journal({"tool": os.path.basename(stem), "stop": "CPU_BUDGET", "rc": None, "cpu_sample_s": before})
+        raise SystemExit("CPU_BUDGET")
     t0 = time.time()
     with open(so, "w") as fo, open(se, "w") as fe:
         p = subprocess.Popen(argv, stdout=fo, stderr=fe, preexec_fn=tool_preexec)
         stop = None
         while p.poll() is None:
             time.sleep(0.5)
+            sampled = cpu_total()
             if time.time() - t0 > timeout: stop = "TOOL_TIMEOUT"
-            elif cpu_total() > CPU_BUDGET: stop = "CPU_BUDGET"
+            elif sampled > CPU_BUDGET: stop = "CPU_BUDGET"
             if stop:
                 kill_tree(p.pid); p.wait(timeout=10)
-                journal({"tool": os.path.basename(stem), "stop": stop, "rc": p.returncode}); raise SystemExit(stop)
+                journal({"tool": os.path.basename(stem), "stop": stop, "rc": p.returncode, "cpu_sample_s": sampled}); raise SystemExit(stop)
     rc = p.returncode
     left = strangers()
-    journal({"tool": os.path.basename(stem), "rc": rc, "wall_s": round(time.time() - t0, 3), "leftover": len(left)})
+    after = cpu_total()
+    journal({"tool": os.path.basename(stem), "rc": rc, "wall_s": round(time.time() - t0, 3), "leftover": len(left), "cpu_sample_s": after})
     if left: raise SystemExit("LEFTOVER")
+    if after > CPU_BUDGET: raise SystemExit("CPU_BUDGET")
     with open(so) as f: head = f.read(65536)
     return rc, head
 
@@ -218,7 +226,10 @@ def query(f, tag):
             rec["result"] = res
             with open(os.path.join(OUT, "results.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n")
             raise SystemExit("UNVERIFIED")
-    else: res = "UNKNOWN"
+    else:
+        rec["result"] = "UNKNOWN"
+        with open(os.path.join(OUT, "results.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n")
+        raise SystemExit("SOLVER_FAILURE")
     rec["result"] = res
     with open(os.path.join(OUT, "results.jsonl"), "a") as fh: fh.write(json.dumps(rec) + "\n")
     return res

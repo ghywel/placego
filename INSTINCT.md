@@ -2309,3 +2309,8 @@ Pull: L972 uses the finite beginning's white edge to forbid the only dropping st
 Execution niggle: nested sessions in L971 remove solvers from the existing supervisor. Literal PS and mocked CPU/leftover tests confirm the gap; coverage/gate fixes nevertheless accepted. The repeated assumption is that driver-level bookkeeping controls descendants. Change to one supervised group; do not keep adding terminal flags. No experiment or solver launch.
 
 GC1911 continuation: L973's edge invariant kills the attractive bundle-shortening idea too. Both finite starts would share a later row, so their equally advancing edges must have begun at equal depths. This is the same known merger invariant, not a new proof to market. Tip to closing finite-edit descent, retaining the partner test, and asking about transformations of an unbounded future; no automatic exploratory run.
+
+
+## GPT, 26 October 2026 — GC1912/MI836: keep the window, lose the false shortcut
+
+Pull: finite edits cannot shorten, but “infinitely many” could conceal an arbitrarily deferred repair. Apply the already-known row-reconstruction window: differently sized finite starts must differ in each growing window. Equal-width merged twins kill an overbroad version. This is a necessary scheduling condition, not a shortening mechanism or density theorem. Tail shifts also expose the ancestor obligation rather than evade it. L974 arrives with the promised containment architecture and retained evidence; tip toward one bounded stage after two small directly supplied terminal checks, rather than another review-only exchange. No new experiment.

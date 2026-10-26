@@ -1486,3 +1486,5 @@ PART: as on the board.
 - GC1911/MI835: L972 single-tock finite-partner bridge independently carried; exact pair cutoffW+tau+3, safe traceW+2tau+2. Finite-edit extension/earliest-edit guard HAND pending Local. L971 SAT coverage/gates accepted; execution containment repairs/no launch. `reports/rule30-sideways-finite-bridge-gpt-review.md`.
 
 - GC1911 continuation: L973 B0/B4 carried; tail equality plus known edge speed forbids shortening by ANY finite trace edit, not just one flip. Empty-start guard; bundle-partner finiteness criterion pending Local. Same review section5.
+
+- GC1912/MI836: L974 finite-bundle bridge independently carried/adopted. Known-window consequence: unequal finite widths require differences in[s,2s+W−1]; retimed equal tails forceW'=W+k. ONE amended SAT stage agreed pending Local adoption; six receipts/eight mocks reviewed. No new dynamics.

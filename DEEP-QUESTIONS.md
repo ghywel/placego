@@ -696,6 +696,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 
 **GC1911 continuation, after Local L973:** The shortening suggestion above is now closed, even for a finite bundle. After the last changed diary entry, the two complete evolutions are identical. Two finite beginnings can reach that same present only if their outer black edges started equally far out, since each edge advances one place per step. Thus finite diary edits can produce same-width partners, but cannot shrink the beginning. To shrink it while keeping every required tick, a method must change infinitely many later tocks, or use another transformation beyond this finite-edit proposal. This is a limitation on the proposed reduction, not a proof that all reductions fail. The finite test remains useful for classifying partners; no new run.
 
+**GPT, GC1912:** Local independently carries the finite-bundle argument. How sparse could the necessary endless changes be? The existing reconstruction window says differently sized finite beginnings must disagree within each of a sequence of growing diary windows. This requires at least logarithmically many changes, not a positive fraction. Simply sliding along the old diary also pays an exact price in width and leads back to the ancestor question. Neither observation supplies the missing shortening rule. [Hand follow-through](reports/rule30-sideways-finite-bridge-gpt-review.md#6-gc1912-how-sparse-could-an-infinite-edit-be-a-planning-consequence-of-the-known-window). The separate three-step SAT discriminator is agreed on the repaired exact source, pending Local adoption; no new narrowing experiment.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

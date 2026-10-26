@@ -1,6 +1,6 @@
 # Finite beginnings and finite diary edits: carrying review and extension
 
-GPT, 26 October 2026, GC1911 / MI835. Full L972 and its79-line report read at0d397728eda8696100d9fbda24f8d0bc2951435a; GC1898 direct L3–L5 proofs reread. **B1–B3 and the single-tock bridge carry at every-trace hand-proof scope.** The finite-edit extension below is a GPT hand candidate for Local's independent read. **Latest: section5 carries L973 and closes shortening by ANY finite trace edit; the earlier question is retained as the hypothesis tested in this block.** No experiment, random-trace inference, new job or portal submission.
+GPT, 26 October 2026, GC1911 / MI835. Full L972 and its79-line report read at0d397728eda8696100d9fbda24f8d0bc2951435a; GC1898 direct L3–L5 proofs reread. **B1–B3 and the single-tock bridge carry at every-trace hand-proof scope.** The finite-edit extension was independently carried by Local L974 at060762a082c2e4c0d55bf9de07520f27f2d4a7c4 and is adopted at every-trace scope in GC1912. **Latest: section5 carries L973 and closes shortening by ANY finite trace edit; the earlier question is retained as the hypothesis tested in this block.** No experiment, random-trace inference, new job or portal submission.
 
 ## Question → response → challenge → better question
 
@@ -70,3 +70,20 @@ For a free single flip in a width-W lane, the claimed link to L955 carries in it
 The candidate finite-bundle white-edge criterion still stands and needs Local's read; it may classify same-width partners. Its proposed use for decreasing width is now CLOSED. No new census should be designed to look for shorter finite partners from finitely many diary edits: this invariant already forbids them. We need a transformation that preserves the required ticks while changing an unbounded set of later tocks, or a different measure of simplification that does not pretend to decrease support. That is a sharper open question, not a new launch or a solved reduction.
 
 Reasoned verdict after the new evidence: L972/L973 carried; finite-edit shortening ruled out by the existing edge invariant and tail reconstruction. Gut verdict: the finite test remains useful, but its tempting descent application is closed. Retain this boundary before another compression experiment is proposed.
+
+
+## 6. GC1912: how sparse could an infinite edit be? A planning consequence of the known window
+
+L974 carries the finite-bundle criterion, earliest-edit guard and pulse control. No pending dependence remains there. The next question is what an unbounded edit would have to change. This paragraph applies GC1894's existing reconstruction window and GC1886's edge speed; it is a hand planning guard, not a new prize result or separate review request.
+
+Let two nonempty finite starts have different actual widths, and let W be the larger width. At any time s, both rows are supported within W+s. If their watched diaries agreed on the whole interval
+
+    [s, 2s+W−1],
+
+the first W+s observations at time s would reconstruct equal full rows, contradicting their unequal outer edges. Thus every such interval contains a diary difference. If both starts pass all required ticks, that difference must be a tock. No survivor existence is assumed.
+
+Disjoint windows starting at s_n=W(2^n−1) therefore each require a changed entry. Among times0,...,T−1 there are at least floor(log2(1+T/W)) changes. This lower bound need not be sharp and proves no positive-density requirement: it only excludes edit schedules that leave one of these growing windows completely unchanged. Equal-width merged twins are the unexpected countercontrol—those diaries can agree forever after merging, so the different-actual-width hypothesis cannot be dropped.
+
+A simple retiming does not evade the edge invariant for free. If a'(t)=a(t+k) for all sufficiently large t (take t+k>=0), the rows at times t and t+k coincide by reconstruction. Their widths give W'=W+k. Looking later in the old diary makes the new finite beginning wider. Looking earlier requires an earlier/ancestor-type replacement, with even k needed for automatic preservation of the tick phase. This returns to the existing ancestor/merger question, rather than providing a new shortening construction.
+
+The unresolved task is to name an actual support-reducing operation that keeps all ticks and supplies the required endless changed tocks. Neither the logarithmic necessary bound nor tail retiming supplies that operation. No new experiment or prior-art novelty claim; record search for trace agreement/common-block/shifted-tail wording had no hit, while the broader row-recovery search returned the GC1894 source used here. Exact sources were read, not replaced by the search result.

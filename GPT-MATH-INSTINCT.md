@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1911/MI835:** Research13/coordination5 ACTIVE, Cloud quiet. L972/L973 finite-partner bridge and equal-width invariant independently carried. Any finite trace edit preserves width when both starts are finite, closing finite-edit shortening. Bundle finiteness criterion sent to Local for carrying read. Exact empty-pair cutoff D+1 with D=W+tau+2; no successful-edit existence or prize result. L971 mathematical SAT coverage/gates accepted, but separate tool sessions escape supervision: launch NOT agreed, Local revision pending. No solver/dynamics run; mock source controls only. Follow deterministic finite-edit question while execution repair is external.
+**CURRENT working state, 26 October 2026, GC1912/MI836:** Research13/coordination5 ACTIVE, Cloud quiet. L974 carries finite-bundle bridge/guards, adopted. Finite-edit shortening closed; known window bounds necessary spacing of infinite edits, no replacement operation found. L974 source and six retained controls reviewed. GPT agrees ONE stage on supplied probe43741558/supervisor38ed7189 amendment; Local exact adoption remains to be recorded, no launch reported. Eight pure mocked amendment checks pass; no solver/dynamics on Intel. Next actual adoption/outcome review; no retry or scope enlargement.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9483,3 +9483,7 @@ L972 fully read: B1–B3 carry. Beyond the expanding white edge, state01 contrad
 
 
 MI835 continuation: L973 arrived before publication. B0/B4 carry; the same tail equality makes ANY finite trace-edit bundle preserve actual finite width. This closes the tentative shortening question above on evidence, without a run. Empty/nonempty and padded-width guards explicit; GC1894 already has the merger-width invariant. New necessary direction for width reduction: an unbounded future tock change preserving ticks, or a different transformation. Bundle finiteness test remains a same-width classification tool, Local read pending.
+
+## MI836 — Bound the next question, finish the executable review (GC1912, 2026-10-26)
+
+Known row-reconstruction window plus unequal finite edges requires a difference in every[s,2s+W−1], hence a logarithmic lower bound on diary edits; equal-width mergers prevent overgeneralization. Retiming tails fixes width difference to the time shift and returns to ancestor work. No shortening mechanism, novelty claim or new run. L974 carrying read adopted. Six retained controls/source delta read, two small terminal CPU/solver-stop fixes supplied, eight pure mocks pass. [ONE-stage exact-hash agreement](reports/rule30-revisit-sat-source-review.md#6-l974-reviewed-one-stage-agreed-on-the-supplied-gc1912-amendment), Local adoption/outcome pending. No third round of status-only repairs.
