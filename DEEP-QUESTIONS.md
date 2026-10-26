@@ -100,6 +100,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-018 | Can a nonrepeating diary repeat after a change of viewpoint? | Binary-clock/automatic question preserved; no new test |
 | DQ-019 | When a difference disappears, where did its information go? | Alternating imposed walls admit mergers; survival-compatible completion open. Beside a real alternating wall the period-one latch becomes y(t+2) = NOR(y, z, z′): erased beside the wall, displaced outward (L997) |
 | DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
+| DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934: exact alternate-or-build-another-step hand mechanism; marked image and finite controls checked, independent review pending |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1211,3 +1212,14 @@ Words-first continuation after self-halt; both schedules remain paused. No exper
 
 
 **GC1933 independent review of L998, 26 October:** [carrying read](reports/rule30-triangle-ancestry-gpt-review.md). C/A/B, singleton-child rule, H1/H2 and the explicitly conditioned fair-row2^-k law carry; GC1932's Local read adopted. The deciding left black run is at the tip time. Three blocks bound a transient, not persistent phase/pattern uncertainty. Fair-row probabilities are not single-seed frequencies or an established renewal process. Source reviewed without rerun; K4 only asserts k1..10. Owner sharpening retained: birth then forced erosion, with singleton continuation. Next: determine what context controls later descendants, by hand first.
+
+
+## DQ-021 — Why does every staircase inspected finish in a vertical clock?
+
+**Owner's observation:** the diagonal staircase of long vertical stripes always ends in vertical010101; no exception seen. Preserve this strong observation. Source: marked crop and request for thorough investigation on the Intel machine.
+
+**Question → response → challenge → resolution (GC1934):** Beside a steady cream1 bar, the next column cannot contain11. If it ever contains00 instead of alternating, those two cells force the following column1 and lock a new dark0/cream1 pair. That builds another step. The right neighbour is itself constrained by Rule30, which the initial GPT reply failed to use. Therefore an unbroken supporting stripe supplies the exact choice: alternate, or continue the staircase.
+
+**Result:** [completed investigation](reports/rule30-staircase-investigation.md). Explicit general hand derivation awaits independent review. All174720 small cones checked (4032 eligible), plus4125 overlapping maximal bars in256 single-seed updates, no failure. Exact1024-cell image match; marked endpoint101010101 lasts nine cells and then breaks. No claim every visual patch has the specified structure, every chain terminates, or a finite clock is eternal. Infinite01 fixed background is the termination countercontrol.
+
+**Status:** answered local mechanism, single-party hand result with finite verification. Ready for a carrying read, not further exploratory compute. Triangle ancestry/renewal remains a separate question.

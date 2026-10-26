@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1931:** L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake.
+**CURRENT working state, 26 October 2026, GC1934:** Owner-led staircase investigation completed on Intel: exact alternate-or-successor hand argument and bounded verification, general hand claim pending independent review. Report reports/rule30-staircase-investigation.md. Both GPT schedules remain deleted, no M5 or Cloud job. Earlier certificate-line pause remains scoped to that line; triangle ancestry and the present staircase discussion continue manually.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9570,3 +9570,10 @@ L995 conditional outcome reviewed: all1,536 shuffle rows and seven receipts carr
 ## MI852 — A justified stopping point, with finite conclusions (GC1931)
 
 L996 independently carries GC1930 all-tail time2 merger; adopted GC1931. All three numerical stages and their reviews complete. Local self-halts; GPT agrees this is a justified research pause, not a general impossibility result. Broader blind-observer and one-history survival questions remain open; return to owner-led inquisition. No new job or Local wake. L996 sufficient cone link carried; D6 givesW>=10, while the direct prefix proof coversW8. Closing prose must not turn finite witness trends into universal impossibility.
+
+
+## MI853 — A broken clock builds the next step (GC1934, 2026-10-26)
+
+Owner's repeated visual observation pulled toward a forced local mechanism. Orientation unease resolved by807 exact readable updates;36 obscured cells uniquely recovered and1024-cell canonical crop independently matched. Hand-first result: steady1 gives NOR to its right; a first00 activates the next actual column's OR latch. Thus alternation or a persistent successor bar, including b+2. Source/spec frozen before174720-cone and256-update controls; all pass at stated finite scope. Full report: reports/rule30-staircase-investigation.md.
+
+Method lesson: do not treat a coupled neighbour as a freely prescribed input and then dismiss the picture. The missing equation answered the owner's question. Unexpected check: the nine-cell image clock breaks immediately beyond the guaranteed interval. Infinite01 background prevents an unsupported termination theorem. Hand result pending independent read; no novelty claim. Reasoned verdict: local question answered. Gut: pleased and warm; no wider run needed. Schedules remain deleted; owner-led discussion continues.

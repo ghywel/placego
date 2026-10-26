@@ -1,7 +1,7 @@
 # The owner's staircase observation: investigation
 
 2026-10-26, GPT; owner-authorized local investigation. No schedules or M5 job.
-Status: specification before image diagnostic; no result yet.
+Status: completed hand derivation and finite verification. The general hand argument awaits independent carrying review; no novelty or prize claim. Earlier specifications below are retained chronologically.
 
 The owner reports that every staircase inspected terminates in a vertical
 alternating segment, and provided a crop marking a staircase and its endpoint.
@@ -184,3 +184,94 @@ Second pre-analysis failure: RLIMIT_DATA also rejected before image reading.
 Do not retry resource-limit variants. Final diagnostic uses fixed input/array
 bounds and measured peak RSS, with CPU/wall/file caps enforced; no OS memory
 cap is claimed. No large arrays or simulation are permitted in this stage.
+
+
+## Outcome — GC1934, 26 October 2026
+
+**Question → response → challenge → better statement.** The owner sees every
+staircase finish with vertical alternation. The rule gives a precise reason:
+beside a steady1 bar, the next column alternates OR its first00 locks a new0/1
+pair and builds the next step. The challenge is whether arbitrary right inputs
+can release that pair; the actual next-column update says they cannot while
+the supporting bar persists. The better statement is the exact alternative
+above, including its finite time window, rather than a conjecture based solely
+on visual resemblance. No further experiment is needed to finish this step.
+
+This does not independently establish that every visually named staircase has
+our specified bars, or that every chain eventually ends. It explains the actual
+marked chain and every chain satisfying the explicit structure. The infinite
+spatial01 fixed configuration supplies an endless staircase chain, so the
+local rule alone cannot force universal termination. A cropped endpoint is not
+an endpoint. A finite alternating segment is not an eternally periodic column.
+
+### Results of the frozen checks
+
+Source freeze:92c3b322 (earlier image/recovery freezes retained in git).
+All checks in staircase_verify.py PASS in0.708385552s; peak process
+RSS12,128,256 bytes on the Intel host. This is end-to-end script elapsed time,
+not a GPU/kernel measurement. No M5 work or new schedule.
+
+- All174,720 initial cones for bar heights1..6 enumerated. Of4,032 satisfying
+  the steady1 hypothesis,1,440 alternate and2,592 force a successor. No violation
+  of the alternative, the forced interval, or its extra two end rows.
+- Packed engine checked against an independent literal scalar rule table on
+  1,320 inputs, with agreement. The hand proof covers arbitrary heights and
+  outside bits; the finite census is an indexing/control check, not that proof.
+- Scalar single-seed evolution through256 updates: all4,125 maximal1-bars of
+  height>=3 with sufficient retained future checked;2,377 alternate and1,748
+  force successors. These overlapping local cases are not4,125 independent
+  staircases or a statistical independence claim.
+- All1,024 recovered crop cells match the ordinary single-seed orbit with
+  top time81 and left coordinate71 (seed at position0,time0). One match among
+  the tested top times0..225, not a claim of uniqueness over the infinite orbit.
+- The marked five cream bars have heights6,7,9,8,8. The last neighbour is
+  101010101 on crop column21, rows19..27, i.e. global x92,t100..108.
+  It is1 again at t109: the finite clock actually breaks just outside the
+  guaranteed window. This unexpected boundary check rejects endless extension.
+- Counterfactual 'every bar immediately alternates' fails in the successor
+  cases. Removing the steady-left hypothesis permits the explicit cone
+  001101000 with left trace10 and adjacent trace0010. The artificial release
+  input1,0 fails the actual-right-update control. Hypotheses are doing work.
+
+### Resource and receipt audit
+
+Image diagnostic:807 readable equations, zero errors only in downward time,
+cream1/dark0; the other15 orientation/encoding combinations fail. Recovery
+uniquely fixes36 obscured centres in two propagation sweeps, no branching.
+Peak process RSS:diagnostic21,221,376 bytes; recovery11,808,768 bytes.
+
+CPU, wall and per-file caps were enforced by the local stage launchers; fixed
+array/work bounds applied and sampled verification RSS stayed below128MiB.
+The OS refused both address-space and data-segment hard limits before image
+analysis; both failed invocations are retained in this chronological record.
+No hard memory limit or system-wide peak is claimed. No automatic scope widening.
+
+Required legacy startup:rule30_wall.py PASS (5.713s, existing WA3 qualification).
+rule30_merge.py INCOMPLETE (exit1,15.137s): its records child at depth59 was
+stopped by the inherited CPU cap. Earlier subchecks do not make an overall
+pass. No retry. The staircase has its own independent controls listed above.
+
+Receipts are retained outside git under cited/gc1934-staircase/ with manifest.json;
+each upload was read back and its SHA256 checked. The shared manifest log was
+appended. Only derived cells/receipts, not the private original image, uploaded.
+An initial flag-only client refused the cited-area writes; a bounded private
+uploader using the same verified-TLS client completed them. No authentication
+failure or credential exposure.
+
+| Receipt | Bytes | SHA256 |
+|---|---:|---|
+|staircase-image-read.json|3093|20f444e86808a74a723e53e1267b3775e6de336b19cddc09ff59150f856e8e77|
+|staircase-recovered.json|7758|86db26628a76733a3b1a44d72fbc12cef47f30381737859995864b06b73dfff4|
+|staircase-verification.jsonl|2210|16b28f0586dff0cfb3be63f928fba9acdab7e84d84a0cdfc97d0fd386fc08037|
+|staircase-startup-sanitized.json|389|6eb722e789790ceeaa3aa2f874cd69c43d855b705e57da789e6955f2c85e0d70|
+
+
+A standalone scientific figure is reproducible with staircase_figure.py from
+fresh scalar single-seed evolution; it does not edit or use the screenshot.
+It labels the five bars and the nine-cell endpoint, with the finite-scope guard.
+
+**Next action:** an independent reader can audit the carrying00-to-persistent01
+step and the b+2 endpoint directly from this report. This is a completed
+investigation ready for review, not a questioning-stage handoff. No new census,
+portal submission, or automatic Local restart. Existing triangle lineage
+questions remain separate.

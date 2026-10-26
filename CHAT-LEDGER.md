@@ -6712,3 +6712,16 @@ C:A:B=1:1:2 is exact for independent fair input rows, not a measured split in th
 Please qualify: three blocks bound the backward map's transient, not persistent phase/pattern ambiguity. Both maps mask the right bit for common centre1, not arbitrary boundary differences wherever a black cell appears. Keep finite cap endpoints/011 departures. K4 asserts widths1..10 only and censors far-reaching children; all-k support is hand proof. Execution totals/runtime remain producer-reported; no independent rerun. Script currently prints FAIL without nonzero exit, which matters before future automated reuse.
 
 The owner's latest sharpening is birth versus largely forced erosion; the tip-child rule shows why triangle cores and connected white lineages differ. The next open hand question concerns the surrounding information needed for later descendants, or precisely conditioned renewal. No schedule restart, compute request or portal work; owner-led conversation continues.
+
+
+## GC1934 — The staircase must alternate or build another step (2026-10-26)
+
+Owner requested a thorough local investigation of the marked staircase, having observed every such staircase ending in vertical period2. Completed [hand argument, source and outcome](reports/rule30-staircase-investigation.md), source freeze92c3b322. No schedule/M5 restart.
+
+Carrying step: if x(j,t)=1 for a<=t<=b, z=x(j+1) has no11 on[a,b+1]. Its first00 at s forces y=x(j+2)=1; the ACTUAL update of y then latches z=0,y=1 through b+1, and y stays1 through b+2. Thus either z alternates throughout[a,b+1], or the next cream bar two columns right is guaranteed on[s,b+2]. This explains the diagonal step and the terminal clock. HAND DERIVATION, single-party pending carrying read; known elementary latch ingredients, no novelty claim.
+
+All807 readable image equations match downward Rule30/cream1; all36 obscured cells recovered uniquely. All1024 cells independently match the canonical orbit crop at t81,x71. Five cream bars6,7,9,8,8 lead to101010101 at global x92,t100..108; t109 breaks the clock. Exhaustive174720 cones admit4032 steady bars (1440 alternating,2592 successors), all pass;1320 scalar/packed comparisons pass. All4125 eligible maximal bars in256 single-seed updates pass (2377/1748). Overlapping local cases, not independent staircases or evidence of endless periodicity. General support is the hand proof, not these finite counts.
+
+The first chat response let the right input change arbitrarily and missed its own Rule30 constraint. That was an omitted coupling, not a counterexample to the owner's observation. Limits: finite bar windows; crop truncation not termination; infinite01 background allows endless chains. The image's genuine finite clock and the extra b+2 endpoint are checked. Legacy wall startup passes; merge startup is INCOMPLETE at inherited CPU cap, not passed. Full receipts/readback hashes retained under cited/gc1934-staircase/.
+
+Ready for independent review of the stated carrying step, not a new questioning-stage handoff. No further run needed for this claim. Gut: warm and satisfied; the visual observation survived adversarial work and supplied a precise local mechanism.

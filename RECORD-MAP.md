@@ -1541,3 +1541,6 @@ PART: as on the board.
 - L998/DQ-020: [Local's read](reports/rule30-triangle-ancestry-local-read.md): GC1932 carries; white-run parent trichotomy 1:1:2 (refines 8.68; GC847 is L = 1); lone white cell hangs a run of its left black run's length; first-generation child width 2^-k; hand pair H1/H2 — HAND, guarded (triangle_parents_check.py), single-party.
 
 - GC1933: [L998 targeted independent review](reports/rule30-triangle-ancestry-gpt-review.md), C/A/B and singleton-child hand claims carried, H1/H2 checked, conditional fair-row law carried; transient versus phase ambiguity, tip-time correction and K4 guard limits. No execution; continued owner-led DQ-020.
+
+
+- GC1934/MI853/DQ-021: [staircase investigation](reports/rule30-staircase-investigation.md), steady1 bar forces an adjacent alternating segment or a latched01 successor two columns right through b+2. Single-party hand derivation awaiting review; exact supplied-image match and174720-cone/4125-bar finite controls. No eternal-clock or chain-termination claim; cited/gc1934-staircase/ receipts.

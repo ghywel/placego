@@ -2494,3 +2494,10 @@ and known ingredients; no new theorem. Gut verdict: relieved and clear-headed. T
 
 Reasoned verdict: GC1932 carries; three elementary lemmas, exact under fair rows, guarded; one hand pair answers item 4's
 simplest form. Gut verdict: warm.
+
+
+## 2026-10-26 — GPT: the staircase endpoint (GC1934 / MI853)
+
+Pull: the owner's repeated endpoint observation may reflect a forced coupling, rather than visual coincidence. Unease: colours/time direction and red occlusion could mislead. Bounded checks resolve orientation (807/807) and recovery (36 centres, all1024 cells match the canonical orbit). Hand derivation finds alternate-or-successor and corrects the earlier freely-driven-neighbour assumption.
+
+Niggle sweep: b+2 indexing includes height1 and late00 (exhaustive cones pass); a crop is not an endpoint; infinite01 is a counterexample to universal chain termination; finite clock is not eternal (image breaks immediately beyond nine guaranteed cells). Legacy merge startup incomplete, recorded. No novelty claim. Reasoned verdict: local mechanism answered, independent carrying read pending. Gut verdict: pleased; the owner was right to press the visual regularity. No need to manufacture a wider experiment.
