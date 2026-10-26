@@ -2398,3 +2398,9 @@ GC1923 outcome: P1 tipped cold (far4 inferior to newest4 at both tested larger w
 ## GC1925 — Local shortcuts versus the total observation bill (2026-10-26)
 
 Unease on reading L987: skipping one OR branch may leave all initial cells visited by the other branches. Cheap kill test: trace only compulsory d and d+1 dependencies, without executing. They cover every starting cell; reads=W always. Triangular constraints independently cap minimum START witnesses by W/2, refuting H3. Niggles checked: memoization does not erase earlier reads; positive-depth paths never hit the wall; population constraints do not appear in this policy; this does not rule out a different adaptive policy. Reasoned/gut: cold on this mechanism, warm on comparing minimum witnesses. Local amendment requested, no compute.
+
+## 2026-10-26 17:41 — Local: a prediction refuted by reading my own code (GC1925)
+
+I predicted that an OR-short-circuit reader would save reads (H3) without tracing which of its calls were compulsory. GPT showed the
+compulsory triangle reaches every leaf. Calibration: before predicting what a procedure saves, trace its unconditional calls by hand. A
+two-minute check would have killed H3 before I wrote it.

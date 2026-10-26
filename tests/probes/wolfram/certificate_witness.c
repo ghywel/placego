@@ -1,9 +1,11 @@
 /* certificate_witness.c: how short is the shortest case-by-case witness for the next tock, in diary versus start-row coordinates,
-   and does a rule-based "read only when needed" policy find short ones? (Local, 2026-10-26, L987; FROZEN SPEC FOR GPT'S AGREEMENT.)
+   and does a rule-based "read only when needed" policy find short ones? (Local, 2026-10-26, L987; revised L988 after GPT's GC1925; FROZEN SPEC FOR GPT'S AGREEMENT.)
 
 STAGE (proposed): python3 tests/probes/wolfram/run_capped.py --out <fresh> --cpu 300 --wall 600 --rss-mib 1024 --file-mib 16 --disk-mib 64
           --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 256 -- <built binary>     (cc -O2 -o certificate_witness certificate_witness.c)
-          One process, one thread, no network, no GPU, no files written (stdout only, under 1 MiB).
+          One process, one thread, no network, no GPU, no files written. stdout carries the summaries AND one LANE line per lane and population
+          (W, population, lane, target, DIARY mincert and chosen mask, START mincert and chosen mask): about 66,000 lines, under 3 MiB, inside
+          the 16 MiB per-file cap. Provenance: the source sha256 and the built binary's sha256 are recorded in the ledger before launch.
 CONTEXT:  DQ-015/016; GC1922 (exact observation-class criterion); GC1923 (fixed far window loses to newest diary entries; one post-hoc class
           where four far cells settle 22 of 32); L986 (a witness chosen case by case = a minimum certificate; OR short-circuiting as its rule).
 If this holds, it changes DQ-015/016 (whether short case-by-case witnesses exist, and in which coordinates); no prize or proof status.
@@ -16,11 +18,11 @@ agrees with l on S has Y equal to Y(l). Coordinates: DIARY (the n free tocks, S 
 subset of [1, W]). mincert(l) = the least |S|. Exact method: for each S in increasing size (Gosper order within a size), group P by the values
 on S; every lane in an outcome-pure group and not yet assigned gets mincert = |S|. This is exhaustive, so the minimum is exact. The first
 such S found is recorded as l's chosen certificate (a deterministic tie rule, used only for the descriptive position count).
-READ POLICY (rule-based, population-free except the known white tail): evaluate Y = x(W+1,1) recursively, memoized, reading start cells only
-when needed: x(t,d) needs x(t-1,d+1) always (the XOR input) and x(t-1,d) next; x(t-1,d-1) is read ONLY if x(t-1,d) is white (OR
-short-circuit); x(0,d) is a start cell, read once (cells beyond W are known white, free). reads(l) = distinct start cells read. The read set
-with its values forces Y for EVERY start row (a free-sense certificate), so it certifies l in any population: reads(l) >= START mincert(l).
-Widths: DIARY W = 8..28 (even); START W = 8..20 (2^W subsets x lanes); READ policy W = 8..28.
+READ POLICY: REMOVED (L988). GC1925 showed by hand that the proposed policy evaluates the XOR input and the centre input unconditionally,
+a compulsory triangle that reaches every start cell 1..W, so it always reads W cells; and on lanes the W/2 even-depth start cells determine
+the row (the black ticks force each odd cell), so START mincert <= W/2. H3 (below, kept as written) is therefore false by hand at every
+width, and is not tested. A replacement non-anticipating policy needs its own fixture and agreement.
+Widths: DIARY W = 8..28 (even); START W = 8..20 (2^W subsets x lanes).
 Record searched (record_find.py, 2026-10-26): "certificate" via PROBES.md (the 10-08 certificate line is about SAT/DRAT, unrelated);
 "witness" GC1922/GC1923; "short-circuit" 0; "hitting set" 0. No novelty claim: minimum certificates are standard (certificate complexity).
 
@@ -29,17 +31,20 @@ Controls (must hold):
   C1  lanes reproduce their prescribed trace below W (replay), and supports are <= W.
   C2  for W <= 12, an independent brute force (for each lane and each S, compare against every opposite lane) gives exactly the same
       mincert, both coordinates, both populations.
-  C3  every lane's policy read set certifies it in its population (checked against every lane), and reads(l) >= START mincert(l) (W <= 20).
-  C4  the XOR mutant of the policy (no short-circuit possible) reads every start cell in the target's cone within the support: exactly W.
+  C3, C4 (policy controls): withdrawn with the policy (L988).
+  C7  (new, from GC1925's bound) START mincert(l) <= W/2 for every lane, and the W/2 even-depth cells certify every lane.
   C5  GC1923's far-six pair at W = 20 (lanes 116 and 153, PASS): the set {15..20} certifies neither.
   C6  the empty set certifies a lane iff its population is outcome-pure (consistency of the group method at |S| = 0).
 Blind:
   H1  (the pin drum, case by case) at W = 16, 18, 20 in PASS, the median START mincert is smaller than the median DIARY mincert.
-  H2  (short witnesses) DIARY mincert grows sublinearly: median at W = 28 <= 1.5 x median at W = 14 (PASS). Counterfactual: >= 1.9 x.
-  H3  (the rule finds them) reads(l) <= START mincert(l) + 2 for >= 80% of PASS lanes at W = 16..20.
+  H2  (renamed L988: the FINITE W28/W14 median-ratio prediction; it neither proves nor disproves asymptotic growth) DIARY median at
+      W = 28 <= 1.5 x median at W = 14 (PASS). Counterfactual: >= 1.9 x.
+  H3  (kept as written, REFUTED BY HAND before any run, GC1925; not tested) reads(l) <= START mincert(l) + 2 for >= 80% of PASS lanes.
   PU  (unexpected: where witnesses live) at W = 20, PASS, positions deeper than W/2 make up >= 60% of the positions in the chosen START
-      certificates (the far end carries the witness).
-CAPS: as STAGE; no width beyond those listed; stop on any control failure.
+      certificates (a statistic of the declared Gosper tie order, not a theorem about all smallest witnesses).
+Scope (GC1925): minima are offline (the lane is fully known) and population-relative; the cost of learning PASS membership or of finding the
+minimum with observed bits is not included. This is source-reviewed exhaustive computation, not SAT/ILP-certified optimality.
+CAPS: as STAGE; no width beyond those listed; the run STOPS (exit 2) at the first control failure, with the failing line retained.
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,7 +53,7 @@ CAPS: as STAGE; no width beyond those listed; stop on any control failure.
 typedef uint64_t u64;
 
 static int fails = 0;
-#define CHECK(c, ...) do { if (!(c)) { fails++; printf("CONTROL FAIL: " __VA_ARGS__); printf("\n"); } } while (0)
+#define CHECK(c, ...) do { if (!(c)) { fails++; printf("CONTROL FAIL: " __VA_ARGS__); printf("\nSTOPPED at first control failure\n"); fflush(stdout); exit(2); } } while (0)
 
 static u64 stepr(u64 r) { return ((r >> 1) ^ (r | (r << 1))) & ~1ULL; }        /* bit d = depth d; bit 0 = wall, kept 0 */
 static u64 reconstruct(u64 a, int T) {                                          /* start row bits 1..T from trace bits a(0..T-1) */
@@ -57,22 +62,6 @@ static u64 reconstruct(u64 a, int T) {                                          
   return row;
 }
 static u64 lane_trace(u64 l, int n) { u64 a = 0; for (int i = 0; i < n; i++) { a |= 1ULL << (2*i); a |= ((l >> i) & 1ULL) << (2*i+1); } return a; }
-
-/* ---- the read policy ---- */
-static int Wg, mutant; static u64 Fg; static signed char memo[64][80]; static u64 readmask;
-static int ev(int t, int d) {
-  if (d == 0) return 0;
-  if (t == 0) { if (d > Wg) return 0; readmask |= 1ULL << d; return (int)((Fg >> d) & 1); }
-  if (memo[t][d] >= 0) return memo[t][d];
-  int a = ev(t - 1, d + 1), o;
-  if (mutant) o = ev(t - 1, d) ^ ev(t - 1, d - 1);
-  else { int b = ev(t - 1, d); o = b ? 1 : ev(t - 1, d - 1); }
-  return memo[t][d] = (signed char)(a ^ o);
-}
-static int policy(u64 F, int W, int mut, u64 *mask) {
-  Wg = W; Fg = F; mutant = mut; readmask = 0; memset(memo, -1, sizeof memo);
-  int y = ev(W + 1, 1); *mask = readmask; return y;
-}
 
 /* ---- exact minimum certificates by the group method ---- */
 static int *stampA; static int *cnt0, *cnt1; static int epoch = 0;
@@ -101,7 +90,8 @@ static double median(int *v, int n) { if (!n) return -1; int *c = malloc(n * siz
 int main(void) {
   setvbuf(stdout, NULL, _IOLBF, 0);
   stampA = calloc((size_t)1 << 21, sizeof(int)); cnt0 = calloc((size_t)1 << 21, sizeof(int)); cnt1 = calloc((size_t)1 << 21, sizeof(int));
-  double medD[32][2], medS[32][2]; int h3ok = 1; double pu_far = -1;
+  CHECK(stampA && cnt0 && cnt1, "allocation");
+  double medD[32][2], medS[32][2]; double pu_far = -1;
   for (int W = 8; W <= 28; W += 2) {
     int n = W / 2, N = 1 << n;
     u64 *F = malloc(N * 8); int *Yall = malloc(N * sizeof(int)), *pass = malloc(N * sizeof(int));
@@ -120,6 +110,7 @@ int main(void) {
     for (int pop = 0; pop < 2; pop++) {            /* 0 = ALL, 1 = PASS */
       int M = 0; int *idx = malloc(N * sizeof(int));
       for (int l = 0; l < N; l++) if (pop == 0 || pass[l]) idx[M++] = l;
+      if (M == 0) { printf("SUMMARY W=%d %s EMPTY\n", W, pop ? "PASS" : "ALL "); medD[W][pop] = medS[W][pop] = -1; free(idx); continue; }
       u64 *kD = malloc(M * 8), *kS = malloc(M * 8), *chD = malloc(M * 8), *chS = malloc(M * 8); int *Y = malloc(M * sizeof(int));
       int *mD = malloc(M * sizeof(int)), *mS = malloc(M * sizeof(int));
       int ones = 0;
@@ -139,30 +130,24 @@ int main(void) {
               if (ok) { int k = __builtin_popcountll(S); if (k < best) best = k; } }
             CHECK(best == got[i], "C2 W=%d co=%d lane %d: brute %d vs group %d", W, co, idx[i], best, got[i]); } }
       }
-      /* policy, C3, C4, H3 */
-      int *rd = malloc(M * sizeof(int)); int within2 = 0; long rsum = 0;
-      for (int i = 0; i < M; i++) {
-        u64 mask; int y = policy(F[idx[i]], W, 0, &mask); rd[i] = __builtin_popcountll(mask); rsum += rd[i];
-        CHECK(y == Y[i], "policy value W=%d lane %d", W, idx[i]);
-        u64 mm; policy(F[idx[i]], W, 1, &mm); CHECK(__builtin_popcountll(mm) == W, "C4 W=%d lane %d reads %d", W, idx[i], __builtin_popcountll(mm));
-        if (W <= 20) { int ok = 1;
-          for (int j = 0; j < M && ok; j++) if (Y[j] != Y[i] && ((F[idx[j]] ^ F[idx[i]]) & mask) == 0) ok = 0;
-          CHECK(ok, "C3 certify W=%d lane %d", W, idx[i]);
-          CHECK(rd[i] >= mS[i], "C3 bound W=%d lane %d", W, idx[i]);
-          if (rd[i] <= mS[i] + 2) within2++; }
-      }
+      /* C7: START mincert <= W/2, and the even-depth cells certify every lane */
+      if (startOK) { u64 Ev = 0; for (int d = 2; d <= W; d += 2) Ev |= 1ULL << (d - 1);
+        for (int i = 0; i < M; i++) { CHECK(mS[i] <= W / 2, "C7 bound W=%d lane %d: %d", W, idx[i], mS[i]);
+          int ok = 1; for (int j = 0; j < M && ok; j++) if (Y[j] != Y[i] && ((kS[j] ^ kS[i]) & Ev) == 0) ok = 0;
+          CHECK(ok, "C7 even cells W=%d lane %d", W, idx[i]); } }
+      for (int i = 0; i < M; i++)
+        printf("LANE W=%d pop=%s lane=%d Y=%d D=%d Dmask=%llx S=%d Smask=%llx\n", W, pop ? "PASS" : "ALL", idx[i], Y[i], mD[i],
+               (unsigned long long)chD[i], startOK ? mS[i] : -1, startOK ? (unsigned long long)chS[i] : 0ULL);
       medD[W][pop] = median(mD, M); medS[W][pop] = startOK ? median(mS, M) : -1;
-      printf("W=%d %s N=%d Y1=%d | DIARY mincert median %.1f | START mincert median %.1f | policy reads median %.1f mean %.3f",
-             W, pop ? "PASS" : "ALL ", M, ones, medD[W][pop], medS[W][pop], median(rd, M), (double)rsum / M);
+      printf("SUMMARY W=%d %s N=%d Y1=%d | DIARY mincert median %.1f | START mincert median %.1f",
+             W, pop ? "PASS" : "ALL ", M, ones, medD[W][pop], medS[W][pop]);
       { double sD = 0, sS = 0; for (int i = 0; i < M; i++) { sD += mD[i]; if (startOK) sS += mS[i]; }
         printf(" | means D %.3f S %.3f", sD / M, startOK ? sS / M : -1.0); }
-      if (W <= 20) printf(" | reads<=startmin+2 %d/%d", within2, M);
       printf("\n");
       { int hD[32] = {0}, hS[32] = {0}; for (int i = 0; i < M; i++) { hD[mD[i]]++; if (startOK) hS[mS[i]]++; }
         printf("  HIST DIARY"); for (int k = 0; k <= n; k++) if (hD[k]) printf(" %d:%d", k, hD[k]);
         if (startOK) { printf(" | START"); for (int k = 0; k <= W; k++) if (hS[k]) printf(" %d:%d", k, hS[k]); }
         printf("\n"); }
-      if (pop == 1 && W >= 16 && W <= 20 && within2 < 0.8 * M) h3ok = 0;
       if (pop == 1 && W == 20) {
         long far = 0, tot = 0; int pos[32] = {0};
         for (int i = 0; i < M; i++) for (int b = 0; b < W; b++) if ((chS[i] >> b) & 1) { int d = b + 1; pos[d]++; tot++; if (d > W / 2) far++; }
@@ -178,7 +163,7 @@ int main(void) {
         CHECK(c5, "C5 far-six pair");
         printf("C5 far-six set certifies neither lane 116 nor 153: %s\n", c5 ? "PASS" : "FAIL");
       }
-      free(idx); free(kD); free(kS); free(chD); free(chS); free(Y); free(mD); free(mS); free(rd);
+      free(idx); free(kD); free(kS); free(chD); free(chS); free(Y); free(mD); free(mS);
     }
     free(F); free(Yall); free(pass);
   }
@@ -186,8 +171,8 @@ int main(void) {
   double ratio = medD[14][1] > 0 ? medD[28][1] / medD[14][1] : -1;
   printf("H1 START median < DIARY median at W=16,18,20 (PASS): %s (%.1f/%.1f, %.1f/%.1f, %.1f/%.1f)\n", h1 ? "HELD" : "FAILED",
          medS[16][1], medD[16][1], medS[18][1], medD[18][1], medS[20][1], medD[20][1]);
-  printf("H2 DIARY median W28/W14 = %.3f (<= 1.5): %s; counterfactual (>= 1.9): %s\n", ratio, (ratio >= 0 && ratio <= 1.5) ? "HELD" : "FAILED", ratio >= 1.9 ? "MET" : "not met");
-  printf("H3 policy within 2 of START minimum on >= 80%% of PASS lanes, W=16..20: %s\n", h3ok ? "HELD" : "FAILED");
+  printf("H2 (finite ratio) DIARY median W28/W14 = %.3f (<= 1.5): %s; counterfactual (>= 1.9): %s\n", ratio, (ratio >= 0 && ratio <= 1.5) ? "HELD" : "FAILED", ratio >= 1.9 ? "MET" : "not met");
+  printf("H3 not tested: refuted by hand before the run (GC1925).\n");
   printf("PU far-half share of chosen START certificate positions at W=20 PASS: %.3f (>= 0.60): %s\n", pu_far, pu_far >= 0.6 ? "HELD" : "FAILED");
   printf("CONTROLS: %s (%d failures)\n", fails ? "FAIL" : "ALL PASS", fails);
   return fails ? 1 : 0;
