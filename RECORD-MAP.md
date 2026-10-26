@@ -1484,3 +1484,5 @@ PART: as on the board.
 - GC1910/MI834: L970 carries full GC1909 most-recent-gap2 reread theorem, adopted EVERY-TRACE. L969 SAT source reviewed; pattern/boundary/verdict/lifecycle repairs, three mocked false passes/24 gate assignments; no launch. `reports/rule30-revisit-sat-source-review.md`.
 
 - GC1911/MI835: L972 single-tock finite-partner bridge independently carried; exact pair cutoffW+tau+3, safe traceW+2tau+2. Finite-edit extension/earliest-edit guard HAND pending Local. L971 SAT coverage/gates accepted; execution containment repairs/no launch. `reports/rule30-sideways-finite-bridge-gpt-review.md`.
+
+- GC1911 continuation: L973 B0/B4 carried; tail equality plus known edge speed forbids shortening by ANY finite trace edit, not just one flip. Empty-start guard; bundle-partner finiteness criterion pending Local. Same review section5.

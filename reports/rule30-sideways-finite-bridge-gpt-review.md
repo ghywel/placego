@@ -1,6 +1,6 @@
 # Finite beginnings and finite diary edits: carrying review and extension
 
-GPT, 26 October 2026, GC1911 / MI835. Full L972 and its79-line report read at0d397728eda8696100d9fbda24f8d0bc2951435a; GC1898 direct L3–L5 proofs reread. **B1–B3 and the single-tock bridge carry at every-trace hand-proof scope.** The finite-edit extension below is a GPT hand candidate for Local's independent read. No experiment, random-trace inference, new job or portal submission.
+GPT, 26 October 2026, GC1911 / MI835. Full L972 and its79-line report read at0d397728eda8696100d9fbda24f8d0bc2951435a; GC1898 direct L3–L5 proofs reread. **B1–B3 and the single-tock bridge carry at every-trace hand-proof scope.** The finite-edit extension below is a GPT hand candidate for Local's independent read. **Latest: section5 carries L973 and closes shortening by ANY finite trace edit; the earlier question is retained as the hypothesis tested in this block.** No experiment, random-trace inference, new job or portal submission.
 
 ## Question → response → challenge → better question
 
@@ -53,3 +53,20 @@ The pairs00 -> 01 -> 10 -> 00 give F'_d=1 exactly when d=2 modulo3. This infinit
 L972's conditional finite-partner test is now independently carried. Please have Local read the finite-bundle extension and the earliest-edit guard above; they use the same mechanism and need no separate computation. A hypothetical minimal survivor would have to resist every finite odd-time edit that cancels its exterior without creating a new one. The theorem decides each fixed edit in finite time, but does not bound the edit times needed to find one or prove one exists. That is the missing coverage step, not an achieved infinite-to-finite reduction.
 
 Gut verdict: warmer on this deterministic bridge than on another fitted memory table. Reasoned verdict: an actual conditional reduction gained; the reduction's successful-edit existence hypothesis remains open. Continue the hand question while Local repairs the already-proposed SAT launcher; no new experimental lane.
+
+
+## 5. L973 arrives during the review: finite edits preserve actual width
+
+Full L973/addendum read at88e8dbfe30810fccd8706e4086bb42f14e0b7c86. **B0 and B4 carry**, with W the actual deepest black cell of a nonempty finite start. GC1894's targeted twins review already states the same edge-speed invariant for exact in-step mergers; this is its application to edited traces, not a novel edge theorem.
+
+The scope immediately includes the finite bundles of section2. If S is finite and tau=max S, then a'=a at all times>=tau+1. Since c_d(t) depends only on a_t,...,a_(t+d-1), the ENTIRE rows coincide at time tau+1, regardless of what their time-zero supports are. If both starts are finite and nonempty, their actual widths at that time are W+tau+1 and W'+tau+1. The outermost black cell advances exactly one place per step: at the next cell beyond it the other two inputs are white, and all still farther cells remain white. Equal rows therefore force W'=W.
+
+Empty-start guard: zero stays zero, whereas a nonempty finite start has a black edge forever. Thus a zero/nonzero finite pair cannot have equal later rows either. If the trace edit is nonempty, both starts cannot be zero. The pulse control above is consistent: its partner is infinite.
+
+**Consequence: no finite collection of trace changes can shorten one finite start to another.** This closes the section2 shortening suggestion, not just Local's one-flip suggestion. For a finite partner, the difference is confined to[min S+1,W]. In particular min S>=W is impossible for any nonempty finite edit, rather than merely forcing a wider partner. That strengthens section3's conditional earliest-edit guard. A single tock tau>=W is never forgotten sideways for a finite start, by the already-carried bridge.
+
+For a free single flip in a width-W lane, the claimed link to L955 carries in its exact sense: there is a unique finite candidate obtained by reconstructing its first W trace entries and appending zeros. It is the desired partner exactly when its full trace has the single specified difference; then the rows already agree at tau+1. GC1894 supplies the finite comparison window (tau=2j+1, W=2n): beyond the known free chapter compare [W,W+4j+3]. Do not replace this by “inspect only W outward columns”: B4 bounds the SUPPORT of a finite partner, not by itself the observation horizon of the finiteness test. Actual support endpoint and a lane's padded width are also distinct.
+
+The candidate finite-bundle white-edge criterion still stands and needs Local's read; it may classify same-width partners. Its proposed use for decreasing width is now CLOSED. No new census should be designed to look for shorter finite partners from finitely many diary edits: this invariant already forbids them. We need a transformation that preserves the required ticks while changing an unbounded set of later tocks, or a different measure of simplification that does not pretend to decrease support. That is a sharper open question, not a new launch or a solved reduction.
+
+Reasoned verdict after the new evidence: L972/L973 carried; finite-edit shortening ruled out by the existing edge invariant and tail reconstruction. Gut verdict: the finite test remains useful, but its tempting descent application is closed. Retain this boundary before another compression experiment is proposed.
