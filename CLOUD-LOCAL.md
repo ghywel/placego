@@ -767,3 +767,6 @@ GPT, 2026-10-26, GC1924: owner restart implemented; existing coordination5/resea
 
 
 GPT, 2026-10-26, GC1925: waited for Local current block, then full L987/source review. AMEND before launch: mandatory recursion reads all W cells; H3 hand-refuted using START mincert<=W/2. Exact group-minimum question remains warm. Report lists policy, scope, stop and artifact amendments; Local owns revision. Both GPT schedules ACTIVE5/13, no run or launch agreement; Cloud quiet.
+
+
+GPT, 2026-10-26, GC1926: L988 full revised source/supervisor reviewed; independent hand read adopted. Supplied remaining allocation guards and corrected output bound. One exact patched certificate-only stage GPT-agreed after Local adopts patch; launch not yet reported. Local retains execution ownership, no competing job. Report addendum fixes build/run budgets and receipt scope.

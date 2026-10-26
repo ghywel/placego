@@ -4,7 +4,7 @@
 STAGE (proposed): python3 tests/probes/wolfram/run_capped.py --out <fresh> --cpu 300 --wall 600 --rss-mib 1024 --file-mib 16 --disk-mib 64
           --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 256 -- <built binary>     (cc -O2 -o certificate_witness certificate_witness.c)
           One process, one thread, no network, no GPU, no files written. stdout carries the summaries AND one LANE line per lane and population
-          (W, population, lane, target, DIARY mincert and chosen mask, START mincert and chosen mask): about 66,000 lines, under 3 MiB, inside
+          (W, population, lane, target, DIARY mincert and chosen mask, START mincert and chosen mask): at most 65,504 lines, under 6 MiB including summaries, inside
           the 16 MiB per-file cap. Provenance: the source sha256 and the built binary's sha256 are recorded in the ledger before launch.
 CONTEXT:  DQ-015/016; GC1922 (exact observation-class criterion); GC1923 (fixed far window loses to newest diary entries; one post-hoc class
           where four far cells settle 22 of 32); L986 (a witness chosen case by case = a minimum certificate; OR short-circuiting as its rule).
@@ -85,7 +85,7 @@ static void mincert(int N, const u64 *key, const int *Y, int nbits, int *out, u6
 }
 
 static int cmpint(const void *a, const void *b) { return *(const int *)a - *(const int *)b; }
-static double median(int *v, int n) { if (!n) return -1; int *c = malloc(n * sizeof(int)); memcpy(c, v, n * sizeof(int)); qsort(c, n, sizeof(int), cmpint); double m = (n & 1) ? c[n/2] : 0.5 * (c[n/2-1] + c[n/2]); free(c); return m; }
+static double median(int *v, int n) { if (!n) return -1; int *c = malloc(n * sizeof(int)); CHECK(c, "allocation median n=%d", n); memcpy(c, v, n * sizeof(int)); qsort(c, n, sizeof(int), cmpint); double m = (n & 1) ? c[n/2] : 0.5 * (c[n/2-1] + c[n/2]); free(c); return m; }
 
 int main(void) {
   setvbuf(stdout, NULL, _IOLBF, 0);
@@ -95,6 +95,7 @@ int main(void) {
   for (int W = 8; W <= 28; W += 2) {
     int n = W / 2, N = 1 << n;
     u64 *F = malloc(N * 8); int *Yall = malloc(N * sizeof(int)), *pass = malloc(N * sizeof(int));
+    CHECK(F && Yall && pass, "allocation rows W=%d", W);
     int c1 = 1;
     for (int l = 0; l < N; l++) {
       u64 a = lane_trace(l, n); F[l] = reconstruct(a, W);
@@ -109,10 +110,12 @@ int main(void) {
     CHECK(c1, "C1 W=%d", W);
     for (int pop = 0; pop < 2; pop++) {            /* 0 = ALL, 1 = PASS */
       int M = 0; int *idx = malloc(N * sizeof(int));
+      CHECK(idx, "allocation population W=%d pop=%d", W, pop);
       for (int l = 0; l < N; l++) if (pop == 0 || pass[l]) idx[M++] = l;
       if (M == 0) { printf("SUMMARY W=%d %s EMPTY\n", W, pop ? "PASS" : "ALL "); medD[W][pop] = medS[W][pop] = -1; free(idx); continue; }
       u64 *kD = malloc(M * 8), *kS = malloc(M * 8), *chD = malloc(M * 8), *chS = malloc(M * 8); int *Y = malloc(M * sizeof(int));
       int *mD = malloc(M * sizeof(int)), *mS = malloc(M * sizeof(int));
+      CHECK(kD && kS && chD && chS && Y && mD && mS, "allocation certificates W=%d pop=%d", W, pop);
       int ones = 0;
       for (int i = 0; i < M; i++) { kD[i] = (u64)idx[i]; kS[i] = F[idx[i]] >> 1; Y[i] = Yall[idx[i]]; ones += Y[i]; }   /* start key bit d-1 = F_d */
       mincert(M, kD, Y, n, mD, chD);

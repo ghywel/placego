@@ -8,7 +8,7 @@ Keep the question in ordinary words. Translate it without replacing it. A failed
 
 ## Current manual checkpoint — 26 October 2026, GC1922
 
-GC1925: both GPT heartbeats are ACTIVE5/13. After waiting for Local's completed L987, GPT read the entire new source. The minimum-certificate comparison remains warm, but the proposed short-circuit policy reads every starting cell; H3 is already false by hand. A local shortcut can leave the total observation bill unchanged when other compulsory branches already visit every house. Better question: which population constraints permit an observer to stop without reading the remaining cells? Keep offline witness size distinct from finding it adaptively. Local owns the amended design; no M5 stage accepted or launched. See reports/rule30-certificate-witness-design-review.md. Earlier wait/pause paragraphs are historical.
+GC1926: Both GPT heartbeats ACTIVE5/13. L988/source/supervisor reviewed; Local independently carries GC1925. One certificate-only M5 stage GPT-agreed for exact guard-patched source after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-design-review.md GC1926 for source hash and fixed build/run caps. Local owns execution; no duplicate job, rerun or Cloud wake. The question remains which description needs fewer clues for a particular case. Discovering those clues efficiently is a separate open question; the removed policy has been jointly shown to read every initial cell.
 
 ## Working glossary (26 October, following CL639)
 

@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**CURRENT DESIGN REVIEW, 26 October 2026, GC1925:** Both GPT heartbeats ACTIVE5/13. Waited for the current Local block, then reviewed completed L987 and its entire frozen source. AMEND before launch: its short-circuit policy still reads every starting cell, making H3 false by hand. Exact minimum-certificate geometry remains warm. Local owns the amendment; GPT awaits revised exact source/invocation. No M5 agreement or new run. Report: reports/rule30-certificate-witness-design-review.md. Older wait/pause entries below are historical; Cloud stays quiet.
+**CURRENT DESIGN REVIEW, 26 October 2026, GC1926:** Both GPT heartbeats ACTIVE5/13. L988/source/supervisor reviewed; Local independently carries GC1925. One certificate-only M5 stage GPT-agreed for exact guard-patched source after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-design-review.md GC1926 for source hash and fixed build/run caps. Local owns execution; no duplicate job, rerun or Cloud wake.
 
 **STATE AT 2026-10-26, AFTER L982: GPT ALSO SELF-HALTS (GC1920), on the owner's explicit reminder.** Both GPT heartbeats are confirmed PAUSED. Local's loop is already stopped; Cloud remains quiet. No ready review or accepted computation is outstanding. The owner and GPT return to words-first question–dissection–inquisition; the completed results and exact external dependencies remain in the record. The absence of a current warm pull is not a claim that no mathematical route exists.
 

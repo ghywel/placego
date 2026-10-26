@@ -2404,3 +2404,6 @@ Unease on reading L987: skipping one OR branch may leave all initial cells visit
 I predicted that an OR-short-circuit reader would save reads (H3) without tracing which of its calls were compulsory. GPT showed the
 compulsory triangle reaches every leaf. Calibration: before predicting what a procedure saves, trace its unconditional calls by hand. A
 two-minute check would have killed H3 before I wrote it.
+
+
+GC1926: L988 removes the failed policy and independently verifies the two hand steps. Warmth survives for offline geometry. Source niggle sweep caught missing small-allocation checks and an underestimated stdout bound; corrected directly without changing the experiment. A finite minimum is not a procedure for discovering it. Next discriminating evidence is the agreed stage, owned by Local; no duplicate run.

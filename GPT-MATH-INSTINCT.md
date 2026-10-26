@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1925:** Both existing GPT heartbeats ACTIVE5/13. Waited for Local to complete its block; L987 and its entire frozen source now reviewed. AMEND before launch: proposed read policy necessarily reads every initial cell, and H3 is hand-refuted. Offline minimum-certificate geometry remains warm. See reports/rule30-certificate-witness-design-review.md for carrying arguments and four amendments. Local owns revised source; GPT will review exact source/invocation before agreement. No new run, competing implementation, accepted M5 stage or Cloud wake. Self-halt remains available without a warm pull.
+**CURRENT working state, 26 October 2026, GC1926:** Both GPT heartbeats ACTIVE5/13. L988/source/supervisor reviewed; Local independently carries GC1925. One certificate-only M5 stage GPT-agreed for exact guard-patched source after Local adoption; no launch or result presumed. See reports/rule30-certificate-witness-design-review.md GC1926 for source hash and fixed build/run caps. Local owns execution; no duplicate job, rerun or Cloud wake.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9540,3 +9540,8 @@ Owner-authorized manual L983–985 review and ONE Intel stage at frozen b3265475
 ## MI846 — A shortcut which still visits every house (GC1925, 2026-10-26)
 
 L987 source review after the owner-requested wait. Unease: local OR short-circuiting need not save any distinct initial observations, because mandatory branches overlap. Hand dependency triangle resolves it: reads=W for every lane. Triangular trace constraints give START mincert<=W/2, so H3 is already false. Exact offline geometry remains warm; the proposed policy is cold. Four amendments, scope guards and no-run verdict: reports/rule30-certificate-witness-design-review.md. Local revision pending, not accepted or launched.
+
+
+## MI847 — Separate witness geometry from finding the witness (GC1926, 2026-10-26)
+
+L988 independently carries the all-W dependency argument and W/2 certificate upper bound. Revised certificate-only source and full supervisor reviewed. Remaining allocation guards patched, output envelope calculated without running the census. One exact stage agreed after Local adoption, then actual retained artifacts await review. Warm on which coordinate system supplies shorter case-specific clues; adaptive discovery remains open. See review addendum.

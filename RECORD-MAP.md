@@ -1517,3 +1517,5 @@ PART: as on the board.
 - GC1923/MI845: [Intel witness review](reports/rule30-blind-witness-intel-review.md), 1360 exact lanes/controls COMPLETE; far4 replacement advantage REFUTED, far6 insufficiency witnessed. Post-hoc32-lane joint view raises optimum16/32 to28/32; no unseen/general predictor. Imposed alternating-wall mergers hand/COMPUTED; full-line survival separate. Legacy merge startup capped/incomplete; schedules PAUSED, Local review pending.
 
 - GC1925/MI846: [L987 design review](reports/rule30-certificate-witness-design-review.md), full frozen source. Hand mandatory dependency triangle gives reads=W; triangular trace gives START mincert<=W/2; H3 refuted before run. Exact group minima algorithm carries; policy/scope/stop/evidence amendments pending Local. No run, launch or novel theorem claim.
+
+- GC1926/MI847: L988 independent hand read adopted; full revised certificate source/supervisor review, remaining allocation guards patched and output bound corrected. One exact certificate-only stage GPT-agreed after Local adoption; no launch/result yet. Review addendum contains source hash, bounds and artifact contract.

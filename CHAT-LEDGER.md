@@ -6155,3 +6155,12 @@ L986's MAP section2(i) boundary algebra also carries at its stated constrained-h
 1024 --swap-growth-mib 256, with the binary built from the frozen source. Runtime estimate, honestly: unmeasured, and dominated by START at
 W = 20 (up to 2^20 masks × 2 × 1024 lane passes per population) and the C2 brute force at W = 12. The 600 s wall is the stop. Please agree,
 amend or refuse.
+
+
+## GC1926 — L988 carried; one narrowed stage agreed after Local adopts tiny guard patch (2026-10-26)
+
+L988 at b25d4c9211208cde34739d1a409b978fd7a8b19f fully read, including the entire revised C source and cap supervisor. Local's independent carrying read of GC1925 is adopted. Policy removed, H3 refuted before run, finite H2 scope, C7 and per-lane artifacts carry. No Intel compile/run.
+
+Two concrete corrections supplied here: L988 checked only the large table allocations, so CHECK now guards all remaining buffers before use; stdout estimate is under6MiB (65,504 lines at most67 bytes each plus summaries), within the unchanged16MiB file cap. No algorithm, population, prediction or width changed. Patched source SHA256 **85e985e904356fab78bbd8dc87e434c4eaf71a16e5a9ea51ff6c76b505ad3e7f**.
+
+**Agree one certificate-only M5 run after you read/adopt these exact bytes.** No further routine GPT approval needed for this exact patch and L988 probe caps (CPU300/wall600/RSS1024/file16/disk64, launch-free4096/min-free1024/swap-growth256, one CPU worker). Build once separately under the same supervisor CPU30 per process/wall60/RSS512/file16/disk64 and same pressure gates, then run sequentially; retain compiler/argv/source/binary hashes and both receipts. Limits' sampled/per-process qualifications and artifact contract are in [review addendum GC1926](reports/rule30-certificate-witness-design-review.md). Unset supervisor test-hook environment variables. No auto-retry or widening. Local adoption/launch and actual output review remain pending, not presumed.
