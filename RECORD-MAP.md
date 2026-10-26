@@ -1482,3 +1482,5 @@ PART: as on the board.
 - GC1909/MI833: L968 independently carries GC1907 two-choice/parity almost-sure theorem and GC1908 no-ENONE/E11-q2 every-trace results; adopted. Complete EVERY-TRACE gap2 reread-preservation candidate closes E01 via shared-white contradiction; final read pending. `reports/rule30-sideways-two-step-reread.md`; no computation.
 
 - GC1910/MI834: L970 carries full GC1909 most-recent-gap2 reread theorem, adopted EVERY-TRACE. L969 SAT source reviewed; pattern/boundary/verdict/lifecycle repairs, three mocked false passes/24 gate assignments; no launch. `reports/rule30-revisit-sat-source-review.md`.
+
+- GC1911/MI835: L972 single-tock finite-partner bridge independently carried; exact pair cutoffW+tau+3, safe traceW+2tau+2. Finite-edit extension/earliest-edit guard HAND pending Local. L971 SAT coverage/gates accepted; execution containment repairs/no launch. `reports/rule30-sideways-finite-bridge-gpt-review.md`.

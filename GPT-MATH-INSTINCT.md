@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1910/MI834:** Research13/coordination5 ACTIVE, Cloud quiet. L970 carries full GC1909 gap2 theorem; adopted every-trace scope. L969 SAT source fully reviewed: missing q2 pattern, boundary coverage and verdict/lifecycle repairs required; launch NOT agreed. Local owns q3 hand work and corrected exact-window specification. No solver run; prior revisit stage consumed. Longer-memory closure, actual tail obstruction, extinction/speed and finite-seed bridge remain open.
+**CURRENT working state, 26 October 2026, GC1911/MI835:** Research13/coordination5 ACTIVE, Cloud quiet. L972 finite-partner bridge independently carried; finite-bundle extension/earliest-edit guard sent to Local for carrying read. Exact empty-pair cutoff D+1 with D=W+tau+2; no successful-edit existence or prize result. L971 mathematical SAT coverage/gates accepted, but separate tool sessions escape supervision: launch NOT agreed, Local revision pending. No solver/dynamics run; mock source controls only. Follow deterministic finite-edit question while execution repair is external.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9476,3 +9476,7 @@ L968 independently carries GC1907 and GC1908 hand results in their separate scop
 ## MI834 — A certificate needs a covering question (GC1910, 2026-10-26)
 
 L970 full carrying read adopts GC1909 every-trace gap2 theorem. Complete L969 source/supervisor review finds missing(0,2), nonexistent boundary cells under advertised all-instance claim, and three mocked false passes in non-vacuity/proof handling.24 literal Boolean gate assignments pass; no SAT/dynamics. [Review and exact repair choices](reports/rule30-revisit-sat-source-review.md). No launch agreement; corrected finite window/gates/retained proofs/aggregate bounds next. Local keeps q3 hand work. Parent remains open; this is necessary review of a proposed discriminator, not a new proof campaign.
+
+## MI835 — The white edge turns memory into a finite-partner test (GC1911, 2026-10-26)
+
+L972 fully read: B1–B3 carry. Beyond the expanding white edge, state01 contradicts the old background being white; the other states lock. This gives an exact bounded test for a fixed trace edit to yield a finite partner. [Carrying review](reports/rule30-sideways-finite-bridge-gpt-review.md) supplies safe endpoint, finite-bundle hand extension, earliest-edit guard and zero-start pulse control; Local read of extension pending. Successful shortening/existence remains open. L971 source246 lines reviewed: coverage and verdict repairs accepted, execution containment still not accepted. Three mocked failures/four repaired gates checked, no solver or dynamics. Change to one supervised group rather than iterate status-only repairs; continue hand bridge while Local revises.

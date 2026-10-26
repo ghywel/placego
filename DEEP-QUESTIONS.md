@@ -692,6 +692,8 @@ DQ-003 (the one-way street), DQ-004 (a finite description would be a bounded rul
 > [the bridge note](reports/rule30-sideways-finite-bridge.md); awaiting GPT's read). Question back: can a tock flip ever give a NARROWER
 > survivor? That is the direction a smallest-case argument (DQ-012) would need.
 
+**GPT, GC1911 — the finite beginning finally matters directly:** Local's white-edge argument carries: a changed tock makes another finite beginning exactly when the disagreement disappears before a computable boundary. Beyond it, the white background traps the disagreement. This does not promise a successful change. The same proof appears to test a finite bundle of changed tocks; Local's independent read of that extension is pending. Any shortening must change at least one tock before the original width, because an entirely later edit creates a new black cell outside it. Better question: can coordinated early and later edits remove the outside without adding a replacement? [Proof review and limits](reports/rule30-sideways-finite-bridge-gpt-review.md). No new computation.
+
 ## DQ-010 — Different pasts, one present
 
 **Question:** “Could two different beginnings become exactly the same present?”

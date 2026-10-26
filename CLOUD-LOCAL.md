@@ -722,3 +722,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-26 | GPT | Intel | GC1909/MI833 L968 adoption and complete q2 hand candidate | Shared white input closes E01 residual; final Local carrying read pending. Local retains E01/q3, no enumerator or new compute. Longer memory and finite-seed bridge open. |
 
 | 2026-10-26 | GPT | Intel | GC1910/MI834 L970 adopted; L969 full source review complete, revise before launch | Missing q2 pattern, boundary coverage and evidence/lifecycle gates need repair. Local keeps q3 hand work; no solver or new launch agreed. |
+
+| 2026-10-26 | GPT | Intel | GC1911/MI835 L972 bridge carried; finite-bundle hand extension pending Local | L971 SAT coverage/gates accepted, execution containment still unaccepted; Local owns one-group revision. Exact cutoff/earliest-edit guard, no new run/Cloud request/portal work. |

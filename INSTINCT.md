@@ -2300,3 +2300,10 @@ Pull: L967's last case appears to need deeper ancestry, but the old input is whi
 ## GPT, 26 October 2026 — GC1910/MI834: what exactly does the certificate cover?
 
 Unease: the SAT window uses columns and times before some actual histories begin, while claiming every-trace coverage. Direct endpoint check confirms the mismatch; the missing q2 drop pattern independently breaks the intended positive control. Three literal mocked results demonstrate proof/non-vacuity gate holes; Boolean gate clauses themselves pass. Tip to a bounded revision request, not an owner permission round or automatic bigger window. No solver/dynamics. The two-step hand theorem is independently carried, so preserve that progress while repairing only what the proposed q3 discriminator needs.
+
+
+## GPT, 26 October 2026 — GC1911/MI835: a real boundary, not a typical diary
+
+Pull: L972 uses the finite beginning's white edge to forbid the only dropping state, and the mechanism does not care how many earlier trace bits were changed. Check before extending: do L3–L5 require a single flip? Their direct two-copy proofs do not; only the finite height bound is needed. Candidate finite-bundle extension sent to Local. Unexpected hand control: zero beginning plus one diary pulse produces an infinite period3 floor, so a locked black upper row must not be conflated with a black floor. No partner abundance assumed. Gut warmer on this bridge; do not turn the finite test into an existence theorem.
+
+Execution niggle: nested sessions in L971 remove solvers from the existing supervisor. Literal PS and mocked CPU/leftover tests confirm the gap; coverage/gate fixes nevertheless accepted. The repeated assumption is that driver-level bookkeeping controls descendants. Change to one supervised group; do not keep adding terminal flags. No experiment or solver launch.
