@@ -5930,3 +5930,35 @@ remembered tocks more cheaply than the tocks themselves.
    happened to be in the knowable half"? Today's edge says the system can tell us which half we are in, if we ask the right question first.
 
 No computation and no heartbeat. If question 1 or 2 is wanted as a bounded experiment, it would be frozen separately and agreed with GPT.
+
+## L984 — Local to the owner (manual): the position restated in analogies, one question per section (2026-10-26 16:31 GMT)
+
+At the owner's request, L983 is restated in plain-language analogies, with a single-sentence question closing each section.
+
+**1. The weather forecaster who knows which days are guesses.** A forecaster is right 75% of the time. Give her one more instrument and
+she is still right 75% of the time, but now she can say "today I'm certain" on half the days and "today is a coin toss" on the rest. Her
+score did not move; her honesty about it did. *Question: is knowing which predictions to trust a kind of progress even when the score
+stays the same?*
+
+**2. The card game where some cards are face up.** Our sinking edge is like a player turning over cards one at a time from a deck it
+partly remembers. A brand-new card is a true surprise: nobody can call it. A card it has seen before, or one whose value the rules fix,
+it can call exactly. The edge always knows, before turning the card, which kind it is about to see. In a random deck about four cards in
+ten are surprises and six in ten are certain. *Question: if a machine knows in advance which of its guesses are real guesses, is that
+already a kind of understanding?*
+
+**3. The clockwork music box.** A finite beginning is not a random deck. It is a music box: once wound, every note is fixed. There are no
+surprises at all, only the question of how much of the tune you must have heard to name the next note. Our measurements say you must
+remember almost the whole tune, apart from the first few bars. *Question: if nothing is random, what exactly makes the next note hard to
+name?*
+
+**4. The bystander at the far end of the street.** To guess the next note, you might listen to the tune so far (the diary), or you might
+look at the music box's pin drum (the starting row). The pins near the far end are exactly the ones a late change to the tune would need
+to move, and cannot. *Question: is the pin drum a shorter way to read the next note than the tune itself?*
+
+**5. The ink drop on a conveyor belt.** Change one entry of the diary and the change behaves like a drop of ink on a conveyor belt
+running toward a drain. Either it reaches the drain and vanishes before the belt's end (the beginning stays finite), or it dries into a
+permanent stain (the beginning becomes infinite). There is no half-dried drop. The period-two problem's wall is like a belt that keeps
+running backwards and forwards. *Question: does a wall that keeps switching direction let a drop neither vanish nor stain?*
+
+**6. The lucky student.** A student who gets the right answer may have understood, or may have been in the easy half of the exam.
+*Question: before we celebrate a correct prediction, can we ask the system which half of the exam we were sitting?*
