@@ -30,6 +30,13 @@ Blind (extrapolated from the W <= 40 and m <= 24 trends, ranges set before the r
       Inf_0(k_28) in [0.0005, 0.0015]; Inf_1(k_28) in [0.010, 0.025]; Inf_6(k_28) <= 0.48.
   FCF counterfactual (the front stalls): mu1_48(2) <= 0.56 and the m = 28 front <= 2.6.
 CAPS: W <= 48, m <= 28, one process, ulimit -t 900.
+
+OUTCOME, 2026-10-26 (the single run, 09:54 GMT, 20.2 s, 268 MB; frozen source sha256 3f7b3670..., commit 540e5b12; raw
+output front.txt sha256 d0a4b028..., cited/tock-twins-20261026/). Added after the run.
+  F1, F2 PASS. FT1 HELD (W = 44: 0.9927, 0.9011, 0.6290, 0.3396, 0.1574; W = 48: 0.9958, 0.9341, 0.7118, 0.4236, 0.2130;
+  j12 = 0). FT2 HELD (half-merge point 2.13, 2.29, 2.45, 2.59, 2.74 at W = 40..48). FT3 HELD (front 2.55, 2.69, 2.84, 2.98,
+  3.16 at m = 24..28; Inf0(k_28) = 0.00079, Inf1 = 0.0166, Inf6 = 0.4701). FCF not met: the front does not stall. Both fronts
+  advance about 0.15 tocks per tock: measured to W = 48 and m = 28, no all-width claim.
 */
 #include <stdio.h>
 #include <stdlib.h>

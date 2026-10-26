@@ -68,6 +68,27 @@ Blind:
       within-lane shuffle (fixed seed).
 CAPS: widths 8..40 (even); time to 4W+4; m <= 24; one process; ulimit -t 900; RSS checked by time -l after the run.
 REFUTED-BY: any control failing (stop); each blind prediction stands or falls on its stated numbers.
+
+OUTCOME, 2026-10-26 (the single run, 09:46 GMT, 12.9 s, 284 MB peak; frozen source sha256 3d631a0d..., commit e343a4eb;
+raw output out.txt sha256 c90d2c4d..., in the shared store at cited/tock-twins-20261026/). This section was added after the run.
+  Controls C1-C12 ALL PASS, including C11 (L942's exact counts 5,228 and 349,146 and its three label lanes).
+  PT1 HELD: mu_40(0) = 0.9872; every merge at tick 1.
+  PT2 REFUTED, decisively: forgetting is by POSITION, not lag. Only the earliest tocks merge (W = 40: j0..j5 = 0.987, 0.853,
+      0.535, 0.260, 0.111, 0.040; nothing from j = 12), each fixed j's fraction rising with W (j2: 0.05 at W = 16 to 0.53 at
+      40). Every merge at every W and j happens at tick j+1, never later. The "fixed j = n/2" contrast was ill-posed: mu is 0
+      there at every width, so its tiny spread (0.0009) is not a collapse. The positional counterfactual was not met either
+      (fixed j does not collapse): position, slowly diluted by width.
+  PT3 FAILED: merged twins' starts differ over long stretches (median extent 8 at j0, 19 to 23 for j1..j5 at W = 40): the
+      forgettable part is a set of tocks, not a block of cells (GC1886's caveat confirmed). Unmerged pairs reach the edge (HELD).
+  PT4 count rate HELD (0.828 bits per free tock; lead 1's walks give 0.819, RULE30-PRIZE.md 8.38); entropy FAILED (H_40 - H_24
+      = 6.44): no concentration; 2^20 lanes give 125,401 futures at W = 40, all merging inside the free chapter.
+  PT5 HELD: the death is "decided" in 0.498 of cases at W = 40; universally P(c_m ignores b_m) is within 0.012 of 1/2 from m = 8, 0.001 from m = 20.
+  PT6 FAILED low: two-step ancestors 0.063-0.064 of lanes at W = 34..40 (near 1/16, not 1/8); reducible 0.176 to 0.198
+      (W = 24..40), though almost every lane is eligible: about four starts in five never meet a narrower start's history.
+  PT7 REFUTED (a, b, c; the no-fading counterfactual MET at m = 24): the conductor's influence is a coin (0.50) on every
+      tock except the first few, whose influence falls as m grows (b0: 0.0025 at m = 24, ratio about 0.76 per step).
+  PU raw FAILED (Spearman -0.198) but post hoc an artefact: the 64 lanes are 7 futures; deduplicated by class, no relation
+      at any threshold (tock_gaps_posthoc.c).
 */
 #include <stdio.h>
 #include <stdlib.h>
