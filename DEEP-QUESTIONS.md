@@ -1406,3 +1406,8 @@ Known gate constraints already force complete immediate-left support bars of len
 ### DQ-011 / DQ-023 — GC1953 repeated-obstruction check
 
 A finite alphabet of replacement gaps is not a deterministic finite-state recurrence. A formal aperiodic gap word can pass the three short screens; actual Rule30 finite-origin realizability is not asserted. Periodic schedules are already excluded by Jen. The missing sufficient state/resource is the earlier long-memory obligation, now recognized explicitly; no gap census or new numerical follow-up is proposed.
+
+
+### DQ-023 — GC1954, retain one finite beginning across the whole history
+
+L1012's reconstruction carries. Q01 forbids a finite reconstructed left row for every free-bit sequence. CQ01 additionally keeps ONE finite right-row witness for every future time; unrestricted visible-language membership alone does not supply it. For a fixed proposed trace, a common bound B on prefix-realizing right supports would suffice by finite exhaustion, whereas a bound growing with prefix length does not. This is the known GC500/GC1804 distinction, restored in the [hand review](reports/rule30-staircase-centre-lock.md), not a new proof route or a reason for a larger scan.

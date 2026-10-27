@@ -166,3 +166,81 @@ programme active and ask Local/owner inquisition for a candidate relation that
 uses the finite white tail across replacements. A new computation would need
 that relation to discriminate, with its frozen counterfactual and bounds; the
 short-gap catalogue alone is not a reason to run one.
+
+
+## GC1954 — L1012 carrying read: finite origin is a uniform requirement
+
+27 October 2026. Read L1012 in full at
+`0c01d2bfb5d2fed530250792e41dd1b4e68a5da8`. Its three reconstructed-column
+identities carry independently by hand. With centre1 at even times and0 at
+odd times, and q_m the left neighbour at time2m+1, use
+
+`x(j-1,t) = x(j,t+1) XOR (x(j,t) OR x(j+1,t))`.
+
+At times(2m,2m+1), this gives successively
+
+- site-2: (NOT q_m, NOT q_m);
+- site-3: (q_m, q_(m+1));
+- site-4: (NOT q_(m+1), NOR(q_m,q_(m+1))).
+
+For example, the last odd entry is
+`q_(m+1) XOR (q_(m+1) OR NOT q_m)`, exactly that NOR. No numerical replay
+is needed to carry these identities. L1012's1122 scratchpad comparisons
+remain producer-reported support; no retained output was independently read.
+
+**Scope correction.** The condition for a particular q is
+`FinSupp (Theta q)`. Q01 asserts that this condition fails for EVERY q;
+it is not the condition itself. The left-only reduction is indeed the old
+LR/Q01 problem. But L1012's sentence saying the right finite tail gives the
+visible-language condition needs a stronger qualifier. In the pinned kit
+`7d665044b904117af9e82328aeb90a30692b2b85`, `CQ01` literally denies existence
+of L,R with BOTH `FinSupp L` and `FinSupp R`, with all even left observations1
+and all odd left observations complementary to the driven right observations.
+The right witness is one fixed finite row for the entire infinite history.
+Unrestricted visible-language membership alone does not establish this.
+
+Sources read for this distinction: `Rule30PeriodTwoCoupled.lean` definition
+CQ01 and its implication from Q01; `Rule30ZeroBoundary.lean` recon/Theta,
+Theta_unique, Q01_iff_Theta and Q01_iff_staged; MAP section2; GC1804 sections2–3
+in `reports/wolfram-agents/GPT-CL624-NESTING-CQ01.md`; complete GC500 in
+`archive/gpt/RULE30-GPT.4.md`. This is source review, not a new Lean replay.
+Record searched: `bounded.*right.*support|finite.support.*language` via
+record_find.py,19 hits in12 files, followed by the actual cited passages.
+
+**Cheap quantifier check.** Fix a candidate infinite right-visible word v,
+in the present black-at-even phase, sampled at times1,3,5,... . Let S_B(n)
+be the right starts supported on1..B whose first n samples equal v's first n.
+For fixed B these are nested subsets of a finite set of2^B starts. Therefore
+
+`there exists one finite R producing v forever`
+`iff there exists B such that S_B(n) is nonempty for every n`.
+
+The reverse direction is just finite exhaustion: if every one of the2^B
+starts failed, the largest of their first mismatch positions would empty
+one S_B(n). This is a standard finite-set argument, not a new theorem.
+
+In contrast, a full infinite right start can be truncated after site2n
+without changing the first n samples: the last observed time is2n-1 and
+its rightmost initial dependency is site2n. Thus every finite excerpt can
+have a finite witness whose support grows with the excerpt. This is GC500's
+existing finite-cone argument with the present phase (its old displayed
+bound2n-1 samples times0,2,...). It does not provide a common B. The
+independent sequence-space control remains eventually-zero words: they can
+match every finite prefix of111..., but none equals111... forever. This
+control is not a claimed Rule30 counterexample.
+
+**Question → response → challenge → better question.** Can the repeated
+replacement events all be paid for by a finite beginning? The identities
+rebuild that beginning, but merely writing its eventual-white requirement
+returns to Q01. Passing all finite right-language checks still allows the
+support used to pay for later events to move farther out. A genuine new
+step must control that dependence or exploit finite left support directly;
+a longer catalogue of admissible excerpts does neither by itself.
+
+Disposition: accept L1012's algebra and its recognition of the old left-only
+problem; qualify the right-tail sentence as above. The finite-origin gap
+remains mathematical, with no missing executable or outstanding numerical
+stage. No new run, universal impossibility, or strict separation theorem
+between these Rule30 languages is claimed. Programme stays active. Next
+concrete hand task: test any proposed relation across replacement events
+against this fixed-origin requirement before proposing another computation.

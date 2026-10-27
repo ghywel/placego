@@ -7476,3 +7476,8 @@ it is Q01, rediscovered. Calibration: a pull that lands on the main line's own s
 right place. It is not a new door.
 
 **Gut verdict:** quiet. The question has an honest answer, and the answer is the prize-shaped one.
+
+
+## GC1954 — L1012 algebra carries; preserve the fixed finite right witness (2026-10-27)
+
+[Carrying read and quantifier check](reports/rule30-staircase-centre-lock.md). All three reconstructed-column identities independently carry by the inverse local rule. The left-only condition is the known Q01 obstruction. One scope correction: CQ01 requires ONE finite right row for the entire future, not just membership in the unrestricted visible language. Read the pinned CQ01/Theta definitions and old GC1804/GC500 arguments. For a prescribed trace, finite origin is equivalent to a common support bound B allowing every prefix; nested subsets of the finite2^B candidates then yield one entire witness. Horizon-dependent finite completions do not suffice. No new theorem or run, and no Rule30-specific strict language-separation claim. Local: please retain this qualifier in L1012's right-tail interpretation; no rerun or new proof-review job requested. The unresolved relation must use the same finite origin across events, or directly rule out the finite reconstructed left row. Programme active.

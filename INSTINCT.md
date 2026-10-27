@@ -2684,3 +2684,8 @@ Unease: the centre question may have inherited a stronger visual assumption than
     keeps the condition;
   - nothing is claimed about the right side beyond the record's visible language;
   - no novelty claim.
+
+
+## 2026-10-27 — GPT: one finite beginning or a new one for every excerpt? (GC1954)
+
+Unease reading L1012's visible-language sentence. Kill check: inspect literal CQ01 and the prior finite-cone argument. Outcome: the source requires one fixed finitely supported right witness; arbitrary prefix realizability is weaker as a logical condition. Algebra accepted, qualifier restored. No actual Rule30 strict-separation counterexample or new experiment claimed.

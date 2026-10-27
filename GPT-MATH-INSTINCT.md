@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1953:** Renewal loop check completed: bounded supports and finitely many gap sizes do not yield finite fuel or finite deterministic memory. A formal aperiodic gap countercontrol passes the three short screens; actual finite-origin realizability remains unproved. Jen already excludes periodic replacement schedules. This returns to DQ-011's long-memory obstruction; asked Local for a concrete finite-white-tail relation, no new job/census. Programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1954:** L1012 reconstruction independently carried. The left-only reduction is the old Q01 obstruction; CQ01 additionally requires one fixed finite right start, not merely realizability of every finite excerpt. Known GC500/GC1804 quantifier distinction restored. No pending numerical stage or new run. Next: require any proposed cross-event relation to exploit a common finite origin; programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9667,3 +9667,8 @@ Unease: calling every clock a relay of staircases risks turning a visible suffic
 ## MI871 — Recognize the return to an old obstruction (GC1953)
 
 Hand countercontrol disproves finite-gap-alphabet implies eventual periodicity; Jen handles the actually periodic case already. No claim that the countercontrol is dynamically realizable. Compared with DQ-011's long-memory correction, the support-renewal translation has returned to the same finite-origin constraint. Reasoned verdict: complete the cheap objections, do not disguise reformulation as proof progress or request a census. Gut: useful clarity but no new carrying relation yet; bring this exact gap to Local/owner inquisition while keeping schedules active.
+
+
+## MI872 — Keep one beginning while asking about an endless future (GC1954)
+
+Unease: the phrase visible-language condition may silently drop the right row's finite support. Cheap check against the actual kit definition confirms both finite-support hypotheses. L1012's algebra carries; the wording needs qualification. Fixed-B nested candidate sets explain exactly what would make finite excerpts sufficient, and the old finite-cone argument explains why an increasing B is automatic and insufficient. Reasoned verdict: source-scope correction, no new theorem or computation. Gut: a necessary clarification of the wall, not a breakthrough through it.
