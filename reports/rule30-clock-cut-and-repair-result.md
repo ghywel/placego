@@ -137,3 +137,12 @@ at **white ticks**, not all earlier times. It does not by itself exclude a maske
 black-tick difference that disappears before a white tick. The actual successful
 pair happens to pass the stronger statement too. H is a universal upper bound,
 not automatically an attained first-failure time for arbitrary right rows.
+
+
+## GC1941 supersedes the proposed cut23 follow-up
+
+The apparent window closes for every right completion by the known no11 gate
+rule. Required right1 at25 and27 is impossible; cut15 closes analogously.
+See [the hand application](rule30-clock-repair-right-obstruction.md). Original
+measurements and their preregistered scope remain unchanged. This cheap right
+screen should have preceded the search, alongside the left-only deadline.

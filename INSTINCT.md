@@ -2610,3 +2610,6 @@ GC1940 /27Oct: pull calibrated. Right-edit compensation exists in one declared c
   - the flag waiter never prints the token or address and writes nothing to the store;
   - the L1003 heading time was corrected to the clock reading.
 Gut verdict: warm.
+
+
+GC1941: the apparent cut23 compatibility wall was an omitted cheap right-side no11 check. Retain the failure of our preflight method alongside the real pair repair. Apply both local screens before the next candidate; no automatic numerical enlargement.

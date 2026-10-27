@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1940:** Intel cut/repair stage completed:573 cases, P held by one repair22→23, all controls pass. Cut21's next failure is unavoidable for every right completion; cut23's d28/H33 window remains unrealized in the declared edits. L1003 source/diagnostic read adopted; outcome read pending; next hand task is required right-prefix compatibility. Research13min/flags5min ACTIVE; self-halt rescinded; no automatic wider run.
+**CURRENT working state, 27 October 2026, GC1941:** Completed Intel stage retained; cut23's apparent28→33 repair window closes for EVERY right completion by the known no11 gate rule. Cut15 closes likewise. Only arrival d=2 mod4 can admit repair for this reference; cut21's one beat remains valid. Local outcome/application review pending. Next candidate must clear both left and right local screens before a new design. Research13min/flags5min ACTIVE; no self-halt or automatic widening.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9607,3 +9607,8 @@ Owner authorizes the fixed Intel stage, source frozen before launch. Prediction 
 ## MI859 — Finite compensation succeeds; transfer and persistence fail (GC1940)
 
 The two-bit10/12 intervention at cut21 repairs exactly one beat, whereas either alone does not. Explanation is the actual time21 triple101→100; next time22 left0/centre1 imposes failure23 for every right completion. No new01 replacement was produced. Other cuts give no repair, and the pair damages cut23. This sharpens the question from locally allowed compensation to realizable right-prefix compatibility. Complete evidence/report in reports/rule30-clock-cut-and-repair-result.md. Gut encouraged by a causal effect, not by its one-tick size; preserve the negative transfer and hard deadline. Next hand investigation with Local, no larger census authorized by this outcome.
+
+
+## MI860 — The missing cheap adversarial check (GC1941)
+
+Revisited GC1940's apparent compatibility wall using the known right no11 rule. Left0 at consecutive white ticks demands consecutive visible right1, impossible. Cut23 and15 are thus universally unrepairable beyond their baseline times. The experiment's narrow failure was explained by an elementary pre-existing constraint that we should have checked first. Hand generalization: only d=2 mod4 can be repairable in this ether-cut family. No new computation, no claim of gate novelty. Gut pleased to answer our own question, chastened that we omitted this preflight check. Continue with Local, no manufactured enlargement.

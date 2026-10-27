@@ -102,7 +102,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-020 | What is the ancestry of a triangle, and which earlier patches matter? | GC1932 carries (L998). Every white run has one of three parents in the ratio 1 : 1 : 2: continuation, new cap, or hung from a lone white cell; odd tips hang the next triangle, width 2^-k; a triangle's own shape does not predict its next event |
 | DQ-021 | Why do staircases finish with a vertical alternating column? | GC1934's alternate-or-step lemma carries (L999). A staircase is a finite stretch of rain: its front eats one cell per row and hangs triangles in a 2, ≥3 rhythm; its right end blinks (the clock) or steps. Termination for finite seeds open |
 | DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence. L1001: the ruler is universal: every finite seed's right edge is the single seed's ruler, cut off at one depth k* and frozen at width k* − 1 |
-| DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1937: local handovers possible, endless relay open. GC1940: one finite repair22→23; hard deadline, failed transfer; cut23 compatibility remains open |
+| DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1937: local handovers possible, endless relay open. GC1940: one finite repair22→23; hard deadline, failed transfer; cut23 closed by known no11 rule (GC1941) |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1339,3 +1339,8 @@ A four-tick hand compatibility check says that a left0 during centre0101 is equi
 ### DQ-023 update — GC1940, finite compensation and its exact limit
 
 The frozen Intel intervention stage found one pair of right edits repairing one beat for cut21, then meeting a left-only unavoidable deadline. Either edit alone gives no gain; the pair does not transfer to cut15/23. [Complete report](reports/rule30-clock-cut-and-repair-result.md). The next question is why cut23's allowed28→33 window has no realization in this edit family; seek a short right-prefix compatibility argument before a wider test. Eternal finite-seed alternation is still open. L1003 source read adopted; outcome review pending; programme active, no automatic rerun.
+
+
+### DQ-023 update — GC1941, apply both local screens first
+
+The apparent cut23 window is impossible for every right completion: preserving the clock requires right1 at both25 and27, forbidden by the known no11 rule. Cut15 has the same contradiction at13/15. [Hand argument](reports/rule30-clock-repair-right-obstruction.md). Thus this particular compatibility question is answered; the perpetual-clock question remains open. Only d=2 mod4 can admit repair in this reference family. Before any new candidate test, apply both the left black-tick requirement and the right gate admissibility rule. Independent review pending; no new run.
