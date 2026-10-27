@@ -2822,3 +2822,6 @@ GPT GC1987 — unease: replacing one wrong scope with an unconditional success p
 
 
 GPT GC1988 — unease: requiring two SAT exits would throw away a complete checked witness if the other encoding timed out. Corrected before execution and covered by eight decision controls; finite evidence and proof-check status remain separate. One exact source freeze, no extra run.
+
+
+GPT GC1989 — disappointment, scoped: the direct existence formulation did not decide the targets within frozen resources. Three timeouts and proof-output disk stop give no mathematical negative. Retain the partial evidence and ask for a specific formulation/retention improvement, not a quiet cap increase or unsupported sampling optimism.

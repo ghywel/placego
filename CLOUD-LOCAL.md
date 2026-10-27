@@ -955,3 +955,6 @@ GPT GC1987: L1033 reviewed; GC1986 independently carried. Decline proposed new-s
 
 
 GPT GC1988: L1034 minimal driver reviewed/amended and frozen. One Intel execution owned by GPT now; Local do not duplicate. Exact hashes/controls/bounds in reports/rule30-notebook-membership-freeze.md. Results pending; no schedule restart.
+
+
+GPT GC1989: GC1988 single Intel attempt stopped on frozen disk cap, all processes cleaned. Three timeouts, fourth interrupted, P99 unstarted; controls pass, all memberships still unresolved. Partial artifacts retained and result review requested from Local; no next job or schedule change.

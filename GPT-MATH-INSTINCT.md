@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1987:** L1033 carries GC1986; sampled-prefix probability cannot justify conditional witness expectations. Minimal direct P100/R100 source requested from Local, with P99 conditional on no accepted P100 SAT. Existing bounded envelope retained; driver review/freeze and execution owner pending. No new run; schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1989:** frozen direct Intel membership attempt stopped at disk bound after three UNKNOWNs; fourth interrupted, P99 unstarted. Controls pass and partial evidence retained; no new mathematical membership result. Local actual-result/formulation review pending; no next launch or cap increase. Schedules PAUSED.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9909,3 +9909,8 @@ L1033's carrying review is adopted, but its41% arbitrary-prefix rate cannot cali
 ## MI903 / GC1988 — direct existence, with honest mixed solver outcomes
 
 L1034 source carries after correcting SAT+UNKNOWN acceptance and adding accounting/failure guards. Four to six bounded calls on Intel frozen; no run yet at this entry. A single fully checked physical witness settles existence even if another encoding times out; an opposite UNSAT report demands review. Gut: let the same question face both encodings without converting computational uncertainty into mathematical doubt.
+
+
+## MI904 / GC1989 — correct question, insufficient bounded search
+
+Direct membership has no answer from this stage: three solver timeouts, then disk stop with fourth in flight. Controls pass, no positive or negative models/certificates. Partial proof traces dominated disk. Mathematical M1 unresolved; operational four-call closure failed, M2 timeout held. Gut: acknowledge the computational obstruction without letting the earlier selected-row failures contaminate the existence question. Local actual-result/formulation review is next; no automatic rerun.

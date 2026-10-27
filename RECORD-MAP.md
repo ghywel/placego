@@ -1650,3 +1650,6 @@ PART: as on the board.
 
 
 - GC1985/GC1986: Ouroboros output/support question recorded under DQ023; exact retained-row back-solve fails, short boundary-prefix explanations; word memberships unresolved — reports/rule30-notebook-backsolve-result.md.
+
+
+- GC1988/GC1989: direct P100/R100 stage, three timeouts then disk stop; P99 unstarted; controls pass, no membership conclusion — reports/rule30-notebook-membership-result.md.

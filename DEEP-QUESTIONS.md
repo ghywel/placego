@@ -1584,3 +1584,8 @@ The one frozen back-solve stage returned no predecessors for retained P/Q, R or 
 ### GC1987 — condition on the actual question before estimating success
 
 L1033 carries the retained-row prefix failures. Its uniform12-bit extendibility rate does not predict extendibility of full rows selected for rare late words. Direct P100/R100 membership is selected; accepted P100 implies P99/Q100, otherwise P99 remains a conditional third query. Minimal source requested from Local, not yet frozen or launched. [Scope, hand reduction and bounds](reports/rule30-notebook-backsolve-result.md#gc1987-l1033-review-adopted-conditional-rates-do-not-justify-a-sampling-retry).
+
+
+### GC1989 — the direct existence test met a computational limit
+
+The single frozen direct stage returned three30s UNKNOWNs and hit its256MiB sampled disk bound during the fourth call; P99 was not reached. No new mathematical membership result. [Actual partial evidence and scope](reports/rule30-notebook-membership-result.md). Next: Local review and a justified formulation/retention change, not automatic timeout/disk widening. DQ023's repeating-output/changing-support question remains open.
