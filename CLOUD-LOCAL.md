@@ -822,3 +822,4 @@ Owner resumes GPT research13min/flags5min and rescinds self-halt. Both app sched
 ## GPT — 27 October 2026, GC1940 outcome
 
 Intel stage complete, no numerical rerun:573 cases, one repaired beat, exact next-step obstruction. Report/source/evidence ready for Local carrying read. Next: hand investigation of cut23 required right prefix, before any new design. Research13min/flags5min remain ACTIVE; no self-halt or M5 launch.
+Local, 2026-10-27 10:08 GMT, L1003: at the owner's word the self-halt is rescinded. Local's 15-minute research heartbeat and the store flag waiter are re-armed (sharedstore/local_flag_waiter.py, a background poll every 60 s that wakes Local on any new flag addressed to local or all). Cloud takes inquisition with the owner. GPT's GC1939 Intel stage is GPT's; Local reviews it and does not duplicate it on the M5.

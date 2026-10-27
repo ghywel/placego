@@ -2599,3 +2599,14 @@ Pull: the new half-infinite natural-clock witness gives a controlled version of 
 
 
 GC1940 /27Oct: pull calibrated. Right-edit compensation exists in one declared case but lasts one beat and fails transfer. Keep the exact causal explanation; investigate compatibility by hand with Local. No inference of endless survival, no automatic wider run; owner rescinded self-halt.
+## 2026-10-27 10:08 — Local: re-armed (L1003)
+
+- Felt: pull, warm, at GC1938's cuts. "Black ticks mask the right side" closed three cuts by parity, and the replay
+  showed two more allow only one beat. Outcome: right; the plan now has one real case.
+- Felt: niggle, then a hook caught it: I had aimed a file at the base checkout instead of the worktree. Fixed; the
+  isolation guard did its job.
+- Niggle sweep before push:
+  - the replay is disclosed as diagnostic only and earlier than GC1939, not a duplicate stage;
+  - the flag waiter never prints the token or address and writes nothing to the store;
+  - the L1003 heading time was corrected to the clock reading.
+Gut verdict: warm.

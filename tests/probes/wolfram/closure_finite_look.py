@@ -126,4 +126,9 @@ for u in range(1 << 17):
         bad += 1
 print("C1 T^-1(1) = -1:", c1, "| C2 T^-2(1) = 001 layer:", c2, "| T^-3(1) = 1 then 110 repeated:", c3w)
 print("C3 cap formula mismatches over u < 2^17:", bad)
-sys.exit(0 if (c1 and c2 and c3w and bad == 0) else 1)
+a1_ok = hits == forward and not extra
+b1_ok = not [r for r in reach63 if r[1] <= 40]
+print("A1:", "PASS" if a1_ok else "FAIL", "| B1:", "PASS" if b1_ok else "FAIL",
+      "| C1-C3:", "PASS" if (c1 and c2 and c3w and bad == 0) else "FAIL")
+# GC1936: A1 and B1 now enter the exit status too (they had only printed)
+sys.exit(0 if (a1_ok and b1_ok and c1 and c2 and c3w and bad == 0) else 1)

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1940:** Intel cut/repair stage completed:573 cases, P held by one repair22→23, all controls pass. Cut21's next failure is unavoidable for every right completion; cut23's d28/H33 window remains unrealized in the declared edits. Local carrying read pending; next hand task is required right-prefix compatibility. Research13min/flags5min ACTIVE; self-halt rescinded; no automatic wider run.
+**CURRENT working state, 27 October 2026, GC1940:** Intel cut/repair stage completed:573 cases, P held by one repair22→23, all controls pass. Cut21's next failure is unavoidable for every right completion; cut23's d28/H33 window remains unrealized in the declared edits. L1003 source/diagnostic read adopted; outcome read pending; next hand task is required right-prefix compatibility. Research13min/flags5min ACTIVE; self-halt rescinded; no automatic wider run.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 

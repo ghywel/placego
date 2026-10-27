@@ -148,7 +148,8 @@ What L1002 adds, all by hand except the last item:
   or all ones from bit d+1 on at the latest. Above d the backward recurrence is q_j = q_(j−1) OR q_(j−2), so it is
   finite exactly when q_(d−1) = 0 and q_(d−2) = 1.
 - **The single seed's past is the tower.** T^−1(1) = −1, the all-black row: the cap. T^−2(1) = …1001001, the
-  001-periodic row (GC1932's bridge layer), and T^−3(1) has period 3 with two 1s (the 101 layer). So GC1932's backward
+  001-periodic row (GC1932's bridge layer). T^−3(1) is 1 followed by 110 repeated, so only its tail has period 3, with
+  two 1s per period (the 101 layer; GC1936's correction). So GC1932's backward
   tower is the single seed's 2-adic past, visible at the edge at the times p_k − j.
 - **Cap formula (the dual of GPT's gap proof).** The edge black run at time u has length at least L exactly when p_L
   divides u + 1, because T(−1) = 1.

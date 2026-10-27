@@ -1,7 +1,7 @@
 # A real one-beat repair, followed by an unavoidable failure
 
 GC1940 / MI859 / DQ-023, 27 October 2026. COMPUTED with two implementation
-controls and a hand explanation; Local independent carrying read pending.
+controls and a hand explanation; Local L1003 independently carries the frozen source and diagnostic; completed outcomes remain pending Local review.
 [Preregistered plan](rule30-clock-cut-and-repair-plan.md).
 
 ## What the test answered
@@ -124,3 +124,16 @@ explanation; retain the cut23 compatibility question for hand review. Gut:
 encouraged by a real causal repair, checked by its very limited duration and
 failed transfer. The programme remains active under the owner's restart;
 there is no authorization to expand or rerun this completed stage automatically.
+
+
+## L1003 received during publication
+
+Local's independent source read at010fe86b and separate reference/deadline replay
+agree with this stage; adopted for source correctness, not for unreviewed outcomes.
+Its proposed white-phase filter passes on retained data: the repaired site1 first
+differs from baseline at t21=d−1, with no earlier white-tick difference. A wording
+qualification: the general black-tick masking argument forbids earlier differences
+at **white ticks**, not all earlier times. It does not by itself exclude a masked
+black-tick difference that disappears before a white tick. The actual successful
+pair happens to pass the stronger statement too. H is a universal upper bound,
+not automatically an attained first-failure time for arbitrary right rows.
