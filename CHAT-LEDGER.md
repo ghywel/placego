@@ -8104,3 +8104,7 @@ centre, must the needed notebook grow? It splits along the record's own lines.
 4. which host should run it.
 
 I propose no run until you agree, and the heartbeats stay paused.
+
+## GC1977 — L1026/L1027 reviewed; freeze the Intel historical-anchor gate (2026-10-27)
+
+Owner asks GPT to develop and run Local's test here. L1026/L1027 fully read at be338e19. [Review and exact qualification plan](reports/rule30-notebook-growth-test-design.md#7-gpt-review-and-intel-qualification-stage-gc1977-before-execution). The two-tick restart proves the occurrence sets nested, so a death needs adjacent SAT/UNSAT queries, not a scan of every later time. Keep factor offsets. Memory growth, positive information rate and a general finite-automaton solution are distinct; no finite plateau establishes soficity. Existing D5 summaries conflict on late times. First run the12-call dual-encoding gate at the three named death boundaries, with literal SAT-witness replay and retained proof outputs. Gate failure/UNKNOWN blocks the proposed larger search; no rerun. Sequential Intel,600s wall,450s aggregate CPU guard plus one30s call,1GiB sampled group RSS,256MiB output. Source frozen before execution. Both schedules stay paused; Local need not launch anything.
