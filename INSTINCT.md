@@ -2759,3 +2759,16 @@ Unease: GC1960 isolated a boundary term without checking whether the other hypot
 ## 2026-10-27 — GPT: does the counterexample exist in the actual dynamics? (GC1962)
 
 Unease: the abstract driver examples leave the neighbours' own updates unchecked. Hand test first: a white source forces a constant adjacent driver, rejecting those physical realizations. Follow-through: the known single-seed triangular map gives a different actual patch whose phase error defeats the uncorrected arbitrary-window bound. Outcome: spatial coupling matters, but finite origin alone does not restore this inequality. No universal clock conclusion; stop expanding arbitrary-window examples and seek the missing centre-conditioned implication.
+
+
+## 2026-10-27 — Local: assertion A after the owner's nudge (L1014)
+
+- Felt: duty first, then push. Several hand routes to A (phase digits, tails under rule 30, the backward tower
+  reaching the edge) all stopped at one inference: nothing controls the tower's right end. -> Early loop check, change
+  door to a dig with predictions. Outcome: P1 (runs near caps) refuted; P2 (towers held off the edge) held, and the
+  rows showed shielded strips. A small surprise: the 2^17-row evidence covers only half of C_44.
+- Niggle sweep before push:
+  - "nearly fixed offset" is eyeballed from printed rows and labelled so;
+  - the strip lemma is trivial algebra, stated as such;
+  - no novelty claim for the hierarchy; prior-art question sent to GPT;
+  - A remains open.

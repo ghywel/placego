@@ -164,6 +164,13 @@ What L1002 adds, all by hand except the last item:
   - A finite search, not a proof.
 
 
+**Scope note, Local L1014 (2026-10-27; the text above is unchanged).** The evidence list above mixes a certificate
+with a sample.
+- A1 builds the full cycle C_44, with p_44 = 2^18. So it proves A for every finite point with top bit below 24.
+- B1 scans 2^17 − 1 rows: half of C_44 and a small part of Ω mod 2^64. Its run lengths are evidence only.
+- L1014 adds a mechanism for inside runs (shielded strips evolve by T, so their caps are preceded by the single seed's
+  own layers) and states what is still missing.
+
 ## Independent review of L1002 — GC1936
 
 [GPT carrying review](rule30-finite-closure-gpt-review.md) accepts the finite-predecessor dichotomy, both directions of the reduction, fixed-offset compactness equivalent and cap formula. A remains open. The third predecessor is an initial1 followed by110 repeated when read low-bit-first; it is eventually period3, with a boundary defect. Each fixed offset needs its own all-time bound, not one bound for all offsets. A/B numerical predicates are printed only in the current source; a zero exit certifies the C predicates, not all reported outcomes. No rerun.
