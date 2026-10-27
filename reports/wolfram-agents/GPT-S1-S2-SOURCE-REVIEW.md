@@ -164,3 +164,57 @@ finite-depth/odd-code/patch corrections and the pending actual-output review sti
 Sources retained at `cited/gc1967-map-comparison/manifest.json`: the complete external module,
 the exact5473ffd ControlledResponse source, catalogue and selected entry. Their retention does not
 mean that unread portions were independently verified. No numerical run or kernel replay.
+
+## GC1968 addendum: L1018 core modules and the added staircase theorem
+
+L1018 at205664c6 and privacy follow-up bef8a2ad were merged during this review. Local now explicitly owns
+S3 formalization and delivery. S2b has been incorporated into merged S2; the earlier inventory statement
+that it was absent is historical. Actual final validation outputs remain pending.
+
+**Carrying source verdict: PASS in exact hypotheses.** Both complete core modules were read:
+`kit-pr/Rule30FrozenRuler.lean` (342 lines, SHA256
+`f6317698dcebd12a62f4d9e4208055195b4b12c16de2e6c59c3fd21c5fb1cb6f`) and
+`kit-pr/Rule30EdgeStaircases.lean` (299 lines, SHA256
+`d428596eda88dc38eaf6e3bd012c099552ff82640d97ed4c74b5de7714f31eae`).
+The explicit recursive `iter` replaces Mathlib function iteration correctly, `iter_add` has the right
+order, and `last_level` recovers the depth dichotomy by finite descent. The gap/capped-width and
+rain-cycle proofs retain their previously reviewed hypotheses. Module headers, public imports and
+namespaces have the requested core-Lean shape; no local compile is claimed.
+
+The added staircase argument is sound. `Lives t0 a t` requires a three-cell alternating pattern at
+`a + (t' - t0)` at every intermediate time. At a multiple of H, periodicity of diagonal W+1 implies
+periodicity of the lower diagonals. `R_init` makes depths W and W-1 both white, contradicting the
+first inequality of Alt3. Exact pinned7d665044 definitions of R, Per, per_mono_all, Per.at_mul,
+R_init and R_periodic were consulted. The only essential numerical guard in this contradiction is
+W>=2, so depth W-1 is positive. `front_step` and `interior_kept` separately carry the geometric
+interpretation. The merged standalone S2's added source and exact essay assembly were checked too.
+
+**Two concrete packaging/exposition repairs in addition to GC1966/67:**
+
+1. The exported patch puts its two descriptive catalogue rows inside the **performance table** under
+   “Contributed white-padding modules”, immediately after WhitePaddingFamilies. The pinned lean/README.md
+   confirms the three-column header `Module | Time | Peak memory` at line124; “Added in the kit” begins
+   at line142. Move the rows to that four-column catalogue table. The two Lean payloads in the exported
+   patch do match the reviewed copies exactly; this is a README placement error, not a Lean binding error.
+2. The rain theorem proves a two-phase edge patch for n>=1. Calling that an eternal maximal alternating
+   stretch of length>=3 for **every n** exceeds the statement. At n=1 the rain row is just the single
+   black cell with white padding, and its first two edge bits alternate between10 and11. The initial
+   three-cell010 across the edge becomes a same-colour pair at the advanced front next step. Use the
+   patch wording supplied in GC1966; a geometric eternal-staircase corollary would need a suitable n
+   restriction and an actual connection to a general-row continuation predicate. The current `Lives`
+   definition is specialized to the single seed.
+
+For the unhandled single-seed W=1 case there is also a cheap hand answer: Alt3 at front t-1 forces the
+edge triple010; the next row's depth1 bit flips to1 while the edge bit remains1, so the continued front
+fails immediately. A proposed “all staircases” headline should either retain the formal W>=2 condition
+or include this small boundary lemma. W>=2 does not mean “only shallow”: any fixed finite W is covered,
+including a front deep in the displayed chaotic region, although the exponential bound is weak there.
+Do not claim a uniform bound over changing W or over indefinitely replaced staircases.
+
+GC1966's finite-depth qualifier and odd-code guard also need to reach the PR description, module header,
+catalogue rows and exported patch. S2's opening “the only edge codes that can do that” should refer
+specifically to full odd codes with period dividing two, rather than all eternal geometric patches.
+
+The owner GitHub sign-in dependency for the actual PR is **Local-reported**; this review has not inspected
+the M5 authentication state. The patch can still be corrected, source-reviewed and validated while that
+dependency is resolved. One evidence request already exists; no repeated request or duplicate build.

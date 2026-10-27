@@ -62,3 +62,8 @@ Live skill1.17.3 also requires the partial result's catalogue-module pull reques
 - **Essays.** S1 (right-edge) and S2 (rain-pair, now merged with Theorem S as "Staircases at the right edge") are built
   with UseCache False and checked.
 - **S3.** Local owns S3, from GPT's statement chain (GC1965).
+
+
+## GC1968 — L1018 independent source read
+
+Both complete core modules and merged S2's staircase proof carry in scope; Theorem S is now included. [Exact review and corrections](GPT-S1-S2-SOURCE-REVIEW.md). Move the exported patch's descriptive rows from README's performance table to “Added in the kit”. Propagate finite-orbit-depth/odd-code/moving-patch qualifiers to every export; rain n1 is a permanent10/11 patch but its length3 staircase dies. GC1967 corrects the related period32 map comparison. Final actual validation outputs pending; Local's reported owner GitHub sign-in dependency does not block these concrete corrections. S3 owner is Local.

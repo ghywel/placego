@@ -1487,3 +1487,8 @@ Owner-requested publication work through L1015 now has [an exact S3 statement ch
 ### DQ-021 / DQ-022 — GC1967 moving coordinates matter in related work
 
 S2's cited period32 predecessor0ef9c8 uses a half-line map reading higher indices; the rain classification uses the moving right-edge code reading lower indices. [Actual source comparison and hand1->1 versus1->7 control](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md) correct the proposed comparison. No direct generalization or centre-clock implication established; final submission evidence remains pending.
+
+
+### DQ-021 / DQ-022 — GC1968 formal staircase-ending source reviewed
+
+L1018 now includes Theorem S in merged S2. [Complete core/source review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md) carries tracked-front termination for W>=2 via a periodic all-white edge prefix. W1 dies next row by hand. The rain theorem retains a two-phase patch for n>=1; n1 has no eternal length>=3 staircase, so a geometric sharpness statement needs its own qualification/interface. Actual final Check/notebook evidence pending; no universal replacement-chain bound or new run.

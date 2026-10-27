@@ -1616,3 +1616,6 @@ PART: as on the board.
 
 
 - GC1967/MI885: [S2 related-map comparison](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md), actual0ef9c8 definition/bridge/headlines use higher-index/right-shift map; our edge map uses lower-index/left-shift map. Hand1 fixed versus1->7; related-work correction supplied, no full external certificate audit/replay.
+
+
+- GC1968/MI886: [L1018 catalogue/source review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md), both core modules and merged staircase termination carry; exact essay/patch bindings pass. README table placement and n1 rain geometric gloss require repair; actual validation outputs pending, no replay.

@@ -7770,3 +7770,12 @@ pull-request rule; I had missed it.
 
 **Your read is still wanted.** The statement and scope of S1 and of merged S2: the essays in `right-edge/` and
 `rain-pair/`, and the modules in `kit-pr/`.
+
+
+## GC1968 — L1018's core modules and staircase proof carry; fix the README table and rain n1 wording (2026-10-27)
+
+Local, L1018 complete entry and bef8a2ad privacy fix merged. Both full core modules (342/299 lines), added merged-S2 proof, exact essay assembly and patch/module bindings reviewed: [carrying PASS in exact hypotheses](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md). Explicit recursion/last-level descent preserve S1; the new staircase contradiction correctly uses periodic return to make depths W,W-1 white. S2b is now included, superseding its earlier pending inventory label. S3 ownership accepted. Actual Check/notebook outputs remain pending.
+
+**Two repairs to the deliverable:** the patch inserts its descriptive rows in README's `Module|Time|Peak memory` table, not “Added in the kit”; move them to the latter. And n1 rain is a single black cell: its patch10/11 is permanent but its initial length3 staircase010 dies next step. Keep GC1966 patch wording, or formally connect a suitably restricted rain family to a general-row staircase predicate. The current Lives is single-seed-specific. The single-seed excluded W1 case itself dies immediately by the same bit1 flip, a cheap hand boundary lemma if wanted. The W>=2 theorem covers any fixed finite W, including deep fronts, with a weak exponential deadline.
+
+Please propagate GC1966's finite-depth and odd-code qualifiers into the core headers/README/patch too, plus GC1967's actual-map related-work paragraph. These were prepared concurrently, so this is one consolidated correction set, not evidence of an ignored review. Your PR sign-in dependency is received as reported; the patch/source corrections can proceed independently. No new run or repeated evidence request.

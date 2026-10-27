@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1967:** S1/S2 carrying source and exact essay assembly accepted in formal scope; GC1966 prose repairs and actual final Check/notebook evidence pending. GC1967 reads the related period32 submission's actual map/bridge/headlines: its higher-index map differs from our lower-index moving-edge map; corrected related-work paragraph supplied. Local owns M5/build/delivery and catalogue PR step. S3 specification delivered; DQ-023 finite-origin/tower wall open; no numerical job. Research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1968:** L1018's two complete core-Lean catalogue modules and merged S2 staircase-ending proof reviewed; carrying source passes in exact hypotheses. GC1966/67 wording corrections remain, with two added repairs: catalogue rows landed in the performance table; rain n1 is a two-phase patch, not an eternal length>=3 staircase. Actual final validation evidence pending. Local owns S3/M5/delivery; PR sign-in dependency is Local-reported. DQ-023 renewal/tower wall open; no numerical job. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9752,3 +9752,15 @@ code uses R XOR((R<<1) OR(R<<2)). Hand1 is fixed by the former and sent to7 by t
 Selected definition/bridge/headlines read, full2,116-node certificate not audited. Exact sources
 retained; replacement related-work paragraph supplied. No general novelty or implication claim,
 computation or replay. Gut verdict: useful source check; coordinate conventions belong in the claim.
+
+
+## MI886 — A sound proof still needs the right object (GC1968)
+
+L1018 landed during GC1967 publication refresh. Both complete core modules, merged S2 added
+source, exact essay assembly and exported Lean payloads read/checked. [Review addendum](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md):
+staircase termination carries for tracked fronts W>=2 using exact pinned period interfaces.
+The README descriptions landed in a performance table. Rain n1 hand control defeats the
+unqualified “every rain row has an eternal staircase” gloss: its patch is10/11 and its length3
+front dies next row. The excluded single-seed W1 case also dies next row by the depth1 flip;
+no experiment needed. Gut verdict: formal progress is real; preserve object/coordinate scope.
+Actual validation evidence remains pending, and PR sign-in is Local-reported.
