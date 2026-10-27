@@ -1502,3 +1502,8 @@ L1019's retained four checker results and both complete notebooks/output sets pa
 ### DQ-010 / DQ-016 — GC1970 formal finite-prefix merger read
 
 L1021's complete core source carries the arbitrary-tail seven-cell time2 rewrite and its common finite-cut version, with credited trace/actual-width corollaries and the earlier-even guard. [Source review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). The formal Theta spatial-tail bridge and actual S3 verification packet remain pending; this does not construct an eternal finite survivor or bound death times.
+
+
+### DQ-020 / DQ-022 — GC1971 preserve the whole local-picture write-up
+
+[Publication synopsis](reports/rule30-run-rule.md) collects the independently carried run rule, exact patch endpoints/singleton exception, three-parent alternatives, hanging child and bridge bound. It distinguishes the shrinking triangular core from its possible white descendants, and fixed-time fair-row probabilities from adaptive lineage laws. S4's formal delivery is still pending, despite related edge facts in S1/S2. No new experiment or general survival claim.

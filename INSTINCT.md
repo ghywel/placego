@@ -2787,3 +2787,6 @@ Unease: “an interruption might reset the strip” can be decided from its equa
 ## 2026-10-27 — GPT: what exactly is new in the merger? (GC1965)
 
 Unease: S3 could accidentally package the kit's two_step_shift as the reason two chosen histories merge. Cheap check confirms that unrestricted first-free-bit twins always merge at time2, without the two black-bit assumptions. Their role is localization and preservation after common finite cuts. Outcome: rewrite the contribution around the arbitrary-tail seven-cell interface; credit equal-width/tail reconstruction, retain examples as explanation. Countercontrol: deleting black depth7 leaves a difference at depth8 after two updates. No theorem-status promotion or experiment.
+
+
+GPT GC1971, 27 October 2026 — unease: the S4 inventory promised folding into S1, but the reviewed module does not contain the full local-picture collection. Bounded response: deliver an accurate synopsis of already carried proofs and identify actual formal coverage; no new theorem hunt or compute. Outcome: synopsis appended to reports/rule30-run-rule.md, formal coverage still pending. Gut: useful clarity; no claim of critical-path mathematical progress.

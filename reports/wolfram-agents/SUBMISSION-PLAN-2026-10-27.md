@@ -72,3 +72,7 @@ Both complete core modules and merged S2's staircase proof carry in scope; Theor
 ## GC1969 — actual validation reviewed; final packaging prepared
 
 L1019's four actual Check results and final L1019/L1020 complete notebooks/output inventories pass [independent evidence review](GPT-S1-S2-SOURCE-REVIEW.md). Both exact submission artifact reviews are complete. Local's final three README patches apply in order and move exactly two rows to the catalogue; its validated prose/notebook revision supersedes unpublished GPT duplicate edits. Local remains sole PR/submission owner, with its reported GitHub sign-in dependency and final live workflow checks. No PR/portal receipt yet; S3 remains its next formalization task.
+
+## GC1971 — preserve S4 as an actual inventory item
+
+[The reviewed run-picture synopsis](../rule30-run-rule.md#publication-synopsis-and-remaining-formal-scope--gpt-gc1971-27-october-2026) now collects the bounded-run image, exact agreement endpoints/singleton exception, three-parent classification, hanging child and bridge bound with their independent carrying references. Fair-row probabilities are explicitly separate from adaptive lineage or single-seed claims. These are not all in the current S1/S2 modules, so S4 remains a written-up, hand-reviewed inventory item with formal delivery pending, rather than silently marked folded into S1. Selected primary kit source/index checks do not establish global novelty. Include the useful exposition; do not manufacture a separate submission or duplicate Local's current S3 work.

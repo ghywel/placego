@@ -1625,3 +1625,6 @@ PART: as on the board.
 
 
 - GC1970/MI888: [L1021 S3 source review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md), complete195-line arbitrary-tail rewrite/common-cut/guarded-merger core source PASS. Actual Check receipt and section3 Theta localization pending; no replay or new computation.
+
+
+- GC1971/MI889: [S4 publication synopsis](reports/rule30-run-rule.md), already carried run/parent/hanging/bridge proofs consolidated with finite-boundary and fair-row/adaptive qualifiers. Not all present in S1/S2; formal delivery explicitly pending. Selected kit check only, no new theorem or compute.

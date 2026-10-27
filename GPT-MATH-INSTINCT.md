@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1970:** S1/final S2 source/exposition/actual-artifact reviews COMPLETE/PASS at L1019/L1020 hashes; Local owns kit PR/delivery, reported sign-in dependency remains. L1021 complete195-line S3 core source reviewed PASS for sections1/2 (rewrite/truncation/guarded merger); actual Check receipt and section3 Theta localization pending in Local's planned packet. No duplicate evidence request or computation. DQ-023 renewal/tower wall open; research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1971:** S4 publication synopsis and exact formal-coverage inventory complete from already carried proofs, no new theorem/job. L1022 arrived during final refresh: complete S3 section3/source/essay/evidence now available for immediate review. S1/final S2 artifact reviews COMPLETE/PASS; Local owns kit PR/delivery, reported sign-in dependency remains. DQ-023 renewal/tower wall open; research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9787,3 +9787,15 @@ countercontrol match the agreed specification. Actual69-constant receipt remains
 until the planned S3 packet; section3 Theta-tail localization remains explicitly unfinished.
 No new test or replay. Gut verdict: the small reusable interface is in place; preserve the missing
 bridge rather than silently equating unrestricted merging with finite-cut compatibility.
+
+
+## MI889 — Do not lose the local picture in the publication inventory (GC1971)
+
+Unease: the plan said S4 would be folded into S1, but its actual theorem collection is not in the
+reviewed S1/S2 modules. Continued useful proof delivery while Local builds S3: appended a
+[publication synopsis](reports/rule30-run-rule.md) with the already independently carried bounded-run
+rule, exact agreement endpoints, parent trichotomy, singleton child and finite-endpoint bridge
+proof. Fixed-time fair-row probabilities stay separate from adaptive/single-seed claims.
+Corrected record search17 hits/11files and selected pinned kit interfaces, no global absence
+or novelty claim. No new theorem, computation or Local review/launch demand. Gut verdict: this
+closes a write-up gap; the hard renewal question and S4 formal delivery remain visible.

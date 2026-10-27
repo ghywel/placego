@@ -193,3 +193,107 @@ above is kept; these amendments govern where they differ.
 - **The bridge.** "A white pair fuses the black runs on both sides" was wrong. Its image 11 always joins the head of the
   black run on its right. It joins the black run on its left only when that run is a single cell, which is exactly the
   unit B_1 W_2. GPT's example: 11001 maps to 10111 in those cells.
+
+## Publication synopsis and remaining formal scope — GPT GC1971, 27 October 2026
+
+This is a delivery of the already reviewed S4 material, not a new discovery or a new experiment.
+The carrying reads are GC1933 (`rule30-triangle-ancestry-gpt-review.md`) and GC1935
+(`rule30-structure-unification-gpt-review.md`). S1's frozen-ruler module and S2's staircase module
+use related local facts, but do not yet formalize this whole collection. Keep S4 separately visible
+in the publication inventory until those actual statements are included.
+
+### The picture in everyday words
+
+A white triangle is a clearing whose two sides move inward. The shape describes how its wide
+part shrinks, but the last white cell can start another clearing: its next width is determined
+by the black run immediately to its left. That is why a triangle's silhouette alone does not
+supply its whole family history. The neighbouring context matters even when the visible shapes
+look identical.
+
+Long black caps arise when the short white gaps above them line up. A white gap of exactly two
+cells turns entirely black. It links both adjacent black heads only when the black run to its
+left has length one. Thus the repeating building block is **100**, read left to right: one black
+cell followed by a white pair. A long cap has a chain of those complete blocks in its ancestry,
+plus a few endpoint cells. The endpoints matter; the entire predecessor row need not be a
+perfect period-three stripe.
+
+This answers a local question about how a shape is made. It does not answer whether an endless
+sequence of new supports can keep a fixed centre clock running. Nor do the fair-row proportions
+below establish the frequencies or independence of descendants in the single-seed picture.
+
+### Exact deterministic statements to retain
+
+Use `next x i = rule (x (i-1)) (x i) (x (i+1))`, with the kit's `rule` and arbitrary rows
+`x : Int → Bool` (equivalently `Rule30Realization.evol x 1`). The following are hand-proved and
+independently carried, but not all part of the current Lean submissions.
+
+1. **A bounded run's one-step image.** With opposite-colour cells immediately before and after
+   a finite maximal run, a black run of length m>=1 becomes `1 0^(m-1)` in the same cells.
+   A white singleton stays0; a white run of length n>=2 becomes `1 0^(n-2) 1`. Constant and
+   semi-infinite runs need their own boundary conventions; a uniform ring is not an ordinary
+   bounded run. These are direct cellwise consequences of `left XOR (centre OR right)`.
+2. **Agreement at the old boundaries.** Suppose x and y agree on a maximal interval [a,b]
+   with a<b. Their next rows disagree at a, agree strictly between a and b, and agree at b
+   exactly when the shared cell at b is black. If a=b and both neighbouring inputs differ,
+   the next outputs agree exactly when the shared centre is white. This describes the OLD
+   interval's boundary sites; it does not locate every new maximal agreement interval.
+3. **Every maximal white run has one of three parents.** If the next row is white on [a,b]
+   of length L>=1 and black at a-1 and b+1, the input on the indicated window is exactly one of:
+
+   | Type | Input word | Window |
+   |---|---|---|
+   | Continuation C | `1 0^(L+2) 1` | [a-2,b+2] |
+   | New cap A | `0 1^(L+1) 0 0` | [a-2,b+2] |
+   | Hanging child B | `0 1^L 0 1` | [a-2,b+1], with x(b+2) free |
+
+   The alternatives are disjoint and exhaustive, including L=1. On the white output interval,
+   C has a wider white parent, A has no white parent, and B has just the singleton at its right
+   end. This uses vertical/horizontal connectivity, not a claim of statistical independence.
+4. **A singleton's child.** If x(c)=0 is isolated and the black run immediately to its left
+   is the finite interval [p,c-1], with x(p-1)=0, then the next row is black at p and c+1 and
+   white exactly on [p+1,c]. The child width is c-p, measured from the SAME row as the singleton.
+   An infinite black half-line does not give a finite child width by this statement.
+5. **The bridge bound.** In a region decomposed into finite black runs B_m followed by finite
+   white runs W_n, retain the following finite-endpoint statement.
+   A whole unit has an entirely black image exactly for B_1 W_2=`100`, whose image is111.
+   A bounded maximal output black run crossing r complete consecutive such units therefore has
+   a preceding suffix of length0..2, r triples, and a following prefix of length1..2:
+   `3r+1 <= L <= 3r+4`. A black run wholly inside a nonbridge unit has length1 or2 and belongs
+   to r=0. A periodic ring consisting entirely of100 maps to a uniform black ring; it has no
+   bounded maximal output run and is excluded from this finite-endpoint decomposition.
+
+For a proof of item5, every nonbridge B_m W_n image contains a zero. Its initial black segment
+has length at most2 and its terminal black segment at most2, by item1. A maximal black run
+crossing whole units can cross only100 units. If there is a preceding unit, its final segment
+supplies at most2 cells; the following nonbridge unit supplies at least its black head and at
+most2 cells before its first zero. The case wholly within one unit is separate as stated.
+This is the same proof carried in GC1935, with the endpoint guards kept explicit.
+
+### Probabilities have a different contract
+
+On one independently fair input row, C and A each constrain L+4 bits and B constrains L+3.
+Their weights are respectively `2^(-L-4)`, `2^(-L-4)`, `2^(-L-3)`, so, conditioned on the displayed
+maximal output white run, the shares are1/4,1/4,1/2. This is an exact cylinder calculation.
+
+The first-child law `Pr(width=k)=2^-k` uses the separate fixed-time conditioning `10001` around
+the displayed white triple and fresh fair bits outside it. It does not establish that law at
+an adaptively selected descendant, independence of successive widths, almost-sure extinction of
+a selected lineage, or the same distribution in the single black cell's orbit. Those remain
+separate questions and should not enter a deterministic Lean headline by implication.
+
+### Prior-art and delivery disposition
+
+Record searched with `record_find.py 'triangle.parent|bridge.law|run.picture'`:17 matching
+paragraphs in11 files, including the original reports and their independent reads. The initial
+three-term AND search returned no joint hit and was corrected to this union search; it was not
+evidence of absence. Pinned kit7d665044's module tree and selected sources were consulted:
+`Rule30Jen.rule`, `Rule30Realization.evol`, the declaration inventories of `Rule30Window` and
+`Rule30BlackRuns`, and `Rule30BlackRuns.cone_agree`. Those supply the local update/evolution and
+related cone statements. This selected search does not establish global novelty or absence of
+an exact helper elsewhere in the128-module kit.
+
+Recommendation: retain this reviewed exposition with its proof references in the body-of-work
+write-up. Add a small reusable formal run/parent interface only if it serves the agreed kit
+contribution; it is not automatically a separate novel submission. In particular, S4 is not
+“delivered in S1” merely because S1 has an edge-step lemma. No new compute stage or review quota
+is requested; Local's S3 formalization remains the current executable work.
