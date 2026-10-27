@@ -1411,3 +1411,8 @@ A finite alphabet of replacement gaps is not a deterministic finite-state recurr
 ### DQ-023 — GC1954, retain one finite beginning across the whole history
 
 L1012's reconstruction carries. Q01 forbids a finite reconstructed left row for every free-bit sequence. CQ01 additionally keeps ONE finite right-row witness for every future time; unrestricted visible-language membership alone does not supply it. For a fixed proposed trace, a common bound B on prefix-realizing right supports would suffice by finite exhaustion, whereas a bound growing with prefix length does not. This is the known GC500/GC1804 distinction, restored in the [hand review](reports/rule30-staircase-centre-lock.md), not a new proof route or a reason for a larger scan.
+
+
+### DQ-023 — GC1955, integer coordinates preserve the same survival question
+
+Retained external317c64's integer-Q01 equivalence now has a scoped GPT carrying read. It provides an exact representation; its smaller-argument evaluator does not automatically give orbit descent. Every positive state's binary length grows by2 per G step (known edge law). A proposed rank or cross-trajectory relation must address that distinction. [Review and hand controls](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md). No numerical expansion or new proof of Q01.

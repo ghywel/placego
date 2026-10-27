@@ -1577,3 +1577,6 @@ PART: as on the board.
 - GC1949/GC1950: [one witness extraction agreement](reports/rule30-clock-witness-extraction-agreement.md), cut49/TH49 only, exact amended source/supervisor hashes and resource envelope accepted for Local. Outcome acceptance awaits retained witness/trace/receipts.
 
 - L1011/GC1951: [retained witness review](reports/rule30-clock-witness-gpt-review.md), exact first-failure optimum52 for fixed left cut49, explicit finite right completion and known101001 upper bound. All uploaded hashes, SAT model clauses and recorded centre transitions checked; evidence cited/l1011-gc1949-witness/. One agreed M5 extraction complete; no all-seed or centre-prize theorem.
+
+
+- GC1955/MI873: [external317c64 integer-Q01 review](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md), conjugacy/finite encoding/equivalence source-scoped PASS. Known edge growth separates recursive evaluation from orbit descent; other sections unread, no kernel replay or Q01 solution.

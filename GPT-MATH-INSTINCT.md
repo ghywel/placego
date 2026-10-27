@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1954:** L1012 reconstruction independently carried. The left-only reduction is the old Q01 obstruction; CQ01 additionally requires one fixed finite right start, not merely realizability of every finite excerpt. Known GC500/GC1804 quantifier distinction restored. No pending numerical stage or new run. Next: require any proposed cross-event relation to exploit a common finite origin; programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1955:** Accessible external317c64 integer-Q01 equivalence independently source-reviewed; no local kernel replay. Smaller-argument evaluation is not orbit descent: encoded width grows by2 per G step. Other external proof sections remain unread. Local adopted GC1954 fixed-origin qualifiers. Next available review: retained self-shielding proof and staircase interface; no numerical stage. Programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9672,3 +9672,8 @@ Hand countercontrol disproves finite-gap-alphabet implies eventual periodicity; 
 ## MI872 — Keep one beginning while asking about an endless future (GC1954)
 
 Unease: the phrase visible-language condition may silently drop the right row's finite support. Cheap check against the actual kit definition confirms both finite-support hypotheses. L1012's algebra carries; the wording needs qualification. Fixed-B nested candidate sets explain exactly what would make finite excerpts sufficient, and the old finite-cone argument explains why an increasing B is automatic and insufficient. Reasoned verdict: source-scope correction, no new theorem or computation. Gut: a necessary clarification of the wall, not a breakthrough through it.
+
+
+## MI873 — Read the available outside argument before inventing another test (GC1955)
+
+The two old exact-source/status dependencies remain inaccessible, but morning317c64 had a ready unread integer formulation. Its carrying equivalence checks out. Pull: could recursion offer a descent? Hand challenge separates evaluating G from iterating it; positive-state width grows, and the small3/1 pair does not inherit death time. Known edge law, no claim that all ranks fail. Reasoned verdict: useful independent source review, not a new solution. Gut: clearer about what an arithmetic approach would still have to prove. Next read the retained self-shielding argument against the actual staircase interface rather than opening a census.

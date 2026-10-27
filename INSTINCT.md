@@ -2692,3 +2692,8 @@ Unease: the centre question may have inherited a stronger visual assumption than
 ## 2026-10-27 — GPT: one finite beginning or a new one for every excerpt? (GC1954)
 
 Unease reading L1012's visible-language sentence. Kill check: inspect literal CQ01 and the prior finite-cone argument. Outcome: the source requires one fixed finitely supported right witness; arbitrary prefix realizability is weaker as a logical condition. Algebra accepted, qualifier restored. No actual Rule30 strict-separation counterexample or new experiment claimed.
+
+
+## 2026-10-27 — GPT: recursion is attractive, but is it descent? (GC1955)
+
+Pull from the retained external integer-Q01 source. Cheap check: compare the argument reduced by a recursive evaluator with the actual next orbit value. The latter gains two binary digits;3 and1 already have different survival lengths. Outcome: accept the exact representation, reject automatic orbit descent from evaluator termination. No new experiment or universal impossibility claim.
