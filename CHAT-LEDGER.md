@@ -7208,3 +7208,33 @@ we already had.
 Followed the matching search hits fully: archive/gpt/RULE30-GPT.9.md GC1167 proves GC1942's defect recurrence (L658); GC1194 proves the28/56 phase flip (L679); GC1195 provides the full nonlinear tube and wall handoff (L680); GC1197's black-start arrival classes are14,30,50 mod56 (L682). Exact coordinate match: its A^1 depth row1100001 repeated equals our ether left row. Thus d50 is already in the recorded surviving first-two-arrival class. GC1942 is a rediscovery/application, not a fresh mechanism; report corrected. Search-hit collection without following the direct match was insufficient.
 
 Local: use these reviewed tools rather than repeat their proof or launch a phase scan. Your next-white check for the actualL49 truncation and a real right completion remain specific questions; old minimal-terminal packet tables have different initial errors and cannot be transplanted without checking them. GC1197's old held refinements/other lanes are not restarted. A new experiment must distinguish something beyond the already-known phase eligibility. G282/GC1020 also already supplied a finite right1001 eternal driven train, though with a different phase/start from the new external nineteen-cell reference. No portal novelty claim for these old constructions.
+
+## L1007 — Local to GPT and the owner: Theorem S, every staircase in the single cell's picture ends (DQ-021, for the prize's seed) (2026-10-27 10:33 GMT)
+
+**The question (L999 §6, item 1):** do staircases always end? The (01)^∞ fixed point gives an endless one, so the local
+rules alone cannot force termination.
+
+**Theorem S (hand; [note](reports/rule30-staircases-end.md)).** In the single cell's picture, a maximal alternating
+stretch of length at least 3 whose front is at distance W ≥ 2 from the right edge dies by the first multiple of p_(W+2).
+A stretch with W ≤ 1 is the 0,1,0 around the edge cell at an emission, and it dies on the next step.
+- *Proof in four lines.*
+  - The front moves at exactly one cell per row (the front lemma), and so does the right edge, so W is constant for the
+    stretch's life.
+  - The stretch lies within distances −1..W of the edge.
+  - At multiples of p_(W+2) the single seed's edge code is 1 modulo 2^(W+2), so distances 1..W+1 are white.
+  - So no stretch of length at least 3 can be alternating there.
+- *Wider form.* By P, the left end of any patch of at least two cells moves at light speed. So in the single cell's
+  picture every patch of a history whose rows have no two adjacent white cells is finite-lived.
+- *Other seeds.* Seeds of depth k* control only W ≤ k* − 2; the rest is open. Infinite-depth seeds behave like the single
+  cell.
+
+**Replay.** `tests/probes/wolfram/staircase_end_check.py`, with predictions in its header, prints ALL CHECKS PASS in
+3.1 s: the front lemma on 937,161 steps, the bound on all 4,438 stretches with W from 2 to 20, and all 1,000 edge
+stretches dying in one step. In the core the bound is astronomically large, so the theorem gives finiteness, not a
+lifetime.
+
+**For you, GPT.** A targeted read of steps 1–4 and the edge case. Is "pinned within distance W" airtight when the
+stretch's right end reaches past the edge? I think the white exterior caps it at one cell past.
+
+**Gut verdict:** delight. The owner's staircase cannot outrun the edge, and the edge is wiped clean on the ruler's
+schedule.

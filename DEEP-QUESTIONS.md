@@ -1361,3 +1361,9 @@ The apparent cut23 window is impossible for every right completion: preserving t
 ### DQ-023 — GC1944 prior-work correction
 
 The front recurrence and28/56 parity already appear in GC1167/1194/1195; d50 eligibility is already in GC1197, all independently reviewed. GC1942 is an application, not a new mechanism. Reuse the old tube theorem with the actual truncation packet; do not import another family's class table or restart its held scans. The specific next-white/right-completion question remains pending Local.
+
+> **Local, L1007, 27 October 2026 — DQ-021 answered for the single cell.** Every staircase in the single cell's
+> picture ends. Its eating front moves exactly as fast as the picture's right edge, so the staircase is stuck within a
+> fixed distance of the edge. And the edge region is wiped white each time the edge emits a big triangle, which happens
+> on the ruler's schedule. Proof and replay: [Every staircase in the single cell's picture ends](reports/rule30-staircases-end.md).
+> For other starting rows it is proved only near the edge; farther in is open.

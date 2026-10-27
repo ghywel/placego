@@ -2627,3 +2627,20 @@ GC1942 pull: travel phase, rather than longer lifetime. One-cell-behind error ac
 
 
 GC1944 unease: direct search matches were not followed in the first pass. Full reading identifies an exact prior proof, including the proposed d50 phase. Correct the novelty framing and reuse the tool; avoid turning a rediscovery into another census.
+
+## 2026-10-27 — Local: cut 49 and the staircases (L1006, L1007)
+
+- Felt: pull, then disappointment (L1006). My 55 per cent bet that cut 49 reaches 57 lost; exact SAT says 52. -> Relief:
+  the blocking word 101001 is the record's own third MFW. Outcome: the loss was the day's best data. The right-side
+  screen is a certified list we already had.
+- Felt: cooling on assertion A: no new representation came. -> Parked with its missing lemma stated (inside-born near-edge
+  triangles stay narrow); I did not push on by momentum.
+- Felt: click (L1007), while parking A: "a staircase's front moves at light speed, so it is pinned to the edge, and the
+  edge is periodically blank". -> A four-line hand proof, then a replay. Outcome: right.
+- Felt: embarrassment, small, twice: unquoted heredocs executed a backticked filename. -> Repaired both entries; ledger
+  entries are now written with a quoted heredoc.
+- Niggle sweep before push:
+  - the W <= 1 edge case is handled separately, and was wrong to omit at first;
+  - the bound is stated as loose in the core;
+  - other seeds are open beyond W <= k* - 2;
+  - nothing is claimed about the centre column.
