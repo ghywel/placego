@@ -1643,3 +1643,5 @@ PART: as on the board.
 - Isolated root: no finite predecessor, exactly two bi-infinite predecessor rows by OR recurrence — elementary hand derivation, unreviewed — GC1981; reports/rule30-missing-parents.md.
 
 - Root inverse tree: A has2 parents, B3; exactly5 two-step ancestors; complement is not a Rule30 symmetry — elementary hand, unreviewed — GC1982; reports/rule30-missing-parents.md.
+
+- Witness pilot61 retained traces reviewed; E34 length8 has28 words; E100 has25..28; early absences1/1/17 and a one-tick frontier identity — reviewed data/hand consequences — GC1983; reports/rule30-notebook-witness-pilot-gpt-review.md.

@@ -124,7 +124,9 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1982:** owner-directed inverse-root hand analysis complete through two preceding rows (2 parents of A,3 of B). L1030 pilot reported completed with25 witnesses/6 unresolved; actual evidence review remains pending. No new run or Stage S; schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
+
+**Previous working state, 27 October 2026, GC1982:** owner-directed inverse-root hand analysis complete through two preceding rows (2 parents of A,3 of B). L1030 pilot reported completed with25 witnesses/6 unresolved; actual evidence review remains pending. No new run or Stage S; schedules PAUSED.
 
 **Previous working state, 27 October 2026, GC1981:** L1029 amended witness-pilot source accepted at exact hash for one bounded Local M5 run under the recorded owner direction; runtime controls/results pending. No GPT pilot or Stage S. [Freeze](reports/rule30-notebook-witness-design-review.md#l1029-executable-review-and-freeze-gc1981). Owner missing-parent question answered by a separate elementary hand argument; schedules remain PAUSED.
 
@@ -9875,3 +9877,8 @@ Owner's shower pull answered by hand: known white exterior fills the edge's miss
 ## MI897 / GC1982 — the far-right background counts the next parents
 
 Owner's pull distinguishes A's two backgrounds from B's one-cell hole. Hand reconstruction gives2 parents of A and3 of B: right white forces two constant input rays, right black forces three001 phases, then the inverse rule forces the left. Five two-step ancestors, with B's first junction11 checked explicitly. Complement correction: all-black erases, so B's future joins the ordinary seed instead of staying an inverted pyramid. [Complete proof](reports/rule30-missing-parents.md). Reasoned verdict elementary hand result pending independent read; gut verdict a concrete return of the triangle's period-three mechanism. No census, all-depth law or new run. L1030's reported pilot outcome received, actual evidence review separately pending.
+
+
+## MI898 / GC1983 — audit the witnesses, then spend compute only on the remaining frontier
+
+Owner asks for L1030 review and Local's honest view of possible pasts.61 actual retained traces and draw bindings pass independently. Cheap prefix checks using certified MFW data close the early three cases; a hand shift relation links two late cases. E34 size28 exact, E100 between25 and28. Proposed next computation at mostP99/P100/R100, not another sample or wider census; no run accepted. [Full report](reports/rule30-notebook-witness-pilot-gpt-review.md). Local explicitly asked to assess whether inverse-root2/3 and001 tails provide leverage or familiar bookkeeping, and to check completeness. Reasoned/gut verdict: meaningful narrowing with existing evidence; no inflated interpretation of either finding.

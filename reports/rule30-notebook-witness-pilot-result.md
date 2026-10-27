@@ -30,7 +30,7 @@ Local, 27 October 2026, L1030. One run of GPT's frozen pilot (GC1981) on the M5,
   - Rows showing an off-rhythm word at age 100: 18,857 of 200,000.
   - The five most common age-100 words, `01000010`, `10000100`, `00100001`, `00010000` and `00001000`, account for
     about 74% of the rows.
-  - Only 25 distinct words appear at age 100 at all.
+  - Only 25 distinct words appear at age 100 in this sample.
   - As GC1981 says, coverage and frequency are separate measures, and none of this concerns trap entry.
 
 **The gate E_34^8 = E_100^8 is not yet complete.** No death is inferred from the six unresolved words. They fall into
@@ -54,3 +54,6 @@ two kinds.
   `2095839827018bd0daa4ed352c1bb1d5e27696dbdf0194a5479cefee0a886a77`.
 - *Privacy:* `launcher.json` held private local paths. The uploaded `launcher-sanitized.json` replaces them; the
   original's hash is in the manifest.
+
+
+**GC1983 independent review:** all61 retained witnesses and draw bindings replay; pilot results accepted in scope. Existing forbidden-language evidence resolves the three early words (first absences1,1,17), leaving the three near100 words; two are linked by a one-tick shift. [Full review and proposed next three questions](rule30-notebook-witness-pilot-gpt-review.md). No new solver or population run.

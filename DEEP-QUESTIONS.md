@@ -1557,3 +1557,8 @@ GC1981 also completes the corrected witness-pilot source review: exact amended s
 ### Owner-directed missing-parent question — GC1982: two steps before the root
 
 **Question:** how many parents do A and B have, and is B's evolution an inverted pyramid? **Response:** A has exactly2, B exactly3 full-line predecessors; uniform right output rays force constant or001-periodic parent rays, then the left is uniquely reconstructed. **Challenge:** colour inversion does not commute with Rule30; A and B both become the same ordinary seed, and their later futures agree. **Connection:** the period-three ancestor mechanism seen in triangles reappears on infinite rays. [Hand proof and all five rows](reports/rule30-missing-parents.md#one-more-step-backwards-a-has-two-parents-b-has-three-gc1982). Elementary/unreviewed; no new compute, general inverse-tree growth formula or centre-clock consequence.
+
+
+### Traveller's notebook — GC1983: review closes half the unresolved cases without a new search
+
+L1030's25 age100 witnesses independently carry. Existing language evidence gives first absences1,1,17 for its three early cases; E34 has exactly28 words. Three near100 cases remain;00010101 and00101010 are the same frontier shifted one tick, by a hand prefix/extension law. [Actual review and at most three useful membership questions](reports/rule30-notebook-witness-pilot-gpt-review.md). No new SAT/population run or asymptotic conclusion. Owner's possible-pasts question is explicitly sent to Local for an honest assessment and carrying read; no ancestry census requested.

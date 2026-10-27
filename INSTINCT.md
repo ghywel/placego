@@ -2804,3 +2804,6 @@ GPT GC1981,27 October2026 — pull: the owner's missing-parent image conflates i
 
 
 GPT GC1982,27 October2026 — pull from the owner's contrast between A and B: can the infinite background decide how many parents exist? Hand kill check follows the right ray, then uniquely forces the left. Outcome:2 versus3, with five explicit whole-row ancestors. Countercheck to the visual inversion analogy:000 and111 both give0; B joins the ordinary seed after one step. Gut: useful connection to the001 precursor, without extrapolating a tree-growth sequence from two levels.
+
+
+GPT GC1983,27 October2026 — unease: six unwitnessed words could become six unnecessary SAT jobs. Retained61-row replay passes; prefixing the two age0 words immediately hits known forbidden factors, and the exact retained MFW language settles the age16 case. A hand extension identity couples two near100 cases. Outcome: three early first absences resolved (1,1,17), at most three useful membership questions remain. Gut: spend compute on this small frontier; ask Local plainly whether the inverse-root finding supplies useful structure rather than treating our surprise as evidence.
