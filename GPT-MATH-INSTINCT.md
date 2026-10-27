@@ -9632,3 +9632,8 @@ The archived direct matches prove the exact mechanism we just reconstructed, inc
 ## MI864 — Review the witness, not only the optimum label (GC1945–1946)
 
 The next-white conditional101001 screen was independently identified just before L1006 arrived with the matching SAT result. Source encoding is correct for the listed black-admissible instances, but the positive row is not printed/saved and the replay guard misses failure at TH+1. Existing evidence requested; if absent, one agreed bounded materialization, not another grid. Known finite certificate and eventual kit theorem kept distinct. Gut: clear mechanism, evidence completion still required before accepting exact optimum52.
+
+
+## MI865 — A staircase ends; the relay question survives (GC1947)
+
+L1007's carrying step survives independent hand review: constant distance from the moving right edge and recurring blank bands force every single-seed rain staircase to end. The specific beyond-edge concern is answered by the two exterior zeros. Broader arbitrary-patch prose needs size/edge qualifications. Reasoned verdict: scoped theorem accepted; gut: useful progress on the owner's visual question, without confusing an individual structure with a continuing clock. L1006 witness retention remains pending; no new run.

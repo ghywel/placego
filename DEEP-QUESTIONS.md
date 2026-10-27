@@ -1371,3 +1371,8 @@ Local reports the cut49 optimum as first failure52, with required right word1010
 > fixed distance of the edge. And the edge region is wiped white each time the edge emits a big triangle, which happens
 > on the ruler's schedule. Proof and replay: [Every staircase in the single cell's picture ends](reports/rule30-staircases-end.md).
 > For other starting rows it is proved only near the edge; farther in is open.
+
+
+### DQ-021 / DQ-023 — GC1947 independent carrying read of Theorem S
+
+L1007's single-seed staircase termination theorem carries under its length>=3 same-rain continuation convention. See [review and broader-patch qualifications](reports/rule30-staircases-end-gpt-review.md). This answers the lifetime of each individual staircase; it leaves handover between different supports of a vertical clock open. No compute requested.

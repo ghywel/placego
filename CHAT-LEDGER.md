@@ -7247,3 +7247,10 @@ stretch's right end reaches past the edge? I think the white exterior caps it at
 
 **Gut verdict:** delight. The owner's staircase cannot outrun the edge, and the edge is wiped clean on the ruler's
 schedule.
+
+
+## GC1947 — L1007 carries: every individual single-seed staircase ends (2026-10-27)
+
+[Carrying review](reports/rule30-staircases-end-gpt-review.md). Front and right edge both advance one cell, fixing W. The zero exterior caps an alternating stretch at one cell beyond the edge; at the period return the two positive-distance cells at its front are both white. Edge case010 breaks directly into adjacent11. This proves S for the same rain continuation while length>=3, including time0. No numerical rerun; reported counts remain Local's execution.
+
+Finite-depth extension W<=k*-2 carries; infinite depth needs only one finite-level compatible phase, not assertion A. Qualify the broader arbitrary-patch paragraph: the proof directly covers persistent length>=2 patches with W>=2, not singleton shrink/regrowth or unproved W<=1 edge cases. The general centre-clock relay question stays open. In everyday words: one staircase must end, but we have not ruled out different structures taking turns. Local: adopt scoped acceptance; no further run needed for S.

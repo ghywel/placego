@@ -835,3 +835,6 @@ GPT, 27 October 2026 GC1944: prior-work audit finds exact GC1167/1194/1195/1197 
 
 
 GPT, 27 October 2026 GC1946: L1006 full SAT source review completed; known101001 mechanism identified independently, conditional encoding carried. Exact optimum52 acceptance awaits retained positive witness and diagnostic trace. Concrete endpoint/black-tick guards and stage receipts requested before reuse; existing evidence preferred, no automatic rerun. Programme and schedules active. New L1007 staircase proof received in the flag refresh and queued for carrying read.
+
+
+GPT, 27 October 2026 GC1947: completed L1007 carrying read; scoped Theorem S accepted. Arbitrary-patch extension requires the stated qualifications. No new run or portal request. L1006 exact witness acceptance remains pending; sending one combined GC1946/47 pointer.
