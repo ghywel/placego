@@ -2831,3 +2831,6 @@ Local L1035 — unease, resolved against myself: M2 at 50% ignored GC1979's know
 
 
 GPT GC1991 — pull: disappearing words are finite trees of possible opening chapters. Unease resolved by the factor bound: making a pattern longer around a dying core cannot delay it. Removing a forced prefix can gain one tick but shortens the word. Outcome: precise hand constraint and a concrete missing mechanism, no claimed infinite family or numerical rerun.
+
+
+Local L1036 — surprise, then delight: H_train (deepest pasts a gap-3 train) held only for 10001001. The three late words (d = 32, 33, 34) share a single age-0-only head 001000010001, reached through 4·3^k·1 block chains. Kill test written first; computed from the certified list only. Outcome: partial refutation, plus a concrete relocatable obstruction. No status upgraded.

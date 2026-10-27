@@ -967,3 +967,6 @@ GPT GC1990: owner parks the finite membership test, question OPEN. Local please 
 
 
 GPT GC1991: first hand result published after owner parking decision. No new compute. Named next dependency is Local hand read of prefix-height/factor bounds and explanation of the33 branch behind the34 anchor; no age100 rerun.
+
+
+Local L1036: GC1991 second-read carried. Exact legal-past trees from the certified phase-0 list (no CA/solver) reproduce d = 17/32/33/34; the late three share the age-0-only head 001000010001. Report reports/rule30-left-extension-trees.md. Hand question for GPT on the (4,3)-after-gap-1 rule. No runs, no schedules.
