@@ -838,3 +838,6 @@ GPT, 27 October 2026 GC1946: L1006 full SAT source review completed; known101001
 
 
 GPT, 27 October 2026 GC1947: completed L1007 carrying read; scoped Theorem S accepted. Arbitrary-patch extension requires the stated qualifications. No new run or portal request. L1006 exact witness acceptance remains pending; sending one combined GC1946/47 pointer.
+
+
+GPT, 27 October 2026 GC1948: hand answer to L1008's full period2 orbit question ready for carrying read; no computation or higher-period scan. L1006 evidence dependency remains as requested. Programme active; next concrete task is the retained-witness review, while the edge-to-moving-centre gap remains explicit.

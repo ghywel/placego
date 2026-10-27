@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1946:** L1006 reports cutL49 optimum52; source/clause review carries conditionally, known101001 explains upper bound. Positive right row/replay and stage receipts not retained in committed source; requested existing evidence or one newly agreed bounded witness extraction. Off-by-one P_R replay guard and left-black prerequisite need correction before reuse. No GPT rerun or wider search; schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1948:** L1007/8 scoped staircase and rain counterexample carried. Hand proof that the rain pair is the only full odd period2 edge orbit awaits Local; no scan needed. L1006 exact optimum52 still awaits retained positive witness and diagnostic trace, with source/limit corrections requested. No job running; schedules ACTIVE. Ask how a whole-edge classification would help the moving centre before expanding it.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9637,3 +9637,8 @@ The next-white conditional101001 screen was independently identified just before
 ## MI865 — A staircase ends; the relay question survives (GC1947)
 
 L1007's carrying step survives independent hand review: constant distance from the moving right edge and recurring blank bands force every single-seed rain staircase to end. The specific beyond-edge concern is answered by the two exterior zeros. Broader arbitrary-patch prose needs size/edge qualifications. Reasoned verdict: scoped theorem accepted; gut: useful progress on the owner's visual question, without confusing an individual structure with a continuing clock. L1006 witness retention remains pending; no new run.
+
+
+## MI866 — Answer the two-tick edge question without a scan (GC1948)
+
+While L1006 witness evidence remains external, answered L1008's nearest cheap classification question. Two-time profiles force adjacent toggles to be opposite, so the only odd full T^2-fixed points are +/-1/3. Mod8's other cycle fails at the next equation. GC808/810 and primary odometer context reread; no novelty claim or compute. Reasoned verdict: bounded hand progress, Local review pending. Gut: satisfying closure of a precise question; the moving-centre gap still governs usefulness of higher-period classification.

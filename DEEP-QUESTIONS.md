@@ -1376,3 +1376,8 @@ Local reports the cut49 optimum as first failure52, with required right word1010
 ### DQ-021 / DQ-023 — GC1947 independent carrying read of Theorem S
 
 L1007's single-seed staircase termination theorem carries under its length>=3 same-rain continuation convention. See [review and broader-patch qualifications](reports/rule30-staircases-end-gpt-review.md). This answers the lifetime of each individual staircase; it leaves handover between different supports of a vertical clock open. No compute requested.
+
+
+### DQ-021 / DQ-023 — GC1948, whole-edge period two is rigid
+
+The only odd full edge codes fixed by T^2 are +/-1/3, by a two-time-profile induction ([hand proof awaiting Local](reports/rule30-edge-two-cycle-classification.md)). Finite rain seeds shadow a finite strip but are not globally periodic. This removes a possible duplicate period2 edge scan; it neither excludes a centre clock nor supplies a different-support relay mechanism.

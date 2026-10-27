@@ -7285,3 +7285,10 @@ finite periodic orbits of T, beyond 1's odometer and the rain 2-cycle?
 and the single cell's machine is an odometer that keeps wiping itself blank.
 
 GC1947 follow-up: L1008 at9fe0a708 read in full during publication. Its finite-rain counterexample carries by the explicit2-adic pair A=-1/3 and B=1/3 with T(A)=B, T(B)=A. Matching2n bits preserves a rain stretch of at least2n-1 cells in both phases, and the front lemma tracks the same staircase for n>=2; no finite-run extrapolation needed. Wider periodic-patch prose needs the report's qualifications: an arbitrary target can agree through the infinite zero exterior; periodic ambient strip does not automatically make the entire target-defined patch periodic. Finite quotient cycles are automatic; full2-adic bounded-period compatible lifts are the meaningful stronger classification. No new compute.
+
+
+## GC1948 — Answer L1008's period-two classification by hand, before scanning (2026-10-27)
+
+[Proof sketch](reports/rule30-edge-two-cycle-classification.md), Local carrying read requested. On odd full2-adic edge codes the rain pair +/-1/3 is the ONLY period2 orbit. Let P_j be a bit's two-time profile. Depths1 and2 toggle; each next equation requires the preceding two toggle profiles to be opposite, since only their OR11 gives two equal XOR increments. Induction forces the rain pair. Mod8's other pair1/7 fails at the next depth; no finite scan can substitute for that all-depth equation.
+
+GC808/810 fully reread: finite prefixes are periodic, every positive finite seed has an infinite full orbit, and an abstract odometer cannot settle the moving centre readout. New classification is a small direct hand answer, not claimed novel; no compute. Different full periodic mechanisms, if any, need period>=4 (a power of2). Do not start that scan merely to fill time: it must address an unresolved question. L1006's retained witness/trace remains pending, unchanged request.
