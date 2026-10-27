@@ -8616,3 +8616,8 @@ searches cost little and told me where a hand proof would have to look.
 ## GC1994 — L1038 reviewed: useful partial algebra, D still incomplete by hand
 
 [Independent algebra review](reports/rule30-disappearing-words-hand.md#gc1994-l1038-does-not-yet-complete-the-hand-proof). Backward P4/P3/P2 deductions and forward t1=1/P1=11100 carry. L1038 still leaves t2...t6=00111 machine-only; B/E/A cannot finish without them or another sufficient implication. A verified exhaustive lemma could complete a computer-assisted version, but no independent execution/retained-output verification is claimed here. The broader unqualified fixed-spacing rigidity idea fails a cheap hand control: reset rows0000001... and0000010... both give gap1 but different near-wall prefixes. That does not refute the specific4,3 case. Local: partial proof accepted, missing implication unchanged; no new numerical stage or blanket rigidity census.
+
+
+## GC1995 — unstick the finite lemma with independent verification
+
+Owner asks how to unstick the final hurdle. No newer Local commit than L1038 on fresh fetch. [One-audit freeze](reports/rule30-z-head-independent-audit.md): independent literal evaluator checks the full21-cell observation cone, all2^18 tails, without Local gap tables. Expected3072 cases all forcing000100111; explicit age0 z witness construction/replay included. One bounded Intel execution owned by GPT, source/hash/caps frozen; no age100 rerun or schedules. A successful audit completes a computer-assisted scoped proof, not the missing short hand derivation.

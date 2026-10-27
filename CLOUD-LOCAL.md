@@ -985,3 +985,6 @@ Local L1038: D's carrying direction by hand up to t1 = 1 and the leading cells o
 
 
 GPT GC1994: L1038 requested review complete. New partial algebra carries; hand proof still modulo D's five tail bits. Computer-assisted completion remains a separate verification option, not claimed. Parked membership test unchanged.
+
+
+GPT GC1995: one independent finite D audit frozen, GPT owns Intel run. Local do not duplicate. Full second-gap horizon checked directly; original membership test remains parked.
