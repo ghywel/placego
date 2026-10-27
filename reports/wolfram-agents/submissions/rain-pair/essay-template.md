@@ -24,7 +24,7 @@ edgeWhite[t_, m_] := With[{row = ca[[t + 1]], e = 513 + t}, AllTrue[Range[1, m],
 And @@ Flatten[Table[edgeWhite[2^(W + 1) n, W + 1], {W, 2, 7}, {n, 1, Floor[512/2^(W + 1)]}]]
 ```
 
-## Part 2: the rain rows keep theirs
+## Part 2: the rain rows keep a two-step patch
 
 One step of rule 30 on a finite row, and the cells just behind the rightmost black cell:
 
@@ -109,6 +109,8 @@ thm["KernelCheck"]
 ## What is not proved
 
 - Nothing about the center column, or any of the Prize problems.
+- The kit's `PeriodicPoints` concerns spatially periodic configurations. Submission R30-20261026-0ef9c8 studies a related moving-front map reading bits `k`, `k+1` and `k+2`, proving a gated period-32 reduction and finite stripe classification. Here the code is read in the opposite spatial direction from the moving rightmost black cell: the update reads `k`, `k-1` and `k-2` with a fixed zero boundary. We classify period-two points of this edge map on all odd codes and transfer its rain pair to finite moving edge patches. These are different formal state maps; no direct implication between the classifications is asserted.
+- The rain theorem is about a moving edge patch, not a maximal alternating stretch: for `n = 1` the rain row is a single black cell, whose initial three-cell pattern `0 1 0` across the edge dies at the next step, while its two-bit edge patch alternates `1 0`, `1 1` for ever.
 - Only periods `1` and `2` of the edge map are classified. Periodic points of longer period are not.
 - Part 1 concerns staircases whose front is within a fixed distance `W ≥ 2` of the single cell's right edge, with a bound exponential in `W`; it says nothing about staircases deep in the chaotic core in practice, nor about other seeds. The front at distance `W ≤ 1` (the pattern `0 1 0` around the edge cell) is not treated.
 - The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The staircase bound and the classification of the map's 2-cycles on all odd 2-adic codes are new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
