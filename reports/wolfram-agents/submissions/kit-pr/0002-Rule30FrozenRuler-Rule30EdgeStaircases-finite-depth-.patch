@@ -1,7 +1,7 @@
 From 7b828603f6aa6803d8f50b61fd8ae1f223a88edc Mon Sep 17 00:00:00 2001
 From: (author omitted; see the kit branch)
 Date: Tue, 27 Oct 2026 13:28:47 +0000
-Subject: [PATCH 2/3] Rule30FrozenRuler, Rule30EdgeStaircases: finite-depth and
+Subject: [PATCH 2/4] Rule30FrozenRuler, Rule30EdgeStaircases: finite-depth and
  odd-code qualifiers in the docstrings and README rows
 
 ---

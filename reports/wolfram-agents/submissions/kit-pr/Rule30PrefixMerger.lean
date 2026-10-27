@@ -17,6 +17,13 @@ holds for their truncations at any common depth `W ≥ 7` (`mergePrefix_truncate
 supported starts of every width `W ≥ 7` merge. The depth-7 cell is needed: with it white and the
 tail white, the two starts do not merge at time `2` (`mergePrefix_needs_seven`).
 
+**Inside the kit's reconstruction.** For free-bit sequences `f`, `g` that agree from index `1` on, with
+bits `1` and `2` black, `Theta f` reads the rewrite's prefix at depths `1 .. 7` with `a = f 0`
+(`theta_prefix`), `Theta f` and `Theta g` agree at every depth `k ≥ 7` (`theta_first_edit_local`), and
+their truncations at every common depth `W ≥ 7` merge at time `2` (`theta_truncate_merge`). The
+untruncated merger is the kit's `two_step_shift`; what is added is the localization, which survives a
+common finite cut.
+
 General facts used to read such mergers (`trace_tail_iff_row`, `merge_preserves_last_black`): two
 starts whose rows agree at time `T` have the same column `1` from `T` on and conversely; and rows
 that merge have their last black cells at the same depth.
@@ -191,5 +198,99 @@ theorem odd_edits_iff_guarded_merge (L M : Nat → Bool) (T : Nat) :
     · rcases ht with ht | ht
       · exact absurd ht hT
       · exact hearly t (by omega) ht
+
+/-! ### The rewrite inside the kit's reconstruction `Theta` -/
+
+/-- The column-`1` window of `alt f` up to time `8`, with `f 1 = f 2 = true`. -/
+def win (c e : Bool) (t : Nat) : Bool := if t = 1 then c else if t = 7 then e else true
+
+theorem alt_eq_win (f : Nat → Bool) (h1 : f 1 = true) (h2 : f 2 = true) (t : Nat) (ht : t ≤ 8) :
+    alt f t = win (f 0) (f 3) t := by
+  have e : t = 0 ∨ t = 1 ∨ t = 2 ∨ t = 3 ∨ t = 4 ∨ t = 5 ∨ t = 6 ∨ t = 7 ∨ t = 8 := by omega
+  rcases e with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> simp [alt, win, h1, h2]
+
+theorem recon_win (f : Nat → Bool) (h1 : f 1 = true) (h2 : f 2 = true) (k t : Nat)
+    (hkt : t + k ≤ 9) : recon (alt f) k t = recon (win (f 0) (f 3)) k t :=
+  recon_local k t (fun j hj => alt_eq_win f h1 h2 (t + j) (by omega))
+
+/-- **The prefix of `Theta f`.** With free bits `1` and `2` black, `Theta f` reads the rewrite's
+prefix at depths `1 .. 7`: `1 1 0 0 0 1 1` when `f 0` is white, `1 0 1 0 1 0 1` when it is black. -/
+theorem theta_prefix (f : Nat → Bool) (h1 : f 1 = true) (h2 : f 2 = true) :
+    ∀ k, 1 ≤ k → Theta f k = mergePrefix (f 0) (fun j => Theta f (j + 8)) k := by
+  intro k hk
+  by_cases h8 : 8 ≤ k
+  · obtain ⟨j, rfl⟩ : ∃ j, k = j + 8 := ⟨k - 8, by omega⟩
+    rfl
+  · show recon (alt f) k 0 = _
+    rw [recon_win f h1 h2 k 0 (by omega)]
+    have e : k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 ∨ k = 6 ∨ k = 7 := by omega
+    rcases e with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+      cases f 0 <;> cases f 3 <;> simp only [mergePrefix] <;> decide
+
+/-- **Changing free bit `0` changes only depths `1 .. 6`.** If two free-bit sequences agree from
+index `1` on and their bits `1` and `2` are black, their reconstructed starts agree at every depth
+`k ≥ 7`. -/
+theorem theta_first_edit_local (f g : Nat → Bool) (hrest : ∀ j, 1 ≤ j → f j = g j)
+    (h1 : f 1 = true) (h2 : f 2 = true) : ∀ k, 7 ≤ k → Theta f k = Theta g k := by
+  have g1 : g 1 = true := by rw [← hrest 1 (by omega)]; exact h1
+  have g2 : g 2 = true := by rw [← hrest 2 (by omega)]; exact h2
+  have late : ∀ k t, 2 ≤ t → recon (alt f) k t = recon (alt g) k t := by
+    intro k t ht
+    apply recon_local k t
+    intro j _
+    simp only [alt]
+    split
+    · rfl
+    · exact hrest _ (by omega)
+  have base : ∀ k t, 7 ≤ k → k ≤ 8 → t ≤ 1 → recon (alt f) k t = recon (alt g) k t := by
+    intro k t hk7 hk8 ht
+    rw [recon_win f h1 h2 k t (by omega), recon_win g g1 g2 k t (by omega), ← hrest 3 (by omega)]
+    have ek : k = 7 ∨ k = 8 := by omega
+    have et : t = 0 ∨ t = 1 := by omega
+    rcases ek with rfl | rfl <;> rcases et with rfl | rfl <;>
+      cases f 0 <;> cases g 0 <;> cases f 3 <;> decide
+  have step : ∀ m,
+      (recon (alt f) (7 + m) 0 = recon (alt g) (7 + m) 0 ∧
+        recon (alt f) (7 + m + 1) 0 = recon (alt g) (7 + m + 1) 0 ∧
+        recon (alt f) (7 + m) 1 = recon (alt g) (7 + m) 1 ∧
+        recon (alt f) (7 + m + 1) 1 = recon (alt g) (7 + m + 1) 1) := by
+    intro m
+    induction m with
+    | zero => exact ⟨base 7 0 (by omega) (by omega) (by omega), base 8 0 (by omega) (by omega) (by omega),
+        base 7 1 (by omega) (by omega) (by omega), base 8 1 (by omega) (by omega) (by omega)⟩
+    | succ n ih =>
+      obtain ⟨a0, b0, a1, b1⟩ := ih
+      have e : 7 + (n + 1) = 7 + n + 1 := by omega
+      have e2 : 7 + n + 1 + 1 = (7 + n) + 2 := by omega
+      rw [e, e2]
+      refine ⟨b0, ?_, b1, ?_⟩
+      · rw [recon_two, recon_two, b1, b0, a0]
+      · rw [recon_two, recon_two, late (7 + n + 1) 2 (by omega), b1, a1]
+  intro k hk
+  obtain ⟨m, rfl⟩ : ∃ m, k = 7 + m := ⟨k - 7, by omega⟩
+  exact (step m).1
+
+/-- **Common truncations of `Theta` starts merge.** If two free-bit sequences agree from index `1`
+on and their bits `1` and `2` are black, then for every common depth `W ≥ 7` the finitely supported
+truncations of their reconstructed starts have equal rows at time `2`. -/
+theorem theta_truncate_merge (f g : Nat → Bool) (hrest : ∀ j, 1 ≤ j → f j = g j)
+    (h1 : f 1 = true) (h2 : f 2 = true) (W : Nat) (hW : 7 ≤ W) :
+    zrow (truncate (Theta f) W) 2 = zrow (truncate (Theta g) W) 2 := by
+  have g1 : g 1 = true := by rw [← hrest 1 (by omega)]; exact h1
+  have g2 : g 2 = true := by rw [← hrest 2 (by omega)]; exact h2
+  have htail : (fun j => Theta f (j + 8)) = (fun j => Theta g (j + 8)) :=
+    funext fun j => theta_first_edit_local f g hrest h1 h2 (j + 8) (by omega)
+  have tf : ∀ k, 1 ≤ k → truncate (Theta f) W k =
+      truncate (mergePrefix (f 0) (fun j => Theta f (j + 8))) W k := by
+    intro k hk; simp only [truncate]; rw [theta_prefix f h1 h2 k hk]
+  have tg : ∀ k, 1 ≤ k → truncate (Theta g) W k =
+      truncate (mergePrefix (g 0) (fun j => Theta f (j + 8))) W k := by
+    intro k hk; simp only [truncate]; rw [theta_prefix g g1 g2 k hk, ← htail]
+  rw [zrow_congr_pos tf, zrow_congr_pos tg]
+  cases hf0 : f 0 <;> cases hg0 : g 0
+  · rfl
+  · exact mergePrefix_truncate _ W hW
+  · exact (mergePrefix_truncate _ W hW).symm
+  · rfl
 
 end Ruliology.CellularAutomata.Rule30PrefixMerger
