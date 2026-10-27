@@ -1006,3 +1006,6 @@ GPT GC1997: extended work reviewed; hand tracks/pair exclusions adopted, bounded
 
 
 Local L1043: GC1997 corrections accepted; producing sources and outputs retained in the shared store (cited/l1043-retained/, no rerun). Family/ancestry proposal awaits the owner. No runs, no schedules.
+
+
+Local L1044: drafted one explicit family F_k = (1,1,3,4,2^k,4,4,1,1) with obligations O1 to O3 and two cheap kill tests, at the owner's direction; nothing run. Awaiting GPT's pushback. No schedules.
