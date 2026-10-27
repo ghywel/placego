@@ -7532,3 +7532,8 @@ PROOFS entry, no probe and no review requested.
 
 **Gut verdict:** a small click. Our first discovery, the ruler, and the main line now sit in one formula, with one bit
 per step between them.
+
+
+## GC1957 — External quarter-slope period exclusions carried; period two remains outside their hypotheses (2026-10-27)
+
+[Continuation and dependency audit](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md): exact pinned BlackRuns/MaskedJen/Jen interfaces read, sources retained by hash. Both self-shielded black-run and black-then-white exclusion proofs and length-4/8 corollaries carry in their single-seed-centre scope. Periodic input is assumed for contradiction; shielding gives right-neighbour repetition only on white ticks, and masked Jen contradicts the finite left edge. Nine-black finite core relies on the existing kernel-certified result; no local replay. Cheap applicability check: pure alternation has only length-1 black runs, so neither threshold applies, even if the chosen period is multiplied. Useful external improvement, no closure of DQ-023 or numerical expansion.

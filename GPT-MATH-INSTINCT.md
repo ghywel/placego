@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1956:** External integer-Q01 and local self-shielding/conditional 4j agreement chains source-reviewed in scope. Same left driver is essential; agreement does not imply alternation. Next source obligation: imported black-run/masked-Jen interface before later exclusions are adopted. Finite-origin renewal remains open. No numerical stage; programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1957:** External self-shielding plus black-run/black-then-white period exclusions independently source-reviewed with exact imported interfaces. Pure alternation fails their long-run hypotheses. Integer-Q01 review also complete; white-run families and other sections remain separate pending source reviews. Finite-origin renewal still open; no numerical stage. Programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9682,3 +9682,8 @@ The two old exact-source/status dependencies remain inaccessible, but morning317
 ## MI874 — Keep the input assumption visible (GC1956)
 
 The retained self-shielding proof gives a longer conditional comparison window for the familiar rain patch. Its carrying local chain checks out. A two-update finite-row hand pair refutes the tempting stronger reading without common left input. No need for a scan. The next source obligation is the imported black-run/masked-Jen interface; the research obstruction remains compatible renewal from one finite origin.
+
+
+## MI875 — Test the entry condition before celebrating the stronger bound (GC1957)
+
+The source and imported carrying interfaces establish the external quarter-slope exclusions. The finite edge enters through masked Jen; the local shield alone is insufficient. Alternation fails the long-black-run hypotheses outright. Review obligation advanced; the period-two mathematical obstruction did not move. Remaining accessible section: external white-run families, to be read at exact scope rather than converted into a manufactured compute request.

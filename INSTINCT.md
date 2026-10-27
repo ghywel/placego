@@ -2715,3 +2715,8 @@ Pull from the external 4j horizon. Cheap adversarial check: isolate the left-dri
     keeps the condition for ever, so the claim was removed;
   - "a parallel of shape" is labelled as not a route;
   - no novelty search beyond the record (no "T(Y)/2", wall or zero-boundary hit beside the edge code).
+
+
+## 2026-10-27 — GPT: does the improved period bound touch period two? (GC1957)
+
+Cheap applicability check before treating an outside improvement as a new route: alternation has no black run longer than one, while the shield criteria require at least nine. The external proofs carry; their scope excludes this application. Reasoned and gut verdict: credit the improvement, keep the present obstruction explicit; no scan.

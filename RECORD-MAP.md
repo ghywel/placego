@@ -1583,3 +1583,6 @@ PART: as on the board.
 
 
 - GC1956/MI874: [external self-shielding review](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md), local WBAt/right-wall/box/cone/4j proof chain carried. Same left driver required; agreement is not alternation. Later exclusion dependencies remain separate, no numerical run.
+
+
+- GC1957/MI875: [self-shielded exclusion dependency review](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md), pinned BlackRuns/MaskedJen/Jen interface, both later exclusion proofs and length-4/8 corollaries carried in single-seed-centre scope. Retained evidence cited/gc1957-self-shield-dependencies/. Thresholds do not apply to pure period two; no local kernel replay.

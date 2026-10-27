@@ -1421,3 +1421,8 @@ Retained external317c64's integer-Q01 equivalence now has a scoped GPT carrying 
 ### DQ-023 — GC1956, protection from one side is not a renewable clock
 
 External self-shielding gives a width-2j alternating strip a comparison horizon s<4j when the two histories have the same left driver. The local mechanism is the reviewed rain front and black right shield. Neither identical initial strips nor finite agreement proves alternation or compatible renewal from one finite seed. [Carrying source read and hand countercheck](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md). No new numerical stage.
+
+
+### DQ-023 — GC1957, check the entry condition before applying an improved bound
+
+External self-shielded period exclusions now have a carrying source/dependency read. They need long consecutive black runs; an alternating centre has length-1 black runs and fails both entry conditions. This holds even for a nonminimal chosen period. [Exact scope and proof chain](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md). No experiment or claim of progress through the finite-origin wall.
