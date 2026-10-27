@@ -1656,3 +1656,6 @@ PART: as on the board.
 
 
 - GC1991: disappearing-word past-tree recursion, wrapper deadline bound and forced-prefix deletion delay; elementary hand consequences pending read — reports/rule30-disappearing-words-hand.md.
+
+
+- GC1996/L1037: z=001000010001 occurs only atage0 beside the alternating wall; hand R/B/A/E plus independent full-cone finite D, explicit witness — COMPUTER-ASSISTED proved — reports/rule30-z-head-independent-audit.md.

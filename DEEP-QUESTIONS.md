@@ -1609,3 +1609,8 @@ L1037's z would force wall-side0110, forbidden after two clamped updates. R/B/A/
 ### GC1994 — hand completion still pending, despite a smaller gap
 
 L1038 derives t1=1 and intermediate prefixes by hand; t2...t6 remain exhaustive-only. Full shared-head hand exclusion is still modulo D. Two simple reset rows with identical gap1 disprove unrestricted fixed-spacing patch rigidity; particular4,3 rigidity remains a candidate. [Review](reports/rule30-disappearing-words-hand.md#gc1994-l1038-does-not-yet-complete-the-hand-proof). No new compute.
+
+
+### GC1996 — a complete local no-regeneration proof
+
+Independent full-cone D audit plus carried hand R/B/A/E completes d(001000010001)=1 for arbitrary right rows beside the fixed alternating wall. Finite locality covers all times, not just sampled ages. [Proof and receipts](reports/rule30-z-head-independent-audit.md#gc1996-passed-scoped-computer-assisted-proof-complete). COMPUTER-ASSISTED scoped proof; hand D and systematic longer-lifetime family remain open, natural-centre prize unaffected.

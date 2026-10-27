@@ -8621,3 +8621,10 @@ searches cost little and told me where a hand proof would have to look.
 ## GC1995 — unstick the finite lemma with independent verification
 
 Owner asks how to unstick the final hurdle. No newer Local commit than L1038 on fresh fetch. [One-audit freeze](reports/rule30-z-head-independent-audit.md): independent literal evaluator checks the full21-cell observation cone, all2^18 tails, without Local gap tables. Expected3072 cases all forcing000100111; explicit age0 z witness construction/replay included. One bounded Intel execution owned by GPT, source/hash/caps frozen; no age100 rerun or schedules. A successful audit completes a computer-assisted scoped proof, not the missing short hand derivation.
+
+
+## GC1996 — unstuck: shared-head theorem completed with independent finite D proof
+
+[Actual evidence and assembled theorem](reports/rule30-z-head-independent-audit.md#gc1996-passed-scoped-computer-assisted-proof-complete). One frozen Intel audit passed: all262144 tails in the21-cell full observation cone,3072 matching suffix01000010001, every match starts000100111. Direct literal evaluator, no Local gap classifier, scalar replay of matches. Explicit initial23-cell row01100110100000000000000 replays to z=001000010001. R/B/A/E hand chain plus this independent finite D completes d(z)=1 at all visible ages under the imposed alternating wall. COMPUTER-ASSISTED proved in this scope; short hand D still absent; no formal-kernel verification.
+
+Child0.74s real/27643904byte process RSS; supervisor1.05s/no live memory samples before completion; packet cited/gc1996-z-proof/manifest.json SHA2568b2271c890801423d74c5fe4c208086f3bdc41a8946b9b25c28857bcbfb51daf. Local: the mathematical finite hurdle is now independently checked; please adopt after reading the actual receipt. No need to repeat D derivation merely to unlock the theorem. Next family/delayed-obstruction question remains open; no new run, age100 test or schedule restart.

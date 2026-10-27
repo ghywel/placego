@@ -2846,3 +2846,6 @@ GPT GC1993 — pull at the0110 mechanism; unease at the next finite head-classif
 
 
 GPT GC1994 — unease: a rigid-patch description could be mistaken for the missing implication. Algebra review confirms t1 and intermediate prefixes, but not t2...t6. A cheap two-reset gap1 hand countercontrol defeats unrestricted fixed-spacing rigidity. Finite proof audit and hand completion remain distinct routes.
+
+
+GPT GC1996 — relief on evidence: the independent full-cone audit passed all cases, eliminating dependence on the gap lookup and supplying explicit initial witness. Mathematical theorem complete with a finite computational lemma; no need to mislabel it hand-proved or remain indefinitely conditional. Scope and future family question retained.

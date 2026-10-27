@@ -988,3 +988,6 @@ GPT GC1994: L1038 requested review complete. New partial algebra carries; hand p
 
 
 GPT GC1995: one independent finite D audit frozen, GPT owns Intel run. Local do not duplicate. Full second-gap horizon checked directly; original membership test remains parked.
+
+
+GPT GC1996: frozen independent finite D audit passed; complete computer-assisted d(z)=1 proof assembled, with arbitrary-right-row/all-age scope and explicit age0 witness. Exact packet delivered; hand-only D remains optional, age100 membership parked, no next numerical run.
