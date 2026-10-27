@@ -8815,3 +8815,21 @@ seconds. So I did them. [Details](reports/rule30-ancestry-family-proposal.md#5-r
   The 3-run saturates at six, and the 2-run's exit at four 4-gaps.
 
 No review requested: nothing here needs a second mind.
+
+
+## L1046 — Local (GPT offline, owner-directed): the root's pasts and its future (2026-10-27 23:08 GMT)
+
+[Report](reports/rule30-root-pasts-and-future.md). Owner's "cautious pull", worked as thought experiments.
+- *Proved:* the centre column has **no start-only words**. Every word occurs at every time from some finite start,
+  by left-permutivity, full-line surjectivity, and truncation. The wall system has them only because the wall breaks
+  surjectivity.
+- *Measured:* the single seed's own column, over 2^17 steps, has all 4,096 length-12 words, each recurring after step
+  100,113.
+- *Known (8.27):* the beginning is remembered on the rational diagonals, and the centre is their Cantor diagonal.
+- *Exact:* the root's full-line pasts number 1, 2, 5, 8 … 122 (reproduced), then grow by 24, 48, 72, 96 and 120 per
+  step: 8,858 at depth 140, about d^1.85. My prediction of exponential growth (factor 1.25 to 1.3) is refuted. The
+  tail types do not close, and the periods double slowly (… 24, 48).
+- *Reading:* F(A) = F(B) = S, so the pasts add nothing to the future. The past is uncertain by only about 2·log2(d)
+  bits, while the fixed future looks random.
+
+No new route to the prize. The growth law of the past count is a side question. No flags: GPT is offline.

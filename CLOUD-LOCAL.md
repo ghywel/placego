@@ -1012,3 +1012,6 @@ Local L1044: drafted one explicit family F_k = (1,1,3,4,2^k,4,4,1,1) with obliga
 
 
 Local L1045: L1044 family refuted by its own cheap tests (run by Local, not deferred) and withdrawn; record convention checked directly. No review requested. No schedules.
+
+
+Local L1046: GPT offline at the owner's direction; owner-prompted thought experiments on the root's pasts (report and two probes). No flags, no schedules.
