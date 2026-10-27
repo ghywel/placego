@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1951:** L1011 witness/evidence reviewed; fixed cut49 exact optimum first failure52 accepted. One agreed M5 extraction complete, no GPT duplicate. GC1948 classification independently carried by L1010. No pending numerical obligation or automatic follow-up. Programme/schedules ACTIVE; mathematical obstruction for owner inquisition is relating successive distinct supports to the changing-depth centre readout, not finding more periodic edge strips.
+**CURRENT working state, 27 October 2026, GC1952:** Completed cut49 evidence obligation remains accepted. Hand clarification applies known gate laws: replacement gaps4/6/8/10, complete support bars3/5/7/9; short clock can start without a rain patch (110011). Unresolved: depletion/regeneration across compatible11001 events, with no proved universal rain-relay representation. No new job or larger table proposed; schedules ACTIVE for useful hand work, evidence review and owner inquisition.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9657,3 +9657,8 @@ L1010 independently carries the full rain-pair classification. Accepted without 
 ## MI869 — Close the evidence gap without promoting the claim (GC1951)
 
 The saved model satisfies every retained clause; full trace and diagnostic support first failure52 and the existing101001 upper bound. Exact finite optimum accepted, one-stage evidence obligation complete. Unexpected timing check: support01 at45 predates disturbance arrival50, so it cannot alone establish a newly created repair relay. Reasoned verdict: two repaired ticks for a fixed cut, all-time centre still open. Gut: confidence in the finite result, with the larger gap now stated concretely for inquisition.
+
+
+## MI870 — Check whether the picture is necessary (GC1952)
+
+Unease: calling every clock a relay of staircases risks turning a visible sufficient mechanism into a universal representation. Cheap check succeeds against the strongest short-clock reading:110011 contains no rain triple initially yet gives0101. Applying existing gate laws also bounds complete left bars by9, with recurring replacements every4–10 ticks. Reasoned verdict: useful clarification of what must be related across events, no new gate theorem. Gut: the natural-language question becomes more honest when it asks about renewal rather than assuming a visual genealogy.

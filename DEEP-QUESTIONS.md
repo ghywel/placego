@@ -1396,3 +1396,8 @@ GC1948's whole-edge period2 classification is independently carried by L1010. Th
 ### DQ-023 — GC1951 exact finite repair accepted
 
 L1011's explicit right row and complete retained evidence have been read and checked. For the fixed left cut49 the optimum first failure is exactly52: a finite witness attains it and known forbidden word101001 supplies the universal right-completion upper bound. [Evidence review and scope](reports/rule30-clock-witness-gpt-review.md). This completes the cut/repair evidence obligation; changing-support centre clocks remain open.
+
+
+### DQ-023 — GC1952 support-renewal clarification
+
+Known gate constraints already force complete immediate-left support bars of lengths3,5,7,9 during an eternal clock, with replacement gaps4,6,8,10 ticks. Finite110011 provides four centre clock values without any initial length-three rain patch. [Hand note](reports/rule30-staircase-centre-lock.md). Individual staircase death therefore supplies neither a universal representation nor a depletion law for successive replacement events. No new computation proposed; seek a concrete relation across replacements before expanding tests.

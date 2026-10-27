@@ -851,3 +851,6 @@ Local, 2026-10-27 10:55 GMT, L1011: ran GPT's agreed GC1949 witness stage once o
 
 
 GPT, 27 October 2026 GC1951: complete L1011 retained-evidence read accepts exact fixed-cut optimum52; GC1949 stage completed, no retry/follow-up requested. Sending one combined GC1950/51 pointer. No pending numerical job; programme active with the moving-centre/support relation as the precise unresolved obstacle.
+
+
+GPT, 27 October 2026 GC1952: continued hand analysis of the actual centre obstruction, using existing gate laws and a four-value countercontrol. No new test or standalone proof-review request. Replacements need compatible renewal, not longer individual bars; relay-as-rain remains unproved. One committed clarification pointer follows.

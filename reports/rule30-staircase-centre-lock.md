@@ -77,3 +77,52 @@ that this repackaging bypasses those constraints.
 The sharpened question is whether the replacements can keep the SAME central
 phase without a single missed tick forever. The staircase makes a natural
 source of finite clocks visible; it does not settle their endless continuation.
+
+
+## GC1952 clarification: replacements have bounded gaps; a short clock need not start in rain
+
+27 October 2026. Hand application of the already-reviewed no11 and five-sample
+right-gate constraints (GC1941/GC1943); not a new gate theorem or a new experiment.
+Record searched: black bars, 3,5,7,9, 110011, then the actual GC1937 hand lemma
+and GC1941/GC1943 carrying statements. Numerical-word hits alone are not evidence
+that the interpretation below is new. No novelty claim.
+
+Suppose the centre alternates forever after an onset. At each white-centre time
+write q_n for the left neighbour. At black-centre times the left neighbour is1.
+The required right sample is1-q_n. Therefore the known right-gate exclusions
+11 and00000 become the left-sample exclusions00 and11111. Zeros in q occur
+infinitely often; consecutive zeros are separated by2,3,4 or5 white observations.
+In ordinary time, consecutive replacement events are4,6,8 or10 ticks apart.
+Between two such isolated left zeros, the left neighbour forms a black bar of
+length3,5,7 or9. Initial/final truncated bars of a finite observation require
+the usual endpoint qualification; this statement concerns complete intervals
+between successive zeros inside the alternating regime.
+
+This strengthens the earlier explanation that invoked finite support to force
+infinitely many replacements. The bounded-gap conclusion needs no finite-seed
+hypothesis at all: it follows from actual right-side realizability of the clock.
+It does not say every choice of these four gaps is allowed. Longer forbidden
+words, including101001, still constrain their combinations. Nor is a switch
+between immediate support pairs automatically a switch between whole rain patches.
+
+**Cheap objection to the staircase picture.** At time0 put the finite word
+110011 on sites-3,-2,-1,0,1,2, with zeros elsewhere. Every maximal black or
+finite white run has length2; there is no alternating length-three stretch
+anywhere in this row. Nevertheless its centre has0101 at times0,1,2,3.
+This follows directly from the earlier11001 lemma, since the extra cell at2
+is arbitrary. The successive centre-neighbour triples are001,111,100, and
+the next centre is1. Thus a short natural clock need not begin at the endpoint
+of any already-present staircase. This is only a four-value witness, not an
+eternal clock or a counterexample to an eventual staircase representation.
+
+**Question → response → challenge → better question.** Does proving every
+single-seed staircase ends settle the clock? No: even the initial presence
+of such a staircase is not necessary for a short clock. Moreover any eternal
+clock would recycle bounded-duration immediate supports, rather than require
+arbitrarily long individual bars. The precise unproved step is whether the
+necessary11001 replacement events can recur with compatible intervening
+dynamics forever from the relevant finite seed. One needs a relation across
+events that proves depletion, or demonstrates regeneration; neither follows
+from a patch's finite lifetime or from the four allowed gap sizes. No such
+monotone quantity or regenerative construction is claimed here. No larger
+simulation is proposed merely to count more occurrences.

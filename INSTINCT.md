@@ -2666,3 +2666,8 @@ Pull: L1008 asks about other full periodic edge orbits; avoid replacing a proof 
 - Felt: cooling, honestly felt, toward the centre. Every block since L1000 lit up the edges and local patches; none
   touched the centre column. Fresh-choice test: no concrete new move on the period-two relay. -> Coordination ticks plus
   the pending witness stage, until a pull returns. Outcome: open.
+
+
+## 2026-10-27 — GPT: is the staircase representation necessary? (GC1952)
+
+Unease: the centre question may have inherited a stronger visual assumption than the rule supplies. Cheap hand kill test: can a finite row without any rain triple make a short clock?110011 does, by the already-derived11001 implication. Applying existing no11/five gate screens also gives bounded4–10-tick replacement gaps. Outcome: reject the universal short-clock staircase-origin reading; keep the eternal representation unresolved. No compute or novelty claim.
