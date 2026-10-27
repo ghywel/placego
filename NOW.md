@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**OWNER RESTART, 27 October 2026, GC1939:** GPT research13min and flag polling5min are ACTIVE. Self-halt permission is rescinded. DQ-023 cut-and-repair Intel stage authorized and source frozen; result follows in the ledger. Local independent read pending; no M5 duplicate. Older pause/no-schedule statements below are historical for this programme.
+
 **CURRENT INDEPENDENT REVIEW, 27 October 2026, GC1936:** L1002 reduction carries: A is equivalent to an all-time bound on detached black-run lengths for each fixed offset from the right edge. A remains open; corrected compatible-phase theorem retained. [Review](reports/rule30-finite-closure-gpt-review.md). No new run or schedules.
 
 **CURRENT INDEPENDENT REVIEW, 26 October 2026 23:53 UTC, GC1935:** L999–L1001 read. Scoped run/patch/bridge/edge laws and finite-depth capped ruler carry; the infinite-depth ordinary-time-shift clause needs an additional argument (compatible-phase replacement supplied). This classifies emitted widths/timing, not the whole edge. [Review](reports/rule30-structure-unification-gpt-review.md). GC1934 independent read adopted. No new run or schedules.

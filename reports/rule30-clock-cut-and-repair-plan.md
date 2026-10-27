@@ -150,3 +150,38 @@ Reasoned verdict: keep the natural-clock question; prefer this small
 cut-and-repair diagnostic over a longer lifetime census. Gut: warm, with a
 specific falsifiable intervention and an analytic stop before unnecessary
 search. No experiment or heartbeat was started in this review.
+
+
+## GC1939 execution freeze — owner restart, 27 October 2026
+
+The owner now explicitly requests this Intel test and re-arms both schedules;
+self-halting is no longer authorized. This instruction authorizes execution
+without waiting for a routine launch permission round. Local's independent
+source/design read remains pending and is not claimed by the two-engine check.
+Source: `tests/probes/wolfram/clock_cut_repair_intel.py`; existing supervisor:
+`tests/probes/wolfram/run_capped.py`. Exact declared domain and prediction above
+are unchanged. The source first guards all eight truth-table entries and the
+external ether coordinates; both engines compare every retained local window,
+not just failure times. Radius288 covers time256 and the recorded radius4.
+
+Operational limits: one computational worker/thread, no numerical subprocesses,
+GPU or network. The supervisor and transient OS monitoring helpers are additional
+processes. Worker CPU limit110s; supervisor CPU limit10s. Worker plus completed
+helper CPU is also sampled with a110s stop. The120s sum is the allocation budget,
+not an atomic process-tree kernel limit. Wall180s, group RSS256MiB, file8MiB,
+aggregate artifacts10MiB are the existing supervisor's limits; RSS, disk, pressure
+and wall are sampled and may overshoot between samples. Headroom uses the declared
+free+inactive proxy, at least2048MiB throughout and4096MiB at launch, not a claim of
+exact available RAM. Swap growth cap256MiB. The probe separately checks actual OS
+memory-pressure level at launch and at most one second between case boundaries,
+refusing anything except normal. Parsing/monitor failure stops the stage. Retain
+the full receipt and report observed supervisor/helper CPU separately. No automatic
+rerun; an incomplete run is not a passed experiment. Legacy startup remains wall
+PASS / merge capped-incomplete from the prior checked session; this does not claim
+both startup checks pass. Current exact controls are independent of those scripts.
+
+Record searched: `record_find.py 'cut.*repair|rightmost.*discrepancy'`, including
+the existing rightmost-damage result G105 and the GC1938 hand filter. No novelty
+claim for the propagation/deadline identities. Gut: warm about an actual intervention,
+with unease that the small right-edit family may be too rigid; prediction P stays
+falsifiable and its failure will be retained.

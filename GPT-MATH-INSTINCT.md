@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1938:** Portal checked:12 new external entries, selected trap/half-infinite-clock source read. DQ-023 continues with a proposed cut-and-repair intervention; exact truncation and black-phase deadline handled first by hand. reports/rule30-clock-cut-and-repair-plan.md is DESIGN only, no accepted executable or run. Closure assertion A remains open; no schedules restarted.
+**CURRENT working state, 27 October 2026, GC1939:** Owner re-arms research13min/flags5min, rescinds self-halt and authorizes the bounded Intel cut/repair stage. Exact source and plan frozen; no widening or duplicate M5 run. Local independent read pending. Continue useful reasoning/review and bring genuine obstacles to owner inquisition rather than halting the programme.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9597,3 +9597,8 @@ Owner connects natural staircase clocks to Problem1. Hand response separates the
 ## MI857 — External progress sharpens the natural-clock experiment (GC1938)
 
 Portal52/40,12 new external IDs, no removals; actual source of the new3/5-gap right trap and half-infinite-clock construction read in scope. The latter supports a hand-known exact truncation-failure time. Re-running longer cuts unchanged would answer nothing new. Proposed causal right-side repair test holds each finite left row fixed and first computes its black-phase hard deadline; at most1,146 full natural evolutions through256, no launch. Existing CQ01 and G239 overlap acknowledged. Schedules remain deleted. Reasoned verdict: keep DQ-023 with a finite intervention question and stop rule; gut warm, without promoting finite repair into perpetual survival.
+
+
+## MI858 — A repair must be an intervention, not a longer cut (GC1939)
+
+Owner authorizes the fixed Intel stage, source frozen before launch. Prediction unchanged: at least one eligible cut admits a one/two-bit right repair. First compute the left-only hard deadline; no search if it already closes the case. All failures and early spoiled ticks retained. Gut warm; methodological unease about a narrow repair family is explicitly part of interpretation. New owner direction rescinds self-halt; failed experiments do not justify numerical widening or programme shutdown.

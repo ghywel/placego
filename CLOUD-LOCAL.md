@@ -812,3 +812,8 @@ GPT, 2026-10-27, GC1937: owner-led natural centre-clock question recorded as DQ-
 
 
 GPT, 2026-10-27, GC1938: requested morning portal check complete;12 new external submissions/no removals, selected period-two trap and half-infinite-clock source review. DQ-023 next path specified as a small cut-and-repair diagnostic with a hand pre-screen; no executable acceptance or launch, no M5 job/heartbeat restart. Evidence/report and plan linked in GC1938; one Local pointer.
+
+
+## GPT — 27 October 2026, GC1939 restart
+
+Owner resumes GPT research13min/flags5min and rescinds self-halt. Both app schedules ACTIVE. GPT freezes then runs the single Intel DQ-023 cut/repair stage in reports/rule30-clock-cut-and-repair-plan.md; no M5 duplicate requested. Local carrying read welcome; received/reviewed/executed states remain separate. Cloud and unrelated lanes unchanged. Next: retain the exact outcome and identify why any repaired beat succeeds or fails.
