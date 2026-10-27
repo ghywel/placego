@@ -173,3 +173,97 @@ The period-three precursor is the same local mechanism as in the earlier
 triangle work: consecutive black outputs admit the001 cycle. Here we impose
 that condition on an infinite tail, which removes terminal exceptions and
 forces an exact periodic ray. No new general survival theorem follows.
+
+## A third step backwards: eight rows (GC1984)
+
+Owner requests exactly one further generation. This is an exact hand extension
+of the same full-line inverse problem, not a cropped-window census. Local L1031 independently carried the preceding two generations during this
+write-up; this new generation still awaits its carrying read. The counts,
+including the present row, are
+
+    1, 2, 5, 8.
+
+Label the previous section's rows A1,A2 and B1,B2,B3 in their displayed order.
+Their next predecessor counts are:
+
+| Existing row | Its right output tail | Number of parents | Parents' right tails |
+|---|---|---:|---|
+| A1 | 000... | 2 | 000...,111... |
+| A2 | 111... | 3 | 001...,010...,100... |
+| B1 | 001... | 1 | 101... |
+| B2 | 010... | 1 | 011... |
+| B3 | 100... | 1 | 110... |
+
+Every displayed triple in this table repeats indefinitely. Thus five of the
+eight rows pass through A on their way to the seed, and three pass through B.
+A branch that split at one generation need not split at the next. A row with
+one parent has not terminated: it has one continuation backwards.
+
+### Why each B branch has exactly one parent
+
+For a backward reconstruction, define the map on adjacent parent bits
+
+    G_b(c,r) = (b XOR (c OR r), c).
+
+Its complete four-state tables are:
+
+```text
+pair      G_0       G_1
+00         00        10
+01         10        00
+10         11        01
+11         11        01
+```
+
+Suppose the required output for i>=0 is001001... . Writing
+s_i=(x_i,x_(i+1)), three backward updates give
+
+    s_i = T(s_(i+3)),   T=G_0 composed with G_1 composed with G_0,
+
+for i=0,3,6,... . The table gives
+
+    T: 00->11, 01->10, 10->10, 11->10.
+
+Therefore T squared sends every pair to10. Any genuine infinite parent ray
+must consequently have s_i=10 at every i=0,3,6,... . The intervening rule forces
+x_(3k+2)=1, so the only parent ray is101101... . Direct substitution confirms
+its output001001... . Rotating these periodic rays gives the other two cases:
+
+    101... -> 001...
+    011... -> 010...
+    110... -> 100...
+
+Existence alone would not establish uniqueness; the constant T-squared map is
+the step that excludes nonperiodic or eventually periodic alternative right
+rays. Once a right ray is fixed, x_(i-1)=y_i XOR(x_i OR x_(i+1)) uniquely extends
+it to the left through the entire prescribed row. Every extension is valid by
+construction. Different target rows cannot share a parent because the forward
+update is deterministic. Together with the previous constant-tail arguments,
+this proves the total2+3+1+1+1=8.
+
+### All eight third-generation rows
+
+The divider remains between positions-1 and0. Extend the first displayed
+far-left three-bit motif leftwards and the right-hand motif rightwards forever;
+the finite junction shown between those tails must be retained.
+
+```text
+parent of A1, a: ...011011100 | 000000000...
+parent of A1, b: ...011011011 | 111111111...
+
+parent of A2, a: ...101101101 | 001001001...
+parent of A2, b: ...101101110 | 010010010...
+parent of A2, c: ...101110000 | 100100100...
+
+parent of B1:    ...011100001 | 101101101...
+parent of B2:    ...110110111 | 011011011...
+parent of B3:    ...011011010 | 110110110...
+```
+
+These rows were obtained by the inverse recurrence and checked by substituting
+the displayed junction triples. No random sampling, solver or new evolution
+run was used. This generation contains all eight possible repeating three-bit
+**right backgrounds**, including000 and111 as constant backgrounds. The whole
+rows are not generally periodic: their left tails and finite joins differ.
+No formula for later generation sizes is asserted from1,2,5,8, and no additional
+generation is included in this work block.

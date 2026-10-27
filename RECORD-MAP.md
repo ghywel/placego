@@ -1645,3 +1645,5 @@ PART: as on the board.
 - Root inverse tree: A has2 parents, B3; exactly5 two-step ancestors; complement is not a Rule30 symmetry — elementary hand, unreviewed — GC1982; reports/rule30-missing-parents.md.
 
 - Witness pilot61 retained traces reviewed; E34 length8 has28 words; E100 has25..28; early absences1/1/17 and a one-tick frontier identity — reviewed data/hand consequences — GC1983; reports/rule30-notebook-witness-pilot-gpt-review.md.
+
+- Root inverse tree depth3: exactly8 rows;001 right ray has unique101 parent by constant two-block pair map — elementary hand, unreviewed — GC1984; reports/rule30-missing-parents.md.

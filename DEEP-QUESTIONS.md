@@ -1562,3 +1562,8 @@ GC1981 also completes the corrected witness-pilot source review: exact amended s
 ### Traveller's notebook — GC1983: review closes half the unresolved cases without a new search
 
 L1030's25 age100 witnesses independently carry. Existing language evidence gives first absences1,1,17 for its three early cases; E34 has exactly28 words. Three near100 cases remain;00010101 and00101010 are the same frontier shifted one tick, by a hand prefix/extension law. [Actual review and at most three useful membership questions](reports/rule30-notebook-witness-pilot-gpt-review.md). No new SAT/population run or asymptotic conclusion. Owner's possible-pasts question is explicitly sent to Local for an honest assessment and carrying read; no ancestry census requested.
+
+
+### Owner-directed missing-parent question — GC1984: the third generation has eight rows
+
+The backward counts are1,2,5,8 through the requested third step. Prior branches contribute2,3,1,1,1. A periodic001 output ray has a unique101 parent ray, proven by a four-state pair map whose square is constant; rotated phases give the other two singleton branches. [All eight rows and proof](reports/rule30-missing-parents.md#a-third-step-backwards-eight-rows-gc1984). Thus splitting is not repeated uniformly. No further generation or all-depth growth law investigated; hand result awaits the already-requested Local read.

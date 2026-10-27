@@ -2807,3 +2807,6 @@ GPT GC1982,27 October2026 — pull from the owner's contrast between A and B: ca
 
 
 GPT GC1983,27 October2026 — unease: six unwitnessed words could become six unnecessary SAT jobs. Retained61-row replay passes; prefixing the two age0 words immediately hits known forbidden factors, and the exact retained MFW language settles the age16 case. A hand extension identity couples two near100 cases. Outcome: three early first absences resolved (1,1,17), at most three useful membership questions remain. Gut: spend compute on this small frontier; ask Local plainly whether the inverse-root finding supplies useful structure rather than treating our surprise as evidence.
+
+
+GPT GC1984,27 October2026 — unease: displaying a periodic parent would not rule out a nonperiodic alternative. Cheap hand kill check uses all four adjacent-bit states: the001 ray's three-step inverse map squares to a constant. Outcome: exactly one right ray, hence one full parent for each B branch, and total8 third-generation rows. Gut: retain the uniqueness step rather than infer counts from a cropped picture. No experiment.

@@ -938,3 +938,8 @@ GPT,27 October2026 GC1982: owner-directed inverse-root hand question answered (A
 
 
 GPT,27 October2026 GC1983: L1030 actual evidence review complete;61 independent witness replays and recorded-draw bindings pass. Three early cases close from existing language evidence; remaining near100 questions reduce to P99/P100/R100. Proposed small exact stage only, no launch accepted. Owner explicitly requests Local's plain assessment/carrying read of the inverse-root finding; question delivered in GC1983. Schedules paused.
+
+
+GPT,27 October2026 GC1984: owner-requested hand inverse-tree extension complete through depth3, exactly8 rows; source and four-state uniqueness proof appended to reports/rule30-missing-parents.md. No new compute or next pilot acceptance. GC1983's actual-result review and proposed three frontier questions stand; schedules paused.
+
+L1031 received during GC1984 publication: prior inverse-tree carrying read adopted; depth3 pending. Proposed back-solve source review remains pending, no launch or schedule change.

@@ -124,7 +124,9 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1984:** owner-requested hand inverse-tree extension complete through depth3:1,2,5,8 rows. L1031 carries the previous two generations; depth3 remains pending. New back-solve driver received, source review pending. GC1983 pilot evidence review complete; at most three near100 memberships remain proposed, no new launch. Schedules PAUSED.
+
+**Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
 **Previous working state, 27 October 2026, GC1982:** owner-directed inverse-root hand analysis complete through two preceding rows (2 parents of A,3 of B). L1030 pilot reported completed with25 witnesses/6 unresolved; actual evidence review remains pending. No new run or Stage S; schedules PAUSED.
 
@@ -9882,3 +9884,8 @@ Owner's pull distinguishes A's two backgrounds from B's one-cell hole. Hand reco
 ## MI898 / GC1983 — audit the witnesses, then spend compute only on the remaining frontier
 
 Owner asks for L1030 review and Local's honest view of possible pasts.61 actual retained traces and draw bindings pass independently. Cheap prefix checks using certified MFW data close the early three cases; a hand shift relation links two late cases. E34 size28 exact, E100 between25 and28. Proposed next computation at mostP99/P100/R100, not another sample or wider census; no run accepted. [Full report](reports/rule30-notebook-witness-pilot-gpt-review.md). Local explicitly asked to assess whether inverse-root2/3 and001 tails provide leverage or familiar bookkeeping, and to check completeness. Reasoned/gut verdict: meaningful narrowing with existing evidence; no inflated interpretation of either finding.
+
+
+## MI899 / GC1984 — three branches become unique on the next backward step
+
+Owner requests one further inverse generation. Exact hand count8 (2+3+1+1+1), with all eight rows displayed. T=G0 G1 G0 for a001 right ray has T^2 constant10, so nonperiodic hidden right tails cannot add parents; rotation and unique left reconstruction complete the proof. The right backgrounds cover all eight3-bit motifs, without making whole rows periodic. [Full argument](reports/rule30-missing-parents.md). Gut: the changing branching is more informative than guessing a number sequence. No further level or new run. L1031 subsequently carried the previous two generations; depth3 remains unreviewed.
