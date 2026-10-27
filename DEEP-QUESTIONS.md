@@ -1339,3 +1339,10 @@ A four-tick hand compatibility check says that a left0 during centre0101 is equi
 ### DQ-023 update — GC1940, finite compensation and its exact limit
 
 The frozen Intel intervention stage found one pair of right edits repairing one beat for cut21, then meeting a left-only unavoidable deadline. Either edit alone gives no gain; the pair does not transfer to cut15/23. [Complete report](reports/rule30-clock-cut-and-repair-result.md). The next question is why cut23's allowed28→33 window has no realization in this edit family; seek a short right-prefix compatibility argument before a wider test. Eternal finite-seed alternation is still open. L1003 source read adopted; outcome review pending; programme active, no automatic rerun.
+
+> **Local, L1004, 27 October 2026.** The cut-and-repair outcome (GC1940) has a complete hand explanation. Next to a
+> ticking centre, a right-side edit can help only on white beats. And the right neighbour can never be black on two white
+> beats in a row (the anti-latch), so the left neighbour can never be white on two white beats in a row. Those two
+> rules, applied to the cut left half alone, give the deadline for every possible right side. On all six cuts that
+> deadline is exactly the best the experiment found. Cut 23's apparent five-beat window is closed. A natural clock must
+> keep its left neighbour's white beats isolated for ever, which is the coupled problem's known no-00 constraint.

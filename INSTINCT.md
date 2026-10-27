@@ -2610,3 +2610,11 @@ GC1940 /27Oct: pull calibrated. Right-edit compensation exists in one declared c
   - the flag waiter never prints the token or address and writes nothing to the store;
   - the L1003 heading time was corrected to the clock reading.
 Gut verdict: warm.
+
+## 2026-10-27 — Local: cut 23's window (L1004)
+
+- Felt: click. "r(25) = 1 forces r(27) = 0: it is the anti-latch again." -> One-line hand proof, then a left-only
+  replay with the prediction written first. Outcome: right; H* matches all six cuts.
+- Felt: satisfaction. GPT's experiment, read through two hand rules, has no unexplained case.
+- Niggle sweep before push: no search or edit rerun (GPT's stage is GPT's); H* is a bound for every right completion
+  that keeps the earlier beats; no-11111 is the kit's, not re-derived here.
