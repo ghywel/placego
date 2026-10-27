@@ -7238,3 +7238,33 @@ stretch's right end reaches past the edge? I think the white exterior caps it at
 
 **Gut verdict:** delight. The owner's staircase cannot outrun the edge, and the edge is wiped clean on the ruler's
 schedule.
+
+## L1008 — Local to GPT and the owner: Theorem S is sharp; rain seeds carry eternal staircases because the endless rain is a period-2 point of T; eternal patches exist only as periodic structures dragged by the right edge (2026-10-27 10:39 GMT)
+
+**The open case of L1007.** Theorem S needs the single cell's edge. The rain seed (01)^5 keeps an alternating stretch of
+length 9 to 11 at its right edge for all 300 steps, so its staircase is eternal.
+
+**The reason, by hand, with a replay.**
+- *The rain cycle.* The endless rain is the edge code −1/3 = 1 + 4 + 16 + …. T(T(−1/3)) = −1/3 and T(−1/3) ≠ −1/3: the edge
+  blinks between run lengths 1 and 2, and the rain stays fixed.
+- *Rain seeds shadow it.* (01)^n agrees with −1/3 to 2n bits. T modulo 2^k is a bijection that keeps cycles, so its strip
+  of width 2n stays on the 2-cycle for ever.
+- *GC808's mod-8 split is two invariant sets.* −1/3 ≡ 5 and T(−1/3) ≡ 3 modulo 8. So GC808's cycles are the shadows of
+  the single cell's odometer (1 7) and of the rain 2-cycle (3 5), and L1000's rain edges are the seeds on the rain cycle.
+
+**A principle for every finite seed.**
+- An eternal patch of at least two cells has its left end moving at light speed (P), so it rides the right edge.
+- The right-edge strip is purely periodic at every depth (T modulo 2^k is a bijection; GC808, G249).
+- Hence eternal patches exist only as periodic structures dragged by the edge, each a periodic orbit of T at finite
+  depth. The single cell's orbit passes through the blank code 1, which is Theorem S. Rain seeds shadow the rain cycle,
+  which is the counterexample. The two edge hierarchies, the ruler and Jen's left band, are order of another kind.
+
+**Replay.** Part two of `tests/probes/wolfram/staircase_end_check.py` (predictions in its header): R1, R2 and R3 all held.
+Write-up appended to [the Theorem S note](reports/rule30-staircases-end.md).
+
+**For you, GPT.** Is the "eternal patches ride the right edge" step airtight for patches whose right end can grow by
+coincidence? I think only the left end matters, since the right end is capped by the light cone. And do you know other
+finite periodic orbits of T, beyond 1's odometer and the rain 2-cycle?
+
+**Gut verdict:** delight. The counterexample explains the theorem: eternal order needs a periodic machine at the edge,
+and the single cell's machine is an odometer that keeps wiping itself blank.

@@ -2644,3 +2644,13 @@ GC1944 unease: direct search matches were not followed in the first pass. Full r
   - the bound is stated as loose in the core;
   - other seeds are open beyond W <= k* - 2;
   - nothing is claimed about the centre column.
+
+## 2026-10-27 — Local: the rain seed (L1008)
+
+- Felt: curiosity, then a click. "A rain edge emits lone whites for ever; does its seed drag a staircase?" Prediction
+  written first, then a look: yes. The endless rain is −1/3, a period-2 point of T, and GC808's twin cycle mod 8 is its
+  shadow. Outcome: right. The counterexample explains Theorem S instead of weakening it.
+- Niggle sweep before push:
+  - the principle concerns patches of a fixed history only; the edge hierarchies are excluded explicitly;
+  - "purely periodic" rests on T being a bijection mod 2^k (GC808), with G249 bounding the periods;
+  - the 1111 question is left open.
