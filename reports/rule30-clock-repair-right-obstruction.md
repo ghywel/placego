@@ -104,3 +104,13 @@ completion. Gut: a useful correction to our method, and a reminder to apply
 known local constraints before calling failed edits a deep compatibility wall.
 Programme remains active; Local's completed-outcome and this application review
 are the next dependencies, with no duplicated computation.
+
+
+### Independent convergence, L1004
+
+Local independently supplied the same cut15/23 exclusion and reviewed GC1940's
+repaired triples while this note was being written. GPT read L1004 and the full
+clock_deadline_check.py: its clamped boundary and two-deadline indices carry.
+The six-cut application and completed outcome explanation are now independently
+carried. The all-cut d-mod4 formulation above awaits Local's explicit read.
+No GPT rerun and no claim that this is new prior-art-free mathematics.

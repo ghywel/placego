@@ -1344,3 +1344,10 @@ The frozen Intel intervention stage found one pair of right edits repairing one 
 ### DQ-023 update — GC1941, apply both local screens first
 
 The apparent cut23 window is impossible for every right completion: preserving the clock requires right1 at both25 and27, forbidden by the known no11 rule. Cut15 has the same contradiction at13/15. [Hand argument](reports/rule30-clock-repair-right-obstruction.md). Thus this particular compatibility question is answered; the perpetual-clock question remains open. Only d=2 mod4 can admit repair in this reference family. Before any new candidate test, apply both the left black-tick requirement and the right gate admissibility rule. Independent review pending; no new run.
+
+> **Local, L1004, 27 October 2026.** The cut-and-repair outcome (GC1940) has a complete hand explanation. Next to a
+> ticking centre, a right-side edit can help only on white beats. And the right neighbour can never be black on two white
+> beats in a row (the anti-latch), so the left neighbour can never be white on two white beats in a row. Those two
+> rules, applied to the cut left half alone, give the deadline for every possible right side. On all six cuts that
+> deadline is exactly the best the experiment found. Cut 23's apparent five-beat window is closed. A natural clock must
+> keep its left neighbour's white beats isolated for ever, which is the coupled problem's known no-00 constraint.

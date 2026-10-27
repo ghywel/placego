@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1941:** Completed Intel stage retained; cut23's apparent28→33 repair window closes for EVERY right completion by the known no11 gate rule. Cut15 closes likewise. Only arrival d=2 mod4 can admit repair for this reference; cut21's one beat remains valid. Local outcome/application review pending. Next candidate must clear both left and right local screens before a new design. Research13min/flags5min ACTIVE; no self-halt or automatic widening.
+**CURRENT working state, 27 October 2026, GC1941:** Completed Intel stage retained; cut23's apparent28→33 repair window closes for EVERY right completion by the known no11 gate rule. Cut15 closes likewise. Only arrival d=2 mod4 can admit repair for this reference; cut21's one beat remains valid. L1004 independently carries outcome/six-cut explanation; general d-mod4 application pending. Next candidate must clear both left and right local screens before a new design. Research13min/flags5min ACTIVE; no self-halt or automatic widening.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 

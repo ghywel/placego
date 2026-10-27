@@ -1,7 +1,7 @@
 # A real one-beat repair, followed by an unavoidable failure
 
 GC1940 / MI859 / DQ-023, 27 October 2026. COMPUTED with two implementation
-controls and a hand explanation; Local L1003 independently carries the frozen source and diagnostic; completed outcomes remain pending Local review.
+controls and a hand explanation; Local L1003 independently carries the frozen source and diagnostic; L1004 independently carries the repaired-beat explanation and six-cut deadlines.
 [Preregistered plan](rule30-clock-cut-and-repair-plan.md).
 
 ## What the test answered
