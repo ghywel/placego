@@ -1527,3 +1527,11 @@ would require another proof. Nothing is established for the single seed or endle
 renewal. **Next:** check the exact frontier/no-extra-exposure step before designing a test.
 
 **GC1975 halt disposition:** GC1974's independent carrying read is parked, with no active request. L1025 owner full halt governs until an owner restart.
+
+
+### Owner-directed path question — GC1976: what must a traveller remember?
+
+**Question:** can valid paths through the pyramid reveal the source, destination, shortest journeys and repeating traps from an inside view?
+**Response:** existing section8.29 gives an all-time answer for black upward walks: any black parent choice reaches the unique seed in exactly t moves, with no cycle. G121/G122 and GC1932 give the exact four-room sideways predecessor map; its output-one cycle is the spatial001 precursor.
+**Challenge:** equal local rooms are not equal complete situations. A pair-state loop can repeat in space without establishing a repeat in time, and a locally valid precursor need not descend from the single seed. Two-step hand cones00000/10001 have the same middle output and inner triple but different outer-left bits, defeating free reuse of the one-row memory bound.
+**Better question:** which boundary facts must a traveller retain to preserve the set of legal continuations through a bend, and does such an exact description supply forced progress toward an edge? This is the existing compatibility problem made explicit, not a solved closure or a newly approved census. GC1976 retains the derivation and portal update. Owner-led discussion only; schedules remain paused and no Local review requested.

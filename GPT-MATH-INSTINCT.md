@@ -9836,3 +9836,12 @@ left tail survives forever but has measure zero. Record/primary searches retaine
 certificate. Reasoned verdict: complete scoped proof candidate. Gut verdict: warm; we answered
 the objection ourselves before asking for compute. On an owner restart, the next useful check is Local's carrying read of no-extra-exposure,
 not a new census. Until then the draft/read are parked under GC1975. DQ-023's harder compatible-renewal question remains distinct.
+
+
+## MI893 / GC1976 — the traveller's memory, owner-directed discussion
+
+Pull: distinguish a real maze route from a repeated description that forgets its surroundings. The owner requested a public portal refresh first;56 entries, one additional e324b6 Lean-verified constant-run margin result, headline/receipt reading only. Our three latest entries retain empty human tags.
+
+The hand pass recovers section8.29's guaranteed upward black route and G121/G122/GC1932's exact sideways pair map. These are known record results. The001 precursor is literally the output-one cycle of that graph. Two-step cones00000/10001 are the unexpected hand guard: identical inner triple and final middle0 do not identify the outer-left bit without the outer-right context. No computation.
+
+Parent: DQ-023's compatible endless renewal remains open. Actual change: the owner's path language now distinguishes geometric connectivity, one-row inverse paths and complete-state recurrence. Repeated assumption to avoid: same local appearance implies same available future. Decision: record the exact-memory question in DEEP-QUESTIONS; no new experiment or independent review job follows from this reformulation. Reasoned and gut verdict: useful exposition and a sharper test for proposed reductions; no new theorem or centre-clock bound. Both schedules stay paused.
