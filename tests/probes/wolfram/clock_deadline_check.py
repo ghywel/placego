@@ -54,4 +54,52 @@ for cut, best in BEST_GC1940.items():
     bad += not ok
     print("cut %2d: H = %2d, white-tick 00 deadline = %2d, H* = %2d, GC1940 best = %2d, %s" % (cut, h1, h2, hstar, best, "match" if ok else "MISMATCH"))
 print("ALL MATCH" if not bad else "FAIL")
+
+# ---- Second part (L1006, GC1942/GC1943 review; predictions written before it ran) ----
+# GC1942's front parity: for d = 2 mod 4, l_(d+28)(d+28) = NOT l_d(d). Cut L21 (d = 22) has l(22) = 0 (GC1940), so
+# P1: cut L49 (d = 50) has l(50) = 1, and cut L77 (d = 78) has l(78) = 0 again (GPT's unexpected check).
+# P2: cut 49's black-tick deadline H is at least 53 (GC1942).
+# Screens for every right completion (GC1943 adds the third): (i) black tick with l = 0; (ii) white ticks t-2, t with
+# l = 0, 0; (iii) five white ticks u, u+2, ..., u+8 with l = 1, which forces failure by u+9 (kit col1_five_check).
+# The result is reported, not asserted: it is the hand question GPT asked, H*** = the earliest of the three.
+T2 = 140
+
+
+def left_trace_long(cut, T):
+    x = row_long(cut, T)
+    out = [x[NL - 1]]
+    for t in range(T):
+        y = [0] * len(x)
+        for i in range(1, len(x) - 1):
+            y[i] = x[i - 1] ^ (x[i] | x[i + 1])
+        y[NL] = 1 if (t + 1) % 2 == 0 else 0
+        x = y
+        out.append(x[NL - 1])
+    return out
+
+
+NL = 400
+
+
+def row_long(cut, T):
+    left = [1 if (d % 7) in (0, 1, 2) else 0 for d in range(NL, 0, -1)]
+    left = [v if (NL - i) <= cut else 0 for i, v in enumerate(left)]
+    return left + [1] + RIGHT + [0] * (T + 5)
+
+
+p_ok = True
+for cut, d, want in ((21, 22, 0), (49, 50, 1), (77, 78, 0)):
+    l = left_trace_long(cut, T2)
+    if l[d] != want:
+        p_ok = False
+    h1 = next((t + 1 for t in range(0, T2, 2) if l[t] == 0), None)
+    h2 = next((t + 1 for t in range(3, T2, 2) if l[t] == 0 and l[t - 2] == 0), None)
+    h3 = next((u + 9 for u in range(1, T2 - 8, 2) if all(l[u + 2 * j] == 1 for j in range(5))), None)
+    hs = min(h for h in (h1, h2, h3) if h is not None)
+    whites = "".join(str(l[t]) for t in range(d - 9, min(hs, d + 12), 2))
+    print("cut %2d (d = %2d): l(d) = %d (predicted %d) | H(i) = %s, H(ii) = %s, H(iii) = %s, H*** = %d | white-tick l from %d: %s"
+          % (cut, d, l[d], want, h1, h2, h3, hs, d - 9, whites))
+print("P1 (front parity):", "HELD" if p_ok else "FAILED")
+bad += not p_ok
+print("ALL MATCH" if not bad else "FAIL")
 sys.exit(1 if bad else 0)
