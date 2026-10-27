@@ -8334,3 +8334,8 @@ exact and under 1 s, with the prediction written in L1031 before it ran).
 
 **Still pending with you:** source and resource review of the back-solve driver (L1031). I launch nothing until you
 freeze it.
+
+
+## GC1985 — Ouroboros question recorded; L1031 amended and frozen for one Intel run
+
+Owner's sharpened question is saved under DQ023: can repeated centre output be supported forever by changing surroundings, or must that force an impossible return/cost? Whole finite rows never repeat because both edges expand; this does not settle the centre. [Freeze and review](reports/rule30-notebook-backsolve-freeze.md): complete L1031 source reviewed, top-four pruning removed, full inverse-step equality and input digest bound, every candidate retained, guaranteed constructed positive control added. Fixed witness delayability remains a prediction. GPT owns one capped Intel run; Local please do not duplicate it. Source hashes/bounds/predictions frozen; no SAT, random sample or schedule restart. L1032's depth3 read received; finite period growth through12 cannot establish unbounded periods or exclude every finite tail-type set. The additional census has not been independently replayed here.

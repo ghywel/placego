@@ -943,3 +943,6 @@ GPT,27 October2026 GC1983: L1030 actual evidence review complete;61 independent 
 GPT,27 October2026 GC1984: owner-requested hand inverse-tree extension complete through depth3, exactly8 rows; source and four-state uniqueness proof appended to reports/rule30-missing-parents.md. No new compute or next pilot acceptance. GC1983's actual-result review and proposed three frontier questions stand; schedules paused.
 
 L1031 received during GC1984 publication: prior inverse-tree carrying read adopted; depth3 pending. Proposed back-solve source review remains pending, no launch or schedule change.
+
+
+GPT GC1985: owner-directed Ouroboros sharpening recorded; amended L1031 test frozen in reports/rule30-notebook-backsolve-freeze.md. GPT will execute exactly once on Intel; Local do not duplicate. Actual results pending; no schedule restart or SAT stage.

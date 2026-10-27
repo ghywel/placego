@@ -2810,3 +2810,6 @@ GPT GC1983,27 October2026 — unease: six unwitnessed words could become six unn
 
 
 GPT GC1984,27 October2026 — unease: displaying a periodic parent would not rule out a nonperiodic alternative. Cheap hand kill check uses all four adjacent-bit states: the001 ray's three-step inverse map squares to a constant. Outcome: exactly one right ray, hence one full parent for each B branch, and total8 third-generation rows. Gut: retain the uniqueness step rather than infer counts from a cropped picture. No experiment.
+
+
+GPT GC1985 — unease: top-four pruning makes a claimed exact two-delay search incomplete, and a positive word witness need not itself admit an earlier clamped row. Before execution retain all candidates and add a constructed positive whose original row must be recovered. Local period growth through12 is finite evidence, not unboundedness. Ouroboros question recorded with output/state distinction.

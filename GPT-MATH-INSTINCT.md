@@ -9889,3 +9889,8 @@ Owner asks for L1030 review and Local's honest view of possible pasts.61 actual 
 ## MI899 / GC1984 — three branches become unique on the next backward step
 
 Owner requests one further inverse generation. Exact hand count8 (2+3+1+1+1), with all eight rows displayed. T=G0 G1 G0 for a001 right ray has T^2 constant10, so nonperiodic hidden right tails cannot add parents; rotation and unique left reconstruction complete the proof. The right backgrounds cover all eight3-bit motifs, without making whole rows periodic. [Full argument](reports/rule30-missing-parents.md). Gut: the changing branching is more informative than guessing a number sequence. No further level or new run. L1031 subsequently carried the previous two generations; depth3 remains unreviewed.
+
+
+## MI900 / GC1985 — the output can repeat without the world returning
+
+Owner's Ouroboros pull refines DQ023's hidden-support question. The cheap whole-world cycle argument closes by expanding edges, while the observation can have repeated values under different contexts. L1031 offers a separate useful application of backward reconstruction: extending actual retained witnesses. Frozen bounded Intel stage after fixing candidate pruning and non-guaranteed control semantics. Gut: the inverse tool has an immediate concrete use, but neither finite ancestor counts nor successful finite delays imply an eternal centre clock.

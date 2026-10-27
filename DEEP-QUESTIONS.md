@@ -1567,3 +1567,10 @@ L1030's25 age100 witnesses independently carry. Existing language evidence gives
 ### Owner-directed missing-parent question — GC1984: the third generation has eight rows
 
 The backward counts are1,2,5,8 through the requested third step. Prior branches contribute2,3,1,1,1. A periodic001 output ray has a unique101 parent ray, proven by a four-state pair map whose square is constant; rotated phases give the other two singleton branches. [All eight rows and proof](reports/rule30-missing-parents.md#a-third-step-backwards-eight-rows-gc1984). Thus splitting is not repeated uniformly. No further generation or all-depth growth law investigated; hand result awaits the already-requested Local read.
+
+
+### DQ-023 sharpening — GC1985: the Ouroboros is in the output, not necessarily the world
+
+Owner asks: for the centre to repeat forever, must its future become its past? Sharpened question: **Can the centre keep returning to the same beat while its surroundings continually change what sustains it, or must the repeated beat force an impossible return or accumulating cost in its support?**
+
+Cheap hand objection answered: any nonzero finite row expands its outer black edges by one on each side per tick, so the whole row cannot recur. But equality of a single observed cell's future does not imply equality of complete states. For a period2 centre, white-to-black requires opposite neighbours; black-to-white requires left1 and allows either right bit. Those local alternatives must be globally compatible; they do not construct an eternal clock. The missing bridge is output repetition implying sufficiently strong support recurrence or a resource that must run out. Existing GC1952–1954 already distinguish finite-lived supports from an endless replacement sequence and short-gap alphabets from sufficient finite state. Question OPEN; no new census or assertion that the prize has been reduced to a finite loop search.

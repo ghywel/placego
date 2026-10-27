@@ -30,13 +30,17 @@ Predictions, written before any run.
       This is GC1983's rare-survivor reading, reached by an exact route. Gut confidence: about 75%.
   Counterfactual. A retained row has no two-step predecessor at some step. The word is then still possible (other
       rows may work), and only that witness cannot be delayed. It is reported as such, and the word stays UNRESOLVED
-      for GC1983's frozen SAT stage. No death is inferred.
-Caps (proposed): 60 CPU s, 120 wall s, 256 MiB RSS, 16 MiB disk; one process; retain every candidate and replay.
+      for GC1983's proposed SAT stage. No death is inferred.
+GC1985 review amendments: keep all intermediate candidates (at most 256); verify each full one-step reconstruction;
+add a guaranteed nonempty constructed positive control; bind full input SHA256; retain all candidate rows and cell-1 traces.
+Unexpected check: candidate truncation must not silently discard a second-delay success. No pruning is used.
+Caps (frozen in the accompanying GC1985 plan): 60 CPU s, 120 wall s, 256 MiB RSS, 16 MiB disk; one process; retain every candidate and replay.
 """
 import hashlib
 import itertools
 import json
 import os
+import resource
 import sys
 from pathlib import Path
 
@@ -45,6 +49,13 @@ import notebook_death_gate as gate
 import notebook_witness_pilot as pilot  # frozen CONTROL_ROW (GC1978 q00002)
 
 NW = 8
+LATEST_SHA256 = 'ef0ff89cfeee5c4f13def41b9df493d76e5b55f358a1487a27296bffbbccdf90'
+
+def checkpoint():
+    usage = resource.getrusage(resource.RUSAGE_SELF)
+    if usage.ru_utime + usage.ru_stime > 55:
+        raise RuntimeError('55-second stage CPU admission guard')
+
 FIX = {  # retained in cited/l1030-witness-pilot/latest_witnesses.json (literal replay True there)
     'PQ': ('00010101', 98, '846ed258b0a3'),
     'R': ('01010100', 99, '376101d1554f'),
@@ -73,8 +84,13 @@ def back(y, t):
 def delay(row):
     """All rows X' with two clamped updates (wall phases 0 then 1) taking X' to row."""
     res = []
+    checkpoint()
     for x1 in back(row, 1):
-        res.extend(back(x1, 0))
+        assert fwd(x1, 1) == row
+        for x0 in back(x1, 0):
+            assert fwd(x0, 0) == x1
+            res.append(x0)
+    assert len(res) <= 16
     return res
 
 
@@ -102,8 +118,11 @@ def main():
     root.mkdir(exist_ok=False)
     src = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     LATEST = Path(sys.argv[1])  # cited/l1030-witness-pilot/latest_witnesses.json, read back from the store
-    lw = json.loads(LATEST.read_text())
+    raw = LATEST.read_bytes()
+    assert len(raw) <= 65536 and hashlib.sha256(raw).hexdigest() == LATEST_SHA256
+    lw = json.loads(raw)
     rec = dict(source_sha256=src, gate_sha256=hashlib.sha256(Path(gate.__file__).read_bytes()).hexdigest(),
+               pilot_sha256=hashlib.sha256(Path(pilot.__file__).read_bytes()).hexdigest(),
                latest_witnesses_sha256=hashlib.sha256(LATEST.read_bytes()).hexdigest())
     rec['exhaustive_back_checks'] = exhaustive_control()
     # control: delay the frozen age-100 control row by one visible step
@@ -112,12 +131,21 @@ def main():
     dc = delay(ctrl)
     rec['control_candidates'] = len(dc)
     rec['control_delayed_ok'] = any(visible(x, 101) == '00001000' for x in dc)
+    # Delayability of the fixed witness is a prediction, not an instrument axiom.
+    # Build a guaranteed positive by moving a known row forward before reversing it.
+    target = fwd(fwd(ctrl, 0), 1)
+    constructed = delay(target)
+    assert ctrl in constructed
+    rec['constructed_control_candidates'] = len(constructed)
+    rec['constructed_control_recovers_original'] = True
     assert all(visible(x, 101) == '00001000' for x in dc)
+    rec['control_rows'] = [''.join(map(str, x)) for x in dc]
     results = {}
     for tag, (w, a, sha12) in FIX.items():
         row_s = lw[w]['row']
         assert lw[w]['age'] == a and hashlib.sha256(row_s.encode()).hexdigest()[:12] == sha12
         row = [int(c) for c in row_s]
+        assert len(row) == 215 and set(row_s) <= {'0', '1'}
         assert visible(row, a) == w
         steps = {}
         frontier = [row]
@@ -125,7 +153,9 @@ def main():
             nxt = []
             for r in frontier:
                 nxt.extend(delay(r))
+            assert len(nxt) <= 16 ** k
             ok = []
+            traces = []
             for x in nxt:
                 if tag == 'PQ':
                     good = visible(x, a + k) == w and (k != 1 or visible(x, 100) == '00101010')
@@ -133,8 +163,9 @@ def main():
                     good = visible(x, a + k) == w
                 assert good, (tag, k)
                 ok.append(''.join(map(str, x)))
-            steps[a + k] = dict(candidates=len(ok), rows=ok[:4])
-            frontier = [[int(c) for c in s] for s in ok[:4]]
+                traces.append(''.join(str(r[0]) for r in gate.replay(x, len(x) - 1)))
+            steps[a + k] = dict(candidates=len(ok), rows=ok, full_cell1_traces=traces)
+            frontier = [[int(c) for c in s] for s in ok]
             if not ok:
                 break
         results[tag] = dict(word=w, start_age=a, steps=steps)
@@ -143,6 +174,8 @@ def main():
     rec['P99_Q100'] = pq.get(99, {}).get('candidates', 0) > 0
     rec['P100'] = pq.get(100, {}).get('candidates', 0) > 0
     rec['R100'] = r.get(100, {}).get('candidates', 0) > 0
+    rec['B_A_fixed_delay_prediction'] = rec['control_delayed_ok']
+    rec['negative_scope'] = 'Empty frontier rules out extending these retained rows only; no word absence inferred.'
     rec['gate_closed'] = rec['P99_Q100'] and rec['P100'] and rec['R100']
     (root / 'result.json').write_text(json.dumps(rec, indent=1))
     print(json.dumps({k: rec[k] for k in ('exhaustive_back_checks', 'control_candidates', 'control_delayed_ok',
