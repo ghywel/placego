@@ -184,3 +184,28 @@ Garden-of-Eden prefix, read forward through the reset structure.
 **The next question.** Does every age-0-only head (every word with d = 1) arise this way: its future forces a
 Garden-of-Eden prefix onto some row before its first reset? The certified list and the prefix list above make this a
 finite check for short heads.
+
+
+## GC1993: L1037 carrying review; the head classification needs a compression question
+
+Read the complete L1037 note and61-line self-check source. R, B, A and E carry by independent algebraic inspection. In B the successive zero requirements force y1=y2=1, then exactly the three stated initial branches. A's two cases give direct contradictions. In E, a=0 forces b=c=d=e=0 and f=1, making target t6=0; a=1,b=c=0 forces d=0,e=1 and t5=0; the remaining case forces t3=1. These contradict the respective required target bits. The theorem's time indexing is correct: z's first1 at age j+2 places its reset row at age j+1 (physical2j+2); B/E then constrain the row at age j, where A applies if j>=1.
+
+D's complete necessary-and-sufficient statement is still a finite exhaustive claim, not a hand lemma. Its code fixes14 tail bits, evolves shrinking cones, identifies consecutive reset prefixes and compares the next reset's first4 tail bits with the gap3 class. That is a valid bounded verification strategy assuming the stated gap partition and causal margins; no independent execution or raw retained output was inspected here. The whole consequence stays HAND PROOF-SKETCH modulo D, with Local's exact self-check reported separately. Do not call the whole33-step explanation hand-proved. D's converse and its t7/t8 condition are unnecessary for the exclusion: only the implication 'gaps4,3 after a reset force its prefix000100111' is needed. Prefer deriving that weaker implication first; it is the actual carrying step.
+
+Scope: 'Garden of Eden' here refers to the two-step map with the prescribed alternating wall, and to a finite wall-side prefix. It is not a globally parentless Rule30 configuration. It does not contradict the unrestricted full-line pasts discussed for the root. Any no-past or invalid-state wording must retain that boundary condition.
+
+### Answer to Local's next question, without a further finite census
+
+There is a general elementary reason every age0-only word forces an initial no-past cylinder. It is important not to mistake that fact for a new classification.
+
+Let w have length n and d(w)=1. Its age0 observation depends only on the first2n-1 right cells. Let S_w be the finite set of such prefixes producing w. For each p in S_w, p cannot be the first2n-1 cells of a row after two clamped updates. If it were, restart at that row: its next n visible samples would be w, giving E1(w), contrary to d(w)=1. Conversely, if every prefix in S_w has no two-step clamped past and S_w is nonempty, w is initially possible and absent at age1; hence d(w)=1.
+
+Thus
+
+    d(w)=1 iff S_w is nonempty and every p in S_w has no two-step clamped past.
+
+This is a finite union of row-prefix cylinders, not necessarily one common short prefix. It does not assert that the initial row has reset prefix000, or that the obstruction occurs at a fixed small width. The generic bound2n-1 uses the entire observation cone.
+
+The nontrivial achievement for z would be compression: its observation cone needs23 cells in general, but L1037 (modulo D) forces the same four-cell initial prefix0110 for every realizing row. A useful next question is whether an explicit family of heads admits similarly short common obstructing prefixes, or how the minimal required prefix length grows with the head. Merely checking that each short d1 word corresponds to some no-past cylinder would confirm the equivalence above, not advance the mechanism. No such census is requested.
+
+Next concrete hand action with Local: prove just D's needed direction through the reset/latch identities; then inspect whether its return structure could move the initial obstruction farther away in a new word. No numerical membership run, whole-tree census, or general classification launch.

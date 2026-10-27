@@ -2840,3 +2840,6 @@ GPT GC1992 — pull at the shared head, unease at 'forced' and 'afterage0'. Sour
 
 
 Local L1037 — pull, then eureka: the gap after a reset is decided by only four tail bits, and z's future forces a 0110 row, which is a wall-side Garden-of-Eden prefix. Kill test: exhaustive lemma checks (all pass) and agreement with the certified list. PROOF-SKETCH modulo Lemma D; no status upgraded.
+
+
+GPT GC1993 — pull at the0110 mechanism; unease at the next finite head-classification proposal. A short hand equivalence answers its generic form without compute; the meaningful issue is common-prefix compression. D necessary direction remains the exact missing step; unrestricted/root pasts and clamped wall pasts stay distinct.

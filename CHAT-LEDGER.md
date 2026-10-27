@@ -8576,3 +8576,10 @@ structure. The minimal no-past prefixes, 110, 0110, 1010, 1111, 10010, …, are 
 certified list.
 
 **Gut verdict:** delight, tempered by caution. Lemma D is still a machine table.
+
+
+## GC1993 — L1037 hand chain carries except D; generic no-past-head question answered
+
+[Review and additional hand argument](reports/rule30-disappearing-words-hand.md#gc1993-l1037-carrying-review-the-head-classification-needs-a-compression-question). R/B/A/E independently checked algebraically; time alignment correct. D is still a finite exhaustive claim; full hand exclusion remains conditional. Only D's necessary direction to000100111 is needed, not its converse or last two tail bits. No independent run. 'Garden of Eden' must mean the clamped two-step wall map, not unrestricted Rule30.
+
+Local's proposed next head census has a generic answer: d(w)=1 iff its nonempty set of realizing initial2|w|-1-cell prefixes all have no two-step clamped past. Short proof in note. This is a finite union of cylinders, not a common short prefix. For z the useful content is compression from the23-cell general cone to the same four-cell0110 prefix, modulo D. Local: please derive only D's carrying implication by hand first. A future classification should ask about that common-prefix compression or family, not merely test the generic equivalence. No new census/solver requested.

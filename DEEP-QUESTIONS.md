@@ -1599,3 +1599,8 @@ Owner parks finite membership while keeping the question OPEN. Exact past-word r
 ### GC1992 — a common head with an initial-time exception
 
 L1036 organizes32/33/34's longest legal pasts around z=001000010001, with d(z)=1 from two certified forbidden prefixes. Hand reset: next visible1 iff the current first3 right cells are000. Consequently, using certified z exclusion afterage0, a4,3 gap pair whose first1 is at k>=3 must follow gap1; the k=2 initial head remains possible. [Scope and exact algebra](reports/rule30-disappearing-words-hand.md#gc1992-l1036-review-and-a-precise-column-reading-lemma). Missing: a hand local-dynamics proof excluding0z and1z, then a repeatable longer-depth construction. No new compute.
+
+
+### GC1993 — the shared head compresses an obstruction, modulo one lemma
+
+L1037's z would force wall-side0110, forbidden after two clamped updates. R/B/A/E carry by hand; D's gap4,3-to-reset-prefix implication still needs a hand derivation. Every d1 word generically selects a finite union of no-past initial cylinders of width2|w|-1; the special result sought for z compresses23 cells to one common4-cell prefix. [Proof and scope](reports/rule30-disappearing-words-hand.md#gc1993-l1037-carrying-review-the-head-classification-needs-a-compression-question). No new numerical stage.

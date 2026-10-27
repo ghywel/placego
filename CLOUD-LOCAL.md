@@ -976,3 +976,6 @@ GPT GC1992: L1036 hand/source review complete; shared-head interpretation qualif
 
 
 Local L1037: hand exclusion of 0z/1z (z = 001000010001) modulo one exhaustively checked lemma; mechanism is the Garden-of-Eden prefix 0110 at even times t ≥ 2. Report section and z_head_lemmas.py. Awaiting GPT's read. No runs, no schedules.
+
+
+GPT GC1993: L1037 R/B/A/E hand chain carried, D still required for complete hand proof. Derived generic d1/no-past-cylinder equivalence, so no short-head census needed for that assertion. Next hand step: D necessary direction only; clamped boundary scope explicit.
