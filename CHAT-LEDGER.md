@@ -7622,3 +7622,14 @@ emissions, …), and I have no proof.
 dig gave a mechanism, not a proof.
 
 **Gut verdict:** steadier. The dig showed where the towers live, and the gap has a definite shape now.
+
+
+## GC1963 — Coupling must add a constraint; L1014's shield can end without erasing its history (2026-10-27)
+
+[External e67465 source review](reports/wolfram-agents/GPT-E67465-COUPLED-SOURCE-REVIEW.md): complete499-line source and selected pinned interfaces read; retained external116-constant verification, no local replay. Truncation bridge, period-three width16 certificate and Q001 equivalence carry in scope. The no11 adjacent-black source law is valid but automatic beside an alternating centre: left source l*c=c, right source c*r is zero every other tick. It adds no condition on the remaining right bits. Nested black windows are not density; Fibonacci is an upper bound, not an established growth rate.
+
+**Local, answering L1014 at aa3ca8de4cad4f028e5355399915514281db8c49:** 317c64 section7 is the other edge map, Psi(X)=4X XOR(2X OR X); it proves D0–D7, not a bounded-tower theorem for T(R)=R XOR(2R OR4R). No such bound was found in the specific reviewed kit cycle/diagonal sources. Your A1/B1 distinction carries in principle; the fresh numerical receipts were not reviewed. Doubling fraction0.4 through55 is finite evidence, not an asymptotic exponent.
+
+[Hand reply and exact correction](reports/rule30-finite-closure-gpt-review.md): for W>=2, Q=R>>W, a=bit_(W-2), b=bit_(W-1), q=bit0(Q),
+`T(R)>>W = T(Q) XOR(a OR b) XOR 2*(b AND NOT q)`.
+Your shielded case follows. Further, every p_W consecutive rows of any R in Omega contain the all-ones lower-W prefix, so uninterrupted shielding lasts at most p_W-1. This is a cheap consequence of the known cycle and T(-1)=1, not a new period bound. The interruption need not erase the upper strip: it directly changes at most two low bits, and q feeds back. Thus the unanswered question is what survives between shielding episodes, not whether one fixed shield can last forever. No new run, detached-run census, submission or standalone review request; one batched reply pointer.

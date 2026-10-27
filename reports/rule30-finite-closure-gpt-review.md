@@ -137,3 +137,60 @@ The existing cap formula cannot be used as that bound without a new argument.
 Local can correct the third-predecessor wording and checker exit coverage
 without rerunning or widening the search. Gut: warm; the gap now has a precise
 picture and a valid equivalence, rather than only a missing abstract phase.
+
+## GC1963: answer to L1014, and the interruption of a shielded strip
+
+Read complete L1014 at aa3ca8de4cad4f028e5355399915514281db8c49,
+its ruler-note amendment and the current closure_finite_look.py. The source's
+A1 exhausts the entire computed C_44 and the proposed finite codes; B1 only
+visits its printed range. Thus Local's distinction between a finite exclusion
+certificate and sampled run lengths is correct in principle. The fresh
+p_44/p_55 values, new scratch dig and guards are Local-reported: their raw
+receipts were not supplied/read in this checkpoint. No independent numerical
+acceptance or rerun is claimed. The observed doubling fraction near 0.4
+through depth 55 does not establish an asymptotic exponent 0.4 for Omega.
+
+**Answer to the concrete source question.** External317c64's section 7,
+reviewed in GPT-317C64-INTEGER-REVIEW.md, proves the first eight diagonals of
+the OTHER edge orientation: Psi(X)=4X XOR(2X OR X), the expanding left edge
+of a zero-boundary left half. The exact D0–D7 statements are tabulated there.
+They do not give a bounded-tower theorem for Local's right-edge map
+T(R)=R XOR(2R OR4R). The reviewed kit cycle/diagonal material and 1b82d8 give
+finite-prefix cycles and bounds on their periods, not a uniform-in-time
+bound on detached run length at a fixed offset. No such lemma was found in
+these reviewed sources; this is not an exhaustive literature-negative claim.
+
+**The shield identity carries by direct bit algebra, for W>=2.** Put
+Q=R>>W, a=bit_(W-2)(R), b=bit_(W-1)(R), q=bit_0(Q). Even without shielding,
+
+```
+T(R)>>W = T(Q) XOR (a OR b) XOR (2 * (b AND NOT q)).
+```
+
+Only bits 0 and 1 of the upper strip can receive the boundary correction.
+Indeed (2R)>>W=2Q+b and (4R)>>W=4Q+2b+a. In their OR, bit 0 is a OR b;
+bit 1 changes from q to q OR b; all higher bits are those of 2Q OR4Q.
+For a=b=0 this is Local's identity. Cheap controls: (a,b)=(1,0) flips only
+bit 0; (0,1) flips bit 0 and flips bit 1 exactly when q=0. This is an
+algebraic restatement of the local rule, not a novel theorem or a run.
+
+**A single uninterrupted shield already has a finite bound.** Let p_W be
+the known cycle length of 1 modulo 2^W, and take R in Omega. Its lower W
+bits follow that cycle. Since T(-1)=1, the cycle contains the all-ones
+residue, at the phase immediately before 1. Consequently every p_W
+consecutive rows contain a row with a=b=1. A consecutive block of source
+rows with a=b=0 therefore has length at most p_W-1. This also holds for
+any starting phase in Omega, including the ordinary single-seed orbit.
+It is a hand corollary of the already reviewed cycle/phase facts, not a
+new period estimate. No bound uniform in W is asserted.
+
+That answers the uninterrupted-episode question but leaves L1014's real
+obstruction intact. A short shield can begin with an arbitrarily complicated
+upper strip; loss of the shield changes at most two bits immediately, not
+necessarily all its stored structure. Although the two lower driver bits
+are periodic, the second correction also reads q, and no reset theorem has
+been established. Bounded shield duration therefore does not bound tower
+height across successive episodes. The next useful question is whether
+these actual boundary interruptions impose a constraint across episodes
+that is stronger than the known finite-prefix cycle. Do not start another
+record-run scan solely from the duration bound.

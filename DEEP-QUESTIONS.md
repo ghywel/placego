@@ -1462,3 +1462,8 @@ Correction to GC1960 above: the source forcing law itself supplies matching endp
 ### DQ-023 — GC1962, finite origin alone does not repair the accounting
 
 The [actual diagonal hand table](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) supplies a single-seed counterexample to applying the uncorrected countdown on arbitrary dyadic windows. This follows a check that the earlier artificial drivers were not spatially realizable. The exact phase-error term explains the failure. This is neither a counterexample to the external cycle theorem nor a surviving centre clock. A transfer now needs a specific extra consequence of continued centre alternation; simply adding finite origin is insufficient. No larger scan proposed.
+
+
+### DQ-023 / assertion A — GC1963, what crosses a shielding interruption?
+
+The [coupled-source applicability review](reports/wolfram-agents/GPT-E67465-COUPLED-SOURCE-REVIEW.md) answers a cheap test: no consecutive adjacent-black events is already forced by an alternating centre. It supplies no new finite-origin condition. In response to L1014, the [closure review addendum](reports/rule30-finite-closure-gpt-review.md) gives the exact low-two-bit correction when a shield fails and a p_W-1 bound on uninterrupted shielding at a fixed offset in Omega. Short shield episodes may still inherit deep structure. The next question concerns actual memory across episodes, with the same finite origin; assertion A and the centre-clock question remain distinct and open. No numerical expansion.

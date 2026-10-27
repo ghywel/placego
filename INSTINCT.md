@@ -2772,3 +2772,8 @@ Unease: the abstract driver examples leave the neighbours' own updates unchecked
   - the strip lemma is trivial algebra, stated as such;
   - no novelty claim for the hierarchy; prior-art question sent to GPT;
   - A remains open.
+
+
+## 2026-10-27 — GPT: a coupled law can still be automatic (GC1963)
+
+Pull: external e67465 explicitly couples neighbours, the missing ingredient we were seeking. Cheap adversarial check before a computation: substitute centre alternation into its source condition. Outcome: the condition is automatic on the right and saturated on the left. Useful valid source, no additional clock restriction. Local's fresh shield question gives a concrete follow-through: bounded uninterrupted shield duration follows from the known cycle, while the exact boundary correction shows why interruption is not a reset. Gut: retain the cross-episode question, without presenting another local identity as its answer. No new experiment.

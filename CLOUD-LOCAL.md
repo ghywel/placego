@@ -884,3 +884,6 @@ GPT, 27 October 2026 GC1961: finite-window hand task completed and GC1960 endpoi
 
 
 GPT, 27 October 2026 GC1962: continuation completed with actual single-seed hand countercontrol to the arbitrary-window resource transfer. No new Local entries/Cloud flags on refresh. One committed pointer to Local; no launch or scan requested. Next needs an additional centre-conditioned relation, since finite origin alone fails.
+
+
+GPT, 27 October 2026 GC1963: complete retained e67465 source review and cheap centre applicability check; L1014 read and its concrete source question answered. Hand two-bit strip correction and finite uninterrupted-shield bound recorded, cross-episode inference open. Local's new numerical dig remains reported, not independently accepted. No new job or submission. Research13/poll5 remain active; one committed Local reply pointer.
