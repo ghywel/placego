@@ -1,0 +1,35 @@
+From b4f5665c86cc3939444cd3d82172813261c8f8db Mon Sep 17 00:00:00 2001
+From: (author omitted; see the kit branch)
+Date: Tue, 27 Oct 2026 13:30:43 +0000
+Subject: [PATCH 3/3] README: list Rule30FrozenRuler and Rule30EdgeStaircases
+ in Added in the kit, not the performance table
+
+---
+ lean/README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lean/README.md b/lean/README.md
+index f2956e4..643dac3 100644
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -124,8 +124,6 @@ Measured on Windows x64 with Lean 4.35.0 on 2026-10-24, each module built alone
+ | Module | Time | Peak memory |
+ |---|---|---|
+ | `Rule30Certificates/WhitePaddingFamilies` | 285.22 s | 2372 MiB |
+-| `Rule30FrozenRuler` | 2026-10-27 | A finite-depth right edge follows the single-cell ruler with a fixed cap: if the row's edge code (read from its rightmost black cell, evolving by the 2-adic edge map `T` of Coven, Pivato and Yassawi) agrees with the single cell's orbit below bit `k ≥ 2` but not below `k + 1`, then at every time it agrees with the single cell's code at a fixed phase below `k` and differs at `k`, and its white run behind the edge cell equals the single cell's below `k - 1`, is exactly `k - 1` when the single cell's is at least `k - 1`, and is never longer; the single cell never emits width `k - 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `frozen_ruler`, `no_width_at_depth`, `depth_dichotomy`, `edge_evol`, `edge_run_alternates` |
+-| `Rule30EdgeStaircases` | 2026-10-27 | Every alternating stretch of length at least 3 whose front is `W ≥ 2` cells from the single cell's right edge ends by the first multiple of a period of the right diagonal `W + 1` (within `2 ^ (W + 1)` rows); the odd edge codes (bit 0 black) with `T (T c) = c` are exactly `-1/3` and `1/3`, so the rain rows `(01)^n` keep a moving `2n`-cell edge patch that alternates between the two prefixes for ever. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `staircase_ends`, `staircase_ends_pow`, `front_step`, `period_two_iff`, `no_fixed_point`, `rain_row_eternal` |
+ | `Rule30Certificates/FiveTailTube` | 147.70 s | 3061 MiB |
+ | `Rule30Certificates/SixTailBackward` | 84.51 s | 1376 MiB |
+ | `Rule30Certificates/SixTailEndpoints` | 20.16 s | 656 MiB |
+@@ -216,6 +214,8 @@ These modules are not in the 2026-10-15 snapshot of the catalog, and `SHA256SUMS
+ | `Rule30XorRigidity` | 2026-10-24 | For any two ordinary Rule 30 histories on all integer sites, their pointwise XOR follows Rule 30 exactly when one history is zero or both are identical. No support or periodicity assumption; a nonzero history has precisely two XOR partners. The one-step identity also appears in [Dibujaron's notes](https://github.com/Dibujaron/rule30); compare Coven–Hedlund–Rhodes (1979) on commuting maps. Contributed by AIOvernight with OpenAI Codex as Rule 30 Prize submission `R30-20261024-ddbfbd`. | `xor_history_iff`, `standard_two_partners` |
+ | `Rule30StripeMeeting`, `Rule30Certificates.StripeMeeting` | 2026-10-24 | For arbitrary finite integer rows and every center index, a common stripe-prefix cut with a white separator preserves the entire center trace. The relation is preserved after two steps. If two rows become stripe-related at any finite time while their preceding center observations agree, they were related at time zero or one. A 2321-state kernel certificate is connected to arbitrary row sizes and the exact stripe grammar. Completeness for equal infinite traces, numerical-normalizer equivalence, and Problem 1 remain open. Contributed by Troy Lowry with OpenAI Codex. | `stripe_related_same_trace`, `stripe_related_preserves_two`, `stripe_meeting_is_early`, `no_delayed_stripe_meeting`, `eventually_stripe_iff_early` |
+ | `Rule30PaddedWords` | 2026-10-24 | One bound for each short tail. The center column of the single seed is not eventually `0^r u` for a tail `u` of at most six cells once `r ≥ paddedBound u`, the least bound the catalog proves: 8 for `11`, 9 for `10111`, 9 for `1`, and 49, 69 or 74 for any other tail of at most four, five or six cells. A better bound for a tail, or longer tails, is a change to this module. | `no_padded_word`, `not_eventuallyWord_zeros_11`, `not_eventuallyWord_zeros_one` |
++| `Rule30FrozenRuler` | 2026-10-27 | A finite-depth right edge follows the single-cell ruler with a fixed cap: if the row's edge code (read from its rightmost black cell, evolving by the 2-adic edge map `T` of Coven, Pivato and Yassawi) agrees with the single cell's orbit below bit `k ≥ 2` but not below `k + 1`, then at every time it agrees with the single cell's code at a fixed phase below `k` and differs at `k`, and its white run behind the edge cell equals the single cell's below `k - 1`, is exactly `k - 1` when the single cell's is at least `k - 1`, and is never longer; the single cell never emits width `k - 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `frozen_ruler`, `no_width_at_depth`, `depth_dichotomy`, `edge_evol`, `edge_run_alternates` |
++| `Rule30EdgeStaircases` | 2026-10-27 | Every alternating stretch of length at least 3 whose front is `W ≥ 2` cells from the single cell's right edge ends by the first multiple of a period of the right diagonal `W + 1` (within `2 ^ (W + 1)` rows); the odd edge codes (bit 0 black) with `T (T c) = c` are exactly `-1/3` and `1/3`, so the rain rows `(01)^n` keep a moving `2n`-cell edge patch that alternates between the two prefixes for ever. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `staircase_ends`, `staircase_ends_pow`, `front_step`, `period_two_iff`, `no_fixed_point`, `rain_row_eternal` |
+ 
+ ## Certificate data
+ 
+-- 
+2.54.0 (Apple Git-157)
+
