@@ -263,19 +263,30 @@ No cellular-automaton evolution, new numerical experiment or Lean replay was run
 removes the unreviewed A<2^24 claim. Only docstrings changed in the reviewed Lean modules.
 GC1968 already completed the full added staircase carrying read; it does not need repeating.
 
-**Concrete remaining repairs are now prepared by GPT:**
+**Final L1020 completion:** Local's concurrent revision at13012fbc supplied the same remaining map-comparison,
+rain n1 and README-placement repairs with an already rebuilt notebook. GPT's unpublished duplicate prose
+and relocation patch were withdrawn before publication, preserving Local's validated artifacts.
 
-- `kit-pr/0003-Move-contribution-rows-to-the-catalogue.patch` moves exactly the two descriptive rows
-  from the performance table into “Added in the kit”. It was applied after0001/0002 against the exact
-  pinned README in a temporary directory, with all other lines preserved. Local should apply this third
-  patch to its kit branch, preserving its agreed sole PR ownership.
-- The rain-pair abstract/template now contain GC1967's actual-map comparison, and the scope paragraph
-  accurately says the exponential deadline covers any fixed finite W>=2. The description carries W>=2.
-  `rain-pair/essay.md` was regenerated with the unchanged Lean source and its exact abstract/template;
-  assembly passes. The earlier notebook remains bound to the **L1019** essay hash, not this newly edited
-  essay. Final S2 notebook generation/output validation therefore remains pending.
+The complete L1020 entry and `cited/l1020-s2-evidence/manifest.json` were read. Manifest SHA256:
+`19aa3741f7828b99f7782f10edbac869a288c49ec84e60e92cbb5977eabf239b`.
+Its four retained files hash-check: build receipt, unchanged checker JSON, complete final notebook and
+complete nine-cell output dump. All six final committed S2/core source bindings match. S2 final essay
+SHA256 is `edda445e0b9ac589f82163f11ec0bccd8be4cef94268f60dc1a37cdc89e628c3`;
+notebook SHA256 is `922df060484939cb81ce8da74444a09d56364b4cb4e1f223c5cf64ef59985325`.
+Exact source/template/abstract assembly passes. The final nine outputs pass the same full normalized
+notebook/payload, displayed declaration/type/axiom, call-graph and90-declaration kernel checks.
+The receipt reports38.3 seconds; this is a producer timing, not a resource-peak measurement.
 
-S1's source and actual notebook review is complete for its L1019 hash. The four existing Check results
-remain evidence for the unchanged Lean bytes. These document repairs do not call for a new mathematical
-scan or a duplicate Lean build. Local can complete the final essay validation and kit PR once its reported
-GitHub sign-in dependency is resolved. No submission receipt is claimed; S3 remains Local's next formalization.
+All three Local patches were applied in order against the exact pinned README. The resulting file
+matches L1020's hash `697b38d36ce3062b09248c7dbac5bc8d7ec8afd7117755c773443852341ccbb0`.
+Exactly two descriptive rows are now in the four-column “Added in the kit” table, and every other line,
+including all measured timing rows, is preserved. The final artifact is Local's
+`0003-README-list-Rule30FrozenRuler-and-Rule30EdgeStaircas.patch`, not GPT's withdrawn draft.
+
+**S1 and final merged S2 source, exposition and actual notebook evidence reviews are COMPLETE/PASS**
+for these exact hashes. The four existing Check results apply to the unchanged Lean source bytes.
+Local may proceed with the agreed kit PR and partial essay delivery, after the live workflow's final
+repository/duplicate checks; the source review does not require another owner permission round.
+The owner GitHub sign-in dependency remains Local-reported. No PR URL, portal receipt, portal verifier
+result or new prize theorem is claimed here. S3 remains Local's next formalization, with its actual
+source still to be reviewed. No new mathematical scan, duplicate Lean build or GPT kernel replay.
