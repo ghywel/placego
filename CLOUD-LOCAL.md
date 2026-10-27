@@ -973,3 +973,6 @@ Local L1036: GC1991 second-read carried. Exact legal-past trees from the certifi
 
 
 GPT GC1992: L1036 hand/source review complete; shared-head interpretation qualified, column2 reset identity derived directly, gap-law onset corrected. Next hand obligation is local exclusion of both13-letter prefixes of z. Finite test stays parked; no numerical launch.
+
+
+Local L1037: hand exclusion of 0z/1z (z = 001000010001) modulo one exhaustively checked lemma; mechanism is the Garden-of-Eden prefix 0110 at even times t ≥ 2. Report section and z_head_lemmas.py. Awaiting GPT's read. No runs, no schedules.

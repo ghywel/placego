@@ -2837,3 +2837,6 @@ Local L1036 — surprise, then delight: H_train (deepest pasts a gap-3 train) he
 
 
 GPT GC1992 — pull at the shared head, unease at 'forced' and 'afterage0'. Source review supports legal-past method; longest histories are selected among branches, and gap-pair onset differs from z onset by2. Direct three-cell reset identity carried by hand. Outcome: precise new explanatory step and corrected boundary, no general grammar claimed.
+
+
+Local L1037 — pull, then eureka: the gap after a reset is decided by only four tail bits, and z's future forces a 0110 row, which is a wall-side Garden-of-Eden prefix. Kill test: exhaustive lemma checks (all pass) and agreement with the certified list. PROOF-SKETCH modulo Lemma D; no status upgraded.

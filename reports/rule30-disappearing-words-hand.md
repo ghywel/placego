@@ -96,3 +96,91 @@ The correct formulation is therefore: **a gap pair4,3 whose first1 is at visible
 This derives the eventual gap rule from the two certified forbidden prefixes. It is not yet a hand derivation of those prefixes from local dynamics. Proving no11 and the triple-white reset alone does not exclude all other compatible right columns. The next carrying obligation remains: use the actual evolution of columns2 and3 (and any needed further cells) to rule out0z and1z without importing their absence as a premise. Both prefix branches must be handled; a proof of z's late exclusion alone should state what past compatibility it uses.
 
 Prior record checked: GC503/504's exact latch and no(1,2) gap proof; G238's already-carried different14-letter obstruction01000010001001; GC1796's phase-sensitive nine-word graph comparison. None is silently substituted for this13-letter pair. The tree is useful evidence organization, not yet a hand proof of the whole33-step mechanism or a general gap grammar. Numerical test remains parked.
+
+## L1037: why z = 001000010001 occurs only at age 0
+
+Local, 27 October 2026. This answers GC1992's request: exclude 0z and 1z through the actual near-wall evolution,
+without assuming they are absent. Conventions are unchanged:
+- a *row* is cells 1, 2, … at an even time, and the wall is white at even times;
+- *two(X)* is the row two updates later;
+- the visible bit is cell 1.
+
+Every lemma below is checked exhaustively by
+[`tests/probes/wolfram/z_head_lemmas.py`](../tests/probes/wolfram/z_head_lemmas.py). That is a finite truth-table
+check, not a solver run. Lemmas R, B, A and E are also derived by hand here; Lemma D is not yet.
+
+**Status.** PROOF-SKETCH. It is single-party, Lemma D's hand derivation is outstanding, and it awaits GPT's read.
+
+For X = x1 x2 x3 …, the odd-time row y = step(X) and the next row Z = two(X) satisfy
+
+    y1 = x1 OR x2,   y_i = x_(i-1) XOR (x_i OR x_(i+1));   Z1 = NOT(y1 OR y2),   Z_i = y_(i-1) XOR (y_i OR y_(i+1)).
+
+**Lemma R (reset; GC1992, carried).** Z1 = 1 iff X begins 000.
+
+**Lemma B (pre-reset).** Z begins 000 iff X begins 010, or 01100, or 100 with (x4, x5) ≠ 00.
+
+*Proof.*
+1. Z1 = 0 needs y1 OR y2 = 1.
+2. Z2 = 0 needs y1 = y2 OR y3. With y1 = 0 this would require y2 = 1, and then Z2 = 1, which fails. So y1 = 1, and
+   y2 OR y3 = 1.
+3. Z3 = 0 needs y2 = y3 OR y4. If y2 = 0, then y3 = 1 and Z3 = 1, which fails. So y2 = 1, and y3 OR y4 = 1.
+4. Case x1 = 1: y2 = NOT(x2 OR x3) = 1 gives x2 = x3 = 0. Then y3 OR y4 = x4 OR x5 = 1.
+5. Case x1 = 0: y1 = 1 gives x2 = 1, and y2 = 1 holds. Now y3 = NOT(x3 OR x4) and y4 = x3 XOR (x4 OR x5).
+   - x3 = 0 gives the 010 branch: y3 OR y4 = 1 holds whatever x4 and x5 are.
+   - x3 = 1 makes y3 = 0, so y4 = 1, which needs x4 = x5 = 0: the 01100 branch. ∎
+
+**Lemma A (a wall-side Garden-of-Eden prefix).** No row at an even time t ≥ 2 begins 0110.
+
+*Proof.* Suppose Z = two(X) begins 0110.
+1. Z1 = 0 needs y1 OR y2 = 1, and Z2 = 1 needs y1 XOR (y2 OR y3) = 1.
+2. If y1 = 1, then y2 = y3 = 0. Then Z3 = y4 = 1, and Z4 = y3 XOR (y4 OR y5) = 1, contradicting Z4 = 0.
+3. So y1 = 0, and then y2 = 1. Z3 = 1 forces y3 = y4 = 0.
+4. y1 = x1 OR x2 = 0 gives x1 = x2 = 0. Then y2 = x3 = 1, and y3 = x2 XOR (x3 OR x4) = 1, contradicting y3 = 0. ∎
+
+The same check lists the minimal prefixes with no two-step past up to length 7:
+
+    110, 0110, 1010, 1111, 10010, 10111, 100010, 100111, …
+
+These are the kind of wall-side obstruction GC1986 met when it tried to delay fixed rows.
+
+**Lemma D (z's future; exhaustive only).** Take a reset row 000 t1 t2 …. Suppose the next visible gap is 4 and the
+gap after that is 3. Then t1…t6 = 100111 and (t7, t8) ≠ 00. Conversely, every such tail produces those two gaps.
+
+This is checked over all 2^14 tails. Orientation: the gap after any reset is decided by its first four tail bits:
+- gap 1: 0001, 0010, 0011;
+- gap 2: 1101, 1110, 1111;
+- gap 3: 0000 or 01**;
+- gap 4: 10** or 1100.
+
+Those 16 cases are a partition, also checked exhaustively. A hand derivation of D through five wall cycles is the open
+step.
+
+**Lemma E (the 010 branch).** If X begins 010, then two(X) does not begin 000100111.
+
+*Proof.* Write X = 010abcdefgh. Then y3 = NOT a, y4 = a OR b, and y_i = x_(i-1) XOR (x_i OR x_(i+1)) beyond. The
+target tail bits are t_k = Z_(k+3).
+- *a = 0.* t1 = NOT(b OR c) = 1 gives b = c = 0. Then t2 = d = 0, and t3 = e = 0, so t4 = f = 1. But then
+  t6 = y8 XOR (y9 OR y10) = 1 XOR 1 = 0, not 1.
+- *a = 1 and b = c = 0.* y5 = 1, y6 = d and y7 = d OR e. Then t3 = 0 needs d OR e = 1, and t4 = NOT d = 1 needs d = 0, so e = 1. Then y7 = y8 = 1, so t5 = y7 XOR (y8 OR y9) = 0,
+  not 1.
+- *a = 1 and (b OR c) = 1.* y5 = 0, and t2 = 0 forces y6 = 1. Then t3 = y5 XOR (y6 OR y7) = 1, not 0. ∎
+
+**Theorem (modulo Lemma D).** z occurs at no age j ≥ 1. Hence 0z and 1z are absent and d(z) = 1, which agrees
+independently with the certified phase-0 list.
+
+*Proof.*
+1. Let z occur at age j ≥ 1. Its third letter is the first 1, so the row R1 at time 2j + 2 begins 000 (Lemma R).
+   Lemma D then gives R1 = 000100111….
+2. The row X at time 2j has x1 = z's first letter, 0. Lemma B leaves the branches 010 and 01100. Lemma E excludes
+   010, so X begins 0110.
+3. X is at time 2j ≥ 2, so Lemma A excludes it. ∎
+
+The same argument at j = 0 does not apply: an initial row may begin 0110011, and that is how z occurs at age 0.
+
+**The mechanism in one sentence.** z's future can only be prepared by a wall-side row 0110 just before its first
+reset, and only the initial row can be shaped like that. So the shared head of the 32/33/34 deaths is a
+Garden-of-Eden prefix, read forward through the reset structure.
+
+**The next question.** Does every age-0-only head (every word with d = 1) arise this way: its future forces a
+Garden-of-Eden prefix onto some row before its first reset? The certified list and the prefix list above make this a
+finite check for short heads.
