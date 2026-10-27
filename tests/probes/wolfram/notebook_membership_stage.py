@@ -15,8 +15,8 @@ Query plan, at most 6 external calls, each run in both encodings, in this order.
   1, 2. P@100 in 'table', then in 'or'.
   3, 4. R@100 in 'table', then in 'or'.
   5, 6. P@99 in 'table', then in 'or', made ONLY if P@100 was not accepted.
-An answer is ACCEPTED_SAT when both encodings say SAT and every model satisfies every clause and replays physically
-(the literal evaluator shows the word at that age). ACCEPTED_UNSAT means both say UNSAT. That is solver-reported
+An answer is ACCEPTED_SAT when either encoding returns a clause-checked, physically replayed SAT witness
+and the other does not report UNSAT. SAT plus UNKNOWN still proves existence. ACCEPTED_UNSAT means both say UNSAT. That is solver-reported
 only: binary DRAT is retained and NOT checked here, and the result says so. Any SAT-versus-UNSAT disagreement
 between the encodings stops the stage at once. UNKNOWN (a timeout or another return code) never means absence.
 
@@ -29,13 +29,15 @@ Controls, before any solver call (no search).
 Predictions, written before any run.
   M1 (GC1983's reading). P@100 and R@100 are both possible, so the gate E_34^8 = E_100^8 closes in 4 calls.
   M2 (Local, about 50%). At least one of the four calls returns UNKNOWN within 30 s, since 00001001@100 timed out
-      before; then the affected word stays unresolved.
+      before; the word remains unresolved only if neither encoding supplies an accepted SAT witness.
   Counterfactual. An ACCEPTED_UNSAT at age 99 or 100 is a death after 43 among E_34^8 words. That bears directly on
       hypothesis G, as finite evidence pending certificate checking, and revises the historical short-word
       plateau.
 Caps (GC1987): 6 calls of 30 s CPU and 30 s wall each; the parent admits a call only while own+children CPU is
 below 210 s; stage wall 300 s, group RSS 512 MiB, disk 256 MiB, per-file 64 MiB; existing pressure stops. All
 CNFs, solver outputs, DRAT files, witnesses and decisions are retained.
+GC1988 review: accept checked SAT plus UNKNOWN, stop on SAT/UNSAT conflict; add six-call guard,
+pre-launch and post-call aggregate CPU accounting, pending-query checkpoint and top-level failure receipt.
 """
 import hashlib
 import json
@@ -94,16 +96,22 @@ def controls(latest):
     return out
 
 
-def admit():
+def cpu_used():
     a = resource.getrusage(resource.RUSAGE_SELF)
     b = resource.getrusage(resource.RUSAGE_CHILDREN)
     used = a.ru_utime + a.ru_stime + b.ru_utime + b.ru_stime
+    return used
+
+
+def admit():
+    used = cpu_used()
     if used >= 210:
         raise RuntimeError('aggregate CPU admission guard (210 s) reached: %.1f s' % used)
     return used
 
 
 def solve(word, j, enc):
+    assert len(LOG) < 6, 'six-call ceiling'
     used = admit()
     h, cells, nv, clauses = gate.cnf(word, j, enc)
     tag = 'q%02d_%s_%d_%s' % (len(LOG) + 1, word, j, enc)
@@ -114,8 +122,13 @@ def solve(word, j, enc):
         for c in clauses:
             f.write(' '.join(map(str, c)) + ' 0\n')
 
+    used = admit()  # account for CNF construction and serialization before launch
+    write('pending.json', dict(query=tag, word=word, age=j, encoding=enc, cpu_used_before_s=used))
+
     def limits():
         resource.setrlimit(resource.RLIMIT_CPU, (30, 30))
+        if resource.getrlimit(resource.RLIMIT_CPU) != (30, 30):
+            os._exit(97)
     start = time.monotonic()
     with (p / 'solver.txt').open('w') as f:
         try:
@@ -145,8 +158,11 @@ def solve(word, j, enc):
                                         visible_trace=''.join(str(hist[t][0]) for t in range(0, h + 1, 2))),
                                         indent=1) + '\n')
         rec['witness_checked'] = True
+    rec['cpu_used_after_s'] = cpu_used()
     LOG.append(rec)
     write('queries.json', LOG)
+    write('pending.json', dict(query=tag, completed=True))
+    admit()  # post-call guard; result is retained even when the stage stops
     print(json.dumps({k: rec[k] for k in ('query', 'status', 'wall_s')}), flush=True)
     return status
 
@@ -156,7 +172,7 @@ def ask(word, j):
     b = solve(word, j, 'or')
     if {a, b} == {'SAT', 'UNSAT'}:
         raise RuntimeError('encoding disagreement on %s@%d: %s vs %s' % (word, j, a, b))
-    if a == b == 'SAT':
+    if 'SAT' in (a, b):
         return 'ACCEPTED_SAT'
     if a == b == 'UNSAT':
         return 'ACCEPTED_UNSAT (solver-reported; DRAT retained, not checked)'
@@ -196,4 +212,9 @@ def main():
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as exc:
+        if ROOT is not None and ROOT.exists():
+            write('failure.json', dict(error_type=type(exc).__name__, error=str(exc), completed_calls=len(LOG), cpu_used_s=cpu_used()))
+        raise

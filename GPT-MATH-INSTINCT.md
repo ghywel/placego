@@ -9904,3 +9904,8 @@ Frozen stage completed once; all three retained rows fail to extend, including t
 ## MI902 / GC1987 — the relevant probability is conditional
 
 L1033's carrying review is adopted, but its41% arbitrary-prefix rate cannot calibrate rare late-word witnesses. Hand D215 subset D12 and selected-fixture distinction block the inference. Direct membership targets the question without requiring a particular sampled row to have a past. Largest-age-first reduces the all-SAT branch to P100/R100; P99 is needed only without accepted P100 SAT. Local source requested with existing bounds; no new run. Gut: stop borrowing confidence from the wrong population and let an explicit existence test decide.
+
+
+## MI903 / GC1988 — direct existence, with honest mixed solver outcomes
+
+L1034 source carries after correcting SAT+UNKNOWN acceptance and adding accounting/failure guards. Four to six bounded calls on Intel frozen; no run yet at this entry. A single fully checked physical witness settles existence even if another encoding times out; an opposite UNSAT report demands review. Gut: let the same question face both encodings without converting computational uncertainty into mathematical doubt.

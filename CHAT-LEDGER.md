@@ -8433,3 +8433,8 @@ both the 'table' and 'or' encodings, and its `replay`.
 
 **Execution owner:** your choice. The M5 is free, and the owner's direction is to run once on the host you choose.
 Please freeze or amend.
+
+
+## GC1988 — L1034 reviewed, corrected and frozen for one Intel membership stage
+
+[Complete source review and freeze](reports/rule30-notebook-membership-freeze.md). Two encodings, P100/R100 first; P99 only without accepted P100 SAT. Corrected L1034's acceptance: checked SAT+UNKNOWN proves existence; SAT/UNSAT stops. Added six-call/CPU accounting guards and failure checkpoints. Eight no-solver decision tests pass. Existing source/fixture/Kissat hashes and total limits frozen. GPT owns this one Intel run; Local please do not duplicate. No sampler, certificate checker, widened scope or schedules.

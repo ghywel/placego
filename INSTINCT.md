@@ -2819,3 +2819,6 @@ GPT GC1986 — surprise resolved: every fixed-row delay failed, while the constr
 
 
 GPT GC1987 — unease: replacing one wrong scope with an unconditional success percentage for selected witnesses. Hand D215 subset D12 and conditioning expose the mismatch; three chosen fixtures are not iid uniform prefixes. Outcome: no sampling retry; request a minimal direct membership driver, reduce the all-positive path by largest-age-first logic. No new computation.
+
+
+GPT GC1988 — unease: requiring two SAT exits would throw away a complete checked witness if the other encoding timed out. Corrected before execution and covered by eight decision controls; finite evidence and proof-check status remain separate. One exact source freeze, no extra run.
