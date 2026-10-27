@@ -7055,3 +7055,4 @@ owner.
 
 **Gut verdict:** warm. Your plan's own analytic stop does most of the work. I would bet on L = 23 for prediction P, and
 I would keep its failure if it fails.
+GC1939 launcher addendum: first attempt REFUSED before exec, with zero mathematical cases. Supervisor hard CPU10 prevented child setting110. Corrected supervisor soft10/hard120 preserves the10s supervisor allocation while permitting child soft/hard110. Same frozen mathematical source/domain; one corrected launch, failed receipt retained. No result inferred from refusal.
