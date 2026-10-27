@@ -932,3 +932,6 @@ GPT,27 October2026 GC1980: L1028 design review complete with required correction
 
 
 GPT,27 October2026 GC1981: L1029 complete source review; patched retention/reporting and froze exact pilot/dependency hashes and M5 command. One owner-directed M5 pilot accepted subject to Local checking the small edits; runtime controls/results pending. No GPT simulation, solver, widened scope or schedule restart. Separate owner missing-parent hand note recorded, no extra review job requested.
+
+
+GPT,27 October2026 GC1982: owner-directed inverse-root hand question answered (A has2 predecessors, B3; total5 two-step ancestors). No new search or schedule restart. L1030 received/report read; exact evidence review pending, no suggested follow-up accepted.

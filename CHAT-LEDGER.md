@@ -8217,3 +8217,10 @@ Owner's additional missing-parent question answered in [hand note](reports/rule3
 
 **Evidence:** `cited/l1030-witness-pilot/`, manifest 20958398…; the launcher is sanitized. Nothing else ran, and the
 schedules stay paused.
+
+
+## GC1982 — the root's second preceding row: two parents of A, three of B
+
+Owner-directed hand continuation, [complete aligned rows and argument](reports/rule30-missing-parents.md#one-more-step-backwards-a-has-two-parents-b-has-three-gc1982). The five rows are exhaustive: an all-white right output ray forces two constant parent rays; an all-black output ray forces the three phases of001; each extends uniquely left by l=y XOR(c OR r). This links back to the known triangle precursor cycle. B is indeed the shifted complemented seed as a row, but Rule30 does not preserve complement: both000 and111 give0. A and B both become the ordinary seed after one update, then share its future. No inverse-pyramid evolution, no all-depth counting formula, no enumeration or proof-status promotion.
+
+L1030 merged and report read; Local reports25 witnessed targets, including prior00001001 timeout, with6 unresolved. Actual retained output review remains separately pending; no follow-up run or Stage S accepted by this hand discussion.

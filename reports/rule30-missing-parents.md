@@ -86,3 +86,90 @@ Question -> response -> challenge -> better question:
 
 The drawing's root is the beginning of the chosen experiment, not a theorem that
 no preceding mathematical configuration exists.
+
+## One more step backwards: A has two parents, B has three (GC1982)
+
+The owner asks to continue the inverse tree, noticing that B is a shifted colour
+complement of the real root, while A hides two different infinite backgrounds.
+This section is another elementary hand derivation, without an enumeration run
+or independent second read. Positions and Rule30 orientation are unchanged.
+
+**Answer:** exactly two rows map to A, and exactly three map to B. Consequently
+exactly five distinct rows map to the isolated root in two updates. This is a
+count of entire bi-infinite rows, not merely cropped triples. It does not imply
+a doubling law, a Fibonacci law or any other all-depth counting formula.
+
+The divider below is still between positions -1 and 0. Nine cells are shown on
+each side. Extend the indicated far-left repeating pattern and far-right
+constant/repeating pattern forever; preserve the displayed junction cells.
+
+```text
+parent of A, choice 1: ...010010010 | 000000000...
+parent of A, choice 2: ...001001001 | 111111111...
+
+parent of B, choice 1: ...010010011 | 001001001...
+parent of B, choice 2: ...100100100 | 010010010...
+parent of B, choice 3: ...010010010 | 100100100...
+```
+
+For B's first choice the final `11` before the divider is intentional. The
+far-left tail repeats010; the defect at the junction is not repeated.
+
+### Why these lists are complete
+
+Given a desired output y and two adjacent parent bits c=x_i, r=x_(i+1), the
+remaining parent to their left is uniquely forced:
+
+    x_(i-1) = y_i XOR (x_i OR x_(i+1)).
+
+For A, the outputs at i>=0 are all0. The previous right-ray argument forces
+the entire parent ray x_-1,x_0,... to be constant: either all0 or all1. Each
+choice extends uniquely leftward through the required black outputs of A.
+They give the two rows above.
+
+For B, the outputs at i>=0 are all1. A parent triple producing1 is001,010,011
+or100. But011 cannot occur in this right ray: its last pair11 would force the
+next output to be0. The remaining triples001,010,100 force a repeating001
+ray, with exactly three possible alignments. Each ray again extends uniquely
+leftward across B's white cell at -1 and then its black left half. The three
+extensions are the displayed rows.
+
+One can inspect the junctions without simulation. In the two A predecessors,
+the triples at output positions -1 and 0 are respectively100/000 and011/111,
+so the junction outputs are1/0. In the three B predecessors those triples are
+110/100,000/001 and101/010, so the junction outputs are0/1. The displayed
+periodic tails produce their required uniform outputs. B's first predecessor
+also has011 at output position -2, which correctly produces1 before the white
+output at -1. This guards the easily missed junction defect.
+
+More generally, the same argument shows that any full target row with an
+eventually all-white right tail has exactly two full-line predecessors, and
+one with an eventually all-black right tail has exactly three. Choose the
+appropriate constant/period-three parent ray sufficiently far right, then
+apply the unique reconstruction to the left. This statement concerns uniform
+right tails; it makes no claim about predecessor counts for arbitrary tails.
+
+### B is a complemented picture, but its dynamics do not stay complemented
+
+Let S be the isolated black cell at0. B is the colour complement of an isolated
+black cell at-1. The owner's description of this single row is correct.
+However, Rule30 does not commute with colour complement: both000 and111 map
+to0. Thus its white and black uniform backgrounds both become white in one
+update. In particular,
+
+    F(A)=F(B)=S,  hence F^t(A)=F^t(B)=F^(t-1)(S) for t>=1.
+
+Both histories join the ordinary single-seed pyramid after one update. If B is
+shifted right one cell first, its resulting seed and subsequent ordinary
+pyramid are shifted right by the same amount. A colour-inverted future picture
+would require a correspondingly transformed update rule.
+
+A is a boundary between two uniform backgrounds. Their interiors both erase
+to white immediately; the interface leaves the single black cell. B achieves
+the same output through a one-cell hole in a black background. Their common
+future forgets which of these very different whole-row pasts occurred.
+
+The period-three precursor is the same local mechanism as in the earlier
+triangle work: consecutive black outputs admit the001 cycle. Here we impose
+that condition on an infinite tail, which removes terminal exceptions and
+forces an exact periodic ray. No new general survival theorem follows.

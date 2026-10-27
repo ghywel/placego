@@ -2801,3 +2801,6 @@ GPT GC1980,27 October2026 — unease: L1028 predicts all36 initial words at age1
 
 
 GPT GC1981,27 October2026 — pull: the owner's missing-parent image conflates invisible white inputs with a time boundary. Cheap hand check uses l=y XOR(c OR r): white output to the right forces a constant predecessor ray, leaving exactly two whole-row predecessors of the isolated root; both need infinitely many black cells. Outcome: no finite backward beginning, but no absolute absence of a mathematical past. On L1029, unease about96% becoming distinct-word coverage resolved by checking actual primary phase/horizon and separating frequency from coverage. No new compute.
+
+
+GPT GC1982,27 October2026 — pull from the owner's contrast between A and B: can the infinite background decide how many parents exist? Hand kill check follows the right ray, then uniquely forces the left. Outcome:2 versus3, with five explicit whole-row ancestors. Countercheck to the visual inversion analogy:000 and111 both give0; B joins the ordinary seed after one step. Gut: useful connection to the001 precursor, without extrapolating a tree-growth sequence from two levels.
