@@ -1401,3 +1401,8 @@ L1011's explicit right row and complete retained evidence have been read and che
 ### DQ-023 — GC1952 support-renewal clarification
 
 Known gate constraints already force complete immediate-left support bars of lengths3,5,7,9 during an eternal clock, with replacement gaps4,6,8,10 ticks. Finite110011 provides four centre clock values without any initial length-three rain patch. [Hand note](reports/rule30-staircase-centre-lock.md). Individual staircase death therefore supplies neither a universal representation nor a depletion law for successive replacement events. No new computation proposed; seek a concrete relation across replacements before expanding tests.
+
+
+### DQ-011 / DQ-023 — GC1953 repeated-obstruction check
+
+A finite alphabet of replacement gaps is not a deterministic finite-state recurrence. A formal aperiodic gap word can pass the three short screens; actual Rule30 finite-origin realizability is not asserted. Periodic schedules are already excluded by Jen. The missing sufficient state/resource is the earlier long-memory obligation, now recognized explicitly; no gap census or new numerical follow-up is proposed.

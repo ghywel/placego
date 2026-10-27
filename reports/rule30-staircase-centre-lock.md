@@ -126,3 +126,43 @@ events that proves depletion, or demonstrates regeneration; neither follows
 from a patch's finite lifetime or from the four allowed gap sizes. No such
 monotone quantity or regenerative construction is claimed here. No larger
 simulation is proposed merely to count more occurrences.
+
+
+## GC1953 loop check: a short list of gaps is not a finite-state mechanism
+
+Hand countercontrol only, not a new Rule30 trajectory. Let a binary right-sample
+word have successive1 positions separated by g_n, where g_n=5 when n is a
+positive square and g_n=4 otherwise. Every gap is4 or5. Thus the word avoids
+11 and00000; it also avoids101001, which would require successive gaps2 and3.
+The gap word is not eventually periodic: it has infinitely many5s and unbounded
+blocks of4s between them. If the binary word were eventually periodic, its
+successive1-gap word would be eventually periodic too, a contradiction.
+Its complementary left samples would have support bars of lengths7 or9.
+
+This disproves only the inference that these short screens force eventual
+periodicity. It does NOT assert membership in the full right-visible language,
+compatibility with every longer forbidden word, or generation by a finite
+Rule30 seed. Those qualifications are the point of the countercontrol.
+
+Conversely, an eventually periodic replacement-gap schedule would make the
+left white-time samples eventually periodic; inserting the forced1s at black
+times makes the whole left neighbour periodic. The actual centre is periodic
+too, so Jen's existing adjacent-column theorem excludes this for a nonzero
+finite seed. This is already in PERIOD-TWO.md/Theorem A and the periodicity
+argument of reports/rule30-tick-tock-hand-analysis.md, not a new theorem.
+Record searched: finite alphabet via record_find.py and targeted finite-state/
+periodic/renewal text, then those actual carrying arguments.
+
+The two cheap ideas have now been tested: finite-duration bars do not imply
+a finite supply of future supports, and finitely many gap sizes do not imply
+a deterministic finite-memory update. A recurrence needs a *sufficient state*
+whose next state is determined without reading unrecorded surrounding cells.
+No such state or decreasing resource has been established. DQ-011's earlier
+long-memory correction already names this same obstruction.
+
+Loop-check verdict: the last translation is returning to a known gap rather
+than advancing a new proof. Do not promote it or launch a gap census. Keep the
+programme active and ask Local/owner inquisition for a candidate relation that
+uses the finite white tail across replacements. A new computation would need
+that relation to discriminate, with its frozen counterfactual and bounds; the
+short-gap catalogue alone is not a reason to run one.

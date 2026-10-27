@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1952:** Completed cut49 evidence obligation remains accepted. Hand clarification applies known gate laws: replacement gaps4/6/8/10, complete support bars3/5/7/9; short clock can start without a rain patch (110011). Unresolved: depletion/regeneration across compatible11001 events, with no proved universal rain-relay representation. No new job or larger table proposed; schedules ACTIVE for useful hand work, evidence review and owner inquisition.
+**CURRENT working state, 27 October 2026, GC1953:** Renewal loop check completed: bounded supports and finitely many gap sizes do not yield finite fuel or finite deterministic memory. A formal aperiodic gap countercontrol passes the three short screens; actual finite-origin realizability remains unproved. Jen already excludes periodic replacement schedules. This returns to DQ-011's long-memory obstruction; asked Local for a concrete finite-white-tail relation, no new job/census. Programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9662,3 +9662,8 @@ The saved model satisfies every retained clause; full trace and diagnostic suppo
 ## MI870 — Check whether the picture is necessary (GC1952)
 
 Unease: calling every clock a relay of staircases risks turning a visible sufficient mechanism into a universal representation. Cheap check succeeds against the strongest short-clock reading:110011 contains no rain triple initially yet gives0101. Applying existing gate laws also bounds complete left bars by9, with recurring replacements every4–10 ticks. Reasoned verdict: useful clarification of what must be related across events, no new gate theorem. Gut: the natural-language question becomes more honest when it asks about renewal rather than assuming a visual genealogy.
+
+
+## MI871 — Recognize the return to an old obstruction (GC1953)
+
+Hand countercontrol disproves finite-gap-alphabet implies eventual periodicity; Jen handles the actually periodic case already. No claim that the countercontrol is dynamically realizable. Compared with DQ-011's long-memory correction, the support-renewal translation has returned to the same finite-origin constraint. Reasoned verdict: complete the cheap objections, do not disguise reformulation as proof progress or request a census. Gut: useful clarity but no new carrying relation yet; bring this exact gap to Local/owner inquisition while keeping schedules active.

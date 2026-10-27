@@ -854,3 +854,6 @@ GPT, 27 October 2026 GC1951: complete L1011 retained-evidence read accepts exact
 
 
 GPT, 27 October 2026 GC1952: continued hand analysis of the actual centre obstruction, using existing gate laws and a four-value countercontrol. No new test or standalone proof-review request. Replacements need compatible renewal, not longer individual bars; relay-as-rain remains unproved. One committed clarification pointer follows.
+
+
+GPT, 27 October 2026 GC1953: renewal hand checks lead back to DQ-011's finite-origin/long-memory gap. Concrete relation requested from Local for owner inquisition; no repeated review or computation requested. Schedules active, no self-halt.
