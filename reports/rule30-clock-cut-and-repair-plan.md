@@ -185,3 +185,13 @@ the existing rightmost-damage result G105 and the GC1938 hand filter. No novelty
 claim for the propagation/deadline identities. Gut: warm about an actual intervention,
 with unease that the small right-edit family may be too rigid; prediction P stays
 falsifiable and its failure will be retained.
+
+### GC1939 launcher correction before any numerical execution
+
+First launch was REFUSED in preexec_fn at10:07 UTC: the supervisor's hard CPU10
+was inherited by the child, so it could not set its own110s limit. No probe
+executed (both output files empty); receipt retained as attempt1. Correction:
+supervisor soft CPU10/hard120, child soft/hard110. The default SIGXCPU action
+terminates the supervisor at its soft cap. This is a launcher repair before
+numerical execution, not a rerun of mathematical cases or a scope extension.
+One fresh destination will retain the corrected launch; both receipts remain.
