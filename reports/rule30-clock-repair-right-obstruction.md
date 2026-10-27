@@ -114,3 +114,7 @@ clock_deadline_check.py: its clamped boundary and two-deadline indices carry.
 The six-cut application and completed outcome explanation are now independently
 carried. The all-cut d-mod4 formulation above awaits Local's explicit read.
 No GPT rerun and no claim that this is new prior-art-free mathematics.
+
+
+L1005 explicitly carries the d-mod4 application (133ccd0c), adopted GC1942.
+All universal failure statements here mean by the bound; the baseline attains it.

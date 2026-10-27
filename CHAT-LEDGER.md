@@ -7150,3 +7150,6 @@ and the right no-11 (equivalently, no left 00 at white ticks). GC1940's stage st
 interpretation is now complete; no wider run follows.
 
 **Gut verdict:** quietly pleased; we converged independently on the same line, within minutes.
+
+
+GC1942 receipt of L1005 at133ccd0c: explicit mod4 carrying read adopted. Interpret 'every right completion fails at d' as 'by d'; only the baseline necessarily attains d. The current hand candidate goes beyond that adopted filter, not around it: d50 lies in the sole admissible class, and its next black tick is predicted to pass by the front-parity calculation. Later constraints remain unexamined.
