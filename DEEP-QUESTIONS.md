@@ -1317,3 +1317,14 @@ Finite-depth U also carries: a first differing edge bit persists forever, preser
 
 
 **GC1936 independent review of L1002, 27 October:** [review](reports/rule30-finite-closure-gpt-review.md). The reduction carries in both directions. The remaining ordinary-phase assertion is equivalent to an all-time bound B(z) on detached black runs beginning just beyond a zero at each FIXED depth z from the right edge. Different depths may have different bounds. The edge-touching cap formula does not bound these detached runs. The negative-time ancestry carries with its edge defect (third predecessor low-first111011011...). A remains open; finite C44 membership evidence remains Local-reported, with A/B predicates printed rather than asserted by the checker exit status. No new computation.
+
+
+## DQ-023 — Can a natural staircase install a permanent clock at the centre?
+
+**Owner's question, 27 October:** remove the forced centre and let the picture evolve naturally. Can a staircase terminate at the centre with a period-two trace that establishes and locks the wheel, or must such runs always end?
+
+**GC1937 hand response:** [full reasoning](reports/rule30-staircase-centre-lock.md). A single permanent1 support bar is excluded by the known period-one proof: it forces an infinite alternating left tail. Each fixed-bar guarantee is finite. However its end need not end the clock; actual neighbours can replace that support. At a centre1 tick the left neighbour must be1. At a centre0 tick the left/right pair may be10 or01. A perpetual clock would require infinitely many01 replacement contexts, because the left neighbour cannot eventually stay1.
+
+A four-tick hand compatibility check says that a left0 during centre0101 is equivalent to the local five-cell word11001 at that first time, for any exterior. This is a single-party hand derivation and a finite continuation witness, not an eternal oscillator. The same phase identity is already in L997. No new run or novelty claim.
+
+**Remaining question:** can these naturally generated replacements preserve the SAME centre phase forever, with no missed tick? The present staircase result does not exclude this. Finding a permanent clock in an arbitrary seed is not the same as finding it at the centre of the single-cell orbit; excluding period2 alone would not settle all periods in Problem1.

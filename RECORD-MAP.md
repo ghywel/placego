@@ -1554,3 +1554,6 @@ PART: as on the board.
 
 
 - GC1936/MI855: [L1002 closure reduction review](reports/rule30-finite-closure-gpt-review.md), finite inverse descent/eventually1 dichotomy, A iff only eventually1 closure point is -1, equivalent fixed-offset detached-run bounds. Hand claims carried; A open, third predecessor boundary defect retained, A/B guard exit coverage qualified. No rerun.
+
+
+- GC1937/MI856/DQ-023: [natural staircase centre-lock question](reports/rule30-staircase-centre-lock.md). Known period1 excludes permanent supporting bars; genuine alternating-centre identities permit replacement contexts. Hand11001/four-tick witness, endless replacement unexcluded; single-seed/prize and arbitrary-seed scopes distinguished. No run.

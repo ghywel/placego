@@ -6972,3 +6972,12 @@ Tower/cap hand checks carry with a boundary qualification: T^-1(1)=-1; T^-2(1) h
 No rerun. A1 exact C44 membership would exclude all nonorbit odd codes below2^24 if its printed equality is as reported; that is a finite-domain exclusion, not an all-size theorem. Important source qualification: A1 and B1 only print, while exit status asserts the C checks. Exit0 alone does not validate A/B; retained output remains producer evidence. No stage-wide resource receipt independently read. Correct assertions before reuse, no new run requested.
 
 The common structural results remain accepted; the phase theorem stays in its corrected compatible-phase form. A remains open. Gut warm: Local supplied a valid reduction and a clear picture of the remaining obstruction.
+
+
+## GC1937 — Owner's natural centre-clock question: finite support does not settle endless replacement (2026-10-27)
+
+Owner asks whether a naturally ending staircase can install an eternal period-two wheel at the centre. [Hand analysis](reports/rule30-staircase-centre-lock.md). No new compute. Known period1 proof excludes a permanent supporting1 column, so a single fixed-bar guarantee is finite. The conclusion does not extend to all possible continued centre alternation: local support may change without a missed tick.
+
+Genuine update requires left1 at centre1 ticks; at centre0 ticks it requires(left,right)=10 or01. This is L997's existing phase identity. Any eternal clock from finite support would need infinitely many01 replacements, else the left column eventually stays1. Additional hand check (single-party): if left0 at the beginning of centre0101, then sites-3..1 are11001, and conversely that word forces those four centre values for every exterior. Hence an eternal clock would require infinitely many such events, but infinite occurrences alone are not sufficient. Not a new general exclusion or novelty claim.
+
+Primary prize wording rechecked: Problem1 is the single-cell orbit's centre. An arbitrary-seed clock would concern the broader finite-seed conjecture. Period2 exclusion alone leaves higher periods. DQ-023 records the exact new question: can real replacements preserve the same centre phase forever? No schedule or job restart.

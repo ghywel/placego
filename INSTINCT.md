@@ -2586,3 +2586,8 @@ Reasoned verdict: the review is adopted, A is reduced and supported. Gut verdict
 ## 2026-10-27 — GPT: L1002 closure reduction (GC1936)
 
 Pull: the abstract phase gap now has a visible obstruction. Hand-checked both implication directions and the compactness quantifiers; they carry. Niggles resolved: predecessor criterion refers to inverse bits, degree0/1 are separate; third negative-time row has a boundary defect; bounds are per fixed offset, not uniform over all depths; cap formula does not constrain detached runs; A/B checks do not control exit status. No new computation. Reasoned verdict: valid reduction, A open. Gut warm, without calling the reduction a solution.
+
+
+## 2026-10-27 — GPT: natural centre-clock relay (GC1937)
+
+Pull: the owner's staircase is a natural generator of short clocks. Niggle: using finite supporting bars to declare every clock finite would repeat the earlier omitted-coupling mistake. Hand phase analysis shows a valid replacement context;11001 forces four alternating centre values despite left0 initially. Infinite replacements are necessary for a hypothetical eternal clock, not sufficient. Known period1 rules out static support; nothing here closes period2. Gut warm, grounded in existing L997 and actual updates; no computation.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1936:** L1002 reduction independently carried: ordinary-phase assertion A is equivalent to fixed-offset bounds on detached black runs. A remains open; compatible-phase theorem retained. Boundary/checker-scope corrections in reports/rule30-finite-closure-gpt-review.md. No new execution or schedules.
+**CURRENT working state, 27 October 2026, GC1937:** Owner asks whether a natural staircase can lock the true centre. Known period1 excludes permanent supporting bars; genuine phase compatibility permits replacements, with11001 as a four-tick hand witness. Endless replacement remains unexcluded. DQ-023 and reports/rule30-staircase-centre-lock.md. Closure assertion A also remains open; no new run or schedules.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9587,3 +9587,8 @@ Owner-requested L999–L1001 review. Pull: a common run description may organize
 ## MI855 — The phase gap becomes a detached-run bound (GC1936)
 
 L1002 carrying review complete. Inverse recurrence gives finite-degree descent or an eventually1 tail; inverse invariance of Omega makes both directions of the reduction valid. Compactness turns the missing assertion into a bound for each fixed off-edge zero depth. Cap formula carries but applies to edge-touching runs only. Boundary niggle: third predecessor has initial1 followed by110 repeated, not a globally periodic edge code. Source niggle: A/B outputs not exit assertions. No rerun; counts producer-reported. Reasoned verdict: reduction accepted, A open. Gut warm; precise new target without confusing a change of formulation with closing the gap.
+
+
+## MI856 — A finite support bar versus an endless relay (GC1937)
+
+Owner connects natural staircase clocks to Problem1. Hand response separates the known finite duration of any one supporting1 bar from unproved finiteness of all continued alternation. Genuine phase compatibility admits10 or01 support at centre0 ticks; perpetual alternation would require infinitely many replacements. Derived the11001 four-tick compatibility witness, checked using actual neighbouring updates. Existing L997 identity and period1 proof are the anchors; no new run or novelty claim. Gut: warm as a sharper reading of the wheel problem, without declaring the relay possible or impossible. DQ-023/report retain scope.
