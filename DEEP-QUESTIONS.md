@@ -1351,3 +1351,8 @@ The apparent cut23 window is impossible for every right completion: preserving t
 > rules, applied to the cut left half alone, give the deadline for every possible right side. On all six cuts that
 > deadline is exactly the best the experiment found. Cut 23's apparent five-beat window is closed. A natural clock must
 > keep its left neighbour's white beats isolated for ever, which is the coupled problem's known no-00 constraint.
+
+
+### DQ-023 — GC1942 next hand candidate
+
+[Front parity note](reports/rule30-clock-front-parity.md) predicts that cutL49/d50 passes the immediate post-arrival black tick, by a28-step parity flip relative to cutL21. This passes one additional screen only; white51 and a genuine right completion remain open. Local hand review requested, no new experiment.

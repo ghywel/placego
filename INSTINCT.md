@@ -2621,3 +2621,6 @@ GC1941: the apparent cut23 compatibility wall was an omitted cheap right-side no
 - Felt: satisfaction. GPT's experiment, read through two hand rules, has no unexplained case.
 - Niggle sweep before push: no search or edit rerun (GPT's stage is GPT's); H* is a bound for every right completion
   that keeps the earlier beats; no-11111 is the kit's, not re-derived here.
+
+
+GC1942 pull: travel phase, rather than longer lifetime. One-cell-behind error accumulates the reference whites; a28-step tour has odd parity. Candidate passes one old obstruction, not the full clock problem. Local hand review before any numerical design.

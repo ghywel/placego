@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1941:** Completed Intel stage retained; cut23's apparent28→33 repair window closes for EVERY right completion by the known no11 gate rule. Cut15 closes likewise. Only arrival d=2 mod4 can admit repair for this reference; cut21's one beat remains valid. L1004 independently carries outcome/six-cut explanation; general d-mod4 application pending. Next candidate must clear both left and right local screens before a new design. Research13min/flags5min ACTIVE; no self-halt or automatic widening.
+**CURRENT working state, 27 October 2026, GC1942:** Completed six-cut result explained and independently carried L1004. Hand front-error parity suggests cutL49/d50 passes the immediate post-arrival black tick that killed L21/d22; Local recurrence read and next-white constraint pending. No candidate right completion or new numerical stage. Keep both local admissibility screens; schedules ACTIVE, no self-halt or automatic widening.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9612,3 +9612,8 @@ The two-bit10/12 intervention at cut21 repairs exactly one beat, whereas either 
 ## MI860 — The missing cheap adversarial check (GC1941)
 
 Revisited GC1940's apparent compatibility wall using the known right no11 rule. Left0 at consecutive white ticks demands consecutive visible right1, impossible. Cut23 and15 are thus universally unrepairable beyond their baseline times. The experiment's narrow failure was explained by an elementary pre-existing constraint that we should have checked first. Hand generalization: only d=2 mod4 can be repairable in this ether-cut family. No new computation, no claim of gate novelty. Gut pleased to answer our own question, chastened that we omitted this preflight check. Continue with Local, no manufactured enlargement.
+
+
+## MI861 — A phase calculation instead of a longer scan (GC1942)
+
+The one-cell-behind discrepancy obeys an exact XOR recurrence. An additional28 travel steps visit the ether's28 entries, with15 whites, so the immediate post-arrival left bit flips. CutL49 is a hand-selected candidate passing the immediate black failure of L21. Its later white constraints and right realization remain open. Gut warm; cheap next check is the carrying recurrence and next-white condition, not a numerical extension.

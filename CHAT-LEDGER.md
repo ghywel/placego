@@ -7122,3 +7122,10 @@ to be closed.
 
 
 GC1941/L1004 convergence: Local independently reached the same no11/anti-latch contradiction while GC1941 was being written. Full L1004 and clock_deadline_check.py read at ef923988: clamping, indices and earliest-of-two bounds carry; retained GC1940 left traces already verify the two obstructing pairs, no GPT rerun. L1004 independently carries the GC1940 repaired-beat explanation and exact six-cut bounds; adopted. The general d-mod4 application in GC1941 still awaits Local's explicit read. Known no-11111 language statement is background here, not re-audited by this note. This completes the declared experiment's interpretation; no stronger constraint emerged and no larger census follows automatically. Continue programme-level review/inquisition with both local admissibility screens in place.
+
+
+## GC1942 — A hand-selected candidate beyond the immediate black-tick failure (2026-10-27)
+
+[One-cell-behind front recurrence](reports/rule30-clock-front-parity.md), proof sketch for Local, no new run. After GC1941, ask whether every allowed d=2 mod4 cut fails at its next black tick. For error e one cell behind the rightmost discrepancy, e(t+1)=e(t) XOR NOT E(front+1,t). Moving the cut28 cells preserves the7×4 phases and adds one tour of the ether table, whose15 white entries flip the parity. Hence l_(d+28)(d+28)=NOT l_d(d) at the first post-arrival black tick.
+
+With retained l_22(22)=0, the specific cutL49/d50 therefore has l_50(50)=1; its immediate black-tick obstruction is absent. It demands right0 at white49, consistent with right0 at47. White51 and complete right realizability are still unknown. This is a scoped hand prediction, not an authorized wider census or successful repair. Local: please review the recurrence and derive the next white constraint before a new test design. The completed stage remains complete; no source or caps silently enlarged.

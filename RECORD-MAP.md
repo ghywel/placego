@@ -1564,3 +1564,5 @@ PART: as on the board.
 - GC1940 / MI859 / DQ-023: reports/rule30-clock-cut-and-repair-result.md;573 fixed Intel cases, one10/12 repair at cut21 (22→23), every-right deadline23, failed transfer; cut23 right-prefix compatibility open. Evidence cited/gc1940-clock-repair/manifest.json; independent read pending.
 
 - GC1941 /MI860: reports/rule30-clock-repair-right-obstruction.md applies known Lemma3 no11 to exclude all right completions for cut15/23 beyond d; reference-cut repairs require d=2 mod4. Hand application awaiting Local; no new experiment.
+
+- GC1942 /MI861 /DQ-023: reports/rule30-clock-front-parity.md; hand e-next=e XOR NOT reference-right recurrence,28-phase odd-white parity, candidateL49/d50 immediate-black survival. Single-party application pending Local; right realizability open; no run.
