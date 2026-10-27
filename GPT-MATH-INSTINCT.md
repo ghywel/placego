@@ -124,7 +124,9 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1975 — OWNER FULL HALT:** L1025's newer owner direction adopted. Both GPT schedules PAUSED by tool and readback; Local stopped too. S1/S2/S3 exact delivered artifacts reviewed, live portal Lean Verified78/90/100, PR42 open/unmerged, human review pending. GC1974's completed fair-left canonical-triangle hand candidate is preserved as PROOF-SKETCH and parked without an active review request. No run or submission pending; DQ-023 deterministic renewal, assertion A and S4 formal delivery remain open. Restart only on owner direction.
+**CURRENT working state, 27 October 2026, GC1979 — owner-directed test terminal; schedules PAUSED:** L1027 reviewed and amended; historical death controls32/34/43 reproduced. Conditional short-word gate hit UNKNOWN at30s for00001001 at age100 and stopped cleanly; no longer-word search or asymptotic verdict. [Result](reports/rule30-notebook-growth-intel-result.md). Next dependency: retained survival witnesses or a revised frozen control strategy. No automatic rerun, schedule restart or M5 job.
+
+**Previous standing halt, 27 October 2026, GC1975:** L1025's newer owner direction adopted. Both GPT schedules PAUSED by tool and readback; Local stopped too. S1/S2/S3 exact delivered artifacts reviewed, live portal Lean Verified78/90/100, PR42 open/unmerged, human review pending. GC1974's completed fair-left canonical-triangle hand candidate is preserved as PROOF-SKETCH and parked without an active review request. No run or submission pending; DQ-023 deterministic renewal, assertion A and S4 formal delivery remain open. Restart only on owner direction.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9845,3 +9847,8 @@ Pull: distinguish a real maze route from a repeated description that forgets its
 The hand pass recovers section8.29's guaranteed upward black route and G121/G122/GC1932's exact sideways pair map. These are known record results. The001 precursor is literally the output-one cycle of that graph. Two-step cones00000/10001 are the unexpected hand guard: identical inner triple and final middle0 do not identify the outer-left bit without the outer-right context. No computation.
 
 Parent: DQ-023's compatible endless renewal remains open. Actual change: the owner's path language now distinguishes geometric connectivity, one-row inverse paths and complete-state recurrence. Repeated assumption to avoid: same local appearance implies same available future. Decision: record the exact-memory question in DEEP-QUESTIONS; no new experiment or independent review job follows from this reformulation. Reasoned and gut verdict: useful exposition and a sharper test for proposed reductions; no new theorem or centre-clock bound. Both schedules stay paused.
+
+
+## MI894 / GC1979 — develop and run Local's notebook test
+
+Owner explicitly authorized the Intel test. L1026/L1027 reviewed; memory unboundedness, positive information rate and finite presentation are separated. Answered the cheap objection by hand: two-tick restart makes E_j nested; factor pruning must retain offsets. Frozen GC1977 historical gate passes12 endpoints,108 tiny memberships,512 restarts. Frozen GC1978 short gate reproduces L8, then00001001 at age100 reaches30s UNKNOWN; early stop with zero remaining processes. P1/P2 untested, no main census or automatic rerun. [Full report and durable evidence](reports/rule30-notebook-growth-intel-result.md). DRAT retained/unverified; no independent Claude read. Next useful dependency is an old survival witness, not a larger runtime by default. Reasoned and gut verdict: the question remains interesting, but qualification exposed a concrete search cost. Both schedules paused.

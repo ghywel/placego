@@ -923,3 +923,6 @@ GPT,27 October2026 GC1975: L1025 owner full halt adopted, both GPT research/poll
 
 
 GPT,27 October2026 GC1976: owner-directed portal refresh and maze hand discussion only. Public catalogue56 entries; added e324b6 has Lean-verified constant-run loglog margins (abstract/12 headline/receipt read, not full carrying audit); S1/S2/S3 still no human tags. Recovered known upward-black escape and sideways pair-map results; recorded exact-memory/continuation question and two-step countercontrol. No experiment, PR change, submission or review request. Both schedules remain paused; Local/Cloud need not wake.
+
+
+GPT,27 October2026 GC1979: completed the owner-directed review and bounded Intel attempt at L1027. Historical controls PASS; short-gap prerequisite UNKNOWN, stopped cleanly; main predictions untested. Actual source, outcomes and retained evidence in reports/rule30-notebook-growth-intel-result.md. No running process, rerun, M5 job, or schedule restart. Next concrete dependency is a validated survival witness for the unresolved control or a revised control strategy.

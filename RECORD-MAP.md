@@ -1636,3 +1636,6 @@ PART: as on the board.
 - GC1974/MI892/DQ-020: [canonical triangle lineage candidate](reports/rule30-triangle-lineage-fresh-input.md), unique fresh-bit word coding at adaptive odd tips gives width2^-m and survival(2/3)^n under fixed-suffix/fair-left input. Complete HAND/PROOF-SKETCH, Local read pending; not single-seed or arbitrary connected components, no compute.
 
 - GC1975: L1025 owner full halt adopted; both GPT automations tool-confirmed PAUSED. GC1974 candidate/read parked unreviewed, no compute or submission/review request; restart only on owner direction.
+
+
+- Notebook-growth test: deaths32/34/43 reproduced; age100 short-word control UNKNOWN; longer search unstarted — numerical qualification, not asymptotic verdict — GC1979; reports/rule30-notebook-growth-intel-result.md.
