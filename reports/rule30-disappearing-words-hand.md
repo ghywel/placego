@@ -209,3 +209,59 @@ This is a finite union of row-prefix cylinders, not necessarily one common short
 The nontrivial achievement for z would be compression: its observation cone needs23 cells in general, but L1037 (modulo D) forces the same four-cell initial prefix0110 for every realizing row. A useful next question is whether an explicit family of heads admits similarly short common obstructing prefixes, or how the minimal required prefix length grows with the head. Merely checking that each short d1 word corresponds to some no-past cylinder would confirm the equivalence above, not advance the mechanism. No such census is requested.
 
 Next concrete hand action with Local: prove just D's needed direction through the reset/latch identities; then inspect whether its return structure could move the initial obstruction farther away in a new word. No numerical membership run, whole-tree census, or general classification launch.
+
+## L1038: Lemma D's carrying direction, partly by hand; the patch between the resets is forced
+
+Local, 27 October 2026. GC1993's corrections are accepted:
+- only D's necessary direction is needed, giving t1…t6 = 100111;
+- "Garden of Eden" means the clamped two-step wall map, not unrestricted Rule 30.
+
+**Setting.** R1 = 000abcdef… is a reset row. Write P1…P4 for the rows one to four wall cycles later, and R2 for the
+next reset, five cycles later. A gap of 4 means:
+- P1 begins with 1 (automatic);
+- P2, P3 and P4 begin with 0 and not with 000;
+- R2 begins 000.
+
+A gap of 3 after R2 means R2's tail s1 s2 s3 s4 lies in {0000, 01**}. The tables below were verified exhaustively,
+and the formulas for P1's first cells were checked again by hand.
+
+**Proved by hand (backward from R2, then forward from R1).**
+1. *P4 begins 010, and its next cells are 01… or 100 with (e OR f) = 1.*
+   - By Lemma B, P4 begins 010 or 01100.
+   - For 010abc…, s1 = a OR NOT(b OR c), so s1 = 0 gives a = 0 and (b OR c) = 1.
+   - For 01100…, s1 = 1, so that branch is excluded.
+   - Then s2 = NOT b. If b = 1, s3 = s4 = 0 forces c = d = 0 and (e OR f) = 1.
+2. *P3 begins 001.*
+   - For a row X with x1 = 0, the next row's second cell is NOT x2 AND (x3 OR x4).
+   - P4_2 = 1 therefore needs P3_2 = 0, and with (P3_2 OR P3_3) = 1 that gives P3_3 = 1.
+3. *P2 begins 011, and (P2_4 OR P2_5) = 1.*
+   - P3_2 = 0 excludes P2_2 = 0. Writing P2 = 01x3x4x5, P3_3 = 1 forces x3 = 1 and (x4 OR x5) = 1.
+4. *t1 = a = 1, and P1 begins 11100.*
+   - P1 = two(R1) begins 1, a, (a OR b), (NOT a AND (b OR c)).
+   - For x1 = 1, the next second cell is 1 only if (x2 OR x3) = 1 and x2 = (x3 OR x4).
+   - If a = 0, these force b = c = 0 and then x2 OR x3 = 0, a contradiction. So a = 1.
+   - Then P2_3 = NOT P1_5 = 1, so P1_5 = 0.
+
+**Still machine-only: t2…t6 = 00111.** Three mechanical searches for a short derivation all came out long:
+- a forward three-valued case tree: 38 leaves from R1, and 86 from the 010 branch;
+- an exact back-solve tree from R2: up to 480 nodes per level;
+- unit propagation with failed-literal probing: it forces t1…t3 = 100 and refutes t4 = 0 and t5 = 0 at one level of
+  probing, but not t6 = 0.
+
+None of these is a short argument. D stays a finite exhaustively checked lemma: 2^14 tails, in
+`z_head_lemmas.py`, reproducible in seconds.
+
+**The structural finding: GC1993's compression.** Of the 2^16 tails of R1, 768 give gap 4 then gap 3. All of them
+share one forced space-time patch beside the wall:
+
+    R1  000100111
+    P1  111000010
+    P2  011111100
+    P3  00100011
+    P4  0100010
+    R2  0000100
+
+So z's general 23-cell cone compresses to a unique patch of seven to nine cells per wall cycle. Its row before R1
+must begin 0110, a no-past prefix for the clamped two-step map. A hand proof of D would amount to explaining why this
+patch is rigid. That is a plausible general lemma ("between two resets with fixed gaps, the near-wall patch is
+rigid"). It is not claimed here.

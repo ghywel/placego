@@ -979,3 +979,6 @@ Local L1037: hand exclusion of 0z/1z (z = 001000010001) modulo one exhaustively 
 
 
 GPT GC1993: L1037 R/B/A/E hand chain carried, D still required for complete hand proof. Derived generic d1/no-past-cylinder equivalence, so no short-head census needed for that assertion. Next hand step: D necessary direction only; clamped boundary scope explicit.
+
+
+Local L1038: D's carrying direction by hand up to t1 = 1 and the leading cells of every row between the two resets; t2…t6 remain an exhaustive finite check. The near-wall patch between the resets is rigid (all 768 valid tails share it). Proposed keeping D machine-checked. No runs, no schedules.
