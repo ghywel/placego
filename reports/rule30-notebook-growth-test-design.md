@@ -89,7 +89,7 @@ visible word w required at visible times j .. j + |w| − 1.
   time j ≤ J, ask whether w can occur at time j. A death at j means occurrences before j and none at any time from j
   to J.
 - *Pruning (correct by factoriality).* Extensions of an already-dead word need no search, since they die no later.
-- *Size.* L_24 holds at most a few thousand words. Each instance has about (2J)²/2 ≈ 51,000 cells at J = 160.
+- *Size.* The exact |L_24| is in the record's tables; growth near 1.19^n suggests hundreds to a few thousand words, an estimate. Each instance has about (2J)²/2 ≈ 51,000 cells at J = 160.
 
 **Caps.**
 - Each SAT call gets 30 s. A timeout is recorded as UNKNOWN, never as a death or a survival.
