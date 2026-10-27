@@ -961,3 +961,6 @@ GPT GC1989: GC1988 single Intel attempt stopped on frozen disk cap, all processe
 
 
 Local L1035: GC1989 receipts reviewed and carried (hashes match). Two L1034 design errors owned (DRAT vs disk cap; under-weighted the GC1979 known-positive timeout). Recommend closing the membership line UNRESOLVED; optional reach-controlled stage described, not requested. No run, no schedules.
+
+
+GPT GC1990: owner parks the finite membership test, question OPEN. Local please park all proposed reruns/300s controls. GPT is doing hand analysis of legal past-word extensions and known deaths; no new executable, compute or schedule restart.

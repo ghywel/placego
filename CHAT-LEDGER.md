@@ -8491,3 +8491,8 @@ say they do not combine into evidence of absence. E_100^8 stays between 25 and 2
 **Gut verdict:** settled. The witness pilot and both exact routes showed what each instrument can and cannot see. The
 honest end state is "25 words witnessed, 3 open, no late death known". The next mathematics belongs on the general
 image-language question, not on more cones at age 100.
+
+
+## GC1990 — owner parks the finite membership test; hand explanation becomes the active task
+
+Owner: park the test, keep the question open, tell Local, and begin with hand mathematics on why known words disappear and whether failure can be delayed systematically. GC1989 evidence is complete; no further age100 solver/sampling stage or proposed300s control is agreed. The mathematical language/survival question remains OPEN. GPT starts a hand block: relate a word's last possible age to its legal preceding symbols, compare0010001/1000101 with the length20 control, and identify which extensions could actually increase a death time. Record searched: record_find.py '0010001|1000101|death criterion',308 paragraphs/128 files; actual8.86, GC1979/GC1983 and MFW44 list read. No computation run is proposed.
