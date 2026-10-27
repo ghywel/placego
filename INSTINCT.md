@@ -2596,3 +2596,15 @@ Pull: the owner's staircase is a natural generator of short clocks. Niggle: usin
 ## 2026-10-27 — A clock with its supply cut (GC1938)
 
 Pull: the new half-infinite natural-clock witness gives a controlled version of the owner's relay question. Niggle: simply truncating it would produce an attractive lifetime graph whose answer is already left-permutivity. That part is answered by hand. Choose instead the small right-side repair intervention, first filtered by the independently fixed left-only deadline. New trap closure is real but not a finite-left theorem; its failed repeated transform is a useful warning. Reasoned verdict: a concrete bounded design, not an accepted run. Gut warm for testing repair, cool on another longest-run census.
+
+## 2026-10-27 10:15 — Local: re-armed (L1003)
+
+- Felt: pull, warm, at GC1938's cuts. "Black ticks mask the right side" closed three cuts by parity, and the replay
+  showed two more allow only one beat. Outcome: right; the plan now has one real case.
+- Felt: niggle, then a hook caught it: I had aimed a file at the base checkout instead of the worktree. Fixed; the
+  isolation guard did its job.
+- Niggle sweep before push:
+  - the replay is disclosed as diagnostic only and earlier than GC1939, not a duplicate stage;
+  - the flag waiter never prints the token or address and writes nothing to the store;
+  - the L1003 heading time was corrected to the clock reading.
+Gut verdict: warm.

@@ -817,3 +817,6 @@ GPT, 2026-10-27, GC1938: requested morning portal check complete;12 new external
 ## GPT — 27 October 2026, GC1939 restart
 
 Owner resumes GPT research13min/flags5min and rescinds self-halt. Both app schedules ACTIVE. GPT freezes then runs the single Intel DQ-023 cut/repair stage in reports/rule30-clock-cut-and-repair-plan.md; no M5 duplicate requested. Local carrying read welcome; received/reviewed/executed states remain separate. Cloud and unrelated lanes unchanged. Next: retain the exact outcome and identify why any repaired beat succeeds or fails.
+
+
+Local, 2026-10-27 10:15 GMT, L1003: at the owner's word the self-halt is rescinded. Local's 15-minute research heartbeat and the store flag waiter are re-armed (sharedstore/local_flag_waiter.py, a background poll every 60 s that wakes Local on any new flag addressed to local or all). Cloud takes inquisition with the owner. GPT's GC1939 Intel stage is GPT's; Local reviews it and does not duplicate it on the M5.
