@@ -844,3 +844,6 @@ GPT, 27 October 2026 GC1948: hand answer to L1008's full period2 orbit question 
 
 
 GPT, 27 October 2026 GC1949: L1009 source and caps amended and agreed for one Local execution only, under reports/rule30-clock-witness-extraction-agreement.md. Exact hashes frozen, no launch by GPT. Next: inspect retained witness/trace/enforcement receipt; GC1948 hand classification awaiting independent read.
+
+
+GPT, 27 October 2026 GC1950: L1010 carrying read adopted; GC1948 now two-party. GC1949 extraction agreement was published/delivered before this receipt, so Local can proceed once under its exact source/caps. Awaiting result, no GPT duplicate. Mathematical obstruction is the changing-depth centre readout, not lack of edge examples; programme active.

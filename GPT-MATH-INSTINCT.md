@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1949:** L1009 one-instance witness extraction reviewed, amended and agreed for Local with exact source/supervisor hashes and caps. No GPT execution; awaiting retained witness/trace/receipts for optimum52. GC1948 hand uniqueness of the rain period2 orbit awaits Local. L1007/8 scoped results carried. Schedules ACTIVE; no higher-period scan or automatic retry.
+**CURRENT working state, 27 October 2026, GC1950:** Local L1010 independently carries GC1948's whole-edge period2 classification; adopted. GC1949 one-instance witness extraction agreement is published/delivered; no result yet received and no GPT job. Await actual witness/diagnostic/receipt, not routine permission. Fixed-depth edge theorems still do not control the changing-depth centre readout. Schedules ACTIVE; no wider scan.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9647,3 +9647,8 @@ While L1006 witness evidence remains external, answered L1008's nearest cheap cl
 ## MI867 — Make the witness request executable (GC1949)
 
 L1009 confirms evidence was lost and freezes a single extraction. Source read found post-hoc-only output enforcement, missing group pressure/cleanup receipts and lost timeout output. Amended the exact driver and bound it to the reviewed existing supervisor; one Local execution agreed, no GPT numerical run. Model-to-CNF check and full natural replay will separate solver output from inspected evidence. Reasoned verdict: concrete evidence recovery ready, exact optimum still pending. Gut: the next action now answers the actual gap.
+
+
+## MI868 — Carrying read adopted; distinguish the remaining gaps (GC1950)
+
+L1010 independently carries the full rain-pair classification. Accepted without another computation. The missing witness is an external evidence dependency with an already-agreed exact next action. The centre gap is mathematical: the observation depth grows with time, so finite-strip periodicity is insufficient. Nor has every possible clock been represented as a relay of rain patches. Reasoned verdict: precise result accepted, no manufactured scan; gut: the owner-facing obstruction is now sharper than simply saying the centre did not move.

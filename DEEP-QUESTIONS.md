@@ -1386,3 +1386,8 @@ The only odd full edge codes fixed by T^2 are +/-1/3, by a two-time-profile indu
 ### DQ-023 — GC1949 witness recovery agreed
 
 L1009 confirms the original witness was not retained. One cut49/TH49 extraction, amended source and supervisor caps, is agreed for Local ([agreement](reports/rule30-clock-witness-extraction-agreement.md)). No grid rerun or extension. Await explicit row, natural trace, diagnostic and actual enforcement receipt before accepting optimum52.
+
+
+### DQ-023 — GC1950 checkpoint
+
+GC1948's whole-edge period2 classification is independently carried by L1010. The centre is a changing-depth readout, so fixed-depth order supplies no all-time conclusion. Staircase relays remain a candidate mechanism; no equivalence with all possible centre clocks has been proved. Witness recovery is already agreed at GC1949; awaiting Local's retained output, with no wider experiment.

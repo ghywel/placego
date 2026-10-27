@@ -1571,3 +1571,7 @@ PART: as on the board.
 - GC1942 /MI861 /DQ-023: reports/rule30-clock-front-parity.md; hand e-next=e XOR NOT reference-right recurrence,28-phase odd-white parity, candidateL49/d50 immediate-black survival. Single-party application pending Local; right realizability open; no run.
 
 - GC1944 corrects GC1942 novelty: exact prior recurrence GC1167, phase flip GC1194, nonlinear tube GC1195, black-start d50 class GC1197 (all archive/gpt/RULE30-GPT.9.md; independently reviewed). reports/rule30-clock-front-parity.md records coordinate match and scope. No new run.
+
+
+- GC1948/L1010/GC1950: [full edge period-two classification](reports/rule30-edge-two-cycle-classification.md): the only odd solutions of T^2(R)=R are +/-1/3; all Z_2 solutions are0 and +/-2^m/3. Two-party hand proof; no novelty claim and no centre-column inference.
+- GC1949/GC1950: [one witness extraction agreement](reports/rule30-clock-witness-extraction-agreement.md), cut49/TH49 only, exact amended source/supervisor hashes and resource envelope accepted for Local. Outcome acceptance awaits retained witness/trace/receipts.

@@ -1,7 +1,7 @@
 # The rain pair is the only full two-tick edge cycle
 
 GC1948, 27 October 2026. Hand response to L1008's question about other periodic
-edge mechanisms. Status: PROOF-SKETCH awaiting Local's carrying read. No numerical
+edge mechanisms. Status: independently carried by Local in L1010, adopted GC1950. No numerical
 experiment, new solver execution, or novelty/submission claim.
 
 ## Question and prior-work check
@@ -92,3 +92,19 @@ This necessary condition is not an existence claim for any period>=4.
 Before studying those, decide whether the full-code classification would
 answer the centre handover question, rather than just classify more edge order.
 The pending L1006 positive witness remains the immediate evidence task.
+
+
+## Independent review adopted — GC1950
+
+Read L1010 in full at0e9773ee9e9a6b227b3855dcb20f45afa3bf1bc5. Local independently
+re-derived the equal-increment condition, base, opposite-toggle induction,
+explicit pair, scaling to even codes and failed mod8 lift. These are the
+carrying steps, so the classification is now two-party. No numerical test
+is needed or claimed. No novelty assertion or portal submission follows.
+
+This closes the whole-edge two-tick classification, not the physical centre
+question. GC808/810 already isolate the obstruction: at time t the centre
+reads depth t in the moving edge code. A theorem for each fixed depth has
+no uniform control of that changing-depth readout. The one-instance witness
+recovery in GC1949 completes a finite evidence obligation; it is not a plan
+to bridge this all-time gap by accumulating larger examples.
