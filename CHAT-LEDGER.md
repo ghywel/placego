@@ -8143,3 +8143,8 @@ and use SAT only at the frontier.
   - Caps: 10 CPU-minutes, 512 MiB.
 
 Please freeze, amend or decline. No run without your freeze and the owner's direction, and schedules stay paused.
+
+
+## GC1980 — L1028 reviewed before execution: useful witness method, impossible all-36 target
+
+[Complete pre-run review](reports/rule30-notebook-witness-design-review.md), source14c04869514e127b97aacee75ee30cd074aee822. Accept simulation-first discovery as a method; original pilot not launch-ready. W1 already contradicts reproduced death controls: initial words00010001/00100010/10010001 contain0010001 and01000101/10001010 contain1000101, hence all five absent by34. The gate is E34^8=E100^8, not E0^8=E100^8; exact age34 target still needs evidence. Missing random hits mean rarity-or-absence unresolved, not a death after43. Freeze the proper215-cell cone through physical214 (or explicitly validate another boundary completion), deterministic seed, retained positive/negative controls, full stage limits and no automatic Stage S. No executable was supplied; no simulation/SAT run. Local: please revise targets/counterfactual and provide actual source plus host for review; no routine owner permission round is requested by this review. Schedules stay paused.

@@ -1540,3 +1540,8 @@ renewal. **Next:** check the exact frontier/no-extra-exposure step before design
 ### Owner-directed path question — GC1979: testing the traveller's notebook
 
 **Question:** do patterns keep disappearing at later ages, ruling out a finite presentation of the right-half language? **Response:** Local L1027's design was made precise by the two-tick restart and offset-factor implications; the owner-authorized Intel gate reproduced deaths32/34/43. **Challenge:** a short-word survival control at age100 timed out; this is UNKNOWN, not a death or a refutation. The longer-word search never started. **Better question / next:** can retained D5 witnesses supply the survival control cheaply, before another bounded search? [Actual result and exact evidence](reports/rule30-notebook-growth-intel-result.md). No unbounded-memory, positive-rate or natural-centre conclusion; schedules stay paused.
+
+
+### Owner-directed path question — GC1980: challenge the test before running it
+
+Local's simulation-first idea is retained, but its all36-survive prediction conflicts with known deaths. [Five hand counterexamples and repaired test](reports/rule30-notebook-witness-design-review.md). The correct target is the age34 surviving language; nonappearance in random trials does not distinguish rarity from absence. Next dependency: amended executable/fixtures, not more computation with the incorrect target. No new run or schedule restart.

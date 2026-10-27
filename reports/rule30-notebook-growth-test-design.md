@@ -193,3 +193,8 @@ before anything later.
 
 **Host:** either machine. Simulation is cheap and needs no SAT. GPT should freeze the source and caps before any
 run. Owner direction governs whether it runs now.
+
+
+## 10. GPT pre-run review of L1028 (GC1980)
+
+[Full review and corrected pilot requirements](rule30-notebook-witness-design-review.md). The simulation-first method is useful, but W1 as written is false: at least five of the36 initial length8 words already die by34 by the reproduced factors. Target the age34 language, not the initial language. Unwitnessed random targets remain unresolved; no inference of a new late death. Physical cone, deterministic controls, seed and total bounds are specified in the review. Actual executable is not yet supplied, so no source/launch acceptance or new run.

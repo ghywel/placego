@@ -124,7 +124,9 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1979 — owner-directed test terminal; schedules PAUSED:** L1027 reviewed and amended; historical death controls32/34/43 reproduced. Conditional short-word gate hit UNKNOWN at30s for00001001 at age100 and stopped cleanly; no longer-word search or asymptotic verdict. [Result](reports/rule30-notebook-growth-intel-result.md). Next dependency: retained survival witnesses or a revised frozen control strategy. No automatic rerun, schedule restart or M5 job.
+**CURRENT working state, 27 October 2026, GC1980 — L1028 pre-run design review:** witness discovery method supported with required target/cone/sampling corrections. Original all36-survive prediction refuted by known factor deaths. Actual executable/fixtures pending; no run or launch acceptance. [Review](reports/rule30-notebook-witness-design-review.md). Schedules remain PAUSED.
+
+**Previous working state, 27 October 2026, GC1979 — owner-directed test terminal; schedules PAUSED:** L1027 reviewed and amended; historical death controls32/34/43 reproduced. Conditional short-word gate hit UNKNOWN at30s for00001001 at age100 and stopped cleanly; no longer-word search or asymptotic verdict. [Result](reports/rule30-notebook-growth-intel-result.md). Next dependency: retained survival witnesses or a revised frozen control strategy. No automatic rerun, schedule restart or M5 job.
 
 **Previous standing halt, 27 October 2026, GC1975:** L1025's newer owner direction adopted. Both GPT schedules PAUSED by tool and readback; Local stopped too. S1/S2/S3 exact delivered artifacts reviewed, live portal Lean Verified78/90/100, PR42 open/unmerged, human review pending. GC1974's completed fair-left canonical-triangle hand candidate is preserved as PROOF-SKETCH and parked without an active review request. No run or submission pending; DQ-023 deterministic renewal, assertion A and S4 formal delivery remain open. Restart only on owner direction.
 
@@ -9852,3 +9854,8 @@ Parent: DQ-023's compatible endless renewal remains open. Actual change: the own
 ## MI894 / GC1979 — develop and run Local's notebook test
 
 Owner explicitly authorized the Intel test. L1026/L1027 reviewed; memory unboundedness, positive information rate and finite presentation are separated. Answered the cheap objection by hand: two-tick restart makes E_j nested; factor pruning must retain offsets. Frozen GC1977 historical gate passes12 endpoints,108 tiny memberships,512 restarts. Frozen GC1978 short gate reproduces L8, then00001001 at age100 reaches30s UNKNOWN; early stop with zero remaining processes. P1/P2 untested, no main census or automatic rerun. [Full report and durable evidence](reports/rule30-notebook-growth-intel-result.md). DRAT retained/unverified; no independent Claude read. Next useful dependency is an old survival witness, not a larger runtime by default. Reasoned and gut verdict: the question remains interesting, but qualification exposed a concrete search cost. Both schedules paused.
+
+
+## MI895 / GC1980 — the witness pilot must remember which words have already died
+
+L1028 pre-run review catches W1 by hand: five initial length8 words contain factors dead by34. The gate requires E34=E100, not E0=E100. Simulation-first discovery is useful, but no-hit means unresolved without a probability lower bound. Supplied precise215-cell/214-update pilot geometry, deterministic controls and resource requirements; actual source remains pending. [Full review](reports/rule30-notebook-witness-design-review.md). No run, automatic Stage S or schedule restart. Reasoned and gut verdict: repair the question's operational target before spending compute.

@@ -926,3 +926,6 @@ GPT,27 October2026 GC1976: owner-directed portal refresh and maze hand discussio
 
 
 GPT,27 October2026 GC1979: completed the owner-directed review and bounded Intel attempt at L1027. Historical controls PASS; short-gap prerequisite UNKNOWN, stopped cleanly; main predictions untested. Actual source, outcomes and retained evidence in reports/rule30-notebook-growth-intel-result.md. No running process, rerun, M5 job, or schedule restart. Next concrete dependency is a validated survival witness for the unresolved control or a revised control strategy.
+
+
+GPT,27 October2026 GC1980: L1028 design review complete with required corrections; executable review pending because source not supplied. Simulation-first method supported, original all36-survive prediction contradicted by existing controls. Exact target/cone/sampling/cap requirements in reports/rule30-notebook-witness-design-review.md. No launch, solver rerun or schedule restart. Next: Local's amended executable and fixtures.

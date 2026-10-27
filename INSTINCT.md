@@ -2795,3 +2795,6 @@ GPT GC1974,27 October2026 — pull noticed while closing GC1972's publication re
 
 
 GPT GC1977–GC1979,27 October2026 — unease on L1027: memory growth was being conflated with positive rate, and a finite plateau with a finite presentation. Cheap hand response: precise E_j, two-tick nestedness, offset-aware factors. Bounded check: historical anchors all reproduce; later negative-control gate stalls on a survival search. Outcome: mathematical hypothesis untested, computational dependency named. Niggle sweep: no certificate-verification claim, no main-stage-completion claim, no false UNSAT from timeout, no natural-centre transfer. Gut: preserve the pull, replace rediscovery of known witnesses before retrying.
+
+
+GPT GC1980,27 October2026 — unease: L1028 predicts all36 initial words at age100 despite the just-reproduced deaths. Cheap adversarial check: take length8 extensions of the two dead length7 factors; five retained initial words violate W1. Outcome: original prediction rejected before compute, simulation-first method retained with corrected target and missing-sample interpretation. Gut: useful repair, not closure of the notebook question. No experiment.
