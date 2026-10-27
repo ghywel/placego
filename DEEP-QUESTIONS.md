@@ -1416,3 +1416,8 @@ L1012's reconstruction carries. Q01 forbids a finite reconstructed left row for 
 ### DQ-023 — GC1955, integer coordinates preserve the same survival question
 
 Retained external317c64's integer-Q01 equivalence now has a scoped GPT carrying read. It provides an exact representation; its smaller-argument evaluator does not automatically give orbit descent. Every positive state's binary length grows by2 per G step (known edge law). A proposed rank or cross-trajectory relation must address that distinction. [Review and hand controls](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md). No numerical expansion or new proof of Q01.
+
+
+### DQ-023 — GC1956, protection from one side is not a renewable clock
+
+External self-shielding gives a width-2j alternating strip a comparison horizon s<4j when the two histories have the same left driver. The local mechanism is the reviewed rain front and black right shield. Neither identical initial strips nor finite agreement proves alternation or compatible renewal from one finite seed. [Carrying source read and hand countercheck](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md). No new numerical stage.

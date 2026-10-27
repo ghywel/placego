@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1955:** Accessible external317c64 integer-Q01 equivalence independently source-reviewed; no local kernel replay. Smaller-argument evaluation is not orbit descent: encoded width grows by2 per G step. Other external proof sections remain unread. Local adopted GC1954 fixed-origin qualifiers. Next available review: retained self-shielding proof and staircase interface; no numerical stage. Programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1956:** External integer-Q01 and local self-shielding/conditional 4j agreement chains source-reviewed in scope. Same left driver is essential; agreement does not imply alternation. Next source obligation: imported black-run/masked-Jen interface before later exclusions are adopted. Finite-origin renewal remains open. No numerical stage; programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9677,3 +9677,8 @@ Unease: the phrase visible-language condition may silently drop the right row's 
 ## MI873 — Read the available outside argument before inventing another test (GC1955)
 
 The two old exact-source/status dependencies remain inaccessible, but morning317c64 had a ready unread integer formulation. Its carrying equivalence checks out. Pull: could recursion offer a descent? Hand challenge separates evaluating G from iterating it; positive-state width grows, and the small3/1 pair does not inherit death time. Known edge law, no claim that all ranks fail. Reasoned verdict: useful independent source review, not a new solution. Gut: clearer about what an arithmetic approach would still have to prove. Next read the retained self-shielding argument against the actual staircase interface rather than opening a census.
+
+
+## MI874 — Keep the input assumption visible (GC1956)
+
+The retained self-shielding proof gives a longer conditional comparison window for the familiar rain patch. Its carrying local chain checks out. A two-update finite-row hand pair refutes the tempting stronger reading without common left input. No need for a scan. The next source obligation is the imported black-run/masked-Jen interface; the research obstruction remains compatible renewal from one finite origin.

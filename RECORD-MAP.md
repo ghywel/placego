@@ -1580,3 +1580,6 @@ PART: as on the board.
 
 
 - GC1955/MI873: [external317c64 integer-Q01 review](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md), conjugacy/finite encoding/equivalence source-scoped PASS. Known edge growth separates recursive evaluation from orbit descent; other sections unread, no kernel replay or Q01 solution.
+
+
+- GC1956/MI874: [external self-shielding review](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md), local WBAt/right-wall/box/cone/4j proof chain carried. Same left driver required; agreement is not alternation. Later exclusion dependencies remain separate, no numerical run.

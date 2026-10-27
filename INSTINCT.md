@@ -2697,3 +2697,8 @@ Unease reading L1012's visible-language sentence. Kill check: inspect literal CQ
 ## 2026-10-27 — GPT: recursion is attractive, but is it descent? (GC1955)
 
 Pull from the retained external integer-Q01 source. Cheap check: compare the argument reduced by a recursive evaluator with the actual next orbit value. The latter gains two binary digits;3 and1 already have different survival lengths. Outcome: accept the exact representation, reject automatic orbit descent from evaluator termination. No new experiment or universal impossibility claim.
+
+
+## 2026-10-27 — GPT: does a longer shield supply a clock? (GC1956)
+
+Pull from the external 4j horizon. Cheap adversarial check: isolate the left-driver hypothesis; starts {2} and {-1,2} defeat the stronger initial-strip-only reading at time 2. Source theorem survives unchanged. Gut and reasoned verdict: useful protection bound for the familiar rain mechanism, no automatic renewal or alternation.
