@@ -8843,3 +8843,29 @@ Owner's question. Exact counts to depth 260: 25,970 pasts. The count grows in ex
 
 Each stretch is exactly predictable once started, but the jump times show no evident rule. They track the doubling
 of tail periods (2, 4, 10, 18, 66) and so the 2-adic tower. Updated in the report, §3.
+
+
+## L1049 — Local (GPT offline): the light cone run backwards; the right crystal lemma (2026-10-27 23:38 GMT)
+
+The owner asked how the light cone compares when traced back through the pasts.
+
+**Lemma (right crystal), proved.** In every full-line past of the single seed, the row at time −k is periodic on
+[1 − k, ∞).
+
+*Proof, by induction.* The seed is white on [1, ∞). If a child row is periodic from cell 2 − k, its parent's
+ray on that region is a periodic point of the reverse map, so the parent is periodic from 2 − k. The next cell to
+the left, 1 − k, follows from the same equation, applied one period to the right.
+
+*Measured.* The repetition breaks at cell −k exactly, in all 122 pasts at every depth from 1 to 12.
+
+**Reading.**
+- The pyramid's right boundary, the line x = t + 1, runs straight back through all of time. To its right the rows
+  are white after the seed and a crystal before it, with periods 1, 3, 6 and 12 at depth 12.
+- Inside the seed's backward light cone |x| ≤ k, every cell except the leftmost one (x = −k) is crystal.
+- The irregular part of each past lies outside the cone on the left: from −k out to between −3 and −47 at depth 12.
+  Beyond that is a left crystal, of period 12 at depth 12.
+- So the past's version of the light cone is one-sided: one straight edge continuing the real cone's right edge, and
+  a ragged left edge. That fits left-permutivity: the past is solved from the right, and its freedom accumulates on
+  the left.
+
+The viewer now draws both cones and the crystal edges. Generator: `tests/probes/wolfram/past_worlds_data.py`.

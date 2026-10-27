@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""L1048: data for the Rule 30 Past Worlds page: the 122 exact depth-12 pasts of the single seed, with edge periods.
+"""L1048/L1049: data for the Rule 30 Past Worlds page: the 122 exact depth-12 pasts of the single seed, with edge
+periods and crystal edges.
 
 Local, 2026-10-27. Same exact construction as root_pasts_exact.py, keeping cells far to the left as well. Asserts
-122 chains and that every displayed row evolves into the next. Usage: past_worlds_data.py OUT.json
+122 chains, that every displayed row evolves into the next, and that every row at time -k repeats exactly from cell
+1 - k rightwards (the right-crystal lemma, L1049). Usage: past_worlds_data.py OUT.json
 """
 import json
 LO=-400          # leftmost stored position
@@ -47,6 +49,14 @@ def minp(seq):
     for p in range(1,len(seq)//2+1):
         if all(seq[i]==seq[i+p] for i in range(len(seq)-p)): return p
     return None
+def crystal_edges(r):
+    p=len(r.tail); hi=r.R+4*p+40; right=hi
+    while right-1 >= LO+p and all(r.at(right-1+j*p)==r.at(right-1) for j in range(1,4)): right-=1
+    far=[r.at(i) for i in range(LO,LO+240)]
+    q=next(pp for pp in range(1,121) if all(far[i]==far[i+pp] for i in range(len(far)-pp)))
+    left=LO+q-1
+    while left+1+q < hi and r.at(left+1)==r.at(left+1-q): left+=1
+    return left, right
 def show(row): return ''.join(str(row.at(i)) for i in range(-HALF,HALF+1))
 seed=Row([0]*(0-LO)+[1],1,[0])     # cells LO..0 with a 1 at 0; zeros from 1
 # depth-first tree order, children in parents() order (sorted pair states)
@@ -66,7 +76,8 @@ for ch in chains:
     rows=[]
     for r in ch:   # depth 12 .. 1
         left=[r.at(i) for i in range(LO,LO+240)]
-        rows.append(dict(cells=show(r), right=len(r.tail) if minp(list(r.tail)*2) is None else minp(list(r.tail)*2), left=minp(left)))
+        lc,rc=crystal_edges(r)
+        rows.append(dict(lc=lc, rc=rc, cells=show(r), right=len(r.tail) if minp(list(r.tail)*2) is None else minp(list(r.tail)*2), left=minp(left)))
     pasts.append(dict(rows=rows, first=('A' if ch[-1].at(0)==0 else 'B')))
 # consistency: each displayed past row evolves into the next one (interior of the window)
 for p in pasts:
@@ -74,6 +85,8 @@ for p in pasts:
     for a,b in zip(seq,seq[1:]):
         for i in range(1,len(a)-1):
             assert int(b[i])==int(a[i-1])^(int(a[i])|int(a[i+1]))
+for p in pasts:
+    for k,r in enumerate(p['rows']): assert r['rc']==1-(12-k), (k, r['rc'])   # right crystal starts at 1 - depth
 json.dump(dict(half=HALF,depth=DEPTH,future=fut,pasts=pasts), open(__import__('sys').argv[1],'w'), separators=(',',':'))
 print('ok: 122 chains; first-step parents A/B counts:', sum(p['first']=='A' for p in pasts), sum(p['first']=='B' for p in pasts))
 print('right-edge periods seen at depth 12:', sorted({p['rows'][0]['right'] for p in pasts}), ' left periods:', sorted({str(p['rows'][0]['left']) for p in pasts}))
