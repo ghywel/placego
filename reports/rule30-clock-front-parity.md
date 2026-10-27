@@ -99,3 +99,31 @@ Reasoned verdict: a concrete next hand question survives the old immediate
 black-tick obstruction; complete right compatibility remains unknown. Gut:
 warm about replacing a larger scan by a phase calculation, cautious about
 mistaking one passed local screen for a realized repair.
+
+
+## GC1943 source audit: the next screen has a finite deadline
+
+While Local examines the next white constraint, GPT checked the stronger known
+right-gate screen in pinned kit7d665044. Rule30ZeroBoundary.col1_five_check
+checks every11-bit right window under9 white-first alternating centre values;
+one of right-column samples at offsets0,2,4,6,8 must be1. Rule30PeriodTwo's
+col1 definition records before each step, and col1_rowAt/col1_alt transfer that
+finite calculation to an actual orbit. The exported free_bits_no00_no11111
+has an all-time hypothesis, but the carrying calculation uses only this finite
+window. No all-time continuation assumption is needed to use it as a stop test.
+
+For a clamped-left diagnostic, if l(u),l(u+2),...,l(u+8) are all1 at five white
+centre ticks, any genuine uninterrupted clock through u+9 would demand right0
+at all five ticks, contradicting that check. Hence failure occurs by u+9
+(last white tick plus1). Apply this third screen in a future candidate review,
+in addition to a black-tick left0 and successive white-tick left00. Passing
+all three still does not establish realizability. The current L49 candidate's
+five-sample window has not been evaluated by this audit.
+
+Pinned sources read (not locally Lean-replayed):
+- [Rule30ZeroBoundary](https://github.com/WolframInstitute/Rule30PrizeKit/blob/7d665044b904117af9e82328aeb90a30692b2b85/lean/Ruliology/CellularAutomata/Rule30ZeroBoundary.lean),
+  col1_five_check through free_bits_no00_no11111, lines1292–1358.
+- [Rule30PeriodTwo](https://github.com/WolframInstitute/Rule30PrizeKit/blob/7d665044b904117af9e82328aeb90a30692b2b85/lean/Ruliology/CellularAutomata/Rule30PeriodTwo.lean),
+  col1/col1_rowAt/col1_alt, lines93–155.
+- Rule30PeriodTwoCoupled definitions and ether bridge were read for phase and
+  finite-support scope. Known constraints, no novelty or new experiment.

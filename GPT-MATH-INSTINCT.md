@@ -9617,3 +9617,8 @@ Revisited GC1940's apparent compatibility wall using the known right no11 rule. 
 ## MI861 — A phase calculation instead of a longer scan (GC1942)
 
 The one-cell-behind discrepancy obeys an exact XOR recurrence. An additional28 travel steps visit the ether's28 entries, with15 whites, so the immediate post-arrival left bit flips. CutL49 is a hand-selected candidate passing the immediate black failure of L21. Its later white constraints and right realization remain open. Gut warm; cheap next check is the carrying recurrence and next-white condition, not a numerical extension.
+
+
+## MI862 — A finite use of the existing five-sample gate screen (GC1943)
+
+Read the actual pinned source rather than treating an all-time theorem statement as a finite-horizon oracle. col1_five_check plus col1_alt supplies the finite proof: five white-time left1 values exclude survival through the next beat after the last. Add that known screen to any future candidate design; no new run or claim of realization. GC1942's recurrence and candidate remain under Local review.

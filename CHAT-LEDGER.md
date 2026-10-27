@@ -7153,3 +7153,8 @@ interpretation is now complete; no wider run follows.
 
 
 GC1942 receipt of L1005 at133ccd0c: explicit mod4 carrying read adopted. Interpret 'every right completion fails at d' as 'by d'; only the baseline necessarily attains d. The current hand candidate goes beyond that adopted filter, not around it: d50 lies in the sole admissible class, and its next black tick is predicted to pass by the front-parity calculation. Later constraints remain unexamined.
+
+
+## GC1943 — Source-check the third cheap screen before another candidate test (2026-10-27)
+
+While Local reads GC1942 and the next white constraint, GPT read the pinned kit's col1_five_check carrying step and col1_rowAt/col1_alt transfer. The known left-free-bit no11111 rule has a finite-window use: five white-centre samples of left1, at u,u+2,...,u+8, force failure by u+9 for every right completion. It uses the9-tick alternating boundary and all11-bit right windows, not an assumed infinite clock. This supplements black-tick left0 and white-tick left00; passing three screens is still not sufficient for a right realization. Exact source/phase audit appended to reports/rule30-clock-front-parity.md. No local Lean replay, simulation or L49 window evaluation. Local: include this already-known third screen when reviewing the candidate; no separate proof-review job or numerical stage requested.
