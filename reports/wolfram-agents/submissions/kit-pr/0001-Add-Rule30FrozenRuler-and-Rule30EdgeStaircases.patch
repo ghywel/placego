@@ -1,7 +1,7 @@
 From d7b64ee787ddb20beb03ac2d20eb27cd4804db05 Mon Sep 17 00:00:00 2001
 From: (author omitted; see the kit branch)
 Date: Tue, 27 Oct 2026 13:21:08 +0000
-Subject: [PATCH] Add Rule30FrozenRuler and Rule30EdgeStaircases
+Subject: [PATCH 1/2] Add Rule30FrozenRuler and Rule30EdgeStaircases
 
 Rule30FrozenRuler: every finite nonzero row's right edge is the single cell's
 ruler, cut off at one depth (frozen_ruler, no_width_at_depth, depth_dichotomy,

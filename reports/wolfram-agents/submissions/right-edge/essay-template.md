@@ -1,9 +1,9 @@
 ---
 Template: ComputationalEssay
-Name: Every finite row's right edge is the single cell's ruler, cut off at one depth
+Name: A finite-depth right edge follows the single-cell ruler with a fixed cap
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-27
-Description: A partial structural result on Rule 30, proved in Lean against the kit: the right edge of every finite nonzero starting row emits exactly the single black cell's white triangles, shifted in time, except that every triangle of width k - 1 or more is cut to exactly k - 1, where k is the depth to which the row's edge code agrees with the single cell's orbit; the cut width lies in a gap of the single cell's ruler.
+Description: A partial structural result on Rule 30, proved in Lean against the kit. Every right-edge code either agrees with the single-cell orbit at every finite depth, with a phase that may depend on that depth, or has finite orbit depth k. In the latter case its emitted white-run lengths follow one fixed phase of the single-cell ruler, capped at k - 1, and the cap lies in a gap of the ruler.
 Abstract: ABSTRACT_PLACEHOLDER
 Keywords: [rule 30, Rule 30 Prize, right edge, edge code, 2-adic, ruler, finite configurations, universality, Lean 4, LeanLink]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -12,7 +12,7 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Rule30RightPeriods in th
 
 ## The question
 
-Started from one black cell, rule 30 has a famously regular right edge. Read the row from its rightmost black cell leftward: just behind that cell there is a run of white cells, and its length, step by step, is a *ruler*: 0, 2, 0, 3, 0, 2, 0, 5, 0, 2, 0, 3, 0, 2, 0, 6, … The kit's `Rule30RightPeriods` describes the single cell's right diagonals, whose periods produce this ruler. What does the right edge of an *arbitrary* finite starting row look like? This essay proves that it is always the same ruler, shifted in time and cut off at one depth that the row itself determines.
+Started from one black cell, rule 30 has a famously regular right edge. Read the row from its rightmost black cell leftward: just behind that cell there is a run of white cells, and its length, step by step, is a *ruler*: 0, 2, 0, 3, 0, 2, 0, 5, 0, 2, 0, 3, 0, 2, 0, 6, … The kit's `Rule30RightPeriods` describes the single cell's right diagonals, whose periods produce this ruler. What does the right edge of an *arbitrary* finite starting row look like? Every right-edge code either agrees with the single-cell orbit at every finite depth, with a phase that may depend on that depth, or has finite orbit depth `k`. This essay proves that in the latter case its emitted white-run lengths follow one fixed phase of the single-cell ruler, capped at `k - 1`.
 
 ## The ruler, and two rows that copy it
 
@@ -41,7 +41,7 @@ The row `1 0 1 1 1` does the same with phase `5`, and the row `1 1`, a *rain edg
 {widths[{1, 0, 1, 1, 1}, 29] === Table[Min[single[[t + 5]], 4], {t, 1, 29}], Take[widths[{1, 1}, 12], 12]}
 ```
 
-The cut widths `1` and `4` never occur in the single cell's own ruler. The theorem says why, and that this is the only thing a finite row can do.
+The cut widths `1` and `4` never occur in the single cell's own ruler. The theorem says why; it describes every row of finite orbit depth, and the infinite-depth alternative is left explicit below.
 
 ## The theorem
 
@@ -106,8 +106,8 @@ thm["KernelCheck"]
 ## What is not proved
 
 - Nothing about the center column, or any of the Prize problems. The center sits ever deeper behind the edge, and this result says nothing there.
-- The infinite-depth case is stated only as agreement with the single cell's orbit at every finite depth, with a phase that may depend on the depth. Whether every finite row of infinite depth is one of the single cell's own rows, shifted in time, is open. Our record proves it for every row whose edge code is below `2^24`, by a finite computation that is not part of this module.
-- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The truncation theorem for every finite row is new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
+- The infinite-depth case is stated only as agreement with the single cell's orbit at every finite depth, with a phase that may depend on the depth. Whether every finite row of infinite depth is one of the single cell's own rows, shifted in time, is open.
+- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The capped-ruler theorem for rows of finite orbit depth is new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
 - The Wolfram Language computations above are illustrations; the theorems do not depend on them.
 
 ## Provenance

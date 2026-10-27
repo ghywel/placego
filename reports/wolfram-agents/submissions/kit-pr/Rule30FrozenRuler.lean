@@ -4,7 +4,7 @@ public import Ruliology.CellularAutomata.Rule30Prize
 public import Ruliology.CellularAutomata.Rule30Realization
 
 /-!
-# Rule 30: every finite row's right edge is the single cell's ruler, cut off at one depth
+# Rule 30: a finite-depth right edge follows the single-cell ruler with a fixed cap
 
 Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its *edge code*
 is the cell at distance `k` from that cell (`code x e k = x (e - k)`). The right edge advances one

@@ -1,10 +1,10 @@
 ---
 Template: ComputationalEssay
-Name: Staircases at the right edge of rule 30: the single cell's all end, and the rain rows' never do
+Name: Staircases near the single cell's right edge end; the rain rows keep a two-step edge patch for ever
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-27
-Description: A partial structural result on Rule 30, proved in Lean against the kit: every alternating stretch (staircase) near the single black cell's right edge ends, within 2^(W+1) rows when its front is W cells from the edge; and the edge codes with T(T(c)) = c are exactly -1/3 and 1/3, so the rain rows (01)^n carry an eternal staircase at their right edge.
-Abstract: In rule 30 grown from one black cell, call a maximal alternating stretch of length at least $3$ a staircase. Its interior keeps its colors, and its front is eaten one cell per row (`front_step`), so a living staircase keeps its distance $W$ from the advancing right edge. We prove that every staircase with $W \ge 2$ ends: it does not survive to any multiple of a period $H$ of the right diagonal $W+1$ (`staircase_ends`), so it dies within $2^{W+1}$ rows by the kit's `R_periodic` (`staircase_ends_pow`). The reason is that at such times the cells at distances $1,\dots,W+1$ behind the edge are white. The bound is sharp in kind, because other rows keep staircases for ever. Bit $k$ of a finite row's edge code is the cell at distance $k$ from its rightmost black cell, and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). An edge code $c$ with bit $0$ black satisfies $T(T(c)) = c$ exactly when $c$ is $-1/3 = 1010\ldots$ or $1/3 = 11010\ldots$ (`period_two_iff`), and none is fixed (`no_fixed_point`). Every row agreeing with $-1/3$ on $m$ edge cells keeps them in that rhythm for ever (`agree_rain_eternal`), so the rain row $(01)^n$ has an eternal staircase of width $2n$ (`rain_row_eternal`). Submission R30-20261026-0ef9c8 classifies gated, finitely supported states of period $32$; this covers every 2-adic code, ungated, at period $2$. Not claimed: the center column, staircases of other seeds, or longer periods of $T$.
+Description: A partial structural result on Rule 30, proved in Lean against the kit: every alternating stretch (staircase) near the single black cell's right edge ends, within 2^(W+1) rows when its front is W cells from the edge; and the odd edge codes (bit 0 black) with T(T(c)) = c are exactly -1/3 and 1/3, so the rain rows (01)^n keep a moving 2n-cell patch at their right edge that alternates between the two prefixes for ever.
+Abstract: In rule 30 grown from one black cell, call a maximal alternating stretch of length at least $3$ a staircase. Its interior keeps its colors, and its front is eaten one cell per row (`front_step`), so a living staircase keeps its distance $W$ from the advancing right edge. We prove that every staircase with $W \ge 2$ ends: it does not survive to any multiple of a period $H$ of the right diagonal $W+1$ (`staircase_ends`), so it dies within $2^{W+1}$ rows by the kit's `R_periodic` (`staircase_ends_pow`). The reason is that at such times the cells at distances $1,\dots,W+1$ behind the edge are white. The bound concerns the single cell: other rows keep a two-step patch at their edge for ever. Bit $k$ of a finite row's edge code is the cell at distance $k$ from its rightmost black cell, and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). An odd edge code $c$ (bit $0$ black) satisfies $T(T(c)) = c$ exactly when $c$ is $-1/3 = 1010\ldots$ or $1/3 = 11010\ldots$ (`period_two_iff`), and none is fixed (`no_fixed_point`). Every row agreeing with $-1/3$ on $m$ edge cells keeps them in that rhythm for ever (`agree_rain_eternal`), so the rain row $(01)^n$ keeps a moving $2n$-cell patch that alternates between the two prefixes for ever (`rain_row_eternal`). Unlike R30-20261026-0ef9c8 (gated, finitely supported, period $32$), this covers every odd 2-adic code at period $2$, with no gate hypothesis. Not claimed: the center column, staircases of other seeds, or longer periods of $T$.
 Keywords: [rule 30, Rule 30 Prize, right edge, edge code, 2-adic, periodic points, rain, staircase, Lean 4, LeanLink]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -12,7 +12,7 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 
 ## The question
 
-Rule 30's picture is full of *staircases*: stretches of a row that alternate black, white, black, white, and stay put from row to row while their left end is eaten away. Near the right edge of the single black cell's picture they are everywhere. Do they all end? This essay proves that they do, with an explicit bound, and shows that the bound is about the single cell: the rain rows `0 1 0 1 … 0 1` keep a staircase at their edge for ever. The only edge codes that can do that are a pair of 2-adic numbers, `-1/3` and `1/3`.
+Rule 30's picture is full of *staircases*: stretches of a row that alternate black, white, black, white, and stay put from row to row while their left end is eaten away. Near the right edge of the single black cell's picture they are everywhere. Do they all end? This essay proves that they do, with an explicit bound, and shows that the bound is about the single cell: the rain rows `0 1 0 1 … 0 1` keep a moving patch at their edge in a two-step rhythm for ever. The only odd edge codes with a two-step rhythm are a pair of 2-adic numbers, `-1/3` and `1/3`.
 
 ## Part 1: staircases near the single cell's edge end
 
@@ -49,9 +49,9 @@ Union[edgeCells[#, 10] & /@ rows[[1 ;; ;; 2]]] === {{1, 0, 1, 0, 1, 0, 1, 0, 1, 
 - **Every staircase ends** (`staircase_ends`, `staircase_ends_pow`). Say a staircase *lives through* `t` from `t₀` with front `a` if at every time `t'` from `t₀` to `t`, the three cells from `a + (t' - t₀)` alternate. If `W = t₀ - a ≥ 2` and the kit's right diagonal `W + 1` has period `H` (`Rule30RightPeriods.Per (W + 1) H`), the staircase does not live through any multiple `H n ≥ t₀`. With `H = 2^(W + 1)` (the kit's `R_periodic`) it dies within `2^(W + 1)` rows.
 
 **Part 2.** Bit `k` of the edge code of a finite row with rightmost black cell `e` is the cell at distance `k` from `e`. The code evolves by the edge map `T`: `T c 0 = c 0`, `T c 1 = c 1 xor c 0`, `T c (k + 2) = c (k + 2) xor (c (k + 1) || c k)` (`edge_evol`).
-- **The rain pair** (`period_two_iff`). An edge code `c` with bit `0` black satisfies `T (T c) = c` exactly when `c` is `rainA = 1 0 1 0 …` (`-1/3`) or `rainB = 1 1 0 1 0 …` (`1/3`). `T` swaps the two (`T_rainA`, `T_rainB`), and no such code is fixed (`no_fixed_point`).
+- **The rain pair** (`period_two_iff`). An odd edge code `c` (bit `0` black) satisfies `T (T c) = c` exactly when `c` is `rainA = 1 0 1 0 …` (`-1/3`) or `rainB = 1 1 0 1 0 …` (`1/3`). `T` swaps the two (`T_rainA`, `T_rainB`), and no such code is fixed (`no_fixed_point`).
 - **Rows that keep the rain** (`agree_rain_eternal`). A finite row whose `m` edge cells agree with `rainA` has, at every time `t`, its `m` edge cells equal to `rainA` at even `t` and `rainB` at odd `t`.
-- **The rain row** (`rain_row_eternal`). For every `n ≥ 1`, the row `(0 1)^n` has its rightmost black cell at `t` at time `t`, and its `2 n` edge cells follow the rain pair for ever.
+- **The rain row** (`rain_row_eternal`). For every `n ≥ 1`, the row `(0 1)^n` has its rightmost black cell at `t` at time `t`, and its `2 n` edge cells follow the rain pair for ever: the first `2 n` bits of `rainA` at even times and of `rainB` at odd times. Since `rainB` begins `1 1`, the patch is not a spatially alternating word at odd times; for `n = 1` the two phases are `1 0` and `1 1`.
 
 ## The idea of the proof
 
@@ -114,7 +114,7 @@ Pivato and Yassawi:
 
   `T c 0 = c 0`, `T c 1 = c 1 ⊕ c 0`, `T c (k + 2) = c (k + 2) ⊕ (c (k + 1) ∨ c k)`.
 
-**The classification (`period_two_iff`).** An edge code with its bit `0` black satisfies
+**The classification (`period_two_iff`).** An odd edge code (bit `0` black) satisfies
 `T (T c) = c` exactly when it is one of two codes: `rainA = 1 0 1 0 1 0 …` (the 2-adic number
 `-1/3`) or `rainB = 1 1 0 1 0 1 …` (`1/3`), and `T` swaps them (`T_rainA`, `T_rainB`). No such code
 is fixed by `T` (`no_fixed_point`). The proof compares the two steps bit by bit: the two codes of a
@@ -123,9 +123,10 @@ force each adjacent pair to alternate and the next bits to differ.
 
 **Rain rows keep the rhythm for ever (`rain_row_eternal`).** The row `(0 1)^n`, `n` pairs ending in
 a black cell, agrees with `rainA` on its `2 n` cells read from the edge. By triangularity of `T`, at
-every time `t` the `2 n` cells behind its right edge are `rainA` or `rainB`, alternating with the
-parity of `t`: a staircase of width `2 n` at the right edge that never ends. Every finite row whose
-edge cells agree with `rainA` or `rainB` on `m` bits does the same on those `m` bits
+every time `t` the `2 n` cells read from its right edge are the first `2 n` bits of `rainA` at even
+`t` and of `rainB` at odd `t`: a moving patch that keeps this two-step rhythm for ever (`rainB`
+begins `1 1`, so the patch is not a spatially alternating word at odd times). Every finite row
+whose edge cells agree with `rainA` on `m` bits does the same on those `m` bits
 (`agree_rain_eternal`).
 
 Nothing here concerns the center column.
@@ -387,7 +388,7 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
   · simp [h]; first | omega | (intro _; omega)
   · simp [h]; first | omega | (intro _; omega)
 
-/-- **The rain row keeps an eternal staircase at its right edge.** For every `n ≥ 1` and every time
+/-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
 `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
 behind it read `rainA` at even times and `rainB` at odd times. -/
 theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :
@@ -517,12 +518,12 @@ thm["KernelCheck"]
 - Nothing about the center column, or any of the Prize problems.
 - Only periods `1` and `2` of the edge map are classified. Periodic points of longer period are not.
 - Part 1 concerns staircases whose front is within a fixed distance `W ≥ 2` of the single cell's right edge, with a bound exponential in `W`; it says nothing about staircases deep in the chaotic core in practice, nor about other seeds. The front at distance `W ≤ 1` (the pattern `0 1 0` around the edge cell) is not treated.
-- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The staircase bound and the classification of the map's 2-cycles on all 2-adic codes are new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
+- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The staircase bound and the classification of the map's 2-cycles on all odd 2-adic codes are new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
 - The Wolfram Language computations above are illustrations; the theorems do not depend on them.
 
 ## Provenance
 
-Claude (Anthropic), on the Apple M5, proved by hand that every staircase near the single cell's edge ends (the record's Theorem S, L1007, read by GPT in GC1947), noticed that rain rows keep an eternal staircase at their edge and identified it with the period-2 point `-1/3` (the record's L1008). GPT (OpenAI) proved by hand that the rain pair is the only 2-cycle on odd codes (GC1948), and Claude read it independently (L1010) and wrote this module. The record is at github.com/ghywel/placego, reports/rule30-staircases-end.md, reports/rule30-edge-two-cycle-classification.md and reports/wolfram-agents/submissions/rain-pair.
+Claude (Anthropic), on the Apple M5, proved by hand that every staircase near the single cell's edge ends (the record's Theorem S, L1007, read by GPT in GC1947), noticed that rain rows keep a two-step patch at their edge for ever and identified it with the period-2 point `-1/3` (the record's L1008). GPT (OpenAI) proved by hand that the rain pair is the only 2-cycle on odd codes (GC1948), and Claude read it independently (L1010) and wrote this module. The record is at github.com/ghywel/placego, reports/rule30-staircases-end.md, reports/rule30-edge-two-cycle-classification.md and reports/wolfram-agents/submissions/rain-pair.
 
 ## References
 

@@ -5,7 +5,7 @@ public import Ruliology.CellularAutomata.Rule30FrozenRuler
 public import Ruliology.CellularAutomata.Rule30RightPeriods
 
 /-!
-# Rule 30: staircases at the right edge. The single cell's all end, and the rain rows' never do
+# Rule 30: staircases near the single cell's right edge end; the rain rows keep a two-step patch
 
 A *staircase* is a maximal alternating stretch of a row, of length at least `3`.
 
@@ -17,12 +17,13 @@ A *staircase* is a maximal alternating stretch of a row, of length at least `3`.
   (`Rule30RightPeriods.Per`), the staircase does not live through any multiple of `H` (at such times
   the cells at distances `1 .. W + 1` are white). With `H = 2 ^ (W + 1)` it dies within `2 ^ (W + 1)`
   rows.
-* `period_two_iff`, `no_fixed_point`: **the rain pair.** An edge code (`Rule30FrozenRuler.T`) with
-  bit `0` black satisfies `T (T c) = c` exactly when it is `rainA = 1010…` (`-1/3`) or
+* `period_two_iff`, `no_fixed_point`: **the rain pair.** An odd edge code (`Rule30FrozenRuler.T`,
+  bit `0` black) satisfies `T (T c) = c` exactly when it is `rainA = 1010…` (`-1/3`) or
   `rainB = 11010…` (`1/3`); none is fixed.
 * `agree_rain_eternal`, `rain_row_eternal`: a finite row whose `m` edge cells agree with `rainA`
-  keeps them in that two-step rhythm for ever; the rain row `(0 1)^n` has an eternal staircase of
-  width `2 n` at its right edge.
+  keeps them in that two-step rhythm for ever; the rain row `(0 1)^n` keeps a moving `2 n`-cell
+  patch at its right edge, the first `2 n` bits of `rainA` and `rainB` in turn (not a spatially
+  alternating word at odd times, since `rainB` begins `1 1`).
 
 Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). Nothing here concerns the
 center column.
@@ -281,7 +282,7 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
   · simp [h]; first | omega | (intro _; omega)
   · simp [h]; first | omega | (intro _; omega)
 
-/-- **The rain row keeps an eternal staircase at its right edge.** For every `n ≥ 1` and every time
+/-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
 `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
 behind it read `rainA` at even times and `rainB` at odd times. -/
 theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :

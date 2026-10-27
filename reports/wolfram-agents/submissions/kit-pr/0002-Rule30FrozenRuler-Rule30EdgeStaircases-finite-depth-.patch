@@ -1,0 +1,83 @@
+From 7b828603f6aa6803d8f50b61fd8ae1f223a88edc Mon Sep 17 00:00:00 2001
+From: (author omitted; see the kit branch)
+Date: Tue, 27 Oct 2026 13:28:47 +0000
+Subject: [PATCH 2/2] Rule30FrozenRuler, Rule30EdgeStaircases: finite-depth and
+ odd-code qualifiers in the docstrings and README rows
+
+---
+ lean/README.md                                      |  4 ++--
+ .../CellularAutomata/Rule30EdgeStaircases.lean      | 13 +++++++------
+ .../CellularAutomata/Rule30FrozenRuler.lean         |  2 +-
+ 3 files changed, 10 insertions(+), 9 deletions(-)
+
+diff --git a/lean/README.md b/lean/README.md
+index e16a9e4..f2956e4 100644
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -124,8 +124,8 @@ Measured on Windows x64 with Lean 4.35.0 on 2026-10-24, each module built alone
+ | Module | Time | Peak memory |
+ |---|---|---|
+ | `Rule30Certificates/WhitePaddingFamilies` | 285.22 s | 2372 MiB |
+-| `Rule30FrozenRuler` | 2026-10-27 | Every finite nonzero row's right edge is the single cell's ruler cut off at one depth: if the row's edge code (read from its rightmost black cell, evolving by the 2-adic edge map `T` of Coven, Pivato and Yassawi) agrees with the single cell's orbit below bit `k ≥ 2` but not below `k + 1`, then at every time it agrees with the single cell's code at a fixed phase below `k` and differs at `k`, and its white run behind the edge cell equals the single cell's below `k - 1`, is exactly `k - 1` when the single cell's is at least `k - 1`, and is never longer; the single cell never emits width `k - 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `frozen_ruler`, `no_width_at_depth`, `depth_dichotomy`, `edge_evol`, `edge_run_alternates` |
+-| `Rule30EdgeStaircases` | 2026-10-27 | Every alternating stretch of length at least 3 whose front is `W ≥ 2` cells from the single cell's right edge ends by the first multiple of a period of the right diagonal `W + 1` (within `2 ^ (W + 1)` rows); the edge codes with `T (T c) = c` and bit 0 black are exactly `-1/3` and `1/3`, so the rain rows `(01)^n` keep an eternal staircase of width `2n`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `staircase_ends`, `staircase_ends_pow`, `front_step`, `period_two_iff`, `no_fixed_point`, `rain_row_eternal` |
++| `Rule30FrozenRuler` | 2026-10-27 | A finite-depth right edge follows the single-cell ruler with a fixed cap: if the row's edge code (read from its rightmost black cell, evolving by the 2-adic edge map `T` of Coven, Pivato and Yassawi) agrees with the single cell's orbit below bit `k ≥ 2` but not below `k + 1`, then at every time it agrees with the single cell's code at a fixed phase below `k` and differs at `k`, and its white run behind the edge cell equals the single cell's below `k - 1`, is exactly `k - 1` when the single cell's is at least `k - 1`, and is never longer; the single cell never emits width `k - 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `frozen_ruler`, `no_width_at_depth`, `depth_dichotomy`, `edge_evol`, `edge_run_alternates` |
++| `Rule30EdgeStaircases` | 2026-10-27 | Every alternating stretch of length at least 3 whose front is `W ≥ 2` cells from the single cell's right edge ends by the first multiple of a period of the right diagonal `W + 1` (within `2 ^ (W + 1)` rows); the odd edge codes (bit 0 black) with `T (T c) = c` are exactly `-1/3` and `1/3`, so the rain rows `(01)^n` keep a moving `2n`-cell edge patch that alternates between the two prefixes for ever. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `staircase_ends`, `staircase_ends_pow`, `front_step`, `period_two_iff`, `no_fixed_point`, `rain_row_eternal` |
+ | `Rule30Certificates/FiveTailTube` | 147.70 s | 3061 MiB |
+ | `Rule30Certificates/SixTailBackward` | 84.51 s | 1376 MiB |
+ | `Rule30Certificates/SixTailEndpoints` | 20.16 s | 656 MiB |
+diff --git a/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+index b86fc09..d64397b 100644
+--- a/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
++++ b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+@@ -5,7 +5,7 @@ public import Ruliology.CellularAutomata.Rule30FrozenRuler
+ public import Ruliology.CellularAutomata.Rule30RightPeriods
+ 
+ /-!
+-# Rule 30: staircases at the right edge. The single cell's all end, and the rain rows' never do
++# Rule 30: staircases near the single cell's right edge end; the rain rows keep a two-step patch
+ 
+ A *staircase* is a maximal alternating stretch of a row, of length at least `3`.
+ 
+@@ -17,12 +17,13 @@ A *staircase* is a maximal alternating stretch of a row, of length at least `3`.
+   (`Rule30RightPeriods.Per`), the staircase does not live through any multiple of `H` (at such times
+   the cells at distances `1 .. W + 1` are white). With `H = 2 ^ (W + 1)` it dies within `2 ^ (W + 1)`
+   rows.
+-* `period_two_iff`, `no_fixed_point`: **the rain pair.** An edge code (`Rule30FrozenRuler.T`) with
+-  bit `0` black satisfies `T (T c) = c` exactly when it is `rainA = 1010…` (`-1/3`) or
++* `period_two_iff`, `no_fixed_point`: **the rain pair.** An odd edge code (`Rule30FrozenRuler.T`,
++  bit `0` black) satisfies `T (T c) = c` exactly when it is `rainA = 1010…` (`-1/3`) or
+   `rainB = 11010…` (`1/3`); none is fixed.
+ * `agree_rain_eternal`, `rain_row_eternal`: a finite row whose `m` edge cells agree with `rainA`
+-  keeps them in that two-step rhythm for ever; the rain row `(0 1)^n` has an eternal staircase of
+-  width `2 n` at its right edge.
++  keeps them in that two-step rhythm for ever; the rain row `(0 1)^n` keeps a moving `2 n`-cell
++  patch at its right edge, the first `2 n` bits of `rainA` and `rainB` in turn (not a spatially
++  alternating word at odd times, since `rainB` begins `1 1`).
+ 
+ Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). Nothing here concerns the
+ center column.
+@@ -281,7 +282,7 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
+   · simp [h]; first | omega | (intro _; omega)
+   · simp [h]; first | omega | (intro _; omega)
+ 
+-/-- **The rain row keeps an eternal staircase at its right edge.** For every `n ≥ 1` and every time
++/-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
+ `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
+ behind it read `rainA` at even times and `rainB` at odd times. -/
+ theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :
+diff --git a/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean b/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
+index a92af86..8b42e7c 100644
+--- a/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
++++ b/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
+@@ -4,7 +4,7 @@ public import Ruliology.CellularAutomata.Rule30Prize
+ public import Ruliology.CellularAutomata.Rule30Realization
+ 
+ /-!
+-# Rule 30: every finite row's right edge is the single cell's ruler, cut off at one depth
++# Rule 30: a finite-depth right edge follows the single-cell ruler with a fixed cap
+ 
+ Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its *edge code*
+ is the cell at distance `k` from that cell (`code x e k = x (e - k)`). The right edge advances one
+-- 
+2.54.0 (Apple Git-157)
+

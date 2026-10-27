@@ -37,7 +37,7 @@ Pivato and Yassawi:
 
   `T c 0 = c 0`, `T c 1 = c 1 ⊕ c 0`, `T c (k + 2) = c (k + 2) ⊕ (c (k + 1) ∨ c k)`.
 
-**The classification (`period_two_iff`).** An edge code with its bit `0` black satisfies
+**The classification (`period_two_iff`).** An odd edge code (bit `0` black) satisfies
 `T (T c) = c` exactly when it is one of two codes: `rainA = 1 0 1 0 1 0 …` (the 2-adic number
 `-1/3`) or `rainB = 1 1 0 1 0 1 …` (`1/3`), and `T` swaps them (`T_rainA`, `T_rainB`). No such code
 is fixed by `T` (`no_fixed_point`). The proof compares the two steps bit by bit: the two codes of a
@@ -46,9 +46,10 @@ force each adjacent pair to alternate and the next bits to differ.
 
 **Rain rows keep the rhythm for ever (`rain_row_eternal`).** The row `(0 1)^n`, `n` pairs ending in
 a black cell, agrees with `rainA` on its `2 n` cells read from the edge. By triangularity of `T`, at
-every time `t` the `2 n` cells behind its right edge are `rainA` or `rainB`, alternating with the
-parity of `t`: a staircase of width `2 n` at the right edge that never ends. Every finite row whose
-edge cells agree with `rainA` or `rainB` on `m` bits does the same on those `m` bits
+every time `t` the `2 n` cells read from its right edge are the first `2 n` bits of `rainA` at even
+`t` and of `rainB` at odd `t`: a moving patch that keeps this two-step rhythm for ever (`rainB`
+begins `1 1`, so the patch is not a spatially alternating word at odd times). Every finite row
+whose edge cells agree with `rainA` on `m` bits does the same on those `m` bits
 (`agree_rain_eternal`).
 
 Nothing here concerns the center column.
@@ -310,7 +311,7 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
   · simp [h]; first | omega | (intro _; omega)
   · simp [h]; first | omega | (intro _; omega)
 
-/-- **The rain row keeps an eternal staircase at its right edge.** For every `n ≥ 1` and every time
+/-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
 `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
 behind it read `rainA` at even times and `rainB` at odd times. -/
 theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :

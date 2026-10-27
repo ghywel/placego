@@ -1,10 +1,10 @@
 ---
 Template: ComputationalEssay
-Name: Every finite row's right edge is the single cell's ruler, cut off at one depth
+Name: A finite-depth right edge follows the single-cell ruler with a fixed cap
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-27
-Description: A partial structural result on Rule 30, proved in Lean against the kit: the right edge of every finite nonzero starting row emits exactly the single black cell's white triangles, shifted in time, except that every triangle of width k - 1 or more is cut to exactly k - 1, where k is the depth to which the row's edge code agrees with the single cell's orbit; the cut width lies in a gap of the single cell's ruler.
-Abstract: For every finite nonzero row $x$ of rule 30, read from its rightmost black cell $e$ (bit $k$ of the edge code is $x(e-k)$), the edge advances one cell per step and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). We prove that the right edge of every such row is the single cell's ruler, cut off at one depth. Suppose the code agrees with the single cell's code at time $s_0$ on bits $0,\dots,k-1$, for some $k \ge 2$, while no code of the single cell's orbit agrees with it on bits $0,\dots,k$. Then at every time $t$ the code agrees with the single cell's code at time $s_0+t$ below bit $k$ and differs at bit $k$. Its white run behind the edge cell equals the single cell's when that run is shorter than $k-1$, is exactly $k-1$ when the single cell's is at least $k-1$, and is never longer (`frozen_ruler`). The single cell's code never has a white run of exactly $k-1$ (`no_width_at_depth`), so the cut width lies in a gap of the ruler. Every row has a depth, or agrees with the orbit at every depth (`depth_dichotomy`). The kit's `Rule30RightPeriods` describes the single cell's right diagonals; this extends it to every finite row. The proof uses only the triangularity of $T$, with no counting of periods. Not claimed: anything about the center column or the Prize problems, or that rows of infinite depth are the single cell's own rows (open).
+Description: A partial structural result on Rule 30, proved in Lean against the kit. Every right-edge code either agrees with the single-cell orbit at every finite depth, with a phase that may depend on that depth, or has finite orbit depth k. In the latter case its emitted white-run lengths follow one fixed phase of the single-cell ruler, capped at k - 1, and the cap lies in a gap of the ruler.
+Abstract: For every finite nonzero row $x$ of rule 30, read from its rightmost black cell $e$ (bit $k$ of the edge code is $x(e-k)$), the edge advances one cell per step and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). For rows of finite orbit depth, we prove the following capped-ruler theorem. Suppose the code agrees with the single cell's code at time $s_0$ on bits $0,\dots,k-1$, for some $k \ge 2$, while no code of the single cell's orbit agrees with it on bits $0,\dots,k$. Then at every time $t$ the code agrees with the single cell's code at time $s_0+t$ below bit $k$ and differs at bit $k$. Its white run behind the edge cell equals the single cell's when that run is shorter than $k-1$, is exactly $k-1$ when the single cell's is at least $k-1$, and is never longer (`frozen_ruler`). The single cell's code never has a white run of exactly $k-1$ (`no_width_at_depth`), so the cut width lies in a gap of the ruler. Every row has a depth, or agrees with the orbit at every depth (`depth_dichotomy`). The kit's `Rule30RightPeriods` describes the single cell's right diagonals; this gives a conditional capped-ruler theorem and a depth dichotomy for arbitrary right-edge codes. The proof uses only the triangularity of $T$, with no counting of periods. Not claimed: anything about the center column or the Prize problems, or that rows of infinite depth are the single cell's own rows (open).
 Keywords: [rule 30, Rule 30 Prize, right edge, edge code, 2-adic, ruler, finite configurations, universality, Lean 4, LeanLink]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Rule30RightPeriods in the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/main/lean/Ruliology/CellularAutomata/Rule30RightPeriods.lean)"]
@@ -12,7 +12,7 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Rule30RightPeriods in th
 
 ## The question
 
-Started from one black cell, rule 30 has a famously regular right edge. Read the row from its rightmost black cell leftward: just behind that cell there is a run of white cells, and its length, step by step, is a *ruler*: 0, 2, 0, 3, 0, 2, 0, 5, 0, 2, 0, 3, 0, 2, 0, 6, … The kit's `Rule30RightPeriods` describes the single cell's right diagonals, whose periods produce this ruler. What does the right edge of an *arbitrary* finite starting row look like? This essay proves that it is always the same ruler, shifted in time and cut off at one depth that the row itself determines.
+Started from one black cell, rule 30 has a famously regular right edge. Read the row from its rightmost black cell leftward: just behind that cell there is a run of white cells, and its length, step by step, is a *ruler*: 0, 2, 0, 3, 0, 2, 0, 5, 0, 2, 0, 3, 0, 2, 0, 6, … The kit's `Rule30RightPeriods` describes the single cell's right diagonals, whose periods produce this ruler. What does the right edge of an *arbitrary* finite starting row look like? Every right-edge code either agrees with the single-cell orbit at every finite depth, with a phase that may depend on that depth, or has finite orbit depth `k`. This essay proves that in the latter case its emitted white-run lengths follow one fixed phase of the single-cell ruler, capped at `k - 1`.
 
 ## The ruler, and two rows that copy it
 
@@ -41,7 +41,7 @@ The row `1 0 1 1 1` does the same with phase `5`, and the row `1 1`, a *rain edg
 {widths[{1, 0, 1, 1, 1}, 29] === Table[Min[single[[t + 5]], 4], {t, 1, 29}], Take[widths[{1, 1}, 12], 12]}
 ```
 
-The cut widths `1` and `4` never occur in the single cell's own ruler. The theorem says why, and that this is the only thing a finite row can do.
+The cut widths `1` and `4` never occur in the single cell's own ruler. The theorem says why; it describes every row of finite orbit depth, and the infinite-depth alternative is left explicit below.
 
 ## The theorem
 
@@ -75,7 +75,7 @@ DirectoryQ[$Rule30PrizeKit]
 rule30Submission = LeanImportString["import Rule30PrizeKit
 
 /-!
-# The right edge of every finite row is the single cell's ruler, cut off at one depth
+# A finite-depth right edge follows the single-cell ruler with a fixed cap
 
 Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its *edge code*
 is the cell at distance `k` from that cell (`code x e k = x (e - k)`). The right edge advances one
@@ -102,14 +102,14 @@ from its rightmost black cell `e + t`,
   time `s₀ + t` has a white run of exactly `w`, and for `w = k - 1` exactly when the single cell's
   code has at least `k - 1` white cells behind its edge.
 
-So every finite row's right edge emits the single cell's white triangles, shifted in time by `s₀`,
+So every finite row of finite depth `k` emits the single cell's white triangles at its right edge, shifted in time by `s₀`,
 except that each one of width `k - 1` or more is cut to exactly `k - 1`. The cut is never visible in
 the single cell's own picture: its code never has a white run of exactly `k - 1` behind the edge
 (`no_width_at_depth`), because that would put every code of depth `k` into the orbit at depth
 `k + 1`. The width `k - 1` therefore lies in a gap of the single cell's ruler.
 
 Credit: the edge map is the 2-adic right-edge map of Coven, Pivato and Yassawi (2007). The
-truncation statement for every finite row is, to our knowledge, new. Nothing here concerns the
+capped-ruler statement for rows of finite depth is not in the kit's catalog as we read it. Nothing here concerns the
 center column.
 -/
 
@@ -456,8 +456,8 @@ thm["KernelCheck"]
 ## What is not proved
 
 - Nothing about the center column, or any of the Prize problems. The center sits ever deeper behind the edge, and this result says nothing there.
-- The infinite-depth case is stated only as agreement with the single cell's orbit at every finite depth, with a phase that may depend on the depth. Whether every finite row of infinite depth is one of the single cell's own rows, shifted in time, is open. Our record proves it for every row whose edge code is below `2^24`, by a finite computation that is not part of this module.
-- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The truncation theorem for every finite row is new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
+- The infinite-depth case is stated only as agreement with the single cell's orbit at every finite depth, with a phase that may depend on the depth. Whether every finite row of infinite depth is one of the single cell's own rows, shifted in time, is open.
+- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The capped-ruler theorem for rows of finite orbit depth is new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
 - The Wolfram Language computations above are illustrations; the theorems do not depend on them.
 
 ## Provenance

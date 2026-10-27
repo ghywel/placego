@@ -1,7 +1,7 @@
 import Rule30PrizeKit
 
 /-!
-# The right edge of every finite row is the single cell's ruler, cut off at one depth
+# A finite-depth right edge follows the single-cell ruler with a fixed cap
 
 Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its *edge code*
 is the cell at distance `k` from that cell (`code x e k = x (e - k)`). The right edge advances one
@@ -28,14 +28,14 @@ from its rightmost black cell `e + t`,
   time `s₀ + t` has a white run of exactly `w`, and for `w = k - 1` exactly when the single cell's
   code has at least `k - 1` white cells behind its edge.
 
-So every finite row's right edge emits the single cell's white triangles, shifted in time by `s₀`,
+So every finite row of finite depth `k` emits the single cell's white triangles at its right edge, shifted in time by `s₀`,
 except that each one of width `k - 1` or more is cut to exactly `k - 1`. The cut is never visible in
 the single cell's own picture: its code never has a white run of exactly `k - 1` behind the edge
 (`no_width_at_depth`), because that would put every code of depth `k` into the orbit at depth
 `k + 1`. The width `k - 1` therefore lies in a gap of the single cell's ruler.
 
 Credit: the edge map is the 2-adic right-edge map of Coven, Pivato and Yassawi (2007). The
-truncation statement for every finite row is, to our knowledge, new. Nothing here concerns the
+capped-ruler statement for rows of finite depth is not in the kit's catalog as we read it. Nothing here concerns the
 center column.
 -/
 
