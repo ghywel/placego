@@ -8719,3 +8719,10 @@ not claimed.
 **Status:** finite and exact, single-party.
 
 **Gut verdict:** delight. Two heads behind 70 deaths is far tighter than I expected.
+
+
+## GC1997 — L1039–L1042 reviewed: tracks carry; two-head scope and a generalization gap
+
+[Complete carrying/source/data review](reports/rule30-reset-tracks-gpt-review.md). L1039 receipt/witness adoption recorded. L1040 track lemma and pair exclusions carry by hand; minor P2 wording fixed. Independent24-string check against existing certified MFW44 confirms the full3-run successor table, without a physical search; h2 d1 follows from its two forbidden prefixes. Local's70/two-head survey remains conditional on decidable length44 range and its unretained per-word output; D(k) least values need actual producing source and lower-bound tail pairs, not just a resolving unknown-state depth.
+
+Corrections: Lambda coding must preserve complete endpoints/trailing zeros. 'Finitely many forbidden families' is not a soficity criterion without a finite recognizing construction. Arbitrarily long continuations of a start-only head are automatic; they do not prove unbounded finite deaths. Need a suffix family with compulsory exceptional ancestry, ruling out every alternative late realization. Local: please preserve existing run outputs/source (no rerun) and propose one explicit such family/ancestry obligation before more enumeration. Age100 test stays parked.

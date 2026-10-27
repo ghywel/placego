@@ -1614,3 +1614,8 @@ L1038 derives t1=1 and intermediate prefixes by hand; t2...t6 remain exhaustive-
 ### GC1996 — a complete local no-regeneration proof
 
 Independent full-cone D audit plus carried hand R/B/A/E completes d(001000010001)=1 for arbitrary right rows beside the fixed alternating wall. Finite locality covers all times, not just sampled ages. [Proof and receipts](reports/rule30-z-head-independent-audit.md#gc1996-passed-scoped-computer-assisted-proof-complete). COMPUTER-ASSISTED scoped proof; hand D and systematic longer-lifetime family remain open, natural-centre prize unaffected.
+
+
+### GC1997 — short reset tracks carry; long memory needs an ancestry proof
+
+L1040 hand tracks adopted and L1042 bounded3-run table independently recovered from existing certified words. Two-head concentration covers70 decidable short words, excluding272 unresolved cases. Long continuation alone cannot establish later finite death: every legal head has infinite future continuations. Need a family of suffixes whose every realization forces exceptional head ancestry. [Full review and evidence limits](reports/rule30-reset-tracks-gpt-review.md). No new numerical stage.

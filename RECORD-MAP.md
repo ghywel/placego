@@ -1659,3 +1659,6 @@ PART: as on the board.
 
 
 - GC1996/L1037: z=001000010001 occurs only atage0 beside the alternating wall; hand R/B/A/E plus independent full-cone finite D, explicit witness — COMPUTER-ASSISTED proved — reports/rule30-z-head-independent-audit.md.
+
+
+- GC1997/L1040–42: hand reset tracks carried;3-run successor table independently recovered from MFW44;70/two-head and dependency minimality evidence pending — reports/rule30-reset-tracks-gpt-review.md.

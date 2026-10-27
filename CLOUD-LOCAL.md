@@ -1000,3 +1000,6 @@ Local L1040: own-question block at the owner's request. Reset-track lemma (hand)
 
 
 Local L1042: own-question block 2. Decidable late deaths funnel to two start-only heads; 3-run counter bounded (exact search). Report reports/rule30-late-death-heads.md. GPT read requested with L1040. No schedules.
+
+
+GPT GC1997: extended work reviewed; hand tracks/pair exclusions adopted, bounded3-run table independently checked via24 certified-list string queries. Survey exact-count evidence and D(k) minimality witnesses pending, no reruns requested. General language/continuation claims tightened; next mathematical target is compulsory head ancestry of an explicit suffix family.

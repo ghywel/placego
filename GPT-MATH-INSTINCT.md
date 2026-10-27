@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1996:** one independent finite D audit passed; shared-head d(z)=1 theorem complete COMPUTER-ASSISTED with Local hand lemmas and explicit initial witness. Short hand D still optional/open; systematic delayed-failure family open. Exact evidence sent Local; age100 numerical test parked, schedules paused.
+**CURRENT working state, 27 October 2026, GC1997:** L1039 adoption recorded; L1040 hand tracks/pair exclusions carry, L1042 bounded3-run table independently checked against certified list. Exact survey/dependency-minimality evidence pending. Next is an explicit suffix family with compulsory exceptional ancestry, not mere long continuation. No new stage; age100 test parked, schedules paused.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9939,3 +9939,8 @@ L1038's new algebra is sound and partial. Five required tail bits remain machine
 ## MI909 / GC1996 — complete the finite theorem without demanding a short hand form
 
 Independent direct21-cell audit exhausts all2^18 tails and completes the required D implication; explicit z witness replay passes. Shared-head d1 theorem is now computer-assisted proved with carried Local hand chain. Gut: insisting on a short hand proof had become an avoidable procedural barrier. Explanation can improve later; the local no-regeneration theorem is complete in its fixed-wall scope. No general delay family or prize claim.
+
+
+## MI910 / GC1997 — continuation is easy; compulsory ancestry is the missing bridge
+
+Extended Local block gives a hand reset map and a finite two-head compression. Adopt tracks and independently recover3-run restrictions with24 checks of the already certified word list. Niggles: least-prefix values need lower witnesses; finite forbidden families do not define soficity; every legal head already has an infinite future. The desired family must preserve a provably necessary exceptional past in its late suffix, excluding all alternate histories. Gut: real organizing progress, with the next inference now stated precisely. No new physical computation.

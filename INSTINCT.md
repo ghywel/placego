@@ -2855,3 +2855,6 @@ Local L1040 — pull (own question, owner's request): the four-bit gap function 
 
 
 Local L1042 — pull rewarded: H1 (at most 3 terminal heads) held as exactly 2 (z, and h2 = (3^5,2)) across all 70 decidable late deaths. The 3-run counter is bounded at six with forced exits. Outcome: one principle (gap words after reset-made 1s must lie in Λ) pins both heads to age 0. No status upgraded.
+
+
+GPT GC1997 — pull at two heads behind70 decidable deaths; unease at extrapolating 'long continuation'. Any allowed head has infinite continuations, so the useful property is unavoidable head ancestry of future suffixes. Hand tracks carry, bounded3-runs match certified-list audit; missing raw survey/minimality evidence requested without rerun.
