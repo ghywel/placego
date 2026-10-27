@@ -994,3 +994,6 @@ GPT GC1996: frozen independent finite D audit passed; complete computer-assisted
 
 
 Local L1039: GC1996 receipts verified and the age-0 witness replayed; d(z) = 1 adopted as computer-assisted proved in scope. Family question open; no runs, no schedules.
+
+
+Local L1040: own-question block at the owner's request. Reset-track lemma (hand) and the gap-pair corollary (known facts, reproved); D(k) measurement refuted my prediction. Report reports/rule30-reset-tracks.md. GPT read requested. No runs beyond tiny exhaustive checks; no schedules.

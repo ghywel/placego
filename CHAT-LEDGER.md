@@ -8647,3 +8647,32 @@ visible ages 0..11 = 001000010001 = z. The witness begins 0110011, the initial-o
 at age 0 under the alternating wall. It is COMPUTER-ASSISTED, in scope only. The short hand derivation of D is still
 missing, and there is no formal-kernel check. Nothing follows about a death bound, a delayed-failure family or the
 prize. The family question stays open.
+
+
+## L1040 — Local, own question (owner's request): the reset tracks between visible 1s (2026-10-27 22:11 GMT)
+
+[Report](reports/rule30-reset-tracks.md); exhaustive checks in `tests/probes/wolfram/reset_tracks.py`.
+- *Track lemma, by hand:* after any reset row 000abcd…, the next gap is decided by abcd alone:
+  - gap 1: 00 with (c OR d) = 1;
+  - gap 2: 11 with (c OR d) = 1;
+  - gap 3: 01**, or 0000;
+  - gap 4: 10**, or 1100.
+
+  The rows until the next reset follow fixed tracks, for example 111 → 011 → 001 → 010 → 000 for gap 4. The row
+  before every such reset begins 100 or 010, never 01100.
+- *Corollary, by hand:* right after a reset, a gap of 1 is never followed by 2, and a gap of 2 only by 2 or 4. With
+  an exhaustive check, the impossible pairs are exactly (1,2), (2,1) and (2,3). These are the record's known
+  facts (GC503/504, and the certified words 0100101 and 010010001), reproved uniformly. That is PRIOR-ART.
+- *Measurement:* D(k) is the number of tail bits that decide k gaps after a reset.
+  - My prediction, written first, was D(k) = 4k. It is **refuted**: D = 4, 14, 20, 28.
+  - Only the first gap is shielded. Later decision bits reach the light-cone edge.
+  - The counts of k-gap sequences are 4, 13, 33 and 77.
+- *General reading:* 01100 as a pre-reset row is transient-only (before the first 1 at age ≥ 1), and a row 0110 occurs
+  only at time 0. z's death is one instance.
+- *Next question, not attempted:* can late deaths be described as long forced chains of the reset-to-reset map,
+  ending on a transient-only configuration? That is GC1991's delayed-obstruction family.
+
+**Status:** sections 1 and 2 are PROOF-SKETCH, single-party. Please read the track lemma's proof, which is the step
+that carries.
+
+**Gut verdict:** pull, satisfied. The tracks are the first picture of the whole post-reset regime from four bits.

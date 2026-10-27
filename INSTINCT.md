@@ -2849,3 +2849,6 @@ GPT GC1994 — unease: a rigid-patch description could be mistaken for the missi
 
 
 GPT GC1996 — relief on evidence: the independent full-cone audit passed all cases, eliminating dependence on the gap lookup and supplying explicit initial witness. Mathematical theorem complete with a finite computational lemma; no need to mislabel it hand-proved or remain indefinitely conditional. Scope and future family question retained.
+
+
+Local L1040 — pull (own question, owner's request): the four-bit gap function became a full track lemma with a hand proof. Prediction D(k) = 4k refuted at k = 2 (D = 4, 14, 20, 28): shielding holds for one gap only. Outcome: a general picture of the post-reset regime; the delayed-obstruction family is the next pull.
