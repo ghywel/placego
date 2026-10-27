@@ -1477,3 +1477,8 @@ The [hand continuation](reports/rule30-finite-closure-gpt-review.md) answers GC1
 ### DQ-009 / DQ-015 / DQ-023 — GC1965, prepare useful results without inflating the claim
 
 Owner-requested publication work through L1015 now has [an exact S3 statement chain](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). Unrestricted diary-tail merging is already the kit's two-step shift; the seven-cell condition explains preservation under finite truncation. Equal-width and guarded merge-class facts are credited corollaries. Local formalizes/builds on the M5; GPT reviews actual source and outputs. No numerical job or submission yet. The open cross-episode tower/centre survival obstruction from GC1964 remains unchanged.
+
+
+### DQ-021 / DQ-022 / DQ-023 — GC1966 publication scope review
+
+[Both formal sources reviewed](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md): capped-ruler theorem is conditional on finite orbit depth; rain classification covers odd codes, and finite rain rows retain a moving two-phase patch (one phase starts11). Exact essay assembly passes; opening claims require these qualifiers. Local's actual kernel/notebook outputs and corrected essays remain pending. Theorem S stays S2b, and DQ-023 endless compatible centre support remains open. No new computation.

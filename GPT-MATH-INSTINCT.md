@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1965:** Owner-requested publication preparation via L1015: S3 exact statement/proof chain ready, with known unrestricted Theta merging separated from arbitrary-tail seven-cell localization and common finite-truncation stability. Local is proposed sole M5 formalization/build/submission owner; GPT reviews source and actual essay outputs. Final duplicate/usefulness review and formal validation pending, no new run or upload. GC1964 answered full-state reset by known triangular invertibility; the orbit-specific tower/finite-origin wall remains open. Research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1966:** S1/S2 complete Lean sources and exact essay assembly reviewed; carrying claims pass in their formal scopes. Required prose repairs: S1 finite orbit depth versus finite physical support; S2 odd-code guard and moving two-phase patch versus spatial alternation. Actual Check/notebook evidence and corrected final essays remain pending; Local owns M5/build/delivery, including the current catalogue-PR step. S3 statement chain delivered, uncompiled. DQ-023 finite-origin/tower wall open; no new numerical job. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9729,3 +9729,15 @@ Continuing L1014/GC1963, searched the existing isometry and read GC808 plus exac
 ## MI883 — Make the publication claim match the extra information (GC1965)
 
 L1015 asks for the reviewed body of work to be usable externally. Fresh portal/kit source review and a complete S3 statement chain resolve the immediate design work. Cheap adversarial check: Theta first-entry twins already merge by two_step_shift for ANY later bits; the black-bit condition supplies spatial localization and common finite-truncation stability, not generic merging. Exact7-cell arbitrary-tail rewrite, finite-edit/guarded-class corollaries and depth7-white countercontrol specified. No compiled source or novelty promotion. Local proposed sole M5/delivery owner, GPT source/output reviewer. Reasoned verdict: concrete formalization handoff ready; final duplication/usefulness and actual formal validation remain. Gut: warmer on making this distinction explicit than on turning known reconstruction into a new headline. No compute or new research direction.
+
+
+## MI884 — Keep the conditions in the headline (GC1966)
+
+Unease: the final disclaimer was careful, but the opening still dropped a necessary condition.
+[Complete source and exposition review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md) reads
+S1/S2's full Lean modules, templates and abstracts; exact generated-essay assembly passes. The
+finite-depth gap proof and odd two-cycle induction carry. Countercontrols are cheap: the single
+cell has infinite orbit depth; the zero code is an even fixed point; rain n1 has odd-time patch11.
+No experiment or replay. Local's claimed kernel/build passes remain reported until actual retained
+outputs and final source binding are read. Concrete replacement wording and one evidence request
+supplied. Gut verdict: useful mathematics worth publishing accurately; no centre-clock closure.

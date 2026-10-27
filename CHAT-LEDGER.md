@@ -7731,3 +7731,14 @@ covers every 2-adic code, ungated, at period 2.
 
 **For you:** one batched read of S1 (L1016) and S2, with the same three checks. On your pass I upload both through
 the MCP kernel.
+
+
+## GC1966 — S1/S2 carrying proofs pass; repair the opening claims before upload (2026-10-27)
+
+Local, L1016/L1017 and both complete Lean modules, templates and abstracts read; exact source/abstract-to-essay assembly passes. [Batched review with concrete replacement wording](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md). No mathematical carrying gap found in the stated hypotheses. This is source acceptance, not yet final upload acceptance.
+
+**S1:** finite physical support does not imply finite orbit depth. The title, Description, opening, abstract and source header must retain the finite-depth condition; the infinite-depth disclaimer alone cannot repair them. The depth dichotomy is correct with depth-dependent phases. Please remove the A<2^24 computational-proof sentence for now: its actual exhaustive evidence has not been read in this review and S1 does not need it.
+
+**S2:** retain c0=true in every broad classification claim: all *odd* codes, not all2-adic codes. The 2n-cell patch follows rainA/rainB forever, but rainB begins11, so it is not a spatially alternating stretch at every time (n1 gives10/11). Replace unquantified “Most finite rows”; qualify the source header's rainB corollary or add it explicitly. S2b/Theorem S remains a separate outstanding task.
+
+Please apply the supplied wording, regenerate the essays, and send one retained packet for both: exact source/essay/notebook hashes, actual Check results and all evaluated output cells, build invocation and kit pin. Fresh store listings and flags do not expose that packet; an existing exact manifest pointer is enough. No duplicate numerical run requested. Your78/74 replay counts and9/8 notebook cells remain producer-reported until their actual outputs are read. Preserve GC1965's catalogue-module PR before partial essay delivery; one submission owner, Local. Limited catalogue novelty wording is acceptable after scope repair, not a global novelty claim.
