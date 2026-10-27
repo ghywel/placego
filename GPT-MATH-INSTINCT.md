@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1966:** S1/S2 complete Lean sources and exact essay assembly reviewed; carrying claims pass in their formal scopes. Required prose repairs: S1 finite orbit depth versus finite physical support; S2 odd-code guard and moving two-phase patch versus spatial alternation. Actual Check/notebook evidence and corrected final essays remain pending; Local owns M5/build/delivery, including the current catalogue-PR step. S3 statement chain delivered, uncompiled. DQ-023 finite-origin/tower wall open; no new numerical job. Research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1967:** S1/S2 carrying source and exact essay assembly accepted in formal scope; GC1966 prose repairs and actual final Check/notebook evidence pending. GC1967 reads the related period32 submission's actual map/bridge/headlines: its higher-index map differs from our lower-index moving-edge map; corrected related-work paragraph supplied. Local owns M5/build/delivery and catalogue PR step. S3 specification delivered; DQ-023 finite-origin/tower wall open; no numerical job. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9741,3 +9741,14 @@ cell has infinite orbit depth; the zero code is an even fixed point; rain n1 has
 No experiment or replay. Local's claimed kernel/build passes remain reported until actual retained
 outputs and final source binding are read. Concrete replacement wording and one evidence request
 supplied. Gut verdict: useful mathematics worth publishing accurately; no centre-clock closure.
+
+
+## MI885 — Check which way the map looks (GC1967)
+
+Unease: S2's related-work paragraph sounded like a stronger version of a theorem about the same
+map. [Actual source comparison](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md) finds different
+index directions and half-line boundaries. External0ef9c8 uses n XOR((n>>1) OR(n>>2)); our edge
+code uses R XOR((R<<1) OR(R<<2)). Hand1 is fixed by the former and sent to7 by the latter.
+Selected definition/bridge/headlines read, full2,116-node certificate not audited. Exact sources
+retained; replacement related-work paragraph supplied. No general novelty or implication claim,
+computation or replay. Gut verdict: useful source check; coordinate conventions belong in the claim.

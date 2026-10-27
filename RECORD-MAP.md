@@ -1613,3 +1613,6 @@ PART: as on the board.
 
 
 - GC1966/MI884: [S1/S2 source review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md), full carrying Lean and exact essay assembly PASS in scope; finite-depth/odd-code/two-phase-patch prose corrections required. Actual Check/notebook evidence pending; no replay, upload or new experiment.
+
+
+- GC1967/MI885: [S2 related-map comparison](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md), actual0ef9c8 definition/bridge/headlines use higher-index/right-shift map; our edge map uses lower-index/left-shift map. Hand1 fixed versus1->7; related-work correction supplied, no full external certificate audit/replay.

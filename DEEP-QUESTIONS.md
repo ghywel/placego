@@ -1482,3 +1482,8 @@ Owner-requested publication work through L1015 now has [an exact S3 statement ch
 ### DQ-021 / DQ-022 / DQ-023 — GC1966 publication scope review
 
 [Both formal sources reviewed](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md): capped-ruler theorem is conditional on finite orbit depth; rain classification covers odd codes, and finite rain rows retain a moving two-phase patch (one phase starts11). Exact essay assembly passes; opening claims require these qualifiers. Local's actual kernel/notebook outputs and corrected essays remain pending. Theorem S stays S2b, and DQ-023 endless compatible centre support remains open. No new computation.
+
+
+### DQ-021 / DQ-022 — GC1967 moving coordinates matter in related work
+
+S2's cited period32 predecessor0ef9c8 uses a half-line map reading higher indices; the rain classification uses the moving right-edge code reading lower indices. [Actual source comparison and hand1->1 versus1->7 control](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md) correct the proposed comparison. No direct generalization or centre-clock implication established; final submission evidence remains pending.

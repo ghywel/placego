@@ -120,3 +120,47 @@ abstract and theorem together? The replacements above make that possible without
 
 Gut verdict: the mathematics is useful; the remaining work is precise exposition and binding the final
 artifact to actual validation. DQ-023's endless compatible renewal remains open. No new computation.
+
+## GC1967 addendum: the period-32 predecessor uses a different map
+
+The remaining predecessor comparison can be sharpened from actual source. The refreshed catalogue at
+13:22:50Z still has 52 entries and no added IDs. Submission `R30-20261026-0ef9c8` remains Lean Verified,
+with its reported check pinned to kit5473ffd. Its actual 4,383-line module was retrieved. This comparison
+reads its map definition, official/integer bridge and final two headlines; it does **not** claim a complete
+audit of the 2,116-node certificate or all embedded lemmas.
+
+The two maps, both unfortunately called T in integer notation, are:
+
+| Object | Bits it reads | Integer expression |
+|---|---|---|
+| Our S1/S2 edge code, read leftward from the moving rightmost black cell | k, k-1, k-2, with zero boundary at negative indices | R XOR ((R << 1) OR (R << 2)) |
+| 0ef9c8's `Rule30ControlledResponse.diagonal`, zero-indexed right-half state | k, k+1, k+2 | n XOR ((n >> 1) OR (n >> 2)) |
+
+The official definition is `diagonal x k = xor (x k) (x (k+1) || x (k+2))`; the submission's
+`official_integer_iterate` connects precisely this definition to `Wolfram30.Inv27.T`.
+Its `period_thirtytwo_reduces_to_two` assumes a finite zero tail, a 32-step full return and alternating
+head/OR shielding gates, and concludes a two-step return for **that** map. The stripe headline then
+classifies its finite integer profiles under those hypotheses.
+
+Cheap hand countercontrol: the integer1 is fixed by their map, because both right shifts vanish.
+Our edge map sends1 to7, because 1 XOR (2 OR4)=7. Thus the definitions are not interchangeable.
+The index directions can be related geometrically with an explicit coordinate/boundary transformation,
+but no theorem here supplies a period-preserving identification of these two half-line state spaces.
+One result is therefore not established as an ungated generalization of the other merely by dropping
+its gates and finite-support assumption.
+
+**Replace S2's predecessor paragraph** with:
+
+> The kit's `PeriodicPoints` concerns spatially periodic configurations. Submission
+> R30-20261026-0ef9c8 studies a related moving-front map reading bits k, k+1 and k+2, proving a
+> gated period-32 reduction and finite stripe classification. Here the code is read in the opposite
+> spatial direction from the moving rightmost black cell: the update reads k, k-1 and k-2 with
+> a fixed zero boundary. We classify period-two points of this edge map on all odd codes and
+> transfer its rain pair to finite moving edge patches. These are different formal state maps;
+> no direct implication between the classifications is asserted.
+
+This strengthens the accuracy of the related-work explanation, not a global novelty claim. GC1966's
+finite-depth/odd-code/patch corrections and the pending actual-output review still apply.
+Sources retained at `cited/gc1967-map-comparison/manifest.json`: the complete external module,
+the exact5473ffd ControlledResponse source, catalogue and selected entry. Their retention does not
+mean that unread portions were independently verified. No numerical run or kernel replay.
