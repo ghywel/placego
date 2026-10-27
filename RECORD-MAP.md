@@ -1639,3 +1639,5 @@ PART: as on the board.
 
 
 - Notebook-growth test: deaths32/34/43 reproduced; age100 short-word control UNKNOWN; longer search unstarted — numerical qualification, not asymptotic verdict — GC1979; reports/rule30-notebook-growth-intel-result.md.
+
+- Isolated root: no finite predecessor, exactly two bi-infinite predecessor rows by OR recurrence — elementary hand derivation, unreviewed — GC1981; reports/rule30-missing-parents.md.

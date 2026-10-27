@@ -112,3 +112,73 @@ the original impossible all-36 prediction or the later solver stage.
 Reasoned verdict: the method is worth implementing after these repairs. Gut
 verdict: this is exactly the cheap adversarial hand check the owner's method
 calls for; preserve the useful idea while correcting what would count as success.
+
+## L1029 executable review and freeze (GC1981)
+
+Read the entire 212-line proposed source at
+`6972f20c` (original SHA256
+`3662b071633362b6f2aa235450d67c07e95e207093d6d1fa778fec61354bd05f`).
+The big-integer transition has the correct orientation:
+`((R << 1) | (t & 1)) XOR (R | (R >> 1))`, masked after dropping the far-right
+cell. The 215-cell cone, 214 updates and windows starting at 0..100 carry.
+The fixed positive row is exactly 215 bits and byte-equal to GC1978 q00002.
+The source's tiny-cone check compares every cell, and terminal witnesses use
+the independent literal evaluator. Those runtime checks have not been run here.
+
+GPT amended the source directly to finish the review rather than send another
+round of implementation requests:
+
+- retain the initial row and draw number behind each latest observed age, then
+  replay those certificates too; an integer age alone cannot support Stage S;
+- checkpoint partial unverified evidence on new age-100 witnesses and every
+  5,000 draws, so a resource stop does not erase the collected examples;
+- retain offending rows, detect words outside the initial language, and prevent
+  a control violation from also reporting `gate_complete=true`;
+- record terminal reason, literal-evaluator hash, Python version and age-100
+  row counts separately from distinct-word coverage.
+
+The retained primary 230bc7 abstract/source were checked, source SHA256
+`39c0f0376e26d86e6be1c8eeb8874f39e1fc1fd89bd9b37e78dd87a7aafd7660`,
+from `cited/gc1938-portal-morning/`. Its empty-right entry theorem begins at
+sample146, and its reported96% numerical observation concerns eventual entry.
+It uses a black-first wall, sampling odd physical times; our initial ensemble
+is white-first, sampling even times. No matching distribution or age100 entry
+bound has been supplied. Moreover, a small fraction of rows can cover many
+distinct words. The amended P_B is only Local's exploratory fewer-than10-of19
+coverage prediction, with the complementary outcome explicitly retained. It
+cannot confirm/refute that external trap result. Internal3/5 spacing is not a
+test for membership in its829-window invariant set.
+
+The31 nonexcluded candidates are still **not** an exact E_34 list; other early
+exclusions may remain. The pilot may be useful even if it cannot close the gate.
+No missing sample is promoted to a new death, and no automatic Stage S follows.
+
+**Accepted source for one Local M5 pilot:**
+`tests/probes/wolfram/notebook_witness_pilot.py`, SHA256
+`e25dd2cff3740df3c364ce744ca3c837f77a7f5f1b9302bf80af423466df0a29`.
+Dependencies frozen:
+
+- literal evaluator: `6e51527c1198218ed6d1f50e57c09a922ae29713b5bb2258298e7c763f9ff5ee`;
+- supervisor: `38ed7189ce5911d06e03e50295995d2a1d5c15451db9367da5cdbf299d2fef6c`;
+- MFW list: `80eee0a74712632a4339f7cd0a7776f23dd2a45fea8e934b79e6f0aba390d378`.
+
+One process, seed1976, at most200,000 draws. Use a fresh destination:
+
+```sh
+python3 tests/probes/wolfram/run_capped.py \
+  --out /private/tmp/gc1981-notebook-witness-pilot \
+  --cpu 600 --wall 750 --rss-mib 512 --file-mib 16 --disk-mib 64 \
+  --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 256 \
+  -- python3 tests/probes/wolfram/notebook_witness_pilot.py
+```
+
+Check all frozen hashes before launch. The600s limit covers the sole simulation
+process; supervisor CPU is reported separately. The570s checkpoint guard leaves
+room for replay but does not override the hard limit. A partial checkpoint is
+not a completed or replayed result. Retain launcher/time receipts and all nested
+artifacts, including failures; no retries, larger sample, changed seed, solver,
+GPU or schedule restart. Local's L1029 records the owner's execution direction;
+this freeze completes GPT's requested source review, not an additional job.
+Local should verify the small GPT retention edits before launch and stop on any
+disagreement. Syntax compilation and static source/control binding checks passed;
+runtime controls and execution outcomes remain pending on Local. GPT ran no pilot.

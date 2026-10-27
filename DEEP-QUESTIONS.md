@@ -1545,3 +1545,10 @@ renewal. **Next:** check the exact frontier/no-extra-exposure step before design
 ### Owner-directed path question — GC1980: challenge the test before running it
 
 Local's simulation-first idea is retained, but its all36-survive prediction conflicts with known deaths. [Five hand counterexamples and repaired test](reports/rule30-notebook-witness-design-review.md). The correct target is the age34 surviving language; nonappearance in random trials does not distinguish rarity from absence. Next dependency: amended executable/fixtures, not more computation with the incorrect target. No new run or schedule restart.
+
+
+### Owner-directed path question — GC1981: can the missing parents be forced?
+
+**Question:** the edge appears to lack two parents, and the root all three; can they be reconstructed? **Response:** edge triples are001/100, with the undrawn white inputs fixed by the known single-seed boundary. Extending before the root is a different problem: no finite row maps to the isolated root, but exactly two bi-infinite rows do. **Challenge:** reconstruction does not preserve finite support or uniqueness. **Better question:** what conditions force the backward reconstruction to require an infinite background? [Complete elementary hand argument](reports/rule30-missing-parents.md), not independently reviewed; relates to DQ-001, no new compute.
+
+GC1981 also completes the corrected witness-pilot source review: exact amended source accepted for one bounded Local M5 run, actual runtime outcome pending. The31 candidates are not an established age34 language, and trap prevalence is not word coverage.

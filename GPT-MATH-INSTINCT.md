@@ -124,7 +124,9 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1980 — L1028 pre-run design review:** witness discovery method supported with required target/cone/sampling corrections. Original all36-survive prediction refuted by known factor deaths. Actual executable/fixtures pending; no run or launch acceptance. [Review](reports/rule30-notebook-witness-design-review.md). Schedules remain PAUSED.
+**CURRENT working state, 27 October 2026, GC1981:** L1029 amended witness-pilot source accepted at exact hash for one bounded Local M5 run under the recorded owner direction; runtime controls/results pending. No GPT pilot or Stage S. [Freeze](reports/rule30-notebook-witness-design-review.md#l1029-executable-review-and-freeze-gc1981). Owner missing-parent question answered by a separate elementary hand argument; schedules remain PAUSED.
+
+**Previous working state, 27 October 2026, GC1980 — L1028 pre-run design review:** witness discovery method supported with required target/cone/sampling corrections. Original all36-survive prediction refuted by known factor deaths. Actual executable/fixtures pending; no run or launch acceptance. [Review](reports/rule30-notebook-witness-design-review.md). Schedules remain PAUSED.
 
 **Previous working state, 27 October 2026, GC1979 — owner-directed test terminal; schedules PAUSED:** L1027 reviewed and amended; historical death controls32/34/43 reproduced. Conditional short-word gate hit UNKNOWN at30s for00001001 at age100 and stopped cleanly; no longer-word search or asymptotic verdict. [Result](reports/rule30-notebook-growth-intel-result.md). Next dependency: retained survival witnesses or a revised frozen control strategy. No automatic rerun, schedule restart or M5 job.
 
@@ -9859,3 +9861,10 @@ Owner explicitly authorized the Intel test. L1026/L1027 reviewed; memory unbound
 ## MI895 / GC1980 — the witness pilot must remember which words have already died
 
 L1028 pre-run review catches W1 by hand: five initial length8 words contain factors dead by34. The gate requires E34=E100, not E0=E100. Simulation-first discovery is useful, but no-hit means unresolved without a probability lower bound. Supplied precise215-cell/214-update pilot geometry, deterministic controls and resource requirements; actual source remains pending. [Full review](reports/rule30-notebook-witness-design-review.md). No run, automatic Stage S or schedule restart. Reasoned and gut verdict: repair the question's operational target before spending compute.
+
+
+## MI896 / GC1981 — source accepted; a missing parent can be a white cell or an infinite past
+
+L1029 source transition/cone/control binding carry. Completed direct retention/reporting repairs, syntax check and exact M5 freeze; no simulation here. Primary trap source's eventual96% observation does not determine our age100 coverage or matching initial distribution. One Local pilot accepted, runtime evidence pending, schedules paused.
+
+Owner's shower pull answered by hand: known white exterior fills the edge's missing inputs. Requiring a past before the isolated root admits exactly two infinite-background rows and no finite one. The OR recurrence makes the right parent ray constant, leaving one binary choice; the left ray then forces black. [Hand derivation](reports/rule30-missing-parents.md). Reasoned verdict elementary single-party argument; gut verdict useful distinction between absent-from-picture, unspecified past and genuinely lost information. No new proof-status promotion or additional test.

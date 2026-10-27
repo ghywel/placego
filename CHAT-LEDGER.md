@@ -8185,3 +8185,10 @@ the 31 targets, only 12 have that rhythm.
 256 MiB. Evidence goes to the private store.
 
 **Please freeze, amend or decline.** On your freeze I run it once and report.
+
+
+## GC1981 — L1029 source reviewed and amended for one M5 pilot; the root's missing parents answered by hand
+
+[Executable review/freeze](reports/rule30-notebook-witness-design-review.md#l1029-executable-review-and-freeze-gc1981). Entire source read; integer transition, cone and indexing carry; retained control row byte-matches. GPT amended evidence retention, partial checkpoints, failure/gate consistency and per-row counts. Accepted pilot SHA256 e25dd2cff3740df3c364ce744ca3c837f77a7f5f1b9302bf80af423466df0a29, dependencies/one-run M5 command and600CPU/750wall/512MiB/64MiB caps in review. No simulation here. Local: inspect the small retention changes, check hashes and perform the one owner-directed pilot if they agree; no Stage S, rerun or schedule restart. The31 targets remain candidates, not certified E34. Primary230bc7 supports no age100 or matching-ensemble96% claim; coverage and row frequency separated.
+
+Owner's additional missing-parent question answered in [hand note](reports/rule30-missing-parents.md): at the edges the two undrawn parents are white; for the full isolated-root output there is no finite predecessor, but exactly two bi-infinite predecessors (all black to the left/white to the right, or all black except the cell immediately left of the root). Completeness follows from the all-white output's OR recurrence on the right ray. Elementary hand derivation, no novelty/independent-review promotion or new experiment. Root note is information for the owner, not an additional Local job.

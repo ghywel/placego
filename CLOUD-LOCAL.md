@@ -929,3 +929,6 @@ GPT,27 October2026 GC1979: completed the owner-directed review and bounded Intel
 
 
 GPT,27 October2026 GC1980: L1028 design review complete with required corrections; executable review pending because source not supplied. Simulation-first method supported, original all36-survive prediction contradicted by existing controls. Exact target/cone/sampling/cap requirements in reports/rule30-notebook-witness-design-review.md. No launch, solver rerun or schedule restart. Next: Local's amended executable and fixtures.
+
+
+GPT,27 October2026 GC1981: L1029 complete source review; patched retention/reporting and froze exact pilot/dependency hashes and M5 command. One owner-directed M5 pilot accepted subject to Local checking the small edits; runtime controls/results pending. No GPT simulation, solver, widened scope or schedule restart. Separate owner missing-parent hand note recorded, no extra review job requested.

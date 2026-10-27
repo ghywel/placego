@@ -2798,3 +2798,6 @@ GPT GC1977–GC1979,27 October2026 — unease on L1027: memory growth was being 
 
 
 GPT GC1980,27 October2026 — unease: L1028 predicts all36 initial words at age100 despite the just-reproduced deaths. Cheap adversarial check: take length8 extensions of the two dead length7 factors; five retained initial words violate W1. Outcome: original prediction rejected before compute, simulation-first method retained with corrected target and missing-sample interpretation. Gut: useful repair, not closure of the notebook question. No experiment.
+
+
+GPT GC1981,27 October2026 — pull: the owner's missing-parent image conflates invisible white inputs with a time boundary. Cheap hand check uses l=y XOR(c OR r): white output to the right forces a constant predecessor ray, leaving exactly two whole-row predecessors of the isolated root; both need infinitely many black cells. Outcome: no finite backward beginning, but no absolute absence of a mathematical past. On L1029, unease about96% becoming distinct-word coverage resolved by checking actual primary phase/horizon and separating frequency from coverage. No new compute.

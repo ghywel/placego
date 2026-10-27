@@ -29,19 +29,19 @@ Predictions, written before any run.
       steps. The retained GC1978 age-100 witness for 00001000 replays to 00001000 at age 100 in both. No EXCLUDED
       word is ever observed at an age at or above its bound. Any failure stops the run: an instrument error, not
       mathematics.
-  P_B (witnesses). The gate will NOT complete. Submission R30-20261027-230bc7 reports that about 96% of random finite
-      right halves enter a trap where consecutive visible black cells are 3 or 5 apart, and the others become
-      eventually periodic. Uniform rows should therefore witness at age 100 mainly the 12 targets whose internal
-      1-distances are all 3 or 5, and leave most of the other 19 targets (those with a distance 2 or 4) UNRESOLVED.
-      Gut confidence: about 70%.
-  Counterfactual. If random sampling witnesses at age 100 a large share (say 10 or more) of the 19
-      non-trap-rhythm targets, uniform rows escape that rhythm far more often than the trap report suggests. If all
-      31 targets are witnessed, the gate passes outright.
+  P_B (exploratory coverage prediction, not inferred from trap prevalence). Local predicts the sample will
+      witness fewer than 10 of the 19 targets with an internal 1-distance outside {3,5}. The counterfactual is
+      10 or more. The external 96% figure concerns eventual entry under another sampling setup; it supplies
+      no entry-by-age100 probability, and distinct-word coverage is not sample frequency. Our phase-zero
+      initial distribution is not identified with that submission's phase-one initial distribution.
+      The 31 targets are candidates, not an established E_34 list; some may have other earlier exclusions.
+      Neither coverage outcome establishes trap entry, soficity, or a new death. Report age100 row frequencies
+      separately. A short word with internal gaps3/5 is not a certificate of entry into the external trap.
   What a miss means. UNRESOLVED words are ranked by their latest sampled age, for a later exact, frozen query. No
       death is inferred.
 
 Retained in CAPPED_OUT/artifacts: language.json, controls.json, summary.json (draws, per-word verdict and latest
-sampled age, PRNG details, source SHA256) and witnesses.json (one replayed age-100 row per witnessed word, as a
+sampled age, PRNG details, source SHA256), latest_witnesses.json and witnesses.json (one replayed age-100 row per witnessed word, as a
 bitstring of 215 cells, with its visible trace).
 """
 import hashlib
@@ -153,36 +153,82 @@ def main():
     # ---- sampling (P_B)
     rng = random.Random(SEED)
     latest = {}
+    latest_rows = {}
+    age100_counts = {}
     witness = {}
     violations = []
     draws = 0
     tset = set(targets)
+    lset = set(L)
+    stop_reason = 'N_MAX'
+
+    def checkpoint():
+        # Atomic individual files; a checkpoint is explicitly not a completed/replayed result.
+        snapshots = {
+            'checkpoint.json': dict(state='PARTIAL_UNVERIFIED', draws=draws, latest=latest,
+                age100_counts=age100_counts, violations=violations, source_sha256=src,
+                gate_source_sha256=hashlib.sha256(Path(gate.__file__).read_bytes()).hexdigest(),
+                python=sys.version, seed=SEED, width=WIDTH, H=H),
+            'witnesses.json': witness,
+            'latest_witnesses.json': {w: dict(age=latest[w], draw=r['draw'],
+                row=''.join(map(str, row_bits(r['row_integer'], WIDTH))), replayed_literal=False)
+                for w, r in latest_rows.items()}}
+        for name, obj in snapshots.items():
+            tmp = root / (name + '.tmp')
+            tmp.write_text(json.dumps(obj, indent=1))
+            tmp.replace(root / name)
+
     for draws in range(1, N_MAX + 1):
         x = rng.getrandbits(WIDTH)
         vis = visible_fast(x, WIDTH, H)
         s = ''.join(map(str, vis))
+        w100 = s[J_MAX:J_MAX + NWORD]
+        age100_counts[w100] = age100_counts.get(w100, 0) + 1
+        changed = False
         for j in range(J_MAX + 1):
             w = s[j:j + NWORD]
             if latest.get(w, -1) < j:
                 latest[w] = j
+                latest_rows[w] = dict(draw=draws, row_integer=x)
+            if w not in lset:
+                violations.append(dict(word=w, age=j, draw=draws, reason='outside initial language',
+                                       row=''.join(map(str, row_bits(x, WIDTH)))))
             if w in excl and j >= excl[w]:
-                violations.append(dict(word=w, age=j, draw=draws))
+                violations.append(dict(word=w, age=j, draw=draws, reason='known death bound violated',
+                                       row=''.join(map(str, row_bits(x, WIDTH)))))
             if j == J_MAX and w in tset and w not in witness:
-                witness[w] = dict(draw=draws, row=''.join(str((x >> i) & 1) for i in range(WIDTH)))
+                witness[w] = dict(draw=draws, row=''.join(str((x >> i) & 1) for i in range(WIDTH)),
+                                  replayed_literal=False)
+                changed = True
+        if changed or violations or draws % 5000 == 0:
+            checkpoint()
         if violations:
+            stop_reason = 'CONTROL_VIOLATION'
             break
         if len(witness) == len(tset):
+            stop_reason = 'ALL_CANDIDATES_WITNESSED'
             break
         if draws % 5000 == 0:
             ru = resource.getrusage(resource.RUSAGE_SELF)
             if ru.ru_utime + ru.ru_stime > 570:
+                stop_reason = 'CPU_GUARD'
                 break
+    checkpoint()
     # replay every retained witness with the literal evaluator
     for w, rec in witness.items():
         vl = visible_literal([int(c) for c in rec['row']], H)
         assert ''.join(map(str, vl[J_MAX:J_MAX + NWORD])) == w, ('witness replay failed', w)
         rec['replayed_literal'] = True
         rec['visible_trace'] = ''.join(map(str, vl))
+    latest_certificates = {}
+    for w, rec in latest_rows.items():
+        bits = row_bits(rec['row_integer'], WIDTH)
+        vl = visible_literal(bits, H)
+        j = latest[w]
+        assert ''.join(map(str, vl[j:j + NWORD])) == w, ('latest witness replay failed', w, j)
+        latest_certificates[w] = dict(age=j, draw=rec['draw'], row=''.join(map(str, bits)),
+                                      visible_trace=''.join(map(str, vl)), replayed_literal=True)
+    (root / 'latest_witnesses.json').write_text(json.dumps(latest_certificates, indent=1))
     verdict = {}
     for w in L:
         if w in excl:
@@ -195,7 +241,11 @@ def main():
                                                         [i for i, c in enumerate(w) if c == '1'][1:]))
     summary = dict(source_sha256=src, seed=SEED, prng='random.Random (MT19937), getrandbits(215), bit i = cell i+1',
                    n_max=N_MAX, draws=draws, width=WIDTH, H=H, J_max=J_MAX, violations=violations,
-                   gate_complete=all(v['status'] != 'UNRESOLVED' for v in verdict.values()),
+                   stop_reason=stop_reason, python=sys.version,
+                   gate_source_sha256=hashlib.sha256(Path(gate.__file__).read_bytes()).hexdigest(),
+                   age100_counts=age100_counts,
+                   other_rhythm_row_count=sum(c for w, c in age100_counts.items() if not trap(w)),
+                   gate_complete=not violations and all(v['status'] != 'UNRESOLVED' for v in verdict.values()),
                    witnessed=len(witness), unresolved=[w for w, v in verdict.items() if v['status'] == 'UNRESOLVED'],
                    trap_rhythm_targets_witnessed=sum(1 for w in witness if trap(w)),
                    other_targets_witnessed=sum(1 for w in witness if not trap(w)),
