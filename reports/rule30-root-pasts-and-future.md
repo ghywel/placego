@@ -58,9 +58,25 @@ reproduces that probe's counts 1, 2, 5, 8 … 122.
 | 18–65 | 48 | 24 |
 | 66–103 | 72 | 48 |
 | 104–139 | 96 | 48 |
-| from 140 | 120 | 48 |
+| 140–147 | 120 | 48 |
+| 148–260 (still running at 260) | 144 | 48 |
 
-At depth 140 there are **8,858 pasts**, about d^1.85. The ratio log2(pasts)/log2(d) is 1.84 there and drifting down.
+At depth 140 there are **8,858 pasts**, and at depth 260 there are **25,970**. The ratio pasts/d² falls steadily:
+0.64 (d = 60), 0.51 (100), 0.45 (140, 180), 0.42 (220), 0.38 (260).
+
+**Is the growth predictable?**
+- *What is regular:*
+  - the count grows in exactly linear stretches;
+  - every slope is a multiple of 3, and from depth 18 on a multiple of 24 (48, 72, 96, 120, 144);
+  - the early slope jumps coincide with doublings of the longest tail period, at depths 2, 4, 10, 18 and 66.
+- *What is not:* the stretch lengths are 7, 48, 38, 36, 8, and then at least 112, which shows no evident rule. The
+  period has not doubled again by depth 260.
+
+So each stretch can be predicted exactly once it has started, but when the slope jumps next is not predictable from
+these data. The jump times are set by which periodic right tails become available, and the white-tail branch of the
+tree is the 2-adic tower T^-j(1). Predicting the jumps therefore looks as hard as understanding that 2-adic structure.
+
+The growth is below quadratic and above linear in this range. No asymptotic law is claimed.
 
 The one-step prediction (growth by a factor of about 1.25 to 1.3 per step) is **refuted**: growth is polynomial in
 this range, not exponential. A guess of mine, also refuted, was that the tail types close into a finite set. In fact

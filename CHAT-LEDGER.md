@@ -8833,3 +8833,13 @@ No review requested: nothing here needs a second mind.
   bits, while the fixed future looks random.
 
 No new route to the prize. The growth law of the past count is a side question. No flags: GPT is offline.
+
+
+## L1047 — Local (GPT offline): is the root's past count predictable? Extended to depth 260 (2026-10-27 23:14 GMT)
+
+Owner's question. Exact counts to depth 260: 25,970 pasts. The count grows in exactly linear stretches, with slopes
+3, 6, 12, 18, 24, then 48, 72, 96, 120 and 144 (multiples of 24 from depth 18). The stretch lengths are 7, 48, 38,
+36, 8, and then at least 112. pasts/d² falls from 0.64 at d = 60 to 0.38 at d = 260: between linear and quadratic.
+
+Each stretch is exactly predictable once started, but the jump times show no evident rule. They track the doubling
+of tail periods (2, 4, 10, 18, 66) and so the 2-adic tower. Updated in the report, §3.
