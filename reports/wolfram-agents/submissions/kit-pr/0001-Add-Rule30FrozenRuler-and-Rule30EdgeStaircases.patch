@@ -1,0 +1,706 @@
+From d7b64ee787ddb20beb03ac2d20eb27cd4804db05 Mon Sep 17 00:00:00 2001
+From: (author omitted; see the kit branch)
+Date: Tue, 27 Oct 2026 13:21:08 +0000
+Subject: [PATCH] Add Rule30FrozenRuler and Rule30EdgeStaircases
+
+Rule30FrozenRuler: every finite nonzero row's right edge is the single cell's
+ruler, cut off at one depth (frozen_ruler, no_width_at_depth, depth_dichotomy,
+edge_evol, edge_run_alternates).
+
+Rule30EdgeStaircases: staircases near the single cell's right edge end within
+2^(W+1) rows (staircase_ends, staircase_ends_pow, front_step); the edge codes
+with T (T c) = c are exactly -1/3 and 1/3, and the rain rows (01)^n keep an
+eternal staircase (period_two_iff, no_fixed_point, rain_row_eternal).
+
+Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI).
+---
+ lean/README.md                                |   2 +
+ lean/Ruliology.lean                           |   2 +
+ .../Rule30EdgeStaircases.lean                 | 299 +++++++++++++++
+ .../CellularAutomata/Rule30FrozenRuler.lean   | 342 ++++++++++++++++++
+ 4 files changed, 645 insertions(+)
+ create mode 100644 lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+ create mode 100644 lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
+
+diff --git a/lean/README.md b/lean/README.md
+index 1e80bd0..e16a9e4 100644
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -124,6 +124,8 @@ Measured on Windows x64 with Lean 4.35.0 on 2026-10-24, each module built alone
+ | Module | Time | Peak memory |
+ |---|---|---|
+ | `Rule30Certificates/WhitePaddingFamilies` | 285.22 s | 2372 MiB |
++| `Rule30FrozenRuler` | 2026-10-27 | Every finite nonzero row's right edge is the single cell's ruler cut off at one depth: if the row's edge code (read from its rightmost black cell, evolving by the 2-adic edge map `T` of Coven, Pivato and Yassawi) agrees with the single cell's orbit below bit `k ≥ 2` but not below `k + 1`, then at every time it agrees with the single cell's code at a fixed phase below `k` and differs at `k`, and its white run behind the edge cell equals the single cell's below `k - 1`, is exactly `k - 1` when the single cell's is at least `k - 1`, and is never longer; the single cell never emits width `k - 1`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `frozen_ruler`, `no_width_at_depth`, `depth_dichotomy`, `edge_evol`, `edge_run_alternates` |
++| `Rule30EdgeStaircases` | 2026-10-27 | Every alternating stretch of length at least 3 whose front is `W ≥ 2` cells from the single cell's right edge ends by the first multiple of a period of the right diagonal `W + 1` (within `2 ^ (W + 1)` rows); the edge codes with `T (T c) = c` and bit 0 black are exactly `-1/3` and `1/3`, so the rain rows `(01)^n` keep an eternal staircase of width `2n`. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `staircase_ends`, `staircase_ends_pow`, `front_step`, `period_two_iff`, `no_fixed_point`, `rain_row_eternal` |
+ | `Rule30Certificates/FiveTailTube` | 147.70 s | 3061 MiB |
+ | `Rule30Certificates/SixTailBackward` | 84.51 s | 1376 MiB |
+ | `Rule30Certificates/SixTailEndpoints` | 20.16 s | 656 MiB |
+diff --git a/lean/Ruliology.lean b/lean/Ruliology.lean
+index 2542895..efeb6cf 100644
+--- a/lean/Ruliology.lean
++++ b/lean/Ruliology.lean
+@@ -106,6 +106,8 @@ public import Ruliology.CellularAutomata.Rule30WhiteTailErosion
+ public import Ruliology.CellularAutomata.Rule30XorRigidity
+ public import Ruliology.CellularAutomata.Rule30StripeMeeting
+ public import Ruliology.CellularAutomata.Rule30PaddedWords
++public import Ruliology.CellularAutomata.Rule30FrozenRuler
++public import Ruliology.CellularAutomata.Rule30EdgeStaircases
+ 
+ /-!
+ # Rule 30 Prize: Lean snapshot
+diff --git a/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+new file mode 100644
+index 0000000..b86fc09
+--- /dev/null
++++ b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+@@ -0,0 +1,299 @@
++module
++
++public import Ruliology.CellularAutomata.Rule30Prize
++public import Ruliology.CellularAutomata.Rule30FrozenRuler
++public import Ruliology.CellularAutomata.Rule30RightPeriods
++
++/-!
++# Rule 30: staircases at the right edge. The single cell's all end, and the rain rows' never do
++
++A *staircase* is a maximal alternating stretch of a row, of length at least `3`.
++
++* `interior_kept`, `front_step`: in any row of the single cell's picture, an interior cell of an
++  alternating stretch keeps its color, and the front of a maximal stretch is eaten one cell per row.
++  A living staircase therefore keeps its front at a fixed distance `W` from the advancing edge.
++* `staircase_ends`, `staircase_ends_pow`: **every staircase near the edge ends.** If the front is
++  `W ≥ 2` cells from the single cell's right edge and the right diagonal `W + 1` has period `H`
++  (`Rule30RightPeriods.Per`), the staircase does not live through any multiple of `H` (at such times
++  the cells at distances `1 .. W + 1` are white). With `H = 2 ^ (W + 1)` it dies within `2 ^ (W + 1)`
++  rows.
++* `period_two_iff`, `no_fixed_point`: **the rain pair.** An edge code (`Rule30FrozenRuler.T`) with
++  bit `0` black satisfies `T (T c) = c` exactly when it is `rainA = 1010…` (`-1/3`) or
++  `rainB = 11010…` (`1/3`); none is fixed.
++* `agree_rain_eternal`, `rain_row_eternal`: a finite row whose `m` edge cells agree with `rainA`
++  keeps them in that two-step rhythm for ever; the rain row `(0 1)^n` has an eternal staircase of
++  width `2 n` at its right edge.
++
++Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). Nothing here concerns the
++center column.
++-/
++
++@[expose] public section
++
++namespace Ruliology.CellularAutomata.Rule30EdgeStaircases
++
++open Rule30Jen Rule30Realization Rule30FrozenRuler
++open Rule30Diagonals (R R_periodic)
++open Rule30RightPeriods (Per per_mono_all R_init)
++
++/-! ### Part 1: staircases in the single cell's picture end -/
++
++/-- Three cells from `f` at time `t` alternate. -/
++def Alt3 (t : Nat) (f : Int) : Prop := cell t f ≠ cell t (f + 1) ∧ cell t (f + 1) ≠ cell t (f + 2)
++
++/-- `f` is the front (left end) of a maximal alternating stretch of length at least `3`. -/
++def Front (t : Nat) (f : Int) : Prop := cell t (f - 1) = cell t f ∧ Alt3 t f
++
++theorem cell_succ (t : Nat) (p : Int) :
++    cell (t + 1) p = rule (cell t (p - 1)) (cell t p) (cell t (p + 1)) := rfl
++
++/-- Interior cells of an alternating stretch keep their colors. -/
++theorem interior_kept (t : Nat) (p : Int) (h1 : cell t (p - 1) ≠ cell t p)
++    (h2 : cell t p ≠ cell t (p + 1)) : cell (t + 1) p = cell t p := by
++  rw [cell_succ]
++  revert h1 h2
++  cases cell t (p - 1) <;> cases cell t p <;> cases cell t (p + 1) <;> decide
++
++/-- The front is eaten one cell per row: after one step, the old front and the next cell agree. -/
++theorem front_step (t : Nat) (f : Int) (h : Front t f) :
++    cell (t + 1) f = cell (t + 1) (f + 1) := by
++  obtain ⟨hl, ha, hb⟩ := h
++  rw [cell_succ t f, cell_succ t (f + 1)]
++  have e1 : f + 1 - 1 = f := by omega
++  rw [e1, hl, show f + 1 + 1 = f + 2 by omega]
++  revert ha hb
++  cases cell t f <;> cases cell t (f + 1) <;> cases cell t (f + 2) <;> decide
++
++/-- The stretch lives through `t`, from `t₀` with front `a`, its front moving one cell per row. -/
++def Lives (t₀ : Nat) (a : Int) (t : Nat) : Prop :=
++  ∀ t', t₀ ≤ t' → t' ≤ t → Alt3 t' (a + ((t' - t₀ : Nat) : Int))
++
++/-- A living stretch's front stays at its distance from the edge: at time `t ≥ t₀` its front is at
++`t - W` when `t₀ - a = W`. -/
++theorem front_distance (t₀ t : Nat) (a : Int) (W : Nat) (hW : (t₀ : Int) - a = W) (ht : t₀ ≤ t) :
++    a + ((t - t₀ : Nat) : Int) = (t : Int) - W := by
++  have : ((t - t₀ : Nat) : Int) = (t : Int) - t₀ := by omega
++  rw [this]; omega
++
++/-- At a time that is a multiple of a period of diagonal `W + 1`, the cells at distances
++`1 .. W + 1` behind the right edge are white. -/
++theorem white_behind_edge {W H : Nat} (hP : Per (W + 1) H) (n : Nat) (j : Nat) (hj1 : 1 ≤ j)
++    (hj : j ≤ W + 1) : cell (H * n) ((H * n : Nat) - (j : Int)) = false := by
++  have hPj : Per j H := by
++    rcases Nat.lt_or_eq_of_le hj with h | h
++    · exact per_mono_all hP j (by omega)
++    · rw [h]; exact hP
++  have h1 := hPj.at_mul n
++  rw [R_init hj1] at h1
++  exact h1
++
++/-- **Every staircase ends.** A staircase living from `t₀` with front `a` at distance
++`W = t₀ - a ≥ 2` from the right edge does not live through any multiple `H n ≥ t₀` of a period `H`
++of the right diagonal `W + 1`. -/
++theorem staircase_ends (t₀ : Nat) (a : Int) (W H : Nat) (hW2 : 2 ≤ W)
++    (hW : (t₀ : Int) - a = W) (hP : Per (W + 1) H) (n : Nat) (hn : t₀ ≤ H * n) :
++    ¬ Lives t₀ a (H * n) := by
++  intro hl
++  have h := hl (H * n) hn (Nat.le_refl _)
++  rw [front_distance t₀ (H * n) a W hW hn] at h
++  have c0 := white_behind_edge hP n W (by omega) (by omega)
++  have c1 := white_behind_edge hP n (W - 1) (by omega) (by omega)
++  have e : (((H * n : Nat) : Int) - (W : Int)) + 1 = ((H * n : Nat) : Int) - ((W - 1 : Nat) : Int) := by
++    omega
++  apply h.1
++  rw [e, c0, c1]
++
++/-- With the kit's `R_periodic`: every staircase whose front is `W ≥ 2` cells from the right edge
++dies by the first multiple of `2 ^ (W + 1)` after it is seen. -/
++theorem staircase_ends_pow (t₀ : Nat) (a : Int) (W : Nat) (hW2 : 2 ≤ W)
++    (hW : (t₀ : Int) - a = W) (n : Nat) (hn : t₀ ≤ 2 ^ (W + 1) * n) :
++    ¬ Lives t₀ a (2 ^ (W + 1) * n) :=
++  staircase_ends t₀ a W (2 ^ (W + 1)) hW2 hW (R_periodic (W + 1)) n hn
++
++/-! ### The rain pair -/
++
++/-- `1 0 1 0 …`: the 2-adic number `-1/3`, an edge emitting a lone white cell at every other step. -/
++def rainA : Nat → Bool := fun k => k % 2 == 0
++
++/-- `1 1 0 1 0 …`: the 2-adic number `1/3`. -/
++def rainB : Nat → Bool := fun k => k == 0 || k % 2 == 1
++
++theorem T_rainA : T rainA = rainB := by
++  funext k
++  match k with
++  | 0 => rfl
++  | 1 => rfl
++  | j + 2 =>
++    simp only [T, rainA, rainB]
++    rcases Nat.mod_two_eq_zero_or_one j with h | h
++    · have h1 : (j + 1) % 2 = 1 := by omega
++      have h2 : (j + 2) % 2 = 0 := by omega
++      simp [h, h1, h2]
++    · have h1 : (j + 1) % 2 = 0 := by omega
++      have h2 : (j + 2) % 2 = 1 := by omega
++      simp [h, h1, h2]
++
++theorem T_rainB : T rainB = rainA := by
++  funext k
++  match k with
++  | 0 => rfl
++  | 1 => rfl
++  | 2 => rfl
++  | j + 3 =>
++    show xor (rainB (j + 3)) (rainB (j + 2) || rainB (j + 1)) = rainA (j + 3)
++    simp only [rainA, rainB]
++    rcases Nat.mod_two_eq_zero_or_one j with h | h
++    · have h1 : (j + 1) % 2 = 1 := by omega
++      have h2 : (j + 2) % 2 = 0 := by omega
++      have h3 : (j + 3) % 2 = 1 := by omega
++      simp [h1, h2, h3]
++    · have h1 : (j + 1) % 2 = 0 := by omega
++      have h2 : (j + 2) % 2 = 1 := by omega
++      have h3 : (j + 3) % 2 = 0 := by omega
++      simp [h1, h2, h3]
++
++theorem rainA_ne_rainB : rainA ≠ rainB := by
++  intro h
++  have := congrFun h 1
++  simp [rainA, rainB] at this
++
++/-- No edge code with bit `0` black is fixed by `T`: bit `1` always flips. -/
++theorem no_fixed_point (c : Nat → Bool) (h0 : c 0 = true) : T c ≠ c := by
++  intro h
++  have := congrFun h 1
++  simp [T, h0] at this
++
++/-- The two codes of a 2-cycle differ at every bit from `1` on, and each alternates from bit `1`. -/
++theorem cycle_bits (c : Nat → Bool) (h0 : c 0 = true) (h2 : T (T c) = c) :
++    ∀ k, 1 ≤ k → T c k ≠ c k ∧ T c (k + 1) ≠ c (k + 1) ∧ c k ≠ c (k + 1) := by
++  let d := T c
++  have hd : d = T c := rfl
++  have hc : ∀ k, T d k = c k := fun k => congrFun h2 k
++  have dk0 : d 0 = true := by simp [hd, T, h0]
++  -- the step relations
++  have rel_d : ∀ k, d (k + 2) = xor (c (k + 2)) (c (k + 1) || c k) := fun k => rfl
++  have rel_c : ∀ k, c (k + 2) = xor (d (k + 2)) (d (k + 1) || d k) := fun k => (hc (k + 2)).symm
++  have or_eq : ∀ k, (c (k + 1) || c k) = (d (k + 1) || d k) := by
++    intro k
++    have a := rel_d k; have b := rel_c k
++    revert a b
++    cases c (k + 2) <;> cases d (k + 2) <;> cases (c (k + 1) || c k) <;>
++      cases (d (k + 1) || d k) <;> simp
++  have d1 : d 1 ≠ c 1 := by
++    show xor (c 1) (c 0) ≠ c 1
++    rw [h0]; cases c 1 <;> simp
++  have d2 : d 2 ≠ c 2 := by
++    have := rel_d 0
++    rw [h0] at this
++    simp at this
++    rw [this]; cases c 2 <;> simp
++  -- induction on k ≥ 1
++  have step : ∀ k, d (k + 1) ≠ c (k + 1) → d (k + 2) ≠ c (k + 2) →
++      c (k + 1) ≠ c (k + 2) ∧ d (k + 3) ≠ c (k + 3) := by
++    intro k ha hb
++    have ho := or_eq (k + 1)
++    have hne : c (k + 2) ≠ c (k + 1) := by
++      intro heq
++      revert ha hb ho heq
++      cases c (k + 1) <;> cases c (k + 2) <;> cases d (k + 1) <;> cases d (k + 2) <;> simp
++    have hor : (c (k + 2) || c (k + 1)) = true := by
++      revert hne; cases c (k + 1) <;> cases c (k + 2) <;> simp
++    refine ⟨fun h => hne h.symm, ?_⟩
++    have := rel_d (k + 1)
++    rw [hor] at this
++    rw [this]; cases c (k + 3) <;> simp
++  have main : ∀ k, d (k + 1) ≠ c (k + 1) ∧ d (k + 2) ≠ c (k + 2) := by
++    intro k
++    induction k with
++    | zero => exact ⟨d1, d2⟩
++    | succ n ih => exact ⟨ih.2, (step n ih.1 ih.2).2⟩
++  intro k hk
++  obtain ⟨n, rfl⟩ : ∃ n, k = n + 1 := ⟨k - 1, by omega⟩
++  exact ⟨(main n).1, (main n).2, (step n (main n).1 (main n).2).1⟩
++
++/-- **The rain pair.** An edge code with bit `0` black is a point of period dividing `2` of the edge
++map exactly when it is `rainA` (`-1/3`) or `rainB` (`1/3`). -/
++theorem period_two_iff (c : Nat → Bool) (h0 : c 0 = true) :
++    T (T c) = c ↔ (c = rainA ∨ c = rainB) := by
++  constructor
++  · intro h2
++    have hb := cycle_bits c h0 h2
++    -- c alternates from bit 1 on
++    have alt : ∀ n, c (n + 1) = (if n % 2 = 0 then c 1 else !c 1) := by
++      intro n
++      induction n with
++      | zero => simp
++      | succ m ih =>
++        have := (hb (m + 1) (by omega)).2.2
++        rw [ih] at this
++        split at this <;> rename_i hm
++        · have : c (m + 2) = !c 1 := by revert this; cases c 1 <;> cases c (m + 2) <;> simp
++          rw [show m + 1 + 1 = m + 2 by omega, this]
++          simp [show (m + 1) % 2 ≠ 0 by omega]
++        · have : c (m + 2) = c 1 := by revert this; cases c 1 <;> cases c (m + 2) <;> simp
++          rw [show m + 1 + 1 = m + 2 by omega, this]
++          simp [show (m + 1) % 2 = 0 by omega]
++    cases h1 : c 1
++    · left; funext k
++      match k with
++      | 0 => simp [rainA, h0]
++      | n + 1 =>
++        rw [alt n, h1]
++        simp only [rainA]
++        split <;> rename_i hn <;> simp <;> omega
++    · right; funext k
++      match k with
++      | 0 => simp [rainB, h0]
++      | n + 1 =>
++        rw [alt n, h1]
++        simp only [rainB]
++        split <;> rename_i hn <;> simp <;> omega
++  · rintro (rfl | rfl)
++    · rw [T_rainA, T_rainB]
++    · rw [T_rainB, T_rainA]
++
++/-! ### Rows that keep the rain for ever -/
++
++theorem iter_rainA : ∀ t, iter t rainA = (if t % 2 = 0 then rainA else rainB)
++  | 0 => rfl
++  | t + 1 => by
++    show T (iter t rainA) = _
++    rw [iter_rainA t]
++    by_cases h : t % 2 = 0
++    · simp [h, T_rainA, show (t + 1) % 2 ≠ 0 by omega]
++    · simp [h, T_rainB, show (t + 1) % 2 = 0 by omega]
++
++/-- A finite row whose `m` edge cells agree with `rainA` keeps them `rainA` at even times and
++`rainB` at odd times, for ever. -/
++theorem agree_rain_eternal (x : Int → Bool) (e : Int) (he : x e = true)
++    (hr : ∀ p, e < p → x p = false) (m : Nat) (hag : AgreeBelow m (code x e) rainA) (t : Nat) :
++    AgreeBelow m (code (evol x t) (e + t)) (if t % 2 = 0 then rainA else rainB) := by
++  rw [(edge_evol x e he hr t).2.2, ← iter_rainA t]
++  exact iter_agree hag t
++
++/-- The rain row `(0 1)^n`: black exactly at the cells `-2 i`, `0 ≤ i < n`. -/
++def rainRow (n : Nat) (p : Int) : Bool := decide (p ≤ 0 ∧ -(2 * (n : Int)) < p ∧ p % 2 = 0)
++
++theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA := by
++  intro i hi
++  simp only [code, rainRow, rainA]
++  rcases Nat.mod_two_eq_zero_or_one i with h | h
++  · simp [h]; first | omega | (intro _; omega)
++  · simp [h]; first | omega | (intro _; omega)
++
++/-- **The rain row keeps an eternal staircase at its right edge.** For every `n ≥ 1` and every time
++`t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
++behind it read `rainA` at even times and `rainB` at odd times. -/
++theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :
++    evol (rainRow n) t t = true ∧ (∀ p, (t : Int) < p → evol (rainRow n) t p = false) ∧
++    AgreeBelow (2 * n) (code (evol (rainRow n) t) t) (if t % 2 = 0 then rainA else rainB) := by
++  have he : rainRow n 0 = true := by simp [rainRow]; omega
++  have hr : ∀ p, (0 : Int) < p → rainRow n p = false := by
++    intro p hp; simp [rainRow]; omega
++  have h := edge_evol (rainRow n) 0 he hr t
++  simp only [Int.zero_add] at h
++  refine ⟨h.1, h.2.1, ?_⟩
++  have := agree_rain_eternal (rainRow n) 0 he hr (2 * n) (rainRow_code n) t
++  simpa using this
++
++end Ruliology.CellularAutomata.Rule30EdgeStaircases
+diff --git a/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean b/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
+new file mode 100644
+index 0000000..a92af86
+--- /dev/null
++++ b/lean/Ruliology/CellularAutomata/Rule30FrozenRuler.lean
+@@ -0,0 +1,342 @@
++module
++
++public import Ruliology.CellularAutomata.Rule30Prize
++public import Ruliology.CellularAutomata.Rule30Realization
++
++/-!
++# Rule 30: every finite row's right edge is the single cell's ruler, cut off at one depth
++
++Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its *edge code*
++is the cell at distance `k` from that cell (`code x e k = x (e - k)`). The right edge advances one
++cell per step, and the code evolves by the edge map
++
++  `T c 0 = c 0`, `T c 1 = c 1 ⊕ c 0`, `T c (k + 2) = c (k + 2) ⊕ (c (k + 1) ∨ c k)`
++
++(`edge_evol`), the 2-adic right-edge map of Coven, Pivato and Yassawi (Proc. AMS 135, 2007). The
++single black cell has code `one` (bit `0` only); `orbit s = iter s one` is its code at time `s`
++(`seed_code`). Bit `k` of `T c` reads only bits `k - 2 .. k` of `c` and passes bit `k` through an
++exclusive or, so two codes that agree below `k` and differ at `k` keep doing so for ever
++(`iter_agree`, `iter_diff`).
++
++* `HasDepth`, `depth_dichotomy`: a code has **depth `k`** with phase `s₀` when it agrees with
++  `orbit s₀` below bit `k` while no code of the single cell's orbit agrees with it below `k + 1`.
++  Every code with bit `0` black has a depth `k ≥ 2`, or agrees with the orbit at every depth.
++* `frozen_ruler`: **the frozen ruler.** For a finite nonzero row whose code has depth `k ≥ 2` with
++  phase `s₀`, at every time `t` its code, read from its rightmost black cell `e + t`, agrees with the
++  single cell's code at time `s₀ + t` below `k` and differs at `k`; its white run behind the edge
++  cell equals the single cell's when that is shorter than `k - 1`, is exactly `k - 1` when the single
++  cell's is at least `k - 1`, and is never longer.
++* `no_width_at_depth`: the single cell's code never has a white run of exactly `k - 1` when some code
++  has depth `k`, so the cut width lies in a gap of the single cell's ruler. No counting of periods
++  is used: such a run would put every depth-`k` code into the orbit at depth `k + 1`.
++* `edge_run_alternates`: the cell behind the edge cell flips at every step, for every finite row.
++
++Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). Nothing here concerns the
++center column.
++-/
++
++@[expose] public section
++
++namespace Ruliology.CellularAutomata.Rule30FrozenRuler
++
++open Rule30Jen Rule30Realization
++
++/-- One step of rule 30 read from a right edge that advances one cell per step. -/
++def T (c : Nat → Bool) : Nat → Bool
++  | 0 => c 0
++  | 1 => xor (c 1) (c 0)
++  | k + 2 => xor (c (k + 2)) (c (k + 1) || c k)
++
++/-- `iter n c`: `n` steps of the edge map. -/
++def iter : Nat → (Nat → Bool) → (Nat → Bool)
++  | 0, c => c
++  | n + 1, c => T (iter n c)
++
++/-- The single black cell's edge code. -/
++def one : Nat → Bool := fun k => decide (k = 0)
++
++/-- The single black cell's edge code at time `s`. -/
++def orbit (s : Nat) : Nat → Bool := iter s one
++
++/-- Two codes agree on bits `0 .. k - 1`. -/
++def AgreeBelow (k : Nat) (c d : Nat → Bool) : Prop := ∀ i, i < k → c i = d i
++
++theorem xor_ne_xor {a b x y : Bool} (h : a ≠ b) (hxy : x = y) : xor a x ≠ xor b y := by
++  subst hxy; cases a <;> cases b <;> cases x <;> simp_all
++
++theorem T_agree {k : Nat} {c d : Nat → Bool} (h : AgreeBelow k c d) :
++    AgreeBelow k (T c) (T d) := by
++  intro i hi
++  match i, hi with
++  | 0, hi => simp [T, h 0 hi]
++  | 1, hi => simp [T, h 1 hi, h 0 (by omega)]
++  | j + 2, hi => simp [T, h (j + 2) hi, h (j + 1) (by omega), h j (by omega)]
++
++theorem T_diff {k : Nat} {c d : Nat → Bool} (h : AgreeBelow k c d) (hk : c k ≠ d k) :
++    T c k ≠ T d k := by
++  match k, h, hk with
++  | 0, _, hk => simpa [T] using hk
++  | 1, h, hk => exact xor_ne_xor hk (h 0 (by omega))
++  | j + 2, h, hk =>
++    exact xor_ne_xor hk (by rw [h (j + 1) (by omega), h j (by omega)])
++
++theorem iter_agree {k : Nat} {c d : Nat → Bool} (h : AgreeBelow k c d) :
++    ∀ t, AgreeBelow k (iter t c) (iter t d)
++  | 0 => h
++  | t + 1 => T_agree (iter_agree h t)
++
++theorem iter_diff {k : Nat} {c d : Nat → Bool} (h : AgreeBelow k c d) (hk : c k ≠ d k) :
++    ∀ t, iter t c k ≠ iter t d k
++  | 0 => hk
++  | t + 1 => T_diff (iter_agree h t) (iter_diff h hk t)
++
++theorem iter_zero (c : Nat → Bool) : ∀ t, iter t c 0 = c 0
++  | 0 => rfl
++  | t + 1 => iter_zero c t
++
++theorem orbit_zero (s : Nat) : orbit s 0 = true := by
++  simp [orbit, iter_zero, one]
++
++theorem iter_add (c : Nat → Bool) (s : Nat) : ∀ t, iter (s + t) c = iter t (iter s c)
++  | 0 => rfl
++  | t + 1 => by
++    show T (iter (s + t) c) = T (iter t (iter s c))
++    rw [iter_add c s t]
++
++theorem orbit_add (s t : Nat) : orbit (s + t) = iter t (orbit s) := iter_add one s t
++
++/-! ### Rule 30 on finite rows, read from the right edge -/
++
++/-- The edge code of a row whose rightmost black cell is `e`. -/
++def code (x : Int → Bool) (e : Int) : Nat → Bool := fun k => x (e - k)
++
++theorem edge_evol (x : Int → Bool) (e : Int) (he : x e = true)
++    (hr : ∀ p, e < p → x p = false) :
++    ∀ t : Nat, evol x t (e + t) = true ∧ (∀ p, e + t < p → evol x t p = false) ∧
++      code (evol x t) (e + t) = iter t (code x e)
++  | 0 => by
++    refine ⟨by simpa [evol] using he, fun p hp => by simpa [evol] using hr p (by omega), ?_⟩
++    funext k; simp [code, evol, iter]
++  | t + 1 => by
++    obtain ⟨h1, h2, h3⟩ := edge_evol x e he hr t
++    have hz : ∀ p, e + (t : Int) < p → evol x t p = false := h2
++    refine ⟨?_, ?_, ?_⟩
++    · show rule (evol x t (e + (t + 1 : Nat) - 1)) (evol x t (e + (t + 1 : Nat)))
++        (evol x t (e + (t + 1 : Nat) + 1)) = true
++      have a : e + ((t + 1 : Nat) : Int) - 1 = e + t := by omega
++      have b : e + ((t + 1 : Nat) : Int) + 1 = e + t + 2 := by omega
++      have c : e + ((t + 1 : Nat) : Int) = e + t + 1 := by omega
++      rw [a, b, c, h1, hz (e + t + 1) (by omega), hz (e + t + 2) (by omega)]
++      rfl
++    · intro p hp
++      show rule (evol x t (p - 1)) (evol x t p) (evol x t (p + 1)) = false
++      rw [hz (p - 1) (by omega), hz p (by omega), hz (p + 1) (by omega)]
++      rfl
++    · show code (evol x (t + 1)) (e + ((t + 1 : Nat) : Int)) = T (iter t (code x e))
++      rw [← h3]
++      funext k
++      show rule (evol x t (e + ((t + 1 : Nat) : Int) - k - 1)) (evol x t (e + ((t + 1 : Nat) : Int) - k))
++        (evol x t (e + ((t + 1 : Nat) : Int) - k + 1)) = T (code (evol x t) (e + t)) k
++      match k with
++      | 0 =>
++        have a1 : e + ((t + 1 : Nat) : Int) - ((0 : Nat) : Int) - 1 = e + t := by omega
++        have a2 : e + ((t + 1 : Nat) : Int) - ((0 : Nat) : Int) + 1 = e + t + 2 := by omega
++        have a3 : e + ((t + 1 : Nat) : Int) - ((0 : Nat) : Int) = e + t + 1 := by omega
++        rw [a1, a2, a3, hz (e + t + 1) (by omega), hz (e + t + 2) (by omega)]
++        simp [T, code, rule]
++      | 1 =>
++        have a1 : e + ((t + 1 : Nat) : Int) - ((1 : Nat) : Int) - 1 = e + t - ((1 : Nat) : Int) := by
++          omega
++        have a2 : e + ((t + 1 : Nat) : Int) - ((1 : Nat) : Int) + 1 = e + t + 1 := by omega
++        have a3 : e + ((t + 1 : Nat) : Int) - ((1 : Nat) : Int) = e + t - ((0 : Nat) : Int) := by
++          omega
++        rw [a1, a2, a3, hz (e + t + 1) (by omega)]
++        simp [T, code, rule]
++      | j + 2 =>
++        have a1 : e + ((t + 1 : Nat) : Int) - ((j + 2 : Nat) : Int) - 1 =
++            e + t - ((j + 2 : Nat) : Int) := by omega
++        have a2 : e + ((t + 1 : Nat) : Int) - ((j + 2 : Nat) : Int) + 1 =
++            e + t - ((j : Nat) : Int) := by omega
++        have a3 : e + ((t + 1 : Nat) : Int) - ((j + 2 : Nat) : Int) =
++            e + t - ((j + 1 : Nat) : Int) := by omega
++        rw [a1, a2, a3]
++        simp [T, code, rule]
++
++/-- The single black cell's code at time `s` is `orbit s`. -/
++theorem seed_code (s : Nat) : code (cell s) s = orbit s := by
++  have h := (edge_evol seed 0 (by simp [seed]) (fun p hp => by simp [seed]; omega) s).2.2
++  have hc : code seed 0 = one := by funext k; simp [code, seed, one]
++  rw [hc] at h
++  have : (fun p => evol seed s p) = cell s := funext (evol_seed s)
++  simpa [orbit, this] using h
++
++/-! ### Depth, and the frozen ruler -/
++
++/-- The code `R₀` has depth `k` with phase `s₀`. -/
++def HasDepth (R₀ : Nat → Bool) (k s₀ : Nat) : Prop :=
++  AgreeBelow k (orbit s₀) R₀ ∧ ∀ s, ¬ AgreeBelow (k + 1) (orbit s) R₀
++
++/-- Bits `1 .. w` are white: a white run of at least `w` cells behind the edge cell. -/
++def WhiteAtLeast (c : Nat → Bool) (w : Nat) : Prop := ∀ i, 1 ≤ i → i ≤ w → c i = false
++
++/-- A white run of exactly `w` cells behind the edge cell. -/
++def Width (c : Nat → Bool) (w : Nat) : Prop := WhiteAtLeast c w ∧ c (w + 1) = true
++
++/-- **The edge black run alternates** (the first level of the ruler, for every finite row). -/
++theorem edge_run_alternates (x : Int → Bool) (e : Int) (he : x e = true)
++    (hr : ∀ p, e < p → x p = false) (t : Nat) :
++    code (evol x (t + 1)) (e + ((t + 1 : Nat) : Int)) 1 = ! code (evol x t) (e + t) 1 := by
++  rw [(edge_evol x e he hr (t + 1)).2.2, (edge_evol x e he hr t).2.2]
++  have h0 : iter t (code x e) 0 = true := by rw [iter_zero]; simpa [code] using he
++  show xor (iter t (code x e) 1) (iter t (code x e) 0) = !iter t (code x e) 1
++  rw [h0]; simp
++
++theorem bit_k {R₀ : Nat → Bool} {k s₀ : Nat} (hd : HasDepth R₀ k s₀) : orbit s₀ k ≠ R₀ k := by
++  intro heq
++  apply hd.2 s₀
++  intro i hi
++  rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi | rfl
++  · exact hd.1 i hi
++  · exact heq
++
++theorem depth_shift {R₀ : Nat → Bool} {k s₀ : Nat} (hd : HasDepth R₀ k s₀) (t : Nat) :
++    AgreeBelow k (orbit (s₀ + t)) (iter t R₀) ∧ orbit (s₀ + t) k ≠ iter t R₀ k := by
++  rw [orbit_add]
++  exact ⟨iter_agree hd.1 t, iter_diff hd.1 (bit_k hd) t⟩
++
++/-- The single cell's code never has a white run of exactly `k - 1` behind its edge, when some code
++has depth `k`. -/
++theorem no_width_at_depth {R₀ : Nat → Bool} {k s₀ : Nat} (hd : HasDepth R₀ k s₀) (hk : 1 ≤ k)
++    (u : Nat) : ¬ (AgreeBelow k (orbit u) one ∧ orbit u k = true) := by
++  rintro ⟨ha, hb⟩
++  have hne : orbit u k ≠ one k := by simp [one, hb]; omega
++  have hA := iter_agree ha s₀
++  have hD := iter_diff ha hne s₀
++  rw [← orbit_add] at hA hD
++  have hk0 := bit_k hd
++  apply hd.2 (u + s₀)
++  intro i hi
++  rcases Nat.lt_succ_iff_lt_or_eq.mp hi with hi | rfl
++  · rw [hA i hi]; exact hd.1 i hi
++  · have hD' : orbit (u + s₀) i ≠ orbit s₀ i := hD
++    revert hD' hk0
++    cases orbit (u + s₀) i <;> cases orbit s₀ i <;> cases R₀ i <;> simp
++
++theorem frozen_code {R₀ : Nat → Bool} {k s₀ : Nat} (hd : HasDepth R₀ k s₀) (hk : 2 ≤ k)
++    (t : Nat) :
++    (∀ w, w + 1 < k → (Width (iter t R₀) w ↔ Width (orbit (s₀ + t)) w)) ∧
++    (Width (iter t R₀) (k - 1) ↔ WhiteAtLeast (orbit (s₀ + t)) (k - 1)) ∧
++    (∀ w, k ≤ w → ¬ Width (iter t R₀) w) := by
++  obtain ⟨hA, hD⟩ := depth_shift hd t
++  have gap : WhiteAtLeast (orbit (s₀ + t)) (k - 1) → orbit (s₀ + t) k = false := by
++    intro hw
++    cases hb : orbit (s₀ + t) k
++    · rfl
++    · exfalso
++      apply no_width_at_depth hd (by omega) (s₀ + t)
++      refine ⟨fun i hi => ?_, hb⟩
++      rcases Nat.eq_zero_or_pos i with rfl | hpos
++      · simp [one, orbit_zero]
++      · have h1 : one i = false := by simp [one]; omega
++        rw [h1]; exact hw i hpos (by omega)
++  refine ⟨fun w hw => ?_, ?_, fun w hw hW => ?_⟩
++  · constructor
++    · rintro ⟨h1, h2⟩
++      exact ⟨fun i hi hiw => by rw [hA i (by omega)]; exact h1 i hi hiw,
++        by rw [hA (w + 1) hw]; exact h2⟩
++    · rintro ⟨h1, h2⟩
++      exact ⟨fun i hi hiw => by rw [← hA i (by omega)]; exact h1 i hi hiw,
++        by rw [← hA (w + 1) hw]; exact h2⟩
++  · have hk1 : k - 1 + 1 = k := by omega
++    unfold Width
++    rw [hk1]
++    constructor
++    · rintro ⟨h1, _⟩ i hi hiw
++      rw [hA i (by omega)]; exact h1 i hi hiw
++    · intro h1
++      refine ⟨fun i hi hiw => by rw [← hA i (by omega)]; exact h1 i hi hiw, ?_⟩
++      have := gap h1
++      revert hD this
++      cases orbit (s₀ + t) k <;> cases iter t R₀ k <;> simp
++  · have h1 : WhiteAtLeast (orbit (s₀ + t)) (k - 1) := fun i hi hiw => by
++      rw [hA i (by omega)]; exact hW.1 i hi (by omega)
++    have hck : iter t R₀ k = false := hW.1 k (by omega) hw
++    have := gap h1
++    revert hD this hck
++    cases orbit (s₀ + t) k <;> cases iter t R₀ k <;> simp
++
++/-- **The frozen ruler.** A finite nonzero row with rightmost black cell `e` whose edge code has
++depth `k ≥ 2` with phase `s₀`: at every time `t`, read from its rightmost black cell `e + t`, its
++code agrees with the single cell's code at time `s₀ + t` below bit `k` and differs at bit `k`; the
++white run behind its edge cell is the single cell's whenever that run is shorter than `k - 1`,
++exactly `k - 1` whenever the single cell's is at least `k - 1`, and never longer. -/
++theorem frozen_ruler (x : Int → Bool) (e : Int) (he : x e = true)
++    (hr : ∀ p, e < p → x p = false) (k s₀ : Nat) (hk : 2 ≤ k)
++    (hd : HasDepth (code x e) k s₀) (t : Nat) :
++    evol x t (e + t) = true ∧ (∀ p, e + t < p → evol x t p = false) ∧
++    AgreeBelow k (code (cell (s₀ + t)) ((s₀ + t : Nat) : Int)) (code (evol x t) (e + t)) ∧
++    code (cell (s₀ + t)) ((s₀ + t : Nat) : Int) k ≠ code (evol x t) (e + t) k ∧
++    (∀ w, w + 1 < k →
++      (Width (code (evol x t) (e + t)) w ↔ Width (code (cell (s₀ + t)) ((s₀ + t : Nat) : Int)) w)) ∧
++    (Width (code (evol x t) (e + t)) (k - 1) ↔
++      WhiteAtLeast (code (cell (s₀ + t)) ((s₀ + t : Nat) : Int)) (k - 1)) ∧
++    (∀ w, k ≤ w → ¬ Width (code (evol x t) (e + t)) w) := by
++  obtain ⟨h1, h2, h3⟩ := edge_evol x e he hr t
++  have hs := seed_code (s₀ + t)
++  obtain ⟨hA, hD⟩ := depth_shift hd t
++  obtain ⟨w1, w2, w3⟩ := frozen_code hd hk t
++  rw [h3, hs]
++  exact ⟨h1, h2, hA, hD, w1, w2, w3⟩
++
++/-! ### Every finite row has a depth -/
++
++theorem orbit_one_bit (c : Nat → Bool) (h0 : c 0 = true) :
++    AgreeBelow 2 (orbit 0) c ∨ AgreeBelow 2 (orbit 1) c := by
++  cases h1 : c 1
++  · left; intro i hi
++    match i, hi with
++    | 0, _ => simp [orbit, iter, one, h0]
++    | 1, _ => simp [orbit, iter, one, h1]
++  · right; intro i hi
++    match i, hi with
++    | 0, _ => simp [orbit, iter, T, one, h0]
++    | 1, _ => simp [orbit, iter, T, one, h1]
++
++/-- From a level where agreement holds to one where it fails, there is a last level that holds. -/
++theorem last_level (P : Nat → Prop) (h2 : P 2) :
++    ∀ K, 2 ≤ K → ¬ P K → ∃ k, 2 ≤ k ∧ P k ∧ ¬ P (k + 1)
++  | 0, hK, _ => absurd hK (by omega)
++  | K + 1, hK, h => by
++    by_cases hK2 : 2 ≤ K
++    · by_cases hP : P K
++      · exact ⟨K, hK2, hP, h⟩
++      · exact last_level P h2 K hK2 hP
++    · have e : K + 1 = 2 := by omega
++      rw [e] at h
++      exact absurd h2 h
++
++/-- Every code with bit `0` black either agrees with the single cell's orbit at every depth, or
++has a depth `k ≥ 2`. -/
++theorem depth_dichotomy (c : Nat → Bool) (h0 : c 0 = true) :
++    (∀ k, ∃ s, AgreeBelow k (orbit s) c) ∨ ∃ k s₀, 2 ≤ k ∧ HasDepth c k s₀ := by
++  by_cases hall : ∀ k, ∃ s, AgreeBelow k (orbit s) c
++  · exact Or.inl hall
++  · right
++    have h2 : ∃ s, AgreeBelow 2 (orbit s) c := by
++      rcases orbit_one_bit c h0 with h | h
++      · exact ⟨0, h⟩
++      · exact ⟨1, h⟩
++    have hK : ∃ K, ¬ ∃ s, AgreeBelow K (orbit s) c :=
++      Classical.byContradiction fun hc => hall fun k =>
++        Classical.byContradiction fun hk => hc ⟨k, hk⟩
++    obtain ⟨K, hK⟩ := hK
++    have hK2 : 2 ≤ K := by
++      apply Classical.byContradiction
++      intro hlt
++      obtain ⟨s, hs⟩ := h2
++      exact hK ⟨s, fun i hi => hs i (by omega)⟩
++    obtain ⟨k, hk2, ⟨s₀, hs⟩, hk1⟩ :=
++      last_level (fun k => ∃ s, AgreeBelow k (orbit s) c) h2 K hK2 hK
++    exact ⟨k, s₀, hk2, hs, fun s hs' => hk1 ⟨s, hs'⟩⟩
++
++end Ruliology.CellularAutomata.Rule30FrozenRuler
+-- 
+2.54.0 (Apple Git-157)
+

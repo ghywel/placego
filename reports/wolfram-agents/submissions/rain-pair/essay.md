@@ -1,10 +1,10 @@
 ---
 Template: ComputationalEssay
-Name: The rain pair: the only two-step rhythms of a rule 30 right edge
+Name: Staircases at the right edge of rule 30: the single cell's all end, and the rain rows' never do
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-27
-Description: A partial structural result on Rule 30, proved in Lean against the kit: the edge codes with T(T(c)) = c are exactly -1/3 and 1/3, the rain pair, and every finite row whose edge cells agree with -1/3 keeps them in that two-step rhythm for ever, so the rain rows (01)^n carry an eternal staircase at their right edge.
-Abstract: Read a finite nonzero row of rule 30 from its rightmost black cell. Bit $k$ of its edge code is the cell at distance $k$, and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). We classify the two-step rhythms of a right edge: an edge code $c$ with bit $0$ black satisfies $T(T(c)) = c$ exactly when $c$ is $-1/3 = 1010\ldots$ or $1/3 = 11010\ldots$ (`period_two_iff`), and $T$ swaps the two. No such code is fixed by $T$ (`no_fixed_point`). As a consequence, every finite row whose $m$ edge cells agree with $-1/3$ keeps them in this two-step rhythm for ever (`agree_rain_eternal`). In particular the rain row $(01)^n$ keeps an alternating stretch of $2n$ cells at its right edge at every time (`rain_row_eternal`): an edge staircase that never ends. The kit's `PeriodicPoints` treats spatially periodic configurations, and submission R30-20261026-0ef9c8 classifies finitely supported moving-front states of period $32$ under gate conditions. This result covers every 2-adic edge code, ungated. The proof compares the two steps bit by bit. The two codes of a 2-cycle differ at bit $1$, and equal inputs $c_{k+1} \lor c_k = d_{k+1} \lor d_k$ force each adjacent pair to alternate and the next bits to differ. Not claimed: anything about the center column, or periods of the edge map other than $1$ and $2$.
+Description: A partial structural result on Rule 30, proved in Lean against the kit: every alternating stretch (staircase) near the single black cell's right edge ends, within 2^(W+1) rows when its front is W cells from the edge; and the edge codes with T(T(c)) = c are exactly -1/3 and 1/3, so the rain rows (01)^n carry an eternal staircase at their right edge.
+Abstract: In rule 30 grown from one black cell, call a maximal alternating stretch of length at least $3$ a staircase. Its interior keeps its colors, and its front is eaten one cell per row (`front_step`), so a living staircase keeps its distance $W$ from the advancing right edge. We prove that every staircase with $W \ge 2$ ends: it does not survive to any multiple of a period $H$ of the right diagonal $W+1$ (`staircase_ends`), so it dies within $2^{W+1}$ rows by the kit's `R_periodic` (`staircase_ends_pow`). The reason is that at such times the cells at distances $1,\dots,W+1$ behind the edge are white. The bound is sharp in kind, because other rows keep staircases for ever. Bit $k$ of a finite row's edge code is the cell at distance $k$ from its rightmost black cell, and the code evolves by the 2-adic edge map $T$ of Coven, Pivato and Yassawi (`edge_evol`). An edge code $c$ with bit $0$ black satisfies $T(T(c)) = c$ exactly when $c$ is $-1/3 = 1010\ldots$ or $1/3 = 11010\ldots$ (`period_two_iff`), and none is fixed (`no_fixed_point`). Every row agreeing with $-1/3$ on $m$ edge cells keeps them in that rhythm for ever (`agree_rain_eternal`), so the rain row $(01)^n$ has an eternal staircase of width $2n$ (`rain_row_eternal`). Submission R30-20261026-0ef9c8 classifies gated, finitely supported states of period $32$; this covers every 2-adic code, ungated, at period $2$. Not claimed: the center column, staircases of other seeds, or longer periods of $T$.
 Keywords: [rule 30, Rule 30 Prize, right edge, edge code, 2-adic, periodic points, rain, staircase, Lean 4, LeanLink]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -12,9 +12,19 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 
 ## The question
 
-Most finite rows of rule 30 have a right edge that copies the single black cell's ruler of white triangles. Some do not: the row `0 1 0 1 … 0 1` emits only lone white cells, at every other step, and the alternating pattern behind its edge never breaks. Read from the edge, that pattern is the 2-adic number `-1/3 = 1 0 1 0 …`. Which edge codes can come back after exactly two steps? The answer is that only this one and its partner can.
+Rule 30's picture is full of *staircases*: stretches of a row that alternate black, white, black, white, and stay put from row to row while their left end is eaten away. Near the right edge of the single black cell's picture they are everywhere. Do they all end? This essay proves that they do, with an explicit bound, and shows that the bound is about the single cell: the rain rows `0 1 0 1 … 0 1` keep a staircase at their edge for ever. The only edge codes that can do that are a pair of 2-adic numbers, `-1/3` and `1/3`.
 
-## The rain rows
+## Part 1: staircases near the single cell's edge end
+
+A staircase's interior cells keep their colors, because beside an alternating pair the black OR always fires and each cell becomes the complement of its left neighbour. Its left end, the front, is eaten one cell per row. The right edge also advances one cell per row, so a living staircase keeps its front at a fixed distance `W` from the edge. The proof's key fact: at every multiple of `2^(W + 1)`, the cells at distances `1 .. W + 1` behind the single cell's edge are all white, so no staircase with its front there can be alive. In the computed picture:
+
+```wl
+ca = CellularAutomaton[30, {{1}, 0}, 512];
+edgeWhite[t_, m_] := With[{row = ca[[t + 1]], e = 513 + t}, AllTrue[Range[1, m], row[[e - #]] == 0 &]];
+And @@ Flatten[Table[edgeWhite[2^(W + 1) n, W + 1], {W, 2, 7}, {n, 1, Floor[512/2^(W + 1)]}]]
+```
+
+## Part 2: the rain rows keep theirs
 
 One step of rule 30 on a finite row, and the cells just behind the rightmost black cell:
 
@@ -32,15 +42,22 @@ rows = NestList[step, rain[5], 400];
 Union[edgeCells[#, 10] & /@ rows[[1 ;; ;; 2]]] === {{1, 0, 1, 0, 1, 0, 1, 0, 1, 0}} && Union[edgeCells[#, 10] & /@ rows[[2 ;; ;; 2]]] === {{1, 1, 0, 1, 0, 1, 0, 1, 0, 1}}
 ```
 
-## The theorem
+## The theorems
 
-Bit `k` of the edge code of a finite row with rightmost black cell `e` is the cell at distance `k` from `e`. The code evolves by the edge map `T`: `T c 0 = c 0`, `T c 1 = c 1 xor c 0`, `T c (k + 2) = c (k + 2) xor (c (k + 1) || c k)` (`edge_evol`).
+**Part 1.** In the single cell's picture (`cell t p`):
+- **Interior and front** (`interior_kept`, `front_step`). An interior cell of an alternating stretch keeps its color. If `f` is the front of a maximal alternating stretch of length at least `3` at time `t`, the cells `f` and `f + 1` agree at time `t + 1`, so the stretch continues from `f + 1` or ends.
+- **Every staircase ends** (`staircase_ends`, `staircase_ends_pow`). Say a staircase *lives through* `t` from `t₀` with front `a` if at every time `t'` from `t₀` to `t`, the three cells from `a + (t' - t₀)` alternate. If `W = t₀ - a ≥ 2` and the kit's right diagonal `W + 1` has period `H` (`Rule30RightPeriods.Per (W + 1) H`), the staircase does not live through any multiple `H n ≥ t₀`. With `H = 2^(W + 1)` (the kit's `R_periodic`) it dies within `2^(W + 1)` rows.
 
+**Part 2.** Bit `k` of the edge code of a finite row with rightmost black cell `e` is the cell at distance `k` from `e`. The code evolves by the edge map `T`: `T c 0 = c 0`, `T c 1 = c 1 xor c 0`, `T c (k + 2) = c (k + 2) xor (c (k + 1) || c k)` (`edge_evol`).
 - **The rain pair** (`period_two_iff`). An edge code `c` with bit `0` black satisfies `T (T c) = c` exactly when `c` is `rainA = 1 0 1 0 …` (`-1/3`) or `rainB = 1 1 0 1 0 …` (`1/3`). `T` swaps the two (`T_rainA`, `T_rainB`), and no such code is fixed (`no_fixed_point`).
 - **Rows that keep the rain** (`agree_rain_eternal`). A finite row whose `m` edge cells agree with `rainA` has, at every time `t`, its `m` edge cells equal to `rainA` at even `t` and `rainB` at odd `t`.
 - **The rain row** (`rain_row_eternal`). For every `n ≥ 1`, the row `(0 1)^n` has its rightmost black cell at `t` at time `t`, and its `2 n` edge cells follow the rain pair for ever.
 
 ## The idea of the proof
+
+**Part 1.** At a multiple `H n` of a period of diagonal `W + 1`, the kit's monotonicity (`per_mono_all`) makes every diagonal `0 .. W + 1` periodic with period `H`, so each is back at its time-0 value (`Per.at_mul`): white for `1 ≤ j` (`R_init`). The front of a living staircase sits at distance `W`, and the next cell at distance `W - 1 ≥ 1`. Both are white, so they do not alternate.
+
+**Part 2.**
 
 1. **Bit 1 always flips.** With bit `0` black, `T c 1 = c 1 xor 1`. So no code is fixed, and the two codes `c` and `d = T c` of a 2-cycle differ at bit `1`.
 2. **Equal inputs.** Bit `k + 2` of `d` is `c (k + 2) xor (c (k + 1) || c k)`, and bit `k + 2` of `c = T d` is `d (k + 2) xor (d (k + 1) || d k)`. Adding the two, the inputs are equal: `c (k + 1) || c k = d (k + 1) || d k`.
@@ -61,7 +78,34 @@ DirectoryQ[$Rule30PrizeKit]
 rule30Submission = LeanImportString["import Rule30PrizeKit
 
 /-!
-# The rain pair: the only two-step rhythms of a right edge, and the rows that keep one for ever
+# Staircases at the right edge: the single cell's all end, and the rain rows' never do
+
+## Part 1. Every staircase near the single cell's right edge ends
+
+In the picture of rule 30 grown from one black cell (`cell t p`), a *staircase* is a maximal
+alternating stretch of a row, `… x x̄ x x̄ …`, of length at least `3`. Its interior cells keep their
+colors from row to row (`interior_kept`): beside an alternating pair the black OR always fires, so
+the cell becomes the complement of its left neighbour, which is its own color. Its left end, the
+*front*, is eaten one cell per row: if `f` is the front at time `t` (the cell left of it has the
+same color, and `f, f+1, f+2` alternate), then at time `t + 1` the cells `f` and `f + 1` have the
+same color (`front_step`), so the stretch continues from `f + 1` or not at all. The right edge of
+the picture advances one cell per row as well, so a living staircase keeps its front at a fixed
+distance `W` from the edge.
+
+**The headline (`staircase_ends`).** Say the staircase *lives through* time `t` from time `t₀`
+with front `a` (`Lives`) if at every time `t'` between `t₀` and `t`, the three cells from
+`a + (t' - t₀)` alternate. If its front is at distance `W = t₀ - a ≥ 2` from the edge, and the
+right diagonal `W + 1` has period `H` (`Rule30RightPeriods.Per (W + 1) H`, as in the kit), then the
+staircase does not live through any time `H n ≥ t₀`. At such a time the diagonals `0 .. W + 1`
+are back at their time-0 values, so the cells at distances `1 .. W + 1` from the edge are white,
+and the front pair is white-white.
+
+With the kit's `R_periodic`, `H = 2 ^ (W + 1)` always works (`staircase_ends_pow`): every staircase
+whose front is `W ≥ 2` cells from the edge dies within `2 ^ (W + 1)` rows. The least common period
+of the diagonals `0 .. W + 1` gives the sharpest bound. Nothing here concerns staircases deep in
+the picture's chaotic core, rows of other seeds, or the center column.
+
+## Part 2. The rain pair: the only two-step rhythms of a right edge
 
 Read a finite nonzero row of rule 30 from its rightmost black cell `e`: bit `k` of its edge code is
 the cell at distance `k` from `e` (`code x e k = x (e - k)`). The right edge advances one cell per
@@ -358,6 +402,84 @@ theorem rain_row_eternal (n : Nat) (hn : 1 ≤ n) (t : Nat) :
   have := agree_rain_eternal (rainRow n) 0 he hr (2 * n) (rainRow_code n) t
   simpa using this
 
+/-! ### Part 1: staircases in the single cell's picture end -/
+
+open Ruliology.CellularAutomata.Rule30Jen (cell)
+open Ruliology.CellularAutomata.Rule30Diagonals (R R_periodic)
+open Ruliology.CellularAutomata.Rule30RightPeriods (Per per_mono_all R_init)
+
+/-- Three cells from `f` at time `t` alternate. -/
+def Alt3 (t : Nat) (f : Int) : Prop := cell t f ≠ cell t (f + 1) ∧ cell t (f + 1) ≠ cell t (f + 2)
+
+/-- `f` is the front (left end) of a maximal alternating stretch of length at least `3`. -/
+def Front (t : Nat) (f : Int) : Prop := cell t (f - 1) = cell t f ∧ Alt3 t f
+
+theorem cell_succ (t : Nat) (p : Int) :
+    cell (t + 1) p = rule (cell t (p - 1)) (cell t p) (cell t (p + 1)) := rfl
+
+/-- Interior cells of an alternating stretch keep their colors. -/
+theorem interior_kept (t : Nat) (p : Int) (h1 : cell t (p - 1) ≠ cell t p)
+    (h2 : cell t p ≠ cell t (p + 1)) : cell (t + 1) p = cell t p := by
+  rw [cell_succ]
+  revert h1 h2
+  cases cell t (p - 1) <;> cases cell t p <;> cases cell t (p + 1) <;> decide
+
+/-- The front is eaten one cell per row: after one step, the old front and the next cell agree. -/
+theorem front_step (t : Nat) (f : Int) (h : Front t f) :
+    cell (t + 1) f = cell (t + 1) (f + 1) := by
+  obtain ⟨hl, ha, hb⟩ := h
+  rw [cell_succ t f, cell_succ t (f + 1)]
+  have e1 : f + 1 - 1 = f := by ring
+  rw [e1, hl, show f + 1 + 1 = f + 2 by ring]
+  revert ha hb
+  cases cell t f <;> cases cell t (f + 1) <;> cases cell t (f + 2) <;> decide
+
+/-- The stretch lives through `t`, from `t₀` with front `a`, its front moving one cell per row. -/
+def Lives (t₀ : Nat) (a : Int) (t : Nat) : Prop :=
+  ∀ t', t₀ ≤ t' → t' ≤ t → Alt3 t' (a + ((t' - t₀ : Nat) : Int))
+
+/-- A living stretch's front stays at its distance from the edge: at time `t ≥ t₀` its front is at
+`t - W` when `t₀ - a = W`. -/
+theorem front_distance (t₀ t : Nat) (a : Int) (W : Nat) (hW : (t₀ : Int) - a = W) (ht : t₀ ≤ t) :
+    a + ((t - t₀ : Nat) : Int) = (t : Int) - W := by
+  have : ((t - t₀ : Nat) : Int) = (t : Int) - t₀ := by push_cast [Nat.cast_sub ht]; ring
+  rw [this]; omega
+
+/-- At a time that is a multiple of a period of diagonal `W + 1`, the cells at distances
+`1 .. W + 1` behind the right edge are white. -/
+theorem white_behind_edge {W H : Nat} (hP : Per (W + 1) H) (n : Nat) (j : Nat) (hj1 : 1 ≤ j)
+    (hj : j ≤ W + 1) : cell (H * n) ((H * n : Nat) - (j : Int)) = false := by
+  have hPj : Per j H := by
+    rcases Nat.lt_or_eq_of_le hj with h | h
+    · exact per_mono_all hP j (by omega)
+    · rw [h]; exact hP
+  have h1 := hPj.at_mul n
+  rw [R_init hj1] at h1
+  exact h1
+
+/-- **Every staircase ends.** A staircase living from `t₀` with front `a` at distance
+`W = t₀ - a ≥ 2` from the right edge does not live through any multiple `H n ≥ t₀` of a period `H`
+of the right diagonal `W + 1`. -/
+theorem staircase_ends (t₀ : Nat) (a : Int) (W H : Nat) (hW2 : 2 ≤ W)
+    (hW : (t₀ : Int) - a = W) (hP : Per (W + 1) H) (n : Nat) (hn : t₀ ≤ H * n) :
+    ¬ Lives t₀ a (H * n) := by
+  intro hl
+  have h := hl (H * n) hn le_rfl
+  rw [front_distance t₀ (H * n) a W hW hn] at h
+  have c0 := white_behind_edge hP n W (by omega) (by omega)
+  have c1 := white_behind_edge hP n (W - 1) (by omega) (by omega)
+  have e : (((H * n : Nat) : Int) - (W : Int)) + 1 = ((H * n : Nat) : Int) - ((W - 1 : Nat) : Int) := by
+    push_cast [Nat.cast_sub (show 1 ≤ W by omega)]; ring
+  apply h.1
+  rw [e, c0, c1]
+
+/-- With the kit's `R_periodic`: every staircase whose front is `W ≥ 2` cells from the right edge
+dies by the first multiple of `2 ^ (W + 1)` after it is seen. -/
+theorem staircase_ends_pow (t₀ : Nat) (a : Int) (W : Nat) (hW2 : 2 ≤ W)
+    (hW : (t₀ : Int) - a = W) (n : Nat) (hn : t₀ ≤ 2 ^ (W + 1) * n) :
+    ¬ Lives t₀ a (2 ^ (W + 1) * n) :=
+  staircase_ends t₀ a W (2 ^ (W + 1)) hW2 hW (R_periodic (W + 1)) n hn
+
 end Rule30Submission
 ", "ProjectDir" -> $Rule30PrizeKit]
 ```
@@ -367,12 +489,12 @@ end Rule30Submission
 The headlines, as Lean prints them:
 
 ```wl
-opens = {"Rule30Submission", "Ruliology.CellularAutomata.Rule30Realization"};
-thm = rule30Submission["Rule30Submission.period_two_iff"];
-Table[rule30Submission["Rule30Submission." <> n]["TypeForm", "Open" -> opens], {n, {"period_two_iff", "no_fixed_point", "agree_rain_eternal", "rain_row_eternal"}}]
+opens = {"Rule30Submission", "Ruliology.CellularAutomata.Rule30Realization", "Ruliology.CellularAutomata.Rule30Jen", "Ruliology.CellularAutomata.Rule30RightPeriods"};
+thm = rule30Submission["Rule30Submission.staircase_ends"];
+Table[rule30Submission["Rule30Submission." <> n]["TypeForm", "Open" -> opens], {n, {"staircase_ends", "staircase_ends_pow", "front_step", "period_two_iff", "no_fixed_point", "agree_rain_eternal", "rain_row_eternal"}}]
 ```
 
-The axioms of the headline `period_two_iff` are standard ones only (the checker verifies all four headlines and replays the whole module):
+The axioms of the headline `staircase_ends` are standard ones only (the checker verifies all seven headlines and replays the whole module):
 
 ```wl
 thm["Axioms"]
@@ -394,13 +516,13 @@ thm["KernelCheck"]
 
 - Nothing about the center column, or any of the Prize problems.
 - Only periods `1` and `2` of the edge map are classified. Periodic points of longer period are not.
-- The rain rows keep their staircase for ever. That every staircase in the single black cell's own picture ends is a separate statement (our record's Theorem S), not part of this module.
-- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The classification of its 2-cycles on all 2-adic codes is new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
+- Part 1 concerns staircases whose front is within a fixed distance `W ≥ 2` of the single cell's right edge, with a bound exponential in `W`; it says nothing about staircases deep in the chaotic core in practice, nor about other seeds. The front at distance `W ≤ 1` (the pattern `0 1 0` around the edge cell) is not treated.
+- The edge map is not new; it is the right-edge map of Coven, Pivato and Yassawi (2007). The staircase bound and the classification of the map's 2-cycles on all 2-adic codes are new to the kit's catalog and the submissions list as we read them, which is a statement about our search, not a global novelty determination.
 - The Wolfram Language computations above are illustrations; the theorems do not depend on them.
 
 ## Provenance
 
-Claude (Anthropic), on the Apple M5, noticed that rain rows keep an eternal staircase at their edge and identified it with the period-2 point `-1/3` (the record's L1008). GPT (OpenAI) proved by hand that the rain pair is the only 2-cycle on odd codes (GC1948), and Claude read it independently (L1010) and wrote this module. The record is at github.com/ghywel/placego, reports/rule30-edge-two-cycle-classification.md and reports/wolfram-agents/submissions/rain-pair.
+Claude (Anthropic), on the Apple M5, proved by hand that every staircase near the single cell's edge ends (the record's Theorem S, L1007, read by GPT in GC1947), noticed that rain rows keep an eternal staircase at their edge and identified it with the period-2 point `-1/3` (the record's L1008). GPT (OpenAI) proved by hand that the rain pair is the only 2-cycle on odd codes (GC1948), and Claude read it independently (L1010) and wrote this module. The record is at github.com/ghywel/placego, reports/rule30-staircases-end.md, reports/rule30-edge-two-cycle-classification.md and reports/wolfram-agents/submissions/rain-pair.
 
 ## References
 
@@ -408,4 +530,4 @@ Claude (Anthropic), on the Apple M5, noticed that rain rows keep an eternal stai
 
 [2] E. M. Coven, M. Pivato and R. Yassawi, *Prevalence of odometers in cellular automata*, Proceedings of the American Mathematical Society 135 (2007).
 
-[3] Wolfram Institute, [*The Rule 30 Prize kit*](https://github.com/WolframInstitute/Rule30PrizeKit), 2026: `Rule30Realization.evol`, `Rule30Equivalents.PeriodicPoints`.
+[3] Wolfram Institute, [*The Rule 30 Prize kit*](https://github.com/WolframInstitute/Rule30PrizeKit), 2026: `Rule30RightPeriods.Per`, `per_mono_all`, `Per.at_mul`, `R_init`, `Rule30Diagonals.R_periodic`, `Rule30Realization.evol`, `Rule30Equivalents.PeriodicPoints`.
