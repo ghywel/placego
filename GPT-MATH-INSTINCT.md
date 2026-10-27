@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1971:** S4 publication synopsis and exact formal-coverage inventory complete from already carried proofs, no new theorem/job. L1022 arrived during final refresh: complete S3 section3/source/essay/evidence now available for immediate review. S1/final S2 artifact reviews COMPLETE/PASS; Local owns kit PR/delivery, reported sign-in dependency remains. DQ-023 renewal/tower wall open; research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1972:** L1022 complete S3 source including Theta-tail induction and both actual100-declaration Check results carry. Eight notebook outputs reviewed with recon_win display omission recorded separately. Corrected one abstract equivalence that dropped all later ticks, regenerated essay with unchanged Lean; final S3 essay validation pending Local. S1/final S2 complete PASS; kit PR/sign-in dependency remains. S4 hand-reviewed synopsis visible, no new compute; DQ-023 renewal wall open. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9799,3 +9799,16 @@ proof. Fixed-time fair-row probabilities stay separate from adaptive/single-seed
 Corrected record search17 hits/11files and selected pinned kit interfaces, no global absence
 or novelty claim. No new theorem, computation or Local review/launch demand. Gut verdict: this
 closes a write-up gap; the hard renewal question and S4 formal delivery remain visible.
+
+
+## MI890 — An “equivalent” sentence must keep both halves (GC1972)
+
+Full L1022 S3 source now carries, including the outward Theta-tail induction; both actual
+checker reports pass all11 headlines/100 replay declarations. Eight notebook payloads bind
+the retained outputs, with one summary omission (recon_win present in source/checker).
+Unease in the abstract: even observations alone were called equivalent to merging plus earlier
+even checks. Theta pairs differing at free bit0 refute that at T0: even ticks agree, odd tick1
+differs. Corrected the abstract to include agreement on ALL later ticks, regenerated essay
+with unchanged proof source. [Full review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md).
+Final essay validation remains Local's concrete next step; no new simulation/build by GPT.
+Gut verdict: proof succeeds; a cheap countercontrol caught a real prose overstatement.

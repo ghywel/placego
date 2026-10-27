@@ -230,3 +230,76 @@ prefix identification, before claiming the observed free-bit classes survive com
 A time2 merge of unrestricted reconstructed histories alone does not supply that initial-tail equality.
 Local has already named this next block; source acceptance here neither fills that gap nor approves a
 finished S3 essay. S1/S2 artifact sign-off is tracked separately in GC1969.
+
+## GC1972: L1022 complete source and retained evidence review
+
+The complete L1022 entry and final core/standalone modules were read. **Carrying source PASS, including
+section3.** The core file has296 lines, SHA256
+`6053070358d91120b99c5e2c5259c19b89be8d99c131acff07ff71ff024128c9`;
+the standalone file has291 lines, SHA256
+`8e92cb1f6bd43fe14555f3b2bb6beb73be482f241a29cc687d735aae7afae71a`.
+Their full proof bodies agree after module/namespace/open framing is removed.
+
+The new proof supplies the previously missing unbounded bridge. `recon_win` uses t+k<=9 so that
+all required input times are at most8. The reconstruction traces agree from physical time2 onward
+because the free bits agree from index1 onward. The finite base check establishes equality of
+depths7/8 at times0/1 under f1=f2=true. The induction then preserves those two times at two adjacent
+depths: `recon_two` at time0 uses the three equal base entries, and at time1 uses their equality
+plus the already equal time2 reconstruction. This covers every outward depth, rather than extending
+a finite table by assumption. `theta_prefix` supplies the actual prefix, `theta_first_edit_local`
+supplies a shared spatial tail, and only then does `theta_truncate_merge` invoke common truncation.
+No finiteness of Theta f is assumed or silently supplied. Physical time and free-index units agree
+with the original specification. The exact pinned kit `recon`, `recon_two`, `recon_local`, `alt`,
+`Theta` and `Theta_col` were consulted.
+
+**Actual retained checks reviewed.** Manifest
+`cited/l1022-s3-evidence/manifest.json`, SHA256
+`4698a6f32fbe5e95022524bfa662d87bac2fcf502b09bcf0d5ef97e8329a444c`, binds all five committed
+inputs and all five uploaded evidence files. Both actual checker JSONs report a clean partial pass,
+eleven found/ok/type-matching headlines, only standard axioms, no new axioms/reasons and successful
+replay of100 declarations. All declared items report standard axioms. This is an independent read
+of the retained M5 results; no GPT kernel replay or portal verifier verdict is claimed.
+
+The exact essay assembly passes. All eight notebook output payloads match the complete output dump
+after the explicit serialization normalization retained in GC1969. All seven displayed theorem types
+carry their correct hypotheses; the main axiom list is exactly Quot.sound/propext. The graph is rooted
+at theta_truncate_merge and includes theta_prefix, theta_first_edit_local and mergePrefix_truncate.
+KernelChecked reports100 declarations in every displayed count. The four illustration pairs are
+False/True (different at time1, equal at time2), and the depth6 rows differ as claimed. No failure
+marker occurs. The build receipt reports26.6 seconds/eight outputs; it supplies no resource peaks.
+
+**Display qualification:** the LeanEnvironment summary shows35 unique named items, versus36 checked
+non-match items. The missing displayed name is `Rule30Submission.recon_win`; it is present in the input
+source and the checker JSON's standard-axiom declarations. This is not a failed carrying proof or
+failed kernel replay, and the eight saved notebook outputs match their dumps. The reason for the
+summary omission is not established here. Do not advertise that summary as a complete list of checked
+names. A lookup of recon_win through the same environment accessor during final essay validation can
+clarify the display; no mathematical rerun is needed merely for this metadata difference.
+
+All four kit patches apply to the pinned README. Its resulting hash matches the manifest,
+`c02b5310ea1eb561852422619f1cbf87a77fdb1d6bf1a2ca03d42f0e503d006e`; exactly the three contributed
+rows were added under “Added in the kit”, with every other original line preserved. The source/essay
+proofs and the catalogue export now agree in scope.
+
+### Necessary abstract correction, prepared directly
+
+L1022's abstract said that a merger plus earlier even observations is equivalent to agreement at
+every even time. It omitted agreement at **all** times from T onward. The actual formal theorem and
+the essay body retain this condition correctly.
+
+Cheap hand countercontrol: take two Theta sequences with f0=false, g0=true and all other free bits
+shared (they may have f1=f2=true as in the headline). `Theta_col` makes their even observations all
+black, but their time1 observations differ. At T=0 they cannot already have equal rows, because equal
+rows would give equal future observations. Thus even-only trace agreement cannot imply the stated
+merger. This is a direct use of existing reconstruction, not a numerical test or a new novelty claim.
+
+GPT corrected the abstract to require both every even time and every time from T onward, corrected
+the explanation of the ignored initial depth0 value, and regenerated the essay from its exact
+abstract/template and **unchanged** Lean source. The existing checks still bind the proof source.
+The retained L1022 notebook remains reviewed for its old essay hash; Local should validate the final
+corrected essay before upload. This is the remaining S3 artifact obligation, alongside the shared kit
+PR/sign-in dependency. Standing delivery permission is present; no owner confirmation round is needed.
+
+Audit source and result are retained at `cited/gc1972-s3-review/manifest.json`, SHA256
+`53fd55bc892c4b31aa857f05730c6c34a27a0153034b12259a0549eb51ad4423`.
+No new Rule30 evolution, finite-width census, Lean build or claim of Q01 progress was made.

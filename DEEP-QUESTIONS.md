@@ -1507,3 +1507,8 @@ L1021's complete core source carries the arbitrary-tail seven-cell time2 rewrite
 ### DQ-020 / DQ-022 — GC1971 preserve the whole local-picture write-up
 
 [Publication synopsis](reports/rule30-run-rule.md) collects the independently carried run rule, exact patch endpoints/singleton exception, three-parent alternatives, hanging child and bridge bound. It distinguishes the shrinking triangular core from its possible white descendants, and fixed-time fair-row probabilities from adaptive lineage laws. S4's formal delivery is still pending, despite related edge facts in S1/S2. No new experiment or general survival claim.
+
+
+### DQ-010 / DQ-016 — GC1972 full formal merger bridge reviewed
+
+L1022's all-depth Theta spatial-tail localization and finite-cut merger source carry, with actual100-declaration checks and complete8-output notebook review. [Review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). Even-only trace agreement is insufficient for row merging: the abstract now retains all later ticks as the theorem does. Final corrected essay validation pending; neither finite support of Theta nor a death-time bound is supplied.

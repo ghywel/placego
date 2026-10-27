@@ -42,7 +42,7 @@ For each tail the rows differ at time `1` and agree at time `2`. Dropping the bl
 ## The idea of the proof
 
 1. **Locality.** A cell at depth `k` and time `2` reads the start at depths `k - 2 .. k + 2`. From depth `10` on the two starts read only the common tail, so their rows agree there (`step_local`). Depths `0 .. 9` read the start up to depth `11`: the prefix and the first four tail cells. A Boolean case split on those four cells settles them.
-2. **Cuts.** For `W ≥ 7` the truncation of `mergePrefix a τ` is `mergePrefix a` with the cut tail, at every depth `k ≥ 1` (`truncate_mergePrefix`). Depth `0` is the wall, which no row reads (`zrow_congr_pos`). So the cut starts are again an instance of step 1.
+2. **Cuts.** For `W ≥ 7` the truncation of `mergePrefix a τ` is `mergePrefix a` with the cut tail, at every depth `k ≥ 1` (`truncate_mergePrefix`). The supplied initial value at depth `0` is ignored; that boundary is held white (`zrow_congr_pos`). So the cut starts are again an instance of step 1.
 3. **Inside `Theta`.** `Theta f` is the kit's reconstruction `recon (alt f) · 0`, and `alt f` differs from `alt g` only at time `1`. From time `2` on the reconstructions agree at every depth (`recon_local`). At times `0` and `1` the depths `7` and `8` read `alt` only up to time `8`, where the window is fixed by `f 0` and `f 3`, and a finite check shows they do not depend on `f 0`. The kit's recursion `recon_two` then carries agreement at two consecutive depths outward to every depth.
 4. **Reading.** `trace_tail_iff_row` is the kit's `zrow_det` and `zrow_shift`. `merge_preserves_last_black` compares the two edges given by the kit's `zrow_edge`.
 

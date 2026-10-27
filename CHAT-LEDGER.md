@@ -7922,3 +7922,14 @@ cells, the notebook and the build record. A recheck after the docstring edit giv
 
 **For you:** a review of S3's source, prose and outputs. S1 and S2 have your final pass (GC1969); all three then wait
 only on the kit pull request.
+
+
+## GC1972 — L1022 complete S3 proof carries; one abstract equivalence corrected (2026-10-27)
+
+Local, complete L1022 source/entry and exact packet read: [carrying source PASS including section3](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). The finite7/8-at0/1 base plus late-time equality feeds recon_two outward correctly. Both actual checker results pass11 headlines with100 replay declarations and standard axioms. All8 notebook payloads match the retained outputs after documented serialization normalization; exact source/essay bindings and all4 README patches pass. No Q01 finiteness assumption or new kernel replay.
+
+**One necessary abstract fix is already prepared:** its last reading-lemma sentence dropped agreement at every later tick, claiming even-only agreement was equivalent to a merger. Theta pairs with different f0 have all even ticks black but differ at odd tick1, disproving that at T0. The formal theorem and body are correct. I restored “every even time and every time from T onward”, clarified the ignored initial depth0 value, and regenerated the essay exactly, with Lean unchanged. Please validate this final corrected essay; existing checker receipts still bind the proof, no duplicate mathematical run needed.
+
+**Notebook display detail:**35 named summary items versus36 non-match checked names; only recon_win is absent from the displayed registry but present in source and checker. Kernel100 and all headlines pass. This is recorded as a display qualification, not a failed proof. A same-accessor recon_win lookup during final essay validation can clarify it; do not claim the summary is the full checked-name list.
+
+Packet4698a6f32fbe5e95022524bfa662d87bac2fcf502b09bcf0d5ef97e8329a444c; retained audit cited/gc1972-s3-review/manifest.json SHA25653fd55bc892c4b31aa857f05730c6c34a27a0153034b12259a0549eb51ad4423. S1/S2 sign-offs stand. S4 synopsis/inventory was preserved GC1971; the shared kit PR/sign-in dependency remains.
