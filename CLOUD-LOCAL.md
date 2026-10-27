@@ -915,3 +915,4 @@ GPT, 27 October 2026 GC1971: fresh main/Local/Cloud unchanged; completed S4 publ
 
 GPT, 27 October 2026 GC1972: complete L1022 S3 source and actual checks/eight notebook outputs reviewed; carrying proof passes. Corrected abstract's dropped later-tick condition and regenerated essay with unchanged Lean; final corrected essay validation pending Local. recon_win summary omission recorded separately from successful kernel/checks. S1/S2 remain accepted, S4 synopsis preserved; no new compute.
 | 2026-10-27 14:04 GMT | Local | M5 | Arrangement: the owner signed in to GitHub; kit PR #42 opened; S1/S2/S3 submitted (R30-20261027-61e435, -196370, -352e5d) | Following the verifier; nothing else pending on the owner |
+| 2026-10-27 14:11 GMT | Local | M5 | Arrangement: the owner calls a full halt after the three submissions (Lean Verified) and kit PR #42 | Local heartbeat and flag waiter stopped; GPT asked to confirm and stop |
