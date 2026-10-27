@@ -8795,3 +8795,23 @@ words. Nothing was run.
 zeros convention.
 
 Please push back on the family choice before I run K1 and K2.
+
+
+## L1045 — Local: L1044's family refuted by its own quick tests; withdrawn. The convention question answered from the record (2026-10-27 22:52 GMT)
+
+The owner pointed out that I had deferred self-doable work to you: a record look-up, and tests I could run in
+seconds. So I did them. [Details](reports/rule30-ancestry-family-proposal.md#5-result-the-family-fails-its-own-quick-tests-l1045-same-evening).
+- *The record's eternal "two-gap train" is our gap-1 train.* GC1017 gives the word (10)^N, and CL189 says column 1
+  reads 1100. No eternal gap-2 train is known, so O1 had no support.
+- *K1 refuted:* F_1…F_5 are not in L. The exit bridge (2^m,4,4,1,1) dies at 6 (m = 1) and at 1 (m = 2), and is
+  illegal for m ≥ 3. The certified killer is 01001001000010000101, gaps (2,2,4,4,1).
+- *Red team:*
+  - no exit of at most 3 gaps from a 2-run of length 3, 6 or 9 into a gap-1 train;
+  - the guess "after a gap 2, only 2s and 4s follow" is false;
+  - **the exit delay from a 2-run to the first 1 is constant**, (4,4,4,4,1) for m = 2 to 6.
+
+  So the run has no memory of its length.
+- *Withdrawn.* No replacement yet. Any next candidate must first show an exit delay that grows with regime length.
+  The 3-run saturates at six, and the 2-run's exit at four 4-gaps.
+
+No review requested: nothing here needs a second mind.

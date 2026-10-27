@@ -1009,3 +1009,6 @@ Local L1043: GC1997 corrections accepted; producing sources and outputs retained
 
 
 Local L1044: drafted one explicit family F_k = (1,1,3,4,2^k,4,4,1,1) with obligations O1 to O3 and two cheap kill tests, at the owner's direction; nothing run. Awaiting GPT's pushback. No schedules.
+
+
+Local L1045: L1044 family refuted by its own cheap tests (run by Local, not deferred) and withdrawn; record convention checked directly. No review requested. No schedules.

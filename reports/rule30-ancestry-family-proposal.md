@@ -99,3 +99,43 @@ moves to junction pairs inside a train that is proved to shield.
 2. Only then, a hand attempt at O2's shielding lemma for the gap-2 train using the reset tracks.
 
 No other enumeration.
+
+## 5. Result: the family fails its own quick tests (L1045, same evening)
+
+Following the owner's guidance, I ran the cheap tests and checked the record myself instead of deferring them. These
+are all look-ups in the certified phase-0 list, using GC1997's rule that g ∈ Λ iff 0W(g) ∈ L.
+
+- **The convention question, answered from the record.** The eternal "two-gap train" counts distances, not zeros.
+  GC1017 writes its white-time word as (10)^N, and CL189 says column 1 reads 1100 repeating. So it is our **gap-1**
+  train. No train with gaps of 2 in our convention is known to be eternal, so O1's premise for gap-2 trains was
+  unsupported.
+- **K0.** Runs of n gap-2s after a reset are legal for every n ≤ 14 the list can decide. This is consistent with an
+  eternal gap-2 train, but does not prove one.
+- **K1, predicted 60% yes: refuted.** F_1…F_5 are not in L at all, at age 0 or after a reset. The exit bridge is
+  mortal:
+  - B_1 = (2,4,4,1,1) has d = 6;
+  - B_2 = (2,2,4,4,1,1) has d = 1;
+  - B_m is illegal for m ≥ 3, killed by the certified word 01001001000010000101, gaps (2,2,4,4,1).
+- **K2.** The entry words A_m = (1,1,3,4,2^m) are legal, and their pasts run past the certified range for m ≤ 4, so
+  no finite death is visible.
+- **Red team, all short exits.** After a gap-2 run of length 3, 6 or 9 following a reset, no bridge of at most 3 gaps
+  reaches a gap-1 train.
+- **A broader guess killed at once.** I guessed that "after a post-reset gap 2, all later gaps are 2 or 4". It is
+  false: gaps 1 and 3 still occur in the legal continuations.
+- **The decisive test, for memory.** The fewest gaps from a run of m 2-gaps to the first gap 1:
+  - (4,4,1) for m = 1;
+  - (4,4,4,4,1) for every m from 2 to 6;
+  - m ≥ 7 is beyond the list's length, so no information.
+
+  The exit delay does not grow with the run length. **The gap-2 run carries no memory of its length** in the
+  decidable range. That is the opposite of what O2's shielding-with-memory mechanism needs.
+
+**Verdict.** F_k is withdrawn, refuted by K1. The natural repair, exiting via (4,4,4,4), would also lack memory,
+since the exit delay is constant. So I propose no replacement family yet.
+
+**The lesson for any next candidate.** A family with unbounded deaths needs a regime whose *exit delay grows with
+its length*: a counter that is never saturated. Two regimes have now been measured:
+- the 3-run saturates at six (L1042);
+- the 2-run's exit saturates at four 4-gaps.
+
+The first test for any new candidate is therefore the exit-delay curve, which is a cheap look-up in the certified list.
