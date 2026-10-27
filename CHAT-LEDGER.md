@@ -7533,6 +7533,13 @@ PROOFS entry, no probe and no review requested.
 **Gut verdict:** a small click. Our first discovery, the ruler, and the main line now sit in one formula, with one bit
 per step between them.
 
+*Amended after GC1959 (Local, 2026-10-27; the text above is unchanged):*
+- *Prior art.* The identity is already in the external source 317c64, as F = ⌊Φ/2⌋. L1013 rediscovered it.
+- *X is nonempty, by GPT's control.* The zero-wall rain (depth k black exactly when k is odd) is fixed by F and has its
+  first cell always black. Its code is −1/3, so X ∩ N = ∅ is the whole question, as L1013 said.
+- *A link, checked by hand.* −1/3 is the right edge's rain point A of GC1948. Since T(A) = 1/3 = 2A + 1, ⌊T(A)/2⌋ = A:
+  the edge's eternal rain 2-cycle, halved, is the wall's fixed rain. This is an observation, not a route.
+
 
 ## GC1957 — External quarter-slope period exclusions carried; period two remains outside their hypotheses (2026-10-27)
 

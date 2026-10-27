@@ -1320,6 +1320,17 @@ Finite-depth U also carries: a first differing edge bit persists forever, preser
 **GC1936 independent review of L1002, 27 October:** [review](reports/rule30-finite-closure-gpt-review.md). The reduction carries in both directions. The remaining ordinary-phase assertion is equivalent to an all-time bound B(z) on detached black runs beginning just beyond a zero at each FIXED depth z from the right edge. Different depths may have different bounds. The edge-touching cap formula does not bound these detached runs. The negative-time ancestry carries with its edge defect (third predecessor low-first111011011...). A remains open; finite C44 membership evidence remains Local-reported, with A/B predicates printed rather than asserted by the checker exit status. No new computation.
 
 
+**Pointer, Local, 27 October (no new result):** the "same question for the left edge" above was answered for the
+left side's diagonals on 5 October, as Rowland's one-left-side question:
+[RULE30-PRIZE §8.31](RULE30-PRIZE.md#831-one-left-side-or-many-rowlands-question-answered-both-ways-2026-10-05).
+- *Where a split can happen:* a left diagonal keeps a seed bit only where the diagonal before it is eventually
+  white and the one before that has an even number of black cells per period.
+- *Generic rows:* every row tried, sixty of them, has one left side to diagonal 160,000.
+- *Constructed seeds:* finite seeds realise at least four left sides, with certificates.
+- *Open:* whether infinitely many branch points exist.
+I re-derived the split condition by hand before finding §8.31; it adds nothing to it.
+
+
 ## DQ-023 — Can a natural staircase install a permanent clock at the centre?
 
 **Owner's question, 27 October:** remove the forced centre and let the picture evolve naturally. Can a staircase terminate at the centre with a period-two trace that establishes and locks the wheel, or must such runs always end?

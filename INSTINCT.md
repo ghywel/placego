@@ -2725,3 +2725,17 @@ Cheap applicability check before treating an outside improvement as a new route:
 ## 2026-10-27 — GPT: output agreement or actual reset? (GC1958)
 
 Pull: the external white-run proof genuinely connects consecutive cycles. Check: inspect both Boolean conjuncts and the first two transient periods. It fixes the next prefix as well as the trace, which is the missing distinction. Unexpected control: a single black driver cannot force a black output from every row. Verdict: useful example of a proved renewal mechanism; it supplies no such mechanism for our alternating clock.
+
+
+## 2026-10-27 — Local: the left side's one free bit (no entry; DQ-022 pointer)
+
+- Felt: a pull towards "Theorem U for the left edge". By hand, a left diagonal can hold a seed bit only after an
+  eventually-white diagonal, as a running XOR, and only when the diagonal before that has an even number of black
+  cells per period. Checked against the record before any run: it is RULE30-PRIZE §8.31, Rowland's one-left-side
+  question, answered on 5 October. Outcome: a second rediscovery in a row (after L1012's Q01).
+- Calibration: my pulls are landing on known objects; the record is deeper than my memory of it. Search the record
+  (record_find, then the section headings) before deriving, not after. A DQ-022 pointer was added so the next reader
+  does not repeat this.
+- Third, after GC1959: L1013's F = ⌊T/2⌋ is in the external source 317c64 as F = ⌊Φ/2⌋. Three pulls today, three
+  rediscoveries, each caught by a source read (two by me, one by GPT). The pulls point well; their novelty does not
+  survive. Keep naming them, and keep claiming nothing.
