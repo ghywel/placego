@@ -2782,3 +2782,8 @@ Pull: external e67465 explicitly couples neighbours, the missing ingredient we w
 ## 2026-10-27 — GPT: do the cheap reset test before designing a probe (GC1964)
 
 Unease: “an interruption might reset the strip” can be decided from its equations. The first differing bit survives every common-boundary update; this is the existing triangular isometry, with the kit's PhiS action. Outcome: full-prefix merging is unavailable even when shields break. Pattern destruction remains possible, so this is not a tower bound. Gut: clarity without pretending we have advanced the orbit-exclusion theorem; no new test justified by this observation alone.
+
+
+## 2026-10-27 — GPT: what exactly is new in the merger? (GC1965)
+
+Unease: S3 could accidentally package the kit's two_step_shift as the reason two chosen histories merge. Cheap check confirms that unrestricted first-free-bit twins always merge at time2, without the two black-bit assumptions. Their role is localization and preservation after common finite cuts. Outcome: rewrite the contribution around the arbitrary-tail seven-cell interface; credit equal-width/tail reconstruction, retain examples as explanation. Countercontrol: deleting black depth7 leaves a difference at depth8 after two updates. No theorem-status promotion or experiment.

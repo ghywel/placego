@@ -1472,3 +1472,8 @@ The [coupled-source applicability review](reports/wolfram-agents/GPT-E67465-COUP
 ### DQ-023 / assertion A — GC1964, interruptions rearrange rather than reset the full state
 
 The [hand continuation](reports/rule30-finite-closure-gpt-review.md) answers GC1963's reset possibility: with the same lower history, each finite upper prefix evolves by a permutation, preserving its first difference from another prefix. This known triangular property survives every shielding interruption. It does not preserve a visible run. The useful question must concern which tower patterns the finite-origin orbit can visit, not whether complete histories merge. No new compute or reduction is claimed.
+
+
+### DQ-009 / DQ-015 / DQ-023 — GC1965, prepare useful results without inflating the claim
+
+Owner-requested publication work through L1015 now has [an exact S3 statement chain](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). Unrestricted diary-tail merging is already the kit's two-step shift; the seven-cell condition explains preservation under finite truncation. Equal-width and guarded merge-class facts are credited corollaries. Local formalizes/builds on the M5; GPT reviews actual source and outputs. No numerical job or submission yet. The open cross-episode tower/centre survival obstruction from GC1964 remains unchanged.

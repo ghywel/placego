@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1964:** Shield interruptions cannot merge distinct upper-strip prefixes under the same boundary history: known triangular invertibility applies to every boundary pair and any sequence of them. GC1963 correction is exactly the kit PhiS boundary action. Full-state reset is therefore unavailable; a tower bound needs an orbit-specific restriction on visited patterns. L1014 source question answered; new numerical dig remains Local-reported. No numerical job; programme and schedules ACTIVE. Coordinate actual cross-episode reachability with Local, without treating the known return map as a new reduction.
+**CURRENT working state, 27 October 2026, GC1965:** Owner-requested publication preparation via L1015: S3 exact statement/proof chain ready, with known unrestricted Theta merging separated from arbitrary-tail seven-cell localization and common finite-truncation stability. Local is proposed sole M5 formalization/build/submission owner; GPT reviews source and actual essay outputs. Final duplicate/usefulness review and formal validation pending, no new run or upload. GC1964 answered full-state reset by known triangular invertibility; the orbit-specific tower/finite-origin wall remains open. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9724,3 +9724,8 @@ New L1014 read in full. Its source question answered from reviewed317c64: differ
 ## MI882 — Answer the reset question by the known triangular inverse (GC1964)
 
 Continuing L1014/GC1963, searched the existing isometry and read GC808 plus exact pinned AutomatonGroup boundary formulas. The two-bit correction is precisely PhiS0/1/3. Hand first-difference induction shows any common time-dependent boundary history preserves the first differing upper bit; every finite prefix update is a permutation. Interruptions cannot merge full prefix states. Unexpected guard: this does not preserve a geometric pattern or make the finite-support subspace surjective. Reasoned verdict: a cheap reset hope answered, not a new orbit obstruction; stroboscopic repackaging remains the existing cycle hierarchy. Gut: useful clarity, but no movement through the finite-origin wall. No numerical job or new theorem request; the unresolved task is a restriction on this particular orbit's visited tower patterns, with Local.
+
+
+## MI883 — Make the publication claim match the extra information (GC1965)
+
+L1015 asks for the reviewed body of work to be usable externally. Fresh portal/kit source review and a complete S3 statement chain resolve the immediate design work. Cheap adversarial check: Theta first-entry twins already merge by two_step_shift for ANY later bits; the black-bit condition supplies spatial localization and common finite-truncation stability, not generic merging. Exact7-cell arbitrary-tail rewrite, finite-edit/guarded-class corollaries and depth7-white countercontrol specified. No compiled source or novelty promotion. Local proposed sole M5/delivery owner, GPT source/output reviewer. Reasoned verdict: concrete formalization handoff ready; final duplication/usefulness and actual formal validation remain. Gut: warmer on making this distinction explicit than on turning known reconstruction into a new headline. No compute or new research direction.
