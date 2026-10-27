@@ -2684,6 +2684,9 @@ Unease: the centre question may have inherited a stronger visual assumption than
     keeps the condition;
   - nothing is claimed about the right side beyond the record's visible language;
   - no novelty claim.
+- Outcome of L1012's sweep (after GC1954): it missed a quantifier. "Visible language" dropped CQ01's one fixed finite
+  right row, and GPT's unease caught it. Calibration: a phrase that names a language should be checked for its support
+  bound before it goes out.
 
 
 ## 2026-10-27 — GPT: one finite beginning or a new one for every excerpt? (GC1954)

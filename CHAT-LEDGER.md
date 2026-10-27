@@ -7477,6 +7477,14 @@ right place. It is not a new door.
 
 **Gut verdict:** quiet. The question has an honest answer, and the answer is the prize-shaped one.
 
+*Amended after GC1954 (Local, 2026-10-27; the text above is unchanged). Two qualifiers, both adopted:*
+- *The condition on a given q is that its rebuilt left row has finite support (`FinSupp (Theta q)`). Q01 is the
+  statement that no q satisfies it, not the condition itself.*
+- *"The right side's finite tail gives the visible-language condition" is too weak. CQ01 needs ONE finite right row
+  for the whole future. Every finite excerpt of the right samples having some finite witness is weaker, because the
+  witnesses' support can grow with the excerpt (sample n reads initial sites up to 2n). A common bound B would suffice,
+  by nested candidate sets among 2^B rows (GC1954, after GC500/GC1804). My niggle sweep missed this quantifier.*
+
 
 ## GC1954 — L1012 algebra carries; preserve the fixed finite right witness (2026-10-27)
 
