@@ -30,6 +30,10 @@ Record searched: "right-visible", "J(L,B,n)" (GC1804, the finite CQ01 language),
 
 Run: python3 -I tests/probes/wolfram/clock_right_realizability.py   (exit 1 on a control failure)
 
+Post-run corrections (GC1946; not rerun): the P_R replay test now rejects f <= TH+1 and treats a censored replay
+as success; solve_window records a timeout as UNKNOWN and removes its CNF. The CNFs of the first run were left in the
+system temporary directory and were not retained; the cut-49 witness row was not retained either (L1009 proposes its
+extraction). The left-black prerequisite held for every listed instance (L1004) but was not asserted in source.
 Outcome (2026-10-27, M5, 0.2 s per part; frozen at bd6a7766 before the first run):
 - Controls: C1 to C4 PASS. C1 is SAT and its replay fails at 23; C2 and C3 are UNSAT; C4 is SAT.
 - P_R NOT HELD. Cut 49 is SAT with white ticks constrained through 49 (the model's replay fails at 52), and UNSAT
@@ -40,6 +44,7 @@ Outcome (2026-10-27, M5, 0.2 s per part; frozen at bd6a7766 before the first run
   cake_lpr-certified, Local 2026-10-11), after 11 (Lemma 3's no-11) and 00000 (GC1943's five-sample check). The
   obstruction was already in the record.
 """
+import os
 import subprocess
 import sys
 import tempfile
@@ -109,7 +114,9 @@ def solve(cut, TH):
     try:
         r = subprocess.run(["kissat", "-q", path], capture_output=True, text=True, timeout=60)
     except subprocess.TimeoutExpired:
+        os.unlink(path)
         return "UNKNOWN", None, n, len(clauses)
+    os.unlink(path)  # GC1946 correction (post-run): CNFs are removed, not left behind
     status = "SAT" if "s SATISFIABLE" in r.stdout else ("UNSAT" if "s UNSATISFIABLE" in r.stdout else "UNKNOWN")
     model = None
     if status == "SAT":
@@ -151,7 +158,9 @@ for TH in (49, 51, 53, 55):
     f = replay(49, model) if model else None
     results[TH] = (status, f)
     print("P_R cut 49 TH %d: %s (%d vars); replay first failure %s" % (TH, status, n, f))
-    if status == "SAT" and (f is None or f <= TH):
+    # GC1946 correction (post-run, not rerun): a model promises the clock through TH+1, so reject f <= TH+1;
+    # a censored replay (no failure within 200 > TH+1 steps) is a success, not an error.
+    if status == "SAT" and f is not None and f <= TH + 1:
         print("  model replay contradicts the encoding: instrument error")
         fails += 1
 print("P_R:", "HELD" if results[55][0] == "SAT" and results[55][1] == 57 else "NOT HELD (outcome retained above)")
@@ -192,8 +201,14 @@ def solve_window(cut, t0, TH):
         for cl in clauses:
             fh.write(" ".join(map(str, cl)) + " 0\n")
         path = fh.name
-    r = subprocess.run(["kissat", "-q", path], capture_output=True, text=True, timeout=60)
-    return "SAT" if "s SATISFIABLE" in r.stdout else ("UNSAT" if "s UNSATISFIABLE" in r.stdout else "UNKNOWN")
+    try:  # GC1946 correction (post-run): a timeout is UNKNOWN, and the CNF is removed
+        r = subprocess.run(["kissat", "-q", path], capture_output=True, text=True, timeout=60)
+        out = r.stdout
+    except subprocess.TimeoutExpired:
+        out = ""
+    finally:
+        os.unlink(path)
+    return "SAT" if "s SATISFIABLE" in out else ("UNSAT" if "s UNSATISFIABLE" in out else "UNKNOWN")
 
 
 l49 = left_diag(49)

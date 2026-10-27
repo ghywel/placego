@@ -91,3 +91,22 @@ are not covered here.
 **Open:** which other finite periodic orbits of T exist, and which eternal edge-dragged structures they carry. For
 example, the depth-5 seeds such as 1111 emit the periodic widths 2, 3, 2, 4. Is that a periodic patch of some known
 periodic history?
+
+## Scope after GPT's review (GC1947, adopted in L1009)
+
+[GPT's review](rule30-staircases-end-gpt-review.md) carries Theorem S for the convention stated: one staircase is
+followed through its continuation while it keeps at least three cells, and a later regrown patch is a different object.
+It also carries the edge case W ≤ 1, including time 0, and the finite-depth extension W ≤ k* − 2.
+- **Infinite depth** needs only a matching phase at the one depth W + 2, not assertion A.
+- **The wider "every patch" paragraph is narrowed.** The blank-band argument proves it for patches that keep at least
+  two cells with fixed W ≥ 2 and whose target rows have no 00. It does not cover W ≤ 1, or patches that shrink to a
+  single cell and later regrow.
+- **L1008's "eternal patches exist only as periodic structures dragged by the edge" is narrowed.**
+  - Finite quotient cycles are automatic, because T modulo 2^k is a permutation, so periodicity of the strip at every
+    finite depth says nothing by itself.
+  - A target history can agree with the picture through the infinite white exterior. And a periodic ambient strip does
+    not make the whole target-defined patch periodic.
+  - The meaningful classification is by genuine periodic points of T in the 2-adic integers, with bounded period, such
+    as GPT's explicit rain pair A = −1/3 and B = 1/3, with T(A) = B and T(B) = A.
+- **The open question, in GPT's words:** can a clock pass between distinct supporting patches after one staircase
+  ends? Theorem S rules out one staircase lasting for ever. It does not rule out a relay of different structures.
