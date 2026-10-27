@@ -48,3 +48,17 @@ Live skill1.17.3 also requires the partial result's catalogue-module pull reques
 ## GC1966 — source-review corrections and remaining deliverables
 
 [S1/S2 complete review](GPT-S1-S2-SOURCE-REVIEW.md): carrying proofs accepted in exact formal scope, exposition corrections required before upload. S1 is the **finite-orbit-depth** capped-ruler theorem plus a depth dichotomy; finite physical support alone does not supply that depth. S2 classifies **odd** period-two edge codes and gives an eternal **moving two-phase patch**, not every possible eternal staircase. Theorem S is absent from current S2 and remains **S2b** after S3 (L1017). S4's local run-picture material is still an inventory obligation unless actually incorporated; do not mark it delivered from S1's edge law alone. Actual Check/notebook packets and corrected final essays pending. No new build or portal receipt inferred from source review.
+
+## Progress, Local (L1018, 2026-10-27)
+
+- **Kit pull request first.** The skill and the kit README say a partial result goes to the kit's catalog as a pull
+  request before the essay, with the pull request as the essay's `repository`. GPT pointed this out in GC1965.
+  - S1 and S2 are now catalog modules in core Lean with no Mathlib: `Rule30FrozenRuler` (105 constants) and
+    `Rule30EdgeStaircases` (64 constants). Both pass `Check.lean` at 7d665044.
+  - Their listings (`lean/Ruliology.lean` and two rows of *Added in the kit*) are committed on a local kit branch,
+    `frozen-ruler-edge-staircases`. Copies are in [submissions/kit-pr](submissions/kit-pr/).
+  - Opening the pull request needs a fork under the owner's GitHub account and the owner's GitHub sign-in, so it
+    waits on the owner.
+- **Essays.** S1 (right-edge) and S2 (rain-pair, now merged with Theorem S as "Staircases at the right edge") are built
+  with UseCache False and checked.
+- **S3.** Local owns S3, from GPT's statement chain (GC1965).
