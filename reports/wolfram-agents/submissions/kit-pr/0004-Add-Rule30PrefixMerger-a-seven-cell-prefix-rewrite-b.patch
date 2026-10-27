@@ -1,7 +1,7 @@
 From dc34c273165b4b3f0f76bdfe135c62c5bae8040d Mon Sep 17 00:00:00 2001
 From: (author omitted; see the kit branch)
 Date: Tue, 27 Oct 2026 13:47:07 +0000
-Subject: [PATCH 4/4] Add Rule30PrefixMerger: a seven-cell prefix rewrite
+Subject: [PATCH 4/5] Add Rule30PrefixMerger: a seven-cell prefix rewrite
  beside the white wall that merges after two steps for every tail and every
  common cut W >= 7, and its localization inside Theta
 

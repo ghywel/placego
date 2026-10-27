@@ -1,0 +1,43 @@
+From 7b8d780f9b36ebe97950bf7457fe3626b56e6070 Mon Sep 17 00:00:00 2001
+From: (author omitted; see the kit branch)
+Date: Tue, 27 Oct 2026 14:07:41 +0000
+Subject: [PATCH 5/5] Rule30EdgeStaircases, Rule30PrefixMerger: remove tactics
+ the linter reports as never executed
+
+---
+ lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean | 4 ++--
+ lean/Ruliology/CellularAutomata/Rule30PrefixMerger.lean   | 3 +--
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+index d64397b..c6b01a1 100644
+--- a/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
++++ b/lean/Ruliology/CellularAutomata/Rule30EdgeStaircases.lean
+@@ -279,8 +279,8 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
+   intro i hi
+   simp only [code, rainRow, rainA]
+   rcases Nat.mod_two_eq_zero_or_one i with h | h
+-  · simp [h]; first | omega | (intro _; omega)
+-  · simp [h]; first | omega | (intro _; omega)
++  · simp [h]; omega
++  · simp [h]; omega
+ 
+ /-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
+ `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
+diff --git a/lean/Ruliology/CellularAutomata/Rule30PrefixMerger.lean b/lean/Ruliology/CellularAutomata/Rule30PrefixMerger.lean
+index 5465c54..8e75bbf 100644
+--- a/lean/Ruliology/CellularAutomata/Rule30PrefixMerger.lean
++++ b/lean/Ruliology/CellularAutomata/Rule30PrefixMerger.lean
+@@ -92,8 +92,7 @@ theorem mergePrefix_two (tail : Nat → Bool) :
+     have e : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 ∨ k = 6 ∨ k = 7 ∨ k = 8 ∨ k = 9 := by
+       omega
+     rcases e with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+-    · simp [zrow, mergePrefix] <;>
+-      cases tail 0 <;> cases tail 1 <;> cases tail 2 <;> cases tail 3 <;> simp
++    · simp [zrow, mergePrefix]
+ 
+ /-- After the merger the two starts have the same rows for ever. -/
+ theorem mergePrefix_future (tail : Nat → Bool) (t : Nat) :
+-- 
+2.54.0 (Apple Git-157)
+

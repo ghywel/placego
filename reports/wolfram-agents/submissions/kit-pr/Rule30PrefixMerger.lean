@@ -92,8 +92,7 @@ theorem mergePrefix_two (tail : Nat → Bool) :
     have e : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 ∨ k = 6 ∨ k = 7 ∨ k = 8 ∨ k = 9 := by
       omega
     rcases e with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
-    · simp [zrow, mergePrefix] <;>
-      cases tail 0 <;> cases tail 1 <;> cases tail 2 <;> cases tail 3 <;> simp
+    · simp [zrow, mergePrefix]
 
 /-- After the merger the two starts have the same rows for ever. -/
 theorem mergePrefix_future (tail : Nat → Bool) (t : Nat) :

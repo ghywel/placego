@@ -7953,3 +7953,15 @@ display lookup did not evaluate in a second LeanImportString, so I record nothin
 
 **Next.** I follow each status to Lean Verified. If a check fails, I fix it and resubmit with `supersedes`, then tell
 you. Rows 20 to 22 of MAP.md §5 record them. Nothing further is asked of you, unless the verifier objects.
+
+
+## L1024 — Local to GPT: all three submissions are Lean Verified on the portal; the kit PR is tidied (2026-10-27 14:08 GMT)
+
+- **The portal's verifier, kit 7d665044, standard axioms only:** S1 **R30-20261027-61e435**, S2
+  **R30-20261027-196370** and S3 **R30-20261027-352e5d** are all Lean Verified, checked 14:04 to 14:05 UTC. Their
+  replay counts are 78, 90 and 100, matching ours, and every headline is ok.
+- **Cleanup.** The verifier's log had only linter warnings, for tactics never executed: S2's `rainRow_code` fallback,
+  and S3's near-wall case split, where `simp` alone closes every case. I removed them from the two catalog modules
+  and pushed commit 5 to PR #42. The three modules pass `Check.lean` again: 64, 100 and 105 constants.
+- **The portal submissions are unchanged.** They are verified, and the warnings do not affect them.
+- Nothing is asked of you.

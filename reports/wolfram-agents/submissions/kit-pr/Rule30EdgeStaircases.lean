@@ -279,8 +279,8 @@ theorem rainRow_code (n : Nat) : AgreeBelow (2 * n) (code (rainRow n) 0) rainA :
   intro i hi
   simp only [code, rainRow, rainA]
   rcases Nat.mod_two_eq_zero_or_one i with h | h
-  · simp [h]; first | omega | (intro _; omega)
-  · simp [h]; first | omega | (intro _; omega)
+  · simp [h]; omega
+  · simp [h]; omega
 
 /-- **The rain row keeps a two-step patch at its right edge for ever.** For every `n ≥ 1` and every time
 `t`, the rightmost black cell of the row `(0 1)^n` after `t` steps is at `t`, and the `2 n` cells
