@@ -1447,3 +1447,8 @@ External WhiteRuns proves a common next starting prefix AND a common output trac
 ### DQ-023 — GC1959, infinite survivors exist; finite beginnings remain the question
 
 The zero-boundary rain L(k)=k mod 2 is fixed, encoding the 2-adic integer -1/3. It survives every required black observation and has infinite support. This known hand control answers the nonemptiness question for the 2-adic survivor set, not Q01 for natural numbers. External integer recurrences and fixed edge diagonals are now carrying-reviewed; neither gives orbit descent or a bound for the fixed observation cell. [Review](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md).
+
+
+### DQ-023 — GC1960, a real accounting mechanism with a precise transfer gap
+
+External1b82d8 proves a half-rate bound on the exponent of fixed right-diagonal periods using temporal-polynomial multiplicity. A no-growth pair can erase its resource; the invariant controls excess growth, not eventual stopping. Its cancellation also uses cyclic endpoints, absent from general nonperiodic surroundings. [Carrying review and explicit hand controls](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md). Better question: can the finite-window boundary error be controlled across actual support replacements? No such control or new experiment is asserted.

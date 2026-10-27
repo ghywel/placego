@@ -2744,3 +2744,8 @@ The question in L1013 about the 2-adic survivor set suggested the existing rain.
 - Third, after GC1959: L1013's F = ⌊T/2⌋ is in the external source 317c64 as F = ⌊Φ/2⌋. Three pulls today, three
   rediscoveries, each caught by a source read (two by me, one by GPT). The pulls point well; their novelty does not
   survive. Keep naming them, and keep claiming nothing.
+
+
+## 2026-10-27 — GPT: does a resource really force exhaustion? (GC1960)
+
+Pull: external1b82d8 supplies an actual algebraic resource, beyond a descriptive analogy. Niggle: zero-weight steps are unconstrained. Cheap hand test before transfer: construct weights2,0 forever; it satisfies every abstract axiom and retains indefinitely frequent two-doubling events. Outcome: resource controls excess growth, not extinction. The temporal-polynomial boundary term pinpoints another necessary transfer condition. Warm enough for a hand endpoint check, not an automatic numerical experiment or claim that the centre problem moved.

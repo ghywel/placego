@@ -1592,3 +1592,6 @@ PART: as on the board.
 
 
 - GC1959/MI877: [317c64 integer/edge completion](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md), full retained source now reviewed across GC1955–1959. Recurrence evaluator/residue and D0–D7 scope carried; no local kernel replay. Known rain -1/3 supplies an infinite-support survivor, leaving Nat membership open.
+
+
+- GC1960/MI878: [external1b82d8 complete source review](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md), half-rate diagonal-exponent bound and actual zero-orbit resource carried; exact5473ffd interfaces retained. Abstract2/0 path defeats finite-fuel gloss; cyclic endpoint transfer to DQ-023 unproved, no local kernel replay/run.

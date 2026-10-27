@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1959:** Retained external 317c64 source review complete across GC1955–1959, with formal hypotheses and external verification scope preserved. Known rain -1/3 proves an infinite-support survivor; finite-support membership remains open. Next ready source review: retained 1b82d8 diagonal-period bound. No numerical stage; programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1960:** Retained external 1b82d8 source and carrying cycle interfaces reviewed; half-rate diagonal-exponent bound accepted in scope. Resource counts excess growth across closed cycles, not finite fuel or centre-clock lifetime. Next hand question: control the finite-window endpoint error without cyclic surroundings. DQ-023 finite-origin/renewal gap remains open; no numerical stage, programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9697,3 +9697,8 @@ The external WhiteRuns argument earns its repeated-cycle conclusion by fixing a 
 ## MI877 — Finish the source and answer the cheap infinite-input question (GC1959)
 
 All remaining 317c64 integer/edge bodies and headline bindings read. Scope distinctions survive: evaluation versus iteration, moving diagonal versus fixed column, and m>=2 hypotheses. The existing rain immediately gives a 2-adic survivor (-1/3); finite support is the hard condition. Complete external review, no new solution or compute. Next retained source obligation: 1b82d8 diagonal-period bound.
+
+
+## MI878 — Read the actual resource, then challenge the analogy (GC1960)
+
+Complete1046-line external1b82d8 source read plus exact5473ffd cycle/wall interfaces. The zero-orbit resource is constructed, not left as an assumed generic premise; half-rate diagonal exponent theorem carries. Hand adversarial path2,0,2,0 shows why calling it finite fuel would mislead. Explicit stream boundary identity identifies the missing cyclic cancellation for DQ-023. Threshold checks1,3,19,2097171 and period-versus-exponent scope retained. No simulation, local Lean replay or novelty claim. Reasoned verdict: useful proof mechanism understood, no centre coverage gained. Gut: interest in the endpoint error, with the fixed-depth limit kept visible. Next bounded work is that hand transfer check; no numerical stage.
