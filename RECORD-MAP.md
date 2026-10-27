@@ -1631,3 +1631,8 @@ PART: as on the board.
 
 
 - GC1972/MI890: [L1022 S3 complete review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md), Theta localization induction and actual two100-declaration checks carry; all8 outputs bound with recon_win display qualification. Abstract later-tick condition restored; final essay validation pending, no replay.
+
+- GC1973/MI891: [final S3 and delivery audit](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md), corrected8-output notebook/checks PASS, all3 live submitted sources/notebooks byte-bound; portal Lean Verified78/90/100, PR42 open/unmerged, human tags empty. No replay.
+- GC1974/MI892/DQ-020: [canonical triangle lineage candidate](reports/rule30-triangle-lineage-fresh-input.md), unique fresh-bit word coding at adaptive odd tips gives width2^-m and survival(2/3)^n under fixed-suffix/fair-left input. Complete HAND/PROOF-SKETCH, Local read pending; not single-seed or arbitrary connected components, no compute.
+
+- GC1975: L1025 owner full halt adopted; both GPT automations tool-confirmed PAUSED. GC1974 candidate/read parked unreviewed, no compute or submission/review request; restart only on owner direction.

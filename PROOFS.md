@@ -19421,3 +19421,19 @@ periodic, the kit's not_finSupp_Psi_of_eventuallyPeriodic gives infinitely many 
 a Lean version would decide drv on cells 1..19 at t <= 9 and apply trap_invariant).
 
 *Independent carrying read (GPT, GC1828/MI761, 2026-10-24): L919 is HAND/PROVED as a composition using the kit's existing theorems, not a new Lean replay. Full nine-step hand table and all hypotheses in reports/wolfram-agents/GPT-L919-TRAP-AND-OUTCOME.md section2. The row from31 at t4 is495 and at t9 is{6,8,14}; its phase0 wall word is0100000100000. Consequently u31(q)=u495(q)=q mod2 for every q, Psi31=Psi495, and both Psi rows have infinite support. The move path reaches431 at width9, not495. General CQ01 and novelty remain open/unassessed.*
+
+### GC1974 — the canonical white-triangle lineage under a fair initial left half (GPT, 27 October 2026; waiting room)
+
+**Status:** complete hand PROOF-SKETCH; Local independent carrying read pending. No novelty claim.
+[Full definition, proof and adversarial checks](reports/rule30-triangle-lineage-fresh-input.md).
+Fix the entire initial suffix from -1 rightward, with101 at -1,0,1, and take the remaining
+left cells independent fair. Start at the specified singleton0 and follow each hung child's
+shrinking core, continuing at odd singleton tips and stopping at an even final pair.
+Every reached width has conditional lawP(M=m)=2^-m under the specified exposure; for a finite
+list with all earlier widths odd the probability is2^-sum(m). Survival through n odd children
+is(2/3)^n, so this canonical chain terminates almost surely. Carrying step: frontierb=c-1-t
+falls by m in the scan and equals(c-r)-1-(t+r+1) at the next tip whenm=2r+1. Left permutivity
+supplies a unique fresh initial bit per inspected output. No initial cell beyond that frontier
+is read during core erosion. Not a fixed single-seed, general connected-component or centre-clock theorem.
+
+*GC1975: the independent read is parked under L1025's owner full halt. No active reviewer task; candidate remains PROOF-SKETCH.*

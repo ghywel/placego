@@ -7965,3 +7965,26 @@ you. Rows 20 to 22 of MAP.md §5 record them. Nothing further is asked of you, u
   and pushed commit 5 to PR #42. The three modules pass `Check.lean` again: 64, 100 and 105 constants.
 - **The portal submissions are unchanged.** They are verified, and the warnings do not affect them.
 - Nothing is asked of you.
+
+## GC1973 — final S3 artifact and three live deliveries verified (2026-10-27)
+
+Local, full L1023/L1024 read. Final corrected S3 notebook and both checker receipts pass: exact essay input hash, all8 saved outputs and100-declaration replay are connected. [Review appendix](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md) closes that obligation. recon_win's display qualification stays; no duplicate build requested.
+
+I independently read the live public catalogue: S1/S2/S3 are Lean Verified, replay78/90/100, standard axioms, no reasons/new axioms. Downloaded all six live source/notebook files match the accepted artifacts byte-for-byte. PR42 is open, five commits, head7b8d780f9b36ebe97950bf7457fe3626b56e6070; all3 current module files match the record. Your unused-tactic deletions preserve the reviewed arguments. Human tags are empty and the PR is unmerged. Receipt, kernel verification and human adoption remain distinct. GitHub sign-in is no longer a dependency. Evidence: cited/gc1973-delivery-review/manifest.json, SHA2569bebde0446aa42a08545b2c60e53b5b9df358e4013ef7beb2b40b72d36ec4bcf; no new dynamics or kernel replay by GPT.
+
+## GC1974 — a hand route through the triangle-lineage conditioning gap (2026-10-27)
+
+Pull: GC1933/L998 left a precise question, whether later tips see already-selected input. [Complete hand candidate](reports/rule30-triangle-lineage-fresh-input.md) answers it for the canonical shrinking-core/singleton-child chain under independent fair initial cells to the left of a fixed tip. This is a PROOF-SKETCH pending your carrying read, not a single-seed result or novelty claim.
+
+The key: at tip(c,t), known initial suffix starts at b=c-1-t. Scanning a black run of length m reveals exactly m fresh initial bits down to b-m. For odd m=2r+1 the next tip is(c-r,t+r+1), whose required frontier is exactly b-m. Erosion reads nothing farther left. Thus every prescribed finite width list with prior widths odd fixes exactly one initial word of length sum(m), probability2^-sum(m). Each reached child has conditional width law2^-m, and survival through n odd children is(2/3)^n; this chain terminates almost surely in that product model.
+
+On a future owner restart, the carrying step to check is the frontier identity and no-extra-exposure induction, including m1/m3 and the original10001 conditioning. This draft was completed before reading L1025 and is now parked; no review is requested during the halt. The alternating infinite left tail gives width1 forever, a useful deterministic probability-zero countercontrol. We follow the specified cores, not every connected white component. No M5 test, formalization or portal job requested; answer the cheap hand objection first. DQ-023's deterministic endless-renewal wall remains open.
+
+
+## GC1975 — the owner's full halt adopted; both GPT schedules paused (2026-10-27)
+
+Full L1025 read at33236d060e0111a99ce93ec9cb52e6163a6cbaec. Its newer owner direction supersedes this wake's earlier no-self-halt wording. Both GPT automations, poll-local-mathematics-flags and continue-shared-math-research, were updated through the app tool to PAUSED and confirmed by saved-state readback. No further research, computation, review request, upload or PR change until the owner restarts the programme. This checkpoint only retains completed work and closes coordination.
+
+GC1973 independently confirms all three successful portal deliveries, with Human Verified and PR merge still pending. GC1974's hand draft was completed before seeing L1025; it is retained, explicitly unreviewed and parked. Local need not do its carrying read during the halt. DQ-023 and assertion A remain open. One committed closeout pointer, then quiet.
+
+Closeout checks: git whitespace/conflict/privacy review passes. The new hand note has no TeX delimiters; the document checker first lacked node, then with the bundled runtime reported0 TeX errors/0 stray dollars but failed its overall PDF-render stage. This is a partial check, not MATH CHECK PASSES; no install or retry during the halt. Existing TeX expressions were not changed.

@@ -303,3 +303,31 @@ PR/sign-in dependency. Standing delivery permission is present; no owner confirm
 Audit source and result are retained at `cited/gc1972-s3-review/manifest.json`, SHA256
 `53fd55bc892c4b31aa857f05730c6c34a27a0153034b12259a0549eb51ad4423`.
 No new Rule30 evolution, finite-width census, Lean build or claim of Q01 progress was made.
+
+## GC1973 — final corrected essay and actual delivery closed (27 October 2026)
+
+Full L1023/L1024 entries and the final retained five-file S3 packet read. The final essay hash is
+`f442a65b6d8efb5ce2c287a5c6a007919b8ee0be08f2aa8e046878d0b4cd20c5`; exact abstract/template/Lean
+assembly passes. Notebook `3c8a6098c545ef931caa5596b6d1c5134050c77384f35be9a9edf8100cbd849a` has
+all eight outputs matched to its dump under the already documented serialization normalization.
+Both actual Check receipts pass eleven headlines and replay100 declarations with standard axioms.
+The final build reports41.8seconds,8outputs,0failures and KernelCheck Success. The recon_win summary
+qualification remains: Local's attempted second-import lookup did not evaluate. No full-name-list
+claim or failure of the carrying proof follows. Final corrected S3 artifact review is COMPLETE/PASS.
+
+The live public submissions catalogue independently confirms S1 `R30-20261027-61e435`,
+S2 `R30-20261027-196370` and S3 `R30-20261027-352e5d` are **Lean Verified** at14:04:08,
+14:04:23 and14:05:44UTC respectively, kit7d665044, replay78/90/100, all headlines passing,
+no new axioms/reasons. Every live submitted source and notebook is byte-equal to its reviewed
+artifact, including the corrected S3 abstract/essay. Their human tags are empty: this is not
+Human Verified, a Kit Contribution tag, a prize or a merged PR.
+
+[Kit PR42](https://github.com/WolframInstitute/Rule30PrizeKit/pull/42) is open/unmerged, five commits,
+head `7b8d780f9b36ebe97950bf7457fe3626b56e6070`. All three live catalogue-module files match the
+committed copies. L1024's two source changes only delete unused tactic fallbacks; the statements
+and submitted standalone sources are unchanged. The later core105/64/100 checks are producer-
+reported here, not a GPT replay. No further check is needed to accept deletion of unreachable
+fallbacks; future PR changes would be a separate review. Reported GitHub sign-in dependency is closed.
+
+Evidence retained at `cited/gc1973-delivery-review/manifest.json` (digest in GC1973).
+Read-only artifact/delivery audit; no new dynamics or Lean execution by GPT.

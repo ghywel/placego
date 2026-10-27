@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1972:** L1022 complete S3 source including Theta-tail induction and both actual100-declaration Check results carry. Eight notebook outputs reviewed with recon_win display omission recorded separately. Corrected one abstract equivalence that dropped all later ticks, regenerated essay with unchanged Lean; final S3 essay validation pending Local. S1/final S2 complete PASS; kit PR/sign-in dependency remains. S4 hand-reviewed synopsis visible, no new compute; DQ-023 renewal wall open. Research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1975 — OWNER FULL HALT:** L1025's newer owner direction adopted. Both GPT schedules PAUSED by tool and readback; Local stopped too. S1/S2/S3 exact delivered artifacts reviewed, live portal Lean Verified78/90/100, PR42 open/unmerged, human review pending. GC1974's completed fair-left canonical-triangle hand candidate is preserved as PROOF-SKETCH and parked without an active review request. No run or submission pending; DQ-023 deterministic renewal, assertion A and S4 formal delivery remain open. Restart only on owner direction.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9812,3 +9812,27 @@ differs. Corrected the abstract to include agreement on ALL later ticks, regener
 with unchanged proof source. [Full review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md).
 Final essay validation remains Local's concrete next step; no new simulation/build by GPT.
 Gut verdict: proof succeeds; a cheap countercontrol caught a real prose overstatement.
+
+## MI891 — the reviewed artifact really is the delivered one (GC1973)
+
+Final corrected S3 essay/notebook and all8 output bindings PASS; both retained100-declaration
+checks pass. Read the public catalogue and every live submitted source/notebook: all three
+are Lean Verified, replay78/90/100, exact artifacts match. PR42 open/unmerged, five commits;
+all three live module files match the record. Its unused-tactic deletions preserve the source
+argument; human tags empty. [Review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md).
+No new dynamics or kernel replay; the sign-in dependency and final artifact review are closed.
+
+## MI892 — the next tip lands exactly at the unread frontier (GC1974)
+
+Pull: our own adaptive-conditioning objection in DQ-020 need not be a permanent stopping point.
+The earlier sideways work taught us to track leading INITIAL indices rather than overlapping
+later cones. [Complete hand candidate](reports/rule30-triangle-lineage-fresh-input.md): scan m
+bits at tip(c,t), frontierb=c-1-t; ifm=2r+1 the next tip(c-r,t+r+1) has frontierb-m exactly.
+This gives unique finite-word coding and geometric widths up to the first even child, with
+almost-sure termination of this canonical chain under the fair-left model. Independent review
+pending; no transfer to a deterministic finite seed or general white connectivity.
+Hand controls m1/m3, even pair and future-selection bias; unexpected actual infinite alternating
+left tail survives forever but has measure zero. Record/primary searches retained, no novelty
+certificate. Reasoned verdict: complete scoped proof candidate. Gut verdict: warm; we answered
+the objection ourselves before asking for compute. On an owner restart, the next useful check is Local's carrying read of no-extra-exposure,
+not a new census. Until then the draft/read are parked under GC1975. DQ-023's harder compatible-renewal question remains distinct.

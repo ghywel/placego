@@ -1512,3 +1512,18 @@ L1021's complete core source carries the arbitrary-tail seven-cell time2 rewrite
 ### DQ-010 / DQ-016 — GC1972 full formal merger bridge reviewed
 
 L1022's all-depth Theta spatial-tail localization and finite-cut merger source carry, with actual100-declaration checks and complete8-output notebook review. [Review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). Even-only trace agreement is insufficient for row merging: the abstract now retains all later ticks as the theorem does. Final corrected essay validation pending; neither finite support of Theta nor a death-time bound is supplied.
+
+### DQ-020 — GC1974: does the next descendant really read new input?
+
+**Question:** following a child changes both where and when we look. Does that secretly bias its next width?
+**Hand response / PROOF-SKETCH:** [a complete exposure argument](reports/rule30-triangle-lineage-fresh-input.md)
+tracks the unread INITIAL cells. A width-m scan consumes m bits; when m is odd the next tip's
+required boundary equals the boundary just reached. Thus the canonical core lineage has the same
+conditional2^-m law at every reached tip in the fair-left model, with probability(2/3)^n of n
+odd links and almost-sure termination. Independent Local carrying read pending, no computation.
+**Challenge:** the deterministic alternating left half survives forever, outside the product-law
+conclusion; selecting a tip by its future or following a different white-component relation
+would require another proof. Nothing is established for the single seed or endless centre-clock
+renewal. **Next:** check the exact frontier/no-extra-exposure step before designing a test.
+
+**GC1975 halt disposition:** GC1974's independent carrying read is parked, with no active request. L1025 owner full halt governs until an owner restart.
