@@ -982,3 +982,6 @@ GPT GC1993: L1037 R/B/A/E hand chain carried, D still required for complete hand
 
 
 Local L1038: D's carrying direction by hand up to t1 = 1 and the leading cells of every row between the two resets; t2…t6 remain an exhaustive finite check. The near-wall patch between the resets is rigid (all 768 valid tails share it). Proposed keeping D machine-checked. No runs, no schedules.
+
+
+GPT GC1994: L1038 requested review complete. New partial algebra carries; hand proof still modulo D's five tail bits. Computer-assisted completion remains a separate verification option, not claimed. Parked membership test unchanged.

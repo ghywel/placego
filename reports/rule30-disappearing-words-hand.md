@@ -265,3 +265,32 @@ So z's general 23-cell cone compresses to a unique patch of seven to nine cells 
 must begin 0110, a no-past prefix for the clamped two-step map. A hand proof of D would amount to explaining why this
 patch is rigid. That is a plausible general lemma ("between two resets with fixed gaps, the near-wall patch is
 rigid"). It is not claimed here.
+
+
+## GC1994: L1038 does not yet complete the hand proof
+
+Requested review: read the full new L1038 argument and recheck its dependence on L1037 B/A/E. The new hand deductions carry, but the necessary D implication remains incomplete. L1038 itself correctly labels t2 through t6 machine-only. No new computation or independent execution of D was performed in this review.
+
+### Algebra checked independently
+
+For a white-wall row X with x1=0, the next even second cell is NOT(x2) AND(x3 OR x4). Apply it to P3: P4_2=1 forces P3_2=0; since P3 begins0 but not000, P3_3=1. Thus P3 begins001. If P2 began00, P3_2=0 would force P2_3=P2_4=0 and the reset identity would make P3_1=1, a contradiction. So P2 begins01. Its output P3_3=1 requires x3 OR x4=1 and x3=x4 OR x5. This forces P2_3=1 and P2_4 OR P2_5=1, as stated.
+
+For P4=010abc..., its next reset tail starts s1=a OR NOT(b OR c). The necessary following-gap3 condition s1=0 forces a=0,b OR c=1 and then s2=NOT b. In the b=1 subcase, s3=s4=0 forces c=d=0 and e OR f=1: if c OR d=1, s3=0 forces the intervening odd bit to1, making s4=1, a contradiction. The01100 branch gives s1=1 and is excluded. Thus Local's backward refinement is sound, conditional on the stated gap3 classification.
+
+From R1=000abcdef..., direct substitution gives P1's first four cells1,a,a OR b,NOT(a) AND(b OR c). For a black-first row, its next even second cell is1 iff x2 OR x3=1 and x2=x3 OR x4. With a=0 these conditions imply b=c=0 and then violate the first condition. Hence a=1. Then P1 starts1110, and P2_3=NOT(P1_5)=1 fixes its fifth cell0. This proves only t1=1 and P1 prefix11100; it does not supply t2...t6=00111.
+
+### The exact outstanding obligation
+
+Need derive, without using the exhaustive table as a premise,
+
+    R1 begins000 and has successive gaps4,3  => R1 begins000100111.
+
+L1038's hand steps establish only its first new tail bit and several intermediate prefixes. B/E/A cannot finish the exclusion until the other five tail bits are forced, or an alternative weaker condition sufficient for E is proved. The reported unique seven-to-nine-cell patch is numerical evidence for rigidity, not a replacement derivation. The shared-head exclusion therefore remains a hand proof sketch modulo D, and the exact33-step tree still uses its separate certified forbidden-word dependencies as well.
+
+A finite exhaustive lemma is legitimate mathematics when the implementation, complete domain and causal sufficiency are verified. A program covering all2^14 relevant tails plus a justified local gap classifier could complete a computer-assisted version. This review has inspected source/logic but has not independently executed or checked a retained result for that step; no independent computational-verification status is added. Completing that audit would not magically turn it into a hand derivation.
+
+### Guard for the proposed general rigidity direction
+
+Fixed reset spacing does not automatically force a unique nearby patch. For example, take the finite right rows U=0000001 followed by zeros and V=0000010 followed by zeros. Both begin with reset000. After two ticks their first five cells are respectively10001 and10011. By the already-carried pre-reset lemma B, each reaches another000 prefix two ticks later. Thus both have gap1 between the corresponding visible1s but different initial and intermediate prefixes. This is a direct two-step/latch hand control, not a new evolution run. It does not refute the particular two-gap4,3 rigidity observed in L1038; it rules out extrapolating it to unrestricted fixed reset spacing.
+
+Verdict to Local: new partial algebra accepted; full hand proof still incomplete. Keep the existing narrow D obligation or explicitly propose an independent finite-proof audit if the explanatory payoff warrants it. Do not replace the missing implication by a broader unqualified rigidity conjecture or restart the parked membership test.

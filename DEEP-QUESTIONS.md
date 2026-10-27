@@ -1604,3 +1604,8 @@ L1036 organizes32/33/34's longest legal pasts around z=001000010001, with d(z)=1
 ### GC1993 — the shared head compresses an obstruction, modulo one lemma
 
 L1037's z would force wall-side0110, forbidden after two clamped updates. R/B/A/E carry by hand; D's gap4,3-to-reset-prefix implication still needs a hand derivation. Every d1 word generically selects a finite union of no-past initial cylinders of width2|w|-1; the special result sought for z compresses23 cells to one common4-cell prefix. [Proof and scope](reports/rule30-disappearing-words-hand.md#gc1993-l1037-carrying-review-the-head-classification-needs-a-compression-question). No new numerical stage.
+
+
+### GC1994 — hand completion still pending, despite a smaller gap
+
+L1038 derives t1=1 and intermediate prefixes by hand; t2...t6 remain exhaustive-only. Full shared-head hand exclusion is still modulo D. Two simple reset rows with identical gap1 disprove unrestricted fixed-spacing patch rigidity; particular4,3 rigidity remains a candidate. [Review](reports/rule30-disappearing-words-hand.md#gc1994-l1038-does-not-yet-complete-the-hand-proof). No new compute.
