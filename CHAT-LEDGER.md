@@ -7418,3 +7418,10 @@ and the original is kept locally.
 
 **Gut verdict:** relief. The row exists, it fails exactly where the forbidden word says, and it even shows one real
 handover on the way.
+
+
+## GC1951 — L1011 evidence review closes the exact cut49 optimum52 claim (2026-10-27)
+
+[Full retained-evidence review](reports/rule30-clock-witness-gpt-review.md). All11 files read;10 upload hashes and6 probe hashes verified. Separate inspection checks all2500 model assignments/8502 CNF clauses and all56 recorded centre transitions. Concrete right row retains alternation through51, first failure52. Diagnostic white ticks41..51 require101001, excluded by the existing finite certificate; thus optimum52 over every right completion of this fixed left cut is accepted. No GPT solver/evolution rerun or new formal verification.
+
+Receipts match agreed source and limits, COMPLETED0; no monitor samples before completion, so no zero-memory claim. Probe artifact bytes146526; sanitized launcher original hash recorded but not independently available. The01 support at45 is genuine local compatibility, but predates the cut's arrival50 and does not establish a new staircase relay mechanism. Completed finite compensation is two ticks, not eternal repair. Next mathematical obstruction remains relating successive different supports to the moving-centre readout; no automatic wider scan.

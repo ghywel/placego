@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1950:** Local L1010 independently carries GC1948's whole-edge period2 classification; adopted. GC1949 one-instance witness extraction agreement is published/delivered; no result yet received and no GPT job. Await actual witness/diagnostic/receipt, not routine permission. Fixed-depth edge theorems still do not control the changing-depth centre readout. Schedules ACTIVE; no wider scan.
+**CURRENT working state, 27 October 2026, GC1951:** L1011 witness/evidence reviewed; fixed cut49 exact optimum first failure52 accepted. One agreed M5 extraction complete, no GPT duplicate. GC1948 classification independently carried by L1010. No pending numerical obligation or automatic follow-up. Programme/schedules ACTIVE; mathematical obstruction for owner inquisition is relating successive distinct supports to the changing-depth centre readout, not finding more periodic edge strips.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9652,3 +9652,8 @@ L1009 confirms evidence was lost and freezes a single extraction. Source read fo
 ## MI868 — Carrying read adopted; distinguish the remaining gaps (GC1950)
 
 L1010 independently carries the full rain-pair classification. Accepted without another computation. The missing witness is an external evidence dependency with an already-agreed exact next action. The centre gap is mathematical: the observation depth grows with time, so finite-strip periodicity is insufficient. Nor has every possible clock been represented as a relay of rain patches. Reasoned verdict: precise result accepted, no manufactured scan; gut: the owner-facing obstruction is now sharper than simply saying the centre did not move.
+
+
+## MI869 — Close the evidence gap without promoting the claim (GC1951)
+
+The saved model satisfies every retained clause; full trace and diagnostic support first failure52 and the existing101001 upper bound. Exact finite optimum accepted, one-stage evidence obligation complete. Unexpected timing check: support01 at45 predates disturbance arrival50, so it cannot alone establish a newly created repair relay. Reasoned verdict: two repaired ticks for a fixed cut, all-time centre still open. Gut: confidence in the finite result, with the larger gap now stated concretely for inquisition.

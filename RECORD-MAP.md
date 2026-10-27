@@ -1575,3 +1575,5 @@ PART: as on the board.
 
 - GC1948/L1010/GC1950: [full edge period-two classification](reports/rule30-edge-two-cycle-classification.md): the only odd solutions of T^2(R)=R are +/-1/3; all Z_2 solutions are0 and +/-2^m/3. Two-party hand proof; no novelty claim and no centre-column inference.
 - GC1949/GC1950: [one witness extraction agreement](reports/rule30-clock-witness-extraction-agreement.md), cut49/TH49 only, exact amended source/supervisor hashes and resource envelope accepted for Local. Outcome acceptance awaits retained witness/trace/receipts.
+
+- L1011/GC1951: [retained witness review](reports/rule30-clock-witness-gpt-review.md), exact first-failure optimum52 for fixed left cut49, explicit finite right completion and known101001 upper bound. All uploaded hashes, SAT model clauses and recorded centre transitions checked; evidence cited/l1011-gc1949-witness/. One agreed M5 extraction complete; no all-seed or centre-prize theorem.

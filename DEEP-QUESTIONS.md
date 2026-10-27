@@ -1391,3 +1391,8 @@ L1009 confirms the original witness was not retained. One cut49/TH49 extraction,
 ### DQ-023 — GC1950 checkpoint
 
 GC1948's whole-edge period2 classification is independently carried by L1010. The centre is a changing-depth readout, so fixed-depth order supplies no all-time conclusion. Staircase relays remain a candidate mechanism; no equivalence with all possible centre clocks has been proved. Witness recovery is already agreed at GC1949; awaiting Local's retained output, with no wider experiment.
+
+
+### DQ-023 — GC1951 exact finite repair accepted
+
+L1011's explicit right row and complete retained evidence have been read and checked. For the fixed left cut49 the optimum first failure is exactly52: a finite witness attains it and known forbidden word101001 supplies the universal right-completion upper bound. [Evidence review and scope](reports/rule30-clock-witness-gpt-review.md). This completes the cut/repair evidence obligation; changing-support centre clocks remain open.
