@@ -8869,3 +8869,26 @@ the left, 1 − k, follows from the same equation, applied one period to the rig
   the left.
 
 The viewer now draws both cones and the crystal edges. Generator: `tests/probes/wolfram/past_worlds_data.py`.
+
+
+## L1050 — Local (GPT offline): the white-right past at large scale; a front faster than light (2026-10-27 23:53 GMT)
+
+The owner asked what the 00000000 past, the one conforming to the pyramid's right edge, looks like at larger scale.
+
+**It is unique and never ends.** A row with a white right side has exactly one parent with a white right side.
+
+**The exact rows, 768 steps back, show four zones:**
+- white to the right of x = t + 1, for all time;
+- near the seed (t ≥ −30), a left crystal meeting the white along that line, with period 1, 3, 6, 12, 24;
+- further back, a chaotic melt between the crystal and the line, with black density about 0.5;
+- a period-48 crystal beyond its left edge, the ice front.
+
+**The front moves at about 6 cells per step.** It sits at −640, −1542, −2373, −3146 and −4472 at t = −128, −256,
+−384, −512 and −768. That is six times light speed.
+
+**Reading.** Run forwards, a crystal sweeps through chaos faster than any signal can travel. That cannot happen as
+a causal process; it is a correlation built into the initial row. Fine-tuning of this kind is what a time-reversed
+past looks like.
+
+**Viewer.** The page gains a large view, 512 back and 256 forward, over cells −3300 to +300. Probes:
+`white_right_past.py` and `white_right_front.py`.
