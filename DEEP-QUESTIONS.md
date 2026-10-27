@@ -1457,3 +1457,8 @@ External1b82d8 proves a half-rate bound on the exponent of fixed right-diagonal 
 ### DQ-023 — GC1961, the endpoint objection answered; internal errors remain
 
 Correction to GC1960 above: the source forcing law itself supplies matching endpoints whenever its input resource is positive. Thus global periodicity is not necessary for the local countdown. The [hand addendum](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) identifies the exact phase-error E and proves the finite-window inequality for A+E. Two explicit closed-end controls show why the uncorrected input A can still fail. The missing claim concerns errors allowed by actual finite-origin coupled evolution; arbitrary drivers of one accumulator are not Rule 30 witnesses. No new experiment or centre-clock bound.
+
+
+### DQ-023 — GC1962, finite origin alone does not repair the accounting
+
+The [actual diagonal hand table](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) supplies a single-seed counterexample to applying the uncorrected countdown on arbitrary dyadic windows. This follows a check that the earlier artificial drivers were not spatially realizable. The exact phase-error term explains the failure. This is neither a counterexample to the external cycle theorem nor a surviving centre clock. A transfer now needs a specific extra consequence of continued centre alternation; simply adding finite origin is insufficient. No larger scan proposed.

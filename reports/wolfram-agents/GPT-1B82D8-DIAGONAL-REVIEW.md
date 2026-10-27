@@ -276,3 +276,115 @@ constraint on E against the actual coupled clock equations, before proposing
 compute. Merely naming E does not supply such a constraint. The prior
 G177/G178 scalar-summary failure stays visible, and the programme remains
 active without a new numerical stage.
+
+## GC1962: check the full spatial coupling, not just the accumulator
+
+27 October 2026, MI880. Hand continuation of GC1961, single-party; no
+evolution program, scan, Lean replay or independent carrying read. The
+question is now concrete: does actual finite-origin Rule 30 evolution make
+the uncorrected countdown true for arbitrary dyadic windows?
+
+Use the already-reviewed moving-edge coordinates (GC808, GC1948):
+
+```
+u_j(t)=cell(t,t-j),
+u_j(t+1)=u_j(t) XOR (u_(j-1)(t) OR u_(j-2)(t)).
+```
+
+For the single seed, u_0(0)=1 and all other bits are zero. Negative-depth
+bits stay zero. The low seven bits evolve autonomously: no unlisted deeper
+bit enters their updates. This is the known triangular edge map, not a
+new model for a fixed centre column.
+
+**First challenge: the old artificial controls do not satisfy every spatial
+equation.** Write h=u_k, b=u_(k-1), s=u_(k-2), a=u_(k-3), z=u_(k-4), k>=4.
+Besides the h update, the actual dynamics impose
+
+```
+s' = s XOR (a OR z),
+b' = b XOR (s OR a).
+```
+
+If s is zero throughout times 0..2M-1, then a=z=0 at times 0..2M-2.
+Consequently b is constant throughout 0..2M-1. Both changing drivers in
+GC1961's zero-source table are therefore impossible with this actual
+adjacency, even with infinite initial support. The constant b makes h
+constant or alternating. For dyadic M>=2, its 2M-term polynomial has
+multiplicity at least 2M-2 (with zero receiving its cap), so the uncorrected
+countdown holds in this special case. Finite support was not needed.
+This answers a cheap objection before treating arbitrary drivers as evidence.
+
+**Response: actual finite origin still does not restore the general bound.**
+The following is a complete hand table for depths 0..6 in the single-seed
+orbit. Strings list increasing depth, not ordinary printed binary order.
+Each row is obtained from the displayed recurrence; deeper cells are omitted,
+not reset to zero.
+
+| t | u_0 u_1 u_2 u_3 u_4 u_5 u_6 |
+|---|---|
+| 0 | 1000000 |
+| 1 | 1110000 |
+| 2 | 1001100 |
+| 3 | 1111011 |
+| 4 | 1000100 |
+| 5 | 1110111 |
+| 6 | 1001000 |
+| 7 | 1111110 |
+| 8 | 1000001 |
+| 9 | 1110001 |
+
+Choose M=4 and rebase time at t=1. Let s(i)=u_4(i+1), b(i)=u_5(i+1),
+h(i)=u_6(i+1). The table gives
+
+```
+s(0..7) = 01011010,
+b(0..7) = 00101010,
+h(0..8) = 001010011.
+```
+
+These are the same adjacent-source/low/high positions used by the external
+WallResource at pair i=2: its state is (edge code-1)/2, so state bits 3,4,5
+are edge depths 4,5,6. But our M=4 is an arbitrary window, NOT that source's
+full lower-prefix cycle length (8 here). We are testing removal of that
+choice, not contradicting the external theorem.
+
+For A encoding the first four s values and H the first eight h values,
+
+```
+A = X+X^3 = X*(X+1)^2,       rho(3,A)=2,
+H = X^2+X^4+X^7,             H(1)=1, rho(7,H)=0.
+```
+
+Thus the uncorrected claim would read **2<=1**, false on an actual
+single-seed patch. Here the endpoints differ, h(8)=1 and h(0)=0; no claim
+of a physically realized closed-end counterexample is made.
+
+As an independent algebraic check of the bookkeeping, GC1961's exact error
+formula gives eps_b=0111, eps_s=1111, e=0111. Hence
+
+```
+E=X+X^2+X^3,     A+E=X^2,     rho(3,A+E)=0.
+```
+
+The corrected inequality is 0<=1, consistent with both the actual updates
+and the endpoint parity identity. In particular the apparent source order
+2 has disappeared after including the required phase errors. The differing
+endpoints are a consequence of those errors, not a separately chosen defect.
+
+**Better question and strategy limit.** Finite origin alone does not control
+E in the way the uncorrected countdown requires, even in the single-seed
+orbit. A successful transfer must use an additional property of the
+hypothesized *surviving fixed centre*, or a different accounting quantity.
+This finite patch is not a long-lived centre-clock witness and says nothing
+against such a conditional property. Enlarging a scan of arbitrary edge
+windows would not supply it. No scan, phase-case catalogue or submission is
+proposed; the next task is to identify that missing centre-conditioned
+implication in the actual coupled equations.
+
+Record searched: `countdown|phase.error` and `00101001|01011010` (the latter
+has 114 broad substring hits in 71 files, not a novelty test). Carrying
+sources read: the external WallResource source/lowbit/highbit definitions and
+high_step, the complete GC1948 edge-cycle note, the GC1954 centre-neighbour
+identities and the tick/tock reconstruction equations. Existing G177/G178
+limits remain in force. This is a small hand counterexample to a proposed
+transfer, not a new general Rule 30 theorem.

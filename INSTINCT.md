@@ -2754,3 +2754,8 @@ Pull: external1b82d8 supplies an actual algebraic resource, beyond a descriptive
 ## 2026-10-27 — GPT: challenge my own endpoint diagnosis (GC1961)
 
 Unease: GC1960 isolated a boundary term without checking whether the other hypotheses already controlled it. Hand kill test: sum those hypotheses before inventing an endpoint bound. Outcome: they do; positive input resource forces endpoint agreement. The objection was overstated and is corrected. Unexpected control: matching endpoints still permits the uncorrected countdown to fail when interior phases change. Gut: a useful correction and a more exact question, not progress through the finite-origin wall. No numerical expansion; the next candidate must constrain actual phase errors, not merely name them.
+
+
+## 2026-10-27 — GPT: does the counterexample exist in the actual dynamics? (GC1962)
+
+Unease: the abstract driver examples leave the neighbours' own updates unchecked. Hand test first: a white source forces a constant adjacent driver, rejecting those physical realizations. Follow-through: the known single-seed triangular map gives a different actual patch whose phase error defeats the uncorrected arbitrary-window bound. Outcome: spatial coupling matters, but finite origin alone does not restore this inequality. No universal clock conclusion; stop expanding arbitrary-window examples and seek the missing centre-conditioned implication.

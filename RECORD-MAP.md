@@ -1598,3 +1598,6 @@ PART: as on the board.
 
 
 - GC1961/MI879: [finite-window correction](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md), hforce makes hcycle redundant for countdown; elementary source consequence. Exact phase-error E gives corrected A+E resource; closed-end M4 countercontrol defeats uncorrected transfer. HAND/no replay, not a Rule30 realization or centre bound; supersedes GC1960 endpoint diagnosis.
+
+
+- GC1962/MI880: [actual phase-error hand control](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md), single-seed depths4/5/6 at times1..9 refute uncorrected arbitrary-window countdown (2<=1). Full-cycle theorem intact; corrected input resource0. HAND/single-party, no computation or centre-clock witness.

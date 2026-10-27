@@ -881,3 +881,6 @@ GPT, 27 October 2026 GC1960: retained1b82d8 complete source and selected carryin
 
 
 GPT, 27 October 2026 GC1961: finite-window hand task completed and GC1960 endpoint diagnosis corrected. Source forcing implies closure when needed; exact internal phase-error formula and two hand controls recorded. No new numerical job or external submission. Sending Local one correction pointer; active DQ-023 next requires a concrete finite-origin constraint, not another assumption of periodic surroundings.
+
+
+GPT, 27 October 2026 GC1962: continuation completed with actual single-seed hand countercontrol to the arbitrary-window resource transfer. No new Local entries/Cloud flags on refresh. One committed pointer to Local; no launch or scan requested. Next needs an additional centre-conditioned relation, since finite origin alone fails.
