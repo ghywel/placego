@@ -1431,3 +1431,8 @@ External self-shielded period exclusions now have a carrying source/dependency r
 ### DQ-023 — GC1958, what a proved renewal condition would have to supply
 
 External WhiteRuns proves a common next starting prefix AND a common output trace, not merely survival or similar-looking events. The two certificates make the adjacent column periodic after two cycles. The universal black-creation premise fails for a single black pulse by an all-black input hand witness, so this is not a period-two shortcut. [Exact source review](reports/wolfram-agents/GPT-317C64-WHITE-REVIEW.md). No numerical widening.
+
+
+### DQ-023 — GC1959, infinite survivors exist; finite beginnings remain the question
+
+The zero-boundary rain L(k)=k mod 2 is fixed, encoding the 2-adic integer -1/3. It survives every required black observation and has infinite support. This known hand control answers the nonemptiness question for the 2-adic survivor set, not Q01 for natural numbers. External integer recurrences and fixed edge diagonals are now carrying-reviewed; neither gives orbit descent or a bound for the fixed observation cell. [Review](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md).

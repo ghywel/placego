@@ -90,3 +90,103 @@ still returns HTTP 404; exact 81e2c6 API status still exceeds three redirects.
 These do not change their earlier review dispositions. Their replacement
 sources remain separately reviewed; no byte identity or repaired outcome is
 inferred, and no automatic repeated request is scheduled by this note.
+
+## GC1959 continuation: recurrence, residue and edge sections reviewed
+
+27 October 2026. The complete remaining IntegerZBL proof bodies were read:
+bit-decomposition helpers; Phi/F bridge; Phi and parity-tagged F injectivity;
+all F/G recurrences and the collision law; residue death and survival
+formulas; G_rec termination and correctness; all edge-diagonal proofs
+through D7; and all exported headline wrappers. Together with GC1955–1958,
+this completes the source review of this retained submission. The verdict
+is source-scoped acceptance of its formal statements, not a new local Lean
+replay, a claim of optimality, or a proof of Q01. The retained morning
+external verification remains the execution evidence.
+
+### What the arithmetic rules earn
+
+The external source already proves `Phi(Y)=2F(Y)+(Y mod 2)`, so Local's
+L1013 identity `F=floor(Phi/2)` is also present there. The source proves
+Phi injective by recovering bits from low to high, since its bit i is
+input bit i XOR a function of lower bits. Consequently (F(Y), parity(Y))
+is injective. F alone need not be: for every r,
+`F(8r+5)=F(8r+6)=4F(2r+1)+1`. This is a merger under the imposed white
+wall, not a contradiction to finite full-row injectivity without that wall.
+
+All nine G equations reduce evaluation to smaller natural arguments. The
+explicit G_rec covers all sixteen residues modulo 16; its positive branches
+strictly decrease their argument and its zero branch returns zero. Strong
+induction proves that it computes G. This completes the previously pending
+dependency audit without changing GC1955's distinction between calculation
+and orbit descent.
+
+For an initially odd Y, one G step remains odd exactly when
+`Y mod 8` is 3 or 5. Among those sixteen residue classes modulo 64, the
+following eight fail at the second G step:
+
+`5, 13, 19, 27, 37, 45, 51, 59`.
+
+The other eight are
+
+`3, 11, 21, 29, 35, 43, 53, 61`.
+
+Their displayed affine formulas make the next G output congruent to 3 or 5
+modulo 8, so they survive that second check. These are exact statements for
+all nonnegative quotients, not observations from a finite census. They cover
+two G steps, or four ordinary updates. They do not show independent losses
+at successive checks, a universal death-time bound, or the absence of an
+exceptional finite survivor. No residue sweep was run here.
+
+### The moving edge is not a fixed column
+
+Let m be the last initially black depth and put
+`D_j(t)=zrow(L,t,m+t-j)`. The source proves the autonomous diagonal update
+`D_j(t+1)=D_(j-2)(t) XOR (D_(j-1)(t) OR D_j(t))` on its stated domain.
+This is its Psi map `4X XOR (2X OR X)`, distinct from Phi; the two edge
+orientations must not be silently interchanged.
+
+The exact proved special diagonals are:
+
+| Diagonal | Eventual law | Start time | Required m |
+|---|---|---:|---:|
+| D0 | 1 (kit edge theorem) | 0 | >=1 |
+| D1 | 1 | 1 | >=1 |
+| D2 | 0 | 2 | >=1 |
+| D3 | flips each update | 2 | >=2 |
+| D4 | 1 | 4 | >=2 |
+| D5 | D3 | 5 | >=2 |
+| D6 | D3 | 7 | >=2 |
+| D7 | 0 | 9 | >=2 |
+
+The m>=2 hypothesis for the last five results is in the formal declarations
+and must accompany their use, even where the introductory prose groups
+them under the broader m>=1 discussion. No failure at m=1 is claimed here.
+The proofs use the diagonal update, the preceding constants and the
+alternating bit to force an OR latch, a NOR response and finally an AND
+that kills D7 within two steps. All starting-time and domain conditions
+were checked. At the fixed wall-adjacent cell, j=m+t−1 grows with time;
+these fixed-j facts therefore do not determine its whole future.
+
+### Cheap infinite-input control for L1013
+
+No special reference witness is needed to see that the 2-adic survivor set
+is nonempty. Take the known rain row on the zero-boundary half-line:
+`L(k)=1` at positive odd depths and 0 at even depths, including the wall.
+Every black cell has white neighbours and stays black; every white interior
+cell has black neighbours and stays white. Thus L is fixed and its first
+cell is black at every time. In bit coordinates this is
+`1+4+16+... = -1/3` in the 2-adic integers, not a natural number.
+
+This supplies an explicit point of L1013's X in the continuous 2-adic
+extension of F, checked directly from the local rule. It does not assert
+that the separate infinite-left reference has been proved to meet every
+condition, and does not settle whether X contains a natural number. It
+sharpens the question: infinite support already permits survival; the open
+obstruction is finite support. This half-line witness alone does not construct a naturally alternating
+centre with a compatible right side. It is the existing rain fixed point in
+new coordinates, not a new theorem requiring another proof-review job.
+
+Record searched: `rain|Phi_eq_two_mul_F_add_mod` (1758 hits in 353 files),
+with the existing rain/staircase record, L1013, the kit's Theta discussion
+and GC1955's evaluator warning. The next already-retained external review
+is 1b82d8's diagonal-period bound; no new numerical stage is implied.

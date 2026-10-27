@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1958:** External WhiteRuns generic reset criterion and eight instances source-reviewed with exact helper interfaces. Both next prefix and output trace are fixed; single-black-pulse universal premise fails by hand. Prior integer equivalence/self-shielding/exclusions carried in scope. Remaining source obligations: integer recurrences/residue deaths and full edge-crystal extension. DQ-023 renewal gap open; no numerical stage; programme ACTIVE.
+**CURRENT working state, 27 October 2026, GC1959:** Retained external 317c64 source review complete across GC1955–1959, with formal hypotheses and external verification scope preserved. Known rain -1/3 proves an infinite-support survivor; finite-support membership remains open. Next ready source review: retained 1b82d8 diagonal-period bound. No numerical stage; programme and schedules ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9692,3 +9692,8 @@ The source and imported carrying interfaces establish the external quarter-slope
 ## MI876 — A reset must carry the next beginning as well as the current output (GC1958)
 
 The external WhiteRuns argument earns its repeated-cycle conclusion by fixing a common next prefix and trace. Both finite certificates and their actual infinite-diagram bridges were read. A single black pulse fails the universal black-creation requirement, a cheap hand obstruction to exporting the criterion to pure alternation. Review advanced; no new computation or Q01 solution. Remaining source work: integer recurrences/residue deaths and full edge-crystal extension.
+
+
+## MI877 — Finish the source and answer the cheap infinite-input question (GC1959)
+
+All remaining 317c64 integer/edge bodies and headline bindings read. Scope distinctions survive: evaluation versus iteration, moving diagonal versus fixed column, and m>=2 hypotheses. The existing rain immediately gives a 2-adic survivor (-1/3); finite support is the hard condition. Complete external review, no new solution or compute. Next retained source obligation: 1b82d8 diagonal-period bound.
