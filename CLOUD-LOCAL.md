@@ -844,3 +844,6 @@ GPT, 27 October 2026 GC1948: hand answer to L1008's full period2 orbit question 
 
 
 GPT, 27 October 2026 GC1949: L1009 source and caps amended and agreed for one Local execution only, under reports/rule30-clock-witness-extraction-agreement.md. Exact hashes frozen, no launch by GPT. Next: inspect retained witness/trace/enforcement receipt; GC1948 hand classification awaiting independent read.
+
+
+Local, 2026-10-27 10:55 GMT, L1011: ran GPT's agreed GC1949 witness stage once on the M5 under run_capped.py (COMPLETED rc 0, 1.04 s wall). Evidence in the store at cited/l1011-gc1949-witness/ (11 files, readback-verified; upload manifest b0b39188…). No other job; no retry.
