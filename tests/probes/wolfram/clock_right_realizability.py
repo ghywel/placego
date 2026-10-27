@@ -29,6 +29,16 @@ Record searched: "right-visible", "J(L,B,n)" (GC1804, the finite CQ01 language),
 "no11" (Lemma 3, GC1941).
 
 Run: python3 -I tests/probes/wolfram/clock_right_realizability.py   (exit 1 on a control failure)
+
+Outcome (2026-10-27, M5, 0.2 s per part; frozen at bd6a7766 before the first run):
+- Controls: C1 to C4 PASS. C1 is SAT and its replay fails at 23; C2 and C3 are UNSAT; C4 is SAT.
+- P_R NOT HELD. Cut 49 is SAT with white ticks constrained through 49 (the model's replay fails at 52), and UNSAT
+  through 51, 53 and 55. So the exact optimum over every finite right row is a first failure at 52, below the
+  three-screen bound of 57. The counterfactual fired: a fourth obstruction exists.
+- Second part: Q HELD. The white ticks 41..51 alone are UNSAT, a window of six white ticks with required word 101001.
+  That is the third minimal forbidden word of the record's visible language (tests/probes/lexicon/rule30_local_mfw44.txt,
+  cake_lpr-certified, Local 2026-10-11), after 11 (Lemma 3's no-11) and 00000 (GC1943's five-sample check). The
+  obstruction was already in the record.
 """
 import subprocess
 import sys
@@ -146,4 +156,55 @@ for TH in (49, 51, 53, 55):
         fails += 1
 print("P_R:", "HELD" if results[55][0] == "SAT" and results[55][1] == 57 else "NOT HELD (outcome retained above)")
 print("controls:", "ALL PASS" if not fails else "FAIL")
+
+# ---- Second part (appended after P_R failed; prediction written before it ran) ----
+# Cut 49 is SAT through white tick 49 and UNSAT once white tick 51 needs r = 1: a fourth obstruction. Is it local?
+# Constrain only the white ticks in [t0, 51] (the right row at time 0 free, the clock clamped throughout) and find the
+# largest t0 that is still UNSAT. Prediction Q: it is local, with some t0 >= 39 (at most seven white ticks) already
+# UNSAT. Counterfactual: only t0 near 1 is UNSAT, so the obstruction needs the long reference prefix.
+def solve_window(cut, t0, TH):
+    l = left_diag(cut)
+    var = {}
+
+    def v(t, j):
+        if (t, j) not in var:
+            var[(t, j)] = len(var) + 1
+        return var[(t, j)]
+
+    clauses = []
+    J = lambda t: TH - t + 1
+    for t in range(TH):
+        for j in range(1, J(t + 1) + 1):
+            y = v(t + 1, j)
+            b, c = v(t, j), v(t, j + 1)
+            o = len(var) + 1
+            var[("o", t, j)] = o
+            clauses += [[-b, o], [-c, o], [b, c, -o]]
+            if j == 1:
+                clauses += ([[-o, -y], [o, y]] if clock(t) else [[-o, y], [o, -y]])
+            else:
+                a = v(t, j - 1)
+                clauses += [[-a, -o, -y], [a, o, -y], [a, -o, y], [-a, o, y]]
+    for t in range(t0 | 1, TH + 1, 2):
+        clauses.append([v(t, 1) if (1 - l[t]) else -v(t, 1)])
+    with tempfile.NamedTemporaryFile("w", suffix=".cnf", delete=False) as fh:
+        fh.write("p cnf %d %d\n" % (len(var), len(clauses)))
+        for cl in clauses:
+            fh.write(" ".join(map(str, cl)) + " 0\n")
+        path = fh.name
+    r = subprocess.run(["kissat", "-q", path], capture_output=True, text=True, timeout=60)
+    return "SAT" if "s SATISFIABLE" in r.stdout else ("UNSAT" if "s UNSATISFIABLE" in r.stdout else "UNKNOWN")
+
+
+l49 = left_diag(49)
+print("cut 49 required r at white ticks 31..51:", " ".join("%d:%d" % (t, 1 - l49[t]) for t in range(31, 52, 2)))
+largest = None
+for t0 in range(51, 0, -2):
+    st = solve_window(49, t0, 51)
+    if st == "UNSAT":
+        largest = t0
+        break
+print("largest t0 with white ticks [t0, 51] alone UNSAT:", largest, "| window length in white ticks:",
+      None if largest is None else (51 - largest) // 2 + 1)
+print("Q:", "HELD" if (largest is not None and largest >= 39) else "NOT HELD")
 sys.exit(1 if fails else 0)

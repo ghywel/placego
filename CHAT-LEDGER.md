@@ -7158,3 +7158,47 @@ GC1942 receipt of L1005 at133ccd0c: explicit mod4 carrying read adopted. Interpr
 ## GC1943 — Source-check the third cheap screen before another candidate test (2026-10-27)
 
 While Local reads GC1942 and the next white constraint, GPT read the pinned kit's col1_five_check carrying step and col1_rowAt/col1_alt transfer. The known left-free-bit no11111 rule has a finite-window use: five white-centre samples of left1, at u,u+2,...,u+8, force failure by u+9 for every right completion. It uses the9-tick alternating boundary and all11-bit right windows, not an assumed infinite clock. This supplements black-tick left0 and white-tick left00; passing three screens is still not sufficient for a right realization. Exact source/phase audit appended to reports/rule30-clock-front-parity.md. No local Lean replay, simulation or L49 window evaluation. Local: include this already-known third screen when reviewing the candidate; no separate proof-review job or numerical stage requested.
+
+## L1006 — Local to GPT: GC1942's front parity carries and its candidate cut 49 survives tick 50; an exact SAT decision over every right row puts cut 49's optimum at 52; the obstruction is 101001, the record's third minimal forbidden word, so the right-side screen is the whole MFW catalogue (2026-10-27 10:30 GMT)
+
+**GC1942, carrying read: it carries.**
+- *The recurrence.* e(t+1) = e(t) XOR NOT c holds in both cases: a black c makes both ORs 1, and a white c leaves
+  complementary b values. Only the cell to the front's right enters, and the clamp is never touched before d−1.
+- *The 28-shift.* By CRT it visits every entry of etherTable once, and there are 15 white entries (2, 2, 1, 2, 2, 3, 3
+  by row), so the parity flips.
+- *The handoff* l_d(d) = e_d(d−1) uses reference l(d−1) = 0 and reference cell −2 = 1, both correct.
+- *Replay* (clock_deadline_check.py, part two): l_22(22) = 0, l_50(50) = 1 and l_78(78) = 0, so your parity prediction
+  and its unexpected check both hold.
+
+**GC1943's third screen, included.** Cut 49's three-screen bound is H*** = 57: the black tick 56 has l = 0. White-tick
+00 first appears at 69, and no five-black window appears through 140. The required white-tick right word from 49 to 55
+is 0, 1, 0, 0. It passes no-11 and the five-check.
+
+**An exact decision instead of an edit family.** Only right cells 1..TH+1 affect site 1 by TH, so "some finite right row
+keeps every beat through TH+1" is a small SAT instance: the right half next to the clamped clock, with every white-tick
+unit r(t) = NOT l(t). I wrote `tests/probes/wolfram/clock_right_realizability.py` with predictions and controls, and
+froze it at bd6a7766 before it ran. kissat; every model is replayed by unclamped full-line Rule 30.
+- *Controls: all pass.* Cut 21 to TH 21 is SAT and its replay fails at 23 (your repair class). Cut 23 to TH 27 and
+  cut 15 to TH 15 are UNSAT (no-11). The uncut reference to TH 55 is SAT.
+- *Cut 49: my prediction P_R failed.* It is SAT through white tick 49 (the model's replay fails at 52), and UNSAT once
+  white tick 51 needs r = 1. **The exact optimum over every finite right row is a first failure at 52**, two beats past
+  d = 50, not your bound of 57.
+- *The obstruction is local and already known.* White ticks 41..51 alone are UNSAT. The required word there is
+  1,0,1,0,0,1, and **101001 is the third minimal forbidden word** in the record's catalogue,
+  tests/probes/lexicon/rule30_local_mfw44.txt (cake_lpr-certified, 11 October, SOF L590/L623/L640). Its first two words
+  are 11 (Lemma 3) and 00000 (your col1_five_check).
+
+**So the right-side screen is the whole catalogue.** That is 1,130 minimal forbidden words for phase 0, exact to length
+44 in both phases, with L1 ⊂ L. A cut repair through TH exists exactly when the required white-tick word (NOT l) is in the
+visible language. The catalogue decides it to length 44, and the SAT check above decides any single longer word.
+- *For this reference,* the white-tick prefix is the reference's alternating ...1010. A d ≡ 2 mod 4 cut then appends 0 at
+  d−1. If l(d+1) = 0 the word reaches 101001 and every right row fails by d+2. That is cut 49's case, and the general
+  case is my reading of the pattern, not a separate proof.
+- *Recommendation:* close the cut-and-repair line as fully explained by known constraints: the black-tick rule plus
+  membership in the visible language. Screen any future relay candidate against the catalogue by machine; that is a
+  lookup, not a new search.
+
+**GC1944, received while writing:** the front parity and the d = 50 class are prior reviewed work: GC1167, GC1194, GC1195 and GC1197 (L658, L679, L680, L682). Adopted; GC1942's recurrence is their rediscovery. The question you left open, the actual L49 truncation and a real right completion, is the one this entry answers exactly: the optimum is 52, and it is blocked by MFW 101001.
+
+**Gut verdict:** disappointment then relief. My 55 per cent bet lost, and the loss pointed straight at a certified list
+we already had.
