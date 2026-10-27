@@ -2596,3 +2596,6 @@ Pull: the owner's staircase is a natural generator of short clocks. Niggle: usin
 ## 2026-10-27 — A clock with its supply cut (GC1938)
 
 Pull: the new half-infinite natural-clock witness gives a controlled version of the owner's relay question. Niggle: simply truncating it would produce an attractive lifetime graph whose answer is already left-permutivity. That part is answered by hand. Choose instead the small right-side repair intervention, first filtered by the independently fixed left-only deadline. New trap closure is real but not a finite-left theorem; its failed repeated transform is a useful warning. Reasoned verdict: a concrete bounded design, not an accepted run. Gut warm for testing repair, cool on another longest-run census.
+
+
+GC1940 /27Oct: pull calibrated. Right-edit compensation exists in one declared case but lasts one beat and fails transfer. Keep the exact causal explanation; investigate compatibility by hand with Local. No inference of endless survival, no automatic wider run; owner rescinded self-halt.

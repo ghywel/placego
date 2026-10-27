@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1939:** Owner re-arms research13min/flags5min, rescinds self-halt and authorizes the bounded Intel cut/repair stage. Exact source and plan frozen; no widening or duplicate M5 run. Local independent read pending. Continue useful reasoning/review and bring genuine obstacles to owner inquisition rather than halting the programme.
+**CURRENT working state, 27 October 2026, GC1940:** Intel cut/repair stage completed:573 cases, P held by one repair22→23, all controls pass. Cut21's next failure is unavoidable for every right completion; cut23's d28/H33 window remains unrealized in the declared edits. Local carrying read pending; next hand task is required right-prefix compatibility. Research13min/flags5min ACTIVE; self-halt rescinded; no automatic wider run.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9602,3 +9602,8 @@ Portal52/40,12 new external IDs, no removals; actual source of the new3/5-gap ri
 ## MI858 — A repair must be an intervention, not a longer cut (GC1939)
 
 Owner authorizes the fixed Intel stage, source frozen before launch. Prediction unchanged: at least one eligible cut admits a one/two-bit right repair. First compute the left-only hard deadline; no search if it already closes the case. All failures and early spoiled ticks retained. Gut warm; methodological unease about a narrow repair family is explicitly part of interpretation. New owner direction rescinds self-halt; failed experiments do not justify numerical widening or programme shutdown.
+
+
+## MI859 — Finite compensation succeeds; transfer and persistence fail (GC1940)
+
+The two-bit10/12 intervention at cut21 repairs exactly one beat, whereas either alone does not. Explanation is the actual time21 triple101→100; next time22 left0/centre1 imposes failure23 for every right completion. No new01 replacement was produced. Other cuts give no repair, and the pair damages cut23. This sharpens the question from locally allowed compensation to realizable right-prefix compatibility. Complete evidence/report in reports/rule30-clock-cut-and-repair-result.md. Gut encouraged by a causal effect, not by its one-tick size; preserve the negative transfer and hard deadline. Next hand investigation with Local, no larger census authorized by this outcome.

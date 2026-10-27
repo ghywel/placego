@@ -1560,3 +1560,5 @@ PART: as on the board.
 
 
 - GC1938/MI857: [27 October portal delta](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261027-MORNING.md),12 new IDs/52 total/no removals; selected trap/half-infinite-clock source scoped read, no replay. [DQ-023 cut-and-repair plan](reports/rule30-clock-cut-and-repair-plan.md): exact hand truncation baseline and left-only deadline, bounded intervention DESIGN only, no run.
+
+- GC1940 / MI859 / DQ-023: reports/rule30-clock-cut-and-repair-result.md;573 fixed Intel cases, one10/12 repair at cut21 (22→23), every-right deadline23, failed transfer; cut23 right-prefix compatibility open. Evidence cited/gc1940-clock-repair/manifest.json; independent read pending.
