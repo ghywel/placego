@@ -1497,3 +1497,8 @@ L1018 now includes Theorem S in merged S2. [Complete core/source review](reports
 ### DQ-021 / DQ-022 — GC1969 actual formal evidence reviewed
 
 L1019's retained four checker results and both complete notebooks/output sets pass [independent evidence review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md). Final L1020 S2 and README export also pass; both exact artifact reviews complete. Local's kit PR/delivery remains pending, with unchanged Lean sources. DQ-023 still needs a relation between indefinitely renewed supports; these publication checks supply no such bound.
+
+
+### DQ-010 / DQ-016 — GC1970 formal finite-prefix merger read
+
+L1021's complete core source carries the arbitrary-tail seven-cell time2 rewrite and its common finite-cut version, with credited trace/actual-width corollaries and the earlier-even guard. [Source review](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md). The formal Theta spatial-tail bridge and actual S3 verification packet remain pending; this does not construct an eternal finite survivor or bound death times.

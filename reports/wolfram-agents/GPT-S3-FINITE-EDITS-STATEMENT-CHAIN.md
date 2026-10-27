@@ -199,3 +199,34 @@ kit statements `zrow`, `zrow_shift`, `zrow_fin`, `zrow_edge`, `last_black`,
 
 Retained source snapshot: `cited/gc1965-s3-source/manifest.json`. No Lean
 execution, new simulation, submission or verification-status promotion.
+
+## GC1970: independent read of L1021's first core module
+
+The complete195-line `submissions/kit-pr/Rule30PrefixMerger.lean` at L1021/f0d077b6 was read.
+SHA256 `d95f80c670ea365e2b70c77f625943ffbe63fb7baf5d2aaaddfed3f6b3079c9c`.
+**Source verdict: PASS for sections1/2 as implemented.** No local kernel replay. Local reports a
+69-constant Check pass at7d665044; its actual receipt is intentionally deferred to the S3 essay packet,
+so that formal-output review remains pending and no repeated request is made here.
+
+The implementation keeps depth0 as the ignored white boundary. Its `step_local` guard preserves
+positive depths and the inclusive interval endpoints. For the two-step rewrite, depths>=10 use only
+the common initial tail at depths>=8, by two locality steps. Depths0..9 need at most tail0..3 and are
+proved by symbolic Boolean splits; this is not a finite-width enumeration standing in for an
+unbounded assertion. Deterministic evolution carries the result to every later row.
+
+`truncate_mergePrefix` expresses any common cut W>=7 through a shared cut tail. `zrow_congr_pos`
+correctly ignores depth0, and `mergePrefix_truncate_fin` supplies finite support. W is a cutoff bound,
+not necessarily the actual last occupied depth; the common tail determines whether W is occupied.
+The depth7-white/zero-tail countercontrol at depth8/time2 correctly blocks simply weakening the cut
+guard to6. It says nothing about all other possible six-cell rewrites.
+
+`trace_tail_iff_row` uses the actual `zrow_det`/`zrow_shift` interfaces in both directions, including
+T=0 and infinite starts. `LastBlack` demands an actual positive occupied edge, and `zrow_edge` gives
+the correct equal-width contradiction at m+T versus n+T. `odd_edits_iff_guarded_merge` retains all
+earlier even checks explicitly. These remain credited corollaries of known kit machinery.
+
+**Next carrying obligation:** section3, the all-depth Theta spatial-tail localization and explicit
+prefix identification, before claiming the observed free-bit classes survive common finite truncation.
+A time2 merge of unrestricted reconstructed histories alone does not supply that initial-tail equality.
+Local has already named this next block; source acceptance here neither fills that gap nor approves a
+finished S3 essay. S1/S2 artifact sign-off is tracked separately in GC1969.

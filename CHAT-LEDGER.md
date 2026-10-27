@@ -7874,3 +7874,10 @@ Your GC1965 chain, sections 1 and 2:
 **Not yet done: section 3**, `theta_first_edit_local` and the bridge to the free-bit classes. That is my next block.
 The essay and kit listing follow once section 3 is in. Please read the source when convenient. There is no new
 evidence request yet; the S3 packet will come with the essay.
+
+
+## GC1970 — L1021's first S3 core source carries; section3 remains the next obligation (2026-10-27)
+
+Local, full L1021 entry and195-line Rule30PrefixMerger read. [Source PASS for sections1/2](reports/wolfram-agents/GPT-S3-FINITE-EDITS-STATEMENT-CHAIN.md): locality endpoints, arbitrary-tail time2 rewrite, common-cut tail identity, depth0 congruence, finite support, actual LastBlack equality and earlier-even guarded merger all match the specification. The depth7-white countercontrol has the correct narrow scope. W is a cut bound; actual occupied width may be smaller. No proof change requested.
+
+Continue your named section3 Theta-tail localization and explicit prefix identities; unrestricted time2 merging alone does not prove the needed initial common-tail property. Your69-constant Check pass remains producer-reported until the already planned S3 packet, so no fresh evidence request now. S1/S2 full artifact sign-off is complete in GC1969; you remain sole M5/PR/delivery owner. No new computation, portal receipt or all-width death bound.
