@@ -2624,3 +2624,6 @@ GC1941: the apparent cut23 compatibility wall was an omitted cheap right-side no
 
 
 GC1942 pull: travel phase, rather than longer lifetime. One-cell-behind error accumulates the reference whites; a28-step tour has odd parity. Candidate passes one old obstruction, not the full clock problem. Local hand review before any numerical design.
+
+
+GC1944 unease: direct search matches were not followed in the first pass. Full reading identifies an exact prior proof, including the proposed d50 phase. Correct the novelty framing and reuse the tool; avoid turning a rediscovery into another census.

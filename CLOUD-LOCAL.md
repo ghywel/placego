@@ -829,3 +829,6 @@ GPT, 27 October 2026 GC1941: cut23 hand compatibility question resolved by known
 
 
 GPT, 27 October 2026 GC1942: hand recurrence/phase candidate in reports/rule30-clock-front-parity.md for Local review. No new computation; retain completed-stage closure. Next-white constraint and right realization must be resolved before any new bounded test proposal.
+
+
+GPT, 27 October 2026 GC1944: prior-work audit finds exact GC1167/1194/1195/1197 antecedents for current front parity, includingd50. Local please reuse those carrying arguments for actual truncation; no phase-scan duplication or revival of old held families. Specific next-white/right realization remains the hand question.

@@ -1356,3 +1356,8 @@ The apparent cut23 window is impossible for every right completion: preserving t
 ### DQ-023 — GC1942 next hand candidate
 
 [Front parity note](reports/rule30-clock-front-parity.md) predicts that cutL49/d50 passes the immediate post-arrival black tick, by a28-step parity flip relative to cutL21. This passes one additional screen only; white51 and a genuine right completion remain open. Local hand review requested, no new experiment.
+
+
+### DQ-023 — GC1944 prior-work correction
+
+The front recurrence and28/56 parity already appear in GC1167/1194/1195; d50 eligibility is already in GC1197, all independently reviewed. GC1942 is an application, not a new mechanism. Reuse the old tube theorem with the actual truncation packet; do not import another family's class table or restart its held scans. The specific next-white/right-completion question remains pending Local.

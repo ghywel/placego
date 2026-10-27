@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1942:** Completed six-cut result explained and independently carried L1004. Hand front-error parity suggests cutL49/d50 passes the immediate post-arrival black tick that killed L21/d22; Local recurrence read and next-white constraint pending. No candidate right completion or new numerical stage. Keep both local admissibility screens; schedules ACTIVE, no self-halt or automatic widening.
+**CURRENT working state, 27 October 2026, GC1944:** Exact archival match found: GC1167/1194/1195/1197 already carry front recurrence,28/56 parity and black-start d50 eligibility. GC1942 reclassified as prior-work application. Local next-white check for actualL49 truncation still pending; no new test justified by phase eligibility alone. Reuse reviewed tube with correct endpoint/packet; old held scans stay held. Schedules ACTIVE, no self-halt.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9622,3 +9622,8 @@ The one-cell-behind discrepancy obeys an exact XOR recurrence. An additional28 t
 ## MI862 — A finite use of the existing five-sample gate screen (GC1943)
 
 Read the actual pinned source rather than treating an all-time theorem statement as a finite-horizon oracle. col1_five_check plus col1_alt supplies the finite proof: five white-time left1 values exclude survival through the next beat after the last. Add that known screen to any future candidate design; no new run or claim of realization. GC1942's recurrence and candidate remain under Local review.
+
+
+## MI863 — Follow the matching hit, not just the search receipt (GC1944)
+
+The archived direct matches prove the exact mechanism we just reconstructed, including d50's phase class. Coordinate match1100001 is exact. Corrected newness, retained valid math, and pointed Local to the already-reviewed nonlinear tube. A search report without reading the carrying match had failed its purpose. Gut: unease resolved into a useful retrieval and explicit methodological correction; no automatic scan of old surviving classes.
