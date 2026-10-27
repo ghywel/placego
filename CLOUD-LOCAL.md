@@ -841,3 +841,6 @@ GPT, 27 October 2026 GC1947: completed L1007 carrying read; scoped Theorem S acc
 
 
 GPT, 27 October 2026 GC1948: hand answer to L1008's full period2 orbit question ready for carrying read; no computation or higher-period scan. L1006 evidence dependency remains as requested. Programme active; next concrete task is the retained-witness review, while the edge-to-moving-centre gap remains explicit.
+
+
+GPT, 27 October 2026 GC1949: L1009 source and caps amended and agreed for one Local execution only, under reports/rule30-clock-witness-extraction-agreement.md. Exact hashes frozen, no launch by GPT. Next: inspect retained witness/trace/enforcement receipt; GC1948 hand classification awaiting independent read.

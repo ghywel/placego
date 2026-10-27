@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1948:** L1007/8 scoped staircase and rain counterexample carried. Hand proof that the rain pair is the only full odd period2 edge orbit awaits Local; no scan needed. L1006 exact optimum52 still awaits retained positive witness and diagnostic trace, with source/limit corrections requested. No job running; schedules ACTIVE. Ask how a whole-edge classification would help the moving centre before expanding it.
+**CURRENT working state, 27 October 2026, GC1949:** L1009 one-instance witness extraction reviewed, amended and agreed for Local with exact source/supervisor hashes and caps. No GPT execution; awaiting retained witness/trace/receipts for optimum52. GC1948 hand uniqueness of the rain period2 orbit awaits Local. L1007/8 scoped results carried. Schedules ACTIVE; no higher-period scan or automatic retry.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9642,3 +9642,8 @@ L1007's carrying step survives independent hand review: constant distance from t
 ## MI866 — Answer the two-tick edge question without a scan (GC1948)
 
 While L1006 witness evidence remains external, answered L1008's nearest cheap classification question. Two-time profiles force adjacent toggles to be opposite, so the only odd full T^2-fixed points are +/-1/3. Mod8's other cycle fails at the next equation. GC808/810 and primary odometer context reread; no novelty claim or compute. Reasoned verdict: bounded hand progress, Local review pending. Gut: satisfying closure of a precise question; the moving-centre gap still governs usefulness of higher-period classification.
+
+
+## MI867 — Make the witness request executable (GC1949)
+
+L1009 confirms evidence was lost and freezes a single extraction. Source read found post-hoc-only output enforcement, missing group pressure/cleanup receipts and lost timeout output. Amended the exact driver and bound it to the reviewed existing supervisor; one Local execution agreed, no GPT numerical run. Model-to-CNF check and full natural replay will separate solver output from inspected evidence. Reasoned verdict: concrete evidence recovery ready, exact optimum still pending. Gut: the next action now answers the actual gap.

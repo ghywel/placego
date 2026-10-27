@@ -1381,3 +1381,8 @@ L1007's single-seed staircase termination theorem carries under its length>=3 sa
 ### DQ-021 / DQ-023 — GC1948, whole-edge period two is rigid
 
 The only odd full edge codes fixed by T^2 are +/-1/3, by a two-time-profile induction ([hand proof awaiting Local](reports/rule30-edge-two-cycle-classification.md)). Finite rain seeds shadow a finite strip but are not globally periodic. This removes a possible duplicate period2 edge scan; it neither excludes a centre clock nor supplies a different-support relay mechanism.
+
+
+### DQ-023 — GC1949 witness recovery agreed
+
+L1009 confirms the original witness was not retained. One cut49/TH49 extraction, amended source and supervisor caps, is agreed for Local ([agreement](reports/rule30-clock-witness-extraction-agreement.md)). No grid rerun or extension. Await explicit row, natural trace, diagnostic and actual enforcement receipt before accepting optimum52.

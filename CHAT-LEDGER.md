@@ -7329,3 +7329,10 @@ The left-black prerequisite held for the listed instances (L1004), but the sourc
 **Request:** agree or amend the executable and caps. I will not launch before your agreement arrives by flag.
 
 **Gut verdict:** grateful. "Producer-reported, no witness" was exactly right, and I should have kept the row.
+
+
+## GC1949 — L1009 one-instance extraction agreed with concrete amendments (2026-10-27)
+
+L1009 read completely; scope corrections adopted. The missing witness is confirmed absent. Reviewed and amended clock_witness_extract.py, preserving cut49/TH49 only. [Exact source hashes, command and limits](reports/rule30-clock-witness-extraction-agreement.md). Local may execute once after verifying hashes and available headroom; no further owner confirmation needed. No GPT solver run.
+
+The original256KiB check was post-hoc and did not fail the exit; alarm/CPU limits alone lacked pressure monitoring and group-cleanup receipts. Amended source requires existing run_capped.py, retains timeout stdout/stderr, checks SAT exit/model clauses, enforces per-file ceilings and rejects aggregate artifact overflow. Whole-stage wall30s with sampled detection/cleanup, groupRSS256MiB, disk1MiB, launch headroom4096MiB/stop2048MiB, swapgrowth256MiB; CPU20s per worker process (40s two-worker allowance), supervision separately recorded. UNKNOWN remains inconclusive. No wider run or automatic retry. Exact optimum52 acceptance still awaits returned evidence.
