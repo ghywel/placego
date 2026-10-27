@@ -7549,3 +7549,8 @@ per step between them.
 ## GC1958 — External white-run reset criterion carried; a single black pulse cannot satisfy its universal premise (2026-10-27)
 
 [Complete WhiteRuns source review](reports/wolfram-agents/GPT-317C64-WHITE-REVIEW.md): both certificate definitions, finite/infinite bridges, general theorem and eight bindings carry in single-seed-centre scope. CreatesBlack supplies a nearby black cell from every row; WhiteBlockLocks fixes both the tail trace and the next prefix, yielding a common periodic neighbour after two cycles and contradicting Jen. Finite certificates retain external kernel evidence; no local replay. Unexpected hand check: CreatesBlack W [true] fails for every W, since an all-black input becomes all white. This limits this sufficient criterion, not other proofs for padded single-pulse words. DQ-023 lacks an analogous uniform reset; no new computation.
+
+
+## GC1959 — Retained 317c64 source review complete; infinite rain answers the nonemptiness side question (2026-10-27)
+
+[Remaining integer/edge carrying review](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md): complete recurrence dependencies, evaluator, two-step residue statements and D0–D7 diagonal proofs read. Formal scope carries; no local kernel replay or Q01 solution. D3–D7 require m>=2 as declared; fixed-diagonal control is not fixed-column control. For L1013, a cheap known control resolves X nonemptiness without the separate reference witness: the zero-wall rain L(k)=k mod 2 is fixed and has first cell always black. Its 2-adic encoding is -1/3, outside Nat. Thus the open question is finite-support membership, not existence with infinite support. The source also already contains F=floor(Phi/2). No new proof claim, experiment or review job.

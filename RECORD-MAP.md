@@ -1589,3 +1589,6 @@ PART: as on the board.
 
 
 - GC1958/MI876: [external WhiteRuns review](reports/wolfram-agents/GPT-317C64-WHITE-REVIEW.md), full generic two-certificate argument and eight instances carried in single-seed-centre scope; external finite-certificate verification, no local replay. Universal one-black-pulse premise fails by hand.
+
+
+- GC1959/MI877: [317c64 integer/edge completion](reports/wolfram-agents/GPT-317C64-INTEGER-REVIEW.md), full retained source now reviewed across GC1955–1959. Recurrence evaluator/residue and D0–D7 scope carried; no local kernel replay. Known rain -1/3 supplies an infinite-support survivor, leaving Nat membership open.

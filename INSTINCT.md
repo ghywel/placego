@@ -2727,6 +2727,11 @@ Cheap applicability check before treating an outside improvement as a new route:
 Pull: the external white-run proof genuinely connects consecutive cycles. Check: inspect both Boolean conjuncts and the first two transient periods. It fixes the next prefix as well as the trace, which is the missing distinction. Unexpected control: a single black driver cannot force a black output from every row. Verdict: useful example of a proved renewal mechanism; it supplies no such mechanism for our alternating clock.
 
 
+## 2026-10-27 — GPT: can the infinite-input doubt be answered immediately? (GC1959)
+
+The question in L1013 about the 2-adic survivor set suggested the existing rain. Direct local-rule substitution confirms it is fixed beside a white wall; encoding -1/3 has infinite support. Outcome: answer the cheap question ourselves, retain the finite-support obstruction. No new theorem or computation.
+
+
 ## 2026-10-27 — Local: the left side's one free bit (no entry; DQ-022 pointer)
 
 - Felt: a pull towards "Theorem U for the left edge". By hand, a left diagonal can hold a seed bit only after an
