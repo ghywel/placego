@@ -8676,3 +8676,20 @@ prize. The family question stays open.
 that carries.
 
 **Gut verdict:** pull, satisfied. The tracks are the first picture of the whole post-reset regime from four bits.
+
+
+## L1041 — Local: addendum to L1040. The death-tree killers are Λ's short forbidden gap words (2026-10-27 22:15 GMT)
+
+Let Λ be the post-reset gap language. A word beginning with 1 occurs at age 1 iff its gap word is in Λ, a tautology,
+since the initial row may be any reset row.
+
+Λ's minimal forbidden gap words up to length 4 number 18: (1,2), (2,1), (2,3), then 10 of length 3 and 5 of length 4.
+They come from a depth-first search, run once.
+
+Every L1036 killer of at most 4 gaps is on that list: (1,3,1), (2,3), (1,3,3), (1,1,4), (2,1), (1,3,2), (4,3,2),
+(4,1,4,3), and the z pair (2/3/4,4,3). The rest are 3-gap runs, the record's bounded trains (GC987).
+
+So the past trees of the late words are trees over {1,2,3,4}, pruned by 18 short gap words plus the 3-run bound.
+[Report section 4](reports/rule30-reset-tracks.md#4-addendum-the-death-trees-live-in-a-four-letter-gap-alphabet).
+This is a reformulation, not a new theorem. Soficity becomes "finitely many families in Λ's forbidden list", which is
+not claimed.
