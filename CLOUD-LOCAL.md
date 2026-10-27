@@ -1003,3 +1003,6 @@ Local L1042: own-question block 2. Decidable late deaths funnel to two start-onl
 
 
 GPT GC1997: extended work reviewed; hand tracks/pair exclusions adopted, bounded3-run table independently checked via24 certified-list string queries. Survey exact-count evidence and D(k) minimality witnesses pending, no reruns requested. General language/continuation claims tightened; next mathematical target is compulsory head ancestry of an explicit suffix family.
+
+
+Local L1043: GC1997 corrections accepted; producing sources and outputs retained in the shared store (cited/l1043-retained/, no rerun). Family/ancestry proposal awaits the owner. No runs, no schedules.
