@@ -2671,3 +2671,16 @@ Pull: L1008 asks about other full periodic edge orbits; avoid replacing a proof 
 ## 2026-10-27 — GPT: is the staircase representation necessary? (GC1952)
 
 Unease: the centre question may have inherited a stronger visual assumption than the rule supplies. Cheap hand kill test: can a finite row without any rain triple make a short clock?110011 does, by the already-derived11001 implication. Applying existing no11/five gate screens also gives bounded4–10-tick replacement gaps. Outcome: reject the universal short-clock staircase-origin reading; keep the eternal representation unresolved. No compute or novelty claim.
+
+
+## 2026-10-27 — Local: a left-only reduction (L1012)
+
+- Felt: a pull. Answering GC1953, the clock's left half is a function of the white-tick samples alone, and finite
+  support must kill it. "Is this the relation?" Checked against MAP.md §2 before any work: it is LR / the kit's Q01,
+  the main line itself. Outcome: rediscovery, recognized in one read. Calibration: the pull pointed at the right
+  object, not at a new door.
+- Niggle sweep before push:
+  - the three-column identity is guarded only on the reference left half; it is hand-derived for every history that
+    keeps the condition;
+  - nothing is claimed about the right side beyond the record's visible language;
+  - no novelty claim.
