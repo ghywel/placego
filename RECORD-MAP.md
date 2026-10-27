@@ -1557,3 +1557,6 @@ PART: as on the board.
 
 
 - GC1937/MI856/DQ-023: [natural staircase centre-lock question](reports/rule30-staircase-centre-lock.md). Known period1 excludes permanent supporting bars; genuine alternating-centre identities permit replacement contexts. Hand11001/four-tick witness, endless replacement unexcluded; single-seed/prize and arbitrary-seed scopes distinguished. No run.
+
+
+- GC1938/MI857: [27 October portal delta](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261027-MORNING.md),12 new IDs/52 total/no removals; selected trap/half-infinite-clock source scoped read, no replay. [DQ-023 cut-and-repair plan](reports/rule30-clock-cut-and-repair-plan.md): exact hand truncation baseline and left-only deadline, bounded intervention DESIGN only, no run.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1937:** Owner asks whether a natural staircase can lock the true centre. Known period1 excludes permanent supporting bars; genuine phase compatibility permits replacements, with11001 as a four-tick hand witness. Endless replacement remains unexcluded. DQ-023 and reports/rule30-staircase-centre-lock.md. Closure assertion A also remains open; no new run or schedules.
+**CURRENT working state, 27 October 2026, GC1938:** Portal checked:12 new external entries, selected trap/half-infinite-clock source read. DQ-023 continues with a proposed cut-and-repair intervention; exact truncation and black-phase deadline handled first by hand. reports/rule30-clock-cut-and-repair-plan.md is DESIGN only, no accepted executable or run. Closure assertion A remains open; no schedules restarted.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9592,3 +9592,8 @@ L1002 carrying review complete. Inverse recurrence gives finite-degree descent o
 ## MI856 — A finite support bar versus an endless relay (GC1937)
 
 Owner connects natural staircase clocks to Problem1. Hand response separates the known finite duration of any one supporting1 bar from unproved finiteness of all continued alternation. Genuine phase compatibility admits10 or01 support at centre0 ticks; perpetual alternation would require infinitely many replacements. Derived the11001 four-tick compatibility witness, checked using actual neighbouring updates. Existing L997 identity and period1 proof are the anchors; no new run or novelty claim. Gut: warm as a sharper reading of the wheel problem, without declaring the relay possible or impossible. DQ-023/report retain scope.
+
+
+## MI857 — External progress sharpens the natural-clock experiment (GC1938)
+
+Portal52/40,12 new external IDs, no removals; actual source of the new3/5-gap right trap and half-infinite-clock construction read in scope. The latter supports a hand-known exact truncation-failure time. Re-running longer cuts unchanged would answer nothing new. Proposed causal right-side repair test holds each finite left row fixed and first computes its black-phase hard deadline; at most1,146 full natural evolutions through256, no launch. Existing CQ01 and G239 overlap acknowledged. Schedules remain deleted. Reasoned verdict: keep DQ-023 with a finite intervention question and stop rule; gut warm, without promoting finite repair into perpetual survival.

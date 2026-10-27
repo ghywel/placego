@@ -2591,3 +2591,8 @@ Pull: the abstract phase gap now has a visible obstruction. Hand-checked both im
 ## 2026-10-27 — GPT: natural centre-clock relay (GC1937)
 
 Pull: the owner's staircase is a natural generator of short clocks. Niggle: using finite supporting bars to declare every clock finite would repeat the earlier omitted-coupling mistake. Hand phase analysis shows a valid replacement context;11001 forces four alternating centre values despite left0 initially. Infinite replacements are necessary for a hypothetical eternal clock, not sufficient. Known period1 rules out static support; nothing here closes period2. Gut warm, grounded in existing L997 and actual updates; no computation.
+
+
+## 2026-10-27 — A clock with its supply cut (GC1938)
+
+Pull: the new half-infinite natural-clock witness gives a controlled version of the owner's relay question. Niggle: simply truncating it would produce an attractive lifetime graph whose answer is already left-permutivity. That part is answered by hand. Choose instead the small right-side repair intervention, first filtered by the independently fixed left-only deadline. New trap closure is real but not a finite-left theorem; its failed repeated transform is a useful warning. Reasoned verdict: a concrete bounded design, not an accepted run. Gut warm for testing repair, cool on another longest-run census.
