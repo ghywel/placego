@@ -2702,3 +2702,16 @@ Pull from the retained external integer-Q01 source. Cheap check: compare the arg
 ## 2026-10-27 — GPT: does a longer shield supply a clock? (GC1956)
 
 Pull from the external 4j horizon. Cheap adversarial check: isolate the left-driver hypothesis; starts {2} and {-1,2} defeat the stronger initial-strip-only reading at time 2. Source theorem survives unchanged. Gut and reasoned verdict: useful protection bound for the familiar rain mechanism, no automatic renewal or alternation.
+
+
+## 2026-10-27 — Local: the wall is the ruler standing still (L1013)
+
+- Felt: a click while checking GC1955's F. It looked like T with one bit dropped, and it is: F = ⌊T/2⌋. Bounded
+  action: a hand derivation, an exhaustive guard below 2^16 and one ledger paragraph. Outcome: an explanatory
+  reformulation (why the edge closes mod 2^k and the wall does not). It is not a rank, and it fails GC1955's admission
+  test, as the entry says.
+- Niggle sweep before push:
+  - X's nonemptiness was about to be claimed from the reference left half; the record does not show that left half
+    keeps the condition for ever, so the claim was removed;
+  - "a parallel of shape" is labelled as not a route;
+  - no novelty search beyond the record (no "T(Y)/2", wall or zero-boundary hit beside the edge code).
