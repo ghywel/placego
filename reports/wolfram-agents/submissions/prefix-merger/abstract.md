@@ -1,0 +1,7 @@
+For the kit's zero-boundary left half (`Rule30ZeroBoundary.zrow`), consider the starts $1100011\,\tau$ and $1010101\,\tau$, read from the wall outward, with the same arbitrary tail $\tau$ from depth $8$ on. We prove that their rows are equal at time $2$ (`mergePrefix_two`) and so at every later time (`mergePrefix_future`). The same holds for their truncations at any common depth $W \ge 7$ (`mergePrefix_truncate`), which are finitely supported. The depth-$7$ cell is needed: with it white and a white tail, the truncations at depth $6$ do not merge (`mergePrefix_needs_seven`).
+
+Inside the kit's reconstruction `Theta`, take free-bit sequences $f$, $g$ that agree from index $1$ on, with $f_1 = f_2 = 1$. Then $\Theta f$ reads this prefix with $a = f_0$ (`theta_prefix`). $\Theta f$ and $\Theta g$ agree at every depth $k \ge 7$ (`theta_first_edit_local`), and their truncations at every $W \ge 7$ merge at time $2$ (`theta_truncate_merge`). The kit's `two_step_shift` already merges the untruncated $\Theta f$ and $\Theta g$; what is added is the localization, which survives a common finite cut.
+
+Two reading lemmas are included. Merged rows have the same last black depth, by the kit's `zrow_edge` (`merge_preserves_last_black`). A merger together with the earlier even observations is equivalent to agreement at every even time (`odd_edits_iff_guarded_merge`).
+
+Not claimed: a death-time bound, any decision of `Q01`, or anything about the center column.
