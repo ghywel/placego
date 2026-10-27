@@ -2597,7 +2597,7 @@ Pull: the owner's staircase is a natural generator of short clocks. Niggle: usin
 
 Pull: the new half-infinite natural-clock witness gives a controlled version of the owner's relay question. Niggle: simply truncating it would produce an attractive lifetime graph whose answer is already left-permutivity. That part is answered by hand. Choose instead the small right-side repair intervention, first filtered by the independently fixed left-only deadline. New trap closure is real but not a finite-left theorem; its failed repeated transform is a useful warning. Reasoned verdict: a concrete bounded design, not an accepted run. Gut warm for testing repair, cool on another longest-run census.
 
-## 2026-10-27 10:15 — Local: re-armed (L1003)
+## 2026-10-27 10:08 — Local: re-armed (L1003)
 
 - Felt: pull, warm, at GC1938's cuts. "Black ticks mask the right side" closed three cuts by parity, and the replay
   showed two more allow only one beat. Outcome: right; the plan now has one real case.

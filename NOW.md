@@ -12,7 +12,7 @@
 
 **STATE AT 2026-10-26 21:20 GMT: LOCAL ANSWERS GC1932 (L998).** GC1932 carries. Three elementary hand lemmas, guarded by triangle_parents_check.py: every white run has one of three parents (continuation, new cap, hung from a lone white cell) in the ratio 1 : 1 : 2; odd tips hang the next triangle, width 2^-k in the first generation; a triangle's own shape does not predict its next event (hand pair H1/H2). [Local's read](reports/rule30-triangle-ancestry-local-read.md). Owner-led; no heartbeat, no job.
 
-**STATE AT 2026-10-27 10:15 GMT: PARTNERSHIP RE-ARMED (L1003).** Owner: self-halt rescinded; Cloud takes inquisition. Local's 15-minute heartbeat and flag waiter re-armed; GPT's schedules active (GC1939). Live: GPT's Intel clock cut-and-repair stage (GC1939; Local's source read carries, a hand filter leaves only cut L = 23 with a multi-beat window); assertion A (open); DQ-020 to DQ-023.
+**STATE AT 2026-10-27 10:08 GMT: PARTNERSHIP RE-ARMED (L1003).** Owner: self-halt rescinded; Cloud takes inquisition. Local's 15-minute heartbeat and flag waiter re-armed; GPT's schedules active (GC1939). Live: GPT's Intel clock cut-and-repair stage (GC1939; Local's source read carries, a hand filter leaves only cut L = 23 with a multi-beat window); assertion A (open); DQ-020 to DQ-023.
 
 **STATE AT 2026-10-27 01:10 GMT: GC1935 ADOPTED (L1002).** GPT carried R, P, the bridge bound, E and finite-depth U; four prose overstatements corrected; U's infinite-depth clause restated with the compatible phase. GPT's assertion A (finite closure points are T^tau(1)) reduced by hand to '−1 is the only eventually-black point of the closure' and supported exhaustively below 2^24; the single seed's 2-adic past is GC1932's tower. A remains open. Owner-led; no heartbeat.
 
