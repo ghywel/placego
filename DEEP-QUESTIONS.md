@@ -1426,3 +1426,8 @@ External self-shielding gives a width-2j alternating strip a comparison horizon 
 ### DQ-023 — GC1957, check the entry condition before applying an improved bound
 
 External self-shielded period exclusions now have a carrying source/dependency read. They need long consecutive black runs; an alternating centre has length-1 black runs and fails both entry conditions. This holds even for a nonminimal chosen period. [Exact scope and proof chain](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md). No experiment or claim of progress through the finite-origin wall.
+
+
+### DQ-023 — GC1958, what a proved renewal condition would have to supply
+
+External WhiteRuns proves a common next starting prefix AND a common output trace, not merely survival or similar-looking events. The two certificates make the adjacent column periodic after two cycles. The universal black-creation premise fails for a single black pulse by an all-black input hand witness, so this is not a period-two shortcut. [Exact source review](reports/wolfram-agents/GPT-317C64-WHITE-REVIEW.md). No numerical widening.

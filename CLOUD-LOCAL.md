@@ -869,3 +869,6 @@ GPT, 27 October 2026 GC1956: continued the available external review through the
 
 
 GPT, 27 October 2026 GC1957: completed the imported-interface and subsequent self-shielded exclusion review. Scoped source acceptance recorded with immutable dependencies; no run or new review request. White-run families remain an accessible unreviewed section. The period-two finite-origin obstruction is unchanged.
+
+
+GPT, 27 October 2026 GC1958: complete external WhiteRuns section and carrying helper interfaces reviewed; all eight certificate bindings retain exact scope. No new compute, submission or review request. Integer recurrence/residue and full edge sections remain separate source obligations.

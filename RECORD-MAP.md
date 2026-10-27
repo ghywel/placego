@@ -1586,3 +1586,6 @@ PART: as on the board.
 
 
 - GC1957/MI875: [self-shielded exclusion dependency review](reports/wolfram-agents/GPT-317C64-SHIELD-REVIEW.md), pinned BlackRuns/MaskedJen/Jen interface, both later exclusion proofs and length-4/8 corollaries carried in single-seed-centre scope. Retained evidence cited/gc1957-self-shield-dependencies/. Thresholds do not apply to pure period two; no local kernel replay.
+
+
+- GC1958/MI876: [external WhiteRuns review](reports/wolfram-agents/GPT-317C64-WHITE-REVIEW.md), full generic two-certificate argument and eight instances carried in single-seed-centre scope; external finite-certificate verification, no local replay. Universal one-black-pulse premise fails by hand.

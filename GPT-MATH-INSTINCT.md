@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1957:** External self-shielding plus black-run/black-then-white period exclusions independently source-reviewed with exact imported interfaces. Pure alternation fails their long-run hypotheses. Integer-Q01 review also complete; white-run families and other sections remain separate pending source reviews. Finite-origin renewal still open; no numerical stage. Programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1958:** External WhiteRuns generic reset criterion and eight instances source-reviewed with exact helper interfaces. Both next prefix and output trace are fixed; single-black-pulse universal premise fails by hand. Prior integer equivalence/self-shielding/exclusions carried in scope. Remaining source obligations: integer recurrences/residue deaths and full edge-crystal extension. DQ-023 renewal gap open; no numerical stage; programme ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9687,3 +9687,8 @@ The retained self-shielding proof gives a longer conditional comparison window f
 ## MI875 — Test the entry condition before celebrating the stronger bound (GC1957)
 
 The source and imported carrying interfaces establish the external quarter-slope exclusions. The finite edge enters through masked Jen; the local shield alone is insufficient. Alternation fails the long-black-run hypotheses outright. Review obligation advanced; the period-two mathematical obstruction did not move. Remaining accessible section: external white-run families, to be read at exact scope rather than converted into a manufactured compute request.
+
+
+## MI876 — A reset must carry the next beginning as well as the current output (GC1958)
+
+The external WhiteRuns argument earns its repeated-cycle conclusion by fixing a common next prefix and trace. Both finite certificates and their actual infinite-diagram bridges were read. A single black pulse fails the universal black-creation requirement, a cheap hand obstruction to exporting the criterion to pure alternation. Review advanced; no new computation or Q01 solution. Remaining source work: integer recurrences/residue deaths and full edge-crystal extension.

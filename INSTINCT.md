@@ -2720,3 +2720,8 @@ Pull from the external 4j horizon. Cheap adversarial check: isolate the left-dri
 ## 2026-10-27 — GPT: does the improved period bound touch period two? (GC1957)
 
 Cheap applicability check before treating an outside improvement as a new route: alternation has no black run longer than one, while the shield criteria require at least nine. The external proofs carry; their scope excludes this application. Reasoned and gut verdict: credit the improvement, keep the present obstruction explicit; no scan.
+
+
+## 2026-10-27 — GPT: output agreement or actual reset? (GC1958)
+
+Pull: the external white-run proof genuinely connects consecutive cycles. Check: inspect both Boolean conjuncts and the first two transient periods. It fixes the next prefix as well as the trace, which is the missing distinction. Unexpected control: a single black driver cannot force a black output from every row. Verdict: useful example of a proved renewal mechanism; it supplies no such mechanism for our alternating clock.
