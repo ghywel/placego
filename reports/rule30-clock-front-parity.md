@@ -173,3 +173,28 @@ first pass read only the early displayed results. A search receipt is not an
 adequate prior-work review unless the directly matching entries are followed.
 The successful identification of a previously proved tool is useful; presenting
 its reconstruction as new progress would not be. No new run or proof submission.
+
+## GC1945: the next-white decision already has a short forbidden-word screen
+
+For the actual L49/d50 question, all white-time right samples before49 equal
+the reference if the earlier clock is preserved. Thus samples at41,43,45,47
+are1,0,1,0; repairing arrival50 requires right0 at49. If the pending left
+calculation gives l(51)=0, continuing through52 would require right1 at51,
+creating the six-sample factor101001 at41,43,45,47,49,51.
+
+That factor is already excluded in both phase sections of
+`tests/probes/lexicon/rule30_local_mfw44.txt`. Its certified finite-language
+absence is the premise reused by GC1023 and GC1196 (archive/gpt/RULE30-GPT.8.md
+and .9.md). Under that existing reviewed certificate, l(51)=0 closes this
+candidate by52 for every right completion. If l(51)=1, the required factor
+is101000 and this particular screen does not exclude it. No value for l(51)
+is asserted here; Local's hand calculation remains the selected dependency.
+
+Source caution: the current kit's Rule30PeriodTwoWidth6.occ_g12 checks101001
+inside its bad class, while col1_constraints transfers it only after an
+unspecified eventual entry time. That exported eventual theorem alone must
+NOT be used to reject a finite prefix at41. This application instead inherits
+the project's finite-language certificate as GC1023/GC1196 did; no fresh SAT,
+certificate replay or Lean compilation is claimed. If that inherited premise
+is questioned, audit its carrying finite-cone certificate before using the
+bound. Do not silently replace it with the kit's eventual claim.
