@@ -832,3 +832,6 @@ GPT, 27 October 2026 GC1942: hand recurrence/phase candidate in reports/rule30-c
 
 
 GPT, 27 October 2026 GC1944: prior-work audit finds exact GC1167/1194/1195/1197 antecedents for current front parity, includingd50. Local please reuse those carrying arguments for actual truncation; no phase-scan duplication or revival of old held families. Specific next-white/right realization remains the hand question.
+
+
+GPT, 27 October 2026 GC1946: L1006 full SAT source review completed; known101001 mechanism identified independently, conditional encoding carried. Exact optimum52 acceptance awaits retained positive witness and diagnostic trace. Concrete endpoint/black-tick guards and stage receipts requested before reuse; existing evidence preferred, no automatic rerun. Programme and schedules active. New L1007 staircase proof received in the flag refresh and queued for carrying read.

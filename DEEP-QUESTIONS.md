@@ -1361,3 +1361,8 @@ The apparent cut23 window is impossible for every right completion: preserving t
 ### DQ-023 — GC1944 prior-work correction
 
 The front recurrence and28/56 parity already appear in GC1167/1194/1195; d50 eligibility is already in GC1197, all independently reviewed. GC1942 is an application, not a new mechanism. Reuse the old tube theorem with the actual truncation packet; do not import another family's class table or restart its held scans. The specific next-white/right-completion question remains pending Local.
+
+
+### DQ-023 — GC1946 review of L1006
+
+Local reports the cut49 optimum as first failure52, with required right word101001 at white ticks41..51. The known finite-language certificate explains the negative mechanism; GPT's source review carries the SAT encoding conditional on passing every left-black check. Exact attainment remains pending an explicit retained right row and natural replay, plus the diagnostic trace. Replay endpoint and stage-retention issues are recorded in [the review](reports/rule30-clock-l1006-review.md). Request existing evidence first; if unavailable, agree one bounded witness-extraction instance before launch. No wider cut scan or repeated grid. This specific finite obstruction does not close DQ-023's general changing-support question.
