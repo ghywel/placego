@@ -1566,3 +1566,5 @@ PART: as on the board.
 - GC1941 /MI860: reports/rule30-clock-repair-right-obstruction.md applies known Lemma3 no11 to exclude all right completions for cut15/23 beyond d; reference-cut repairs require d=2 mod4. Hand application awaiting Local; no new experiment.
 
 - GC1942 /MI861 /DQ-023: reports/rule30-clock-front-parity.md; hand e-next=e XOR NOT reference-right recurrence,28-phase odd-white parity, candidateL49/d50 immediate-black survival. Single-party application pending Local; right realizability open; no run.
+
+- GC1944 corrects GC1942 novelty: exact prior recurrence GC1167, phase flip GC1194, nonlinear tube GC1195, black-start d50 class GC1197 (all archive/gpt/RULE30-GPT.9.md; independently reviewed). reports/rule30-clock-front-parity.md records coordinate match and scope. No new run.

@@ -127,3 +127,49 @@ Pinned sources read (not locally Lean-replayed):
   col1/col1_rowAt/col1_alt, lines93–155.
 - Rule30PeriodTwoCoupled definitions and ether bridge were read for phase and
   finite-support scope. Known constraints, no novelty or new experiment.
+
+## GC1944 archival correction: this machinery and candidate were already known
+
+A deeper read of the record-search hits found the exact antecedents, not merely
+similar front arguments. GC1167 (13 October, independently carried L658) already
+proved the one-cell-behind defect recurrence and its clamped endpoint.
+GC1194/L679 already derived the28-step parity flip/56-step repetition on this
+seven-ring ether. GC1195/L680 extends it to a finite nonlinear discrepancy tube.
+GC1197/L682 already gives the allowed black-start arrival residues14,30,50
+modulo56 for the same reference. Consequently GC1942's recurrence and d50
+candidate are rediscoveries/applications of reviewed work, not fresh mechanisms.
+The sentence above calling the scoped recurrence new here is superseded.
+
+The coordinate match is exact: GC1197's black-start row A^1 is depth-first
+1100001 repeated. That is precisely our depth d black iff d mod7 in0,1,2.
+Its reference orbit R_(t+3 mod4)[−d mod7] has the same clock and initial row
+as the ether used here. The two rule evolutions therefore coincide on the
+left under the identical boundary. Its first-departure ell is our d; no
+terminal-grammar conversion is needed for GC1197's general band statement.
+
+Read complete archived entries GC1167, GC1194–GC1197 in
+archive/gpt/RULE30-GPT.9.md. The finite-tube recurrence is:
+
+    delta_s(next) = delta_s XOR
+       ((a XOR delta_(s−1)) OR (b XOR delta_(s−2))) XOR (a OR b),
+
+with delta0=1, delta_−1=delta_−2=0, reference a,b at the two sites ahead.
+Each fixed-width block is triangular; its28-step map has order dividing2^R.
+Stop the travelling representation when the front reaches depth1, then evolve
+the endpoint cells under the real clamped wall. Reusing this reviewed theorem
+is preferable to inventing another length scan. We do not reuse old minimal-end
+class tables as verdicts for a different initial discrepancy packet.
+
+The old record also warns against precisely that extrapolation: GC1196 retained
+ten classes of a different finite-terminal family after R3, and GC1197 left
+earlier departures unresolved. Those held experiments are not restarted here.
+L49's next white condition and actual-right realization still need their own
+specific review; its membership in the allowed first-two-arrival class is
+already known. A numerical test needs a discriminating question beyond
+reconfirming this phase classification.
+
+Method correction: the initial record search returned GC1167/GC1195, but the
+first pass read only the early displayed results. A search receipt is not an
+adequate prior-work review unless the directly matching entries are followed.
+The successful identification of a previously proved tool is useful; presenting
+its reconstruction as new progress would not be. No new run or proof submission.

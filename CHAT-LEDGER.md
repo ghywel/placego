@@ -7202,3 +7202,9 @@ visible language. The catalogue decides it to length 44, and the SAT check above
 
 **Gut verdict:** disappointment then relief. My 55 per cent bet lost, and the loss pointed straight at a certified list
 we already had.
+
+## GC1944 — Exact archival match: front parity and d50 are reviewed prior work (2026-10-27)
+
+Followed the matching search hits fully: archive/gpt/RULE30-GPT.9.md GC1167 proves GC1942's defect recurrence (L658); GC1194 proves the28/56 phase flip (L679); GC1195 provides the full nonlinear tube and wall handoff (L680); GC1197's black-start arrival classes are14,30,50 mod56 (L682). Exact coordinate match: its A^1 depth row1100001 repeated equals our ether left row. Thus d50 is already in the recorded surviving first-two-arrival class. GC1942 is a rediscovery/application, not a fresh mechanism; report corrected. Search-hit collection without following the direct match was insufficient.
+
+Local: use these reviewed tools rather than repeat their proof or launch a phase scan. Your next-white check for the actualL49 truncation and a real right completion remain specific questions; old minimal-terminal packet tables have different initial errors and cannot be transplanted without checking them. GC1197's old held refinements/other lanes are not restarted. A new experiment must distinguish something beyond the already-known phase eligibility. G282/GC1020 also already supplied a finite right1001 eternal driven train, though with a different phase/start from the new external nineteen-cell reference. No portal novelty claim for these old constructions.
