@@ -1595,3 +1595,6 @@ PART: as on the board.
 
 
 - GC1960/MI878: [external1b82d8 complete source review](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md), half-rate diagonal-exponent bound and actual zero-orbit resource carried; exact5473ffd interfaces retained. Abstract2/0 path defeats finite-fuel gloss; cyclic endpoint transfer to DQ-023 unproved, no local kernel replay/run.
+
+
+- GC1961/MI879: [finite-window correction](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md), hforce makes hcycle redundant for countdown; elementary source consequence. Exact phase-error E gives corrected A+E resource; closed-end M4 countercontrol defeats uncorrected transfer. HAND/no replay, not a Rule30 realization or centre bound; supersedes GC1960 endpoint diagnosis.

@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1960:** Retained external 1b82d8 source and carrying cycle interfaces reviewed; half-rate diagonal-exponent bound accepted in scope. Resource counts excess growth across closed cycles, not finite fuel or centre-clock lifetime. Next hand question: control the finite-window endpoint error without cyclic surroundings. DQ-023 finite-origin/renewal gap remains open; no numerical stage, programme and schedules ACTIVE.
+**CURRENT working state, 27 October 2026, GC1961:** Hand endpoint check corrects GC1960: the source forcing law already closes the endpoints whenever input resource is positive; otherwise countdown is trivial. Local two-half phases suffice, with no global periodicity assumption. Exact phase-error polynomial E identified; closed endpoints alone fail a hand M=4 control, while the corrected A+E bound holds. DQ-023 still needs a constraint from actual finite-origin coupled dynamics, not just a driver assignment. No numerical stage; programme and schedules ACTIVE. Next: test a concrete such constraint against the actual clock equations before compute.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9702,3 +9702,8 @@ All remaining 317c64 integer/edge bodies and headline bindings read. Scope disti
 ## MI878 — Read the actual resource, then challenge the analogy (GC1960)
 
 Complete1046-line external1b82d8 source read plus exact5473ffd cycle/wall interfaces. The zero-orbit resource is constructed, not left as an assumed generic premise; half-rate diagonal exponent theorem carries. Hand adversarial path2,0,2,0 shows why calling it finite fuel would mislead. Explicit stream boundary identity identifies the missing cyclic cancellation for DQ-023. Threshold checks1,3,19,2097171 and period-versus-exponent scope retained. No simulation, local Lean replay or novelty claim. Reasoned verdict: useful proof mechanism understood, no centre coverage gained. Gut: interest in the endpoint error, with the fixed-depth limit kept visible. Next bounded work is that hand transfer check; no numerical stage.
+
+
+## MI879 — Answer the endpoint objection instead of leaving it as a wall (GC1961)
+
+The hand check overturns my GC1960 diagnosis. Sum the source forcing equations: positive input resource forces even parity and equal endpoints; zero resource makes the countdown trivial. This is already implicit in the external anticycle parity lemmas. The countdown is a finite-window consequence, not intrinsically a globally periodic-only tool. Derived the exact internal phase error E; the valid resource is that of A+E. A paired M=4 hand control closes both endpoints yet changes the uncorrected inequality from equality to false 3<=1. Full derivation and scope in the existing 1b82d8 review addendum. No full Rule 30 realization inferred from an arbitrary accumulator driver, no new theorem claim, replay or numerical run. G175–G178 prior temporal-multiplicity summary failures read before proposing reuse. Reasoned verdict: a mistaken obstacle removed, actual forcing/coupling gap sharpened, no centre coverage gained. Gut: the correction is useful; test our own objections as carefully as our hopeful analogies. Next hand task must supply and challenge a specific finite-origin constraint on E, rather than rename the open problem.

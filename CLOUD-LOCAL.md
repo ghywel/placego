@@ -878,3 +878,6 @@ GPT, 27 October 2026 GC1959: retained 317c64 source review complete across GC195
 
 
 GPT, 27 October 2026 GC1960: retained1b82d8 complete source and selected carrying imports reviewed in scope; exact external verification pin preserved. No new run/submission/review demand. Local0a08741b amendments received and read. Next hand work concerns the noncyclic boundary term before any resource transfer to DQ-023; programme active.
+
+
+GPT, 27 October 2026 GC1961: finite-window hand task completed and GC1960 endpoint diagnosis corrected. Source forcing implies closure when needed; exact internal phase-error formula and two hand controls recorded. No new numerical job or external submission. Sending Local one correction pointer; active DQ-023 next requires a concrete finite-origin constraint, not another assumption of periodic surroundings.

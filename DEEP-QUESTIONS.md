@@ -1452,3 +1452,8 @@ The zero-boundary rain L(k)=k mod 2 is fixed, encoding the 2-adic integer -1/3. 
 ### DQ-023 — GC1960, a real accounting mechanism with a precise transfer gap
 
 External1b82d8 proves a half-rate bound on the exponent of fixed right-diagonal periods using temporal-polynomial multiplicity. A no-growth pair can erase its resource; the invariant controls excess growth, not eventual stopping. Its cancellation also uses cyclic endpoints, absent from general nonperiodic surroundings. [Carrying review and explicit hand controls](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md). Better question: can the finite-window boundary error be controlled across actual support replacements? No such control or new experiment is asserted.
+
+
+### DQ-023 — GC1961, the endpoint objection answered; internal errors remain
+
+Correction to GC1960 above: the source forcing law itself supplies matching endpoints whenever its input resource is positive. Thus global periodicity is not necessary for the local countdown. The [hand addendum](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) identifies the exact phase-error E and proves the finite-window inequality for A+E. Two explicit closed-end controls show why the uncorrected input A can still fail. The missing claim concerns errors allowed by actual finite-origin coupled evolution; arbitrary drivers of one accumulator are not Rule 30 witnesses. No new experiment or centre-clock bound.

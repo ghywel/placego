@@ -3,6 +3,12 @@
 GPT GC1960 / MI878, 27 October 2026. Complete retained submission source read,
 with selected carrying kit interfaces. No local Lean replay or dynamics run.
 
+**Correction, GC1961:** the endpoint diagnosis below was too strong. The
+countdown's forcing hypothesis already makes endpoint agreement automatic
+whenever the input resource is positive. The finite-window argument and
+explicit phase-error control at the end supersede that diagnosis; the
+external headline review and the finite-fuel warning are unchanged.
+
 ## Evidence and verdict
 
 [External submission R30-20261026-1b82d8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261026-1b82d8)
@@ -143,3 +149,130 @@ that changing-index path. This external improvement is real, but neither
 finite-seed clock extinction nor compatible replacement of supporting bars
 has been obtained. Next useful hand work is the finite-window boundary-error
 question, using the current clock equations before proposing any computation.
+
+## GC1961: the endpoint objection resolves; the forcing profile matters
+
+27 October 2026, MI879. Elementary hand consequence of the same retained
+source, not a new external theorem, independent verification or Lean replay.
+Record searched: `endpoint`, `multiplicity` returned 30 paragraphs in 16
+files. Read G175–G178 in `archive/gpt/RULE30-GPT.2.md` and the old RQO
+instrument's definitions/outcome: temporal multiplicity has already been
+tested in a coarse-state approach. Its positive quotient cycle is a limit
+of that summary, not an actual concatenated Rule 30 cycle or a prohibition
+on every resource method. No old census was rerun.
+
+**Question:** does the mismatch at the ends of a finite time window defeat
+the external countdown? **Response:** no, not under its other hypothesis.
+The rule across the window either closes the ends or leaves a zero input
+resource, for which the bound is trivial. **Challenge:** matching ends alone
+does not guarantee that rule across the window. **Better question:** what
+constraints does a genuine finite beginning impose on the errors inside the
+window? Here is the exact error term and a hand example demonstrating why
+it cannot simply be discarded.
+
+### Remove the redundant endpoint hypothesis
+
+Use the source's field F_2, p=X+1, `encode(f,M)=sum_(i<M) f(i)X^i`, and
+`rho(c,A)`: multiplicity of p in A capped at c, with rho(c,0)=c. Let
+M=(2t+1)2^v and assume only the source's `hforce`:
+
+```
+D(i)=f(M+i)+f(i),
+D(i+1)+D(i)=1+a(i)                 (0 <= i < M).
+```
+
+Put A=encode(a,M) and r=rho(2^v-1,A). If r=0, the conclusion
+
+```
+rho(2^v-1,A) <= rho(2*2^v-1,encode(f,2M))+1
+```
+
+is immediate. If r>0, then v>=1, M is even and p divides A, so A(1)=0.
+Sum the M forcing equations. Interior D terms cancel in F_2, giving
+
+```
+f(2M)+f(0) = D(M)+D(0) = (M mod 2)+A(1) = 0.
+```
+
+This supplies `hcycle`, and the existing `stream_countdown` applies. Thus
+the stated inequality does not need hcycle as a separate assumption. The
+v=0 case is covered by its zero cap. This uses only finitely many values;
+arbitrary extensions after 2M do not affect it.
+
+Carrying source: `stream_countdown`, lines 663–703, and its source's
+`anticycle_parent_parity` / `anticycle_reset_before`, lines 760–806. The
+latter already express the same obstruction from the other direction:
+bad endpoint parity forces zero input resource. This is a short repackaging
+of that source, with no novelty claim or standalone submission proposed.
+
+### The actual finite-window error
+
+For Boolean streams s,b,h satisfying the accumulator equation
+
+```
+h(i+1) = h(i) XOR (b(i) OR s(i))   (0 <= i < 2M),
+```
+
+write their bits in F_2 and set, for 0<=i<M,
+
+```
+eps_b(i) = b(M+i)+b(i)+1,
+eps_s(i) = s(M+i)+s(i),
+e(i) = eps_b(i)*(1+s(i)) + b(i)*eps_s(i) + eps_b(i)*eps_s(i).
+```
+
+Using b OR s = b+s+bs, direct expansion gives
+
+```
+D(i+1)+D(i) = 1+s(i)+e(i),   D(i)=h(M+i)+h(i).
+```
+
+Let A=encode(s,M), E=encode(e,M), H=encode(h,2M). For dyadic M=2^v,
+the preceding argument, applied to a=s+e, proves the hand consequence
+
+```
+rho(M-1,A+E) <= rho(2M-1,H)+1.
+```
+
+Exact repetition of s and complementation of b on these two halves make
+E=0; global periodicity of either stream is unnecessary. Exact phases are
+sufficient, not necessary: the displayed error can cancel or be masked.
+The inequality always concerns the corrected input A+E. Its resource need
+not equal the resource of A, even when h(2M)=h(0).
+
+This is the moving-edge/high-bit accumulator equation in the external
+source. It is **not** the fixed-column Rule 30 update. Assigning arbitrary
+drivers to this equation does not establish a full Rule 30 spacetime patch,
+and supplies no finite-seed witness for DQ-023.
+
+### Unexpected hand control: closed ends do not rescue wrong phases
+
+Take M=4, s(0..7)=00000000 and h(0)=0. Compare:
+
+| Driver b(0..7) | Integrated h(0..8) | H | Input resource | Output resource |
+|---|---|---|---|---|
+| 00001111 | 000001010 | X^5+X^7 = X^5 p^2 | rho(3,A)=3 | rho(7,H)=2 |
+| 00000011 | 000000010 | X^7 | rho(3,A)=3 | rho(7,H)=0 |
+
+Both examples close h(8)=h(0)=0, and s repeats. The first has the required
+complemented b halves and satisfies the uncorrected bound with equality,
+3<=2+1. The second changes only two driver entries: eps_b=1100,
+eps_s=0000, so E=1+X=p. Its uncorrected bound would be the false 3<=0+1.
+Its corrected input has rho(3,A+E)=1, giving the true equality 1<=0+1.
+Every listed h bit follows by a single XOR; no numerical search was used.
+These are accumulator controls only, not alleged Rule 30 histories.
+
+### What changed, and what remains
+
+GC1960's polynomial boundary identity is correct, but calling its endpoint
+the precise transfer obstacle missed a dependency between the hypotheses.
+That diagnosis is withdrawn. The window-wide forcing profile, its error E,
+and its actual spatial realization are the missing controls. This prevents
+both an unjustified application and an unjustified dismissal of the method.
+
+No lifetime bound, whole-trajectory rank, or new finite-origin restriction
+has been obtained. The next useful hand task is to test a concrete proposed
+constraint on E against the actual coupled clock equations, before proposing
+compute. Merely naming E does not supply such a constraint. The prior
+G177/G178 scalar-summary failure stays visible, and the programme remains
+active without a new numerical stage.

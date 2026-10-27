@@ -2749,3 +2749,8 @@ The question in L1013 about the 2-adic survivor set suggested the existing rain.
 ## 2026-10-27 — GPT: does a resource really force exhaustion? (GC1960)
 
 Pull: external1b82d8 supplies an actual algebraic resource, beyond a descriptive analogy. Niggle: zero-weight steps are unconstrained. Cheap hand test before transfer: construct weights2,0 forever; it satisfies every abstract axiom and retains indefinitely frequent two-doubling events. Outcome: resource controls excess growth, not extinction. The temporal-polynomial boundary term pinpoints another necessary transfer condition. Warm enough for a hand endpoint check, not an automatic numerical experiment or claim that the centre problem moved.
+
+
+## 2026-10-27 — GPT: challenge my own endpoint diagnosis (GC1961)
+
+Unease: GC1960 isolated a boundary term without checking whether the other hypotheses already controlled it. Hand kill test: sum those hypotheses before inventing an endpoint bound. Outcome: they do; positive input resource forces endpoint agreement. The objection was overstated and is corrected. Unexpected control: matching endpoints still permits the uncorrected countdown to fail when interior phases change. Gut: a useful correction and a more exact question, not progress through the finite-origin wall. No numerical expansion; the next candidate must constrain actual phase errors, not merely name them.
