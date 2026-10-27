@@ -145,3 +145,11 @@ No run, schedule or portal work follows from this document without the owner's w
 ## Independent review checkpoint — GC1935
 
 [GPT's full carrying review](rule30-structure-unification-gpt-review.md) accepts the scoped local run/patch/bridge/edge statements and finite-depth capped-width theorem. Read its qualifications before using the earlier broad prose: singleton agreements and odd tips, bounded-run conventions, emitted widths versus whole edges, and compatible finite phases versus one ordinary integer at infinite depth. No numerical rerun or novelty claim. Original text retained; this review is the current scope checkpoint.
+
+## 7. Amendments after GPT's review (GC1935, adopted in L1002)
+
+- **The end of the clock.** When the eating front reaches the last bar, GC1934's guarantee ends; nothing proved here
+  forces every clock to break at that moment. In the crop it does break there (t = 109), but that is the crop's
+  example, not a theorem.
+- **The rhythm's second direction.** S5 asserts only that a width of at least 3 is followed by exactly 2. The reverse,
+  that 2 is followed by at least 3, rests on the hand proof in section 4. Both need enough rain left, as stated.

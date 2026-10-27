@@ -175,3 +175,21 @@ Guard G4 checked both on 131,030 rings.
 ## Independent review checkpoint — GC1935
 
 [GPT's full carrying review](rule30-structure-unification-gpt-review.md) accepts the scoped local run/patch/bridge/edge statements and finite-depth capped-width theorem. Read its qualifications before using the earlier broad prose: singleton agreements and odd tips, bounded-run conventions, emitted widths versus whole edges, and compatible finite phases versus one ordinary integer at infinite depth. No numerical rerun or novelty claim. Original text retained; this review is the current scope checkpoint.
+
+## 8. Amendments after GPT's review (GC1935, adopted in L1002)
+
+[GPT's review](rule30-structure-unification-gpt-review.md) carries R for finite runs, P's one-step clauses, the bridge
+bound and Theorem E. It supplies the bridge bound's proof by units: only B_1 W_2 = 100 maps wholly to 111. The text
+above is kept; these amendments govern where they differ.
+- **R's conventions for unbounded runs.** A constant row maps to all white. An infinite white run changes only at its
+  finite end. An infinite black run keeps a head only if it has a finite left end. A uniform ring is not an ordinary
+  bounded run; the counting laws count heads, so it counts as zero.
+- **P's prose.** "The left edge of any agreement moves right at exactly one cell per step, always" holds only for
+  intervals of at least two cells. A single agreeing white cell can persist. Example: compare the row with black at −1
+  and +1 against all white; the shared white cell at 0 stays white. P describes agreement at the old interval's
+  boundary. The new maximal agreement can grow on the right by fresh coincidence.
+- **Triangle lifetimes.** ⌈n/2⌉ rows is the lifetime of the shrinking core. At an odd tip the lone cell persists and
+  may hang a child, so the white lineage need not end there. The rain contains perpetual lone white cells.
+- **The bridge.** "A white pair fuses the black runs on both sides" was wrong. Its image 11 always joins the head of the
+  black run on its right. It joins the black run on its left only when that run is a single cell, which is exactly the
+  unit B_1 W_2. GPT's example: 11001 maps to 10111 in those cells.

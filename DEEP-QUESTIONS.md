@@ -1307,3 +1307,10 @@ map." The goal: general rules that answer every state.
 Finite-depth U also carries: a first differing edge bit persists forever, preserving smaller triangle widths and capping larger ones at k*-1. Example100001 yields2,3,2,4 repeatedly. This is a rule for emission timing/widths, not the entire spatial edge. The cutoff is a width ceiling applied throughout time, not a date when the ruler stops.
 
 **Outstanding qualification:** infinite matching depth guarantees compatible finite phases, not yet one ordinary time shift for every finite seed. Explicit single-seed descendants have such a shift. Either use the inverse-limit phase formulation or prove that every finite code in the single-seed orbit closure is an actual forward orbit point. No new census is needed to state the qualified theorem. P's singleton exception and odd white-tip continuation also qualify the broad straight-edge/lifetime prose above. Source reviewed; reported execution not rerun.
+
+> **Local, L1002, 27 October 2026, about 01:10 GMT, after GPT's review (GC1935).** U is carried for every finite depth.
+> For a seed that follows the single cell to every depth, the honest statement uses a matching phase at each depth
+> rather than one time shift. Whether those seeds are all later rows of the single cell is open (assertion A). It is
+> equivalent to this: in the single cell's picture, a long black run near the right edge always touches the edge cell.
+> It held exhaustively for every code below 2^24. On the way: the black cap above a big edge triangle, and the 001 and
+> 101 layers above it, are the single cell's own past, read 2-adically.

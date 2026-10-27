@@ -119,3 +119,45 @@ here says what happens there.
 ## Independent review checkpoint — GC1935
 
 [GPT's full carrying review](rule30-structure-unification-gpt-review.md) accepts the scoped local run/patch/bridge/edge statements and finite-depth capped-width theorem. Read its qualifications before using the earlier broad prose: singleton agreements and odd tips, bounded-run conventions, emitted widths versus whole edges, and compatible finite phases versus one ordinary integer at infinite depth. No numerical rerun or novelty claim. Original text retained; this review is the current scope checkpoint.
+
+## 6. Amendments after GPT's review (GC1935), and the infinite-depth question (L1002)
+
+[GPT's review](rule30-structure-unification-gpt-review.md) carries Theorem U for every finite depth k*, with its
+lifting step and the permanent cap.
+- **GPT's direct gap proof is the better one; adopted.** At time u, let j be the first set bit of T^u(1) above bit 0.
+  Then p_j divides u and p_(j+1) does not. So level j+1 doubles, and the width j − 1 is (doubling level) − 2. This
+  needs no translation of Proposition 23's diagonal indices.
+- **Periodicity.** With a finite cap the emitted sequence depends only on bits 0..k*. It is purely periodic, with period
+  dividing p_k*, and has no transient.
+- **What "the same edge" means.** The theorem classifies the emission timing and widths, not the whole edge region:
+  bits above k* are unconstrained.
+- **Counts.** The 16,383 inputs are presentations, not distinct codes: zeros padded on the left repeat a code. The 56
+  cases at KMAX are depth at least 40, not certified infinite. GPT's accounting shows they are exactly the
+  presentations of T^tau(1) for tau = 0..6: 14 + 12 + … + 2 = 56. U3 checks observed exclusions only; the hand proof
+  covers the rest.
+- **Infinite depth: section 3's last sentence is restated.** When k* = ∞ the proof gives compatible phases s_k mod p_k
+  at every depth, an inverse-limit phase. It does not give one ordinary time shift. The corrected statement: every
+  finite window of the edge agrees for ever with the single seed's history at the corresponding phase s_k. The
+  ordinary-shift form needs the assertion below.
+
+**Assertion A (GC1935's obligation), open.** Every finite edge code in the closure Ω of the single seed's orbit is
+T^tau(1) for some tau ≥ 0.
+
+What L1002 adds, all by hand except the last item:
+- **The predecessor of a finite code.** If R is finite with top bit d, then T^−1(R) is either finite with top bit d − 2,
+  or all ones from bit d+1 on at the latest. Above d the backward recurrence is q_j = q_(j−1) OR q_(j−2), so it is
+  finite exactly when q_(d−1) = 0 and q_(d−2) = 1.
+- **The single seed's past is the tower.** T^−1(1) = −1, the all-black row: the cap. T^−2(1) = …1001001, the
+  001-periodic row (GC1932's bridge layer), and T^−3(1) has period 3 with two 1s (the 101 layer). So GC1932's backward
+  tower is the single seed's 2-adic past, visible at the edge at the times p_k − j.
+- **Cap formula (the dual of GPT's gap proof).** The edge black run at time u has length at least L exactly when p_L
+  divides u + 1, because T(−1) = 1.
+- **Reduction.** Descending T^−1 from a finite point of Ω either reaches 1 or enters an eventually-all-ones point. So A
+  holds if and only if −1 is the only eventually-all-ones point of Ω. In the picture: in the single seed's rows, a long
+  black run near the right edge always touches the edge cell. By compactness, black runs that start at a fixed distance
+  without touching it must then have bounded length.
+- **Evidence** (`tests/probes/wolfram/closure_finite_look.py`):
+  - all 8,388,608 odd codes below 2^24 were tested to depth 44, and only T^0(1) to T^11(1) pass;
+  - over 131,071 rows no non-edge black run starting within distance 41 of the edge reaches bit 63;
+  - the longest such runs are at most 19 cells.
+  - A finite search, not a proof.
