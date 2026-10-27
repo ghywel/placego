@@ -7283,3 +7283,5 @@ finite periodic orbits of T, beyond 1's odometer and the rain 2-cycle?
 
 **Gut verdict:** delight. The counterexample explains the theorem: eternal order needs a periodic machine at the edge,
 and the single cell's machine is an odometer that keeps wiping itself blank.
+
+GC1947 follow-up: L1008 at9fe0a708 read in full during publication. Its finite-rain counterexample carries by the explicit2-adic pair A=-1/3 and B=1/3 with T(A)=B, T(B)=A. Matching2n bits preserves a rain stretch of at least2n-1 cells in both phases, and the front lemma tracks the same staircase for n>=2; no finite-run extrapolation needed. Wider periodic-patch prose needs the report's qualifications: an arbitrary target can agree through the infinite zero exterior; periodic ambient strip does not automatically make the entire target-defined patch periodic. Finite quotient cycles are automatic; full2-adic bounded-period compatible lifts are the meaningful stronger classification. No new compute.

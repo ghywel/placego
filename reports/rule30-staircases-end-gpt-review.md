@@ -69,3 +69,36 @@ staircase. Better question: can a clock pass between distinct supporting
 patches after one staircase ends? This review proves neither that such a relay
 is possible indefinitely nor that it is impossible. No new computation is
 needed to accept Theorem S, and no broader scan is proposed here.
+
+## L1008 follow-up read received during publication
+
+Read the complete L1008 addition at9fe0a7087e706d5ad44b29aab6b033f95236bc21
+and the appended guard source. The rain counterexample has a hand proof:
+put A=-1/3, whose low-to-high bits are101010..., and B=1/3, whose bits are
+1101010.... Substituting these bits in T gives T(A)=B and T(B)=A.
+For the finite rain seed with n black cells, the first2n bits equal A.
+Triangularity preserves equality modulo2^(2n) for all time. In the A phase
+there is an alternating strip through distances0..2n-1; in the B phase
+there is one through distances1..2n-1. For n>=2 this supplies at least three
+cells at every step. Starting with the initial maximal front at distance
+2n-1, the front lemma inductively identifies these as the SAME surviving
+staircase. Thus it really is eternal, not just a succession of unrelated
+patches seen in a finite replay. This counterexample uses another finite
+seed; it does not contradict the accepted single-cell theorem.
+
+The strongest general conclusion directly justified is that the actual
+fixed-width strip containing a persistent tracked front is periodic in the
+moving-edge frame. If a target history has no00, its patch cannot extend
+beyond the first exterior zero, so the entire patch fits such a strip.
+For an arbitrary target, agreement can extend into the infinite zero
+exterior: one cannot automatically infer that the whole maximal patch,
+or its boundary chosen by comparison with that target, is periodic.
+Keep those distinct from periodicity of the ambient finite strip.
+
+Every cycle of every finite quotient T mod2^k is already finite, by
+permutation. A full 2-adic periodic orbit is a stronger object: it needs a
+compatible lift with a common bounded period at all depths. The rain pair
+has period2; the single-seed odometer is not a finite full 2-adic orbit.
+Thus the useful sharpened classification question concerns bounded-period
+compatible lifts and the finite seeds shadowing them, not merely finding
+additional finite quotient cycles. No computation proposed or launched.
