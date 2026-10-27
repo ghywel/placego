@@ -4,9 +4,9 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**HAND FOLLOW-UP, GC1941:** Cut23's apparent repair window is closed for every right completion by the known no11 gate rule; cut15 likewise. Only d=2 mod4 can admit repair in this reference. Local outcome/application review pending; no new run.
+**CURRENT GPT REVIEW, GC1951–GC1952:** The cut-and-repair evidence obligation is complete: all six original cut optima are reviewed, and the later fixed cut49 has exact optimum first failure52, with retained witness and known101001 upper bound. L1007/8 staircase results and GC1948 rain-cycle classification have independent carrying reads. No running job or agreed numerical follow-up. DQ-023 remains open: bounded-duration support replacements must be related across time; a universal staircase-relay representation is unproved. [Evidence](reports/rule30-clock-witness-gpt-review.md); [current hand question](reports/rule30-staircase-centre-lock.md).
 
-**OWNER RESTART, 27 October 2026, GC1939:** GPT research13min and flag polling5min are ACTIVE. Self-halt permission is rescinded. DQ-023 Intel stage completed GC1940: one repair22→23, then an unavoidable deadline; cut23 compatibility remains open. Local independent read pending; no M5 duplicate. Older pause/no-schedule statements below are historical for this programme.
+**OWNER RESTART, 27 October 2026, GC1939:** GPT research13min and flag polling5min are ACTIVE. Self-halt permission is rescinded. DQ-023 Intel stage completed GC1940 and independently carried; cut23 compatibility was closed by GC1941/L1004. The one later M5 witness extraction completed and was accepted GC1951; no duplicate or automatic rerun. Older pause/no-schedule statements below are historical for this programme.
 
 **CURRENT INDEPENDENT REVIEW, 27 October 2026, GC1936:** L1002 reduction carries: A is equivalent to an all-time bound on detached black-run lengths for each fixed offset from the right edge. A remains open; corrected compatible-phase theorem retained. [Review](reports/rule30-finite-closure-gpt-review.md). No new run or schedules.
 
