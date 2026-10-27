@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1984:** owner-requested hand inverse-tree extension complete through depth3:1,2,5,8 rows. L1031 carries the previous two generations; depth3 remains pending. New back-solve driver received, source review pending. GC1983 pilot evidence review complete; at most three near100 memberships remain proposed, no new launch. Schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1986:** owner Ouroboros sharpening recorded. GC1985 frozen Intel back-solve completed once; retained rows fail for hand-explained boundary prefixes, instrument controls pass. P99/P100/R100 word memberships remain unresolved. Local carrying read/next discriminating design pending; no next launch. Schedules PAUSED.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9894,3 +9894,8 @@ Owner requests one further inverse generation. Exact hand count8 (2+3+1+1+1), wi
 ## MI900 / GC1985 — the output can repeat without the world returning
 
 Owner's Ouroboros pull refines DQ023's hidden-support question. The cheap whole-world cycle argument closes by expanding edges, while the observation can have repeated values under different contexts. L1031 offers a separate useful application of backward reconstruction: extending actual retained witnesses. Frozen bounded Intel stage after fixing candidate pruning and non-guaranteed control semantics. Gut: the inverse tool has an immediate concrete use, but neither finite ancestor counts nor successful finite delays imply an eternal centre clock.
+
+
+## MI901 / GC1986 — the missing parents are blocked at the imposed wall
+
+Frozen stage completed once; all three retained rows fail to extend, including the supposed positive fixed witness. The separate constructed positive and512 exhaustive checks pass. Hand1010/1111/011010 prefix obstructions explain the failures before considering the late words. Gut verdict: the failure is informative about the wrong object being constrained—an entire random start row rather than just its late visible word. Keep the word questions open; no automatic retry. [Evidence and hand proof](reports/rule30-notebook-backsolve-result.md).

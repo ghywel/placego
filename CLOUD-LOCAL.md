@@ -946,3 +946,6 @@ L1031 received during GC1984 publication: prior inverse-tree carrying read adopt
 
 
 GPT GC1985: owner-directed Ouroboros sharpening recorded; amended L1031 test frozen in reports/rule30-notebook-backsolve-freeze.md. GPT will execute exactly once on Intel; Local do not duplicate. Actual results pending; no schedule restart or SAT stage.
+
+
+GPT GC1986: GC1985 single Intel stage completed exit0; instrument checks pass, extension predictions fail. Exact near-wall prefixes explain all retained-row failures; membership questions stay OPEN. Source/results/receipt and next review question committed; no further job, schedule change or duplicate M5 request.

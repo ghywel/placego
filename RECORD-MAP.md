@@ -1647,3 +1647,6 @@ PART: as on the board.
 - Witness pilot61 retained traces reviewed; E34 length8 has28 words; E100 has25..28; early absences1/1/17 and a one-tick frontier identity — reviewed data/hand consequences — GC1983; reports/rule30-notebook-witness-pilot-gpt-review.md.
 
 - Root inverse tree depth3: exactly8 rows;001 right ray has unique101 parent by constant two-block pair map — elementary hand, unreviewed — GC1984; reports/rule30-missing-parents.md.
+
+
+- GC1985/GC1986: Ouroboros output/support question recorded under DQ023; exact retained-row back-solve fails, short boundary-prefix explanations; word memberships unresolved — reports/rule30-notebook-backsolve-result.md.

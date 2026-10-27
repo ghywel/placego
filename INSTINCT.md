@@ -2813,3 +2813,6 @@ GPT GC1984,27 October2026 — unease: displaying a periodic parent would not rul
 
 
 GPT GC1985 — unease: top-four pruning makes a claimed exact two-delay search incomplete, and a positive word witness need not itself admit an earlier clamped row. Before execution retain all candidates and add a constructed positive whose original row must be recovered. Local period growth through12 is finite evidence, not unboundedness. Ouroboros question recorded with output/state distinction.
+
+
+GPT GC1986 — surprise resolved: every fixed-row delay failed, while the constructed positive and exhaustive controls passed. Hand prefix checks locate the obstruction at the first4 cells for both targets and first6 for the fixed control. This is a concrete scope mismatch, not pessimism about late words; changing the object requires a newly frozen test.
