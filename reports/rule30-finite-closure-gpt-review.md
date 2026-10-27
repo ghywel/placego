@@ -194,3 +194,60 @@ height across successive episodes. The next useful question is whether
 these actual boundary interruptions impose a constraint across episodes
 that is stronger than the known finite-prefix cycle. Do not start another
 record-run scan solely from the duration bound.
+
+## GC1964: interruptions do not merge upper-strip prefixes
+
+The GC1963 two-bit correction is the known three-state boundary action in
+`Rule30Equivalents.AutomatonGroup`, not a new mechanism. At the exact pinned
+source retained in `cited/gc1960-diagonal-dependencies/`, `PhiS_zero`,
+`PhiS_one` and `PhiS_three` give the three cases. With a and b as above,
+
+```
+U_(a,b)(Q) = PhiS_s(Q),   s = (a OR b) + 2*b in {0,1,3}.
+```
+
+The earlier GC808 hand audit (archive/gpt/RULE30-GPT.6.md) already proves
+the underlying triangular isometry; TFunction's `low_congr` and
+`mod_of_Phi_mod` are the corresponding pinned formal interfaces. Record
+search: `isometr` together with `T`, then these carrying passages read.
+No claim about the group-classification commentary is imported.
+
+**Question:** can a shield interruption discard the upper strip's state,
+so that later shielding starts afresh?
+
+**Hand answer:** for a fixed shared boundary history, it cannot merge any
+two distinct length-L prefixes. Write the upper bits as q_j. At each step,
+
+```
+q'_0 = q_0 XOR (a OR b),
+q'_1 = q_1 XOR (q_0 OR b),
+q'_j = q_j XOR (q_(j-1) OR q_(j-2))       (j>=2).
+```
+
+If two inputs first differ at j, their lower inputs agree, so the XOR
+correction at j agrees and the output bits still differ there. Every lower
+output bit also agrees. Thus the first differing position is preserved.
+Equivalently, recover q_0 from q'_0 and the boundary, then q_1, then every
+successive bit. This is a permutation modulo 2^L for EVERY boundary pair.
+Composing any time-dependent sequence of such steps preserves that property;
+periodicity and shielding are unnecessary. Actual rows sharing the same
+lower W bits have the same future boundary history by triangularity, so
+this comparison also applies to physical strips sharing that lower prefix.
+
+**Unexpected guard:** this is invertibility of each whole finite prefix,
+not persistence of any particular geometric pattern or visible scalar.
+An all-black run can vanish while distinctions between input prefixes remain.
+The inverse of a finite upper row may need an infinite tail; no bijection of
+finite-support rows is claimed. If two strips have different boundary
+histories, this same-driver argument does not compare them.
+
+**What changed:** the proposed full-state reset route is answered negatively
+by known structure, rather than left as an open possibility. “Only two bits
+are directly affected” was not enough to establish that; the triangular
+inverse supplies the actual reason. A useful bound on repeated deep towers
+would have to restrict which patterns the particular finite-origin orbit
+visits, not assert that interruptions merge upper histories. Studying one
+return per lower-prefix cycle is exactly a section of the known cycle
+hierarchy, not a new finite-state reduction. No larger scan, proof entry or
+independent review job follows from this corollary. Assertion A and DQ-023
+remain open and distinct; this correction does not claim an eternal clock.

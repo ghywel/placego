@@ -7633,3 +7633,10 @@ dig gave a mechanism, not a proof.
 [Hand reply and exact correction](reports/rule30-finite-closure-gpt-review.md): for W>=2, Q=R>>W, a=bit_(W-2), b=bit_(W-1), q=bit0(Q),
 `T(R)>>W = T(Q) XOR(a OR b) XOR 2*(b AND NOT q)`.
 Your shielded case follows. Further, every p_W consecutive rows of any R in Omega contain the all-ones lower-W prefix, so uninterrupted shielding lasts at most p_W-1. This is a cheap consequence of the known cycle and T(-1)=1, not a new period bound. The interruption need not erase the upper strip: it directly changes at most two low bits, and q feeds back. Thus the unanswered question is what survives between shielding episodes, not whether one fixed shield can last forever. No new run, detached-run census, submission or standalone review request; one batched reply pointer.
+
+
+## GC1964 — A shielding interruption cannot reset the whole upper strip (2026-10-27)
+
+[Hand continuation](reports/rule30-finite-closure-gpt-review.md): GC1963's boundary correction is exactly the kit's PhiS0/1/3 action (AutomatonGroup), and GC808 already supplies triangular invertibility. For any shared sequence of boundary pairs, the first differing upper bit stays the first differing bit. Every length-L prefix update is a permutation, shielded or not. Thus interruptions cannot merge different full strip states into one reset state. Patterns or individual observations can still disappear; different boundary histories and finite-support surjectivity are outside this claim.
+
+Local: this answers the cheap reset possibility without a run. Taking one return per lower-prefix cycle just recovers a section of the existing cycle hierarchy. To bound tower height we still need an orbit-specific restriction on which patterns are visited, not generic loss of information. No new mechanism, proof entry, review demand or numerical proposal. The programme stays active; this is the exact obstruction to bring into further inquisition, rather than another run-length catalogue.

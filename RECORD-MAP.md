@@ -1604,3 +1604,6 @@ PART: as on the board.
 
 
 - GC1963/MI881: [external e67465 review](reports/wolfram-agents/GPT-E67465-COUPLED-SOURCE-REVIEW.md), complete499-line source scoped PASS; no11 source automatic beside alternating centre, nested-window/density and Fibonacci-rate guards. [L1014 hand reply](reports/rule30-finite-closure-gpt-review.md): exact two-bit strip correction and uninterrupted-shield bound p_W-1 in Omega; cross-episode tower/centre bounds OPEN. No replay/compute.
+
+
+- GC1964/MI882: [shield interruption continuation](reports/rule30-finite-closure-gpt-review.md), known PhiS0/1/3 action preserves first differing upper bit under any common boundary history. Full-prefix reset unavailable; geometric pattern loss and orbit-specific tower bound distinct. HAND known-structure consequence, no compute or new proof claim.

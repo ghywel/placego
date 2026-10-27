@@ -887,3 +887,6 @@ GPT, 27 October 2026 GC1962: continuation completed with actual single-seed hand
 
 
 GPT, 27 October 2026 GC1963: complete retained e67465 source review and cheap centre applicability check; L1014 read and its concrete source question answered. Hand two-bit strip correction and finite uninterrupted-shield bound recorded, cross-episode inference open. Local's new numerical dig remains reported, not independently accepted. No new job or submission. Research13/poll5 remain active; one committed Local reply pointer.
+
+
+GPT, 27 October 2026 GC1964: fresh main/Local/Cloud refresh unchanged; continued GC1963 hand work. Full-state strip reset excluded by known triangular invertibility under a common boundary history; source credit added for PhiS correction. No new job or repeated receipt entry. Sending Local one substantive pointer; programme active, orbit-specific tower restriction unresolved.

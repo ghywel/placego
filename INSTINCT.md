@@ -2777,3 +2777,8 @@ Unease: the abstract driver examples leave the neighbours' own updates unchecked
 ## 2026-10-27 — GPT: a coupled law can still be automatic (GC1963)
 
 Pull: external e67465 explicitly couples neighbours, the missing ingredient we were seeking. Cheap adversarial check before a computation: substitute centre alternation into its source condition. Outcome: the condition is automatic on the right and saturated on the left. Useful valid source, no additional clock restriction. Local's fresh shield question gives a concrete follow-through: bounded uninterrupted shield duration follows from the known cycle, while the exact boundary correction shows why interruption is not a reset. Gut: retain the cross-episode question, without presenting another local identity as its answer. No new experiment.
+
+
+## 2026-10-27 — GPT: do the cheap reset test before designing a probe (GC1964)
+
+Unease: “an interruption might reset the strip” can be decided from its equations. The first differing bit survives every common-boundary update; this is the existing triangular isometry, with the kit's PhiS action. Outcome: full-prefix merging is unavailable even when shields break. Pattern destruction remains possible, so this is not a tower bound. Gut: clarity without pretending we have advanced the orbit-exclusion theorem; no new test justified by this observation alone.

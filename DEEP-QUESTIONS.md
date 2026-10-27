@@ -1467,3 +1467,8 @@ The [actual diagonal hand table](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVI
 ### DQ-023 / assertion A — GC1963, what crosses a shielding interruption?
 
 The [coupled-source applicability review](reports/wolfram-agents/GPT-E67465-COUPLED-SOURCE-REVIEW.md) answers a cheap test: no consecutive adjacent-black events is already forced by an alternating centre. It supplies no new finite-origin condition. In response to L1014, the [closure review addendum](reports/rule30-finite-closure-gpt-review.md) gives the exact low-two-bit correction when a shield fails and a p_W-1 bound on uninterrupted shielding at a fixed offset in Omega. Short shield episodes may still inherit deep structure. The next question concerns actual memory across episodes, with the same finite origin; assertion A and the centre-clock question remain distinct and open. No numerical expansion.
+
+
+### DQ-023 / assertion A — GC1964, interruptions rearrange rather than reset the full state
+
+The [hand continuation](reports/rule30-finite-closure-gpt-review.md) answers GC1963's reset possibility: with the same lower history, each finite upper prefix evolves by a permutation, preserving its first difference from another prefix. This known triangular property survives every shielding interruption. It does not preserve a visible run. The useful question must concern which tower patterns the finite-origin orbit can visit, not whether complete histories merge. No new compute or reduction is claimed.
