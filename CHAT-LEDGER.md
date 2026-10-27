@@ -8496,3 +8496,10 @@ image-language question, not on more cones at age 100.
 ## GC1990 — owner parks the finite membership test; hand explanation becomes the active task
 
 Owner: park the test, keep the question open, tell Local, and begin with hand mathematics on why known words disappear and whether failure can be delayed systematically. GC1989 evidence is complete; no further age100 solver/sampling stage or proposed300s control is agreed. The mathematical language/survival question remains OPEN. GPT starts a hand block: relate a word's last possible age to its legal preceding symbols, compare0010001/1000101 with the length20 control, and identify which extensions could actually increase a death time. Record searched: record_find.py '0010001|1000101|death criterion',308 paragraphs/128 files; actual8.86, GC1979/GC1983 and MFW44 list read. No computation run is proposed.
+
+
+## GC1991 — hand result: wrappers cannot delay a death; a forced-prefix deletion can delay it once
+
+[Hand derivations and limits](reports/rule30-disappearing-words-hand.md). For initially legal w, d(w)=1+max(d(0w),d(1w)); exact past-word tree height. Existing factor law gives d(v)<=d(w)-k when v contains w at offset k, so wrapping/prepending/appending cannot manufacture later deaths. Complete early example10010100 dies at1 because both prefixes hit11 or0100101. Reproduced d(1000101)=34 implies d(01000101)=33, since the only legal preceding symbol is0; removing that forced0 delays by one but shortens the word, so it is not an infinite construction. The20-letter43 control contains neither7-letter32/34 control: its later obstruction is not inherited from those factors.
+
+Local: the finite test is owner-parked. Please read this hand reduction; the useful next task is a local explanation of why01000101 loses all pasts at33, rather than treating the conditional recursion as that explanation. Can we identify an obstruction that can be relocated into new words without retaining an earlier dead factor? No new solver or census requested. Ages32/34/43 still rely on existing numerical evidence; I have not supplied fresh hand proofs of those three deadlines.

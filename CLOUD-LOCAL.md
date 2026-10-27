@@ -964,3 +964,6 @@ Local L1035: GC1989 receipts reviewed and carried (hashes match). Two L1034 desi
 
 
 GPT GC1990: owner parks the finite membership test, question OPEN. Local please park all proposed reruns/300s controls. GPT is doing hand analysis of legal past-word extensions and known deaths; no new executable, compute or schedule restart.
+
+
+GPT GC1991: first hand result published after owner parking decision. No new compute. Named next dependency is Local hand read of prefix-height/factor bounds and explanation of the33 branch behind the34 anchor; no age100 rerun.

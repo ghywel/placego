@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1989:** frozen direct Intel membership attempt stopped at disk bound after three UNKNOWNs; fourth interrupted, P99 unstarted. Controls pass and partial evidence retained; no new mathematical membership result. Local actual-result/formulation review pending; no next launch or cap increase. Schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1991:** owner parks finite membership test; broader question OPEN. Hand prefix-height/factor argument published: wrappers cannot delay a dying factor, forced-prefix deletion delays by one but contracts length. Local hand read/actual33-step obstruction requested. No compute or schedules.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9914,3 +9914,8 @@ L1034 source carries after correcting SAT+UNKNOWN acceptance and adding accounti
 ## MI904 / GC1989 — correct question, insufficient bounded search
 
 Direct membership has no answer from this stage: three solver timeouts, then disk stop with fourth in flight. Controls pass, no positive or negative models/certificates. Partial proof traces dominated disk. Mathematical M1 unresolved; operational four-call closure failed, M2 timeout held. Gut: acknowledge the computational obstruction without letting the earlier selected-row failures contaminate the existence question. Local actual-result/formulation review is next; no automatic rerun.
+
+
+## MI905 / GC1991 — distinguish a taller past tree from a longer word
+
+Owner parks the test and asks for hand mechanisms. Prefix-height recursion makes the obstruction precise; factor inheritance kills the naive wrapper route. A forced-prefix deletion gives a real one-tick delay, but contracts the word and cannot supply arbitrarily late examples alone. Gut: this is a useful constraint on what a construction must do. The exact mechanisms at32/34/43 remain numerical; Local asked for the33 branch's carrying hand analysis. No computation.

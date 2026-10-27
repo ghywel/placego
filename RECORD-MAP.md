@@ -1653,3 +1653,6 @@ PART: as on the board.
 
 
 - GC1988/GC1989: direct P100/R100 stage, three timeouts then disk stop; P99 unstarted; controls pass, no membership conclusion — reports/rule30-notebook-membership-result.md.
+
+
+- GC1991: disappearing-word past-tree recursion, wrapper deadline bound and forced-prefix deletion delay; elementary hand consequences pending read — reports/rule30-disappearing-words-hand.md.

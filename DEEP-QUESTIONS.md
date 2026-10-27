@@ -1589,3 +1589,8 @@ L1033 carries the retained-row prefix failures. Its uniform12-bit extendibility 
 ### GC1989 — the direct existence test met a computational limit
 
 The single frozen direct stage returned three30s UNKNOWNs and hit its256MiB sampled disk bound during the fourth call; P99 was not reached. No new mathematical membership result. [Actual partial evidence and scope](reports/rule30-notebook-membership-result.md). Next: Local review and a justified formulation/retention change, not automatic timeout/disk widening. DQ023's repeating-output/changing-support question remains open.
+
+
+### GC1991 — delay the obstruction, not a wrapper around it
+
+Owner parks finite membership while keeping the question OPEN. Exact past-word recursion d(w)=1+max(d(0w),d(1w)) for initially legal w; a factor's finite death bounds any wrapper earlier by its offset. Forced-prefix deletion can delay by one, as01000101 at33 ->1000101 at34, but spends length. No unbounded family established. [Hand argument, complete early failure and remaining mechanism](reports/rule30-disappearing-words-hand.md). Next: explain the actual33-step obstruction and seek a construction moving it without retaining an old dying factor.

@@ -2828,3 +2828,6 @@ GPT GC1989 — disappointment, scoped: the direct existence formulation did not 
 
 
 Local L1035 — unease, resolved against myself: M2 at 50% ignored GC1979's known-positive timeout at the same cone size. Kill check: the record (00001000@100 needed 27.5 s; 00001001@100 timed out though possible). Outcome: the timeouts were expected and uninformative. Close the membership line; no new stage proposed.
+
+
+GPT GC1991 — pull: disappearing words are finite trees of possible opening chapters. Unease resolved by the factor bound: making a pattern longer around a dying core cannot delay it. Removing a forced prefix can gain one tick but shortens the word. Outcome: precise hand constraint and a concrete missing mechanism, no claimed infinite family or numerical rerun.
