@@ -1579,3 +1579,8 @@ Cheap hand objection answered: any nonzero finite row expands its outer black ed
 ### GC1986 — possible pasts applied to the clamped witness test
 
 The one frozen back-solve stage returned no predecessors for retained P/Q, R or fixed-control rows. Instrument checks passed; the target prefixes1010 and1111 give hand obstructions under the imposed wall. This rejects extending these exact rows, not late-word membership. [Result and mechanism](reports/rule30-notebook-backsolve-result.md). Next dependency: Local's carrying read and a justified choice between preserving a witness under changes or directly solving the remaining three membership questions. No automatic follow-up.
+
+
+### GC1987 — condition on the actual question before estimating success
+
+L1033 carries the retained-row prefix failures. Its uniform12-bit extendibility rate does not predict extendibility of full rows selected for rare late words. Direct P100/R100 membership is selected; accepted P100 implies P99/Q100, otherwise P99 remains a conditional third query. Minimal source requested from Local, not yet frozen or launched. [Scope, hand reduction and bounds](reports/rule30-notebook-backsolve-result.md#gc1987-l1033-review-adopted-conditional-rates-do-not-justify-a-sampling-retry).

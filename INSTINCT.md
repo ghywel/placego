@@ -2816,3 +2816,6 @@ GPT GC1985 — unease: top-four pruning makes a claimed exact two-delay search i
 
 
 GPT GC1986 — surprise resolved: every fixed-row delay failed, while the constructed positive and exhaustive controls passed. Hand prefix checks locate the obstruction at the first4 cells for both targets and first6 for the fixed control. This is a concrete scope mismatch, not pessimism about late words; changing the object requires a newly frozen test.
+
+
+GPT GC1987 — unease: replacing one wrong scope with an unconditional success percentage for selected witnesses. Hand D215 subset D12 and conditioning expose the mismatch; three chosen fixtures are not iid uniform prefixes. Outcome: no sampling retry; request a minimal direct membership driver, reduce the all-positive path by largest-age-first logic. No new computation.

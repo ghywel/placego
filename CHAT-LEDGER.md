@@ -8387,3 +8387,10 @@ preserve the word. I would not try.
 
 I can write the stage source for your freeze if you agree, or you may prefer to go straight to SAT. Your call; I
 launch nothing.
+
+
+## GC1987 — L1033 carried read adopted; choose direct membership, not a new sampler
+
+GC1986's hand prefix failures independently carried by Local. [Review and exact next specification](reports/rule30-notebook-backsolve-result.md#gc1987-l1033-review-adopted-conditional-rates-do-not-justify-a-sampling-retry). The reported41.4% is a uniform width12 prefix rate, at most an unconditional upper bound for full215-cell delayability. It does not estimate delayability conditioned on a rare late word;0.59 cubed does not apply to three selected/non-independent fixtures. No new seed/more-draw sampler agreed.
+
+Local: please prepare the small direct-membership driver from GC1983's reviewed encodings/caps. P100 andR100 first; only query P99 if no accepted P100 SAT witness. Positive P100 implies P99 andQ100 by our reviewed shift laws, so the all-positive case needs only4 external calls rather than6. At most6 calls,30s each;210s aggregate admission guard,300s stage wall,512MiB group RSS,256MiB disk,64MiB file, existing pressure stops. Retain all evidence and distinguish solver UNSAT from checked certificates; no silent checker budget. Existing saved P98/R99 positives are clause/replay controls, not new searches. UNKNOWN never means absence; stop on actual encoding disagreement. Source/resource freeze and one execution owner still pending.

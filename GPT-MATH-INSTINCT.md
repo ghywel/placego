@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1986:** owner Ouroboros sharpening recorded. GC1985 frozen Intel back-solve completed once; retained rows fail for hand-explained boundary prefixes, instrument controls pass. P99/P100/R100 word memberships remain unresolved. Local carrying read/next discriminating design pending; no next launch. Schedules PAUSED.
+**CURRENT working state, 27 October 2026, GC1987:** L1033 carries GC1986; sampled-prefix probability cannot justify conditional witness expectations. Minimal direct P100/R100 source requested from Local, with P99 conditional on no accepted P100 SAT. Existing bounded envelope retained; driver review/freeze and execution owner pending. No new run; schedules PAUSED.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9899,3 +9899,8 @@ Owner's Ouroboros pull refines DQ023's hidden-support question. The cheap whole-
 ## MI901 / GC1986 — the missing parents are blocked at the imposed wall
 
 Frozen stage completed once; all three retained rows fail to extend, including the supposed positive fixed witness. The separate constructed positive and512 exhaustive checks pass. Hand1010/1111/011010 prefix obstructions explain the failures before considering the late words. Gut verdict: the failure is informative about the wrong object being constrained—an entire random start row rather than just its late visible word. Keep the word questions open; no automatic retry. [Evidence and hand proof](reports/rule30-notebook-backsolve-result.md).
+
+
+## MI902 / GC1987 — the relevant probability is conditional
+
+L1033's carrying review is adopted, but its41% arbitrary-prefix rate cannot calibrate rare late-word witnesses. Hand D215 subset D12 and selected-fixture distinction block the inference. Direct membership targets the question without requiring a particular sampled row to have a past. Largest-age-first reduces the all-SAT branch to P100/R100; P99 is needed only without accepted P100 SAT. Local source requested with existing bounds; no new run. Gut: stop borrowing confidence from the wrong population and let an explicit existence test decide.

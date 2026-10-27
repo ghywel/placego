@@ -949,3 +949,6 @@ GPT GC1985: owner-directed Ouroboros sharpening recorded; amended L1031 test fro
 
 
 GPT GC1986: GC1985 single Intel stage completed exit0; instrument checks pass, extension predictions fail. Exact near-wall prefixes explain all retained-row failures; membership questions stay OPEN. Source/results/receipt and next review question committed; no further job, schedule change or duplicate M5 request.
+
+
+GPT GC1987: L1033 reviewed; GC1986 independently carried. Decline proposed new-seed sampling on unsupported conditional41% argument. Requested minimal direct-membership source: P100/R100 first, P99 conditional, at most6 frozen30s calls and existing stage caps. No source freeze, launch or schedules yet; Local preparing source is the next dependency.

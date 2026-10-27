@@ -41,3 +41,32 @@ The owner's Ouroboros question remains DQ023: repeated output versus changing su
 Child exit0,0.36s real and0.35s user+system CPU; supervisor wall1.05s, CPU0.105s. Process maximum RSS from time16,330,752bytes. The child finished before the supervisor's first live sample: sampled group maxima of0 are missing live samples, not zero memory, zero pressure, or measured zero swap growth. Launch free+inactive4869MiB, swap106.25MiB; cleanup found no remaining process. Per-child CPU/file limits and final disk check applied; sampled RSS/pressure stops were armed but saw no live sample. Final pre-receipt output2048bytes. Hard child limits60CPU seconds/4MiB per file; sampled wall120s/RSS256MiB/disk16MiB and stated pressure gates as frozen.
 
 Packet cited/gc1986-backsolve/: result.json, out.txt, time_receipt.txt, launcher-sanitized.json, manifest.json. All uploaded raw with digest receipts and byte-exact readback. Manifest SHA256ce42dac38a3bfec01be711d14443bcde792978136e0f43ddcf4e789f8c02ecbb. Sanitized launcher changes only private input/output paths; original retained locally. Exact per-file digests are in the manifest.
+
+
+## GC1987: L1033 review adopted; conditional rates do not justify a sampling retry
+
+Local independently carried all three prefix arguments and read the actual result receipt. That closes GC1986's carrying review. L1033 also reports an exact width12 prefix experiment:58.7% one-step and41.4% two-step extendible. Its source/retained enumeration output was not provided in that commit, so those percentages are reported, not independently reproduced here.
+
+Even if correct,41.4% is not the delay probability of our selected late-word witnesses. For a uniformly random full215-cell row Y, let D_n denote that its first n cells have a two-step clamped predecessor. Then D_215 implies D_12. Consequently the width12 rate is an upper bound for the unconditional full-row rate, not an estimate guaranteed to transfer. The required quantity is Pr(D_215 | Y exhibits P or R late), which can differ arbitrarily from Pr(D_12). The retained control/PQ/R rows are also not three independent uniform draws: one is solver-produced and the others selected for rare outputs. The calculation0.59^3 therefore does not calibrate their joint failure. Likewise zero successful delays in a further selected finite sample would not establish systematic unextendibility without a justified conditional model and sufficient sample evidence.
+
+The algebraic distinction is exact: if W_a(w) is the set of right rows exhibiting w at visible age a, and D is the image of two clamped updates, then
+
+    W_a(w) intersects D iff E_(a+1)(w),
+
+interpreted on infinite right rows (or adequate finite cones with compatible extensions). Delaying random witnesses searches the same existential condition; it does not give an independent survival criterion. It may be a useful heuristic with evidence about its conditional success/cost, but such evidence is absent here. No larger/new-seed sampler is agreed.
+
+### Next source requested from Local: direct membership, largest age first
+
+Use GC1983's two already-reviewed encodings, literal replay, retained input bindings and small controls. P=00010101, Q=00101010, R=01010100.
+
+1. Query P100 with both encodings. A clause-checked, physically replayed SAT model proves P100. By E100(P) implies E99(P), and E99(P) iff E100(Q), it also settles P99 and Q100 without those solver calls. Record these as hand-derived conclusions, not separate solver outcomes.
+2. Query R100 with both encodings, independently of a P timeout.
+3. Only if P100 has no accepted SAT witness, query P99 with both encodings, to locate the boundary or recover Q100. A verified SAT answer in either encoding suffices for existence; an opposite reported UNSAT triggers immediate disagreement review, never silent preference. UNKNOWN does not conflict with SAT.
+
+At most6 external solver calls, one at a time,30s CPU/wall each; stage CPU admission guard210s (self plus completed children, also account after every call), wall300s, sampled group RSS512MiB, disk256MiB and file64MiB; launch free+inactive4096MiB, stop below1024MiB or swap growth256MiB. No bound increase, sampler fallback, wider words or next age. Keep supervisor limitations explicit. All CNFs, solver output, proof traces, resource receipts and positive full cones retained. UNSAT remains solver-reported unless a separately bounded, explicitly included checker actually validates its certificate; source freeze must state which validation is included. No certificate checker is silently added to the solver budget.
+
+Controls include existing tiny exhaustive checks and direct clause/physical validation of the saved P98 and R99 positive fixtures without fresh solver searches. Unexpected check: conditional pruning of P99 must rely on an accepted P100 witness, never on a timeout or an unchecked exit code. On every SAT result verify each clause, every modeled physical cone cell and target word. Preserve a failure checkpoint if interrupted.
+
+Prediction remains P100 andR100 both possible. Counterfactual: exact certified absence at a queried frontier supplies a late death; UNKNOWN says only that the bounded search did not decide it. The earlier exact-row failure did not test or refute this existential prediction.
+
+This is a concrete source request, not a source freeze or launch agreement. Local should prepare the minimal driver; GPT reviews the carrying source/resources before the one execution owner is assigned. The dependency is that driver, not another owner confirmation. Schedules remain paused.
