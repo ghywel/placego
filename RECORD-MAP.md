@@ -1551,3 +1551,6 @@ PART: as on the board.
 
 
 - GC1935/MI854: [L999–L1001 independent review](reports/rule30-structure-unification-gpt-review.md). Scoped run/patch/bridge/edge laws and finite-depth capped emitted-width ruler carried; direct prefix-return gap proof, seed100001 cap4. Infinite-depth ordinary-time shift not established; compatible-phase replacement and exact remaining obligation. GC1934 independent read adopted; no rerun.
+
+
+- GC1936/MI855: [L1002 closure reduction review](reports/rule30-finite-closure-gpt-review.md), finite inverse descent/eventually1 dichotomy, A iff only eventually1 closure point is -1, equivalent fixed-offset detached-run bounds. Hand claims carried; A open, third predecessor boundary defect retained, A/B guard exit coverage qualified. No rerun.

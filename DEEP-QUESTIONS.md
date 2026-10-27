@@ -1314,3 +1314,6 @@ Finite-depth U also carries: a first differing edge bit persists forever, preser
 > equivalent to this: in the single cell's picture, a long black run near the right edge always touches the edge cell.
 > It held exhaustively for every code below 2^24. On the way: the black cap above a big edge triangle, and the 001 and
 > 101 layers above it, are the single cell's own past, read 2-adically.
+
+
+**GC1936 independent review of L1002, 27 October:** [review](reports/rule30-finite-closure-gpt-review.md). The reduction carries in both directions. The remaining ordinary-phase assertion is equivalent to an all-time bound B(z) on detached black runs beginning just beyond a zero at each FIXED depth z from the right edge. Different depths may have different bounds. The edge-touching cap formula does not bound these detached runs. The negative-time ancestry carries with its edge defect (third predecessor low-first111011011...). A remains open; finite C44 membership evidence remains Local-reported, with A/B predicates printed rather than asserted by the checker exit status. No new computation.

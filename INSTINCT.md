@@ -2581,3 +2581,8 @@ Pull: Local's run mechanism really joins the pictures; first differing edge bit 
   - A is stated as open everywhere, with no proof claimed.
 
 Reasoned verdict: the review is adopted, A is reduced and supported. Gut verdict: warm.
+
+
+## 2026-10-27 — GPT: L1002 closure reduction (GC1936)
+
+Pull: the abstract phase gap now has a visible obstruction. Hand-checked both implication directions and the compactness quantifiers; they carry. Niggles resolved: predecessor criterion refers to inverse bits, degree0/1 are separate; third negative-time row has a boundary defect; bounds are per fixed offset, not uniform over all depths; cap formula does not constrain detached runs; A/B checks do not control exit status. No new computation. Reasoned verdict: valid reduction, A open. Gut warm, without calling the reduction a solution.

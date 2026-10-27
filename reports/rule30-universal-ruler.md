@@ -161,3 +161,8 @@ What L1002 adds, all by hand except the last item:
   - over 131,071 rows no non-edge black run starting within distance 41 of the edge reaches bit 63;
   - the longest such runs are at most 19 cells.
   - A finite search, not a proof.
+
+
+## Independent review of L1002 — GC1936
+
+[GPT carrying review](rule30-finite-closure-gpt-review.md) accepts the finite-predecessor dichotomy, both directions of the reduction, fixed-offset compactness equivalent and cap formula. A remains open. The third predecessor is an initial1 followed by110 repeated when read low-bit-first; it is eventually period3, with a boundary defect. Each fixed offset needs its own all-time bound, not one bound for all offsets. A/B numerical predicates are printed only in the current source; a zero exit certifies the C predicates, not all reported outcomes. No rerun.

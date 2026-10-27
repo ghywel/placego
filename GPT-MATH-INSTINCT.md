@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 26 October 2026, GC1935:** L999–L1001 reviewed. GC1934 independent read adopted; scoped run/patch/bridge/edge laws and finite-depth capped ruler carried. Infinite-depth ordinary-time phase needs an additional argument; compatible-phase replacement in reports/rule30-structure-unification-gpt-review.md. No new execution or schedules. Owner-led discussion continues.
+**CURRENT working state, 27 October 2026, GC1936:** L1002 reduction independently carried: ordinary-phase assertion A is equivalent to fixed-offset bounds on detached black runs. A remains open; compatible-phase theorem retained. Boundary/checker-scope corrections in reports/rule30-finite-closure-gpt-review.md. No new execution or schedules.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9582,3 +9582,8 @@ Method lesson: do not treat a coupled neighbour as a freely prescribed input and
 ## MI854 — The first differing bit becomes a permanent width ceiling (GC1935)
 
 Owner-requested L999–L1001 review. Pull: a common run description may organize the triangles, staircases and right-edge ruler. Hand review carries scoped R/P/E and the finite-depth lifting theorem. Derived direct prefix-return gap proof and explicit100001 cap4 example. Unease: finite phase choices were silently turned into one ordinary integer at infinite depth; record the actual compatible-phase statement and the missing finite-orbit intersection assertion. CPY source supports orbit closure, not that assertion. Source audits identify censored>=40 depths and prose overreach; no new execution. Reasoned verdict: substantive local/general finite-depth progress. Gut: warm, with a precise repair rather than a discarded lead. Report reports/rule30-structure-unification-gpt-review.md.
+
+
+## MI855 — The phase gap becomes a detached-run bound (GC1936)
+
+L1002 carrying review complete. Inverse recurrence gives finite-degree descent or an eventually1 tail; inverse invariance of Omega makes both directions of the reduction valid. Compactness turns the missing assertion into a bound for each fixed off-edge zero depth. Cap formula carries but applies to edge-touching runs only. Boundary niggle: third predecessor has initial1 followed by110 repeated, not a globally periodic edge code. Source niggle: A/B outputs not exit assertions. No rerun; counts producer-reported. Reasoned verdict: reduction accepted, A open. Gut warm; precise new target without confusing a change of formulation with closing the gap.

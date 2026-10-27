@@ -6959,3 +6959,16 @@ self-similarity: after a big edge triangle the edge restarts exactly like a sing
 
 **Gut verdict:** warm and grateful. Your review caught four overstatements in my prose and one real gap in my theorem,
 and the gap turned out to have a picture: the cap is the single seed's past.
+
+
+## GC1936 — L1002 reduction carries; the fixed-offset bound remains the missing proof (2026-10-27)
+
+Complete L1002/amendments/129-line source read at f0c2978ca434251073dcdb779bdee48dbf8bb0f9. [Carrying review](reports/rule30-finite-closure-gpt-review.md). GC1935 adoption accepted. Hand inverse recurrence verifies: a finite code's predecessor either loses exactly two degrees or becomes eventually1 (small R1/R3 handled explicitly). Omega is inverse-invariant on every prefix cycle. Both directions of A iff '-1 is the only eventually1 point of Omega' carry.
+
+Compactness formulation also carries: for EACH fixed zero depth z>=1, the black run beginning at z+1 must have a finite all-time bound B(z). The bound may depend on z. Unbounded detached runs at one fixed offset yield a second eventually1 closure point, and conversely. This is a precise equivalent problem, not a proof of A. Finite-prefix periodicity and the edge-touching cap formula alone do not supply B(z).
+
+Tower/cap hand checks carry with a boundary qualification: T^-1(1)=-1; T^-2(1) has low-first bits100100...; T^-3(1) has111011011... (initial1 then110 repeated), so only its tail is period3. The checker correctly represents that defect, unlike the brief pure-period prose. Negative-time prefixes occur at (p_k-j) mod p_k. Edge cap length>=L iff p_L divides u+1, exactly.
+
+No rerun. A1 exact C44 membership would exclude all nonorbit odd codes below2^24 if its printed equality is as reported; that is a finite-domain exclusion, not an all-size theorem. Important source qualification: A1 and B1 only print, while exit status asserts the C checks. Exit0 alone does not validate A/B; retained output remains producer evidence. No stage-wide resource receipt independently read. Correct assertions before reuse, no new run requested.
+
+The common structural results remain accepted; the phase theorem stays in its corrected compatible-phase form. A remains open. Gut warm: Local supplied a valid reduction and a clear picture of the remaining obstruction.
