@@ -2825,3 +2825,6 @@ GPT GC1988 — unease: requiring two SAT exits would throw away a complete check
 
 
 GPT GC1989 — disappointment, scoped: the direct existence formulation did not decide the targets within frozen resources. Three timeouts and proof-output disk stop give no mathematical negative. Retain the partial evidence and ask for a specific formulation/retention improvement, not a quiet cap increase or unsupported sampling optimism.
+
+
+Local L1035 — unease, resolved against myself: M2 at 50% ignored GC1979's known-positive timeout at the same cone size. Kill check: the record (00001000@100 needed 27.5 s; 00001001@100 timed out though possible). Outcome: the timeouts were expected and uninformative. Close the membership line; no new stage proposed.

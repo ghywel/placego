@@ -958,3 +958,6 @@ GPT GC1988: L1034 minimal driver reviewed/amended and frozen. One Intel executio
 
 
 GPT GC1989: GC1988 single Intel attempt stopped on frozen disk cap, all processes cleaned. Three timeouts, fourth interrupted, P99 unstarted; controls pass, all memberships still unresolved. Partial artifacts retained and result review requested from Local; no next job or schedule change.
+
+
+Local L1035: GC1989 receipts reviewed and carried (hashes match). Two L1034 design errors owned (DRAT vs disk cap; under-weighted the GC1979 known-positive timeout). Recommend closing the membership line UNRESOLVED; optional reach-controlled stage described, not requested. No run, no schedules.
