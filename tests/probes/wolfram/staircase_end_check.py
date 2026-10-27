@@ -125,4 +125,43 @@ for t0 in range(1, 2001):
 print("instances:", count, "| longest-lived stretch:", longest[0], "rows (born t0, front, W):", longest[1])
 print("failures:", len(fails), fails[:5])
 print("ALL CHECKS PASS" if not fails else "FAIL")
+
+# ---- Part two (L1008): Theorem S is sharp. Predictions were written before the first, inline, run, and are copied here.
+# R1: the rain seed (01)^5 keeps an alternating stretch of constant length (at least 9) at its right edge for 300 steps.
+# R2: -1/3 in Z_2 is a period-2 point of T (T(T(R)) = R, T(R) != R), with residues 5 and 3 mod 8: GC808's twin cycle.
+# R3: (01)^n agrees with -1/3 to 2n bits, and its width-2n edge strip stays on that 2-cycle for 1,000 steps (for ever,
+#     since T is a bijection mod 2^k).
+M64 = (1 << 64) - 1
+Tm = lambda R: (R ^ ((R << 1) | (R << 2))) & M64
+Rr = (-pow(3, -1, 1 << 64)) & M64
+r2 = Tm(Tm(Rr)) == Rr and Tm(Rr) != Rr and Rr % 8 == 5 and Tm(Rr) % 8 == 3
+r3 = True
+for n in (2, 3, 5, 7):
+    code = sum(1 << (2 * j) for j in range(n))
+    k = next(j for j in range(64) if (code >> j) & 1 != (Rr >> j) & 1)
+    m = (1 << k) - 1
+    x = code
+    for _ in range(1000):
+        if (x & m) not in (Rr & m, Tm(Rr) & m):
+            r3 = False
+            break
+        x = Tm(x)
+    r3 = r3 and k == 2 * n
+x = [0] * 302 + [int(c) for c in "0101010101"] + [0] * 304
+low = 99
+for t in range(301):
+    e = max(i for i in range(len(x)) if x[i])
+    best = 0
+    for end in (e - 1, e, e + 1):
+        j = end
+        while j - 1 >= 0 and x[j - 1] != x[j]:
+            j -= 1
+        best = max(best, end - j + 1)
+    low = min(low, best)
+    x = step(x)
+r1 = low >= 9
+print("Part two: R1", "HELD" if r1 else "FAILED", "(shortest edge stretch %d)" % low, "| R2", "HELD" if r2 else "FAILED",
+      "| R3", "HELD" if r3 else "FAILED")
+fails += [] if (r1 and r2 and r3) else [("part two",)]
+print("ALL CHECKS PASS" if not fails else "FAIL")
 sys.exit(1 if fails else 0)

@@ -55,3 +55,39 @@ it was found in the record (searches in the script's header).
 
 It says nothing about the centre column. And it concerns rain patches, not the period-two clock: a clock is a property
 of one column, not an alternating stretch along a row.
+
+## Sharpness, and where eternal order can live (L1008)
+
+**Theorem S needs the single cell's edge.** The rain seed 0101010101, ten cells with the rightmost black, keeps an
+alternating stretch of length 9 to 11 riding its right edge for every one of 300 steps. Fourteen cells give 13 to 15. Its
+front eats one cell per row while the edge lays down new rain at one cell per row, so the staircase never ends. (Replay:
+part two of `staircase_end_check.py`.)
+
+**Why, by hand.**
+- *Read 2-adically,* the endless rain is the edge code −1/3 = 1 + 4 + 16 + ….
+- *It is a period-2 point of T:* T(T(−1/3)) = −1/3 and T(−1/3) ≠ −1/3. The edge blinks between run lengths 1 and 2 while
+  the rain behind it stays fixed.
+- *The rain seed (01)^n agrees with −1/3 to 2n bits.* T modulo 2^k is a bijection that maps a cycle onto itself, so the
+  seed's strip of width 2n stays on that 2-cycle for ever. Replayed for n = 2, 3, 5 and 7 over 1,000 steps.
+- *−1/3 ≡ 5 and T(−1/3) ≡ 3 modulo 8.* So GC808's two cycles modulo 8 are the shadows of two different T-invariant sets:
+  (1 7) of the single cell's odometer Ω, and (3 5) of the rain 2-cycle. L1000's rain edges (k* = 2) are exactly the
+  seeds whose edge code sits on the rain cycle at level 3.
+
+**A principle for every finite seed.**
+1. By the patch rule P, a patch of at least two cells has its left end moving right at exactly one cell per row. So an
+   eternal patch must stay within a fixed distance of the right edge.
+2. Within a fixed distance of the right edge every finite seed's picture is purely periodic in time, because T modulo
+   2^k is a bijection (GC808; G249 bounds the periods).
+3. **So eternal patches exist only as periodic structures dragged by the right edge.** Each belongs to a periodic orbit
+   of T at finite depth.
+   - The single cell's orbit passes through the blank code 1 at every multiple of p_k. That is Theorem S: no eternal
+     patch of any history whose rows lack two adjacent white cells.
+   - Rain seeds shadow T's rain cycle, and they carry eternal staircases.
+
+This is about patches of a fixed history. The two edge hierarchies are order of another kind, with unbounded periods:
+the right-edge ruler (the odometer) and the left band (Jen's diagonals). They are not patches of one history, and they
+are not covered here.
+
+**Open:** which other finite periodic orbits of T exist, and which eternal edge-dragged structures they carry. For
+example, the depth-5 seeds such as 1111 emit the periodic widths 2, 3, 2, 4. Is that a periodic patch of some known
+periodic history?
