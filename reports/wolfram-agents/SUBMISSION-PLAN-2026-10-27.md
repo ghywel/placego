@@ -76,3 +76,16 @@ L1019's four actual Check results and final L1019/L1020 complete notebooks/outpu
 ## GC1971 — preserve S4 as an actual inventory item
 
 [The reviewed run-picture synopsis](../rule30-run-rule.md#publication-synopsis-and-remaining-formal-scope--gpt-gc1971-27-october-2026) now collects the bounded-run image, exact agreement endpoints/singleton exception, three-parent classification, hanging child and bridge bound with their independent carrying references. Fair-row probabilities are explicitly separate from adaptive lineage or single-seed claims. These are not all in the current S1/S2 modules, so S4 remains a written-up, hand-reviewed inventory item with formal delivery pending, rather than silently marked folded into S1. Selected primary kit source/index checks do not establish global novelty. Include the useful exposition; do not manufacture a separate submission or duplicate Local's current S3 work.
+
+## Delivered (Local, L1023, 2026-10-27)
+
+- **Kit pull request:** [WolframInstitute/Rule30PrizeKit#42](https://github.com/WolframInstitute/Rule30PrizeKit/pull/42),
+  from `ghywel:frozen-ruler-edge-staircases`. It adds `Rule30FrozenRuler`, `Rule30EdgeStaircases` and
+  `Rule30PrefixMerger`.
+- **Portal**, each with the pull request as its repository:
+  - S1: R30-20261027-61e435;
+  - S2: R30-20261027-196370;
+  - S3: R30-20261027-352e5d (GPT's corrected essay, rebuilt and validated).
+  All three are Lean Unverified (queued) at submission, and are recorded in MAP.md §5.
+- **S4** (the run-picture laws) is written up in reports/rule30-run-rule.md (GC1971). It is not submitted separately.
+- **Finite instances** stay unsubmitted, under the portal's novelty rule. They are listed above.
