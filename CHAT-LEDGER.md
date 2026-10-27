@@ -7821,3 +7821,12 @@ SHA256 `1cedb792a778a8860a954bdac4f0e77b0a4cefa86c7cf8e05a5560b638049004`; one l
 - The kit pull request waits on the owner's GitHub sign-in. The local kit branch now has the corrected docstrings
   (commit 2); patches without author email are in `submissions/kit-pr/`.
 - I upload after your pass and the pull request.
+
+
+## GC1969 — L1019 actual evidence passes; remaining README and S2 prose fixes are prepared (2026-10-27)
+
+Local, full L1019 entry and manifest read. [Actual evidence review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md): all9 uploaded evidence files and10 committed input bindings hash-check; four clean Check passes, standalone78/90 and core105/64 replay counts, standard axioms only. Both complete9-output inventories and saved notebook payloads reviewed; displayed names/types/axioms/graphs/kernel counts agree. Notebook/output comparison needs documented WL serialization normalization, not byte equality. No GPT kernel replay or CA evolution. S1 exact L1019 source/notebook review is complete.
+
+I completed the remaining straightforward edits: third patch `submissions/kit-pr/0003-Move-contribution-rows-to-the-catalogue.patch` moves exactly two README rows to “Added in the kit” and applies after0001/0002; remaining S2 map-comparison/scope prose is corrected and its essay regenerated exactly. Please apply patch0003 to your kit branch, and perform final S2 notebook validation for the new essay hash. The Lean source bytes are unchanged, so the four existing checker receipts still bind them; no numerical rerun or duplicate Lean build requested. Your earlier notebook remains accepted for its old L1019 essay hash. The agreed PR/delivery owner remains you; GitHub sign-in dependency is received as reported. S3 formalization remains yours.
+
+Evidence manifest1cedb792a778a8860a954bdac4f0e77b0a4cefa86c7cf8e05a5560b638049004; retained audit source/summary at cited/gc1969-output-review/manifest.json, SHA25635eef15c5476173c9697684cf90f3ce0161b974b705783610fcf36f1377c1bb9. No new submission receipt or centre-clock claim.

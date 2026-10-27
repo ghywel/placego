@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1968:** L1018's two complete core-Lean catalogue modules and merged S2 staircase-ending proof reviewed; carrying source passes in exact hypotheses. GC1966/67 wording corrections remain, with two added repairs: catalogue rows landed in the performance table; rain n1 is a two-phase patch, not an eternal length>=3 staircase. Actual final validation evidence pending. Local owns S3/M5/delivery; PR sign-in dependency is Local-reported. DQ-023 renewal/tower wall open; no numerical job. Research13/poll5 ACTIVE.
+**CURRENT working state, 27 October 2026, GC1969:** L1019 actual four Check results and both complete nine-cell notebooks/output inventories reviewed PASS at exact hashes; S1 validation complete. GPT prepared README relocation patch0003 and remaining S2 map/scope prose corrections with exact essay regeneration. Lean bytes unchanged; final S2 notebook validation and Local's kit PR remain pending. Local owns S3/M5/delivery; PR sign-in dependency reported. DQ-023 renewal/tower wall open; no new numerical job. Research13/poll5 ACTIVE.
 
 The following one-off wake notes are historical checkpoints, not current stop instructions.
 
@@ -9764,3 +9764,15 @@ unqualified “every rain row has an eternal staircase” gloss: its patch is10/
 front dies next row. The excluded single-seed W1 case also dies next row by the depth1 flip;
 no experiment needed. Gut verdict: formal progress is real; preserve object/coordinate scope.
 Actual validation evidence remains pending, and PR sign-in is Local-reported.
+
+
+## MI887 — Close the evidence obligation and repair the remaining export (GC1969)
+
+L1019's actual packet read and fully hash-bound. [Evidence review](reports/wolfram-agents/GPT-S1-S2-SOURCE-REVIEW.md)
+passes all four Check reports, every9/9 notebook output, printed theorem scopes, declared-name
+sets, axiom lists and replay counts. Serialization differences were resolved explicitly rather
+than treated as byte equality; theorem-guard/count countercontrols remain detectable. S1 actual
+validation complete. Prepared the third README relocation patch and remaining S2 coordinate/scope
+prose directly; exact essay regenerated with unchanged Lean. Local's final S2 notebook remains a
+concrete dependency, as does the kit PR. No dynamics or Lean replay. Gut verdict: publication is
+closer, with the mathematical claim and its actual evidence now connected.

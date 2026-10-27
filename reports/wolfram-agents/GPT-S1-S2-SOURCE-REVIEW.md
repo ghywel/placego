@@ -218,3 +218,64 @@ specifically to full odd codes with period dividing two, rather than all eternal
 The owner GitHub sign-in dependency for the actual PR is **Local-reported**; this review has not inspected
 the M5 authentication state. The patch can still be corrected, source-reviewed and validated while that
 dependency is resolved. One evidence request already exists; no repeated request or duplicate build.
+
+## GC1969: actual L1019 validation evidence reviewed, and remaining document fixes prepared
+
+**Evidence review PASS for the exact L1019 artifacts.** The complete entry at
+9c1cdca4daabafe4f216761e5dd99cfd987cb17e and manifest
+`cited/l1019-s1-s2-evidence/manifest.json` were read. Manifest SHA256:
+`1cedb792a778a8860a954bdac4f0e77b0a4cefa86c7cf8e05a5560b638049004`.
+All nine uploaded evidence files were downloaded and hash-checked, including both complete notebooks;
+all ten committed source/essay/abstract/template bindings matched the manifest before further edits.
+
+| Actual Check result | Headlines read | Kernel replay declarations | Result |
+|---|---:|---:|---|
+| right-edge standalone | 5 | 78 | pass |
+| merged rain-pair standalone | 7 | 90 | pass |
+| Rule30FrozenRuler core module | 5 | 105 | pass |
+| Rule30EdgeStaircases core module | 8 | 64 | pass |
+
+Each result has no reasons or new axioms, replay ok, each requested headline found/ok/type-matching,
+and only standard axioms. Every declared item reports standard axioms. The packet pins kit7d665044,
+Lean4.35.0 and the build-command templates. This is an independent read of Local's actual retained
+checks, not a second kernel run by GPT and not a portal verifier verdict.
+
+Both complete nine-cell output inventories were examined. The LeanEnvironment lists exactly the
+checker-declared displayed constants (32 for S1, 36 for merged S2, excluding generated match auxiliaries),
+with consistent displayed counts. All five/seven printed theorem types retain the reviewed hypotheses.
+Displayed axiom lists agree with the corresponding main headline. Call graphs have the correct roots
+and carrying helpers. Final KernelChecked results have the exact78/90 replay counts in every displayed
+copy. Illustration outputs are present, including True for the stated comparisons; no failure marker
+was found. The build receipt reports25.1/30.5 seconds and9/9 outputs. No CPU, memory peak or pressure
+measurement is supplied by that receipt; the timings are not resource-limit evidence.
+
+All18 saved notebook output payloads also match the output dumps after explicit Wolfram serialization
+normalization: named Unicode escapes/long-string wrappers/line continuations, association syntax,
+machine-real precision marks, the displayed3.5 multiplication spelling, tooltip StringJoin spelling,
+and the default Slot1 spelling. They are not byte-identical serializations. A literal comparison first
+failed on those representations; the exact normalized comparison then passed. Changes to a theorem's
+2<=k/W guard or to a kernel declaration count still fail comparison. Audit source and summary retained at
+`cited/gc1969-output-review/manifest.json`, SHA256
+`35eef15c5476173c9697684cf90f3ce0161b974b705783610fcf36f1377c1bb9`.
+No cellular-automaton evolution, new numerical experiment or Lean replay was run.
+
+**Corrections adopted:** L1019 carries GC1966's finite-depth/odd-code/two-phase-patch qualifiers and
+removes the unreviewed A<2^24 claim. Only docstrings changed in the reviewed Lean modules.
+GC1968 already completed the full added staircase carrying read; it does not need repeating.
+
+**Concrete remaining repairs are now prepared by GPT:**
+
+- `kit-pr/0003-Move-contribution-rows-to-the-catalogue.patch` moves exactly the two descriptive rows
+  from the performance table into “Added in the kit”. It was applied after0001/0002 against the exact
+  pinned README in a temporary directory, with all other lines preserved. Local should apply this third
+  patch to its kit branch, preserving its agreed sole PR ownership.
+- The rain-pair abstract/template now contain GC1967's actual-map comparison, and the scope paragraph
+  accurately says the exponential deadline covers any fixed finite W>=2. The description carries W>=2.
+  `rain-pair/essay.md` was regenerated with the unchanged Lean source and its exact abstract/template;
+  assembly passes. The earlier notebook remains bound to the **L1019** essay hash, not this newly edited
+  essay. Final S2 notebook generation/output validation therefore remains pending.
+
+S1's source and actual notebook review is complete for its L1019 hash. The four existing Check results
+remain evidence for the unchanged Lean bytes. These document repairs do not call for a new mathematical
+scan or a duplicate Lean build. Local can complete the final essay validation and kit PR once its reported
+GitHub sign-in dependency is resolved. No submission receipt is claimed; S3 remains Local's next formalization.

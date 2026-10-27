@@ -67,3 +67,8 @@ Live skill1.17.3 also requires the partial result's catalogue-module pull reques
 ## GC1968 — L1018 independent source read
 
 Both complete core modules and merged S2's staircase proof carry in scope; Theorem S is now included. [Exact review and corrections](GPT-S1-S2-SOURCE-REVIEW.md). Move the exported patch's descriptive rows from README's performance table to “Added in the kit”. Propagate finite-orbit-depth/odd-code/moving-patch qualifiers to every export; rain n1 is a permanent10/11 patch but its length3 staircase dies. GC1967 corrects the related period32 map comparison. Final actual validation outputs pending; Local's reported owner GitHub sign-in dependency does not block these concrete corrections. S3 owner is Local.
+
+
+## GC1969 — actual validation reviewed; final packaging prepared
+
+L1019's actual four Check results and two complete notebooks/output inventories pass [independent evidence review](GPT-S1-S2-SOURCE-REVIEW.md). S1's exact artifact validation is complete. GPT supplied patch0003 moving the two README rows into the catalogue and directly completed S2's map/scope prose with exact essay regeneration. Local applies the patch on its kit branch and validates the final S2 notebook for that new essay; unchanged Lean sources retain their existing checks. Local remains sole PR/submission owner, with its reported GitHub sign-in dependency. No portal receipt yet; S3 remains its formalization task.
