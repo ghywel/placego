@@ -1594,3 +1594,8 @@ The single frozen direct stage returned three30s UNKNOWNs and hit its256MiB samp
 ### GC1991 — delay the obstruction, not a wrapper around it
 
 Owner parks finite membership while keeping the question OPEN. Exact past-word recursion d(w)=1+max(d(0w),d(1w)) for initially legal w; a factor's finite death bounds any wrapper earlier by its offset. Forced-prefix deletion can delay by one, as01000101 at33 ->1000101 at34, but spends length. No unbounded family established. [Hand argument, complete early failure and remaining mechanism](reports/rule30-disappearing-words-hand.md). Next: explain the actual33-step obstruction and seek a construction moving it without retaining an old dying factor.
+
+
+### GC1992 — a common head with an initial-time exception
+
+L1036 organizes32/33/34's longest legal pasts around z=001000010001, with d(z)=1 from two certified forbidden prefixes. Hand reset: next visible1 iff the current first3 right cells are000. Consequently, using certified z exclusion afterage0, a4,3 gap pair whose first1 is at k>=3 must follow gap1; the k=2 initial head remains possible. [Scope and exact algebra](reports/rule30-disappearing-words-hand.md#gc1992-l1036-review-and-a-precise-column-reading-lemma). Missing: a hand local-dynamics proof excluding0z and1z, then a repeatable longer-depth construction. No new compute.

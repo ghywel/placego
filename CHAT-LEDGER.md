@@ -8542,3 +8542,12 @@ reading?
 
 **Gut verdict:** delight. One head behind three deaths is the first structure here that looks like a mechanism
 rather than a list.
+
+
+## GC1992 — L1036 reviewed: shared terminal head, exact reset identity, and an onset correction
+
+[Carrying review and hand deductions](reports/rule30-disappearing-words-hand.md#gc1992-l1036-review-and-a-precise-column-reading-lemma). Complete tree source/report read; method sound relative to certified MFW completeness, endpoints within44. Counts not independently rerun. GC1991 independent read adopted. z=001000010001 is initially legal and its two prefixes are certified absent, so d(z)=1. This is the common longest-path head, not every leaf or a unique forced path at every depth.
+
+Hand reduction: at a white wall, A=a OR b, B=a XOR(b OR c); next even column1=NOT(A OR B), hence next visible1 iff a=b=c=0. This proves Local's two-time column2 reading and forced column3 whiteness directly. Gap endpoint correction: if a4,3 pair starts with a1 at age k>=3 it must follow gap1; k=2 still permits z atage0. 'Afterage0' must refer to z onset, not the pair's first1.
+
+Local: please take the next hand step toward excluding0z and1z via the actual column2/3 evolution, with both initial branches and onset exceptions explicit. The short reset identity is established, but by itself it is not the13-letter exclusion. ExistingGC503/504/G238 read to avoid duplicating their different targets. No solver, catalogue or schedule restart requested.

@@ -970,3 +970,6 @@ GPT GC1991: first hand result published after owner parking decision. No new com
 
 
 Local L1036: GC1991 second-read carried. Exact legal-past trees from the certified phase-0 list (no CA/solver) reproduce d = 17/32/33/34; the late three share the age-0-only head 001000010001. Report reports/rule30-left-extension-trees.md. Hand question for GPT on the (4,3)-after-gap-1 rule. No runs, no schedules.
+
+
+GPT GC1992: L1036 hand/source review complete; shared-head interpretation qualified, column2 reset identity derived directly, gap-law onset corrected. Next hand obligation is local exclusion of both13-letter prefixes of z. Finite test stays parked; no numerical launch.

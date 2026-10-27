@@ -9919,3 +9919,8 @@ Direct membership has no answer from this stage: three solver timeouts, then dis
 ## MI905 / GC1991 — distinguish a taller past tree from a longer word
 
 Owner parks the test and asks for hand mechanisms. Prefix-height recursion makes the obstruction precise; factor inheritance kills the naive wrapper route. A forced-prefix deletion gives a real one-tick delay, but contracts the word and cannot supply arbitrarily late examples alone. Gut: this is a useful constraint on what a construction must do. The exact mechanisms at32/34/43 remain numerical; Local asked for the33 branch's carrying hand analysis. No computation.
+
+
+## MI906 / GC1992 — a reset condition, not yet the terminal obstruction
+
+L1036 gives a useful shared longest-path head relative to certified words. Derive next visible1 iff current cells1..3 are000; Local's two-time reading follows. Niggle: 'afterage0' hides an offset2—pair starts at k=2 can still have z onset0. Corrected k>=3 statement. Gut: promising common structure; retain the distinction between organizing existing certificates and replacing them with hand dynamics. Both13-letter parent exclusions remain the next task.

@@ -2834,3 +2834,6 @@ GPT GC1991 — pull: disappearing words are finite trees of possible opening cha
 
 
 Local L1036 — surprise, then delight: H_train (deepest pasts a gap-3 train) held only for 10001001. The three late words (d = 32, 33, 34) share a single age-0-only head 001000010001, reached through 4·3^k·1 block chains. Kill test written first; computed from the certified list only. Outcome: partial refutation, plus a concrete relocatable obstruction. No status upgraded.
+
+
+GPT GC1992 — pull at the shared head, unease at 'forced' and 'afterage0'. Source review supports legal-past method; longest histories are selected among branches, and gap-pair onset differs from z onset by2. Direct three-cell reset identity carried by hand. Outcome: precise new explanatory step and corrected boundary, no general grammar claimed.

@@ -63,3 +63,36 @@ Question -> response -> challenge -> better question:
 - Better question: what concrete local constraint exhausts the remaining01000101 branch at33, and can that constraint be moved farther into a genuinely new word without leaving the old dead factor intact?
 
 Next hand task with Local: explain the anchor's carrying obstruction, starting with01000101 or a smaller fully understood branch; distinguish a conditional depth identity from a fresh hand exclusion. No new numerical stage is requested. The finite age100 test stays PARKED and the broader image-language question OPEN.
+
+
+## GC1992: L1036 review and a precise column-reading lemma
+
+Read complete L1036, its104-line tree report and complete64-line reader. The reader correctly preserves legality by checking only newly prepended forbidden prefixes, since each existing suffix is already legal. A surviving extension beyond44 causes an assertion on the next level; exclusions using listed shorter factors remain sound. The four reported finished trees fit inside the exact range (largest rejected extension length41), so the boundary issue does not affect them. Method accepted relative to the record's certified completeness; no CA/solver or independent rerun of counts here. Existing reproduced endpoints agree. GC1991's hand deductions independently carried by Local; adopted.
+
+The shared head is z=001000010001. Its two prefixes0z=0001000010001 and1z=1001000010001 are literal phase0 forbidden entries. L1036's legal longest paths certify z is initially legal relative to the exact list. Hence d(z)=1. The longest histories of the32/33/34 anchors end on z, but many shorter branches have other terminal obstructions. A longest surviving history is selected by maximality; it is not a uniquely forced history at every intermediate level. A common terminal head does not by itself give a repeatable length-growing construction.
+
+### Hand derivation of Local's column-2 reading
+
+At physical time2m write the first three right cells a,b,c. The white wall gives odd-time first and second cells
+
+    A = a OR b,    B = a XOR(b OR c).
+
+At the following black wall update,
+
+    v_(m+1) = NOT(A OR B).
+
+If a=1 then A=1 and the next visible bit is0. If a=0 then A=b and B=b OR c, so the next bit is NOT(b OR c). Consequently
+
+    v_(m+1)=1 iff a=b=c=0.
+
+Equivalently, current v_m is0 and column2 is white at both physical times2m and2m+1. Under b=0 its odd value B=c, proving the third cell must also be white. These are direct truth-functional identities, not a simulation result. They recover no11 immediately and precisely identify the required reset row. GC503's existing latch classification supplies the complementary cases where that triple is not all white; its full five-cell formula was read. This is known local structure, applied here without a novelty claim.
+
+### Endpoint correction to the gap statement
+
+Count gaps as numbers of zeros between1s (the older handoff instead sometimes counts distances between1s, one larger). Suppose visible1s occur at k,k+5,k+9: gaps4 and3. For k>=3, no11 forces v_(k-1)=0. If v_(k-2)=0, the12-symbol word beginning at k-2 is exactly z, at an age at least1, contradicting d(z)=1. Thus v_(k-2)=1: the preceding gap is1.
+
+The correct formulation is therefore: **a gap pair4,3 whose first1 is at visible age at least3 must be preceded by gap1.** The phrase 'after age0' must refer to the onset of z, not just the first1 of the pair. At k=2, z may start at0 and is allowed; at k=0 or1 there need not be an earlier completed gap in the observed history. This initial exception is exactly why an age0-only head matters.
+
+This derives the eventual gap rule from the two certified forbidden prefixes. It is not yet a hand derivation of those prefixes from local dynamics. Proving no11 and the triple-white reset alone does not exclude all other compatible right columns. The next carrying obligation remains: use the actual evolution of columns2 and3 (and any needed further cells) to rule out0z and1z without importing their absence as a premise. Both prefix branches must be handled; a proof of z's late exclusion alone should state what past compatibility it uses.
+
+Prior record checked: GC503/504's exact latch and no(1,2) gap proof; G238's already-carried different14-letter obstruction01000010001001; GC1796's phase-sensitive nine-word graph comparison. None is silently substituted for this13-letter pair. The tree is useful evidence organization, not yet a hand proof of the whole33-step mechanism or a general gap grammar. Numerical test remains parked.
