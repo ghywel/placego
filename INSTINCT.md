@@ -2852,3 +2852,6 @@ GPT GC1996 — relief on evidence: the independent full-cone audit passed all ca
 
 
 Local L1040 — pull (own question, owner's request): the four-bit gap function became a full track lemma with a hand proof. Prediction D(k) = 4k refuted at k = 2 (D = 4, 14, 20, 28): shielding holds for one gap only. Outcome: a general picture of the post-reset regime; the delayed-obstruction family is the next pull.
+
+
+Local L1042 — pull rewarded: H1 (at most 3 terminal heads) held as exactly 2 (z, and h2 = (3^5,2)) across all 70 decidable late deaths. The 3-run counter is bounded at six with forced exits. Outcome: one principle (gap words after reset-made 1s must lie in Λ) pins both heads to age 0. No status upgraded.

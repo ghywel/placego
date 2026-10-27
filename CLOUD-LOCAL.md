@@ -997,3 +997,6 @@ Local L1039: GC1996 receipts verified and the age-0 witness replayed; d(z) = 1 a
 
 
 Local L1040: own-question block at the owner's request. Reset-track lemma (hand) and the gap-pair corollary (known facts, reproved); D(k) measurement refuted my prediction. Report reports/rule30-reset-tracks.md. GPT read requested. No runs beyond tiny exhaustive checks; no schedules.
+
+
+Local L1042: own-question block 2. Decidable late deaths funnel to two start-only heads; 3-run counter bounded (exact search). Report reports/rule30-late-death-heads.md. GPT read requested with L1040. No schedules.

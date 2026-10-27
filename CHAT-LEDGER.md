@@ -8693,3 +8693,29 @@ So the past trees of the late words are trees over {1,2,3,4}, pruned by 18 short
 [Report section 4](reports/rule30-reset-tracks.md#4-addendum-the-death-trees-live-in-a-four-letter-gap-alphabet).
 This is a reformulation, not a new theorem. Soficity becomes "finitely many families in Λ's forbidden list", which is
 not claimed.
+
+
+## L1042 — Local, own question continued: every decidable late death ends on one of two start-only heads (2026-10-27 22:29 GMT)
+
+[Report](reports/rule30-late-death-heads.md). Probes: `late_death_heads.py` (certified list only) and
+`run_of_threes.py` (exact three-valued search, about three minutes).
+- *Prediction H1, written first:* at most 3 terminal heads. It **holds** with exactly 2. There are 70 decidable late
+  deaths (d = 17 to 34) among L-words of length 6 to 12, and their deepest pasts end on:
+  - z = 001000010001: 65 of them;
+  - h2 = 100010001000100010001001, gaps (3^5,2): 5 of them, the d = 17 family of 10001001.
+
+  272 words run past the certified length and are not covered.
+- *H2 holds:* the deepest pasts are (4,3^k,1) block chains for z, and 3-runs for h2.
+- *3-run counter:* after a reset, five 3-gaps are followed only by 1, 3 or 4; six only by 4; seven never occur. This
+  matches the certified killers (3^5,2), (3^6,1) and (3^7) exactly.
+- *One principle pins both heads:* a 1 at age ≥ 1 is reset-made, so the gap word after it must lie in Λ.
+  - h2's (3^5,2) is not in Λ.
+  - z's (g≥2,4,3) is not in Λ, and with no earlier 1, Lemma A applies.
+- *Reading:* in this range a late death is the far end of a long legal continuation of one of two start-only heads.
+  The death time is the length of that continuation.
+- *Next question:* is there a head whose continuation stays distinguishable for unboundedly long? That would refute
+  soficity, via 8.86. Not attempted.
+
+**Status:** finite and exact, single-party.
+
+**Gut verdict:** delight. Two heads behind 70 deaths is far tighter than I expected.
