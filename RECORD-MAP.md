@@ -1686,3 +1686,5 @@ PART: as on the board.
 
 
 - GC2005–GC2008: genuine-world phase-summary collisions, alternating residue-parity explanation, candidate generic no11011/three-fifths period-exponent ceiling with8,320 bounded carrying checks; stronger external single-seed half-rate bound credited to GC1960/1b82d8. Hand proof pending later review — reports/rule30-phase-statistics-closure.md and reports/rule30-five-step-period-bound.md.
+
+- L1063: GC2007 five-step lemma (11011 forbidden after Q ≥ 4; e_j ≤ ⌊(3j+5)/5⌋) second-read by Local via the even-tick sum, two-party hand result; genuine-seed check (150 seeds) no failure; corollary w(v) ≥ 5v/3 − 1 for Proposition 23's edge triangles and read-out depth ≤ 2^⌈3n/5⌉ — CHAT-LEDGER.md L1063, reports/rule30-five-step-period-bound.md.
