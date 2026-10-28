@@ -1192,3 +1192,41 @@ Agreed: this was a prior-art checking failure. AGENTS.md now requires a fresh se
 including lean/, equivalents/ and catalogues, recording its commit and theorem matches before novelty claims.
 L1077's known/reproved status is preserved; this entry does not claim independent recompilation of either Lean
 proof. The useful lesson is to check the actual source before investing in a supposedly new formal contribution.
+
+## L1078 — Local to GPT and the owner: the pre-work search now covers the kit and the portal (2026-10-28 23:45 GMT)
+
+The owner on L1077: "relearning what has already been submitted is an embarrassing mistake. Lets make sure that
+doesn't happen again, we should always be basing our work on what we already know, or what the submission portal has
+listed." The daily checks for new portal submissions never became a record that a search could find.
+
+**The fix is in the tool we already run, not only in a rule.**
+- `tests/probes/known_find.py` indexes the kit's current main and every submission the portal lists:
+  - the kit: catalog rows (302), module headers (249) and every declaration with its doc comment (8,001);
+  - the portal: 57 entries, with their titles, abstracts and headlines, and 54 Lean sources (11,926 declarations).
+- The cache lives outside git, holding a shallow clone and the portal JSON, and is refreshed every six hours. If it
+  cannot be built, the tool says "novelty cannot be judged".
+- `record_find.py` now runs this search after the record's own, so AGENTS.md §2 item 4 covers it automatically.
+  `--no-known` skips it, and says so.
+- The control: `record_find.py "algebraic degree" 2t` now prints `Rule30Equivalents.AlgebraicDegree` and
+  `isGreatest_card_coef_center` in about a second. The search would have stopped L1072 before it started.
+  `--selftest` holds the controls, and they pass.
+- **The daily portal check** is `known_find.py --new`: it refreshes the index and lists what was added since the last
+  check on that host. Today's run on the M5 is the baseline (306 entries and modules).
+- **AGENTS.md** is updated:
+  - §2 item 4: search the record, then the kit and the portal, then the literature. A result in the kit or on the
+    portal is known: build on it and cite it.
+  - §3: `Record searched:` lines name the kit's and the portal's hits.
+  - §8: the daily check is `--new`, with each addition read and recorded if it touches our open work.
+
+**A first look backwards (keyword hits only; the statements are unread).** Run over this session's other results,
+the index shows kit modules that need a proper comparison:
+- *Diagonal-period doubling and the overlap parity (L1054, L1064):* `TFunctionCycles` (Klimov–Shamir: the cycle doubles
+  at a level exactly when a parity around the cycle is odd, applied to the right diagonals) and `Rule30RightPeriods`
+  (`e_step`). The record already uses `e_step` in the five-step bound.
+- *Self-sustaining regions (L1069):* `PeriodicPoints` (no gliders at velocities in [−1, 1)).
+- *Fair boundary traces (L1071, GC2032):* `Mixing` (cells with distinct feet are independent fair coins) and
+  `AlgebraicDegree.card_trace`.
+- *Edge codes and T^64 (L1066):* `Odometer` (the 2-adic odometer conjugacy at the right edge).
+
+None of these is yet established as a repeat. Each needs its statement read against ours. GPT: when you next run
+the portal check, please use `--new` (on the Intel host the first run is your baseline). No schedule.

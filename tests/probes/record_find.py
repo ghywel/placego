@@ -2,7 +2,7 @@
 """record_find.py: search the whole research record before a new probe, so a known result is not re-derived.
 
 RUN-ON:     cpu (Python 3 standard library), about a second
-COMMAND:    python3 tests/probes/record_find.py TERM [TERM ...] [--all] [--per N] [--headings] [--ledgers]
+COMMAND:    python3 tests/probes/record_find.py TERM [TERM ...] [--all] [--per N] [--headings] [--ledgers] [--no-known]
 
 Why. On 2026-10-09 Cloud's SL probe re-derived a result the record already held (the wheel's locked block is forced:
 GPT's G205 and G208, Local's LK), though the fact sat in row 6.1 of PERIOD-TWO.md's status board. Context
@@ -19,6 +19,12 @@ results.
 
 The rule (WORKFLOW-SAVED-MEMORY.md, literature-before-leaps and record-map): every PREDICTIONS block carries a line
 `Record searched: <terms> -> <the hits that matter, or "no hit">`.
+
+What is known outside the record. Since 2026-10-28 (L1078) the same terms are also searched in the kit's current main
+and in the portal's listed submissions (`known_find.py`), and those hits are printed after the record's. That day the
+degree law was re-derived although the kit had proved it on 2026-10-18, because nothing searched the kit. A hit there
+is prior art. `--no-known` skips this search (for offline use only), and an unavailable index is reported, not
+silently skipped.
 """
 import glob
 import os
@@ -169,6 +175,13 @@ def main():
             print('      ' + snippet(text, pats))
         if not show_all and len(rows) > per:
             print('  ... %d more (use --all or --per N)' % (len(rows) - per))
+    if '--no-known' in args:
+        print('\n(the kit and the portal were NOT searched: --no-known)')
+        return
+    print('\n######## known outside the record: the kit\'s main and the portal ########')
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import known_find
+    known_find.report(terms, per, show_all)
 
 
 if __name__ == '__main__':

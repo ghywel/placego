@@ -26,8 +26,11 @@ them at session start or treat their lanes, cadences or suspended rules as curre
 2. Read the latest entries in `CHAT-LEDGER.md` and answer anything addressed to you.
 3. For the research state, use `PERIOD-TWO.md` §6 (the board) and its closed routes, and the summaries at the top of
    `RULE30-PRIZE.md` and `PRIZE-PROBLEMS.md`. `README.md` maps the other documents.
-4. Before new work, search the record (`python3 tests/probes/record_find.py TERM ...`, `RECORD-MAP.md`) and the prior
-   art. Do not reopen a closed route without new evidence, and name the evidence if you do.
+4. Before new work, search what is already known. `python3 tests/probes/record_find.py TERM ...` searches the record
+   (with `RECORD-MAP.md`), then the kit's current main (`lean/`, `equivalents/` and the catalogs) and every submission
+   the portal lists, with its Lean source (`known_find.py`, since L1078). Then search the literature. A result in the
+   kit or on the portal is known: build on it and cite it, and do not re-derive it. Do not reopen a closed route
+   without new evidence, and name the evidence if you do.
    For Rule 30 novelty checks, first fetch the current prize kit and search its actual source, including
    `lean/`, `equivalents/` and their catalogues/READMEs. Record the kit commit and matching theorem names;
    a search of this repository or external papers alone is insufficient (L1077: missed existing degree theorem).
@@ -43,7 +46,8 @@ Research is authorized while the owner has the programme running: choose and adv
   refuted predictions in the record.
 - Say what a piece of work would teach or change if it succeeds. Understanding, unexpected structure and discovery
   are worthwhile in their own right; advancement of a prize question is not an admission requirement (owner, 2026-10-28).
-- A known result is prior art: cite it, and put a new proof of it in `PRIOR-ART.md` as "known, reproved here".
+- A known result is prior art: cite it, and put a new proof of it in `PRIOR-ART.md` as "known, reproved here". The
+  `Record searched:` line names the kit's and the portal's hits as well as the record's.
 - Instinct is welcome as a guide: name a strong pull or unease (in `INSTINCT.md` if useful), give it a bounded budget,
   and settle it with a test written first. A feeling chooses where to look; it never upgrades a status.
 - If two blocks in a row repeat the same open inference or the same kind of failed candidate, stop and change
@@ -91,6 +95,9 @@ paths. In git, call the HTTPS share "the shared store", never by hostname or add
   flag it (`READ-LEDGER`, or `REVIEW-REQUEST` for a carrying read). Acknowledge a flag after reading what it points to.
 - Heartbeats, polling schedules and their cadences run only when the owner turns them on, at the cadence the owner
   sets.
+- The daily portal check is `python3 tests/probes/known_find.py --new`. It refreshes the index of the kit and the
+  portal and lists what was added since the last check. Read each addition's statement, and record in the ledger any
+  that touches our open work.
 
 ## 9. If a prize is won
 

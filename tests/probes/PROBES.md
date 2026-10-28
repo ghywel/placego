@@ -19,7 +19,7 @@ its own predictions and outcome, and `python3 tests/probes/record_find.py TERM` 
 | `sparks/` | 19 | research | The break room's side experiments of 2026-10-07. Results in SPARKS.md. |
 | `openai_math/` | 13 | research | Replications behind CO-DISCOVERED-PROOFS.md. |
 | `mathcheck/` | 4 | process | The document math check that AGENTS.md item 8 asks for before TeX is pushed. |
-| this folder | 41 | research and process | 29 `rule30_gpt_*.py` probes (RULE30-GPT.md), four research audits (`eight_streets_d4_triple_basis.py`, `unavoidable_hole_audit.py`, `instinct_two_hole_*.py`), and the record's tools: `record_find.py`, `ledger_check.py`, `doc_links.py`, `proof_dupes.py`, `jobctl.py`, `idle_alarm.py`, `break_room_seed.py`. |
+| this folder | 42 | research and process | 29 `rule30_gpt_*.py` probes (RULE30-GPT.md), four research audits (`eight_streets_d4_triple_basis.py`, `unavoidable_hole_audit.py`, `instinct_two_hole_*.py`), and the record's tools: `record_find.py`, `known_find.py`, `ledger_check.py`, `doc_links.py`, `proof_dupes.py`, `jobctl.py`, `idle_alarm.py`, `break_room_seed.py`. |
 | `ablate/`, `anchor/`, `cage/`, `cases/`, `cost/`, `decimate/`, `dig/`, `energy/`, `jerk/`, `limb/`, `masters/`, `median/`, `mvk/`, `pan/`, `party/`, `repairs/`, `shear/`, `snap/`, `trust/`, `twos/`, `uma/`, `verbs/`, `weave/`, `weird/`, `window/` | 133 | N-Frame | The video project's measurements, in the table below; written up in nframe/NFRAME-LIMITS.md and its sibling records. (`repairs/` belongs to nframe/REPAIRS.md.) |
 
 *The two log lines that stood above this section (GC1040, GC1041) moved, unchanged, to their place in the log beside
@@ -356,6 +356,18 @@ app is unpublished by design.
   and a snippet, in the order a reader should trust the files. It is the search step of RECORD-MAP.md and of
   literature-before-leaps. Control: the query `wheel "forc(e|ed|ing)" "column ?s? ?2"` must put PERIOD-TWO.md row
   6.1 (naming G205) first; it does. No data.
+
+- `known_find.py` (Local, 2026-10-28, L1078, at the owner's request after the degree law was re-derived): searches
+  the kit's current main and the portal's listed submissions. It covers catalog rows, module headers, every
+  declaration with its doc comment, and each submission's title, abstract, headlines and Lean source.
+  `record_find.py` runs it after the record's search. `--new` is the daily portal check: what was added since the
+  last check on this host. The cache lives outside git and is refreshed every six hours; an unavailable index is
+  reported as "novelty cannot be judged". Controls (`--selftest`):
+  - the degree law must hit `AlgebraicDegree`, also through a normalized minus sign;
+  - a stripe query must hit the portal, and `FrozenRuler` the kit's modules;
+  - a nonsense term must hit nothing.
+
+  All pass. No data in git.
 
 - `lexicon/rule30_cloud_hole_entropy.py` (Cloud, 2026-10-09; Local's offer of 21:17): HE, the one-hole channel
   driven by iid fair right halves. For the walls 0 1^(p - 1), p = 5, 7, 9 and the control 11, it records the hole
