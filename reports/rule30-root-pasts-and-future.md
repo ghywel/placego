@@ -24,8 +24,11 @@ j + |w| − 1.
    with white outside, to get a finite initial row with the same window. ∎
 
 **Contrast with the wall.** In the wall system, start-only words such as z exist because the wall makes the dynamics
-non-surjective: the row 0110 has no past. In the open line there is no such obstruction. A local start-only pattern
-in the centre column is therefore impossible over finite starts.
+non-surjective: the row 0110 has no past. In the open line there is no such obstruction. So no word is start-only across all finite starts.
+
+*Correction (GC1998).* This does not rule out start-only words in the one fixed seed S. The starting row in the
+claim depends on the word and the time: "for every word, some start" is not "for this start, every word". The
+finite observation of the next paragraph is not a proof for S either.
 
 **The single seed's own column agrees.** Over 2^17 steps (`centre_column_words.py`), all 4,096 words of length 12
 occur, and every one recurs after step 100,113. Two checks are worth noting:
@@ -78,8 +81,8 @@ tree is the 2-adic tower T^-j(1). Predicting the jumps therefore looks as hard a
 
 The growth is below quadratic and above linear in this range. No asymptotic law is claimed.
 
-The one-step prediction (growth by a factor of about 1.25 to 1.3 per step) is **refuted**: growth is polynomial in
-this range, not exponential. A guess of mine, also refuted, was that the tail types close into a finite set. In fact
+The one-step prediction (growth by a factor of about 1.25 to 1.3 per step) is **refuted**: growth looks polynomial in
+this range, not exponential. That is a reading of finite exact counts, not a theorem. A guess of mine, also refuted, was that the tail types close into a finite set. In fact
 every past has its own tail, and the periods keep doubling slowly (1, 3, 6, 12, 24, 48), as L1032 predicted.
 
 **What the pasts add to the future: nothing.** F(A) = F(B) = S, so every past's future is the seed's future, one or
@@ -89,8 +92,9 @@ the pasts minus 15 (from depth 17 on): 8,843 at depth 140, out of 2^140.
 ## 4. Where this leads
 
 - **The inversion.** The future is one fixed sequence that looks random: the column has density 0.504 and contains
-  every short word. The past is "uncertain", but going d steps back leaves only polynomially many options, about
-  2·log2(d) bits of uncertainty in this range.
+  every short word. The past is "uncertain", but going d steps back leaves few options: 8,858 at
+  depth 140. That is about 2·log2(d) bits of uncertainty in the measured range only. It is a fit, not a theorem
+  (GC1998).
   - All of those options have infinite black backgrounds.
   - They differ only in their far-right tails.
 
@@ -98,7 +102,8 @@ the pasts minus 15 (from depth 17 on): 8,843 at depth 140, out of 2^140.
   like noise.
 - **A black cell's path back to the root carries no information.** Every black-producing triple contains a black
   cell, so the path always exists.
-- **For the prize.** The beginning cannot be remembered locally in the centre column (section 1). It is remembered
+- **For the prize.** Across all finite starts, no centre-column word is start-only (section 1). This leaves open
+  whether the fixed seed's own column has start-only words (GC1998's correction). The beginning is remembered
   globally on the diagonals (section 2). The root's pasts cannot constrain the future beyond fixing it (section 3).
   So this pull does not open a new route to the centre-column problems. What it does give is a precise reason the
   wall system has deaths and the open line does not: non-surjectivity at a boundary.
