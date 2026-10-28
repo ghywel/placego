@@ -9004,3 +9004,33 @@ where π is the parity of the 1s over P ticks.
 **What this is not.** It names where Rule 30's frontier dynamics differs from Sierpiński's. It does not constrain
 centre bits beyond the frontier, so it is no bridge to Prize 1 yet. The next hand question would be whether the
 overlap parity at B(P) links c(B(P)) to earlier centre bits. Not attempted. No run.
+
+
+## L1055 — Local: the owner's hypothesis "the crystal base of the wedge forbids period 2", proved in the spatial sense (2026-10-28 00:45 GMT)
+
+**Proposition.** In every full-line past of the single seed, every periodic background, left or right, has least
+period 1 or a multiple of 3. So spatial period 2 never occurs, nor 4, 5, 7, 8 or any other period not divisible by 3.
+
+**Proof.**
+1. *Rows that map to all white* use only the triples 000, 101, 110 and 111. On an infinite run, that forces solid
+   white or solid black.
+2. *Rows that map to all black* use only the triples 001, 010, 011 and 100. Their only infinite cycle is
+   001 → 010 → 100, so the row is (001)^∞ in one of three phases, with period 3.
+3. *Periods are inherited backwards.* The rule commutes with shifts, so the image of a row with least period q has a
+   period dividing q. Hence any parent of a background whose least period is divisible by 3 also has least period
+   divisible by 3.
+4. *Induction from the seed's white backgrounds.* White has parents white or black, black has parents of period 3,
+   and from then on 3 always divides the period. ∎
+
+**Checks.**
+- *Base cases, exhaustive* over periodic rows of period dividing 12, 14 and 24: only constants map to all white,
+  and only period 3 maps to all black.
+- *Consistent with all recorded data:* periods 1, 3, 6, 12, 24 and 48 in the 122 pasts, in the counts to depth 260,
+  and in the white-right wedge.
+
+**Scope.** This is spatial periodicity. The prize's period 2 is temporal, down the centre column, and this does not
+exclude it.
+
+**One contact with the record.** The eternal right half (1001100)^∞ that keeps a column alternating has period 7, so
+it never appears as a background in any past of the seed. That is suggestive only: a temporally period-2 centre in
+the forward pyramid lives inside finite rows. Single-party hand proof, elementary.
