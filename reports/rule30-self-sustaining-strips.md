@@ -11,6 +11,13 @@ here are standard. The asymmetric spread of Rule 30's difference patterns (exact
 is classical in the cellular-automaton literature, and the record measures the left speed as 0.246 (§8.66). I have not
 pinned the exact literature value for this note. No novelty is claimed for §1.
 
+**Prior art in the kit (L1079).** The kit's `Rule30Equivalents.PeriodicPoints` proves the global form of §1's
+mechanism (`eq_of_recurs_of_eq_on`, `recurs_add_factorial`). A configuration that recurs exactly, F^k x = σ^d x, at a
+velocity in [−1, 1) is spatially periodic, so Rule 30 has no gliders slower than light. §1 is the weaker local form,
+that a strip inside the light cone always receives fresh input from the left, and §2 uses that T mod 2^W is a
+bijection (`Rule30Equivalents.Odometer.G_bijective`; the record's GC808). Lemma R's light-speed ring orbits are
+velocity exactly 1, which is the case `PeriodicPoints` excludes, and they are not in the kit.
+
 **Answer in one paragraph.** Only regions that move outward at light speed against a known exterior can sustain
 themselves. In the single seed's world those are exactly the two edges of the pyramid. Their order is then forced to
 be periodic. Every region strictly inside the light cone, the centre column included, is fed from its left by an

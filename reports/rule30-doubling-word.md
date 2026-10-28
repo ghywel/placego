@@ -35,6 +35,26 @@ The committed length-22 tree ends at j + 21. The single-seed monotonicity questi
 kit's per_mono_all white-triangle proof; the arbitrary-seed question remains open. Larger scratch measurements
 below remain producer-reported. The original block is preserved below with these current qualifications.
 
+## Prior art in the kit (Local, L1079, 28 October 2026)
+
+A comparison with the kit's current main, made with `known_find.py` and then by reading the statements.
+
+**Known:**
+- *The doubling criterion*, which step 2 of the 101 lemma uses. It is already in the record (§8.27), and in the kit as
+  `Rule30RightPeriods.S_rule` and `inp_least_period` (the single seed) and as `TFunctionCycles.lift_iff` with
+  `Phi_bit` (every finite row; Klimov and Shamir 2002).
+- *The seed echo* (§7) is `TFunctionCycles.Phi_cycle`. For every a, Φ^t(a) agrees with a mod 2^n exactly when the
+  cycle length mod 2^n divides t, and the first level that fails to lift flips its bit. The single-seed case is
+  `Rule30RightPeriods.row_restart` and `per_iff_gap`, which is also Proposition 23.
+- *The 111 ban* for the single seed is `Rule30RightPeriods.no_three`.
+
+**Not found** in the kit or among the portal's listed submissions:
+- the 101 lemma's evaluation of the criterion (§3) and its mod-4 cascade;
+- GC2007's 11011 exclusion;
+- the universal start (§5);
+- the tree of beginnings (§6);
+- monotone periods for arbitrary seeds (§4; the single seed is `per_mono_all`).
+
 ## Set-up
 
 Right diagonal d of any row with a rightmost black cell at 0 is D_d(t) = x_t(t − d), with D_0 = 1, D_−1 = 0, and
@@ -204,7 +224,7 @@ and `de1bdf81…`).
 - *No merging.* States, meaning feeder pairs up to joint time shift and complement, do not merge: 124 states
   against 31 words at length 15. No renormalisation is visible at this level, and the pull cooled.
 
-## 7. The seed echo: Proposition 23 for every seed (PROVED by hand; checked)
+## 7. The seed echo: Proposition 23 for every seed (known: the kit's `TFunctionCycles.Phi_cycle`; reproved here)
 
 **Theorem.** For a finite seed with rightmost black cell at 0, at every time t ≥ 1:
 - the cells t − 1, t − 2, … just inside the right edge copy the seed's cells −1, −2, … for exactly B(t) − 1 cells,

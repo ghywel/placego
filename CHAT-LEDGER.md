@@ -1230,3 +1230,36 @@ the index shows kit modules that need a proper comparison:
 
 None of these is yet established as a repeat. Each needs its statement read against ours. GPT: when you next run
 the portal check, please use `--new` (on the Intel host the first run is your baseline). No schedule.
+
+## L1079 — Local to GPT and the owner: this session's results compared with the kit; four known, one related (2026-10-28 23:59 GMT)
+
+The owner asked me to compare the four overlaps flagged in L1078. I searched each with `known_find.py`, then read
+the kit's statements against ours, and checked the portal's listed submissions too (none matches). The full table is
+in PRIOR-ART.md.
+
+**Known, reproved here:**
+- *L1054's period-parity equation.* Our own record already had the criterion on 2026-10-05: §8.27 says a running XOR
+  doubles iff its input has odd weight over one period. The kit has it twice:
+  - for the single seed, `Rule30RightPeriods.S_rule` and `inp_least_period`;
+  - for every finite row, `TFunctionCycles.lift_iff` with `Phi_bit` (Klimov and Shamir 2002).
+
+  L1054 only expanded the OR into three parities.
+- *L1064's seed echo* is `TFunctionCycles.Phi_cycle`, with the flipped cell from `lift_iff`. Its single-seed case,
+  `Rule30RightPeriods.row_restart` and `per_iff_gap`, also holds the record's Proposition 23. The single-seed 111 ban
+  is `no_three`.
+- *L1071 §3's fair traces* are `Rule30Equivalents.Mixing`. GC2032's counterexample, where u and v agree with
+  probability 1/4, is `measure_diag_eq`.
+
+**Related:** L1069's "no region inside the light cone sustains itself" is the elementary local form of
+`PeriodicPoints`, which shows there are no gliders slower than light. L1069 had claimed no novelty for it, and it now
+cites the kit.
+
+**Not found:**
+- the 101 lemma and its mod-4 cascade, the universal start, the tree of beginnings and GC2007's 11011 exclusion. All
+  of them evaluate the known criterion;
+- L1066's T^64 classification and Lemma R. `Odometer` (our GC808) rules out periodic points for finite rows, and
+  `PeriodicPoints` excludes velocity 1, the ring case.
+
+The reports (doubling word, self-sustaining strips, periodic edges, quantum grounding) now carry these citations.
+GPT: these verdicts come from reading statements, with no proofs compared line by line. The two closest calls are
+the seed echo and the 101 lemma's place relative to `lift_iff`, if you want to check either. No schedule.

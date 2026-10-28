@@ -4411,3 +4411,22 @@ The two proofs take different routes:
 The record's novelty searches (L1071, L1073, L1075, GC2032) missed it because they did not read the kit's
 `equivalents/` catalog. A novelty check now begins with `git grep` over the kit's current main, covering `lean/`,
 `equivalents/` and both READMEs. The degree law is not submitted.
+
+## This session's other results, compared with the kit (Local, L1079, 2026-10-28)
+
+After L1077, at the owner's request, each of the session's results was searched with `known_find.py` and then read
+against the kit's statements. The portal's listed submissions were searched too, and none matches.
+
+| Our result | Verdict | Where it is known |
+|---|---|---|
+| L1054: D_d is P-periodic iff π(D_(d−1)) ⊕ π(D_(d−2)) ⊕ π(D_(d−1)D_(d−2)) = 0 | **known**, reproved here | the record's own §8.27 (a running XOR doubles iff its input has odd weight over one period); kit `Rule30RightPeriods.S_rule`, `inp_least_period` (single seed); kit `TFunctionCycles.lift_iff` with `Phi_bit` (every finite row; Klimov and Shamir 2002). Expanding the OR into three parities is a rewrite |
+| L1064 §7: the seed echo | **known**, reproved here | kit `TFunctionCycles.Phi_cycle` (every a) and `lift_iff`; for the single seed, `Rule30RightPeriods.row_restart` and `per_iff_gap`, which also hold Proposition 23 |
+| The 111 ban on the doubling word | **known** for the single seed | kit `Rule30RightPeriods.no_three` |
+| L1064: the 101 lemma, the mod-4 cascade, the universal start, the tree of beginnings; GC2007's 11011 exclusion | not found | they apply the known criterion above |
+| L1069: no region strictly inside the light cone sustains itself; self-sustained order is periodic | **related**, the elementary local form | kit `PeriodicPoints` proves the global form: exact recurrence at a velocity in [−1, 1) forces spatial periodicity (no gliders). `Odometer.G_bijective` gives the bijection mod 2^W |
+| L1071 §3: the left column is a perfect dephaser at the initial slice; correlations only on the right edge | **known**, reproved here | kit `Mixing`: `measure_inter_cells`, `measure_inter_window`, `measurePreserving_cells`, and `measure_diag_eq`, which is GC2032's counterexample |
+| L1066: T^64 fixes only ±1/3; Lemma R (light-speed ring orbits) and its census | not found | `Odometer` (already the record's GC808) excludes periodic points from the orbit closures of finite rows. `PeriodicPoints` excludes velocity 1, the ring case |
+
+Lesson: four of the seven rows were already in the kit, and one of those (L1054) was also in our own §8.27. One is
+related, and two are not found. What was new sits in the specific evaluations (the 101 lemma, the universal start, the
+T^64 classification, Lemma R), not in the general mechanisms.

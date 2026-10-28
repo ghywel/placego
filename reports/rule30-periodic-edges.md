@@ -13,6 +13,12 @@ are in the ledger entry.
 GC808 introduces T, and my own L1001 works with the single seed's cycle and its lifts. That framing is prior art. What
 this block adds is in §§1–6, each with its status.
 
+**Prior art in the kit (L1079).** `Rule30Equivalents.Odometer` proves the record's GC808 view. For every nonzero
+finite row, the right-edge orbit closure is the 2-adic odometer, so it contains no periodic point. The periodic codes
+studied here (the rain pair ±1/3) are infinite rows outside those closures. Neither the T^64 classification (§1) nor
+Lemma R (§3) is in the kit or among the portal's listed submissions. `PeriodicPoints` excludes velocity 1, which is
+exactly the ring case.
+
 Throughout:
 - T(x) = x XOR (2x OR 4x) on odd 2-adic integers, which are the rows with a black right edge read from the edge (GC808);
 - D_d is right diagonal d;

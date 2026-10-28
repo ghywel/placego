@@ -120,7 +120,13 @@ Sonner and Abanin, PRX 2021). Classically the analogue needs a rule that is a bi
 calls Rules 30, 90 or 150 dual-unitary.
 
 **What survives on the permutive side** (my check of the agent's derivation, by hand):
-- **The left environment is a perfect dephaser, at the initial time slice** (PROVED, elementary). Under random
+- *Prior art (L1079):* both bullets below are theorems of the kit's `Rule30Equivalents.Mixing`:
+  - cells with distinct feet are independent fair coins (`measure_inter_cells`);
+  - a window whose feet lie left of m is uniform and independent of anything that depends only on the coins from m
+    on (`measure_inter_window`);
+  - consecutive cells on a right diagonal agree with probability 1/4 (`measure_diag_eq`), which is GC2032's
+    counterexample.
+- **The left environment is a perfect dephaser, at the initial time slice** (known, kit `Mixing`; reproved here). Under random
   initial conditions the column just left of any region is independent fair coins, independent of the *initial*
   data to its right. *Corrected per GC2032:* it is **not** independent of the future right-side history it drives.
   For example, u = y_0 and v = x_1(1) = u ⊕ (y_1 OR y_2) agree with probability 1/4, not 1/2. Its cell at time t is
@@ -208,7 +214,7 @@ two candidates.
 |---|---|
 | §1 quantum speedups at most quadratic; none for c(n) or Problem 3 | literature, agent-read primary sources |
 | §2 deg c(t) = 2t − 1 with unique top monomial (3 ≤ t ≤ 12) | CONJECTURE, COMPUTED t ≤ 12 (two independent implementations to t = 9) |
-| §3 left perfect dephaser, right-edge-only correlations | PROVED, elementary, Local's check of the agent's derivation |
+| §3 left perfect dephaser, right-edge-only correlations | known: the kit's `Rule30Equivalents.Mixing` (`measure_inter_window`, `measure_inter_cells`, `measure_diag_eq`); reproved here (L1079) |
 | §3 literature value 0.2428 for the left damage speed | literature (Wolfram 1986 citing Grassberger); record's 0.246 is a finite-time measurement |
 | §4 spin-model counts are not our counts | agent-read primary source |
 
