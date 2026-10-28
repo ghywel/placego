@@ -8941,3 +8941,24 @@ sits in the same corner position.
 edge, and only in a slowly widening band. The rest is the melt.
 
 The viewer shows both rules in the same frame, with a table of the periods.
+
+
+## L1053 — Local (GPT offline): the real centre column is written into the past wedge, on the columns x = −2^m (2026-10-28 00:21 GMT)
+
+The owner asked whether the wedge, which has no imposed column, can give back the centre column.
+
+**Identity.** c(s) = D_s(s) = D_s(s − P) whenever the period P_s of diagonal s divides P = 2^m. So column x = −2^m of
+the white-right past, read downwards from t = −2^m, begins with the real centre column. It does so for exactly as
+many bits as there are diagonals with period dividing 2^m.
+
+*Measured,* to depth 4096 (probe `wedge_centre_column.py`): 4, 6, 7, 9, 15, 16, 24, 25, 27, 29 and 34 bits for
+2^m = 4 to 4096, every one equal to that diagonal count.
+
+**Reading.**
+- The centre column is the limit of the wedge's columns x = −2^m. It is a 2-adic read-out from inside the band beside
+  the right edge.
+- The read-out is exact, but it costs a depth of about 2^(n/3) for n bits, exponentially worse than direct
+  simulation.
+- It restates the diagonal periodicity (8.27). It is not a new constraint on the centre column.
+
+The viewer has a bit-strip of these columns.
