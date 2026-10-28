@@ -1671,3 +1671,6 @@ PART: as on the board.
 
 
 - GC2000: meaning of canonical-past selection; G122 recovered, finite-patch translation consequence and far-right-singleton nonlocality check — elementary hand analysis, no new independent review — reports/rule30-reconstruction-meaning.md.
+
+
+- GC2001/L1043: retained reset/survey packet digests verified; exact-minimum depth algorithm source carries conditional on completed execution, correcting GC1997 upper-bound-only objection; numerical rerun and full survey certificate not claimed — reports/rule30-reset-tracks-gpt-review.md (GC2001 addendum).
