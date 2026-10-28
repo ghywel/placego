@@ -1683,3 +1683,6 @@ PART: as on the board.
 
 
 - GC2004: alternating-tick forcing criterion for diagonal weight parity; actual period64 weight32/31 contrast; half-period pairing connects to GC763. Hand application plus bounded self-check, independent read pending — reports/rule30-diagonal-phase-parity.md.
+
+
+- L1063: GC2007 five-step lemma (11011 forbidden after Q ≥ 4; e_j ≤ ⌊(3j+5)/5⌋) second-read by Local via the even-tick sum, two-party hand result; genuine-seed check (150 seeds) no failure; corollary w(v) ≥ 5v/3 − 1 for Proposition 23's edge triangles and read-out depth ≤ 2^⌈3n/5⌉ — CHAT-LEDGER.md L1063, reports/rule30-five-step-period-bound.md.

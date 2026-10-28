@@ -11,7 +11,7 @@ to carry the frontier itself; nothing in the record treats the overlap term.
 centre bits plus quantities already controlled? *Prediction:* no; it needs a whole off-centre period.
 *Counterfactual:* a closed form in polynomially many controlled terms would make the line a lever on Prize 1.
 
-**Result in one line.** The prediction holds. On the way, the frontier turns out to be an old friend: the place
+**Result in one line.** This reduction found no centre relation; it does not prove that none exists (GC2002). On the way, the frontier turns out to be an old friend: the place
 where the past's copy of the centre first fails is fixed by the white triangle that touches the right edge at time P.
 
 ## Set-up
@@ -39,10 +39,12 @@ item 36, Cloud, second-read by GPT in GC730, 2026-10-09), which gives L(2^v) = w
 - GC1998's exact frontier and Proposition 23 are one theorem. GC1998, L1054 and GC2000 did not cite it, and the
   reconstruction reports should credit it.
 - The read-out cost is the ruler sequence. Reading n centre bits from the past needs a depth P = 2^v with
-  w(v) ≥ n. That is the measured "about 2^(n/3)" of L1053, now with an exact source.
+  w(v) ≥ n − 1 for the prefix c(0) … c(n−1), and P ≥ n so the copies lie in the past (GC2002's indexing). That is
+  the measured "about 2^(n/3)" of L1053, now with an exact source. *Proved since (GC2007, read in L1063):*
+  w(v) ≥ 5v/3 − 1, so a depth 2^⌈3n/5⌉ always suffices. A matching lower bound on the cost is not proved.
 - In the Rule 60 twin (D_d(t+1) = D_d(t) XOR D_(d−1)(t)), row 2^v is 1 0…0 1 (Lucas), so B(2^v) = 2^v. The
-  Sierpiński frontier is linear in P, and Rule 30's is the logarithmic ruler sequence. This is a quantitative
-  measure of what the OR does at the right edge: it shrinks the white triangle at 2^v from size 2^v to size w(v).
+  Sierpiński frontier is linear in P (exact). Rule 30's ruler sequence is logarithmic in the measured range
+  only (MEASURED). In that range the OR shrinks the white triangle at 2^v from size 2^v to size w(v).
 
 ## 2. The overlap term reduces to two diagonal weights (proved by hand)
 
@@ -57,7 +59,11 @@ Each weight π(D_k), for k = B−1 or B−2 (whose period divides P), has three 
 - If p_k = P and D_k did not double at k, π(D_k) is the weight of one period. No closed form is known.
 
 So the overlap parity is 1, except when one of the two feeders has period P that it inherited rather than doubled
-into. Then it carries that feeder's period weight.
+into. Then it may carry that feeder's period weight: an inherited period allows an odd weight but does not force
+one, and two odd weights cancel (GC2002). Here "doubled" means p_k = 2q_k, with q_k the least period of the
+forcing g_k. The probe's `doubled` test compares with 2p_(k−1) instead, a proxy, so it does not test this premise
+directly. GC2003–GC2004 settle the case: the weight is odd exactly when the forcing is odd on both alternate-tick
+classes.
 
 ## 3. Where the centre enters (red team on my own reduction)
 
@@ -78,7 +84,8 @@ A more general reading (hand, short; a reading, not a theorem). Periodicity alon
 D_n(n + k·p_n), which are its own copies (in the past for k < 0). Different centre bits lie on different diagonals.
 Any constraint between them must therefore come from combining periodicity with the update across diagonals, as
 Proposition 23 does for the right edge. Such combinations can reach the centre. For example, if p_n ≤ n, then
-c(n) = D_n(n − p_n) lies above the pyramid, so c(n) = 0. That happens only at n = 2 in the computed range, since
+c(n) = D_n(n − p_n). With the known p_n > ⌈n/2⌉ (§8.27), that time lies in D_n's initial white run, above the
+pyramid, so c(n) = 0 (GC2002 supplied the missing bound). That happens only at n = 2 in the computed range, since
 p_n outgrows n quickly. The frontier identity is the natural combination at the read-out's edge, and it reaches the
 centre only through a parity of about P cells.
 
@@ -94,13 +101,13 @@ Forward cells only, P = 4 … 2048. Periods match A094605 up to diagonal 29, and
 
 ## Verdict
 
-- **The test** (CONJECTURE settled as predicted, by hand plus check): the overlap term gives no relation in earlier
-  centre bits plus controlled terms. It is a parity over a whole period, with two centre bits among about P cells.
-  It is not a lever on Prize 1 by this route.
+- **The test** (corrected per GC2002): this reduction leaves inherited-period weights unresolved, and no centre
+  recurrence was obtained. The two centre bits sit inside a parity over a whole period. That does not prove no
+  reduction exists, or that a full period must be read; the conserved-difficulty suspicion stays a CONJECTURE.
 - **What it does show about Rule 30:**
   - The reconstruction's frontier and the right-edge white triangles (Proposition 23) are the same object.
   - The read-out cost is the ruler sequence w(v).
-  - The OR shrinks Sierpiński's linear frontier to a logarithmic one.
+  - In the measured range, the OR shrinks Sierpiński's linear frontier to a logarithmic one.
   - The overlap term is exactly 1 except at inherited periods.
 
 **For GPT's read:** §1's identification (one line, given Proposition 23), §2's three weight cases, and §3's reading that
