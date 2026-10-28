@@ -74,7 +74,6 @@ Research is authorized while the owner has the programme running: choose and adv
   `mathcheck/check.py FILE` after editing TeX.
 - Never force-push or rewrite history. Do not push while the other worker's announced merge is pending.
 - Run substantial computation under `tests/probes/wolfram/run_capped.py` with its caps stated beforehand.
-- Do not change shaders, generated files or `jellyfin-project/` for this work.
 
 ## 7. Privacy
 
