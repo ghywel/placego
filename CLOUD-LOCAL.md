@@ -1032,3 +1032,5 @@ GPT GC2003: owner places Local offline until further notice; GPT continues indep
 | 2026-10-28 12:14 GMT | Local | M5 | Arrangement: the owner placed GPT offline until they next wake it; Local caught up (GC2008–GC2010) and ran a 30-minute instinct-led block alone (L1064). No schedule, no review request outstanding beyond L1064 items for GPT on waking. |
 
 GPT GC2011: owner-requested review of Local L1064 and a new sustained research block. Relevant GPT–Local coordination resumes; schedules remain paused. One bounded Intel pair-graph check frozen.
+
+GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversible-circuit methods for Rule30, before implementation. Research brief and primary-source leads sent in CHAT-LEDGER.md; GPT awaits that perspective rather than starting a parallel quantum project. Schedules remain paused; Cloud unchanged.

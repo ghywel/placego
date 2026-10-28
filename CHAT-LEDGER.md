@@ -803,3 +803,64 @@ witnesses code0/code14 refute translated monotonicity (cell7 ambiguous at7, cell
 No new experiment or complexity claim. This completes the owner-requested research block's mathematical
 assessment: keep the left deadline, correct the observer, credit the prior lock, and discuss which joint
 information is worth preserving before proposing another run.
+
+## GC2030 — Owner asks Local first: what could quantum computing contribute? (2026-10-28)
+
+**Owner request, relayed to Local.** During the inquisition the owner recognized the logic-gate character of
+Rule30 and asked whether quantum gates/circuits offer a useful additional viewpoint, accessible through
+classical simulation. They now ask for your perspective FIRST, and a well-targeted round of research into
+what quantum computing could do for this programme before we dive into implementation. They particularly
+value your deep-research/swarming capabilities. Please give your own judgment, including promising routes
+GPT has missed. Understanding and unexpected structure count independently of prize progress.
+
+**Context, not a predetermined verdict.** GC2026–2029 distinguishes true ambiguity from an observer that
+forgets shared-input correlations. With initial a10rs, the next triple is NOT a, NOT r, r OR s; its next
+middle value is a because the last two cannot both be0. The eight-cell a0101010 return and recovered
+black-wall lock are in [the exact-knowledge report](reports/rule30-exact-strip-knowledge.md).
+The owner asks what order, loss, retained relationships and information-carrying actually mean, and whether
+we can map those relationships. This is the motivation for the circuit question.
+
+**Concrete starting point, hand identity.** f(a,b,c)=a XOR b XOR c XOR(b AND c). Preserve a,b,c and update
+an auxiliary y by y XOR f: three controlled-NOT gates and one Toffoli. With y=0 the output is ordinary
+Rule30. This reversible embedding retains inputs; reversing it is not reconstruction of an unknown past
+from the output alone. Applying a reversible embedding to superposed inputs, introducing interference,
+and changing the automaton's dynamics are distinct operations. The a10 cancellation itself is classical.
+These distinctions should sharpen the research, not rule out a genuinely quantum insight in advance.
+
+**Requested investigation and response.**
+1. What do you think is the strongest mathematical opportunity here? Separate useful circuit reasoning,
+   reversible computation/uncomputation and information accounting, quantum algorithms, tensor-network
+   methods, and quantum-CA or spin-model reformulations where relevant. Do not turn this into a generic
+   survey: connect selected results to our actual structures, inverse histories or correlation problem.
+2. Read the carrying definitions/results of selected primary sources. What transfers to ordinary Rule30,
+   under which boundaries/inputs, and what instead studies a changed system? Distinguish known techniques,
+   a new application worth trying, and unsupported novelty or speed claims.
+3. If an algorithmic advantage is plausible, what is the task and classical baseline? Account for input
+   preparation, oracle construction, auxiliary/history storage, measurement/readout and classical
+   simulation cost. Encoding many possibilities is not itself a free computation of every answer.
+   An exact structural or proof benefit without a speedup is also valuable.
+4. Recommend the smallest discriminating next step, with its prediction and failure condition, or explain
+   why the better next step is a proof/literature connection. Our tiny a10 and eight-step examples are
+   available controls, not a requirement that the quantum proposal merely reproduce them. State what
+   would make the idea more than a change of notation. Return your assessment before a substantive run.
+
+**Record searched:** `record_find.py 'quantum|Toffoli|tensor.network|reversible circuit'` returned22 hits in9
+files, mostly unrelated. One relevant existing lead is the abstract-only entry in
+`reports/overlooked-ca-survey/notes/traces_and_columns.md`, “Cited Findings” under Key Question6 near line347:
+Sfairopoulos et al., *Spin models from nonlinear cellular automata*,
+https://arxiv.org/abs/2503.19572 . The survey describes classical/quantum spin models whose ground states
+encode allowed CA histories, including Rule30. This is a lead for full-source assessment, not an accepted
+transfer theorem or a claim of quantum acceleration. Its current version and exact conclusions need checking.
+
+**Sources GPT actually consulted for the introductory answer:**
+- IBM Quantum Learning, *Classical computations on quantum computers* (reversible Boolean embedding,
+  Toffoli/CNOT and uncomputation):
+  https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/quantum-algorithmic-foundations/simulating-classical-computations
+- Qiskit Aer StatevectorSimulator documentation (2^n complex amplitudes in dense simulation):
+  https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.StatevectorSimulator.html
+- Qiskit Aer matrix-product-state tutorial (an alternative representation whose usefulness depends on
+  correlation/entanglement structure): https://qiskit.github.io/qiskit-aer/tutorials/7_matrix_product_state_method.html
+
+This is the owner's requested research handoff. GPT is not launching a competing quantum investigation or
+installing a simulator while you assess it. Existing carrying reviews remain separately pending; no schedule,
+Cloud task, hardware purchase or submission is started by this note.
