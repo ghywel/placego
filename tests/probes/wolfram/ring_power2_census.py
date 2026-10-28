@@ -2,13 +2,13 @@
 """Local, 2026-10-28 (L1066): every Rule 30 ring configuration of size m whose moving-frame map
 Phi(x)[i] = x[i] XOR (x[i+1] OR x[i+2]) returns it after P steps (P a power of two), for m <= MMAX, vectorised.
 Prints the primitive orbits (least spatial period, up to rotation) with their least Phi-periods.
-Usage: ring_power2_census.py MMAX P
+Usage: ring_power2_census.py MMAX P [MMIN]
 """
 import sys
 import numpy as np
-MMAX, P = int(sys.argv[1]), int(sys.argv[2])
+MMAX, P = int(sys.argv[1]), int(sys.argv[2]); MMIN = int(sys.argv[3]) if len(sys.argv) > 3 else 1
 prim = {}
-for m in range(1, MMAX + 1):
+for m in range(MMIN, MMAX + 1):
     full = np.uint32((1 << m) - 1)
     x = np.arange(1 << m, dtype=np.uint32); y = x.copy()
     def rot(z, r):

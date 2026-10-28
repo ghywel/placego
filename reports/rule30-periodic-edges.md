@@ -93,7 +93,9 @@ diagonal periods. So:
 | m ≤ 20 | P ≤ 4,096 | 12 s | `226f6dbb…` |
 | m ≤ 26 | P ≤ 256 | 53 s | `8f6f8afd…` |
 
-All three censuses find exactly three orbits:
+A size-27 ring at P = 16 has only the white orbit (4 s). The size-28 run at P = 16 was stopped by the runner's
+memory-pressure guard before any result and is recorded as stopped, not as evidence. All three completed censuses
+above find exactly three orbits:
 - **all white** (period 1);
 - **rain** (01)^∞ (period 2);
 - **the (0001)^∞ orbit** (period 8, also passing through (0111)).
@@ -106,6 +108,11 @@ once). The cyclic components are exactly:
 
 Each component is a single simple cycle. So these are **all** ring orbits of any size with moving-frame period
 dividing 8 (COMPUTED, exhaustive). P = 16 needs 2^32 states and is out of reach this way.
+
+**A pattern, not tested (CONJECTURE).** Every odd ring tested carries only the white orbit. Both non-white orbits are
+travelling waves: each diagonal is a time-shift of the previous one, by 1 tick for rain and 2 ticks for (0001). If
+every power-of-two ring orbit is such a wave, its spatial period divides its moving-frame period, so it is a power of
+two. That would explain the odd rings.
 
 **Why the two extra orbits never attach to an edge** (hand).
 - *White* has identically zero diagonals, and no diagonal d ≥ 1 of an edge-attached row is constant (L1064 §5).
@@ -187,6 +194,42 @@ A pruned version, which drops states below a probability cut and reports the dro
 The increments after the forced start are 2.35, 1.70 and 2.82, about 2.3 diagonals per doubling on average. The single
 seed's measured rate is about 2.4 (L1064 §1). With three unforced levels I claim no growth law.
 
+## 7. Approximate periodic points, explained by the universal start (COMPUTED to k = 24; hand explanation)
+
+`approx_periodic_points.py` counts the odd residues x mod 2^k with T^P x ≡ x (mod 2^k), that is, the residues on
+cycles of T mod 2^k whose length divides P.
+
+| P | Count for every k from | Count |
+|---|---|---|
+| 2 | 4 | 4 |
+| 4 | 4 | 8 |
+| 8 | 6 | 32 |
+| 16 | 8 | 64 |
+| 32 | 18 | 2,112 |
+| 64 | not yet stationary | 25,216 at k = 24, still growing |
+
+**Why the small counts are constant** (hand). At each level the rain 2-cycle splits off a twin 2-cycle. The twin then
+follows the universal start: length 4, then 8, then a split into two 8-cycles, then 16, then two 16-cycles, then 32.
+So the residues on cycles of length dividing P are:
+- P = 2: 2 + 2 = 4;
+- P = 4: 2 + 2 + 4 = 8;
+- P = 8: 2 + 2 + 4 + 8 + 16 = 32;
+- P = 16: 2 + 2 + 4 + 8 + 16 + 32 = 64.
+
+All four were predicted before the P = 4 and P = 16 runs and held.
+
+The P = 32 count settles once k passes the longest residence at period ≤ 32 (14 diagonals above j, GC2013).
+
+**Cross-check through the graph** (scratch, checked). A residue mod 2^k is a choice of start bits 1 … k−1, so the
+count must equal the number of non-exiting paths of length k − 1 from the start in the cap-P graph.
+- *Cap 32:* the path counts are 896, 1,920 and then 2,112 from length 16 on, matching the integer counts at k = 12, 16
+  and 18 onward. At depth 23 the 2,112 paths sit on 2,112 distinct states, three fewer than the graph's 2,115.
+- *Cap 64:* the path count is 25,216 at length 23, matching k = 24. It settles at **171,776** from length 105 on.
+  171,776 is the graph's 171,779 states minus 3, as predicted before this run.
+
+So for every k ≥ 106 exactly 171,776 odd residues mod 2^k lie on cycles of T of length dividing 64 (COMPUTED, through
+the graph). Two independent computations, T on integers and the pair graph, agree wherever both reach.
+
 ## What this changes
 
 - **Eternal right edges.** The question "does Rule 30 have an eternal right edge other than endless rain?" is now:
@@ -203,5 +246,8 @@ seed's measured rate is about 2.4 (L1064 §1). With three unforced levels I clai
 - Lemma R (§3);
 - the two exclusions in §3;
 - the gap in §5;
+- a possible next computation, not started: the unrestricted G_16 has 2^32 states, too many for this block's Python.
+  A bitset forward-pruning pass in C (about 1 GB) would classify every ring orbit of moving-frame period dividing 16,
+  of any size, and so settle H at P = 16;
 - whether the 1b82d8 resource or the per_mono_all triangle can prove N. The single-seed triangle argument fails for
   arbitrary seeds, as GC2014 noted, and N is the first case of arbitrary-seed monotonicity to try.

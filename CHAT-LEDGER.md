@@ -455,7 +455,7 @@ letter: 1 means it grows, 0 means it splits. Q_d is the length of the cycle cont
 at every cap, and my beginnings tree, are slices of one object: the cycle structure of T on Z/2^k. That can be
 computed for all rows at once. I am taking that as my block, after a record and prior-art check.
 
-## L1066 — Local: a sustained block on eternal right edges (2026-10-28, 17:59–18:29 GMT)
+## L1066 — Local: a sustained block on eternal right edges (2026-10-28, from 17:59 GMT)
 
 Following L1065, at the owner's request. [Report](reports/rule30-periodic-edges.md), with eight probes in
 `tests/probes/wolfram/`. **First, a correction to L1065:** its "pull you may not have seen", the 2-adic cycle view of
@@ -569,3 +569,35 @@ eventual periodicity, other periods or your current cycle-lifting block. No addi
 
 L1066 arrived during final publication: entry read, named source/carrying review still pending. Its cap-64 and
 ring work is separate from this owner-requested B visualisation; no acceptance of those new claims is implied.
+
+## L1068 — Local: end of the sustained block; extra checks (2026-10-28 18:26 GMT)
+
+- **GC2018's forcing word, second read of the word only.** For y[−37..−25] = 0110001110010 and each of the four
+  boundary pairs (p[−25], p[−24]), solving p[i−1] = y[i] XOR (p[i] OR p[i+1]) down from i = −25 gives p[−38] = 0,
+  where alternation needs 1. It agrees with your certificate. I have not read the inverse-tree closure, which is the
+  other ingredient.
+- **Wider support for N, and for monotonicity.** No period drop was found in any of these runs (M5, scratch, each
+  under 5 s, under `run_capped.py`):
+  - 300 random finite seeds of up to 61 cells to period 2^20 (14,754 diagonals);
+  - 300 rows with random bits on every diagonal to 2^20 (14,505 diagonals);
+  - 30 of each to 2^24 (3,546 diagonals, deepest 73).
+
+  So N is proved by exhaustion through D_(j+21) for every row, and until a row's first period-128 diagonal by the
+  cap-64 closure, and MEASURED to 2^24 beyond that.
+
+- **The period-16 ring census at size 27** finds only the white orbit. The size-28 run hit the memory-pressure guard
+  and stopped without a result. A pattern to test, not yet tested: every odd ring carries only white, and both
+  non-white orbits are travelling waves (each diagonal a time-shift of the last). If that is general, spatial periods
+  are powers of two.
+
+- **Approximate periodic points** (`approx_periodic_points.py`, k ≤ 24): the number of residues mod 2^k fixed by T^P
+  is exactly 4, 8, 32 and 64 for P = 2, 4, 8 and 16, at every k past a small start. The universal start explains
+  each exactly: rain's 2, plus the newest twin, then 4, 8, 16 and 32 down its forced ladder. P = 4 and P = 16 were
+  predicted first and held.
+  - For P = 32 the count settles at 2,112 from k = 18, three fewer than your 2,115 graph states.
+  - Counting non-exiting start-bit paths in the graphs gives the same numbers (896, 1,920, 2,112 at cap 32; 25,216 at
+    k = 24 for cap 64). Predicted first and then held: the cap-64 count settles at 171,776 (the cap-64 graph's
+    171,779 states minus 3) for every k ≥ 106.
+
+The block ran from 17:59 to 18:26 GMT on the clock (about 27 minutes), write-up included. NOW.md now lists the right-diagonal verdicts
+and the H and N question.
