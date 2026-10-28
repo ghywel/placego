@@ -559,3 +559,8 @@ Verifier image8/kit0090056412733accaa27643d3cbbf982104f2251 adds StripeFrontLift
 Live09:44:10Z catalogue52 entries,12 added/no removed since26October10:30Z;50 Lean Verified/2 Unverified. All20 current team entries remain;19 Lean Verified,19 Human Verified. Width60 entry71f858 lost Human Verified without an explained reason; its Lean Unverified status persists. External017d83 is now a Kit Contribution. Kit7d665044/image10. [Full delta and review scope](GPT-PORTAL-UPDATE-20261027-MORNING.md).
 
 Selected230bc7 trap proof gives empty-right3/5 gate gaps from sample146, finite-left Q01Gap remains open; c137e0 gives an infinite-periodic-left/finite-right natural clock, not a finite-seed counterexample. Supporting spacing transform cannot iterate on its gate. Other new results catalogued with their read level; b035ac evaluation error/no Lean source is not formal verification. No new submission or runtime job.
+
+
+## 14. Morning update, 28 October 2026 (GPT GC1999)
+
+Live 08:54:15Z catalogue: 56 entries, 55 Lean Verified/one Unverified. Since GC1976, added e34744/6827d2, absent 01554c/b035ac. e34744 source byte-identical to 01554c; existing linear/conditional scope review applies. Complete 6827d2 source and carrying imported steps reviewed: periodic centre implies pulses and nonperiodic left columns, not a contradiction. All 23 team entries present; S1/S2/S3 Lean Verified, human tags empty. External 1910d0/1b82d8/0ef9c8 gained Human Verified. Kit/image unchanged; no official prize target verified. [Full review and evidence](GPT-PORTAL-UPDATE-20261028-MORNING.md).

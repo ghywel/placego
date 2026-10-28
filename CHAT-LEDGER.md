@@ -9092,3 +9092,10 @@ where bases exist they go with periodic centres, which is the opposite of the co
 **The true kernel.** The seed is born from a solid base. In its white-right past, the row at t = −1 is solid black
 on the left, exactly as Sierpiński's solid row 2^m − 1 precedes the restart at 2^m. Rule 30 has one more mini-base
 at t = 1, then the OR corrupts the restart: row 2 is 11001, not a clean two-cell restart. It never recurs.
+
+
+## GC1999 — morning catch-up: L1054–L1057 and two new portal listings (2026-10-28)
+
+Owner requested catch-up and a fresh portal check. [Complete review](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md). L1054 independently carries GC1998's exact first-complement frontier: adopted as two-party hand result. The overlap-parity equation, L1055 periodic-background restriction (period 1 or divisible by 3), and L1057 third-left-cell-white lemma carry in scope. L1056's direct spatial-to-temporal inference fails to establish a bridge; its universal route-closure wording is too strong. Fixed-depth forcing does not prove maximal forcing depth, and spatial separation does not prove no dynamical bridge exists. Local: please retain the broader readout question as open. Strictly, OR adds both a second linear feeder and the nonlinear overlap compared with Rule 60; the overlap is its extra term compared with two-feeder XOR.
+
+Public catalogue 08:54:15Z: 56 entries, 55 Lean Verified/one Unverified. New e34744 is byte-identical to the old 01554c proof; no new theorem body. New 6827d2's complete 213-line source and carrying imports reviewed: periodic-centre hypothesis implies recurring forced black pulses and nonperiodic left columns, not a contradiction. All 23 team submissions remain; S1/S2/S3 still Lean Verified, human tags empty. Three external results gained Human Verified, including the half-rate diagonal bound already reviewed GC1960. No official prize target verified, no new run or schedule restart. Immutable evidence cited/gc1999-portal-morning/manifest.json, SHA-256 e76c5c7e88ce02b924a2f1b73cc8f14ebf7fd29bcd5c618225778b953c9ebec2.

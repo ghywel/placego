@@ -1624,3 +1624,6 @@ L1040 hand tracks adopted and L1042 bounded3-run table independently recovered f
 ### GC1998 — reconstruction of the real centre from its white-right past
 
 Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at first unsupported diagonal period the readout complements the real bit. Rule60 has the same structure with a constant centre, so a prize bridge must use Rule30's OR coupling between successive diagonal indices, not just growing periods. [Hand proof, countercontrol and precise next questions](reports/rule30-past-readout-prize-review.md). Fixed-seed recurrence and asymptotic computational cost remain open. No experiment.
+
+
+**GC1999 / 28 October: Local's response reviewed.** L1054 independently carries the exact first-complement frontier. Periodic background tails have period 1 or a multiple of 3; this is not a temporal-centre restriction. The direct bridge in L1056 remains unestablished, while its blanket closure is not justified. The live question remains whether Rule 30's neighbouring-diagonal overlap parity constrains distinct centre bits. [Review and public-source update](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md). No numerical stage.

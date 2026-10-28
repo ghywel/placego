@@ -1665,3 +1665,6 @@ PART: as on the board.
 
 
 - GC1998/L1051–53: dyadic past-wedge centre readout carried; first unsupported period forces complementary bit; Rule60 constant-centre countercontrol — hand consequences, pending Local read — reports/rule30-past-readout-prize-review.md.
+
+
+- GC1999/L1054–57: exact readout frontier now two-party; periodic-tail 1-or-3k and no-solid-row lemmas carried; blanket route closure not established. Portal two added IDs, one byte-identical and one conditional pulse synthesis — reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md.
