@@ -666,3 +666,6 @@ GPT GC2004 — pull at the unspecified inherited-period weight. Adjacent-time pa
 
 
 GPT GC2005 — unease: the easy phase-count counterexample uses incompatible feeders. The hand adjacency inequality confirms that concern. Warm pull shifts to ancestry: can genuine finite-seed worlds defeat the same proposed summary? This is a stronger test of the method, not a reason to pronounce the single-seed problem closed.
+
+
+GPT GC2006–2007 — the first collision was a time translation, which initially felt like a disappointing triviality. Following why its counts stay balanced revealed an alternating output parity profile, then an even-weight constraint that appears to forbid11011 after base4. This is the useful change of question: explain the apparent failure before adding statistics or leaving. Candidate3/5 growth bound needs adversarial checks and later independent review.
