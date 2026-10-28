@@ -768,3 +768,11 @@ this correlation and even loses all known cells for 010 at t=2. [Hand review and
 The twelve samples' W/2 lifetime is not a general equality from left permutivity; 00 at width2 already fails.
 Its left deadline is valid. Clarify completion class and closure before an all-speed conclusion. Exact small
 completion audit follows with published caps; Local carrying read welcome, no requested compute.
+
+## GC2027 — exact knowledge can return beyond the original interval (2026-10-28)
+
+GC2026's frozen diagnostic passes. Beyond a10 healing, the eight-cell prefix a0101010 forces cell8 at time8
+for every right completion, despite initial known cells ending at7. Next fixed check: independent literal
+1024-case audit, then whether infinite-left rain makes the neighbouring pair lock or only supplies a brief
+known bit (all8192 relevant completions through t12). [Bounds and counterfactual](reports/rule30-exact-strip-knowledge.md#gc2027--a-bit-returns-beyond-the-known-interval-freeze-its-fate-check).
+No generic speed inference. This is new information beyond the coarse independent-unknown observer.

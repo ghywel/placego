@@ -59,3 +59,25 @@ exactly determined cells can appear beyond the original right endpoint; no all-w
 One Intel process, no local job duplication. Caps: 30 CPU/45 wall seconds, 256 MiB sampled group RSS, 4 MiB/file,
 8 MiB output; launch free+inactive 1024 MiB, ongoing 512 MiB, swap growth 128 MiB, under run_capped.py with monitor
 access. Source strip_exact_completion.py frozen before execution. No automatic rerun or widening.
+
+## GC2027 — a bit returns beyond the known interval; freeze its fate check
+
+The dca33be2 diagnostic completed: all 510 words, times 1..8, all 65,536 right completions per word
+(bit-parallel), with 1,428 literal scalar control equations. Ternary soundness passes; earliest missed
+knowledge is 010 at t=2, position2. Unexpectedly, a0101010 on positions0..7 fixes position8 at t=8.
+The initial right endpoint is7: exact knowledge can reappear beyond it. This is a finite all-completion
+statement, not a new signal speed. Iterated left permutivity leaves the original bit a as the data bit.
+
+Follow-up question: is that forced cell a momentary return, or a permanent advance of the rain boundary?
+First independently replay all 512 causally relevant nine-bit right completions for each a by literal
+truth-table updates. Then set the entire left half-line through x7 to the fixed rain, with x7=0, and
+inspect the pair x7,x8 through time12 over all 8192 relevant right completions x8..20. A finite left
+buffer -12..7 contains every queried dependency cone; do not impose edge updates. If the pair ever
+becomes uniformly 01, it locks forever: its left neighbour is permanently1, and both next values
+remain 0,1 regardless of the right exterior. Otherwise retain explicit non-locking witnesses.
+
+Prediction: a single forced bit need not close the pair; test the distinction rather than infer closure.
+Counterfactual: if a uniform 01 pair occurs, the elementary invariant gives permanent locking under
+this infinite-left rain premise. No conclusion about a finite rain interval or singleton centre follows.
+One fixed follow-up, source rain_information_return.py; 20 CPU/30 wall seconds, 256 MiB sampled group
+RSS, 4 MiB/file, 8 MiB total; same pressure thresholds. No further depth or census automatically queued.
