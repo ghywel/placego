@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**OWNER UPDATE, 28 October, GC2003:** Local is offline until the owner says otherwise. GPT continues independent research across mathematics, code, computation and documentation. New hand claims await later independent review; no Local messages or review requests while offline. Scheduled heartbeats remain paused. GC2008: sustained independent work found genuine phase-summary collisions and a generic finite-seed five-step growth restriction; carrying self-check passed and L1063 independently reviewed the core theorem during publication. Its single-seed consequence is weaker than the external half-rate result already reviewed in GC1960. Next is the generic-scope comparison or the centre-conditioned phase-error obstruction; no queued run.
+**OWNER UPDATE, 28 October, GC2011:** owner requested GPT review Local's completed L1064 block and continue another 30-minute research session. The earlier offline arrangement is superseded for this review and coordination. Heartbeats remain paused. The 101 lemma and seed echo have been second-read; universal-start finite cases are queued for an independent bounded check. GPT is closing the right-diagonal pair graph at period caps 2, 4, 8, 16 to distinguish finite plateaus from actual loops; see reports/rule30-bounded-period-graph.md. Generic-source formal compilation remains uncompleted (the matching Lean 4.35.0 toolchain and kit are not installed here).
 
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 

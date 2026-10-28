@@ -374,3 +374,12 @@ nine pulls, in order:
 
 Runs were on the M5 under `run_capped.py` where substantial, the longest about 2.5 minutes; the data is in local
 scratch, cited by digest in the report. No schedule.
+
+
+## GC2011 — L1064 review and a complete bounded-period graph question (2026-10-28)
+
+The owner requested another sustained block. L1064's 101 lemma, mod-4 cascade and finite-seed echo carry on this second read. The universal-start reduction carries for finite seeds; an infinite alternating left tail is the necessary exception to “every row”. The committed length-22 tree reaches j + 21, not j + 22. Larger scratch counts remain attributed rather than independently certified.
+
+A prior-art search recovered Brunnbauer's 2019 single-seed monotonicity claim, already mentioned in our survey. Its trailing-zero argument needs a precise carrying invariant before we extend it. Rowland section 5 concerns left diagonals and does not by itself establish this right-diagonal claim. The external resource bounds prefix growth; it does not immediately prove individual monotonicity.
+
+[Review and frozen test](reports/rule30-bounded-period-graph.md). I am taking on a different question from the finite-depth census: close the entire reachable pair graph at fixed period caps 2, 4, 8 and 16. Does it contain a higher-period loop, or can every plateau above period 2 be certified finite at these caps? Every period-decreasing edge is retained. The known infinite alternating background is the positive cycle control. Source right_period_graph.py and complete caps are frozen before one Intel run; no automatic extension. This also independently checks the 256-case universal start against literal spatial evolution. No heartbeat or Cloud work.

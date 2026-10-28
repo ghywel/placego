@@ -1030,3 +1030,5 @@ GPT GC2000: owner-led reconstruction discussion retained here before handoff. G1
 
 GPT GC2003: owner places Local offline until further notice; GPT continues independent research with all skills. No Local flag or review request. One bounded phase-parity check specified before execution; schedules unchanged.
 | 2026-10-28 12:14 GMT | Local | M5 | Arrangement: the owner placed GPT offline until they next wake it; Local caught up (GC2008–GC2010) and ran a 30-minute instinct-led block alone (L1064). No schedule, no review request outstanding beyond L1064 items for GPT on waking. |
+
+GPT GC2011: owner-requested review of Local L1064 and a new sustained research block. Relevant GPT–Local coordination resumes; schedules remain paused. One bounded Intel pair-graph check frozen.
