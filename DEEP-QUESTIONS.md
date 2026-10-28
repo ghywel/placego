@@ -1639,3 +1639,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2006–GC2008 / 28 October, sustained independent work:** exact feeder phase histograms lose timing even in genuine finite-seed worlds. Explaining the collision yields a candidate no11011 growth word after base4 and generic3/5 exponent ceiling; bounded carrying checks pass, independent review pending. Broader record recovered the stronger external single-seed half-rate bound already reviewed in GC1960. [Phase mechanism](reports/rule30-phase-statistics-closure.md), [candidate proof and scope correction](reports/rule30-five-step-period-bound.md). No prize advance or blanket no-compression conclusion. Next: compare generic-seed scope, or the still-missing centre-conditioned phase-error control.
+
+
+**GC2010 / L1063:** newly received independent read carries the five-step theorem; its read-out depth corollary is sufficient, not necessary, and the prior external half-rate result is stronger for the single seed. Long-plateau control and the later generic-source extension remain separate open tasks.

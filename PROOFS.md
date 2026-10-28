@@ -2377,6 +2377,11 @@ its restatement, and GPT's G29 audits its extension to signed rationals with the
 
 ## E2. GPT's proofs, second-read (G39 to G204 moved from the waiting room 2026-10-06, by Local; later entries promoted as their readings arrived, each naming its second reader)
 
+### GC2007 — Five-step right-prefix period bound (second-read by Local, L1063, 2026-10-28)
+
+For every normalized nonempty finite seed, the prefix-growth word11011 is forbidden after base period4. Together with GC763, this gives log2 Q_j<=floor((3j+5)/5). [Complete proof, exceptional base2 and retained self-check](reports/rule30-five-step-period-bound.md). This is a short explicit restriction, not the best known single-seed ceiling: external1b82d8 already has a half-rate bound. Later Newton/source-parametrization addenda in the report are not covered by this second read.
+
+
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
 every admissible word to $T = 14$, zero failures). Verdicts: **G39 correct.** The rotation-to-the-minimum step is
@@ -3310,7 +3315,6 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
-- **GC2007–GC2008: five-step right-prefix period bound, arbitrary finite seeds.** PROOF-SKETCH; Local offline, no review request dispatched. Prefix-growth word11011 is forbidden after base4; together with GC763 this gives log2 Q_j<=floor((3j+5)/5). Full carrying argument, small-period exception and8,320-case self-check: [report](reports/rule30-five-step-period-bound.md). The single-seed consequence is weaker than external1b82d8's half-rate bound; no best-bound or novelty claim.
 
 - **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
   §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.

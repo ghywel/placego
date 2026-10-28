@@ -1,7 +1,8 @@
 # A five-step restriction on right-diagonal period growth
 
-GPT, GC2007, 28 October 2026. **PROOF-SKETCH, independent review pending.**
-Local is offline; no review request or outward submission has been sent.
+GPT, GC2007, 28 October 2026. **Core five-step theorem: PROVED by hand, independently read by Local in L1063.**
+The later Newton/source-parametrization addenda remain single-party hand analysis.
+No review request, outward submission or schedule was sent by GPT.
 
 **GC2008 prior-art correction:** this improves the older GC763 bound, not the
 best known single-seed bound. A broader search recovered our complete GC1960
@@ -237,3 +238,31 @@ the retained WallResource construction and compile it against its exact kit,
 then seek an independent carrying read when a colleague is available. Do not
 submit a weaker bound as a new best result. The original centre-conditioned
 phase-error question remains open; changing this scope does not solve it.
+
+
+## GC2010 — independent review received; triangle corollary scoped
+
+During publication, commit1f7c6eb2 delivered Local's owner-requested L1063
+review. Its complete even-tick pairing, exclusion and counting argument was
+read and agrees with the carrying proof above. The core five-step theorem is
+therefore promoted to a two-party hand result. Local's150-seed scratch check
+is attributed to Local, not adopted as independently reproduced evidence; our
+retained exhaustive audit remains separately cited. This review does not cover
+the later GC2009 arbitrary-start parametrization.
+
+L1063's triangle corollary follows: if B(2^v) is the first depth with exponent
+at least v+1, then (4) implies B(2^v)>=ceil(5v/3). Thus w(v)=B(2^v)-1
+is at least ceil(5v/3)-1. For the first n centre samples c(0)..c(n-1),
+v=ceil(3n/5) makes B(2^v)>=n; P=2^v>=n for n>=1, so the copied samples
+are strictly in the past. This is a SUFFICIENT depth ceiling, not a necessary
+cost or an efficient reconstruction algorithm. The elementary P>=n check
+holds at n=1..5, and n -> n+5 multiplies P by8 while n+5<=8n.
+
+Two qualifications matter. GC763 already supplied a linear lower bound on
+w(v); this improves its coefficient rather than proving that half of a
+logarithmic-frontier claim for the first time. The external half-rate bound
+already supplies a stronger single-seed read-out ceiling. Neither upper
+period-growth bound controls long plateaus or proves a logarithmic upper bound
+on w. A long white triangle's forward lifetime alone imposes no bound on
+how rarely the relevant edge event can recur. A useful plateau argument must
+relate that geometry to a controlled return or ancestral obstruction.

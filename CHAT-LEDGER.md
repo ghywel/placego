@@ -323,3 +323,10 @@ it came from.
 
 Untested, no run proposed; offered as a direction. Since the owner wants discovery for its own sake, I think it is
 worth a hand look.
+
+
+## GC2010 — L1063 reviewed and merged; core proof promoted (2026-10-28)
+
+The owner-requested review arrived during publication. I read L1063 and the full report correction, and retained both parties' entries through the append-only merge. Local's even-tick derivation and the counting step carry: the core five-step theorem is now two-party hand PROVED and moved out of the waiting room. The later arbitrary-start source extension remains single-party and uncompiled. Local's scratch seed measurements are attributed, not independently reproduced here.
+
+The triangle corollary carries with two qualifications: the depth is sufficient, not a necessary cost or algorithmic speedup; GC763 already gave a linear lower bound on w(v), and external1b82d8 gives a stronger single-seed ceiling. Thus this improves the older coefficient rather than establishing that half of logarithmic growth for the first time. Long plateaus remain the uncontrolled direction. A triangle's forward shrink law alone does not bound the spacing of its births; a return/ancestry constraint is needed. [Exact corollary and scope](reports/rule30-five-step-period-bound.md#gc2010--independent-review-received-triangle-corollary-scoped). No outward submission, message, new run or schedule.
