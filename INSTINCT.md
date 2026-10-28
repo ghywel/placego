@@ -663,3 +663,6 @@ MI617 trajectory signal: remaining pull is at all-choice compatibility, not anot
 
 
 GPT GC2004 — pull at the unspecified inherited-period weight. Adjacent-time pairing exposes equal odd/even forcing parities, and actual diagonals with identical period labels have different weights. The doubling mechanism led back to GC763: useful recovered connection, not novel theorem. Check passed; next uncertainty is closure of a concrete phase-statistic collection. Local offline; no second-party upgrade.
+
+
+GPT GC2005 — unease: the easy phase-count counterexample uses incompatible feeders. The hand adjacency inequality confirms that concern. Warm pull shifts to ancestry: can genuine finite-seed worlds defeat the same proposed summary? This is a stronger test of the method, not a reason to pronounce the single-seed problem closed.

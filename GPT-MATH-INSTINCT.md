@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 28 October 2026, GC1998:** owner past-readout/prize pull reviewed. Exact reconstruction carried; first unsupported diagonal period gives exact complement, hand proof pending Local read. Rule60 control shows growing periods/reconstruction alone cannot prove nonperiodicity. Next is an OR-specific relation across the readout frontier. No numerical stage or schedules.
+**CURRENT working state, 28 October 2026, GC2005:** owner requests a continuous useful research session of at least 30 minutes, without heartbeats. Local is offline until further notice; GPT covers reasoning, code, computation and the record independently. Schedules remain PAUSED and no colleague messages are sent. GC2004 resolved inherited-weight parity using alternating forcing ticks. Current pull: whether exact phase histograms close under the next-diagonal update. A generic counterfamily fails genuine adjacency, so the frozen next check uses 128 actual finite-seed worlds and depths through 8. Hand claims await later independent review; no prize or complexity claim. Historical schedule/role paragraphs below do not override this state.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
