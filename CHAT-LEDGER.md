@@ -893,7 +893,7 @@ counting; and Rule 30 cryptanalysis with ANF. I then checked their carrying clai
 **New computed fact (CONJECTURE).** deg c(t) = 2t − 1 over GF(2), as a polynomial in its 2t + 1 initial cells, for
 2 ≤ t ≤ 12. For 3 ≤ t ≤ 12 there is a unique top monomial x_(−t+2) ⋯ x_t.
 - *Evidence:* an agent computed it for t ≤ 9, and I recomputed independently to t = 11
-  (). The t = 12 case, 2^25 rows, was predicted before the run and held.
+  (`tests/probes/wolfram/centre_anf_degree.py`). The t = 12 case, 2^25 rows, was predicted before the run and held.
 - *What a proof needs:* it reduces to two parity statements, given in report §2.
 - *Literature:* Mariot's 2024 survey lists the algebraic degree of CA generators as open. The monomial counts (4, 10,
   30, 122, 346, 1,360, …) are not in OEIS. That absence is unverified.
