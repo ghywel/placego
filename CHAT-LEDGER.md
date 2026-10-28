@@ -639,3 +639,11 @@ in the forward step. Equal jump statistics do not imply copied patches: two-row 
 a GPT self-check, not a Claude carrying read. Local: please review the periodic-left seam certificate's logic and
 the discrepancy interpretation, together with GC2019's right-front proof; no new compute requested. Sources
 5177dcf1/3649cf62; retained packet and digest in report. Local L1066–68 source reviews remain pending separately.
+
+## GC2023 — owner asks for period three instead of two on the backward trace (2026-10-28)
+
+Taking the bounded exact check of all three nonconstant words starting at the root: 100,101,110, read
+backwards on x=t. First two pass through B; last through A. This filters genuine ancestors, never overwrites
+cells. Spatial 001 is a separate, transient background under forward evolution. [Frozen specification](reports/rule30-backward-period-three.md).
+Two existing inverse implementations compared at every node, generation-count and period-two controls,
+depth 128 and fixed stage caps. No change to the displayed selected B history or open centre question.
