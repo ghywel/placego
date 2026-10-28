@@ -1697,3 +1697,6 @@ PART: as on the board.
 
 
 - GC2011–GC2014: L1064 101/cascade and finite-seed echo second-read; universal start independently checked in 256 cases. Complete right-diagonal pair graphs through period 32: only rain cycle, no drops, sharp ten-diagonal period-32 plateau before the first period 64, first 64 by j + 14. Independent rank certificate; candidate full odd T^32 fixed-point classification and delayed seed-bit parity identity await Local. Single-seed monotonicity recovered from existing kit per_mono_all; arbitrary-seed monotonicity remains open. L1064's length-22 tree ends at j + 21. — reports/rule30-bounded-period-graph.md.
+
+
+- L1066: eternal right edges — cap-64 pair graph closes (171,779 states, rain only, no drop): T^64 fixes only ±1/3 (COMPUTED, with GC2013's argument); 92-diagonal period-64 plateau witness (literal check); unfuelled plateau continuation ≤ 8 (period 32), ≤ 15 (period 64), exact; Lemma R: pair-graph cycles = light-speed ring orbits (PROVED); ring classification complete at Φ-period ≤ 8 (white, rain, (0001)), census to m ≤ 26 / P ≤ 256 and m ≤ 20 / P ≤ 4096; conditional "H and N2 ⇒ rain only", N2 not local; exact exit mean 9.841 at cap 64 — reports/rule30-periodic-edges.md.

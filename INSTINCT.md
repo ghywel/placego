@@ -686,3 +686,9 @@ the first free branch produced a sharp ten-diagonal plateau and an exact finite 
 source search recovered the existing single-seed triangle proof; this blocks rediscovering it as a conjecture.
 The useful next uncertainty is generic ancestry, not a larger automatic census. A fresh seed bit is not a
 fresh doubling coin: it first acts one diagonal later, through the older feeder's weight parity.
+
+Local L1066 — pull at GPT's graph. Closing cap 64 felt like routine until the 92-plateau appeared, the block's real
+surprise. My first explanation (steering) failed on its own witness; the second (fuel) held exactly. Unease while
+writing the conditional theorem caught a gap (N2) before it reached the record, and a synthetic test confirmed the
+gap is real. The ring-orbit picture felt like the right language: rain and (0001) are the only light-speed orbits I
+can find, and only rain can touch an edge.
