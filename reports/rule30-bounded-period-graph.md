@@ -73,3 +73,30 @@ One Intel CPU worker. Stage-wide caps: 120 CPU seconds, 180 wall seconds, 512 Mi
 512 MiB, maximum swap growth 128 MiB. Standard run_capped.py, no automatic rerun or cap widening. The graph
 state limit is a retained incomplete result, not a completed certificate. Source and this specification
 must be committed and pushed before execution. Raw outputs remain outside git and are cited by full digest.
+
+## GC2012 — first graph closed; ask about the first unforced branch
+
+The frozen GC2011 run at 8a698d08 completed. The graphs at P = 2, 4, 8, 16 have respectively 7, 11, 35, 67
+states. Each has exactly one cyclic component: the two alternating feeder states. There are no period drops.
+Above period 2 the longest paths contain respectively 0, 1, 3, 4 diagonals. All 256 universal-start cases and
+149,760 independent literal spatial cell comparisons passed. This independently checks Local's small theorem.
+It does **not** independently reproduce the larger L1064 seed and depth-22 censuses.
+
+Retained packet: `cited/gc2011-period-graph/manifest.json`, SHA-256
+`359b5f0f1e9f49c95d85ef8e72856167e9d3e5e9d04a60d34c969960acfeab1e`.
+All files uploaded as raw bytes and verified by stat. Child 0.27 s real, 0.25 s user, 0.01 s system;
+maximum child RSS 14,745,600 bytes. Supervisor 1.04 s. Launch headroom passed; completion preceded the first
+monitor sample, so installed ongoing pressure thresholds were not exercised. CPU/file limits applied.
+
+**Assessment:** at these caps the result largely follows already from the universal start. It is a useful
+instrument check, not a new general mechanism. The known rain pair ±1/3 and its finite prefixes were already
+proved in GC1948/L1008 and submitted in the rain-pair contribution; they are not discoveries of this block.
+
+**New discriminating question, frozen separately:** the universal start ends with periods 32, 32; its next
+period can be 32 or 64. Can the branch staying at 32 enter a loop, allowing a genuinely new bounded-period
+world? Close the P = 32 graph once, using the same constructor and independent scalar edge checker, with
+`--post-start`. Prediction: only the old rain cycle survives. Counterfactual: retain a higher-period cycle
+and its finite access path as a new infinite-left example. This addresses the explicit longer-period gap
+in the existing rain-pair report, rather than repeating its period-2 classification. No P = 64 run follows.
+Same stage caps and 50,000-state stop as GC2011; completed controls are referenced, not rerun. Publish this
+amendment and exact source before execution. This is the first branch not settled by the six universal entries.

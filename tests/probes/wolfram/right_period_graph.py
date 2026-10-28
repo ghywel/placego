@@ -6,6 +6,7 @@ reports/rule30-bounded-period-graph.md. Standard library only; no Local imports.
 Each bit of a packed integer is one time tick, least-significant tick first.
 """
 import collections
+import argparse
 import hashlib
 import itertools
 import json
@@ -211,9 +212,14 @@ def controls():
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--post-start', action='store_true',
+                        help='GC2012 separate frozen question: P=32 only, reusing completed controls')
+    args = parser.parse_args()
     out = Path(os.environ['CAPPED_OUT'])
-    result = {"controls": controls(), "graphs": []}
-    for p in (2, 4, 8, 16):
+    result = {"controls": ({"reused_packet": "cited/gc2011-period-graph/manifest.json"}
+                           if args.post_start else controls()), "graphs": []}
+    for p in ((32,) if args.post_start else (2, 4, 8, 16)):
         cert = build(p)
         data = json.dumps(cert, sort_keys=True, separators=(',', ':')).encode()
         name = f'graph-p{p}.json'
