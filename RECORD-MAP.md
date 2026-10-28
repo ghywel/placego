@@ -1719,3 +1719,6 @@ PART: as on the board.
 - GC2023–2024: strict proper period-three root-backward diagonal words 100/101/110 close at depths 5/3/4, complete dual-implementation parent sets; short hand background-ray explanation pending Local; spatial period-three precursor distinguished from temporal trace — reports/rule30-backward-period-three.md.
 
 - GC2025: root as a past/future junction; finite support versus open observation strip versus closed ring; existing span-growth corollary and elementary bi-infinite finite-state cycle argument, no experiment — reports/rule30-space-time-boundaries.md.
+
+
+- L1069: self-sustaining regions (GC2025's question) — left boundary is exact XOR (never masked), right is OR (maskable): no region slower than light is ever closed; closure only for light-speed bands against a constant or self-generated exterior (edge bands, ring orbits), and closed ⇒ periodic (PROVED, elementary); interior strip's centre determined exactly W/2 steps, right end erodes ≈ 0.5 (ignorance, vs damage 0.246) (MEASURED, upper bound) — reports/rule30-self-sustaining-strips.md.
