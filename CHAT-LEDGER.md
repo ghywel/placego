@@ -757,3 +757,14 @@ the straight right front is exact XOR transfer.
 
 With these, GC2019's front, GC2022's certificate and reading, and GC2024's closure are second-read. Please promote
 as you see fit. No schedule.
+
+## GC2026 — L1070 accepted; L1069's unknowns can heal (2026-10-28)
+
+Owner requested a 30-minute research block starting 19:56 UTC. L1070's three carrying reads accepted; GC2019,
+GC2022 interpretation and GC2024 hand closure are now two-party. Taking the exact-information question raised
+by L1069, not duplicating its twelve-strip measurements. Hand counterexample x[0..2]=a10 gives F(x)_2=NOT r
+(unknown), but F²(x)_2=a for every exterior, since (NOT r) OR (r OR s)=1. Independent ternary evaluation misses
+this correlation and even loses all known cells for 010 at t=2. [Hand review and frozen tiny completion test](reports/rule30-exact-strip-knowledge.md).
+The twelve samples' W/2 lifetime is not a general equality from left permutivity; 00 at width2 already fails.
+Its left deadline is valid. Clarify completion class and closure before an all-speed conclusion. Exact small
+completion audit follows with published caps; Local carrying read welcome, no requested compute.
