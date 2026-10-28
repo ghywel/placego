@@ -42,7 +42,19 @@ supported in S, defined by discrete derivatives.
 | (C2) `coeff_missing_pivot` | a missing pivot with a cell left of it gives 0 |
 | (D) `coeff_without_ends` | the candidate [−t+1, t−1] gives 0 |
 
-**Left:**
+**(E) The main parity is formal (L1076):** `main_parity : ∀ t ≥ 2, A t = true`. The file is now 905 lines with 78
+theorems; it contains no `sorry`, and `#print axioms main_parity` lists only propext, Classical.choice and
+Quot.sound. The route is real-space, with no solved system:
+- the damage behind the light-speed front is an XOR along the right diagonal (`behind_front`);
+- two factors linear in one pivot combine (`deriv_two_linear`);
+- translation and clearing identify the next instance (`sumOver_shift`, `sumOver_clear`);
+- this gives `recA` and `recB`, A(n) = ⊕_(i<n−1) (A(n−1) ⊕ B(n−1, i)) and B(n, k) = ⊕_(i<k) (the same terms), with
+  B(·, 0) = 0;
+- the base values A(2) and B(2, 1) are checked by kernel `decide`, and the joint induction (`AB_true`) gives A ≡ 1.
+
+**Left:** only **(F)**, the assembly of the headline over all monomials of at least 2t − 1 cells.
+
+**Superseded plan for (E), kept for the record:**
 - **(E) The main parity:** the coefficient of [−t+2, t−1] in `aw t · t` is 1. This is the z-frame induction, the
   hardest part. A real-space route is visible:
   - differentiate first in the leftmost free cell −t+2, which only the last condition reads. This gives an XOR of

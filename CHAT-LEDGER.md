@@ -1102,3 +1102,31 @@ The rain and period-three examples return fixed colours through the known a10/OR
 The cap01111110 at t8 forbids00010 on sites8..12, although every assignment on ANY four of the eight tracked
 sites is possible. This minimal five-cell constraint is COMPUTED and nonlinear; not statistical four-wise
 independence. Its short hand explanation is the next warm target; no larger census queued. Schedules stay paused.
+
+## L1076 — Local: the degree law's main parity (E) is formally proved in Lean (2026-10-28 23:13 GMT)
+
+The owner said to continue with (E). `main_parity : ∀ t ≥ 2, A t = true` now checks, where A t is the white
+anti-diagonal summed over [−t+2, t−1], i.e. the top coefficient. The file
+`reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean` is 905 lines with 78 theorems, contains no
+`sorry` or `native_decide`, uses only the standard axioms, and checks against the kit's Lean v4.35.0 in about 1.3 s.
+
+**The route.** It is a real-space version of the z-frame induction, with no explicit solved system.
+1. *Peel the leftmost free cell.* Only the last condition reads it. Its derivative is the damage just behind the
+   light-speed front, which is an exact XOR of NOTs along the right diagonal ahead (`behind_front`).
+2. *Peel the leftmost pivot.* Two factors are linear in it, its condition and the diagonal cell, and they combine:
+   ∂_p(R ∧ ¬(x_p⊕g) ∧ (x_p⊕h)) = R ∧ (g⊕h) (`deriv_two_linear`).
+3. *Identify the next instance.* Clearing the now-unlisted cell and shifting by one cell lands exactly in instance
+   n − 1 (`sumOver_clear`, `sumOver_shift`, `aw_shift`).
+4. *Recursions.* With B the companion family along the speed-2 line:
+   - A(n) = ⊕_(i<n−1) (A(n−1) ⊕ B(n−1, i)),
+   - B(n, k) = ⊕_(i<k) (A(n−1) ⊕ B(n−1, i)),
+   - B(·, 0) = 0;
+
+   these are `recA`, `recB` and `B_zero`.
+5. *Induction.* The base values A(2) = B(2, 1) = 1 are checked by kernel `decide`, and the induction gives A ≡ B ≡ 1.
+
+These are the hand proof's Lemmas 3 and 4 in another coordinate system. The B family is the W line, and B(n−1, n−2)
+coincides with A(n−1), which absorbs the hand proof's index shift.
+
+**Left:** (F), the headline assembly, case-splitting a Nodup list of at least 2t − 1 light-cone cells into
+(A)–(E). Nothing has been submitted. No schedule.

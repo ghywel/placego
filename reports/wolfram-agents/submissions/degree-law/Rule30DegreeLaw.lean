@@ -521,4 +521,385 @@ theorem coeff_without_ends (s : Nat) (hs : 1 ≤ s) (S : List Int)
     exact sumOver_linear _ _ h2' hne' (indep_clear s _ 1) (evo_linear s _ 1 (by omega))
   rw [hh, hu, hv, huv]; rfl
 
+/-! ## (E) preparation: XOR accumulators, damage behind the front, shifts -/
+
+/-- `xorUpTo f k = f 0 ⊕ f 1 ⊕ ⋯ ⊕ f (k-1)`. -/
+def xorUpTo (f : Nat → Bool) : Nat → Bool
+  | 0 => false
+  | k + 1 => xor (xorUpTo f k) (f k)
+
+theorem and_xorUpTo (a : Bool) (f : Nat → Bool) (k : Nat) :
+    (a && xorUpTo f k) = xorUpTo (fun i => a && f i) k := by
+  induction k with
+  | zero => cases a <;> rfl
+  | succ k ih =>
+    simp only [xorUpTo]; rw [← ih]
+    cases a <;> cases xorUpTo f k <;> cases f k <;> rfl
+
+theorem deriv_xorUpTo (j : Int) (G : Nat → (Int → Bool) → Bool) (k : Nat) (x : Int → Bool) :
+    deriv j (fun y => xorUpTo (fun i => G i y) k) x = xorUpTo (fun i => deriv j (G i) x) k := by
+  induction k with
+  | zero => simp [deriv, xorUpTo]
+  | succ k ih =>
+    simp only [xorUpTo]
+    rw [deriv_xor j (fun y => xorUpTo (fun i => G i y) k) (G k) x, ih]
+
+theorem sumOver_xorUpTo (S : List Int) (G : Nat → (Int → Bool) → Bool) (k : Nat) :
+    sumOver S (fun y => xorUpTo (fun i => G i y) k) = xorUpTo (fun i => sumOver S (G i)) k := by
+  induction k with
+  | zero => exact sumOver_false S
+  | succ k ih =>
+    simp only [xorUpTo]
+    rw [sumOver_xor S (fun y => xorUpTo (fun i => G i y) k) (G k), ih]
+
+theorem deriv_not (j : Int) (F : (Int → Bool) → Bool) (x : Int → Bool) :
+    deriv j (fun y => !(F y)) x = deriv j F x := by
+  simp only [deriv]; cases F (setCell x j true) <;> cases F (setCell x j false) <;> rfl
+
+theorem deriv_indep_and (j : Int) {R F : (Int → Bool) → Bool} (hR : Indep R j) (x : Int → Bool) :
+    deriv j (fun y => R y && F y) x = (R x && deriv j F x) := by
+  simp only [deriv]; rw [hR x true, hR x false]
+  cases R x <;> cases F (setCell x j true) <;> cases F (setCell x j false) <;> rfl
+
+/-- Two factors linear in the same cell combine: `∂_p (R ∧ ¬(x_p ⊕ g) ∧ (x_p ⊕ h)) = R ∧ (g ⊕ h)`. -/
+theorem deriv_two_linear {R g h : (Int → Bool) → Bool} {p : Int} (hR : Indep R p) (hg : Indep g p)
+    (hh : Indep h p) (x : Int → Bool) :
+    deriv p (fun y => (R y && !(xor (y p) (g y))) && xor (y p) (h y)) x = (R x && xor (g x) (h x)) := by
+  simp only [deriv, setCell_same]
+  rw [hR x true, hR x false, hg x true, hg x false, hh x true, hh x false]
+  cases R x <;> cases g x <;> cases h x <;> rfl
+
+/-- **Damage behind the front.** Flipping cell `q` changes the cell just behind the light-speed front at time
+`k` by the XOR of the NOTs of the cells just ahead of the front at earlier times. -/
+theorem behind_front (q : Int) (x : Int → Bool) (k : Nat) :
+    deriv q (fun y => evo k y (q + k - 1)) x = xorUpTo (fun i => !(evo i x (q + 1 + i))) k := by
+  induction k with
+  | zero =>
+    simp only [deriv, evo, xorUpTo]
+    have h : q + ((0 : Nat) : Int) - 1 ≠ q := by omega
+    rw [setCell_other x q _ true h, setCell_other x q _ false h]
+    cases x (q + ((0 : Nat) : Int) - 1) <;> rfl
+  | succ k ih =>
+    have hpos : q + ((k + 1 : Nat) : Int) - 1 = q + k := by omega
+    simp only [deriv] at ih ⊢
+    rw [hpos, evo_succ, evo_succ]
+    have hb := right_damage q x k (q + k) (Int.le_refl _)
+    rw [decide_eq_true rfl] at hb
+    have hc := right_damage q x k (q + k + 1) (by omega)
+    rw [decide_eq_false (by omega), xor_false_iff] at hc
+    have hc0 : evo k (setCell x q false) (q + k + 1) = evo k x (q + 1 + k) := by
+      have e : q + 1 + (k : Int) = q + k + 1 := by omega
+      rw [e]; apply evo_cone; intro i h1 _; exact setCell_other x q i false (by omega)
+    have hm : q + (k : Int) - 1 = q + ((k : Nat) : Int) - 1 := rfl
+    simp only [xorUpTo]
+    rw [← ih, hc, hc0]
+    revert hb
+    generalize evo k (setCell x q true) (q + k) = b1
+    generalize evo k (setCell x q false) (q + k) = b0
+    generalize evo k (setCell x q true) (q + k - 1) = a1
+    generalize evo k (setCell x q false) (q + k - 1) = a0
+    generalize evo k x (q + 1 + k) = c
+    cases b1 <;> cases b0 <;> cases a1 <;> cases a0 <;> cases c <;> decide
+
+/-- Shift a row one cell to the right. -/
+def shiftR (y : Int → Bool) : Int → Bool := fun j => y (j - 1)
+
+theorem evo_shift (k : Nat) (y : Int → Bool) (p : Int) : evo k (shiftR y) (p + 1) = evo k y p := by
+  induction k generalizing p with
+  | zero => simp [evo, shiftR]
+  | succ k ih =>
+    rw [evo_succ, evo_succ]
+    have e1 : p + 1 - 1 = (p - 1) + 1 := by omega
+    have e2 : p + 1 + 1 = (p + 1) + 1 := rfl
+    rw [e1, ih (p - 1), ih p, ih (p + 1)]
+
+theorem setCell_shift (y : Int → Bool) (j : Int) (b : Bool) :
+    setCell (shiftR y) (j + 1) b = shiftR (setCell y j b) := by
+  funext i
+  simp only [setCell, shiftR]
+  by_cases h : i = j + 1
+  · simp [h]
+  · have h' : ¬ (i - 1 = j) := by omega
+    simp [h, h']
+
+theorem shiftR_white : shiftR (fun _ => false) = (fun _ => false) := rfl
+
+/-- Translation of sums. -/
+theorem sumOver_shift (S : List Int) (F : (Int → Bool) → Bool) :
+    sumOver (S.map (· + 1)) F = sumOver S (fun y => F (shiftR y)) := by
+  induction S generalizing F with
+  | nil => rfl
+  | cons a S ih =>
+    simp only [List.map_cons, sumOver]
+    rw [ih]
+    apply sumOver_congr
+    intro y
+    simp only [deriv]
+    rw [setCell_shift, setCell_shift]
+
+/-- Clearing a cell outside the summed list changes nothing. -/
+theorem sumOver_clear (S : List Int) (j : Int) (hj : j ∉ S) (F : (Int → Bool) → Bool) :
+    sumOver S F = sumOver S (fun x => F (setCell x j false)) := by
+  induction S generalizing F with
+  | nil =>
+    simp only [sumOver]
+    congr 1; funext i; by_cases h : i = j <;> simp [setCell, h]
+  | cons a S ih =>
+    have haj : a ≠ j := fun h => hj (h ▸ List.mem_cons_self)
+    have hjS : j ∉ S := fun h => hj (List.mem_cons_of_mem _ h)
+    simp only [sumOver]
+    rw [ih hjS]
+    apply sumOver_congr
+    intro x
+    simp only [deriv]
+    rw [setCell_comm x a j true false haj, setCell_comm x a j false false haj]
+
+/-! ## (E) the families A and B -/
+
+/-- The cells `[-t+2, t-1]`, listed as: leftmost free cell, leftmost pivot, then the instance `t-1` list shifted
+one cell right. -/
+def T0 : Nat → List Int
+  | 0 => []
+  | 1 => []
+  | 2 => [0, 1]
+  | n + 3 => (-(n : Int) - 1) :: (-(n : Int)) :: (T0 (n + 2)).map (· + 1)
+
+theorem mem_T0 (n : Nat) (i : Int) : i ∈ T0 (n + 2) ↔ (-(n : Int) ≤ i ∧ i ≤ (n : Int) + 1) := by
+  induction n generalizing i with
+  | zero =>
+    simp only [T0, List.mem_cons, List.not_mem_nil, or_false]
+    omega
+  | succ n ih =>
+    show i ∈ (-(n : Int) - 1) :: (-(n : Int)) :: (T0 (n + 2)).map (· + 1) ↔ _
+    simp only [List.mem_cons, List.mem_map]
+    constructor
+    · rintro (h | h | ⟨a, ha, rfl⟩)
+      · omega
+      · omega
+      · have := (ih a).1 ha; omega
+    · intro h
+      by_cases h1 : i = -(n : Int) - 1
+      · exact Or.inl h1
+      · by_cases h2 : i = -(n : Int)
+        · exact Or.inr (Or.inl h2)
+        · exact Or.inr (Or.inr ⟨i - 1, (ih (i - 1)).2 (by omega), by omega⟩)
+
+/-- The main quantity: the coefficient over `[-s+2, s-1]` of the white anti-diagonal. -/
+def A (s : Nat) : Bool := sumOver (T0 s) (fun y => aw s y s)
+
+/-- The companion quantity along the speed-2 line from the cell `-s+1`. -/
+def B (s i : Nat) : Bool := sumOver (T0 s) (fun y => aw s y (s - 1) && evo i y (-(s : Int) + 1 + i))
+
+theorem aw_shift (s n : Nat) (y : Int → Bool) : aw (s + 1) (shiftR y) n = aw s y n := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+    simp only [aw]
+    rw [ih]
+    have e : ((s + 1 : Nat) : Int) - 1 - (n : Int) = ((s : Int) - 1 - n) + 1 := by omega
+    rw [e, evo_shift]
+
+theorem B_zero (m : Nat) : B (m + 2) 0 = false := by
+  unfold B
+  have hj : (-((m + 2 : Nat) : Int) + 1 + ((0 : Nat) : Int)) ∉ T0 (m + 2) := by
+    intro h; have := (mem_T0 m _).1 h; omega
+  rw [sumOver_clear _ _ hj]
+  rw [sumOver_congr _ (fun x => by
+    show (aw (m + 2) (setCell x _ false) (m + 2 - 1) && evo 0 (setCell x _ false) _) = false
+    simp only [evo, setCell_same, Bool.and_false])]
+  exact sumOver_false _
+
+/-! ## (E) the recursions -/
+
+theorem piv_m (m : Nat) : piv (m + 3) (m + 1) = -(m : Int) := by simp [piv]; omega
+
+theorem mem_R_left (m : Nat) : -(m : Int) + 1 ∈ (T0 (m + 2)).map (· + 1) :=
+  List.mem_map.2 ⟨-(m : Int), (mem_T0 m _).2 (by omega), rfl⟩
+
+theorem p_not_mem_R (m : Nat) : -(m : Int) ∉ (T0 (m + 2)).map (· + 1) := by
+  intro h
+  obtain ⟨a, ha, hae⟩ := List.mem_map.1 h
+  have := (mem_T0 m a).1 ha
+  omega
+
+/-- The bare anti-diagonal product of instance `m+2` up to `m+1` sums to zero over `T0 (m+2)`. -/
+theorem sum_aw_prev_zero (m : Nat) : sumOver (T0 (m + 2)) (fun y => aw (m + 2) y (m + 1)) = false :=
+  sumOver_indep _ (-(m : Int)) ((mem_T0 m _).2 (by omega)) _
+    ((aw_readsIn (m + 2) (m + 1)).indep (by omega))
+
+/-- `A (m+2)` in terms of the last condition. -/
+theorem A_as_last (m : Nat) :
+    A (m + 2) = sumOver (T0 (m + 2)) (fun y => aw (m + 2) y (m + 1) && evo (m + 1) y 0) := by
+  unfold A
+  have h : (fun y => aw (m + 2) y (m + 2)) =
+      (fun y => xor (aw (m + 2) y (m + 1)) (aw (m + 2) y (m + 1) && evo (m + 1) y 0)) := by
+    funext y
+    rw [aw_succ_eq]
+    have e : ad (m + 2) (m + 1) y = evo (m + 1) y 0 := by
+      unfold ad; congr 1; omega
+    rw [e]; cases aw (m + 2) y (m + 1) <;> cases evo (m + 1) y 0 <;> rfl
+  rw [h, sumOver_xor, sum_aw_prev_zero, Bool.false_xor]
+
+/-- The inner term: peeling the leftmost pivot from one summand. -/
+theorem core_term (m i : Nat) :
+    sumOver ((T0 (m + 2)).map (· + 1))
+      (deriv (-(m : Int)) (fun x => aw (m + 3) x (m + 2) && !(evo i x (-(m : Int) - 1 + 1 + i))))
+      = xor (A (m + 2)) (B (m + 2) i) := by
+  have hpos : -(m : Int) - 1 + 1 + (i : Int) = -(m : Int) + i := by omega
+  rw [hpos]
+  have hsplit : (fun x => aw (m + 3) x (m + 2) && !(evo i x (-(m : Int) + i))) =
+      (fun x => xor (aw (m + 3) x (m + 2)) (aw (m + 3) x (m + 2) && evo i x (-(m : Int) + i))) := by
+    funext x; cases aw (m + 3) x (m + 2) <;> cases evo i x (-(m : Int) + i) <;> rfl
+  rw [hsplit, sumOver_congr _ (deriv_xor _ _ _), sumOver_xor]
+  -- part 1: the bare product
+  have hp1 : sumOver ((T0 (m + 2)).map (· + 1)) (deriv (-(m : Int)) (fun x => aw (m + 3) x (m + 2))) = false := by
+    rw [← piv_m m, sumOver_congr _ (deriv_aw_step (m + 3) (m + 1))]
+    exact sumOver_indep _ _ (mem_R_left m) _ ((aw_readsIn (m + 3) (m + 1)).indep (by omega))
+  rw [hp1, Bool.false_xor]
+  -- part 2: two factors linear in the pivot
+  have hfun : (fun x => aw (m + 3) x (m + 2) && evo i x (-(m : Int) + i)) =
+      (fun x => (aw (m + 3) x (m + 1) && !(xor (x (-(m : Int))) (adRest (m + 3) (m + 1) x))) &&
+        xor (x (-(m : Int))) (evo i (setCell x (-(m : Int)) false) (-(m : Int) + i))) := by
+    funext x
+    rw [aw_succ_eq, ad_decomp, piv_m, evo_linear i (-(m : Int)) (-(m : Int) + i) rfl x]
+  have hRI : Indep (fun x => aw (m + 3) x (m + 1)) (-(m : Int)) :=
+    (aw_readsIn (m + 3) (m + 1)).indep (by omega)
+  have hgI : Indep (adRest (m + 3) (m + 1)) (-(m : Int)) := by
+    have := adRest_indep_piv (m + 3) (m + 1); rw [piv_m] at this; exact this
+  rw [hfun, sumOver_congr _ (deriv_two_linear hRI hgI (indep_clear i (-(m : Int)) (-(m : Int) + i)))]
+  have hsplit2 : (fun x => aw (m + 3) x (m + 1) &&
+      xor (adRest (m + 3) (m + 1) x) (evo i (setCell x (-(m : Int)) false) (-(m : Int) + i))) =
+      (fun x => xor (aw (m + 3) x (m + 1) && adRest (m + 3) (m + 1) x)
+        (aw (m + 3) x (m + 1) && evo i (setCell x (-(m : Int)) false) (-(m : Int) + i))) := by
+    funext x
+    cases aw (m + 3) x (m + 1) <;> cases adRest (m + 3) (m + 1) x <;>
+      cases evo i (setCell x (-(m : Int)) false) (-(m : Int) + i) <;> rfl
+  rw [hsplit2, sumOver_xor]
+  have hRI' : ∀ x b, aw (m + 3) (setCell x (-(m : Int)) b) (m + 1) = aw (m + 3) x (m + 1) := fun x b => hRI x b
+  congr 1
+  · -- 2a: the A part
+    have hc : (fun x => aw (m + 3) x (m + 1) && adRest (m + 3) (m + 1) x) =
+        (fun x => aw (m + 3) (setCell x (-(m : Int)) false) (m + 1) &&
+          ad (m + 3) (m + 1) (setCell x (-(m : Int)) false)) := by
+      funext x
+      rw [hRI' x false]
+      congr 1
+      unfold adRest ad; rw [piv_m]
+    have hclear := sumOver_clear ((T0 (m + 2)).map (· + 1)) (-(m : Int)) (p_not_mem_R m)
+      (fun z => aw (m + 3) z (m + 1) && ad (m + 3) (m + 1) z)
+    rw [hc, ← hclear, sumOver_shift, A_as_last]
+    apply sumOver_congr
+    intro y
+    rw [aw_shift]
+    congr 1
+    unfold ad
+    have e : ((m + 3 : Nat) : Int) - 1 - ((m + 1 : Nat) : Int) = 0 + 1 := by omega
+    rw [e, evo_shift]
+  · -- 2b: the B part
+    have hc : (fun x => aw (m + 3) x (m + 1) && evo i (setCell x (-(m : Int)) false) (-(m : Int) + i)) =
+        (fun x => aw (m + 3) (setCell x (-(m : Int)) false) (m + 1) &&
+          evo i (setCell x (-(m : Int)) false) (-(m : Int) + i)) := by
+      funext x
+      rw [hRI' x false]
+    have hclear := sumOver_clear ((T0 (m + 2)).map (· + 1)) (-(m : Int)) (p_not_mem_R m)
+      (fun z => aw (m + 3) z (m + 1) && evo i z (-(m : Int) + i))
+    rw [hc, ← hclear, sumOver_shift]
+    unfold B
+    apply sumOver_congr
+    intro y
+    rw [aw_shift]
+    have e : -(m : Int) + (i : Int) = (-((m + 2 : Nat) : Int) + 1 + i) + 1 := by omega
+    rw [e, evo_shift]
+    rfl
+
+/-- Differentiating the first two layers: after the leftmost free cell, a product against any cell on the
+line `-(m+3)+1+k` becomes a XOR over the right diagonal. -/
+theorem deriv_first (m k : Nat) :
+    deriv (-(m : Int) - 1) (fun y => aw (m + 3) y (m + 2) && evo k y (-(m : Int) - 1 + k - 1)) =
+      (fun x => xorUpTo (fun i => aw (m + 3) x (m + 2) && !(evo i x (-(m : Int) - 1 + 1 + i))) k) := by
+  funext x
+  have hR : Indep (fun y => aw (m + 3) y (m + 2)) (-(m : Int) - 1) :=
+    (aw_readsIn (m + 3) (m + 2)).indep (by omega)
+  rw [deriv_indep_and _ hR, behind_front, and_xorUpTo]
+
+/-- **Recursion for A.** -/
+theorem recA (m : Nat) : A (m + 3) = xorUpTo (fun i => xor (A (m + 2)) (B (m + 2) i)) (m + 2) := by
+  show sumOver ((-(m : Int) - 1) :: (-(m : Int)) :: (T0 (m + 2)).map (· + 1)) (fun y => aw (m + 3) y (m + 3)) = _
+  simp only [sumOver]
+  have hfun : (fun y => aw (m + 3) y (m + 3)) =
+      (fun y => aw (m + 3) y (m + 2) && !(evo (m + 2) y (-(m : Int) - 1 + ((m + 2 : Nat) : Int) - 1))) := by
+    funext y
+    rw [aw_succ_eq]
+    congr 2
+    unfold ad; congr 1; omega
+  have hR : Indep (fun y => aw (m + 3) y (m + 2)) (-(m : Int) - 1) :=
+    (aw_readsIn (m + 3) (m + 2)).indep (by omega)
+  have hq : deriv (-(m : Int) - 1) (fun y => aw (m + 3) y (m + 3)) =
+      (fun x => xorUpTo (fun i => aw (m + 3) x (m + 2) && !(evo i x (-(m : Int) - 1 + 1 + i))) (m + 2)) := by
+    funext x
+    rw [hfun, deriv_indep_and _ hR, deriv_not, behind_front, and_xorUpTo]
+  rw [hq]
+  rw [sumOver_congr _ (deriv_xorUpTo (-(m : Int))
+    (fun i y => aw (m + 3) y (m + 2) && !(evo i y (-(m : Int) - 1 + 1 + i))) (m + 2))]
+  rw [sumOver_xorUpTo _ (fun i => deriv (-(m : Int))
+    (fun y => aw (m + 3) y (m + 2) && !(evo i y (-(m : Int) - 1 + 1 + i)))) (m + 2)]
+  congr 1
+  funext i
+  exact core_term m i
+
+/-- **Recursion for B.** -/
+theorem recB (m k : Nat) : B (m + 3) k = xorUpTo (fun i => xor (A (m + 2)) (B (m + 2) i)) k := by
+  show sumOver ((-(m : Int) - 1) :: (-(m : Int)) :: (T0 (m + 2)).map (· + 1))
+    (fun y => aw (m + 3) y (m + 2) && evo k y (-((m + 3 : Nat) : Int) + 1 + k)) = _
+  simp only [sumOver]
+  have hpos : (fun y => aw (m + 3) y (m + 2) && evo k y (-((m + 3 : Nat) : Int) + 1 + k)) =
+      (fun y => aw (m + 3) y (m + 2) && evo k y (-(m : Int) - 1 + k - 1)) := by
+    funext y; congr 2; omega
+  rw [hpos, deriv_first]
+  rw [sumOver_congr _ (deriv_xorUpTo (-(m : Int))
+    (fun i y => aw (m + 3) y (m + 2) && !(evo i y (-(m : Int) - 1 + 1 + i))) k)]
+  rw [sumOver_xorUpTo _ (fun i => deriv (-(m : Int))
+    (fun y => aw (m + 3) y (m + 2) && !(evo i y (-(m : Int) - 1 + 1 + i)))) k]
+  congr 1
+  funext i
+  exact core_term m i
+
+theorem A_two : A 2 = true := by decide
+theorem B_two_one : B 2 1 = true := by decide
+
+theorem xorUpTo_first (f : Nat → Bool) (h0 : f 0 = true) :
+    ∀ k, 1 ≤ k → (∀ i, 1 ≤ i → i < k → f i = false) → xorUpTo f k = true := by
+  intro k
+  induction k with
+  | zero => intro h; exact absurd h (by omega)
+  | succ k ih =>
+    intro _ hf
+    simp only [xorUpTo]
+    by_cases hk : k = 0
+    · subst hk; simp [xorUpTo, h0]
+    · rw [ih (by omega) (fun i h1 h2 => hf i h1 (by omega)), hf k (by omega) (by omega)]; rfl
+
+/-- **The joint induction.** -/
+theorem AB_true (m : Nat) : A (m + 2) = true ∧ ∀ i, 1 ≤ i → i ≤ m + 1 → B (m + 2) i = true := by
+  induction m with
+  | zero =>
+    refine ⟨A_two, fun i h1 h2 => ?_⟩
+    have : i = 1 := by omega
+    subst this; exact B_two_one
+  | succ m ih =>
+    obtain ⟨hA, hB⟩ := ih
+    have h0 : xor (A (m + 2)) (B (m + 2) 0) = true := by rw [hA, B_zero]; rfl
+    have hi : ∀ i, 1 ≤ i → i ≤ m + 1 → xor (A (m + 2)) (B (m + 2) i) = false := by
+      intro i h1 h2; rw [hA, hB i h1 h2]; rfl
+    refine ⟨?_, fun k h1 h2 => ?_⟩
+    · rw [recA]
+      exact xorUpTo_first _ h0 (m + 2) (by omega) (fun i h1 h2 => hi i h1 (by omega))
+    · rw [recB]
+      exact xorUpTo_first _ h0 k h1 (fun i h1' h2' => hi i h1' (by omega))
+
+/-- **(E) The main parity.** For every `t ≥ 2`, the white anti-diagonal summed over `[-t+2, t-1]` is odd. -/
+theorem main_parity (t : Nat) (ht : 2 ≤ t) : A t = true := by
+  obtain ⟨m, rfl⟩ : ∃ m, t = m + 2 := ⟨t - 2, by omega⟩
+  exact (AB_true m).1
+
 end Rule30DegreeLaw

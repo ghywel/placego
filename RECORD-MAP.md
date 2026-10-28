@@ -1756,3 +1756,6 @@ completion families through8 steps, all controls pass. Triangle-origin parity at
 local decoder fails at t7 by overlapping supports. Rain/period-three recover fixed colours from relations.
 Black cap: five-cell00010 forbidden despite every four-cell assignment being possible. Irregular control also
 retains constraints. Data/figure by manifest digest; no entropy, universal frequency or permanent-memory claim.
+
+
+- L1076: degree-law main parity (E) formally proved in Lean — main_parity: ∀ t ≥ 2, A t = true (905 lines, 78 theorems, no sorry, standard axioms), real-space route (behind-front damage, two-linear pivot, shift/clear, recA/recB, kernel-decided base); only the headline assembly (F) remains — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.
