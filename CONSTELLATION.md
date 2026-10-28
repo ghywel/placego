@@ -1150,3 +1150,8 @@ extinction boundary, not fast propagation. Equal jump statistics need not mean c
 [Report, wider view evidence and limits](reports/rule30-two-crystal-fronts.md). Open curiosity: characterize the
 finite words allowing long cancellation runs, then ask which ancestry restrictions constrain them. No new run
 queued, no all-depth growth or randomness claim; hand interpretation awaits Local.
+
+GC2024 follow-up to I: all proper period-three words beginning at the root on x=t fail quickly under complete
+valid-parent selection: 100 at backward depth 5, 101 at 3, 110 at 4 (COMPUTED, dual implementation).
+[Short hand explanation](reports/rule30-backward-period-three.md) via compatible periodic background rays.
+This closes the strict root-anchored period-three variant; eventual periodicity and other paths remain separate.

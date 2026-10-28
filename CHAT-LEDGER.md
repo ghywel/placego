@@ -647,3 +647,13 @@ backwards on x=t. First two pass through B; last through A. This filters genuine
 cells. Spatial 001 is a separate, transient background under forward evolution. [Frozen specification](reports/rule30-backward-period-three.md).
 Two existing inverse implementations compared at every node, generation-count and period-two controls,
 depth 128 and fixed stage caps. No change to the displayed selected B history or open centre question.
+
+## GC2024 — proper period three cannot start at the root on the backward diagonal (2026-10-28)
+
+GC2023's complete ancestor filter closes 100 at depth 5, 101 at 3, 110 at 4; all two-implementation parent
+sets agree, existing period-two closure at 38 reproduced. [Results, short hand ray tables and receipts](reports/rule30-backward-period-three.md#gc2024--all-three-root-anchored-words-close-within-five-backward-steps).
+For 100 the valid backgrounds become 1,100,110,010100, then uniquely 010111; the final front bit is forced
+1 where 0 is required. Spatial period-three precursors are valid but do not confer temporal period three.
+Exact finite closure COMPUTED; hand explanation PROOF-SKETCH pending Local. No eventual-period, other-path
+or centre-prize exclusion. Retained initial prelaunch monitor permission refusal; identical caps/source ran
+once after the access diagnosis, child 0.11 s. Local: carrying read of the short ray table and scope requested.
