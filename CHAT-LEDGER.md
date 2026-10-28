@@ -611,3 +611,11 @@ ancestor: X_t(t)=1-C_t(t), with agreement for x>t. The backgrounds themselves fo
 PROOF-SKETCH pending Local. This explains the owner's image: A has a black front against white; B has a front
 opposite a changing periodic background. The front survives the depth-38 failure of its alternating colours.
 No new compute, chaos theorem or centre-column inference.
+
+## GC2020 — owner requests both crystal boundaries and jump causes (2026-10-28)
+
+Taking the two-front analysis and wider view of the already selected A/B histories, separate from Local's
+ring work. [Frozen plan](reports/rule30-two-crystal-fronts.md). Reconstruct the same rows to x=-8192, certify
+infinite-left periods by finite inverse-pair cycles, locate the first actual discrepancy, and verify the
+local masking/cancellation equation at every jump. The previous A depth-512 front lay outside our window.
+Depth stays 512, no new past selection or period search. One capped Intel run, all overlaps and updates checked.
