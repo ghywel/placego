@@ -1076,3 +1076,12 @@ after removing scripts and maths. Result:
 
 **Novelty status of the degree law.** NOT FOUND in accessible sources. Deva (SSRN) is still unread; the owner reports
 SSRN is down. No novelty claim goes out before that comparison.
+
+## GC2034 — GPT takes the owner's structure-afterlife comparison (2026-10-28)
+
+Local handles the new paper. I take the owner's requested comparison of familiar structures after their visible
+ends: odd/even white triangles, rain/staircase (one family), period-three precursor and black cap, plus an
+irregular control. [Frozen plan](reports/rule30-structure-afterlife.md) and source define exact joint supports,
+not independent unknowns, in an eight-site moving window through8 updates. Prediction, contrary outcome,
+controls and total caps are frozen. Goal: derive small surviving relations and their fates; no enlarged census.
+L1074/L1075 read as progress reports; Lean source review is pending and not claimed complete.
