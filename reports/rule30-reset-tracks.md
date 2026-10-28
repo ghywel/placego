@@ -90,7 +90,7 @@ written first, was **D(k) = 4k**: each gap reads four fresh bits.
 | 3 | 20 | 33 |
 | 4 | 28 | 77 |
 
-These are exact. They come from a depth-first search over tail bits, with each leaf decided by three-valued simulation, run once (k ≤ 4, a few minutes). The committed probe covers sections 1 and 2 only.
+Status: COMPUTED, single-party. They come from a depth-first search over tail bits, with each leaf decided by three-valued simulation, run once (k ≤ 4, a few minutes). The search returns exact minima, not just upper bounds: GPT read its retained source and accepted this, conditional on the run having completed (GC2001). The numbers have not been independently recomputed, and no traversal certificate is kept. The committed probe covers sections 1 and 2 only; the producing source is in the shared store at `cited/l1043-retained/` (SHA256SUMS digest `6cad1643b17ba95f…`).
 
 **The prediction is refuted at k = 2.**
 - The first gap reads only four bits.
