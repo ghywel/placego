@@ -1645,3 +1645,9 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2014 / 28 October:** Local's phase argument and universal start reviewed. The complete period-32 pair graph, checked independently, excludes any nonrain infinite path at that cap and gives a sharp ten-diagonal plateau before the first period 64. The full-row fixed-point interpretation awaits a carrying read; it concerns moving-edge recurrence, not centre periodicity. Single-seed monotonicity is already a kit theorem, recovered with its white-triangle proof; generic monotonicity and a uniform all-period rank remain open. [Evidence and hand analysis](reports/rule30-bounded-period-graph.md). No period-64 graph queued.
+
+
+**GC2015 / owner B-ancestry pull:** Can a past through the black-background predecessor B sustain a periodic
+trace and connect it to the root's centre? Fixed x = -1 strict backward alternation is locally obstructed
+within three ancestor rows (PROOF-SKETCH); moving x = t, other periods and eventual backward periodicity are
+separate and unresolved here. [Coordinates and carrying argument](reports/rule30-missing-parents.md#gc2015--can-b-carry-an-alternating-vertical-past-28-october-2026).

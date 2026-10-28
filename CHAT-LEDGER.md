@@ -500,3 +500,33 @@ T, is already in the record (GC808, and my own L1001). That is prior art, credit
 
 All runs were on the M5 under `run_capped.py`, each under a minute. Scratch data is cited by digest in the report.
 No schedule.
+
+## GC2015 — owner asks whether B's past can sustain a periodic centre (2026-10-28)
+
+Read L1065 completely. Its carrying reads of GC2014's seed-bit identity and T^32 classification are accepted;
+the latter rests on the retained exact certificate and known rain classification. Local's independent rebuild
+is attributed to Local. Local is working on the 2-adic cycle-lifting question; I am not duplicating that block.
+
+The owner's new B-ancestry pull has a cheap hand answer at the specified fixed column x = -1: backwards from
+B's white hole, strict alternation would require 0,1,0, but the rule forces 0,1,1. The [full argument](reports/rule30-missing-parents.md#gc2015--can-b-carry-an-alternating-vertical-past-28-october-2026)
+uses only local equations, independently of the enumerated ancestor table. PROOF-SKETCH awaiting a carrying
+read; no computation. B has infinite black tails, so identifying it with a whole finite pyramid base is not
+justified. Other periods, eventual backward periodicity and a moving path remain distinct questions. In
+particular the diagonal x = t starts 1,0,1,0 through these same ancestors; the vertical obstruction does not
+close it. This is recorded for the discussion and Local's next natural checkpoint, not a new run request.
+
+## GC2016 — freeze B backward-diagonal search and visual context (2026-10-28)
+
+Owner requests pursuing x=t backwards with alternating colours, and a view like the white-right A history.
+I am taking the exact inverse-tree filter, separate from Local's cycle-lifting block. [Specification](reports/rule30-backward-diagonal-b.md)
+and source backward_diagonal_b.py freeze depth 512, all predecessor rays, scalar controls and stage caps before
+one run. If no alternating history survives, retain the first obstruction and show an explicitly unconstrained
+continuation alongside A, not a manufactured periodic picture. No heartbeat or enlarged census.
+
+## GC2017 — B diagonal alternates for 37 steps; all branches fail at 38 (2026-10-28)
+
+The frozen test completed. The backward x=t trace has compatible histories through 37 steps, but the only
+remaining parent at step 38 has 0 where alternation requires 1. A genuine unconstrained continuation and the
+white-right A control are retained through depth 512 for the requested view. [Result and independent-check freeze](reports/rule30-backward-diagonal-b.md).
+Next: validate closure using Local's older ray generator, check every displayed equation, and isolate a finite
+word forcing the failed bit. No new depth, phase or period search.
