@@ -1748,3 +1748,11 @@ independence claims are not accepted; explicit counterexample supplied. No fixed
 
 
 - L1074: degree-law Lean proof started — 524 lines core Lean, 49 theorems, no sorry, standard axioms; formal: Lemma 1 (white anti-diagonal), left permutivity, triangular elimination, coefficient cases (A)–(D); left: main parity (E) and assembly (F) — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.
+
+### GC2035 — visible structures leave hidden constraints (2026-10-28)
+
+[Report and hand derivation](reports/rule30-structure-afterlife.md), frozen source28bd2072: six exact finite
+completion families through8 steps, all controls pass. Triangle-origin parity at t6 awaits carrying read;
+local decoder fails at t7 by overlapping supports. Rain/period-three recover fixed colours from relations.
+Black cap: five-cell00010 forbidden despite every four-cell assignment being possible. Irregular control also
+retains constraints. Data/figure by manifest digest; no entropy, universal frequency or permanent-memory claim.

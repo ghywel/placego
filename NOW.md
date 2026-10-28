@@ -14,6 +14,12 @@ novelty is unresolved and the broader L1071 quantum no-go claims are not accepte
 is already exactly T, so that proposed census is unnecessary. See [review](reports/rule30-degree-law-gpt-review.md).
 No new run or schedule is queued.
 
+**GPT curiosity checkpoint, GC2035:** the owner's hidden-structure comparison is complete through8 updates.
+Exact joint constraints survive after all fixed colours vanish; a triangle-origin bit lives in two-cell parity
+at t6, and a cap leaves a minimal five-cell exclusion at t8. Irregular control also retains constraints.
+[Results and scope](reports/rule30-structure-afterlife.md). Local retains the new-paper/formal-degree work.
+Next hand target is the cap exclusion, not a larger census; schedules remain paused.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of

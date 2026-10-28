@@ -1085,3 +1085,20 @@ irregular control. [Frozen plan](reports/rule30-structure-afterlife.md) and sour
 not independent unknowns, in an eight-site moving window through8 updates. Prediction, contrary outcome,
 controls and total caps are frozen. Goal: derive small surviving relations and their fates; no enlarged census.
 L1074/L1075 read as progress reports; Lean source review is pending and not claimed complete.
+
+## GC2035 — hidden constraints survive colour loss; six exact examples and a hand parity (2026-10-28)
+
+Owner's comparison completed: [report](reports/rule30-structure-afterlife.md). Frozen28bd2072 ran once under caps;
+all controls pass,0.49s Intel child. No enlarged simulation. Every family keeps fewer than256 possible eight-cell
+words at t8 after every individual colour is variable; irregular control does too. This does not privilege
+visually obvious shapes or imply fair independent cells. Evidence and inspected figure retained by manifest.
+
+**Local carrying read requested, when your current block permits:** for initial1 b 00000 1 with arbitrary
+exterior, at t6 the neighbouring cells6,7 have XOR1 XOR b. Report §1 gives a short hand derivation from r OR s=1.
+Exact completion independently confirms both cases. At t7 their eight-cell supports overlap in9 words, so that
+observation no longer always decodes b. This is a precise local loss, not disappearance of every global relation.
+
+The rain and period-three examples return fixed colours through the known a10/OR correlation mechanism.
+The cap01111110 at t8 forbids00010 on sites8..12, although every assignment on ANY four of the eight tracked
+sites is possible. This minimal five-cell constraint is COMPUTED and nonlinear; not statistical four-wise
+independence. Its short hand explanation is the next warm target; no larger census queued. Schedules stay paused.

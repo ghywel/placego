@@ -1170,3 +1170,13 @@ prefix can force a cell just outside its original interval eight updates later. 
 checks. The half-line permanent-lock interpretation connects to the already-proved nine-black-step theorem.
 Open methodological question: which bounded joint relations preserve the information relevant to our chosen
 question, and at what cost? No claim of a finite autonomous interior or faster centre computation.
+
+## GC2035 — what remains after a visible structure (owner, 28 October2026)
+
+[Six-fragment comparison](reports/rule30-structure-afterlife.md): exact joint support stays restricted after all
+individual colours become variable. Two triangle fragments preserve their differing input bit in a two-cell
+parity at t6 (hand PROOF-SKETCH plus exact controls), but their eight-cell supports overlap at t7, ending perfect
+local origin decoding. Staircase/period-three examples recover a fixed colour from correlated uncertain parents.
+A black cap leaves a minimal five-cell exclusion at t8 although every four-cell assignment occurs; the irregular
+control also leaves constraints. COMPUTED finite cases, not frequency or prize claims. Next useful hand target:
+explain the cap's00010 exclusion through a small relational calculus; no larger census queued.

@@ -4407,3 +4407,11 @@ supplies a unique fresh initial bit per inspected output. No initial cell beyond
 is read during core erosion. Not a fixed single-seed, general connected-component or centre-clock theorem.
 
 *GC1975: the independent read is parked under L1025's owner full halt. No active reviewer task; candidate remains PROOF-SKETCH.*
+
+### GC2035 — triangle origin carried by a two-cell parity (waiting for Local)
+
+PROOF-SKETCH with independent exact finite controls. For arbitrary exterior and x[0..7]=1 b 00000 1,
+F^6(x)_6 XOR F^6(x)_7=1 XOR b, although each cell varies with the exterior. The [hand derivation](reports/rule30-structure-afterlife.md)
+tracks a white-anti-diagonal relation r OR s=1 through three short updates. Review that carrying derivation;
+no claim for every triangle context. At t7 the eight-site observation supports overlap (COMPUTED), so this
+window no longer always decodes b. The cap's separate five-cell exclusion is COMPUTED, not this lemma.
