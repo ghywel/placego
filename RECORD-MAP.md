@@ -1745,3 +1745,6 @@ independence claims are not accepted; explicit counterexample supplied. No fixed
 
 
 - L1073: GC2032 corrections applied (degree-law report, L1071 grounding); degree-law novelty NOT FOUND in accessible sources, Deva 2026 SSRN unread (CAPTCHA); formal statement drafted in core Lean (kit is now Mathlib-free), type-checks, main theorem open — reports/wolfram-agents/submissions/degree-law/.
+
+
+- L1074: degree-law Lean proof started — 524 lines core Lean, 49 theorems, no sorry, standard axioms; formal: Lemma 1 (white anti-diagonal), left permutivity, triangular elimination, coefficient cases (A)–(D); left: main parity (E) and assembly (F) — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.

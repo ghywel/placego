@@ -3,7 +3,7 @@
 Local, 28 October 2026 (L1073). This is preparation for a possible submission of the degree law
 ([proof](../../../rule30-degree-law.md), second-read by GPT in GC2032).
 
-**Status: DRAFT.** Nothing has been submitted. A submission needs a complete formal proof, a computational essay, and
+**Status: DRAFT, formal proof in progress.** Nothing has been submitted. A submission needs a complete formal proof, a computational essay, and
 the owner's explicit consent for that submission, sent through the owner's Wolfram ID.
 
 ## What is here
@@ -20,6 +20,38 @@ It type-checks against the kit's toolchain (Lean v4.35.0, `lake env lean`). The 
 t = 3 sanity examples are proved by `decide +kernel`, which adds no axiom and is not `native_decide`. An evaluation
 gives coefficient 1 for the top monomial at t = 1 … 6. The statement covers t ≥ 3. At t = 2 there are two top
 monomials, and that case would be a separate small lemma.
+
+## Formal proof: progress (L1074, 28 October 2026)
+
+`Rule30DegreeLaw.lean` is 524 lines of core Lean, with 49 theorems. It contains no `sorry` and no
+`native_decide`, uses only the standard axioms (propext, Classical.choice, Quot.sound), and type-checks against the
+kit's Lean v4.35.0. The coefficient of a monomial over a list of cells is `sumOver S F`: the XOR of F over rows
+supported in S, defined by discrete derivatives.
+
+**Proved:**
+
+| Lemma | Content |
+|---|---|
+| Foundations | light cone; derivative laws (commutation, independence, XOR, linear cells, product against an ignored factor); sum laws (XOR, vanishing on an ignored cell, permutation invariance, erase) |
+| Lemma 1 (`deriv_apex`) | ∂ of the apex in cell t = the white-anti-diagonal indicator `aw t x t`, by an exact damage invariant |
+| Left permutivity (`left_permutive`, `evo_linear`) | the leftmost cone input enters by exact XOR |
+| Elimination (`sumOver_elim`) | pivots summed out leftmost first, each a single derivative (`deriv_aw_step`) |
+| (A) `coeff_with_left_cell` | monomials with −t and another cell have coefficient 0 |
+| (B) `coeff_with_right_cell` | a monomial containing t reduces to the white anti-diagonal |
+| (C1) `coeff_all_pivots` | all pivots plus a nonempty rest gives 0 |
+| (C2) `coeff_missing_pivot` | a missing pivot with a cell left of it gives 0 |
+| (D) `coeff_without_ends` | the candidate [−t+1, t−1] gives 0 |
+
+**Left:**
+- **(E) The main parity:** the coefficient of [−t+2, t−1] in `aw t · t` is 1. This is the z-frame induction, the
+  hardest part. A real-space route is visible:
+  - differentiate first in the leftmost free cell −t+2, which only the last condition reads. This gives an XOR of
+    NOTs along the right diagonal from (0, −t+3);
+  - two factors linear in the same pivot combine as ∂_p(¬(x_p⊕g) ∧ ¬(x_p⊕h) ∧ R) = R ∧ ¬(g⊕h).
+
+  That should give the Lemma 3/4 recursions without an explicit solved system.
+- **(F) Assembly:** a Nodup list of at least 2t − 1 light-cone cells is one of the cases above (Perm witnesses from
+  membership), giving the headline in list form.
 
 ## What a formal proof needs
 

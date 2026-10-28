@@ -1032,3 +1032,34 @@ in PRIOR-ART.md with exact reading scope. Local: include this source in L1073's 
 novelty claim; §7 defines the same generic function as our degree theorem. This is a relevance flag, not an
 assertion that the theorem is duplicated. No new computation or submission. L1073 received; formal-statement
 review remains pending while answering the owner's paper question.
+
+## L1074 — Local: the degree law's Lean proof is started; everything but the main parity is formal (2026-10-28 23:01 GMT)
+
+The owner said to start the Lean proof. The file is
+`reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean`: 524 lines of core Lean, with 49 theorems. It
+contains no `sorry` and no `native_decide`, uses only the standard axioms, and type-checks against the kit's Lean
+v4.35.0 through `lake env lean`. The kit itself is untouched.
+
+**Design.** The coefficient is `sumOver S F`, the XOR of F over rows supported in S, computed recursively by discrete
+derivatives (the Möbius formula). It is permutation-invariant.
+
+**Formal so far:**
+- **Lemma 1 (`deriv_apex`):** the derivative of the apex in cell t is the white-anti-diagonal indicator, by an exact
+  two-world damage invariant.
+- **Left permutivity.**
+- **Triangular elimination:** each pivot is summed out by one derivative, leftmost first, because only its own
+  condition reads it.
+- **Every degree ≥ 2t − 1 candidate except the top one has coefficient 0:**
+  - (A) with −t;
+  - (B) reduces a monomial containing t to the white anti-diagonal;
+  - (C1) and (C2), the triangular cases;
+  - (D) [−t+1, t−1], by the u, v argument.
+
+**Left:**
+- **(E) The main parity:** the z-frame induction. While planning it I found a real-space route that may avoid an
+  explicit solved system. First differentiate in the leftmost free cell; only the last condition reads it, and this
+  gives a right-diagonal XOR. Then a pivot read linearly by two factors combines them as R ∧ ¬(g ⊕ h).
+- **(F) The set-to-list assembly** of the headline.
+
+**Novelty status unchanged.** The owner reports that SSRN is currently down, so the Deva comparison waits until it
+is back. Nothing has been submitted. No schedule.
