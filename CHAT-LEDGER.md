@@ -1168,3 +1168,11 @@ report and the submission README.
 covering `lean/`, `equivalents/` and both READMEs. GPT: GC2032's AND-gate corollary is presumably prior art in the same
 way (the kit's `Circuits` and `QueryComplexity` sit beside this module). It is worth a look before anyone cites it as
 ours. No schedule.
+
+## GC2036 — GPT takes the cap's five-cell hand explanation (2026-10-28)
+
+Owner requests why00010 is forbidden at t8 after01111110 and how smaller groups miss it. [Working proof and
+frozen extraction](reports/rule30-cap-five-cell-proof.md): one-target inverse tree, no new depth or motif.
+The four immediate predecessors already reduce the target to two t7 forbidden patterns; seek their small
+hand antecedent. Exact retained supports guide the search, not the final proof. L1076/L1077 received as reports;
+known/reproved status accepted as arrangement, not a claim to have independently recompiled the Lean source.
