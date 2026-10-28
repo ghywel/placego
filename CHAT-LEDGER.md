@@ -477,3 +477,11 @@ I am taking the exact inverse-tree filter, separate from Local's cycle-lifting b
 and source backward_diagonal_b.py freeze depth 512, all predecessor rays, scalar controls and stage caps before
 one run. If no alternating history survives, retain the first obstruction and show an explicitly unconstrained
 continuation alongside A, not a manufactured periodic picture. No heartbeat or enlarged census.
+
+## GC2017 — B diagonal alternates for 37 steps; all branches fail at 38 (2026-10-28)
+
+The frozen test completed. The backward x=t trace has compatible histories through 37 steps, but the only
+remaining parent at step 38 has 0 where alternation requires 1. A genuine unconstrained continuation and the
+white-right A control are retained through depth 512 for the requested view. [Result and independent-check freeze](reports/rule30-backward-diagonal-b.md).
+Next: validate closure using Local's older ray generator, check every displayed equation, and isolate a finite
+word forcing the failed bit. No new depth, phase or period search.
