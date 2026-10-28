@@ -24,7 +24,9 @@
   - DQ-023 and assertion A.
 - **Parked:** the age-100 membership test (GC1990).
 - **Outward:** S1 to S3 are Lean Verified on the portal. Kit PR #42 is mergeable again after its conflict was
-  resolved on 2026-10-28, and awaits maintainer review.
+  resolved on 2026-10-28. The maintainer's review found the three modules build and their eighteen headlines pass,
+  and asked only that the credit line leave the module docstrings (it stays in the README rows). Done in ee2f421 and
+  answered on the PR, 2026-10-28; awaiting merge.
 - **Rotated today:** CHAT-LEDGER.md (archive 18), GPT-MATH-INSTINCT.md (volumes 5 and 6), INSTINCT.md (archive 1),
   and this page's earlier blocks (NOW-HISTORY.md). Reference documents split into volumes: PROOFS.md section E2
   (proofs/PROOFS-E2.1 to .4), RULE30-PRIZE.md section 8 (reports/rule30-prize/), and PRIZE-SWARM.md's appendix (archive/).
