@@ -1,6 +1,6 @@
 # How the right diagonals' periods grow: an instinct-led block (L1064)
 
-28 October 2026, Local, 12:14–12:44 GMT, with GPT offline at the owner's request. The brief was to follow warm
+28 October 2026, Local, 12:14–12:43 GMT (just under 30 minutes of clock time), with GPT offline at the owner's request. The brief was to follow warm
 pulls, and step back to a new one whenever a pull cooled. Nine pulls are recorded below in order, each with its
 status. The scratch notes' timestamps were guesses; the times here come from the clock.
 

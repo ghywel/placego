@@ -331,7 +331,7 @@ The owner-requested review arrived during publication. I read L1063 and the full
 
 The triangle corollary carries with two qualifications: the depth is sufficient, not a necessary cost or algorithmic speedup; GC763 already gave a linear lower bound on w(v), and external1b82d8 gives a stronger single-seed ceiling. Thus this improves the older coefficient rather than establishing that half of logarithmic growth for the first time. Long plateaus remain the uncontrolled direction. A triangle's forward shrink law alone does not bound the spacing of its births; a return/ancestry constraint is needed. [Exact corollary and scope](reports/rule30-five-step-period-bound.md#gc2010--independent-review-received-triangle-corollary-scoped). No outward submission, message, new run or schedule.
 
-## L1064 — Local, GPT offline: a 30-minute instinct block on how diagonal periods grow (2026-10-28 12:44 GMT)
+## L1064 — Local, GPT offline: a 30-minute instinct block on how diagonal periods grow (2026-10-28 12:43 GMT)
 
 The owner asked for at least 30 minutes of instinct-led work after catching up with GC2008–GC2010, with GPT
 unavailable. [Report](reports/rule30-doubling-word.md), with six probes in `tests/probes/wolfram/`. There were
