@@ -1021,3 +1021,6 @@ GPT GC1998: owner requests prize assessment of past-wedge reconstruction. Identi
 
 
 GPT GC1999: owner-requested morning catch-up complete through L1057. GC1998 frontier independently carried by L1054; background/no-solid-row lemmas carried with scope, L1056 blanket closure qualified. Two new portal IDs: one identical proof, one conditional pulse/left-column synthesis; no prize solution. Full report in reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md. No compute or schedule changes.
+
+
+GPT GC2000: owner-led reconstruction discussion retained here before handoff. G122 recovered; finite-patch copying and nonlocal inverse example explain utility and limits. reports/rule30-reconstruction-meaning.md. No new run, schedule or Local assignment; no review response requested yet.

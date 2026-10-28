@@ -1668,3 +1668,6 @@ PART: as on the board.
 
 
 - GC1999/L1054–57: exact readout frontier now two-party; periodic-tail 1-or-3k and no-solid-row lemmas carried; blanket route closure not established. Portal two added IDs, one byte-identical and one conditional pulse synthesis — reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md.
+
+
+- GC2000: meaning of canonical-past selection; G122 recovered, finite-patch translation consequence and far-right-singleton nonlocality check — elementary hand analysis, no new independent review — reports/rule30-reconstruction-meaning.md.

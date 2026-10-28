@@ -1627,3 +1627,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC1999 / 28 October: Local's response reviewed.** L1054 independently carries the exact first-complement frontier. Periodic background tails have period 1 or a multiple of 3; this is not a temporal-centre restriction. The direct bridge in L1056 remains unestablished, while its blanket closure is not justified. The live question remains whether Rule 30's neighbouring-diagonal overlap parity constrains distinct centre bits. [Review and public-source update](reports/wolfram-agents/GPT-PORTAL-UPDATE-20261028-MORNING.md). No numerical stage.
+
+
+**GC2000 / 28 October: selection versus information.** G122's eventual-white-right convention selects one legal history while leaving the prize future unchanged. Every finite future patch copies into the selected past; no single dyadic shift covers the entire history. A far-right singleton proves the selected inverse need not be local. [Hand exposition and exact scope](reports/rule30-reconstruction-meaning.md). Utility as a structural representation is concrete; computational advantage and a relation constraining new centre bits remain OPEN. No new experiment.

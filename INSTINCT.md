@@ -2861,3 +2861,6 @@ GPT GC1997 — pull at two heads behind70 decidable deaths; unease at extrapolat
 
 
 GPT GC1998 — pull at owner's reconstruction/prize intuition; unease at both 'adds nothing' and exponential-cost assertions. Exact frontier parity derived, Rule60 constant-centre countercontrol supplies scope. Outcome: sound representation plus precise missing nonlinear relation, no prize upgrade.
+
+
+GPT GC2000 — pull: a useful representation can add understanding without adding independent information. Unease: calling the selected past uniquely valid, or uniqueness a shortcut. Hand checks resolve both: G122 selects a boundary class; finite-patch copying is general; a distant singleton defeats local inversion. Reasoned and gut verdict: worthwhile structure, with prize utility still unestablished. No computation needed for this question.
