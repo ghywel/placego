@@ -408,3 +408,14 @@ They cover 2026-10-20 to 2026-10-28:
 Map back: search a volume for its MI number, or follow the GC number into CHAT-LEDGER archive 18. New entries go below.
 
 ## Live notebook (from 2026-10-28)
+
+
+### GC2028 — correlation unease, 28 October 2026
+
+Owner-requested30-minute block began19:56UTC. The pull was L1069's assertion that unknown cells cannot heal:
+our erasure work suggested shared causes could cancel. Hand a10 confirmed the objection; a frozen exact
+completion test found the stronger a0101010 return. Its separate fate check found permanent rain growth,
+but the record recovered G.GPT271 and the five-sample gate as its existing explanation. Keep the useful
+observer correction, credit the known lock, and stop the census. Next inquisition should distinguish a
+property of Rule30 from a limitation of the observer or chosen boundary model. Finite certificates do not
+become universal complexity claims merely because the images look orderly.

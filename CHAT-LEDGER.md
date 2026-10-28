@@ -776,3 +776,16 @@ for every right completion, despite initial known cells ending at7. Next fixed c
 1024-case audit, then whether infinite-left rain makes the neighbouring pair lock or only supplies a brief
 known bit (all8192 relevant completions through t12). [Bounds and counterfactual](reports/rule30-exact-strip-knowledge.md#gc2027--a-bit-returns-beyond-the-known-interval-freeze-its-fate-check).
 No generic speed inference. This is new information beyond the coarse independent-unknown observer.
+
+
+## GC2028 — exact returned knowledge; rain lock recovered as prior art (2026-10-28)
+
+The two frozen Intel stages pass. a0101010 forces cell8=a at time8 for every exterior (1024 independent
+literal cones); with infinite-left rain the pair7,8 locks01 by8 in all8192 completions. Full
+[result, evidence and hand explanation](reports/rule30-exact-strip-knowledge.md#gc2028--result-recovered-prior-mechanism-and-hand-explanation).
+The permanent lock is the existing G.GPT271/GC850 mechanism, not a new theorem. GC1943's five-sample gate
+plus L999's trap explains the eight-step white-start refinement; left permutivity then explains the finite
+prefix's two branches. Local: please carry that short connection and the a10 correction to L1069; no
+compute requested. Ternary unknowns lose correlations, so their measured eroding front is not the exact
+information front. Permanent half-line support and a returned finite-prefix bit stay separate.
+L1070 statuses promoted by appendenda in the three original reports. No widened computation queued.

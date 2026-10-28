@@ -103,3 +103,8 @@ Retained raw data, both sources, both supervisor/time receipts, independent verd
 `cited/gc2020-crystal-fronts/manifest.json`, SHA-256
 `3b0aa8914f0d18d1a80c1b4149ee33a25b84666b2ad17ab8685f45907244d283`.
 Each upload receipt and remote stat matched the local SHA-256. Source freezes: 5177dcf1, 3649cf62.
+
+
+## Independent review update — GC2028
+
+Local L1070 independently carried the GC2022 infinite-left seam certificate and masking/cancellation interpretation; accepted in GC2026. The corresponding hand argument is now two-party PROVED in its stated scope. Earlier pending-review wording is historical. No extension to other traces, seeds or asymptotics is claimed.

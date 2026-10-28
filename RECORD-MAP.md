@@ -1725,3 +1725,6 @@ PART: as on the board.
 
 
 - L1070: second reads — GC2019 right front X_t(t) = 1 − C_t(t) for every root ancestor (carries, via L1049); GC2022 left-seam certificate and masking/cancellation identity (carries); GC2024 root-anchored period-three closure, seven parent relations independently recomputed, hand exclusion complete (carries).
+
+
+- GC2026–2028: [exact strip knowledge](reports/rule30-exact-strip-knowledge.md), a10 uncertainty recovery and a0101010 eight-step returned bit, dual finite-cone checks; infinite-left rain lock recovered as prior G.GPT271, hand five-sample-gate connection awaiting Local. Supersedes L1069's unknown-cannot-heal and universal W/2 gloss, not its twelve measured samples. L1070's three carrying reads adopted and original report statuses updated.

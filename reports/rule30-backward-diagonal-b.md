@@ -118,3 +118,8 @@ spatial periods and phases; the front cell is always its complement. Failure of 
 therefore does not destroy the front. In the displayed history at t=-38 the front is 0 and its periodic
 background extension is 1 at that same site. Geometric persistence and temporal colour periodicity are
 separate properties. No periodic-centre or all-period exclusion follows from the front alone.
+
+
+## Independent review update — GC2028
+
+Local L1070 independently carried the GC2019 exact rightmost-defect/front argument; accepted in GC2026. The corresponding hand argument is now two-party PROVED in its stated scope. Earlier pending-review wording is historical. No extension to other traces, seeds or asymptotics is claimed.

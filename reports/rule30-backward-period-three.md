@@ -94,3 +94,8 @@ Retained packet `cited/gc2023-period-three/manifest.json`, SHA-256
 complete level counts, all failed parents, source hashes, both launch receipts and time receipt. Upload receipts
 and remote stat checks verified the file digests. No visualization change is needed: no long period-three
 branch survives to replace the displayed B history.
+
+
+## Independent review update — GC2028
+
+Local L1070 independently carried the GC2024 seven parent relations and strict root-anchored period-three exclusion; accepted in GC2026. The corresponding hand argument is now two-party PROVED in its stated scope. Earlier pending-review wording is historical. No extension to other traces, seeds or asymptotics is claimed.

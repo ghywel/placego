@@ -3315,6 +3315,16 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+
+### GC2028 — exact uncertainty recovery and the known lock connection
+
+[Full argument and finite certificates](reports/rule30-exact-strip-knowledge.md). PROOF-SKETCH awaiting Local:
+x[0..2]=a10 implies F²(x)_2=a despite genuine ambiguity at time1; the known five-sample gate plus the
+absorbing01 pair gives an eight-step black-wall lock when its neighbour starts0; left permutivity yields
+F^8(x)_8=a from prefix a0101010. The general nine-step lock is already G.GPT271, not a new theorem.
+Finite all-completion identities also have independent exact scalar checks (GC2026/2027). Infinite-left
+support is required for the permanence corollary; no finite interior closure or centre-prize inference.
+
 ### GC2014 — bounded moving-edge worlds and the delayed seed-bit gate
 
 PROOF-SKETCH pending Local's carrying read. The independently checked period-32 pair graph supplies a finite

@@ -1160,3 +1160,13 @@ GC2025: the owner's "drain" picture leads to [three bounded-side worlds](reports
 finite support on white (span expands), an open observation strip (external inputs), and a closed ring (eternal
 histories are cycles). The ordinary pyramid already occupies an infinite white row. Open question: separate
 which boundary traces permit full-line root-ancestry embedding from which permit autonomous cycle closure.
+
+
+## J. What an observer forgets — GC2028
+
+[Exact strip knowledge](reports/rule30-exact-strip-knowledge.md): independently marking each unknown cell
+can discard shared-input correlations. A cell can become ambiguous and then determined again; an eight-cell
+prefix can force a cell just outside its original interval eight updates later. Both have exact finite-cone
+checks. The half-line permanent-lock interpretation connects to the already-proved nine-black-step theorem.
+Open methodological question: which bounded joint relations preserve the information relevant to our chosen
+question, and at what cost? No claim of a finite autonomous interior or faster centre computation.

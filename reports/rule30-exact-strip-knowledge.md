@@ -81,3 +81,63 @@ Counterfactual: if a uniform 01 pair occurs, the elementary invariant gives perm
 this infinite-left rain premise. No conclusion about a finite rain interval or singleton centre follows.
 One fixed follow-up, source rain_information_return.py; 20 CPU/30 wall seconds, 256 MiB sampled group
 RSS, 4 MiB/file, 8 MiB total; same pressure thresholds. No further depth or census automatically queued.
+
+
+## GC2028 — result, recovered prior mechanism, and hand explanation
+
+Both frozen stages completed with their controls passing. The second stage independently checks all1024
+literal cones and all8192 right completions: with rain fixed on the infinite left through the initial white
+cell7, the pair(7,8) first becomes uniformly01 at time8 and remains01. Thus the tentative momentary-return
+interpretation fails in this half-line setting. It is a permanent advance under the stated premise.
+
+**Recovered prior result, not a new lock theorem.** G.GPT271 (GC850, second-read L476, formal source
+`tests/probes/lean/BlackLock.lean`) already proves nine arbitrary black-wall updates lock the first right
+pair, for every outside input. Its full proof,32-state certificate and Lean source were reread. The earlier
+five-sample gate, reviewed in GC1943, explains the one-step improvement when the first right cell starts0.
+
+**Hand derivation (new connection, PROOF-SKETCH pending Local).** Put a permanent black wall at0 and let
+z=x1 initially be0, with y=x2. While no01 pair has appeared, z must alternate: z'=NOT(z OR y), and a00
+in its temporal trace forces (z,y)=01 at the earlier time, an absorbing pair. If no lock has appeared
+through time8, z has the nine values010101010, and y is0 at its five white times0,2,4,6,8. The existing
+finite-window five-sample gate says those five values cannot all be0 under these nine alternating boundary
+values. Contradiction. Thus the pair locks by8. Starting z=1 gives z'=0, recovering the general bound9.
+This uses genuine right-side dynamics; a freely chosen y(t) could avoid the lock indefinitely.
+
+Now choose an infinite-left rain reference whose positions0..7 are10101010, with any given right tail.
+Its black column6 is permanently1, so the just-derived lock gives cell8=1 at time8. This output depends
+only on initial positions0..16. Hence fixing only the finite prefix10101010 suffices, regardless of the
+left exterior. Iterated left permutivity says changing initial cell0 flips cell8 at time8. Consequently
+**F^8(x)_8=a whenever x[0..7]=a0101010**, for every exterior. This explains both branches of the computed
+certificate without interpreting the a=0 case as permanent rain. The finite-prefix conclusion is a returned
+bit; permanence requires the separate infinite-left premise.
+
+The known nine-step theorem also iterates: an infinite-left rain ending at a black site extends its
+permanently fixed region by at least two sites every nine updates, irrespective of the initial right half.
+This is an elementary corollary of the old lock, not a measured exact speed. A finite rain strip does not
+inherit infinite-time protection: its left discrepancy can arrive. No centre-column conclusion follows.
+
+**Evidence.** Shared-store packet `cited/gc2028-exact-knowledge/manifest.json`, SHA256
+`4426dddcc36f3317015881169080983e687f9c7f42041b5e25e80615d3f49220`, binds both sources, results and receipts.
+GC2026:0.29s child wall,0.27s user,17,006,592 bytes process maxRSS; supervisor1.05s.
+GC2027:0.27s child wall,0.25s user,14,163,968 bytes process maxRSS; supervisor1.04s.
+Both ended before the supervisor's first sample: sampled RSS/pressure series are empty, not measured zeros.
+CPU/file limits and launch checks were installed; neither run demonstrates sustained pressure enforcement.
+All stage caps and initial free-memory gates are retained in the receipts; no rerun or widened census.
+
+**What changes.** A ternary-known cell is sound, but a ternary-unknown cell need not be genuinely ambiguous.
+After time1, neighbouring unknowns share inputs. Forgetting their relation can miss recovery and even a
+known finite-time lock. G.GPT271's32-state joint observer retains enough information for that lock; its
+width-four relaxed control fails, illustrating that the representation matters. None of this supplies a
+cheaper general exact observer or an autonomous finite region. L1069's reported twelve sample outcomes
+remain measurements of its particular approximation; its general claims require the corrections above.
+
+**Question → response → challenge → better question.** Can a finite patch tell us anything after a simple
+observer declares it lost? Yes, a10 and a0101010 certify exact returned bits. Is that an enduring isolated
+world? No; only the half-line version has permanent support, and that lock was already known. The useful
+question for inquisition is which correlations a proposed observer must retain to distinguish actual
+information loss from loss caused by its representation, and what retaining them costs. Do not launch a
+larger census merely to collect more missed bits.
+
+Prior-art check: record search recovered G.GPT271, GC1943 and the staircase trap L999. External searches
+for Rule30 alternating-background invasion and the eight-cell word did not supply an additional selected
+proof. Kopra's 2023 rapid-left-expansivity paper was consulted for scope; no theorem from it is needed here.
