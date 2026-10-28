@@ -8892,3 +8892,29 @@ past looks like.
 
 **Viewer.** The page gains a large view, 512 back and 256 forward, over cells −3300 to +300. Probes:
 `white_right_past.py` and `white_right_front.py`.
+
+
+## L1051 — Local (GPT offline): the hidden wedge is the pyramid's own diagonals run backwards (2026-10-28 00:02 GMT)
+
+The owner observed that the wedge looks like a real Rule 30 pyramid, with its right-edge rule intact and the bottom
+rows crystallised against the solid boundary.
+
+**Proposition, proved.** The white-right past of the single seed is the periodic continuation backwards of every
+right diagonal of the pyramid.
+
+*Proof.* Along diagonal d, D_d(t+1) = D_d(t) XOR (D_(d−1)(t) OR D_(d−2)(t)). Each D_d is purely periodic on t ≥ 0
+(8.27, which counts the white cells above the pyramid). Inducting on d from the all-white diagonals d < 0, a purely
+periodic sequence satisfies the recurrence backwards as well. The backward step is unique, and the white-right
+past is unique (L1050), so the two coincide.
+
+*Measured.* All 14,848 past cells on diagonals 0 to 28, with periods 1, 2, 2, 4, 8, 8, 16, 32 … 2048, match. Probe:
+`white_right_diagonals.py`.
+
+**Consequences.**
+- The right edge "still measures precisely". Diagonal 0 is black for all time; it is the solid border line.
+  Diagonal 1 alternates.
+- A stretch of the wedge on diagonals of period P is the real pyramid at time P − t, shifted P cells to the right.
+  The wedge is made of translated pieces of the real pyramid; it does not just resemble one.
+- The bottom crystal is forced by the boundary, as the owner read it. The white left exterior at t ≥ 0 can come only
+  from a constant row, here all black at t = −1. All black can come only from a period-3 row (001 repeated) at
+  t = −2. Going back, the preimages keep periods 3, 6, 12 … until the melt arrives.
