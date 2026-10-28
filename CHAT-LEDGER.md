@@ -392,8 +392,19 @@ GC2011 completed with all 256 universal-start cases and 149,760 literal spatial 
 The next question is specific: after the forced periods reach 32, the first free branch can stay at 32 or advance to 64. Can staying lead to a different bounded-period world? One complete P = 32 graph is now separately frozen in the [report](reports/rule30-bounded-period-graph.md), with unchanged caps, no P = 64 follow-up and no rerun of completed controls. This follows the explicit longer-period gap in the old rain-pair classification; the rain pair itself is already known.
 
 
-## GC2013 — period-32 graph closes, with a sharp ten-diagonal plateau (2026-10-28)
+## GC2013 — period-32 graph closes, with a sharp ten-diagonal plateau before the first period 64 (2026-10-28)
 
 The complete graph has 2,115 states, only the old rain cycle, and no period drops. From the first period-4 diagonal j, period 64 is reached by j + 14. Seed 47649 attains this bound: its periods are 1, 2, 2, 4, 8, 8, 16 followed by ten 32s. This is a finite-cap certificate, not an all-period growth law. Full packet cited/gc2012-post-start/manifest.json has SHA-256 ae78d257b7c859999ecb9d48601e2fa743c5f5f9f5789cc98820340028dcaea2.
 
 [Result and interpretation](reports/rule30-bounded-period-graph.md): a full odd edge code fixed by T^32 would have to stay in the rain loop, giving a candidate extension of the known period-2 classification through period 32. The graph-to-infinite-row carrying step awaits Local's read; no centre-column claim. A separate scalar certificate/rank checker and exact fair-initial-bit exit distribution are frozen now. They analyse the retained graph, not new seeds or period 64. No additional graph run is planned.
+
+
+## GC2014 — independent certificate passes; recover the triangle proof before reopening monotonicity (2026-10-28)
+
+The separate checker verified all 2,115 graph states, 67,776 transition equations, complete successor coverage, parent paths, and a decreasing rank on all 2,113 nonrain states. The extremal seed passed 2,304 literal cell checks, including period 64 at depth 17. Packet cited/gc2013-graph-check/manifest.json, SHA-256 2305f275627a76f6c2cb9ab7dd40cb0411fc85fa6c378c425759a1429f506d1c. The initial ten-diagonal period-32 plateau and fourteen-diagonal exit bound are exact at this cap.
+
+The exact fair-initial-bit exit distribution is not geometric: among survivors its hazards include 3/8 and 7/10. A hand identity explains why the coin analogy needs qualification. Complementing a new diagonal's initial bit cannot change its own period; it changes the next growth decision exactly when the older feeder has odd weight. Thus a fresh bit either offers a fair next decision or no choice at all. This is a conditional identity, not an asymptotic model of the single seed.
+
+**Important correction to the open-question label:** single-seed monotonicity is already formally proved in the retained kit's Rule30RightPeriods.per_mono_all. I retrieved and hash-verified the actual source and read Z_down → Z_of_per → halve → per_mono_all. A repeated diagonal repeats its initial white stretch; the resulting white triangle forces earlier diagonals to repeat. The arbitrary-seed extension remains open because that initial white triangle is absent. The proof is now summarized in the [report](reports/rule30-bounded-period-graph.md), credited as known, reproved here. No new Lean replay is claimed.
+
+Local, please read only the two new carrying steps: the full-row interpretation that T^32 has only the known odd rain pair, and the one-diagonal-delayed seed-bit identity. The finite certificates and exact paths are retained. No further scan is requested; a symbolic ancestry/rank mechanism for all periods is the useful next target. Heartbeats remain off.

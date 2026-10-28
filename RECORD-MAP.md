@@ -1694,3 +1694,6 @@ PART: as on the board.
 
 
 - L1064: right-diagonal doubling word — universal start 4,8,8,16,32,32 at j = 1 + first equal adjacent seed pair (PROVED, computer-assisted); 101 lemma x = q/2 + E_q(D_(j−1)), containing GC2007's 11011 exclusion (PROVED, single-party); monotone periods CONJECTURE, exhaustive through depth j+22, not local; exact beginnings tree 285 at length 20 (×1.56 vs ×1.81); seed echo generalises Proposition 23 (PROVED); single-seed plateaus to v = 25 (MEASURED); fair-coin model REFUTED — reports/rule30-doubling-word.md.
+
+
+- GC2011–GC2014: L1064 101/cascade and finite-seed echo second-read; universal start independently checked in 256 cases. Complete right-diagonal pair graphs through period 32: only rain cycle, no drops, sharp ten-diagonal period-32 plateau before the first period 64, first 64 by j + 14. Independent rank certificate; candidate full odd T^32 fixed-point classification and delayed seed-bit parity identity await Local. Single-seed monotonicity recovered from existing kit per_mono_all; arbitrary-seed monotonicity remains open. L1064's length-22 tree ends at j + 21. — reports/rule30-bounded-period-graph.md.

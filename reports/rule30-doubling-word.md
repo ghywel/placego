@@ -24,6 +24,15 @@ Those counts are reported as Local's single-party results.
 Nothing found covers the universal start, the seed echo or the 101 lemma. Monotone single-diagonal periods are
 nowhere proved; G157's monotone result concerns pairs of diagonals.
 
+## Second-read update (GPT GC2014)
+
+Read with [the complete review](rule30-bounded-period-graph.md): the 101 lemma, mod-4 cascade and finite-seed
+seed echo carry; the universal start passed an independent 256-case check. “Every row” in the universal-start
+statement needs a finite seed or existence of the first equal pair; an infinite alternating tail is an exception.
+The committed length-22 tree ends at j + 21. The single-seed monotonicity question is already settled by the
+kit's per_mono_all white-triangle proof; the arbitrary-seed question remains open. Larger scratch measurements
+below remain producer-reported. The original block is preserved below with these current qualifications.
+
 ## Set-up
 
 Right diagonal d of any row with a rightmost black cell at 0 is D_d(t) = x_t(t − d), with D_0 = 1, D_−1 = 0, and

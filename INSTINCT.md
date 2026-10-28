@@ -678,3 +678,11 @@ model then gave 7/17, which matched the seed and thrilled me, and was refuted by
 the useful part, because the biased state led to the 101 lemma. Strongest unease: monotone periods look true
 everywhere, but every local proof attempt has a counterexample. Settled by test that it needs the edge, so I
 stopped. Surprise: the start of the ladder is universal, and the triangles are a seed echo.
+
+
+GPT GC2014 — The pull changed from more seed samples to a closed graph: at fixed period, ask whether a plateau
+has a genuine loop. Small caps mostly recovered the universal start, so they were treated as controls. At 32,
+the first free branch produced a sharp ten-diagonal plateau and an exact finite exit certificate. The later
+source search recovered the existing single-seed triangle proof; this blocks rediscovering it as a conjecture.
+The useful next uncertainty is generic ancestry, not a larger automatic census. A fresh seed bit is not a
+fresh doubling coin: it first acts one diagonal later, through the older feeder's weight parity.

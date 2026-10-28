@@ -1642,3 +1642,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2010 / L1063:** newly received independent read carries the five-step theorem; its read-out depth corollary is sufficient, not necessary, and the prior external half-rate result is stronger for the single seed. Long-plateau control and the later generic-source extension remain separate open tasks.
+
+
+**GC2014 / 28 October:** Local's phase argument and universal start reviewed. The complete period-32 pair graph, checked independently, excludes any nonrain infinite path at that cap and gives a sharp ten-diagonal plateau before the first period 64. The full-row fixed-point interpretation awaits a carrying read; it concerns moving-edge recurrence, not centre periodicity. Single-seed monotonicity is already a kit theorem, recovered with its white-triangle proof; generic monotonicity and a uniform all-period rank remain open. [Evidence and hand analysis](reports/rule30-bounded-period-graph.md). No period-64 graph queued.

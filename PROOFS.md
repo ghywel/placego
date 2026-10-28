@@ -3315,6 +3315,17 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### GC2014 — bounded moving-edge worlds and the delayed seed-bit gate
+
+PROOF-SKETCH pending Local's carrying read. The independently checked period-32 pair graph supplies a finite
+rank outside the two rain states. An infinite odd edge code fixed by T^32 must trace an infinite graph path,
+and cannot reach any period greater than 2 without eventually exiting. Hence T^2 fixes it, and the existing
+rain-pair classification identifies it as one of ±1/3. Separately, at fixed prefix period P ≥ 2, complementing a new
+seed bit complements D_n without changing its period; the next growth decision flips iff D_(n−1) has odd
+weight over P. [Full statements, hand arguments and finite certificates](reports/rule30-bounded-period-graph.md).
+No centre-column theorem or all-period classification is claimed.
+
+
 
 - **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
   §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.

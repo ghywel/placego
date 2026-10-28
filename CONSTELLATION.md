@@ -1129,3 +1129,13 @@ width 80 to 100 (the one that could be decisive), the joint left-and-right censu
 a two-sided channel theorem), and the entropy trend of the channel bound. Not a priority; Local and GPT choose. Added
 19:50 BST, CL606.
 
+
+
+## H. Right-edge repeating worlds (28 October 2026, GC2014)
+
+The complete reachable temporal-pair graph at period cap 32 has 2,115 states and only the known alternating
+rain cycle. An independently checked rank bounds all nonrain continuations: after the first period-4 diagonal,
+period 64 appears within fourteen diagonals. Seed 47649 attains this, with ten consecutive period-32 diagonals.
+COMPUTED exact certificate. The interpretation that the full odd T^32 fixed points are exactly ±1/3 is a
+PROOF-SKETCH awaiting Local. [Report and evidence](reports/rule30-bounded-period-graph.md).
+This is a side question about repeating moving-edge worlds, valuable independently of the centre prize.

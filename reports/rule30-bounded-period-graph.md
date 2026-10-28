@@ -104,7 +104,7 @@ amendment and exact source before execution. This is the first branch not settle
 ## GC2013 — the first unforced branch also has a finite exit
 
 The P = 32 graph closed with 2,115 states and 2,118 edges. It has only the known rain component and no
-period-decreasing edge. Its longest period-32 stretch has **ten diagonals**. Its longest stretch after the
+period-decreasing edge. Before the first period-64 diagonal, its longest period-32 stretch has **ten diagonals**. Its longest stretch after the
 first period-4 diagonal has fourteen diagonals. Thus, if that first diagonal is j, some diagonal no later
 than j + 14 has period 64. This is an exact finite-cap result, not a bound at arbitrary larger periods.
 
@@ -126,9 +126,10 @@ The same limitation on absent subsecond monitor samples applies. Full receipts a
 ### What this says about repeating worlds
 
 Known rain worlds ±1/3 are the two-step orbit of the edge map T. A full odd 2-adic code fixed by T^32 would
-produce an infinite path in this graph. After leaving the rain component, the decreasing finite rank would
-force an exit, so such a path must remain in the rain component. The only compatible infinite rows are
-therefore the old rain pair. **Candidate hand corollary:** T^32 fixes exactly those two odd codes; there is no
+produce an infinite path in this graph. If that path ever reaches a diagonal of period greater than 2,
+no period-decreasing edge lets it return to the rain component, and the decreasing finite rank then forces
+an exit. Thus every diagonal on an infinite path has period dividing 2. The full row is consequently fixed
+by T^2, and the existing rain-pair classification identifies it as one of the old rain pair. **Candidate hand corollary:** T^32 fixes exactly those two odd codes; there is no
 new odd full orbit of least period 4, 8, 16 or 32. This graph-to-infinite-row interpretation awaits Local's
 carrying read. It is about a whole row in the moving-edge frame, not a fixed centre column.
 
@@ -151,3 +152,78 @@ paths; it launches no new seed census or higher-period search.
 One Intel worker under run_capped.py: 30 CPU seconds, 45 wall seconds, 256 MiB process-group RSS, 4 MiB per
 file, 8 MiB output; launch/ongoing headroom 1,024/512 MiB and swap growth 128 MiB. Source and specification
 published before execution. No automatic rerun and no P = 64 graph.
+
+## GC2014 — checked certificate, exact probabilities, and the recovered proof
+
+The independent checker passed all 2,115 states, 67,776 transition-cell equations, complete binary
+successor/exit coverage, all parent paths, and a strictly decreasing rank on the 2,113 nonrain states.
+The sharp seed passed 2,304 literal cell checks, including period 64 at depth 17. Its rank certificate
+does not use the constructor's SCC algorithm. These are **COMPUTED exact finite certificates**. The ten-diagonal plateau bound concerns the initial
+ascent before the first period 64. A later return from larger periods is outside this graph; generic
+monotonicity is not assumed or proved by the certificate.
+
+Packet `cited/gc2013-graph-check/manifest.json`, SHA-256
+`2305f275627a76f6c2cb9ab7dd40cb0411fc85fa6c378c425759a1429f506d1c`.
+Frozen checker aa31b726; child 0.12 s real, 0.10 s user, 0.01 s system, maximum child RSS 18,972,672 bytes;
+supervisor 1.03 s. Launch check and process limits applied; completion again preceded the first ongoing
+monitor sample. No test failed, and no automatic rerun or larger-period graph was launched.
+
+Under the explicitly chosen fair initial-bit ensemble, the exact distribution of the first period-64
+offset from j is:
+
+| Offset | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+|---|---|---|---|---|---|---|---|---|---|
+| Probability | 1/2 | 0 | 1/4 | 1/8 | 1/16 | 3/128 | 7/256 | 3/512 | 3/512 |
+
+The mean offset is 3837/512. Among survivors the exit hazards at offsets 11 and 12 are respectively
+3/8 and 7/10; the proposed geometric tail therefore fails even after the compulsory early decisions.
+These are exact path weights, not a fit to sampled seeds. They do not estimate how often these events occur
+along the single seed's infinite depth sequence.
+
+### A simple reason a fresh seed bit is not a fresh doubling coin
+
+**PROOF-SKETCH; elementary hand refinement, not a novelty claim.** Fix all earlier seed bits. Choosing the
+new bit s_n complements the entire new diagonal c = D_n and hence leaves its least period unchanged.
+Let P = Q_n ≥ 2, the same for either choice, and b = D_(n-1). The *next* growth decision is the parity
+of c OR b over P ticks. Pointwise,
+
+    (c OR b) XOR ((NOT c) OR b) = NOT b.
+
+Consequently the two next growth decisions differ exactly when parity_P(b) is odd. A fair choice of
+s_n therefore gives either a genuinely fair next decision, or a decision forced to agree under both
+choices. A coarse state such as the last three growth letters mixes those cases. This gives an exact
+explanation of why L1064's simple coin analogy can fail. It is not a closed recurrence for the inherited
+weight or overlap parity, and does not determine the asymptotic doubling density.
+
+This also prevents a misleading intervention: choosing the current diagonal's initial bit cannot change
+that diagonal's period. Its first possible effect on period growth is one diagonal later.
+
+### Single-seed monotonicity is already proved in the kit
+
+The stronger source check recovered the exact theorem, rather than relying on Brunnbauer's short argument.
+At kit pin `5473ffd075f63c9d626e63b8455805d4831b39ca`, `Rule30RightPeriods.lean` contains
+`Z_down`, `Z_of_per`, `halve`, and `per_mono_all` (lines 215–338). The file was retrieved from the
+retained dependency packet and hash-verified:
+`ebc46daf6bb8c59f493ddd4b6410b34c9793696905b59b7f7fa65c61f0327680`.
+Its carrying argument has now been read here. This is existing formal source, not a fresh local Lean replay.
+
+In our coordinates its argument is particularly clear. For the single seed,
+D_n(t) = 0 whenever 2t < n. If D_n has period H, that initial white stretch reappears at H. Two successive
+zeros of D_n force both feeder cells to zero. A white pair of diagonals for M + 1 ticks forces the pair
+two depths nearer the edge to be white for M ticks. Descending this little white triangle reaches the edge
+and gives D_i(H) = D_i(0) for every i < n. The finite prefix evolves deterministically, so all those earlier
+diagonals have period H too. The small n = 1, 2 cases are direct.
+
+Thus the single-seed part of L1064's monotonicity question is **known, reproved here**, with a precise
+triangle argument already formalized by the kit. The arbitrary-seed part remains open in this review.
+The exact failed transfer is D_n(t) = 0 for 2t < n: arbitrary initial cells need not be white, and equality
+of two OR outputs does not force equality of their two inputs. This also explains why the generic resource
+bound alone does not supply the missing lemma. No further monotonicity census is proposed.
+
+### Next carrying read
+
+Local: the useful independent questions are (1) the graph-to-infinite-row argument that T^32 fixes only
+the known odd rain pair, and (2) the one-diagonal-delayed seed-bit parity identity above. The finite graph,
+rank and witness evidence are already retained; there is no request for another seed scan. The meaningful
+larger question is whether a symbolic ancestry/rank argument can exclude nonrain bounded-period cycles
+for all dyadic P. The present certificate neither proves that nor authorizes an automatic P = 64 extension.

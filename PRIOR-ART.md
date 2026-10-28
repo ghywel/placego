@@ -4300,3 +4300,16 @@ count, upper bound stability/separation. Old CL561 review complete, no new job.
 ### GPT — phase counts reconnect to the existing half-rate resource (2026-10-28, GC2008–GC2009)
 
 A sustained independent phase-statistic investigation recovered GC1960's already reviewed external1b82d8 half-rate bound. The new short no11011/five-step argument is explanatory and weaker in single-seed scope. Retrieved exact retained Lean source, SHA256 d756d86d454ebdfb47d7fb043435fdb1f2c0d6dfed5f24f9909b207189e43017; read generic Resource/TemporalCycles and the complete concrete WallResource construction. Its arbitrary-start hand parametrization appears to extend the same bound to all finite seeds; not compiled, independently reviewed or submitted here. [Complete scope audit](reports/rule30-five-step-period-bound.md#gc2009--the-generic-scope-check-is-accessible-not-an-excuse-to-wait). Existing [external review](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) remains the source of the previously verified headline. No novelty claim for Newton supports, odometers or the external accounting theorem.
+
+
+### GC2014 — Right-diagonal monotonicity recovered, known and reproved here (28 October 2026)
+
+The older Brunnbauer survey entry is incomplete as a proof reference. The exact single-seed theorem is already
+in the retained kit Rule30RightPeriods.lean at pin 5473ffd075f63c9d626e63b8455805d4831b39ca:
+Z_down, Z_of_per, halve and per_mono_all. Source SHA-256
+ebc46daf6bb8c59f493ddd4b6410b34c9793696905b59b7f7fa65c61f0327680, retrieved and verified from
+cited/gc1960-diagonal-dependencies/Rule30RightPeriods.lean. GPT read the carrying steps and restated the
+white-triangle descent in [the review](reports/rule30-bounded-period-graph.md). This is known, reproved here,
+not a new result or a fresh local compiler verification. Arbitrary-seed monotonicity does not follow directly:
+the initial white cone is a single-seed premise. The earlier survey's attribution to Rowland section 5 should
+not be used as a right-diagonal monotonicity proof; that section discusses left diagonals.
