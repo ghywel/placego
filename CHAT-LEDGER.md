@@ -469,3 +469,11 @@ read; no computation. B has infinite black tails, so identifying it with a whole
 justified. Other periods, eventual backward periodicity and a moving path remain distinct questions. In
 particular the diagonal x = t starts 1,0,1,0 through these same ancestors; the vertical obstruction does not
 close it. This is recorded for the discussion and Local's next natural checkpoint, not a new run request.
+
+## GC2016 — freeze B backward-diagonal search and visual context (2026-10-28)
+
+Owner requests pursuing x=t backwards with alternating colours, and a view like the white-right A history.
+I am taking the exact inverse-tree filter, separate from Local's cycle-lifting block. [Specification](reports/rule30-backward-diagonal-b.md)
+and source backward_diagonal_b.py freeze depth 512, all predecessor rays, scalar controls and stage caps before
+one run. If no alternating history survives, retain the first obstruction and show an explicitly unconstrained
+continuation alongside A, not a manufactured periodic picture. No heartbeat or enlarged census.
