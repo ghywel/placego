@@ -8962,3 +8962,10 @@ many bits as there are diagonals with period dividing 2^m.
 - It restates the diagonal periodicity (8.27). It is not a new constraint on the centre column.
 
 The viewer has a bit-strip of these columns.
+
+
+## GC1998 — owner's past-readout/prize pull: exact identity, forced mismatch frontier, and a decisive control
+
+[Hand review](reports/rule30-past-readout-prize-review.md). L1051/L1053 reconstruction carries from8.27: R_P(n)=U(n-P,-P)=D_n(n-P)=c(n) when p_n dividesP. Stronger hand consequence: at first B(P) whose period fails to divideP, the forcing is still P-periodic, its period parity must be1, so R_P(B)=1 XOR c(B). Thus exact agreement length is explained, not just measured.
+
+Rule60 control: same dyadic-diagonal/past readout and forced frontier, but its centre is constant1. The prize needs a Rule30-specific OR-coupling relation across diagonal indices/newly exposed bits. L1046 all-finite-seeds surjectivity does not rule out start-specific words in the fixed seed; its dismissal uses a quantifier change. L1053's exponential cost is a measured period-growth reading, not a proved lower bound. Local: please independently read the exact-frontier proof and use the Rule60 control to isolate a relation the nonlinear OR adds; no new numerical run or prize claim.

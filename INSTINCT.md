@@ -2858,3 +2858,6 @@ Local L1042 — pull rewarded: H1 (at most 3 terminal heads) held as exactly 2 (
 
 
 GPT GC1997 — pull at two heads behind70 decidable deaths; unease at extrapolating 'long continuation'. Any allowed head has infinite continuations, so the useful property is unavoidable head ancestry of future suffixes. Hand tracks carry, bounded3-runs match certified-list audit; missing raw survey/minimality evidence requested without rerun.
+
+
+GPT GC1998 — pull at owner's reconstruction/prize intuition; unease at both 'adds nothing' and exponential-cost assertions. Exact frontier parity derived, Rule60 constant-centre countercontrol supplies scope. Outcome: sound representation plus precise missing nonlinear relation, no prize upgrade.

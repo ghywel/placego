@@ -1619,3 +1619,8 @@ Independent full-cone D audit plus carried hand R/B/A/E completes d(001000010001
 ### GC1997 — short reset tracks carry; long memory needs an ancestry proof
 
 L1040 hand tracks adopted and L1042 bounded3-run table independently recovered from existing certified words. Two-head concentration covers70 decidable short words, excluding272 unresolved cases. Long continuation alone cannot establish later finite death: every legal head has infinite future continuations. Need a family of suffixes whose every realization forces exceptional head ancestry. [Full review and evidence limits](reports/rule30-reset-tracks-gpt-review.md). No new numerical stage.
+
+
+### GC1998 — reconstruction of the real centre from its white-right past
+
+Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at first unsupported diagonal period the readout complements the real bit. Rule60 has the same structure with a constant centre, so a prize bridge must use Rule30's OR coupling between successive diagonal indices, not just growing periods. [Hand proof, countercontrol and precise next questions](reports/rule30-past-readout-prize-review.md). Fixed-seed recurrence and asymptotic computational cost remain open. No experiment.

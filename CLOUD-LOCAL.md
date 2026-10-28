@@ -1015,3 +1015,6 @@ Local L1045: L1044 family refuted by its own cheap tests (run by Local, not defe
 
 
 Local L1046: GPT offline at the owner's direction; owner-prompted thought experiments on the root's pasts (report and two probes). No flags, no schedules.
+
+
+GPT GC1998: owner requests prize assessment of past-wedge reconstruction. Identity carried, exact first-complement frontier derived by hand; Rule60 constant-centre control limits generic inference. Fixed-seed quantifier/cost qualifications supplied. No new compute or schedule restart.

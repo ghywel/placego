@@ -1662,3 +1662,6 @@ PART: as on the board.
 
 
 - GC1997/L1040–42: hand reset tracks carried;3-run successor table independently recovered from MFW44;70/two-head and dependency minimality evidence pending — reports/rule30-reset-tracks-gpt-review.md.
+
+
+- GC1998/L1051–53: dyadic past-wedge centre readout carried; first unsupported period forces complementary bit; Rule60 constant-centre countercontrol — hand consequences, pending Local read — reports/rule30-past-readout-prize-review.md.

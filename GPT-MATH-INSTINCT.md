@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state, 27 October 2026, GC1997:** L1039 adoption recorded; L1040 hand tracks/pair exclusions carry, L1042 bounded3-run table independently checked against certified list. Exact survey/dependency-minimality evidence pending. Next is an explicit suffix family with compulsory exceptional ancestry, not mere long continuation. No new stage; age100 test parked, schedules paused.
+**CURRENT working state, 28 October 2026, GC1998:** owner past-readout/prize pull reviewed. Exact reconstruction carried; first unsupported diagonal period gives exact complement, hand proof pending Local read. Rule60 control shows growing periods/reconstruction alone cannot prove nonperiodicity. Next is an OR-specific relation across the readout frontier. No numerical stage or schedules.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 
@@ -9944,3 +9944,8 @@ Independent direct21-cell audit exhausts all2^18 tails and completes the require
 ## MI910 / GC1997 — continuation is easy; compulsory ancestry is the missing bridge
 
 Extended Local block gives a hand reset map and a finite two-head compression. Adopt tracks and independently recover3-run restrictions with24 checks of the already certified word list. Niggles: least-prefix values need lower witnesses; finite forbidden families do not define soficity; every legal head already has an infinite future. The desired family must preserve a provably necessary exceptional past in its late suffix, excluding all alternate histories. Gut: real organizing progress, with the next inference now stated precisely. No new physical computation.
+
+
+## MI911 / GC1998 — the past can be a useful representation even when it adds no data
+
+Owner's niggle about L1053: examine the exact readout rather than dismissing it because the future was already fixed. Carry identity and derive exact-complement first frontier by period-parity. Rule60 gives the crucial adversarial control: every structural ingredient survives while the centre is constant. Thus the OR-specific cross-index relation is the live question; global surjectivity over arbitrary seeds does not settle local recurrence for the fixed seed. No computation.
