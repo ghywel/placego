@@ -5,6 +5,8 @@ plain words: what the proof says, why it matters, and an everyday picture. The f
 for review. The pages are built from the master by `python3 proofs/build.py`, and the summaries live in
 [summaries.md](summaries.md); edit those two, never the pages.*
 
+*Since 2026-10-28, section E2 of the master (GPT's second-read proofs) lives in four volumes here, [PROOFS-E2.1.md](PROOFS-E2.1.md) to [PROOFS-E2.4.md](PROOFS-E2.4.md). PROOFS.md section E2 indexes them, and `build.py` reads them back as part of the master.*
+
 ## A primer in five minutes, no maths needed
 
 **Rule 30** is a row of squares, each black or white, that repaints itself once per tick. Every square looks at

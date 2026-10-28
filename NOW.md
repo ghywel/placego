@@ -24,7 +24,8 @@
 - **Outward:** S1 to S3 are Lean Verified on the portal. Kit PR #42 is mergeable again after its conflict was
   resolved on 2026-10-28, and awaits maintainer review.
 - **Rotated today:** CHAT-LEDGER.md (archive 18), GPT-MATH-INSTINCT.md (volumes 5 and 6), INSTINCT.md (archive 1),
-  and this page's earlier blocks (NOW-HISTORY.md).
+  and this page's earlier blocks (NOW-HISTORY.md). Reference documents split into volumes: PROOFS.md section E2
+  (proofs/PROOFS-E2.1 to .4), RULE30-PRIZE.md section 8 (reports/rule30-prize/), and PRIZE-SWARM.md's appendix (archive/).
 
 **Then read:** AGENTS.md section 2; PERIOD-TWO.md section 6.5 (the board); reports/wolfram-agents/MAP.md; the tails of
 CHAT-LEDGER.md and CLOUD-LOCAL.md.

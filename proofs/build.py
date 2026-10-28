@@ -34,9 +34,29 @@ def slug(text):
 PREAMBLE = {}  # section -> the text between its "## " heading and its first proof
 
 
+def master_lines():
+    """PROOFS.md as one master, with section E2's proofs read back from their volumes (split out on 2026-10-28).
+
+    PROOFS.md keeps E2's heading, opening notes and an index; the proofs themselves are in proofs/PROOFS-E2.N.md,
+    after a four-line volume header. Their links are relative to proofs/, so they are rebased to the root here.
+    """
+    lines = (ROOT / "PROOFS.md").read_text().split("\n")
+    vols = sorted(HERE.glob("PROOFS-E2.*.md"), key=lambda q: int(q.name.split(".")[1]))
+    a = next((i for i, l in enumerate(lines) if l.startswith("## E2. ")), None)
+    if a is None or not vols:
+        return lines
+    b = next((i for i in range(a + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
+    cut = next((i for i in range(a, b) if lines[i].startswith("*Moved to volumes on 2026-10-28")), b)
+    body = []
+    for q in vols:
+        body += rebase("\n".join(q.read_text().split("\n")[4:]), str(q.relative_to(ROOT))).rstrip("\n").split("\n")
+        body.append("")
+    return lines[:cut] + body + lines[b:]
+
+
 def units():
     """(id, section, heading, body) for every proof in PROOFS.md, in order. Fills PREAMBLE as a side effect."""
-    lines = (ROOT / "PROOFS.md").read_text().split("\n")
+    lines = master_lines()
     out, sec, sink = [], None, None  # sink: the unit (or preamble) receiving the current lines
     for line in lines:
         m = re.match(r"^## ([A-Z]′?\d?)\. ", line)
@@ -138,7 +158,7 @@ def rebase(text, src):
         return text
     def fix(m):
         target = os.path.relpath(os.path.normpath(folder / m.group(1)), ROOT)
-        return f"]({target}{m.group(2)})"
+        return f"]({target}{m.group(2) or ''})"
     return re.sub(r"\]\((?!https?:|mailto:|#)([^)#\s]+)(#[^)\s]*)?\)", fix, text)
 
 
@@ -179,7 +199,7 @@ def main():
     S = summaries()
     sys.path.insert(0, str(ROOT / "tests" / "probes"))
     from proof_dupes import hard  # a proof or paragraph pasted twice (Cloud's sweep, 2026-10-07)
-    repeats = hard((ROOT / "PROOFS.md").read_text(), (HERE / "summaries.md").read_text())
+    repeats = hard("\n".join(master_lines()), (HERE / "summaries.md").read_text())
     if repeats:
         print("NO FILES WRITTEN: PROOFS.md or summaries.md repeats something; see "
               "tests/probes/proof_dupes.py:\n  " + "\n  ".join(repeats))

@@ -62,6 +62,11 @@ in force for the day they return.
   near its end ("Correction after the swarm").
 - [INSTINCT-INTEL.md](INSTINCT-INTEL.md): Intel's three set-aside pulls of 14 October, never returned to.
 
+## PRIZE-SWARM-reports.md: the swarm's twelve reports
+
+[PRIZE-SWARM-reports.md](PRIZE-SWARM-reports.md) holds the appendix of [PRIZE-SWARM.md](../PRIZE-SWARM.md), the twelve
+agents' verbatim reports and hand-backs, moved here unchanged on 2026-10-28 because it was 247 KB of that file's 310 KB.
+
 ## NOW-HISTORY.md: NOW.md's earlier states
 
 [NOW-HISTORY.md](NOW-HISTORY.md) holds the states NOW.md showed before 28 October 2026, newest first (the 22-28 October blocks, moved on 2026-10-28, sit at the top), with the page's

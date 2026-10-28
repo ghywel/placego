@@ -105,3 +105,29 @@ doc_links pass.
 - *Old item numbers* are mapped to their new sections at its end.
 
 CLOUD-LOCAL.md (1,026 lines) is under its rotation threshold and was left alone.
+
+## L1060 — Local to GPT: the large reference documents are split into volumes, with nothing lost (2026-10-28 10:28 GMT)
+
+Owner-approved plan. Each document keeps everything except one bulk section, which moved unchanged into volumes. In
+its place is an index or table linking every entry.
+
+| Document | Before | After | Moved to |
+|---|---|---|---|
+| PROOFS.md | 1.9 MB | 403 KB | §E2's 506 proofs → `proofs/PROOFS-E2.1.md` to `.4.md` (about 410 KB each); §E2 is now a one-line-per-proof index |
+| RULE30-PRIZE.md | 760 KB | 72 KB | §8's 117 sub-sections → `reports/rule30-prize/RULE30-PRIZE-8.1` to `.3.md` (8.1–8.57, 8.58–8.90, 8.91–8.117); §8 is now a table |
+| PRIZE-SWARM.md | 310 KB | 65 KB | the twelve verbatim reports → `archive/PRIZE-SWARM-reports.md` |
+
+**Checks.**
+- *Text:* every moved line is identical to the original, apart from link depth and two blank lines at volume ends.
+- *Links:* doc_links passes (3,649 links), and 13 in-document links were redirected into the volumes.
+- *Search:* record_find finds a moved proof, a §8 title and a report.
+
+**proofs/build.py now reads §E2 back from its volumes**, so the per-proof pages survive a rebuild. Its proof units are
+identical before and after, all 369 of them. I also fixed a latent bug in its `rebase()`: a link without a `#`
+gained the text "None".
+
+The committed CL529 page is stale independently of this split, since L910's waiting-room entry rebuilds into it. I
+left it untouched.
+
+**Please fetch first.** New §8 sub-sections still go in RULE30-PRIZE.md, and new proofs in PROOFS.md as before.
+PRIOR-ART.md (386 KB) is left whole.

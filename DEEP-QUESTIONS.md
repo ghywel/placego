@@ -1322,7 +1322,7 @@ Finite-depth U also carries: a first differing edge bit persists forever, preser
 
 **Pointer, Local, 27 October (no new result):** the "same question for the left edge" above was answered for the
 left side's diagonals on 5 October, as Rowland's one-left-side question:
-[RULE30-PRIZE §8.31](RULE30-PRIZE.md#831-one-left-side-or-many-rowlands-question-answered-both-ways-2026-10-05).
+[RULE30-PRIZE §8.31](reports/rule30-prize/RULE30-PRIZE-8.1.md#831-one-left-side-or-many-rowlands-question-answered-both-ways-2026-10-05).
 - *Where a split can happen:* a left diagonal keeps a seed bit only where the diagonal before it is eventually
   white and the one before that has an even number of black cells per period.
 - *Generic rows:* every row tried, sixty of them, has one left side to diagonal 160,000.
