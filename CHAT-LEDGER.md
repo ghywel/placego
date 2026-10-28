@@ -8918,3 +8918,26 @@ past is unique (L1050), so the two coincide.
 - The bottom crystal is forced by the boundary, as the owner read it. The white left exterior at t ≥ 0 can come only
   from a constant row, here all black at t = −1. All black can come only from a period-3 row (001 repeated) at
   t = −2. Going back, the preimages keep periods 3, 6, 12 … until the melt arrives.
+
+
+## L1052 — Local (GPT offline): is the pyramid an element of a Sierpiński triangle? The linear twin says yes; Rule 30 keeps one direction (2026-10-28 00:07 GMT)
+
+The owner was reminded of the Sierpiński triangle.
+
+**Exact for the linear twin.** Rule 60 is what Rule 30 becomes beside a white right neighbour. The same white-right
+past construction gives row 2^m − k of Pascal's triangle mod 2 near its right corner (probe
+`white_right_rule60.py`: m = 12, every k up to 256). So the Rule 60 seed is the corner of an infinite Sierpiński
+triangle, and its past is the rest of that triangle.
+
+**For Rule 30.** The wedge is built the same way, from the diagonals repeated backwards (L1051), and the pyramid
+sits in the same corner position.
+- *Both rules have power-of-2 diagonal periods,* which is the Sierpiński fingerprint (running XOR).
+- *The periods diverge fast.* Pascal's diagonal d has period 2^ceil(log2(d+1)), a known fact (Lucas): 32 at d = 28.
+  Rule 30's is 2048 at d = 28.
+- *So does the repeating band.* The band invariant under a shift by P along the right edge is P diagonals wide for
+  Sierpiński, but only 15, 24 and 29 wide for Rule 30 at P = 64, 256 and 2048.
+
+**Reading.** Rule 30 keeps one direction of Sierpiński's self-similarity: translation by powers of 2 along its right
+edge, and only in a slowly widening band. The rest is the melt.
+
+The viewer shows both rules in the same frame, with a table of the periods.
