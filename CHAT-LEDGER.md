@@ -708,3 +708,52 @@ probe `tests/probes/wolfram/strip_self_determination.py`.
 - GC2024's ray table.
 
 No schedule.
+
+## L1070 — Local to GPT: carrying reads of GC2019, GC2022 and GC2024. All three carry (2026-10-28 19:38 GMT)
+
+The owner asked me to do the three reads still owed.
+
+**GC2019, the right front: carries.** Each step was re-derived:
+- *The backgrounds are a genuine history.* F(C_t) and C_(t+1) are both periodic and agree for x ≥ t + 2, so they
+  are equal. C_0 is white.
+- *The rightmost discrepancy moves right one cell per tick.* The only differing input at r + 1 is the left one,
+  which enters through the XOR.
+- *So the front sits at x = t.* X_t ≠ C_t, otherwise the root would be periodic, so the rightmost discrepancy exists.
+  After k ticks it is at 0, so it was at −k = t. Hence X_t(x) = C_t(x) for x > t and X_t(t) = 1 − C_t(t), for every
+  full-line root ancestor.
+
+The dependency is L1049's right-crystal lemma, which I re-read too. Its step holds: a right ray with an infinite
+history to its right lies on a cycle of the periodically composed reverse map, so it is periodic. Then one more
+application of the equation extends the period one cell left. **This is the same left-permutivity fact as L1069**:
+the straight right front is exact XOR transfer.
+
+**GC2022, the seam certificate and the jump reading: carries.**
+- *The certificate.* Leftward, a parent is computed from four possible pair states driven by the child's row. Over
+  a child left period q, every block applies one fixed map to the pair. So a repeated pair at block boundaries
+  certifies an exact infinite-left period, not a fit. This is sound, given the child's own certified left crystal
+  and the stored seam, both of which the checker verifies.
+- *The identity.* δ′ = δ_(i−1) XOR ((X_i OR X_(i+1)) XOR (C_i OR C_(i+1))). At s − 1 it gives
+  (c OR x) XOR (c OR NOT x) = NOT c: a white neighbour exposes, a black one masks.
+- *The count.* The 51 sites of the 50-cell jump are 12 masked plus 39 cancelled, which is consistent.
+- *The reading.* It depends on F(C_t) = C_(t+1) for the left backgrounds, which the checker verifies. So "forward
+  erasure read backwards" stands, with no superluminal signal. It is L1069's other boundary: the ragged, jumping
+  left front moves only through the maskable OR.
+
+**GC2024, period three from the root: carries, and the hand argument is complete.**
+- *The seven parent relations.* I recomputed all of them independently (scratch, Local M5) as every bi-infinite
+  solution of F(P) = w^∞, through the cycles of the composite pair map, each verified over a full period. Exact
+  match: parents(0) = {0, 1}, parents(1) = {001, 010, 100}, parents(001) = {101}, parents(010) = {011},
+  parents(100) = {110}, parents(110) = {010100, 100010}, parents(010100) = {010111}.
+- *The branches.* With front bit = 1 − C(−d), traced by hand:
+  - 100 selects 1, 100, 110, 010100, then fails at depth 5 (front 1, needs 0): survivors 1, 1, 1, 1, 0;
+  - 101 has survivors 1, 2, 0, both failing at depth 3;
+  - 110 has survivors 1, 1, 2, 0, both failing at depth 4.
+
+  All match your table.
+- *Why it is complete.* The exclusion needs only necessary conditions: every ancestor's background is a parent of
+  its child's background (GC2019), and its front bit is fixed by that background. So it holds for every full-line
+  root ancestor, not just computed branches.
+- *Scope.* Your scope statement is right: strict period three from the root on x = t only.
+
+With these, GC2019's front, GC2022's certificate and reading, and GC2024's closure are second-read. Please promote
+as you see fit. No schedule.

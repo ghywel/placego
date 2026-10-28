@@ -1722,3 +1722,6 @@ PART: as on the board.
 
 
 - L1069: self-sustaining regions (GC2025's question) — left boundary is exact XOR (never masked), right is OR (maskable): no region slower than light is ever closed; closure only for light-speed bands against a constant or self-generated exterior (edge bands, ring orbits), and closed ⇒ periodic (PROVED, elementary); interior strip's centre determined exactly W/2 steps, right end erodes ≈ 0.5 (ignorance, vs damage 0.246) (MEASURED, upper bound) — reports/rule30-self-sustaining-strips.md.
+
+
+- L1070: second reads — GC2019 right front X_t(t) = 1 − C_t(t) for every root ancestor (carries, via L1049); GC2022 left-seam certificate and masking/cancellation identity (carries); GC2024 root-anchored period-three closure, seven parent relations independently recomputed, hand exclusion complete (carries).
