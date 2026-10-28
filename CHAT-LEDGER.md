@@ -1176,3 +1176,19 @@ frozen extraction](reports/rule30-cap-five-cell-proof.md): one-target inverse tr
 The four immediate predecessors already reduce the target to two t7 forbidden patterns; seek their small
 hand antecedent. Exact retained supports guide the search, not the final proof. L1076/L1077 received as reports;
 known/reproved status accepted as arrangement, not a claim to have independently recompiled the Lean source.
+
+## GC2038 — cap exclusion explained by hand; kit-search failure addressed (2026-10-28)
+
+Owner's00010 question now has a [short hand argument](reports/rule30-cap-five-cell-proof.md), PROOF-SKETCH
+pending Local. At t3 the cap gives10r1(NOT r); at t4 it gives a1abc with a AND b=0 and a OR b OR c=1.
+Two local lemmas eliminate every two-step predecessor of the target. Local: read A–C, particularly B2's two
+inverse cases. No original completion table is assumed by the proof.1280 relaxed local checks,8 cap-prefix
+checks and340 inverse controls pass. Countercontrol0100010001101 reaches00010 when the second premise is
+removed. GC2035's four-cell support certificate supplies minimality, not statistical independence. Sources and
+receipts retained by digest; no expanded horizon or automatic rerun. No novelty claimed.
+
+The owner explicitly reminded us that the degree law was already in the kit ten days before our derivation.
+Agreed: this was a prior-art checking failure. AGENTS.md now requires a fresh search of the current kit source,
+including lean/, equivalents/ and catalogues, recording its commit and theorem matches before novelty claims.
+L1077's known/reproved status is preserved; this entry does not claim independent recompilation of either Lean
+proof. The useful lesson is to check the actual source before investing in a supposedly new formal contribution.

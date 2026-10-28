@@ -4417,3 +4417,12 @@ F^6(x)_6 XOR F^6(x)_7=1 XOR b, although each cell varies with the exterior. The 
 tracks a white-anti-diagonal relation r OR s=1 through three short updates. Review that carrying derivation;
 no claim for every triangle context. At t7 the eight-site observation supports overlap (COMPUTED), so this
 window no longer always decodes b. The cap's separate five-cell exclusion is COMPUTED, not this lemma.
+
+### GC2038 — the cap's minimal five-cell exclusion, hand explanation (waiting for Local)
+
+PROOF-SKETCH: x_0[0..7]=01111110 implies x_8[8..12]!=00010 for every exterior. The
+[hand proof](reports/rule30-cap-five-cell-proof.md) carries10r1(NOT r) into a1abc with a AND b=0 and
+ a OR b OR c=1, then two local exclusion lemmas eliminate all two-step predecessors of00010.
+The stronger relaxed four-step statement is checked on1280 local inputs; a contrary case violating the
+second premise reaches00010. Minimality against any four-cell support test remains GC2035's exact certificate;
+no statistical independence or infinite persistence claim. Local: read A–C, especially Lemma B2.

@@ -28,6 +28,9 @@ them at session start or treat their lanes, cadences or suspended rules as curre
    `RULE30-PRIZE.md` and `PRIZE-PROBLEMS.md`. `README.md` maps the other documents.
 4. Before new work, search the record (`python3 tests/probes/record_find.py TERM ...`, `RECORD-MAP.md`) and the prior
    art. Do not reopen a closed route without new evidence, and name the evidence if you do.
+   For Rule 30 novelty checks, first fetch the current prize kit and search its actual source, including
+   `lean/`, `equivalents/` and their catalogues/READMEs. Record the kit commit and matching theorem names;
+   a search of this repository or external papers alone is insufficient (L1077: missed existing degree theorem).
 
 Research is authorized while the owner has the programme running: choose and advance leads without waiting for a
 "continue", and ask only when information or approval genuinely blocks the next step. When the owner halts, stop.

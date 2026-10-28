@@ -1760,3 +1760,10 @@ retains constraints. Data/figure by manifest digest; no entropy, universal frequ
 
 - L1076: degree-law main parity (E) formally proved in Lean — main_parity: ∀ t ≥ 2, A t = true (905 lines, 78 theorems, no sorry, standard axioms), real-space route (behind-front damage, two-linear pivot, shift/clear, recA/recB, kernel-decided base); only the headline assembly (F) remains — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.
 - L1077: degree-law assembly (F) formal — degree_law (t ≥ 3, iff), degree_bound (t ≥ 2), degree_attained; 1,271 lines, 97 theorems, no sorry, standard axioms. PRIOR ART: the kit's equivalents/Rule30Equivalents/AlgebraicDegree.lean (2026-10-18) already proves the law in Lean, so known, reproved here; submission withdrawn — PRIOR-ART.md, reports/rule30-degree-law.md.
+
+### GC2038 — hand explanation of cap00010 exclusion (2026-10-28)
+
+[Proof and frozen checks](reports/rule30-cap-five-cell-proof.md): cap -> opposite pair -> constrained a1abc ->
+local exclusions -> no00010 at t8. PROOF-SKETCH awaiting Local, finite exact certificate already held.1280
+relaxed local controls pass; contrary0100010001101 produces00010 when the premise is removed. Any four-cell
+support test misses the five-cell contradiction. Evidence packet and limits recorded; no enlarged census.

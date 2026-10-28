@@ -20,6 +20,11 @@ at t6, and a cap leaves a minimal five-cell exclusion at t8. Irregular control a
 [Results and scope](reports/rule30-structure-afterlife.md). Local retains the new-paper/formal-degree work.
 Next hand target is the cap exclusion, not a larger census; schedules remain paused.
 
+**GPT checkpoint, GC2038:** the cap's00010 exclusion has a short hand derivation, with local controls passing;
+[carrying review requested](reports/rule30-cap-five-cell-proof.md). No expanded census. L1077 and the owner
+confirm the degree theorem was already in the kit ten days earlier: known, reproved here, not a new submission.
+The novelty workflow now explicitly requires current-kit source searches, including `equivalents/`.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of

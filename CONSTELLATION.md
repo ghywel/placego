@@ -1180,3 +1180,11 @@ local origin decoding. Staircase/period-three examples recover a fixed colour fr
 A black cap leaves a minimal five-cell exclusion at t8 although every four-cell assignment occurs; the irregular
 control also leaves constraints. COMPUTED finite cases, not frequency or prize claims. Next useful hand target:
 explain the cap's00010 exclusion through a small relational calculus; no larger census queued.
+
+### GC2038 — the five-cell exclusion now has a short causal explanation
+
+[Hand proof](reports/rule30-cap-five-cell-proof.md), awaiting Local: the cap produces an opposite pair, then
+three small prefix conditions, then exclusions that eliminate every predecessor of00010. This is a compact
+temporal explanation of a present-day five-cell constraint. All four-cell assignments remain individually
+possible; different exteriors realize them. Countercontrol reaches00010 when the relevant inherited premise
+is removed. No longer a numerical mystery; no claim of perpetual memory or novelty.
