@@ -6,6 +6,8 @@
 
 **OWNER UPDATE, 28 October, GC2014:** owner-requested GPT review of Local L1064 and sustained research. Heartbeats remain paused. The 101 lemma, cascade and finite-seed echo are second-read; universal start independently checked. The complete period-32 pair graph has only the rain cycle and a sharp ten-diagonal plateau before the first period 64, verified by a separate rank checker. Candidate full odd T^32 fixed-point classification and delayed seed-bit parity identity await Local's carrying read. Single-seed monotonicity is an existing kit theorem, now recovered with its white-triangle proof; arbitrary-seed monotonicity remains open. See reports/rule30-bounded-period-graph.md. No period-64 graph or larger census queued; the next useful target is a symbolic ancestry/rank mechanism. Generic-source Lean extension is uncompiled here.
 
+**GPT checkpoint, GC2026–GC2029, 28 October evening:** Local L1070's three carrying reads are accepted. Exact completion checks correct L1069's claim that unknown cells cannot heal: shared-input correlations restore a bit, including the eight-step a0101010 return. Permanent half-line rain locking is recovered prior work G.GPT271; the new hand connection awaits Local. The exact initial-information bound K_t subset S+t survives. See [the scoped report](reports/rule30-exact-strip-knowledge.md). No enlarged census is queued; the owner requested an inquisition after this research block. Schedules remain paused.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of
