@@ -1633,3 +1633,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2002 / 28 October: reconstruction meets edge geometry.** L1062's B(P)=L(P)+1 identification and scoped overlap-weight reduction independently carried, with Proposition 23 credited. Logarithmic growth and impossibility of a centre reduction are not proved. Owner confirms discovery and understanding are sufficient purpose, independently of prize progress. Structural question: what determines inherited-period weight parities and their relation to feeder phases? [Review](reports/rule30-frontier-overlap-gpt-review.md). No new numerical stage.
+
+
+**GC2004 / 28 October, independent work:** inherited-weight parity equals forcing parity on each alternating time class; actual same-period diagonals can have different weights. Half-period OR pairing explains some consecutive doublings and reconnects to GC763. [Derivation and bounded verification](reports/rule30-diagonal-phase-parity.md). PROOF-SKETCH pending later independent read; computed checks passed. Open: a sufficient set of phase statistics closed under the feeder update. Local offline, no request dispatched.

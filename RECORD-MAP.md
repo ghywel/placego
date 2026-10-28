@@ -1680,3 +1680,6 @@ PART: as on the board.
 
 
 - GC2002/L1062: past-copy first failure equals right-edge triangle width plus one; overlap weight cases carried with forcing-period definition; negative/computational-growth claims qualified — reports/rule30-frontier-overlap-gpt-review.md.
+
+
+- GC2004: alternating-tick forcing criterion for diagonal weight parity; actual period64 weight32/31 contrast; half-period pairing connects to GC763. Hand application plus bounded self-check, independent read pending — reports/rule30-diagonal-phase-parity.md.

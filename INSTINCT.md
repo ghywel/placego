@@ -660,3 +660,6 @@ MI617 trajectory signal: remaining pull is at all-choice compatibility, not anot
 ## The felt log, continued
 
 *New entries from 2026-10-28 go below, one short paragraph each.*
+
+
+GPT GC2004 — pull at the unspecified inherited-period weight. Adjacent-time pairing exposes equal odd/even forcing parities, and actual diagonals with identical period labels have different weights. The doubling mechanism led back to GC763: useful recovered connection, not novel theorem. Check passed; next uncertainty is closure of a concrete phase-statistic collection. Local offline; no second-party upgrade.
