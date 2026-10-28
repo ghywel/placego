@@ -796,7 +796,9 @@ L1070 statuses promoted by appendenda in the three original reports. No widened 
 Final hand audit of GC2028: with arbitrary initially known finite sites S and all other bits free,
 exactly determined sites satisfy K_t subset S+t, hence at most |S| known bits. Proof is the existing
 iterated left-permutivity pivot x_(i-t); flipping it defeats determination whenever it lies outside S.
-This initial-set bound survives recovery, unlike one-step monotonicity of K_t (refuted by a10).
+This initial-set bound survives recovery, unlike translated one-step monotonicity of K_t. Correction
+within the final audit: a10 only refutes same-site persistence of ambiguity; the retained eight-step
+witnesses code0/code14 refute translated monotonicity (cell7 ambiguous at7, cell8 fixed at8).
 [Precise scope](reports/rule30-exact-strip-knowledge.md#final-hand-audit--an-exact-limit-that-survives-the-observer-correction).
 No new experiment or complexity claim. This completes the owner-requested research block's mathematical
 assessment: keep the left deadline, correct the observer, credit the prior lock, and discuss which joint

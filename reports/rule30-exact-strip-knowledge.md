@@ -156,7 +156,10 @@ in the centre or right child's cone, so its XOR coefficient remains1. If i-t is 
 only that free bit changes the output and preserves every specified input. Thus i cannot be in K_t.
 For an interval[a,b], all exact known sites lie in[a+t,b+t], although they can be sparse and return
 after being unknown. This is a bound relative to the INITIAL information; it does not assert
-K_(t+1) is a subset of K_t+1. The a10 example disproves that stronger monotonicity.
+K_(t+1) is a subset of K_t+1. The eight-step example disproves that stronger monotonicity: for
+initial prefix10101010, retained GC2027 witnesses code0 and code14 give cell7 values0 and1 at time7,
+whereas every completion gives cell8=1 at time8. (The earlier wording incorrectly credited a10: that
+example proves same-site recovery but its known cell1 at time1 translates to cell2 at time2.)
 
 Consequently every fixed spatial site eventually becomes ambiguous in this unrestricted-completion
 model, and no extra known bits beyond the original count are manufactured. The eight-step return at8
