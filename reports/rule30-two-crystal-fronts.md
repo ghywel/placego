@@ -42,3 +42,25 @@ Caps: one Intel CPU worker, run_capped.py; 120 CPU seconds, 180 wall seconds, sa
 Left/right period cap 4096, depth fixed 512, no automatic rerun. Input SHA-256s are fixed in source
 past_crystal_boundaries.py. Output includes per-row certificates, exact boundaries, top jumps and packed
 compressed visual data. A separate finite-certificate audit will precede strong claims if needed.
+
+## GC2021 — measured fronts, fixed-period jumps, and frozen seam audit
+
+The frozen 5177dcf1 run completed. Exact A left endpoints reproduce the earlier values -640, -1542, -2373,
+-3146 at depths 128,256,384,512; B's selected history gives -700,-1554,-2385,-3350. At depth 512 the transition
+widths are 2634 and 2838. Both have a 50-cell backward jump at depth 172, with left period 48 on both sides
+of that step. A: first defect -934 to -884 forward; B: -946 to -896. Both transitions have 12 masked and
+39 cancelled output comparisons before the first surviving difference. A 50-cell displacement spans 51
+potential output sites because the earliest possible new discrepancy is one cell left of the old one.
+
+There are 393 (A) and 398 (B) jumps greater than one at unchanged left period. Thus period change is not a
+necessary cause. Construction checked 1,967,104 old overlapping cells, 8,715,264 update equations, 45,494
+background equations and 8,542 jump sites. Child: 5.02 real seconds, 4.94 user, 0.05 system; maximum RSS
+31,961,088 bytes. The window contained every certified front with ample left margin. No bound was widened.
+
+Freeze one separate certificate audit before delivery: fixed retained-data SHA-256s in check_crystal_boundaries.py;
+no generator import. Check the whole-line extension by periodic-background equations plus the leftmost stored
+seam, all matches through the claimed first difference, both fronts, and every jump by the literal truth table.
+This avoids relying on finite-string period fitting or on the constructor's cycle-finding routine. Also compare
+only the two-row 100-cell patches around the three largest shared jumps (depths 172,185,213) after aligning their
+fronts. Prediction: equal jump counts may reflect translated copies of a local event; disagreement is retained.
+Single worker, 30 CPU/45 wall seconds, 256 MiB RSS, 4 MiB/file, 8 MiB output; unchanged pressure gates. No rerun.

@@ -619,3 +619,11 @@ ring work. [Frozen plan](reports/rule30-two-crystal-fronts.md). Reconstruct the 
 infinite-left periods by finite inverse-pair cycles, locate the first actual discrepancy, and verify the
 local masking/cancellation equation at every jump. The previous A depth-512 front lay outside our window.
 Depth stays 512, no new past selection or period search. One capped Intel run, all overlaps and updates checked.
+
+## GC2021 — both fronts reconstructed; largest jump stays at period 48 (2026-10-28)
+
+The same selected A/B histories now extend to x=-8192. At depth 512 their irregular transition widths are
+2634/2838, with left crystal endpoints -3146/-3350. The largest backward jump is 50 cells at depth 172 for
+both, at unchanged period 48. The forward disappearance is 12 OR-masked and 39 XOR-cancelled comparisons.
+[Result and fixed-scope independent certificate audit](reports/rule30-two-crystal-fronts.md). No new ancestry
+choice or depth. Next is the periodic-left-seam audit and the requested wider interactive view.
