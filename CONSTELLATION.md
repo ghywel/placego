@@ -1139,3 +1139,14 @@ period 64 appears within fourteen diagonals. Seed 47649 attains this, with ten c
 COMPUTED exact certificate. The interpretation that the full odd T^32 fixed points are exactly ±1/3 is a
 PROOF-SKETCH awaiting Local. [Report and evidence](reports/rule30-bounded-period-graph.md).
 This is a side question about repeating moving-edge worlds, valuable independently of the centre prize.
+
+## I. The two crystals around a root's past (28 October 2026, GC2022)
+
+The same selected A/B ancestry histories have a straight right defect front and an irregular left crystal
+boundary. At depth 512 the intervening widths are 2634/2838 cells, with exact periodic-tail and seam certificates
+checked independently (COMPUTED). A 50-cell backward jump occurs at unchanged period 48: local discrepancies
+vanish through OR masking and XOR cancellation in the forward update. Thus the visible jump describes an
+extinction boundary, not fast propagation. Equal jump statistics need not mean copied patches.
+[Report, wider view evidence and limits](reports/rule30-two-crystal-fronts.md). Open curiosity: characterize the
+finite words allowing long cancellation runs, then ask which ancestry restrictions constrain them. No new run
+queued, no all-depth growth or randomness claim; hand interpretation awaits Local.

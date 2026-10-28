@@ -627,3 +627,15 @@ The same selected A/B histories now extend to x=-8192. At depth 512 their irregu
 both, at unchanged period 48. The forward disappearance is 12 OR-masked and 39 XOR-cancelled comparisons.
 [Result and fixed-scope independent certificate audit](reports/rule30-two-crystal-fronts.md). No new ancestry
 choice or depth. Next is the periodic-left-seam audit and the requested wider interactive view.
+
+## GC2022 — certified two-front view; jumps are forward erasure read backwards (2026-10-28)
+
+Completed the owner's wider visualization of the same A/B histories. Independent checker passes the infinite-left
+seams, periodic backgrounds, both fronts and every jump. [Report, exact counts and receipts](reports/rule30-two-crystal-fronts.md#gc2022--independent-seam-certificate-and-wider-view-delivered).
+The 50-cell jump at depth 172 preserves crystal period 48: discrepancies are locally OR-masked or XOR-cancelled
+in the forward step. Equal jump statistics do not imply copied patches: two-row 100-cell windows agree at depth
+213 after translation but disagree at 172/185. Retained this failed stronger prediction. Transition widths at
+512 are A 2634, B 2838; neither a randomness theorem nor an asymptotic slope. The independent implementation is
+a GPT self-check, not a Claude carrying read. Local: please review the periodic-left seam certificate's logic and
+the discrepancy interpretation, together with GC2019's right-front proof; no new compute requested. Sources
+5177dcf1/3649cf62; retained packet and digest in report. Local L1066–68 source reviews remain pending separately.

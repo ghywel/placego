@@ -64,3 +64,42 @@ This avoids relying on finite-string period fitting or on the constructor's cycl
 only the two-row 100-cell patches around the three largest shared jumps (depths 172,185,213) after aligning their
 fronts. Prediction: equal jump counts may reflect translated copies of a local event; disagreement is retained.
 Single worker, 30 CPU/45 wall seconds, 256 MiB RSS, 4 MiB/file, 8 MiB output; unchanged pressure gates. No rerun.
+
+## GC2022 — independent seam certificate and wider view delivered
+
+**COMPUTED, independently checked implementation:** the 3649cf62 checker passed 1,024 left seams,
+45,494 periodic equations, 6,798,638 left-background matches, 590,336 right-background matches and all
+8,542 jump comparisons. It imports no constructor. Its periodic equations and seam checks certify the
+infinite-left continuation of these finite-depth histories; the boundaries are not inferred from a visually
+repeating finite sample. The shared recurrence identity remains a hand argument, not a Claude second read.
+
+The selected B history is unchanged: the attempted diagonal alternation fails at depth 38, and older rows
+are the previously specified unconstrained continuation. The view spans 512 backward steps and now shows
+both boundaries, with an A/B selector, shorter windows and a jump close-up. Whole-wedge axes deliberately
+have unequal scales, labelled in the view. Both exterior regions are periodic in space at each displayed time;
+"irregular transition" is not a randomness theorem and does not exclude internal repeating patches.
+
+The largest jump is explained by many local discrepancies disappearing in the same forward update.
+Read backwards, their disappearance looks like a sudden expansion. No distant cell sends a faster-than-light
+signal. Period 48 remains period 48 during the 50-cell event, so a change of crystal period is not required.
+At a nonempty transition, a backward left-front jump J changes the width by J−1 because the straight right
+front also moves one cell left. The finite profile does not establish a limiting slope or all-depth growth law.
+
+The secondary translated-copy prediction was only partly supported. After aligning A and B by 12 cells,
+the two-row 100-cell patches agree at depth 213 but disagree at depths 172 and 185. Equal displacement and
+mask/cancellation counts do not imply equal patches. No additional computation is queued on that coincidence.
+The next useful question is structural: what finite words permit a long cancellation run, and what limits,
+if any, does their ancestry impose? This is a question, not a new bound or a frozen experiment.
+
+**Resources actually enforced:** both capped stages completed without pressure stops. Constructor child:
+5.02 real seconds, 4.94 user, 0.05 system, 31,961,088-byte process maximum RSS; supervisor 5.22 seconds,
+sampled group RSS 28,436 KiB, minimum free+inactive 5,829 MiB, zero swap growth, final output 1,084,469 bytes
+(excluding launcher receipt). Checker child: 2.03 real, 1.99 user, 0.02 system, 32,047,104-byte maximum RSS;
+supervisor 2.09 seconds, sampled group RSS 30,716 KiB, minimum free+inactive 5,870 MiB, zero swap growth,
+1,777-byte output excluding launcher receipt. Sampled group RSS is not a system-memory peak. One CPU worker
+per stage; no GPU. Browser checks passed at 360 and 736 pixels, including history switching and jump zoom.
+
+Retained raw data, both sources, both supervisor/time receipts, independent verdict and the final view:
+`cited/gc2020-crystal-fronts/manifest.json`, SHA-256
+`3b0aa8914f0d18d1a80c1b4149ee33a25b84666b2ad17ab8685f45907244d283`.
+Each upload receipt and remote stat matched the local SHA-256. Source freezes: 5177dcf1, 3649cf62.
