@@ -454,3 +454,18 @@ bit d of T(x) depends only on bits ≤ d. In that theory (Anashin and Khrennikov
 letter: 1 means it grows, 0 means it splits. Q_d is the length of the cycle containing x mod 2^(d+1). So your graphs
 at every cap, and my beginnings tree, are slices of one object: the cycle structure of T on Z/2^k. That can be
 computed for all rows at once. I am taking that as my block, after a record and prior-art check.
+
+
+## GC2015 — owner asks whether B's past can sustain a periodic centre (2026-10-28)
+
+Read L1065 completely. Its carrying reads of GC2014's seed-bit identity and T^32 classification are accepted;
+the latter rests on the retained exact certificate and known rain classification. Local's independent rebuild
+is attributed to Local. Local is working on the 2-adic cycle-lifting question; I am not duplicating that block.
+
+The owner's new B-ancestry pull has a cheap hand answer at the specified fixed column x = -1: backwards from
+B's white hole, strict alternation would require 0,1,0, but the rule forces 0,1,1. The [full argument](reports/rule30-missing-parents.md#gc2015--can-b-carry-an-alternating-vertical-past-28-october-2026)
+uses only local equations, independently of the enumerated ancestor table. PROOF-SKETCH awaiting a carrying
+read; no computation. B has infinite black tails, so identifying it with a whole finite pyramid base is not
+justified. Other periods, eventual backward periodicity and a moving path remain distinct questions. In
+particular the diagonal x = t starts 1,0,1,0 through these same ancestors; the vertical obstruction does not
+close it. This is recorded for the discussion and Local's next natural checkpoint, not a new run request.

@@ -267,3 +267,56 @@ run was used. This generation contains all eight possible repeating three-bit
 rows are not generally periodic: their left tails and finite joins differ.
 No formula for later generation sizes is asserted from1,2,5,8, and no additional
 generation is included in this work block.
+
+
+## GC2015 — can B carry an alternating vertical past? (28 October 2026)
+
+Owner's pull: the black background of B might attach to a pyramid's base rather than A's edge; perhaps a
+past through B sustains a periodic centre, shifted left to B's white hole. Status: **PROOF-SKETCH**, elementary
+hand obstruction for strict period 2 at that precise vertical column; no new computation or novelty claim.
+Record searched: missing-parents GC1981–84; reconstruction-meaning GC2000; past-readout GC1998; record_find
+backward/past periodic and constant/black-right queries. The existing ancestor tables already contain the
+obstruction. Standard Rule 30 convention checked against Wolfram MathWorld's Rule 30 page.
+
+Use fixed coordinates: the isolated root S is at time 0, position 0; B at time -1 has its only white cell
+at position -1. A fixed vertical column through that hole is x = -1. It is not the root column x = 0.
+The three B parents at time -2 have values 1,0,0 there respectively. Alternation backwards from B therefore
+selects B1, but B1's unique parent has value 1 at x = -1 too. The backward trace starts 0,1,1, not 0,1,0.
+
+### A local proof that does not need the full ancestor classification
+
+Let a be a predecessor of B and c a predecessor of a. An alternating trace through the hole would require
+B[-1] = 0, a[-1] = 1, c[-1] = 0. Write F(x)[i] = x[i-1] XOR (x[i] OR x[i+1]).
+
+Since B[0] = B[1] = B[3] = 1, the equations for F(a) = B imply:
+
+- B[0] = 1 and a[-1] = 1 force a[0] = a[1] = 0.
+- B[1] = 1 then forces a[2] = 1.
+- B[3] = 1 and a[2] = 1 force a[3] = a[4] = 0.
+
+Thus a[0..3] = 0010. If c[-1] were 0, the equations F(c)[0] = F(c)[1] = 0
+would force c[0] = c[1] = c[2] = 0. Then F(c)[2] = 1 forces c[3] = 1, while
+F(c)[3] = 0 requires c[2] = c[3] OR c[4], impossible. Hence c[-1] = 1.
+This excludes the proposed strict alternation by time -3 regardless of all unread far-away cells.
+
+### What is, and is not, attached
+
+B is a single white defect in an infinite black background. The uniform black background itself becomes
+white in one step; the defect leaves S. Thus B and A have exactly the same future after that update.
+B is not literally a finite-height full row of the single-seed pyramid: every such row has white far tails,
+whereas B has black far tails. A cropped resemblance to a base does not provide a space-time identification.
+
+The canonical A reconstruction already copies every finite future patch, not only the corner or centre,
+by suitable simultaneous shifts of time and space (GC2000). B has three predecessors at the next step, so
+its appearance alone supplies no corresponding unique selection or copying theorem.
+
+There are distinct questions here. Strict alternation backwards through B's hole is excluded above.
+A column that becomes periodic only sufficiently far in the past, other periods, and other positions are
+not excluded by these three rows. If the reading position shifts one cell each backward tick, the path
+through (0,0), (-1,-1), (-2,-2), ... is the diagonal x = t, not a vertical centre. The present obstruction
+does not apply to that path. Its backward values through the selected B1 branch start 1,0,1,0, so three
+ancestor generations do not yet reject it; indefinite continuation is unproved here.
+
+Finally, even an eternal periodic negative-time trace would not alone imply a periodic positive-time
+centre: the neighbouring columns supply the forcing, and a repeating output bit does not establish a
+repeating full state. These are precise remaining questions, not a claim that all B histories are invalid.
