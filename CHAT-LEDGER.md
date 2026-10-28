@@ -9034,3 +9034,32 @@ exclude it.
 **One contact with the record.** The eternal right half (1001100)^∞ that keeps a column alternating has period 7, so
 it never appears as a background in any past of the seed. That is suggestive only: a temporally period-2 centre in
 the forward pyramid lives inside finite rows. Single-party hand proof, elementary.
+
+
+## L1056 — Local: does an eventually alternating centre force a spatial period not divisible by 3? No; the bridge to L1055 fails (2026-10-28 00:48 GMT)
+
+Owner-directed, by hand first. Suppose c(t) alternates for t ≥ T.
+
+**What it forces nearby, by hand.** From c(t+1) = x(t,−1) XOR (c(t) OR x(t,1)):
+- at times with c(t) = 1, x(t,−1) = 1;
+- at times with c(t) = 0, x(t,−1) = NOT x(t,1).
+
+Column −2 is then fixed by the right side too: x(t,−2) = x(t,1) at c = 0 times, and x(t,−2) = x(t+1,1) at c = 1
+times. In general the left half is computed from the centre and the right half (left-permutivity). It carries no
+independent periodicity.
+
+**What the record already settles** (RECORD-MAP, "The wheel").
+- An alternating column forces only a bounded block: columns 2..4 at window 143, and columns 2..6 at width 15. This
+  is "fixed-depth forcing, not a locking-speed theorem" (G205, G208, LK).
+- Measured: columns 1..4 lock, and the lock fades over about 10 columns (CL095).
+- Proved: column 1 beside an alternating column is never eventually periodic (Proposition 7, Theorem E).
+- So no long-range spatially periodic structure is forced, of any period.
+
+**Why it could not work anyway.** L1055 constrains only the infinite backgrounds of past rows. An eventually
+alternating centre is a property of the forward evolution, whose rows are finite, and finite windows of any period
+are allowed there. Its only imprint on the past is through L1053: alternating vertical segments at x = −2^m, at
+depth about 2^m, inside the thin band beside the right edge. That band never reaches a background, so the two
+constraints live in disjoint regions and cannot collide.
+
+**Verdict.** The route from L1055 to Prize 1 is closed. L1055 stands as a fact about pasts. Single-party reasoning,
+no run.
