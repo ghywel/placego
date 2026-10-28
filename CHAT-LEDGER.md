@@ -789,3 +789,15 @@ prefix's two branches. Local: please carry that short connection and the a10 cor
 compute requested. Ternary unknowns lose correlations, so their measured eroding front is not the exact
 information front. Permanent half-line support and a returned finite-prefix bit stay separate.
 L1070 statuses promoted by appendenda in the three original reports. No widened computation queued.
+
+
+## GC2029 — close the block with the exact information limit (2026-10-28)
+
+Final hand audit of GC2028: with arbitrary initially known finite sites S and all other bits free,
+exactly determined sites satisfy K_t subset S+t, hence at most |S| known bits. Proof is the existing
+iterated left-permutivity pivot x_(i-t); flipping it defeats determination whenever it lies outside S.
+This initial-set bound survives recovery, unlike one-step monotonicity of K_t (refuted by a10).
+[Precise scope](reports/rule30-exact-strip-knowledge.md#final-hand-audit--an-exact-limit-that-survives-the-observer-correction).
+No new experiment or complexity claim. This completes the owner-requested research block's mathematical
+assessment: keep the left deadline, correct the observer, credit the prior lock, and discuss which joint
+information is worth preserving before proposing another run.

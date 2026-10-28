@@ -141,3 +141,26 @@ larger census merely to collect more missed bits.
 Prior-art check: record search recovered G.GPT271, GC1943 and the staircase trap L999. External searches
 for Rule30 alternating-background invasion and the eight-cell word did not supply an additional selected
 proof. Kopra's 2023 rapid-left-expansivity paper was consulted for scope; no theorem from it is needed here.
+
+
+## Final hand audit — an exact limit that survives the observer correction
+
+Let S be any finite set of initially specified sites, with every other initial bit independently free.
+Let K_t be the sites whose value at time t is the same for every such completion. Then
+
+    K_t is a subset of S+t; in particular |K_t| <= |S|.
+
+This is a direct consequence of iterated left permutivity, not a new theorem claim. F^t(x)_i is
+x_(i-t) XOR H of the other cone inputs. Inductively, the left child's leftmost input occurs nowhere
+in the centre or right child's cone, so its XOR coefficient remains1. If i-t is not in S, flipping
+only that free bit changes the output and preserves every specified input. Thus i cannot be in K_t.
+For an interval[a,b], all exact known sites lie in[a+t,b+t], although they can be sparse and return
+after being unknown. This is a bound relative to the INITIAL information; it does not assert
+K_(t+1) is a subset of K_t+1. The a10 example disproves that stronger monotonicity.
+
+Consequently every fixed spatial site eventually becomes ambiguous in this unrestricted-completion
+model, and no extra known bits beyond the original count are manufactured. The eight-step return at8
+sits exactly on the allowed left boundary for S=[0,7]. It recovers the data bit initially at0; it does
+not outrun the leftmost causal input. This leaves L1069's exact left deadline intact while correcting
+its lossy right-front interpretation. For the actual single-seed orbit the outside bits are not free,
+so this information-model theorem is not a statement of randomness or computational hardness there.
