@@ -100,3 +100,54 @@ and its finite access path as a new infinite-left example. This addresses the ex
 in the existing rain-pair report, rather than repeating its period-2 classification. No P = 64 run follows.
 Same stage caps and 50,000-state stop as GC2011; completed controls are referenced, not rerun. Publish this
 amendment and exact source before execution. This is the first branch not settled by the six universal entries.
+
+## GC2013 — the first unforced branch also has a finite exit
+
+The P = 32 graph closed with 2,115 states and 2,118 edges. It has only the known rain component and no
+period-decreasing edge. Its longest period-32 stretch has **ten diagonals**. Its longest stretch after the
+first period-4 diagonal has fourteen diagonals. Thus, if that first diagonal is j, some diagonal no later
+than j + 14 has period 64. This is an exact finite-cap result, not a bound at arbitrary larger periods.
+
+The retained longest path gives finite seed integer 47649, whose bits read **from the right edge inward** are
+`10000100010111010`. Its periods at depths 0 through 16 are
+
+    1, 2, 2, 4, 8, 8, 16, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32.
+
+The graph forces the next diagonal to period 64 whatever its initial bit. A separate certificate checker
+below will validate the witness and all ranks, rather than trusting the graph constructor's SCC routine.
+This shows why “mostly short plateaus” cannot be read as a universal short-plateau rule.
+
+Packet `cited/gc2012-post-start/manifest.json`, SHA-256
+`ae78d257b7c859999ecb9d48601e2fa743c5f5f9f5789cc98820340028dcaea2`.
+The exact graph has SHA-256 `1bf71d6668171fb26af75d329b15ff7226a8166e2a100584369f82d0337f1327`.
+Run frozen at 8cf285b2; child 0.14 s real, 0.12 s user, 0.01 s system, maximum child RSS 19,496,960 bytes.
+The same limitation on absent subsecond monitor samples applies. Full receipts are retained and verified.
+
+### What this says about repeating worlds
+
+Known rain worlds ±1/3 are the two-step orbit of the edge map T. A full odd 2-adic code fixed by T^32 would
+produce an infinite path in this graph. After leaving the rain component, the decreasing finite rank would
+force an exit, so such a path must remain in the rain component. The only compatible infinite rows are
+therefore the old rain pair. **Candidate hand corollary:** T^32 fixes exactly those two odd codes; there is no
+new odd full orbit of least period 4, 8, 16 or 32. This graph-to-infinite-row interpretation awaits Local's
+carrying read. It is about a whole row in the moving-edge frame, not a fixed centre column.
+
+### Frozen certificate check and retained-data analysis
+
+`check_right_period_graph.py` reads only the above digest-bound certificate. It imports no graph constructor.
+It checks every edge with the literal truth table, both possible initial bits at every state, every parent
+path, absence of period drops, and a decreasing integer rank on every state outside the explicitly identified
+two rain states. It uses topological ranking instead of the constructor's SCC algorithm. It checks an
+extremal seed's evolution with the literal spatial rule through 128 ticks, including the first period-64
+diagonal. Prediction: all claims verify; any discrepancy stops without a new graph run.
+
+It also computes the exact exit distribution when the two equal alternating feeder phases and all new seed
+bits are fair. This is an explicitly chosen distribution on initial conditions, **not** a claim that a
+single-seed spatial sequence tosses independent coins. Prior-informed prediction: the exit hazard is not
+constant, because the universal start already forces some decisions. The counterfactual is that beyond those
+forced decisions this conditional distribution is exactly geometric. This calculation reuses all retained
+paths; it launches no new seed census or higher-period search.
+
+One Intel worker under run_capped.py: 30 CPU seconds, 45 wall seconds, 256 MiB process-group RSS, 4 MiB per
+file, 8 MiB output; launch/ongoing headroom 1,024/512 MiB and swap growth 128 MiB. Source and specification
+published before execution. No automatic rerun and no P = 64 graph.

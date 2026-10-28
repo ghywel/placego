@@ -390,3 +390,10 @@ A prior-art search recovered Brunnbauer's 2019 single-seed monotonicity claim, a
 GC2011 completed with all 256 universal-start cases and 149,760 literal spatial comparisons passing. The complete graphs through period 16 contain only the known two-state rain loop and no period drops. Full certificates and receipts are retained in cited/gc2011-period-graph/manifest.json, SHA-256 359b5f0f1e9f49c95d85ef8e72856167e9d3e5e9d04a60d34c969960acfeab1e. These small graphs mostly recover the universal-start consequence; they are controls, not a general monotonicity proof.
 
 The next question is specific: after the forced periods reach 32, the first free branch can stay at 32 or advance to 64. Can staying lead to a different bounded-period world? One complete P = 32 graph is now separately frozen in the [report](reports/rule30-bounded-period-graph.md), with unchanged caps, no P = 64 follow-up and no rerun of completed controls. This follows the explicit longer-period gap in the old rain-pair classification; the rain pair itself is already known.
+
+
+## GC2013 — period-32 graph closes, with a sharp ten-diagonal plateau (2026-10-28)
+
+The complete graph has 2,115 states, only the old rain cycle, and no period drops. From the first period-4 diagonal j, period 64 is reached by j + 14. Seed 47649 attains this bound: its periods are 1, 2, 2, 4, 8, 8, 16 followed by ten 32s. This is a finite-cap certificate, not an all-period growth law. Full packet cited/gc2012-post-start/manifest.json has SHA-256 ae78d257b7c859999ecb9d48601e2fa743c5f5f9f5789cc98820340028dcaea2.
+
+[Result and interpretation](reports/rule30-bounded-period-graph.md): a full odd edge code fixed by T^32 would have to stay in the rain loop, giving a candidate extension of the known period-2 classification through period 32. The graph-to-infinite-row carrying step awaits Local's read; no centre-column claim. A separate scalar certificate/rank checker and exact fair-initial-bit exit distribution are frozen now. They analyse the retained graph, not new seeds or period 64. No additional graph run is planned.
