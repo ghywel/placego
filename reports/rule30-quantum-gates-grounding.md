@@ -14,8 +14,9 @@ reformulations.
 
 ## Verdict
 
-**Quantum computing itself will not help us.** On our machines it cannot help at all. Even on real hardware it
-would give at most quadratic speedups on our search and counting tasks, with answers that are not proofs. It has no
+**Quantum computing has no demonstrated advantage for the tasks we selected.** *Corrected per GC2032:* a black-box
+search bound does not close every structured quantum approach, so "will not help us" was too strong. On our machines
+simulation cannot help. Even on real hardware it would give at most quadratic speedups on our search and counting tasks, with answers that are not proofs. It has no
 known bearing on Prize Problem 3.
 
 **The mathematics built around quantum gates does transfer, but only as classical tools.** Three pieces do:
@@ -44,7 +45,8 @@ others; full citations in L1071). Here T is the size of the search tree.
 | periodic ring orbits | functional graph, pair graph (L1066) | Grover for F^p(x) = x | quadratic for one orbit, none for listing all | as above |
 
 Two facts make simulation pointless:
-- *Laptop limit:* statevector simulation tops out around 32–34 qubits on a laptop, while a Rule 30 oracle for a
+- *Laptop limit:* dense complex128 amplitudes already need 16 GiB at 30 qubits, so about 30 qubits is the practical
+  ceiling on a 16 GiB machine (corrected per GC2032; 32–34 is not), while a Rule 30 oracle for a
   word of length 10 over depth 10 already needs about 200 ancillas.
 - *No shortcut:* simulating a classical oracle on a superposition evaluates it on every input.
 
@@ -118,8 +120,10 @@ Sonner and Abanin, PRX 2021). Classically the analogue needs a rule that is a bi
 calls Rules 30, 90 or 150 dual-unitary.
 
 **What survives on the permutive side** (my check of the agent's derivation, by hand):
-- **The left environment is a perfect dephaser** (PROVED, elementary). Under random initial conditions the column
-  just left of any region is independent fair coins, independent of everything to its right. Its cell at time t is
+- **The left environment is a perfect dephaser, at the initial time slice** (PROVED, elementary). Under random
+  initial conditions the column just left of any region is independent fair coins, independent of the *initial*
+  data to its right. *Corrected per GC2032:* it is **not** independent of the future right-side history it drives.
+  For example, u = y_0 and v = x_1(1) = u ⊕ (y_1 OR y_2) agree with probability 1/4, not 1/2. Its cell at time t is
   the exact XOR of the initial cell t places further left, which is fresh at step t, plus a function of initial
   cells to the right of that one, which include the earlier fresh ones. For fixed data on the right, that is a
   triangular bijection. This
@@ -181,7 +185,10 @@ wired differently, gives an integrable system or a chaotic one.
    - *Failure condition:* a counterexample at t = 13, which is computable at 2^27 rows.
    - *Gain:* an exact, new structural fact about how Rule 30 accumulates nonlinearity. This is the circuit view's
      AND accounting made concrete.
-2. **Measure the right environment's memory exactly** (computation, small).
+2. **Withdrawn as stated (GC2032).** Every right input occurs in f_T's top monomial (L1072), so the essential-variable
+   count is exactly T. Wolfram's 0.19 is a different observable, and it must be recovered from his definition before
+   any test. The original item is kept below for the record.
+   **Measure the right environment's memory exactly** (computation, small).
    - *Definition:* for a length-T segment of a column, the exact number of right-hand initial cells that can change
      it, maximised or averaged over the rest. Compute it exactly by ANF dependence for T ≤ 20.
    - *Prediction:* linear growth with slope near Wolfram's 0.19.

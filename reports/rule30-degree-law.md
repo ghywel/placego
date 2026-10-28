@@ -6,8 +6,10 @@ Local, 28 October 2026, at the owner's request ("Prove the degree law"), followi
 (`tests/probes/wolfram/centre_anf_degree.py`; L1071).
 
 **Record searched:** L1071's search (`record_find.py` on cryptanalysis, ANF and degree terms). The agent found
-nothing on the algebraic degree of Rule 30 iterates, and Mariot's 2024 survey (arXiv:2405.02875) lists the degree of
-CA generators as open. No novelty is claimed beyond "not found".
+nothing on the algebraic degree of Rule 30 iterates. Mariot's 2024 survey (arXiv:2405.02875) proposes studying the
+degree of CA generators as a research direction, which does not certify that this formula was open (GC2032). The
+record's GC486 already had the two-step polynomial and degrees at t = 1, 2 and 4. A 2025 SSRN abstract (Deva, PRIOR-ART
+§8.116) claims linear degree growth; see L1073 for the comparison. No novelty is claimed beyond "not found".
 
 ## Statement
 
@@ -20,8 +22,10 @@ normal form (ANF).
 > y_(−1) y_1 y_2 and y_0 y_1 y_2. (For t = 1, f_1 = y_(−1) ⊕ y_0 ⊕ y_1 ⊕ y_0 y_1 has degree 2.)
 
 By translation the same holds for every cell x_t(i). This is a property of the rule's t-step map, not of the single
-seed; the single seed's centre column is one evaluation of it. **In words:** each step adds exactly two to the
-degree, and the nonlinearity is spread over every input except the two leftmost.
+seed; the single seed's centre column is one evaluation of it. **In words:** from t = 2 on, each step adds exactly two
+to the degree; from t = 1 to t = 2 it adds one. The unique top monomial omits the two leftmost inputs, but every input
+matters: y_(−t) enters by exact XOR. Algebraic degree is neither cryptographic nonlinearity nor the exact AND count
+(GC2032).
 
 ## Tools
 
@@ -29,7 +33,8 @@ degree, and the nonlinearity is spread over every input except the two leftmost.
   supported inside S with f = 1. Equivalently it is the parity of the weight of f restricted to S, with every
   cell outside S set to 0.
 - **Weight parity is additive.** wt(a ⊕ b) ≡ wt(a) + wt(b) (mod 2). A function that ignores a variable has even
-  weight. A function linear in some variable is balanced.
+  weight. A function of the form x ⊕ (a function independent of x) is balanced. Throughout, "linear in x" means
+  exactly that form; being of degree 1 in x, as xy is, is not enough (GC2032).
 - **Left-permutivity.** Cell x_k(p) = y_(p−k) ⊕ (a function of y_(p−k+1), …, y_(p+k)). Its leftmost input enters by
   exact XOR. So f_t = y_(−t) ⊕ g, and y_(−t) occurs only in the monomial y_(−t) itself.
 
@@ -96,8 +101,9 @@ Measure distance j to the left of the anti-diagonal: z_k(j) = x_k(t − 1 − k 
   z_0(j) = 0 for j ≥ 2t − 2.
 - **Permutivity in this frame.** z_k(j) = z_0(j + 2k) ⊕ (a function of z_0(j), …, z_0(j+2k−1)).
 
-Call this system **S_m**, with m = t − 1 free cells. It is intrinsic: S_(m−1) is S_m with z_0(2m−2) and z_0(2m−1) set
-to 0. Its pivot z_0(2k+2) solves the condition at time k, using only cells nearer the boundary. Define:
+Call this system **S_m**, with m = t − 1 free cells. It is intrinsic: S_(m−1) is S_m with the last free cell and the
+last pivot removed and its last constraint dropped. (Setting the last pivot to 0 does not preserve that constraint;
+its residual is Φ_(m−1). Clarified per GC2032.) Its pivot z_0(2k+2) solves the condition at time k, using only cells nearer the boundary. Define:
 - Φ_m = z_(m−1)(1) ⊕ z_(m−1)(2);
 - W_k^(m) = z_k(2m − 2k) for 1 ≤ k ≤ m − 1, the cells on the speed-2 line from the first white cell z_0(2m);
 - P = z_0(2m − 2), the last pivot of S_m. It equals Φ_(m−1)(free cells), because S_(m−1)'s final condition is linear

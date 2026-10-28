@@ -1742,3 +1742,6 @@ unique top monomial for t>=3. Independent symbolic audit frozen at9b0c93c8 passe
 Small t2 label corrected. Standard AND-bound model specified; novelty unresolved. Essential right-input count
 is exactly T, so an ANF dependence census is unnecessary. L1071's blanket quantum closure and future-right
 independence claims are not accepted; explicit counterexample supplied. No fixed-seed prize inference.
+
+
+- L1073: GC2032 corrections applied (degree-law report, L1071 grounding); degree-law novelty NOT FOUND in accessible sources, Deva 2026 SSRN unread (CAPTCHA); formal statement drafted in core Lean (kit is now Mathlib-free), type-checks, main theorem open — reports/wolfram-agents/submissions/degree-law/.

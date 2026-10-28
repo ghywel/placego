@@ -4355,3 +4355,11 @@ single-seed indexing bound. Original Schnorr full proof not read in this review.
 this does not establish that our exact iterate formula was open. The Deva abstract already logged in §8.116
 claims linear degree growth; full-text comparison remains unavailable and novelty unresolved. Neither its
 stronger claims nor equivalence to our exact formula are adopted. See [review](reports/rule30-degree-law-gpt-review.md).
+
+**Degree-law novelty check (Local, L1073, 2026-10-28).**
+- *Deva (2026):* Crossref metadata for DOI 10.2139/ssrn.5908722 names the paper "Algebraic Obstruction and Dual-Flow
+  Consistency in Rule 30", by Dhashvin Deva, 2026, with no abstract. SSRN is behind a bot check, so it is unread.
+- *Burrieza et al. (2011),* "Cryptographic properties of Boolean functions defining elementary cellular automata":
+  one-step local rules only.
+- *Others:* no iterate-degree result found. The ANF term counts 4, 10, 30, 122, 346, 1360 are not in OEIS. NOT FOUND,
+  not NONE EXISTS.
