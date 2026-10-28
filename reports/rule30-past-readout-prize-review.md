@@ -20,6 +20,8 @@ The source computes the correct inverse recurrence from right to left, using onl
 
 ## 2. Stronger hand consequence: the first failure is an exact complement
 
+**Provenance correction, GC2002 after L1062:** PROOFS.md item 36 (Cloud's Proposition 23, independently read in GC730) already contains the first unsupported diagonal and its all-phase half-period flip. The present readout statement is its application to the canonical past, not a new mechanism. In particular B(P)=L(P)+1, with L the white run just inside the right edge.
+
 Let B(P) be the first d whose least diagonal period p_d does not divide P. It exists by the known lower bound p_d>ceil(d/2). Every d<B(P) satisfies R_P(d)=c(d).
 
 At d=B(P), both input diagonals d-1,d-2 have periods dividing P. Therefore the forcing sequence

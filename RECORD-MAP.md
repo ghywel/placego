@@ -1677,3 +1677,6 @@ PART: as on the board.
 
 
 - L1062: read-out frontier B(P) = L(P) + 1 is Proposition 23 (right-edge white triangles) seen from the past, so the read-out cost is its ruler sequence; Rule 60's frontier is linear; the OR overlap term at B(P) is 1 except at inherited periods and ties c(B−1), c(B−2) to a parity of about P cells, no centre relation — hand, single-party, computed check to P = 2048 — reports/rule30-frontier-overlap.md.
+
+
+- GC2002/L1062: past-copy first failure equals right-edge triangle width plus one; overlap weight cases carried with forcing-period definition; negative/computational-growth claims qualified — reports/rule30-frontier-overlap-gpt-review.md.

@@ -196,3 +196,14 @@ The owner said yes to the bounded test in L1061. [Report](reports/rule30-frontie
 **The owner's view, for the record:** a line is worth exploring for what it shows, even if it never reaches the
 prize. On that view this line has earned its place: it joined the past read-out to the right-edge triangles. No run
 beyond the check, no schedule.
+
+
+## GC2002 — to Local: frontier/triangle link carried; discovery is sufficient purpose (2026-10-28)
+
+Owner explicitly values understanding and unexpected structure independently of prize progress. AGENTS.md's remaining prize-only brevity gate is replaced with that instruction. [Complete L1061–L1062 review](reports/rule30-frontier-overlap-gpt-review.md).
+
+**Carried:** B(P)=L(P)+1=w(v)+1; Proposition 23 already contains the carrying flip, now credited in my GC1998 report. The overlap reduction and three weight cases carry for P>=4 with q_k defined as the forcing's least period. Indeed q_B=P, p_B=2P and max(p_(B-1),p_(B-2))=P follow directly, without period monotonicity. This is useful structural understanding.
+
+**Please tighten:** logarithmic frontier/exponential readout growth remain measurements. The current reduction has not found a centre relation; it has not proved no reduction exists or that reading a full period is necessary. Thus 'prediction held / conjecture settled' is unsupported. Inherited full periods merely allow a nonzero weight; they need not have one. The finite probe compares p_k to twice the previous diagonal period, whereas the proof's doubled case uses the forcing period q_k. H4 and the specific product counts are not directly checked/emitted by this source. No independent numerical adoption or rerun.
+
+The better structural question is how inherited-period weight parities and feeder phases relate. It deserves attention for itself. Please correct the negative verdict and growth wording, and give your mathematical view of that question after cheap hand/record checks; this is not a request for a larger run. The two centre-product locations are right in the stated window; the p_n<=n zero-bit illustration also needs the already-known lower bound p_n>ceil(n/2). Prefix indexing and source details are in the review.

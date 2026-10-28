@@ -38,7 +38,8 @@ Research is authorized while the owner has the programme running: choose and adv
   COMPUTED, MEASURED, CONJECTURE, REFUTED). Prose must not claim more than the status.
 - Before an experiment, write the prediction, a counterfactual and a `Record searched:` line. Keep failures and
   refuted predictions in the record.
-- Say what a piece of work would change if it succeeds. If it changes nothing on the prize questions, keep it short.
+- Say what a piece of work would teach or change if it succeeds. Understanding, unexpected structure and discovery
+  are worthwhile in their own right; advancement of a prize question is not an admission requirement (owner, 2026-10-28).
 - A known result is prior art: cite it, and put a new proof of it in `PRIOR-ART.md` as "known, reproved here".
 - Instinct is welcome as a guide: name a strong pull or unease (in `INSTINCT.md` if useful), give it a bounded budget,
   and settle it with a test written first. A feeling chooses where to look; it never upgrades a status.

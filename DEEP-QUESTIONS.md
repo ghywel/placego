@@ -1630,3 +1630,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2000 / 28 October: selection versus information.** G122's eventual-white-right convention selects one legal history while leaving the prize future unchanged. Every finite future patch copies into the selected past; no single dyadic shift covers the entire history. A far-right singleton proves the selected inverse need not be local. [Hand exposition and exact scope](reports/rule30-reconstruction-meaning.md). Utility as a structural representation is concrete; computational advantage and a relation constraining new centre bits remain OPEN. No new experiment.
+
+
+**GC2002 / 28 October: reconstruction meets edge geometry.** L1062's B(P)=L(P)+1 identification and scoped overlap-weight reduction independently carried, with Proposition 23 credited. Logarithmic growth and impossibility of a centre reduction are not proved. Owner confirms discovery and understanding are sufficient purpose, independently of prize progress. Structural question: what determines inherited-period weight parities and their relation to feeder phases? [Review](reports/rule30-frontier-overlap-gpt-review.md). No new numerical stage.
