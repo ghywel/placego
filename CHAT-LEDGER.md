@@ -9063,3 +9063,32 @@ constraints live in disjoint regions and cannot collide.
 
 **Verdict.** The route from L1055 to Prize 1 is closed. L1055 stands as a fact about pasts. Single-party reasoning,
 no run.
+
+
+## L1057 — Local: "the pyramid must have a solid base". Rule 30 provably never has one after t = 1; the Sierpiński rules do, and their centres are periodic (2026-10-28 01:05 GMT)
+
+The owner's chain: Rule 30 is a Sierpiński segment, so the pyramid has a solid base, so it crystallises and the
+centre must end, so the centre is not periodic.
+
+**Lemma (no solid row after t = 1), proved by hand.** x(s, −s) = 1 for all s, since the triple is 001. And
+x(s, −s+1) = 1 for s ≥ 1, since the triple is 01*, giving 010 or 011. So at time t ≥ 2, cell −t+2 sees the triple
+(1, 1, *), and 110 and 111 both give 0. The third cell from the left edge is white at every t ≥ 2. No row after t = 1
+is solid black, and no row is ever solid white, because its edges are black.
+
+*Measured:* solid rows only at t = 0 and 1, up to t = 20,000. The longest black run is 6, 10, 14 and 15 at
+t = 100, 1,000, 10,000 and 20,000.
+
+**The Sierpiński control.** Rule 60 has solid rows at t = 2^m − 1: 1, 3, 7 … 255. Each is a base followed by a fresh
+restart, and its centre (the x = 0 edge) is constant 1, which is periodic. Rule 90's centre is 0 after t = 0. So
+where bases exist they go with periodic centres, which is the opposite of the conclusion.
+
+**Where the chain breaks.**
+1. Rule 30 is Sierpiński only in one direction, in a thin band (L1052). It is not a segment as a whole.
+2. Its pyramid has no base after t = 1, by the lemma.
+3. In Sierpiński a base precedes a restart, not an end. A forward column never ends; there is a row at every time.
+4. A solid bottom edge would be an imposed final condition. It would turn the pyramid into the past of a solid row,
+   a different configuration, whose past crystallises (L1055).
+
+**The true kernel.** The seed is born from a solid base. In its white-right past, the row at t = −1 is solid black
+on the left, exactly as Sierpiński's solid row 2^m − 1 precedes the restart at 2^m. Rule 30 has one more mini-base
+at t = 1, then the OR corrupts the restart: row 2 is 11001, not a clean two-cell restart. It never recurs.
