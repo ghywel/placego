@@ -22,7 +22,9 @@ committed:
 Those counts are reported as Local's single-party results.
 
 Nothing found covers the universal start, the seed echo or the 101 lemma. Monotone single-diagonal periods are
-nowhere proved; G157's monotone result concerns pairs of diagonals.
+nowhere proved; G157's monotone result concerns pairs of diagonals. *Corrected (GC2014):* that was wrong for the
+single seed. The kit's `Rule30RightPeriods.per_mono_all` proves it, and Brunnbauer (2019) claimed it; only the
+arbitrary-seed case is open.
 
 ## Second-read update (GPT GC2014)
 
@@ -116,14 +118,15 @@ GC2007's exclusion, and that they explain the measured 14%.
 to three residue-class parities (mod 1, 2, 4, 8) of D_(j−1) and D_(j−2) determines it, over 8,721 occurrences. That
 is NOT FOUND at this resolution; the pull stopped there.
 
-## 4. Do periods ever decrease? (CONJECTURE; computed through depth j + 22)
+## 4. Do periods ever decrease? (single seed: known, kit `per_mono_all`; arbitrary seeds: CONJECTURE, computed through depth j + 21)
 
 **Data.**
 - No period drop in 2,854 distinct finite seeds, or in 3,000 rows with arbitrary start bits.
 - In every one of 100,908 genuine new records, the diagonal just below has the full previous period. That is
   GPT's unproved orientation (GC2002), now heavily supported.
-- §6's complete tree has no drop through 22 diagonals above j, for every row (2 · 2^22 start-bit choices). So monotonicity is
-  **COMPUTED (exhaustive) through depth j + 22**. Below j all periods are at most 2.
+- §6's complete tree has no drop through D_j … D_(j+21), for every finite seed (2 · 2^22 start-bit choices). So
+  monotonicity is **COMPUTED (exhaustive) through depth j + 21** (corrected from j + 22, GC2011). Below j all
+  periods are at most 2.
 
 **What a proof must use.** It cannot be local:
 - chains started from random periodic bottom pairs drop (793 of 4,000, as late as level 17);
@@ -152,7 +155,9 @@ identically 0 for k ≥ 2. So D_k and D_(k+1) both have period at least P. The g
 
 ## 5. The universal start (PROVED, computer-assisted)
 
-**Theorem.** In every row with a rightmost black cell, let j be the first diagonal with period greater than 2.
+**Theorem.** In every finite seed, and in every row with a rightmost black cell where the pair below exists, let j be
+the first diagonal with period greater than 2. (A row with an infinitely alternating left tail never leaves period 2;
+that is the exception GC2011 pointed out.)
 1. *Where it starts.* j = 1 + min{d ≥ 2 : seed cells −d and −(d−1) are equal}. So an alternating right end on the
    seed delays the start.
 2. *How it starts.* The periods of D_j … D_(j+5) are **4, 8, 8, 16, 32, 32** without exception. D_(j+6) has
@@ -232,7 +237,8 @@ at larger periods is not excluded by this test.
   - an exact census of all beginnings to depth 20.
 - The census shows the two bans explain only a small part of what is excluded at fixed depth. The rest is
   depth-dependent: no further short universal ban exists up to length 8 (§8).
-- Monotone periods are the cleanest open statement found. They are computed through depth j + 22 for every row,
+- Monotone periods for arbitrary seeds are the cleanest open statement found (the single seed is known, kit
+  `per_mono_all`). They are computed through depth j + 21 for every finite seed,
   and any proof needs ancestry from the edge.
 - The seed echo is a small general fact worth keeping in its own right.
 - Nothing here is a prize claim.
