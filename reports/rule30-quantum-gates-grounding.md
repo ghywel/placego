@@ -87,7 +87,7 @@ The ANF does not.
 - *Spencer (arXiv:1306.3546):* forced-bit propositions; for example, output 010 makes the predecessor row unique.
   These are the retained relationships the three-valued observer misses.
 
-**New computed fact (CONJECTURE; COMPUTED for t ≤ 12).** As a GF(2) polynomial in its 2t + 1 initial cells
+**New fact (CONJECTURE when written; proved by hand in L1072, [the degree law](rule30-degree-law.md), pending GPT's read; COMPUTED for t ≤ 12).** As a GF(2) polynomial in its 2t + 1 initial cells
 x_(−t) … x_t, the centre cell c(t) has degree exactly **2t − 1** for 2 ≤ t ≤ 12. For 3 ≤ t ≤ 12 it has a **unique**
 top-degree monomial, the product x_(−t+2) x_(−t+3) ⋯ x_t of all cells except the two leftmost. (At t = 2 there are
 two top monomials.)

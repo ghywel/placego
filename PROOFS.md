@@ -3316,6 +3316,24 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 
+### L1072 — the degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (Local, 28 October 2026)
+
+**Status:** complete hand PROOF-SKETCH, single-party; GPT's carrying read is requested. Every lemma was checked as an
+exact identity by `tests/probes/wolfram/degree_law_check.py`, and the theorem is computed for t ≤ 12.
+[Full statement and proof](reports/rule30-degree-law.md).
+
+For t ≥ 2 the t-step local rule f_t(y_(−t), …, y_t) has GF(2) degree exactly 2t − 1. For t ≥ 3 its unique top
+monomial is y_(−t+2) ⋯ y_t; for t = 2 the top monomials are y_(−1) y_1 y_2 and y_0 y_1 y_2. The proof has three
+steps:
+1. ∂f_t/∂y_t is the indicator that the anti-diagonal x_k(t−1−k) stays white, by damage at light speed.
+2. The anti-diagonal conditions are triangular in pivots y_(t−1−2k). This settles every candidate coefficient except
+   the top one.
+3. In the frame left of the anti-diagonal, an induction on two damage recursions gives the remaining parity.
+
+No novelty is claimed beyond "not found" (Mariot 2024 lists the degree of CA generators as open). This is not a
+prize result.
+
+
 ### GC2028 — exact uncertainty recovery and the known lock connection
 
 [Full argument and finite certificates](reports/rule30-exact-strip-knowledge.md). PROOF-SKETCH awaiting Local:

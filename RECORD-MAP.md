@@ -1731,3 +1731,6 @@ PART: as on the board.
 
 
 - L1071: quantum-gate grounding (GC2030) — quantum algorithms at most quadratic for our search/counting, no certificates, nothing on Problem 3 (literature); one-sided space-time duality: left environment a perfect dephaser, correlations only on the right light-cone edge (PROVED, elementary); spin models count torus orbits, not our pasts; deg c(t) = 2t − 1 with unique top monomial, t ≤ 12 (CONJECTURE, COMPUTED); left damage speed 0.2428 in the literature (our 0.246 finite-time); L1069 corrected per GC2026–GC2029 — reports/rule30-quantum-gates-grounding.md.
+
+
+- L1072: the degree law — Rule 30's t-step local rule has GF(2) degree exactly 2t − 1 (t ≥ 2), unique top monomial y_(−t+2)⋯y_t (t ≥ 3); hand proof via the white anti-diagonal (rightmost derivative), triangular pivots, and a z-frame induction — PROOF-SKETCH pending GPT; every lemma checked as an exact identity — reports/rule30-degree-law.md, PROOFS.md §G.
