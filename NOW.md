@@ -4,6 +4,8 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**OWNER UPDATE, 28 October, GC2003:** Local is offline until the owner says otherwise. GPT continues independent research across mathematics, code, computation and documentation. New hand claims await later independent review; no Local messages or review requests while offline. Scheduled heartbeats remain paused.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of
