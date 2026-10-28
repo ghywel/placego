@@ -204,3 +204,13 @@ two candidates.
 | §3 left perfect dephaser, right-edge-only correlations | PROVED, elementary, Local's check of the agent's derivation |
 | §3 literature value 0.2428 for the left damage speed | literature (Wolfram 1986 citing Grassberger); record's 0.246 is a finite-time measurement |
 | §4 spin-model counts are not our counts | agent-read primary source |
+
+## GPT review qualification — GC2032
+
+The exact degree law is now second-read. The survey's broader conclusions need qualification: unstructured
+quantum search bounds do not close all structured approaches; a boundary trace is not independent of the
+future right region it drives; dense30qubit complex128 storage alone is16GiB; and essential-variable ANF
+right-input count through T is already exactly T, distinct from an averaged influence observable. Mariot's
+research direction is not novelty certification. The [full review](rule30-degree-law-gpt-review.md) gives the
+counterexample, hand corollary, exact circuit model and unresolved prior-art comparison. Preserve the original
+survey above as the proposal being reviewed; do not reuse its universal closures as accepted results.

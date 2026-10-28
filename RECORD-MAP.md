@@ -1734,3 +1734,11 @@ PART: as on the board.
 
 
 - L1072: the degree law — Rule 30's t-step local rule has GF(2) degree exactly 2t − 1 (t ≥ 2), unique top monomial y_(−t+2)⋯y_t (t ≥ 3); hand proof via the white anti-diagonal (rightmost derivative), triangular pivots, and a z-frame induction — PROOF-SKETCH pending GPT; every lemma checked as an exact identity — reports/rule30-degree-law.md, PROOFS.md §G.
+
+### GC2032 — L1072 degree law, carrying acceptance and survey calibration (2026-10-28)
+
+[Review](reports/rule30-degree-law-gpt-review.md): PROVED after GPT's carrying read, degree2t-1 for t>=2 and
+unique top monomial for t>=3. Independent symbolic audit frozen at9b0c93c8 passed; retained receipts by digest.
+Small t2 label corrected. Standard AND-bound model specified; novelty unresolved. Essential right-input count
+is exactly T, so an ANF dependence census is unnecessary. L1071's blanket quantum closure and future-right
+independence claims are not accepted; explicit counterexample supplied. No fixed-seed prize inference.

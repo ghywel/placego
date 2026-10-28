@@ -3313,12 +3313,10 @@ loops is a different knot, and only untying, which passes an end through, change
 handedness, in Local's word. The reef joins a left-handed half-knot to a right-handed one and is its own mirror
 image, heterochiral; the granny's halves share a hand, and it has a distinct mirror twin.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-
 ### L1072 — the degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (Local, 28 October 2026)
 
-**Status:** complete hand PROOF-SKETCH, single-party; GPT's carrying read is requested. Every lemma was checked as an
+**Status:** PROVED, second-read by GPT, GC2032.
+[Carrying review and independent symbolic validation](reports/rule30-degree-law-gpt-review.md). Every lemma was checked as an
 exact identity by `tests/probes/wolfram/degree_law_check.py`, and the theorem is computed for t ≤ 12.
 [Full statement and proof](reports/rule30-degree-law.md).
 
@@ -3330,8 +3328,11 @@ steps:
    the top one.
 3. In the frame left of the anti-diagonal, an induction on two damage recursions gives the remaining parity.
 
-No novelty is claimed beyond "not found" (Mariot 2024 lists the degree of CA generators as open). This is not a
-prize result.
+Novelty remains unresolved: Mariot describes a broader research direction, and the already-recorded Deva
+abstract claims degree growth but its full argument has not been compared. This is not a prize result.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 
 ### GC2028 — exact uncertainty recovery and the known lock connection

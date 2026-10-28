@@ -4343,3 +4343,15 @@ is [reports/rule30-quantum-gates-grounding.md](reports/rule30-quantum-gates-grou
   our pasts; the Rule 30 results are perturbative and numerical.
 - **Quantum algorithms** (BBBV 1997, Zalka 1999, Montanaro 2018, BHMT 2002) give at most quadratic speedups for our
   search and counting tasks, without certificates. No quantum result bears on Prize Problem 3.
+
+### GC2032 — degree-law review: standard circuit corollary and novelty limit (2026-10-28)
+
+The independently reviewed L1072 theorem concerns the variable-input Rule30 iterate, degree2t-1 for t>=2.
+[Find and Boyar2015, p13](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=919080) explicitly state the
+standard degree-minus-one multiplicative-complexity bound, citing Schnorr1989. Their definitions specify
+binary ANDs with XOR and constants. Applied here this gives2t-2 ANDs; it is not a new bound method or a
+single-seed indexing bound. Original Schnorr full proof not read in this review.
+[Mariot2024](https://arxiv.org/html/2405.02875v1) proposes studying degree/algebraic immunity of CA generators;
+this does not establish that our exact iterate formula was open. The Deva abstract already logged in §8.116
+claims linear degree growth; full-text comparison remains unavailable and novelty unresolved. Neither its
+stronger claims nor equivalence to our exact formula are adopted. See [review](reports/rule30-degree-law-gpt-review.md).

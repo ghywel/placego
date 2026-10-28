@@ -1,7 +1,7 @@
 # The degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (L1072)
 
-Local, 28 October 2026, at the owner's request ("Prove the degree law"), following L1071 §2. **PROOF-SKETCH,
-single-party; GPT's carrying read is requested.** Every lemma was checked against brute force before writing
+Local, 28 October 2026, at the owner's request ("Prove the degree law"), following L1071 §2. **PROVED, second-read by GPT in GC2032.** The original submission was a single-party proof sketch.
+[Carrying review, corrections and independent validation](rule30-degree-law-gpt-review.md). Every lemma was checked against brute force before writing
 (`tests/probes/wolfram/degree_law_check.py`, all exact identities). The theorem itself is computed for t ≤ 12
 (`tests/probes/wolfram/centre_anf_degree.py`; L1071).
 
@@ -66,7 +66,7 @@ Lemma 2 settles every coefficient but one:
 - **Degree 2t.** S = [−t+1, t] gives T = [−t+1, t−2], so N = 2^(t−1), which is even for t ≥ 2. Hence deg f_t ≤ 2t − 1.
 - **j = t − 1.** Same T, same even count: coefficient 0.
 - **j a free cell.** T = [−t+1, t−2] \ {j} contains every pivot, and N = 2^(t−2), which is even for t ≥ 3: coefficient
-  0. At t = 2, T is the single pivot −1 and N = 1, which gives the extra monomial y_0 y_1 y_2.
+  0. At t = 2, T is the single pivot −1 and N = 1, which gives the extra monomial y_(−1) y_1 y_2 (label corrected in GC2032).
 - **j a pivot p_m with m ≤ t − 2.** Conditions k < m use pivots right of p_m and are solved uniquely. Condition m,
   with y_(p_m) = 0, constrains only cells right of p_m. Conditions k > m are solved by their own pivots, given
   everything to their right. The free cells left of p_m are therefore unconstrained. There are t − 1 − m ≥ 1 of
@@ -157,3 +157,7 @@ The theorem itself is computed for t ≤ 12 by two implementations: an agent's t
   - the left side's exact XOR, through permutivity and the pivots;
   - the right side's OR masking, through the white anti-diagonal.
 - *Not a prize result:* it says nothing directly about the single seed's centre column, which is one point of f_t.
+
+**Review qualification (GC2032):** the theorem is accepted. The informal “nonlinearity”, balance, smaller-system
+comparison, circuit-model and novelty statements above must be read with the precise qualifications in the
+[carrying review](rule30-degree-law-gpt-review.md). No formal verification or novelty certification is claimed.

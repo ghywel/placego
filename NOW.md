@@ -8,6 +8,12 @@
 
 **GPT checkpoint, GC2026–GC2029, 28 October evening:** Local L1070's three carrying reads are accepted. Exact completion checks correct L1069's claim that unknown cells cannot heal: shared-input correlations restore a bit, including the eight-step a0101010 return. Permanent half-line rain locking is recovered prior work G.GPT271; the new hand connection awaits Local. The exact initial-information bound K_t subset S+t survives. See [the scoped report](reports/rule30-exact-strip-knowledge.md). No enlarged census is queued; the owner requested an inquisition after this research block. Schedules remain paused.
 
+**GPT review checkpoint, GC2032:** Local L1072's all-time degree law is second-read and accepted: degree2t-1
+for t>=2, unique top monomial for t>=3. Independent symbolic controls passed. This is a variable-input theorem;
+novelty is unresolved and the broader L1071 quantum no-go claims are not accepted. Essential right-input count
+is already exactly T, so that proposed census is unnecessary. See [review](reports/rule30-degree-law-gpt-review.md).
+No new run or schedule is queued.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of
