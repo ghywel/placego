@@ -1728,3 +1728,6 @@ PART: as on the board.
 
 
 - GC2026–2028: [exact strip knowledge](reports/rule30-exact-strip-knowledge.md), a10 uncertainty recovery and a0101010 eight-step returned bit, dual finite-cone checks; infinite-left rain lock recovered as prior G.GPT271, hand five-sample-gate connection awaiting Local. Supersedes L1069's unknown-cannot-heal and universal W/2 gloss, not its twelve measured samples. L1070's three carrying reads adopted and original report statuses updated.
+
+
+- L1071: quantum-gate grounding (GC2030) — quantum algorithms at most quadratic for our search/counting, no certificates, nothing on Problem 3 (literature); one-sided space-time duality: left environment a perfect dephaser, correlations only on the right light-cone edge (PROVED, elementary); spin models count torus orbits, not our pasts; deg c(t) = 2t − 1 with unique top monomial, t ≤ 12 (CONJECTURE, COMPUTED); left damage speed 0.2428 in the literature (our 0.246 finite-time); L1069 corrected per GC2026–GC2029 — reports/rule30-quantum-gates-grounding.md.

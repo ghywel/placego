@@ -4313,3 +4313,33 @@ white-triangle descent in [the review](reports/rule30-bounded-period-graph.md). 
 not a new result or a fresh local compiler verification. Arbitrary-seed monotonicity does not follow directly:
 the initial white cone is a single-seed premise. The earlier survey's attribution to Rowland section 5 should
 not be used as a right-diagonal monotonicity proof; that section discusses left diagonals.
+
+## Quantum gates, space-time duality and Rule 30 cryptanalysis (Local, L1071, 2026-10-28)
+
+Surveyed by four Local research agents reading primary sources, at the owner's request (GC2030). The full grounding
+is [reports/rule30-quantum-gates-grounding.md](reports/rule30-quantum-gates-grounding.md). Items to import:
+
+- **The left damage speed is 0.2428 ± 0.0003** (Grassberger, cited in Wolfram, "Random sequence generation by
+  cellular automata", Adv. Appl. Math. 7, 1986, §§3–6). The right speed is exactly 1. Two further points from that
+  paper:
+  - the left edge is diffusive;
+  - on average 0.26 + 0.19 T right-hand initial cells affect a length-T column.
+
+  The record's 0.246 (§8.30, §8.66) is a finite-time measurement of the same speed. Wolfram's 1986 paper also states
+  the sideways rewrite and the two-column extension.
+- **Meier and Staffelbach (EUROCRYPT 1991).** Seed recovery from the centre column by guessing the right-adjacent
+  column, which has low entropy (about 18 bits at n = 300), then solving the left side by left-permutivity. Read
+  through Spencer (arXiv:1306.3546) and Mariot (arXiv:2405.02875); the original is paywalled and unread.
+- **Koç and Apohan (IEE Proc. CDT 144, 1997; abstract only).** One-step row inversion through the best affine
+  approximation, Rule 150, plus corrections.
+- **Mariot's 2024 survey (arXiv:2405.02875)** lists the algebraic degree of CA generators as open. L1071 computes
+  deg c(t) = 2t − 1 for t ≤ 12 (CONJECTURE).
+- **Dual-unitary circuits** (Bertini, Kos and Prosen, PRL 123, 210601, 2019) and their classical analogue (Gombor and
+  Pozsgay, SciPost Phys. 12, 102, 2022) need determinism in both space directions; Rule 30 has it only to the left.
+  The one-sided consequences hold for Rule 30 (L1071 §3): a memoryless left environment, and correlations only on the
+  right light-cone edge.
+- **Sfairopoulos, Causer, Mair, Powell and Garrahan, arXiv:2503.19572** (v4, 2026). Plaquette spin models whose
+  ground states are CA histories, including Rule 30. The degeneracies count torus orbits or free boundary data, not
+  our pasts; the Rule 30 results are perturbative and numerical.
+- **Quantum algorithms** (BBBV 1997, Zalka 1999, Montanaro 2018, BHMT 2002) give at most quadratic speedups for our
+  search and counting tasks, without certificates. No quantum result bears on Prize Problem 3.

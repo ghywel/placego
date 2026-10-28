@@ -65,16 +65,22 @@ fast the strip truly loses determinacy there.
 
 Prediction (written first): left end at speed 1, right end retreating at about 0.25, so the centre is determined
 for about 0.8 W. Twelve strips (W = 64, 256 and 1,024, centred at 0, −400, −1,200 and 300) gave:
-- **The centre is determined for exactly W/2 steps, every time.** It is lost when the left end, moving at exactly
-  speed +1, reaches it. The right side plays no part. That half of the prediction was wrong.
+- **In all twelve strips the centre is determined for exactly W/2 steps.** It is lost when the left end, moving at
+  exactly speed +1, reaches it. That half of the prediction was wrong. *Corrected (L1071, after GC2026):* W/2 is
+  only an upper bound in general. A known pair 00 loses its right cell after one step; the twelve samples happen
+  to attain the bound.
 - **The left end moves at +1.000 in every case**, as permutivity requires.
 - **The right end retreats at 0.43 to 0.57**, near 0.5 for W = 1,024, not 0.25. So the known region lasts about
   W/1.5: 41 to 43 steps for W = 64, 166 to 179 for 256 and 675 to 685 for 1,024.
 
-**Ignorance spreads faster than damage.** The 0.246 of §8.66 is the speed of a single *difference* on a background,
-and a difference can heal. An *unknown* cannot heal: it is lost only where a known black cell masks the OR. That
-happens about half the time, so ignorance creeps in from the right at about one cell per two steps. These two speeds
-are different measurements of different things.
+**Ignorance spreads faster than damage, for this observer.** The 0.246 of §8.66 is the speed of a single
+*difference* on a background, and a difference can heal. *Corrected (L1071, after GC2026–GC2029):* I wrote that an
+unknown cannot heal. For the three-valued observer that is true, but genuine ignorance can heal. With cells a, 1, 0
+and an unknown exterior, the middle cell is NOT r after one step and a after two, since (NOT r) OR (r OR s) = 1. More
+generally F²(x)_i = x_(i−2) wherever x_(i−1) ≠ x_i. Exact knowledge can even return beyond the original interval:
+a0101010 fixes cell 8 to a at time 8 for every exterior. So the 0.5 figure is the speed of an observer that forgets
+correlations, not of the exact information front. The exact limit that survives is GPT's K_t ⊆ S + t: no more cells
+can be known than were known at the start, shifted right by t.
 
 ## 4. What this says about the centre and the prize
 
@@ -100,6 +106,6 @@ All three are faces of one fact: order lives where a region is closed, and closu
 | §1 boundary asymmetry, no interior region is closed | PROVED, elementary, standard |
 | §1 closed exactly at light speed against a constant or self-generated exterior | PROVED, elementary |
 | §2 closed means periodic; purely periodic on the right edge | PROVED, from GC808 and §8.27 |
-| §3 centre of a width-W strip determined for exactly W/2 steps | PROVED, by the left end's exact speed; checked on 12 strips |
-| §3 right end retreats at about 0.5 | MEASURED, 12 strips, single seed at t = 3,000; three-valued, so an upper bound |
+| §3 centre determined for at most W/2 steps | PROVED, by the left end's exact speed (equality held in all 12 strips; not general, L1071) |
+| §3 right end retreats at about 0.5 | MEASURED for the three-valued observer only; exact knowledge can heal (GC2026, L1071) |
 | §4 | reading, not a theorem |
