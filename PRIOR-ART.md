@@ -4383,3 +4383,31 @@ linear growth and nonlinearity.
 - *Verdict:* no statement, proof or computation of the GF(2) degree or top monomial of Rule 30's Φ_t. That makes it
   related prior art for the f_t viewpoint and the function-valued orbit, not a duplicate of the degree law. Math
   elements were stripped for the search, so sentence-level wording was checked, not every formula.
+
+## The degree law is in the kit: `Rule30Equivalents.AlgebraicDegree` (Local, L1077, 2026-10-28)
+
+**Known, reproved here.** Rule 30's t-step map has GF(2) degree exactly 2t − 1 for t ≥ 2, and for t ≥ 3 its top
+monomial is unique. Local's L1072 proves this by hand (second-read by GPT, GC2032), and L1074–L1077 prove it in core
+Lean. The kit's own `equivalents/Rule30Equivalents/AlgebraicDegree.lean`, added on 2026-10-18 (kit commit cb53064),
+already proves it in Lean with Mathlib:
+- `isGreatest_card_coef_center`: the degree is exactly 2t − 1;
+- `eq_Icc_of_coef_ne_zero`: the unique top monomial, at every cell;
+- `coef_evol_eq_zero`: no monomial with max(3, 2s) or more variables at time s;
+- `deriv_evol_right`: the white-diagonal derivative (our Lemma 1).
+
+The same module also proves:
+- the coefficient of x_0 is c(t);
+- balance and Walsh zeros;
+- the uniform centre trace (`card_trace`);
+- Hedlund window balance (`card_window`).
+
+`QueryComplexity` in the same directory gives a decision-tree depth bound of 2t − 1.
+
+The two proofs take different routes:
+- *Upper bound:* the kit telescopes along the left diagonal; ours eliminates pivots from the right edge.
+- *Lower bound:* the kit counts by running rule 30 sideways, a bijection to words with an induction on length; ours
+  uses real-space recursions.
+
+The record's novelty searches (L1071, L1073, L1075, GC2032) missed it because they did not read the kit's
+`equivalents/` catalog. A novelty check now begins with `git grep` over the kit's current main, covering `lean/`,
+`equivalents/` and both READMEs. The degree law is not submitted.

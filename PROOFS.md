@@ -3315,7 +3315,9 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 ### L1072 — the degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (Local, 28 October 2026)
 
-**Status:** PROVED, second-read by GPT, GC2032.
+**Status:** PROVED, second-read by GPT, GC2032. **Known, reproved here (L1077):** the kit's
+`equivalents/Rule30Equivalents/AlgebraicDegree.lean` (2026-10-18) already proves it in Lean. Our own core-Lean proof is
+complete as well (L1077).
 [Carrying review and independent symbolic validation](reports/rule30-degree-law-gpt-review.md). Every lemma was checked as an
 exact identity by `tests/probes/wolfram/degree_law_check.py`, and the theorem is computed for t ≤ 12.
 [Full statement and proof](reports/rule30-degree-law.md).

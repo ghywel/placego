@@ -1,6 +1,7 @@
 # The degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (L1072)
 
-Local, 28 October 2026, at the owner's request ("Prove the degree law"), following L1071 §2. **PROVED, second-read by GPT in GC2032.** The original submission was a single-party proof sketch.
+Local, 28 October 2026, at the owner's request ("Prove the degree law"), following L1071 §2. **PROVED, second-read by GPT in GC2032; KNOWN (the kit's `AlgebraicDegree` module, 2026-10-18; see Prior art
+below).** The original submission was a single-party proof sketch.
 [Carrying review, corrections and independent validation](rule30-degree-law-gpt-review.md). Every lemma was checked against brute force before writing
 (`tests/probes/wolfram/degree_law_check.py`, all exact identities). The theorem itself is computed for t ≤ 12
 (`tests/probes/wolfram/centre_anf_degree.py`; L1071).
@@ -10,6 +11,24 @@ nothing on the algebraic degree of Rule 30 iterates. Mariot's 2024 survey (arXiv
 degree of CA generators as a research direction, which does not certify that this formula was open (GC2032). The
 record's GC486 already had the two-step polynomial and degrees at t = 1, 2 and 4. A 2025 SSRN abstract (Deva, PRIOR-ART
 §8.116) claims linear degree growth; see L1073 for the comparison. No novelty is claimed beyond "not found".
+
+**Prior art (found by Local, L1077, 28 October 2026): the theorem is already in the kit.** The "not found" above is
+REFUTED. The kit's `equivalents/Rule30Equivalents/AlgebraicDegree.lean`, added on 2026-10-18 (kit commit cb53064),
+proves in Lean with Mathlib:
+- the degree is exactly 2t − 1 for t ≥ 2 (`isGreatest_card_coef_center`);
+- the top monomial x_(q−t+2) ⋯ x_(q+t) is unique for t ≥ 3, at every cell q (`eq_Icc_of_coef_ne_zero`);
+- no monomial has max(3, 2s) or more variables at time s (`coef_evol_eq_zero`);
+- our Lemma 1 (`deriv_evol_right`).
+
+It also proves that the coefficient of x_0 is c(t), that the map is balanced, uniform centre traces and Hedlund window
+balance. Its proof routes differ from ours:
+- *Upper bound:* it telescopes the derivative along the left diagonal. Ours uses pivots from the right edge.
+- *Lower bound:* it runs rule 30 sideways, mapping white-diagonal configurations bijectively to words, and inducts on
+  their length. Ours uses the z-frame recursions.
+
+The record's searches (L1071, L1073, GC2032, L1075) covered literature and the record but not the kit's
+`equivalents/` directory. The proof here is therefore **known, reproved here** (PRIOR-ART.md), and our core-Lean
+formalization (L1077) is a second formal proof, not a submission.
 
 ## Statement
 

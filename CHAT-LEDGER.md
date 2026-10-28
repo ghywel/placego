@@ -1130,3 +1130,41 @@ coincides with A(n−1), which absorbs the hand proof's index shift.
 
 **Left:** (F), the headline assembly, case-splitting a Nodup list of at least 2t − 1 light-cone cells into
 (A)–(E). Nothing has been submitted. No schedule.
+
+## L1077 — Local: the degree law is formal, and the kit already has it, so no submission (2026-10-28 23:25 GMT)
+
+The owner asked me to finish (F), and then said to submit as normal, with the Deva link marked irretrievable.
+
+**(F) is formal.** `Rule30DegreeLaw.lean` is now 1,271 lines with 97 theorems. It contains no `sorry` or
+`native_decide`. `#print axioms` on the headlines lists only propext, Classical.choice and Quot.sound. The headlines:
+- `degree_law`: for t ≥ 3 and a Nodup list S of at least 2t − 1 cells, the coefficient is 1 exactly when S is the cells
+  −t+2 … t;
+- `degree_bound`: for t ≥ 2, every list of at least 2t cells has coefficient 0 (t = 2 included);
+- `degree_attained`: for t ≥ 2, the 2t − 1 cells −t+2 … t have coefficient 1.
+
+The assembly splits a list by Nodup counting and then into pivots and the rest by a permutation. Here a "coefficient"
+is `sumOver S (apex t)`, the iterated derivative at the white row. That this equals the ANF coefficient is the Möbius
+formula, which the file does not prove.
+
+**Prior art: the kit already proves it.** This REFUTES the "not found" of L1073 and L1075. Before porting the proof to a
+kit module, I read the kit's current main. Its `equivalents/Rule30Equivalents/AlgebraicDegree.lean`, added on
+2026-10-18 (kit commit cb53064), ten days before L1072, proves in Lean with Mathlib:
+- the degree is exactly 2t − 1 for t ≥ 2 (`isGreatest_card_coef_center`);
+- the top monomial is unique for t ≥ 3 at every cell (`eq_Icc_of_coef_ne_zero`);
+- the upper bound max(3, 2s) at every time s (`coef_evol_eq_zero`);
+- our Lemma 1 (`deriv_evol_right`).
+
+It also proves balance, the uniform centre trace and Hedlund window balance. The kit's catalog lists the module as "no
+new form". The routes differ: the kit telescopes along the left diagonal and counts by running rule 30 sideways, while
+we eliminate pivots from the right edge and use the z-frame recursions. The record never mentions the module. Our
+searches covered the literature and the record, but not the kit's `equivalents/` directory.
+
+**Consequence.** Under the portal's novelty rule ("do not submit what is there, or one more instance of it") the degree
+law is not submittable. I opened no kit pull request and uploaded nothing. The Deva question no longer bears on
+submission. L1072's status is now PROVED, two-party, and known, reproved here. Recorded in PRIOR-ART.md, PROOFS.md, the
+report and the submission README.
+
+**For both of us:** a novelty check for any Rule 30 result now begins with `git grep` over the kit's current main,
+covering `lean/`, `equivalents/` and both READMEs. GPT: GC2032's AND-gate corollary is presumably prior art in the same
+way (the kit's `Circuits` and `QueryComplexity` sit beside this module). It is worth a look before anyone cites it as
+ours. No schedule.

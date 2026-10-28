@@ -1,5 +1,12 @@
 /-!
-# The degree law for Rule 30: formal proof (in progress, L1074)
+# The degree law for Rule 30: formal proof (complete, L1077)
+
+`degree_law` (t ≥ 3: among sets of at least 2t − 1 cells, coefficient 1 exactly on the cells −t+2 … t),
+`degree_bound` (t ≥ 2: every set of at least 2t cells has coefficient 0) and `degree_attained`.
+
+**Known result, reproved here.** The kit's `equivalents/Rule30Equivalents/AlgebraicDegree.lean` (Mathlib) already
+proves the degree law (`isGreatest_card_coef_center`, `eq_Icc_of_coef_ne_zero`); this file is an independent proof by
+another route, not a submission.
 
 Core Lean only (the Rule30PrizeKit is Mathlib-free). Rows are `Int → Bool`. The coefficient of the monomial
 `∏_{j ∈ S} y_j` in the algebraic normal form of a row functional `F` is the XOR of `F` over all rows supported
@@ -901,5 +908,371 @@ theorem AB_true (m : Nat) : A (m + 2) = true ∧ ∀ i, 1 ≤ i → i ≤ m + 1 
 theorem main_parity (t : Nat) (ht : 2 ≤ t) : A t = true := by
   obtain ⟨m, rfl⟩ : ∃ m, t = m + 2 := ⟨t - 2, by omega⟩
   exact (AB_true m).1
+
+/-! ## (F) Assembly: list tools -/
+
+theorem nodup_map_inj {α β : Type} {f : α → β} (hf : ∀ a b, f a = f b → a = b) :
+    ∀ l : List α, l.Nodup → (l.map f).Nodup
+  | [], _ => List.nodup_nil
+  | a :: l, h => by
+    rw [List.nodup_cons] at h
+    rw [List.map_cons, List.nodup_cons]
+    refine ⟨?_, nodup_map_inj hf l h.2⟩
+    intro hm
+    obtain ⟨b, hb, hfb⟩ := List.mem_map.1 hm
+    exact h.1 (hf b a hfb ▸ hb)
+
+theorem nodup_filter (p : Int → Bool) : ∀ l : List Int, l.Nodup → (l.filter p).Nodup
+  | [], _ => List.nodup_nil
+  | a :: l, h => by
+    rw [List.nodup_cons] at h
+    rw [List.filter_cons]
+    split
+    · rw [List.nodup_cons]
+      exact ⟨fun hm => h.1 (List.mem_filter.1 hm).1, nodup_filter p l h.2⟩
+    · exact nodup_filter p l h.2
+
+/-- The integers `lo, lo+1, …, lo+n-1`. -/
+def intList (lo : Int) (n : Nat) : List Int := (List.range n).map (fun k : Nat => lo + (k : Int))
+
+theorem mem_intList (lo : Int) (n : Nat) (i : Int) : i ∈ intList lo n ↔ lo ≤ i ∧ i < lo + n := by
+  unfold intList
+  rw [List.mem_map]
+  constructor
+  · rintro ⟨k, hk, rfl⟩; rw [List.mem_range] at hk; omega
+  · intro h; exact ⟨(i - lo).toNat, List.mem_range.2 (by omega), by omega⟩
+
+theorem length_intList (lo : Int) (n : Nat) : (intList lo n).length = n := by
+  simp [intList]
+
+theorem nodup_intList (lo : Int) (n : Nat) : (intList lo n).Nodup :=
+  nodup_map_inj (fun a b h => by omega) _ List.nodup_range
+
+/-- A Nodup list inside `U` is no longer than `U`. -/
+theorem length_le_of_sub : ∀ (T U : List Int), T.Nodup → (∀ a ∈ T, a ∈ U) → T.length ≤ U.length
+  | [], _, _, _ => Nat.zero_le _
+  | a :: T, U, hT, hs => by
+    rw [List.nodup_cons] at hT
+    have haU : a ∈ U := hs a List.mem_cons_self
+    have ih := length_le_of_sub T (U.erase a) hT.2 (fun b hb => by
+      have hba : b ≠ a := fun h => hT.1 (h ▸ hb)
+      exact (List.mem_erase_of_ne hba).2 (hs b (List.mem_cons_of_mem _ hb)))
+    rw [List.length_erase_of_mem haU] at ih
+    have : 0 < U.length := List.length_pos_of_mem haU
+    simp only [List.length_cons]; omega
+
+/-- A Nodup list inside `U` of at least `U`'s length contains all of `U`. -/
+theorem all_mem_of_length (T U : List Int) (hT : T.Nodup) (hsub : ∀ a ∈ T, a ∈ U)
+    (hlen : U.length ≤ T.length) : ∀ a ∈ U, a ∈ T := by
+  intro a ha
+  by_cases hm : a ∈ T
+  · exact hm
+  · exfalso
+    have h := length_le_of_sub T (U.erase a) hT (fun b hb => by
+      have hba : b ≠ a := fun h => hm (h ▸ hb)
+      exact (List.mem_erase_of_ne hba).2 (hsub b hb))
+    rw [List.length_erase_of_mem ha] at h
+    have : 0 < U.length := List.length_pos_of_mem ha
+    omega
+
+/-- If a Nodup list inside `U` falls short of `U` by at most one and misses `c`, it contains every other member. -/
+theorem all_but_one (T U : List Int) (hT : T.Nodup) (hsub : ∀ a ∈ T, a ∈ U) (c : Int) (hc : c ∈ U)
+    (hcT : c ∉ T) (hlen : U.length ≤ T.length + 1) : ∀ a ∈ U, a ≠ c → a ∈ T := by
+  intro a ha hac
+  have h := all_mem_of_length T (U.erase c) hT (fun b hb => by
+      have hbc : b ≠ c := fun h => hcT (h ▸ hb)
+      exact (List.mem_erase_of_ne hbc).2 (hsub b hb))
+    (by rw [List.length_erase_of_mem hc]; omega)
+  exact h a ((List.mem_erase_of_ne hac).2 ha)
+
+theorem mem_pivRange (t m n : Nat) (i : Int) :
+    i ∈ pivRange t m n ↔ ∃ k, m ≤ k ∧ k < m + n ∧ i = piv t k := by
+  induction n with
+  | zero =>
+    simp only [pivRange, List.not_mem_nil, false_iff]
+    rintro ⟨k, h1, h2, _⟩; omega
+  | succ n ih =>
+    simp only [pivRange, List.mem_cons]
+    rw [ih]
+    constructor
+    · rintro (h | ⟨k, h1, h2, h3⟩)
+      · exact ⟨m + n, by omega, by omega, h⟩
+      · exact ⟨k, h1, by omega, h3⟩
+    · rintro ⟨k, h1, h2, h3⟩
+      by_cases hk : k = m + n
+      · subst hk; exact Or.inl h3
+      · exact Or.inr ⟨k, h1, by omega, h3⟩
+
+theorem nodup_pivRange (t m n : Nat) : (pivRange t m n).Nodup := by
+  induction n with
+  | zero => exact List.nodup_nil
+  | succ n ih =>
+    simp only [pivRange]
+    rw [List.nodup_cons]
+    refine ⟨fun h => ?_, ih⟩
+    obtain ⟨k, _, h2, h3⟩ := (mem_pivRange t m n _).1 h
+    simp only [piv] at h3; omega
+
+/-- Split a Nodup list into a listed Nodup part and the rest. -/
+theorem perm_split (T P : List Int) (hT : T.Nodup) (hP : P.Nodup) (hPT : ∀ a ∈ P, a ∈ T) :
+    T.Perm (P ++ T.filter (fun i => !decide (i ∈ P))) := by
+  have hnd : (P ++ T.filter (fun i => !decide (i ∈ P))).Nodup := by
+    rw [List.nodup_append]
+    refine ⟨hP, nodup_filter _ T hT, ?_⟩
+    intro a ha b hb hab
+    subst hab
+    have := (List.mem_filter.1 hb).2
+    simp [ha] at this
+  rw [List.perm_ext_iff_of_nodup hT hnd]
+  intro a
+  rw [List.mem_append, List.mem_filter]
+  constructor
+  · intro ha
+    by_cases hp : a ∈ P
+    · exact Or.inl hp
+    · exact Or.inr ⟨ha, by simp [hp]⟩
+  · rintro (h | ⟨h, _⟩)
+    · exact hPT a h
+    · exact h
+
+theorem mem_split_rest (T P : List Int) (f : Int) (hf : f ∈ T) (hfP : f ∉ P) :
+    f ∈ T.filter (fun i => !decide (i ∈ P)) :=
+  List.mem_filter.2 ⟨hf, by simp [hfP]⟩
+
+theorem nodup_T0 (n : Nat) : (T0 (n + 2)).Nodup := by
+  induction n with
+  | zero => decide
+  | succ n ih =>
+    show ((-(n : Int) - 1) :: (-(n : Int)) :: (T0 (n + 2)).map (· + 1)).Nodup
+    rw [List.nodup_cons, List.nodup_cons]
+    refine ⟨?_, ?_, nodup_map_inj (fun a b h => by omega) _ ih⟩
+    · intro h
+      rcases List.mem_cons.1 h with h | h
+      · omega
+      · obtain ⟨a, ha, hae⟩ := List.mem_map.1 h
+        have := (mem_T0 n a).1 ha; omega
+    · intro h
+      obtain ⟨a, ha, hae⟩ := List.mem_map.1 h
+      have := (mem_T0 n a).1 ha; omega
+
+/-! ## (F) The headline theorems -/
+
+/-- **Top monomial.** For `t ≥ 2`, the monomial over the cells `-t+2 … t` has coefficient 1. -/
+theorem coeff_top (t : Nat) (ht : 2 ≤ t) (S : List Int) (hnd : S.Nodup)
+    (hmem : ∀ i, i ∈ S ↔ (-(t : Int) + 2 ≤ i ∧ i ≤ t)) : sumOver S (apex t) = true := by
+  obtain ⟨m, rfl⟩ : ∃ m, t = m + 2 := ⟨t - 2, by omega⟩
+  have htS : ((m + 2 : Nat) : Int) ∈ S := (hmem _).2 (by omega)
+  rw [coeff_with_right_cell _ S htS]
+  have hperm : (S.erase ((m + 2 : Nat) : Int)).Perm (T0 (m + 2)) := by
+    rw [List.perm_ext_iff_of_nodup (hnd.erase _) (nodup_T0 m)]
+    intro a
+    rw [mem_T0, List.Nodup.mem_erase_iff hnd, hmem]
+    omega
+  rw [sumOver_perm hperm]
+  exact main_parity (m + 2) ht
+
+/-- **Outside the light cone.** A monomial containing a cell outside `[-t, t]` has coefficient 0. -/
+theorem coeff_outside (t : Nat) (S : List Int) (j : Int) (hj : j ∈ S)
+    (hout : j < -(t : Int) ∨ (t : Int) < j) : sumOver S (apex t) = false :=
+  sumOver_indep S j hj _ ((evo_readsIn t 0).indep (by omega))
+
+/-- **Every other monomial of high degree.** For `t ≥ 3`, a set of at least `2t - 1` cells of the light cone that
+contains a cell left of `-t+2` (i.e. is not the top monomial) has coefficient 0. -/
+theorem coeff_not_top (t : Nat) (ht : 3 ≤ t) (S : List Int) (hnd : S.Nodup)
+    (hsub : ∀ i ∈ S, -(t : Int) ≤ i ∧ i ≤ t) (hlen : 2 * t - 1 ≤ S.length)
+    (hlow : ∃ i ∈ S, i < -(t : Int) + 2) : sumOver S (apex t) = false := by
+  by_cases hneg : -(t : Int) ∈ S
+  · -- (A) the leftmost cell with another cell
+    apply coeff_with_left_cell t S hneg
+    intro h
+    have := List.length_erase_of_mem hneg
+    rw [h] at this; simp at this; omega
+  · obtain ⟨i0, hi0, hi0l⟩ := hlow
+    have hi0b := hsub i0 hi0
+    have hm1 : -(t : Int) + 1 ∈ S := by
+      have : i0 = -(t : Int) + 1 := by
+        by_cases h : i0 = -(t : Int)
+        · exact absurd (h ▸ hi0) hneg
+        · omega
+      exact this ▸ hi0
+    by_cases htS : (t : Int) ∈ S
+    · -- the monomial contains t: reduce to the white anti-diagonal over T = S \ {t}
+      rw [coeff_with_right_cell t S htS]
+      have hTnd : (S.erase (t : Int)).Nodup := hnd.erase _
+      have hTmem : ∀ a, a ∈ S.erase (t : Int) ↔ a ≠ (t : Int) ∧ a ∈ S := fun a => List.Nodup.mem_erase_iff hnd
+      let U := intList (-(t : Int) + 1) (2 * t - 1)
+      have hU : ∀ a, a ∈ U ↔ (-(t : Int) + 1 ≤ a ∧ a ≤ (t : Int) - 1) := by
+        intro a; rw [mem_intList]; omega
+      have hTsub : ∀ a ∈ S.erase (t : Int), a ∈ U := by
+        intro a ha
+        obtain ⟨h1, h2⟩ := (hTmem a).1 ha
+        have := hsub a h2
+        have hna : a ≠ -(t : Int) := fun h => hneg (h ▸ h2)
+        exact (hU a).2 (by omega)
+      have hTlen : U.length ≤ (S.erase (t : Int)).length + 1 := by
+        rw [length_intList, List.length_erase_of_mem htS]; omega
+      have hpivU : ∀ k, k < t → piv t k ∈ U := fun k hk => (hU _).2 (by simp only [piv]; omega)
+      by_cases hmiss : ∃ c, c ∈ U ∧ c ∉ S.erase (t : Int)
+      · obtain ⟨c, hcU, hcT⟩ := hmiss
+        have hoth := all_but_one _ U hTnd hTsub c hcU hcT hTlen
+        have hc1 : c ≠ -(t : Int) + 1 := by
+          intro h; subst h
+          exact hcT ((hTmem _).2 ⟨by omega, hm1⟩)
+        have hcb := (hU c).1 hcU
+        by_cases hpar : ∃ k, k < t ∧ c = piv t k
+        · -- (C2) a missing pivot `piv t m`, `m ≤ t - 2`
+          obtain ⟨m, hm, hcm⟩ := hpar
+          have hmt : m + 2 ≤ t := by
+            have : m ≠ t - 1 := by
+              intro h; subst h; simp only [piv] at hcm; omega
+            omega
+          let P := pivRange t (m + 1) (t - (m + 1))
+          have hPT : ∀ a ∈ P, a ∈ S.erase (t : Int) := by
+            intro a ha
+            obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t (m + 1) (t - (m + 1)) a).1 ha
+            exact hoth a (h3 ▸ hpivU k (by omega)) (by subst h3; rw [hcm]; simp only [piv]; omega)
+          have hperm := perm_split _ P hTnd (nodup_pivRange _ _ _) hPT
+          apply coeff_missing_pivot t m (by omega) _ _ hperm (c - 1)
+          · apply mem_split_rest
+            · exact hoth (c - 1) ((hU _).2 (by rw [hcm]; simp only [piv]; omega)) (by omega)
+            · intro h
+              obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t (m + 1) (t - (m + 1)) _).1 h
+              rw [hcm] at h3; simp only [piv] at h3; omega
+          · rw [← hcm]; omega
+        · -- (C1) a missing free cell: every pivot is present
+          have hnp : ∀ k, k < t → piv t k ≠ c := fun k hk h => hpar ⟨k, hk, h.symm⟩
+          let P := pivRange t 0 t
+          have hPT : ∀ a ∈ P, a ∈ S.erase (t : Int) := by
+            intro a ha
+            obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t 0 t a).1 ha
+            exact hoth a (h3 ▸ hpivU k (by omega)) (h3 ▸ hnp k (by omega))
+          have hperm := perm_split _ P hTnd (nodup_pivRange _ _ _) hPT
+          apply coeff_all_pivots t _ _ hperm
+          -- a free cell other than c survives: t - 2 or t - 4
+          have hfree : ∃ f, f ∈ U ∧ f ≠ c ∧ ∀ k, k < t → piv t k ≠ f := by
+            by_cases hc2 : c = (t : Int) - 2
+            · exact ⟨(t : Int) - 4, (hU _).2 (by omega), by omega, fun k _ h => by simp only [piv] at h; omega⟩
+            · exact ⟨(t : Int) - 2, (hU _).2 (by omega), fun h => hc2 h.symm, fun k _ h => by simp only [piv] at h; omega⟩
+          obtain ⟨f, hfU, hfc, hfp⟩ := hfree
+          intro hnil
+          have hmem := mem_split_rest _ P f (hoth f hfU hfc) (fun h => by
+            obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t 0 t f).1 h
+            exact hfp k (by omega) h3.symm)
+          rw [hnil] at hmem; cases hmem
+      · -- (C1) nothing missing: every pivot and the free cell t - 2 are present
+        have hall : ∀ a ∈ U, a ∈ S.erase (t : Int) := by
+          intro a ha
+          by_cases h : a ∈ S.erase (t : Int)
+          · exact h
+          · exact absurd ⟨a, ha, h⟩ hmiss
+        let P := pivRange t 0 t
+        have hPT : ∀ a ∈ P, a ∈ S.erase (t : Int) := by
+          intro a ha
+          obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t 0 t a).1 ha
+          exact hall a (h3 ▸ hpivU k (by omega))
+        have hperm := perm_split _ P hTnd (nodup_pivRange _ _ _) hPT
+        apply coeff_all_pivots t _ _ hperm
+        intro hnil
+        have hmem := mem_split_rest _ P ((t : Int) - 2) (hall _ ((hU _).2 (by omega))) (fun h => by
+          obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange t 0 t _).1 h
+          simp only [piv] at h3; omega)
+        rw [hnil] at hmem; cases hmem
+    · -- (D) neither end: S is all of [-t+1, t-1]
+      obtain ⟨s, rfl⟩ : ∃ s, t = s + 1 := ⟨t - 1, by omega⟩
+      let U := intList (-(s : Int)) (2 * s + 1)
+      have hU : ∀ a, a ∈ U ↔ (-(s : Int) ≤ a ∧ a ≤ (s : Int)) := by
+        intro a; rw [mem_intList]; omega
+      have hSU : ∀ a ∈ S, a ∈ U := by
+        intro a ha
+        have := hsub a ha
+        have h1 : a ≠ -((s + 1 : Nat) : Int) := fun h => hneg (h ▸ ha)
+        have h2 : a ≠ ((s + 1 : Nat) : Int) := fun h => htS (h ▸ ha)
+        exact (hU a).2 (by omega)
+      have hall := all_mem_of_length S U hnd hSU (by rw [length_intList]; omega)
+      exact coeff_without_ends s (by omega) S (hall _ ((hU _).2 (by omega)))
+        (hall _ ((hU _).2 (by omega))) (hall _ ((hU _).2 (by omega)))
+
+/-- **The degree law.** For `t ≥ 3`, among sets of at least `2t - 1` cells, the apex has coefficient 1 exactly on the
+top monomial `-t+2 … t`. -/
+theorem degree_law (t : Nat) (ht : 3 ≤ t) (S : List Int) (hnd : S.Nodup) (hlen : 2 * t - 1 ≤ S.length) :
+    sumOver S (apex t) = true ↔ (∀ i, i ∈ S ↔ (-(t : Int) + 2 ≤ i ∧ i ≤ t)) := by
+  constructor
+  · intro h
+    have hsub : ∀ i ∈ S, -(t : Int) ≤ i ∧ i ≤ t := by
+      intro i hi
+      by_cases hc : -(t : Int) ≤ i ∧ i ≤ t
+      · exact hc
+      · rw [coeff_outside t S i hi (by omega)] at h; cases h
+    have hin : ∀ i ∈ S, -(t : Int) + 2 ≤ i ∧ i ≤ t := by
+      intro i hi
+      by_cases hl : i < -(t : Int) + 2
+      · rw [coeff_not_top t ht S hnd hsub hlen ⟨i, hi, hl⟩] at h; cases h
+      · exact ⟨by omega, (hsub i hi).2⟩
+    have hall := all_mem_of_length S (intList (-(t : Int) + 2) (2 * t - 1)) hnd
+      (fun i hi => (mem_intList _ _ _).2 (by have := hin i hi; omega)) (by rw [length_intList]; omega)
+    intro i
+    exact ⟨hin i, fun hr => hall i ((mem_intList _ _ _).2 (by omega))⟩
+  · exact coeff_top t (by omega) S hnd
+
+/-- **The degree bound.** For `t ≥ 2`, every monomial with at least `2t` cells has coefficient 0. -/
+theorem degree_bound (t : Nat) (ht : 2 ≤ t) (S : List Int) (hnd : S.Nodup) (hlen : 2 * t ≤ S.length) :
+    sumOver S (apex t) = false := by
+  by_cases hsub : ∀ i ∈ S, -(t : Int) ≤ i ∧ i ≤ t
+  · have hlow : ∃ i ∈ S, i < -(t : Int) + 2 := by
+      by_cases h : ∃ i ∈ S, i < -(t : Int) + 2
+      · exact h
+      · exfalso
+        have := length_le_of_sub S (intList (-(t : Int) + 2) (2 * t - 1)) hnd (fun i hi => by
+          rw [mem_intList]
+          have h1 := hsub i hi
+          have h2 : ¬ i < -(t : Int) + 2 := fun hl => h ⟨i, hi, hl⟩
+          omega)
+        rw [length_intList] at this; omega
+    by_cases h3 : 3 ≤ t
+    · exact coeff_not_top t h3 S hnd hsub (by omega) hlow
+    · obtain rfl : t = 2 := by omega
+      by_cases hneg : -((2 : Nat) : Int) ∈ S
+      · apply coeff_with_left_cell 2 S hneg
+        intro h
+        have := List.length_erase_of_mem hneg
+        rw [h] at this; simp at this; omega
+      · have hall := all_mem_of_length S (intList (-1) 4) hnd (fun i hi => by
+            rw [mem_intList]
+            have h1 := hsub i hi
+            have h2 : i ≠ -((2 : Nat) : Int) := fun h => hneg (h ▸ hi)
+            omega) (by rw [length_intList]; omega)
+        have hc : ∀ i : Int, -1 ≤ i → i ≤ 2 → i ∈ S := fun i h1 h2 => hall i ((mem_intList _ _ _).2 (by omega))
+        have h2S : ((2 : Nat) : Int) ∈ S := hc _ (by omega) (by omega)
+        rw [coeff_with_right_cell 2 S h2S]
+        have hTmem : ∀ a, a ∈ S.erase ((2 : Nat) : Int) ↔ a ≠ ((2 : Nat) : Int) ∧ a ∈ S :=
+          fun a => List.Nodup.mem_erase_iff hnd
+        have hPT : ∀ a ∈ pivRange 2 0 2, a ∈ S.erase ((2 : Nat) : Int) := by
+          intro a ha
+          obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange 2 0 2 a).1 ha
+          subst h3
+          exact (hTmem _).2 ⟨by simp only [piv]; omega, hc _ (by simp only [piv]; omega) (by simp only [piv]; omega)⟩
+        have hperm := perm_split _ _ (hnd.erase _) (nodup_pivRange _ _ _) hPT
+        apply coeff_all_pivots 2 _ _ hperm
+        intro hnil
+        have hmem := mem_split_rest _ (pivRange 2 0 2) 0
+          ((hTmem 0).2 ⟨by omega, hc 0 (by omega) (by omega)⟩) (fun h => by
+            obtain ⟨k, h1, h2, h3⟩ := (mem_pivRange 2 0 2 0).1 h
+            simp only [piv] at h3; omega)
+        rw [hnil] at hmem; cases hmem
+  · have hout : ∃ i ∈ S, ¬ (-(t : Int) ≤ i ∧ i ≤ t) := by
+      by_cases h : ∃ i ∈ S, ¬ (-(t : Int) ≤ i ∧ i ≤ t)
+      · exact h
+      · exact absurd (fun i hi => by
+          by_cases hc : -(t : Int) ≤ i ∧ i ≤ t
+          · exact hc
+          · exact absurd ⟨i, hi, hc⟩ h) hsub
+    obtain ⟨i, hi, hc⟩ := hout
+    exact coeff_outside t S i hi (by omega)
+
+/-- **The degree is attained.** For `t ≥ 2`, the monomial over `-t+2 … t` (of `2t - 1` cells) has coefficient 1. -/
+theorem degree_attained (t : Nat) (ht : 2 ≤ t) :
+    (intList (-(t : Int) + 2) (2 * t - 1)).length = 2 * t - 1 ∧
+      sumOver (intList (-(t : Int) + 2) (2 * t - 1)) (apex t) = true :=
+  ⟨length_intList _ _, coeff_top t ht _ (nodup_intList _ _) (fun i => by rw [mem_intList]; omega)⟩
 
 end Rule30DegreeLaw

@@ -1,9 +1,17 @@
-# Degree-law submission: draft (not submitted)
+# Degree-law submission: withdrawn (prior art in the kit)
 
-Local, 28 October 2026 (L1073). This is preparation for a possible submission of the degree law
+Local, 28 October 2026 (L1073, L1077). This was preparation for a possible submission of the degree law
 ([proof](../../../rule30-degree-law.md), second-read by GPT in GC2032).
 
-**Status: DRAFT, formal proof in progress.** Nothing has been submitted. A submission needs a complete formal proof, a computational essay, and
+**Status: NOT FOR SUBMISSION (L1077).** The formal proof is complete (`degree_law`, `degree_bound`,
+`degree_attained`; 1,271 lines, 97 theorems, no `sorry`, standard axioms). But the kit already has the theorem:
+`equivalents/Rule30Equivalents/AlgebraicDegree.lean`, added on 2026-10-18 (kit commit cb53064), proves in Lean with
+Mathlib that the degree is exactly 2t − 1 for t ≥ 2 (`isGreatest_card_coef_center`) and that the top monomial is
+unique for t ≥ 3 (`eq_Icc_of_coef_ne_zero`). Under the portal's novelty rule ("do not submit what is there, or one
+more instance of it") this is a known result reproved here, not a submission. No kit pull request was opened and
+nothing was uploaded.
+
+**Earlier status (kept for the record): DRAFT, formal proof in progress.** Nothing has been submitted. A submission needs a complete formal proof, a computational essay, and
 the owner's explicit consent for that submission, sent through the owner's Wolfram ID.
 
 ## What is here
@@ -52,7 +60,16 @@ Quot.sound. The route is real-space, with no solved system:
   B(·, 0) = 0;
 - the base values A(2) and B(2, 1) are checked by kernel `decide`, and the joint induction (`AB_true`) gives A ≡ 1.
 
-**Left:** only **(F)**, the assembly of the headline over all monomials of at least 2t − 1 cells.
+**(F) The assembly is formal (L1077).** A Nodup list of at least 2t − 1 cells is split by Nodup counting
+(`length_le_of_sub`, `all_mem_of_length`, `all_but_one`) and a permutation into pivots and the rest
+(`perm_split`). The headlines:
+- `coeff_top`, `coeff_outside`, `coeff_not_top`;
+- combined: `degree_law` (t ≥ 3, an iff), `degree_bound` (t ≥ 2, including the t = 2 case) and `degree_attained`.
+
+`#print axioms` on all three lists only propext, Classical.choice and Quot.sound (`coeff_outside` needs no
+Classical.choice). "Coefficient" is `sumOver S (apex t)`, the iterated derivative at the white row; that this is the
+ANF coefficient is the Möbius formula, which the file does not prove. The kit's module defines the coefficient as
+the Möbius sum and proves the link (`coef_insert`).
 
 **Superseded plan for (E), kept for the record:**
 - **(E) The main parity:** the coefficient of [−t+2, t−1] in `aw t · t` is 1. This is the z-frame induction, the

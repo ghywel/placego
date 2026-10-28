@@ -1759,3 +1759,4 @@ retains constraints. Data/figure by manifest digest; no entropy, universal frequ
 
 
 - L1076: degree-law main parity (E) formally proved in Lean — main_parity: ∀ t ≥ 2, A t = true (905 lines, 78 theorems, no sorry, standard axioms), real-space route (behind-front damage, two-linear pivot, shift/clear, recA/recB, kernel-decided base); only the headline assembly (F) remains — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.
+- L1077: degree-law assembly (F) formal — degree_law (t ≥ 3, iff), degree_bound (t ≥ 2), degree_attained; 1,271 lines, 97 theorems, no sorry, standard axioms. PRIOR ART: the kit's equivalents/Rule30Equivalents/AlgebraicDegree.lean (2026-10-18) already proves the law in Lean, so known, reproved here; submission withdrawn — PRIOR-ART.md, reports/rule30-degree-law.md.
