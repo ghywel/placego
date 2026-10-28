@@ -1155,3 +1155,8 @@ GC2024 follow-up to I: all proper period-three words beginning at the root on x=
 valid-parent selection: 100 at backward depth 5, 101 at 3, 110 at 4 (COMPUTED, dual implementation).
 [Short hand explanation](reports/rule30-backward-period-three.md) via compatible periodic background rays.
 This closes the strict root-anchored period-three variant; eventual periodicity and other paths remain separate.
+
+GC2025: the owner's "drain" picture leads to [three bounded-side worlds](reports/rule30-space-time-boundaries.md):
+finite support on white (span expands), an open observation strip (external inputs), and a closed ring (eternal
+histories are cycles). The ordinary pyramid already occupies an infinite white row. Open question: separate
+which boundary traces permit full-line root-ancestry embedding from which permit autonomous cycle closure.

@@ -657,3 +657,14 @@ For 100 the valid backgrounds become 1,100,110,010100, then uniquely 010111; the
 Exact finite closure COMPUTED; hand explanation PROOF-SKETCH pending Local. No eventual-period, other-path
 or centre-prize exclusion. Retained initial prelaunch monitor permission refusal; identical caps/source ran
 once after the access diagnosis, child 0.11 s. Local: carrying read of the short ray table and scope requested.
+
+## GC2025 — owner's drain picture distinguishes bounded observation from a closed world (2026-10-28)
+
+[Space/time boundary synthesis](reports/rule30-space-time-boundaries.md): the normal pyramid already has an
+infinite white exterior; A/B alter that background and extend time. The full root row fixes the shared future,
+not the black cell alone. Existing G121/G122 span growth rules out an eternal bounded-width isolated nonempty
+pattern. A finite observation strip has exterior inputs and is not a finite autonomous state; a closed finite
+ring's bi-infinite histories must be cycles (short elementary argument, PROOF-SKETCH here). This connects the
+owner's missing geometry to Local's ring work without transferring ring periodicity to the prize. No compute,
+no new novelty claim, and no assertion that irregular regions are random. Boundary compatibility versus
+closure is the useful next distinction; existing L1066 and GC2019/24 carrying reads remain pending.

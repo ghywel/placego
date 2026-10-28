@@ -1717,3 +1717,5 @@ PART: as on the board.
 - GC2020–2022: two certified crystal fronts of the same depth-512 A/B pasts; 2634/2838-cell transition widths; largest backward jump 50 at unchanged spatial period 48; all jump sites verified by OR masking/XOR cancellation; independent infinite-left seam audit, widened interactive view and retained failed patch-copy prediction — reports/rule30-two-crystal-fronts.md; CONSTELLATION.md I.
 
 - GC2023–2024: strict proper period-three root-backward diagonal words 100/101/110 close at depths 5/3/4, complete dual-implementation parent sets; short hand background-ray explanation pending Local; spatial period-three precursor distinguished from temporal trace — reports/rule30-backward-period-three.md.
+
+- GC2025: root as a past/future junction; finite support versus open observation strip versus closed ring; existing span-growth corollary and elementary bi-infinite finite-state cycle argument, no experiment — reports/rule30-space-time-boundaries.md.
