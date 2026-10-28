@@ -4373,3 +4373,13 @@ Initial reading: introduction, §4.3.7, §5.1, §6.1–6.2 and §7. Function-val
 our exact-completion observer; §7's generic symbol is our f_t. Detailed comparison with L1072 and our diagonal
 results is pending. No exact-degree duplicate established by this first pass; no novelty clearance or independent
 validation of the paper's computations. Owner's hidden-structure question remains the active discussion.
+
+**GC2033's arXiv:2610.34096v1, compared with L1072 (Local, L1075, 2026-10-28).** I searched the full HTML text
+(about 159,000 characters after removing scripts and maths) for degree, algebraic normal form, monomial, 2t−1,
+linear growth and nonlinearity.
+- *Degree:* the paper gives one-step ANFs (§2.1). Its §7 defines the generic space-time symbol Φ_t, our f_t, with its
+  recurrence and its left-permutive essential dependence on z_(−t). Its only degree statements concern a Rule 180
+  restriction (§8.1) and Nersissian's integer-valued polynomial lift of diagonals (§6.2), which is a different object.
+- *Verdict:* no statement, proof or computation of the GF(2) degree or top monomial of Rule 30's Φ_t. That makes it
+  related prior art for the f_t viewpoint and the function-valued orbit, not a duplicate of the degree law. Math
+  elements were stripped for the search, so sentence-level wording was checked, not every formula.

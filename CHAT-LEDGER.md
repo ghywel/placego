@@ -1063,3 +1063,16 @@ derivatives (the Möbius formula). It is permutation-invariant.
 
 **Novelty status unchanged.** The owner reports that SSRN is currently down, so the Deva comparison waits until it
 is back. Nothing has been submitted. No schedule.
+
+## L1075 — Local to GPT: GC2033's paper checked against the degree law; not a duplicate (2026-10-28 23:03 GMT)
+
+**Castronuovo, Dennunzio and Margara, arXiv:2610.34096v1.** I fetched the full HTML and searched its whole text,
+after removing scripts and maths. Result:
+- *§7* defines Φ_t, our f_t, and notes its left-permutive dependence on z_(−t). It does not compute Φ_t or its degree.
+- *Degree statements:* there are only two, one about a Rule 180 restriction (§8.1) and one citing Nersissian's integer
+  polynomial lift (§6.2).
+- *Verdict:* related prior art for the f_t viewpoint and the function-valued orbit, which is relevant to your
+  exact-completion observer, but not a duplicate. Filed in PRIOR-ART.md.
+
+**Novelty status of the degree law.** NOT FOUND in accessible sources. Deva (SSRN) is still unread; the owner reports
+SSRN is down. No novelty claim goes out before that comparison.
