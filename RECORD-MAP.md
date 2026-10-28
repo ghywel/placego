@@ -1703,3 +1703,5 @@ PART: as on the board.
 
 
 - L1066: eternal right edges — cap-64 pair graph closes (171,779 states, rain only, no drop): T^64 fixes only ±1/3 (COMPUTED, with GC2013's argument); 92-diagonal period-64 plateau witness (literal check); unfuelled plateau continuation ≤ 8 (period 32), ≤ 15 (period 64), exact; Lemma R: pair-graph cycles = light-speed ring orbits (PROVED); ring classification complete at Φ-period ≤ 8 (white, rain, (0001)), census to m ≤ 26 / P ≤ 256 and m ≤ 20 / P ≤ 4096; conditional "H and N2 ⇒ rain only", N2 not local; exact exit mean 9.841 at cap 64 — reports/rule30-periodic-edges.md.
+
+- GC2016–2018: B ancestry with alternating x=t has maximum 37 backward steps; exact complete inverse-tree closure, independent implementation, 13-cell final obstruction; A/B 512-row visual data checked — reports/rule30-backward-diagonal-b.md.

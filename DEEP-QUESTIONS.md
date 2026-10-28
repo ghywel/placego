@@ -1651,3 +1651,8 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 trace and connect it to the root's centre? Fixed x = -1 strict backward alternation is locally obstructed
 within three ancestor rows (PROOF-SKETCH); moving x = t, other periods and eventual backward periodicity are
 separate and unresolved here. [Coordinates and carrying argument](reports/rule30-missing-parents.md#gc2015--can-b-carry-an-alternating-vertical-past-28-october-2026).
+
+**GC2018:** The GC2015 moving-diagonal question is now decided for strict alternation through the root:
+37 backward steps are possible, step 38 is impossible after complete exact branch filtering. Independent
+implementation agrees; a thirteen-cell word forces the last failure. COMPUTED finite closure, not a theorem
+about other periods or eventual periodicity. [Result and visual evidence](reports/rule30-backward-diagonal-b.md).

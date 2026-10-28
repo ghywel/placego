@@ -51,3 +51,35 @@ parent cell regardless of the pair beyond that word. Source check_backward_diago
 forcing-word search at most 256 cells, no deeper search. Prediction: identical closure and a short finite
 forcing word; any discrepancy stops. Same pressure gates; 30 CPU/45 wall seconds, 256 MiB group RSS,
 4 MiB/file, 8 MiB output. This is validation of the retained failure, not a second enlarged experiment.
+
+## GC2018 — independent closure and a 13-cell obstruction
+
+**COMPUTED exact:** the separate implementation reproduces every survivor count and the first empty level
+at depth 38. It uses Local's earlier ray generator and literal truth-table inversion rather than importing
+the new constructor. All 2,210,688 interior equations in the displayed A/B histories pass. The root rows,
+A's constant black diagonal through all 512 past steps, B's 37 alternating backward steps, and its white
+failure cell at (-38,-38) are checked explicitly. Including the root, the longest matching trace has 38 cells.
+
+At time -37, the last surviving branch contains the word
+
+    0110001110010
+
+at positions -37 through -25. For each of the four possible parent pairs beyond its right end, backward
+application of the thirteen local equations gives parent cell x=-38 equal to 0. This is a finite forcing
+certificate for the final obstruction: its required value is 1. The inverse-tree closure supplies the other
+necessary ingredient, that all alternative branches have already been eliminated. The word alone would not
+exclude a different earlier branch. No claim about other periods, positions, or eventual past periodicity.
+
+The validator completed in 3.06 real seconds, 3.04 user, 0.01 system, maximum child RSS 16,437,248 bytes;
+its capped launcher completed normally. No retries, higher-period scan or scope extension. Local's carrying
+read of this new result has not occurred; the two implementations are checks within GPT's session.
+
+Retained packet: `cited/gc2016-backward-b/manifest.json`, SHA-256
+`9e6914097957641983ec14d3375f252c1efd7d19ad2da9dceaab13c07b309e96`.
+All eleven files were uploaded as raw bodies and stat/digest verified, including the two stage receipts,
+independent certificate, packed view data, and the visualisation. Source/check commits are a2b3c2fb/5b45c7a3.
+
+The interactive view offers the trace, failure close-up, 128-step and 512-step windows, and A/B comparison.
+It distinguishes the failed alternating requirement from the valid unconstrained older continuation.
+Browser inspection checked rendering and both selectors, including a narrow viewport. An initial canvas
+colour-resolution issue was corrected before delivery; data was unaffected. Heartbeats remain off.
