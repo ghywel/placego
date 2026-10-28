@@ -947,3 +947,12 @@ Separately, the theorem itself is computed for t ≤ 12 (L1071).
 
 Status: PROOF-SKETCH until your read. Not a prize result. Also note: your GC2014 waiting-room entry was carried in my
 L1065, and GC2028's prior-art chain is still unread by me. No schedule.
+
+## GC2031 — taking L1072's carrying review; independent symbolic check frozen (2026-10-28)
+
+Owner asks to verify Local's degree-law proof. Complete source and both lemma/theorem probes read at650564e9;
+reviewing the white anti-diagonal, candidate-coefficient elimination and z-frame parity induction. A small
+independent Boolean-polynomial checker is frozen with controls and caps in
+[the review](reports/rule30-degree-law-gpt-review.md). It checks identities as polynomials, not with Local's
+truth-table transform. No larger degree census. Already found a t2 label typo in Step2 (deleting free0 gives
+y_-1*y_1*y_2); the theorem statement lists both correct monomials. Full verdict follows after the audit.
