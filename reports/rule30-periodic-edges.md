@@ -109,11 +109,13 @@ dividing 8 (COMPUTED, exhaustive). P = 16 needs 2^32 states and is out of reach 
 
 **Why the two extra orbits never attach to an edge** (hand).
 - *White* has identically zero diagonals, and no diagonal d ≥ 1 of an edge-attached row is constant (L1064 §5).
-- *(0001)*: every diagonal has period 8, and each is the previous one shifted two ticks. In an edge-attached row,
-  period-8 diagonals occur only at j + 1 and j + 2 and are followed by 16, by the universal start (L1064 §5,
-  checked independently in GC2012). So no edge-attached row can carry infinitely many of them.
-- *Along any cycle* all diagonals share one period p, since a cycle returns to itself and the closures show no drop.
-  The universal start then forces p ≥ 32, and the P = 64 closure forces p ≥ 128.
+- *(0001)*: every diagonal has period 8, and each is the previous one shifted two ticks. The universal start
+  (L1064 §5, checked independently in GC2012) fixes D_j … D_(j+5) as 4, 8, 8, 16, 32, 32. So an edge-attached row
+  could carry this orbit only if some later diagonal fell back to period 8. *Corrected (L1067):* excluding that
+  needs the hypothesis N of §5; the universal start alone does not suffice.
+- *Along any cycle,* if periods never decrease (arbitrary-seed monotonicity), all diagonals share one period p,
+  since a cycle returns to itself. The universal start then forces p ≥ 32, and the P = 64 closure forces p ≥ 128.
+  Under N alone, every diagonal on the cycle has period at least 32.
 
 ## 4. A standard tool: the time-bit basis (hand; not new)
 
@@ -140,14 +142,27 @@ GPT's GC2014 rank is graph-derived; no natural formula for it is known.
 ## 5. The gap in the conditional statement, and why it needs the edge (COMPUTED)
 
 The natural statement is: "if the three orbits of §3 are the only power-of-two ring orbits (H), then rain is T's only
-periodic orbit". That is **not** enough. A periodic point's path could climb above period 2 and then fall back into
-the rain cycle. Excluding that, call it N2, is a special case of the open arbitrary-seed monotonicity.
-- N2 holds for every cap up to 64, by the closures, which show no drops.
-- Locally it fails: 145 of 6,000 synthetic chains from random periodic bottoms climb above period 2 and later return to
-  two period-2 diagonals. One example then restarts the universal ladder 4, 8, 8, 16, 32, 32.
+periodic orbit". That is **not** enough. A periodic point's path could climb above period 2 and then fall back:
+- into the rain cycle (period 2);
+- or onto the (0001) orbit (period 8).
 
-So N2, like monotonicity, needs ancestry from the edge. The correct conditional theorem is **H and N2 ⇒ rain is T's
-only periodic orbit**, and both are verified for P ≤ 64.
+Both are period drops after j. Define:
+
+> **N:** in every edge-attached row, no diagonal after D_(j+5) has period below 32.
+
+N is a special case of the open arbitrary-seed monotonicity. It holds for every cap up to 64, by the closures, which
+show no drops. Then:
+- **H and N ⇒ rain is T's only periodic orbit** (hand: §3's Lemma R and exclusions, with N in place of no-drop);
+- H and N are both verified for P ≤ 64, where the closure proves the conclusion outright.
+
+*Corrected (L1067):* L1066's first version named only the return to rain ("N2") and missed the (0001) case.
+
+**N is not local.** Synthetic chains from random periodic bottoms do fall back:
+- 145 of 6,000 climb above period 2 and later return to two period-2 diagonals, one of them restarting the universal
+  ladder 4, 8, 8, 16, 32, 32;
+- in a second scratch run, 780 returns came from diagonals of period 4 (434), 8 (271), 16 (74) and 32 (1).
+
+So N, like monotonicity, needs ancestry from the edge.
 
 ## 6. How fast random rows climb (exact to cap 64; MEASURED at 128 and 256)
 
@@ -176,7 +191,8 @@ seed's measured rate is about 2.4 (L1064 §1). With three unforced levels I clai
 
 - **Eternal right edges.** The question "does Rule 30 have an eternal right edge other than endless rain?" is now:
   - settled for periods up to 64;
-  - reduced to two precise statements, H about light-speed ring orbits and N2 about never returning to period 2;
+  - reduced to two precise statements: H, about light-speed ring orbits, and N, that no diagonal after D_(j+5) falls
+    below period 32;
   - supported by a complete ring classification at period ≤ 8 and a census to period 4,096 on small rings.
 - **Plateaus.** Long plateaus exist (92 at period 64) but need fuel: tuned seed bits all the way. Without fuel they are
   short and near-geometric. That is why the single seed's plateaus are short, and why a census of free seeds finds
@@ -187,5 +203,5 @@ seed's measured rate is about 2.4 (L1064 §1). With three unforced levels I clai
 - Lemma R (§3);
 - the two exclusions in §3;
 - the gap in §5;
-- whether the 1b82d8 resource or the per_mono_all triangle can prove N2. The single-seed triangle argument fails for
-  arbitrary seeds, as GC2014 noted, and N2 is the first case to try.
+- whether the 1b82d8 resource or the per_mono_all triangle can prove N. The single-seed triangle argument fails for
+  arbitrary seeds, as GC2014 noted, and N is the first case of arbitrary-seed monotonicity to try.
