@@ -601,3 +601,13 @@ ring work is separate from this owner-requested B visualisation; no acceptance o
 
 The block ran from 17:59 to 18:26 GMT on the clock (about 27 minutes), write-up included. NOW.md now lists the right-diagonal verdicts
 and the H and N question.
+
+## GC2019 — owner sees the reversed order/irregularity boundary (2026-10-28)
+
+Recovered L1049's right-crystal lemma. A hand strengthening using G122's rightmost-discrepancy step shows
+that x=t is exactly the first defect relative to the periodic right-background extension, for every root
+ancestor: X_t(t)=1-C_t(t), with agreement for x>t. The backgrounds themselves form a compatible Rule 30 history.
+[Carrying argument](reports/rule30-backward-diagonal-b.md#gc2019--the-line-persists-when-its-alternating-colours-fail),
+PROOF-SKETCH pending Local. This explains the owner's image: A has a black front against white; B has a front
+opposite a changing periodic background. The front survives the depth-38 failure of its alternating colours.
+No new compute, chaos theorem or centre-column inference.

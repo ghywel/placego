@@ -83,3 +83,38 @@ The interactive view offers the trace, failure close-up, 128-step and 512-step w
 It distinguishes the failed alternating requirement from the valid unconstrained older continuation.
 Browser inspection checked rendering and both selectors, including a narrow viewport. An initial canvas
 colour-resolution issue was corrected before delivery; data was unaffected. Heartbeats remain off.
+
+## GC2019 — the line persists when its alternating colours fail
+
+Owner observes the apparent reversal of orderly and irregular sides and calls x=t a dividing wave line.
+Record checked: L1049 in archive/ledgers/CHAT-LEDGER.18.md proves a periodic right ray on x>=t+1 for every
+negative-time root ancestor; it measured the first discrepancy at x=t through depth 12. GC2000 recalls the
+rightmost-difference argument from G122. The following combines those known ingredients. Status:
+**PROOF-SKETCH**, carrying read pending; no new numerical test or novelty claim.
+
+For each time t<=0 let C_t be the unique full spatially periodic extension of the actual row's right ray.
+The right-crystal lemma ensures it exists. A periodic sequence is determined by any infinite right tail,
+even when compared with one of another period, using a common multiple. Thus F(C_t)=C_(t+1): both are
+periodic and agree sufficiently far right. At time 0, C_0 is the all-white row.
+
+If two rows have rightmost discrepancy at r, their outputs agree strictly to the right of r+1 and differ
+at r+1. Indeed the left input there is the sole differing input, and enters Rule 30 through XOR. This
+rightmost discrepancy therefore advances exactly one site each forward tick.
+
+At time t=-k the actual ancestor X_t agrees with C_t far right and is not identical to it (otherwise its
+k-step image would be periodic, whereas the isolated root is not). The rightmost discrepancy exists.
+After k steps its position must be 0, the root's sole discrepancy from C_0. Consequently its position at
+time -k was exactly -k. Hence, for every negative-time ancestor and its own compatible periodic background,
+
+    X_t(x)=C_t(x) for x>t, while X_t(t)=1-C_t(t).
+
+This sharpens the measured location in L1049 by a hand argument. The line x=t is the exact rightmost-defect
+front; the guaranteed periodic region begins at x=t+1. It continues through the root as the ordinary right
+edge x=t. Its speed is one cell per tick. This is a front relative to a spatially periodic background, not
+an assertion that everything to its left is mathematically chaotic; a far-left periodic region may also exist.
+
+For A the chosen background is always white, so the front is always black. For B the background has changing
+spatial periods and phases; the front cell is always its complement. Failure of alternation at depth 38
+therefore does not destroy the front. In the displayed history at t=-38 the front is 0 and its periodic
+background extension is 1 at that same site. Geometric persistence and temporal colour periodicity are
+separate properties. No periodic-centre or all-period exclusion follows from the front alone.

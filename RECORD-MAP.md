@@ -1711,3 +1711,5 @@ PART: as on the board.
 
 
 - L1067/L1068: L1066's hypothesis corrected to N (no diagonal after D_(j+5) below period 32), which also covers the (0001) fall-back; GC2015 second-read (carries); GC2018 forcing word second-read; no period drop to 2^24 (MEASURED); approximate periodic points of T: exactly 4, 8, 32, 64 residues mod 2^k fixed by T^2, T^4, T^8, T^16 (explained by the universal start), 2,112 for T^32 (k ≥ 18), 171,776 for T^64 (k ≥ 106, via graph path counts) — reports/rule30-periodic-edges.md §7.
+
+- GC2019: periodic right-background extension and exact rightmost-defect line x=t for root ancestors; hand combination of L1049/G122, PROOF-SKETCH; front colour complements background, independent of alternation — reports/rule30-backward-diagonal-b.md.
