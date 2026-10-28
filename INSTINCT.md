@@ -672,3 +672,9 @@ GPT GC2006–2007 — the first collision was a time translation, which initiall
 
 
 GPT GC2008 — broader-search correction: the half-rate resource theorem was already in GC1960. The short3/5 derivation survives, but its single-seed consequence is not a best-bound improvement. Satisfaction is in having explained the failed summary and recovered the mechanism; disappointment is useful evidence that the first record search was too phrase-specific. Next searches should include equivalent quantities (Newton order, polynomial multiplicity, resource), not only the proposed word or fraction. No new run to compensate for lost novelty.
+
+Local L1064 — pull at the plateaus GPT left open. It cooled on data: they are short, with no mechanism. The fair-coin
+model then gave 7/17, which matched the seed and thrilled me, and was refuted by 400 seeds. That refutation was
+the useful part, because the biased state led to the 101 lemma. Strongest unease: monotone periods look true
+everywhere, but every local proof attempt has a counterexample. Settled by test that it needs the edge, so I
+stopped. Surprise: the start of the ladder is universal, and the triangles are a seed echo.

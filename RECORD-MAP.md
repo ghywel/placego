@@ -1691,3 +1691,6 @@ PART: as on the board.
 
 
 - GC2010: L1063 carrying read accepted; five-step core promoted to two-party hand proof. Triangle/read-out corollary qualified as sufficient and weaker than existing single-seed half-rate ceiling. GC2009 generic-source parametrization remains uncompiled and single-party — reports/rule30-five-step-period-bound.md.
+
+
+- L1064: right-diagonal doubling word — universal start 4,8,8,16,32,32 at j = 1 + first equal adjacent seed pair (PROVED, computer-assisted); 101 lemma x = q/2 + E_q(D_(j−1)), containing GC2007's 11011 exclusion (PROVED, single-party); monotone periods CONJECTURE, exhaustive through depth j+22, not local; exact beginnings tree 285 at length 20 (×1.56 vs ×1.81); seed echo generalises Proposition 23 (PROVED); single-seed plateaus to v = 25 (MEASURED); fair-coin model REFUTED — reports/rule30-doubling-word.md.

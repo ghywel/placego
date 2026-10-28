@@ -330,3 +330,47 @@ worth a hand look.
 The owner-requested review arrived during publication. I read L1063 and the full report correction, and retained both parties' entries through the append-only merge. Local's even-tick derivation and the counting step carry: the core five-step theorem is now two-party hand PROVED and moved out of the waiting room. The later arbitrary-start source extension remains single-party and uncompiled. Local's scratch seed measurements are attributed, not independently reproduced here.
 
 The triangle corollary carries with two qualifications: the depth is sufficient, not a necessary cost or algorithmic speedup; GC763 already gave a linear lower bound on w(v), and external1b82d8 gives a stronger single-seed ceiling. Thus this improves the older coefficient rather than establishing that half of logarithmic growth for the first time. Long plateaus remain the uncontrolled direction. A triangle's forward shrink law alone does not bound the spacing of its births; a return/ancestry constraint is needed. [Exact corollary and scope](reports/rule30-five-step-period-bound.md#gc2010--independent-review-received-triangle-corollary-scoped). No outward submission, message, new run or schedule.
+
+## L1064 — Local, GPT offline: a 30-minute instinct block on how diagonal periods grow (2026-10-28 12:44 GMT)
+
+The owner asked for at least 30 minutes of instinct-led work after catching up with GC2008–GC2010, with GPT
+unavailable. [Report](reports/rule30-doubling-word.md), with six probes in `tests/probes/wolfram/`. There were
+nine pulls, in order:
+
+1. **Plateau lengths to v = 25** (MEASURED). The single seed's periods were built exactly to 2^25. Plateaus
+   average 2.5 and stay at most 5 after v = 10. There was no growth and no hint of a mechanism, so the pull cooled.
+2. **A fair-coin model** (REFUTED). A fair coin constrained only by 111 and 11011 predicts doubling density
+   exactly 7/17. The single seed's 26/63 matches it, but 400 seeds show the coin is biased by state.
+3. **The 101 lemma** (PROVED by hand, single-party; held at all 6,887 occurrences). After the word 101 from base
+   q, the next diagonal doubles exactly when q/2 plus the even-tick parity of D_(j−1) is odd. It contains GC2007's
+   11011 exclusion as the case where D_(j−1) doubled into q. After 10101 the decider moves to a mod-4 parity of
+   D_(j−3) (held at all 3,682 occurrences): each double-and-plateau pair goes one level finer. That is your GC2008
+   deficit-decreases-by-one, in explicit parities, so I credit it rather than claim a new mechanism. The next case,
+   after 110, has no small phase formula.
+4. **Monotone periods** (CONJECTURE; COMPUTED exhaustively through depth j + 22 for every row). No period ever
+   decreased, in any test. The orientation you flagged held in all 100,908 genuine records. Synthetic chains and
+   triples do fall back, even with that orientation imposed, so any proof needs ancestry from the edge. I have a
+   partial hand lemma for the first two diagonals after each new record.
+5. **The universal start** (PROVED, computer-assisted, 256 cases). In every row, j = 1 + the first d ≥ 2 where seed
+   cells −d and −(d−1) are equal. From j the periods are always 4, 8, 8, 16, 32, 32. That is why the q = 2 11011
+   appears once in every row.
+6. **The tree of all beginnings** (COMPUTED, exact). There are 285 possible period beginnings of length 20, growing
+   ×1.56 per diagonal, against ×1.81 for the words that 111 and 11011 allow. So about 93% of the words those two
+   rules allow never occur as beginnings. But every short word absent there occurs deeper, so these are
+   depth-dependent constraints, not new bans: up to length 8, 111 and 11011 are the only bans valid from base 32
+   on (a ban that starts only at larger periods is not excluded). The
+   states do not merge, so no renormalisation is visible. The fastest rows double every two diagonals from v = 6
+   to 10, so the 1b82d8 half-rate ceiling is essentially attained in this range.
+7. **The seed echo** (PROVED by hand; 61,440 checks). For any finite seed, at time t the cells inside the right edge
+   copy the seed's right end for B(t) − 1 cells, then one flipped cell. Proposition 23 is the single-seed case.
+8. **After 110:** no rule within three residue parities (NOT FOUND).
+9. **A third forbidden word?** None up to length 8 (NOT FOUND). All twelve candidates missing from the depth-18
+   tree occur deeper, in random seeds and, for three, in the single seed.
+
+**For your read when you wake:**
+- the 101 lemma's pairing at q, in report §3, step 4;
+- the universal start's hand reduction, in §5;
+- whether the 1b82d8 resource or your GC2008 deficit proves monotone periods.
+
+Runs were on the M5 under `run_capped.py` where substantial, the longest about 2.5 minutes; the data is in local
+scratch, cited by digest in the report. No schedule.
