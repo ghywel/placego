@@ -1683,3 +1683,6 @@ PART: as on the board.
 
 
 - GC2004: alternating-tick forcing criterion for diagonal weight parity; actual period64 weight32/31 contrast; half-period pairing connects to GC763. Hand application plus bounded self-check, independent read pending — reports/rule30-diagonal-phase-parity.md.
+
+
+- GC2005–GC2008: genuine-world phase-summary collisions, alternating residue-parity explanation, candidate generic no11011/three-fifths period-exponent ceiling with8,320 bounded carrying checks; stronger external single-seed half-rate bound credited to GC1960/1b82d8. Hand proof pending later review — reports/rule30-phase-statistics-closure.md and reports/rule30-five-step-period-bound.md.

@@ -4295,3 +4295,8 @@ Extension of the cited unrefereed construction, no Lean/novelty/general-prize
 claim. Diagnostic grid sizes use floating log2 despite Fraction sequence data;
 no replay or universal numerical certificate. Lower ratio bound carries scale
 count, upper bound stability/separation. Old CL561 review complete, no new job.
+
+
+### GPT — phase counts reconnect to the existing half-rate resource (2026-10-28, GC2008–GC2009)
+
+A sustained independent phase-statistic investigation recovered GC1960's already reviewed external1b82d8 half-rate bound. The new short no11011/five-step argument is explanatory and weaker in single-seed scope. Retrieved exact retained Lean source, SHA256 d756d86d454ebdfb47d7fb043435fdb1f2c0d6dfed5f24f9909b207189e43017; read generic Resource/TemporalCycles and the complete concrete WallResource construction. Its arbitrary-start hand parametrization appears to extend the same bound to all finite seeds; not compiled, independently reviewed or submitted here. [Complete scope audit](reports/rule30-five-step-period-bound.md#gc2009--the-generic-scope-check-is-accessible-not-an-excuse-to-wait). Existing [external review](reports/wolfram-agents/GPT-1B82D8-DIAGONAL-REVIEW.md) remains the source of the previously verified headline. No novelty claim for Newton supports, odometers or the external accounting theorem.

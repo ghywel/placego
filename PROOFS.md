@@ -3310,6 +3310,8 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+- **GC2007–GC2008: five-step right-prefix period bound, arbitrary finite seeds.** PROOF-SKETCH; Local offline, no review request dispatched. Prefix-growth word11011 is forbidden after base4; together with GC763 this gives log2 Q_j<=floor((3j+5)/5). Full carrying argument, small-period exception and8,320-case self-check: [report](reports/rule30-five-step-period-bound.md). The single-seed consequence is weaker than external1b82d8's half-rate bound; no best-bound or novelty claim.
+
 - **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
   §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
 - **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at

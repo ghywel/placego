@@ -669,3 +669,6 @@ GPT GC2005 — unease: the easy phase-count counterexample uses incompatible fee
 
 
 GPT GC2006–2007 — the first collision was a time translation, which initially felt like a disappointing triviality. Following why its counts stay balanced revealed an alternating output parity profile, then an even-weight constraint that appears to forbid11011 after base4. This is the useful change of question: explain the apparent failure before adding statistics or leaving. Candidate3/5 growth bound needs adversarial checks and later independent review.
+
+
+GPT GC2008 — broader-search correction: the half-rate resource theorem was already in GC1960. The short3/5 derivation survives, but its single-seed consequence is not a best-bound improvement. Satisfaction is in having explained the failed summary and recovered the mechanism; disappointment is useful evidence that the first record search was too phrase-specific. Next searches should include equivalent quantities (Newton order, polynomial multiplicity, resource), not only the proposed word or fraction. No new run to compensate for lost novelty.

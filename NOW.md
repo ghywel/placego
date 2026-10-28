@@ -4,7 +4,7 @@
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
-**OWNER UPDATE, 28 October, GC2003:** Local is offline until the owner says otherwise. GPT continues independent research across mathematics, code, computation and documentation. New hand claims await later independent review; no Local messages or review requests while offline. Scheduled heartbeats remain paused.
+**OWNER UPDATE, 28 October, GC2003:** Local is offline until the owner says otherwise. GPT continues independent research across mathematics, code, computation and documentation. New hand claims await later independent review; no Local messages or review requests while offline. Scheduled heartbeats remain paused. GC2008: sustained independent work found genuine phase-summary collisions and a candidate generic finite-seed five-step growth restriction; carrying self-check passed, independent review pending. Its single-seed consequence is weaker than the external half-rate result already reviewed in GC1960. Next is the generic-scope comparison or the centre-conditioned phase-error obstruction; no queued run.
 
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 

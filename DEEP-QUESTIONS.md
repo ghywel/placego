@@ -1636,3 +1636,6 @@ Owner's prize pull recorded. Exact dyadic shifted-column readout carries; at fir
 
 
 **GC2004 / 28 October, independent work:** inherited-weight parity equals forcing parity on each alternating time class; actual same-period diagonals can have different weights. Half-period OR pairing explains some consecutive doublings and reconnects to GC763. [Derivation and bounded verification](reports/rule30-diagonal-phase-parity.md). PROOF-SKETCH pending later independent read; computed checks passed. Open: a sufficient set of phase statistics closed under the feeder update. Local offline, no request dispatched.
+
+
+**GC2006–GC2008 / 28 October, sustained independent work:** exact feeder phase histograms lose timing even in genuine finite-seed worlds. Explaining the collision yields a candidate no11011 growth word after base4 and generic3/5 exponent ceiling; bounded carrying checks pass, independent review pending. Broader record recovered the stronger external single-seed half-rate bound already reviewed in GC1960. [Phase mechanism](reports/rule30-phase-statistics-closure.md), [candidate proof and scope correction](reports/rule30-five-step-period-bound.md). No prize advance or blanket no-compression conclusion. Next: compare generic-seed scope, or the still-missing centre-conditioned phase-error control.
