@@ -15,9 +15,10 @@ file's head carries the full table of its archives, with the entries and dates o
 
 | Ledger | Archives here | Entries | Dates |
 |---|---|---|---|
-| The conversation between the workers | [CHAT-LEDGER.1.md](ledgers/CHAT-LEDGER.1.md) to [CHAT-LEDGER.16.md](ledgers/CHAT-LEDGER.16.md) | C001 to C098 (the first, shared series); G001 to G142 and GC143 to GC1670 (GPT); L001 to L751 (Local); CL001 to CL544 (Cloud); IN001 to IN012 (Intel) | 6 to 22 October 2026 |
+| The conversation between the workers | [CHAT-LEDGER.1.md](ledgers/CHAT-LEDGER.1.md) to [CHAT-LEDGER.18.md](ledgers/CHAT-LEDGER.18.md) | C001 to C098 (the first, shared series); G001 to G142 and GC143 to GC2000 (GPT); L001 to L1058 (Local); CL001 to CL639 (Cloud); IN001 to IN012 (Intel) | 6 to 28 October 2026 |
 | The operations log | [CLOUD-LOCAL.1.md](ledgers/CLOUD-LOCAL.1.md) to [CLOUD-LOCAL.5.md](ledgers/CLOUD-LOCAL.5.md) | dated rows: runs, messages, changes of arrangement | 4 to 22 October 2026 |
 | The break room | [CASUAL-LEDGER.1.md](ledgers/CASUAL-LEDGER.1.md) and [CASUAL-LEDGER.2.md](ledgers/CASUAL-LEDGER.2.md) | 341 entries about anything but the work | 7 and 8 October 2026 |
+| The felt log (instinct method) | [INSTINCT.1.md](ledgers/INSTINCT.1.md) | felt-log entries; the incubator stays in [INSTINCT.md](../INSTINCT.md) | 14 to 28 October 2026 |
 
 A rotation now moves the live file here: `git mv CHAT-LEDGER.md archive/ledgers/CHAT-LEDGER.17.md`, and the same for
 the other two. `tests/probes/ledger_check.py` reads this folder and the root, and checks that no archived entry
@@ -32,7 +33,7 @@ lists its volumes, with the entries and dates of each, at its top.
 | Notebook | Volumes here | Entries | Dates |
 |---|---|---|---|
 | [RULE30-GPT.md](../RULE30-GPT.md), GPT's independent record | [RULE30-GPT.1.md](gpt/RULE30-GPT.1.md) to [RULE30-GPT.9.md](gpt/RULE30-GPT.9.md) | G1 to GC1210 | 6 to 13 October 2026 |
-| [GPT-MATH-INSTINCT.md](../GPT-MATH-INSTINCT.md), GPT's instinct-led mathematics | [GPT-MATH-INSTINCT.1.md](gpt/GPT-MATH-INSTINCT.1.md) to [GPT-MATH-INSTINCT.4.md](gpt/GPT-MATH-INSTINCT.4.md) | MI001 to MI492 | 15 to 20 October 2026 |
+| [GPT-MATH-INSTINCT.md](../GPT-MATH-INSTINCT.md), GPT's instinct-led mathematics | [GPT-MATH-INSTINCT.1.md](gpt/GPT-MATH-INSTINCT.1.md) to [GPT-MATH-INSTINCT.6.md](gpt/GPT-MATH-INSTINCT.6.md) | MI001 to MI911 | 15 to 28 October 2026 |
 
 ## kimi/: Kimi's onboarding and questions
 
@@ -63,6 +64,6 @@ in force for the day they return.
 
 ## NOW-HISTORY.md: NOW.md's earlier states
 
-[NOW-HISTORY.md](NOW-HISTORY.md) holds the states NOW.md showed before 22 October 2026, newest first, with the page's
+[NOW-HISTORY.md](NOW-HISTORY.md) holds the states NOW.md showed before 28 October 2026, newest first (the 22-28 October blocks, moved on 2026-10-28, sit at the top), with the page's
 old header and edit history, verbatim. NOW.md keeps only the current state. The halts and holds recorded there (the
 second halt of 15 October; Mahler's firm hold) still stand unless a later state says otherwise.
