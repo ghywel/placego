@@ -22,3 +22,16 @@ word updates by the literal decimal30 truth table to its specified child. Check 
 all t0 ancestors. No new forward exterior scan, no scope expansion. One Intel process under run_capped.py:
 10CPU/15wall seconds,256MiB sampled group RSS,4MiB/file,8MiB output, launch free+inactive1024MiB, ongoing512MiB,
 swap growth128MiB. Source cap_backward_certificate.py; stop on any failed check/cap, no automatic rerun.
+
+## Hand route found; final local checks frozen before execution
+
+After3 updates the cap gives10r1(NOT r), with r=NOT x_0(8). After4 updates the prefix is a1abc,
+where a AND b=0 and a OR b OR c=1. These conditions allow only01001,01010,01011,11100,11101.
+Two more updates have neither001 nor100 as their first triple, and cannot start010011.
+Two-step ancestors of00010 start with one of those excluded alternatives. This gives a short hand proof.
+
+Final validation is local to the hand lemmas, not a larger cap census: all1280 thirteen-cell words whose first
+five satisfy the premises; literal30 versus XOR/OR updates; verify the two-step restrictions and four-step
+exclusion. Countercontrol: the target must be attainable from some unrestricted thirteen-cell row (use its
+four-step inverse tree,256 words). Separately verify the cap-to10r1(NOT r) reduction on all8 relevant three-bit
+right completions. Five CPU/10wall seconds,128MiB RSS,2MiB/file,4MiB disk, same pressure thresholds; one run.
