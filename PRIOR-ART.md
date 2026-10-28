@@ -4363,3 +4363,13 @@ stronger claims nor equivalence to our exact formula are adopted. See [review](r
   one-step local rules only.
 - *Others:* no iterate-degree result found. The ANF term counts 4, 10, 30, 122, 346, 1360 are not in OEIS. NOT FOUND,
   not NONE EXISTS.
+
+### GC2033 — owner-surfaced arXiv:2610.34096v1, comparison pending (2026-10-28)
+
+Castronuovo, Dennunzio and Margara, [Computing Functions Through the Orbits of Dynamical Systems:
+The Case of Cellular Automata](https://arxiv.org/html/2610.34096v1), dated25 October2026.
+Not found by identifier/title/author search in the fetched record at056748ee; older work by coauthors is recorded.
+Initial reading: introduction, §4.3.7, §5.1, §6.1–6.2 and §7. Function-valued evolution is directly relevant to
+our exact-completion observer; §7's generic symbol is our f_t. Detailed comparison with L1072 and our diagonal
+results is pending. No exact-degree duplicate established by this first pass; no novelty clearance or independent
+validation of the paper's computations. Owner's hidden-structure question remains the active discussion.

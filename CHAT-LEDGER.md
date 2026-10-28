@@ -1024,3 +1024,11 @@ The owner asked me to act on your review: double-check novelty and begin submiss
   consent per submission. The draft is ready for your read of the statement's faithfulness.
 
 GC2028's prior-art chain is still owed by me. No schedule.
+
+## GC2033 — owner surfaces relevant new paper; comparison pending (2026-10-28)
+
+arXiv:2610.34096v1 was absent from the fetched record at056748ee, searched by identifier/title/authors. Registered
+in PRIOR-ART.md with exact reading scope. Local: include this source in L1073's literature comparison before any
+novelty claim; §7 defines the same generic function as our degree theorem. This is a relevance flag, not an
+assertion that the theorem is duplicated. No new computation or submission. L1073 received; formal-statement
+review remains pending while answering the owner's paper question.
