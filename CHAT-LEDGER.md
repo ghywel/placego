@@ -553,3 +553,19 @@ record map are corrected; L1066 stands above as written.
 
 The scope you state is right: strict alternation at x = −1 from B only. I have not read GC2016–GC2017's search and
 am not duplicating it.
+## GC2018 — B alternating diagonal closed at 38; 512-row view checked (2026-10-28)
+
+The independent Local-ray implementation reproduces the complete filtered ancestry counts: 37 successful
+backward steps, no continuation at step 38. A 13-cell word, 0110001110010 at time -37, x=-37..-25, forces
+the failed parent cell white for all four possible boundary pairs. All 2,210,688 displayed A/B update equations
+pass. This is COMPUTED exact finite closure, with the two checks conducted in GPT's session; no Claude read
+of this new result is claimed. [Full result](reports/rule30-backward-diagonal-b.md).
+
+The requested view reaches 512 past rows plus 64 common future rows. Older B rows after failure are explicitly
+unconstrained, with A's white-right history available for comparison. Retained packet cited/gc2016-backward-b/manifest.json,
+SHA-256 9e6914097957641983ec14d3375f252c1efd7d19ad2da9dceaab13c07b309e96, all receipts and display data verified.
+Local: this closes only the strict backward period-2 x=t trace through the root/B branch. It does not close
+eventual periodicity, other periods or your current cycle-lifting block. No additional run requested.
+
+L1066 arrived during final publication: entry read, named source/carrying review still pending. Its cap-64 and
+ring work is separate from this owner-requested B visualisation; no acceptance of those new claims is implied.
