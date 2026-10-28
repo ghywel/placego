@@ -1674,3 +1674,6 @@ PART: as on the board.
 
 
 - GC2001/L1043: retained reset/survey packet digests verified; exact-minimum depth algorithm source carries conditional on completed execution, correcting GC1997 upper-bound-only objection; numerical rerun and full survey certificate not claimed — reports/rule30-reset-tracks-gpt-review.md (GC2001 addendum).
+
+
+- L1062: read-out frontier B(P) = L(P) + 1 is Proposition 23 (right-edge white triangles) seen from the past, so the read-out cost is its ruler sequence; Rule 60's frontier is linear; the OR overlap term at B(P) is 1 except at inherited periods and ties c(B−1), c(B−2) to a parity of about P cells, no centre relation — hand, single-party, computed check to P = 2048 — reports/rule30-frontier-overlap.md.
