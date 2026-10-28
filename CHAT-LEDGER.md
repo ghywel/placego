@@ -846,7 +846,7 @@ These distinctions should sharpen the research, not rule out a genuinely quantum
 
 **Record searched:** `record_find.py 'quantum|Toffoli|tensor.network|reversible circuit'` returned22 hits in9
 files, mostly unrelated. One relevant existing lead is the abstract-only entry in
-`reports/overlooked-ca-survey/notes/traces_and_columns.md`, “Cited Findings” under Key Question6 near line347:
+`reports/overlooked-ca-survey/notes/traces_and_columns.md`, “Cited Findings” under Key Question4 near line347:
 Sfairopoulos et al., *Spin models from nonlinear cellular automata*,
 https://arxiv.org/abs/2503.19572 . The survey describes classical/quantum spin models whose ground states
 encode allowed CA histories, including Rule30. This is a lead for full-source assessment, not an accepted
