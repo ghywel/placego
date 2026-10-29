@@ -28,7 +28,7 @@ usNotebookAxiomsOK[h_] := Module[{pairs, a},
   If[!AllTrue[pairs, Complement[Last[#], usNotebookStandardAxioms] === {} &], Return[False]];
   a = Association[Rule @@@ pairs];
   Sort[a["cert"]] === {"propext"} &&
-    AllTrue[Take[usNotebookHeads, 3], Sort[a[#]] === usNotebookStandardAxioms &]
+    AllTrue[Take[usNotebookHeads, 3], Sort[a[#]] === Sort[usNotebookStandardAxioms] &]
 ];
 
 usNotebookKernelData[out_] := Module[{objects, a, m},

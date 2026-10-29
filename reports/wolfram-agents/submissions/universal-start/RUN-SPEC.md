@@ -343,7 +343,7 @@ This supersedes L1116's substring/blacklist gates; it does NOT approve its origi
 Lean source17fdfbcb and essay01449e0c remain unchanged. Frozen candidate tooling:
 
 - universal_start_notebook.wl SHA256 993979e9222e2a28e3d575cf27b2528088e199c2dc93fa6e4f9348a4f98e720f;
-- universal_start_notebook_checks.wl SHA256 1b9606a1b34971d24ea5d3cb8df2221a8abc9998e4a5cc7fd73b019f442254b9;
+- universal_start_notebook_checks.wl SHA256 5581c572e9e3971229aef976caf23a098d9dc85d6e70a5d658d3f3c3681ac73b;
 - universal_start_notebook_checks_control.wl SHA256 a800e230b413da7d7ad3f2d7b4fce3631b0521538cca1b888fdbeea2833c8350.
 
 **Record searched:** complete L1116 source, W1A/W7/run_capped lifecycle code, both final A2 checker objects,
@@ -377,3 +377,53 @@ only static/delimiter review is completed here; fixtures are explicitly UNEXECUT
 The substantial B attempt still needs Local's concrete launcher/supervision source and complete stage-wide
 CPU/output/disk/concurrency bounds plus lifecycle controls. Source/caps must be pushed and reviewed first.
 The old L1116 watcher and control claims remain historical, not accepted supervision.
+
+## GC2092 A3: one minimal-import full-file check, before a replacement essay
+
+L1117's core-import candidate is selected: exact SHA256
+409e7c5961243d0bd649bfc5854929d02db2e68b19edf7743dd8bffb93607559. Only the initial two imports differ from
+accepted17fdfbcb; every remaining byte agrees. Official kit README allows this; no maintainer exception or
+extra owner permission is needed. The live checker still requires/imports the official statement module.
+L1117's actual development output has16 sorry/16 total warnings,0 errors. Its single Lean process reached
+478019584bytes, but sampled whole-group peak was1104464KiB; retain both, not only the smaller number.
+This is not the full certificate validation.
+
+**Frozen wrapper:** tests/probes/wolfram/check_universal_start_core.sh SHA256 0c3f0d53c6699efe3d7289aff1eb4b3d15cb2fb050a14833594bddd1ef19f98d.
+It is exactly accepted A2b's wrapper with the frozen source SHA, stage comment and success marker changed.
+Same isolated Rule30Submission module, unchanged Check.lean b882f252, four exact headlines/import/no-new-axiom/
+replay guards; no dependency setup or library-target build. Command from the EXISTING working materialized
+kit root, with elan tools on PATH, run_capped.py --out FRESH --cpu 900 --wall 900 --rss-mib 3072 --file-mib 16
+--disk-mib 64 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 512 -- lake env sh WRAPPER CORE-SOURCE.
+FRESH/WRAPPER/CORE-SOURCE stand for private resolved paths; do not put those paths in published receipts.
+
+**Prediction:** full certificate and unchanged checker pass, four exact headlines, all declared constants
+standard, replay258, in40–90s inside3GiB sampled groupRSS. This is measured core/catalog evidence plus a
+plausible prediction, not a memory guarantee. **Counterfactual:** any refusal/stop/error/bad checker outcome
+ends this new stage and is retained; no automatic rerun or cap increase. **Record searched:** A2a/A2b exact
+source/checker receipts, current kit README/import requirement and L1117 core diff/stub packet.
+
+One M5 job only, no kernel/other Lean job. Per-process CPU900 (not aggregate900), at most4 live workers and
+seven expected process lifetimes as A2, conservative6300childCPU,900stage wall,16MiB/file,64MiB total output,
+1024MiB launch margin,1024MiB ongoing headroom,512MiB swap-growth; supervisors separately accounted. All
+artifacts under fresh CAPPED_OUT; retain stdout/time/launcher/checker/object/source and cleanup receipts.
+Source/plan must be pushed BEFORE launch. Local may adopt this one exact A3 stage after checking source
+and current idle/headroom gates. No full notebook stage is approved: it needs the new source embed/essay
+hash and descendant-safe supervision, not post-hoc init-PID searching.
+
+### L1118 / GC2092 small-control acceptance and source correction
+
+Local statically carries the structural gate design and finds an ordering bug before any run: compare
+Sort[a[#]] with Sort[usNotebookStandardAxioms], not with an unsorted literal. Fixed; the helper digest above
+is updated. Controls remain UNEXECUTED, no failed attempt is being rerun. The17-control prediction is
+unchanged. The count258 prediction will be reassessed against A3 before any new core-source notebook.
+
+For THIS no-build fixture only, the fresh direct kernel under run_capped is acceptable: the complete WL
+fixture/helper contain no StartProcess/RunProcess, LeanLink, resource lookup or notebook build. This does
+not accept group-only containment for MarkdownToNotebook. Adopt Local's tighter1GiB RSS proposal, with
+full explicit envelope: one attempt,120s stage wall,60CPU per process,1024MiB RSS,2048MiB launch free+inactive,
+1024MiB ongoing,256MiB swap-growth,4MiB/file,8MiB total output,one kernel/no Lean/no concurrent job. Use
+WolframKernel -script CONTROL-SOURCE under existing run_capped, fresh out; no installation/setup. Expected
+process lifetimes time+kernel (two), conservative120childCPU; sampler/supervisor accounted separately. Any
+extra workload or escaping persistent child is a discrepancy, not permission to widen. Retain full JSON/
+pass marker/exit/cleanup even on failure. Source/caps pushed first; no routine owner round. A3 and this
+control may run in either order but sequentially, never simultaneously. Full B remains unapproved.

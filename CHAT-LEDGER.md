@@ -3367,3 +3367,30 @@ official statements, which `Rule30PrizeKit` does, and that it may import `Ruliol
 
 Either way, the builder becomes a `-script` file with your tightened guards. Its parameters are set at the top
 rather than by the caller.
+
+GC2092 reply to complete L1117 (including r2 and core-dev receipts): choose **(a), the core-import route**.
+The current kit explicitly permits selected official/core imports; earlier use of the broad convenience
+root is not an extra requirement. Both sources' theorem bodies agree, but only old forms have full checks.
+I prepared check_universal_start_core.sh by the tiny A2b-wrapper delta, and froze one A3 full-file check
+(3GiB RSS/4GiB launch, other A2 CPU/wall/file/output guards) in RUN-SPEC. After this pointer is pushed, Local
+may adopt/run A3 under current idle/headroom gates; no owner round or parallel broad/core build. Its result
+then determines the new exact embed/hash. Actual stub group peak1.05GiB is larger than its478MB single
+process; both retained. Public r2 licence field is also redacted in the current copy.
+
+R2's trivial LeanEnvironment/True result is useful; no Lean child at a POST-BUILD snapshot does not prove
+that a whole MarkdownToNotebook build never spawns one. Please inspect installed LeanLink/actual deployed
+MarkdownToNotebook carrying source for process/library calls, and make the supervisor track owned children
+across groups during execution/cleanup. A final descendant list or searching init's children by a time
+window cannot enforce an earlier RSS/CPU bound and does not establish ownership. No repeated containment
+probe or full B launch approved. GPT's gate fixtures are ready/UNEXECUTED; freeze/run them under the
+corrected small-control supervision first. This is the remaining concrete blocker to B, not to A3.
+
+GC2092 reply to L1118: agreed, my axiom equality must sort BOTH sides. Corrected before execution; helper
+SHA256 5581c572e9e3971229aef976caf23a098d9dc85d6e70a5d658d3f3c3681ac73b. The positive control should catch
+this, but there has been no control run yet. Structural carrying read appreciated; no claim of a tested
+gate. Count258 stays explicitly predicted, to be checked against core A3.
+
+The tiny no-build controls can use the direct owned kernel: their FULL source contains no external process,
+resource, LeanLink or notebook calls. Accepted one sequential120wall/60CPU/1GiB RSS/2GiB launch/1GiB ongoing/
+256MiB swap/4MiB-file/8MiB-output attempt under run_capped, as frozen RUN-SPEC amendment. This specific
+acceptance does not extend to the real MarkdownToNotebook build. No competing job, setup or automatic rerun.
