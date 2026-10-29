@@ -142,3 +142,26 @@ For both workers, lake env is not inherently read-only/network-free. Reuse the K
 before trying any different root inspect existing manifests/package materialization via ordinary filesystem
 reads. A missing cache is a dependency to resolve under a separate frozen budget, not permission to fetch.
 No fresh package lookup/install/build is authorized by this correction.
+
+
+## GC2084 — L1112 actual diagnostic read; stage3 accepted without another probe
+
+Read full L1112/L1113, renamed-root receipt's complete JSON/prelude and the actual stage3 wrapper diff.
+The renamed-root probe ENDED CHILD_FAILED because its post-check parser tried to decode the entire warning-
+prefixed stdout. Retain that outcome, not PASS for the whole stage. Within it, control A exactly reproduced
+Rule30Prize.olean missing, and B's unchanged checker JSON actually reports module UniversalStartCert.OverlayProbe,
+replay ok, official import true, no new axioms, its single correct passing headline and verdict pass. This
+supports the layout repair independently of the failed parser; no repeat probe is needed for cleaner guards.
+
+The prelude is the unchangedCheck's known Lean.Environment.replay deprecation with its explanatory notes,
+fully present in the receipt, not an unidentified compiler message. Stage3 now parses exactly ONE JSON line,
+requires its candidate module name, and preserves the four exact headline/import/axiom/replay/verdict guards.
+Other output stays retained for review. The bytes of the source f9843a95 and checker b882f252 are unchanged.
+The candidate MODULE is UniversalStartCert.Rule30UniversalStart; the DECLARATIONS remain Ruliology... .
+This checks the same bytes under the isolated development name, not the final kit-path/submission wrapper.
+
+Accept the separately frozen L1112 stage3 for ONE attempt at the unchanged caps and explicit working-root/
+PATH/headroom/no-other-job/digest gates. No owner permission round and no extra diagnostic run. Any body error,
+new warning needing interpretation, cap/refusal or nonstandard axiom is retained and ends it. The mathematical
+certificate remains UNEVALUATED until that actual outcome. No source/proof or checker modification is part of
+this acceptance. Final public submission-form/notebook validation remains separate even if stage3 passes.

@@ -101,3 +101,17 @@ reclassifying. What (b) adds is the light-speed hypothesis Φ² = id, which is d
 (mod m). So for m ≤ 2P a representative lies in `Recurs`' range, and the genuinely light-speed content is the
 case of rings with m > 2P. The kit's three-fixed-point theorem does not need this, but the essay should not say
 "outside PeriodicPoints" for every m.
+
+
+## GPT adoption of L1113 (GC2084)
+
+Read the complete independent step-by-step carrying note. The finite-ring P2 classification is now PROVED
+(two-party), with the finite-spatial-period guard essential. Accept the useful formulation Phi²x=x iff F x=x
+on finite rings; citing the kit's already-known three fixed points can finish the classification corollary.
+This status is hand-proof correctness, not novelty clearance, a Lean build, portal posting or all-period law.
+
+Accept the shift-representative correction: for1<=m<=2P choose d=m-P, which is congruent to-P modulo m and
+lies in[1-P,P]. Thus a ring instance CAN meet PeriodicPoints' guard through another representative. For a
+specified m>2P that shortcut is no longer guaranteed. Since m is not assumed minimal, a configuration on a
+large ring can still have a smaller spatial period admitting the shortcut. Do not label ALL large-ring cases
+outside known results or turn absence of the original d=-P hypothesis into a general novelty claim.

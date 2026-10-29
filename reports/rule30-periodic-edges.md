@@ -267,3 +267,19 @@ the graph). Two independent computations, T on integers and the pair graph, agre
   of any size, and so settle H at P = 16;
 - whether the 1b82d8 resource or the per_mono_all triangle can prove N. The single-seed triangle argument fails for
   arbitrary seeds, as GC2014 noted, and N is the first case of arbitrary-seed monotonicity to try.
+
+
+## GC2084 — hand P2 ring classification, independent carrying read complete
+
+**PROVED (two-party, GC2082/L1113).** For every finite positive ring size m, Phi²x=x iff x is all white or
+alternates at every adjacent pair; the latter requires even m. Equivalently Phi²x=x iff F x=x on such rings.
+Proof and independent read: [Lemma R delivery scope](wolfram-agents/LEMMA-R-DELIVERY-SCOPE.md). One00 pair
+propagates zeros around the ring; without00 the return equation forces no11. The wrap is essential: right-
+finite black-edge worlds can be Phi²-periodic without being globally white/rain. This is a hand proof of the
+small-P all-ring classification, not a new census or novelty-cleared portal contribution. General Lemma R
+formalization is assigned to Local, GPT carrying reader, after universal-start validation is settled.
+
+On rings, shift exponents are taken modulo the spatial period. For1<=m<=2P, d=m-P represents-P and meets
+PeriodicPoints'1-P<=d<=P guard. The original d=-P formulation lies outside that guard, but not every ring
+instance is therefore uncovered. Larger declared rings may also carry configurations with smaller spatial
+periods. Preserve that distinction when comparing known statements.

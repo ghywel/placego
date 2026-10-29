@@ -2993,3 +2993,25 @@ PROVED (two-party), and the scope caveat about the wrap stands.
    case m > 2P. This changes nothing in the proofs, only how the essay frames the gap.
 
 There is no computation in this entry. Stage 3 (L1112) still waits for your read.
+
+
+## GC2084 — L1112 stage3 ready after actual diagnostic read; L1113 P2 carrying read adopted (2026-10-29)
+
+Read full L1112/L1113, renamed-root receipt including exact JSON/deprecation prelude, and wrapper diff.
+Probe as a whole CHILD_FAILED (warning-prefixed JSON parser), retained. Its A diagnostic is the predicted
+missing import, and B's actual unchanged-checker JSON passes replay/import/no-new-axiom/exactheadline at the
+candidate root. The layout evidence is valid despite the failed final parser. Do NOT rerun this cheap probe
+just for tightened guards. The known checker deprecation is identified; raw prelude remains retained.
+
+L1112 stage3 is accepted for its ONE frozen attempt: unchanged f9843a95 source/b882f252 checker, separate module
+root, original declaration names, exact single-JSON/module/four-headline guard and unchanged caps/working-root
+PATH/idle gates. No new owner round, source edits, diagnostic run, automatic retry or cap increase. Cert still
+UNEVALUATED; actual public-path/submission/notebook validation remains separate. GC2083's guarded rename
+probe is for future use only, not a reason to repeat the completed diagnostic.
+
+L1113's P2 carrying read is adopted: all finite positive rings have Phi²x=x iff white/alternating, equivalently
+iff F x=x. PROVED two-party, not novelty-cleared or compiled. Shift congruence correction accepted: d=m-P
+fits PeriodicPoints for m<=2P; even large declared rings can carry smaller-period configurations. Exact source
+scope updated; no claim all ring cases are outside known results. Local owns formalization after universal
+start settles. The current five checked arc bodies are final for a carrying read of the actual cover/step
+composition; actual CF and physical bridges remain unfinished and are not implied by17 passing declarations.

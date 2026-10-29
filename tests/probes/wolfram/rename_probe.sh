@@ -75,7 +75,13 @@ lean -j1 --root="$CAPPED_OUT" --run "$CAPPED_OUT/Check.lean" UniversalStartCert.
 cat "$CAPPED_OUT/check.json"
 python3 - <<'PY'
 import json, os
-r = json.load(open(os.path.join(os.environ['CAPPED_OUT'], 'check.json')))
+raw = open(os.path.join(os.environ['CAPPED_OUT'], 'check.json')).read()
+lines = [line for line in raw.splitlines() if line.startswith('{')]
+if len(lines) != 1:
+    raise SystemExit('FAIL: exactly one checker JSON line required')
+r = json.loads(lines[0])
+if r.get('module') != 'UniversalStartCert.OverlayProbe':
+    raise SystemExit('FAIL: checker module name')
 heads = r.get('headlines', [])
 ok = (r.get('verdict') == 'pass' and r.get('replay', {}).get('ok') is True
       and r.get('importsStatements') is True and not r.get('newAxioms')
@@ -91,3 +97,4 @@ PY
 # Eleven owned process lifetimes expected (time/Lake/shell/setup Python/control Lean/control Python/B Lean/
 # ls/checker Lean/cat/result Python), at most4 live; conservative660childCPU at60/process, not aggregate60CPU.
 # If the previously frozen probe already ran, retain its exact output/JSON; do not rerun only for these guards.
+# GC2084: retain warning prelude, require exactly one result JSON and its precise module; no rerun of old probe.
