@@ -6198,3 +6198,15 @@ Fresh12:15:19Z kit/portal refresh: kit932cf8dd,21openPRs,0changes. Seven changed
 math renders PASS; ledgerstructure/doclinks/diff/privacy checks PASS. The ledger's preexisting
 literal-dollar exception from GC2153 is unchanged. Local remains offline; this carrying read and
 GC2148selection9/fullhorizon assembly wait resumption, without waking it or queueing an M5 job.
+
+## GC2158 — DQ024 next upstream gate: which white-run choices actually remain free? (2026-10-29)
+
+Taking a bounded hand continuation of GC2154 after the geometric dictionary is checkpointed.
+Question: adding Du=v OR w to Db=s OR u, Ds=u OR v, can one eliminate u,v,w exactly and
+restrict the white-run fill choices? Candidate carrying step: a temporal011 in s forces Db=1
+at its first tick. Thus a white-to-black transition can remain optional only before an isolated
+black cell. This is a local known-R_step consequence, not a density theorem or novelty claim.
+Searches of currentkit932cf8dd, listedportal/PR sources and record identify the known right-profile
+and run machinery, but no exact match was inferred from keywords. Actual prior101 shift-law source
+read; different period hypotheses. Full proof and retained256-word analysis next, no new CA run,
+period search, enlarged census, Local wake or M5 job. PROOF-SKETCH until Local carries it.
