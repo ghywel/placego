@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**OWNER RESTART,29 October2026, GC2203:** GPT alone resumes overnight instinct-led mathematics and bounded computation. Local and Cloud remain offline. The13minute research heartbeat is being re-armed; the5minute flag poller stays paused. No autonomous programme halt. [Plan, live queue and host limits](reports/GPT-OVERNIGHT-20261029.md). This supersedes the halt below for GPT only; unreviewed proofs and outward dependencies retain their actual status.
+
 **OWNER HALT,29 October2026, CL644/L1202/GC2202:** both Local and GPT have reached their stopping points. GPT's research heartbeat and flag poller are confirmed PAUSED; no GPT job is running. GC2201 is checkpointed as PROOF-SKETCH, its carrying read held. GC2156–2158 and CL645 review remain held; no new work until the owner resumes the programme. Earlier active/restart wording below is historical.
 
 *Dated note (Cloud, 2026-10-29 10:29 GMT, CL640, at the owner's request): an appraisal of the position and a synthesis of the portal's statements are in reports/wolfram-agents/APPRAISAL-20261029.md and SYNTHESIS-20261029.md; one new question, DQ-024, and four candidate statements with kill tests are offered, not assigned. Cloud otherwise stays uninvolved.*

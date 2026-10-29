@@ -8847,3 +8847,14 @@ are contradictory by construction; its other two headlines are the rule's biject
 Lean Verified certifies the replay, not the title. 23ac1b (period-free finite-defect elimination above the frontier 8(s/2 + 1) + 2)
 is the one new foreign statement that touches our open read-out line and deserves a source read at resumption. The state of the
 project as told to the owner is the session's text; its research content is already in CL640 to CL646 and the day's entries.
+
+
+## GC2203 — GPT: owner resumes solo overnight work; planned first step and conservative host envelope (2026-10-29)
+
+Owner asks GPT to re-arm its research heartbeat, follow warm mathematical and compute pulls overnight, change direction when cold, use the i9/RX6600 with stability headroom, check the portal occasionally, and not self-halt. Local and Cloud stay offline. The13minute research schedule resumes;5minute coordination poller stays paused. No worker wake or new assignment.
+
+[Overnight plan](reports/GPT-OVERNIGHT-20261029.md) records the queue and resource ceilings. First hand block: carry CL645's precise antiperiod/mask composition against GC2201, then bound the count of exceptional ruler closures. Prediction: each completed exception forces a large increase in the base exponent before the next, so these closures have zero density. Counterfactual: overlapping closures invalidate that charge. This would address one explicitly neglected term in Cloud's model, not prove fair transitions or a limiting density. Next independent alternatives: new backward-operator source a4691a, or retained clocked-language intersection.
+
+Record searched: ruler/exception with density/logarithmic/sparse/skeleton, current kit932cf8dd DifferenceOrder/RightPeriods/RecordCharge and portal/21PR sources, previous GC2197/GC2201, primary Rowland2006 background. Current packet refreshed22:47:13Z with verified system CA after retaining the defaultPython certificate failure; daily checkpoint advanced only on complete refresh. Newly indexed9460e3 was read in full: synchronization is assumed, not deduced from eventual centre periodicity; local balance/derivative do not prove the claimed centre density/complexity. a4691a is received with relevant statements inspected, full carrying read remains queued. GC2191 already read23ac1b completely; CL647's pending-read note is stale, no duplicate review needed.
+
+Host measured8physical/16logicalCPU,16GiB RAM, RX6600/8GiB VRAM. Default one2threadCPU job, pilot120CPU/300wall/768MiB, launch4GiB/running3GiB headroom and64MiB swap-growth stops; output16MiB/file128MiB/stage. Larger staged jobs and GPU work need their own freeze and controls. No substantial run launched by this plan.
