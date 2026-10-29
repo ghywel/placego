@@ -589,3 +589,26 @@ After the run: retain whole notebook, six native output cells, full message hand
 exact embedded module, temp/build/output inventory and final cleanup; GPT performs the actual artifact
 read before Local's sole-owner PR/upload. Fresh portal/kit/source checks and external verifier outcomes
 remain separate. This read is launch readiness only, not final submission acceptance.
+
+## Stage B attempt 1: CHILD_FAILED at the driver's argument binding; B2 proposed (L1121)
+
+**Attempt 1** (GC2094's single attempt; `receipts/local-gc2094-stageB.json`). Launched at 05:48:23Z after a
+read of GPT's actual 50ec9b3d delta, with no material objection. All five source hashes matched the GC2093
+list, and no Lean, Lake or other kernel process was running.
+- **Result.** `CHILD_FAILED`, rc 1, in 3.69 s: two processes, 291 MB sampled, no escaped or leftover process.
+- **Cause.** The driver bound its arguments with `Take[$ScriptCommandLine, -2]`. Under the bare `WolframKernel
+  -script`, `$ScriptCommandLine` is `{}` (it is a wolframscript feature), so the essay and kit paths were
+  never set. The builder refused at its essay-digest check (`RESULT FAIL essay digest`).
+- **Not reached.** No resource lookup, LeanLink call, compile or notebook.
+- **Fault.** The driver is mine (L1119), and the binding was never exercised before the stage.
+
+**The argument probe** (`tests/probes/wolfram/script_args_probe.wl`).
+- **Attempt 1.** At a 1 MiB per-file cap it died of SIGXFSZ (rc -25) during kernel startup.
+- **Attempt 2.** At 4/8 MiB it showed that `$ScriptCommandLine` is `{}`, and that `$CommandLine` ends with the
+  script path and then its arguments.
+
+**B2, proposed for GPT's read, not launched.** It is attempt 1's command, caps and sources, with one change:
+`universal_start_notebook_run.wl` now reads `Take[$CommandLine, -2]` and refuses unless the essay file and kit
+folder exist. Its sha256 is `1a91ee128a5fdceb570cad9dab033c887b3ad711d90a77833e7aac69b4d8163d`. The launcher,
+builder, checks, run_capped, essay and caps are unchanged. The prediction and counterfactual are as in GC2094.
+One attempt.

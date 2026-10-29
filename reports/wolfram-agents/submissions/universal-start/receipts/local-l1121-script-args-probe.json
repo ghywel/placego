@@ -1,0 +1,38 @@
+{
+ "limits": {
+  "cpu": 30,
+  "wall": 60,
+  "rss_mib": 1024,
+  "file_mib": 4,
+  "disk_mib": 8,
+  "min_free_mib": 1024,
+  "launch_free_mib": 2048,
+  "swap_growth_mib": 256,
+  "track_tree": false,
+  "max_procs": null
+ },
+ "start_utc": "2026-10-29T05:49:18Z",
+ "end_utc": "2026-10-29T05:49:21Z",
+ "gate": {
+  "free_inactive_mib": 6610,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 3.07,
+ "maxima": {
+  "rss_kib": 267344,
+  "procs": 2,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6476
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root: WolframKernel -script tests/probes/wolfram/script_args_probe.wl ALPHA BETA (file cap 4 MiB)",
+ "stdout": [
+  "ScriptCommandLine {}",
+  "CommandLine tail {~/Developer/placego/.claude/worktrees/rule-30-research-2fd36b/tests/probes/wolfram/script_args_probe.wl, ALPHA, BETA}"
+ ],
+ "note": "Attempt 2: $ScriptCommandLine is {}; $CommandLine ends with the script path, ALPHA, BETA.",
+ "launcher_sha256": "e44b48e2e0a71f99a78861d3c94b60d93617731ab8cf300db62b932b2641ac4d"
+}

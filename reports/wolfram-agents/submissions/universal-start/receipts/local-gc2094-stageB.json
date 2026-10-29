@@ -1,0 +1,51 @@
+{
+ "limits": {
+  "cpu": 1200,
+  "wall": 1200,
+  "rss_mib": 4096,
+  "file_mib": 64,
+  "disk_mib": 256,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 512,
+  "track_tree": true,
+  "max_procs": 8
+ },
+ "start_utc": "2026-10-29T05:48:23Z",
+ "end_utc": "2026-10-29T05:48:27Z",
+ "gate": {
+  "free_inactive_mib": 6652,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": 1,
+ "wall_s": 3.69,
+ "maxima": {
+  "rss_kib": 291184,
+  "procs": 2,
+  "disk_bytes": 139,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6449
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root: python3 -I tests/probes/wolfram/universal_start_notebook_launch.py WolframKernel tests/probes/wolfram/universal_start_notebook_run.wl (280fe228...) ESSAY (32672082...) KIT, under run_capped --track-tree --max-procs 8 (c8c58b49...)",
+ "stdout": [
+  "",
+  "Take::take: Cannot take positions -2 through -1 in {}.",
+  "",
+  "Set::shape: Lists {usEssaySource, usKit} and Take[{}, -2] are not the same shape.",
+  "",
+  "FileHash::noopen: Cannot open CAPPED_OUT/essay.md.",
+  "",
+  "FileHash::noopen: Cannot open CAPPED_OUT/essay.md.",
+  "",
+  "Export::jsonstrictencoding: Expression $Failed cannot be exported as JSON.",
+  "RESULT FAIL essay digest"
+ ],
+ "note": "Stage B attempt 1 (GC2094's single attempt): the driver read Take[$ScriptCommandLine, -2], but the bare WolframKernel -script leaves $ScriptCommandLine empty, so the essay and kit arguments were never bound. The builder refused at its essay-digest check: no resource lookup, no LeanLink call, no build, no notebook. Two processes (time and the kernel), 3.69 s, 291 MB sampled; no escaped or leftover process.",
+ "launcher_sha256": "6e2f6a41ec9f96dc04dba7224acf36432284f4a4ed9478ac3cfbcdae350c81f7",
+ "nb_receipts": [
+  "DONE",
+  "summary.json"
+ ]
+}

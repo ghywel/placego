@@ -4,7 +4,10 @@
    It builds into CAPPED_OUT (the supervised, disk-capped folder): a copy of the essay at CAPPED_OUT/essay.md, the
    notebook at CAPPED_OUT/essay.nb and the receipts in a fresh CAPPED_OUT/nb-receipts, then loads universal_start_notebook.wl from this folder. The exit code
    is 0 only when the builder reports no reasons. Paths are passed in, never printed into published receipts. *)
-{usEssaySource, usKit} = Take[$ScriptCommandLine, -2];
+(* L1121: under the bare `WolframKernel -script`, $ScriptCommandLine is {} (a wolframscript feature); the
+   arguments are the last two entries of $CommandLine (receipts/local-l1121-script-args-probe.json). *)
+{usEssaySource, usKit} = Take[$CommandLine, -2];
+If[!FileExistsQ[usEssaySource] || !DirectoryQ[usKit], Print["RESULT FAIL driver arguments"]; Exit[1]];
 usCapped = Environment["CAPPED_OUT"];
 If[!StringQ[usCapped] || !DirectoryQ[usCapped], Print["RESULT FAIL no CAPPED_OUT"]; Exit[1]];
 usTempRoot = FileNameSplit[ExpandFileName[FileNameJoin[{usCapped, "tmp"}]]];

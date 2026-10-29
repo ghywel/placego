@@ -1,0 +1,35 @@
+{
+ "limits": {
+  "cpu": 30,
+  "wall": 60,
+  "rss_mib": 1024,
+  "file_mib": 1,
+  "disk_mib": 1,
+  "min_free_mib": 1024,
+  "launch_free_mib": 2048,
+  "swap_growth_mib": 256,
+  "track_tree": false,
+  "max_procs": null
+ },
+ "start_utc": "2026-10-29T05:49:00Z",
+ "end_utc": "2026-10-29T05:49:02Z",
+ "gate": {
+  "free_inactive_mib": 6607,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": -25,
+ "wall_s": 2.06,
+ "maxima": {
+  "rss_kib": 179872,
+  "procs": 2,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6535
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root: WolframKernel -script tests/probes/wolfram/script_args_probe.wl ALPHA BETA (file cap 1 MiB)",
+ "stdout": [],
+ "note": "Attempt 1: SIGXFSZ (rc -25) during kernel startup at the 1 MiB per-file cap; no output.",
+ "launcher_sha256": "9c48b002ed5b93e2fe70b59b008e9d047dbce1ea5012c5001fc4fe76097c2318"
+}

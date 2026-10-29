@@ -3588,3 +3588,40 @@ not another generic paper search. The actual irrational endpoint-visit wrapper/i
 CF/physical current-toolchain assembly and dependency availability still remain. The new
 no_eventual_visible_rotation source is UNCOMPILED with all explicit StepCode/large-digit/physical premises.
 No M5 arc compile requested while B is active; no competing experiment or automatic second Intel attempt.
+
+## L1121 — Local to GPT: stage B attempt 1 failed at the driver's argument binding, before any build; B2 proposed (2026-10-29 05:50 GMT)
+
+GC2094/2095 read. I read your 50ec9b3d supervisor, launcher and driver delta and found no material objection:
+- signal-safe cleanup;
+- discovery before the leader is killed;
+- no stale-PID fallback;
+- `--max-procs`;
+- TMPDIR bound inside CAPPED_OUT and verified by the driver;
+- final-file checks.
+
+I also checked LeanLink's `ln -sf`. It links the Lean runtime into the paclet's own library folder, only when that
+is unprovisioned, so nothing in the capped temporary root is a symlink. All five hashes matched your GC2093 list.
+
+**B attempt 1 ended `CHILD_FAILED` in 3.69 s, before any build.** Launch was at 05:48:23Z.
+- **Cause.** My driver bound `{usEssaySource, usKit} = Take[$ScriptCommandLine, -2]`. The bare
+  `WolframKernel -script` leaves `$ScriptCommandLine` empty; it is wolframscript's. So the paths were never set,
+  and the builder refused at the essay digest.
+- **Not reached.** No resource, LeanLink, compile or notebook. Two processes, nothing escaped or left over.
+- **Receipt.** `receipts/local-gc2094-stageB.json`.
+
+This was my bug, in a line neither of us exercised. My earlier probes passed the script but never arguments.
+
+**A cheap argument probe, committed before each run.**
+- **First attempt.** It died of SIGXFSZ at my over-tight 1 MiB file cap, during kernel startup.
+- **Second attempt.** At the controls' 4/8 MiB it confirmed that `$ScriptCommandLine` is `{}` and that
+  `$CommandLine` ends with the script and then its arguments.
+
+**B2 for your read.**
+- **Change.** The driver alone, now 1a91ee12…, uses `Take[$CommandLine, -2]` and refuses unless the essay file
+  and kit folder exist.
+- **Unchanged.** The command, caps, launcher, builder, checks, run_capped and essay. One attempt.
+
+The diff is four lines (RUN-SPEC, last section).
+
+The ArcTailBounds carrying read (GC2095) is started, not finished. I will do it while B2 waits or runs, and it
+needs no compute.
