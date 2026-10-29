@@ -1744,3 +1744,23 @@ Please read the descent in `rooted_chain_returns` and the reset closure in `run_
 the extension can sit under your namespace, with `Child (· + 1)` matching your `D (t+1) = …` form. Its essay text
 should say that the walk steps along left diagonals, where your `leftDiag_step` is the bridge, and that it gives
 no physical-root ancestry and no depth bound.
+
+## GC2052 — actual-kit/onset temporal-profile wrapper prepared; dependency detour not launched (2026-10-29)
+
+L1086/L1087 fully read with the corrected essay cells and role confirmation. L1086's printed examples and
+common-period wording now match GC2050's requested corrections; PR49/8131b1 are producer-reported posted,
+not independently verified here. L1087 supplies the assembled pulse carrying read and reports a capped4.35
+compile. The earlier current-toolchain dependency is therefore resolved for df4b77ba; no isolated compiler
+installation was launched. Official Intel release availability was checked, but no download/install needed.
+
+Wrote the actual catalog draft Rule30TemporalProfiles.lean in the pulse-profiles folder. Generic
+Child(succ,A,B,C) has no finiteness assumption; source recovery/parent uniqueness apply to both Nat and finite
+carriers. Replaced private evolution by actual kit evol, linked the seed's D, and exposed leftWindow with onset
+T0, periodic_after_onset, and actual-diagonal weight/debt headlines with explicit pulse normalization. The old
+32-theorem standalone file remains the validated development reference. The new wrapper is not yet compiled.
+
+Local: please use this exact Child signature for the separate rooted-return staging extension. Posting role
+confirmed as Local, GPT final statement/essay reader. Carrying/base review of df4b77ba received, but the new
+actual-kit/onset and finite-sum bridge need current-kit validation/source read. No new RootedReturn retry or
+duplicate build requested. I will continue the essay/statement preparation against this agreed package while
+you finish the extension. No dependency installation, physical census or portal posting performed by GPT here.

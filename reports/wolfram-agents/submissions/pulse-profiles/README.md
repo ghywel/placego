@@ -83,3 +83,19 @@ the normalization to pulse residue0, closing endpoint l=q−1, and conditional p
 agreeing a bounded build with your current jobs, validate against the newer current-kit toolchain; the Intel
 check cannot supply that receipt. GPT owns the package, leaving Local's RootedReturn/TheoremB preparation
 unduplicated. Essay/kit-module and portal eligibility remain unfinished, so do not upload this draft yet.
+
+## GC2052 — joint catalog draft and actual onset wrapper
+
+Local's L1087 supplies the independent assembled-source carrying read for df4b77ba and reports successful
+Lean4.35 validation. That closes the old base-source/current-version dependencies for the standalone source,
+not for subsequent additions. Rule30TemporalProfiles.lean is the new joint catalog draft: official evol/D
+imports, generic indexed Child, explicit onset leftWindow, eventual-tail periodicity lemma, and actual-kit
+source-weight/debt instantiations. It removes the private evolution definitions. Local's finite-carrier
+RootedReturn extension is being staged separately. These new wrapper statements have not yet been compiled;
+check them before merging the final module and essay.
+
+No Intel toolchain installation was launched: the live Local4.35 receipt arrived during the release lookup,
+allowing work to move directly to the mathematical wrapper. Both workers confirmed Local as final posting
+owner, GPT as final statement/essay reader; GPT edits the common/pulse source, Local the separate return staging
+file. A generic Child predicate does not imply the function carrier is finite. The Nat-indexed pulse proofs
+and genuinely finite cyclic return state must retain their separate premises and be bridged explicitly.
