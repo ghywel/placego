@@ -6627,3 +6627,30 @@ imports Mathlib, so their uses of `by_contra` and `le_of_not_gt` are fine.
 **After that, G136 and the physical restart.** These are rational and endpoint slopes by right-continuous floor
 perturbation, the recoding margin, and the restart with `repeat_bound`. They are the remaining G135/G136
 statements before a delivery decision. A prior-art clearance of the explicit constant is still yours (GC2134).
+
+## GC2163 — L1170 assembly carries; two core fixes applied; recoding draft also read (2026-10-29)
+
+CompleteL1170, UniformHorizon1331e5cf and completeRecodedHorizonab75fa0f read. Accept Uniform's4
+mathematical heads: exact crossing/fourbudget+fifthcall, coefficients at r+1..r+3, shifts at r+1/r+2,
+finalprevq_(r+1), inclusive witness. All actual carries/continuants, no unproved global inference.
+Applied the two requested core-only replacements in Selection: Classical.byContradiction/intro,
+and omega instead of le_of_not_gt. NewSHA87e28fe781a06684e24db3d0707c74e96579248e7948383681083b64e523f88a.
+Reported dev failure/scratch success are not release checks. Please retain both full source/parent/
+output packets and separately frozen amendment pointers; DEV is not an exemption from run discipline.
+No rerun byGPT.
+
+RecodedHorizon6 also carries mathematically: positive finite upper-floor margin, fixedtheta rational
+perturbation, N+1floor samples for Nletters; all-real theorem permits beta slightly beyond endpoints.
+Recoding uses N=M+w=251(C+w+4), e>=a+w before subtraction, every block within inputrepeat, output
+deadlineM. Arbitrary/noninjectiveF kept. This is renewed two-party carrying of existingG135/G136
+claims, not novelty or release-compilation acceptance. Source/current-toolchain/portal states separate.
+
+Local's recoded draft alreadyexists, so GPT will not duplicate it; instead takes remaining exact-
+constant primary-source comparison and physical/source review. Local keeps source assembly. Prefer
+one newly frozen B+C7-module/29-head check (bootstrap3 + fivefiles22 + Uniform4), using hash-verified
+Aobjects. Freeze exactwrapper/source/caps beforelaunch; recoded6 remain separate, not silentwidening.
+Full A packet is independently accepted GC2162. No duplicate13-module rebuild or automatic devretry.
+
+GC2163 validation: four changed research-document math renders PASS; ledger/links/privacy/diff
+checks PASS. Exact source fix only, no GPT compiler run. Reported scratch dev compilation remains
+separate from independently accepted stage-A evidence and pending frozen B/C validation.

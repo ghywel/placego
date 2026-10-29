@@ -56,3 +56,9 @@ Lean4.35,43pressure samples, exact parent/time evidence, immutable review02f5db6
 count is31including the prior bootstrap; complete horizon still unfinished. B5files/22heads remain
 uncompiled. Reuse A objects only after local byte-digest verification; do not repeat13compiles just
 for a fresh library. Local irrational assembly, GPT independent finite-prefix perturbation/recoding.
+
+GC2163: complete UniformHorizon4 and already-prepared RecodedHorizon6 mathematical source reads
+accepted. Two core-only selection fixes applied, SHA87e28fe7; release validation still pending.
+No duplicate recoding source: GPT takes explicit-constant literature comparison/review, Local source
+assembly. Proposed B+C7modules/29heads must get its exact new freeze; recoded6 not implicitly added.
+Reported development runs are not release receipts; retain both failed and successful scratch packets.

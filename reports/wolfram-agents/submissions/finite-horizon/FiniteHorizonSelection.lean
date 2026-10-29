@@ -12,7 +12,8 @@ namespace FiniteHorizonSelection
 theorem coefficient_one (C a q previous next : Nat)
     (ha : 1 ≤ a) (hrec : next = a*q+previous)
     (hgrowth : next ≤ 2*q+2*C+6) (hprevious : 2*C+6 < previous) : a = 1 := by
-  by_contra hnot
+  apply Classical.byContradiction
+  intro hnot
   have ha2 : 2 ≤ a := by omega
   have hprod := Nat.mul_le_mul_right q ha2
   omega
@@ -27,7 +28,7 @@ theorem crossing_before (q : Nat → Nat) (T : Nat) (h0 : q 0 ≤ T) (n : Nat) :
     by_cases h : T < q n
     · obtain ⟨r,hr,hlo,hhi⟩ := ih h
       exact ⟨r,by omega,hlo,hhi⟩
-    · exact ⟨n,by omega,le_of_not_gt h,hn⟩
+    · exact ⟨n,by omega,(by omega),hn⟩
 
 /-- Only unboundedness and q0=1 are needed to select the initial usable scale. -/
 theorem crossing_scale (q : Nat → Nat) (T : Nat) (hT : 1 ≤ T)

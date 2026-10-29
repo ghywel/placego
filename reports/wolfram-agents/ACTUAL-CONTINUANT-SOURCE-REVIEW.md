@@ -267,3 +267,43 @@ broader rebuild. No automatic B launch or rerun follows from this acceptance.
 Local retains the irrational final assembly. GPT next takes the independent G136 finite-prefix
 rational/endpoint perturbation and recoding margin source, after its carrying/known-source reads,
 while reviewing Local's B/assembly evidence. No duplicate assembly or competing Mathlib stage.
+
+## GC2163: complete irrational assembly and recoding draft carried; core import fixes applied
+
+Read complete L1170 and the complete committed UniformHorizon.lean
+1331e5cf924cd3186e75a749b096e9fe3f622bb6bcef2a1256a9b71808c8b351. Its four mathematical heads carry:
+the crossing is sufficient, all four budget inputs fit, the extra call uses q4's established input
+deadline, coefficient forcing is at offsets r+1,r+2,r+3, and the shifts at r+1,r+2 use visits h2,h3,h4.
+The final contradiction has previous=q_(r+1), as required. Explicit witness extraction preserves
+positive lag, inclusive b+q<=N and strict b>2a+q+C. This is a renewed source carrying read of the
+already retained G135 result, not a new mathematical discovery or release certificate.
+
+Applied L1170's two additional core-only fixes in FiniteHorizonSelection: Classical.byContradiction
+instead of the Mathlib tactic name, and an omega proof instead of le_of_not_gt. Its current SHA256
+is87e28fe781a06684e24db3d0707c74e96579248e7948383681083b64e523f88a. Source remains uncompiled for
+release. L1170's scratch development failure and later success are reported, not independently
+accepted here; retain both exact wrapper/source/parent/output packets and their amendment pointers.
+The DEV label does not replace the source-freeze, failure-retention or no-automatic-retry rules.
+
+Also read the entire already committed RecodedHorizon.lean
+ab75fa0fa094e39cd4dc91215ceb4647c1d62fa95ae4fababb15084866d99cf1, labelled Local L1171 draft.
+Its six mathematical heads carry. For finite floors through n, the positive minimum upper-gap
+margin permits0<epsilon<delta/(n+1); each s*epsilon stays nonnegative and strictly below its gap.
+Keeping theta fixed and perturbing a rational alpha upward gives an irrational matching prefix;
+already irrational alpha needs no perturbation. Matching floors through N+1 matches letters through N.
+All-real slopes are legitimate because the irrational theorem already has that scope; no claim
+that the perturbed endpoint slope stays in[0,1] is needed.
+
+For recoding, M=251(C+4)+250w and N=M+w=251(C+w+4). Assuming no output violation transfers every
+input repeat with constant C+w: under the contrary strict inequality, e>=a+w, so [a,e-w] is valid,
+all width-w blocks stay within [a,e], and the last compared output index is <=M. This preserves
+arbitrary/noninjective F and its arbitrary codomain. No hidden injectivity or width-free assertion.
+The rational/recoded statements are **PROVED by hand, two-party, in this source scope**; their
+release compilation and prior-art disposition remain open.
+
+Recoded source already exists, so GPT will not duplicate that preparation. GPT instead handles
+the remaining explicit-constant primary-source comparison and reviews the physical restart/source
+when ready. Local retains source assembly. Stage proposal: B+C may be one new seven-module/29-head
+check (bootstrap3, repaired/new five-file22, UniformHorizon4), on hash-verified A objects, with a
+new exact wrapper/source/cap freeze before launch. The recoded6 are separate pending validation;
+do not silently add them. No agreement to an unseen wrapper or automatic release build is implied.

@@ -1933,3 +1933,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   exact13sources/53standard heads/43samples independently read; Lean4.35 PASS, immutable02f5db61.
   Original/sanitized launcher byte domains retained. B5files/22heads uncompiled; reuse hash-verified
   A objects, no automatic repeat. Local irrational assembly; GPT finite-prefix perturbation/recoding.
+
+- GC2163: [irrational/recoded source carrying read](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2163-complete-irrational-assembly-and-recoding-draft-carried-core-import-fixes-applied):
+  Uniform4/Recoded6 mathematically accepted; core selection fixed87e28fe7. Release/past-development
+  provenance still separate. No duplicate recoding source; GPT explicit-constant literature review.

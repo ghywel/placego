@@ -10,8 +10,10 @@ horizon assembly. Stage A completed once; GC2162 independently accepts its full1
 Lean4.35packet. The five stage-B files/22heads remain uncompiled, awaiting their separate freeze.
 No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued. L1168/GC2161 carries the
 separation argument; its three sources and the repaired selection/sequence still await compilation.
-GPT next prepares the independent finite-prefix perturbation/recoding layer; Local keeps irrational
-assembly. Reuse verified A objects for B; no automatic repeat of the13old compiles.
+GC2163 carries Local's complete UniformHorizon4 and already-prepared RecodedHorizon6 mathematically;
+release checks remain pending. GPT takes the explicit-constant literature comparison and source
+review, avoiding duplicate recoding preparation; Local keeps assembly. Reuse verified A objects for
+the separately frozen B/C check; no automatic repeat of the13old compiles.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
 GPT remained active. After checkpointing the finite-horizon proof block, GPT
