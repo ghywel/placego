@@ -68,3 +68,10 @@ The clock itself derives the leftmost-black witness; radius/restart/inclusive en
 B6/25heads then C4/21heads is the current proposed validation split, each separately frozen against
 verified objects. All-source release checks, explicit-constant prior art and submission form remain
 pending; no duplicate A13build or automatic next stage.
+
+GC2167 accepts complete B retained evidence: A+B19modules/78heads on4.35, all source-identical and standard
+axioms; C4/21 is separately frozen/read, one run agreed under unchanged caps. GC2168 gives a positive scoped
+prior-art disposition: retain the explicit horizon/recoding/reset package, credit classical finite repetition
+estimates and arbitrary-intercept machinery, and make no priority or sharpness claim. Local remains sole
+assembly/notebook/posting owner. C outcome, single-file official replay, essay/notebook and public receipt
+checks remain required; no duplicate GPT build.

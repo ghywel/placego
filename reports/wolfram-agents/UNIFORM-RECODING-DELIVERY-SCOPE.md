@@ -252,3 +252,77 @@ error_mul supply determinant/sign data at standard indices j,j+1, including j=0 
 Local: please check this exact bridge and the qualification of your proposed reuse before a build plan.
 It is classical best approximation reconstructed from current source, not a proposed additional submission.
 No compiler, dependency install, notebook or computation has been launched by this note.
+
+## GC2168: quantitative prior-art disposition for delivery
+
+**Decision:** retain one useful additional formal package: the explicit finite horizon, its finite-width
+recoding loss and physical restart/disagreement bounds. Clear preparation of that package after C passes;
+posting still requires the exact single-file/checker, essay, notebook and receipt checks. Do not claim a first
+Sturmian repetition theorem, a sharp constant, or priority for an unreported classical corollary. The contribution
+is a checked quantitative specialization with explicit Rule30 matching endpoints. Local remains the sole
+assembly and posting owner; GPT reviews the resulting artifacts. This is a positive scoped disposition, not
+another indefinite novelty search or routine owner-permission request.
+
+Record searched: retained G133–G136/L087–L089, GC2126/GC2134 and current source; kit main
+932cf8dde039b89b1dcbe9636867bb1b2057fef0 actual lean/equivalents/catalogues; complete portal/open-PR index
+refreshed13:44:31Z, then offline combined mechanical/Sturmian and finite/window/repeat/horizon search.
+Read the matching statements, not just search snippets. No search absence establishes priority.
+
+### Primary literature and the exact missing export
+
+[Bugeaud–Kim](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf),
+Trans. AMS371 (2019),3281–3308, Theorem3.4 gives the known liminf bound
+rep(x)<=sqrt(10)-3/2. Crucially, section7 also contains finite estimates: Lemmas7.2–7.6 use
+continued-fraction lengths and phase suffixes, not merely an asymptotic slogan. The stated large-scale
+guard is q_(k-2)>=6. Lemma7.4(i), for example, gives some n between q_k-2 and
+|W_k|+q_k+q_(k-1)-2 with r(n)/n<phi+4/q_k. This is genuine quantitative prior art. Its exported
+statement is not the all-phase, initial-index deadline251(C+4); obtaining that deadline from these
+lemmas would still require uniform finite-scale selection and case accounting. We have not proved that
+such a derivation is impossible, and make no claim that251 is optimal or mathematically unprecedented.
+
+[Bugeaud–Laurent, Theorem2.1](https://arxiv.org/html/2104.09239), published AIF73 (2023),2029–2078,
+provides the arbitrary-intercept concatenation/Ostrowski framework. Its lower/upper exceptional intercept
+cases matter. The theorem and section2's other statements do not export our Rule30 finite matching bound.
+This comparison reads theorem statements and relevant framework, not a claim to have audited every proof
+in that paper. Earlier initial-power results remain credited under GC2134.
+
+### Own index translation and why the distinction matters
+
+With r(ell) the shortest PREFIX LENGTH containing two equal length-ell factors (overlap allowed), our
+inclusive-index witness is exactly
+
+    r(ell)<=N+1 and r(ell)<=2ell-C-2.
+
+Indeed, for earlier start a, later start j=a+q and ell=b-a+1, the last compared index is j+ell-1.
+The strict inequality b>2a+q+C is equivalent to ell>=j+C+2. Conversely any two occurrences ending
+by r(ell)-1 give the required witness under these inequalities. This retains GC2134's length/index guard.
+The uniform source therefore adds a concrete search deadline to a known qualitative obstruction.
+
+The logical difference is real without proving any separation inside the Sturmian class: the abstract
+numerical function R_M(n)=n+min(n+1,M+1) has liminf R_M(n)/n=1 and R_M(n)<=2n+1, but its first
+R_M(n)<=2n-C-2 occurs at n=M+C+3. Arbitrary M delays it. This is an implication control, NOT an
+assertion that R_M is a Sturmian repetition function. The published finite lemmas contain more information
+than these two asymptotic/complexity bounds and must be credited accordingly.
+
+### Actual kit/portal comparison
+
+The portal8084e6 source's no_small_period uses an angle-dependent distance d and threshold
+ceil(H*(1+1/d))+1. sturmian_pairs exports arbitrarily large lags; sturmian_excluded and
+sturmian_block_excluded exclude an entire infinite companion. None of those exports supplies251(C+4),
+250w, or the piecewise reset endpoints. Characteristic0c4a33 is narrower. Portal0ef6e2's
+no_visible_rotation requires arbitrarily late large partial quotients and excludes an infinite finite-arc
+code; it is not the all-angle initial matching deadline. Kit BoundedRemainder's problem1_of_unbounded_remainder
+and word variant are center-column discrepancy reductions, with different hypotheses and conclusions.
+
+The width term is an elementary finite-block transfer once the base horizon is available: setting
+M=251(C+4)+250w makes M+w=251(C+w+4), and eroding an input repeat by w restores the output constant C.
+Credit that argument as such, not a new coding theory theorem. The physical restart derives a leftmost
+black witness from the clock and transfers the already delivered repeat bound; the additional export is
+the explicit503 recurrence and its endpoint constants. These are conditional statements about a genuine
+clock, not existence of one or a solution of the prize.
+
+**Suggested essay wording:** Classical Sturmian repetition theory already gives the qualitative
+obstruction. Here we formalize a uniform explicit finite witness, retain its loss under arbitrary finite
+block maps, and transfer it to matching pieces beside a Rule30 period-two clock. The constants are explicit
+rather than claimed sharp. We credit the continued-fraction and repetition background; our additional
+portal content is the checked quantitative bound and its physical endpoint accounting.

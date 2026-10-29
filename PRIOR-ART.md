@@ -4667,3 +4667,10 @@ return directly. Actual floor carries and current-kit932cf8dd Lagrange continuan
 arcs, determinant, signs and coefficient-one recurrence. This is dependency preparation for the
 existing quantitative horizon, not a new best-approximation theorem or separate submission.
 [Carrying proof, source hashes and uncompiled status](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).
+
+### GC2168: explicit-horizon delivery disposition after finite-estimate comparison
+
+Known Sturmian repetition and arbitrary-intercept machinery remains prior art, including the finite estimates
+rather than only asymptotic slogans. The [exact comparison and index dictionary](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2168-quantitative-prior-art-disposition-for-delivery)
+clears preparation of a credited quantitative formal package relative to the compared exports, with no
+first-in-literature or sharpness claim. Full release/checker/artifact validation remains required.
