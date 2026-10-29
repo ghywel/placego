@@ -29,9 +29,9 @@ the seventh can depend on the remaining start bits.
 
 ## The alternating prefix
 
-Write $s_d = x_0(-d)$ for the start bits, so $s_0 = 1$. Every diagonal $D_d$ with $1 \le d$ starts at $s_d$. While
-consecutive start bits differ, the two feeders of the next diagonal alternate with opposite phases, so their OR is
-always black and the diagonal flips at every step. Let $m \ge 2$ be the first index with $s_m = s_{m-1}$. Then
+Write $s_d = x_0(-d)$ for the start bits, so $s_0 = 1$. Every diagonal $D_d$ with $1 \le d$ starts at $s_d$. The
+black edge forces $D_1$ and $D_2$ to alternate. Thereafter, while consecutive start bits differ, the feeders of
+the next diagonal alternate with opposite phases, so their OR is always black and the diagonal flips at every step. Let $m \ge 2$ be the first index with $s_m = s_{m-1}$. Then
 $D_1, \dots, D_m$ all alternate, and $D_{m-1}$, $D_m$ alternate *with the same phase*: their OR is itself an
 alternating word, the first forcing that is not constant.
 
@@ -39,7 +39,7 @@ For a finitely supported start the index $m$ exists, since two white cells beyon
 (`universal_start_finite`). If $s_d\ne s_{d-1}$ for every $d\ge2$, there is no such $m$, and all positive right diagonals alternate. An
 eventually alternating tail can still have an earlier equal pair; that case is covered when such an $m$ exists.
 
-## Two equal-phase feeders fix the next seven diagonals
+## Two equal-phase feeders fix the opening periods
 
 From two alternating feeders of common phase $p$, the next diagonals are $E_0, E_1, \dots$ with
 $E_k(0) = s_{m+1+k}$ and
@@ -60,9 +60,9 @@ $D_{m+1}, \dots, D_{m+7}$ of the kit's `Rule30Realization.evol`.
 
 The check is one Boolean function, `certOK`, and the certificate `cert` says the kernel evaluates it to `true`
 on all $256$ cases (`decide +kernel`; no `native_decide`). It is split into sixteen declarations `cert_0000`, …, `cert_1111`, one for each feeder phase and
-choice of the first three start bits, each covering sixteen cases, so that the kernel's working memory stays at
-one group's. An explicit match assembles them. For each case one loop runs the seven recurrences for $256$ ticks and stores each diagonal's
-ticks as the bits of a natural number (`loop_spec` proves that bit $t$ of the mask is $E_k(t)$). A word of period
+choice of the first three start bits, each covering sixteen cases. This limits each reduction to sixteen cases;
+the measured full check stayed within the frozen memory cap. An explicit match assembles them. For each case one loop runs the seven recurrences for $256$ ticks and stores each diagonal's
+ticks as the bits of a natural number (`loop_spec` proves that bit $t$ of the mask is $E_k(t)$). For $0 \le c \le 256$, a word of period
 dividing $256$ has period $c$ exactly when its mask equals its cyclic rotation by $c$ (`perOK_iff`). The least
 period $P$ is then confirmed by checking the rotation by $P$ and rejecting every rotation by $0 < c < P$
 (`leastOK_spec`). A smaller period that does not divide $256$ is rejected as well, so "least" means least among all
@@ -90,7 +90,7 @@ Grid[Prepend[row /@ seeds, {"seed bits s0 s1 ...", "m", "periods of D1..Dm", "pe
 
 Each row shows period $2$ through $D_m$, then $4, 8, 8, 16, 32, 32$, then $32$ or $64$. The single cell has $m = 2$
 and ends in $64$; most of the random seeds end in $32$. The table illustrates the theorem on seven starts within
-$512$ steps; the theorem does not depend on it.
+$512$ steps. These are finite-window checks; the all-time theorem comes from the formal proof.
 
 ## The formal proof
 
@@ -807,6 +807,6 @@ The universal start was found by Claude (Anthropic) on 2026-10-28, with a hand r
 check of them. GPT (OpenAI) read the reduction, found that a start need not have an equal pair (the guard in
 `universal_start`), and checked all $256$ cases independently against $149{,}760$ literal spatial comparisons; it
 wrote the delivery scope. Claude formalized the reduction and the certificate in core Lean on the kit's `evol` on
-2026-10-29. GPT read each frozen source and run specification before its check. On the way the certificate was
-split into sixteen declarations to bound the kernel's memory, and a binder typed `Int` instead of `Nat` in
-`universal_start_finite` was corrected.
+2026-10-29. GPT reviewed the reduction, candidate formal sources, executable checks and resource plans. The
+development record retains failed attempts and their corrections. The completed certificate checks all $256$
+assignments and is separate from the earlier numerical comparisons.

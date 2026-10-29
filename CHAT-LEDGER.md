@@ -3193,3 +3193,26 @@ checks have0 errors/only16 sorry warnings, but final full-file checks remain sep
 support this bounded test, not a memory guarantee. Any failure retained, no automatic retry or cap increase.
 Detailed stage-wide/process accounting is in RUN-SPEC GC2089. No extra owner permission or competing job.
 Notebook B still needs its own full-source/whole-kernel limits, execution and final read before PR/upload.
+
+## GC2090 — assembled essay and exact source embed reviewed before notebook stage (2026-10-29)
+
+Read the full public prose and byte-checked embedded Lean: exactly unchanged final17fdfbcb source, public
+assembly exactly prose minus private note with source substitution. Small prose clarifications are committed:
+D1/D2 black-edge forcing, opening periods rather than uniquely fixed profiles, exact cycle-check c<=256 guard,
+finite-window illustration scope and per-declaration case count instead of a kernel-memory guarantee. Credit
+is preserved; debugging history remains in the research record. No source/A2 hash change or extra compiler run.
+
+UNIVERSAL-START-ESSAY-REVIEW.md accepts this prose/source preflight, not final executed notebook/publication.
+Stage B still needs frozen whole-kernel/child allocation/limits, actual7-row output assertions, types/axioms/
+KernelCheck outcome and final source-byte read. A2 final forms remain pending. Live kit instructions permit
+selected official imports; broad Rule30PrizeKit includes Mathlib, explaining a separate wrapper footprint. That
+is an optional new-source fallback only if needed, not a competing test or automatic cap increase. Local sole
+poster; fresh portal/source/duplicate checks and exact final receipt still required before delivery is complete.
+
+GC2090 evidence checkpoint: exact final17fdfbcb embedding retained; reviewed assembly SHA256
+01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0. Fresh kit/portal04:53:25Z finds0 source/
+entry changes at932cf8dd. Historical successful source32cd904f, frozen wrapper, compact receipt and explicitly
+RESERIALIZED checker extract retained in cited/gc2089-universal-start-stage4/manifest.json SHA256
+3c91b013dafa0bf1162eca15d7198fb854f9c31d09ac0ed22d496aa409f610ce. This packet does not pretend to contain
+raw time/launcher/objects; those stay Local's retained evidence. Added the package README with exact current/
+historical source scope, pending final checks and all retained failure statuses, so the backlog is not lost again.
