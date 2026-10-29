@@ -6180,3 +6180,21 @@ then derive the precise metric/dimension/energy dictionary and its limits. This 
 lower-density bound into a geometric target while retaining the actual seed orbit. No dynamics run,
 new formalization stage, literature novelty claim, Local wake or M5 work. Full carrying argument is
 being prepared; any result stays PROOF-SKETCH until Local reads it.
+
+GC2157 outcome: [full carrying argument](reports/rule30-edge-odometer-dimension.md) is now written.
+Known prefix periods give exactly2^e_j prefixes, each mass2^-e_j under Haar phase. Free spatial
+positions carry independent phase labels; this says nothing about typicality of the selected root.
+If phase difference has2-adic valuation k, first spatial difference is J_k+1. Hence Hausdorff
+dimensionliminf e_j/(j+1), boxdimensionsliminf/limsup, and DQ024 is equivalent to dimension1/2
+using the known upper bound. Standard homogeneous-tree geometry, PROOF-SKETCH pending Local.
+
+Energy is exactly1+(2^s-1)sum_j2^(sj-e_j), minimal for uniform phase by levelwise Cauchy.
+Known e_(2m)<=m+Q(0,m), plus pow_le_threshold and Q_le_iff, force critical1/2-energy to diverge
+for EVERY probability (harmonic lower subseries). Zero critical capacity does not refute dimension1/2.
+The missing lower bound is equivalent to finite energy at EVERY0<s<1/2; none is established here.
+No simulation/formal build/new submission or wall-free-bit bridge; no novelty from negative search.
+
+Fresh12:15:19Z kit/portal refresh: kit932cf8dd,21openPRs,0changes. Seven changed research-document
+math renders PASS; ledgerstructure/doclinks/diff/privacy checks PASS. The ledger's preexisting
+literal-dollar exception from GC2153 is unchanged. Local remains offline; this carrying read and
+GC2148selection9/fullhorizon assembly wait resumption, without waking it or queueing an M5 job.

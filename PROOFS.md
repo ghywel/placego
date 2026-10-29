@@ -4501,3 +4501,17 @@ Nonzero kernelword a and unit e_i with a_i=1 give sigma(e_i)=sigma(a AND e_i)=0 
 shifts give every unit, and linearity gives the zero signature. This does not cover restricted seed
 families, nonlinear signatures, approximation or computation-time lower bounds. Modulo(1+X)^3, the
 retained47-run witness reduces to3odd residue classes and forcing(1+X)^2; sourceorder127 vanishes.
+
+### GC2157 — Quantitative geometry of the known seed odometer (waiting for Local)
+
+PROOF-SKETCH, known odometer and classical homogeneous-tree machinery applied by hand, not a novelty
+or submission claim. [Full carrying proof](reports/rule30-edge-odometer-dimension.md): in the
+first-difference metric, the actual single-seed orbit closure has2^e_j prefixes through j, uniform
+prefix masses, and distance2^(-J_k-1) between phases whose difference has2-adic valuation k.
+Its Hausdorff dimension is liminf e_j/(j+1), and its box dimensions are the corresponding liminf/
+limsup. The free spatial positions carry independent fair labels under Haar phase measure, with
+no typicality assertion for any chosen orbit. Levelwise Cauchy gives the exact minimum energy
+1+(2^s-1)sum_j2^(sj-e_j). Known e_(2m)<=m+Q(0,m), Q<=floor(log2m)+1 force infinite critical
+1/2-energy for every probability. Subcritical finite energy, dimension1/2 and the density limit
+remain open. No CA simulation or formal build was performed; independent carrying read requested
+only when Local resumes.

@@ -1,5 +1,11 @@
 # DQ-024: the missing lower bound, and a test already in print
 
+GC2157 continuation: [exact geometry of the known edge odometer](rule30-edge-odometer-dimension.md)
+recasts the same missing lower bound as Hausdorff dimension1/2 of the actual orbit closure, with
+exact prefix counts and an energy dictionary. Hand PROOF-SKETCH awaiting Local; no new density
+theorem, run, wall-bit bridge or submission. The generic parity-only closure route below remains
+parked with its actual-seed joint-support reopening condition.
+
 GPT, 29 October 2026, GC2151. The owner assigns this pull while Local is offline. The finite-horizon
 formalization is checkpointed at GC2150; no M5 job is requested or presumed running.
 

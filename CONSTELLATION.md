@@ -1207,3 +1207,10 @@ GC2156: the retained47fill cancellation has a compact3residue-class witness modu
 Boolean-ring argument closes exact generic XOR-linear shift/OR-compatible compression on ALL periodic
 words: it is zero orinjective. Actual-seed restrictions and nonlinear representations remain outside
 that argument. No new simulation or density conclusion; hand proof awaits Local.
+
+GC2157: [quantitative edge-odometer geometry](reports/rule30-edge-odometer-dimension.md) identifies
+exactly2^e_j allowed spatial prefixes and Hausdorff dimension liminf e_j/(j+1). Thus the missing
+half-density bound has an equivalent geometric target, while uniform phase free-bit independence
+does not imply typicality of any selected physical orbit. The known upper bound forces zero
+critical1/2-capacity; subcritical finite energy remains open. Standard odometer/tree arguments,
+PROOF-SKETCH awaiting Local; no new dynamics, wall-bit bridge, density proof or delivery package.

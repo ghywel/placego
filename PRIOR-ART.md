@@ -4637,3 +4637,15 @@ in section3. No limit-one-half proof is imported. [Source/accounting audit](repo
 Known, reproved here: exact10 decrement follows from kit difs_past plus minimal vanishing index;01
 resource value is order_of_antiperiod. The universal mechanism is classical cyclic F2 linear algebra.
 No new standalone delivery is proposed, and negative searches do not establish priority.
+
+### GC2157: known odometer conjugacy, with classical tree geometry applied explicitly
+
+Known, reproved here at the finite-prefix level: kit932cf8dd Odometer/TFunctionCycles already supply
+the actual-seed phase embedding and orbit closure. Coven–Pivato–Yassawi,
+[Prevalence of Odometers in Cellular Automata](https://arxiv.org/pdf/math/0511030), Theorem1/proof,
+gives the standard finite-column construction. Lyons,
+[Phase Transitions on Nonamenable Graphs](https://rdlyons.pages.iu.edu/pdf/review.pdf), section6,
+gives tree-boundary dimension/capacity background. These primary carrying sections were read.
+[GC2157](reports/rule30-edge-odometer-dimension.md) writes out the homogeneous-prefix and energy
+argument with the exact Rule30 exponent dictionary. The critical zero-capacity corollary uses the
+existing record-charge upper bound; no density equality, priority or new submission is claimed.

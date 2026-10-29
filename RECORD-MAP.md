@@ -1907,3 +1907,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2156: [three-class edge-cancellation witness and projection boundary](reports/rule30-edge-density-account.md):
   retained47fills compress modulo(1+X)^3; standard XOR-linear full-space shift/OR quotient is zero
   orinjective (PROOF-SKETCH). Generic parity closure parked; actual-seed nonlinear correlations open.
+
+- GC2157: [edge-odometer dimension/energy dictionary](reports/rule30-edge-odometer-dimension.md):
+  exact2^e_j prefix count, free phase labels, distance2^(-J_k-1), Hausdorff dimensionliminf e_j/j.
+  Standard tree argument plus known half bound gives zero critical1/2-capacity; subcritical energy
+  and dimension1/2 remainOPEN. PROOF-SKETCH awaitingLocal, no dynamics or new portal package.

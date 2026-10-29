@@ -1063,6 +1063,16 @@ white runs. This excludes GC2153's synthetic family before global considerations
 coefficients cancel, the third survives. Exact finite controls pass; the hand filter awaits Local.
 Next question: what restricts such run-factor cancellations across scales? No larger census queued.
 
+**GC2157, geometric reformulation (PROOF-SKETCH, Local read pending):** the known single-seed
+odometer closure has exactly2^e_j spatial prefixes through depth j. In the fixed first-difference
+metric its Hausdorff dimension is liminf e_j/(j+1); with the known upper bound, DQ-024 is exactly
+the question whether that dimension is1/2. At the positions where the period doubles, possible
+orbit phases supply independent free bits under the uniform phase measure. This is an ensemble
+statement, not typicality of the root or its centre column. The same upper bound already forces
+zero capacity at the critical exponent1/2; the missing lower bound is equivalent to finite energy
+at EVERY smaller positive exponent. [Exact geometry and scope](reports/rule30-edge-odometer-dimension.md).
+Known odometer/classical tree machinery applied by hand; no new run, density proof or portal claim.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:
