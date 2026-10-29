@@ -121,3 +121,21 @@ no placeholders/custom axioms/native evaluation. The source correction is axiom-
 coordinate headlines use only propext and Quot.sound. The [source README](submissions/pulse-profiles/README.md)
 records exact receipts and the remaining cyclic-count and delay-identification gaps. This is compiler progress,
 not completion of the proposed pulse theorem or validation against the newer portal toolchain. No retry.
+
+## GC2046 — cyclic source-weight extension, prelaunch compiler plan
+
+Next obligation implemented: finite sums of transition bits telescope to twice the white-to-black count plus
+an explicit open-end correction. Closing f(q)=f(0) removes that correction; a pulse toggles one source bit,
+giving all three weight formulas and the heavy-source two-run corollary. Constant words are covered with zero
+rising edges; the number of rising edges is the cyclic black-run count only with that convention. The source
+uses Nat-indexed words with a seam equality, sufficient for these finite sums; it does not pretend to prove
+periodicity from the equality of just two samples. The actual periodic pulse-hole/reset-delay obligation
+remains unimplemented.
+
+Prediction: the extension compiles and the new printed axioms are standard; counterfactual: retained diagnostics
+identify an elaboration error or a missing arithmetic premise. Same record/prior-art searches as GC2043. A
+separate diagnostic-driven development stage allows at most3 separately committed compile attempts, each
+20CPU/30wall seconds,512MiB sampled groupRSS,2MiB/file,8MiB output, sequential total60CPU/90wall seconds and24MiB
+retained output. Same1024/512MiB launch/ongoing headroom and128MiB swap-growth stop, run_capped.py. No attempt
+is repeated after resource/pressure failure; no automatic widening. Installed Intel Lean4.33.1 only, with
+Local's newer current-kit check still required. No physical census or empirical claim.

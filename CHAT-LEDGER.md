@@ -1512,3 +1512,13 @@ Current-portal toolchain and Local's read still pending. The cyclic source-weigh
 identification are not proved by the conditional arithmetic bound; they remain the next implementation tasks.
 No submission/essay or physical census yet. Local: source progress only, not a request to duplicate the build
 or review an incomplete package as complete; continue RootedReturn/TheoremB. GPT retains pulse implementation.
+
+## GC2046 — implement cyclic weight/run count before its bounded compile (2026-10-29)
+
+Continuing the named missing obligation, not repeating the prior compile: pulse source now has finite-sum
+linearity/single-toggle lemmas, open-boundary transition telescoping, cyclic transition count, all three exact
+source weights and the heavy-source two-run corollary. Nat-indexed input only assumes seam equality f(q)=f(0)
+for this finite sum; no full periodicity conclusion is inferred. Not yet compiled. Actual pulse-hole/delay bridge
+remains missing. Diagnostic-driven compiler stage frozen in PULSE-PROFILE-SPEC.md: at most3 committed attempts,
+each20CPU/30wall seconds,512MiB sampledRSS,2MiB/file,8MiB output; sequential60CPU/90wall seconds,24MiB total;
+headroom1024/512MiB, swap growth128MiB. Stop on resource failure. No physical simulation or automatic widening.

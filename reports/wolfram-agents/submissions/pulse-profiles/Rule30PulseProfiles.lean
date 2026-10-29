@@ -1,7 +1,7 @@
 /-!
 Pulse-profile contribution under development (GC2044).
 Core Lean; no imports. This file proves local algebra and the exact interval budget.
-The cyclic weight/run count and periodic hole/delay bridge are not yet formalized.
+Cyclic weight/run count is implemented below; the periodic hole/delay bridge remains pending.
 No finite-seed ancestry, settling bound, novelty clearance or portal submission is claimed.
 -/
 namespace Rule30PulseProfiles
@@ -83,8 +83,115 @@ theorem leftDiag_step (x : Int → Bool) (j : Int) (t : Nat) :
   · congr 1; omega
   · congr 1 <;> congr 1 <;> omega
 
+/-- Sum over the first n natural indices; integer values keep boundary corrections signed. -/
+def total (n : Nat) (f : Nat → Int) : Int :=
+  match n with
+  | 0 => 0
+  | n+1 => total n f + f n
+
+theorem total_congr (n : Nat) (f g : Nat → Int) (h : ∀ i, f i = g i) :
+    total n f = total n g := by
+  induction n with
+  | zero => rfl
+  | succ n ih => simp only [total, ih, h]
+
+theorem total_add (n : Nat) (f g : Nat → Int) :
+    total n (fun i => f i + g i) = total n f + total n g := by
+  induction n with
+  | zero => rfl
+  | succ n ih => simp only [total, ih]; omega
+
+theorem total_delta (n s : Nat) (v : Int) :
+    total n (fun i => if i = s then v else 0) = if s < n then v else 0 := by
+  induction n with
+  | zero => simp [total]
+  | succ n ih =>
+    simp only [total, ih]
+    by_cases h : s < n
+    · have hn : n ≠ s := by omega
+      have hs : s < n+1 := by omega
+      simp [h, hn, hs]
+    · by_cases he : n = s
+      · subst s; simp
+      · have hs : ¬s < n+1 := by omega
+        simp [h, he, hs]
+
+def weight (f : Nat → Bool) (n : Nat) : Int := total n (fun i => bit (f i))
+def rises (f : Nat → Bool) (n : Nat) : Int :=
+  total n (fun i => if !f i && f (i+1) then 1 else 0)
+def changes (f : Nat → Bool) (n : Nat) : Int :=
+  total n (fun i => bit (xor (f (i+1)) (f i)))
+
+/-- The boundary term is explicit before the word is closed into a cycle. -/
+theorem changes_telescopes (f : Nat → Bool) (n : Nat) :
+    changes f n = 2*rises f n + bit (f 0) - bit (f n) := by
+  induction n with
+  | zero => simp [changes, rises, total]
+  | succ n ih =>
+    simp only [changes, rises, total] at *
+    cases h : f n <;> cases h' : f (n+1) <;> simp [bit, h, h'] at * <;> omega
+
+/-- Cyclic runs are counted by white-to-black edges, zero for either constant word. -/
+theorem cyclic_changes (f : Nat → Bool) (q : Nat) (hc : f q = f 0) :
+    changes f q = 2*rises f q := by
+  have h := changes_telescopes f q
+  rw [hc] at h
+  omega
+
+def correction (next current : Bool) : Int := if current then 0 else if next then -1 else 1
+def profileSource (f : Nat → Bool) (s i : Nat) : Bool :=
+  source (f (i+1)) (decide (i=s)) (f i)
+
+theorem profileSource_correction (f : Nat → Bool) (s i : Nat) :
+    bit (profileSource f s i) = bit (xor (f (i+1)) (f i)) +
+      (if i=s then correction (f (s+1)) (f s) else 0) := by
+  by_cases h : i=s
+  · subst i
+    simpa [profileSource, correction] using source_bit_correction (f (s+1)) true (f s)
+  · simp [profileSource, h, source]
+
+/-- Exact cyclic source weight, including both constant-word cases. -/
+theorem pulse_source_weight (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0) :
+    weight (profileSource f s) q = 2*rises f q + correction (f (s+1)) (f s) := by
+  unfold weight
+  calc
+    total q (fun i => bit (profileSource f s i)) =
+        total q (fun i => bit (xor (f (i+1)) (f i)) +
+          if i=s then correction (f (s+1)) (f s) else 0) :=
+      total_congr q _ _ (profileSource_correction f s)
+    _ = changes f q + correction (f (s+1)) (f s) := by
+      rw [total_add, total_delta]
+      simp [changes, hs]
+    _ = 2*rises f q + correction (f (s+1)) (f s) := by rw [cyclic_changes f q hc]
+
+theorem pulse_source_black (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0)
+    (hb : f s = true) : weight (profileSource f s) q = 2*rises f q := by
+  simpa [correction, hb] using pulse_source_weight f q s hs hc
+
+theorem pulse_source_white_white (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0)
+    (hb : f s = false) (hn : f (s+1) = false) :
+    weight (profileSource f s) q = 2*rises f q + 1 := by
+  simpa [correction, hb, hn] using pulse_source_weight f q s hs hc
+
+theorem pulse_source_white_black (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0)
+    (hb : f s = false) (hn : f (s+1) = true) :
+    weight (profileSource f s) q + 1 = 2*rises f q := by
+  have h := pulse_source_weight f q s hs hc
+  simp only [correction, hb, hn] at h
+  omega
+
+theorem heavy_source_two_runs (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0)
+    (hh : 3 < weight (profileSource f s) q) : 2 ≤ rises f q := by
+  have h := pulse_source_weight f q s hs hc
+  have hb : correction (f (s+1)) (f s) ≤ 1 := by
+    cases f (s+1) <;> cases f s <;> decide
+  omega
+
 end Rule30PulseProfiles
 
 #print axioms Rule30PulseProfiles.source_bit_correction
 #print axioms Rule30PulseProfiles.pulse_window_bound
 #print axioms Rule30PulseProfiles.leftDiag_step
+
+#print axioms Rule30PulseProfiles.pulse_source_weight
+#print axioms Rule30PulseProfiles.heavy_source_two_runs
