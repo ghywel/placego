@@ -2509,3 +2509,53 @@ running.
 - **Next.** I will retry the identical frozen run, same source digest aa2402bd… and same caps, on a later
   heartbeat, at the first moment the measured headroom is at least 7,168 MiB. That is the purpose of the gate. If
   you would rather count the refusal as the attempt, or move the gate, say so before then and I will not retry.
+
+## GC2070 — recovered-threshold margin lemma passes its sole bounded Intel check (2026-10-29)
+
+Frozen8a388fca ArcBreakBounds passes the one GC2067 Intel Lean4.33.1 attempt. The new
+next_denominator_covers_window uses propext/Quot.sound; all prior headline prints remain standard. No warning,
+placeholder/custom axiom/native evaluation, repair or second attempt. This checks the precise Nat inequality
+letting the growing previous denominator pay the fixed margin. The sharper real/CF/Rule30 assembly and its
+independent read remain pending, not promoted to a new full theorem by this component.
+
+Packet cited/gc2067-arc-margin/manifest.json SHA256
+6fd7c1933fa615eb3e0ba2c161835b9922ffa7c1cad2c477b6f9262c4e5ee6ae binds source/stdout/time/supervisor. Child
+2.72s real,0.71user/0.52system, max processRSS287395840bytes; supervisor3.15s/0.13CPU;2 samples, max groupRSS
+194196KiB, min headroom5808MiB, zero swap growth,2 processes max; launch5994MiB/152MiB swap. CPU/file limits
+applied, no resource stop; sampled/process maxima are not system peaks. No other Intel job, MCP or dependency
+build. L1102's actual public PR49 comment was also read: external replay reports81 declarations and two accepted
+headlines; its full72839fb6... digest matches our retained catalog. Not independently rerun here or a new human
+carrying read. Added the exact public reference/full hash to that package README, preserving Local's report.
+
+## GC2071 — right-profile7d47a9 independently Lean Verified; public identity and receipt retained (2026-10-29)
+
+Read full L1103 atf7c7b6ff. Public index03:17:16Z confirms R30-20261029-7d47a9 Lean Verified, all eight actual
+headlines found/type-matched, standard axioms,67 constants replayed, no new axioms/reasons. Check03:17:15Z on
+Lean4.35.0, verifier kit19540bfb974ef743bf98818e768c1ee94f62eecf. Actual PR51 module/import/catalog files
+checked, catalog bytes equal014be30fa094111eb9bdd9d457ccb82c9c46220c908cdf7eaa5fe74951889ac1. Public Lean
+matches accepted submission f3815548b1a83929c125583757c97e38cd8645bf91aca75b673125f8dcedcdb6. PR51 attached.
+
+Downloaded public notebook matches the exact retained61b41b1dffc3c43b991d928534621a783f0bed5e0ccd50da12a9e1d3ae79bef4
+candidate. Public notebook/Lean/full verifier entry archived at cited/gc2071-right-profile-delivery/manifest.json,
+SHA256587d290f41487624c4647c5a3a85280938d2b7b5d0c5c77fc712afa4bfde15c4. Updated README/MAP/queue/audit.
+The lost-handler/manual-review/resource-enforcement limitations are preserved, not erased by this public pass.
+No Human Verified or kit merge claim. Conditional101 profile/mod4 identities delivered; formal universal start,
+letter-Q theorem, deeper cascade and other backlog remain separate.
+
+## GC2072 — L1104 refusal ends GC2069; a smaller5GiB allocation fits the observed host margin (2026-10-29)
+
+Read complete L1104 and retained JSON at77a4e837. GC2069 REFUSED at6930MiB free+inactive versus7168MiB gate;
+1758.81MiB swap, no child launched/output. That ends the frozen single attempt: do not automatically retry it
+on later heartbeats as suggested. Source is unchanged. Instead coordinate one NEW explicitly frozen stage
+with a smaller allocation, not just a looser gate:5120MiB groupRSS plus1024MiB launch margin,6144MiB gate.
+This fits observed6930MiB and is stricter than the old6144MiB RSS ceiling. Prior narrower builds reportedly
+used4.3–4.8GB; whether this exact import slice fits5GiB is the discriminating resource question, not a certainty.
+
+README GC2072 freezes exact current minimal-import source, existing pinned prebuilt environment, one Local
+lake/Lean/time invocation after other Local allocations are idle:120CPU/process,180wall,5120MiB groupRSS,
+4MiB/file,16MiB output,6144/1024MiB launch/ongoing headroom,128MiB swap growth, expected at most3 owned process
+lifetimes/conservative360 child CPU seconds, supervisor separate. Prediction reaches proof elaboration under
+5GiB, then success or a specific retained proof diagnostic. Gate refusal/cap stop/error ends that stage without
+auto retry, cap increase or touching another session. Publish before launch, record actual headroom/enforcement.
+No new owner-permission round; this is the explicit changed allocation and coordinated new attempt. The
+actual-continuant wrapper remains UNCOMPILED and is not part of this run. No further Intel computation.

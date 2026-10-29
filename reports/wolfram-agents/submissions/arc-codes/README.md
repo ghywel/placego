@@ -1,7 +1,7 @@
 # Arc-code components — compiled counting bound and uncompiled real draft
 
 **Current status, GC2069:** the original counting component passed Intel4.33.1 and a reported Local4.35 check.
-The new previous-denominator margin lemma has its own one-attempt Intel plan below. Local's old broad-import
+The new previous-denominator margin lemma passed its sole capped Intel4.33.1 attempt (GC2070); its4.35 check remains separate. Local's old broad-import
 real draft hit RSS_STOP before compiler output; the same body now has minimal imports and a separate new
 bounded Local plan. ArcContinuantsDraft is uncompiled. No complete real-rotation/Rule30 submission is claimed.
 Dated specifications/results below preserve their exact scope and failures.
@@ -117,3 +117,39 @@ is a retained refusal, not an invitation to rerun or close another session's ker
 supervisor receipts, actual process count and pressure samples. Local may revise the plan before launch if
 actual invocation/allocation facts differ, committing that revision first. This is the explicit scope/cap
 coordination for a new discriminating attempt, not a request for another owner permission round.
+
+## GC2070 — new margin lemma passed its sole bounded Intel attempt
+
+Frozen8a388fca source compiles cleanly under Intel Lean4.33.1. All four headline axiom prints are standard; the
+new next_denominator_covers_window uses only propext/Quot.sound. No warning, placeholder/custom axiom/native
+evaluation, repair or second attempt. This checks the Nat inequality paying the fixed margin with the previous
+denominator. The full real/continued-fraction/step-code assembly and independent read of the sharper route are
+still pending; no new all-irrational or prize theorem follows from this component alone.
+
+Packet cited/gc2067-arc-margin/manifest.json SHA256
+6fd7c1933fa615eb3e0ba2c161835b9922ffa7c1cad2c477b6f9262c4e5ee6ae binds exact source/stdout/time/supervisor
+receipts. Child2.72s real,0.71user/0.52system, maximum processRSS287395840bytes; supervisor3.15s wall/0.13CPU,
+two samples, maximum groupRSS194196KiB, min free+inactive5808MiB, zero swap growth, at most2 processes. Launch
+5994MiB headroom/152MiB swap. CPU/file limits applied; no resource stop. Samples/processRSS are not system
+peaks. There was no MCP kernel, dependency build, second Intel job or automatic retry.
+
+## GC2072 — launch refusal retained; replace it with a smaller allocation, not an automatic retry
+
+L1103 froze GC2069 exactly; L1104's preflight then measured6930MiB headroom against7168MiB and REFUSED.
+No compiler process started and no proof output exists. That ends that frozen attempt. Do not automatically
+retry it on a timer or lower only the gate while keeping the old allocation. Source is unchanged from b1a731df.
+
+A NEW single Local stage is coordinated here: the same narrow-import proof under a smaller5120MiB groupRSS
+cap, with a6144MiB launch gate. This preserves a1024MiB launch margin and fits the actually observed6930MiB
+headroom; it is a stricter process allocation than the previous6144MiB cap, not a cap increase. Local reported
+other narrower-import builds using about4.3–4.8GB, so this is a bounded discriminating load test, not a claim
+that the draft certainly fits. Confirm the actual current host allocations at launch; no other Local
+notebook/compute, no dependency build, no closing another session's process.
+
+One exact-source `lake env lean` invocation,120CPU seconds/process,180wall,5120MiB sampled groupRSS,
+4MiB/file,16MiB output,6144/1024MiB launch/ongoing headroom,128MiB swap growth. At most3 owned process lifetimes
+expected, conservative360 child CPU seconds; supervisor measured separately. Prediction: the smaller import
+closure reaches proof elaboration inside5GiB, then standard-axiom success or a specific retained diagnostic.
+A gate refusal, cap stop, nonstandard axiom or proof error is retained and ends this single stage. No automatic
+rerun, gate relaxation or cap increase; actual output determines the next question. The exact source and this
+amendment must be pushed before launch. No additional Intel computation is requested.

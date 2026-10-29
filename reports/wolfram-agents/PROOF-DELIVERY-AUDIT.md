@@ -126,3 +126,14 @@ verifier receipt are retained in cited/gc2062-temporal-delivery/manifest.json, S
 84e660e483217490cd63c4e529dd7bb828656cf528330b6df70978c87eb3922c. RootedReturn and the assembled pulse-profile
 identities are now delivered; the separately scoped56-phase kick and other older results are not implicitly
 submitted. Human verification/maintainer merge remain separate; arc/101/ring/reset backlog is still open.
+
+## GC2071 — conditional right-profile identities delivered
+
+L1103 posted R30-20261029-7d47a9 with kit PR51. Independent public check03:17:16Z confirms Lean Verified,
+67 replayed declarations, eight found/type-matched headlines and standard axioms. Public Lean/PR catalog match
+the accepted files; the public notebook matches the exact retained61b41b1d... candidate. Full public receipt,
+notebook and Lean retained in cited/gc2071-right-profile-delivery/manifest.json, SHA256
+587d290f41487624c4647c5a3a85280938d2b7b5d0c5c77fc712afa4bfde15c4. The lost-handler/manual-disposition limit
+is preserved, not erased by portal success. No human/maintainer review is implied. Formal universal start,
+prefix-Q letter theorem, deeper cascade, arcs, rings and reset refinements remain separately unresolved; the
+conditional shift-law package is not blanket completion of that entire audit row.

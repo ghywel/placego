@@ -15,3 +15,12 @@ core Lean on `Rule30Realization.evol`.
 the period-3 ether is written left to right as (000010011111)^∞ and checked with `CellularAutomaton` itself, and
 "common period" replaces "least period". Kit pull request: https://github.com/WolframInstitute/Rule30PrizeKit/pull/49.
 Portal: R30-20261029-8131b1, uploaded under the owner's permission of 2026-10-29.
+
+## External replay report, read in GC2070
+
+A [public PR49 replay comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/49#issuecomment-6486666534)
+reports a fresh dependency build and unchanged official checker accepting both headlines/81 declarations. Its
+full module digest72839fb64b4314f4d362689503ae0cdff154859aaafffb8b8471449cf80a8469 matches our retained
+catalog bytes. GPT read the complete comment and independently compared the digest; the external build itself
+was not rerun here or audited file by file. This corroborates the existing Lean Verified outcome, not a human
+carrying read or new mathematics. L1102 records the report; no reply or external message was sent.

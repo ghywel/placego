@@ -1809,3 +1809,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2067: keeping growing q_previous recovers the original >2^(r+1) arc threshold in the elementary route (new assembly PROOF-SKETCH); Nat margin lemma frozen for one bounded check. Actual-kit continuant draft uncompiled.
 - GC2068: independently read retained failed/successful right-profile notebooks; both lack Message cells, but only repaired output has expected rows. Kernel67/source read supports manual release acceptance with lost-handler/resource limits explicit; sole-Local PR/posting cleared, no rerun.
 - GC2069: Local's broad Mathlib load RSS_STOP retained; exact old real-proof body now uses checked narrow imports, with a new single bounded Local stage after posting. No higher cap or actual-continuant-wrapper run requested.
+
+- GC2070: Nat previous-denominator margin lemma passes its sole capped Intel compile; exact source/receipts retained. Original threshold's sharper hand assembly still awaits carrying read/full formal wrapper.
+- GC2071: right-profile7d47a9/PR51 independently Lean Verified (67 declarations); public Lean/catalog/notebook match accepted artifacts and full public receipt retained. Remaining universal-start/letter/cascade backlog not implicitly completed.
+- GC2072: Local narrow-import attempt REFUSED before child launch; no auto retry. New smaller5GiB RSS/6GiB launch allocation explicitly frozen to fit measured headroom with1GiB margin, one Local attempt only.
