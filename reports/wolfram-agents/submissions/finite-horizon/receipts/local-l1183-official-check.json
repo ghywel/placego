@@ -1,0 +1,176 @@
+{
+ "stage": "L1183 official checker, horizon single file (GC2178: repaired transaction, once)",
+ "host": "Local (M5)",
+ "wrapper_sha256": "f1558604d6868280e5f29b384b2b97eeae0f23d05ed214e6479bcc37690c55f6",
+ "source_sha256": "791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110",
+ "assembly_sha256": "266d6cd69586c37dd988c504b50cf9c558fd06c4c777ce2b184d6eb0bdd8b3e8",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "lean": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+ "limits": {
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 4608,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 16.7,
+ "maxima": {
+  "rss_kib": 2718816,
+  "procs": 3,
+  "disk_bytes": 4901879,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5939
+ },
+ "start_utc": "2026-10-29T14:53:46Z",
+ "end_utc": "2026-10-29T14:54:03Z",
+ "supervisor_cpu_s": 0.13,
+ "gates": [
+  "HORIZON_SUBMISSION_SOURCE_OK 99 printed heads, 8 headlines",
+  "LEAN_SYSROOT_SET",
+  "COMPILE_DONE",
+  "COMPILER_REPORTS_OK 99",
+  "HORIZON_SINGLE_FILE_PASS 155 declared, 324 replayed"
+ ],
+ "checker_summary": {
+  "module": "Rule30Submission",
+  "claim": "partial",
+  "verdict": "pass",
+  "reasons": [],
+  "replay": {
+   "constants": 324,
+   "ok": true
+  },
+  "importsStatements": true,
+  "newAxioms": [],
+  "official": [],
+  "verifiedTargets": []
+ },
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.UniformHorizon.uniform_horizon",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.UniformHorizon.uniform_horizon_witness",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.RecodedHorizon.uniform_horizon_all",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.RecodedHorizon.recoded_horizon",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.PhysicalHorizon.piece_bound",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.PhysicalHorizon.reset_step",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.PhysicalHorizon.first_disagreement",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.PhysicalHorizon.disagreement_step",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "declared_count": 155,
+ "headline_signatures": {
+  "Rule30Submission.UniformHorizon.uniform_horizon": "theorem uniform_horizon (alpha theta : ℝ) (ha : Irrational alpha) (C : Nat) : ¬ FiniteHorizonBounds.RepeatBoundThrough (MechanicalCarry.mech alpha theta) (251*(C+4)) C",
+  "Rule30Submission.UniformHorizon.uniform_horizon_witness": "theorem uniform_horizon_witness (alpha theta : ℝ) (ha : Irrational alpha) (C : Nat) : ∃ q a b, 0 < q ∧ a ≤ b ∧ b+q ≤ 251*(C+4) ∧ (∀ s, a ≤ s → s ≤ b → MechanicalCarry.mech alpha theta (s+q) = MechanicalCarry.mech alpha theta s) ∧ 2*a+q+C < b",
+  "Rule30Submission.RecodedHorizon.uniform_horizon_all": "theorem uniform_horizon_all (alpha theta : ℝ) (C : Nat) : ¬ FiniteHorizonBounds.RepeatBoundThrough (mech alpha theta) (251*(C+4)) C",
+  "Rule30Submission.RecodedHorizon.recoded_horizon": "theorem recoded_horizon {β : Type} (alpha theta : ℝ) (C w : Nat) (F : (Fin (w+1) → Int) → β) : ¬ FiniteHorizonBounds.RepeatBoundThrough (recode w F (mech alpha theta)) (251*(C+4)+250*w) C",
+  "Rule30Submission.PhysicalHorizon.piece_bound": "theorem piece_bound (x : Int → Bool) (L : Nat) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, evol x t 0 = decide (t % 2 = 1)) (alpha theta : ℝ) (w : Nat) (F : (Fin (w+1) → Int) → Bool) (a b : Nat) (hmatch : ∀ i, i ≤ b-a → ArcRule30Bridge.visible x (a+i) = RecodedHorizon.recode w F (MechanicalCarry.mech alpha theta) i) : b-a < 251*(L+2*a+4)+250*w",
+  "Rule30Submission.PhysicalHorizon.reset_step": "theorem reset_step (x : Int → Bool) (L : Nat) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, evol x t 0 = decide (t % 2 = 1)) (alpha theta : ℝ) (w : Nat) (F : (Fin (w+1) → Int) → Bool) (t t' : Nat) (hmatch : ∀ i, i ≤ t'-1-t → ArcRule30Bridge.visible x (t+i) = RecodedHorizon.recode w F (MechanicalCarry.mech alpha theta) i) : t' ≤ 503*t+251*L+1004+250*w",
+  "Rule30Submission.PhysicalHorizon.first_disagreement": "theorem first_disagreement (x : Int → Bool) (L : Nat) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, evol x t 0 = decide (t % 2 = 1)) (alpha theta : ℝ) (w : Nat) (F : (Fin (w+1) → Int) → Bool) (k : Nat) (hagree : ∀ s, s < k → ArcRule30Bridge.visible x s = RecodedHorizon.recode w F (MechanicalCarry.mech alpha theta) s) : k ≤ 251*(L+4)+250*w",
+  "Rule30Submission.PhysicalHorizon.disagreement_step": "theorem disagreement_step (x : Int → Bool) (L : Nat) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, evol x t 0 = decide (t % 2 = 1)) (alpha theta : ℝ) (w : Nat) (F : (Fin (w+1) → Int) → Bool) (k k' : Nat) (hagree : ∀ s, k < s → s < k' → ArcRule30Bridge.visible x s = RecodedHorizon.recode w F (MechanicalCarry.mech alpha theta) s) : k' ≤ 503*k+251*L+1507+250*w"
+ },
+ "checker_notice": "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead\n\nNote: The updated constant has a different type:\n  Std.HashMap Name ConstantInfo → Kernel.Environment → IO Kernel.Environment\ninstead of\n  Std.HashMap Name ConstantInfo → Environment → IO Environment\n\nNote: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+ "olean_sha256": "7ad946f0b7d6c6397cdbd2051317e33d64123e34e2ca57df480272b20edaa64d",
+ "submission_check_sha256": "15087fc746dfe1c5fd28f9d75539d88f632b70d401d6c04cc1e01ad920f825a9",
+ "full_packet": "workers/local/l1183-official-pass-packet/ (MANIFEST d4798689)"
+}
