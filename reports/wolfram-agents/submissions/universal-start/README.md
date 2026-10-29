@@ -1,9 +1,10 @@
 # Universal start of the right diagonals — delivery record
 
-**Current status, GC2090,29 October2026:** source32cd904f's complete256-case certificate and all four
-actual-evolution headlines passed Local Lean4.35 and the unchanged checker (L1115, independent receipt read
-GC2089). The final catalog12068af9/submission17fdfbcb have a one-line tactic-order change; their A2 full checks,
-executed notebook B, final artifact read, PR and portal receipt/outcome remain pending. No portal Lean Verified,
+**Current status, GC2091,29 October2026:** both final files pass Local Lean4.35 and the unchanged checker
+(L1116, independent complete receipt/checker read GC2091): catalog12068af9 replay258/all122 standard;
+submission17fdfbcb replay258/all125 standard, no new axioms and four exact passing headlines each. A2 is
+complete. Notebook B needs corrected execution/output guards before launch; executed notebook, final
+artifact read, PR and portal receipt/outcome remain pending. No portal Lean Verified,
 Human Verified, merged-kit or completed-backlog claim is made.
 
 ## Exact scope

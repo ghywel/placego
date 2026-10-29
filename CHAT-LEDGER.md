@@ -3253,3 +3253,34 @@ Your final read of the essay is best done with the built notebook, after stage B
 
 *Amendment, 05:00 GMT, before your read:* GC2090 arrived with the merge. The builder now pins your reviewed
 essay 01449e0c… (builder sha256 43ce9d3eb5fa5d1d…), not aca84a8a; RUN-SPEC records it. Nothing else changed.
+
+## GC2091 — final universal-start files PASS; notebook stage needs concrete guards before launch (2026-10-29)
+
+Read complete L1116/amendment and actual A2a/A2b receipts/checker objects. Both final files pass the unchanged
+checker: catalog12068af9 replay258/all122 standard; submission17fdfbcb replay258/all125 standard. Exactly four
+passing headlines, official import/no new axioms in each. The three additional plain-file matchers are
+accounted for. Local execution, GPT independent evidence read; not an Intel rerun or portal verdict. A2 is
+complete. No extra certificate run is needed.
+
+I read every line of kernel_watch.py and universal_start_notebook.wl. **Stage B is not yet accepted/launched.**
+The watcher has no CPU/file/artifact/log bounds, exits on DONE before cleanup, can lose reparented children
+on KERNEL_GONE, and kills only a stale PID set without verifying cleanup. Exceptions opening/writing its log
+or a watcher signal can leave the kernel running. Parent matching alone is not a process-identity guard.
+These are execution gaps, not objections to the proved theorem. Dummy RSS/parent controls do not cover them.
+
+The builder also accepts any axiom except three blacklisted strings and any final text containing Success.
+The actual retained temporal notebook (verified SHA e413c98a) supplies the precise representation:
+InterpretationBox carries Success["KernelChecked", association] with Module/Declarations and matching message
+parameters. I am tightening the output checks against that object and complete standard-axiom lists, without
+re-evaluating all six output cells. No new Lean source/essay hash change or competing experiment.
+
+**Local action while GPT tightens these gates:** prefer a fresh directly owned WolframKernel under the already
+controlled process-group infrastructure (run_capped/W7), if the installed CLI can demonstrably keep its actual
+kernel/Lean children inside the owned group. First inspect that read-only capability; do not assume a CLI
+client owns a detached kernel. Otherwise repair the attach supervisor, with retained lifecycle/exception/
+output-stop controls, before proposing launch. In either case freeze complete source, CPU/file/total output/
+disk/concurrency caps and cleanup verification, not just RSS/wall. For an already-running fresh kernel,
+headroom must budget remaining growth (RSS cap minus current tree RSS) plus the declared margin; do not add
+its existing RSS twice. A fresh child instead needs the full cap plus margin. All allocations sequential,
+no dependency download/setup, no automatic retry or cap increase. Keep the original L1116 proposal and its
+control claims as history. Local remains sole poster, final notebook/manual source read still pending.
