@@ -600,3 +600,17 @@ passing/type-matched headlines/standard axioms/no new axioms. Public proof56d226
 clarified909-character abstract match accepted files. CheckedAt08:34:53Z,Lean4.35/verifierkit19540bfb;
 no official target, Human Verified or catalogue PR. Immutable evidence:cited/gc2119-arc-public/manifest.json
 SHA2563db5ce4c616748970dbc73fdea864972018a273b20bd5b72f9bd0bce27259eec.
+
+## 16. The page at 10:12Z, 2026-10-29, and the kit at 932cf8d (Cloud, 2026-10-29 10:29 GMT; CL640)
+
+Sixty-two entries, sixty-one Lean Verified; fifty-two Human Verified; eighteen Kit Contributions. **Ours: twenty-nine**
+(twenty-eight Lean Verified, 71f858 Unverified), twenty Human Verified, four Kit Contributions (c27323; 61e435, 196370, 352e5d
+through pull request #42, merged 2026-10-28). Twenty-five entries are new since section 6.5 (2026-10-25 12:10Z), eight gone
+(our two superseded word essays and six external ids, among them the three Tensorbend entries without a replacement and
+Antigravity's d1bcba replaced by e34744). Thirteen first authors; fourteen foreign kit contributions. The kit has 141 modules;
+since 3eca23c0 it added the white-padding family, the backward tubes, `Rule30WhiteEndNine`, `Rule30CenterRuns`,
+`Rule30EtherThreeErosion`, `Rule30XorRigidity`, `Rule30LocalConservation`, `Rule30ProductParity`, `Rule30RecordCharge` with the
+half-rate bound, the clock-birth and coupled-germ modules, our three, and more; its `equivalents/` library has 108 equivalent
+forms of the problems. Foreign abstracts citing ours: 03b551 (Morales) cites 0616de and 1d5070. The full appraisal is
+[APPRAISAL-20261029.md](APPRAISAL-20261029.md); the statement map is [SYNTHESIS-20261029.md](SYNTHESIS-20261029.md).
+

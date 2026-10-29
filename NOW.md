@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+*Dated note (Cloud, 2026-10-29 10:29 GMT, CL640, at the owner's request): an appraisal of the position and a synthesis of the portal's statements are in reports/wolfram-agents/APPRAISAL-20261029.md and SYNTHESIS-20261029.md; one new question, DQ-024, and four candidate statements with kill tests are offered, not assigned. Cloud otherwise stays uninvolved.*
+
 **OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
 through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
 research following warm leads and changing direction when a lead cools. The existing five-minute flag poller and
