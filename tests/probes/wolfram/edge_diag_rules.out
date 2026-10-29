@@ -151,3 +151,17 @@ seed=0xeca50d E_n: 1 1 1 2 3 3 4 5 5 6 6 6 6 6 6 6 7 7 7 8 8 9 9 9 10 11 11 12 1
 seed=0x7ca56d E_n: 1 1 1 2 3 3 4 5 5 6 6 6 7 8 8 9 9 9 9 10 10 11 11 12 12 12 12 12 12 12 12 12 12 13 14 14 14 14 14 15 16 16 16 17 18 18 19 19 20 20 20 20 20 20 20 21
 seed=0x4ab727 E_n: 1 1 2 3 3 4 5 5 5 5 6 7 7 8 8 9 9 9 10 10 10 11 11 12 13 13 13 14 15 15 16 16 16 17 18 18 19 19 20 20 21 21 21 21 22 22 23 24 24 24 25 25 25 25 26 26
 seed=0x6af979 E_n: 1 1 2 3 3 4 5 5 5 5 6 7 7 8 8 9 9 10 10 11 11 12 12 12 13 13 14 15 15 16 16 17 17 17 17 18 18 19 19 20 20 20 20 20 20 20 20 20 20 21 22 22 22 23 24 24
+
+# Block 3 (2026-10-29 17:34 GMT): forced letters after a double doubling; predictions P10 to P12 and PU in the header above; checked on the single seed (e_j from J_k to 40) and the 64 seeds of edge_diag_rules.seeds
+# ## Block 3 (written before the run): forced letters after a double doubling
+# Hand corollary of GPT's mask (GC2197, two-party) and the order of an antiperiodic stream (H/2 - 1 over period H):
+#  if x_(b-1) = x_b = 1 with M = Q_b (prefix period after the second doubling), then f = D_(b-1) is antiperiodic over Q_(b-1) = M/2,
+#  so mu = M/4 - 1, and for every alternating run x_b..x_(b+2m) = (10)^m 1: x_(b+2m+1) = 1 iff m = M/4 - 1; also m <= M/4 - 1.
+#  P10 (exact): on the single seed to j = 92 and on the 64 seeds (block exponents, n <= 56), every such run obeys the rule; counterfactual: one failure kills the corollary.
+#  P11 (exact): no such run has m > M/4 - 1.
+#  P12 (coverage): at least half of the occurrences of the letters 101 in the pooled 64-seed data (n >= 13) lie inside a run that starts at a double doubling, so the corollary explains at least half of the measured suppression after 101. Counterfactual: under a quarter.
+#  PU: report what happens after 00 (the ungoverned case): the fraction of alternating runs starting after 00 that end in a doubling, by run length.
+# single seed: P10 cases 14 failures [] | P11 over-length []
+# 64 seeds: P10 cases 283 failures 0 | P11 over-length 0
+# P12: 101 occurrences 410, inside a run after 11: 283 (0.69); single seed 14 of 17
+# PU after 00: run length m -> P(next letter = 1): m=1 45/89 = 0.51, m=2 10/16 = 0.62, m=3 2/2

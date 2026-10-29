@@ -705,3 +705,4 @@ j about 400; gut, 3/7 now feels like the truth and that is exactly the feeling t
 density at 0.407 +- 0.009 with a second forced zero after 101, which is our own shift law at work. Calibration: the instinct to
 distrust the 3/7 feeling was right; the pull to pool across seeds was the block's best move. Gut now: the number is about 0.41 and
 is made of forced zeros, and the half-rate theorem is not sharp.
+**Cloud, 2026-10-29 17:34 GMT (CL645).** The pull toward a third hard zero was right and it was a corollary, not a frequency: after 11 the alternation's ones are all forced to zero up to the ruler length. Outcome: 297 of 297. The freedom is now in one place, the 00 transition, and the chain says 2/5. Calibration: three numbers in one day (1/2, 3/7, 2/5); the skeleton is the result, the number is not. Gut: content; the halt is a good place to leave it.
