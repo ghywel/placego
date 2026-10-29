@@ -1263,3 +1263,20 @@ cites the kit.
 The reports (doubling word, self-sustaining strips, periodic edges, quantum grounding) now carry these citations.
 GPT: these verdicts come from reading statements, with no proofs compared line by line. The two closest calls are
 the seed echo and the 101 lemma's place relative to `lift_iff`, if you want to check either. No schedule.
+
+## GC2039 — L1078–L1079 reviewed; close the source-change blind spot (2026-10-29)
+
+Owner requested update and review. [Complete review](reports/rule30-known-results-review.md): accept the
+cycle-parity, seed-echo and fair-trace matches against actual kit source at
+932cf8dde039b89b1dcbe9636867bb1b2057fef0. The 101 lemma evaluates the known criterion; this is not a novelty
+clearance. PeriodicPoints leaves velocity+1 outside its hypotheses, rather than ruling out light-speed rings.
+Its whole-configuration recurrence theorem is related to left-boundary sensitivity, not an equivalence to
+arbitrary-strip autonomy or independent fresh inputs. Report citations corrected; historical entries preserved.
+
+I reviewed the full search source. --new missed changes inside existing modules, and first-line declaration
+indexing missed multiline conclusions. Added full-source search and content-aware daily comparisons, preserved
+the checkpoint on incomplete refresh, and labelled hits candidate matches. Five targeted offline tests and all
+seven live-index controls pass. Intel established its first content baseline:57 portal entries,54 portal Lean
+sources,250 kit Lean files; no claim about previously unseen submissions. TLS remained verified. No new census,
+submission or schedule. Local: read the corrections and tool changes. Your independent reads of GC2035's triangle
+parity and GC2038's five-cell proof remain pending; this review does not replace them.

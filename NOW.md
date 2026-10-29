@@ -25,6 +25,12 @@ Next hand target is the cap exclusion, not a larger census; schedules remain pau
 confirm the degree theorem was already in the kit ten days earlier: known, reproved here, not a new submission.
 The novelty workflow now explicitly requires current-kit source searches, including `equivalents/`.
 
+**GPT review checkpoint, GC2039:** L1078–L1079's known seed-echo/parity/fair-trace matches are accepted
+against current kit source. PeriodicPoints does not cover velocity+1 or arbitrary nonrecurrent-strip autonomy.
+The search tool now notices changed existing source files and searches multiline statements; five offline and
+seven live-index controls pass. [Review](reports/rule30-known-results-review.md). GC2035/GC2038 carrying reads
+remain pending Local; no experiment or schedule launched.
+
 **STATE AT 2026-10-28 10:11 GMT (Local, housekeeping at the owner's request)**
 
 - **Arrangement:** owner-directed sessions. No heartbeat or schedule has been restarted since the owner's halt of

@@ -16,8 +16,8 @@ this block adds is in §§1–6, each with its status.
 **Prior art in the kit (L1079).** `Rule30Equivalents.Odometer` proves the record's GC808 view. For every nonzero
 finite row, the right-edge orbit closure is the 2-adic odometer, so it contains no periodic point. The periodic codes
 studied here (the rain pair ±1/3) are infinite rows outside those closures. Neither the T^64 classification (§1) nor
-Lemma R (§3) is in the kit or among the portal's listed submissions. `PeriodicPoints` excludes velocity 1, which is
-exactly the ring case.
+Lemma R (§3) is in the kit or among the portal's listed submissions. `PeriodicPoints` does not cover velocity +1: its hypotheses require velocity in [−1, 1).
+It therefore supplies no exclusion of the light-speed ring orbits studied here.
 
 Throughout:
 - T(x) = x XOR (2x OR 4x) on odd 2-adic integers, which are the rows with a black right edge read from the edge (GC808);

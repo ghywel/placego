@@ -4,7 +4,7 @@ submissions) before a new probe or proof, so that a known result is not re-deriv
 
 RUN-ON:     cpu (Python 3 standard library and git); a refresh fetches about 7 MB, a search takes about a second
 COMMAND:    python3 tests/probes/known_find.py TERM [TERM ...] [--all] [--per N] [--refresh] [--offline]
-            python3 tests/probes/known_find.py --new        (what the last refresh added: the daily portal check)
+            python3 tests/probes/known_find.py --new        (added or changed sources/entries: the daily portal check)
             python3 tests/probes/known_find.py --selftest   (the controls)
 
 Why. On 2026-10-28 Local hand-proved the degree law (L1072), had it second-read (GC2032) and formalized it in core
@@ -20,14 +20,16 @@ The units are:
 - every row of the kit's catalog tables (`README.md`, `lean/README.md`, `equivalents/README.md`);
 - the header docstring of every kit module (`lean/` and `equivalents/`);
 - every kit declaration, as its doc comment with its first line;
+- complete Lean files, so multiline statements and unindexed declarations remain searchable;
 - every portal entry, as its title, abstract, headline names and kit modules.
 
 The cache. It lives outside git, in `$PLACEGO_KNOWN_CACHE` or else `~/.cache/placego-known`. It holds a shallow
 clone of the kit's main and `portal.json`, and it is refreshed when older than six hours. If a refresh fails, the old
 cache is used and its age is printed. With no cache at all, it says plainly that novelty cannot be judged. A hit here
-is prior art: cite it, and put a new proof in PRIOR-ART.md as "known, reproved here". No hit is not a novelty
+is a candidate match: compare its hypotheses and conclusion before marking a result known. No hit is not a novelty
 certificate, since the literature still has to be searched.
 """
+import hashlib
 import json
 import os
 import re
@@ -153,11 +155,11 @@ def module_name(rel):
 
 
 def lean_units(rel, path, commit):
-    """The module header and one unit per declaration (its doc comment plus its first line)."""
+    """Full source, module header and declaration doc comments with first lines."""
     with open(path, encoding='utf-8', errors='replace') as fh:
         lines = fh.read().split('\n')
     url = KIT_BLOB % (commit, rel)
-    out, doc, in_doc, header_done = [], [], False, False
+    out, doc, in_doc, header_done = [('kit source', module_name(rel), url, '\n'.join(lines))], [], False, False
     for n, line in enumerate(lines, 1):
         s = line.strip()
         if not in_doc and (s.startswith('/-!') or s.startswith('/--')):
@@ -215,8 +217,8 @@ def portal_units():
         out.append(('portal', label, PORTAL_PAGE + e.get('id', ''), text))
         src = os.path.join(PORTAL_SRC, re.sub(r'[^A-Za-z0-9-]', '_', e.get('id', '')) + '.lean')
         if os.path.exists(src):
-            for _, name, _, t in lean_units('x/' + e.get('id', '') + '.lean', src, ''):
-                out.append(('portal declaration', '%s %s' % (e.get('id', '?'), name.split('.', 1)[-1]),
+            for kind, name, _, t in lean_units('x/' + e.get('id', '') + '.lean', src, ''):
+                out.append(('portal source' if kind == 'kit source' else 'portal declaration', '%s %s' % (e.get('id', '?'), name.split('.', 1)[-1]),
                             PORTAL_PAGE + e.get('id', ''), t))
     return out
 
@@ -260,7 +262,8 @@ def snippet(text, pats, width=230):
     return ('...' if i else '') + flat[i:i + width] + ('...' if i + width < len(flat) else '')
 
 
-ORDER = ['portal', 'portal declaration', 'kit catalog', 'kit module', 'kit declaration']
+ORDER = ['portal', 'portal declaration', 'kit catalog', 'kit module', 'kit declaration',
+         'kit source', 'portal source']
 
 
 def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
@@ -283,38 +286,59 @@ def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
         if not show_all and len(rows) > per:
             print('%s  ... %d more (use --all or --per N)' % (indent, len(rows) - per))
     if hits:
-        print('\n%sA hit is prior art: cite it; a new proof goes in PRIOR-ART.md as "known, reproved here".' % indent)
+        print('\n%sHits are candidate prior art: read hypotheses and conclusions before deciding equivalence.' % indent)
     return len(hits)
 
 
+def snapshot_units(units):
+    """Track full source and portal metadata, not moving commit URLs or declaration names alone."""
+    return {'%s|%s' % (k, n): (k, n, u, t) for k, n, u, t in units
+            if k in ('kit source', 'portal source', 'portal')}
+
+
+def fingerprints(units):
+    return {key: hashlib.sha256(unit[3].encode('utf-8')).hexdigest() for key, unit in units.items()}
+
+
+def snapshot_changes(previous, current):
+    return (sorted(current.keys() - previous.keys()),
+            sorted(k for k in current.keys() & previous.keys() if current[k] != previous[k]),
+            sorted(previous.keys() - current.keys()))
+
+
 def new_since_last():
-    """The daily portal check: what was added to the portal and the kit since the last --new on this host."""
+    """Report new or changed source files and portal entries since this host's last complete check."""
     line, ok = refresh(force=True)
     print(line)
-    if not ok:
+    if not ok or 'REFRESH FAILED' in line:
+        print('Daily checkpoint NOT advanced: refresh incomplete; cached searches remain available.')
         return 1
-    units = {'%s|%s' % (k, n): (k, n, u, t) for k, n, u, t in all_units() if k in ('kit module', 'portal')}
+    units = snapshot_units(all_units())
+    current = fingerprints(units)
     try:
         with open(CHECKED) as fh:
             last = json.load(fh)
-        prev = set(last['keys'])
-    except (OSError, ValueError, KeyError):
-        last, prev = None, None
-    with open(CHECKED, 'w') as fh:
-        json.dump({'keys': sorted(units), 'stamp': stamp()}, fh)
-    if last is None:
-        print('no earlier check on this host: this one is the baseline (%d portal entries and kit modules)' % len(units))
-        return 0
-    added = sorted(set(units) - prev)
-    gone = sorted(prev - set(units))
-    print('%d added, %d no longer listed, since the last check (%s)' % (
-        len(added), len(gone), status_line(last.get('stamp', {}), time.time() - last.get('stamp', {}).get('time', 0))))
-    for key in added:
-        kind, name, url, text = units[key]
-        print('\n+ %s  %s  %s' % (kind, name, url))
-        print('      ' + ' '.join(norm(text).split())[:300])
-    for key in gone:
-        print('- %s' % key.replace('|', '  '))
+        previous = last.get('fingerprints')
+    except (OSError, ValueError):
+        last, previous = None, None
+    if previous is None:
+        print('No content baseline (first check or old key-only format): establishing baseline; '
+              'earlier changes cannot be inferred (%d entries/files).' % len(units))
+    else:
+        added, changed, gone = snapshot_changes(previous, current)
+        print('%d added, %d changed, %d no longer listed since the last complete check' %
+              (len(added), len(changed), len(gone)))
+        for prefix, keys in [('+', added), ('~', changed)]:
+            for key in keys:
+                kind, name, url, text = units[key]
+                print('\n%s %s  %s  %s' % (prefix, kind, name, url))
+                print('      ' + ' '.join(norm(text).split())[:300])
+        for key in gone:
+            print('- %s' % key.replace('|', '  '))
+    tmp = CHECKED + '.tmp'
+    with open(tmp, 'w') as fh:
+        json.dump({'fingerprints': current, 'stamp': stamp()}, fh)
+    os.replace(tmp, CHECKED)
     return 0
 
 

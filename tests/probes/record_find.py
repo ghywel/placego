@@ -23,7 +23,7 @@ The rule (WORKFLOW-SAVED-MEMORY.md, literature-before-leaps and record-map): eve
 What is known outside the record. Since 2026-10-28 (L1078) the same terms are also searched in the kit's current main
 and in the portal's listed submissions (`known_find.py`), and those hits are printed after the record's. That day the
 degree law was re-derived although the kit had proved it on 2026-10-18, because nothing searched the kit. A hit there
-is prior art. `--no-known` skips this search (for offline use only), and an unavailable index is reported, not
+is a candidate prior-art match whose hypotheses and conclusion must be read. `--no-known` skips this search (for offline use only), and an unavailable index is reported, not
 silently skipped.
 """
 import glob
@@ -181,7 +181,8 @@ def main():
     print('\n######## known outside the record: the kit\'s main and the portal ########')
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import known_find
-    known_find.report(terms, per, show_all)
+    if known_find.report(terms, per, show_all) < 0:
+        sys.exit(2)
 
 
 if __name__ == '__main__':

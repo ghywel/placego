@@ -360,8 +360,9 @@ app is unpublished by design.
 - `known_find.py` (Local, 2026-10-28, L1078, at the owner's request after the degree law was re-derived): searches
   the kit's current main and the portal's listed submissions. It covers catalog rows, module headers, every
   declaration with its doc comment, and each submission's title, abstract, headlines and Lean source.
-  `record_find.py` runs it after the record's search. `--new` is the daily portal check: what was added since the
-  last check on this host. The cache lives outside git and is refreshed every six hours; an unavailable index is
+  `record_find.py` runs it after the record's search. `--new` reports additions and changes since this host's
+  last complete check; full-source fingerprints catch changes inside existing modules (GC2039). Old key-only
+  checkpoints establish a new content baseline explicitly. The cache lives outside git and refreshes every six hours; an unavailable index is
   reported as "novelty cannot be judged". Controls (`--selftest`):
   - the degree law must hit `AlgebraicDegree`, also through a normalized minus sign;
   - a stripe query must hit the portal, and `FrozenRuler` the kit's modules;

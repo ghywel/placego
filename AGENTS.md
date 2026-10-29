@@ -29,7 +29,8 @@ them at session start or treat their lanes, cadences or suspended rules as curre
 4. Before new work, search what is already known. `python3 tests/probes/record_find.py TERM ...` searches the record
    (with `RECORD-MAP.md`), then the kit's current main (`lean/`, `equivalents/` and the catalogs) and every submission
    the portal lists, with its Lean source (`known_find.py`, since L1078). Then search the literature. A result in the
-   kit or on the portal is known: build on it and cite it, and do not re-derive it. Do not reopen a closed route
+   kit or on the portal is known once its hypotheses and conclusion match: build on it and cite it. A keyword hit
+   alone is only a candidate match. Do not reopen a closed route
    without new evidence, and name the evidence if you do.
    For Rule 30 novelty checks, first fetch the current prize kit and search its actual source, including
    `lean/`, `equivalents/` and their catalogues/READMEs. Record the kit commit and matching theorem names;
@@ -96,7 +97,7 @@ paths. In git, call the HTTPS share "the shared store", never by hostname or add
 - Heartbeats, polling schedules and their cadences run only when the owner turns them on, at the cadence the owner
   sets.
 - The daily portal check is `python3 tests/probes/known_find.py --new`. It refreshes the index of the kit and the
-  portal and lists what was added since the last check. Read each addition's statement, and record in the ledger any
+  portal and lists added or changed source files and entries since the last complete check. Read the changed statements, and record in the ledger any
   that touches our open work.
 
 ## 9. If a prize is won

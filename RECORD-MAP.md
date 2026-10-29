@@ -1768,3 +1768,5 @@ retains constraints. Data/figure by manifest digest; no entropy, universal frequ
 local exclusions -> no00010 at t8. PROOF-SKETCH awaiting Local, finite exact certificate already held.1280
 relaxed local controls pass; contrary0100010001101 produces00010 when the premise is removed. Any four-cell
 support test misses the five-cell contradiction. Evidence packet and limits recorded; no enlarged census.
+
+- GC2039: L1078–L1079 source review accepts known seed echo/parity/fair traces; distinguishes PeriodicPoints hypotheses; known_find now searches full Lean sources and detects changed existing files — reports/rule30-known-results-review.md. Five offline and seven live-index controls pass; cap proof still awaits Local.

@@ -4423,9 +4423,9 @@ against the kit's statements. The portal's listed submissions were searched too,
 | L1064 §7: the seed echo | **known**, reproved here | kit `TFunctionCycles.Phi_cycle` (every a) and `lift_iff`; for the single seed, `Rule30RightPeriods.row_restart` and `per_iff_gap`, which also hold Proposition 23 |
 | The 111 ban on the doubling word | **known** for the single seed | kit `Rule30RightPeriods.no_three` |
 | L1064: the 101 lemma, the mod-4 cascade, the universal start, the tree of beginnings; GC2007's 11011 exclusion | not found | they apply the known criterion above |
-| L1069: no region strictly inside the light cone sustains itself; self-sustained order is periodic | **related**, the elementary local form | kit `PeriodicPoints` proves the global form: exact recurrence at a velocity in [−1, 1) forces spatial periodicity (no gliders). `Odometer.G_bijective` gives the bijection mod 2^W |
+| L1069: no region strictly inside the light cone sustains itself; self-sustained order is periodic | **related**, shared left-permutivity mechanism, different hypotheses (GC2039) | kit `PeriodicPoints`: exact recurrence at a velocity in [−1, 1) forces spatial periodicity (no gliders). `Odometer.G_bijective` gives the bijection mod 2^W |
 | L1071 §3: the left column is a perfect dephaser at the initial slice; correlations only on the right edge | **known**, reproved here | kit `Mixing`: `measure_inter_cells`, `measure_inter_window`, `measurePreserving_cells`, and `measure_diag_eq`, which is GC2032's counterexample |
-| L1066: T^64 fixes only ±1/3; Lemma R (light-speed ring orbits) and its census | not found | `Odometer` (already the record's GC808) excludes periodic points from the orbit closures of finite rows. `PeriodicPoints` excludes velocity 1, the ring case |
+| L1066: T^64 fixes only ±1/3; Lemma R (light-speed ring orbits) and its census | not found | `Odometer` (already the record's GC808) excludes periodic points from the orbit closures of finite rows. `PeriodicPoints` leaves velocity +1 outside its hypotheses; it does not rule out the ring case |
 
 Lesson: four of the seven rows were already in the kit, and one of those (L1054) was also in our own §8.27. One is
 related, and two are not found. What was new sits in the specific evaluations (the 101 lemma, the universal start, the
