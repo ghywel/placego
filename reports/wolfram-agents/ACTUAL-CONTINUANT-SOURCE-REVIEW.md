@@ -481,3 +481,40 @@ is a deprecated re-export. No import rewrite, compatibility shim, tool installat
 
 Independent immutable packet: cited/gc2174-singlefile-development-review/review-manifest.json SHA256
 f3c13a46fec64a8bef9f345fc627fa3fe1a916f6da8f70b023778a4462433725.
+
+## GC2175: amended import and exact official-checker freeze accepted once
+
+Complete L1179, e96d5667 amendment, assembler and164-line runner read. New proof SHA256
+791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110,106307bytes, differs from1e08455e
+ONLY by the official Rule30Prize import. Its module imports Rule30Jen. All23 proof bodies,99 reports
+and eight carried signatures remain byte-identical. Assembler --check reproduces source and manifest
+266d6cd69586c37dd988c504b50cf9c558fd06c4c777ce2b184d6eb0bdd8b3e8. This fixes the official checker's
+importsStatements requirement before the first official run, not a failed official-stage retry.
+
+Runner SHA256 cd7610420f7549f045be313b3ee774aad72bb375f12b9286f8cdb0e71e363a0b passes shell syntax
+and carrying read. It pins proof/manifest/unchanged Check.lean b882f252; prepares a fresh empty root;
+refuses shadow Rule30Submission objects; invokes exactly one workload compile and one unchanged partial
+checker with eight exact names. Source signatures are retained. Whole-block99-report parsing, exact single
+JSON plus the explicitly permitted checker deprecation notice, exit/replay/pass/import/new-axiom/all-declared
+checks and no retry all match the agreement. The known checker notice is not a source warning-free claim.
+
+Independent cheap controls: PREP on actual frozen pins and nine GUARD fixtures run serially, no Lean or
+Wolfram invocation. Actual retained99reports with12wrapped blocks pass against a clearly synthetic checker
+schema. Extra compiler warning, missing report, sorryAx, failed replay, wrong headline, nonstandard declared
+constant, extra JSON and missing statement import each fail at the intended gate. These are parser controls,
+NOT kernel/replay evidence. Plan/harness/results retained immutably at
+cited/gc2175-horizon-runner-review/review-manifest.json SHA256
+96b4d46b7582accefa93a58b2f18dd34c1e959bb167d0b735da998e8a9b5e7d7.
+
+**Accepted for ONE Local M5 run:** exact791e45ed/266d6cd6/b882f252 under runner cd761042 and
+run_capped.py c8c58b49, track-tree, per-process CPU600s, stage wall900s, tree RSS4608MiB, file16MiB,
+disk64MiB, maximum4processes, launch free/inactive5120MiB, ongoing free2048MiB, swap growth128MiB;
+no competing Lean job. Exactly two Lean workload children have1200s CPU envelope; version query5s and
+two Python guards60s each give1325s workload envelope plus the parent shell, itself under the inherited
+per-process cap. Supervisor overhead remains outside that workload accounting and inside the wall-monitored
+stage;600 is not an aggregate CPU claim. Select the installed Lean4.35 explicitly and retain its actual version.
+
+L1179's prediction/counterfactual/search and outcome stops are accepted in that scope. Any compiler/checker/
+parser/resource failure ends this stage with its actual packet retained, no automatic repeat or modular
+rebuild. Success is not inferred from the new reported DEV pass or synthetic controls. Notebook binding,
+execution, portal submission and live verification remain separate later steps. Local stays sole poster.
