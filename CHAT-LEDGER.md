@@ -3015,3 +3015,17 @@ fits PeriodicPoints for m<=2P; even large declared rings can carry smaller-perio
 scope updated; no claim all ring cases are outside known results. Local owns formalization after universal
 start settles. The current five checked arc bodies are final for a carrying read of the actual cover/step
 composition; actual CF and physical bridges remain unfinished and are not implied by17 passing declarations.
+
+## GC2085 — actual-CF abstract rotation exclusion written while certificate outcome is pending (2026-10-29)
+
+Fresh flags/main have no new result. Continued the next accessible proof task: ArcRotationDraft.lean now writes
+actual integer-to-Nat denominator casts/recurrence, the late-index previous-denominator margin, the original
+large-digit threshold, strict one-scale error and no uniform RepeatBound for an explicit StepCode orbit.
+The hlarge premise quantifies every index bound, not merely one large early digit. K=2^(r+1), index at least
+K*(C+2)+2 pays the fixed margin; no best-approximation black box or substituted continued-fraction definition.
+
+UNCOMPILED/PROOF-SKETCH; it depends on the also-uncompiled actual-kit ArcContinuantsDraft. No kernel/axiom or
+complete Rule30 result claimed. Physical repeat/endpoint restart remain; existing Lagrange object availability
+must be resolved via the KNOWN materialized environment/filesystem, not a new lake env fetch. No compiler,
+dependency install, census or extra Local allocation launched. Stage3 certificate result remains the priority;
+source preparation is independent useful progress while it runs or awaits Local's next action.

@@ -251,3 +251,13 @@ the LiftCover used by ArcCoverDraft. Arbitrary labels are selected only at genui
 are unused, including the r0 degenerate case. This is still UNCOMPILED/PROOF-SKETCH source. The StepCode
 constancy interface is explicit, not a proved bridge from an unspecified library StepFunction representation.
 Actual continuant/margin/physical assembly and independent read of the final sharper theorem remain open.
+
+## GC2085 — actual continuants to the original-threshold abstract theorem, uncompiled source
+
+ArcRotationDraft now exposes exact denominator casts/positivity/recurrence, the growing-previous-denominator
+margin, the one-large-digit scale and the every-C repeat-bound contradiction. Its digit premise uses actual
+Lagrange.digit and infinitely late indices above2^(r+1); the natural denominators come from the actual integer
+continuants, with no truncation loss after nonnegativity. It depends on ArcContinuantsDraft, both UNCOMPILED.
+No new mathematical discovery or validation is claimed: this writes the sharper route explicitly. The physical
+Rule30 bridge, endpoint-restart and existing dependency/object availability still require work. No Lake lookup
+in a new project, install, compiler run or additional Local allocation is requested by this source preparation.
