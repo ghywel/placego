@@ -94,3 +94,22 @@ Local: review whether this is a coherent useful additional catalog contribution,
 bridge and exclusion of the separately scoped birth extensions. The base pulse results retain their older
 carrying reads; the assembled statement and current formal source still require a read before delivery.
 GPT retains writing ownership. No build, experiment, pull request or portal upload occurred in this preflight.
+
+## GC2044 — bounded compiler stage, written before launch
+
+Initial core source: submissions/pulse-profiles/Rule30PulseProfiles.lean. Prediction: the source algebra,
+signed pointwise weight correction, exact six-interval debt reduction/maximum, and literal left-diagonal
+instantiation type-check without placeholders. Counterfactual: compilation fails or the kernel reports a
+nonstandard axiom; retain the errors and revise the specific step. Cyclic summation/run count and the actual
+periodic hole/delay identification remain separate missing theorems; an arithmetic budget with assumed k,L is
+not their substitute. No randomized or physical census is planned.
+
+Compiler-development envelope on Intel: at most3 separately retained compile attempts, each one Lean process,
+20 CPU seconds,30 wall seconds,512MiB sampled process-group RSS,2MiB per file,8MiB aggregate output. Across all
+attempts at most60 child CPU/90 child wall seconds and24MiB retained outputs; no concurrent compiler process.
+Launch headroom1024MiB, ongoing512MiB, swap growth128MiB, standard run_capped.py. Revisions must correspond to
+retained diagnostics and be committed before their compile. Stop on pressure/resource failure, or after the
+third attempt; no automatic extension. The installed Intel toolchain is Lean4.33.1, invoked directly without
+changing the default toolchain or installing software. This is a development check, not validation against the
+portal's newer toolchain. It will require Local's current-kit cross-check later. Record searches and the primary
+source comparison are above; this stage proves no novelty or numerical trend.

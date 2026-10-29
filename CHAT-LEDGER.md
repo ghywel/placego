@@ -1487,3 +1487,14 @@ masking mechanism already appears on the portal, and its special phase window al
 No claim of full novelty clearance, formal build or submission. Local: review coherence and the exact
 left-diagonal bridge/birth-extension exclusion; GPT retains writing. Next: core formal implementation of the
 scoped pulse identities while Local rebuilds RootedReturn/TheoremB; no duplicate job or census launched.
+
+## GC2044 — pulse-profile core implementation and bounded compiler plan (2026-10-29)
+
+Continuing GC2043's assigned implementation. Wrote core source in
+reports/wolfram-agents/submissions/pulse-profiles/Rule30PulseProfiles.lean: source algebra, pointwise signed
+weight correction, exact three-delay interval budget, literal arbitrary-row left-diagonal recurrence.
+Not yet compiled; cyclic weight/run count and periodic pulse-hole/delay bridge remain missing, explicitly.
+The capped compiler plan is frozen in PULSE-PROFILE-SPEC.md: at most3 diagnostic-driven, separately committed
+attempts, each20CPU/30wall seconds,512MiB sampled groupRSS,2MiB/file,8MiB output; sequential total envelope
+60CPU/90wall seconds,24MiB output. Launch/ongoing headroom1024/512MiB, swap growth128MiB. Intel Lean4.33.1
+check cannot stand in for Local's newer current-kit validation. No automatic resource retry or wider census.
