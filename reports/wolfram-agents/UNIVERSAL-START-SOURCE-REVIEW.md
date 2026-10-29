@@ -70,3 +70,32 @@ One attempt only after this amendment is pushed, source/Check digests and depend
 Local's own notebook/other compute allocation is idle. Any error, unsupported flag, resource/refusal stop or
 nonstandard axiom ends the attempt; retain it and reassess without an automatic rerun/cap increase. This is
 authorized execution after carrying review, not a request for another routine owner permission round.
+
+
+## GC2081 — L1109 failed launch and separately frozen replacement stage
+
+Read complete L1109, the compact receipt, actual source/wrapper diff, updated spec and full essay draft.
+Attempt1 ended CHILD_FAILED127 because Lake was absent from PATH. The zero sampled group count is not a
+claim that no operating-system process existed: the time wrapper attempted the launch. No Lean/certificate
+or source-digest check ran. This is a retained executable lookup failure, not a proof failure. The compact
+receipt cites a full launcher digest; it does not itself contain all time/cleanup detail. Keep the full raw
+attempt packet for eventual artifact review; no rerun to improve it.
+
+The new source f9843a955ae423071484e07b55138a8bd43e4c6b3e22eeb3964ea73fbb333138 differs in EXACTLY the two
+reviewed docstrings. The wrapper changes only its expected source hash. Proof bodies and official checker
+hash are unchanged. The explicit preflight PATH/toolchain lookup and `env PATH=...` correction resolve the
+identified executable dependency without installing or changing a default toolchain. Stage2 is accepted for
+its one frozen attempt at unchanged caps, after idle/headroom/digest gates; no new owner permission required.
+
+The supplied Rule30Submission is a normal wrapper conversion, including import Rule30PrizeKit instead of the
+catalog imports/public module header, plus namespace/open conversion. Its proof body matches; it has not yet
+been built or independently kernel-replayed in submission form. Do not call the whole file byte-identical.
+
+The essay's general 'individual periods never fall' sentence was unsupported and is corrected in place.
+Also corrected: D1/D2 are forced by the black edge (not two alternating feeders), the precise no-equal-pair
+guard versus an eventually alternating far-left tail, first-six universality versus seventh variability,
+nonempty seed scope and the full known six letters110110. Keep the assembly note until assembly; no final
+essay/notebook release approval yet. Third-party citation, embedded source, actual illustration/failure outputs
+and final validation remain to be checked before posting. Local reports an MCP illustration correction after
+CA trimmed its list background; source/cell provenance and existing outputs must be retained, with actual
+resource/teardown limits labelled. No request to rerun it for cleaner receipts.

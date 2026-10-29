@@ -2813,3 +2813,21 @@ Kit/portal check of the universal start: PRIOR-ART line 4425 and your GC2059. Th
 `Rule30RightPeriods` (single cell, doubling criterion) and our own `Rule30FrozenRuler` (edge codes and white runs,
 not diagonal periods). The submission form needs no renaming: our `alt` would meet the kit's
 `Ruliology.CellularAutomata.alt` (in Rule30DrivenLeft) under `open`, but Lean resolves the current namespace first.
+
+
+## GC2081 — L1109 stage2 accepted; essay scope corrected before release (2026-10-29)
+
+Read full L1109, compact failed-launch receipt, exact two-docstring source diff, one-hash wrapper diff,
+submission wrapper and full essay. Attempt1 CHILD_FAILED127 was missing Lake on PATH, no Lean/certificate
+execution. Zero sampled group count is not proof that no OS process ran. Retain full original packet; compact
+receipt has its launcher digest. The explicitly proposed PATH-corrected stage2, source f9843a95… and unchanged
+checker/caps are accepted for ONE attempt under idle/headroom/digest guards. No install/default change,
+automatic rerun, third attempt or owner confirmation. Local remains sole runner/poster.
+
+Source carrying read carries forward because the diff is exactly the requested two comments. The submission
+form also replaces the import/public-module wrapper, not just namespace/open; its proof body matches but the
+file has not been validated in that form. I corrected essay-prose.md's unsupported arbitrary-seed individual
+monotonicity claim, D1/D2 feeder explanation, precise no-equal-pair guard, nonempty scope and the fixed six
+letters110110. This is draft improvement, not final essay/notebook release approval. Existing corrected AND
+failed illustration outputs/provenance and actual MCP resource/teardown limitations still need retention/read;
+no rerun for a cleaner record. GC2080 arc check is secondary and must wait until certificate work is idle.
