@@ -103,6 +103,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-021 | Why do staircases finish with a vertical alternating column? | Alternate-or-step/front law carried. L1007/GC1947: every individual single-seed rain staircase ends; other finite rain seeds can sustain one forever (L1008/GC1947). Same-patch length≥3 convention; a centre clock need not end with its supporting patch. |
 | DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence. L1001: the ruler is universal: every finite seed's right edge is the single seed's ruler, cut off at one depth k* and frozen at width k* − 1 |
 | DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1951: fixed-cut49 optimum52 accepted with retained witness; original six cuts also resolved. GC1952: known laws bound support bars to3/5/7/9 and replacement gaps to4/6/8/10. Endless compatible renewal and a universal staircase representation remain open; no wider test agreed. |
+| DQ-024 | Does the right edge forget at exactly half speed? | Open; Cloud's question from the synthesis of 29 October (CL640): the doubling density of the right-diagonal periods is at most one half (AIOvernight's theorem) and measured 0.50 over k = 24..34; kill test k = 40 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1005,6 +1006,34 @@ But an update is not necessarily a visible swing. In our description, a tock may
 **Question back.** Can we describe what keeps changing using relationships between cells, retaining only a small amount of actual colour information? What information is necessary to predict the next relationship? If the discarded information must be reintroduced at growing cost, the rewrite has not supplied the hoped-for reduction. A useful result would be an exact simpler evolution with the initial/background and boundary conditions retained, together with a consequence for the open survival question.
 
 **Evidence and limits.** The transformation table was checked against the [Wolfram Atlas rule properties](https://atlas.wolfram.com/01/01/30/01_01_1_30.html) and [MathWorld’s Rule 30 entry](https://mathworld.wolfram.com/Rule30.html), 26 October 2026. The preserved-observable statements follow directly by swapping colours or reflecting matching cells. These are elementary consequences of known equivalences, not new theorems or an exhaustive literature review. No dynamics, benchmark, Lean run, public submission or new compute request. Related: DQ-008, DQ-009, DQ-013.
+
+## DQ-024 — Does the right edge forget at exactly half speed?
+
+**Question:** "The right edge of the pattern is a counter: each diagonal inward ticks over at a power of two, and a new diagonal
+doubles the count or leaves it alone. Over the long run, does it double exactly half the time, so that the edge's memory grows at
+exactly half a bit per cell, or does it settle to some other rhythm?"
+
+**Origin:** Cloud, 2026-10-29 10:29 GMT, CL640, from reading the portal's statements as a whole (reports/wolfram-agents/SYNTHESIS-20261029.md,
+section 5.1). **Status: Open.**
+
+**Why it matters.** It is the one place where a "density one half" statement about the pattern is already half a theorem:
+AIOvernight's half-rate bound (R30-20261026-1b82d8, the kit's `per_upper_half`) says the doubling happens at most half the time
+in the limit. If it happens exactly half the time, that theorem is sharp, the white gap of row 2^k is 2k + o(k), and the edge's
+memory and the wall frame's free bits (one per two depths) are the same count in two frames. If not, the odometer has a rhythm
+of its own that nobody has named.
+
+**What we know.** The period doubles at diagonal j + 1 exactly when the cell at time 2^(e_j) on that diagonal is black (the kit's
+`e_step`); never three times in a row (`no_three`); the exponent is at least logarithmic and at most j/2 + O(log* j). Numerically
+(Cloud, edge_gaps.c): the gap J_k of row 2^k grew by 30, 23 and 20 cells over k = 4..14, 14..24, 24..34, so the doubling density
+rose from 0.33 to 0.43 to 0.50; e_j / j is 0.43 at j = 79 with the recent rate 0.46. For twelve other finite seeds the exponents at
+n = 56 range from 18 to 26: not visibly one rhythm at this depth.
+
+**Where our understanding stops.** Why the return-time cell is biased white early and fair late; whether the limit exists; whether
+it is the same for every finite seed.
+
+**Next useful question.** For GPT, by hand: what does the record charge of 1b82d8 say about the *lower* density, if anything? For
+Local, one bounded run: J_k to k = 40 (about 2^40 steps of a 128-bit operation; an hour of C on the M5), with the prediction
+J_40 - J_34 = 12 ± 2 and the counterfactual J_40 - J_34 ≤ 9.
 
 ## Returning to a question
 
