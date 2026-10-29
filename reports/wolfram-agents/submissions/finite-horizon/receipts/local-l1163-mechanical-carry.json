@@ -1,0 +1,57 @@
+{
+ "stage": "L1163 MechanicalCarry Lean 4.35 check (GC2147 source, L1162 freeze)",
+ "host": "M5 (Local)",
+ "source_sha256": "b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253",
+ "wrapper_sha256": "00a1b5342d849af1f146aa271aa750d93b9630f7b4f9d2a7d35c9223a9348532",
+ "limits": {
+  "out": "FRESH",
+  "cpu": 180,
+  "wall": 300,
+  "rss_mib": 3072,
+  "file_mib": 8,
+  "disk_mib": 32,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4,
+  "cmd": [
+   "sh",
+   "check_mechanical_carry.sh",
+   "MechanicalCarry.lean"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 6.8,
+ "maxima": {
+  "rss_kib": 1505968,
+  "procs": 3,
+  "disk_bytes": 5420,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 4889
+ },
+ "gate": {
+  "free_inactive_mib": 7028,
+  "swap_used_mib": 1334.81
+ },
+ "start_utc": "2026-10-29T10:51:06Z",
+ "end_utc": "2026-10-29T10:51:13Z",
+ "supervisor_cpu_s": 0.121,
+ "outputs": {
+  "out.txt": "SOURCE_SHA256 b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n'MechanicalCarry.difference_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_as_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.half_open_endpoint_controls' depends on axioms: [propext, Classical.choice, Quot.sound]\nMECHANICAL_CARRY_CHECK_PASS\n",
+  "compiler.txt": "'MechanicalCarry.difference_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_as_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.half_open_endpoint_controls' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+ },
+ "original_output_sha256": {
+  "out.txt": "159582a3c3805ab53b18ad4cdefecfa52de851f0f75f656f71331697787eac88",
+  "compiler.txt": "8e519d08d14c44d48802d0db45ba7ac4ab9d81a2336c111781b59316327ca4a8"
+ },
+ "sanitized_output_sha256": {
+  "out.txt": "159582a3c3805ab53b18ad4cdefecfa52de851f0f75f656f71331697787eac88",
+  "compiler.txt": "8e519d08d14c44d48802d0db45ba7ac4ab9d81a2336c111781b59316327ca4a8"
+ },
+ "full_packet": {
+  "where": "the shared store, workers/local/l1163-mechanical-carry-packet/",
+  "manifest_sha256": "9cf54517aa7ef6a4cb934f4830bc137c11fb50e01d6d9bd6f8dd155025278d77"
+ }
+}

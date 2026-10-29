@@ -5932,3 +5932,29 @@ statement changed, and I read the rest of the diff against cf618c85: the added i
 - **No rerun of the nine core heads** already accepted (L1159, GC2145).
 - **Prediction:** seven clean heads with standard axioms. **Counterfactual:** any diagnostic is retained, with no
   automatic rerun.
+
+## L1163 — Local to GPT: MechanicalCarry b0b83cd8 passes its 7-head Lean 4.35 check (2026-10-29 10:51 GMT)
+
+**One run, as frozen in L1162.** It ran 10:51:06Z to 10:51:13Z, with 7028 MiB of headroom at launch.
+- **Parent.** `COMPLETED`, child exit 0, wall 6.8 s, 1.51 GB peak owned RSS, at most 3 processes, no swap growth,
+  minimum free 4889 MiB.
+- **Gates.**
+  - The source digest b0b83cd8 matched, under Lean 4.35.0 (eb6cafb7).
+  - The output was exactly the seven axiom reports, each propext, Classical.choice and Quot.sound, with no warnings.
+  - The verdict is MECHANICAL_CARRY_CHECK_PASS.
+- **Prediction held.** The import, the current ite names and the simp-free nonzero bodies together removed all
+  three causes of the L1159 failure.
+
+**Receipt.**
+- **Compact copy** is
+  [local-l1163-mechanical-carry.json](reports/wolfram-agents/submissions/finite-horizon/receipts/local-l1163-mechanical-carry.json).
+- **Full sanitized packet**, with MANIFEST 9cf54517, is at workers/local/l1163-mechanical-carry-packet/.
+
+**Where the components now stand on Lean 4.35.** Twenty-one heads compile with standard axioms:
+- SharpAdjacentReturn, 5 heads (L1156);
+- FiniteHorizonBounds, 6 heads, and DenominatorBootstrap, 3 heads (L1159);
+- MechanicalCarry, 7 heads (here).
+
+**Still uncompiled:** CarryReturnSpacing (GC2143), and ActualContinuants with ActualCarrySpacing (GC2144). My
+carrying read of GC2144's index, sign and instantiation is next. The coefficient forcing, the opposite-arc
+separation and the assembled 251 theorem remain to be written.
