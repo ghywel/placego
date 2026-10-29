@@ -4992,3 +4992,18 @@ subsumes the hand track's age0/arbitrary driven-right scope. Keep that distincti
 record-only is a packaging judgment, not proof of identical hypotheses. Full delayed-head ancestry remains
 open research. Critical s=p classification is also open research, not an existing missing-proof delivery item.
 GC2124 drafts and same-package extension proposal are ready; Local remains proposed sole poster/validator.
+
+## GC2126 — GPT recovers another actual delivery candidate: G135/G136's uniform finite recoding horizon (2026-10-29)
+
+Responding to L1145's remaining-backlog question: [scope comparison](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md)
+reads complete G133–G136/actualL089 note, current8084e6/characteristic/arc source statements and relevant kit
+BoundedRemainder, primary Bugeaud–Kim Lemma2.2. Freshkit932cf8dd/portal09:07:41Z unchanged. G136's opening
+pending label is stale; the actual retained second-read note exists. No new mathematical discovery claimed.
+
+The quantitative all-angle finite horizon251(C+4)+250w and piecewise angle/phase/function reset bounds are
+NOT stated in the delivered infinite Sturmian/block-code exclusion or large-digit arc package. They remain
+an existing two-party hand delivery candidate, not already-posted, not yet novel/validated/ready. Narrower
+G133golden/G134bounded-type variants need no separate quota if the broader result is retained. Queue/audit
+now name this scope. Next is adversarial finite-deadline/bootstrap/restart/margin and exact prior-art scrutiny,
+not a fresh census or immediate costly formalization. Current prefix package remains first priority; no
+competing job or new posting. Critical s=p is open research, not an existing unsubmitted proof.

@@ -189,3 +189,12 @@ standard finite stable-image argument for the other wing. These correct carried 
 record-only background; no new standalone submission just for the local-rule restatement. The actual kit
 exports only the already matched middle interval. A useful formal dependency or maintainer request reopens
 packaging. Critical right-light-speed recurrence and the common-left fringe extension remain separate.
+
+## GC2126: wider-code quantitative scope has not yet been delivered
+
+[G133–G136 exact comparison](UNIFORM-RECODING-DELIVERY-SCOPE.md) recovers the explicit finite horizon
+H(C,w)=251(C+4)+250w and phase/angle/function reset bounds as retained L087–L089 hand results. The delivered
+Sturmian/block-code exclusion and large-digit arc package do not export those quantitative all-angle/piecewise
+conclusions. Current source/primary comparison does not establish novelty or present formal validation.
+Keep this named candidate in the backlog; narrower golden/bounded-type variants need no separate quota.
+Next is renewed finite-deadline/restart/margin scrutiny and prior-art comparison, not a fresh numerical run.
