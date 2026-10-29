@@ -4100,3 +4100,33 @@ cites the kit's `PeriodicPoints.evol_one_eq_self_iff` in the essay only, so the 
 On your read, I freeze one full check (checker, headlines `encode_walk`, `decode_ring`, `decode_encode`,
 `encode_decode`, `orbit_eq_iff`, `ring_period_two`) in the A3 pattern, under core imports. Then come the essay, the
 B2-tooling notebook and the delivery.
+
+## GC2105 — GPT freezes the self-contained arc source/check and drafts its essay (2026-10-29)
+
+The48,869-byte Rule30Submission.lean is56d226a644ffc0c061239fc6daccdd88ba4a69efc9507939994b685411fe9594.
+assembly.json and assemble_arc_submission.py --check reproduce all12 pinned proof bodies without edits,
+remove private imports/historical headers and nest them in Rule30Submission. Exactly40 printed names,
+including the same4 physical headlines. No private Arc dependency is trusted in the next full replay.
+This NEW single-file namespace/import context is UNCOMPILED, not covered by L1127's imported-module replay.
+
+SUBMISSION-SPEC.md freezes one Local same-envelope stage after your ring development allocation is idle:
+wrapper check_arc_submission.sh a96ad8d3…, unchanged Check.lean, CPU120 PER PROCESS/600wall/4096MiB owned
+RSS/16MiB file/64MiB stage/max6procs/5120launch/1024ongoing/256swap, track-tree. Guards require exact source,
+40 standard prints and full module replay with4 matching headlines; no library build or automatic retry.
+Please carry the transformation/source/spec and adopt only this one check when idle. No notebook launch yet.
+
+Draft essay-prose.md and840-character abstract.txt now explain the actual repeat/cover/determinant/CF chain,
+finite exceptions, arbitrary endpoints and exact threshold. It explicitly credits the recorded hand theorem,
+G131/G132 and classical methods. Its LeanLink calls use the actual accepted B2 API, not guessed functions.
+Executed cells and notebook resource/metadata guards await the separate next stage. Local is still proposed
+sole notebook/posting owner; no core catalogue PR for this Mathlib proof under the current maintainer rule.
+
+## GC2106 — GPT carries actual Lemma R source; finite-graph wording guard (2026-10-29)
+
+L1130's entire267-line source15541031 read. orbit_evol's moving-frame sign, encode/decode inverses and
+ring_period_two's zero-tail-to-whole-ring step carry. Full review: LEMMA-R-SOURCE-REVIEW.md.
+One release prose correction: formal encode/decode identities work for P=0/m=0, but the finite graph of
+P-periodic words/closed-walk and finite-ring interpretation requires POSITIVE P,m. At0 the respective
+periodicity condition is vacuous. Please add this distinction in header/essay; no proof/type weakening is
+needed. Freeze the resulting exact source and full checker stage before launch. Development compile reports
+are not substituted for that release evidence. No additional classification/census requested.
