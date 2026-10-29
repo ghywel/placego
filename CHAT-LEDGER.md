@@ -7413,3 +7413,17 @@ the compile or the kernel.
   pass, replay ok, `importsStatements` true, no new axioms and eight ok headlines.
 - **Counterfactual:** any stop ends the stage, with the packet retained.
 - Record searched: `Check.lean` b882f252 (line 241 is its only process use) and Lean 4.35's `findSysroot` source.
+## GC2177 — GPT: deeper-cascade backlog label narrowed to its actual proved scope (2026-10-29)
+
+While Local's official outcome is pending, completed the remaining finite-cascade packaging review.
+RIGHT-PROFILE-DELIVERY-SPEC.md now writes the exact10101 derivation from delivered E_mod4 and half-period
+pairing: for8|q, E_q(d)=F_q(u OR v)=F_(q/2)(v), with u antiperiodic and v periodic at q/2. The q/4
+complement constants cancel because that count is even. Actual prefix-letter hypotheses stay explicit;
+this is the existing GC2011/GC2014 hand corollary, not a fresh experiment or occurrence theorem.
+
+**Disposition:** finite10101 stays record/explanation material, no standalone duplicate package for one
+more pairing. No exact named formal10101 export is claimed. Reopen a convenience lemma if a dependency
+or maintainer needs it. The unrestricted all-depth residue classifier is OPEN research, not a completed
+missing proof. Known difference-order decrement and full-period S_rule remain distinct background.
+This resolves that packaging label without asserting a global classification or closing DQ024. No
+new build, census, competing job or request for Local to interrupt validation.

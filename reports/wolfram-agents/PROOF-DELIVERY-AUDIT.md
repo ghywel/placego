@@ -214,3 +214,12 @@ compiler record as known/reproved with exact boundary-predicate differences and 
 No source assembly, notebook, new upload or reply to an external party. Receipt hash-domain clarification
 continues without rerun. Original7d47a9 remains valid. G135/G136 quantitative horizon and common-left fringe
 remain actual older delivery candidates; critical s=p and generic nonloss remain open research questions.
+
+## GC2177: finite deeper-cascade packaging resolved; arbitrary-depth question stays open
+
+The existing10101 hand corollary is one finite pairing of the delivered profile identities, with all
+8|q/phase/prefix guards preserved. Its explicit derivation and reopening condition are in
+RIGHT-PROFILE-DELIVERY-SPEC.md. Retain it as explanatory record material, not another standalone
+submission; no exact named declaration is asserted present. An all-depth residue classifier is still
+an open reasoning problem, not a finished proof absent from the portal. Other wider-code scope and
+current horizon delivery still require their own outcomes; no global completion is claimed.
