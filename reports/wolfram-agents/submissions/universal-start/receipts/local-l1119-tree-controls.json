@@ -1,0 +1,117 @@
+{
+ "escape_rss": {
+  "exit_reason": "RSS_STOP",
+  "child_rc": -15,
+  "wall_s": 0.84,
+  "maxima": {
+   "rss_kib": 335936,
+   "procs": 3,
+   "disk_bytes": 51,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 6329
+  },
+  "cleanup": {
+   "signal": "TERM",
+   "group_processes_left": 0,
+   "owned_seen": 3
+  },
+  "limits": {
+   "cpu": 30,
+   "wall": 60,
+   "rss_mib": 200,
+   "file_mib": 4,
+   "disk_mib": 8,
+   "min_free_mib": 1024,
+   "launch_free_mib": 2048,
+   "swap_growth_mib": 256,
+   "track_tree": true
+  },
+  "launcher_sha256": "8f0ca73b2381b501438a1a2a928cad7893af755b0e0ae8090bcb6861b56abed9"
+ },
+ "orphan": {
+  "exit_reason": "LEFTOVER_CLEANED",
+  "child_rc": 0,
+  "wall_s": 2.77,
+  "maxima": {
+   "rss_kib": 28640,
+   "procs": 3,
+   "disk_bytes": 51,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 6498
+  },
+  "cleanup": {
+   "signal": "TERM",
+   "group_processes_left": 0,
+   "owned_seen": 3
+  },
+  "limits": {
+   "cpu": 30,
+   "wall": 60,
+   "rss_mib": 2048,
+   "file_mib": 4,
+   "disk_mib": 8,
+   "min_free_mib": 1024,
+   "launch_free_mib": 2048,
+   "swap_growth_mib": 256,
+   "track_tree": true
+  },
+  "launcher_sha256": "0f4043c2b2609f7a55bcb6788c2bdfb4ad4c43b4cde62f8974d6e6ff44e28cc6"
+ },
+ "orphan_off": {
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 3.12,
+  "maxima": {
+   "rss_kib": 17232,
+   "procs": 2,
+   "disk_bytes": 51,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 6499
+  },
+  "cleanup": null,
+  "limits": {
+   "cpu": 30,
+   "wall": 60,
+   "rss_mib": 2048,
+   "file_mib": 4,
+   "disk_mib": 8,
+   "min_free_mib": 1024,
+   "launch_free_mib": 2048,
+   "swap_growth_mib": 256,
+   "track_tree": false
+  },
+  "launcher_sha256": "44cb51671183379d6958fe7af4c71b2d9f5f5f7c0b028ff8c8822c65560a6641"
+ },
+ "clean": {
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 3.82,
+  "maxima": {
+   "rss_kib": 28672,
+   "procs": 3,
+   "disk_bytes": 51,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 6511
+  },
+  "cleanup": null,
+  "limits": {
+   "cpu": 30,
+   "wall": 60,
+   "rss_mib": 2048,
+   "file_mib": 4,
+   "disk_mib": 8,
+   "min_free_mib": 1024,
+   "launch_free_mib": 2048,
+   "swap_growth_mib": 256,
+   "track_tree": true
+  },
+  "launcher_sha256": "260058f83fedfc08bcf35c4e65fef98b19572ec281e93b3d0fc456e2400b0ab1"
+ },
+ "grandchild_alive_after": {
+  "escape_rss": false,
+  "orphan": false,
+  "orphan_off": true,
+  "clean": false
+ },
+ "summary": "TREE_CONTROLS_PASS (run_capped_tree_controls.py at 5cf42bc5); orphan_off's live grandchild was killed by the control script"
+}

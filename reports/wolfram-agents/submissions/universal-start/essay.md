@@ -103,7 +103,8 @@ DirectoryQ[$Rule30PrizeKit]
 ```
 
 ```wl
-rule30Submission = LeanImportString["import Rule30PrizeKit
+rule30Submission = LeanImportString["import Ruliology.CellularAutomata.Rule30Prize
+import Ruliology.CellularAutomata.Rule30Realization
 
 /-!
 # Rule 30: the universal start of the right diagonals

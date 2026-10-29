@@ -1,0 +1,52 @@
+{
+ "limits": {
+  "cpu": 60,
+  "wall": 120,
+  "rss_mib": 1024,
+  "file_mib": 4,
+  "disk_mib": 8,
+  "min_free_mib": 1024,
+  "launch_free_mib": 2048,
+  "swap_growth_mib": 256
+ },
+ "start_utc": "2026-10-29T05:23:10Z",
+ "end_utc": "2026-10-29T05:23:14Z",
+ "gate": {
+  "free_inactive_mib": 6614,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 4.11,
+ "maxima": {
+  "rss_kib": 306192,
+  "procs": 2,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6400
+ },
+ "cmd": "from the pipeline kit root: WolframKernel -script tests/probes/wolfram/universal_start_notebook_checks_control.wl (a800e230...; helper 5581c572...)",
+ "stdout": [
+  "{",
+  "\t\"positive_grid\":true,",
+  "\t\"positive_axioms\":true,",
+  "\t\"positive_kernel\":true,",
+  "\t\"missing_output\":true,",
+  "\t\"wrong_grid_value\":true,",
+  "\t\"wrong_grid_head\":true,",
+  "\t\"unknown_axiom\":true,",
+  "\t\"missing_axiom_key\":true,",
+  "\t\"extra_axiom_key\":true,",
+  "\t\"wrong_cert_axioms\":true,",
+  "\t\"axiom_code_is_held\":true,",
+  "\t\"failure_containing_Success\":true,",
+  "\t\"display_only_Success\":true,",
+  "\t\"wrong_success_tag\":true,",
+  "\t\"wrong_declaration_count\":true,",
+  "\t\"inconsistent_module\":true,",
+  "\t\"no_output_code_evaluated\":true",
+  "}",
+  "UNIVERSAL_START_OUTPUT_CONTROLS_PASS"
+ ],
+ "launcher_sha256": "4f3c1c243de8cce7fee452ab1eb1e25f1a77e8b35e3ddf4a4f28e55c161cb56c"
+}

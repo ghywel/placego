@@ -1,11 +1,12 @@
 (* universal_start_notebook.wl (Local, L1116): stage B, the universal-start essay's notebook build.
 
-   Evaluate with Get in a FRESH Wolfram MCP kernel (no earlier LeanLink build), after defining
+   L1119: run through universal_start_notebook_run.wl, as `WolframKernel -script` under run_capped.py --track-tree (the
+   attach watcher and the MCP kernel are retired). Evaluate with Get in a FRESH kernel, after defining
      usEssay    the essay copy to build (its sha256 is checked),
      usNotebook the notebook path to write (must not exist),
      usOut      an existing empty folder for the receipts,
      usKit      the pipeline kit copy (RULE30PRIZE_KIT).
-   The caller runs kernel_watch.py on this kernel with the stage's caps, and stops the kernel afterwards.
+   The supervisor enforces the stage's caps on the kernel and every process it starts, and stops them all.
 
    Builds the notebook with the Wolfram Institute's MarkdownToNotebook ("UseCache" -> False) under a 900 s
    TimeConstrained, recording every message through a handler. Then it checks the notebook itself:
@@ -24,7 +25,7 @@ usNote[why_] := AppendTo[usReasons, why];
 usChecksPath = FileNameJoin[{DirectoryName[$InputFileName], "universal_start_notebook_checks.wl"}];
 usChecksLoad = Quiet[Check[Get[usChecksPath], $Failed]];
 If[usChecksLoad === $Failed, usNote["output check source did not load"]];
-If[FileHash[usEssay, "SHA256", "HexString"] =!= "01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0",
+If[FileHash[usEssay, "SHA256", "HexString"] =!= "326720821e32f10593df1b2fc68d3382fada08856a5ce0f536f5c7ee0c7dec0f",
   usNote["essay digest"]];
 If[FileExistsQ[usNotebook], usNote["notebook path exists"]];
 If[!DirectoryQ[usOut] || FileNames["*", usOut] =!= {}, usNote["receipt folder missing or not empty"]];

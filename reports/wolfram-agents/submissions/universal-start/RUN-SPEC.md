@@ -427,3 +427,76 @@ process lifetimes time+kernel (two), conservative120childCPU; sampler/supervisor
 extra workload or escaping persistent child is a discrepancy, not permission to widen. Retain full JSON/
 pass marker/exit/cleanup even on failure. Source/caps pushed first; no routine owner round. A3 and this
 control may run in either order but sequentially, never simultaneously. Full B remains unapproved.
+
+## A3 and the control stage: both PASS; stage B (core) proposed with tree supervision (L1119)
+
+**A3** (GC2092's attempt; `receipts/local-gc2092-a3.json`). Launched at 05:22:04Z: no Lean or kernel process
+running, headroom 6647 MiB.
+- **Result.** `COMPLETED` in 39.79 s, `UNIVERSAL_START_CORE_SUBMISSION_CHECK_PASS`.
+- **Resources.** Peak group RSS 1.89 GB against A2b's 4.55 GB, largest single process 38.95 s real, headroom
+  never below 6033 MiB, no swap growth.
+- **Checker.** Module `Rule30Submission`, verdict pass, replay ok over 258 constants, the official import, 125
+  declared constants all standard, no new axioms. The four headlines pass with the same axiom sets as A2.
+
+**Control stage** (GC2092's attempt; `receipts/local-gc2092-controls.json`).
+`WolframKernel -script universal_start_notebook_checks_control.wl`, with the helper 5581c572… and controls
+a800e230…, under CPU 60 / wall 120 / RSS 1024 / file 4 / disk 8 / launch 2048. It ended `COMPLETED` in 4.11 s at
+306 MB with `UNIVERSAL_START_OUTPUT_CONTROLS_PASS`: all 17 controls true, the positive axiom control included,
+after your sort fix.
+
+**What LeanLink does (read-only inspection of the installed paclet 1.2.2, `Kernel/Lean.wl`).**
+- `LeanImportString` writes the source to a temporary file and runs `leanCompile`, which calls
+  `RunProcess[{lean, "-o", olean, "-R", root, source}, …]`. That is a separate `lean` process, which takes its
+  own process group.
+- It then loads the olean in-process through the shim library. `KernelCheck` is also in-process
+  (`leanlink_wl_kernel_check`).
+- Other paths start processes too: `lake build` (`LeanBuild`), `--deps-json`, `LeanEvaluate`'s polled
+  `StartProcess`, and an `ln -sf`.
+
+So the notebook's main compile, the certificate's kernel evaluation included, runs in a child outside the group.
+GC2092's caution was right, and the post-build snapshot in r2 could not see it.
+
+**The supervisor fix: `run_capped.py --track-tree`** (opt-in; the default behaviour is unchanged, sha256
+91a3e90b…).
+- **Ownership.** Every 0.5 s, one `ps` call grows an owned set: the group, and every process whose parent is
+  owned when it is seen. Each is keyed by (pid, start time), so a reused PID never counts. Owned processes stay
+  tracked after reparenting.
+- **Limits.** RSS and process counts sum the live owned set. Every stop, a leftover at the end, and an
+  exception inside the supervisor terminate the owned set as well as the group, and cleanup verifies that none
+  remains. Per-process CPU and file limits are rlimits, inherited by every descendant as before.
+- **Its limit.** A process created and orphaned within one 0.5 s interval is not seen.
+- **Controls** (`tests/probes/wolfram/run_capped_tree_controls.py`, frozen before its run; outcomes in
+  `receipts/local-l1119-tree-controls.json`). Each starts a grandchild in a new session, as Wolfram's children
+  are:
+
+  | Control | Outcome | Grandchild afterwards |
+  |---|---|---|
+  | `escape_rss`, tracked, 300 MB under a 200 MiB cap | `RSS_STOP`, 336 MB counted | gone |
+  | `orphan`, tracked | `LEFTOVER_CLEANED` | gone |
+  | `orphan_off`, untracked | `COMPLETED`, the old behaviour | alive (then killed by the control) |
+  | `clean`, tracked | `COMPLETED` | nothing left |
+
+**The release files are now the core form.**
+- `Rule30Submission.lean` is the A3-checked 409e7c59… (the `-core` file is removed).
+- `essay.md` is rebuilt from `essay-prose.md` (unchanged, your GC2090 edits) with that exact embed:
+  `326720821e32f10593df1b2fc68d3382fada08856a5ce0f536f5c7ee0c7dec0f`.
+
+**Stage B, proposed for GPT's read, not launched.**
+- **Command.** From the pipeline kit root, with elan tools on PATH:
+  `run_capped.py --track-tree --out FRESH --cpu 1200 --wall 1200 --rss-mib 4096 --file-mib 64 --disk-mib 256
+  --launch-free-mib 5120 --min-free-mib 1024 --swap-growth-mib 512 -- WolframKernel -script
+  universal_start_notebook_run.wl ESSAY KIT`.
+- **Driver** (`universal_start_notebook_run.wl`, sha256 dab6844c…). It copies the essay into CAPPED_OUT, sets
+  the notebook path and a fresh `nb-receipts` folder there, and loads the builder. Its exit code is 0 only when
+  the builder reports no reasons.
+- **Builder** (`universal_start_notebook.wl`, sha256 edeb7056…). It now pins essay 32672082…, and only that
+  pin and its header text changed. It uses your structural checks unchanged.
+- **Not under the disk cap.** LeanLink's temporary source and .olean (a few MB) go to the system temporary
+  folder.
+- **Prediction.** A build of 60–300 s and RESULT OK:
+  - 6 outputs, 0 message cells, no `$Failed`;
+  - the grid, axioms and KernelCheck checks pass, with `Declarations` 258;
+  - an owned-tree peak of 2–3.5 GB: the external `lean` compile, about A3's process, plus the kernel, plus the
+    in-process load and KernelCheck replay.
+- **Counterfactual.** Any stop, leftover, exit code other than 0, gate failure or count discrepancy ends the
+  stage and is retained, with no rebuild. One attempt, with no other job running.

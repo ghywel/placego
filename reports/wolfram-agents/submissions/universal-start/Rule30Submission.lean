@@ -1,4 +1,5 @@
-import Rule30PrizeKit
+import Ruliology.CellularAutomata.Rule30Prize
+import Ruliology.CellularAutomata.Rule30Realization
 
 /-!
 # Rule 30: the universal start of the right diagonals
