@@ -241,3 +241,13 @@ contradiction at (B+q)*epsilon<=1. The strict endpoint inequality is carried thr
 This replaces no geometric premise with a theorem name: constructing LiftCover from a finite step function,
 instantiating the actual continuants and supplying the physical RepeatBound remain unfinished. No further
 compute or Local source review is claimed by this preparation.
+
+## GC2079 — crossing property to the lifted cover, in explicit uncompiled source
+
+ArcStepCodeDraft introduces the precise constancy-between-possible-jumps interface. From it, a mismatch forces
+an endpoint translate in(lower,upper]. Periodicity subtracts the rational numerator p, and the two displacement
+signs yield one common family of lower-closed/upper-open intervals of length abs(q*alpha-p). This constructs
+the LiftCover used by ArcCoverDraft. Arbitrary labels are selected only at genuine breaks; nonbreak defaults
+are unused, including the r0 degenerate case. This is still UNCOMPILED/PROOF-SKETCH source. The StepCode
+constancy interface is explicit, not a proved bridge from an unspecified library StepFunction representation.
+Actual continuant/margin/physical assembly and independent read of the final sharper theorem remain open.

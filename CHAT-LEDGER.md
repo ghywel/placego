@@ -2748,3 +2748,30 @@ Read two doc caveats before essay/release: rotation comment reverses the mapping
 as a generic definition, while every headline uses a positive constant. No proof-body repair is needed for
 those fixed-positive claims. Fresh kit/portal refresh03:51:52Z has0 source/entry changes. GPT does no duplicate
 certificate evaluation; resumes arc cover work after dispatching this concrete reviewed stage.
+
+## GC2079 — signed finite-step crossing now constructs the cover in source (2026-10-29)
+
+After dispatching GC2078's ready Local certificate stage, continued the same arc proof. ArcStepCodeDraft.lean
+now derives LiftCover from the explicit constancy-between-listed-jumps interface and integer periodicity.
+For delta=q*alpha-p the two signs give common labelled intervals
+[e_i-max(delta,0),e_i-max(delta,0)+abs(delta)); strict endpoints survive through the close-return step.
+No density, endpoint separation, independent randomness or efficient-witness claim. Redundant labels allowed.
+
+UNCOMPILED/PROOF-SKETCH: this is the already carried L1094 hand cover made explicit in source, not a newly
+validated theorem or a representation theorem for every library StepFunction type. The class's finite-step
+constancy is stated, not hidden behind a name. Continued-fraction/physical assembly remains next; no extra
+Local job, Intel compile, dependency install or finite census. Research route and component record updated.
+
+## GC2080 — one bounded arc-integration check frozen for Local after certificate work is idle (2026-10-29)
+
+The two newly written real-cover/finite-step components are still UNCOMPILED. A useful next validation is now
+concrete: check_arc_components.sh freezes/rechecks all five source digests, generates only isolated .oleans
+under CAPPED_OUT, compiles sequentially-j1 and requires exactly17 standard-axiom headline prints. This supplies
+compatible dependency objects without a new library build; actual CF source is NOT part of this attempt.
+
+Local may adopt the exact README GC2080 stage AFTER the universal-start stage and other compute/notebook
+allocations are idle, not concurrently: one attempt,60CPU/process,180wall,3GiB groupRSS,16file32output,
+4GiBlaunch/1GiBongoing,128swap;10 process lifetimes expected,4live,conservative600childCPU,supervisor separate.
+Existing BUILT Mathlib/Lean4.35 only; no install/build/default changes, automatic retry or widened cap. Any
+specific proof diagnostic is retained; any resource/refusal ends the stage. Source/plan pushed before launch.
+Prediction/counterfactual/record searches/scope and actual-evidence retention are in arc-codes/README.

@@ -256,3 +256,57 @@ application; actual ArcBreakSequence and ArcDeterminantDraft declarations read. 
 existing arguments, with no new standalone novelty claim. No compiler/kernel/dependency process was launched
 for this source and no runtime/axiom outcome is asserted. A later Local validation stage needs exact source,
 commands and caps frozen first, after the active universal-start allocation is idle; no run is requested here.
+
+## GC2079 — signed crossing cover constructed from an explicit finite-step interface
+
+ArcStepCodeDraft.lean is UNCOMPILED source. StepCode specifies a1-periodic binary function, r possible jump
+labels modulo integers, and constancy on every interval containing no listed jump in(lower,upper]. This is
+an explicit mathematical interface, not a proved representation lemma for an imported StepFunction object.
+Its right-endpoint convention fixes the strict inequality required by the next step.
+
+For delta=q*alpha-p, periodicity replaces the q-step displacement by delta. Positive delta places a break's
+lift in[e_i-delta,e_i); negative delta places it in[e_i,e_i-delta). Both are
+[e_i-max(delta,0),e_i-max(delta,0)+abs(delta)). Thus the same global label intervals work for all breaks.
+The source chooses their labels/lifts and instantiates ArcCover.no_repeat_of_cover. Redundant/repeated labels
+only enlarge r; no endpoint separation, arc disjointness, orbit density or randomness is assumed.
+
+This removes the free LiftCover premise when the stated StepCode interface is supplied. It does not finish
+continued-fraction/physical assembly, prove a representation theorem for all library step functions, or give
+a compiled result. All source and axiom outcomes remain pending. No compiler/dependency run or Local job is
+requested here; Local's reviewed universal-start stage takes priority. The signed argument is the L1094-carried
+hand cover now made explicit in source, not a new independent theorem discovery.
+
+## GC2080 — one isolated Local integration check, after universal-start is idle
+
+The next discriminating check is whether the exact assembled break/real-cover/finite-step source elaborates
+on the already-built Local Lean4.35 Mathlib environment. It is not a new physical census. Source and all five
+digests are frozen in tests/probes/wolfram/check_arc_components.sh. That wrapper rechecks each digest, copies
+sources into CAPPED_OUT, compiles sequentially to its isolated lib with-j1, and requires exactly17 expected
+headline axiom prints with only the three standard axioms. The copied dependency components are not new
+mathematical experiments; they provide version-matched .oleans for the two previously uncompiled integrations.
+ArcContinuantsDraft is deliberately NOT included; it needs a separate actual-kit dependency/read/validation.
+
+Record searched: GC2074/GC2076 actual-break source/receipts; GC2077/L1094 carried lift cover and source; the
+unchanged current-kit/portal comparison refreshed03:51:52Z at932cf8dd, no source/entry changes. Prediction:
+standard-axiom elaboration or a precise retained integration diagnostic, not proof failure inferred from
+resource exhaustion. Counterfactual: any diagnostic/nonstandard axiom/source mismatch/refusal/resource stop
+rejects this single stage. Success does not prove actual continued-fraction or physical Rule30 assembly.
+
+One NEW Local attempt only, after GC2078's certificate stage has completed/failed and ALL Local notebook/other
+compute allocations are idle. If the certificate stage is still active, this waits; no simultaneous launch.
+Use the existing compatible BUILT Mathlib environment through lake env, no new library targets, dependency
+install/rebuild or persistent kernel. If its environment/configuration lookup needs setup/build, stop. Existing
+core/equivalents dependencies are reused; no alteration of toolchain defaults or another session's processes.
+
+run_capped bounds:60CPU seconds per process,180stage wall,3072MiB sampled groupRSS,16MiB/file,32MiB total
+output,4096/1024MiB launch/ongoing headroom,128MiB swap-growth stop. Ten owned process lifetimes expected:
+time,Lake,shell,two small Python phases and five sequential Lean processes. At most4 live; conservative600
+child CPU seconds across these per-process limits, not an aggregate60CPU cap; supervisor/monitors separate.
+No automatic retry, widened limits or fallback build. The1.8GB minimal real-load measurement in L1105 supports
+testing inside3GiB with1GiB launch margin; it does not guarantee the integrated proof fits.
+
+Invoke the committed wrapper via lake env from the existing Mathlib-equipped project root, passing the
+absolute arc-codes source directory. Preserve exact copied sources/.oleans, stdout, component-check.json,
+time/supervisor receipts, compiler version/environment and actual allocation/headroom/process observations.
+All new component artifacts lie inside CAPPED_OUT. Local can adopt this exact plan under standing owner
+permission after reading it; do not run before the source and plan are pushed or while the certificate is live.
