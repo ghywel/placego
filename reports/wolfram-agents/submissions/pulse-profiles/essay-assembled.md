@@ -493,8 +493,8 @@ theorem first_pulse (q arrival : Nat) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
     simp [pulse]
   · intro i hi
     have ht : arrival+i < q := by omega
-    have hne : arrival+i ≠ 0 := by omega
-    simp [pulse, Nat.mod_eq_of_lt ht, hne]
+    have hne : (arrival+i) % q ≠ 0 := by rw [Nat.mod_eq_of_lt ht]; omega
+    simp [pulse, hne]
 
 /-- The pulse's reset arrival is q+1 for every phase representative. -/
 theorem pulse_reset_arrival (q arrival : Nat) (haq : arrival ≤ q) :
