@@ -9,7 +9,7 @@ import hashlib, os, sys
 out = Path(os.environ['CAPPED_OUT'])
 source = Path(sys.argv[1]).read_bytes()
 checker = Path('Check.lean').read_bytes()
-expected_source = 'b62c3d583be2555189a259325faa64314633531ffe8b080d0f50a2c405f74ad2'
+expected_source = 'f9843a955ae423071484e07b55138a8bd43e4c6b3e22eeb3964ea73fbb333138'
 expected_checker = 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905'
 for name, data, expected in [('module', source, expected_source), ('checker', checker, expected_checker)]:
     digest = hashlib.sha256(data).hexdigest()

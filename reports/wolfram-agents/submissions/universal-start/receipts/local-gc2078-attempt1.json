@@ -1,0 +1,33 @@
+{
+ "limits": {
+  "cpu": 900,
+  "wall": 900,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T03:56:40Z",
+ "end_utc": "2026-10-29T03:56:41Z",
+ "gate": {
+  "free_inactive_mib": 6425,
+  "swap_used_mib": 1686.81
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": 127,
+ "wall_s": 1.04,
+ "maxima": {
+  "rss_kib": 0,
+  "procs": 0,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6425
+ },
+ "cmd": "run from the pipeline kit root: lake env sh tests/probes/wolfram/check_universal_start.sh (at 29ec1618) reports/wolfram-agents/submissions/universal-start/Rule30UniversalStart.lean (sha256 b62c3d58...)",
+ "stderr_first_line": "time: lake: No such file or directory",
+ "stdout": "",
+ "note": "The supervisor's PATH lacked the Lean toolchain directory, so the child command was not found (rc 127). No Lean process ran: no digest check, no compile, no certificate evaluation.",
+ "launcher_sha256": "03a282399016a43599a8b0a7495c768a4b996b2ee50bd3f0eb4c9e44845b57de"
+}

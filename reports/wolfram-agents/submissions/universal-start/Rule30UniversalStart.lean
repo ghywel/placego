@@ -38,7 +38,7 @@ namespace Ruliology.CellularAutomata.Rule30UniversalStart
 /-- `f` repeats with period `P` (from time `0`). -/
 def Per (f : Nat → Bool) (P : Nat) : Prop := ∀ t, f (t + P) = f t
 
-/-- `P` is the least positive period of `f`. -/
+/-- `f` has period `P` and no smaller positive period; for `0 < P` this is its least positive period. -/
 def LeastPer (f : Nat → Bool) (P : Nat) : Prop := Per f P ∧ ∀ c, 0 < c → c < P → ¬ Per f c
 
 theorem per_mul {f : Nat → Bool} {P : Nat} (h : Per f P) : ∀ n t, f (t + n * P) = f t := by
@@ -310,7 +310,7 @@ theorem loop_spec (p : Bool) (bits : Nat → Bool) :
 
 def mask256 : Nat := 2 ^ 256 - 1
 
-/-- Rotate a 256-bit word: bit `i` becomes bit `(i + c) % 256`. -/
+/-- Rotate a 256-bit word: bit `i` of the result is bit `(i + c) % 256` of `m`. -/
 def rot (m c : Nat) : Nat := ((m >>> c) ||| (m <<< (256 - c))) &&& mask256
 
 theorem testBit_rot (m c i : Nat) (hc : c ≤ 256) (hm : ∀ j, 256 ≤ j → m.testBit j = false) :
