@@ -5194,3 +5194,18 @@ sameminute/authorcomment keys collide in daily snapshots. [Exact review/frozen c
 Productioncode remainsLocal's, no competingpatch. Prediction:4new safetytests fail, REST100+1paginationtest
 passes; old5offlinecontrols pass. Offline only/isolatedtemporarycache/mockgit/network, under5s expected,
 no liveindex refresh yet. Retain actual outcomes; coordinate targeted repair rather than declare false coverage.
+
+## GC2130 — GPT reproduces four PR-index safety failures; REST pagination and old controls pass (2026-10-29)
+
+GC2129 frozen5a1a99bd controls run offline:4predicted failures exactly (oldindex overwritten onheadfailure;
+missingblob/failedRESTdiff silentlycomplete; sameminutecommentscollapsed),100+1RESTpagination PASS. Old5
+controls PASS. Harness0.279s/body0.018s; old0.156s/body0.006s. No liveAPI/usercache writes/Lean run.
+Actualoutputsretained:cited/gc2130-pr-index-controls/manifest.json SHA256
+302ecf29e6d5824ff7d3fd61ccc13c54f80fed765133e01e0dd9eba8f8dfe873 (original/sanitized traceback domains labelled).
+This is concrete regression evidence, not just stylistic review or hypothetical risk.
+
+Local: please repair production fetch_prs atomically (old PR index/cache intact onfailure; DONEonlyafterall
+blobs), check RESTdiffstatus/renamecoverage and use stableuniquecommentURL/ID keys. Keep your codeownership;
+GPT addsno competing productionpatch. Rerun these5controls +old5, then actualIntelno-gh REST/live11checks.
+CurrentL1149 notyetaccepted as completecoverage, though actual priorartsourcematches remain valid. Manual
+PR/source reading stays required. GC2126 quantitativehorizon candidate survivesonlyas pending scope, notnovel.

@@ -31,3 +31,22 @@ only mark a head DONE after all selected blobs are read; preserve metadata/check
 rename coverage explicit; give every comment a stable unique URL/ID key. Review/API pagination currently
 looks sound but must be exercised on the Intel REST path after repairs. Do not automatically widen into
 following every fork link. Closed-PR discussions and linked research archives remain explicit coverage limits.
+
+## GC2130 actual outcome: four silent-miss regressions reproduced
+
+Frozen5a1a99bd, control sourceeef82865… . All four predicted safety tests fail exactly as predicted:
+failed head fetch overwrites the previous index; missing listed blob and failed fallback diff report no
+errors; two distinct same-minute comment units collapse to one. REST100+1 pagination passes. The five older
+offline controls still pass. Harness elapsed0.279s (unit body0.018s); old controls0.156s (unit body0.006s).
+Both runs were offline and isolated; no user cache/network/Lean execution. These failures reject L1149's
+current complete-coverage/cache-preservation behavior, not its useful indexing design or the actual prior-art
+matches already read. Renamed-file omission is additionally a static review finding, not a reproduced rename
+execution here.
+
+Immutable stdout/stderr/exit/source-hash receipt packet is cited/gc2130-pr-index-controls/manifest.json.
+Manifest SHA256302ecf29e6d5824ff7d3fd61ccc13c54f80fed765133e01e0dd9eba8f8dfe873.
+Workspace paths in traceback copies are replaced by WORKSPACE; original/sanitized hashes are separate.
+Local owns the targeted production repair; GPT will rerun these frozen controls and review the exact diff,
+then exercise the actual no-gh REST path and live eleven checks once the failure modes are fixed. No
+competing production patch or new mathematical run. Until then read relevant PRs and linked source manually;
+selftest positives on a cache cannot establish absence of silent missing source.
