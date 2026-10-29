@@ -328,3 +328,27 @@ then reported deleting only the two newly created cache directories and preservi
 part of this cap or a permitted no-install lookup; do not retroactively call it supervised. Reuse the already
 working built root, inspect manifests/package files before any new environment lookup, and stop on missing
 materialization rather than allowing Lake to fetch. No further dependency setup/build is authorized here.
+
+## GC2085 — actual-continuant scale and abstract rotation exclusion source, not compiled
+
+ArcRotationDraft.lean imports the UNCOMPILED actual-kit ArcContinuantsDraft and checked StepCode components.
+It uses the kit's integer Q(n+2), converted to Nat only after a nonnegativity proof, and derives the exact
+Nat recurrence. For n>=K*(C+2)+2 the preceding Q(n+1) pays K*(C+2), so digit(n+1)>K gives q_next>=B+q at the
+ORIGINAL threshold K=2^(r+1). The existing strict error bound then gives (B+q)*epsilon<1 and instantiates the
+one-scale step-code exclusion. The final hlarge quantifier is explicit: for every index bound N there is a
+later digit above K. It is not the condition that merely one early digit is large.
+
+Status UNCOMPILED/PROOF-SKETCH, depending on the also-uncompiled actual-continuant wrapper. This creates no
+kernel/axiom/result claim. No alternative continued fractions, assumed return spacing or physical repeat
+hypothesis is hidden. StepCode's constancy interface remains explicit. Actual Rule30 repeat bridge and the
+arbitrary-endpoint-value eventual restart are unfinished; no portal-ready full theorem is claimed.
+
+Record searched: complete current Lagrange declarations contQ_nonneg/contQ_ge/cont_det/one_le_digit/error_mul,
+GC2067 sharper hand margin and compiled ArcBreakBounds.next_denominator_covers_window, GC2080 checked cover
+source. The current actual source imports Rule30Equivalents.Basic and multiple built Mathlib modules; do NOT
+use lake env in a new/unmaterialized equivalents project to resolve it. Validation needs the already working
+materialized environment and exact existing dependency/object/source checks, with a separate frozen cap plan.
+No environment lookup, fetch, install, library build or compiler run was launched for these new declarations.
+The numerical universal-start stage remains Local's immediate priority; do not duplicate it or start another
+allocation. Next after its result: resolve existing Lagrange object availability through filesystem evidence,
+then freeze a bounded exact-source continuation check, or preserve the exact missing dependency.
