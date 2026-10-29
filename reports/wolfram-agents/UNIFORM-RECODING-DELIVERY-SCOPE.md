@@ -460,3 +460,33 @@ negative keyword results are not novelty. Further comparison must target phase-r
 critical exponent or language recurrence. No second finite scan, new build, formalization or posting owner assigned.
 The horizon notebook/delivery remains first priority; this is an explicit unresolved audit candidate, not a reason
 to postpone it or claim the full delivery backlog finished.
+
+
+## GC2183: the parity obstruction is classical; locate its quantitative origin-sensitive part
+
+Read Rote's original Theorem3 and its proof through Theorem4 in
+[Sequences with subword complexity2n, section4](https://page.mi.fu-berlin.de/rote/Papers/pdf/Sequences+with+subword+complexity+2n.pdf).
+Partial parity sums of an irrational Sturmian word are exactly the complementary-symmetric complexity2n family.
+Its offset-parity proof explains why matching derivatives may lift to complementary words. Thus the cumulative-bit
+mechanism in GC2179 is **known background**, not additional content. The author's linked errata also correct the
+rotation parameter guard in Theorem2; no unqualified use of that guard is made here.
+
+More specifically, read actual Lemma3.7 and Theorem3.10 (statement and written SU-case proof) of
+[Medkova–Pelantova–Vuillon2019](https://numdam.org/item/10.1051/ita/2019004.pdf), beyond the previously read abstract.
+Lemma3.7 filters derivative-prefix occurrences by even parity of the intervening prefix. Theorem3.10 gives three
+return-word forms according to stable/unstable Sturmian returns, assuming the associated derivative is standard.
+Its written proof illustrates skipping odd-parity returns. No full-paper audit or direct G144 equivalence is asserted.
+
+For explicit placement a<j and n>=1, the elementary occurrence identity is
+
+    c[a,a+n)=c[j,j+n)
+    iff g[a,a+n-1)=g[j,j+n-1) and XOR_{a<=t<j}g(t)=0,
+
+where g(t)=c(t+1) XOR c(t). Difference equality makes c(a+i) XOR c(j+i) independent of i; the initial difference
+telescopes to the displayed parity. Odd parity gives the complementary block instead. This is the known parity
+mechanism, also anticipated by G148/GC158, not a fresh theorem or proposed submission. GC2181's I(n) minimizes
+j over ALL earlier a, whereas the cited prefix-return theorem fixes the reference prefix. Repeatedly applying it
+to shifted origins may help, but requires its standard-derivative guard and a quantitative origin bound; these
+are not discharged merely by the existence of three return words. Exact G143/G144 prior-art disposition remains
+open. Generic keyword searching is now parked in favor of this specific guarded return/first-placement comparison.
+No larger sample, formalization or compute stage was introduced.

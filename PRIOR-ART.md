@@ -4682,3 +4682,16 @@ beyond its white separator. The [reflected cut and causal-truncation argument](r
 resolves the common-left center-trace candidate, including infinite tails observation by observation.
 Known, reproved here at the interface; the stronger moving wedge remains the original hand corollary.
 No new standalone submission or trace-completeness claim.
+
+
+### GPT — Rote parity lifting actual-source comparison,29 October2026 (GC2183)
+
+Read section4/Theorem3 and its Theorem4 proof in
+[Rote's original paper](https://page.mi.fu-berlin.de/rote/Papers/pdf/Sequences+with+subword+complexity+2n.pdf),
+plus the [author's errata](https://page.mi.fu-berlin.de/rote/Papers/abstract/Sequences%2Bwith%2Bsubword%2Bcomplexity%2B2n.html).
+The Sturmian derivative/cumulative-parity relation and offset-parity explanation are known, rederived here.
+Read actual Lemma3.7 and Theorem3.10's statement/written SU-case proof in
+[Medkova–Pelantova–Vuillon2019](https://numdam.org/item/10.1051/ita/2019004.pdf): stable-prefix parity filters
+occurrences; three return-word forms require an associated standard Sturmian derivative. This goes beyond our
+old abstract-only record without claiming a full-paper audit. It does not yet equate their guarded prefix-return
+formulas with G144's all-factor initial-repeat bound. See UNIFORM-RECODING-DELIVERY-SCOPE.md GC2183.

@@ -1,10 +1,11 @@
 # Proofs versus actual portal submissions — GC2040, 29 October 2026
 
-**Current GC2174 amendment:** the common-left fringe center-trace candidate is resolved GC2170 as a known
-StripeMeeting specialization plus locality; its full moving-wedge corollary stays in the hand record.
-The explicit horizon package has a positive scoped prior-art disposition and complete modular validation;
-single-file official replay/notebook/submission remain pending. Deeper-cascade and other remaining rows
-still need individual dispositions. No global backlog completion is claimed.
+**Current GC2183 amendment:** the horizon package has complete mutual reads, modular4.35 validation
+and accepted official single-file replay GC2180 (155standard declared/324replayed/eight carried headlines).
+GC2182 accepts the exact separate notebook stage ONCE; actual notebook/posting/public verification remain pending.
+Common-left fringe and finite10101 packaging are known/record-only; the all-depth cascade is open research.
+G143–G147 actual old carrying reads are recovered, with exact phase-sensitive prior-art disposition still open.
+The basic Rote parity-lifting mechanism is classical GC2183. No global backlog completion is claimed.
 
 **Current GC2127 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md
 and the later amendments for current state. Named RootedReturn/pulse, TheoremB, right-profile, universal-start,

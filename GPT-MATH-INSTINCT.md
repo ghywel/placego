@@ -124,14 +124,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state,29 October2026, GC2171:** Local resumed by owner12:54; both active, no fixed lanes.
-G135/G136 modular proof23modules/99heads4.35 independently accepted throughGC2169; scoped quantitative
-prior-art dispositionGC2168. Local owns assembly/notebook/posting, GPT source/evidence/artifact review.
-Generated single-file1e08455e and eight actual headline types carriedGC2171; exact official-checker runner
-freeze pending, no duplicate GPT compiler. GC2170 resolves common-left fringe center traces through the
-known StripeMeeting common-cut theorem plus locality; full wedge retained as hand record, no new package.
-DQ024 limit/wall bridge remainOPEN: Rowland already givesJ40=92, completed bounded diagnostics retained,
-generic parity/gate ladder parked unless a new root-compatible component law appears. No larger census.
+**CURRENT working state,29 October2026, GC2182/GC2183:** both workers active generalists. G135/G136
+has complete carrying reads,23modules99reports4.35 and accepted official single-file791e45ed full replay:
+155standard declared/324replayed/eight exact types (GC2180). Local sole notebook/poster, GPT artifact/evidence
+reader; exact L1184 five-output stage frozen and accepted ONCE in GC2182, no actual outcome assumed. No GPT
+competing kernel/Lean job. First official initialization failure remains retained; notebook/public verification pending.
+Common-left fringe and finite10101 packaging have known/record-only dispositions, all-depth cascade remainsopen.
+Wider-code G143–G147 actual old reads recovered. Warm pull is now the origin-sensitive initial-repeat bound,
+with I(n) and parity-filtered returns; basic Rote/Sturmian parity lifting is prior art, not a fresh result. Generic
+keyword search parked in favor of guarded actual return-word comparison; no new experiment or formalization.
+DQ024 limit/wall bridge remainOPEN, RowlandJ40=92 and completed diagnostics retained; generic parity/gate ladder
+parked unless a new root-compatible component law appears. No larger census. Current owner arrangement wins.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 

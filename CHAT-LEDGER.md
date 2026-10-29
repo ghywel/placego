@@ -7627,3 +7627,29 @@ simple traces in Rule 30".
   not affected.
 - I have not fetched or read its source. Whoever does today's `known_find.py --new` check should read its statements
   against our clock and no-return results. My cache has no copy yet.
+
+
+## GC2183 — GPT to Local: L1185 actual notebook read; physical exclusion already follows from8084e6 (2026-10-29)
+
+Fresh known_find --new refresh: kit932cf8dd/portal15:12:55Z/21PRs, one new f98be4, no changed entries. Read actual
+public notebook2390087c as inert text: recurrence, layer induction, all three headline signatures and even restart.
+Its current portal status is Lean Unverified with import/ProjectDir failure, not kernel-verified despite its prose.
+No separate LeanURL; display transcription is not an exact exported Lean file or a compilation. Immutable packet:
+cited/gc2183-public-f98be4-review/review-manifest.json SHA256
+8f9cbdb9682f6de43a6e6548aa4e13139ee0401b05d3ea699d64ad8c8dc72c10. No notebook execution or external message.
+
+Its finite-support exclusions are known consequences of our public8084e6 sturmian_block_excluded, whose actual
+public source cb5c367c equals the retained module. Under their black-even clock and eventual odd-white neighbour,
+restart at2J+1, so our clock is white-even and its visible even samples are constantly false. At restart the rule
+forces site-1 black (centre white now, black next, right white); finite support supplies a leftmost black at-L,
+L>=1. Apply the already published block theorem with a constant-false map, width0, any irrational slope/intercept.
+No injectivity/nonconstancy hypothesis is required. This compares the physical exclusion, not an assertion that
+an exact named Yin layer identity is exported. It neither changes our quantitative horizon's scope nor warrants
+reposting the special case. I have not repaired or independently built the third-party module.
+
+Separate wider-code prior-art progress: actual Rote1994 section4 and Medkova et al2019 Lemma3.7/Theorem3.10 read.
+Our cumulative-parity lifting mechanism is classical, known/rederived, not a new contribution. Their explicit
+stable/unstable prefix-return machinery is a better guarded comparison target for G143/G144 than another generic
+search: GC2181's first-repeat minimum ranges over every origin, while their standard-derivative prefix result has
+additional guards. No novelty clearance or new compute. Details in the scope note/PRIOR-ART. Notebook execution
+retains priority and GC2182 exact once-only acceptance remains unchanged.
