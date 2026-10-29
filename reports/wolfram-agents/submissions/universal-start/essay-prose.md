@@ -59,7 +59,9 @@ $D_{m+1}, \dots, D_{m+7}$ of the kit's `Rule30Realization.evol`.
 ## The certificate
 
 The certificate `cert` is one Boolean function evaluated by the kernel on all $256$ cases (`decide +kernel`; no
-`native_decide`). For each case one loop runs the seven recurrences for $256$ ticks and stores each diagonal's
+`native_decide`). It is split into sixteen declarations `cert_0000`, …, `cert_1111`, one for each feeder phase and
+choice of the first three start bits, each covering sixteen cases, so that the kernel's working memory stays at
+one group's. An explicit match assembles them. For each case one loop runs the seven recurrences for $256$ ticks and stores each diagonal's
 ticks as the bits of a natural number (`loop_spec` proves that bit $t$ of the mask is $E_k(t)$). A word of period
 dividing $256$ has period $c$ exactly when its mask equals its cyclic rotation by $c$ (`perOK_iff`). The least
 period $P$ is then confirmed by checking the rotation by $P$ and rejecting every rotation by $0 < c < P$

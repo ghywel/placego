@@ -21,10 +21,10 @@ The proof has three parts.
    phases and their OR is always black. `D (m-1)` and `D m` are then alternating with equal phase.
 2. *The all-time bound.* A running XOR of a `P`-periodic forcing repeats after `2P` (`run_double`), so the seven
    diagonals after two alternating feeders repeat after `4, 8, …, 256` ticks (`E_per`).
-3. *The certificate* (`cert`, `decide +kernel`). For both feeder phases and all seven free start bits (`256`
-   cases), one loop computes the first `256` ticks of the seven diagonals as bit masks (`loop_spec`). Cyclic
-   rotation checks then decide each period and reject every smaller positive period (`perOK_iff`,
-   `leastOK_spec`).
+3. *The certificate* (`cert`, assembled from sixteen `decide +kernel` declarations `cert_0000` … `cert_1111`
+   of sixteen cases each). For both feeder phases and all seven free start bits (`256` cases), one loop
+   computes the first `256` ticks of the seven diagonals as bit masks (`loop_spec`). Cyclic rotation checks then
+   decide each period and reject every smaller positive period (`perOK_iff`, `leastOK_spec`).
 
 The seventh diagonal's period is `32` or `64` according to the start bits; nothing is claimed beyond `D (m+7)`.
 -/
@@ -389,9 +389,75 @@ def certOK (p b0 b1 b2 b3 b4 b5 b6 : Bool) : Bool :=
     leastOK (M p bits 3) 16 && leastOK (M p bits 4) 32 && leastOK (M p bits 5) 32 &&
     (leastOK (M p bits 6) 32 || leastOK (M p bits 6) 64)
 
-/-- **The finite certificate**, checked by the kernel: both feeder phases and all seven free start bits. -/
-theorem cert : ∀ p b0 b1 b2 b3 b4 b5 b6 : Bool, certOK p b0 b1 b2 b3 b4 b5 b6 = true := by
+/-! The certificate is split into sixteen declarations of sixteen cases each, one per feeder phase `p` and
+start bits `b0 b1 b2`, so that the kernel releases its evaluation caches between them. -/
+
+theorem cert_0000 : ∀ b3 b4 b5 b6 : Bool, certOK false false false false b3 b4 b5 b6 = true := by
   decide +kernel
+
+theorem cert_0001 : ∀ b3 b4 b5 b6 : Bool, certOK false false false true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0010 : ∀ b3 b4 b5 b6 : Bool, certOK false false true false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0011 : ∀ b3 b4 b5 b6 : Bool, certOK false false true true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0100 : ∀ b3 b4 b5 b6 : Bool, certOK false true false false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0101 : ∀ b3 b4 b5 b6 : Bool, certOK false true false true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0110 : ∀ b3 b4 b5 b6 : Bool, certOK false true true false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_0111 : ∀ b3 b4 b5 b6 : Bool, certOK false true true true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1000 : ∀ b3 b4 b5 b6 : Bool, certOK true false false false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1001 : ∀ b3 b4 b5 b6 : Bool, certOK true false false true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1010 : ∀ b3 b4 b5 b6 : Bool, certOK true false true false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1011 : ∀ b3 b4 b5 b6 : Bool, certOK true false true true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1100 : ∀ b3 b4 b5 b6 : Bool, certOK true true false false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1101 : ∀ b3 b4 b5 b6 : Bool, certOK true true false true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1110 : ∀ b3 b4 b5 b6 : Bool, certOK true true true false b3 b4 b5 b6 = true := by
+  decide +kernel
+
+theorem cert_1111 : ∀ b3 b4 b5 b6 : Bool, certOK true true true true b3 b4 b5 b6 = true := by
+  decide +kernel
+
+/-- **The finite certificate**, checked by the kernel: both feeder phases and all seven free start bits. -/
+theorem cert : ∀ p b0 b1 b2 b3 b4 b5 b6 : Bool, certOK p b0 b1 b2 b3 b4 b5 b6 = true
+  | false, false, false, false, b3, b4, b5, b6 => cert_0000 b3 b4 b5 b6
+  | false, false, false, true, b3, b4, b5, b6 => cert_0001 b3 b4 b5 b6
+  | false, false, true, false, b3, b4, b5, b6 => cert_0010 b3 b4 b5 b6
+  | false, false, true, true, b3, b4, b5, b6 => cert_0011 b3 b4 b5 b6
+  | false, true, false, false, b3, b4, b5, b6 => cert_0100 b3 b4 b5 b6
+  | false, true, false, true, b3, b4, b5, b6 => cert_0101 b3 b4 b5 b6
+  | false, true, true, false, b3, b4, b5, b6 => cert_0110 b3 b4 b5 b6
+  | false, true, true, true, b3, b4, b5, b6 => cert_0111 b3 b4 b5 b6
+  | true, false, false, false, b3, b4, b5, b6 => cert_1000 b3 b4 b5 b6
+  | true, false, false, true, b3, b4, b5, b6 => cert_1001 b3 b4 b5 b6
+  | true, false, true, false, b3, b4, b5, b6 => cert_1010 b3 b4 b5 b6
+  | true, false, true, true, b3, b4, b5, b6 => cert_1011 b3 b4 b5 b6
+  | true, true, false, false, b3, b4, b5, b6 => cert_1100 b3 b4 b5 b6
+  | true, true, false, true, b3, b4, b5, b6 => cert_1101 b3 b4 b5 b6
+  | true, true, true, false, b3, b4, b5, b6 => cert_1110 b3 b4 b5 b6
+  | true, true, true, true, b3, b4, b5, b6 => cert_1111 b3 b4 b5 b6
 
 /-- **The universal start, profile form**: after two equal-phase alternating feeders, whatever the seven start
 bits, the next diagonals have least periods `4, 8, 8, 16, 32, 32`, then `32` or `64`. -/
@@ -571,7 +637,7 @@ theorem least_exists (P : Nat → Prop) [DecidablePred P] :
 the universal start follows. -/
 theorem universal_start_finite (x : Int → Bool) (h0 : x 0 = true) (hr : ∀ i : Int, 0 < i → x i = false)
     (L : Nat) (hl : ∀ i : Int, i < -(L : Int) → x i = false) :
-    ∃ m, 2 ≤ m ∧ LeastPer (rightDiag x (m + 1)) 4 ∧ LeastPer (rightDiag x (m + 2)) 8 ∧
+    ∃ m : Nat, 2 ≤ m ∧ LeastPer (rightDiag x (m + 1)) 4 ∧ LeastPer (rightDiag x (m + 2)) 8 ∧
       LeastPer (rightDiag x (m + 3)) 8 ∧ LeastPer (rightDiag x (m + 4)) 16 ∧
       LeastPer (rightDiag x (m + 5)) 32 ∧ LeastPer (rightDiag x (m + 6)) 32 ∧
       (LeastPer (rightDiag x (m + 7)) 32 ∨ LeastPer (rightDiag x (m + 7)) 64) := by
