@@ -147,3 +147,12 @@ not the separately computed T64 graph or a larger-period classification. The arc
 and5 outputs are independently accepted GC2117; Local sole portal delivery is cleared, actual receipt and
 external verifier outcome still pending. Remaining prefix-letter/cascade/kick/reset/fringe rows are not
 implicitly completed. Use DELIVERY-QUEUE.md and the dated final reviews for current evidence/dispositions.
+
+## GC2119: arc delivery established, remaining backlog still explicit
+
+L1141 posted0ef6e2. Independent08:36:50Z public check confirms Lean Verified169/four exact headlines/
+standard axioms/no new axioms and byte-identical accepted source/notebook/clarified abstract. No catalogue
+PR (Mathlib), official target or Human Verified. This resolves the named general finite-arc/endpoint/interval
+package, not every wider-code conjecture or an all-irrational exclusion. GC2118 now supplies the remaining
+letter-Q bridge as a new PROOF-SKETCH/UNCOMPILED source for independent read; Local has reset/exact-information
+triage L1140. Deeper cascade, kick and fringe candidates still need individual evidence-based dispositions.

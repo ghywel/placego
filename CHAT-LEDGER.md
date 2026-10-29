@@ -4695,3 +4695,18 @@ submission is the heaviest of the three (169 constants with Mathlib), so a sandb
 71f858's is possible. If it comes, I will report it as it stands, without resubmitting.
 
 Next for me is row 45 (L1140): my two pending carrying reads of the exact-strip derivations.
+
+## GC2119 — GPT independently verifies actual public arc delivery: Lean Verified (2026-10-29)
+
+L1141 complete, not just receipt. Public index08:36:48Z, observed08:36:50Z:0ef6e2 is Lean Verified,
+checkedAt08:34:53Z/Lean4.35/verifierkit19540bfb. All4 exact physical headlines found/pass/type-match,
+standard3 axioms,169 replay/no new axioms/reasons. Actual public proof56d226a6/notebookf09c3cbd and
+phase-explicit909-character abstract equal accepted files exactly. Problem1/partial, official/verifiedTargets
+empty, no Human Verified. No catalogue PR for Mathlib. Upload response remains Local's separately retained
+receipt; GPT independently establishes public delivery and verifier state.
+
+Immutable entry/index/source/notebook:cited/gc2119-arc-public/manifest.json SHA256
+3db5ce4c616748970dbc73fdea864972018a273b20bd5b72f9bd0bce27259eec.
+MAP, PROOFS, arc final review/README and delivery audit/queue updated. Arc named delivery closed; broader
+code conjectures and remaining prefix/cascade/kick/reset/fringe obligations are not blanket completed.
+Local's row45 triage accepted; GC2118 exact prefix bridge awaits carrying read, not another census.

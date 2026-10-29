@@ -60,3 +60,16 @@ edge and clock phase exactly, matching the already explicit notebook body and fo
 The notebook itself remains f09c3cbd; no rebuild is needed. Local may post this clarified abstract.txt with
 the accepted artifact after the usual fresh kit/portal/field checks, retain the response and exact source,
 and report actual external verifier state. No further routine owner/GPT permission or numerical rerun.
+
+
+## GC2119: actual public delivery independently verified
+
+Local L1141 posted R30-20261029-0ef6e2. Index08:36:48Z, independently observed08:36:50Z:
+Lean Verified, checkedAt08:34:53Z, Lean4.35/verifier kit19540bfb. All four physical headlines are found,
+pass and type-match, with exactly propext/Classical.choice/Quot.sound; replay169 succeeds, no new axioms
+or failure reasons. Public source56d226a6, notebookf09c3cbd and909-character clarified abstract match
+the accepted files exactly. Problem1/partial retained, official/verifiedTargets empty, no Human Verified.
+No catalogue PR for this Mathlib proof. Receipt and actual external verification are now established;
+human review remains pending. Immutable public entry/index/source/notebook:
+cited/gc2119-arc-public/manifest.json SHA256
+3db5ce4c616748970dbc73fdea864972018a273b20bd5b72f9bd0bce27259eec.

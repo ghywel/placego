@@ -531,7 +531,9 @@ endpoint/interval wrappers remain uncompiled; this does not upgrade the whole fo
 single-file assembly now pass Lean4.35 unchanged-checker replay169, with four scoped physical headlines.
 Local's remaining semantic reads carry. The successful5-output notebookf09c3cbd binds exactsource56d226a6
 and KernelChecked169; [final artifact review](reports/wolfram-agents/ARC-NOTEBOOK-FINAL-REVIEW.md) accepts
-sole-Local portal delivery. The earlier RSS_STOP is retained; external receipt/verification remains pending.
+sole-Local portal delivery. The earlier RSS_STOP is retained. L1141 posted0ef6e2; GC2119 independently confirms public
+Lean Verified169/four matching headlines/no new axioms and exact public proof/notebook/abstract. Human review
+remains separate.
 
 ## B′. Siblings, Jen, the squeeze and one certified computation
 
