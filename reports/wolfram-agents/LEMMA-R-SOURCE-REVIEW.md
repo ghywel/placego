@@ -41,3 +41,28 @@ sets are found/type-matching, with the stated standard axioms. COMPLETED4.17s,15
 4 processes,min headroom6175MiB, no swap growth/residual process reported. Original full time/checker/objects
 remain Local; this is an attributed structured-evidence review, not a GPT rerun. Executed notebook/portal
 remain pending. Current essay-prose read accepted GC2108; final source/actual outputs must be compared.
+
+## GC2112 / L1134: exact notebook stage accepted, outcome pending
+
+Read the complete builder, bare-kernel driver, output gate,18 fixtures, compact control receipt and frozen
+RUN-SPEC. Static source-literal decoding confirms essay0cefd19b embeds EXACT checked submission23a3be9f;
+the string contains literal newlines, so a strict JSON decoder initially refused it. Allowing literal control
+characters in that passive string decode reproduces the source exactly; that diagnostic is not a Lean or
+notebook failure. The essay has6 code cells. All18 actual producer fixtures pass (3.71s,291504KiB sampled
+owned RSS,2 processes,min headroom6566MiB, no swap growth/residual process reported).
+
+The actual ring builder integrates nrWriteReceipt/nrResourceMetadata. Its driver requires a parsed nonempty
+summary with required keys, zero reasons/messages,6 outputs and true computation/axiom/kernel gates; it does
+not repeat the old existence-only receipt bug. The held literal illustration,8 exact axiom lists and
+KernelChecked59 are consistent with the checked source. The frozen B2-style allocation fits the actual host:
+CPU1200 per process/1200wall/4096MiB owned RSS/64MiBfile/256MiBstage/max8procs/5120launch/1024ongoing/512swap,
+track-tree, existing materialized kit, one attempt only. Run only after other allocations are gone, serialized
+with the separately prepared arc stage. No extra routine approval is needed for this accepted exact stage.
+
+Retain actual native notebook,6 outputs, full message packet, raw/parsed summary, runtime/provenance and
+supervisor/time/input pins. The output_digests field currently uses Wolfram Hash of strings, not FileHash of
+exported bytes; preserve that definition and supply an independent byte-SHA manifest for the actual files.
+That is an evidence-label distinction, not a reason to rebuild or block the planned stage. Before posting,
+GPT must read actual outputs/source and privacy/log limits; a local marker is not external verification.
+A core catalogue PR is appropriate under the current infinite-family/under-minute/4GB policy; Local remains
+sole PR/notebook/posting owner, with the actual catalogue row/import/diff to read at delivery.
