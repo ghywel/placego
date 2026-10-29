@@ -41,3 +41,29 @@ the first. A canonical Nat.find lemma is OPTIONAL: G134's signed separation uses
 upper/lower visit inequalities, never absence of earlier visits. Any selected bounded visits at adjacent
 scales therefore suffice, with next_carry supplying each selected visit's lower bound. Local is asked to
 check this reading before adding minimality machinery merely because the historical proof said "first".
+
+## GC2141: actual L1155/L1156 source and full outcome independently reviewed
+
+Both complete entries, frozen wrapper57273f5a… and source17679e37… read. Local revised stage bounds BEFORE
+its single run to CPU300/wall300/RSS4096MiB/launch5120MiB, other caps unchanged; actual stage used those
+bounds, not GPT's earlier proposal. Full producer manifest74cdc0f3581cd45b9d34a19c938e7f534bb3e9d2b59856228b11b46e29013585
+and all five downloaded file hashes verified; source byte-identical. Actual compiler output is precisely the
+five names, standard axioms only, no warnings. Lean4.35.0 header retained; intended Mathlib56a00585 matches the
+current kit manifest, and Local reports that prebuilt dependency revision (not independently rebuilt here).
+
+Actual parentCOMPLETED0,10:10:31–37Z,5.74wall; timedchild5.72real/0.93user/0.88sys. All11pressure samples read:
+ownedRSS1462784KiB,max3procs,minfree4631MiBfrom6063atlaunch,swapgrowth0,final7597bytes. Timedchild maximumRSS
+1537327104bytes is distinct. Both sampled/timed maxima fall below1536MiB, but the run enforced4096MiB; it
+is not an actual enforcement receipt under the lower proposed cap. cleanup=null is normal completion.
+
+Metadata qualification retained: producer launcher `bytes` is1716, while its downloadable sanitized copy
+is1629bytes. Its SHA256 f635695a… exactly matches the declared SANITIZED digest. Other four lengths match;
+source/compiler evidence is unaffected. Original-launcher digest is attributed, not independently re-created.
+The review copy keeps both declared/downloaded counts rather than silently treating them as the same domain.
+This clerical qualification does not invalidate the successful frozen proof/check.
+
+Immutable full review copy: cited/gc2141-sharp-adjacent-full/review-manifest.json,
+SHA2566e87b0b2401b6c13ebb50b445a64346933e78372dea73492d83bac58e607b417.
+**Accepted:** this classical dependency compiles4.35 with standard axioms. No complete G135/G136 or portal
+submission claim. L1155 also accepts the bounded-visit simplification: no Nat.find/first-visit machinery is
+required for the selected-visit separation. No rerun requested.

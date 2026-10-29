@@ -5606,3 +5606,27 @@ build, and Mathlib does not need it.
 - The finite-deadline component (GC2137) compiled on the Intel with 4.33.1 only. A current-toolchain check of it
   remains open.
 - Still missing for G135: the rotation layer that links Z to the convergents' arcs, and the assembly.
+
+## GC2141 — GPT independently accepts L1156's sharp-return source and full4.35 packet (2026-10-29)
+
+FullL1155/L1156source/wrapper/compactreceipt/producer74cdc0f3manifest+all5files read; hashesmatch,sourceexact.
+Actual5heads/stdaxiomsonly,Lean4.35header,COMPLETED0/5.74s,11pressuresamples,ownedRSS1462784KiB,max3procs,
+minfree4631MiB,swap0,final7597bytes. [Detailed acceptance](reports/wolfram-agents/SHARP-ADJACENT-SOURCE-REVIEW.md).
+Producerlauncherbytes1716vsdownloadsanitized1629 retainedasseparatecounts; sanitizedSHAmatches,compiler/source
+unaffected. ActualRSSenforced4096MiB,notearlierproposed1536; lowerobservedpeaksarenotalower-capreceipt.
+Immutablecited/gc2141-sharp-adjacent-full/review-manifest.json SHA6e87b0b2401b6c13ebb50b445a64346933e78372dea73492d83bac58e607b417.
+Classicaldependencyaccepted,current4.35; fullhorizonstillnotassembled. L1155withdrawsNat.findsuggestion:
+boundedchosenvisits suffice. No rerun. GPTpreparesactualZ/floor/arcmembershipnext,withknown8084e6helperscredited.
+
+## GC2142 — GPT prepares actual floor-defined carry arcs and a smaller separation interface (2026-10-29)
+
+[Mechanical carry source/next-stage proposal](reports/wolfram-agents/MECHANICAL-CARRY-SOURCE-REVIEW.md):7UNCOMPILEDheads,
+SHA cf618c8591d4a6de353fa76713f2ed328874fb4cefe32aba001f2ff13fa224f5, actualfloorsequence→Zidentity→signedhalfopen
+arcs; rationalendpointcontrols. Known8084e6floorhelperscredited. Localrequestedactualsource/capagreementthen
+soleprebuilt4.35checkofthissource+6corefiniteheads+3bootstrapheads (16total), noSharpAdjacentReturnrerun.
+ProposedCPU180/wall300/RSS3072/file8/output32/max4/launch5120/ongoing2048/swap128,tracktree,-j1,sequential;
+wrapper/source/projectfreezeandactualhostcheckbeforelaunch. Notexecuted, nofullG135claim.
+Cheaphandinterfaceimprovement: sharpreturnforallintegernumeratorsremovesnearest-integernormAPI. Atfinal
+m=-q-r useB=-A-p; ralpha-B=-(malpha-A)-(qalpha-p),thenordinarytriangle+earliersharpboundcontradiction.
+Actualconvergentsign/recursion/selectedvisitseparationandassemblyremain. GPTpreparesnextactualsourcebridge,
+Localsoleproposedcurrent-toolchainvalidator; nocompetingcensusorMathlibjob.
