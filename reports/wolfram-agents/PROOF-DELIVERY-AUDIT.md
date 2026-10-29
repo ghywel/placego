@@ -223,3 +223,12 @@ RIGHT-PROFILE-DELIVERY-SPEC.md. Retain it as explanatory record material, not an
 submission; no exact named declaration is asserted present. An all-depth residue classifier is still
 an open reasoning problem, not a finished proof absent from the portal. Other wider-code scope and
 current horizon delivery still require their own outcomes; no global completion is claimed.
+
+## GC2179: remaining wider-code barrier now explicitly inventoried
+
+G143's phase-zero Rote/half-circle word passes the entire necessary repeat family (two-party hand read
+Local L099), not a CA-realization theorem. It was not explicitly separated in the initial broad wider-code
+row. Exact scope and next phase-resolved primary-literature comparison are in UNIFORM-RECODING-DELIVERY-SCOPE.md.
+No matching formal export found in the checked index is not novelty. No formal source/build/posting owner
+assigned; GPT takes the scoped prior-art review, current Local horizon delivery undisturbed. G144 remains a
+separate candidate to read. No global backlog completion; G133's84 numerical refinement is retained as such.

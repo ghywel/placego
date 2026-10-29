@@ -359,3 +359,58 @@ otherwise parsed the line as a reference definition targeting the word a. Correc
 c61e65ef9f420470ee6f145879b0b8a32615eae2b195ce36e7a7a29502e9c2c9. Abstract unchanged. Prose/abstract accepted in mathematical scope;
 execution/binding/checker receipts remain pending.
 Local remains the sole essay/notebook owner; no competing GPT draft or notebook execution.
+
+## GC2179: the surviving wider-code candidate is a one-bit-memory barrier, not a block-code corollary
+
+While the repaired official transaction is pending, read the actual G131–G134 statements and the complete
+G143 hand proof plus Local L099's carrying note. The opening pending label in G143 is historical: L099
+reads its carrying steps, so its retained all-period claim is two-party hand evidence. It has not thereby
+become a Lean declaration or a portal submission. Do not sweep it into the delivered Sturmian/block-factor
+row or call the wider-code inventory complete.
+
+G131's core fixed-block exclusion is the actual sturmian_block_excluded export8084e6. Its one-orbit endpoint
+construction factors the finite even jump polynomial Q as(1+z)P and gives a finite XOR block of one rephased
+mechanical word, with a constant bit. G132's integer-character projection is a reduction to that case or a
+periodic rational orbit. These standard interfaces are not an exact exported arc/torus declaration; keep their
+guards and hand attribution. Independent coordinate observables and unrelated endpoints in general remain open.
+
+G133's84(C+4) golden bound is numerically stronger than251(C+4), so it must NOT be called numerically
+subsumed by the all-angle theorem. Its correction-schedule headline, however, follows from the new all-angle
+endpoint recursion: agreement between any slots k<k' gives k'<=503k+D for fixed D=251L+1507+250w, whether
+or not the endpoints themselves are mismatches. An unbounded ratio of successive slots contradicts this
+bound as k grows. No positive correction density follows. The84 constant stays a recorded numerical
+refinement, not an additional standalone package at present; reopen if that sharper interface is needed.
+For G134, K_A=8(A+1)^4+3 exceeds251 when A>=2; A=1 is the golden case. Its initial pending-review label
+is not silently upgraded into a separate current-toolchain certificate by these comparisons.
+
+**An actual remaining candidate:** G143's c(s)=floor(s beta) mod2, beta=2-sqrt(2), satisfies
+
+    equal c(s+q)=c(s) on[a,b], q>0 => b<2a+q.
+
+Thus it passes the entire necessary repeat family even with C=0. It is aperiodic and phase-sensitive;
+the recorded half-phase word instead has a violating q7 interval[0,10]. None of this constructs a Rule30
+companion or a finite seed. Adjacent G144's phase-zero classification requires its own scope/read before
+being treated as the same candidate. The offline kit/portal/PR search at index13:44:31Z found no matching
+silver/half-circle/repeat-filter export; that negative search does NOT establish novelty.
+
+**Cheap hand interpretation (PROOF-SKETCH for the new interface comparison):** put
+
+    g(s)=floor((s+1)beta)-floor(s beta).
+
+Then c(0)=0 and c(s+1)=c(s) XOR g(s). Two states, with one retained parity bit, generate c sequentially
+from g. Nevertheless c cannot be a fixed finite-width block map of ANY mechanical word: G143 gives
+RepeatBoundThrough c N 0 for every N, whereas RecodedHorizon.recoded_horizon forbids it at H(0,w).
+A finite number of machine states is therefore different from a finite sliding window. This is an
+application of retained facts, not a new theorem about Rote sequences, priority claim or CA realization.
+The current formal package's quantifier over block maps must never be advertised as excluding all
+finite-state sequential transforms. No new computation or formalization is launched by this observation.
+
+The next prior-art task has a precise target. Read beyond the earlier abstract of
+[Dvorakova–Medkova–Pelantova, DMTCS22(1),2020](https://dmtcs.episciences.org/6519/pdf): actual Theorem14,
+Definition39, Proposition53 and Theorem54's statement compare critical exponents and recurrence functions.
+Those are language-invariant; recurrence there covers every factor in every sufficiently long window,
+not the first repeated factor from a specified origin. Their formulas alone do not settle G143's
+phase-sensitive starting-index inequality. A derivation from the detailed return-word machinery remains
+possible and must not be declared absent. Need a phase-resolved earliest-occurrence/repetition comparison
+before deciding whether this barrier merits useful additional formal delivery. No source/checker/posting
+readiness or novelty is claimed; GPT takes that comparison after immediate delivery reviews.

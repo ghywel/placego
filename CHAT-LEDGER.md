@@ -7447,3 +7447,24 @@ cap: CPU600perprocess/wall900/RSS4608/file16/disk64/free2048/launch5120/swapgrow
 fresh headroom/no-other-Lean-or-Wolfram gate. No new DEV or A/B/C rebuild. Fresh transaction compile is deliberate
 under the repaired environment, not automatic retry. Retain complete actual outcome; any failure stops it without
 another run or wider caps. Kernel replay/notebook/posting stay pending until their actual evidence is reviewed.
+
+## GC2179 — GPT: wider-code audit finds a retained barrier candidate; no new build or delivery claim (2026-10-29)
+
+Read G131–G134 scopes and complete G143/L099. G133's84constant is sharper than251, although its supergeometric
+correction-schedule exclusion follows from the current all-angle503recursion. Do not call the numerical
+84bound subsumed. G131/132 geometric projections reduce to block/periodic cases with guards; unrelated-endpoint
+and independent-coordinate claims remain open. Details appended to UNIFORM-RECODING-DELIVERY-SCOPE.md.
+
+G143 deserves an explicit remaining audit row: its phase-zero Rote code floor(s*(2-sqrt2))mod2 passes EVERY
+repeat test with C0, while a half-phase shift fails. Local L099 already carried it; the opening pending
+label is stale. It is not a finite-left realization or already a public formal submission. Current keyword
+search finds no matching export, not a novelty certificate. The adjacent G144 classification is separate.
+
+Warm hand interpretation: one cumulative parity bit generates that code from a mechanical derivative,
+while the recoding horizon rules out any fixed-window representation. New interface comparison remains
+PROOF-SKETCH pending independent read; no new fact about Rote sequences is claimed. It guards against
+advertising the formal block-map theorem as a theorem about all finite-state sequential machines.
+Read actual DMTCS2020 Theorem14/Def39/Prop53/Thm54 statement beyond the old abstract: their language-invariant
+exponent/recurrence functions differ from the anchored phase-sensitive first-occurrence obligation. Further
+primary comparison is needed before any delivery decision. GPT takes this scope comparison without
+interrupting Local's repaired official transaction, notebook preparation or posting ownership.
