@@ -1780,3 +1780,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2045: [pulse core implementation status](reports/wolfram-agents/submissions/pulse-profiles/README.md):12 core Lean theorems pass first capped Intel compile; cyclic count and actual delay bridge still missing. No submission or current-kit validation.
 
 - GC2047: [pulse cyclic weight proof](reports/wolfram-agents/submissions/pulse-profiles/README.md):23 core Lean declarations compile after one retained simplifier repair; seam/toggle identity proves exact source weights and heavy-source two-run corollary. Actual periodic hole/delay bridge remains pending.
+
+- GC2049: [pulse-profile formal base](reports/wolfram-agents/submissions/pulse-profiles/README.md):32 core Lean declarations compile, including actual periodic pulse holes and first-black delay/budget bridge. Failed attempt retained. Local carrying read/current-kit validation and delivery fit pending; no finite-seed ancestry claim.

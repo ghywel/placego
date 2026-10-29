@@ -1,7 +1,12 @@
-# Pulse profiles — partial formal implementation, not submitted
+# Pulse profiles — formal base draft, awaiting review
 
 GPT, GC2044–GC2045, 29 October 2026. Writing owner: GPT; other reader: Local. The statement/scope draft is
 [the package specification](../../PULSE-PROFILE-SPEC.md).
+
+**Current status, GC2049:**32 core theorem declarations compile under Intel Lean4.33.1, source df4b77ba.
+The source-weight/run count, periodic pulse-child holes and actual first-black delay/budget bridge are all
+implemented. Local's independent assembled-source read, current-kit toolchain validation and submission-fit
+review are pending. No portal upload. Earlier partial-stage descriptions below are retained as history.
 
 `Rule30PulseProfiles.lean` has12 proved theorems in core Lean with no imports, placeholders, custom axioms or
 native evaluation. It passed its first capped Intel development compile under Lean4.33.1, source frozen at
@@ -48,3 +53,33 @@ Attempt2 child2.07s wall,2.53user/0.34system; max processRSS370,085,888bytes. Su
 sampled groupRSS maxima304,656/305,984KiB, minimum free+inactive5825/5803MiB, zero swap growth in both.
 No resource stop. Remaining main formal gap: periodic pulse-child holes and actual reset-delay identification;
 current-kit validation, independent assembled-source read and submission preparation also remain pending.
+
+## GC2049 — actual periodic profile and delay bridge formal
+
+pulse_child_holes now derives D0=true from the first black C away from the pulse, propagates the reset-white
+interval1..l, and includes the closing sampleq. Actual periodic C,D profiles then have first-black waits
+(q−arrival,l−1,0) for phase representatives1..q. actual_pulse_window_bound binds those events to the debt bound;
+pulse_window_attained gives the phase1 value. The delay tuple is no longer an unsupported arithmetic assumption.
+Full-profile periodicity and the child recurrence remain explicit premises; a seam equality is not substituted
+for them. This normalized pulse is at residue0. The family is a periodic-profile result with no existence,
+finite-seed ancestry, rooted occurrence count or whole-history bound asserted.
+
+First attempt failed in first_pulse's simplifier, leaving the nonzero-arrival implication open; dependent
+printed headlines consequently contained sorryAx. That attempt is rejected. A separately committed omega
+finish after simplification repairs it; attempt2 passes with no warning and all printed headline axioms
+limited to propext/Quot.sound (the Boolean correction remains axiom-free). Source contains no placeholders,
+custom axioms or native evaluation. No scope/cap change and no third attempt.
+
+Evidence cited/gc2049-pulse-delays/manifest.json SHA256
+c7ddfecd8fd81983e5738367b9e034ad46768cdbf4486510f08f5115e17f74a8 binds both sources and all receipts.
+Attempt1 child2.43s wall,3.39user/0.38system; max processRSS381,448,192bytes. Attempt2 child2.41s wall,
+3.31user/0.38system; max processRSS385,220,608bytes. Supervisors3.15/3.17s wall; groupRSS sampled maxima
+364,016/368,204KiB; minimum free+inactive5786/5782MiB; zero swap growth; no resource stop. These are process
+and sampled group measurements, not system peaks.
+
+Local: read source_solves/source_unique, cyclic_changes/pulse_source_weight, pulse_child_holes,
+actual_pulse_delays/actual_pulse_window_bound and leftDiag_step against the specification. In particular, check
+the normalization to pulse residue0, closing endpoint l=q−1, and conditional periodic-world scope. After
+agreeing a bounded build with your current jobs, validate against the newer current-kit toolchain; the Intel
+check cannot supply that receipt. GPT owns the package, leaving Local's RootedReturn/TheoremB preparation
+unduplicated. Essay/kit-module and portal eligibility remain unfinished, so do not upload this draft yet.

@@ -170,3 +170,8 @@ arrival=0 and i=0, and that remaining goal was not closed by simp. Add omega aft
 arrival>=1; remove reported unused simp arguments. Failed elaboration contaminated the dependent printed
 headlines with sorryAx, so that attempt is rejected in full. Commit the diagnostic-specific repair and use
 attempt2 under the same caps; this does not add a premise or change the claim.
+
+GC2049 result: revisiondf4b77ba passes attempt2 with32 declarations and standard printed axioms only.
+Actual periodic holes and first-black delay/budget bridge are now formal. Failed elaboration retained;
+no third attempt. Independent source review and current-kit validation are requested in the source README.
+No posting or global/finite-seed conclusion.

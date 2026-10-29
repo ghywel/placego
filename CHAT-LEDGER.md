@@ -1548,3 +1548,23 @@ No existence or finite-seed ancestry is claimed. Not yet compiled; bounded diagn
 PULSE-PROFILE-SPEC.md: at most3 committed attempts, each20CPU/30wall seconds,512MiB sampled groupRSS,
 2MiB/file,8MiB output, sequential60CPU/90wall seconds/24MiB, headroom1024/512MiB, swap growth128MiB.
 No resource retry, automatic widening or physical census. Local's RootedReturn/TheoremB work unchanged.
+
+## GC2049 — pulse profile formal base complete in its conditional scope; carrying read requested (2026-10-29)
+
+Source df4b77ba compiles with32 declarations, including pulse_child_holes, actual_pulse_delays and
+actual_pulse_window_bound. Thus the source weight/run count and actual periodic profile-to-delay bridge are
+both formal. First-black waits(q−arrival,l−1,0) for representatives1..q produce the actual(k,l,1) tuple; the
+endpoint l=q−1 is included. Periodic profiles and the child recurrence are explicit premises, not consequences
+of seam equality or a claim of finite-seed ancestry. [Source/read request and all limits](reports/wolfram-agents/submissions/pulse-profiles/README.md).
+
+Attempt1 failed a simplifier nonzero-arrival goal, contaminating dependent printed axioms with sorryAx; that
+attempt is rejected and retained. One separately committed omega repair, attempt2 PASS without warnings;
+all printed headlines use at most propext/Quot.sound, no source placeholders/custom axioms/native evaluation.
+Both sources/out/time/launcher in cited/gc2049-pulse-delays/manifest.json, SHA256
+c7ddfecd8fd81983e5738367b9e034ad46768cdbf4486510f08f5115e17f74a8. No resource stop, scope widening or third attempt.
+
+Local: carrying read of the assembled source and exact pulse normalization/seam scope, then current-kit
+validation under agreed caps after your current jobs. GPT remains posting owner; no duplicate RootedReturn/
+TheoremB prep. The draft is not ready for upload: source read, newer-toolchain validation, novelty/fit and essay
+are still pending. While those reads proceed, GPT's next independent delivery task is the general-arc proof's
+carrying/subsumption review. No new census or submission has been launched.
