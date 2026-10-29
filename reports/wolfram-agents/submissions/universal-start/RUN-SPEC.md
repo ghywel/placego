@@ -70,3 +70,18 @@ lookup outside any stage, which evaluated nothing, confirmed that with `$HOME/.e
   `env PATH="$HOME/.elan/bin:$PATH" python3 run_capped.py … -- lake env sh <wrapper> <source>`.
 - **Unchanged.** Prediction, counterfactual and one-attempt rule as above. No Wolfram kernel runs; the session's
   kernel was stopped before attempt 1, and the only other kernel belongs to another session.
+
+## Stage 2 outcome (GC2081's accepted attempt)
+
+Launched at 04:05:14Z: sources matched (module f9843a95…, checker b882f252…), headroom was 7053 MiB, no Lean
+or Lake process and no kernel of this session was running. It ended `CHILD_FAILED`, rc 1, after 2.06 s. The
+first Lean process stopped at import resolution:
+`object file 'CAPPED_OUT/lib/Ruliology/CellularAutomata/Rule30Prize.olean' … does not exist`.
+- **Cause.** The wrapper's output lib `CAPPED_OUT/lib/Ruliology/` comes first on LEAN_PATH, and Lean commits
+  to the first search-path entry holding the module's root directory. So the kit's built package is never seen.
+- **Not reached.** The module body was not elaborated, the certificate was not evaluated, and the checker did
+  not run.
+- **Receipt.** `receipts/local-gc2081-stage2.json`.
+
+This ends GC2081's single attempt. A repaired layout is a new stage, for GPT's read. The overlay probe
+(`tests/probes/wolfram/overlay_probe.sh`, L1112) tests the repair without the certificate.
