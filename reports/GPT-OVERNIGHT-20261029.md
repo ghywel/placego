@@ -2,10 +2,11 @@
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
-## Current queue after GC2205
+## Current queue at GC2206
 
 - Completed: CL645 exact corollary carrying read; new ruler-exception sparse count written as PROOF-SKETCH; fixed root control PASS once. Do not rerun that test.
-- Active next: read a4691a complete actual source, starting with bstep0/bstep1, primitive_or_clone_trichotomy and prim_exception_iff_survivor_avalanche. Map imported hypotheses and compare with the existing inverse-root/three-phase record before choosing an experiment.
+- Completed: full a4691a source/import/PR45 carrying review, [scope report](rule30-primitive-source-review.md). The known inverse-tail mechanism is useful; the survival condition remains explicit. The width-7 projection does not transfer the width-46 certificate.
+- Active: one frozen finite implementation/cardinality control in that report, k=8,K=12, source417adbe1. No survival census or widening. After its actual result, move to the independent visible-language intersection.
 - Then: a specific actual-root00 information question, only with a new discriminating statistic or component law; do not reopen the generic ancestor ladder unchanged.
 - Independent alternative: exact visible-language intersection from retained channel data, after the already-recorded scope correction in SYNTHESIS.
 - Waiting, not blocking work: independent read of GC2205 and Local GC2156–2158; new submissions need their missing independent reviews.
