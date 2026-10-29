@@ -4186,3 +4186,45 @@ at 0 the periodicity condition is vacuous. No proof or type changed.
 - **Unchanged.** Caps, guards and the eight headlines (RUN-SPEC's GC2106 amendment).
 
 On your go-ahead I run that one full check.
+
+## GC2107 — GPT prepares the metadata-only repair before the next notebooks (2026-10-29)
+
+Actual B2 driver/builder reread: direct JSON export of None/optional metadata and an existence-only receipt
+guard caused the retained0-byte summary. New notebook_receipt.wl keeps exact raw WL, explicitly tags non-JSON
+values, requires nonempty parsed JSON/file round-trip and refuses overwrite. Supported provenance queries
+are individually checked; unsupported ReleaseDate is absent. No historical universal notebook/tooling changed.
+
+NOTEBOOK-RECEIPT-REPAIR.md freezes14 pure fixtures (None/Missing/rational/raw fidelity; malformed/empty/scalar/
+missing-key/no-overwrite counterexamples), with a source-pinned launcher and temp root under supervision.
+Prepared UNEXECUTED, no build/LeanLink/network. Proposed ONE Local control after proof allocations idle,
+30CPU PER PROCESS/60wall/2048MiB RSS/8MiBfile/16MiBstage/max4procs/3072launch/1024ongoing/128swap, track-tree.
+Please read/adopt this small control before ring/arc notebook reuse. Passing it does not prove a future builder
+actually integrates it; that integration/output-specific guards still need exact source/spec review.
+
+## GC2108 — GPT accepts the amended ring source and one full-check stage; essay read (2026-10-29)
+
+L1131/L1132 and complete RUN-SPEC/check_ring_orbits.sh read. Actual amended source61fbff78/submission23a3be9f
+and wrappere5077849 hashes verified. Diff is the requested positive-P,m interpretation wording and pin
+updates; proof bodies unchanged. Submission also removes the catalogue module/public header and changes
+namespace/open as intended; the mathematical declarations agree. All carrying steps remain accepted.
+
+Adopt the ONE frozen core catalogue/submission check now when no other allocation runs: CPU120 per process/
+300wall/2048MiB RSS/16MiBfile/64MiBstage/max6procs/4096launch/1024ongoing/256swap, track-tree. Isolated
+RingOrbitsCert avoids package shadowing, and each form gets the unchanged checker/eight exact headlines.
+Retain actual declaration/replay counts, raw outputs/receipts and any refusal/failure; no automatic retry.
+No further owner/GPT permission is needed for this accepted exact stage. Outcome not yet seen.
+
+Complete ring essay-prose.md also read: scope/positive-parameter caveat, known graph background, marked sites,
+P2 finite wrap and small-ring shift-representative caveat carry. The illustrative0001 orbit can be checked
+by hand:0001→0111→1000→1011→0100→1101→0010→1110→0001, eight distinct phases. This is not a new
+classification or a substitute for the executed notebook/source/metadata review.
+
+## GC2109 — GPT independently accepts the arc's complete single-file replay (2026-10-29)
+
+L1132 and complete compact receipt read: exact56d226a6 source,40 standard prints, checker pass/replay169 own
+constants,90 standard declarations, four exact found/ok/type-matching physical headlines, official import,
+no new axioms.10.98s,3380512KiB sampled owned RSS,4 processes,min headroom6002MiB, no swap growth or orphan
+reported. Checker's own deprecated-replay warning is retained separately from clean compiler output.
+This closes the imported-dependency replay gap. Local's transformation/source/wrapper carrying read accepted.
+README/queue/review/spec updated; no external portal verifier or executed notebook outcome yet. L1131 sole
+Local notebook/posting ownership confirmed. Next: receipt controls and exact arc notebook integration/guards.

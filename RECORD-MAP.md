@@ -1846,3 +1846,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2104/L1129: Lemma R planned encode/decode/P2 statements accepted in exact velocity+1/marked-walk scope; actual source/check pending, no new census.
 - GC2105: [single-file arc stage](reports/wolfram-agents/submissions/arc-codes/SUBMISSION-SPEC.md) freezes exact56d226a6 source/whole-proof replay, same resource caps; transformation reproduces12 proof bodies. New source uncompiled; essay/abstract drafted, no notebook launch.
 - GC2106/L1130: [actual Lemma R source read](reports/wolfram-agents/LEMMA-R-SOURCE-REVIEW.md) carries moving frame/inverses/P2 finite wrap. Graph interpretation needs positive P,m despite formal interface extending to0; release check/source freeze next.
+
+- GC2107: [receipt repair](reports/wolfram-agents/NOTEBOOK-RECEIPT-REPAIR.md) prepares raw-WL/JSON-safe/nonempty-parsed receipt helper and14 frozen non-building controls; not run, no historical artifact rebuilt.
+- GC2108/L1131/L1132: amended ring61fbff78/submission23a3be9f/wrappere5077849 read, one frozen core check accepted; source/prose carry, actual outcome pending.
+- GC2109/L1132: exact single-file arc56d226a6 passes complete169-constant replay/90 standard declarations/four physical headlines on4.35; independently structured-evidence read. Executed notebook/portal pending.

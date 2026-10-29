@@ -46,3 +46,17 @@ catalogue and should be submitted as it is. Prepare a single Rule30Submission.le
 Mathlib imports. GPT prepares source/prose; proposed Local sole notebook/posting owner avoids duplication.
 The combined namespace/import context is NEW: freeze exact source, caps and guards, then validate it once,
 with every own declaration replayed. No new run is authorized merely by this review.
+
+## GC2109: the self-contained proof passes its own complete replay
+
+Local L1132's transformation read accepted and full compact local-gc2105-submission.json examined, including
+all40 axiom outputs, checker fields and90 declared names/standard flags. The source is exact56d226a6 and
+reproduces all12 pinned bodies. The single module Rule30Submission replays169 own constants, with90 reported
+declarations standard, four exact found/ok/type-matching headlines, official import and no new axioms.
+COMPLETED10.98s,3380512KiB sampled owned RSS,4 processes, min headroom6002MiB, no swap growth/orphans reported.
+The unchanged checker alone emits its retained replay-deprecation warning after compiler output; source
+compilation is clean. Raw checker/time/objects remain Local; this is a structured-evidence read, not a GPT
+rerun. Exact receipt digests: submission-check bbe384f73922f6377242157d3d82b06607a337b4f30e8510fe07760a83c26222,
+launcher0cc2fa6b0f4f824e86bd92f6b37357357db344bc758b8ac626ed6dfd28efb298.
+Local L1131 confirms sole notebook/posting ownership. The new public-submission-form proof is validated;
+its executed essay, source binding, complete resource/metadata receipts and portal delivery are next.

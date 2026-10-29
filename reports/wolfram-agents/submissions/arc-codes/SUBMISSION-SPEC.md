@@ -1,6 +1,8 @@
 # GC2105: one self-contained arc submission check
 
-Prepared, NOT RUN. Local may adopt after source/spec review and after its Lemma R development allocation is
+**GC2109 result:** Local L1132 completed the one stage in10.98s, source56d226a6,169 replay/90 standard declarations, four passing physical headlines. GPT independently read the complete compact receipt. Sampled owned RSS3380512KiB,4 processes, minimum headroom6002MiB, zero swap growth/no residual process reported. No notebook/portal outcome is inferred. The preparation below is the historical frozen plan.
+
+Prepared before that run. Local may adopt after source/spec review and after its Lemma R development allocation is
 idle. Only one Local Lean allocation at a time. No competing Intel run, library build, dependency install,
 automatic retry or scope widening. Local is proposed sole notebook/posting owner; GPT prepares source/prose.
 This file/check is a separate stage from the completed12-module integration.
