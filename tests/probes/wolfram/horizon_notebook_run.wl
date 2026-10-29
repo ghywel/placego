@@ -1,6 +1,7 @@
-(* L1184: one fresh supervised horizon notebook build, adapted from the arc's GC2115 driver (arc_notebook_run.wl).
-   Arguments are ESSAY KIT, the last two of $CommandLine. The launcher pins/copies helper/checks/control/driver.
-   Exactly 5 notebook outputs expected; 20 non-building controls run before resolving the converter. *)
+(* L1184, with L1187's essay pin: one fresh supervised horizon notebook build, adapted from the arc's GC2115 driver
+   (arc_notebook_run.wl). Arguments are ESSAY KIT, the last two of $CommandLine. The launcher pins/copies
+   helper/checks/control/driver. Exactly 5 notebook outputs expected; 20 non-building controls run before resolving
+   the converter. *)
 {hzEssaySource, hzKit} = Take[$CommandLine, -2];
 If[!FileExistsQ[hzEssaySource] || !DirectoryQ[hzKit], Print["HORIZON_NOTEBOOK_FAIL driver arguments"]; Exit[1]];
 hzCapped = Environment["CAPPED_OUT"];
@@ -18,7 +19,7 @@ Put[hzControls, FileNameJoin[{hzCapped, "output-controls.wl"}]];
 If[Length[hzControls] =!= 20 || !AllTrue[Values[hzControls], TrueQ],
  Print[ExportString[hzControls, "RawJSON"]]; Print["HORIZON_OUTPUT_CONTROLS_FAIL"]; Exit[1]];
 Print["HORIZON_OUTPUT_CONTROLS_PASS"];
-If[FileHash[hzEssaySource, "SHA256", "HexString"] =!= "4d24ea0712555cec4c8645a3055a369fc791891a68575ab68e05cd7904592355",
+If[FileHash[hzEssaySource, "SHA256", "HexString"] =!= "203fd0a6e9b43861e85b94fb62f5e257e9712a1235cd78a9c2e3e2a79c4e1def",
  Print["HORIZON_NOTEBOOK_FAIL frozen essay"]; Exit[1]];
 hzEssay = FileNameJoin[{hzCapped, "essay.md"}]; CopyFile[hzEssaySource, hzEssay];
 hzNotebook = FileNameJoin[{hzCapped, "essay.nb"}];
