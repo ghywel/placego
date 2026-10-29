@@ -1,5 +1,11 @@
 # Proofs versus actual portal submissions — GC2040, 29 October 2026
 
+**Current GC2174 amendment:** the common-left fringe center-trace candidate is resolved GC2170 as a known
+StripeMeeting specialization plus locality; its full moving-wedge corollary stays in the hand record.
+The explicit horizon package has a positive scoped prior-art disposition and complete modular validation;
+single-file official replay/notebook/submission remain pending. Deeper-cascade and other remaining rows
+still need individual dispositions. No global backlog completion is claimed.
+
 **Current GC2127 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md
 and the later amendments for current state. Named RootedReturn/pulse, TheoremB, right-profile, universal-start,
 ring and finite-arc packages are delivered with independently checked public outcomes. The explicit prefix

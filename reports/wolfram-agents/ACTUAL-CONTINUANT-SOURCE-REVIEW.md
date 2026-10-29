@@ -434,3 +434,50 @@ checker and require pass/replay.ok/importsStatements, exact8 passing headline re
 standardAxioms for EVERY declared constant. Compile errors, warnings, missing/extra/repeated reports, malformed
 JSON, checker failures and resource stops all end the stage and retain evidence. No automatic retry or expansion.
 This does not accept an unseen runner or authorize a notebook execution as part of that checker stage.
+
+## GC2172: offered development failures and amendments fully retained and read
+
+Read INDEX and all six L1170–L1172 development manifests, all36 copied files, source differences, parent
+samples, compiler outputs and child-time receipts. All declared copied digests match. Independent immutable
+copy: cited/gc2172-horizon-development-review/review-manifest.json SHA256
+8dcd8908ec3b944284cbc0f0d1bedd76a1952857165fad834b2b8fe6e5f87fd4. This closes the requested carrying
+read of these failure/repair packets; it does not convert development runs into release evidence.
+
+The two failures are actual CHILD_FAILED1 outcomes, not successes with hidden warnings. FiniteHorizonSelection
+first emitted unknown-tactic/identifier errors and sorryAx; the amended source replaces by_contra by explicit
+Classical.byContradiction and le_of_not_gt by omega. PhysicalHorizon first failed the restart_leftmost proof,
+with sorryAx propagating to its dependents; the amendment applies not_and.mp hm hbound before simpa.
+Successful copied sources equal current git. Git amendments a530385c at13:10:58Z and84194d6a at13:28:35Z
+precede the respective runs13:11:09Z and13:28:37Z. Failure diagnosis/source amendment is retained, with no
+unbounded repeat or enlarged research census inferred from a DEV label.
+
+The six parents report wall2.10/15.12/4.19/0.52/2.11/2.11s; all retained pressure samples clear the stated
+stops. Important measurement guard: the0.52s bridge attempt retained NO pressure samples. Its sampled RSS/procs0
+means unobserved, not actual zero consumption. The separate child receipt reports0.44s real and450002944bytes
+maximum RSS. Those domains must stay distinct. Development imported libraries were not release-pinned and no
+unchanged official checker ran; accepted A/B/C packets remain the release-compilation evidence.
+
+## GC2174: single-file DEV output read; twelve multiline report fixtures
+
+Fetched full L1176 development manifest b667ce8a1311cf8214e1de7c08288b930db11a509cbccc300e88b5cbbcbdae5f
+and all4 copied files, checking declared sanitized digests. Copied106261byte source equals current1e08455e.
+A whole-block parse finds exactly the99 expected reports, in order, standard axioms only, with no extra
+compiler text apart from the declared prefix/DEV_OK. **Twelve reports wrap**, not three as stated in L1176;
+their exact names and original output are retained in the independent review packet. The count does not
+change proof validity, but is useful evidence for testing the proposed runner's multiline parser.
+
+Parent COMPLETED0/14.65s; all27 pressure samples meet its actual DEV caps. Owned maximum2677856KiB,
+minimum free4878MiB, swap growth0, maximum3processes. Child14.38s real/5.35s user/1.67s sys,
+2770567168bytes maximum RSS. The actual DEV envelope was file32MiB/disk128MiB/free1024MiB/swap256MiB,
+with CPU600per child/wall900/RSS4608MiB. Do not silently describe it as the earlier A/B/C envelope;
+release-runner stops remain a separate explicit freeze. Imported development libraries remain unpinned
+and no official checker ran, so this is accepted development evidence, not release replay.
+
+A portability suspicion was settled cheaply: Mathlib.Basic.Real.Basic really exists at the official pinned
+Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679, Git blob0ecdc2aca32e50f6f09fb0566e8346fd951a5319,
+19159bytes, SHA256f15de163c14198d9b60aeb8ac845b4540c198bbb2e80d6153d0dbc8a6c08936f. The public GitHub API
+and decoded blob were checked after the web reader returned a misleading raw-file404. The old Data.Real.Basic
+is a deprecated re-export. No import rewrite, compatibility shim, tool installation or owner action is needed.
+
+Independent immutable packet: cited/gc2174-singlefile-development-review/review-manifest.json SHA256
+f3c13a46fec64a8bef9f345fc627fa3fe1a916f6da8f70b023778a4462433725.
