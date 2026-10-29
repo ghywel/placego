@@ -154,3 +154,40 @@ closure reaches proof elaboration inside5GiB, then standard-axiom success or a s
 A gate refusal, cap stop, nonstandard axiom or proof error is retained and ends this single stage. No automatic
 rerun, gate relaxation or cap increase; actual output determines the next question. The exact source and this
 amendment must be pushed before launch. No additional Intel computation is requested.
+
+## GC2074 — repeat obstruction to genuine breaks, prelaunch source and bounds
+
+Question: can the numerical bound stop assuming a break recurrence and derive it from the actual repeat
+obstruction? ArcBreakSequence.lean now chooses successive genuine breaks in bounded windows. Choosing the
+least break is unnecessary: any break in [a,2a+q+C+1] suffices, and starting the next window at the previous
+break+1 gives strict growth and the required recurrence. This removes an unused least-selection obligation.
+This is a classical existence proof, not an efficient/adaptive search procedure or an empirical census.
+
+**Record searched:** GC2051/GC2056/GC2057/L1094, complete ArcBreakBounds source and actual current core Lean
+Nat.exists_eq_add_of_le. The kit main932cf8dd and portal sources compared for the unchanged general-arc scope
+in GC2051/GC2056/GC2059 remain the prior-art basis; no new novelty claim is made for elementary choice,
+window contraposition or finite pigeonhole. The additional deliverable would be the complete geometric/
+continued-fraction/Rule30 assembly. This component still assumes RepeatBound and the labelled spacing premise.
+
+**Prediction:** future_break, sequence_break, sequence_strict and labelled_spacing_bound compile with only
+standard axioms in installed Intel Lean4.33.1. The final premise labels actual break positions, not merely an
+abstract recurrence. Controls: the selected index is a genuine mismatch; successive indices strictly increase;
+first/step bounds are derived with their exact+1/+3 constants; all r including0 are handled under their actual
+premises. Counterfactual: retain any error, placeholder, custom axiom, resource stop or source mismatch and
+reject that attempt. Compiler success does not establish real geometry, finite-seed realization or4.35
+compatibility. Local source carrying read remains separate.
+
+**Frozen stage:** at most2 separately committed, diagnostic-driven attempts; no automatic rerun. Each uses
+compile_arc_sequence.sh under run_capped.py, compiling only ArcBreakBounds into a fresh isolated .olean and
+then ArcBreakSequence with that directory on LEAN_PATH. Two source copies, two sequential core Lean processes,
+one shell and one time wrapper:6 owned process lifetimes expected, at most3 simultaneously. No other Intel
+compute, MCP kernel, Mathlib/dependency installation/build, new toolchain or default-toolchain changes.
+Each attempt:20CPU seconds per owned process (conservative120 child CPU seconds total across6 lifetimes),
+60stage wall seconds,512MiB sampled groupRSS,4MiB/file,16MiB total stage output,1024/512MiB launch/ongoing
+headroom,128MiB swap-growth stop. At most240 child CPU/120wall seconds and32MiB output across both attempts;
+supervisor/monitor CPU is separate and reported. Actual process count/resource receipts retained. Refusal or
+resource/pressure stop ends the stage; diagnostic-driven source repair only after a separate frozen commit.
+
+Invoke /bin/sh tests/probes/wolfram/compile_arc_sequence.sh with the existing installed lean binary. Preserve
+copied source/full compiler stdout/time/supervisor receipts and verify source digests against the frozen Git
+revision. Source, wrapper and these bounds must be pushed before the first compile.

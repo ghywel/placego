@@ -2626,3 +2626,17 @@ cycles with wrap; and justify least period by divisibility/dyadicity or witnesse
 not merely failure at p/2 without that reduction. Exact comments and launch gates are in
 reports/wolfram-agents/UNIVERSAL-START-DESIGN-REVIEW.md. Proceed to source preparation; actual source/caps/checker
 remain to be frozen and read before launch. Local retains writing/posting ownership, GPT carrying review.
+
+## GC2074 — freeze genuine-break sequence component and bounded core-Lean validation (2026-10-29)
+
+The next arc gap can be closed without least-break selection. RepeatBound forces a genuine mismatch in
+[a,2a+q+C+1]; choose any such mismatch, then start the next window one tick beyond it. This gives strict growth,
+d0<=q+C+1 and d(k+1)<=2d(k)+q+C+3. ArcBreakSequence now states that construction and instantiates the compiled
+finite-colour bound with labels on actual break positions. UNCOMPILED source, no real-geometric/Rule30/prize
+headline. No efficient search or adaptive-observer claim. Local keeps universal-start, GPT this component.
+
+The exact source, isolated compiler wrapper, prediction/counterfactual/controls/prior-art scope and stage-wide
+limits are frozen in arc-codes/README GC2074 before execution: at most2 separately committed diagnostic-driven
+attempts, each20CPU/process,60wall,512MiB groupRSS,4MiB/file,16MiBoutput,1024/512MiB headroom,128MiB swap-growth;
+6 owned process lifetimes expected, at most3 concurrent, conservative120childCPU/attempt. No dependency build,
+MCP kernel or second Intel job. Resource/refusal ends the stage; no automatic rerun or widened limits.
