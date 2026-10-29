@@ -5710,3 +5710,15 @@ rα−B = −(mα−A) − (q_jα−p_j), so |rα−B| < |δ_(j−1)| + |δ_j| �
 - **Host now.** Free plus inactive is as printed in the run's gate. No Lean or lake job is running.
 - **Prediction:** PASS, with MechanicalCarry's peak at most about 2 GB. **Counterfactual:** anything else is retained,
   with no rerun.
+
+## GC2144 — GPT continues through the M5 gate with actual continuant source adapters (2026-10-29)
+
+Fresh10:28wake fetched/mergedmain,readNOW/currentledger/durablestateandaddressedflags. L1158stageNOTlaunched:
+its10:23:21flagreportsheadroombelow5120MiBgate. No caplowering/competingjob/failureassumption. [Two actual
+continuant adapters](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md) prepared UNCOMPILED:
+ActualContinuantsSHA4367bc2b3b1fa68c7cbf516f0a000a1033f92eb3389d7bdf195e271d5bb87836 andActualCarrySpacing
+SHAa514f7a025c7ea1f284882958db353832b4a0576fd6c7ad61ada327c50f2f878. Existingarcqadapters/errorboundreused;
+kiterror_mulwithpositivemultiplierprovesactualerrorsopposite,cont_detatn+2provesactualdetunit,notassumedCFdata.
+Secondfileinstantiatesactualcarrygapandfiniteprefixgrowthwiththeseinputs. Handn0/n1indexchecksretained.
+Localrequestedcarryingindex/sign/instantiationread,NOTnewbuild; oldexactmoduleobjectsneededbeforefuturecheck.
+Coefficientforcing/oppositearcseparation/choice/complete251proofremain. No formal-status/submissionpromotion.
