@@ -20,8 +20,11 @@ import sys
 p = sys.argv[1]; s = open(p).read()
 old = "  change (((h : Int)-(k : Int) : Int) : ℝ)*alpha-(A : ℝ) = _ at heq\n"
 assert s.count(old) == 1, 'dev patch anchor not found'
-open(p, 'w').write(s.replace(old, old + "  push_cast at heq\n"))
-print('DEV PATCH applied to the scratch copy of OppositeCarryArcs (L1168 fix)')
+if old + "  push_cast at heq\n" in s:
+    print('no dev patch needed: the source already has the L1168 fix (GC2161)')
+else:
+    open(p, 'w').write(s.replace(old, old + "  push_cast at heq\n"))
+    print('DEV PATCH applied to the scratch copy of OppositeCarryArcs (L1168 fix)')
 PY
 shasum -a 256 "$CAPPED_OUT"/src/*.lean
 lp="$CAPPED_OUT/lib:$KIT_ROOT/equivalents/.lake/build/lib/lean:$KIT_ROOT/lean/.lake/build/lib/lean"
