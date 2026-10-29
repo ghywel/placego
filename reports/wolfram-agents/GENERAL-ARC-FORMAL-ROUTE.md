@@ -261,3 +261,12 @@ continuants, with no truncation loss after nonnegativity. It depends on ArcConti
 No new mathematical discovery or validation is claimed: this writes the sharper route explicitly. The physical
 Rule30 bridge, endpoint-restart and existing dependency/object availability still require work. No Lake lookup
 in a new project, install, compiler run or additional Local allocation is requested by this source preparation.
+
+## GC2088 — direct actual-window bridge and normalized Rule30 assembly candidate
+
+ArcRule30BridgeDraft writes the previously self-checked window_jen_col substitution, including the extra
+closing clock sample and the even/odd masked-neighbour split. It derives C=L rather than assuming it.
+ArcRule30ExclusionDraft then states the normalized actual-evol headline using the actual-CF abstract theorem.
+Both remain UNCOMPILED/PROOF-SKETCH with that dependency chain. This does not silently extend to eventual
+clocks, arbitrary endpoint conventions, all irrational slopes or all library step-function representations.
+The direct bridge's independent read is still distinct from L1094's accepted theorem_A' substitution.

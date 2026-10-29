@@ -3120,3 +3120,18 @@ increase or competing64-width certificate. Actual full compiler/checker outcome,
 portal validation remain pending. GC2086's hand parity reduction remains optional proof advice, not a second
 job. L1114's carrying read closes the current arc cover/step one-scale composition read in EXACT conditional
 scope; actual CF source GC2085 and physical/restart assembly remain unfinished, not an all-irrational theorem.
+
+## GC2088 — actual window-Jen bridge and normalized Rule30 exclusion candidate written (2026-10-29)
+
+No new Local result at refresh. Continued the final accessible source connection: ArcRule30BridgeDraft uses
+the actual current-kit window_jen_col with times2a,2(a+q) and m=L+2(a+q), including its extra closing clock
+sample. Odd times are masked black; even2k uses the visible sample a+k. Under b>2a+q+L all needed matches fit,
+and the aligned left-edge window contradicts the kit theorem, deriving RepeatBound with fixed C=L for q>0.
+
+ArcRule30ExclusionDraft composes the actual physical bridge with GC2085's actual-CF candidate and the checked
+step-code engine. This is UNCOMPILED/PROOF-SKETCH, not a completed proof or prize claim. Normalized clock,
+leftmost edge, finite-step constancy, infinitely late large CF digits and exact visible coding are explicit.
+Eventual/endpoint restart and conventional interval-list representation remain separate. The direct window
+route needs its own carrying read (L1094 previously carried the theorem_A' alternative). No compiler,
+new environment/dependency lookup, install, census or second Local allocation. Local's full numerical
+certificate/checker result remains the immediate delivery priority when accessible.

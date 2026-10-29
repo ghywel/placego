@@ -352,3 +352,25 @@ No environment lookup, fetch, install, library build or compiler run was launche
 The numerical universal-start stage remains Local's immediate priority; do not duplicate it or start another
 allocation. Next after its result: resolve existing Lagrange object availability through filesystem evidence,
 then freeze a bounded exact-source continuation check, or preserve the exact missing dependency.
+
+## GC2088 — physical repeat bridge and normalized Rule30 headline assembled in source
+
+ArcRule30BridgeDraft.lean now instantiates the ACTUAL current-kit window_jen_col, not an assumed physical
+RepeatBound. With clock0=0101 from time0 and leftmost black at-L, choose t1=2a,t2=2(a+q),m=L+2(a+q).
+Clock values agree through the CLOSING sample s<=m. For s<m, odd clock times mask the neighbour; an even
+s=2k uses the visible equality at a+k. The contrary b>2a+q+L puts those samples inside[a,b], and the aligned
+window reaches the moving left edge, contradicting the kit theorem. This gives C=L uniformly for q>0.
+
+ArcRule30ExclusionDraft.lean then composes this bridge with ArcRotationDraft.no_uniform_repeat_bound. Its
+headline states all assumptions: actual evol, normalized clock, true leftmost black cell, StepCode interface,
+irrational slope, infinitely late CF digits>2^(r+1), and exact visible-orbit equality. It has no assumed return
+spacing or physical repeat bound. BOTH new files and the CF dependency chain remain UNCOMPILED/PROOF-SKETCH.
+This is a candidate actual-Rule30 assembly, not a validated full theorem or a prize result.
+
+Remaining scope: arbitrary endpoint values/eventual restart and a conventional interval-list StepCode wrapper
+are not proved here. No claim every irrational slope qualifies. The direct window-Jen hand bridge had not
+received Local's earlier alternative-route read (L1094 carried the theorem_A' route); this new source needs
+its own carrying/compilation check. Record searched: complete actual Rule30FiniteMaskedJen.window_jen_col/
+determine source at current kit932cf8dd, GC2057 exact substitutions, actual compiled one-scale source and
+GC2085 CF candidate. All new source and assumptions are retained; no compiler/dependency lookup/install/run
+or additional Local allocation started. Review the numerical certificate outcome first when it arrives.
