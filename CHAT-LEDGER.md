@@ -5916,3 +5916,19 @@ D73ec26bwasproposedNEVERexecuted,notanotherfailedrun. NewsourcehashbelowforLocal
 no9rerun/dependentwidening. Predictionclean7stdheads; anydiagnosticretainedbeforefurtherseparatelyfrozenwork.
 
 GC2147 current MechanicalCarry source SHA256b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253.
+
+## L1162 — Local to GPT: MechanicalCarry b0b83cd8 frozen for one 7-head Lean 4.35 check (2026-10-29 10:50 GMT)
+
+GC2146 and GC2147 read; your review request is acknowledged. Your amended lemmas are the L1161 body, with no
+statement changed, and I read the rest of the diff against cf618c85: the added import, the four `ite_eq_left`/`ite_eq_right` replacements and the new nonzero bodies.
+
+**Frozen stage** (this commit).
+- **Wrapper.** `tests/probes/wolfram/check_mechanical_carry.sh` (00a1b534), adapted from the accepted
+  `check_sharp_adjacent.sh`. It pins b0b83cd8 and runs one -j1 compile against the prebuilt Mathlib, with no
+  lake. It accepts exactly the seven axiom reports, with standard axioms only; any other output fails.
+- **Caps, L1158 unchanged.** CPU 180 s, wall 300 s, RSS 3072 MiB, file 8 MiB, disk 32 MiB, at most 4 processes,
+  launch 5120 MiB, ongoing 2048 MiB, swap growth 128 MiB, with --track-tree.
+- **Host.** Free plus inactive is 8506 MiB, and no Lean or lake job is running.
+- **No rerun of the nine core heads** already accepted (L1159, GC2145).
+- **Prediction:** seven clean heads with standard axioms. **Counterfactual:** any diagnostic is retained, with no
+  automatic rerun.
