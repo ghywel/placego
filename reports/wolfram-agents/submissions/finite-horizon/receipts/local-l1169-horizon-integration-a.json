@@ -1,0 +1,115 @@
+{
+ "stage": "L1169 horizon integration stage A (L1167 freeze, agreed GC2160)",
+ "host": "M5 (Local)",
+ "wrapper_sha256": "4aeb80bd252e72e760a1d8c45447c962fa27c84ba20612d91dcfbb5f6775ca34",
+ "modules": {
+  "ArcBreakBounds": {
+   "heads": 4,
+   "output": "'ArcBreakBounds.label_collision' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakBounds.break_envelope' depends on axioms: [propext, Quot.sound]\n'ArcBreakBounds.spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakBounds.next_denominator_covers_window' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "ArcBreakSequence": {
+   "heads": 4,
+   "output": "'ArcBreakSequence.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.sequence_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.sequence_strict' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.labelled_spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcDeterminantDraft": {
+   "heads": 2,
+   "output": "'ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcContinuantsDraft": {
+   "heads": 2,
+   "output": "'ArcDeterminant.continuant_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcDeterminant.continuant_error_lt_next' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcCoverDraft": {
+   "heads": 3,
+   "output": "'ArcCover.same_interval_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcCover.short_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcCover.no_repeat_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcStepCodeDraft": {
+   "heads": 4,
+   "output": "'ArcStepCode.crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.break_has_lift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.lift_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.no_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcRotationDraft": {
+   "heads": 6,
+   "output": "'ArcRotation.denominator_next' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.previous_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.next_covers_window' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.no_repeat_at_large_digit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.repeat_bound_fails' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.no_uniform_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "SharpAdjacentReturn": {
+   "heads": 5,
+   "output": "'SharpAdjacentReturn.basis_coordinates' depends on axioms: [propext, Quot.sound]\n'SharpAdjacentReturn.positive_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.sharp_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.same_sign_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "MechanicalCarry": {
+   "heads": 7,
+   "output": "'MechanicalCarry.difference_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_as_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.half_open_endpoint_controls' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "FiniteHorizonBounds": {
+   "heads": 6,
+   "output": "'FiniteHorizonBounds.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.equal_of_zero_carry' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonBounds.first_carry' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.next_carry' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.denominator_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.zero_horizon_control' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "CarryReturnSpacing": {
+   "heads": 3,
+   "output": "'CarryReturnSpacing.phases_close' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CarryReturnSpacing.phase_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CarryReturnSpacing.return_spacing' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ActualContinuants": {
+   "heads": 5,
+   "output": "'FiniteHorizonContinuants.multiplier_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.error_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.adjacent_errors_opposite' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.adjacent_determinant_unit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.error_abs_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ActualCarrySpacing": {
+   "heads": 2,
+   "output": "'FiniteHorizonActualCarry.return_spacing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualCarry.denominator_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "limits": {
+  "out": "FRESH",
+  "cpu": 300,
+  "wall": 600,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4,
+  "cmd": [
+   "sh",
+   "check_horizon_integration.sh",
+   "arc-codes",
+   "finite-horizon"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 22.94,
+ "maxima": {
+  "rss_kib": 2449936,
+  "procs": 3,
+  "disk_bytes": 3329330,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 4747
+ },
+ "gate": {
+  "free_inactive_mib": 5850,
+  "swap_used_mib": 1107.12
+ },
+ "start_utc": "2026-10-29T13:05:17Z",
+ "end_utc": "2026-10-29T13:05:40Z",
+ "supervisor_cpu_s": 0.244,
+ "out_txt": "SOURCES_OK 53 axiom reports expected\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n== ArcBreakBounds\n'ArcBreakBounds.label_collision' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakBounds.break_envelope' depends on axioms: [propext, Quot.sound]\n'ArcBreakBounds.spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakBounds.next_denominator_covers_window' depends on axioms: [propext, Quot.sound]\nMODULE_PASS ArcBreakBounds\n== ArcBreakSequence\n'ArcBreakSequence.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.sequence_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.sequence_strict' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcBreakSequence.labelled_spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcBreakSequence\n== ArcDeterminantDraft\n'ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcDeterminantDraft\n== ArcContinuantsDraft\n'ArcDeterminant.continuant_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcDeterminant.continuant_error_lt_next' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcContinuantsDraft\n== ArcCoverDraft\n'ArcCover.same_interval_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcCover.short_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcCover.no_repeat_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcCoverDraft\n== ArcStepCodeDraft\n'ArcStepCode.crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.break_has_lift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.lift_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcStepCode.no_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcStepCodeDraft\n== ArcRotationDraft\n'ArcRotation.denominator_next' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.previous_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.next_covers_window' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.no_repeat_at_large_digit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.repeat_bound_fails' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ArcRotation.no_uniform_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ArcRotationDraft\n== SharpAdjacentReturn\n'SharpAdjacentReturn.basis_coordinates' depends on axioms: [propext, Quot.sound]\n'SharpAdjacentReturn.positive_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.sharp_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.same_sign_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS SharpAdjacentReturn\n== MechanicalCarry\n'MechanicalCarry.difference_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_as_floor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.carry_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.nonzero_negative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MechanicalCarry.half_open_endpoint_controls' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS MechanicalCarry\n== FiniteHorizonBounds\n'FiniteHorizonBounds.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.equal_of_zero_carry' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonBounds.first_carry' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.next_carry' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.denominator_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonBounds.zero_horizon_control' depends on axioms: [propext, Quot.sound]\nMODULE_PASS FiniteHorizonBounds\n== CarryReturnSpacing\n'CarryReturnSpacing.phases_close' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CarryReturnSpacing.phase_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CarryReturnSpacing.return_spacing' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS CarryReturnSpacing\n== ActualContinuants\n'FiniteHorizonContinuants.multiplier_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.error_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.adjacent_errors_opposite' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.adjacent_determinant_unit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuants.error_abs_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ActualContinuants\n== ActualCarrySpacing\n'FiniteHorizonActualCarry.return_spacing' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualCarry.denominator_growth' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ActualCarrySpacing\nHORIZON_INTEGRATION_A_PASS (13 modules)\n",
+ "objects": {
+  "lib/ActualCarrySpacing.olean": "c8166684f47203e955e6268d7781ab876ddd4bb1f1bb7aabe6d79a0c7df5eb66",
+  "lib/ActualContinuants.olean": "8f55f2caca30dec40f94b563514a0d8e10c66ecc3a1c12d49b58e31eb8029dd5",
+  "lib/ArcBreakBounds.olean": "48c36b7523beb10602646c9102e1c77c0d2a5478a07bd62bb12d4f1d3ae34e1d",
+  "lib/ArcBreakSequence.olean": "c683609e3af6c616445f80d2a990f4bcd32dd631561741ee009bfa8463be429d",
+  "lib/ArcContinuantsDraft.olean": "36b100804fdd31545a51bb5b90fd71673719da37e77e4f77e5745767b356e8d8",
+  "lib/ArcCoverDraft.olean": "4ba756c6476aa81f094ec7acffd0e27afd5b7b1b9baf4cfe33f1cb05c40db78b",
+  "lib/ArcDeterminantDraft.olean": "6e6b17632f7436f85f043b6f6608474bf730c75a562c9d26a15a54e88653dc74",
+  "lib/ArcRotationDraft.olean": "bc6d79c9cbf12e1ed10deb21d6a774464ee2fd5d8eea8d4d8836ba9a76cae8a8",
+  "lib/ArcStepCodeDraft.olean": "315adc5d8a6df69981275466ce0254612a3b54f688de313de4e189bce1603c94",
+  "lib/CarryReturnSpacing.olean": "86750af7063e00867ff8a44b1c14bcdd36a16a79009b11767486ea25754e65c2",
+  "lib/FiniteHorizonBounds.olean": "fb472c9e76d1f3ed212df2dab24d153fb607c4bfc15378b24fd698d439eb590e",
+  "lib/MechanicalCarry.olean": "861c510464432d8377bb10f5fa94cab419d75783bdf533c100ec10067301a4bc",
+  "lib/SharpAdjacentReturn.olean": "bd397fdaa5f631f3ce7bf2bb587f5087427cfee901980c9cbfeaf2531547c0cc"
+ },
+ "full_packet": {
+  "where": "the shared store, workers/local/l1169-horizon-a-packet/",
+  "manifest_sha256": "630bdf96d373a6ffe368d334ef87add304f5eb6c9ff7d3afa96e911daa6f4021"
+ }
+}

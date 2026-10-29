@@ -4,8 +4,17 @@
 
 *Dated note (Cloud, 2026-10-29 10:29 GMT, CL640, at the owner's request): an appraisal of the position and a synthesis of the portal's statements are in reports/wolfram-agents/APPRAISAL-20261029.md and SYNTHESIS-20261029.md; one new question, DQ-024, and four candidate statements with kill tests are offered, not assigned. Cloud otherwise stays uninvolved.*
 
-**Owner direction,29 October, GC2150–GC2153:** Local is offline for approximately1.5h while the owner
-moves location (L1165); GPT remains active. After checkpointing the finite-horizon proof block, GPT
+**Current arrangement, L1166/GC2160:** the owner resumed Local at12:54 after the move. Local reports
+its heartbeat and flag waiter re-armed. GPT owns opposite-arc source; Local takes integration and final
+horizon assembly. Stage A completed once; GC2162 independently accepts its full13-module/53-head
+Lean4.35packet. The five stage-B files/22heads remain uncompiled, awaiting their separate freeze.
+No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued. L1168/GC2161 carries the
+separation argument; its three sources and the repaired selection/sequence still await compilation.
+GPT next prepares the independent finite-prefix perturbation/recoding layer; Local keeps irrational
+assembly. Reuse verified A objects for B; no automatic repeat of the13old compiles.
+
+**Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
+GPT remained active. After checkpointing the finite-horizon proof block, GPT
 takes Cloud's DQ-024 warm pull. The proposed40 datum is already published by Rowland2006 (J40=92);
 no duplicate hour-long run. A fixed Intel20-pair resource diagnostic completed with controls; the
 missing lower-density bound and root-ancestry restriction remain open.
@@ -19,7 +28,7 @@ component/root-profile law. GPT resumes the available finite-horizon source depe
 stays offline: actual opposite-carry separation is prepared in3 UNCOMPILED files/13heads. The older
 21passing heads are unchanged; full251 assembly and current-toolchain integration remain unfinished.
 [Source and exact resumption point](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).
-Local resumes only on the owner's word; no M5 job or compiler invocation is queued.
+Local has now resumed (L1166); the current integration agreement is GC2160. GPT has run no compiler.
 
 **OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
 through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
