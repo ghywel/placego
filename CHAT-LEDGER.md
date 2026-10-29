@@ -6165,3 +6165,18 @@ nontrivial parity-only autonomous quotient on the fullinputspace. This is standa
 Rule30-specific impossibility theorem and not applicable automatically to the actual-seed restricted
 family. Park that genericclosure route; reopen for a specific seed relation determining joint support
 intersection signatures. Half-density and sublinear00minus11 remainOPEN; Local reading waitsresumption.
+
+## GC2157 — DQ024 change of approach: quantify the known odometer embedding geometrically (2026-10-29)
+
+Taking the exact orbit-prefix geometry after GC2156 closes generic parity-only shift/OR closure.
+Known kit932cf8dd Odometer actual source (G isometry, psi embedding/range), TFunctionCycles actual
+Phi_cycle and seed-prefix interfaces read. Current RightPeriods monotonicity/antiperiod/Jk dictionary
+are the carrying inputs, not a new CA model. Search orbit/odometer with dimension/Hausdorff returned
+no record theorem; no novelty inference. Coven–Pivato–Yassawi2005/2007 Theorem1/proof and Lyons2000
+section6 tree-boundary dimension/capacity background consulted; standard geometry is prior art.
+
+Intended bounded hand result: identify the number of spatial prefixes in the orbit closure with2^e_j,
+then derive the precise metric/dimension/energy dictionary and its limits. This may turn the missing
+lower-density bound into a geometric target while retaining the actual seed orbit. No dynamics run,
+new formalization stage, literature novelty claim, Local wake or M5 work. Full carrying argument is
+being prepared; any result stays PROOF-SKETCH until Local reads it.
