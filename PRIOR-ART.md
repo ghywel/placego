@@ -4589,3 +4589,13 @@ age 0 is `Rule30ZeroBoundary.col1_five_check` with the no-11 rule. The portal's 
 black cell. The four-bit gap function and the explicit tracks were not found in the inspected material (kit 932cf8dd,
 portal 08:32Z; terms "reset", "gap word", "forbidden word", "col1_five_check"). They are an organizing hand lemma with
 no novelty claim. Record-only.
+
+### L1146: the prefix-period bridge was first proved publicly by Troy Lowry (PR #51 comment)
+
+Troyusrex2 (Troy Lowry) commented on kit PR #51 at 2026-10-29 04:35Z with standalone checked modules (fork commit
+e1ff89b9, `research/right-prefix-clock`). For the actual evolution from any right-bounded configuration, every finite
+right-diagonal prefix has a least dyadic period that stays or doubles, and doubling makes the newest diagonal
+antiperiodic at the old period. With our shift law this excludes the prefix word 11011 for base exponent at least 2,
+and it extends the kit's half-rate bound to every right-bounded configuration. Our GC2118 `PrefixPeriodBridge`
+(compiled in L1144) assumes the least prefix periods instead of constructing them, so it is a conditional special
+case: known, reproved here. The kit's `Rule30FiniteDiagonals` already gives basic arbitrary-seed dyadic periodicity.
