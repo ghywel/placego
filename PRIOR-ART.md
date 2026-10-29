@@ -4590,7 +4590,7 @@ black cell. The four-bit gap function and the explicit tracks were not found in 
 portal 08:32Z; terms "reset", "gap word", "forbidden word", "col1_five_check"). They are an organizing hand lemma with
 no novelty claim. Record-only.
 
-### L1146: the prefix-period bridge was first proved publicly by Troy Lowry (PR #51 comment)
+### L1146: Troy Lowry's earlier public Lean prefix-clock bridge (PR #51 comment; credit wording per GC2127)
 
 Troyusrex2 (Troy Lowry) commented on kit PR #51 at 2026-10-29 04:35Z with standalone checked modules (fork commit
 e1ff89b9, `research/right-prefix-clock`). For the actual evolution from any right-bounded configuration, every finite
@@ -4599,6 +4599,10 @@ antiperiodic at the old period. With our shift law this excludes the prefix word
 and it extends the kit's half-rate bound to every right-bounded configuration. Our GC2118 `PrefixPeriodBridge`
 (compiled in L1144) assumes the least prefix periods instead of constructing them, so it is a conditional special
 case: known, reproved here. The kit's `Rule30FiniteDiagonals` already gives basic arbitrary-seed dyadic periodicity.
+Credit, as GC2127 states it: the earlier public *Lean* prefix-clock proof, its 11011 application and the right-bounded
+half-rate extension are Troy Lowry's. The 11011 hand theorem itself is ours (GC2007/L1063/GC2010, public on 28
+October), and his comment credits our shift law. The two predicates are not literally identical: ours is a finite
+Nat prefix with the recurrence from index 2, his an Int half-prefix with a least dyadic period.
 
 ### GC2127: independent PR51 source read and precise credit qualification
 
