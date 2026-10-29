@@ -15,22 +15,31 @@ theorem somewhere unless marked *conjecture* or *measured*. Two cheap computatio
 their scripts (`tests/probes/wolfram/edge_gaps.c`, `edge_lift.c`). Nothing here changes any status; the candidate statements
 of section 5 are instinct, with kill tests, for the workers' and the owner's judgement.
 
+*Corrections (2026-10-29 12:58 GMT, CL641, after GPT's scope review GC2146, reports/wolfram-agents/CL640-GPT-SCOPE-REVIEW.md; all six taken and
+applied in place below): (1) physical left and right were reversed in the two mechanisms; (2) the arc theorem 0ef6e2 is conditional on
+large partial quotients; (3) the width-16 channel figure 0.2131 is a record prototype, not a published theorem, so the capacity
+statement uses the published width-14 bound; (4) an entropy gap plus one witness does not make the whole gate language a subshift of the
+gap shift, only its intersection with it; (5) a finite J_40 cannot kill a limit, and the sign of the drift that would argue against
+the conjecture is positive, not negative; (6) the five half-rate appearances are a connection, not one theorem.*
+
 ## 1. One rule, three frames, two mechanisms
 
 Rule 30 is `new = left XOR (centre OR right)`. Everything proved so far follows from two consequences of that formula, and every
 statement on the portal lives in one of three frames.
 
-**Mechanism 1, left-permutivity.** `left = new XOR (centre OR right)`: the left neighbour is recovered from the next row. So
-information from the right *always* arrives (a change at the right of a cell always changes the cell's next value), and the whole
-history left of two adjacent columns is determined by those two columns (Jen). The kit's name for the consequence is Jen's theorem
-with its masked and windowed forms; the portal's name for it is "the moving left edge forbids two periodic columns".
+**Mechanism 1, left-permutivity.** With `new = L XOR (C OR R)`, toggling the left input always toggles the output, and
+`L = new XOR (C OR R)`: the left neighbour is recovered from the next row and the right pair. So a cell's influence on its *right*
+neighbour is unconditional, and the whole history to the *left* of two adjacent columns is determined by those two columns (Jen).
+The kit's name for the consequence is Jen's theorem with its masked and windowed forms; the portal's name for it is "the moving left
+edge forbids two periodic columns".
 
-**Mechanism 2, OR-masking.** The left neighbour enters a cell's next value only through `centre OR left`: when the centre is
-black the OR is 1 whatever the left neighbour is, so a black cell masks its left neighbour's influence, and a white cell passes
-it. The right neighbour enters by XOR and is never masked. So information flows leftward unconditionally and rightward only
-through white cells. The portal's names for this: the nine-black shield (`black_shield`), the ether-and-wall traps, "white
-passes, black masks" (GC1897), the forced bits of the sideways front (L3 to L6), the vacuum certificates, and the 2-to-1 character
-of the zero-boundary map (`backward_det`).
+**Mechanism 2, OR-masking.** The right neighbour enters only through `C OR R`: when the centre is black the OR is 1 whatever `R`
+is, so a black cell masks the influence of its *right* neighbour, and a white cell passes it. The left neighbour enters by XOR and
+is never masked. So influence travels rightward unconditionally and leftward only through white cells. (In the wall frame, where
+depth increases leftward, the same statements read with the words exchanged; the kit's depth coordinates are used in sections 2B
+and 3.4 and said so there.) The portal's names for this: the nine-black shield (`black_shield`), the ether-and-wall traps, "white
+passes, black masks" (GC1897, in depth coordinates), the forced bits of the sideways front (L3 to L6), the vacuum certificates, and
+the 2-to-1 character of the zero-boundary map (`backward_det`).
 
 **Frame A, the lab (column) frame.** Time down, space across; the object is the centre column `c(t)` and its neighbours. Home
 of Problem 1 itself, of every word exclusion, of the run bounds, and of Problem 2.
@@ -84,8 +93,8 @@ width ≤ 60 dies (kit ≤ 52; ours 56, 60), with exact death times `D(52) = 96`
 `D(76) ≥ 138`; the constrained starts are `Theta f` with free bits `f` at odd times, exactly `2^{⌊W/2⌋}` of width `W` survive
 through `W - 1` (`count_constrained`), and `F²` acts on the free bits as the shift (`two_step_shift`). Under the coupling the
 free bits never spell `00` or `11111`. The right neighbour of a clocked centre: no Sturmian word of any slope or intercept, no
-finite-arc rotation code (ours), no near-squares at unbounded scales (Corollary F, ours), and at most `0.2445` bits of information
-per visible bit at width 14, `0.2131` at width 16 (the channel bound, ours). The coupled form `CQ01` is `Psi R` infinite for every
+finite-arc rotation code whose continued fraction has arbitrarily late large partial quotients (ours, 0ef6e2), no near-squares at unbounded scales (Corollary F, ours), and at most `0.2445` bits of information
+per visible bit at width 14 (the channel bound, ours; a width-16 prototype in our record gives `0.2131` and is not published). The coupled form `CQ01` is `Psi R` infinite for every
 finite right half `R`; two infinite families are absorbed by the ether (ours); the empty right half's gate has gaps 3 or 5 from
 step 146 (Bosdure), which turns `CQ01Empty` into the left-only `Q01Gap`. `EdgeObservable` (equal centre traces ⇒ equal left
 edges) implies Problem 1 (Lowry), and holds for three edge pairs with exact deadlines 8, 13, 14 (ours). Sparse16: 56 even blacks
@@ -132,14 +141,15 @@ strip pumpings are all this question for particular `w`. Period 2 is the excepti
 the clock the right half's first column is *not* forced periodic, it is merely starved of information (0.21 bits per visible bit),
 and the left half must supply the rest from a finite start, which is `Q01`.
 
-**3.2 Five appearances of "one bit per two cells" are one theorem.** (i) `Theta`: a constraint at every even time pins every
+**3.2 Five appearances of "one bit per two cells" are one connection.** (i) `Theta`: a constraint at every even time pins every
 second depth, the odd depths are free (`tri_odd`, `tri_even`). (ii) `count_constrained`: `2^{⌊W/2⌋}` survivors through `W - 1`,
 and exactly `2^{W - ⌈T/2⌉}` through `T ≤ W` (GC1867). (iii) The sideways row above a sinking front exposes one fresh trace bit
 per two columns (GC1898, L960). (iv) The coin model of the death time: after the `W` free steps each pair of steps halves the
 survivors, so `D(W) ≈ 2W` (measured `D(W) - 2W ∈ [-16, 6]` to `W = 76`). (v) The right-diagonal exponent grows by at most one per
-two diagonals, `e_j ≤ j/2 + O(log* j)` (AIOvernight's record charge). The common cause is Mechanism 1 in a triangular frame: each
+two diagonals, `e_j ≤ j/2 + O(log* j)` (AIOvernight's record charge). The common mechanism is Mechanism 1 in a triangular frame: each
 step exposes exactly one new bit (left-permutivity), and an observation or constraint made every *second* step can pin only every
-second one. (v) is the same count read in Frame B: pairing the diagonals, the exponent rises by 0, 1 or 2 per pair and the
+second one. Only (i) and (ii) are exact counts; (iii) is a bijection count under a model; (iv) is measured; (v) is a proved upper
+bound by its own record-charge argument. Equal leading constants do not identify their hypotheses. (v) is the same count read in Frame B: pairing the diagonals, the exponent rises by 0, 1 or 2 per pair and the
 resource argument shows the average is at most 1. What is *not* a theorem is the matching lower bound in any frame: that the
 freedom is actually used. In Frame C it is (every free bit is free); in Frame B it is the open question of section 5.1.
 
@@ -160,13 +170,16 @@ erased (`OrbitSignalizer`: the top bit rises by exactly two per step); so `EdgeO
 discarded bit per step can hide. That is a sharper form of the question than "equal traces, equal edges", and our three exact
 deadlines (8, 13, 14) are its first data points.
 
-**3.5 Two capacities, one language.** The channel bound (ours) says the visible column of *any* right half under the clock
-lies in a language of at most `0.2131` bits per symbol (width 16; `0.2445` proved at 14). Bosdure's trap says the empty right
-half's visible column has gaps 3 or 5 from step 146. The `{3,5}`-gap shift alone has entropy `log₂ z = 0.2556` with
-`z^5 = z^2 + 1`. So the two theorems together say: **the gate language of the clocked right half is a proper subshift of the
-`{3,5}`-gap shift, missing at least a fraction `1 - 0.2131/0.2556 ≈ 17%` of its entropy.** Nobody has written down which gap
-words are forbidden; the width-14 automaton (our submission) contains the answer as a finite computation. This is the one place
-where two portal results combine into a new statement without new mathematics.
+**3.5 Two capacities, one language.** The channel bound (ours, published at width 14) says the visible column of *any* right
+half under the clock lies in a language of at most `0.2445` bits per symbol (growth ratio `1.1847`). Bosdure's trap says the empty
+right half's visible column, and that of every right half whose window enters the trap, has gaps 3 or 5 from step 146. The
+`{3,5}`-gap shift alone has entropy `log₂ z = 0.2556` with `z^5 = z^2 + 1`, `z > 1.19 > 1.1847`. So, provided the two results
+count the same symbols (the certified bound samples column 1 at even times; the trap counts gaps between black cells of that
+column), **the gate languages of the right halves that enter the trap form a proper subshift of the `{3,5}`-gap shift, missing
+at least a fraction `1 - 0.2445/0.2556 ≈ 4%` of its entropy** (17% with the unpublished width-16 figure). GPT's GC2146 is right
+that the whole gate language need not lie in the gap shift; the statement is about the intersection. Nobody has written down which
+gap words are forbidden; the width-14 automaton (our submission) contains the answer as a finite computation, once the two time
+units are matched. This is the one place where two portal results combine into a new statement without new mathematics.
 
 **3.6 The barrier results are the other half of the map.** No local ranking, no finite abstraction, no edge-DFA ranking for `Q01`
 (kit); no local conservation law (Lowry, confirming our search); rules 90, 150, 210 share Jen's hypotheses and fail Problem 1
@@ -202,10 +215,10 @@ theorem is an *upper density* statement: at most `1/2 + o(1)`. The kit records `
 
 and `e_j / j = 0.40, 0.42, 0.43` at `j = 40, 60, 79` with marginal `0.46` over `j = 40..79`. The average is dragged down by the
 start (the universal start's rate is 2/3, then a long plateau); the recent rate sits on the proved bound. **Conjecture:**
-`lim e_j / j = 1/2` for the single seed, equivalently `J_k = 2k + o(k)`. If true, AIOvernight's half-rate theorem is sharp and
-is the first proved "density one half" statement about a structured subsequence of the pattern's cells. *Kill test:* `J_k` to
-`k = 40` (one hour of C on the M5; `2^40` steps of a 128-bit operation); the conjecture dies if `J_k - 2k` drifts linearly
-negative. *Seed dependence:* by the kit's lifting rule (`TFunctionCycles.lift_iff`) I computed the block exponents `E_n` to
+`lim e_j / j = 1/2` for the single seed, equivalently `J_k = 2k + o(k)`. If true, AIOvernight's half-rate theorem is sharp. (The kit's `half_black` already gives temporal density one half on each
+newly doubling diagonal; this conjecture is about the doubling *events across* diagonals, not the first half-density statement.) *Finite test, not a kill of the limit:* `J_k` to `k = 40`; the finite prediction `J_40 - J_34 = 12 ± 2` was settled from Rowland
+(2006), whose table gives `J_40 = 92` (GC2151): held. A drift of `J_k - 2k` that argued against the conjecture would be linearly
+*positive* (a rate below one half); no finite window settles the limit. *Seed dependence:* by the kit's lifting rule (`TFunctionCycles.lift_iff`) I computed the block exponents `E_n` to
 `n = 56` for twelve finite seeds (`edge_lift.c`): `E_56` ranges from 18 to 26 (rates 0.32 to 0.46), seeds with an alternating low
 end start with long plateaus (the frozen ruler at work), so **the rate is not visibly universal at this depth**; whether the limits
 agree is a second question. Record searched: `per_upper_half`, `e_step`, `rows_at_powers_of_two`, `not_half_lower`; the kit's

@@ -1,4 +1,4 @@
-# edge_gaps.c output, 2026-10-29 (Cloud CPU; k=0..35); J_k = white gap left of the edge cell of row 2^k of the single seed
+# edge_gaps.c output, 2026-10-29 (Cloud CPU; k=0..38); J_k = white gap left of the edge cell of row 2^k of the single seed
 k= 0  J_k=  0  J/k=0.0000  edge+ : 1 0^0 1100000000
 k= 1  J_k=  2  J/k=2.0000  edge+ : 1 0^2 1100000000
 k= 2  J_k=  3  J/k=1.5000  edge+ : 1 0^3 1001100000
@@ -37,6 +37,7 @@ k=34  J_k= 79  J/k=2.3235  edge+ : 1 0^79 1011101100
 k=35  J_k= 81  J/k=2.3143  edge+ : 1 0^81 1100011110
 k=36  J_k= 83  J/k=2.3056  edge+ : 1 0^83 1001000001
 k=37  J_k= 85  J/k=2.2973  edge+ : 1 0^85 1101111110
+k=38  J_k= 89  J/k=2.3421  edge+ : 1 0^89 1010111001
 
 # edge_lift.c output: block period exponents E_n (period of the edge code mod 2^(n+1)) for twelve finite seeds, n = 1..56
 seed=1 E_n: 1 1 2 3 3 4 5 5 6 6 6 6 6 6 7 8 8 8 8 8 8 8 8 9 10 10 11 11 12 12 12 12 12 13 13 14 15 15 16 16 17 17 18 18 18 18 18 19 20 20 21 21 21 22 23 23

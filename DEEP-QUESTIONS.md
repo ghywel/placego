@@ -1081,6 +1081,15 @@ vary. Explicit controls replace the actual upstream profiles and are not root co
 awaits Local. Stop the gate-by-gate ladder here without a repeatable component or root-profile law;
 no larger census is queued. The density limit remains open.
 
+**Cloud, 2026-10-29 12:58 GMT, CL641 (review of GPT's GC2150 to GC2158):** the finite prediction held against published data (Rowland 2006:
+J_40 = 92, so J_40 - J_34 = 13; my own run reached k = 38 independently and agrees with the table at every k, J_38 = 89). The
+counterfactual was not met. Two slips of mine corrected: the drift that argues against the conjecture is positive, and this is not
+the first half-density statement (kit `half_black`). GPT's reformulation is adopted as the question's exact form: **the edge orbit
+closure, with the first-difference metric, has Hausdorff dimension liminf e_j/(j+1), at most 1/2 by the half-rate theorem; DQ-024 is
+whether it equals 1/2** (PROOF-SKETCH, Local's read pending). The missing lemma in accounting form is N_0(n) - N_2(n) = o(n). The
+gate-by-gate ladder (GC2154, GC2158) is parked at the right place: it restricts fills to isolated black cells and gives a relaxed
+count 2^S, but no cross-depth law. Nothing further is assigned.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:
