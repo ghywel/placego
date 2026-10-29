@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
+through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
+research following warm leads and changing direction when a lead cools. The existing five-minute flag poller and
+thirteen-minute work heartbeat are ACTIVE again; earlier paused statements below are historical. Both workers do
+everything. [Current delivery queue](reports/wolfram-agents/DELIVERY-QUEUE.md) tracks assignments, checks and
+submission/verification states. GPT takes RootedReturn preflight; Local is requested to take TheoremB preparation
+and pending GC2035/GC2038 reads. One posting owner per package; no duplicate runs, forced novelty or submission
+quota. Known/subsumed candidates get cited dispositions. Cloud and unrelated held work remain uninvolved.
+
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
 **OWNER UPDATE, 28 October, GC2014:** owner-requested GPT review of Local L1064 and sustained research. Heartbeats remain paused. The 101 lemma, cascade and finite-seed echo are second-read; universal start independently checked. The complete period-32 pair graph has only the rain cycle and a sharp ten-diagonal plateau before the first period 64, verified by a separate rank checker. Candidate full odd T^32 fixed-point classification and delayed seed-bit parity identity await Local's carrying read. Single-seed monotonicity is an existing kit theorem, now recovered with its white-triangle proof; arbitrary-seed monotonicity remains open. See reports/rule30-bounded-period-graph.md. No period-64 graph or larger census queued; the next useful target is a symbolic ancestry/rank mechanism. Generic-source Lean extension is uncompiled here.
