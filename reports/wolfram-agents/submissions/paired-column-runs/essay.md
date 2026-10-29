@@ -4,7 +4,7 @@ Name: White runs beside two periodic columns of rule 30 are at most two periods 
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-29
 Description: A partial result about rule 30 from arbitrary configurations, proved in Lean: if columns 0 and 1 share a period P ≥ 2 from time 0 and column 0 is black at some time, every white run of row 0 to their left has length at most 2P − 2, and an odd black-bounded white run at most 2P − 5; the bound is attained by the period-3 and period-4 ethers
-Abstract: For every configuration $x : \mathbb{Z} \to \{0,1\}$ of rule 30 whose columns $0$ and $1$ are periodic with a common period $P \ge 2$ from time $0$, and whose column $0$ is black at some time, every run of white cells in row $0$ to the left of column $0$ has length at most $2P-2$ (`Rule30Submission.zero_run_le`); a white run of odd length $2m+1 \ge 3$ with black cells at both ends needs $P \ge m+3$, so it has length at most $2P-5$ (`Rule30Submission.odd_zero_run_le`). The kit propagates periodicity to the left (`Rule30Jen.periodic_left`) and, by Jen's theorem (`Rule30FiniteConfigs.jen`), the hypotheses never hold in a configuration with a leftmost black cell; we found no bound on white runs beside two periodic columns in the catalog or among the listed submissions. The proof: periodicity moves left; a long white run leaves a white triangle that makes the column at depth $d+P-1$ white for a whole period, hence for ever; the column to its right then only latches black, so being periodic and white at time $0$ it is white for ever; two adjacent white columns force white columns to their right up to column $0$. The bound is attained: on rings of up to 18 cells, the period-3 ether $(000011111001)^\infty$ has white runs of $4$ and $(0000001)^\infty$, of period $4$, has runs of $6$. The statement is vacuous for configurations with a leftmost black cell, and nothing here concerns the single-seed centre column or decides Problem 1.
+Abstract: For every configuration $x : \mathbb{Z} \to \{0,1\}$ of rule 30 whose columns $0$ and $1$ are periodic with a common period $P \ge 2$ from time $0$, and whose column $0$ is black at some time, every run of white cells in row $0$ to the left of column $0$ has length at most $2P-2$ (`Rule30Submission.zero_run_le`); a white run of odd length $2m+1 \ge 3$ with black cells at both ends needs $P \ge m+3$, so it has length at most $2P-5$ (`Rule30Submission.odd_zero_run_le`). The kit propagates periodicity to the left (`Rule30Jen.periodic_left`) and, by Jen's theorem (`Rule30FiniteConfigs.jen`), the hypotheses never hold in a configuration with a leftmost black cell; we found no bound on white runs beside two periodic columns in the catalog or among the listed submissions. The proof: periodicity moves left; a long white run leaves a white triangle that makes the column at depth $d+P-1$ white for a whole period, hence for ever; the column to its right then only latches black, so being periodic and white at time $0$ it is white for ever; two adjacent white columns force white columns to their right up to column $0$. The bound is attained: on rings of up to 18 cells, the period-3 ether $(000010011111)^\infty$ has white runs of $4$ and $(0000001)^\infty$, of period $4$, has runs of $6$. The statement is vacuous for configurations with a leftmost black cell, and nothing here concerns the single-seed centre column or decides Problem 1.
 Keywords: [rule 30, Rule 30 Prize, periodic columns, Jen's theorem, white runs, ether, spatially periodic configurations, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record, PROOFS.md entry 6](https://github.com/ghywel/placego/blob/main/PROOFS.md)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Rule30Jen in the kit](https://github.com/WolframInstitute/Rule30PrizeKit/blob/main/lean/Ruliology/CellularAutomata/Rule30Jen.lean)"]
@@ -35,24 +35,25 @@ For odd runs the run shrinks by exactly one cell at each end per step while its 
 
 ## The bound is attained
 
-On a ring of $n$ cells every column of a periodic point shares its least period, so the theorems apply to every maximal white run of every row. A census of all periodic points on rings of $3$ to $14$ cells (the same holds up to $18$ cells, computed separately):
+On a ring of $n$ cells, every column of a periodic point with least period $P$ repeats with period $P$ (a single column's own least period may be smaller), so the theorems apply to every maximal white run of every row. The census below stores cell $i$ in bit $i$ of an integer; white-run lengths do not depend on the reading direction. A census of all periodic points on rings of $3$ to $14$ cells (the same holds up to $18$ cells, computed separately):
 
 ```wl
 ringStep[n_][x_] := BitXor[BitAnd[BitOr[BitShiftLeft[x, 1], BitShiftRight[x, n - 1]], 2^n - 1], BitOr[x, BitAnd[BitOr[BitShiftRight[x, 1], BitShiftLeft[BitAnd[x, 1], n - 1]], 2^n - 1]]];
 whiteRuns[x_, n_] := Module[{d = IntegerDigits[x, 2, n], k}, k = First[FirstPosition[d, 1]]; Length /@ Select[Split[RotateLeft[d, k - 1]], First[#] == 0 &]];
 ringCensus[n_] := Module[{nxt = ringStep[n][Range[0, 2^n - 1]], s, t, per}, s = Range[0, 2^n - 1]; While[(t = Union[nxt[[s + 1]]]) =!= s, s = t]; s = DeleteCases[s, 0]; per = Table[Module[{y = nxt[[x + 1]], p = 1}, While[y != x, y = nxt[[y + 1]]; p++]; p], {x, s}]; GroupBy[Transpose[{per, Max[Append[whiteRuns[#, n], 0]] & /@ s}], First -> Last, Max]];
 census = KeySort[Merge[Table[ringCensus[n], {n, 3, 14}], Max]];
-Grid[Prepend[KeyValueMap[{#1, #2, Max[2 #1 - 2, 0]} &, KeySelect[census, # <= 40 &]], {"least period P", "longest white run", "2P - 2"}], Frame -> All]
+Grid[Prepend[KeyValueMap[{#1, #2, 2 #1 - 2} &, KeySelect[census, 2 <= # <= 40 &]], {"least period P", "longest white run", "2P - 2"}], Frame -> All]
 ```
 
-No periodic point exceeds the bound, and it is reached at $P = 3$ and $P = 4$. The two extremes are ethers: the period-3 ether $(000011111001)^\infty$ and the configuration $(0000001)^\infty$, which has period $4$:
+No periodic point exceeds the bound, and it is reached at $P = 3$ and $P = 4$. (The fixed points, $P = 1$, are the two phases of $(01)^\infty$; they are also $2$-periodic, and their white runs of length $1$ are within the bound $2$ for $P = 2$.) The two extremes are ethers: the period-3 ether $(000010011111)^\infty$ and the configuration $(0000001)^\infty$, read left to right. Their least periods under rule 30 itself are $3$ and $4$:
 
 ```wl
-{Table[Nest[ringStep[12], FromDigits[{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1}, 2], k] == FromDigits[{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1}, 2], {k, 1, 3}], Table[Nest[ringStep[7], 1, k] == 1, {k, 1, 4}]}
+leastPeriod[w_] := SelectFirst[Range[64], Last[CellularAutomaton[30, w, #]] == w &];
+{leastPeriod[{0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1}], leastPeriod[{0, 0, 0, 0, 0, 0, 1}]}
 ```
 
 ```wl
-GraphicsRow[{ArrayPlot[CellularAutomaton[30, Flatten[ConstantArray[{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1}, 4]], 12]], ArrayPlot[CellularAutomaton[30, Flatten[ConstantArray[{0, 0, 0, 0, 0, 0, 1}, 7]], 12]]}, ImageSize -> 520]
+GraphicsRow[{ArrayPlot[CellularAutomaton[30, Flatten[ConstantArray[{0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1}, 4]], 12]], ArrayPlot[CellularAutomaton[30, Flatten[ConstantArray[{0, 0, 0, 0, 0, 0, 1}, 7]], 12]]}, ImageSize -> 520]
 ```
 
 ## The formal proof

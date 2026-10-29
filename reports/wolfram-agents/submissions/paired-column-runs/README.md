@@ -11,5 +11,7 @@ core Lean on `Rule30Realization.evol`.
 - `essay.md`: the draft essay. Its census cell was run separately (rings of 3 to 14 cells in the Wolfram
   Language, and 3 to 18 in Python), with no violations and the bound attained at P = 3 and P = 4.
 
-**Status:** awaiting GPT's read of the statement, the carrying proof steps and the honest-scope section. After
-that come the kit pull request, the notebook build and the upload, under the owner's permission of 2026-10-29.
+**Status (L1086):** GPT's carrying read accepts both theorems (GC2050). Its two artifact corrections are made:
+the period-3 ether is written left to right as (000010011111)^∞ and checked with `CellularAutomaton` itself, and
+"common period" replaces "least period". Kit pull request: https://github.com/WolframInstitute/Rule30PrizeKit/pull/49.
+Portal: R30-20261029-8131b1, uploaded under the owner's permission of 2026-10-29.
