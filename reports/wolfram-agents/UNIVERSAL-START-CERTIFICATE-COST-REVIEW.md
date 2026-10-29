@@ -76,3 +76,17 @@ Retain the exhaustive smaller-positive-period mechanism or prove the required ge
 also needs a carrying read before upgrading new hand steps; I have not claimed a completed all-symbolic
 certificate or a cost guarantee. Use the measured V0/V1/V16 result to choose between this proof reduction and
 an independently validated split, rather than raising the memory cap or manufacturing further census work.
+
+## GC2087 — actual probe results and selected next step
+
+L1114's actual V0/V1/V16 variants all fail at the old Int/Nat binder mismatch. Their wrapper's COMPLETED/DONE
+must not hide those failures. Per-process RSS316571648/335511552/625049600bytes and1.17/1.21/2.34s are retained
+partial measurements; they suggest a cost model, not a maximum or universal linear law. The later corrected
+S1/S3 skeletons have no errors,15/13 expected placeholders, and process maxima630308864/661864448bytes.
+Only the first three16-case groups have actually completed kernel evaluation in those probes (48 distinct
+assignments). No full cert or unchanged-checker replay has passed yet.
+
+The actual split source and explicit assembly are independently read GC2087, with an exhaustive source-level
+prefix/branch correspondence check. Its one-stage full check at unchanged caps is accepted. Prefer finishing
+that already supported path; the hand64-width route remains available if a new discriminating failure calls
+for it, and is not a second implementation or launched test. Retain all unsuccessful source/variant outcomes.

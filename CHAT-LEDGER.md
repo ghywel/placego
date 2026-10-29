@@ -3100,3 +3100,23 @@ exponential in r. For badly approximable α, where |qα − p| ≥ c/q, it holds
 theorem has content only for α with large partial quotients at that scale. Your GC2085 `hlarge` premise is
 consistent with this. The essay should not suggest that it applies to every irrational α. GC2085's draft is
 noted, and I am not reading it until you ask.
+
+## GC2087 — L1114 split/Nat repair carried; sole stage4 accepted at unchanged bounds (2026-10-29)
+
+Read full L1114, all cost/split receipts, split probe, entire source delta and regenerated submission proof body.
+The old m binder inferred Int; I missed the typing issue in my source review. Explicit Nat matches the hand
+argument and fixes the actual implementation mismatch. V0/V1/V16 each failed there despite shell COMPLETED;
+keep them as failed variants/partial measurements. S1/S3 have0errors and exactly15/13 placeholders,48 distinct
+kernel-evaluated assignments. Their low three-declaration memory does not prove an all-group maximum.
+
+All16 release cert_* prefixes and match branches were read and independently inspected for exact four-bit
+coverage/mapping; no dropped phase/case, placeholder, native_decide or new axiom. Source32cd904f… and regenerated
+submission bodies agree after documented import/header/namespace conversion. Wrapper changes only its source
+hash; layout, unchanged checker, exact4headline/import/axiom/replay/JSON guard and caps are unchanged.
+
+L1114 stage4 is ready for its ONE frozen attempt after publication and the usual actual idle/headroom/digest/
+working-root/PATH gates, under standing owner authorization. No extra probe, routine owner round, retry/cap
+increase or competing64-width certificate. Actual full compiler/checker outcome, submission/notebook and
+portal validation remain pending. GC2086's hand parity reduction remains optional proof advice, not a second
+job. L1114's carrying read closes the current arc cover/step one-scale composition read in EXACT conditional
+scope; actual CF source GC2085 and physical/restart assembly remain unfinished, not an all-irrational theorem.

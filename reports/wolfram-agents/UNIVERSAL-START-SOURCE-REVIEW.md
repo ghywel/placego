@@ -165,3 +165,41 @@ PATH/headroom/no-other-job/digest gates. No owner permission round and no extra 
 new warning needing interpretation, cap/refusal or nonstandard axiom is retained and ends it. The mathematical
 certificate remains UNEVALUATED until that actual outcome. No source/proof or checker modification is part of
 this acceptance. Final public submission-form/notebook validation remains separate even if stage3 passes.
+
+## GC2087 — L1114 full split-source read and stage4 acceptance
+
+Read full L1114, V0/V1/V16 and S1/S3 compact receipts, complete split_probe, complete actual source/wrapper
+changes and submission-body conversion. Original finite-seed binder m was inferred as Int, while the proof
+supplied Nat. I missed that elaboration issue in GC2078's carrying read. The mathematical first-equal-pair
+argument stands, but the previous full file was not a validated implementation. Explicit `∃ m : Nat` fixes
+the actual mismatch. The intended domain and fixed-period conclusion are unchanged.
+
+V0/V1/V16 EACH emitted that error; the cost-probe shell still returned COMPLETED0. They are failed variant
+compiles, not successful full-module checks. Their recorded timing/RSS is partial cost evidence, with the
+unrelated error after the local case declarations. S1/S3 then compile the corrected full skeleton without
+errors and exactly15/13 placeholders. Their respective630308864/661864448byte process maxima support low
+accumulation across the three tested declarations, not an all16-case-group memory guarantee. Source bytes
+and complete stdout/time/launcher stay retained; no cleaned rerun or global linear-law claim.
+
+The release source32cd904f9247b5f651e18494e1fd5bc7e4a212c76977989e28808f2f11fbc724 has exactly the Nat
+annotation, documented16-way split and descriptive comments relative to f9843a95. I read all16 theorem
+prefixes and all16 explicit match branches: p,b0,b1,b2 cover every four-bit pattern once; b3..b6 remain the
+sixteen universally quantified assignments in each group. A separate literal-source inspection confirmed
+this coverage/mapping and no placeholder/native_decide/axiom declaration. The proof body of the regenerated
+submission equals the catalog body after its documented import/header/namespace wrapper. No new hand
+hypothesis, period domain or restricted feeder phase is introduced by the split.
+
+The wrapper changes only expected_source. It keeps the already-diagnosed distinct root, unchanged official
+checker digest, exactly-one-JSON/module guard and exact four headline/import/replay/axiom/result guards.
+Accept the separately frozen L1114 stage4 for ONE attempt at the SAME caps, working-root/PATH/headroom/
+no-other-job/digest gates. No owner permission round, extra diagnostic run, automatic retry or cap increase.
+The split is sufficiently supported by the controls to test at those bounds; its prediction is not yet a
+compiler/checker outcome or public release approval. Check all new declarations as the unchanged checker does,
+not only the previously tested48 assignments. Exactly48 distinct assignments were exercised in the probes;
+the cost probe's16 overlap the split probe's first group.
+
+GC2086's64-tick upper-bound route stays optional proof-refactoring advice. Do not implement a competing
+certificate for this release now: the measured split preserves the already-read cycle/minimality semantics.
+Final submission-form/notebook execution, actual output/source comparisons, receipt and portal outcome
+remain pending after a successful full stage. ArcComposition's L1114 carrying read is adopted in its explicit
+StepCode/one-scale conditional scope; no all-irrational or physical Rule30 theorem follows from that acceptance.
