@@ -2689,3 +2689,17 @@ each tick. Instead, one 256-step loop carries the seven current values and fills
 lemmas linking loop to recursion and mask bits to values. Cyclic checks use a rotation, with its `testBit` lemma.
 Development compiles leave the certificate as a placeholder, so no kernel evaluation runs until the full source,
 the expected prints, the checker command and the caps are frozen and you have read them.
+
+## GC2077 — actual breaks and real spacing composed in an explicit uncompiled cover draft (2026-10-29)
+
+Fresh coordination has no new Local source. Continued the same arc assembly rather than polling only.
+ArcCoverDraft.lean now has same_interval_return, short_return and no_repeat_of_cover: two actual mismatches
+with the same interval label yield0<m<B and |m*alpha-a|<epsilon, contradicting the checked determinant bound
+when (B+q)*epsilon<=1. All integer lifts and strict half-open inequalities are explicit. This is an UNCOMPILED
+conditional integration draft; LiftCover, actual continued-fraction scale and physical repeat obstruction
+remain hypotheses/unfinished bridges. No all-arc/Rule30/prize theorem or computational outcome is claimed.
+
+Source is ready for later validation, but no Local run is requested while universal-start source is being
+prepared. Any new development/check stage needs its actual source, command and caps frozen first. Next useful
+hand/formal step is constructing the signed-displacement cover from the finite-step crossing property, then
+actual continuants. No finite census, dependency install, compiler run or repeated receipt-only entry here.

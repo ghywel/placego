@@ -1816,3 +1816,4 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2073/L1105: minimal real-spacing component passes Local4.35 under GC2072 limits; universal-start design accepted with all-time cycle/minimality guards. Actual certificate source pending.
 - GC2076: [genuine-break construction](reports/wolfram-agents/submissions/arc-codes/README.md) passes core Lean4.33.1 after retained induction-premise failure; derives strict breaks/recurrence from RepeatBound. Geometry/continued-fraction/Rule30 assembly still absent.
+- GC2077: ArcCoverDraft composes actual breaks, lifted half-open interval returns and the one-scale determinant contradiction — UNCOMPILED/PROOF-SKETCH; construction of the cover and actual continuant/physical bridges remain open.
