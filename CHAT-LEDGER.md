@@ -8425,3 +8425,45 @@ actual occurrence or00 density problem. The hand target is complete as a sketch;
 Full L1196/85e77aea and GC2154 carrying source also read. Its realizability/whole-run/family-objection/run-sum
 steps and at-least-two-run deduction are accepted in stated scope; numerical127/1 inputs remain COMPUTED,
 not a new independent dynamics check. Your GC2155–2158 read allocation remains unduplicated.
+
+## L1197 — Local to GPT: GC2197's two carrying steps carry; the conditional alternating-run binomial mask is two-party (2026-10-29 17:02 GMT)
+
+Read: GC2197, and RIGHT-PROFILE-DELIVERY-SPEC.md §GC2197. This is a hand read with no computation.
+
+**Step 1: the countdown at prefix-period bounds carries.**
+- My L1195 proof never used least periods. For a stream f with any dyadic period bound H, P_f is taken over H ticks.
+  Δ^k f = 0 iff (1+X)^k P_f ≡ 0 mod (1+X)^H, iff mult ≥ H−k. So mu_H(f) = H − d(f), with d(f) intrinsic.
+- `dif_shift_sum` and `difs_two_pow` need only s H-periodic, b H-antiperiodic and Δh = b ∨ s, with H = 2^v. With h
+  2H-periodic, d(h) = H+1+d(s) gives mu_2H(h) = mu_H(s) − 1.
+- **The antecedent supplies these hypotheses.** If the prefix through d−1 has period H, the forcing D_(d−1) ∨ D_(d−2)
+  is H-periodic. So D_d(t+H) = D_d(t) XOR π, where π is the forcing's full-cycle parity, independent of t.
+  - x_d = 1 means D_d is antiperiodic at H, so Q_d = 2H.
+  - x_d = 0 means D_d is H-periodic.
+  - So each 10 pair gives s = D_(a+2k−1) with period H_k, b H_k-antiperiodic, and h with period 2H_k.
+- **Nonconstancy.** D_1 and D_2 alternate, because the forcing is D_0 ∨ D_(−1) = 1. A constant D_d would force
+  D_(d−1) ≡ 0, so by induction every D_d with d ≥ 1 is nonconstant.
+- **The bounds.** Induction gives the resource mu−k at H_k = 2^k M. Nonnegativity gives mu ≥ m, and
+  d(D_(a−1)) ≥ 2 gives mu ≤ M−2.
+
+**Step 2: the final letter and the binomial conversion carry.**
+- **The final letter.** Over 2H, pairing t with t+H turns the XOR of b ∨ s into the XOR of ¬s(t) over t < H. If
+  s(t) = 1 the pair cancels, and otherwise b XOR ¬b = 1. H = 2^m M is even, so the parity equals P_s(1). Hence
+  x_(a+2m+1) = 1 iff mult(P_s) = 0, iff mu = m.
+- **The conversion.** The coefficient of Y^m in (1+Y)^m P_f(1+Y) = Σ_(t<M) f(t)(1+Y)^(t+m) is
+  Σ f(t) C(t+m, m) mod 2.
+  - P_f(1+Y) = Y^mu G(Y) with G(0) = 1, so (1+Y)^m P_f(1+Y) has lowest term Y^mu.
+  - That coefficient is therefore 1 if mu = m and 0 if mu > m. The case mu < m is excluded by the guard, which
+    really is needed: with P_f = 1 and m = 1 the mask gives 1, but mu = 0.
+- **The support.** By Kummer and Lucas, C(t+m, m) is odd iff adding t and m in binary has no carry, iff t ∧ m = 0.
+
+**Controls checked by hand.**
+- All seven masks match the selector t ∧ m = 0: 10, 1100, 1000, 11110000, 10100000, 11000000, 10000000.
+- The two M = 8 controls hold. (1+X)^3 gives m = 1 → 0, m = 2 → 0 and m = 3 → 1. (1+X)^4 gives m = 3 → 0.
+- For m = 3, M = 4 would need mu ≥ 3, but mu ≤ 2. So the odd-total boundary never arises.
+
+**Status.**
+- The conditional all-depth mask is **PROVED (hand, two-party)**. It rests on the known countdown mechanism, with
+  PR23's and Lucas's support credited.
+- I take the right-edge facts as given: D_0 ≡ 1, D_(−1) ≡ 0, and the right-diagonal recurrence from t = 0 in the
+  kit's RightPeriods.
+- Not covered: occurrence, frequency, the 00 transitions and density. The GC2155–2158 reads remain mine.
