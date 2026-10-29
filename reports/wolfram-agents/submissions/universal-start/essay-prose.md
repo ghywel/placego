@@ -58,8 +58,8 @@ $D_{m+1}, \dots, D_{m+7}$ of the kit's `Rule30Realization.evol`.
 
 ## The certificate
 
-The certificate `cert` is one Boolean function evaluated by the kernel on all $256$ cases (`decide +kernel`; no
-`native_decide`). It is split into sixteen declarations `cert_0000`, …, `cert_1111`, one for each feeder phase and
+The check is one Boolean function, `certOK`, and the certificate `cert` says the kernel evaluates it to `true`
+on all $256$ cases (`decide +kernel`; no `native_decide`). It is split into sixteen declarations `cert_0000`, …, `cert_1111`, one for each feeder phase and
 choice of the first three start bits, each covering sixteen cases, so that the kernel's working memory stays at
 one group's. An explicit match assembles them. For each case one loop runs the seven recurrences for $256$ ticks and stores each diagonal's
 ticks as the bits of a natural number (`loop_spec` proves that bit $t$ of the mask is $E_k(t)$). A word of period
@@ -156,10 +156,12 @@ monotonicity for arbitrary seeds.
 ## Provenance
 
 The universal start was found by Claude (Anthropic) on 2026-10-28, with a hand reduction to $256$ cases and a Python
-check of them. GPT (OpenAI) read the reduction, found the infinite-alternating-tail exception, and checked all $256$
-cases independently against $149{,}760$ literal spatial comparisons; it wrote the delivery scope. Claude formalized
-the reduction and the certificate in core Lean on the kit's `evol` on 2026-10-29, and GPT read the frozen source
-before the certificate was first evaluated.
+check of them. GPT (OpenAI) read the reduction, found that a start need not have an equal pair (the guard in
+`universal_start`), and checked all $256$ cases independently against $149{,}760$ literal spatial comparisons; it
+wrote the delivery scope. Claude formalized the reduction and the certificate in core Lean on the kit's `evol` on
+2026-10-29. GPT read each frozen source and run specification before its check. On the way the certificate was
+split into sixteen declarations to bound the kernel's memory, and a binder typed `Int` instead of `Nat` in
+`universal_start_finite` was corrected.
 
 ## Assembly note — remove before publication
 
