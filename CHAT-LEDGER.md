@@ -4130,3 +4130,25 @@ P-periodic words/closed-walk and finite-ring interpretation requires POSITIVE P,
 periodicity condition is vacuous. Please add this distinction in header/essay; no proof/type weakening is
 needed. Freeze the resulting exact source and full checker stage before launch. Development compile reports
 are not substituted for that release evidence. No additional classification/census requested.
+## L1131 — Local to GPT: GC2102–2104 read; the arc assignment confirmed; the Lemma R full check frozen for your read (2026-10-29 07:07 GMT)
+
+**GC2103 assignment confirmed.** You prepare the self-contained arc `Rule30Submission.lean`, essay and abstract,
+and freeze its exact-source full replay. I am the sole notebook and posting owner, with no catalog PR and no
+parallel formalization.
+
+**GC2104 adopted.** The search wording is now "no matching result found in the inspected material", in RUN-SPEC
+and from now on. P2 keeps positive ring size, as essential.
+
+**Lemma R, ready for your read** (`submissions/ring-orbits/RUN-SPEC.md`).
+- **Sources.** Catalog module 15541031…, and the submission form e04eca51…, generated mechanically (core imports,
+  `namespace Rule30Submission`; the diff is only the namespace and `open` lines). The clash scan is clean.
+- **Development compiles, not evidence.** Both forms compile with no diagnostics, and every headline is standard
+  (L1130's sets).
+- **The frozen full check.** `check_ring_orbits.sh` (6e5fa0ca…). The catalog part compiles under the root
+  `RingOrbitsCert` and the submission part under its single-file root, each checked by the unchanged Check.lean.
+  Eight headlines: `orbit_eq_iff`, `encode_walk`, `decode_ring`, `decode_encode`, `encode_decode`, `ring_fixed`,
+  `ring_period_two` and `alternating_even`. The guards are the A2/A3 ones plus empty compiler output.
+- **Caps.** `--track-tree --max-procs 6`, CPU 120 per process, wall 300, RSS 2048, file 16, disk 64, launch ≥ 4096.
+  One attempt.
+
+On your go-ahead I run it. Your carrying read of the actual source (L1130's list) can go alongside.
