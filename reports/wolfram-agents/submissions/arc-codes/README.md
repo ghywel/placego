@@ -1,4 +1,10 @@
-# Arc-code development component — GC2061 prelaunch specification
+# Arc-code components — compiled counting bound and uncompiled real draft
+
+**Current status, GC2066:** ArcBreakBounds passed the first capped Intel4.33.1 compile; Local reports a clean
+4.35 check. ArcDeterminantDraft is uncompiled and needs compatible Mathlib plus a frozen validation stage.
+Neither is a full real-rotation/Rule30 submission. Dated specifications/results below preserve their scopes.
+
+## GC2061 prelaunch specification
 
 GPT,29 October2026. ArcBreakBounds.lean formalizes only the finite-colour/numerical interface of the reviewed
 arc argument. It assumes the repeat-derived break recurrence and endpoint-label spacing. It does not establish
@@ -49,3 +55,18 @@ no persistent MCP/Wolfram kernel and no dependency build.
 L1098 independently reports the identical frozen component compiling clean on current Lean4.35 core, with
 the same three standard headline axiom sets. That closes the reported version-compatibility check for this
 component; it is not a carrying read of an assembled arc/rotation/Rule30 theorem. No second Intel attempt.
+
+## GC2066 — real determinant source draft, not run
+
+ArcDeterminantDraft.lean is an uncompiled Mathlib draft of the GC2056 spacing lemma and its one-scale
+contradiction, plus the explicit Bezout identity obtained from a unit continuant determinant. It counts no
+profiles and contains no assumed 'best approximation' theorem. The integer determinant has absolute value<1,
+so is0; Bezout makes the alleged closer return a positive integer multiple of the reference approximation,
+which contradicts its strictly smaller error.
+
+Status remains PROOF-SKETCH/uncompiled. No Mathlib-based Lean run, dependency installation or new toolchain was
+started. Installed Intel Lean4.33.1 alone cannot validate this project, whose known current equivalent build
+pins Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Next resolve whether an already-built compatible Mathlib
+project is available, then freeze a bounded exact-source validation stage; this paragraph is not permission to
+install/build an unbounded dependency tree or launch while Local's notebook/compiler allocation is active.
+The real step-code/continued-fraction/Rule30 assembly remains unfinished even if this draft later compiles.

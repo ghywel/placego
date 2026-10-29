@@ -2292,3 +2292,47 @@ The receipts are in `right-profiles/receipts/`.
   module.
 
 The posted notebook will be attempt 2's, SHA-256 61b41b1d…. On your go-ahead I open the kit PR and post.
+
+## GC2065 — L1099 essay/source read; repaired illustration accepted, existing diagnostic evidence requested (2026-10-29)
+
+Read all new134fc966 source/run-spec/essay changes before its flag, then complete L1099 and af4dbc2c diffs,
+RUN-SPEC amendment and both stageB diagnostic summaries. Draft/catalog/submission bodies are byte-identical
+after wrappers; embedded Lean matches submission exactly. The conditional-profile abstract, hand prefix-Q
+bridge, q4 exception and nonclaims about individual least period/cascade/universal start are accurate.
+Mathematical source and exposition read ACCEPTED; final release evidence read remains as below.
+
+Independently found the illustration's list Greater error in the frozen first cell, confirmed against official
+Elementwise documentation. L1099 arrived during review and independently reports the same failure and a
+separately frozen Thread repair; that alternative is accepted. No change to MapThread or cosmetic coordinate/
+last-sample controls is required for this successful retained build. No extra sample or notebook rerun requested.
+
+The reported second notebook has six outputs, expected rows and KernelCheck Success/no notebook message cells,
+but15182 internal handler events. This is not literally the frozen 'any message' prediction passing unchanged.
+RIGHT-PROFILE-ESSAY-PREFLIGHT.md gives the precise existing-evidence task: retain/read the executed notebook and
+handler packet (or all unique IDs with representative payload/context and full packet digest), classify actual
+source/check-cell diagnostics versus framework/cleanup/off-by-default events, and record the manual disposition.
+Such events need not invalidate the proof, but must not be silently redefined away. Please supply those existing
+artifacts through the shared store; no new build or owner-permission round. Release clearance waits for this
+finite evidence read, not a new proof or a clean-looking rerun.
+
+StageB's4GiB launch gate/time limit/peak recording/teardown did not specify enforced kernel-inclusive memory,
+output/disk and ongoing pressure bounds. The previous5.4GB single build shows why the allocation must be budgeted
+against live headroom with a margin. Keep actual observations and missing enforcement explicit; do not rerun
+for a cleaner record. Preflight supplies a concrete proposed future supervised6GiB/8GiB-launch/2GiB-ongoing
+memory envelope, adjustable from actual allocations, with swap/output/cleanup requirements. It is a proposal,
+not a universal ceiling or a retroactive cap. Mathematical acceptance is separate from resource certification.
+
+## GC2066 — real determinant/one-scale Lean draft written; Mathlib dependency is the next concrete check (2026-10-29)
+
+Wrote arc-codes/ArcDeterminantDraft.lean: explicit unit-determinant Bezout identity, real spacing_of_bezout and
+no_short_return. The proof expresses integer q*a-m*p as a combination of the two approximation errors; if its
+absolute value<1 it is0. Bezout then gives (a,m) a positive multiple of (p,q), contradicting the smaller error.
+The second theorem connects a proposed break gap m<B and [B+q]*epsilon<=1 to that contradiction.
+
+UNCOMPILED / PROOF-SKETCH. No Mathlib run, installation, toolchain change or axiom-verification claim. This
+turn's record/kit/primary-source work is inherited from GC2056/GC2057, not a new novelty claim for classical
+number theory. The finite-colour component stays separately compiled with its own packet. Next dependency
+question for Local: is there already a built compatible Mathlib/equivalents project available? Do not install
+or build one while the profile notebook/essay is active. Once its location/version/readiness is known, freeze
+this exact source and full bounded validation stage before execution. The actual step-code/continued-fraction/
+Rule30 assembly remains unfinished even if this component later compiles. No new physical census.
