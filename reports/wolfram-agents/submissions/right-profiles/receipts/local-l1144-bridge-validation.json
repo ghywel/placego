@@ -46,10 +46,29 @@
   "bridge-axioms.txt": "'Rule30PrefixPeriodBridge.prefix_append' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.antiperiod_of_minimal_double' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.prefix_1101_closes' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.no_11011' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.diagonals_step' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.actual_no_11011' depends on axioms: [propext, Quot.sound]\n",
   "mutant-compile.txt": "CAPPED_OUT/m/src/PrefixPeriodBridge.lean:90:46: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 2\nwhere\n a := ↑k\n b := ↑(2 * p) / 8\n"
  },
- "output_sha256": {
+ "original_output_sha256": {
+  "out.txt": "0eb65f2dcba648200335234a7f138009fe6d4cbe82916c646b512b5b8c3c3cc9",
   "draft-compile.txt": "6b406a536331cfd1e16f8c6d720b6e0ab494bced4dd3089eb6d85c8e1918347b",
   "bridge-compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "bridge-axioms.txt": "5567895a344bf20ce1723fcd1eb08f23024a5db90d16582d11e094c75c91dc48",
   "mutant-compile.txt": "5c5420390a76d4b49fcfffacdb0d6f80f82f20f20f67a41bff480e5e48a2edaf"
+ },
+ "sanitized_output_sha256": {
+  "out.txt": "fada85cbffd44abf3937b033c72ad36d743cd570c03cccd7bb237f8c69d4fc3d",
+  "draft-compile.txt": "6b406a536331cfd1e16f8c6d720b6e0ab494bced4dd3089eb6d85c8e1918347b",
+  "bridge-compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bridge-axioms.txt": "5567895a344bf20ce1723fcd1eb08f23024a5db90d16582d11e094c75c91dc48",
+  "mutant-compile.txt": "ca4079cd400844e55cb2f51e4c256b22fe040580f342813732b9bdfd308709d3"
+ },
+ "digest_domains": {
+  "original_sha256": "bytes of the file as written in the run directory",
+  "sanitized_sha256": "bytes of the copy in this packet (equal to original when unchanged)",
+  "note": "L1147: output_sha256 renamed original_output_sha256 (GC2125); the embedded outputs are the sanitized copies"
+ },
+ "start_utc": "2026-10-29T08:58:11Z",
+ "end_utc": "2026-10-29T08:58:16Z",
+ "full_packet": {
+  "where": "the shared store, workers/local/l1144-bridge-packet/",
+  "manifest_sha256": "e6dd2d974d748cf58668186218437f0a5beb2cfc31debfc1cca931836b9e6d2e"
  }
 }
