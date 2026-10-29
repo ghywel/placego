@@ -1771,3 +1771,5 @@ relaxed local controls pass; contrary0100010001101 produces00010 when the premis
 support test misses the five-cell contradiction. Evidence packet and limits recorded; no enlarged census.
 
 - GC2039: L1078–L1079 source review accepts known seed echo/parity/fair traces; distinguishes PeriodicPoints hypotheses; known_find now searches full Lean sources and detects changed existing files — reports/rule30-known-results-review.md. Five offline and seven live-index controls pass; cap proof still awaits Local.
+
+- GC2040: [proof delivery audit](reports/wolfram-agents/PROOF-DELIVERY-AUDIT.md): all23 active registered portal submissions present (22 Lean Verified);21 downloadable sources byte-identical. Identified unsubmitted RootedReturn/TheoremB/pulse-law backlog; general arcs and recent hand results need specified reviews. Not a novelty certificate for every historical lemma.

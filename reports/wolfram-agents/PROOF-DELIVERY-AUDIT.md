@@ -1,0 +1,108 @@
+# Proofs versus actual portal submissions — GC2040, 29 October 2026
+
+**Result:** all23 active submissions in our register are on the public portal.22 are Lean Verified; the
+width60 exact-death certificate is Lean Unverified. The old Sturmian and Rule210 IDs absent from the listing
+have their documented replacements present. An unverified submission is not an unsubmitted proof.
+
+There is also unsubmitted work. The tables below distinguish a retained reviewed proof from a pending argument,
+a numerical result, and an existing kit theorem. None of the unsubmitted rows is declared cleared for posting.
+
+## Evidence and scope
+
+Fetched main through095500bd (Local L1080). Refreshed the portal: updated2026-10-29T00:45:21Z,57 listed entries.
+Kit pin932cf8dde039b89b1dcbe9636867bb1b2057fef0. Compared every active ID in MAP section5 with the listing,
+its status and headline names. For21 of our23 entries, the downloadable public Lean source is byte-identical
+to the corresponding retained local Rule30Submission.lean. The other two supply notebook links but no separate
+Lean URL: channel14 and width60. Their listing is verified; their notebook contents were not re-extracted here.
+This is a delivery audit, not a new compiler run or independent human verification of all submitted proofs.
+
+Read Local L1080 and its complete prior-art audit; the older candidate list in MAP section3; PROOFS entries and
+status notes for the candidates below; the complete RootedReturn.lean source; relevant submitted statements and
+our earlier carrying reviews. Searched complete kit and portal Lean source for rooted returns, periodic zero-run
+bounds, arc codings, pulse/kick laws, the101 lemma, universal start and ring classification. Candidate overlaps
+WhitePulse and RecordCharge concern shield survival and period-bound accounting, not the same pulse-profile
+statements. Search failure is not proof of novelty across all literature.
+
+The primary numbered Rule30 proof inventory and recent named results are reconciled below by result family.
+The506 historical E2 entries include overlapping lemmas, Collatz material and other projects; they have not each
+received a fresh equivalence or correctness review. This report therefore gives a checked delivery register and
+an identified backlog, not a count of every independent unpublished theorem in the repository.
+
+Portal JSON SHA256: ce483a7caa123f98a2702aa0074fe29b64b8fa05b2713ae033c1ff833529b4c9.
+Audit manifest: shared store cited/gc2040-proof-delivery/audit.json, SHA256
+0523e950c82925e3a263bdac6c89f51a0da6854ea534c04ce4893f60b006728d.
+
+## Retained unsubmitted work
+
+| Result | Evidence / actual status | What remains before proposing delivery |
+|---|---|---|
+| Every rooted walk returns, PROOFS39 | Reviewed hand proof, GC867; complete tests/probes/lean/RootedReturn.lean, whose179 lines were read here. Local reported compilation at L489. No matching portal or kit statement located | Best-defined older standalone candidate. Rebuild against current toolchain, compare standard finite injective partial-map termination and its specific profile corollary, then retarget/package if useful. No physical-root ancestry theorem follows |
+| Theorem B and odd-run refinement, PROOFS6 | Reviewed hand arguments; tests/probes/lean/TheoremB.lean has theorem_B and theorem_B_odd; old reported compilation. No matching submission located | Preserve arbitrary periodic-world scope. With a finite left edge, Jen already forbids the simultaneous periodic columns, making that restricted version vacuous. Current build, scope/novelty comparison and packaging needed |
+| Pulse phase, source-weight/run count, kick landing, PROOFS24/25/28 | Second reads GC346/GC353/GC389 recorded; no corresponding submitted statements located | Recheck the carrying steps against present conventions and decide a coherent contribution in the periodic-profile/wheel setting; no prepared submission or fresh compiler receipt established |
+| General finite-union-of-arcs exclusion, Theorem E-double-prime, PROOFS15, and wider rotation-code extensions | Hand argument recorded. The submitted sturmian-all module covers Sturmian words and their finite block codes; this does not automatically cover arbitrary arc endpoints | Independent read of the general-arc argument and its strict return-spacing premise; check which later code extensions subsume cases. No complete formal submission established |
+| 101 identity, mod4 cascade, universal finite-seed start, GC2007's11011 consequence | Second-read hand results in rule30-bounded-period-graph.md; no matching statement located. General parity criterion is already known | Exact additional scope beyond known cycle lifting and existing half-rate results; formalization and kit validation. The weaker single-seed growth ceiling alone is not a new contribution |
+| Lemma R, cycles versus ring orbits | Hand result in rule30-periodic-edges.md; no matching statement located. T^64 classification is separately a finite computed result | Independent carrying read and exact conventions; do not turn the cap64 computation into an all-period theorem |
+| Reset-track identities and exact-information results | Scoped hand reads in rule30-reset-tracks-gpt-review.md and rule30-exact-strip-knowledge.md; some components known, some later claims pending | Separate genuinely additional statements from existing language exclusions and kit identities before packaging |
+| Triangle-origin parity and cap00010 exclusion, GC2035/GC2038 | Controlled finite evidence retained; hand proofs await Local's carrying read | Complete that review first; no novelty claim or ready-to-submit status |
+
+The wheel orbit, rooted-stage counts, kick-alphabet censuses, larger channel certificates and higher-width death
+searches also contain unsubmitted evidence. They are measurements or finite certificates with their own limits,
+not a stockpile of interchangeable hand proofs. Channel12 and channel14 are already submitted; wider computed
+bounds do not inherit those kernel-verification receipts.
+
+## Already submitted or covered — remove from the missing-proof queue
+
+- Left-diagonal B1/B2/B3, A-triple-prime/A4 and CorollaryF: diagonals, theorem-a4 and corollary-f submissions.
+- TheoremE for every Sturmian slope/intercept, and finite block codes: sturmian-all8084e6. Its characteristic
+  special case is separately0c4a33. The older candidate list's estimated future formalization effort is historical.
+- Rule210's two-sided clock theorem, including the Rule90 no-finite-clock component:1bf4dc; the parity invariant
+  is separately920c1b. Earlier finite cases do not need standalone submissions.
+- White-end family and word exclusions: c27323,5c4fbf,70d23b. Local's newly reported word-overlap accounting is a
+  separate correction task; submission presence does not establish that every claimed novelty count was right.
+- TheoremS/staircase termination, rain T-squared classification and eternal rain patches: S2,196370.
+- Frozen ruler: S1,61e435. Prefix localization/merger: S3,352e5d. A draft folder or an older filename can remain
+  even after the result is delivered in a broader package.
+- Trap pair draft: its two named examples are covered by the submitted prefix31/prefix495 families,8d7751.
+- Degree law, general cycle-parity/seed echo, fair random traces and root preimages: already known in the kit;
+  absence of a separate submission from us does not make them neglected new results.
+- The clockc137e0 is already on the portal as another submission. Local's 'not found' list must not be read as
+  'not on the portal': context and authorship matter.
+- Checkerboard-fringe/trace-origin refinements (PROOFS33/34), faster-than-light recurrence (PROOFS35), and the
+  wider rotation-code lemmas need statement-level comparison beyond their related kit results. They are not
+  cleared as separate submissions by this audit; the sign-convention question remains open in L1080.
+- Collatz, Mahler, partition and other side-project proofs are outside this Rule30 portal's remit.
+
+## Live delivery register
+
+Public portal: https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/
+
+| Retained package | Public ID | Current listing | Public Lean equals local module |
+|---|---|---|---|
+| white-end | R30-20261022-c27323 | Lean Verified | yes |
+| words-A | R30-20261022-5c4fbf | Lean Verified | yes |
+| words-B | R30-20261022-70d23b | Lean Verified | yes |
+| diagonals | R30-20261022-0616de | Lean Verified | yes |
+| theorem-a4 | R30-20261022-1d5070 | Lean Verified | yes |
+| corollary-f | R30-20261022-91b0b0 | Lean Verified | yes |
+| rule-210 | R30-20261022-920c1b | Lean Verified | yes |
+| sturmian | R30-20261023-0c4a33 | Lean Verified | yes |
+| sturmian-all | R30-20261023-8084e6 | Lean Verified | yes |
+| channel-12 | R30-20261023-4767e0 | Lean Verified | yes |
+| channel-14 | R30-20261023-4d1a54 | Lean Verified | no separate Lean URL |
+| rule-210-two-sided | R30-20261023-1bf4dc | Lean Verified | yes |
+| d-exact | R30-20261023-8e6bd3 | Lean Verified | yes |
+| d-exact-56 | R30-20261023-ac3898 | Lean Verified | yes |
+| d-exact-60 | R30-20261024-71f858 | Lean Unverified | no separate Lean URL |
+| d-lower-64-72 (Local) | R30-20261024-b16332 | Lean Verified | yes |
+| edge-sep (Cloud) | R30-20261024-991a71 | Lean Verified | yes |
+| d-lower-74 (Local) | R30-20261024-a129c3 | Lean Verified | yes |
+| d-lower-76 (Local) | R30-20261024-4dcf69 | Lean Verified | yes |
+| trap-pair families (Local, GPT's GC1836 theorem) | R30-20261024-8d7751 | Lean Verified | yes |
+| right-edge (S1) | R30-20261027-61e435 | Lean Verified | yes |
+| edge staircases (S2) | R30-20261027-196370 | Lean Verified | yes |
+| prefix merger (S3) | R30-20261027-352e5d | Lean Verified | yes |
+
+**Next action:** Local should challenge the backlog classifications, especially whether any broader arc result was
+subsumed later. Start any delivery preparation with the small existing RootedReturn source and TheoremB scope
+comparison, rather than a new proof search. This audit requests no new computation, upload to the Wolfram portal,
+or schedule. No proof has been submitted by this audit.

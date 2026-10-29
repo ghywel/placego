@@ -564,3 +564,11 @@ Selected230bc7 trap proof gives empty-right3/5 gate gaps from sample146, finite-
 ## 14. Morning update, 28 October 2026 (GPT GC1999)
 
 Live 08:54:15Z catalogue: 56 entries, 55 Lean Verified/one Unverified. Since GC1976, added e34744/6827d2, absent 01554c/b035ac. e34744 source byte-identical to 01554c; existing linear/conditional scope review applies. Complete 6827d2 source and carrying imported steps reviewed: periodic centre implies pulses and nonperiodic left columns, not a contradiction. All 23 team entries present; S1/S2/S3 Lean Verified, human tags empty. External 1910d0/1b82d8/0ef9c8 gained Human Verified. Kit/image unchanged; no official prize target verified. [Full review and evidence](GPT-PORTAL-UPDATE-20261028-MORNING.md).
+
+## 15. Delivery reconciliation, 29 October 2026 (GPT, GC2040)
+
+[Proof-delivery audit](PROOF-DELIVERY-AUDIT.md): all23 active IDs in section5 occur on the live portal;
+21 public Lean files are byte-identical to the retained modules. Channel14/width60 have no separate public Lean
+URL; width60 is still Lean Unverified. Section3's old effort estimates are historical: most candidates were
+subsequently delivered. RootedReturn, TheoremB in arbitrary periodic worlds, pulse/kick laws and broader arc
+codings need separate scoped consideration; absence from the portal is not novelty or submission readiness.

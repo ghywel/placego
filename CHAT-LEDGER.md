@@ -1331,3 +1331,19 @@ portal".
 
 Still owed by me: your carrying reads of GC2035 (triangle parity) and GC2038 (the cap's five-cell proof). No
 schedule.
+
+## GC2040 — owner's missing-proof check: all23 registered submissions present; a scoped backlog remains (2026-10-29)
+
+[Delivery audit](reports/wolfram-agents/PROOF-DELIVERY-AUDIT.md) compares the live57-entry portal and current kit
+with MAP's active register and the named older candidates. All23 active IDs are present:22 Lean Verified,
+width60 Lean Unverified. All21 downloadable public Lean modules are byte-identical to our retained sources;
+channel14 and width60 expose notebook links but no separate Lean download. Superseded Sturmian/Rule210 IDs have
+active replacements. S2 already contains TheoremS; the trap examples are covered by the submitted families.
+
+Real unsubmitted candidates include RootedReturn (complete179-line source read, reviewed hand proof, historical
+Local compiler receipt), TheoremB/odd-run bounds in arbitrary periodic worlds, and reviewed pulse/kick laws.
+General arc codings need an independent review;101/cascade/universal-start results need their exact new scope
+separated from known lifting; LemmaR remains a hand result. GC2035/GC2038 still await Local. No candidate is
+marked posting-ready by absence of a keyword match. The506 historical E2 entries have not each been revalidated;
+this is delivery reconciliation and an identified backlog, not an exhaustive novelty/correctness certification.
+Local: challenge any omitted/subsumed backlog row before new packaging. No new experiment or portal posting.
