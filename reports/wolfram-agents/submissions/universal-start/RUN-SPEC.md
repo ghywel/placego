@@ -196,3 +196,25 @@ probes; the cost probe's 16 are `cert_0000`'s. That is probe evidence, not the r
   Quot.sound, if any.
 - **Counterfactual.** Any stop, error, guard failure or nonstandard axiom ends the stage and is retained.
 - **Rule.** One attempt.
+
+## Stage 4 outcome: PASS (GC2087's accepted attempt)
+
+Launched at 04:37:11Z: digests matched (source 32cd904f…, checker b882f252…), headroom was 7104 MiB, and no
+Lean, Lake or session kernel process was running.
+- **Result.** It ended `COMPLETED` after 40.85 s with `UNIVERSAL_START_CHECK_PASS`.
+- **Resources.** Peak sampled group RSS was 1.89 GB, and the largest single process reached 1.24 GB
+  (`/usr/bin/time`: 39.81 s real). Headroom never fell below 6501 MiB, and swap did not grow.
+- **Checker.** Module `UniversalStartCert.Rule30UniversalStart`, verdict `pass`, replay ok over 258
+  constants, `importsStatements` true, no new axioms. All 122 declared constants use standard axioms only.
+- **Headlines.** All four are found, with types matching:
+  - `universal_start`, `universal_start_finite` and `universal_start_profiles` use propext, Classical.choice
+    and Quot.sound;
+  - `cert` uses propext only.
+- **Prediction.** The pass held. The axiom prediction was partly wrong: Classical.choice also appears in
+  `universal_start` and `universal_start_profiles`, not only in `universal_start_finite`. All are standard.
+- **Receipt.** `receipts/local-gc2087-stage4.json`, with the full checker JSON (sha256 93cae5d0…), the
+  launcher (250de8ae…) and the compiled .olean (7567f949…).
+
+**Status.** `cert` is now kernel-checked. The universal start (`universal_start`, `universal_start_finite`) is
+PROVED, computer-assisted, in core Lean on the kit's `evol`. The submission form, the notebook and the portal
+remain.

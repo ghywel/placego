@@ -1,0 +1,991 @@
+{
+ "limits": {
+  "cpu": 900,
+  "wall": 900,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T04:37:12Z",
+ "end_utc": "2026-10-29T04:37:52Z",
+ "gate": {
+  "free_inactive_mib": 7104,
+  "swap_used_mib": 1662.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 40.85,
+ "maxima": {
+  "rss_kib": 1887072,
+  "procs": 4,
+  "disk_bytes": 1800541,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6501
+ },
+ "samples_kept": [
+  [
+   1.0,
+   779136,
+   6950,
+   0.0,
+   43424
+  ],
+  [
+   2.0,
+   996592,
+   6901,
+   0.0,
+   43424
+  ],
+  [
+   3.1,
+   1296064,
+   6751,
+   0.0,
+   43424
+  ],
+  [
+   4.1,
+   1296736,
+   6756,
+   0.0,
+   43424
+  ],
+  [
+   5.1,
+   1297280,
+   6759,
+   0.0,
+   43424
+  ],
+  [
+   6.1,
+   1344544,
+   6728,
+   0.0,
+   43424
+  ],
+  [
+   7.1,
+   1345232,
+   6743,
+   0.0,
+   43424
+  ],
+  [
+   8.2,
+   1345760,
+   6726,
+   0.0,
+   43424
+  ],
+  [
+   9.2,
+   1346080,
+   6719,
+   0.0,
+   43424
+  ],
+  [
+   10.2,
+   1346592,
+   6701,
+   0.0,
+   43424
+  ],
+  [
+   11.2,
+   1346832,
+   6718,
+   0.0,
+   43424
+  ],
+  [
+   12.2,
+   1347344,
+   6690,
+   0.0,
+   43424
+  ],
+  [
+   13.3,
+   1347888,
+   6714,
+   0.0,
+   43424
+  ],
+  [
+   14.3,
+   1348400,
+   6714,
+   0.0,
+   43424
+  ],
+  [
+   15.3,
+   1348912,
+   6719,
+   0.0,
+   43424
+  ],
+  [
+   16.3,
+   1349504,
+   6707,
+   0.0,
+   43424
+  ],
+  [
+   17.4,
+   1350016,
+   6704,
+   0.0,
+   43424
+  ],
+  [
+   18.4,
+   1350032,
+   6723,
+   0.0,
+   43424
+  ],
+  [
+   19.4,
+   1350544,
+   6713,
+   0.0,
+   43424
+  ],
+  [
+   20.4,
+   1351056,
+   6721,
+   0.0,
+   43424
+  ],
+  [
+   21.4,
+   1508640,
+   6669,
+   0.0,
+   1771576
+  ],
+  [
+   22.5,
+   1876176,
+   6501,
+   0.0,
+   1771576
+  ],
+  [
+   23.5,
+   1886432,
+   6556,
+   0.0,
+   1771576
+  ],
+  [
+   24.5,
+   1886656,
+   6554,
+   0.0,
+   1771576
+  ],
+  [
+   25.5,
+   1886752,
+   6554,
+   0.0,
+   1771576
+  ],
+  [
+   26.5,
+   1886816,
+   6515,
+   0.0,
+   1771576
+  ],
+  [
+   27.6,
+   1886992,
+   6504,
+   0.0,
+   1771576
+  ],
+  [
+   28.6,
+   1887024,
+   6535,
+   0.0,
+   1771576
+  ],
+  [
+   29.6,
+   1887056,
+   6523,
+   0.0,
+   1771576
+  ],
+  [
+   30.6,
+   1887056,
+   6519,
+   0.0,
+   1771576
+  ],
+  [
+   31.6,
+   1887056,
+   6539,
+   0.0,
+   1771576
+  ],
+  [
+   32.7,
+   1887056,
+   6549,
+   0.0,
+   1771576
+  ],
+  [
+   33.7,
+   1887056,
+   6558,
+   0.0,
+   1771576
+  ],
+  [
+   34.7,
+   1887056,
+   6556,
+   0.0,
+   1771576
+  ],
+  [
+   35.7,
+   1887056,
+   6558,
+   0.0,
+   1771576
+  ],
+  [
+   36.8,
+   1887072,
+   6551,
+   0.0,
+   1771576
+  ],
+  [
+   37.8,
+   1887072,
+   6552,
+   0.0,
+   1771576
+  ],
+  [
+   38.8,
+   1887072,
+   6560,
+   0.0,
+   1771576
+  ],
+  [
+   39.8,
+   688928,
+   7022,
+   0.0,
+   1800541
+  ]
+ ],
+ "time_receipt": [
+  "39.81 real        38.28 user         1.63 sys",
+  "1238188032  maximum resident set size",
+  "0  average shared memory size"
+ ],
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/check_universal_start.sh (sha256 5760d487...) reports/wolfram-agents/submissions/universal-start/Rule30UniversalStart.lean (sha256 32cd904f...)",
+ "stdout_tail": "UNIVERSAL_START_CHECK_PASS",
+ "checker": {
+  "claim": "partial",
+  "declared": [
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_congr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_per",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_per256",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_succ",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_succ0",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_succ1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E_zero",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.LeastPer",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.M",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.M_bit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.Per",
+    "standardAxioms": true
+   },
+   {
+    "kind": "inductive",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.alt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.alt_not",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.alt_per",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.alt_succ",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.bitAt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.bitsOf",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.certOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0000",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0001",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0010",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0011",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0100",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0101",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0110",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_0111",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1000",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1001",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1010",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1011",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1100",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1101",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1110",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert_1111",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.edge",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.leastOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.leastOK_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.least_exists",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.loop",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.loop_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.mask256",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.mask_step",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.perOK",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.perOK_iff",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.per_mod",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.per_mul",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.per_of_dvd",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.per_or",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.rightDiag",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.rightDiag_step",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.rot",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run_double",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run_shift",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run_unique",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.step",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.testBit_bitAt",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.testBit_rot",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_finite",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_profiles",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr_add",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr_window",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.E.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.casesOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.ctorIdx",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m0",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "constructor",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.mk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.noConfusionType",
+    "standardAxioms": true
+   },
+   {
+    "kind": "recursor",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.rec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.recOn",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v0",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.loop.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.loop.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.loop.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.run.match_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.xr.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_7",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.m.eq_8",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.mk.inj",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.mk.injEq",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.mk.noConfusion",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.mk.sizeOf_spec",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_3",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_4",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_5",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_6",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_7",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.eq_8",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.St.v.match_1",
+    "standardAxioms": true
+   }
+  ],
+  "headlines": [
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_finite",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_profiles",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30UniversalStart.cert",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   }
+  ],
+  "importsStatements": true,
+  "module": "UniversalStartCert.Rule30UniversalStart",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+   "constants": 258,
+   "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+ },
+ "check_json_sha256": "93cae5d04f77fcf9d1f5fc154862572c8579531b03ce5a776702d52ef7279cb5",
+ "launcher_sha256": "250de8ae4988934cdbcd22ce78345580b47a3f51202d47e07db96c2911fe86f5",
+ "olean_sha256": "7567f9491f9d801049d7718cc3b0fc5bff9bb5c8f8ee6e0ba3d398f99a956ca6"
+}
