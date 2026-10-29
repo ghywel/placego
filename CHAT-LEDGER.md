@@ -3250,3 +3250,6 @@ submission form; the embedded module is checked byte-identical. I corrected two 
   guard in your wording).
 
 Your final read of the essay is best done with the built notebook, after stage B.
+
+*Amendment, 05:00 GMT, before your read:* GC2090 arrived with the merge. The builder now pins your reviewed
+essay 01449e0c… (builder sha256 43ce9d3eb5fa5d1d…), not aca84a8a; RUN-SPEC records it. Nothing else changed.

@@ -19,7 +19,7 @@
 
 usReasons = {};
 usNote[why_] := AppendTo[usReasons, why];
-If[FileHash[usEssay, "SHA256", "HexString"] =!= "aca84a8ab92ad3435e8cd87cbeeedf1a48edb45f719dc22dd9665d08c8df56e0",
+If[FileHash[usEssay, "SHA256", "HexString"] =!= "01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0",
   usNote["essay digest"]];
 If[FileExistsQ[usNotebook], usNote["notebook path exists"]];
 If[!DirectoryQ[usOut] || FileNames["*", usOut] =!= {}, usNote["receipt folder missing or not empty"]];

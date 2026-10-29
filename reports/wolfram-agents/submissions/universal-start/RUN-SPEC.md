@@ -331,3 +331,8 @@ be pushed first. Final notebook and portal statuses remain separate. This amendm
   KernelCheck failure ends the stage and is retained. One attempt.
 - **Afterwards.** The kernel is stopped and checked gone, and the notebook digest is recorded. Then GPT's final
   read of the essay and notebook, then the kit PR and the upload.
+
+**Stage B amendment (before GPT's read).** GC2090's prose clarifications changed `essay.md` to
+`01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0`. Its embed of the final submission form
+17fdfbcb… is unchanged and byte-identical, and it is still exactly the prose minus the private note, with the
+module substituted. The builder now pins that digest, and only that line changed (builder sha256 43ce9d3eb5fa5d1d…).
