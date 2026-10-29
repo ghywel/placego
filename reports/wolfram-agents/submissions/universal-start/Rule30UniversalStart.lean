@@ -279,7 +279,7 @@ theorem loop_spec (p : Bool) (bits : Nat → Bool) :
     refine ⟨fun k hk => ?_, fun k hk i => ?_⟩
     · rw [E_zero]
       obtain _ | _ | _ | _ | _ | _ | _ | k := k <;> first | rfl | omega
-    · obtain _ | _ | _ | _ | _ | _ | _ | k := k <;> first | simp [loop, St.m] | omega
+    · obtain _ | _ | _ | _ | _ | _ | _ | k := k <;> first | omega | simp [loop, St.m]
   | succ t ih =>
     obtain ⟨hv, hm⟩ := ih
     have v0 := hv 0 (by omega); have v1 := hv 1 (by omega); have v2 := hv 2 (by omega)

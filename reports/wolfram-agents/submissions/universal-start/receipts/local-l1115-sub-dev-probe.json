@@ -1,0 +1,46 @@
+{
+ "limits": {
+  "cpu": 300,
+  "wall": 600,
+  "rss_mib": 6144,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 6144,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T04:39:43Z",
+ "end_utc": "2026-10-29T04:39:59Z",
+ "gate": {
+  "free_inactive_mib": 7054,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 15.33,
+ "maxima": {
+  "rss_kib": 4155392,
+  "procs": 5,
+  "disk_bytes": 30633,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5491
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/sub_dev_probe.sh (at 1aa61ae6) reports/wolfram-agents/submissions/universal-start/Rule30Submission.lean (sha256 b3e35fff...)",
+ "stdout": [
+  "submission sha256 b3e35ffff16638cfc97fad318d3331a67798436a6fa645c06795784a13f21290",
+  "lean exit 0",
+  "sorry warnings: 16",
+  "errors: 0",
+  "CAPPED_OUT/Rule30SubmissionDev.lean:280:80: warning: Unused tactic linter: `omega` does nothing.",
+  "",
+  "Note: This linter can be disabled with `set_option linter.unusedTactic false`",
+  "CAPPED_OUT/Rule30SubmissionDev.lean:280:80: warning: this tactic is never executed",
+  "",
+  "Note: This linter can be disabled with `set_option linter.unreachableTactic false`",
+  "       14.08 real         3.74 user         1.82 sys",
+  "          3564945408  maximum resident set size",
+  "SUB_DEV_PROBE_CLEAN_EXIT"
+ ],
+ "note": "Submission form with the 16 certificate groups stubbed, under import Rule30PrizeKit: 16 sorry, 0 errors, and Mathlib's unusedTactic/unreachableTactic linters flagged the omega in loop_spec's zero case. Single-process maximum RSS 3.56 GB (Mathlib environment).",
+ "launcher_sha256": "46a5426fac97b07894b2218adbc3de4350381cfd63594555cab673bfea13f647"
+}
