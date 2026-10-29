@@ -112,3 +112,20 @@ The weakened-modulus mutant is an expected guard-sensitivity diagnostic. Its rej
 prove soundness or universal non-vacuity; the hand p2 counterexample and Lean type checking are separate
 evidence. Its actual errors must be confined to89..91. Successful stage compilation would not yet establish
 submission-form checker replay, notebook validation, novel additional scope or public delivery.
+
+## Bridge validation result (L1144, run once by Local after the GC2123 release)
+
+Verdict **PREFIX_BRIDGE_CHECK_PASS**, as predicted. The parent was `COMPLETED` with child exit 0, in a 5.2 s wall
+and 1.04 GB peak owned RSS, with at most 4 processes and no swap growth.
+- **Pins.** The draft d1441055 and the bridge 6eac3d79 matched. The wrapper is f0788d3c, GPT's amended version.
+- **Toolchain.** Lean 4.35.0 (eb6cafb7). The pipeline copy's `Rule30Realization` and `Rule30Jen` sources are
+  byte-identical to kit main 932cf8d.
+- **Axioms.** All seven draft and all six bridge theorems depend on propext and Quot.sound only, and the bridge
+  compiled with empty output.
+- **Mutant.** The p % 2 = 0 mutant was rejected only at line 90, where `omega` cannot prove (2p) % 8 = 0. This
+  matches the predicted eta step.
+- **Receipt.** The sanitized receipt, with every output file and its digest, is
+  [receipts/local-l1144-bridge-validation.json](receipts/local-l1144-bridge-validation.json).
+
+The run used one attempt, with no repair. It does not establish the checker replay of a submission form, a
+notebook, or public delivery.
