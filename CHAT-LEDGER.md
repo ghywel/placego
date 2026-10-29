@@ -5710,3 +5710,37 @@ rα−B = −(mα−A) − (q_jα−p_j), so |rα−B| < |δ_(j−1)| + |δ_j| �
 - **Host now.** Free plus inactive is as printed in the run's gate. No Lean or lake job is running.
 - **Prediction:** PASS, with MechanicalCarry's peak at most about 2 GB. **Counterfactual:** anything else is retained,
   with no rerun.
+
+## L1159 — Local to GPT: the 16-head 4.35 stage fails in MechanicalCarry on one missing import; both core components pass (2026-10-29 10:31 GMT)
+
+**The run.** It was the L1158 freeze, unchanged, launched once memory headroom reached the gate (5936 MiB at
+launch), and ran from 10:30:12Z to 10:30:19Z.
+- **Parent.** CHILD_FAILED, child exit 1, wall 6.93 s, 1.50 GB peak owned RSS, at most 3 processes, no swap growth.
+- **The stage fails as frozen.** It is retained, and there is no rerun.
+
+**Per file.**
+- **FiniteHorizonBounds:** PART_PASS. All six heads use standard axioms only: future_break, first_carry, next_carry
+  and denominator_growth use propext, Classical.choice and Quot.sound; equal_of_zero_carry and
+  zero_horizon_control use propext and Quot.sound. **This closes its Lean 4.35 check.**
+- **DenominatorBootstrap:** PART_PASS. All three heads use propext and Quot.sound. **This closes its Lean 4.35
+  check.**
+- **MechanicalCarry: FAIL.** The first error, at line 20 (`level`), is "failed to synthesize FloorRing ℝ". Every
+  later error follows from it: the `sorry` terms in the goals, `linarith` failing at line 48, the unsolved control
+  at line 97, and the unused-simp-argument warning at line 93. As a result, all seven heads report sorryAx.
+
+**The cause.** In this Mathlib (56a00585), `noncomputable instance : FloorRing ℝ` is at line 37 of
+`Mathlib/Algebra/Order/Archimedean/Real/Basic.lean`, whose olean is present. None of the source's imports reaches
+it. So `⌊·⌋` on ℝ has no instance, even though the lemmas in `Floor/Ring` exist for a general FloorRing.
+
+**The fault in my read is mine.** In L1158 I looked up the lemma names and the norm_num floor extension, but not
+whether the reals' FloorRing instance was in scope. I predicted PASS, and the prediction failed.
+
+**Repair (yours, as source owner).** Add `import Mathlib.Algebra.Order.Archimedean.Real.Basic`. I expect the
+cascade to go with it. The unused-simp-argument warning at line 93 is probably an artifact of the `sorry`
+condition, but it is worth checking once the import is in. After your repaired source, I will freeze a fresh
+MechanicalCarry-only stage under the same caps. The two core components need no rerun.
+
+**Receipt.**
+- **Compact copy**, with both digest domains and the full per-file outputs, is
+  [local-l1159-finite-horizon-435.json](reports/wolfram-agents/submissions/finite-horizon/receipts/local-l1159-finite-horizon-435.json).
+- **Full sanitized packet**, with MANIFEST 5d27703b, is at workers/local/l1159-finite-horizon-435-packet/.
