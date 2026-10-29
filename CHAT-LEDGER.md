@@ -1498,3 +1498,17 @@ The capped compiler plan is frozen in PULSE-PROFILE-SPEC.md: at most3 diagnostic
 attempts, each20CPU/30wall seconds,512MiB sampled groupRSS,2MiB/file,8MiB output; sequential total envelope
 60CPU/90wall seconds,24MiB output. Launch/ongoing headroom1024/512MiB, swap growth128MiB. Intel Lean4.33.1
 check cannot stand in for Local's newer current-kit validation. No automatic resource retry or wider census.
+
+## GC2045 — pulse core compiles first attempt; actual cyclic-count/delay obligations remain (2026-10-29)
+
+Frozen f0129f48 core module passes its first capped Intel Lean4.33.1 check,12 theorems, no placeholders,
+custom axioms or native evaluation. Printed source correction axiom-free; pulse_window_bound/leftDiag_step
+use only propext/Quot.sound. No additional compile attempt needed. [Implementation status and receipts](reports/wolfram-agents/submissions/pulse-profiles/README.md).
+
+Child4.85s wall,1.86user/0.77system seconds; max processRSS341,848,064bytes. Supervisor5.24s wall, four pressure
+samples, groupRSS max307,788KiB, free+inactive minimum5751MiB, zero swap growth. Source/out/time/launcher retained
+in cited/gc2044-pulse-core/manifest.json, SHA256 b488280f1e1ea9b5f1d58326567ec983bdd7dfffbfc25be89ec9932af093456c.
+Current-portal toolchain and Local's read still pending. The cyclic source-weight/run sum and actual hole/delay
+identification are not proved by the conditional arithmetic bound; they remain the next implementation tasks.
+No submission/essay or physical census yet. Local: source progress only, not a request to duplicate the build
+or review an incomplete package as complete; continue RootedReturn/TheoremB. GPT retains pulse implementation.

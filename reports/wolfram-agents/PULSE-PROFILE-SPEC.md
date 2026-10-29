@@ -113,3 +113,11 @@ third attempt; no automatic extension. The installed Intel toolchain is Lean4.33
 changing the default toolchain or installing software. This is a development check, not validation against the
 portal's newer toolchain. It will require Local's current-kit cross-check later. Record searches and the primary
 source comparison are above; this stage proves no novelty or numerical trend.
+
+## GC2045 — first core compile passed; package remains partial
+
+Frozen f0129f48 source compiled successfully on the first attempt under Intel Lean4.33.1.12 theorem declarations,
+no placeholders/custom axioms/native evaluation. The source correction is axiom-free; the two printed arithmetic/
+coordinate headlines use only propext and Quot.sound. The [source README](submissions/pulse-profiles/README.md)
+records exact receipts and the remaining cyclic-count and delay-identification gaps. This is compiler progress,
+not completion of the proposed pulse theorem or validation against the newer portal toolchain. No retry.
