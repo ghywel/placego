@@ -139,3 +139,8 @@ separate diagnostic-driven development stage allows at most3 separately committe
 retained output. Same1024/512MiB launch/ongoing headroom and128MiB swap-growth stop, run_capped.py. No attempt
 is repeated after resource/pressure failure; no automatic widening. Installed Intel Lean4.33.1 only, with
 Local's newer current-kit check still required. No physical census or empirical claim.
+
+GC2046 attempt1 failed at pulse_source_white_black's final omega step. The preceding simp-only invocation left
+Boolean conditionals unreduced; the diagnostic did not refute the weight identity. Replace it with the full
+simp call for those same supplied Boolean hypotheses. This is the one specific diagnostic-driven repair;
+retain attempt1 output and compile revision2 under the already frozen same caps. No scope or limit increase.

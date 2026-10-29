@@ -177,7 +177,7 @@ theorem pulse_source_white_black (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc
     (hb : f s = false) (hn : f (s+1) = true) :
     weight (profileSource f s) q + 1 = 2*rises f q := by
   have h := pulse_source_weight f q s hs hc
-  simp only [correction, hb, hn] at h
+  simp [correction, hb, hn] at h
   omega
 
 theorem heavy_source_two_runs (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : f q = f 0)
