@@ -421,3 +421,22 @@ This closes the generic finite-prefix obstruction TRANSFER in core Lean, not the
 representation or eventual physical-clock restart. The no_eventual_visible_rotation integration is still
 UNCOMPILED. Current-toolchain CF/physical/dependency work waits until Local's active notebook allocation
 is idle; no new run is queued by this result.
+
+## GC2096: actual irrational endpoint wrapper prepared, not compiled
+
+ArcEndpointDraft uses the pinned Mathlib Irrational.ne_rational statement to prove each endpoint class
+modulo integer translates is visited at most once. Subtracting two hits at s,t gives
+(s-t)*alpha=z-w; for s!=t that makes alpha rational. A function agreeing with the supplied StepCode off
+its finite endpoint translates therefore has an eventually identical sampled trace. No periodicity is
+needed for its arbitrary values ON those translates.
+
+The new no_visible_endpoint_variant in ArcRule30ExclusionDraft composes that fact with the core C+2N
+transfer and existing normalized physical/large-digit candidate. It retains actual StepCode, irrationality,
+infinitely late digits above2^(r+1), true finite left boundary and the normalized physical clock.
+Conventional finite-interval representation and eventual physical-clock normalization remain separate.
+This is formal integration of known G131/G132, not novelty or an all-irrational/prize result.
+
+Status UNCOMPILED/PROOF-SKETCH: no compiler, dependency setup or extra M5 job. Read exact primary pinned
+[Mathlib irrational source](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/NumberTheory/Real/Irrational.lean)
+and actual kit932cf8dd Lagrange declarations. The actual source retrieval succeeded with curl's verified
+TLS after the web tool's cache miss. Compatibility/runtime/carrying outcomes remain separate obligations.

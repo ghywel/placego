@@ -31,8 +31,9 @@
  "cmd": "from the pipeline kit root: WolframKernel -script tests/probes/wolfram/script_args_probe.wl ALPHA BETA (file cap 4 MiB)",
  "stdout": [
   "ScriptCommandLine {}",
-  "CommandLine tail {~/Developer/placego/.claude/worktrees/rule-30-research-2fd36b/tests/probes/wolfram/script_args_probe.wl, ALPHA, BETA}"
+  "CommandLine tail {SCRIPT, ALPHA, BETA}"
  ],
  "note": "Attempt 2: $ScriptCommandLine is {}; $CommandLine ends with the script path, ALPHA, BETA.",
- "launcher_sha256": "e44b48e2e0a71f99a78861d3c94b60d93617731ab8cf300db62b932b2641ac4d"
+ "launcher_sha256": "e44b48e2e0a71f99a78861d3c94b60d93617731ab8cf300db62b932b2641ac4d",
+ "privacy_note": "Public copy replaces the private script path with SCRIPT; original raw output remains Local. Argument order and values retained."
 }

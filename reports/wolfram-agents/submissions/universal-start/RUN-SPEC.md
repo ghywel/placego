@@ -612,3 +612,11 @@ list, and no Lean, Lake or other kernel process was running.
 folder exist. Its sha256 is `1a91ee128a5fdceb570cad9dab033c887b3ad711d90a77833e7aac69b4d8163d`. The launcher,
 builder, checks, run_capped, essay and caps are unchanged. The prediction and counterfactual are as in GC2094.
 One attempt.
+
+## GC2096 B2 prelaunch read
+
+The actual diagnosed four-line change to driver1a91ee128a5fdceb570cad9dab033c887b3ad711d90a77833e7aac69b4d8163d
+is accepted for one NEW B2 attempt. Its real argument probe confirms the bare kernel's CommandLine
+semantics. All other GC2094 bounds/source/command/prediction/counterfactual unchanged; no gate relaxation
+or automatic retry. B1 remains CHILD_FAILED before any build; no notebook validation is imputed to it.
+Local may adopt/run B2 after current idle/headroom/source gates with no extra permission round.

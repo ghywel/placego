@@ -3625,3 +3625,31 @@ The diff is four lines (RUN-SPEC, last section).
 
 The ArcTailBounds carrying read (GC2095) is started, not finished. I will do it while B2 waits or runs, and it
 needs no compute.
+
+## GC2096 — retain B1 argument failure; B2's diagnosed binding repair accepted (2026-10-29)
+
+Read full L1121, actual B1/failed-and-successful argument-probe receipts, full driver diff and frozen B2
+spec. B1 CHILD_FAILED3.69s before resource/LeanLink/compile/notebook; it has no theorem or B outcome.
+The argument probe's1MiB startup SIGXFSZ stays retained; its4/8MiB diagnostic confirms CommandLine ends
+with SCRIPT,ESSAY,KIT while ScriptCommandLine is empty under the bare kernel. Public receipt's private
+script path is generalized to SCRIPT without changing that evidence; original raw remains Local.
+
+The four-line driver repair is accepted for ONE new B2 attempt: exact driver1a91ee12,all other
+GC2094 source/command/caps unchanged, current core409e7c59/essay32672082/catalog12068af9. CommandLine's
+last two arguments now bind, and the file/directory guard rejects wrong arguments before any build. No
+extra source,scope,budget,dependency setup or automatic retry. Local may run after current idle/headroom
+gates, with no further GPT/owner round. Retain any B2 failure/output/count/cleanup discrepancy. The
+GC2094 lifecycle safeguards and remaining sampled-ownership/temp-cache limitations are unchanged.
+
+Independent arc continuation while B was pending: ArcEndpointDraft supplies an UNCOMPILED actual
+irrational endpoint-visit wrapper for GC2095. Two visits to endpoint_i modulo integer translates imply
+alpha=(z-w)/(s-t), contradicting pinned Mathlib's Irrational.ne_rational; s!=t makes denominator nonzero.
+Feeding that single-visit fact to the compiled finite-label cutoff gives eventual agreement of an
+endpoint-only variant with the supplied StepCode. The no_visible_endpoint_variant assembly candidate
+then uses the C+2N transfer, with the SAME large-digit condition. This is G131/G132 known reasoning,
+not a new discovery, conventional-interval representation,all-irrational or eventual-physical-clock theorem.
+
+Exact primary Mathlib56a0058 Irrational.lean source was fetched by verified-TLS curl (the web tool returned
+a cache miss), and its ne_rational statement read; cached actual kit932cf8dd Lagrange conventions read.
+No Lean/Mathlib/compiler/dependency run or M5 arc allocation started. Local's carrying read may continue
+while B2 runs; full assembly remains UNCOMPILED.

@@ -1834,3 +1834,4 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2093/L1119: core409e7c59 A3 and17 structural gates PASS, exact essay32672082 embed read; remaining signal/PID-fallback/temp-root corrections frozen, no full B yet.
 - GC2094: new Intel lifecycle controls PASS; corrected tree/temp/process-count notebook B ready for one Local attempt after actual source adoption. Raw evidence retained; final artifact/portal still pending.
 - GC2095: ArcTailBounds finite-prefix transfer C→C+2N and single-visit cutoff pass Intel4.33.1, five standard-axiom lemmas. Known G131/G132 integration; carrying/4.35/full CF/physical assembly remains pending.
+- GC2096/L1121: B1 fails before build at bare-kernel argument binding; actual CommandLine probe supports one B2 with same bounds. ArcEndpointDraft actual irrational single-visit/eventual-code wrapper prepared UNCOMPILED; no extra compute or novelty claim.

@@ -2,6 +2,7 @@ import Ruliology.CellularAutomata.Rule30Prize
 import ArcRotationDraft
 import ArcRule30BridgeDraft
 import ArcTailBounds
+import ArcEndpointDraft
 
 /-!
 # Normalized Rule30 finite-step rotation exclusion: explicit assembly candidate
@@ -49,5 +50,25 @@ theorem no_eventual_visible_rotation {r : Nat} (S : ArcStepCode.StepCode r) (alp
     (fun q hq => ArcRule30Bridge.repeat_bound x L hleft hzero hclock q hq) hN
 
 #print axioms ArcRule30Exclusion.no_eventual_visible_rotation
+
+/-- Arbitrary changes at the listed endpoint translates cannot evade the same large-digit exclusion.
+    A genuine StepCode is still supplied explicitly; no general interval representation is inferred. -/
+theorem no_visible_endpoint_variant {r : Nat} (S : ArcStepCode.StepCode r) (g : ℝ → Bool)
+    (alpha theta : ℝ) (ha : Irrational alpha)
+    (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧
+      ((2^(r+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1))
+    (hoff : ∀ y : ℝ, (∀ i : Nat, i < r → ∀ z : ℤ, y ≠ S.endpoint i+z) → g y = S.value y)
+    (x : Int → Bool) (L : Nat)
+    (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false)
+    (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1))
+    (hvisible : ∀ s : Nat, ArcRule30Bridge.visible x s = g (theta+(s : ℝ)*alpha)) : False := by
+  obtain ⟨N,hN⟩ := ArcEndpoint.eventual_agreement S g alpha theta ha hoff
+  apply no_eventual_visible_rotation S alpha theta ha hlarge x L hleft hzero hclock
+  refine ⟨N,?_⟩
+  intro s hs
+  rw [hvisible s]
+  exact hN s hs
+
+#print axioms ArcRule30Exclusion.no_visible_endpoint_variant
 
 end ArcRule30Exclusion
