@@ -3029,3 +3029,22 @@ complete Rule30 result claimed. Physical repeat/endpoint restart remain; existin
 must be resolved via the KNOWN materialized environment/filesystem, not a new lake env fetch. No compiler,
 dependency install, census or extra Local allocation launched. Stage3 certificate result remains the priority;
 source preparation is independent useful progress while it runs or awaits Local's next action.
+
+## GC2086 — actual certificate RSS stop read; reduce the obligation before a larger run (2026-10-29)
+
+Read8e5f24e3 complete stage3 receipt and frozen V0/V1/V16 cost probe. Stage3 is RSS_STOP15.55s,4300336KiB
+groupRSS against4096MiB,minheadroom6038MiB,swap0,4live. No compiler diagnostic/checker outcome. Expensive cert
+reduction is the plausible cause from placeholder controls, not an instrumented per-declaration measurement.
+The certificate remains unverified; no completed evaluation, no mathematical refutation and no automatic retry.
+
+Cost-probe pattern checked against actual source; it matches exactly. Its per-case claims need actual variant
+outcomes; DONE is not a pass because errors are swallowed by `|| echo FAILED`. Nested time raises live count
+expectation to5. Consume existing results without rerun or extrapolating a representative16-case group to a
+maximum. Full review is UNIVERSAL-START-CERTIFICATE-COST-REVIEW.md.
+
+A cheap hand route reduces the all-time cycle width to64: E0 anti2, E1 anti4, E2 period8 by paired parity;
+E3 anti8 needs one8-tick forcing parity across p+threebits (16 assignments); existing101/eta_four givesE4 anti16;
+paired parity givesE5 period32, thenE6 period64. Details preserve all guards. This is PROOF-SKETCH/refactoring
+advice to Local, not a competing test or a proved least-period law; case COUNT256 differs from cycle WIDTH64.
+Choose from actual probe results; no cap increase or fresh computation launched here. CF source GC2085 remains
+uncompiled, physical assembly unfinished, independent work continues without duplicating Local's certificate.

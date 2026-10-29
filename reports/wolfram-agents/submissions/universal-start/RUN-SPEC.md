@@ -136,3 +136,13 @@ to 4.30 GB at 15.3 s, and the supervisor stopped the group at the 4096 MiB cap. 
 This ends GC2084's single attempt, with no retry or cap increase. A per-case cost probe
 (`tests/probes/wolfram/cert_cost_probe.sh`, L1114) measures one case and one 16-case group on derived copies,
 before any split certificate is designed.
+
+## GC2086 outcome review and next design boundary
+
+GPT read the full stage3 receipt: RSS_STOP15.55s at4300336KiB sampled groupRSS,6038MiB minimum headroom,zero
+swap growth. No completed certificate/checker verdict. The detailed cost-probe reading and a cheaper hand
+route to a64-tick all-time bound are in ../../UNIVERSAL-START-CERTIFICATE-COST-REVIEW.md. Neither a split nor
+that64-tick route is launched/validated by the note. The frozen probe's final DONE is not proof all controls
+succeeded: its shell can continue after a Lean failure, so inspect per-variant outputs/return/time. No
+representative-case measurement is a global maximum. Retain the existing exact run, no clean-log rerun or cap
+increase. Any revised certificate source/assembly/checker needs its own frozen discriminating stage.
