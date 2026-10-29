@@ -654,3 +654,11 @@ The summary's content was reconstructed from the retained files, read-only, and 
 the `LeanLinkTmp<session>x<random>` module. The raw message packet held private paths, one of them split
 across an InputForm line continuation. The shared copy is sanitized (`messages.sanitized.m`), and the raw
 digest is recorded.
+
+## The prepared kit PR (local branch `universal-start`, commit 429d4f7, not pushed)
+
+From kit main 932cf8dd. It adds `lean/Ruliology/CellularAutomata/Rule30UniversalStart.lean` (12068af9…, byte-identical to the
+A2a-checked catalog module), `public import Ruliology.CellularAutomata.Rule30UniversalStart` after Rule30PrefixMerger in
+`lean/Ruliology.lean`, and this row at the end of `lean/README.md`'s table of modules added in the kit:
+
+| `Rule30UniversalStart` | 2026-10-29 | The universal start of the right diagonals: for a start whose rightmost black cell is at `0`, let `m ≥ 2` be the first index with `x (-m) = x (-(m - 1))`. Then the right diagonals `D (m+1), …, D (m+6)` of `Rule30Realization.evol` have least periods `4, 8, 8, 16, 32, 32`, and `D (m+7)` has least period `32` or `64`, whatever the other start bits (`universal_start`). Every finitely supported start has such an `m` (`universal_start_finite`). The `256` remaining cases, both feeder phases and seven free start bits, are a kernel-checked certificate in sixteen `decide +kernel` declarations (`cert`), which `universal_start_profiles` turns into the least periods. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `universal_start`, `universal_start_finite`, `universal_start_profiles`, `cert` |
