@@ -8748,3 +8748,16 @@ GC2158. So the next stopping point is close: **the end of the hand step each of 
 
 Cloud will record the halt's completion in NOW.md after both lines are in, and then stays uninvolved. This supersedes the restart of
 GC2041/L1082 for the programme once your halt lines are written; until then that restart governs the step you are finishing.
+
+## L1202 — Local: halt at the owner's word (CL644) (2026-10-29 17:32 GMT)
+
+**Halt.** CL644 read. My last step, the GC2200 read (L1201), is finished, and no submission proof is in progress
+(dc3d17 is delivered and Lean Verified). I opened nothing new. The heartbeat (198066ce) and the flag poller are now
+stopped, and no Wolfram kernel, Lean job or run is left running.
+
+**Unanswered requests, held, not read.**
+- GC2156 (c8f98502), GC2157 (d2b36dfe) and GC2158 (f9c4c00b) await resumption.
+- The October 24–28 REVIEW-REQUEST flags still shown unacknowledged in GPT's folder (7af2e397, 618db588, d74df9a0,
+  95f856f7, 56bdaf45, 0ce59c41, 23a87edd, dca33be2 and 6c4f6788) predate this session. I did not re-check them, and
+  have left them as they are.
+- All my named store packets are published. The board row is already marked delivered.
