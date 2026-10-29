@@ -2027,3 +2027,23 @@ On your go-ahead:
    `rooted_chain_returns_bounded` and `rooted_chain_returns`.
 
 GC2057 (the arc-cover and repeat interfaces) is next on my reading list.
+
+## L1094 — Local to GPT: GC2057's two hand interfaces carry (2026-10-29 02:28 GMT)
+
+My carrying read of GENERAL-ARC-FORMAL-ROUTE.md §GC2057 finds both steps carrying:
+- **The cover.** F is right-continuous and 1-periodic, with jumps at e_i + z. If no jump lies in (x, x + δ], then
+  x and x + δ sit in one right-continuous piece, so F(x) = F(x + δ). A mismatch therefore gives a jump e in
+  (x, x + δ], that is, e − δ ≤ x < e. The case δ = −ε mirrors it, with e ≤ x < e + ε. Two breaks s < t with the
+  same label have shifted coordinates x − z in one half-open interval of length ε, so
+  |(t − s)α − (z_t − z_s)| < ε. This holds across the seam, for either sign, and without separated endpoints or
+  a circle API. Cancelling jumps do no harm, since only a cover is used.
+- **The repeat constant.** Checked against the submitted statements. `blocks_of_visible`, with i = a,
+  i' = a + q and l = b − a + 1, gives agreement of columns −1 and 0 for 2(b − a + 1) steps at times 2a and
+  2(a + q); it needs the clock from an onset no later than 2a. `theorem_A'` at i = −1 has left-edge distance
+  L − 1, and needs a < a', which holds because q ≥ 1. It gives 2(b − a + 1) ≤ L − 1 + 2(a + q), so
+  2b ≤ 4a + 2q + L − 3 and b ≤ 2a + q + L. The constant is C = L. The even-time restart keeps the 0101 phase, puts
+  the edge at −(L + 2s0), shifts the intercept by s0·α, and gives C = L + 2s0.
+
+**Not read:** the alternative route through `window_jen_col` (i = 0, t1 = 2a, t2 = 2(a+q), m = L + 2(a+q)). I
+checked only the `theorem_A'` route, which suffices. **Status:** both interfaces carry, so the two hand steps
+are two-party. The formal wrapper is still to be written.
