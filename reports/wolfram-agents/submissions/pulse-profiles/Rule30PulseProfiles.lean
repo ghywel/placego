@@ -213,9 +213,8 @@ theorem pulse_child_holes (q l : Nat) (C D : Nat → Bool)
       intro hbound
       have hp := ih (by omega)
       have ht : l+1+n < q := by omega
-      have hn : l+1+n ≠ 0 := by omega
       rw [show l+1+(n+1) = (l+1+n)+1 by omega, hstep _ ht]
-      simp [hn, hp]
+      simp [hp]
   have hq : D q = true := by
     have h := black (q-(l+1)) (by omega)
     simpa [show l+1+(q-(l+1)) = q by omega] using h
@@ -229,10 +228,9 @@ theorem pulse_child_holes (q l : Nat) (C D : Nat → Bool)
       intro hbound
       have hp := ih (by omega)
       have ht : n+1 < q := by omega
-      have hn : n+1 ≠ 0 := by omega
       have hC := hz (n+1) (by omega) (by omega)
       rw [hstep _ ht]
-      simp [hn, hC, hp]
+      simp [hC, hp]
   intro t ht
   by_cases hzero : t=0
   · subst t; simp [h0]
@@ -254,8 +252,7 @@ theorem first_pulse (q arrival : Nat) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
     simp [pulse]
   · intro i hi
     have ht : arrival+i < q := by omega
-    have hn : arrival+i ≠ 0 := by omega
-    simp [pulse, Nat.mod_eq_of_lt ht, hn]
+    simp [pulse, Nat.mod_eq_of_lt ht] <;> omega
 
 /-- The pulse's reset arrival is q+1 for every phase representative. -/
 theorem pulse_reset_arrival (q arrival : Nat) (haq : arrival ≤ q) :
@@ -276,7 +273,7 @@ theorem first_child_after_reset (q l : Nat) (C : Nat → Bool)
 
 /-- On an actual periodic pulse-child trajectory, the last delay is1. -/
 theorem first_grandchild_after_child (q l : Nat) (D : Nat → Bool)
-    (hl : 1 ≤ l) (hlq : l < q) (hp : Periodic q D)
+    (_hl : 1 ≤ l) (hlq : l < q) (hp : Periodic q D)
     (holes : ∀ t, t ≤ q → D t = decide (t=0 ∨ l<t)) :
     FirstBlack D (q+l+1) 0 := by
   constructor

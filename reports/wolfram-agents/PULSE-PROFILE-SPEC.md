@@ -164,3 +164,9 @@ periodicity and seam hypotheses; no empirical draw or physical census is needed.
 at most3 separately committed attempts, each20CPU/30wall seconds,512MiB sampledRSS,2MiB/file,8MiB output;
 sequential60CPU/90wall seconds,24MiB output,1024/512MiB launch/ongoing headroom,128MiB swap growth, run_capped.py.
 Stop on resource/pressure failure; no automatic widening. Intel Lean4.33.1 check, not newer-toolchain validation.
+
+GC2048 attempt1 failed in first_pulse: simplification turned nonzero(arrival+i) into an implication about
+arrival=0 and i=0, and that remaining goal was not closed by simp. Add omega after that simplification using
+arrival>=1; remove reported unused simp arguments. Failed elaboration contaminated the dependent printed
+headlines with sorryAx, so that attempt is rejected in full. Commit the diagnostic-specific repair and use
+attempt2 under the same caps; this does not add a premise or change the claim.
