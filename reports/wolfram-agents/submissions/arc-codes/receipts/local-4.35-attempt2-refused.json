@@ -1,0 +1,22 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 180,
+  "rss_mib": 6144,
+  "file_mib": 4,
+  "disk_mib": 16,
+  "min_free_mib": 1024,
+  "launch_free_mib": 7168,
+  "swap_growth_mib": 128
+ },
+ "start_utc": "2026-10-29T03:16:15Z",
+ "end_utc": "2026-10-29T03:16:15Z",
+ "gate": {
+  "free_inactive_mib": 6930,
+  "swap_used_mib": 1758.81
+ },
+ "gate_error": "free+inactive below launch gate",
+ "exit_reason": "REFUSED",
+ "child_rc": null,
+ "source": "reports/wolfram-agents/submissions/arc-codes/ArcDeterminantDraft.lean at b1a731df (sha256 aa2402bd...)"
+}
