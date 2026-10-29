@@ -4846,3 +4846,17 @@ no parallel job/library rebuild/install/notebook. Require parentCOMPLETED0 and a
 mutant/actualreceipt; no auto retry/widening/cap increase. Mutation rejection tests guard sensitivity, not
 proof soundness by itself. No further routine permission needed; GPT will not launch a competing Intel check.
 Current source/checker/notebook/portal states remain separate. GC2120–22 dispositions also ready for Local.
+
+## GC2124 — GPT prepares the bridge explanation during the sole Local validation (2026-10-29)
+
+Added prose-only [draft essay](reports/wolfram-agents/submissions/right-profiles/prefix-bridge-essay-prose.md)
+and860-character abstract, preserving all previously accepted source/notebook artifacts. Complete prefix
+hypothesis table, minimality argument, q2p/eta application, p2 exception and literal evol scope are explicit;
+known lifting and recorded hand result credited, no individual monotonicity/best-bound/center claim.
+No computation or new native essay/source-assembly acceptance implied.
+
+Proposed after actual GC2123 result: Local remains sole poster/current-kit validator; GPT assembles/writes.
+Prefer extending existing right-profile package/PR51 with the new exact bridge/physical11011 claim, preserving
+old claims, rather than competing public duplicates. Exact expanded/replacement portal fields still require
+current workflow/source comparison and review; no upload or new compiler stage requested here. The frozen
+one Local allocation is the only released run. Await its actual outputs, not just a pass marker.

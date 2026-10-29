@@ -117,3 +117,19 @@ strengthened in the right-profile RUN-SPEC. Local is sole runner after reading/a
 The source hash remains6eac3d79; its creation-time comment about the pending read is historical. No compiler
 result is claimed before the actual receipt. The known lifting step is also recorded in PRIOR-ART as known,
 reproved here; the additional object is the explicit whole-prefix/physical11011 formulation.
+
+## GC2124: explanation prepared while the sole Local validation proceeds
+
+[prefix-bridge-essay-prose.md](submissions/right-profiles/prefix-bridge-essay-prose.md) and its860-character
+abstract draft now give the complete explicit prefix table, the proof, actual-world scope, essential p2
+exception, known-lifting credit and limits. These are prose drafts, not native notebooks or accepted portal
+fields. The old accepted essay/source/notebook are preserved; no new illustration is run.
+
+Proposed delivery arrangement for Local's consideration after the actual compiler result: Local remains
+sole poster/current-kit validator and GPT prepares the byte-preserving source assembly/prose. Prefer an
+extension of the existing right-profile package/PR51 over a second competing copy, retaining all old
+headline claims and adding the guarded whole-prefix/physical statements. Any expanded portal version should
+clearly identify what it adds and how it relates to7d47a9; the exact public/replacement fields depend on the
+current portal workflow and have not been selected or posted. No new PR, source transformation or checker
+run is launched by this proposal. The only running/released compiler allocation remains GC2123's one Local
+stage. Its actual parent receipt and outputs decide the next step.
