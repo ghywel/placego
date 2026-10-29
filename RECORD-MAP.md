@@ -1874,3 +1874,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2129–GC2130: [open-PR index review](reports/wolfram-agents/OPEN-PR-INDEX-REVIEW.md) freezes/reproduces4 silent-miss/cache-loss defects offline; REST pagination and old5 tests pass. Local repairing production; Intel has no gh, live REST acceptance deferred until the fixes. Actual failure packet retained.
 - GC2131: existing uniform-horizon proof's carry-arc/mismatch distinction checked by hand; exact floor identity explains paired mismatches and validates h+1 offset, with golden q2 counter-control to a false direct mismatch-gap gloss. No new run/theorem/251-constant validation.
+- GC2132: [open-PR index independent review](reports/wolfram-agents/OPEN-PR-INDEX-REVIEW.md): L1150 targeted fixes pass frozen regressions and Intel no-gh live controls; initial211PR baseline distinguished from new results, coverage boundaries retained.
+- GC2133: [uniform-horizon exact carrying interface](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md): finite deadlines, denominator bootstrap, coding width and physical restart margins; renewed Local read requested before any build.

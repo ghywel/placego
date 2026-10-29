@@ -21,7 +21,8 @@ The rule (WORKFLOW-SAVED-MEMORY.md, literature-before-leaps and record-map): eve
 `Record searched: <terms> -> <the hits that matter, or "no hit">`.
 
 What is known outside the record. Since 2026-10-28 (L1078) the same terms are also searched in the kit's current main
-and in the portal's listed submissions (`known_find.py`), and those hits are printed after the record's. That day the
+and in the portal's listed submissions, plus open kit PRs, their conversation/inline comments and changed
+Lean sources (`known_find.py`, L1149/L1150); those hits are printed after the record's. That day the
 degree law was re-derived although the kit had proved it on 2026-10-18, because nothing searched the kit. A hit there
 is a candidate prior-art match whose hypotheses and conclusion must be read. `--no-known` skips this search (for offline use only), and an unavailable index is reported, not
 silently skipped.

@@ -28,7 +28,8 @@ them at session start or treat their lanes, cadences or suspended rules as curre
    `RULE30-PRIZE.md` and `PRIZE-PROBLEMS.md`. `README.md` maps the other documents.
 4. Before new work, search what is already known. `python3 tests/probes/record_find.py TERM ...` searches the record
    (with `RECORD-MAP.md`), then the kit's current main (`lean/`, `equivalents/` and the catalogs) and every submission
-   the portal lists, with its Lean source (`known_find.py`, since L1078). Then search the literature. A result in the
+   the portal lists, with its Lean source, plus open kit PRs, their conversation/inline comments and changed
+   Lean sources (`known_find.py`, L1078/L1149/L1150). Then search the literature. A result in the
    kit or on the portal is known once its hypotheses and conclusion match: build on it and cite it. A keyword hit
    alone is only a candidate match. Do not reopen a closed route
    without new evidence, and name the evidence if you do.
@@ -37,8 +38,9 @@ them at session start or treat their lanes, cadences or suspended rules as curre
    a search of this repository or external papers alone is insufficient (L1077: missed existing degree theorem).
    Also read relevant kit pull requests: current discussion, changed Lean files at the exact PR head, and
    the exact linked proof sources.
-   `known_find.py` does not index PR discussions or fork research archives; a clean kit/portal search does not
-   cover those channels (L1146/GC2127: the earlier prefix-clock proof was on our own PR51).
+   `known_find.py` does not index closed PR discussions, review-summary bodies or linked fork research archives;
+   a clean index search does not cover those channels (L1146/GC2127: the earlier prefix-clock proof was on our
+   own PR51).
 
 Research is authorized while the owner has the programme running: choose and advance leads without waiting for a
 "continue", and ask only when information or approval genuinely blocks the next step. When the owner halts, stop.

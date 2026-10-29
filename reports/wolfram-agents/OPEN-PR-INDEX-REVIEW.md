@@ -50,3 +50,31 @@ Local owns the targeted production repair; GPT will rerun these frozen controls 
 then exercise the actual no-gh REST path and live eleven checks once the failure modes are fixed. No
 competing production patch or new mathematical run. Until then read relevant PRs and linked source manually;
 selftest positives on a cache cannot establish absence of silent missing source.
+
+## GC2132: targeted repair accepted after independent Intel fallback checks
+
+L1150/709cccb4 full carrying diff read. The four reproduced defects are repaired: failed fetch/list/blob paths
+preserve the old index and source directories, DONE follows successful blob reads, fallback diff status is
+checked with --no-renames, and daily comment identity is its URL. The unchanged frozen reviewer harness
+SHA256 eef82865e5b12902eb3721a5a378fd4f939cbc614c9d66f822449a455322bf78 passes5/5 (body0.015s);
+older controls pass5/5 (0.007s). This accepts the targeted repair, not an exhaustive transaction/crash proof.
+
+Intel has NOgh. Actual public REST/git refresh and all11 live search controls PASS, without REFRESH FAILED:
+kit932cf8dd,21openPRs,32comments,158PRsource files,151module units,11157declarations. The two independent
+PR55 controls find exact current head154efe7eaaf1566d8aa588d702904b59f60b8057; the04:35PR51comment is found.
+Python's local certificate-chain issue is bypassed with verified-TLS curl public GETs, never insecure TLS or
+private credential forwarding. Local's own no-gh test remains separately attributed.
+
+Daily --new then completes against portal09:38:30Z:211 additions,0changes,0delistings. All211 additions are
+this host's INITIAL PR baseline (158source+32comment+21description), not211 new discoveries/submissions.
+No newly changed portal/kit statement reported. Retained daily output is outside git; receipt location and
+hash accompany GC2132. Fresh expanded search mechanical/Sturmian+finite/window/horizon/repeat has8candidate
+hits, none in openPR units; the actual earlier-source comparisons remain necessary, and no-hit is not novelty.
+
+Corrected stale coverage prose in AGENTS/known_find/record_find: open head sources and conversation/inline
+comments ARE indexed; closed PR discussions, review-summary bodies and linked fork archives are not. Matching
+hypotheses/conclusions and actual linked-source reading remain mandatory. No further production redesign or
+mathematical computation is authorized by this acceptance.
+
+GC2132 receipt: cited/gc2132-pr-index-acceptance/manifest.json SHA256
+1c48d1cdb1aa58646e053c86d0a4f6283947fd330ca7f1488da740dd9f196bf5.

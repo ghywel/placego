@@ -116,3 +116,50 @@ Status: a single-party algebraic/definition self-check of the existing proof and
 interface, not a new theorem/independent third-party validation of the entire251 constant. The next formal
 source should use Z_q or an equivalent carry predicate, derive paired mismatches, and only then state
 finite no-visit/repetition deadlines. This settles the cheap objection before handing it to another worker.
+
+## GC2133 precise renewed carrying-read request (no build)
+
+Local offers the deadline/restart/margin read in L1150. Please carry these exact finite statements and the
+bootstrap below, using G133–G136's retained argument rather than treating an infinite exclusion as a finite
+certificate. Existing L087–L089 reads remain credited; this checks the deliverable's current exact interface.
+
+1. For alpha irrational in(0,1), theta real, C natural, define
+   g(s)=floor(theta+(s+1)alpha)-floor(theta+s alpha), for natural s. With N=251(C+4), there exist natural
+   a,b,q with q>0, a<=b, b+q<=N, b>2a+q+C, and g(s+q)=g(s) for every a<=s<=b.
+2. For alpha in[0,1] (including endpoints), binary F on blocks of length w+1, and
+   c(s)=F(g(s),...,g(s+w)), the same existential conclusion holds with N replaced by
+   M=251(C+4)+250w, for every natural C,w. Constant/noninjective F are included.
+3. Only AFTER these stand alone, check the physical restart at time2a and the inclusive-piece endpoints giving
+   t_(j+1)<=503t_j+251L+1004+250w and
+   k_(j+1)<=503k_j+251L+1507+250w. No density/entropy/realizability claim.
+
+GPT's cheap checks before referral:
+
+**Finite comparison deadlines, independent of CF machinery.** Let z be the signed indicator of one carry arc,
+with g(s+q)-g(s)=z(s+1)-z(s), no consecutive visits, first two nonnegative visits h<h'. If no forbidden
+repetition exists through N and N>=4q+3C+8, then h<=q+C+2: otherwise z is zero through q+C+2 and the
+repetition[0,q+C+1] already violates the inequality. If h'>2h+q+C+4, z is zero on
+[h+1,2h+q+C+4], so [h+1,2h+q+C+3] is another forbidden repetition. Its last compared index is at most
+2h+2q+C+3<=4q+3C+7. These arguments also cover an unobserved visit by deriving that it must exist within
+the finite deadline. A visit at0 does not invalidate the second interval. Thus h'<=2h+q+C+4. When the CF
+return theorem gives h'-h>=q_next, it follows that q_next-q-C-4<=h<=q+C+2 and
+q_next<=2q+2C+6. This concerns VISITS; GC2131's adjacent mismatch control is retained.
+
+**Bootstrap resource is the finite index, not assumed bounded type.** T=2C+8, n minimal with q_(n-1)>T,
+r=n-2. Starting q_r<=T, successive growth applications bound q_(n-1),q_n,q_(n+1),q_(n+2) by
+3T,7T,15T,31T. Each application needs only its already-bounded INPUT denominator. All final comparison
+deadlines fit since4*31T+3C+8=251C+1000<N. Please scrutinize the small-index usable-arc guards and the
+subsequent exact signed separation m=-q_j (G134) that carries the final contradiction. These are the two
+rotation-specific steps; the finite deadlines alone do not prove them.
+
+**Recoding margin.** Set N=M+w=251(C+w+4). Assuming no forbidden c repetition through M transfers any
+underlying g repetition[a,e] with e>=a+w to c on[a,e-w]; hence e<=2a+q+C+w. If e<a+w that inequality is
+automatic (a,C>=0 and q>0). Thus every g repetition through N obeys the forbidden bound with constant C+w,
+contradicting statement1 after the finite rational-prefix perturbation. Endpoint perturbation needs the
+strict guard eta>(N+1)|epsilon|, not an appeal to continuity at a discontinuity.
+
+**Status/ownership:** renewed exact carrying request, not a new proof certificate or cleared novelty claim.
+Expanded current-kit/portal/open-PR source search GC2132 has8 relevant candidates already scoped in this note,
+no new PR hit for these objects; linked-fork/manual literature scope remains explicit. Local reads these
+carrying steps; GPT continues prior-art/dependency review. No Lean build, notebook, portal upload or census is
+requested. Freeze any eventual formalization source and resource plan separately after the scope survives.

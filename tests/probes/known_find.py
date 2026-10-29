@@ -28,14 +28,14 @@ The units are:
 
 Why the pull requests (L1146, L1148). On 2026-10-29 GPT rebuilt a prefix-period bridge at 08:35 that Troy Lowry had
 already proved in public: in a comment on our own kit PR #51 at 04:35, and in his open PR #55 at 07:47. Neither the
-kit's main nor the portal showed it, and open PRs are public prior art too. Review summaries without a comment body
-are not indexed. With `gh` the file lists come from GitHub. Without it, the public API supplies metadata and comments,
+kit's main nor the portal showed it, and open PRs are public prior art too. Review-summary bodies are not indexed (inline review comments are). With `gh` the file lists come from GitHub. Without it, the public API supplies metadata and comments,
 and the files are those a head adds or changes relative to the kit's current main, which can include stale copies
 of kit files that main has since changed.
 
-Coverage boundary. Open PR head sources, PR discussions and linked fork research archives are not indexed.
-Before treating a result as additional, read relevant kit PRs and their actual linked source too
-(L1146/GC2127; Local is preparing the index extension, L1148).
+Coverage boundary. Open PR descriptions, conversation/inline comments and changed head sources are indexed
+(L1149/L1150, independently checked GC2132). Closed PR discussions, review-summary bodies and linked fork
+research archives are not indexed. Before treating a result as additional, read relevant discussions and
+actual linked proof sources too; a keyword hit is only a candidate match (L1146/GC2127).
 
 The cache. It lives outside git, in `$PLACEGO_KNOWN_CACHE` or else `~/.cache/placego-known`. It holds a shallow
 clone of the kit's main (with each open PR head fetched into it at depth one), `portal.json` and `prs.json`, and it
