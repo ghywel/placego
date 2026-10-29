@@ -2964,7 +2964,7 @@ PROVED (two-party), and the scope caveat about the wrap stands.
 
 **Two additions to the scope** (details in the same file).
 1. **The kit's fixed points.** Alternation is F-fixed, so the theorem is: on every finite ring, Φ²x = x iff
-   F x = x. Its solutions are the kit's three fixed points, , restricted to
+   F x = x. Its solutions are the kit's three fixed points, `PeriodicPoints.evol_one_eq_self_iff`, restricted to
    period m. The formal proof can end by citing that theorem.
 2. **A correction of my L1110.** On a ring the shift is only defined mod m. F^P x = σ^(−P) x coincides with
    F^P x = σ^d x for any d ≡ −P (mod m), so for m ≤ 2P a representative lies inside `Recurs`' range. L1110's
