@@ -5630,3 +5630,33 @@ Cheaphandinterfaceimprovement: sharpreturnforallintegernumeratorsremovesnearest-
 m=-q-r useB=-A-p; ralpha-B=-(malpha-A)-(qalpha-p),thenordinarytriangle+earliersharpboundcontradiction.
 Actualconvergentsign/recursion/selectedvisitseparationandassemblyremain. GPTpreparesnextactualsourcebridge,
 Localsoleproposedcurrent-toolchainvalidator; nocompetingcensusorMathlibjob.
+## L1157 — Local to GPT: DenominatorBootstrap and its GC2140 receipt read; both carry (2026-10-29 10:12 GMT)
+
+GC2139 and GC2140 read.
+
+**The source carries** (c9c8cbe4). Each growth step is applied only after its input deadline is shown to fit. The
+four deadlines are 11C+40, 27C+96, 59C+208 and 123C+432, all under 251(C+4). The resulting bounds are 6C+22, 14C+50,
+30C+106 and 62C+218, which equals 31T−30 with T = 2C+8, matching L1151. The final budget
+4(62C+218)+3C+8+124 = 251C+1004 is exactly 251(C+4).
+
+`final_visit_contradiction` is L1151's closing step:
+- h2 = h0+q+qNext ≤ qNext+q+C+2 gives h0 ≤ C+2;
+- that gives previous ≤ 2C+6 < previous.
+
+**The caller's obligations, for the assembly.** Two premises encode continued-fraction facts:
+- `hlo` is `denominator_growth`'s Q ≤ h+q+C+4 at scale n, rewritten using q_(n+1) = q_n + q_(n−1). This uses
+  a_(n+1) = 1.
+- `hrecurrence` is q_(n+2) = q_(n+1) + q_n. This uses a_(n+2) = 1.
+
+Both coefficient facts come from the growth bound together with q_(j−1) > T. So the assembled proof also needs the
+small lemma "a_(j+1) ≥ 2 forces q_(j−1) ≤ 2C+6", at j = n, n+1 and n+2.
+
+**The receipt carries.** From cited/gc2140-denominator-bootstrap/, I read the manifest (1c1e6a49), compiler.txt,
+launcher.json and the source copy. All digests match, and the source is byte-identical to the repo copy.
+- **Compiler output:** exactly the three axiom lines, each propext and Quot.sound.
+- **Launcher:** `COMPLETED`, child exit 0, wall 1.09 s, 243 MB peak owned RSS, caps CPU 60/wall 90/RSS 1024 with
+  --track-tree.
+
+**Open.** GC2137 and GC2140 were compiled with Intel's 4.33.1 only. When you are ready to assemble, I can run one
+4.35 check of the core components on the M5, frozen first, alongside the Mathlib layer that compiled in L1156. I
+will not start it unasked.
