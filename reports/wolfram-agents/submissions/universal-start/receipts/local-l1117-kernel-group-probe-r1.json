@@ -28,7 +28,7 @@
  "cmd": "from the pipeline kit root, PATH with the elan bin first: WolframKernel -script tests/probes/wolfram/kernel_group_probe.wl (revision 1, at 2fab167e)",
  "stdout": [
   "kernel pid 89762  row {{89762, 89761, 89761, /Applications/Wolfram Engine.app/Contents/MacOS/WolframKernel}}",
-  "version 15..0  licence L9941-3962",
+  "version 15..0  licence <redacted>",
   "leanlink head Symbol",
   "descendants (pid ppid pgid comm):",
   "  89762 89761 89761 /Applications/Wolfram Engine.app/Contents/MacOS/WolframKernel",
@@ -37,5 +37,6 @@
   "GROUP_PROBE_ESCAPED {{89776, 89762, 89776, /bin/sleep}, {89780, 89762, 89780, /bin/ps}}"
  ],
  "note": "Licence granted; the kernel is in run_capped's group (pgid = the time process). Its StartProcess child (sleep) and RunProcess child (ps) each took their own process group: escaped. The sleep child was killed by the script, and no stray remained. LeanImportString returned a Symbol; revision 1 wrapped it in Quiet[Check[...]], so the reason was not recorded.",
- "launcher_sha256": "739d72a7fa2ae0b88e235df49689dc9ce76d747e373093c282f256ac44889231"
+ "launcher_sha256": "739d72a7fa2ae0b88e235df49689dc9ce76d747e373093c282f256ac44889231",
+ "privacy_note": "Public copy redacts a licence identifier; original raw output remains with Local. No process/resource/result fields changed."
 }

@@ -4,7 +4,8 @@
 (L1116, independent complete receipt/checker read GC2091): catalog12068af9 replay258/all122 standard;
 submission17fdfbcb replay258/all125 standard, no new axioms and four exact passing headlines each. A2 is
 complete. Notebook B needs corrected execution/output guards before launch; executed notebook, final
-artifact read, PR and portal receipt/outcome remain pending. No portal Lean Verified,
+artifact read, PR and portal receipt/outcome remain pending. GC2092 reads the new core-import variant409e7c59
+as body-identical but unvalidated; the direct-kernel group-only containment probe is REFUTED. No B launch. No portal Lean Verified,
 Human Verified, merged-kit or completed-backlog claim is made.
 
 ## Exact scope

@@ -3292,3 +3292,30 @@ UNEXECUTED here (no Wolfram installed), static delimiter review only. Count258 i
 prediction from A2, not an observation; retain any discrepancy without rebuilding. Local: please read/run
 these tiny controls ONLY after the launcher/lifecycle plan is accepted, before the expensive notebook.
 This amends GC2091's active GPT task to prepared controls; no full stage-B launch approval yet.
+
+## GC2092 — owned-kernel group-only containment refuted; minimal-import alternative read (2026-10-29)
+
+Read all newly committed2fab167e/2366c91c/6b096c5d source and the retained kernel-group r1 receipt. The kernel
+gets a licence, but both StartProcess sleep and RunProcess ps have PGIDs different from the supervised
+kernel. Therefore run_capped/W7 GROUP-ONLY tracking cannot supervise all Wolfram children here. The script
+printed GROUP_PROBE_ESCAPED, despite exit0/launcher COMPLETED: the containment prediction is REFUTED, not
+a successful launch validation. Retained5.18s/291744KiB group numbers exclude escaped allocations; no
+LeanLink cost/result can be inferred from its failed Symbol. Do not repeat the containment question: r2
+would only diagnose missing LeanLink initialization, not restore containment. A corrected supervisor must
+track owned descendants across process groups and clean them on every terminal path (or demonstrably
+contain them using a different supported launch), with controls. The original watcher remains unaccepted.
+
+The core-import candidate409e7c59 changes ONLY Rule30PrizeKit into explicit Rule30Prize/Rule30Realization
+imports; the full remaining source bytes agree with the accepted17fdfbcb. Kit instructions permit this.
+This is a sensible NEW lower-memory release variant now A2 is done, not already covered by old A2 and not
+a second certificate strategy. Read the frozen stub development wrapper as a probe only; it prints warning
+counts but does not enforce exactly16/no-other warnings in its exit guard, so read the retained full output
+before claiming its predicted cleanliness. No full-certificate/notebook launch accepted by this read. If
+Local adopts this variant, freeze/check its final full file, rebuild the essay with exact embed and new hash,
+and update B source/spec against that artifact first. Avoid parallel broad/core builds and dependency setup.
+
+Privacy repair: the just-arrived public kernel receipt printed a licence identifier. Redacted that field in
+the current public copy (original raw stays Local's) and removed future identifier printing from the probe.
+Result/resource/process evidence is unchanged. Existing history was not rewritten; Local should retain the
+original privately. This correction changes the unrun r2 probe source digest; do not use its old frozen
+digest. No further kernel-group probe is requested by GPT.

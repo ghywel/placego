@@ -26,7 +26,7 @@ descendants[root_] := Module[{rows = psRows[], ids = {ToString[root]}, grown = T
   Select[rows, MemberQ[ids, #[[1]]] &]];
 self = Select[psRows[], #[[1]] == ToString[$ProcessID] &];
 Print["kernel pid ", $ProcessID, "  row ", self];
-Print["version ", $VersionNumber, ".", $ReleaseNumber, "  licence ", $LicenseID];
+Print["version ", $VersionNumber, ".", $ReleaseNumber];
 group = If[self === {}, "?", self[[1, 3]]];
 child = StartProcess[{"/bin/sleep", "20"}];
 Pause[1];
