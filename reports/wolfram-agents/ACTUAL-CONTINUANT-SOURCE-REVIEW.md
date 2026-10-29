@@ -538,3 +538,38 @@ illustration computation changed. Abstract remains d55190dc, prose c61e65ef.
 replay's actual constant count and its own launcher/source/semantic/lifecycle controls. No notebook execution
 or portal delivery is inferred. L1181's owner disposition leaves historical licence identifiers alone; it
 does not permit printing new private identifiers in fresh artifacts. No history rewrite or cleanup job.
+
+## GC2178: official stage FAILED before replay; exact environment repair reviewed once
+
+Complete L1182, compact receipt, full manifest dcd6d1060b0159b0441676330165595dac89c747be7468d0b2dd536d57f23053
+and all10 copied files independently read/digest-checked. Source791e45ed and checker b882f252 match their pins.
+Exactly99 standard compiler reports match expected source order; that compiler portion is accepted. The checker
+exited1 with a missing external lean process during initialization, emitted no JSON and never reached kernel replay.
+The guard correctly rejected0 JSON objects. **Whole official stage remains FAILED**, not a kernel success or a
+logical refutation. Object7ad946f0 is retained by producer digest, not downloaded/rebuilt by GPT.
+
+All27 pressure samples clear the frozen stops. Parent CHILD_FAILED1/14.58s, owned2689936KiB, minimum free4987MiB,
+swap growth0, max3processes, final4915183bytes. Actual launch gate5926MiB is distinct from L1182's preceding6087MiB
+headroom snapshot. Child time14.55s real/5.62s user/1.65s sys,2787606528bytes maximum RSS. Its time receipt also
+retains the guard error line, not a pure success receipt. Immutable independent full packet:
+cited/gc2178-horizon-official-failure/review-manifest.json SHA256
+fdaf358b791ea37ac83d3992fa526d3e883415a56f8d80f098a7eef30860ac9b.
+
+[Lean4.35.0 Path.lean, findSysroot](https://github.com/leanprover/lean4/blob/v4.35.0/src/Lean/Util/Path.lean)
+confirms the cause: LEAN_SYSROOT is used when set; otherwise it invokes lean --print-prefix from PATH.
+Check.lean calls this before argument handling/replay. Earlier parser fixtures did not exercise that runtime path,
+and their stated synthetic-control status must remain explicit. Removing lake env exposed this requirement.
+
+Repair runner SHA256 f1558604d6868280e5f29b384b2b97eeae0f23d05ed214e6479bcc37690c55f6 requires the explicitly
+selected compiler to end in/bin/lean, derives its root, refuses a missing lib/lean/Init.olean and exports LEAN_SYSROOT.
+The PREP/GUARD blocks, proof, manifest, checker and eight CLI names are byte-identical; shell syntax passes. This
+addresses the observed initialization failure without changing the theorem or official checker. It uses no extra
+Lean workload process; its small filesystem helpers remain inside the inherited process/tree/wall limits.
+
+**Accepted ONE newly frozen repaired transaction**, not an automatic retry: same791e45ed/266d6cd6/b882f252,
+runner f1558604, exact L1182 caps CPU600per process/wall900/tree RSS4608MiB/file16MiB/disk64MiB/free2048MiB/
+launch5120MiB/swapgrowth128MiB/max4processes/track-tree, no competing Lean or Wolfram job. A fresh transaction's
+compile is deliberate validation under the repaired environment; no A/B/C modular rebuild or extra DEV pass.
+Retain actual compiler/checker/parent outputs and actual toolchain/sysroot provenance with private paths sanitized.
+Any failure ends that stage and requires reassessment, no automatic further run or relaxed cap. Until the actual
+kernel output is read, replay, notebook execution and portal delivery remain pending.

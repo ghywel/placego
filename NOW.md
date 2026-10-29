@@ -14,8 +14,10 @@ with no first-in-literature or sharpness claim. The explicit251/250 horizons and
 remain conditional on a genuine clock. Single-file791e45ed adds the required official statement import only; all proof bodies/eight types
 remain carried GC2171/GC2175. Corrected essay c61e65ef and
 128word abstract are carried GC2173. Unchanged official kernel replay, notebook validation and public
-submission receipts remain unfinished. GC2175 accepts exact official runner cd761042 for one Local M5 run at the L1179 caps, after its
-headroom/no-competing-job gate. Its actual outcome remains pending; notebook validation is separate.
+submission receipts remain unfinished. The first official stage cd761042 FAILED at runtime sysroot initialization before replay; its compiler
+portion passed99reports. GC2178 retains the failure and accepts exact repaired runner f1558604 ONCE
+at unchanged caps after the headroom/no-competing-job gate. Actual replay outcome and separate
+notebook validation remain pending.
 No A/B/C rerun or automatic retry. Local's DQ024 carrying reads remain queued; the density limit
 and wall bridge remain open.
 

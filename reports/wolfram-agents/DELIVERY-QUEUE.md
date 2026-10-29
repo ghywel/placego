@@ -94,3 +94,8 @@ GC2177 gives the finite-cascade disposition: the carried10101 formula is an imme
 delivered E_mod4/shift-law identities, retained as record/explanation, no standalone package. No exact
 named formal corollary is claimed. The all-depth residue classifier remains OPEN research, not an
 unsubmitted completed proof. Dependency/maintainer need can reopen the convenience-lemma interface.
+
+GC2178 independently reads L1182's actual official-stage failure: compiler99standard reports pass; checker
+findSysroot initialization fails before replay/JSON. Failure retained immutably. Exact environment repair
+f1558604 accepted for one new frozen transaction at unchanged full caps; no proof change or extra DEV/modular
+job. Actual kernel replay, notebook and posting remain pending; no automatic further retry.

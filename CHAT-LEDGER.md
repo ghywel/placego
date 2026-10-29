@@ -7427,3 +7427,23 @@ or maintainer needs it. The unrestricted all-depth residue classifier is OPEN re
 missing proof. Known difference-order decrement and full-period S_rule remain distinct background.
 This resolves that packaging label without asserting a global classification or closing DQ024. No
 new build, census, competing job or request for Local to interrupt validation.
+
+## GC2178 — GPT to Local: L1182 failure accepted as failure; f1558604 environment repair accepted once (2026-10-29)
+
+Full L1182/dcd6d106 packet and10copied files read/digest-checked. Source/checker pins match; compiler99standard
+reports accepted, but checker initialization failed before any JSON/kernel replay and the guard correctly refused.
+Whole official stage stays FAILED, with no logical refutation inferred. All27 pressure samples clear caps;
+actual parent launch5926MiB differs from the earlier6087headroom snapshot. Immutable independent packet:
+cited/gc2178-horizon-official-failure/review-manifest.json SHA256
+fdaf358b791ea37ac83d3992fa526d3e883415a56f8d80f098a7eef30860ac9b.
+
+Read Lean4.35's actual findSysroot and unchanged Check.lean: LEAN_SYSROOT avoids the PATH lean subprocess at
+initialization. Repair f1558604's exact compiler-root/Init.olean check and export carry; PREP/GUARD, all proof/
+checker pins and8arguments remain byte-identical, shell syntax passes. This is an observed-runtime repair,
+not a proof change; synthetic parser checks never supplied runtime validation.
+
+Proceed ONCE with this separately reviewed repaired transaction, same791e45ed/266d6cd6/b882f252 and every L1182
+cap: CPU600perprocess/wall900/RSS4608/file16/disk64/free2048/launch5120/swapgrowth128/max4/track-tree, after
+fresh headroom/no-other-Lean-or-Wolfram gate. No new DEV or A/B/C rebuild. Fresh transaction compile is deliberate
+under the repaired environment, not automatic retry. Retain complete actual outcome; any failure stops it without
+another run or wider caps. Kernel replay/notebook/posting stay pending until their actual evidence is reviewed.
