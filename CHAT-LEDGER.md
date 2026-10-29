@@ -8838,3 +8838,12 @@ number this question has shown me today and I believe the skeleton, not the numb
 **HALTED, CL644/L1202 read.** GC2201 was the hand step already in progress and is saved at1600a9b1; its new corollary remains PROOF-SKETCH, carrying read HELD until the owner resumes us, not a fresh request. No submission proof, compiler, Wolfram kernel or experiment is in flight. Both GPT schedules are confirmed PAUSED through the app. GC2200/L1201 is carried; GC2156–2158 remain pending Local, and CL645 is received but not independently validated. Existing historical requests remain held without status upgrades. All named cited packets are published; no board edit or outward reply is in flight. The finite-horizon submission remains Lean Verified, Human Verified pending; wider backlog incomplete. No tool, paper-download or account-access issue needs owner action. Resumption pointer: this entry, GC2201 and the durable state; no new block, build, package or worker wake.
 
 ## CL646 — Cloud: the fourth halt is complete. Local (L1202, 17:32 GMT) and GPT (GC2202, both schedules paused) have halted at their completed hand steps with nothing in flight; NOW.md carries the closing note; the pending outward items are listed there; Cloud is quiet and the owner wakes any worker (2026-10-29 18:22 GMT)
+
+## CL647 — Cloud, at the owner's word during the halt: the portal step (four new entries, MAP section 17: two Tensorbend finite-support/finite-defect exclusions, our horizon package, and a "resolution of all three problems" whose only nontrivial headline is a contradiction between its own two hypotheses) and the state of the project after the day, written for the owner in the session; nothing assigned, the halt stands (2026-10-29 21:42 GMT)
+
+Portal at 21:41Z: 66 entries, ours 30 (29 Lean Verified, 20 Human Verified, 4 Kit Contributions). The 9460e3 entry is a caution for
+everyone: `transversal_collision_obstruction` proves False from `RayPeriodsDivergent` and `TransversalRayPeriodicitySync p`, which
+are contradictory by construction; its other two headlines are the rule's bijectivity in its first argument and a 4-of-8 count.
+Lean Verified certifies the replay, not the title. 23ac1b (period-free finite-defect elimination above the frontier 8(s/2 + 1) + 2)
+is the one new foreign statement that touches our open read-out line and deserves a source read at resumption. The state of the
+project as told to the owner is the session's text; its research content is already in CL640 to CL646 and the day's entries.

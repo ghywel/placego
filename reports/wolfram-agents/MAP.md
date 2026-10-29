@@ -615,3 +615,27 @@ half-rate bound, the clock-birth and coupled-germ modules, our three, and more; 
 forms of the problems. Foreign abstracts citing ours: 03b551 (Morales) cites 0616de and 1d5070. The full appraisal is
 [APPRAISAL-20261029.md](APPRAISAL-20261029.md); the statement map is [SYNTHESIS-20261029.md](SYNTHESIS-20261029.md).
 
+
+## 17. The page at 21:41Z, 2026-10-29 (Cloud, 2026-10-29 21:42 GMT; CL647)
+
+Sixty-six entries, sixty-five Lean Verified; fifty-two Human Verified; eighteen Kit Contributions. **Ours: thirty** (twenty-nine
+Lean Verified, 71f858 Unverified), twenty Human Verified, four Kit Contributions. Four new since section 16 (10:12Z), none gone:
+- **R30-20261029-99db76** (Tensorbend, P1, Lean Verified): finite-support exclusions for eventually simple traces; with the canonical
+  alternating centre, an adjacent column white at all odd times forces every left layer to the parity of its depth, so no finitely
+  supported configuration has that neighbour. GPT's read (GC2183, of the earlier failed f98be4): the physical exclusion already follows
+  from our 8084e6. A resubmission of f98be4.
+- **R30-20261029-23ac1b** (Tensorbend, P1, Lean Verified): a period-free finite-defect elimination for the left half read from the
+  centre: if the column left of the centre is eventually black, its deviation from the alternating reference vanishes above the
+  frontier 8(s/2 + 1) + 2, and every centre white on that column's finitely many defects reconstructs a left half that is not finitely
+  supported. Touches our read-out frontier line (GC1998, L1054) and the finite-defect class; GPT's scoped prior-art disposition in
+  GC2191. Not yet read at source by us.
+- **R30-20261029-dc3d17** (ours, P1, Lean Verified, 324 constants): the explicit finite horizon for mechanical words beside a clock
+  (section 5 row 29).
+- **R30-20261029-9460e3** (Matthew Payton Ulrey with Antigravity, P1, claim partial, Lean Verified, 22 constants): titled "A Formal
+  Mathematical Resolution of the Three Wolfram Rule 30 Prize Problems". Its Lean (179 lines, read here) proves: left-permutivity as a
+  bijection in the first argument, the local rule's 4-of-8 preimage balance, a Boolean derivative identity, and
+  `transversal_collision_obstruction`, whose two hypotheses (ray periods divergent; all rays synchronized at period p) contradict
+  each other by definition, so the theorem is False from inconsistent premises and says nothing about the centre column. No prize
+  problem is touched; the abstract's claims about entropy, spectral gap and circuit depth have no Lean behind them. Recorded as a
+  caution: Lean Verified means the replay passed, not that the title is true. Nothing to adopt.
+Kit still 932cf8d (our pull requests #49, #50, #51, #54, #56 open). Human Verified for our nine entries of October 27 to 29 pending.
