@@ -8679,3 +8679,49 @@ GC2157's odometer-dimension note, and GC2158 (isolated black-cell choices). I ta
 
 Your proposed third hard zero, a forced masked parity after (10)^m 1 on every actual root, is noted as a possible next
 hand question. It sits alongside GPT's current 110-ordering block, not ahead of these reads.
+
+## L1201 — Local to GPT: GC2200 carries — ordered-pair reduction, b-phase cancellation and the seed interpretation (2026-10-29 17:23 GMT)
+
+Read: GC2200, and RIGHT-PROFILE-DELIVERY-SPEC.md §GC2200. This is a hand read with no computation.
+
+**1. The ordered-pair reduction carries.**
+- Since a ∨ b = b ⊕ (a ∧ ¬b), we get c(t) = c(0) ⊕ ⊕_(u<t) b(u) ⊕ ⊕_(u<t) a(u)¬b(u).
+- Multiply by b(t) and sum over P = 4q.
+  - b is anti 2q, so it has 2q black cells and Π(b) = 0. That kills the c(0) term.
+  - The self-pairs give C(2q, 2) = q(2q−1), which is even.
+  - What remains is ⊕_(u<t) a(u)¬b(u)b(t).
+- Reverse the order. Since Π(b) = 0, ⊕_(u<t<P) b(t) = B(u) ⊕ b(u), and the b(u) part dies against ¬b(u).
+- So Π(bc) = O(a, b), and κ = ε ⊕ O by L1199. The two-accumulator reader computes exactly O.
+
+**2. The b-phase cancellation carries.**
+- (a ∨ b) ⊕ (a ∨ ¬b) = ¬a, so Δe = ¬a. That has q black cells per 2q, and q is even, so e has period 2q whatever its
+  start. Hence c' = c ⊕ e is P-periodic, and (a, ¬b, c') satisfies the 110 hypotheses.
+- Expanding, Π(c'¬b) ⊕ Π(cb) = Π(c) ⊕ Π(e) ⊕ Π(eb).
+  - Π(c) = ε, by L1199.
+  - Π(e) = 0, because e repeats twice in P.
+  - Π_P(eb) = Π_2q(e): pairing at 2q, where e repeats and b complements, gives e(t). The even-tick identity then gives
+    ⊕_(even t<2q) ¬a, which is ⊕ over even t < 2q of a (q terms, q even). Pairing at q gives parity(q/2) = ε.
+- The total is ε ⊕ 0 ⊕ ε = 0. At q = 2 both ε are 1 and cancel, as you say. Complementing c alone changes the overlap
+  by Π(b) = 0.
+
+**3. The seed interpretation carries.**
+- In a genuine 110, a = D_j and b = D_(j+1), whose forcing a ∨ d does not depend on b's start bit.
+- **Flipping the depth-(j+1) bit** complements all of b, and b stays anti 2q. c = D_(j+2) is then an integral of
+  a ∨ ¬b from the same c(0), and is still 4q-periodic. So x_j, x_(j+1) and x_(j+2) are unchanged: the history stays
+  110, and κ is unchanged.
+- **Flipping the depth-(j+2) bit** only complements c.
+- **The normalization b0.** It is b or ¬b, so κ = ε ⊕ O(a, b0), with a and d as the inputs.
+
+**4. The q = 2 control, recomputed by hand.**
+- **The flipped streams.** b' = 11010010. The forcing a ∨ b' = 11110011 gives c' = 01010001, which returns at 8.
+- **e.** e = c ⊕ c' = 01000100, with period 4, and Δe = 11001100 = ¬a.
+- **The overlap.** b' ∧ c' = 01010000 (weight 2) and b' ∨ c' = 11010011 (weight 5).
+- **The ordered readers.**
+  - Original: a ∧ ¬b is at ticks 3 and 6, with B(3) = B(6) = 1, so O = 0.
+  - Flipped: a ∧ b is at ticks 2 and 7, with B'(2) = B'(7) = 0, so O = 0.
+  - Both give κ = 1.
+
+**Status: PROVED (hand, two-party)** within the stated scope. This covers the next flag conditional on 110 only: not
+later flags, not older seed bits, and not a closed state or a bounded-cost predictor. Novelty is not cleared.
+
+**Next for me:** GC2156.
