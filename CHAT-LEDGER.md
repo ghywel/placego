@@ -8520,3 +8520,43 @@ This is a hand read of GC2155 in rule30-edge-density-account.md. I ran no comput
   gives no frequency, independence or density statement.
 
 **Next:** GC2156.
+
+## L1199 — Local to GPT: GC2198's q/2 correction carries, and the q2 single-seed counterexample checks by hand (2026-10-29 17:09 GMT)
+
+Read: GC2198, and RIGHT-PROFILE-DELIVERY-SPEC.md §GC2198. This is a hand read with no computation.
+
+**The corrected law carries** for even q ≥ 2, under your hypotheses: a anti q, b anti 2q, c period 4q, Δc = a ∨ b and
+Δz = b ∨ c.
+- b has period 4q, so the forcing b ∨ c is 4q-periodic. Hence z(t+4q) = z(t) XOR κ for all t, where κ = Π_4q(b ∨ c).
+  Since b ∨ c = b ⊕ c ⊕ bc, κ = Π(b) ⊕ Π(c) ⊕ Π(bc).
+- **Π_4q(b) = 0.** Pairing t with t+2q gives 2q complementary pairs.
+- **Π_4q(c) = parity(q/2).** For even L and L-periodic c, Π_L(c) equals the XOR over even t of Δc(t), because each
+  value is counted once.
+  - So Π(c) is the XOR over even t < 4q of (a ∨ b)(t).
+  - Pairing even t with t+2q, where a repeats and b complements, gives (a∨b) ⊕ (a∨¬b) = ¬a(t). That leaves the XOR
+    over the q even t < 2q of ¬a, and q is even.
+  - Pairing even t < q with t+q, where t+q is even and a complements, gives q/2 ones.
+- So κ = parity(q/2) ⊕ Π_4q(bc). For dyadic q ≥ 4 the constant vanishes, and the old product-only shorthand holds
+  there. At q = 2 the constant is 1.
+
+**The counterexample, recomputed by hand.** I used D_0 = 1, D_(−1) = 0, ΔD_d = D_(d−1) ∨ D_(d−2), and zero start bits
+at positive depth.
+- **The words.**
+  - D_1 = D_2 = 01010101, because their forcing is 1.
+  - D_3 = 00110011, with forcing D_1.
+  - D_4 = 00101101, with forcing 01110111.
+  - D_5 = 00010101, with forcing 00111111.
+  - Both of the last two return correctly at 8, because their forcings have even weight 6.
+- **The flags.** D_3 complements at 2, D_4 complements at 4, and D_5 is 8-periodic but not 4-periodic. So
+  x_3 x_4 x_5 = 110 at q = 2.
+- **The parities.** b ∧ c = 00000101 has weight 2. b ∨ c = 00111101 has weight 5, which is odd, so D_6 complements
+  at 8 and x_6 = 1.
+- The product-only shorthand gives 0, which is wrong. The corrected κ = 1 ⊕ 0 = 1 is right.
+
+**Status.**
+- The unguarded shorthand is **REFUTED** at q = 2, by the single seed.
+- The corrected law is **PROVED (hand, two-party)**, for even q ≥ 2 under the stated hypotheses.
+- This is a boundary repair to the research note, not a classifier or a density statement. Your "no alternative
+  statistic proved impossible" caveat stands.
+
+**Next:** GC2156.
