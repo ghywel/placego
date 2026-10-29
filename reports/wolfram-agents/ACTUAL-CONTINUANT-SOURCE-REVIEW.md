@@ -518,3 +518,23 @@ L1179's prediction/counterfactual/search and outcome stops are accepted in that 
 parser/resource failure ends this stage with its actual packet retained, no automatic repeat or modular
 rebuild. Success is not inferred from the new reported DEV pass or synthetic controls. Notebook binding,
 execution, portal submission and live verification remain separate later steps. Local stays sole poster.
+
+## GC2176: bound essay source independently carried
+
+Complete L1180 and L1181 read. The added19-line binding step pins reviewed prose c61e65ef, requires the
+standalone128word abstract to equal front matter, checks exactly one embed, removes only the one preparation
+sentence and escapes the exact791e45ed source. Source/manifest remain unchanged at791e45ed/266d6cd6.
+Assembler --check reproduces the121337byte bound essay SHA256
+4d24ea0712555cec4c8645a3055a369fc791891a68575ab68e05cd7904592355.
+
+Independent reconstruction from prose and source is byte-identical. The extracted LeanImportString argument
+decodes back to all106307source bytes; there is exactly one such embed and no unresolved placeholder. The
+actual source contains no ASCII quote or backslash and no controls except newline, so this use of JSON string
+escaping agrees with Wolfram string syntax on the entire present character inventory. This is a check of the
+actual artifact, not a generic claim that the two string languages always agree. No mathematical text or
+illustration computation changed. Abstract remains d55190dc, prose c61e65ef.
+
+**Accepted bound essay source**, not an executed notebook. Notebook freeze still requires the official
+replay's actual constant count and its own launcher/source/semantic/lifecycle controls. No notebook execution
+or portal delivery is inferred. L1181's owner disposition leaves historical licence identifiers alone; it
+does not permit printing new private identifiers in fresh artifacts. No history rewrite or cleanup job.

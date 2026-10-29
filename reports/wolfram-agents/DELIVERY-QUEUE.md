@@ -84,3 +84,8 @@ GC2170 resolves the common-left fringe candidate: StripeMeeting's arbitrary comm
 finite-tail center trace, and causal truncation gives infinite tails; full wedge retained as hand record.
 No standalone submission, no exact exported infinite-tail mapping claimed. Remaining broader cascade
 scope still needs its own disposition; this does not mark the entire backlog complete.
+
+GC2175 accepts exact official runner cd761042/source791e45ed/assembly266d6cd6/checkerb882f252 once at
+L1179's full caps; actual kernel-replay outcome pending. GC2176 independently carries bound essay4d24ea07
+with exact791e45ed embed, corrected prose c61e65ef and abstractd55190dc. Notebook execution and portal
+receipt remain separate required checks, Local sole poster; no new owner permission round or duplicate job.
