@@ -434,3 +434,25 @@ checker and require pass/replay.ok/importsStatements, exact8 passing headline re
 standardAxioms for EVERY declared constant. Compile errors, warnings, missing/extra/repeated reports, malformed
 JSON, checker failures and resource stops all end the stage and retain evidence. No automatic retry or expansion.
 This does not accept an unseen runner or authorize a notebook execution as part of that checker stage.
+
+## GC2172: offered development failures and amendments fully retained and read
+
+Read INDEX and all six L1170–L1172 development manifests, all36 copied files, source differences, parent
+samples, compiler outputs and child-time receipts. All declared copied digests match. Independent immutable
+copy: cited/gc2172-horizon-development-review/review-manifest.json SHA256
+8dcd8908ec3b944284cbc0f0d1bedd76a1952857165fad834b2b8fe6e5f87fd4. This closes the requested carrying
+read of these failure/repair packets; it does not convert development runs into release evidence.
+
+The two failures are actual CHILD_FAILED1 outcomes, not successes with hidden warnings. FiniteHorizonSelection
+first emitted unknown-tactic/identifier errors and sorryAx; the amended source replaces by_contra by explicit
+Classical.byContradiction and le_of_not_gt by omega. PhysicalHorizon first failed the restart_leftmost proof,
+with sorryAx propagating to its dependents; the amendment applies not_and.mp hm hbound before simpa.
+Successful copied sources equal current git. Git amendments a530385c at13:10:58Z and84194d6a at13:28:35Z
+precede the respective runs13:11:09Z and13:28:37Z. Failure diagnosis/source amendment is retained, with no
+unbounded repeat or enlarged research census inferred from a DEV label.
+
+The six parents report wall2.10/15.12/4.19/0.52/2.11/2.11s; all retained pressure samples clear the stated
+stops. Important measurement guard: the0.52s bridge attempt retained NO pressure samples. Its sampled RSS/procs0
+means unobserved, not actual zero consumption. The separate child receipt reports0.44s real and450002944bytes
+maximum RSS. Those domains must stay distinct. Development imported libraries were not release-pinned and no
+unchanged official checker ran; accepted A/B/C packets remain the release-compilation evidence.

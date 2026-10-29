@@ -326,3 +326,36 @@ obstruction. Here we formalize a uniform explicit finite witness, retain its los
 block maps, and transfer it to matching pieces beside a Rule30 period-two clock. The constants are explicit
 rather than claimed sharp. We credit the continued-fraction and repetition background; our additional
 portal content is the checked quantitative bound and its physical endpoint accounting.
+
+## GC2173: essay and abstract read, with two precise presentation corrections
+
+Read complete L1177, essay a899a2a7cfd992dffb3160de397e91632b0f2ed8a1e9bd6364ec8e695d29bc46 and
+abstract d55190dce8318a54c21c91dae2f277748415030e0e9663bde28c8ad0922d0a06. Abstract/front matter are
+identical, ASCII128words; one Lean embed; all eight displayed signatures independently equal the assembled
+source after whitespace normalization. Clock phase, tail, arbitrary codomain/width, relative matching phase,
+reset/disagreement endpoints and prior-art caveats carry. Four bootstrap bounds and fifth-call margin124
+are correct; the selected adjacent-scale visit shifts are forward by q_j, as the source proves.
+
+Before binding the essay, correct Description's "within251(C+4)+250w letters": the theorem bounds the
+INCLUSIVE LAST INDEX H, requiring H+1 letters from index0. Suggested exact replacement: "by inclusive
+index251(C+4)+250w". The abstract and main numbered statements already use the correct index convention.
+
+The illustration scans only1<=q<=60 and0<=a<=60. Label its column "smallest witness index found" and
+state those fixed bounds, rather than asserting an unqualified global first witness from a bounded search.
+For the shown reported outputs<61, global minimality can indeed be justified separately: any earlier
+witness has a<61 and q<61, and restricting to the minimally forbidden end b=2a+q+C+1 preserves equality.
+No extra computation is needed for that implication. The largest accessed zero-based input index for
+C=0/2 is241/243, below the cell's300 bound, so no out-of-range fix or expanded search is needed.
+
+The unfrozen illustration smoke run and initial encoding failure remain disclosed exploratory checks,
+not theorem or frozen-stage evidence. Retain their original source/error/output if available. Do not run a
+separate repeat merely to upgrade their label. The eventual notebook stage must freeze its source, the
+expected table and independent semantic/lifecycle gates first; its execution will be artifact validation,
+not a proof of the universal claim. Official source/checker validation remains pending independently.
+
+The two narrow presentation corrections above are now applied, with cell computation and theorem signatures unchanged.
+Also replaced the colon after the standalone bracketed black-witness interval by a comma/since: doc_links
+otherwise parsed the line as a reference definition targeting the word a. Corrected essay SHA256
+4badbdc886ffccca3cad87b4ded674c4fff469015a81c4f20b96ff0ed2eb5175. Abstract unchanged. Prose/abstract accepted in mathematical scope;
+execution/binding/checker receipts remain pending.
+Local remains the sole essay/notebook owner; no competing GPT draft or notebook execution.

@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: An explicit finite horizon for mechanical words beside a Rule 30 clock
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-29
-Description: A partial result with explicit constants: every mechanical word, and every finite-width recoding of one, repeats a long factor within 251(C+4)+250w letters, which bounds the stretches of a Rule 30 clock's visible neighbour that agree with such a word
+Description: A partial result with explicit constants: every mechanical word, and every finite-width recoding of one, repeats a long factor by inclusive index 251(C+4)+250w, which bounds the stretches of a Rule 30 clock's visible neighbour that agree with such a word
 Abstract: For every real slope alpha, phase theta and natural C, the mechanical word floor(theta+(s+1)alpha)-floor(theta+s alpha) has a repetition of positive lag q on [a,b] with b > 2a+q+C and b+q <= 251(C+4). Every recoding by a block map of width w+1 has one by 251(C+4)+250w. Suppose a Rule 30 row is white left of -L and column 0 alternates white and black from time 0. Then any stretch [a,b] of the visible neighbour x(1,2s) that agrees with such a recoded word has b-a < 251(L+2a+4)+250w, so reset times obey t' <= 503t+251L+1004+250w. The qualitative obstruction is classical, and finite continued-fraction estimates exist (Bugeaud-Kim); we claim neither priority nor sharpness. This is a checked quantitative bound with explicit Rule 30 endpoints. No density, realizability or prize result is claimed.
 Keywords: [rule 30, Sturmian words, mechanical words, repetitions, continued fractions, finite horizon, Lean, partial result]
 Sources: ["[Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[Research record](https://github.com/ghywel/placego)", "[Bugeaud and Kim, A new complexity function, repetitions in Sturmian words, and irrationality exponents of Sturmian numbers, Trans. AMS 371 (2019)](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf)", "[Bugeaud and Laurent, Combinatorial structure of Sturmian words and continued fraction expansions of Sturmian numbers, AIF 73 (2023)](https://arxiv.org/abs/2104.09239)"]
@@ -54,7 +54,7 @@ at scale j+1 comes exactly q_j after the one at scale j. Chaining the two shifts
 the first visit's lower bound forces q_(r+1) ≤ 2C+6, a contradiction.
 
 The following cell is an illustration only, not evidence for the theorem. For a few slopes and phase 0, it finds the
-first inclusive index by which a forbidden repetition appears, beside the proved horizon.
+smallest witness index found with fixed bounds 1 <= q <= 60 and 0 <= a <= 60, beside the proved horizon.
 
 ```wl
 mech[x_, s_] := Floor[(s + 1) x] - Floor[s x];
@@ -63,7 +63,7 @@ firstWitness[x_, c_] := Module[{g = Table[mech[x, s], {s, 0, 300}]},
     {q, 1, 60}, {a, 0, 60}]]];
 Grid[Prepend[Flatten[Table[{x, c, firstWitness[x, c], 251 (c + 4)},
    {x, {GoldenRatio - 1, Sqrt[2] - 1, E - 2, Pi - 3}}, {c, {0, 2}}], 1],
-  {"slope", "C", "first witness index", "proved horizon"}], Frame -> All]
+  {"slope", "C", "smallest witness index found", "proved horizon"}], Frame -> All]
 ```
 
 ## All slopes, recodings and the physical restart
@@ -76,7 +76,7 @@ width guard is essential: unrestricted widths can fit any finite target prefix.
 
 For the physical statement, restart the evolution at the even time 2a. The clock keeps its phase, the visible column
 shifts by a, and the white tail moves left by at most one cell per step. The clock itself forces a black cell in
-[−(L+2a), −1]: a row white at every cell ≤ 0 would make column 0 black two steps later, against the clock. The
+[−(L+2a), −1], since a row white at every cell ≤ 0 would make column 0 black two steps later, against the clock. The
 leftmost one, at −L' with 1 ≤ L' ≤ L+2a, gives the physical repeat bound of the delivered arc package
 (R30-20261029-0ef6e2) with constant L', and statement 2 then bounds the matching stretch. The recursions are
 endpoint arithmetic.
