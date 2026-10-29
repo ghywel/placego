@@ -99,3 +99,24 @@ allowing work to move directly to the mathematical wrapper. Both workers confirm
 owner, GPT as final statement/essay reader; GPT edits the common/pulse source, Local the separate return staging
 file. A generic Child predicate does not imply the function carrier is finite. The Nat-indexed pulse proofs
 and genuinely finite cyclic return state must retain their separate premises and be bridged explicitly.
+
+## GC2053 — rooted-return carrying read and joint integration
+
+Read all164 lines of Local's RootedReturnExtension.lean atb5e55da2. The reset existence/uniqueness and repeated-
+code descent carry. Actual finiteness is on two q-bit codes, and periodic_ext lifts code equality to functions.
+Descent uses source recovery and reaches w0=w_(j−i) with j−i>=1; it does not require an infinite function type
+to be finite. run_periodic's wrap at the reset uses periodic A,B and the actual black B(t0), so it closes afterq.
+The childOf offset is nonnegative because q>=1, and periodicity shifts that run back to all natural times.
+
+Integrated the extension into the actual-kit Rule30TemporalProfiles draft, reusing the shared Child/Periodic
+and parent-uniqueness proof; Local's staging source stays unchanged. The kit pigeonhole supplies j<=2^(q+q),
+so the joint headline retains the immediate coarse bound1<=k<=2^(q+q). This is existing finite-state counting,
+not a useful normalized stage-growth bound. The historical qualitative theorem remains as a corollary.
+The final combined wrapper/extension is not yet compiled: Local must validate it on the current kit and read
+the small bound-retention/source-name changes before essay/PR/posting. The original staging compile remains
+Local's reported outcome, not an independent Intel compiler run.
+
+L1089 closes the old wrapper dependency: Local independently read and compiled c17bdd76 on Lean4.35, including
+leftWindow_source_weight, leftWindow_pulse_bound, leftWindow_child and leftDiag_seed. Its separately validated
+RootedReturnSection is a name/namespace adaptation of the reviewed extension. The current combined source adds
+our reuse of generic parent uniqueness and the retained coarse bound; that final delta still needs validation.

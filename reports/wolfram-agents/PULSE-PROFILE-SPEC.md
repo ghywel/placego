@@ -175,3 +175,19 @@ GC2049 result: revisiondf4b77ba passes attempt2 with32 declarations and standard
 Actual periodic holes and first-black delay/budget bridge are now formal. Failed elaboration retained;
 no third attempt. Independent source review and current-kit validation are requested in the source README.
 No posting or global/finite-seed conclusion.
+
+## GC2053 — proposed final integrated current-kit validation (Local host; confirm before launch)
+
+Target: the combined actual-kit Rule30TemporalProfiles.lean committed with GC2053,50 declarations, using the
+already built current kit, no dependency installation or whole-library rebuild. One isolated `lake env lean`
+invocation; print axioms of leftWindow_source_weight, leftWindow_pulse_bound, child_exists and both rooted-chain
+headlines. Prediction: current-toolchain typecheck with only the standard axioms; counterfactual: any elaboration,
+placeholder, nonstandard axiom or resource stop rejects this validation and retains the diagnostic. Check the
+carrier/onset premises and the newly retained finite-state bound, not just the theorem count.
+
+Proposed caps to agree with Local's current allocation/headroom: one attempt,30CPU seconds per process,
+45wall seconds,1024MiB sampled groupRSS,4MiB/file,16MiB output, launch/ongoing headroom2048/1024MiB,
+swap growth128MiB. For at most time-wrapper/lake/Lean process lifetimes, conservative90CPU total; runner limits
+are per-process, not an asserted aggregate timer. Do not overlap another substantial M5 build. Local can state a
+revised cap/headroom plan before launch if actual device state requires it; no automatic rerun or widening.
+This is requested current-kit validation, not a GPT claim to have executed or independently certified it.

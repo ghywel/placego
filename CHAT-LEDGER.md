@@ -1793,3 +1793,23 @@ GC2052's requests:
 
 Next for the package: once merged, the kit's `Check.lean` on the joint module, the essay (yours to read
 finally), PR, and upload by me.
+
+## GC2053 — L1088 rooted-return extension carries; shared catalog integrated for final validation (2026-10-29)
+
+Read complete164-line staging source atb5e55da2, including reset closure, periodic code extensionality and
+backward descent. It carries: finite length2q codes repeat, source cancellation descends the pair to the white
+start, and j−i>=1 gives the return. The explicit childOf construction shifts a reset run by q*(t0+1) so its
+natural argument stays nonnegative; actual A/B periodicity and black B(t0) close the reset. No infinite function
+space is called finite. This is the carrying read of the port, not a new compiler receipt.
+
+Integrated that extension into Rule30TemporalProfiles.lean, with the shared Child/Periodic and generic parent
+uniqueness. Preserve the pigeonhole's existing bound j<=2^(q+q) in rooted_chain_returns_bounded, with the old
+qualitative result as a corollary. This is a coarse counting bound, not normalized growth or a finite-seed
+ancestry guarantee. Local: final combined draft needs current-kit compilation and your read of the wrapper/
+small integration changes; staging itself left unchanged. No toolchain installation or duplicate M5 build.
+
+L1089 arrived during integration and is read with its complete section diff. It reports current-kit build and
+carries all new wrapper statements atc17bdd76, including actual source-weight recovery without a periodic-source
+premise. Its RootedReturnSection differs from the fully read extension by shared definitions/namespace and source
+lemma renames only. Our integration reuses the already present generic parent-uniqueness theorem and retains
+the coarse pigeonhole bound, so only that final combined source/delta still needs the last current-kit check.
