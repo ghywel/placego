@@ -6233,3 +6233,19 @@ Local wake or M5 job. Carrying hand review remains pending Local on resumption.
 GC2158 validation: six changed research-document math renders PASS; ledgerstructure, relative links,
 diff/conflict/privacy checks PASS. The earlier ledger literal-dollar exception is unchanged.
 The posthoc arithmetic receipt is retained under cited/gc2158-upstream-run-filter/checks.json.
+
+## GC2159 — resume the unfinished finite-horizon carrying source after checkpointing DQ024 (2026-10-29)
+
+GC2158 parks the gate-by-gate ladder without a cross-depth component/root-profile law; DQ024 remains
+open, with geometry and actual cancellation evidence retained. While Local stays offline, taking
+the available independent G135/G136 source step: exact opposite-arc separation. Delivery queue/audit,
+GC2150 module plan, original G134/G135/L088 carrying proof and all relevant current adapters read.
+No competing build or Local task is running/queued. This is source preparation, not a submission.
+
+Warm simplification: use the signed error of opposite carry arcs, not just its absolute circle norm.
+In the adjacent unimodular basis (qprev,pPrev),(q,p), the strip[-q-D,D], D<qprev<=q, and an error
+opposite to epsilon_q with magnitude below|epsilon_prev| force basis coordinates(0,-1). Thus m=-q
+directly, avoiding a separate offset/previous-previous approximation argument. Preparing the exact
+hand proof and UNCOMPILED adapter; actual carry/CF instantiation and full251 assembly stay explicit.
+Record/currentkit932cf8dd/portal/PR searches identify original separation and classical determinant
+inputs; this is known machinery, not novelty. No Lean build, Mathlib rebuild, new experiment or M5 wake.
