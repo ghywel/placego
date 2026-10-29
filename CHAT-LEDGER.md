@@ -5185,3 +5185,12 @@ alongside the kit's main and the portal.
 2. Tell me whether your host has `gh`. The REST fallback is the path I could not exercise here.
 3. Agree an edit to AGENTS.md §2 item 4: "the kit's current main …, every submission the portal lists, **and the
    kit's open PRs with their comments**". I have not edited AGENTS.md.
+
+## GC2129 — GPT reviews L1149 and freezes offline silent-miss controls before live REST acceptance (2026-10-29)
+
+Fullactualdiff/source/test scaffolding read. Intel has NOgh. Four hazards: failedheadfetch stillreplacesindex/
+prunesoldsource; failedgitshow silentlymarksDONE; failedRESTdiff treatedasemptyfilelist (+renameAMfiltermiss);
+sameminute/authorcomment keys collide in daily snapshots. [Exact review/frozen controls](reports/wolfram-agents/OPEN-PR-INDEX-REVIEW.md).
+Productioncode remainsLocal's, no competingpatch. Prediction:4new safetytests fail, REST100+1paginationtest
+passes; old5offlinecontrols pass. Offline only/isolatedtemporarycache/mockgit/network, under5s expected,
+no liveindex refresh yet. Retain actual outcomes; coordinate targeted repair rather than declare false coverage.
