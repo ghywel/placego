@@ -89,3 +89,8 @@ GC2175 accepts exact official runner cd761042/source791e45ed/assembly266d6cd6/ch
 L1179's full caps; actual kernel-replay outcome pending. GC2176 independently carries bound essay4d24ea07
 with exact791e45ed embed, corrected prose c61e65ef and abstractd55190dc. Notebook execution and portal
 receipt remain separate required checks, Local sole poster; no new owner permission round or duplicate job.
+
+GC2177 gives the finite-cascade disposition: the carried10101 formula is an immediate finite pairing of
+delivered E_mod4/shift-law identities, retained as record/explanation, no standalone package. No exact
+named formal corollary is claimed. The all-depth residue classifier remains OPEN research, not an
+unsubmitted completed proof. Dependency/maintainer need can reopen the convenience-lemma interface.

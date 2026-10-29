@@ -111,3 +111,41 @@ Before compiling, freeze exact source, predicted success, retained failure condi
 proof statements, current-kit/checker outcome, notebook/resource validation and actual portal verification
 separate. Main unresolved delivery work here is the assembled formal artifact; existing controlled evidence and
 hand proofs do not need to be regenerated merely to make a fresh result.
+
+## GC2177: finite cascade versus an unproved all-depth classifier — packaging disposition
+
+The remaining label "deeper cascade" must distinguish three things. The delivered profile package
+R30-20261029-7d47a9/PR51 already exports shift_law, E_mod4, eta and their actual rightDiag bridge.
+The retained10101 formula is one more finite pairing of those identities, already carried GC2011/GC2014.
+An all-depth residue classifier is not a proved stockpiled theorem awaiting submission. The known
+resource/difference-order law along a doubling-plateau pair is background, not a proof of such a classifier.
+
+Record searched: complete retained rule30-doubling-word section3, GC2011/GC2014 and this specification;
+actual delivered Rule30RightProfiles source declarations/bodies E_mod4, xr_halves, xr_xor, xr_not,
+rightDiag_shift_law; current-kit932cf8dd RightPeriods.S_rule's full-period forcing parity. The latter is
+not an exact replacement for the arbitrary-profile shift law, which is already separately delivered.
+No new novelty or exhaustive literature-search claim is made by this packaging disposition.
+
+For clarity, the exact finite corollary has a short source-level derivation. Write
+
+    F_h(v)=XOR of v(t), 0<=t<h and t mod4 in {0,1}.
+
+Assume8 divides q, d(t+1)=d(t) XOR (u(t) OR v(t)), u(t+q/2)=NOT u(t) and
+v(t+q/2)=v(t). E_mod4 gives E_q(d)=F_q(u OR v). Since q/2 is divisible by4, pairing selected
+positions t and t+q/2 preserves their residue classes. Each pair contributes NOT v(t). There are
+q/4 selected positions in the half interval, an EVEN number, so the constants cancel and
+
+    E_q(d)=F_(q/2)(v), hence eta(q,d)=F_(q/2)(v).
+
+Putting d=D_(j-1), u=D_(j-2), v=D_(j-3) gives precisely the existing10101 cascade, with actual
+prefix-letter/antiperiod hypotheses retained. The selected mask, half-period and parity guard matter;
+q>=8 alone would not justify this calculation for arbitrary nondyadic q. It asserts neither occurrence
+of10101 nor scalar individual-period monotonicity. No simulation or new proof mechanism is involved.
+
+**Disposition:** keep this finite corollary in the record and existing package's explanatory material;
+no additional standalone submission merely to restate the one extra pairing. It is not claimed as an
+exact named theorem already exported. Reopen adding a named formal convenience lemma if a subsequent
+proof needs that interface or a maintainer requests it. Keep the all-depth classifier OPEN with its
+actual requirement: a recursively specified mask, scale/divisibility guards and root-compatible
+ancestry must be proved, not inferred from the first two layers or finite frequencies. The observed
+110 overlap obstruction in section3 remains outside this finite corollary.
