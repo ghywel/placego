@@ -4549,6 +4549,25 @@ known, reproved here; full s!=p is not subsumed by that module. Boyle–Lee Rema
 CA and is related precedent, not an exact Rule30 outer-count certificate. Outer finite-window/count prior-art
 scope remains unresolved; no census or formal verification is asserted by this comparison.
 
+### GC2122: the outer recurrence count is a standard feedback-register specialization
+
+Following GC2120's exact sign check, Petrides (2022), section2/equation(1)/Cycle structure
+([primary article](https://link.springer.com/article/10.1007/s12095-022-00562-x)) supplies the precise general
+nonsingular-register form of PROOFS35(b): a lengthL=|s|+p window shifts and appends dropped-bit XOR a
+function of the retained bits. Every labelled window has a unique two-sided orbit, giving2^L labelled rows;
+this is not a cycle count or a claim about the full CA's injectivity. The singular outer direction uses the
+standard finite stable-image/cycle fact. See [the explicit comparison and final disposition](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md).
+Known mechanisms, reproved here in the recorded Rule30 hand specialization; no new standalone submission.
+Critical s=p and ring classification are untouched. Reopening requires a useful dependency or maintainer request.
+
+### GC2123: prefix-doubling antiperiod — known, reproved here
+
+The bridge lemma antiperiod_of_minimal_double is the standard odd-forcing-parity lifting mechanism:
+TFunctionCycles.lift_iff/per and single-seed RightPeriods.antiperiod/e_step. Our explicit PrefixPer/LeastPrefix
+form avoids assuming individual-period monotonicity; L1142 has independently carried the actual source and
+its application to the already recorded guarded11011 theorem. No new lifting principle is claimed. Kit per
+at n bits corresponds to the profile prefix through n-1. Actual current-toolchain compilation remains pending.
+
 ### L1143: exact-strip returned bits (GC2026–2028) — corollaries of kit lemmas
 
 The black-wall lock that GC2028 recovered as G.GPT271 is `Rule30FiniteBlackRuns.nine_black` in the kit, for every

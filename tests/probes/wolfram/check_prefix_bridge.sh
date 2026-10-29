@@ -52,28 +52,42 @@ import os, re
 out = Path(os.environ['CAPPED_OUT'])
 standard = {'propext', 'Classical.choice', 'Quot.sound'}
 line_re = re.compile(r"^'([\w.]+)' (?:depends on axioms: \[(.*)\]|does not depend on any axioms)$")
-def axiom_lines(name, prefix, count):
+def axiom_lines(name, names):
     text = (out / name).read_text()
     print(text, end='')
     lines = [l for l in text.splitlines() if l.strip()]
-    if len(lines) != count:
-        raise SystemExit('FAIL: expected exactly %d axiom lines in %s' % (count, name))
+    if len(lines) != len(names):
+        raise SystemExit('FAIL: expected exactly %d axiom lines in %s' % (len(names), name))
+    seen = []
     for l in lines:
         m = line_re.match(l)
-        if not m or not m.group(1).startswith(prefix):
+        if not m or m.group(1) not in names:
             raise SystemExit('FAIL: unexpected output line in ' + name + ': ' + l)
+        seen.append(m.group(1))
         got = {a.strip() for a in (m.group(2) or '').split(',') if a.strip()}
         if not got <= standard:
             raise SystemExit('FAIL: nonstandard axioms in ' + name + ': ' + l)
-axiom_lines('draft-compile.txt', 'Rule30RightProfiles.', 7)
+    if sorted(seen) != sorted(names):
+        raise SystemExit('FAIL: missing or repeated axiom names in ' + name)
+axiom_lines('draft-compile.txt', ['Rule30RightProfiles.' + h for h in
+    ['shift_law', 'rightDiag_shift_law', 'E_mod4', 'eta_false_of_antiperiod', 'eta_four',
+     'eta_false_of_period_half', 'running_shift']])
 bridge = (out / 'bridge-compile.txt').read_text()
 if bridge.strip():
     print(bridge)
     raise SystemExit('FAIL: compiler output for the bridge')
-axiom_lines('bridge-axioms.txt', 'Rule30PrefixPeriodBridge.', 6)
+axiom_lines('bridge-axioms.txt', ['Rule30PrefixPeriodBridge.' + h for h in
+    ['prefix_append', 'antiperiod_of_minimal_double', 'prefix_1101_closes', 'no_11011',
+     'diagonals_step', 'actual_no_11011']])
 mutant = (out / 'mutant-compile.txt').read_text()
 print(mutant, end='')
-errs = [int(m.group(1)) for m in re.finditer(r'PrefixPeriodBridge\.lean:(\d+):\d+: error', mutant)]
+error_lines = [line for line in mutant.splitlines() if re.search(r'\berror(?:\[[^\]]+\])?:', line)]
+errs = []
+for line in error_lines:
+    match = re.search(r'PrefixPeriodBridge\.lean:(\d+):\d+: error(?:\[[^\]]+\])?:', line)
+    if not match:
+        raise SystemExit('FAIL: unrecognized mutant error: ' + line)
+    errs.append(int(match.group(1)))
 if not errs or any(not 89 <= n <= 91 for n in errs):
     raise SystemExit('FAIL: the mutant must fail only at the eta step (lines 89 to 91); errors at %s' % errs)
 print('MUTANT_REJECTED_AT', sorted(set(errs)), flush=True)

@@ -170,3 +170,13 @@ finite-window/count statements still need a prior-art/delivery decision. Boyleâ€
 second-read56-phase necessary landing window remains an explanatory record-only corollary, not a separate
 submission or an implicitly delivered pulse theorem. This closes that packaging item with a reopening condition;
 no census is queued. Remaining prefix/deeper-cascade, reset and broader fringe/recurrence questions stay explicit.
+
+
+## GC2122: outer recurrence packaging also resolved
+
+The [follow-up comparison](FRINGE-RECURRENCE-DISPOSITION.md) identifies the exact nonsingular binary
+feedback-register form for the left-moving outer count, with labelled-window/row count2^(|s|+p), and the
+standard finite stable-image argument for the other wing. These correct carried hand specializations remain
+record-only background; no new standalone submission just for the local-rule restatement. The actual kit
+exports only the already matched middle interval. A useful formal dependency or maintainer request reopens
+packaging. Critical right-light-speed recurrence and the common-left fringe extension remain separate.

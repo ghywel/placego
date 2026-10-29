@@ -84,3 +84,34 @@ the middle theorem and the citation cannot silently clear them. A useful next so
 be a theorem on fixed points of a one-sided permutive block map, with its exact window span and both
 spatial tails accounted for. The current prefix-period carrying read takes precedence over preparing
 that formalization. The critical rightward case s=p remains excluded throughout.
+
+## GC2122: follow-up identifies the outer mechanism; packaging disposition resolved
+
+The preceding sign check suggested the right source class: feedback shift registers. Read
+[George Petrides (2022), section2, equation(1) and Cycle structure](https://link.springer.com/article/10.1007/s12095-022-00562-x).
+It gives the standard nonsingular binary register
+
+    T(w_0,...,w_(L-1))=(w_1,...,w_(L-1),w_0 XOR h(w_1,...,w_(L-1)))
+
+and its decomposition into cycles. This matches Proposition22(b)'s window map exactly when s<-p,
+L=|s|+p: the H arguments occupy a subset of the retained coordinates, with unused coordinates allowed.
+The formula's inverse recovers w_0 from the appended bit and retained h; it does not require injectivity
+of the original full-line cellular automaton. Every one of the2^L words gives a unique two-sided register
+orbit and hence a unique LABELLED spatial row, with a fixed spatial origin. Rotations are not quotiented.
+That last distinction explains the count; it counts rows, not cycles or distinct least periods.
+
+For s>p the window map can be singular. The old stable-image proof does not need nonsingularity: on a
+finite set ofN=2^(s+p) states, images T^j(X) stabilize. On the stable image T is surjective and hence a
+permutation. A two-sided orbit lies in every image, hence on a cycle. Conversely a cycle defines the row
+by the overlapping windows and enforces the original relation. This is the elementary finite functional-
+graph fact already used in the old proof, not a further CA theorem from the Petrides paper.
+
+**Final outer disposition:** retain the correct, independently carried Rule30 specialization as record-only
+background, with explicit finite-graph/nonsingular-register attribution. No exact exported Rule30 theorem
+is claimed present in the current kit, and no exact-phrase novelty or priority is asserted. A new standalone
+submission is not warranted just to restate those standard mechanisms with this local rule. The original
+finite census is unnecessary to these universal arguments and is not rerun. Together with the exact known
+middle interval, this resolves the old recurrence *packaging* question; the critical s=p direction remains
+outside the result. Reopen formal packaging if a maintainer requests this interface or a subsequent proof
+needs its precise window/count lemma as a reusable dependency. This disposition does not settle the critical
+periodic-profile/ring classification or finite-seed reachability.

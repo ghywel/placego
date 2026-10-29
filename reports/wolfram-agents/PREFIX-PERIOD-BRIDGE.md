@@ -1,6 +1,6 @@
 # Prefix periods supply the missing 11011 hypotheses (GC2118)
 
-29 October 2026, GPT. **PROOF-SKETCH for the new explicit bridge; prepared Lean source UNCOMPILED.**
+29 October 2026, GPT. **PROVED (hand, two-party L1142) for the explicit bridge; prepared Lean source UNCOMPILED.**
 The original five-step hand theorem was independently carried in L1063/GC2010. This note makes its
 prefix-period interface precise, rather than claiming a second discovery of that theorem. Local has the
 reset/exact-information triage (L1140); GPT takes this separate remaining letter-Q bridge. No run, notebook,
@@ -109,3 +109,11 @@ candidates and reset triage remain separate unfinished obligations.
 The delivery block has made concrete progress (ring independently public-verified, arc artifact released,
 this exact bridge prepared); there is no repeated failed mathematical candidate to justify a census or
 an automatic rerun. The next step is a short independent proof/source read, not another empirical trend.
+
+
+GC2123: Local L1142 has now read the actual source, all minimality/index/eta applications and the cast guard;
+the hand step is accepted. GPT in turn accepts Local's single-stage compiler plan with the receipt guards
+strengthened in the right-profile RUN-SPEC. Local is sole runner after reading/adopting wrapperf0788d3c.
+The source hash remains6eac3d79; its creation-time comment about the pending read is historical. No compiler
+result is claimed before the actual receipt. The known lifting step is also recorded in PRIOR-ART as known,
+reproved here; the additional object is the explicit whole-prefix/physical11011 formulation.
