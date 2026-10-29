@@ -1,0 +1,36 @@
+{
+ "limits": {
+  "cpu": 60,
+  "wall": 120,
+  "rss_mib": 3072,
+  "file_mib": 16,
+  "disk_mib": 16,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 128
+ },
+ "start_utc": "2026-10-29T04:07:41Z",
+ "end_utc": "2026-10-29T04:07:42Z",
+ "gate": {
+  "free_inactive_mib": 6992,
+  "swap_used_mib": 1686.81
+ },
+ "exit_reason": "DISK_STOP",
+ "child_rc": -15,
+ "wall_s": 1.32,
+ "maxima": {
+  "rss_kib": 745040,
+  "procs": 4,
+  "disk_bytes": 144946179,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6813
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/overlay_probe.sh (at c9ada5ea)",
+ "stdout": [
+  "checker sha256 b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+  "overlay symlinks 1755",
+  "== A: stage 2 layout (control)"
+ ],
+ "note": "run_capped sizes the output directory with os.path.getsize, which follows symlinks, so the 1755 overlay links counted as the ~143 MB of kit files they point to; DISK_STOP during control A. Neither prediction was tested.",
+ "launcher_sha256": "df0f3bc4052f062a0c88b511b122bab2c7b8355bebf59ca5f7e22b6950336016"
+}
