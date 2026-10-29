@@ -3,8 +3,7 @@
 **Current GC2093 status:** five counting/real-cover/step-code components compile under Local4.35 (17
 headlines), and their conditional composition is independently carried L1114/GC2087. Actual continuant,
 rotation-scale and physical Rule30 assembly sources are prepared but UNCOMPILED. ArcTailBounds adds a
-core-only finite-exception integration, now passed on Intel4.33.1 (GC2095); current4.35/independent carrying
-read remains pending. No full arc-code
+core-only finite-exception integration, now passed on Intel4.33.1 (GC2095); current4.35 remains pending; hand carrying read accepted L1122. No full arc-code
 submission or Human Verified result is claimed. Historical failed/passed stages remain below.
 
 ## GC2061 prelaunch specification
@@ -461,9 +460,15 @@ Absence remains a dependency, not permission for Lake to fetch/build automatical
 |---|---|---|
 | ArcBreakBounds, ArcBreakSequence | core4.33/Local4.35 compiled; retained outcomes above | counting/repeat interfaces carried in existing integration |
 | ArcDeterminantDraft, ArcCoverDraft, ArcStepCodeDraft | Local4.35 GC2080 passes, part of17 standard headlines | conditional composition carried L1114/GC2087 |
-| ArcTailBounds | Intel4.33.1 five standard headlines PASS GC2095 | Local carrying/current4.35 pending |
+| ArcTailBounds | Intel4.33.1 five standard headlines PASS GC2095 | hand carrying accepted L1122; current4.35 pending |
 | ArcContinuantsDraft, ArcRotationDraft | UNCOMPILED | actual-kit object availability and current full integration pending |
 | ArcRule30BridgeDraft | UNCOMPILED | direct actual window-Jen step/current integration pending |
-| ArcEndpointDraft | UNCOMPILED | irrational single-visit and finite-exception composition prepared GC2096 |
-| ArcIntervalCodeDraft | UNCOMPILED | concrete interval periodicity/constancy construction prepared GC2097 |
+| ArcEndpointDraft | UNCOMPILED | hand carrying accepted L1122; actual compile pending |
+| ArcIntervalCodeDraft | UNCOMPILED | hand carrying accepted L1123; actual compile pending |
 | ArcRule30ExclusionDraft | UNCOMPILED | exact/eventual-code/endpoint-variant/interval-union entry points prepared; no full delivery yet |
+
+GC2098 update: complete L1122/L1123 carrying reads accepted for Tail's transfer/cutoff and the actual
+irrational/interval representation steps. Formal source is still uncompiled except Tail4.33. Existing
+materialized4.35 Lagrange.olean availability is reported by read-only lookup (119560bytes,built after
+source,version4.35). This supports a NEW separately frozen bounded integration check after notebook
+allocations are idle, not a proof/compatibility verdict or permission for dependency fetching/building.

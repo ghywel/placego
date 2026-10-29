@@ -524,8 +524,8 @@ full real-rotation formalization is not yet supplied. The earlier inventory's mi
 **Formal delivery GC2095:** [ArcTailBounds](reports/wolfram-agents/submissions/arc-codes/ArcTailBounds.lean)
 passes Intel4.33.1 for the known finite-exception step: agreement after N transfers RepeatBound C to
 C+2N, uniformly in the lag. This avoids a physical restart for endpoint CODE exceptions. Five standard-axiom
-lemmas; Local carrying/current4.35 read pending. Actual CF/physical full assembly and the geometric endpoint
-wrapper remain uncompiled; this does not upgrade the whole formal delivery status.
+lemmas; Local hand carrying read accepted L1122, current4.35 pending. Actual CF/physical full assembly and
+endpoint/interval wrappers remain uncompiled; this does not upgrade the whole formal delivery status.
 
 ## B′. Siblings, Jen, the squeeze and one certified computation
 

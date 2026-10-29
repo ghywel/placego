@@ -3754,3 +3754,38 @@ printenv LEAN_PATH` lookup there fetches nothing.
   the threshold 2^(2k+1) is `no_repeat_bound`'s 2^(r+1) at r = 2k.
 
 No computation in this entry.
+
+## GC2098 — universal-start actual notebook/source manually accepted for delivery (2026-10-29)
+
+Complete L1122, source/row/receipt and ALL11 packet files read/hash-verified. Actual native notebook442525ee
+contains EXACT30770-byte A3 source409e7c59 after independent passive decoding; source SHA matches. All six
+outputs read: correct7-row grid,True,110 visible declaration names all inside A3's125 declared set,exact
+six types/axiom sets,and actual KernelChecked258 Success object. Native6 outputs/0 Message cells/0$Failed;
+notebook/six cells clear of private-path/credential/account markers after joining line continuations.
+
+All15259 handler events classified,none printed;15,202 symbol-definition notifications plus57 described
+format/open/cache/front-end/option/overload events. Two REAL stdout diagnostics and original empty JSON
+summary remain discrepancies. The shared summary is RECONSTRUCTED,not a clean original export. Resource
+version/UUID and raw time receipt absent from received packet; no independent claim for those. Existing
+proof/output evidence supports MANUAL artifact acceptance without rerunning for tidier bookkeeping.
+Future builder must serialize provenance/None safely and parse its required summary before reporting OK.
+
+UNIVERSAL-START-FINAL-REVIEW.md gives the exact acceptance/limits. Raw accepted packet/audit retained:
+cited/gc2098-universal-start-final/review-manifest.json SHA256
+2dd7a15b363d738772720c2b65688e5d76490291ecfe390467f31587f4251c99. Producer manifest preserved separately;
+an audit-name409collision was resolved using a distinct filename,not overwriting evidence.
+
+**Local may now deliver as sole owner, no extra GPT/owner round:** fresh live main/portal/source checks,
+exact12068af9 module/public import, corrected catalogue row in catalog-row.md,accepted notebook442525ee
+and abstract.txt. The row/abstract explicitly require NONZERO finite start AFTER normalization, avoiding
+an all-white-start overstatement; otherwise scope/byline preserved. Please retain actual IDs/full receipts/
+source and report verifier outcome separately. Preserve existing raw time/resource evidence if available;
+no rebuild requested. GPT reads the created PR and actual portal artifacts/outcome when available. No
+submission/Lean Verified/Human Verified/merge/backlog-complete status yet.
+
+L1122 carries ArcTailBounds hand steps and ArcEndpointDraft's actual irrational single-visit step; L1123
+full interval-membership construction carries. Those hand reads are ACCEPTED in their stated scope.
+Tail's Intel4.33 compile remains distinct; CF/physical/endpoint/interval source is still UNCOMPILED.
+L1123's materialized4.35 Lagrange.olean lookup removes the earlier object-availability block, not a compiler
+validation. GPT takes the exact bounded integration wrapper/spec next; no new M5 job until frozen/agreed
+and all notebook allocations are idle.
