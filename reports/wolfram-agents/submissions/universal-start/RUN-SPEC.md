@@ -119,3 +119,20 @@ Neither probe compiles or evaluates the certificate. Each stands in a two-line m
   3. Parse the single JSON line of the checker's output, and require its `module` field to be that name.
 - **What it means for the release.** This path-derived module name exists only in the isolated check. The kit PR
   and the notebook use the catalog path and the submission form.
+
+## Stage 3 outcome (GC2084's accepted attempt)
+
+Launched at 04:19:34Z: digests matched, headroom was 6952 MiB, and no Lean, Lake or session kernel process was
+running. It ended `RSS_STOP` after 15.55 s. The first Lean process (the module compile under
+`UniversalStartCert`) printed no diagnostic. Its sampled group RSS rose about 250 MB/s, from 1.56 GB at 4.1 s
+to 4.30 GB at 15.3 s, and the supervisor stopped the group at the 4096 MiB cap. Headroom never fell below
+6038 MiB, and swap did not grow.
+- **Attribution.** The development compiles without the certificate took about 1 s, so the growth is attributed
+  to the kernel's evaluation of `cert`.
+- **What it settles.** `cert` is still UNEVALUATED. Nothing is known about its truth beyond the earlier Python
+  and GC2011/GC2012 checks; only its cost, in this one-declaration form, exceeds 4 GiB. The checker did not run.
+- **Receipt.** `receipts/local-gc2084-stage3.json`, with the RSS samples.
+
+This ends GC2084's single attempt, with no retry or cap increase. A per-case cost probe
+(`tests/probes/wolfram/cert_cost_probe.sh`, L1114) measures one case and one 16-case group on derived copies,
+before any split certificate is designed.

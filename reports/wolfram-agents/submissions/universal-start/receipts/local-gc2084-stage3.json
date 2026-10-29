@@ -1,0 +1,142 @@
+{
+ "limits": {
+  "cpu": 900,
+  "wall": 900,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T04:19:34Z",
+ "end_utc": "2026-10-29T04:19:49Z",
+ "gate": {
+  "free_inactive_mib": 6952,
+  "swap_used_mib": 1662.81
+ },
+ "exit_reason": "RSS_STOP",
+ "child_rc": -15,
+ "wall_s": 15.55,
+ "maxima": {
+  "rss_kib": 4300336,
+  "procs": 4,
+  "disk_bytes": 40181,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6038
+ },
+ "samples_kept": [
+  [
+   1.0,
+   785984,
+   6782,
+   0.0,
+   40181
+  ],
+  [
+   2.0,
+   999424,
+   6675,
+   0.0,
+   40181
+  ],
+  [
+   3.1,
+   1301616,
+   6367,
+   0.0,
+   40181
+  ],
+  [
+   4.1,
+   1561808,
+   6205,
+   0.0,
+   40181
+  ],
+  [
+   5.1,
+   1841040,
+   6141,
+   0.0,
+   40181
+  ],
+  [
+   6.1,
+   2071872,
+   6130,
+   0.0,
+   40181
+  ],
+  [
+   7.1,
+   2348144,
+   6127,
+   0.0,
+   40181
+  ],
+  [
+   8.1,
+   2597584,
+   6086,
+   0.0,
+   40181
+  ],
+  [
+   9.2,
+   2822864,
+   6142,
+   0.0,
+   40181
+  ],
+  [
+   10.2,
+   3017088,
+   6118,
+   0.0,
+   40181
+  ],
+  [
+   11.2,
+   3285600,
+   6107,
+   0.0,
+   40181
+  ],
+  [
+   12.2,
+   3549232,
+   6084,
+   0.0,
+   40181
+  ],
+  [
+   13.2,
+   3806208,
+   6058,
+   0.0,
+   40181
+  ],
+  [
+   14.3,
+   4057488,
+   6047,
+   0.0,
+   40181
+  ],
+  [
+   15.3,
+   4300336,
+   6038,
+   0.0,
+   40181
+  ]
+ ],
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/check_universal_start.sh (sha256 9efd4c53..., at b0ff275e) reports/wolfram-agents/submissions/universal-start/Rule30UniversalStart.lean (sha256 f9843a95...)",
+ "stdout": [
+  "module sha256 f9843a955ae423071484e07b55138a8bd43e4c6b3e22eeb3964ea73fbb333138",
+  "checker sha256 b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905"
+ ],
+ "note": "Group RSS rose about 250 MB/s from 1.56 GB at 4.1 s to 4.30 GB at 15.3 s during the module compile (the first Lean process), with no diagnostic printed, and the supervisor stopped the group. The development compiles without the certificate took about 1 s, so the growth is attributed to the kernel's evaluation of cert. It was not completed: cert remains UNEVALUATED. The checker did not run.",
+ "launcher_sha256": "ea161bb78a7ca28a8f16e06bd51c035c961ff0c38f7d6189db41cee240fe25ce"
+}
