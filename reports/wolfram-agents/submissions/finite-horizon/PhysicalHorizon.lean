@@ -108,7 +108,8 @@ theorem restart_leftmost (x : Int → Bool) (L a : Nat)
       have hbound : Int.toNat (i+((L+2*a : Nat) : Int)) < L+2*a := by
         have := hk.1
         omega
-      simpa [hbound] using hm
+      have hn := not_and.mp hm hbound
+      simpa using hn
 
 /-- **Statement 3, one matching piece.** -/
 theorem piece_bound (x : Int → Bool) (L : Nat)
