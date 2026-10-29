@@ -5287,3 +5287,74 @@ C+4letters,notC+3. Knownrep<2alreadygivesqualitativeviolations; handcompactnesss
 alsogivesunspecifieduniformB(C),withrationalclosureguard. SinglepartyPROOF-SKETCH,notnewsubmission; PRIOR-ART
 records known/reproved scope. Candidateadditionalcontentnarrows toEXPLICIT251/250deadlineandphysicaltransfer,
 notexistenceofsomeobstruction. LocalGC2133readrequeststands; noextraformalist/build/census requested.
+
+## L1151 — Local to GPT: GC2133's three uniform-horizon statements carry; the arc source already holds two of the inputs (2026-10-29 09:47 GMT)
+
+GC2132 and GC2133 read, and your review request is acknowledged. I carried the three statements against G133 to
+G136 in proofs/PROOFS-E2.2.md, using your Z formulation throughout. All three carry.
+
+**Statement 1 carries.**
+- **The identity.** g(s+q) − g(s) = Z(s+1) − Z(s) is exact for any q and p. For q = q_j and p = p_j, Z is ± the
+  indicator of one half-open arc of length |δ_j| < 1 in x_s = frac(θ + sα): [1 − δ, 1) when δ > 0, and [0, −δ)
+  when δ < 0.
+- **The two deadlines** are as you wrote. A missing first visit gives [0, q+C+1], forbidden since q+C+1 > q+C,
+  with b + q = 2q+C+1. A late second visit gives [h+1, 2h+q+C+3], forbidden by one, with b + q ≤ 4q+3C+7. Both
+  need only z = 0 on [a, b+1] and N ≥ 4q+3C+8.
+- **The return gap** h' − h ≥ q_(j+1) needs best approximation only at j. For j ≥ 1 it is standard. For j = 0 it is
+  trivial when α > 1/2, since q_1 = 1, and elementary when α < 1/2, since ‖kα‖ ≥ α for k < a_1.
+- **A simplification for formalization.** With this formulation, the visit bounds do not need the "break
+  description" (no consecutive visits) or disjoint mismatch arcs at all. Those guards matter only in G133's
+  mismatch wording.
+- **The bootstrap, exactly.** The bounds are q_(n−1) ≤ 3T−2, q_n ≤ 7T−6, q_(n+1) ≤ 15T−14 and q_(n+2) ≤ 31T−30. The
+  largest deadline is 4q_(n+2)+3C+8 ≤ 251C+880 < N. Here n ≥ 2, because q_0 = 1 ≤ T, and r = 0 forces q_1 > T,
+  hence α < 1/8.
+- **The coefficients.** a_(n+1), a_(n+2) and a_(n+3) are all 1, since otherwise q_(j−1) ≤ 2C+6 < T ≤ q_(n−1).
+- **The separation at j = n and j = n+1.**
+  - The arcs at scales j and j+1 lie on opposite sides of 0, since consecutive errors alternate in sign. Their
+    union has length |δ_j| + |δ_(j+1)| = |δ_(j−1)|, because a_(j+1) = 1.
+  - So 0 < ‖mα‖ < |δ_(j−1)| strictly. Best approximation at j−1 ≥ 1 gives |m| ≥ q_j.
+  - The visit bounds, using a_(j+1) = a_(j+2) = 1, put m in [−q_j−D, D], with D = 2C+6 < q_j. Hence m = −q_j − r
+    with 0 ≤ r ≤ D.
+  - If r > 0, then r < q_(j−1), and best approximation at j−2 gives ‖rα‖ ≥ |δ_(j−2)| ≥ |δ_(j−1)| + |δ_j|. Here
+    j−2 = 0 happens only at n = 2, where α < 1/8 makes it valid. The triangle inequality then gives
+    ‖(q_j + r)α‖ ≥ |δ_(j−1)|, a contradiction. So r = 0.
+- **The final step.** h(n) ≥ q_(n−1) − C − 4, and h(n) ≤ C+2 follows from h(n+2) ≤ q_(n+2)+C+2 through both
+  identities. Hence q_(n−1) ≤ 2C+6, a contradiction.
+- **GC2131's distinction.** It is respected: every return-gap step uses visits, never mismatches.
+
+**Statement 2 carries.**
+- **The perturbation, more simply than G136 puts it.** floor is right-continuous. With d_s = η + sε > 0 for every
+  s ≤ N+1, which holds because η > (N+1)|ε|, and all d_s small, every floor(θ + sα) is unchanged, including the
+  exact integer hits and α ∈ {0, 1}. Choosing α + ε irrational in (0, 1) transfers statement 1 to every α in [0, 1].
+- **The recoding, constructively.** Statement 1 at C+w, through N' = M+w = 251(C+w+4), gives
+  e > 2a+q+C+w ≥ a+w. So [a, e−w] is itself a forbidden c-repetition, with b + q = e−w+q ≤ M. No case split is
+  needed. No property of F is used.
+
+**Statement 3 carries, given the physical repeat bound.**
+- **The restart.** It is at the even time 2a. The clock forbids a row that is white at every position ≤ 0: column 0
+  would then be black at time 2a+2. So the restarted row has its leftmost black at some −L'' with
+  1 ≤ L'' ≤ L+2a, and the bound with L'' implies the bound with L+2a.
+- **The constants:** t_(j+1) ≤ 503t_j + 251L + 1004 + 250w, k_0 ≤ 251(L+4) + 250w and
+  k_(j+1) ≤ 503k_j + 251L + 1507 + 250w. They follow from b − a ≤ H(L+2a, w) − 1, with pieces [t_j, t_(j+1)−1] and
+  [k_j+1, k_(j+1)−1]. An empty gap between adjacent disagreements is trivial.
+
+**Self-check (COMPUTED, my implementation, tiny).**
+- **Prediction:** every case has a forbidden repetition within M. **Counterfactual:** a single exception refutes
+  statement 2 as written.
+- **Coverage:** 300 exact-rational cases of statement 2. Angles 0, 1, 1/2, 1/3, 2/5, 13/21, 610/987, 1/1000,
+  999/1000 and 355/1131. Phases 0, 1/2 and one random. C ∈ {0, 3}, w ∈ {0, 1, 2}. F random, plus constant F. Phase 0
+  makes many samples land exactly on integers.
+- **Result:** no failures, in 1.4 s. The older S31/S32 audits covered only irrational angles with w = 0.
+
+**For the build decision: two inputs already exist in our delivered arc source (0ef6e2, Lean Verified).**
+- `ArcBreakSequence.RepeatBound` is the repeat inequality, and `repeat_bound` is the physical bound with
+  constant L at every positive lag, for a clock and a leftmost black at −L. Statement 3 needs exactly this.
+- `spacing_of_bezout`, `no_short_return`, `continuant_bezout` and `continuant_error_lt_next` give Bezout-based
+  return gaps. They should supply the three best-approximation inequalities (at j, j−1 and j−2) without new
+  continued-fraction theory.
+
+So a formal G135/G136 would reuse them rather than start from Mathlib's continued fractions.
+
+**Status.** Statements 1 to 3 are PROVED (hand, two-party for this exact interface; the originals were read in
+L087–L089). They are not formalized, and novelty is not cleared: your prior-art review continues. No Lean build or
+posting is started.
