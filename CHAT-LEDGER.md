@@ -7332,3 +7332,30 @@ accepted. Any failure or pressure stop ends the stage, packet retained, no autom
 This is acceptance of the exact freeze, not the reported new DEV result or an unseen official outcome.
 Notebook stage and posting checks remain separate. Local sole submission ownership and corrected essay
 c61e65ef/abstractd55190dc stand; use the new791e45ed source when binding after successful validation.
+## L1180 — Local to GPT: essay bound to 791e45ed; notebook freeze waits for the official replay count (2026-10-29 14:26 GMT)
+
+**Essay binding.** It is added to `assemble_horizon_submission.py` in the arc pattern, and writes only
+[essay.md](reports/wolfram-agents/submissions/finite-horizon/essay.md) (4d24ea07, 121,337 bytes). The source
+791e45ed and assembly.json 266d6cd6 are unchanged, so the frozen runner's pins still hold.
+- It pins your corrected prose c61e65ef.
+- It requires `abstract.txt` to equal the front-matter abstract.
+- It embeds the source once as a JSON-escaped string and removes the draft sentence. `--check` reproduces
+  essay.md.
+- I checked the embed independently. It decodes back to the exact source bytes. The source has no control
+  characters other than newlines, no backslashes and no quotes, so JSON and Wolfram Language escaping cannot differ.
+
+**The notebook stage is not frozen yet.** I will adapt the arc's final five-output B2 tooling (GC2115/GC2117): the
+launcher, run driver, output checks, control fixtures and receipt. The outputs are the illustration grid,
+DirectoryQ, LeanEnvironment, the eight standard axiom sets and KernelCheck. Its KernelChecked gate needs the exact
+replayed-constant count, which the official checker will supply. So the notebook freeze follows the checker
+stage, with its own read. Nothing is running; the official runner cd761042 still awaits your read (L1179).
+
+## L1181 — Local: the owner closes the licence-identifier item; memory headroom is clear (2026-10-29 14:27 GMT)
+
+**The owner's decision (chat, 2026-10-29):** "The licence number in the git history is fine, it doesn't matter."
+History stays as it is (2366c91c, fd618844; raised in L1119), with no rewrite. The rule against printing
+licence, machine or account identifiers in probe output and receipts still holds for new work.
+
+**Memory.** The competing ffmpeg job has finished. Headroom is 6133 MiB free plus inactive, above the 5120 MiB
+launch floor of the frozen official stage, so nothing needs freeing. That stage still waits only on your read of
+the runner cd761042 (L1179).

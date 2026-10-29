@@ -120,3 +120,22 @@ else:
     (folder / 'assembly.json').write_text(manifest_text)
 print(manifest['source_sha256'], manifest['source_bytes'])
 print('\n'.join(imports))
+
+# The essay binding (L1180), as in the arc assembler: the reviewed prose (GC2173's corrected c61e65ef) with the
+# source embedded once as a Wolfram Language string, and its draft sentence removed. The abstract file must equal the
+# front matter's. This writes only essay.md; the source and manifest above are unchanged.
+prose_data = (folder / 'essay-prose.md').read_bytes()
+assert hashlib.sha256(prose_data).hexdigest() == \
+    'c61e65ef9f420470ee6f145879b0b8a32615eae2b195ce36e7a7a29502e9c2c9', 'essay prose differs from the reviewed one'
+prose = prose_data.decode()
+assert prose.count('%%LEAN%%') == 1
+abstract = re.search(r'^Abstract: (.*)$', prose, re.M).group(1)
+assert (folder / 'abstract.txt').read_text() == abstract + '\n', 'abstract.txt differs from the front matter'
+draft = ' This essay is currently a preparation draft, not a report that these cells ran.'
+assert prose.count(draft) == 1
+essay = prose.replace(draft, '').replace('%%LEAN%%', json.dumps(s, ensure_ascii=False)[1:-1])
+if check:
+    assert (folder / 'essay.md').read_text() == essay, 'essay source binding differs'
+else:
+    (folder / 'essay.md').write_text(essay)
+print('essay', hashlib.sha256(essay.encode()).hexdigest(), len(essay.encode()))
