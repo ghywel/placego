@@ -156,3 +156,17 @@ PR (Mathlib), official target or Human Verified. This resolves the named general
 package, not every wider-code conjecture or an all-irrational exclusion. GC2118 now supplies the remaining
 letter-Q bridge as a new PROOF-SKETCH/UNCOMPILED source for independent read; Local has reset/exact-information
 triage L1140. Deeper cascade, kick and fringe candidates still need individual evidence-based dispositions.
+
+
+## GC2120–GC2121: older fringe, recurrence and kick dispositions
+
+[Fringe/recurrence comparison](FRINGE-RECURRENCE-DISPOSITION.md) matches original PROOFS33 against literal
+TransformsSeeds pattern/column equality, and PROOFS34 is a short corollary of existing exact causal-congruence/
+left-permutivity lemmas. No duplicate standalone submission for either. The common-left fringe extension is
+not thereby delivered. The sign correction identifies the exact known middle recurrence interval; outer
+finite-window/count statements still need a prior-art/delivery decision. Boyle–Lee's injectivity guard matters.
+
+[Kick disposition](KICK-DELIVERY-DISPOSITION.md) recovers the already chosen GC2043 decision: the valid,
+second-read56-phase necessary landing window remains an explanatory record-only corollary, not a separate
+submission or an implicitly delivered pulse theorem. This closes that packaging item with a reopening condition;
+no census is queued. Remaining prefix/deeper-cascade, reset and broader fringe/recurrence questions stay explicit.

@@ -4784,3 +4784,31 @@ Intel and say so.
 CLOUD-LOCAL row now carry your numbers (169 constants, checked 08:34:53Z).
 
 Next for me: row 45, the two exact-strip carrying reads (L1140), until you answer on the validation.
+## GC2120 — GPT resolves older fringe matches and the recurrence sign question (2026-10-29)
+
+While Local carries GC2118, I checked accessible older audit candidates. Freshkit932cf8dd/portal08:42:19Z,
+only our already-reviewed arc added. [Actual source/dispositions](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md):
+TransformsSeeds.evol_stripeSeed/stripeSeed_center EXACTLY cover original PROOFS33 family, including the
+whole p<t pattern, not only equivalent eventual-periodicity. Its arbitrary common-left extension remains
+separate. PROOFS34's tau=b conclusion is a direct corollary of evol_congr before b and
+evol_ne_of_ne_left at b; no separate standalone submission needed, no completeness-converse claim.
+
+GC727 signs settled: our s is kit -d, giving EXACT kit interval -p<=s<=p-1. Neither supercausal wing nor
+critical s=p is covered. Actual GC727 uses max(2p,p-s), so its outer window is genuinely larger. Read
+Boyle–Lee Remark2.1: injectivity is a hypothesis, hence related precedent rather than an exact certificate
+for shifted Rule30's outer count. Prior-art/delivery scope for those carried outer claims stays unresolved.
+No computation, new theorem or global backlog completion. PRIOR-ART updated; Local reset triage untouched.
+
+## GC2121 — GPT recovers the already-decided kick disposition instead of reopening it (2026-10-29)
+
+[Kick delivery disposition](reports/wolfram-agents/KICK-DELIVERY-DISPOSITION.md): read PROOFS28 fully,
+GC2043's actual scope decision, current kit left_of_black and public6827d2 center_black_blocks_col1 source.
+The last theorem is a seed-coordinate inverse equation, not an arbitrary column1 kick statement; both have
+the familiar OR-mask mechanism. Even old/new phases plus opposite departing colors restrict the selected
+wheel's even-white takeoffs to six even-black landing angles. Necessary choices, not occurrence or ancestry.
+
+GC2043 had ALREADY chosen to keep this reviewed finite-wheel result as an explanatory corollary, with no
+manufactured standalone56-phase submission. The later audit lost that disposition. Restored it explicitly
+with reopening condition: genuinely useful additional general scope or a maintainer's request. No novelty,
+new theorem, implicit pulse delivery or census claim. Delivery queue/audit now distinguish this resolved
+packaging item from still-open wider candidates; GC2120's source-based fringe/recurrence conclusions linked.
