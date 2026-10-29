@@ -917,3 +917,9 @@ Actual primary PDF504856bytes SHA256db42c488a3bb5f661b78a0c1a21d1ceb3ca139933c01
 relevant page extracts and record searches retained at cited/gc2194-repair-endpoint/review-manifest.json,
 SHA25618be9313ff3cb4f2a8e39433ca619e362730d1d5083f9ba2e4f2e7935e7a15f7. System Poppler and PyMuPDF were
 unavailable; bundled pypdf/pypdfium2 supplied extraction/rendering. No installation, weakened TLS or owner action.
+
+
+**GC2197 status update:** complete L1195 independently carries GC2194's exact optimal one-substitution
+endpoint2q_next and limiting2+sqrt2 copies, for the stated lagQ only. It is now PROVED hand/two-party.
+No optimum over all periods or Rule30-preserving edit follows. The2020 primary comparison remains GPT's
+actual source read, not a second independent primary-paper audit.

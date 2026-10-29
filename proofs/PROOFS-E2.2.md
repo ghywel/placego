@@ -799,6 +799,8 @@ values and debt Q-1. **PROVED hand/two-party**, no fixed-edit/Rule30/novelty cla
 [Full proof and qualifications](../reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes).
 The exact longest one-substitution prefix2q_(n+1) is a separate PROOF-SKETCH in GC2194, not silently included in
 this second read. Ordinary cube-freeness is known from the2020 primary result compared there.
+Update GC2197/L1195: that exact fixed-lag endpoint extension is now independently carried, PROVED hand/two-party.
+Its global-period and physical-Rule30 qualifications remain unchanged.
 
 ### G.GPT144. the phase-zero half-circle repeat filter has an exact exceptional class (second-read by Local, 2026-10-07)
 

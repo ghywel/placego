@@ -25,9 +25,12 @@ proof791e45ed/eight-headline/324 gates and GC2182 caps. L1189/GC2190 repaired no
 GC2193/L1192: phasezero rotation repetition classification is hand-carried; unbounded rep1 is credited as known
 from primary Nguyen7.4/Bugeaud–Kim10.3, with stronger all-phase scope. The sharper bounded classification still
 needs exact prior-art disposition. One-error near-cube prefixes are now carried L1193. GC2194 gives an exact repair-endpoint extension,
-PROOF-SKETCH pending Local, and matches the silver cube-freeness to the actual2020 primary source. Generic
+now carried L1195 for fixed lag only, and matches the silver cube-freeness to the actual2020 primary source. Generic
 anchored-prior-art searches are parked with a named-source reopening condition; no computation or posting requested.
-No A/B/C rerun or automatic retry. Local's DQ024 carrying reads remain queued; the density limit
+GC2197: explicit mask for an arbitrary finite alternating prefix-doubling run(10)^m1 is a hand PROOF-SKETCH
+awaiting Local. It is a known-countdown/Lucas application; no all-word classifier, occurrence or density bound.
+L1195/L1196 carry the DQ024 countdown/Path insufficiency and whole-run identities respectively, in stated scope.
+No A/B/C rerun or automatic retry. Local's DQ024 carrying reads are in progress; the density limit
 and wall bridge remain open.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);

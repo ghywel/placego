@@ -535,3 +535,11 @@ step n-1 still sees unchanged r_n. The joining zero step activates no clause, an
 is0<=1. Neither tail has a weight2 reset to check. Exponent increments define the new E, keeping E0=0.
 Thus the proposed extensions satisfy the actual laws, not an invented weaker abstraction. They are not asserted
 to be realizable diagonals. This is the explicit carrying target; the missing whole-stack restriction remains open.
+
+
+**Carrying update, GC2197:** L1195 independently read the exact binary(1,0) countdown and actual-Path
+extension above; both are now PROVED hand/two-party in stated scope. L1196 independently carries GC2154's
+realizability, whole-run filling, next-gate objection and run identity/deduction. Its actual127/1 inputs
+remain the retained COMPUTED values, not a fresh independent numerical check. The generic ladder remains
+parked without new root-compatible law; the separate GC2197 conditional alternating-run mask is an explicit
+known-countdown application, not a00 restriction or density claim.

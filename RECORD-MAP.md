@@ -1977,9 +1977,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   prefixes at unbounded silver scales PROVED hand/two-party L1193; no robust additive repeat bound, CA realization or novelty claim.
 
 - GC2194: [one-substitution repair endpoint](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2194-the-one-bit-repair-has-an-exact-endpoint-cube-freeness-is-a-known-separate-constraint):
-  exact maximum2q_next letters/limit2+sqrt2 copies PROOF-SKETCH. Ordinary silver cube-freeness KNOWN via2020
+  exact maximum2q_next letters/limit2+sqrt2 copies PROVED hand/two-party L1195. Ordinary silver cube-freeness KNOWN via2020
   Prop34; rep2 does not imply cube-free. Generic anchored-prior-art search parked pending a named relevant source.
 
 - GC2195/L1194: [edge-density accounting review](reports/rule30-edge-density-account.md#gc2195-l1194-carrying-scope-and-the-binary-pair-pointer):
   identities/temporal controls hand-carried; exact binary(1,0) countdown and actual Path-extension target clarified.
   Whole-root stack, half-density and wall bridge remain open; no new run.
+
+- GC2197: [conditional alternating-run binomial mask](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run):
+  (10)^m1 nextflag=[mu=m]=XOR over t AND m=0, PROOF-SKETCH; m<=mu<=M-2 supplies guards.
+  Known countdown/Lucas application; no occurrence/00/lower-density theorem. L1195/L1196 DQ024 reads accepted.

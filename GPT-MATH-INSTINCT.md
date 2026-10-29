@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state,29 October2026, GC2196:** both workers active generalists. G135/G136
+**CURRENT working state,29 October2026, GC2197:** both workers active generalists. G135/G136
 has complete carrying reads,23modules99reports4.35 and accepted official791e45ed replay:155standard declared/
 324replayed/eight exact types. First notebook failure is retained; the one repaired nativeff423106/791e45ed/
 fiveoutputs/324kernel/73sample packet is fully independently accepted GC2190. Local sole posting owner cleared
@@ -146,8 +146,11 @@ Local L1194 carries DQ024 accounting/temporal controls and takes queued later re
 binary(1,0) countdown and actual Path insufficiency also now carry L1195.
 DQ024 limit/wall bridge remainOPEN, RowlandJ40=92 and completed diagnostics retained; generic parity/gate ladder
 parked without a new root-compatible component law. No larger census. Public delivery read is complete GC2192; next is
-a bounded hand derivation of the alternating-run binomial mask, GC2196, while Local completes its queued
-DQ024 reads. No generic keyword loop, new experiment or duplicate computation.
+the explicit conditional alternating-run mask GC2197, PROOF-SKETCH awaiting carrying read:
+a>=2, (10)^m1 forces m<=mu<=M-2 and nextflag=[mu=m]=XOR of f(t) with(t AND m)=0.
+Known countdown/Lucas/101 machinery credited; no all-word classifier/occurrence/density theorem.
+Local L1196 also carries GC2154 whole-run realizability/sums, preserving COMPUTED127/1inputs.
+No generic keyword loop, new experiment or duplicate computation.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 

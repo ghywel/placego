@@ -149,3 +149,125 @@ proof needs that interface or a maintainer requests it. Keep the all-depth class
 actual requirement: a recursively specified mask, scale/divisibility guards and root-compatible
 ancestry must be proved, not inferred from the first two layers or finite frequencies. The observed
 110 overlap obstruction in section3 remains outside this finite corollary.
+
+
+## GC2197: a binomial mask for every finite alternating run
+
+**Status: PROOF-SKETCH, new explicit conditional consequence awaiting Local's carrying read.** This uses the
+known difference-order/countdown mechanism, not a new resource or density theorem. No computation, formalization,
+posting owner or novelty clearance. GC2196 announced a25-minute hand budget; the result changes the representation
+rather than starting another census. L1195's exact countdown is the key available ingredient.
+
+### Statement with actual prefix ancestry
+
+Let D_d(t) be the right diagonals of any start with rightmost black cell at0. Write Q_d for the least common
+period of the complete prefix through d, and x_d=1 iff Q_d=2Q_(d-1). These periods are dyadic; using prefix
+periods avoids an arbitrary-seed individual-period monotonicity assumption. Take a>=2 and m>=1 and suppose
+
+    x_a x_(a+1) ... x_(a+2m) = (10)^m 1.
+
+Set M=Q_(a-1), f=D_(a-1), and P_f(X)=sum_(0<=t<M) f(t) X^t over F2. Let mu be its multiplicity at X=1.
+Then
+
+    m <= mu <= M-2,
+    x_(a+2m+1)=1 iff mu=m,
+    x_(a+2m+1) = XOR_(0<=t<M) [binomial(t+m,m) is odd] f(t).
+
+Equivalently the selected times are exactly those with bitwise(t AND m)=0. This is an exact finite profile
+formula, conditional on the preceding alternating doubling word. It says neither that such words occur at
+arbitrary lengths nor how frequently they occur. Initial source a=1 is excluded: D_0 is constant black,
+and the ordinary nonconstant countdown need not apply there.
+
+### Proof: the known countdown supplies the missing guard
+
+The edge has D_0=1 and D_(-1)=0, so D_1 and D_2 alternate. Any later constant diagonal would force both
+feeders identically white; induction contradicts the already nonconstant positive feeder. Thus f is nonzero
+and nonconstant. Periodic lower forcing makes its integral repeat after twice that period, starting at time0;
+induction also justifies the dyadic prefix periods used above.
+For a nonzero stream of dyadic period H, let d be its least vanishing difference index. The known polynomial/
+difference dictionary is mu_H=H-d; nonconstancy gives d>=2 and mu_H<=H-2.
+
+The exact countdown needs only that H is a period bound, not that it is the least individual period. Indeed,
+if s has period H, b is antiperiodic at H, Delta h=b OR s, and h has period2H, the existing identities give
+Delta^(H+1)h=NOT s. The last nonzero and first zero differences of nonconstant s give d(h)=H+1+d(s), hence
+
+    mu_(2H)(h)=mu_H(s)-1.
+
+This explicitly checks the extension from least periods to prefix period bounds; no monotonicity shortcut.
+A prefix doubling makes its newly added diagonal antiperiodic at the old prefix period: the forcing repeats
+there and its full-cycle XOR is independent of the starting tick. A plateau makes that diagonal periodic at
+the unchanged prefix period. Therefore every10 in the assumed word supplies the above countdown hypotheses.
+After k such pairs, the source D_(a+2k-1) has prefix period H_k=2^k M and resource mu-k. Nonnegativity
+at k=m gives mu>=m, and the initial nonconstant bound gives m<=M-2.
+
+For the final1, let s=D_(a+2m-1), b=D_(a+2m) and h=D_(a+2m+1), H=2^m M. The new b complements at H.
+The XOR of b OR s over2H ticks pairs to XOR_(t<H) NOT s(t). Since H is even, this is XOR_(t<H)s(t).
+That forcing parity is precisely the next prefix-doubling flag. It is1 iff P_s(1)=1, equivalently iff its
+resource is0. Thus the flag is1 iff mu-m=0, proving the middle assertion.
+
+Now compute the coefficient of Y^m in the finite polynomial
+
+    (1+Y)^m P_f(1+Y).
+
+Expanding the summands shows that this coefficient is the displayed binomial-weighted XOR. Since mu>=m,
+P_f(1+Y)=Y^mu G(Y), G(0)=1, the coefficient is1 exactly when mu=m. If mu>m it is0. This proves the mask
+formula. The antecedent supplies the lower-coefficient cancellations; omitting mu>=m would make the last
+inference false. This proof is shorter than rebuilding a separate repeated-summation argument at every depth.
+
+The binary support is the classical Lucas rule, not a new combinatorial theorem. Over F2,
+(1+Y)^n is the product of(1+Y^(2^b)) over the1-bits of n, so its degree-k coefficient is1 iff k is a bit
+submask of n. For n=t+m and k=m, no common1-bit of t,m means addition has no carry and m is a submask.
+Conversely, at the lowest common1-bit no carry can arrive from below, and the corresponding bit of t+m is0;
+thus m is not a submask. This proves the equivalent bitwise selector directly.
+
+### Hand controls and a failed boundary shortcut
+
+The masks, written from t0 over their shortest dyadic period, are:
+
+| Number m of10 pairs | Selected positions modulo that period | Binary mask |
+|---|---|---|
+|1|0 mod2|10|
+|2|0,1 mod4|1100|
+|3|0 mod4|1000|
+|4|0,1,2,3 mod8|11110000|
+|5|0,2 mod8|10100000|
+|6|0,1 mod8|11000000|
+|7|0 mod8|10000000|
+
+m1 recovers the even-tick101 formula: mu>=1 and mu<=M-2 force dyadic M>=4, so its old constant parity(M/2)
+is0. m2 recovers the carried10101 mask on residues0,1 mod4 with initial M>=4 (the final101 base is2M>=8).
+At m3 a4-tick base would make mask1000 have odd total. Silently cancelling its constant would be wrong;
+but an actual nonconstant starting profile has mu<=2 there and cannot supply three10 pairs at all.
+The countdown eliminates that boundary rather than pretending its parity is even.
+
+Two temporal polynomial controls test the coefficient interpretation by hand at M8. P_f=(1+X)^3 has mu3:
+the m1/m2 masks give0 and m3 gives1. P_f=(1+X)^4 has mu4 and the m3 mask gives0. They are coefficient
+controls, not claimed actual-root profiles. Removing the mu>=m guard fails already for P_f=1,m1: the mask
+returns1 although mu=0. No numerical scan was run.
+
+The masks do not shrink monotonically: going from m3 to m4 changes1000 into11110000. What increases is the
+coefficient order being tested, not the sparsity of selected times. A run supplies m vanishing low coefficients;
+its next decision tests the next one. These are exact joint relationships among changing cells. They do not
+justify assigning probability2^(-m) to the actual seed, whose temporal profile is not a uniformly sampled word.
+
+### Scope, prior art and the unresolved parent question
+
+Record searched: GC2196's two record/actual-kit/portal/PR queries, with current complete16:54:35Z refresh:
+kit932cf8dde039b89b1dcbe9636867bb1b2057fef0,21openPRs. Only the already-reviewed public horizon proof/entry
+dc3d17 became newly indexed; no changed external carrying source. Known RightProfiles.shift_law/E_mod4,
+DifferenceOrder.dif_shift_sum/difs_past/order_countdown, GC2008's Newton argument and L1195's exact countdown
+are the actual mechanism. PR23 DyadicSources.choose_odd_submask and its classical Lucas source concern the
+same binary support rule in a different spatial-source expansion, not this prefix-doubling antecedent.
+Primary Rowland and the previously read source comparisons remain credited; negative searches do not clear
+novelty. This is an explicit application of known machinery, not another submission assembled from it.
+
+The remaining all-word/overlap classifier, physical occurrence restrictions and DQ024 lower-density bound
+stay OPEN. In particular this does not control00 transitions, reopen the parked ancestor ladder, or show that
+an indefinitely alternating pattern describes the single seed. Local's separate GC2154–2158 reads continue.
+The carrying questions are the prefix-period countdown scope and the conversion to the binomial coefficient;
+no run is requested.
+
+Search/index receipts retained at cited/gc2197-alternating-mask/review-manifest.json,
+SHA25628641deecb68776c463581a9cb5df1e319cdbcbf09793c2f091f05efda185baa. The newly indexed horizon source is
+exact791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110, matching the already-reviewed release;
+no compiler/checker/notebook rerun. This is a source identity check, not a new verification claim.

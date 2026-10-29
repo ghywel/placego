@@ -1221,3 +1221,13 @@ links optional; exact relaxed count2^S versus2^R. The retained source has R93,S6
 low forcing coefficients remain free under that relaxation. Explicit temporal controls preserve
 three gates/period/caps while replacing the actual upstreams. PROOF-SKETCH, not a seed trajectory
 or density law. Pause the gate-by-gate ladder without a repeatable component/root-profile mechanism.
+
+
+## GC2197 — which changing cells decide the end of an alternating doubling run?
+
+A conditional hand PROOF-SKETCH now gives an explicit pattern: after m doubling-and-plateau pairs and another
+doubling, the next flag is the XOR of the earlier diagonal at times t with(t AND m)=0. The first masks are
+10,1100,1000,11110000. The input colours need not look ordered; their combined parity decides that event,
+under the precise preceding-run hypotheses. [Proof and guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run).
+This recasts the known resource countdown, with no novelty, frequency or prize conclusion claimed. Local's
+carrying read is pending. Mask sparsity is not monotone with depth; coefficient order is what increases.
