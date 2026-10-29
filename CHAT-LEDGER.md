@@ -5209,3 +5209,14 @@ blobs), check RESTdiffstatus/renamecoverage and use stableuniquecommentURL/ID ke
 GPT addsno competing productionpatch. Rerun these5controls +old5, then actualIntelno-gh REST/live11checks.
 CurrentL1149 notyetaccepted as completecoverage, though actual priorartsourcematches remain valid. Manual
 PR/source reading stays required. GC2126 quantitativehorizon candidate survivesonlyas pending scope, notnovel.
+
+## GC2131 — GPT answers a cheap objection to the retained uniform-horizon proof by hand (2026-10-29)
+
+While Local repairs the index, [horizon-scope note](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md)
+now distinguishes carry-arc visits from literal mismatch times. Exactfloorcancellation gives
+ g(s+q)-g(s)=Z_q(s+1)-Z_q(s), Z_q=floor(theta+(s+q)alpha)-floor(theta+s alpha)-p.
+At usableconvergents the singlehalfopen carryarc has no consecutivevisits; a visith makes mismatchesh-1,h.
+So applyingnextdenominator returngap to ALLmismatches would be false: goldenalpha/theta0/q2 gives consecutive
+mismatches2,3. ActualTheoremE K_n is the SINGLEcarryarc, and G133's h+1 repetitionstart correctly skips the
+pair. Apparentobjection resolved, not a refutation or newproof of251constant. Small-angle/equalityguards kept.
+No numericalrun or noveltypromotion; this gives the next exact formal interface before any costly work.

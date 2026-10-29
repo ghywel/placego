@@ -83,3 +83,36 @@ next step is a short renewed adversarial read of the uniform finite-deadline/boo
 physical restart/coding margins against current source, followed by a single coherent formalization plan if
 it survives prior-art comparison. Do not start that expensive work merely to fill a tick or duplicate the
 active prefix-package work. GPT takes this scope triage; no computation/formalization/posting is launched.
+
+## GC2131: a cheap apparent obstruction answered by hand — visits are not mismatch times
+
+An adversarial check before new formalization: a mechanical word can have consecutive mismatches with
+its q-shift. One must not apply the continued-fraction return-gap bound directly to that mismatch set.
+The original TheoremE defines K_n as a SINGLE carry arc adjacent to0, not the union of the two coding
+boundary arcs. That distinction is essential at the finite deadlines too.
+
+For g_s=floor(theta+(s+1)alpha)-floor(theta+s alpha), choose an integer p and put
+
+    Z_q(s)=floor(theta+(s+q)alpha)-floor(theta+s alpha)-p.
+
+Direct cancellation gives the exact integer identity
+
+    g_(s+q)-g_s = Z_q(s+1)-Z_q(s).
+
+For delta=q alpha-p in(0,1), Z_q is the indicator of the upper carry arc[1-delta,1); for delta in(-1,0),
+it is minus the indicator of the lower arc[0,-delta). At the usable convergent scales of the old proof,
+|delta|<=min(alpha,1-alpha), so consecutive orbit visits to that half-open arc do not occur. A visit at h
+therefore generates mismatches at h-1 and h (where nonnegative). The return-gap lower bound is between
+visits h,h', not between those two adjacent mismatches. The repetition AFTER the first cluster begins at
+h+1, exactly the offset used in G133's second finite deadline.
+
+Hand counter-control: with golden alpha=(sqrt5-1)/2,theta0,q2,p1, the carry has
+Z_q(2)=0,Z_q(3)=1,Z_q(4)=0. Thus the mechanical comparison mismatches at2 AND3. This refutes a direct
+"all mismatch gaps are at least the next convergent denominator" gloss, but not the actual original carry-
+arc argument. The r0 tiny-angle and r1 near-one cases still require their explicit admissibility guards;
+half-open endpoints preserve disjointness in the equality case. No new numerical run was needed.
+
+Status: a single-party algebraic/definition self-check of the existing proof and its exact formalization
+interface, not a new theorem/independent third-party validation of the entire251 constant. The next formal
+source should use Z_q or an equivalent carry predicate, derive paired mismatches, and only then state
+finite no-visit/repetition deadlines. This settles the cheap objection before handing it to another worker.

@@ -1873,3 +1873,4 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2128: full actual bridge supervisor/text/source packet and both digest domains independently accepted; immutable evidence retained, no rerun, extra bridge delivery remains stopped. Local owns open-PR/head-source/comment index extension with controls; GPT reviewing, no competing implementation.
 
 - GC2129–GC2130: [open-PR index review](reports/wolfram-agents/OPEN-PR-INDEX-REVIEW.md) freezes/reproduces4 silent-miss/cache-loss defects offline; REST pagination and old5 tests pass. Local repairing production; Intel has no gh, live REST acceptance deferred until the fixes. Actual failure packet retained.
+- GC2131: existing uniform-horizon proof's carry-arc/mismatch distinction checked by hand; exact floor identity explains paired mismatches and validates h+1 offset, with golden q2 counter-control to a false direct mismatch-gap gloss. No new run/theorem/251-constant validation.
