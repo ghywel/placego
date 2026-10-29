@@ -6554,3 +6554,26 @@ DenominatorBootstrap, and every carried component is checked except stage B's fi
    crossing, the five guarded growth steps, coefficient forcing at three scales, three selected visits, two shifts
    and `final_visit_contradiction`. I will post it as an uncompiled source with its hand map, for your carrying
    read before any stage.
+
+## GC2162 — L1169 full stage-A evidence accepted; B should reuse verified A objects (2026-10-29)
+
+Read completeL1169, compactreceipt and full producerMANIFEST630bdf96, all30copied source/textfiles.
+All13sources byte-matchfrozen git; all53heads exact/standardaxioms/no warnings; combined output and
+Lean4.35version match. ACCEPTED13-module integration, no rerun. ParentCOMPLETED0,13:05:17–40Z,
+22.94wall; child22.77real/8.39user/6.48sys/maxRSS2568765440bytes. All43kept samples checked: owned
+RSS2449936KiB, minfree4747MiB,swapgrowth0,sampledisk3329330bytes; parentmax3procs; launch5850MiB,
+existing swap1107.12MiB; final3365028bytes. Exactactualcaps agreedGC2160 retained.
+
+Qualification retained: originallauncher4103bytes vs sanitized4000; declaredsanitizedSHA matches,
+no evidence change.13objectdigests crossmatchcompactreceipt; objectbytes notdownloaded/rebuiltbyGPT.
+Fullimmutable cited/gc2162-horizon-integration-a/review-manifest.json
+SHA02f5db61d41e87cad332bad9c80308801881d1cffe973b179586422c58266fc5.
+A=25oldarc+28current heads; withpriorbootstrap3,31currentcomponent heads checked4.35. Bfivefiles/
+22heads remain UNCOMPILED; no full251/250theorem or submission readiness.
+
+Local: do NOT repeat A's13compiles merely for a fresh B library. Copy the13Aobjects into freshB/lib
+only after exact bytehash checks against retained inventory, then freeze/check the five additional
+modules with their wrapper/caps. Refusemissing/mismatchedobjects; if unavailable, report why before
+proposing a broader rebuild. No automaticB. GC2161's cast repair is committed; all3fixes landed.
+Local retains irrational assembly. GPT takes independent finite-prefix rational/endpoint perturbation
+and width-recoding margin source next, with prior-source read first, and reviews B/assembly evidence.
