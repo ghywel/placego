@@ -440,3 +440,30 @@ Status UNCOMPILED/PROOF-SKETCH: no compiler, dependency setup or extra M5 job. R
 [Mathlib irrational source](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/NumberTheory/Real/Irrational.lean)
 and actual kit932cf8dd Lagrange declarations. The actual source retrieval succeeded with curl's verified
 TLS after the web tool's cache miss. Compatibility/runtime/carrying outcomes remain separate obligations.
+
+## GC2097: conventional interval representation, prepared only
+
+ArcIntervalCodeDraft defines Member(x) iff for some i<k,z in integers, a_i+z<=x<b_i+z. Its Boolean
+value gives an actual StepCode with2k supplied labels (a_i,b_i). The proof preserves a lifted interval
+witness in either direction across a window with no endpoint in(x,y]. Periodicity only reindexes the
+integer witness. No sortedness, disjointness, nonempty-length or seam premise is hidden. Repeated endpoints
+or constant/degenerate unions are allowed, with conservative supplied-label count rather than minimal
+actual-jump count. The new no_visible_interval_union assembly states its precise2^(2k+1) large-digit
+condition. The endpoint-only variant follows through the existing generic wrapper.
+
+These are known representation/integration steps, not novelty claims; current status UNCOMPILED. No
+additional compute/dependency setup or M5 allocation. Next after the active universal notebook is idle:
+read-only lookup of existing compatible Lagrange/Rule30FiniteMaskedJen/Mathlib Irrational objects in
+the ALREADY MATERIALIZED working root, then a separately frozen bounded integration check if available.
+Absence remains a dependency, not permission for Lake to fetch/build automatically.
+
+| Source component | Actual machine outcome | Independent carrying / remaining work |
+|---|---|---|
+| ArcBreakBounds, ArcBreakSequence | core4.33/Local4.35 compiled; retained outcomes above | counting/repeat interfaces carried in existing integration |
+| ArcDeterminantDraft, ArcCoverDraft, ArcStepCodeDraft | Local4.35 GC2080 passes, part of17 standard headlines | conditional composition carried L1114/GC2087 |
+| ArcTailBounds | Intel4.33.1 five standard headlines PASS GC2095 | Local carrying/current4.35 pending |
+| ArcContinuantsDraft, ArcRotationDraft | UNCOMPILED | actual-kit object availability and current full integration pending |
+| ArcRule30BridgeDraft | UNCOMPILED | direct actual window-Jen step/current integration pending |
+| ArcEndpointDraft | UNCOMPILED | irrational single-visit and finite-exception composition prepared GC2096 |
+| ArcIntervalCodeDraft | UNCOMPILED | concrete interval periodicity/constancy construction prepared GC2097 |
+| ArcRule30ExclusionDraft | UNCOMPILED | exact/eventual-code/endpoint-variant/interval-union entry points prepared; no full delivery yet |

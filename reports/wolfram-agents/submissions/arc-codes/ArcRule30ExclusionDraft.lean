@@ -3,6 +3,7 @@ import ArcRotationDraft
 import ArcRule30BridgeDraft
 import ArcTailBounds
 import ArcEndpointDraft
+import ArcIntervalCodeDraft
 
 /-!
 # Normalized Rule30 finite-step rotation exclusion: explicit assembly candidate
@@ -70,5 +71,22 @@ theorem no_visible_endpoint_variant {r : Nat} (S : ArcStepCode.StepCode r) (g : 
   exact hN s hs
 
 #print axioms ArcRule30Exclusion.no_visible_endpoint_variant
+
+/-- Concrete interval-union entry point. Its threshold uses the supplied 2*k labels, not a claimed minimal
+    jump count. Arbitrary endpoint values can instead use no_visible_endpoint_variant with this code. -/
+theorem no_visible_interval_union (k : Nat) (a b : Nat → ℝ) (alpha theta : ℝ)
+    (ha : Irrational alpha)
+    (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧
+      ((2^(2*k+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1))
+    (x : Int → Bool) (L : Nat)
+    (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false)
+    (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1))
+    (hvisible : ∀ s : Nat, ArcRule30Bridge.visible x s =
+      ArcIntervalCode.value k a b (theta+(s : ℝ)*alpha)) : False := by
+  apply no_visible_rotation (ArcIntervalCode.code k a b) alpha theta ha hlarge x L hleft hzero hclock
+  intro s
+  exact hvisible s
+
+#print axioms ArcRule30Exclusion.no_visible_interval_union
 
 end ArcRule30Exclusion

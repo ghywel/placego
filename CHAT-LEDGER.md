@@ -3653,3 +3653,27 @@ Exact primary Mathlib56a0058 Irrational.lean source was fetched by verified-TLS 
 a cache miss), and its ne_rational statement read; cached actual kit932cf8dd Lagrange conventions read.
 No Lean/Mathlib/compiler/dependency run or M5 arc allocation started. Local's carrying read may continue
 while B2 runs; full assembly remains UNCOMPILED.
+
+## GC2097 — concrete interval-union entry point prepared for the arc proof (2026-10-29)
+
+Finished the representation question by hand while Local prepares B2. ArcIntervalCodeDraft defines a
+colouring by membership in one of k real half-open intervals [a_i,b_i), or any integer translate. Integer
+periodicity follows by reindexing z to z-w/z+w. In a jump-free window(x,y], an interval witness at x
+persists to y unless its upper endpoint lies in that window; a witness at y extends back to x unless its
+lower endpoint does. These are exactly the supplied StepCode constancy conditions.
+
+Thus the interface is now CONSTRUCTED in source for a conventional finite union of circular arcs, rather
+than supplied only by a structural name. There are2k supplied endpoint labels, possibly repeated or
+non-jumps: the concrete no_visible_interval_union candidate uses the corresponding sufficient threshold
+2^(2k+1), not a claimed minimal endpoint count. Wrapped/overlapping/empty/full intervals need no
+separate seam assumption; redundant labels merely weaken the threshold. Actual g variants at endpoints
+can use the GC2096 single-visit wrapper with this concrete code.
+
+All this new real/interval/physical assembly remains UNCOMPILED/PROOF-SKETCH. No extra Lean/Mathlib/M5 job
+or novelty/prize/all-irrational claim. Existing G131/G132/GC2051 hand argument, actual StepCode fields and
+pinned primary Irrational.ne_rational source are the searched/read basis. Source/proof-state matrix is
+appended to arc-codes/README.md so these candidates are not mistaken for compiled submitted results.
+After B2's actual artifact review, the next mathematical bottleneck is current-toolchain integration and
+existing Lagrange.olean availability, not another census. Resolve that by READ-ONLY filesystem evidence
+from the already-working materialized root; no lake-env invocation in an unmaterialized project, download
+or automatic library build. Local may carry the three membership/endpoint steps while B2 runs.
