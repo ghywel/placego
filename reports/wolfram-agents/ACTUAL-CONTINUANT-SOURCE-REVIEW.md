@@ -398,3 +398,39 @@ separately frozen official-checker run. Preserve proof bodies and phase/width/in
 components, record the generated source digest and exact official checker/toolchain. No repeated modular
 build or unseen run is authorized by this preparation agreement. Posting after required checks remains
 owner-authorized, with Local the sole submission owner.
+
+## GC2171: single-file transformation and eight headline statements carried
+
+Read complete L1176, assemble_horizon_submission.py and all eight headline declarations in the generated
+Rule30Submission.lean. The assembler --check reproduces106261bytes SHA256
+1e08455e3e88ee78e147b70f4137c5b1ec4f42b14528a6b7b53ab1348e63d027 and its manifest exactly.
+An independent inverse split compares all23 component bodies against their pinned originals after removing
+only directive lines and blank lines. All substantive body lines agree; all99 report names and eight proposed
+headlines are unique and mapped correctly. Twelve external imports remain, no component imports survive.
+No axiom/unsafe/opaque/macro/elaborator/skip-kernel/native-evaluation bypass is introduced. This is source
+transformation review, not an independent compiler execution or kernel replay.
+
+The eight statements retain the carried scopes: irrational and all-real finite horizons; an explicit positive-lag
+witness; arbitrary codomain and noninjective width-w+1 map; white initial left tail and the exact clock phase
+white-even/black-odd from0; even-time visible companion; inclusive piece matching; natural subtraction/empty
+interval cases; and unchanged503 reset/disagreement constants. The disagreement implications require agreement
+on the given preceding/intervening indices, and do not themselves assert a mismatch at the supplied endpoints.
+The derived leftmost-black witness remains in the body. No new bounded-type, finite-seed-right-tail, injectivity,
+periodicity-of-companion, or mismatch-existence hypothesis has slipped into the transformation.
+
+L1176's DEV_OK is attributed development evidence, not accepted official validation. The exact single-file
+body is now source-cleared for a separately frozen compile-and-official-checker stage. Read current-kit
+Check.lean's replayModule/checkTheorem/partial branch: partial typeMatches only establishes a theorem with
+acceptable dependencies, not equality to an independently supplied expected formula. Our actual eight-type
+read is therefore essential; retain all eight printed types in the checker packet.
+
+Agree the proposed CPU600s per child, wall900s, tree RSS4608MiB envelope in principle, with fresh output,
+no competing Lean job, and no modular rebuild. Before launch Local must commit the actual runner and complete
+caps/gates: output/disk/process/free-memory/swap limits, compiler/checker/source hashes, exact eight CLI names,
+JSON and wrapped-axiom-output parser. Freeze a stage-wide CPU bound as well as the per-child limit (for example,
+exactly two capped Lean children implies1200s total Lean-child CPU, with parser/supervisor work budgeted separately; do not describe600 as an aggregate cap).
+The runner must refuse stale objects, compile source under root Rule30Submission, run the unchanged official
+checker and require pass/replay.ok/importsStatements, exact8 passing headline records, no new axioms and
+standardAxioms for EVERY declared constant. Compile errors, warnings, missing/extra/repeated reports, malformed
+JSON, checker failures and resource stops all end the stage and retain evidence. No automatic retry or expansion.
+This does not accept an unseen runner or authorize a notebook execution as part of that checker stage.

@@ -4674,3 +4674,11 @@ Known Sturmian repetition and arbitrary-intercept machinery remains prior art, i
 rather than only asymptotic slogans. The [exact comparison and index dictionary](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2168-quantitative-prior-art-disposition-for-delivery)
 clears preparation of a credited quantitative formal package relative to the compared exports, with no
 first-in-literature or sharpness claim. Full release/checker/artifact validation remains required.
+
+### GC2170: common-left fringe trace is a known StripeMeeting specialization
+
+Current kit932cf8dd StripeMeeting.stripe_related_same_trace already allows arbitrary common high bits
+beyond its white separator. The [reflected cut and causal-truncation argument](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md#gc2170-common-left-trace-extension-is-covered-by-stripemeeting-plus-locality)
+resolves the common-left center-trace candidate, including infinite tails observation by observation.
+Known, reproved here at the interface; the stronger moving wedge remains the original hand corollary.
+No new standalone submission or trace-completeness claim.

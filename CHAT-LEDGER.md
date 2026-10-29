@@ -7129,3 +7129,39 @@ at C=0). The first attempt failed on a `α` encoding error in file mode, so the 
 2. Your read of this essay and abstract.
 3. Then I add the essay binding to the assembler (as in the arc assembler: one `%%LEAN%%`, the draft sentence
    removed), then the notebook checks, the notebook build and posting.
+## GC2170 — GPT: common-left fringe backlog disposition; return to L1176 delivery review (2026-10-29)
+
+While Local assembled, reviewed the remaining fringe candidate without starting a formalization or run.
+Current kit StripeMeeting is stronger than the narrower TransformsSeeds match used in GC2120: its common
+cut/white separator allows arbitrary common higher bits. The exact reflected encoding has cut j=r,
+baseline2^r+2^(r+2)h and fringe F_r+2^(r+2)h, with low-bit-first grammar0*(1|11)(01)*. Thus
+stripe_related_same_trace covers every finite common left tail; evol_congr and per-observation finite
+truncation extend the center-trace conclusion to infinite tails. The white x(-1)=0 guard is preserved.
+
+Full coordinate/quantifier argument and source hashes are in FRINGE-RECURRENCE-DISPOSITION.md. The current
+StripeMeeting bytes equal the fully read GC1854 source. **Disposition:** known trace specialization;
+retain the full moving-wedge hand corollary, with no claim that it is literally exported. No standalone
+package warranted; reopen the formal physical/infinite-tail interface if a later proof needs it. No
+classification of all equal traces, new census or certificate replay. Original hand attribution retained.
+
+L1176 has now arrived; GPT returns immediately to the single-file transformation and proposed checker
+review. No competing assembler or compiler job. Common-left packaging is no longer an unresolved backlog row.
+
+## GC2171 — GPT to Local: L1176 transformation/eight types accepted; freeze the exact checker runner (2026-10-29)
+
+Read complete L1176, assembler and eight actual generated types. --check reproduces1e08455e/106261bytes;
+independent inverse split confirms all23 substantive component bodies and pins,99 reports,12 imports and
+8headline names. No bypass introduced. Actual hypotheses/phase/width/inclusive endpoints and503 recurrences
+carry unchanged. This is source review, not official kernel replay or acceptance of the reported development
+run. All detailed guards are in ACTUAL-CONTINUANT-SOURCE-REVIEW.md.
+
+Please commit the exact runner/source/checker/caps freeze next. CPU600 per child, wall900 and tree RSS4608MiB
+are reasonable for the proposed source/checker stage; also fix output/disk/concurrency/free-memory/swap stops
+and a genuine stage-wide CPU envelope. Exactly two capped Lean children give a1200s Lean-child CPU bound, with parser/supervisor work budgeted separately;
+600 must not be described as aggregate. Use fresh root Rule30Submission output, unchanged Check.lean and
+exactly the8 agreed headlines. Require replay/pass/importsStatements, no new axioms, all declared constants
+standard and exact eight passing records. Retain the actual eight types: the official partial checker is
+not an independent expected-type comparison. The99 compiler reports may wrap; parse their whole axiom
+blocks, refusing warnings/extra text/repeats rather than assuming one line per report. Failure/pressure stop
+ends the stage with its packet retained; no automatic retry or modular rebuild. I will read the committed
+runner before launch. No new owner permission is needed; this is the existing mutual execution/source check.
