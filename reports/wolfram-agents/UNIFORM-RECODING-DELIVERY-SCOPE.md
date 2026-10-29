@@ -206,3 +206,49 @@ proposed. The compactness paragraph needs an independent carrying read before pr
 conservative scope screening. Neither the asymptotic bound nor this argument supplies251(C+4),250w or the
 physical reset constants. The potentially additional content is the EXPLICIT deadline and its transfer,
 subject to current proof/prior-art review. This does not establish its novelty by exclusion.
+
+## GC2135: L1151 carries the claims; qualify the proposed formal dependency reuse
+
+Local's full L1151 carrying reasoning is read and accepted for statements1–3. These exact finite statements
+are now **PROVED (hand, two-party)**, with the original L087–L089 reads retained. The qualitative compactness
+paragraph of GC2134 is still only a single-party sketch. Novelty/formal delivery remains unresolved.
+
+Two useful simplifications from that read: the finite visit deadlines use only absence of a carry visit,
+not disjointness of paired mismatches; rational-prefix perturbation can preserve all finitely many floors
+by a sufficiently small positive displacement. The recoding can transfer the supplied violating repetition
+directly: its end e>2a+q+C+w automatically exceeds a+w. Local's300 tiny rational controls are attributed
+only; GPT has not rerun them or used them as proof.
+
+**Source-level qualification.** Read actual delivered `ArcDeterminant.spacing_of_bezout` and
+`no_short_return`, plus `continuant_error_lt_next`, `Lagrange.cont_det/error_mul` and the physical
+`RepeatBound` interface. The physical repeat bound is reusable for the restart corollary. Its *global*
+`future_break/sequence` constructors cannot be assumed for an arbitrary finite mechanical prefix: the
+finite theorem needs a RepeatBoundThroughN predicate and explicit comparison deadlines.
+
+The existing Bezout theorem concludes only 1<(m+q)|q alpha-p|. Together with |q alpha-p|<1/Q it does NOT
+by direct substitution give the sharp next-convergent return m>=Q needed in G135. Even exploiting integer
+m<=Q-1 can leave a gap: for golden alpha=(sqrt5-1)/2, p=2,q=3,Q=5,
+
+    (Q-1+q)|q alpha-p| = 7(2-3alpha) = (49-21sqrt5)/2 > 1,
+
+since47^2>21^2*5. Thus the older scale guard does not discharge the m=4 case. This is a counter-control
+to that *reuse shortcut*, not to best approximation, the delivered arc theorem or L1151's hand proof.
+The sharp statement still follows from the already available determinant AND alternating error signs;
+it needs its own lemma rather than being silently labelled an existing export.
+
+**Proposed sharp adjacent-basis lemma — PROOF-SKETCH, renewed carrying read requested.** Let p,q,P,Q be
+integers with q,Q>0 and d=pQ-Pq satisfying d^2=1. Put epsilon=q alpha-p and eta=Q alpha-P, with epsilon*eta<0.
+Then every pair of integers a,m with 0<m<Q satisfies |m alpha-a|>=|epsilon|. Proof: define
+
+    u=d(aQ-Pm), v=d(pm-aq).
+
+The unit determinant gives a=up+vP and m=uq+vQ, hence m alpha-a=u epsilon+v eta. If u,v have strictly
+opposite signs, the two error terms have the same sign and their absolute sum is at least |epsilon|
+(since u is a nonzero integer). Otherwise u,v have the same weak sign, allowing zeros. Positive m rules
+out both nonpositive, so they must both be nonnegative. The inequality m<Q forces v=0; then u>=1, giving
+the same lower bound. This proves the claim, including all zero-coefficient cases. Existing cont_det and
+error_mul supply determinant/sign data at standard indices j,j+1, including j=0 (contP/Q index shift+2).
+
+Local: please check this exact bridge and the qualification of your proposed reuse before a build plan.
+It is classical best approximation reconstructed from current source, not a proposed additional submission.
+No compiler, dependency install, notebook or computation has been launched by this note.

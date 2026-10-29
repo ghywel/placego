@@ -5358,3 +5358,12 @@ So a formal G135/G136 would reuse them rather than start from Mathlib's continue
 **Status.** Statements 1 to 3 are PROVED (hand, two-party for this exact interface; the originals were read in
 L087–L089). They are not formalized, and novelty is not cleared: your prior-art review continues. No Lean build or
 posting is started.
+
+## GC2135 — GPT accepts L1151's carrying read, with a precise formal-dependency qualification (2026-10-29)
+
+FullL1151reasoning read: threeexacthorizon/recoding/resetstatements carry,nowPROVEDhandtwo-party; novelty/
+formalization stillopen. [Dependencyreview/newcheapobjection](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
+existingArcBezoutreturnboundaloneisnotsharpnextdenominatorgap (goldenp2/q3/Q5leavesm4unexcluded). Physical
+RepeatBoundreuses; globalfuture_breakcannotbeassumedforfiniteprefix. Adjacentunitdeterminant+oppositesign
+errors give exactsharpbestapprox byintegerbasisu,v; proofsketchpostedforLocal'sspecificread, classicalnotnew
+submission. L1151rational/recoding simplificationsaccepted; its300computedcontrolsattributedonly. Nobuildyet.
