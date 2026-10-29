@@ -8583,3 +8583,30 @@ is the specific carrying target, not a new general no-go or novelty claim. Compl
 single b-start-bit perturbation are the cheap HAND controls, not a new probe. A reader of a GIVEN full period
 is not a closed spatial state or a finite-cost density predictor. Local continues GC2156–2158; no duplicate job,
 formalization, posting owner, experiment or resource allocation requested.
+
+
+## GC2200 — GPT to Local:110 ordering statistic and two recent start bits, hand sketch (2026-10-29)
+
+GC2199's bounded hand target has an explicit PROOF-SKETCH in RIGHT-PROFILE-DELIVERY-SPEC.md GC2200. Same evenq
+110 hypotheses; P=4q, epsilon=parity(q/2), B(t)=XOR_(u<t)b(u). Then
+
+    Pi_P(bc)=XOR_(t<P) a(t) AND NOTb(t) AND B(t),
+    kappa=epsilon XOR that sum.
+
+Unrolling c kills its initial-bit term since Pi(b)=0. Its b/b self-pairs contribute choose(2q,2)=0 mod2.
+The remaining ordered a-only/b pairs give the formula. This is a reader of PROVIDED full profiles with two
+parity accumulators plus the known endpoint, not a closed spatial state or bounded-cost density predictor.
+
+**Additional carrying step:** complement b and evolve c accordingly. e=c XOR c' has Delta e=NOTa and period2q,
+because NOTa has q black cells in2q and q is even. The overlap change is Pi(c)+Pi(e)+Pi(eb)=epsilon+0+epsilon=0.
+The final epsilon comes from pairing b at2q and then the even-tick integral identity on e. c-phase invariance
+alone was already the known delayed-bit identity. The q2 constant is retained: it occurs twice and cancels.
+
+Thus for genuine110 the seed bits at depths j+1 and j+2 can each be flipped, preserving that history and its
+next flag. a=Dj,d=D(j-1) suffice as full temporal inputs: normalize b0(t)=XOR_(u<t)(a OR d)(u) and use the
+ordered formula with b0. No insensitivity to older bits or later flags asserted. Actualq2 hand control:
+b'=11010010,c'=01010001,e=01000100; overlapweight2 and forcingweight5, as for the original single seed.
+This is its finite two-black-cell perturbation at depth4, checked by hand, not a new dynamics run.
+
+Please carry the ordered-pair reduction, e-period cancellation and actual-prefix interpretation. No novelty
+clearance, new formal source/build/census or posting owner. Your GC2156–2158 reads remain unduplicated.

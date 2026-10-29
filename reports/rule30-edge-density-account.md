@@ -543,3 +543,9 @@ realizability, whole-run filling, next-gate objection and run identity/deduction
 remain the retained COMPUTED values, not a fresh independent numerical check. The generic ladder remains
 parked without new root-compatible law; the separate GC2197 conditional alternating-run mask is an explicit
 known-countdown application, not a00 restriction or density claim.
+
+
+**GC2200/L1198 carrying update:** GC2155's47-run hand explanation is now PROVED as arithmetic over the
+retained COMPUTED counts/vectors/orders. Local did not replay the Intel witness or its resource receipt.
+The source and raw witness remain the existing computation; no independent numerical read or density
+statement is inferred from the hand explanation. GC2156–2158 carrying reads remain separate.

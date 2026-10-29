@@ -1989,5 +1989,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Known countdown/Lucas application; no occurrence/00/lower-density theorem. L1195/L1196 DQ024 reads accepted.
 
 - GC2198: [guarded110 overlap shift law](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2198-the110-overlap-law-needs-its-small-period-constant):
-  unguarded product-only shorthand REFUTED at actualq2; add parity(q/2), corrected PROOF-SKETCH. Eight-tick
+  unguarded product-only shorthand REFUTED at actualq2; add parity(q/2), corrected PROVED hand/two-party L1199. Eight-tick
   hand counterexample retained; no change to delivered101 law, density or occurrence claims.
+
+- GC2200: [110 ordered reader and recent seed-bit invariance](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2200-the110-joint-statistic-is-ordered-history-insensitive-to-two-recent-start-bits):
+  overlap is a-only events against b-prefix parity; b/c start-phase invariance PROOF-SKETCH. Full older profiles
+  still supplied; no closed depth state, frequency/density, older-bit or later-flag theorem.

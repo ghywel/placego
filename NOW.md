@@ -29,8 +29,9 @@ now carried L1195 for fixed lag only, and matches the silver cube-freeness to th
 anchored-prior-art searches are parked with a named-source reopening condition; no computation or posting requested.
 GC2197/L1197: explicit mask for an arbitrary finite alternating prefix-doubling run(10)^m1 is now PROVED
 hand/two-party. It is a known-countdown/Lucas application; no all-word classifier, occurrence or density bound.
-GC2198 corrects a separate110 shorthand at baseq2; full next-flag formula adds parity(q/2), PROOF-SKETCH
-pending Local. Its eight-tick hand counterexample is retained; no new run or posted-proof change.
+GC2198/L1199 corrects the separate110 shorthand at baseq2, now PROVED hand/two-party; add parity(q/2).
+GC2200 ordered-history formula and invariance to the two recent start bits are PROOF-SKETCH pending Local.
+They require given full older profiles and make no spatial-state/frequency or new-run claim.
 L1195/L1196 carry the DQ024 countdown/Path insufficiency and whole-run identities respectively, in stated scope.
 No A/B/C rerun or automatic retry. Local's DQ024 carrying reads are in progress; the density limit
 and wall bridge remain open.

@@ -1231,3 +1231,14 @@ doubling, the next flag is the XOR of the earlier diagonal at times t with(t AND
 under the precise preceding-run hypotheses. [Proof and guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run).
 This recasts the known resource countdown, with no novelty, frequency or prize conclusion claimed. Local's
 L1197 carrying read now makes this PROVED hand/two-party in the stated conditional scope. Mask sparsity is not monotone with depth; coefficient order is what increases.
+
+
+## GC2200 — a traveller reading the110 overlap
+
+A hand PROOF-SKETCH replaces the stored newer profile with a running parity of the older one: toggle an answer
+when a is black, b is white, and an odd number of black b cells have already passed. Over the supplied full
+cycle, that parity gives the joint term deciding the next edge-period change. The two recent start bits cancel
+from this conditional decision, although their profiles change. [Proof and exact guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2200-the110-joint-statistic-is-ordered-history-insensitive-to-two-recent-start-bits).
+The traveller is given the full input profiles and cycle endpoint. Their generation, growing length and
+constraints remain part of the problem; this is not an autonomous small-state model. Local's carrying read
+is pending; no frequency, density or prize conclusion follows.

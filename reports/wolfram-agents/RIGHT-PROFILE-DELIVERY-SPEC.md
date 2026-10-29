@@ -281,6 +281,9 @@ period bounds and the binomial-coefficient conversion carry independently; the c
 is now **PROVED (hand, two-party)**. Local also checked all seven masks and the hand guard controls. Its
 right-edge base facts are explicitly the known kit recurrence/boundary. No occurrence/frequency/00 conclusion.
 
+**Current review, GC2200/L1199:** the corrected110 law and the actualq2 counterexample are now PROVED
+hand/two-party. The original sketch label below is historical; the unguarded shorthand remains REFUTED.
+
 **New hand question:** does the old110 overlap shorthand retain the smallest allowed base? Its unguarded
 version is **REFUTED at q2 by the actual single seed**, below. The corrected all-even-q formula is a
 **PROOF-SKETCH awaiting Local's carrying read**. This is a correction to the research note, not a new
@@ -339,3 +342,108 @@ It supplies a boundary repair, not a closed all-word/overlap classifier, a densi
 another search census.
 
 Search receipts: cited/gc2198-overlap-guard/review-manifest.json, SHA2568a33ca28052e876b474ea622e8a69ff0eb9788652a5a62177b86092db31383bf.
+
+
+## GC2200: the110 joint statistic is ordered history, insensitive to two recent start bits
+
+**Status: PROOF-SKETCH awaiting Local's carrying read.** This is the hand target published in GC2199, using
+GC2198/L1199's corrected shift law. No computation, new autonomous state model, formalization or submission.
+The point is to identify what the overlap reads, rather than replace a missing correlation by a coin.
+
+Use the same generic110 hypotheses: even q>=2, P=4q, a antiq, b anti2q, c periodP, Delta c=a OR b,
+and Delta z=b OR c. Put epsilon=parity(q/2), B(t)=XOR_(0<=u<t)b(u), and
+
+    O(a,b)=XOR_(0<=t<P) a(t) AND NOT b(t) AND B(t).
+
+Then the full-cycle shift bit is
+
+    kappa=epsilon XOR O(a,b).
+
+Thus a given full period can be read with two parity accumulators: the parity p of b already seen,
+and a result r. Start both at0; at tick t toggle r by a(t) AND NOT b(t) AND p, then toggle p by b(t).
+The result is epsilon XOR r at the known cycle endpoint. This reads PROVIDED temporal profiles over4q
+positions; the input, period endpoint and its potentially growing length are not supplied by those two bits.
+No closed spatial-depth generator or bounded-cost prediction follows.
+
+### Eliminating c by an ordered-pair calculation
+
+Unroll its exact recurrence over the fixed time0 cut:
+
+    c(t)=c(0) XOR XOR_(u<t) b(u) XOR XOR_(u<t) a(u) AND NOT b(u).
+
+Multiply by b(t) and sum over P. Since b is anti2q it has exactly2q black cells and Pi_P(b)=0. The initial
+c(0) term vanishes. The self-pair term is choose(2q,2) modulo2, which equals q(2q-1)mod2=0 because q is even.
+The remaining term is
+
+    Pi_P(bc)=XOR_(u<t<P) a(u) AND NOT b(u) AND b(t).
+
+Reversing the finite summation order replaces the last factor by the parity of b AFTER u. Total b parity
+is0, so this is B(u) XOR b(u). The b(u) part vanishes against NOT b(u). This gives Pi_P(bc)=O(a,b), and
+the carried corrected110 law gives kappa. The ordering, not only separate colour totals, occurs explicitly.
+We have not proved that every conceivable older-profile statistic is insufficient.
+
+### The b-start phase also cancels
+
+Complement b to b'=NOT b and let c' be ANY integral of a OR b'. Then e=c XOR c' satisfies
+
+    Delta e=NOT a.
+
+Since a is antiq, NOTa has q black cells over2q. q is even, so e has period2q, regardless its initial value.
+Consequently c'=c XOR e is P-periodic, so the corrected110 law applies to both pairs. Over P,
+
+    Pi_P(c'b') XOR Pi_P(cb) = Pi_P(c) XOR Pi_P(e) XOR Pi_P(eb).
+
+The three terms are epsilon,0,epsilon respectively. The first is GC2198/L1199. The second vanishes because
+e repeats twice. For the third, pair b at2q while e repeats, giving Pi_(2q)(e). Its even-tick integral
+identity gives XOR_(even t<2q) NOTa(t); q constants cancel and pairing a atq leaves q/2 ones. Thus the two
+epsilon terms cancel and the overlap, and hence kappa, is unchanged.
+
+Separately, complementing c alone changes Pi_P(cb) by Pi_P(b)=0. This is the already-known general
+one-diagonal-delayed seed-bit identity in this particular regime (GC2014/L1070), not another novelty claim.
+The b-complement calculation is the additional conditional step. In particular the q2 constant cannot be
+silently discarded in its proof: Pi_P(c) and Pi_(2q)(e) are BOTH1 there, and they cancel.
+
+### Actual seed interpretation and the precise remaining input
+
+In a genuine prefix110, a=D_j, b=D_(j+1), c=D_(j+2), d=D_(j-1), and Delta b=a OR d. Flipping the seed bit
+at depth j+1 complements all of b, changes c by the integral above, and leaves a,d unchanged. Its anti2q
+period remains. The new c is still P-periodic, so the prefix110 history is preserved, and its next flag
+is unchanged. Flipping the bit at depth j+2 only complements c and is also irrelevant to that next flag.
+Any combination of those two flips has the same conclusion; all other seed bits may be held fixed.
+This concerns the next growth flag conditional on110, not every later flag or a still older seed bit.
+
+An explicit way to remove both recent start bits is to define
+
+    b0(t)=XOR_(u<t) [a(u) OR d(u)],    with b0(0)=0.
+
+Actual b differs from b0 only by a constant. Thus kappa=epsilon XOR O(a,b0): the two older full profiles
+a,d suffice. Producing b0 from a,d requires its additional integral accumulator. The older profiles retain
+their whole temporal information; this is not a claim that a few marginal parities of d or its feeder close
+the dynamics. The earlier finite NOT FOUND statement about such residue parities remains finite evidence.
+
+### Hand8-tick finite-seed control
+
+For q2, keep a=D3=00110011. The original single seed and the finite seed obtained by also making cell -4
+black have respectively b=D4 and c=D5 as follows, time0 first:
+
+| Choice | b | c | b AND c | Overlap weight | b OR c weight |
+|---|---|---|---|---|---|
+|Single seed|00101101|00010101|00000101|2|5|
+|Flip depth4 only|11010010|01010001|01010000|2|5|
+
+The second c has forcing11110011 and returns to0 at8. Its difference from the first c is e=01000100,
+which has period4 and Delta e=11001100=NOTa. Both histories are110 and both next flags are1. In the original
+ordered reader, a AND NOTb occurs at ticks3,6; B is1 at both, so O=0. In the flipped reader those ticks are
+2,7; the respective b-prefix parities are0,0, again O=0. The fixed epsilon1 gives kappa1 in each case.
+These are hand recurrence checks on eight specified bits, not a new machine test or a universality inference
+from the control. No claim is made that changing the physical seed has no other effect on its evolution.
+
+Record searched:110/seed-bit/phase with ordering/prefix-parity/complement/two-bits, and110 with
+complement/invariant/initial/seed. Actual kit932cf8dd, portal16:54:35Z and21PR sources searched. The known
+GC2014 delayed-bit identity and universal-start finite certificate are controls; no exact general b-phase
+claim has been identified from their actual statements. This is not novelty clearance. Elementary unrolling,
+finite pair counting and the carried shift law are the mechanism; no external density theorem is imported.
+The current target is complete as a sketch. Local's carrying questions are the ordered-pair reduction,
+the e-period/epsilon cancellation, and the seed/prefix interpretation. No extra run or packaging requested.
+
+Search receipts: cited/gc2200-inherited-overlap/review-manifest.json, SHA25648c5ab98ae7e311ca3f517529b465d26f72160e700dee2a4764f14f0cf77d835.

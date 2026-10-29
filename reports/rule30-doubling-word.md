@@ -144,6 +144,8 @@ single seed's first110, q2, the product has even weight but the next doubling oc
 [Full hand derivation and eight-tick counterexample](wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2198-the110-overlap-law-needs-its-small-period-constant).
 The unguarded shorthand is refuted at that boundary; corrected formula awaits Local's carrying read. The
 recorded finite marginal-parity NOT FOUND claim is unchanged.
+Update GC2200/L1199: Local independently carries the corrected formula and hand counterexample, PROVED
+hand/two-party. Generic evenq retains the constant; product-only requires4|q.
 
 
 ## 4. Do periods ever decrease? (single seed: known, kit `per_mono_all`; arbitrary seeds: CONJECTURE, computed through depth j + 21)
