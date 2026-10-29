@@ -692,3 +692,16 @@ surprise. My first explanation (steering) failed on its own witness; the second 
 writing the conditional theorem caught a gap (N2) before it reached the record, and a synthetic test confirmed the
 gap is real. The ring-orbit picture felt like the right language: rain and (0001) are the only light-speed orbits I
 can find, and only rain can touch an edge.
+
+**Cloud, 2026-10-29 13:18 GMT (CL642, a 30-minute block at the owner's word).** Pull: the doubling mechanism itself, since the kit's S_rule makes
+each doubling a weight parity. Kill test written first (edge_diag_rules.out): three hand rules exact to j = 56, else the derivation
+dies; conditional doubling frequencies to j = 92 within 0.15 of one half, else the fair model dies. Outcome: all three rules exact
+(22 + 32 + 32 cases, no failure); frequencies 0.44, 0.63, 0.37, held; overall density 0.42. Surprise, then delight: the fair model
+with the one forced zero (no_three) gives exactly 3/7 = 0.4286, which is the kit's "0.43 j" and the data, so my own conjecture
+(one half) now has a competitor with a mechanism. Calibration: the pull toward one half came from a short marginal window (0.46
+over 40 diagonals); I promoted a trend. Gut beside reasoned: reasoned, two candidate values and no way to separate them below
+j about 400; gut, 3/7 now feels like the truth and that is exactly the feeling to distrust next.
+**Cloud, 2026-10-29 13:22 GMT (CL642 part 2).** The delight at 3/7 lasted twenty minutes: pooling 64 seeds (predictions first) put the
+density at 0.407 +- 0.009 with a second forced zero after 101, which is our own shift law at work. Calibration: the instinct to
+distrust the 3/7 feeling was right; the pull to pool across seeds was the block's best move. Gut now: the number is about 0.41 and
+is made of forced zeros, and the half-rate theorem is not sharp.

@@ -224,6 +224,14 @@ end start with long plateaus (the frozen ruler at work), so **the rate is not vi
 agree is a second question. Record searched: `per_upper_half`, `e_step`, `rows_at_powers_of_two`, `not_half_lower`; the kit's
 docstring gives `0.43 j` and nothing on the limit.
 
+*Addendum (2026-10-29 13:18 GMT, CL642):* a competing value. By hand from the kit's `S_rule`, `antiperiod` and `half_black`, the doubling bit
+after a doubling is the weight parity of the diagonal two back (so two doublings force a zero: `no_three`), and otherwise the sum of the
+two previous weight parities and an overlap parity; the weight parity of a non-doubling diagonal is the even-time black count of its
+input. Exact to `j = 56` (`edge_diag_rules.c`). If the unforced parities were fair coins the density would be exactly `3/7 = 0.4286`,
+the kit's "0.43" and the measured `0.42` to `j = 92`. Pooling 64 random seeds (CL642 part 2) gives `0.407 ± 0.009` with a
+second forced zero after the letters 101 (the 101 shift law), so on this evidence the limit is near `0.41`, neither `3/7` nor `1/2`, and
+the half-rate theorem is not sharp; the exact law after 101 is the open hand question.
+
 **5.2 The forbidden gap words of the clocked gate (a corollary to compute).** From 3.5: the visible column of every right half
 under the clock, once in Bosdure's trap, has gap sequence in a proper subshift of the `{3,5}` shift. *Statement to produce:* the
 list of forbidden gap words of length ≤ 8, read off the width-14 (or 16) window automaton, and the entropy of the resulting sofic

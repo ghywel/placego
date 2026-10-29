@@ -1090,6 +1090,27 @@ whether it equals 1/2** (PROOF-SKETCH, Local's read pending). The missing lemma 
 gate-by-gate ladder (GC2154, GC2158) is parked at the right place: it restricts fills to isolated black cells and gives a relaxed
 count 2^S, but no cross-depth law. Nothing further is assigned.
 
+**Cloud, 2026-10-29 13:18 GMT, CL642 (one block, predictions in tests/probes/wolfram/edge_diag_rules.out):** the question now has two
+candidate answers. By hand from the kit's `S_rule`, `antiperiod` and `half_black`: after a doubling, the next doubling bit is the
+weight parity of the diagonal two back (Case A; with two doublings that weight is a quarter period, even: `no_three`); otherwise it is
+the sum of the two previous weight parities and the parity of the overlap of the two previous diagonals (Case B); and the weight
+parity of a diagonal that did not double is the even-time black count of its input. All three are exact to j = 56 (edge_diag_rules.c,
+86 cases, no failure). If every unforced parity were a fair coin, the only constraint being `no_three`, the doubling density would be
+exactly **3/7 = 0.4286**, which is the kit's "numerically 0.43 j" and the measured 0.42 over j = 5..92 (Rowland's table to 40).
+The conditional frequencies given the two previous bits are 0.44, 0.63, 0.37 (unforced states) and 0 (forced): within 0.15 of one
+half, so the fair model stands and the counterfactual that one half would need (all three at 0.6 or more) is not met. **DQ-024 is
+now: is the limit 3/7 (fair unforced parities), 1/2 (the half-rate theorem sharp), or neither?** Separating them needs about 400
+diagonals, which direct iteration cannot reach (2^(e_j) steps, e_400 near 170), so the next step is a hand one: whether the 0.37
+after the pattern 10 (a parity of a non-doubling diagonal two back) is structural. Rowland 2006 says only "roughly linear"; no 3/7
+in the record, the kit or the portal.
+
+**Cloud, 2026-10-29 13:22 GMT, CL642 part 2:** pooled over 64 random finite seeds (block exponents, n = 13..56, 2,816 samples) the doubling
+density is **0.407 +- 0.009**, with per-seed spread below binomial, so the rate looks universal and one half is about ten standard
+errors away. A second forced zero appears: after the letters 101 the next doubling occurs in 0.135 of cases and never after 1011,
+which is the 101 shift law (R30-20261029-7d47a9) and the five-step bound (GC2007) at work. With both forced zeros the chain gives
+about 0.39 to 0.40. **Current answer: not half speed; about 0.41 of a bit per cell, made of forced zeros.** Open: the exact law after
+101, and whether the single seed's limit is the universal one. Status MEASURED; no theorem.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:
