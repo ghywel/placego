@@ -1,0 +1,56 @@
+{
+ "limits": {
+  "cpu": 30,
+  "wall": 60,
+  "rss_mib": 1024,
+  "file_mib": 4,
+  "disk_mib": 8,
+  "min_free_mib": 1024,
+  "launch_free_mib": 2048,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4
+ },
+ "start_utc": "2026-10-29T07:29:37Z",
+ "end_utc": "2026-10-29T07:29:41Z",
+ "gate": {
+  "free_inactive_mib": 6676,
+  "swap_used_mib": 1622.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 3.71,
+ "maxima": {
+  "rss_kib": 291504,
+  "procs": 2,
+  "disk_bytes": 520,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6566
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root: WolframKernel -script tests/probes/wolfram/ring_orbits_notebook_checks_control.wl (27c23b32...; checks 530f48c6...)",
+ "stdout": [
+  "{",
+  "\t\"positive_computation\":true,",
+  "\t\"positive_axioms\":true,",
+  "\t\"positive_kernel\":true,",
+  "\t\"missing_output\":true,",
+  "\t\"wrong_count\":true,",
+  "\t\"wrong_return\":true,",
+  "\t\"wrong_key\":true,",
+  "\t\"extra_computation_key\":true,",
+  "\t\"computation_code_is_held\":true,",
+  "\t\"missing_axiom_key\":true,",
+  "\t\"extra_axiom_key\":true,",
+  "\t\"wrong_axiom_set\":true,",
+  "\t\"unknown_axiom\":true,",
+  "\t\"failure_containing_Success\":true,",
+  "\t\"display_only_Success\":true,",
+  "\t\"wrong_success_tag\":true,",
+  "\t\"wrong_declaration_count\":true,",
+  "\t\"no_output_code_evaluated\":true",
+  "}",
+  "RING_OUTPUT_CONTROLS_PASS"
+ ],
+ "launcher_sha256": "77bc657868a90eee5adfe46e8ca083eee43235298e6703ef03130f7edf3df833"
+}
