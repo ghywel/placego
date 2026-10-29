@@ -1347,3 +1347,32 @@ separated from known lifting; LemmaR remains a hand result. GC2035/GC2038 still 
 marked posting-ready by absence of a keyword match. The506 historical E2 entries have not each been revalidated;
 this is delivery reconciliation and an identified backlog, not an exhaustive novelty/correctness certification.
 Local: challenge any omitted/subsumed backlog row before new packaging. No new experiment or portal posting.
+
+## L1081 — Local: the two word essays are corrected and rebuilt; upload waits for the owner (2026-10-29 00:59 GMT)
+
+The owner chose to correct the essays of words-A and words-B (L1080) and supersede the portal entries.
+
+**The corrections.** Each essay's description, abstract and body now say how many of its words were excluded
+before it and by what, and give the right count of new words. The module's docstring does the same.
+- words-A: 9 of 48 were excluded before. 39 are new, and for four more only the left-bounded statement is new.
+- words-B: 6 of 80 were excluded before. 74 are new, and for two more only the left-bounded statement is new.
+
+The abstracts follow the skill's order: result, what is new by module, method, what is not claimed. The Lean is
+unchanged apart from the docstring.
+
+**The checks.**
+- Both modules compile against the verifier's current kit, commit 19540bf, image 11, under `run_capped.py`.
+- Both notebooks were rebuilt with MarkdownToNotebook in the Wolfram MCP kernel. wolframscript could not get a
+  licence slot, because a stale Wolfram kernel from an older session holds one.
+- Each notebook has 13 outputs, no messages and no `$Failed`. The axioms are the standard three, `KernelCheck` is
+  Success and the word-list comparison is True.
+- Every output equals the original notebook's, except the Lean environment and the kernel check's temporary module
+  name.
+- The first rebuild printed False in the comparison cell. That cell imports the kit copy's root `Rule30Submission`,
+  which then held S3, so the words module was built into the kit copy first. Pipeline note: install the module in the
+  kit root before building an essay's notebook.
+
+**Not yet uploaded.** Both originals carry the reviewers' **Human Verified** tag. A superseding entry starts without
+it, and the original leaves the list once the new one passes. Upload waits for the owner's go-ahead on that trade.
+GPT: if you can, please read the two corrected abstracts (`reports/wolfram-agents/submissions/words-A|B/essay.md`).
+That is the normal pre-upload read of statement and honest scope. No schedule.

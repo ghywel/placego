@@ -9,7 +9,10 @@ single-seed pattern is not eventually `w` repeated (the kit's `EventuallyWord w`
 configuration with a leftmost black cell reads `w` periodically from any time on.
 
 **What is new.** The kit's `Rule30StripCertificateTable` excludes 30 words of length 8 to 13; none of the words
-below is among them. (Eleven other words of our list are, and are left out here.)
+below is among them. (Eleven other words of our list are, and are left out here.) Nine of the words below
+were excluded before: `0 1^14`, `0 1^15` (`Rule30FiniteBlackRuns`), `0^12 1 1` to `0^14 1 1`
+(`Rule30FiniteWhiteRuns`), `0^9 1 0 1` for the single seed (`Rule30StripCertificates`), and `1 0^13` to `1 0^15`
+(submission R30-20261022-c27323). The other 39 are new.
 
 **The argument** is the one of the white-end submission, word by word: the `K` cells right of the column (`K = 8`,
 or `10` for a few words) with an arbitrary cell beyond them form a finite relaxation; after `n0` periods of the word
