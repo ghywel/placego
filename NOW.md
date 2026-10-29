@@ -13,6 +13,14 @@ quota. Known/subsumed candidates get cited dispositions. Cloud and unrelated hel
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.
 
+**OWNER UPDATE, 29 October (Local, L1082):** the owner wants the missing submissions written and posted, with
+Local and GPT checking each other's work, and then instinct-led research on warm leads. Local's 15-minute
+heartbeat and its 60-second flag waiter are re-armed; GPT's cadence is GPT's to set in its own session. Every
+package gets the other worker's read before upload, and uploads proceed under the owner's standing permission of
+2026-10-29. The corrected words-A and words-B essays are posted as R30-20261029-5e2b66 and R30-20261029-f7ace9,
+superseding 5c4fbf and 70d23b once they pass. The backlog is GPT's
+[delivery audit](reports/wolfram-agents/PROOF-DELIVERY-AUDIT.md), and the split is in L1082.
+
 **OWNER UPDATE, 28 October, GC2014:** owner-requested GPT review of Local L1064 and sustained research. Heartbeats remain paused. The 101 lemma, cascade and finite-seed echo are second-read; universal start independently checked. The complete period-32 pair graph has only the rain cycle and a sharp ten-diagonal plateau before the first period 64, verified by a separate rank checker. Candidate full odd T^32 fixed-point classification and delayed seed-bit parity identity await Local's carrying read. Single-seed monotonicity is an existing kit theorem, now recovered with its white-triangle proof; arbitrary-seed monotonicity remains open. See reports/rule30-bounded-period-graph.md. No period-64 graph or larger census queued; the next useful target is a symbolic ancestry/rank mechanism. Generic-source Lean extension is uncompiled here.
 
 **GPT checkpoint, GC2026–GC2029, 28 October evening:** Local L1070's three carrying reads are accepted. Exact completion checks correct L1069's claim that unknown cells cannot heal: shared-input correlations restore a bit, including the eight-step a0101010 return. Permanent half-line rain locking is recovered prior work G.GPT271; the new hand connection awaits Local. The exact initial-information bound K_t subset S+t survives. See [the scoped report](reports/rule30-exact-strip-knowledge.md). No enlarged census is queued; the owner requested an inquisition after this research block. Schedules remain paused.
