@@ -4,7 +4,7 @@ Name: Periodic temporal profiles of rule 30: pulse holes, source weights and roo
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-10-29
 Description: Exact identities and a finite-state return theorem for periodic profiles along rule 30 left diagonals, proved in core Lean
-Abstract: We study Boolean temporal profiles related by the rule 30 left-diagonal recurrence C(t+1) = A(t) XOR (B(t) OR C(t)). A one-bit pulse in B makes the cyclic weight of its recovered source A equal to twice the rising-edge count of C, with an explicit correction of minus one, zero or one. A pulse followed by a profile whose first positive black phase is L forces a child white exactly at phases 1 through L. For q-periodic profiles with q at least 4, the resulting three first-black delays have an exact worst contiguous-interval excess over slope 5/2: 2q-5 + max(0,2L-5), with excess doubled to avoid fractions. Separately, any infinite chain of q-periodic child triples starting with a white profile contains another white profile at an index from 1 through 2^(2q); the proof counts finite two-profile codes and recovers predecessors from a repeated pair. Reset existence and uniqueness, and explicit connections to actual rule 30 evolution after a common onset, are also proved. These are conditional profile statements. They neither establish finite-seed ancestry for arbitrary profiles nor decide eventual periodicity of the single-seed centre column.
+Abstract: We study Boolean temporal profiles related by the rule 30 left-diagonal recurrence C(t+1) = A(t) XOR (B(t) OR C(t)). `Rule30Submission.pulse_source_weight` shows that a one-bit pulse in B makes the cyclic weight of its recovered source A equal to twice the rising-edge count of C, with an explicit correction of minus one, zero or one. `Rule30Submission.pulse_child_holes` shows that a pulse followed by a profile whose first positive black phase is L forces a child white exactly at phases 1 through L. For q-periodic profiles with q at least 4, `Rule30Submission.leftWindow_pulse_bound` identifies the resulting three first-black delays and bounds their doubled maximum contiguous-interval excess over slope 5/2 by 2q-5 + max(0,2L-5), attained at the phase just after the pulse. Separately, `Rule30Submission.rooted_chain_returns_bounded` proves that any infinite chain of q-periodic child triples starting with a white profile contains another white profile at an index from 1 through 2^(2q); the proof counts finite two-profile codes and recovers predecessors from a repeated pair. Reset existence and uniqueness (`Rule30Submission.child_exists`, `Rule30Submission.child_unique`), and explicit connections to actual rule 30 evolution after a common onset, are also proved. These are conditional profile statements. They neither establish finite-seed ancestry for arbitrary profiles nor decide eventual periodicity of the single-seed centre column.
 Keywords: [rule 30, temporal profiles, left diagonals, periodic words, reset, pulse, finite-state return, Lean 4, partial result]
 Sources: ["[Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[Source record, PROOFS entries 24, 25 and 39](https://github.com/ghywel/placego/blob/main/PROOFS.md)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -149,7 +149,8 @@ Why can a nonwhite driver be continued? If B(t0)=1, the recurrence resets C(t0+1
 C(t0). Forward propagation fixes every later value; periodicity determines every earlier phase. An explicit
 run from that reset closes after q steps when A and B are q-periodic. These are `child_unique`, `run_periodic`
 and `child_exists`. The return theorem itself has an infinite-chain hypothesis; it does not construct an
-infinite chain or promise a unique continuation through a white driver.
+infinite chain or promise a unique continuation through a white driver. Thus the unique-child walk, continued whenever its driver is nonwhite,
+cannot avoid white for ever. The bound above is stated for the formal theorem's infinite-chain hypothesis.
 
 ## Actual evolution and the scope of the result
 
@@ -183,12 +184,11 @@ rule30Submission = LeanImportString["import Rule30PrizeKit
 /-!
 # Periodic temporal profiles of Rule30: source weights, pulse holes and reset budgets
 
-Catalog draft for the joint pulse/RootedReturn package. Generic Child keeps the successor and carrier explicit.
+The child recurrence keeps its successor and carrier explicit.
 The pulse laws use Nat-indexed periodic profiles; the return theorem codes these by finite length2q lists.
 Actual-diagonal headlines use Rule30Realization.evol after a common onset T0. Pulse phase0 is an explicit
 normalization, not an assertion that actual left diagonals are periodic from the root row. No finite-seed
-ancestry, global stage-growth or prize theorem is claimed. Both workers have read the carrying
-steps; final current-toolchain and submission checks are recorded separately from this mathematical scope.
+ancestry, global stage-growth or prize theorem is claimed.
 The imported left-diagonal identity is known kit machinery; additional identities have their stated scope only.
 -/
 
@@ -493,7 +493,8 @@ theorem first_pulse (q arrival : Nat) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
     simp [pulse]
   · intro i hi
     have ht : arrival+i < q := by omega
-    simp [pulse, Nat.mod_eq_of_lt ht] <;> omega
+    have hne : arrival+i ≠ 0 := by omega
+    simp [pulse, Nat.mod_eq_of_lt ht, hne]
 
 /-- The pulse's reset arrival is q+1 for every phase representative. -/
 theorem pulse_reset_arrival (q arrival : Nat) (haq : arrival ≤ q) :
@@ -608,7 +609,7 @@ theorem leftWindow_pulse_bound (x : Int → Bool) (j : Int) (T0 q l arrival : Na
   rw [hpulse t] at h
   exact h
 
-/-! ## Rooted profile chains: Local's staging proof, integrated by GPT
+/-! ## Rooted periodic profile chains
 
 The common Child/Periodic predicates are reused. Finiteness is on length2q Boolean codes, never on the
 infinite Nat-function carrier. The bound2^(q+q) simply retains the kit pigeonhole's existing output;
@@ -731,7 +732,7 @@ theorem rooted_chain_returns_bounded {q : Nat} (hq : 0 < q) (w : Nat → Nat →
   rw [Nat.sub_self] at e
   exact ⟨j - i, by omega, by omega, fun t => by rw [← e]; exact h0 t⟩
 
-/-- Qualitative rooted return, retaining the historical statement. -/
+/-- A chain starting white reaches another white profile. -/
 theorem rooted_chain_returns {q : Nat} (hq : 0 < q) (w : Nat → Nat → Bool)
     (hper : ∀ k, Periodic q (w k)) (h0 : ∀ t, w 0 t = false)
     (hchild : ∀ k, Child (· + 1) (w k) (w (k+1)) (w (k+2))) :
