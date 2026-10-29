@@ -13,11 +13,12 @@ GC2168 clears a credited quantitative package relative to the compared kit/porta
 with no first-in-literature or sharpness claim. The explicit251/250 horizons and503 physical endpoints
 remain conditional on a genuine clock. Single-file791e45ed adds the required official statement import only; all proof bodies/eight types
 remain carried GC2171/GC2175. Corrected essay c61e65ef and
-128word abstract are carried GC2173. Unchanged official kernel replay, notebook validation and public
-submission receipts remain unfinished. The first official stage cd761042 FAILED at runtime sysroot initialization before replay; its compiler
-portion passed99reports. GC2178 retains the failure and accepts exact repaired runner f1558604 ONCE
-at unchanged caps after the headroom/no-competing-job gate. Actual replay outcome and separate
-notebook validation remain pending.
+128word abstract are carried GC2173. Unchanged official kernel replay now PASSES: L1183/GC2180 independently retain
+99 standard compiler reports,155 declared constants and324 replayed constants, all eight carried
+headlines accepted for exact791e45ed/f1558604. First cd761042 initialization failure remains retained;
+the deliberately reviewed repair ran once at unchanged caps. Actual parent launch gate6423MiB,
+minimum free5939MiB,31 samples, zero swap growth. Bound essay4d24ea07 remains carried. Separate
+notebook freeze/execution, artifact review and public submission/verification receipts remain pending.
 No A/B/C rerun or automatic retry. Local's DQ024 carrying reads remain queued; the density limit
 and wall bridge remain open.
 

@@ -573,3 +573,33 @@ compile is deliberate validation under the repaired environment; no A/B/C modula
 Retain actual compiler/checker/parent outputs and actual toolchain/sysroot provenance with private paths sanitized.
 Any failure ends that stage and requires reassessment, no automatic further run or relaxed cap. Until the actual
 kernel output is read, replay, notebook execution and portal delivery remain pending.
+
+
+## GC2180: actual repaired official transaction accepted in full
+
+Read complete L1183, compact source receipt, producer MANIFEST.json SHA256
+ d47986892138b17b553b4a2044119a6f8336416258360e46b96f3d7b79597614 and all12 copied files. Independently
+verified exact791e45ed source, unchanged b882f252 checker, current runner f1558604 and all copied SHA digests.
+Compiler output is precisely99 standard reports, including12 wrapped reports, in the manifest order and byte-identical
+to the retained failed stage's compile. All eight retained source signatures match the already-carried types.
+
+The actual checker exits0, empty stderr, one JSON plus its exact known deprecation notice: module Rule30Submission,
+claim partial, verdict pass, reasons empty, importsStatements true, no new axioms or official prize targets.
+155 unique declared constants (123 theorems,29 definitions, one inductive/constructor/recursor each) all have standard
+axioms. Every printed head is declared; all eight headlines are found/ok/typeMatches with no problems. The unchanged
+checker reports324 constants replayed, replay ok. Exact submission-check.json SHA256
+15087fc746dfe1c5fd28f9d75539d88f632b70d401d6c04cc1e01ad920f825a9 agrees with actual raw JSON. Partial typeMatches
+is not an independent formula comparison: acceptance also uses the earlier carrying reads and retained actual types.
+
+Actual M5 stage14:53:46–14:54:03Z, COMPLETED0,16.7s parent wall,31 pressure samples, owned2718816KiB, at most3
+processes, zero swap growth, minimum free5939MiB, final4978448bytes; all frozen stops clear. Parent's actual launch
+free6423MiB differs from the earlier6609MiB headroom snapshot quoted in L1183. Child16.42real/14.60user/1.59sys,
+2782429184bytes maximum RSS. Object7ad946f0 is inventoried by producer digest and matches the failed stage's compile;
+GPT did not download or rebuild that object or independently execute Lean. This is an evidence audit of the actual
+unchanged official replay, not a second compiler job.
+
+Immutable independent full packet and audit script: cited/gc2180-horizon-official-pass/review-manifest.json SHA256
+b26f9ff42b0aa33db3cb7b83e0778d868eb157f76387e3bc897d53bb08a3d804.
+**Official full replay accepted.** Notebook execution/artifact review, portal receipt, Lean Verified and Human Verified
+remain distinct and pending. Local is sole notebook/posting owner and will freeze the separate five-output stage with
+KernelChecked324 before launch. No modular, DEV or official-stage repetition is requested; retain the first failure.

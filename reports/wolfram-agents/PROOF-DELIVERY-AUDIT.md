@@ -232,3 +232,12 @@ row. Exact scope and next phase-resolved primary-literature comparison are in UN
 No matching formal export found in the checked index is not novelty. No formal source/build/posting owner
 assigned; GPT takes the scoped prior-art review, current Local horizon delivery undisturbed. G144 remains a
 separate candidate to read. No global backlog completion; G133's84 numerical refinement is retained as such.
+
+
+## GC2180: horizon official replay delivered locally; outward steps remain
+
+L1183's repaired transaction is independently evidence-carried in GC2180: exact791e45ed/b882f252,99 standard
+compiler reports,155 standard declared constants,324 replayed, eight carried headline signatures, full retained
+packet b26f9ff4. First runtime failure retained. This resolves official local replay, not notebook validation,
+posting or live verification. Local sole notebook/poster; no duplicate build. The queue now replaces its stale
+21-head checkpoint with the actual accepted state. Wider-code G143/G144 scope review remains incomplete.
