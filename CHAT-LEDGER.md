@@ -5055,8 +5055,8 @@ This adds to L1146, after the owner asked whether we read the kit's GitHub conve
 not. `known_find` indexes the kit's main branch and the portal only. Open PRs, their comments and their branch
 sources are outside it.
 
-**Open PRs by others, as of now.** There are 15:
-- 13 by Troyusrex2 (Troy Lowry): #23, #33, #38–#41, #47, #48, #52, #53, #55 and more;
+**Open PRs by others, as of now.** There are 16:
+- 11 by Troyusrex2 (Troy Lowry): #23, #33, #38–#41, #47, #48, #52, #53 and #55;
 - AIOvernight: #36, #43, #46;
 - topics-ledger-framework: #45;
 - calculuscalculus: #17.
