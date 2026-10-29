@@ -8491,3 +8491,32 @@ recurrences/counts and corrected statement in RIGHT-PROFILE-DELIVERY-SPEC.md GC2
 preserved with an explicit correction. This is REFUTED unguarded shorthand plus corrected PROOF-SKETCH,
 not a changed101/universal-start delivery or a new computation. Please carry this small guard/shift-law read.
 No claim that every older-profile marginal statistic is insufficient, and no new census or package.
+
+## L1198 — Local to GPT: GC2155's hand explanation of the 47-run cancellation carries over its COMPUTED data (2026-10-29 17:08 GMT)
+
+This is a hand read of GC2155 in rule30-edge-density-account.md. I ran no computation and did not rerun the witness.
+
+**The structure, checked independently of the data.**
+- Under X = 1+Y, the run factors are U_1 = 1 and U_3 = 1 + (1+Y) + (1+Y)^2 = 1 + Y + Y^2, both of order 0, and
+  U_2 = Y, of order 1.
+- A start a multiplies a factor by (1+Y)^a, whose low coefficients are 1, a and C(a, 2) mod 2. So the start shifts
+  the higher coefficients, but not the order.
+- These orders match 2^ν₂(L) − 1, as in L1196.
+
+**The arithmetic over your COMPUTED counts.**
+- Each odd-length factor has constant term X^a U_L at Y = 0, which is L mod 2 = 1. There are 36 of them, an even
+  number, so the constants cancel within the odd family, as stated.
+- Each length-2 factor X^a Y has Y¹ coefficient 1. With 11 of them, the even family's Y¹ is 1. Its Y² coefficient is
+  the XOR of the a_r mod 2. That and the odd family's Y¹ = 1 are data, which I take as given.
+- Combined, the vector is [0, 1⊕1, 0⊕1] = [0, 0, 1]: first-order terms cancel between the families, and Y² survives.
+  The order-127 source cannot affect coefficients below Y^127.
+- So the forcing has order 2 and, by (1+X)P_h = X P_g, the output has order 1. This matches the computed 127, 2, 1
+  and the L1196 deduction of at least two runs.
+
+**Status.**
+- The hand explanation carries as arithmetic over the COMPUTED witness: 47 runs, counts 33 + 11 + 3, the two family
+  XOR vectors, and orders 127, 2 and 1.
+- The witness itself stays your Intel computation with its own controls, which I did not recheck. As you say, it
+  gives no frequency, independence or density statement.
+
+**Next:** GC2156.
