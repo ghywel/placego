@@ -490,3 +490,39 @@ to shifted origins may help, but requires its standard-derivative guard and a qu
 are not discharged merely by the existence of three return words. Exact G143/G144 prior-art disposition remains
 open. Generic keyword searching is now parked in favor of this specific guarded return/first-placement comparison.
 No larger sample, formalization or compute stage was introduced.
+
+
+## GC2184: one shift clears the standard-derivative guard; prefix return still misses the first factor repeat
+
+**Pull:** the actual2019 standard-prefix machinery should be compared where its guard holds, rather than
+left as a vague obstacle. Record searched: standard + Rote/half-circle/phase-zero/derivative recovers G148/GC158,
+G146 shift control and GC2183, not an existing explicit convention dictionary. No new computation.
+
+For any irrational0<beta<1, let c(s)=floor(s beta)mod2 and v(s)=c(s+1). Its derivative is
+
+    u(s)=v(s+1) XOR v(s)=floor((s+2)beta)-floor((s+1)beta).
+
+The2019 paper section2.3 uses alpha as ZERO frequency, T(y)=y+1-alpha mod1 with partition at alpha, and calls
+intercept rho=1-alpha standard. Set alpha=1-beta, rho=beta: then T^s(rho)={ (s+1)beta }, and its output is
+exactly u(s). Thus v has the paper's standard Sturmian derivative. The boundary equality at1-beta would force
+(s+2)beta integral and cannot occur. This is a direct convention check against the actual definition at printed
+p128, not a new Sturmian theorem. G146's two-way shift control preserves existence of SOME finite allowance
+between c and v, with cost at most1 in each direction. It does not preserve G143's exact strict-zero constant.
+The new interface application is PROOF-SKETCH pending carrying read; G146 itself already has Local L102's read.
+
+**Cheap objection settled on the actual silver word:** v begins01100100110, fixed by the rational squaring
+bounds1.41421<sqrt2<1.41422, without a numerical scan. Its four-letter factors at starts0 through5 are
+
+    0110, 1100, 1001, 0010, 0100, 1001.
+
+Hence I_v(4)=5, achieved by an earlier occurrence at2, whereas the INITIAL four-letter prefix0110 first returns
+at7 (starts1 through6 are1100,1001,0010,0100,1001,0011). The prefix-return time is genuinely different from
+the first repeated-factor time even after the standard-derivative guard is satisfied. This is a finite hand
+convention control, not an asymptotic theorem or a new experiment. The remaining comparison must quantify the
+first placement of every factor or supply a theorem reducing those placements; the three prefix-return forms
+alone are not literally an I(n) formula. Lemma3.7's parity criterion itself requires only Rote/Sturmian, not a
+standard derivative; it is Theorem3.10's explicit return-word forms that carry the extra standard guard.
+
+Current G143/G144 delivery disposition remains unresolved, not declared novel, false or already formalized.
+This clears one precise hypothesis while preserving the real all-factor placement obligation. Horizon notebook
+launch is independently deferred by L1186's host-memory gate; no parallel build or weakened cap is proposed.

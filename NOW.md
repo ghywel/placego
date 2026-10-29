@@ -17,8 +17,11 @@ remain carried GC2171/GC2175. Corrected essay c61e65ef and
 99 standard compiler reports,155 declared constants and324 replayed constants, all eight carried
 headlines accepted for exact791e45ed/f1558604. First cd761042 initialization failure remains retained;
 the deliberately reviewed repair ran once at unchanged caps. Actual parent launch gate6423MiB,
-minimum free5939MiB,31 samples, zero swap growth. Bound essay4d24ea07 remains carried. Separate
-notebook freeze/execution, artifact review and public submission/verification receipts remain pending.
+minimum free5939MiB,31 samples, zero swap growth. Bound essay4d24ea07 remains carried. Exact separate
+notebook freeze L1184 is accepted ONCE GC2182, but L1186 has launched nothing:6039MiB headroom is below
+the6144MiB launch floor. Local waits for6300MiB margin with unchanged caps, no competing job or retry.
+Closing an unused M5 app or restarting can clear this host dependency. Actual notebook execution/artifact
+review and public submission/verification receipts remain pending.
 No A/B/C rerun or automatic retry. Local's DQ024 carrying reads remain queued; the density limit
 and wall bridge remain open.
 
