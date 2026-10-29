@@ -176,3 +176,51 @@ is separately reported, not claimed as a hard aggregate tree CPU limit.
 No concurrent heavy job; no reliable thermal reading. Monitor, pressure or
 control failure stops the stage, with failure and cleanup receipts retained.
 No automatic repair/rerun/widening. Data outsidegit with digests.
+
+## GC2211 completed control and the remaining question
+
+The sole stage ran at freeze3f362a06 on29October23:47:01Z and PASSED.
+Both predictions held. All1048 literal physical-row observations agree with
+the temporal formulas and the retained baseline words.
+
+| Fixed case | alpha | A | B | F | Four next flags, beta/gamma order00,01,10,11 |
+|---|---:|---:|---:|---:|---|
+|Root D16,D17,D18; H256|0|0|0|0|0,0,0,0; all keep00|
+|Finite edge code5; H2|1|1|1|0|0,1,1,1; last two have history01|
+
+In the root case a,b,c each have128black ticks and b AND h has60, giving
+the three zero coefficients explicitly. The four finite edge codes are1,
+262145,131073,393217. They are four named perturbations of one retained
+prefix, not a seed-frequency sample. In the H2 case codes5 and13 stay00;
+codes1 and9 leave it. For code9 the first2-tick parity is0 but the correct
+4-tick next flag is1: ignoring the closure guard gives an actual wrong label.
+
+This is a COMPUTED implementation control for the hand PROOF-SKETCH.
+It is not an independent carrying read and does not promote the universal
+statement to PROVED, compiled or Lean Verified. The root case's phase
+invariance is finite evidence, not a theorem that all00 extensions ignore
+their recent bits. No all-depth coefficient law has been obtained.
+
+Intel child0.12s wall/0.11s CPU, maximum resident set18227200bytes
+(about17.38MiB). Runner0.54s wall/0.094s CPU. Launch5827MiB free+inactive,
+225.25MiB swap. Finished before the first monitor sample: sampled maxima
+are unavailable, not zero. Child receipt reports zero swaps; normal
+completion, no remaining owned process, no retry or widening. Output/time
+files total3877bytes. Immutable packet
+`cited/gc2210-zero-pair-phase/manifest.json`, SHA256
+`d1d78f9d4451a627f076c60475fbc4c96602c5d93ac871acaced88505a2c3e2b`,
+retains exact source, results, time and normalized launcher with its original
+digest. The earlier input packet remains separately identified above.
+
+The phase calculation is complete at this scope. A further phase census
+would not answer why the actual root's ordered coefficient has its value.
+Reopen that route only with a root-compatible law for A/B or a recurrence
+for a supplied whole component, not additional parity features. The fresh
+primary-source pull is different: the T-function literature discusses
+adjacent-coordinate relations under uniform differentiability modulo4 and
+ergodicity. Before importing any such theorem, check those hypotheses for
+Phi(x)=x XOR(2x OR4x) itself. Whole-space ergodicity already fails because
+Phi preserves bit0; a restriction or conjugacy would need its own proof.
+The first discriminating hand step is its difference quotient for a2^n
+perturbation, including carries, followed by comparison with the paper's
+exact regularity definition. No new computation is frozen for that step.

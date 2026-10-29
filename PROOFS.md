@@ -4570,3 +4570,7 @@ PROOF-SKETCH, solo GPT. For k>=5,K>k, the submitted short-inverse classes partit
 ### Waiting room — GC2208 clocked driven-boundary interface (29 October2026)
 
 PROOF-SKETCH, solo GPT. Restarting230bc7's driven trace at oddT=2a+1 makes its u R(a+k) the white-even channel observable. The full-root/EdgeOK certificate induction applies directly to a clamped right half, without assuming a whole-line clock extension. Shift-closure language inherits the published path bound. [Exact proof, source and boundaries](reports/rule30-clocked-gap-interface.md#exact-objects-and-the-boundary-guard). No new Lean replay; existing forbidden gaps recovered as prior art. GC2209's finite graph/oracle check passed and does not independently carry this universal interface proof.
+
+### Waiting room — GC2210 guarded00 two-start-bit phase law (29 October2026)
+
+PROOF-SKETCH, solo GPT; [full carrying proof](reports/rule30-zero-pair-phase.md). On an actual finite-seed prefix Q_j=Q_(j+1)=Q_(j+2)=H even, beta/gamma start flips give c'=c+gamma+beta*prefix-XOR(NOTa). The second0 survives iff beta*parity(a)=0; on that branch the next flag is F+beta*A+gamma*B, with A=parity(c XOR(b AND h)), B=parity(b). The alternative01 branch reads the next flag B over2H. One-bit term is already GC2014/L1070; eight fixed controls pass GC2211. Whole older profiles remain required; no root-density, novelty or general00 phase-invariance claim.

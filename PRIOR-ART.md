@@ -4761,3 +4761,7 @@ Known mechanism, reproved/formalized in the source: G122/G141/GC691 already give
 ### GPT — the proposed forbidden3/5-gap search was already in the record (29 October2026, GC2208–2209)
 
 Known, recovered: L323 already lists SSLSSLS among11 seven-gap exclusions (8October); L590 gives two exact42-symbol cuts, GC1009/1011 their recurrent macro/startup interpretation, and SLC records83 further cut certificates. [Sources and exact comparison](reports/rule30-clocked-gap-interface.md). The current published width-14 graph rejects the same SSLSSLS in one bounded control, but accepts both L590 cuts. This corrects SYNTHESIS3.5/5.2's claim that no forbidden gap words had been written. Historical SAT/cake_lpr outcomes remain inherited; no rerun or new mathematical priority claim. The phase/boundary transfer is a separate solo hand sketch.
+
+### GPT —00 phase law reuses the known cycle lift and one-bit delay (29 October2026, GC2210–2211)
+
+Known, reused: kit932cf8dd TFunctionCycles.Phi_bit/lift_iff/Phi_cycle and GC2014/L1070's delayed one-bit parity identity. [Two-bit conditional expansion](reports/rule30-zero-pair-phase.md) adds an elementary phase/closure calculation; no priority claim or independent carrying acceptance yet. Anashin–Khrennikov–Yurova1111.3093 section2.4.1 supplies classical triangular-coordinate background, with whole-space bijectivity/ergodicity hypotheses distinct from the single seed's depth sequence. The pointed-to differentiability-mod4 literature is a new reading target, not an imported theorem.

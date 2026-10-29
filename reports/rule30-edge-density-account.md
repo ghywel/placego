@@ -549,3 +549,7 @@ known-countdown application, not a00 restriction or density claim.
 retained COMPUTED counts/vectors/orders. Local did not replay the Intel witness or its resource receipt.
 The source and raw witness remain the existing computation; no independent numerical read or density
 statement is inferred from the hand explanation. GC2156–2158 carrying reads remain separate.
+
+## GC2211: two recent seed bits do not define a fresh coin
+
+The [exact conditional phase law](rule30-zero-pair-phase.md) keeps the entire inherited profiles and explicitly decides which initial-bit changes stay on00. Its one-bit coefficient is already GC2014/L1070. The fixed retained D16,D17,D18 witness has both phase coefficients zero; all four named perturbations keep00 and give the same next flag, confirmed by literal physical evolution. The small H2 control shows the opposite danger: two choices leave00 and must use the doubled cycle. The universal formula is still a solo PROOF-SKETCH, the eight controls are COMPUTED. No actual-root coefficient recurrence or density law follows. Routine phase enumeration is parked; the next hand lens is the actual edge map's2-adic regularity, with current literature hypotheses checked before transfer.
