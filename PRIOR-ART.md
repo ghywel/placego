@@ -4753,3 +4753,7 @@ Known, reproved: actual kit932cf8dd Rule30RightPeriods.S_rule, antiperiod, half_
 CL642's single-seed Case A/B and even-tick identities. [Exact carrying scope and boundary guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#cl642-case-ab-carrying-read-with-explicit-period-conventions).
 Prefix-cycle parities for arbitrary seeds must keep their stated cycle length. Cloud's numerical outputs and
 runtime enforcement are not independently validated by that hand read. No separate submission or novelty claim.
+
+### GPT — constant-tail inverse classification recovered in a4691a (29 October2026, GC2206–2207)
+
+Known mechanism, reproved/formalized in the source: G122/G141/GC691 already give the zero/one/period-three inverse-tail graphs. The new portal a4691a supplies explicit front-boundary inverse operators and finite-width clone criteria; those boundaries differ from our free-neighbour wall inverse. [Exact source, PR45 comparison and scope review](reports/rule30-primitive-source-review.md). Do not reclaim the tail trichotomy as a new discovery. Its primitive/survivor conjunction retains the future-survival predicate, and low-width orbit projection alone does not transfer the larger mortality certificate. The elementary count uses G121's injective-image principle; no separate priority claim.

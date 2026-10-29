@@ -2,14 +2,16 @@
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
-## Current queue at GC2206
+## Current queue after GC2207
 
 - Completed: CL645 exact corollary carrying read; new ruler-exception sparse count written as PROOF-SKETCH; fixed root control PASS once. Do not rerun that test.
 - Completed: full a4691a source/import/PR45 carrying review, [scope report](rule30-primitive-source-review.md). The known inverse-tail mechanism is useful; the survival condition remains explicit. The width-7 projection does not transfer the width-46 certificate.
-- Active: one frozen finite implementation/cardinality control in that report, k=8,K=12, source417adbe1. No survival census or widening. After its actual result, move to the independent visible-language intersection.
+- Completed: the one frozen finite implementation/cardinality control at k=8,K=12 PASSED once. Source417adbe1, freeze823d6b47; no survival census or widening. Universal count remains a solo hand sketch.
+- Active next: match 230bc7's `u R s = drv altCol R (2*s+1) 1` and `gaps_of_entry` with channel-14's `visFrom`/white-even `Clock`, using a one-tick phase shift. Then inspect the existing width-14 automaton and retained phase-0 language for a concrete forbidden 3/5-gap word. First settle the trace and boundary interface by hand; no new SAT/enumeration stage yet.
 - Then: a specific actual-root00 information question, only with a new discriminating statistic or component law; do not reopen the generic ancestor ladder unchanged.
 - Independent alternative: exact visible-language intersection from retained channel data, after the already-recorded scope correction in SYNTHESIS.
 - Waiting, not blocking work: independent read of GC2205 and Local GC2156–2158; new submissions need their missing independent reviews.
+- Cold after source review: inverse-tail/root descent alone and projecting13 to97 as a certificate transfer. Reopen only for a property controlling `sig`/whole arrival orbits, or an equality at a width sufficient for the witness horizon.
 - Latest successful portal refresh22:47:13Z, kit932cf8dd,21openPRs; next routine check due about00:17Z. Incomplete default-CA refresh retained, verified system-CA refresh succeeded.
 
 ## First priorities and the reason for them

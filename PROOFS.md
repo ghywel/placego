@@ -4562,3 +4562,7 @@ PROOF-SKETCH, independent read pending: [successive exceptional1(10)^m11 blocks]
 have starting exponents e_next>=e+2^e, so completed-block counts have zero density. Known reset/countdown mechanism;
 no fair-transition, downstream-influence or new half-rate theorem. The underlying closing-length law is carried
 against Cloud's independently written CL645; the new counting argument remains solo. Finite control GC2204 passed.
+
+### Waiting room — GC2206 primitive-front class cardinalities (29 October2026)
+
+PROOF-SKETCH, solo GPT. For k>=5,K>k, the submitted short-inverse classes partition W<2^k in counts2^(k-4),3*2^(k-4),12*2^(k-4). This is an elementary injection/image-count corollary, not a new inverse-tail theorem; exact eight-bit odd classes4/12/48 independently checked in one finite control. No survivor frequency or orbit density. [Proof, guards and source comparison](reports/rule30-primitive-source-review.md#elementary-cardinality-guard--proof-sketch-not-independently-read). Independent reader held without waking Local/Cloud.

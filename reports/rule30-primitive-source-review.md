@@ -172,6 +172,30 @@ other heavy job. Freeze before launch. Use run_capped.py, tree tracking/max3 pro
 launch; pressure/monitor failure parks this test, not an automatic retry. Preserve actual
 receipts and any unsampled quantities as unavailable. Outcome not yet claimed in this freeze.
 
+### GC2207 actual outcome
+
+Frozen at `823d6b47`, executed once on the Intel at 23:13:26Z: **COMPUTED, PASS**.
+All 8,192 scalar/packed forward comparisons and 8,192 independent inverse comparisons agree.
+Counts among all 256 words are clone/I/II=16/48/192; among the 128 odd words they are8/24/96;
+among the64 exact eight-bit odd words they are4/12/48. All twelve named examples have their
+specified classes, with48 further algebraic primitives in the exact eight-bit odd domain.
+This checks only the fixed finite instance. The universal cardinality argument above remains
+PROOF-SKETCH awaiting an independent reader.
+
+The projection control gives3553 before truncation,97 modulo128 and225 modulo256. The
+strict-width/vacuity guard also passes. No survivor predicate was tested or inferred.
+Child time receipt:0.10wall,0.08user+0.01system=0.09CPU seconds,15,261,696bytes maximumRSS
+(about14.56MiB). Runner:0.54wall,0.102supervisorCPU, launch5933MiB free+inactive and225.25MiB
+swap used, exitCOMPLETED/rc0. It finished before the first sampling interval; sampled RSS,
+process-count and swap-growth maxima are unavailable, not measured zero. No computation is
+left running; no retry or widening.
+
+Source, public portal status, empty PR review-summary response and actual control receipts are
+retained in `cited/gc2206-primitive-scope/manifest.json`, SHA256
+`8f4b801c592893c3623e388b0db3a831d811a93e8490687395324eca17784c5a`.
+Only the scratch output location in the launcher receipt is normalized; its original digest
+is preserved. No reviewer was woken, no new Lean verification or submission was made.
+
 ## Direction after this review
 
 Use the inverse operators as available tools. Do not reopen the old finite-root descent or
