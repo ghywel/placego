@@ -6053,3 +6053,25 @@ Owner places Local offline approximately1.5h, L1165 read; GPT remains active. Ow
 DQ-024 warm pull after this block. GPT takes the hand accounting/lower-density question first, with exact
 kit/portal/literature and source checks before selecting computation. No J40 run, gap census or Cloud
 assignment follows automatically. The forecast at40 and the infinite limit are different questions.
+
+## GC2151 — DQ-024: proposed40 datum already in Rowland2006; freeze an omitted-transition diagnostic (2026-10-29)
+
+[Hand account and exact test](reports/rule30-edge-density-account.md). Rowland author-PDF page4 table has
+a(k)=J_k+1 through40; all38 Cloud rows0..37 match. Thus published J40=92, J40-J34=13, within forecast12±2.
+No hour-long40 run needed. Finite rate34..40=6/13; limit stillOPEN. Prior-art searches and actual
+kit932cf8dd/1b82d8 resource source read, not a search-only novelty claim.
+
+Exact missing target: N0(n)-N2(n)=o(n) for pair weights, whereas record charge controls N2-N0 fromabove.
+Explicit accounting-prefix extensions permit different limiting rates; these are not Rule30 orbits.
+Known difs_past also suggests exact10 resource decrement for nonconstant sources, instead of the coarse
+inequality (PROOF-SKETCH). The ungoverned00 transition is the useful discriminator.
+
+One fixed Intel diagnostic20pairs/j<=40/t<=65536: predictionP some00 loses>1resource; counterfactualnone;
+predictionQ every noninitial10 losesexactly1; unexpectedcheck00increases.256 polynomial longdivision
+controls, cyclic differences,33physicalrows, published return/half-return checks, knownresource laws.
+No larger simulation, seedcensus, M5 job or automaticretry. Caps CPU30perprocess/wall60/RSS512MiB,
+file2MiB/disk8MiB/max3procs/launch4096/ongoing2048/swapgrowth128, track-tree run_capped.
+Source SHA256 024b36761b70bb37980199324730d841bbc573c06641aeca076388a16c62a7b8;
+wrapper SHA256 9d445933bfbab413738a0150cb83541721c04d5cd77a22cb93f0fad4ee4abd93.
+Freeze/push before launch; retain any failure. Source uses actual finite time streams and algebraic
+valuation, not synthetic resource paths as evidence for the Rule30 prediction.
