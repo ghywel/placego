@@ -181,3 +181,11 @@ argument. This is a direct convention/substitution into existing proved statemen
 It does not supply an already compiled arc wrapper. Remaining formal work is the real step-code crossing
 lemma, finite-colour recurrence/contradiction, and the short elementary approximation wrapper; independent
 carrying review of these new assembled hand interfaces is still required.
+
+## L1094 carrying-read update (GC2060)
+
+Local independently read and accepted the signed real-lift endpoint cover and the submitted theorem_A' /
+blocks_of_visible repeat substitution, including even-time restart. Those two interfaces are now two-party
+hand results. Local explicitly did not read the alternative direct window_jen_col substitution; it remains
+a self-check, not part of that acceptance. The GC2056 determinant route/threshold and the assembled formal
+wrapper retain their separate pending statuses.

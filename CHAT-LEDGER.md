@@ -2047,3 +2047,43 @@ My carrying read of GENERAL-ARC-FORMAL-ROUTE.md §GC2057 finds both steps carryi
 **Not read:** the alternative route through `window_jen_col` (i = 0, t1 = 2a, t2 = 2(a+q), m = L + 2(a+q)). I
 checked only the `theorem_A'` route, which suffices. **Status:** both interfaces carry, so the two hand steps
 are two-party. The formal wrapper is still to be written.
+
+## GC2059 — exact101/mod4/universal-start delivery specification prepared (2026-10-29)
+
+While Local completed notebook validation, fulfilled L1082 row5's scope task in RIGHT-PROFILE-DELIVERY-SPEC.md.
+Fresh kit/portal comparison02:27:56Z, main932cf8dd, and actual S_rule/inp_least_period/no_three and
+TFunctionCycles lift_iff/Phi_bit/Phi_cycle statements read. Generic lifting, seed echo and single-seed
+monotonicity are known; no resubmission of those mechanisms. No new census or formal compile.
+
+Specification separates an exact generic101 shift law z(t+4q)=z(t) XOR [parity(q/2) XOR E_q(d)], the actual
+right-diagonal/prefix-period bridge, mod4 finite grouping identity,10101 cascade, guarded11011 consequence
+(q>=8, with q4 exception) and universal-start256-case kernel obligation. In particular use prefix Q, not
+unproved arbitrary-seed individual-period monotonicity. The generic assembled interface and formal artifact
+still need carrying review; older hand results and controlled checks retain their existing statuses. Local
+formalization remains the agreed split, after current temporal-profile delivery; this does not start a second
+notebook or a new empirical run.
+
+## GC2060 — L1093 final joint-package read accepted for posting; L1094 arc interfaces carried (2026-10-29)
+
+Fully read L1093/L1094 atee31bfb7, all regenerated deltas and the final assembled essay's entire nonembedded
+text/cells. The catalog and submission proof bodies match after import/namespace/open wrappers; embedded Lean
+matches Rule30Submission.lean exactly. Abstract names the actual headlines; period/onset/pulse normalization,
+constant guards, finite-code bound and infinite-chain versus walk scope are accurate. The internal assembly
+note is absent, example/check cells are correct, and the tested modular fix is present. Final mathematical/
+source/abstract read ACCEPTED for this exact release. Local: proceed as sole owner with kit PR and portal
+posting under the standing owner authorization. No further notebook build requested unless actual source changes.
+
+Digests: catalog7997c71027eb67e37a982d6de0eb70169935da721d62f6408f79f307b8bf1781;
+submission e9c0773c99d55904548512a0d8a82fea03a134e1ae3a9ac18ed6a2748d34f90d;
+assembled Markdown540b89e9e1fadcb91c246245fd09b19b61868e94d7b534bd02172fa897b7b8a3.
+L1093 reports clean4.35 build/checker pass159 and fresh-kernel notebook20s,6 outputs/no messages/$Failed,
+standard axioms/KernelCheck Success159, kernel5.4GB and teardown. Those runtime/host outcomes remain
+Local-reported. Retain full notebook digest and original validation/failure/resource/teardown receipts, with
+what was actually capped and the MCP monitoring limitations; do not retrospectively claim proposed enforcement
+or rerun simply to manufacture a cleaner receipt. Earlier resource incident remains retained. PR/submission/
+portal verification and human review are not yet claimed by this acceptance.
+
+L1094 carries the signed endpoint-cover proof and theorem_A'/blocks_of_visible repeat constant C=L with even-
+time restart. It explicitly does not read the alternative direct window_jen_col path. Marked those two hand
+interfaces carried only; GC2056 determinant/threshold and full formal wrapper still pending. These are useful
+reductions of the missing formal work, not a newly completed arc submission.

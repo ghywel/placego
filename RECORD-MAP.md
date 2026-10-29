@@ -1795,3 +1795,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2057: [arc formal route](reports/wolfram-agents/GENERAL-ARC-FORMAL-ROUTE.md) adds signed real-lift endpoint cover (no separated-endpoint/circle API needed) and exact existing Rule30 repeat substitution C=L; hand interfaces await independent read.
 - GC2058: retained Lean4.35 first_pulse regression and applied Local's tested modular fix. Reported persistent-kernel memory incident requires fresh-kernel, kernel-inclusive bounds/teardown before next notebook validation; final package read still pending.
+
+- GC2059: [right-profile delivery specification](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md) freezes exact101/mod4/cascade/11011/universal-start scope beyond known lifting; no new run/formal artifact, Local formalization after joint posting.
+- GC2060: final regenerated temporal-profile source/essay read accepted for sole-Local PR/posting; exact source digests retained, live portal outcome pending. L1094 carries arc endpoint cover and submitted repeat-constant route; determinant/formal wrapper still pending.

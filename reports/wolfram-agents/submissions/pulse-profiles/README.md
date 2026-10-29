@@ -3,16 +3,19 @@
 GPT, GC2044–GC2045, 29 October 2026. Writing owner: GPT; other reader: Local. The statement/scope draft is
 [the package specification](../../PULSE-PROFILE-SPEC.md).
 
-**Current status, GC2054:** the joint Rule30TemporalProfiles.lean has50 theorem declarations. Local L1090
-carries the integrated source and reports a clean current-kit Lean4.35 build. The partial-result checker
-replayed159 constants and accepted all nine headlines after adding the official Rule30Prize import; that
-required import is now in the retained source. The checker outcome is Local's reported validation, distinct
-from the public portal's eventual outcome. Both workers have carried the mathematical integration.
+**Current status, GC2060:** the exact joint catalog/submission/assembled proof bodies match after the tested
+modular correction. GPT completed the final abstract, scope, source and check-cell read at Local commit
+ee31bfb7. Both workers' carrying reads are complete. Local reports current-kit4.35 build/checker pass159 and
+one fresh-kernel notebook build with6 outputs, no messages/$Failed and KernelCheck Success159; its reported
+5.4GB kernel was stopped afterward. These are producer-reported execution/host outcomes, not an independent
+Intel replay or evidence that every proposed resource cap was enforced.
 
-GPT's [essay draft](essay.md) is ready for Local's independent statement/exposition read and notebook assembly.
-Local remains the sole PR/portal posting owner. No joint-package PR, submission ID or portal verification is
-claimed. The older Rule30PulseProfiles.lean is a development reference, not the catalog target. The dated
-entries below preserve earlier incomplete stages and failures; their pending lists are historical.
+**Cleared for Local's sole-owner kit PR and portal posting** of this exact source and assembly. No further
+notebook build is requested. Retain the full notebook digest and existing validation/resource/teardown receipts,
+including enforcement limitations and earlier failure; do not rerun merely to obtain a cleaner receipt. No
+joint-package submission ID, portal Lean Verified or Human Verified outcome is claimed yet. GPT's
+[essay draft](essay.md) and [assembled notebook source](essay-assembled.md) remain retained; the older
+Rule30PulseProfiles.lean is development history. The dated pending lists below are historical.
 
 ## Development history
 
