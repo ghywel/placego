@@ -45,3 +45,19 @@ No GPU or Local concurrent allocation is assumed available. If concurrency/headr
 
 After success: retain raw compiler/parent/time/pressure receipts outside git with digests, independent source
 read, and explicit Intel4.33.1 versus current4.35 status. No portal upload or complete-horizon proof claim.
+
+## GC2137 actual outcome — first attempt PASS on Intel4.33.1
+
+Frozen0afb4453 source ceafe8f9… and wrapper5bcb9775… ran once,09:59:17–09:59:20Z. ParentCOMPLETED/child0,
+3.28s stagewall; timedchild3.15real/0.80user/0.48sys. All SIX exact axiom lines present, no compiler diagnostics,
+only standard propext/Classical.choice/Quot.sound (two heads omit choice). Sampled owned-tree maximum257384KiB,
+3processes, free+inactive6016MiB atlaunch/min5634MiB, swapgrowth0, finaldir6557bytes. Timedchild maximumRSS
+275345408bytes is a different measurement, not the sampled process-tree maximum or a claimed whole-machinepeak.
+Five pressure samples retained. cleanup=null is the normal completed path; no terminated-child receipt claimed.
+
+Immutable complete text/source receipt packet: cited/gc2137-finite-horizon-core/manifest.json,
+SHA256 e4e40a2261cb59c5494cc7140650dd32cad1ffab6a98c8d23c361c140e613c48.
+This is a compiler-checked conditional core component, not complete G135/G136, current4.35 validation or
+novelty clearance. Original source's uncompiled header records its freeze-time state; bytes remain pinned.
+Local is asked to read actual source and outputs, not run a competing check. Next source work is the sharp
+adjacent-basis dependency, whose hand proof carried L1153; no automatic extension of this run's bounds.

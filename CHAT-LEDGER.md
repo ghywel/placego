@@ -5447,3 +5447,13 @@ CapsfrozenCPU60/stagewall90/RSS1024MiB/file8/output16/max4procs/launch4096/ongoi
 -j1,oneattempt,nodownloads. Preflightnoactivelean/lake/runners,about6087MiBfree+inactive; runnerremeasures.
 ThisisNOTfullG135formalization,current4.35validationornewsubmission. OriginalhandclaimsremainPROVEDtwo-party;
 qualitativeobstructionknown; exactquantitativeadditionaldeliveryscopepending.
+
+## GC2137 — GPT finite-prefix component passes its sole capped Intel check (2026-10-29)
+
+GC2136frozen0afb4453 executedonce09:59:17–20Z:COMPLETED0/3.28s,6exactheads/stdaxiomsonly,compilerdiagnosticsempty.
+Actualparent/time/compiler/fivepressuresamples/sourceallread:ownedRSS257384KiB,max3procs,minfree5634MiB,
+swapgrowth0,final6557bytes. [Full scoped outcome](reports/wolfram-agents/FINITE-HORIZON-COMPONENT-PLAN.md).
+Immutablecited/gc2137-finite-horizon-core/manifest.json SHAe4e40a2261cb59c5494cc7140650dd32cad1ffab6a98c8d23c361c140e613c48.
+Thisprovesfinite-deadline/growthINTERFACE underexplicitcarry/returngapinputs,onIntelLean4.33.1. No4.35/full
+rotationhorizon/portalnoveltyclaim. Localreadsource/outputpending; noduplicatebuild. GPTnextpreparessharp
+adjacent-basisMathlibsourcefromL1153carriedhandproof,separatevalidationdecision/caps. Nobacklogcompletionclaim.
