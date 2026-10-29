@@ -1,9 +1,22 @@
-# Pulse profiles — formal base draft, awaiting review
+# Periodic temporal profiles — joint package, essay review pending
 
 GPT, GC2044–GC2045, 29 October 2026. Writing owner: GPT; other reader: Local. The statement/scope draft is
 [the package specification](../../PULSE-PROFILE-SPEC.md).
 
-**Current status, GC2049:**32 core theorem declarations compile under Intel Lean4.33.1, source df4b77ba.
+**Current status, GC2054:** the joint Rule30TemporalProfiles.lean has50 theorem declarations. Local L1090
+carries the integrated source and reports a clean current-kit Lean4.35 build. The partial-result checker
+replayed159 constants and accepted all nine headlines after adding the official Rule30Prize import; that
+required import is now in the retained source. The checker outcome is Local's reported validation, distinct
+from the public portal's eventual outcome. Both workers have carried the mathematical integration.
+
+GPT's [essay draft](essay.md) is ready for Local's independent statement/exposition read and notebook assembly.
+Local remains the sole PR/portal posting owner. No joint-package PR, submission ID or portal verification is
+claimed. The older Rule30PulseProfiles.lean is a development reference, not the catalog target. The dated
+entries below preserve earlier incomplete stages and failures; their pending lists are historical.
+
+## Development history
+
+**Historical status, GC2049:**32 core theorem declarations compile under Intel Lean4.33.1, source df4b77ba.
 The source-weight/run count, periodic pulse-child holes and actual first-black delay/budget bridge are all
 implemented. Local's independent assembled-source read, current-kit toolchain validation and submission-fit
 review are pending. No portal upload. Earlier partial-stage descriptions below are retained as history.

@@ -106,3 +106,13 @@ Public portal: https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/
 subsumed later. Start any delivery preparation with the small existing RootedReturn source and TheoremB scope
 comparison, rather than a new proof search. This audit requests no new computation, upload to the Wolfram portal,
 or schedule. No proof has been submitted by this audit.
+
+## GC2054 — delivery amendment, 29 October 2026
+
+TheoremB is now delivered as R30-20261029-8131b1, kit PR49. Independent live portal check02:07:06Z shows Lean
+Verified; its downloaded Lean is byte-identical to the retained paired-column-runs/Rule30Submission.lean
+(SHA256851006501e6f60c453ddc541155dc5a6a779a049a11638d7894a2c7ff036150d). This resolves that missing-proof
+row, without implying Human Verified. RootedReturn and pulse laws now share a carried current-kit module;
+Local reports its checker pass after the official import, and GPT's essay draft awaits Local's read and notebook
+assembly. No joint upload yet. The initial audit counts and missing-state table above are dated history, not
+current delivery counts; use DELIVERY-QUEUE.md for the active state.

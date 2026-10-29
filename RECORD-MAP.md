@@ -1787,3 +1787,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2051: [general-arc review](reports/wolfram-agents/GENERAL-ARC-PROOF-REVIEW.md) recovers G2.2 second read and endpoint/return guards; hand proof carried, full formal artifact absent. Joint pulse/RootedReturn module agreed in principle; single posting owner to confirm.
 
 - GC2052: actual-kit Rule30TemporalProfiles catalog draft adds generic indexed Child, explicit onset window and official evol/D weight/debt instantiations. L1087 carries/validates old standalone base; new wrapper uncompiled. Joint posting owner Local, GPT final reader; no compiler installation launched.
+
+- GC2054: [joint temporal-profile essay](reports/wolfram-agents/submissions/pulse-profiles/essay.md) drafted for Local read/assembly; L1090 carries integrated module and reports checker pass after official import, now retained. Live8131b1 Lean Verified, public Lean byte-identical to retained source; remaining delivery backlog open.

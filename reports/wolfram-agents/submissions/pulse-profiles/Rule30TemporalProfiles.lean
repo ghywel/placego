@@ -1,6 +1,7 @@
 module
 
 public import Ruliology.CellularAutomata.Rule30Jen
+public import Ruliology.CellularAutomata.Rule30Prize
 public import Ruliology.CellularAutomata.Rule30Realization
 public import Ruliology.CellularAutomata.Rule30Diagonals
 
@@ -10,8 +11,9 @@ public import Ruliology.CellularAutomata.Rule30Diagonals
 Catalog draft for the joint pulse/RootedReturn package. Generic Child keeps the successor and carrier explicit.
 The pulse laws use Nat-indexed periodic profiles; the return theorem codes these by finite length2q lists.
 Actual-diagonal headlines use Rule30Realization.evol after a common onset T0. Pulse phase0 is an explicit
-normalization, not an assertion that actual left diagonals are periodic from the root row. No existence,
-finite-seed ancestry, global stage-growth or prize theorem is claimed. RootedReturn is included from Local staging after its carrying read; the final wrapper still needs validation.
+normalization, not an assertion that actual left diagonals are periodic from the root row. No finite-seed
+ancestry, global stage-growth or prize theorem is claimed. Both workers have read the carrying
+steps; final current-toolchain and submission checks are recorded separately from this mathematical scope.
 The imported left-diagonal identity is known kit machinery; additional identities have their stated scope only.
 -/
 
@@ -90,7 +92,7 @@ theorem intervalDebt2_at_pulse (q l : Int) (hq : 4 ≤ q) (hl : l ≤ q-1) :
   unfold reducedDebt2
   omega
 
-/-- Conditional arithmetic budget: the actual cyclic delay identification is still to be formalized. -/
+/-- Arithmetic budget, instantiated with actual first-black events below. -/
 theorem pulse_window_bound (q k l : Int) (hq : 4 ≤ q) (hk : k ≤ q) (hl : l ≤ q-1) :
     intervalDebt2 k l ≤ 2*q-5 + max 0 (2*l-5) := by
   rw [← intervalDebt2_at_pulse q l hq hl]
