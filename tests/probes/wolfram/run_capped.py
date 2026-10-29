@@ -21,6 +21,14 @@ limits, launch gate values, samples summary and maxima, exit reason, child retur
 Exit reasons: COMPLETED, CPU_LIMIT (child killed by SIGXCPU), RSS_STOP, WALL_STOP, PRESSURE_STOP, DISK_STOP, MONITOR_FAILURE, REFUSED,
 LEFTOVER_CLEANED (L974: the child exited but a member of its process group was still alive; the group is cleaned on this path too).
 L974: the child receives CAPPED_OUT = the resolved destination, so a driver can bind its artifacts to it.
+L1119, opt-in --track-tree (default off; without it behaviour is unchanged): the child's processes are tracked across
+process groups, because a Wolfram kernel's RunProcess/StartProcess children (LeanLink's `lean` compile among them) take
+process groups of their own (L1117). Every 0.5 s one `ps -A -o pid=,ppid=,pgid=,rss=,stat=,lstart=` call grows an OWNED
+set: the group's members, and every process whose parent is owned when it is seen, each keyed by (pid, start time) so a
+reused PID is never mistaken for an owned one. Owned processes stay tracked after reparenting. RSS and process counts
+sum the live owned set; every stop, a leftover at the end and an exception in the supervisor terminate the owned set as
+well as the group, and cleanup verifies that no owned process remains. Limit: a process created and orphaned within one
+sampling interval is not seen.
 Test hooks (harmless controls only, read from the environment): CAPPED_TEST_PS=bogus (monitor failure), CAPPED_TEST_MINFREE_MIB (raise
 the pressure threshold).
 """
@@ -53,6 +61,38 @@ def group_rss_kib(pgid, ps_cmd):
         if int(f[1]) == pgid: tot += int(f[2]); n += 1
     return tot, n
 
+def ps_tree_rows(ps_cmd):
+    r = subprocess.run([ps_cmd, "-A", "-o", "pid=,ppid=,pgid=,rss=,stat=,lstart="], capture_output=True, text=True, timeout=5)
+    if r.returncode != 0 or not r.stdout.strip(): raise RuntimeError("ps failed")
+    rows = {}
+    for line in r.stdout.splitlines():
+        f = line.split(None, 5)
+        if len(f) != 6: raise RuntimeError("ps unparsable")
+        rows[int(f[0])] = (int(f[1]), int(f[2]), int(f[3]), f[4], f[5].strip())
+    return rows
+
+def tree_update(owned, pgid, ps_cmd):
+    """Grow owned {pid: start} from one ps listing; return (live owned pids, their summed RSS KiB)."""
+    rows = ps_tree_rows(ps_cmd)
+    grown = True
+    while grown:
+        grown = False
+        for pid, (ppid, pg, _, stat, start) in rows.items():
+            if pid in owned or stat.startswith("Z"): continue
+            if pg == pgid or (ppid in owned and owned[ppid] == rows.get(ppid, (0, 0, 0, "", None))[4]):
+                owned[pid] = start; grown = True
+    live = [pid for pid, start in owned.items() if pid in rows and rows[pid][4] == start and not rows[pid][3].startswith("Z")]
+    return live, sum(rows[pid][2] for pid in live)
+
+def kill_owned(owned, pgid, ps_cmd, sig):
+    try: os.killpg(pgid, sig)
+    except (ProcessLookupError, PermissionError): pass
+    try: live, _ = tree_update(owned, pgid, ps_cmd)
+    except Exception: live = list(owned)
+    for pid in live:
+        try: os.kill(pid, sig)
+        except (ProcessLookupError, PermissionError): pass
+
 def dir_bytes(d):
     s = 0
     for root, _, files in os.walk(d):
@@ -67,6 +107,7 @@ def main():
     for k in ("cpu", "wall", "rss-mib", "file-mib", "disk-mib"): ap.add_argument("--" + k, type=int, required=True)
     ap.add_argument("--min-free-mib", type=int, default=1024); ap.add_argument("--launch-free-mib", type=int, default=4096)
     ap.add_argument("--swap-growth-mib", type=int, default=256)
+    ap.add_argument("--track-tree", action="store_true")
     ap.add_argument("cmd", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     cmd = a.cmd[1:] if a.cmd and a.cmd[0] == "--" else a.cmd
@@ -104,12 +145,18 @@ def main():
     except Exception as e:
         return finish("REFUSED", extra={"spawn_error": repr(e)})
     pgid = p.pid
+    owned = {}                                           # L1119 --track-tree: {pid: start time}
     t0 = time.time(); reason = None; samples = []; mx = {"rss_kib": 0, "procs": 0, "disk_bytes": 0, "swap_growth_mib": 0.0, "min_free_mib": free0}
-    while p.poll() is None:
-        time.sleep(1)
+    try:
+      while p.poll() is None:
+        time.sleep(0.5 if a.track_tree else 1)
         if p.poll() is not None: break
         try:
-            rss, n = group_rss_kib(pgid, ps_cmd); fr = vm_free_mib(); sg = swap_used_mib() - swap0; db = dir_bytes(a.out)
+            if a.track_tree:
+                live, rss = tree_update(owned, pgid, ps_cmd); n = len(live)
+            else:
+                rss, n = group_rss_kib(pgid, ps_cmd)
+            fr = vm_free_mib(); sg = swap_used_mib() - swap0; db = dir_bytes(a.out)
         except Exception as e:
             reason = "MONITOR_FAILURE"; rec["monitor_error"] = repr(e); break
         mx["rss_kib"] = max(mx["rss_kib"], rss); mx["procs"] = max(mx["procs"], n); mx["disk_bytes"] = max(mx["disk_bytes"], db)
@@ -119,8 +166,13 @@ def main():
         if fr < minfree or sg > a.swap_growth_mib: reason = "PRESSURE_STOP"; break
         if db > a.disk_mib * MIB: reason = "DISK_STOP"; break
         if time.time() - t0 > a.wall: reason = "WALL_STOP"; break
+    except BaseException as e:                           # L1119: a supervisor exception still stops the child's tree
+        reason = "MONITOR_FAILURE"; rec["monitor_error"] = repr(e)
     cleanup = None
     def group_left():                                   # live (non-zombie) processes still in the group
+        if a.track_tree:                                 # L1119: the whole owned set, group members included
+            try: return len(tree_update(owned, pgid, ps_cmd)[0])
+            except Exception as e: return f"unverified: {e!r}"
         try:
             n = 0
             result = subprocess.run(["ps", "-A", "-o", "pgid=,stat="], capture_output=True, text=True, timeout=5)
@@ -143,19 +195,24 @@ def main():
         reason_leftover = False
     if reason or reason_leftover:
         sig = "TERM"
-        try: os.killpg(pgid, signal.SIGTERM)
-        except (ProcessLookupError, PermissionError): pass
+        if a.track_tree: kill_owned(owned, pgid, ps_cmd, signal.SIGTERM)
+        else:
+            try: os.killpg(pgid, signal.SIGTERM)
+            except (ProcessLookupError, PermissionError): pass
         deadline = time.time() + 5                       # wait for the WHOLE group, not just the direct child
         while time.time() < deadline and group_left() != 0:
             p.poll(); time.sleep(0.2)                          # reap the direct child as soon as it exits
         if group_left() != 0:
             sig = "TERM+KILL"
-            try: os.killpg(pgid, signal.SIGKILL)
-            except (ProcessLookupError, PermissionError) as e: sig += f" ({type(e).__name__})"
+            if a.track_tree: kill_owned(owned, pgid, ps_cmd, signal.SIGKILL)
+            else:
+                try: os.killpg(pgid, signal.SIGKILL)
+                except (ProcessLookupError, PermissionError) as e: sig += f" ({type(e).__name__})"
             time.sleep(0.5)
         try: p.wait(timeout=5)
         except subprocess.TimeoutExpired: pass
         cleanup = {"signal": sig, "group_processes_left": group_left()}
+        if a.track_tree: cleanup["owned_seen"] = len(owned)
     rc = p.returncode
     out.close(); err.close()
     if not reason and reason_leftover:
