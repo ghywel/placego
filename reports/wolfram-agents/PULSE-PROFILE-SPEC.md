@@ -144,3 +144,7 @@ GC2046 attempt1 failed at pulse_source_white_black's final omega step. The prece
 Boolean conditionals unreduced; the diagnostic did not refute the weight identity. Replace it with the full
 simp call for those same supplied Boolean hypotheses. This is the one specific diagnostic-driven repair;
 retain attempt1 output and compile revision2 under the already frozen same caps. No scope or limit increase.
+
+GC2047 outcome: revision08581b6d passes attempt2,23 total theorems. Cyclic source-weight/run count and all three
+cases/heavy-source corollary are now formal; actual periodic holes/reset delays are still unimplemented.
+Failure1 and both capped receipts are retained by digest in the source README. No extra attempt was taken.

@@ -1778,3 +1778,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2043: [pulse-profile delivery specification](reports/wolfram-agents/PULSE-PROFILE-SPEC.md): reviewed base weight/debt identities assembled in left-diagonal coordinates; constant guards and birth-extension exclusions explicit. Not formalized or novelty-cleared; GPT writing, Local scope review requested.
 
 - GC2045: [pulse core implementation status](reports/wolfram-agents/submissions/pulse-profiles/README.md):12 core Lean theorems pass first capped Intel compile; cyclic count and actual delay bridge still missing. No submission or current-kit validation.
+
+- GC2047: [pulse cyclic weight proof](reports/wolfram-agents/submissions/pulse-profiles/README.md):23 core Lean declarations compile after one retained simplifier repair; seam/toggle identity proves exact source weights and heavy-source two-run corollary. Actual periodic hole/delay bridge remains pending.

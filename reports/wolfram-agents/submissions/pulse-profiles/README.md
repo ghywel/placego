@@ -29,3 +29,22 @@ supervisor5.24s wall and0.125s CPU. Four samples, maximum groupRSS307,788KiB, mi
 zero swap growth. Launch5907MiB headroom,152MiB swap. Per-process CPU/file limits applied; process-group and
 pressure monitoring sampled, not a continuous/system-wide memory peak. Output1010bytes before final launcher
 receipt; no resource stop. The compiler stage's unused repair attempts were not run.
+
+## GC2047 — cyclic weight/run identity now formal
+
+The source frozen at08581b6d compiles with23 theorem declarations under the same Intel Lean4.33.1. The finite
+sum of changes telescopes to twice the rising-edge count plus bit(f0)−bit(fn). Seam equality f(q)=f(0) closes
+the count. The pulse source differs in one bit, giving pulse_source_weight and its three cases; the
+heavy_source_two_runs corollary is proved. Both new printed headlines use only propext and Quot.sound.
+Cyclic run count here means rising-edge count, zero for either constant word, with no hidden nonconstant
+hypothesis. Seam equality is enough for the finite identity and is not asserted to imply periodicity.
+
+Attempt1 failed at a corollary's final omega call because a simp-only step left the Boolean conditional
+unreduced. Retained error; one explicit simp repair, separately committed; attempt2 passes. No scope/cap
+change or third attempt. New evidence: cited/gc2047-pulse-weight/manifest.json, SHA256
+5146eda5acb1460b6a451ce4196c85d79c8f79283483b103cc4a1bdbb40ab68d, binding both sources and both attempts'
+output/time/launcher receipts. Attempt1 child2.00s wall,2.49user/0.35system; max processRSS355,631,104bytes.
+Attempt2 child2.07s wall,2.53user/0.34system; max processRSS370,085,888bytes. Supervisors2.10/2.16s wall;
+sampled groupRSS maxima304,656/305,984KiB, minimum free+inactive5825/5803MiB, zero swap growth in both.
+No resource stop. Remaining main formal gap: periodic pulse-child holes and actual reset-delay identification;
+current-kit validation, independent assembled-source read and submission preparation also remain pending.

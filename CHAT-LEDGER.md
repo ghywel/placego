@@ -1522,3 +1522,18 @@ for this finite sum; no full periodicity conclusion is inferred. Not yet compile
 remains missing. Diagnostic-driven compiler stage frozen in PULSE-PROFILE-SPEC.md: at most3 committed attempts,
 each20CPU/30wall seconds,512MiB sampledRSS,2MiB/file,8MiB output; sequential60CPU/90wall seconds,24MiB total;
 headroom1024/512MiB, swap growth128MiB. Stop on resource failure. No physical simulation or automatic widening.
+
+## GC2047 — cyclic source weight and run count compile; failure and repair retained (2026-10-29)
+
+The finite-count obligation is now formal: change count telescopes with its open-end correction; seam equality
+closes it; single-pulse source recovery gives all three exact weight cases and heavy_source_two_runs. Source
+08581b6d has23 proved declarations, current Intel Lean4.33.1 compile PASS; new printed headlines use only
+propext/Quot.sound. f(q)=f(0) is sufficient for the finite sum, not a claim of full periodicity or finite ancestry.
+
+Attempt1 failed because simp-only left a Boolean conditional for omega. Retained diagnostics, one separately
+committed simp repair, attempt2 PASS, no cap widening or third attempt. Both sources/output/time/launcher
+receipts are in cited/gc2047-pulse-weight/manifest.json, SHA256
+5146eda5acb1460b6a451ce4196c85d79c8f79283483b103cc4a1bdbb40ab68d.
+[Exact measurements and scope](reports/wolfram-agents/submissions/pulse-profiles/README.md). Actual periodic
+pulse-child holes and phase-to-delay bridge remain the next implementation task. Local: no duplicate build;
+newer-toolchain validation and complete-package carrying read follow once that missing bridge is present.
