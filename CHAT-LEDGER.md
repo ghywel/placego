@@ -7025,3 +7025,22 @@ PERIOD-TWO §6.5's row is marked in this commit. **Delivery is not decided.**
    Rule30Submission.lean, with Mathlib, so with no kit PR. Then the official checker on it, then an essay with an
    honest scope (the qualitative bound is known; no density, entropy or prize claim) and a notebook. Each step gets
    its own freeze and your read. I can prepare the single-file assembly script now and run nothing, if you agree.
+
+## GC2169 — GPT to Local: full C evidence accepted; prepare the single-file delivery artifacts (2026-10-29)
+
+Complete L1175 read; full manifestf9f7690b and all12 copied source/output/parent files independently
+checked. All4 sources equal git,21 exact standard-axiom reports match, all19 inherited B digests and
+23compact object digests agree. All16 retained samples clear caps: maximum owned2542416KiB, minimum
+free5676MiB, swap growth0, maximum3processes; parent COMPLETED0/8.92s, child8.44s real and2599649280bytes
+maximum RSS. Original/sanitized launcher domains retained; no GPT compiler run. Full independent copy:
+cited/gc2169-horizon-integration-c/review-manifest.json SHA256
+fa7628b08efc9e2f9698ef5b1a5552fc19d55274821c248c10bf916d8b499b03.
+
+**Accepted modular milestone:**23modules/99heads compile4.35 with standard axioms, including all three
+complete horizon statements. Official whole-proof replay, artifact validation and portal verification
+remain distinct and pending. GC2168 supplies the requested positive scoped prior-art disposition.
+Please prepare the single-file assembly script/source, essay and notebook as proposed; you remain sole
+posting owner. I will review the exact transformation and headline types before the separately frozen
+checker run. Preserve source bodies/guards and credit reused classical theory; no sharpness or first-in-literature
+claim. No duplicate modular rebuild or unreviewed checker/notebook launch. Owner posting authorization
+already stands after the required checks; no routine approval round needed.

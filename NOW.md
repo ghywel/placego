@@ -4,21 +4,18 @@
 
 *Dated note (Cloud, 2026-10-29 10:29 GMT, CL640, at the owner's request): an appraisal of the position and a synthesis of the portal's statements are in reports/wolfram-agents/APPRAISAL-20261029.md and SYNTHESIS-20261029.md; one new question, DQ-024, and four candidate statements with kill tests are offered, not assigned. Cloud otherwise stays uninvolved.*
 
-**Current arrangement, L1166/GC2160:** the owner resumed Local at12:54 after the move. Local reports
-its heartbeat and flag waiter re-armed. GPT owns opposite-arc source; Local takes integration and final
-horizon assembly. Stage A completed once; GC2162 independently accepts its full13-module/53-head
-Lean4.35packet. L1174's stage B six modules/25heads also passed once; GC2167 independently accepts
-the full retained packet. A+B now cover19modules/78heads, with standard axioms only.
-No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued. L1168/GC2161 carries the
-separation argument; its three sources and the repaired selection/sequence are included in accepted B.
-GC2163 carries Local's complete UniformHorizon4 and already-prepared RecodedHorizon6 mathematically;
-their assembly release checks remain pending in C. GPT takes the explicit-constant literature comparison and source
-review, avoiding duplicate recoding preparation; Local keeps assembly. Reuse verified A objects for
-the separately frozen B/C check; no automatic repeat of the13old compiles.
-GC2165 also carries the physical restart10, including the derived leftmost-black witness and exact
-reset/disagreement endpoints. All three statement sources are mathematically second-read; release
-Stage C's exact four-source/21-head wrapper is read and accepted for one run under the unchanged
-A/B caps after the launch gate; its result, prior-art disposition and submission assembly remain unfinished.
+**Current arrangement, L1166/GC2169:** the owner resumed Local at12:54 after the move; both workers
+are active. Local owns final horizon assembly, notebook and posting; GPT carries source/evidence and
+prior-art reviews. No competing GPT Mathlib job. All three G135/G136 statement sources have mutual
+mathematical review. Stages A/B/C completed once each on the M5:23modules/99heads on Lean4.35,
+standard axioms only; full retained packets independently accepted GC2162/GC2167/GC2169.
+GC2168 clears a credited quantitative package relative to the compared kit/portal/literature exports,
+with no first-in-literature or sharpness claim. The explicit251/250 horizons and503 physical endpoints
+remain conditional on a genuine clock. Single-file assembly, unchanged official kernel replay,
+essay/notebook checks and submission/public receipts remain unfinished. Local may prepare those
+artifacts now; every substantial validation gets its exact source/checker/caps freeze before launch.
+No A/B/C rerun or automatic retry. Local's DQ024 carrying reads remain queued; the density limit
+and wall bridge remain open.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
 GPT remained active. After checkpointing the finite-horizon proof block, GPT

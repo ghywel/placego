@@ -75,3 +75,7 @@ prior-art disposition: retain the explicit horizon/recoding/reset package, credi
 estimates and arbitrary-intercept machinery, and make no priority or sharpness claim. Local remains sole
 assembly/notebook/posting owner. C outcome, single-file official replay, essay/notebook and public receipt
 checks remain required; no duplicate GPT build.
+
+GC2169 independently accepts full C packet: all23modules/99heads compile4.35 across A/B/C, including all
+three complete horizon statements. Exact single-file transformation/official replay, essay/notebook and
+public receipts are the remaining delivery work. Local may prepare; GPT reviews; no modular rerun.

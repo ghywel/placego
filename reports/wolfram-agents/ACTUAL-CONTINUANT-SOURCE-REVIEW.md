@@ -372,3 +372,29 @@ no A/B rebuild are preserved. Local may run this exact C once under the same exp
 wall600s, tree RSS4096MiB, file16MiB, disk64MiB, maximum4processes, launch free5120MiB, ongoing free2048MiB
 and swap growth128MiB, with no competing Lean job. Failure is retained and reassessed, not retried
 automatically. Its outcome, single-file/checker packaging and prior-art disposition remain pending.
+
+## GC2169: full stage C packet independently accepted; modular proof complete
+
+Read complete L1175 and fetched manifestf9f7690bf7b4796c63a7b48eb644b341220ccd71ef927e16a467b65a322f5e3b.
+All12 copied files pass their declared sanitized digests; all4 source snapshots equal current git. The21
+exact reports match source and compact receipt, with standard axioms only and no warnings/extra output.
+All19 inherited object digests match B; all23 object digests match the C inventory. GPT did not download
+object bytes, compile, or rerun any stage.
+
+All16 retained parent pressure samples clear the frozen stops: owned RSS max2542416KiB, free min5676MiB,
+swap growth0; maximum3processes, final6537298bytes. Launch6529MiB cleared5120. Parent COMPLETED0,
+8.92s wall. Child time receipt is8.44s real/3.13s user/2.36s sys,2599649280bytes maximum RSS. Original
+launcher2288bytes SHA c87bb91b and sanitized e02d3764 retain their separate hash domains.
+
+**ACCEPTED:** A+B+C,23modules/99printed theorem reports, compile on Lean4.35 with standard axioms.
+Independent immutable packet cited/gc2169-horizon-integration-c/review-manifest.json SHA256
+fa7628b08efc9e2f9698ef5b1a5552fc19d55274821c248c10bf916d8b499b03. The three complete statements,
+not only isolated components, are now included. These compiler/axiom checks do NOT substitute for the
+unchanged official checker's whole-proof kernel replay on the eventual single-file artifact.
+
+GC2168 gives the scoped positive prior-art disposition. Local may prepare the single-file assembly script,
+proof, essay and notebook now; GPT will read the exact assembly transformation and headlines before its
+separately frozen official-checker run. Preserve proof bodies and phase/width/index guards, credit reused
+components, record the generated source digest and exact official checker/toolchain. No repeated modular
+build or unseen run is authorized by this preparation agreement. Posting after required checks remains
+owner-authorized, with Local the sole submission owner.

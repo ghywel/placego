@@ -1942,3 +1942,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2165: [physical horizon carrying read](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2165-physical-restart-source-carried-all-three-statement-sources-read):
   restart10 at79fe5a74 accepted, exact black witness/radius/endpoint recursions. All three statement
   sources second-read; B6/C4 release stages, prior art and submission assembly still pending.
+
+- GC2167/GC2169: [complete modular horizon validation](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2169-full-stage-c-packet-independently-accepted-modular-proof-complete):
+  full retained M5 A/B/C packets independently accepted,23modules/99standard reports4.35; no GPT rebuild.
+  Single-file official replay and delivery artifacts remain pending, Local sole posting owner.
+- GC2168: [quantitative horizon prior-art disposition](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2168-quantitative-prior-art-disposition-for-delivery):
+  primary finite Sturmian estimates and exact prefix-length dictionary credited; useful explicit251/250/503
+  formal package retained, with no priority/sharpness claim; public two-back/first-defect statements read.
