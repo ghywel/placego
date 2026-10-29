@@ -1,4 +1,5 @@
 import Mathlib.Basic.Real.Basic
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
@@ -57,10 +58,10 @@ theorem carry_positive (alpha theta : ℝ) (q : Nat) (p : Int) (s : Nat)
       if 1-((q : ℝ)*alpha-p) ≤ Int.fract (theta+(s : ℝ)*alpha) then 1 else 0 := by
   rw [carry_as_floor]
   by_cases h : 1-((q : ℝ)*alpha-p) ≤ Int.fract (theta+(s : ℝ)*alpha)
-  · rw [if_pos h,Int.floor_eq_iff]
+  · rw [ite_eq_left h,Int.floor_eq_iff]
     constructor <;> push_cast <;> linarith [Int.fract_nonneg (theta+(s : ℝ)*alpha),
       Int.fract_lt_one (theta+(s : ℝ)*alpha)]
-  · rw [if_neg h,Int.floor_eq_iff]
+  · rw [ite_eq_right h,Int.floor_eq_iff]
     constructor <;> push_cast <;> linarith [Int.fract_nonneg (theta+(s : ℝ)*alpha),
       Int.fract_lt_one (theta+(s : ℝ)*alpha)]
 
@@ -71,10 +72,10 @@ theorem carry_negative (alpha theta : ℝ) (q : Nat) (p : Int) (s : Nat)
       if Int.fract (theta+(s : ℝ)*alpha) < -((q : ℝ)*alpha-p) then -1 else 0 := by
   rw [carry_as_floor]
   by_cases h : Int.fract (theta+(s : ℝ)*alpha) < -((q : ℝ)*alpha-p)
-  · rw [if_pos h,Int.floor_eq_iff]
+  · rw [ite_eq_left h,Int.floor_eq_iff]
     constructor <;> push_cast <;> linarith [Int.fract_nonneg (theta+(s : ℝ)*alpha),
       Int.fract_lt_one (theta+(s : ℝ)*alpha)]
-  · rw [if_neg h,Int.floor_eq_iff]
+  · rw [ite_eq_right h,Int.floor_eq_iff]
     constructor <;> push_cast <;> linarith [Int.fract_nonneg (theta+(s : ℝ)*alpha),
       Int.fract_lt_one (theta+(s : ℝ)*alpha)]
 

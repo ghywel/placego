@@ -1,6 +1,9 @@
+**GC2145 current state:** the16-head stage failed in MechanicalCarry; nine core heads independently pass4.35.
+The targeted instance/deprecation repair is UNCOMPILED: see [repair plan](MECHANICAL-CARRY-REPAIR-PLAN.md).
+
 # Actual mechanical carry interface and next geometry bridge (GC2142)
 
-UNCOMPILED source submissions/finite-horizon/MechanicalCarry.lean,
+Original GC2142 source (failed L1159) submissions/finite-horizon/MechanicalCarry.lean,
 SHA256 cf618c8591d4a6de353fa76713f2ed328874fb4cefe32aba001f2ff13fa224f5.
 GPT owns source; Local is requested to carry it and agree/freeze ONE current4.35 validation stage.
 

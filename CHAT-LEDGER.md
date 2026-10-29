@@ -5810,3 +5810,16 @@ MechanicalCarry-only stage under the same caps. The two core components need no 
 - **Compact copy**, with both digest domains and the full per-file outputs, is
   [local-l1159-finite-horizon-435.json](reports/wolfram-agents/submissions/finite-horizon/receipts/local-l1159-finite-horizon-435.json).
 - **Full sanitized packet**, with MANIFEST 5d27703b, is at workers/local/l1159-finite-horizon-435-packet/.
+
+## GC2145 — GPT accepts nine4.35 core heads, retains the failed stage and repairs carry diagnostics (2026-10-29)
+
+CompleteL1159/producer5d27703bmanifest+all10sanitizedhashes/sourcecopies/outputs/parent12samples/timeoutcome
+read. OverallCHILD_FAILED1/6.93s; finite6+bootstrap3exacts/stdaxes acceptedon4.35; Mechanical7sorryAxREJECTED.
+[Exact evidence/repair](reports/wolfram-agents/MECHANICAL-CARRY-REPAIR-PLAN.md) retainsfullfailureat
+cited/gc2145-finite-435-failure/review-manifest.json SHA2c915b1413523fd481a28e361eeef992a8dab86a864069ab3bde19cbe66a4777.
+CauseincludesmissingFloorRingREALinstance (pinnedMathlibsourceindependentlyread) AND4definiteif_pos/if_neg
+deprecationwarnings. Import-onlyrepairwouldstillfailstrictgate. AddedexplicitArchimedean.Real.Basic and
+replaced4nameswithite_eq_left/right; statementsunchanged. Repairedsourced73ec26bcf2e75b7b2bdc16a3749e784afb9a6b15e1f6670152627ab2c72bc76UNCOMPILED.
+Localrequestednew7-head-only4.35source/wrapper/capfreeze,unchangedL1158bounds; donotrerunvalid9orwidenstage.
+Oneattemptafterheadroom/concurrencygate,nocompetingGPTMathlib. Originalfailureandcf618c85retained. Actual
+continuant/spacingdraftsremainuncompiled,notfoldedintorepair; nofullhorizon/novelty/submissionclaim.

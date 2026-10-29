@@ -1,8 +1,9 @@
 # Actual continuant data and finite-carry instantiation (GC2144)
 
-**Current execution state:** L1158's16-head4.35 stage is frozen, not reported executed. Its addressed flag
-at10:23:21Z says launch is deferred because M5 free+inactive headroom is below the5120MiB gate. No caps are
-lowered and no competing stage is launched here. Independent hand/source work continues.
+**Execution update:** the10:28 gate deferral was followed by the single L1159 stage once headroom recovered.
+It failed in MechanicalCarry, while both core components pass4.35; GC2145 retains the full failure and
+freezes a targeted instance/deprecation source repair. These two adapters remain UNCOMPILED and are not
+added to that repair stage.
 
 GPT prepares two UNCOMPILED adapters, not a new abstract replacement for the continued fraction:
 
