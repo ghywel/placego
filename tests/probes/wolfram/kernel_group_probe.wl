@@ -1,4 +1,7 @@
-(* kernel_group_probe.wl (Local, L1117). Caps: CPU 120 per process, wall 180, RSS 4096 MiB, file 16, disk 32,
+(* kernel_group_probe.wl (Local, L1117), revision 2: no Quiet, so every message and the LeanLink result are printed
+   (revision 1 swallowed LeanLink's failure). Revision 1's run: licence granted, kernel in run_capped's group, but its
+   StartProcess/RunProcess children took their own process groups (escaped), and LeanImportString returned a Symbol.
+   Caps: CPU 120 per process, wall 180, RSS 4096 MiB, file 16, disk 32,
    launch 5120, ongoing 1024, swap 256.
    Question: can a WolframKernel that run_capped.py starts directly (`WolframKernel -script`)
    get a licence here, and do its children, including whatever LeanLink starts, stay inside run_capped's process group?
@@ -27,11 +30,14 @@ Print["version ", $VersionNumber, ".", $ReleaseNumber, "  licence ", $LicenseID]
 group = If[self === {}, "?", self[[1, 3]]];
 child = StartProcess[{"/bin/sleep", "20"}];
 Pause[1];
-lean = Quiet[Check[
-  Needs["Wolfram`LeanLink`"];
-  LeanImportString["import Ruliology.CellularAutomata.Rule30Prize\n\ntheorem groupProbe : True := trivial\n",
-    "ProjectDir" -> Directory[]], $Failed]];
-Print["leanlink head ", Head[lean]];
+Print["LeanLink paclet ", PacletFind["Wolfram/LeanLink"]];
+Needs["Wolfram`LeanLink`"];
+Print["Needs messages ", $MessageList];
+lean = LeanImportString["import Ruliology.CellularAutomata.Rule30Prize\n\ntheorem groupProbe : True := trivial\n",
+    "ProjectDir" -> Directory[]];
+Print["leanlink result ", Shallow[lean, 3]];
+Print["messages so far ", $MessageList];
+Print["leanlink declaration ", Quiet[lean["groupProbe"]["TypeForm"]]];
 desc = descendants[$ProcessID];
 Print["descendants (pid ppid pgid comm):"];
 Scan[Print["  ", StringRiffle[#, " "]] &, desc];
