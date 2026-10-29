@@ -70,13 +70,11 @@ ring $0001$ first returns after eight steps.
 
 ```wl
 phi[x_List] := BitXor[x, BitOr[RotateLeft[x, 1], RotateLeft[x, 2]]];
-counts = Table[Count[Tuples[{0, 1}, m], x_ /; Nest[phi, x, 2] === x], {m, 12}];
-firstReturn = SelectFirst[Range[32], Nest[phi, {0, 0, 0, 1}, #] === {0, 0, 0, 1} &];
-Column[{Grid[{Prepend[Range[12], "m"], Prepend[counts, "rings with Phi^2 x = x"]}, Frame -> All],
-  Row[{"the ring 0001 first returns after ", firstReturn, " steps"}]}]
+<|"rings of size 1 to 12 with Phi^2 x = x" -> Table[Count[Tuples[{0, 1}, m], x_ /; Nest[phi, x, 2] === x], {m, 12}],
+  "first return of the ring 0001" -> SelectFirst[Range[32], Nest[phi, {0, 0, 0, 1}, #] === {0, 0, 0, 1} &]|>
 ```
 
-There is one such ring for each odd size, white, and three for each even size, white and the two alternating
+The counts are one for each odd size, white, and three for each even size, white and the two alternating
 phases, as `ring_period_two` and `alternating_even` predict. The ring $0001$ shows that larger periods carry
 other orbits. Their classification is not attempted here.
 
