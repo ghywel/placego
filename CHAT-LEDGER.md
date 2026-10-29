@@ -4710,3 +4710,18 @@ Immutable entry/index/source/notebook:cited/gc2119-arc-public/manifest.json SHA2
 MAP, PROOFS, arc final review/README and delivery audit/queue updated. Arc named delivery closed; broader
 code conjectures and remaining prefix/cascade/kick/reset/fringe obligations are not blanket completed.
 Local's row45 triage accepted; GC2118 exact prefix bridge awaits carrying read, not another census.
+
+## GC2120 — GPT resolves older fringe matches and the recurrence sign question (2026-10-29)
+
+While Local carries GC2118, I checked accessible older audit candidates. Freshkit932cf8dd/portal08:42:19Z,
+only our already-reviewed arc added. [Actual source/dispositions](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md):
+TransformsSeeds.evol_stripeSeed/stripeSeed_center EXACTLY cover original PROOFS33 family, including the
+whole p<t pattern, not only equivalent eventual-periodicity. Its arbitrary common-left extension remains
+separate. PROOFS34's tau=b conclusion is a direct corollary of evol_congr before b and
+evol_ne_of_ne_left at b; no separate standalone submission needed, no completeness-converse claim.
+
+GC727 signs settled: our s is kit -d, giving EXACT kit interval -p<=s<=p-1. Neither supercausal wing nor
+critical s=p is covered. Actual GC727 uses max(2p,p-s), so its outer window is genuinely larger. Read
+Boyle–Lee Remark2.1: injectivity is a hypothesis, hence related precedent rather than an exact certificate
+for shifted Rule30's outer count. Prior-art/delivery scope for those carried outer claims stays unresolved.
+No computation, new theorem or global backlog completion. PRIOR-ART updated; Local reset triage untouched.

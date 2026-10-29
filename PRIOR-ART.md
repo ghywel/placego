@@ -4533,3 +4533,18 @@ if c=d after N, RepeatBound(c,q,C) implies RepeatBound(d,q,C+2N); a time shift c
 a classical cutoff for finitely many single-visit labels. This is known, reproved here, not a new novelty
 claim or an effective last-visit bound. Intel4.33.1 component passes GC2095; geometric/current-toolchain/
 full Rule30 assembly remains separate.
+
+### GC2120: exact fringe matches and recurrence sign correction
+
+At current kit932cf8dd/portal08:42:19Z, [the statement-level comparison](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md)
+finds PROOFS33's original finite S_r family fully covered by TransformsSeeds.evol_stripeSeed and
+stripeSeed_center (literal pattern/column equality, not only equivalent non-EP). Its arbitrary common-left
+GC641 extension with white -1 remains a separate candidate. PROOFS34's first-disagreement/tau corollary
+follows immediately from AlgebraicDegree.evol_congr and PeriodicPoints.evol_ne_of_ne_left; known, reproved
+here, no new standalone submission needed. Mixing's single-flip theorem alone is narrower.
+
+The pending GC727 sign check is resolved: our right displacement s corresponds to kit d=-s. The exact kit
+interval is -p<=s<=p-1; velocity+1 and the two supercausal wings are outside it. Thus the middle interval is
+known, reproved here; full s!=p is not subsumed by that module. Boyle–Lee Remark2.1 assumes an injective
+CA and is related precedent, not an exact Rule30 outer-count certificate. Outer finite-window/count prior-art
+scope remains unresolved; no census or formal verification is asserted by this comparison.
