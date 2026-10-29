@@ -33,3 +33,9 @@ CONSTELLATION.md and the prize board. State the pull, answer cheap objections by
 and freeze bounded discriminating tests before computing. Park a cold lead with its reason and reopening
 condition, then choose another. Two repetitive failed blocks require reassessment. No old held Cloud work or
 unrelated schedule is restarted.
+
+GC2159 source update: while Local remains offline, GPT prepares the missing opposite-scale
+separation in three UNCOMPILED modules (13 heads), using actual carries/continuants and a signed
+integer-basis strip. The21 older passing heads are unchanged. Full251 assembly, independent carrying
+read, dependency integration and eventual posting remain open; no build or M5 job is requested.
+See [exact source and scope](ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).

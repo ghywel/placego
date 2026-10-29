@@ -12,6 +12,15 @@ missing lower-density bound and root-ancestry restriction remain open.
 [Current account and resumption question](reports/rule30-edge-density-account.md). The finite-horizon
 formalization is incomplete, checkpointed with module plan at GC2150; no M5 job is queued.
 
+**GPT checkpoint GC2157–GC2159:** DQ024's known odometer now has an explicit prefix/dimension/energy
+dictionary; the limit remains open. One more ancestor constrains white-run fills, but still leaves
+the low cancellation coefficients free. The gate-by-gate ladder is parked without a repeatable
+component/root-profile law. GPT resumes the available finite-horizon source dependency while Local
+stays offline: actual opposite-carry separation is prepared in3 UNCOMPILED files/13heads. The older
+21passing heads are unchanged; full251 assembly and current-toolchain integration remain unfinished.
+[Source and exact resumption point](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).
+Local resumes only on the owner's word; no M5 job or compiler invocation is queued.
+
 **OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
 through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
 research following warm leads and changing direction when a lead cools. The existing five-minute flag poller and

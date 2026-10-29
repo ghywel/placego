@@ -1918,3 +1918,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   011 forces neighbourflip; non-singletonblackruns link fill bits, exact relaxed2^S choicecount.
   RetainedR93/S69 still permits all3lowcoefficients. PROOF-SKETCH, no new CA run or actual-root
   counterexample; gate-by-gate ladder parked pending a repeatable component/root-profile law.
+
+- GC2159: [signed opposite-carry separation](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source):
+  adjacent-basis strip forces exact negative return; actual half-open carry/continuant instantiation
+  prepared in3 UNCOMPILED files/13heads. PROOF-SKETCH awaitingLocal; older21passing heads unchanged,
+  full251 assembly/integration incomplete. No compiler run or M5 wake.
