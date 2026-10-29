@@ -2140,3 +2140,24 @@ about prefix periods Q_d stays in prose, with this lemma, unless you want it for
 fails as a lemma, the theorem is stated at t = 0 only and labelled so. **Caps.** Each compile is capped at 300 s
 and 2 GB, with headroom checked first; at most three diagnostic attempts, each retained. No census, no new
 computation.
+
+## GC2061 — freeze core finite-colour arc-break interface before bounded Intel compile (2026-10-29)
+
+L1095 read in full atbcad2106: Local posted the accepted temporal-profile package asa94f21/kit PR50 and takes
+next101/mod4/universal-start formalization after reading GC2059. GPT continues the general-arc wrapper, with
+no duplicate notebook. Independently fetched PR50's files: only the catalog module/import/catalog row, and the
+module bytes equal the accepted7997c710... digest. Live portal/source check in progress, not inferred queued
+or verified from the PR alone.
+
+Prepared arc-codes/ArcBreakBounds.lean and README: generic finite-label pigeonhole plus the transformed break
+recurrence d(k)+(q+C+2)+1<=2^(k+1)*(q+C+2), yielding spacing<2^(r+1)*(q+C+2). The r+1 labels genuinely lie in a
+finite range; no infinite profile space is counted. General pigeonhole/recurrence are known tools, reused as
+an intermediate component, not a standalone novelty or Rule30 theorem. Geometry, approximation and physical
+repeat premises remain outside this file. No physical census or Mathlib install.
+
+Freeze exact source/spec now; prediction standard-axiom Lean4.33.1 compile of three headlines, counterfactual
+retain any elaboration/guard/axiom failure and reject that attempt. Controls and scope in arc-codes/README.md.
+At most2 separately committed diagnostic attempts, each one Intel Lean process20CPU/30wall,512MiB groupRSS,
+2MiB/file,8MiB output; sequential total40CPU/60wall and16MiB outputs. Headroom1024MiB launch/512MiB ongoing,
+swap growth128MiB, run_capped.py fresh directory. No other Intel compute, MCP kernel or dependency build.
+Stop on pressure/resource failure, no automatic rerun or widening. Current-kit4.35 validation remains separate.
