@@ -1,0 +1,52 @@
+{
+ "limits": {
+  "cpu": 60,
+  "wall": 120,
+  "rss_mib": 3072,
+  "file_mib": 16,
+  "disk_mib": 16,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 128
+ },
+ "start_utc": "2026-10-29T04:08:42Z",
+ "end_utc": "2026-10-29T04:08:44Z",
+ "gate": {
+  "free_inactive_mib": 7066,
+  "swap_used_mib": 1686.81
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": 1,
+ "wall_s": 2.04,
+ "maxima": {
+  "rss_kib": 790832,
+  "procs": 4,
+  "disk_bytes": 13445,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6927
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/rename_probe.sh (at a608a1e2)",
+ "stdout": [
+  "checker sha256 b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+  "== A: stage 2 layout (control)",
+  "CAPPED_OUT/a/src/Ruliology/CellularAutomata/OverlayProbe.lean:1:0: error: object file 'CAPPED_OUT/a/lib/Ruliology/CellularAutomata/Rule30Prize.olean' of module Ruliology.CellularAutomata.Rule30Prize does not exist",
+  "A_FAILED_AS_PREDICTED",
+  "== B: renamed root",
+  "OverlayProbe.ir",
+  "OverlayProbe.ir.sig",
+  "OverlayProbe.olean",
+  "OverlayProbe.olean.private",
+  "OverlayProbe.olean.server",
+  "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead",
+  "",
+  "Note: The updated constant has a different type:",
+  "  Std.HashMap Name ConstantInfo \u2192 Kernel.Environment \u2192 IO Kernel.Environment",
+  "instead of",
+  "  Std.HashMap Name ConstantInfo \u2192 Environment \u2192 IO Environment",
+  "",
+  "Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "{\"claim\":\"partial\",\"declared\":[{\"kind\":\"theorem\",\"name\":\"Ruliology.CellularAutomata.OverlayProbe.probe\",\"standardAxioms\":true}],\"headlines\":[{\"axioms\":[],\"found\":true,\"kind\":\"theorem\",\"name\":\"Ruliology.CellularAutomata.OverlayProbe.probe\",\"ok\":true,\"problems\":[],\"typeMatches\":true}],\"importsStatements\":true,\"module\":\"UniversalStartCert.OverlayProbe\",\"newAxioms\":[],\"official\":[],\"reasons\":[],\"replay\":{\"constants\":1,\"ok\":true},\"verdict\":\"pass\",\"verifiedTargets\":[]}"
+ ],
+ "note": "A failed as predicted (stage 2's error reproduced). B compiled (olean, olean.private, olean.server, ir, ir.sig) and Check.lean returned verdict pass, replay ok. The probe's own final guard then failed: check.json begins with Check.lean's deprecation warning (Lean.Environment.replay), so json.loads of the whole file raised. The stage wrapper's guard has the same defect.",
+ "launcher_sha256": "b0b0b23caf800d2ef6e050c067a50c5e798ef84a91a70e4c109b3cd21c8098e8"
+}
