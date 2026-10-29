@@ -3358,10 +3358,12 @@ abstract claims degree growth but its full argument has not been compared. This 
 
 ### GC2028 — exact uncertainty recovery and the known lock connection
 
-[Full argument and finite certificates](reports/rule30-exact-strip-knowledge.md). PROOF-SKETCH awaiting Local:
+[Full argument and finite certificates](reports/rule30-exact-strip-knowledge.md). PROVED (hand; second-read by Local, L1143; to move out of the waiting room):
 x[0..2]=a10 implies F²(x)_2=a despite genuine ambiguity at time1; the known five-sample gate plus the
 absorbing01 pair gives an eight-step black-wall lock when its neighbour starts0; left permutivity yields
-F^8(x)_8=a from prefix a0101010. The general nine-step lock is already G.GPT271, not a new theorem.
+F^8(x)_8=a from prefix a0101010. The general nine-step lock is already G.GPT271, not a new theorem. In the kit it is
+`Rule30FiniteBlackRuns.nine_black` (every configuration), its iteration `black_shield`, and the gate is
+`Rule30ZeroBoundary.col1_five_check`.
 Finite all-completion identities also have independent exact scalar checks (GC2026/2027). Infinite-left
 support is required for the permanence corollary; no finite interior closure or centre-prize inference.
 
