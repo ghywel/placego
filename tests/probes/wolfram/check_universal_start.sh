@@ -16,18 +16,21 @@ for name, data, expected in [('module', source, expected_source), ('checker', ch
     print(name, 'sha256', digest, flush=True)
     if digest != expected:
         raise SystemExit('REFUSED: frozen ' + name + ' digest mismatch')
-module_dir = out / 'src' / 'Ruliology' / 'CellularAutomata'
+# L1112: compiled under the root UniversalStartCert, so the output lib holds no `Ruliology/` to shadow the kit's
+# built package (Lean commits to the first LEAN_PATH entry holding a module's root directory). The module's name
+# comes from its path; its declaration names come from its unchanged `namespace`.
+module_dir = out / 'src' / 'UniversalStartCert'
 module_dir.mkdir(parents=True)
-(out / 'lib' / 'Ruliology' / 'CellularAutomata').mkdir(parents=True)
+(out / 'lib' / 'UniversalStartCert').mkdir(parents=True)
 (module_dir / 'Rule30UniversalStart.lean').write_bytes(source)
 (out / 'Check.lean').write_bytes(checker)
 PY
 export LEAN_PATH="$CAPPED_OUT/lib${LEAN_PATH:+:$LEAN_PATH}"
 lean -j1 --root="$CAPPED_OUT/src" \
-  -o "$CAPPED_OUT/lib/Ruliology/CellularAutomata/Rule30UniversalStart.olean" \
-  "$CAPPED_OUT/src/Ruliology/CellularAutomata/Rule30UniversalStart.lean"
+  -o "$CAPPED_OUT/lib/UniversalStartCert/Rule30UniversalStart.olean" \
+  "$CAPPED_OUT/src/UniversalStartCert/Rule30UniversalStart.lean"
 lean -j1 --root="$CAPPED_OUT" --run "$CAPPED_OUT/Check.lean" \
-  Ruliology.CellularAutomata.Rule30UniversalStart --claim partial \
+  UniversalStartCert.Rule30UniversalStart --claim partial \
   --headline Ruliology.CellularAutomata.Rule30UniversalStart.universal_start \
   --headline Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_finite \
   --headline Ruliology.CellularAutomata.Rule30UniversalStart.universal_start_profiles \
@@ -39,7 +42,13 @@ import json, os
 p = Path(os.environ['CAPPED_OUT']) / 'check.json'
 raw = p.read_text()
 print(raw, end='')
-result = json.loads(raw)
+# L1112: `lean --run Check.lean` prints its own deprecation warning before the JSON line; parse its single JSON line.
+json_lines = [line for line in raw.splitlines() if line.startswith('{')]
+if len(json_lines) != 1:
+    raise SystemExit('FAIL: expected exactly one checker JSON line')
+result = json.loads(json_lines[0])
+if result.get('module') != 'UniversalStartCert.Rule30UniversalStart':
+    raise SystemExit('FAIL: checker module name')
 prefix = 'Ruliology.CellularAutomata.Rule30UniversalStart.'
 expected = {prefix + x for x in ['universal_start', 'universal_start_finite', 'universal_start_profiles', 'cert']}
 actual = result.get('headlines', [])

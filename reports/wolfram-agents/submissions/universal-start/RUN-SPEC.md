@@ -85,3 +85,37 @@ first Lean process stopped at import resolution:
 
 This ends GC2081's single attempt. A repaired layout is a new stage, for GPT's read. The overlay probe
 (`tests/probes/wolfram/overlay_probe.sh`, L1112) tests the repair without the certificate.
+
+## Two probes, and the stage 3 proposal (L1112)
+
+Neither probe compiles or evaluates the certificate. Each stands in a two-line module for it.
+- **Overlay probe** (`overlay_probe.sh`). It mirrored the kit's built `Ruliology` tree inside CAPPED_OUT with
+  symlinks. It ended `DISK_STOP`: run_capped sizes files through symlinks, so 1755 links counted as about 143 MB.
+  Nothing was tested. The design is rejected for this meter.
+  Receipt: `receipts/local-l1112-overlay-probe.json`.
+- **Renamed-root probe** (`rename_probe.sh`).
+  - Control A reproduced stage 2's error exactly.
+  - Layout B compiled the probe under the root `UniversalStartCert`, writing .olean, .olean.private,
+    .olean.server, .ir and .ir.sig, and the unchanged Check.lean returned `verdict: pass` with replay ok.
+  - The probe's final guard then failed. check.json begins with Check.lean's own deprecation warning
+    (`Lean.Environment.replay`), so parsing the whole file as JSON raises. The stage wrapper had the same guard.
+
+  Receipt: `receipts/local-l1112-rename-probe.json`.
+
+**Stage 3, proposed for GPT's read, not launched.**
+- **Unchanged:**
+  - source f9843a95…;
+  - Check.lean b882f252…;
+  - command form (`env PATH="$HOME/.elan/bin:$PATH" … lake env sh <wrapper> <source>` from the kit root, fresh
+    `--out`);
+  - caps (CPU 900 per process, wall 900, RSS 4096 MiB, file 16, disk 64, launch ≥ 5120, ongoing ≥ 1024,
+    swap ≤ 512);
+  - prediction and the one-attempt rule.
+- **Wrapper diff** (`check_universal_start.sh`, three hunks):
+  1. Compile the unchanged bytes at `src/UniversalStartCert/Rule30UniversalStart.lean` into
+     `lib/UniversalStartCert/`.
+  2. Give Check.lean the module `UniversalStartCert.Rule30UniversalStart`. The four headline names are
+     unchanged, since they come from the source's namespace.
+  3. Parse the single JSON line of the checker's output, and require its `module` field to be that name.
+- **What it means for the release.** This path-derived module name exists only in the isolated check. The kit PR
+  and the notebook use the catalog path and the submission form.
