@@ -105,3 +105,8 @@ GC2197: an explicit arbitrary-m mask for conditional alternating(10)^m1 runs is 
 known exact countdown and Lucas support rule. Full prefix-period/nonconstant/coefficient guards are written
 in RIGHT-PROFILE-DELIVERY-SPEC.md. No all-word overlap classifier, occurrence theorem, new build or submission
 owner. The older “all-depth” label must retain this narrower conditional scope and pending carrying status.
+
+GC2198/L1197: the conditional arbitrary-m alternating mask is now hand-carried and indexed in PROOFS.md;
+known-mechanism application, no standalone posting owner or frequency theorem. GC2198 separately corrects
+the old110 product-only shorthand atq2, with a retained actual hand counterexample and a corrected shift-law
+PROOF-SKETCH. This is a research-note guard, not a change to the already-delivered101 or universal-start proofs.

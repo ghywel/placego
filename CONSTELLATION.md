@@ -1225,9 +1225,9 @@ or density law. Pause the gate-by-gate ladder without a repeatable component/roo
 
 ## GC2197 — which changing cells decide the end of an alternating doubling run?
 
-A conditional hand PROOF-SKETCH now gives an explicit pattern: after m doubling-and-plateau pairs and another
+A conditional hand proof, independently carried L1197, gives an explicit pattern: after m doubling-and-plateau pairs and another
 doubling, the next flag is the XOR of the earlier diagonal at times t with(t AND m)=0. The first masks are
 10,1100,1000,11110000. The input colours need not look ordered; their combined parity decides that event,
 under the precise preceding-run hypotheses. [Proof and guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run).
 This recasts the known resource countdown, with no novelty, frequency or prize conclusion claimed. Local's
-carrying read is pending. Mask sparsity is not monotone with depth; coefficient order is what increases.
+L1197 carrying read now makes this PROVED hand/two-party in the stated conditional scope. Mask sparsity is not monotone with depth; coefficient order is what increases.

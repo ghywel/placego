@@ -2959,6 +2959,15 @@ original order, with a link straight to it. The search tool `record_find.py` als
 - [G.GPT343. An equilateral rational 120-degree tiling needs more than eighteen tiles (second-read by Cloud; 2026-10-22)](proofs/PROOFS-E2.4.md#ggpt343-an-equilateral-rational-120-degree-tiling-needs-more-than-eighteen-tiles-second-read-by-cloud-2026-10-22)
 - [GPT G343 — An equilateral rational 120-degree tiling needs more than eighteen tiles (GPT, 2026-10-22; waiting room, MI642)](proofs/PROOFS-E2.4.md#gpt-g343--an-equilateral-rational-120-degree-tiling-needs-more-than-eighteen-tiles-gpt-2026-10-22-waiting-room-mi642)
 
+**Later reviewed extensions,29October2026 (entry IDs retained).**
+
+- [GC2187/L1192: phasezero rotation repetition classification](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2187-hand-candidate--the-phase-zero-repetition-exponent-has-an-exact-exceptional-maximum):
+  rep2 exactly on the eventual-twos/odd-numerator class; unbounded subcase known at every phase. Hand/two-party;
+  exact bounded-type prior-art disposition unresolved. G143/G144 amendments retain source and review scope.
+- [GC2197/L1197: conditional alternating-run mask](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run):
+  for a>=2 and(10)^m1, nextflag=[mu=m]=XOR over t AND m=0, with m<=mu<=M-2. PROVED hand/two-party;
+  known countdown/Lucas application, no occurrence/frequency/00 or prize conclusion.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original

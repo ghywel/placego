@@ -153,7 +153,8 @@ ancestry must be proved, not inferred from the first two layers or finite freque
 
 ## GC2197: a binomial mask for every finite alternating run
 
-**Status: PROOF-SKETCH, new explicit conditional consequence awaiting Local's carrying read.** This uses the
+**Status: PROOF-SKETCH, new explicit conditional consequence awaiting Local's carrying read.**
+**Current review, GC2198/L1197: PROVED hand/two-party; the original sketch label is dated history.** This uses the
 known difference-order/countdown mechanism, not a new resource or density theorem. No computation, formalization,
 posting owner or novelty clearance. GC2196 announced a25-minute hand budget; the result changes the representation
 rather than starting another census. L1195's exact countdown is the key available ingredient.
@@ -271,3 +272,70 @@ Search/index receipts retained at cited/gc2197-alternating-mask/review-manifest.
 SHA25628641deecb68776c463581a9cb5df1e319cdbcbf09793c2f091f05efda185baa. The newly indexed horizon source is
 exact791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110, matching the already-reviewed release;
 no compiler/checker/notebook rerun. This is a source identity check, not a new verification claim.
+
+
+## GC2198: the110 overlap law needs its small-period constant
+
+**GC2197 review update:** complete L1197/5d202c42 and the carrying source read. Both the countdown at prefix
+period bounds and the binomial-coefficient conversion carry independently; the conditional arbitrary-m mask
+is now **PROVED (hand, two-party)**. Local also checked all seven masks and the hand guard controls. Its
+right-edge base facts are explicitly the known kit recurrence/boundary. No occurrence/frequency/00 conclusion.
+
+**New hand question:** does the old110 overlap shorthand retain the smallest allowed base? Its unguarded
+version is **REFUTED at q2 by the actual single seed**, below. The corrected all-even-q formula is a
+**PROOF-SKETCH awaiting Local's carrying read**. This is a correction to the research note, not a new
+submitted theorem or a contradiction of the delivered101 law.
+
+Let q>=2 be even, and let a,b,c,z be Boolean time profiles satisfying
+
+    a(t+q)=NOT a(t),       b(t+2q)=NOT b(t),       c(t+4q)=c(t),
+    Delta c(t)=a(t) OR b(t),       Delta z(t)=b(t) OR c(t).
+
+Write Pi_L(f)=XOR_(0<=t<L) f(t), and product bc for pointwise AND. Then the corrected shift claim is
+
+    z(t+4q)=z(t) XOR kappa, all t>=0,
+    kappa=parity(q/2) XOR Pi_(4q)(bc).
+
+For a genuine prefix110 based at q, kappa is its next doubling flag. In the dyadic case the old
+product-only shorthand is therefore valid for q>=4. At q2 the missing constant is1.
+
+**Carrying calculation.** Complementarity gives b period4q and Pi_(4q)(b)=0. For any even L and L-periodic
+c, pairing adjacent values gives Pi_L(c)=XOR_(even t<L) Delta c(t). At L=4q, pair those even ticks at2q:
+a repeats there and b complements, so each pair of a OR b contributes NOT a. There are q such pairs,
+and q is even. Pair the remaining even a samples at q, where a complements; there are q/2 pairs. Hence
+
+    Pi_(4q)(c)=parity(q/2).
+
+Pointwise b OR c=b XOR c XOR bc, so its full-period parity is exactly kappa. Its forcing is4q-periodic,
+making the full-cycle parity independent of the starting tick and giving the stated all-time shift law.
+This uses actual joint product parity; we have not proved that no alternative statistic of older profiles
+could encode it. The older finite failure to find three marginal residue parities stays a finite NOT FOUND.
+
+### Hand counterexample at the single seed's first110
+
+Time0 first, one8-tick cycle; all start bits at positive depth are0:
+
+| Profile | Word at t0..7 | Least period | Black count |
+|---|---|---|---|
+|D1=D2|01010101|2|4|
+|a=D3|00110011|4|4|
+|b=D4|00101101|8|4|
+|c=D5|00010101|8|3|
+|b AND c|00000101|divides8|2|
+|b OR c|00111101|divides8|5|
+
+The cycles are obtained by hand from Delta D_d=D_(d-1) OR D_(d-2), D0=1, D(-1)=0. Their successive forcings
+are01010101 for D3,01110111 for D4, and00111111 for D5, with the correct return at8. D3 complements at2,
+D4 at4, and D5 is8-periodic but not4-periodic. Thus x3 x4 x5=110 at baseq2. The final forcing has odd weight5,
+so D6 complements at8 and x6=1. Product-only parity is0 and predicts the wrong flag; the corrected constant
+restores1. No numerical scan, certificate or fresh dynamics run was used; these are eight explicit hand updates.
+This is consistent with the already-delivered universal start, not new universal-start evidence.
+
+Record searched:110 with overlap/product-parity, then110 with q/2 or q>=4 variants. Actual cached kit932cf8dd,
+portal16:54:35Z and21PR sources searched: prior101 constants/guarded11011 statements are different antecedents.
+The actual old report's section3 next-case paragraph has no q>=4 guard. The corrected claim is a direct
+application of its known forcing/integral parity identities, with no novelty or standalone packaging claim.
+It supplies a boundary repair, not a closed all-word/overlap classifier, a density theorem or an excuse for
+another search census.
+
+Search receipts: cited/gc2198-overlap-guard/review-manifest.json, SHA2568a33ca28052e876b474ea622e8a69ff0eb9788652a5a62177b86092db31383bf.

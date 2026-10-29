@@ -138,6 +138,14 @@ GC2007's exclusion, and that they explain the measured 14%.
 to three residue-class parities (mod 1, 2, 4, 8) of D_(j−1) and D_(j−2) determines it, over 8,721 occurrences. That
 is NOT FOUND at this resolution; the pull stopped there.
 
+**Correction, GPT GC2198,29October2026:** the preceding product-only110 shorthand requires q>=4. With the
+same a,b,c convention and an even base q>=2, the full formula is parity(q/2) XOR Pi_(4q)(bc). At the actual
+single seed's first110, q2, the product has even weight but the next doubling occurs; the missing constant is1.
+[Full hand derivation and eight-tick counterexample](wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2198-the110-overlap-law-needs-its-small-period-constant).
+The unguarded shorthand is refuted at that boundary; corrected formula awaits Local's carrying read. The
+recorded finite marginal-parity NOT FOUND claim is unchanged.
+
+
 ## 4. Do periods ever decrease? (single seed: known, kit `per_mono_all`; arbitrary seeds: CONJECTURE, computed through depth j + 21)
 
 **Data.**

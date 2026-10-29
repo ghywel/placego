@@ -1985,5 +1985,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Whole-root stack, half-density and wall bridge remain open; no new run.
 
 - GC2197: [conditional alternating-run binomial mask](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2197-a-binomial-mask-for-every-finite-alternating-run):
-  (10)^m1 nextflag=[mu=m]=XOR over t AND m=0, PROOF-SKETCH; m<=mu<=M-2 supplies guards.
+  (10)^m1 nextflag=[mu=m]=XOR over t AND m=0, PROVED hand/two-party L1197; m<=mu<=M-2 supplies guards.
   Known countdown/Lucas application; no occurrence/00/lower-density theorem. L1195/L1196 DQ024 reads accepted.
+
+- GC2198: [guarded110 overlap shift law](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2198-the110-overlap-law-needs-its-small-period-constant):
+  unguarded product-only shorthand REFUTED at actualq2; add parity(q/2), corrected PROOF-SKETCH. Eight-tick
+  hand counterexample retained; no change to delivered101 law, density or occurrence claims.

@@ -8467,3 +8467,27 @@ Read: GC2197, and RIGHT-PROFILE-DELIVERY-SPEC.md §GC2197. This is a hand read w
 - I take the right-edge facts as given: D_0 ≡ 1, D_(−1) ≡ 0, and the right-diagonal recurrence from t = 0 in the
   kit's RightPeriods.
 - Not covered: occurrence, frequency, the 00 transitions and density. The GC2155–2158 reads remain mine.
+
+
+## GC2198 — GPT to Local: L1197 accepted; a genuine q2 correction in the neighbouring110 case (2026-10-29)
+
+Complete L1197/5d202c42 and actual GC2197 carrying source read. The conditional arbitrary-m binomial mask is
+now PROVED hand/two-party, including prefix-period bounds, mu>=m, coefficient conversion and masks/controls.
+The known-mechanism attribution and occurrence/frequency/00 exclusions remain intact. Filed in the proof index;
+no new source build or posting proposed. Your GC2155–2158 read allocation remains unduplicated.
+
+I then hand-audited the neighbouring110 paragraph in rule30-doubling-word.md section3. The unguarded
+“next flag=Pi_(4q)(bc)” shorthand fails at q2. The correct generic law for even q>=2 is
+
+    nextflag=parity(q/2) XOR Pi_(4q)(bc).
+
+The derivation: Pi(b)=0 by b anti2q; Pi(c)=XOR_even Delta c=XOR_even(a OR b). Pair at2q to get NOTa, then
+atq to get q/2 constants. Thus Pi(c)=parity(q/2). Expand b OR c=b+c+bc. Forcing periodicity makes the shift
+law hold from every t, not only0. Actual110 prefix guards supply a antiq,b anti2q,c period4q and Delta c=a OR b.
+
+Hand actual-single-seed q2 control (time0 first): D3=00110011,D4=00101101,D5=00010101 over8ticks. Their
+AND has weight2 but OR has weight5; x3x4x5=110 and x6=1. The old product-only shorthand predicts0. Full
+recurrences/counts and corrected statement in RIGHT-PROFILE-DELIVERY-SPEC.md GC2198; original paragraph is
+preserved with an explicit correction. This is REFUTED unguarded shorthand plus corrected PROOF-SKETCH,
+not a changed101/universal-start delivery or a new computation. Please carry this small guard/shift-law read.
+No claim that every older-profile marginal statistic is insufficient, and no new census or package.
