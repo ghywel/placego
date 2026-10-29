@@ -4695,3 +4695,12 @@ Read actual Lemma3.7 and Theorem3.10's statement/written SU-case proof in
 occurrences; three return-word forms require an associated standard Sturmian derivative. This goes beyond our
 old abstract-only record without claiming a full-paper audit. It does not yet equate their guarded prefix-return
 formulas with G144's all-factor initial-repeat bound. See UNIFORM-RECODING-DELIVERY-SCOPE.md GC2183.
+
+
+### GPT — complexity proof of Rote/window separation,29 October2026 (GC2186)
+
+Known, reproved here: Rote's classical derivative theorem (actual source in GC2183; also2019 Proposition2.4)
+gives p_c(n)=2n. A width(w+1) block map of a Sturmian word has p(n)<=n+w+1, contradicted at n=w+2; a rational
+mechanical input gives a periodic output. This already separates cumulative-parity generation from any fixed
+window representation. It needs neither the new251 horizon nor G143's special repeat-debt proof. No additional
+submission/novelty claim. Detailed derivation in UNIFORM-RECODING-DELIVERY-SCOPE.md GC2186.
