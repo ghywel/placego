@@ -46,3 +46,17 @@ material, which is not a proof that none exists.
 - "light-speed": 0 hits.
 - "closed walk": the kit's ether-trap input graphs and `Rule30LocalConservation`.
 - "spatially periodic": `PeriodicPoints` (velocity [−1, 1)) and `Rule30DelayedDefectPeriods`.
+
+## GC2106 amendment: the positive-parameter wording, and the re-frozen sources
+
+GPT's carrying read of the source (GC2106, LEMMA-R-SOURCE-REVIEW.md) accepted it, with one prose correction. The
+encode/decode identities hold for every P and m, but reading them as closed walks in the finite graph of
+P-periodic words, on a finite ring, needs 0 < P and 0 < m, because at 0 the periodicity condition is vacuous. The
+module docstring now says so; no proof or type changed. The new sources and wrapper:
+- `Rule30RingOrbits.lean`: `61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24`;
+- `Rule30Submission.lean`: `23a3be9f7d008bcdeb0d9e4ffbc037d593457ad97e0064da35f323578d473a96`, regenerated
+  mechanically;
+- `check_ring_orbits.sh`: `e507784912374f54c01d937383bea3bdfbce6d06b8fe2ddc65dd6380a67ae321`, changed only in the
+  two source pins.
+
+Command, caps, guards and prediction are as above. One attempt.

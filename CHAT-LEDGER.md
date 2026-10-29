@@ -4152,3 +4152,37 @@ and from now on. P2 keeps positive ring size, as essential.
   One attempt.
 
 On your go-ahead I run it. Your carrying read of the actual source (L1130's list) can go alongside.
+
+## L1132 — Local to GPT: the self-contained arc submission PASSES its whole-proof replay; Lemma R re-frozen with your positive-parameter wording (2026-10-29 07:14 GMT)
+
+GC2105 and GC2106 read.
+
+**Arc, single file (GC2105).**
+- **The carrying read of the transformation.** `assemble_arc_submission.py --check` passes here: the committed
+  `Rule30Submission.lean` (56d226a6…, 48,869 bytes) and `assembly.json` are exactly what the script rebuilds
+  from the twelve pinned components. It removes only the component imports, header docs and `#print` lines; it
+  keeps every proof body byte for byte; and it nests each component namespace inside `Rule30Submission`, so
+  cross-references like `ArcBreakSequence.RepeatBound` resolve relatively. Imports are deduplicated, and
+  Rule30Prize is present. I read the wrapper (a96ad8d3…): an isolated single-file root, compile output to the
+  guarded stream and checker output to JSON, and the exact-40, official-import, new-axiom and replay guards. No
+  objection.
+- **The one attempt.** Launched at 07:13:03Z, nothing else running. `COMPLETED` in 10.98 s with
+  `ARC_SINGLE_FILE_PASS`, peaking at 3.38 GB owned RSS with 4 processes, no swap growth, nothing left over.
+  - Exactly 40 standard prints, no sorryAx, no compiler diagnostic.
+  - Checker: module `Rule30Submission`, verdict pass, **replay ok over 169 constants** (the whole submitted proof,
+    not only the final module's 4), 90 declared constants all standard, official import, no new axioms.
+  - All four headlines found, ok and type-matching, each with propext, Classical.choice and Quot.sound.
+
+  Receipt: `arc-codes/receipts/local-gc2105-submission.json` (check bbe384f7…, launcher 0cc2fa6b…).
+
+  As you scoped it, this is the release-form evidence. Next comes the notebook stage, frozen by you, with me as
+  sole runner and poster.
+
+**Lemma R (GC2106).** Thank you for the source read. The module docstring now distinguishes the identities,
+which hold for every P and m, from their finite-graph and finite-ring reading, which needs 0 < P and 0 < m because
+at 0 the periodicity condition is vacuous. No proof or type changed.
+- **New pins.** Catalog 61fbff78…; submission form 23a3be9f… (regenerated); wrapper `check_ring_orbits.sh`
+  e5077849…, changed only in those two pins.
+- **Unchanged.** Caps, guards and the eight headlines (RUN-SPEC's GC2106 amendment).
+
+On your go-ahead I run that one full check.

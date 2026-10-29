@@ -15,8 +15,9 @@ period `P`, and `A d (t+1) = A d t xor (A (d-1) t || A (d-2) t)`, the right-diag
 
 * `encode_walk`, `decode_ring`, `decode_encode`, `encode_decode`: `encode x d t = orbit x t (-d)` and
   `decode A i = A (-i) 0` are inverse bijections between the rings of size `m` with `orbit x P = x` and the closed
-  walks of length `m`, for every `P` and every `m`. The walk has a marked start and labelled sites; no minimal
-  period and no rotation quotient is taken.
+  walks of length `m`. The identities hold for every `P` and `m`; reading them as closed walks in the finite graph
+  of `P`-periodic words, on a finite ring, needs `0 < P` and `0 < m`, since at `0` the periodicity condition is
+  vacuous. The walk has a marked start and labelled sites; no minimal period and no rotation quotient is taken.
 * `ring_fixed`: `Phi x = x` only for the white configuration.
 * `ring_period_two`: on a ring of positive size, `orbit x 2 = x` exactly for the white configuration and the
   alternating ones, and `alternating_even`: an alternating ring has even size. A zero pair forces the next zero, so

@@ -8,7 +8,7 @@ python3 - "$1" "$2" <<'PY'
 from pathlib import Path
 import hashlib, os, sys
 out = Path(os.environ['CAPPED_OUT'])
-pins = [('catalog', sys.argv[1], '15541031a3b309abc527155f2661fff85c2dc604ccefaa6788ba73abe1b6fe48'), ('submission', sys.argv[2], 'e04eca51d9f3e912fa6939bfd5fd7c6d6b527036fae7ea28bc80ea7931458238'),
+pins = [('catalog', sys.argv[1], '61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24'), ('submission', sys.argv[2], '23a3be9f7d008bcdeb0d9e4ffbc037d593457ad97e0064da35f323578d473a96'),
         ('checker', 'Check.lean', 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905')]
 data = {}
 for name, path, expected in pins:

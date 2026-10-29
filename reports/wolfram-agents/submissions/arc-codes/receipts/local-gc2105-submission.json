@@ -1,0 +1,760 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 600,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 6
+ },
+ "start_utc": "2026-10-29T07:13:03Z",
+ "end_utc": "2026-10-29T07:13:14Z",
+ "gate": {
+  "free_inactive_mib": 6711,
+  "swap_used_mib": 1622.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 10.98,
+ "maxima": {
+  "rss_kib": 3380512,
+  "procs": 4,
+  "disk_bytes": 2130593,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6002
+ },
+ "cleanup": null,
+ "samples_kept": [
+  [
+   0.5,
+   159600,
+   6640,
+   0.0,
+   0
+  ],
+  [
+   1.0,
+   792816,
+   6578,
+   0.0,
+   61313
+  ],
+  [
+   1.6,
+   989968,
+   6518,
+   0.0,
+   61313
+  ],
+  [
+   2.1,
+   1155136,
+   6424,
+   0.0,
+   61313
+  ],
+  [
+   2.6,
+   2410992,
+   6258,
+   0.0,
+   61313
+  ],
+  [
+   3.1,
+   3051952,
+   6130,
+   0.0,
+   61313
+  ],
+  [
+   3.7,
+   3205104,
+   6072,
+   0.0,
+   61313
+  ],
+  [
+   4.2,
+   3236448,
+   6067,
+   0.0,
+   61313
+  ],
+  [
+   4.7,
+   3258736,
+   6077,
+   0.0,
+   61313
+  ],
+  [
+   5.2,
+   677744,
+   6159,
+   0.0,
+   2130593
+  ],
+  [
+   5.7,
+   1435712,
+   6149,
+   0.0,
+   2130593
+  ],
+  [
+   6.3,
+   2055584,
+   6006,
+   0.0,
+   2130593
+  ],
+  [
+   6.8,
+   3380384,
+   6008,
+   0.0,
+   2130593
+  ],
+  [
+   7.3,
+   3380512,
+   6002,
+   0.0,
+   2130593
+  ],
+  [
+   7.8,
+   3380512,
+   6033,
+   0.0,
+   2130593
+  ],
+  [
+   8.4,
+   3380512,
+   6030,
+   0.0,
+   2130593
+  ],
+  [
+   8.9,
+   3380512,
+   6053,
+   0.0,
+   2130593
+  ],
+  [
+   9.4,
+   3380512,
+   6051,
+   0.0,
+   2130593
+  ],
+  [
+   9.9,
+   3380512,
+   6057,
+   0.0,
+   2130593
+  ],
+  [
+   10.4,
+   3380512,
+   6052,
+   0.0,
+   2130593
+  ]
+ ],
+ "cmd": "from the pipeline kit root, elan tools on PATH: run_capped.py --track-tree --max-procs 6 ... -- lake env sh tests/probes/wolfram/check_arc_submission.sh (a96ad8d3...) reports/wolfram-agents/submissions/arc-codes/Rule30Submission.lean (56d226a6...)",
+ "stdout": [
+  "ARC_SUBMISSION_SOURCE_OK",
+  "'Rule30Submission.ArcBreakBounds.label_collision' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcBreakBounds.break_envelope' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcBreakBounds.spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcBreakBounds.next_denominator_covers_window' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcBreakSequence.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcBreakSequence.sequence_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcBreakSequence.sequence_strict' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcBreakSequence.labelled_spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcCover.same_interval_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcCover.short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcCover.no_repeat_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcStepCode.crossing' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcStepCode.break_has_lift' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcStepCode.lift_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcStepCode.no_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcTailBounds.shift_repeat_bound' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcTailBounds.eventual_transfer' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcTailBounds.uniform_eventual_transfer' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcTailBounds.finite_single_hits_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcTailBounds.finite_single_hits_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcDeterminant.continuant_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcDeterminant.continuant_error_lt_next' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.denominator_next' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.previous_margin' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.next_covers_window' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.no_repeat_at_large_digit' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.repeat_bound_fails' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRotation.no_uniform_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRule30Bridge.repeat_bound' depends on axioms: [propext, Quot.sound]",
+  "'Rule30Submission.ArcEndpoint.hit_unique' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcEndpoint.eventual_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcIntervalCode.member_shift' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcIntervalCode.member_constant' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcIntervalCode.code' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRule30Exclusion.no_visible_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'Rule30Submission.ArcRule30Exclusion.no_eventual_visible_rotation' depends on axioms: [propext,",
+  " Classical.choice,",
+  " Quot.sound]",
+  "'Rule30Submission.ArcRule30Exclusion.no_visible_endpoint_variant' depends on axioms: [propext,",
+  " Classical.choice,",
+  " Quot.sound]",
+  "'Rule30Submission.ArcRule30Exclusion.no_visible_interval_union' depends on axioms: [propext,",
+  " Classical.choice,",
+  " Quot.sound]",
+  "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead",
+  "",
+  "Note: The updated constant has a different type:",
+  "  Std.HashMap Name ConstantInfo \u2192 Kernel.Environment \u2192 IO Kernel.Environment",
+  "instead of",
+  "  Std.HashMap Name ConstantInfo \u2192 Environment \u2192 IO Environment",
+  "",
+  "Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "{\"claim\":\"partial\",\"declared\":[{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakBounds.break_envelope\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakBounds.label_collision\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakBounds.next_denominator_covers_window\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakBounds.nodup_map_of_inj\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakBounds.spacing_bound\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakSequence.LabelSpacing\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakSequence.RepeatBound\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.future_break\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.labelled_spacing_bound\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakSequence.nextBreak\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.nextBreak_spec\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence_break\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence_first\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence_increasing\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence_step_bound\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence_strict\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcCover.LiftCover\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcCover.no_repeat_of_cover\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcCover.same_interval_return\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcCover.short_return\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcDeterminant.bezout_of_unit_determinant\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcDeterminant.continuant_bezout\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcDeterminant.continuant_error_lt_next\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcDeterminant.no_short_return\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcDeterminant.spacing_of_bezout\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcEndpoint.Hit\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcEndpoint.eventual_agreement\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcEndpoint.hit_unique\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcIntervalCode.Member\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcIntervalCode.code\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcIntervalCode.endpoint\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.endpoint_even\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.endpoint_odd\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.member_constant\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.member_shift\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcIntervalCode.value\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.value_eq_of_member_iff\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcRotation.denominator\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.denominator_cast\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.denominator_next\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.denominator_pos\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.denominator_real\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.next_covers_window\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.no_repeat_at_large_digit\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.no_uniform_repeat_bound\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.previous_margin\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRotation.repeat_bound_fails\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Bridge.repeat_bound\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcRule30Bridge.visible\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_eventual_visible_rotation\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_endpoint_variant\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_interval_union\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_rotation\",\"standardAxioms\":true},{\"kind\":\"inductive\",\"name\":\"Rule30Submission.ArcStepCode.StepCode\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.break_has_lift\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.crossing\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.lift_cover\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.no_repeat_bound\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.orbit\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcTailBounds.eventual_transfer\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcTailBounds.finite_single_hits_cutoff\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcTailBounds.finite_single_hits_eventual\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcTailBounds.shift_repeat_bound\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcTailBounds.uniform_eventual_transfer\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakBounds.nodup_map_of_inj.match_1_1\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.nextBreak.congr_simp\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence.congr_simp\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence.eq_1\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence.eq_2\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence.eq_def\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcBreakSequence.sequence.match_1\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.endpoint.eq_1\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcIntervalCode.value.eq_1\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.casesOn\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.constant_between\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.ctorIdx\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.endpoint\",\"standardAxioms\":true},{\"kind\":\"constructor\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.mk\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.noConfusion\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.noConfusionType\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.periodic\",\"standardAxioms\":true},{\"kind\":\"recursor\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.rec\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.recOn\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.value\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.mk.inj\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.mk.injEq\",\"standardAxioms\":true},{\"kind\":\"def\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.mk.noConfusion\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcStepCode.StepCode.mk.sizeOf_spec\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"Ruliology.CellularAutomata.Rule30FiniteMaskedJen.orCol.eq_1\",\"standardAxioms\":true}],\"headlines\":[{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_rotation\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_eventual_visible_rotation\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_endpoint_variant\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"Rule30Submission.ArcRule30Exclusion.no_visible_interval_union\",\"ok\":true,\"problems\":[],\"typeMatches\":true}],\"importsStatements\":true,\"module\":\"Rule30Submission\",\"newAxioms\":[],\"official\":[],\"reasons\":[],\"replay\":{\"constants\":169,\"ok\":true},\"verdict\":\"pass\",\"verifiedTargets\":[]}",
+  "ARC_SINGLE_FILE_PASS"
+ ],
+ "submission_check": {
+  "status": "PASS",
+  "headline_count": 40,
+  "checker": {
+   "claim": "partial",
+   "declared": [
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakBounds.break_envelope",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakBounds.label_collision",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakBounds.next_denominator_covers_window",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakBounds.nodup_map_of_inj",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakBounds.spacing_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakSequence.LabelSpacing",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakSequence.RepeatBound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.future_break",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.labelled_spacing_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakSequence.nextBreak",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.nextBreak_spec",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakSequence.sequence",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence_break",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence_first",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence_increasing",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence_step_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence_strict",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcCover.LiftCover",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcCover.no_repeat_of_cover",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcCover.same_interval_return",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcCover.short_return",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcDeterminant.bezout_of_unit_determinant",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcDeterminant.continuant_bezout",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcDeterminant.continuant_error_lt_next",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcDeterminant.no_short_return",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcDeterminant.spacing_of_bezout",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcEndpoint.Hit",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcEndpoint.eventual_agreement",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcEndpoint.hit_unique",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcIntervalCode.Member",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcIntervalCode.code",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcIntervalCode.endpoint",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.endpoint_even",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.endpoint_odd",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.member_constant",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.member_shift",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcIntervalCode.value",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.value_eq_of_member_iff",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcRotation.denominator",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.denominator_cast",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.denominator_next",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.denominator_pos",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.denominator_real",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.next_covers_window",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.no_repeat_at_large_digit",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.no_uniform_repeat_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.previous_margin",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRotation.repeat_bound_fails",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Bridge.repeat_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcRule30Bridge.visible",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_eventual_visible_rotation",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_endpoint_variant",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_interval_union",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_rotation",
+     "standardAxioms": true
+    },
+    {
+     "kind": "inductive",
+     "name": "Rule30Submission.ArcStepCode.StepCode",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.break_has_lift",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.crossing",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.lift_cover",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.no_repeat_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.orbit",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcTailBounds.eventual_transfer",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcTailBounds.finite_single_hits_cutoff",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcTailBounds.finite_single_hits_eventual",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcTailBounds.shift_repeat_bound",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcTailBounds.uniform_eventual_transfer",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakBounds.nodup_map_of_inj.match_1_1",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.nextBreak.congr_simp",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence.congr_simp",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence.eq_1",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence.eq_2",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcBreakSequence.sequence.eq_def",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcBreakSequence.sequence.match_1",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.endpoint.eq_1",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcIntervalCode.value.eq_1",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.casesOn",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.StepCode.constant_between",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.ctorIdx",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.endpoint",
+     "standardAxioms": true
+    },
+    {
+     "kind": "constructor",
+     "name": "Rule30Submission.ArcStepCode.StepCode.mk",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.noConfusion",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.noConfusionType",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.StepCode.periodic",
+     "standardAxioms": true
+    },
+    {
+     "kind": "recursor",
+     "name": "Rule30Submission.ArcStepCode.StepCode.rec",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.recOn",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.value",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.StepCode.mk.inj",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.StepCode.mk.injEq",
+     "standardAxioms": true
+    },
+    {
+     "kind": "def",
+     "name": "Rule30Submission.ArcStepCode.StepCode.mk.noConfusion",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcStepCode.StepCode.mk.sizeOf_spec",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "Ruliology.CellularAutomata.Rule30FiniteMaskedJen.orCol.eq_1",
+     "standardAxioms": true
+    }
+   ],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_rotation",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_eventual_visible_rotation",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_endpoint_variant",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "Rule30Submission.ArcRule30Exclusion.no_visible_interval_union",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    }
+   ],
+   "importsStatements": true,
+   "module": "Rule30Submission",
+   "newAxioms": [],
+   "official": [],
+   "reasons": [],
+   "replay": {
+    "constants": 169,
+    "ok": true
+   },
+   "verdict": "pass",
+   "verifiedTargets": []
+  },
+  "scope": "normalized finite-left clock, explicit large-digit finite-step rotation; no all-irrational/prize claim"
+ },
+ "submission_check_sha256": "bbe384f73922f6377242157d3d82b06607a337b4f30e8510fe07760a83c26222",
+ "launcher_sha256": "0cc2fa6b0f4f824e86bd92f6b37357357db344bc758b8ac626ed6dfd28efb298"
+}
