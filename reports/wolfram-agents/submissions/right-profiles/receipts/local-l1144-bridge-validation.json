@@ -1,0 +1,55 @@
+{
+ "stage": "L1144 prefix-period bridge validation (GC2123 release)",
+ "host": "M5 (Local)",
+ "kit": "pipeline copy; Rule30Realization/Rule30Jen sources byte-identical to kit main 932cf8d",
+ "wrapper_sha256": "f0788d3cc91fd31c3694a4a4ae7ace79f39b28f3c093a12474d565989949e071",
+ "limits": {
+  "out": "FRESH",
+  "cpu": 120,
+  "wall": 300,
+  "rss_mib": 2048,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 6,
+  "cmd": [
+   "lake",
+   "env",
+   "sh",
+   "check_prefix_bridge.sh",
+   "RightProfilesDraft.lean",
+   "PrefixPeriodBridge.lean"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 5.23,
+ "maxima": {
+  "rss_kib": 1039040,
+  "procs": 4,
+  "disk_bytes": 1076653,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5884
+ },
+ "gate": {
+  "free_inactive_mib": 6864,
+  "swap_used_mib": 1574.81
+ },
+ "supervisor_cpu_s": 0.126,
+ "outputs": {
+  "out.txt": "draft sha256 d1441055e32e7b4c0a623d14c86d63f6866d1a60bc4ad47a382cf627fcb3d28e\nbridge sha256 6eac3d793e56b0b37d94065d173592e71cab25dd5763369b6df0d1e390c4e2bd\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n'Rule30RightProfiles.shift_law' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.rightDiag_shift_law' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.E_mod4' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_false_of_antiperiod' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_four' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_false_of_period_half' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.running_shift' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.prefix_append' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.antiperiod_of_minimal_double' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.prefix_1101_closes' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.no_11011' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.diagonals_step' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.actual_no_11011' depends on axioms: [propext, Quot.sound]\nCAPPED_OUT/m/src/PrefixPeriodBridge.lean:90:46: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 2\nwhere\n a := ↑k\n b := ↑(2 * p) / 8\nMUTANT_REJECTED_AT [90]\nPREFIX_BRIDGE_CHECK_PASS\n",
+  "draft-compile.txt": "'Rule30RightProfiles.shift_law' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.rightDiag_shift_law' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.E_mod4' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_false_of_antiperiod' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_four' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.eta_false_of_period_half' depends on axioms: [propext, Quot.sound]\n'Rule30RightProfiles.running_shift' depends on axioms: [propext, Quot.sound]\n",
+  "bridge-compile.txt": "",
+  "bridge-axioms.txt": "'Rule30PrefixPeriodBridge.prefix_append' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.antiperiod_of_minimal_double' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.prefix_1101_closes' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.no_11011' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.diagonals_step' depends on axioms: [propext, Quot.sound]\n'Rule30PrefixPeriodBridge.actual_no_11011' depends on axioms: [propext, Quot.sound]\n",
+  "mutant-compile.txt": "CAPPED_OUT/m/src/PrefixPeriodBridge.lean:90:46: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 2\nwhere\n a := ↑k\n b := ↑(2 * p) / 8\n"
+ },
+ "output_sha256": {
+  "draft-compile.txt": "6b406a536331cfd1e16f8c6d720b6e0ab494bced4dd3089eb6d85c8e1918347b",
+  "bridge-compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bridge-axioms.txt": "5567895a344bf20ce1723fcd1eb08f23024a5db90d16582d11e094c75c91dc48",
+  "mutant-compile.txt": "5c5420390a76d4b49fcfffacdb0d6f80f82f20f20f67a41bff480e5e48a2edaf"
+ }
+}

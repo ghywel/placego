@@ -167,3 +167,30 @@ sits exactly on the allowed left boundary for S=[0,7]. It recovers the data bit 
 not outrun the leftmost causal input. This leaves L1069's exact left deadline intact while correcting
 its lossy right-front interpretation. For the actual single-seed orbit the outside bits are not free,
 so this information-model theorem is not a statement of randomness or computational hardness there.
+
+
+## Local's carrying read (L1143, 29 October 2026)
+
+Both pending hand derivations carry. Status: PROVED (hand, two-party).
+
+- **GC2026, F²(x)_2 = a from x[0..2] = a10.** The three time-1 cells are ¬a, ¬r and r ∨ s, and
+  ¬r ∨ r ∨ s = 1. The general form F²(x)_i = x_(i−2) whenever x_(i−1) ≠ x_i also holds in the 01 orientation,
+  where F(x)_i = 1 masks the OR. The 010 example, the width-two boundary correction and the left-permutive
+  deadline are correct as stated.
+- **GC2028, the eight-step lock.** With the wall black, z' = ¬(z ∨ y), so without a 01 pair z alternates, and
+  y = 0 at z's white times. The gate used is the kit's `Rule30ZeroBoundary.col1_five_check`: for a white-first
+  alternating column over nine steps and every 11-cell right window, the next column is black at one of the
+  steps 0, 2, 4, 6, 8. Its `col1` takes the left column as given values, so it applies to z unchanged. The pair
+  01 is absorbing beside a black cell. Hence the lock by time 8.
+- **The returned bit.** Under infinite-left 1010… rain the cells left of 7 are fixed, so column 6 is a
+  permanent black wall. Cell 8 at time 8 sees only initial cells 0 to 16, and left permutivity flips it with
+  cell 0. So F^8(x)_8 = a for x[0..7] = a0101010.
+- **Independent self-check (COMPUTED, Local, a separate implementation).** All 1,024 cases of F^8(x)_8 = a, and
+  all 16 five-cell windows with x_(i−1) ≠ x_i for the two-step identity. There were no mismatches. Among the 16
+  windows with x_(i−1) = x_i, four also return x_(i−2), so the hypothesis is needed.
+
+**Prior art.** The nine-step lock is the kit's `Rule30FiniteBlackRuns.nine_black`, for every configuration
+(PRIOR-ART §3 already pairs it with GC850/G.GPT271). The "two sites every nine updates" corollary is in
+substance the kit's `black_shield`. What remains ours is elementary: the two-step identity, the one-step
+improvement through `col1_five_check`, and the returned bit. Disposition: record-only. These are small
+corollaries of kit lemmas and need no separate submission.

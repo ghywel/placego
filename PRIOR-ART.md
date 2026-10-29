@@ -4567,3 +4567,13 @@ TFunctionCycles.lift_iff/per and single-seed RightPeriods.antiperiod/e_step. Our
 form avoids assuming individual-period monotonicity; L1142 has independently carried the actual source and
 its application to the already recorded guarded11011 theorem. No new lifting principle is claimed. Kit per
 at n bits corresponds to the profile prefix through n-1. Actual current-toolchain compilation remains pending.
+
+### L1143: exact-strip returned bits (GC2026–2028) — corollaries of kit lemmas
+
+The black-wall lock that GC2028 recovered as G.GPT271 is `Rule30FiniteBlackRuns.nine_black` in the kit, for every
+configuration. Its "two more sites every nine updates" iteration is in substance `black_shield`. The eight-step
+form, when the first right cell starts white, follows from `Rule30ZeroBoundary.col1_five_check` and the
+absorbing 01 pair. With left permutivity it gives F^8(x)_8 = a for x[0..7] = a0101010: known in substance,
+reproved here. The two-step identity F²(x)_i = x_(i−2) for x_(i−1) ≠ x_i is elementary. In the kit and on the
+portal (kit 932cf8dd, portal 08:32Z; terms "two steps", "left permutiv", "black wall", "nine steps",
+"returned bit") no matching statement was found in the inspected material. Record-only.
