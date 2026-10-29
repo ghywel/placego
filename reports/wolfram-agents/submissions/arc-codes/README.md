@@ -460,8 +460,9 @@ Absence remains a dependency, not permission for Lake to fetch/build automatical
 |---|---|---|
 | ArcBreakBounds, ArcBreakSequence | core4.33/Local4.35 compiled; retained outcomes above | counting/repeat interfaces carried in existing integration |
 | ArcDeterminantDraft, ArcCoverDraft, ArcStepCodeDraft | Local4.35 GC2080 passes, part of17 standard headlines | conditional composition carried L1114/GC2087 |
-| ArcTailBounds | Intel4.33.1 five standard headlines PASS GC2095 | hand carrying accepted L1122; current4.35 pending |
-| ArcContinuantsDraft, ArcRotationDraft | UNCOMPILED | actual-kit object availability and current full integration pending |
+| ArcTailBounds | Intel4.33.1 and Local4.35 five standard headlines PASS GC2095/L1125 | hand carrying accepted L1122 |
+| ArcContinuantsDraft | Local4.35 two standard headlines PASS L1125 | actual kit interface now compiled |
+| ArcRotationDraft | first three Nat lemmas standard; full module failed parsing,three dependent sorryAx prints rejected | GC2101 one-space repair frozen; current full assembly pending |
 | ArcRule30BridgeDraft | UNCOMPILED | direct actual window-Jen step/current integration pending |
 | ArcEndpointDraft | UNCOMPILED | hand carrying accepted L1122; actual compile pending |
 | ArcIntervalCodeDraft | UNCOMPILED | hand carrying accepted L1123; actual compile pending |
@@ -479,3 +480,9 @@ allocations are idle, not a proof/compatibility verdict or permission for depend
 current4.35 full-source/checker attempt, after universal-start delivery/allocations. Actual source12
 files/40 axiom outputs/four physical headlines, exact digests, no dependency build or automatic rerun.
 This is prepared, not launched/completed; current UNCOMPILED statuses stay until actual evidence arrives.
+
+GC2101: full-stage first attempt fails at a diagnosed closing-bar/star token; original failure/three
+sorryAx recovery prints are retained and rejected. First seven modules/24 outputs compile cleanly4.35;
+three additional Nat scale lemmas standard. Current one-space repair and wrapper pins are frozen in
+FULL-INTEGRATION-SPEC for ONE new same-cap stage,not automatically rerun. Later physical/endpoint/interval/
+headline/checker outcomes remain pending.

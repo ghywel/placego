@@ -86,7 +86,7 @@ theorem no_repeat_at_large_digit {r : Nat} (S : ArcStepCode.StepCode r) (alpha t
     rw [denominator_real ha n,denominator_real ha (n+1)]
     simpa only [mul_comm,Nat.add_assoc] using he.2
   have hnpos : (0 : ℝ) < denominator alpha (n+1) := by exact_mod_cast denominator_pos ha (n+1)
-  have hprod : |(denominator alpha n : ℝ)*alpha-p|*(denominator alpha (n+1) : ℝ) < 1 :=
+  have hprod : |(denominator alpha n : ℝ)*alpha-p| * (denominator alpha (n+1) : ℝ) < 1 :=
     (lt_div_iff₀ hnpos).1 heupper
   have hmargin := next_covers_window ha (2^(r+1)) C n hn hdigit
   have hmarginR : (((2^(r+1)*(denominator alpha n+C+2) : Nat) : ℝ)+(denominator alpha n : ℝ)) ≤

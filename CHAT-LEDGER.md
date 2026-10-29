@@ -3871,3 +3871,45 @@ freeze. That the later modules elaborate is still unknown: they may hide other f
 did.
 
 R30-20261029-3ca86f's verifier was at its second-sandbox check at 06:26Z, with no verdict yet. Kit PR #54 is open.
+
+## GC2100 — actual public universal-start bytes verified; external verifier still pending (2026-10-29)
+
+Read complete L1124 and independently fetched live public PR54/index/files/notebook over verified TLS.
+PR54 is attached to this chat. Its head7a3f1d8d contains EXACT A2a catalogue12068af9, exactly the accepted
+nonzero/normalized catalogue row and one stated import; only those three files changed. Its description
+accurately says isolated module checking,not whole-branch lake build/CI success. The public notebook is
+EXACT442525ee (124164bytes), so the native409e7c59 source/source-output review carries to the uploaded
+artifact. Portal abstract is EXACT abstract.txt,with the four expected headlines,problem1/claimpartial.
+
+At06:30:34Z the portal was Lean Unverified/building; at06:35:03Z Lean Unverified/queued. No inference
+about that queue transition, no Lean Verified/Human Verified/merge claim, and no automatic resubmission.
+Public Lean file remains unavailable while verification is pending; source is independently bound through
+the exact public notebook and checked catalogue counterpart. Local's original upload response remains
+privately retained,not something GPT has inspected. Public evidence packet:
+cited/gc2100-universal-start-public/manifest.json SHA256
+e0792b15169243dc93251805020e318484a282ea301b96c7eb8ae1281a576c38.
+
+## GC2101 — retain arc parser failure; freeze one diagnosed whitespace repair (2026-10-29)
+
+Read complete L1125 and actual12.01s CHILD_FAILED receipt. Seven modules through ArcContinuants compile
+cleanly4.35 (24 standard prints); the three Nat denominator/margin lemmas in ArcRotation also print
+standard axioms. Its remaining three prints contain sorryAx after the parser recovery; those are NOT
+proofs, and the full module/stage/checker failed. Physical/endpoint/interval/headline modules and checker
+were not reached. Peak3073824KiB sampled ownedRSS,four processes,minheadroom5921MiB,swap0: no memory
+stop. Tail's current4.35 and the two actual-continuant lemmas are now validated separately from the
+uncompleted full assembly.
+
+The actual defect is closing absolute-value bar adjacent to multiplication: |...-p|*(...) lexes as |*.
+Changed exactly that to |...-p| * (...),no hypothesis/statement/argument change. New rotation4acd4c0e,
+wrapper4329eead,all other source/checker pins and guards identical. A broad static scan also finds
+VALID *| in already compiled ArcCover,so I did NOT change it or ban every bar/star adjacency. Only the
+diagnosed closing |* is repaired. Wrapper shell/embedded Python syntax checked,not a Lean execution.
+
+FULL-INTEGRATION-SPEC's GC2101 amendment freezes ONE new diagnostic-driven stage with the SAME
+120CPU/process,600wall,4GiB RSS/5GiB launch,1GiB ongoing,256MiB swap,16MiB/file,64MiB output,maxprocs6
+envelope. Fresh output; no setup,scope/cap widening,duplicate job or automatic retry. Local may adopt/run
+after exact source/cap/idle checks,no owner/GPT round. Any further diagnostic stops and is retained;
+if first-compile syntax assumptions fail again, switch to the first failing component rather than blind
+full-suite retries. Please also carry the direct window-Jen m/t/closing-sample/OR-mask substitution and
+actual-CF sharp-margin step before a future arc submission; earlier cover/endpoint reads do not silently
+stand in for that specific source read. No current full-assembly result or new portal contribution yet.

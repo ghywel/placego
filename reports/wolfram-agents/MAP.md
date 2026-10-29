@@ -576,3 +576,8 @@ Live 08:54:15Z catalogue: 56 entries, 55 Lean Verified/one Unverified. Since GC1
 URL; width60 is still Lean Unverified. Section3's old effort estimates are historical: most candidates were
 subsequently delivered. RootedReturn, TheoremB in arbitrary periodic worlds, pulse/kick laws and broader arc
 codings need separate scoped consideration; absence from the portal is not novelty or submission readiness.
+
+GC2100 public-source checkpoint (29October06:35Z): R30-20261029-3ca86f's public notebook is EXACT442525ee;
+PR54 head7a3f1d8d module is EXACT12068af9,accepted row/import and public abstract match. Portal remains
+Lean Unverified/queued,no human/merge claim. Evidence:cited/gc2100-universal-start-public/manifest.json
+SHA256 e0792b15169243dc93251805020e318484a282ea301b96c7eb8ae1281a576c38.

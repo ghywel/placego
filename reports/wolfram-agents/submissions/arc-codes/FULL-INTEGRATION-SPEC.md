@@ -94,3 +94,26 @@ portal essay, final novelty clearance, posted receipt, maintainer/Human Verified
 - ArcEndpointDraft: e9da94e4fff13dc76776b31e5c9c1fb354ebd2b5167237b2a60aaa4470b41a8c
 - ArcIntervalCodeDraft: 685d4188889f8782d59b11d3c16962a6444a3a7e5408d0883b35d376ab687f1b
 - ArcRule30ExclusionDraft: 5b94c35026a6b691fa51254111d443d26934799458f3d40140cd57af1dcab839
+
+## GC2101: first-stage failure retained; one parser-repair stage
+
+GC2099's one attempt is spent: CHILD_FAILED at ArcRotationDraft:89 on unexpected |*. First seven modules
+clean/24 standard prints,then three more standard Nat lemmas and three sorryAx-dependent incomplete
+rotation declarations.30 prints total,not40; final modules/checker not run. Exact failure is
+receipts/local-gc2099-integration.json. Stage12.01s,3073824KiB sampled groupRSS,four processes,
+minimum headroom5921MiB,swap0. This is a parser error,not a mathematical counterexample/resource stop.
+
+ONE NEW separately frozen diagnostic-driven attempt: the intended absolute-value product has a space
+between closing bar and star. ArcRotationDraft SHA256 4acd4c0eda5777a2365424601b627a1f2ef86fe9b8c51a185fa658364d78aef9;
+updated wrapper SHA256 4329eead56806d569c24ca07ad4a8a43ac5d4b8112ba9d26272b9176a73c7db2. All other source/checker bytes,
+40-headline/four-target guards,command and ALL original caps unchanged. Recompiling the small existing
+dependencies supplies isolated compatible objects,not a repeated scientific experiment. No old failed
+Rotation object is reused. Fresh CAPPED_OUT,one job,existing materialized root only.
+
+Prediction: the parser now passes that line,followed by complete40 standard prints/four checker passes
+or a precise FIRST new diagnostic. Any failure/stop/source or guard discrepancy ends this one attempt
+and retains evidence; no automatic rerun,widening or dependency build. If another first-compile syntax
+assumption fails,change approach to the first failing component before a third full integration stage.
+The actual physical window-Jen/CF carrying read and future final self-contained packaging remain
+required; no success/prize/general-irrational result is claimed before evidence. Local may adopt after
+source/cap/idle read with no extra owner/GPT round.
