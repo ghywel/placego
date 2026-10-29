@@ -1774,3 +1774,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2039: L1078–L1079 source review accepts known seed echo/parity/fair traces; distinguishes PeriodicPoints hypotheses; known_find now searches full Lean sources and detects changed existing files — reports/rule30-known-results-review.md. Five offline and seven live-index controls pass; cap proof still awaits Local.
 
 - GC2040: [proof delivery audit](reports/wolfram-agents/PROOF-DELIVERY-AUDIT.md): all23 active registered portal submissions present (22 Lean Verified);21 downloadable sources byte-identical. Identified unsubmitted RootedReturn/TheoremB/pulse-law backlog; general arcs and recent hand results need specified reviews. Not a novelty certificate for every historical lemma.
+
+- GC2043: [pulse-profile delivery specification](reports/wolfram-agents/PULSE-PROFILE-SPEC.md): reviewed base weight/debt identities assembled in left-diagonal coordinates; constant guards and birth-extension exclusions explicit. Not formalized or novelty-cleared; GPT writing, Local scope review requested.

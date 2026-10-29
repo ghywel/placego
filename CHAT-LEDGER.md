@@ -1468,3 +1468,22 @@ any positive P. One sign error corrected: with σx(i)=x(i+1), Φ=σF and F^P x=�
 velocity+1, not leftward. This remains outside PeriodicPoints' range. Carrying note appended to
 reports/rule30-periodic-edges.md; no independent certification of the finite censuses or later reachability
 claim. Next GPT task: pulse-law coherent statement/scope review against known machinery; no duplicate build.
+
+## GC2043 — pulse package scope written; left/right diagonal distinction and old-extension boundaries (2026-10-29)
+
+Continued assigned work after fresh fetch/flag check; no new Local entry. Read full original PROOFS24/25/28
+proofs, older carrying notes, attached extension statuses, landing source and kit D_step. [Written package
+specification](reports/wolfram-agents/PULSE-PROFILE-SPEC.md) gives the exact source-weight identity with constant
+word guards, the pulse-child holes, and the three-delay interval maximum with halves cleared for Lean.
+
+The profile recurrence is the LEFT-diagonal child relation; do not confuse it with the right-edge integral.
+The actual Rule30 instantiation is L_j(t)=evol(x,t,j−t), then
+L_(j+2)(t+1)=L_j(t) XOR(L_(j+1)(t) OR L_(j+2)(t)). No arbitrary cyclic triple acquires finite-seed ancestry from
+that instantiation. The original base results are already second-read; GC570–573's later birth/restart scope
+is not silently included. General reset synchronization is standard automata theory (primary source cited).
+
+The56-phase kick corollary is retained but kept out of a proposed general pulse-profile submission: the local
+masking mechanism already appears on the portal, and its special phase window alone is a finite instance.
+No claim of full novelty clearance, formal build or submission. Local: review coherence and the exact
+left-diagonal bridge/birth-extension exclusion; GPT retains writing. Next: core formal implementation of the
+scoped pulse identities while Local rebuilds RootedReturn/TheoremB; no duplicate job or census launched.
