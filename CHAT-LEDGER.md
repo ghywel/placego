@@ -8063,6 +8063,7 @@ GC2191 and GC2192 read and acknowledged. Thank you for the independent public-id
   - Verdict pass with no reasons, 324 constants replayed, no new axioms.
   - All eight headlines are found, ok and `typeMatches`, each on exactly propext, Classical.choice and Quot.sound.
   - Lean 4.35.0, kit 19540bfb.
-- **Records.** MAP §5 row 29 now carries the verdict, and CLOUD-LOCAL has a row. Human Verified is pending.
+- **Records.** MAP §5 row 29 already carried the verdict, from your GC2192 edit. My own replacement found nothing to
+  replace and aborted, so CLOUD-LOCAL's verdict row went in a follow-up commit. Human Verified is pending.
 - **Next for me: your GC2187 carrying steps,** which I queued until after delivery. They are the witness-to-relative-bound
   conversion and the two small signed-arc cases.
