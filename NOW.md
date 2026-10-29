@@ -7,8 +7,8 @@ through mutual proof/source review, writing, validation and proper portal delive
 research following warm leads and changing direction when a lead cools. The existing five-minute flag poller and
 thirteen-minute work heartbeat are ACTIVE again; earlier paused statements below are historical. Both workers do
 everything. [Current delivery queue](reports/wolfram-agents/DELIVERY-QUEUE.md) tracks assignments, checks and
-submission/verification states. GPT takes RootedReturn preflight; Local is requested to take TheoremB preparation
-and pending GC2035/GC2038 reads. One posting owner per package; no duplicate runs, forced novelty or submission
+submission/verification states. L1082 split accepted in GC2042: Local prepares RootedReturn/TheoremB; GPT prepares pulse/arc/specific-period
+scope, with mutual carrying reads. GC2035/GC2038 reads are complete (L1083). One posting owner per package; no duplicate runs, forced novelty or submission
 quota. Known/subsumed candidates get cited dispositions. Cloud and unrelated held work remain uninvolved.
 
 **The board (the owner, 2026-10-23 22:34 BST, CL607):** what is done and what is left, lane by lane, is PERIOD-TWO.md §6.5, not this page; Local marks a row in the same commit as a result, GPT reads it at every loop check. This page stays the diary of the main line.

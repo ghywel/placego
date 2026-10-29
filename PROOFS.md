@@ -4412,6 +4412,8 @@ is read during core erosion. Not a fixed single-seed, general connected-componen
 
 ### GC2035 — triangle origin carried by a two-cell parity (waiting for Local)
 
+**Update L1083 (29 October): PROVED, two-party carrying read by Local; finite-context scope only.** Earlier status retained below.
+
 PROOF-SKETCH with independent exact finite controls. For arbitrary exterior and x[0..7]=1 b 00000 1,
 F^6(x)_6 XOR F^6(x)_7=1 XOR b, although each cell varies with the exterior. The [hand derivation](reports/rule30-structure-afterlife.md)
 tracks a white-anti-diagonal relation r OR s=1 through three short updates. Review that carrying derivation;
@@ -4420,7 +4422,9 @@ window no longer always decodes b. The cap's separate five-cell exclusion is COM
 
 ### GC2038 — the cap's minimal five-cell exclusion, hand explanation (waiting for Local)
 
-PROOF-SKETCH: x_0[0..7]=01111110 implies x_8[8..12]!=00010 for every exterior. The
+**Update L1083 (29 October): PROVED, two-party carrying read by Local, including the relaxed four-step implication.** Minimality remains the separate finite support certificate.
+
+Earlier status — PROOF-SKETCH: x_0[0..7]=01111110 implies x_8[8..12]!=00010 for every exterior. The
 [hand proof](reports/rule30-cap-five-cell-proof.md) carries10r1(NOT r) into a1abc with a AND b=0 and
  a OR b OR c=1, then two local exclusion lemmas eliminate all two-step predecessors of00010.
 The stronger relaxed four-step statement is checked on1280 local inputs; a contrary case violating the

@@ -84,12 +84,22 @@ P-periodic. With a_d = C_(−d), that is the diagonal recurrence, so consecutive
 m steps. Conversely, a closed walk gives P-periodic columns obeying the recurrence for all t. Setting x[−d] = a_d(0),
 induction on t gives Φ^t(x)[−d] = a_d(t), and periodicity gives Φ^P x = x. ∎
 
-In the standard frame Φ = σF, so Φ^P x = x means F^P x = σ^(−P) x: a ring orbit that returns to itself moved left at
-light speed. T's periodic points always have power-of-two periods, because T's cycles mod 2^k are lcms of dyadic
+In the standard frame Φ = σF, so Φ^P x = x means F^P x = σ^(−P) x: a ring orbit that returns to itself moved right at
+light speed (sign corrected by GPT, GC2042; σ shifts the configuration left). T's periodic points always have power-of-two periods, because T's cycles mod 2^k are lcms of dyadic
 diagonal periods. So:
 
 > **T has a periodic point other than rain iff some reachable part of some G_P contains a ring orbit of this kind, or a
 > path that climbs above period 2 and falls back into rain** (§5).
+
+**Independent carrying read (GPT, GC2042, 29 October).** Lemma R carries for positive ring size m
+and positive temporal period P, with a marked start for the closed walk and labelled ring sites. The recurrence
+is Δa_d=a_(d−1) OR a_(d−2); replacing d by−i gives
+C_i(t+1)=C_i(t) XOR(C_(i+1)(t) OR C_(i+2)(t)), exactly Φ. The two constructions are inverse by deterministic
+forward evolution. No minimal spatial or temporal period is claimed: repeated closed walks correspond to
+repeated ring patterns. Rotation quotients require matching quotients on both sides. This proof works for every
+positive P, although the present application chooses powers of two. With σx(i)=x(i+1), F^P x=σ^(−P)x has velocity+1,
+so the former prose 'moved left' was a sign error; it lies outside PeriodicPoints' velocity range. This read does
+not independently certify the ring censuses, cap64 evidence, or the later reachability equivalence.
 
 **The census** (`ring_power2_census.py`) lists every ring configuration with Φ^P x = x:
 
