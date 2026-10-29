@@ -36,3 +36,21 @@ replayed, and all eight headlines use propext and Quot.sound only. One attempt; 
   illustration cell runs inside it, at T = 2048: a 2049 × 4097 array, roughly 70 MB. **Prediction:** the
   events at diagonals 4 and 7 with η = 1 and 0, matching the next letters 1 and 0; nine outputs, no messages;
   `KernelCheck` Success. **Counterfactual:** any message, `$Failed` or mismatch stops the release.
+
+## Stage A2 result
+
+`Rule30Submission.lean` compiled in one attempt, with standard axioms (propext and Quot.sound) on all
+headlines checked.
+
+## Stage B, attempt 1: failed, retained in receipts/stageB-attempt1.txt
+
+The illustration cell's `Rest[Q] > Most[Q]` does not thread over lists, so it generated messages and an empty
+events table. The Lean cells were correct. My prediction of nine outputs was wrong; the essay has six cells with
+output.
+
+## Stage B, attempt 2: frozen at this commit, with one repair
+
+`Boole[Thread[Rest[Q] > Most[Q]]]`. Caps and conditions as for attempt 1, and the kernel is stopped afterwards.
+**Prediction:** six outputs with no messages; the events table lists diagonals 4 and 7 (q = 4 and 16, η = 1 and
+0, next letters 1 and 0); `KernelCheck` Success. **Counterfactual:** a message, `$Failed` or a mismatch stops
+the release, and there is no third attempt without a new spec.

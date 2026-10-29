@@ -61,7 +61,7 @@ letter after it, against the theorem's $\eta$.
 T = 2048; ca = CellularAutomaton[30, {{1}, 0}, T];
 dg[j_, t_] := ca[[t + 1, T + 1 + t - j]];
 lp[j_] := SelectFirst[2^Range[0, 9], Function[p, AllTrue[Range[0, T - p - 1], dg[j, #] == dg[j, # + p] &]]];
-per = lp /@ Range[0, 19]; Q = FoldList[Max, per]; x = Prepend[Boole[Rest[Q] > Most[Q]], Missing[]];
+per = lp /@ Range[0, 19]; Q = FoldList[Max, per]; x = Prepend[Boole[Thread[Rest[Q] > Most[Q]]], Missing[]];
 events = Select[Range[3, 16], x[[#]] == 1 && x[[# + 1]] == 0 && x[[# + 2]] == 1 &];
 Grid[Prepend[Table[With[{q = Q[[j - 1]]}, {j - 1, q, Mod[q/2, 2] ~BitXor~ Fold[BitXor, 0, Table[dg[j - 2, 2 s], {s, 0, q/2 - 1}]], x[[j + 3]]}], {j, events}], {"j", "q", "eta", "next letter"}], Frame -> All]
 ```
