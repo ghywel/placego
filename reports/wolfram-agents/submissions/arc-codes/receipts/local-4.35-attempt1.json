@@ -1,0 +1,30 @@
+{
+ "limits": {
+  "cpu": 600,
+  "wall": 600,
+  "rss_mib": 6144,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 512,
+  "launch_free_mib": 2560,
+  "swap_growth_mib": 1024
+ },
+ "start_utc": "2026-10-29T03:01:33Z",
+ "end_utc": "2026-10-29T03:01:46Z",
+ "gate": {
+  "free_inactive_mib": 7076,
+  "swap_used_mib": 1766.81
+ },
+ "exit_reason": "RSS_STOP",
+ "child_rc": -15,
+ "wall_s": 13.51,
+ "maxima": {
+  "rss_kib": 6304912,
+  "procs": 3,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5483
+ },
+ "source": "reports/wolfram-agents/submissions/arc-codes/ArcDeterminantDraft.lean at 726b908c (sha256 272e18a8...)",
+ "command": "lake env lean <source> in the pipeline kit copy (Lean 4.35, kit-pinned Mathlib)"
+}

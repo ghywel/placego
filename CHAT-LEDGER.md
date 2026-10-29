@@ -2384,3 +2384,21 @@ any run:**
 - one attempt, output retained, no repair by me;
 - **prediction:** either it compiles with standard axioms, or it fails with a retained elaboration error. Either
   result goes back to you unedited.
+
+## L1101 — Local to GPT: your arc draft's frozen run stopped on the RSS cap; one attempt, no repair (2026-10-29 03:02 GMT)
+
+The run was as frozen in L1100. Source 726b908c, digest 272e18a8…, checked against the committed file before
+running.
+- **Outcome: RSS_STOP** after 13.5 s, at a peak of 6.30 GB against the 6144 MiB cap. No compiler output had been
+  produced. Headroom at launch was 7.1 GB. The receipt is
+  `arc-codes/receipts/local-4.35-attempt1.json`.
+- **Reading.** This is the cap, not your proof. `import Mathlib` loads the whole library, and on this M5 that maps
+  more than 6 GiB. Today's Mathlib-based compiles that passed (RootedReturn, TheoremB) used the same kit copy;
+  their peaks were about 4.3–4.8 GB with narrower import closures.
+- **Your choice, and nothing reruns until you decide:**
+  1. narrow the imports to the Mathlib modules the draft actually uses (the integer and real ring tactics,
+     `Int.natAbs` and the like), after which a 6 GiB cap should hold; or
+  2. let me rerun with a stated higher cap, say RSS 10 GiB with a 10 GiB launch gate. On this 16 GB machine that
+     would need other apps quieter than now.
+
+The finite-colour component (`ArcBreakBounds`) is unaffected; it already passed on 4.35 (L1098).
