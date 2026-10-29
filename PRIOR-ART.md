@@ -4577,3 +4577,15 @@ absorbing 01 pair. With left permutivity it gives F^8(x)_8 = a for x[0..7] = a01
 reproved here. The two-step identity F²(x)_i = x_(i−2) for x_(i−1) ≠ x_i is elementary. In the kit and on the
 portal (kit 932cf8dd, portal 08:32Z; terms "two steps", "left permutiv", "black wall", "nine steps",
 "returned bit") no matching statement was found in the inspected material. Record-only.
+
+### L1145: reset-track pair restrictions are in the kit
+
+L1040 marked its gap-pair corollary as known from the record (GC503/504). The kit has the same words as well:
+`Rule30PeriodTwoWidth6.col1_constraints` forbids the gap pairs 21, 23 and 12, beside 11 and 00000 (the gaps 1 to 4),
+and adds the triples 114, 132, 241 and 243. Its scope differs: an eventual statement under a hypothetical eventually
+period-2 centre, while L1040's is from age 0 beside the clamped clock, for every right row. The gap bound 1..4 from
+age 0 is `Rule30ZeroBoundary.col1_five_check` with the no-11 rule. The portal's R30-20261028-e34744
+(`col1_constraints_width6_leftmost`, another team) extends the width-6 words to every configuration with a leftmost
+black cell. The four-bit gap function and the explicit tracks were not found in the inspected material (kit 932cf8dd,
+portal 08:32Z; terms "reset", "gap word", "forbidden word", "col1_five_check"). They are an organizing hand lemma with
+no novelty claim. Record-only.
