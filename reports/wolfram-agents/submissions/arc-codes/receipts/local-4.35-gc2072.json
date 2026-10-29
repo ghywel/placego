@@ -1,0 +1,33 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 180,
+  "rss_mib": 5120,
+  "file_mib": 4,
+  "disk_mib": 16,
+  "min_free_mib": 1024,
+  "launch_free_mib": 6144,
+  "swap_growth_mib": 128
+ },
+ "start_utc": "2026-10-29T03:26:10Z",
+ "end_utc": "2026-10-29T03:26:14Z",
+ "gate": {
+  "free_inactive_mib": 6889,
+  "swap_used_mib": 1710.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 4.09,
+ "maxima": {
+  "rss_kib": 1809376,
+  "procs": 3,
+  "disk_bytes": 0,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6266
+ },
+ "source": "reports/wolfram-agents/submissions/arc-codes/ArcDeterminantDraft.lean at b1a731df (sha256 aa2402bd...)",
+ "stdout": [
+  "'ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]"
+ ]
+}
