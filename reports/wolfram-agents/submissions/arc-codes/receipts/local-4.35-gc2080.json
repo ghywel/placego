@@ -1,0 +1,80 @@
+{
+ "limits": {
+  "cpu": 60,
+  "wall": 180,
+  "rss_mib": 3072,
+  "file_mib": 16,
+  "disk_mib": 32,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 128
+ },
+ "start_utc": "2026-10-29T04:04:01Z",
+ "end_utc": "2026-10-29T04:04:09Z",
+ "gate": {
+  "free_inactive_mib": 7298,
+  "swap_used_mib": 1686.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 7.16,
+ "maxima": {
+  "rss_kib": 2010944,
+  "procs": 4,
+  "disk_bytes": 1041830,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6148
+ },
+ "cmd": "from the pipeline kit root (Mathlib built), PATH with the elan bin first: lake env sh tests/probes/wolfram/check_arc_components.sh (at 2485de06) reports/wolfram-agents/submissions/arc-codes",
+ "stdout": [
+  "ArcBreakBounds sha256 cbb2f4ba2a384a9b9cb077f4b5c9242339237864bc47af70f0afddaf5b78f1a6",
+  "ArcBreakSequence sha256 7d6f45508ce456e11cefa1e305580f8d1195f26e5cd1375e9cd9e96dd53ffdfe",
+  "ArcDeterminantDraft sha256 aa2402bddf84deac9c38f3383fb55b57e6f088a1453b02dd465b128d99fa083a",
+  "ArcCoverDraft sha256 58268dd3a9e52652fe904d390c51b2354b6eae90bde99fd06e12c4e60958d5f4",
+  "ArcStepCodeDraft sha256 b207135e62cb7e8dde7f4e79ecb1f20f6825001efdae997536ce60dc0f6dafe5",
+  "'ArcBreakBounds.label_collision' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakBounds.break_envelope' depends on axioms: [propext, Quot.sound]",
+  "'ArcBreakBounds.spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakBounds.next_denominator_covers_window' depends on axioms: [propext, Quot.sound]",
+  "'ArcBreakSequence.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.sequence_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.sequence_strict' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.labelled_spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.same_interval_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.no_repeat_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.crossing' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.break_has_lift' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.lift_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.no_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "ARC_COMPONENT_CHECK_PASS"
+ ],
+ "component_check": {
+  "status": "PASS",
+  "headlines": {
+   "ArcBreakBounds.label_collision": "propext, Classical.choice, Quot.sound",
+   "ArcBreakBounds.break_envelope": "propext, Quot.sound",
+   "ArcBreakBounds.spacing_bound": "propext, Classical.choice, Quot.sound",
+   "ArcBreakBounds.next_denominator_covers_window": "propext, Quot.sound",
+   "ArcBreakSequence.future_break": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.sequence_break": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.sequence_strict": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.labelled_spacing_bound": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.spacing_of_bezout": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.no_short_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.same_interval_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.short_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.no_repeat_of_cover": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.crossing": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.break_has_lift": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.lift_cover": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.no_repeat_bound": "propext, Classical.choice, Quot.sound"
+  },
+  "scope": "conditional components only; actual CF and physical Rule30 assembly absent"
+ },
+ "time_receipt_first_line": "6.88 real         2.66 user         2.05 sys",
+ "launcher_sha256": "55202c2020389ee54dca96c9edbdfde0c5c522552c9e1fb494aae8d4da1ef7c0",
+ "out_sha256": "ce89ba5c72762de7693024b2d25bca6be2c5bd36bd4a7a0623c9a5bc4fd56ca4"
+}
