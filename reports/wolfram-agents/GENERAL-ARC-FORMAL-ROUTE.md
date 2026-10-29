@@ -189,3 +189,29 @@ blocks_of_visible repeat substitution, including even-time restart. Those two in
 hand results. Local explicitly did not read the alternative direct window_jen_col substitution; it remains
 a self-check, not part of that acceptance. The GC2056 determinant route/threshold and the assembled formal
 wrapper retain their separate pending statuses.
+
+## GC2067 — recovering the original threshold: keep the growing previous denominator
+
+**PROOF-SKETCH of the sharper assembly, independent read pending.** The earlier >K+1 sufficient condition
+remains valid, but the apparent loss of one digit is avoidable. The question I failed to ask there was whether
+the discarded previous denominator is merely nonnegative, or grows enough to pay the fixed margin. It grows.
+
+Keep q_previous in q_next=a_next*q+q_previous. With K=2^(r+1), B=K*(q+C+2), a_next>K and
+q_previous>=K*(C+2),
+
+    q_next >= (K+1)*q+q_previous >= (K+1)*q+K*(C+2) = B+q.
+
+The exact error identity still gives0<epsilon<1/q_next, hence (B+q)*epsilon<1. The elementary determinant
+spacing lemma contradicts the repeated-label gap m<B, as before. Since q_previous tends to infinity,
+infinitely many a_next>K provide an index with that fixed margin paid. This recovers the original GC2051
+digit threshold >K, without importing the full best-approximation lower spacing theorem.
+
+No positive ratio of previous/current denominators is needed; only unbounded q_previous. In the kit's indexing,
+q_previous=contQ(digit alpha)(n+1); contQ_ge at n-2 gives q_previous>=n-1 for n>=2. Thus a sufficiently large
+index, for example n>=K*(C+2)+2, suffices. Minimum endpoint separation is still unnecessary for the cover.
+This is a simpler proof route to the already carried theorem, not a newly discovered exclusion or an
+all-irrational/all-bounded-partial-quotient result.
+
+ArcBreakBounds.next_denominator_covers_window is the separate Nat arithmetic target. ArcContinuantsDraft
+now exposes actual-kit Bezout coefficients and the strict next-denominator error bound; it remains uncompiled.
+The old one-digit-loss discussion above records a weaker intermediate estimate, not the final best scope.

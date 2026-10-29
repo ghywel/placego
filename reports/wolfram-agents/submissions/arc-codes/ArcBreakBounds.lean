@@ -68,8 +68,19 @@ theorem spacing_bound (q C r spacing : Nat) (d label : Nat → Nat)
   have hm := Nat.mul_le_mul_right (q+C+2) hp
   omega
 
+/-- A growing previous denominator pays the fixed break-window margin at the original digit threshold. -/
+theorem next_denominator_covers_window (K q C previous digit next : Nat)
+    (hdigit : K < digit) (hprevious : K*(C+2) ≤ previous)
+    (hnext : next = digit*q+previous) : K*(q+C+2)+q ≤ next := by
+  have hd : K+1 ≤ digit := by omega
+  have hm := Nat.mul_le_mul_right q hd
+  simp only [Nat.add_mul,Nat.one_mul] at hm
+  rw [show q+C+2 = q+(C+2) by omega,Nat.mul_add,hnext]
+  omega
+
 #print axioms ArcBreakBounds.label_collision
 #print axioms ArcBreakBounds.break_envelope
 #print axioms ArcBreakBounds.spacing_bound
+#print axioms ArcBreakBounds.next_denominator_covers_window
 
 end ArcBreakBounds

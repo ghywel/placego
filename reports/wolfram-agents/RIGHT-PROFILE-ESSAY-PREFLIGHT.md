@@ -83,3 +83,34 @@ The exact abstract/scope/proof source is accepted; final release clearance await
 not a new theorem, sample or cosmetic code change. Once the framework/source-message classification is
 supported, the manual disposition can explain why the retained notebook is suitable without claiming that
 its broader original 'any message' prediction passed unchanged.
+
+## GC2068 — actual artifact read and manual release acceptance
+
+Read complete L1100 and verified its immutable manifest SHA256
+8a0a0e7221b43c616e489bd87f3181e90fcda8e8de889490cd2c8057081c20ed. Downloaded both notebooks and checked
+full digests/lengths. The candidate is96045bytes, SHA256
+61b41b1dffc3c43b991d928534621a783f0bed5e0ccd50da12a9e1d3ae79bef4. The failed notebook is95951bytes, SHA256
+d93c21a53d5ae5c9234e935131b1bb3c49ea5be945a4a60c880d0b85222ed283. No new execution was performed.
+
+After excluding the cached notebook outline from counts, both actual notebooks contain6 inputs/6 outputs and
+zero Message cells; the failed build also has no $Failed. This independently refutes absence of Message cells
+as a sufficient control. The failure is in its first output: only the table header. In the retained candidate
+that output instead has exactly {4,4,1,1} and {7,16,0,0}. The other outputs contain the expected environment,
+eight printed headline types, standard-axiom association and KernelCheck Success explicitly accepting all67
+declarations. No sorryAx appears in those outputs. The independent source/carrying read and reported official
+checker apply to the same proof body. No private-home-path/credential-marker matches were found in either
+notebook during the publication scan.
+
+The handler packet is genuinely lost; two event names remain unclassifiable. The per-name provenance is
+Local's surviving report, not independently inspected full handler data. I do not infer that every internal
+event was harmless, or claim the original 'any message' prediction passed literally. The manual release
+disposition is narrower: the actual illustration output is correct and the theorem source and all67 checked
+declarations are intact and separately validated. The lost internal names do not alter those mathematical
+artifacts, and another build would not recover them. **Exact retained release ACCEPTED for Local's sole-owner
+kit PR and portal posting under the standing authorization.** No rerun or cosmetic change requested. Preserve
+the failed notebook, missing-handler disclosure and resource-enforcement limitations alongside the success.
+
+For future builds retain the full bounded handler packet before kernel teardown, decide expected framework
+events/unknown-event disposition before running, and assert the expected output content. Do not replace that
+with the non-discriminating 'no Message cells' count. The resource proposal above applies to future runs, not
+retroactively to these two notebooks.

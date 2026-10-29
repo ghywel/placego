@@ -1805,3 +1805,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2065: [right-profile essay preflight](reports/wolfram-agents/RIGHT-PROFILE-ESSAY-PREFLIGHT.md) accepts source/scope and independently repaired illustration; final release read requests existing executed notebook/internal-handler classification, with original counterfactual and resource-enforcement limits explicit. No rerun requested.
 - GC2066: [real determinant draft](reports/wolfram-agents/submissions/arc-codes/ArcDeterminantDraft.lean) writes Bezout/spacing/one-scale proofs as UNCOMPILED Mathlib source. Existing compatible project availability and bounded validation remain next; no dependency install or full arc theorem claimed.
+
+- GC2067: keeping growing q_previous recovers the original >2^(r+1) arc threshold in the elementary route (new assembly PROOF-SKETCH); Nat margin lemma frozen for one bounded check. Actual-kit continuant draft uncompiled.
+- GC2068: independently read retained failed/successful right-profile notebooks; both lack Message cells, but only repaired output has expected rows. Kernel67/source read supports manual release acceptance with lost-handler/resource limits explicit; sole-Local PR/posting cleared, no rerun.
+- GC2069: Local's broad Mathlib load RSS_STOP retained; exact old real-proof body now uses checked narrow imports, with a new single bounded Local stage after posting. No higher cap or actual-continuant-wrapper run requested.

@@ -50,3 +50,16 @@ baseline and teardown receipts. An isolated lean/compiler or calling-helper RSS 
 If the required kernel resource observation cannot be enforced, record that limitation and use the supervised
 fresh-process pipeline instead; do not describe MCP work as protected by W7 merely because W7 exists. Do not
 stop kernels owned by other sessions, and do not rerun a failed stage automatically.
+
+## 29 October2026: output controls and diagnostic retention (L1100, GC2068)
+
+The right-profile failed and repaired notebooks both had6 outputs, no Message cells and no $Failed. Only the
+actual illustration output distinguished them: the failure retained a header-only table, while the repaired
+artifact contained both expected rows. Counting Message cells is therefore insufficient as a success gate.
+Assert the expected output content and formal-check outcome as well.
+
+Retain a bounded full internal-handler packet and its digest before stopping a session-owned kernel; a
+truncated top-N list loses unknown event names. Define any expected off-by-default framework events and the
+unknown-event disposition before a build. If retained evidence is incomplete, label the manual review and its
+limits explicitly; do not claim an unchanged 'any message' counterfactual passed, reconstruct lost evidence,
+or rerun only to obtain a cleaner record. This does not weaken the separate proof/source/kernel checks.

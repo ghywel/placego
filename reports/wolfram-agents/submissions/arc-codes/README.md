@@ -1,8 +1,10 @@
 # Arc-code components — compiled counting bound and uncompiled real draft
 
-**Current status, GC2066:** ArcBreakBounds passed the first capped Intel4.33.1 compile; Local reports a clean
-4.35 check. ArcDeterminantDraft is uncompiled and needs compatible Mathlib plus a frozen validation stage.
-Neither is a full real-rotation/Rule30 submission. Dated specifications/results below preserve their scopes.
+**Current status, GC2069:** the original counting component passed Intel4.33.1 and a reported Local4.35 check.
+The new previous-denominator margin lemma has its own one-attempt Intel plan below. Local's old broad-import
+real draft hit RSS_STOP before compiler output; the same body now has minimal imports and a separate new
+bounded Local plan. ArcContinuantsDraft is uncompiled. No complete real-rotation/Rule30 submission is claimed.
+Dated specifications/results below preserve their exact scope and failures.
 
 ## GC2061 prelaunch specification
 
@@ -70,3 +72,48 @@ pins Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Next resolve whether an al
 project is available, then freeze a bounded exact-source validation stage; this paragraph is not permission to
 install/build an unbounded dependency tree or launch while Local's notebook/compiler allocation is active.
 The real step-code/continued-fraction/Rule30 assembly remains unfinished even if this draft later compiles.
+
+## GC2067 — sharper margin lemma, frozen compiler plan before execution
+
+New question: can the previous convergent denominator, rather than an extra digit, pay the fixed break-window
+margin? Yes by hand: if a_next>K and q_previous>=K*(C+2), then q_next=a_next*q+q_previous>=B+q for
+B=K*(q+C+2). The existing error bound and determinant spacing close the original >K threshold. This corrects
+the earlier impression that the simpler route necessarily loses one digit; no stronger arbitrary-alpha claim.
+
+Freeze next_denominator_covers_window in the exact committed ArcBreakBounds source before one Intel compile.
+Prediction: standard-axiom compile of the new universal Nat inequality and all earlier headlines. Counterfactual:
+retain any error/nonstandard axiom/resource stop and reject the attempt. Existing finite-colour controls remain;
+no numeric census is needed. One attempt only, one Lean plus its time wrapper expected, no other Intel job:
+20CPU seconds per owned process (conservative40 child CPU seconds across those two),30stage wall seconds,
+512MiB sampled groupRSS,2MiB/file,8MiB total output,1024/512MiB launch/ongoing headroom,128MiB swap-growth stop.
+Standard run_capped with fresh directory; report any extra group member rather than assume this process envelope.
+No automatic retry/limit widening. This is separate from the completed GC2061 compiler stage, not its unused
+attempt reused for a new theorem. Source and plan must be pushed first; current4.35 check remains separate.
+
+## GC2069 — narrow the import closure after the retained Local RSS stop
+
+L1100/L1101 ran the old726b908c real draft on the available M5 built Mathlib environment. Its whole-library
+`import Mathlib` hit RSS_STOP before compiler output. Preserve that outcome; it is neither a proof failure nor
+permission to raise the cap automatically. The current ArcDeterminantDraft keeps the same proof body and imports
+only the exact Real.Basic/tactic modules it uses, including core Lean.Elab.Tactic.NormCast (there is no
+Mathlib.Tactic.NormCast at the pinned revision). These module paths/imports were checked against primary source.
+
+Separate ArcContinuantsDraft retains the new actual-kit continuant/approximation lemmas as UNCOMPILED source;
+it needs the equivalents module plus a built ArcDeterminantDraft on LEAN_PATH. Do not load it in this next
+resource-discrimination test, which is only the original real spacing proof with narrower imports.
+
+**One new Local attempt proposed after the posting allocation is idle:** exact current committed
+ArcDeterminantDraft, existing prebuilt compatible Mathlib/Lean4.35, no dependency install or library build.
+Question: does removing the whole-library import allow the actual proof to reach elaboration within the old
+6GiB memory ceiling? Prediction: imports load within cap, then either standard-axiom success or a retained
+specific proof diagnostic. Counterfactual: another cap/load stop is retained and ends this attempt; do not
+widen the cap or automatically rerun. No claim of success before the result.
+
+Use one run_capped group, CPU120s per process,180stage wall,6144MiB sampled groupRSS,4MiB/file,16MiB output,
+7168MiB launch free+inactive,1024MiB ongoing,128MiB swap growth, one Lean/lake/time invocation with at most3
+owned process lifetimes expected (conservative360 child CPU seconds; supervisor reported separately). No other
+Local compute/notebook kernel allocation. Check actual live headroom/concurrency before launch; a failed gate
+is a retained refusal, not an invitation to rerun or close another session's kernel. Retain source/stdout/time/
+supervisor receipts, actual process count and pressure samples. Local may revise the plan before launch if
+actual invocation/allocation facts differ, committing that revision first. This is the explicit scope/cap
+coordination for a new discriminating attempt, not a request for another owner permission round.

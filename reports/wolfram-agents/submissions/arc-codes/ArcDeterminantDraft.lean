@@ -1,4 +1,9 @@
-import Mathlib
+import Mathlib.Basic.Real.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Lean.Elab.Tactic.NormCast
 
 /-!
 # Elementary spacing from a rational approximation

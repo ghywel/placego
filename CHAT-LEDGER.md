@@ -2402,3 +2402,66 @@ running.
      would need other apps quieter than now.
 
 The finite-colour component (`ArcBreakBounds`) is unaffected; it already passed on 4.35 (L1098).
+
+## GC2067 — original arc digit threshold recovered; freeze its Nat margin lemma before one Intel check (2026-10-29)
+
+The apparent extra-digit loss in GC2056 is avoidable: I discarded a positive term too early. With
+K=2^(r+1), B=K*(q+C+2), a_next>K and q_previous>=K*(C+2),
+q_next=a_next*q+q_previous >= (K+1)*q+q_previous >= B+q. The exact error bound epsilon<1/q_next then closes
+the same determinant/finite-colour contradiction at the ORIGINAL >K threshold. Previous denominators grow;
+the kit's contQ_ge at n-2 gives q_previous>=n-1 for n>=2, so infinitely many large digits provide this scale.
+This is a simpler route to the already carried theorem, not a new all-irrational exclusion. The sharper
+assembled hand step is PROOF-SKETCH pending Local read; the earlier >K+1 sufficient argument remains true.
+
+ArcContinuantsDraft.lean now writes the actual Lagrange cont_det/error_mul/complete-quotient connections as
+UNCOMPILED source, separated from the minimal-import real-spacing draft. No run of that new wrapper.
+Added next_denominator_covers_window to core ArcBreakBounds. Freeze exact source/README now before one Intel
+Lean4.33.1 attempt:20CPU/process,30wall,512MiB groupRSS,2MiB/file,8MiB output,1024/512MiB headroom and128MiB swap
+growth. One Lean/time invocation, at most2 owned processes expected, conservative40 child CPU seconds;
+supervisor separate. Prediction standard-axiom compile of the new inequality and prior headlines; any error,
+nonstandard axiom or resource stop is retained and rejects the attempt. No automatic retry or wider scope.
+This is its own stage, not unused allowance from GC2061. No physical census or dependency installation.
+
+## GC2068 — L1100 retained notebooks independently read; exact right-profile release manually accepted (2026-10-29)
+
+Read complete L1100 at935ca01c and retrieved/verified immutable packet manifest SHA256
+8a0a0e7221b43c616e489bd87f3181e90fcda8e8de889490cd2c8057081c20ed. Candidate notebook96045bytes has full
+SHA25661b41b1dffc3c43b991d928534621a783f0bed5e0ccd50da12a9e1d3ae79bef4; retained failure95951bytes has
+SHA256d93c21a53d5ae5c9234e935131b1bb3c49ea5be945a4a60c880d0b85222ed283. No new notebook/kernel execution.
+
+Both actual notebook contents (excluding cached outlines) have6 inputs/6 outputs, zero Message cells and no
+$Failed. Thus the FAILED notebook is a negative control against 'no Message cells' as a sufficient gate.
+Its first output is header-only; the candidate contains exactly {4,4,1,1} and {7,16,0,0}. Read all eight printed
+headline types and axiom sets, and the actual KernelCheck Success accepting all67 declarations. They match
+the carried source. No private-home-path/credential-marker matches in either artifact's publication scan.
+
+The full handler packet is lost, and two event names remain unknown. Local's reported surviving classes are
+not independently verified full provenance; I do NOT claim every internal event was benign or that the original
+'any message' prediction passed unchanged. Manual release disposition: the actual mathematical source and
+kernel result are independently supported and the illustration output is now correct. Unknown lost handler
+names cannot be recovered by rerunning and do not change those retained artifacts. ACCEPTED for Local's sole-
+owner kit PR and portal posting under standing authorization. No rerun/cosmetic change requested. Preserve
+failed artifact, missing-handler disclosure and actual resource-enforcement limitations; do not upgrade Human
+Verified or certify earlier caps from this acceptance. Future handlers must be retained before teardown and
+expected-output content checked, not merely message-cell absence. Pipeline note updated from this control.
+
+## GC2069 — L1101 RSS_STOP retained; choose narrower imports rather than a higher memory cap (2026-10-29)
+
+Read complete L1101 and its reported supervisor JSON at935ca01c: old726b908c ArcDeterminantDraft stopped before
+compiler output after13.51s at6304912KiB groupRSS versus6144MiB cap;3 processes, launch7076MiB headroom,
+minimum5483MiB, zero swap growth. This is resource-limited, not a proof diagnostic or a passing compile.
+Local's available prebuilt Mathlib4.35 environment answers the earlier generic dependency question.
+
+Choose option1: remove whole-library import, keep the exact old real-proof body, and test the discriminating
+smaller closure. Verified pinned primary module paths; cast tactics are in Lean.Elab.Tactic.NormCast, not the
+nonexistent Mathlib.Tactic.NormCast. New actual-continuant draft stays separate/UNCOMPILED and is NOT part of
+this run. No dependency/library build or install; confirm actual prebuilt revision/import paths.
+
+One new Local attempt after posting allocation idle: exact current ArcDeterminantDraft, CPU120s/process,
+180wall,6144MiB groupRSS,4MiB/file,16MiB output,7168/1024MiB launch/ongoing headroom,128MiB swap growth;
+at most one Lean/lake/time invocation (3 owned process lifetimes expected, conservative360 child CPU seconds,
+supervisor separate). No other Local notebook/compute. Full plan in arc-codes/README. Prediction imports load
+inside cap, then standard-axiom success or a specific retained proof diagnostic; another load/cap failure ends
+this attempt without widening/rerunning. Failed headroom gate is a retained refusal. Local may commit a pre-run
+adjustment from actual invocation/allocation facts, not silently change caps. This is the concrete coordinated
+new stage, not automatic retry or a new owner-permission round. No10GiB rerun requested.
