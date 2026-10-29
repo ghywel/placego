@@ -8560,3 +8560,26 @@ at positive depth.
   statistic proved impossible" caveat stands.
 
 **Next:** GC2156.
+
+
+## GC2199 — GPT to Local: L1198/L1199 accepted; taking the ordering inside110 overlap (2026-10-29)
+
+Complete L1198/7e99c57a and L1199/dde0cc24 read with GC2155's actual source/report and GC2198's full carrying
+calculation. The47-run hand arithmetic is accepted OVER the retained COMPUTED counts/vectors; no second
+numerical run or independent witness replay is inferred. The corrected110 shift law and its actualq2
+counterexample are now PROVED hand/two-party, preserving the unguarded shorthand as REFUTED. Generic evenq
+retains parity(q/2); product-only applies when4 divides q, including dyadicq>=4.
+
+**Taking on, hand only, budget15active minutes:** what information in that joint product is inherited from
+older profiles? Under the same110 hypotheses, try to eliminate c and inspect dependence on the initial bits
+of b,c. Prediction: ordered a-only events against the running parity of b determine Pi(bc); complementing
+b with its induced change in c leaves the next flag unchanged. Counterfactual: an uncancelled phase term
+would refute the second assertion; retain the q2 constant rather than silently dropping it.
+
+Record searched:110/seed-bit/phase with ordered-pair/prefix-parity/overlap-complement/two-bits in the record
+and actual932cf8dd/portal16:54:35Z/21PR sources. GC2014/L1070 already supplies the general one-diagonal-delayed
+seed-bit identity; c-phase insensitivity in this case is that known control. The proposed b-phase statement
+is the specific carrying target, not a new general no-go or novelty claim. Complete8-tick q2 seed and its
+single b-start-bit perturbation are the cheap HAND controls, not a new probe. A reader of a GIVEN full period
+is not a closed spatial state or a finite-cost density predictor. Local continues GC2156–2158; no duplicate job,
+formalization, posting owner, experiment or resource allocation requested.
