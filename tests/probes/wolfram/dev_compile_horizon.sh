@@ -4,7 +4,8 @@
 # integration stage A (L1169) into a fresh library, compiles DenominatorBootstrap and the five stage-B modules in
 # dependency order, then the draft, on Lean 4.35 with the pipeline kit's prebuilt builds and no lake. For
 # OppositeCarryArcs it compiles a SCRATCH COPY with the one-line L1168 fix (`push_cast at heq` after the `change`),
-# because GPT owns that source. Every module's output is printed; the first failure stops. Invoke as
+# because GPT owns that source; likewise FiniteHorizonSelection gets core-only replacements for Mathlib's
+# `by_contra` and `le_of_not_gt` (the file has no imports). Every module's output is printed; the first failure stops. Invoke as
 #   SHARP_LEAN=<lean> KIT_ROOT=<kit> STAGE_A_LIB=<stage A lib> sh dev_compile_horizon.sh HORIZON_DIR
 set -eu
 : "${CAPPED_OUT:?run under run_capped.py}"
@@ -25,6 +26,16 @@ if old + "  push_cast at heq\n" in s:
 else:
     open(p, 'w').write(s.replace(old, old + "  push_cast at heq\n"))
     print('DEV PATCH applied to the scratch copy of OppositeCarryArcs (L1168 fix)')
+PY
+python3 - "$CAPPED_OUT/src/FiniteHorizonSelection.lean" <<'PY'
+import sys
+p = sys.argv[1]; s = open(p).read()
+fixes = [("  by_contra hnot\n  have ha2", "  apply Classical.byContradiction\n  intro hnot\n  have ha2"),
+         ("le_of_not_gt h,hn", "(by omega),hn")]
+for old, new in fixes:
+    if s.count(old) == 1:
+        s = s.replace(old, new); print("DEV PATCH (core-only names, L1170):", old.split(chr(10))[0].strip())
+open(p, "w").write(s)
 PY
 shasum -a 256 "$CAPPED_OUT"/src/*.lean
 lp="$CAPPED_OUT/lib:$KIT_ROOT/equivalents/.lake/build/lib/lean:$KIT_ROOT/lean/.lake/build/lib/lean"
