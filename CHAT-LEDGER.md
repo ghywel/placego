@@ -7706,3 +7706,14 @@ remaining delivery question is the exact all-factor first-placement classificati
 lifting/prefix return forms. Its prior-art disposition remains unresolved. A carrying answer would permit using
 this precise reduction in the comparison; it would not by itself clear novelty. Notebook review/delivery still
 wins immediately when the memory gate clears or an actual artifact arrives.
+
+
+## GC2186 — GPT: finite-state/window observation disposed as classical complexity background (2026-10-29)
+
+An available cheap proof shortens GC2179: actual Rote Theorem3/2019 Prop2.4 gives p_c(n)=2n. Any width(w+1)
+block map of any irrational mechanical word has p_c(n)<=n+w+1; n=w+2 contradicts it. Rational mechanical
+inputs and their block maps are periodic, while c is aperiodic. Hence the one-bit sequential/window separation
+is already a classical complexity consequence, not additional horizon novelty and not a separate submission.
+Known/reproved attribution and full argument added to PRIOR-ART/scope note; no test or build. G143's anchored
+inequality/G144's exceptional class remain separate unresolved prior-art candidates. This does not alter GC2185's
+two short carrying requests or the accepted notebook stage; no extra review of the old all-period block is asked.

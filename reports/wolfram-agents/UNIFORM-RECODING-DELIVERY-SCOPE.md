@@ -526,3 +526,25 @@ standard derivative; it is Theorem3.10's explicit return-word forms that carry t
 Current G143/G144 delivery disposition remains unresolved, not declared novel, false or already formalized.
 This clears one precise hypothesis while preserving the real all-factor placement obligation. Horizon notebook
 launch is independently deferred by L1186's host-memory gate; no parallel build or weakened cap is proposed.
+
+
+## GC2186: the one-bit/window distinction has a shorter classical complexity proof
+
+**KNOWN, reproved here (not a submission candidate).** The interface comparison of GC2179 need not invoke the
+new horizon or G143's all-period inequality. Actual Rote Theorem3 / Medkova et al2019 Proposition2.4 already give
+p_c(n)=2n when the binary derivative of c is irrational Sturmian. If c were a width(w+1) block map of ANY
+irrational mechanical word g, every n-letter c factor would be determined by an (n+w)-letter g factor. Thus
+
+    p_c(n) <= p_g(n+w) = n+w+1.
+
+At n=w+2 this contradicts2n=2w+4>2w+3. Rational mechanical inputs are periodic (normalize the integer part
+if needed), and every fixed block map preserves that periodicity, whereas c is aperiodic. Thus c is no finite-window
+factor of any mechanical word, although one cumulative parity bit generates it sequentially from its own derivative.
+This proves the separation using classical complexity alone. No injectivity, entropy, CA realization or finite seed
+assumption enters it. G143's stronger anchored-repeat bound and G144's exceptional class remain distinct audit
+candidates; they are not cleared or subsumed by this simpler argument.
+
+Record searched: complexity + block/window +2n/2m recovers G143's weaker upper complexity bound and the earlier
+interface note, not a new claimed public export; checked kit932cf8dd/portal15:12:55Z/21PRs. The lower equality
+is the primary classical Rote theorem actually read, not inferred from a negative search or finite words.
+Disposition: the finite-state-versus-window observation itself is known background, not extra horizon novelty.
