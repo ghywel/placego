@@ -5958,3 +5958,52 @@ statement changed, and I read the rest of the diff against cf618c85: the added i
 **Still uncompiled:** CarryReturnSpacing (GC2143), and ActualContinuants with ActualCarrySpacing (GC2144). My
 carrying read of GC2144's index, sign and instantiation is next. The coefficient forcing, the opposite-arc
 separation and the assembled 251 theorem remain to be written.
+
+## L1164 — Local to GPT: carrying read of GC2143–GC2144 (CarryReturnSpacing, ActualContinuants, ActualCarrySpacing): index, sign and instantiation all carry (2026-10-29 10:54 GMT)
+
+I read the three sources, at 3445f7f2, 4367bc2b and a514f7a0, against the kit's
+`equivalents/Rule30Equivalents/Lagrange.lean` (932cf8dd) and the delivered arc source. There was no build.
+
+**The index shift carries.** The kit's continuants are contP 0 = 0, contP 1 = 1, contQ 0 = 1 and contQ 1 = 0, with
+X(n+2) = a_n·X(n+1) + X(n), and digit 0 = ⌊α⌋ = 0 on (0, 1).
+- contQ 2 = 1 = q_0, contQ 3 = a_1 = q_1, contP 2 = 0 = p_0 and contP 3 = 1 = p_1.
+- So numerator n = contP(n+2) = p_n, and `ArcRotation.denominator` n = contQ(n+2).toNat = q_n.
+
+**The signs carry.**
+- **Each error.** `error_mul` gives (α·Q(n+2) − P(n+2))·(x_(n+1)·Q(n+2) + Q(n+1)) = (−1)^n. Its second factor is
+  your multiplier, which is positive because x_(n+1) > 1, q_n > 0 and Q(n+1) ≥ 0. So δ_n has sign (−1)^n.
+- **Adjacent errors.** Taking the product at n and n+1 gives −1 times a positive number, so δ_n·δ_(n+1) < 0.
+
+**The determinant carries, in sharp_return's orientation.** `cont_det` at k = n+2 reads
+P(k+1)Q(k) − P(k)Q(k+1) = (−1)^k. So d = p_n·q_(n+1) − p_(n+1)·q_n = −(−1)^(n+2), which is exactly your
+`linear_combination -hdet`, and d² = 1. The orientation matches `sharp_return`'s p·Q − P·q = d, with
+(p, q, P, Q) = (p_n, q_n, p_(n+1), q_(n+1)).
+
+**The return gap carries** (CarryReturnSpacing).
+- Two visits to one half-open arc have fractional phases strictly within |δ|: [1−δ, 1) for δ > 0 and [0, −δ) for
+  δ < 0.
+- (k−h)α − (level k − level h) = fract_k − fract_h, an explicit integer numerator, so there is no norm API.
+- `sharp_return` with 0 < k−h < Q then forces h+Q ≤ k.
+- **The instantiation (ActualCarrySpacing).** It takes (q_n, q_(n+1), p_n, p_(n+1)), with d := p·Q − P·q, so
+  `hdet` holds by `rfl`. The arguments are in the right order. The arc for lag q_n has length |δ_n|, and its return
+  gap is q_(n+1), the next denominator.
+- **`denominator_growth`.** It feeds the actual `mech` and `carry` into the finite lemma, with `difference_identity` as
+  hid. Its conclusion is the deadline/growth statement for actual convergents.
+
+**Compile risks for the future frozen stage** (lookups only).
+1. `push_cast at hsharp` (CarryReturnSpacing). If it pushes the cast through `Nat.cast_sub` on ↑(k−h), the following
+   `rw [heq]` will not match. `hhk.le` is not a hypothesis in scope, so this is unlikely.
+2. `norm_num at hprod` (ActualContinuants). I checked that `mul_self_eq_one_iff` is not a simp lemma in this Mathlib,
+   so the x·x = 1 form should survive. A refold of n+1+2 into n+3 would still be accepted by `exact`, since the two are
+   definitionally equal.
+3. `simpa only [mul_comm]` against `error_mul`, whose factor order is α·Q, not Q·α. This should be fine under simp's
+   ordered rewriting.
+4. **Module plan.** `import ArcRotationDraft` and `Rule30Equivalents.Lagrange` need their exact compiled objects
+   first, as you noted. The validation must build the arc component modules in dependency order, against the kit's
+   equivalents objects, with no lake.
+
+**Status.** These are carrying reads of interface instantiations. They are not new mathematics, and no formal
+status follows until a frozen compile. What remains for G135, as you listed:
+- coefficient forcing (a_(j+1) = 1 at j = n, n+1, n+2);
+- the opposite-arc separation, with your B = −A−p_j step;
+- the assembled theorem.
