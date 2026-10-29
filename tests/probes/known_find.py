@@ -220,13 +220,15 @@ def fetch_prs():
                     'comments': [{'kind': k, 'author': (c.get('user') or {}).get('login', '?'),
                                   'at': c.get('created_at', ''), 'url': c.get('html_url', ''),
                                   'body': c.get('body') or ''} for k, c in comments[p['number']]]})
+    # All or nothing (GC2129/GC2130): a new head becomes visible only when its whole file list and every listed Lean
+    # blob were read; on any failure the previous prs.json and every cached source directory are left untouched.
     errors, need = [], [p for p in prs if not os.path.exists(os.path.join(pr_dir(p), 'DONE'))]
     if need:
         r = git('fetch', '-q', '--depth', '1', 'origin',
                 *['+refs/pull/%d/head:refs/pr/%d' % (p['number'], p['number']) for p in need], cwd=KIT_DIR)
         if r.returncode:
-            errors.append('PR head fetch failed: ' + r.stderr.strip()[:200])
-            need = []
+            return ['PR head fetch failed, previous PR index kept: ' + r.stderr.strip()[:200]]
+    staged = []
     for p in need:
         ref = 'refs/pr/%d' % p['number']
         if git('rev-parse', ref, cwd=KIT_DIR).stdout.strip() != p['head']:
@@ -236,23 +238,40 @@ def fetch_prs():
             if shutil.which('gh'):
                 files = [f['filename'] for f in api_list('%s/pulls/%d/files?per_page=100' % (repo, p['number']))
                          if f.get('status') != 'removed']
-            else:
-                files = git('diff', '--name-only', '--diff-filter=AM', 'HEAD', ref, cwd=KIT_DIR).stdout.split()
+            else:                                   # --no-renames: a renamed file counts as added
+                r = git('diff', '--name-only', '--no-renames', '--diff-filter=AM', 'HEAD', ref, cwd=KIT_DIR)
+                if r.returncode:
+                    raise RuntimeError('git diff: ' + r.stderr.strip()[:200])
+                files = r.stdout.split()
         except Exception as exc:
             errors.append('PR #%d file list failed: %s' % (p['number'], exc))
             continue
         d = pr_dir(p)
         shutil.rmtree(d, ignore_errors=True)
         lean = sorted(f for f in files if f.endswith('.lean'))
+        missing = []
         for rel in lean:
             blob = subprocess.run(['git', 'show', '%s:%s' % (ref, rel)], cwd=KIT_DIR, capture_output=True, timeout=60)
-            if blob.returncode == 0:
-                os.makedirs(os.path.dirname(os.path.join(d, rel)) or d, exist_ok=True)
-                with open(os.path.join(d, rel), 'wb') as fh:
-                    fh.write(blob.stdout)
+            if blob.returncode:
+                missing.append(rel)
+                continue
+            os.makedirs(os.path.dirname(os.path.join(d, rel)) or d, exist_ok=True)
+            with open(os.path.join(d, rel), 'wb') as fh:
+                fh.write(blob.stdout)
+        if missing:
+            errors.append('PR #%d: %d listed Lean file(s) unreadable at its head, first %s' %
+                          (p['number'], len(missing), missing[0]))
+            shutil.rmtree(d, ignore_errors=True)
+            continue
         os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, 'FILES.json'), 'w') as fh:
             json.dump({'files': files, 'lean': lean}, fh)
+        staged.append((p, d))
+    if errors:
+        for _, d in staged:
+            shutil.rmtree(d, ignore_errors=True)
+        return [e + ' (previous PR index kept)' for e in errors]
+    for p, d in staged:
         with open(os.path.join(d, 'DONE'), 'w') as fh:
             fh.write(p['head'])
     keep = {os.path.basename(pr_dir(p)) for p in prs}
@@ -354,10 +373,12 @@ def pr_units():
     for p in load_prs():
         tag = '#%d' % p['number']
         out.append(('open PR', '%s %s: %s' % (tag, p['author'], p['title']), p['url'], p['title'] + '\n' + p['body']))
-        for c in p['comments']:
+        for i, c in enumerate(p['comments']):
             out.append(('open PR comment', '%s %s %s %s' % (tag, c['kind'], c['author'], c['at'][:16]),
-                        c['url'] or p['url'], c['body']))
+                        c['url'] or '%s#comment-index-%d' % (p['url'], i), c['body']))
         d = pr_dir(p)
+        if not os.path.exists(os.path.join(d, 'DONE')):
+            continue
         try:
             with open(os.path.join(d, 'FILES.json')) as fh:
                 lean = json.load(fh)['lean']
@@ -439,8 +460,9 @@ def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
 
 
 def snapshot_units(units):
-    """Track full source and portal metadata, not moving commit URLs or declaration names alone."""
-    return {'%s|%s' % (k, n): (k, n, u, t) for k, n, u, t in units
+    """Track full source and portal metadata, not moving commit URLs or declaration names alone. A PR comment is keyed
+    by its own URL: one author's two comments in the same minute share a display name (GC2129)."""
+    return {'%s|%s' % (k, u if k == 'open PR comment' else n): (k, n, u, t) for k, n, u, t in units
             if k in ('kit source', 'portal source', 'portal', 'open PR', 'open PR comment', 'PR source')}
 
 
