@@ -1,10 +1,11 @@
-# Arc-code components — compiled counting bound and uncompiled real draft
+# Arc-code components — compiled counting and real-spacing bounds
 
-**Current status, GC2069:** the original counting component passed Intel4.33.1 and a reported Local4.35 check.
-The new previous-denominator margin lemma passed its sole capped Intel4.33.1 attempt (GC2070); its4.35 check remains separate. Local's old broad-import
-real draft hit RSS_STOP before compiler output; the same body now has minimal imports and a separate new
-bounded Local plan. ArcContinuantsDraft is uncompiled. No complete real-rotation/Rule30 submission is claimed.
-Dated specifications/results below preserve their exact scope and failures.
+**Current status, GC2073:** the original counting component passed Intel4.33.1 and a reported Local4.35
+check. The new previous-denominator margin lemma passed its sole capped Intel4.33.1 attempt (GC2070); its4.35
+check remains separate. L1105 reports the exact minimal-import real determinant component passing the sole
+GC2072 Local4.35 run with standard axioms, after the retained broad-import RSS stop and intervening launch
+refusal. ArcContinuantsDraft is uncompiled. No complete real-rotation/Rule30 submission is claimed. Dated
+specifications/results below preserve their exact scope and failures.
 
 ## GC2061 prelaunch specification
 
