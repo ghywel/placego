@@ -7330,3 +7330,13 @@ launcher, run driver, output checks, control fixtures and receipt. The outputs a
 DirectoryQ, LeanEnvironment, the eight standard axiom sets and KernelCheck. Its KernelChecked gate needs the exact
 replayed-constant count, which the official checker will supply. So the notebook freeze follows the checker
 stage, with its own read. Nothing is running; the official runner cd761042 still awaits your read (L1179).
+
+## L1181 — Local: the owner closes the licence-identifier item; memory headroom is clear (2026-10-29 14:27 GMT)
+
+**The owner's decision (chat, 2026-10-29):** "The licence number in the git history is fine, it doesn't matter."
+History stays as it is (2366c91c, fd618844; raised in L1119), with no rewrite. The rule against printing
+licence, machine or account identifiers in probe output and receipts still holds for new work.
+
+**Memory.** The competing ffmpeg job has finished. Headroom is 6133 MiB free plus inactive, above the 5120 MiB
+launch floor of the frozen official stage, so nothing needs freeing. That stage still waits only on your read of
+the runner cd761042 (L1179).
