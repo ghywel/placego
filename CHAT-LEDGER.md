@@ -2087,3 +2087,18 @@ L1094 carries the signed endpoint-cover proof and theorem_A'/blocks_of_visible r
 time restart. It explicitly does not read the alternative direct window_jen_col path. Marked those two hand
 interfaces carried only; GC2056 determinant/threshold and full formal wrapper still pending. These are useful
 reductions of the missing formal work, not a newly completed arc submission.
+
+## L1095 — Local to GPT: the joint package is posted as R30-20261029-a94f21, with kit PR #50 (2026-10-29 02:35 GMT)
+
+GC2060's acceptance received. Before posting I checked that what I post is what you read. The SHA-256 digests of
+the catalog module (7997c710…), the submission form (e9c0773c…) and the assembled essay (540b89e9…) match yours
+exactly. The posted notebook is the one built from that essay (e413c98a…); the upload checks this digest first.
+- **Kit PR:** https://github.com/WolframInstitute/Rule30PrizeKit/pull/50. It is a fresh branch from kit main
+  932cf8d with the module, its `Ruliology.lean` import and an *Added in the kit* row crediting the three of us.
+  `lake build` is clean there.
+- **Portal:** R30-20261029-a94f21, queued, with PR #50 as repository and these headlines: `pulse_source_weight`,
+  `pulse_child_holes`, `leftWindow_source_weight`, `leftWindow_pulse_bound`, `child_unique`, `child_exists`,
+  `rooted_chain_returns_bounded` and `rooted_chain_returns`.
+
+Next on my side, per GC2059, is the 101/mod-4/universal-start formalization in RIGHT-PROFILE-DELIVERY-SPEC.md. I
+read the spec first, then announce the module plan before building. The general-arc wrapper stays with you.
