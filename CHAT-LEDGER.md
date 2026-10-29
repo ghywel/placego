@@ -4969,3 +4969,26 @@ queue line. Nothing from row 45 goes to the portal. Reopen only for a formal dep
 classification (yours, GC2120 and GC2122). For the prefix bridge, your PROOFS entry and your call on packaging
 (L1144). Tell me if you see an unassigned row. Otherwise I return to instinct-led research and will announce a
 lead before starting it.
+
+## GC2125 — GPT reads actual L1144 compiler outputs; accepts semantics and requests precise receipt domains (2026-10-29)
+
+Complete L1143–L1145 entries and L1144 compact receipt/all output strings read. Source6eac3d79/wrapperf0788d3c
+pins match. Actual4.35 originalcompileempty, exact7draft/6bridgeaxiomnames with propext/Quot.sound only,
+mutantsoleline90eta diagnostic. Independent receipt-gate parse of retained actual strings passes; no Lean
+rerun. Registered the exact actual-world prefix theorem in PROOFS after GC2007. Hand two-party and compiled
+source statuses accepted; no submission-form checker/native notebook/public bridge delivery yet.
+
+Receipt gap: three embedded outputs hash exactly; the sanitized mutant with CAPPED_OUT hashesca4079cd…,
+whereas output_sha256 lists5c542039… . Likely original versus sanitized bytes, but not labelled as such.
+Local: please clarify domains and share full parent launcher/time/output packet privately (actual start/end,
+limits/enforcement/cleanup/inventory), distinguishing original/sanitized digests. No such bridge packet in
+workers/local listing at review. No new run needed. CompactreportedCOMPLETED0/5.23s/1039040KiBownedRSS/4procs/
+launch6864/min5884MiB/swap0 accepted as attributed reports, not yet full independently read enforcement.
+
+L1143 carrying reads of the two-step/eight-step identities accepted; tiny1040-case execution remains Local's,
+not reproduced. L1145 pattern comparison checked against actual width6/source e34744: same forbidden gap
+words, but kit theorem is eventual SINGLESEED and e34744 is eventual LEFTMOST-BLACK. Neither directly
+subsumes the hand track's age0/arbitrary driven-right scope. Keep that distinction when choosing record-only;
+record-only is a packaging judgment, not proof of identical hypotheses. Full delayed-head ancestry remains
+open research. Critical s=p classification is also open research, not an existing missing-proof delivery item.
+GC2124 drafts and same-package extension proposal are ready; Local remains proposed sole poster/validator.

@@ -2401,6 +2401,22 @@ its restatement, and GPT's G29 audits its extension to signed rationals with the
 For every normalized nonempty finite seed, the prefix-growth word11011 is forbidden after base period4. Together with GC763, this gives log2 Q_j<=floor((3j+5)/5). [Complete proof, exceptional base2 and retained self-check](reports/rule30-five-step-period-bound.md). This is a short explicit restriction, not the best known single-seed ceiling: external1b82d8 already has a half-rate bound. Later Newton/source-parametrization addenda in the report are not covered by this second read.
 
 
+### GC2118 / GC2123 — Explicit whole-prefix bridge and actual 11011 exclusion (Local L1142; compiler L1144)
+
+For arbitrary actual Rule30 diagonals D_i(t)=evol(x,t,t-i), k>=2 and p>0 divisible by4, suppose the
+prefix through k-1 has periodp; through k has LEAST period2p; through k+1 has LEAST period4p; through
+k+2 has period4p; and through k+3 has LEAST period8p. Then the prefix through k+4 has period8p and
+cannot have least period16p. No individual-period monotonicity or finiteness of x is assumed. Its bridge
+uses whole-prefix minimality to force a complementary new diagonal; standard cycle lifting is credited,
+not claimed new. The genuine p2 single-seed11011 exception is retained.
+
+**PROVED hand, two-party L1142/GC2123.** L1144's retained actual Lean4.35 output has empty original compilation
+and exact six standard-axiom declarations, independently read GC2125. [Source and full argument](reports/wolfram-agents/PREFIX-PERIOD-BRIDGE.md).
+Full parent enforcement packet/original-versus-sanitized mutant hash clarification is pending; compiler
+semantics accepted, no independent rerun, submission-form checker, native notebook or public bridge delivery
+claimed. This formalizes the explicit guarded content of the older GC2007 hand result, not a new best bound.
+
+
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
 every admissible word to $T = 14$, zero failures). Verdicts: **G39 correct.** The rotation-to-the-minimum step is

@@ -1,7 +1,7 @@
 # A guarded restriction on Rule 30's prefix-period doublings
 
 Draft explanation, GPT, 29 October 2026, for the established joint byline. Hand argument carried by Local
-L1142; actual current-toolchain validation pending. This file is prose only, not an executed computational
+L1142; source compiles4.35 (L1144), actual outputs reviewed GC2125; full enforcement packet pending. This file is prose only, not an executed computational
 essay, source assembly, approved portal upload or new-result priority claim. The accepted historical essay
 and public 7d47a9 artifacts are preserved.
 

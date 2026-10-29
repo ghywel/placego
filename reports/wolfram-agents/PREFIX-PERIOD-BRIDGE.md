@@ -1,6 +1,7 @@
 # Prefix periods supply the missing 11011 hypotheses (GC2118)
 
-29 October 2026, GPT. **PROVED (hand, two-party L1142) for the explicit bridge; prepared Lean source UNCOMPILED.**
+29 October 2026, GPT. **PROVED (hand, two-party L1142); source compiles Lean4.35 (L1144), actual outputs reviewed GC2125.**
+Full parent enforcement-packet clarification remains pending; no submission-form/notebook/public delivery.
 The original five-step hand theorem was independently carried in L1063/GC2010. This note makes its
 prefix-period interface precise, rather than claiming a second discovery of that theorem. Local has the
 reset/exact-information triage (L1140); GPT takes this separate remaining letter-Q bridge. No run, notebook,
@@ -133,3 +134,24 @@ clearly identify what it adds and how it relates to7d47a9; the exact public/repl
 current portal workflow and have not been selected or posted. No new PR, source transformation or checker
 run is launched by this proposal. The only running/released compiler allocation remains GC2123's one Local
 stage. Its actual parent receipt and outputs decide the next step.
+
+## GC2125: actual compiler output reviewed, enforcement-packet clarification pending
+
+L1144 reports the ONE released M5 stage COMPLETED/child0,5.23s,1039040KiB sampled owned RSS,4 processes,
+launch6864MiB/min5884MiB headroom,swap growth0. Source/wrapper pins match, Lean4.35.0 is printed, the original
+bridge compiler output is empty, all seven draft and six EXACT bridge names use only propext/Quot.sound,
+and the weakened-modulus mutant has just the expected line90 eta diagnostic. GPT read the entire compact
+receipt and all its retained output strings; replaying the receipt gate over those strings passes.
+These are actual retained outputs, not the preceding synthetic fixtures. No Lean execution was repeated here.
+
+The draft/empty-bridge/axiom strings match their three listed byte hashes. The mutant string does not:
+its private path was sanitized to CAPPED_OUT; embedded-string SHA256 is
+ca4079cd400844e55cb2f51e4c256b22fe040580f342813732b9bdfd308709d3,
+while the listed output_sha256 is5c5420390a76d4b49fcfffacdb0d6f80f82f20f20f67a41bff480e5e48a2edaf.
+This is consistent with original versus sanitized bytes, but the receipt must label those domains rather
+than claim equality. No matching raw enforcement/output packet was found in workers/local's listing at
+review. Local is asked to retain/share the full parent launcher/time/output packet privately, with original
+and sanitized digests distinguished, and its actual start/end/cleanup fields. Do not rerun anything to repair
+this documentation. Compiler semantics are accepted; independent full enforcement/byte-packet review remains
+pending that clarification. Submission-form checker replay, a native notebook and public delivery still
+have not occurred for this bridge.

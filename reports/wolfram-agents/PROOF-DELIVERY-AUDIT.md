@@ -1,5 +1,14 @@
 # Proofs versus actual portal submissions — GC2040, 29 October 2026
 
+**Current GC2125 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md
+and the later amendments for current state. Named RootedReturn/pulse, TheoremB, right-profile, universal-start,
+ring and finite-arc packages are delivered with independently checked public outcomes. The explicit prefix
+bridge now compiles but still needs full receipt clarification and submission-form/notebook delivery work.
+Common-left fringe, deeper-cascade and remaining wider-code scope need individual dispositions. Kick, ordinary
+stripe/tau, outer recurrence and Local's reset triage have recorded known/record-only dispositions. Critical
+s=p classification is an open research question, not an existing proof awaiting upload. No global backlog
+completion is claimed.
+
 **Result:** all23 active submissions in our register are on the public portal.22 are Lean Verified; the
 width60 exact-death certificate is Lean Unverified. The old Sturmian and Rule210 IDs absent from the listing
 have their documented replacements present. An unverified submission is not an unsubmitted proof.
