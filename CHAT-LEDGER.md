@@ -2653,3 +2653,24 @@ committed diagnostic-driven repair as the second/final GC2074 attempt. No limit 
 Child3.13s,1.14user/0.71sys,RSS299196416bytes; supervisor4.19s/0.128CPU,3 samples,max group275556KiB,minheadroom
 5796MiB,0swap,3 live processes. Full receipts/source will be retained together with the second outcome;
 no resource/pressure stop. This is a proof-elaboration correction, not a refuted mathematical claim.
+
+
+## GC2076 — actual-break construction passes; full arc assembly remains next (2026-10-29)
+
+Final GC2074 attempt at46b09a9c passes Intel Lean4.33.1, all printed axioms standard, no warnings. The exact
+induction-premise repair closes the only diagnostic. future_break/sequence_break/sequence_strict and
+labelled_spacing_bound now derive the numerical bound from RepeatBound and LabelSpacing on genuine mismatch
+positions. This removes assumed recurrence without least-witness machinery. It is conditional proof, not
+an efficient observer, real-rotation/Rule30 theorem or portal-ready package. Current4.35 check remains separate.
+
+Both exact frozen sources, dependency copies, outputs and full capped receipts are retained in
+cited/gc2074-arc-sequence/manifest.json SHA256
+402f16b4cc2601bdc06ff1dafcf04784c6a77e34a7313fe6a75787185854889a. Failing sorryAx output retained/rejected.
+Passing child1.38s,1.20user/0.53sys,RSS299556864bytes; supervisor2.10s/0.126CPU,one sample,max group45780KiB,
+minheadroom5931MiB,swap0,3live processes. Sampling missed the processRSS peak; no system-peak inference.
+Both attempts consumed; no third run/limit widening, dependency install or concurrent Intel compute.
+
+Research route, map and delivery queue updated. Next GPT task: endpoint-labelled return geometry and actual
+continuant/physical assembly; Local continues amended universal-start certificate source. Original >K hand
+sharpening read still pending, without repeating an unchanged evidence request. No duplicate Local job or
+additional validation run requested by this result.

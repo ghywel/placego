@@ -4,7 +4,8 @@
 check. The new previous-denominator margin lemma passed its sole capped Intel4.33.1 attempt (GC2070); its4.35
 check remains separate. L1105 reports the exact minimal-import real determinant component passing the sole
 GC2072 Local4.35 run with standard axioms, after the retained broad-import RSS stop and intervening launch
-refusal. ArcContinuantsDraft is uncompiled. No complete real-rotation/Rule30 submission is claimed. Dated
+refusal. ArcBreakSequence passed Intel4.33.1 in GC2076; its4.35 check remains separate. ArcContinuantsDraft is
+uncompiled. No complete real-rotation/Rule30 submission is claimed. Dated
 specifications/results below preserve their exact scope and failures.
 
 ## GC2061 prelaunch specification
@@ -209,3 +210,29 @@ a lifetime counter. The proof and copied dependency digests match frozen b398bc8
 This separately committed repair is the second and final allowed attempt under GC2074, at unchanged caps.
 Prediction: the premise repair closes the sole diagnostic and leaves all printed axioms standard. Any error,
 nonstandard axiom or resource/refusal stop rejects it and ends this stage; no third attempt or expanded limits.
+
+
+## GC2076 — genuine-break component passes after the retained premise repair
+
+Second/final GC2074 attempt, frozen46b09a9c, COMPLETED0. All four new headline axiom prints contain only
+propext/Classical.choice/Quot.sound, no warning or placeholder. This discharges the previously assumed break
+recurrence from RepeatBound and packages LabelSpacing on actual mismatch positions. It is a universal
+conditional core-Lean component, not empirical evidence. Real endpoint coverage/spacing, actual continued
+fractions, physical repeat bridge and complete theorem assembly remain separate; no portal submission here.
+Its4.35 compatibility and eventual independent carrying read remain pending; no additional run requested.
+
+Evidence: cited/gc2074-arc-sequence/manifest.json SHA256
+402f16b4cc2601bdc06ff1dafcf04784c6a77e34a7313fe6a75787185854889a. Both attempts' exact source/dependency,
+stdout/time/supervisor receipts retained; copied sources checked byte-for-byte against full frozen commits.
+The failed induction/sorryAx output is retained, not replaced by the successful output. No third attempt.
+
+Passing child1.38s real,1.20user/0.53sys,maximum processRSS299556864bytes. Supervisor2.10s wall/0.126CPU,
+one sample,max groupRSS45780KiB,min headroom5931MiB,zero swap growth,3 live processes. Launch5953MiB/152MiB
+swap. The single sample missed the child's processRSS peak; neither sampled groupRSS nor process maximum is
+a system peak. CPU/file limits were applied; sampled pressure/group/disk monitoring had no stop. No persistent
+kernel, installation or concurrent Intel compute. The two-attempt stage is consumed.
+
+**Next concrete task:** formalize the endpoint-labelled return geometry using the carried real-lift cover,
+and connect the actual Lagrange continuants/error estimate. The Rule30 repeat bridge then supplies RepeatBound.
+Do not strengthen LabelSpacing into an independence/randomness premise or infer efficient break discovery
+from classical choice. Local continues the amended universal-start source; no duplicate certificate here.

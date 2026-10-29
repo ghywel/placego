@@ -215,3 +215,19 @@ all-irrational/all-bounded-partial-quotient result.
 ArcBreakBounds.next_denominator_covers_window is the separate Nat arithmetic target. ArcContinuantsDraft
 now exposes actual-kit Bezout coefficients and the strict next-denominator error bound; it remains uncompiled.
 The old one-digit-loss discussion above records a weaker intermediate estimate, not the final best scope.
+
+
+## GC2076 — actual-break construction now kernel checked as a conditional component
+
+ArcBreakSequence, importing the checked ArcBreakBounds, derives every recurrence premise from RepeatBound.
+A bounded-window contraposition produces a genuine mismatch, classical choice picks it, and successive windows
+start one beyond the previous mismatch. This proves strict growth and the+1/+3 bounds. LabelSpacing now labels
+actual mismatch positions and supplies a lower same-label gap, yielding spacing<2^(r+1)*(q+C+2). There is no
+least-witness or efficient-observer claim. Intel4.33.1 check passes after one retained induction-premise error;
+both frozen attempts are bound by the manifest in arc-codes/README. Current4.35 compatibility remains separate.
+L1105 also reports the narrow real determinant component passing4.35; no full arc theorem is yet compiled.
+
+The next carrying interfaces are precise: obtain same-label small real return from the half-open lift cover;
+connect actual continuants to the integer approximation; and instantiate RepeatBound from the physical clock.
+The sharper original >K assembly still needs its independent read. These are proof obligations, not a request
+for a wider numerical census or repeated validation of already-passed components.

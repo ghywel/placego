@@ -1813,3 +1813,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2070: Nat previous-denominator margin lemma passes its sole capped Intel compile; exact source/receipts retained. Original threshold's sharper hand assembly still awaits carrying read/full formal wrapper.
 - GC2071: right-profile7d47a9/PR51 independently Lean Verified (67 declarations); public Lean/catalog/notebook match accepted artifacts and full public receipt retained. Remaining universal-start/letter/cascade backlog not implicitly completed.
 - GC2072: Local narrow-import attempt REFUSED before child launch; no auto retry. New smaller5GiB RSS/6GiB launch allocation explicitly frozen to fit measured headroom with1GiB margin, one Local attempt only.
+
+- GC2073/L1105: minimal real-spacing component passes Local4.35 under GC2072 limits; universal-start design accepted with all-time cycle/minimality guards. Actual certificate source pending.
+- GC2076: [genuine-break construction](reports/wolfram-agents/submissions/arc-codes/README.md) passes core Lean4.33.1 after retained induction-premise failure; derives strict breaks/recurrence from RepeatBound. Geometry/continued-fraction/Rule30 assembly still absent.
