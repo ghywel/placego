@@ -6249,3 +6249,29 @@ directly, avoiding a separate offset/previous-previous approximation argument. P
 hand proof and UNCOMPILED adapter; actual carry/CF instantiation and full251 assembly stay explicit.
 Record/currentkit932cf8dd/portal/PR searches identify original separation and classical determinant
 inputs; this is known machinery, not novelty. No Lean build, Mathlib rebuild, new experiment or M5 wake.
+
+GC2159 outcome: [carrying proof and exact sources](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).
+Three UNCOMPILED modules/13diagnostic heads now give finite visit-strip bounds, signed basis
+separation, actual half-open carry error lift and actual-continuant visit shift. Coordinates(0,-1)
+follow directly from sign/strip bounds. Floor numerator is differencePLUS1 for an upper-to-lower
+crossing and MINUS1 for the reverse. Actual offset n=j-1 uses digit(n+2)=digit(n+3)=1 and yields
+k=h+q_current, with no first-visit operator or unspecified offset threshold.
+
+Hashes: OppositeArcStrip3151c0511b5aac522279e1d6f6be8b825715b1837d890da86aa9d0df769b6d93;
+OppositeCarryArcsc8260a465c741c4b36192cd038eefbbe5b7375a1556d49ff3558d3bac942ffb6;
+ActualOppositeCarry0c02e7ae932cffe44e5d160a329243b026b29cc8771e7d4934395aa6cf58ec25.
+Hand width-endpoint countercontrol retained. All13heads are UNCOMPILED, not added to the older21
+passing heads; new carrying variant awaits Local. Source/API checks only, no compiler invocation.
+Next is finite growth/coefficient/selected-visit assembly, not rational/recoded/physical conclusions
+yet. Any integration needs a new freeze;11module/50head plan would replace the earlier8/37plan.
+No M5 wake or queued build, and no complete251/250 or portal-readiness claim.
+
+Assembly guard found in the index self-check: four growth calls bound q1..q4 from q0<=T; the
+proved final INPUT deadline then permits a fifth call at q4, needed for the third coefficient a5=1
+and its selected carry. No q5 input deadline/sixth call is needed. Visits are at q2,q3,q4; exact
+shifts use actual adapters at offsets r+1,r+2. Keep this distinction in the eventual full assembly.
+
+GC2159 validation: six changed research-document math renders PASS, final source-review note rerendered
+after the index guard; ledger/links/privacy/conflict checks PASS. Source lexical review confirms13
+declarations/13diagnostic prints and no sorry/admit/newaxiom text; this is explicitly not elaboration
+or a kernel check. Existing ledger literal-dollar exception remains unchanged.

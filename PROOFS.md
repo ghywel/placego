@@ -4526,3 +4526,13 @@ white-fill bits across a following black run of length K>=2 obey y_next=y XOR1 X
 Thus S>0 singletonblackruns give exactly2^S relaxed assignments. Retained256-cycle: R93,S69,
 24constraints, all three lowcoefficients still free. Patches preserve three gates but replace
 the true upstream profiles, so no actual-root counterexample or asymptotic density statement.
+
+### GC2159 — Signed opposite-arc separation adapter for G134/G135 (waiting for Local)
+
+PROOF-SKETCH variant of the already carried hand argument, classical basis machinery, no novelty
+claim. [Exact argument and three uncompiled sources](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source):
+adjacent-basis errors epsilon,eta have opposite signs. In the spatial strip[-Q-D,D], D<q<=Q,
+a return error opposite to eta and smaller than|epsilon| forces coordinates(0,-1). Actual opposite
+carry arcs supply the signed error via a floor-difference lift plus/minus1. Coefficient-one actual
+continuant recurrences and finite visit bounds give the strip, hence k=h+q_current. Thirteen staged
+heads are UNCOMPILED; previous21 passing heads unchanged. The complete251 horizon is not yet assembled.

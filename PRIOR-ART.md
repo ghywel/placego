@@ -4658,3 +4658,12 @@ retained in the [hand account](reports/rule30-edge-density-account.md#gc2158-one
 The011 clause and cyclic component count are elementary consequences written out for the current
 run-fill question. They are not separately novelty-cleared or proposed as a delivery package; the
 more global101 profile theorem has different period assumptions. Actual-root ancestry remains open.
+
+### GC2159: classical signed-basis argument reused for the retained G134/G135 separation
+
+Known, reproved in a formalization variant: the adjacent unimodular-basis argument already used
+in G134/G135 and SharpAdjacentReturn now retains the error's sign to force the exact negative
+return directly. Actual floor carries and current-kit932cf8dd Lagrange continuants supply the
+arcs, determinant, signs and coefficient-one recurrence. This is dependency preparation for the
+existing quantitative horizon, not a new best-approximation theorem or separate submission.
+[Carrying proof, source hashes and uncompiled status](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).

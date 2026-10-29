@@ -99,3 +99,91 @@ integration. This note is a module plan, not a frozen stage or permission to wid
 
 Owner-directed switch: Local is offline for approximately1.5 hours (L1165); GPT now investigates Cloud's
 DQ-024 edge-density pull. The finite-horizon task remains open with these source and validation gaps.
+
+## GC2159: exact opposite-scale separation now has carrying source
+
+After checkpointing DQ024, GPT resumes this unfinished delivery dependency while Local stays offline.
+GC2158 parks the one-gate-at-a-time density ladder without a repeatable component/root-profile law.
+Queue/audit, original G134/G135/L088, current adapters and the adjacent-basis dependency were reread.
+Record/currentkit932cf8dd/portal/PR searches recover that separation and classical determinant machinery.
+This is known machinery reapplied, not a new approximation theorem, novelty clearance or submission.
+
+Three new **UNCOMPILED** sources in submissions/finite-horizon, thirteen diagnostic heads in total:
+
+| Source | Heads | SHA256 |
+|---|---:|---|
+| OppositeArcStrip.lean |5|3151c0511b5aac522279e1d6f6be8b825715b1837d890da86aa9d0df769b6d93|
+| OppositeCarryArcs.lean |4|c8260a465c741c4b36192cd038eefbbe5b7375a1556d49ff3558d3bac942ffb6|
+| ActualOppositeCarry.lean |4|0c02e7ae932cffe44e5d160a329243b026b29cc8771e7d4934395aa6cf58ec25|
+
+### Carrying simplification: retain the displacement's sign
+
+For adjacent integer basis vectors (p,q),(P,Q), determinant of square1 and0<q<=Q, let the errors
+epsilon,eta have opposite signs. Suppose (a,m) has
+
+    -Q-D <= m <= D,   D<q,
+    E=m*alpha-a opposite in sign to eta,   |E|<|epsilon|.
+
+Then (m,a)=(-Q,-P). Write (a,m)=u(p,q)+v(P,Q). Orient epsilon<0<eta, so
+epsilon<E=u*epsilon+v*eta<0. If u>0, v>=0 puts m>=q>D, whereas v<0 puts E<epsilon.
+If u<0, v<0 puts m<=-q-Q<-Q-D, whereas v>=0 puts E>0. Hence u=0. The error sign forces
+v<0; D<Q and the spatial lower bound exclude v<=-2. Thus v=-1. Negate all errors for the other
+orientation. The source reuses the already compiled SharpAdjacentReturn.basis_coordinates.
+No circle norm or previous-previous approximation/offset argument is needed.
+
+Width-endpoint hand control: alpha7/10, p/q=1/1, P/Q=1/2, D=q=1, (m,a)=(-3,-2) satisfies
+all other interface conditions but m!=-Q. This is exact rational arithmetic in source, **not yet
+a checked Lean output**. It tests this general interface, not genuine successive convergents.
+
+### Actual half-open carries supply the signed error
+
+At consecutive scales j,j+1 put x=fract(theta+h*alpha), y=fract(theta+k*alpha). If epsilon_j>0,
+actual nonzero carries give x in[1-epsilon_j,1) and y in[0,-epsilon_(j+1)). For m=h-k choose
+
+    a=floor(theta+h*alpha)-floor(theta+k*alpha)+1.
+
+Then E=x-y-1<0 and |E|<|epsilon_j|+|epsilon_(j+1)|. If epsilon_j<0, choose the same floor
+difference MINUS1; E=x-y+1>0 with the same strict magnitude bound. Half-open endpoints preserve
+the strictness. These are actual MechanicalCarry.carry predicates, not opaque arc membership.
+No ordering of h,k, absence of earlier visits or confusion of visits with mismatches is required.
+
+Coefficient a_(j+1)=1 gives epsilon_(j+1)=epsilon_j+epsilon_(j-1), hence
+|epsilon_j|+|epsilon_(j+1)|=|epsilon_(j-1)|. The strip uses the basis at j-1,j. The finite bounds
+
+    q_(j+1)<=h+q_j+C+4,       h<=q_j+C+2,
+    q_(j+2)<=k+q_(j+1)+C+4,   k<=q_(j+1)+C+2
+
+and q_(j+1)=q_j+q_(j-1), q_(j+2)=q_(j+1)+q_j imply
+-q_j-(2C+6)<=h-k<=2C+6. Therefore q_(j-1)>2C+6 forces k=h+q_j exactly.
+ActualOppositeCarry.visit_shift instantiates the actual kit denominators, numerator, determinant,
+signs and error bounds at n=j-1. It derives numerator/error recurrences with the +2 indexing and
+takes digit(n+2)=digit(n+3)=1 explicitly. These are the two local coefficient conclusions needed,
+not an assumption that the continued fraction has an eventual all-one tail.
+
+### Status and next assembly step
+
+The renewed argument is **PROOF-SKETCH** until Local reads this variant; original G134/G135's
+carried hand status remains credited. The three new files are not elaborated, compiled, axiom-checked
+or independently reviewed. Twenty-one older component heads retain their prior passing status;
+thirteen uncompiled outputs do not increase that count. Source/API and rational guards have GPT's
+hand/self-check only. No compiler, Mathlib rebuild, dependency download or new experiment was run.
+
+Next: compose actual threshold crossing, the four-step growth budget, the growth call at its final
+usable scale, coefficient forcing at three scales, these two selected-visit shifts, then the final
+contradiction. The index guard is explicit: if q0=q_r and q4=q_(r+4), four calls bound q1..q4;
+the budget proves q4's INPUT deadline fits, permitting a FIFTH call to obtain the carry/next-growth
+bound there. This forces coefficient a_(r+5)=1. It does not require q5's input deadline or a sixth
+call. The selected visits are at q2,q3,q4, and the three coefficients are a3,a4,a5 in this offset.
+Rational-prefix,
+recoding and physical-restart layers remain subsequent obligations. No complete251/250 theorem or
+portal readiness follows from this dependency.
+
+For a future separately frozen integration, OppositeArcStrip follows SharpAdjacentReturn;
+OppositeCarryArcs also needs MechanicalCarry; ActualOppositeCarry follows ActualCarrySpacing,
+ContinuantSequence and both new files. Including them changes GC2150's eight-module/37-head plan to
+eleven modules/50 heads. This is a plan update, not permission to widen a frozen stage. Exact old
+objects, source identities, host headroom, wrapper and stage-wide caps still need agreement first.
+
+Local, on resumption: carry the signed basis strip, plus/minus1 floor lift and n=j-1 coefficient
+indexing. GC2148's nine-head selection read remains separately pending. No build is requested while
+offline; source preparation is not a passing receipt.
