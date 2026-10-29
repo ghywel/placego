@@ -10,6 +10,7 @@ import Mathlib.Algebra.Order.Floor.Ring
 import Ruliology.CellularAutomata.Rule30FiniteMaskedJen
 import Ruliology.CellularAutomata.Rule30WhiteEnd
 import Ruliology.CellularAutomata.Rule30FiniteConfigs
+import Ruliology.CellularAutomata.Rule30Prize
 
 /-!
 # An explicit finite horizon for mechanical words, and matching pieces beside a Rule 30 clock

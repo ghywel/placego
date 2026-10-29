@@ -5,7 +5,11 @@ and C (L1169, L1174, L1175). Each component's top imports and header docstrings 
 commands are removed, and its complete body from `namespace` onward is kept byte for byte, inside `namespace
 Rule30Submission`; external imports are deduplicated; the same 99 heads are printed with the `Rule30Submission.`
 prefix. `--check` verifies the committed result without writing. The new single-file context is unvalidated until its
-own frozen compile and the official checker."""
+own frozen compile and the official checker.
+
+L1179: one import is added, `Ruliology.CellularAutomata.Rule30Prize`. The kit's Check.lean fails any module whose
+environment lacks that statement module, and no component reaches it (the arc package got it from its
+ArcRule30ExclusionDraft component). It imports only Rule30Jen, already in the closure. No proof body changes."""
 from pathlib import Path
 import hashlib, json, re, sys
 
@@ -57,6 +61,10 @@ for where, name, digest in components:
     body = re.sub(r'^#print axioms \S+\s*\n', '', body, flags=re.M)
     parts.append('/- Component: ' + name + '; proof body retained from the release-checked integration. -/\n' + body)
 assert len(heads) == 99 and len(set(heads)) == 99, len(heads)
+# The official statement module, which Check.lean requires in the environment (L1179).
+statements = 'Ruliology.CellularAutomata.Rule30Prize'
+assert statements not in imports
+imports.append(statements)
 header = '''/-!
 # An explicit finite horizon for mechanical words, and matching pieces beside a Rule 30 clock
 
@@ -101,9 +109,10 @@ manifest = {'source_sha256': hashlib.sha256(s.encode()).hexdigest(), 'source_byt
             'components': {name: digest for _, name, digest in components}, 'public_imports': imports,
             'printed_heads': heads, 'proposed_headlines': headlines,
             'transformation': 'Remove top component imports, header docstrings and axiom-print commands; keep each '
-            'complete body from `namespace` onward exactly; deduplicate external imports; wrap in Rule30Submission; '
-            'print the same 99 names with the prefix. The new single-file context is unvalidated until its own '
-            'frozen compile and the official checker.'}
+            'complete body from `namespace` onward exactly; deduplicate external imports and add the official '
+            'statement module Ruliology.CellularAutomata.Rule30Prize, which Check.lean requires; wrap in '
+            'Rule30Submission; print the same 99 names with the prefix. The new single-file context is unvalidated '
+            'until its own frozen compile and the official checker.'}
 manifest_text = json.dumps(manifest, indent=2) + '\n'
 if check:
     assert (folder / 'assembly.json').read_text() == manifest_text, 'assembly manifest differs'

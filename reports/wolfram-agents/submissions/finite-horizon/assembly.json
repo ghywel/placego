@@ -1,6 +1,6 @@
 {
-  "source_sha256": "1e08455e3e88ee78e147b70f4137c5b1ec4f42b14528a6b7b53ab1348e63d027",
-  "source_bytes": 106261,
+  "source_sha256": "791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110",
+  "source_bytes": 106307,
   "components": {
     "ArcBreakBounds": "cbb2f4ba2a384a9b9cb077f4b5c9242339237864bc47af70f0afddaf5b78f1a6",
     "ArcBreakSequence": "7d6f45508ce456e11cefa1e305580f8d1195f26e5cd1375e9cd9e96dd53ffdfe",
@@ -38,7 +38,8 @@
     "Mathlib.Algebra.Order.Floor.Ring",
     "Ruliology.CellularAutomata.Rule30FiniteMaskedJen",
     "Ruliology.CellularAutomata.Rule30WhiteEnd",
-    "Ruliology.CellularAutomata.Rule30FiniteConfigs"
+    "Ruliology.CellularAutomata.Rule30FiniteConfigs",
+    "Ruliology.CellularAutomata.Rule30Prize"
   ],
   "printed_heads": [
     "Rule30Submission.ArcBreakBounds.label_collision",
@@ -151,5 +152,5 @@
     "Rule30Submission.PhysicalHorizon.first_disagreement",
     "Rule30Submission.PhysicalHorizon.disagreement_step"
   ],
-  "transformation": "Remove top component imports, header docstrings and axiom-print commands; keep each complete body from `namespace` onward exactly; deduplicate external imports; wrap in Rule30Submission; print the same 99 names with the prefix. The new single-file context is unvalidated until its own frozen compile and the official checker."
+  "transformation": "Remove top component imports, header docstrings and axiom-print commands; keep each complete body from `namespace` onward exactly; deduplicate external imports and add the official statement module Ruliology.CellularAutomata.Rule30Prize, which Check.lean requires; wrap in Rule30Submission; print the same 99 names with the prefix. The new single-file context is unvalidated until its own frozen compile and the official checker."
 }
