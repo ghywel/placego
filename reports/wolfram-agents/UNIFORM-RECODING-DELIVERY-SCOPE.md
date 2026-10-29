@@ -548,3 +548,87 @@ Record searched: complexity + block/window +2n/2m recovers G143's weaker upper c
 interface note, not a new claimed public export; checked kit932cf8dd/portal15:12:55Z/21PRs. The lower equality
 is the primary classical Rote theorem actually read, not inferred from a negative search or finite words.
 Disposition: the finite-state-versus-window observation itself is known background, not extra horizon novelty.
+
+
+## GC2187: hand candidate — the phase-zero repetition exponent has an exact exceptional maximum
+
+**Status: PROOF-SKETCH, new consequence awaiting independent carrying read; novelty unresolved.** No experiment,
+formalization, seed claim or additional posting owner. The pull is whether G144's additive failure also gives a
+relative first-repeat saving, which is not true for arbitrary words just from an unbounded additive deficit.
+
+Use the primary Bugeaud–Kim definition from GC2134: R(n,c) is the shortest prefix LENGTH containing two n-letter
+occurrences (overlap allowed), I_c(n)=R(n,c)-n, and rep(c)=liminf R(n,c)/n. For irrational0<beta<1 set
+c(s)=floor(s beta)mod2. Let E be G144's class: eventually every continued-fraction digit is2 and every convergent
+numerator is odd. Candidate claims:
+
+- rep(c)=2 exactly for beta in E; every other phase-zero code has rep(c)<2.
+- If the continued-fraction digits are unbounded, rep(c)=1.
+- If they are eventually bounded by A>=1 and beta is not in E, rep(c)<=2-1/(A+2).
+
+The ingredients are retained G144/L100's exact first-hit obstructions and ordinary convergent best approximation;
+the exceptional upper bound below extends the explicit sharp G143/L099 run to an arbitrary finite CF prefix.
+This is not a new invention of rep or a statement about every phase of a given rotation language.
+
+**Unbounded digits.** Write p_i/q_i for convergents, d_i=q_i beta-p_i, and a=a_(i+1)>=3. G144's doubled lag
+Q=2q_i has first positive mismatch at H=(a-1)q_i+q_(i-1), once i is large enough for its arc guard. Depending on
+the sign, equality holds on [0,H-1] or [1,H-1]. Thus for some length N>=H-1 tending to infinity,
+
+    I_c(N) <= 2q_i+1,
+    I_c(N)/N <= (2q_i+1)/((a-1)q_i+q_(i-1)-1).
+
+Along a subsequence with a tending to infinity this tends to0. R(N)>=N+1 always, so rep(c)=1.
+The use of the full n-factor first repeat is one-sided: an explicit repeated block bounds its earliest repeat
+from above, even if another block repeats sooner. No assertion that our witness is that earliest block is needed.
+
+**Bounded digits, infinitely many even numerators.** Suppose all late digits are at most A. G144's lag q_i at
+even p_i has first positive mismatch H=q_(i+1). The corresponding equality interval has length N>=H-1 and later
+start at most q_i+1, hence I_c(N)<=q_i+1. For late i,
+
+    q_(i-1)/q_i >= 1/(A+1),
+    q_(i+1)/q_i >= 1+1/(A+1).
+
+Taking the infinite even-numerator subsequence gives liminf I_c(N)/N <= (A+1)/(A+2), and therefore
+rep(c)<=2-1/(A+2). Finite startup coefficients disappear from these limits.
+
+**Bounded digits, only finitely many even numerators.** All late p_i,p_(i-1),p_(i+1) are odd, so the numerator
+recurrence forces every late a_(i+1) to be even. If beta is not in E, infinitely many are at least4. G144's
+same doubled-lag witnesses then have H>=3q_i+q_(i-1), and I_c(N)<=2q_i+1 with N>=H-1. Consequently
+rep(c)<=1+2/3=5/3. This is no larger than2-1/(A+2) for A>=1. These cases exhaust the nonexceptional bounded
+class; they supply a uniform relative gap, rather than promoting an arbitrary additive deficit to a relative one.
+
+**Exceptional class: lower bound.** G144 gives one finite C for all repetitions, hence GC2181 gives
+I_c(n)>=n-C-1 for every n. It follows that rep(c)>=2.
+
+**Exceptional class: matching upper bound — carrying step.** Put lambda=sqrt2-1 and choose i sufficiently late
+that all subsequent digits are2 and p_i,p_(i-1) are odd. Let d=|d_i|, q=q_i, q'=q_(i+1)=2q_i+q_(i-1), and
+Q=q_i+q_(i-1). Then d_(i+1)=-lambda*d_i, d_(i-1)=-(2+lambda)*d_i, while Q has even numerator and signed
+error -(1+lambda)*d_i. Its mismatch arc has length (1+lambda)d and sign opposite to d_i.
+Time q is a mismatch because its signed error is d_i. There is no further mismatch at q+k for 0<k<q':
+
+- If d_i>0, the arc is [0,(1+lambda)d), the point at q is d, and a new visit would give
+  k beta-integer in [-d,lambda*d). Best approximation for0<k<q' gives magnitude at least d; the only
+  remaining endpoint -d would force (k+q)beta integral, impossible.
+- If d_i<0, the arc is [1-(1+lambda)d,1), the point at q is1-d, and a new visit would give
+  k beta-integer in [-lambda*d,d). Every value in this interval has magnitude less than d, impossible.
+
+Take i late enough that these signed differences lie in (-1/2,1/2); the integer is determined by the two points
+in the same small arc. At k=q', the signed error d_(i+1) moves the point to (1-lambda)d or1-(1-lambda)d,
+inside the respective arc. Thus q and q+q' are consecutive mismatch times. The exact lag-Q equality interval is
+
+    [q+1, q+q'-1],  length N=q'-1,  later start j=q+1+Q=q'+1=N+2.
+
+It supplies I_c(N)<=N+2 along unbounded N, so rep(c)<=2. Combined with the lower bound this gives rep(c)=2
+on E, and the previous two cases give strict inequality off E. The sharp late run uses only the eventual tail
+relations; no unjustified transfer of a fixed initial phase or fixed allowance through a CF prefix is made.
+
+**Cheap guards.** beta=sqrt2-1 has tail twos but infinitely many even numerators, so it falls in the strict-gap
+case, consistent with G144's period5 witness. beta=[0;1,1,4,4,...] tests the other obstruction. beta=2-sqrt2
+is exceptional, consistent with G143/L099's sharp mediant runs. The half-phase code is outside this theorem's
+hypotheses; changing the phase is not allowed. These are retained hand controls, not new numerical evidence.
+
+Record searched: Rote/half-circle/silver/phase-zero + rep/exponent-of-repetition/initial-non-repetitive/liminf
+finds GC2181's dictionary, no matching kit/portal/open-PR export in the checked932cf8dd/15:12:55Z/21PR index.
+Primary rep definition/finite-word offset and actual2019 standard-return statements already read; new literature
+queries return critical-exponent papers, a different observable, not an exact match. Negative search does not
+clear novelty. The next carrying questions are the conversion of G144 witnesses to the uniform relative bound
+and the two signed-arc cases giving the exceptional N+2 upper witness. The claim stays a sketch until read.
