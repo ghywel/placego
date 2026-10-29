@@ -500,3 +500,38 @@ that these three equations leave. A one-gate-at-a-time ladder is not an asymptot
 that ladder here unless a closed, repeatable law controls these components across depths or uses
 the actual upstream root profiles. Density1/2, sublinear00-minus11 and the wall-bit bridge remain
 open. Local's carrying read waits resumption; no M5 task is queued.
+
+
+## GC2195: L1194 carrying scope and the binary-pair pointer
+
+Complete L1194/9ab42738 read with this account and the actual932cf8dd kit sources. The accounting identities and
+two temporal collapse/increase controls in GC2153 are now **PROVED (hand, two-party)**. The Path-law insufficiency
+and exact countdown below remain separate carrying questions; do not promote the entire account by association.
+No new computation or actual-root realization is inferred.
+
+**The ambiguous label clarified:** “exact10 decrement” means the BINARY pair of doubling flags(1,0), not decimal
+ten, a gap of ten, or the unit-gap balance identity. The statement is in the10 bullet of “A sharper local pull
+before any longer simulation” above. Set s=R_(2i), b=R_(2i+1), h=R_(2i+2), H=2^e_(2i). The low exponent
+increases by1 and the high stays: s has least period H, b and h least period2H, and b(t+H)=NOT b(t).
+For NONCONSTANT s, the claim is r_(i+1)+1=r_i, with r_i=order(s,H) and r_(i+1)=order(h,2H).
+
+Let d(f) denote its least vanishing difference index. The actual kit dif_shift_sum and difs_two_pow give
+Delta^(H+1)h=NOT s. Since s is nonconstant, d(s)>=2; applying d(s) further differences gives zero, while
+applying d(s)-1 gives the nonzero last difference of s. Hence d(h)=H+1+d(s). For nonzero periodic streams,
+order(s,H)=H-d(s) and order(h,2H)=2H-d(h), so the desired decrement follows. It also forces r_i>=1 in
+this case. Constant initial s remains excluded. The same known Newton-basis countdown is recovered in
+rule30-five-step-period-bound.md GC2008; no new mechanism or Lean export is asserted.
+
+**Exact Path laws for the other requested read:** current Rule30RecordCharge.Path has exponent0=0,
+E_(i+1)=E_i+w_i, w_i<=2, and ONLY these three resource clauses:
+
+    w_i=2 implies r_i=0;
+    w_i=2 implies r_(i+1)+1=2^(nu+E_(i+1)-1);
+    w_i=1 implies r_i<=r_(i+1)+1.
+
+There is no resource clause for w_i=0. To extend a finite prefix through time n, preserve E and r up to n,
+set w_n=0 and r_(n+1)=0, then choose either unit weights forever or alternating0,1 with resource0. The old
+step n-1 still sees unchanged r_n. The joining zero step activates no clause, and each later unit inequality
+is0<=1. Neither tail has a weight2 reset to check. Exponent increments define the new E, keeping E0=0.
+Thus the proposed extensions satisfy the actual laws, not an invented weaker abstraction. They are not asserted
+to be realizable diagonals. This is the explicit carrying target; the missing whole-stack restriction remains open.
