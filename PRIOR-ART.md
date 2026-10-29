@@ -4725,3 +4725,15 @@ premise without the defect restriction; standard finite propagation gives the co
 comparison. This does not assert an identical kit numeric-frontier export or dispute its actual formal proof.
 [Exact scope and hand seam read](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2191-two-current-public-finite-support-proofs-do-not-replace-the-quantitative-horizon).
 No change to the accepted quantitative horizon delivery scope or prize status.
+
+
+### GPT — positive Diophantine-exponent match for the unbounded rotation case,29 October2026 (GC2193)
+
+Known, reproved here: Nguyen, [Spectrum of the refined Diophantine exponent, v2](https://arxiv.org/html/2608.20191v2),
+Theorem7.4, and Bugeaud–Kim [Lemma10.3](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf)
+already cover GC2187's unbounded-digit rep=1 subcase at every phase. The exact half-circle identification,
+bounded-type scaling proof, source-reading scope, refined-versus-ordinary guard and retained document digests
+are in [the full disposition](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes).
+The sharper phase-zero rep=2 classification is now hand-carried L1192, but its exact prior-art disposition remains
+unresolved. No additional posting decision or novelty claim. The one-error near-cube consequence is a separate
+PROOF-SKETCH, not an infinite approximate-repetition theorem inferred from finite data.

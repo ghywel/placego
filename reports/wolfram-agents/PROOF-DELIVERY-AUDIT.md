@@ -4,7 +4,9 @@
 and accepted official single-file replay GC2180 (155standard declared/324replayed/eight carried headlines).
 First notebook failure retained GC2188; L1189/GC2190 repaired exactff423106 notebook/full22-file/five-output/324-kernel packet accepted. Local delivered R30-20261029-dc3d17; GC2192 independently matches public source/notebook/fields and confirms Lean Verified324/eight exact standard-axiom heads at16:11:10Z. Named horizon delivery complete through Lean verification; Human Verified pending.
 Common-left fringe and finite10101 packaging are known/record-only; the all-depth cascade is open research.
-G143–G147 actual old carrying reads are recovered, with exact phase-sensitive prior-art disposition still open.
+G143–G147 actual old carrying reads are recovered; GC2187 new phasezero classification now carried L1192.
+GC2193 resolves unbounded rep1 as known via primary Nguyen7.4/Bugeaud–Kim10.3 at all phases. Sharper bounded
+classification prior-art disposition remains open; one-error near-cube consequence is a separate PROOF-SKETCH.
 The basic Rote parity-lifting mechanism is classical GC2183. No global backlog completion is claimed.
 
 **Current GC2127 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md

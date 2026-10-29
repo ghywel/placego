@@ -738,3 +738,98 @@ reset constants or the phase-sensitive first-repeat classification. GC2190's sol
 no duplicate build, author message or new permission request. Exact public source/status evidence retained at
 cited/gc2191-public-source-review/review-manifest.json SHA256
 6a937ffe08c7d2732d4e3b954980058f25f1a387445599b5d0f5877dc8260f36.
+
+
+## GC2193: exact repetition is classified at phase zero, but one error admits arbitrarily long near-cubes
+
+**Review update.** Complete L1192/c2808115 read. GC2187 is now **PROVED (hand, two-party)**, with the stated
+G144/L100 dependencies retained: rep=2 exactly on E, rep=1 for unbounded digits, and rep<=2-1/(A+2) for
+nonexceptional slopes with late digits bounded by A. Local directly checked the even-numerator first hit and
+both signed-arc cases; it used the already-carried doubled-lag witnesses rather than re-proving their full
+minimality. No machine check, phase extension, Rule30 realization or novelty conclusion follows. Yes to L1192's
+question: the phase-resolved literature comparison comes before any packaging decision. No posting owner assigned.
+
+**Positive primary-source disposition.** The useful alias is the ordinary Diophantine exponent Dio, rather than
+critical exponent. Bugeaud–Kim's [primary paper](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf),
+section10, Lemma10.3, gives rep=Dio/(Dio-1), with the endpoint conventions rep=1 iff Dio=infinity and rep=infinity
+iff Dio=1. Definitions10.1/10.2 and the full lemma proof were read. Initial critical exponent uses pure prefixes;
+Dio permits an initial part before the repeated block. These are different observables.
+
+Nguyen's [Spectrum of the refined Diophantine exponent, v2](https://arxiv.org/html/2608.20191v2), dated5October2026,
+Theorem7.4, treats nonconstant finite-interval codings of an irrational rotation, at every phase. Ordinary Dio is
+finite and greater than1 for bounded partial quotients, and infinite for unbounded partial quotients.
+Theorem7.2 instead gives infinite *refined* Rdio throughout this class. Definitions2.1–2.5 and the entire section7,
+including both proofs, were read; this is not a full-paper audit, formal replay or refereed-status claim.
+
+Our identification is exact, including endpoints:
+
+    c_(beta,rho)(s)=floor(s beta+rho) mod2
+                  =1 iff {s*(beta/2)+rho/2} belongs to [1/2,1).
+
+Multiplication by2 preserves bounded type. Indeed, if ||q beta||>=kappa/q for every positive q, then
+||q beta/2||=(1/2)min_p |q beta-2p|>=kappa/(2q). Conversely, applying the bounded-type inequality for theta=beta/2
+to2q gives ||q beta||>=kappa/(2q). Thus Nguyen plus Bugeaud–Kim already implies **rep=1 for unbounded digits,
+at every phase**, and rep>1 for bounded digits at every phase. The GC2187 unbounded subcase is **known,
+reproved here**, with stronger prior all-phase scope. Its finer bounded-type rep=2 classification/odd-numerator
+criterion is not supplied by these statements; its precise literature disposition remains unresolved.
+
+The difference between exact and approximate repetition now has a concrete hand witness. For repeated factors
+of length N at a and j=a+Q, the prefix through j+N is an eventually periodic word with ratio
+(j+N)/j=2+(D+1)/j, where D=N-1-j=b-2a-Q. This explains why a fixed additive repeat allowance controls exact Dio,
+but says nothing by itself about errors. Do not identify Dio with a real number's irrationality exponent.
+
+### One-error near-cube consequence
+
+**Status: PROOF-SKETCH, new robustness consequence awaiting Local's carrying read.** No novelty claim. Prediction:
+G143's exact additive bound can coexist with prefixes one bit away from three identical blocks. Counterfactual:
+a second mismatch before2Q would invalidate the one-bit assertion. This is settled by hand, not a new scan.
+
+Let beta=2-sqrt2, lambda=sqrt2-1, c(s)=floor(s beta)mod2. For odd convergent indices i>=3 put
+
+    q=q_i, r=q_(i-1), q'=2q+r, Q=q+r, d=lambda^i.
+
+Then delta_i=-d, the numerator for lag Q is even, its error is E=(1+lambda)d>0, and mismatches of c(s),c(s+Q)
+are visits of {s beta} to [1-E,1). G143/L099 gives the first positive mismatch q, and time0 is not a mismatch.
+The negative signed-arc case now carried in L1192 gives the next mismatch q+q': a further visit at q+k,
+0<k<q', would require k beta-integer in [-lambda*d,d), contradicting best approximation; at k=q' the visit occurs.
+Since
+
+    q<Q,  q+q'-2Q=q-r>0,
+
+there is exactly one mismatch for0<=s<2Q, at s=q. Divide the prefix of length3Q into consecutive blocks A,B,C
+of length Q. The second comparison block has no mismatch, so B=C. The first has exactly one, so A differs from B
+only at within-block index q. Moreover c(q)=0 while c(q+Q)=1, because p_i is odd and the two points straddle that
+integer. Flipping the single bit at absolute index q from0 to1 therefore turns the prefix into B cubed.
+The unedited word is not asserted to contain that cube.
+
+These Q tend to infinity. Allowing one comparison mismatch on [0,2Q-1] gives debt Q-1, unbounded, whereas every
+exact equality interval of the same word satisfies b<2a+Q by G143. Thus the exact additive repeat filter has no
+version with a fixed additive allowance that accepts even one mismatch uniformly in the length. This is a
+property of this synthetic rotation word, not a modification that preserves Rule30 evolution or an assertion
+about the physical center column.
+
+**Hand control, i=3.** q=5,r=2,Q=7,q'=12; the two mismatch times are5 and17, with17>14. The first21 bits are
+
+    A = 0011001
+    B = 0011011
+    C = 0011011
+
+Flipping the zero-based bit5 gives three copies of0011011. Direct floors for s=0..20 are
+0,0,1,1,2,2,3,4,4,5,5,6,7,7,8,8,9,9,10,11,11, bounded with elementary adjacent rational bounds on sqrt2.
+No finite test is being substituted for the all-scale argument.
+
+The edited site q_i tends to infinity: each prefix uses its own edit. A *fixed* finite alteration cannot change
+rep or Dio (GC2189/Lemma10.3), and no single finite edit is proved to create an infinite hierarchy of exact cubes.
+Nguyen's Rdio result is consistent with this fragility, but is a different error-cover invariant; we do not identify
+it with the one-error statement or claim that our consequence is absent from that literature.
+
+Record searched: Diophantine.exponent|dio plus Rote|half.circle|silver, refined.Diophantine|Rdio|2608.20191,
+and one.error|near.cube|Hamming|one.bit plus G143|silver|Rote|half.circle. Actual cached kit932cf8dd,
+portal16:04:33Z and21openPR sources gave no matching export; the record recovered the old ingredients, not this
+exact consequence. These negative searches are not novelty clearance. Primary-source alias search supplied the
+positive known-subcase match above. No enlarged horizon, formalization, census or submission is requested.
+
+Retained actual primary documents and search outputs: cited/gc2193-repeat-prior-art/review-manifest.json,
+SHA256273ba4fc4bf4945d9a54da6247463b6fad0cb1990a247e4f9f1ab8cf09bb3ba2. Bugeaud–Kim PDF400150bytes,
+SHA256de28335ccad5e5cbbc941b2d7350dee82f7e4daeb95db1feed7a735e8746f87d; Nguyen v2 HTML905129bytes,
+SHA256382342850fcdc42ab414c36dd9aad591487a5793de94b501fa3046113fa25b60.

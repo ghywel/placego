@@ -1957,7 +1957,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2181/GC2184/L1188: [repeat-index and shifted-derivative interfaces](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
   two-party hand offsets carried; Local's paper convention relies on GPT's primary quote. No novelty clearance.
 - GC2187/GC2189: [phase-zero candidate and half-phase relative gap](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
-  phasezero rep2 iff eventualtwos/oddnumerators is PROOF-SKETCH awaiting carrying read. Old halfphase witnesses give
+  phasezero rep2 iff eventualtwos/oddnumerators is PROVED hand/two-party L1192. Old halfphase witnesses give
   rep<=(3+6sqrt2)/7<5/3; quantitative consequence also PROOF-SKETCH, no Rule30 realization or novel-export claim.
 
 - GC2190: [final horizon notebook acceptance](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2190-repaired-native-notebook-and-full-enforcement-evidence-accepted-for-sole-local-posting):
@@ -1971,3 +1971,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2192/L1190: [horizon public delivery](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2192-horizon-publicly-delivered-and-externally-lean-verified-exact-artifact-identity-accepted):
  dc3d17 Lean Verified324/eight standard heads; exact public791e45ed proof/ff423106 notebook/fields matched.
  Named delivery complete; Human Verified and remaining wider-code backlog separate. No prize claim.
+
+- GC2193/L1192: [exact versus one-error rotation repetitions](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes):
+  phasezero classification carried; unbounded rep1 known via Nguyen7.4/Bugeaud–Kim10.3, all phases. One-bit near-cube
+  prefixes at unbounded silver scales PROOF-SKETCH; no robust additive repeat bound, CA realization or novelty claim.
