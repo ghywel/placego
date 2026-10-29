@@ -1214,3 +1214,10 @@ half-density bound has an equivalent geometric target, while uniform phase free-
 does not imply typicality of any selected physical orbit. The known upper bound forces zero
 critical1/2-capacity; subcritical finite energy remains open. Standard odometer/tree arguments,
 PROOF-SKETCH awaiting Local; no new dynamics, wall-bit bridge, density proof or delivery package.
+
+GC2158: [one further upstream gate](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells)
+forces b to flip before a black run of s of length>=2. Only singletonblackruns leave white-fill
+links optional; exact relaxed count2^S versus2^R. The retained source has R93,S69, but all three
+low forcing coefficients remain free under that relaxation. Explicit temporal controls preserve
+three gates/period/caps while replacing the actual upstreams. PROOF-SKETCH, not a seed trajectory
+or density law. Pause the gate-by-gate ladder without a repeatable component/root-profile mechanism.

@@ -6,6 +6,11 @@ exact prefix counts and an energy dictionary. Hand PROOF-SKETCH awaiting Local; 
 theorem, run, wall-bit bridge or submission. The generic parity-only closure route below remains
 parked with its actual-seed joint-support reopening condition.
 
+GC2158 below adds one exact upstream gate: most white-to-black transition choices become forced,
+and only isolated black cells keep them optional. The retained256-cycle gives a concrete reduction
+from93 to69 relaxed fill-choice bits, but still leaves all three low polynomial coefficients free.
+This is a local compatibility count, not the actual seed's entropy or a density bound.
+
 GPT, 29 October 2026, GC2151. The owner assigns this pull while Local is offline. The finite-horizon
 formalization is checkpointed at GC2150; no M5 job is requested or presumed running.
 
@@ -394,3 +399,104 @@ closed under XOR, so the proof's unit-word argument need not apply. It is not a 
 cell requires a particular amount of time to compute. The useful reopening condition for this route
 is a specific actual-seed relation that determines the missing intersection signature; merely adding
 another fixed batch of generic parity moments does not supply that relation.
+
+## GC2158: one more upstream gate leaves choices only at isolated black cells
+
+PROOF-SKETCH, awaiting Local. This is a hand elimination of known R_step equations, not a new
+physical model, novelty claim or delivery package. Record/current-kit/portal/PR searches used
+011, temporal transition, black run, isolated, upstream gate and right diagonal. Actual source
+Rule30Diagonals.R_step and the already delivered right-profile101 shift law were read; the latter
+has different global period hypotheses. A primary-source literature search located those known
+portal statements, without establishing a literature-wide absence of this elementary specialization.
+
+Write Df(t)=f(t+1) XOR f(t), with time cyclic of length H. GC2154 eliminates two upstream profiles
+from Db=s OR u and Ds=u OR v. Add the next actual equation Du=v OR w. The exact result is:
+
+    periodic u,v,w exist with those three equations
+      iff s <= Db <= s OR Ds
+      and every occurrence s(t),s(t+1),s(t+2)=0,1,1 has Db(t)=1.
+
+For necessity, the first inequality is GC2154. If s has011, then Ds(t)=1 and Ds(t+1)=0, so
+u(t+1)=v(t+1)=0. If u(t)=0, Ds(t)=1 forces v(t)=1. But Du(t)=0 would contradict
+Du(t)=v(t) OR w(t). Thus u(t)=1 and Db(t)=1.
+
+For sufficiency put B=Db and choose the largest permitted u, pointwise:
+
+    u = Ds AND (s OR B),    v = Ds AND NOT u,    w = Du.
+
+The first two equations follow from s<=B<=s OR Ds. The last requires v<=Du. When v(t)=1,
+u(t)=0, so this says u(t+1)=1. The formula for u implies s(t)=0, B(t)=0, Ds(t)=1;
+therefore s(t+1)=1. If Ds(t+1)=0 we would have the forbidden011 with B(t)=0. Hence
+Ds(t+1)=1, giving u(t+1)=1. All chosen profiles remain H-periodic. This proves sufficiency.
+
+### Run interpretation and the exact relaxed choice count
+
+Assume s contains both colours. Index its cyclic white runs by r, their lengths L_r, and the black
+runs immediately following them by lengths K_r. The neighbour b is constant on each white run;
+call that value y_r, the fill bit. It flips at every black tick. Its extra transition at the last
+white tick is optional under GC2154. The new condition forces that transition whenever K_r>=2.
+Only a singleton black run, K_r=1, leaves it optional. Consequently
+
+    y_(r+1) = y_r XOR (1 XOR (K_r mod2))    whenever K_r>=2.
+
+Even black runs force the next fill bit to change; odd black runs of length at least3 force it
+to stay the same. A singleton black run supplies no constraint on the two adjacent fill bits.
+Conversely these constraints reconstruct a b satisfying the exact three-equation criterion:
+use y on white runs, alternate b across black ticks, and choose each remaining boundary flip
+to reach the next y. Thus this is an equivalence, not just a necessary run restriction.
+
+Let R be the number of white runs and S the number of singleton black runs. Before the new gate
+there are2^R possible fill assignments. If S>0, deleting the S unconstrained edges from the cycle
+of R variables leaves a forest with S connected components. Each component has exactly two
+assignments, so the new exact count is2^S. If S=0, the cyclic affine constraints have two solutions
+when XOR_r(1 XOR (K_r mod2))=0, and none otherwise. These are relaxed compatibility counts with
+some periodic u,v,w; they do not retain the actual root's specified upstream profiles or initial row.
+
+### The retained256-cycle:24 constraints, but surviving cancellation freedom
+
+Posthoc arithmetic on the already retained GC2155 words, without evolving any new row: source
+s=R16 has93 white runs. Its black-run lengths are69 of length1,18 of length2,5 of length3 and1 of
+length8. Thus S=69, with24 independent affine constraints: the relaxed family shrinks from2^93
+to2^69 choices. The actual b=R17 satisfies all24. The earlier actual47 filled runs remain unchanged.
+This is not a count of actual-seed alternatives: fixing the true upstream profiles and b(0)
+already determines b uniquely by its recurrence.
+
+Even these additional constraints do not determine the three low forcing coefficients. A free
+component can be flipped as a whole; its change to g=s OR b is the XOR of its white-run factors.
+Three separate components of this actual source have white runs (start,length)
+
+    [(44,1)],       [(50,2)],       [(150,1),(153,3)].
+
+Their factors modulo p^3, p=1+X, are respectively
+
+    X^44 = 1,
+    X^50+X^51 = p,
+    X^150+X^153+X^154+X^155 = p^2       (all congruences modulo p^3).
+
+Thus all eight three-coefficient signatures remain possible in the relaxed family. The associated
+component changes can preserve the actual b's first16 ticks and last tick. This is an explicit
+rank-three witness, not an inference that the69 choices are statistically random or independent
+under the real root's evolution.
+
+Two particularly small algebraic controls make the consequence concrete. Start with the actual b:
+
+- Flip b at ticks49,50,51. Only the white run50,51 changes the forcing; its factor has order1.
+  Against the original forcing order2, the new forcing has order1 and its integral has order0.
+- Flip b at ticks149through155. The changed forcing is the last factor displayed above, of
+  order2. It cancels the old leading coefficient: exact division gives new forcing order3 and
+  integral order2.
+
+In both controls, b and its integral still have least period256; both preserve their actual first
+16 ticks and terminal black cap. The explicit u,v,w construction satisfies all three equations.
+These are posthoc temporal controls using the fixed retained source and two stated patches, not
+new CA trajectories. They replace the real upstream profiles, so they are not actual-seed
+counterexamples. Their arithmetic receipt is cited/gc2158-upstream-run-filter/checks.json,
+SHA25640f6f43da670c96cd68ca3734f2b0888587cd5af2d38a9cf6d7d191803dcc80b.
+No new period search, dynamics run, stage measurement, formal build or enlarged census was made.
+
+The extra ancestry has done something precise: black runs of length at least2 now transmit a
+relation between successive fill decisions. The remaining singleton black runs carry the freedom
+that these three equations leave. A one-gate-at-a-time ladder is not an asymptotic bound. Stop
+that ladder here unless a closed, repeatable law controls these components across depths or uses
+the actual upstream root profiles. Density1/2, sublinear00-minus11 and the wall-bit bridge remain
+open. Local's carrying read waits resumption; no M5 task is queued.

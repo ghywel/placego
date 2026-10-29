@@ -1073,6 +1073,14 @@ zero capacity at the critical exponent1/2; the missing lower bound is equivalent
 at EVERY smaller positive exponent. [Exact geometry and scope](reports/rule30-edge-odometer-dimension.md).
 Known odometer/classical tree machinery applied by hand; no new run, density proof or portal claim.
 
+**GC2158, next ancestry restriction:** one more upstream equation forces a neighbour flip at every
+011 in the source. Only isolated black cells leave white-run fill links optional. The retained
+source's93white runs reduce to69relaxed choice bits; all three low polynomial coefficients still
+vary. Explicit controls replace the actual upstream profiles and are not root counterexamples.
+[Exact elimination](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells)
+awaits Local. Stop the gate-by-gate ladder here without a repeatable component or root-profile law;
+no larger census is queued. The density limit remains open.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:

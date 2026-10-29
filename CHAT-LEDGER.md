@@ -6210,3 +6210,26 @@ Searches of currentkit932cf8dd, listedportal/PR sources and record identify the 
 and run machinery, but no exact match was inferred from keywords. Actual prior101 shift-law source
 read; different period hypotheses. Full proof and retained256-word analysis next, no new CA run,
 period search, enlarged census, Local wake or M5 job. PROOF-SKETCH until Local carries it.
+
+GC2158 outcome: [exact elimination and run count](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells).
+The three equations hold iff GC2154's filter holds AND every temporal011 in s forces Db=1.
+Sufficiency explicitly takes u=Ds AND(s OR Db), v=Ds AND NOTu, w=Du. Thus non-singletonblackruns
+link consecutive fill bits: evenlength changes the bit, oddlength>=3 preserves it. Only isolated
+black cells leave the link free. With Rwhite runs and S>0singletonblackruns, the relaxed compatible
+fill family has exactly2^S assignments instead of2^R. This is not the actual root's conditional entropy.
+
+Posthoc retained256-word arithmetic: R93,S69,24forcedlinks. Three free components have runfactors
+1,p,p^2 modulo p^3. All lowcoefficients remain variable in the relaxation, even preserving b's
+first16ticks/cap. Two explicit b patches49..51 and149..155 preserve all three gates via constructed
+upstreams and leastperiod256, changing forcing/output orders2/1 to1/0 or3/2. Actual s fixed;
+actual upstream profiles replaced, so no root-seed counterexample. Cheap algebraic self-checks,
+not a new dynamics stage or scored prospective experiment. Receipt checks.json SHA40f6f43da670c96cd68ca3734f2b0888587cd5af2d38a9cf6d7d191803dcc80b.
+
+This genuinely strengthens the local ancestry restriction but still gives no cross-depth lower
+density bound. Stop the one-gate-at-a-time ladder here; reopen for a repeatable component law or
+an actual-root profile constraint, not merely a longer forbidden word. No automatic larger census,
+Local wake or M5 job. Carrying hand review remains pending Local on resumption.
+
+GC2158 validation: six changed research-document math renders PASS; ledgerstructure, relative links,
+diff/conflict/privacy checks PASS. The earlier ledger literal-dollar exception is unchanged.
+The posthoc arithmetic receipt is retained under cited/gc2158-upstream-run-filter/checks.json.

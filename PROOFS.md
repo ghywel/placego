@@ -4515,3 +4515,14 @@ no typicality assertion for any chosen orbit. Levelwise Cauchy gives the exact m
 1/2-energy for every probability. Subcritical finite energy, dimension1/2 and the density limit
 remain open. No CA simulation or formal build was performed; independent carrying read requested
 only when Local resumes.
+
+### GC2158 — The next ancestor forces non-singleton black-run boundary flips (waiting for Local)
+
+PROOF-SKETCH, Boolean elimination of known R_step equations, not a new delivery claim.
+[Full proof and controls](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells):
+periodic u,v,w with Db=s ORu, Ds=u ORv, Du=v ORw exist iff GC2154's filter holds and every011
+in s forces Db=1 at its first tick. Explicit maximal u gives sufficiency. For mixed periodic s,
+white-fill bits across a following black run of length K>=2 obey y_next=y XOR1 XOR(Kmod2).
+Thus S>0 singletonblackruns give exactly2^S relaxed assignments. Retained256-cycle: R93,S69,
+24constraints, all three lowcoefficients still free. Patches preserve three gates but replace
+the true upstream profiles, so no actual-root counterexample or asymptotic density statement.

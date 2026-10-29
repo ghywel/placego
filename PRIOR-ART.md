@@ -4649,3 +4649,12 @@ gives tree-boundary dimension/capacity background. These primary carrying sectio
 [GC2157](reports/rule30-edge-odometer-dimension.md) writes out the homogeneous-prefix and energy
 argument with the exact Rule30 exponent dictionary. The critical zero-capacity corollary uses the
 existing record-charge upper bound; no density equality, priority or new submission is claimed.
+
+### GC2158: known local gates, explicitly eliminated one ancestor further
+
+Known machinery reapplied here: currentkit932cf8dd Rule30Diagonals.R_step supplies the three
+upstream OR equations. The record/kit/portal/PR search and actual delivered101 shift-law read are
+retained in the [hand account](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells).
+The011 clause and cyclic component count are elementary consequences written out for the current
+run-fill question. They are not separately novelty-cleared or proposed as a delivery package; the
+more global101 profile theorem has different period assumptions. Actual-root ancestry remains open.

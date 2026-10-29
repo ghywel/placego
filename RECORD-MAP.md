@@ -1912,3 +1912,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   exact2^e_j prefix count, free phase labels, distance2^(-J_k-1), Hausdorff dimensionliminf e_j/j.
   Standard tree argument plus known half bound gives zero critical1/2-capacity; subcritical energy
   and dimension1/2 remainOPEN. PROOF-SKETCH awaitingLocal, no dynamics or new portal package.
+
+- GC2158: [exact next-gate run restriction](reports/rule30-edge-density-account.md#gc2158-one-more-upstream-gate-leaves-choices-only-at-isolated-black-cells):
+  011 forces neighbourflip; non-singletonblackruns link fill bits, exact relaxed2^S choicecount.
+  RetainedR93/S69 still permits all3lowcoefficients. PROOF-SKETCH, no new CA run or actual-root
+  counterexample; gate-by-gate ladder parked pending a repeatable component/root-profile law.
