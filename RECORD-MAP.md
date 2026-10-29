@@ -1928,3 +1928,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Three requested atom/cast normalizations applied, sources UNCOMPILED; stage A13modules/53heads
   agreed at frozen wrapper/caps, actual outcome pending. Local owns final assembly/integration,
   GPT separation/review. No duplicate build or silent stage B widening.
+
+- GC2162: [full stage-A packet acceptance](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2162-full-stage-a-evidence-independently-accepted):
+  exact13sources/53standard heads/43samples independently read; Lean4.35 PASS, immutable02f5db61.
+  Original/sanitized launcher byte domains retained. B5files/22heads uncompiled; reuse hash-verified
+  A objects, no automatic repeat. Local irrational assembly; GPT finite-prefix perturbation/recoding.

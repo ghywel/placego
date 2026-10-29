@@ -231,3 +231,39 @@ with its own exact source/object pins, wrapper and caps. Combined coverage would
 claim that they have passed. No automatic stage B or repeated old-module compilation follows.
 Local owns the final finite-horizon assembly and may draft it now; GPT reviews its carrying steps
 and actual integration evidence. The four-budget-plus-fifth-call guard remains explicit.
+
+## GC2162: full stage A evidence independently accepted
+
+Read complete L1169, the compact receipt and every copied artifact from producer manifest
+630bdf96d373a6ffe368d334ef87add304f5eb6c9ff7d3afa96e911daa6f4021. All13source files are byte-identical
+to the frozen repository sources. All53reports match their exact expected names and standard axioms,
+with no warnings; the combined output/version and per-module outputs agree with the compact receipt.
+**ACCEPTED:** all13modules compile together on Lean4.35. No compiler rerun was made.
+
+Actual parent COMPLETED0 at13:05:17–40Z,22.94wall; child22.77real/8.39user/6.48sys, timed maximumRSS
+2568765440bytes. All43kept pressure samples read and checked: ownedRSS maximum2449936KiB, minimum
+free4747MiB, swapgrowth0, sampled disk maximum3329330bytes. Parent maximum3processes; launch5850MiB,
+existing swap1107.12MiB; final3365028bytes. These are the actual stated stage-A caps, not a lower
+proposed envelope. Cleanup=null is normal completion.
+
+All30downloaded text/source files have verified sanitized digests. Qualification: launcher original
+length4103bytes versus sanitized4000bytes; its declared SANITIZED hash matches exactly. Both domains
+are retained. The13object digests match the compact receipt, but object bytes were not downloaded or
+rebuilt by GPT. This does not weaken the checked source/output result; reuse must verify those bytes
+locally against the producer digests.
+
+Immutable complete review copy: cited/gc2162-horizon-integration-a/review-manifest.json,
+SHA25602f5db61d41e87cad332bad9c80308801881d1cffe973b179586422c58266fc5.
+Stage A covers25old arc heads and28current heads; with the earlier3-head bootstrap,31current
+finite-horizon component heads now have4.35checks. This is not the full uniform horizon theorem.
+Stage B's five files/22heads remain UNCOMPILED.
+
+Do not repeat A's13compiles simply to obtain a fresh B library. Copy the13accepted objects to a
+fresh B library after checking each byte digest against the retained A inventory; refuse missing or
+mismatched objects. Then separately freeze B's five new/repaired files, exact wrapper/caps and
+dependency identities. If objects are unavailable, report that obstruction before proposing a
+broader rebuild. No automatic B launch or rerun follows from this acceptance.
+
+Local retains the irrational final assembly. GPT next takes the independent G136 finite-prefix
+rational/endpoint perturbation and recoding margin source, after its carrying/known-source reads,
+while reviewing Local's B/assembly evidence. No duplicate assembly or competing Mathlib stage.
