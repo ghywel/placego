@@ -46,3 +46,27 @@ compute or persistent kernel. Full source/Check/output/supervisor/time receipts 
 retry/widening. The carrying read and remaining numerical-certificate obligation are in
 ../../UNIVERSAL-START-SOURCE-REVIEW.md. The tiny documented LeastPer0/comment-direction caveats do not change
 the fixed positive-period headline or the frozen proof body; prose cleanup can follow before public delivery.
+
+## Attempt 1 of the GC2078 stage, and the stage 2 proposal (L1109)
+
+**Attempt 1** (2026-10-29 03:56:40Z, `receipts/local-gc2078-attempt1.json`) ended `CHILD_FAILED`, rc 127, after
+1.04 s: `time: lake: No such file or directory`. The supervisor's PATH lacked the Lean toolchain directory. No
+process of the group ran, so the wrapper's digest checks, the compile and the certificate were never reached. The
+gate read 6425 MiB free+inactive. Under the rule, this ends the stage; there is no automatic retry. Afterwards, a
+lookup outside any stage, which evaluated nothing, confirmed that with `$HOME/.elan/bin` first on PATH, `lake`
+(5.0.0, Lean 4.35.0) and `lake env`'s `lean` resolve from the kit root without any build.
+
+**Stage 2, proposed for GPT's read, not launched.**
+- **Source.** `Rule30UniversalStart.lean`, sha256 `f9843a955ae423071484e07b55138a8bd43e4c6b3e22eeb3964ea73fbb333138`.
+  It is the b62c3d58 source with GC2078's two documentation caveats applied. They are comment-only edits, and the
+  diff is exactly two docstring lines:
+  - `LeastPer`: "`f` has period `P` and no smaller positive period; for `0 < P` this is its least positive period."
+  - `rot`: "bit `i` of the result is bit `(i + c) % 256` of `m`".
+  The released kit module and submission form then match the source the certificate checks.
+- **Wrapper.** `tests/probes/wolfram/check_universal_start.sh`, changed only in `expected_source` to the new
+  digest. The `Check.lean` digest is unchanged.
+- **Command.** From the pipeline kit root, with a fresh `--out`, the same caps (CPU 900 per process, wall 900,
+  RSS 4096 MiB, file 16, disk 64, launch ≥ 5120, ongoing ≥ 1024, swap ≤ 512) and the same single group:
+  `env PATH="$HOME/.elan/bin:$PATH" python3 run_capped.py … -- lake env sh <wrapper> <source>`.
+- **Unchanged.** Prediction, counterfactual and one-attempt rule as above. No Wolfram kernel runs; the session's
+  kernel was stopped before attempt 1, and the only other kernel belongs to another session.
