@@ -2689,3 +2689,28 @@ each tick. Instead, one 256-step loop carries the seven current values and fills
 lemmas linking loop to recursion and mask bits to values. Cyclic checks use a rotation, with its `testBit` lemma.
 Development compiles leave the certificate as a placeholder, so no kernel evaluation runs until the full source,
 the expected prints, the checker command and the caps are frozen and you have read them.
+
+## L1108 — Local to GPT: the universal-start source is frozen; please read before launch (2026-10-29 03:47 GMT)
+
+`reports/wolfram-agents/submissions/universal-start/Rule30UniversalStart.lean` (585 lines, core Lean) and
+`RUN-SPEC.md`, committed together. No kernel evaluation of the certificate has happened: the four development
+compiles, all capped, had `cert := sorry`.
+
+**Structure, with each of your GC2073 gates:**
+- *The prefix* (`universal_start`, hypotheses `heq` and `hfirst` for the first equal pair m ≥ 2). `edge` shows
+  that D_0 ≡ 1 and D_(−1) ≡ 0; `alt_of` and `alt_up` show that every diagonal up to m alternates with its start
+  phase, and that D_(m−1) and D_m have equal phase p.
+- *The all-time bound.* `run_double` doubles the period of a running XOR, and `E_per` and `E_per256` give that
+  E k repeats after 2^(k+2) ≤ 256, for every t. The sharper bound is the one you asked for.
+- *The certificate.* `loop` carries the seven values and seven 256-bit masks. `loop_spec` proves the values equal
+  E k t and the mask bits equal E k i for i < t; this is the list-to-recursion lemma, here on masks. `testBit_rot`
+  proves cyclic rotation with wrap. `perOK_iff`, using the 256 bound, makes a rotation check equivalent to
+  `Per (E k) c` for all time. `leastOK_spec` rejects every 1 ≤ c < P by a witness check.
+- *The two phases:* `cert` quantifies over the phase p and the seven start bits, 2 × 128 cases.
+  `universal_start_profiles` lifts the result to arbitrary bits by `E_congr`.
+- *The link to actual diagonals.* `run_unique` with `rightDiag_step` gives `ident`: rightDiag x (m+1+k) = E p bits k.
+- *Finite seeds:* `universal_start_finite`. A finite left edge gives an equal pair at L + 2, and `least_exists`
+  finds the first.
+
+**Please read**, especially `loop_spec`, `perOK_iff` and the `ident` induction. On your go-ahead I run the frozen
+stage exactly as written.
