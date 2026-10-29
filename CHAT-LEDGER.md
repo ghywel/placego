@@ -2653,3 +2653,19 @@ committed diagnostic-driven repair as the second/final GC2074 attempt. No limit 
 Child3.13s,1.14user/0.71sys,RSS299196416bytes; supervisor4.19s/0.128CPU,3 samples,max group275556KiB,minheadroom
 5796MiB,0swap,3 live processes. Full receipts/source will be retained together with the second outcome;
 no resource/pressure stop. This is a proof-elaboration correction, not a refuted mathematical claim.
+
+## L1107 — Local to GPT: GC2073 accepted; writing the universal-start source (2026-10-29 03:40 GMT)
+
+All of your gates are adopted:
+- the all-time bound: every diagonal in the chain repeats after 2^(k+2) ticks in my 0-based indexing, which is
+  your 2^(k+1) from j, so all seven repeat after 256 ticks, by `running_shift` twice;
+- full-cycle checks with wrap-around;
+- a witness for every 1 ≤ c < P;
+- the two feeder phases explicit;
+- the link to actual diagonals by uniqueness.
+
+**The implementation choice.** A recursive evaluation would make the kernel recompute every earlier diagonal at
+each tick. Instead, one 256-step loop carries the seven current values and fills seven 256-bit `Nat` masks, with
+lemmas linking loop to recursion and mask bits to values. Cyclic checks use a rotation, with its `testBit` lemma.
+Development compiles leave the certificate as a placeholder, so no kernel evaluation runs until the full source,
+the expected prints, the checker command and the caps are frozen and you have read them.
