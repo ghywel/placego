@@ -115,3 +115,50 @@ middle interval, this resolves the old recurrence *packaging* question; the crit
 outside the result. Reopen formal packaging if a maintainer requests this interface or a subsequent proof
 needs its precise window/count lemma as a reusable dependency. This disposition does not settle the critical
 periodic-profile/ring classification or finite-seed reachability.
+
+## GC2170: common-left trace extension is covered by StripeMeeting plus locality
+
+**Disposition:** no standalone common-left fringe submission. The original single-seed stripe match
+remains known. The arbitrary-common-left CENTER TRACE extension is also a direct specialization of the
+stronger current-kit StripeMeeting relation, followed by causal truncation for an infinite left tail.
+The full moving-wedge statement remains the retained two-party hand corollary; no new exported declaration
+or independent compiler replay is claimed. Reopen a formal physical/infinite-tail bridge only if needed
+as a dependency or requested by a maintainer, not to manufacture another submission.
+
+Record searched: GC641/L351 and complete PROOFS33, GC2120, the kit/portal/open-PR stripe/fringe plus
+common/arbitrary/left/shield search at current kit932cf8dd and index13:44:31Z. Read actual
+StripeWord, StripeRelated, center_pair, stripe_related_preserves_two and stripe_related_same_trace,
+plus AlgebraicDegree.evol_congr. Current StripeMeeting SHA256
+e2d6708845b910d441a100e57e41dcde429df0204bceb673b406da59246f7d7d is identical to the complete
+GC1854 carrying read in GPT-STRIPE-MEETING-REVIEW.md; no new certificate replay is needed for this
+statement-level disposition. This resolves GC2120's unexamined additional candidate, rather than
+claiming that the narrower TransformsSeeds theorem alone had arbitrary-left scope.
+
+Exact specialization: fix fringe length r>=1 and encode physical site r-i as integer bit i. For a
+finite common left tail, write its cells at -2,-3,... as the bits of h. The baseline row is
+
+    a=2^r+2^(r+2)h.
+
+Let F_r encode the fringe from its rightmost cell back to the root, in LOW-bit-first order: F_0=1,
+F_1=3 and F_(r+2)=F_r+2^(r+2). The fringed row is
+
+    b=F_r+2^(r+2)h.
+
+The prefixes through j=r are respectively 0^r1 and either1(01)^(r/2) or11(01)^((r-1)/2), hence
+both StripeWord. Both bit r are black; both bit r+1 are white by the essential x(-1)=0 guard;
+all higher bits agree. Thus StripeRelated a b c holds for every c>=r. Under Phi, bit c+t is physical
+site r-c, so stripe_related_same_trace gives equality at every fixed physical site<=0 for ALL times.
+This uses the existing theorem's arbitrary common HIGH bits, not a single-seed special case.
+
+For any fixed observation time t and site p<=0, replace the common left tail outside [p-t,p+t]
+by white. Both resulting rows are finite and satisfy the same cut/white-separator guards. The finite
+trace result applies, and evol_congr transfers its value back to the original rows. Choosing a finite
+truncation separately for each observation is legitimate: the conclusion is equality of those values,
+not existence of one finite seed representing the entire infinite tail.
+
+The stronger wedge p<t still follows from the already carried diagonal induction: D_1 starts0 and
+toggles in both rows; its OR with D_0 is1 in both, so D_2 agrees; for every k>=3 the three relevant
+inputs agree inductively and their initial values are the common arbitrary tail. Do not label that
+moving-wedge formula a literal current-kit export. No completeness classification follows. The old
+nearest-left-black counterexample remains essential: {-1,0} versus{-1,0,1} disagree at time2. It
+fails exactly the white separator in StripeRelated.
