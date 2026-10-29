@@ -528,3 +528,74 @@ For arbitrary-seed PREFIX periods the safe counterparts use Pi_P and Pi_(P/2) ex
 an individual least period may differ because a prefix cycle repeats that profile. The pooled block
 exponents in CL642 part2 therefore do not automatically inherit the original omega notation.
 The withdrawn limit/sharpness conclusions remain withdrawn; no new distribution or runtime verdict follows.
+
+## GC2205: exceptional ruler closures have a deterministic sparse count
+
+**Carrying read completed.** CL645's composition was read at its actual carrying step. With b=s+1,
+its M=Q_b=4q0 and M/4-1=q0-1; its source D_(b-1)=D_s is exactly GC2201's antiperiodic source.
+For m>=1 the statements coincide, with prefix periods and positive-depth guard retained. The forced
+closing-length law is now **PROVED (hand, two independent derivations; Cloud CL645 read by GPT)**.
+This accepts the precise composition, not Cloud's finite pooled counts, Markov assumptions, or
+claim that the question has been completely reduced to two fair coins. No new Cloud work requested.
+
+**New count, PROOF-SKETCH awaiting independent review.** Write Q_j=2^E_j, x_j=E_j-E_(j-1), E_0=0.
+A completed exceptional block is an occurrence1(10)^m11, starting at s>=1, m>=1. Put
+
+    e=E_(s-1), q=2^e=m+1, u=s+2m+1.
+
+The closing11 starts at u. There are no other11 starts strictly between s and u. There are exactly
+m+1=q ones from x_s through x_(u-1), hence
+
+    E_(u-1)=e+2^e.
+
+List all completed exceptional blocks in increasing start order (s_i,u_i,e_i,m_i). Two cannot have
+the same start: the earlier closing11 would break the longer required alternation. The next start
+cannot be strictly inside(s_i,u_i), since it would need another11 there. Thus s_(i+1)>=u_i, INCLUDING
+the possible shared closing/starting11. Monotonicity of prefix exponents gives
+
+    e_(i+1) >= e_i + 2^e_i.
+
+The proof does not assume independence, typicality, a finite seed, or unbounded exponents; it uses
+actual prefix flags and the carried closing-length law. Since m_i>=1, e_i>=1. Define a_1=1 and
+
+    a_(r+1)=a_r+2^a_r:       1,3,11,2059,... .
+
+If C(N) blocks are completed within x_1..x_N then a_(C(N))<=E_N<=N, whenever C(N)>0. In particular,
+2^e>=e for e>=1 gives a_r>=2^(r-1), so
+
+    C(N) <= 1+floor(log2 N),       C(N)/N -> 0.
+
+The a_r bound is much stronger than the displayed logarithmic simplification. The quantity being
+counted is a specific completed block, not every11, every zero, or every nondoubling pair. Blocks
+may share their boundary11; the proof explicitly charges only the bits before that shared start.
+A long block cut off at N contributes nothing yet. There is no assertion that every allowed
+length occurs or that the lower tower bounds are attained by a Rule30 root.
+
+**What this changes.** Cloud explicitly neglected the ruler exception in its heuristic. The count
+above supplies a deterministic reason that its *event frequency* vanishes. It does not couple the
+actual word to a word with those events removed, bound the later influence of an event, establish
+fairness of either unresolved transition, or prove density2/5. A sparse event can change the later
+regime for a long time. The residual00 mechanism remains a separate open task.
+
+**Known mechanism, no priority claim.** Current kit932cf8dd Rule30RecordCharge.threshold,
+record_potential, record_time_lower_bound and threshold_tower_step already give tower-sized costs
+for excess-exponent records, and Rule30RightPeriods.per_upper_half is already proved. Our a_r
+counts particular unaligned word closures; it is not the kit's threshold sequence1,3,19,2^21+19,... .
+This is a word-level explanation of the same reset/countdown mechanism, not a newly proved half-rate
+bound or a novelty-cleared package. GC2203's record/current-kit/portal/PR search and Rowland2006
+primary background apply; no new external arithmetic theorem is imported.
+
+**GC2204 actual outcome: COMPUTED/PASS**, once at fixed depth24/65536ticks. The exact prefix returns,
+first-return and column-halving periods agree, and substring and consecutive11 readers both find
+exactly the universal-start block(s,u,e,m)=(3,6,1,1). Prefix flags are101101101000001100000001.
+This checks indexing and includes the actual small boundary; it does not validate the infinite
+counting argument or meaningfully exercise a second exceptional closure. No wider run is requested.
+Intel:0.23seconds wall,0.22childCPU,15458304bytes maxRSS by time; launch headroom5806MiB, existing
+swap225.25MiB. Child finished before a supervisor sample, so sampledRSS/swap-growth maxima are
+unavailable rather than measured zero. ExitCOMPLETED/0, no job remains. Source/freezeae1f39a4 and
+immutable receipt cited/gc2204-ruler-control/manifest.json SHA256
+8fb100ba539bcd1e6411a636e16c652a3e17d2646ad85b598b8c2bb845ed9a75.
+
+**Next step:** inspect the new a4691a backward-operator source at its actual definitions and heads,
+then return to a concrete00 question only if it retains information beyond the parked generic
+parity/ancestor proposals. Do not rerun this small control or reinterpret it as density evidence.

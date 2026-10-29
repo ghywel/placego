@@ -2001,3 +2001,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2201: [power-of-two closing length](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2201-a-preceding-doubling-forces-a-power-of-two-closing-length):
   genuine1(10)^m11 requires m+1 dyadic;1101011 forbidden PROOF-SKETCH. Known anti-resource/mask corollary,
   no occurrence/density theorem. CL642 A/B hand read scoped to single-seed least-cycle parities.
+
+- GC2203/GC2205: [overnight plan](reports/GPT-OVERNIGHT-20261029.md) and [ruler-closure count](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2205-exceptional-ruler-closures-have-a-deterministic-sparse-count).
+  CL645/GC2201 closing-length law carried; new successive-exponent/tower count PROOF-SKETCH. One fixed root control PASS, no density inference. New a4691a carrying review is the next active step; Local/Cloud offline.

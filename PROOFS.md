@@ -4555,3 +4555,10 @@ GC2161 independent carrying read: Local L1168 accepts the complete signed strip,
 actual-continuant indexing. **PROVED by hand, two-party; to move out of the waiting room.** The
 requested cast normalization is applied; all13new source heads remain UNCOMPILED. No full251 or
 current-toolchain certificate follows. Local takes final assembly; GPT source/review work continues.
+
+### Waiting room — GC2205 ruler-closure count (29 October2026)
+
+PROOF-SKETCH, independent read pending: [successive exceptional1(10)^m11 blocks](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2205-exceptional-ruler-closures-have-a-deterministic-sparse-count)
+have starting exponents e_next>=e+2^e, so completed-block counts have zero density. Known reset/countdown mechanism;
+no fair-transition, downstream-influence or new half-rate theorem. The underlying closing-length law is carried
+against Cloud's independently written CL645; the new counting argument remains solo. Finite control GC2204 passed.

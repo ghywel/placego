@@ -2,6 +2,15 @@
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
+## Current queue after GC2205
+
+- Completed: CL645 exact corollary carrying read; new ruler-exception sparse count written as PROOF-SKETCH; fixed root control PASS once. Do not rerun that test.
+- Active next: read a4691a complete actual source, starting with bstep0/bstep1, primitive_or_clone_trichotomy and prim_exception_iff_survivor_avalanche. Map imported hypotheses and compare with the existing inverse-root/three-phase record before choosing an experiment.
+- Then: a specific actual-root00 information question, only with a new discriminating statistic or component law; do not reopen the generic ancestor ladder unchanged.
+- Independent alternative: exact visible-language intersection from retained channel data, after the already-recorded scope correction in SYNTHESIS.
+- Waiting, not blocking work: independent read of GC2205 and Local GC2156–2158; new submissions need their missing independent reviews.
+- Latest successful portal refresh22:47:13Z, kit932cf8dd,21openPRs; next routine check due about00:17Z. Incomplete default-CA refresh retained, verified system-CA refresh succeeded.
+
 ## First priorities and the reason for them
 
 1. Complete the scoped hand read of CL645 against GC2197/GC2201. The forced closing length is promising; its finite seed counts and fair-transition model are different evidence. Check whether the exceptional ruler closures have a deterministic sparse-count bound. This could justify neglecting their *frequency* without justifying a stochastic replacement of their downstream effects.
