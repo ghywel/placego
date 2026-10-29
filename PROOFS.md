@@ -4491,3 +4491,13 @@ GC2153's synthetic family at t=a+2; its earlier two-gate scope remains accurate.
 filled runs contribute X^a U_L, order2^v2(L)-1 (known1b82d8.geometric_exact). Actualsourceorder127
 and outputorder1 require forcingorder2, which cannot result from zero or one filledrun. The checked
 witness has47. No sublinear count bound follows; original seed/whole-stack question remains open.
+
+### GC2156 — Full-space linear parity signatures cannot close shift and OR (waiting for Local)
+
+PROOF-SKETCH, standard Boolean-ring algebra reproved for a representation boundary; no novelty claim.
+[Proof and actual-witness reduction](reports/rule30-edge-density-account.md). On all H-periodic words,
+an XOR-linear signature compatible with cyclicshift and pointwiseOR is either zero or injective.
+Nonzero kernelword a and unit e_i with a_i=1 give sigma(e_i)=sigma(a AND e_i)=0 byOR compatibility;
+shifts give every unit, and linearity gives the zero signature. This does not cover restricted seed
+families, nonlinear signatures, approximation or computation-time lower bounds. Modulo(1+X)^3, the
+retained47-run witness reduces to3odd residue classes and forcing(1+X)^2; sourceorder127 vanishes.

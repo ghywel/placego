@@ -297,3 +297,94 @@ and enforcement receipts are unchanged. No rerun was made to repair a metadata t
 The next discriminating hand question is whether actual upstream equations restrict the cancellation
 of these run-factor coefficients across many scales. The number of filled runs or the size of one
 resource drop does not itself bound N0-N2. The global lower-density inference remains open.
+
+## GC2156: a three-term witness hidden inside the47 fills
+
+Post hoc HAND/PROOF-SKETCH reduction of the retained GC2155 output; no new dynamics or enlarged run.
+Set p=1+X. To recover the first three coefficients at X=1 it suffices to work modulo p^3. In this
+quotient X^4=1 and U_4=p^3=0. Hence X^a U_L depends only on a mod4 and L mod4. Four consecutive
+time cells contribute nothing to these three coefficients, regardless of where that block starts.
+This follows directly from characteristic2 algebra; equivalently it is the first small case of the
+classical binomial/Lucas transform. [Mathlib's Lucas documentation](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Lucas.html)
+was checked; no new arithmetic theorem or imported asymptotic estimate is claimed.
+
+The full table of run contributions (constant,linear,quadratic coefficients in p) is:
+
+| Start mod4 | Length0mod4 | Length1mod4 | Length2mod4 | Length3mod4 |
+|---|---|---|---|---|
+|0|000|100|010|111|
+|1|000|110|011|100|
+|2|000|101|010|110|
+|3|000|111|011|101|
+
+Group the actual47 fills by these16 classes and cancel classes that occur an even number of times.
+Only THREE classes remain odd:
+
+| Start mod4 | Length mod4 | Representative polynomial | Signature |
+|---|---|---|---|
+|0|1|1|100|
+|2|3|X^2+X^3+X^4|110|
+|3|2|X^3+X^4|011|
+
+Their representatives sum EXACTLY to1+X^2=p^2. The source polynomial is divisible by p^127, so it
+vanishes in this quotient. Thus P_g=p^2 modulo p^3. Cyclic integration gives pP_h=XP_g modulo p^256,
+so P_h=p modulo p^2. This recovers the order1 output with an explicit three-term parity witness.
+It is a compression of this observed cancellation, not a count of independent causes or a minimal
+description of the full time streams.
+
+Record searched: Lucas/mod4 with run/polynomial/Newton; the nearest named old proof, G.GPT263 in
+PROOFS-E2.3, was read. It is a previously second-read homogeneous-selector identity for odd cyclic
+lengths and odd white-run lengths, with its own critical premises. It is related parity bookkeeping,
+not this unrestricted filled-run polynomial dictionary. Both use standard residue arithmetic; this
+new explanatory specialization is not proposed as a separate submission or a novelty claim.
+
+### Cheap objection: is this now an autonomous eight-state model?
+
+No. A class modulo p^3 has eight possible values, and XOR and time translation act on these classes.
+The Rule30 OR does not. On period4 take time words u=0000, u'=1111 and b=1000, with time0 written
+first. Their polynomials are0, U_4=p^3 and1. The first two words have the SAME class0, but
+
+    class(u OR b)=1,     class(u' OR b)=0.
+
+Thus the same input classes can produce different OR classes. This explicit algebraic control rejects
+using the three-bit signature alone to predict the next diagonal. It is not a general finite-model
+impossibility theorem. The missing data are the shared intersections of time supports, exactly the
+nonlinear information lost by projecting to these parity sums. Future work must retain that information
+or use an actual-seed restriction; another plot of the same density is not a substitute.
+
+The objection persists if we also retain least period, initial colour, first black time and final black
+colour. At period8 take u=01000001, u'=01111101, b=00100001 (time0 first). Both u profiles have
+least period8, begin white, first turn black at1, and end black; b also has least period8, begins white,
+first turns black at2, and ends black. The u-polynomial difference is X^2 U_4, hence zero modulo p^3.
+But the OR-polynomial difference is X^3+X^4+X^5, which is X^2 modulo p^3 and nonzero. These are
+abstract temporal inputs, not asserted seed diagonals. This strengthens only the particular signature
+countercontrol, not a no-go theorem for every richer representation.
+
+### Why adding a few more parity bits cannot close OR on the full space
+
+Standard Boolean-ring algebra, reproved here as HAND/PROOF-SKETCH; not a novel Rule30 barrier or a
+submission candidate. Let V be ALL H-periodic Boolean words, viewed as an H-dimensional F2 vector
+space. Suppose an XOR-linear signature sigma:V->W has both properties:
+
+1. Equal signatures remain equal after cyclic time shift.
+2. The signature of pointwise OR depends only on the two input signatures.
+
+Then sigma is either identically zero or injective. In particular a nonzero such signature with r
+binary coordinates requires r>=H, even if those coordinates are a clever selection of parity sums.
+
+Proof: if a nonzero word a is in the kernel, choose a coordinate i with a_i=1 and let e_i be its unit
+word. Since AND = OR XOR left XOR right, OR-compatibility and linearity imply
+
+    sigma(a AND e_i) = sigma(0 AND e_i)=0.
+
+But a AND e_i=e_i, so e_i is in the kernel. Shift-compatibility puts every other unit word in the
+kernel, because a cyclic shift acts transitively on the H coordinates. Linearity then puts every word
+in the kernel, proving sigma=0. Otherwise the kernel is trivial, hence sigma is injective.
+
+This closes the attempted EXACT parity-only quotient that preserves shift and OR separately on
+arbitrary periodic inputs. It does not close nonlinear signatures, conditional identities, approximate models, or representations
+on a restricted actual-seed family. Such a family is not the whole vector space and is not generally
+closed under XOR, so the proof's unit-word argument need not apply. It is not a theorem that a seed
+cell requires a particular amount of time to compute. The useful reopening condition for this route
+is a specific actual-seed relation that determines the missing intersection signature; merely adding
+another fixed batch of generic parity moments does not supply that relation.

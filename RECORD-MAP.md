@@ -1903,3 +1903,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2154/GC2155: [whole-white-run resource decomposition](reports/rule30-edge-density-account.md):
   third-gate filter excludes earlier synthetic control; COMPUTED256-cycle47fills cancel first two
   root coefficients, explain127->1. Known gate/geometric mechanisms, hand composition awaitsLocal; limitOPEN.
+
+- GC2156: [three-class edge-cancellation witness and projection boundary](reports/rule30-edge-density-account.md):
+  retained47fills compress modulo(1+X)^3; standard XOR-linear full-space shift/OR quotient is zero
+  orinjective (PROOF-SKETCH). Generic parity closure parked; actual-seed nonlinear correlations open.

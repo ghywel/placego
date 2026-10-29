@@ -1202,3 +1202,8 @@ GC2154–GC2155 continuation: one more upstream gate already restricts the earli
 The exact Boolean filter makes filling operate on entire white runs. A fixed256-cycle witness has47
 filled runs whose first two root-polynomial coefficients cancel and third survives, explaining127->1.
 COMPUTED witness, handfilter PROOF-SKETCH; no cross-scale cancellation or density law yet.
+
+GC2156: the retained47fill cancellation has a compact3residue-class witness modulo(1+X)^3. A simple
+Boolean-ring argument closes exact generic XOR-linear shift/OR-compatible compression on ALL periodic
+words: it is zero orinjective. Actual-seed restrictions and nonlinear representations remain outside
+that argument. No new simulation or density conclusion; hand proof awaits Local.

@@ -6148,3 +6148,20 @@ s<=Db<=s OR Ds; it rejects the earlier two-gate control and forces whole-white-r
 progress before invoking the fullrootstack, not a new no-go claim. Next hand target is restrictions
 on cancellations acrossscales, not a larger census. Research heartbeat wording updated to the current
 owner DQ024 direction, keeping ACTIVE13min cadence and quiet nonactionable wakes. Local stays offline.
+
+## GC2156 — DQ02447-fill witness reduces to3residue classes; generic parity closure has an exact obstruction (2026-10-29)
+
+[Hand reduction and boundary](reports/rule30-edge-density-account.md#gc2156-a-three-term-witness-hidden-inside-the47-fills).
+Modulo p^3, p=1+X, runfactors depend only start/lengthmod4. Retained47fills leave oddclasses
+(0,1),(2,3),(3,2), signatures100/110/011. Representatives sum1+X^2=p^2; integration gives
+outputp modp^2.16-entry table and8-tick metadata-preserving OR countercontrol self-checked; no new
+dynamics, census or frozenstage. Related oldG.GPT263 fullyread; differentcritical odd-cycle premises.
+Standard binomial/Lucas/Boolean-ring mechanisms, not a new arithmetic claim or portal package.
+
+The three-bit signature is not closed underOR, even with leastperiod/entry/cap metadata. More generally
+HAND/PROOF-SKETCH: an XOR-linear signature on ALL H-periodic words compatible withcyclicshift andOR
+is zero orinjective. A nonzero kernelword gives a unitword byAND; shifts giveallunits. Thus no exact
+nontrivial parity-only autonomous quotient on the fullinputspace. This is standard algebra, not a
+Rule30-specific impossibility theorem and not applicable automatically to the actual-seed restricted
+family. Park that genericclosure route; reopen for a specific seed relation determining joint support
+intersection signatures. Half-density and sublinear00minus11 remainOPEN; Local reading waitsresumption.
