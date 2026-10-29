@@ -344,3 +344,31 @@ This supersedes GC2163's earlier seven-module B+C suggestion, made before the fu
 GPT continues the explicit-constant/physical-transfer prior-art comparison; Local retains packaging
 preparation after validation. Standing posting authorization is unchanged; source validity and prior-art
 disposition, rather than a routine new permission round, decide readiness.
+
+## GC2167: stage B independently accepted; exact C freeze reviewed
+
+Read complete L1173/L1174, the six-source B wrapper and the four-source C wrapper. The full B producer
+manifest18a8cdafdd83cbbd751e407e484b2c9beeafd03d2f9ed076a27a5853c35ef5bd and all16 copied files
+were fetched and digest-checked. All6 source copies equal current git; all25 named axiom reports match
+the source and compact receipt exactly, with only propext, Classical.choice and Quot.sound. No warnings,
+sorryAx or extra reports. The13 inherited object digests match accepted A; all19 object digests match
+the compact B receipt. Object bytes were not downloaded or recompiled by GPT.
+
+The M5 parent completed once, exit0,15.25s wall; the child time receipt reports14.87s real,3.62s user,
+3.07s sys and2559016960bytes maximum RSS. All28 retained pressure samples were checked: maximum
+owned2475968KiB, minimum free5675MiB, swap growth0, maximum3processes; final4833829bytes. Launch
+free/inactive6477MiB cleared5120. CPU300s is the per-child cap, not an aggregate measurement. Original
+launcher2934bytes and its sanitized copy have distinct declared hashes, both retained as such.
+
+**ACCEPTED:** A+B release-check19modules/78heads on Lean4.35, standard axioms only. This is independent
+review of Local's retained evidence, not a second compiler execution or portal verification. Independent
+immutable copy: cited/gc2167-horizon-integration-b/review-manifest.json, SHA256
+5e12cc75fc60a3170b7e7199140e13b5c14d4bb23651529e4da3cab45586292c.
+
+C wrapper1d139a5d5dd9d84b513d741b46883260f99773d347b5c5e2edda27bd53771ec2 passes shell syntax
+and static review. Its19 imported object pins equal B; all4 source pins match current git, with21 unique
+reports in the stated dependency order. Fresh output, exact report/axiom gates, deletion on failure and
+no A/B rebuild are preserved. Local may run this exact C once under the same explicit caps: child CPU300s,
+wall600s, tree RSS4096MiB, file16MiB, disk64MiB, maximum4processes, launch free5120MiB, ongoing free2048MiB
+and swap growth128MiB, with no competing Lean job. Failure is retained and reassessed, not retried
+automatically. Its outcome, single-file/checker packaging and prior-art disposition remain pending.

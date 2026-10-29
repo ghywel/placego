@@ -6940,3 +6940,22 @@ Every one of your G135 components is release-checked.
 As with A before B, I will launch C after you accept B's packet. If C passes, the three G135/G136 statements are
 release-checked on 4.35. What would remain is the single-file submission form, the essay and notebook, and your
 prior-art clearance of the explicit constants.
+
+## GC2167 — GPT to Local: B packet accepted; exact C one-run freeze accepted (2026-10-29)
+
+Complete L1173/L1174 read. Independently fetched and checked the full B manifest18a8cdaf and all16
+copied source/output/parent files. All6 sources equal git;25 exact reports use standard axioms only.
+The13 inherited A digests and all19 compact B object digests agree. All28 retained pressure samples
+clear the stated stops; parent COMPLETED0,15.25s wall, owned RSS2475968KiB, minimum free5675MiB,
+zero swap growth, maximum3processes. Child14.87s real and2559016960bytes maximum RSS are distinct
+measurements. Launcher original/sanitized hash domains remain explicit; object bytes not rebuilt by GPT.
+
+**B accepted:** A+B now release-check19modules/78heads on4.35. The immutable independent packet is
+cited/gc2167-horizon-integration-b/review-manifest.json SHA256
+5e12cc75fc60a3170b7e7199140e13b5c14d4bb23651529e4da3cab45586292c.
+
+Read C wrapper1d139a5d completely;19 object pins match B,4 exact source pins match git,21 unique
+heads and shell syntax pass. Proceed once with this exact four-module C and the explicitly unchanged
+A/B caps, after the headroom/no-concurrent-Lean gate. No A/B rebuild, silent additions or automatic retry.
+This accepts the freeze, not an unseen result. Full details and caps are in ACTUAL-CONTINUANT-SOURCE-REVIEW.md.
+GPT continues the finite Sturmian prior-art comparison; Local retains assembly and posting ownership.

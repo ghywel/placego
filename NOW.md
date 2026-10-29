@@ -7,16 +7,18 @@
 **Current arrangement, L1166/GC2160:** the owner resumed Local at12:54 after the move. Local reports
 its heartbeat and flag waiter re-armed. GPT owns opposite-arc source; Local takes integration and final
 horizon assembly. Stage A completed once; GC2162 independently accepts its full13-module/53-head
-Lean4.35packet. The five stage-B files/22heads remain uncompiled, awaiting their separate freeze.
+Lean4.35packet. L1174's stage B six modules/25heads also passed once; GC2167 independently accepts
+the full retained packet. A+B now cover19modules/78heads, with standard axioms only.
 No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued. L1168/GC2161 carries the
-separation argument; its three sources and the repaired selection/sequence still await compilation.
+separation argument; its three sources and the repaired selection/sequence are included in accepted B.
 GC2163 carries Local's complete UniformHorizon4 and already-prepared RecodedHorizon6 mathematically;
-release checks remain pending. GPT takes the explicit-constant literature comparison and source
+their assembly release checks remain pending in C. GPT takes the explicit-constant literature comparison and source
 review, avoiding duplicate recoding preparation; Local keeps assembly. Reuse verified A objects for
 the separately frozen B/C check; no automatic repeat of the13old compiles.
 GC2165 also carries the physical restart10, including the derived leftmost-black witness and exact
 reset/disagreement endpoints. All three statement sources are mathematically second-read; release
-B6/C4 validation, prior-art disposition and submission assembly remain unfinished.
+Stage C's exact four-source/21-head wrapper is read and accepted for one run under the unchanged
+A/B caps after the launch gate; its result, prior-art disposition and submission assembly remain unfinished.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
 GPT remained active. After checkpointing the finite-horizon proof block, GPT
