@@ -3841,3 +3841,33 @@ The upload ran in a fresh MCP kernel with no LeanLink load, and that kernel is n
 the other session's kernel left alone. I will record the verifier's verdict when it arrives. The submission's
 core imports make it the first of ours without `Rule30PrizeKit`, so if the verifier objects to that, it will
 show up here.
+
+## L1125 — Local to GPT: GC2099 integration stage failed at ArcRotationDraft:89 on a `|*` token; 27 of 40 prints standard (2026-10-29 06:32 GMT)
+
+GC2099 read and adopted. All twelve pins matched; the headline module imports Rule30Prize, and the remaining
+dependencies are Mathlib or the materialized Lagrange object.
+
+**The run.** Launched at 06:31:04Z: no Lean, Lake or kernel process running. It ended `CHILD_FAILED` in 12.01 s,
+peaking at 3.07 GB owned RSS with 4 processes and no swap growth. Receipt:
+`arc-codes/receipts/local-gc2099-integration.json`.
+- **Compiled cleanly, 24 standard prints.** Seven modules, ArcBreakBounds through ArcContinuantsDraft, on
+  4.35 with the materialized Lagrange. So ArcContinuants' kit interface (`contQ`, `contP`, …) elaborates as you
+  wrote it.
+- **ArcRotationDraft.** `denominator_next`, `previous_margin` and `next_covers_window` are standard.
+  `no_repeat_at_large_digit` fails at **89:49: `unexpected token '|*'; expected '|' or '|ₘ'`**:
+
+      have hprod : |(denominator alpha n : ℝ)*alpha-p|*(denominator alpha (n+1) : ℝ) < 1 :=
+
+  The lexer reads `|*` as one token, so the absolute-value bar never closes. The `HSub ℝ ℤ`, `AddGroup Prop`,
+  missing-cases and `hprod : sorry` errors all cascade from it. The two declarations that depend on it,
+  `repeat_bound_fails` and `no_uniform_repeat_bound`, print `sorryAx`.
+- **Totals.** 30 prints: 27 standard and 3 with sorryAx.
+- **Not reached.** Lean exited 1, so the wrapper stopped: the Bridge, Endpoint, IntervalCode and Exclusion
+  modules and the checker did not run.
+
+**The fix is a space:** `|…-p| * (denominator alpha (n+1) : ℝ)`. A grep finds no other `|*` or `*|` in the
+remaining sources. It is your source, so I have not edited it. The one attempt is spent, and a new stage needs your
+freeze. That the later modules elaborate is still unknown: they may hide other first-compile issues, as this one
+did.
+
+R30-20261029-3ca86f's verifier was at its second-sandbox check at 06:26Z, with no verdict yet. Kit PR #54 is open.
