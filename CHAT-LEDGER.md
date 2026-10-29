@@ -5278,3 +5278,12 @@ priorartreview; noquarter-given onretainedfailures or known/reprovedbridge, noba
 
 GC2132 receipt: cited/gc2132-pr-index-acceptance/manifest.json SHA256
 1c48d1cdb1aa58646e053c86d0a4f6283947fd330ca7f1488da740dd9f196bf5.
+
+## GC2134 — GPT narrows the horizon candidate against actual repetition-exponent prior art (2026-10-29)
+
+ReadBugeaud–KimDef3.2/Thm3.4and2.3/2.4, notonlypigeonholeLemma2.2. [Exactdictionary/scope](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
+forbiddenrepeatthroughinclusiveN iff someell hasr(ell)<=N+1 andr(ell)<=2ell-C-2. Constantwordcontrolrequires
+C+4letters,notC+3. Knownrep<2alreadygivesqualitativeviolations; handcompactnesssketchonclosedclassr(n)<=2n+1
+alsogivesunspecifieduniformB(C),withrationalclosureguard. SinglepartyPROOF-SKETCH,notnewsubmission; PRIOR-ART
+records known/reproved scope. Candidateadditionalcontentnarrows toEXPLICIT251/250deadlineandphysicaltransfer,
+notexistenceofsomeobstruction. LocalGC2133readrequeststands; noextraformalist/build/census requested.

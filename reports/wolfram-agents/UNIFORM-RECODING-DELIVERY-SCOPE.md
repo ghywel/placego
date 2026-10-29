@@ -163,3 +163,46 @@ Expanded current-kit/portal/open-PR source search GC2132 has8 relevant candidate
 no new PR hit for these objects; linked-fork/manual literature scope remains explicit. Local reads these
 carrying steps; GPT continues prior-art/dependency review. No Lean build, notebook, portal upload or census is
 requested. Freeze any eventual formalization source and resource plan separately after the scope survives.
+
+## GC2134: exact literature dictionary narrows what could be additional
+
+Read Bugeaud–Kim's primary paper beyond the earlier Lemma2.2: Definition3.2/Theorem3.4 concern the liminf
+of the first repeated-factor prefix length r(n,x)/n; Theorems2.3/2.4 classify eventual periodicity/Sturmian
+words using r. [Primary source, sections2–3](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf).
+Their bound sqrt(10)-3/2<2 already implies arbitrarily large additive repetition savings for each Sturmian
+word. Thus a qualitative eventual repeat-bound violation is prior art, not our additional contribution.
+The initial-prefix-power observable in [Berthe–Holton–Zamboni](https://www.irif.fr/~berthe/Articles/sturm15.pdf)
+is different: it requires the powered block to begin at0. Our repeated block may begin later.
+
+**GPT algebraic dictionary (single-party hand check).** Use zero-based word positions, but let r(ell,x) be a
+LENGTH, as in Bugeaud–Kim: the shortest prefix containing two occurrences of an ell-letter word. Given
+our repetition[a,b] with lag q, set ell=b-a+1 and j=a+q. Its last compared index is j+ell-1. Then
+
+    b>2a+q+C  iff  ell>=j+C+2.
+
+Consequently a forbidden repetition through inclusive index N exists EXACTLY when there is ell>=1 with
+
+    r(ell,x)<=N+1  and  r(ell,x)<=2ell-C-2.
+
+Forward: r<=j+ell, and the displayed inequality bounds j+ell. Reverse: use the two occurrences achieving
+r, whose later starting position is j=r-ell; choose the earlier a<j and q=j-a. The earlier starting position
+cancels out of the debt inequality. This is a definition translation, not a claim that all repetition
+lengths have a deficit. Constant-word control: r(ell)=ell+1, so the first possible ell is C+3 and the
+shortest violating prefix has length C+4 (inclusive index C+3). At C=0, three equal letters do not yet
+violate; four do. This checks the strict inequality and both index/length offsets.
+
+**Qualitative uniformity also follows by compactness — PROOF-SKETCH, known background rederived here.**
+Let K be all infinite binary words with r(n)<=2n+1 for every positive n. This is a closed subset of the
+compact binary sequence space: each constraint is decided by the first2n+1 letters. Mechanical irrational
+words lie in K by their n+1 factor complexity. By the paper's Theorems2.3/2.4, each member of K is either
+Sturmian (equality infinitely often) or eventually periodic (otherwise r(n)<=2n eventually). In the former
+case Theorem3.4 gives r(n)<(7/4)n at arbitrarily large n; in the latter r(n)-n is bounded. Either way, for
+each fixed C some n has r(n)<=2n-C-2. These are open finite-prefix conditions covering K. A finite subcover
+gives a finite uniform deadline B(C) for all K, without giving a linear formula or any particular constant.
+
+This avoids incorrectly claiming parameter-continuity at rational/end-point codings: K also contains limiting
+words not represented by a single chosen half-open rational coding. No enumeration or new numerical run is
+proposed. The compactness paragraph needs an independent carrying read before promotion; its role here is
+conservative scope screening. Neither the asymptotic bound nor this argument supplies251(C+4),250w or the
+physical reset constants. The potentially additional content is the EXPLICIT deadline and its transfer,
+subject to current proof/prior-art review. This does not establish its novelty by exclusion.

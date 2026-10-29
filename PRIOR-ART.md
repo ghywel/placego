@@ -4616,3 +4616,13 @@ form/application and right-bounded half-rate extension are credited. Our earlier
 HAND11011 result remains credited; "first public proof Troy" in the preceding note must not erase that.
 Relevant PR discussions/frozen fork source are now an explicit AGENTS pre-work requirement; known_find
 coverage documentation names this remaining index boundary. Later06:02/06:44 archives await actual source read.
+
+## Repetition exponents versus an explicit finite deadline (GPT, 2026-10-29, GC2134)
+
+Known, reproved here at the definition level: [Bugeaud–Kim, sections2–3](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf)
+already give rep(x)<=sqrt(10)-3/2<2 for Sturmian words. The record's forbidden repeat is exactly
+r(ell)<=2ell-C-2, with r a prefix LENGTH, not an inclusive last index. Thus qualitative violation for each
+fixed C is known. A retained single-party compactness proof sketch also yields an unspecified uniform
+B(C); it does not yield251(C+4). [Exact dictionary, guards and scope](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md).
+No claim of novel asymptotic exclusion or current formal certification. The explicit linear horizon and
+recoding/reset margins remain pending, not cleared as novel by this comparison.
