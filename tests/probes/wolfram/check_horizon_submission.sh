@@ -8,6 +8,10 @@
 # Lean workload is bounded by 1200 s. The version query runs under 5 s, and each of the two Python guards under its own
 # 60 s, so the whole workload is bounded by 1325 s plus this shell. The supervisor is outside that budget.
 #
+# L1182 repair: Check.lean calls `initSearchPath (← findSysroot)`, and findSysroot reads LEAN_SYSROOT or else runs
+# `lean --print-prefix` from PATH. The first stage (cd761042) set neither, so its checker child failed. The runner now
+# sets LEAN_SYSROOT from the pinned compiler, as `lake env` does, so no third Lean process starts.
+#
 # A refusal or failure ends the stage, with its packet retained; there is no retry. Invoke as
 #   SHARP_LEAN=<lean> KIT_ROOT=<kit> sh check_horizon_submission.sh SOURCE ASSEMBLY_JSON
 # under run_capped.py --track-tree.
@@ -74,6 +78,11 @@ done
 IFS=$old_ifs
 [ -z "$(ls -A "$CAPPED_OUT/lib")" ] || { echo "REFUSED: the output library is not empty"; exit 1; }
 export LEAN_PATH="$lp"
+case "$SHARP_LEAN" in */bin/lean) ;; *) echo "REFUSED: SHARP_LEAN is not a toolchain's bin/lean"; exit 1 ;; esac
+LEAN_SYSROOT=$(dirname "$(dirname "$SHARP_LEAN")")
+[ -f "$LEAN_SYSROOT/lib/lean/Init.olean" ] || { echo "REFUSED: no Lean library under the compiler's root"; exit 1; }
+export LEAN_SYSROOT
+echo LEAN_SYSROOT_SET
 (ulimit -t 5; "$SHARP_LEAN" --version)
 if ! "$SHARP_LEAN" -j1 --root="$CAPPED_OUT/src" -o "$CAPPED_OUT/lib/Rule30Submission.olean" \
     "$CAPPED_OUT/src/Rule30Submission.lean" > "$CAPPED_OUT/compile.txt" 2>&1; then

@@ -1,0 +1,43 @@
+{
+ "stage": "L1182 official checker, horizon single file (GC2175: once)",
+ "host": "Local (M5)",
+ "wrapper_sha256": "cd7610420f7549f045be313b3ee774aad72bb375f12b9286f8cdb0e71e363a0b",
+ "source_sha256": "791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "limits": {
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 4608,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": 1,
+ "wall_s": 14.58,
+ "maxima": {
+  "rss_kib": 2689936,
+  "procs": 3,
+  "disk_bytes": 4901849,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 4987
+ },
+ "start_utc": "2026-10-29T14:38:22Z",
+ "end_utc": "2026-10-29T14:38:37Z",
+ "supervisor_cpu_s": 0.122,
+ "gates": [
+  "HORIZON_SUBMISSION_SOURCE_OK 99 printed heads, 8 headlines",
+  "COMPILE_DONE",
+  "COMPILER_REPORTS_OK 99",
+  "FAIL: 0 checker JSON objects"
+ ],
+ "checker_rc": 1,
+ "checker_stderr": "uncaught exception: process 'lean' exited with code 255\nstderr:\ncould not execute external process 'lean'\n\n",
+ "cause": "Check.lean line 241 calls initSearchPath (<- findSysroot); with LEAN_SYSROOT unset, findSysroot runs `lean --print-prefix` from PATH, and no lean was on PATH (the arc check ran under lake env, which sets LEAN_SYSROOT). Not a source, compile or kernel failure.",
+ "olean_sha256": "7ad946f0b7d6c6397cdbd2051317e33d64123e34e2ca57df480272b20edaa64d",
+ "full_packet": "workers/local/l1182-official-failed-packet/"
+}
