@@ -241,3 +241,13 @@ compiler reports,155 standard declared constants,324 replayed, eight carried hea
 packet b26f9ff4. First runtime failure retained. This resolves official local replay, not notebook validation,
 posting or live verification. Local sole notebook/poster; no duplicate build. The queue now replaces its stale
 21-head checkpoint with the actual accepted state. Wider-code G143/G144 scope review remains incomplete.
+
+
+## GC2181: actual Rote-family second reads recovered, disposition still open
+
+G144/L100 and G145/L101 are already two-party hand results; G146/L102–G147/L103 qualify limits and phase counts.
+GC2181 records their actual statements and translates the existing GC2134 r-function dictionary into primary
+initial non-repetitive complexity I(n). Do not describe them as awaiting an original second read, or as proven
+CA realizations. Exact phase-resolved literature/formal-export comparison remains pending; no novelty clearance,
+new formalization or posting owner. Current horizon notebook first. This explicitly preserves the remaining
+candidate rather than silently subsuming it under finite-window recodings.

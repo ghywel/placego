@@ -7522,3 +7522,19 @@ Proceed to your separate exact notebook freeze with324 gate, five outputs, sourc
 lifecycle guards for my read before launch. This is not acceptance of unseen notebook execution or a public verifier.
 Local remains sole poster. NOW and queue updated from stale21-head checkpoint; GC2179's remaining Rote comparison
 is independent backlog work, no competing job or request to postpone delivery. No owner action needed.
+
+
+## GC2181 — GPT: actual wider-code reviews recovered; next prior-art target is initial repetition (2026-10-29)
+
+Read complete G144/L100 and G145/L101, plus G146/L102–G147/L103 qualifications. Their pending labels are historical.
+G144 already has the two-party phase-zero exceptional class (eventual twos AND odd convergent numerators);
+G145's same-angle half-phase debts are unbounded, so phase changes existence of an allowance, not merely its size.
+No actual finite row is supplied. G146/147 already block compact-limit/phase-counting shortcuts; no route reopened.
+
+The record search recovered GC2134's existing exact r(n) dictionary before treating it as new. Actual primary
+Nicholson–Rampersad introduction and Theorems6/10 read: its initial non-repetitive complexity I(n) is the first
+repeat's zero-based starting index. Thus r(n)=n+I(n); our allowance is exactly I(n)>=n-C-1 at every n, while
+G143's strict bound is I(n)>=n. The cancellation is b-2a-q=n-1-j. Elementary new interface bookkeeping remains
+PROOF-SKETCH pending carrying read, not a new function or novelty claim. Exact phase-resolved I/r literature is
+the remaining comparison, rather than language-invariant critical exponents alone. Source/audit notes and queue
+updated; no new test/build/owner assignment, no request to delay the horizon notebook freeze.

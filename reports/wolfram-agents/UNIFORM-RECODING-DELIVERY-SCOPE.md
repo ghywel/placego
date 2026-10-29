@@ -414,3 +414,49 @@ phase-sensitive starting-index inequality. A derivation from the detailed return
 possible and must not be declared absent. Need a phase-resolved earliest-occurrence/repetition comparison
 before deciding whether this barrier merits useful additional formal delivery. No source/checker/posting
 readiness or novelty is claimed; GPT takes that comparison after immediate delivery reviews.
+
+
+## GC2181: recovered L100/L101 reads and the exact initial-repeat observable
+
+Completed the carrying-source inventory through G144/G145 and read G146/G147's limiting-phase qualifications.
+The G144 opening pending label is also historical: Local L100 reads both obstructions and the Legendre/mesh
+converse. Its actual equivalence for phase-zero floor(s beta)mod2, irrational0<beta<1, is:
+
+    some finite repeat allowance C  iff  eventually every continued-fraction digit is2
+                                       and every convergent numerator is odd.
+
+The large-coefficient first hit uses positive unimodular coefficients and h=(a-1)q_n+q_(n-1); the even-numerator
+first hit is q_(n+1). Their debts diverge if either obstruction occurs infinitely often. The converse uses the
+late mediants' unimodularity AND opposite error signs, not determinant1 alone. Finitely many earlier same-sign
+records cost a finite allowance. These are the retained two-party hand steps, not a new formal certificate.
+G145/L101 gives the SAME silver angle at half phase unbounded debts q_n-q_(n-1)/2-1, for odd n>=3. Its explicit
+parity-constrained first-hit proof is read. Phase can therefore change whether an allowance exists at all, not
+merely the numerical allowance. Neither phase is shown to yield a finite Rule30 row. G146/L102 and G147/L103
+already guard the nonuniform compact-limit and countable/dense exceptional-phase shortcuts; do not reopen them.
+
+**Precise prior-art observable, building on GC2134 rather than rediscovering its dictionary.**
+[Nicholson–Rampersad, Initial non-repetitive complexity of infinite words, introduction](https://arxiv.org/pdf/1507.08206)
+defines I_x(n)=inrc_x(n) as the number of distinct initial n-factors before the first repeated one, equivalently
+the zero-based starting index j of that first repeat. Their Theorems6 and10 compute it for Thue–Morse and
+Fibonacci respectively; neither is a theorem about the present Rote code. We read these definitions and statements,
+not a full-paper audit. Their function gives a direct search target. By definition r(n,x)=n+I_x(n), where r is
+Bugeaud–Kim's shortest repeated-factor prefix LENGTH already read in GC2134. Hence for a finite-alphabet word:
+
+    all repeats obey b<=2a+q+C   iff   I_x(n)>=n-C-1 for every n>=1;
+    all repeats obey b< 2a+q     iff   I_x(n)>=n     for every n>=1.
+
+Proof: for an n-letter repetition starting at a and later at j=a+q, b=a+n-1, its debt is n-1-j.
+Minimize j over occurrences; that minimum is I_x(n). Conversely the first repeat attains it. Constant-word
+control gives I(n)=1 and requires C>=n-2 for that length; the first violating constant prefix at C=0 has4letters,
+as GC2134 already checked. These equivalences are elementary interface bookkeeping, PROOF-SKETCH until carried;
+no new complexity-function invention or claimed public formal export. G143 is exactly the stronger I(n)>=n
+barrier; G144 classifies bounded additive deficits n-I(n) within its stated phase-zero rotation family.
+
+**Record searched:** record_find initial-non-repetitive/inrc/first-repeated-factor query recovered GC2134's
+existing exact r-dictionary; current checked kit932cf8dd/portal13:44:31Z/open21PR index gave no matching export.
+Freshly read actual Nicholson–Rampersad introduction/Theorems6,10 and G144–G147 sources, alongside GC2179's
+DMTCS return-word scope. No matching Rote initial-repeat formula has yet been established from primary sources;
+negative keyword results are not novelty. Further comparison must target phase-resolved I or r, not just a
+critical exponent or language recurrence. No second finite scan, new build, formalization or posting owner assigned.
+The horizon notebook/delivery remains first priority; this is an explicit unresolved audit candidate, not a reason
+to postpone it or claim the full delivery backlog finished.
