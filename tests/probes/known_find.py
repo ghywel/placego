@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""known_find.py: search what is already known outside our record (the kit's current main and the portal's listed
-submissions) before a new probe or proof, so that a known result is not re-derived.
+"""known_find.py: search what is already known outside our record (the kit's current main, the portal's listed
+submissions and the kit's open pull requests) before a new probe or proof, so that a known result is not re-derived.
 
-RUN-ON:     cpu (Python 3 standard library and git); a refresh fetches about 7 MB, a search takes about a second
+RUN-ON:     cpu (Python 3 standard library and git; `gh` if installed); a refresh fetches about 7 MB plus the open PR
+            heads, a search takes about a second
 COMMAND:    python3 tests/probes/known_find.py TERM [TERM ...] [--all] [--per N] [--refresh] [--offline]
             python3 tests/probes/known_find.py --new        (added or changed sources/entries: the daily portal check)
             python3 tests/probes/known_find.py --selftest   (the controls)
@@ -21,10 +22,20 @@ The units are:
 - the header docstring of every kit module (`lean/` and `equivalents/`);
 - every kit declaration, as its doc comment with its first line;
 - complete Lean files, so multiline statements and unindexed declarations remain searchable;
-- every portal entry, as its title, abstract, headline names and kit modules.
+- every portal entry, as its title, abstract, headline names and kit modules;
+- every open kit pull request (L1149): its title and description, each conversation comment and inline review comment,
+  and the Lean files its head adds or changes, indexed like kit files and labelled with the PR number.
+
+Why the pull requests (L1146, L1148). On 2026-10-29 GPT rebuilt a prefix-period bridge at 08:35 that Troy Lowry had
+already proved in public: in a comment on our own kit PR #51 at 04:35, and in his open PR #55 at 07:47. Neither the
+kit's main nor the portal showed it, and open PRs are public prior art too. Review summaries without a comment body
+are not indexed. With `gh` the file lists come from GitHub. Without it, the public API supplies metadata and comments,
+and the files are those a head adds or changes relative to the kit's current main, which can include stale copies
+of kit files that main has since changed.
 
 The cache. It lives outside git, in `$PLACEGO_KNOWN_CACHE` or else `~/.cache/placego-known`. It holds a shallow
-clone of the kit's main and `portal.json`, and it is refreshed when older than six hours. If a refresh fails, the old
+clone of the kit's main (with each open PR head fetched into it at depth one), `portal.json` and `prs.json`, and it
+is refreshed when older than six hours. If a refresh fails, the old
 cache is used and its age is printed. With no cache at all, it says plainly that novelty cannot be judged. A hit here
 is a candidate match: compare its hypotheses and conclusion before marking a result known. No hit is not a novelty
 certificate, since the literature still has to be searched.
@@ -53,6 +64,10 @@ PORTAL = os.path.join(CACHE, 'portal.json')
 STAMP = os.path.join(CACHE, 'stamp.json')
 PORTAL_SRC = os.path.join(CACHE, 'portal-src')      # each submission's Lean source, by id (fetched once)
 CHECKED = os.path.join(CACHE, 'checked.json')       # the index keys at the last --new (the daily portal check)
+GH_REPO = 'WolframInstitute/Rule30PrizeKit'
+API = 'https://api.github.com/'
+PRS = os.path.join(CACHE, 'prs.json')               # open pull requests with their comments (L1149)
+PR_SRC = os.path.join(CACHE, 'pr-src')              # each open PR head's added or changed Lean files, by head commit
 
 DECL = re.compile(r'^(?:@\[[^\]]*\]\s*)?(?:(?:private|protected|noncomputable|public|nonrec)\s+)*'
                   r'(theorem|lemma|def|abbrev|structure|inductive|class|instance)\s+([^\s:({\[]+)')
@@ -76,7 +91,7 @@ def refresh(force=False, offline=False):
     st = stamp()
     age = time.time() - st.get('time', 0)
     have = os.path.isdir(os.path.join(KIT_DIR, '.git')) and os.path.exists(PORTAL)
-    if have and (offline or (age < MAX_AGE and not force)):
+    if have and (offline or (age < MAX_AGE and not force and os.path.exists(PRS))):
         return status_line(st, age), True
     if offline:
         return 'KNOWN INDEX UNAVAILABLE (offline, no cache): novelty cannot be judged', False
@@ -104,6 +119,7 @@ def refresh(force=False, offline=False):
     except Exception as exc:                                            # keep the old copy
         errors.append('portal fetch failed: %s' % exc)
     errors += fetch_sources()
+    errors += fetch_prs()
     have = os.path.isdir(os.path.join(KIT_DIR, '.git')) and os.path.exists(PORTAL)
     if not have:
         return 'KNOWN INDEX UNAVAILABLE (%s): novelty cannot be judged' % '; '.join(errors), False
@@ -111,7 +127,7 @@ def refresh(force=False, offline=False):
         head = git('rev-parse', 'HEAD', cwd=KIT_DIR).stdout.strip()
         with open(PORTAL) as fh:
             updated = json.load(fh).get('updated', '?')
-        st = {'time': time.time(), 'kit': head, 'portal': updated}
+        st = {'time': time.time(), 'kit': head, 'portal': updated, 'prs': len(load_prs())}
         with open(STAMP, 'w') as fh:
             json.dump(st, fh)
         return status_line(st, 0), True
@@ -145,13 +161,118 @@ def fetch_sources():
     return ['%d submission source(s) not fetched' % failed] if failed else []
 
 
+def api_list(path):
+    """Every item of a paginated GitHub list endpoint: through `gh api` when it works, else the public API."""
+    if shutil.which('gh'):
+        r = subprocess.run(['gh', 'api', '--paginate', '--slurp', path], capture_output=True, text=True, timeout=180)
+        if r.returncode == 0:
+            return [item for page in json.loads(r.stdout) for item in page]
+    items, page = [], 1
+    while True:
+        req = urllib.request.Request('%s%s%spage=%d' % (API, path, '&' if '?' in path else '?', page),
+                                     headers={'Accept': 'application/vnd.github+json', 'User-Agent': 'placego-known-find'})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            batch = json.loads(resp.read())
+        items += batch
+        if len(batch) < 100:
+            return items
+        page += 1
+
+
+def load_prs():
+    try:
+        with open(PRS, encoding='utf-8') as fh:
+            return json.load(fh).get('prs', [])
+    except (OSError, ValueError):
+        return []
+
+
+def pr_dir(pr):
+    return os.path.join(PR_SRC, '%d-%s' % (pr['number'], pr['head'][:12]))
+
+
+def fetch_prs():
+    """Index the kit's open PRs: metadata and comments, and each head's added or changed Lean files (fetched once per
+    head commit). On any failure the previous index is kept and the failure is reported."""
+    repo = 'repos/' + GH_REPO
+    try:
+        pulls = api_list(repo + '/pulls?state=open&per_page=100')
+        comments = {p['number']: [] for p in pulls}
+        for c in api_list(repo + '/issues/comments?per_page=100'):
+            n = int(c['issue_url'].rsplit('/', 1)[1])
+            if n in comments:
+                comments[n].append(('comment', c))
+        for c in api_list(repo + '/pulls/comments?per_page=100'):
+            n = int(c['pull_request_url'].rsplit('/', 1)[1])
+            if n in comments:
+                comments[n].append(('review comment', c))
+    except Exception as exc:
+        return ['PR index fetch failed: %s' % exc]
+    prs = []
+    for p in sorted(pulls, key=lambda q: q['number']):
+        prs.append({'number': p['number'], 'title': p['title'], 'body': p.get('body') or '',
+                    'author': (p.get('user') or {}).get('login', '?'), 'head': p['head']['sha'],
+                    'url': p['html_url'], 'updated': p['updated_at'],
+                    'comments': [{'kind': k, 'author': (c.get('user') or {}).get('login', '?'),
+                                  'at': c.get('created_at', ''), 'url': c.get('html_url', ''),
+                                  'body': c.get('body') or ''} for k, c in comments[p['number']]]})
+    errors, need = [], [p for p in prs if not os.path.exists(os.path.join(pr_dir(p), 'DONE'))]
+    if need:
+        r = git('fetch', '-q', '--depth', '1', 'origin',
+                *['+refs/pull/%d/head:refs/pr/%d' % (p['number'], p['number']) for p in need], cwd=KIT_DIR)
+        if r.returncode:
+            errors.append('PR head fetch failed: ' + r.stderr.strip()[:200])
+            need = []
+    for p in need:
+        ref = 'refs/pr/%d' % p['number']
+        if git('rev-parse', ref, cwd=KIT_DIR).stdout.strip() != p['head']:
+            errors.append('PR #%d head moved during the fetch' % p['number'])
+            continue
+        try:
+            if shutil.which('gh'):
+                files = [f['filename'] for f in api_list('%s/pulls/%d/files?per_page=100' % (repo, p['number']))
+                         if f.get('status') != 'removed']
+            else:
+                files = git('diff', '--name-only', '--diff-filter=AM', 'HEAD', ref, cwd=KIT_DIR).stdout.split()
+        except Exception as exc:
+            errors.append('PR #%d file list failed: %s' % (p['number'], exc))
+            continue
+        d = pr_dir(p)
+        shutil.rmtree(d, ignore_errors=True)
+        lean = sorted(f for f in files if f.endswith('.lean'))
+        for rel in lean:
+            blob = subprocess.run(['git', 'show', '%s:%s' % (ref, rel)], cwd=KIT_DIR, capture_output=True, timeout=60)
+            if blob.returncode == 0:
+                os.makedirs(os.path.dirname(os.path.join(d, rel)) or d, exist_ok=True)
+                with open(os.path.join(d, rel), 'wb') as fh:
+                    fh.write(blob.stdout)
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, 'FILES.json'), 'w') as fh:
+            json.dump({'files': files, 'lean': lean}, fh)
+        with open(os.path.join(d, 'DONE'), 'w') as fh:
+            fh.write(p['head'])
+    keep = {os.path.basename(pr_dir(p)) for p in prs}
+    if os.path.isdir(PR_SRC):
+        for name in os.listdir(PR_SRC):
+            if name not in keep:
+                shutil.rmtree(os.path.join(PR_SRC, name), ignore_errors=True)
+    os.makedirs(CACHE, exist_ok=True)
+    with open(PRS + '.tmp', 'w', encoding='utf-8') as fh:
+        json.dump({'fetched': time.time(), 'prs': prs}, fh)
+    os.replace(PRS + '.tmp', PRS)
+    return errors
+
+
 def status_line(st, age):
-    return 'known index: kit main @%s, portal updated %s, fetched %.1f h ago' % (
-        st.get('kit', '?')[:8], st.get('portal', '?'), age / 3600)
+    return 'known index: kit main @%s, portal updated %s, %s open kit PRs, fetched %.1f h ago' % (
+        st.get('kit', '?')[:8], st.get('portal', '?'), st.get('prs', '?'), age / 3600)
 
 
 def module_name(rel):
-    return rel[:-5].split('/', 1)[1].replace('/', '.') if rel.endswith('.lean') else rel
+    if not rel.endswith('.lean'):
+        return rel
+    parts = rel[:-5].split('/', 1)
+    return parts[-1].replace('/', '.')
 
 
 def lean_units(rel, path, commit):
@@ -223,6 +344,29 @@ def portal_units():
     return out
 
 
+def pr_units():
+    """Each open PR's description, its comments, and its head's Lean files labelled with the PR number."""
+    out = []
+    for p in load_prs():
+        tag = '#%d' % p['number']
+        out.append(('open PR', '%s %s: %s' % (tag, p['author'], p['title']), p['url'], p['title'] + '\n' + p['body']))
+        for c in p['comments']:
+            out.append(('open PR comment', '%s %s %s %s' % (tag, c['kind'], c['author'], c['at'][:16]),
+                        c['url'] or p['url'], c['body']))
+        d = pr_dir(p)
+        try:
+            with open(os.path.join(d, 'FILES.json')) as fh:
+                lean = json.load(fh)['lean']
+        except (OSError, ValueError, KeyError):
+            continue
+        for rel in lean:
+            path = os.path.join(d, rel)
+            if os.path.exists(path):
+                for kind, name, url, t in lean_units(rel, path, p['head']):
+                    out.append((kind.replace('kit', 'PR'), '%s %s' % (tag, name), url, t))
+    return out
+
+
 def all_units():
     if not os.path.isdir(os.path.join(KIT_DIR, '.git')) or not os.path.exists(PORTAL):
         return []
@@ -240,7 +384,7 @@ def all_units():
                 if name.endswith('.lean'):
                     p = os.path.join(dirpath, name)
                     units += lean_units(os.path.relpath(p, KIT_DIR), p, commit)
-    return units + portal_units()
+    return units + portal_units() + pr_units()
 
 
 def norm(text):
@@ -263,7 +407,7 @@ def snippet(text, pats, width=230):
 
 
 ORDER = ['portal', 'portal declaration', 'kit catalog', 'kit module', 'kit declaration',
-         'kit source', 'portal source']
+         'kit source', 'portal source', 'open PR', 'open PR comment', 'PR module', 'PR declaration', 'PR source']
 
 
 def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
@@ -274,7 +418,7 @@ def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
         return -1
     pats = [re.compile(t, re.I) for t in terms]
     hits = search(pats)
-    print(indent + 'terms %s: %d hit(s) in the kit and the portal' % (terms, len(hits)))
+    print(indent + 'terms %s: %d hit(s) in the kit, the portal and the open kit PRs' % (terms, len(hits)))
     for kind in ORDER:
         rows = [h for h in hits if h[0] == kind]
         if not rows:
@@ -293,7 +437,7 @@ def report(terms, per=6, show_all=False, force=False, offline=False, indent=''):
 def snapshot_units(units):
     """Track full source and portal metadata, not moving commit URLs or declaration names alone."""
     return {'%s|%s' % (k, n): (k, n, u, t) for k, n, u, t in units
-            if k in ('kit source', 'portal source', 'portal')}
+            if k in ('kit source', 'portal source', 'portal', 'open PR', 'open PR comment', 'PR source')}
 
 
 def fingerprints(units):
@@ -359,7 +503,22 @@ def selftest():
         (['Rule30Submission'], lambda h: any(x[0] == 'portal declaration' for x in h)),
         (['zqxjv-no-such-term'], lambda h: not h),
     ]
+    # L1149 controls, frozen before the first run. They depend on the live PR list: while #55 is open, "prefix clock"
+    # must find it (after a merge, the kit's own module must), and while #51 is open, Troy Lowry's 04:35 comment on it
+    # must be found as an open PR comment.
+    nums = {p['number'] for p in load_prs()}
+    checks += [
+        (['prefix clock'], lambda h: any(x[1].startswith('#55 ') for x in h) if 55 in nums
+            else any(x[0].startswith('kit') and 'PrefixClock' in x[1] for x in h)),
+        (['arbitrary-finite-seed bridge'], lambda h: any(x[0] == 'open PR comment' and x[1].startswith('#51 ')
+            for x in h) if 51 in nums else True),
+        (['RightPrefixClock'], lambda h: any(x[0] == 'PR module' and x[1].startswith('#55 ') for x in h)
+            if 55 in nums else True),
+    ]
     bad = 0
+    if not nums:
+        print('FAIL  the open PR index is empty or missing')
+        bad = 1
     for terms, good in checks:
         h = search([re.compile(t, re.I) for t in terms], units)
         verdict = good(h)

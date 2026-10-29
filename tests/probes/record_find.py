@@ -178,7 +178,7 @@ def main():
     if '--no-known' in args:
         print('\n(the kit and the portal were NOT searched: --no-known)')
         return
-    print('\n######## known outside the record: the kit\'s main and the portal ########')
+    print('\n######## known outside the record: the kit\'s main, the portal and the open kit PRs ########')
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import known_find
     if known_find.report(terms, per, show_all) < 0:
