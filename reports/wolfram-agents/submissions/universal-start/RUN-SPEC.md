@@ -620,3 +620,45 @@ is accepted for one NEW B2 attempt. Its real argument probe confirms the bare ke
 semantics. All other GC2094 bounds/source/command/prediction/counterfactual unchanged; no gate relaxation
 or automatic retry. B1 remains CHILD_FAILED before any build; no notebook validation is imputed to it.
 Local may adopt/run B2 after current idle/headroom/source gates with no extra permission round.
+
+## Stage B2 outcome: RESULT OK; the summary receipt failed to export (L1122)
+
+Launched at 05:54:40Z with every hash matching GC2096's list (driver 1a91ee12…) and no Lean or kernel process
+running.
+- **Result.** `COMPLETED`, rc 0, in 66.95 s, with `RESULT OK`.
+- **Resources.** Owned-tree peak RSS 1.84 GB, at most 5 live owned processes, headroom never below
+  6050 MiB, no swap growth, no leftover and no stop signal.
+- **Notebook.** `essay.nb` is 124,164 bytes, sha256 442525ee….
+- **Receipt.** `receipts/local-gc2096-stageB2.json`. The packet (notebook, six output cells, sanitized
+  message packet, launcher, stdout, reconstructed summary) is on the shared store at
+  `workers/local/universal-start-stageB2/` (manifest 3bf2b014…).
+
+**The builder's gates passed.** `RESULT OK` is printed only when its reason list is empty:
+- 6 outputs, 0 message cells, no `$Failed`;
+- the grid equal to the retained table;
+- the complete standard axiom lists, `cert` with propext only;
+- `Success["KernelChecked", …]` with `Declarations` 258, as predicted, and the exact template.
+
+**Two discrepancies, retained, not repaired by a rerun.**
+1. The builder printed two messages on the stage's stdout, outside the notebook:
+   - `ResourceObject::unkpar`: `ReleaseDate` is not a property, in the builder's own provenance lookup;
+   - `Export::jsonstrictencoding`: a `None` value.
+2. Because of the second, `summary.json` is 0 bytes. The driver's exit guard checked only that it existed.
+
+The summary's content was reconstructed from the retained files, read-only, and is labelled as such:
+- **KernelCheck and notebook.** 258 declarations; 0 Message cells; 0 `$Failed`.
+- **Handler.** 15,259 internal events, none printed (General::newsym 15,202, then LocalObject::nso 18,
+  MIMETypeToFormatList::fmterr 12, DeleteFile::fdnfnd 12, …), the same pattern as the right-profiles build.
+
+**Privacy.** The notebook and its six cells contain no private path or identifier. Its only temporary name is
+the `LeanLinkTmp<session>x<random>` module. The raw message packet held private paths, one of them split
+across an InputForm line continuation. The shared copy is sanitized (`messages.sanitized.m`), and the raw
+digest is recorded.
+
+## The prepared kit PR (local branch `universal-start`, commit 429d4f7, not pushed)
+
+From kit main 932cf8dd. It adds `lean/Ruliology/CellularAutomata/Rule30UniversalStart.lean` (12068af9…, byte-identical to the
+A2a-checked catalog module), `public import Ruliology.CellularAutomata.Rule30UniversalStart` after Rule30PrefixMerger in
+`lean/Ruliology.lean`, and this row at the end of `lean/README.md`'s table of modules added in the kit:
+
+| `Rule30UniversalStart` | 2026-10-29 | The universal start of the right diagonals: for a start whose rightmost black cell is at `0`, let `m ≥ 2` be the first index with `x (-m) = x (-(m - 1))`. Then the right diagonals `D (m+1), …, D (m+6)` of `Rule30Realization.evol` have least periods `4, 8, 8, 16, 32, 32`, and `D (m+7)` has least period `32` or `64`, whatever the other start bits (`universal_start`). Every finitely supported start has such an `m` (`universal_start_finite`). The `256` remaining cases, both feeder phases and seven free start bits, are a kernel-checked certificate in sixteen `decide +kernel` declarations (`cert`), which `universal_start_profiles` turns into the least periods. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI). | `universal_start`, `universal_start_finite`, `universal_start_profiles`, `cert` |
