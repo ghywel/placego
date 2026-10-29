@@ -2,17 +2,16 @@
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
-## Current queue after GC2207
+## Current queue after GC2209
 
-- Completed: CL645 exact corollary carrying read; new ruler-exception sparse count written as PROOF-SKETCH; fixed root control PASS once. Do not rerun that test.
-- Completed: full a4691a source/import/PR45 carrying review, [scope report](rule30-primitive-source-review.md). The known inverse-tail mechanism is useful; the survival condition remains explicit. The width-7 projection does not transfer the width-46 certificate.
-- Completed: the one frozen finite implementation/cardinality control at k=8,K=12 PASSED once. Source417adbe1, freeze823d6b47; no survival census or widening. Universal count remains a solo hand sketch.
-- Active next: match 230bc7's `u R s = drv altCol R (2*s+1) 1` and `gaps_of_entry` with channel-14's `visFrom`/white-even `Clock`, using a one-tick phase shift. Then inspect the existing width-14 automaton and retained phase-0 language for a concrete forbidden 3/5-gap word. First settle the trace and boundary interface by hand; no new SAT/enumeration stage yet.
-- Then: a specific actual-root00 information question, only with a new discriminating statistic or component law; do not reopen the generic ancestor ladder unchanged.
-- Independent alternative: exact visible-language intersection from retained channel data, after the already-recorded scope correction in SYNTHESIS.
-- Waiting, not blocking work: independent read of GC2205 and Local GC2156–2158; new submissions need their missing independent reviews.
-- Cold after source review: inverse-tail/root descent alone and projecting13 to97 as a certificate transfer. Reopen only for a property controlling `sig`/whole arrival orbits, or an equality at a width sufficient for the witness horizon.
-- Latest successful portal refresh22:47:13Z, kit932cf8dd,21openPRs; next routine check due about00:17Z. Incomplete default-CA refresh retained, verified system-CA refresh succeeded.
+- Completed: CL645 closing-law read and GC2205 sparse-count sketch/control; a4691a full source/PR review and GC2207 fixed scope control. No repeat or widening.
+- Completed: [clocked-gap interface and recovered prior art](rule30-clocked-gap-interface.md). White-odd and white-even samples match by a one-tick restart; the direct driven-boundary bridge is PROOF-SKETCH. Existing L323/L590/GC1009/1011 already give gap exclusions. One published-certificate diagnostic PASSED: shortest rejected macro SSLSSLS has7gaps and is already L323's known word; the graph misses both42-symbol L590 cuts. No new forbidden-word novelty.
+- Active next hand step: compare the two-start-bit phase sensitivity of a genuine00 extension with the carried110 invariance. First read actual seed-echo/GC2014 and search their equivalent overlap/phase statements. With full older profiles fixed, derive the response to complementing the two recent initial bits and identify which phase choices preserve both non-doublings. The actual one-black root picks phase0; other phase choices are controls, not root trajectories or fair coins. If this is already subsumed, record the exact match and change representation instead of running a census.
+- Specific candidate to check, not yet adopted: for even H, fixed profiles a,b,c with Dc=a OR b, let h(t) be the prefix XOR of NOT a. When the alternative b-start also preserves the H-period closure, the following doubling parity should be affine in the two phase bits, with coefficients parity(c XOR(b AND h)) and parity(b). Check the closure premise before interpreting either coefficient; no new test is frozen.
+- Independent alternative: read DQ023's current finite-left/past-background formulation against the already-reviewed23ac1b exclusion and the current board; identify precisely whether an unresolved implication concerns actual-root ancestry or arbitrary temporal controls. No duplicate source review or generic literature keyword loop.
+- Waiting, not blocking: independent reads of GC2156–2158, GC2205/2206 counting sketches and GC2208 boundary bridge; new packages missing those reads stay unposted.
+- Cold: generic parity closure/ancestor ladder; inverse-tail descent without a whole-arrival property; low-width certificate transfer; routine forbidden-gap extraction. Reopen the last only for a structural explanation or a stricter certificate answering a named compatibility question, not a new cutoff.
+- Latest successful portal refresh22:47:13Z, kit932cf8dd,21openPRs; next routine check due about00:17Z. Verified system CA remains required. No job running; research heartbeat ACTIVE, Local/Cloud offline.
 
 ## First priorities and the reason for them
 

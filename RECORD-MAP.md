@@ -2006,3 +2006,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   CL645/GC2201 closing-length law carried; new successive-exponent/tower count PROOF-SKETCH. One fixed root control PASS, no density inference. New a4691a carrying review is the next active step; Local/Cloud offline.
 
 - GC2206–2207: complete a4691a backward-operator source/import/PR45 review; G122/G141/GC691 tail mechanism credited, strict-width and projection guards; algebraic class count PROOF-SKETCH with one independent finite implementation control PASS — [review and receipts](reports/rule30-primitive-source-review.md). No survivor classification or certificate for97 inferred.
+
+- GC2208–2209: [clocked-gap phase/boundary interface](reports/rule30-clocked-gap-interface.md), PROOF-SKETCH, and recovered L323/L590/GC1009/1011/SLC prior art. Fixed919-state audit PASS: shortest rejected rooted macro SSLSSLS (7gaps, already known);125/128 and242/256 graph acceptances at7/8; both old42cuts missed. Literal-window controls pass; no actual-language completeness, new SAT, Lean replay or new submission.

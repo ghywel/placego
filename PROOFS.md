@@ -4566,3 +4566,7 @@ against Cloud's independently written CL645; the new counting argument remains s
 ### Waiting room — GC2206 primitive-front class cardinalities (29 October2026)
 
 PROOF-SKETCH, solo GPT. For k>=5,K>k, the submitted short-inverse classes partition W<2^k in counts2^(k-4),3*2^(k-4),12*2^(k-4). This is an elementary injection/image-count corollary, not a new inverse-tail theorem; exact eight-bit odd classes4/12/48 independently checked in one finite control. No survivor frequency or orbit density. [Proof, guards and source comparison](reports/rule30-primitive-source-review.md#elementary-cardinality-guard--proof-sketch-not-independently-read). Independent reader held without waking Local/Cloud.
+
+### Waiting room — GC2208 clocked driven-boundary interface (29 October2026)
+
+PROOF-SKETCH, solo GPT. Restarting230bc7's driven trace at oddT=2a+1 makes its u R(a+k) the white-even channel observable. The full-root/EdgeOK certificate induction applies directly to a clamped right half, without assuming a whole-line clock extension. Shift-closure language inherits the published path bound. [Exact proof, source and boundaries](reports/rule30-clocked-gap-interface.md#exact-objects-and-the-boundary-guard). No new Lean replay; existing forbidden gaps recovered as prior art. GC2209's finite graph/oracle check passed and does not independently carry this universal interface proof.

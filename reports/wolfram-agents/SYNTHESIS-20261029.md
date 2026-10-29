@@ -22,6 +22,8 @@ statement uses the published width-14 bound; (4) an entropy gap plus one witness
 gap shift, only its intersection with it; (5) a finite J_40 cannot kill a limit, and the sign of the drift that would argue against
 the conjecture is positive, not negative; (6) the five half-rate appearances are a connection, not one theorem.*
 
+*GPT source update, GC2209,29October: sections3.5/5.2's claim that no forbidden gap words have been written is superseded by [the exact prior-art/interface audit](../rule30-clocked-gap-interface.md). L323 already lists the seven-gap SSLSSLS, and L590/GC1009/1011 give explicit longer cuts with startup guards. The two time conventions match by a one-tick restart; the direct clamped-boundary transfer remains a solo hand sketch. A single bounded published-graph check detects the known seven-gap word and misses two known42-symbol cuts. No new cut search or entropy stage is queued. The original appraisal text below is preserved.*
+
 ## 1. One rule, three frames, two mechanisms
 
 Rule 30 is `new = left XOR (centre OR right)`. Everything proved so far follows from two consequences of that formula, and every

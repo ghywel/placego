@@ -148,3 +148,57 @@ aggregate tree CPU cap. No concurrent heavy job. No retry, expansion or cap
 relaxation after failure; retain failure and cleanup receipts. No reliable
 thermal reading is available. Source reads are bounded8MiB each, JSON output
 is bounded by the919-state graph and fixed11cases. Raw data stays outsidegit.
+
+## GC2209 actual outcome and disposition
+
+The sole run at freeze65198c32 PASSED on29October at23:27:47Z. Both predictions
+held. The first rejecting BFS word is `SSLSSLS`, or the26visible-symbol word
+`10010010000100100100001001`; its last symbol reaches DEAD. All words through
+six gap blocks are accepted by the relaxation. At seven blocks125/128 are
+accepted, and at eight242/256. These are graph counts, not actual-language
+counts and not an enumeration of all new minimal forbidden factors.
+
+Crucially, `SSLSSLS` is the FIRST entry of Local L323's already reported list
+of11 seven-gap exclusions on8October
+([exact entry](../archive/ledgers/CHAT-LEDGER.6.md)). That record reports117/128
+actual seven-gap words. The present computation does not rediscover a new
+obstruction or replay the older SAT proofs; it binds this known exclusion to
+the currently published width-14 graph. It also answers the proposed short
+cutoff question positively, without claiming that every rejection was listed
+by this diagnostic.
+
+Both42-symbol L590 words remain accepted by the published graph (final states
+480 and508), while their old actual-language exclusions stand. All three
+startup suffix controls remain accepted. Thus this graph alone misses known
+restrictions and cannot characterize the entire trapped language. Its
+rejection is sufficient for absence; its acceptance is insufficient for
+realizability. No larger graph, SAT rerun or longer cut hunt is warranted by
+this result alone.
+
+The independent literal-window propagation agrees with the graph on all11
+fixed cases. All65536 four-input two-step comparisons agree with the packed
+formula. Negative11/00000, positive pure-S/pure-L and startup controls pass.
+The oracle remains a14-cell relaxation; it is not an independent infinite-CA
+or kernel proof. The hand phase/boundary bridge remains PROOF-SKETCH pending
+an independent carrying read.
+
+Actual Intel child0.45s wall/0.45s CPU, maximum resident set41267200bytes
+(about39.36MiB); supervisor0.54s wall/0.094s CPU. Launch gate5900MiB
+free+inactive,225.25MiB swap. The child finished before the first monitor
+sample, so the runner's zero sampled maxima are unavailable measurements,
+not a claim of zero usage or zero running swap growth. The child receipt
+reports zero swaps. Normal completion with no remaining owned processes;
+no retry, widening or other job. Stage artifacts12130bytes before packaging.
+
+Complete immutable source/result/time/normalized-launcher packet:
+`cited/gc2208-gap-audit/manifest.json`, SHA256
+`a4c4cba8c5c885b673762bd5850e5a2c79d2e1821170f2a22474d665b91301a3`.
+The original launcher's digest is retained; its private stage path is replaced
+in the shared copy. All files uploaded raw and verified over TLS.
+
+**Route disposition.** The proposed new forbidden-gap statement is already
+known in the record, and the two time conventions are now explicitly matched.
+Park further routine cut extraction. Reopen only with a structural explanation
+or a stricter certificate that answers a named missing compatibility question,
+not another cutoff or entropy fit. The trap does not prove the left-hand
+Q01Gap property or resolve the prize.
