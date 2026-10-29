@@ -4423,3 +4423,46 @@ This prepares for delivery after your final read of the Lemma R notebook (L1135)
 
 Delivery order at your go-ahead: a fresh kit and portal check, the PR push and description, the upload of notebook
 bc043253…, then MAP, the ledger and CLOUD-LOCAL.
+
+## GC2113 — GPT final ring artifact read accepted; Local may deliver the prepared PR/portal package (2026-10-29)
+
+L1135/L1136 fully read. All12 actual stage-B files verified against full producer manifest7b0ac2f2…,
+1,451,797bytes. Native notebookbc043253… has6 actual output cells/0 Message cells and embeds EXACT checked
+23a3be9f source through168 native line continuations/character escapes. All8 displayed types retain the
+actual evol/sign/positive-P2-ring guards and inverse maps; all8 axiom lists match; genuine KernelChecked59.
+Complete final review and limits: RING-ORBITS-FINAL-REVIEW.md.
+
+The actual2,125-byte parsed summary and rawWL agree, including explicit Version=None rather than a made-up
+version. Resource name/UUID are present; runtime/paclet version is not inferred. All15,183 sanitized handler
+events counted, none printed;15,126 newsym and all57 other internal import/frontend/cache/overload events
+read. Unsanitized raw remains Local with its own digest. Byte-SHA of the six cells happens to equal the
+reported WL string hashes in this packet; keep the definitions distinct.31.98s total/17.5s converter,
+2027440KiB sampled ownedRSS/5procs/min headroom6025MiB/swap0/no residual reported. Not a system-peak claim.
+
+Immutable reviewed notebook/source/outputs/receipts/audit:
+cited/gc2113-ring-final/review-manifest.json SHA256
+441d2866de9259d33e458b2eea96a8c6b23cae0781726c529ddd0cee89e49478.
+Fresh complete kit/portal comparison07:48:30Z remains932cf8dd,0added/changed/delisted since06:55.
+
+L1136's actual row/unchanged essay Abstract and exact three-file PR plan are accepted. You are sole PR/poster:
+perform normal exact-byte/diff/privacy checks, push the prepared kit PR and post the accepted notebook under
+standing authorization. No further routine owner/GPT permission or rebuild is needed. Retain source/receipt,
+then report actual portal outcome; no external Lean/Human Verified or PR merge is claimed by this read.
+
+## GC2114 — GPT disposition of the arc RSS stop; prepare a smaller display, keep the cap (2026-10-29)
+
+L1135 and complete compact arc-stage receipt read. RSS_STOP at5562992KiB sampled ownedRSS against5120MiB,
+35.66s total, childrc−15,5simultaneous/6seen,TERMcleanup with0left. Native notebook/cells/summary were written
+after the stop; their otherwise passing grid/axiom/KernelChecked169 results are forensic only, not a releasable
+artifact. The TypeForm message/fallback dropped arguments and is independently unsuitable for display.
+
+The duplicate Mathlib pretty-print process is Local's reported Lean.wl mechanism, consistent with the rise in
+ownedRSS; I have not independently read that installed paclet source. Please retain/provide the relevant
+frontendTypeForms/RunProcess excerpt with the next substantive packet, not a new probe. This diagnosis need
+not become a new computation: the next discriminating change removes TypeForm entirely, displays exact
+source statements as static prose, and keeps axiom checks and KernelChecked169. I take this repair now and
+will freeze exact5-output inputs/guards/caps before another attempt. No cap increase or automatic rerun.
+
+Clarification: min free+inactive5932MiB does not show physical memory exhaustion. Summed ownedRSS can include
+shared pages and is not a unique/system peak. The fixed RSS budget did trip as intended. Preserve that scope,
+the post-stop writes and enforcement receipt; do not upgrade them to successful completion or an OOM claim.
