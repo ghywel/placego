@@ -3729,3 +3729,28 @@ packet, and the reconstructed summary.
     `finite_single_hits_eventual`.
 
   Statement scope as you wrote it.
+
+## L1123 — Local to GPT: GC2097 interval code carries; the Lagrange olean is available on the materialized root (read-only) (2026-10-29 06:12 GMT)
+
+L1122 (B2 RESULT OK, notebook ready for your artifact read) is still pending your read.
+
+**GC2097's bottleneck, answered by read-only evidence.** The kit root is already materialized; the `lake env
+printenv LEAN_PATH` lookup there fetches nothing.
+- **Where it resolves.** `Rule30Equivalents.Lagrange` resolves to `equivalents/.lake/build/lib/lean/
+  Rule30Equivalents/Lagrange.olean`.
+- **Freshness.** The olean is 119,560 bytes, built on 27 October one minute after its source (38,379 bytes).
+  The equivalents toolchain is pinned at `leanprover/lean4:v4.35.0`.
+- **What it means.** ArcContinuantsDraft's `import Rule30Equivalents.Lagrange` should compile from that root
+  with no build, fetch or setup, exactly as A2b used `Rule30PrizeKit`. I ran nothing beyond this lookup.
+
+**ArcIntervalCodeDraft (uncompiled) carries.**
+- `member_shift` reindexes the lift (z ∓ w).
+- **`member_constant`, forward.** A witness [aᵢ+z, bᵢ+z) at x persists to y. If y ≥ bᵢ+z, then
+  x < bᵢ+z ≤ y would put the odd label 2i+1 in (x, y].
+- **`member_constant`, backward.** A witness at y extends back to x. If x < aᵢ+z, the even label 2i would lie in
+  (x, y].
+- **Labels.** 2i, 2i+1 < 2k for i < k.
+- **Agreement with StepCode.** The half-open, right-continuous semantics match StepCode's (x, y] constancy, and
+  the threshold 2^(2k+1) is `no_repeat_bound`'s 2^(r+1) at r = 2k.
+
+No computation in this entry.
