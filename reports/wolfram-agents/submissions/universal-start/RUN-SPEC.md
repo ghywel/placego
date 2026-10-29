@@ -136,3 +136,53 @@ to 4.30 GB at 15.3 s, and the supervisor stopped the group at the 4096 MiB cap. 
 This ends GC2084's single attempt, with no retry or cap increase. A per-case cost probe
 (`tests/probes/wolfram/cert_cost_probe.sh`, L1114) measures one case and one 16-case group on derived copies,
 before any split certificate is designed.
+
+## Two cost probes, and the stage 4 proposal (L1114)
+
+**Cost probe** (`cert_cost_probe.sh`, on derived copies of f9843a95; `receipts/local-l1114-cost-probe.json`).
+- **The finding that matters most.** The frozen source has an elaboration error, the only one in the module
+  outside the certificate. In `universal_start_finite`, `∃ m, 2 ≤ m ∧ … rightDiag x (m + 1) …` makes `m` an
+  `Int`, while the proof supplies a `Nat`.
+- **How it got through.** `least_exists` and `universal_start_finite` were added after the development
+  compiles and were never compiled. Stages 2 and 3 stopped before reaching them.
+- **The costs** (per-process maximum RSS):
+
+  | Variant | Content | Time | Max RSS |
+  |---|---|---|---|
+  | V0 | `cert := sorry` | 1.17 s | 317 MB |
+  | V1 | V0 plus one case | 1.21 s | 336 MB |
+  | V16 | V0 plus 16 cases | 2.34 s | 625 MB |
+
+  So each case costs about 19 MB, linearly, and one 256-case declaration would need about 4.9 GB and about 19 s.
+  This agrees with stage 3's trajectory.
+
+**Split probe** (`split_probe.sh`, on candidate v3 cc3ef77b; `receipts/local-l1114-split-probe.json`).
+
+| Variant | Groups evaluated | Time | Max RSS | Warnings and errors |
+|---|---|---|---|---|
+| S1 | 1 | 2.37 s | 630 MB | 15 sorry, 0 errors |
+| S3 | 3 | 4.64 s | 662 MB | 13 sorry, 0 errors |
+
+So the kernel's memory is released between declarations, and each group costs about 1.1 s. The `Nat` fix and the
+match assembly elaborate. 48 cases (`cert_0000`, `cert_0001`, `cert_0010`) passed the kernel inside these probes,
+and 16 inside the cost probe. That is probe evidence, not the release check.
+
+**Stage 4, proposed for GPT's read, not launched.**
+- **Source.** `Rule30UniversalStart.lean`, sha256 `32cd904f9247b5f651e18494e1fd5bc7e4a212c76977989e28808f2f11fbc724`.
+  It is v3 (cc3ef77b) with "(L1114)" removed from one comment. Its changes from f9843a95:
+  1. `∃ m : Nat` in `universal_start_finite`;
+  2. `cert` split into sixteen 16-case `decide +kernel` declarations `cert_0000` … `cert_1111`, assembled by
+     an explicit 16-line match (no tactic search, so no definitional unfolding of `certOK` in the elaborator);
+  3. two docstring sentences describing the split.
+
+  No other line changes.
+- **Wrapper.** `check_universal_start.sh` (sha256 5760d487…), changed only in `expected_source`. The layout,
+  checker, the four headlines (`universal_start`, `universal_start_finite`, `universal_start_profiles`, `cert`)
+  and the guards are unchanged.
+- **Caps.** Unchanged: CPU 900 per process, wall 900, RSS 4096 MiB, file 16, disk 64, launch ≥ 5120,
+  ongoing ≥ 1024, swap ≤ 512. Command form and idle gates are unchanged.
+- **Prediction.** The compile takes about 20 s, with a peak per-process RSS under 1 GB. The checker passes with
+  the four headlines and standard axioms. `cert_*` and `cert` should show no axioms beyond propext and
+  Quot.sound, if any.
+- **Counterfactual.** Any stop, error, guard failure or nonstandard axiom ends the stage and is retained.
+- **Rule.** One attempt.

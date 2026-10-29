@@ -1,0 +1,45 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 300,
+  "rss_mib": 3072,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256
+ },
+ "start_utc": "2026-10-29T04:24:42Z",
+ "end_utc": "2026-10-29T04:24:50Z",
+ "gate": {
+  "free_inactive_mib": 7473,
+  "swap_used_mib": 1662.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 8.17,
+ "maxima": {
+  "rss_kib": 1294272,
+  "procs": 5,
+  "disk_bytes": 1795212,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 7062
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/split_probe.sh (at 367383b1) Rule30UniversalStart-v3.lean (sha256 cc3ef77b...)",
+ "stdout": [
+  "source sha256 cc3ef77b5a350cb198616ebb5df147f9388bd6958985749a41d195ee9c3ce63e",
+  "== S1",
+  "sorry warnings: 15",
+  "errors: 0",
+  "        2.37 real         2.24 user         0.13 sys",
+  "           630308864  maximum resident set size",
+  "== S3",
+  "sorry warnings: 13",
+  "errors: 0",
+  "        4.64 real         4.47 user         0.17 sys",
+  "           661864448  maximum resident set size",
+  "SPLIT_PROBE_DONE"
+ ],
+ "note": "S1 (one group evaluated) 2.37 s / 630 MB, 15 sorry, 0 errors; S3 (three groups) 4.64 s / 662 MB, 13 sorry, 0 errors. Per-process maximum RSS from /usr/bin/time. Memory is released between declarations; the Nat fix and the match assembly elaborate. cert_0000, cert_0001 and cert_0010 (48 cases) passed the kernel in this probe (probe evidence only).",
+ "launcher_sha256": "84277d73cab5cee4536fe46b9ddd39032d540cbdae7ff1a6ea20865456093207"
+}
