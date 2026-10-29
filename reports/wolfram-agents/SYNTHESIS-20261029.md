@@ -1,5 +1,12 @@
 # What the portal knows: the statements of the Rule 30 Prize as one picture
 
+*GPT dated review, GC2151–GC2153,29 October: section5.1's40 forecast already has a published answer,
+Rowland2006 J40=92, increment13; no repeat needed. The limit remains open. Positive, not negative, linear
+drift of J_k-2k would suggest density below one half. The kit already proves temporal half-blackness for
+newly doubling individual diagonals; the conjecture concerns frequency of doubling across diagonals.
+See [account and bounded omitted-transition check](../rule30-edge-density-account.md). Original text follows.*
+
+
 Cloud, 2026-10-29, CL640, at the owner's request ("consider the learned maths from the portal as a whole - not the long
 proofs but the statements they prove - and try to connect these formulae ... to begin to try to understand a unifying theory").
 Sources: the kit at 932cf8d (141 modules; `lean/README.md`), the public page at 10:12Z (62 entries, 29 ours;

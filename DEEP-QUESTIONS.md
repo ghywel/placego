@@ -103,7 +103,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-021 | Why do staircases finish with a vertical alternating column? | Alternate-or-step/front law carried. L1007/GC1947: every individual single-seed rain staircase ends; other finite rain seeds can sustain one forever (L1008/GC1947). Same-patch length≥3 convention; a centre clock need not end with its supporting patch. |
 | DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence. L1001: the ruler is universal: every finite seed's right edge is the single seed's ruler, cut off at one depth k* and frozen at width k* − 1 |
 | DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1951: fixed-cut49 optimum52 accepted with retained witness; original six cuts also resolved. GC1952: known laws bound support bars to3/5/7/9 and replacement gaps to4/6/8/10. Endless compatible renewal and a universal staircase representation remain open; no wider test agreed. |
-| DQ-024 | Does the right edge forget at exactly half speed? | Open; Cloud's question from the synthesis of 29 October (CL640): the doubling density of the right-diagonal periods is at most one half (AIOvernight's theorem) and measured 0.50 over k = 24..34; kill test k = 40 |
+| DQ-024 | Does the right edge forget at exactly half speed? | Open; Cloud's question from the synthesis of 29 October (CL640): the doubling density of the right-diagonal periods is at most one half (AIOvernight's theorem) and measured 0.50 over k = 24..34;40 forecast already in Rowland2006, GC2151 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1034,6 +1034,26 @@ it is the same for every finite seed.
 **Next useful question.** For GPT, by hand: what does the record charge of 1b82d8 say about the *lower* density, if anything? For
 Local, one bounded run: J_k to k = 40 (about 2^40 steps of a 128-bit operation; an hour of C on the M5), with the prediction
 J_40 - J_34 = 12 ± 2 and the counterfactual J_40 - J_34 ≤ 9.
+
+
+**GPT update,29 October2026, GC2151–GC2153 (owner-assigned pull):** the proposed40 datum is already
+published in Rowland2006, author-PDF page4. His cap length a(k)=J_k+1; all38 Cloud values0..37 match.
+J40=92, so J40-J34=13 and the finite12±2 forecast holds against published data; no hour-long repeat is
+needed. The limit remainsOPEN. [Exact accounting and source review](reports/rule30-edge-density-account.md).
+
+The missing lemma is N0(n)-N2(n)=o(n), counting paired diagonals with zero versus two doublings. The
+known accounting theorem bounds only the opposite signed excess. A frozen Intel20-pair diagnostic
+COMPLETED with controls:00 can both collapse resource127->1 and increase it0->2. Hand temporal-stream
+controls show arbitrarily large collapse under the local OR law, equal least periods, first-contact and
+final-black guards. These are PROOF-SKETCH controls, not root-seed counterexamples. Common ancestry
+from the root remains the unexploited restriction. Exact10 decrement is a hand corollary of the known
+difference identity, finite controls pass; Local carrying read pending on resumption. No enlarged census.
+
+Two scope corrections: positive linear drift of J_k-2k, rather than negative drift, would correspond to
+a limiting rate below one half; no finite drift settles a limit. Individual newly doubling diagonals
+already have exact temporal density one half (kit half_black). This conjecture asks for half of the
+DOUBLING EVENTS ACROSS diagonals; it cannot be advertised as the first half-density statement about
+any part of the pattern. Matching the wall's one-free-bit count would still require a separate bridge.
 
 ## Returning to a question
 

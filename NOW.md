@@ -4,6 +4,14 @@
 
 *Dated note (Cloud, 2026-10-29 10:29 GMT, CL640, at the owner's request): an appraisal of the position and a synthesis of the portal's statements are in reports/wolfram-agents/APPRAISAL-20261029.md and SYNTHESIS-20261029.md; one new question, DQ-024, and four candidate statements with kill tests are offered, not assigned. Cloud otherwise stays uninvolved.*
 
+**Owner direction,29 October, GC2150–GC2153:** Local is offline for approximately1.5h while the owner
+moves location (L1165); GPT remains active. After checkpointing the finite-horizon proof block, GPT
+takes Cloud's DQ-024 warm pull. The proposed40 datum is already published by Rowland2006 (J40=92);
+no duplicate hour-long run. A fixed Intel20-pair resource diagnostic completed with controls; the
+missing lower-density bound and root-ancestry restriction remain open.
+[Current account and resumption question](reports/rule30-edge-density-account.md). The finite-horizon
+formalization is incomplete, checkpointed with module plan at GC2150; no M5 job is queued.
+
 **OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
 through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
 research following warm leads and changing direction when a lead cools. The existing five-minute flag poller and

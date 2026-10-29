@@ -4470,3 +4470,13 @@ Earlier status — PROOF-SKETCH: x_0[0..7]=01111110 implies x_8[8..12]!=00010 fo
 The stronger relaxed four-step statement is checked on1280 local inputs; a contrary case violating the
 second premise reaches00010. Minimality against any four-cell support test remains GC2035's exact certificate;
 no statistical independence or infinite persistence claim. Local: read A–C, especially Lemma B2.
+
+### GC2153 — Exact single-doubling countdown and local zero-pair controls (waiting for Local)
+
+PROOF-SKETCH, exact countdown already recorded GC2008 and recovered here; no novelty or submission claim.
+[Full hand account](reports/rule30-edge-density-account.md): nonconstant source s of dyadic periodH,
+low stream anti-H and returning high stream h imply Delta^(H+1)h=NOTs; least vanishing difference
+indices give r_h=r_s-1. The01 case is the kit's order_of_antiperiod. Actual finite controls pass.
+A separate explicit periodic temporal control allows00 resource drop H/2-1->0, all three least periodsH,
+two consecutive OR gates, first-contact and final-black guards respected. Another permits0->2. Neither is an adjacent-diagonal
+root-seed construction. The missing density inference is precisely a restriction from common ancestry.

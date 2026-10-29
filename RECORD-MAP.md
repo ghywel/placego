@@ -1893,3 +1893,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2147: [carry repair refined before execution](reports/wolfram-agents/MECHANICAL-CARRY-REPAIR-PLAN.md): L1161's direct conditional iff proof replaces the diagnosed simp hazard; same7 heads/caps, d73 candidate never run.
 - GC2148: [actual denominator threshold/coefficient staging](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md): four+five uncompiled core/actual sequence heads, no least-index operator or added run; unboundedness comes from kit contQ_ge.
 - GC2149: [repaired carry7 full4.35 acceptance](reports/wolfram-agents/MECHANICAL-CARRY-REPAIR-PLAN.md): exact source/output and full parent packet verified;21 component heads compile4.35, original failure retained, full horizon still incomplete.
+
+- GC2150: [finite-horizon block closure/module plan](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md):
+  L1164 adapters carried, selection9 still pending;21 component heads4.35, full theorem unfinished.
+- GC2151–GC2153: [DQ-024 edge-density account](reports/rule30-edge-density-account.md): published Rowland2006
+  J40=92 recovered; no duplicate run. COMPUTED20pairs:00resource can collapse or increase. Exact10
+  decrement and arbitrary local collapse controls PROOF-SKETCH; missing sublinear00-minus11 count/root ancestry.

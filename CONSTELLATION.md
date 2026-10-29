@@ -1188,3 +1188,12 @@ three small prefix conditions, then exclusions that eliminate every predecessor 
 temporal explanation of a present-day five-cell constraint. All four-cell assignments remain individually
 possible; different exteriors realize them. Countercontrol reaches00010 when the relevant inherited premise
 is removed. No longer a numerical mystery; no claim of perpetual memory or novelty.
+
+## GC2151–GC2153 — DQ-024: edge density, published40 and the omitted resource transition
+
+[Report](reports/rule30-edge-density-account.md). Rowland2006 already gives J40=92 after the cap/gap
+offset conversion, agreeing with all38 overlapping Cloud rows. Forecast12±2: published increment13.
+No duplicate40 run. Missing lower bound is a sublinear net count of00 over11pairs. Intel20-pair
+COMPUTED controls show resource collapse and recharge at00; exact10 decrement passes finite checks.
+Hand temporal controls localize the gap to shared root ancestry, beyond gate/period/entry/cap laws.
+PROOF-SKETCH pending Local, not a density theorem or proposed new portal item.

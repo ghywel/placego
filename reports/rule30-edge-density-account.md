@@ -101,3 +101,95 @@ Caps: one Intel worker, CPU30s per process, stage wall60s, sampled ownedRSS512Mi
 max3 owned processes, launch free+inactive4096MiB, ongoing2048MiB, swap growth128MiB, run_capped.py
 with track-tree. Preflight found about7817MiB free+inactive, existing swap1183MiB, no research job.
 The parent gate rechecks actual launch state; pressure/monitor/resource failure stops the stage.
+
+## GC2152: actual diagnostic outcome and its limits
+
+The single stage frozen at6a7a64cd COMPLETED0, 11:19:29–30Z. P and Q held; the unexpected check found
+a00 increase. Counts among20pairs:00six,11two,01four,10eight (the initial10 is exceptional); E_20=16,
+so N0-N2=4 as required by the balance. Selected actual transitions are:
+
+| Diagonal pair | Doubling bits | Resource before -> after |
+|---|---|---|
+|10 to12|00|5 ->0|
+|14 to16|11|0 ->127|
+|16 to18|00|127 ->1|
+|20 to22|00|0 ->2|
+|30 to32|00|252 ->4|
+|32 to34|01|4 ->4095|
+|36 to38|10|8191 ->8190|
+
+All256 small polynomial controls,33 physical rows,41 return/nonreturn checks and the known resource
+laws passed. The seven noninitial10pairs satisfy the predicted exact decrement. This is COMPUTED on
+the stated finite domain, not an independent carrying read, a Lean proof or a density estimate at infinity.
+
+Full immutable source/output/parent/time packet: cited/gc2152-edge-resource/manifest.json,
+SHA2567545430becd9872e642b9ee44d2ef5afb3da3bf8af8ede6673b93655011470d3.
+Parent wall0.55s; child time0.22real/0.16user/0.01sys, child maxRSS12066816bytes. Launch headroom7777MiB,
+existing swap1183MiB, final artifacts5400bytes. The child finished before the first monitor sample:
+owned RSS/process/ongoing-pressure maxima are UNAVAILABLE, not zero. CPU/file limits and the launch
+gate applied; no continuous or sampled stage-peak memory claim. No rerun or larger census follows.
+
+## GC2153: why local gate laws alone permit arbitrary collapse
+
+PROOF-SKETCH, a temporal-stream control, not a single-seed counterexample. Let H=2m=2^v, v>=4,
+and choose an EVEN2<=a<=m-3. Over the first half-cycle let s be black only at a; let its second half
+be the complement. In the first half let b be black at a+1,a+2 only; in the second half let b alternate
+0,1,0,1,... . Let h(0)=0 and
+
+    h(t+1) XOR h(t) = b(t) OR s(t).
+
+All streams extend H-periodically: the OR has m+2 black cells, an even number. Its polynomial is
+
+    P_s = (1+X^m) X^a + X^m U_m,
+    P_g = P_s + X^(a+1)(1+X),     U_m=1+X+...+X^(m-1).
+
+In the second half, b is white at the single white hole m+a of s (a is even); its other black cells
+lie on black cells of s. Thus only the first two pulses contribute additionally to the OR. Over F2,
+P_s has multiplicity m-1 at X=1, while the added term has multiplicity1. Hence P_g has multiplicity1.
+Cyclic integration gives (1+X)P_h = X P_g modulo(1+X)^H, so P_h has multiplicity0. The resource
+therefore falls from m-1 to0 in ONE00pair, however large m is. P_b is the two-pulse term of
+multiplicity1 plus an alternating second-half term of multiplicity m-2>1, hence has multiplicity1.
+All three streams have least periodH: a shorter dyadic period would force multiplicity at least H/2.
+There is no hidden period reduction to explain the collapse.
+
+This family also respects the elementary first-contact and final-black guards: s first turns black at a,
+b and h at a+1, and all three are black at H-1. So those three guards alone do not close the argument.
+A cheap objection is that b must itself integrate an OR containing s. This stronger control answers it:
+wherever s(t)=1, b flips at t, both at the first pulse a and throughout its alternating second half.
+Thus s(t)<=Delta b(t). Set u=Delta b; then ALSO Delta b=u OR s. This is a pair of consecutive gates,
+not an arbitrary choice of the low stream. It still does not impose the entire upstream stack: no
+claim is made that s itself integrates u OR a further stream. That is a genuine further restriction.
+For H=16,a=2 the words are s=0010000011011111, b=0001100001010101, h=0001011110110101.
+These are temporal controls, NOT asserted to be actual adjacent diagonals from the root.
+
+Increase is locally possible too: take H>=8 dyadic, s black only at0 and b black at1,2,3. Their OR
+polynomial is U_4=(1+X)^3; h(0)=0 gives P_h=X+X^3=X(1+X)^2. Thus the resource grows0->2 with
+all three streams still of least periodH. This second control does not impose the first-contact guards.
+It explains why a universal monotone-fuel gloss fails in both directions.
+
+The warm question is now specific: what does the ENTIRE SHARED UPSTREAM STACK from the one-black
+seed forbid in these00 transitions, beyond these two OR gates, equal periods, first contact and final black caps? For density
+one half we need a sublinear net count of00 over11, not a bound on the size of an individual resource loss.
+The finite observations do not yet offer such a bound. Local's resumption read should target the exact10
+decrement and the temporal controls; neither is a proposed standalone new portal submission.
+
+
+**Record cross-check during the hand continuation:** the Newton-basis exact countdown was already
+written in GC2008, reports/rule30-five-step-period-bound.md, after the original half-rate review. It is
+known, recovered here, not a new discovery. The current Q check supplies finite actual-resource controls;
+P and the unexpected00 increase were the distinct questions of this diagnostic. This recovery changes
+no frozen source, prediction or receipt. The new local controls are explanatory, not a locality no-go
+theorem: extending them through all upstream gates to the actual seed remains unproved.
+
+
+Validation note: ledger and link checks pass. Repository math-render checks on the edited research documents
+containing TeX pass (0errors/0stray dollars) using the existing bundled Node/installed browser; the initial
+missing-Node PATH invocation was an environment failure, resolved without installation or source changes.
+The16-tick hand-control table was checked separately after its derivation; it is not part of the earlier
+frozen20-pair dynamics receipt.
+
+
+Scientific figure of the published41values (inspected after rendering):
+cited/gc2153-edge-density-figure/manifest.json, SHA256
+8fcf8b9f5381b1148b38237dd836bb1fbef78d65d2eb9b79b6eb2130630d45a7.
+Both J_k and J_k-2k are drawn; the straight2k reference is not a fit or an extrapolated theorem.

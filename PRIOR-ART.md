@@ -4626,3 +4626,14 @@ fixed C is known. A retained single-party compactness proof sketch also yields a
 B(C); it does not yield251(C+4). [Exact dictionary, guards and scope](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md).
 No claim of novel asymptotic exclusion or current formal certification. The explicit linear horizon and
 recoding/reset margins remain pending, not cleared as novel by this comparison.
+
+### GC2151: the DQ-024 forty-level measurement is already published
+
+Rowland, [Local Nested Structure in Rule30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf),
+Complex Systems16 (2006), author-PDF page4, tabulates a(k) through40. The kit's last-black-run identity
+gives a(k)=J_k+1: all38 overlapping Cloud rows agree; J40=92. Thus the proposed increment forecast is
+already answered by published data, not a new computation. Seed-dependent growth is also discussed
+in section3. No limit-one-half proof is imported. [Source/accounting audit](reports/rule30-edge-density-account.md).
+Known, reproved here: exact10 decrement follows from kit difs_past plus minimal vanishing index;01
+resource value is order_of_antiperiod. The universal mechanism is classical cyclic F2 linear algebra.
+No new standalone delivery is proposed, and negative searches do not establish priority.

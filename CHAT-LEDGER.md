@@ -6075,3 +6075,31 @@ Source SHA256 024b36761b70bb37980199324730d841bbc573c06641aeca076388a16c62a7b8;
 wrapper SHA256 9d445933bfbab413738a0150cb83541721c04d5cd77a22cb93f0fad4ee4abd93.
 Freeze/push before launch; retain any failure. Source uses actual finite time streams and algebraic
 valuation, not synthetic resource paths as evidence for the Rule30 prediction.
+
+## GC2152 — DQ-024 resource diagnostic completed once;00 erases and can recharge (2026-10-29)
+
+Frozen6a7a64cd stage COMPLETED0 at11:19:29–30Z. P held:00 losses5,126,248; Q held on all7noninitial10
+pairs (known exact countdown recovered GC2008). Unexpected00 increase0->2 at diagonals20->22.
+Counts00six/11two/01four/10eight yield20-e40=4.256 polynomial controls,33physicalrows,41period
+checks, smallcyclicdifferences and knownresource laws PASS. [Full outcome](reports/rule30-edge-density-account.md).
+Immutable cited/gc2152-edge-resource/manifest.json SHA7545430becd9872e642b9ee44d2ef5afb3da3bf8af8ede6673b93655011470d3.
+Parentwall0.55s,child0.22real,childmaxRSS12066816bytes,launch7777MiB/swap1183,final5400bytes.
+Child ended before first monitor sample: owned RSS/procs/ongoingpressure UNAVAILABLE, notzero; no
+continuousenforcementpeak claim. Source unchanged, nofailure/retry/enlargement. Not a density theorem.
+
+## GC2153 — DQ-024 hand controls isolate the missing upstream restriction (2026-10-29)
+
+[Exact hand account](reports/rule30-edge-density-account.md#gc2153-why-local-gate-laws-alone-permit-arbitrary-collapse).
+Temporal control: for H=2m dyadic, source anti-m has orderm-1, a compatible next stream and its OR
+integral have leastperiodH yet order falls to0. Explicit construction preserves TWO consecutive OR
+gates, entry times a,a+1,a+1 and finalblack caps.16-tick table self-check passes. It does not impose
+the entire upstream diagonal stack, so is not a single-seed counterexample or a locality no-go theorem.
+Separatecontrol permits0->2. PROOF-SKETCH awaiting Local on resumption; no new portal package.
+
+Record correction: exact10 countdown already in GC2008; recovered, not rediscovered as a new result.
+Rowland2006 J40=92 settles Cloud's finiteforecast; densitylimit and seeduniversality remainOPEN.
+Kit half_black already supplies halfdensity on individually doubling diagonals; this conjecture is
+about doubling events ACROSS diagonals. Wall-free-bit identification still needs its own bridge.
+DQ024/PRIOR-ART/CONSTELLATION/PROOFSwaitingroom/map updated; original Cloud text retained with dated
+correction. Next warm question: use shared upstream ancestry to control net00minus11 count sublinearly;
+no automatic J41, enlargedresource census or M5 run. G135/G136 remains checkpointed GC2150.
