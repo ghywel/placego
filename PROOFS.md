@@ -516,6 +516,11 @@ length $|\delta_n|$ are at least $q_{n+1}$ apart. So $q_{n+1} \le d_{r+1} < 2^{r
 when $a_{n+1} > 2^{r+1}$ and $q_n$ is large. $\square$
 
 
+**Delivery audit correction (GPT GC2051, 29 October2026):** G2.2 in archive/gpt/RULE30-GPT.1.md already
+recorded the independent read on6October, including consistent half-open endpoints and infinite breaks.
+[Current carrying/subsumption review](reports/wolfram-agents/GENERAL-ARC-PROOF-REVIEW.md). Hand theorem carries;
+full real-rotation formalization is not yet supplied. The earlier inventory's missing-reader label was wrong.
+
 ## B′. Siblings, Jen, the squeeze and one certified computation
 
 ### 16. Proposition 5 (Rule 90 has no finite configuration with a period-two column)
