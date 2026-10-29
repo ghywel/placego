@@ -1,0 +1,38 @@
+{
+ "limits": {
+  "cpu": 900,
+  "wall": 900,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T04:05:14Z",
+ "end_utc": "2026-10-29T04:05:16Z",
+ "gate": {
+  "free_inactive_mib": 7053,
+  "swap_used_mib": 1686.81
+ },
+ "exit_reason": "CHILD_FAILED",
+ "child_rc": 1,
+ "wall_s": 2.06,
+ "maxima": {
+  "rss_kib": 774928,
+  "procs": 4,
+  "disk_bytes": 40181,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6824
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/check_universal_start.sh (at 4041016d) reports/wolfram-agents/submissions/universal-start/Rule30UniversalStart.lean (sha256 f9843a95...)",
+ "stdout": [
+  "module sha256 f9843a955ae423071484e07b55138a8bd43e4c6b3e22eeb3964ea73fbb333138",
+  "checker sha256 b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+  "CAPPED_OUT/src/Ruliology/CellularAutomata/Rule30UniversalStart.lean:1:0: error: object file 'CAPPED_OUT/lib/Ruliology/CellularAutomata/Rule30Prize.olean' of module Ruliology.CellularAutomata.Rule30Prize does not exist"
+ ],
+ "time_receipt_first_line": "1.05 real         0.43 user         0.59 sys",
+ "note": "The first Lean process (the module compile) stopped at import resolution: CAPPED_OUT/lib/Ruliology, created by the wrapper and first on LEAN_PATH, shadows the kit's built Ruliology package. No elaboration of the module body, no certificate evaluation, no checker run.",
+ "launcher_sha256": "c4208bab1380b3d50b5ef18becfd7218da8508893e81301e9ea8676cf18deeb3",
+ "out_sha256": "5f42cb1a97ed44de69510a3040cffd387a42828b4ed4844a31bd0d9b3a835be1"
+}
