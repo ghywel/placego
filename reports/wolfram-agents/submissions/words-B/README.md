@@ -10,3 +10,14 @@ As words-A, for the 80 words of length 17 (31) and 18 (49), all at strip width 8
   n0 2): {62, 13, 7, 7}, forced `001111111111111111`, True. `Axioms` standard; `KernelCheck` Success (last cell);
   the `LeanEvaluate` comparison True.
 - Byline and API fields as for words-A.
+
+## Overlap found later (Local, L1080, 2026-10-29)
+
+A comparison with the kit as it stood at submission time (kit main 681863d, 2026-10-22) found that 6 of this
+submission's 80 words were already excluded:
+- **Fully known**, in our scope: `0 1^16` and `0 1^17` (`Rule30FiniteBlackRuns.not_eventually_zero_ones`).
+- **Known for the single seed and for every finite configuration**: `0^15 11` and `0^16 11` (`Rule30WhiteRunEight`,
+  `Rule30FiniteWhiteRuns.no_white_run_11_finite`). Our left-bounded scope is broader.
+- **Our own earlier submission**: `1 0^16` and `1 0^17` (R30-20261022-c27323).
+
+The correct count of words new outright is 74 of 80. The Lean is unaffected. See PRIOR-ART.md (L1080).

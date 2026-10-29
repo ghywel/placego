@@ -4430,3 +4430,97 @@ against the kit's statements. The portal's listed submissions were searched too,
 Lesson: four of the seven rows were already in the kit, and one of those (L1054) was also in our own §8.27. One is
 related, and two are not found. What was new sits in the specific evaluations (the 101 lemma, the universal start, the
 T^64 classification, Lemma R), not in the general mechanisms.
+
+## The whole record compared with the kit and the portal (Local, L1080, 2026-10-29)
+
+**Method.** At the owner's request after L1079, four read-only audit agents of Local's each took a part of RECORD-MAP.md's
+Rule 30 lines (57–394 and 1159–1772). Each searched with `known_find.py` and then read the kit's Lean statements (main
+932cf8dd) and the portal's 57 entries. This is a self-check, not a second read. Local checked every verdict below that
+changes the record against the kit source: Preimages, Odometer, RightPeriods, Diagonals, ZeroBoundary, CenterFormulas,
+and the word families at the submission-time commit. **Dates matter:** the kit's catalog modules arrived on
+2026-10-15 to 10-17, and `equivalents/` on 10-16 to 10-18. Everything in RECORD-MAP lines 57–394 (2026-10-04 to 10-15)
+came before its kit counterpart, so none of it is a re-derivation.
+
+### 1. Our portal submissions: duplicates found
+
+- **words-A (R30-20261022-5c4fbf) and words-B (R30-20261022-70d23b).** 15 of their 128 words were already excluded
+  at submission time, against kit main 681863d of 2026-10-22 and our own c27323:
+  - fully, in our scope: `0 1^k`, k = 14 … 17 (`Rule30FiniteBlackRuns.not_eventually_zero_ones`, k ≥ 9);
+  - for the single seed and for every nonzero finite configuration: `0^r 11`, r = 12 … 16 (`Rule30WhiteRunEight`,
+    `Rule30FiniteWhiteRuns.no_white_run_11_finite`, r ≥ 8);
+  - for the single seed: `0^9 101` (`Rule30StripCertificates.not_eventually_000000000101`);
+  - by our own white end (c27323, q ≥ 10): `1 0^q`, q = 13 … 17.
+
+  The essays cite the `0^r 1 1` and `1 0^q` families and still count these words as further words. 113 words are new
+  outright, and six more are new only in our broader, left-bounded scope. The Lean is unaffected. Notes are in both
+  submission READMEs.
+- **W2 (Q01 for widths ≤ 56, bound 100)** repeats a check by the kit's authors. The record already knew this (GC1719).
+  The upper bound D(52) ≤ 96 is the kit's `q01_width_le_52`, and our witnesses for the exact values are new.
+
+### 2. Re-derived after the kit had it (KNOWN, reproved here)
+
+| Ours | Kit |
+|---|---|
+| GC1981, GC1982, GC1984: the root's inverse tree has 2, 3 and then 8 rows, and the periodic rays have unique parents | `Preimages.evol_one_eq_iff_of_eventually_white` (exactly two preimages), `…_of_eventually_black` (exactly three), `eq_of_evol_one_eq_of_frequently` (010 far right gives a unique preimage). "No finite predecessor" is a one-line extension |
+| L1051, L1053, GC1998: the white-right past continues each right diagonal periodically; c(s) = D_s(s − P); at the first unsupported diagonal the readout is NOT c(B) | `Odometer.ψ` with unique white-right preimages; `Rule30Diagonals.center_eq_R`, `R_periodic`; `Rule30RightPeriods.antiperiod` |
+| L1002: T⁻¹(1) = −1 and T⁻²(1) = (100)^∞; the cap formula at u = 2^k − 1 | `Odometer`, `Preimages.evol_one_eq_iff_of_eventually_black`; `Rule30RightPeriods.rows_at_powers_of_two` (the special case only) |
+| L951, L953, L954 (Propositions 1, 2), GC1889 (tick cancellation), GC1892, GC1848, GC1867, CL637/CL638 | `Rule30ZeroBoundary`: `small_identities`, `free_not_eventuallyPeriodic`, `tri_odd`, `tri_even`, `Theta_inj`, `two_step_shift`, `zrow_det`, `zrow_pivot`, `Level`, `koenig`, `count_constrained`. Most were already labelled as restatements in the record |
+| L973–L974 (equal width), L910 (right-end moves), GC1772's upper direction | `zrow_det`/`zrow_edge`; `Rule30ControlledResponse`; `Q01_iff_bounded`. All three were already credited in the record |
+| GC2025: span growth | `Rule30FiniteDiagonals.Rd_zero_succ`, `Ld_zero_succ` |
+
+### 3. Ours first, later also proved in the kit (cite both)
+
+- **§8.100, Rule 30 = the Rule 150 jump XOR AND echoes** (2026-10-14, held as PROOF-SKETCH). This is
+  `CenterFormulas.duhamel` (2026-10-18), proved for every configuration, so the identity is now **PROVED (kit)**.
+- The kit later proved these too:
+  - Proposition 7 (Jen 1986, credited): `Rule30FiniteConfigs.jen`;
+  - §8.19, the single 1's two parents: `Preimages`;
+  - GC850, the nine-black lock with eight not enough: `Rule30BlackRuns.nine_black`, `eight_black_not_enough`;
+  - GC851, the fair-row band: `Mixing`;
+  - §8.84, the Jen-type theorem and the barrier lemma: `Rule30DrivenLeft.no_periodic_column`,
+    `Rule30ZeroBoundaryStripe`;
+  - the chain's implications: `Q01_iff_bounded`, `koenig`, `CQ01_of_Q01`;
+  - GC548, the O(n) versus o(n) reading: `Rule30Problem3`;
+  - the §8.61 closure: `Rule30ZeroBoundaryBarriers`;
+  - GC727, subluminal recurrence: `PeriodicPoints`. The sign convention still needs a check; Proposition 22 itself is
+    not in the kit.
+- **The kit has only a special or weaker case:**
+  - G249: `per_upper`, for the single seed;
+  - entry 42: `Ld_periodic`, with the weaker period 2^j;
+  - the GC502 bans: single seed only;
+  - G256: `golden`, single seed, with a stronger conclusion;
+  - LL1–4: `q01_width_le_52`, against our 248;
+  - CL088's counts: `evol_one_eq_self_iff`, p = 1 only.
+
+### 4. Related only, not repeats
+
+- S1, Theorem U: a short corollary of `Odometer.agree_G_iff` and `per_iff_gap`. The added piece is ours.
+- S3: `two_step_shift` gives the constrained twins; the localization to any tail and any truncation is ours.
+- Also related:
+  - GC1936 (`back_fin_iff`; portal 8abb51, one day later);
+  - L1000's P and GC2019 (`Mixing.evol_flip_front`, a single flip);
+  - L1008 (`PeriodicPoints.evol_one_eq_self_iff`);
+  - Rule 210 (`run210_eq`, single seed);
+  - §8.77, entropy (`Mixing`, log 2 ≤ h ≤ log 3; our 1.347-bit bound is sharper);
+  - GC856;
+  - §8.85, the lock lemma (`skeleton_0011`).
+
+### 5. Not found
+
+Everything else. That includes:
+- the wheel, the kicks and the records R(d);
+- the channel bound and the entropy squeeze;
+- Theorem B and A‴'s consequence;
+- the death-time values above the kit's;
+- the c137e0 clock;
+- Theorem S and the T² classification;
+- the 101 lemma, the universal start and Lemma R;
+- the backward-word and trace-certificate results;
+- 113 of the 128 submitted words.
+
+**Still to check:**
+- the sign convention behind GC727 and Proposition 22;
+- the phase alignment of §8.85's lock lemma against `skeleton_0011`;
+- Jen 1986's Theorem 4 against entry 42;
+- Rowland 2006 against B2;
+- the kit's unpublished "round-2 death-time table" against D(2..30).

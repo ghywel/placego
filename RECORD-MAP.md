@@ -359,7 +359,7 @@ PART: as on the board.
 - Linear-CA columns2-automatic; restart statement only sketch — known / PROOF-SKETCH — same probe.
 - Rule210 LR false, no finite full0101 clock; transfer to30 invalid — PROVED — §8.65/70, entries29/31/32, GC479.
 - Rule90 no finite period2 column; Rule60 control differs — PROVED / COMPUTED — Proposition5, §8.3.
-- Rule 30 = Rule 150 jump XOR AND echoes: exact (PROOF-SKETCH identity, COMPUTED to t = 64) §8.100; not local — MEASURED
+- Rule 30 = Rule 150 jump XOR AND echoes: exact (PROOF-SKETCH identity, COMPUTED to t = 64; PROVED in the kit as CenterFormulas.duhamel, 2026-10-18, L1080) §8.100; not local — MEASURED
   §8.102, 8.103, 8.105; kick cone forced by class — COMPUTED, certified §8.107
 
 
@@ -1761,6 +1761,7 @@ retains constraints. Data/figure by manifest digest; no entropy, universal frequ
 - L1076: degree-law main parity (E) formally proved in Lean — main_parity: ∀ t ≥ 2, A t = true (905 lines, 78 theorems, no sorry, standard axioms), real-space route (behind-front damage, two-linear pivot, shift/clear, recA/recB, kernel-decided base); only the headline assembly (F) remains — reports/wolfram-agents/submissions/degree-law/Rule30DegreeLaw.lean.
 - L1077: degree-law assembly (F) formal — degree_law (t ≥ 3, iff), degree_bound (t ≥ 2), degree_attained; 1,271 lines, 97 theorems, no sorry, standard axioms. PRIOR ART: the kit's equivalents/Rule30Equivalents/AlgebraicDegree.lean (2026-10-18) already proves the law in Lean, so known, reproved here; submission withdrawn — PRIOR-ART.md, reports/rule30-degree-law.md.
 - L1079: this session's results compared with the kit — KNOWN, reproved here: L1054's period-parity equation (§8.27; kit TFunctionCycles.lift_iff, RightPeriods.S_rule), the seed echo (TFunctionCycles.Phi_cycle), L1071 §3's fair traces (kit Mixing); RELATED: L1069 (kit PeriodicPoints); NOT FOUND: the 101 lemma, universal start, tree of beginnings, 11011, T^64 classification, Lemma R — PRIOR-ART.md.
+- L1080: the whole record compared with the kit and the portal — 15 of the 128 words in words-A/words-B were already excluded at submission (4 fully by the kit, 6 by the kit in a narrower scope than ours, 5 by our own c27323), 113 new; re-derived after the kit: GC1981/82/84 (Preimages), L1051/L1053/GC1998 (Odometer, antiperiod), L1002's tower, several zero-boundary restatements; §8.100 now PROVED via the kit's CenterFormulas.duhamel; lines 57–394 all predate the kit — PRIOR-ART.md.
 
 ### GC2038 — hand explanation of cap00010 exclusion (2026-10-28)
 

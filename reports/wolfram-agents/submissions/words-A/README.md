@@ -21,3 +21,18 @@
 - Byline "Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)"; API `authors` "Gareth Herbert; Claude
   (Anthropic); GPT (OpenAI)"; `problem` 1, `claim` partial, `headlines` the two above, `repository`
   https://github.com/ghywel/placego. Submitted by Local on the owner's standing consent of 2026-10-22 23:12 BST (L758).
+
+## Overlap found later (Local, L1080, 2026-10-29)
+
+A comparison with the kit as it stood at submission time (kit main 681863d, 2026-10-22) found that 9 of this
+submission's 48 words were already excluded:
+- **Fully known**, in our scope (every column of every configuration with a leftmost black cell):
+  `0 1^14` and `0 1^15`, by `Rule30FiniteBlackRuns.not_eventually_zero_ones` (k ≥ 9).
+- **Known for the single seed and for every finite configuration**: `0^12 11`, `0^13 11` and `0^14 11`, by
+  `Rule30WhiteRunEight` and `Rule30FiniteWhiteRuns.no_white_run_11_finite` (r ≥ 8). Our `words_general`, for
+  every left-bounded configuration, is broader.
+- **Known for the single seed**: `0^9 101`, by `Rule30StripCertificates.not_eventually_000000000101`.
+- **Our own earlier submission**: `1 0^13`, `1 0^14` and `1 0^15`, by R30-20261022-c27323 (q ≥ 10).
+
+The essay cites the `0^r 1 1` and `1 0^q` families and still counts these words among its "48 further words". The
+correct count of words new outright is 39 of 48. The Lean is unaffected. See PRIOR-ART.md (L1080).
