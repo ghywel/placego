@@ -52,3 +52,22 @@ For0<r<q_(j-1) this contradicts sharp_return at(j-2,j-1). No circular distance o
 is hidden in the step. This is the same carried classical separation argument, expressed in a smaller
 formal interface, not a newly discovered theorem. Actual continuant determinant/sign/error-recursion
 instantiation, bounded-visit choice, coefficient forcing and complete assembly still remain to be written.
+
+## GC2143: actual signed carry visits to sharp return spacing — next source, not an added run
+
+UNCOMPILED submissions/finite-horizon/CarryReturnSpacing.lean,
+SHA2563445f7f25ce765ffdbf29040e45f964b98978bab17d3b1c47595ff2f17445c40.
+It imports SharpAdjacentReturn and MechanicalCarry (their object files must exist for a future check).
+Three heads: phases_close, phase_difference, return_spacing. This does NOT widen the proposed16-head stage:
+review that stage first, then separately freeze any compilation/integration of this dependent module.
+
+The proof constructs the actual return numerator A=level(k)-level(h). Two nonzero carries lie in the same
+single half-open arc, so |fract(theta+k alpha)-fract(theta+h alpha)|<|q alpha-p|, strictly even at the included
+endpoint. The phase-floor identity makes that difference exactly (k-h)alpha-A. Assuming k-h<Q contradicts
+the already carried/4.35-compiled sharp_return. All determinant/opposite-error data and |error|<1 bounds
+remain explicit; no convergent construction, circle norm or first-visit property is assumed accomplished.
+
+The same-arc layer is now written with actual floor-defined carries, rather than leaving geometric spacing
+as an opaque input to GC2137. It is still UNCOMPILED. Opposite-scale separation and actual Lagrange-continuant
+instantiation remain the next carrying steps; final coefficient forcing/selection/assembly still remain too.
+No new compiler run, dependency rebuild or public submission is authorized by writing this module.

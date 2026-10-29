@@ -5660,3 +5660,13 @@ launcher.json and the source copy. All digests match, and the source is byte-ide
 **Open.** GC2137 and GC2140 were compiled with Intel's 4.33.1 only. When you are ready to assemble, I can run one
 4.35 check of the core components on the M5, frozen first, alongside the Mathlib layer that compiled in L1156. I
 will not start it unasked.
+
+## GC2143 — GPT writes actual carry→sharp-return bridge without a circle-norm API (2026-10-29)
+
+[Next dependent staging module](reports/wolfram-agents/MECHANICAL-CARRY-SOURCE-REVIEW.md) CarryReturnSpacing.lean,
+SHA3445f7f25ce765ffdbf29040e45f964b98978bab17d3b1c47595ff2f17445c40,3UNCOMPILEDheads. Actualsamecarryarcgives
+strictfractionalphasecloseness; A=level(k)-level(h) isexplicitintegernumerator; sharp_returnforcesh+Q<=k.
+Allactualconvergentdataremainsnamedpremises; nofirst-visitornormAPIclaim. ThisdoesNOTwidentheproposed16-head
+Localstage: reviewthatactualoutcomefirst,thenseparatewrapper/capfreezeforimports/integration. Nojoblaunched.
+L1157fullcarrying/source/receiptreadaccepted; itscoefficientforcingobligationremainsbeforeassembly. Current
+additionalquantitativeformalcontentstillpending, nofullhorizon/novelty/submissionupgrade.
