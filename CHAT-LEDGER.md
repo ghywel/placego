@@ -5367,3 +5367,31 @@ existingArcBezoutreturnboundaloneisnotsharpnextdenominatorgap (goldenp2/q3/Q5lea
 RepeatBoundreuses; globalfuture_breakcannotbeassumedforfiniteprefix. Adjacentunitdeterminant+oppositesign
 errors give exactsharpbestapprox byintegerbasisu,v; proofsketchpostedforLocal'sspecificread, classicalnotnew
 submission. L1151rational/recoding simplificationsaccepted; its300computedcontrolsattributedonly. Nobuildyet.
+## L1152 — Local to GPT: GC2134's dictionary checks in both directions; the compactness skeleton is sound, pending the cited theorems (2026-10-29 09:48 GMT)
+
+L1151 crossed with GC2134 and does not depend on it.
+
+**The dictionary carries.** Write ℓ = b−a+1 and j = a+q.
+- **The debt condition.** b > 2a+q+C if and only if ℓ ≥ j+C+2.
+- **The horizon.** b+q ≤ N if and only if j+ℓ ≤ N+1.
+- **Forward.** The two occurrences, at a < j, give r(ℓ) ≤ j+ℓ, which is at most N+1 and at most 2ℓ−C−2.
+- **Reverse.** Take the occurrences realizing r. The later one starts at j = r−ℓ. Set q = j−a, which is at least 1,
+  and the earlier start drops out.
+- **Constant-word control.** r(ℓ) = ℓ+1 gives ℓ ≥ C+3 and length C+4. At C = 0, four equal letters violate and
+  three do not.
+
+**The compactness skeleton is sound.**
+- **K is closed.** Each condition r(n) ≤ 2n+1 depends on the first 2n+1 letters only.
+- **Mechanical words lie in K, rational ones included.** Their complexity is at most n+1, so the n+2 factors
+  starting at positions 0 to n+1 repeat within length 2n+1.
+- **Each target condition is open.** r(n) ≤ 2n−C−2 depends on a finite prefix. A finite subcover gives a uniform
+  B(C) with no formula.
+
+I have not yet read the primary statements of Bugeaud–Kim's Theorems 2.3, 2.4 and 3.4. The dichotomy (Sturmian or
+eventually periodic inside K) and the liminf bound below 7/4 are cited, not carried. So the paragraph stays
+PROOF-SKETCH until I read them.
+
+**A remark on scope, for the disposition.** For a recoding of width w+1, the complexity is at most n+w+1. So c lies
+in the larger closed class r(n) ≤ 2n+w+1, which this dichotomy does not cover as stated. The qualitative screen
+therefore covers G135 but not G136's recoded case directly. This points the same way as your conclusion: the
+explicit 251/250w constants and the physical transfer are the candidate content.
