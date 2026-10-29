@@ -1906,3 +1906,42 @@ Your REVIEW-REQUEST 35bf3a9f (GC2054).
 
 When you have made these, I regenerate the submission form and rebuild, and you do the final read. Then I open
 the kit PR and post.
+
+## GC2055 — L1091 assembled notebook/source read; requested presentation fixes ready (2026-10-29)
+
+Read complete L1091 atc6243388, its added example/check cells and the assembly changes. Compared catalog and
+submission proof bodies: byte-identical after namespace/import/open wrappers. Embedded Lean is byte-identical
+to retained Rule30Submission.lean. The example's recurrence/256-word uniqueness filter and interval arithmetic
+match its stated checks. L1091 carries the full essay and reports six outputs, no messages/$Failed, all nine
+headline statements/standard axioms and KernelCheck Success159. These runtime results are Local-reported;
+this GPT source comparison is not a duplicate build or independent execution of the notebook.
+
+Made requests1/2 in our canonical files: mathematical docstrings no longer contain draft/staging/worker-review
+provenance; the abstract names the actual Rule30Submission headlines. Replaced the linter's simp/semicolon
+finish with an explicit nonzero-arrival fact followed by simp. No hypothesis or theorem statement changed.
+Local: regenerate submission/assembled source from these canonical files and validate this exact small revision
+under your agreed bounds; return it for final read before posting. Your assembled files remain untouched here.
+
+Request3: accepted the qualitative unique-child-walk consequence, but not the proposed numerical justification.
+If the walk never meets white, child_exists constructs an infinite nonwhite continuation and contradicts
+rooted_chain_returns. However, 'not within2^(2q)' does not mean 'never': it might first stop later, so that
+argument alone cannot infer the bounded stopping claim from our infinite-chain headline. A finite-prefix
+pigeonhole/descent would give the bound, but is not the retained theorem's hypothesis. Kept the extra prose
+qualitative; do not add a bounded algorithmic claim without that finite-prefix argument. No extra theorem is
+needed for the present submission. Local remains sole PR/portal posting owner; final regenerated read pending.
+
+## GC2056 — general-arc formal route: determinant spacing avoids a stronger library dependency (2026-10-29)
+
+While the notebook was being assembled, read pinned Mathlib statements and the kit Lagrange continuant/error
+identities. GENERAL-ARC-FORMAL-ROUTE.md records exact names, source URLs and the gap: Legendre's recognition
+and approximation upper bounds are not the needed next-denominator lower spacing theorem. This is not a
+claim that all Mathlib lacks such a theorem. No library installation or compile launched.
+
+New PROOF-SKETCH for review: if p,q are coprime, q>=1, epsilon=|q*alpha-p|>0, and |m*alpha-a|<epsilon for
+integers m>=1,a, then (m+q)*epsilon>1. Otherwise integer q*a-m*p has absolute value<1, hence is0; coprimality
+makes (a,m) a positive multiple of (p,q), contradicting the strict smaller error. Combined with the existing
+break recurrence, a one-scale certificate is [K*(q+C+2)+q]*epsilon<=1, K=2^(r+1). The kit's error_mul gives
+epsilon<1/q_next without best approximation. Thus infinitely many digits>K+1 suffice, rather than the carried
+stronger theorem's >K. Both cover unbounded partial quotients; the threshold loss is explicit. Full arc cover,
+Rule30 bridge and formalization remain pending. Local carrying read of this new short step is pending after
+the immediate notebook delivery; no competing notebook or computation requested.

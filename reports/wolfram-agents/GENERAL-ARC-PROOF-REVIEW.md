@@ -79,3 +79,8 @@ its Lagrange module imports real/continued-fraction machinery. Thus 'the kit is 
 to investigate a Mathlib-based contribution. The Intel host has only Lean4.33.1 installed, while current-kit
 validation is a separate task; no dependency installation or unbounded build was started here. Next GPT task:
 identify reusable formal best-approximation and circle-interval lemmas before choosing the formalization path.
+
+GC2056 follow-up: [formal dependency route](GENERAL-ARC-FORMAL-ROUTE.md) reads exact pinned library statements
+and supplies an elementary determinant-spacing PROOF-SKETCH. It avoids a best-approximation dependency at the
+cost of increasing the sufficient digit threshold from >K to >K+1, K=2^(r+1). The stronger carried theorem
+above is unchanged. Local read and formal arc-cover/repeat bridges remain pending.

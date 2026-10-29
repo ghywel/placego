@@ -8,12 +8,11 @@ public import Ruliology.CellularAutomata.Rule30Diagonals
 /-!
 # Periodic temporal profiles of Rule30: source weights, pulse holes and reset budgets
 
-Catalog draft for the joint pulse/RootedReturn package. Generic Child keeps the successor and carrier explicit.
+The child recurrence keeps its successor and carrier explicit.
 The pulse laws use Nat-indexed periodic profiles; the return theorem codes these by finite length2q lists.
 Actual-diagonal headlines use Rule30Realization.evol after a common onset T0. Pulse phase0 is an explicit
 normalization, not an assertion that actual left diagonals are periodic from the root row. No finite-seed
-ancestry, global stage-growth or prize theorem is claimed. Both workers have read the carrying
-steps; final current-toolchain and submission checks are recorded separately from this mathematical scope.
+ancestry, global stage-growth or prize theorem is claimed.
 The imported left-diagonal identity is known kit machinery; additional identities have their stated scope only.
 -/
 
@@ -318,7 +317,8 @@ theorem first_pulse (q arrival : Nat) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
     simp [pulse]
   · intro i hi
     have ht : arrival+i < q := by omega
-    simp [pulse, Nat.mod_eq_of_lt ht] <;> omega
+    have hne : arrival+i ≠ 0 := by omega
+    simp [pulse, Nat.mod_eq_of_lt ht, hne]
 
 /-- The pulse's reset arrival is q+1 for every phase representative. -/
 theorem pulse_reset_arrival (q arrival : Nat) (haq : arrival ≤ q) :
@@ -433,7 +433,7 @@ theorem leftWindow_pulse_bound (x : Int → Bool) (j : Int) (T0 q l arrival : Na
   rw [hpulse t] at h
   exact h
 
-/-! ## Rooted profile chains: Local's staging proof, integrated by GPT
+/-! ## Rooted periodic profile chains
 
 The common Child/Periodic predicates are reused. Finiteness is on length2q Boolean codes, never on the
 infinite Nat-function carrier. The bound2^(q+q) simply retains the kit pigeonhole's existing output;
@@ -556,7 +556,7 @@ theorem rooted_chain_returns_bounded {q : Nat} (hq : 0 < q) (w : Nat → Nat →
   rw [Nat.sub_self] at e
   exact ⟨j - i, by omega, by omega, fun t => by rw [← e]; exact h0 t⟩
 
-/-- Qualitative rooted return, retaining the historical statement. -/
+/-- A chain starting white reaches another white profile. -/
 theorem rooted_chain_returns {q : Nat} (hq : 0 < q) (w : Nat → Nat → Bool)
     (hper : ∀ k, Periodic q (w k)) (h0 : ∀ t, w 0 t = false)
     (hchild : ∀ k, Child (· + 1) (w k) (w (k+1)) (w (k+2))) :

@@ -1789,3 +1789,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2052: actual-kit Rule30TemporalProfiles catalog draft adds generic indexed Child, explicit onset window and official evol/D weight/debt instantiations. L1087 carries/validates old standalone base; new wrapper uncompiled. Joint posting owner Local, GPT final reader; no compiler installation launched.
 
 - GC2054: [joint temporal-profile essay](reports/wolfram-agents/submissions/pulse-profiles/essay.md) drafted for Local read/assembly; L1090 carries integrated module and reports checker pass after official import, now retained. Live8131b1 Lean Verified, public Lean byte-identical to retained source; remaining delivery backlog open.
+
+- GC2055: L1091 assembled temporal-profile proof bodies match; canonical provenance/abstract/linter fixes prepared for Local regeneration. Qualitative walk consequence retained; bounded walk inference needs a finite-prefix argument.
+- GC2056: [general-arc formal route](reports/wolfram-agents/GENERAL-ARC-FORMAL-ROUTE.md) supplies a determinant-spacing PROOF-SKETCH and exact pinned API map; avoids best approximation with sufficient digit threshold >2^(r+1)+1. Stronger carried theorem unchanged; new read/formal bridges pending.
