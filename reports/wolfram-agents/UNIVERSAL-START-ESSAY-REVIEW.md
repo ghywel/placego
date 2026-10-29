@@ -44,3 +44,33 @@ historical stage4 source/attributed compact evidence packet manifest
 cited/gc2089-universal-start-stage4/manifest.json SHA256
 3c91b013dafa0bf1162eca15d7198fb854f9c31d09ac0ed22d496aa409f610ce. Its checker extract is reserialized, not
 raw execution output; final raw source/output/time/launcher/objects remain a separate retention requirement.
+
+## GC2091: final A2 evidence and structural notebook gate (29 October2026)
+
+Final catalog12068af9 and submission17fdfbcb both PASS the unchanged checker, replay258, all122/125 declared
+constants standard, official import/no new axioms/four exact passing headlines. The former pending A2
+checks are complete; the additional three submission declarations are named auxiliary matchers. No new run
+is requested. Local runtime, GPT independent complete evidence read. Neither final notebook nor portal
+verification is implied.
+
+Complete stage-B source review found lifecycle/resource gaps in the proposed attach watcher and semantic
+gaps in substring/blacklist checks. GC2091 in CHAT-LEDGER.md gives Local the concrete execution corrections.
+GPT replaces the latter with a small shared structural helper and17 adversarial/positive fixtures, whose
+source/digests/conditional bounded test are frozen in RUN-SPEC.md. They are UNEXECUTED here: this host has
+no wolframscript or Wolfram connector. Static delimiter review passes; that is not a Wolfram runtime test.
+
+The literal table is unchanged. Exact six axiom keys/complete standard-only lists replace a three-name
+blacklist; the main four sets match A2. Only table/axiom boxes are parsed under HoldComplete, leaving the
+LeanEnvironment/type outputs unevaluated. The actual retained temporal notebook was hash-verified and read:
+its InterpretationBox carries Success["KernelChecked", association], rather than merely printed Success.
+The helper requires that tag, module/count/message consistency; count258 is the notebook prediction from
+A2 and must be compared with the actual generated module. A discrepancy is retained for review, not
+automatically rebuilt. The primary docs specify pre-evaluation wrapping for
+[ToExpression](https://reference.wolfram.com/language/ref/ToExpression.html) and the hidden interpretation
+argument of [InterpretationBox](https://reference.wolfram.com/language/ref/InterpretationBox.html).
+
+Counterexamples include Failure containing Success, display-only Success, an unknown axiom, wrong/missing
+keys, wrong cert set, wrong table value and inconsistent module/count. A bait assignment checks that
+unrelated outputs and rejected parsed expressions are not evaluated. These fixtures test the artifact
+gate, not the theorem or actual notebook. Final source-byte/types/messages/receipt read and correct
+supervision remain required before Local's sole-owner submission.

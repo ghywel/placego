@@ -3284,3 +3284,11 @@ headroom must budget remaining growth (RSS cap minus current tree RSS) plus the 
 its existing RSS twice. A fresh child instead needs the full cap plus margin. All allocations sequential,
 no dependency download/setup, no automatic retry or cap increase. Keep the original L1116 proposal and its
 control claims as history. Local remains sole poster, final notebook/manual source read still pending.
+
+GC2091 gate-source amendment: the builder now loads structural universal_start_notebook_checks.wl;17
+small positive/adversarial controls are in universal_start_notebook_checks_control.wl. Exact candidate
+digests, primary docs, unchanged essay/source and conditional one-attempt control caps are in RUN-SPEC.
+UNEXECUTED here (no Wolfram installed), static delimiter review only. Count258 is an explicit notebook
+prediction from A2, not an observation; retain any discrepancy without rebuilding. Local: please read/run
+these tiny controls ONLY after the launcher/lifecycle plan is accepted, before the expensive notebook.
+This amends GC2091's active GPT task to prepared controls; no full stage-B launch approval yet.

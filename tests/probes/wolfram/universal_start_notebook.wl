@@ -12,13 +12,18 @@
      * the count of Output cells (predicted 6), the count of Message cells (predicted 0), and no $Failed in any output;
      * the illustration grid, rebuilt from its boxes, equals the retained corrected table row for row
        (receipts/illustration-mcp.md, evaluation 3);
-     * the axiom output names no sorryAx, ofReduceBool or trustCompiler, and names propext;
-     * the KernelCheck output contains "Success".
+     * all six exact axiom keys have complete standard-only lists, with the four main sets matching A2;
+     * the KernelCheck InterpretationBox carries Success["KernelChecked", ...], with consistent module/count.
+   GC2091 replaces the original substring/blacklist checks with universal_start_notebook_checks.wl.
+   Its small non-building fixtures MUST pass before a full stage, under a separately accepted supervisor.
    It writes each Output cell's InputForm with a digest, the message packet, a message-name tally and summary.json to
    usOut, prints RESULT OK or RESULT FAIL <reasons>, and touches usOut/DONE last. *)
 
 usReasons = {};
 usNote[why_] := AppendTo[usReasons, why];
+usChecksPath = FileNameJoin[{DirectoryName[$InputFileName], "universal_start_notebook_checks.wl"}];
+usChecksLoad = Quiet[Check[Get[usChecksPath], $Failed]];
+If[usChecksLoad === $Failed, usNote["output check source did not load"]];
 If[FileHash[usEssay, "SHA256", "HexString"] =!= "01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0",
   usNote["essay digest"]];
 If[FileExistsQ[usNotebook], usNote["notebook path exists"]];
@@ -53,23 +58,13 @@ If[FileExistsQ[usNotebook],
   usDigests = Table[
     Export[FileNameJoin[{usOut, "cell-" <> IntegerString[i, 10, 2] <> ".txt"}], usStrings[[i]], "Text"];
     Hash[usStrings[[i]], "SHA256", "HexString"], {i, Length[usStrings]}];
-  usExpected = {
-    {"seed bits s0 s1 ...", "m", "periods of D1..Dm", "periods of D(m+1)..D(m+7)"},
-    {"1", 2, {2, 2}, {4, 8, 8, 16, 32, 32, 64}},
-    {"10010010001", 2, {2, 2}, {4, 8, 8, 16, 32, 32, 64}},
-    {"10101000011", 6, {2, 2, 2, 2, 2, 2}, {4, 8, 8, 16, 32, 32, 32}},
-    {"10011101011", 2, {2, 2}, {4, 8, 8, 16, 32, 32, 32}},
-    {"10010111100", 2, {2, 2}, {4, 8, 8, 16, 32, 32, 32}},
-    {"11010011100", 5, {2, 2, 2, 2, 2}, {4, 8, 8, 16, 32, 32, 32}},
-    {"11011001101", 4, {2, 2, 2, 2}, {4, 8, 8, 16, 32, 32, 32}}};
-  usGrid = Quiet[Cases[ToExpression /@ usOuts, Grid[rows_, ___] :> rows, Infinity]];
-  usGridOK = usGrid =!= {} && First[usGrid] === usExpected;
+  usChecks = usNotebookOutputChecks[usOuts];
+  usGridOK = TrueQ[usChecks["grid_ok"]];
   If[!usGridOK, usNote["illustration grid differs from the retained table"]];
-  usAxiomCell = SelectFirst[usStrings, StringContainsQ[#, "propext"] &, ""];
-  usAxiomsOK = usAxiomCell =!= "" && StringFreeQ[usAxiomCell, "sorryAx" | "ofReduceBool" | "trustCompiler"];
+  usAxiomsOK = TrueQ[usChecks["axioms_ok"]];
   If[!usAxiomsOK, usNote["axiom output missing or nonstandard"]];
-  usKernelOK = StringContainsQ[Last[usStrings, ""], "Success"];
-  If[!usKernelOK, usNote["KernelCheck output lacks Success"]];
+  usKernelOK = TrueQ[usChecks["kernelcheck_ok"]];
+  If[!usKernelOK, usNote["KernelCheck object/tag/module/count mismatch"]];
 ];
 
 usNames = If[ValueQ[usMessages],
@@ -78,6 +73,7 @@ usPrinted = If[ValueQ[usMessages], Count[usMessages, Hold[_, True]], 0];
 If[ValueQ[usMessages], Put[usMessages, FileNameJoin[{usOut, "messages.m"}]]];
 Export[FileNameJoin[{usOut, "summary.json"}], <|
   "essay_sha256" -> FileHash[usEssay, "SHA256", "HexString"],
+  "output_checks_sha256" -> If[FileExistsQ[usChecksPath], FileHash[usChecksPath, "SHA256", "HexString"], Null],
   "resource" -> If[ValueQ[usProvenance], usProvenance, Null],
   "build_seconds" -> If[ValueQ[usTiming], Round[First[usTiming], 0.1], Null],
   "notebook_sha256" -> If[FileExistsQ[usNotebook], FileHash[usNotebook, "SHA256", "HexString"], Null],
@@ -89,6 +85,7 @@ Export[FileNameJoin[{usOut, "summary.json"}], <|
   "handler_events_printed" -> usPrinted,
   "handler_tally" -> (Rule @@@ SortBy[usNames, -Last[#] &]),
   "grid_ok" -> TrueQ[usGridOK], "axioms_ok" -> TrueQ[usAxiomsOK], "kernelcheck_ok" -> TrueQ[usKernelOK],
+  "kernelcheck_data" -> If[ValueQ[usChecks], usChecks["kernelcheck_data"], Null],
   "kernel_pid" -> $ProcessID,
   "reasons" -> usReasons|>, "JSON"];
 Print[If[usReasons === {}, "RESULT OK", "RESULT FAIL " <> StringRiffle[usReasons, "; "]]];

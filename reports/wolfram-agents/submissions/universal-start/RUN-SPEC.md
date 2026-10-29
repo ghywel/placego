@@ -336,3 +336,44 @@ be pushed first. Final notebook and portal statuses remain separate. This amendm
 `01449e0ca0062b00b84a04a5401ac7c04176796e78ee6c4fb96160d065f148a0`. Its embed of the final submission form
 17fdfbcb… is unchanged and byte-identical, and it is still exactly the prose minus the private note, with the
 module substituted. The builder now pins that digest, and only that line changed (builder sha256 43ce9d3eb5fa5d1d…).
+
+## GC2091 stage-B output-gate amendment (prepared, not executed)
+
+This supersedes L1116's substring/blacklist gates; it does NOT approve its original kernel watcher or start B.
+Lean source17fdfbcb and essay01449e0c remain unchanged. Frozen candidate tooling:
+
+- universal_start_notebook.wl SHA256 993979e9222e2a28e3d575cf27b2528088e199c2dc93fa6e4f9348a4f98e720f;
+- universal_start_notebook_checks.wl SHA256 1b9606a1b34971d24ea5d3cb8df2221a8abc9998e4a5cc7fd73b019f442254b9;
+- universal_start_notebook_checks_control.wl SHA256 a800e230b413da7d7ad3f2d7b4fce3631b0521538cca1b888fdbeea2833c8350.
+
+**Record searched:** complete L1116 source, W1A/W7/run_capped lifecycle code, both final A2 checker objects,
+retained temporal notebook cited/gc2062-temporal-delivery/essay.nb (verified SHA256
+e413c98aa3adb3631d67465dcf9d06f69d599c063b00b55c2d3dda3bf25281ee), official ToExpression/InterpretationBox
+documentation (linked in UNIVERSAL-START-ESSAY-REVIEW.md). This is validation engineering, not a novelty claim.
+
+The grid is output1, axiom association output5, KernelCheck output6. Only1/5 are parsed, under HoldComplete.
+Exact grid values and six axiom keys are required, all complete lists standard-only; cert's set is exactly
+propext, the main three exactly Classical.choice/Quot.sound/propext, matching A2. Helpers may use any subset
+of the same standard whitelist. KernelCheck is read from its actual InterpretationBox interpretation,
+requiring Success["KernelChecked", ...], a nonempty LeanLinkTmp module name, declaration count258, matching
+MessageParameters and exact message template. The count258 is a PREDICTION from A2, not an observed notebook
+result. If LeanLink's generated module differs, preserve actual output/count/source for interpretation; no
+automatic rerun or silent gate weakening. The six printed types and actual generated source still require
+manual final read. No gate replaces the unchanged Lean checker or proves source identity by itself.
+
+**Small controls before any full build:** one supervised fresh-kernel attempt on the control WL source,
+with no LeanLink/MarkdownToNotebook/resource/dependency setup. Prediction:17 named true results and
+UNIVERSAL_START_OUTPUT_CONTROLS_PASS; no bait assignment evaluates, no Lean child. Counterfactual: any
+false/missing result, diagnostic, timeout, pressure/monitor/cleanup stop or source mismatch retains failure
+and ends the stage. Source repair would need a new diagnostic-driven freeze, not an automatic rerun.
+Proposed control envelope:60s stage wall,30s CPU per process,2048MiB tree RSS,3072MiB launch free+inactive
+(or remaining-growth-plus1024MiB for an already started owned fresh kernel),1024MiB ongoing headroom,
+256MiB swap growth,1MiB/file,8MiB aggregate output/logs,one kernel/no Lean/other job. This attempt is
+conditional on an accepted owned-kernel launcher/cleanup and all actual writable artifact roots being
+identified; it is not permission to run under the rejected attach watcher. Retain actual applied limits and
+process ownership, full output and exit/cleanup receipt. No equivalent kernel is available on GPT's host:
+only static/delimiter review is completed here; fixtures are explicitly UNEXECUTED.
+
+The substantial B attempt still needs Local's concrete launcher/supervision source and complete stage-wide
+CPU/output/disk/concurrency bounds plus lifecycle controls. Source/caps must be pushed and reviewed first.
+The old L1116 watcher and control claims remain historical, not accepted supervision.
