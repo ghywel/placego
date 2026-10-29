@@ -1,0 +1,415 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 600,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 6
+ },
+ "start_utc": "2026-10-29T06:46:15Z",
+ "end_utc": "2026-10-29T06:46:30Z",
+ "gate": {
+  "free_inactive_mib": 6670,
+  "swap_used_mib": 1630.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 14.58,
+ "maxima": {
+  "rss_kib": 3378336,
+  "procs": 4,
+  "disk_bytes": 2762954,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5968
+ },
+ "cleanup": null,
+ "samples_kept": [
+  [
+   0.5,
+   64736,
+   6635,
+   0.0,
+   0
+  ],
+  [
+   1.0,
+   661664,
+   6512,
+   0.0,
+   0
+  ],
+  [
+   1.6,
+   1080848,
+   6451,
+   0.0,
+   65026
+  ],
+  [
+   2.1,
+   914320,
+   6401,
+   0.0,
+   508293
+  ],
+  [
+   2.6,
+   2115744,
+   6314,
+   0.0,
+   508293
+  ],
+  [
+   3.1,
+   849920,
+   6418,
+   0.0,
+   824999
+  ],
+  [
+   3.6,
+   2095296,
+   6316,
+   0.0,
+   824999
+  ],
+  [
+   4.2,
+   911632,
+   6397,
+   0.0,
+   1084558
+  ],
+  [
+   4.7,
+   2128640,
+   6347,
+   0.0,
+   1084558
+  ],
+  [
+   5.2,
+   738672,
+   6497,
+   0.0,
+   1637723
+  ],
+  [
+   5.7,
+   1198864,
+   6294,
+   0.0,
+   1637723
+  ],
+  [
+   6.2,
+   3050592,
+   6218,
+   0.0,
+   1637723
+  ],
+  [
+   6.8,
+   788416,
+   6462,
+   0.0,
+   1856750
+  ],
+  [
+   7.3,
+   1951888,
+   6304,
+   0.0,
+   1856750
+  ],
+  [
+   7.8,
+   3117568,
+   6214,
+   0.0,
+   1856750
+  ],
+  [
+   8.3,
+   823792,
+   6464,
+   0.0,
+   2090420
+  ],
+  [
+   8.8,
+   955536,
+   6387,
+   0.0,
+   2382796
+  ],
+  [
+   9.4,
+   2632704,
+   6267,
+   0.0,
+   2382796
+  ],
+  [
+   9.9,
+   784080,
+   6441,
+   0.0,
+   2495100
+  ],
+  [
+   10.4,
+   2065296,
+   6312,
+   0.0,
+   2495100
+  ],
+  [
+   10.9,
+   847504,
+   6410,
+   0.0,
+   2719853
+  ],
+  [
+   11.4,
+   2764544,
+   6270,
+   0.0,
+   2719853
+  ],
+  [
+   12.0,
+   3165312,
+   6191,
+   0.0,
+   2719853
+  ],
+  [
+   12.5,
+   1307088,
+   6308,
+   0.0,
+   2761076
+  ],
+  [
+   13.0,
+   2001616,
+   5968,
+   0.0,
+   2761076
+  ],
+  [
+   13.5,
+   3378336,
+   6057,
+   0.0,
+   2761076
+  ],
+  [
+   14.0,
+   678688,
+   6557,
+   0.0,
+   2762954
+  ]
+ ],
+ "cmd": "from the pipeline kit root, elan tools on PATH: run_capped.py --track-tree --max-procs 6 ... -- lake env sh tests/probes/wolfram/check_arc_integration.sh (4329eead...) reports/wolfram-agents/submissions/arc-codes",
+ "stdout": [
+  "ARC_INTEGRATION_SOURCES_OK",
+  "'ArcBreakBounds.label_collision' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakBounds.break_envelope' depends on axioms: [propext, Quot.sound]",
+  "'ArcBreakBounds.spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakBounds.next_denominator_covers_window' depends on axioms: [propext, Quot.sound]",
+  "'ArcBreakSequence.future_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.sequence_break' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.sequence_strict' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcBreakSequence.labelled_spacing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.spacing_of_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.no_short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.same_interval_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.short_return' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcCover.no_repeat_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.crossing' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.break_has_lift' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.lift_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcStepCode.no_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcTailBounds.shift_repeat_bound' depends on axioms: [propext, Quot.sound]",
+  "'ArcTailBounds.eventual_transfer' depends on axioms: [propext, Quot.sound]",
+  "'ArcTailBounds.uniform_eventual_transfer' depends on axioms: [propext, Quot.sound]",
+  "'ArcTailBounds.finite_single_hits_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcTailBounds.finite_single_hits_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.continuant_bezout' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcDeterminant.continuant_error_lt_next' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.denominator_next' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.previous_margin' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.next_covers_window' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.no_repeat_at_large_digit' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.repeat_bound_fails' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRotation.no_uniform_repeat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRule30Bridge.repeat_bound' depends on axioms: [propext, Quot.sound]",
+  "'ArcEndpoint.hit_unique' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcEndpoint.eventual_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcIntervalCode.member_shift' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcIntervalCode.member_constant' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcIntervalCode.code' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRule30Exclusion.no_visible_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRule30Exclusion.no_eventual_visible_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRule30Exclusion.no_visible_endpoint_variant' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "'ArcRule30Exclusion.no_visible_interval_union' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead",
+  "",
+  "Note: The updated constant has a different type:",
+  "  Std.HashMap Name ConstantInfo \u2192 Kernel.Environment \u2192 IO Kernel.Environment",
+  "instead of",
+  "  Std.HashMap Name ConstantInfo \u2192 Environment \u2192 IO Environment",
+  "",
+  "Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "{\"claim\":\"partial\",\"declared\":[{\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_eventual_visible_rotation\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_endpoint_variant\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_interval_union\",\"standardAxioms\":true},{\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_rotation\",\"standardAxioms\":true}],\"headlines\":[{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_rotation\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_eventual_visible_rotation\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_endpoint_variant\",\"ok\":true,\"problems\":[],\"typeMatches\":true},{\"axioms\":[\"propext\",\"Classical.choice\",\"Quot.sound\"],\"found\":true,\"kind\":\"theorem\",\"name\":\"ArcRule30Exclusion.no_visible_interval_union\",\"ok\":true,\"problems\":[],\"typeMatches\":true}],\"importsStatements\":true,\"module\":\"ArcRule30ExclusionDraft\",\"newAxioms\":[],\"official\":[],\"reasons\":[],\"replay\":{\"constants\":4,\"ok\":true},\"verdict\":\"pass\",\"verifiedTargets\":[]}",
+  "ARC_FULL_INTEGRATION_PASS"
+ ],
+ "integration_check": {
+  "status": "PASS",
+  "headline_count": 40,
+  "axioms": {
+   "ArcBreakBounds.label_collision": "propext, Classical.choice, Quot.sound",
+   "ArcBreakBounds.break_envelope": "propext, Quot.sound",
+   "ArcBreakBounds.spacing_bound": "propext, Classical.choice, Quot.sound",
+   "ArcBreakBounds.next_denominator_covers_window": "propext, Quot.sound",
+   "ArcBreakSequence.future_break": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.sequence_break": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.sequence_strict": "propext, Classical.choice, Quot.sound",
+   "ArcBreakSequence.labelled_spacing_bound": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.spacing_of_bezout": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.no_short_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.same_interval_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.short_return": "propext, Classical.choice, Quot.sound",
+   "ArcCover.no_repeat_of_cover": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.crossing": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.break_has_lift": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.lift_cover": "propext, Classical.choice, Quot.sound",
+   "ArcStepCode.no_repeat_bound": "propext, Classical.choice, Quot.sound",
+   "ArcTailBounds.shift_repeat_bound": "propext, Quot.sound",
+   "ArcTailBounds.eventual_transfer": "propext, Quot.sound",
+   "ArcTailBounds.uniform_eventual_transfer": "propext, Quot.sound",
+   "ArcTailBounds.finite_single_hits_cutoff": "propext, Classical.choice, Quot.sound",
+   "ArcTailBounds.finite_single_hits_eventual": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.continuant_bezout": "propext, Classical.choice, Quot.sound",
+   "ArcDeterminant.continuant_error_lt_next": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.denominator_next": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.previous_margin": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.next_covers_window": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.no_repeat_at_large_digit": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.repeat_bound_fails": "propext, Classical.choice, Quot.sound",
+   "ArcRotation.no_uniform_repeat_bound": "propext, Classical.choice, Quot.sound",
+   "ArcRule30Bridge.repeat_bound": "propext, Quot.sound",
+   "ArcEndpoint.hit_unique": "propext, Classical.choice, Quot.sound",
+   "ArcEndpoint.eventual_agreement": "propext, Classical.choice, Quot.sound",
+   "ArcIntervalCode.member_shift": "propext, Classical.choice, Quot.sound",
+   "ArcIntervalCode.member_constant": "propext, Classical.choice, Quot.sound",
+   "ArcIntervalCode.code": "propext, Classical.choice, Quot.sound",
+   "ArcRule30Exclusion.no_visible_rotation": "propext, Classical.choice, Quot.sound",
+   "ArcRule30Exclusion.no_eventual_visible_rotation": "propext, Classical.choice, Quot.sound",
+   "ArcRule30Exclusion.no_visible_endpoint_variant": "propext, Classical.choice, Quot.sound",
+   "ArcRule30Exclusion.no_visible_interval_union": "propext, Classical.choice, Quot.sound"
+  },
+  "checker": {
+   "claim": "partial",
+   "declared": [
+    {
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_eventual_visible_rotation",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_endpoint_variant",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_interval_union",
+     "standardAxioms": true
+    },
+    {
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_rotation",
+     "standardAxioms": true
+    }
+   ],
+   "headlines": [
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_rotation",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_eventual_visible_rotation",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_endpoint_variant",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    },
+    {
+     "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "found": true,
+     "kind": "theorem",
+     "name": "ArcRule30Exclusion.no_visible_interval_union",
+     "ok": true,
+     "problems": [],
+     "typeMatches": true
+    }
+   ],
+   "importsStatements": true,
+   "module": "ArcRule30ExclusionDraft",
+   "newAxioms": [],
+   "official": [],
+   "reasons": [],
+   "replay": {
+    "constants": 4,
+    "ok": true
+   },
+   "verdict": "pass",
+   "verifiedTargets": []
+  },
+  "scope": "actual normalized finite-left Rule30, irrational rotation, explicit large-digit condition; not prize/all-irrational"
+ },
+ "integration_check_sha256": "cdc7fff93d04335d1266b35cbb634d3ee7cfdd42614f97525ac5324ea7f4c8fa",
+ "launcher_sha256": "ee9fac9fca54ff57947a52fa8882bbbd289a961586b41262ea488b7b894507f4"
+}

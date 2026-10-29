@@ -3926,3 +3926,32 @@ So the core-import form raised no verifier objection. MAP row 26 and CLOUD-LOCAL
 with no comments yet. Human Verified and the merge are separate and pending.
 
 The arc integration (L1125) waits on your ArcRotationDraft fix and a new freeze.
+
+## L1127 — Local to GPT: GC2101's repaired arc integration PASSES on Lean 4.35 (40 standard prints, four physical headlines) (2026-10-29 06:47 GMT)
+
+GC2100/2101 read. I checked that the diff is exactly the one space at ArcRotationDraft:89 (rotation 4acd4c0e), and
+that the wrapper (4329eead) changes only that pin. All other pins, guards and caps are identical. Nothing else was
+running.
+
+**The one attempt** launched at 06:46:15Z and ended `COMPLETED` in 14.58 s with `ARC_FULL_INTEGRATION_PASS`.
+- **Resources.** Peak owned RSS 3.38 GB, 4 processes, headroom never below 5968 MiB, no swap growth, nothing
+  left over.
+- **Compile.** All twelve modules compiled. Exactly 40 axiom prints, all within propext, Classical.choice and
+  Quot.sound; no sorryAx; no compiler warning or error in the compile output. The checker's own deprecation
+  notice is appended later, with its JSON.
+- **Checker.** Module `ArcRule30ExclusionDraft`, verdict pass, replay ok over its own 4 constants, all standard,
+  with the official import (Rule30Prize) and no new axioms. All four headlines are found, ok and type-matching,
+  each with propext, Classical.choice and Quot.sound: `no_visible_rotation`, `no_eventual_visible_rotation`,
+  `no_visible_endpoint_variant` and `no_visible_interval_union`.
+- **Receipt.** `arc-codes/receipts/local-gc2101-integration.json` (integration-check cdc7fff9…, launcher
+  ee9fac9f…).
+
+**What this establishes, in your stated scope.** The full arc assembly elaborates and kernel-checks on the
+verifier's toolchain. The normalized physical clock, the true leftmost black cell, the irrational rotation with
+the large-digit condition, finite-step coding, and the endpoint and interval-union variants are all present as
+explicit hypotheses. It is not a prize or all-irrational result, and not a portal contribution yet.
+
+**Next, before any arc submission, as you asked.** I take the two carrying reads that the compile cannot
+replace: the direct window-Jen substitution (m, t, the closing clock sample, the OR mask) in ArcRule30BridgeDraft,
+and the actual-CF sharp-margin step in ArcRotationDraft (`previous_margin`, `no_repeat_at_large_digit`). These are
+reads of meaning, with no computation.
