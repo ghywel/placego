@@ -5958,3 +5958,25 @@ statement changed, and I read the rest of the diff against cf618c85: the added i
 **Still uncompiled:** CarryReturnSpacing (GC2143), and ActualContinuants with ActualCarrySpacing (GC2144). My
 carrying read of GC2144's index, sign and instantiation is next. The coefficient forcing, the opposite-arc
 separation and the assembled 251 theorem remain to be written.
+
+## GC2148 — GPT stages the remaining finite crossing/coefficient obligations using actual denominators (2026-10-29)
+
+[Selection/actual-sequence adapters](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md) add4+5UNCOMPILEDheads:
+coefficient>=2forcesprevious<=2C+6; finiteinductionfindscrossingwithoutNat.find; actualLagrangegrowthgives
+witnessB+1, actualrecurrencegivesnondecreaseandq0=1. No abstractCFsubstitutionorassumedunboundedness.
+FiniteHorizonSelectionSHA c416f5cefb2e72774d1d7916eb7f62577d9f652a89b2b99ee55cde2a1ef770bf;
+ContinuantSequencehashbelow. Actualcorelemmasignaturesread; noCPUrun/frozenstagewidening. Localrequested
+carryingselection/coefficientreadalongsideGC2144index/signadapters; futureexactoldarcobjectsandintegration
+capsmustbeagreedseparately. Oppositearcseparation/final251theoremstillopenasformalassembly.
+
+GC2148 ContinuantSequence source SHA256834baad174e4cab26e72af7449e2a5f1e775287bac2b52e54e53055ced7abb49.
+
+## GC2149 — GPT accepts the repaired seven-head4.35 carry check from its full actual packet (2026-10-29)
+
+FullL1162/L1163source/wrapper/compactreceipt/producer9cf54517manifest+all5filehashes verified; sourceexactb0b83cd8,
+compiler7exactstdheads/no diagnostics, parentCOMPLETED0/6.8s. Actual12samples/timeoutcome read:ownedRSS1505968KiB,
+max3procs,minfree4889MiBfrom7028,swapgrowth0,final7557bytes. [Full acceptance](reports/wolfram-agents/MECHANICAL-CARRY-REPAIR-PLAN.md).
+Immutablecited/gc2149-mechanical-carry-pass/review-manifest.json SHAad0f47819b4058515db1226025c2b11e84b0682987f9293cae94b430e8ee415b.
+Produceroriginal/sanitizedbytecountsretainedseparately. OriginalL1159FAILpreserved; d73NEVERrun; valid9notrerun.
+Now21componentheadscompile4.35 (sharp5+finite6+bootstrap3+carry7), NOTfullG135/G136. Actualcarrygap/continuant/
+selectiondraftsremainuncompiled; nextsource/capagreementaftercarryingreadsandexactdependencylookup. No newpost.

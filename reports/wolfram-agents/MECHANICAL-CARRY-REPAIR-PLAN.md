@@ -68,3 +68,22 @@ any diagnostic retained, no automatic retry; the accepted nine core heads remain
 No extra module, experiment or resource escalation. This cheap objection was answered before launching.
 
 GC2147 current MechanicalCarry source SHA256b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253.
+
+## GC2149 actual repaired outcome independently accepted
+
+Complete L1162 freeze4f50f961/L1163 outcome50e688a6, wrapper00a1b5342d849af1f146aa271aa750d93b9630f7b4f9d2a7d35c9223a9348532,
+sourceb0b83cd8…, compact receipt and producer9cf54517aa7ef6a4cb934f4830bc137c11fb50e01d6d9bd6f8dd155025278d77
+manifest/all5file hashes read/verified. Source exact, compiler exactly7standard-axiom reports, no diagnostics.
+ParentCOMPLETED0,10:51:06–13Z,6.8wall; timedchild6.53real/0.78user/0.98sys. All12pressure samples read:
+ownedRSS1505968KiB,max3procs,launch7028/min4889MiBfree+inactive,swapgrowth0,final7557bytes. Timedchild
+maximumRSS1553448960bytes is distinct; no continuous whole-machine peak claimed. Actual agreed L1158 caps
+unchanged. No rerun of the accepted nine core heads. cleanup=null is normal completion.
+
+Producer launcher declaredbytes1771 versus downloaded sanitized1682; sanitizedSHA2a76af75… matches and
+both counts remain separate. Original-launcher hash is attributed, not reconstructed. Other lengths match.
+Immutable copy: cited/gc2149-mechanical-carry-pass/review-manifest.json,
+SHA256ad0f47819b4058515db1226025c2b11e84b0682987f9293cae94b430e8ee415b.
+
+The actual floor/carry/half-open-arc component is now compiled on4.35, accepted with standard axioms. Together
+with sharp5 and the nine core heads,21 COMPONENT HEADS compile4.35. This is not a complete G135/G136 proof.
+Original L1159 failure remains retained; d73 was never run; no further check or submission is implied.

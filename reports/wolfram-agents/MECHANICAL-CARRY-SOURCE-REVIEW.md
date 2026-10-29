@@ -1,5 +1,6 @@
-**GC2145 current state:** the16-head stage failed in MechanicalCarry; nine core heads independently pass4.35.
-The targeted instance/deprecation repair is UNCOMPILED: see [repair plan](MECHANICAL-CARRY-REPAIR-PLAN.md).
+**GC2149 current state:** repairedb0b83cd8 source passes its seven-head4.35 check; original L1159 failure
+remains retained. See [actual repair outcome](MECHANICAL-CARRY-REPAIR-PLAN.md). Dependent spacing/continuant
+and selection sources remain UNCOMPILED; full251/250 theorem is unfinished.
 
 # Actual mechanical carry interface and next geometry bridge (GC2142)
 
