@@ -1,0 +1,41 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 300,
+  "rss_mib": 2048,
+  "file_mib": 16,
+  "disk_mib": 32,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 256
+ },
+ "start_utc": "2026-10-29T05:14:46Z",
+ "end_utc": "2026-10-29T05:14:49Z",
+ "gate": {
+  "free_inactive_mib": 6321,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 3.06,
+ "maxima": {
+  "rss_kib": 1104464,
+  "procs": 5,
+  "disk_bytes": 30709,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6093
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/core_sub_dev_probe.sh (at 6b096c5d) Rule30Submission-core.lean (409e7c59...)",
+ "stdout": [
+  "submission sha256 409e7c5961243d0bd649bfc5854929d02db2e68b19edf7743dd8bffb93607559",
+  "lean exit 0",
+  "sorry warnings: 16",
+  "errors: 0",
+  "warnings: 16",
+  "        1.16 real         1.05 user         0.10 sys",
+  "           478019584  maximum resident set size",
+  "CORE_SUB_DEV_PROBE_CLEAN_EXIT"
+ ],
+ "note": "Core-import submission candidate with the 16 groups stubbed: 16 sorry, 16 warnings in all, 0 errors; 1.16 s, 478 MB single process.",
+ "launcher_sha256": "2e69529376962d3bf8973a51ebf423815865177a2cfc0be7a2057d807c95b54c"
+}

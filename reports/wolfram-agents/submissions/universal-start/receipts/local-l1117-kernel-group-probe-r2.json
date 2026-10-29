@@ -1,0 +1,45 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 180,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 32,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256
+ },
+ "start_utc": "2026-10-29T05:13:21Z",
+ "end_utc": "2026-10-29T05:13:29Z",
+ "gate": {
+  "free_inactive_mib": 6286,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 8.24,
+ "maxima": {
+  "rss_kib": 676448,
+  "procs": 2,
+  "disk_bytes": 2849,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6066
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: WolframKernel -script tests/probes/wolfram/kernel_group_probe.wl (revision 2, at 2366c91c)",
+ "stdout": [
+  "kernel pid 89933  row {{89933, 89932, 89932, /Applications/Wolfram Engine.app/Contents/MacOS/WolframKernel}}",
+  "version 15..0  licence L9941-3962",
+  "LeanLink paclet {PacletObject[<|Name -> Wolfram/LeanLink, Description -> Native link between Wolfram Language and Lean 4, Creator -> Nik Murzin, License -> MIT, PublisherID -> Wolfram, Version -> 1.2.2, WolframVersion -> 14.0+, PrimaryContext -> Wolfram`LeanLink`, Categories -> {Mathematics, Logic}, Extensions -> {{Kernel, Root -> Kernel, Context -> {Wolfram`LeanLink`}, Symbols -> {Wolfram`LeanLink`ImportDOT, Wolfram`LeanLink`LeanApp, Wolfram`LeanLink`LeanBVar, Wolfram`LeanLink`LeanBuild, Wolfram`LeanLink`LeanCallGraph, Wolfram`LeanLink`LeanCompile, Wolfram`LeanLink`LeanConst, Wolfram`LeanLink`LeanConstant, Wolfram`LeanLink`LeanConstantInfo, Wolfram`LeanLink`LeanEnvironment, Wolfram`LeanLink`LeanEvaluate, Wolfram`LeanLink`LeanExport, Wolfram`LeanLink`LeanExportString, Wolfram`LeanLink`LeanExpr, Wolfram`LeanLink`LeanExprGraph, Wolfram`LeanLink`LeanFVar, Wolfram`LeanLink`LeanForall, Wolfram`LeanLink`LeanFreeEnvironment, Wolfram`LeanLink`LeanGoal, Wolfram`LeanLink`LeanImport, Wolfram`LeanLink`LeanImportString, Wolfram`LeanLink`LeanLam, Wolfram`LeanLink`LeanLet, Wolfram`LeanLink`LeanLevelIMax, Wolfram`LeanLink`LeanLevelMVar, Wolfram`LeanLink`LeanLevelMax, Wolfram`LeanLink`LeanLevelParam, Wolfram`LeanLink`LeanLevelSucc, Wolfram`LeanLink`LeanLevelZero, Wolfram`LeanLink`LeanListConstants, Wolfram`LeanLink`LeanListTheorems, Wolfram`LeanLink`LeanLitNat, Wolfram`LeanLink`LeanLitStr, Wolfram`LeanLink`LeanLoadEnvironment, Wolfram`LeanLink`LeanMVar, Wolfram`LeanLink`LeanNoValue, Wolfram`LeanLink`LeanProj, Wolfram`LeanLink`LeanSort, Wolfram`LeanLink`LeanState, Wolfram`LeanLink`LeanTactic, Wolfram`LeanLink`LeanTerm, Wolfram`LeanLink`LeanToFunction, Wolfram`LeanLink`LeanToTypeTheory, Wolfram`LeanLink`LeanTruncated, Wolfram`LeanLink`LeanValue, Wolfram`LeanLink`ProofToLean, Wolfram`LeanLink`TypeTheoryToLean}}, {Asset, Root -> Assets, Assets -> {{CodeLean, code.lean}, {Examples, Examples.lean}}}, {Documentation, Language -> English, MainPage -> Guides/LeanLink}, {LibraryLink, Root -> LibraryResources}}, Keywords -> {Lean, Lean 4, theorem prover, proof assistant, dependent types, type theory, formal verification, Mathlib}, Location -> ~/Library/WolframEngine/Paclets/Repository/Wolfram__LeanLink-1.2.2|>]}",
+  "Needs messages {}",
+  "leanlink result Shallow[LeanEnvironment[<|groupProbe -> LeanTerm[<|Name -> groupProbe, Kind -> theorem, _Handle -> 1|>], _Handle -> 1|>], 3]",
+  "messages so far {}",
+  "leanlink declaration True",
+  "descendants (pid ppid pgid comm):",
+  "  89933 89932 89932 /Applications/Wolfram Engine.app/Contents/MacOS/WolframKernel",
+  "  89948 89933 89948 /bin/sleep",
+  "  89961 89933 89961 /bin/ps",
+  "GROUP_PROBE_ESCAPED {{89948, 89933, 89948, /bin/sleep}, {89961, 89933, 89961, /bin/ps}}"
+ ],
+ "note": "Licence granted; kernel in run_capped's group; LeanImportString built the trivial import (LeanEnvironment, groupProbe TypeForm True, no messages); no Lean child process appeared (LeanLink runs Lean in-process); the probe's own StartProcess (sleep) and RunProcess (ps) children again took their own process groups. Group peak 676 MB.",
+ "launcher_sha256": "fdfc47e9f253a5cdaeec73364f698619b622ab65c32bd4f2bb2cef3dd01e3a86"
+}
