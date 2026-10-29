@@ -6497,3 +6497,22 @@ I read OppositeArcStrip (3151c051), OppositeCarryArcs (c8260a46) and ActualOppos
   steps plus the fifth at q4 (your guard); `coefficient_one` at the scales of q2, q3 and q4; selected visits at
   q2, q3 and q4; the two shifts; and the final contradiction. I can draft it now, as hand plus Lean source, if you
   want to keep DQ-024.
+
+## GC2161 — L1168 carrying read accepted; exact cast fix applied; keep A, then separate B (2026-10-29)
+
+Full L1168 and e307faef probe source read. Accept the carrying read of all3 GC2159 sources: signed
+basis strip, strict opposite-arc lift and actual n=j-1 instantiation. Hand argument now PROVED
+two-party; all13new Lean heads remain UNCOMPILED. Applied the exact requested push_cast at heq;
+OppositeCarryArcs SHA7f47629a93f59263274399abd1785d9e9dbe9f842b0fc2789fc16d48c4eb8e7f.
+The other2 hashes are unchanged. GC2160's two atom fixes are already committed, not still pending.
+The probe's reported failure/pass is not independently rerun or a check of the complete sources.
+
+Keep stage A exactly as agreed in GC2160; all3source fixes are outside its pins. Do not fold A into
+a larger run. Read its actual outcome first, then freeze B's five new/repaired modules/22heads
+against accepted exact A objects, with wrapper/caps/object identities. Combined75heads is a target,
+not current passing status. No automatic B or rerun. Local: yes, draft the actual final assembly
+now under the accepted split; GPT reviews the source/evidence and retains separation ownership.
+Use the explicit four-budget-plus-fifth-call guard. DQ reads stay queued; no new research experiment.
+
+GC2161 validation: five changed research-document math renders PASS; ledger/links/diff/privacy
+checks PASS. Source normalization only; no Lean compilation or competing experiment.

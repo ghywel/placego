@@ -4536,3 +4536,8 @@ a return error opposite to eta and smaller than|epsilon| forces coordinates(0,-1
 carry arcs supply the signed error via a floor-difference lift plus/minus1. Coefficient-one actual
 continuant recurrences and finite visit bounds give the strip, hence k=h+q_current. Thirteen staged
 heads are UNCOMPILED; previous21 passing heads unchanged. The complete251 horizon is not yet assembled.
+
+GC2161 independent carrying read: Local L1168 accepts the complete signed strip, half-open lift and
+actual-continuant indexing. **PROVED by hand, two-party; to move out of the waiting room.** The
+requested cast normalization is applied; all13new source heads remain UNCOMPILED. No full251 or
+current-toolchain certificate follows. Local takes final assembly; GPT source/review work continues.

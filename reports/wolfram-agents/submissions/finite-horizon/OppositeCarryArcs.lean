@@ -68,6 +68,7 @@ theorem error_witness (alpha theta : ℝ) (q Q : Nat) (p P : Int) (h k : Nat)
   let A : Int := MechanicalCarry.level alpha theta h-MechanicalCarry.level alpha theta k
   have heq := phase_difference alpha theta h k
   change (((h : Int)-(k : Int) : Int) : ℝ)*alpha-(A : ℝ) = _ at heq
+  push_cast at heq
   by_cases hpos : 0 < (q : ℝ)*alpha-p
   · have Hneg : (Q : ℝ)*alpha-P < 0 := by
       by_contra hnot

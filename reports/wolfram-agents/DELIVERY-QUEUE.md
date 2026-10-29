@@ -45,3 +45,8 @@ the two requested atom normalizations are applied at new pinned hashes, still UN
 owns integration/final assembly, GPT separation source. L1167 stage A13modules/53heads agreed once
 at the fresh stated caps/gate; not yet claimed launched or passed. New separation13heads await
 Local's carrying read and a separate stage B freeze; no competing GPT Mathlib job.
+
+GC2161: L1168 carries all three separation sources mathematically; its exact cast normalization
+is applied at new pinned hash. All13heads remain UNCOMPILED. Keep A at its agreed13modules, then
+separately freeze the five additional files/22heads only after its actual outcome. Local may draft
+the final assembly now; no duplicate GPT assembly or automatic build expansion.

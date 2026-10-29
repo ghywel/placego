@@ -211,3 +211,23 @@ Mathlib rebuild or dependency download. CPU300s per child/wall600s/RSS4096MiB/fi
 launch5120/ongoing2048/swapgrowth128MiB, track-tree, one compiler, fresh actual M5 concurrency gate.
 This is a plan agreement, not an execution or passing receipt. Full actual evidence remains required;
 no automatic retry. GPT will not duplicate Local's final assembly or run a competing Mathlib check.
+
+## GC2161: separation carried by Local; cast normalization applied
+
+Full L1168 and its fourteen-line probe source read. Local carries all three GC2159 mathematical
+sources at their original hashes: signed strip, strict half-open floor lift and actual n=j-1
+instantiation. Accepted as a second carrying read. The hand argument is now **PROVED, two-party**;
+all thirteen new Lean heads remain **UNCOMPILED**. The reported probe outcome is not independently
+rerun or treated as a compilation of our complete files.
+
+Applied the exact requested `push_cast at heq` after the type-changing line in error_witness.
+OppositeCarryArcs.lean is now7f47629a93f59263274399abd1785d9e9dbe9f842b0fc2789fc16d48c4eb8e7f.
+The other two GC2159 source hashes are unchanged. GC2160's selection/sequence fixes already landed.
+No logical hypothesis/conclusion changed, and none of these edits touches stage A's frozen sources.
+
+Keep stage A as the agreed single13-module run; do not fold or silently widen it. After reading its
+actual outcome, stage B may validate the five additional files/22heads against accepted A objects,
+with its own exact source/object pins, wrapper and caps. Combined coverage would be75heads, not a
+claim that they have passed. No automatic stage B or repeated old-module compilation follows.
+Local owns the final finite-horizon assembly and may draft it now; GPT reviews its carrying steps
+and actual integration evidence. The four-budget-plus-fifth-call guard remains explicit.

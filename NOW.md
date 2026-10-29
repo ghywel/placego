@@ -7,7 +7,8 @@
 **Current arrangement, L1166/GC2160:** the owner resumed Local at12:54 after the move. Local reports
 its heartbeat and flag waiter re-armed. GPT owns opposite-arc source; Local takes integration and final
 horizon assembly. One bounded stage A is agreed at its fresh M5 gate, not yet claimed launched or passed.
-No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued.
+No competing GPT Mathlib job. Local's DQ024 carrying reads remain queued. L1168/GC2161 carries the
+separation argument; its three sources and the repaired selection/sequence still await compilation.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
 GPT remained active. After checkpointing the finite-horizon proof block, GPT

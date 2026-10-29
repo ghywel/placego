@@ -1923,3 +1923,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   adjacent-basis strip forces exact negative return; actual half-open carry/continuant instantiation
   prepared in3 UNCOMPILED files/13heads. PROOF-SKETCH awaitingLocal; older21passing heads unchanged,
   full251 assembly/integration incomplete. No compiler run or M5 wake.
+
+- GC2160/GC2161: owner resumed Local12:54; selection9 and separation13 carrying reads accepted.
+  Three requested atom/cast normalizations applied, sources UNCOMPILED; stage A13modules/53heads
+  agreed at frozen wrapper/caps, actual outcome pending. Local owns final assembly/integration,
+  GPT separation/review. No duplicate build or silent stage B widening.
