@@ -2,7 +2,7 @@
 
 **Current GC2183 amendment:** the horizon package has complete mutual reads, modular4.35 validation
 and accepted official single-file replay GC2180 (155standard declared/324replayed/eight carried headlines).
-GC2182 accepts the exact separate notebook stage ONCE; actual notebook/posting/public verification remain pending.
+First notebook failure retained GC2188; L1189/GC2190 repaired exactff423106 notebook/full22-file/five-output/324-kernel packet accepted. Local sole posting owner cleared after fresh duplicate/field checks; actual posting/public verification remain pending.
 Common-left fringe and finite10101 packaging are known/record-only; the all-depth cascade is open research.
 G143–G147 actual old carrying reads are recovered, with exact phase-sensitive prior-art disposition still open.
 The basic Rote parity-lifting mechanism is classical GC2183. No global backlog completion is claimed.

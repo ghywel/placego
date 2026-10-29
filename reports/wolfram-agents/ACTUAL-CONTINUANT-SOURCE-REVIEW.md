@@ -671,3 +671,50 @@ manually substituted output, extra official/modular/DEV replay, automatic retry 
 this stage for reassessment. Local sole runner/poster; actual repaired notebook/artifact/full enforcement review and
 portal delivery remain pending. Full tiny-probe receipts are a retention follow-up, not a reason to repeat the probes
 or block this source-backed repair.
+
+
+## GC2190: repaired native notebook and full enforcement evidence accepted for sole-Local posting
+
+Complete L1189/f7acb05d, producer0a770738a4b10b2d94ba845e3a5521a38c28a013bd7565507bcc7764c2cef47f and
+all22 copied files independently read/digest-checked; inventory's23rd entry is an uncopied4763024byte compiler
+object6594a4a5, not rebuilt by GPT. Exact native notebook252969bytes SHA256
+ff423106bd27899f0d3a5986ed7773947225123739abc76918d50b1212de6808 decodes inertly to all106307 source bytes791e45ed.
+Its actual import options include ProjectDir and IncludeInternal True. All five actual native BoxData outputs also
+match their exported receipts under inert WL serialization normalization: named/hex characters, long-string wrappers,
+whitespace, implicit numeric Times and Association notation. No notebook/proof code was executed by GPT.
+
+Manual outputs: exact9-by4 illustration grid unchanged; actual DirectoryQ True; LeanEnvironment324 distinct names,
+284theorem/37def/one inductive/recursor/constructor, containing all155 official declared constants; eight exact
+headline keys matching the carried official signatures, each with exactly Classical.choice/Quot.sound/propext,
+no Missing; actual InterpretationBox Success KernelChecked324 with matching module/template/parameters. The
+source791e45ed, essay203fd0a6, abstractd55190dc, runnerf7654266/driver154be328/checks003aab35/controls0f066b3a/
+receipt4c6301c0/supervisorc8c58b49 pins match. All20 actual controls pass before build; raw and JSON summaries agree,
+three success markers and DONE=done retained. Build24.0s,5outputs/0Messagecells/reasons empty.
+
+Actual M5 parent COMPLETED0,15:53:15–15:53:53Z,38.34s/73pressure samples, cleanup null/no leftovers. Actual launch
+6334MiB is distinct from prior6518snapshot. Owned4782320KiB (91.2% of5120MiB), max5processes/minfree5563MiB/
+zero swap, cappedroot6818052bytes; every retained sample clears the frozen stops. Child38.31real/27.10user/4.54sys,
+4820729856bytes maximum RSS; neither that nor owned tree RSS is system-wide peak. Retain the first failure GC2188;
+no extra run or weakened gate. Disk scope remains cappedroot, not all host cache writes.
+
+Full handler15104 events/none printed independently tallied:15059 General::newsym,11 LocalObject::nso,
+10 DeleteFile::fdnfnd,9 MIMETypeToFormatList::fmterr,5 FrontEndObject::notavail,4 General::openx,
+2 each ExtensionToFormatList::fmterr and OptionValue::nodef, one General::stop/LibraryFunction::overload.
+Zero Message cells does not make this a clean message log. These infrastructure/symbol events do not negate the
+actual exact source, axiom and kernel outputs. ResourceVersion None remains unavailable; UUID retained. Sanitized
+packet read; Local's scan against private identifiers is attributed, not independently repeated against unknown IDs.
+
+Both requested tiny-probe packets now fully read: manifestsb62334ed/3bcca147, three copied files each, objects
+inventory-only. Actual default hides recoded; internal exposes both empty axiom sets; both report kernel2. Both
+LEFTOVER_CLEANED/child0 with TERM and group_processes_left0, not clean COMPLETED. **Correction to L1189:** owned_seen
+is3 default and4 internal, not3 both. Limits match the preregistered stage; no probe rerun requested. This closes
+GC2188's missing full-probe receipt follow-up with the lifecycle qualifications preserved.
+
+Immutable full independent notebook/probe/evidence/scripts packet:
+cited/gc2190-horizon-notebook-pass/review-manifest.json SHA256
+42b90aeaab2d5e3db8831102ef5a0d13c270602395c177d1b3ee826964e0cc93 (37files plus manifest).
+**Final artifact accepted for Local, sole posting owner, to deliver exact ff423106/791e45ed/d55190dc**, Problem1,
+claim partial, eight carried headlines, under existing owner authorization after its planned fresh duplicate and
+field checks. No additional routine permission round, rebuild, catalogue PR or interpretation as a prize solution.
+Submission receipt/public source/notebook identity, live Lean Verified and Human Verified remain distinct pending
+external events. No unseen posting or verifier outcome accepted here.

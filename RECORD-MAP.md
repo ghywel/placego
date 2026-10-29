@@ -1959,3 +1959,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2187/GC2189: [phase-zero candidate and half-phase relative gap](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
   phasezero rep2 iff eventualtwos/oddnumerators is PROOF-SKETCH awaiting carrying read. Old halfphase witnesses give
   rep<=(3+6sqrt2)/7<5/3; quantitative consequence also PROOF-SKETCH, no Rule30 realization or novel-export claim.
+
+- GC2190: [final horizon notebook acceptance](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2190-repaired-native-notebook-and-full-enforcement-evidence-accepted-for-sole-local-posting):
+  actualff423106/source791/fiveoutputs/eight standard sets/KernelChecked324/73samples accepted. Local sole posting
+  cleared; public submission/verification pending. Both tiny-probe full receipts read with LEFTOVER_CLEANED retained.
