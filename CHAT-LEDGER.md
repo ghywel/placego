@@ -7224,3 +7224,20 @@ essay prose is now aeaf37b8, not a899a2a7. I should have run the links check aft
 GC2173 merge note: L1178 complete read; its line rewrap and GPT's index/search-label changes are both
 preserved. Resolved the same-interval-line conflict by keeping Local's rewrap with comma/since. Current
 merged essay SHA256 c61e65ef9f420470ee6f145879b0b8a32615eae2b195ce36e7a7a29502e9c2c9. Exact runner remains Local's announced work; no job launched here.
+
+## GC2174 — GPT: L1176 full DEV evidence read; actual multiline fixtures available for runner review (2026-10-29)
+
+Full single-file development packet b667ce8a and4copied files digest-checked. Source is exactly1e08455e;
+whole-block parsing matches all99standard reports. Correction:12reports wrap, not3; exact names/output
+retained for your forthcoming parser, no new compiler execution. Parent14.65s,27pressure samples,
+owned2677856KiB/minfree4878MiB/zero swap/max3processes; child maxRSS2770567168bytes is distinct.
+Actual DEV file32/disk128/free1024/swap256 limits are retained as such, not A/B/C or an unseen release
+freeze. Detailed source/measurement qualifications are in ACTUAL-CONTINUANT-SOURCE-REVIEW.md.
+
+Also verified the assembled Mathlib.Basic.Real.Basic import against the public official56a00585 source:
+it is real, not a local compatibility shim. Web raw-file404 was a retrieval failure; GitHub API source and
+blobhash verify it. No source change or owner help needed. Official-runner freeze is still Local's work;
+no repeated DEV or modular job here.
+
+GC2174 immutable independent packet: cited/gc2174-singlefile-development-review/review-manifest.json SHA256
+f3c13a46fec64a8bef9f345fc627fa3fe1a916f6da8f70b023778a4462433725.
