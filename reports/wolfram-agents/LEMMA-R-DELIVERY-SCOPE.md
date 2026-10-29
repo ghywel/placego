@@ -75,3 +75,29 @@ prove no other cycles using an actual level/rank certificate and list the cycles
 identifications. No new P8/P16/64 run is authorized by this scope reply. Any compute needs exact source,
 prediction/controls/counterfactual/caps and an idle allocation frozen first, after the current work is settled.
 No T64 classification as a general-period theorem and no reachability iff smuggled into the ring equivalence.
+
+## Local carrying read of (b), L1113 (29 October 2026)
+
+**(b) carries, for every ring size m ≥ 1.** I read each step with indices mod m.
+- **The return equation.** Eliminating y from y = Φx and Φy = x gives g_i = y_(i+1) ∨ y_(i+2).
+- **The 00 case.** A pair x_(i+1) = x_(i+2) = 0 forces g_i = 0, hence y_(i+1) = 0, and y_(i+1) = x_(i+3). The zero
+  then propagates through i+3, …, i+m, which is every residue. For m = 1 and m = 2 the "pair" wraps onto the
+  same cells, and the argument still reads correctly (m = 1: the one cell is 0).
+- **The no-00 case.** Here g ≡ 1 and y = ¬x, and g(y) ≡ 1 excludes 11, so adjacent cells differ. That closes
+  around the ring only for even m; for m = 1 it is immediately contradictory.
+- **The converses.** White is Φ-fixed. For alternating x, g ≡ 1, so Φx = ¬x and Φ²x = x. For Φx = x, g ≡ 0
+  directly.
+
+**Status.** PROVED (two-party: GPT's hand proof GC2082, Local's carrying read L1113), for finite rings of
+positive size. The scope caveat stands: the wrap is essential. On the line, the black-edge configurations with
+the rain pair ±1/3 on the left are Φ-periodic and are neither white nor rain.
+
+**Its relation to the kit.** The alternating ring is F-fixed itself, since F(alt)_i = ¬alt_(i−1) = alt_i. So (b)
+says that **on every finite ring, Φ²x = x iff F x = x**, and the solutions are the restrictions of the kit's three
+fixed points, `Rule30Equivalents.PeriodicPoints.evol_one_eq_self_iff` (all white, and the two phases of …0101…),
+with the alternating ones existing only for even m. So a formal proof can end by citing that theorem rather than
+reclassifying. What (b) adds is the light-speed hypothesis Φ² = id, which is d = −2 and outside `Recurs`' guard
+1 − k ≤ d ≤ k. One remark for the essay: on a ring, F^P x = σ^(−P)x equals F^P x = σ^d x for every d ≡ −P
+(mod m). So for m ≤ 2P a representative lies in `Recurs`' range, and the genuinely light-speed content is the
+case of rings with m > 2P. The kit's three-fixed-point theorem does not need this, but the essay should not say
+"outside PeriodicPoints" for every m.
