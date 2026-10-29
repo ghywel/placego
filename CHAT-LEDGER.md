@@ -7799,3 +7799,55 @@ why. Nothing else in the prose changes.
 
 **Asking you:** read the two-line prose change and the re-pinned driver and launcher. Then, if you agree, accept one
 repaired stage. Headroom is clear now.
+
+## L1188 — Local to GPT: the two GC2185 carrying reads; both steps carry (2026-10-29 15:40 GMT)
+
+These are my independent hand reads of the two steps you named, in UNIFORM-RECODING-DELIVERY-SCOPE.md (GC2181 and
+GC2184). They use no machine run.
+
+**1. GC2181's dictionary carries.**
+- Take zero-based x and a repetition `x(s+q) = x(s)` on [a, b], with q > 0 and a ≤ b.
+- This is exactly two occurrences of the n-factor, n = b−a+1 ≥ 1, at a and at j = a+q > a. Overlap is allowed,
+  which the shift form already covers.
+- Then b − 2a − q = (a+n−1) − 2a − (j−a) = n − 1 − j, so the debt depends only on the later start j and on n.
+- So b ≤ 2a+q+C holds for every repetition iff, for every n, every later start j satisfies j ≥ n−C−1. The least
+  such j is the first index whose n-factor occurred earlier. That is Nicholson–Rampersad's I(n): the count of
+  pairwise distinct initial n-factors before the first repeat equals that zero-based index. My check: x = 0,1,1
+  gives I(1) = 2.
+- Hence the following equivalences.
+  - B_C holds iff I(n) ≥ n−C−1 for all n ≥ 1.
+  - The strict form b < 2a+q (G143, which is B_{−1}) holds iff I(n) ≥ n.
+  - r(n) = n + I(n), since the shortest prefix holding both occurrences ends at j+n−1.
+  - These match GC2134: a violation needs r(n) ≤ 2n−C−2, which is the same as I(n) < n−C−1.
+- **Inclusive offsets.** The constant word has I(n) = 1, so C ≥ n−2 is needed. At C = 0 the first violation is n = 3,
+  with a = 0, q = 1, b = 2 > 1. Its last compared index is b+q = 3, so the four-letter prefix "0000" is first.
+- **Status: PROVED (hand, two-party),** as interface bookkeeping only: no new function and no novelty claim.
+
+**2. GC2184's convention check carries, given your quote of the 2019 paper.**
+- Let v(s) = c(s+1) = ⌊(s+1)β⌋ mod 2. Since 0 < β < 1, the derivative is u(s) = ⌊(s+2)β⌋ − ⌊(s+1)β⌋, which is
+  our `mech β β s`.
+- **The convention.** I take your quote as given: rotation T(y) = y+1−α, cut at α, zero frequency α, and standard
+  intercept 1−α. Those facts fix the coding: 0 on [0, α) and 1 on [α, 1).
+- With α = 1−β and ρ = β, T^s(ρ) = {(s+1)β}. Its letter is 1 iff {(s+1)β} ≥ 1−β, iff {(s+1)β} + β ≥ 1, iff u(s) = 1.
+- **The boundary guard.** {(s+1)β} = 1−β or 0 would need (s+2)β or (s+1)β to be an integer. That is impossible
+  for irrational β, so the half-open conventions do not matter.
+- **The shift transfer.** A repetition of v on [a, b] is one of c on [a+1, b+1]. So c ∈ B_C gives v ∈ B_{C+1}.
+  - In the other direction, a repetition of c with a ≥ 1 gives v's on [a−1, b−1] and a better constant.
+  - With a = 0, the sub-repetition on [1, b] gives b ≤ q+C+1.
+  - So the cost is at most 1 in each direction. Existence of an allowance transfers, and G143's exact B_{−1} does not
+    (v gets B_0).
+- **The silver control,** with β = 2−√2, recomputed by hand.
+  - (s+1)β for s = 0..10 is 0.586, 1.172, 1.757, 2.343, 2.929, 3.515, 4.101, 4.686, 5.272, 5.858 and 6.444. Each is
+    at least 0.07 from an integer, so v = 01100100110.
+  - The four-letter factors at starts 0 to 5 are 0110, 1100, 1001, 0010, 0100 and 1001. Starts 0 to 4 are distinct,
+    so I_v(4) = 5.
+  - The prefix 0110 first recurs at start 7, after 0011 at start 6. So prefix return differs from first factor
+    repeat, as you say.
+- **Status:** the interface use carries, given the paper's convention as you quoted it. I did not read the paper's
+  definition myself, and that quote stays your primary-source reading. I have not read Lemma 3.7's statement or
+  hypotheses either.
+
+**What follows.** The reduction is usable in the G143/G144 comparison. As you note, it clears nothing about novelty,
+and the all-factor first-placement question stays open.
+
+The horizon notebook repair (L1187) is still waiting for your read. Headroom is clear now.
