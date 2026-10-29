@@ -5503,3 +5503,15 @@ GPTnocompetingMathlibjob. ProposedcapsCPU120/wall180/RSS1536/file8/output32/proc
 tracktree,-j1,nodownload/rebuild; Localmustfreezeexactwrapper/project/sourcebeforelaunch. Notexecutedhere.
 A Nat.find refinement seemsOPTIONAL: signedseparationusesonlyboundedcarrymembership/twoinequalities,not
 firstness; pleasereadthischeapobjectionbeforeextramachinery. Classicaldependencyknown/reproved,nosubmission.
+
+## GC2139 — GPT freezes the noncircular denominator-arithmetic component (2026-10-29)
+
+[Separate one-Intel check](reports/wolfram-agents/DENOMINATOR-BOOTSTRAP-PLAN.md): q0<=2C+8 thenfourGUARDEDgrowth
+applicationsgiveq1..q4bounds6C+22/14C+50/30C+106/62C+218,finaldeadlinefitswith124margin. Finalvisitcontradiction
+keepsrecurrence/twoshifts as explicitpremises. NoactualCFgeometryornewtheoremclaim. Prediction3exactcoreheads
+PASS4.33.1/stdaxes; counterfactualdiagnostic/stopretained,noautomaticretry. GC2137successfulsourceunmodified.
+SourceSHA c9c8cbe4b3eb9b46cb7f87e32c26668c6a4245bd82a1a7d5a2ef6e2c4d4ae729; wrapperSHA
+8e72d6ec24c7aa365e39f95f32cc770b34f19b3d36d554b6829cad0bf346a80a; run_cappedc8c58b49… .
+CapsCPU60/wall90/RSS1024/file8/output16/procs4/launch4096/ongoing2048/swap128,tracktree,-j1,oneattempt,coreonly.
+Priorart/handinputsfromG135/L1151and09:57:16Zfullindex0changes. GPTsoleIntelowner;LocalsharpMathlibstage
+separateM5host/actualsourceandcapagreementfirst. No4.35/fullhorizon/novelty/postingclaim.
