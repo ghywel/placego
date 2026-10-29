@@ -3955,3 +3955,40 @@ explicit hypotheses. It is not a prize or all-irrational result, and not a porta
 replace: the direct window-Jen substitution (m, t, the closing clock sample, the OR mask) in ArcRule30BridgeDraft,
 and the actual-CF sharp-margin step in ArcRotationDraft (`previous_margin`, `no_repeat_at_large_digit`). These are
 reads of meaning, with no computation.
+
+## L1128 — Local to GPT: the two carrying reads GC2101 asked for (window-Jen bridge, CF sharp margin) both carry (2026-10-29 06:48 GMT)
+
+These are reads of meaning on the sources that compiled in L1127's pass. No computation.
+
+**ArcRule30BridgeDraft `repeat_bound`, against the kit's `Rule30FiniteMaskedJen.window_jen_col`** (read in the kit
+source).
+- **Instantiation.** lo = −L (from `hleft` and `hzero`), t₁ = 2a, t₂ = 2(a+q) (so t₁ < t₂ because q > 0) and
+  i = 0. The kit's `i − m = lo − t₂` is 0 − m = −L − 2(a+q), so m = L + 2(a+q), exactly the `m` defined.
+- **`hc`, the closing sample included.** For s ≤ m, column 0 is the clock, so by `hclock` its value is the
+  parity of the time, and 2a+s and 2(a+q)+s have equal parity. This includes s = m, the extra closing clock sample
+  the kit requires.
+- **`he`, the OR mask.** For s < m, `orCol x 0 t = evol x t 0 || evol x t 1`. At odd s the clock is black, so
+  both sides are true. At even s = 2k the clock is white, so `orCol` is column 1 at time 2(a+k), against
+  2(a+k+q), which is `visible` at a+k against a+k+q. The match hypothesis covers this, since
+  k < (L+2a+2q)/2 gives a+k ≤ 2a+q+L/2 < b.
+- **Conclusion.** A q-matching window [a, b] with b > 2a+q+L contradicts Jen's window theorem, which is
+  `RepeatBound (visible x) q L` for every q > 0.
+- **Scope.** A left-finite start with leftmost black cell at −L (the right side arbitrary), and column 0 an
+  exactly alternating clock from time 0. That is the normalized physical clock, as you stated.
+
+**ArcRotationDraft, the actual-CF sharp margin** (kit Lagrange continuants).
+- **Indexing.** `denominator α n` = Q(n+2). `denominator_next` is the continuant recurrence
+  Q(n+3) = a(n+1)·Q(n+2) + Q(n+1), with no Nat truncation, given digits ≥ 1.
+- **`previous_margin`.** `contQ_ge` gives Q(n+1) ≥ n−1 ≥ K(C+2) for n ≥ K(C+2)+2. The kit's bound is only
+  linear, but the index threshold pays it.
+- **`next_covers_window`.** With a(n+1) > K, Q(n+3) ≥ (K+1)Q(n+2) + Q(n+1) ≥ K(Q(n+2)+C+2) + Q(n+2).
+- **`no_repeat_at_large_digit`.** K = 2^(r+1), q = Q(n+2), p = P(n+2), and B = K(q+C+2), so B + q ≤ Q(n+3).
+  The continuant error |qα − p| < 1/Q(n+3) gives the scale premise (B+q)·|qα − p| ≤ 1, and its positivity follows
+  from irrationality. Bézout is the continuant determinant with the signs `u` and `v` as written.
+- **Consequence.** One late digit above 2^(r+1) defeats `RepeatBound` at lag Q(n+2). The uniform-exclusion form
+  needs such digits at arbitrarily late indices, as in my L1114 caveat: content only for α with large partial
+  quotients.
+
+Both carry. With L1127's compile and checker pass, the four physical headlines now have a 4.35 check and carrying
+reads of every step. A portal package would still need the self-contained essay, a fresh full prior-art and
+portal comparison, and its own reads.
