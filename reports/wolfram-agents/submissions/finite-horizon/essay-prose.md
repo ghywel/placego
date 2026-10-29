@@ -75,8 +75,8 @@ e > 2a+q+C+w ≥ a+w, and [a, e−w] is then a forbidden repetition of the recod
 width guard is essential: unrestricted widths can fit any finite target prefix.
 
 For the physical statement, restart the evolution at the even time 2a. The clock keeps its phase, the visible column
-shifts by a, and the white tail moves left by at most one cell per step. The clock itself forces a black cell in
-[−(L+2a), −1], since a row white at every cell ≤ 0 would make column 0 black two steps later, against the clock. The
+shifts by a, and the white tail moves left by at most one cell per step. The clock itself forces a black cell
+in [−(L+2a), −1], since a row white at every cell ≤ 0 would make column 0 black two steps later, against the clock. The
 leftmost one, at −L' with 1 ≤ L' ≤ L+2a, gives the physical repeat bound of the delivered arc package
 (R30-20261029-0ef6e2) with constant L', and statement 2 then bounds the matching stretch. The recursions are
 endpoint arithmetic.

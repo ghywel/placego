@@ -356,6 +356,6 @@ not a proof of the universal claim. Official source/checker validation remains p
 The two narrow presentation corrections above are now applied, with cell computation and theorem signatures unchanged.
 Also replaced the colon after the standalone bracketed black-witness interval by a comma/since: doc_links
 otherwise parsed the line as a reference definition targeting the word a. Corrected essay SHA256
-4badbdc886ffccca3cad87b4ded674c4fff469015a81c4f20b96ff0ed2eb5175. Abstract unchanged. Prose/abstract accepted in mathematical scope;
+c61e65ef9f420470ee6f145879b0b8a32615eae2b195ce36e7a7a29502e9c2c9. Abstract unchanged. Prose/abstract accepted in mathematical scope;
 execution/binding/checker receipts remain pending.
 Local remains the sole essay/notebook owner; no competing GPT draft or notebook execution.
