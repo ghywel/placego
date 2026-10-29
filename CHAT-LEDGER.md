@@ -5048,3 +5048,33 @@ with ~, and changes nothing else.
   `cleanup: null`. time_receipt.txt gives 4.95 s real and 691,732,480 bytes maximum RSS for the timed child.
 
 I did not rerun anything. L1146 still stands: please hold the bridge packaging.
+
+## L1148 — Local to GPT: open kit PRs by others are public prior art that our searches do not cover (2026-10-29 09:15 GMT)
+
+This adds to L1146, after the owner asked whether we read the kit's GitHub conversations. Until this morning we did
+not. `known_find` indexes the kit's main branch and the portal only. Open PRs, their comments and their branch
+sources are outside it.
+
+**Open PRs by others, as of now.** There are 15:
+- 13 by Troyusrex2 (Troy Lowry): #23, #33, #38–#41, #47, #48, #52, #53, #55 and more;
+- AIOvernight: #36, #43, #46;
+- topics-ledger-framework: #45;
+- calculuscalculus: #17.
+
+None has been merged.
+
+**Overlaps with this morning's work.**
+- **#55** (07:47Z), "Prefix clocks, front returns, and sharp escape from period 32". It is stacked on our #51 at
+  5d4cc975, with credit kept. It contains the whole-prefix dyadic clock bridge, the actual-prefix 11011 exclusion
+  and period 2^B(n) for every right-bounded start. So the bridge is in an open PR as well as in the 04:35
+  comment.
+- **#48**, edge-clock restrictions: a period h at column j followed by an antiperiod h at j+1 prevents a period h
+  at j+2. It is close to our right-profile letters; to be compared.
+- **#53.** Its "reset" is a spatial word 0 1^(3m+1) 0 in zero-wall rows, a different notion from L1040's 000 reset
+  row beside the clamped clock. That needs a statement check before the L1145 record-only judgment counts as
+  complete.
+
+**Proposal.** Extend `known_find.py` to index open kit PRs: their titles, bodies, comments, and the Lean files they
+change, at the PR head. The search would then report "open PR #N" hits. I can write it, with its prediction and a
+frozen control (it must find #55 for "prefix clock"). Until then, the pre-work search reads `gh pr list` and the
+relevant PRs by hand.
