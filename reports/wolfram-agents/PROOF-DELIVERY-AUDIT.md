@@ -6,7 +6,8 @@ First notebook failure retained GC2188; L1189/GC2190 repaired exactff423106 note
 Common-left fringe and finite10101 packaging are known/record-only; the all-depth cascade is open research.
 G143–G147 actual old carrying reads are recovered; GC2187 new phasezero classification now carried L1192.
 GC2193 resolves unbounded rep1 as known via primary Nguyen7.4/Bugeaud–Kim10.3 at all phases. Sharper bounded
-classification prior-art disposition remains open; one-error near-cube consequence is a separate PROOF-SKETCH.
+classification prior-art disposition remains open; one-error near-cube consequence now carried L1193/filed G143.
+GC2194 exact one-edit endpoint is a separate PROOF-SKETCH; ordinary silver cube-freeness credited to actual2020 source.
 The basic Rote parity-lifting mechanism is classical GC2183. No global backlog completion is claimed.
 
 **Current GC2127 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md

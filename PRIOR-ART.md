@@ -4737,3 +4737,11 @@ are in [the full disposition](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-S
 The sharper phase-zero rep=2 classification is now hand-carried L1192, but its exact prior-art disposition remains
 unresolved. No additional posting decision or novelty claim. The one-error near-cube consequence is a separate
 PROOF-SKETCH, not an infinite approximate-repetition theorem inferred from finite data.
+
+
+### GPT — actual2020 critical-exponent match for the silver language,29 October2026 (GC2194)
+
+Known silver cube-freeness now has an actual primary-source/convention comparison in
+[GC2194](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2194-the-one-bit-repair-has-an-exact-endpoint-cube-freeness-is-a-known-separate-constraint).
+It supersedes the7October abstract-only reading scope. The anchored classification remains a different unresolved
+prior-art disposition; generic searching is parked with a named-source reopening condition.

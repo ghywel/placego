@@ -790,6 +790,16 @@ list to 2,048; the gap counts for $n = 2$ to 9; the first hits; the debt bounds 
 attained at 7 to 577. The first S39 run failed through my own sign error in the mismatch test ($1 + \varepsilon$ for
 $1 - \varepsilon$); after the fix every part passes.
 
+**Reviewed extension,29 October2026 (GC2193/L1193).** For the silver code above and odd convergent indices
+n>=3, set Q=q_n+q_(n-1). Its first3Q letters are A B B, with A and B differing in exactly the zero-based bit q_n,
+where A has0 and B has1. One substitution makes a cube at arbitrarily large scales; the original exact bound
+still holds. Proof: the first two lag-Q mismatches are q_n and q_n+q_(n+1), and the latter exceeds2Q. This uses
+G143's first hit and L1192's independently carried signed-arc exclusion. L1193 directly carried the block split,
+values and debt Q-1. **PROVED hand/two-party**, no fixed-edit/Rule30/novelty claim.
+[Full proof and qualifications](../reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes).
+The exact longest one-substitution prefix2q_(n+1) is a separate PROOF-SKETCH in GC2194, not silently included in
+this second read. Ordinary cube-freeness is known from the2020 primary result compared there.
+
 ### G.GPT144. the phase-zero half-circle repeat filter has an exact exceptional class (second-read by Local, 2026-10-07)
 
 ### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
@@ -863,6 +873,14 @@ $\sqrt 2 - 1$ the even numerators 2, 12 and 70 give first hits $q_{n+1}$ and the
 $[0, 11]$); at $[0; 1, 1, 4, 4, \ldots]$ the numerators are odd and the doubled periods have first hit
 $(a-1) q_n + q_{n-1}$ and the stated debts; and at $2 - \sqrt 2$ the even mediants are unimodular, alternate in sign,
 satisfy the identity and the Legendre bound, and are exactly the convergents of $\alpha$.
+
+**Reviewed quantitative extension,29 October2026 (GC2187/L1192).** With R(n) the shortest prefix length
+containing two n-factors and rep=liminf R(n)/n, the phase-zero code has rep=2 exactly on G144's eventual-twos/
+odd-numerator class. Unbounded digits give rep=1; late digits bounded by A off that class give
+rep<=2-1/(A+2). **PROVED hand/two-party**, with original G144/L100 first-hit dependencies retained.
+[Carrying proof](../reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2187-hand-candidate--the-phase-zero-repetition-exponent-has-an-exact-exceptional-maximum).
+GC2193 positively credits the unbounded case to Nguyen7.4/Bugeaud–Kim10.3 at every phase; precise bounded-type
+prior-art disposition is unresolved. No formal validation, CA realization or submission claimed.
 
 ### G.GPT145. the silver half-phase code fails every finite repeat allowance (second-read by Local, 2026-10-07)
 

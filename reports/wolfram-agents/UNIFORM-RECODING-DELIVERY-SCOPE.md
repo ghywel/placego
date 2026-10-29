@@ -833,3 +833,87 @@ Retained actual primary documents and search outputs: cited/gc2193-repeat-prior-
 SHA256273ba4fc4bf4945d9a54da6247463b6fad0cb1990a247e4f9f1ab8cf09bb3ba2. Bugeaud–Kim PDF400150bytes,
 SHA256de28335ccad5e5cbbc941b2d7350dee82f7e4daeb95db1feed7a735e8746f87d; Nguyen v2 HTML905129bytes,
 SHA256382342850fcdc42ab414c36dd9aad591487a5793de94b501fa3046113fa25b60.
+
+
+## GC2194: the one-bit repair has an exact endpoint; cube-freeness is a known separate constraint
+
+**Carrying update:** complete L1193/b548a976 read against GC2193. The one-error/three-block consequence is now
+**PROVED (hand, two-party)**. Local directly verified the first/next mismatch, all offsets, bit values, diverging
+debt and21-bit hand control. It accepts the all-phase prior-art disposition conditional on GPT's actual primary
+read; this is not a second independent read of Nguyen. No machine run, fixed-edit hierarchy or Rule30 claim.
+
+**The next question:** after making that single edit, where does periodicity fail again? Prediction: the next
+unmodified mismatch is the exact endpoint, rather than merely an upper bound on the three-block illustration.
+Counterfactual: an extra comparison affected by the edit, or shared endpoints of the two mismatches, would
+invalidate the claimed optimum. No new computation is needed.
+
+### Exact endpoint for one substitution
+
+**PROOF-SKETCH, awaiting Local's read of this endpoint extension.** Use precisely GC2193's silver word and odd
+indices i>=3, with q=q_i,r=q_(i-1),Q=q+r and q'=2q+r. The first two lag-Q mismatches are
+h1=q and h2=q+q'. Define c* by flipping only c(q) from0 to1.
+
+Flipping a letter at t toggles exactly the lag-Q comparisons starting at t and, if t>=Q, t-Q. Here q<Q, so
+only comparison q changes. Thus all comparisons at0<=s<h2 agree in c*, and comparison h2 still disagrees.
+The repaired prefix is consequently Q-periodic for exactly
+
+    L_i=h2+Q=q+q'+Q=2q'
+
+letters: indices0 through2q'-1 agree with its initial Q-block, and index2q' is the first failure.
+This is also the longest prefix that can be made Q-periodic by AT MOST ONE substitution anywhere. A prefix
+of length2q'+1 contains both original mismatched pairs
+
+    (q,q+Q)=(q,q'),   (q+q',2q').
+
+Their four endpoints are distinct. One substitution cannot repair both. The edit at q attains length2q',
+so the upper bound is exact. Insertions/deletions, other periods and an optimal bound over all periods are not
+part of this claim.
+
+Since r/q tends to lambda=sqrt2-1, the number of copies sustained at these scales tends to
+
+    L_i/Q=2(2q+r)/(q+r)  -->  2+sqrt2.
+
+At Q7 the repaired prefix has24 letters: (0011011)^3 followed by001. Direct floors at s21,22,23,24 are
+12,12,13,14; index24 gives0 instead of the periodic continuation1. The two disjoint mismatched pairs are
+(5,12) and(17,24). This hand extension checks the endpoint and inclusive-length convention without a scan.
+
+Each scale uses a different edit and a different word c*. The statement does not change ordinary rep or Dio
+under a fixed finite modification, does not assert an infinite periodic extension after one edit, and does not
+identify a new invariant with Nguyen's error-cover Rdio.
+
+### Positive comparison with the known ordinary critical exponent
+
+The [published2020 primary paper](https://dmtcs.episciences.org/6519/pdf), Remark27 and Proposition34(1), identifies
+this silver language as having ordinary critical exponent2+1/sqrt2<3. Hence the original word has no cube
+anywhere, at any phase, although its prefixes admit GC2193's one-bit repairs. This ordinary factor result is
+**KNOWN**, not our new theorem. Actual reading: Remark27, Theorem33's statement/reduction proof, Proposition34's
+statement and complete Item1 proof, printed15/18–20; relevant printed formulas visually checked. Other dependencies
+and the full paper were not independently audited. This supersedes the record's older abstract-only reading scope.
+
+The convention check matters: our derivative has one-frequency beta=[0;1,1,2,2,...]. Their parameter vartheta
+is NOT beta/2; Remark27 gives beta=1/(1+vartheta), so vartheta=[0;1,2,2,...] and the directive is
+G(D^2 G^2)^infinity. Thus Proposition34(1) applies. Theorem33 works with the same derivative language, so an
+initial shift to a standard derivative does not change this match. It does not give an anchored first-repeat law.
+
+A concrete guard against conflating the invariants is beta*=[0;1,1,6,2,2,...]. Its convergent numerators start
+1,1,7,15,..., all odd, so GC2187/L1192 gives rep=2. In the paper's convention vartheta*=[0;1,6,2,2,...],
+with q0=q1=1, q0'=1, q1'=2. The N1 term of its Theorem33 set M2 is(6+2)/2+(1-1)/(2*2)=4.
+Its ordinary critical exponent is therefore at least4. This is a hand application of a known formula, not a
+novel spectrum result. In particular rep=2 does not itself imply cube-freeness.
+
+### Search disposition and next useful boundary
+
+Record searched: Diophantine/initial-nonrepetitive/repetition-exponent + Rote/half-circle; one-error/one-bit/
+approximate + initial/critical/silver/Rote; Rote + critical-exponent/cube-free. Cached actual kit932cf8dd,
+portal16:04:33Z/21openPR sources searched. One-bit front-window and finite-cone hits have different finite-CA
+hypotheses, not this irrational-word statement. The older2020 abstract record led to the positive actual-source
+match above. Generic anchored-repetition keyword searching now had two unproductive blocks and is **PARKED**,
+not called complete or evidence of novelty. Reopen it with a named primary result controlling all-factor first
+placement in parity lifts, an applicable explicit formula, or another genuinely discriminating source.
+The bounded-type anchored classification's delivery disposition remains unresolved; no formalization/posting
+owner or experiment is manufactured to fill that gap. The current warm step is the finite exact repair endpoint.
+
+Actual primary PDF504856bytes SHA256db42c488a3bb5f661b78a0c1a21d1ceb3ca139933c01c7862f258f0bd12d6239,
+relevant page extracts and record searches retained at cited/gc2194-repair-endpoint/review-manifest.json,
+SHA25618be9313ff3cb4f2a8e39433ca619e362730d1d5083f9ba2e4f2e7935e7a15f7. System Poppler and PyMuPDF were
+unavailable; bundled pypdf/pypdfium2 supplied extraction/rendering. No installation, weakened TLS or owner action.

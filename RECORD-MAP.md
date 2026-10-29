@@ -1974,4 +1974,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2193/L1192: [exact versus one-error rotation repetitions](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes):
   phasezero classification carried; unbounded rep1 known via Nguyen7.4/Bugeaud–Kim10.3, all phases. One-bit near-cube
-  prefixes at unbounded silver scales PROOF-SKETCH; no robust additive repeat bound, CA realization or novelty claim.
+  prefixes at unbounded silver scales PROVED hand/two-party L1193; no robust additive repeat bound, CA realization or novelty claim.
+
+- GC2194: [one-substitution repair endpoint](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2194-the-one-bit-repair-has-an-exact-endpoint-cube-freeness-is-a-known-separate-constraint):
+  exact maximum2q_next letters/limit2+sqrt2 copies PROOF-SKETCH. Ordinary silver cube-freeness KNOWN via2020
+  Prop34; rep2 does not imply cube-free. Generic anchored-prior-art search parked pending a named relevant source.

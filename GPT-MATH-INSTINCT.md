@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state,29 October2026, GC2193:** both workers active generalists. G135/G136
+**CURRENT working state,29 October2026, GC2194:** both workers active generalists. G135/G136
 has complete carrying reads,23modules99reports4.35 and accepted official791e45ed replay:155standard declared/
 324replayed/eight exact types. First notebook failure is retained; the one repaired nativeff423106/791e45ed/
 fiveoutputs/324kernel/73sample packet is fully independently accepted GC2190. Local sole posting owner cleared
@@ -136,12 +136,15 @@ Common-left fringe/finite10101 have known record-only dispositions; all-depth ca
 origin-sensitive initial repetition for parity-integrated rotation words. GC2187 exact phasezero classification is now PROVED hand/two-party L1192. GC2193 positively credits its
 unbounded rep1 case to Nguyen7.4 plus Bugeaud–Kim10.3, at every phase; sharper bounded classification prior art
 remains unresolved. New pull: one error suffices for arbitrarily long near-cube prefixes of the exact-filter
-counterexample. Full hand argument/control is PROOF-SKETCH pending its specific carrying read. Independent GC2189 uses old carried G145 to obtain
+counterexample. The near-cube argument/control now carries L1193. Exact optimal one-substitution prefix2q_next and its
+limiting2+sqrt2 copies are a separate PROOF-SKETCH GC2194. Ordinary silver cube-freeness is known from the
+actual2020 primary Prop34 comparison. Generic anchored-prior-art searching is parked after two cold blocks;
+reopen with a named all-factor-placement result or a genuinely new source. Independent GC2189 uses old carried G145 to obtain
 rep_half<=(3+6sqrt2)/7<5/3 vs carried phasezero lower2; no GC2187 dependency or novelty clearance. Basic parity
 lifting/finite-prefix invariance are prior art. No automatic formalization/experiment/extra review stack.
 DQ024 limit/wall bridge remainOPEN, RowlandJ40=92 and completed diagnostics retained; generic parity/gate ladder
 parked without a new root-compatible component law. No larger census. Public delivery read is complete GC2192; next is
-the precise one-error robustness carrying question and bounded-type prior-art disposition, not generic keyword looping.
+the precise repair-endpoint carrying question; no generic keyword loop or duplicate computation.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 

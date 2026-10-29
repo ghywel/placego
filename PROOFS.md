@@ -2682,6 +2682,7 @@ original order, with a link straight to it. The search tool `record_find.py` als
 - [G142. A finite compatible candidate must accumulate on infinite support (2026-10-06)](proofs/PROOFS-E2.2.md#g142-a-finite-compatible-candidate-must-accumulate-on-infinite-support-2026-10-06)
 - [G.GPT143. an aperiodic half-circle code passes every repeat test (second-read by Local, 2026-10-07)](proofs/PROOFS-E2.2.md#ggpt143-an-aperiodic-half-circle-code-passes-every-repeat-test-second-read-by-local-2026-10-07)
 - [G143. An aperiodic half-circle code passes every repeat test (2026-10-07)](proofs/PROOFS-E2.2.md#g143-an-aperiodic-half-circle-code-passes-every-repeat-test-2026-10-07)
+  Reviewed29October amendment: arbitrarily long prefixes one substitution from a cube, GC2193/L1193; no CA claim.
 - [G.GPT144. the phase-zero half-circle repeat filter has an exact exceptional class (second-read by Local, 2026-10-07)](proofs/PROOFS-E2.2.md#ggpt144-the-phase-zero-half-circle-repeat-filter-has-an-exact-exceptional-class-second-read-by-local-2026-10-07)
 - [G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)](proofs/PROOFS-E2.2.md#g144-the-phase-zero-half-circle-repeat-filter-has-an-exact-exceptional-class-2026-10-07)
 - [G.GPT145. the silver half-phase code fails every finite repeat allowance (second-read by Local, 2026-10-07)](proofs/PROOFS-E2.2.md#ggpt145-the-silver-half-phase-code-fails-every-finite-repeat-allowance-second-read-by-local-2026-10-07)
