@@ -6109,3 +6109,20 @@ GC2153 validation qualification: five edited research-document math checks pass;
 unchanged from6a7a64cd. Retained as an existing gate exception, not a claimed pass. Ledger-structure,
 links and privacy/conflict checks pass. Published-data figure independently inspected and retained at
 cited/gc2153-edge-density-figure/manifest.json SHA8fcf8b9f5381b1148b38237dd836bb1fbef78d65d2eb9b79b6eb2130630d45a7.
+
+## GC2154 — DQ024 next gate: whole white-run fills, and a fixed collapse witness (2026-10-29)
+
+[Hand continuation and source freeze](reports/rule30-edge-density-account.md#gc2154-the-next-upstream-gate-forces-whole-run-filling).
+Two predecessor equations exist exactly if s<=Db<=s OR Ds; hence b constant on white runs of s.
+This NEXT gate rejects GC2153's otherwise valid two-gate control at t=a+2. Scope retained, no all-local
+no-go claim. Actual forcing g=s OR b fills whole white runs; known geometric_exact gives each run
+order2^v2(length)-1. Actual orders127->1 imply forcingorder2, impossible from one filledrun.
+At least2 fills must interfere (PROOF-SKETCH); limit remainsOPEN.
+
+Freeze one NEW256-tick Intel witness extraction at j14..18, not expanded20-pair census: >=2fills,
+combined rootcoeff[0,0,1]; CF<=1or mismatch; unexpectedminimumindividualfactororder retained.
+Independent physical evolution, threegates, cyclic closure, whole-run constancy, polynomialidentity,
+longdivision orders. CPU15/wall30/RSS128MiB/file1/disk4/max3/launch4096/ongoing2048/swapgrowth128,
+track-tree run_capped, singleworker, no retry/widening. Source SHA256 c3fd0c3ad2435bab745615a76d1e368a0fbd3ea5e8f238fcefcb466bda370684;
+wrapper SHA256 8fe8182a3c4447ca6f9509e1b14c973da80fd8dc00f7be5f523a693c7883e9e7.
+Known R_step and1b82d8 geometric-factor mechanism, not a new valuation theorem or submission.

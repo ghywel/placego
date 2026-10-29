@@ -194,6 +194,67 @@ cited/gc2153-edge-density-figure/manifest.json, SHA256
 8fcf8b9f5381b1148b38237dd836bb1fbef78d65d2eb9b79b6eb2130630d45a7.
 Both J_k and J_k-2k are drawn; the straight2k reference is not a fit or an extrapolated theorem.
 
+## GC2154: the next upstream gate forces whole-run filling
+
+Continuation after the block checkpoint. This is a hand specialization of the known R_step equation,
+not a new Rule30 law. Write Df(t)=f(t+1) XOR f(t), B=Db. Two predecessor streams u,v satisfying
+
+    Db=s OR u,       Ds=u OR v
+
+exist, with the same period as s,b if these are periodic, EXACTLY when
+
+    s <= B <= s OR Ds                         (pointwise Boolean order).
+
+Necessity follows by u<=Ds. Conversely take u=B AND NOTs and v=Ds. This realizes precisely those
+two equations; it does not impose equations on u,v themselves or the root's prescribed boundary.
+Consequently b flips whenever s is black, stays constant inside each white run of s, and has a choice
+only at a0->1 transition of s. Thus g=s OR b is obtained by filling ENTIRE white runs of s, never an
+arbitrary selection of cells inside a run.
+
+This is a cheap objection to GC2153's synthetic family. At t=a+2 it has s=0, Ds=0 but Db=1, because
+the isolated b pulse ends in the interior of a longer white run. So the family cannot satisfy this NEXT
+gate, before any genuinely global root constraint is invoked. The earlier two-gate claim remains
+correct in exactly its stated scope; it was not an all-local-laws impossibility argument. No universal
+conclusion about ancestry versus locality is warranted. The next useful restriction is already local.
+
+For actual periodic diagonals, let filled white runs have starts a_r and lengths L_r. Their time
+polynomials obey the exact identity
+
+    P_g = P_s + sum_r X^(a_r) U_(L_r),
+    (1+X) P_h = X P_g mod (1+X)^H.
+
+The known geometric-factor lemma gives order_(X+1)(U_L)=2^v2(L)-1 for positive L. This is exactly
+portal1b82d8.geometric_exact, already used in the original resource proof; no new valuation theorem.
+For the COMPUTED actual16->18 case, r_s=127 and r_h=1 imply order(P_g)=2. No SINGLE filled white run
+can explain it: its order is0,1,3,7,..., never2. If its order differs from127, the sum's order is the
+smaller; if equal, cancellation raises it above127. Zero filled runs also fail. Therefore at least
+two filled runs must participate in this actual collapse. The low-order parity contributions cancel
+before the first surviving one. This conclusion is a PROOF-SKETCH using the independently controlled
+finite values, not an all-time bound or a density theorem.
+
+Record searched: existing run-rule report, GC1960 resource/valuation review, current-kit R_step and
+inp_least_period, portal1b82d8.geometric_exact; record searches white-run/source with flip/transition
+return the old relaxation/run mechanisms, not a novelty certificate. The whole-run algebra is recorded
+as a known-mechanism specialization, not a submission candidate.
+
+### Fixed witness extraction, frozen before execution
+
+Discriminating question: which filled runs and parity cancellations produce the already observed127->1
+collapse? Do not widen the20-pair stage. Extract ONLY diagonals14..18 over the single256-cycle, with
+the root fixed to1, to retain their exact time words and run decomposition. No period search or census.
+
+Prediction: at least2 filled runs; their combined first three root coefficients are0,0,1. Counterfactual:
+zero/one run or a different coefficient triple rejects this derivation/index conversion. Unexpected
+check: retain the smallest individual run-factor order and cancellations there, rather than assuming
+the participating runs have length2. Independently compare scalar physical evolution through256 with
+the integer frame; check all three gate equations, cycle closure, whole-run constancy, exact polynomial
+identity and orders by polynomial long division (independent of the previous binomial-transform method).
+
+Source edge_run_witness.py and its wrapper are pinned in GC2154 before launch. One Intel worker,
+CPU15s per process, wall30s, sampled ownedRSS128MiB, file1MiB/disk4MiB/max3procs,
+launch4096MiB/ongoing2048MiB/swapgrowth128MiB, track-tree run_capped. No automatic rerun or expansion.
+This is a new256-tick witness question, not a replay of the65536-tick diagnostic for a cleaner receipt.
+
 The separate ledger render reports0TeXerrors but flags20 literal code/shell dollar signs already present
 before this block (Wolfram symbol and environment-variable names); all20 are unchanged. Its blanket
 stray-dollar gate therefore FAILS for the existing ledger. This exception is retained, not relabelled a
