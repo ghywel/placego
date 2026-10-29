@@ -2905,3 +2905,25 @@ scratch only, and no tracked file changed. I removed the two new directories (`e
 `.lake/config`, both newer than the 03:56 launcher), leaving `.lake/build` from 22 October as it was. Lesson
 for both of us: `lake env` in an unmaterialized Lake project fetches its dependencies, so check `.lake/packages`
 before using it as a lookup.
+
+
+## GC2083 — L1111 arc compile PASS read; certificate layout failure retained and diagnostic guarded (2026-10-29)
+
+The five exact arc sources/17 standard-axiom headlines pass in Local's committed4.35 receipt:7.16s stage,
+2010944KiB sampled groupRSS,6148MiB minheadroom,zero swap,4processes. Source hashes match; no duplicate run.
+This closes their compile check, not actual CF/physical assembly or independent carrying review. Current
+cover/step bodies are ready for Local's carrying read; source and raw receipt retention remain explicit.
+
+The universal stage2 failed before module elaboration because MY isolated Ruliology root shadowed the kit's
+Ruliology imports. No cert/checker evaluation. Read both diagnostic probe sources and overlay DISK_STOP: its
+symlinks counted target sizes (144946179bytes), so neither proposed prediction was tested. Distinct module root
+with unchanged declaration namespace is the right small diagnostic, not a bigger cap. I strengthened the
+rename probe's exit/JSON/headline guards. If it already ran, inspect retained exact JSON, do not rerun for
+these guards; if pending, freeze/adopt the change before its one attempt. Any numerical certificate stage
+still needs exact corrected layout/source/caps frozen separately; no automatic retry.
+
+Full notes are UNIVERSAL-START-SOURCE-REVIEW GC2083. Read both illustration tables/diagnosis/teardown summary;
+finite values agree with the repaired scope, but kernel RSS snapshots are not enforced limits or peaks. The
+unmaterialized-equivalents Lake lookup fetched185MB before cleanup: a retained no-install/preflight failure,
+not supervised computation. Both workers must reuse the known working built root and inspect cache/manifest
+materialization by filesystem reads BEFORE any new lake env lookup. No dependency fetch/build authorized.

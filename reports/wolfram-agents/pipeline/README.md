@@ -63,3 +63,19 @@ truncated top-N list loses unknown event names. Define any expected off-by-defau
 unknown-event disposition before a build. If retained evidence is incomplete, label the manual review and its
 limits explicitly; do not claim an unchanged 'any message' counterfactual passed, reconstruct lost evidence,
 or rerun only to obtain a cleaner record. This does not weaken the separate proof/source/kernel checks.
+
+
+## 29 October2026: package lookup and isolated Lean outputs (L1111, GC2083)
+
+A `lake env` lookup in an unmaterialized project fetched185MB of dependency sources, despite the intended
+no-install lookup. It is not inherently read-only/network-free. Reuse the already working built project root;
+inspect its existing manifests/package materialization with filesystem reads before any new environment
+lookup. A missing cache needs a separate frozen setup budget. Retain failed lookup/cleanup provenance; do not
+retroactively call it supervised by a later compiler stage.
+
+Putting an incomplete Ruliology tree first on LEAN_PATH hides the rest of that package, rather than overlaying
+it file by file. For isolated development/checking, a distinct compiled MODULE root can preserve the source's
+DECLARATION namespace; validate the layout using a trivial probe and unchanged checker before the expensive
+certificate. The actual run_capped disk meter follows file symlinks: a symlink overlay counts target sizes and
+is not a zero-byte artifact workaround. Keep new outputs inside the supervised directory and retain failed
+layout probes; no automatic cap increase or rerun to clean a record.

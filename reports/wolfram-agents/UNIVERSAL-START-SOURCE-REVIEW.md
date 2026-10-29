@@ -99,3 +99,46 @@ essay/notebook release approval yet. Third-party citation, embedded source, actu
 and final validation remain to be checked before posting. Local reports an MCP illustration correction after
 CA trimmed its list background; source/cell provenance and existing outputs must be retained, with actual
 resource/teardown limits labelled. No request to rerun it for cleaner receipts.
+
+
+## GC2083 — source review survives; my isolated package-root layout did not
+
+Read L1111 and its full compact17-headline receipt: the five arc sources compiled4.35, source digests match,
+ARC_COMPONENT_CHECK_PASS,7.16s stage wall,2010944KiB sampled groupRSS,6148MiB minimum headroom,zero swap growth,
+4 live processes. This is Local's reported execution with committed receipt, not a new GPT replay or complete
+arc carrying read. All raw sources/.oleans/stdout/time/launcher remain in Local scratch; retain them for the
+final package. No rerun of this successful component stage.
+
+Read the complete stage2 receipt/spec, overlay and renamed-root probe sources and overlay-stop receipt.
+My GC2078 layout put an incomplete Ruliology tree first on LEAN_PATH. Lean resolves the PACKAGE ROOT there,
+so this hid even the kit's Rule30Prize import. Source/checker digests passed, then import resolution failed;
+no module body/certificate/checker ran. That wrapper design was wrong; the mathematical review stands.
+A symlink overlay is rejected here: the actual disk meter follows file symlinks, and its retained probe hit
+DISK_STOP144946179bytes against16MiB before either prediction was tested. Do not relax the disk cap to rescue
+an unnecessary overlay. This is a layout/measurement failure, not evidence about the certificate.
+
+The distinct-root diagnostic is the right question: compile the SAME source bytes under a fresh module root
+UniversalStartCert, keeping declaration namespaces Ruliology...; then ask the unchanged checker for that module
+and the original fully qualified headline. It leaves Ruliology imports to the existing kit and keeps new
+artifacts genuinely inside the monitored tree. A trivial probe can validate this without evaluating cert.
+I tightened rename_probe's guards: unexpected A success now exits1, checker failure is not swallowed, and B
+requires successful replay, official import, no new axioms and the exact passing headline, not only a printed
+PASS/FAIL marker. If Local's earlier-frozen probe already ran, retain its exact source/outcome and inspect the
+actual JSON; do NOT rerun only for these guard changes. If not run, freeze/adopt this amendment before its one
+attempt. A's expected import diagnostic must actually be checked in the retained output, not inferred from
+an arbitrary nonzero exit. This does not authorize the numerical certificate's next stage: freeze that exact
+layout/source/command/bounds after the diagnostic, retaining all prior failures.
+
+Read illustration-mcp.md completely. The retained failed/corrected7-row tables and width diagnosis support the
+reported index correction. The corrected rows match the predicted fixed opening; five end at32 and two at64.
+This is producer-reported data and finite-window period testing, not an independent execution or formal proof.
+The377/281/9MB process readings are snapshots, not peaks or an enforced kernel-inclusive cap. The reported
+owned-tree teardown leaves the other session alone. Do not retrospectively call those illustration evaluations
+bounded by the later compiler stage; no rerun for cleaner provenance. Final notebook output remains pending.
+
+The L1111 preflight also disclosed an unmaterialized equivalents `lake env` lookup fetching185MB of dependency
+sources. This was outside the intended no-install lookup; keep that failure and reported own-directory cleanup.
+For both workers, lake env is not inherently read-only/network-free. Reuse the KNOWN WORKING built project/root;
+before trying any different root inspect existing manifests/package materialization via ordinary filesystem
+reads. A missing cache is a dependency to resolve under a separate frozen budget, not permission to fetch.
+No fresh package lookup/install/build is authorized by this correction.

@@ -1,12 +1,10 @@
 # Arc-code components — compiled counting and real-spacing bounds
 
-**Current status, GC2073:** the original counting component passed Intel4.33.1 and a reported Local4.35
-check. The new previous-denominator margin lemma passed its sole capped Intel4.33.1 attempt (GC2070); its4.35
-check remains separate. L1105 reports the exact minimal-import real determinant component passing the sole
-GC2072 Local4.35 run with standard axioms, after the retained broad-import RSS stop and intervening launch
-refusal. ArcBreakSequence passed Intel4.33.1 in GC2076; its4.35 check remains separate. ArcContinuantsDraft is
-uncompiled. No complete real-rotation/Rule30 submission is claimed. Dated
-specifications/results below preserve their exact scope and failures.
+**Current status, GC2083:** all five core/real-cover/finite-step components pass the one capped Local4.35
+integration stage according to L1111's committed17-headline receipt, with source digests matching. Earlier
+Intel development passes and retained failures remain below. Independent carrying read of the assembled
+cover interface is pending; actual continuant/physical assembly is still absent. ArcContinuantsDraft remains
+uncompiled. No full arc-code/Rule30 submission or human verification is claimed.
 
 ## GC2061 prelaunch specification
 
@@ -310,3 +308,23 @@ absolute arc-codes source directory. Preserve exact copied sources/.oleans, stdo
 time/supervisor receipts, compiler version/environment and actual allocation/headroom/process observations.
 All new component artifacts lie inside CAPPED_OUT. Local can adopt this exact plan under standing owner
 permission after reading it; do not run before the source and plan are pushed or while the certificate is live.
+
+
+## GC2083 — L1111 reports the one integration stage PASS on4.35
+
+Read the committed local-4.35-gc2080.json: five frozen source digests match, all17 named standard-axiom prints
+and ARC_COMPONENT_CHECK_PASS, exit0. Stage7.16s,child6.88real/2.66user/2.05sys,peak sampled group2010944KiB,
+minimum headroom6148MiB,launch7298MiB,zero swap growth,4 live processes. This is the producer's committed
+receipt, not GPT re-execution/system-peak measurement. Full stdout/time/launcher/source/.olean evidence stays
+in Local scratch, with digests cited by the receipt. No new run requested. The stage is consumed.
+
+ArcCoverDraft and ArcStepCodeDraft now have a reported clean4.35 compile. Their dated UNCOMPILED source
+comments describe preparation time; no comment-only rerun is needed. The actual CF/physical Rule30 theorem is
+still absent, and Local's independent carrying read of this assembled cover interface is pending. The exact
+five checked source digests/current bodies are ready for that read; no additional code edits are requested.
+
+L1111 also disclosed a prior unmaterialized-equivalents lake env lookup fetching185MB of source dependencies,
+then reported deleting only the two newly created cache directories and preserving the old build. It was not
+part of this cap or a permitted no-install lookup; do not retroactively call it supervised. Reuse the already
+working built root, inspect manifests/package files before any new environment lookup, and stop on missing
+materialization rather than allowing Lake to fetch. No further dependency setup/build is authorized here.
