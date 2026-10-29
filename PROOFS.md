@@ -527,6 +527,12 @@ C+2N, uniformly in the lag. This avoids a physical restart for endpoint CODE exc
 lemmas; Local hand carrying read accepted L1122, current4.35 pending. Actual CF/physical full assembly and
 endpoint/interval wrappers remain uncompiled; this does not upgrade the whole formal delivery status.
 
+**GC2117 current formal-delivery state:** all actual CF/physical/endpoint/interval components and their
+single-file assembly now pass Lean4.35 unchanged-checker replay169, with four scoped physical headlines.
+Local's remaining semantic reads carry. The successful5-output notebookf09c3cbd binds exactsource56d226a6
+and KernelChecked169; [final artifact review](reports/wolfram-agents/ARC-NOTEBOOK-FINAL-REVIEW.md) accepts
+sole-Local portal delivery. The earlier RSS_STOP is retained; external receipt/verification remains pending.
+
 ## B′. Siblings, Jen, the squeeze and one certified computation
 
 ### 16. Proposition 5 (Rule 90 has no finite configuration with a period-two column)

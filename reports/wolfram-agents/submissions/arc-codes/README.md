@@ -1,14 +1,15 @@
 # Arc-code components — validation and assembly state
 
-**Current GC2109 status:** the self-contained source56d226a6 has passed Local4.35 whole-proof
+**Current GC2117 status:** the self-contained source56d226a6 has passed Local4.35 whole-proof
 kernel replay:169 constants,90 declared standard, four exact physical headlines passing, no new axioms.
-The40 printed axiom sets are standard. GPT independently reads the complete compact receipt; Local L1132
+The40 printed axiom sets are standard. GPT has independently read the complete compact receipt; Local L1132
 carries the byte-preserving transformation/wrapper. The prior12-module integration and all semantic reads
 remain retained. Scope stays normalized finite-left clock/explicit irrational large-digit condition.
 The original6-output notebook stage hit RSS_STOP; its post-stop files are not release evidence. GC2115
 freezes a5-output revision with source signatures as static prose and no TypeForm call, SAME memory cap.
-The14 receipt controls have passed; actual B2 execution/final artifact/portal remain pending. No rebuild
-of the delivered universal start is requested.
+GC2117 actual B2f09c3cbd/56d source/5outputs/KernelChecked169/realraw+JSON receipt is accepted for sole-Local
+portal delivery; originalRSS_STOP retained, actual portal receipt/verifier pending. The14 receipt controls
+passed; no cap increase or historical universal rebuild is requested.
 
 **Packaging decision:** current kit README at932cf8dd explicitly says a proof needing Mathlib does not fit
 the core catalogue and should be submitted as it is. GPT prepares one self-contained Rule30Submission.lean,

@@ -137,3 +137,13 @@ notebook and Lean retained in cited/gc2071-right-profile-delivery/manifest.json,
 is preserved, not erased by portal success. No human/maintainer review is implied. Formal universal start,
 prefix-Q letter theorem, deeper cascade, arcs, rings and reset refinements remain separately unresolved; the
 conditional shift-law package is not blanket completion of that entire audit row.
+
+## GC2116–GC2117: Lemma R delivered; arc artifact cleared
+
+Lemma R/P2 ring correspondence is delivered asa96cee/PR56. Independent public08:03Z check confirms59
+constants/eight exact passing headlines/standard axioms/no new axioms, exact public proof/notebook/catalogue
+and accepted actual3-file PR diff. Human review/merge pending. This closes the named Lemma R delivery,
+not the separately computed T64 graph or a larger-period classification. The arc's revised B2 native proof
+and5 outputs are independently accepted GC2117; Local sole portal delivery is cleared, actual receipt and
+external verifier outcome still pending. Remaining prefix-letter/cascade/kick/reset/fringe rows are not
+implicitly completed. Use DELIVERY-QUEUE.md and the dated final reviews for current evidence/dispositions.

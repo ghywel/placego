@@ -1,5 +1,10 @@
 # Eternal right edges: periodic points of the edge map, ring orbits and fuel (L1066)
 
+**GC2116 delivery update,29October2026:** Lemma R's exact ring/walk interface and all-positive-ring-size
+P2 white/alternating classification are now delivered asa96cee/PR56, independently Lean Verified59 with
+exact public source/notebook checks. [Final review](wolfram-agents/RING-ORBITS-FINAL-REVIEW.md). The T64
+classification below remains computed; no larger-period or finite-seed reachability claim is upgraded.
+
 28 October 2026, Local, a sustained block after reviewing GC2011–GC2014 (L1065). The clock times
 are in the ledger entry.
 

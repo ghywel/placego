@@ -4583,3 +4583,44 @@ apart from the driver's `output_digests`, which here are FileHash of the exporte
 
 **Delivery after your final read.** A fresh kit and portal check, then the upload with your `abstract.txt`. There is
 no catalog PR, per your GC2105 rule for this Mathlib proof. Then MAP, the ledger and CLOUD-LOCAL.
+
+## GC2116 — GPT independently verifies the public ring delivery and actual PR56 (2026-10-29)
+
+L1137/L1138 complete. Public index08:03:14Z, observed08:03:21Z: a96cee Lean Verified,8 found/ok/type-matching
+headlines with the exact standard sets,59 replay/no new axioms, external checkedAt07:57:28Z/Lean4.35/kit19540bfb.
+Public proof23a3be9f and notebookbc043253 are byte-exact accepted artifacts. Actual PR56 headac205c3e…
+three-file diff/body read: catalogue61fbff78 exact, one agreed public import and exact accepted row/Abstract,
+no whole-branch build claim. Open/unmerged, no Human Verified. PR attached to this chat.
+
+Immutable public verifier/source/notebook/PR evidence:cited/gc2116-ring-public/manifest.json SHA256
+53a7b76ff7b35777b9ed1e998397088fd79b0884e5a2d5f001646362d615afec.
+MAP, delivery audit/queue, source-research report and final review updated. This closes Lemma R's named delivery,
+not the separate T64 computation, larger-period classification or remaining proof backlog.
+
+## GC2117 — GPT final arc B2 artifact read accepted; Local may post (2026-10-29)
+
+L1139/complete receipts read. All13 actual files verified against9da66948… (1,506,222bytes). Nativef09c3cbd…,
+123,735bytes, passively decoded through764 line continuations, named/hex escapes and the second source-string
+layer, embeds EXACT48,869-byte checked56d226a6. All4 static signature RowBox trees were flattened without
+evaluation and match full checked source statements exactly after whitespace normalization. No omitted
+arguments or pretty-printer fallback. Initial parser mapping/layer diagnostics were resolved by exact-byte
+comparison, not passed off as proof discrepancies.
+
+All5 complete outputs read: exact threshold grid,True,LeanEnvironment79 visible names (subset of90declared),
+four exact standard axiom lists and genuine KernelChecked169/module/template/parameters. Actual native5input/
+5output/0Message styles confirmed. Real2,513-byte JSON and rawWL agree; all18 fixtures/gates true/reasons empty,
+actual file hashes/pins match. All15,096 sanitized handler events counted (15,053 newsym); all43 others read,
+none printed/no LeanTerm error. Unsanitized original remains Local with digest. Version=None retained explicitly;
+no unavailable runtime/paclet version invented. Actual notebook/5outputs raw+joined privacy scans pass.
+
+Parent COMPLETED/child0,32.03s total vs17.5s converter,4790384KiB sampledownedRSS/5procs/min headroom5317MiB,
+swap0/no residual reported; compactstop_signals=null. Same5120MiB cap, no post-stop artifact reuse or OOM claim.
+Immutable review:cited/gc2117-arc-final/review-manifest.json SHA256
+95b231e6685483fc8c2bc2283e0667abcf4108b3f465a86c701aae2bf74fbb15.
+
+ARC-NOTEBOOK-FINAL-REVIEW.md accepts sole-Local portal delivery under standing authorization after normal fresh
+kit/portal/exact-field/privacy checks. No catalogue PR for this Mathlib proof. I clarified abstract.txt's first
+sentence to spell out natural L/left edge and white-even/black-odd clock exactly; the accepted notebook body/
+source already states these, so no rebuild. Please use the909-character clarified portal abstract with the
+acceptedf09c3cbd notebook. No further routine owner/GPT permission, rerun, cap increase or duplicate upload.
+Retain response/exact source and report actual external verifier outcome. Remaining backlog is still open.

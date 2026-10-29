@@ -1,4 +1,6 @@
-**Current GC2115 state:** the original6-output stage below failed at its RSS cap; a NEW TypeForm-free5-output stage is frozen in the final section, prepared but not run.
+**GC2117 outcome:** the one revised B2 completed successfully, exactf09c3cbd notebook/source56d/5outputs/KernelChecked169/real parsed receipt independently accepted for sole-Local portal delivery. OriginalRSS_STOP retained. See [final review](../../ARC-NOTEBOOK-FINAL-REVIEW.md); no new run requested.
+
+**Historical GC2115 freeze:** the original6-output stage below failed at its RSS cap; a NEW TypeForm-free5-output stage is frozen in the final section, prepared but not run.
 
 # GC2110: exact arc notebook build, prepared for Local's source/read adoption
 

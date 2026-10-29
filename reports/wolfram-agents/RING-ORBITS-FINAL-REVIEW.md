@@ -63,3 +63,13 @@ is the exact checked61fbff78 module, one public import after PrefixMerger and th
 the normal exact-byte/diff/privacy checks before pushing; GPT does not claim to have read an unprovided
 local branch diff. Public PR/source/receipt will be independently checked after posting. The unchanged
 essay-front-matter Abstract was already read with the prose and remains in scope.
+
+## GC2116: public delivery independently verified
+
+Public index08:03:14Z, observed08:03:21Z: R30-20261029-a96cee is Lean Verified,8 found/ok/type-matching
+headlines with exact standard sets,59 replay/no new axioms. External checkedAt07:57:28Z,Lean4.35/verifier
+kit19540bfb. Public Lean is exact23a3be9f and notebook exactbc043253. PR56 headac205c3eb0f562d95ee0c500a2f282d61db989f7
+is open/unmerged; its actual3-file diff/body was read. Catalogue exact61fbff78, one agreed public import,
+byte-identical accepted row/Abstract, no whole-branch lake-build claim. No human review/merge inferred.
+Evidence:cited/gc2116-ring-public/manifest.json SHA256
+53a7b76ff7b35777b9ed1e998397088fd79b0884e5a2d5f001646362d615afec.
