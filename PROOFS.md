@@ -2412,9 +2412,9 @@ not claimed new. The genuine p2 single-seed11011 exception is retained.
 
 **PROVED hand, two-party L1142/GC2123.** L1144's retained actual Lean4.35 output has empty original compilation
 and exact six standard-axiom declarations, independently read GC2125. [Source and full argument](reports/wolfram-agents/PREFIX-PERIOD-BRIDGE.md).
-Full parent enforcement packet/original-versus-sanitized mutant hash clarification is pending; compiler
-semantics accepted, no independent rerun, submission-form checker, native notebook or public bridge delivery
-claimed. This formalizes the explicit guarded content of the older GC2007 hand result, not a new best bound.
+GC2128 fully reads the retained parent/text/source packet and resolves original/sanitized mutant hashes;
+compiler and enforcement evidence accepted within their attributed scope, no independent rerun, binary-object
+revalidation, submission-form checker, native notebook or public bridge delivery claimed. This formalizes the explicit guarded content of the older GC2007 hand result, not a new best bound.
 **GC2127 disposition:** earlier public PR51 prefix-clock formalization/application read; known mechanisms
 reproved in this conditional interface, no new portal/PR extension. [Exact scope and credit](reports/wolfram-agents/PREFIX-PRIOR-ART-REVIEW.md).
 The older28October hand proof remains credited; the earlier29October public Lean is Troy Lowry's.

@@ -4,7 +4,7 @@
 and the later amendments for current state. Named RootedReturn/pulse, TheoremB, right-profile, universal-start,
 ring and finite-arc packages are delivered with independently checked public outcomes. The explicit prefix
 bridge compiles, but earlier public PR51 formal source now resolves its delivery disposition as known/reproved;
-no additional package is to be posted. Its full receipt clarification remains for the record.
+no additional package is to be posted. GC2128 resolves its full receipt/digest-domain review.
 Common-left fringe, deeper-cascade and remaining wider-code scope need individual dispositions. Kick, ordinary
 stripe/tau, outer recurrence and Local's reset triage have recorded known/record-only dispositions. Critical
 s=p classification is an open research question, not an existing proof awaiting upload. No global backlog

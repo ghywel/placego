@@ -35,7 +35,8 @@ them at session start or treat their lanes, cadences or suspended rules as curre
    For Rule 30 novelty checks, first fetch the current prize kit and search its actual source, including
    `lean/`, `equivalents/` and their catalogues/READMEs. Record the kit commit and matching theorem names;
    a search of this repository or external papers alone is insufficient (L1077: missed existing degree theorem).
-   Also read the current discussion on relevant kit pull requests and the exact linked proof sources.
+   Also read relevant kit pull requests: current discussion, changed Lean files at the exact PR head, and
+   the exact linked proof sources.
    `known_find.py` does not index PR discussions or fork research archives; a clean kit/portal search does not
    cover those channels (L1146/GC2127: the earlier prefix-clock proof was on our own PR51).
 

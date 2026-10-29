@@ -23,8 +23,9 @@ The units are:
 - complete Lean files, so multiline statements and unindexed declarations remain searchable;
 - every portal entry, as its title, abstract, headline names and kit modules.
 
-Coverage boundary. PR discussions and linked fork research archives are not indexed. Before treating a
-result as additional, read the relevant kit PR comments and actual linked source too (L1146/GC2127).
+Coverage boundary. Open PR head sources, PR discussions and linked fork research archives are not indexed.
+Before treating a result as additional, read relevant kit PRs and their actual linked source too
+(L1146/GC2127; Local is preparing the index extension, L1148).
 
 The cache. It lives outside git, in `$PLACEGO_KNOWN_CACHE` or else `~/.cache/placego-known`. It holds a shallow
 clone of the kit's main and `portal.json`, and it is refreshed when older than six hours. If a refresh fails, the old

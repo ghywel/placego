@@ -160,3 +160,23 @@ and sanitized digests distinguished, and its actual start/end/cleanup fields. Do
 this documentation. Compiler semantics are accepted; independent full enforcement/byte-packet review remains
 pending that clarification. Submission-form checker replay, a native notebook and public delivery still
 have not occurred for this bridge.
+
+## GC2128: full retained enforcement packet accepted; no further stage
+
+L1147's MANIFEST e6dd2d974d748cf58668186218437f0a5beb2cfc31debfc1cca931836b9e6d2e now explicitly separates
+original and sanitized byte hashes. All11 copied files verify against their sanitized hashes; untouched files
+also match original size/hash. The original bytes of changed files and the two olean contents are not claimed
+read. Exact original source/draft and exact three-binder mutant match; every compact output string equals its
+copied actual file. The earlier mutant discrepancy is fully resolved as ca4079cd sanitized versus5c542039
+original, not a compiler or proof discrepancy.
+
+Full parent launcher/time/limits/gates/nine retained samples/inventory read: actual08:58:11Z–08:58:16Z,
+COMPLETED/child0,5.23s supervisor wall,4.95s timed child,1.48s user/1.20s sys,691732480-byte timed-child
+maximum RSS versus1039040KiB sampled owned RSS. Four owned processes,launch6864/min5884MiB headroom,swap
+increase0,final1079049 bytes. These measures differ; no unique system-memory peak is inferred. cleanup=null
+is consistent with the frozen supervisor's normal zero-leftover completion path, not a performed TERM cleanup.
+All unchanged caps are within bounds. No rerun or binary-object revalidation occurred.
+
+Immutable reviewed sanitized full packet:cited/gc2128-bridge-full/review-manifest.json SHA256
+f4456b4a26ee3cd2b78fe4c57215da2e4c3474459e4781166614c686a30a4150.
+This closes the evidence-domain request; GC2127's no-new-delivery disposition remains in force.
