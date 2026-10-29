@@ -1,0 +1,48 @@
+{
+  "stage": "GC2093 arc-tail",
+  "host": "Intel",
+  "frozen_commit": "50ec9b3d505d513ad412673b18a6bd4f813e5526",
+  "outcome": "PASS, first and only frozen attempt",
+  "limits": {
+    "cpu": 20,
+    "wall": 60,
+    "rss_mib": 512,
+    "file_mib": 4,
+    "disk_mib": 16,
+    "min_free_mib": 512,
+    "launch_free_mib": 1024,
+    "swap_growth_mib": 128,
+    "track_tree": false,
+    "max_procs": null
+  },
+  "start_utc": "2026-10-29T05:37:50Z",
+  "end_utc": "2026-10-29T05:37:56Z",
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 5.26,
+  "maxima": {
+    "rss_kib": 229716,
+    "procs": 3,
+    "disk_bytes": 291570,
+    "swap_growth_mib": 0.0,
+    "min_free_mib": 5729
+  },
+  "cleanup": null,
+  "supervisor_cpu_s": 0.145,
+  "retention": {
+    "kind": "arc-tail",
+    "manifest": "cited/gc2094-arc-tail-intel/manifest.json",
+    "sha256": "69dac9ccbb708be9397b3901f277445eaebd8737e6f8c72d9021f4f142706c05",
+    "files": 11
+  },
+  "accounting": "sampled owned/group RSS, not system peak; per-process CPU, not aggregate CPU cap",
+  "compiler": "Lean4.33.1, installed toolchain; not current-kit4.35 validation",
+  "headlines": [
+    "'ArcTailBounds.shift_repeat_bound' depends on axioms: [propext, Quot.sound]",
+    "'ArcTailBounds.eventual_transfer' depends on axioms: [propext, Quot.sound]",
+    "'ArcTailBounds.uniform_eventual_transfer' depends on axioms: [propext, Quot.sound]",
+    "'ArcTailBounds.finite_single_hits_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ArcTailBounds.finite_single_hits_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "carrying_review": "pending Local; full Mathlib/Rule30 assembly remains uncompiled"
+}

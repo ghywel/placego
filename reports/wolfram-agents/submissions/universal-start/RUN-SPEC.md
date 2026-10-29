@@ -543,3 +543,49 @@ Frozen GC2093 candidate source SHA256:
 - universal_start_notebook_launch.py: 7fe5395978170ffc9de0cff993146282c3c8143ee9cb17c54c75963167187133
 - universal_start_notebook_run.wl: 280fe22837201d9f401e024453d6c56288c16a2516543ba59f2c2d81b1628d47
 - universal_start_notebook.wl: 903f0fb9819ccc781fb5f0a34112ff734a87984548f052e22943c62c5b36fce6
+
+## GC2094: lifecycle results and one corrected B attempt ready
+
+The single Intel GC2093 lifecycle stage PASS:14.58s,71516KiB sampled ownedRSS,7 processes peak,minimum
+headroom5967MiB,swap growth0. Two SIGTERMs still give INTERRUPTED and cleanup TERM+KILL/0 owned left;
+monitor failure cleans observed children using fresh real ps, while its intentionally broken cleanup
+monitor stays labelled UNVERIFIED. Process-cap stop and both stale-identity models pass. No four-control
+rerun or new fixture/Lean certificate repeat. Full raw/source/time/launcher/control packet:
+cited/gc2094-lifecycle-intel/manifest.json SHA256 74a928f2324131b0de4e8f726b9086b67067468ebd9b49461f48eb6726472aa9.
+Public compact receipt:receipts/intel-gc2093-lifecycle.json. This is Intel execution and self-check, not
+Local's independent source read.
+
+**B ready for ONE Local attempt after reading/adopting the actual50ec9b3d supervisor/launcher/driver delta,
+with no material objection. No further GPT/owner permission round is needed.** If an actual source/cap
+difference or safety objection remains, report it rather than substitute or automatically launch.
+All five source hashes remain exactly the GC2093 list above. Essay32672082/core409e7c59/catalog12068af9
+are unchanged. The17 gates and A3 passed, so do not rerun them.
+
+Command from existing materialized kit root, with existing elan/kernel tools, private resolved arguments:
+run_capped.py --track-tree --max-procs 8 --out FRESH --cpu 1200 --wall 1200 --rss-mib 4096
+--file-mib 64 --disk-mib 256 --launch-free-mib 5120 --min-free-mib 1024 --swap-growth-mib 512 --
+python3 -I universal_start_notebook_launch.py KERNEL universal_start_notebook_run.wl ESSAY KIT.
+No other Local kernel/Lean/job; no dependency install, new project lookup or library-target build.
+No extra Python wrapper child: the launcher execs the kernel, inheriting its actual limits and capped TMPDIR.
+Driver rejects an out-of-root temporary directory BEFORE resource/Lean/build and requires all final files
+plus structural gates. Source/olean temporary files and visible artifacts are included in the monitored
+256MiB output root; resource/library caches elsewhere are not reported as monitored output.
+
+CPU1200 is PER PROCESS, not an aggregate1200CPU cap. Sampled live ownership is capped8, with up to12
+workload lifetimes predicted (nominal14400childCPU across their per-process limits, conditional on that
+count); report actual accounting and any excess rather than infer it from the prediction. Monitor and
+cleanup overhead are separate;1200s is the running-child wall guard, with sampling/cleanup overhead
+reported. Preserve complete launcher/time/stdout/owning-process/receipt evidence on every outcome.
+
+Prediction remains RESULT OK in60–300s,2–3.5GB owned-tree RSS,6 outputs/no Message cells, exact table,
+complete standard axiom lists,KernelChecked258. Any refusal/stop/extra-process cap/message/output/source/
+temporary-root/count/cleanup discrepancy ends this attempt and is retained, with no automatic retry or
+scope/cap widening. A metadata count discrepancy does not by itself refute the theorem. Snapshot
+ownership misses processes born AND orphaned inside a0.5s interval and uses ps timestamp resolution;
+RSS/headroom are sampled proxies, not hard unified-memory/system peaks. Current source inspections and
+controls support this cooperative bounded build; no hostile-process containment guarantee is claimed.
+
+After the run: retain whole notebook, six native output cells, full message handler packet/tally, provenance,
+exact embedded module, temp/build/output inventory and final cleanup; GPT performs the actual artifact
+read before Local's sole-owner PR/upload. Fresh portal/kit/source checks and external verifier outcomes
+remain separate. This read is launch readiness only, not final submission acceptance.

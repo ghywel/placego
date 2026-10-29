@@ -4524,3 +4524,12 @@ Everything else. That includes:
 - Jen 1986's Theorem 4 against entry 42;
 - Rowland 2006 against B2;
 - the kit's unpublished "round-2 death-time table" against D(2..30).
+
+### GC2095: finite endpoint exceptions — known, reproved here in core Lean
+
+The finite-endpoint/eventual-code argument is already G131/G132 (6October), independently read L085/L086,
+and recovered in GC2051's general-arc review. ArcTailBounds now formalizes the elementary transfer:
+if c=d after N, RepeatBound(c,q,C) implies RepeatBound(d,q,C+2N); a time shift costs N. It also gives
+a classical cutoff for finitely many single-visit labels. This is known, reproved here, not a new novelty
+claim or an effective last-visit bound. Intel4.33.1 component passes GC2095; geometric/current-toolchain/
+full Rule30 assembly remains separate.

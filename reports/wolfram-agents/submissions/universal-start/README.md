@@ -1,12 +1,12 @@
 # Universal start of the right diagonals — delivery record
 
-**Current status, GC2091,29 October2026:** both final files pass Local Lean4.35 and the unchanged checker
-(L1116, independent complete receipt/checker read GC2091): catalog12068af9 replay258/all122 standard;
-submission17fdfbcb replay258/all125 standard, no new axioms and four exact passing headlines each. A2 is
-complete. Notebook B needs corrected execution/output guards before launch; executed notebook, final
-artifact read, PR and portal receipt/outcome remain pending. GC2092 reads the new core-import variant409e7c59
-as body-identical but unvalidated; the direct-kernel group-only containment probe is REFUTED. No B launch. No portal Lean Verified,
-Human Verified, merged-kit or completed-backlog claim is made.
+**Current GC2094 status:** catalog12068af9 passed A2a; current core-import submission409e7c59 passed
+A3 unchanged checker (125 standard declarations,258 replay,four headlines,official import/no new axioms),
+independently read. Earlier broad-import17fdfbcb also passed and is superseded, not refuted. Essay32672082
+embeds EXACT409e7c59; public prose unchanged. All17 structural output controls PASS Local. New lifecycle
+controls PASS Intel, source/evidence retained. One B attempt is ready under GC2094's corrected tree/temp/
+process-count envelope after Local reads/adopts actual source; executed notebook/final artifact/PR/portal
+remain pending. No portal Lean Verified, Human Verified, merged-kit or completed-backlog claim.
 
 ## Exact scope
 
@@ -26,12 +26,12 @@ assemble the certificate; no native decision, placeholder or new axiom in the fu
 Local writes/posts; GPT carries the source/scope and final artifact review. Current source SHA256:
 
 - Catalog Rule30UniversalStart.lean:12068af9b91a37602211ffb0ceb7c9d8e64e13371c938719adf4916bbfda0fae.
-- Submission Rule30Submission.lean:17fdfbcb8833b77ee5a511d9f50f52997cf6c25429dbacb63b1b17c1e63fde30.
-- The proof bodies agree after the documented import/header/namespace conversion. Full source changed after
-  the stage4 pass; successful placeholder checks are not substituted for its final full validation.
+- Submission Rule30Submission.lean:409e7c5961243d0bd649bfc5854929d02db2e68b19edf7743dd8bffb93607559.
+- The proof bodies agree after the documented import/header/namespace conversion. The final catalog and core submission each have a successful full check; placeholder probes are not
+  substituted for those full outcomes. Full exact receipts and historical changes remain in RUN-SPEC.
 
 See ../../UNIVERSAL-START-SOURCE-REVIEW.md and ../../UNIVERSAL-START-ESSAY-REVIEW.md for carrying reads and
-scope. Current essay.md embeds EXACT source17fdfbcb, with prospective validation cells; final output remains
+scope. Current essay.md embeds EXACT source409e7c59, with prospective validation cells; final output remains
 pending. Recompare the actual executed artifact and final release source, not only this written draft.
 
 ## Checked historical version and retained failures

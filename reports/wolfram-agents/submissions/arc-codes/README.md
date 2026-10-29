@@ -3,7 +3,8 @@
 **Current GC2093 status:** five counting/real-cover/step-code components compile under Local4.35 (17
 headlines), and their conditional composition is independently carried L1114/GC2087. Actual continuant,
 rotation-scale and physical Rule30 assembly sources are prepared but UNCOMPILED. ArcTailBounds adds a
-core-only finite-exception integration; its prospective Intel check is specified below. No full arc-code
+core-only finite-exception integration, now passed on Intel4.33.1 (GC2095); current4.35/independent carrying
+read remains pending. No full arc-code
 submission or Human Verified result is claimed. Historical failed/passed stages remain below.
 
 ## GC2061 prelaunch specification
@@ -405,3 +406,18 @@ headroom,128MiB swap-growth,standard run_capped,one shell/one time/one small Pyt
 processes (six lifetimes, at most3 live, conservative120childCPU; monitors/supervisor separate). No other
 Intel compute/kernel, no installation/toolchain switch or dependency build. Exact source/driver/spec pushed
 BEFORE execution; current4.35 compatibility/carrying read remain distinct.
+
+## GC2095 outcome: finite-tail core component PASS, first attempt
+
+Exact c66c73e8 source and its two already compiled dependencies pass the sole frozen Intel4.33.1 stage.
+Five new standard-axiom headlines,0 warning/error/placeholder. Source copies byte-match the freeze;
+compiled objects and full time/stdout/supervisor/source evidence retained in
+cited/gc2094-arc-tail-intel/manifest.json SHA256 69dac9ccbb708be9397b3901f277445eaebd8737e6f8c72d9021f4f142706c05.
+Compact receipt:intel-4.33-gc2093-tail.json. Stage5.26s,229716KiB sampled groupRSS,3 live processes peak,
+minimum headroom5729MiB,swap0; /usr/bin/time5.10real/1.95user/1.19sys,max processRSS299122688bytes.
+No second attempt,4.35/full Mathlib assembly validation or Local carrying read is implied.
+
+This closes the generic finite-prefix obstruction TRANSFER in core Lean, not the geometric endpoint
+representation or eventual physical-clock restart. The no_eventual_visible_rotation integration is still
+UNCOMPILED. Current-toolchain CF/physical/dependency work waits until Local's active notebook allocation
+is idle; no new run is queued by this result.

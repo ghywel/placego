@@ -3542,3 +3542,49 @@ refreshed index directly:
 
 So nothing new overlaps the universal-start package as of 05:38Z. The next `--new` will have a baseline. I will
 repeat the live check immediately before posting.
+
+## GC2094 — lifecycle controls PASS; corrected bounded notebook B ready for Local (2026-10-29)
+
+Frozen50ec9b3d Intel stage completes first attempt in14.58s,71516KiB sampled ownedRSS,7 processes peak,
+minimum headroom5967MiB,swap0. Double SIGTERM during cleanup still kills the TERM-ignoring escaped child;
+both signals recorded,INTERRUPTED,TERM+KILL/0 owned left. Failed monitor uses a fresh real-ps snapshot to
+clean the children, while its own cleanup verification honestly stays UNVERIFIED. The control independently
+checks identities gone; MONITOR_FAILURE remains a failed WORKLOAD, not relabelled success. Process cap
+and both synthetic stale-identity checks pass. No repeated Local four-control run. Full raw/source packet
+cited/gc2094-lifecycle-intel/manifest.json SHA256 74a928f2324131b0de4e8f726b9086b67067468ebd9b49461f48eb6726472aa9.
+
+B is ready for ONE Local attempt after reading/adopting the ACTUAL50ec9b3d code with no material objection;
+no further GPT/owner round. RUN-SPEC GC2094 gives the corrected command: --track-tree --max-procs8,4GiB
+ownedRSS/5GiB launch/1GiB ongoing,512MiB swap,1200running-child wall/1200CPU PER PROCESS,64MiB/file,
+256MiB aggregate capped root including inherited TMPDIR. Source hashes and remaining sampled-ownership/
+cache/accounting limitations are explicit. New exec launcher and WL driver reject uncapped temporary
+storage BEFORE any resource/build. No other Local job, no setup or automatic rerun/widening.
+
+A3/core409e7c59,exact essay32672082,17 output controls and catalogue12068af9 checks are complete; final
+actual notebook/source/messages/privacy/provenance/cleanup read still required before PR/portal posting.
+L1120's05:38:14Z portal report is read as a new365-item baseline, NOT an incremental diff. It lists only
+the five already recorded29October submissions, all Lean Verified; no universal-start match. Local repeats
+fresh live source checks before posting. GPT's separate TLS failure is retained as such.
+
+## GC2095 — finite-prefix changes preserve the repeat obstruction, core Lean PASS (2026-10-29)
+
+While Local's B source was pending, answered the cheap endpoint objection by hand rather than requesting
+another geometric experiment. If c=d from N onward and c satisfies b<=2a+q+C on every matching window,
+apply the same obstruction to [max(a,N),b] (or handle b<N directly). Then d has bound C+2N, uniformly
+in EVERY lag. A trace shift instead costs N. Consequently the already assembled large-digit rotation
+contradiction absorbs arbitrary finite CODE exceptions without restarting the physical configuration or
+changing its digit threshold. The physical clock remains normalized from0; eventual-clock restart is
+still separate. This formalizes known G131/G132/GC2051 reasoning, not a new-discovery or prize claim.
+
+ArcTailBounds.c66c73e8 passes its sole frozen Intel Lean4.33.1 attempt: five new exact standard-axiom
+prints, no warnings/errors/placeholders; matching source copies and bytecode retained. Three transfer
+lemmas use propext/Quot.sound; finite-single-visit cutoff/eventual equality also Classical.choice.
+Stage5.26s,229716KiB group sampledRSS,3 processes peak,minimum headroom5729MiB,swap0; process time5.10s,
+1.95user/1.19sys,max processRSS299122688bytes. No system-peak or4.35/full-assembly claim. Packet
+cited/gc2094-arc-tail-intel/manifest.json SHA256 69dac9ccbb708be9397b3901f277445eaebd8737e6f8c72d9021f4f142706c05.
+
+Next carrying read: Local, only the max(a,N) transfer and finite-single-visit cutoff if needed for integration,
+not another generic paper search. The actual irrational endpoint-visit wrapper/interval representation,
+CF/physical current-toolchain assembly and dependency availability still remain. The new
+no_eventual_visible_rotation source is UNCOMPILED with all explicit StepCode/large-digit/physical premises.
+No M5 arc compile requested while B is active; no competing experiment or automatic second Intel attempt.

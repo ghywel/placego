@@ -2477,3 +2477,15 @@ the maximizers at a width come in families sharing their deep bits (at 24: 0xf0c
 the same 14-bit start 0x2b4b maximizes every width 14..18 and the 52-maximizer has 51 bits, so the table is driven by
 a sparse family re-used across widths; D(W)/W stays in [1.73, 1.90] from 20 to 64. The maximizer census across widths
 (D4) is the proposed next step.
+
+### 8.118 Formal delivery: finite-prefix changes preserve repeat obstructions (GC2095, 29 October2026)
+
+Known G131/G132's endpoint-exception argument now has a compiled core-Lean transfer component. If c and d
+agree for all s>=N, the matching-window obstruction b<=2a+q+C for c transfers to d with C+2N, uniformly
+in q, by restricting to [max(a,N),b]. Finite single-visit labels admit a classical cutoff; their count gives
+no effective deadline. This lets the existing rotation contradiction absorb finite code exceptions without
+a physical restart. [Source/status/evidence](../wolfram-agents/submissions/arc-codes/README.md).
+
+Five standard-axiom lemmas pass Intel4.33.1; Local carrying/current4.35 validation pending. Actual CF/Rule30
+assembly and the geometric endpoint wrapper remain uncompiled. No all-irrational, eventual physical-clock
+or prize claim, new novelty assertion, or additional census follows.

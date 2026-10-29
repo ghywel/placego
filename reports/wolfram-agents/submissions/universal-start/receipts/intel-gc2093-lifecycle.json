@@ -1,0 +1,83 @@
+{
+  "stage": "GC2093 lifecycle",
+  "host": "Intel",
+  "frozen_commit": "50ec9b3d505d513ad412673b18a6bd4f813e5526",
+  "outcome": "PASS, first and only frozen attempt",
+  "limits": {
+    "cpu": 30,
+    "wall": 60,
+    "rss_mib": 512,
+    "file_mib": 4,
+    "disk_mib": 32,
+    "min_free_mib": 1024,
+    "launch_free_mib": 2048,
+    "swap_growth_mib": 128,
+    "track_tree": true,
+    "max_procs": 12
+  },
+  "start_utc": "2026-10-29T05:37:00Z",
+  "end_utc": "2026-10-29T05:37:14Z",
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 14.58,
+  "maxima": {
+    "rss_kib": 71516,
+    "procs": 7,
+    "disk_bytes": 2713,
+    "swap_growth_mib": 0.0,
+    "min_free_mib": 5967
+  },
+  "cleanup": null,
+  "supervisor_cpu_s": 0.335,
+  "retention": {
+    "kind": "lifecycle",
+    "manifest": "cited/gc2094-lifecycle-intel/manifest.json",
+    "sha256": "74a928f2324131b0de4e8f726b9086b67067468ebd9b49461f48eb6726472aa9",
+    "files": 21
+  },
+  "accounting": "sampled owned/group RSS, not system peak; per-process CPU, not aggregate CPU cap",
+  "results": {
+    "unit_checks": {
+      "failed_snapshot_never_signals_stale_pid": true,
+      "reused_parent_does_not_adopt_unrelated_child": true
+    },
+    "lifecycle_checks": {
+      "signal": {
+        "pass": true,
+        "exit_reason": "INTERRUPTED",
+        "owned_children_gone": true,
+        "cleanup": {
+          "signal": "TERM+KILL",
+          "group_processes_left": 0,
+          "owned_seen": 3
+        },
+        "stop_signals": [
+          15,
+          15
+        ]
+      },
+      "monitor": {
+        "pass": true,
+        "exit_reason": "MONITOR_FAILURE",
+        "owned_children_gone": true,
+        "cleanup": {
+          "signal": "TERM+KILL",
+          "group_processes_left": "unverified: FileNotFoundError(2, 'No such file or directory')",
+          "owned_seen": 3
+        },
+        "stop_signals": []
+      },
+      "procs": {
+        "pass": true,
+        "exit_reason": "PROCESS_STOP",
+        "owned_children_gone": true,
+        "cleanup": {
+          "signal": "TERM",
+          "group_processes_left": 0,
+          "owned_seen": 3
+        },
+        "stop_signals": []
+      }
+    }
+  }
+}

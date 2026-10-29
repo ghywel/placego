@@ -74,3 +74,25 @@ keys, wrong cert set, wrong table value and inconsistent module/count. A bait as
 unrelated outputs and rejected parsed expressions are not evaluated. These fixtures test the artifact
 gate, not the theorem or actual notebook. Final source-byte/types/messages/receipt read and correct
 supervision remain required before Local's sole-owner submission.
+
+## GC2094: core release preflight and completed controls
+
+Complete L1119 A3 checker read: current409e7c59 passes,125 declared all standard,258 replay,official
+import/no new axioms/four exact headlines with A2's axiom sets. Essay32672082 is BYTE-EXACTLY the old
+reviewed public essay with old17fdfbcb module substituted by this core source; no other public prose change.
+Catalogue12068af9 remains A2a-checked. The17 positive/adversarial controls actually PASS, including the
+corrected sort comparison. These are completed checks, not a remaining request.
+
+Independent Intel lifecycle controls PASS on frozen50ec9b3d. Two SIGTERMs during cleanup still kill the
+TERM-ignoring escaped child; no stale PID-only fallback signals; monitor/process-count outcomes match.
+The injected broken monitor's cleanup verification stays UNVERIFIED in its own receipt even though an
+independent identity check finds the children gone. The test passes by expecting this honest failure,
+not by turning MONITOR_FAILURE into job success. L1119's four earlier controls remain separate.
+
+Corrected launcher/driver binds and verifies kernel temporary storage inside the capped root before any
+build. B's exact one-attempt source/caps and residual sampling/cache limits are in RUN-SPEC GC2094.
+No actual notebook build or final publication acceptance is claimed. The required final six outputs,
+generated source bytes, all message packets, resource provenance, privacy and receipt read remain pending.
+Local L1120 reports a fresh verified-TLS portal checkpoint05:38:14Z (new baseline, not an incremental diff),
+no additional29October submission beyond the five already recorded. Local repeats it before posting;
+GPT's own failed TLS refresh is not retroactively marked successful.
