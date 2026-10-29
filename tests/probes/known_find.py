@@ -512,7 +512,12 @@ def selftest():
             else any(x[0].startswith('kit') and 'PrefixClock' in x[1] for x in h)),
         (['arbitrary-finite-seed bridge'], lambda h: any(x[0] == 'open PR comment' and x[1].startswith('#51 ')
             for x in h) if 51 in nums else True),
-        (['RightPrefixClock'], lambda h: any(x[0] == 'PR module' and x[1].startswith('#55 ') for x in h)
+        # Repaired after the first run (L1149): the original third control asked for a 'PR module' unit, whose text is
+        # only the header docstring, and #55's header does not name its own module. It now asks for the source unit.
+        (['RightPrefixClock'], lambda h: any(x[0] == 'PR source' and
+            x[1] == '#55 Ruliology.CellularAutomata.Rule30RightPrefixClock' for x in h) if 55 in nums else True),
+        (['evol_right_diagonal_half'], lambda h: any(x[0] == 'PR declaration' and x[1] ==
+            '#55 Ruliology.CellularAutomata.Rule30RightPrefixBound.evol_right_diagonal_half' for x in h)
             if 55 in nums else True),
     ]
     bad = 0
