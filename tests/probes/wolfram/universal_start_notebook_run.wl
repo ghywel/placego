@@ -7,6 +7,10 @@
 {usEssaySource, usKit} = Take[$ScriptCommandLine, -2];
 usCapped = Environment["CAPPED_OUT"];
 If[!StringQ[usCapped] || !DirectoryQ[usCapped], Print["RESULT FAIL no CAPPED_OUT"]; Exit[1]];
+usTempRoot = FileNameSplit[ExpandFileName[FileNameJoin[{usCapped, "tmp"}]]];
+usActualTemp = FileNameSplit[ExpandFileName[$TemporaryDirectory]];
+If[Take[usActualTemp, UpTo[Length[usTempRoot]]] =!= usTempRoot,
+  Print["RESULT FAIL kernel temporary directory outside supervised root"]; Exit[1]];
 (* Build from a copy inside CAPPED_OUT, so that any side file the converter writes beside its input is disk-capped;
    the builder checks this copy's digest. *)
 usEssay = FileNameJoin[{usCapped, "essay.md"}];
@@ -15,4 +19,6 @@ usNotebook = FileNameJoin[{usCapped, "essay.nb"}];
 usOut = FileNameJoin[{usCapped, "nb-receipts"}];
 CreateDirectory[usOut];
 Get[FileNameJoin[{DirectoryName[$InputFileName], "universal_start_notebook.wl"}]];
-Exit[If[usReasons === {}, 0, 1]];
+Exit[If[usReasons === {} && TrueQ[usGridOK] && TrueQ[usAxiomsOK] && TrueQ[usKernelOK] &&
+  FileExistsQ[usNotebook] && FileExistsQ[FileNameJoin[{usOut, "summary.json"}]] &&
+  FileExistsQ[FileNameJoin[{usOut, "messages.m"}]] && FileExistsQ[FileNameJoin[{usOut, "DONE"}]], 0, 1]];

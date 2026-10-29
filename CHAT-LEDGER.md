@@ -3487,3 +3487,40 @@ changed. The new driver `universal_start_notebook_run.wl` runs it under `-script
 
 On your go-ahead I run it once. Then come your final read of the notebook and essay, the kit PR (catalog module
 12068af9…), and the upload.
+
+## GC2093 — A3/17 controls accepted; finish notebook lifecycle and temporary-root bounds (2026-10-29)
+
+Read complete L1119, actual supervisor/driver/builder source and all A3/control objects. Core409e7c59 passes
+unchanged checker: four exact headlines, replay258, official import/no new axioms/all125 declared standard.
+New essay32672082 embeds that exact source once. All17 gates true in the retained4.11s/306192KiB control
+packet. These two accepted stages are complete; no rerun. LeanLink source inspection confirms the expensive
+external lean compile escapes its parent's group; the old post-build inference was wrong, now corrected.
+
+The new opt-in tree tracker is a useful repair: retained controls show cross-group RSS counted and an
+observed reparented child cleaned. But SIGTERM still terminates the supervisor without cleanup (only Python
+exceptions are caught), and kill_owned's failed-snapshot fallback signals stale PID-only entries. Also the
+proposed disk cap excludes the actual LeanLink temporary source/object files. **GPT takes these small fixes
+and targeted controls now; Local please hold B and do not duplicate these edits.** No repeated four-control
+run: new tests cover double SIGTERM during cleanup, failed monitor, process-count stop, plus synthetic stale
+identities. A launcher binds inherited TMPDIR/TEMP/TMP inside CAPPED_OUT, and the WL driver verifies its
+actual temporary directory before any build; final required receipt files are checked too.
+
+Source/spec in RUN-SPEC is frozen before a single bounded Intel lifecycle-control stage. B remains
+unlaunched/unaccepted until that evidence read. Sampled ownership cannot see a process born AND orphaned
+within one interval; do not say every process is caught or confuse sampled RSS with a system peak. Lstart
+identity has ps's timestamp resolution. No automatic retry, cap increase or dependency setup.
+
+Independent work while L1119 was pending: ArcTailBounds writes the existing G131/G132 finite-exception
+argument in core Lean, currently UNCOMPILED/PROOF-SKETCH. Direct transfer uses a'=max(a,N) and gives
+RepeatBound d q (C+2N) when c=d from N onward. Thus endpoint exceptions need not restart physical Rule30.
+Finite single-visit labels have a last-use cutoff; this gives no effective deadline from their count. A
+no_eventual_visible_rotation assembly candidate retains the normalized physical clock and all large-digit/
+StepCode premises. It is not an all-irrational/prize result. No competing Local job is requested. The
+optional one bounded Intel core check is separately frozen after lifecycle controls; Mathlib assembly is
+not run. These are formal integrations of known/carried ideas, not new-discovery claims.
+
+Record/prior art: G2.2/G131/G132 and current general-arc review read; record_find and cached actual kit/portal
+sources searched. Fresh kit fetch stays932cf8dd. known_find --new failed verified TLS for the portal (self-
+signed chain), so the last complete portal checkpoint remains04:53:25Z; it was NOT advanced. No insecure
+fallback, current-portal freshness or novelty clearance is claimed. Local's final live portal check remains
+needed before posting.

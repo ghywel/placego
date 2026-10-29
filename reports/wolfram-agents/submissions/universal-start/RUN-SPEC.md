@@ -500,3 +500,46 @@ GC2092's caution was right, and the post-build snapshot in r2 could not see it.
     in-process load and KernelCheck replay.
 - **Counterfactual.** Any stop, leftover, exit code other than 0, gate failure or count discrepancy ends the
   stage and is retained, with no rebuild. One attempt, with no other job running.
+
+## GC2093: lifecycle/temporary-root correction, prelaunch controls
+
+L1119 A3 and17-output controls are independently accepted; no repeated Lean/fixture work. The original four
+owned-tree controls are read, not rerun. This stage addresses NEW missing paths in that source. Prediction:
+double SIGTERM during cleanup yields INTERRUPTED with both owned children gone; broken monitor yields
+MONITOR_FAILURE and cleans the escaped child using a fresh real-ps snapshot (cleanup still labelled
+unverified when the injected monitor stays broken); a2-process cap yields PROCESS_STOP. Synthetic cases
+must show no PID-only fallback kill and no adoption through a reused parent's different start identity.
+Counterfactual: any wrong outcome/resource/pressure stop rejects this one attempt, full evidence retained.
+Record searched: complete L1119 source/controls, GC2091/GC2092 lifecycle objections, actual LeanLink external
+compile discovery. No proof or novelty claim is made by supervisor controls.
+
+GPT's correction installs non-raising SIGTERM/SIGINT stop handlers before launch, allowing cleanup to
+finish even after another signal. kill_owned takes a fresh ownership snapshot BEFORE killing the leader;
+if the monitor command fails it tries real ps, never stale PID-only signalling. If both fail it can only
+signal the owned group and cleanup remains unverified. Optional --max-procs stops sampled count growth.
+The snapshot/orphan/PID-timestamp limitations remain; the instrument is not a hostile-process sandbox.
+
+ONE Intel outer-control attempt, no Lean/Wolfram/dependency/build or other Intel compute: run_capped with
+--track-tree --max-procs12,30CPU per process,60stage wall,512MiB RSS,4MiB/file,32MiB total output,2048/1024MiB
+launch/ongoing free+inactive,128MiB swap growth. Fresh output, controller
+run_capped_lifecycle_controls.py. Three sequential inner stages, each10CPU/process,20wall,128MiB RSS,
+1MiB/file,8MiB output,2048/1024MiB headroom,256MiB swap; only process-cap case sets --max-procs2. These
+inner allocations are SUBSETS of the monitored outer tree/output. At most14 owned workload lifetimes
+expected, conservative420CPU seconds across per-process limits; supervisor/monitor overhead separate,
+outer sampled concurrency capped12. No automatic rerun or widening; source and full digests pushed first.
+
+For future B, the new Python exec launcher binds TMPDIR/TMP/TEMP to fresh CAPPED_OUT/tmp before kernel
+startup. The WL driver rejects a temporary directory outside that subtree before loading any resource or
+build, and requires the final notebook/summary/messages/DONE plus all three semantic gates. This brings
+expected LeanLink source/object temporary files into the256MiB aggregate artifact envelope, not merely the
+visible notebook. Inherited64MiB/file applies as well. Existing resource/library caches are not represented
+as monitored output. Proposed B additionally uses --max-procs8 (sampled), otherwise L1119's4GiB RSS/5GiB
+launch,1024MiB ongoing,512MiB swap,1200wall/1200CPU per process,64MiB/file,256MiB-output limits. Full B
+acceptance awaits these control results and actual new source read, not this prospective paragraph.
+
+Frozen GC2093 candidate source SHA256:
+- run_capped.py: c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56
+- run_capped_lifecycle_controls.py: 3c67742af99257993ca5c86a054d37c68bdf504dd4e27969fe6ae07d899c6b1e
+- universal_start_notebook_launch.py: 7fe5395978170ffc9de0cff993146282c3c8143ee9cb17c54c75963167187133
+- universal_start_notebook_run.wl: 280fe22837201d9f401e024453d6c56288c16a2516543ba59f2c2d81b1628d47
+- universal_start_notebook.wl: 903f0fb9819ccc781fb5f0a34112ff734a87984548f052e22943c62c5b36fce6

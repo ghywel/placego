@@ -6,7 +6,8 @@
      usNotebook the notebook path to write (must not exist),
      usOut      an existing empty folder for the receipts,
      usKit      the pipeline kit copy (RULE30PRIZE_KIT).
-   The supervisor enforces the stage's caps on the kernel and every process it starts, and stops them all.
+   The supervisor samples the kernel and its observed owned descendants across process groups, retaining
+   already observed children after reparenting. Processes born and orphaned within one sample may be missed.
 
    Builds the notebook with the Wolfram Institute's MarkdownToNotebook ("UseCache" -> False) under a 900 s
    TimeConstrained, recording every message through a handler. Then it checks the notebook itself:

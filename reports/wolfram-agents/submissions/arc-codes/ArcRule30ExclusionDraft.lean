@@ -1,6 +1,7 @@
 import Ruliology.CellularAutomata.Rule30Prize
 import ArcRotationDraft
 import ArcRule30BridgeDraft
+import ArcTailBounds
 
 /-!
 # Normalized Rule30 finite-step rotation exclusion: explicit assembly candidate
@@ -28,5 +29,25 @@ theorem no_visible_rotation {r : Nat} (S : ArcStepCode.StepCode r) (alpha theta 
   exact ArcRule30Bridge.repeat_bound x L hleft hzero hclock q hq
 
 #print axioms ArcRule30Exclusion.no_visible_rotation
+
+/-- Finite endpoint exceptions are harmless once eventual agreement has been supplied.
+    This does not assume an eventual physical clock: that clock is still normalized from time zero. -/
+theorem no_eventual_visible_rotation {r : Nat} (S : ArcStepCode.StepCode r) (alpha theta : ℝ)
+    (ha : Irrational alpha)
+    (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧
+      ((2^(r+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1))
+    (x : Int → Bool) (L : Nat)
+    (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false)
+    (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1))
+    (hvisible : ∃ N : Nat, ∀ s : Nat, N ≤ s →
+      ArcRule30Bridge.visible x s = ArcStepCode.orbit S alpha theta s) : False := by
+  obtain ⟨N,hN⟩ := hvisible
+  apply ArcRotation.no_uniform_repeat_bound S alpha theta ha hlarge
+  refine ⟨L+2*N,?_⟩
+  exact ArcTailBounds.uniform_eventual_transfer (ArcRule30Bridge.visible x)
+    (ArcStepCode.orbit S alpha theta) L N
+    (fun q hq => ArcRule30Bridge.repeat_bound x L hleft hzero hclock q hq) hN
+
+#print axioms ArcRule30Exclusion.no_eventual_visible_rotation
 
 end ArcRule30Exclusion

@@ -1,10 +1,10 @@
-# Arc-code components — compiled counting and real-spacing bounds
+# Arc-code components — validation and assembly state
 
-**Current status, GC2083:** all five core/real-cover/finite-step components pass the one capped Local4.35
-integration stage according to L1111's committed17-headline receipt, with source digests matching. Earlier
-Intel development passes and retained failures remain below. Independent carrying read of the assembled
-cover interface is pending; actual continuant/physical assembly is still absent. ArcContinuantsDraft remains
-uncompiled. No full arc-code/Rule30 submission or human verification is claimed.
+**Current GC2093 status:** five counting/real-cover/step-code components compile under Local4.35 (17
+headlines), and their conditional composition is independently carried L1114/GC2087. Actual continuant,
+rotation-scale and physical Rule30 assembly sources are prepared but UNCOMPILED. ArcTailBounds adds a
+core-only finite-exception integration; its prospective Intel check is specified below. No full arc-code
+submission or Human Verified result is claimed. Historical failed/passed stages remain below.
 
 ## GC2061 prelaunch specification
 
@@ -374,3 +374,34 @@ its own carrying/compilation check. Record searched: complete actual Rule30Finit
 determine source at current kit932cf8dd, GC2057 exact substitutions, actual compiled one-scale source and
 GC2085 CF candidate. All new source and assumptions are retained; no compiler/dependency lookup/install/run
 or additional Local allocation started. Review the numerical certificate outcome first when it arrives.
+
+## GC2093: endpoint exceptions by direct repeat-bound transfer
+
+For c=d from N onward, a matching d-window[a,b] either ends before N (trivial bound), or restricts to
+[max(a,N),b], where both s and s+q are beyond N. Applying c's bound gives
+b<=2max(a,N)+q+C<=2a+q+(C+2N). One new constant works for EVERY positive lag. This avoids a physical
+restart and preserves the same large-digit threshold in the rotation contradiction, since that theorem
+already permits every fixed C. Shifting a trace instead costs N, proved separately.
+
+The core component also proves a finite family of single-visit predicates has a last-use cutoff and that
+changes supported there eventually vanish. For irrational circle rotation the missing interpretation is
+the standard single-visit fact: two visits to an endpoint make a nonzero integer multiple of alpha integral.
+This recovers G131/G132's existing endpoint reasoning, not a new discovery or an effective last-hit deadline.
+The actual irrational/geometric wrapper and conventional step-function representation remain separate.
+ArcRule30ExclusionDraft's no_eventual_visible_rotation candidate uses eventual CODE agreement, while
+retaining the clock normalized from physical time0. It does not silently establish an eventual-clock restart.
+
+Record searched: G2.2/G131/G132/current general-arc carrying review, actual RepeatBound/StepCode sources and
+record_find endpoint/rotation hits. Kit freshly fetched at932cf8dd; portal TLS refresh failed, last complete
+04:53:25Z index explicitly used with no new novelty claim. No source/dependency setup was attempted.
+
+Optional ONE Intel core validation after the GC2093 lifecycle stage completes and this host is idle:
+compile_arc_tail.sh checks frozen source digests then compiles ArcBreakBounds, ArcBreakSequence and
+ArcTailBounds into fresh CAPPED_OUT using installed Lean4.33.1. Prediction: five new standard-axiom
+headlines, no warnings/placeholders/errors; no actual CF/Rule30/Mathlib assembly compile. Counterfactual:
+retain any diagnostic/refusal/resource/nonstandard-axiom failure and end the attempt; no automatic retry.
+20CPU per process,60stage wall,512MiB groupRSS,4MiB/file,16MiB total output,1024/512MiB launch/ongoing
+headroom,128MiB swap-growth,standard run_capped,one shell/one time/one small Python/three sequential Lean
+processes (six lifetimes, at most3 live, conservative120childCPU; monitors/supervisor separate). No other
+Intel compute/kernel, no installation/toolchain switch or dependency build. Exact source/driver/spec pushed
+BEFORE execution; current4.35 compatibility/carrying read remain distinct.

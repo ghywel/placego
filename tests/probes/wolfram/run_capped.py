@@ -29,6 +29,8 @@ reused PID is never mistaken for an owned one. Owned processes stay tracked afte
 sum the live owned set; every stop, a leftover at the end and an exception in the supervisor terminate the owned set as
 well as the group, and cleanup verifies that no owned process remains. Limit: a process created and orphaned within one
 sampling interval is not seen.
+GC2093: SIGTERM/SIGINT request normal cleanup (also during cleanup); failed tree sampling never falls back
+to signalling stale PID-only identities. Optional --max-procs bounds the sampled live owned/group count.
 Test hooks (harmless controls only, read from the environment): CAPPED_TEST_PS=bogus (monitor failure), CAPPED_TEST_MINFREE_MIB (raise
 the pressure threshold).
 """
@@ -85,10 +87,15 @@ def tree_update(owned, pgid, ps_cmd):
     return live, sum(rows[pid][2] for pid in live)
 
 def kill_owned(owned, pgid, ps_cmd, sig):
+    # Discover BEFORE terminating the leader, or an escaping child may already be reparented when sampled.
+    # A broken monitor/test command must not cause stale PID-only signalling: retry a fresh real ps snapshot.
+    # If even that fails, only the owned group is signalled and cleanup stays explicitly unverified.
+    try: live, _ = tree_update(owned, pgid, ps_cmd)
+    except Exception:
+        try: live, _ = tree_update(owned, pgid, "ps")
+        except Exception: live = []
     try: os.killpg(pgid, sig)
     except (ProcessLookupError, PermissionError): pass
-    try: live, _ = tree_update(owned, pgid, ps_cmd)
-    except Exception: live = list(owned)
     for pid in live:
         try: os.kill(pid, sig)
         except (ProcessLookupError, PermissionError): pass
@@ -102,12 +109,19 @@ def dir_bytes(d):
     return s
 
 def main():
+    stop_signals = []
+    # Do not raise from a handler: an interruption during cleanup must not interrupt cleanup itself.
+    def request_stop(sig, _frame):
+        stop_signals.append(sig)
+    signal.signal(signal.SIGTERM, request_stop)
+    signal.signal(signal.SIGINT, request_stop)
     ap = argparse.ArgumentParser()
     for k in ("out",): ap.add_argument("--" + k, required=True)
     for k in ("cpu", "wall", "rss-mib", "file-mib", "disk-mib"): ap.add_argument("--" + k, type=int, required=True)
     ap.add_argument("--min-free-mib", type=int, default=1024); ap.add_argument("--launch-free-mib", type=int, default=4096)
     ap.add_argument("--swap-growth-mib", type=int, default=256)
     ap.add_argument("--track-tree", action="store_true")
+    ap.add_argument("--max-procs", type=int)
     ap.add_argument("cmd", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     cmd = a.cmd[1:] if a.cmd and a.cmd[0] == "--" else a.cmd
@@ -119,9 +133,12 @@ def main():
     ps_cmd = "bogus-ps-for-test" if os.environ.get("CAPPED_TEST_PS") == "bogus" else "ps"
     minfree = int(os.environ.get("CAPPED_TEST_MINFREE_MIB", a.min_free_mib))
     def finish(reason, rc=None, extra=None):
+        if reason == "COMPLETED" and stop_signals:
+            reason = "INTERRUPTED"
         rec.update({"exit_reason": reason, "child_rc": rc, "end_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                     "supervisor_cpu_s": round(resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime, 3)})
         if extra: rec.update(extra)
+        if stop_signals: rec["stop_signals"] = stop_signals
         rec["inventory"] = {f: os.path.getsize(os.path.join(a.out, f)) for f in sorted(os.listdir(a.out))}
         with open(logp, "w") as fh: json.dump(rec, fh, indent=1)
         print(f"{reason} rc={rc}")
@@ -133,6 +150,8 @@ def main():
     rec["gate"] = {"free_inactive_mib": free0, "swap_used_mib": swap0}
     if free0 < a.launch_free_mib:
         return finish("REFUSED", extra={"gate_error": "free+inactive below launch gate"})
+    if stop_signals or (a.max_procs is not None and a.max_procs < 1):
+        return finish("REFUSED", extra={"gate_error": "interrupted or invalid process cap"})
     def preexec():
         resource.setrlimit(resource.RLIMIT_CPU, (a.cpu, a.cpu))
         resource.setrlimit(resource.RLIMIT_FSIZE, (a.file_mib * MIB, a.file_mib * MIB))
@@ -149,6 +168,7 @@ def main():
     t0 = time.time(); reason = None; samples = []; mx = {"rss_kib": 0, "procs": 0, "disk_bytes": 0, "swap_growth_mib": 0.0, "min_free_mib": free0}
     try:
       while p.poll() is None:
+        if stop_signals: reason = "INTERRUPTED"; break
         time.sleep(0.5 if a.track_tree else 1)
         if p.poll() is not None: break
         try:
@@ -162,12 +182,14 @@ def main():
         mx["rss_kib"] = max(mx["rss_kib"], rss); mx["procs"] = max(mx["procs"], n); mx["disk_bytes"] = max(mx["disk_bytes"], db)
         mx["swap_growth_mib"] = max(mx["swap_growth_mib"], sg); mx["min_free_mib"] = min(mx["min_free_mib"], fr)
         if len(samples) < 600: samples.append([round(time.time() - t0, 1), rss, fr, round(sg, 1), db])
+        if a.max_procs is not None and n > a.max_procs: reason = "PROCESS_STOP"; break
         if rss > a.rss_mib * 1024: reason = "RSS_STOP"; break
         if fr < minfree or sg > a.swap_growth_mib: reason = "PRESSURE_STOP"; break
         if db > a.disk_mib * MIB: reason = "DISK_STOP"; break
         if time.time() - t0 > a.wall: reason = "WALL_STOP"; break
     except BaseException as e:                           # L1119: a supervisor exception still stops the child's tree
         reason = "MONITOR_FAILURE"; rec["monitor_error"] = repr(e)
+    if stop_signals: reason = "INTERRUPTED"
     cleanup = None
     def group_left():                                   # live (non-zombie) processes still in the group
         if a.track_tree:                                 # L1119: the whole owned set, group members included
