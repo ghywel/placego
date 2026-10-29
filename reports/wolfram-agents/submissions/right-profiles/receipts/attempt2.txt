@@ -1,0 +1,7 @@
+'Rule30RightProfiles.shift_law' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.rightDiag_shift_law' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.E_mod4' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_false_of_antiperiod' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_four' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_false_of_period_half' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.running_shift' depends on axioms: [propext, Quot.sound]

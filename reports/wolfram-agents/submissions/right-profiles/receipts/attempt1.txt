@@ -1,0 +1,30 @@
+RightProfilesDraft.lean:158:68: error: No goals to be solved
+RightProfilesDraft.lean:159:4: error: Tactic `rfl` failed: The left-hand side
+  false ^^ xr b (2 * q)
+is not definitionally equal to the right-hand side
+  xr b (2 * q)
+
+q : Nat
+hq : q % 2 = 0
+d a b c z : Nat → Bool
+hd : ∀ (t : Nat), d (t + q) = d t
+ha : ∀ (t : Nat), a (t + q) = !a t
+hb : ∀ (t : Nat), b (t + 2 * q) = b t
+hc : ∀ (t : Nat), c (t + 2 * q) = !c t
+hbs : ∀ (t : Nat), b (t + 1) = (b t ^^ (a t || d t))
+hzs : ∀ (t : Nat), z (t + 1) = (z t ^^ (c t || b t))
+G : Nat → Bool
+hG : ∀ (s : Nat), G s = (c s || b s)
+H : Nat → Bool
+hH : ∀ (s : Nat), H s = (a s || d s)
+hzs' : ∀ (t : Nat), z (t + 1) = (z t ^^ G t)
+hbs' : ∀ (t : Nat), b (t + 1) = (b t ^^ H t)
+hGp : ∀ (s : Nat), G (s + 4 * q) = G s
+⊢ (false ^^ xr b (2 * q)) = xr b (2 * q)
+'Rule30RightProfiles.shift_law' depends on axioms: [propext, sorryAx, Quot.sound]
+'Rule30RightProfiles.rightDiag_shift_law' depends on axioms: [propext, sorryAx, Quot.sound]
+'Rule30RightProfiles.E_mod4' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_false_of_antiperiod' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_four' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.eta_false_of_period_half' depends on axioms: [propext, Quot.sound]
+'Rule30RightProfiles.running_shift' depends on axioms: [propext, Quot.sound]
