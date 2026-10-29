@@ -1,7 +1,7 @@
 /-!
 Pulse-profile contribution under development (GC2044).
 Core Lean; no imports. This file proves local algebra and the exact interval budget.
-Cyclic weight/run count is implemented below; the periodic hole/delay bridge remains pending.
+Cyclic weight/run count and periodic hole/delay bridge are implemented below; current build status is in README.
 No finite-seed ancestry, settling bound, novelty clearance or portal submission is claimed.
 -/
 namespace Rule30PulseProfiles
@@ -187,6 +187,149 @@ theorem heavy_source_two_runs (f : Nat → Bool) (q s : Nat) (hs : s < q) (hc : 
     cases f (s+1) <;> cases f s <;> decide
   omega
 
+/-- Periodicity is assumed for the whole temporal profile, not inferred from one seam. -/
+def Periodic (q : Nat) (f : Nat → Bool) : Prop := ∀ t, f (q+t) = f t
+
+def pulse (q t : Nat) : Bool := decide (t % q = 0)
+
+def FirstBlack (f : Nat → Bool) (arrival wait : Nat) : Prop :=
+  f (arrival+wait) = true ∧ ∀ i, i < wait → f (arrival+i) = false
+
+/-- The exact pulse-child holes within a full cycle, including the closing endpoint q. -/
+theorem pulse_child_holes (q l : Nat) (C D : Nat → Bool)
+    (hl : 1 ≤ l) (hlq : l < q) (hc : C l = true)
+    (hz : ∀ t, 1 ≤ t → t < l → C t = false)
+    (hd : D q = D 0)
+    (hstep : ∀ t, t < q → D (t+1) = xor (decide (t=0)) (C t || D t)) :
+    ∀ t, t ≤ q → D t = decide (t=0 ∨ l<t) := by
+  have hln : l ≠ 0 := by omega
+  have hinit : D (l+1) = true := by
+    simpa [hln, hc] using hstep l hlq
+  have black : ∀ n, l+1+n ≤ q → D (l+1+n) = true := by
+    intro n
+    induction n with
+    | zero => intro _; simpa using hinit
+    | succ n ih =>
+      intro hbound
+      have hp := ih (by omega)
+      have ht : l+1+n < q := by omega
+      have hn : l+1+n ≠ 0 := by omega
+      rw [show l+1+(n+1) = (l+1+n)+1 by omega, hstep _ ht]
+      simp [hn, hp]
+  have hq : D q = true := by
+    have h := black (q-(l+1)) (by omega)
+    simpa [show l+1+(q-(l+1)) = q by omega] using h
+  have h0 : D 0 = true := by rw [← hd]; exact hq
+  have h1 : D 1 = false := by simpa [h0] using hstep 0 (by omega)
+  have white : ∀ n, n+1 ≤ l → D (n+1) = false := by
+    intro n
+    induction n with
+    | zero => intro _; exact h1
+    | succ n ih =>
+      intro hbound
+      have hp := ih (by omega)
+      have ht : n+1 < q := by omega
+      have hn : n+1 ≠ 0 := by omega
+      have hC := hz (n+1) (by omega) (by omega)
+      rw [hstep _ ht]
+      simp [hn, hC, hp]
+  intro t ht
+  by_cases hzero : t=0
+  · subst t; simp [h0]
+  · by_cases hlow : t ≤ l
+    · have h := white (t-1) (by omega)
+      have heq : t-1+1 = t := by omega
+      rw [heq] at h
+      simp [h, hzero, show ¬ l<t by omega]
+    · have h := black (t-(l+1)) (by omega)
+      have heq : l+1+(t-(l+1)) = t := by omega
+      rw [heq] at h
+      simp [h, show l<t by omega]
+
+/-- A nonzero phase representative in1..q reaches the pulse at time q. -/
+theorem first_pulse (q arrival : Nat) (ha : 1 ≤ arrival) (haq : arrival ≤ q) :
+    FirstBlack (pulse q) arrival (q-arrival) := by
+  constructor
+  · rw [show arrival+(q-arrival) = q by omega]
+    simp [pulse]
+  · intro i hi
+    have ht : arrival+i < q := by omega
+    have hn : arrival+i ≠ 0 := by omega
+    simp [pulse, Nat.mod_eq_of_lt ht, hn]
+
+/-- The pulse's reset arrival is q+1 for every phase representative. -/
+theorem pulse_reset_arrival (q arrival : Nat) (haq : arrival ≤ q) :
+    arrival + ((q-arrival)+1) = q+1 := by omega
+
+/-- The next first-black wait is l-1, hence its delay is l. -/
+theorem first_child_after_reset (q l : Nat) (C : Nat → Bool)
+    (hl : 1 ≤ l) (hc : C l = true)
+    (hz : ∀ t, 1 ≤ t → t < l → C t = false) (hp : Periodic q C) :
+    FirstBlack C (q+1) (l-1) := by
+  constructor
+  · have heq : q+1+(l-1) = q+l := by omega
+    rw [heq, hp l, hc]
+  · intro i hi
+    have heq : q+1+i = q+(1+i) := by omega
+    rw [heq, hp (1+i)]
+    exact hz (1+i) (by omega) (by omega)
+
+/-- On an actual periodic pulse-child trajectory, the last delay is1. -/
+theorem first_grandchild_after_child (q l : Nat) (D : Nat → Bool)
+    (hl : 1 ≤ l) (hlq : l < q) (hp : Periodic q D)
+    (holes : ∀ t, t ≤ q → D t = decide (t=0 ∨ l<t)) :
+    FirstBlack D (q+l+1) 0 := by
+  constructor
+  · have heq : q+l+1+0 = q+(l+1) := by omega
+    rw [heq, hp (l+1), holes (l+1) (by omega)]
+    simp
+  · intro i hi; omega
+
+/-- The cyclic child recurrence is exactly the local recurrence used by the hole theorem. -/
+theorem local_step_of_pulse (q : Nat) (C D : Nat → Bool)
+    (h : ∀ t, D (t+1) = xor (pulse q t) (C t || D t)) :
+    ∀ t, t < q → D (t+1) = xor (decide (t=0)) (C t || D t) := by
+  intro t ht
+  simpa [pulse, Nat.mod_eq_of_lt ht] using h t
+
+/-- Complete phase-to-delay bridge for one full set of arrival representatives. -/
+theorem actual_pulse_delays (q l arrival : Nat) (C D : Nat → Bool)
+    (hl : 1 ≤ l) (hlq : l < q) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
+    (hc : C l = true) (hz : ∀ t, 1 ≤ t → t < l → C t = false)
+    (hpC : Periodic q C) (hpD : Periodic q D)
+    (hstep : ∀ t, D (t+1) = xor (pulse q t) (C t || D t)) :
+    FirstBlack (pulse q) arrival (q-arrival) ∧
+    arrival+((q-arrival)+1) = q+1 ∧
+    FirstBlack C (q+1) (l-1) ∧ FirstBlack D (q+l+1) 0 := by
+  have hd : D q = D 0 := by simpa using hpD 0
+  have holes := pulse_child_holes q l C D hl hlq hc hz hd (local_step_of_pulse q C D hstep)
+  exact ⟨first_pulse q arrival ha haq, pulse_reset_arrival q arrival haq,
+    first_child_after_reset q l C hl hc hz hpC,
+    first_grandchild_after_child q l D hl hlq hpD holes⟩
+
+/-- The budget is now tied to the actual profile first-black events. -/
+theorem actual_pulse_window_bound (q l arrival : Nat) (C D : Nat → Bool)
+    (hq : 4 ≤ q) (hl : 1 ≤ l) (hlq : l < q) (ha : 1 ≤ arrival) (haq : arrival ≤ q)
+    (hc : C l = true) (hz : ∀ t, 1 ≤ t → t < l → C t = false)
+    (hpC : Periodic q C) (hpD : Periodic q D)
+    (hstep : ∀ t, D (t+1) = xor (pulse q t) (C t || D t)) :
+    (FirstBlack (pulse q) arrival (q-arrival) ∧
+      arrival+((q-arrival)+1) = q+1 ∧
+      FirstBlack C (q+1) (l-1) ∧ FirstBlack D (q+l+1) 0) ∧
+    intervalDebt2 ((q-arrival+1 : Nat) : Int) (l : Int) ≤
+      2*(q : Int)-5 + max 0 (2*(l : Int)-5) := by
+  constructor
+  · exact actual_pulse_delays q l arrival C D hl hlq ha haq hc hz hpC hpD hstep
+  · apply pulse_window_bound <;> omega
+
+/-- Phase1 is an actual representative and attains the arithmetic upper bound. -/
+theorem pulse_window_attained (q l : Nat) (hq : 4 ≤ q) (hlq : l < q) :
+    intervalDebt2 ((q-1+1 : Nat) : Int) (l : Int) =
+      2*(q : Int)-5 + max 0 (2*(l : Int)-5) := by
+  have heq : q-1+1 = q := by omega
+  rw [heq]
+  apply intervalDebt2_at_pulse <;> omega
+
 end Rule30PulseProfiles
 
 #print axioms Rule30PulseProfiles.source_bit_correction
@@ -195,3 +338,8 @@ end Rule30PulseProfiles
 
 #print axioms Rule30PulseProfiles.pulse_source_weight
 #print axioms Rule30PulseProfiles.heavy_source_two_runs
+
+#print axioms Rule30PulseProfiles.pulse_child_holes
+#print axioms Rule30PulseProfiles.actual_pulse_delays
+
+#print axioms Rule30PulseProfiles.actual_pulse_window_bound

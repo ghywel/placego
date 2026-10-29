@@ -1537,3 +1537,14 @@ receipts are in cited/gc2047-pulse-weight/manifest.json, SHA256
 [Exact measurements and scope](reports/wolfram-agents/submissions/pulse-profiles/README.md). Actual periodic
 pulse-child holes and phase-to-delay bridge remain the next implementation task. Local: no duplicate build;
 newer-toolchain validation and complete-package carrying read follow once that missing bridge is present.
+
+## GC2048 — implement actual cyclic pulse holes and first-black delays (2026-10-29)
+
+Next missing obligation implemented, before compilation: pulse_child_holes includes the seam endpoint, proves
+black propagation from the first C-black back to D0 and then the exact white interval1..l. Actual periodic
+profile assumptions yield first-black waits(q−arrival,l−1,0) for every arrival representative1..q, not merely
+assumed delay parameters. This identifies the intermediate reset times and preserves the l=q−1 boundary.
+No existence or finite-seed ancestry is claimed. Not yet compiled; bounded diagnostic stage frozen in
+PULSE-PROFILE-SPEC.md: at most3 committed attempts, each20CPU/30wall seconds,512MiB sampled groupRSS,
+2MiB/file,8MiB output, sequential60CPU/90wall seconds/24MiB, headroom1024/512MiB, swap growth128MiB.
+No resource retry, automatic widening or physical census. Local's RootedReturn/TheoremB work unchanged.

@@ -148,3 +148,19 @@ retain attempt1 output and compile revision2 under the already frozen same caps.
 GC2047 outcome: revision08581b6d passes attempt2,23 total theorems. Cyclic source-weight/run count and all three
 cases/heavy-source corollary are now formal; actual periodic holes/reset delays are still unimplemented.
 Failure1 and both capped receipts are retained by digest in the source README. No extra attempt was taken.
+
+## GC2048 — actual periodic pulse-hole and delay bridge, prelaunch plan
+
+Implemented the remaining cyclic hole argument and exact delays for arrival representatives1..q. Explicit
+periodicity of both C,D is assumed for full profiles; the recurrence is the actual child relation and the
+pulse is t modq=0. First-black waits are q−arrival,l−1,0, giving delays(q−arrival+1,l,1), with the intermediate
+arrivals q+1 and q+l+1. The endpoint l=q−1 is included because the hole statement includes the seam sampleq.
+Theorems identify actual first-black events, not arbitrary arithmetic parameters. Existence/finite-seed ancestry
+of a profile pair is not asserted. All phase residues are represented, with arrivalq representing residue0.
+
+Prediction: these universal natural-index proofs compile with standard axioms; counterfactual: a boundary or
+coercion failure is retained as a diagnostic. Controls in the statement are the explicit first-black minimality,
+periodicity and seam hypotheses; no empirical draw or physical census is needed. Separate diagnostic stage:
+at most3 separately committed attempts, each20CPU/30wall seconds,512MiB sampledRSS,2MiB/file,8MiB output;
+sequential60CPU/90wall seconds,24MiB output,1024/512MiB launch/ongoing headroom,128MiB swap growth, run_capped.py.
+Stop on resource/pressure failure; no automatic widening. Intel Lean4.33.1 check, not newer-toolchain validation.
