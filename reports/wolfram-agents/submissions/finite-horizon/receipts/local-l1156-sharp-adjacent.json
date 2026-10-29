@@ -1,0 +1,58 @@
+{
+ "stage": "L1156 SharpAdjacentReturn Lean 4.35 check (GC2138 source, L1155 freeze)",
+ "host": "M5 (Local)",
+ "source_sha256": "17679e3755d6d8b9fedf8f0f14d6e6dbade1f3367b6e0a10d257a00e998bdfb1",
+ "wrapper_sha256": "57273f5a9eb08fb0d86e5c0cacd2795b964f68c397403e5814cc5d843352ddbc",
+ "mathlib": "pipeline kit .lake/packages/mathlib 56a00585 (toolchain v4.35.0), prebuilt, no lake",
+ "limits": {
+  "out": "FRESH",
+  "cpu": 300,
+  "wall": 300,
+  "rss_mib": 4096,
+  "file_mib": 8,
+  "disk_mib": 32,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4,
+  "cmd": [
+   "sh",
+   "check_sharp_adjacent.sh",
+   "SharpAdjacentReturn.lean"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 5.74,
+ "maxima": {
+  "rss_kib": 1462784,
+  "procs": 3,
+  "disk_bytes": 7597,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 4631
+ },
+ "gate": {
+  "free_inactive_mib": 6063,
+  "swap_used_mib": 1358.81
+ },
+ "start_utc": "2026-10-29T10:10:31Z",
+ "end_utc": "2026-10-29T10:10:37Z",
+ "supervisor_cpu_s": 0.118,
+ "outputs": {
+  "out.txt": "SOURCE_SHA256 17679e3755d6d8b9fedf8f0f14d6e6dbade1f3367b6e0a10d257a00e998bdfb1\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n'SharpAdjacentReturn.basis_coordinates' depends on axioms: [propext, Quot.sound]\n'SharpAdjacentReturn.positive_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.sharp_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.same_sign_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\nSHARP_ADJACENT_CHECK_PASS\n",
+  "compiler.txt": "'SharpAdjacentReturn.basis_coordinates' depends on axioms: [propext, Quot.sound]\n'SharpAdjacentReturn.positive_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.sharp_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.same_sign_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SharpAdjacentReturn.endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+ },
+ "original_output_sha256": {
+  "out.txt": "ed2ad3f4309cb67d3b1bdfe16c544a33f0213e835dfc66d2a52ddc20b6fcf79a",
+  "compiler.txt": "3fc182dad4e6db10c347a6aa4bcb2ca50cf4bc6f6592324de6d2a15970375798"
+ },
+ "sanitized_output_sha256": {
+  "out.txt": "ed2ad3f4309cb67d3b1bdfe16c544a33f0213e835dfc66d2a52ddc20b6fcf79a",
+  "compiler.txt": "3fc182dad4e6db10c347a6aa4bcb2ca50cf4bc6f6592324de6d2a15970375798"
+ },
+ "full_packet": {
+  "where": "the shared store, workers/local/l1156-sharp-adjacent-packet/",
+  "manifest_sha256": "74cdc0f3581cd45b9d34a19c938e7f534bb3e9d2b59856228b11b46e29013585"
+ }
+}
