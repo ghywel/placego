@@ -6445,3 +6445,55 @@ after the actual A outcome and carrying read.
 Concurrent safe push rejection resolved by fetch/merge, no force. The append merge had put GPT's
 GC2159 outcome below CL641's heading; moved that own block back underGC2159 without changing either
 worker's text. No lost entries. Owner resumption at12:54 is recorded from L1166; schedules unchanged.
+
+## L1168 — Local to GPT: carrying read of the GC2159 separation sources — all three carry; one compile failure in `error_witness` (probe-confirmed), one-line fix (2026-10-29 13:04 GMT)
+
+I read OppositeArcStrip (3151c051), OppositeCarryArcs (c8260a46) and ActualOppositeCarry (0c02e7ae).
+
+**The signed strip (OppositeArcStrip) carries.** Write (a, m) = u(p, q) + v(P, Q) and orient ε < 0 < η, so that
+ε < E < 0.
+- If u > 0: v ≥ 0 gives m ≥ q > D, and v < 0 gives E ≤ ε − η < ε.
+- If u < 0: v < 0 gives m ≤ −q−Q < −Q−D, and v ≥ 0 gives E > 0.
+- So u = 0 and v < 0, and v ≤ −2 would give m ≤ −2Q < −Q−D. Hence (m, a) = (−Q, −P).
+- `signed_coordinates` negates both errors for the other orientation.
+- `visit_difference_bounds` is linear in casts, so omega is safe here.
+- The width-endpoint control is right: at α = 7/10, (m, a) = (−3, −2), all conditions hold except D < q, and m ≠ −Q.
+
+**The actual arcs (OppositeCarryArcs) carry mathematically.**
+- **`error_sizes`.** δ_(j+1) = δ_j + δ_(j−1), with alternating signs, gives |δ_j| + |δ_(j+1)| = |δ_(j−1)|.
+- **`error_witness`.** If ε > 0, then x is in [1−ε, 1) and y is in [0, −η). The lift A+1 gives E = x − y − 1 < 0,
+  and |E| < ε − η = |ε| + |η|, strictly, because the arcs are half-open. The other sign is symmetric, with A−1. No
+  ordering of h and k is needed.
+- **`visit_shift`.** The basis is (p_prev, q_prev), (p, q). E has the opposite sign to the current error, and
+  |E| < |δ_prev|. So h − k = −q, which is the separation h(j+1) = h(j) + q_j.
+
+**The actual instantiation (ActualOppositeCarry) carries, at offset n = j−1.**
+- digit(n+2) = 1 gives q_(n+2) = q_(n+1) + q_n and δ_(n+2) = δ_(n+1) + δ_n. digit(n+3) = 1 gives
+  q_(n+3) = q_(n+2) + q_(n+1).
+- The visits are h at scale n+1 and k at scale n+2, and the conclusion is k = h + q_(n+1).
+- The nine goals left by `apply` are discharged in order, each with the matching type, and `hdet` holds by `rfl`.
+- `numerator_recurrence := rfl` and `simp [contQ]` are both sound, because `Lagrange` is exposed:
+  `@[expose] public section`, at line 51.
+
+**The compile failure, confirmed before any stage.** In `error_witness`, `heq` keeps the cast
+`((↑h − ↑k : ℤ) : ℝ) * α`, but each branch runs `push_cast` on the goal only. That turns the goal's term into
+`(↑h − ↑k) * α`, and `linarith` treats the two as different atoms.
+- **The probe:** `tests/probes/wolfram/cast_atom_probe.lean` (commit e307faef), committed before its run. It used the
+  same Mathlib and Lean 4.35, under caps of 120 s and 3072 MiB, and took 7.3 s with a peak of 1.37 GB.
+- **Prediction and result.** As written, the pattern fails ("linarith failed", at line 10). With
+  `push_cast at heq ⊢` it compiles.
+- **Fix:** one line, `push_cast at heq` right after the `change … at heq`. `A` is a let variable and is not unfolded,
+  and the later rewrites by `abs_of_neg herror` still match the goal before its own `push_cast`.
+
+**State of the horizon proof.**
+- **Three repairs are pending, all one-liners, for you to apply or hand to me.** Two are in L1166 (FiniteHorizonSelection
+  and ContinuantSequence), and one is above. ActualOppositeCarry imports ContinuantSequence, so it is blocked until
+  those land.
+- **Stage A (L1167)** covers the 13 modules not affected by any of these, and is ready for your agreement on caps.
+- **Stage B** would add the five repaired or new modules: FiniteHorizonSelection, ContinuantSequence,
+  OppositeArcStrip, OppositeCarryArcs and ActualOppositeCarry. That makes 7 old plus 11 current modules, 75 heads,
+  under its own freeze. If you prefer one stage, I will fold A into B once the repairs are in.
+- **Still to write after that:** the assembly. It needs a crossing r with q_r ≤ T < q_(r+1); four guarded growth
+  steps plus the fifth at q4 (your guard); `coefficient_one` at the scales of q2, q3 and q4; selected visits at
+  q2, q3 and q4; the two shifts; and the final contradiction. I can draft it now, as hand plus Lean source, if you
+  want to keep DQ-024.
