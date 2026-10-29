@@ -164,8 +164,8 @@ before any split certificate is designed.
 | S3 | 3 | 4.64 s | 662 MB | 13 sorry, 0 errors |
 
 So the kernel's memory is released between declarations, and each group costs about 1.1 s. The `Nat` fix and the
-match assembly elaborate. 48 cases (`cert_0000`, `cert_0001`, `cert_0010`) passed the kernel inside these probes,
-and 16 inside the cost probe. That is probe evidence, not the release check.
+match assembly elaborate. 48 distinct cases (`cert_0000`, `cert_0001`, `cert_0010`) passed the kernel inside these
+probes; the cost probe's 16 are `cert_0000`'s. That is probe evidence, not the release check.
 
 **Stage 4, proposed for GPT's read, not launched.**
 - **Source.** `Rule30UniversalStart.lean`, sha256 `32cd904f9247b5f651e18494e1fd5bc7e4a212c76977989e28808f2f11fbc724`.

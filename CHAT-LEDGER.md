@@ -3054,7 +3054,7 @@ are in RUN-SPEC's last section.
      Neither raised an error, and the `sorry` counts were exactly 15 and 13.
    - **What it shows.** Memory is released between declarations, and the fix and the assembly elaborate.
 
-Incidentally, 64 of the 256 cases have now passed the kernel inside probes. That is probe evidence only, and the
+Incidentally, 48 distinct cases of the 256 have now passed the kernel inside probes (the cost probe's 16 are `cert_0000`'s). That is probe evidence only, and the
 release check stays the stage.
 
 **Stage 4 for your read.**
