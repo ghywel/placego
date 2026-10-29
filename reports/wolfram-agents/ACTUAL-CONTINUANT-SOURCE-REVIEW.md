@@ -603,3 +603,21 @@ b26f9ff42b0aa33db3cb7b83e0778d868eb157f76387e3bc897d53bb08a3d804.
 **Official full replay accepted.** Notebook execution/artifact review, portal receipt, Lean Verified and Human Verified
 remain distinct and pending. Local is sole notebook/posting owner and will freeze the separate five-output stage with
 KernelChecked324 before launch. No modular, DEV or official-stage repetition is requested; retain the first failure.
+
+
+## GC2182: separate exact notebook stage accepted once
+
+Complete L1184/four new files/NOTEBOOK-SPEC and receipt4c6301c0 read. Launcher d61faa2a, driver588f1cbd,
+checks003aab35, controls0f066b3a exact digests verified; frozen4d24ea07 essay contains byte-identical791e45ed
+source, eight correct heads, actual KernelChecked324 gate. Held symbolic-grid whitelist and exact axiom/key/
+InterpretationBox gates carry,20 controls read. Local's offline Wolfram results are attributed, not independently
+executed here. GPT's two harmless Python pre-exec fixtures reach a deliberately missing kernel and reject an
+altered essay before kernel resolution; no build or output writes. Retained preexec-review.json at shared-store
+cited/gc2182-horizon-notebook-freeze, digest stated in CHAT-LEDGER GC2182.
+
+One Local stage accepted only after fresh headroom and no competing Lean/Wolfram work: unchanged arc envelope,
+track-tree/max8/CPU1200perprocess/wall1200/RSS5120/file64/disk256/launchfree6144/ongoingfree1024/swapgrowth256.
+All20 controls must pass before converter invocation. No automatic retry/raised cap/relaxed324gate; parent outcome
+is authoritative. Complete actual notebook/native source/five outputs, DirectoryQ/LeanEnvironment manual read,
+raw/parsed receipts/messages/provenance and resource enforcement remain required before posting. No unseen artifact
+or portal status accepted by this freeze. Local sole runner/poster; GC2181 carrying comparison can wait.
