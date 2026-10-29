@@ -1,5 +1,7 @@
 # L1184: the horizon notebook build, frozen for GPT's read (not run)
 
+**L1187 outcome:** the one GC2182 stage FAILED at its axiom gate, because LeanLink hides names containing `.rec`. A repaired essay and its re-pinned driver and launcher are frozen in the last section, prepared and not run. The section below is the historical L1184 freeze.
+
 One stage, adapted from the arc package's final five-output stage ([arc NOTEBOOK-SPEC](../arc-codes/NOTEBOOK-SPEC.md),
 GC2115, completed in GC2117). Local is the sole notebook runner and poster. It runs only after GPT's read, with no
 other Lean or Wolfram job, and no automatic retry.
@@ -92,3 +94,51 @@ The following are retained:
 
 Before posting, GPT reads the actual outputs, axioms, `KernelChecked` object and native source literal, and scans
 for privacy. A local notebook pass is distinct from the portal's Lean Verified and Human Verified states.
+
+## L1187: the first outcome (retained failure), and the repaired stage (prepared, not run)
+
+**Outcome.** The stage ran from 15:29:50Z to 15:30:36Z on the restarted host, at 6791 MiB headroom.
+- **Parent.** `CHILD_FAILED`, child exit 1, wall 45.9 s, peak owned RSS 4.60 GB, at most 5 processes, minimum free
+  5497 MiB, no swap growth.
+- **What passed.** The inputs and all 20 controls passed. The notebook built in 31.5 s, with 5 outputs and 0 Message
+  cells. The grid matched, and `KernelChecked` reported 324 declarations of `LeanLinkTmp…`, with a matching template.
+- **What failed.** Output 4 held the exact standard set for seven headlines, but for `RecodedHorizon.recoded_horizon`
+  it held `Missing["KeyAbsent", …]["Axioms"]`.
+- **Receipt:** [local-l1187-notebook-failed.json](receipts/local-l1187-notebook-failed.json). The full sanitized
+  packet is workers/local/l1187-notebook-failed-packet/, MANIFEST d3152961.
+
+**Cause, from LeanLink's source.** `Lean.wl` line 2985 defines `isInternalName` as `StringContainsQ` against
+patterns that include `.rec` and `.inj`. `LeanImport` drops every such name unless `"IncludeInternal" -> True`, and
+`LeanImportString` passes its options through. So `….recoded_horizon`, `….recode` and `….recurrence_one` are absent
+from the environment. Of the checker's 155 declarations, these are the 3 user names missing among the 17 absent;
+the other 14 are generated auxiliaries. The kernel replay is unaffected, since it covered all 324.
+
+**Probe, frozen in de958989 and run once per mode.**
+- It used a core-only module with `Probe.plain` and `Probe.recoded`, and `leanlink_rec_filter_probe.wl`.
+- **Default import:** `Probe.recoded` is missing.
+- **With `"IncludeInternal" -> True`:** both are present, with empty axiom sets.
+- `KernelCheck` reports 2 declarations in both modes.
+- Each run ended `LEFTOVER_CLEANED` with child exit 0: a process remained at the end, and the supervisor reaped it.
+
+**Repair: one option in the essay, with no source, check or cap change.**
+- The import cell becomes
+  `LeanImportString["%%LEAN%%", "ProjectDir" -> $Rule30PrizeKit, "IncludeInternal" -> True]`.
+- One sentence explains why.
+- The prose is now 060de9b8, pinned in the assembler, and the bound essay is 203fd0a6.
+- The driver and launcher change only their essay and driver pins. The checks, controls and receipt helper are
+  byte-identical, and so are the grid, the axiom and `KernelChecked` 324 gates, the 20 controls and every cap.
+
+| File | SHA-256 |
+|---|---|
+| `essay-prose.md` | 060de9b8c435cce923735f9c2ce81b0451592fd0e2dda6366f3ee7b9518d91ef |
+| `essay.md` | 203fd0a6e9b43861e85b94fb62f5e257e9712a1235cd78a9c2e3e2a79c4e1def |
+| `horizon_notebook_launch.py` | f7654266d10a4c657a50259ace6f6fb8718aa92ffcb08bd0d8b226f24d8692fb |
+| `horizon_notebook_run.wl` | 154be32878d56869d5e317c0352226bf321733bfa9e81ad22651a77ed2ec125b |
+| `horizon_notebook_checks.wl` | 003aab35ce7760fcaac2ab4245901996ecc09a1fc24adc6e4d43f6cf20364c70 (unchanged) |
+| `horizon_notebook_control.wl` | 0f066b3a5db550ce04f1de6fb8f66d0278e9e6b4585eda70985652f8c79e3fba (unchanged) |
+| `notebook_receipt.wl` | 4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7 (unchanged) |
+| `Rule30Submission.lean` | 791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110 (unchanged) |
+
+**Prediction for the repaired stage:** as in L1184, with output 4 now holding all eight exact standard sets.
+`KernelChecked` stays 324, as the probe's equal counts and the failed stage's 324 indicate. Any stop ends the stage,
+with its evidence retained.

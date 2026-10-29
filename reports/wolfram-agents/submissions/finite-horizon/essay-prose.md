@@ -127,7 +127,8 @@ Here `evol` is the kit's `Ruliology.CellularAutomata.Rule30Realization.evol`, `m
 ## The complete formal source
 
 This module includes every proof dependency we wrote, and imports only public kit, Mathlib and Lean modules. The eight
-headlines above are in the namespaces named there.
+headlines above are in the namespaces named there. The import keeps internal names: LeanLink 1.2.2 omits from its
+environment every name containing `.rec`, meant for recursors, and that would also omit `recoded_horizon`.
 
 ```wl
 Needs["Wolfram`LeanLink`"];
@@ -136,7 +137,7 @@ DirectoryQ[$Rule30PrizeKit]
 ```
 
 ```wl
-rule30Submission = LeanImportString["%%LEAN%%", "ProjectDir" -> $Rule30PrizeKit]
+rule30Submission = LeanImportString["%%LEAN%%", "ProjectDir" -> $Rule30PrizeKit, "IncludeInternal" -> True]
 ```
 
 ```wl
