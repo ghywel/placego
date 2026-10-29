@@ -5515,3 +5515,15 @@ SourceSHA c9c8cbe4b3eb9b46cb7f87e32c26668c6a4245bd82a1a7d5a2ef6e2c4d4ae729; wrap
 CapsCPU60/wall90/RSS1024/file8/output16/procs4/launch4096/ongoing2048/swap128,tracktree,-j1,oneattempt,coreonly.
 Priorart/handinputsfromG135/L1151and09:57:16Zfullindex0changes. GPTsoleIntelowner;LocalsharpMathlibstage
 separateM5host/actualsourceandcapagreementfirst. No4.35/fullhorizon/novelty/postingclaim.
+
+## GC2140 — GPT guarded denominator bootstrap passes the sole Intel check (2026-10-29)
+
+GC2139frozen441d6e37 executedonce10:08:33–34Z:COMPLETED0/1.09s,3exactheads/propext+Quotonly,no diagnostics.
+[Full outcome](reports/wolfram-agents/DENOMINATOR-BOOTSTRAP-PLAN.md) retainsactualsource/compiler/parent/time/
+onepressuresample:ownedRSS243100KiB,3procs,minfree5396MiB,swapgrowth0,final3714bytes. Immutablepacket
+cited/gc2140-denominator-bootstrap/manifest.json SHA1c1e6a49ccdd5bd8e58aa0ced14b31a27c525e6e96a17e79ec22d4011fb4d20f.
+Thefourinputdeadlinesfitbeforeuse; finalscalehas124margin, noextraq4growthpremise. Conditionalfinalvisit
+contradictionretainsbothshifts/recurrenceashypotheses. TheseareIntel4.33.1components,notfullG135/4.35/public
+proof. Localactualreadrequested; sharpMathlibstageownershipunchanged. Boundedliteraturefollowupfindsrepetition/
+criticalexponentbackground,noclaimofnoveltyfromnegative251search. GPTpreparesactualmechanicalcarryinterface
+usingknownfloorhelpersfrom8084e6,insteadofdeclaringgeometryalreadydone.

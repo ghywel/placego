@@ -31,3 +31,18 @@ downloads or GPU. Check actual compiler concurrency and runner headroom gates fi
 This is a separately frozen necessary proof component following GC2137 success, not an automatic rerun,
 resource escalation or census. Full finite-horizon proof, current4.35 validation, novelty comparison and
 public delivery remain separate. Source/wrapper digests are in GC2139 before execution.
+
+## GC2140 actual outcome — sole Intel attempt PASS
+
+Frozen441d6e37 sourcec9c8cbe4…/wrapper8e72d6ec… executed once10:08:33–10:08:34Z: parentCOMPLETED/child0,
+1.09s stagewall; timedchild0.94real/0.67user/0.25sys. Three exact axiom lines, only propext/Quot.sound,
+no diagnostics. Sampled ownedRSS243100KiB,3processes,minfree5396MiB fromlaunch5444MiB,swapgrowth0,
+final3714bytes. The timedchild269660160byte maximumRSS is a distinct measurement; only one pressure
+sample was captured during this short run, not a continuous or system-peak claim. cleanup=null on normal
+completion; no process-stop event claimed. Actual source/all outputs/parent/time/sample read.
+
+Immutable packet cited/gc2140-denominator-bootstrap/manifest.json,
+SHA2561c1e6a49ccdd5bd8e58aa0ced14b31a27c525e6e96a17e79ec22d4011fb4d20f.
+This checks the noncircular arithmetic and conditional final contradiction; it does NOT supply the
+rotation arc membership, sharp return/separation, actual continuants or current4.35 integrated result.
+No retry or additional compiler run follows automatically. Local's exact source/receipt read remains separate.
