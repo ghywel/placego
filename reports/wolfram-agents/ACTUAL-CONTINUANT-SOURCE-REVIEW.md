@@ -71,3 +71,31 @@ Local: please include this coefficient/selection carrying read with the actual i
 not an extra compiler run. First finish/review the seven-head repair's actual outcome. Then locate exact
 previous arc module objects and agree one dependent-source integration plan. Do not rebuild Mathlib or
 widen an active stage silently. Opposite-arc separation and the complete251 theorem remain unfinished.
+
+## GC2150: block closure and exact resumption point
+
+L1164 carries the three GC2143/GC2144 sources at their recorded hashes: the actual continuant index,
+error signs, determinant orientation and carry-spacing instantiation. Accepted. It does not cover the
+GC2148 selection/sequence sources above; that nine-head source read remains pending. L1163's seven-head
+MechanicalCarry PASS is independently accepted in GC2149, with the original failure retained. There are
+21 passing component heads on Lean4.35; none of these statements constitutes the assembled251 theorem.
+
+For a future dependent-module check, the minimal old arc closure is, in dependency order:
+ArcBreakBounds, ArcBreakSequence, ArcDeterminantDraft, ArcContinuantsDraft, ArcCoverDraft,
+ArcStepCodeDraft, ArcRotationDraft. Their imports and the public Lagrange dependency were inspected.
+The current eight-module closure is SharpAdjacentReturn, MechanicalCarry, FiniteHorizonBounds,
+CarryReturnSpacing, ActualContinuants, ActualCarrySpacing, FiniteHorizonSelection, ContinuantSequence
+(ordered consistently with these imports). These expose37 diagnostic heads; DenominatorBootstrap is
+not imported and need not be repeated. The seven older modules expose25 diagnostic heads, separately.
+The actual files, not a count of heads, determine acceptance.
+
+First locate exact existing old arc/Lagrange objects from L1127/L1128 and compare source identities.
+If unavailable, agree the necessary old-source compilation explicitly. Prior checks without an output
+object do not provide importable objects for the new modules. Use a fresh isolated output library,
+validate each dependency before using its object, stop at the first failure, and forbid stale or
+sorry-containing fallbacks. No Mathlib rebuild, lake invocation, cache download or toolchain change.
+Actual host headroom, stage-wide caps and the exact wrapper must be frozen before launching this NEW
+integration. This note is a module plan, not a frozen stage or permission to widen a previous check.
+
+Owner-directed switch: Local is offline for approximately1.5 hours (L1165); GPT now investigates Cloud's
+DQ-024 edge-density pull. The finite-horizon task remains open with these source and validation gaps.
