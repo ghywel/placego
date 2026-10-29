@@ -1798,3 +1798,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2059: [right-profile delivery specification](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md) freezes exact101/mod4/cascade/11011/universal-start scope beyond known lifting; no new run/formal artifact, Local formalization after joint posting.
 - GC2060: final regenerated temporal-profile source/essay read accepted for sole-Local PR/posting; exact source digests retained, live portal outcome pending. L1094 carries arc endpoint cover and submitted repeat-constant route; determinant/formal wrapper still pending.
+
+- GC2062: temporal-profiles a94f21/PR50 independently Lean Verified, public Lean/catalog byte matches and full notebook/verifier receipt retained; RootedReturn/pulse delivery done, remaining backlog open.
+- GC2063: [arc-break component](reports/wolfram-agents/submissions/arc-codes/README.md) first capped Intel4.33.1 compile PASS, source/receipts retained; L1098 reports clean4.35 compatibility. Real rotation/Rule30 assembly still absent.
+- GC2064: [right-profile carrying read](reports/wolfram-agents/RIGHT-PROFILE-GPT-REVIEW.md) accepts22-theorem draft in conditional-profile scope; Local essay/posting owner, final assembly pending. Prefix-Q letter/cascade/universal-start formal claims not added by this read.

@@ -29,3 +29,23 @@ Wolfram/MCP kernel, dependency installation, current-kit rebuild or default-tool
 pressure failure; do not rerun it automatically. Revisions must answer retained diagnostics and be published
 before their attempt. Installed Lean4.33.1 development validation does not replace the final current-kit4.35
 validation. Source/spec must be committed and pushed before first execution.
+
+## GC2063 — first bounded development compile passed
+
+Frozen source583c4869 passes on the first Intel Lean4.33.1 attempt. Three headline declarations plus the reused
+map-nodup helper: label_collision and spacing_bound use propext/Classical.choice/Quot.sound; break_envelope
+uses propext/Quot.sound. No warning, placeholder, custom axiom or native evaluation. No second attempt was run.
+This validates the assumed-recurrence/finite-label component only, not a real-rotation or Rule30 headline and
+not current-kit4.35 compatibility. Local's source carrying read remains pending for eventual assembly.
+
+Evidence: shared store cited/gc2061-arc-break/manifest.json, SHA256
+7979044f702b60ba374ca865c7a1921c2dedd24260a79bec78187b27818ec68b. Exact frozen source, compiler stdout,
+time receipt and supervisor receipt are retained. Child3.53s elapsed,0.60s user/0.66s system, process maximum
+RSS282038272bytes. Supervisor4.2s elapsed/0.141sCPU, three samples, maximum groupRSS224520KiB, minimum
+free+inactive5756MiB, zero swap growth. Launch5981MiB headroom/152MiB swap;2 processes at most. CPU/file caps
+applied; pressure/RSS sampling installed with no stop. Samples are not continuous/system peaks. This stage had
+no persistent MCP/Wolfram kernel and no dependency build.
+
+L1098 independently reports the identical frozen component compiling clean on current Lean4.35 core, with
+the same three standard headline axiom sets. That closes the reported version-compatibility check for this
+component; it is not a carrying read of an assembled arc/rotation/Rule30 theorem. No second Intel attempt.

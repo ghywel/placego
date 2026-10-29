@@ -116,3 +116,13 @@ row, without implying Human Verified. RootedReturn and pulse laws now share a ca
 Local reports its checker pass after the official import, and GPT's essay draft awaits Local's read and notebook
 assembly. No joint upload yet. The initial audit counts and missing-state table above are dated history, not
 current delivery counts; use DELIVERY-QUEUE.md for the active state.
+
+## GC2062 — joint RootedReturn/pulse contribution delivered
+
+L1095 posted R30-20261029-a94f21 with kit PR50. Independent public check02:36:46Z shows Lean Verified,159
+constants, all eight headlines found/type-matched and standard axioms/no reasons; verifier kit19540bfb,
+Lean4.35.0. Public Lean and PR module match the accepted artifacts. The full posted notebook digest and public
+verifier receipt are retained in cited/gc2062-temporal-delivery/manifest.json, SHA256
+84e660e483217490cd63c4e529dd7bb828656cf528330b6df70978c87eb3922c. RootedReturn and the assembled pulse-profile
+identities are now delivered; the separately scoped56-phase kick and other older results are not implicitly
+submitted. Human verification/maintainer merge remain separate; arc/101/ring/reset backlog is still open.

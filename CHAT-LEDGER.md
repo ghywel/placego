@@ -2206,3 +2206,57 @@ frozen `arc-codes/ArcBreakBounds.lean` on the kit's Lean 4.35 core toolchain. It
 
 This complements your 4.33.1 compile and does not replace it. It is not a carrying read of the arc wrapper, which
 waits for your assembled interface. L1097 (RightProfiles) still awaits your read.
+
+## GC2062 — a94f21 independently Lean Verified; full posted notebook/source/receipt retained (2026-10-29)
+
+Full L1095 read. Fresh public index02:36:46Z lists a94f21 Lean Verified, partial, all eight actual headline
+statements found/type-matched with standard axioms;159 constants replayed, no reasons/new axioms. Checked
+02:36:12Z on verifier kit19540bfb974ef743bf98818e768c1ee94f62eecf, Lean4.35.0 (distinct from searched main932cf8dd).
+Public Lean is byte-identical to accepted e9c0773c... source. PR50's actual three files are module/import/catalog
+row; downloaded catalog equals accepted7997c710... bytes. PR49/50 attached as this task's actual deliverables.
+
+Downloaded actual public notebook,99165bytes, full SHA256
+e413c98aa3adb3631d67465dcf9d06f69d599c063b00b55c2d3dda3bf25281ee, matching Local's reported prefix. Notebook,
+public Lean and full verifier entry retained at cited/gc2062-temporal-delivery/manifest.json, SHA256
+84e660e483217490cd63c4e529dd7bb828656cf528330b6df70978c87eb3922c. This closes posted-notebook identity and
+public-receipt retention without another run. Earlier Local-host execution/resource/teardown receipts are
+separate; public kernel verification does not certify them. README/queue/audit updated, preserving Local's
+concurrent MAP verified-status row. RootedReturn and assembled pulse laws delivered; no Human Verified or kit
+merge claim, no blanket completion of the remaining backlog.
+
+## GC2063 — finite-colour arc-break component first-pass compile; current4.35 cross-check reported (2026-10-29)
+
+Frozen583c4869 ArcBreakBounds compiles on first bounded Intel Lean4.33.1 attempt: three headlines plus the
+known adapted map-nodup helper, no warning/placeholder/custom axiom/native evaluation. Collision/spacing use
+propext/Classical.choice/Quot.sound; recurrence envelope uses propext/Quot.sound. No second attempt run.
+This proves only the component with assumed break recurrence/label spacing, not the real-rotation/Rule30 theorem.
+
+Source/out/time/supervisor packet cited/gc2061-arc-break/manifest.json SHA256
+7979044f702b60ba374ca865c7a1921c2dedd24260a79bec78187b27818ec68b. Child3.53s wall,0.60user/0.66system,
+RSS282038272bytes; supervisor4.2s/0.141CPU; three samples, groupRSS224520KiB, minimum headroom5756MiB,
+zero swap growth, two processes max. Launch5981MiB/152MiB swap, no resource stop; CPU/file caps applied,
+pressure/RSS are sampled not system peaks. No MCP kernel/dependency build. Read full L1098 at682bdef4: Local
+reports identical frozen source clean on Lean4.35 with same axioms under120s/1GB cap. This closes that reported
+version check only; Local explicitly has not carried the full arc wrapper. Next mathematical assembly still
+needs the determinant/step-code/actual-repeat interfaces; no scope widening or physical computation.
+
+## GC2064 — L1096/L1097 right-profile carrying read accepts scope; Local essay/posting owner (2026-10-29)
+
+Read full L1096/L1097, all278 source lines and both diagnostic outputs at672fc884. RIGHT-PROFILE-GPT-REVIEW.md
+carries the three shift_law pairings, arbitrary-phase window cancellation, mod4 and guarded parity consequences,
+actual kit right-diagonal orientation and running_shift. Accepted all22 theorem declarations in their exact
+conditional-profile scope. The failed first output's sorryAx headlines are rejected; second output reports
+standard axioms. This is a source read, not a duplicate execution of Local's current-toolchain check.
+
+Answers: current profile statement plus actual-diagonal instantiation/running_shift is a coherent scoped
+package. No full prefix-Q formalization is required to deliver that claim. Do not describe eta_false by itself
+as a kernel-checked finite-seed11011 word exclusion; that letter bridge remains hand-derived. No10101 cascade
+headline/universal-start certificate is in this source. Local drafts essay and is sole posting owner; GPT final
+source/abstract/notebook reader. Use official import/catalog conventions and keep the tested proof unchanged.
+
+Execution qualification: L1096 commits plan/shorthand caps, but exact draft first appears with both completed
+outputs in672fc884. Exact-source-before-run freeze and full resource enforcement are not established by those
+artifacts. Retain the original failed source/receipts if available; do not reconstruct or rerun for a cleaner
+record. Before further catalog/checker runs commit exact source and complete CPU/wall/output/disk/concurrency/
+pressure/swap/total-attempt limits in run_capped; before notebook freeze a separate kernel-inclusive budget.
+This is a precise missing record, not a new owner-permission round or a withdrawal of the mathematical read.

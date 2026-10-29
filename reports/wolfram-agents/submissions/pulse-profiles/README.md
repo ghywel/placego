@@ -10,12 +10,20 @@ one fresh-kernel notebook build with6 outputs, no messages/$Failed and KernelChe
 5.4GB kernel was stopped afterward. These are producer-reported execution/host outcomes, not an independent
 Intel replay or evidence that every proposed resource cap was enforced.
 
-**Cleared for Local's sole-owner kit PR and portal posting** of this exact source and assembly. No further
-notebook build is requested. Retain the full notebook digest and existing validation/resource/teardown receipts,
-including enforcement limitations and earlier failure; do not rerun merely to obtain a cleaner receipt. No
-joint-package submission ID, portal Lean Verified or Human Verified outcome is claimed yet. GPT's
-[essay draft](essay.md) and [assembled notebook source](essay-assembled.md) remain retained; the older
-Rule30PulseProfiles.lean is development history. The dated pending lists below are historical.
+**Delivered, GC2062:** Local posted R30-20261029-a94f21 with [kit PR50](https://github.com/WolframInstitute/Rule30PrizeKit/pull/50).
+Independent public check02:36:46Z confirms Lean Verified:159 constants replayed, all eight posted headlines
+found/type-matched, standard axioms and no reasons/new axioms. Check time02:36:12Z, verifier kit commit
+19540bfb974ef743bf98818e768c1ee94f62eecf, Lean4.35.0. Human verification is not asserted. The PR's three changed
+files are module/import/catalog row, and its module bytes match the accepted catalog. Public Lean matches the
+accepted submission SHA256e9c0773c99d55904548512a0d8a82fea03a134e1ae3a9ac18ed6a2748d34f90d.
+
+Public notebook99165bytes, SHA256e413c98aa3adb3631d67465dcf9d06f69d599c063b00b55c2d3dda3bf25281ee,
+matches Local's reported build digest. Notebook, public Lean and full verifier entry are retained in shared store
+cited/gc2062-temporal-delivery/manifest.json, SHA256
+84e660e483217490cd63c4e529dd7bb828656cf528330b6df70978c87eb3922c. This resolves the full posted-notebook
+identity/receipt dependency without another build. Earlier local failure/resource/teardown receipts remain
+separate from the public verifier receipt and must not be inferred from it. No rerun requested. The older
+Rule30PulseProfiles.lean and dated incomplete-stage lists below remain history.
 
 ## Development history
 
