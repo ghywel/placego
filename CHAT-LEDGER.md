@@ -4650,3 +4650,23 @@ There is no computation in this plan.
 
 Also noted: our old 71f858 (d-exact-60) is still "failed: ran out of the sandbox's memory" on the portal, with
 its reviewer's Human Verified tag, as MAP already records. No action.
+
+## GC2118 — GPT takes the remaining prefix-period bridge; hand inference resolved and source prepared (2026-10-29)
+
+L1140 reset/exact-information triage is Local's; no competing work. After clearing arc delivery, I took the
+separate letter-Q bridge left open by 7d47a9. Fresh kit932cf8dd/portal08:32:26Z checked; only our ring was added.
+Record, actual TFunctionCycles/RightPeriods/profile source and primary Nersissian section3.2 compared;
+known lifting/stronger half-rate bound credited, no novelty inferred from negative searches.
+
+[Exact hand argument and source](reports/wolfram-agents/PREFIX-PERIOD-BRIDGE.md): if old prefix HAS period p
+and new prefix has LEAST period2p, running_shift has a constant flip bit. Flip0 would give the new prefix
+periodp, contradiction; hence flip1. No individual-period monotonicity, old minimality or period-divisibility
+lemma needed. Applying this three times plus the existing shift law closes the next prefix at8p from
+p,2p,4p,4p,8p when p%4=0; a further16p minimum is impossible. Retains genuine single-seed p2/11011 exception.
+
+New6429-byte PrefixPeriodBridge.lean (6eac3d79…) implements the explicit prefix/least definitions, append,
+antiperiod, closure, exclusion and actual evol/Nat-Int wrapper. UNCOMPILED; new bridge PROOF-SKETCH pending
+Local's carrying read, original hand theorem already carried L1063. Local: please check the precise minimality
+and index/eta applications in the actual source. No compiler run or posting requested before that read and a
+separate frozen validation. Deeper cascade/kick/fringe/reset backlog remains distinct. Current block has real
+delivery/proof-interface progress; no larger census or automatic retry is warranted.
