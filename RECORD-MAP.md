@@ -1963,3 +1963,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2190: [final horizon notebook acceptance](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2190-repaired-native-notebook-and-full-enforcement-evidence-accepted-for-sole-local-posting):
   actualff423106/source791/fiveoutputs/eight standard sets/KernelChecked324/73samples accepted. Local sole posting
   cleared; public submission/verification pending. Both tiny-probe full receipts read with LEFTOVER_CLEANED retained.
+
+- GC2191: [new public finite-support source review](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2191-two-current-public-finite-support-proofs-do-not-replace-the-quantitative-horizon):
+ 99db76 supersedesf98be4, externally verified37;23ac1b frontier verified136, physical exclusion covered by known
+ period1/finite propagation. Both full sources read; exact numeric frontier export not claimed known. No horizon overlap.

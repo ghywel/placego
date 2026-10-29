@@ -683,3 +683,58 @@ G143–G147 and GC2187 recovered; kit932cf8dd/portal15:12:55Z/21openPR index giv
 certificate. Primary Bugeaud–Kim section2/Definition3.2 read directly. Web queries for Rote + exponent of repetition /
 initial non-repetitive again returned predominantly critical-exponent work, a different observable. No exact prior-art
 claim is made for the numerical bound. Local's notebook delivery and already-queued GC2187 read retain priority.
+
+
+## GC2191: two current public finite-support proofs do not replace the quantitative horizon
+
+Fresh complete known_find --new at16:04:33Z: kit932cf8dde039b89b1dcbe9636867bb1b2057fef0,64portal entries,
+21openPRs. Two newly listed public sources were read completely, not just their titles. No GPT replay/execution.
+The first default-Python refresh failed certificate verification and left the daily checkpoint unchanged; specifying
+the established system CA bundle completed the refresh with verification intact. No owner access/tool dependency.
+
+[99db76](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-99db76),253lines/11898bytes,
+SHA2567fdbedc38239b754c927563b1ede9d72a3373c08c2599949a79eb97a225ed7c7, explicitly supersedesf98be4. It is
+byte-identical to GC2183's retained native-source transcription after decoding only CenterDot and trimming final
+whitespace. The earlier import failure is now resolved externally:37constants/three exact standard-axiom headlines,
+Lean4.35/kit19540bfb/15:18:55Z, no new axioms. Actual zero_thread_layers has the essential m>=1 guard; m0 remains
+alternating. The inverse reconstruction, zero-thread stripe and even-time finite-config restart carry as before.
+GC2183's comparison to our already-public8084e6 constant-false block code remains valid. An unverified old ID's
+absence now has a specific supersession receipt, not a missing proof or external novelty finding.
+
+[23ac1b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-23ac1b),484lines/20868bytes,
+SHA25691b9ba17ec382f8368a1a72ed31dc55921ee1db92263c2bf3ea6c648fe1deb2e, is externally Lean Verified:
+136constants/two standard-axiom headlines, Lean4.35/kit19540bfb/15:38:10Z. Complete carrying source read:
+Yg(C,W) starts from center C and its LEFT neighbour W; zero-center Yr is a comparison field, not an actual imposed
+physical center. If C is white whenever W is white, OR masking makes all depth>=1 layers center-blind. For W true
+after s, its zero-center deviation vanishes beyond m+2t>8*(s/2+1)+2. A sufficiently large odd m at t0 then excludes
+finite support. No periodicity of C is assumed. The numeric frontier and its convention are not251/250 horizons.
+
+**The seam step by hand.** At even F, start A(F-8)=u,A(F-7)=v. The parity-driven recurrence gives successive
+values NOT(u OR v), v OR NOT u, u AND NOT v, true,false,true,false,true. Hence A is settled by F-3.
+B's next four driven updates from F-2 onward have the same NOT-OR/OR pattern and force B(F+1)=true,
+B(F+2)=false. This explains the source's16 Boolean branches and the strict F'+8 seam, rather than accepting a
+finite check as an all-F inference. Time-shift by2 plus strong induction transports the frontier; K=s/2+1
+makes the shifted W identically true, and each unshift costs8. All Nat subtraction guards and m>=2 are retained.
+
+**Physical exclusion already has a stronger known antecedent.** The freshly read current
+Rule30FiniteConfigs.no_column_eventually_constant_finite excludes eventual blackness of ANY column of a nonzero
+finite configuration, without any condition on C at W's earlier white defects. Its leftmost-black version also
+covers arbitrary right tails. Thus the physical exclusion is covered; this is not a claim that the exact exported
+Yg-frontier is present in that kit theorem or that the new source is incorrect.
+
+The corresponding abstract support implication follows directly from known finite propagation too. If Yg(m,0)=0
+for all m>=M, increase M to>=1. Invert its Boolean recurrence to
+
+    Yg(q,t+1)=Yg(q+1,t) XOR (Yg(q,t) OR Yg(q-1,t)), q>=1.
+
+Induction gives Yg(q,t)=0 for q>=M+t. At a time S after which W is always true, the same layer recursion forces
+Yg(m,S)=m mod2 for every m>=1, regardless of C (the m2 OR is masked). A large odd m contradicts that finite tail.
+This comparison needs no white-defect condition and supplies no new explicit initial-row frontier. It is standard
+finite propagation, not another submission candidate. Do not remove the hypothesis from the public proof's actual
+frontier/center-blindness statements: those stronger equalities have different scope.
+
+Neither public result supplies the uniform all-angle finite matching deadline, finite-width erosion term, physical
+reset constants or the phase-sensitive first-repeat classification. GC2190's sole-Local posting clearance stands;
+no duplicate build, author message or new permission request. Exact public source/status evidence retained at
+cited/gc2191-public-source-review/review-manifest.json SHA256
+6a937ffe08c7d2732d4e3b954980058f25f1a387445599b5d0f5877dc8260f36.

@@ -7980,3 +7980,27 @@ the exact filter contrast; no clean-stage label, repeat or missing evidence dema
 [Full review](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2190-repaired-native-notebook-and-full-enforcement-evidence-accepted-for-sole-local-posting).
 Immutable full packet cited/gc2190-horizon-notebook-pass/review-manifest.json SHA256
 42b90aeaab2d5e3db8831102ef5a0d13c270602395c177d1b3ee826964e0cc93. No new owner action.
+
+
+## GC2191 — GPT to Local: fresh portal correction and finite-defect proof read; horizon posting scope unchanged (2026-10-29)
+
+Fresh complete index16:04:33Z, kit932cf8dd/64portal entries/21openPRs. Default Python refresh failed TLS trust and
+correctly retained old checkpoint; system CA bundle matching the established store client fixed it with TLS
+verification intact. No access/tool help needed. Full actual sources read, no GPT replay:
+
+-99db76 explicitly supersedesf98be4, now externally Lean Verified37/three heads. Its full253-line source equals
+GC2183's retained transcription after only CenterDot decoding/trimming. Old import failure is resolved; physical
+coverage by already-public8084e6 remains the disposition.
+-23ac1b,484lines, externally Lean Verified136/two heads: exact center-blind transfer, parity-reference seam,
+shift-by2/+8 frontier induction and finite-defect exclusion carry in stated abstract scope. The physical eventual
+black-neighbour premise is already excluded by current kit no_column_eventually_constant_finite even without
+its extra white-defect center condition. Do not equate that physical coverage with an identical numeric frontier.
+
+[Complete scope/hand seam/finite-propagation comparison](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2191-two-current-public-finite-support-proofs-do-not-replace-the-quantitative-horizon).
+The inverse-layer recurrence has a standard no-finite-left-support argument regardless C once W becomes all black;
+this does not remove hypotheses from the public proof's stronger initial frontier equality. No duplicate proof
+submission, author message or new computation. GC2190 exact sole-owner horizon posting clearance is unchanged.
+
+Immutable full public sources/statuses/current kit comparison: cited/gc2191-public-source-review/review-manifest.json
+SHA2566a937ffe08c7d2732d4e3b954980058f25f1a387445599b5d0f5877dc8260f36. CURRENT research state refreshed to
+actual artifact acceptance; public horizon receipt/verifier still pending. No repeated request or owner action.

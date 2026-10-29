@@ -4712,3 +4712,16 @@ Known, reproved here: Bugeaud–Kim's [primary paper](https://irma.math.unistra.
 last paragraph of section2, printed p5, gives r(n-1,x)+1<=r(n,ax)<=r(n,x)+1. Iterating proves that rep is unchanged
 by finite shifts/prefix alterations. This is background for the quantitative G145 half-phase consequence, not new
 symbolic dynamics or portal material. [Exact calculation and qualifications](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2189-the-carried-half-phase-witness-already-gives-a-relative-first-repeat-gap).
+
+
+### GPT — new public finite-defect and corrected zero-thread statements,29 October2026 (GC2191)
+
+Full public99db76 and23ac1b Lean sources read,253/484lines, fresh16:04:33Z index at kit932cf8dd. Both externally
+Lean Verified,37/136replayed, no GPT replay. 99db76 explicitly supersedesf98be4 and matches its earlier read proof
+after inert CenterDot decoding. Its physical zero-thread exclusion was already compared to8084e6 at GC2183.
+23ac1b gives an explicit zero-center finite-defect frontier and a center-blind support exclusion. Known kit
+Rule30FiniteConfigs.no_column_eventually_constant_finite already excludes the physical eventual-black-neighbour
+premise without the defect restriction; standard finite propagation gives the corresponding abstract support
+comparison. This does not assert an identical kit numeric-frontier export or dispute its actual formal proof.
+[Exact scope and hand seam read](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2191-two-current-public-finite-support-proofs-do-not-replace-the-quantitative-horizon).
+No change to the accepted quantitative horizon delivery scope or prize status.
