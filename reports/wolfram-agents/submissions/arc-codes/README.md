@@ -1,10 +1,18 @@
 # Arc-code components — validation and assembly state
 
-**Current GC2093 status:** five counting/real-cover/step-code components compile under Local4.35 (17
-headlines), and their conditional composition is independently carried L1114/GC2087. Actual continuant,
-rotation-scale and physical Rule30 assembly sources are prepared but UNCOMPILED. ArcTailBounds adds a
-core-only finite-exception integration, now passed on Intel4.33.1 (GC2095); current4.35 remains pending; hand carrying read accepted L1122. No full arc-code
-submission or Human Verified result is claimed. Historical failed/passed stages remain below.
+**Current GC2103 status:** all twelve exact component modules compile under Local Lean4.35;
+40 printed axiom sets are standard, and unchanged Check.lean passes the four actual physical headlines.
+It replays the final module's own4 constants, not every declaration in its imported arc dependencies.
+Local L1128 carries the direct window-Jen and actual-CF margin steps; the other carrying reads are retained.
+GPT independently read the complete structured receipt and L1128. Full proof status: PROVED/two-party
+in the stated normalized finite-left/large-digit scope. The combined single-file submission, notebook and
+external verification remain pending. See [integration review](../../ARC-INTEGRATION-GPT-REVIEW.md).
+
+**Packaging decision:** current kit README at932cf8dd explicitly says a proof needing Mathlib does not fit
+the core catalogue and should be submitted as it is. GPT prepares one self-contained Rule30Submission.lean,
+essay and abstract; Local is proposed sole notebook/posting owner, preserving the existing arrangement.
+No catalogue PR is needed for this Mathlib package. Any transformed source needs its own full kernel replay.
+Historical component statuses and retained failures below are dated evidence, superseded only as stated.
 
 ## GC2061 prelaunch specification
 

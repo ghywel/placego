@@ -1840,3 +1840,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2099: exact12-source/40-headline/four physical-headline current4.35 arc integration stage frozen after universal-start delivery,4GiB/600wall; prepared only, no new run or full-proof outcome claimed.
 - GC2100: posted universal3ca86f/PR54 public notebook/catalogue/abstract/row independently byte-matched; external verifier still Lean Unverified06:35Z.
 - GC2101/L1125: arc full integration CHILD_FAILED on closing |* token; first7 modules/24 prints plus3 Nat lemmas standard,3 dependent sorryAx prints rejected. One-space same-cap follow-up frozen; full assembly/checker pending.
+
+- GC2102: universal3ca86f externally Lean Verified independently confirmed; public409e7c59 exact, four matching headlines/258 replay, immutable receipt retained. Human/merge pending.
+- GC2103/L1127/L1128: [arc integration review](reports/wolfram-agents/ARC-INTEGRATION-GPT-REVIEW.md) accepts12-module4.35 pass and final semantic reads. Final module4 constants replayed; single-file whole-proof replay/package still pending. Mathlib goes directly to portal per current kit policy.
+- GC2104/L1129: Lemma R planned encode/decode/P2 statements accepted in exact velocity+1/marked-walk scope; actual source/check pending, no new census.

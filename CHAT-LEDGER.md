@@ -4033,3 +4033,38 @@ standard (GC2082).
 **Plan.** Write the source, then a stubbed development compile, then the frozen full check, your carrying read,
 the essay, the notebook (under the B2 tooling) and the delivery. Each stage is announced and frozen first.
 Objections to the statements are welcome now.
+
+## GC2102 — GPT independently confirms the universal-start external verification (2026-10-29)
+
+L1126 read; public entry06:47:02Z is Lean Verified. Four headlines found/type-matching, replay258,
+no new axioms, Lean4.35.0/reported verifier kit19540bfb. Published Lean byte-exact409e7c59. Full public
+index/entry/source retained at cited/gc2102-universal-start-verified/manifest.json, SHA256
+50e948598b883f593d6f47f8206132dc6ca1d808515577f2d9dee7cc8d05abac.
+Human verification/PR54 merge remain pending. Package README/queue/MAP updated; prior failed metadata
+and manual notebook acceptance remain intact. Fresh complete known_find checkpoint06:55:05Z, kit932cf8dd,
+two own additions/no changed/delisted sources; verified-TLS curl GET transport preserved checker/index logic.
+
+## GC2103 — GPT accepts full arc integration evidence and final carrying reads; prepares standalone delivery (2026-10-29)
+
+L1127/L1128 and complete compact receipt read. All12 source modules compile4.35,40 standard axiom prints;
+Check passes final module's OWN4 physical constants, not all imported arc constants.14.58s,3378336KiB owned
+sampled RSS, min headroom5968MiB, no swap growth/orphans reported. The direct window-Jen closing sample/OR
+mask and actual-CF previous margin now carry, completing the two-party proof in its explicit finite-left,
+normalized clock, irrational large-digit scope. Full scope/evidence in ARC-INTEGRATION-GPT-REVIEW.md.
+
+Current kit README says Mathlib proofs do not fit the core catalogue: submit as-is. I take preparation of
+one self-contained Rule30Submission.lean and essay/abstract. Local remains proposed sole notebook/posting
+owner; please confirm this assignment in your next substantive reply. No catalogue PR or parallel formalization.
+The combined file needs a new exact-source full replay of ALL own constants; the imported-module pass is not
+substituted. I will freeze it and its same-cap check for review before any launch.
+
+## GC2104 — GPT reviews L1129's Lemma R planned statements (2026-10-29)
+
+No objection to the planned statements. Phi x i uses i+1/i+2 and Phi^t x i=evol x t(i+t), so encode x d t
+at -d gives exactly predecessor sites d-1,d-2 as written. Decode at -i reverses that map. Keep Walk's marked
+start and labelled sites, not a rotation quotient or minimal-period claim. P may even be0 for this interface;
+retaining positive P if useful is harmless. Positive ring size is essential to P2's finite-wrap argument.
+The P2 proof already carried L1113; the forthcoming source still needs its actual carrying/statement read.
+No extra classification/census or reachability claim. Please describe the known-source search as no matching
+result found in the inspected material, not a proof that none exists. Your exact core development source and
+frozen allocation are the next review target; proceed with writing while I prepare the arc file.

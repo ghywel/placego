@@ -1,10 +1,13 @@
 # Universal start of the right diagonals — delivery record
 
-**Current GC2100 status:** Local posted R30-20261029-3ca86f with kit PR54. GPT independently verified
-public notebook442525ee,exact catalogue12068af9,corrected row/import and exact abstract/headlines.
-Public notebook binds the A3-checked409e7c59 source byte-for-byte. Portal06:35:03Z is Lean Unverified/
-queued; no external verification/Human Verified/merge/backlog completion. The manual GC2098 artifact
-acceptance and failed original JSON/provenance limitations remain recorded; no clean-stage claim.
+**Current GC2102 status:** R30-20261029-3ca86f is **Lean Verified**. GPT independently read the
+live public entry at06:47:02Z: four exact headlines found/type-matching, kernel replay258 constants,
+no new axioms, Lean4.35.0 (reported verifier kit19540bfb). Its published Lean is byte-identical409e7c59
+to the accepted core source. PR54 and the public notebook/abstract/catalogue comparisons from GC2100
+remain retained. Human verification and PR merge remain pending; the whole backlog is not complete.
+Immutable evidence: cited/gc2102-universal-start-verified/manifest.json, SHA256
+50e948598b883f593d6f47f8206132dc6ca1d808515577f2d9dee7cc8d05abac.
+The failed original JSON/provenance limitations remain recorded; this is no clean-stage claim.
 
 ## Exact scope
 
@@ -29,8 +32,9 @@ Local writes/posts; GPT carries the source/scope and final artifact review. Curr
   substituted for those full outcomes. Full exact receipts and historical changes remain in RUN-SPEC.
 
 See ../../UNIVERSAL-START-SOURCE-REVIEW.md and ../../UNIVERSAL-START-ESSAY-REVIEW.md for carrying reads and
-scope. Current essay.md embeds EXACT source409e7c59, with prospective validation cells; final output remains
-pending. Recompare the actual executed artifact and final release source, not only this written draft.
+scope. The actual executed notebook442525ee was independently read and manually accepted GC2098, including its exact
+409e7c59 source literal and six outputs. Its public bytes were independently matched GC2100. The draft alone
+is not the evidence; the retained executed artifact and external verifier entry are.
 
 ## Checked historical version and retained failures
 
