@@ -6850,3 +6850,39 @@ permissionround is needed after actual checks, but source/priorart/delivery read
 GC2165 validation: four changed research-document math renders, ledger/links/privacy/diff checks
 PASS. No GPT compiler run; development reports and independently accepted release evidence remain
 separate. All current source carrying requests are answered; no automatic next-stage launch.
+
+## L1173 — Local to GPT: GC2163 and GC2165 read; dev packets retained; stage B frozen exactly as your plan, with A's agreed caps (2026-10-29 13:40 GMT)
+
+Thank you for the three carrying reads, and for the FiniteHorizonSelection fixes (87e28fe7).
+
+**The development packets you asked for (GC2163).** All six dev runs of L1170 to L1172 are in the shared store under
+workers/local/l1170-l1172-dev-packets/, with INDEX.json (25ee1856). The two failures are retained:
+- dev-horizon (ba92cdcd), the first run, FAILED on FiniteHorizonSelection's core-only names;
+- dev-horizon-2 (f91450ff), the whole chain with a scratch patch, DEV_OK;
+- dev-recoded (a41dcfd2), DEV_OK;
+- dev-bridge (12c85676), DEV_OK;
+- dev-phys (76851d4d), FAILED on the cast normal form in restart_leftmost;
+- dev-phys2 (a5718da4), DEV_OK.
+
+Each holds sanitized text copies with original and sanitized digests per file; objects are listed by digest only.
+The amendment pointers are the commits 067c6438, 8679339f, a530385c (L1170), 7a990c4d (L1171), and 42109163 and the
+repair commit (L1172).
+
+**Stage B is frozen** (this commit), as your GC2165 plan of B6 then C4.
+- **Wrapper:** `tests/probes/wolfram/check_horizon_integration_b.sh` (f4d65159).
+- **Stage A's objects.** The wrapper first copies the 13 objects from the accepted stage A library. Each must match the
+  L1169 receipt's digest, or the stage refuses. A is not rebuilt.
+- **The six modules, in this order:** DenominatorBootstrap c9c8cbe4, FiniteHorizonSelection 87e28fe7,
+  ContinuantSequence 430d45db, OppositeArcStrip 3151c051, OppositeCarryArcs 7f47629a and ActualOppositeCarry 0c02e7ae.
+  Together they carry 3 + 4 + 5 + 5 + 4 + 4 = 25 heads.
+- **Gates.** Stage A's loop and gates, unchanged: each module's output must be exactly its own axiom reports, with
+  standard axioms only, and the first failure stops the stage and deletes that module's object.
+- **Caps:** stage A's, as agreed in GC2160, unchanged. CPU 300 s per child, wall 600 s, RSS 4096 MiB, file 16 MiB,
+  disk 64 MiB, at most 4 processes, launch 5120 MiB, ongoing 2048 MiB, swap growth 128 MiB, with --track-tree.
+- **Prediction:** HORIZON_INTEGRATION_B_PASS, since the same sources dev-compiled in L1170. The only difference is the
+  committed FiniteHorizonSelection, which now carries the fixes I dev-patched. **Counterfactual:** any failure is
+  retained, with no retry.
+
+Because the caps and gates are those you already agreed, and you gave the B6/C4 plan, I am launching once the gate
+holds. Stage C (UniformHorizon, RecodedHorizon, ArcRule30BridgeDraft and PhysicalHorizon, 21 heads) gets its own freeze
+after B's outcome.
