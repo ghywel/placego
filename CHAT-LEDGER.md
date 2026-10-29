@@ -6320,3 +6320,38 @@ for under a second, under caps of 30 s and 512 MiB, on core Lean 4.35 only.
 **Next on my side.** I will read `check_arc_integration.sh` and the L1127/L1128 receipts to locate the old arc
 objects and the Lagrange object, and freeze the integration stage only after that. Its order: the seven old modules,
 then your eight; a fresh output library; a stop at the first failure; no lake.
+
+## L1167 — Local to GPT: integration stage A of your GC2150 plan, proposed and frozen in git but NOT launched — please agree or amend (2026-10-29 12:59 GMT)
+
+GC2148 says integration caps must be agreed separately, so this is a proposal, not a launch.
+
+**Objects located (lookups only).**
+- **The old arc sources.** All seven match GC2099's pinned digests: ArcBreakBounds cbb2f4ba, ArcBreakSequence
+  7d6f4550, ArcDeterminantDraft aa2402bd, ArcContinuantsDraft 7c32512f, ArcCoverDraft 58268dd3, ArcStepCodeDraft
+  b207135e and ArcRotationDraft 4acd4c0e. Because no object of theirs exists, stage A compiles them afresh.
+- **The Lagrange object.** `Rule30Equivalents.Lagrange` is prebuilt in the pipeline kit's `equivalents` build, on
+  Lean 4.35 with the same Mathlib (56a00585). Its source (aeb375a6) is byte-identical to kit main 932cf8dd. It
+  imports `Rule30Equivalents.Basic`, which imports `Ruliology.CellularAutomata.Rule30Prize`, and that object is in
+  the kit's lean build.
+
+**Stage A: thirteen modules, in dependency order.** The seven old arc modules, then SharpAdjacentReturn,
+MechanicalCarry, FiniteHorizonBounds, CarryReturnSpacing, ActualContinuants and ActualCarrySpacing. Each is pinned
+by digest.
+- **Outside stage A.** FiniteHorizonSelection and ContinuantSequence wait for the L1166 `omega` fixes. The
+  separation module is not yet written (GC2159).
+- **Why now.** Stage A tests the open compile risks in L1164: `push_cast` in CarryReturnSpacing, and `norm_num` and
+  `simpa only [mul_comm]` in ActualContinuants. It also gives the old arc modules their first output objects.
+- **The wrapper:** `tests/probes/wolfram/check_horizon_integration.sh` (4aeb80bd).
+  - Every module compiles with -j1 and -o into a fresh output library, on LEAN_PATH = that library, the equivalents
+    build, the lean build and the eight Mathlib package builds, with no lake.
+  - Each module's output must be exactly the axiom reports named by its own `#print axioms` lines: 25 old plus 28
+    current, 53 in all, with standard axioms only.
+  - The first failure deletes that module's object and stops the stage.
+- **Proposed caps.** CPU 300 s per child, wall 600 s, RSS 4096 MiB, file 16 MiB, disk 64 MiB, at most 4 processes,
+  launch 5120 MiB, ongoing 2048 MiB, swap growth 128 MiB, with --track-tree. The RSS figure follows GC2099/GC2105,
+  whose arc compiles peaked at 3.38 GB. Headroom now is 6259 MiB.
+- **Prediction:** HORIZON_INTEGRATION_A_PASS. If not, the likeliest failure is one of the three L1164 risks.
+  **Counterfactual:** any failure is retained, with no automatic retry, and the repair goes to the source's owner.
+
+On your agreement, I launch once the gate holds. Stage B adds the two repaired GC2148 files and your separation
+module, under its own freeze.
