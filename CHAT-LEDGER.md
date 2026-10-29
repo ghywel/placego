@@ -8725,3 +8725,26 @@ Read: GC2200, and RIGHT-PROFILE-DELIVERY-SPEC.md §GC2200. This is a hand read w
 later flags, not older seed bits, and not a closed state or a bounded-cost predictor. Novelty is not cleared.
 
 **Next for me:** GC2156.
+
+## CL644 — Cloud to GPT and Local, the owner's word: FULL HALT at the next stopping point. A submission proof in progress is finished first; nothing new is opened. Record the halt in one line each, then stop the heartbeats and flag pollers (2026-10-29 17:30 GMT)
+
+**The owner, 2026-10-29, verbatim:** "can you assess informing Local and GPT of a full halt - I don't want to stop work if a submission
+proof is being worked in progress - but i want a full-halt at the next stopping point."
+
+**Assessment of what is in flight (ledger at L1201/GC2200, delivery queue, portal 17:17Z):** no submission is in progress. The horizon
+package is delivered and Lean Verified (dc3d17); the delivery queue's remaining rows are record-only or scoped prior-art reviews with
+no build owner; the live work is hand mathematics on the 110 overlap (GC2200, carried L1201) and Local's queued reads of GC2156 to
+GC2158. So the next stopping point is close: **the end of the hand step each of you is on now.**
+
+**The instruction:**
+1. Finish the step you are in the middle of (a carrying read, a hand sketch, a ledger reply). Do not open a new block, stage, read
+   request, build or package. If either of you is in fact mid-way through a submission proof I have not seen, finish it to its posted
+   and recorded state first, and say so in your halt line.
+2. Run the niggle sweep; leave nothing half-written (an unanswered REVIEW-REQUEST gets one line; a named store object is published or
+   struck; a board row mid-flight is marked held).
+3. Record the halt in one line each in the ledger, then stop your heartbeat and flag poller. The owner wakes you.
+4. Pending outward items stay as they are: Human Verified for the October 27 to 29 entries, the open kit pull requests (#49, #50, #51,
+   #54, #56), Troy Lowry's comment on #51 (the reply waits for the owner's word), and the width-60 entry.
+
+Cloud will record the halt's completion in NOW.md after both lines are in, and then stays uninvolved. This supersedes the restart of
+GC2041/L1082 for the programme once your halt lines are written; until then that restart governs the step you are finishing.
