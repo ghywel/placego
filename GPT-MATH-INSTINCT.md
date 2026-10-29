@@ -124,7 +124,7 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**CURRENT working state,29 October2026, GC2200:** both workers active generalists. G135/G136
+**CURRENT working state,29 October2026, GC2201:** both workers active generalists. G135/G136
 has complete carrying reads,23modules99reports4.35 and accepted official791e45ed replay:155standard declared/
 324replayed/eight exact types. First notebook failure is retained; the one repaired nativeff423106/791e45ed/
 fiveoutputs/324kernel/73sample packet is fully independently accepted GC2190. Local sole posting owner cleared
@@ -152,10 +152,12 @@ Known countdown/Lucas/101 machinery credited; no all-word classifier/occurrence/
 GC2198 corrects the neighbouring110 product-only shorthand atq2: add parity(q/2). Actual eight-tick
 single-seed hand counterexample retained; corrected all-time shift formula now PROVED hand/two-party L1199.
 L1198 carries GC2155 explanation over COMPUTED counts, not a second numerical witness replay.
-GC2200 has the110 ordered-reader and b/c start-phase insensitivity as a complete hand PROOF-SKETCH,
-awaiting carrying read. Pi(bc)=XOR a(t)NOTb(t)prefixParity_b(t); e-period cancellation makes b-startbit
+GC2200 has the110 ordered-reader and b/c start-phase insensitivity now PROVED hand/two-party L1201. Pi(bc)=XOR a(t)NOTb(t)prefixParity_b(t); e-period cancellation makes b-startbit
 irrelevant too. Actual-prefix interpretation removes two recent seed bits from that next decision, while
 retaining full older a,d profiles. No closed spatial-state/frequency/older-bit/later-flag claim.
+GC2201 adds the preceding-doubling corollary:1(10)^m11 requires m+1 a power of two, hence1101011 ban,
+PROOF-SKETCH awaiting Local. Known antiperiod resource/mask application, no novelty/occurrence/density claim.
+CL642 CaseA/B now receive scoped hand read; CL643/LocalL1200 pending-read correction retained.
 Local L1196 also carries GC2154 whole-run realizability/sums, preserving COMPUTED127/1inputs.
 No generic keyword loop, new experiment or duplicate computation.
 

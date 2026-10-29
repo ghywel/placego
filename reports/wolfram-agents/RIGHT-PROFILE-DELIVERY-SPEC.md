@@ -447,3 +447,84 @@ The current target is complete as a sketch. Local's carrying questions are the o
 the e-period/epsilon cancellation, and the seed/prefix interpretation. No extra run or packaging requested.
 
 Search receipts: cited/gc2200-inherited-overlap/review-manifest.json, SHA25648c5ab98ae7e311ca3f517529b465d26f72160e700dee2a4764f14f0cf77d835.
+
+
+## GC2201: a preceding doubling forces a power-of-two closing length
+
+**GC2200 review update:** complete L1201/1041afde and its carrying source read. The ordered-pair reduction,
+b-phase cancellation and actual seed interpretation now carry independently: **PROVED (hand, two-party)**,
+with provided-profile/cycle-endpoint, next-flag-only and no-older-bit/later-flag qualifications intact.
+
+**New short hand consequence, PROOF-SKETCH awaiting Local.** CL643 asks whether some masked parities are
+forced on actual histories. A preceding doubling provides exactly such an additional hypothesis. Keep the
+prefix periods Q and flags x from GC2197. Let s>=1,m>=1 and suppose the word starting at x_s is
+
+    1 (10)^m 1.
+
+Set q0=Q_(s-1), so Q_s=2q0. Then
+
+    m <= q0-1,
+    x_(s+2m+2)=1 iff m=q0-1.
+
+In particular, the complete word
+
+    1 (10)^m 11
+
+can occur only if m+1=q0 is a power of two. Thus1101011, the m2 case, is forbidden in every genuine
+prefix-doubling word of a row with a rightmost black cell. It is a statement about growth flags indexed
+by diagonal depth, not the same binary word occurring as physical colours in time or space.
+
+**Proof and indexing.** Since x_s=1, f=D_s complements at q0. The known order_of_antiperiod lemma gives
+its multiplicity over M=2q0 as mu=q0-1. Apply the already-carried GC2197 with a=s+1>=2. Its assumed
+(10)^m1 is exactly the remainder of the displayed prefix, and its next flag is x_(s+2m+2). It gives
+m<=mu and nextflag1 iff mu=m, proving both assertions. Finally q0 is dyadic. No individual-period
+monotonicity for arbitrary seeds, new valuation theorem or infinite occurrence claim enters the proof.
+
+**Controls and scope.**
+- For m1 this recovers the known11011 rule: closure requires q0=2, while q0>=4 forces the final0.
+  The actual single seed's flags x3..x7=11011 supply the existing boundary control q0=2. The old101
+  base in that case is M=2q0, not q0; these period conventions must not be interchanged.
+- For m2 closure would require q0=3, impossible. For m3 it would require q0=4, but we have NOT proved
+  that this permitted arithmetic value yields an actual occurrence. The criterion is necessary;
+  its iff concerns the next flag GIVEN the preceding1(10)^m1 at that scale.
+- m0 is outside this corollary; the known111 ban and its initial edge case remain separately proved.
+- The initial profile is positive-depth D_s, so the constant D0 exception of the countdown is avoided.
+- The symbolic words(10)^infinity and(0001)^infinity contain no11 and avoid the whole family, yet
+  have densities1/2 and1/4. They are symbolic controls, not actual-root orbits. Thus this family alone
+  does not fix the density, let alone resolve the00 balance or the half-limit conjecture.
+
+This is an explicit forbidden-word consequence of the known antiperiod resource and the carried conditional
+mask, not a new mechanism or a novelty-cleared submission. It answers CL643's hand direction with the
+EXTRA preceding1 made visible. A statement about every unqualified(10)^m1 cannot silently assume this
+antiperiodic source. No new fair-transition model, census, compiler or posting owner is proposed.
+
+Record searched:1101011/Mersenne/alternating with gap/doubling/power-of-two; literal1101011/Mersenne in the
+record and actual kit932cf8dd/portal16:54:35Z/21PR sources. G268's0001101011 ban was read: it is a temporal
+colour profile of a forward normalized G orbit, a different object. Known no_11011, no_three and universal
+start are credited, not repackaged. Direct current-source search found no named no_1101011 export; neither
+that nor the primary search's unrelated PRNG hits clears novelty. No external theorem is imported beyond
+the actual kit antiperiod order and already-carried mask. Local's carrying question is the source-period/
+index conversion and the global growth-word consequence, not a new numerical test.
+
+### CL642 Case A/B carrying read, with explicit period conventions
+
+Complete CL642/CL643, GC2164 and L1200 read. CL643 accepts the asymptotic scope correction; L1200 correctly
+keeps GC2156/2157/2158 pending. No Cloud work is assigned. The following is a hand read of the three
+parity rules, not a replay of Cloud's C outputs, pooled numbers or enforcement receipts.
+
+For the SINGLE SEED use least periods p_j, d_j their exponent increments, P=p_(j-1), and omega_j the
+weight parity over p_j. The known per_mono_all/unit-increment theorem and S_rule supply the framework.
+If d_(j-1)=1, the older period is exactly P/2 and pairing OR at P/2 gives parity(P/2) XOR omega_(j-2).
+For P>=4 this is omega_(j-2), Case A. If d_(j-1)=0, both least periods equal P and expanding OR gives
+omega_(j-1) XOR omega_(j-2) XOR Pi_P(product), Case B. For a nondoubling output at even period P,
+its weight parity equals the even-tick forcing XOR by adjacent pairing. A newly doubled output has
+half its own period black, hence even weight once that period is at least4. These are **KNOWN,
+reproved here and now hand/two-party with CL642 in precisely this single-seed scope**.
+
+One written guard needs clarification: the quarter-period P/4 is even only for P>=8. The smaller initial
+case for no_three is handled separately by D1,D2 alternating; the kit's actual no_three proof retains
+its positive-depth/nonconstant guard. Do not replace that guard by the sentence “P/4 is even” at P4.
+For arbitrary-seed PREFIX periods the safe counterparts use Pi_P and Pi_(P/2) explicitly; omega over
+an individual least period may differ because a prefix cycle repeats that profile. The pooled block
+exponents in CL642 part2 therefore do not automatically inherit the original omega notation.
+The withdrawn limit/sharpness conclusions remain withdrawn; no new distribution or runtime verdict follows.

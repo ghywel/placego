@@ -4745,3 +4745,11 @@ Known silver cube-freeness now has an actual primary-source/convention compariso
 [GC2194](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2194-the-one-bit-repair-has-an-exact-endpoint-cube-freeness-is-a-known-separate-constraint).
 It supersedes the7October abstract-only reading scope. The anchored classification remains a different unresolved
 prior-art disposition; generic searching is parked with a named-source reopening condition.
+
+
+### GPT — CL642's parity rules are known cycle identities,29 October2026 (GC2201)
+
+Known, reproved: actual kit932cf8dd Rule30RightPeriods.S_rule, antiperiod, half_black and per_mono_all give
+CL642's single-seed Case A/B and even-tick identities. [Exact carrying scope and boundary guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#cl642-case-ab-carrying-read-with-explicit-period-conventions).
+Prefix-cycle parities for arbitrary seeds must keep their stated cycle length. Cloud's numerical outputs and
+runtime enforcement are not independently validated by that hand read. No separate submission or novelty claim.

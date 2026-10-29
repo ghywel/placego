@@ -2968,6 +2968,10 @@ original order, with a link straight to it. The search tool `record_find.py` als
   for a>=2 and(10)^m1, nextflag=[mu=m]=XOR over t AND m=0, with m<=mu<=M-2. PROVED hand/two-party;
   known countdown/Lucas application, no occurrence/frequency/00 or prize conclusion.
 
+- [GC2200/L1201:110 ordered reader and recent seed-bit invariance](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2200-the110-joint-statistic-is-ordered-history-insensitive-to-two-recent-start-bits):
+  overlap is a-only events against b-prefix parity; two recent start bits leave that conditional next flag
+  unchanged. PROVED hand/two-party; full older inputs still required, no closed spatial state/density claim.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original

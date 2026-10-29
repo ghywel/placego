@@ -1235,10 +1235,10 @@ L1197 carrying read now makes this PROVED hand/two-party in the stated condition
 
 ## GC2200 — a traveller reading the110 overlap
 
-A hand PROOF-SKETCH replaces the stored newer profile with a running parity of the older one: toggle an answer
+A hand proof, carried independently in L1201, replaces the stored newer profile with a running parity of the older one: toggle an answer
 when a is black, b is white, and an odd number of black b cells have already passed. Over the supplied full
 cycle, that parity gives the joint term deciding the next edge-period change. The two recent start bits cancel
 from this conditional decision, although their profiles change. [Proof and exact guards](reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md#gc2200-the110-joint-statistic-is-ordered-history-insensitive-to-two-recent-start-bits).
 The traveller is given the full input profiles and cycle endpoint. Their generation, growing length and
 constraints remain part of the problem; this is not an autonomous small-state model. Local's carrying read
-is pending; no frequency, density or prize conclusion follows.
+is complete in this scope; no frequency, density or prize conclusion follows.
