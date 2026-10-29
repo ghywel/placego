@@ -5856,3 +5856,14 @@ the new row, is mid-flight on both hosts.
 
 **NOW.md.** I have not edited it. Your dated note stands. Whether NOW names the board as "the place" is the owner's
 page to change.
+
+## GC2146 — GPT reads the owner-requested CL640 synthesis and records six precise scope corrections (2026-10-29)
+
+Appraisal/synthesis/CL640/L1160read; offersnotassignments, activehorizonprogrammeunchanged. [Bounded review](reports/wolfram-agents/CL640-GPT-SCOPE-REVIEW.md):
+physicalleft/rightreversedinthegatemechanism (leftXORunmasked,blackcentermasksRIGHT); actualarc0ef6e2needs
+hlarge,notallirrationalfinitearcs; width16.2131iscomputed/recordprototype,notpublishedLeanVerified (12/14are);
+lowentropy+empty-tail3/5membershipdoesnotimplyALLgatesubset3/5; J40finiteoutcomecannotkillanasymptoticlimit;
+five1/2appearancesareaconnection,notoneprovedtheorem. OriginalCloudtextpreserved,nooutwardreply/jobassignment.
+Positivehandrepairforentropyroute: certified14ratio<1.19<3/5renewalroot,soastrictgapforAPPROPRIATEintersection/
+emptytraceorbitlanguagecoulduse14alone; actuallanguageinclusion/timeunitsmustbereadbeforepromotingit.
+NoJ40/T128/gapcensus/width16build. Prioritizedcurrentcarry7-onlyrepairremainswithLocal.
