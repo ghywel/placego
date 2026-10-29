@@ -56,7 +56,7 @@ theorem sequence_strict (c : Nat → Bool) (q C : Nat) (hr : RepeatBound c q C)
   obtain ⟨n,rfl⟩ := Nat.exists_eq_add_of_le (Nat.succ_le_of_lt hij)
   induction n with
   | zero => simpa using sequence_increasing c q C hr i
-  | succ n ih => exact Nat.lt_trans ih (sequence_increasing c q C hr (i+1+n))
+  | succ n ih => exact Nat.lt_trans (ih (by omega)) (sequence_increasing c q C hr (i+1+n))
 
 theorem sequence_first (c : Nat → Bool) (q C : Nat) (hr : RepeatBound c q C) :
     sequence c q C hr 0 ≤ q+C+1 := by

@@ -2640,3 +2640,16 @@ limits are frozen in arc-codes/README GC2074 before execution: at most2 separate
 attempts, each20CPU/process,60wall,512MiB groupRSS,4MiB/file,16MiBoutput,1024/512MiB headroom,128MiB swap-growth;
 6 owned process lifetimes expected, at most3 concurrent, conservative120childCPU/attempt. No dependency build,
 MCP kernel or second Intel job. Resource/refusal ends the stage; no automatic rerun or widened limits.
+
+
+## GC2075 — first genuine-break compile fails on one induction premise; repair frozen before final attempt (2026-10-29)
+
+GC2074 attempt1 is rejected, CHILD_FAILED1. sequence_strict's ih still expects the earlier i<j premise; the
+source passed the function to transitivity. Earlier new lemmas elaborate, but downstream axiom prints include
+sorryAx from the failed proof, so no whole-component validation is claimed. The exact repair supplies
+`ih (by omega)`, with unchanged statements/caps/dependencies. Preserve failure and rerun only this separately
+committed diagnostic-driven repair as the second/final GC2074 attempt. No limit increase or third attempt.
+
+Child3.13s,1.14user/0.71sys,RSS299196416bytes; supervisor4.19s/0.128CPU,3 samples,max group275556KiB,minheadroom
+5796MiB,0swap,3 live processes. Full receipts/source will be retained together with the second outcome;
+no resource/pressure stop. This is a proof-elaboration correction, not a refuted mathematical claim.

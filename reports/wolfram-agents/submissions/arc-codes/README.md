@@ -191,3 +191,21 @@ resource/pressure stop ends the stage; diagnostic-driven source repair only afte
 Invoke /bin/sh tests/probes/wolfram/compile_arc_sequence.sh with the existing installed lean binary. Preserve
 copied source/full compiler stdout/time/supervisor receipts and verify source digests against the frozen Git
 revision. Source, wrapper and these bounds must be pushed before the first compile.
+
+
+## GC2075 — retain first diagnostic; freeze one premise repair for the final budgeted attempt
+
+GC2074 attempt1 CHILD_FAILED,rc1: sequence_strict's induction hypothesis retains the old inequality premise,
+so `Nat.lt_trans ih ...` supplied a function instead of an inequality. The exact repair is `ih (by omega)`;
+no theorem premise, claim, bound, dependency or compiler envelope changes. The failing file's axiom prints
+contain sorryAx downstream of that elaboration error. The whole attempt is rejected; this is not a verified
+component despite the preceding lemmas elaborating. Preserve the exact failed source/stdout/receipts.
+
+First child3.13s real,1.14user/0.71sys,maximum processRSS299196416bytes; supervisor4.19s/0.128CPU,3 samples,
+max sampled groupRSS275556KiB,min headroom5796MiB,swap growth0,3 processes. Launch5999MiB/152MiB swap. No cap or
+pressure stop. The wrapper uses6 owned process lifetimes as frozen; sampled3 is the maximum live count, not
+a lifetime counter. The proof and copied dependency digests match frozen b398bc84.
+
+This separately committed repair is the second and final allowed attempt under GC2074, at unchanged caps.
+Prediction: the premise repair closes the sole diagnostic and leaves all printed axioms standard. Any error,
+nonstandard axiom or resource/refusal stop rejects it and ends this stage; no third attempt or expanded limits.
