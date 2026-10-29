@@ -193,3 +193,9 @@ Scientific figure of the published41values (inspected after rendering):
 cited/gc2153-edge-density-figure/manifest.json, SHA256
 8fcf8b9f5381b1148b38237dd836bb1fbef78d65d2eb9b79b6eb2130630d45a7.
 Both J_k and J_k-2k are drawn; the straight2k reference is not a fit or an extrapolated theorem.
+
+The separate ledger render reports0TeXerrors but flags20 literal code/shell dollar signs already present
+before this block (Wolfram symbol and environment-variable names); all20 are unchanged. Its blanket
+stray-dollar gate therefore FAILS for the existing ledger. This exception is retained, not relabelled a
+pass or fixed by changing the other worker's historical text. The five research-document math checks,
+ledger-structure and link checks pass.

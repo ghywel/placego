@@ -6103,3 +6103,9 @@ about doubling events ACROSS diagonals. Wall-free-bit identification still needs
 DQ024/PRIOR-ART/CONSTELLATION/PROOFSwaitingroom/map updated; original Cloud text retained with dated
 correction. Next warm question: use shared upstream ancestry to control net00minus11 count sublinearly;
 no automatic J41, enlargedresource census or M5 run. G135/G136 remains checkpointed GC2150.
+
+GC2153 validation qualification: five edited research-document math checks pass; ledger render has
+0TeXerrors but its blanket dollar-sign gate flags20 preexisting literal Wolfram/shell symbol occurrences,
+unchanged from6a7a64cd. Retained as an existing gate exception, not a claimed pass. Ledger-structure,
+links and privacy/conflict checks pass. Published-data figure independently inspected and retained at
+cited/gc2153-edge-density-figure/manifest.json SHA8fcf8b9f5381b1148b38237dd836bb1fbef78d65d2eb9b79b6eb2130630d45a7.
