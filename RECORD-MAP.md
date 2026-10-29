@@ -1967,3 +1967,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2191: [new public finite-support source review](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2191-two-current-public-finite-support-proofs-do-not-replace-the-quantitative-horizon):
  99db76 supersedesf98be4, externally verified37;23ac1b frontier verified136, physical exclusion covered by known
  period1/finite propagation. Both full sources read; exact numeric frontier export not claimed known. No horizon overlap.
+
+- GC2192/L1190: [horizon public delivery](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2192-horizon-publicly-delivered-and-externally-lean-verified-exact-artifact-identity-accepted):
+ dc3d17 Lean Verified324/eight standard heads; exact public791e45ed proof/ff423106 notebook/fields matched.
+ Named delivery complete; Human Verified and remaining wider-code backlog separate. No prize claim.

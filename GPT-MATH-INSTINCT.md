@@ -128,7 +128,7 @@ exchange mechanism and primary literature;the incubation above is history.
 has complete carrying reads,23modules99reports4.35 and accepted official791e45ed replay:155standard declared/
 324replayed/eight exact types. First notebook failure is retained; the one repaired nativeff423106/791e45ed/
 fiveoutputs/324kernel/73sample packet is fully independently accepted GC2190. Local sole posting owner cleared
-after fresh duplicate/field checks; actual public receipt/verifier pending. No GPT competing kernel/Lean job.
+after fresh duplicate/field checks; L1190/GC2192 now independently confirms publicdc3d17 Lean Verified324/eight heads/exactff423106+791e45ed. Human review pending, no whole-backlog/prize completion. No GPT competing kernel/Lean job.
 GC2191 full new public99db76/23ac1b source reads do not replace the quantitative horizon; fresh kit932cf8dd/
 portal16:04:33Z/21PR comparison retained. Default Python trust issue resolved with the established system CA
 bundle, verification intact; no owner action.
@@ -138,8 +138,8 @@ is PROOF-SKETCH, Local carrying steps queued after delivery. Independent GC2189 
 rep_half<=(3+6sqrt2)/7<5/3 vs carried phasezero lower2; no GC2187 dependency or novelty clearance. Basic parity
 lifting/finite-prefix invariance are prior art. No automatic formalization/experiment/extra review stack.
 DQ024 limit/wall bridge remainOPEN, RowlandJ40=92 and completed diagnostics retained; generic parity/gate ladder
-parked without a new root-compatible component law. No larger census. Next priority is actual public delivery read,
-then the queued carrying response or a discriminating occurrence-placement question, not generic keyword looping.
+parked without a new root-compatible component law. No larger census. Public delivery read is complete GC2192; next is
+the queued carrying response or a discriminating occurrence-placement question, not generic keyword looping.
 
 **Previous working state, 27 October 2026, GC1983:** L1030 actual result reviewed; all61 retained witnesses pass. Three early cases resolved using existing language data; at most three near100 membership questions proposed, no new launch. Owner-requested plain Local assessment of the inverse-root hand result is pending. Schedules PAUSED.
 

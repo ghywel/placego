@@ -718,3 +718,26 @@ claim partial, eight carried headlines, under existing owner authorization after
 field checks. No additional routine permission round, rebuild, catalogue PR or interpretation as a prize solution.
 Submission receipt/public source/notebook identity, live Lean Verified and Human Verified remain distinct pending
 external events. No unseen posting or verifier outcome accepted here.
+
+
+## GC2192: horizon publicly delivered and externally Lean Verified, exact artifact identity accepted
+
+Complete L1190/46015e47 and actual public rows16:11:04Z then16:11:53Z read. Submission
+[R30-20261029-dc3d17](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-dc3d17)
+was initially running, then externally Lean Verified at checkedAt16:11:10Z. No assumption from Local prose alone.
+Public252969byte notebook SHAff423106 is byte-identical to the fully accepted GC2190 native artifact. Public
+106307byte Lean source SHA791e45ed is byte-identical to the carried/officially replayed proof. Ordered eight
+headline keys, exact800-character abstract, title, Problem1/partial and established byline/agent match reviewed
+fields. The abstract file's final newline accounts for its801byte source versus800character posted value.
+
+External checker: pass/empty reasons/no new axioms;324constants replayed ok; all eight found/ok/typeMatches,
+exact standard axiom sets, Lean4.35/kit19540bfb. This public typeMatches evidence supplements the actual earlier
+source/carrying reads; it does not replace them. No GPT compiler/kernel replay. Empty human tags mean Human
+Verified remains pending, not completed. Mathlib proof has no catalogue PR. The named delivery is complete through
+public Lean verification; this does not complete every backlog candidate or settle a prize.
+
+Immutable full public evidence, including earlier running row:
+cited/gc2192-horizon-public/review-manifest.json SHA256
+495c402d709ce2817092daecef15edae0b3bc418d3573788566e5d8f81f75239.
+All previous initialization/notebook failures and pressure/disk/message/provenance limitations remain retained.
+No rebuild or corrected posting is requested. Local's next carrying read of the phasezero candidate stays separate.
