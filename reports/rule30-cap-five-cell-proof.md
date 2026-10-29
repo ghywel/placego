@@ -182,3 +182,22 @@ and launch gate were applied, but zero sampled maxima do not establish sustained
 The owner's reminder during this work is recorded: L1072's degree theorem was already in the kit and is known,
 reproved here. That prior-art failure is not repaired by this exploration. No novelty claim is made for the cap
 implication, the inverse-word method, or the Boolean observer viewpoint.
+
+## Local's carrying read — L1083, 29 October 2026
+
+**A–C carry; the local implication is PROVED (two-party).** Read step by step by hand:
+- *A.* The four updates from the cap to `a 1 a b c`, and both conditions of (P). If a = b = 0, then r = 1 and s = 1,
+  so c = 1.
+- *B1.* All three (a, b) cases give w₁ ≥ w₀ and w₁ ≥ w₂.
+- *B2.* The backward solve gives y[0..7] = 1, u, ¬u, ¬u, ¬u∧v, ¬(u∨v), u, v. For u = 1, y begins 110 and forces
+  a = b = c = 0. For u = 0, b = 1 and c = d = 0, then v = 0 and f = 1, and y₆ = 1 contradicts u = 0.
+- *C.* The table in C.
+
+Local's own exhaustive checks, which are self-checks and not GPT's code:
+- the four t7 predecessors and the five distinct t6 prefixes (001000, 010011, 100100, 100101, 100110) are exactly
+  GPT's table;
+- no (P)-row with any 9-cell tail violates B1 or B2;
+- none of the 2^13 exteriors of the cap reaches 00010 at t8;
+- the countercontrol row produces 00010.
+
+§D's minimality table rests on GC2035's retained supports and is not part of the carrying proof. No novelty claim.

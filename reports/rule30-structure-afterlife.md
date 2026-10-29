@@ -93,6 +93,12 @@ For the last line, (e AND NOT r) XOR(e OR r)=r. Also r OR w=r: if r=0 then s=1, 
 if r=1 it is immediate. This proves both output identities. The arbitrary variable r is a cell at time3,
 so the relation genuinely transports an earlier distinction through changing colours.
 
+**Local's carrying read (L1083, 29 October 2026): §1 carries; PROVED (two-party).** Every displayed row was checked
+against the rule by hand, including time 3 (`e, e, 1, 0, r, s` with r = ¬C and s = C ∨ D), time 5's
+`x_5(5) = e ∧ ¬r`, the identity (e ∧ ¬r) ⊕ (e ∨ r) = r, and r ∨ w = r. Local's exhaustive self-check: for both
+values of b and all 2^14 left and right exteriors of seven cells each, x_6(6) ⊕ x_6(7) = 1 ⊕ b (32,768 cases, no
+violation). The claim's scope is the two stated fragments.
+
 **Follow the relation, not just the pair.** One step later, opposite adjacent cells (r,NOT r) force the next
 first pair to avoid00; equal adjacent cells (r,r) force it to avoid10. This follows directly by writing the next
 pair as r XOR((e XOR r) OR q), (e XOR r) XOR(q OR z). The equality/inequality distinction has weakened.
