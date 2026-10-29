@@ -48,6 +48,7 @@ theorem successive_ge (q a : Nat → Nat)
   | succ n =>
     have hprod := Nat.mul_le_mul_right (q (n+1)) (ha n)
     have hr := hrec n
+    show q (n+1) ≤ q (n+2)
     omega
 
 #print axioms FiniteHorizonSelection.coefficient_one

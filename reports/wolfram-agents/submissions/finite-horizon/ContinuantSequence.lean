@@ -42,7 +42,7 @@ theorem denominator_successive {alpha : ℝ} (ha : Irrational alpha) :
     have h := ArcRotation.denominator_pos ha 1
     omega
   · intro n
-    have h := one_le_digit ha (n+1)
+    have h : 1 ≤ digit alpha (n+2) := one_le_digit ha (n+1)
     have hnonneg : 0 ≤ digit alpha (n+2) := by omega
     have ht : (1 : Int) ≤ ((digit alpha (n+2)).toNat : Int) := by
       rw [Int.toNat_of_nonneg hnonneg]
