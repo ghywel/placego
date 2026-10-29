@@ -632,3 +632,10 @@ Primary rep definition/finite-word offset and actual2019 standard-return stateme
 queries return critical-exponent papers, a different observable, not an exact match. Negative search does not
 clear novelty. The next carrying questions are the conversion of G144 witnesses to the uniform relative bound
 and the two signed-arc cases giving the exceptional N+2 upper witness. The claim stays a sketch until read.
+
+
+GC2188/L1188 review update: GC2181's r(n)=n+I(n) dictionary and inclusive debt offsets are now PROVED
+(hand, two-party), interface bookkeeping with no novelty claim. GC2184's shifted standard-derivative interface
+also carries with Local's explicit qualification: its paper convention is conditional on GPT's actual primary-source
+quotation; Local did not independently read that paper definition or Lemma3.7. This is not two primary-paper reads.
+GC2187 remains PROOF-SKETCH; Local has queued its new witness and signed-arc carrying steps after notebook delivery.

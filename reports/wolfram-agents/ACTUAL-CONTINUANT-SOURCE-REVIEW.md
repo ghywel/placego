@@ -621,3 +621,53 @@ All20 controls must pass before converter invocation. No automatic retry/raised 
 is authoritative. Complete actual notebook/native source/five outputs, DirectoryQ/LeanEnvironment manual read,
 raw/parsed receipts/messages/provenance and resource enforcement remain required before posting. No unseen artifact
 or portal status accepted by this freeze. Local sole runner/poster; GC2181 carrying comparison can wait.
+
+
+## GC2188: first notebook failure retained; one exact IncludeInternal repair accepted
+
+Complete L1187, producer manifest d315296109a2e5d31238f1359bfe8526491350821e5f59bd62e670454d4c631e and
+all21 copied files independently read and digest-checked. The22-entry inventory includes one uncopied compiler
+object; no GPT kernel or compiler run. Native208463byte notebook1ac8039f inertly decoded to the exact106307byte
+791e45ed proof. All five outputs were read: correct illustration grid, actual DirectoryQ True, actual environment,
+seven exact standard axiom sets plus one Missing recoded_horizon, and actual matching KernelChecked324. All20
+controls passed, but the axiom guard correctly rejected output4: **whole notebook stage FAILED, not accepted**.
+The earlier official proof replay GC2180 remains accepted; notebook failure is not a logical refutation.
+
+Actual M5 parent CHILD_FAILED1,15:29:50–15:30:36Z,45.92s/87samples, owned4600016KiB/max5processes,
+minimumfree5497MiB/zero swap growth. Actual launch6667MiB differs from the preceding6791 snapshot; the owner's
+restart resolved the earlier6039MiB hold. Parent capped-directory peak6819768bytes is not full-host disk accounting:
+the handler records attempted external cache/persistence accesses. Final6820545bytes, cleanup null, no main-stage
+leftovers. All16404 handler events are unprinted, despite zero notebook Message cells. ResourceVersion None is
+explicitly unavailable, not a pinned version; UUID retained. Producer compared private identifiers without exposing
+them; GPT checked the sanitized packet, not those unknown identifiers.
+
+**Count correction:** held output3 actually contains139 unique declared names, not138;155 official names minus139
+leaves16, not17. Three user declarations (recoded_horizon, recode, recurrence_one) and13 generated auxiliaries are
+missing. All16 are exactly predicted by the official1.2.2 name filter. Full names, inert native decoder and primary
+source copies are retained in immutable independent packet cited/gc2188-horizon-notebook-failure/review-manifest.json,
+SHA256 a72163ff101bf89b9b3058c7b5aecfa02b6018db7896cdd236a5b5be8540a867.
+
+Actual official [LeanLink1.2.2 source](https://github.com/WolframInstitute/LeanLink/blob/adcfa908e79ca513a5a51b2c8be3ff379271673e/LeanLink/Kernel/Lean.wl),
+SHA256 a0c12e94569dfc35dcea626991372b346ca604bb26e94e8b8218b75d944fef9c, uses StringContainsQ for internal
+patterns including .rec (2985–2987), filters these names unless IncludeInternal True (3198–3199), and forwards
+LeanImportString options (2555–2559). KernelCheck separately replays the module (1285–1299). This is an actual
+versioned primary-source read, not byte-verification of the Local installed file. It explains the observed defect.
+The two preregistered tiny probes reported the predicted contrast but BOTH ended LEFTOVER_CLEANED/child0: useful
+observations, not clean completed stages. Full probe parent/raw packets still requested for retention; do not rerun.
+
+**Accept ONE separately frozen repaired notebook stage:** bound essay203fd0a6e9b43861e85b94fb62f5e257e9712a1235cd78a9c2e3e2a79c4e1def,
+prose060de9b8c435cce923735f9c2ce81b0451592fd0e2dda6366f3ee7b9518d91ef,
+launcher f7654266d10a4c657a50259ace6f6fb8718aa92ffcb08bd0d8b226f24d8692fb,
+driver154be32878d56869d5e317c0352226bf321733bfa9e81ad22651a77ed2ec125b.
+Only one explanatory sentence and IncludeInternal True differ in the essay; independent reconstruction is byte-exact.
+Assembler --check passes; current native literal decodes to791e45ed. Source791e45ed, assembly266d6cd6, abstractd55190dc,
+checks003aab35, controls0f066b3a and receipt4c6301c0 are unchanged. Launcher/driver changes only re-pin inputs and comments.
+Two inert Python fixtures reach a deliberately missing kernel for new pins and refuse the old essay before execution.
+
+Same GC2182 envelope: track-tree/max8/CPU1200perprocess/wall1200/RSS5120MiB/file64MiB/disk256MiB/
+launchfree6144MiB/ongoingfree1024MiB/swapgrowth256MiB, fresh headroom and no other Lean/Wolfram job. Run all20
+controls before conversion, retain eight exact axiom sets and actual KernelChecked324 gates. No weaker gate,
+manually substituted output, extra official/modular/DEV replay, automatic retry or raised cap. Any new failure ends
+this stage for reassessment. Local sole runner/poster; actual repaired notebook/artifact/full enforcement review and
+portal delivery remain pending. Full tiny-probe receipts are a retention follow-up, not a reason to repeat the probes
+or block this source-backed repair.
