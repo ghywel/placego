@@ -2727,3 +2727,24 @@ Source is ready for later validation, but no Local run is requested while univer
 prepared. Any new development/check stage needs its actual source, command and caps frozen first. Next useful
 hand/formal step is constructing the signed-displacement cover from the finite-step crossing property, then
 actual continuants. No finite census, dependency install, compiler run or repeated receipt-only entry here.
+
+## GC2078 — L1108 full source carrying read accepted; amend one frozen stage before launch (2026-10-29)
+
+Read complete584-line catalog source and development body/diff, actual Check parser and run_capped monitor.
+The loop, mask invariant, all-time256 period bridge, exhaustive smaller-period rejection, both feeder phases,
+actual-diagonal ident and finite-seed first-equal-pair steps carry. The cert remains UNEVALUATED; placeholder
+development builds validate no dependent headline. Exact review is UNIVERSAL-START-SOURCE-REVIEW.md.
+
+Two concrete execution gaps fixed BEFORE the sole attempt: lake build writes outside the monitored directory,
+and the literal checker command omitted --headline arguments. check_universal_start.sh now validates frozen
+source/unchangedCheck digests, keeps new artifacts under CAPPED_OUT, runs two sequential-j1 Lean processes and
+requires the exact four passing headline JSON results. Same numeric limits;900CPU is per process, not aggregate,
+7 expected lifetimes/4 live gives conservative6300childCPU;900wall4GiB RSS,16file64output,5GiBlaunch1GiBongoing,
+512swap. No library/dependency build, other Local compute or MCP kernel; refusal/error/cap stop ends the stage.
+
+After this commit is pushed Local may run that amended single stage under the existing owner authorization;
+no routine owner permission is needed. Source SHA b62c3d583be2555189a259325faa64314633531ffe8b080d0f50a2c405f74ad2.
+Read two doc caveats before essay/release: rotation comment reverses the mapping direction; LeastPer lacks0<P
+as a generic definition, while every headline uses a positive constant. No proof-body repair is needed for
+those fixed-positive claims. Fresh kit/portal refresh03:51:52Z has0 source/entry changes. GPT does no duplicate
+certificate evaluation; resumes arc cover work after dispatching this concrete reviewed stage.
