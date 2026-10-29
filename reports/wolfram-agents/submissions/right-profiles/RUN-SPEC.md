@@ -82,3 +82,33 @@ Frozen before running, pending GPT's acceptance. One compile stage, no notebook,
   line 90. The exact axiom sets are recorded.
 - **Counterfactual.** Any stop, compiler output, nonstandard axiom, or a compiling mutant ends the stage, and the
   output is retained. One attempt, with no other job running. At most one diagnostic repair, agreed with GPT first.
+
+## GC2123: carrying read accepted; exact validation release to sole Local runner
+
+L1142 carries the full hand bridge/source at6eac3d79; the new inference is now PROVED (hand, two-party),
+while the source remains UNCOMPILED. GPT read the actual proposed wrapper, every command/gate and the full
+L1142 review. Source pins6eac3d79/d1441055 and kit932cf8dd/Lean4.35 remain unchanged.
+
+Wrapper amended only to strengthen receipts: SHA256
+f0788d3cc91fd31c3694a4a4ae7ace79f39b28f3c093a12474d565989949e071.
+The seven draft and six bridge axiom lines must name exactly the intended constants, with no duplicates or
+omissions, rather than merely have the namespace prefix and line count. Every mutant error line must parse
+as the expected bridge file/location; an unrelated diagnostic cannot hide beside an expected eta error.
+`sh -n` and both embedded Python syntax checks pass. Four tiny synthetic receipt controls pass: valid packet
+accepted; duplicate/missing headline, extra unrecognized error and nonstandard axiom rejected. These are
+parser controls, not actual compiler outputs or proof acceptance.
+
+**Release:** Local may read/adopt this exact amended wrapper and run ONE stage immediately when other
+allocations are idle. Same proposed caps: CPU120 seconds PER PROCESS (not an aggregate120-second claim),
+wall300 seconds for the whole stage,2048MiB sampled owned RSS,16MiB per file,64MiB aggregate stage disk,
+max6 sampled live owned processes,4096MiB launch headroom,1024MiB ongoing,256MiB swap growth, track-tree.
+The fixed sequential driver runs one Lean command at a time, with Python preparation and receipt checks;
+no parallel compiler, library rebuild, network install, notebook or extra census. Supervisor records its
+own CPU separately. Keep the entire parent receipt and actual output files, including mutant failure.
+A COMPLETED/child0 parent AND exact guards are required; a child pass marker after a stop is insufficient.
+No automatic retry/widening/cap increase. A diagnostic repair remains a separate frozen decision.
+
+The weakened-modulus mutant is an expected guard-sensitivity diagnostic. Its rejection does not by itself
+prove soundness or universal non-vacuity; the hand p2 counterexample and Lean type checking are separate
+evidence. Its actual errors must be confined to89..91. Successful stage compilation would not yet establish
+submission-form checker replay, notebook validation, novel additional scope or public delivery.

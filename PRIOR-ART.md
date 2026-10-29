@@ -4559,3 +4559,11 @@ this is not a cycle count or a claim about the full CA's injectivity. The singul
 standard finite stable-image/cycle fact. See [the explicit comparison and final disposition](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md).
 Known mechanisms, reproved here in the recorded Rule30 hand specialization; no new standalone submission.
 Critical s=p and ring classification are untouched. Reopening requires a useful dependency or maintainer request.
+
+### GC2123: prefix-doubling antiperiod — known, reproved here
+
+The bridge lemma antiperiod_of_minimal_double is the standard odd-forcing-parity lifting mechanism:
+TFunctionCycles.lift_iff/per and single-seed RightPeriods.antiperiod/e_step. Our explicit PrefixPer/LeastPrefix
+form avoids assuming individual-period monotonicity; L1142 has independently carried the actual source and
+its application to the already recorded guarded11011 theorem. No new lifting principle is claimed. Kit per
+at n bits corresponds to the profile prefix through n-1. Actual current-toolchain compilation remains pending.
