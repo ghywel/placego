@@ -1,0 +1,585 @@
+{
+ "stage": "arc notebook stage B2 (GC2115's accepted attempt)",
+ "launcher": {
+  "limits": {
+   "cpu": 1200,
+   "wall": 1200,
+   "rss_mib": 5120,
+   "file_mib": 64,
+   "disk_mib": 256,
+   "min_free_mib": 1024,
+   "launch_free_mib": 6144,
+   "swap_growth_mib": 256,
+   "track_tree": true,
+   "max_procs": 8
+  },
+  "start_utc": "2026-10-29T08:03:20Z",
+  "end_utc": "2026-10-29T08:03:52Z",
+  "gate": {
+   "free_inactive_mib": 6796,
+   "swap_used_mib": 1622.81
+  },
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 32.03,
+  "maxima": {
+   "rss_kib": 4790384,
+   "procs": 5,
+   "disk_bytes": 3754623,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 5317
+  },
+  "cleanup": null,
+  "stop_signals": null,
+  "samples_kept": [
+   [
+    0.5,
+    149088,
+    6685,
+    0.0,
+    125629
+   ],
+   [
+    1.1,
+    157280,
+    6662,
+    0.0,
+    125629
+   ],
+   [
+    1.6,
+    180592,
+    6664,
+    0.0,
+    125629
+   ],
+   [
+    2.1,
+    181056,
+    6669,
+    0.0,
+    125629
+   ],
+   [
+    2.6,
+    279968,
+    6646,
+    0.0,
+    125629
+   ],
+   [
+    3.2,
+    295520,
+    6668,
+    0.0,
+    187476
+   ],
+   [
+    3.7,
+    314352,
+    6665,
+    0.0,
+    187476
+   ],
+   [
+    4.3,
+    315632,
+    6662,
+    0.0,
+    187476
+   ],
+   [
+    4.8,
+    343760,
+    6651,
+    0.0,
+    187476
+   ],
+   [
+    5.3,
+    343888,
+    6617,
+    0.0,
+    187476
+   ],
+   [
+    5.8,
+    348000,
+    6619,
+    0.0,
+    189982
+   ],
+   [
+    6.4,
+    350112,
+    6626,
+    0.0,
+    189982
+   ],
+   [
+    6.9,
+    350144,
+    6633,
+    0.0,
+    189982
+   ],
+   [
+    7.4,
+    351616,
+    6617,
+    0.0,
+    189982
+   ],
+   [
+    7.9,
+    351616,
+    6617,
+    0.0,
+    189982
+   ],
+   [
+    8.5,
+    351616,
+    6621,
+    0.0,
+    189982
+   ],
+   [
+    9.0,
+    351680,
+    6600,
+    0.0,
+    187476
+   ],
+   [
+    9.5,
+    352128,
+    6619,
+    0.0,
+    187476
+   ],
+   [
+    10.1,
+    351680,
+    6624,
+    0.0,
+    187476
+   ],
+   [
+    10.6,
+    351680,
+    6648,
+    0.0,
+    187476
+   ],
+   [
+    11.1,
+    351744,
+    6658,
+    0.0,
+    189982
+   ],
+   [
+    11.6,
+    351744,
+    6658,
+    0.0,
+    189982
+   ],
+   [
+    12.2,
+    351680,
+    6662,
+    0.0,
+    189982
+   ],
+   [
+    12.7,
+    351744,
+    6666,
+    0.0,
+    187476
+   ],
+   [
+    13.2,
+    352128,
+    6631,
+    0.0,
+    187476
+   ],
+   [
+    13.7,
+    353408,
+    6524,
+    0.0,
+    187476
+   ],
+   [
+    14.3,
+    356480,
+    6501,
+    0.0,
+    187476
+   ],
+   [
+    14.8,
+    357344,
+    6535,
+    0.0,
+    187476
+   ],
+   [
+    15.3,
+    360832,
+    6546,
+    0.0,
+    187476
+   ],
+   [
+    15.8,
+    362864,
+    6537,
+    0.0,
+    187476
+   ],
+   [
+    16.3,
+    366208,
+    6535,
+    0.0,
+    187476
+   ],
+   [
+    16.9,
+    369152,
+    6522,
+    0.0,
+    187476
+   ],
+   [
+    17.4,
+    539440,
+    6464,
+    0.0,
+    187476
+   ],
+   [
+    17.9,
+    615584,
+    6435,
+    0.0,
+    187476
+   ],
+   [
+    18.4,
+    654752,
+    6441,
+    0.0,
+    187476
+   ],
+   [
+    19.0,
+    654976,
+    6470,
+    0.0,
+    187476
+   ],
+   [
+    19.5,
+    657184,
+    6464,
+    0.0,
+    236345
+   ],
+   [
+    20.0,
+    941152,
+    6456,
+    0.0,
+    236345
+   ],
+   [
+    20.5,
+    1146608,
+    6391,
+    0.0,
+    236345
+   ],
+   [
+    21.0,
+    3014832,
+    6190,
+    0.0,
+    236345
+   ],
+   [
+    21.6,
+    3206048,
+    6133,
+    0.0,
+    236345
+   ],
+   [
+    22.1,
+    3263712,
+    6115,
+    0.0,
+    236345
+   ],
+   [
+    22.6,
+    881616,
+    6483,
+    0.0,
+    2301369
+   ],
+   [
+    23.1,
+    2713008,
+    6294,
+    0.0,
+    2301369
+   ],
+   [
+    23.6,
+    2932192,
+    6274,
+    0.0,
+    2301369
+   ],
+   [
+    24.2,
+    2965264,
+    6268,
+    0.0,
+    2301369
+   ],
+   [
+    24.7,
+    3059648,
+    6240,
+    0.0,
+    2252500
+   ],
+   [
+    25.2,
+    3061616,
+    6199,
+    0.0,
+    2252500
+   ],
+   [
+    25.7,
+    3063216,
+    6205,
+    0.0,
+    2252500
+   ],
+   [
+    26.2,
+    3064816,
+    6155,
+    0.0,
+    2252500
+   ],
+   [
+    26.8,
+    3066352,
+    6225,
+    0.0,
+    2252500
+   ],
+   [
+    27.3,
+    3068064,
+    6221,
+    0.0,
+    2252500
+   ],
+   [
+    27.8,
+    3250880,
+    6192,
+    0.0,
+    2252500
+   ],
+   [
+    28.3,
+    3988848,
+    6060,
+    0.0,
+    2252500
+   ],
+   [
+    28.9,
+    4790384,
+    5899,
+    0.0,
+    2252500
+   ],
+   [
+    29.4,
+    4399184,
+    5619,
+    0.0,
+    2252500
+   ],
+   [
+    29.9,
+    3991184,
+    5322,
+    0.0,
+    2252500
+   ],
+   [
+    30.4,
+    4684800,
+    5317,
+    0.0,
+    2252500
+   ],
+   [
+    30.9,
+    4753792,
+    5340,
+    0.0,
+    2252500
+   ],
+   [
+    31.5,
+    4786832,
+    5333,
+    0.0,
+    3754623
+   ]
+  ]
+ },
+ "cmd": "from the pipeline kit root, elan tools on PATH: run_capped.py --track-tree --max-procs 8 ... --rss-mib 5120 --launch-free-mib 6144 ... -- python3 -I arc_notebook_launch.py (256395e6...) WolframKernel ESSAY (0976ea3f...) KIT",
+ "builder_stdout": [
+  "ARC_NOTEBOOK_INPUTS_OK",
+  "ARC_OUTPUT_CONTROLS_PASS",
+  "ARC_NOTEBOOK_PASS"
+ ],
+ "summary": {
+  "essay_sha256": "0976ea3f35f38e558898bc76e9305badce9f6ad0f1c13d495ad9d8fc117dc64f",
+  "source_sha256": "56d226a644ffc0c061239fc6daccdd88ba4a69efc9507939994b685411fe9594",
+  "resource_url": "https://www.wolframcloud.com/obj/wolframinstitute/DeployedResources/Function/MarkdownToNotebook",
+  "resource": {
+   "Name": "MarkdownToNotebook",
+   "Version": {
+    "wolfram_inputform": "None"
+   },
+   "UUID": "84897ed5-1693-4f5b-bd08-574043e88880"
+  },
+  "build_seconds": 17.5,
+  "notebook_sha256": "f09c3cbd892bbb19109a4658cc2c1282e00d71e070e93e58b2c4f4465aedb622",
+  "notebook_bytes": 123735,
+  "output_cells": 5,
+  "output_digests": [
+   "c81b7ab290ecb592e80f2b2723b14ea4b4ec23485531f6b49ecc67df9b39e130",
+   "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+   "4f0ba156db81a5cf18bedaee4a5350d5f8fc113f08b0e62457764799a541e817",
+   "82ce1095bbdf1217d3645c68bfb39cf83ec561b87a83d1cfa5918541bbe607d2",
+   "c541a470583590c40d86208a0686f5019ee775d107c584249c3b568d3073b015"
+  ],
+  "message_cells": 0,
+  "handler_events": 15096,
+  "handler_events_printed": 0,
+  "handler_tally": [
+   {
+    "name": "General::newsym",
+    "count": 15053
+   },
+   {
+    "name": "DeleteFile::fdnfnd",
+    "count": 10
+   },
+   {
+    "name": "LocalObject::nso",
+    "count": 9
+   },
+   {
+    "name": "MIMETypeToFormatList::fmterr",
+    "count": 9
+   },
+   {
+    "name": "FrontEndObject::notavail",
+    "count": 5
+   },
+   {
+    "name": "General::openx",
+    "count": 4
+   },
+   {
+    "name": "ImportExport`ExtensionToFormatList::fmterr",
+    "count": 2
+   },
+   {
+    "name": "OptionValue::nodef",
+    "count": 2
+   },
+   {
+    "name": "General::stop",
+    "count": 1
+   },
+   {
+    "name": "LibraryFunction::overload",
+    "count": 1
+   }
+  ],
+  "output_controls": {
+   "positive_grid": true,
+   "positive_axioms": true,
+   "positive_kernel": true,
+   "missing_output": true,
+   "wrong_grid_value": true,
+   "wrong_grid_head": true,
+   "unknown_axiom": true,
+   "missing_axiom_key": true,
+   "extra_axiom_key": true,
+   "duplicate_axiom_key": true,
+   "missing_standard_axiom": true,
+   "axiom_code_is_held": true,
+   "failure_containing_Success": true,
+   "display_only_Success": true,
+   "wrong_success_tag": true,
+   "wrong_declaration_count": true,
+   "inconsistent_module": true,
+   "no_output_code_evaluated": true
+  },
+  "grid_ok": true,
+  "axioms_ok": true,
+  "kernelcheck_ok": true,
+  "kernelcheck_data": {
+   "MessageTemplate": "The kernel accepts all `1` declarations of `2`.",
+   "MessageParameters": [
+    169,
+    "LeanLinkTmp33687680975554787046x939196"
+   ],
+   "Module": "LeanLinkTmp33687680975554787046x939196",
+   "Declarations": 169
+  },
+  "reasons": []
+ },
+ "packet_manifest": {
+  "packet": "arc notebook stage B2 (GC2115, L1139)",
+  "note": "file_sha256 are SHA-256 of the exported file bytes; summary.json output_digests are FileHash of the exported cell files (GC2110 driver)",
+  "files": {
+   "cell-01.txt": "c81b7ab290ecb592e80f2b2723b14ea4b4ec23485531f6b49ecc67df9b39e130",
+   "cell-02.txt": "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+   "cell-03.txt": "4f0ba156db81a5cf18bedaee4a5350d5f8fc113f08b0e62457764799a541e817",
+   "cell-04.txt": "82ce1095bbdf1217d3645c68bfb39cf83ec561b87a83d1cfa5918541bbe607d2",
+   "cell-05.txt": "c541a470583590c40d86208a0686f5019ee775d107c584249c3b568d3073b015",
+   "essay.nb": "f09c3cbd892bbb19109a4658cc2c1282e00d71e070e93e58b2c4f4465aedb622",
+   "input-pins.json": "266a6635ad78e6c1c4f085f66468641c792ec811e16f4863ca0bf21a21b09745",
+   "launcher.json": "21fb6ad939d071a2b9596838c558d4e909d48df3004b2ad48559f612b255ba2e",
+   "messages.sanitized.m": "0fe26cb1d74174b2e3790e9961d5723ec3936257538f42e44d53c6bc49f5ef71",
+   "out.txt": "982f69c0e05cfe5900fe56f040280083a077a2ffd08f35bb7eea498fbe076a71",
+   "output-controls.wl": "a9837d581c2721b7488556507db305cec0fc0f22b36a8c89653a3c0d97edc840",
+   "summary.json": "9c1e3b0645f2634f4ade65174075acc7cf932db8d98a6cfc811e48b3c628ab3a",
+   "summary.raw.wl": "58679b3af65040e2cc8a6fb198a3d9d75c69b7566f2a3d344bbae9b5e41c3da5"
+  },
+  "messages_raw_sha256_local_only": "baeb2c5e30938de330454d6335eb9fffbe5bae78b22c08ede6f51c45d3f28193"
+ },
+ "shared_store_packet": "workers/local/arc-notebook-stageB2/ (manifest sha256 9da66948a5ffb6342d4bd94dca72024ade7aeb82970ebb47f77ee8c247634130)"
+}
