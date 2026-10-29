@@ -84,14 +84,22 @@ theorem nonzero_positive (alpha theta : ℝ) (q : Nat) (p : Int) (s : Nat)
     carry alpha theta q p s ≠ 0 ↔
       1-((q : ℝ)*alpha-p) ≤ Int.fract (theta+(s : ℝ)*alpha) := by
   rw [carry_positive alpha theta q p s h0 h1]
-  by_cases h : 1-((q : ℝ)*alpha-p) ≤ Int.fract (theta+(s : ℝ)*alpha) <;> simp [h]
+  by_cases h : 1-((q : ℝ)*alpha-p) ≤ Int.fract (theta+(s : ℝ)*alpha)
+  · rw [ite_eq_left h]
+    exact ⟨fun _ => h, fun _ => by decide⟩
+  · rw [ite_eq_right h]
+    exact ⟨fun hne => absurd rfl hne, fun hh => absurd hh h⟩
 
 theorem nonzero_negative (alpha theta : ℝ) (q : Nat) (p : Int) (s : Nat)
     (h0 : -1 < (q : ℝ)*alpha-p) (h1 : (q : ℝ)*alpha-p < 0) :
     carry alpha theta q p s ≠ 0 ↔
       Int.fract (theta+(s : ℝ)*alpha) < -((q : ℝ)*alpha-p) := by
   rw [carry_negative alpha theta q p s h0 h1]
-  by_cases h : Int.fract (theta+(s : ℝ)*alpha) < -((q : ℝ)*alpha-p) <;> simp [h]
+  by_cases h : Int.fract (theta+(s : ℝ)*alpha) < -((q : ℝ)*alpha-p)
+  · rw [ite_eq_left h]
+    exact ⟨fun _ => h, fun _ => by decide⟩
+  · rw [ite_eq_right h]
+    exact ⟨fun hne => absurd rfl hne, fun hh => absurd hh h⟩
 
 /-- Endpoint controls: the positive arc includes its threshold; the negative arc excludes its threshold. -/
 theorem half_open_endpoint_controls :

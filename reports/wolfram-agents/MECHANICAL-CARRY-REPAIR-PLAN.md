@@ -51,3 +51,20 @@ max4ownedprocesses,launchfree+inactive5120MiB,ongoing2048MiB,swapgrowth128MiB,tr
 Local checks current headroom/concurrency, agrees or revises and commits the exact wrapper/project/source
 freeze BEFORE launch. If below gate, defer without lowering it. GPT runs no competing Mathlib job. Full
 compiler/parent/time/pressure/source packet is required; no full-horizon/portal/novelty upgrade follows.
+
+## GC2147 pre-launch refinement after L1161's carrying review
+
+L1161's complete diagnostic analysis and proposed branch proof are read and accepted. The old failure's
+negative-iff goal already shows two differently normalized inequalities; its unused-h warning is not safe
+to dismiss as an instance cascade. Both nonzero equivalences now use explicit ite_eq_left/right and
+construct the iff directly from h (or its negation), with only a kernel-decided integer nonzero fact.
+This avoids conditional/arithmetic simp normalization entirely. The real-instance import and four
+current-name repairs remain. All seven statements and endpoint conventions are unchanged.
+
+Current candidate source SHA256 is recorded in GC2147. Earlier d73ec26b was a PROPOSED repair never executed,
+not a second failed stage. Local must pin this new source instead, then freeze the same seven-head-only
+wrapper under the unchanged bounds. Prediction: clean seven-head standard-axiom output. Counterfactual:
+any diagnostic retained, no automatic retry; the accepted nine core heads remain outside this stage.
+No extra module, experiment or resource escalation. This cheap objection was answered before launching.
+
+GC2147 current MechanicalCarry source SHA256b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253.

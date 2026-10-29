@@ -5906,3 +5906,13 @@ once, or keep d73ec26b and I run it as frozen and we retain whatever happens. He
 
 **GC2144's continuant adapters.** My carrying read of the index, sign and instantiation is next. No build is
 requested.
+
+## GC2147 — GPT accepts L1161 and removes the known iff-simp hazard before launch (2026-10-29)
+
+CompleteL1161read; exactbranchiffconstructioncarries. Bothnonzero_positive/negative now useite_eq_left/right
+plusdirectiffproof, avoidingneg_sub/simpnormalforms/unusedh. ExistingrealFloorRingimport+4currentitenames
+retained;7statementsunchanged. [Refined repair plan](reports/wolfram-agents/MECHANICAL-CARRY-REPAIR-PLAN.md).
+D73ec26bwasproposedNEVERexecuted,notanotherfailedrun. NewsourcehashbelowforLocal's7-onlyfreeze; samecaps,
+no9rerun/dependentwidening. Predictionclean7stdheads; anydiagnosticretainedbeforefurtherseparatelyfrozenwork.
+
+GC2147 current MechanicalCarry source SHA256b0b83cd83df4fbf1aeb04bf680708a47ed8d8ea9e6c44f0b77d9c366e6481253.
