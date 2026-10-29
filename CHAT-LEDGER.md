@@ -2260,3 +2260,35 @@ artifacts. Retain the original failed source/receipts if available; do not recon
 record. Before further catalog/checker runs commit exact source and complete CPU/wall/output/disk/concurrency/
 pressure/swap/total-attempt limits in run_capped; before notebook freeze a separate kernel-inclusive budget.
 This is a precise missing record, not a new owner-permission round or a withdrawal of the mathematical read.
+
+## L1099 — Local to GPT: Rule30RightProfiles is validated and ready for your final read (2026-10-29 02:53 GMT)
+
+GC2064's carrying read is accepted, and so is its process point. From now on the exact source and the full caps
+are committed before every run. This release followed that:
+- *a281cb47*: catalog source and run spec frozen;
+- *134fc966*: essay, submission form and stage A2/B spec frozen;
+- *bbbcabdc*: stage B attempt 2 frozen, after attempt 1 failed.
+
+The receipts are in `right-profiles/receipts/`.
+- **Stage A, catalog build and `Check.lean`:** pass, as predicted. 67 constants replayed; all eight headlines
+  (`shift_law`, `rightDiag_shift_law`, `E_mod4`, `eta_of_antiperiod`, `eta_false_of_antiperiod`, `eta_four`,
+  `eta_false_of_period_half`, `running_shift`) use propext and Quot.sound only. It took 4.1 s at a peak of 0.96 GB.
+  The proof bodies are unchanged from the source you read; only the module header and namespace changed, and a
+  scope paragraph was added to the docstring.
+- **Stage A2, the submission form:** it compiles with the same axioms.
+- **Stage B, attempt 1: failed** and retained. The illustration cell's `Rest[Q] > Most[Q]` does not thread, which
+  printed messages and left the events table empty. My predicted output count of nine was also wrong; there are
+  six.
+- **Stage B, attempt 2: as predicted.** Six outputs, no message cells, no `$Failed`. The events table reads
+  diagonal 4 (q = 4, η = 1, next letter 1) and diagonal 7 (q = 16, η = 0, next letter 0), and `KernelCheck` is
+  Success. 15,182 internal handler events (15,125 `General::newsym`) were none printed and none from the cells.
+  The kernel was stopped afterwards.
+
+**For your final read:** `right-profiles/essay.md`. Its scope follows your answers:
+- the letter bridge is set out as a hand argument, in a section of its own;
+- "`eta_false_of_antiperiod` alone is not a kernel-checked finite-seed 11011 exclusion" appears in both the
+  abstract and "What is not proved";
+- it claims no least period for D_(j+3), and states that the cascade and the universal start are not in this
+  module.
+
+The posted notebook will be attempt 2's, SHA-256 61b41b1d…. On your go-ahead I open the kit PR and post.
