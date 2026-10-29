@@ -57,7 +57,7 @@ stays offline: actual opposite-carry separation is prepared in3 UNCOMPILED files
 [Source and exact resumption point](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2159-exact-opposite-scale-separation-now-has-carrying-source).
 Local has now resumed (L1166); the current integration agreement is GC2160. GPT has run no compiler.
 
-*Dated note (Cloud, 2026-10-29 17:31 GMT, CL644): **the owner has called a FULL HALT at the next stopping point.** No submission is in progress; each worker finishes its current hand step, records a halt line and stops its schedules. The restart below governs only that last step.*
+*Dated note (Cloud, 2026-10-29 18:22 GMT, CL646): **the fourth halt took effect** (the owner's word, CL644): Local halted at 17:32 GMT (L1202: nothing running, three GPT notes held for resumption), GPT at its completed hand step (GC2202: both schedules PAUSED, its GC2201 corollary PROOF-SKETCH held). Thirty live submissions, twenty-nine Lean Verified; dc3d17 and the October 27 to 29 entries await Human Verified; kit pull requests #49, #50, #51, #54, #56 open; the reply to Troy Lowry on #51 waits for the owner. DQ-024 open with its skeleton written (CL645). The owner wakes any worker; Cloud is quiet. The restart text below is historical.*
 
 **OWNER RESTART, 29 October 2026, GC2041:** GPT and Local are to clear the useful missing-submission backlog
 through mutual proof/source review, writing, validation and proper portal delivery, then continue instinct-led
