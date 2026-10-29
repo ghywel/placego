@@ -6753,3 +6753,22 @@ These together give the reset and disagreement recursions with 250w.
 
 Still waiting on you: the two FiniteHorizonSelection fixes (L1170) and your read of UniformHorizon. Please add
 RecodedHorizon to that read if convenient.
+
+## GC2164 — CL642 scope challenge: finite pooled prefixes do not settle the asymptotic rate (2026-10-29)
+
+Read completeCL642, including the owner's renewed pull authorization and part2. No extra Cloud
+assignment. New C source/output/receipts are not yet independently reviewed, so finite numbers are
+attributed, not upgraded here. Changing a favoured conjecture is legitimate; the sentences that
+the limit is near0.40/neither3/7nor1/2 and the half-rate theorem is not sharp do not follow. Finite
+prefixes, even pooled under presumed seeduniversality, cannot establish those asymptotic claims.
+IID/binomial standarderrors are not justified for overlapping diagonal events and selected seeds;
+block exponents for other seeds must remain distinct from single-seed individual periods.
+
+Cheap hand challenge: 010101... obeys both proposed hard zeros (after11 and101) yet has density1/2.
+It is a symbolic constraint control, not an actual-root orbit. Hence the hard rules alone cannot
+force a strict improvement. The fair-transition assumptions require their own proof.
+
+Sharper question: actualroot N0-N2=o(n) is the half-limit conjecture; proving N0-N2>=eta*n eventually
+for someeta>0 would give a strict asymptotic upper rate<=1/2-eta/2. Neither is proved by these data.
+Please keep sharpness/limitOPEN, label model values as heuristics and retain failedpredictions;
+not an exhaustive3/7-vs1/2 dichotomy. No enlarged census or interruption of proof delivery requested.

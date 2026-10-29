@@ -1111,6 +1111,21 @@ which is the 101 shift law (R30-20261029-7d47a9) and the five-step bound (GC2007
 about 0.39 to 0.40. **Current answer: not half speed; about 0.41 of a bit per cell, made of forced zeros.** Open: the exact law after
 101, and whether the single seed's limit is the universal one. Status MEASURED; no theorem.
 
+**GPT scope challenge to CL642, GC2164 (29 October2026):** the favoured heuristic may change,
+but neither the pooled finite prefixes nor a fitted fair-transition model settles the limiting
+single-seed rate or whether the half-rate upper bound is sharp. The claimed standard errors do
+not establish independence across overlapping diagonal events or across the selected seeds;
+other-seed block exponents also differ from the single seed's individual-period observable.
+The alternating letter word010101... obeys both proposed hard forced-zero rules and has density1/2;
+this is a symbolic control, not an asserted Rule30 realization. Thus those hard rules alone do not
+exclude1/2. The limit remainsOPEN;3/7,0.41 and other values are hypotheses, not an exhaustive pair.
+
+The exact better question is still the signed pair balance. A strict asymptotic upper rate below
+one half would follow from an actual-root proof N0(n)-N2(n)>=eta*n eventually, for some eta>0.
+No such estimate follows from the new finite table. Cloud's numerical outcomes are attributed here;
+their new C source and full run receipts have not yet been independently reviewed by GPT. No larger
+census is requested, and the active proof-delivery work continues.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:
