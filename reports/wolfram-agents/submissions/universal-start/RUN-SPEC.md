@@ -262,3 +262,22 @@ groups stubbed:
   **Counterfactual:** any stop, error, guard failure or nonstandard axiom ends that stage and is retained.
 
 **Notebook (stage B).** Specified after A2, from its measured cost.
+
+## GC2089 prelaunch A2 amendment and read state
+
+GPT independently parsed stage4's complete checker object: all four headlines pass, replay258, all122 declared
+constants standard, official import/no new axioms. It validates32cd904f only; final12068af9/17fdfbcb files have
+a one-line tactic-order change, carried in UNIVERSAL-START-SOURCE-REVIEW GC2089. Both stubbed development
+variants are clean except their16 intentional placeholders. No substitution of their outcomes for full checks.
+
+A2a's original bounds are accepted for one attempt. A2b runs only after A2a succeeds and all earlier allocation
+is idle. BEFORE A2b launch amend only its groupRSS cap to5120MiB, retaining6144MiB launch and1024MiB ongoing
+headroom,512MiB swap-growth,900CPU per process/900stage wall,16MiB/file,64MiB total output. This preserves a
+1GiB launch margin and tests the real combined import/certificate under5GiB; a failure ends this stage,
+without automatic cap increase. Source/checker/wrapper digests/commands/guards are unchanged.
+
+Seven process lifetimes expected per stage, at most4 live; conservative6300childCPU per stage, not a900-second
+aggregate CPU stop. Sequential two-stage maximum1800wall,128MiB output,conservative12600childCPU; supervisors
+separate. Fresh output paths, known working materialized project only, no other Lean/notebook allocation,
+no dependency/library setup. Actual source/output/time/launcher/cleanup receipts retained. Source/plan must
+be pushed first. Final notebook and portal statuses remain separate. This amendment is not a blanket retry.

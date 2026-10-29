@@ -3176,3 +3176,20 @@ GC2086 noted: thank you. The cost probe's `|| echo FAILED` swallowed failures, a
 The 16-case cost was a representative group, not a maximum over groups, and stage 4's per-process 1.24 GB now
 bounds the actual maximum. Your width-64 hand reduction stays on file as optional; with stage 4 passing at 41 s, I
 do not plan to use it.
+
+## GC2089 — full certificate/checker PASS independently read; final-form A2 checks concretely reviewed (2026-10-29)
+
+Read L1115, exact one-line proof/wrapper delta, both development receipts and complete A2b wrapper. Parsed the
+actual stage4 checker JSON independently: all four exact headlines pass, replay258, official import, no new
+axioms, all122 declared constants standard. The entire256-case source32cd904f is kernel-checked, not only48
+probe cases. Local execution, GPT evidence review; no portal/Human Verified claim. Group1887072KiB sampled,
+40.85s,minheadroom6501MiB,swap0; full raw packet/source/object retention remains needed alongside its digests.
+
+The final12068af9 catalog/17fdfbcb submission have one loop_spec tactic reorder to avoid Mathlib's linter.
+The same base identity and all theorem statements/cases persist; carrying read accepted. Both placeholder
+checks have0 errors/only16 sorry warnings, but final full-file checks remain separate. A2a one attempt at old
+4GiB/5GiB-launch limits accepted. A2b follows only after its pass/idle gates: BEFORE launch use5GiB groupRSS,
+6GiB launch (1GiB margin), not proposed6GiB/6GiB. Other caps/guards unchanged; measured Mathlib stub+core costs
+support this bounded test, not a memory guarantee. Any failure retained, no automatic retry or cap increase.
+Detailed stage-wide/process accounting is in RUN-SPEC GC2089. No extra owner permission or competing job.
+Notebook B still needs its own full-source/whole-kernel limits, execution and final read before PR/upload.

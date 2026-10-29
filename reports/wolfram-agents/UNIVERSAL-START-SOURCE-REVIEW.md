@@ -203,3 +203,45 @@ certificate for this release now: the measured split preserves the already-read 
 Final submission-form/notebook execution, actual output/source comparisons, receipt and portal outcome
 remain pending after a successful full stage. ArcComposition's L1114 carrying read is adopted in its explicit
 StepCode/one-scale conditional scope; no all-irrational or physical Rule30 theorem follows from that acceptance.
+
+## GC2089 — stage4 actual checker outcome read; final one-line proof edit and A2 stages
+
+Read complete L1115, the stage4 checker object and all declaration/headline outcomes, exact source/wrapper
+diff, both compact development receipts and the complete submission checker wrapper. Independently parsed
+receipt JSON: COMPLETED0,40.85s, official import, no new axioms, replay258 constants, all122 declared constants
+standard, and all four exact headlines pass. cert uses propext only; the three main theorems also use
+Classical.choice/Quot.sound. This validates source32cd904f's whole256-case certificate and actual-evol theorem,
+not merely the earlier48-case probes. It is Local execution with GPT evidence review, not a GPT rerun or portal
+Lean Verified/Human Verified status.
+
+Recorded resources are1887072KiB sampled groupRSS,6501MiB minimum headroom,zero swap growth; the process
+maximum in the retained time receipt is a different observation, neither a system peak nor a guarantee for
+another wrapper/environment. Preserve the original source32cd904f and complete raw output/time/launcher/
+compiled-object packet, not only its compact JSON summary and digests.
+
+The final catalog12068af9 and submission17fdfbcb differ from the checked version by exactly the loop_spec
+base-mask tactic-order change `first | omega | simp [loop,St.m]`. The impossible-index branch closes by omega;
+the concrete indices use the same mask base identity. No statement, recurrence, enumeration or assembly
+changes. Both environments' stubbed development checks now have exactly16 placeholders and no additional
+warning/error. Their proof bodies still agree after the documented wrapper conversion. Carrying read of the
+one-line change is accepted, but the final full files need their distinct actual checks.
+
+A2a is accepted for its one frozen run at the existing4GiB/group,5GiB-launch bounds and all other unchanged
+limits. A2b follows ONLY after A2a passes and the prior group/kernel/other compute allocations are idle.
+Its complete wrapper retains source/unchangedCheck digests, unique single-file module root, full JSON guard
+and exact four headlines. No new dependency/library build or unmaterialized environment lookup.
+
+**A2b resource amendment before launch:** use5120MiB sampled groupRSS and6144MiB launch free+inactive, keeping
+1024MiB ongoing headroom and512MiB swap-growth stop. This keeps a1GiB launch margin; the proposed6144RSS/
+6144launch had none. The actual Mathlib stub group reached4160496KiB, and core full-certificate process memory
+was about0.9GB above its stub; testing the real combined submission inside5GiB is plausible but not guaranteed.
+Do not claim those peaks add exactly or that a sample predicts every subsequent peak. If the combined stage
+exceeds the cap, retain it and revisit scope/imports rather than raise it automatically.
+
+Other A2b limits unchanged:900CPU PER PROCESS,900stage wall,16MiB/file,64MiB total output. Seven owned process
+lifetimes expected, at most4 simultaneously, conservative6300childCPU across inherited per-process limits;
+supervisor/monitor CPU separate. A2a uses the same time/file/output/concurrency envelope with4096RSS/5120launch.
+Two distinct stages, each one attempt, fresh output directory; combined wall at most1800s, outputs128MiB,
+conservative12600childCPU across14lifetimes. No parallel allocation and no automatic retry on any failure.
+After publication Local can adopt/run these exact checks under standing owner authorization; no extra owner
+confirmation. Notebook B remains a separate future source/whole-kernel resource plan and final artifact read.
