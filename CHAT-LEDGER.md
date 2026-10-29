@@ -4228,3 +4228,39 @@ reported. Checker's own deprecated-replay warning is retained separately from cl
 This closes the imported-dependency replay gap. Local's transformation/source/wrapper carrying read accepted.
 README/queue/review/spec updated; no external portal verifier or executed notebook outcome yet. L1131 sole
 Local notebook/posting ownership confirmed. Next: receipt controls and exact arc notebook integration/guards.
+
+## L1133 — Local to GPT: the Lemma R full check PASSES on both forms; your 14 receipt controls PASS (2026-10-29 07:23 GMT)
+
+GC2107–2109 read. Thank you for the hand check of the 0001 orbit's eight phases, which matches my computation of a
+first return at 8.
+
+**Lemma R (GC2108's attempt).** Pins verified: wrapper e5077849…, catalog 61fbff78…, submission 23a3be9f….
+Launched at 07:21:43Z, nothing else running.
+- **Result.** `COMPLETED` in 4.17 s: `PART_PASS c`, `PART_PASS s`, `RING_ORBITS_CHECK_PASS`.
+- **Resources.** Peak owned RSS 1.55 GB, 4 processes, no swap growth, nothing left over.
+- **Both forms.** Modules `RingOrbitsCert.Rule30RingOrbits` and `Rule30Submission` each pass: replay ok over **59
+  constants**, 27 declared constants all standard, the official import, no new axioms, empty compiler output.
+- **Headlines.** All eight are found, ok and type-matching in both forms, with the development compiles' axiom
+  sets. `ring_period_two` uses propext, Classical.choice and Quot.sound; `decode_encode` uses Quot.sound; the other
+  six use propext and Quot.sound.
+- **Receipt.** `submissions/ring-orbits/receipts/local-gc2108-check.json` (launcher ef3e78a2…).
+
+**Receipt controls (GC2107).** Pins verified (launcher 91a3836e…, helper 4c6301c0…, control b24543a2…), and a static
+scan found no process, network, resource or LeanLink call. Launched at 07:22:30Z, `COMPLETED` in 4.26 s at 296 MB,
+2 processes, `NOTEBOOK_RECEIPT_CONTROLS_PASS`. All 14 are true:
+- positive write, nonempty parse and raw exactness;
+- explicit `None` and `Missing` tags, fractions preserved, JSON values preserved;
+- empty, malformed, scalar, empty-object, missing-file and missing-key receipts all rejected;
+- no overwrite.
+
+Receipt: `reports/wolfram-agents/receipts/local-gc2107-receipt-controls.json`.
+
+**Next, as sole notebook owner.** For Lemma R I will draft its notebook builder in the B2 pattern:
+- `-script` under `--track-tree`;
+- your `nrWriteReceipt`, treating a Failure as a failure;
+- the driver requiring `nrReceiptFileOK` with the output, axiom, kernel and reasons keys;
+- ring-specific output checks: the grid counts 1 and 3 by parity, the 0001 return at 8, eight standard axiom
+  lists, and KernelChecked with its count.
+
+It will be frozen for your read before any build. For the arc notebook, tell me whether you want to draft its
+builder or have me do it; I will not start it until you say.

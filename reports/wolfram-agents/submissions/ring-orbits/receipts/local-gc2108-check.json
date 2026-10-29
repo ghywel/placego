@@ -1,0 +1,539 @@
+{
+ "limits": {
+  "cpu": 120,
+  "wall": 300,
+  "rss_mib": 2048,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 4096,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 6
+ },
+ "start_utc": "2026-10-29T07:21:43Z",
+ "end_utc": "2026-10-29T07:21:47Z",
+ "gate": {
+  "free_inactive_mib": 6686,
+  "swap_used_mib": 1622.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 4.17,
+ "maxima": {
+  "rss_kib": 1549808,
+  "procs": 4,
+  "disk_bytes": 1047024,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6175
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root, elan tools on PATH: run_capped.py --track-tree --max-procs 6 ... -- lake env sh tests/probes/wolfram/check_ring_orbits.sh (e5077849...) Rule30RingOrbits.lean (61fbff78...) Rule30Submission.lean (23a3be9f...)",
+ "stdout": [
+  "catalog sha256 61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24",
+  "submission sha256 23a3be9f7d008bcdeb0d9e4ffbc037d593457ad97e0064da35f323578d473a96",
+  "checker sha256 b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+  "PART_PASS c",
+  "PART_PASS s",
+  "RING_ORBITS_CHECK_PASS"
+ ],
+ "checker_catalog": {
+  "claim": "partial",
+  "declared": [
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.Per",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.Phi",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.Walk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.alternating_even",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.decode_encode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.decode_ring",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.encode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.encode_decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.encode_walk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit_add",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit_decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit_eq_iff",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit_evol",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.per_add_mul",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.per_orbit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.per_phi",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.ring_fixed",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.ring_period_two",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.xor_cancel",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.zero_pair_next",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.Phi.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit.match_1",
+    "standardAxioms": true
+   }
+  ],
+  "headlines": [
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.orbit_eq_iff",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.encode_walk",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.decode_ring",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.decode_encode",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.encode_decode",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.ring_fixed",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.ring_period_two",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Ruliology.CellularAutomata.Rule30RingOrbits.alternating_even",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   }
+  ],
+  "importsStatements": true,
+  "module": "RingOrbitsCert.Rule30RingOrbits",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+   "constants": 59,
+   "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+ },
+ "checker_submission": {
+  "claim": "partial",
+  "declared": [
+   {
+    "kind": "def",
+    "name": "Rule30Submission.Per",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.Phi",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.Walk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.alternating_even",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.decode_encode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.decode_ring",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.encode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.encode_decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.encode_walk",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.orbit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit_add",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit_decode",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit_eq_iff",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit_evol",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.per_add_mul",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.per_orbit",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.per_phi",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.ring_fixed",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.ring_period_two",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.xor_cancel",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.zero_pair_next",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.Phi.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit.eq_1",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit.eq_2",
+    "standardAxioms": true
+   },
+   {
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit.eq_def",
+    "standardAxioms": true
+   },
+   {
+    "kind": "def",
+    "name": "Rule30Submission.orbit.match_1",
+    "standardAxioms": true
+   }
+  ],
+  "headlines": [
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.orbit_eq_iff",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.encode_walk",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.decode_ring",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.decode_encode",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.encode_decode",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.ring_fixed",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Classical.choice",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.ring_period_two",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   },
+   {
+    "axioms": [
+     "propext",
+     "Quot.sound"
+    ],
+    "found": true,
+    "kind": "theorem",
+    "name": "Rule30Submission.alternating_even",
+    "ok": true,
+    "problems": [],
+    "typeMatches": true
+   }
+  ],
+  "importsStatements": true,
+  "module": "Rule30Submission",
+  "newAxioms": [],
+  "official": [],
+  "reasons": [],
+  "replay": {
+   "constants": 59,
+   "ok": true
+  },
+  "verdict": "pass",
+  "verifiedTargets": []
+ },
+ "launcher_sha256": "ef3e78a2ddceb83026374865589b2f906d62ffdcf14d8ac0d60f0ba5a60f1733"
+}

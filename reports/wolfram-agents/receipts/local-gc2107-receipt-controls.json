@@ -1,0 +1,53 @@
+{
+ "limits": {
+  "cpu": 30,
+  "wall": 60,
+  "rss_mib": 2048,
+  "file_mib": 8,
+  "disk_mib": 16,
+  "min_free_mib": 1024,
+  "launch_free_mib": 3072,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4
+ },
+ "start_utc": "2026-10-29T07:22:30Z",
+ "end_utc": "2026-10-29T07:22:34Z",
+ "gate": {
+  "free_inactive_mib": 6566,
+  "swap_used_mib": 1622.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 4.26,
+ "maxima": {
+  "rss_kib": 295696,
+  "procs": 2,
+  "disk_bytes": 7116,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6437
+ },
+ "cleanup": null,
+ "cmd": "from the pipeline kit root: run_capped.py --track-tree --max-procs 4 ... -- python3 -I tests/probes/wolfram/notebook_receipt_control_launch.py (91a3836e...) WolframKernel; notebook_receipt.wl 4c6301c0..., notebook_receipt_control.wl b24543a2...",
+ "stdout": [
+  "NOTEBOOK_RECEIPT_CONTROL_SOURCES_OK",
+  "{",
+  "\t\"positive_write\":true,",
+  "\t\"positive_nonempty_parsed\":true,",
+  "\t\"raw_exact\":true,",
+  "\t\"none_explicit_tag\":true,",
+  "\t\"missing_explicit_tag\":true,",
+  "\t\"fraction_preserved_as_expression\":true,",
+  "\t\"json_values_preserved\":true,",
+  "\t\"empty_file_rejected\":true,",
+  "\t\"malformed_file_rejected\":true,",
+  "\t\"scalar_json_rejected\":true,",
+  "\t\"empty_object_rejected\":true,",
+  "\t\"missing_file_rejected\":true,",
+  "\t\"required_key_rejected\":true,",
+  "\t\"no_overwrite\":true",
+  "}",
+  "NOTEBOOK_RECEIPT_CONTROLS_PASS"
+ ],
+ "launcher_sha256": "dcbcd548fb72f132df465cd7176f0ae28c9e9c24b7630f41e40d0a366a63e06e"
+}
