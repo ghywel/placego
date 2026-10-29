@@ -115,3 +115,69 @@ porting all of best-approximation theory or by translating `GenContFract` into L
 
 No finite case census would settle these obligations. No claim is made that a source lookup, or a theorem with
 an assumed geometric cover, completes delivery of the general-arc result.
+
+## GC2057 — the cover needs neither separated endpoints nor circle APIs
+
+**Status: PROOF-SKETCH**, new carrying read pending. The fixed-period spacing/threshold distinctions above
+remain unchanged. This supplies a simpler hand construction for a previously assumed geometric premise.
+
+Represent the code by a right-continuous,1-periodic binary step function F on the real line. Its actual jumps
+are the integer translates of finitely many distinct representatives e_1,...,e_r in [0,1). This is the consistent
+half-open convention already required by GC2051. For a displacement delta>0, a mismatch F(x)!=F(x+delta)
+forces some jump e_i+z in (x,x+delta], hence
+
+    e_i+z-delta <= x < e_i+z.
+
+For delta=-epsilon<0, a mismatch forces some jump in (x-epsilon,x], hence
+
+    e_i+z <= x < e_i+z+epsilon.
+
+To justify the first implication, subdivide the finite interval at the finitely many jumps it meets. If there
+were no jump in the indicated interval, its two endpoint values would belong to the same constant step piece;
+right continuity includes the terminal jump and excludes the starting jump. The reversed interval gives the
+negative case. Several jumps can cancel their colour changes, but a mismatch still requires at least one.
+Thus only a cover is needed. No assertion that the mismatch set equals a disjoint union is used.
+
+Label each break by any endpoint it crosses (the least label is a definite choice). Put x_s=theta+s*alpha and
+delta=q*alpha-p, epsilon=|delta|>0. For two breaks s<t with the same endpoint label, choose their integer lifts
+z_s,z_t from the displayed inequalities. Their shifted coordinates both lie in one real half-open interval
+of length epsilon. Therefore
+
+    |(t-s)*alpha - (z_t-z_s)| < epsilon.
+
+This is exactly the integer a needed in the determinant lemma. It works across the mod1 seam and for either
+sign of delta, with no minimum distance between distinct endpoints. No density theorem is required. Even the
+AddCircle norm API is optional: working with periodic real lifts suffices. The one-scale certificate already
+forces epsilon<1; the crossing implication itself does not need a separated-endpoint hypothesis.
+
+An arbitrary endpoint-value convention is a separate finite-change issue, handled by the existing eventual-code
+restart argument; it must not be silently folded into these half-open inequalities. This step does not turn an
+unrelated-endpoint code into a sliding block factor of a Sturmian word.
+
+## GC2057 — the Rule30 repeat constant has an explicit existing-source bridge
+
+The kit's `Rule30FiniteMaskedJen.window_jen_col` supplies the physical obstruction directly; the submitted
+sturmian-all source also already proves `theorem_A'` and `blocks_of_visible`. No new reconstruction theorem is
+needed. Here is the latter substitution, with all lengths explicit.
+
+Normalize to an alternating column0 from time0 and a leftmost black cell at -L, L>=1. Let visible c_s=x_(2s)(1).
+If c_s=c_(s+q) for a<=s<=b, q>=1 and b>=a, `blocks_of_visible` gives equality of columns -1 and0 for
+n=2*(b-a+1) physical samples, at starting times2a and2(a+q). Column -1 has left-edge distance L-1, so
+`theorem_A'` yields
+
+    2*(b-a+1) <= (L-1)+2*(a+q),
+    2b <= 4a+2q+L-3.
+
+In particular the convenient uniform bound b<=2a+q+L holds. Thus C=L is sufficient in the abstract break
+recurrence; there is no q-dependent or unexamined randomness constant here. Empty windows already satisfy the
+convenient bound automatically. To avoid importing a submitted namespace, use current-kit `window_jen_col`
+with i=0, t1=2a, t2=2(a+q), m=L+2(a+q). Under a contrary b>2a+q+L, m<=2*(b-a+1); the clock agrees for s<=m,
+and `orCol` agrees for s<m because it is black at odd physical times and equals the visible column at even ones.
+The required alignment is 0-m=-L-t2. This contradicts that kit theorem with the correct extra closing sample.
+
+For an eventual clock, restart at an even physical time2s0 beyond its onset. The new left edge is at -(L+2s0),
+its clock phase remains0101, and the visible intercept becomes theta+s0*alpha. Use C=L+2s0 in the restarted
+argument. This is a direct convention/substitution into existing proved statements, not a new prior-art claim.
+It does not supply an already compiled arc wrapper. Remaining formal work is the real step-code crossing
+lemma, finite-colour recurrence/contradiction, and the short elementary approximation wrapper; independent
+carrying review of these new assembled hand interfaces is still required.

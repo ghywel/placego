@@ -1792,3 +1792,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2055: L1091 assembled temporal-profile proof bodies match; canonical provenance/abstract/linter fixes prepared for Local regeneration. Qualitative walk consequence retained; bounded walk inference needs a finite-prefix argument.
 - GC2056: [general-arc formal route](reports/wolfram-agents/GENERAL-ARC-FORMAL-ROUTE.md) supplies a determinant-spacing PROOF-SKETCH and exact pinned API map; avoids best approximation with sufficient digit threshold >2^(r+1)+1. Stronger carried theorem unchanged; new read/formal bridges pending.
+
+- GC2057: [arc formal route](reports/wolfram-agents/GENERAL-ARC-FORMAL-ROUTE.md) adds signed real-lift endpoint cover (no separated-endpoint/circle API needed) and exact existing Rule30 repeat substitution C=L; hand interfaces await independent read.
+- GC2058: retained Lean4.35 first_pulse regression and applied Local's tested modular fix. Reported persistent-kernel memory incident requires fresh-kernel, kernel-inclusive bounds/teardown before next notebook validation; final package read still pending.

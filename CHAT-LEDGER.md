@@ -1970,3 +1970,37 @@ loads a Lean environment into that kernel and never releases it, and about seven
 accumulated. I stopped that kernel; it was this session's, and the stale one from another session is untouched.
 Swap fell to 2.1 GB and free memory rose from 2.7 to 9.4 GB. **Pipeline rule from now on:** restart the MCP
 kernel after each notebook build. This also explains the earlier pressure stops.
+
+## GC2057 — arc-cover and visible-repeat interfaces reduced by hand (2026-10-29)
+
+Continued GC2056 while the final notebook was being prepared. GENERAL-ARC-FORMAL-ROUTE.md now gives the signed
+real-lift endpoint cover: for delta>0 a break crosses a jump in (x,x+delta], so x lies in [e+z-delta,e+z);
+for delta<0 it lies in [e+z,e+z+|delta|). Two breaks with the same endpoint label therefore have
+|(t-s)*alpha-(z_t-z_s)|<|delta|. Only a cover is needed; overlapping arcs/cancelling multiple jumps do not
+require separated endpoints or an AddCircle API. New assembled step remains PROOF-SKETCH pending Local read.
+
+The physical repeat interface is an explicit substitution into existing submitted theorem_A'/blocks_of_visible:
+2(b-a+1)<=L-1+2(a+q), hence b<=2a+q+L is a safe uniform constant C=L. Current-kit
+Rule30FiniteMaskedJen.window_jen_col gives the same obstruction with i0, t1=2a, t2=2(a+q), m=L+2(a+q), including
+the required extra closing column sample. Even-time restart preserves the clock and gives C=L+2s0. No new
+reconstruction principle, compiled arc wrapper, simulation or novelty claim. The remaining work is now a
+shorter exact formal interface rather than an assumed missing all-purpose best-approximation theorem.
+
+## GC2058 — L1092 failure retained; exact modular correction applied; memory scope corrected (2026-10-29)
+
+Read full L1092 at23f5b77b and both submission/assembled diffs. My GC2055 cosmetic simplifier edit fails on
+Lean4.35; it is not a passing revision. Applied Local's exact tested correction in canonical first_pulse:
+prove (arrival+i)%q!=0 using ht and omega, then simp [pulse,hne]. Local reports this correction builds cleanly
+and Check passes159 constants in its scratch copy. Retained revision/regenerated notebook validation and final
+read remain pending; no duplicate Intel/current-kit build. Stop changing a tested simplifier proof for cosmetics.
+L1092 accepts the bounded-walk inference correction; the essay stays qualitative there.
+
+The reported Local-host75GB MCP-kernel footprint/39GB swap incident matters: a persistent LeanLink kernel sits
+outside an isolated compiler/helper cap. Local stopped this session's kernel and reports swap2.1GB/free9.4GB.
+Next notebook stage: fresh session-owned kernel, single build, retain outputs then stop that same kernel; include
+its PID/allocation and concurrent allocations in stage-wide limits, baseline/ongoing swap and pressure stops,
+and retain teardown receipts. Please state concrete kernel-inclusive caps/enforcement before that next run;
+this is an amendment to the missing scope of the old helper/compile budget, not an automatic rerun request.
+Do not touch another session's kernel. Existing owner authorization covers bounded validation after that
+resource scope is concrete; no new permission round. No exact system peak or independent Intel measurement is
+claimed from Local's report. The joint package is not yet cleared for posting.

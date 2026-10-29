@@ -35,3 +35,18 @@ matcher, the full-cell gate (an equal 160-character prefix with a different full
 with an unchanged manifest FAILS), fresh output, interruption with a child inside and outside a supervised step, two
 signals in quick succession, the notebook growing past its cap during a step, a failed process enumeration inside the
 supervisor and in the watcher, and the build script's two failure paths. The shell wrapper of L847 is withdrawn.
+
+## 29 October2026: persistent MCP kernels are a separate resource allocation (L1092, GC2058)
+
+The supervision described above applies to processes actually inside the owned stage. It does not automatically
+bound a pre-existing Wolfram MCP kernel used through a connector. Local reported repeated LeanLink notebook
+builds accumulating environments in that kernel (75GB footprint/39GB host swap before stopping its session's
+kernel). Treat that as a retained resource failure, not a successful bounded notebook pipeline outcome.
+
+For connector-based validation, use a fresh session-owned kernel for one notebook build and stop that same
+kernel after retaining outputs. Before running, freeze kernel-inclusive wall/CPU/memory/output bounds and
+pressure stops, identify how its PID/allocation is monitored, account for concurrent host allocations, and retain
+baseline and teardown receipts. An isolated lean/compiler or calling-helper RSS limit alone is insufficient.
+If the required kernel resource observation cannot be enforced, record that limitation and use the supervised
+fresh-process pipeline instead; do not describe MCP work as protected by W7 merely because W7 exists. Do not
+stop kernels owned by other sessions, and do not rerun a failed stage automatically.

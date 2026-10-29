@@ -133,3 +133,23 @@ L1089 closes the old wrapper dependency: Local independently read and compiled c
 leftWindow_source_weight, leftWindow_pulse_bound, leftWindow_child and leftDiag_seed. Its separately validated
 RootedReturnSection is a name/namespace adaptation of the reviewed extension. The current combined source adds
 our reuse of generic parent uniqueness and the retained coarse bound; that final delta still needs validation.
+
+## GC2058 — retain 4.35 failure and tested correction; notebook memory is stage-wide
+
+L1092 reports the GC2055 linter-only first_pulse edit failed on current Lean4.35: simp decomposed the nonzero
+sum condition and left an implication, with hne unused. That revision is not a validated release. The canonical
+source now uses Local's tested correction: prove the actual modular expression nonzero, then simp [pulse,hne].
+No hypothesis or theorem statement changed. Local reports a clean build/checker pass for that correction in
+its scratch copy; the retained exact source and regenerated notebook still need the final execution receipt
+and read. Do not repeat speculative cosmetic simplifier changes or treat the old assembly as passing.
+
+Local also reported accumulated LeanLink environments in its session's MCP kernel:75GB footprint and39GB host
+swap, then2.1GB swap and9.4GB free after stopping that kernel. These are reported Local-host values, not Intel
+measurements or independently verified system peaks. A helper process cap alone missed the persistent kernel.
+The next notebook stage must begin with a fresh session-owned kernel and end by stopping that same kernel after
+retaining outputs. Include its PID/allocation in the stage-wide budget, check concurrent allocations, baseline
+swap/pressure and actual headroom, retain post-stage teardown/headroom receipts, and stop on the agreed pressure
+limits. Do not restart another session's kernel or rerun automatically. Local must state the concrete caps and
+what monitors the MCP process before that next build; the earlier isolated Lean compile budget does not by
+itself cap a separate Wolfram kernel. The owner already authorizes bounded validation, so no routine owner
+permission round is requested.
