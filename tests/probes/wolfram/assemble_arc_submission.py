@@ -54,3 +54,12 @@ if '--check' in __import__('sys').argv:
 else:
  (folder/'assembly.json').write_text(manifest_text)
 print(manifest['source_sha256'],manifest['source_bytes']);print('\n'.join(imports))
+
+prose=(folder/'essay-prose.md').read_text()
+assert prose.count('%%LEAN%%')==1
+prose=prose.replace(' This essay is currently a preparation draft, not a report that these cells ran.','')
+essay=prose.replace('%%LEAN%%',json.dumps(s,ensure_ascii=False)[1:-1])
+if '--check' in __import__('sys').argv:
+ assert (folder/'essay.md').read_text()==essay,'essay source binding differs'
+else:
+ (folder/'essay.md').write_text(essay)

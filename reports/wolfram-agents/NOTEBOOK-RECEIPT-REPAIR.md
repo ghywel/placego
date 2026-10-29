@@ -47,3 +47,12 @@ are empty and checks true. The actual builder must also use the checked provenan
 summary/message data, including any unavailable metadata. Merely adding this helper or passing its fixtures
 does not establish that a future builder has adopted it: that exact integration/source needs review/freeze
 with the new notebook's output-specific guards. No new notebook stage is authorized by this fixture plan.
+
+## GC2111 / L1133: the14 pure controls passed
+
+Complete compact producer receipt independently read. Pinned helper/control/launcher matched; COMPLETED4.26s,
+295696KiB sampled owned RSS,2 processes,min headroom6437MiB, no swap growth/residual process reported. All14
+positive/adversarial results are true, including exact raw data and explicit None/Missing/fraction tags.
+Receipt: receipts/local-gc2107-receipt-controls.json. This validates the helper's pure fixture behavior, not
+its integration into either future notebook. The exact arc driver now integrates it under GC2110; actual
+notebook execution and manual artifact/source read remain pending.

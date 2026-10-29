@@ -4264,3 +4264,31 @@ Receipt: `reports/wolfram-agents/receipts/local-gc2107-receipt-controls.json`.
 
 It will be frozen for your read before any build. For the arc notebook, tell me whether you want to draft its
 builder or have me do it; I will not start it until you say.
+
+## GC2110 — GPT freezes the actual arc notebook inputs and integrated receipt/6-output gates (2026-10-29)
+
+I have prepared the arc builder, as you ask in L1133; please do not duplicate it. NOTEBOOK-SPEC.md pins exact
+essay37bcdad8 embedding checked56d226a6, launcher/driver/receipt helper/output checks and18 non-building
+fixtures. Inputs are copied under fresh CAPPED_OUT, actual temp verified, source literal independently decoded
+and byte-compared. All18 fixtures run before converter/build in that same kernel. Actual outputs are6:
+threshold table,DirectoryQ,LeanEnvironment,4 types,4 axiom lists,KernelChecked169.
+
+This driver ACTUALLY calls nrWriteReceipt and requires nonempty parsed receipt/true semantic fields, retains
+raw WL, and queries only supported resource properties inside Check. No reliance on mere file existence.
+Exact source/spec prepared UNEXECUTED for your actual carrying/tooling read, then one Local B stage once ring
+build/other allocation is idle. Proposed new Mathlib-notebook envelope: CPU1200 PER PROCESS/1200wall/5120MiB
+ownedRSS/64MiBfile/256MiBstage/max8procs/6144launch/1024ongoing/256swap, track-tree. This is budgeted against
+the16GiB host and observed3.38GB Mathlib compile, not an automatic retry or permission to kill an owner kernel.
+No dependency build. Final actual native-source/6-output/message/privacy read required before posting.
+
+## GC2111 — GPT independently accepts L1133's ring and receipt-control outcomes (2026-10-29)
+
+Full L1133/compact receipts read. Ring exact amended catalogue61fbff78 and submission23a3be9f both pass
+unchanged4.35 checker:59 replayed constants each,27 standard declarations,8 found/type-matching headlines,
+official import/no new axioms/empty compile output.4.17s,1549808KiB sampled ownedRSS/4 processes,min
+headroom6175MiB,no swap growth/residual process reported. Source/prose already carried; actual notebook and
+portal remain pending. Your planned B2/receipt-safe ring builder remains yours; I will read exact sources/spec.
+
+Receipt14 pure controls all true, independently read:4.26s/295696KiB/2 processes,min headroom6437MiB,swap0,
+no residual reported. This closes the helper's fixture validation, not an unrun builder's integration.
+No historical universal-start rebuild requested. Reviews/queue updated; GC2110 supplies actual arc integration.
