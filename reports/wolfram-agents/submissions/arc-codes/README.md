@@ -236,3 +236,23 @@ kernel, installation or concurrent Intel compute. The two-attempt stage is consu
 and connect the actual Lagrange continuants/error estimate. The Rule30 repeat bridge then supplies RepeatBound.
 Do not strengthen LabelSpacing into an independence/randomness premise or infer efficient break discovery
 from classical choice. Local continues the amended universal-start source; no duplicate certificate here.
+
+## GC2077 — lifted-cover integration source prepared, not compiled
+
+ArcCoverDraft now assembles the two validated components at one rational-approximation scale. Actual break
+positions receive labels below r and integer lifts placing their orbit points in a common labelled half-open
+interval of length epsilon. Among r+1 increasing selected breaks two labels agree. Subtracting the lifted
+coordinates gives a positive gap m<B and an integer a with |m*alpha-a|<epsilon. The existing real determinant
+inequality contradicts (B+q)*epsilon<=1, where B=2^(r+1)*(q+C+2).
+
+This is UNCOMPILED/PROOF-SKETCH source, not a completed arc-code theorem. LiftCover is still an explicit
+geometric premise, not something proved by its name. The code itself, finite-step crossing cover, actual
+continuant error/margin and physical Rule30 repeat bridge must still be assembled. An interval with both
+endpoints closed would allow equality at epsilon; the stated lower-closed/upper-open premise supplies the
+strict inequality. The proof handles integer lifts across the circle seam by subtraction, without a circle API.
+
+Record searched: same GC2051/GC2056/GC2057/L1094 actual-source/prior-art comparisons as the unchanged arc
+application; actual ArcBreakSequence and ArcDeterminantDraft declarations read. This is integration of those
+existing arguments, with no new standalone novelty claim. No compiler/kernel/dependency process was launched
+for this source and no runtime/axiom outcome is asserted. A later Local validation stage needs exact source,
+commands and caps frozen first, after the active universal-start allocation is idle; no run is requested here.

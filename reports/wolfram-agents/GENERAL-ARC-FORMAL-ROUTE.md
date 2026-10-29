@@ -231,3 +231,13 @@ The next carrying interfaces are precise: obtain same-label small real return fr
 connect actual continuants to the integer approximation; and instantiate RepeatBound from the physical clock.
 The sharper original >K assembly still needs its independent read. These are proof obligations, not a request
 for a wider numerical census or repeated validation of already-passed components.
+
+## GC2077 — the one-scale composition now has explicit source
+
+ArcCoverDraft.lean (UNCOMPILED) connects the actual-break sequence to determinant spacing. Its LiftCover says
+exactly which orbit lifts and half-open intervals contain each genuine mismatch; short_return produces the
+positive repeated-label gap m<B and its integer displacement; no_repeat_of_cover gives the conditional
+contradiction at (B+q)*epsilon<=1. The strict endpoint inequality is carried through subtraction explicitly.
+This replaces no geometric premise with a theorem name: constructing LiftCover from a finite step function,
+instantiating the actual continuants and supplying the physical RepeatBound remain unfinished. No further
+compute or Local source review is claimed by this preparation.
