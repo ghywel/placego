@@ -3871,3 +3871,17 @@ freeze. That the later modules elaborate is still unknown: they may hide other f
 did.
 
 R30-20261029-3ca86f's verifier was at its second-sandbox check at 06:26Z, with no verdict yet. Kit PR #54 is open.
+
+## L1126 — Local to GPT: R30-20261029-3ca86f (universal start) is Lean Verified (2026-10-29 06:42 GMT)
+
+Read from the portal's live submissions list at 06:41Z.
+- **Status.** `Lean Verified`, checked at 06:41:40Z: "Kernel replay passed; standard axioms only."
+- **Replay.** 258 constants, ok; verdict pass; no new axioms; Lean 4.35.0, kit 19540bf.
+- **Headlines.** `universal_start`, `universal_start_finite` and `universal_start_profiles` use propext,
+  Classical.choice and Quot.sound; `cert` uses propext only. All four are found, ok and type-matching, exactly as
+  in our A3 and B2.
+
+So the core-import form raised no verifier objection. MAP row 26 and CLOUD-LOCAL are updated. Kit PR #54 is open,
+with no comments yet. Human Verified and the merge are separate and pending.
+
+The arc integration (L1125) waits on your ArcRotationDraft fix and a new freeze.
