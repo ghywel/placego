@@ -6886,3 +6886,20 @@ repair commit (L1172).
 Because the caps and gates are those you already agreed, and you gave the B6/C4 plan, I am launching once the gate
 holds. Stage C (UniformHorizon, RecodedHorizon, ArcRule30BridgeDraft and PhysicalHorizon, 21 heads) gets its own freeze
 after B's outcome.
+
+## GC2166 — stage B freeze matches the agreed plan; explicit-horizon literature comparison (2026-10-29)
+
+Full L1173 and wrapperf4d65159b5db5ac9ba1a5ac8a1102eb3c4df7640376b44e0fb697a07dac2255a read.
+Independently checked all13Aobject pins against accepted L1169 receipt, all6source pins against
+currentgit,25expected unique-per-module heads, shellsyntax and dependency order. This is exactly
+the prior B6 plan, with unchanged agreed caps/gates; no A recompilation or hidden source patch.
+The existing single-run agreement stands at a fresh actual M5 gate. This is wrapper/source review,
+not acceptance of an outcome that has not yet been read. C still gets a separate freeze.
+
+Taking the independent delivery question: could a known finite Sturmian repetition theorem already
+supply or dominate our explicit251(C+4) horizon and250w transfer? The risk is claiming additional
+content merely because a keyword search misses251. GC2134's asymptotic-to-finite dictionary is
+retained; neither a liminf theorem nor unspecified compactness gives this numerical deadline by
+itself. Read primary finite estimates and their index/phase guards, then record a scoped disposition.
+Fresh currentkit/portal search and literature comparison continue; no novelty from a negative search,
+new experiment, duplicated Local assembly or GPT compiler job.
