@@ -281,3 +281,53 @@ aggregate CPU stop. Sequential two-stage maximum1800wall,128MiB output,conservat
 separate. Fresh output paths, known working materialized project only, no other Lean/notebook allocation,
 no dependency/library setup. Actual source/output/time/launcher/cleanup receipts retained. Source/plan must
 be pushed first. Final notebook and portal statuses remain separate. This amendment is not a blanket retry.
+
+## Stage A2 outcome: both PASS (GC2089's accepted attempts)
+
+- **A2a** (catalog 12068af9…; `receipts/local-gc2089-a2a.json`). Launched at 04:49:59Z.
+  - **Result.** `COMPLETED` in 40.81 s, `UNIVERSAL_START_CHECK_PASS`.
+  - **Resources.** Peak group RSS 1.91 GB, headroom never below 6019 MiB, no swap growth.
+  - **Checker.** Module `UniversalStartCert.Rule30UniversalStart`, verdict pass, replay ok over 258
+    constants, 122 declared constants all standard, no new axioms. The four headlines pass, with the same axiom
+    sets as stage 4.
+- **A2b** (submission form 17fdfbcb…; `receipts/local-gc2089-a2b.json`). Launched at 04:50:50Z with the
+  5120 MiB group cap and a 6663 MiB launch reading.
+  - **Result.** `COMPLETED` in 46.95 s, `UNIVERSAL_START_SUBMISSION_CHECK_PASS`.
+  - **Resources.** Peak group RSS 4.55 GB (87 % of the cap), headroom never below 5851 MiB, no swap growth.
+  - **Checker.** Module `Rule30Submission`, verdict pass, replay ok over 258 constants. It declares 125
+    constants, all standard, with no new axioms. The four `Rule30Submission.` headlines pass with the same
+    axiom sets.
+  - **The three extra constants** are auxiliary matchers that Lean emits in the plain-file form:
+    `E_zero.match_1_1`, `cert.match_1_1` and `universal_start_profiles.match_1_2`.
+
+**Stage B, the notebook, proposed for GPT's read, not launched.**
+- **Builder.** `tests/probes/wolfram/universal_start_notebook.wl` (sha256 899d2d92a067ab6b…), evaluated by `Get` in a fresh
+  MCP kernel. It builds a copy of `essay.md` (aca84a8a…) with MarkdownToNotebook (`"UseCache" -> False`,
+  TimeConstrained 900 s), and records every message through a handler. It then checks the built notebook:
+  - exactly 6 Output cells, 0 Message cells and no `$Failed`;
+  - the illustration grid, rebuilt from its boxes, equals the retained corrected table row for row;
+  - the axiom output names propext and no sorryAx, ofReduceBool or trustCompiler;
+  - the KernelCheck output contains "Success".
+
+  It writes each output's InputForm with a digest, the message packet, a tally, `summary.json`, and `DONE`
+  last.
+- **Limits.** `run_capped` cannot supervise a kernel it did not start, so the new
+  `tests/probes/wolfram/kernel_watch.py` (sha256 7db79c6a474186f9…) attaches to the kernel. It accepts only a PID whose
+  parent is this session's process, samples the kernel's whole process tree every second, and stops it (SIGTERM,
+  then SIGKILL) when any of these is breached:
+  - tree RSS above **6144 MiB**;
+  - free+inactive below **768 MiB**;
+  - swap growth above **512 MiB**;
+  - **1200 s** elapsed.
+
+  It exits on `DONE`, so the kernel is kept just long enough for the receipts, then the kernel is stopped.
+  Controls passed on a dummy `sleep` child: the guard refused a non-child PID, and `RSS_STOP` stopped it,
+  `UNTIL_FILE` left it running and `KERNEL_GONE` was detected.
+- **Gates.** No Lean or other kernel process running. Free+inactive ≥ 6400 MiB, read after the fresh kernel's
+  trivial first evaluation and before the watcher attaches.
+- **Prediction.** The build takes 100–300 s. The kernel tree peaks at 5.0–6.0 GB: the Mathlib environment
+  in-process, plus one certificate group at a time, compiled and then replayed. RESULT OK.
+- **Counterfactual.** Any watcher stop, timeout, message cell, `$Failed`, grid mismatch, axiom or
+  KernelCheck failure ends the stage and is retained. One attempt.
+- **Afterwards.** The kernel is stopped and checked gone, and the notebook digest is recorded. Then GPT's final
+  read of the essay and notebook, then the kit PR and the upload.
