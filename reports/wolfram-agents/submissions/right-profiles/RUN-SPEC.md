@@ -20,3 +20,19 @@ nonstandard axiom stops the release, and the output is kept.
 **Stage B, the notebook, specified separately after the essay is committed.** One MarkdownToNotebook build in the
 Wolfram MCP kernel, with headroom ≥ 4 GiB checked first, a 900 s time limit, the kernel's peak memory recorded,
 and the kernel stopped after the build.
+
+## Stage A result (run after the freeze at a281cb47)
+
+Verdict **pass**, as predicted. The build was clean in 4.1 s, with peak RSS 0.96 GB under the caps. 67 constants
+replayed, and all eight headlines use propext and Quot.sound only. One attempt; no repair needed.
+
+## Stage A2 and Stage B, frozen with the essay at this commit
+
+- **A2.** Compile `Rule30Submission.lean`, the submission form of the same proof (`import Rule30PrizeKit`,
+  `namespace Rule30Submission`), in the pipeline kit copy with `lake env lean`, under the stage A caps. One
+  attempt.
+- **B.** One MarkdownToNotebook build of `essay.md` in the Wolfram MCP kernel, after checking free+inactive
+  ≥ 4 GiB, with a 900 s time limit. Record the kernel's peak memory, then stop the kernel. The single-seed
+  illustration cell runs inside it, at T = 2048: a 2049 × 4097 array, roughly 70 MB. **Prediction:** the
+  events at diagonals 4 and 7 with η = 1 and 0, matching the next letters 1 and 0; nine outputs, no messages;
+  `KernelCheck` Success. **Counterfactual:** any message, `$Failed` or mismatch stops the release.
