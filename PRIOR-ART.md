@@ -4704,3 +4704,11 @@ gives p_c(n)=2n. A width(w+1) block map of a Sturmian word has p(n)<=n+w+1, cont
 mechanical input gives a periodic output. This already separates cumulative-parity generation from any fixed
 window representation. It needs neither the new251 horizon nor G143's special repeat-debt proof. No additional
 submission/novelty claim. Detailed derivation in UNIFORM-RECODING-DELIVERY-SCOPE.md GC2186.
+
+
+### GPT — finite-prefix invariance of the first-repeat exponent,29 October2026 (GC2189)
+
+Known, reproved here: Bugeaud–Kim's [primary paper](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf),
+last paragraph of section2, printed p5, gives r(n-1,x)+1<=r(n,ax)<=r(n,x)+1. Iterating proves that rep is unchanged
+by finite shifts/prefix alterations. This is background for the quantitative G145 half-phase consequence, not new
+symbolic dynamics or portal material. [Exact calculation and qualifications](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2189-the-carried-half-phase-witness-already-gives-a-relative-first-repeat-gap).

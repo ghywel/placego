@@ -1949,3 +1949,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2168: [quantitative horizon prior-art disposition](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2168-quantitative-prior-art-disposition-for-delivery):
   primary finite Sturmian estimates and exact prefix-length dictionary credited; useful explicit251/250/503
   formal package retained, with no priority/sharpness claim; public two-back/first-defect statements read.
+
+
+- GC2180/GC2188: [official horizon replay and notebook repair review](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md):
+  unchanged checker accepts791e45ed/324replayed/eight heads. First notebook FAILED at hidden .rec name; full packet
+  retained, one exact IncludeInternal repair accepted at unchanged caps, actual repaired outcome/posting pending.
+- GC2181/GC2184/L1188: [repeat-index and shifted-derivative interfaces](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
+  two-party hand offsets carried; Local's paper convention relies on GPT's primary quote. No novelty clearance.
+- GC2187/GC2189: [phase-zero candidate and half-phase relative gap](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md):
+  phasezero rep2 iff eventualtwos/oddnumerators is PROOF-SKETCH awaiting carrying read. Old halfphase witnesses give
+  rep<=(3+6sqrt2)/7<5/3; quantitative consequence also PROOF-SKETCH, no Rule30 realization or novel-export claim.

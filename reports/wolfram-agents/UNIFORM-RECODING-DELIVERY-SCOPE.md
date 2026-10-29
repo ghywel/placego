@@ -639,3 +639,47 @@ GC2188/L1188 review update: GC2181's r(n)=n+I(n) dictionary and inclusive debt o
 also carries with Local's explicit qualification: its paper convention is conditional on GPT's actual primary-source
 quotation; Local did not independently read that paper definition or Lemma3.7. This is not two primary-paper reads.
 GC2187 remains PROOF-SKETCH; Local has queued its new witness and signed-arc carrying steps after notebook delivery.
+
+
+## GC2189: the carried half-phase witness already gives a relative first-repeat gap
+
+**Status: PROOF-SKETCH, elementary quantitative consequence of carried G145/L101; no novelty clearance.**
+This uses the old exact first-hit formula, not a new simulation, independent review or GC2187's unread new arc step.
+The question is whether the half-phase failure merely has unbounded additive debt. It has a proportional saving.
+
+For beta=2-sqrt2 and c_half(s)=floor(s beta+1/2) mod2, take G145's odd convergent indices i>=3:
+
+    Q_i=q_i+q_(i-1), H_i=2q_i+q_(i-1)/2,
+    c_half(s+Q_i)=c_half(s) for 0<=s<H_i.
+
+H_i is an integer because q_(i-1) is even on this subsequence. This supplies two H_i-letter occurrences at0,Q_i,
+so I_half(H_i)<=Q_i and R(H_i,c_half)<=H_i+Q_i. No claim that the prefix witness is the earliest repeated factor.
+Since q_(i-1)/q_i tends to lambda=sqrt2-1,
+
+    rep(c_half)<=1+(1+lambda)/(2+lambda/2)=(3+6sqrt2)/7<5/3<2.
+
+The strict comparison with5/3 is equivalent to sqrt2<13/9, whose square is2<169/81. At i3 the old Q7/H11
+witness gives R(11)<=18, with no scan required. This is an upper bound, not an exact half-phase exponent.
+G143/L099 and the now-carried GC2181 dictionary already give rep(c_zero)>=2. Hence the two phases have a strict
+relative gap without assuming any part of GC2187's new upper bound/classification.
+
+**Shift/prefix invariance is known background.** The actual last paragraph of Bugeaud–Kim section2, printed p5,
+[primary paper](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf), states
+R(n-1,y)+1<=R(n,ay)<=R(n,y)+1 for a letter a (their r is our R). Iteration for x=w y, |w|=h, yields
+R(n-h,y)+h<=R(n,x)<=R(n,y)+h for n>h. Taking lower limits after n or n-h tends to infinity gives
+rep(x)=rep(y), including an infinite value. Thus finite shifts and changes of a finite prefix preserve rep.
+This observation is known, reproved from the printed inequality; it is not another submission candidate.
+
+Consequently every forward phase shift of c_zero has rep>=2, and every forward phase shift of c_half has
+rep<5/3. Both phase orbits are dense modulo2, disjoint by irrationality. Their finite-factor languages coincide:
+for length n, the2n boundary points -s beta and1-s beta modulo2,0<=s<n, are distinct. The half-open atoms are
+nonempty intervals; each endpoint word is also the word on its assigned one-sided atom. Every dense orbit visits
+every such interval. Thus the same available finite words can have different first-repeat placement exponents.
+No continuity of rep under phase limits, arbitrary-phase classification, Rule30 realization or prize theorem follows.
+This strengthens the already-known G145/G146 phase warning; it does not reopen the closed compact-limit shortcut.
+
+Record searched: half.phase|silver + repetition|repeat|exponent via record_find/known_find offline29October:
+G143–G147 and GC2187 recovered; kit932cf8dd/portal15:12:55Z/21openPR index gives no matching export, not a novelty
+certificate. Primary Bugeaud–Kim section2/Definition3.2 read directly. Web queries for Rote + exponent of repetition /
+initial non-repetitive again returned predominantly critical-exponent work, a different observable. No exact prior-art
+claim is made for the numerical bound. Local's notebook delivery and already-queued GC2187 read retain priority.

@@ -7888,3 +7888,19 @@ version stay explicitly recorded. Sanitized handler has16404unprinted events, de
 L1188's exact r/I/debt offsets accepted as two-party interface proof. Standard-derivative interface use accepted
 with your explicit conditional reliance on my primary-paper convention quote; no second primary reading implied.
 Thank you for queuing GC2187's genuinely new carrying steps after delivery; it remains a sketch, not novelty-cleared.
+
+
+## GC2189 — GPT: carried G145 already gives a relative phase gap, without GC2187's new step (2026-10-29)
+
+Local reports launching the accepted repair at15:53:07Z; no actual committed outcome yet, so no completion inferred
+and no competing kernel job. While that runs, hand pull: does G145's failure save a proportion of first-repeat length?
+Yes: its old Q_i=q_i+q_(i-1), H_i=2q_i+q_(i-1)/2 witness gives I_half(H_i)<=Q_i, hence
+rep(c_half)<=(3+6sqrt2)/7<5/3. This is an upper bound, not equality. Already-carried G143/GC2181 gives
+rep(c_zero)>=2, independently of GC2187's unread new exceptional upper witness.
+
+[Full calculation](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2189-the-carried-half-phase-witness-already-gives-a-relative-first-repeat-gap),
+status PROOF-SKETCH/no novelty clearance. Actual Bugeaud–Kim section2 printed p5 directly supplies finite-prefix
+invariance, now credited known/reproved. The two disjoint dense phase orbits have different rep ranges despite
+identical finite-factor languages, by the elementary2n-boundary rotation argument. No phase-limit/finite-tail/prize
+inference or new compute. The old compact-limit shortcut remains closed; no extra urgent carrying request.
+Notebook outcome review takes priority immediately when available. Record/kit/portal search boundaries retained.
