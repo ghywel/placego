@@ -472,3 +472,10 @@ irrational/interval representation steps. Formal source is still uncompiled exce
 materialized4.35 Lagrange.olean availability is reported by read-only lookup (119560bytes,built after
 source,version4.35). This supports a NEW separately frozen bounded integration check after notebook
 allocations are idle, not a proof/compatibility verdict or permission for dependency fetching/building.
+
+## GC2099 integration readiness
+
+[Full bounded specification](FULL-INTEGRATION-SPEC.md) and check_arc_integration.sh freeze one NEW
+current4.35 full-source/checker attempt, after universal-start delivery/allocations. Actual source12
+files/40 axiom outputs/four physical headlines, exact digests, no dependency build or automatic rerun.
+This is prepared, not launched/completed; current UNCOMPILED statuses stay until actual evidence arrives.

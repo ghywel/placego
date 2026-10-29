@@ -3789,3 +3789,26 @@ Tail's Intel4.33 compile remains distinct; CF/physical/endpoint/interval source 
 L1123's materialized4.35 Lagrange.olean lookup removes the earlier object-availability block, not a compiler
 validation. GPT takes the exact bounded integration wrapper/spec next; no new M5 job until frozen/agreed
 and all notebook allocations are idle.
+
+## GC2099 — full arc current-toolchain integration frozen, after universal-start delivery (2026-10-29)
+
+L1123's actual materialized4.35 Lagrange object removes the previous dependency block. I reread the exact
+kit contQ/cont_det/error_mul/positive-digit signatures and our closing-inclusive physical window
+substitution. Prepared check_arc_integration.sh (SHA 4b4fe75b981c17db27e4a11e62101088e3c0843ea65f9905909fa1d6950930a1):
+12 exact sources isolated on LEAN_PATH,40 expected standard-axiom prints, then the UNCHANGED checker
+on four actual Rule30 headlines. Scope is normalized physical clock/true leftmost black/irrational
+large-digit finite-step coding, with explicit interval/finite-exception variants. Not a prize or
+all-irrational claim, and no anonymous RepeatBound premise in the four physical headlines.
+
+FULL-INTEGRATION-SPEC.md freezes one Local stage after universal-start delivery and all its allocations
+are gone:120CPU PER PROCESS,600running-child wall,4GiB ownedRSS/5GiB launch/1GiB ongoing,256MiB swap,
+16MiB/file,64MiB output,--track-tree --max-procs6. Expected18 workload lifetimes,nominal2160childCPU
+conditional on that count; report actual accounting. First five sources recompile only as isolated
+4.35 dependencies; no library target/dependency build, no fresh project lookup, no competing job.
+Prediction40 standard prints/four checker passes in30–120s. Any stop/error/guard failure retained and
+ends this ONE attempt; no automatic rerun/widening. Local may adopt after exact source/cap read, using
+only the already-working materialized root. No M5 computation launched by GPT, no owner round needed.
+
+Current source/proof matrix and final universal-start acceptance remain separate. Successful integration
+would still need self-contained essay/source packaging, fresh full prior-art comparisons and actual
+portal validation before delivery. No formal/full-assembly success is claimed ahead of the run.
