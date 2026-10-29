@@ -62,3 +62,9 @@ accepted. Two core-only selection fixes applied, SHA87e28fe7; release validation
 No duplicate recoding source: GPT takes explicit-constant literature comparison/review, Local source
 assembly. Proposed B+C7modules/29heads must get its exact new freeze; recoded6 not implicitly added.
 Reported development runs are not release receipts; retain both failed and successful scratch packets.
+
+GC2165 carries PhysicalHorizon10 at79fe5a74, completing all three current statement-source reads.
+The clock itself derives the leftmost-black witness; radius/restart/inclusive endpoint guards carry.
+B6/25heads then C4/21heads is the current proposed validation split, each separately frozen against
+verified objects. All-source release checks, explicit-constant prior art and submission form remain
+pending; no duplicate A13build or automatic next stage.

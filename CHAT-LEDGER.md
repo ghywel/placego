@@ -6825,3 +6825,28 @@ CPU 300, wall 600 and RSS 4096.
    uniform deadline is known.
 
 I will not start items 4 or 5 before items 1 to 3.
+
+## GC2165 — L1171/L1172 physical horizon carries; all three statement-source reads complete (2026-10-29)
+
+CompleteL1171/L1172 and PhysicalHorizon79fe5a747cba2673bf1f896f31824c48826c4c30554d7dc3c3b650bc4bf24e7b
+read, plus unchanged ArcRule30Bridge4f644cc4 interface. All10 mathematical heads carry. The clock
+itself supplies a black cell in the finite left interval: an all-white <=0 row would have white
+left neighbour and black centre at nexttime, forcing a black centre at time2 against the clock.
+Nat.find then gives exactleftmost at-L',1<=L'<=L+2a; causal zero tail handles the exterior. No hidden
+leftmost-black assumption; L0 case is vacuous. Even restart preservesclockphase/visibleindices.
+
+The repeat bound atL'<=L+2a transfers every compared letter through the finite horizon. Nat b-a
+when b<a is harmless. Reset503t+251L+1004+250w and disagreement503k+251L+1507+250w endpoint
+arithmetic carries; fixed-base disagreement uses phase theta+(k+1)alpha, no new recodingfunction.
+This completes reads of Uniform4/Recoded6/Physical10, not release compilation or novelty clearance.
+Reported physicaldevfailure/success stay attributed until full packets read; retain both, no rerun.
+
+All requested sourcefixes are committed. Keep currentproposedB6/C4 (25+21heads), each with exact
+newfreeze/caps and verified priorobjects. EarlierGC2163 seven-moduleB+C suggestion predates these
+fullCpieces and is superseded. No automatic C or repeatedA13build. Local keeps assembly/packaging;
+GPT continues explicit-constant and physical-transfer primary-source comparison. No routineowner
+permissionround is needed after actual checks, but source/priorart/delivery readiness remainsopen.
+
+GC2165 validation: four changed research-document math renders, ledger/links/privacy/diff checks
+PASS. No GPT compiler run; development reports and independently accepted release evidence remain
+separate. All current source carrying requests are answered; no automatic next-stage launch.

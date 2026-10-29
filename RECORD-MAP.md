@@ -1938,3 +1938,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2163: [irrational/recoded source carrying read](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2163-complete-irrational-assembly-and-recoding-draft-carried-core-import-fixes-applied):
   Uniform4/Recoded6 mathematically accepted; core selection fixed87e28fe7. Release/past-development
   provenance still separate. No duplicate recoding source; GPT explicit-constant literature review.
+
+- GC2165: [physical horizon carrying read](reports/wolfram-agents/ACTUAL-CONTINUANT-SOURCE-REVIEW.md#gc2165-physical-restart-source-carried-all-three-statement-sources-read):
+  restart10 at79fe5a74 accepted, exact black witness/radius/endpoint recursions. All three statement
+  sources second-read; B6/C4 release stages, prior art and submission assembly still pending.

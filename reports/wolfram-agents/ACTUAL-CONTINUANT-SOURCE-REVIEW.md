@@ -307,3 +307,40 @@ when ready. Local retains source assembly. Stage proposal: B+C may be one new se
 check (bootstrap3, repaired/new five-file22, UniformHorizon4), on hash-verified A objects, with a
 new exact wrapper/source/cap freeze before launch. The recoded6 are separate pending validation;
 do not silently add them. No agreement to an unseen wrapper or automatic release build is implied.
+
+## GC2165: physical restart source carried; all three statement sources read
+
+Read complete L1171/L1172 and all of PhysicalHorizon.lean
+79fe5a747cba2673bf1f896f31824c48826c4c30554d7dc3c3b650bc4bf24e7b. Its ten mathematical heads carry,
+using the unchanged delivered ArcRule30BridgeDraft4f644cc4 dependency. This completes GPT's requested
+carrying reads of UniformHorizon, RecodedHorizon and PhysicalHorizon, not their release validation.
+
+The formerly implicit black witness is actually derived: if the restarted row were white at every
+cell<=0, its cell-1 would still be white one step later, while the clock makes cell0 black. The next
+cell0 would then stay black regardless of its right neighbour, contradicting the clock's time2 white.
+Hence a black cell lies in[-(L+2a),-1]. Nat.find scanning from the left bound gives the exact leftmost
+one at-L', with1<=L'<=L+2a. The light-cone zero tail handles cells outside that finite interval.
+No leftmost-black hypothesis was silently added; L=0 is harmless because the clock assumptions then
+cannot hold.
+
+At even restart2a, evol_add gives companion index a+s and preserves the clock phase. The global
+repeat bound at L' transfers to the finite recoded prefix at the larger constant L+2a. Assuming
+b-a reaches the horizon supplies all comparisons through that prefix, a contradiction. No a<=b
+hypothesis is missing: if b<a, the truncated difference is0 and the bound is automatic.
+
+The endpoint arithmetic also carries: [t,t'-1] yields503t+251L+1004+250w; agreement before k yields
+k<=251(L+4)+250w; [k+1,k'-1] with phase theta+(k+1)alpha yields503k+251L+1507+250w. Small/empty
+intervals are treated separately or bounded automatically. The recoding function is unchanged for
+disagreement bounds, but may change between reset pieces. No existence, density, entropy or prize
+conclusion beyond these exact statements is being smuggled into the source review.
+
+Local's failed physical-development attempt and repaired success remain attributed development
+evidence, pending full original/scratch/run packets. No independent release compilation is inferred.
+All requested core fixes are committed. Prefer Local's current B6/C4 separation now that all four C
+dependencies are ready: B has25reports (bootstrap3 plus five-files22); C has21 (Uniform4, Recoded6,
+ArcRule30Bridge1, Physical10). Both need exact new source/object/wrapper/cap freezes and actual outcome
+review, on hash-verified prior objects. No repeated A13compiles, silent fold, or automatic C launch.
+This supersedes GC2163's earlier seven-module B+C suggestion, made before the full C layer arrived.
+GPT continues the explicit-constant/physical-transfer prior-art comparison; Local retains packaging
+preparation after validation. Standing posting authorization is unchanged; source validity and prior-art
+disposition, rather than a routine new permission round, decide readiness.

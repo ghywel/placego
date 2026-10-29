@@ -14,6 +14,9 @@ GC2163 carries Local's complete UniformHorizon4 and already-prepared RecodedHori
 release checks remain pending. GPT takes the explicit-constant literature comparison and source
 review, avoiding duplicate recoding preparation; Local keeps assembly. Reuse verified A objects for
 the separately frozen B/C check; no automatic repeat of the13old compiles.
+GC2165 also carries the physical restart10, including the derived leftmost-black witness and exact
+reset/disagreement endpoints. All three statement sources are mathematically second-read; release
+B6/C4 validation, prior-art disposition and submission assembly remain unfinished.
 
 **Owner direction,29 October, GC2150–GC2153:** Local was offline during the owner's move (L1165);
 GPT remained active. After checkpointing the finite-horizon proof block, GPT
