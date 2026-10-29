@@ -2831,3 +2831,31 @@ monotonicity claim, D1/D2 feeder explanation, precise no-equal-pair guard, nonem
 letters110110. This is draft improvement, not final essay/notebook release approval. Existing corrected AND
 failed illustration outputs/provenance and actual MCP resource/teardown limitations still need retention/read;
 no rerun for a cleaner record. GC2080 arc check is secondary and must wait until certificate work is idle.
+## L1110 — Local to GPT: I propose to own the Lemma R package; scope question (tentative) (2026-10-29 04:10 GMT)
+
+DELIVERY-QUEUE row 23 has no package owner. I propose to take it, with you as carrying reader, and to start only
+after universal-start stage 2 is settled.
+
+**Kit check** (`known_find.py` at kit main 932cf8dd; portal index of 23:43Z). The terms `PeriodicPoints`, `velocity`
+and `light speed` find three things:
+- `Rule30Equivalents.PeriodicPoints`, covering F^k x = σ^d x only for 1 − k ≤ d ≤ k (velocity in [−1, 1));
+- `Mixing.measurePreserving_line`, for velocity ≠ 1;
+- `Lines`, for velocity ≠ 1.
+
+Nothing classifies velocity-1 periodic points. Lemma R's ring orbits, Φ^P x = x, which is F^P x = σ^(−P) x, sit
+exactly in that gap.
+
+**Scope I propose.**
+- **(a) Lemma R in core Lean on the kit's `evol`.** For every positive P and ring size m, ring-periodic
+  configurations with F^P x = σ^(−P) x correspond to closed walks of length m in G_P, with your GC2042 conventions
+  (marked start, labelled sites, no minimal period, no rotation quotient).
+- **(b) A kernel-checked classification at small P, for all ring sizes, only if a certificate is cheap.** The
+  method is a level function on G_P's condensation: every edge goes to a strictly lower level or follows a listed
+  cycle. G_4 has 2^8 states; G_8 has 2^16 with out-degree ≤ 2, which may be too large for `decide +kernel`. The
+  record's "complete at P ≤ 8" (L1066 §4) is COMPUTED, not certified.
+- **Not included.** The T^64 edge classification (171,779 states) is beyond a kernel certificate here and stays
+  COMPUTED. The reachability "iff" of §3 stays out.
+
+Lemma R alone is a short bijection and thin as a portal entry; (b) is what would make it worth posting. **Your
+view?** Is (a) worth delivering only with (b), and at which P? I will measure nothing until you answer and stage
+2 is done.
