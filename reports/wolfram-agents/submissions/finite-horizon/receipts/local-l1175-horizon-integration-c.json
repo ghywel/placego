@@ -1,0 +1,89 @@
+{
+ "stage": "L1175 horizon integration stage C (L1174 freeze, accepted GC2167)",
+ "host": "M5 (Local)",
+ "wrapper_sha256": "1d139a5d5dd9d84b513d741b46883260f99773d347b5c5e2edda27bd53771ec2",
+ "modules": {
+  "UniformHorizon": {
+   "heads": 4,
+   "output": "'UniformHorizon.digit_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.recurrence_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.uniform_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.uniform_horizon_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "RecodedHorizon": {
+   "heads": 6,
+   "output": "'RecodedHorizon.repeat_bound_congr' depends on axioms: [propext, Quot.sound]\n'RecodedHorizon.finite_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.floor_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.exists_irrational_agree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.uniform_horizon_all' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.recoded_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ArcRule30BridgeDraft": {
+   "heads": 1,
+   "output": "'ArcRule30Bridge.repeat_bound' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "PhysicalHorizon": {
+   "heads": 10,
+   "output": "'PhysicalHorizon.restart_visible' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_clock' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_left_zero' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_has_black' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.restart_leftmost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.piece_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.mech_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.reset_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.first_disagreement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.disagreement_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "limits": {
+  "out": "FRESH",
+  "cpu": 300,
+  "wall": 600,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4,
+  "cmd": [
+   "sh",
+   "check_horizon_integration_c.sh",
+   "finite-horizon",
+   "arc-codes"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 8.92,
+ "maxima": {
+  "rss_kib": 2542416,
+  "procs": 3,
+  "disk_bytes": 6535565,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5676
+ },
+ "gate": {
+  "free_inactive_mib": 6529,
+  "swap_used_mib": 1099.12
+ },
+ "start_utc": "2026-10-29T13:53:13Z",
+ "end_utc": "2026-10-29T13:53:22Z",
+ "supervisor_cpu_s": 0.133,
+ "out_txt": "STAGE_B_OBJECTS_OK 19\nSOURCES_OK 21 axiom reports expected\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n== UniformHorizon\n'UniformHorizon.digit_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.recurrence_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.uniform_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]\n'UniformHorizon.uniform_horizon_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS UniformHorizon\n== RecodedHorizon\n'RecodedHorizon.repeat_bound_congr' depends on axioms: [propext, Quot.sound]\n'RecodedHorizon.finite_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.floor_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.exists_irrational_agree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.uniform_horizon_all' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RecodedHorizon.recoded_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS RecodedHorizon\n== ArcRule30BridgeDraft\n'ArcRule30Bridge.repeat_bound' depends on axioms: [propext, Quot.sound]\nMODULE_PASS ArcRule30BridgeDraft\n== PhysicalHorizon\n'PhysicalHorizon.restart_visible' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_clock' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_left_zero' depends on axioms: [propext, Quot.sound]\n'PhysicalHorizon.restart_has_black' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.restart_leftmost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.piece_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.mech_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.reset_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.first_disagreement' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PhysicalHorizon.disagreement_step' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS PhysicalHorizon\nHORIZON_INTEGRATION_C_PASS (4 modules)\n",
+ "objects": {
+  "lib/ActualCarrySpacing.olean": "c8166684f47203e955e6268d7781ab876ddd4bb1f1bb7aabe6d79a0c7df5eb66",
+  "lib/ActualContinuants.olean": "8f55f2caca30dec40f94b563514a0d8e10c66ecc3a1c12d49b58e31eb8029dd5",
+  "lib/ActualOppositeCarry.olean": "43b84823b7c83363ffb46dc8a10fcaf5b821f328d925e75a3ecbecc787f61832",
+  "lib/ArcBreakBounds.olean": "48c36b7523beb10602646c9102e1c77c0d2a5478a07bd62bb12d4f1d3ae34e1d",
+  "lib/ArcBreakSequence.olean": "c683609e3af6c616445f80d2a990f4bcd32dd631561741ee009bfa8463be429d",
+  "lib/ArcContinuantsDraft.olean": "36b100804fdd31545a51bb5b90fd71673719da37e77e4f77e5745767b356e8d8",
+  "lib/ArcCoverDraft.olean": "4ba756c6476aa81f094ec7acffd0e27afd5b7b1b9baf4cfe33f1cb05c40db78b",
+  "lib/ArcDeterminantDraft.olean": "6e6b17632f7436f85f043b6f6608474bf730c75a562c9d26a15a54e88653dc74",
+  "lib/ArcRotationDraft.olean": "bc6d79c9cbf12e1ed10deb21d6a774464ee2fd5d8eea8d4d8836ba9a76cae8a8",
+  "lib/ArcRule30BridgeDraft.olean": "10600e2b4e8e107865b1e2059c9897892f0070c23824ca904a8d37aaa118b154",
+  "lib/ArcStepCodeDraft.olean": "315adc5d8a6df69981275466ce0254612a3b54f688de313de4e189bce1603c94",
+  "lib/CarryReturnSpacing.olean": "86750af7063e00867ff8a44b1c14bcdd36a16a79009b11767486ea25754e65c2",
+  "lib/ContinuantSequence.olean": "53e20668babd1f7f46be58365c2034a313dac8b2e6046b30f079157cebfdbb9a",
+  "lib/DenominatorBootstrap.olean": "f5c9957f608cdd4f861ed969ba33df4e3a61c41600afde0c0b7dd301676fa409",
+  "lib/FiniteHorizonBounds.olean": "fb472c9e76d1f3ed212df2dab24d153fb607c4bfc15378b24fd698d439eb590e",
+  "lib/FiniteHorizonSelection.olean": "accab76bdf9eebed23f84073d5f1b8b6edd604651b58d0fc3a23e9187e41dd72",
+  "lib/MechanicalCarry.olean": "861c510464432d8377bb10f5fa94cab419d75783bdf533c100ec10067301a4bc",
+  "lib/OppositeArcStrip.olean": "72951e7573614a908647267efeaf6f39e0ecb6eb01e83b58d004ca825bc639c8",
+  "lib/OppositeCarryArcs.olean": "09e8ae499734c3bfba22d0012d686105171ed20b9c07756d1372f399b1b887b3",
+  "lib/PhysicalHorizon.olean": "a9924853b64fc66dfccf163bd2e7cd57ab2ca0b813cae89a03bbe427e2f5fcec",
+  "lib/RecodedHorizon.olean": "8b45222f484b48854445a50cb02774e45964779407e7ce9989d3af0025e53dd9",
+  "lib/SharpAdjacentReturn.olean": "bd397fdaa5f631f3ce7bf2bb587f5087427cfee901980c9cbfeaf2531547c0cc",
+  "lib/UniformHorizon.olean": "f2490deeb436747fac5879f2ae211b72b3d8174149a137a194c1d9f1a9342784"
+ },
+ "full_packet": {
+  "where": "the shared store, workers/local/l1175-horizon-c-packet/",
+  "manifest_sha256": "f9f7690bf7b4796c63a7b48eb644b341220ccd71ef927e16a467b65a322f5e3b"
+ }
+}
