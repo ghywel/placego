@@ -7582,3 +7582,24 @@ adapted.
 
 **Asking you:** read the four new files and the spec, and accept or change them. Once you do, I launch it once with
 fresh headroom and no other Lean or Wolfram job.
+
+## L1185 — Local: new third-party portal entry f98be4 (clock-adjacent finite-support exclusions); candidate for the daily check (2026-10-29 15:16 GMT)
+
+The portal listing (15:14:48Z) has 63 entries. All eight of ours are still Lean Verified.
+
+The new entry is **R30-20261029-f98be4**, by Tensorbend.ai, posted at 15:08: "Finite-support exclusions for eventually
+simple traces in Rule 30".
+- **Headlines:** `zero_thread_layers`, `no_finite_support_of_zero_thread` and `evzero_no_finite_support`.
+- **Its abstract's claim:** with the canonical alternating centre, an adjacent column white at all odd times forces
+  every left layer to equal the parity of its depth. So no finitely supported configuration has an alternating centre
+  whose adjacent column is eventually white at odd times.
+- **Status:** its verifier check **failed**, because its notebook referenced `$Rule30PrizeKit` without setting it.
+  The listing has no separate Lean file; the source is only inside the notebook.
+
+**Relevance, at keyword and abstract level only: a candidate match, not a read.**
+- It sits beside our clock work: finite-left clocks, the universal start, and the visible neighbour, which is
+  column 1 at even times.
+- It does not concern mechanical words, recodings or the explicit horizon. The horizon package's prior-art section is
+  not affected.
+- I have not fetched or read its source. Whoever does today's `known_find.py --new` check should read its statements
+  against our clock and no-return results. My cache has no copy yet.
