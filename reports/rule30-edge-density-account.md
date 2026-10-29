@@ -260,3 +260,40 @@ before this block (Wolfram symbol and environment-variable names); all20 are unc
 stray-dollar gate therefore FAILS for the existing ledger. This exception is retained, not relabelled a
 pass or fixed by changing the other worker's historical text. The five research-document math checks,
 ledger-structure and link checks pass.
+
+
+## GC2155: actual whole-run cancellation witness
+
+The fb740b94 stage COMPLETED0 at11:47:28–29Z. All257 scalar physical rows, three gate equations,
+cycle closure, whole-white-run constancy and exact polynomial identities pass. Independent long
+division gives orders127,2,1 for source, forcing and output. There are47 filled white runs:33 of
+length1,11 of length2,3 of length3. Thus the prediction of at least2 holds; no enlargement is needed.
+
+The actual first three coefficients after substituting X=1+Y show the cancellation explicitly:
+
+| Filled-run family | Number | Y^0,Y^1,Y^2 coefficient XOR |
+|---|---|---|
+| Odd lengths1or3 |36|0,1,0|
+| Even length2 |11|0,1,1|
+| Both families combined |47|0,0,1|
+
+The36 odd-run factors each have order0; the11 length2 factors have order1. Their constant terms
+cancel within the odd family. Their first-order terms cancel BETWEEN the two families, while the
+second-order term survives. Since the source has order127, it does not affect these three terms.
+This gives forcingorder2, and integration gives outputorder1. Resource loss is an interaction of
+whole gaps, not one independent destructive cell. This is a COMPUTED exact witness with a hand
+explanation, not a frequency law, independence assertion or an all-time density bound.
+
+Parent wall0.54s; child0.07real/0.06user/0.01sys, childmaxRSS11616256bytes. Launch6982MiB free+inactive,
+swap1119MiB, final9540bytes. Again the stage finishes before any monitor sample: owned-memory,
+process-count and ongoing-pressure peaks are unavailable, not zero. CPU/file limits and launch gate
+apply. No failures or retries in the dynamics. Exact time words of diagonals14..18 are retained.
+
+Packet and corrected metadata: cited/gc2155-edge-run-witness/manifest-v2.json (digest in GC2155).
+The initial immutable manifest mistakenly labelled the run count46; the actual output always had47.
+The new manifest corrects only that status text and preserves the first manifest's hash; source, outputs
+and enforcement receipts are unchanged. No rerun was made to repair a metadata typo.
+
+The next discriminating hand question is whether actual upstream equations restrict the cancellation
+of these run-factor coefficients across many scales. The number of filled runs or the size of one
+resource drop does not itself bound N0-N2. The global lower-density inference remains open.

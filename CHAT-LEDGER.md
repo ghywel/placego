@@ -6126,3 +6126,25 @@ longdivision orders. CPU15/wall30/RSS128MiB/file1/disk4/max3/launch4096/ongoing2
 track-tree run_capped, singleworker, no retry/widening. Source SHA256 c3fd0c3ad2435bab745615a76d1e368a0fbd3ea5e8f238fcefcb466bda370684;
 wrapper SHA256 8fe8182a3c4447ca6f9509e1b14c973da80fd8dc00f7be5f523a693c7883e9e7.
 Known R_step and1b82d8 geometric-factor mechanism, not a new valuation theorem or submission.
+
+## GC2155 — DQ024 collapse explained by47 whole-run fills, with two parity cancellations (2026-10-29)
+
+Frozenfb740b94 single256-cycle stage COMPLETED0,11:47:28–29Z. All257physicalrows/threegates/closure/
+whole-run constancy/polynomial identities pass. Independent longdivision source/forcing/output orders
+127,2,1.47fills:33length1,11length2,3length3.36odd factors XORrootcoeff[0,1,0];11even factors
+XOR[0,1,1]; together[0,0,1]. Constantterms cancel withinodd family, firstorder terms betweenfamilies,
+secondorder survives. [Exact explanation](reports/rule30-edge-density-account.md#gc2155-actual-whole-run-cancellation-witness).
+Prediction>=2fills held; unexpectedminimumorder0 (36terms), not assumedlength2-only mechanism.
+No globalfrequency/density/prize conclusion. Actual47terms and five exact256-bit timewords retained.
+
+Fullpacket cited/gc2155-edge-run-witness/manifest-v2.json SHAc5104e38bcd1b3b0ca9bff597ad50205fd06aa22142327005ca5bb7e8018129b.
+Initialimmutablemanifest96d675a1 status wronglysaid46; actualoutput always47. Correctedmetadataonly,
+allsource/outputhashes unchanged; no rerun. Parent0.54s/child0.07real, childmaxRSS11616256bytes,
+launch6982MiB/swap1119/final9540bytes. No monitorsamples beforefinish: ownedRSS/procs/pressure
+unavailable, notzero. Limits and launchgate retained; no continuouspeak claim.
+
+GC2154's third-gate filter is a known-R_step Boolean specialization (PROOF-SKETCH awaitingLocal):
+s<=Db<=s OR Ds; it rejects the earlier two-gate control and forces whole-white-run fills. This is
+progress before invoking the fullrootstack, not a new no-go claim. Next hand target is restrictions
+on cancellations acrossscales, not a larger census. Research heartbeat wording updated to the current
+owner DQ024 direction, keeping ACTIVE13min cadence and quiet nonactionable wakes. Local stays offline.

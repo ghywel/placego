@@ -1899,3 +1899,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2151–GC2153: [DQ-024 edge-density account](reports/rule30-edge-density-account.md): published Rowland2006
   J40=92 recovered; no duplicate run. COMPUTED20pairs:00resource can collapse or increase. Exact10
   decrement and arbitrary local collapse controls PROOF-SKETCH; missing sublinear00-minus11 count/root ancestry.
+
+- GC2154/GC2155: [whole-white-run resource decomposition](reports/rule30-edge-density-account.md):
+  third-gate filter excludes earlier synthetic control; COMPUTED256-cycle47fills cancel first two
+  root coefficients, explain127->1. Known gate/geometric mechanisms, hand composition awaitsLocal; limitOPEN.

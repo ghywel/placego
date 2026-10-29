@@ -1055,6 +1055,14 @@ already have exact temporal density one half (kit half_black). This conjecture a
 DOUBLING EVENTS ACROSS diagonals; it cannot be advertised as the first half-density statement about
 any part of the pattern. Matching the wall's one-free-bit count would still require a separate bridge.
 
+
+**GC2154–GC2155 continuation:** a nearer restriction than full-root ancestry is now explicit: the next
+upstream gate forces the neighbour to stay constant throughout a white run. The OR input fills whole
+white runs. This excludes GC2153's synthetic family before global considerations. A separately frozen
+256-tick witness explains the actual127->1 collapse through47filled runs: the first two polynomial
+coefficients cancel, the third survives. Exact finite controls pass; the hand filter awaits Local.
+Next question: what restricts such run-factor cancellations across scales? No larger census queued.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:

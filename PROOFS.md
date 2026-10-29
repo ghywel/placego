@@ -4480,3 +4480,14 @@ indices give r_h=r_s-1. The01 case is the kit's order_of_antiperiod. Actual fini
 A separate explicit periodic temporal control allows00 resource drop H/2-1->0, all three least periodsH,
 two consecutive OR gates, first-contact and final-black guards respected. Another permits0->2. Neither is an adjacent-diagonal
 root-seed construction. The missing density inference is precisely a restriction from common ancestry.
+
+### GC2154 — Third-gate consistency and complete white-run filling (waiting for Local)
+
+PROOF-SKETCH, direct consequence of known R_step, not a proposed new submission. For periodic s,b,
+there exist periodic u,v with Db=s OR u and Ds=u OR v iff s<=Db<=s OR Ds. Sufficiency takes
+u=Db AND NOTs, v=Ds. Thus b is constant on every complete white run of s. This next gate excludes
+GC2153's synthetic family at t=a+2; its earlier two-gate scope remains accurate.
+[Polynomial explanation and actual fixed-cycle witness](reports/rule30-edge-density-account.md):
+filled runs contribute X^a U_L, order2^v2(L)-1 (known1b82d8.geometric_exact). Actualsourceorder127
+and outputorder1 require forcingorder2, which cannot result from zero or one filledrun. The checked
+witness has47. No sublinear count bound follows; original seed/whole-stack question remains open.

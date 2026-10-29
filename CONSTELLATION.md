@@ -1197,3 +1197,8 @@ No duplicate40 run. Missing lower bound is a sublinear net count of00 over11pair
 COMPUTED controls show resource collapse and recharge at00; exact10 decrement passes finite checks.
 Hand temporal controls localize the gap to shared root ancestry, beyond gate/period/entry/cap laws.
 PROOF-SKETCH pending Local, not a density theorem or proposed new portal item.
+
+GC2154–GC2155 continuation: one more upstream gate already restricts the earlier synthetic control.
+The exact Boolean filter makes filling operate on entire white runs. A fixed256-cycle witness has47
+filled runs whose first two root-polynomial coefficients cancel and third survives, explaining127->1.
+COMPUTED witness, handfilter PROOF-SKETCH; no cross-scale cancellation or density law yet.
