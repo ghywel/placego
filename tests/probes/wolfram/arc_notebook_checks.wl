@@ -1,7 +1,7 @@
-(* GC2110: structural checks for the six arc notebook outputs; no build on loading.
+(* GC2110: structural checks for the five arc notebook outputs; no build on loading.
    Loading this file performs no build or LeanLink call. Only the illustration and axiom boxes are parsed,
    with HoldComplete applied BEFORE evaluation. The KernelCheck object is read from InterpretationBox;
-   output cells containing LeanEnvironment/TypeForm are retained for the separate manual read, never evaluated.
+   the LeanEnvironment cell is retained for the separate manual read, never evaluated; signatures are static prose.
    This is an artifact gate, not a replacement for the unchanged Lean checker. *)
 
 arcNotebookHeads = "Rule30Submission.ArcRule30Exclusion." <> # & /@
@@ -39,10 +39,10 @@ arcNotebookKernelData[out_] := Module[{objects, a, m},
 ];
 
 arcNotebookOutputChecks[outs_List] := Module[{gridOK = False, axiomsOK = False, kernel = $Failed},
-  If[Length[outs] === 6,
+  If[Length[outs] === 5,
     gridOK = MatchQ[arcNotebookHeld[outs[[1]]], With[{e = arcNotebookExpectedGrid}, HoldComplete[Grid[e, ___]]]];
-    axiomsOK = TrueQ[arcNotebookAxiomsOK[arcNotebookHeld[outs[[5]]]]];
-    kernel = arcNotebookKernelData[outs[[6]]];
+    axiomsOK = TrueQ[arcNotebookAxiomsOK[arcNotebookHeld[outs[[4]]]]];
+    kernel = arcNotebookKernelData[outs[[5]]];
   ];
   <|"grid_ok" -> TrueQ[gridOK], "axioms_ok" -> TrueQ[axiomsOK], "kernelcheck_ok" -> AssociationQ[kernel],
     "kernelcheck_data" -> If[AssociationQ[kernel], kernel, Null]|>

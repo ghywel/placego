@@ -103,12 +103,28 @@ not discovery of these methods or literature-wide novelty from negative searches
 listed portal sources refreshed06:55:05Z were compared by their actual statements. The kit directs proofs
 requiring Mathlib to be submitted as-is rather than inserted in its core-Lean catalogue.
 
+## The four source statements
+
+These signatures are copied from the checked module, with whitespace normalized for display. Their namespace
+is `Rule30Submission.ArcRule30Exclusion`, and every referenced definition is in the complete source below.
+They are static source text, not the output of LeanLink's separate type pretty-printer. The compiler and
+kernel replay check the actual declarations. All clock, left-edge, irrationality and digit hypotheses stay
+visible; no arguments are omitted by a fallback formatter.
+
+- `theorem no_visible_rotation {r : Nat} (S : ArcStepCode.StepCode r) (alpha theta : ℝ) (ha : Irrational alpha) (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧ ((2^(r+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1)) (x : Int → Bool) (L : Nat) (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1)) (hvisible : ∀ s : Nat, ArcRule30Bridge.visible x s = ArcStepCode.orbit S alpha theta s) : False`
+
+- `theorem no_eventual_visible_rotation {r : Nat} (S : ArcStepCode.StepCode r) (alpha theta : ℝ) (ha : Irrational alpha) (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧ ((2^(r+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1)) (x : Int → Bool) (L : Nat) (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1)) (hvisible : ∃ N : Nat, ∀ s : Nat, N ≤ s → ArcRule30Bridge.visible x s = ArcStepCode.orbit S alpha theta s) : False`
+
+- `theorem no_visible_endpoint_variant {r : Nat} (S : ArcStepCode.StepCode r) (g : ℝ → Bool) (alpha theta : ℝ) (ha : Irrational alpha) (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧ ((2^(r+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1)) (hoff : ∀ y : ℝ, (∀ i : Nat, i < r → ∀ z : ℤ, y ≠ S.endpoint i+z) → g y = S.value y) (x : Int → Bool) (L : Nat) (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1)) (hvisible : ∀ s : Nat, ArcRule30Bridge.visible x s = g (theta+(s : ℝ)*alpha)) : False`
+
+- `theorem no_visible_interval_union (k : Nat) (a b : Nat → ℝ) (alpha theta : ℝ) (ha : Irrational alpha) (hlarge : ∀ N : Nat, ∃ n : Nat, N ≤ n ∧ ((2^(2*k+1) : Nat) : ℤ) < Rule30Equivalents.Lagrange.digit alpha (n+1)) (x : Int → Bool) (L : Nat) (hleft : x (-(L : Int)) = true) (hzero : ∀ i : Int, i < -(L : Int) → x i = false) (hclock : ∀ t : Nat, Ruliology.CellularAutomata.Rule30Realization.evol x t 0 = decide (t % 2 = 1)) (hvisible : ∀ s : Nat, ArcRule30Bridge.visible x s = ArcIntervalCode.value k a b (theta+(s : ℝ)*alpha)) : False`
+
 ## The complete formal source
 
 This module includes every arc proof dependency we wrote. It imports only public kit/Mathlib/Lean modules.
 The four physical headlines are `Rule30Submission.ArcRule30Exclusion.no_visible_rotation`,
 `no_eventual_visible_rotation`, `no_visible_endpoint_variant` and `no_visible_interval_union` in that same
-namespace. Reading their types exposes the clock, left edge, irrationality and digit assumptions directly.
+namespace. The source signatures above retain the clock, left edge, irrationality and digit assumptions directly.
 
 ```wl
 Needs["Wolfram`LeanLink`"];
@@ -123,10 +139,6 @@ rule30Submission = LeanImportString["import Mathlib.Basic.Real.Basic\nimport Mat
 ```wl
 heads = {"no_visible_rotation", "no_eventual_visible_rotation", "no_visible_endpoint_variant", "no_visible_interval_union"};
 fullheads = "Rule30Submission.ArcRule30Exclusion." <> # & /@ heads;
-Column[rule30Submission[#]["TypeForm", "Open" -> {"Rule30Submission"}] & /@ fullheads]
-```
-
-```wl
 AssociationMap[rule30Submission[#]["Axioms"] &, fullheads]
 ```
 

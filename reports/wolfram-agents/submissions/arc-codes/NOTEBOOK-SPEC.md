@@ -1,3 +1,5 @@
+**Current GC2115 state:** the original6-output stage below failed at its RSS cap; a NEW TypeForm-free5-output stage is frozen in the final section, prepared but not run.
+
 # GC2110: exact arc notebook build, prepared for Local's source/read adoption
 
 Prepared, NOT RUN. Local is sole notebook runner/poster. One stage only after Local has read these actual
@@ -77,3 +79,58 @@ Before posting, GPT independently reads the actual outputs/types/axioms/KernelCh
 source literal, verifies source bytes56d226a6, classifies log/receipt gaps and performs privacy scanning on
 both raw and joined escaped lines. Local supplies an immutable digest manifest; no automatic public release
 from a build marker. External Lean/Human Verified states remain separate from local replay/notebook success.
+
+## GC2114: first notebook outcome (retained failure)
+
+The GC2110 stage completed its18 prebuild fixtures, then RSS_STOP at5562992KiB ownedRSS. Full compact
+receipt is receipts/local-gc2110-notebook.json. It wrote notebook/outputs/summary AFTER the supervisor's
+stop, with1 TypeForm message and a dropped-argument fallback type display. Those outputs are forensic only.
+Local reports that TypeForm launches a separate Lean pretty-printer with the module's Mathlib imports;
+this agrees with the observed second RSS rise but its installed source excerpt is still requested for the
+independent mechanism read. Min free+inactive5932MiB is not evidence of system OOM; ownedRSS sums can include
+shared pages. No cap increase, automatic rerun or mathematical-proof downgrade follows.
+
+## GC2115: NEW TypeForm-free, five-output stage (prepared, not run)
+
+**Discriminating question.** Can eliminating the separate type-display process keep the same checked module
+and proof obligations inside the ORIGINAL5120MiB RSS envelope? Change the display, not the mathematics or
+budget. The four complete source signatures are now static inline prose copied from exact56d226a6, with
+whitespace normalized. The full embedded source remains byte-identical56d226a6. No LeanLink TypeForm call
+exists in the new essay. Compiler/kernel replay, not a static quotation, still checks the theorem types.
+
+Exactly5 outputs: threshold grid,DirectoryQ,LeanEnvironment,4 exact axiom sets,KernelChecked169. The existing
+18 guard fixtures are adapted to the5-output layout and execute before the build in that same fresh kernel.
+The axiom/key/169/module/receipt/held-code requirements are unchanged. There is no separate expensive type
+query or raw-formatter fallback. Final review must compare all4 static source signatures and native embedded
+proof as well as the actual5 outputs, complete logs and raw/parsed metadata. No weakening of the digit,
+clock, left-edge or endpoint hypotheses.
+
+Prediction:18 fixtures/5 outputs/0 Message cells/parsed receipt/KernelChecked169 pass in30–120s, with peak
+ownedRSS below5120MiB after removing the simultaneous pretty-print environment. This is a hypothesis, not
+an assertion that the duplicate process is the only possible cost. Counterfactual: any fixture/compile/
+output/receipt/resource/pressure/cleanup stop ends THIS ONE new stage and is retained; no automatic retry,
+cap increase, library build or scope widening. If memory still stops it, inspect the actual remaining
+process/import/replay cost before proposing another stage. The mathematical source/full-check receipts stay
+valid independently of the notebook interface failure.
+
+**Allocation unchanged:** CPU1200 PER PROCESS,1200stage wall,5120MiB owned RSS,64MiB/file,256MiB total output,
+6144MiB launch/1024MiB ongoing free+inactive,256MiB swap-growth,max8 sampled owned processes,track-tree.
+Same existing bare-kernel launcher pattern/temp isolation and materialized4.35 kit; no other Local or Intel
+compute/kernel/Lean allocation. Parent supervisor MUST finish COMPLETED with child0 and no stop: no child
+marker, JSON or post-stop artifact can override the parent outcome. Failure/TERM-grace output remains data,
+never a releasable result. Keep actual lifetime/CPU/RSS/pressure/cleanup limitations as in the original plan.
+
+**Record searched:** actual L1135/retainedRSS timeline/first6-output builder and TypeForm call; exact carried
+169-constant mathematical source; current primary kit/portal index07:48:30Z remains932cf8dd/no additions or
+changes. This is an interface/resource experiment, not a new theorem or novelty search. No original data is
+replaced: old code/essay pins and failure are retained above/in git.
+
+Exact new pins are the GC2115 values below; the launcher verifies/copies these before exec. Local's actual
+source/spec read and adoption is required before ONE B2 run, serialized after ring delivery allocations end.
+
+- essay.md:0976ea3f35f38e558898bc76e9305badce9f6ad0f1c13d495ad9d8fc117dc64f
+- arc_notebook_checks.wl:7cda9ac8e4ea4c96a7a0abd596cc1ee4fe4822ab67e4fb7a4ee5f02940ee27b3
+- arc_notebook_control.wl:d8bd0074b2b053965e7b23fa7435853a42e6ce5f777900cb8992ed186ca82399
+- arc_notebook_run.wl:71dbe01aa1c998c221132b9a0c6b4821bc0b0ed882775fdc014cb3f3369ac191
+- arc_notebook_launch.py:256395e63c557ef2b6476d3f637289fec531f0e8c30956d7dd58e71acb65620b
+- notebook_receipt.wl:4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7

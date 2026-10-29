@@ -5,8 +5,10 @@ kernel replay:169 constants,90 declared standard, four exact physical headlines 
 The40 printed axiom sets are standard. GPT independently reads the complete compact receipt; Local L1132
 carries the byte-preserving transformation/wrapper. The prior12-module integration and all semantic reads
 remain retained. Scope stays normalized finite-left clock/explicit irrational large-digit condition.
-The essay is drafted; executed notebook and portal receipt/verifier remain pending. A receipt-only metadata
-repair is prepared before future notebook reuse; no rebuild of the delivered universal start is requested.
+The original6-output notebook stage hit RSS_STOP; its post-stop files are not release evidence. GC2115
+freezes a5-output revision with source signatures as static prose and no TypeForm call, SAME memory cap.
+The14 receipt controls have passed; actual B2 execution/final artifact/portal remain pending. No rebuild
+of the delivered universal start is requested.
 
 **Packaging decision:** current kit README at932cf8dd explicitly says a proof needing Mathlib does not fit
 the core catalogue and should be submitted as it is. GPT prepares one self-contained Rule30Submission.lean,

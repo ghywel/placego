@@ -1,6 +1,6 @@
 (* GC2110: one fresh supervised arc notebook build, using the checked B2 bare-kernel argument convention.
    Arguments are ESSAY KIT, last2 of $CommandLine. The launcher pins/copies helper/checks/control/driver.
-   Exactly6 notebook outputs expected;18 non-building controls run before resolving the converter. *)
+   Exactly5 notebook outputs expected;18 non-building controls run before resolving the converter. *)
 {arcEssaySource, arcKit} = Take[$CommandLine, -2];
 If[!FileExistsQ[arcEssaySource] || !DirectoryQ[arcKit], Print["ARC_NOTEBOOK_FAIL driver arguments"]; Exit[1]];
 arcCapped = Environment["CAPPED_OUT"];
@@ -18,7 +18,7 @@ Put[arcControls, FileNameJoin[{arcCapped, "output-controls.wl"}]];
 If[Length[arcControls] =!= 18 || !AllTrue[Values[arcControls], TrueQ],
  Print[ExportString[arcControls, "RawJSON"]]; Print["ARC_OUTPUT_CONTROLS_FAIL"]; Exit[1]];
 Print["ARC_OUTPUT_CONTROLS_PASS"];
-If[FileHash[arcEssaySource, "SHA256", "HexString"] =!= "37bcdad893f1e432cfffc67223665f1ade25b0a6f66ff5859cbea6dc2e641a59",
+If[FileHash[arcEssaySource, "SHA256", "HexString"] =!= "0976ea3f35f38e558898bc76e9305badce9f6ad0f1c13d495ad9d8fc117dc64f",
  Print["ARC_NOTEBOOK_FAIL frozen essay"]; Exit[1]];
 arcEssay = FileNameJoin[{arcCapped, "essay.md"}]; CopyFile[arcEssaySource, arcEssay];
 arcNotebook = FileNameJoin[{arcCapped, "essay.nb"}];
@@ -42,7 +42,7 @@ If[FileExistsQ[arcNotebook],
  arcNB = Quiet[Get[arcNotebook]];
  arcOuts = Cases[arcNB, Cell[c_, "Output", ___] :> c, Infinity];
  arcMsgCells = Cases[arcNB, Cell[_, "Message" | "MSG", ___], Infinity];
- If[Length[arcOuts] =!= 6, arcNote["output count " <> ToString[Length[arcOuts]]]];
+ If[Length[arcOuts] =!= 5, arcNote["output count " <> ToString[Length[arcOuts]]]];
  If[arcMsgCells =!= {}, arcNote["message cells " <> ToString[Length[arcMsgCells]]]];
  If[!FreeQ[arcOuts, $Failed], arcNote["$Failed in output"]];
  arcDigests = Table[
@@ -79,7 +79,7 @@ arcRequired = {"essay_sha256","source_sha256","output_cells","output_digests","g
 arcSummaryOK = MatchQ[arcWritten,Success["NotebookReceiptWritten",_Association]] && nrReceiptFileOK[arcSummaryPath,arcRequired];
 If[arcSummaryOK,
  arcParsed = nrReadReceipt[arcSummaryPath];
- arcSummaryOK = arcParsed["reasons"] === {} && arcParsed["output_cells"] === 6 &&
+ arcSummaryOK = arcParsed["reasons"] === {} && arcParsed["output_cells"] === 5 &&
    AllTrue[{"grid_ok","axioms_ok","kernelcheck_ok"},TrueQ[arcParsed[#]]&];
 ];
 If[arcSummaryOK, Export[FileNameJoin[{arcOut,"DONE"}],"done","Text"]];
