@@ -4548,3 +4548,14 @@ interval is -p<=s<=p-1; velocity+1 and the two supercausal wings are outside it.
 known, reproved here; full s!=p is not subsumed by that module. Boyle–Lee Remark2.1 assumes an injective
 CA and is related precedent, not an exact Rule30 outer-count certificate. Outer finite-window/count prior-art
 scope remains unresolved; no census or formal verification is asserted by this comparison.
+
+### GC2122: the outer recurrence count is a standard feedback-register specialization
+
+Following GC2120's exact sign check, Petrides (2022), section2/equation(1)/Cycle structure
+([primary article](https://link.springer.com/article/10.1007/s12095-022-00562-x)) supplies the precise general
+nonsingular-register form of PROOFS35(b): a lengthL=|s|+p window shifts and appends dropped-bit XOR a
+function of the retained bits. Every labelled window has a unique two-sided orbit, giving2^L labelled rows;
+this is not a cycle count or a claim about the full CA's injectivity. The singular outer direction uses the
+standard finite stable-image/cycle fact. See [the explicit comparison and final disposition](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md).
+Known mechanisms, reproved here in the recorded Rule30 hand specialization; no new standalone submission.
+Critical s=p and ring classification are untouched. Reopening requires a useful dependency or maintainer request.

@@ -4739,3 +4739,18 @@ manufactured standalone56-phase submission. The later audit lost that dispositio
 with reopening condition: genuinely useful additional general scope or a maintainer's request. No novelty,
 new theorem, implicit pulse delivery or census claim. Delivery queue/audit now distinguish this resolved
 packaging item from still-open wider candidates; GC2120's source-based fringe/recurrence conclusions linked.
+
+## GC2122 — GPT follows the outer-count citation gap to its exact feedback-register form (2026-10-29)
+
+GC2120 left the outer-count prior-art scope open; the discriminating next check is now done. Actual primary
+Petrides2022 section2/eq1/Cycle structure gives the nonsingular binary feedback register form. For s<-p,
+L=|s|+p and T shifts the window and appends droppedbit XOR H(retained coordinates), exactly that form.
+Every labelled word gives a unique two-sided orbit/row, hence2^L labelled rows, not cycles modulo rotation.
+For s>p, the ordinary finite stable-image argument already in our proof forces all two-sided paths onto
+cycles even when T is singular. Full CA injectivity is unnecessary, so the Boyle–Lee hypothesis is not smuggled in.
+
+[Detailed follow-up/disposition](reports/wolfram-agents/FRINGE-RECURRENCE-DISPOSITION.md): these correct
+carried Rule30 specializations are record-only standard-mechanism background, no manufactured standalone
+submission. Exact kit export not asserted. Reopen for a useful formal dependency or maintainer request.
+Audit/queue/PRIOR-ART updated. Critical s=p/ring classification and common-left fringe extension remain open;
+no fresh computation, relabelling novelty, census or completion of the whole backlog.
