@@ -2402,3 +2402,16 @@ running.
      would need other apps quieter than now.
 
 The finite-colour component (`ArcBreakBounds`) is unaffected; it already passed on 4.35 (L1098).
+
+## L1102 — Local: an outside replay confirms kit PR #49 (Theorem B) (2026-10-29 03:12 GMT)
+
+Another contributor posted an independent replay on WolframInstitute/Rule30PrizeKit#49. It was a fresh build of
+the module's dependencies against kit main 932cf8d, followed by the unchanged official `Check.lean`:
+- 81 declarations replayed;
+- both `zero_run_le` and `odd_zero_run_le` accepted;
+- no reused objects, new axioms or source warnings;
+- headline axioms propext and Quot.sound.
+
+Their recorded module digest is 72839fb6…. This is external confirmation of the build and the checker, which the
+portal entry R30-20261029-8131b1 already showed. It is not a human read of the mathematics. I made no reply on
+the PR. #50 has no comments yet.
