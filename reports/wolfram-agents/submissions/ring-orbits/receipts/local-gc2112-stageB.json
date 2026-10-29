@@ -1,0 +1,554 @@
+{
+ "stage": "Lemma R stage B (GC2112's accepted attempt)",
+ "launcher": {
+  "limits": {
+   "cpu": 1200,
+   "wall": 1200,
+   "rss_mib": 4096,
+   "file_mib": 64,
+   "disk_mib": 256,
+   "min_free_mib": 1024,
+   "launch_free_mib": 5120,
+   "swap_growth_mib": 512,
+   "track_tree": true,
+   "max_procs": 8
+  },
+  "start_utc": "2026-10-29T07:35:43Z",
+  "end_utc": "2026-10-29T07:36:15Z",
+  "gate": {
+   "free_inactive_mib": 6667,
+   "swap_used_mib": 1622.81
+  },
+  "exit_reason": "COMPLETED",
+  "child_rc": 0,
+  "wall_s": 31.98,
+  "maxima": {
+   "rss_kib": 2027440,
+   "procs": 5,
+   "disk_bytes": 1966727,
+   "swap_growth_mib": 0.0,
+   "min_free_mib": 6025
+  },
+  "cleanup": null,
+  "stop_signals": null,
+  "samples_kept": [
+   [
+    0.5,
+    149248,
+    6595,
+    0.0,
+    0
+   ],
+   [
+    1.1,
+    157344,
+    6592,
+    0.0,
+    0
+   ],
+   [
+    1.6,
+    180720,
+    6603,
+    0.0,
+    0
+   ],
+   [
+    2.1,
+    181056,
+    6598,
+    0.0,
+    0
+   ],
+   [
+    2.7,
+    272928,
+    6528,
+    0.0,
+    0
+   ],
+   [
+    3.2,
+    312800,
+    6492,
+    0.0,
+    0
+   ],
+   [
+    3.7,
+    314016,
+    6502,
+    0.0,
+    21037
+   ],
+   [
+    4.2,
+    315312,
+    6508,
+    0.0,
+    21037
+   ],
+   [
+    4.8,
+    339072,
+    6501,
+    0.0,
+    21037
+   ],
+   [
+    5.3,
+    343456,
+    6504,
+    0.0,
+    21037
+   ],
+   [
+    5.8,
+    343584,
+    6504,
+    0.0,
+    23543
+   ],
+   [
+    6.4,
+    349792,
+    6505,
+    0.0,
+    23543
+   ],
+   [
+    6.9,
+    350560,
+    6505,
+    0.0,
+    23543
+   ],
+   [
+    7.4,
+    351664,
+    6498,
+    0.0,
+    23543
+   ],
+   [
+    7.9,
+    351856,
+    6502,
+    0.0,
+    23543
+   ],
+   [
+    8.5,
+    351792,
+    6504,
+    0.0,
+    23543
+   ],
+   [
+    9.0,
+    351920,
+    6504,
+    0.0,
+    21037
+   ],
+   [
+    9.5,
+    351920,
+    6481,
+    0.0,
+    21037
+   ],
+   [
+    10.0,
+    351856,
+    6475,
+    0.0,
+    21037
+   ],
+   [
+    10.6,
+    351872,
+    6488,
+    0.0,
+    21037
+   ],
+   [
+    11.1,
+    351872,
+    6455,
+    0.0,
+    23543
+   ],
+   [
+    11.6,
+    352000,
+    6450,
+    0.0,
+    23543
+   ],
+   [
+    12.2,
+    352320,
+    6446,
+    0.0,
+    23543
+   ],
+   [
+    12.7,
+    352000,
+    6446,
+    0.0,
+    21037
+   ],
+   [
+    13.2,
+    352000,
+    6468,
+    0.0,
+    21037
+   ],
+   [
+    13.7,
+    351888,
+    6473,
+    0.0,
+    21037
+   ],
+   [
+    14.2,
+    356048,
+    6465,
+    0.0,
+    21037
+   ],
+   [
+    14.8,
+    357136,
+    6470,
+    0.0,
+    21037
+   ],
+   [
+    15.3,
+    357904,
+    6466,
+    0.0,
+    21037
+   ],
+   [
+    15.8,
+    362896,
+    6461,
+    0.0,
+    21037
+   ],
+   [
+    16.3,
+    365216,
+    6460,
+    0.0,
+    21037
+   ],
+   [
+    16.8,
+    368224,
+    6460,
+    0.0,
+    21037
+   ],
+   [
+    17.4,
+    384208,
+    6433,
+    0.0,
+    21037
+   ],
+   [
+    17.9,
+    567424,
+    6354,
+    0.0,
+    21037
+   ],
+   [
+    18.4,
+    653648,
+    6312,
+    0.0,
+    21037
+   ],
+   [
+    18.9,
+    654192,
+    6315,
+    0.0,
+    21037
+   ],
+   [
+    19.5,
+    655648,
+    6321,
+    0.0,
+    21037
+   ],
+   [
+    20.0,
+    764512,
+    6279,
+    0.0,
+    32716
+   ],
+   [
+    20.5,
+    1037568,
+    6260,
+    0.0,
+    517469
+   ],
+   [
+    21.0,
+    1038848,
+    6263,
+    0.0,
+    517469
+   ],
+   [
+    21.5,
+    994560,
+    6239,
+    0.0,
+    517469
+   ],
+   [
+    22.1,
+    995968,
+    6232,
+    0.0,
+    517469
+   ],
+   [
+    22.6,
+    997440,
+    6250,
+    0.0,
+    517469
+   ],
+   [
+    23.1,
+    998848,
+    6262,
+    0.0,
+    517469
+   ],
+   [
+    23.6,
+    1000048,
+    6258,
+    0.0,
+    517469
+   ],
+   [
+    24.1,
+    1210752,
+    6158,
+    0.0,
+    518800
+   ],
+   [
+    24.7,
+    1326016,
+    6088,
+    0.0,
+    518800
+   ],
+   [
+    25.2,
+    2027440,
+    6025,
+    0.0,
+    518800
+   ],
+   [
+    25.7,
+    1026512,
+    6202,
+    0.0,
+    517469
+   ],
+   [
+    26.2,
+    1410400,
+    6120,
+    0.0,
+    517469
+   ],
+   [
+    26.7,
+    1441648,
+    6129,
+    0.0,
+    517469
+   ],
+   [
+    27.3,
+    1442480,
+    6123,
+    0.0,
+    517469
+   ],
+   [
+    27.8,
+    1443248,
+    6120,
+    0.0,
+    517469
+   ],
+   [
+    28.3,
+    1443968,
+    6121,
+    0.0,
+    517469
+   ],
+   [
+    28.8,
+    1444736,
+    6124,
+    0.0,
+    517469
+   ],
+   [
+    29.4,
+    1445520,
+    6126,
+    0.0,
+    517469
+   ],
+   [
+    29.9,
+    1446288,
+    6123,
+    0.0,
+    517469
+   ],
+   [
+    30.4,
+    1462480,
+    6117,
+    0.0,
+    517469
+   ],
+   [
+    30.9,
+    1530512,
+    6113,
+    0.0,
+    517469
+   ],
+   [
+    31.4,
+    1543488,
+    6106,
+    0.0,
+    1966727
+   ]
+  ]
+ },
+ "cmd": "from the pipeline kit root, elan tools on PATH: run_capped.py --track-tree --max-procs 8 ... -- python3 -I universal_start_notebook_launch.py WolframKernel ring_orbits_notebook_run.wl (48b834b1...) ESSAY (0cefd19b...) KIT",
+ "builder_stdout": [
+  "RESULT OK"
+ ],
+ "summary": {
+  "essay_sha256": "0cefd19b86f2a8bcf700dfbdf50cad877bb78ce1d9c2696ed21f468dda5fdabe",
+  "output_checks_sha256": "530f48c666fec8e8344e10ccb3ff1d8747fa2ba60bc6f2bf98e8a0fc8ad977cd",
+  "receipt_helper_sha256": "4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7",
+  "resource": {
+   "Name": "MarkdownToNotebook",
+   "Version": {
+    "wolfram_inputform": "None"
+   },
+   "UUID": "84897ed5-1693-4f5b-bd08-574043e88880"
+  },
+  "build_seconds": 17.5,
+  "notebook_sha256": "bc043253d5d01545731142522f7f95451ea39998a21320b13b78b9feafd27c77",
+  "notebook_bytes": 74362,
+  "output_cells": 6,
+  "output_digests": [
+   "be46306fb35430a21049145fcce06b53cfc506428ed62be8f61075470b087acb",
+   "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+   "b652f9f5d971109e931d21ff4141084a478d01af253e59276d4ecab4ba477d01",
+   "cc4960125db5bf093f7d940defe8e4ad65a38b1a163d5b7d13fcbe8043cf2292",
+   "b776865805679b265f3f10ae447f91921dd7b84e89bac517001109bdedc6a064",
+   "0edcc3f19582d47028334f3474235a241a96ce4adab7a08838df177e3e16dcc9"
+  ],
+  "message_cells": 0,
+  "handler_events": 15183,
+  "handler_events_printed": 0,
+  "handler_tally": [
+   {
+    "wolfram_inputform": "\"General::newsym\" -> 15126"
+   },
+   {
+    "wolfram_inputform": "\"LocalObject::nso\" -> 18"
+   },
+   {
+    "wolfram_inputform": "\"DeleteFile::fdnfnd\" -> 12"
+   },
+   {
+    "wolfram_inputform": "\"MIMETypeToFormatList::fmterr\" -> 12"
+   },
+   {
+    "wolfram_inputform": "\"FrontEndObject::notavail\" -> 5"
+   },
+   {
+    "wolfram_inputform": "\"General::openx\" -> 4"
+   },
+   {
+    "wolfram_inputform": "\"ImportExport`ExtensionToFormatList::fmterr\" -> 2"
+   },
+   {
+    "wolfram_inputform": "\"OptionValue::nodef\" -> 2"
+   },
+   {
+    "wolfram_inputform": "\"General::stop\" -> 1"
+   },
+   {
+    "wolfram_inputform": "\"LibraryFunction::overload\" -> 1"
+   }
+  ],
+  "computation_ok": true,
+  "axioms_ok": true,
+  "kernelcheck_ok": true,
+  "kernelcheck_data": {
+   "MessageTemplate": "The kernel accepts all `1` declarations of `2`.",
+   "MessageParameters": [
+    59,
+    "LeanLinkTmp33687670126023945147x716334"
+   ],
+   "Module": "LeanLinkTmp33687670126023945147x716334",
+   "Declarations": 59
+  },
+  "kernel_pid": 98800,
+  "reasons": []
+ },
+ "packet_manifest": {
+  "packet": "Lemma R stage B (L1135)",
+  "note": "file_sha256 are SHA-256 of the exported file bytes; summary.json's output_digests are Wolfram Hash[String] values of each cell's InputForm string, a different digest",
+  "files": {
+   "cell-01.txt": "be46306fb35430a21049145fcce06b53cfc506428ed62be8f61075470b087acb",
+   "cell-02.txt": "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+   "cell-03.txt": "b652f9f5d971109e931d21ff4141084a478d01af253e59276d4ecab4ba477d01",
+   "cell-04.txt": "cc4960125db5bf093f7d940defe8e4ad65a38b1a163d5b7d13fcbe8043cf2292",
+   "cell-05.txt": "b776865805679b265f3f10ae447f91921dd7b84e89bac517001109bdedc6a064",
+   "cell-06.txt": "0edcc3f19582d47028334f3474235a241a96ce4adab7a08838df177e3e16dcc9",
+   "essay.nb": "bc043253d5d01545731142522f7f95451ea39998a21320b13b78b9feafd27c77",
+   "launcher.json": "9f2d58aa3737edcfcb890e86c84e005e937380324ad4c6dc02298419d4426c91",
+   "messages.sanitized.m": "56c2f45b443dc134f4e29a757cff42bef178bd3c6635e6db2d5cba0904a6937e",
+   "out.txt": "49182bd5fb649e25565e2730f2663d8cdc5a845876bf969e0086f551c9e6c9d8",
+   "summary.json": "98e6d5de4e87104cd449ae0b2f4d58a6afd0f76cb1312fa69aead53eaa5c309c",
+   "summary.raw.wl": "84fe2475acfa0710d5fcc3f2b35cb7eae8ac5b41b9cb87d47999d6a4f5391671"
+  },
+  "messages_raw_sha256_local_only": "54e14a449373c8218fa9b794d719b7592a52dcc98d9cec626095d7807ded2f06"
+ },
+ "shared_store_packet": "workers/local/ring-orbits-stageB/ (manifest sha256 7b0ac2f2b1521c422797160c73492a96d6c915019af686c76658fb62cec2fd7d)"
+}
