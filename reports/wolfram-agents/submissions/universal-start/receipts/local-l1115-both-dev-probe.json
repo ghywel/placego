@@ -1,0 +1,41 @@
+{
+ "limits": {
+  "cpu": 300,
+  "wall": 600,
+  "rss_mib": 6144,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 1024,
+  "launch_free_mib": 6144,
+  "swap_growth_mib": 512
+ },
+ "start_utc": "2026-10-29T04:41:10Z",
+ "end_utc": "2026-10-29T04:41:18Z",
+ "gate": {
+  "free_inactive_mib": 6264,
+  "swap_used_mib": 1646.81
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 8.18,
+ "maxima": {
+  "rss_kib": 4160496,
+  "procs": 5,
+  "disk_bytes": 64880,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5940
+ },
+ "cmd": "from the pipeline kit root, PATH with the elan bin first: lake env sh tests/probes/wolfram/both_dev_probe.sh (at cdbebe97) Rule30UniversalStart.lean (12068af9...) Rule30Submission.lean (17fdfbcb...)",
+ "stdout": [
+  "Rule30UniversalStart.lean sha256 12068af9b91a37602211ffb0ceb7c9d8e64e13371c938719adf4916bbfda0fae",
+  "Rule30Submission.lean sha256 17fdfbcb8833b77ee5a511d9f50f52997cf6c25429dbacb63b1b17c1e63fde30",
+  "== C: exit 0, sorry 16, warnings 16, errors 0",
+  "        1.17 real         1.06 user         0.11 sys",
+  "           319160320  maximum resident set size",
+  "== S: exit 0, sorry 16, warnings 16, errors 0",
+  "        4.57 real         3.61 user         0.94 sys",
+  "          3566272512  maximum resident set size",
+  "BOTH_DEV_PROBE_CLEAN"
+ ],
+ "launcher_sha256": "0a19314af28fd76610d8b43baa912116a615018c1c56f882ac89ac1325e4f1a2"
+}

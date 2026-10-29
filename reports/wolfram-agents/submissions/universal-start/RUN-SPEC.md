@@ -218,3 +218,47 @@ Lean, Lake or session kernel process was running.
 **Status.** `cert` is now kernel-checked. The universal start (`universal_start`, `universal_start_finite`) is
 PROVED, computer-assisted, in core Lean on the kit's `evol`. The submission form, the notebook and the portal
 remain.
+
+## The submission form, a linter warning, and stage A2 proposed (L1115)
+
+**Submission-form development probe** (`sub_dev_probe.sh`; `receipts/local-l1115-sub-dev-probe.json`). The
+submission form (b3e35fff…) was compiled under `import Rule30PrizeKit`, with Mathlib active and the 16 groups
+stubbed.
+- **Result.** 16 sorry, 0 errors, and 3.56 GB for the single process.
+- **One finding.** Mathlib's unusedTactic and unreachableTactic linters flagged the `omega` in `loop_spec`'s
+  zero case (`first | simp [loop, St.m] | omega`). Under Mathlib's simp set, `simp` closes every case.
+
+**The repair, in both forms.** The tactic order becomes `first | omega | simp [loop, St.m]`. `omega` closes
+the impossible `k + 7 ≤ 6` case and fails quickly on the others, so both tactics run in both environments. This is
+a one-line proof change, so stage 4's pass covers 32cd904f, not the final source.
+- New catalog source: `12068af9b91a37602211ffb0ceb7c9d8e64e13371c938719adf4916bbfda0fae`.
+- New submission form: `17fdfbcb8833b77ee5a511d9f50f52997cf6c25429dbacb63b1b17c1e63fde30`.
+
+**Both-forms development probe** (`both_dev_probe.sh`; `receipts/local-l1115-both-dev-probe.json`), with the
+groups stubbed:
+
+| Form | Exit | Warnings | Errors | Time | Max RSS |
+|---|---|---|---|---|---|
+| Catalog (core) | 0 | exactly 16, all sorry | 0 | 1.17 s | 319 MB |
+| Submission (Mathlib) | 0 | exactly 16, all sorry | 0 | 4.57 s | 3.57 GB |
+
+**Stage A2, proposed for GPT's read, not launched.** Two stages, run one after the other, each one attempt:
+- **A2a: the catalog module, in full.** `check_universal_start.sh` (sha256 9505d2d0…), changed only in
+  `expected_source` (now 12068af9…). Stage 4's command, layout, guards, headlines and caps (RSS 4096 MiB,
+  launch ≥ 5120). **Prediction:** about 41 s, under 1.3 GB per process, and a pass like stage 4's.
+- **A2b: the submission form, in full.** The new `check_universal_start_submission.sh` (sha256 c64d9df1…).
+  - **What it does.** Digests are checked (submission 17fdfbcb…, checker b882f252…). The form is compiled
+    under the single-file root `Rule30Submission`, with the output lib first on LEAN_PATH. Then the unchanged
+    Check.lean runs on module `Rule30Submission` with headlines `Rule30Submission.universal_start`,
+    `universal_start_finite`, `universal_start_profiles` and `cert`. The JSON guard requires one JSON line,
+    module `Rule30Submission`, a pass, replay ok, the official import, no new axioms, and exactly four passing
+    headlines.
+  - **Caps.** CPU 900 per process, wall 900, RSS 6144 MiB, file 16, disk 64, launch ≥ 6144, ongoing ≥ 1024,
+    swap ≤ 512.
+  - **Prediction.** About 90 s in all (two Mathlib-environment processes, each evaluating or replaying the
+    sixteen groups), under 4.5 GB per process, and a pass with standard axioms.
+- **Both.** Command form `env PATH="$HOME/.elan/bin:$PATH" python3 run_capped.py … -- lake env sh <wrapper>
+  <source>` from the kit root, with a fresh `--out`, and no Wolfram kernel or other Lean process running.
+  **Counterfactual:** any stop, error, guard failure or nonstandard axiom ends that stage and is retained.
+
+**Notebook (stage B).** Specified after A2, from its measured cost.
