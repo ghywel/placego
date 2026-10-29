@@ -1,0 +1,103 @@
+{
+ "stage": "L1189 repaired horizon notebook build (GC2188: once)",
+ "host": "Local (M5)",
+ "pins": {
+  "horizon_notebook_checks.wl": "003aab35ce7760fcaac2ab4245901996ecc09a1fc24adc6e4d43f6cf20364c70",
+  "horizon_notebook_control.wl": "0f066b3a5db550ce04f1de6fb8f66d0278e9e6b4585eda70985652f8c79e3fba",
+  "horizon_notebook_run.wl": "154be32878d56869d5e317c0352226bf321733bfa9e81ad22651a77ed2ec125b",
+  "notebook_receipt.wl": "4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7",
+  "essay": "203fd0a6e9b43861e85b94fb62f5e257e9712a1235cd78a9c2e3e2a79c4e1def",
+  "source": "791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110"
+ },
+ "limits": {
+  "cpu": 1200,
+  "wall": 1200,
+  "rss_mib": 5120,
+  "file_mib": 64,
+  "disk_mib": 256,
+  "min_free_mib": 1024,
+  "launch_free_mib": 6144,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 8
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 38.34,
+ "maxima": {
+  "rss_kib": 4782320,
+  "procs": 5,
+  "disk_bytes": 6818052,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5563
+ },
+ "start_utc": "2026-10-29T15:53:15Z",
+ "end_utc": "2026-10-29T15:53:53Z",
+ "gate": {
+  "free_inactive_mib": 6334,
+  "swap_used_mib": 0.0
+ },
+ "cleanup": null,
+ "stdout": [
+  "HORIZON_NOTEBOOK_INPUTS_OK",
+  "HORIZON_OUTPUT_CONTROLS_PASS",
+  "HORIZON_NOTEBOOK_PASS"
+ ],
+ "summary": {
+  "output_cells": 5,
+  "message_cells": 0,
+  "grid_ok": true,
+  "axioms_ok": true,
+  "kernelcheck_ok": true,
+  "kernelcheck_data": {
+   "MessageTemplate": "The kernel accepts all `1` declarations of `2`.",
+   "MessageParameters": [
+    324,
+    "LeanLinkTmp33687865754609862685x853018"
+   ],
+   "Module": "LeanLinkTmp33687865754609862685x853018",
+   "Declarations": 324
+  },
+  "reasons": [],
+  "build_seconds": 24.0,
+  "handler_events": 15104,
+  "handler_events_printed": 0,
+  "notebook_sha256": "ff423106bd27899f0d3a5986ed7773947225123739abc76918d50b1212de6808",
+  "notebook_bytes": 252969,
+  "output_digests": [
+   "8d8337f50f69bc968e530082caaa7bdd825a65e4fca8b469288cd7a61925e0e3",
+   "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+   "de6c8151ade4798b032cb5a435f4c1c1a8ed431a88e3f3bfda8596cf40711c37",
+   "976a447b4aa98e3e9eda34df40b51c00639c9cf49fd4556c82e17b7b4ef23151",
+   "9bfc929f415df0e0ccf9eebcc836d49913b5247364b77ddaffbe2cbb49e2e2cf"
+  ],
+  "resource": {
+   "Name": "MarkdownToNotebook",
+   "Version": {
+    "wolfram_inputform": "None"
+   },
+   "UUID": "84897ed5-1693-4f5b-bd08-574043e88880"
+  }
+ },
+ "controls_passed": 20,
+ "controls": 20,
+ "manual_reads": {
+  "output_2": "BoxData[\"True\"]",
+  "output_4": "eight keys, each exactly {Classical.choice, Quot.sound, propext}; no Missing",
+  "native_source": {
+   "sha256": "791e45ed1aef3955035989f1443f43a3427ea82b0cb01a8ad088bc221ec57110",
+   "bytes": 106307,
+   "method": "the essay.nb Input cell parsed under HoldComplete, its one long string literal exported as UTF-8 text",
+   "equals_791e45ed": true
+  },
+  "import_options": [
+   "ProjectDir",
+   "IncludeInternal -> True"
+  ]
+ },
+ "full_packet": "workers/local/l1189-notebook-pass-packet/ (MANIFEST 0a770738)",
+ "probe_packets": {
+  "default": "workers/local/l1187-probe-default-packet/ (MANIFEST b62334ed)",
+  "internal": "workers/local/l1187-probe-internal-packet/ (MANIFEST 3bcca147)"
+ }
+}

@@ -1,5 +1,7 @@
 # L1184: the horizon notebook build, frozen for GPT's read (not run)
 
+**L1189 outcome:** the one repaired GC2188 stage PASSED: 20 controls, 5 outputs, 0 Message cells, eight exact standard axiom sets, KernelChecked 324, native source byte-equal to 791e45ed ([receipt](receipts/local-l1189-notebook.json)). GPT's artifact read precedes posting.
+
 **L1187 outcome:** the one GC2182 stage FAILED at its axiom gate, because LeanLink hides names containing `.rec`. A repaired essay and its re-pinned driver and launcher are frozen in the last section, prepared and not run. The section below is the historical L1184 freeze.
 
 One stage, adapted from the arc package's final five-output stage ([arc NOTEBOOK-SPEC](../arc-codes/NOTEBOOK-SPEC.md),
