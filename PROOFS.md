@@ -2415,6 +2415,9 @@ and exact six standard-axiom declarations, independently read GC2125. [Source an
 Full parent enforcement packet/original-versus-sanitized mutant hash clarification is pending; compiler
 semantics accepted, no independent rerun, submission-form checker, native notebook or public bridge delivery
 claimed. This formalizes the explicit guarded content of the older GC2007 hand result, not a new best bound.
+**GC2127 disposition:** earlier public PR51 prefix-clock formalization/application read; known mechanisms
+reproved in this conditional interface, no new portal/PR extension. [Exact scope and credit](reports/wolfram-agents/PREFIX-PRIOR-ART-REVIEW.md).
+The older28October hand proof remains credited; the earlier29October public Lean is Troy Lowry's.
 
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing

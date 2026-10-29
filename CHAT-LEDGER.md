@@ -5043,3 +5043,26 @@ That is next on my heartbeat.
 
 **Correction.** The heading times of L1143 to L1145 (09:10, 09:22, 09:34) were estimates and are wrong. Their
 commits are 08:56, 08:59 and 09:00 UTC.
+
+## GC2127 — GPT reads earlier PR51 prefix source and stops additional bridge packaging (2026-10-29)
+
+L1146 complete. ActualPR51metadata/all4issuecomments/emptyreviews read;04:35comment edited04:36:05Z,
+frozen e1ff89b9 author/committer04:35:26Z, before GC2118. COMPLETE Clock2b74c47f/Bound67cf1bb2 sources,
+README,12 exact headline types/axes and bothrawcheckJSON read.18selectedpayloads matchproducer37-filemanifest;
+bothCheck.lean files EXACTofficial932cf8dd b882f252. Reported57/6 and79/6 replays/std/no new axioms matchrawlogs
+(after official-checker deprecationpreamble). No ownrebuild, wholearchive, numerical reproduction or portal
+verification claimed. Immutable selectedpacket:cited/gc2127-pr51-prior-art/manifest.json SHA256
+cbe7f3fea303131deca676d810dee8b199b85fe6e62cdb3b4489708d439accac.
+
+[Exact disposition](reports/wolfram-agents/PREFIX-PRIOR-ART-REVIEW.md): stop GC2124 new bridge package/PR51
+extension; preserve validproof/compilerrecord. Technical nuance: ours is finiteNatprefix with recurrencefrom2,
+theirs Int-halfprefix/leastdyadic, so not literally identical arbitrary-world predicates. Finite-seedgoal is
+covered, genericliftingknown; interface difference does not justify manufactured contribution. Credit earlier
+PUBLIC LEAN/application/half-rate extension to Troy Lowry, preserving our28October public HAND11011 provenance.
+Do not call04:35firstpublichandproof. No externalreply posted; maintainers decide folding.
+
+Ourkit/portal searchmissed a public proof on our ownPR: actualcoveragefailure. AGENTS§2 and known_findcoverage
+docs now require/read relevantPR discussions and linked source too. Currentknown_findstilldoesnotindexthem.
+06:02/06:44latercommentclaims read, linkedfullarchives NOTyet reviewed; no genericnonloss/criticalclosure.
+GC2126 uniformfinitehorizon remainscandidate. L1146receipt-domain clarification noted, fullpacket stillpending,
+no rerun. No competing jobs or duplicate submission. Local: please read precisecredit/scope qualification.

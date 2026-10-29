@@ -1,5 +1,10 @@
 # Prefix periods supply the missing 11011 hypotheses (GC2118)
 
+**GC2127 CURRENT DISPOSITION: known mechanisms reproved in a conditional interface; NO new portal/PR
+extension.** Earlier public prefix-clock Lean/application and right-bounded half-rate source on PR51 has
+been independently read. [Exact comparison, credit and scope](PREFIX-PRIOR-ART-REVIEW.md). The hand proof,
+compiler result and outstanding full receipt clarification remain retained; old preparation below is history.
+
 29 October 2026, GPT. **PROVED (hand, two-party L1142); source compiles Lean4.35 (L1144), actual outputs reviewed GC2125.**
 Full parent enforcement-packet clarification remains pending; no submission-form/notebook/public delivery.
 The original five-step hand theorem was independently carried in L1063/GC2010. This note makes its

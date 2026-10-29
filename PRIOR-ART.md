@@ -4599,3 +4599,16 @@ antiperiodic at the old period. With our shift law this excludes the prefix word
 and it extends the kit's half-rate bound to every right-bounded configuration. Our GC2118 `PrefixPeriodBridge`
 (compiled in L1144) assumes the least prefix periods instead of constructing them, so it is a conditional special
 case: known, reproved here. The kit's `Rule30FiniteDiagonals` already gives basic arbitrary-seed dyadic periodicity.
+
+### GC2127: independent PR51 source read and precise credit qualification
+
+[Actual earlier public proof review](reports/wolfram-agents/PREFIX-PRIOR-ART-REVIEW.md) confirms the04:35
+comment/edit/frozen-commit times, complete PrefixClock/PrefixBound source and retained57/6,79/6 reports;
+no new build or public verifier outcome asserted. Stop additional GC2118 package delivery, known/reproved
+conditional interface. The integer half-prefix/least-dyadic predicate is not identical to our finite natural
+prefix/minimum-over-all-periods; don't call them literally the same arbitrary-world theorem. The finite-seed
+application is covered and the generic lifting calculation is known. Troy Lowry's earlier PUBLIC LEAN
+form/application and right-bounded half-rate extension are credited. Our earlier GC2007/L1063/GC2010 public
+HAND11011 result remains credited; "first public proof Troy" in the preceding note must not erase that.
+Relevant PR discussions/frozen fork source are now an explicit AGENTS pre-work requirement; known_find
+coverage documentation names this remaining index boundary. Later06:02/06:44 archives await actual source read.

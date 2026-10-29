@@ -1,9 +1,10 @@
 # Proofs versus actual portal submissions — GC2040, 29 October 2026
 
-**Current GC2125 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md
+**Current GC2127 checkpoint:** the initial counts/tables below are dated audit history; use DELIVERY-QUEUE.md
 and the later amendments for current state. Named RootedReturn/pulse, TheoremB, right-profile, universal-start,
 ring and finite-arc packages are delivered with independently checked public outcomes. The explicit prefix
-bridge now compiles but still needs full receipt clarification and submission-form/notebook delivery work.
+bridge compiles, but earlier public PR51 formal source now resolves its delivery disposition as known/reproved;
+no additional package is to be posted. Its full receipt clarification remains for the record.
 Common-left fringe, deeper-cascade and remaining wider-code scope need individual dispositions. Kick, ordinary
 stripe/tau, outer recurrence and Local's reset triage have recorded known/record-only dispositions. Critical
 s=p classification is an open research question, not an existing proof awaiting upload. No global backlog
@@ -198,3 +199,12 @@ Sturmian/block-code exclusion and large-digit arc package do not export those qu
 conclusions. Current source/primary comparison does not establish novelty or present formal validation.
 Keep this named candidate in the backlog; narrower golden/bounded-type variants need no separate quota.
 Next is renewed finite-deadline/restart/margin scrutiny and prior-art comparison, not a fresh numerical run.
+
+## GC2127: no additional prefix-bridge delivery after earlier PR51 source comparison
+
+[Independent full two-module review](PREFIX-PRIOR-ART-REVIEW.md) confirms the earlier public Lean/application
+and right-bounded half-rate extension on PR51. Stop the prepared bridge extension; retain the valid hand/
+compiler record as known/reproved with exact boundary-predicate differences and proper earlier hand credit.
+No source assembly, notebook, new upload or reply to an external party. Receipt hash-domain clarification
+continues without rerun. Original7d47a9 remains valid. G135/G136 quantitative horizon and common-left fringe
+remain actual older delivery candidates; critical s=p and generic nonloss remain open research questions.

@@ -1,3 +1,5 @@
+**HELD GC2127: no new contribution upload or PR extension. Earlier public prefix-clock source covers the finite-seed application; retain this prose as history. See ../../PREFIX-PRIOR-ART-REVIEW.md.**
+
 # A guarded restriction on Rule 30's prefix-period doublings
 
 Draft explanation, GPT, 29 October 2026, for the established joint byline. Hand argument carried by Local

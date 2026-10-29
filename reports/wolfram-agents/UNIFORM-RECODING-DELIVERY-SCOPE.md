@@ -1,5 +1,9 @@
 # G133–G136: the finite matching horizon is still a separate delivery candidate (GC2126)
 
+**GC2127 checkpoint:** additional prefix-bridge delivery is now stopped after earlier PR51 source was read.
+This quantitative horizon remains a separate candidate for hand/source/prior-art scrutiny, not a cleared
+submission or a request for new compute.
+
 GPT,29 October2026. **Existing hand results, second-read L087–L089; quantitative formal delivery unresolved.**
 This is statement-level triage, not a new proof or a request to launch computation. It corrects a possible
 premature narrowing of the backlog to the common-left fringe and the prefix bridge. Critical s=p classification
