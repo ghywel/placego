@@ -1,0 +1,92 @@
+{
+ "stage": "L1174 horizon integration stage B (L1173 freeze, GC2165 plan)",
+ "host": "M5 (Local)",
+ "wrapper_sha256": "f4d65159b5db5ac9ba1a5ac8a1102eb3c4df7640376b44e0fb697a07dac2255a",
+ "modules": {
+  "DenominatorBootstrap": {
+   "heads": 3,
+   "output": "'DenominatorBootstrap.four_steps' depends on axioms: [propext, Quot.sound]\n'DenominatorBootstrap.final_deadline' depends on axioms: [propext, Quot.sound]\n'DenominatorBootstrap.final_visit_contradiction' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "FiniteHorizonSelection": {
+   "heads": 4,
+   "output": "'FiniteHorizonSelection.coefficient_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonSelection.crossing_before' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonSelection.crossing_scale' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonSelection.successive_ge' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "ContinuantSequence": {
+   "heads": 5,
+   "output": "'FiniteHorizonContinuantSequence.denominator_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_successive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.threshold_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "OppositeArcStrip": {
+   "heads": 5,
+   "output": "'OppositeArcStrip.visit_difference_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.negative_error_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.signed_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.exact_negative_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.width_endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "OppositeCarryArcs": {
+   "heads": 4,
+   "output": "'OppositeCarryArcs.error_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.phase_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.error_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.visit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  },
+  "ActualOppositeCarry": {
+   "heads": 4,
+   "output": "'FiniteHorizonActualOpposite.numerator_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.error_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.error_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.visit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+  }
+ },
+ "limits": {
+  "out": "FRESH",
+  "cpu": 300,
+  "wall": 600,
+  "rss_mib": 4096,
+  "file_mib": 16,
+  "disk_mib": 64,
+  "min_free_mib": 2048,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 128,
+  "track_tree": true,
+  "max_procs": 4,
+  "cmd": [
+   "sh",
+   "check_horizon_integration_b.sh",
+   "finite-horizon"
+  ]
+ },
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 15.25,
+ "maxima": {
+  "rss_kib": 2475968,
+  "procs": 3,
+  "disk_bytes": 4701170,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5675
+ },
+ "gate": {
+  "free_inactive_mib": 6477,
+  "swap_used_mib": 1099.12
+ },
+ "start_utc": "2026-10-29T13:41:02Z",
+ "end_utc": "2026-10-29T13:41:18Z",
+ "supervisor_cpu_s": 0.18,
+ "out_txt": "STAGE_A_OBJECTS_OK 13\nSOURCES_OK 25 axiom reports expected\nLean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n== DenominatorBootstrap\n'DenominatorBootstrap.four_steps' depends on axioms: [propext, Quot.sound]\n'DenominatorBootstrap.final_deadline' depends on axioms: [propext, Quot.sound]\n'DenominatorBootstrap.final_visit_contradiction' depends on axioms: [propext, Quot.sound]\nMODULE_PASS DenominatorBootstrap\n== FiniteHorizonSelection\n'FiniteHorizonSelection.coefficient_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonSelection.crossing_before' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonSelection.crossing_scale' depends on axioms: [propext, Quot.sound]\n'FiniteHorizonSelection.successive_ge' depends on axioms: [propext, Quot.sound]\nMODULE_PASS FiniteHorizonSelection\n== ContinuantSequence\n'FiniteHorizonContinuantSequence.denominator_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.denominator_successive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonContinuantSequence.threshold_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ContinuantSequence\n== OppositeArcStrip\n'OppositeArcStrip.visit_difference_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.negative_error_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.signed_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.exact_negative_return' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeArcStrip.width_endpoint_control' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS OppositeArcStrip\n== OppositeCarryArcs\n'OppositeCarryArcs.error_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.phase_difference' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.error_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OppositeCarryArcs.visit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS OppositeCarryArcs\n== ActualOppositeCarry\n'FiniteHorizonActualOpposite.numerator_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.error_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.error_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FiniteHorizonActualOpposite.visit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\nMODULE_PASS ActualOppositeCarry\nHORIZON_INTEGRATION_B_PASS (6 modules)\n",
+ "objects": {
+  "lib/ActualCarrySpacing.olean": "c8166684f47203e955e6268d7781ab876ddd4bb1f1bb7aabe6d79a0c7df5eb66",
+  "lib/ActualContinuants.olean": "8f55f2caca30dec40f94b563514a0d8e10c66ecc3a1c12d49b58e31eb8029dd5",
+  "lib/ActualOppositeCarry.olean": "43b84823b7c83363ffb46dc8a10fcaf5b821f328d925e75a3ecbecc787f61832",
+  "lib/ArcBreakBounds.olean": "48c36b7523beb10602646c9102e1c77c0d2a5478a07bd62bb12d4f1d3ae34e1d",
+  "lib/ArcBreakSequence.olean": "c683609e3af6c616445f80d2a990f4bcd32dd631561741ee009bfa8463be429d",
+  "lib/ArcContinuantsDraft.olean": "36b100804fdd31545a51bb5b90fd71673719da37e77e4f77e5745767b356e8d8",
+  "lib/ArcCoverDraft.olean": "4ba756c6476aa81f094ec7acffd0e27afd5b7b1b9baf4cfe33f1cb05c40db78b",
+  "lib/ArcDeterminantDraft.olean": "6e6b17632f7436f85f043b6f6608474bf730c75a562c9d26a15a54e88653dc74",
+  "lib/ArcRotationDraft.olean": "bc6d79c9cbf12e1ed10deb21d6a774464ee2fd5d8eea8d4d8836ba9a76cae8a8",
+  "lib/ArcStepCodeDraft.olean": "315adc5d8a6df69981275466ce0254612a3b54f688de313de4e189bce1603c94",
+  "lib/CarryReturnSpacing.olean": "86750af7063e00867ff8a44b1c14bcdd36a16a79009b11767486ea25754e65c2",
+  "lib/ContinuantSequence.olean": "53e20668babd1f7f46be58365c2034a313dac8b2e6046b30f079157cebfdbb9a",
+  "lib/DenominatorBootstrap.olean": "f5c9957f608cdd4f861ed969ba33df4e3a61c41600afde0c0b7dd301676fa409",
+  "lib/FiniteHorizonBounds.olean": "fb472c9e76d1f3ed212df2dab24d153fb607c4bfc15378b24fd698d439eb590e",
+  "lib/FiniteHorizonSelection.olean": "accab76bdf9eebed23f84073d5f1b8b6edd604651b58d0fc3a23e9187e41dd72",
+  "lib/MechanicalCarry.olean": "861c510464432d8377bb10f5fa94cab419d75783bdf533c100ec10067301a4bc",
+  "lib/OppositeArcStrip.olean": "72951e7573614a908647267efeaf6f39e0ecb6eb01e83b58d004ca825bc639c8",
+  "lib/OppositeCarryArcs.olean": "09e8ae499734c3bfba22d0012d686105171ed20b9c07756d1372f399b1b887b3",
+  "lib/SharpAdjacentReturn.olean": "bd397fdaa5f631f3ce7bf2bb587f5087427cfee901980c9cbfeaf2531547c0cc"
+ },
+ "full_packet": {
+  "where": "the shared store, workers/local/l1174-horizon-b-packet/",
+  "manifest_sha256": "18a8cdafdd83cbbd751e407e484b2c9beeafd03d2f9ed076a27a5853c35ef5bd"
+ }
+}
