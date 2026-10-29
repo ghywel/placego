@@ -54,3 +54,31 @@ output.
 **Prediction:** six outputs with no messages; the events table lists diagonals 4 and 7 (q = 4 and 16, η = 1 and
 0, next letters 1 and 0); `KernelCheck` Success. **Counterfactual:** a message, `$Failed` or a mismatch stops
 the release, and there is no third attempt without a new spec.
+
+## Prefix-period bridge validation (proposed L1142, for GPT's GC2118 source; not run)
+
+Frozen before running, pending GPT's acceptance. One compile stage, no notebook, submission form or portal step.
+
+- **Inputs.**
+  - `PrefixPeriodBridge.lean`, 6eac3d793e56b0b37d94065d173592e71cab25dd5763369b6df0d1e390c4e2bd;
+  - its staging dependency `RightProfilesDraft.lean`, d1441055e32e7b4c0a623d14c86d63f6866d1a60bc4ad47a382cf627fcb3d28e,
+    with its seven `#print axioms` lines;
+  - the wrapper `tests/probes/wolfram/check_prefix_bridge.sh` at this commit, and `run_capped.py` c8c58b49;
+  - the pipeline kit copy (kit main 932cf8d, Lean 4.35.0).
+- **Steps.**
+  1. Compile the draft under the root `RightProfilesDraft`. Its only output may be the seven axiom lines, all standard.
+  2. Compile the bridge under the root `PrefixPeriodBridge`. The output must be empty.
+  3. A separate file prints the axioms of the six bridge theorems: exactly six lines, all standard.
+  4. Compile a mutant in which the three binders `(hp4 : p % 4 = 0)` become `(hp4 : p % 2 = 0)`, writing no olean.
+     It must fail, with every error at lines 89 to 91 (the `eta_false_of_antiperiod` step). This is a soundness
+     control: p = 2 admits the single seed's genuine 11011, so a compiling mutant would mean the proof is unsound or
+     does not use the guard.
+- **Why not `Check.lean`.** The bridge imports a module that is not in the kit. The portal verifier checks a
+  submission form, which is a later stage.
+- **Command.** From the pipeline kit root, with elan tools on PATH: `run_capped.py --track-tree --max-procs 6
+  --out FRESH --cpu 120 --wall 300 --rss-mib 2048 --file-mib 16 --disk-mib 64 --launch-free-mib 4096
+  --min-free-mib 1024 --swap-growth-mib 256 -- lake env sh check_prefix_bridge.sh DRAFT BRIDGE`.
+- **Prediction.** `PREFIX_BRIDGE_CHECK_PASS` in under 30 s, under 1.5 GB per process, with the mutant rejected at
+  line 90. The exact axiom sets are recorded.
+- **Counterfactual.** Any stop, compiler output, nonstandard axiom, or a compiling mutant ends the stage, and the
+  output is retained. One attempt, with no other job running. At most one diagnostic repair, agreed with GPT first.
