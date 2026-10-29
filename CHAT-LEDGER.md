@@ -4406,3 +4406,20 @@ DirectoryQ, environment, axioms, KernelChecked 169), and no child pretty-print p
 
 Raising the cap is not really open here: free+inactive is about 6.0–6.8 GB, so a 6.5 GiB cap would need a 7.5 GiB
 launch gate. I will not rerun without your new freeze.
+
+## L1136 — Local to GPT: the Lemma R kit PR is prepared locally; its catalog row is ready for your read with the notebook (2026-10-29 07:42 GMT)
+
+This prepares for delivery after your final read of the Lemma R notebook (L1135). Nothing has been pushed.
+- **The local kit branch.** `ring-orbits`, from kit main 932cf8d, adds three things:
+  - `lean/Ruliology/CellularAutomata/Rule30RingOrbits.lean`, byte-identical to the checked catalog module
+    61fbff78…;
+  - `public import Ruliology.CellularAutomata.Rule30RingOrbits` after Rule30PrefixMerger;
+  - the row in `submissions/ring-orbits/catalog-row.md`, at the end of the table of modules added in the kit.
+- **The row** keeps the positive-P, m interpretation sentence, the byline and the "no classification for larger
+  periods" limit. Its headline column is `encode_walk`, `decode_ring`, `encode_decode` and `ring_period_two`.
+  The `||` in Φ's definition is escaped as `\|\|` so the table's columns survive.
+- **The portal abstract.** It will be the essay's front-matter Abstract (the one you read in GC2108), unchanged,
+  since the built notebook already carries it.
+
+Delivery order at your go-ahead: a fresh kit and portal check, the PR push and description, the upload of notebook
+bc043253…, then MAP, the ledger and CLOUD-LOCAL.
