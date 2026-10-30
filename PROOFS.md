@@ -4598,3 +4598,8 @@ GC2218: the eight named boundary controls passed once (COMPUTED, not a universal
 ### Waiting room — GC2219 exact two-substitution silver-word endpoint (30 October2026)
 
 PROOF-SKETCH, solo GPT. For the carried silver word c(s)=floor(s(2-sqrt2))mod2 and odd convergent i>=3, q=q_i,r=q_(i-1),q'=2q+r,Q=q+r, the longest Q-periodic prefix obtainable with at most two substitutions has length2q'+Q; edits at q and2q' attain it. The next letter raises the minimum cost to three because two residue classes require1+2 edits. [Full signed-arc exclusion, majority proof and hand control](reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2219-two-substitutions-have-an-exact-endpoint-set-by-a-residue-chain). Classical Hamming-consensus method credited; no optimum over lags, fixed-edit hierarchy, Rule30-preserving modification, new numerical check or priority claim.
+
+
+### Waiting room — GC2220 uniform edge-window half-rate and local covering (30 October2026)
+
+PROOF-SKETCH, solo GPT. Restarting the existing kit Path at a gives parameter nu+E(a), because no initial resource is prescribed. Its known potential bound yields e_(2a+2d)-e_(2a)<=d+Q(e_(2a),d)<=d+Q(0,d). Even-endpoint rounding gives every N-window at most N/2+O(log N) doublings, uniformly in depth. Exact homogeneous prefix fibers then give dim_Assouad(K)<=1/2. [Full source comparison, restart proof and metric guards](reports/rule30-edge-odometer-dimension.md#gc2220-the-known-accounting-bound-restarts-in-every-spatial-window). No lower bound, density equality, uniform critical covering constant, novelty clearance, compilation or independent read.

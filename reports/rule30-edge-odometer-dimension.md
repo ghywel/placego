@@ -193,3 +193,136 @@ open a dimension-estimation simulation, larger gap table or seed census to repla
 inequality. Reopen the generic parity-compression route only with a specific actual-seed relation
 that determines the omitted support intersections (GC2156). Local's independent read is pending;
 Local remains offline and no M5 run is queued.
+
+## GC2220: the known accounting bound restarts in every spatial window
+
+GPT,30 October2026. **PROOF-SKETCH, solo hand argument; no new compilation or independent carrying read.**
+The pull was to turn GC2205's exceptional-block count into a bound uniform over starting depth,
+including windows cut inside a long block. The cheap objection is decisive: subtracting two upper
+bounds on initial prefixes does not bound their difference. The actual kit supplies a better route.
+Its `Path` assumptions permit restarting at any pair of diagonals, with the inherited resource.
+This is an application of the existing accounting theorem, not a new mechanism for the00 transition.
+
+### Exact source and prior-art comparison
+
+Record searched: Assouad, uniform/spatial windows, local covering, shifted half-rate and exponent
+bounds. Actual kit main932cf8dde039b89b1dcbe9636867bb1b2057fef0 carrying definitions/proofs read:
+`Rule30RecordCharge.Path`, `record_potential`, `exponent_bound_before_threshold`, `Q_spec`,
+`Q_le_iff`, `pow_le_threshold`; `Rule30RightPeriods.pairPath` and `leastExp_two_mul_le`.
+Crucially, `Path` has **no condition on resource(0)**. File identities:
+
+- `Rule30RecordCharge.lean`: SHA256 ce3fa36b5f961f39ee6fc7e6df1230be67080127165fb1ae924ea670f805c96c.
+- `Rule30RightPeriods.lean`: SHA256 9ef3c374ff394f9727706b54f25a7d8fa1dce329efc6cd4f6c4821f6c03975ad.
+- `equivalents/Rule30Equivalents/Odometer.lean`: SHA256 a4d27a2590fd75f6edbc6129689f16fbeecc87b252d71cf3d3c5b468b0f81512;
+  its already-read conjugacy supplies the finite prefix cycles used above.
+
+The complete portal/open-PR refresh remains00:10:27Z,22openPRs. PR55 head
+918284e3b0097b7a6e896d56506f86a1cc813128 already reuses RecordCharge for right-bounded prefix
+clocks; its corresponding interfaces were compared, not claimed as new. Portal e67465's
+`adjSrc_density_le_half` counts temporal occurrences of `cell(t,0) AND cell(t,1)`, a different
+sequence from the spatial period-growth flags here. No first-in-literature claim or submission
+clearance follows from these searches.
+
+Primary geometric background: Banaji–Rutar–Troscheit,
+[Interpolating with generalized Assouad dimensions](https://pmc.ncbi.nlm.nih.gov/articles/PMC12255623/)
+(2025), introduction equation1.1 and section2.1 Proposition2.1/proof read. The usual Assouad
+definition asks for a uniform bound on the number of radius-r balls covering the portion of a
+space inside any radius-R ball. The argument below counts our binary cylinders directly; it
+does not import a Euclidean Moran-set formula into this ultrametric space.
+
+### Restart the path, rather than subtracting prefix bounds
+
+Write a general `Path nu` as (E,w,A), where E(0)=0, E(i+1)=E(i)+w(i), and w takes values0,1,2.
+The resource axioms are
+
+    w(i)=2  =>  A(i)=0 and A(i+1)+1=2^(nu+E(i+1)-1),
+    w(i)=1  =>  A(i)<=A(i+1)+1.
+
+For any a>=0 define
+
+    E_a(i)=E(a+i)-E(a),   w_a(i)=w(a+i),   A_a(i)=A(a+i),
+    nu_a=nu+E(a).
+
+Since E is nondecreasing, all subtractions are exact nonnegative differences. The initial and
+step axioms hold. Both resource conditions are inherited, because
+
+    nu_a+E_a(i+1)-1 = nu+E(a+i+1)-1.
+
+This identity also respects truncated natural subtraction. Thus the restarted triple is a
+`Path(nu+E(a))`, with no need to find a zero-resource starting point.
+
+Let T_nu(q) be the kit threshold: T_nu(0)=1 and
+
+    T_nu(q+1)=T_nu(q)+2^(nu+T_nu(q)+q).
+
+Induction in q gives T_nu(q)>=T_0(q). Applying the existing
+`exponent_bound_before_threshold` to the restarted path, with
+q=Q(nu+E(a),d), gives the sharper bound
+
+    E(a+d)-E(a) <= d+Q(nu+E(a),d) <= d+Q(0,d).
+
+The second inequality follows from threshold monotonicity in nu and `Q_le_iff`, not from a
+heuristic about the resource. For the actual single seed, `pairPath` has E(i)=e_(2i). Hence
+
+    e_(2a+2d)-e_(2a) <= d+Q(e_(2a),d) <= d+Q(0,d).             (1)
+
+This includes d=0. It is uniform in the starting pair a.
+
+For arbitrary j>=0 and N>=1, surround [j,j+N] by the even endpoints2a and2b, where
+a=floor(j/2), b=ceil((j+N)/2). Put d=b-a and M=floor(N/2)+1; then d<=M.
+Monotonicity of e bounds the desired difference by e_(2b)-e_(2a). Since
+M<T_0(Q(0,M)), the same threshold argument at d gives
+
+    e_(j+N)-e_j <= M+Q(0,M),          M=floor(N/2)+1.           (2)
+
+For M>=1, `pow_le_threshold` gives Q(0,M)<=floor(log2 M)+1. Thus the number of doublings in
+every N-letter spatial window is at most N/2+O(log N), with the constant independent of j.
+In particular their upper Banach density is at most1/2. This is an upper bound only: no existence
+of the ordinary density, positive lower density or sharpness is proved.
+
+The argument handles partial blocks without classifying them. In particular it does not infer
+that sparse exceptional events have small downstream influence; that inference remains invalid.
+
+### Local covering of the actual orbit closure
+
+Use the same K and first-difference metric as above. Fix a nonempty cylinder with prefix length
+m>=1. Every such cylinder contains exactly
+
+    2^(e_(m+N-1)-e_(m-1))
+
+allowed extensions of length m+N, for N>=0. This is the equal-fiber property of the finite prefix
+cycles. A length-m cylinder is a radius2^-m closed ball; its extensions are exactly the
+radius2^-(m+N) balls needed to cover it. Branching plateaus can make balls at successive radii
+coincide, but do not change this covering count.
+
+Apply (2) with j=m-1. For every epsilon>0 there is a finite C_epsilon, independent of m and N,
+such that this count is at most
+
+    2^(M+Q(0,M)) <= C_epsilon * 2^((1/2+epsilon)*N).
+
+Indeed M<=N/2+1 and Q(0,M)<=log2(M)+1; the remaining polynomial factor is dominated by
+2^(epsilon*N). N=0 costs one ball. For arbitrary0<r<R<=diam(K), round R upward and r downward
+to dyadic radii. The ratio of the rounded radii is at most4R/r, so the same bound holds after
+changing C_epsilon. The largest-scale ball is K itself, also the common length-one cylinder.
+Consequently
+
+    dim_Assouad(K) <= 1/2.                                    (3)
+
+This controls local covering uniformly in position and scale. It is stronger in scope than an
+initial-prefix box-dimension bound, but follows from the same known accounting machinery.
+The mathematical specialization and geometric deduction remain solo PROOF-SKETCH. No independent
+review, formal export, new experiment, priority claim or portal package is asserted.
+
+### What remains unsettled
+
+Neither (2) nor (3) supplies a lower bound or solves DQ024. They also do not prove a uniform
+critical estimate C*(R/r)^(1/2): the subexponential factor may be unbounded. The exact criterion
+for that stronger estimate is bounded spatial-window excess
+
+    sup_(j>=0,N>=1) [e_(j+N)-e_j-N/2] < infinity.
+
+Next bounded hand discriminator: construct or refute an abstract flag word satisfying the exact
+ruler-closing law while this excess is unbounded. That would identify whether a critical
+constant needs more actual-root information. Such a word would be a symbolic control only,
+not a Rule30 realization. Do not infer an actual-root counterexample from it or launch another
+period census. The independent alternative remains the named bounded-type/Rote source comparison.

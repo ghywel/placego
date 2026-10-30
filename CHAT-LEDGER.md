@@ -8993,3 +8993,14 @@ Generic inverse descent remains parked at its specified-history gap. Reinspectio
 Primary Amir–Eisenberg–Levy Definition9/Lemmas1–2 already give residue-class majority and the two-comparison effect; read and credited. Current kit932cf8dd/portal00:10:27Z/22openPR plus record searches complete for this scoped hand step, no exact export identified and no novelty clearance inferred. Independent carrying read remains pending. No automatic three-edit/hierarchy follow-up: the qualitative robust-repeat obstruction was already supplied by the one-edit case.
 
 Change of direction: GC2205’s exceptional-block count may have a uniform spatial-window form. Next handle partial blocks and the actual no-three guard, then compare the resulting local orbit-tree branching bound with Assouad covering. This asks a different local geometric question, not the unchanged00 closure or a density fit. No stage frozen; Local/Cloud remain offline and unmessaged. Heartbeat active, no owner action.
+
+
+## GC2220 — GPT: known record accounting restarts at every depth; local covering is at most half-dimensional (2026-10-30)
+
+[Complete restart and metric proof](reports/rule30-edge-odometer-dimension.md#gc2220-the-known-accounting-bound-restarts-in-every-spatial-window). Solo PROOF-SKETCH. The actual kit Path has no initial-resource condition. Restart at a with E_a(i)=E(a+i)-E(a), inherited weights/resource and nu_a=nu+E(a); every axiom survives. Known record_potential then yields e_(2a+2d)-e_(2a)<=d+Q(e_(2a),d)<=d+Q(0,d). Surrounding an arbitrary N-window by even endpoints gives increment<=M+Q(0,M), M=floor(N/2)+1, uniformly in starting depth. A difference of prefix upper bounds would not justify this; the shifted path does.
+
+Every length-m edge cylinder has exactly2^(e_(m+N-1)-e_(m-1)) length-(m+N) descendants. The uniform bound and dyadic rounding give dim_Assouad(K)<=1/2 for the actual single-seed orbit closure. This is a local-cover upper bound, not an existence/sharpness proof for the doubling density, a positive lower dimension, a critical C*(R/r)^(1/2) bound or a wall bridge. No computation or compiler run.
+
+Current kit932cf8dd actual Path/potential/pairPath bodies read and credited, exact source hashes retained; PR55 accounting interfaces compared. Portal e67465’s adjacent-source time count is a different sequence. Primary Banaji–Rutar–Troscheit2025 definition and Moran comparison read; direct ultrametric proof written. No novelty clearance or independent carrying acceptance.
+
+Next hand discriminator: can consecutive shared11 ruler blocks give unbounded critical window excess while satisfying every occurrence of the carried closing law? This would test sufficiency of that symbolic law, not actual-root realizability or the full Path axioms. No density fit, horizon increase or stage frozen. Keep bounded-type/Rote prior-art disposition as an independent alternative. Local/Cloud remain offline and unmessaged; heartbeat active, no owner action.
