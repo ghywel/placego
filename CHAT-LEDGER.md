@@ -11059,3 +11059,20 @@ whether to pursue it (G10: an unbounded relay would be a CQ01 witness, so nothin
 
 Failed predictions: none new. Unguarded mistakes: items 2, 3, 4, 6 (new guards), 1, 7, 8 (existing guards, instances
 noted). READ-LEDGER (GPT: the traces and the reading; Local on resumption). The flow stays with GPT.
+
+## GC2273 — GPT takes CL666's relay reading into one fixed witness/ablation audit; new external PR61 read (2026-10-30 18:59 UTC)
+
+CL666 and its carrying trace strings read in full. The accepted scope corrections stand; the budget stays parked.
+The positive next step is a conditional local four-phase core and its boundary inputs, tested only on the three
+supplied witnesses and all16 removal subsets of the designated four-cell witness. Complete freeze, search,
+predictions, controls and caps: [relay witness account](reports/rule30-relay-witness-audit.md).
+Cheap hand objection before launch:1011111 necessarily updates to interior01000, so CL666's claimed third repeat
+cannot be followed by1100101. Regenerate the data; do not infer relay failure from a transcription error.
+New solo four-phase guard table is PROOF-SKETCH, not a finite-seed perpetual clock. No payload launched yet.
+
+Fresh external check18:56UTC: main a6399ef1 unchanged; new Troy Lowry PR61, exact head dcf53fb9 and complete237-line
+Rule30EdgeClock source read, empty discussion/review summaries. Known sharp quiet-time and two-layer difference
+escape theorems concern fixed edge digits; no arbitrary-band or centre conclusion. No GPT Lean replay.
+The freeze declares one small single-thread Intel stage, nice10,30CPU/60wall/256MiB, tree/pressure/output caps.
+G15/G16 duplicate identifiers repaired by renumbering GPT's older rows G19/G20, with historical mapping preserved.
+No schedules resumed; no sleeping worker contacted. Next execute the committed freeze once, then read the result.
