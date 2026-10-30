@@ -16,13 +16,14 @@ with `prefixExp g x (2 * m) ≤ m + Q 0 m`, the kit's record-charge bound. That 
 * `after11_order`: after two doublings from period `M = 2 ^ e ≥ 4`, the next bit has order at least `M - 2` at
   length `4 M`.
 
-Why: excess changes only at doubled pairs. Take the stretch after the last visit to excess 1 before a first visit
-to excess 3. It begins with two doublings, which `no_three` forces to be followed by a pair doubling only its second
-bit. The first bit's order then starts at least `M - 2` (`after11_order`) and must count down to 0, at most one per
-pair (`order_countdown_gate`, `after01_double_iff`), before a first bit can double again. After the last such pair,
-the last bit's resource is maximal (`order_of_antiperiod`) and must count down to 0 (`order_countdown_gate`,
-`order_reset_before_gate`). The two countdowns cost at least `2058` pairs in all. The last-visit argument was found
-independently by Claude and GPT (OpenAI) in the shared research record.
+Why: excess increases only at `11` pairs, and `00` pairs lower it. The last-visit selection isolates an interval of
+constant excess 2 between two bounding `11` pairs: take the stretch after the last visit to excess 1 before a first
+visit to excess 3. It begins with two doublings, which `no_three` forces to be followed by a pair doubling only its
+second bit. The first bit's order then starts at least `M - 2` (`after11_order`) and must count down to 0, at most
+one per pair (`order_countdown_gate`, `after01_double_iff`), before a first bit can double again. After the last
+such pair, the last bit's resource is half its period minus one (`order_of_antiperiod`) and must count down to 0
+(`order_countdown_gate`, `order_reset_before_gate`). The two countdowns cost at least `2058` pairs in all. The
+last-visit argument was found independently by Claude and GPT (OpenAI) in the shared research record.
 
 The file contains Package A unchanged, with its copies of the kit's `Rule30RecordCharge` and
 `Rule30DifferenceOrder`, which the portal verifier's kit predates; only `Rule30Prize` is imported. Nothing is claimed

@@ -1,5 +1,5 @@
 #!/bin/sh
-# check_gate_clocks_nested_submission.sh (Local, L1245): the one official-checker stage for the single-file nested
+# check_gate_clocks_nested_submission.sh (Local, L1245/L1247): the one official-checker stage for the single-file nested
 # gate-clock submission (Package A plus the nested thresholds, L1244). Adapted from check_gate_clocks_submission.sh
 # (L1217/L1220). Two Lean workload children, in order: compile the frozen Rule30Submission.lean into a fresh, empty
 # library under the root Rule30Submission; then run the kit's unchanged Check.lean on that module with --claim partial
@@ -15,7 +15,7 @@ set -eu
 (ulimit -t 60; python3 - "$1" "$KIT_ROOT/Check.lean") <<'PREP'
 from pathlib import Path
 import hashlib, json, os, re, sys
-SOURCE = 'e9687e872c127c3d8a1783383e3f7abe5d1511e363e080d4c34ca9d00839d9fb'
+SOURCE = '58e04ef5574d8c059c2a98b9b160f2743778d3aee204635dc706c0e7f78471ad'
 CHECKER = 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905'
 HEADLINES = ['Rule30Submission.' + x for x in ['prefixExp_le_add_two', 'first_excess_three', 'no_three', 'after01_double_iff', 'after11_order']]
 def pinned(p, digest, what):
