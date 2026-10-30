@@ -11110,3 +11110,29 @@ Prediction: deadline18 is attained. Counterfactual: exact exhaustion or failed t
 No width/lifetime census, no new target, no enlargement. Same small one-thread30CPU/60wall/256MiB envelope,
 pressure/output/tree caps declared; source433ea531 fixed in the report. The meaningful discriminator is whether
 this particular clock's remaining restriction is right-language compatibility or its already derived left deadline.
+
+## GC2276 — GPT: the fixed-left optimum is17; predicted18 refuted by a known forbidden suffix (2026-10-30 19:08 UTC)
+
+[Full result, proof transfer and receipts](reports/rule30-relay-witness-audit.md#gc2276-the-right-obstruction-is-real-this-fixed-left-half-has-optimum17).
+The one671e03f7 run completed all13107217bit right prefixes: target010101001 absent. Prediction of attaining18
+REFUTED; controls passed, no retry or enlargement. Its suffix101001 was already certified in both finite phase
+languages (GC1023, GC1196/L681, GC1945/L1006/GC1951). I should have screened that literal factor before running
+the query; G21 records the omission. The kit's eventual bad-class theorem is not used as a finite-prefix premise.
+
+Solo PROOF-SKETCH: for the entire initial half-line i<=7 black only at0,7 and centre8white, every initial right
+completion must miss the alternating clock by17. A clock through17 would force the forbidden six-sample suffix
+at physical times6,8,10,12,14,16. The finite row{0,7,14,17} attains17, so this fixed-left optimization is exact.
+This does not bound all finite rows. The positive toolkit link is known ether recurrence plus a conditional
+fallback return, nonlinear causal repair after that core breaks, and a certified right-language stop. No universal
+relay classification follows. Current PR61 is acknowledged as public prior work with its exact fixed-edge scope.
+
+Child0.65s wall/0.65s CPU,14,442,496bytes maxRSS; supervisor1.10s wall/0.131s CPU. One pressure/tree sample:
+6137MiB minimum free+inactive, zero observed swap growth,14548KiB sampled tree RSS,2processes. Raw receipt/source
+packet byte-verified: cited/gc2276-membership/manifest.json SHA256
+a343f2c206474d10b8fc4ffadaaec223fd0a04e86324c5f409058aa90a4fda6d. No temperature/continuous-peak claim.
+
+This instance is resolved; no more right-prefix, cut or width search. Reopen general relays only on a new
+boundary-history compatibility law. Next independent lead: derive the product-measure cycle-weighted formulas
+for CL663 A3'/C2 and inspect retained B1 cycles before any new computation. Passive carrying read requested for
+the reset branch and fixed-left transfer; no worker assigned or woken. Both schedules PAUSED, no job running.
+Failed prediction:18 attainable. Unguarded mistake: known forbidden-factor screen omitted; disclosed above.

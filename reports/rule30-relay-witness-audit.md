@@ -316,3 +316,82 @@ that per-process CPU is an aggregate tree cap; no thermal monitoring claim.
 Fresh headroom is measured immediately before this freeze and again by the
 launch gate:6051MiB free+inactive,161.25MiB swap, load2.79/2.70/2.27 at preflight.
 This is a new, justified stage; GC2273 is not being rerun.
+
+## GC2276: the right obstruction is real; this fixed left half has optimum17
+
+The single671e03f7 execution completed and tested all131072 prefixes, with
+zero matches to010101001. The prediction of attaining18 is REFUTED. There
+was no failed control, execution failure, rerun or expansion. The finite
+enumeration is COMPUTED; it is not a Lean replay or a fresh formal certificate.
+
+The target contains101001 in positions3..8, corresponding to physical white
+times6,8,10,12,14,16. This is exactly the already certified finite forbidden
+word used in GC1023, GC1196/L681 and GC1945/L1006/GC1951. The phase definitions
+and both occurrences were read in
+`tests/probes/lexicon/rule30_local_mfw44.txt`: column1 at white-wall times,
+with absence inherited from Local's cake_lpr-checked finite-cone certificates.
+No fresh certificate replay is claimed. The actual kit's
+Rule30PeriodTwoWidth6.occ_g12 and col1_constraints were also read; their
+eventual bad-class transfer is NOT substituted for this finite-prefix premise.
+
+**Exact scoped corollary (PROOF-SKETCH pending independent carrying read).**
+For every initial physical row black exactly at0,7 on the entire half-line
+i<=7 and white at8, the first mismatch of column8 from0101... is at most17,
+whatever the initial values on i>=9. The finite row {0,7,14,17} attains17.
+Hence the optimum over all right completions, including infinite ones, is17.
+
+Proof: suppose alternation lasts through17. The left half through16 is
+uniquely forced by that centre history, as in GC2274. Its white-time left
+samples force the right word010101001. The six-sample suffix is forbidden
+in the finite driven right language, a contradiction. The retained finite
+witness agrees through16 and fails at17, supplying the matching lower bound.
+The new131072-prefix computation independently corroborates the specific
+nine-sample exclusion using its declared controls. No conclusion about other
+left halves or all finite seed widths is made.
+
+### What survives as a useful toolkit observation
+
+There are three separate mechanisms in this small example: return of a known
+ether patch (with a conditional fallback branch), a nonlinear right-side
+repair after that return pattern has broken, and termination at a certified
+right-language obstruction before the left-only deadline. A duration assigned
+to the visible repeating core cannot serve as a monotone lifetime budget.
+The sharp finite optimum settles this example; it does not support a
+universal bounded-excess claim or a classification of all extremal seeds.
+
+### Failed prediction, mistake and enforcement
+
+Failed prediction: a compatible right half attaining18 would exist. Actual:
+none. Unguarded mistake: after citing the known finite-language screens, GPT
+did not apply the literal forbidden-factor test to010101001 before freezing
+the membership query. The101001 suffix would have disposed of it by hand.
+This repeats the methodological problem already corrected at GC1941/1944;
+the small run is retained as corroboration, not sold as necessary discovery.
+G21 records the concrete pre-solver factor screen. No new experiment follows
+from this negative result.
+
+Child0.65s wall,0.63s user+0.02s system, maxRSS14,442,496bytes. Supervisor
+1.10s wall/0.131s CPU. Launch6142MiB free+inactive; one monitor sample,
+minimum6137MiB, no observed swap growth, two processes, summed sampledRSS
+14548KiB. Sampling does not certify unobserved peaks or temperature. The
+declared limits held at the observed points; the child exited normally.
+Raw result/source/receipts and the cited lexicon retained and byte-verified at
+`cited/gc2276-membership/manifest.json`, SHA256
+`a343f2c206474d10b8fc4ffadaaec223fd0a04e86324c5f409058aa90a4fda6d`;
+archive12059bytes, SHA256
+`6db143ca72d3c6487dd5d60bde834cca949463dd8ba9b57d44bd7b9c28b9e0b5`.
+
+## Queue after the result
+
+This fixed relay/repair instance is resolved. No new cut, width or seed search
+is queued. Reopen a general relay argument only with a new compatibility law
+for the two boundary histories, not another near-periodic picture. Independent
+read requested passively for the four-step return branch and fixed-left
+optimality transfer; existing ether and forbidden-factor results are credited.
+
+Next independent lead is CL663 A3'/C2's specified product-measure question:
+write the exact cycle-weighted counting formula for split-wheel own parity
+and the fresh-bit coefficient, keeping unconditional fair seeds separate from
+black-edge conditioning. Inspect the retained B1 cycle census before deciding
+whether any new bounded count is necessary. No assumed fair-coin actual-root
+law or density fit. Both schedules remain PAUSED; no job is running.

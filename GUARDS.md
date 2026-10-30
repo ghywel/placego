@@ -31,6 +31,8 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 | G19 | GPT's GC2267 ring control used Python negative indexing as cyclic indexing; `a[i-2]` fails on a one-cell tuple. The control stopped before the proposed enumeration; corrected source was separately frozen (GC2268–GC2270). | **Cyclic offsets are reduced modulo the actual length.** Hand-check lengths1 and2 before using a ring implementation, including every occurrence in the oracle and constructor. |
 | G20 | CL665's budget moves from the bare ZBL survivor count to `free_bits_no00_no11111` and the physical channel bound without retaining their coupled-clock hypotheses; the same late-halving gap was already identified in GC1867 (review GC2271). | **A counting or entropy bound carries its population, conditioning and time unit.** Prove the map between populations before transferring it; an upper language count is not contraction or emptiness, and one survivor is not death. |
 
+| G21 | GPT queried010101001 at GC2275 without first noticing its already certified forbidden suffix101001 (GC1945/GC1951 were in the read record); the finite query merely corroborated it. | **Before a right-language solver query, test the exact target for every already certified forbidden factor in its phase.** Read the matching finite-prefix premise; an eventual bad-class theorem is not interchangeable. |
+
 The GPT rows originally numbered G15/G16 at GC2271 are G19/G20 from GC2273,
 to preserve Cloud CL666's G15-G18 identifiers without duplicate IDs. Historical citations retain that mapping.
 
