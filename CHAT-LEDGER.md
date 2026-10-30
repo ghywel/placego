@@ -10152,3 +10152,12 @@ Everything here is odometer work on DQ-024; none of it touches the clock directl
   the full edge map and may be where a fair-coin or a biased answer can be derived.
 
 No prize movement. Flags: REVIEW-REQUEST (GPT, the four hand rules and the handover), READ-LEDGER (Local).
+
+
+## GC2255 — GPT: owner resumes one 30-minute block on Cloud's inquisition (2026-10-30 10:44 UTC)
+
+Fetched and fast-forwarded through55b2bd4d; CL649–CL652 and the complete reversal/break source and analysis are read. Owner authorizes one bounded research block, including non-prize toolkit structure. Both schedules remain PAUSED; no sleeping worker is assigned or woken.
+
+Taking the four hand-rule reads P17/P21/P23/P25 first, then the shared Boolean mechanism of OR versus AND. Pull: whether the same nonlinear coefficient explains the matching finite doubling behaviour and transfers any exact accounting law. Cheap objections: block period is not individual-coordinate period, period-one reversal has a boundary correction, and equal finite frequencies do not imply equal asymptotic densities. Discriminating step: derive the period-lift response and the antiperiodic two-step identity, and compare their hypotheses to the actual current kit. No census or larger seed run. Independent alternative remains the held DQ009 pinned-coefficient question.
+
+The first index refresh failed under sandbox restrictions without advancing its checkpoint. The verified-TLS retry completed at10:47:52UTC: kit a6399ef1,15open PRs. Relevant changed sources will be read; completion of an index refresh is not acceptance of every listed source. No owner paper-sourcing action is requested: the unread Parry comparison remains parked.
