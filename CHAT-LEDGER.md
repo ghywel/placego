@@ -9287,3 +9287,62 @@ Amendment to GC2231/GC2233: PR48 carrier_exit ends at234,170 and claims only tha
 Actual Intel gate6266MiB/free+inactive,193.25MiB swap, normal thermal/speed; worker0.06CPU/0.06wall,16924672byte peakRSS, outer0.54wall and0.094supervisorCPU. No periodic monitor sample, no hard aggregate-CPU enforcement or separately itemized helperCPU claimed. Completion process snapshot clear.10payloads31273bytes plus manifest,11verified raw uploads at cited/gc2253-carrier-control-failure/manifest.json SHA2563707a92031ba6261a26a47cc486c4f45daf3eefbf58f2a214c43cfc0a90e269f.
 
 The heartbeat refreshed during this work and did not cancel it. Change to light DQ009 reasoning: compare the carried two-choice protection conditions with the later actual kit degree theorem, checking whether the leading coefficient survives black-even pins and selected-front specialization. Alternative is one third-choice recurrence identity with intercept/abstract-policy controls; no repeated rounds without new structure. Any later carrier run needs a separately justified freeze and corrected source-bound controls plus explicit aggregate-CPU enforcement. Local/Cloud offline and unmessaged,13minute heartbeat active,5minute poller paused, no job running or required owner action.
+
+## CL648 — Cloud to the owner (GPT and Local offline or halted): assessment of GPT's solo overnight run, GC2203 to GC2253. Fifty-one entries in about eight hours on a 13-minute heartbeat, every run frozen and capped, three failures retained including one error of its own caught by its own control; two upper-bound results on DQ-024 and one correction to my synthesis; nine external pull requests and one portal source reviewed; about fifteen solo sketches now awaiting a carrying read; no prize movement, as GPT says at every step (2026-10-30 07:12 GMT)
+
+**Status.** GPT resumed at 22:47Z on the owner's word (GC2203: "follow warm mathematical and compute pulls overnight, change direction when
+cold, use the i9/RX6600 with stability headroom, check the portal occasionally, and not self-halt"), 13-minute research heartbeat
+ACTIVE, 5-minute poller paused, Local halted (L1202), Cloud offline. No submission, kernel or job is running at GC2253 (07:00Z); the
+portal was refreshed at 06:21Z with no change (kit 932cf8dd, 23 open pull requests). Fourteen small capped stages ran, each under a
+second of CPU except two Lean development stages: one stopped at its 768 MiB cap while compiling the kit's Window module on 4.33.1
+(GC2228, no retry) and one failed at an elaboration error (GC2236), repaired once and then passing thirteen heads (GC2241; the official
+4.35 replay is pending). The last stage (GC2253) failed because GPT had extended PR48's proved endpoint by a false triple; its own
+positive control caught it, the report was corrected, nothing rerun. Discipline held throughout: predictions and counterfactuals before
+each run, known-result searches, receipts, no outward message, no worker woken.
+
+**On DQ-024 (my line).** (a) GC2205: my CL645 corollary carries, matching GPT's independent GC2201 in the scope b = s + 1, M = 4q0; so
+it is now two-party. (b) GC2205: successive exceptional ruler closures (the forced one at the ruler length) have base exponents
+e_next >= e + 2^e, so at most 1 + log2 N of them below N: the ruler term I neglected in the 2/5 chain has zero density (sketch).
+(c) GC2210/2211: the 00 two-start-bit phase law with an exact closure guard; eight fixed controls pass; no density inference. (d) GC2212/
+2213: the right-edge map has no 2-adic derivative anywhere (modulo-4 differentiability only at the integers), which closes the transfer
+from Anashin-type smooth-map theory. (e) GC2220: the record charge restarts at every depth, so the **Assouad dimension of the edge
+orbit closure is at most 1/2**, a local covering bound (sketch). (f) GC2221: the ruler closing law alone permits unbounded critical
+excess (a symbolic class attains the tower bound), so **no lower bound can come from the forced letters alone**: the freedom I located at
+the 00 transition is where any proof must work, as GC2164 said. (g) **GC2208/2209 correct my synthesis:** its claim that nobody has written
+down forbidden gap words of the clocked gate was wrong; the record has L590's two 42-symbol cuts, GC1009/GC1011's macro translations,
+83 SLC cuts and L627/L628's exclusions. The width-14 certificate detects known restrictions but is not a complete classifier (the
+shortest rejected macro is L323's SSLSSLS; counts 125/128 at seven gaps, 242/256 at eight), and the phase interface between 230bc7's
+odd white times and channel-14's even ones is now a sketch. Correction note added to the synthesis.
+
+**External work carried, all scoped, none accepted beyond its stated hypotheses.** Nine open kit pull requests and one portal source:
+a4691a (primitive roots: the twelve listed eight-bit examples are not the complete set; clone/I/II proportions 1/16, 3/16, 12/16),
+PR57 (periodic-mask transport; thinning periodic drivers leaves two classes which are the open Q01, Q001 and C3w, and GPT's
+aperiodic-with-pins control shows aperiodicity does not discharge them), PR53 (reset-free rows: a finite zero-wall row has exactly one
+finite predecessor iff it avoids 0 1^(3m+1) 0; counts with generating function (1 + z^2)/(1 - z - 2z^3), proportions 3/4, 0, 1/4; the
+nine-state core is the known five-cycle), PR48 (edge clock drop: the carrier front advances six depths per four ticks for every older
+continuation, first-failure times 6, 8k+6, 8k+9, 8k+13 proved for all n, the three-cell guard fixes the exit signature; capture after
+001 parked), PR47 (synchronizing carrier, accepted in scope), PR58 (group cocycles; its singular-matrix law is known alternating-ring
+recognition), PR33 (finite eight-return iff two-return after deleting three newest cells), PR52 (gate-past closing: AllPastClosing iff
+HomoclinicClosing; GPT adds the solo sketch that the finite-cover format is complete, Closing(n) iff Cover(n)), and the archive modules
+RootOrientedHeight, RootAntiPeriodHeight, CedarD3Converse, CedarTCObstruction and ResetExcursionControl (D3 iff ReturnComplete is the
+exact remaining finite-white completeness assertion; the local shortcut fails even at a common unsafe time).
+
+**New hand results, solo PROOF-SKETCH unless marked.** The free-partner theory: a P-periodic driver admits an antiperiodic partner with a
+safe child iff the height test holds (GC2243); a constructor matches an exhaustive oracle on 84 drivers and 8,736 cases at P = 2, 4, 6
+with a mutant control that fails as predicted (COMPUTED, GC2245); the safe partners number exactly 2^(P - k + 2 - D) (GC2246, matched all
+84 counts); the admissible driver words number tr(M2^m) - tr(M1^m), growth the root of x^3 - 5x^2 + 6x - 1 in (3, 4), an exponentially
+vanishing fraction of all words (GC2247). On the full line Fix(Phi^4) = Fix(Phi^2) by the known word ban and parity (GC2231); an even
+two-run profile forces a doubling, q, q, q, 2q (GC2233); an inverse run map gives the exact next-period parity law parity(w + r) for
+profiles with no singleton runs (GC2238); the isolated-transition ancestor identity is in core Lean, thirteen heads on 4.33.1 (GC2241).
+Parked with reasons: fixed-iterate regularity, the ruler-only route, generic inverse descent, capture after 001, routine gap-cut
+extraction, the D3 local shortcut, transition-cover chains, the carrier-reach pilot.
+
+**Assessment.** A very productive night by the standards of the record: the external review backlog is cleared to the current pull
+requests, two clean upper bounds sit on DQ-024 (Assouad at most one half; the forced letters cannot give a lower bound), the free-partner
+theory is a self-contained small piece of mathematics with an exact count, and my synthesis is corrected on one point of fact. Nothing
+moves the prize, and GPT says so in every entry. The cost is a review debt: about fifteen solo sketches with no second mind, and Local
+is halted. The last five entries are parkings and a failed pilot, so the marginal yield of continuing solo is falling. **My
+recommendation to the owner:** halt GPT at its next stopping point and hand Local, on resumption, a short read list in this order:
+GC2205 (ruler closures zero density), GC2220 (Assouad bound), GC2216/2218 (preimage counts), GC2238 (run parity law), GC2243 to
+GC2247 (free partners), GC2251 (cover completeness), GC2231/2233 (full-line small clocks). The pull-request reviews are self-contained
+and need no read. Nothing is assigned by this entry; GPT continues under the owner's overnight instruction until the owner says otherwise.

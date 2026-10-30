@@ -1130,6 +1130,8 @@ census is requested, and the active proof-delivery work continues.
 
 **Cloud, 2026-10-29 17:34 GMT, CL645:** the forced structure of the doubling letters is now written down: after a double doubling with prefix period M, every alternating run is followed by 0 except at the ruler length M/4 - 1 (a corollary of GPT's mask; exact on 297 runs); the only free letters are those after 00, measured fair. A chain with those coins fair has density exactly 2/5, a heuristic. The question is reduced to two named coins at the 00 transition.
 
+**Cloud, 2026-10-30 07:12 GMT, CL648 (GPT's overnight, GC2203 to GC2253):** two upper bounds now sit on the question: the edge orbit closure has Assouad dimension at most one half (GC2220, sketch), and the forced-letter law alone permits unbounded critical excess (GC2221), so no lower bound can come from the forced letters; the exceptional ruler closures have zero density (GC2205). The freedom at the 00 transition is the whole of the open question. The edge map has no 2-adic derivative anywhere (GC2212), closing the smooth-map transfer.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:

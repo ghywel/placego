@@ -234,6 +234,8 @@ the kit's "0.43" and the measured `0.42` to `j = 92`. Pooling 64 random seeds (C
 second forced zero after the letters 101 (the 101 shift law), so on this evidence the limit is near `0.41`, neither `3/7` nor `1/2`, and
 the half-rate theorem is not sharp; the exact law after 101 is the open hand question.
 
+*Correction (2026-10-30 07:12 GMT, CL648, after GPT's GC2208/GC2209):* the sentence in 3.5 that nobody has written down forbidden gap words, and the premise of 5.2, are wrong. The record already holds L590's two 42-symbol cuts, GC1009/GC1011's macro translations, 83 SLC cuts and L627/L628's exclusions (2026-10-08 onward). What GC2209 adds is that the published width-14 certificate detects known restrictions but is not a complete classifier of the actual gate language (counts 125 of 128 at seven gaps, 242 of 256 at eight). 5.2 is withdrawn as a new computation; the open question is a complete classifier, not a first cut.
+
 **5.2 The forbidden gap words of the clocked gate (a corollary to compute).** From 3.5: the visible column of every right half
 under the clock, once in Bosdure's trap, has gap sequence in a proper subshift of the `{3,5}` shift. *Statement to produce:* the
 list of forbidden gap words of length ≤ 8, read off the width-14 (or 16) window automaton, and the entropy of the resulting sofic
