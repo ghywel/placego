@@ -4688,3 +4688,7 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### Waiting room — exact finite-cover completeness (GC2251,30 October2026)
 
 [Complete hand converse](reports/rule30-gate-past-closing-review.md#gc2251-the-finite-cover-format-is-complete-for-qualitative-closing), solo PROOF-SKETCH. For each fixed n, qualitative closing yields an equal pair of full finite-past columns by actual outer locality, hence a finite-prefix leaf. Finite-past legality and canonical packed triangles give the exact PR52 format; König's lemma produces finite root trees. Thus Closing(n), Cover(n) and a uniform cutoff are equivalent. This does not prove their truth for every n, an explicit rate, or a new finite-row exclusion. Independent read and formalization remain pending.
+
+### GC2253 — The finite carrier exit has two different newer-clock outcomes
+
+PROOF-SKETCH, solo hand specialization of the known parity rule. [Exact equations and source-scope correction](reports/rule30-carrier-reach-pilot.md#exact-hand-diagnosis-and-the-other-exit-choice): PR48's endpoint234,170has forcingEAof odd weight, so either next initial bit gives least period16. Choosing85instead of170one step earlier joins the alternating tail and matches PR58's existing witness. No full-line16-return, new novelty claim or completed q16 computation. The failed positive control is retained.

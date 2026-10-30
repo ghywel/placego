@@ -1,6 +1,8 @@
 # One bounded carrier-origin period-sixteen reachability pilot
 
-GC2252,30 October2026. **FROZEN, NOT YET RUN.** This changes representation
+GC2252,30 October2026. **GC2253 outcome: FAILED in a positive control;
+reachability was never attempted. No rerun.** The original freeze below is
+retained, including its erroneous proposed rain extension. This changes representation
 after the first-tail-merger argument recovered the already-known G13 obstruction.
 
 ## Question and discriminating outcome
@@ -87,3 +89,82 @@ actual gate and completion thermal/process snapshot. Any warning or pressure
 failure redirects work to light reasoning, without a rerun or relaxed cap.
 Retain source, controls, graph/ranks or cap frontier, resource and cleanup
 receipts outside git with digests. Publish the freeze before running.
+
+## GC2253: the control caught an unjustified extension of the proved endpoint
+
+The sole run at freeze fdc374984fb08ce701bd466b5f128e2c959e56ca stopped
+with CHILD_FAILED, assertion line72. All256q4 local-oracle comparisons and
+four carrier-cycle checks passed. The four exact PR48 exit triples also
+pass; the next proposed triple(234,170,85) is false. Mutation controls,
+q16 traversal and rank checks were not reached. No certificate or negative
+period16 result exists. Sourcebbba28df remains unchanged, not repaired or rerun.
+
+The source-scope mistake is GPT's: PR48 `carrier_exit` and
+`arbitrary_older_context` prove a finite spatial walk ending in(234,170).
+Both endpoint profiles are valid for all time; the theorem does **not** say
+that the spatial walk continues at clock8. The failed control had added
+85,170 without a supporting source equation. This does not invalidate any
+of PR48's stated theorems or its earlier carrying review.
+
+### Exact hand diagnosis and the other exit choice
+
+Let D(w)=w XOR ROR_8(w). At the proved endpoint,
+
+    234 OR 170 = EA(hex) = 11101010(binary), of odd weight5.
+    D(85) = FF(hex).
+
+The wrap equation therefore fails. For **either** initial bit, integrating
+the forcing EA for8ticks complements the next profile; integrating the
+same forcing for another8ticks returns it. Its least period is16: its
+period divides16 but cannot divide8. This is the standard cyclic parity
+rule, applied to this exact endpoint, not evidence of an infinitely
+extendible16-clock spacetime.
+
+One step earlier,21 OR234=FF. Both alternating choices170and85 are allowed.
+Choosing85 instead gives234 OR85=FF and the genuine continuation
+
+    ...,86,149,154,21,234,85,170,85,170,... .
+
+All later alternating pairs have OR=FF. This is the actual carrier-to-rain
+connection, already present up to time phase in PR58's retained q8 witness.
+Rotate every temporal word right by5bits: the exit becomes
+178,172,212,168,87,170,85,170, matching that witness exactly. The four older
+carrier profiles rotate to178,172,43,202 and repeat consistently. Thus the
+two choices at the apparent drop have sharply different next clocks: one
+joins rain; the other forces a new16-clock column immediately. The finite
+PR48 endpoint must not be substituted for the PR58 infinite extension.
+
+These hand implications remain **PROOF-SKETCH** pending independent read;
+the standard parity rule and the existing PR58 path are credited as known.
+No new simulation or repeat was used for this diagnosis. GC2231's report
+and GC2233's reference have been corrected; the ledger has an explicit
+amendment preserving the original erroneous attribution.
+
+### Actual enforcement and retained failure
+
+Intel gate07:02:18Z:6266MiB free+inactive,193.25MiB swap; thermal/speed
+normal before and after. The worker used0.05user+0.01system seconds,
+0.06wall and16924672bytes peak RSS in the time receipt. Outer wall0.54s;
+supervisor CPU0.094s. Kernel60workerCPU and16MiB/file limits were checked
+by the worker. The run completed before a periodic pressure/tree sample,
+so sampled RSS0 means **no sample**, not zero memory. There is no hard
+aggregate-CPU receipt; worker/supervisor figures are separate and helper
+CPU is not independently itemized. The stage did not approach its budget.
+The completion process check found no pilot left running; no cleanup
+signal or cap change was needed.
+
+Raw failure/source/inputs/preflight/completion/diagnosis and runner retained
+as10payloads31273bytes plus manifest,11verified raw-body uploads:
+`cited/gc2253-carrier-control-failure/manifest.json`, SHA256
+3707a92031ba6261a26a47cc486c4f45daf3eefbf58f2a214c43cfc0a90e269f.
+No automatic corrected run, larger period, state cap or ring census is
+queued. Any future stage requires a separately justified freeze, corrected
+source-bound controls, and an explicit aggregate-CPU enforcement plan.
+
+Next independent hand lead: return to DQ009's carried two-choice protection
+condition and compare its restricted fresh-bit dependence with the later
+actual kit degree theorem. First check the specialization and selected-front
+hypotheses; an unrestricted-variable degree theorem need not survive the
+black-even pins. The alternative is a third-choice protection identity from
+the exact recurrence, with the abstract always-protecting policy as a scope
+control. No probabilistic condition is promoted to a universal seed theorem.

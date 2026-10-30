@@ -36,7 +36,10 @@ The complete retained PR58 `profile_core_probe.py` and
 `profile-core-result.json` were read: the unrestricted bi-infinite cores have
 6,6,46 vertices at q2,4,8. Their algorithm repeatedly removes vertices with
 zero incoming or outgoing degree. The period-eight carrier-to-rain path is
-also explicitly proved in [PR48's carried source](rule30-edge-clock-drop-review.md).
+in PR58's retained witness. **GC2253 correction:** [PR48's carried source](rule30-edge-clock-drop-review.md)
+ends at a different alternating phase, with a valid8-to2drop but no claimed
+clock8newer continuation; that endpoint forces clock16next. The PR58 path
+chooses the other exit phase, as detailed in the [exact diagnosis](rule30-carrier-reach-pilot.md#exact-hand-diagnosis-and-the-other-exit-choice).
 Its clock eight comes from the carrier itself; it does not exhibit a
 higher-clock transient between lower-clock tails. The distinct left-only
 core has8,12,132 vertices: it does not require an infinite continuation on the
@@ -215,7 +218,8 @@ not have a q-periodic newer extension. This generalizes GC2231's final
 parity step while retaining its boundary distinction.
 
 **What remains.** Many primitive-eight words have four or six runs, and
-the carried PR48 carrier-to-rain connection already survives the word bans.
+the retained PR58 carrier-to-rain connection already survives the word bans
+(GC2253 corrects the earlier PR48 attribution).
 No all-profile classifier, frequency bound, arbitrary00 closure or
 higher-clock bridge exclusion follows. At q>4, white-root occurrence of the
 two-run shape has not been proved. Do not start a larger search to make that
