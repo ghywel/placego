@@ -1,0 +1,119 @@
+{
+ "stage": "gate-clocks-nested official check (L1245 freeze ba5b57af), Local M5, one run",
+ "runner_sha256": "e0e5dbf27055acfc946c373a5ba14698fc35a73360104416bd3ecaecd3d455ff",
+ "source_sha256": "e9687e872c127c3d8a1783383e3f7abe5d1511e363e080d4c34ca9d00839d9fb",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "caps": {
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 3072,
+  "file_mib": 256,
+  "disk_mib": 1024,
+  "min_free_mib": 1536,
+  "launch_free_mib": 2560,
+  "swap_growth_mib": 256,
+  "track_tree": true
+ },
+ "start_utc": "2026-10-30T23:37:43Z",
+ "end_utc": "2026-10-30T23:37:49Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "launch_gate": {
+  "free_inactive_mib": 7715,
+  "swap_used_mib": 0.0
+ },
+ "maxima": {
+  "rss_kib": 922944,
+  "procs": 3,
+  "disk_bytes": 5052825,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 7396
+ },
+ "wall_s_time": 5.38,
+ "max_rss_bytes_time": 941391872,
+ "check_json_sha256": "04652394c6c9ce9d3836cf5752d72e4b241c79b764dab62c1d1a541a7e7b18d1",
+ "result": {
+  "status": "PASS",
+  "declared": 228,
+  "replayed_constants": 507,
+  "checker_notice": "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead\n\nNote: The updated constant has a different type:\n  Std.HashMap Name ConstantInfo → Kernel.Environment → IO Kernel.Environment\ninstead of\n  Std.HashMap Name ConstantInfo → Environment → IO Environment\n\nNote: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "headline_signatures": {
+   "Rule30Submission.prefixExp_le_add_two": "theorem prefixExp_le_add_two (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) : ∀ m, m < 2058 → prefixExp g x (2 * m) ≤ m + 2",
+   "Rule30Submission.first_excess_three": "theorem first_excess_three (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {N : Nat} (hN : N + 3 ≤ prefixExp g x (2 * N)) (hfirst : ∀ m, m < N → prefixExp g x (2 * m) ≤ m + 2) : 2058 ≤ N",
+   "Rule30Submission.no_three": "theorem no_three (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {n : Nat} (h1 : prefixExp g x (n + 1) = prefixExp g x n + 1) (h2 : prefixExp g x (n + 1 + 1) = prefixExp g x (n + 1) + 1) (hM : 1 ≤ prefixExp g x n) : prefixExp g x (n + 1 + 1 + 1) = prefixExp g x (n + 1 + 1)",
+   "Rule30Submission.after01_double_iff": "theorem after01_double_iff (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {n : Nat} (h0 : prefixExp g x (n + 1) = prefixExp g x n) (h1 : prefixExp g x (n + 1 + 1) = prefixExp g x (n + 1) + 1) (hM : 1 ≤ prefixExp g x n) : prefixExp g x (n + 1 + 1 + 1) = prefixExp g x (n + 1 + 1) + 1 ↔ (lamG (g (n + 1 + 1)) && xsum (col g x (n + 1)) 0 (2 ^ prefixExp g x n)) = true",
+   "Rule30Submission.after11_order": "theorem after11_order (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {n : Nat} (h1 : prefixExp g x (n + 1) = prefixExp g x n + 1) (h2 : prefixExp g x (n + 1 + 1) = prefixExp g x (n + 1) + 1) (hM : 2 ≤ prefixExp g x n) : 2 ^ prefixExp g x n - 2 ≤ order (col g x (n + 1 + 1 + 1)) (2 ^ (prefixExp g x n + 2))"
+  },
+  "scope": "nested record threshold for every two-input gate family: excess at most 2 for m < 2058, first excess 3 needs 2058 pairs; no-three, the 01 doubling test, the 11 order step; no attainment or prize claim"
+ },
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefixExp_le_add_two",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.first_excess_three",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.no_three",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.after01_double_iff",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.after11_order",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "verdict": "pass",
+ "importsStatements": true,
+ "newAxioms": []
+}

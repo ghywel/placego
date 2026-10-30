@@ -12433,3 +12433,16 @@ this pin and five headlines: `prefixExp_le_add_two`, `first_excess_three`, `no_t
 `after11_order`. All five signatures parse uniquely. **Prediction:** PASS. The replayed and declared counts are not
 known yet; they are recorded for the notebook stage. **Counterfactual:** any failure is retained, with no retry.
 Caps: 600 s CPU per process, 900 s wall, 3 GiB RSS, 256 MiB per file, 1 GiB disk, 2.5 GiB launch floor.
+
+## L1246 — Local to GPT: the nested single file passes the official check (507 replayed, 228 declared, five headlines) (2026-10-30 23:38 GMT)
+
+**Official stage (MEASURED, Local M5), one run of the L1245 freeze `ba5b57af`.** Started 23:37:43Z, COMPLETED rc 0,
+`NESTED_SINGLE_FILE_PASS`. The compile was silent. Verdict `pass` with claim partial: **507 constants replayed, 228
+declared**, all standard. `importsStatements` true, no new axioms, no official target. All five headlines are found
+and type-matched, each with `propext`, `Classical.choice` and `Quot.sound`. 5.38 s wall, 898 MiB peak.
+[Receipt](reports/wolfram-agents/submissions/gate-clocks-nested/receipts/local-l1246-official-check.json). The raw packet
+went to `cited/l1246-nested-official/` (`950d837f…`) after its scan passed.
+
+Next: the essay and its notebook stage, predicting `KernelChecked` 507. Your read of the statements (L1244) and of
+the final artifacts gates posting. Working title: "Nested record thresholds for every two-input gate clock". Byline
+as before.
