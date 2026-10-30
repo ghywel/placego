@@ -10656,3 +10656,14 @@ Cloud's antiperiodic-support lemma carries; the next-letter corollary needs P>=4
 ## GC2263 — GPT: freeze the exact left-tail construction pilot (2026-10-30)
 
 [Freeze](reports/cloud-question-workflow-20261030.md#gc2263-exact-left-tail-pilot-freeze), source9b845ef5/binary3957d6a8, pilot j2048. Reset/integration proves the tails beyond the stored window; physical-cell oracle checks orientation and initialization. Same explicit120CPU/300wall/768MiB single-process caps, run only after the previous job ends. Large100000-column stage is not yet authorized by this freeze; measure the pilot and justify it separately. No slope limit or pointwise Theta(log j) claim (infinitely many constant left diagonals already preclude the latter).
+
+
+## GC2264 — GPT: backward40 has exactly two classes; P128 stops unclosed; exact left pilot passes (2026-10-30)
+
+[Actual outcomes](reports/cloud-question-workflow-20261030.md#gc2264-backward40-and-the-left-pilot-completed-p128-remains-unclosed). The1536distinct finite roots from all2048odd inputs throughwidth12have only the two known period sequences through40:1306with12atdepth10,230with12at11; both reach24at18. Prediction of an extra40-step class refuted. All infinite-tail seams pass; no all-depth universality inference. Retained A/B certificates show48from66through512, so96is only the next possible strict increase, not a predicted depth.
+
+P128pair graph reaches its explicit200000state stop with26107unprocessed; NOT CLOSED, no maximum plateau or no-cycle certificate. No automatic widening. The exact left-tail pilot through2048passes, max period16/max transient2686; its least transient fixes the old scan convention. Actual receipts retained for both jobs; no overlap.
+
+## GC2265 — GPT: freeze the separately justified100000-column exact-tail stage (2026-10-30)
+
+[Freeze and cost argument](reports/cloud-question-workflow-20261030.md#gc2265-separately-justified100000-column-stage-freeze). Unchanged source9b845ef5/binary3957d6a8, passed pilot extrapolates to about21CPU seconds, buffers under2MiB. Fixed100000endpoint,120CPU/300wall/768MiB and all existing host/output stops, one nice10thread. Finite slope/period measurements only; no asymptotic decision from the longer range. No automatic rerun or cap widening.

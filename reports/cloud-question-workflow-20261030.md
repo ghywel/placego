@@ -209,3 +209,30 @@ Stage limits match GC2260: one process/thread120CPU/300wall/768MiB, nice10,16MiB
 Source `tests/probes/wolfram/left_tail_exact.c`, SHA256 `9b845ef5650a755b457b179989a34a1619978c64029247ffe213edab38668b15`; prepared with `cc -O2 -std=c11`, binary SHA256 `3957d6a8de0c8e7ad82386202c019a74bf7c7e1400d7ce23ceb98b42862db04c`. The pilot stops at j2048. It constructs certified eventual tails from the reset/integration law, finds the least dyadic period and extends the tail backward to the exact least transient. This corrects the old probe's scan restricted to t>=j, which reports tau0 even when the actual transient lies before j. No arbitrary finite-window period fit.
 
 Prediction: the period bounds match retained data through1024, while small transients such as tau1=1 correct the old0 convention;2048 remains inexpensive and within the proved tail constructor's524288-cell buffer. Counterfactual: any oracle/seam failure stops, no automatic rerun. Independent control: direct physical Rule30 for257rows and65left diagonals; every generated tail also satisfies a full periodic seam. Measure actual pilot cost before considering100000columns. A larger stage needs a separate justified freeze. Same one-process120CPU/300wall/768MiB and host/output/tree limits as GC2262; no overlap between jobs.
+
+## GC2264: backward40 and the left pilot completed; P128 remains unclosed
+
+GC2262 source dbfbc408 ran once under freeze39c537ed. COMPLETED rc0; child3.39wall,3.23user+0.06system seconds,75,599,872bytes peak RSS. Launch6033MiB free+inactive, sampled minimum5984MiB, no sampled swap growth. All exact inverse seams and controls passed.
+
+**E3 finite answer.** The2048odd normalized inputs through12bits reduce to1536distinct finite roots. Through40inverse steps they give exactly two period sequences:
+
+| Number of roots | First depths of periods1,3,6,12,24 | Example roots |
+|---:|---|---|
+|1306|1,2,4,10,18|1,3,5,9|
+|230|1,2,4,11,18|41,47,73,79|
+
+The predicted extra sequence at40was **REFUTED**. The one-step delayed branch survives at the6to12transition and the period sequences meet again at depth18. Maximum period24, maximum finite prefix186. Exact periodic-tail words and all input-to-root mappings are retained, not just sampled windows. This supports the finite observation much more strongly than a400-cell fit but still proves no all-depth or all-root-width universality. F8's unqualified universal conclusion remains open: identical period sequences do not identify tail words, and a later two-fixed-state return can select another branch.
+
+**F9 retained-data answer.** The original GC2020 certificate digest was verified. Both selected A/B histories change their left period at depths2,4,10,18,66 to3,6,12,24,48, and remain48through512. Root1's new first40periods match A exactly. Thus48is indeed3*2^4in this spatial-tail sequence. If a further strict increase occurs, the mixed-driver result forces96next; it gives neither the depth nor the existence of that increase. No new A/B ancestry search or extension was run. Step2is a factor3startup, not a doubling.
+
+**B5 obstruction.** P128reached its predeclared200000state cap with173893processed and26107still on the frontier (73892exits found). It did **not close**. Neither the maximum plateau nor absence of additional cycles is certified. No wider state budget or rerun is queued. The requested comparison also conflated two statistics: true plateau maxima atP32/64are10/92;14/103count stretches above period2. A new memory-scalable closure algorithm or separately justified budget is required for the numerical maximum.
+
+**GC2263 pilot.** The exact left-tail constructor passed through2048, including physical-cell and periodic-seam controls. Maximum period16, maximum least transient2686; weighted tau/j over the upper half1.306714352. Correct small transients are tau1=1,tau2=2 (old probe reported0). Child CPU0.01s, wall0.31s, peak RSS630784bytes as the platform time tool reports. It completed before a periodic monitor sample; no ongoing pressure maxima are inferred from zeros. Launch headroom6035MiB.
+
+## GC2265: separately justified100000-column stage freeze
+
+Same source9b845ef5 and binary3957d6a8; no implementation change after the passed pilot. Fixed endpoint100000columns. The reset/integration constructor costs roughly the sum of the actual transients; scaling the observed pilot quadratically predicts about21payload CPU seconds. Three524288-byte buffers keep allocation under2MiB; all100001CSVrecords fit under2MiB. This is a different fixed stage, not an automatic rerun of a failure.
+
+Prediction: maximum eventual period at most64, endpoint tau/j between1.2and1.4, with persistent local variation; retain any refutation. This finite result will not decide a4/3limit, a1.27limit, or an asymptotic polynomial bound. Counterfactual: any oracle/seam/buffer assertion or resource/pressure stop ends the stage and leaves its completed prefix, without widening or rerun. The same physical oracle is a necessary initialization control, not a new seed/trajectory census.
+
+Use120payload CPU/300wall/768MiB, one thread nice10, tracked tree/max2processes,16MiB/file/128MiB disk, fresh launch4096MiB free+inactive, running3072MiB and swap growth64MiB. No concurrent job or GPU. Retain actual enforcement and raw CSV by digest.
