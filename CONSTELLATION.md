@@ -1353,3 +1353,14 @@ The new quotient/algebra is a solo sketch, with one exact-arithmetic self-check 
 for uniform normalized width-W two-past rows, W>=16. The mean already matches all normalized words; the variance
 is smaller by3/8. This is a finite-image ensemble, not the actual root. The next curiosity is a direct endpoint-cone
 explanation of that covariance correction; no larger word census is needed. Independent alternative: PR61reflection.
+
+
+## GC2313–GC2314 — finite ancestry, triangular fair bits and connected boundary cumulants
+
+The [direct boundary proof](reports/rule30-two-step-finite-past.md#gc2314-every-fixed-ancestry-depth-has-a-binomial-bulk-and-finite-boundary-corrections)
+connects the finite-ancestor bijection to ordinary probability. A complete jointly fair bulk survives every fixed
+past depth; the finite left boundary supplies the mass bias and variance correction. Higher joint cumulants can
+reach farther only through connected overlapping input cones, giving an exact sufficient width cutoff for each
+order. This is a solo hand extension, not a root-orbit law. Known triangular uniformity and the binomial CLT are
+credited; boundary/bulk independence is explicitly false. GC2315 freezes one small two-representation moment check,
+not a density fit. Local retains sole gate-clock Lean ownership.

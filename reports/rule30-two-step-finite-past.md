@@ -801,3 +801,189 @@ carrying read. No exact minimal width threshold or central limit theorem is clai
 Next executable step: carry the triangular-bijection ensemble and the conditional covariance table independently.
 A different warm alternative remains PR61's arbitrary-prefix period-reflection gap. Gate-clock Lean implementation
 belongs to Local under GC2312; there is no competing GPT build or larger dynamics census.
+
+## GC2314: every fixed ancestry depth has a binomial bulk and finite boundary corrections
+
+**PROOF-SKETCH, solo hand.** The pull from GC2313 is whether the cancellation is special to two steps, or is one
+instance of a finite boundary law. What this teaches: which mass fluctuations are ordinary fair-bit behavior and
+which retain information about finite ancestry. The cheap objection is dependence between the boundary and the
+bulk. The argument below never treats those two blocks as independent.
+
+### Sources and attribution
+
+Record searches for `cumulant|finite.image|boundary.covariance` and permutivity with uniform/Bernoulli terms locate
+GC2313, G121/B's finite-image bijection and the earlier finite-language work. The current kit/portal/open-PR index
+is still the complete 23:05:23 UTC snapshot, main `7beff71ceb40e67010fd0713b1a9aecdded09ef2`, with PR63's additional
+channels carried in GC2312. No new novelty or submission decision is made here.
+
+The actual kit `RandomConfigurations.measure_triangular` already proves the general independent-fair-event law
+from successive fresh-bit flips. Its complete proof and hypotheses were read: the new flip must fix every earlier
+event, not merely have a fair marginal. The generic `tendstoInDistribution_count` already supplies the ordinary
+fair-binomial CLT. The later `tendstoInDistribution_count_trace`, `LocalLimit.measureReal_count_eq_trace` and
+`AlgebraicDegree.card_trace` concern temporal traces of infinite random configurations. Their exact statements were
+read; the finite normalized image ensemble below is different, but its probability tools are known.
+Source SHA256s: RandomConfigurations `d2ba25ed4401e36f315a52869f7d0051b022aac5113e355bde8b95bdb272957b`, LocalLimit
+`9f8114933375f38edc0ee032c30e5ff723c2ef346010a29d6beac0cfd242fe74`, AlgebraicDegree
+`fcf02bca6ae7d628fb1e3f18451e992639c98f8d6feb2f52021ccd8d08a63e2b`.
+
+The classical background is balance of surjective cellular automata: Kari's
+[tutorial](https://users.utu.fi/jkari/wp-content/uploads/sites/1251/2023/12/CAintro.pdf), slides 75–85, distinguishes
+local balance, full surjectivity and finite-configuration injectivity. Kari–Taati's
+[paper abstract](https://arxiv.org/abs/1311.2319) explicitly credits uniform Bernoulli invariance as known; only that
+abstract is used here, not an unperformed full-paper read. The finite triangular argument below is a known mechanism
+reproved in this boundary convention. Cumulant multilinearity and vanishing across independent groups are standard;
+the short generating-function justification is supplied below rather than assuming a new probabilistic theorem.
+
+### Exact coupling for every depth
+
+Fix t>=0 and ancestor width L>=2, and set W=L+2t. Choose x_0=x_(L-1)=1, independent fair interior bits, and zero
+outside. By the carried finite-image bijection, its t-step normalized image is uniform among width-W rows with at
+least t finite past steps. Define Z_i=F^t(x)_(i-t), for 0<=i<W. Endpoints grow exactly one cell each step, so
+Z_0=Z_(W-1)=1.
+
+Iterated left-permutivity gives, by induction on t,
+
+```text
+Z_i = x_(i-2t) xor H_t(x_(i-2t+1),...,x_i)
+```
+
+for a Boolean H_t independent of the leftmost input. The induction uses the leftmost child output exactly once
+in the next left-permutive rule; the other two child cones start strictly farther right. In particular, the vector
+`(Z_(2t+1),...,Z_(W-2))` is a triangular bijection of the L-2 interior input bits, recovered in descending order.
+It is therefore jointly uniform. Put
+
+```text
+B = sum of Z_i for 2t+1 <= i <= W-2,
+S = sum of Z_i for 1 <= i <= 2t,
+N = L-2 = W-2t-2.
+```
+
+Empty sums are allowed. Exactly, on this same probability space,
+
+```text
+B has the Binomial(N,1/2) distribution,
+0 <= S <= 2t,
+K = 2 + S + B.
+```
+
+S and B need not be independent. The deterministic centered coupling is
+
+```text
+K - W/2 = (B-N/2) + (S+1-t),
+abs((K-W/2) - (B-N/2)) <= t+1.
+```
+
+This elementary statement is valid even when the boundary cone reaches the right endpoint; only the more precise
+width-independent moment constants below need larger L. The single-cell ancestor L=1 is outside this statement.
+
+### Exact mean and variance at sufficient widths
+
+For L>=2t+2 the law of S depends only on the first 2t independent input bits, so its mean mu_t is independent of L.
+Consequently, for W>=4t+2,
+
+```text
+E K = W/2 + a_t,   a_t = 1-t+mu_t.
+```
+
+For each i>4t, the input cone of Z_i begins beyond x_(2t), so Z_i is independent of S. For L>=4t+2, every joint law
+of S with Z_i for 2t+1<=i<=4t also uses only the fixed left boundary and the same first 4t fair bits. Write v_t=Var S
+and c_(t,i)=Cov(S,Z_i) for this finite cone. The bulk outputs are jointly fair, hence for W>=6t+2,
+
+```text
+Var K = W/4 + b_t,
+b_t = -(t+1)/2 + v_t + 2*sum_{i=2t+1}^{4t} c_(t,i).
+```
+
+Thus the width correction is exactly constant, not merely an asymptotic fit. At t=0 one recovers the familiar
+normalized-word mean W/2+1 and variance W/4-1/2. GC2313 gives a_2=1 and b_2=-7/8.
+A separate one-step hand check has S=1+NOT(a OR b), with mu_1=5/4, v_1=3/16 and the two cross-covariances 0,1/16.
+Therefore a_1=5/4 and b_1=-11/16 (sufficient widths 6 for the mean, 8 for both). The mean need not retain the same
+boundary offset at every depth.
+
+### Fixed-order cumulants also have an exactly constant correction
+
+Let beta_r be the r-th cumulant of a fair Bernoulli variable. For every fixed t and r>=1 there is a constant C_(t,r)
+such that, at every W>=2t(r+1)+2,
+
+```text
+kappa_r(K) = (W-2t-2)*beta_r + C_(t,r).
+```
+
+For r=1 take C_(t,1)=2+mu_t. For r>=2 the deterministic endpoints contribute nothing. Expand the cumulant of the
+sum as the sum of joint cumulants over ordered r-tuples of output indices, with repeats allowed. This follows by
+differentiating `log E exp(sum_j u_j Z_j)` and substituting all u_j equal. If the variables split into two independent
+nonempty groups, that logarithm is a sum of two functions of disjoint parameter sets; its full mixed derivative is
+zero. This proves the independence-vanishing rule used here.
+
+Tuples entirely in the bulk contribute only when every index is equal, because that block is jointly independent;
+they contribute exactly (W-2t-2)*beta_r. A remaining tuple contains an index at most 2t. Draw an edge between two
+occurrences if their input intervals `[i-2t,i]` overlap. If this graph is disconnected, the components depend on
+disjoint random inputs and their joint cumulant is zero. If connected, a path of at most r-1 edges from a boundary
+occurrence shows every index is at most `2t+2t(r-1)=2tr`. (Using full intervals may add unnecessary edges but cannot
+invalidate the disconnected-implies-independence implication.)
+
+All surviving mixed cumulants therefore lie in the fixed index window 1..2tr. The width guard ensures that x_1
+through x_(2tr) are all interior fair bits; their joint law and every cone in that window no longer depend on W.
+Their finite sum is C_(t,r), proving the formula. This does not give a single width cutoff working for all orders r,
+zero dependence outside a fixed output strip in every joint sense, or a factorization of the full mass polynomial.
+
+### A classical Gaussian limit transported to this ensemble
+
+The coupling above also gives a limit when t=t(W) is allowed to vary with width. If `t=o(sqrt(W))`, then N/W tends
+to 1 and `(t+1)/sqrt(W)` tends to zero. The known fair-binomial CLT, plus the deterministic coupling error, gives
+
+```text
+(K-W/2)/sqrt(W)  converges in distribution to Normal(0,1/4).
+```
+
+For example, characteristic functions differ from those of `(B-N/2)/sqrt(W)` by at most
+`abs(u)*(t+1)/sqrt(W)` at each fixed real u, using `abs(exp(iu a)-exp(iu b))<=abs(u)*abs(a-b)`.
+This is a direct transport of the classical binomial limit, not a new CLT mechanism. Even `t=o(W)` suffices for
+K/W to converge in probability to 1/2, by the same bound and Var(B)=N/4. Neither assertion concerns a fixed seed's
+time evolution: the ensemble is sampled anew at each width, and the one-black ancestor violates L>=2 and the
+stated growing-depth regime.
+
+The entire extension remains a solo hand sketch pending a carrying read. Its exact finite-cone formulas motivate
+one separately frozen numerical control below; finite checks will not promote the universal proof's status.
+
+## GC2315: one frozen scalar-cone versus whole-image moment pilot
+
+**FROZEN, NOT RUN at this entry.** This is a new boundary-formula implementation, not a repeat or automatic
+extension of GC2308's retained coefficient check. It compares two different representations at exactly the sufficient
+widths dictated by GC2314, and computes one new fixed-depth boundary constant. No search for a larger clock,
+maximum age, density trend, or extra seed population follows from success or failure.
+
+Source: `tests/probes/wolfram/finite_image_boundary_control.py`, SHA256
+`ccf395326b707d3fd056b964802198b3a7cdeba754d97aec27fbaaf6ae6a9465`.
+Record searched: GC2309/GC2313/GC2314, current kit `measure_triangular`, `tendstoInDistribution_count`,
+`measureReal_count_eq_trace`, current finite-parent B, 23:05 complete kit/portal/PR index and GC2312's full PR63 read;
+primary balance/uniform-measure background cited above. The exact old GC2308 oracle ended at width12 and does not
+check the newly claimed sufficient-width moments. No priority claim is made.
+
+Prediction: for t=1,2,3, scalar input-cone means/covariances predict the exact whole-image mean and variance at
+W=6t+2 and W=6t+3. Hand controls are `(a_1,b_1)=(5/4,-11/16)` and `(a_2,b_2)=(1,-7/8)`; the t=3 constants are not
+numerically guessed. Counterfactual: a mismatch refutes the implementation or the boundary-index argument and stops
+this stage. No automatic retry, width increase or relaxed guard. Resolving the comparison tests the missing boundary
+covariances directly and exposes the first new-depth constants without a fitted trend.
+
+Independent controls: literal scalar-array Rule30 updates for each finite input cone versus bit-parallel evolution
+of complete normalized finite ancestors; actual endpoint widths and duplicate-free images checked. Exact rational
+moments must match at both listed widths. The t=2 covariance vector must be `(1/8,1/64,0,-1/64)`. Unexpected check:
+dropping Cov(S,B) by pretending boundary and bulk are independent must give a different t=2 variance. Fixed domains:
+4368 cone assignments and 13104 whole ancestors across six cases. No higher cumulant or distribution-limit test is
+claimed, and these checks are same-worker computation.
+
+Preflight on the Intel at 23:28:54 UTC: 6727 MiB free+inactive, swap161.25 MiB, load1.88/2.13/2.35, thermal/scheduler
+100%,16 CPUs available. The initial sandbox inventory could not execute ps; that incomplete read is retained and
+no research job launched from it. The authorized read then completed; only idle system Metal services/false-positive
+name matches were listed, with no research compiler or second probe identified. The run must still pass its own
+fresh launch gate.
+
+One CPU worker/thread at nice10 under run_capped.py: 120 per-process CPU seconds as backstop, 300 wall seconds,
+768 MiB sampled tree RSS, 16 MiB/file, 128 MiB/stage, launch4096 MiB free+inactive, running3072 MiB, swap-growth64 MiB,
+tree tracking and maximum4 sampled processes. The worker additionally stops at110 aggregate CPU seconds across
+itself plus reaped serial monitor children, and280 wall seconds; supervisor/time overhead is separate. Thermal reads
+before/after and every2seconds have5second timeouts. These are cooperative/sample-based guards, not a hard aggregate
+CPU or thermal controller. Monitoring/pressure failure preserves evidence and redirects to hand reasoning, with no
+rerun. No GPU or concurrent heavy job. Publish this source/freeze before execution; retain failures and actual
+resource/cleanup receipts outside git with digests.

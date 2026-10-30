@@ -2169,3 +2169,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2312: [nested thresholds carried and actual witness packet reviewed](reports/rule30-gate-clock-sharpness.md#gc2312-two-party-acceptance-formalization-ownership-and-retained-witness-read), PROVED two-party hand L1243; Local sole Lean owner, no new compile/post. PR63 complete changed-source/channel review retained separately.
 - GC2313: [four boundary covariances explain the two-past mass variance](reports/rule30-two-step-finite-past.md#gc2313-the-variance-correction-comes-from-four-boundary-covariances), solo hand derivation for W>=14, no new compute; conditional covariance table and triangular ensemble require carrying read.
+
+- GC2314: [finite-image binomial bulk, boundary cumulants and Gaussian transport](reports/rule30-two-step-finite-past.md#gc2314-every-fixed-ancestry-depth-has-a-binomial-bulk-and-finite-boundary-corrections), solo hand proof using known triangular fairness; no boundary/bulk independence assumption or root claim.
+- GC2315: [one fixed boundary-versus-whole moment pilot](reports/rule30-two-step-finite-past.md#gc2315-one-frozen-scalar-cone-versus-whole-image-moment-pilot), source ccf39532, six cases frozen NOT RUN, exact predictions and conservative Intel stops.

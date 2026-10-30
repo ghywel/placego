@@ -4912,3 +4912,12 @@ GC544 already computes the three-cell image of a finite solid interval. G122/GC5
 Known, reproved/formalized here: Antti Karttunen's [A269160](https://oeis.org/A269160) records the finite integer Rule30 map, injectivity and width growth; [A269162](https://oeis.org/A269162) its partial finite inverse; [A269163](https://oeis.org/A269163)/[A269164](https://oeis.org/A269164) its image/complement; [A269165](https://oeis.org/A269165) and [A269166](https://oeis.org/A269166) the earliest finite ancestor and its age. A269165 explicitly reconstructs a word by iterating its ancestor for that age. All those primary entries were read, not just search snippets. This corrects the missing external attribution in Package B's earlier comparison: G121/L077 supplied our carried proof, not priority for the objects or decomposition. A269160 had already been cited elsewhere in this record without following these ancestry links. The count wrappers remain useful formal preparation, all UNCOMPILED; no claim about the historical priority of the exact count. [Full comparison](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2290-normalized-source-actual-counts-and-older-external-provenance).
 
 GC2291's four-black age classification is an explicit solo application of the known inverse pair map. Actual current-kit SparsePreimage is a strip-certificate accelerator, PaddedWords' four-black theorem is temporal, and DividedDifference's four-cell example is an auxiliary linear mode. None identifies the physical finite-ancestry statement merely by sharing a keyword. A new priority claim or submission decision would still require the full current comparison and independent carrying read.
+
+
+GC2314, 30 October 2026: **known, reproved here** — triangular fresh-bit maps preserve the uniform finite cube.
+Actual kit main7beff71c `RandomConfigurations.measure_triangular` already proves the general event law; its full
+hypotheses/body were read. The fair-binomial CLT is already `tendstoInDistribution_count`. The
+[finite-image boundary account](reports/rule30-two-step-finite-past.md#gc2314-every-fixed-ancestry-depth-has-a-binomial-bulk-and-finite-boundary-corrections)
+uses these standard mechanisms under finite normalized endpoint conditions, and distinguishes its new solo boundary
+accounting from classical probability tools and the kit's infinite temporal trace. Kari's balance tutorial and the
+Kari–Taati abstract are credited there in their actually read scope. No priority claim or Parry dependency.

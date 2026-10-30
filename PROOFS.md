@@ -4786,3 +4786,13 @@ PROOF-SKETCH. A triangular bijection makes L-2 output bits jointly fair independ
 uniform normalized ancestor of width L=W-4. Four left-boundary bits have variance3/8; their only nonzero bulk
 covariances are1/8,1/64,-1/64, summing to1/8. Thus the mean W/2+1 and variance W/4-7/8 hold for W>=14.
 Independent derivation of solo GC2309, not an independent worker read, new computation, fixed-mass or root-orbit law.
+
+
+### Waiting room — finite-image binomial coupling and constant cumulant corrections (GC2314)
+
+[Complete proof and guards](reports/rule30-two-step-finite-past.md#gc2314-every-fixed-ancestry-depth-has-a-binomial-bulk-and-finite-boundary-corrections),
+PROOF-SKETCH. Uniform normalized width-W rows with at least t finite past steps, W-2t>=2: K=2+S+B with
+B~Binomial(W-2t-2,1/2),0<=S<=2t, possibly dependent. Fixed-order cumulants have a width-independent correction
+at W>=2t(r+1)+2 by connected input cones. Classical binomial CLT transports when t=o(sqrt(W)); no root-orbit law.
+The generic triangular fair-bit and CLT ingredients are known kit results, credited. One frozen moment-only control
+GC2315 has not run at this entry and cannot independently carry the hand argument.
