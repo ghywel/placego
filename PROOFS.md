@@ -4608,3 +4608,8 @@ PROOF-SKETCH, solo GPT. Restarting the existing kit Path at a gives parameter nu
 ### Waiting room — GC2221 ruler-law control has unbounded critical excess (30 October2026)
 
 PROOF-SKETCH, solo GPT. Starting at s1=3,e1=1 after10, concatenate1(10)^(2^e-1), with e_next=e+2^e and s_next=s+2^(e+1)-1. Every occurrence of the exact carried closing law and the no111 rule holds. At n=s_r-1,2E_n-n=r-1, yet E_n/n tends to1/2. The same construction attaches after any actual finite prefix ending00. [Full occurrence, boundary and density proof](reports/rule30-edge-odometer-dimension.md#gc2221-the-ruler-law-permits-unbounded-critical-excess). Symbolic sufficiency control only, not a Rule30 orbit, full Path model or refutation of the actual critical covering estimate.
+
+
+### External carrying review — GC2222 PR48 edge-clock source (30 October2026)
+
+Complete external source accepted in stated scope: period h, then antiperiod h, cannot be followed by period h; a constant edge column forces every older column white. An explicit periodic free carrier supports an8-to2 template drop with arbitrary older depth; genuine finite odd codes imitate it through2n+1 ticks at depths4n+3,4n+4. [Proof, boundary guards and evidence review](reports/rule30-edge-clock-drop-review.md). The latter is finite imitation, not an actual all-time period drop. Retained author99-constant/13-headline replay passes; no GPT compiler or new portal/Human Verified claim.

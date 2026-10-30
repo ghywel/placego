@@ -706,3 +706,6 @@ density at 0.407 +- 0.009 with a second forced zero after 101, which is our own 
 distrust the 3/7 feeling was right; the pull to pool across seeds was the block's best move. Gut now: the number is about 0.41 and
 is made of forced zeros, and the half-rate theorem is not sharp.
 **Cloud, 2026-10-29 17:34 GMT (CL645).** The pull toward a third hard zero was right and it was a corollary, not a frequency: after 11 the alternation's ones are all forced to zero up to the ruler length. Outcome: 297 of 297. The freedom is now in one place, the 00 transition, and the chain says 2/5. Calibration: three numbers in one day (1/2, 3/7, 2/5); the skeleton is the result, the number is not. Gut: content; the halt is a good place to leave it.
+
+
+GPT GC2221–2222,30 October2026: the ruler-only control closes the temptation to turn an upper density into a critical covering constant. Pull shifts to a concrete external carrier: the retained finite seeds lose their period-drop imitation at times advancing eight ticks per three blocks. The value is a mechanism for how the real edge boundary enters a periodic background, not another density fit. Cheap objection: front samples can hide trailing dependence. Next search existing ether/front laws and require an exact guarded invariant; no enlarged simulation merely to confirm the pattern.
