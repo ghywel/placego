@@ -10641,3 +10641,18 @@ First carrying targets: antiperiodic supports, the two choked gates and finite-p
 ## GC2260 — GPT: freeze B1/B4/E1 finite controls and the gate-initialization audit (2026-10-30)
 
 [Exact scope, prediction, controls and stops](reports/cloud-question-workflow-20261030.md#gc2260-fixed-finite-control-freeze); source8b7a1a66. One process120CPU/300wall/768MiB, actual-headroom gate, no parallel compute or automatic rerun. B1 counts both maps' full finite permutations through21prefix bits, enough for both conventions at20input bits. B4 uses the first three failed pins to compute every two-release maximum throughW22; literal control first. E1 verifies the corrected finite-parent count throughwidth12. The all16small-map audit checks the historical initializer, not another density census. This is a frozen plan, not a successful outcome.
+
+
+## GC2261 — GPT: support and finite-shadow corrections; B1 and B4 answered (2026-10-30)
+
+[Carrying arguments and actual outcome](reports/cloud-question-workflow-20261030.md#gc2261-mathematical-dispositions-and-the-first-actual-computation). GC2260 completed once,14.50child CPU seconds/21.4MB RSS, actual pressure receipts retained. B1 distributions already differ at two bits; no conjugacy matching the finite maps. B4 is strongly nonadditive: atW20 pins22/36 individually do nothing, together raise38to60. All requested finite distributions and W<=22maxima retained. Historical all16initializer fails four small gate families, including NOR, so the cited six-gate density evidence is incomplete.
+
+Cloud's antiperiodic-support lemma carries; the next-letter corollary needs P>=4, with a P2correction. Exact geometric fill is refuted by the retained integer counts, not a theorem hiding in rounded decimals. Two choked gates have solo explicit logarithmic bounds via forced constant coordinates. Physical finite-parent criterion/depth carry, but the count is2^(w-4) forw>=4, not2^(w-3); finite control matches. A6's uniform finite lifetime would settle the open CQ01 reduction. Backward white-right history is precisely the inverse edge map; its spatial period lift is governed by a four-state return map, with a constant-one3cycle exception. C1/C2/asymptotic lower laws remain open with their missing premises named. No new formal verification or submission.
+
+## GC2262 — GPT: freeze exact backward roots and bounded period128 closure attempt (2026-10-30)
+
+[Freeze and stops](reports/cloud-question-workflow-20261030.md#gc2262-exact-backward-tail-and-period128-pilot-freeze), source dbfbc408. All normalized finite inputs throughwidth12,40inverse steps per distinct finite root, exact periodic tails and independent forward seams; compare retained A/B certificates. Separate substep attempts P128closure at200000states, not a claimed completed graph. One process120CPU/300wall/768MiB, no rerun or automatic widening.
+
+## GC2263 — GPT: freeze the exact left-tail construction pilot (2026-10-30)
+
+[Freeze](reports/cloud-question-workflow-20261030.md#gc2263-exact-left-tail-pilot-freeze), source9b845ef5/binary3957d6a8, pilot j2048. Reset/integration proves the tails beyond the stored window; physical-cell oracle checks orientation and initialization. Same explicit120CPU/300wall/768MiB single-process caps, run only after the previous job ends. Large100000-column stage is not yet authorized by this freeze; measure the pilot and justify it separately. No slope limit or pointwise Theta(log j) claim (infinitely many constant left diagonals already preclude the latter).
