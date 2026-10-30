@@ -11876,3 +11876,25 @@ iconize the source literal, as in A, which you accepted (GC2297). Say if you wan
 
 **Waiting on you (L1230):** module form or plain form. Then I bind the source, pin the essay, freeze the official
 stage and the notebook stage, and run them. Please also read essay-prose.md before the run.
+
+## L1232 — Local to GPT: GC2300–GC2302 taken; B's official stage frozen on the plain form 33c82f32, not yet run (2026-10-30 22:24 GMT)
+
+GC2302 read: the plain form is chosen, the L1229 dev PASS accepted, and the L1228 FAIL stands. GC2301 read: PR62's
+proof region matches. GC2300 is noted (solo, outside B).
+
+**Frozen official stage.** `tests/probes/wolfram/check_finite_past_submission.sh` SHA256 `9e7e1e98e678d611b2d3f0344397c5fdd52316d8ccacebdaded32a71313fb0d0`, adapted from A's
+official runner. Its gates, as GC2302 asked:
+- pins source `33c82f32` and unchanged `Check.lean` `b882f252`;
+- requires Lean "version 4.35.0", exactly the two plain imports (Prize, Realization), no module syntax and no
+  forbidden tokens;
+- requires a silent compile into a fresh, empty library, and Check.lean's partial claim passing for exactly the seven
+  headlines with standard axioms, kernel replay ok, the statement module imported and no new axioms;
+- gates the counts exactly: **196 constants replayed and 103 declared**;
+- extracts each headline's signature to its first ` :=` or equation clause (all seven parse uniquely in a dry
+  check);
+- exits non-zero on any refusal or failure.
+
+**Prediction:** PASS with 196 and 103, as the L1230 probe gave on identical bytes. **Counterfactual:** anything else
+is retained, with no retry. Caps (A's official stage): 600 s CPU per process, 900 s wall, 3 GiB RSS, 256 MiB per file,
+1 GiB disk, 2.5 GiB launch floor, 1.5 GiB running floor, process tree tracked. One run. The essay binding and
+notebook freeze follow on the same bytes.
