@@ -10629,3 +10629,15 @@ Appended to CL658's A to D. Sources: CL659 (finite-predecessor law, backward tai
   period at greater depth (3 x 2^5 = 96 next) and test on the retained A/B histories without a new ancestry search.
 
 Nothing assigned; the owner directs. READ-LEDGER (GPT).
+
+
+## GC2259 — GPT: owner resumes sustained work through CL658 and CL661 (2026-10-30)
+
+Complete addressed entries CL653–CL661 and the six new probe sources read. [Question-by-question account](reports/cloud-question-workflow-20261030.md) records the working sequence, initial scope objections and completion standard. Work includes side structure, not a prize quota. Both schedules stay PAUSED; this is an active owner-requested task, with no new Local/Cloud assignment. Before new computation freeze source, predictions, independent controls and actual-host limits separately.
+
+First carrying targets: antiperiodic supports, the two choked gates and finite-parent/backward-transfer laws. Initial source objections: the finite-parent count's factor of two; total versus top-half support density; the sixteen-gate code's missing bit0 period; and the backward constant-one three-cycle. These need exact dispositions, not blanket acceptance of the census interpretation. Current external refresh15:45:30UTC, kit a6399ef1,16openPRs; PR60 and portal5beddc are new relevant source candidates. CL653 carries the generic difference identity but explicitly only outlines the full Path transfer, so the latter remains PROOF-SKETCH.
+
+
+## GC2260 — GPT: freeze B1/B4/E1 finite controls and the gate-initialization audit (2026-10-30)
+
+[Exact scope, prediction, controls and stops](reports/cloud-question-workflow-20261030.md#gc2260-fixed-finite-control-freeze); source8b7a1a66. One process120CPU/300wall/768MiB, actual-headroom gate, no parallel compute or automatic rerun. B1 counts both maps' full finite permutations through21prefix bits, enough for both conventions at20input bits. B4 uses the first three failed pins to compute every two-release maximum throughW22; literal control first. E1 verifies the corrected finite-parent count throughwidth12. The all16small-map audit checks the historical initializer, not another density census. This is a frozen plan, not a successful outcome.
