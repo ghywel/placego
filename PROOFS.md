@@ -4716,3 +4716,8 @@ Further solo identities in that account: corrected physical finite-parent count2
 ### Waiting room — dyadic phase clocks preserve the proposed half-rate mechanism (GC2278, 30 October 2026)
 
 [Complete carrying argument and failed unscaled control](reports/quadratic-edge-clock-transfer.md#12-gc2278-curiosity-pull--a-fixed-dyadic-phase-clock-can-be-absorbed), solo PROOF-SKETCH. For own-bit-XOR updates with two earlier inputs and coefficients sharing a fixed temporal period L=2^ell, include the phase in every prefix clock and use floor(order/L). Block differences yield the same reset/countdown Path with parameter E_a-ell, hence the proposed window bound. An actual phase-2 three-bit example refutes the unscaled reset law. L=1 recovers the static argument. No odd-period/nonperiodic conclusion, density equality, independent read, compilation or novelty clearance. This is separate from the current static submission candidate.
+
+
+### Waiting room — arbitrary finite forcing clocks (GC2281,30 October2026)
+
+[Full two-difference proof](reports/quadratic-edge-clock-transfer.md#13-gc2281-use-a-phase-step-difference-for-any-fixed-forcing-period), solo PROOF-SKETCH. For a common finite temporal period L and own-bit-XOR gates with two earlier inputs, the phase-augmented prefix periods are L*2^K_j. The phase-step difference D_L=S^L+I commutes with ordinary Delta; cancellation gives the forward vanishing implication needed for reset/countdown and Path(K_a). Thus the proposed window bound for K has the same thresholds as the static theorem, including odd L. The L-step composite need not have two-input memory and is not used. No nonperiodic/longer-memory claim, independent read, compilation or new dynamics; kept separate from static Package A.

@@ -410,4 +410,39 @@ the census. Controls: total mass 2^n, known two-bit OR/AND discrepancy,
 one-bit base, and p_1^OR=1/2 versus p_1^AND=0. This is short exact-integer
 arithmetic on at most 21 stored rows; it starts no substantial compute stage.
 
+### GC2280: retained-table outcome
+
+**COMPUTED, exact arithmetic only.** One evaluation of
+`tests/probes/wolfram/reanalyse_edge_distributions.py` read the existing
+GC2260 archive, verified its complete digest, and used only the stored JSON.
+All 40 unconditional and 40 black-edge-conditioned lift rows pass the
+nonnegative/integral cycle-flow, mass and expectation controls. No state was
+evolved, no new seed was visited, and the histogram range remains 1–21 bits.
+
+Here n is the old prefix length; each entry is the probability of doubling
+on adding bit n, under the explicitly named seed measure.
+
+| n | OR, uniform seeds | OR, black edge | AND, uniform seeds | AND, black edge |
+|---|---|---|---|---|
+| 1 | 1/2 | 1 | 0 | 0 |
+| 2 | 1/4 | 0 | 1/4 | 1/2 |
+| 3 | 3/8 | 1/2 | 3/8 | 1/2 |
+| 4 | 9/16 | 3/4 | 1/2 | 5/8 |
+| 20 | 417433/1048576 | 102347/262144 | 364729/1048576 | 167115/524288 |
+
+This answers the finite, specified-measure next-doubling statistic without
+an additional census. It does not count which lower prefixes have a fair
+fresh-bit coefficient. In particular p=F/2+B with B the deterministic-one
+mass leaves F undetermined; one needs supplier-parity data or a structural
+identity beyond these marginals. No asymptotic fit or actual-root law is made.
+
+Source and exact output: shared-store `cited/gc2280-edge-counts/manifest.json`,
+SHA256 `f9d51040923a1a6183c2c39106a103e61ebf46518c07691533c87b18b51042ea`.
+The arithmetic was run once. The sandbox denied the requested nice adjustment
+(`setpriority: Operation not permitted`), so no nice-10 execution is claimed.
+This was a short table calculation, not a capped substantial-compute stage;
+no CPU/RSS or thermal-enforcement receipt is invented, and nothing was rerun.
+The universal bookkeeping application remains a solo hand sketch, separate
+from these exact table checks and from an independent carrying read.
+
 P128maximum plateau is unresolved: reopen only with a genuinely more economical exact closure/rank representation and a separately justified resource freeze, not a larger state cap by default. Exact4/3and root doubling density remain open: reopen a speed fit only with a structural front law, and the density route only with a root-compatible correlation law. The exact geometric fill, raw-overlap monotonicity, hiccup additivity and the simple bottom-wheel classification are refuted and should not be recycled. All-depth backward coalescence needs a new structural identity; extending40or512alone does not supply it. The optional Parry comparison remains parked; no owner action is requested.

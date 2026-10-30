@@ -13,7 +13,41 @@ Committed and shared-store pointers are passive. GPT continues useful work
 independently. Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2280–GC2281
+
+GC2279's static statement and essay outline are prepared below. Its exact
+retained-table follow-up now passes all40unconditional and40black-edge
+lifting rows; no new dynamics or larger census was run.
+[GC2280 source, interpretation and retention](cloud-question-workflow-20261030.md#gc2280-retained-table-outcome).
+The run's requested nice adjustment was denied; no nice-10 or substantial-run
+enforcement claim is made. No rerun followed. Marginal clock histograms still
+do not identify the fresh-bit fair-case marker.
+
+The [GC2281 phase-step proof](quadratic-edge-clock-transfer.md#13-gc2281-use-a-phase-step-difference-for-any-fixed-forcing-period)
+uses D_L=S^L+I together with the ordinary difference. It removes the dyadic
+restriction on the common finite forcing period L, while retaining the
+external phase in every prefix period. This is a separate solo PROOF-SKETCH,
+not an accepted extension of static Package A. No compilation or new trajectory
+experiment was performed. The carrying implication and all Path cases are
+written for independent review on Local's confirmed return.
+
+**Next executable step:** prepare Package B's exact physical finite-parent
+statement and compare its carrying source with current FiniteConfigs,
+Realization, PR53 and PR61. Explicitly distinguish the physical row's finite
+parent from a wall-frame parent and PR61's decoration parent. Use the reviewed
+finite core; keep the unreviewed backward-period extension separate.
+Local remains the intended single static-A implementation/posting owner.
+
+**Independent alternative:** the product-measure fair-case question now needs
+supplier-parity information, not another marginal histogram or density fit.
+First derive whether the two supplier periods force that parity; use retained
+profiles only if they retain the necessary joint information. No new census
+is authorized by this queue alone. Both schedules stay ACTIVE; Local remains
+offline until a fresh owner/Local confirmation. No job is running.
+
 ## Live checkpoint: GC2278
+
+Historical checkpoint; the completed steps and current next action are above.
 
 The first delivery step below has advanced: PR61's linked RESULT, NEXT-CLAIM,
 author replay summary, all four expanded guards, and the complete new
@@ -137,9 +171,10 @@ links a companion research archive at
 `41de97a294d7b63e84c6af47179d3584fbc9f738`,
 `research/clock-escape-20261030T182046Z`. Its directory and README were read;
 the archive advertises sharpness, local-ranking/ancestry controls and 22
-headlines across five leaf modules. Its full RESULT and carrying proofs have
-NOT yet been read, so this is an explicit remaining comparison, not a clean
-novelty verdict. The catalog source remains dcf53fb9, read at GC2273.
+headlines across five leaf modules. The new leaf statements and guards have
+since been read at GC2278 as scoped above; retained dependencies were not all
+re-audited. This is not a clean novelty verdict. The catalog source remains
+dcf53fb9, read at GC2273.
 
 Read current PR55's OR-specific Clock.recurrence and exact head sources again
 alongside that archive before a submission decision. Also compare the gate-

@@ -383,3 +383,103 @@ multiple identity and the floor inequalities, with the explicit L=M=2
 counterexample to the unscaled law. A small separately frozen control could
 test those exact obligations if useful; this result does not authorize an
 automatic gate census or enlarge Package A before its static core is ready.
+
+## 13. GC2281: use a phase-step difference for any fixed forcing period
+
+**PROOF-SKETCH, solo hand argument.** The dyadic restriction on the forcing
+period in section 12 can itself be removed by changing the difference
+operator. This is a further separate research candidate, not an enlargement
+of the static package or an independently accepted theorem.
+
+The pull is the exact boundary exposed by the phase-2 control: the resource
+should count forcing cycles rather than ordinary ticks. The cheap objection
+is that composing L gates over one forcing cycle increases spatial memory,
+so applying the static two-input theorem to that composite map is invalid.
+The argument below keeps the original one-tick recurrence and uses two
+commuting time differences instead; it makes no locality claim about that
+composite map. Record/source comparison is GC2278–2279, including actual kit
+DifferenceOrder/Path, PR55 and the primary skew-product construction. No new
+computation or additional novelty clearance has occurred.
+
+### Objects and the one carrying implication
+
+Fix any integer L>=1, the same at all sites, and L-periodic gate schedules.
+Include the phase t mod L in the prefix state. Standard triangular cycle
+lifting gives least prefix periods P_j=L*2^K_j, with K_j nonnegative and
+each increment either 0 or 1. Let
+
+    Delta f(t)=f(t+1) XOR f(t),
+    D_L f(t)=f(t+L) XOR f(t).
+
+These operators commute. For m=2^v, D_L^m=S^(Lm)+I, irrespective of whether
+L is odd or even. Let s be Lm-periodic, b be Lm-antiperiodic, and let
+Delta h=g_t(b,s), where g_t has L-periodic ANF coefficients. Cancellation at
+times t and t+Lm gives
+
+    Delta(D_L^m h)=alpha(t) XOR lambda(t)*s(t).
+
+Multiplication by an L-periodic coefficient commutes with D_L, and D_L kills
+such coefficients. Therefore, for every r>=1,
+
+    Delta(D_L^(m+r) h)=lambda(t)*D_L^r s.
+
+If D_L^r s=0, then F=D_L^(m+r)h has Delta F=0. Thus F is constant in
+ordinary time, so in particular D_L F=0. The needed implication is
+
+    D_L^r s=0  ==>  D_L^(m+r+1) h=0       (r>=1).
+
+This is only a forward vanishing implication; no cancellation of lambda or
+inverse difference is used. It remains true when lambda changes with phase.
+The final step from Delta F=0 to D_L F=0 holds for every positive L and is
+what removes the previous power-of-two restriction.
+
+### The unchanged resource argument in phase units
+
+Define O_L(f,N) as the largest q<=N-1 such that D_L^(N-q)f=0, with value
+zero if no positive q works. The cap and monotonicity of vanishing follow
+exactly as for the kit's order. Vanishing here is for every original time
+t, not merely one chosen phase.
+
+If h is Lm-antiperiodic, D_L^m h is the constant one stream and
+D_L^(m+1)h=0. Hence O_L(h,2m)=m-1 by the same upper/lower argument as the
+kit's `order_of_antiperiod`.
+
+For **reset-before**, suppose h is 2Lm-antiperiodic. If m=1, the old order
+is zero by its cap. If m>=2 and O_L(s,m)>0, then D_L^(m-1)s=0. The carrying
+implication with r=m-1 gives D_L^(2m)h=0, contradicting antiperiodicity.
+
+For **countdown**, write q=O_L(s,m). For q<=1 the inequality is automatic.
+Otherwise 2<=q<=m-1, so r=m-q>=1 and D_L^r s=0. The implication gives
+D_L^(2m-(q-1))h=0, whence O_L(h,2m)>=q-1. Thus the order drops by at most
+one across pattern 10. Pattern 01 has new order m-1, at least the old order;
+pattern 11 has old order zero and new order 2m-1; pattern 00 needs no law.
+
+At a pair starting at depth a, take
+
+    nu=K_a,
+    e_i=K_(a+2i)-K_a,
+    R_i=O_L(x_(a+2i),2^K_(a+2i)).
+
+All `RecordCharge.Path nu` fields follow, including the exact reset-after
+value R_(i+1)+1=2^(nu+e_(i+1)-1). The proposed result is therefore
+
+    K_(a+2m)-K_a <= m+Q_(K_a)(m) <= m+Q_0(m)
+
+for every fixed common finite forcing period L. When L=1 this is the static
+argument. When L=2^ell, D_L=Delta^L, so O_L(f,2^K) is exactly
+floor(order(f,L*2^K)/L); this recovers section 12 rather than changing its
+resource. The explicit phase-2 negative control still has resource zero.
+
+### Review boundary
+
+This supplies a written argument for arbitrary fixed finite-period forcing,
+including odd L. It supplies no statement for nonperiodic forcing, an
+unbounded family of site-dependent forcing periods, or a gate with more than
+two earlier inputs. The clock always includes the external phase; forgetting
+that phase can reduce the observed data period. No limiting density or
+centre-column conclusion follows.
+
+The sharp carrying question is the implication through the two commuting
+differences, followed by the global-in-time order definition and the actual
+prefix lifting. These are ready for an independent read. Local's static
+implementation task is unchanged; no duplicate formalization has begun.

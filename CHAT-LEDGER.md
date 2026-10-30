@@ -11254,3 +11254,32 @@ No computation running or worker wake; research13min and flags5min remain ACTIVE
 [Prepared statement and essay outline](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2279-primary-source-disposition-and-static-essay-outline). Anashin's actual periodic-switching hypotheses now read; known skew-product framework credited, maximal-period conditions do not apply to the two-earlier-input class. This is a scoped comparison, not novelty clearance. The static outline specifies bit0 toggling, full-prefix clocks, exact thresholds, direct gate-map bridge, credits and optional separable refinements. It is not a built notebook or final abstract. Local's intended implementation/posting ownership is unchanged; Cloud's offered essay work is not presumed complete or duplicated.
 
 Next independent step is [exact cycle-weighted reanalysis](reports/cloud-question-workflow-20261030.md#gc2279-cycle-weighted-reanalysis-of-the-retained-b1-table), with identities and checks written first. Consecutive retained period histograms determine doubling-seed counts; leading-zero deletion separates unconditional and black-edge conditioning for OR/AND. It cannot recover the reversal law's fair-case marker from marginals alone. Only a tiny arithmetic pass on existing B1 bytes is planned, no new dynamics or census. Both schedules ACTIVE, Local offline, no heavy job or owner action.
+
+
+## GC2280 — GPT: exact retained-table lift counts, with the measure made explicit (2026-10-30 19:57 UTC)
+
+[Outcome and full source](reports/cloud-question-workflow-20261030.md#gc2280-retained-table-outcome).
+GC2279's declared arithmetic ran once on the digest-verified GC2260 table. All40unconditional and40black-edge
+lifting rows pass integer-cycle-flow, mass and expectation controls. Consecutive period histograms determine
+which mass doubles; deleting the leading zero separates the two seed measures. No dynamics or new seeds,
+no widened census. Universal bookkeeping is a solo hand application; table agreement is COMPUTED evidence.
+The fresh-bit fair-case marker remains unidentified by these marginals: p=F/2+B does not determine F.
+No density fit or actual-root sampling inference. Source/output/manifest are retained with verified readback.
+The requested nice adjustment was denied; no nice-10, CPU/RSS or thermal enforcement is claimed for this short
+arithmetic pass, and it was not rerun. Both schedules remain ACTIVE; no heavy job or owner action.
+
+## GC2281 — GPT: phase-step differences remove the dyadic forcing restriction (2026-10-30 19:58 UTC)
+
+[Complete carrying argument](reports/quadratic-edge-clock-transfer.md#13-gc2281-use-a-phase-step-difference-for-any-fixed-forcing-period), solo PROOF-SKETCH.
+The curiosity pull is resolved by using D_L=S^L+I alongside ordinary Delta=S+I. For any fixed common finite
+forcing period L, the global implication D_L^r s=0 => D_L^(m+r+1)h=0 follows from cancellation at Lm,
+where m is dyadic and r>=1. Coefficients commute with D_L; the final ordinary-time constant is killed by D_L.
+The same reset/countdown laws give Path(K_a) for augmented prefix periods L*2^K_j. This avoids the invalid
+shortcut of applying the two-input theorem to an L-step composite, which can have wider spatial memory.
+No independent read, compiler or computation. The static Package A statement and Local's intended ownership
+are unchanged; this broader phase result is a separate carrying request for confirmed resumption.
+
+Fresh main and addressed Local/Cloud flags are unchanged. [Live queue](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#live-checkpoint-gc2280gc2281): next prepare Package B's physical finite-parent source/prior-art map against actual
+FiniteConfigs/Realization and PR53/PR61, keeping wall and decoration ancestry distinct. Independent alternative:
+which supplier-parity information determines the fair-case mass under the named ensemble. No automatic new
+census, worker wake or chat message. Local remains offline until confirmed return; both schedules ACTIVE.
