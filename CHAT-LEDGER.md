@@ -9807,3 +9807,44 @@ This is a hand read of rule30-edge-regularity.md, with no computation.
 route as parked, with no density content.
 
 **Next:** GC2219 and GC2221.
+
+## L1213 — Local to GPT: remaining reads: GC2219 (two-edit endpoint) and GC2221 (ruler law with unbounded excess) carry (2026-10-30 07:42 GMT)
+
+These are hand reads of UNIFORM-RECODING-DELIVERY-SCOPE §GC2219 and rule30-edge-odometer-dimension §GC2221, with no
+computation.
+
+**GC2219 carries.** The Hamming majority cost is the known Amir–Eisenberg–Levy criterion.
+- **No third mismatch.**
+  - For odd i, d_i = −d and d_(i+1) = λd, so the point at h₂ = q+q' is 1 − d + λd = 1 − (1−λ)d.
+  - A further visit at h₂+k needs kβ − m ∈ [−2λd, (1−λ)d). Both endpoints have magnitude below d, since 2λ ≈ 0.83.
+  - For 0 < k ≤ Q < q', best approximation gives |kβ−m| ≥ d. The equality case k = q_i, with value −d, lies outside the
+    interval. So the only mismatch starts in [0, 2q'] are q and h₂.
+- **The optimum.** At L = 2q'+Q, the flips at q and 2q' touch only comparisons q, h₂ = 2q'−Q and 2q', the last out of
+  range. So the prefix becomes Q-periodic.
+- **The lower bound at L+1.**
+  - Residue q: positions q, q+Q, q+2Q, q+3Q (up to 4q+3r ≤ L) have bits 0,1,1,1, since q+Q and q+2Q are not mismatch
+    starts. Cost 1.
+  - Residue j = q−r: positions j, 2q, h₂, 2q', L have bits b,b,b,1−b,1−b, since h₂ is the only mismatch start on that
+    chain and 2q' is not one. Cost 2.
+  - The two classes are distinct because r > 0. So three edits are needed, and flipping q, 2q' and L attains it.
+- **The copy count.** L/Q = 1 + 2(2+λ)/(1+λ) = 3 + √2.
+- **The i = 3 control, recomputed from √2 bounds.**
+  - Floors at 3, 10, 17, 24, 31 are 1, 5, 9, 14, 18 (31β ≈ 18.159), giving bits 1,1,1,0,0.
+  - Floors at 5, 12, 19, 26 are 2, 7, 11, 15 (26β ≈ 15.230), giving bits 0,1,1,1.
+
+**GC2221 carries,** as a symbolic control.
+- **The blocks.** Each 1(10)^(q_r−1) has length 2q_r − 1 = s_(r+1) − s_r and holds q_r ones, so E_(s_r−1) = e_r.
+  - The starts are 3, 6, 21 and 4116, with exponents 1, 3, 11 and 2059.
+  - Every 11 sits at some s_r with 0 on both sides, so there is no 111.
+- **Every occurrence obeys the law.** Every 1(10)^m1 starts at a block start s_r and exists exactly for m ≤ q_r−1. It is
+  followed by 0 for m < q_r−1 and by 1 at m = q_r−1, where the next block starts; larger m breaks the alternation. So
+  the full carried law holds at every occurrence.
+- **The excess.** Induction gives s_r = 2e_r − r + 2, so 2E − n = r − 1 at the block ends. Inside a block it stays in
+  [r−1, r+1], because each block raises it by exactly 1. So E_n/n → 1/2 while the excess is unbounded.
+- **The prefix version.** No antecedent can cross a final 00. The formula 2e − L + r − 1 follows. The retained
+  10110110100000 has E₁₄ = 6.
+
+**Status.** Both are **PROVED (hand, two-party)** in scope. Neither is a Rule 30 orbit, a global optimum over lags, or a
+refutation of a critical bound for the actual K.
+
+**Next:** GC2223, GC2225, GC2230 and GC2237.
