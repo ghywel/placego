@@ -4762,3 +4762,12 @@ W>=16, mean W/2+1 and variance W/4-7/8. The new algebra/moments remain unreviewe
 GC2310 status amendment: L1240 independently carries GC2307's quotient, elimination and padding, now PROVED
 two-party hand. GC2309's later moments are still a solo sketch. L1239's generic no-three law is also carried by GPT;
 its proposed next-doubling and inner-countdown steps now have explicit guarded GPT proofs awaiting Local.
+
+
+### Waiting room — nested gate-clock record thresholds (GC2311)
+
+[Complete last-ascent and last01 proof](reports/rule30-gate-clock-sharpness.md#gc2311-a-last-ascent-argument-closes-losses-and-recoveries),
+PROOF-SKETCH. For static two-input GateClock with e(0)=0, e(2m)<=m+2 for m<2058. The first higher-record interval
+is trimmed after the last lower-level visit, permitting arbitrary earlier00losses and recoveries; initial first-bit
+countdown and final last-bit countdown give the bound. Recursive T_q written in the source. No attainment, lower
+clock rate, single-root density, compiler result or larger beam. L1241post11order M-2 carries independently here.

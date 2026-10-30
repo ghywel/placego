@@ -269,3 +269,195 @@ beam 1, so K = 64 is fragile. At K = 256 and K = 1024 the traced family reaches 
 per `10` pair, and the independent simulation agreeing. **Counterfactual:** a different pattern or a smaller `E(38)`
 would be reported as is; a simulation mismatch would fail the run. Caps: 1200 s CPU per process, 1800 s wall, 4 GiB
 RSS, 64 MiB per file, 128 MiB disk, 2.5 GiB launch floor.
+
+
+## GC2311: a last-ascent argument closes losses and recoveries
+
+**PROOF-SKETCH, GPT hand; independent carrying read requested. No new
+computation.** The pull is precisely GC2310's gap: a sharper record bound
+must survive00 pairs and later recovery. The key is to select the last
+ascent to the preceding excess level. Every loss then lies before the
+selected interval, and a last01 pair controls its end.
+
+Record searched: L1237/L1239/L1241, GC2310, the full relevant Package A
+`order_reset_before_gate`, `order_countdown_gate`, `GateClock.windowPath`
+source14372c1d, and current kit `Rule30RecordCharge.record_potential`,
+`record_time_lower_bound` and `threshold_zero_two`. The latter actual
+source has SHA256ce3fa36b5f961f39ee6fc7e6df1230be67080127165fb1ae924ea670f805c96c.
+The complete23:05external refresh keeps main7beff71c and adds PR63 (a stripe
+backward-wave package, not an assumed matching clock theorem; source review
+separate) and indexes our already-delivered B. Generic difference machinery
+and record-charge bookkeeping are prior art; the proposed improvement is
+the use of both alternating sets of profiles. Skirrow's
+[primary nearsighted-counter account](https://oeis.org/wiki/User:Natalia_L._Skirrow/on_nearsighted_binary_counters)
+uses AND gates and selected finite seeds, and does not by that statement
+supply this arbitrary static two-input-gate bound. No priority claim follows
+from the searches.
+
+### Convention and the three inputs
+
+Use Package A's GateClock convention: y_n is a Boolean profile with period
+2^e(n), e(n+1)-e(n) belongs to{0,1}, a rise complements y_(n+1) across
+2^e(n), and
+
+```text
+Delta y_(n+2) = g_n(y_(n+1),y_n),   Delta=S+I over F2.
+```
+
+The gates g_n may vary with n but are fixed in time. Assume e(0)=0. Actual
+finite-bit prefix clocks fit by taking y_0 as the missing white bit and
+letting y_n be bit n-1 for n>=1. No common choice of gate or seed is imposed.
+For pair i>=1 the two increments are those from2i-2 to2i-1 and then2i.
+Write e_i=e(2i), and use the **integer** excess d_i=e_i-i. It is allowed to
+be negative; its increments are-1,0,1 for pairs00,01/10,11 respectively.
+The last-bit resource is R_i=O(y_(2i),2^e_i).
+
+The inputs, with the boundary cases already separated, are:
+
+1. No-three for starting dyadic period M>=2, carried GC2310/L1239.
+2. After01 with earlier period P>=2, a doubling of the next first bit
+   requires order0 of that01 pair's first bit; consecutive01 first-bit
+   orders decrease by at most1. These are GC2310(ii)/(iii), carried in
+   L1241; the countdown is already Package A's `order_countdown_gate`.
+3. A01 pair resets its last-bit resource exactly to2^(e_i-1)-1.
+   A10 pair lowers that resource by at most1. Before11 the old last-bit
+   resource is0. These are the carried generic antiperiod/reset/countdown
+   laws from Package A, not new empirical rules.
+
+L1241's additional start-order step also carries independently here:
+right after11 from period M, let a,b be its first/last profiles and c the
+following first profile. Then a is M-antiperiodic, b is2M-antiperiodic,
+and no-three makes c4M-periodic. Expanding its gate gives
+
+```text
+Delta^(2M+1)c = lambda*a+alpha,
+Delta^(M+1)a=0,
+Delta^(3M+2)c=0,
+O(c,4M) >= M-2.
+```
+
+The positive difference M+1 kills alpha. We use this only for M>=8, so the
+order bound is nonnegative and its defining index lies strictly below4M.
+This is a GPT carrying read of Local's written step, which agrees with the
+independent derivation made while reading the shared sources.
+
+### Select the interval after the last return to the lower level
+
+Fix q>=2. Suppose N is the **first** pair index with d_N=q+1. Its final
+pair is11 and d_(N-1)=q. Because d_0=0 and the increments have magnitude
+at most1, there is at least one visit to q-1 before N. Let k-1 be the
+last such visit. Then
+
+```text
+d_(k-1)=q-1,   d_k=q,   d_i=q for every k<=i<N.
+```
+
+Indeed a later smaller value would require another visit to q-1, and a
+larger value would contradict the definition of N. Thus pair k is11 and
+all pairs k+1,...,N-1 are01 or10. This is the explicit treatment of all
+previous00 losses and recoveries: they are permitted, but excluded from
+this final interval by the last-visit choice, not assumed absent globally.
+
+Let M be the prefix period immediately before pair k. Since
+`e_(k-1)=k+q-2`, we have
+
+```text
+M = 2^(k+q-2).
+```
+
+Reaching excess2 cannot occur before pair3: excess2 at pair2 would require
+four initial doublings, contradicted by no-three applied after the first
+one, where the period is2. Thus k>=3 and M>=8 for q>=2.
+
+### The initial01 run delays the first possible switch
+
+No-three forces pair k+1 to be01, since its first bit cannot double and
+its total weight is1. Suppose the initial01 run has length r>=1. The
+first-bit order in its first pair is at least M-2. Successive01 pairs lower
+that order by at most1, so its last first-bit order is at least M-r-1.
+
+The pair after this run is either10 or the final11. In both cases its first
+bit doubles. The preceding01 test therefore forces the last first-bit
+order to0, giving
+
+```text
+r >= M-1.
+```
+
+The run must end because pair N is11. Let ell be the **last**01 pair in
+k+1,...,N-1. It is at least the end of the initial run, hence
+
+```text
+ell >= k+M-1.
+```
+
+This remains true if the path switches back and forth between01 and10.
+No assertion about their later order or a chosen witness is needed.
+
+### The final10 run pays the second countdown
+
+After ell, all pairs through N-1 are10 by its definition. As d_ell=q,
+`e_ell=ell+q`; the01 reset gives
+
+```text
+R_ell = 2^(ell+q-1)-1.
+```
+
+There are exactly N-ell-1 intervening10 pairs. Since each can reduce the
+resource by at most1 and the final11 requires R_(N-1)=0,
+
+```text
+N-ell-1 >= 2^(ell+q-1)-1,
+N >= ell+2^(ell+q-1).
+```
+
+Combining the two inequalities proves the candidate first-record bound
+
+```text
+A_q(k) = k+2^(k+q-2)-1,
+N >= A_q(k)+2^(A_q(k)+q-1).
+```
+
+Both functions on the right are increasing in k. Nothing in this argument
+uses the beam output, an observed gate sequence, or a density model.
+
+### Concrete bound and recursive consequence
+
+For q=2 we have k>=3, M>=8, ell>=10. Therefore N>=10+2^11=2058. Equivalently,
+
+```text
+e(2m) <= m+2  for every 0<=m<2058.
+```
+
+The existing generic record-charge export permits excess3 already at pair19;
+this proposed refinement forbids it before pair2058. Units are **pairs**:
+2058 corresponds to4116 prefix bits, not a time bound or centre-column
+period lower bound. No attainment at2058 is asserted.
+
+The same reasoning can be iterated. Define T_1=1, T_2=3 and, for q>=2,
+
+```text
+A_q = T_q+2^(T_q+q-2)-1,
+T_(q+1) = A_q+2^(A_q+q-1).
+```
+
+Inductively, any first visit to excess q occurs no earlier than T_q:
+the last ascent index k in the next-level argument also reaches excess q,
+so k>=T_q. Thus T_3=2058. This is a proposed stronger universal threshold
+sequence in the same static gate-clock class. It does not improve the
+leading half-rate to a smaller limiting constant, supply a lower density,
+or resolve the one-black root's limit.
+
+Index control (abstract only): the increment-pair word
+`11,10,11,(01)^7,(10)^2047,11` places its last pair at2058. The two
+countdowns would be6through0, then2047through0. This checks the one-based
+pair arithmetic; it is **not** a realized gate family or a sharpness proof.
+The three-step numeric case and the recursive extension both remain
+PROOF-SKETCH until their last-visit/first01/last01 argument is independently
+carried. No new compiler, solver, beam or GPU stage is requested.
+
+Next executable step: independent carrying review of the last-visit interval
+and both endpoint inequalities, then an exact formal interface if the read
+survives. In parallel with a pending read, inspect the genuinely different
+endpoint-cone explanation of GC2309's variance correction. Do not enlarge
+the beam to a period of exponential size in2058.

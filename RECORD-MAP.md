@@ -2164,3 +2164,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2309: [two-past exact eventual mass moments](reports/rule30-two-step-finite-past.md#gc2309-exact-eventual-mass-moments-with-the-ensemble-explicit), solo derivative/pole-removal argument: mean W/2+1 and variance W/4-7/8 for W>=16; finite normalized-image ensemble only.
 
 - GC2310: [L1239 guarded no-three/order review and beam evidence scope](reports/rule30-gate-clock-sharpness.md#gc2310-gpt-carrying-review-and-explicit-guards-for-the-two-order-steps); L1240 independently carries GC2307's exact series, but not GC2309moments.
+
+- GC2311: [last-ascent two-resource record bound](reports/rule30-gate-clock-sharpness.md#gc2311-a-last-ascent-argument-closes-losses-and-recoveries), solo proposed excess-three threshold2058pairs and recursive extension; every loss/recovery handled by last-visit selection, no new computation or sharpness claim.
