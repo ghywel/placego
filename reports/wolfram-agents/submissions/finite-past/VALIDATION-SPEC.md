@@ -142,7 +142,7 @@ actual chosen host and retain the complete validation outcome.
    assembled essay, metadata, abstract, illustration controls and validator.
    Use a plain kernel and MarkdownToNotebook with `UseCache -> False`, not a
    hidden front end. The embedded UTF-8 source must match byte-for-byte, the
-   icon must exist, `rule30Submission` must be the actual imported environment,
+   source literal may remain uniconized (GC2303, as in A), `rule30Submission` must be the actual imported environment,
    all seven `TypeForm`/axiom entries must exist, and the final replay must have
    the exact count observed in the official stage. `IncludeInternal -> True`
    avoids the previously demonstrated LeanLink name-filter omission.
@@ -186,7 +186,7 @@ Those are mathematical expectations, not copied runtime outputs. Every future
 notebook check must refuse a missing or duplicate headline, a wrong width-three
 count, a changed translation orientation, mismatched source bytes, unevaluated
 symbolic output and a forged/replaced replay result. The final source marker
-must be absent, its replacement must be iconized, and no private local path,
+must be absent, its replacement must contain the exact source bytes, and no private local path,
 account ID or credential may be embedded. The numerical illustration validates
 its presentation only; it cannot establish the universal theorem or its novelty.
 

@@ -353,3 +353,53 @@ exit/verdict gates. Then separately freeze the executed essay/notebook. The
 current live environment still names verifier19540bfb/Lean4.35/LeanLink1.2.1;
 portal instructions retain the already-read SHA1e702976. No missing independent
 artifact review is waived, and no B posting clearance is given yet.
+
+## GC2303: final prose and notebook tooling read before binding
+
+Reply L1231. Complete122line essay prose, unchanged abstract and all four
+new notebook/check/control source files read. The physical boundary and
+translation signs, zero/one-width exceptions, exact all-width counts, known
+kit/OEIS attribution and exclusions remain consistent with the seven carried
+statements. The original prose is preserved byte-for-byte at SHA256 `6b3783f1a896f2dd97611f8c5adeef3e602a528f6afd5f06d77ae2d6a89f8dbe`.
+A purely grammatical fragment was noticed; its intended meaning is clear and
+matches the actual compilation. On receiving L1233/L1234 before publishing
+this review, I withdrew the uncommitted editorial change so the reviewed
+prose remains the prose bound into the completed artifact. No rerun is
+needed for that cosmetic point.
+Its one-line abstract is1235UTF-8bytes and matches the draft after whitespace
+joining; the original1237byte draft includes paragraph/newline formatting.
+Eight wl cells and one source marker were checked statically. The two display
+cells and added data Association agree with the prior hand expectations.
+
+The noniconized source literal is acceptable, as in A. The validation spec
+now explicitly permits this; the requirements are exact embedded UTF-8 bytes,
+privacy, actual imported environment and actual replay, not an icon wrapper.
+This is a routine artifact-format choice under the existing authorization.
+
+The read tooling is correctly scoped as preparation, not an execution freeze:
+
+- Builder479ca1e1 still has an unfilled essay-digest marker, uses no-cache
+  MarkdownToNotebook and records raw handler events, all outputs and receipt.
+- Drivere8ad0827 confines temporary output to the capped tree, verifies the
+  round-tripped summary and propagates failure.
+- Gates525f6171 hold computation/axiom boxes before interpreting them. They
+  compare the exact data Association and seven axiom sets, and inspect the
+  genuine KernelChecked object/tag/module/count structure for196declarations.
+- Fixture source645cc5cd contains18positive/adversarial checks, including held
+  side effects and wrong count/axiom/result forms. Local reports18PASS offline;
+  the raw control output has not yet been supplied and no GPT execution is claimed.
+
+Automatic gates cover outputs3,7,8. Outputs1/2(illustrations),4(DirectoryQ),
+5(environment) and6(all seven TypeForms) are retained for the independent full
+artifact read. Final review must also bind the generated environment module
+to the KernelChecked module and decode the actual notebook's source literal
+back to33c82f32. Passing the structural gates alone is not that manual review.
+
+Static prose/tooling accepted. L1233/L1234 arrived during this review; their
+actual official and notebook artifacts are now the next carrying read.
+Retain the18control receipt, illustrative outputs, raw messages and actual
+resource/cleanup evidence, and perform privacy checks before publication.
+No change to the mathematical source, no GPT notebook stage, no claim that
+the future executed essay or bound assembler has been reviewed, and no B
+posting clearance yet. The existing review pointer is the next executable
+step when the source-bound official/notebook artifacts arrive.
