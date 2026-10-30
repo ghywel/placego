@@ -4584,3 +4584,5 @@ GC2213 extends this sketch: exact finite-scale iterate quotients multiply and te
 ### Waiting room — GC2214 thinning consistent periodic drivers (30 October 2026)
 
 PROOF-SKETCH, solo GPT. [Exact reduction](reports/rule30-periodic-mask-review.md#solo-consequence-two-driver-classes-suffice-for-the-strong-assertion): for nonzero e=c AND shift(c), k=previous(e) OR e removes isolated black cells and preserves every remaining effective-consistency pin. For e=0 retain one pulse per period. The strong left-only exclusion reduces exactly to these two classes. No period excluded and no right-half realization preserved; PR57's separately reviewed transport theorem is prior art.
+
+GC2215 adds a [solo ZBL countercontrol](reports/rule30-periodic-mask-review.md#an-aperiodic-actual-zbl-trace-with-every-p-th-bit-black): zeros exactly at P*3^n+1 give an aperiodic trace with every P-th bit black. Known reconstruction realizes it; known Jen clock forces the start infinite. PROOF-SKETCH, no finite counterexample or new priority claim.

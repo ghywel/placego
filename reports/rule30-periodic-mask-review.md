@@ -155,3 +155,80 @@ aperiodicity of w does not forbid a constant arithmetic subsequence. Seek a
 specific known exclusion or a structural countercontrol, not another finite
 death-time census. If only the old Q01 gap remains, park this reduction as a
 useful normal form and take a different warm lead. No new stage is frozen.
+
+
+## GC2215: the small-period targets are already named, and a countercontrol
+
+30 October 2026. The current kit at `932cf8dd` was compared by actual bodies,
+not by titles. The positive-period-two one-pulse assertion is
+`Rule30ZeroBoundary.Q01`; `Q01_iff_any_phase`, `L_eq_zrow` and
+`Q01_iff_staged` give the phase and coordinate interfaces. The period-three
+one-pulse assertion is `Rule30EtherThree.Q001` in Rule30EtherThreeLeft.
+Restart at the pinned phase and use `zrow_shift` and `zrow_fin`; the black
+pin supplies a nonzero finite row. Both all-width assertions are open.
+
+The minimal nonzero mask, a rotation of `100`, is the effective boundary of
+the driver `110`, equivalently the kit's `011`. Its canonical pins are exactly
+`colPattern3 w011`, namely `(*,0,1)` for effective boundary `010`.
+`C3w w011` quantifies over every finite start and eventual pins, whereas the
+PR57 assertion uses a nonzero finite start and pins from time zero. The usual
+restart removes the onset while retaining the driver phase. If the original
+start is zero, boundary `010` creates a black cell at depth one by time two;
+thereafter the moving-edge lemma keeps the state nonzero. Restarting at a
+sufficiently large multiple of three therefore also removes that difference.
+This is a solo hand interface check, not a new exclusion. The kit explicitly
+leaves `C3w w011` open; its right-half ether erosion does not prove this
+left-only statement.
+
+### An aperiodic actual ZBL trace with every P-th bit black
+
+For any integer P>=2 define a(t) to be zero exactly at times
+
+```
+z_n = P * 3^n + 1,  n>=0,
+```
+
+and black otherwise. Then a(P*q)=1 for every q>=0. There are infinitely many
+zeros and unbounded black runs, so a is not eventually periodic: an eventually
+periodic sequence with a zero has bounded gaps between its zeros.
+`Rule30ZeroBoundary.realization` supplies an actual zero-boundary start
+`lam a` with precisely this full trace, uniquely at positive depths.
+
+That start cannot be finite. If its highest black depth were m, between z_n
+and z_(n+1) its trace is constant black on the interval starting at
+T=P*3^n+2 with length parameter ell=2*P*3^n-2 (inclusive endpoints).
+The existing `jen_clock`, used with temporal period one, would give
+
+```
+ell + 2 <= T + m + 2,
+therefore P * 3^n <= m + 4,
+```
+
+which fails for large n. The start is nonzero since a(0)=1. This is a
+self-checked PROOF-SKETCH application of the kit's realization and clock
+lemmas, with no simulation or new theorem of priority. It demonstrates the
+precise limit of the nonperiodicity shortcut inside the actual ZBL dynamics;
+it is not a finite-start counterexample to Q01, Q001 or PR57's assertion.
+
+Record searched: zero-boundary with arithmetic/subsequence/period-three;
+one-pulse and left/Q01/Q001; current kit catalogs, ZeroBoundary's realization,
+phase and clock bodies, DrivenLeft.edge, EtherThreeLeft's Q001/C3w definitions
+and their implication proofs. Listed portal e67465 already uses Q01/Q001;
+0cac94's sparse-word work does not supply an all-period left-only exclusion.
+The clock is the kit's credited Jen mechanism. No novelty determination or
+claim about unread primary literature is made.
+
+### Deliberate change of approach
+
+Both proposed branches return to existing open hypotheses before any new
+calculation. Park pulse thinning as a normal form; reopen for a new theorem
+about finite starts and partial time pins, not a longer death-time table.
+The separate warm pull is PR53's finite nonzero three-row reset theorem,
+head `761d42324aea56f402a21c3ea96949fa3466f856`: it uses finiteness directly.
+Its statement and final finite-path argument have been inspected, but the
+complete source/dependency/evidence review is **not yet complete**. Next read
+the six-state run encoding, the twenty-state reachability guard and the
+inverse-reset interface. Ask whether the produced reset has a location or
+alignment guarantee useful to the missing finite-predecessor step; do not
+silently identify spatial occurrence with that step. No new computation is
+frozen or running.
