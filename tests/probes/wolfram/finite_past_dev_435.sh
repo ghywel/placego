@@ -1,11 +1,13 @@
 #!/bin/sh
-# finite_past_dev_435.sh (Local, L1225): the one Lean 4.35 development stage for Package B (finite past), agreed in
-# GC2295 after L1219. Three Lean children, in order, against the pipeline kit's prebuilt core (its Rule30Prize,
+# finite_past_dev_435.sh (Local, L1228; first frozen at L1225, 42c0f035, which FAILED): the Lean 4.35 development
+# stage for Package B (finite past), agreed in GC2295 after L1219, re-pinned to GPT's GC2299 repair. Three Lean children, in order, against the pipeline kit's prebuilt core (its Rule30Prize,
 # Rule30Realization and Rule30Jen sources are byte-identical to verifier kit 19540bf's):
-#   1. compile GPT's assembled single file (Rule30Submission.lean, 8664d9e3) into a fresh, empty library;
-#   2. compile GPT's positive guard module, which must print exactly its 23 axiom reports, each standard;
+#   1. compile GPT's assembled single file (Rule30Submission.lean, 0072d264) into a fresh, empty library;
+#   2. compile GPT's positive guard module, which must print exactly its 23 axiom reports, for exactly the names of
+#      its own `#print axioms` lines and in that order, each standard (GC2299);
 #   3. compile GPT's expected-rejection control, which must FAIL with a type mismatch at deliberately_false (lines 11-12),
 #      after 1 and 2 have passed. An import or other failure does not count.
+# The final guard exits 1 on FAIL, so the supervisor's exit code carries the verdict (GC2299).
 # Development evidence only: not the official checker, not a release check, no retry. Invoke as
 #   SHARP_LEAN=<lean> KIT_ROOT=<kit> sh finite_past_dev_435.sh FOLDER
 # under run_capped.py --track-tree.
@@ -16,8 +18,8 @@ set -eu
 (ulimit -t 60; python3 - "$1") <<'PREP'
 from pathlib import Path
 import hashlib, os, re, sys
-pins = {'Rule30Submission.lean': '8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235',
-        'FinitePastValidationGuard.lean': '1494f9ca3767c3bf94af66a6362818944d20f8abef8f479d29afc091ffeba0ee',
+pins = {'Rule30Submission.lean': '0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229',
+        'FinitePastValidationGuard.lean': '3060610526333fad0829dfa82288979bac1ee9203d042a83835c2bc42a5b452e',
         'FinitePastExpectedRejection.lean': 'b87d6eee0098a9fd0108bbfee9677a9771e2d4fd46327fbd41cd8443e513c5db'}
 out = Path(os.environ['CAPPED_OUT']); (out / 'src').mkdir(); (out / 'lib').mkdir()
 for name, digest in pins.items():
@@ -61,6 +63,10 @@ rest = re.sub(r"'([^'\s]+)' (?:depends on axioms: \[[^\]]*\]|does not depend on 
 if res['guard_rc'] is None: res['reasons'].append('guard not reached')
 elif res['guard_rc'].strip() != '0': res['reasons'].append('guard did not compile')
 else:
+    expected = re.findall(r'^#print axioms (\S+)\s*$', (out / 'src' / 'FinitePastValidationGuard.lean').read_text(), re.M)
+    res['guard_expected_names'] = expected
+    if len(expected) != 23: res['reasons'].append('the pinned guard has %d print lines, not 23' % len(expected))
+    if [n for n, _ in reports] != expected: res['reasons'].append('guard report names differ from its print lines')
     if len(reports) != 23: res['reasons'].append('guard printed %d axiom reports, not 23' % len(reports))
     if any(not set(ax) <= standard for _, ax in res['guard_reports']): res['reasons'].append('nonstandard axioms in a guard report')
     if rest: res['reasons'].append('guard printed other text')
@@ -76,4 +82,6 @@ else:
 res['status'] = 'PASS' if not res['reasons'] else 'FAIL'
 (out / 'dev-result.json').write_text(json.dumps(res, indent=1, ensure_ascii=False) + '\n')
 print('FINITE_PAST_DEV_' + res['status'], json.dumps(res['reasons']), flush=True)
+if res['status'] != 'PASS':
+    raise SystemExit(1)
 GUARD
