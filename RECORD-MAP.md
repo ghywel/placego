@@ -2039,3 +2039,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2225: [exact guard map and capture scope](reports/rule30-carrier-invasion.md#gc2225-exact-guard-map-and-the-remaining-capture-question), solo PROOF-SKETCH. Phase-A speed is independent of older bits; both101/111 are closed,001 has an exact one/two-cycle avoidance condition and a hand12tick finite-prefix control. No capture theorem or justified standard-clock transfer. Capture parked; next PR47 carrying source/evidence review.
 
 - GC2226: [PR47 complete source/evidence review](reports/rule30-synchronizing-carrier-review.md), head744c1091. Six modules carried; fixed-three-bit and all-length periodic-tail scopes distinguished. Author583replayed/309declared/63headlines,54-file archive identities checked, no GPT replay. No finite ancestry or generic legal-future theorem. Next inspect the already-retained five-periodic reset-free core.
+
+
+- GC2227: [known five-core comparison](reports/rule30-reset-free-review.md#gc2227-the-nine-state-core-is-the-known-five-cycle-plus-constants) and [shifted-Path source/freeze](reports/rule30-edge-odometer-dimension.md#gc2227-exact-source-lean-draft-and-one-frozen-development-check). Whole-row versus tail scope resolved; two arithmetic Lean drafts still uncompiled, one4.33.1 development stage frozen,4.35 and independent review pending.

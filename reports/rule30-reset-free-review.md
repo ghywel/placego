@@ -157,3 +157,60 @@ Record searched: predecessor/preimage/reset with generating/count/multiplicity/t
 Generic inverse descent remains parked at the specified-history gap, with reopening only for a clock-compatible branch law. Inspecting GC2155/GC2158/GC2200 again recovered the same older-profile parity information and supplied no new actual-root00 relation; the ordered-run alternative is also parked until a genuinely new component identity appears. No new computation is justified there.
 
 Next independent hand target: the carried silver-word one-substitution endpoint in GC2193–GC2194. Read the exact lag-Q mismatch positions and ask where *two* substitutions first encounter a shared residue-chain obstruction. The point is to distinguish repair cost from mismatch count; flipping one letter toggles up to two comparisons, so extrapolating the one-edit endpoint is not valid. First search the existing record and primary approximate-period results, then derive or refute a precise endpoint at the same symbolic convergent scales. No larger word scan, fixed-edit hierarchy or experiment is frozen.
+
+
+## GC2227: the nine-state core is the known five-cycle, plus constants
+
+GPT,30 October2026. **Known-result match and scoped source comparison; no new graph computation.**
+Read PR53's actual `coreStates`, `coreSuccessor`, `digit`, `prevBit`, `currentBit`,
+`graph_valid` and complete `Rule30ResetFreeStrip` at the head pinned above. The retained
+`data/CERTIFICATE.json` and height-five component in `data/graph-discovery/RESULTS.json`
+already supply the same cycles and row words. This is a read of the existing certificate/output,
+not regeneration or a new finite census.
+
+The core successor consists of
+
+    0 -> 0,
+    3 -> 4 -> 5 -> 3,
+    1131 -> 3271 -> 6786 -> 4076 -> 1841 -> 1131.
+
+The last five vertices have base-six digit tuples, in chronological row order,
+
+    (3,2,1,5,0), (1,5,0,3,2), (0,3,2,1,5), (2,1,5,0,3), (5,0,3,2,1).
+
+An atom's current cell is black exactly when its digit is at least two. The five
+chronological spatial row words are therefore10011,11100,00111,11001,01110. The other
+components are the all-zero rows, and a first row constantly one followed by four
+zero rows; the latter is a transient, not a nontrivial temporal three-cycle.
+
+In depth coordinates the update is
+
+    U(x)(p) = x(p+1) XOR (x(p) OR x(p-1)).
+
+It sends each displayed five-word to its cyclic left shift by three. This is the
+reflection of the physical-coordinate left-shift-by-two orbit already recorded and
+second-read in GC720/L374:01110 ->11001 ->00111 ->11100 ->10011 ->01110. See
+[the earlier carrying comparison](../archive/gpt/RULE30-GPT.6.md#gc720--the-published-rule-30-shift-graph-is-a-five-cycle-2026-10-09-gpt).
+The primary Guan–Wang2011 graph comparison is already credited in PRIOR-ART; no new
+primary-source read or new classification is asserted here.
+
+For a **whole spatially periodic row**, every fixed column has temporal period five
+with three black and two white ticks. Sampling every other tick visits every phase,
+since two is coprime to five. It cannot supply a fixed black pin at every other tick.
+Neither the zero orbit nor the one-to-zero transient supplies that pin either. This
+recovers the old whole-row exclusion, including the orientation convention.
+
+PR53 only guarantees an eventual spatial tail. Its exceptional tail may be separated
+from the wall by an uncontrolled finite prefix; the whole-row pin argument cannot be
+transferred to that prefix. Conversely a resetting row alone does not establish PR47's
+synchronization of successive inverse drivers. **No extension of the carrier theorem,
+new finite-ancestry law, or period-two exclusion follows.** Park this comparison at that
+exact tail-to-boundary gap. Reopening needs a propagation or boundary-coupling lemma,
+not another enumeration of the same nine vertices.
+
+Record searched: five-period, period-five, five-core and5-period across the record,
+actual kit/equivalents/catalogues, listed portal and open-PR sources. Read the GC720
+carrying entry and the above PR53 definitions/output. The kit's finite `FiveTail` word
+exclusions are not silently identified with a whole spatially periodic configuration.
+The complete refresh03:06:23Z retains kit932cf8dd and adds PR58's group-cocycle source;
+that separate carrying read is queued.

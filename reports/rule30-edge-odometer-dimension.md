@@ -417,3 +417,65 @@ whose full proof has not yet been read here. Its period/antiperiod obstruction m
 symbolic continuations fail actual temporal compatibility. Read its exact head and linked sources
 before adopting any consequence. This is a change of representation and a source review, not a
 new request to the offline workers or a generic literature search.
+
+
+## GC2227: exact-source Lean draft and one frozen development check
+
+**UNCOMPILED before this stage; solo hand result still PROOF-SKETCH.** The draft uses
+the actual kit `Path`, `threshold`, `Q`, `pairPath` and `leastExp`, with no substitute
+definitions. It formalizes the arithmetic restart and every-window estimates only;
+it does not formalize the metric, Banach density or Assouad dimension.
+
+- [Record-charge window draft](../tests/probes/lean/Rule30RecordChargeWindow.lean), SHA256
+  343540308394e8df6772f9749e623eff67bb37a817b185ad22137676ad097abd.
+- [Actual right-period wrapper](../tests/probes/lean/Rule30RightPeriodWindow.lean), SHA256
+  56bdbf64ed91a52a3693561d4743e1a32c6ba7911f72d4879031cea3d1c26afc.
+- [Development driver](../tests/probes/wolfram/check_record_charge_window_dev.py), SHA256
+  4853cd857f29959c617a85675ca1fe8b135aa484df5368de66cc810c72dee116.
+- Unchanged capped runner SHA256
+  c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56.
+
+The source preserves nonzero inherited resource. Threshold monotonicity in the initial
+exponent gives antitonicity of Q, then the shifted uniform bound. Surrounding arbitrary
+endpoints by even endpoints yields the all-j/all-N inequality, also including N=0.
+The seven official core dependency sources are copied unchanged from kit
+932cf8dde039b89b1dcbe9636867bb1b2057fef0; their individual digests are retained at launch.
+No Mathlib build, lake invocation, official checker or portal submission is part of this stage.
+
+**Toolchain distinction.** This Intel host currently has explicit Lean4.33.1; its default
+elan selection is unconfigured. The kit requires4.35. Official release metadata was read:
+the Intel Darwin4.35 compressed asset is576516478bytes, SHA256
+0b43be5c7ecfb36016566a41005ab62bdb04743e6bfd5837e45f796ef4750b4e. No compiler was
+downloaded or default changed. This separately scoped compatibility/development check
+uses4.33.1 only. Passing cannot stand in for current4.35 compilation or official replay.
+
+**Prediction:** the unchanged seven-module kit dependency closure and both drafts compile
+under the installed development compiler; printed headline axioms contain no sorryAx;
+the six exact small Q boundary controls and a nonzero-resource restart control pass.
+**Counterfactual:** any dependency incompatibility, proof error, pressure/cap failure or
+unrelated negative-control error stops this stage without a retry or automatic widening.
+**Independent controls:** compare the exact formal statement types with GC2220's hand
+formulas; a deliberately false proposition must fail, and Q at0,1,2,3,18,19 crosses the
+hand-computed thresholds1,3,19 correctly. **Unexpected check:** a constant-resource-seven
+Path must restart retaining seven, to catch an accidental zero-resource assumption.
+
+Record searched: GC2220's exact actual-source/PR55/primary-geometric comparisons, and
+shift/restart with RecordCharge/pairPath in the current record and source index; matches
+are the known prefix theorem and our hand draft, not a new density claim. The refreshed
+03:06:23Z index adds only PR58's group-cocycle work, which will receive its own source read.
+No novelty clearance follows.
+
+**Frozen envelope, one run:** nice10, one Lean worker, sequential invocations; outer
+run_capped.py120CPU/300wall/768MiB sampled treeRSS,16MiB per output file/128MiB stage,
+launch4096MiB free+inactive/running3072MiB, swap growth64MiB, tree tracking/max4processes.
+The driver makes at most12 compiler invocations (version, seven dependencies, two drafts,
+positive and negative controls), each hard-limited to8CPU seconds. Its own soft CPU
+limit is4seconds; assigned computational budgets total100seconds, not12 times the outer
+120second inherited limit. Kernel signal granularity and outer monitoring/time overhead
+are separate; retain actual cumulative child and driver CPU. No descendant-generating
+commands, GPU job or concurrent heavy work. Host preflight at03:06 reported about5728MiB
+free+inactive and load2.15; the sandbox denied swap inspection, so an actual unsandboxed
+runner gate must succeed before launch. Thermal status is unmeasured, not claimed normal.
+All outputs stay outside git. Preserve the first failure and cleanup receipt; no rerun
+is authorized by this freeze. Exact4.35 integration and independent carrying review remain
+separate future requirements whichever way this development check goes.
