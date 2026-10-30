@@ -10322,3 +10322,43 @@ single-seed supports are not read, so fork C's density statement may be known th
 quantitative asymmetry (polynomial against exponential periods), one small lemma with a one-line rederivation of a
 computed rule, and one pattern for GPT. Nothing for the prize. Both schedules as the owner set them; READ-LEDGER for
 GPT and Local.
+
+## CL655 — Cloud to the owner: the hiccup in the clock. In the kit's wall frame a hiccup is a change of selection, not a kick; a single dropped or inverted pin lets some start outlive the perfect clock by up to fourteen steps (W = 10), and the odd bits of the survivors are exactly fair below the width (2026-10-30 14:07 GMT)
+
+The owner's break: hold the centre column to period 2 and flip one bit of it, 0101010111010101 or 1010101000101010,
+then study the knock-on. Translated into the kit's frame (`Rule30ZeroBoundarySmall`, as in `d1_engine.py`): a
+W-bit start r next to a white wall, pstep(r) = (r >> 1) XOR (r OR (r << 1)), the clock is "the cell at the wall is
+black at every even time", death is the first even time it is white, D(W) the longest life over all starts. One
+point for the dialogue first: **in this frame the clock is not a driver but a selection.** The column is a cell of
+the configuration; the clock says which histories we accept. So a hiccup does not kick the system; it changes which
+starts are selected, and the knock-on is the change in their lifetimes. Three hiccups at a time t_h: REM (drop the
+pin at an even t_h), WHITE (demand white at an even t_h: the owner's 1 -> 0), BLACK (demand black at an odd t_h,
+where the clock says nothing: the owner's 0 -> 1). Program `tests/probes/wolfram/clock_hiccup.c`, output
+`clock_hiccup.out`, W = 8..22 exhaustive, every t_h < D(W). Predictions (Block 9, written first):
+
+- H1: REM gains at most 2 steps over D(W). **REFUTED.** Gains of +8 (W = 8), +14 (W = 10), +2, +2, +4, +8 (W = 18),
+  +8 (W = 20), +6 (W = 22). A start that the clock kills at t_h, released by one dropped pin, can then live far past
+  every start that keeps the perfect clock. The released starts are exactly WHITE's survivors, so WHITE's maximum
+  equals REM's; the second life after a hiccup is the same object seen twice.
+- H2: WHITE's best within 4 of D(W). **REFUTED** by the same numbers. The best hiccup lives: W = 8..22 gives
+  20, 32, 32, 34, 36, 40, 46, 46 against D(W) = 12, 18, 30, 32, 32, 32, 38, 40 (the record's table, reproduced
+  exactly by this program at every width, §8.3's D(2..24)).
+- H3: BLACK (an added pin at an odd time) leaves D(W) unchanged for at least half of the odd t_h. Mixed: 2/6, 3/9,
+  7/15, 9/16, 9/16, 9/16, 16/19, 8/20 at W = 8..22. Neither held nor cleanly refuted; the maximizers' odd bits are
+  about half black, as the free bits suggest.
+- PU: the survivors' black fraction at odd times is **exactly one half** at every odd t_h < W (every width), then
+  swings (0.105 at t_h = 23 and 1.0 at 31 for W = 16). The first is the kit's free bits (the odd trace bits below
+  the width are free parameters, `count_constrained` = 2^(W/2)); the second is their constraint beyond the width
+  (`free_bits_no00_no11111`). MEASURED, matching PRIOR ART.
+
+**Reading.** The perfect clock is a tight lock: one pin removed, at the right time, buys up to fourteen steps at
+W = 10, and the best single-hiccup life runs about four widths ahead of the perfect clock's table (D*(10) = 32 =
+D(14); D*(16) = 36 between D(18) and D(19)). That is a measure of how much each pin costs the survivors, and a
+different way of seeing why the clock's death table is not 2W - c. Nothing here moves Q01: the hiccup frame is
+the same frame with one constraint changed, and all its lives are finite as before. For the owner's "what does a
+single flip reveal": the odd bits are a fair coin below the width and nothing like one above it, and the released
+starts' second lives are long. A natural next hiccup, not run: two dropped pins (does the gain add?), and the gain
+as a function of t_h (is the best release time near D(W)/2, as at W = 16 where t_h = 16 and 32 gave +4?).
+
+Record searched: death_tables.py, d1_engine.py, §8.3 (D table, 8.117), kit `free_bits_no00_no11111`,
+`count_constrained`, `two_step_shift`; record_find hiccup / perturbed clock: none. No prize movement. READ-LEDGER.

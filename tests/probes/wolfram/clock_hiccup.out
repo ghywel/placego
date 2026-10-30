@@ -1,0 +1,274 @@
+W=8 D(W)=12
+type t_h D_h  (D_h - D)
+REM     0  12  (+0)   WHITE   0  10  (-2)  [starts selected 127]
+BLACK   1  10  (-2)   survivors at t_h 128, black there 64 (0.500)
+REM     2  16  (+4)   WHITE   2  16  (+4)  [starts selected 64]
+BLACK   3  12  (+0)   survivors at t_h 64, black there 32 (0.500)
+REM     4  16  (+4)   WHITE   4  16  (+4)  [starts selected 32]
+BLACK   5  10  (-2)   survivors at t_h 32, black there 16 (0.500)
+REM     6  12  (+0)   WHITE   6  12  (+0)  [starts selected 16]
+BLACK   7  10  (-2)   survivors at t_h 16, black there 8 (0.500)
+REM     8  14  (+2)   WHITE   8  14  (+2)  [starts selected 12]
+BLACK   9  12  (+0)   survivors at t_h 4, black there 3 (0.750)
+REM    10  20  (+8)   WHITE  10  20  (+8)  [starts selected 3]
+BLACK  11  11  (-1)   survivors at t_h 1, black there 0 (0.000)
+REM    12  14  (+2)   WHITE  12  14  (+2)  [starts selected 1]
+BLACK  13  12  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    14  12  (+0)   WHITE  14  -1  (-13)  [starts selected 0]
+W=10 D(W)=18
+type t_h D_h  (D_h - D)
+REM     0  18  (+0)   WHITE   0  18  (+0)  [starts selected 511]
+BLACK   1  16  (-2)   survivors at t_h 512, black there 256 (0.500)
+REM     2  18  (+0)   WHITE   2  16  (-2)  [starts selected 256]
+BLACK   3  16  (-2)   survivors at t_h 256, black there 128 (0.500)
+REM     4  32  (+14)   WHITE   4  32  (+14)  [starts selected 128]
+BLACK   5  18  (+0)   survivors at t_h 128, black there 64 (0.500)
+REM     6  26  (+8)   WHITE   6  26  (+8)  [starts selected 64]
+BLACK   7  16  (-2)   survivors at t_h 64, black there 32 (0.500)
+REM     8  18  (+0)   WHITE   8  18  (+0)  [starts selected 32]
+BLACK   9  16  (-2)   survivors at t_h 32, black there 16 (0.500)
+REM    10  20  (+2)   WHITE  10  20  (+2)  [starts selected 15]
+BLACK  11  16  (-2)   survivors at t_h 17, black there 10 (0.588)
+REM    12  20  (+2)   WHITE  12  20  (+2)  [starts selected 2]
+BLACK  13  18  (+0)   survivors at t_h 15, black there 6 (0.400)
+REM    14  18  (+0)   WHITE  14  18  (+0)  [starts selected 11]
+BLACK  15  18  (+0)   survivors at t_h 4, black there 2 (0.500)
+REM    16  22  (+4)   WHITE  16  22  (+4)  [starts selected 3]
+BLACK  17  17  (-1)   survivors at t_h 1, black there 0 (0.000)
+REM    18  20  (+2)   WHITE  18  20  (+2)  [starts selected 1]
+BLACK  19  18  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    20  18  (+0)   WHITE  20  -1  (-19)  [starts selected 0]
+W=12 D(W)=30
+type t_h D_h  (D_h - D)
+REM     0  30  (+0)   WHITE   0  30  (+0)  [starts selected 2047]
+BLACK   1  30  (+0)   survivors at t_h 2048, black there 1024 (0.500)
+REM     2  30  (+0)   WHITE   2  30  (+0)  [starts selected 1024]
+BLACK   3  30  (+0)   survivors at t_h 1024, black there 512 (0.500)
+REM     4  32  (+2)   WHITE   4  32  (+2)  [starts selected 512]
+BLACK   5  30  (+0)   survivors at t_h 512, black there 256 (0.500)
+REM     6  30  (+0)   WHITE   6  26  (-4)  [starts selected 256]
+BLACK   7  16  (-14)   survivors at t_h 256, black there 128 (0.500)
+REM     8  30  (+0)   WHITE   8  22  (-8)  [starts selected 128]
+BLACK   9  30  (+0)   survivors at t_h 128, black there 64 (0.500)
+REM    10  30  (+0)   WHITE  10  22  (-8)  [starts selected 64]
+BLACK  11  16  (-14)   survivors at t_h 64, black there 32 (0.500)
+REM    12  30  (+0)   WHITE  12  22  (-8)  [starts selected 26]
+BLACK  13  18  (-12)   survivors at t_h 38, black there 20 (0.526)
+REM    14  30  (+0)   WHITE  14  22  (-8)  [starts selected 29]
+BLACK  15  30  (+0)   survivors at t_h 9, black there 5 (0.556)
+REM    16  30  (+0)   WHITE  16  22  (-8)  [starts selected 6]
+BLACK  17  17  (-13)   survivors at t_h 3, black there 0 (0.000)
+REM    18  30  (+0)   WHITE  18  20  (-10)  [starts selected 1]
+BLACK  19  19  (-11)   survivors at t_h 2, black there 0 (0.000)
+REM    20  30  (+0)   WHITE  20  -1  (-31)  [starts selected 0]
+BLACK  21  30  (+0)   survivors at t_h 2, black there 2 (1.000)
+REM    22  30  (+0)   WHITE  22  -1  (-31)  [starts selected 0]
+BLACK  23  23  (-7)   survivors at t_h 2, black there 0 (0.000)
+REM    24  30  (+0)   WHITE  24  -1  (-31)  [starts selected 0]
+BLACK  25  30  (+0)   survivors at t_h 2, black there 2 (1.000)
+REM    26  30  (+0)   WHITE  26  -1  (-31)  [starts selected 0]
+BLACK  27  27  (-3)   survivors at t_h 2, black there 0 (0.000)
+REM    28  30  (+0)   WHITE  28  -1  (-31)  [starts selected 0]
+BLACK  29  29  (-1)   survivors at t_h 2, black there 0 (0.000)
+REM    30  32  (+2)   WHITE  30  32  (+2)  [starts selected 2]
+BLACK  31  30  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    32  30  (+0)   WHITE  32  -1  (-31)  [starts selected 0]
+W=14 D(W)=32
+type t_h D_h  (D_h - D)
+REM     0  32  (+0)   WHITE   0  32  (+0)  [starts selected 8191]
+BLACK   1  32  (+0)   survivors at t_h 8192, black there 4096 (0.500)
+REM     2  32  (+0)   WHITE   2  32  (+0)  [starts selected 4096]
+BLACK   3  30  (-2)   survivors at t_h 4096, black there 2048 (0.500)
+REM     4  32  (+0)   WHITE   4  32  (+0)  [starts selected 2048]
+BLACK   5  32  (+0)   survivors at t_h 2048, black there 1024 (0.500)
+REM     6  34  (+2)   WHITE   6  34  (+2)  [starts selected 1024]
+BLACK   7  32  (+0)   survivors at t_h 1024, black there 512 (0.500)
+REM     8  32  (+0)   WHITE   8  28  (-4)  [starts selected 512]
+BLACK   9  32  (+0)   survivors at t_h 512, black there 256 (0.500)
+REM    10  32  (+0)   WHITE  10  24  (-8)  [starts selected 256]
+BLACK  11  32  (+0)   survivors at t_h 256, black there 128 (0.500)
+REM    12  32  (+0)   WHITE  12  32  (+0)  [starts selected 128]
+BLACK  13  28  (-4)   survivors at t_h 128, black there 64 (0.500)
+REM    14  32  (+0)   WHITE  14  22  (-10)  [starts selected 71]
+BLACK  15  32  (+0)   survivors at t_h 57, black there 26 (0.456)
+REM    16  32  (+0)   WHITE  16  26  (-6)  [starts selected 31]
+BLACK  17  22  (-10)   survivors at t_h 26, black there 14 (0.538)
+REM    18  32  (+0)   WHITE  18  30  (-2)  [starts selected 11]
+BLACK  19  28  (-4)   survivors at t_h 15, black there 7 (0.467)
+REM    20  32  (+0)   WHITE  20  22  (-10)  [starts selected 1]
+BLACK  21  30  (-2)   survivors at t_h 14, black there 9 (0.643)
+REM    22  32  (+0)   WHITE  22  24  (-8)  [starts selected 7]
+BLACK  23  28  (-4)   survivors at t_h 7, black there 2 (0.286)
+REM    24  32  (+0)   WHITE  24  -1  (-33)  [starts selected 0]
+BLACK  25  30  (-2)   survivors at t_h 7, black there 2 (0.286)
+REM    26  32  (+0)   WHITE  26  -1  (-33)  [starts selected 0]
+BLACK  27  32  (+0)   survivors at t_h 7, black there 3 (0.429)
+REM    28  32  (+0)   WHITE  28  30  (-2)  [starts selected 2]
+BLACK  29  32  (+0)   survivors at t_h 5, black there 3 (0.600)
+REM    30  32  (+0)   WHITE  30  32  (+0)  [starts selected 2]
+BLACK  31  32  (+0)   survivors at t_h 3, black there 3 (1.000)
+REM    32  36  (+4)   WHITE  32  36  (+4)  [starts selected 3]
+BLACK  33  32  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    34  32  (+0)   WHITE  34  -1  (-33)  [starts selected 0]
+W=16 D(W)=32
+type t_h D_h  (D_h - D)
+REM     0  32  (+0)   WHITE   0  32  (+0)  [starts selected 32767]
+BLACK   1  32  (+0)   survivors at t_h 32768, black there 16384 (0.500)
+REM     2  32  (+0)   WHITE   2  32  (+0)  [starts selected 16384]
+BLACK   3  30  (-2)   survivors at t_h 16384, black there 8192 (0.500)
+REM     4  32  (+0)   WHITE   4  32  (+0)  [starts selected 8192]
+BLACK   5  32  (+0)   survivors at t_h 8192, black there 4096 (0.500)
+REM     6  34  (+2)   WHITE   6  34  (+2)  [starts selected 4096]
+BLACK   7  32  (+0)   survivors at t_h 4096, black there 2048 (0.500)
+REM     8  32  (+0)   WHITE   8  32  (+0)  [starts selected 2048]
+BLACK   9  32  (+0)   survivors at t_h 2048, black there 1024 (0.500)
+REM    10  32  (+0)   WHITE  10  30  (-2)  [starts selected 1024]
+BLACK  11  32  (+0)   survivors at t_h 1024, black there 512 (0.500)
+REM    12  32  (+0)   WHITE  12  32  (+0)  [starts selected 512]
+BLACK  13  30  (-2)   survivors at t_h 512, black there 256 (0.500)
+REM    14  32  (+0)   WHITE  14  30  (-2)  [starts selected 256]
+BLACK  15  32  (+0)   survivors at t_h 256, black there 128 (0.500)
+REM    16  36  (+4)   WHITE  16  36  (+4)  [starts selected 144]
+BLACK  17  28  (-4)   survivors at t_h 112, black there 53 (0.473)
+REM    18  32  (+0)   WHITE  18  30  (-2)  [starts selected 49]
+BLACK  19  28  (-4)   survivors at t_h 63, black there 31 (0.492)
+REM    20  32  (+0)   WHITE  20  30  (-2)  [starts selected 29]
+BLACK  21  30  (-2)   survivors at t_h 34, black there 15 (0.441)
+REM    22  32  (+0)   WHITE  22  28  (-4)  [starts selected 15]
+BLACK  23  28  (-4)   survivors at t_h 19, black there 2 (0.105)
+REM    24  32  (+0)   WHITE  24  26  (-6)  [starts selected 3]
+BLACK  25  30  (-2)   survivors at t_h 16, black there 5 (0.312)
+REM    26  32  (+0)   WHITE  26  30  (-2)  [starts selected 3]
+BLACK  27  32  (+0)   survivors at t_h 13, black there 9 (0.692)
+REM    28  32  (+0)   WHITE  28  32  (+0)  [starts selected 5]
+BLACK  29  32  (+0)   survivors at t_h 8, black there 6 (0.750)
+REM    30  34  (+2)   WHITE  30  34  (+2)  [starts selected 5]
+BLACK  31  32  (+0)   survivors at t_h 3, black there 3 (1.000)
+REM    32  36  (+4)   WHITE  32  36  (+4)  [starts selected 3]
+BLACK  33  32  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    34  32  (+0)   WHITE  34  -1  (-33)  [starts selected 0]
+W=18 D(W)=32
+type t_h D_h  (D_h - D)
+REM     0  32  (+0)   WHITE   0  32  (+0)  [starts selected 131071]
+BLACK   1  32  (+0)   survivors at t_h 131072, black there 65536 (0.500)
+REM     2  32  (+0)   WHITE   2  32  (+0)  [starts selected 65536]
+BLACK   3  30  (-2)   survivors at t_h 65536, black there 32768 (0.500)
+REM     4  32  (+0)   WHITE   4  32  (+0)  [starts selected 32768]
+BLACK   5  32  (+0)   survivors at t_h 32768, black there 16384 (0.500)
+REM     6  40  (+8)   WHITE   6  40  (+8)  [starts selected 16384]
+BLACK   7  32  (+0)   survivors at t_h 16384, black there 8192 (0.500)
+REM     8  40  (+8)   WHITE   8  40  (+8)  [starts selected 8192]
+BLACK   9  32  (+0)   survivors at t_h 8192, black there 4096 (0.500)
+REM    10  40  (+8)   WHITE  10  40  (+8)  [starts selected 4096]
+BLACK  11  32  (+0)   survivors at t_h 4096, black there 2048 (0.500)
+REM    12  40  (+8)   WHITE  12  40  (+8)  [starts selected 2048]
+BLACK  13  30  (-2)   survivors at t_h 2048, black there 1024 (0.500)
+REM    14  34  (+2)   WHITE  14  34  (+2)  [starts selected 1024]
+BLACK  15  32  (+0)   survivors at t_h 1024, black there 512 (0.500)
+REM    16  36  (+4)   WHITE  16  36  (+4)  [starts selected 512]
+BLACK  17  28  (-4)   survivors at t_h 512, black there 256 (0.500)
+REM    18  32  (+0)   WHITE  18  30  (-2)  [starts selected 261]
+BLACK  19  30  (-2)   survivors at t_h 251, black there 137 (0.546)
+REM    20  34  (+2)   WHITE  20  34  (+2)  [starts selected 104]
+BLACK  21  30  (-2)   survivors at t_h 147, black there 53 (0.361)
+REM    22  36  (+4)   WHITE  22  36  (+4)  [starts selected 75]
+BLACK  23  30  (-2)   survivors at t_h 72, black there 23 (0.319)
+REM    24  32  (+0)   WHITE  24  32  (+0)  [starts selected 29]
+BLACK  25  30  (-2)   survivors at t_h 43, black there 18 (0.419)
+REM    26  32  (+0)   WHITE  26  30  (-2)  [starts selected 10]
+BLACK  27  32  (+0)   survivors at t_h 33, black there 26 (0.788)
+REM    28  32  (+0)   WHITE  28  32  (+0)  [starts selected 11]
+BLACK  29  32  (+0)   survivors at t_h 22, black there 6 (0.273)
+REM    30  40  (+8)   WHITE  30  40  (+8)  [starts selected 19]
+BLACK  31  32  (+0)   survivors at t_h 3, black there 3 (1.000)
+REM    32  36  (+4)   WHITE  32  36  (+4)  [starts selected 3]
+BLACK  33  32  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    34  32  (+0)   WHITE  34  -1  (-33)  [starts selected 0]
+W=20 D(W)=38
+type t_h D_h  (D_h - D)
+REM     0  38  (+0)   WHITE   0  38  (+0)  [starts selected 524287]
+BLACK   1  38  (+0)   survivors at t_h 524288, black there 262144 (0.500)
+REM     2  38  (+0)   WHITE   2  38  (+0)  [starts selected 262144]
+BLACK   3  38  (+0)   survivors at t_h 262144, black there 131072 (0.500)
+REM     4  38  (+0)   WHITE   4  38  (+0)  [starts selected 131072]
+BLACK   5  38  (+0)   survivors at t_h 131072, black there 65536 (0.500)
+REM     6  40  (+2)   WHITE   6  40  (+2)  [starts selected 65536]
+BLACK   7  38  (+0)   survivors at t_h 65536, black there 32768 (0.500)
+REM     8  40  (+2)   WHITE   8  40  (+2)  [starts selected 32768]
+BLACK   9  38  (+0)   survivors at t_h 32768, black there 16384 (0.500)
+REM    10  40  (+2)   WHITE  10  40  (+2)  [starts selected 16384]
+BLACK  11  38  (+0)   survivors at t_h 16384, black there 8192 (0.500)
+REM    12  44  (+6)   WHITE  12  44  (+6)  [starts selected 8192]
+BLACK  13  38  (+0)   survivors at t_h 8192, black there 4096 (0.500)
+REM    14  46  (+8)   WHITE  14  46  (+8)  [starts selected 4096]
+BLACK  15  38  (+0)   survivors at t_h 4096, black there 2048 (0.500)
+REM    16  38  (+0)   WHITE  16  36  (-2)  [starts selected 2048]
+BLACK  17  38  (+0)   survivors at t_h 2048, black there 1024 (0.500)
+REM    18  38  (+0)   WHITE  18  34  (-4)  [starts selected 1024]
+BLACK  19  38  (+0)   survivors at t_h 1024, black there 512 (0.500)
+REM    20  38  (+0)   WHITE  20  34  (-4)  [starts selected 526]
+BLACK  21  34  (-4)   survivors at t_h 498, black there 224 (0.450)
+REM    22  38  (+0)   WHITE  22  36  (-2)  [starts selected 258]
+BLACK  23  38  (+0)   survivors at t_h 240, black there 116 (0.483)
+REM    24  38  (+0)   WHITE  24  34  (-4)  [starts selected 120]
+BLACK  25  38  (+0)   survivors at t_h 120, black there 62 (0.517)
+REM    26  38  (+0)   WHITE  26  38  (+0)  [starts selected 40]
+BLACK  27  34  (-4)   survivors at t_h 80, black there 36 (0.450)
+REM    28  38  (+0)   WHITE  28  38  (+0)  [starts selected 36]
+BLACK  29  38  (+0)   survivors at t_h 44, black there 21 (0.477)
+REM    30  40  (+2)   WHITE  30  40  (+2)  [starts selected 24]
+BLACK  31  38  (+0)   survivors at t_h 20, black there 14 (0.700)
+REM    32  38  (+0)   WHITE  32  36  (-2)  [starts selected 8]
+BLACK  33  38  (+0)   survivors at t_h 12, black there 9 (0.750)
+REM    34  38  (+0)   WHITE  34  36  (-2)  [starts selected 3]
+BLACK  35  38  (+0)   survivors at t_h 9, black there 2 (0.222)
+REM    36  38  (+0)   WHITE  36  -1  (-39)  [starts selected 0]
+BLACK  37  37  (-1)   survivors at t_h 9, black there 0 (0.000)
+REM    38  44  (+6)   WHITE  38  44  (+6)  [starts selected 9]
+BLACK  39  38  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    40  38  (+0)   WHITE  40  -1  (-39)  [starts selected 0]
+W=22 D(W)=40
+type t_h D_h  (D_h - D)
+REM     0  40  (+0)   WHITE   0  40  (+0)  [starts selected 2097151]
+BLACK   1  40  (+0)   survivors at t_h 2097152, black there 1048576 (0.500)
+REM     2  40  (+0)   WHITE   2  40  (+0)  [starts selected 1048576]
+BLACK   3  40  (+0)   survivors at t_h 1048576, black there 524288 (0.500)
+REM     4  40  (+0)   WHITE   4  40  (+0)  [starts selected 524288]
+BLACK   5  38  (-2)   survivors at t_h 524288, black there 262144 (0.500)
+REM     6  42  (+2)   WHITE   6  42  (+2)  [starts selected 262144]
+BLACK   7  40  (+0)   survivors at t_h 262144, black there 131072 (0.500)
+REM     8  40  (+0)   WHITE   8  40  (+0)  [starts selected 131072]
+BLACK   9  40  (+0)   survivors at t_h 131072, black there 65536 (0.500)
+REM    10  42  (+2)   WHITE  10  42  (+2)  [starts selected 65536]
+BLACK  11  38  (-2)   survivors at t_h 65536, black there 32768 (0.500)
+REM    12  44  (+4)   WHITE  12  44  (+4)  [starts selected 32768]
+BLACK  13  38  (-2)   survivors at t_h 32768, black there 16384 (0.500)
+REM    14  46  (+6)   WHITE  14  46  (+6)  [starts selected 16384]
+BLACK  15  40  (+0)   survivors at t_h 16384, black there 8192 (0.500)
+REM    16  42  (+2)   WHITE  16  42  (+2)  [starts selected 8192]
+BLACK  17  40  (+0)   survivors at t_h 8192, black there 4096 (0.500)
+REM    18  40  (+0)   WHITE  18  40  (+0)  [starts selected 4096]
+BLACK  19  38  (-2)   survivors at t_h 4096, black there 2048 (0.500)
+REM    20  46  (+6)   WHITE  20  46  (+6)  [starts selected 2048]
+BLACK  21  36  (-4)   survivors at t_h 2048, black there 1024 (0.500)
+REM    22  40  (+0)   WHITE  22  38  (-2)  [starts selected 1019]
+BLACK  23  38  (-2)   survivors at t_h 1029, black there 531 (0.516)
+REM    24  42  (+2)   WHITE  24  42  (+2)  [starts selected 507]
+BLACK  25  38  (-2)   survivors at t_h 522, black there 257 (0.492)
+REM    26  44  (+4)   WHITE  26  44  (+4)  [starts selected 239]
+BLACK  27  36  (-4)   survivors at t_h 283, black there 142 (0.502)
+REM    28  40  (+0)   WHITE  28  38  (-2)  [starts selected 122]
+BLACK  29  38  (-2)   survivors at t_h 161, black there 72 (0.447)
+REM    30  46  (+6)   WHITE  30  46  (+6)  [starts selected 76]
+BLACK  31  38  (-2)   survivors at t_h 85, black there 43 (0.506)
+REM    32  42  (+2)   WHITE  32  42  (+2)  [starts selected 40]
+BLACK  33  38  (-2)   survivors at t_h 45, black there 17 (0.378)
+REM    34  46  (+6)   WHITE  34  46  (+6)  [starts selected 20]
+BLACK  35  40  (+0)   survivors at t_h 25, black there 8 (0.320)
+REM    36  42  (+2)   WHITE  36  42  (+2)  [starts selected 10]
+BLACK  37  40  (+0)   survivors at t_h 15, black there 6 (0.400)
+REM    38  44  (+4)   WHITE  38  44  (+4)  [starts selected 9]
+BLACK  39  39  (-1)   survivors at t_h 6, black there 0 (0.000)
+REM    40  44  (+4)   WHITE  40  44  (+4)  [starts selected 6]
+BLACK  41  40  (+0)   survivors at t_h 0, black there 0 (0.000)
+REM    42  40  (+0)   WHITE  42  -1  (-41)  [starts selected 0]
