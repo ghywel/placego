@@ -1,0 +1,95 @@
+{
+ "stage": "gate-clock statement control (L1217), Local M5, one run",
+ "script_sha256": "6d1623463980b53fb94887d7d3d328a1885055ed986074aa817bc9609d94c7ab",
+ "start_utc": "2026-10-30T21:16:45Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "caps": {
+  "cpu": 120,
+  "wall": 300,
+  "rss_mib": 512,
+  "file_mib": 16,
+  "disk_mib": 64
+ },
+ "output_sha256": "9bb9139ef4c41b9dd9b8861d5ecf228f5fbd41cce40661bf588c35abc26c408f",
+ "output": {
+  "N": 16,
+  "cases": 160,
+  "P1": 160,
+  "P2_windows": 12960,
+  "P3": 72,
+  "failures": [],
+  "P4": {
+   "E15": 6,
+   "ok": true,
+   "E": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    3,
+    3,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7
+   ]
+  },
+  "C1": {
+   "E": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "flagged": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "ok": true
+  },
+  "affine_families": [
+   "affine-mixture",
+   "gate-00",
+   "gate-03",
+   "gate-05",
+   "gate-06",
+   "gate-09",
+   "gate-10",
+   "gate-12",
+   "gate-15"
+  ],
+  "verdict": "PASS"
+ }
+}

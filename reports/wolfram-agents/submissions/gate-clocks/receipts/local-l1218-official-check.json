@@ -1,0 +1,128 @@
+{
+ "stage": "gate-clocks official check (L1217 freeze 3229d3db), Local M5, one run",
+ "runner": "tests/probes/wolfram/check_gate_clocks_submission.sh",
+ "runner_sha256": "83abfb9286d4d63fbd0b849beb15564bde548ae8407bee447185ff6c0241510b",
+ "source_sha256": "3df1d6a84235d7b5647133a090aab7bb880d43efa81da0ce8235714f384c82cc",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "lean": "Lean 4.35.0; pipeline kit core identical to verifier kit 19540bf for Rule30Prize and Rule30Jen",
+ "caps": {
+  "out": "SCRATCH",
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 3072,
+  "file_mib": 256,
+  "disk_mib": 1024,
+  "min_free_mib": 1536,
+  "launch_free_mib": 2560,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": null,
+  "cmd": [
+   "sh",
+   "check_gate_clocks_submission.sh",
+   "Rule30Submission.lean"
+  ]
+ },
+ "start_utc": "2026-10-30T21:18:35Z",
+ "end_utc": "2026-10-30T21:18:39Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "launch_gate": {
+  "free_inactive_mib": 4168,
+  "swap_used_mib": 0.0
+ },
+ "wall_s_time": 4.53,
+ "max_rss_bytes_time": 930201600,
+ "maxima": {
+  "rss_kib": 912112,
+  "procs": 3,
+  "disk_bytes": 2747726,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 3707
+ },
+ "check_json_sha256": "510ad1a91ad9e5b7562f3fa57779cf96369a0ed644aef4c3597aca32c1f4977b",
+ "submission_check_sha256": "b096f2758c2a4ae89c864129a4e0ddd80f047ec9b538a72f42e4a9f0b001f99f",
+ "result": {
+  "status": "PASS",
+  "declared": 173,
+  "replayed_constants": 347,
+  "checker_notice": "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead\n\nNote: The updated constant has a different type:\n  Std.HashMap Name ConstantInfo → Kernel.Environment → IO Kernel.Environment\ninstead of\n  Std.HashMap Name ConstantInfo → Environment → IO Environment\n\nNote: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "headline_signatures": {
+   "Rule30Submission.prefix_period_iff": "theorem prefix_period_iff (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) : ∀ n P, PrefixPer g x n P ↔ 2 ^ prefixExp g x n ∣ P | 0, P => by constructor · intro _; simp [prefixExp] · intro _ i hi t rw [Nat.le_zero.mp hi] rfl | n + 1, P => by have ih",
+   "Rule30Submission.prefix_window_bound": "theorem prefix_window_bound (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (a m : Nat) : prefixExp g x (a + 2 * m) - prefixExp g x a ≤ m + Q (prefixExp g x a) m ∧ prefixExp g x (a + 2 * m) - prefixExp g x a ≤ m + Q 0 m",
+   "Rule30Submission.prefix_window_le_B": "theorem prefix_window_le_B (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (a n : Nat) : prefixExp g x (a + n) - prefixExp g x a ≤ B n",
+   "Rule30Submission.prefixExp_le_B": "theorem prefixExp_le_B (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (n : Nat) : prefixExp g x n ≤ B n ∧ PrefixPer g x n (2 ^ B n)",
+   "Rule30Submission.affine_prefix_bound": "theorem affine_prefix_bound (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hg : ∀ j, Affine (g j)) {n r : Nat} (hr : n + 1 ≤ 2 ^ r) : PrefixPer g x n (2 ^ r) ∧ prefixExp g x n ≤ r"
+  },
+  "scope": "half-rate prefix-period bound for every two-input gate family, exact prefix periods, logarithmic affine bound; no lower bound, density, centre-column or prize claim"
+ },
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_period_iff",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_window_bound",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_window_le_B",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefixExp_le_B",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.affine_prefix_bound",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "verdict": "pass",
+ "importsStatements": true,
+ "newAxioms": []
+}
