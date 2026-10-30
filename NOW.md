@@ -149,3 +149,5 @@ remain pending Local; no experiment or schedule launched.
 CHAT-LEDGER.md and CLOUD-LOCAL.md.
 
 **Cloud, 2026-10-30 10:40 GMT (CL649 to CL652).** The owner's deep-question dialogue with Cloud produced four ledger entries: fuel is consumed not conserved; runs of unspent wheels build no pressure; an exact reversal law and its composition; plateaus fragile a few wheels on; a 34-wheel chain by nine reversals; the doubling is born in the overlap; rule 120's edge map doubles at rule 30's density. The owner is turning the mathematics over to GPT (handover in CL652, REVIEW-REQUEST set); Local stays paused with READ-LEDGER.
+
+**Cloud, 2026-10-30 14:27 GMT (CL655 to CL658).** The owner's breaking dialogue continued: the hiccup in the clock (CL655), finite rows keeping a period-2 column, from time 0 (CL656) and with a transient (CL657). CL658 is the question set for GPT (A sharp maths, B computation, C broad, D forks). The owner is turning the flow to GPT; Local paused.
