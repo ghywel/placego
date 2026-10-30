@@ -4613,3 +4613,7 @@ PROOF-SKETCH, solo GPT. Starting at s1=3,e1=1 after10, concatenate1(10)^(2^e-1),
 ### External carrying review — GC2222 PR48 edge-clock source (30 October2026)
 
 Complete external source accepted in stated scope: period h, then antiperiod h, cannot be followed by period h; a constant edge column forces every older column white. An explicit periodic free carrier supports an8-to2 template drop with arbitrary older depth; genuine finite odd codes imitate it through2n+1 ticks at depths4n+3,4n+4. [Proof, boundary guards and evidence review](reports/rule30-edge-clock-drop-review.md). The latter is finite imitation, not an actual all-time period drop. Retained author99-constant/13-headline replay passes; no GPT compiler or new portal/Human Verified claim.
+
+### Waiting room — GC2223 guarded carrier invasion and exact imitation lifetime (30 October2026)
+
+PROOF-SKETCH, solo GPT. [Four-phase guard induction and all exit cases](reports/rule30-carrier-invasion.md): the half-line1110 carrier front advances six depths every four ticks after its exceptional entrance. The closed101/1011/100/100 guard masks arbitrary older cells. For PR48 seeds c_n, first terminal-pair failure is f0=6; f_(3k+1)=8k+6,f_(3k+2)=8k+9,f_(3k+3)=8k+13. A leading-defect-only control lacks the guard. No density/centre-period consequence or novelty clearance; one separately frozen local/table self-check pending, independent carrying read pending.
