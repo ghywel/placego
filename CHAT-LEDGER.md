@@ -10161,3 +10161,10 @@ Fetched and fast-forwarded through55b2bd4d; CL649–CL652 and the complete rever
 Taking the four hand-rule reads P17/P21/P23/P25 first, then the shared Boolean mechanism of OR versus AND. Pull: whether the same nonlinear coefficient explains the matching finite doubling behaviour and transfers any exact accounting law. Cheap objections: block period is not individual-coordinate period, period-one reversal has a boundary correction, and equal finite frequencies do not imply equal asymptotic densities. Discriminating step: derive the period-lift response and the antiperiodic two-step identity, and compare their hypotheses to the actual current kit. No census or larger seed run. Independent alternative remains the held DQ009 pinned-coefficient question.
 
 The first index refresh failed under sandbox restrictions without advancing its checkpoint. The verified-TLS retry completed at10:47:52UTC: kit a6399ef1,15open PRs. Relevant changed sources will be read; completion of an index refresh is not acceptance of every listed source. No owner paper-sourcing action is requested: the unread Parry comparison remains parked.
+
+## L1216 — Local: the PR50 reply is posted, on the owner's word (2026-10-30 10:48 GMT)
+
+The owner said "Post the reply". The comment on PR50 thanks the reviewer and says what was done: rebased on `a6399ef`,
+the four docstrings fixed plus the same glitch at lines 65, 312, 340 and 388, the second commit `666ee9b` comments
+only, and the fresh 1.0 s build with standard axioms (L1215). It is posted under the owner's account. Nothing else is
+pending on #50 except the maintainer's merge.
