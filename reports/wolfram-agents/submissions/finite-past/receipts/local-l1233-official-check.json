@@ -1,0 +1,147 @@
+{
+ "stage": "finite-past official check (L1232 freeze b4d27dc7), Local M5, one run",
+ "runner_sha256": "9e7e1e98e678d611b2d3f0344397c5fdd52316d8ccacebdaded32a71313fb0d0",
+ "source_sha256": "33c82f323c6629dce45206087bedac12f1fc69ca1e2c4a64f65332da8b525d99",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "caps": {
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 3072,
+  "file_mib": 256,
+  "disk_mib": 1024,
+  "min_free_mib": 1536,
+  "launch_free_mib": 2560,
+  "swap_growth_mib": 256,
+  "track_tree": true
+ },
+ "start_utc": "2026-10-30T22:24:04Z",
+ "end_utc": "2026-10-30T22:24:08Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "launch_gate": {
+  "free_inactive_mib": 7040,
+  "swap_used_mib": 0.0
+ },
+ "maxima": {
+  "rss_kib": 907952,
+  "procs": 3,
+  "disk_bytes": 1200704,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6488
+ },
+ "wall_s_time": 3.23,
+ "max_rss_bytes_time": 926040064,
+ "check_json_sha256": "a3de4de2dcd4c1f839deaff9b0dff5aaf60275011cf6c9da994aaa35b2db188e",
+ "submission_check_sha256": "d89a38f130741acc00136679df04a097e756d83c1b2b826ee1902813d47d7060",
+ "raw_packet": "shared store cited/l1233-finite-past-official/MANIFEST.json, SHA256 89a2b94051bf6d8ba175e06eb8809b8c96fe0eb47613b2c28947caa63571b51d",
+ "result": {
+  "status": "PASS",
+  "declared": 103,
+  "replayed_constants": 196,
+  "checker_notice": "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead\n\nNote: The updated constant has a different type:\n  Std.HashMap Name ConstantInfo → Kernel.Environment → IO Kernel.Environment\ninstead of\n  Std.HashMap Name ConstantInfo → Environment → IO Environment\n\nNote: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "headline_signatures": {
+   "Rule30Submission.finite_root_age": "theorem finite_root_age {y : Int → Bool} {l r : Int} (hy : Span y l r) : ∃ x n, Root x ∧ evol x n=y ∧ 2*n ≤ (r-l).toNat ∧ ∀ x' n', Root x' → evol x' n'=y → x'=x ∧ n'=n",
+   "Rule30Submission.finite_parent_test": "theorem finite_parent_test {p y : Int → Bool} {l r : Int} (hy : Span y l r) (he : evol p 1=y) (hr : ∀ i, r≤i → p i=false) : FiniteNonzero p ↔ y (l+1)=true ∧ p (l+1)=true",
+   "Rule30Submission.normalized_ancestor_bijection": "theorem normalized_ancestor_bijection (w n : Nat) : (∀ x y : Int → Bool, Normal w x → Normal w y → normalizedImage n x=normalizedImage n y → x=y) ∧ (∀ y : Int → Bool, (∃ x, Normal w x ∧ normalizedImage n x=y) ↔ Normal (w+2*n) y ∧ Past n y)",
+   "Rule30Submission.finite_word_enumeration": "theorem finite_word_enumeration (w : Nat) : (allRows w).Nodup ∧ (∀ y : Int → Bool, y ∈ allRows w ↔ Normal w y) ∧ (allRows w).length=widthCount w",
+   "Rule30Submission.finite_parent_enumeration": "theorem finite_parent_enumeration (w : Nat) : (parentRows w).Nodup ∧ (∀ y : Int → Bool, y ∈ parentRows w ↔ Normal w y ∧ Past 1 y) ∧ (parentRows w).length=(if 3≤w then widthCount (w-2) else 0)",
+   "Rule30Submission.finite_parent_count": "theorem finite_parent_count {w : Nat} (hw : 4≤w) : (parentRows w).length=2^(w-4)",
+   "Rule30Submission.finite_parent_small_widths": "theorem finite_parent_small_widths : (parentRows 1).length=0 ∧ (parentRows 2).length=0 ∧ (parentRows 3).length=1"
+  },
+  "scope": "finite past of finite Rule 30 rows: unique root and age, physical finite-parent test, normalized ancestor bijection, exhaustive duplicate-free counts; no centre-column, infinite-past or prize claim"
+ },
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_root_age",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_parent_test",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.normalized_ancestor_bijection",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_word_enumeration",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_parent_enumeration",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_parent_count",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.finite_parent_small_widths",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "verdict": "pass",
+ "importsStatements": true,
+ "newAxioms": []
+}

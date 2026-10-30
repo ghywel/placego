@@ -1,0 +1,103 @@
+{
+ "stage": "finite-past notebook stage (L1233 freeze ac54b526), Local M5, one run",
+ "spec": "reports/wolfram-agents/submissions/finite-past/NOTEBOOK-SPEC.md",
+ "start_utc": "2026-10-30T22:25:16Z",
+ "end_utc": "2026-10-30T22:25:51Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 35.01,
+ "maxima": {
+  "rss_kib": 2267616,
+  "procs": 5,
+  "disk_bytes": 3052575,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6214
+ },
+ "launch_gate": {
+  "free_inactive_mib": 7051,
+  "swap_used_mib": 0.0
+ },
+ "caps": {
+  "cpu": 1200,
+  "wall": 1200,
+  "rss_mib": 4096,
+  "file_mib": 64,
+  "disk_mib": 256,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 8
+ },
+ "essay_sha256": "6e818ab162679a91ca490b02fbce215bbbbef1dee46b8d57a7e1b4477e25b41d",
+ "essay_md_matches_repo": true,
+ "notebook_sha256": "9e69e15dcb0aa6af6e3eb97075f80a9a9c544e4d3550d024d571d5252c8fc8dc",
+ "notebook_bytes": 140901,
+ "build_seconds": 20.3,
+ "output_cells": 8,
+ "output_digests": [
+  "e8d2863d59e88d0b41957e898be7b444c4556cb8aca69f264571eb5c5f132159",
+  "1da6c4b0cb66844ed7a31281918892c90bf527a34fabf99c7e658d710e64ac22",
+  "8908070c1875f9b0db5496ecf5dd83b0eb8ac24048bdee6d43079b9d72e86ada",
+  "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+  "c5a8a9d1188530588cbeefbc5f9764fb651d407642f4244d8b91289b6475d407",
+  "f7b035c5343240dd9a3982c038e3d4476aeb46f04031999b3411ab10cbcd574e",
+  "50fcd9bc4828649f0cd2027e6459770213bfd818cc0174722ef26a43d44b8fd2",
+  "58a28d8e111ec0e3b809072652c740d6e63345c8481e3f087e53d21c8de5dcf2"
+ ],
+ "message_cells": 0,
+ "computation_ok": true,
+ "axioms_ok": true,
+ "kernelcheck_ok": true,
+ "kernelcheck_declarations": 196,
+ "handler_events": 19026,
+ "handler_tally": [
+  {
+   "wolfram_inputform": "\"General::newsym\" -> 18953"
+  },
+  {
+   "wolfram_inputform": "\"LocalObject::nso\" -> 24"
+  },
+  {
+   "wolfram_inputform": "\"DeleteFile::fdnfnd\" -> 16"
+  },
+  {
+   "wolfram_inputform": "\"MIMETypeToFormatList::fmterr\" -> 10"
+  },
+  {
+   "wolfram_inputform": "\"OptionValue::nodef\" -> 7"
+  },
+  {
+   "wolfram_inputform": "\"FrontEndObject::notavail\" -> 5"
+  },
+  {
+   "wolfram_inputform": "\"General::openx\" -> 4"
+  },
+  {
+   "wolfram_inputform": "\"General::stop\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"ImportExport`ExtensionToFormatList::fmterr\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"LibraryFunction::overload\" -> 1"
+  },
+  {
+   "wolfram_inputform": "\"OptionValue::optnf\" -> 1"
+  },
+  {
+   "wolfram_inputform": "\"OptionValue::rep\" -> 1"
+  }
+ ],
+ "reasons": [],
+ "resource": {
+  "Name": "MarkdownToNotebook",
+  "Version": {
+   "wolfram_inputform": "None"
+  },
+  "UUID": "42d07bb8-1692-42d6-8718-226e124b292b"
+ },
+ "output_checks_sha256": "525f6171a7f6ce8fc9bdf3153e40f9e7673ae8fa71aab1a21357c2c1668b1a22",
+ "receipt_helper_sha256": "4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7",
+ "raw_packet": "shared store cited/l1234-finite-past-notebook/MANIFEST.json, SHA256 c23ea9dd46fea127e61d81fa8106af8b8449d4f906e43ff06c94d70c5c5c5551 (tmp/ by digest only; home-relative paths as ~)"
+}
