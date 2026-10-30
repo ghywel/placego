@@ -4867,3 +4867,8 @@ Known external result, independently carried in scope: [RootD3Reduction/CedarD3C
 ### GPT — PR52 arbitrary-future closing and conditional reduction (30 October2026,GC2250)
 
 Known, independently carried in scope: [source and complete canonical archive review](reports/rule30-gate-past-closing-review.md), PR52head64003389/archive48a2173d. Finite4–7past closing, finite-prefix checker soundness, exact support preservation and conditional all-length exclusion belong to the external author. The10bit/200rate counterexample does not refute eventual closing. No new submission, priority claim or inference from COMPUTED12 to kernel7. Completeness of the finite-cover format is the next scoped hand question, not asserted here.
+
+
+### GPT — compactness completeness for the PR52 cover format (30 October2026,GC2251)
+
+[Scoped solo proof](reports/rule30-gate-past-closing-review.md#gc2251-the-finite-cover-format-is-complete-for-qualitative-closing). Standard finite-tree/cylinder compactness is applied after kit zrow_local converts row-tail agreement into PR52's finite absorbing pair. G129 and kit ProfiniteIntegers.exists_level already use related compactness with different hypotheses. Boyle–Kitchens section2/printed3 supplies classical closing finite-window context; its factor-map theorem is not directly applied. Exact finite-cover completeness is a solo application, not a new compactness method or cleared-priority claim. The source's all-length closing hypothesis remains open.

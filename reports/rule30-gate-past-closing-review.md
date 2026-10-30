@@ -182,3 +182,196 @@ legal past covered. Search actual source and primary compactness references
 before asserting the equivalence. No larger cover search or compile is
 queued. Independent alternative remains higher-clock transient connections
 against the retained full-line core, without another ring-cycle census.
+
+## GC2251: the finite-cover format is complete for qualitative closing
+
+30 October2026. **PROOF-SKETCH, solo GPT; independent carrying read pending.**
+This is an elementary locality/compactness application to the exact PR52
+format, not a proof of the unbounded closing hypothesis. No computation,
+new compiler run or posting.
+
+Fix a past length n. Write Closing(n) for PR52's AllPastClosing statement
+with this n fixed. Write Cover(n) for the existence of its ten checked root
+trees, also at this fixed n. Write Uniform(n) for one spatial cutoff B that
+works for every legal infinite future and every pair of legal n-bit pasts.
+The proposed equivalence is
+
+```
+Closing(n)  iff  Cover(n)  iff  Uniform(n).
+```
+
+Consequently AllPastClosing and FiniteCoverFamily are equivalent as
+qualitative assertions, with no numerical or growth estimate for B(n).
+PR52 already proves Cover(n) => Uniform(n), and Uniform(n) => Closing(n)
+is immediate. The carrying converse is below.
+
+### The infinite conjunction needs a finite witness first
+
+Pointwise eventual agreement of continuous observations does not by itself
+give a uniform cutoff. On binary streams let f_k(G)=1 exactly when G starts
+with k zeros followed by a one. Every stream has at most one nonzero f_k,
+so each eventually has only zeros; there is no common cutoff for all G.
+Each f_k is still a finite cylinder function. This abstract control is not
+a Rule30 example. It shows why one cannot apply compactness directly to
+an infinite tail-agreement condition.
+
+Here the finite witness comes from the physical evolution. Put
+R_p=lam(oddTrace(prependN n p G)). If R_p and R_q agree for k>=a>=1,
+then official zrow_local and zrow_lam give
+
+```
+recon(a_p,k,t) = recon(a_q,k,t) whenever k >= a+t.
+```
+
+Thus at e=a+2n the two columns e,e+1 agree at every time t<2n. Their
+boundary futures already agree for t>=2n. PR52's tail_of_strip_pair then
+propagates this finite-past agreement to the whole spatial tail. We have
+converted an infinite row condition into a finite pair-of-columns witness.
+
+### All allowed pasts can use one witness
+
+For legal G and m>=8, let f be its first m bits in little-endian order.
+The finite predicate Allowed(n,f,p) is equivalent to legality of the whole
+prepended stream pG. PR52 proves one direction. For the converse, windows
+starting before n are precisely the Allowed tests; their future indices
+are at most6 and are fixed by f. Windows starting at or after n are windows
+of G, hence legal. In particular, the set A of allowed n-bit codes is
+finite and constant throughout this future-prefix cylinder.
+
+If A is nonempty, choose its least code p0 as reference. Closing(n) gives
+a cutoff a_p for R_p=R_p0 on their tails for each p in A. Choose
+
+```
+a = max(1, all a_p),   e = a+2n,   m = max(8,e).
+```
+
+There are finitely many p, so a is finite. Locality gives a simultaneous
+equal pair at e,e+1 for all p and every t<2n. If A is empty, take any
+reference code, e=1 and m=8; all comparison requirements are vacuous. If A
+is a singleton, comparison with its sole member is tautological. These
+cases do not assume two distinct legal pasts exist. The n=0 case likewise
+has only one code and an empty past-time interval.
+
+### Construct a Leaf of the existing type
+
+Let H=2(n+m)+1. For every p<2^n form a table of H nonnegative integers
+C_0,...,C_(H-1) from the exact finite boundary trace a_f determined by
+finiteGate(n,p,f):
+
+```
+C_0 = 0
+C_1 = sum_{0 <= t < H-1} bit(a_f(t))*2^t
+C_j = ((C_(j-1) >> 1) XOR (C_(j-1) OR C_(j-2))) mod 2^(H-j)
+      for 2 <= j < H.
+```
+
+Use these tables, length m, gate f, edge e and reference p0 in Leaf. This
+is a finite construction. Its wall, head and recurrence checks satisfy
+PackedValid by construction, including for pasts that are not allowed.
+For allowed p, packed_sound and triangle_sound identify the table with
+literal recon on its whole triangular domain.
+
+The two required comparison columns fit inside that domain: for t<2n,
+
+```
+(e+1)+t <= e+2n <= 2m+2n < H.
+```
+
+The last needed boundary time is at most e+2n-1, strictly below2(n+m).
+Therefore trace_prefix/recon_local identify these table cells with those
+from the actual infinite G. Their equality was already proved by outer
+locality. This proves LeafValid without treating a truncated future as an
+infinite future. The exact source guard e<=2m is satisfied by m>=e.
+
+The same leaf applies to every legal future with prefix f, because Allowed
+and all finite table entries depend only on f. Thus every legal G has an
+open cylinder containing it and carrying an actual Leaf of PR52's type.
+
+### The prefix tree is finite, and its rejects are legitimate
+
+Start a binary prefix tree at each w in the ten-element set S. A node is a
+length-m prefix f<2^m, m>=8. Terminate it with a reject when its latest
+eight-window is illegal. Otherwise terminate it at a valid canonical leaf
+when one exists, or branch to (m+1,f) and (m+1,f+2^m).
+
+This construction can use a decidable leaf test: generate the canonical
+tables above, choose the least allowed reference (or0 if none), and test
+every e from0 through2m with LeafValid. All ranges and integers are finite.
+The preceding argument guarantees that every legal infinite G eventually
+meets such a node; it does not require the algorithm to know a_p in advance.
+
+If the unpruned tree were infinite, finite branching and König's lemma
+would give an infinite path. Every eight-window on that path would be
+legal, since a first illegal window would have caused a reject. The path
+therefore defines a legal G with no valid-leaf prefix, contradicting the
+construction above. Hence each root tree is finite.
+
+At a branch, f<2^m makes both exact ExtendValid checks true: the low bits
+are unchanged and the new bit is respectively zero or one. Each reject
+uses exactly the latest-window condition required by checkTree. Each leaf
+has the matching length and gate code and is LeafValid. Induction over the
+finite tree now proves checkTree(n,8,w,tree_w)=true for every w in S.
+This is Cover(n) in the existing format, not a substitute certificate type.
+
+No assumption that every locally legal finite prefix extends forever is
+needed: a dead branch is rejected after a finite illegal extension. The
+ten roots, finite past codes and finite branching are all used explicitly.
+
+### What the equivalence does and does not give
+
+For any fixed n for which Closing(n) is true, the finite canonical-tree
+search terminates and returns a sufficient uniform bound. This is a
+qualitative termination statement, with no practical runtime bound. It
+neither supplies a particular certificate nor proves termination for all n.
+No search was launched, enlarged or proposed merely to use the theorem.
+
+Conversely, failure at a fixed n gives a legal future and two legal pasts
+whose reconstructed rows differ at arbitrarily large columns. Nontermination
+under a resource cap is not such a failure witness. The compactness proof
+also supplies no finite countercertificate, no computable infinite bad path,
+no bound uniform in n and no finite-support or prize exclusion on its own.
+
+The equivalence identifies the missing assertion more precisely: the
+finite-cover representation itself imposes no extra qualitative demand
+beyond closing. Proving closing, or a structural reason that every branch
+must reach an absorbing pair, remains the mathematical problem.
+
+### Record and primary-source comparison
+
+Fresh kit fetch at this block remains932cf8dd. The06:21:50Z portal/PR index
+is current; fresh PR52 metadata and all three discussion channels still
+show head64003389 and no comments. Actual PR52 definitions and source,
+its48a2173d canonical archive, and the earlier b32a065f README/MATHEMATICS
+were read. They give the absorbing-pair principle, finite examples and the
+forward cover implication; the earlier account explicitly leaves the
+arbitrary-n assertion open. No negative search is a novelty certificate.
+
+The record already uses this compactness method at fixed support in G129,
+while warning that an increasing union of support bounds is not compact.
+Actual kit ProfiniteIntegers.exists_level likewise extracts a uniform
+finite coordinate from locally constant cylinders. Their hypotheses and
+conclusions differ from Closing(n); neither solves it.
+
+Standard finite-window closing arguments are also described in
+[Boyle–Kitchens, Periodic points for onto cellular automata, section2, printed page3](https://math.umd.edu/~mboyle/papers/automata20oct98.pdf).
+Their right-closing property concerns injectivity on asymptotic pairs under
+a shift-commuting factor map. PR52's reconstruction-tail assertion has
+different quantifiers and coordinates, so that theorem is not imported.
+The compactness method is credited as standard. The relevant section was
+read; no priority or new general compactness theorem is claimed. Author PDF
+SHA256 `1a78357a9cbd239d684bea39b99c5cc13e1158b0eec6bcdb45c11a5f0d9f34a9`.
+
+**Next discriminator:** for a hypothetical nonclosing pair with a common
+future, locate the first forward time at which their row tails agree.
+Use the known inverse reset transducer to identify the precise exceptional
+common tail that permits the preceding nonagreeing tails. Compare against
+PR53's actual five-row hypotheses before attempting any implication: one
+exceptional time does not supply five consecutive reset-free rows. This is
+a test of a specific transition where tail disagreement disappears, not a return to generic finite
+predecessor descent or a new inverse-tree census. If already covered by the
+record, give that disposition and move to the higher-clock transient lead.
+
+Source-comparison packet: `cited/gc2251-cover-completeness/manifest.json`,
+SHA256 `838f4dd0e128b5613504f2d52864fe1e6fcef4bcd5dedc1cabe13dd1cd941609`,
+eight payloads221495bytes plus manifest, nine verified raw uploads.
+The proof itself is the committed text above; there is no new machine certificate.

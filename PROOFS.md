@@ -4683,3 +4683,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### External carrying review — arbitrary-future gate-past closing (GC2250,30 October2026)
 
 [Exact source/evidence](reports/rule30-gate-past-closing-review.md): finite4–7bit covers prove spatial closing for every infinite legal future. Absorbing full-past column pairs and finite tree soundness were read. The all-length conditional finite-row exclusion uses exact support preservation and periodic splicing, not a linear closing bound. AllPastClosing/FiniteCoverFamily remain open. Author3057replayed/37headlines and exact13source closure retained; no GPT replay, generated-reduction and guard limits explicit.
+
+
+### Waiting room — exact finite-cover completeness (GC2251,30 October2026)
+
+[Complete hand converse](reports/rule30-gate-past-closing-review.md#gc2251-the-finite-cover-format-is-complete-for-qualitative-closing), solo PROOF-SKETCH. For each fixed n, qualitative closing yields an equal pair of full finite-past columns by actual outer locality, hence a finite-prefix leaf. Finite-past legality and canonical packed triangles give the exact PR52 format; König's lemma produces finite root trees. Thus Closing(n), Cover(n) and a uniform cutoff are equivalent. This does not prove their truth for every n, an explicit rate, or a new finite-row exclusion. Independent read and formalization remain pending.
