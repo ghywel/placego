@@ -269,3 +269,25 @@ beam 1, so K = 64 is fragile. At K = 256 and K = 1024 the traced family reaches 
 per `10` pair, and the independent simulation agreeing. **Counterfactual:** a different pattern or a smaller `E(38)`
 would be reported as is; a simulation mismatch would fail the run. Caps: 1200 s CPU per process, 1800 s wall, 4 GiB
 RSS, 64 MiB per file, 128 MiB disk, 2.5 GiB launch floor.
+
+**Traced run (COMPUTED, Local M5).** `gate_clock_beam2.py` at the L1241 freeze `51e9fdc2`, n = 38, K = 256: COMPLETED,
+`PASS`, in 82.3 s with a 2.6 GiB peak. The prediction holds exactly, on one real family, and the independent
+bit-parallel simulation from the all-zero seed reproduces its exponents.
+
+- **The family (gate tables, index `2b + s`, bits 0..37):**
+  `1,1,1,1,4,2,1,1,1,1,2,4,1,1,1,1,1,1,1,3,2,1,2,2,1,1,4,1,2,1,2,1,4,1,2,1,1,1`. That is NOR (1), the two choked gates
+  `¬b ∧ s` (2) and `b ∧ ¬s` (4), and `¬b` (3) at bit 19.
+- **Pairs:** `11 10 11 01 01 01 01 01 01 01 10 10 10 10 10 10 10 10 10`, so `E(38) = 21`: excess 2 from pair 3 on, and
+  one doubling in every pair after the third.
+- **First-bit orders through the `01` run (bits 6, 8, …, 18):** `6, 5, 4, 3, 2, 1, 0`. That is `M - 2 = 6` (M = 8),
+  then down by one per pair, the equality case of (iii). At 0, (ii) allows the next pair's first bit to double.
+- **Last-bit resource:** at its maximum `2^(E-1) - 1` through the `01` run (31, 63, …, 2047), then down by exactly one
+  per `10` pair, `2046, 2045, …, 2038`.
+
+Raw packet of all three sharpness runs (the exhaustive search, the beam to 38 and this traced run):
+shared-store `cited/l1241-gate-sharpness/`, manifest SHA256
+`0b782f4096974a89919ded33e80a0288abcf2874c7cba1e958d8ba91d252e3ae`, uploaded after its scan passed.
+
+What this shows: a single family keeps one doubling per pair, with excess 2, for 38 bits, through both countdowns. What
+it does not show: GC2310's gaps stand. A global bound needs the coupled accounting that covers `00` losses and later
+recovery, and per-depth best rows from other runs are not used as evidence here.
