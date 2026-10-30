@@ -1,15 +1,15 @@
 {
-  "checkpoint": "GC2299",
-  "status": "PATCHED_SOURCE_ASSEMBLY_ONLY_FROZEN_VALIDATION_PENDING",
+  "checkpoint": "GC2302",
+  "status": "PLAIN_SOURCE_ASSEMBLY_FROZEN_OFFICIAL_STAGE_PENDING",
   "output": "Rule30Submission.lean",
-  "output_sha256": "0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229",
-  "output_bytes": 30806,
+  "output_sha256": "33c82f323c6629dce45206087bedac12f1fc69ca1e2c4a64f65332da8b525d99",
+  "output_bytes": 30760,
   "bodies": [
     {
       "path": "Rule30FinitePastDraft.lean",
       "input_sha256": "a46243a1ac7ed1732f6bbce9986c9434152f934c1e3d62ec251dee3e8c0acf3f",
       "body_sha256": "b903959f18a1ddbdde14536e4c407400ab2bdd8c0f4b88efdfe97acf1d69182b",
-      "body_offset_bytes": 279,
+      "body_offset_bytes": 233,
       "body_length_bytes": 10070,
       "removed_lines": [
         "module",
@@ -21,7 +21,7 @@
       "path": "FiniteParentCriterionDraft.lean",
       "input_sha256": "165e917e7b9265c37b85493641d20fd1bf6dbbc58135c4c8deb9316ce3c9fd67",
       "body_sha256": "a88380f138d0bbec4e3f72df604d88fb9e9800149cf03bea7421340b1636eef9",
-      "body_offset_bytes": 10409,
+      "body_offset_bytes": 10363,
       "body_length_bytes": 3576,
       "removed_lines": [
         "module",
@@ -33,7 +33,7 @@
       "path": "NormalizedFinitePastDraft.lean",
       "input_sha256": "4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43",
       "body_sha256": "70d3eec3e15328af13160929c5725e70662bf9cbe57d74b3b046605037c5539d",
-      "body_offset_bytes": 14044,
+      "body_offset_bytes": 13998,
       "body_length_bytes": 4850,
       "removed_lines": [
         "module",
@@ -45,7 +45,7 @@
       "path": "FinitePastCountDraft.lean",
       "input_sha256": "230e7f0efcb4364b297bb0dd14f08c3ea3d250ca2b138317ee9b0c3350ec84f6",
       "body_sha256": "d6fe5db41cc6406f8737cd6c192ea3dba093aec9095a4064a08b4be9d5fa9915",
-      "body_offset_bytes": 18948,
+      "body_offset_bytes": 18902,
       "body_length_bytes": 9192,
       "removed_lines": [
         "module",
@@ -57,7 +57,7 @@
       "path": "SubmissionHeadlinesDraft.lean",
       "input_sha256": "3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b",
       "body_sha256": "83d3527b31a03f5080fb1b48b615e4c175f781aff017fd9cbc8861de932d4b4d",
-      "body_offset_bytes": 28198,
+      "body_offset_bytes": 28152,
       "body_length_bytes": 2608,
       "removed_lines": [
         "module",

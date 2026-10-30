@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""GC2299: deterministic source assembly only; no Lean/Wolfram execution.
+"""GC2302: deterministic plain submission assembly; no Lean/Wolfram execution.
 
 The five pinned preparation files are concatenated after removing only the
 listed module/import/public-section lines. The shared namespace bodies and
-seven public types stay unchanged. The historical preparation header is retained to match Local's exact patch-probe
-bytes. Frozen validation remains pending; this script does not run Lean.
+seven public types stay unchanged. Historical preparation comments are retained
+to match the exact plain form examined in L1230. The frozen official stage
+remains pending; this script does not run Lean.
 """
 from pathlib import Path
 import hashlib
@@ -31,10 +32,10 @@ def digest(data):
 
 
 def main():
-    output = ('module\npublic import Ruliology.CellularAutomata.Rule30Prize\n'
-              'public import Ruliology.CellularAutomata.Rule30Realization\n\n'
+    output = ('import Ruliology.CellularAutomata.Rule30Prize\n'
+              'import Ruliology.CellularAutomata.Rule30Realization\n\n'
               '/-! Prepared single-file source, GC2295. UNCOMPILED; not a checker receipt. -/\n'
-              '@[expose] public section\n').encode()
+              '').encode()
     rows = []
     for name, expected, imports in SOURCES:
         raw = (BASE / name).read_bytes()
@@ -59,13 +60,13 @@ def main():
     for row in rows:
         a = row['body_offset_bytes']; b = a + row['body_length_bytes']
         assert digest(output[a:b]) == row['body_sha256']
-    manifest = {'checkpoint': 'GC2299', 'status': 'PATCHED_SOURCE_ASSEMBLY_ONLY_FROZEN_VALIDATION_PENDING',
+    manifest = {'checkpoint': 'GC2302', 'status': 'PLAIN_SOURCE_ASSEMBLY_FROZEN_OFFICIAL_STAGE_PENDING',
                 'output': 'Rule30Submission.lean', 'output_sha256': digest(output),
                 'output_bytes': len(output), 'bodies': rows}
     (BASE / 'Rule30Submission.lean').write_bytes(output)
     (BASE / 'assembly.json').write_text(json.dumps(manifest, indent=2) + '\n')
     assert (BASE / 'Rule30Submission.lean').read_bytes() == output
-    print('ASSEMBLED_UNCOMPILED', digest(output), len(output), 'bytes;', len(rows), 'bodies verified')
+    print('ASSEMBLED_PLAIN_OFFICIAL_PENDING', digest(output), len(output), 'bytes;', len(rows), 'bodies verified')
 
 
 if __name__ == '__main__':

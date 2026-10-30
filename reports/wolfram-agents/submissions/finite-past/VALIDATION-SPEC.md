@@ -1,14 +1,13 @@
 # Package B: validation specification, not an execution freeze
 
-GC2299 current state: the source repair and exact pins are in
-[README](README.md#gc2299-l1225-failure-carried-exact-l1226-repair-published).
-Local is the sole B validation/notebook/posting owner. The old4.33.1dependency
-failure, frozen4.35assembly failure and two unfrozen scratch probes remain
-separate outcomes. New source0072d264/guard30606105 match the successful
-scratch bytes but still await the next published frozen stage and official
-replay. The specification below retains GC2295's expectations and historical
-pins; the latest README/assembly manifest supersede those input pins.
-No stage is launched by this document and no routine owner permission is needed.
+GC2302 current state: [full review and selected source](README.md#gc2302-frozen-development-accepted-plain-submission-form-selected).
+The frozen L1229 module development stage is accepted PASS; earlier failures
+remain retained. The selected plain submission source is33c82f32, with all
+five mathematical bodies unchanged. L1230's two form probes remain exploratory.
+Local alone freezes the next official check and notebook; no GPT compiler.
+The historical GC2295 input pins below are superseded by current assembly.json
+and README. Original module guards stay tied to0072d264and are not asserted to
+have compiled against the plain form. No routine owner permission is needed.
 
 ## Exact interface to review
 

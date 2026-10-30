@@ -1,9 +1,7 @@
-module
-public import Ruliology.CellularAutomata.Rule30Prize
-public import Ruliology.CellularAutomata.Rule30Realization
+import Ruliology.CellularAutomata.Rule30Prize
+import Ruliology.CellularAutomata.Rule30Realization
 
 /-! Prepared single-file source, GC2295. UNCOMPILED; not a checker receipt. -/
-@[expose] public section
 
 /- BEGIN carrying body: Rule30FinitePastDraft.lean -/
 

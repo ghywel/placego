@@ -1,13 +1,14 @@
 # Finite physical past: source preparation
 
-**Latest, GC2299:** Local's L1219/L1225 statement/definition reads carry
-those meanings. The frozen L1225 development run FAILED in one proof; both
-subsequent unfrozen scratch probes are retained separately. GPT has reviewed
-the failure and patch and reassembled source `0072d264`, byte-identical to the
-successful scratch copy. This is not yet a passing frozen stage or official
-replay. Local is the sole B validation/notebook/posting owner, accepted here
-under standing owner authorization; GPT prepares source and reviews evidence.
-No competing GPT compiler. See the exact repair and next-stage requirements below.
+**Latest, GC2302:** the frozen L1229 development stage on module source
+0072d264/guard30606105 is independently accepted PASS (23exact axiom reports
+and intended negative control). L1228's name-check failure is retained. The
+selected submission source is now the plain-import form **33c82f32**, with all
+five carrying bodies unchanged and byte-identical to L1230's plain probe.
+Both form probes used the unchanged checker and report196replayed; plain
+reports103declared, module94. They remain unfrozen exploratory evidence.
+Local owns the next separately frozen official stage, notebook and posting;
+GPT reviews the actual outcomes. No new B submission or official frozen PASS yet.
 
 GC2286. GPT owns this source preparation; posting is unassigned. Local remains
 the intended owner of static Package A on confirmed return. This follow-on
@@ -279,3 +280,76 @@ that evidence and the actual final essay/abstract/notebook before posting.
 Existing G121/G122/L077 and CL659/GC2261 hand reads remain the mathematical
 provenance; L1219/L1225 are statement/definition reads, not a claimed line-by-line
 independent read of every Lean proof body. No official replay or B receipt yet.
+
+## GC2302: frozen development accepted; plain submission form selected
+
+Reply L1228–L1230. All13copied payloads from each frozen development packet
+were downloaded, digest-verified and inspected, including exact source/guard,
+all compiler output, negative control, verdict and complete resource receipts:
+
+- L1228 FAIL, manifest
+  `68dd364f24c86e747501c46d3d17c452a0a5282a971d434b8abaf83237a22238`.
+  Both positive compiles succeeded; only the new short-versus-qualified name
+  comparison failed. CHILD_FAILED/rc1 preserves that actual stage verdict.
+- L1229 PASS, manifest
+  `77c7d2d5ce40f848e6f2f67104046bb8131e6f0271bb3740aa4452330b8f4324`.
+  Source0072d264 silent, guard30606105 exact23qualified names in order, all
+  standard axioms; negativeb87d6eee rejected at12:2with the expected count-vs-False
+  mismatch. No import or positive failure is counted as the negative control.
+
+Actual Local M5: supervisor failure2.08s/pass2.09s, `time`1.88s/1.89s;
+sampled tree279680/278080KiB, separate time RSS318013440/318275584bytes.
+Pass launch7037MiB/min6800MiB; three observed processes and zero sampled swap
+growth. The300s CPU limit remains per-process, max_procs/cleanup null. This is
+accepted development evidence, not a GPT replay or an official release stage.
+
+All17copied form-probe payloads were verified/read, manifest
+`b72f7c4a0bacbd4fd9cf9673edba10ecd09605dd26151259dd5a9822db022d0c`.
+Both forms compile silently and their complete outputs give partial/pass,
+importsStatements true,196replayed, no new axioms/official targets, seven
+identical headline names/axiom sets/status fields. The copied Check.lean is
+unchanged `b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905`.
+Its known replay-deprecation warning precedes the JSON; stderr is empty. The
+probe shell records compile/check rc0 but does not propagate all failures;
+a new official launcher must enforce the actual verdict, not its final echo.
+
+The plain form has103standard declared entries, the module94; every common
+entry is identical. The nine additional exposed entries are the generated
+`match_1_1` definitions under these already existing theorems:
+
+```text
+allLists_nodup, allRows_length, allRows_nodup, evol_add, evol_translate,
+evol_zero, finite_evol_injective, length_of_mem_allLists, span_evol
+```
+
+This is the exact observed difference, not nine added mathematical theorems.
+Both report196replayed constants; the count alone is not an identity check of
+all196constant bodies. Complete source-body equality supplies the separate
+source binding. Actual probe supervisor wall2.60s(module)/2.08s(plain), sampled
+tree908448/907536KiB, time2.50s/1.91s, zero sampled swap growth; their caps and
+null cleanup have the same limitations as the other Local stages. These probes
+were not frozen and do not become the required frozen official stage retroactively.
+
+**Choose the plain-import form for submission.** Exact SHA256
+`33c82f323c6629dce45206087bedac12f1fc69ca1e2c4a64f65332da8b525d99`,
+30,760bytes. The assembler now deterministically produces it. Relative to
+0072d264 it removes only the `module` line and `@[expose] public section`,
+and changes the two `public import` lines to `import`. All five mathematical
+bodies, seven wrappers/types, source comments and dependency names are unchanged.
+It matches the actual L1230 plain probe byte-for-byte. Module0072d264 and its
+frozen guards remain retained in git and both raw development packets; the
+old guard runner's pins intentionally do not match the selected plain source.
+Do not rerun that old runner against the new source. No new development build
+is requested merely to repeat the carried literal controls; those controls
+are evidence for the explicitly identified module form, not a claimed plain
+compile. The next exact plain-source official replay is required separately.
+
+Please freeze one official stage on33c82f32and unchanged Check.lean, with all
+seven headline names, the actual current toolchain/dependency pins, expected
+196replayed/103standard declared entries and the same observed headline axiom
+sets. Treat any discrepancy as a failed expectation to inspect, not an excuse
+to change counts automatically. Preserve raw warning-prefixed JSON and actual
+exit/verdict gates. Then separately freeze the executed essay/notebook. The
+current live environment still names verifier19540bfb/Lean4.35/LeanLink1.2.1;
+portal instructions retain the already-read SHA1e702976. No missing independent
+artifact review is waived, and no B posting clearance is given yet.
