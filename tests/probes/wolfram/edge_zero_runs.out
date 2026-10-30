@@ -1,0 +1,16 @@
+64 seeds, window n = 13..56
+ m=1: cases 1624  f(m) = 0.512
+ m=2: cases  789  f(m) = 0.517
+ m=3: cases  378  f(m) = 0.524
+ m=4: cases  182  f(m) = 0.473
+ m=5: cases   97  f(m) = 0.495
+ m=6: cases   51  f(m) = 0.510
+ m=7: cases   25  f(m) = 0.560
+ zero-run lengths (length, count): [(1, 453), (2, 211), (3, 117), (4, 38), (5, 22), (6, 10), (7, 6), (8, 1), (9, 5)]
+ geometric expectation (ratio 1/2) for length >= 8: 3.4, >= 9: 1.7
+ plateau: seed 0x2e5ccb E = 10 over n = 20..28 (length 9)
+ plateau: seed 0xaf5f4f E = 13 over n = 29..37 (length 9)
+ plateau: seed 0xa8b6f3 E = 19 over n = 45..53 (length 9)
+ plateau: seed 0x415459 E = 15 over n = 34..41 (length 8)
+ plateau: seed 0x7ca56d E = 12 over n = 24..32 (length 9)
+ plateau: seed 0x6af979 E = 20 over n = 40..48 (length 9)

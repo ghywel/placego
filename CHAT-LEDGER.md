@@ -9911,3 +9911,65 @@ carried.
 - No read found an error. The few computed inputs, census counts and pilot results remain COMPUTED by GPT, with
   their own controls.
 - Nothing here moves the prize or creates a portal package.
+
+## CL649 — Cloud to the owner (dialogue), Local and GPT (paused): deep-question dialogue on fuel, cogs and the many-unspent question; Block 4 measured, no pressure; a cluster of ten-wheel plateaus (2026-10-30 09:26 GMT)
+
+The owner and I are working the deep-question method directly (Local and GPT paused). This records what the dialogue
+has produced so far, so that the picture is on the record and not only in chat.
+
+**The picture, in order.** (1) The left and right edges obey the same three-wheel law and differ only in where the
+wheel's own memory sits: outside the OR on the right (R_j = R_j XOR (R_(j-1) OR R_(j-2)): a counter, the odometer)
+and inside it on the left (L_j = L_(j-2) XOR (L_(j-1) OR L_j): wiped whenever the inner wheel is black, so it
+freezes; the owner's painted red lines are left wheels settled to period 1). Both recurrences are the kit's (`R_step`,
+Jen); the contrast is a reading, not a theorem. (2) The owner asked whether fuel is conserved as in physics. No:
+nothing local is conserved (`Rule30LocalConservation`, every width, PROVED), black cells are created (growth from one
+cell) and information destroyed (merges, 352e5d). The tether is a one-way law: the period exponent never decreases
+(`per_mono_all`), is created at most at half rate (`per_upper_half`), and the only gear ratios are 1:1 and 2:1
+(`e_step`). (3) "Copied, consumed or transformed": consumed. A doubled wheel is antiperiodic, exactly half black
+(`antiperiod`, `half_black`), so it delivers an even tick count and no fuel to the next doubling; two doublings
+spend both suppliers (`no_three`). (4) Fuel transfers between two kinds: each supplier's own parity and the parity of
+their overlap (ticks(A OR B) = ticks(A) + ticks(B) - ticks(A AND B)); the overlap of two unspent wheels is the one
+undetermined letter (CL642 Case B, COMPUTED to j = 56). The owner's "the fixed rule generates the appearance of
+luck" is located there.
+
+**The owner's pull (verbatim in spirit):** when both suppliers are unspent there is an excitation, and excess energy
+is explosive, like the white triangles (a spatial period-3 run 001001... maps to a solid black run, which opens a
+white triangle eaten from both sides; the owner corrected their own "period 2" to period 3, and that is right:
+(001)^n maps to 1^(3n)). "Does a tri or quad unspent interaction exist?"
+
+**Sorted.** Two different "many at once" notions. (a) *Many consecutive unspent wheels.* Each wheel is fed by two
+wheels only (radius one), so the direct interaction is pairwise; what a run of non-doublings does is keep the last two
+suppliers unspent. Measured (Block 4 below): no pressure. (b) *Many wheels at phase zero at once.* At t = 2^k every
+wheel with period dividing 2^k is at the start of its turn, white, and the row reads 1 0^(J_k) 1 (`rows_at_powers_of_two`,
+`per_iff_gap`); that gap is the top of the widest triangle on the right edge, width J_k, growing like log t (§8.73,
+CONSTELLATION 13). So the explosions the owner pictures are synchrony events, the odometer's carry (at mileage 1000
+three wheels flip together), not accumulation events, and the burst is a silence: a white top delivers no ticks.
+PRIOR ART for (b): §8.18, §8.68, §8.73, L1064, L1066.
+
+**Block 4 (MEASURED; predictions in `tests/probes/wolfram/edge_zero_runs.py` header and below, written before the
+run).** Object: the pooled 64 seeds' block exponents (`edge_lift64.out`, now in git), window n = 13..56.
+f(m) = frequency of a doubling after m consecutive non-doublings:
+
+| m | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| cases | 1624 | 789 | 378 | 182 | 97 | 51 | 25 |
+| f(m) | 0.512 | 0.517 | 0.524 | 0.473 | 0.495 | 0.510 | 0.560 |
+
+- P13 (fair: f(m) within 0.12 of 1/2 for m = 2..5, no trend; counterfactual: a rise to 0.65 by m = 4, or a fall to
+  0.35) HELD. Unspent wheels do not build pressure; the overlap letter is as free after seven non-doublings as after two.
+- P14 (zero-run lengths geometric, ratio 1/2) HELD in the body: 453, 211, 117, 38, 22, 10, 6 (Local measured the
+  same halving, 0.494, in L1066). *Unexpected check:* the tail is 1 run of length 8 and 5 of length 9, where the
+  geometric law expects 1.7 of length 9 or more. Five seeds hold a plateau of ten wheels at one period
+  (E = 10, 12, 13, 19, 20) and none holds a longer one inside the window. Known context: the single seed's plateaus
+  stay at most 5 after v = 10 (L1064); GC2013 found a sharp ten-diagonal plateau at period 32 in the closed graph, and
+  L1066 bounds a plateau's extension past a finite seed's last cell (8 wheels at period 32, 15 at period 64). Whether
+  "ten wheels" is a structural length or a count of five is not decided here. Status: MEASURED, 64 seeds.
+- Record searched: Block 3 PU, L1064, L1066, GC2013, §8.73, CONSTELLATION 13, `no_three`, `S_rule`.
+
+**Proposed next computation (not run; for the owner's word in the dialogue):** 512 seeds to n = 64 under the same
+lifting rule (seconds in C), predicting first: the length-9 count scales with the number of runs if it is noise (about
+1 in 170 runs) and stays a sharp peak at 9 if it is structure; and for each long plateau, record the period P and the
+weight parities of the two suppliers along it, to see whether a plateau is sustained by forced even deliveries (L1066's
+"fuel, not steering") or by free letters that happen to fall 0.
+
+No prize movement. No flag needed for paused workers; READ-LEDGER set for their resumption.
