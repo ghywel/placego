@@ -1,0 +1,61 @@
+j=0 e=0 weight=1 omega=1 |S|=1 ratio=1.000 allones_in_S=1 dict-ok
+j=1 e=1 weight=1 omega=1 |S|=1 ratio=0.500 allones_in_S=1 dict-ok
+j=2 e=1 weight=1 omega=1 |S|=1 ratio=0.500 allones_in_S=1 dict-ok
+j=3 e=2 weight=2 omega=0 |S|=1 ratio=0.250 allones_in_S=0 dict-ok
+j=4 e=3 weight=4 omega=0 |S|=3 ratio=0.375 allones_in_S=0 dict-ok
+j=5 e=3 weight=3 omega=1 |S|=3 ratio=0.375 allones_in_S=1 dict-ok
+j=6 e=4 weight=8 omega=0 |S|=3 ratio=0.188 allones_in_S=0 dict-ok
+j=7 e=5 weight=16 omega=0 |S|=7 ratio=0.219 allones_in_S=0 dict-ok
+j=8 e=5 weight=16 omega=0 |S|=13 ratio=0.406 allones_in_S=0 dict-ok
+j=9 e=6 weight=32 omega=0 |S|=11 ratio=0.172 allones_in_S=0 dict-ok
+j=10 e=6 weight=32 omega=0 |S|=27 ratio=0.422 allones_in_S=0 dict-ok
+j=11 e=6 weight=31 omega=1 |S|=27 ratio=0.422 allones_in_S=1 dict-ok
+j=12 e=6 weight=31 omega=1 |S|=29 ratio=0.453 allones_in_S=1 dict-ok
+j=13 e=6 weight=29 omega=1 |S|=23 ratio=0.359 allones_in_S=1 dict-ok
+j=14 e=6 weight=29 omega=1 |S|=29 ratio=0.453 allones_in_S=1 dict-ok
+j=15 e=7 weight=64 omega=0 |S|=25 ratio=0.195 allones_in_S=0 dict-ok
+j=16 e=8 weight=128 omega=0 |S|=55 ratio=0.215 allones_in_S=0 dict-ok
+j=17 e=8 weight=128 omega=0 |S|=79 ratio=0.309 allones_in_S=0 dict-ok
+j=18 e=8 weight=128 omega=0 |S|=95 ratio=0.371 allones_in_S=0 dict-ok
+j=19 e=8 weight=126 omega=0 |S|=105 ratio=0.410 allones_in_S=0 dict-ok
+j=20 e=8 weight=127 omega=1 |S|=123 ratio=0.480 allones_in_S=1 dict-ok
+j=21 e=8 weight=118 omega=0 |S|=127 ratio=0.496 allones_in_S=0 dict-ok
+j=22 e=8 weight=122 omega=0 |S|=117 ratio=0.457 allones_in_S=0 dict-ok
+j=23 e=8 weight=125 omega=1 |S|=105 ratio=0.410 allones_in_S=1 dict-ok
+j=24 e=9 weight=256 omega=0 |S|=125 ratio=0.244 allones_in_S=0 dict-ok
+j=25 e=10 weight=512 omega=0 |S|=227 ratio=0.222 allones_in_S=0 dict-ok
+j=26 e=10 weight=516 omega=0 |S|=387 ratio=0.378 allones_in_S=0 dict-ok
+j=27 e=11 weight=1024 omega=0 |S|=499 ratio=0.244 allones_in_S=0 dict-ok
+j=28 e=11 weight=1022 omega=0 |S|=903 ratio=0.441 allones_in_S=0 dict-ok
+j=29 e=12 weight=2048 omega=0 |S|=987 ratio=0.241 allones_in_S=0 dict-ok
+j=30 e=12 weight=2026 omega=0 |S|=1925 ratio=0.470 allones_in_S=0 dict-ok
+j=31 e=12 weight=2021 omega=1 |S|=1991 ratio=0.486 allones_in_S=1 dict-ok
+j=32 e=12 weight=2062 omega=0 |S|=2029 ratio=0.495 allones_in_S=0 dict-ok
+j=33 e=12 weight=2034 omega=0 |S|=1989 ratio=0.486 allones_in_S=0 dict-ok
+j=34 e=13 weight=4096 omega=0 |S|=2035 ratio=0.248 allones_in_S=0 dict-ok
+j=35 e=13 weight=4047 omega=1 |S|=3979 ratio=0.486 allones_in_S=1 dict-ok
+j=36 e=14 weight=8192 omega=0 |S|=3971 ratio=0.242 allones_in_S=0 dict-ok
+j=37 e=15 weight=16384 omega=0 |S|=8049 ratio=0.246 allones_in_S=0 dict-ok
+j=38 e=15 weight=16376 omega=0 |S|=12057 ratio=0.368 allones_in_S=0 dict-ok
+j=39 e=16 weight=32768 omega=0 |S|=16449 ratio=0.251 allones_in_S=0 dict-ok
+j=40 e=16 weight=32708 omega=0 |S|=28397 ratio=0.433 allones_in_S=0 dict-ok
+j=41 e=17 weight=65536 omega=0 |S|=32335 ratio=0.247 allones_in_S=0 dict-ok
+j=42 e=17 weight=65584 omega=0 |S|=61123 ratio=0.466 allones_in_S=0 dict-ok
+j=43 e=18 weight=131072 omega=0 |S|=64939 ratio=0.248 allones_in_S=0 dict-ok
+j=44 e=18 weight=131128 omega=0 |S|=126711 ratio=0.483 allones_in_S=0 dict-ok
+j=45 e=18 weight=131074 omega=0 |S|=130927 ratio=0.499 allones_in_S=0 dict-ok
+j=46 e=18 weight=130990 omega=0 |S|=131113 ratio=0.500 allones_in_S=0 dict-ok
+j=47 e=18 weight=131183 omega=1 |S|=131491 ratio=0.502 allones_in_S=1 dict-ok
+j=48 e=19 weight=262144 omega=0 |S|=130973 ratio=0.250 allones_in_S=0 dict-ok
+j=49 e=20 weight=524288 omega=0 |S|=262743 ratio=0.251 allones_in_S=0 dict-ok
+j=50 e=20 weight=523884 omega=0 |S|=393023 ratio=0.375 allones_in_S=0 dict-ok
+j=51 e=21 weight=1048576 omega=0 |S|=525455 ratio=0.251 allones_in_S=0 dict-ok
+j=52 e=21 weight=1048010 omega=0 |S|=916847 ratio=0.437 allones_in_S=0 dict-ok
+j=53 e=21 weight=1048031 omega=1 |S|=1049699 ratio=0.501 allones_in_S=1 dict-ok
+j=54 period above 2^21
+j=55 period above 2^21
+j=56 period above 2^21
+j=57 period above 2^21
+j=58 period above 2^21
+j=59 period above 2^21
+j=60 period above 2^21
