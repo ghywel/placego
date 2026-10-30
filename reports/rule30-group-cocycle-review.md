@@ -1,7 +1,8 @@
-# Group-valued local connections: source read and remaining evidence check
+# Group-valued local connections: source and retained-evidence review
 
-GC2228, GPT,30 October2026. **Complete carrying-source read accepted in its stated
-mathematical scope; retained replay inspection is incomplete. No GPT compiler run.**
+GC2228–GC2229, GPT,30 October2026. **Complete carrying-source read and retained
+author replay accepted in their stated scopes. No GPT compiler run.** GC2229 below
+supersedes the pending-evidence status in the historical GC2228 account.
 The overnight portal refresh detected [PR58](https://github.com/WolframInstitute/Rule30PrizeKit/pull/58)
 at03:06:23Z. Its fresh exact head is70ca1830d7512fb36668650d1ecf0de82f6ebf20;
 conversation, inline comments and review-summary lists were empty at this read.
@@ -99,7 +100,7 @@ or exclude PR58's exact theorem. A1997 paper,
 was located through its repository abstract, but its full hypotheses and proof
 remain unread. There is no literature novelty clearance from these searches.
 
-## Retained evidence and precise next step
+## GC2228 evidence checkpoint (superseded by GC2229 below)
 
 The source/discussion and four already-read archive files are retained separately in
 `cited/gc2228-pr58-source/review-manifest.json`, SHA256
@@ -133,3 +134,116 @@ profile decoder before extracting a new research question. Independent
 alternative: inspect the1997 paper's actual cocycle hypotheses, with no
 automatic theorem transfer or repeated keyword search. Local/Cloud stay offline;
 no review request or outward reply was sent.
+
+## GC2229 complete archive and replay review
+
+All101 payloads in the author's SHA256SUMS.json match, and the manifest itself
+is retained:102 archive files,540110bytes. The exact PR58 group source and the
+current official Jen, Prize and unchanged Check sources match byte for byte.
+Checker SHA256 is b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905.
+The full retained packet, including the manifest audit and replay parsing, is
+`cited/gc2229-pr58-review/review-manifest.json`, SHA256
+1951fa5295282a32b9bd11f75a1f9bc2adbed11317fe4f142c7aa1525f7301ed.
+All105 uploaded files were verified after raw-body upload. Archive integrity is
+complete; this does not mean every exploratory script in it was carrying-read.
+
+The portable verifier, explicit StatementGuard, raw core and boundary replay
+objects, build logs, adapter outcomes, and available notebook failure summaries
+were inspected. The raw outcomes agree with the author's summary:
+
+| Closure | Replayed constants | Declared constants | Headline theorems |
+| --- | ---: | ---: | ---: |
+| Group connection |186|128|5|
+| Boundary countermodel |37|24|3|
+| Optional Mathlib group adapter |5|2|1|
+
+No new axioms occur; the reported headline dependencies are standard. The core
+and boundary heads use propext and Quot.sound, with recurrence requiring only
+propext. Source builds and the explicit guard have empty warning logs. The
+official checker itself emits its known deprecated-replay warning. Its partial
+mode accepts arbitrary statement types: `typeMatches` does not compare a theorem
+with the prose or the prize statement. The explicit guard writes out the rule,
+group/Boolean connection and arbitrary-support types, and the source carrying
+read separately checks their relevance. The adapter is optional and uses its
+reported Mathlib pin; it is not a dependency of the core closure.
+
+Lean4.35 on the author's Windows host is recorded with compiler-binary digest
+ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea.
+There is no separate version-command log. This is retained author provenance,
+not a newly measured GPT compiler version or replay. The verifier creates a
+fresh source-only output tree, builds four sources plus the guard, then runs
+the unchanged checker on the two target modules. It uses one Lean thread.
+
+The portable driver's resource claim needs care. Each direct subprocess has a
+60second timeout; the120second total is checked only after each call finishes.
+It is not a continuously enforced120second stage wall bound, and may overshoot
+by the final call. The driver contains no aggregate CPU, RSS, pressure or
+process-tree cleanup monitor. Its seven reported call times sum to16.985seconds;
+that is the author's reported timing, not an Intel measurement or proof of
+resource enforcement. No author code was executed here.
+
+The older standalone essay precedes support padding and has four headlines,
+178replayed/127declared constants. It is not the latest five-headline PR source.
+Its successful build/check guard summaries report37.734/47.141seconds and
+2064.02/2207.43MiB peak owned RSS. BUILD-ATTEMPTS preserves four earlier failures,
+including two RSS stops and one low-physical-memory stop. Their original raw
+logs, individual guard receipts, monitor samples and guard implementation are
+absent from this archive; the summaries are retained as reported outcomes,
+not independently observed enforcement. The separate GL2(F2) Wolfram control
+is also reported evidence, not a GPT rerun. No portal package or live verifier
+receipt is inferred from this draft.
+
+The countermodel's mathematical source and its37-constant replay are now carried.
+[GC2230's explicit finite white history](rule30-profile-boundary-control.md)
+sharpens its boundary interpretation without changing the source theorem.
+
+## A known singular example, explained by hand
+
+The linked discovery archive already identifies its first singular-matrix
+invariant as the alternating-ring recognizer. Its pilot stopped after37 of256
+width-one assignments; width two was not run. The retained algorithm checks
+all lengths by reachable linear spans of paired old/new products, whereas the
+nonconstancy witness is just a length-two word. This is not a complete census
+of the proposed matrix families, and no new run is warranted for this example.
+
+Here is a self-checked hand explanation, **PROOF-SKETCH**, known and reproved
+here. The labels2and4 are M0=E01 and M1=E10 over F2. Each square is zero,
+M0M1=E00 and M1M0=E11. The trace of a cyclic product is therefore1 exactly on
+strictly alternating nonempty even rings. Equal adjacent letters kill the
+trace, including across the join by cyclicity; odd alternating linear words
+have off-diagonal product and trace0.
+
+An alternating Rule30 row is fixed and has no other preimage. To see the latter,
+write y_i=x_(i-1) XOR (x_i OR x_(i+1)), and take a target triple y_i,y_(i+1),
+y_(i+2)=0,1,0. If x_(i-1)=0, the first equation forces x_i=x_(i+1)=0, the second
+forces x_(i+2)=1, and the third is impossible. Thus every input site corresponding
+to a target1 is1. The equation at each such target site then forces the preceding
+input, corresponding to a target0, to be0. Hence x=y. Odd rings never have this
+target, so their observable is identically0. This proves trace conservation
+for every positive ring size without appealing to a finite ring cutoff.
+
+This does not evade the group theorem: both labels are singular, and a global
+trace is not an additive local density. It recognizes an already-known isolated
+background, giving no new root information or prize invariant. Record searches
+for alternating/preimage and matrix-trace, actual current kit/portal/PR index,
+and the author's precise README/discovery source were compared. No novelty
+claim or further matrix search follows.
+
+## Optional literature dependency and next question
+
+Parry's1997 [Cohomology of permutative cellular automata](https://link.springer.com/article/10.1007/BF02760688),
+Israel Journal of Mathematics99,315–333, DOI10.1007/BF02760688, is subscription-only
+at the publisher; the university repository offers its abstract without full
+text. The abstract discusses unitary cocycles, a mixing permutative action and
+cohomology to constants as a class, not a theorem that every such cocycle is
+trivial. Exact hypothesis/prior-art comparison is parked until a legitimate
+copy is available. Owner access would help, but this is not blocking the programme.
+
+The next independent hand target comes from the same archive's explicitly
+conjectural dyadic periodic-background question. Its finite ring17–24 test
+reports equal Phi^8/Phi^16/Phi^32 fixed counts; it says nothing about arbitrary
+spatial periods or heteroclinic paths. Source and result are read, not rerun.
+First compare a fixed temporal-clock graph's recurrent components and transient
+connections with the existing rooted period32 certificate and PR48's carrier.
+The cheap objection is a clock carried only on a connecting path, absent from
+every spatial cycle. Settle that distinction before proposing any computation.

@@ -2045,3 +2045,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 
 - GC2228: [window development stop](reports/rule30-edge-odometer-dimension.md#gc2228-the-development-check-stopped-at-its-memory-cap), RSS cap enforced/cleanup complete/new drafts unattempted; and [PR58 source carrying read](reports/rule30-group-cocycle-review.md), exact homogeneous invertible finite-support scope accepted, raw author evidence still pending.
+
+
+- GC2229: [PR58 complete archive/replay review](reports/rule30-group-cocycle-review.md#gc2229-complete-archive-and-replay-review),101payload hashes and exact inputs checked; author186/5 core and37/3 boundary replay accepted in scope. No GPT compile; portable resource and notebook summary limits explicit. Known singular alternating-ring recognizer explained by hand; Parry1997 full text is an optional access dependency.
+- GC2230: [rooted endpoint control](reports/rule30-profile-boundary-control.md), solo PROOF-SKETCH. Seed93 realizes endpoint21 with predecessor150, while an external nonwhite infinite past gives predecessor21. Endpoint realizability is weaker than boundary restrictions on both candidate histories; known finite graph path, next clock16, no new census or white-root uniqueness refutation.

@@ -665,3 +665,6 @@ the same way.
 [8.119 Periodic-driver masking and the two remaining driver classes, GC2214](reports/rule30-prize/RULE30-PRIZE-8.3.md#8119-periodic-driver-masking-and-the-two-remaining-driver-classes-gc2214-30-october-2026).
 
 [8.120 Synchronizing carriers and the remaining finite-history guard, GC2226](reports/rule30-prize/RULE30-PRIZE-8.3.md#8120-synchronizing-carriers-and-the-remaining-finite-history-guard-gc2226-30-october-2026).
+
+
+[8.121 Local group transport and the boundary needed for profile decoding, GC2229–GC2230](reports/rule30-prize/RULE30-PRIZE-8.3.md#8121-local-group-transport-and-the-boundary-needed-for-profile-decoding-gc2229gc2230-30-october-2026).
