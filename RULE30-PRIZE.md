@@ -661,3 +661,5 @@ the same way.
 | [8.117 The death time at width 52 is exactly 96, kernel-checked (2026-10-23 21:15 BST, Local)](reports/rule30-prize/RULE30-PRIZE-8.3.md#8117-the-death-time-at-width-52-is-exactly-96-kernel-checked-2026-10-23-2115-bst-local) | 3 |
 
 [8.118 Finite-prefix repeat-obstruction transfer, formal delivery GC2095](reports/rule30-prize/RULE30-PRIZE-8.3.md#8118-formal-delivery-finite-prefix-changes-preserve-repeat-obstructions-gc2095-29-october2026).
+
+[8.119 Periodic-driver masking and the two remaining driver classes, GC2214](reports/rule30-prize/RULE30-PRIZE-8.3.md#8119-periodic-driver-masking-and-the-two-remaining-driver-classes-gc2214-30-october-2026).

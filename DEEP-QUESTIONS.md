@@ -1780,3 +1780,7 @@ separate and unresolved here. [Coordinates and carrying argument](reports/rule30
 37 backward steps are possible, step 38 is impossible after complete exact branch filtering. Independent
 implementation agrees; a thirteen-cell word forces the last failure. COMPUTED finite closure, not a theorem
 about other periods or eventual periodicity. [Result and visual evidence](reports/rule30-backward-diagonal-b.md).
+
+### DQ-023 — GC2214: remove optional pulses before attempting the strong exclusion
+
+New PR57 precisely identifies when the original and effective drivers preserve the same left half, but its all-period exclusion remains an assumption. [Source review and solo reduction](reports/rule30-periodic-mask-review.md): remove isolated black pulses if the effective boundary is nonzero; if it is zero, keep only one pulse per period. It suffices to exclude these two driver classes for the strong left-only assertion. The zero-mask branch asks whether a finite left start can keep the neighbour black on one arithmetic progression, not whether its full trace is periodic. This preserves the one finite left beginning, but does not construct a physical right side. No period excluded; no new census.

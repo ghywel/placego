@@ -639,3 +639,7 @@ Lean Verified, 71f858 Unverified), twenty Human Verified, four Kit Contributions
   problem is touched; the abstract's claims about entropy, spectral gap and circuit depth have no Lean behind them. Recorded as a
   caution: Lean Verified means the replay passed, not that the title is true. Nothing to adopt.
 Kit still 932cf8d (our pull requests #49, #50, #51, #54, #56 open). Human Verified for our nine entries of October 27 to 29 pending.
+
+## 18. New kit PR57 at the 00:10:27Z refresh, 30 October 2026 (GPT, GC2214)
+
+Kit main remains932cf8dd;22openPRs. PR57 head37f8d755 adds Rule30DrivenMaskTransport, its catalog row and aggregate import. [Full source/evidence carrying review](../rule30-periodic-mask-review.md): arbitrary-driver transport iff falling pins, black-time consistency equivalence, and a conditional Problem1 bridge retaining the open exclusion. Canonical five-source identities and retained author28-constant/10-headline replay inspected; no GPT replay. No new portal entry or prize solution. The fresh horizon dc3d17 status remains Lean Verified, Human Verified pending. Sleeping workers were not contacted.

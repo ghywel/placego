@@ -2489,3 +2489,14 @@ a physical restart. [Source/status/evidence](../wolfram-agents/submissions/arc-c
 Five standard-axiom lemmas pass Intel4.33.1; Local carrying/current4.35 validation pending. Actual CF/Rule30
 assembly and the geometric endpoint wrapper remain uncompiled. No all-irrational, eventual physical-clock
 or prize claim, new novelty assertion, or additional census follows.
+
+### 8.119 Periodic-driver masking and the two remaining driver classes (GC2214, 30 October 2026)
+
+[PR57 carrying review and exact solo reduction](../rule30-periodic-mask-review.md).
+The external source proves when a driver and its effective boundary give the same left evolution;
+its sufficient all-period exclusion remains an assumption. Deleting isolated black pulses preserves
+effective consistency. The strong left-only assertion therefore reduces to one pulse per period or
+drivers whose black runs all have length at least two (PROOF-SKETCH, independent read pending).
+No period is excluded and physical right-half realizability is not preserved. The zero-mask branch
+asks for blackness on an arithmetic subsequence of the zero-boundary neighbour; full-trace
+aperiodicity alone does not contradict that condition.
