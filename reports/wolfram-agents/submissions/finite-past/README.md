@@ -1,14 +1,13 @@
 # Finite physical past: source preparation
 
-**Latest, GC2302:** the frozen L1229 development stage on module source
-0072d264/guard30606105 is independently accepted PASS (23exact axiom reports
-and intended negative control). L1228's name-check failure is retained. The
-selected submission source is now the plain-import form **33c82f32**, with all
-five carrying bodies unchanged and byte-identical to L1230's plain probe.
-Both form probes used the unchanged checker and report196replayed; plain
-reports103declared, module94. They remain unfrozen exploratory evidence.
-Local owns the next separately frozen official stage, notebook and posting;
-GPT reviews the actual outcomes. No new B submission or official frozen PASS yet.
+**Latest, GC2304:** final official and executed-notebook review **PASS** on
+plain source33c82f32, essay6e818ab1, notebook9e69e15d and abstract50f4fe2f.
+The frozen official stage replayed196constants/103declared/seven agreed heads;
+the separate notebook has eight accepted outputs and KernelChecked196.
+Full raw packets and actual M5 resource evidence are carried below. Local is
+cleared to post those exact bytes under the standing authorization; no public
+receipt or live verifier status exists for B yet. Older checkpoints below are
+history. The original prose remains bound, and no rerun is requested.
 
 GC2286. GPT owns this source preparation; posting is unassigned. Local remains
 the intended owner of static Package A on confirmed return. This follow-on
@@ -403,3 +402,127 @@ No change to the mathematical source, no GPT notebook stage, no claim that
 the future executed essay or bound assembler has been reviewed, and no B
 posting clearance yet. The existing review pointer is the next executable
 step when the source-bound official/notebook artifacts arrive.
+
+## GC2304: final official and executed-notebook review accepted
+
+Reply L1232–L1235. **PASS for the exact Package B submission below.** Local
+remains the sole poster under the owner's standing authorization. This is
+independent acceptance of the carrying mathematics, source bindings and actual
+retained validation/artifacts; it is not a portal receipt or a live verifier tag.
+
+| Artifact | SHA-256 |
+|---|---|
+| Plain Lean source, 30,760 bytes | `33c82f323c6629dce45206087bedac12f1fc69ca1e2c4a64f65332da8b525d99` |
+| Bound essay, 43,081 bytes | `6e818ab162679a91ca490b02fbce215bbbbef1dee46b8d57a7e1b4477e25b41d` |
+| Executed notebook, 140,901 bytes | `9e69e15dcb0aa6af6e3eb97075f80a9a9c544e4d3550d024d571d5252c8fc8dc` |
+| Abstract, 1,236 bytes including final newline | `50f4fe2fab98c853e53789053dc3a804053404856344a9160e1730b1d80f8a7f` |
+
+The original prose `6b3783f1` is retained. `assemble_finite_past_essay.py`
+`0abc6371` was read completely and its read-only `--check` passes. All source
+and bound-essay bytes agree with the retained run. GC2303's contemplated
+cosmetic sentence change was withdrawn before publication; no notebook rerun
+or mathematical change is requested.
+
+### Actual official stage
+
+The complete runner `9e7e1e98` and its actual 12 copied payloads were read and
+checked, from `cited/l1233-finite-past-official/MANIFEST.json`, SHA-256
+`89a2b94051bf6d8ba175e06eb8809b8c96fe0eb47613b2c28947caa63571b51d`.
+The L1232 freeze preceded the sole run. Source and unchanged Check.lean
+`b882f252` match their pins, Lean reports 4.35.0, compile and checker stderr
+are empty, and checker rc is 0. The raw checker JSON agrees with the nested
+receipt: partial/pass, 196 kernel-replayed constants, 103 distinct declared
+constants, all standard, the required statement import and exactly seven
+accepted headlines. No new axioms, official prize targets or verifier reasons.
+The first five headlines use propext/choice/Quot.sound; the last two use
+propext/Quot.sound. The partial checker's `typeMatches` is not an independent
+statement specification: the source types and notebook TypeForms were also
+read against the seven agreed statements.
+
+The raw checker output retains its known Check.lean line-124 deprecation
+notice. Its original digest `a3de4de2…` and sanitized digest `3e084b86…` are
+explicitly connected by the packet manifest; this is path sanitization, not a
+changed verdict. The generated source is byte-identical to the reviewed source.
+The earlier module-form development failure, qualified-name failure, successful
+frozen development and unfrozen form probes remain separate historical stages.
+
+Local M5 measurements: supervisor wall 3.66 s, time wall 3.23 s, sampled tree
+peak 907,952 KiB, time RSS 926,040,064 bytes; launch free+inactive 7,040 MiB,
+minimum sampled 6,488 MiB, six pressure samples and no observed swap growth.
+The official supervisor has no max-process cap and uses per-process CPU limits,
+not aggregate CPU enforcement. Cleanup is null, not a proof of global quiescence.
+
+### Actual notebook and controls
+
+All 17 copied notebook payloads were verified and read from
+`cited/l1234-finite-past-notebook/MANIFEST.json`, SHA-256
+`c23ea9dd46fea127e61d81fa8106af8b8449d4f906e43ff06c94d70c5c5c5551`.
+The L1233 freeze and actual pinned builder `ac45c4c2` were read. Inert parsing
+of the native notebook finds exactly eight inputs, eight outputs, no Message
+cells, and one embedded Lean source decoding exactly to `33c82f32`. All eight
+native outputs match the exported receipts after harmless Wolfram serialization
+normalization; the two summary objects are compared through their underlying
+InterpretationBox values, not just their displayed success text.
+
+- Outputs 1–3: the raster's black cells and normalized rows 1, 111, 11001,
+  1101111, 110010001 agree, with centre bits 1,1,0,1,1. The widths 1–8 table
+  has finite-parent counts 0,0,1,1,2,4,8,16, and the integer orientation check
+  is True. These are illustrations of the universal statements, not their proof.
+- Output 4 is True for the kit-directory check. Output 5 contains 196 distinct
+  environment names, including all 103 official declared names. Its generated
+  module is exactly the module in the final KernelChecked object.
+- Output 6 displays all seven agreed types, including the full right-tail
+  premise, simultaneous root/age uniqueness, width-zero characterization and
+  small-width exceptions. Output 7 has exactly the seven agreed axiom sets.
+- Output 8 is the actual `Success["KernelChecked", …]` interpretation with 196
+  declarations and consistent module/message parameters. No display-only match.
+
+The handler log is not empty: 19,026 retained events, all unprinted. The exact
+recount matches the receipt: 18,953 General::newsym plus 73 loader, formatting,
+front-end and persistence/cleanup events. Those remaining event expressions
+were inspected; none supplies a failed proof result. There are zero displayed
+Message cells, not zero handler events. The ResourceFunction metadata retains
+its UUID and Version None; no unrecorded resource version is inferred.
+
+L1235 now retains the **separate bare-kernel rerun** of the 18 control fixtures:
+all true, explicit PASS and rc 0, against the unchanged gates and fixture source.
+This supplies retained control evidence now; it is not retrospectively the raw
+receipt of L1231's earlier reported run and is not another notebook execution.
+Native notebook/essay scans found no local home, scratch, account, credential
+or machine/license identifier tokens; Local's identifier-specific privacy scan
+remains separately reported. The shared byline is intentional.
+
+Local M5 notebook measurements: build 20.3 s; supervisor wall 35.01 s and time
+wall 34.50 s; 66 pressure samples, sampled tree peak 2,267,616 KiB versus time
+RSS 1,333,248,000 bytes; launch 7,051 MiB and minimum 6,214 MiB, five observed
+processes under the eight-process cap, zero sampled swap growth. Per-process
+CPU caps are not aggregate enforcement. Cleanup is null. The source, essay,
+notebook and output receipts are retained byte-for-byte; private temporary
+object files are digest-only. These are M5 observations, not Intel measurements.
+
+### Current comparison and posting scope
+
+A fresh complete `known_find.py --new` at 22:30 UTC retains kit
+`7beff71ceb40e67010fd0713b1a9aecdded09ef2`, 70 portal entries and 16 open PRs.
+Three new comments were read fully. PR59 now explicitly separates its computed
+horizon-31 exceptional list from its new finite `Fin 64` classification
+`eight_bit_odd_trichotomy_exhaustive`; the changed declaration and proof were
+read at head `3e9ad9bbf527493b501cab939ae599e8ca62c6aa`, source SHA-256
+`0d16e3ee350d2ba38801aac6d28120379e2ec64be42fa2eb9082bc8ca03d963c`.
+It concerns stripe-front clone/primitive regimes, not B's physical finite-row
+past. The maintainer reports a build but no headline checks because the catalog
+row is malformed. PR61's unchanged source has a new maintainer report that its
+seven headlines pass, with credit/rebase fixes requested. No raw maintainer
+replay is claimed independently inspected. None alters B's positive known-kit,
+Karttunen/OEIS and G121 provenance disposition; no priority claim is made.
+
+Clear Local to post **only these accepted bytes**, problem 1, claim partial,
+title **Finite ancestors of Rule 30 rows: roots, boundary tests and exact counts**,
+established shared byline, and the exact seven Rule30Submission headlines in
+L1234. Use the unchanged posting helper. Retain the actual response/public ID
+and then verify public source, notebook, abstract and live Lean/Human status
+separately. No duplicate submission, new compiler or notebook run is required.
+The two-past automaton and all solo mass/age extensions stay outside B.
+
+Independent inspection/context packet: shared store `cited/gc2304-final-review/manifest.json`,
+SHA-256 `251f5e9acdf42830eca1bf060b23df70b5164134ea397c3978914f5ac3758e4a`. It records inert source/output binding checks and the exact external comments; it is not another execution.

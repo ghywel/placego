@@ -1,6 +1,6 @@
 {
-  "checkpoint": "GC2303",
-  "status": "PLAIN_SUBMISSION_PREPARED_FROZEN_OFFICIAL_STAGE_PENDING",
+  "checkpoint": "GC2304",
+  "status": "FINAL_REVIEW_PASS_READY_FOR_LOCAL_POSTING",
   "source_owner": "GPT",
   "posting_owner": "Local",
   "mathematics_provenance": "G121/G122/L077; actual kit ingredients; Karttunen OEIS2016 finite parent, ancestor and age",
@@ -15,7 +15,7 @@
     "Rule30Submission.finite_parent_count",
     "Rule30Submission.finite_parent_small_widths"
   ],
-  "research_kit": "a6399ef15ff409d4dc0c5feb119b289aa31588a4",
+  "research_kit": "7beff71ceb40e67010fd0713b1a9aecdded09ef2",
   "verifier_kit": "19540bfb974ef743bf98818e768c1ee94f62eecf",
   "verifier_environment_sha256": "d0a1e526b18ff61cdb111640c6b4a9a9efa1d308926a1516adb5e59d3f7ef5c6",
   "portal_skill_sha256": "1e702976f3bdd169350a7cc034161775e335d35f4badce457c03872c82bc6709",
@@ -89,13 +89,28 @@
       "path": "essay-prose.md",
       "sha256": "6b3783f1a896f2dd97611f8c5adeef3e602a528f6afd5f06d77ae2d6a89f8dbe",
       "bytes": 11571
+    },
+    {
+      "path": "essay.md",
+      "sha256": "6e818ab162679a91ca490b02fbce215bbbbef1dee46b8d57a7e1b4477e25b41d",
+      "bytes": 43081
+    },
+    {
+      "path": "abstract.txt",
+      "sha256": "50f4fe2fab98c853e53789053dc3a804053404856344a9160e1730b1d80f8a7f",
+      "bytes": 1236
+    },
+    {
+      "path": "NOTEBOOK-SPEC.md",
+      "sha256": "e996a5baefb5f2cd7f37679ade24cb6b359f6b28b609762b98a6422d2310482b",
+      "bytes": 3717
     }
   ],
-  "assembled_source_status": "Plain33c82f32 exact L1230 exploratory source; module0072d264 frozen development PASS accepted; official frozen plain replay pending",
+  "assembled_source_status": "Exact plain33c82f32 separately frozen official PASS:196replayed/103declared/7heads; independently accepted GC2304",
   "public_context_manifest": "cited/gc2292-submission-context/manifest.json",
   "public_context_sha256": "c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268",
   "independent_review": "G121/G122/L077 and CL659/GC2261 hand provenance; L1219 seven statements and L1225 definitions carried; full independent Lean proof-body read not claimed",
-  "development_owner": "Local: L1229 frozen module PASS accepted GC2302; next one separately frozen plain official stage",
+  "development_owner": "Local sole validator/notebook/poster; actual frozen official and notebook accepted",
   "previous_assembled_source_sha256": "0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229",
   "direct_imports": [
     "Ruliology.CellularAutomata.Rule30Prize",
@@ -105,5 +120,9 @@
   "development_manifest_sha256": "77c7d2d5ce40f848e6f2f67104046bb8131e6f0271bb3740aa4452330b8f4324",
   "latest_context_manifest": "cited/gc2302-live-context/manifest.json",
   "latest_context_sha256": "15d4bd4e21a1142c4990f53e00aa93130d42339ca46bf825c1d3bbfb90c907e8",
-  "final_prose_status": "Static prose/abstract/tooling review accepted GC2303; exact bound essay and executed artifact still pending"
+  "final_prose_status": "Original6b3783f1, bound6e818ab1, executed9e69e15d and abstract50f4fe2f accepted GC2304; no cosmetic rerun",
+  "official_manifest_sha256": "89a2b94051bf6d8ba175e06eb8809b8c96fe0eb47613b2c28947caa63571b51d",
+  "notebook_manifest_sha256": "c23ea9dd46fea127e61d81fa8106af8b8449d4f906e43ff06c94d70c5c5c5551",
+  "notebook_sha256": "9e69e15dcb0aa6af6e3eb97075f80a9a9c544e4d3550d024d571d5252c8fc8dc",
+  "public_receipt": null
 }
