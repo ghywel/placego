@@ -326,3 +326,94 @@ ruler-closing law while this excess is unbounded. That would identify whether a 
 constant needs more actual-root information. Such a word would be a symbolic control only,
 not a Rule30 realization. Do not infer an actual-root counterexample from it or launch another
 period census. The independent alternative remains the named bounded-type/Rote source comparison.
+
+## GC2221: the ruler law permits unbounded critical excess
+
+GPT,30 October2026. **PROOF-SKETCH, solo hand control, not an actual Rule30 orbit.** The GC2220
+discriminator succeeds. This tests the exact carried closing law, including its conditional iff,
+and the no111 rule. It does not assert compatibility with full temporal profiles, every other
+known flag restriction or the complete `Path` resource axioms.
+
+Record searched: ruler/exceptional/record-charge with sharpness, attainment, symbolic controls and
+critical excess; current kit932cf8dd actual `Path` and threshold definitions, portal/open-PR index
+00:10:27Z. GC2201/CL645/GC2205 supply the exact law and tower recurrence; GC2151/GC2197 already
+show abstract Path tails need not determine density. The classical local-cover definition is the
+same primary Banaji–Rutar–Troscheit equation1.1 read in GC2220. This is a sufficiency check on those
+known mechanisms, with no novelty claim or new external theorem imported.
+
+### Construction and every occurrence of the closing law
+
+Start with x_1 x_2=10 and E_n=sum_(j=1..n) x_j. Set s_1=3 and e_1=1. Recursively define
+
+    q_r=2^e_r,
+    e_(r+1)=e_r+q_r,
+    s_(r+1)=s_r+2q_r-1.
+
+On the half-open integer interval [s_r,s_(r+1)), write the word
+
+    1(10)^(q_r-1).
+
+These intervals concatenate, cover the remaining positions and each contain q_r ones and q_r-1
+zeros. Hence E_(s_r-1)=e_r, exactly the exponent used in the next block's rule. The starts are
+3,6,21,4116,... and their exponents are1,3,11,2059,... . These are hand evaluations of the
+recursion, not simulated Rule30 data.
+
+Every11 starts at some s_r, and every such11 has a0 before and after it. Thus no111 occurs.
+An occurrence1(10)^m1 with m>=1 must start at s_r, since its first two symbols are11. Within
+that block it exists precisely for1<=m<=q_r-1. Its following symbol is0 for m<q_r-1 and1 at
+m=q_r-1, when the next block starts. For larger m the next11 breaks the required alternation.
+This checks every occurrence, not only the designated completed blocks. In particular it satisfies
+the full carried assertion
+
+    m<=2^E_(s-1)-1,
+    x_(s+2m+2)=1 iff m=2^E_(s-1)-1
+
+whenever1(10)^m1 starts at s. Each completed block shares its closing11 with the following
+block's initial11. The sparse-count inequality e_next>=e+2^e is attained at equality in this
+symbolic class; this says nothing about its attainment by the actual root.
+
+### Unbounded excess, despite density one half
+
+Summing the two recursions gives
+
+    s_r=2e_r-r+2,
+    2E_(s_r-1)-(s_r-1)=r-1.
+
+Thus E_n-n/2 is unbounded. Within block r the signed excess2E_n-n is between r-1 and r+1:
+the initial11 raises it twice, and each later01 pair keeps it within those bounds. Since
+e_(r+1)>=2e_r, we have r/(s_r-1)->0. Therefore E_n/n->1/2, while the excess still diverges
+along the displayed endpoints. A limiting half-density does not imply a bounded additive excess.
+
+For an abstract homogeneous binary tree branching at exactly these positions, the covering ratio
+at the critical exponent includes
+
+    2^(E_n-n/2)=2^((r-1)/2),       n=s_r-1,
+
+which is unbounded. This tree is an explanatory control; it is not asserted to be the edge orbit
+tree. In particular it does not refute a critical covering bound for the actual K.
+
+### A finite actual prefix does not remove this symbolic freedom
+
+More generally take any finite actual flag prefix of length L ending00, with e=E_L>=1. Start the
+same construction at s_1=L+1,e_1=e. No new11 or alternating antecedent can cross the final00.
+All earlier complete implications retain their actual values, and the tail proof above applies
+unchanged. Now
+
+    2E_(s_r-1)-(s_r-1)=2e-L+r-1,
+
+so the excess is still unbounded and the limiting density still1/2. Such a prefix exists in the
+already-retained depth24 witness: its first14 flags are10110110100000 and E_14=6. This merely
+checks the boundary hypothesis against existing data; no new prefix generation was performed.
+The resulting continuation is symbolic, and may violate other actual-root constraints immediately.
+
+**Disposition.** The exact ruler law and any such finite actual prefix cannot by themselves prove
+a uniform critical covering constant. An actual-root proof would need an additional inequality
+controlling excess accumulated across successive closures, or an equivalent restriction on their
+realizable spacings. A larger sample or more manipulation of the same upper bound does not supply
+that condition. Park this upper-bound-only route until such a specific relation appears.
+
+The next independent carrying read is the previously indexed PR48 edge-clock restriction source,
+whose full proof has not yet been read here. Its period/antiperiod obstruction may clarify which
+symbolic continuations fail actual temporal compatibility. Read its exact head and linked sources
+before adopting any consequence. This is a change of representation and a source review, not a
+new request to the offline workers or a generic literature search.

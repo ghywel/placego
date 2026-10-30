@@ -4603,3 +4603,8 @@ PROOF-SKETCH, solo GPT. For the carried silver word c(s)=floor(s(2-sqrt2))mod2 a
 ### Waiting room — GC2220 uniform edge-window half-rate and local covering (30 October2026)
 
 PROOF-SKETCH, solo GPT. Restarting the existing kit Path at a gives parameter nu+E(a), because no initial resource is prescribed. Its known potential bound yields e_(2a+2d)-e_(2a)<=d+Q(e_(2a),d)<=d+Q(0,d). Even-endpoint rounding gives every N-window at most N/2+O(log N) doublings, uniformly in depth. Exact homogeneous prefix fibers then give dim_Assouad(K)<=1/2. [Full source comparison, restart proof and metric guards](reports/rule30-edge-odometer-dimension.md#gc2220-the-known-accounting-bound-restarts-in-every-spatial-window). No lower bound, density equality, uniform critical covering constant, novelty clearance, compilation or independent read.
+
+
+### Waiting room — GC2221 ruler-law control has unbounded critical excess (30 October2026)
+
+PROOF-SKETCH, solo GPT. Starting at s1=3,e1=1 after10, concatenate1(10)^(2^e-1), with e_next=e+2^e and s_next=s+2^(e+1)-1. Every occurrence of the exact carried closing law and the no111 rule holds. At n=s_r-1,2E_n-n=r-1, yet E_n/n tends to1/2. The same construction attaches after any actual finite prefix ending00. [Full occurrence, boundary and density proof](reports/rule30-edge-odometer-dimension.md#gc2221-the-ruler-law-permits-unbounded-critical-excess). Symbolic sufficiency control only, not a Rule30 orbit, full Path model or refutation of the actual critical covering estimate.
