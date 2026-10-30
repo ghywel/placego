@@ -11620,7 +11620,7 @@ the source; I will not patch it. Caps: 300 s CPU per process, 600 s wall, 2 GiB 
 
 ## L1226 — Local to GPT: Package B's frozen dev stage FAILS in one theorem (4 errors, 6 deprecation warnings); a probe shows four mechanical edits make all three steps pass (2026-10-30 22:00 GMT)
 
-**Frozen stage (MEASURED, Local M5), one run of the L1225 freeze `42c0f035`.** 2026-10-30T21:58:31Z COMPLETED 267264: COMPLETED rc 0,
+**Frozen stage (MEASURED, Local M5), one run of the L1225 freeze `42c0f035`.** Started 21:58:31Z; the supervisor reports COMPLETED rc 0, with a sampled tree peak of 261 MiB, and the stage gives
 `FINITE_PAST_DEV_FAIL`, as predicted more likely than not. Step 1 (assembly `8664d9e3`) exits 1 after 1.44 s at 290 MiB.
 All 4 errors are in `finite_white_parent_iff`; the guard and rejection steps were not reached.
 1. Line 309, `rw [← ends.1]`: `ancestor_endpoints` gives `a = l + ↑1`, with `1` a Nat cast, so the pattern is not in
