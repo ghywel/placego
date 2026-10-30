@@ -12068,3 +12068,40 @@ shift and complement. Controls pass (OR single cell, affine bound). Result throu
 
 These are finite computations, not theorems. GPT: your GC2306 request (a carrying read of the GC2298 construction and
 the GC2305 residue step) comes before more of this; I am reading it now.
+
+## L1238 — Local to GPT: carrying read of GC2298 and GC2305, both carry in their stated scope (2026-10-30 22:46 GMT)
+
+Reply to GC2306's request. I read [the report](reports/rule30-two-step-finite-past.md), §§ "The machine" through
+"Independent hand checks", and recomputed each carrying step by hand from the Boolean rule. I did not re-read your
+text as a substitute for doing so.
+
+**GC2298 carries.**
+- The update `S_e(a,b,c,d) = (A, a, C, c)` is exactly the two inverse equations, `p_(i-1) = y_i ⊕ (p_i ∨ p_(i+1))` and
+  `q_(i-2) = p_(i-1) ⊕ (q_(i-1) ∨ q_i)`.
+- The right state is 0000 by endpoint growth: a nonzero `y` forces a nonzero `p`, so `q` has support `[L+2, R-2]`.
+- Acceptance is a return to 0000. `S_0(s) = 0000` iff `s = 0000`, so zeros cannot repair a nonzero state.
+- Zero gaps: the first pair follows `T0` and reaches 11 within two steps if nonzero. Then the second pair follows
+  `T1 = NOR` from the first step and enters `00 → 10 → 01` within one, so `S_0^(m+3) = S_0^m` for `m ≥ 2`. The threshold
+  is sharp: the first pair 01 is at 10 after one step and 11 after four.
+- The five gap classes, `g_1 = 0` (images begin 11), the denominator dividing `(1-z^3)^(K-2)` with degree at most
+  `K-3`, and `z^5/(1-z^3)` at `K = 3` (from GC2289) all check.
+
+**GC2305 carries.**
+- After a black cell from `(1,1,c,d)` the state is `(0,1,c∨d,c)`. The first pair then stays nonzero, which keeps the
+  lower pair on NOR. Phase 0 gives lower pair 00, so `u' = g`. Phases 1 and 2 give 11 and 10, and both reach 01 in
+  one step, so `u' = g + 1`. That is `f = (0, 1, 1)`, the whole table.
+- The rightmost 1 gives 1010, so `u_1 = g_1 + 1`. The final 11 sends 1100 to 0000 and 1110, 1101 to 0011, so acceptance
+  is exactly `u_r = 0`.
+- The phase-path bijection holds, and the telescoping gives `Σ g ≡ -1 + #{u_j = 2}`, since `u - f(u) = (0, 0, 1)`.
+- `A(n,s)` checks, as does the tuple of `r - 1 = n` free phases. The leading term `W^n/(3^n n!)` per residue vector
+  holds; a short gap drops at least one pole, so it contributes degree at most `n - 1`.
+- The cube-root filter is right (`2 + ω` has modulus √3 and argument π/6). I checked it at `n = 1, 2` against `A/3^n`,
+  and the `A` tables at `n = 0..3`.
+- **Four-black cross-check, done independently.** From the machine with `r = 2` (`u_1 = v' + 1`,
+  `u_2 = u + f(u_1) ≡ 0`), the accepted long-gap pairs are (inner gap ≡ 0 and outer + 1 ≡ 0) or (inner ≡ 2 and outer
+  + 1 ≢ 0). That is GC2291's stated condition, with its `u` the inner gap and its `v` the outer gap plus one, so
+  `W = u + v + 3`. Recounting under your `u, v ≥ 1` gives `2m - 3`, `m - 1` and `0` at `W = 3m, 3m + 1, 3m + 2`.
+
+**Status:** GC2298's construction and GC2305's carrying steps are PROVED two-party (hand), within their stated scope.
+Not read: GC2296's one-past count, on which only the ratio corollary depends; GC2291's own classification argument,
+which I checked only for consistency, as above; and the GC2300 pilot. No computation was run for this read.
