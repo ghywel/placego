@@ -1,0 +1,104 @@
+{
+ "stage": "gate-clocks-nested notebook stage (L1248 freeze 33f6dc15), Local M5, one run",
+ "spec": "reports/wolfram-agents/submissions/gate-clocks-nested/NOTEBOOK-SPEC.md",
+ "start_utc": "2026-10-30T23:54:04Z",
+ "end_utc": "2026-10-30T23:54:45Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 40.96,
+ "maxima": {
+  "rss_kib": 2219104,
+  "procs": 5,
+  "disk_bytes": 5075265,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 5751
+ },
+ "launch_gate": {
+  "free_inactive_mib": 6464,
+  "swap_used_mib": 0.0
+ },
+ "caps": {
+  "cpu": 1200,
+  "wall": 1200,
+  "rss_mib": 4096,
+  "file_mib": 64,
+  "disk_mib": 256,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 8
+ },
+ "essay_sha256": "9d671428f97a2a9baa16e533ac68dbe0f60c3b4ee69530d7d6ba866e25710ba1",
+ "essay_md_matches_repo": true,
+ "notebook_sha256": "a21eb79b6752d4d7e55281a478773ef088cb464cde8bd11fb1769fbd43326aa7",
+ "notebook_bytes": 255500,
+ "build_seconds": 21.1,
+ "output_cells": 6,
+ "output_digests": [
+  "1abf6a46bc2ab270a5dc594532c8f1d9f6345a1dfa0801ffbec70cf8273aeb38",
+  "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+  "b7f776b9d76f3f5f3f1d235652f8d0a31e791d2be38536ab7ef8b5d5d47d74e7",
+  "934fb5bd389a559de0b7ad7256b96b3e7e389a6dbec4a98b543ad4f719a1b847",
+  "714c5aa8716d6a300e2115aac84d8ee2222548609a18f3fa27219e856c0b40a9",
+  "347d75a7d843398574671d061623c654b543fb9d17f519372be3a949e84a527e"
+ ],
+ "message_cells": 0,
+ "computation_ok": true,
+ "axioms_ok": true,
+ "kernelcheck_ok": true,
+ "kernelcheck_data": {
+  "MessageTemplate": "The kernel accepts all `1` declarations of `2`.",
+  "MessageParameters": [
+   507,
+   "LeanLinkTmp..."
+  ],
+  "Module": "LeanLinkTmp...",
+  "Declarations": 507
+ },
+ "handler_events": 15194,
+ "handler_tally": [
+  {
+   "wolfram_inputform": "\"General::newsym\" -> 15137"
+  },
+  {
+   "wolfram_inputform": "\"LocalObject::nso\" -> 18"
+  },
+  {
+   "wolfram_inputform": "\"DeleteFile::fdnfnd\" -> 12"
+  },
+  {
+   "wolfram_inputform": "\"MIMETypeToFormatList::fmterr\" -> 12"
+  },
+  {
+   "wolfram_inputform": "\"FrontEndObject::notavail\" -> 5"
+  },
+  {
+   "wolfram_inputform": "\"General::openx\" -> 4"
+  },
+  {
+   "wolfram_inputform": "\"ImportExport`ExtensionToFormatList::fmterr\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"OptionValue::nodef\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"General::stop\" -> 1"
+  },
+  {
+   "wolfram_inputform": "\"LibraryFunction::overload\" -> 1"
+  }
+ ],
+ "reasons": [],
+ "resource": {
+  "Name": "MarkdownToNotebook",
+  "Version": {
+   "wolfram_inputform": "None"
+  },
+  "UUID": "42d07bb8-1692-42d6-8718-226e124b292b"
+ },
+ "output_checks_sha256": "8660eea3e7ed4fa24f84851c61cd3b859cc5c0e0622fa8181c39179b7b540a60",
+ "receipt_helper_sha256": "4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7",
+ "identifier_scan": "no absolute home path, account name, temporary path, machine name, machine ID or licence ID in essay.nb (identifiers piped from the kernel into the scan, never printed)",
+ "raw_packet": "shared store cited/l1249-nested-notebook/MANIFEST.json, SHA256 b7490f203c764669b2313e170156b3c99bb2476705498663fb19059bc9600824 (16 files; tmp/ by digest only; read back)"
+}
