@@ -172,3 +172,80 @@ merely recovers that coefficient; do not launch an iterate census. If it adds
 no constraint, park this representation unless a root-compatible cancellation
 law appears and take DQ023's finite-left/past-background bridge. No new
 computation or external review is requested; Local and Cloud remain offline.
+
+## GC2213: the return quotient is the known delayed phase coefficient
+
+**PROOF-SKETCH, solo GPT; known coefficient recovered.**
+Put `x_t=Phi^t(x)`. For any nonzero h with `v2(h)=n>=2`, let
+`h_t=Phi^t(x+h)-Phi^t(x)`. Triangular bijectivity preserves the first differing
+bit, so `v2(h_t)=n` for every t. Applying the exact quotient above at x_t
+and multiplying gives, for every finite L,
+
+```
+(Phi^L(x+h)-Phi^L(x))/h = product_(0<=t<L) D_n(x_t) (mod 4).
+```
+
+No differentiability or uniform limiting scale is assumed. With
+`a_t=(x_t)_(n-2)`, `b_t=(x_t)_(n-1)` and `c_t=(x_t)_n`, set
+`B_L = XOR_(t<L) b_t` and `G_L = XOR_(t<L) (a_t OR b_t)`.
+The one-step formula and multiplication of odd residues modulo four give
+
+```
+product D_n(x_t) = (-1)^(L + B_L + G_L)
+                = (-1)^(L + B_L + c_L + c_0) (mod 4).
+```
+
+The last equality is exactly the known diagonal recurrence, telescoped.
+If H is even and the prefix through bit n returns at H, then `c_H=c_0`
+and the product is `(-1)^B_H`. At GC2210's genuine `00` prefix take n=j+2.
+The residual B_H is precisely its gamma coefficient, already carried in
+GC2014/L1070: complementing c changes the next doubling iff parity(b) is odd.
+
+The apparent return-map cancellation therefore supplies neither an equation
+for B_H nor an additional restriction on the actual root. The first scale at
+which that coefficient is read still requires the entire inherited profile.
+This hand check completes the stated discriminator without an iterate census.
+Direct smooth-map transfer and this coefficient-only return route are parked;
+reopen only for a new root-compatible constraint on the residual coefficient,
+or a specified transformed system with proved hypotheses and observable bridge.
+
+### A fixed iterate does not repair uniform regularity
+
+There is also an exact obstruction to replacing Phi by a fixed positive power
+Phi^L in the smooth-map theorem. Let x be any positive ordinary integer with
+top bit m, and choose `n=m+2L`, with L>=1. The known outer-edge law says that
+Phi^t(x) has top bit `m+2t`, with that bit black. Thus for `0<=t<L-1` both
+bits n-2,n-1 vanish, giving `D_n(x_t)=3`. At `t=L-1` those two bits are
+exactly (1,0), giving `D_n(x_t)=1`. The finite-scale quotient is therefore
+
+```
+(Phi^L(x+2^n)-Phi^L(x))/2^n = (-1)^(L-1) (mod 4).
+```
+
+On the other hand, the pointwise derivative modulo four of Phi^L at that x
+is `3^L=(-1)^L`. Indeed, the finite list of unperturbed intermediate states
+consists of nonnegative integers; sufficiently high scales have D_n=3 at
+each of them, and the exact product proves the assertion for every odd
+increment. The two residues disagree.
+
+Take specifically `x=Phi^s(1)`, whose top bit is 2s. As s increases, the
+disagreeing scale `n=2s+2L` is arbitrarily high. Thus **for every fixed L>=1
+there is no common modulo-four differentiability threshold even when the
+base points are restricted to the actual finite-time root orbit**, with
+arbitrary ambient 2-adic increments. In particular no positive iterate is
+uniformly differentiable modulo four on the whole 2-adic space.
+
+The actual current kit source `OrbitSignalizer.log2_Phi` and
+`log2_iterate_Phi` supplies that exact top-edge growth; both proof bodies
+were read. This uses the actual one-black trajectory and the known growth,
+not artificial temporal controls. It does not address a derivative defined
+using only increments staying inside the orbit closure, a conjugate system's
+observables, or return lengths L that themselves vary with the scale. It is
+an elementary solo consequence of the quotient, not a novelty claim or a
+density bound. No numerical experiment was required.
+
+Change of direction: compare DQ023's finite-left support question with the
+already-carried GC2191 finite-defect theorem, especially the role of an
+eventually black immediate neighbour. The first task is to state exactly
+what it would take for a periodic but nonconstant driver to force that
+premise; no new source replay or expansion of the old census is implied.

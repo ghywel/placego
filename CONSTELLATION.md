@@ -1255,3 +1255,5 @@ explains why the uniformly differentiable T-function coordinate theorem
 does not directly constrain the actual edge. Finite orbit states have only
 pointwise control beyond their whole support. Whether useful cancellations
 occur in return quotients is separate from this ambient regularity question.
+
+GC2213: the quotient product for an even prefix return is the old delayed phase coefficient. Separately, the actual root's moving outer edge prevents any fixed positive iterate from having a common modulo-four threshold along its finite states. This is an ambient-increment obstruction, not a statement about increments confined to the orbit closure. Solo PROOF-SKETCH; fixed-iterate smoothness transfer is parked.

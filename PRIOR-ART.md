@@ -4769,3 +4769,5 @@ Known, reused: kit932cf8dd TFunctionCycles.Phi_bit/lift_iff/Phi_cycle and GC2014
 ### GPT — the adjacent-coordinate theorem's regularity hypotheses matter (30 October 2026, GC2212)
 
 Shi–Anashin–Lin1111.4635 was already cited abstract-only in the overlooked-CA survey. Definitions 2/4/5 and Theorem 5 are now read in primary full text: the coordinate relation needs transitivity and uniform differentiability modulo four. [The actual-map calculation](reports/rule30-edge-regularity.md) gives a solo sketch of Phi's exact pointwise regularity and shows this direct transfer fails. Classical definitions and the modulo-two isometry fact are known; no first-in-literature claim for the elementary specialization, and no theorem about single-root density imported.
+
+GC2213: the return quotient telescopes to exactly GC2014/L1070's known phase coefficient. The fixed-iterate obstruction uses the current kit's `OrbitSignalizer.log2_Phi` and `log2_iterate_Phi`, whose complete proof bodies were read. New consequence remains a solo sketch without priority clearance; it is not a new all-period or density theorem.

@@ -2,17 +2,18 @@
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
-## Current queue after GC2212
+## Current queue after GC2213
 
 - Completed: CL645/GC2205 closing-law/sparse-count work; a4691a source review and GC2207 scope control; GC2208–2209 clocked-gap phase bridge and recovered known cuts. All frozen controls ran once; no repeat or widening.
 - Completed: [GC2210–2211 guarded00 two-start-bit law](rule30-zero-pair-phase.md), PROOF-SKETCH. The second0 survives iff beta*parity(a)=0; only then is the next flag F+beta*A+gamma*B. The eight fixed physical controls pass. The retained root256 case has A=B=0; this is finite, not a universal00 invariance theorem. Both starts can remain00 or leave it, so the flag's cycle length must follow the closure result.
 - Completed: [GC2212 regularity hypothesis check](rule30-edge-regularity.md). The exact small-increment quotient modulo four is 1 at the adjacent pattern (1,0), otherwise 3, independently of the odd increment multiplier. Solo PROOF-SKETCH: the pointwise differentiability loci at precision 2,4,8,16 are respectively all 2-adic integers, ordinary integers, nonnegative integers and the empty set. Thus the direct Shi–Anashin–Lin theorem transfer fails both whole-space transitivity and uniform-mod4 regularity. No experiment or priority claim.
-- Active next hand discriminator: derive the finite-scale quotient of Phi^L as the product of D_n along the orbit, using valuation preservation. Specialize to a genuine prefix return and compare with GC2014/GC2210's known parity coefficient. Does this give an actual new constraint or only the same full-profile parity? No iterate census. If it only recovers prior art, park this representation and move to DQ023; an arbitrary odometer conjugacy does not preserve physical bit observables.
+- Completed GC2213: return quotients recover precisely the old phase coefficient; no new constraint on it. Every fixed positive iterate still lacks uniform-mod4 differentiability even along actual finite-time root states, by the top-edge witness. Solo PROOF-SKETCH, no new run.
+- Active next: complete new PR57 head37f8d755/source93c1847f's carrying comparison against its linked canonical sources and actual kit dependencies; distinguish its exact arbitrary-driver transport from its explicitly open PeriodicMaskExclusion. Current public discussion/review summaries are empty. Then identify one precise next implication for DQ023 rather than duplicating its transport proof.
 - Independent alternative: DQ023's finite-left/past-background bridge against already-reviewed23ac1b; identify the exact actual-root-versus-temporal-control premise before new work. No duplicate submission/source review.
-- Waiting, not blocking: independent reads of GC2156–2158, GC2205/2206, GC2208 interface, GC2210 phase proof and GC2212 regularity sketch; external Human Verified statuses and owner-reserved PR51 reply. No worker wake or new posting with missing reads.
+- Waiting, not blocking: independent reads of GC2156–2158, GC2205/2206, GC2208 interface, GC2210 phase proof and GC2212–2213 regularity sketches; external Human Verified statuses and owner-reserved PR51 reply. No worker wake or new posting with missing reads.
 - Cold: generic parity closure/ancestor ladder; routine phase or forbidden-gap censuses; inverse-tail descent without a whole-arrival property; low-width certificate transfer. Phase work reopens only with an actual-root coefficient/component law, not more marginal parity features.
 - Closed direct transfer: the uniformly differentiable ergodic T-function theorem does not apply to Phi. Reopen only for a specified return/restriction/conjugacy with proved hypotheses and a bridge back to the actual physical coordinates.
-- Last successful portal refresh22:47:13Z, kit932cf8dd,21openPRs; next routine check about00:17Z. Verified system CA required. No job running; research heartbeat ACTIVE, Local/Cloud offline.
+- Last successful portal refresh00:10:27Z on30October, kit932cf8dd,22openPRs; next routine check about01:40Z. Verified system CA required. No job running; research heartbeat ACTIVE, Local/Cloud offline.
 
 ## Initial priorities and the reason for them (historical; live queue above)
 
