@@ -15,7 +15,7 @@ rnChecksPath = FileNameJoin[{rnHere, "finite_past_notebook_checks.wl"}];
 rnReceiptPath = FileNameJoin[{rnHere, "notebook_receipt.wl"}];
 If[Quiet[Check[Get[rnChecksPath], $Failed]] === $Failed, rnNote["output check source did not load"]];
 If[Quiet[Check[Get[rnReceiptPath], $Failed]] === $Failed, rnNote["receipt helper did not load"]];
-If[FileHash[rnEssay, "SHA256", "HexString"] =!= "%%ESSAY_SHA256%%",
+If[FileHash[rnEssay, "SHA256", "HexString"] =!= "6e818ab162679a91ca490b02fbce215bbbbef1dee46b8d57a7e1b4477e25b41d",
   rnNote["essay digest"]];
 If[FileExistsQ[rnNotebook], rnNote["notebook path exists"]];
 If[!DirectoryQ[rnOut] || FileNames["*", rnOut] =!= {}, rnNote["receipt folder missing or not empty"]];
