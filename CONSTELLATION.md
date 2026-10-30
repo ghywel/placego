@@ -1364,3 +1364,7 @@ reach farther only through connected overlapping input cones, giving an exact su
 order. This is a solo hand extension, not a root-orbit law. Known triangular uniformity and the binomial CLT are
 credited; boundary/bulk independence is explicitly false. GC2315 freezes one small two-representation moment check,
 not a density fit. Local retains sole gate-clock Lean ownership.
+
+GC2316: the frozen six-case control passed once, including the false-independence check. Depth3 gives mean offset45/32
+and variance offset-863/1024. Actual resource/cleanup packet is retained; this does not upgrade the universal hand
+sketch or justify a depth census. The next curiosity is a structural bound for centered boundary fluctuations.

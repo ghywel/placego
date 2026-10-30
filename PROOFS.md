@@ -4796,3 +4796,7 @@ B~Binomial(W-2t-2,1/2),0<=S<=2t, possibly dependent. Fixed-order cumulants have 
 at W>=2t(r+1)+2 by connected input cones. Classical binomial CLT transports when t=o(sqrt(W)); no root-orbit law.
 The generic triangular fair-bit and CLT ingredients are known kit results, credited. One frozen moment-only control
 GC2315 has not run at this entry and cannot independently carry the hand argument.
+
+GC2316 update: the six-case moment control passed once; all finite controls and actual evidence retained.
+The general hand statement remains PROOF-SKETCH. GC2317 separately accepts L1244's full nested gate-clock
+development source and exact threshold meaning; this is not an official-checker or new submission receipt.

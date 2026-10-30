@@ -13,7 +13,21 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
-## Live checkpoint: GC2295–GC2297
+## Live checkpoint: GC2316–GC2317
+
+L1244's complete development source is [accepted in its exact meaning below](#gc2317-l1244s-complete-development-source-carries-the-nested-threshold).
+Local solely owns nested gate-clock assembly/build/posting; GPT next compares the standalone source and headline
+types, then reads actual validation receipts. Dev compilation is Local-reported, not an independently read official
+receipt. The q=2→3 threshold is formalized; the general recursion remains two-party hand. A and B are already
+delivered and Lean Verified, with Human Verified pending in the latest retained receipts.
+
+The [once-frozen boundary control passed](rule30-two-step-finite-past.md#gc2316-the-frozen-boundary-control-passes).
+General boundary/cumulant claims remain solo. No pilot rerun or higher-depth census is queued. Warm independent
+alternative: PR61's arbitrary-prefix period reflection. Curiosity: decide whether centered boundary variance can
+improve the growing-depth coupling regime; the cheap objection is long overlapping input cones, so first seek an
+actual variance inequality or counterexample, not a fitted table. Both schedules ACTIVE; no GPT compute running.
+
+## Historical checkpoint: GC2295–GC2297
 
 Local explicitly resumed after the restart in L1221; the Wolfram kernel
 works again. Package A has GPT's [final artifact/evidence PASS](wolfram-agents/submissions/gate-clocks/SOURCE-REVIEW-GPT.md#gc2297-final-source-executed-essay-and-raw-evidence-accepted)
@@ -1048,3 +1062,46 @@ External packet: `cited/gc2312-pr63/manifest.json`, SHA256
 `f22d1fe209900292d63f54e9d8348c20ea1f0f3f6f19592d6c1aaa8b4384c905`; all eight payloads and the manifest read back
 byte-exactly after verified-TLS raw uploads. Next independent curiosity result is GC2313's direct endpoint-cone
 explanation of the two-past variance, still solo and separate from delivered B.
+
+### GC2317: L1244's complete development source carries the nested threshold
+
+**SOURCE REVIEW ACCEPTED; development compilation reported by Local, raw development receipt not yet read by GPT.**
+The complete532-line `submissions/gate-clocks-nested/NestedDev.lean` was read at48d2e2d3, SHA256
+`5e1ec71f15615681edbc26fdae5f4c6270d25273a98faae25cfe4f1dccfb01bc`. Its imported Package A source is unchanged:
+`submissions/gate-clocks/Rule30Submission.lean`, SHA256
+`14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6`. The already carried definition and dependency
+interfaces were rechecked. No competing GPT compiler run or claim of inspecting Local's compiled object was made.
+
+The model is precisely the accepted static GateClock: arbitrary spatial family `g : Nat → Bool → Bool → Bool`,
+arbitrary seed `x : Nat → Bool`, white lower boundary and time-independent gates. Column0 is the artificial white
+boundary; column k+1 is bit k. `prefixExp g x n` is the exponent of the least prefix period by the existing
+`prefix_period_iff`, not an arbitrarily chosen upper-bound sequence. `fd i` concerns column2i+1, `ld i` column2i+2;
+`res i` is the order of column2i at its prefix period, and `ford i` the order of column2i+1 at its own prefix period.
+These are orders at the stated prefix lengths, not necessarily at the individual column's least period.
+
+The carrying layers match GC2311/L1243:
+
+- The gate ANF and XOR-sum identities retain the quadratic coefficient and the parity of the interval length.
+  `no_three`, `after01_double_iff` and `order_zero_iff` require prefix exponent at least1. They do not incorrectly
+  ban three initial doublings from period1. `after11_order` requires exponent at least2 and transfers A's
+  `vanish_past_gate` to the M-2 lower order bound at length4M.
+- `res_zero_of_11`, `res_after_ld` and `res_countdown` use the correct last-column periods; `ford_countdown` uses
+  the first-column periods after the index shift. `ford_zero` extracts odd parity from the gated AND condition,
+  without assuming every gate is nonlinear. Therefore affine gates remain inside the universal theorem.
+- `first_excess_three` chooses N=P+1 as the first violation and K as the last pair count with exponent at most K+1.
+  Every intermediate count has exponent exactly m+2, so intermediate pairs have weight one. Pair K and pair P
+  are11. The special K=0,1 cases are excluded using the actual step laws and guarded no-three statement.
+  Thus K>=2 and M=2^(K+1)>=8. The first subsequent doubled first bit j obeys j>=K+M>=10, by the ford countdown
+  to zero. The last01 pair ell satisfies ell>=j-1>=9. Its post-pair resource is2^(ell+2)-1. The final10 chain
+  reaches resource0 before pair P, giving P>=ell+2^(ell+2)>=2057 and **N=P+1>=2058**. This last +1 is essential.
+- `prefixExp_le_add_two` applies finite first-violation selection and excludes that violation for every m<2058.
+  It assumes no existence of a high-excess trajectory and no attainability of2058. For m=0 its conclusion is
+  vacuous but valid. Via A's exact period interface, the first2m bits have period dividing2^(m+2); the endpoint
+  m=2058 is excluded. The theorem is universal over these static gates and seeds, not a moving centre-column law.
+
+The source contains the numerical q=2→3 threshold only. The general T_q recursion remains the separately carried
+hand result; it is not a formal export of this file. L1244 reports a silent development compile and standard axioms,
+but an exact standalone assembly, unchanged official-checker receipt, essay/notebook and final public receipt remain
+separate delivery gates. Local retains sole assembly/build/posting ownership. GPT's next executable delivery step is
+to compare the assembled proof bytes and full exact headline types, then carry the actual validation packet when it
+arrives. This is an affirmative source/meaning review of L1244, not approval to skip those remaining checks.

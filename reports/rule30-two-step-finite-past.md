@@ -987,3 +987,40 @@ before/after and every2seconds have5second timeouts. These are cooperative/sampl
 CPU or thermal controller. Monitoring/pressure failure preserves evidence and redirects to hand reasoning, with no
 rerun. No GPU or concurrent heavy job. Publish this source/freeze before execution; retain failures and actual
 resource/cleanup receipts outside git with digests.
+
+## GC2316: the frozen boundary control passes
+
+**COMPUTED, Intel, one run.** The GC2315 source and freeze were published in a66f202f/c02b647e before launch at
+23:32:26 UTC. All 4368 scalar-cone assignments and 13104 whole ancestors completed across exactly the six frozen
+cases. Every endpoint, fair-bit marginal, injectivity, hand covariance and representation-agreement control passed.
+The false boundary/bulk independence assumption was detected as required. No rerun or additional depth/width was used.
+
+| Depth t | Mean offset a_t | Variance offset b_t | Whole widths checked |
+| --- | --- | --- | --- |
+| 1 | 5/4 | -11/16 | 8, 9 |
+| 2 | 1 | -7/8 | 14, 15 |
+| 3 | 45/32 | -863/1024 | 20, 21 |
+
+These are offsets in `E K=W/2+a_t` and `Var K=W/4+b_t`. At depth3 the scalar boundary has mean109/32 and
+variance1047/1024; its six bulk cross-covariances are `(7/128,-3/128,27/512,-13/1024,-1/256,0)`, whose sum is69/1024.
+The independent whole-row oracle returned the same moments at both widths. Extension to every sufficiently wide
+row uses GC2314's hand argument, still PROOF-SKETCH. No higher cumulant or Gaussian-limit claim was computationally
+validated, and the calculation supplies no root-orbit sampling law or trend in depth.
+
+Actual launch free+inactive6705MiB, swap161.25MiB. Worker cooperative CPU including reaped serial monitors was
+0.139967s; its timed body wall was0.065036s. The encompassing system-time receipt reports0.15s real,
+0.11s user+0.03s system and19898368bytes maximum RSS (about18.98MiB). Supervisor CPU0.095s and wall0.54s are separate.
+The run ended before the first periodic tree sample: reported tree maxima of zero are missing sampled peaks, not
+zero resource use, and continuous tree/pressure bounds were not established from those empty samples. Per-process
+limits, cooperative guards, launch gate, before/after thermal reads and actual time receipt remain distinct evidence.
+The launcher reports COMPLETED/child0 and cleanup=null; no kill cleanup was needed. A command-specific postflight
+at23:35:14 found no surviving stage command, unchanged swap161.25MiB, free+inactive6728MiB and thermal/scheduler100%.
+This is not a claim that the entire host was idle. The initial sandbox preflight refusal remains retained separately.
+
+Immutable packet: `cited/gc2316-boundary/manifest.json`, SHA256
+`0fdf9c0fb129b64c16a5836d93536d6cccd40c51e0d05a6ea4c7554e79cd92be`.
+All eight payloads and the manifest were uploaded as raw bodies over verified TLS and read back byte-exactly.
+Scratch/home paths are sanitized; each payload's uploaded length/digest and original digest are recorded explicitly.
+No computation remains running. The next useful step is a carrying read of the triangular coupling and connected-cone
+argument; another depth table would not replace it. An independent hand question is whether centered fluctuations
+admit a better growing-depth regime by controlling the boundary variance rather than its worst-case range.
