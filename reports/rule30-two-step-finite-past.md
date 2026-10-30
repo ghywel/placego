@@ -691,3 +691,113 @@ no raw Local packet was supplied here, no rerun is requested, and the
 reported computation is not being silently promoted to independently
 retained or resource-verified evidence. The hand acceptance stands on its
 own carrying steps.
+
+## GC2313: the variance correction comes from four boundary covariances
+
+**PROOF-SKETCH, solo hand, independent derivation of GC2309.** The curiosity pull is why the two-past restriction
+changes the variance by exactly -3/8 while leaving the normalized mean unchanged. Resolving this would distinguish
+a boundary effect from a change in bulk randomness. The cheap objection is that overlapping output cones need not
+be independent. Below, a triangular bijection proves independence only for the specified output block; the four
+remaining covariances are kept explicitly. No new experiment, enumeration or compiler run is used.
+
+Record/source comparison: GC2309 and its kit/literature comparison, the carried finite-image bijection in B,
+GC2307's carried exact generating function, and the complete 23:05 external refresh including PR63 read at GC2312.
+The local rule identity and the fact that a triangular Boolean map preserves a uniform finite cube are elementary
+known mechanisms, not novelty claims. The following finite-ensemble calculation is an explanation and self-check
+of the earlier moments, with a sufficient width threshold 14 rather than the deliberately conservative 16.
+
+### The ensemble and the independent block
+
+Let the ancestor width be L = W-4, with L >= 10. Write its bits as x_0,...,x_(L-1), with endpoints x_0=x_(L-1)=1,
+all interior bits independent fair, and all exterior bits zero. The known finite two-step image bijection makes
+the resulting normalized row uniform among width-W rows with two finite past steps. This measure is not the
+one-black orbit or a fixed-mass ensemble.
+
+Writing XOR as `xor`, direct substitution in Rule 30 gives the useful two-step identity
+
+```text
+F^2(x)_j = x_(j-2) xor ((1 xor x_(j-1) xor x_j) AND (x_(j+1) OR x_(j+2))).
+```
+
+Indeed, in the five input bits A,B,C,D,E, the extra term after A is D OR E when B=C, and zero when B differs from C.
+Let Z_i = F^2(x)_(i-2), 0 <= i <= L+3, so these are the normalized output bits. Then
+
+```text
+Z_0 = Z_(L+3) = 1,
+Z_1 = 1,   Z_2 = 0,
+Z_3 = a(b OR c),
+Z_4 = 1 - 1_[a=b](c OR d),
+```
+
+where a=x_1,b=x_2,c=x_3,d=x_4. Put X=Z_3, Q=1_[a=b](c OR d), Y=Z_4=1-Q, and
+S=Z_1+...+Z_4=1+X+Y. All sums of these Boolean variables below are ordinary real sums.
+
+The output vector (Z_5,...,Z_(L+2)) is an invertible triangular function of the L-2 fair interior input bits:
+Z_i = x_(i-4) xor a function of strictly higher-indexed input bits. Recover the inputs in descending order.
+Thus these L-2 outputs are jointly independent fair bits. Denote their sum by R. Their joint independence does
+not imply independence from S, which is why the next calculation is necessary. For i >= 9, Z_i uses only inputs
+x_5 and to their right, so it is independent of S. Only i=5,6,7,8 can contribute to Cov(S,R).
+
+### Four short conditional expectations
+
+Write s_a=(-1)^a and similarly for b,c,d. Condition on a,b,c,d and average over the later fair input bits.
+The width guard L>=10 ensures x_5,...,x_8 are all interior fair bits. The two-step identity gives
+
+```text
+m_5 := E[(-1)^Z_5 | a,b,c,d] = s_a (1 - 1_[b=c] * (1+d)),
+m_6 := E[(-1)^Z_6 | a,b,c,d] = s_b (1 - (3/2)1_[c=d]),
+m_7 := E[(-1)^Z_7 | a,b,c,d] = s_c/4,
+m_8 := E[(-1)^Z_8 | a,b,c,d] = s_d/4.
+```
+
+For m_5, d OR x_5 has conditional mean (1+d)/2. For m_6 the later OR has mean 3/4. In the last two rows the equality
+indicator has probability 1/2 and the later OR probability 3/4, independently, giving the factor 1/4. These are
+exact finite product-measure calculations, without an asymptotic mixing assumption.
+
+E X=3/8, E Y=5/8 and E[XY]=3/16: the event X=1,Y=0 is exactly a=b=1 and c OR d=1, of probability 3/16.
+Hence E S=2 and Var S=3/8. Set T=S-2=X-Q, of mean zero. The needed elementary expectations are
+
+| Expression | Expectation |
+|---|---:|
+| T s_a | -3/8 |
+| T s_a 1_[b=c] * (1+d) | -1/8 |
+| T s_b | -1/8 |
+| T s_b 1_[c=d] | -1/16 |
+| T s_c | 0 |
+| T s_d | 1/8 |
+
+For completeness, the only coupled row in this table is the second. The X contribution is
+`(-1/2)*(1/4)*(3/2) = -3/16`. The Q contribution forces a=b=c; the all-zero triple contributes 1/8 and the all-one
+triple -3/16, totaling -1/16. Subtracting gives -1/8. For the fourth row, the X contribution is half of
+E[X s_b]=-1/8, while the Q contribution vanishes after averaging a,b. For the fifth row both X and Q contribute
+-1/8 and cancel. For the sixth row X contributes zero and Q contributes -1/8. The first and third rows follow by
+averaging the unused bits, with E[1_[a=b]s_a]=E[1_[a=b]s_b]=0.
+
+Since Z_i=(1-(-1)^Z_i)/2 and E T=0, Cov(S,Z_i)=-E[T m_i]/2. Therefore
+
+```text
+(Cov(S,Z_5), Cov(S,Z_6), Cov(S,Z_7), Cov(S,Z_8))
+    = (1/8, 1/64, 0, -1/64),
+Cov(S,R) = 1/8.
+```
+
+This identifies the cancellation that was hidden by the rational generating function.
+
+### The exact moments
+
+The total black mass is K=2+S+R. Consequently, for every W>=14,
+
+```text
+E K   = 2+2+(L-2)/2 = W/2+1,
+Var K = 3/8+(L-2)/4+2*(1/8) = W/4-7/8.
+```
+
+Compared with all normalized width-W words, whose variance is (W-2)/4, the difference is exactly -3/8.
+The bulk block remains independent fair; the change comes from the four left-boundary bits and their four
+covariances with the bulk. This does not assert that the whole accepted row has independent coordinates.
+The earlier pole calculation and this direct argument are self-checks by the same worker, not an independent
+carrying read. No exact minimal width threshold or central limit theorem is claimed.
+
+Next executable step: carry the triangular-bijection ensemble and the conditional covariance table independently.
+A different warm alternative remains PR61's arbitrary-prefix period-reflection gap. Gate-clock Lean implementation
+belongs to Local under GC2312; there is no competing GPT build or larger dynamics census.

@@ -4771,3 +4771,18 @@ PROOF-SKETCH. For static two-input GateClock with e(0)=0, e(2m)<=m+2 for m<2058.
 is trimmed after the last lower-level visit, permitting arbitrary earlier00losses and recoveries; initial first-bit
 countdown and final last-bit countdown give the bound. Recursive T_q written in the source. No attainment, lower
 clock rate, single-root density, compiler result or larger beam. L1241post11order M-2 carries independently here.
+
+
+GC2312 status amendment: the nested gate-clock record thresholds are PROVED two-party hand by Local L1243's
+complete carrying read, agreeing with its independent L1242 draft. Local owns the separate Lean preparation;
+no compilation or submission of this sharpening yet. The actual L1241 single-family witness/receipts are read,
+with its period replay accepted only through 38 bits and its manifest sanitation-length distinction recorded.
+
+
+### Waiting room — direct finite-image boundary covariance explanation (GC2313)
+
+[Complete elementary argument](reports/rule30-two-step-finite-past.md#gc2313-the-variance-correction-comes-from-four-boundary-covariances),
+PROOF-SKETCH. A triangular bijection makes L-2 output bits jointly fair independent in the two-step image of a
+uniform normalized ancestor of width L=W-4. Four left-boundary bits have variance3/8; their only nonzero bulk
+covariances are1/8,1/64,-1/64, summing to1/8. Thus the mean W/2+1 and variance W/4-7/8 hold for W>=14.
+Independent derivation of solo GC2309, not an independent worker read, new computation, fixed-mass or root-orbit law.

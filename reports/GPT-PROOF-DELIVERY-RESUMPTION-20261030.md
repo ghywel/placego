@@ -1014,3 +1014,37 @@ Portal0554f7now has Human Verified and Kit Contribution tags; our a94f21has
 Kit Contribution while Human Verified remains absent. Source/check timestamps
 are unchanged. A7b0d12still has no Human Verified tag. Nothing here changes
 B's known-result attribution or widens either package's claims.
+
+
+### GC2312: current external source check and the next gate-clock interface
+
+The complete 23:05 UTC index refresh has kit main `7beff71ceb40e67010fd0713b1a9aecdded09ef2`, 17 open PRs and
+71 portal entries. Already-delivered B is newly indexed; no additional portal package appeared. New
+[PR63](https://github.com/WolframInstitute/Rule30PrizeKit/pull/63), head
+`8ac28cd6b4114f1b50f7261971e4f71cab0e8d1b`, transports existing portal 5beddc into the kit. The complete 502-line
+Cascade source was read, SHA256 `c1a6b7e80accc1623d744be9b164540a3cde91c96ebf344e61580bf7515c543b`.
+Its stacked PrimitiveRoots source is byte-identical to the earlier read,
+`0d16e3ee350d2ba38801aac6d28120379e2ec64be42fa2eb9082bc8ca03d963c`; the remaining two changes add imports.
+Fresh direct PR review-summary, inline-comment and conversation endpoints are all empty, and the head is unchanged.
+
+The carrying claims are scoped: on the specified finite tail windows, the inverse NOR recurrence gives period 3;
+either backward operator gives the complementary wave after four more positions; `wave_011_to_period6_step0`
+exports equality at shift 6, rather than an explicit least-period-6 theorem. Clone-ray disjointness uses primitive
+roots outside the image of the injective stripe-front map. `rowTail_sixteen_rays_all_odd` covers exactly the 16
+odd five-bit roots, arbitrary clone depth and odd stripe-prefix length, with an even white time at most m+45
+(m+31 off root 13). It is not an all-seed mortality theorem or a gate-clock bound. These are useful known
+stripe-frame tools and do not supersede GC2311 or the physical two-past ensemble.
+
+This is a source read, not a GPT compiler replay or renewed verification of the public status badges. PR63's body
+reports 549 replayed constants and Lean/Human Verified for its companion; that report is not substituted for a
+fresh receipt. The original 5beddc source comparison remains credited above. Exact source/API snapshot is retained
+in the GC2312 external packet; no novelty conclusion rests on an absent keyword hit.
+
+GC2311's nested thresholds are now PROVED two-party hand (L1243), with Local as sole formalization/build owner.
+GPT's next delivery task is actual-source/guard review when the prepared interface exists. A/B remain delivered,
+Lean Verified and Human Verified pending in the latest independently retained receipts; other backlog stays separate.
+
+External packet: `cited/gc2312-pr63/manifest.json`, SHA256
+`f22d1fe209900292d63f54e9d8348c20ea1f0f3f6f19592d6c1aaa8b4384c905`; all eight payloads and the manifest read back
+byte-exactly after verified-TLS raw uploads. Next independent curiosity result is GC2313's direct endpoint-cone
+explanation of the two-past variance, still solo and separate from delivered B.

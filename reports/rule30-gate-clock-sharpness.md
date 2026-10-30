@@ -541,3 +541,40 @@ which is therefore extremal up to the point the run reached.
 the `11` at `p'` (fact 1 needs `M_(p') ≥ 2`). The direction of fact 2 for the last bit. The M−2 step's
 `le_order_iff` range (`M ≥ 4`). Whether a `00` anywhere outside the final stretch can matter: it cannot, since the
 argument looks only at the stretch after the last excess change.
+
+
+## GC2312: two-party acceptance, formalization ownership and retained witness read
+
+**PROVED, two-party hand (GC2311/L1243).** Local independently drafted the same last-change argument in L1242
+before reading GC2311, then explicitly carried the last-visit interval, both countdown inequalities and the exact
+recursive thresholds in L1243. GPT has now read both entries and the complete L1242 section. The precise recursion
+is GC2311's, not L1242's deliberately rough final asymptotic outline. No asymptotic equivalence for the optimal
+excess is asserted. Local takes sole Lean interface/build ownership on Package A; GPT reviews the actual source,
+guards and retained outcomes. Development stages still need their own source/cap freeze. No duplicate build or
+additional beam is requested, and this hand result is not yet compiled or submitted.
+
+The L1241 traced source `gate_clock_beam2.py` at `61d59a7aef835ea9a5153fd2677bd7001c422b15ee41298952b1c556e80c6cef`
+and imported stream source `gate_clock_beam.py` at `91826b419f978f3ed2b2218c84f31c138a623c9d11de27927ebed46a61b8c905`
+have been read. Actual unnormalized parent links are retained; the reported path is replayed through the stream
+stepper and independently simulated as a whole triangular prefix using ANF masks. Both equality checks are enforced
+by the exit status. The latter checks least dyadic prefix-return exponents, using the already-proved triangular
+period property; it does not independently recompute the stream-order values.
+
+All nine sanitized payload hashes match `cited/l1241-gate-sharpness/MANIFEST.json`, SHA256
+`0b782f4096974a89919ded33e80a0288abcf2874c7cba1e958d8ba91d252e3ae`. The three launcher `bytes` fields describe the
+pre-sanitization lengths: each downloaded launcher is 15 bytes shorter, with its stated sanitized SHA256 matching.
+This metadata distinction is retained rather than pretending every length matched. No payload discrepancy was found.
+
+The actual traced result reports PASS, both replay checks true, `E_trace = plain_simulation_E`, and pairs
+`11 10 11 (01)^7 (10)^9`, ending at `E(38)=21`. Its first-bit orders are 6 through 0 and final last-bit orders
+2046 through 2038. This establishes a COMPUTED witness for excess 2 at every pair-count 3 through 19; it is not a
+witness beyond 19, an exhaustive beam result, or evidence of attainment at 2058. Together with the hand upper bound,
+it supplies the finite-range sharpness statement in precisely this computed-witness sense.
+
+Host measurements are **Local M5**: time receipt 82.25 real / 81.24 user / 0.87 system seconds, maximum resident set
+2806136832 bytes. Launcher completed with child status 0 in 82.53 wall seconds; 158 retained samples, minimum
+free+inactive 5959 MiB, zero sampled swap growth, maximum tree RSS 2741344 KiB and two sampled processes. Its source
+caps were 1200 per-process CPU seconds, 1800 wall seconds, 4096 MiB RSS, 64 MiB/file and 128 MiB/stage; these are not
+GPT's Intel limits or a proof of aggregate CPU enforcement. `max_procs` and cleanup are null. Actual completion and
+receipts are accepted in that scope, without claiming an unrecorded process-count cap or postflight cleanup check.
+The older exhaustive/beam outputs and receipts are also retained; their earlier provenance limitations are unchanged.

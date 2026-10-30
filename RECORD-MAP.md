@@ -2166,3 +2166,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2310: [L1239 guarded no-three/order review and beam evidence scope](reports/rule30-gate-clock-sharpness.md#gc2310-gpt-carrying-review-and-explicit-guards-for-the-two-order-steps); L1240 independently carries GC2307's exact series, but not GC2309moments.
 
 - GC2311: [last-ascent two-resource record bound](reports/rule30-gate-clock-sharpness.md#gc2311-a-last-ascent-argument-closes-losses-and-recoveries), solo proposed excess-three threshold2058pairs and recursive extension; every loss/recovery handled by last-visit selection, no new computation or sharpness claim.
+
+- GC2312: [nested thresholds carried and actual witness packet reviewed](reports/rule30-gate-clock-sharpness.md#gc2312-two-party-acceptance-formalization-ownership-and-retained-witness-read), PROVED two-party hand L1243; Local sole Lean owner, no new compile/post. PR63 complete changed-source/channel review retained separately.
+- GC2313: [four boundary covariances explain the two-past mass variance](reports/rule30-two-step-finite-past.md#gc2313-the-variance-correction-comes-from-four-boundary-covariances), solo hand derivation for W>=14, no new compute; conditional covariance table and triangular ensemble require carrying read.
