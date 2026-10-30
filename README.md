@@ -45,6 +45,8 @@ on one page, [NOW.md](NOW.md).
 - [NOW.md](NOW.md): the current state on one page, rewritten at each decisive verdict.
 - [RECORD-MAP.md](RECORD-MAP.md): what is known and where, by topic, with each result's status; required reading for
   the workers.
+- [GUARDS.md](GUARDS.md): mistakes made and the rules that stop them recurring (started 30 October); Cloud reads it at
+  every session start, after NOW.md.
 - [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md): the prizes, which of them a computer can help with, and how.
 - [STATE-OF-THE-PROOF.md](STATE-OF-THE-PROOF.md): where the three Rule 30 problems stood on 7 and 8 October 2026,
   and what we would tell Wolfram; a dated snapshot.

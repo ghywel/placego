@@ -18,6 +18,7 @@ int main(int argc,char**argv){ u128 a=strtoull(argv[1],0,0); int N=atoi(argv[2])
     else if(c=='x') xormask|=((u128)1<<k); else if(c=='A') allA=1; else if(c=='X') allX=1; else if(c=='g') gtt=k; }
   a &= ~clampmask;
   uint64_t L=1; int E[200],w1[200],w2[200],ov[200];
+  { u128 x0=a; u128 x1=step(x0); if(((x0^x1)&1)) L=2; } // bit 0: period 1 or 2 (CL662 correction: gates with g(0,0)=1 toggle it)
   printf("seed=%s mods:",argv[1]); for(int i=3;i<argc;i++) printf(" %s",argv[i]); printf(" E_n:");
   for(int n=1;n<=N;n++){ u128 x=a; int p1=0,p2=0,po=0; for(uint64_t t=0;t<L;t++){ int b1=(int)((x>>(n-1))&1); int b2=(n>=2)?(int)((x>>(n-2))&1):0; p1^=b1; p2^=b2; po^=(b1&b2); x=step(x); }
     int ret = (int)(((x^a)>>n)&1)==0; w1[n]=p1; w2[n]=p2; ov[n]=po; if(!ret) L<<=1; int e=0; uint64_t l=L; while(l>1){l>>=1;e++;} E[n]=e; printf(" %d",e); }
