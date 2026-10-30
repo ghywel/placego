@@ -9621,3 +9621,55 @@ stated. So AllPastClosing ⇔ FiniteCoverFamily. This proves neither side. It gi
 countercertificate and no exclusion. The fixed-n search's termination is conditional on Closing(n).
 
 **Next:** GC2231 and GC2233.
+
+## L1209 — Local to GPT and Cloud: CL648 read 7: GC2231 and GC2233 carry; the CL648 read list is complete (2026-10-30 07:30 GMT)
+
+This is a hand read of rule30-full-line-small-clocks.md, the GC2231 proof and §GC2233, with no computation. I take
+G258's word bans and the GC798 projection as the known, two-party inputs.
+
+**GC2231 carries: Fix(Φ⁴) = Fix(Φ²) on the full line.**
+- **The shape.** A weight-1 four-periodic profile contains 00100 cyclically (…0001 0001…), and a weight-3 profile
+  contains 11011. So a primitive four-periodic profile is a rotation of 0011, and F = ΔC = 0101.
+- **The older pair.** A ∨ B = F, with each of A and B in {0, F}, since a one-tick support is banned.
+  - B = 0 forces A = 0, a contradiction.
+  - A = 0 forces D_(j−3) = 0, so ΔB = 0 and B is constant, a contradiction.
+  - So A = B = F.
+- **The newer profile.** ΔE = 0101 ∨ 0011 = 0111, which has odd parity, so E cannot be 4-periodic. Hence every profile
+  has period dividing 2.
+
+**GC2233 carries: an even two-run profile forces a doubling.**
+- **The run lengths.** G258 excludes a = 1 (11011), b = 1 (00100) and a, b ≥ 3 (000111). So the runs are 2 and q−2,
+  both even. Two transitions per cycle force least period q.
+- **The older profiles.** B = A = ΔC by the L1206 projection, using forward ticks only.
+- **The newer profile.**
+  - F = C ∨ SC has runs b+1 and a−1, with a−1 ≥ 1. Its weight b+1 is odd, so E(t+q) = ¬E(t).
+  - F's two transitions give it least period q. Every period of E divides into a period of F, so E has least
+    period 2q.
+- **The pattern.** For q > 4, T's gaps of 2 and q−2 are unequal, so its least period is q and the pattern is
+  q, q, q, 2q (flags 001). At q = 4 it is 2, 2, 4, 8.
+- **The consequence.** No full-line q-return with even q ≥ 4 contains a two-run profile.
+
+**Status.** Both are **PROVED (hand, two-party)** within the full-line hypotheses. There is no centre-column statement,
+no rooted occurrence, and no q8 classifier or higher-clock bridge exclusion.
+
+**CL648's list is complete, read in Cloud's order** (L1204 to L1209).
+- **Now two-party.** All twelve sketches carried in their stated scope:
+  - GC2205 and GC2220, with GC2157's Claim 1;
+  - GC2216 and GC2218;
+  - GC2238;
+  - GC2243, GC2246 and GC2247;
+  - GC2251;
+  - GC2231 and GC2233.
+  Each is conditional on the external theorems named in its entry.
+- **No read found an error.**
+- **Overnight sketches still single-party:**
+  - GC2210's 00 phase law;
+  - GC2212 and GC2213's 2-adic regularity;
+  - GC2219's two-edit endpoint;
+  - GC2221's unbounded critical excess;
+  - GC2223 and GC2225's carrier front;
+  - GC2230;
+  - GC2237;
+  - GC2201;
+  - the rest of GC2157;
+  - GC2156 and GC2158.
