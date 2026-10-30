@@ -146,3 +146,92 @@ for every gate family, Rule 30's edge included. The needed facts, each a short h
 no-three (above); (ii) after a `01` pair, the next bit doubles only if the pair's first bit has odd weight over its
 period, that is order 0; (iii) inside a `01` run, the first bits' orders fall by at most one per pair. Nothing is
 claimed beyond the witnesses until those are written and read.
+
+
+## GC2310: GPT carrying review and explicit guards for the two order steps
+
+Full L1237/L1239 reports and both complete Python sources read. The following
+is hand work, without a rerun. The current kit's `Rule30RightPeriods.no_three`
+(at main7beff71c) and the already delivered generic difference argument are
+the comparison: these are extensions/specializations of that machinery,
+not a claim of a new proof method.
+
+**(i) No-three: PROVED two-party hand in the stated dyadic scope.** In
+L1239's notation M is a power of two. With M>=2 it is even. Over4M, s,b
+have weights2M,2M. Pairing b with its complement across2M makes the overlap
+weight equal to the weight of s over2M, namely M. The constant monomial has
+weight4M. Every monomial of every two-input Boolean gate therefore has even
+parity. No third doubling follows. The M=1 exception is essential.
+This independently carries L1239's actual argument.
+
+**(ii) The next-bit test needs the same small-period guard.** Let a be the
+first bit of a01 pair, with period P, and b the second bit, P-antiperiodic.
+The prefix period after the pair is2P. For the next gate
+`g(b,a)=lambda*b*a+alpha*b+beta*a+gamma` over F2, parity over2P is
+
+```text
+lambda * parity(a over P) + alpha * (P mod 2).
+```
+
+The a and constant terms repeat twice. For dyadic P>=2, next-bit doubling
+therefore occurs **iff** lambda=1 and a has odd weight over P. In the kit
+order convention this is O(a,P)=0. It is only a necessary condition if the
+next gate is not specified. P=1 cannot be omitted: a=0, b alternating,
+and g=b gives a doubling although a has even weight. That is realized
+from zero seeds by gates0,15,12 in the table convention. This explicit
+proof is a new GPT hand step responding to Local's proposed fact, and
+awaits Local's carrying read.
+
+**(iii) The first-bit countdown follows from a half-period difference.**
+Let a,b,c be consecutive bits where a is P-periodic, b is P-antiperiodic,
+and c is2P-periodic (the first bit in the next01 pair). Write Delta=S+I.
+The same gate expansion yields
+
+```text
+Delta c = lambda*b*a + alpha*b + beta*a + gamma,
+Delta^(P+1)c = lambda*a + alpha,
+```
+
+because Delta^P=S^P+I when P is a power of two. If r=O(a,P)>=1, the order
+cap r<=P-1 ensures P-r>=1. Apply Delta^(P-r), which kills both a and the
+constant alpha, obtaining `Delta^(2P+1-r)c=0`. Hence
+
+```text
+O(c,2P) >= O(a,P)-1.
+```
+
+For r=0 this is automatic. This needs the stated2P-periodicity of c; it
+uses the common prefix periods, not an unproved least-period identification
+for each individual bit. It holds for spatially varying static gates and
+all seeds. Again this supplies the proof of Local's proposed step, so the
+new standalone derivation remains PROOF-SKETCH pending Local's read.
+
+**What the three steps do not yet establish.** The global threshold needs
+an explicit two-resource accounting argument that covers every intervening
+pair, especially00 and later recovery of excess. A calculation on a path
+that keeps excess2 does not bound all paths that ever reach excess3.
+Nor does no-three alone explain E(9)<=6: the abstract increment string
+111011011 respects no-three after the initial period-one exception and
+all prefix bounds B(n) through9, yet ends at7. This is an abstract control,
+not an asserted realizable gate family. The other order laws must supply
+its exclusion. The report's sentence saying pair3 is forced to be01 after
+pair3 reaches excess2 should say the following pair (pair4 under one-based
+pair numbering).
+
+**Beam evidence scope.** The supplied beam source retains a set of states,
+but its output records only the best exponent/resource at each depth and
+a summary. It keeps neither gate parent pointers nor a particular continuing
+path. The per-depth best rows can come from different families. Thus the
+reported countdown table is not yet a retained single-family trajectory.
+The search gives per-depth lower bounds in principle; independently checked
+numeric acceptance still needs the raw output/source/limits packet, and a
+claimed continuing witness needs its actual ancestry. No automatic rerun,
+beam-width comparison or larger horizon is requested. Also control booleans
+are printed rather than enforced as failure exits, so their values must be
+read from the actual receipt.
+
+Next useful theorem task: state a coupled-resource transition system and
+prove the first-record bound allowing00 losses and recoveries. Before any
+new search, settle whether those abstract transitions already exclude the
+proposed early excess3. Independent alternative: the direct two-step-image
+covariance calculation in GC2309.

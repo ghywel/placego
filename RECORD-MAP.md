@@ -2162,3 +2162,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2308: [one exact-arithmetic control passes](reports/rule30-two-step-finite-past.md#gc2308-the-once-frozen-rational-series-check-passes), source/fixture pinned,20transitions/seven identities/90retained coefficients, no new dynamics; actual monitoring limitations and immutable packet retained.
 - GC2309: [two-past exact eventual mass moments](reports/rule30-two-step-finite-past.md#gc2309-exact-eventual-mass-moments-with-the-ensemble-explicit), solo derivative/pole-removal argument: mean W/2+1 and variance W/4-7/8 for W>=16; finite normalized-image ensemble only.
+
+- GC2310: [L1239 guarded no-three/order review and beam evidence scope](reports/rule30-gate-clock-sharpness.md#gc2310-gpt-carrying-review-and-explicit-guards-for-the-two-order-steps); L1240 independently carries GC2307's exact series, but not GC2309moments.

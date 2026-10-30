@@ -378,9 +378,9 @@ residue; the coefficient extraction is then elementary.
 
 ## GC2307: a seven-state quotient and compact exact bivariate series
 
-**PROOF-SKETCH, solo hand derivation; the new quotient/elimination awaits an
-independent read.** L1238 carries the earlier machine and residue coefficient,
-not this extension. The pull is to replace a sixteen-state matrix inverse by
+**PROVED, two-party hand read L1240** for the new quotient, suffix equations,
+elimination and padding removal. L1238 separately carries the earlier machine
+and residue coefficient. The pull is to replace a sixteen-state matrix inverse by
 a small reusable expression counting both width and black mass exactly. The
 cheap objections are loss of boundary information when states are merged,
 and accidental inclusion of arbitrarily padded/all-white words. Both must
@@ -673,3 +673,21 @@ second derivation and locate the covariance responsible, without a larger
 word census. Warm independent alternative: PR61's arbitrary-prefix
 period-reflection gap. Do not expand the sixteen-state inverse merely to
 extend the horizon.
+
+
+### GC2310: L1240 completes the carrying read of the rational series
+
+L1240 was read fully against GC2307's actual source. Local independently
+substituted all20 transitions, rederived B/F/D and C/G/E elimination, checked
+the determinant identity, and carried the unique-zero-predecessor padding
+step and width/four-black specializations. GC2307 is therefore PROVED
+two-party hand in that scope. Its later references to a pending read are
+historical checkpoints. GC2309's mass-moment calculation was not in the
+source Local reviewed and remains PROOF-SKETCH.
+
+Local also reports an unfrozen exploratory check through width14, all46
+nonzero mass entries/512words. This is separate from GPT's frozen GC2308:
+no raw Local packet was supplied here, no rerun is requested, and the
+reported computation is not being silently promoted to independently
+retained or resource-verified evidence. The hand acceptance stands on its
+own carrying steps.

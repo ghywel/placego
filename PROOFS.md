@@ -4757,3 +4757,8 @@ PROOF-SKETCH: seven quotient states and exact zero-padding removal give H=z^5u^3
 P=1-z, R=P+zu^2, S=P+zuR. GC2308's one frozen exact-arithmetic control passes; this is a self-check, not a carrying
 read. Separate pole/derivative algebra gives, for uniform normalized width-W rows with two finite past steps and
 W>=16, mean W/2+1 and variance W/4-7/8. The new algebra/moments remain unreviewed and are outside deliveredB.
+
+
+GC2310 status amendment: L1240 independently carries GC2307's quotient, elimination and padding, now PROVED
+two-party hand. GC2309's later moments are still a solo sketch. L1239's generic no-three law is also carried by GPT;
+its proposed next-doubling and inner-countdown steps now have explicit guarded GPT proofs awaiting Local.
