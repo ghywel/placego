@@ -51,7 +51,8 @@ theorem finite_white_parent_iff {p y : Int → Bool} {l r : Int}
     obtain ⟨a,b,sp⟩ := hp
     have ends := ancestor_endpoints sp hy he
     have hp1 : p (l+1)=true := by
-      rw [← ends.1]
+      have ea : a=l+1 := by have := ends.1; omega
+      rw [← ea]
       exact sp.left_black
     refine ⟨?_,hp1⟩
     rw [← he]
@@ -76,10 +77,11 @@ theorem finite_white_parent_iff {p y : Int → Bool} {l r : Int}
       rw [hr r (by omega),hr (r+1) (by omega),hy.right_black] at e
       simpa [rule] using e
     have ordered : l+1≤r-1 := by
-      by_contra hn
-      have z := hr (l+1) (by omega)
-      rw [hp1] at z
-      cases z
+      by_cases hn : l+1≤r-1
+      · exact hn
+      · have z := hr (l+1) (by omega)
+        rw [hp1] at z
+        cases z
     exact ⟨l+1,r-1,⟨ordered,hp1,rightBlack,
       fun i hi => left i (by omega),fun i hi => hr i (by omega)⟩⟩
 

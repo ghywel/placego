@@ -1,9 +1,9 @@
 {
-  "checkpoint": "GC2295",
-  "status": "UNCOMPILED_SOURCE_ASSEMBLY_ONLY",
+  "checkpoint": "GC2299",
+  "status": "PATCHED_SOURCE_ASSEMBLY_ONLY_FROZEN_VALIDATION_PENDING",
   "output": "Rule30Submission.lean",
-  "output_sha256": "8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235",
-  "output_bytes": 30692,
+  "output_sha256": "0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229",
+  "output_bytes": 30806,
   "bodies": [
     {
       "path": "Rule30FinitePastDraft.lean",
@@ -19,10 +19,10 @@
     },
     {
       "path": "FiniteParentCriterionDraft.lean",
-      "input_sha256": "bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801",
-      "body_sha256": "78d95bfaf5d5398b3af88d24cb9399cc022b2fb8776ca0e83df85d44ee28cadc",
+      "input_sha256": "165e917e7b9265c37b85493641d20fd1bf6dbbc58135c4c8deb9316ce3c9fd67",
+      "body_sha256": "a88380f138d0bbec4e3f72df604d88fb9e9800149cf03bea7421340b1636eef9",
       "body_offset_bytes": 10409,
-      "body_length_bytes": 3494,
+      "body_length_bytes": 3576,
       "removed_lines": [
         "module",
         "public import Rule30FinitePastDraft",
@@ -33,7 +33,7 @@
       "path": "NormalizedFinitePastDraft.lean",
       "input_sha256": "4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43",
       "body_sha256": "70d3eec3e15328af13160929c5725e70662bf9cbe57d74b3b046605037c5539d",
-      "body_offset_bytes": 13962,
+      "body_offset_bytes": 14044,
       "body_length_bytes": 4850,
       "removed_lines": [
         "module",
@@ -43,10 +43,10 @@
     },
     {
       "path": "FinitePastCountDraft.lean",
-      "input_sha256": "0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00",
-      "body_sha256": "8d81aaed9a9ac394008f22a873122afcf82c0c03137f6b9328fee2012227e776",
-      "body_offset_bytes": 18866,
-      "body_length_bytes": 9160,
+      "input_sha256": "230e7f0efcb4364b297bb0dd14f08c3ea3d250ca2b138317ee9b0c3350ec84f6",
+      "body_sha256": "d6fe5db41cc6406f8737cd6c192ea3dba093aec9095a4064a08b4be9d5fa9915",
+      "body_offset_bytes": 18948,
+      "body_length_bytes": 9192,
       "removed_lines": [
         "module",
         "public import NormalizedFinitePastDraft",
@@ -57,7 +57,7 @@
       "path": "SubmissionHeadlinesDraft.lean",
       "input_sha256": "3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b",
       "body_sha256": "83d3527b31a03f5080fb1b48b615e4c175f781aff017fd9cbc8861de932d4b4d",
-      "body_offset_bytes": 28084,
+      "body_offset_bytes": 28198,
       "body_length_bytes": 2608,
       "removed_lines": [
         "module",

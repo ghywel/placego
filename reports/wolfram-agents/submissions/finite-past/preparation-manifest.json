@@ -1,8 +1,8 @@
 {
-  "checkpoint": "GC2295",
-  "status": "PREPARATION_ONLY_UNCOMPILED_NOT_AN_EXECUTION_FREEZE",
+  "checkpoint": "GC2299",
+  "status": "PATCHED_SOURCE_PREPARATION_FROZEN_VALIDATION_PENDING",
   "source_owner": "GPT",
-  "posting_owner": null,
+  "posting_owner": "Local",
   "mathematics_provenance": "G121/G122/L077; actual kit ingredients; Karttunen OEIS2016 finite parent, ancestor and age",
   "proof_module_count": 4,
   "wrapper_module_count": 1,
@@ -27,8 +27,8 @@
     },
     {
       "path": "FiniteParentCriterionDraft.lean",
-      "sha256": "bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801",
-      "bytes": 3562
+      "sha256": "165e917e7b9265c37b85493641d20fd1bf6dbbc58135c4c8deb9316ce3c9fd67",
+      "bytes": 3644
     },
     {
       "path": "NormalizedFinitePastDraft.lean",
@@ -37,8 +37,8 @@
     },
     {
       "path": "FinitePastCountDraft.lean",
-      "sha256": "0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00",
-      "bytes": 9232
+      "sha256": "230e7f0efcb4364b297bb0dd14f08c3ea3d250ca2b138317ee9b0c3350ec84f6",
+      "bytes": 9264
     },
     {
       "path": "SubmissionHeadlinesDraft.lean",
@@ -62,22 +62,22 @@
     },
     {
       "path": "VALIDATION-SPEC.md",
-      "sha256": "d1b2c197124d7c61406a53c497015f84cd73b6f9292fdafa059927f6b38d19e6",
-      "bytes": 12793
+      "sha256": "c3ddf7e8619ca8958b2012ad5dbfe78e2fb462983258d650a6bcc1f529b51d0a",
+      "bytes": 12898
     },
     {
       "path": "Rule30Submission.lean",
-      "sha256": "8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235",
-      "bytes": 30692
+      "sha256": "0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229",
+      "bytes": 30806
     },
     {
       "path": "assembly.json",
-      "sha256": "c636d1cc838d75e7a41e4f7d20046a5577ae189fc233be28a0cbc3c937e10ac1",
-      "bytes": 2575
+      "sha256": "8aea8ebd43b7a55edcf21e9811c0634268a897c18afcf15da605123cacc3b64a",
+      "bytes": 2598
     },
     {
       "path": "FinitePastValidationGuard.lean",
-      "sha256": "1494f9ca3767c3bf94af66a6362818944d20f8abef8f479d29afc091ffeba0ee",
+      "sha256": "3060610526333fad0829dfa82288979bac1ee9203d042a83835c2bc42a5b452e",
       "bytes": 10017
     },
     {
@@ -86,12 +86,12 @@
       "bytes": 526
     }
   ],
-  "assembled_source_status": "UNCOMPILED; direct Prize/Realization imports, four proof bodies and seven public types/theorem bodies unchanged; new positive and expected-rejection guards unexecuted",
+  "assembled_source_status": "Byte-identical to successful L1226 unfrozen scratch copy; new frozen development and official replay pending",
   "public_context_manifest": "cited/gc2292-submission-context/manifest.json",
   "public_context_sha256": "c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268",
-  "independent_review": "L1219 seven headline statements consistent; definition/proof-body read pending",
-  "development_owner": "Local: proposed L1219, agreed GC2295; one compatible4.35development stage after A, carrying read and separate published freeze; not started",
-  "previous_assembled_source_sha256": "55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c",
+  "independent_review": "G121/G122/L077 and CL659/GC2261 hand provenance; L1219 seven statements and L1225 definitions carried; full independent Lean proof-body read not claimed",
+  "development_owner": "Local, one newly frozen changed-source stage after L1226 repair; no GPT competing compiler",
+  "previous_assembled_source_sha256": "8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235",
   "direct_imports": [
     "Ruliology.CellularAutomata.Rule30Prize",
     "Ruliology.CellularAutomata.Rule30Realization"

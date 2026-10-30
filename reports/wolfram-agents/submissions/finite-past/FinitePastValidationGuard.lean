@@ -113,7 +113,7 @@ theorem two_physical_step : evol two 1=physicalPairImage := by
   have ha : ¬(i-1=0 ∨ i-1=1) := by omega
   have hb : ¬(i=0 ∨ i=1) := by omega
   have hc : ¬(i+1=0 ∨ i+1=1) := by omega
-  simp [evol,rule,two,physicalPairImage,hm,hz,h2,ha,hb,hc]
+  simp [evol,rule,two,physicalPairImage,hm,hz,h1,h2,ha,hc]
 
 theorem two_normalized_step : normalizedImage 1 two=word1101 := by
   funext i

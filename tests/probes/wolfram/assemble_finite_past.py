@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""GC2295: deterministic source assembly only; no Lean/Wolfram execution.
+"""GC2299: deterministic source assembly only; no Lean/Wolfram execution.
 
 The five pinned preparation files are concatenated after removing only the
 listed module/import/public-section lines. The shared namespace bodies and
-seven public types stay unchanged. Output remains UNCOMPILED.
+seven public types stay unchanged. The historical preparation header is retained to match Local's exact patch-probe
+bytes. Frozen validation remains pending; this script does not run Lean.
 """
 from pathlib import Path
 import hashlib
@@ -14,11 +15,11 @@ BASE = ROOT / 'reports/wolfram-agents/submissions/finite-past'
 SOURCES = [
     ('Rule30FinitePastDraft.lean', 'a46243a1ac7ed1732f6bbce9986c9434152f934c1e3d62ec251dee3e8c0acf3f',
      ['Ruliology.CellularAutomata.Rule30Realization']),
-    ('FiniteParentCriterionDraft.lean', 'bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801',
+    ('FiniteParentCriterionDraft.lean', '165e917e7b9265c37b85493641d20fd1bf6dbbc58135c4c8deb9316ce3c9fd67',
      ['Rule30FinitePastDraft']),
     ('NormalizedFinitePastDraft.lean', '4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43',
      ['Rule30FinitePastDraft']),
-    ('FinitePastCountDraft.lean', '0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00',
+    ('FinitePastCountDraft.lean', '230e7f0efcb4364b297bb0dd14f08c3ea3d250ca2b138317ee9b0c3350ec84f6',
      ['NormalizedFinitePastDraft']),
     ('SubmissionHeadlinesDraft.lean', '3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b',
      ['Ruliology.CellularAutomata.Rule30Prize', 'FiniteParentCriterionDraft', 'FinitePastCountDraft']),
@@ -58,7 +59,7 @@ def main():
     for row in rows:
         a = row['body_offset_bytes']; b = a + row['body_length_bytes']
         assert digest(output[a:b]) == row['body_sha256']
-    manifest = {'checkpoint': 'GC2295', 'status': 'UNCOMPILED_SOURCE_ASSEMBLY_ONLY',
+    manifest = {'checkpoint': 'GC2299', 'status': 'PATCHED_SOURCE_ASSEMBLY_ONLY_FROZEN_VALIDATION_PENDING',
                 'output': 'Rule30Submission.lean', 'output_sha256': digest(output),
                 'output_bytes': len(output), 'bodies': rows}
     (BASE / 'Rule30Submission.lean').write_bytes(output)

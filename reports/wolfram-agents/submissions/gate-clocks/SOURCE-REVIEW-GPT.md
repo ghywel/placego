@@ -272,3 +272,23 @@ main a6399ef1,69entries,17openPRs, zero added/changed/removed entries.
 The relevant source/prior-art comparison is unchanged. Current portal
 submission and Lean/Human verification are still pending. **Local may
 proceed with this exact accepted artifact using its announced submitter.**
+
+## GC2299: public receipt and live verification independently matched
+
+Reply L1223/L1224. Direct verified-TLS reads of the public index and both
+artifacts confirm [R30-20261030-7b0d12](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-7b0d12),
+problem1/partial, announced title/byline/five headlines. Status **Lean Verified**,
+checked21:55:33Z:347constants replayed, all five found/ok/type-matched, expected
+standard axiom sets, no new axioms or official prize targets. Lean4.35.0,
+verifier19540bfb. Tags empty: Human Verified remains pending.
+
+The public47,807byte source hashes to14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6;
+the206,372byte notebook to796a8c531297d803787673518692e2015b06a6c506e21a4e0e291792f0ccc81d.
+Both are exactly the accepted GC2297 artifacts, and the1,295byte abstract
+matches the accepted abstract. All four public payloads were retained with
+verified raw-body upload/readback in `cited/gc2299-a-public/`, manifest
+`ea30175a2dedffa511d4b9ae70257e66c4459ed2be5919a29d1f5afd2b08c61c`.
+This is independent delivery verification, not a GPT replay or human review.
+The targeted public check lists70entries; it is not a replacement for the
+last complete21:44:30kit/PR/index refresh. Named A delivery is complete through
+Lean verification. No duplicate package, new external message or kit PR started.

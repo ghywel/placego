@@ -1,12 +1,13 @@
 # Finite physical past: source preparation
 
-**Latest, GC2295:** the seven statements have Local's statement-level read
-(L1219); definitions and proof bodies still need its carrying read. All B
-source remains **UNCOMPILED**. The assembly now uses direct Prize/Realization
-imports, with unchanged mathematical bodies. New literal validation guards
-are prepared and unexecuted. Local has offered the next compatible4.35
-development stage after its A work, with a separate published freeze; GPT
-will not run a competing compiler. Posting ownership remains unassigned.
+**Latest, GC2299:** Local's L1219/L1225 statement/definition reads carry
+those meanings. The frozen L1225 development run FAILED in one proof; both
+subsequent unfrozen scratch probes are retained separately. GPT has reviewed
+the failure and patch and reassembled source `0072d264`, byte-identical to the
+successful scratch copy. This is not yet a passing frozen stage or official
+replay. Local is the sole B validation/notebook/posting owner, accepted here
+under standing owner authorization; GPT prepares source and reviews evidence.
+No competing GPT compiler. See the exact repair and next-stage requirements below.
 
 GC2286. GPT owns this source preparation; posting is unassigned. Local remains
 the intended owner of static Package A on confirmed return. This follow-on
@@ -211,3 +212,70 @@ tests or a run freeze. [VALIDATION-SPEC.md](VALIDATION-SPEC.md) and
 and stages. Local's proposed one4.35development compile is the next B stage
 when its A work permits, after its definition-level read and a fresh freeze.
 No old-toolchain retry, notebook build or posting is claimed.
+
+## GC2299: L1225 failure carried; exact L1226 repair published
+
+The complete nine copied payloads of `cited/l1225-finite-past-dev/` were
+fetched and verified against manifest
+`9ba7b8d4609ce0585a8656740b1d355d27d00b756445474fb224fcf68dd08de4`.
+The frozen source8664d9e3 failed with four errors in `finite_white_parent_iff`:
+the Nat-cast endpoint rewrite did not match, core lacks `by_contra`, and its
+unsolved goals followed. Six deprecated if-lemma warnings were also present.
+Neither guard nor rejection control ran. Supervisor rc0 means the script
+completed, not that B compiled: `dev-result.json` says FAIL.
+
+The complete28copied payloads in `cited/l1226-finite-past-patch-probe/` were
+verified against manifest
+`eb7626d7c5c8bdd8b9c9a153cbc97e1c0457f40e5c43d0971e3dea6380e3dc1a`.
+The first scratch probe compiled the assembly but failed the literal two-cell
+image guard; three downstream guard reports include sorryAx and are rejected.
+The second compiled silently, printed exactly the23expected distinct axiom
+reports (each standard), and rejected the deliberately false theorem at12:2
+with the intended type mismatch. The retained final probe script pins that
+second source/guard; it cannot certify the first run's earlier runner bytes.
+Both runs were exploratory and unfrozen. They diagnose a repair but do not
+retroactively satisfy the published-freeze requirement. A fresh explicitly
+frozen changed-source stage is the next validation step, not an automatic retry.
+
+The applied changes have no statement or mathematical-argument change:
+
+- Normalize `a=l+1` with omega before the endpoint rewrite.
+- Use explicit order cases and the existing white-tail contradiction instead
+  of the unavailable tactic.
+- Use current4.35 `ite_eq_left`/`ite_eq_right` at the six deprecated uses.
+- Give the literal image guard its missing `h1`; omit unused `hb` from simp.
+
+New pins:
+
+| Input | SHA256 |
+|---|---|
+| FiniteParentCriterionDraft.lean | `165e917e7b9265c37b85493641d20fd1bf6dbbc58135c4c8deb9316ce3c9fd67` |
+| FinitePastCountDraft.lean | `230e7f0efcb4364b297bb0dd14f08c3ea3d250ca2b138317ee9b0c3350ec84f6` |
+| Rule30Submission.lean | `0072d264545110cb46f036bb73769127246ebc4eca951613f60917fcc0259229` |
+| FinitePastValidationGuard.lean | `3060610526333fad0829dfa82288979bac1ee9203d042a83835c2bc42a5b452e` |
+| FinitePastExpectedRejection.lean | `b87d6eee0098a9fd0108bbfee9677a9771e2d4fd46327fbd41cd8443e513c5db` |
+
+The assembler binds all five modular bodies; the30,806byte assembly and guard
+are byte-identical to Local's successful scratch copies. Base/normalization
+modules, seven headline wrapper bodies/types, negative control, essay and
+abstract are unchanged. Historical UNCOMPILED preparation comments are retained
+in those exact source bytes; this latest record gives the current evidence state.
+
+Actual Local M5 receipts, not Intel measurements: frozen failure wall1.55s
+(supervisor), time1.44s, sampled tree267264KiB, launch7110MiB/min6892MiB;
+first probe1.58s/time1.08s/tree296288KiB; second1.58s/time1.23s/tree296240KiB.
+All sampled swap growth0, observed3processes. The time receipts' single-process
+peaks are separately304087040,317112320,316964864bytes. Limits were300CPU
+seconds per process/600wall/2048MiB tree; they do not enforce aggregate CPU.
+max_procs and cleanup are null; neither is a global quiescence certificate.
+
+Local's L1226 offer to own B validation/notebook/posting is accepted. The owner
+already authorized delivery once required checks pass; no new consent round.
+Please publish new runner pins and a fresh stage freeze, check the exact23
+requested names as well as their axiom sets, and retain actual failure status
+rather than interpreting supervisor exit0 as success. Then separately freeze
+the unchanged official checker with the seven exact headlines. GPT will carry
+that evidence and the actual final essay/abstract/notebook before posting.
+Existing G121/G122/L077 and CL659/GC2261 hand reads remain the mathematical
+provenance; L1219/L1225 are statement/definition reads, not a claimed line-by-line
+independent read of every Lean proof body. No official replay or B receipt yet.

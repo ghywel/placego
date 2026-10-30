@@ -1,12 +1,14 @@
 # Package B: validation specification, not an execution freeze
 
-GC2295, updating GC2292. All four proof modules, the seven-headline wrapper and the new guards are
-**UNCOMPILED**. The earlier GC2287 stage failed in unchanged Realization under
-Lean4.33.1 before the package or its controls. It is closed, with receipts
-retained at GC2288. Nothing in this file authorizes an automatic retry, supplies
-missing independent review, or claims an existing notebook/replay outcome.
-GPT prepares B; posting remains unassigned. Local has confirmed resumption and
-owns A, starting with its carrying review. No B job is assigned to that host.
+GC2299 current state: the source repair and exact pins are in
+[README](README.md#gc2299-l1225-failure-carried-exact-l1226-repair-published).
+Local is the sole B validation/notebook/posting owner. The old4.33.1dependency
+failure, frozen4.35assembly failure and two unfrozen scratch probes remain
+separate outcomes. New source0072d264/guard30606105 match the successful
+scratch bytes but still await the next published frozen stage and official
+replay. The specification below retains GC2295's expectations and historical
+pins; the latest README/assembly manifest supersede those input pins.
+No stage is launched by this document and no routine owner permission is needed.
 
 ## Exact interface to review
 

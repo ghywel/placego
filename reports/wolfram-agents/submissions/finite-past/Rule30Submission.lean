@@ -306,7 +306,8 @@ theorem finite_white_parent_iff {p y : Int → Bool} {l r : Int}
     obtain ⟨a,b,sp⟩ := hp
     have ends := ancestor_endpoints sp hy he
     have hp1 : p (l+1)=true := by
-      rw [← ends.1]
+      have ea : a=l+1 := by have := ends.1; omega
+      rw [← ea]
       exact sp.left_black
     refine ⟨?_,hp1⟩
     rw [← he]
@@ -331,10 +332,11 @@ theorem finite_white_parent_iff {p y : Int → Bool} {l r : Int}
       rw [hr r (by omega),hr (r+1) (by omega),hy.right_black] at e
       simpa [rule] using e
     have ordered : l+1≤r-1 := by
-      by_contra hn
-      have z := hr (l+1) (by omega)
-      rw [hp1] at z
-      cases z
+      by_cases hn : l+1≤r-1
+      · exact hn
+      · have z := hr (l+1) (by omega)
+        rw [hp1] at z
+        cases z
     exact ⟨l+1,r-1,⟨ordered,hp1,rightBlack,
       fun i hi => left i (by omega),fun i hi => hr i (by omega)⟩⟩
 
@@ -503,7 +505,7 @@ theorem framedRow_interior (bits : List Bool) {i : Nat} (hi : i<bits.length) :
     framedRow bits ((i : Int)+1)=bits[i] := by
   have h0 : ¬((i : Int)+1=0 ∨ (i : Int)+1=(bits.length : Int)+1) := by omega
   have h1 : 0<(i : Int)+1 ∧ (i : Int)+1<(bits.length : Int)+1 := by omega
-  simp only [framedRow,if_neg h0,if_pos h1,
+  simp only [framedRow,ite_eq_right h0,ite_eq_left h1,
     show (((i : Int)+1)-1).toNat=i by omega,List.getD_eq_getElem?_getD,
     List.getElem?_eq_getElem hi,Option.getD_some]
 
@@ -668,15 +670,15 @@ def parentRows (w : Nat) : List (Int → Bool) :=
 theorem mem_parentRows (w : Nat) (y : Int → Bool) :
     y ∈ parentRows w ↔ Normal w y ∧ Past 1 y := by
   by_cases hw : 3≤w
-  · simp only [parentRows,if_pos hw,mem_ancestorImages,
+  · simp only [parentRows,ite_eq_left hw,mem_ancestorImages,
       show w-2+2*1=w by omega]
-  · simp only [parentRows,if_neg hw,List.not_mem_nil,false_iff]
+  · simp only [parentRows,ite_eq_right hw,List.not_mem_nil,false_iff]
     intro h
     exact no_past_of_small_width h.1 (by omega) h.2
 
 theorem parentRows_nodup (w : Nat) : (parentRows w).Nodup := by
   by_cases hw : 3≤w
-  · simp only [parentRows,if_pos hw]
+  · simp only [parentRows,ite_eq_left hw]
     exact ancestorImages_nodup (w-2) 1
   · simp [parentRows,hw]
 
@@ -688,7 +690,7 @@ theorem parentRows_count (w : Nat) :
 theorem parentRows_count_ge_four {w : Nat} (hw : 4≤w) :
     (parentRows w).length=2^(w-4) := by
   obtain ⟨n,rfl⟩ : ∃ n : Nat, w=n+4 := ⟨w-4,by omega⟩
-  rw [parentRows_count,if_pos (by omega),show n+4-2=n+2 by omega]
+  rw [parentRows_count,ite_eq_left (by omega),show n+4-2=n+2 by omega]
   simp [widthCount]
 
 theorem parentRows_count_small :
