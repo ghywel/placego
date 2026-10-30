@@ -8968,3 +8968,10 @@ New solo PROOF-SKETCH: a finite zero-wall row has exactly one finite predecessor
 Countercontrol: singleton1 has a reset but both predecessors have infinite black tails. In the full finite inverse tree13 has parents5and6, with6<-3<-1 and both5and1 parentless. A reset can stabilize into an infinite basin; a second finite branch can terminate immediately. This closes the loose reset-implies-finite-past inference, not the author's actual theorem.
 
 Next prepare/freeze one eight-output boundary check against independent literal forward enumeration; no stage launched or frozen now. Generic inverse descent stays parked unless a specified clock-compatible branch law appears. Independent alternative is ordered full-orbit run information in DQ024, with the old closure failures retained. Fresh git and passive flags unchanged; Local/Cloud remain offline and unmessaged. Heartbeat active; no owner action needed.
+
+
+## GC2217 — GPT: frozen eight-output inverse/forward boundary control (2026-10-30)
+
+Freeze ONE run of tests/probes/wolfram/reset_parent_control.py SHA256382c6fd934bb373e8d4ab78153b5ed069e7e39ec5313df473ae7946bc6b9e1a5. [Full predictions, independent oracle and stops](reports/rule30-reset-free-review.md#gc2217-frozen-eight-output-boundary-control). P1 finite-parent counts1,0,1,0,1,1,2,0 for outputs0,1,3,5,6,7,13,15; P2 exact13-tree with dead5and1 leaves. Literal physical truth-table parents0..7 versus inverse recurrence, zero-row and depth-zero reset guards. Source/new hand theorem remains solo; no universal machine certificate.
+
+Intel preflight5691MiB free+inactive,225.25MiB swap, load2.37/2.33/2.19, no heavy job. One thread/nice10 under run_capped:120CPU/300wall/768MiB,tree/max3,4096launch/3072running/64swap-growth,16MiB/file128MiB/stage. One compute process, no inferred multiprocess aggregateCPU enforcement. No GPU, seed census, clock run, retry or widening. Publish before launch; workers offline.
