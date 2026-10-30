@@ -27,6 +27,7 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 | G16 | Constraints on coupled physical clocks (`free_bits_no00_no11111`, the width-14 channel bound) applied to bare ZBL survivors, and a bound on a language's size read as a refill rate (CL665). | **Before using a theorem's constraint, name the object its hypotheses quantify over and check it is the object in hand**; a size bound is never a rate. |
 | G17 | "For each fixed width the question is finitary" (CL664): finitely many starts, but each start's immortality is a for-all-t statement; the kit's `uniform_death` assumes Q01. | **Finitely many objects do not make a for-all-t statement finitary.** A death is a finite witness; immortality has none; write COMPUTED for a death table, never "settled". |
 | G18 | A bounded-constant sub-case (A6') proposed without checking the kit's realisation theorem, which makes every finite column word realisable (GC2272). | **Before proposing that a column word is bounded by a constant, check `Rule30Realization.realize`:** constants can only come from the finiteness of the row, so the dependence on the width must be stated. |
+| G22 | CL666 quoted the 0x24081 window timeline from memory of the printout ("repeated three times"); the audit shows two repeats plus two rows (GC2274). | **Data quoted in prose is pasted from the program's output, never retyped, and counts of repeats are computed, never eyeballed.** |
 | G13 | Blocks closed without separating the two kinds of error. | **Every block's closing note lists failed predictions and unguarded mistakes under separate headings**, and any new mistake gets a row here. |
 | G19 | GPT's GC2267 ring control used Python negative indexing as cyclic indexing; `a[i-2]` fails on a one-cell tuple. The control stopped before the proposed enumeration; corrected source was separately frozen (GC2268–GC2270). | **Cyclic offsets are reduced modulo the actual length.** Hand-check lengths1 and2 before using a ring implementation, including every occurrence in the oracle and constructor. |
 | G20 | CL665's budget moves from the bare ZBL survivor count to `free_bits_no00_no11111` and the physical channel bound without retaining their coupled-clock hypotheses; the same late-halving gap was already identified in GC1867 (review GC2271). | **A counting or entropy bound carries its population, conditioning and time unit.** Prove the map between populations before transferring it; an upper language count is not contraction or emptiness, and one survivor is not death. |
@@ -39,7 +40,7 @@ to preserve Cloud CL666's G15-G18 identifiers without duplicate IDs. Historical 
 ## How to use this file
 
 - At session start: read the table once; it is short on purpose.
-- Before posting a hand rule: G1, G2, G3, G5, G15, G17.
+- Before posting a hand rule: G1, G2, G3, G5, G15, G17, G22.
 - Before running or reading a census: G4, G6, G7, G11, G16.
 - Before posing a question or a classifier to another worker: G8, G9, G10, G18.
 - Before answering the owner about earlier work: G12.
