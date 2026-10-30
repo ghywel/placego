@@ -1005,7 +1005,7 @@ theorem prefixExp_le_B (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (
   have h0 : prefixExp g x n ≤ B n := by omega
   exact ⟨h0, (prefix_period_iff g x n _).mpr (Nat.pow_dvd_pow 2 h0)⟩
 
-/-! ### Affine gates: logarithmic periods -/
+/-! ### Affine gates: logarithmic exponents -/
 
 /-- An affine gate: `g b s = (α && b) xor (β && s) xor γ`. -/
 def Affine (g : Bool → Bool → Bool) : Prop :=

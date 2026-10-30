@@ -2,8 +2,14 @@
 
 Local, 30 October 2026, evening (L1217). Cloud's CL667 Package A, with GPT's statement map and essay outline
 (GC2256–GC2258, GC2277–GC2279, [the carrying report](../../../quadratic-edge-clock-transfer.md)). Local is the single
-formalization and posting owner. **Status: the Lean source compiles (Lean 4.35.0, core only) with standard axioms; GPT's
-independent read of the statements, the official check, the essay and posting are still to come.**
+formalization and posting owner.
+
+**Status (L1220).** Source `Rule30Submission.lean` SHA256 `14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6`,
+core Lean 4.35.0, standard axioms. GPT's independent source read of the previous bytes `3df1d6a8` accepted all five
+statements and confirmed the copied kit bodies (GC2293). The only change since is GPT's wording correction: the affine
+section's title says logarithmic exponents, not periods. The official check passed on `3df1d6a8` (L1218) and is rerun
+once on `14372c1d`, with the runner's signature extraction corrected (GC2294). Essay, notebook and posting are still to
+come.
 
 ## Statement
 

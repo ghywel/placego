@@ -17,7 +17,7 @@ set -eu
 (ulimit -t 60; python3 - "$1" "$KIT_ROOT/Check.lean") <<'PREP'
 from pathlib import Path
 import hashlib, json, os, re, sys
-SOURCE = '3df1d6a84235d7b5647133a090aab7bb880d43efa81da0ce8235714f384c82cc'
+SOURCE = '14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6'
 CHECKER = 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905'
 HEADLINES = ['Rule30Submission.' + x for x in ['prefix_period_iff', 'prefix_window_bound', 'prefix_window_le_B', 'prefixExp_le_B', 'affine_prefix_bound']]
 def pinned(p, digest, what):
@@ -37,7 +37,9 @@ if re.search(r'\b(?:sorry|admit|native_decide|bv_decide|skipKernelTC)\b', text):
 signatures = {}
 for full in HEADLINES:
     short = full.split('.')[1]
-    found = re.findall(r'^theorem ' + re.escape(short) + r'(\s.*?) :=', text, re.M | re.S)
+    # The statement ends at its first ` :=` or at its first equation clause (`| ...`), whichever comes first
+    # (GC2294: prefix_period_iff is defined by equations, and a ` :=` search ran on into its proof).
+    found = re.findall(r'^theorem ' + re.escape(short) + r'(\s.*?)(?: :=|\n\s*\|(?!\|))', text, re.M | re.S)
     if len(found) != 1:
         raise SystemExit('REFUSED: no unique source signature for ' + full)
     signatures[full] = 'theorem ' + short + re.sub(r'\s+', ' ', found[0]).rstrip()
