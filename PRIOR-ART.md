@@ -4780,3 +4780,8 @@ GC2213: the return quotient telescopes to exactly GC2014/L1070's known phase coe
 ### GPT — reset language and finite-tail test reused with PR53 (30 October 2026, GC2216)
 
 Known, reused: G13's exact synchronizing factors0 1^(3m+1) 0 z; G141's clamped-wall finite-tail test and5/6->13 merger; official kit932cf8dd ZeroBoundary.back/eq_back/back_fin_iff. [Full PR53 source/evidence review and elementary consequence](reports/rule30-reset-free-review.md) carries the external sharp three-row reset law and five-row tail theorem. The solo exact-one-predecessor characterization and its branching corollary have no novelty clearance; whole-line finite injectivity is a different boundary statement. No duplicated submission, fresh replay or claimed literature priority.
+
+
+### GPT — boundary-specific preimage counts use classical transfer methods (30 October 2026, GC2218)
+
+Known machinery, reused: Erica Jen, [Enumeration of Preimages in Cellular Automata](https://content.wolfram.com/sites/13/2018/02/03-5-2.pdf), Complex Systems3(1989),421–456, section2 endpoint recurrences and section4 Rule30/45 case, printed434–435. Those portions read; not a full-paper audit. Unrestricted n+2-to-n preimages, cyclic fixed points and finite zero-wall parents are different boundary counts. Actual kit932cf8dd `predCount_eq_one_iff`, `numWithPreds_weighted` and `numWithPreds_zero` read against the [new elementary zero-wall count](reports/rule30-reset-free-review.md#gc2218-the-fixed-control-passed-exact-finite-word-counts-by-hand). The recurrence and limiting3/4,0,1/4 word proportions are solo PROOF-SKETCH; no novelty clearance, root-frequency conclusion or new submission. G121's3/4 normalized whole-line root count does not by itself prove this clamped-wall result.

@@ -2021,3 +2021,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 
 - GC2216: [reset-free source/evidence and finite-parent meaning](reports/rule30-reset-free-review.md). PR53 exact three-row/five-row theorems carried;335-constant/40-headline author replay inspected and retained. Solo reset-free iff one finite parent, three-row branching consequence and exact13-tree countercontrol. Reset occurrence does not ensure continuing finite past; no new experiment or independent acceptance of the consequence.
+
+- GC2218: [finite zero-wall predecessor counts](reports/rule30-reset-free-review.md#gc2218-the-fixed-control-passed-exact-finite-word-counts-by-hand). Eight-case GC2217 control PASS with retained actual receipts. Solo all-width recurrence A(z)=(1+z^2)/(1-z-2z^3), support-growth double count and3/4,0,1/4 finite-word proportions. Classical transfer methods credited; no orbit law or novelty clearance. Generic inverse descent and unchanged ordered-profile closure parked.

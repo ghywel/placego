@@ -89,3 +89,71 @@ Independent control: the literal physical Rule30 truth table enumerates inputs0.
 Record searched: GC2216's exact record/current-kit/portal/PR searches and carrying reads, kit932cf8dd, PR53head761d42324aea, G13/G141 and ZeroBoundary.back/eq_back/back_fin_iff. No additional novelty or primary-literature claim. The current portal refresh remains00:10:27Z; this is not a submission decision.
 
 Host preflight: Intel load2.37/2.33/2.19,5691MiB free+inactive,225.25MiB swap, no process over40percentCPU. One compute process, one thread at nice10; no concurrent heavy job or GPU. Run under `run_capped.py`:120CPU seconds for the single compute process,300wall seconds,768MiB sampled treeRSS,16MiB/file,128MiB total stage, max3processes, launch4096MiB/running3072MiB free+inactive,64MiB swap-growth stop. Wrappers/supervisor are not claimed to have a single aggregateCPU limit; the driver spawns no processes. Tree tracking, pressure/monitor/cleanup failures stop the stage. Missing thermal telemetry is not a measured normal temperature. The fixed eight-case workload requires no multithreading. Preserve source, launcher, stdout, time and any failure; no retry or widening. Publish this freeze before launching.
+
+
+## GC2218: the fixed control passed; exact finite-word counts by hand
+
+**COMPUTED, finite control only.** The GC2217 source ran once after freeze commit `0081bfce`, at 00:53:59–00:54:00Z on 30 October. Both predictions passed: the eight finite-parent counts are 1,0,1,0,1,1,2,0, the complete13-tree agrees, and the zero-row guard passes. The independent literal forward oracle is 0->0,1->3,2->7,3->6,4->14,5->13,6->13,7->12. This is not a universal machine certificate.
+
+Intel actual child:0.05wall seconds,0.03user+0.01system seconds,14102528bytes maximum RSS. Runner:0.55wall seconds,0.102CPU seconds; launch5688MiB free+inactive and225.25MiB swap. The child finished before any periodic sample, so sampled RSS/process/disk/swap maxima are **unavailable**, not measured zero. The child time receipt separately reports zero swaps. Exit COMPLETED/rc0; no process group remained for cleanup. Final stdout/time files total4923bytes. No retry, enlargement or concurrent heavy job. Source, raw output and time receipt, plus path-normalized launcher and original-launcher digest, are retained at `cited/gc2217-reset-parent-control/manifest.json`, SHA256 `bbed20c67c6e0dc4443531aa8ac59c36bbad5b950e05369b22a3b847c07457fb`.
+
+### The pull and the boundary guard
+
+The reset language describes all unique finite predecessors, so its word count may be exactly solvable without another census. What this teaches: the size of the one-step finite image and the exceptional unique-parent class, under a precisely stated boundary. The cheap objection is that the cyclic Feynman theorem uses the same run residues with a different conclusion. Address that boundary distinction before counting. The discriminating hand step is an unambiguous run grammar plus a double count of finite input/output arrows; no new experiment is proposed.
+
+**PROOF-SKETCH, solo GPT.** Put bit zero at depth one, with depth zero fixed white, and write
+
+    U(x)=(x>>1) XOR (x OR (x<<1)).
+
+Let Y_n consist of the 2^n finite rows supported in depths1 through n, including the zero row; equivalently 0<=x<2^n. Padding with zeros does not create extra rows. Let a_n,d_n,o_n count targets in Y_n with respectively one,two,zero finite zero-wall predecessors. These counts concern *all possible target words*, not an orbit sampling law.
+
+### Exact unique-parent recurrence
+
+By the preceding pair-image argument, a_n counts length-n binary words whose every maximal black run has positive length not congruent to one modulo three. Leading wall zero and the eventual white tail also flank runs at either end. The allowed run generating series is
+
+    R(z)=z^2+z^3+z^5+z^6+...=(z^2+z^3)/(1-z^3).
+
+Every such word has a unique decomposition into blocks of type `0` or `1^r 0`, followed by an empty suffix or one allowed final run `1^r`. Indeed each maximal run uses its first following zero, and all other zeros are single blocks. Hence, as a formal power series,
+
+    A(z)=sum a_n z^n=(1+R(z))/(1-z(1+R(z)))
+        =(1+z^2)/(1-z-2z^3).
+
+Coefficient comparison gives
+
+    a_0=1, a_1=1, a_2=2,
+    a_n=a_(n-1)+2a_(n-3)  (n>=3).
+
+The first terms1,1,2,4,6,10,18 are hand arithmetic from this recurrence, not output of a new enumeration. The empty word represents the zero row and has one finite parent. The grammar counts the two ends correctly; it does not require the last bit to be zero.
+
+### All three counts and their limiting proportions
+
+If a nonzero row has greatest black depth m, its update has greatest black depth exactly m+1: at that depth the local inputs give one, and every larger depth is white. Also U(0)=0. Therefore, for n>=1, **all finite predecessors of targets in Y_n are exactly the inputs in Y_(n-1)**. Counting each arrow once gives
+
+    a_n+2d_n=2^(n-1),
+    o_n+a_n+d_n=2^n,
+    2d_n=2^(n-1)-a_n,
+    2o_n=3*2^(n-1)-a_n.
+
+For n=0 handle zero separately: a_0=1,d_0=o_0=0. The n>=1 condition is essential. This weighted total is half the cyclic register's weighted total, because the largest finite depth grows.
+
+For an elementary error bound put q=7/4. The three initial values satisfy a_n<=q^n, and q^3-q^2-2=19/64>0. The recurrence inductively gives a_n<=q^(n-1)+2q^(n-3)<=q^n for every n>=3. Consequently
+
+    0<=a_n/2^n<=(7/8)^n,
+    d_n/2^n=1/4-a_n/2^(n+1) -> 1/4,
+    o_n/2^n=3/4-a_n/2^(n+1) -> 3/4.
+
+Thus the uniform finite-word proportions for zero,one,two finite predecessors tend to **3/4,0,1/4**, with the explicit error above. This is an asymptotic consequence of the hand recurrence, not an extrapolation from data. The limiting proportions hold in this width-cutoff population only. They do not describe the frequency of resets or branchings along a finite seed, a centre trace, the right-edge orbit closure, or any randomly selected infinite history. No prescribed backward-survival law has been obtained.
+
+### Positive prior-art comparison
+
+The current kit at932cf8dd proves `Rule30.predCount_eq_one_iff`: on a **cyclic register**, exactly one predecessor is equivalent to the *presence* of a residue-one black run. Its `numWithPreds_weighted` sums to2^N, and `numWithPreds_zero` gives c0=c2+2[3 divides N]. Those statements count cyclic fixed points of the transfer product. Our zero-wall calculation counts two permitted initial heads which must reach an eventual white tail; here uniqueness means *absence* of the reset. The opposite criterion is not a contradiction. The used theorem bodies, block-product arguments and aggregate-count proofs were read; no claim to a fresh complete audit of that library.
+
+The transfer-map and endpoint-count methods are classical. Erica Jen, [Enumeration of Preimages in Cellular Automata](https://content.wolfram.com/sites/13/2018/02/03-5-2.pdf), Complex Systems3(1989),421–456, gives endpoint-conditioned recurrences in section2 and the Rule30/45 case in section4, printed434–435. In that setting an unrestricted output word of length n has four length-(n+2) preimages. That boundary condition differs from fixing one wall and requiring an infinite zero tail. Actual reading here covers those recurrences and the Rule30 case, not a full audit of all six rule classes. The modulo-three run mechanism and generating-function method are credited as known machinery.
+
+Record searched: predecessor/preimage/reset with generating/count/multiplicity/three-quarters, and the displayed recurrence/initial sequence; current kit actual sources/equivalents/catalogues, listed portal and open-PR index from00:10:27Z; G13,G121,G141,GC694–695. G121's whole-line normalized-root count is a different boundary/normalization statement. No exact matching zero-wall count was identified in the sources actually checked; that is **not novelty clearance**. No new submission or compiler run is proposed. The universal multiplicity and counting arguments remain PROOF-SKETCH pending an independent carrying read.
+
+### Change of direction
+
+Generic inverse descent remains parked at the specified-history gap, with reopening only for a clock-compatible branch law. Inspecting GC2155/GC2158/GC2200 again recovered the same older-profile parity information and supplied no new actual-root00 relation; the ordered-run alternative is also parked until a genuinely new component identity appears. No new computation is justified there.
+
+Next independent hand target: the carried silver-word one-substitution endpoint in GC2193–GC2194. Read the exact lag-Q mismatch positions and ask where *two* substitutions first encounter a shared residue-chain obstruction. The point is to distinguish repair cost from mismatch count; flipping one letter toggles up to two comparisons, so extrapolating the one-edit endpoint is not valid. First search the existing record and primary approximate-period results, then derive or refute a precise endpoint at the same symbolic convergent scales. No larger word scan, fixed-edit hierarchy or experiment is frozen.
