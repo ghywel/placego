@@ -525,3 +525,151 @@ Outer supervisor/time overhead is separate; these are sampled/cooperative
 stops, not hard aggregate enforcement. No concurrent heavy job, GPU or retry.
 Raw source/input/result/resource/failure receipts stay outside git with digests.
 Freeze must be committed and pushed before execution. **Not run at GC2307.**
+
+
+## GC2308: the once-frozen rational-series check passes
+
+**COMPUTED / self-check, Intel, 2026-10-30 22:53 UTC.** The source and caps
+were published first at `2296d7149332f8b0742b70379f9e3ca2c298ae21`; that exact
+source ran once, with the pinned existing GC2300 fixture. All22 named controls
+pass:20 direct Boolean transitions, seven exact suffix polynomial identities,
+zero-padding removal, the known width specialization, and all90 retained
+width/mass coefficients. Their total is128. Omitting the padding factor gives
+28 disagreements; changing the denominator sign gives13. No new dynamics
+case was generated. The hand proof remains separately subject to carrying
+review; this self-check is not an independent read or Lean validation.
+
+The worker used nice10, reported0.102555 aggregate CPU seconds including
+reaped serial monitor children and0.033309 worker wall seconds. The time
+wrapper reported0.11 real/0.08 user/0.03 system seconds and19021824bytes maximum
+resident set size. Supervisor CPU was0.093seconds and wall0.54seconds. Launch
+headroom was6321MiB, swap161.25MiB. Both thermal reads passed with scheduler/
+speed100% and16CPUs available. Stage data at completion were21164bytes before
+launcher/postflight packaging; each file was below16MiB.
+
+**Enforcement limitation:** the job finished before the first tree sampling
+tick. Therefore the launcher's zero sampled RSS/process/disk maxima and zero
+sampled swap growth are missing time-series measurements, not evidence of
+zero resource use. The time receipt is the wrapped-process measurement, not
+full-tree RSS. CPU backstop and cooperative self-plus-reaped-children guards
+remain distinct; supervisor/time overhead is not included in the worker's
+aggregate counter. Postflight at22:53:15found no stage command outside the
+monitor's ancestor chain; swap remained161.25MiB. This is command-specific
+cleanup, not a claim about global host quiescence.
+
+Nine immutable source/input/result/preflight/postflight/launcher/time files
+and their manifest were uploaded with verified TLS/raw bodies and read back.
+Shared-store packet `cited/gc2308-rational/manifest.json`, SHA-256
+`a0ec04f02b0c4d1b7db4d5b8d4ea213327d157fffa5b80ddf4434381970e4887`.
+Only scratch paths in the published launcher were replaced by role labels;
+the exact original's digest and redaction scope are in the manifest.
+No retry, wider run, GPU job or compiler was launched.
+
+## GC2309: exact eventual mass moments, with the ensemble explicit
+
+**PROOF-SKETCH, solo hand consequence of GC2307; no new computation and not
+part of the GC2308 control.** Curiosity pull: at u=1 the complicated
+denominator collapses to1-2z. Does that merely recover the total count, or
+does it force a useful law for the black mass? A cheap objection is that
+normalized rows have black endpoints: their mean is already W/2+1 even
+without a past condition, so that offset must not be advertised as a new
+bulk bias.
+
+Record/source comparison: GC2296/GC2298/GC2305/GC2307, actual kit
+`RandomConfigurations.integral_black`, `variance_black`,
+`tendstoInDistribution_count_trace`, and `LocalLimit`'s stated
+`measureReal_count_eq_trace` context at main7beff71c. These concern fair
+infinite initial configurations and their centre traces, not this finite
+image ensemble. The existing finite-map bijection and Karttunen records
+remain prior art. The standard generating-function moment method is
+credited to Flajolet--Sedgewick, *Analytic Combinatorics*, ChaptersIII andIV;
+the [author's contents](https://algo.inria.fr/flajolet/Publications/AnaCombi/contents.html)
+was read. The browser rejected the complete12MB PDF as too large; no full-book
+read or novelty finding is claimed. The elementary calculation below supplies
+its own proof and does not depend on a quoted asymptotic theorem.
+
+Let h_W(u)=[z^W]H(z,u). Choose uniformly among normalized width-W rows with
+two finite past steps, and let K be their black mass. For W>=6 the number
+of choices is h_W(1)=2^(W-6), by the known finite image bijection. Thus
+E K=h'_W(1)/h_W(1), and E[K(K-1)]=h''_W(1)/h_W(1).
+
+Write N=z^5u^3PS and D=Delta, as above. Put r=1/(1+u). At z=r,
+P=ru, R=S=u. Consequently D(r,u)=0 and direct differentiation gives
+
+```text
+D_z(r,u) = -u^2(3u+1)(u+3)/(1+u)^3,
+C(u) = -N(r,u)/(r D_z(r,u))
+     = u^3 / ((1+u)^2(3u+1)(u+3)).
+```
+
+In a neighbourhood of u=1 the root is simple, so the rational function
+has the pole decomposition
+
+```text
+H(z,u) = C(u)/(1-(1+u)z) + J(z,u),
+```
+
+where J has no pole at z=r. This statement is also just polynomial division:
+D is divisible by1-(1+u)z, and its quotient at u=1 is identically1.
+There is no need to assume a fair-coin process on the accepted language.
+
+For an explicit finite threshold, write d=1-2z and evaluate the derivatives
+at u=1:
+
+```text
+N0 = z^5(1-z)
+N1 = z^5(1-z)(3+z+2z^2)
+N2 = z^5(1-z)(6+6z+18z^2)
+D0 = d
+D1 = -z^2-z^3-4z^5
+D2 = -6z^3+6z^4-14z^5-8z^6-8z^7.
+```
+
+Here the subscript is the order of ordinary u differentiation, not a
+coefficient divided by a factorial. Therefore
+
+```text
+H_u(z,1)  = (N1*d-N0*D1)/d^2,
+H_uu(z,1) = (N2*d^2-(2*N1*D1+N0*D2)*d+2*N0*D1^2)/d^3.
+```
+
+The numerators have degrees at most11 and16, respectively. After removing
+their principal parts at z=1/2, the remainders are polynomials of degrees
+at most9 and13. The principal parts are exactly the corresponding u
+derivatives of C(u)/(1-(1+u)z), because J and those derivatives are regular
+near (z,u)=(1/2,1). Thus for W>=16 (a deliberately conservative, unoptimized
+threshold), both differentiated coefficients equal those of C(u)(1+u)^W.
+
+Finally,
+
+```text
+C(1)=1/64,
+(log C)'(1)=1,
+(log C)''(1)=-15/8,
+C''(1)/C(1)=-7/8.
+```
+
+It follows exactly, for every W>=16, that
+
+```text
+E K = W/2+1,
+E[K(K-1)] = W(W-1)/4+W-7/8,
+Var K = W/4-7/8.
+```
+
+All normalized width-W words instead have K=2+Binomial(W-2,1/2), hence
+the same mean and variance W/4-1/2. Conditioning on two finite past steps
+therefore changes the variance by exactly **-3/8** in the stated range.
+This is a finite-ensemble identity; it neither establishes single-root
+frequencies nor settles a prize density, long ancestral age, or a Gaussian
+limit. The retained oracle stops at W=12, so it is not a numerical test
+of the asserted W>=16 range. The derivative and pole-removal arguments
+are the new carrying steps, still awaiting independent review.
+
+Next executable step: seek a direct local explanation of the -3/8 variance
+correction by using the two-step image bijection from uniform normalized
+parents and separating endpoint cones from bulk cells. This would give a
+second derivation and locate the covariance responsible, without a larger
+word census. Warm independent alternative: PR61's arbitrary-prefix
+period-reflection gap. Do not expand the sixteen-state inverse merely to
+extend the horizon.

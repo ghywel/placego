@@ -1342,3 +1342,14 @@ reduces to counting phase-2 visits in a three-state description of long zero gap
 the exact leading coefficient on each width class; four-black words independently recover coefficients2/3,1/3,0.
 The bias tends toward1/3as mass increases, with an explicit oscillatory correction, in a sequential fixed-width
 ensemble limit only. Solo PROOF-SKETCH; no actual-orbit distribution, age bound, new computation or change to B.
+
+
+### GC2307–GC2309 — the same finite language connects exact counting and mass fluctuations
+
+[Seven-state quotient, rational series and moment derivation](reports/rule30-two-step-finite-past.md#gc2307-a-seven-state-quotient-and-compact-exact-bivariate-series).
+L1238 carries GC2298 and GC2305's absolute counts; their earlier solo labels above are superseded in that scope.
+The new quotient/algebra is a solo sketch, with one exact-arithmetic self-check passing20transitions/seven identities/
+90retained coefficients. No dynamics expansion. A further solo calculation gives mean W/2+1 and variance W/4-7/8
+for uniform normalized width-W two-past rows, W>=16. The mean already matches all normalized words; the variance
+is smaller by3/8. This is a finite-image ensemble, not the actual root. The next curiosity is a direct endpoint-cone
+explanation of that covariance correction; no larger word census is needed. Independent alternative: PR61reflection.

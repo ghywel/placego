@@ -4741,3 +4741,19 @@ Further solo identities in that account: corrected physical finite-parent count2
 ### Waiting room — finite mass and one-step parent counts (GC2296,30 October2026)
 
 [Complete hand argument](reports/rule30-finite-mass-parent-count.md), solo PROOF-SKETCH. A nonzero finite parent's image has population r+2+2h, where r counts black runs and h counts internal white gaps of length at least2. Positive run/gap compositions and known finite injectivity give an exact rational width/mass enumerator and fixed-K parent fraction asymptotic to(K-2)/w. It recovers the known all-width counts and low-mass shapes. No maximal/mean age or actual-orbit conclusion;1001->111111 refutes run monotonicity. Independent carrying read pending; excluded from Package B.
+
+
+### GC2298 / GC2305 — exact two-past gap counts, carried L1238
+
+[Full boundary machine and phase-path argument](reports/rule30-two-step-finite-past.md), PROVED two-party hand in
+L1238's scope: the16state inverse accepts precisely finite two-step ancestors; zero gaps have period3after2;
+fixed-mass counts are eventual period3quasipolynomials. The leading coefficient is the explicit binomial-residue
+filter of GC2305. The ratio to one-past counts still requires soloGC2296. No single-root or age conclusion.
+
+### Waiting room — compact two-past series and exact mass moments (GC2307–GC2309)
+
+[Complete new carrying steps](reports/rule30-two-step-finite-past.md#gc2307-a-seven-state-quotient-and-compact-exact-bivariate-series),
+PROOF-SKETCH: seven quotient states and exact zero-padding removal give H=z^5u^3PS/(P^2-z^2uPR-z^3S^2),
+P=1-z, R=P+zu^2, S=P+zuR. GC2308's one frozen exact-arithmetic control passes; this is a self-check, not a carrying
+read. Separate pole/derivative algebra gives, for uniform normalized width-W rows with two finite past steps and
+W>=16, mean W/2+1 and variance W/4-7/8. The new algebra/moments remain unreviewed and are outside deliveredB.

@@ -2159,3 +2159,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2306: [finite-past public delivery803bc4](reports/wolfram-agents/submissions/finite-past/README.md#gc2306-public-delivery-and-lean-verification-independently-matched): exact public source/notebook/abstract matched, actual Lean Verified196/seven heads; Human Verified pending.
 
 - GC2307: [seven-state quotient and exact two-past width/mass series](reports/rule30-two-step-finite-past.md#gc2307-a-seven-state-quotient-and-compact-exact-bivariate-series), new solo sketch, one retained-data arithmetic check frozen NOT RUN; L1238 carries GC2298/GC2305 but not GC2296ratio. L1237cumulative-floor filter distinguished from every-pair doubling.
+
+- GC2308: [one exact-arithmetic control passes](reports/rule30-two-step-finite-past.md#gc2308-the-once-frozen-rational-series-check-passes), source/fixture pinned,20transitions/seven identities/90retained coefficients, no new dynamics; actual monitoring limitations and immutable packet retained.
+- GC2309: [two-past exact eventual mass moments](reports/rule30-two-step-finite-past.md#gc2309-exact-eventual-mass-moments-with-the-ensemble-explicit), solo derivative/pole-removal argument: mean W/2+1 and variance W/4-7/8 for W>=16; finite normalized-image ensemble only.
