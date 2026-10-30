@@ -1331,3 +1331,5 @@ The next independent pull is the specified fresh-bit conditional lifting law: fr
 ## GC2298 — a periodic tail inside a finite two-step inverse (30 October2026)
 
 [Sixteen-state inverse and exact gap classes](reports/rule30-two-step-finite-past.md), solo sketch. Composing white-right inverses makes long target zero gaps periodic modulo3 after length2. This gives rational fixed-mass width counts and eventual quasipolynomials without enlarging a census. The period comes from the known black-tail inverse cycle, not a temporal root clock. One bounded interface control is frozen separately; all-depth ancestral ages remain open. The next curiosity is which residue classes retain the leading two-past count, not a numerical density fit or an automatic deeper machine.
+
+GC2300 update: the one frozen interface control passed2048targets and all17guards, including86disagreements from the wrong right boundary. Universal scope remains a hand sketch pending another worker's read. No expanded sample was launched; symbolic leading-pole/residue extraction is the next discriminating question.

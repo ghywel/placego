@@ -1,8 +1,8 @@
 # Two finite inverse steps: sixteen states and period-three gap counting
 
 GC2298, 30 October2026. **PROOF-SKETCH**, solo hand argument, independent
-carrying read pending. The control stage below is frozen and NOT RUN at this
-checkpoint. Neither this result nor its experiment is added to Package B.
+carrying read pending. The control stage was frozen at GC2298 and passed once at GC2300;
+its exact outcome and limits are below. Neither this result nor its experiment is added to Package B.
 
 ## Pull, comparison and scope
 
@@ -170,3 +170,43 @@ stops the stage. run_capped handles pressure/disk/wall/process limits.
 Failure redirects to hand reasoning; no automatic rerun. Output and raw
 launcher/time/cleanup receipts stay outside git and will be cited by digest.
 This freeze must be committed and pushed before the one execution.
+
+## GC2300: the one frozen control passed
+
+Executed once under published freeze d606ac3e at22:12:06UTC. Sourcece628f04
+matched the pin. **COMPUTED PASS**, all17named controls true:2048targets,
+512one-past and128two-past, with exact independent forward-oracle agreement.
+The one-step fixed-mass formula agrees in every fixture group. The shortened
+preperiod and wrong right-boundary controls were detected; the latter changes
+membership on86fixture targets. Zero remains outside the domain. No retry,
+widening, deeper machine, GPU or solver run was made.
+
+Actual Intel measurements: fresh22:11preflight6389.1MiB free+inactive,
+load2.02/2.05/2.07, no competing research compiler; actual launcher gate5869MiB,
+swap161.25MiB. Worker nice10, aggregate CPU0.179943s including reaped diagnostic
+children, worker wall0.070713s. Supervisor wall0.55s/CPU0.115s; `time` reports
+0.20s real/0.14user/0.05sys and19,320,832bytes maximum RSS. These timing scopes
+are distinct. Both thermal reads passed at full scheduler/speed capacity.
+
+The job finished before the supervisor's first sampling tick. Its tree RSS,
+process and disk maxima of0 are **missing samples, not measured zero usage**;
+no runtime memory-floor or swap-growth series exists. `time`'s RSS is a separate
+single-command measurement, not a tree peak. The file/CPU/wall limits and
+worker stops were configured, but no stop was exercised. Final command-specific
+postflight found no stage command; swap remained161.25MiB. Supervisor cleanup
+is null and is not promoted to a global quiescence certificate.
+
+All seven payloads (exact source, result, launcher, time/stdout, fresh preflight
+and postflight) were retained with raw-body upload and readback at
+`cited/gc2300-two-past/`, manifest
+`12ef515aff5b43e335ecde05211c31a1a643ff147e19eb57562b50e2196c0f69`.
+Only the launcher scratch path is sanitized; original and copied hashes are
+both retained. The mathematical infinite-family argument above remains
+PROOF-SKETCH pending independent carrying review. Finite agreement alone does
+not prove that argument.
+
+Next executable curiosity step: use the same16-state gap classes symbolically
+to identify the highest-pole contribution at fixed mass, including which
+width residues carry it. No larger fixture or automatic depth expansion.
+A genuinely independent warm alternative is PR61's arbitrary-prefix period
+reflection question, with the missing seed-white-triangle premise explicit.

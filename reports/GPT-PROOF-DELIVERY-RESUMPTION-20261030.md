@@ -952,3 +952,65 @@ Direct verifier-commit source reads bind Jen`07009448`, Realization`da644450`, P
 All13public source/context payloads,115,762bytes, were uploaded raw with verified TLS and readback to `cited/gc2292-submission-context/`; manifest SHA256
 `c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268`.
 This is retained public context, not a compiler receipt. The preparation manifest binds the essay, abstract, four proof modules, wrapper, inherited guard, specification and source assembly. No new computation, kernel replay, worker dispatch or submission occurred.
+
+
+## GC2301: current kit, closed PRs and the actual A kit source
+
+The complete `known_find.py --new` refresh at22:10:24UTC reports research kit
+`7beff71ceb40e67010fd0713b1a9aecdded09ef2`,70portal entries,16openPRs,
+10added/3changed/11no-longer-listed index items. The sole new portal entry is
+our gate-clock7b0d12, whose public artifacts were independently carried at
+GC2299. This is the later complete refresh, distinct from that targeted read.
+
+The two new kit modules are merged, already-reviewed contributions:
+
+- `Rule30TemporalProfiles`, SHA256
+  `4b4e0b444bf8d456777282e94c2ed520d82c38f427053cb8b29ea2dd6d94252c`,
+  is byte-identical to PR50 head666ee9bfa172034da03313d71b873695ba4b182d.
+  Its exact conditional profile/source/pulse/return scope is unchanged.
+- `Rule30GroupCocycle`, SHA256
+  `5b6e3cd3de66a66859546b8132e67207ded06548def55634b84754d7795a78fa`,
+  is byte-identical to PR58 head1b7cbc6d18a1c989a24f6a7e598ef2fac5ab8de4,
+  previously carried in the [group-cocycle review](rule30-group-cocycle-review.md).
+  This is still a homogeneous finite-window group-valued classification,
+  not a nonlocal/noninvertible no-go theorem.
+
+Direct public API reads of both closed PR records, discussion lists and review
+summaries found no new bodies after21:44:30. GitHub records both closed with
+merged=false because maintainers integrated the source by separate commits;
+actual main bytes and catalog imports, not that API Boolean, establish kit
+inclusion. The two new catalog rows were read. Main's other changes are imports
+and module-count168to170; B's exact Jen07009448/Prize9d6bc9de/Realizationda644450
+inputs remain unchanged. No new B dependency or proof claim follows.
+
+For [PR62](https://github.com/WolframInstitute/Rule30PrizeKit/pull/62), reply L1227:
+headbec7781d50247cc44e6e748f56812514000175a7 actual module SHA256
+`f3ef8a0aa8c3af7f08fd7567cc6931e37a0c66ee88f2f59ee9cc198e343c733c`.
+Its docstring, direct DifferenceOrder import and new namespace were read. Every
+byte of the proof-bearing region from `open Rule30RecordCharge Rule30DifferenceOrder`
+through the affine theorem is identical to accepted submission14372c1d; the
+wrapper namespace is now `Ruliology.CellularAutomata.Rule30GateClocks`. The
+copied kit modules are replaced by the actual unchanged dependency import.
+This accepts the source transfer in scope. Local's161replayed/70declared
+kit-module validation is reported in L1227/PR body; its raw packet was not
+provided or independently replayed here. It is separate from the public
+single-file347/173receipt. The owner authorized opening this PR; GPT has not
+sent an external reply or started another PR.
+
+New maintainer comments were read completely:
+
+- [PR59](https://github.com/WolframInstitute/Rule30PrizeKit/pull/59#issuecomment-6534509893)
+  reports a sandbox build/ten-headline check and requests that the eight-bit
+  primitive-root lists be labelled computed or proved exhaustive. The universal
+  trichotomy and NOR-wave theorem remain the actual source claims; the listed
+  small examples are not thereby an exhaustive Lean theorem. No new source head.
+- [PR60](https://github.com/WolframInstitute/Rule30PrizeKit/pull/60#issuecomment-6534510555)
+  requests full catalog date and credit/docstring formatting. It distinguishes
+  the sandbox build from its other headline check. The theorem still needs
+  recurrent resets; it does not prove actual legal rows have them. No new source
+  head or unconditional all-depth physical finite-past theorem was added.
+
+Portal0554f7now has Human Verified and Kit Contribution tags; our a94f21has
+Kit Contribution while Human Verified remains absent. Source/check timestamps
+are unchanged. A7b0d12still has no Human Verified tag. Nothing here changes
+B's known-result attribution or widens either package's claims.
