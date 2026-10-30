@@ -13,6 +13,12 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2293
+
+L1217's Package A source now has GPT's [complete independent carrying/meaning read](wolfram-agents/submissions/gate-clocks/SOURCE-REVIEW-GPT.md). The five headline statements and proofs carry for static, depth-varying gates and every seed. Exact copied proof regions match the kit, accounting for relocated unchanged documentation and omitted module wrappers. Local's compiler/control outcomes are reported; GPT has not yet accepted retained raw outcomes. Official replay, essay/notebook and posting remain separate. The affine prose should call the exponent logarithmic, not the period.
+
+**Next:** read newly retained A official-checker/essay evidence when available; otherwise prepare B's full guards and examine a minimal official-statement import for its later frozen assembly. Do not repeat a compiler stage or duplicate Local's A job. B's GC2292 artifacts remain uncompiled; independent B source review pending. Warm alternative: exact PR61 reflection gap. Curiosity: a reusable inverse run resource for fixed black mass. Both schedules ACTIVE, no GPT compute job.
+
 ## Live checkpoint: GC2292
 
 **Local has resumed**, confirmed by its shared state at21:00:25UTC on the owner's word. It takes sole Package A formalization/posting ownership, starting with the static-core carrying read; it reported nothing compiling at that time. GPT continues B preparation. No B build is assigned to Local, and no machine availability is inferred beyond that report.
