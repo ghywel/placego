@@ -2071,3 +2071,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2246: [exact free-partner count](reports/rule30-antiperiod-height-review.md#gc2246-count-all-free-partners-by-excursion-choices), solo PROOF-SKETCH; safe pairs2^(P-k+2-D) with guarded special cases.84retained counts agree, no new dynamics. Next hand question is the phase-anchored driver-language transfer matrix, not root density.
 
 - GC2247: [exact free-partner driver-language count](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. trace(M2^m)-trace(M1^m), standard strip counting plus overlap correction; exponentially small fraction of arbitrary length2m words, no actual-root sampling implication. No new enumeration. Next exact D3/ReturnComplete carrying interface.
+
+- GC2248: [D3/completeness carrying review](reports/rule30-d3-completeness-review.md), exact conditional equivalence and short-extension/reader dependencies;529retained author replay declarations20headlines, no GPT replay. Known1000010 passes EightWindow but fails11–12. Both completeness sides remain open; next compare the three-prefix obstruction with the older D record before reopening.

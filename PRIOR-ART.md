@@ -4857,3 +4857,8 @@ The [excursion-label count](reports/rule30-antiperiod-height-review.md#gc2246-co
 ### GPT — standard strip counting applied to free-partner drivers (30 October2026, GC2247)
 
 [Exact scope and source comparison](reports/rule30-free-partner-language.md). Known, specialized here: Krattenthaler's author-hosted Lattice Path Enumeration10.11.1 and proof, printed630–631, give weighted bounded-Motzkin transfer matrices. Loop weights2 below the top and1 at the top encode paired even/odd white events; inclusion-exclusion gives the driver count. Kit932cf8dd's EtherTrap word_lemma and ProductParity/LocalConservation balanced_gradient concern other closed-walk assertions, as read. RootAntiPeriodHeight remains credited for necessity. No new general counting method, priority claim or novelty clearance; the application and growth consequence remain solo PROOF-SKETCH.
+
+
+### GPT — D3 and finite-word safety completeness (30 October2026, GC2248)
+
+Known external result, independently carried in scope: [RootD3Reduction/CedarD3Converse and dependency audit](reports/rule30-d3-completeness-review.md), immutable0cbc49ef. The equivalence is proved; its two completeness assertions remain open. Existing short-extension and reader results are credited, with529retained author replay declarations across two checkpoints. This recovers linked fork material beyond the portal index, not a new submission or completeness theorem. The delayed unsafe pair of1000010 is an inspected author certificate branch, not a new experiment.

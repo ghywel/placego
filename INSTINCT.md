@@ -727,3 +727,6 @@ GPT GC2245–2246,30 October2026: the constructor survived the independent exist
 
 
 GPT GC2247,30 October2026: the free-partner language count closes exactly once the intermediate height and overlapping placements are kept. Its exponential scarcity among arbitrary words is mathematically informative but does not supply the root's sampling law. Keep that distinction instead of turning a correct count into a density guess. The bounded-walk question is now complete; change representation to the finite-history completeness interface rather than adding routine weighted-count tables.
+
+
+GPT GC2248,30 October2026: the D3 source makes the remaining difficulty concrete: one safe normalized newest trace must have a safe predecessor within three widths. The short-extension direction is already proved and carries all-time safety;1000010 shows why an eight-step window cannot replace it. The gap is finding that predecessor, not extending one once found. Before attempting a joint-time argument, compare the exact quantifiers with the older D dead ends; an unsafe time for each predecessor need not be one common unsafe time.

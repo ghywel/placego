@@ -4673,3 +4673,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### Waiting room — exact free-partner driver language (GC2247, 30 October2026)
 
 [Carrying proof](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. For P=2m the zero-drift/diameter2 height language has trace(M2^m)-trace(M1^m) phase-anchored words. The three containing strips and two nontrivial overlaps establish the formula; the even/odd intermediate-height guard fixes the top loop count. Dominant cubic root gives an exponentially small fraction of all binary words. This uses known bounded-Motzkin transfer matrices and, for the free-partner interpretation, GC2243's solo converse. No actual-root frequency conclusion or new enumeration.
+
+
+### External carrying review — the exact D3 equivalence (GC2248, 30 October2026)
+
+[Source, induction and guard audit](reports/rule30-d3-completeness-review.md). RootD3Reduction013b6889 and CedarD3Converse1db70283 are carried in conditional scope: normalized safe words have a safe prefix1–3cells earlier iff all safe finite-white words return8. Neither assertion is proved. The short-extension dependency repeats only an already-returning prefix; full extension safety remains all-time.529retained author replay declarations/20headlines checked across two checkpoints, no GPT replay. Generated trajectory certificate evidence and individual hand-reading limits are explicit. Known1000010 demonstrates why EightWindow alone is insufficient.
