@@ -9848,3 +9848,66 @@ computation.
 refutation of a critical bound for the actual K.
 
 **Next:** GC2223, GC2225, GC2230 and GC2237.
+
+## L1214 — Local to GPT and Cloud: the last remaining reads carry (GC2223, GC2225, GC2230, GC2237); all overnight sketches are now two-party (2026-10-30 07:45 GMT)
+
+These are hand reads with no computation. Every Boolean substitution below was redone cell by cell.
+
+**GC2223 carries** (rule30-carrier-invasion).
+- **The carrier.** It is a 4-cycle ring orbit: rows 0 to 2 check under the cyclic recurrence. It satisfies
+  B(t+4, j+6) = B(t, j).
+- **The four phases,** each with the cells above the front checked against the background.
+  - A → B: from 101 at s−2..s to 1011 at s−1..s+2. The 1 at s−2 masks s−3.
+  - B → C: 100 at s..s+2. The background 1 at s+3 stalls the front.
+  - C → D: 100 at s+2..s+4.
+  - D → A: 101 at s+4..s+6.
+  - The entrance gives 001, then 111 at t = 2 and 100 at t = 3.
+- **Arrival.** N = 4n is reached in phase A at 8k+1 (n = 3k), D at 8k+4 (n = 3k+1) and B at 8k+6 (n = 3k+2).
+- **The exits,** computed bit by bit against PR48's template words 154, 21, 234 and 170, taken as given:
+  - A: 1011, 0100, 1111, 0000, then 00 against 11, at τ+4;
+  - D: 1100, 1011, then 00 against 10, at τ+2;
+  - B: 0010, 1111, 1000, then 10 against 11, at τ+3.
+  These give f_(3k+3) = 8k+13, f_(3k+1) = 8k+6 and f_(3k+2) = 8k+9. f_0 is separate.
+
+**GC2225 carries.**
+- **The guard map.** The tick layers check:
+  - tick 1: d, b, a, 1, 1;
+  - tick 2: e, c, 0, with the stall;
+  - tick 3: c∨e, c, 0;
+  - tick 4: c∨e, c, 1, with background above.
+- So p' = c and q' = c ∨ e.
+  - p = 0 gives a ∨ b = 1 and e = q ∨ ¬(r ∨ u).
+  - p = 1 gives c = q ∨ r and c ∨ e = 1.
+  - The speed law holds for every older continuation, and the four-row signature table follows.
+- **Two-cycle survival.** Given r ∨ u = 1, the next pair is r' = ¬r and u' = ¬r ∨ f. The cases give
+  u = 1 ∧ (r = 0 ∨ v ∨ w). The cells −4 and 0 control captures at tick 12.
+
+**GC2230 carries** (rule30-profile-boundary-control).
+- **The seven rows,** each re-derived as an eight-bit identity:
+  - 255 has Δ = 0;
+  - 170, 85 and 85 each have Δ = 255;
+  - 153 = 10011001 has Δ = 85;
+  - 150 has Δ = 221 = 153 ∨ 85;
+  - 21 has Δ = 159 = 150 ∨ 153.
+- **The seed.** The initial bits 1,0,1,1,1,0,1 are seed 93.
+- **The exit.** 21 has least period 8, failing at 0/1, 4/6 and 2/6. 21 ∨ 150 = 151 has weight 5, so the next diagonal
+  has least period 16.
+- PR58's A is as carried in GC2229.
+
+**GC2237 carries** (a known finite counterexample).
+- **Recomputed by hand.** F(a), F(b), F²(a), F²(b), the full rows of F³ for both, and F⁴(a) all match. The index-10
+  difference at time 2 is 0 against 1.
+- **The traces.** Both newest-cell traces start 0,0,0,1,0. The full 00010100 through time 7 and the shared 000 at
+  time 6 rest on your listed rows and the author's Lean theorem.
+- **The scope guard.** Both traces start 00, so both are unsafe. This is not a counterexample to safe_sink_separates or
+  ReturnComplete.
+
+**Status: all four are PROVED (hand, two-party)** in scope, conditional on PR48's template and PR58's history as
+carried.
+
+**The overnight review is complete** (L1204 to L1214).
+- Every PROOF-SKETCH from GC2153 to GC2253 that was named as awaiting my read is now carried two-party in its stated
+  scope. That includes the queued GC2156 to GC2158, GC2157 and GC2201.
+- No read found an error. The few computed inputs, census counts and pilot results remain COMPUTED by GPT, with
+  their own controls.
+- Nothing here moves the prize or creates a portal package.
