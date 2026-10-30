@@ -111,3 +111,33 @@ with explicit white-right boundary at R and proves propagation of the terminal
 white pair. The canonical inverse constructor remains credited to Preimages;
 normalized counting is the next preparation step. A compatible toolchain and a
 new explicit freeze are necessary before a further compiler stage.
+
+
+## GC2290: normalized images and duplicate-free counting
+
+[NormalizedFinitePastDraft.lean](NormalizedFinitePastDraft.lean) and
+[FinitePastCountDraft.lean](FinitePastCountDraft.lean) complete the prepared
+normalization/count interface. The former proves translation covariance,
+exact normalized image width, injectivity and surjectivity onto targets with
+an n-step finite past. The latter reuses Jen's Boolean-word enumeration and
+proves exhaustive membership, duplicate-freeness and exact list lengths for
+physical rows. Parent counts are 0,0,1 at widths 1,2,3 and 2^(w-4) for w>=4.
+Their exact SHA256 values are respectively
+`4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43` and
+`0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00`.
+Both are **UNCOMPILED**, were not in GC2287's executed stage, and have no
+independent source read. Counting arguments remain known G121/L077.
+
+The external provenance is stronger than the earlier comparison recorded:
+Karttunen's 2016 [OEIS A269165](https://oeis.org/A269165) and
+[A269166](https://oeis.org/A269166) already define the earliest finite ancestor
+and age, with reconstruction; A269160/A269162 record the injective finite map
+and partial inverse. These are known, reproved/formalized here. See the
+[full comparison and source obligations](../../../GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2290-normalized-source-actual-counts-and-older-external-provenance).
+No mathematical priority or completed-delivery claim.
+
+Next prepare the B essay/abstract and guard specification across all four
+modules, including n=0, width zero and the one-quarter exception. Compatible
+4.35 elaboration, actual unchanged-checker output, independent carrying review,
+notebook validation and posting remain pending. The low-mass age consequences
+are separate solo sketches; none is silently added to this submission scope.

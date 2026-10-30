@@ -4731,3 +4731,8 @@ Further solo identities in that account: corrected physical finite-parent count2
 ### Waiting room — finite ancestry with at most three black cells (GC2289,30 October2026)
 
 [Complete argument](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2289-at-three-black-cells-finite-ancestry-has-depth-at-most-two), solo PROOF-SKETCH. One/two-black rows are roots. A three-black width-w row has a parent only if it is11 0^(w-3)1; that parent is the solid width-(w-2)block, which has a root predecessor exactly when3divides w-2. Therefore all three-black ages are<=2and the fixed-width/fixed-three-black mean is(1+[w=2mod3])/(w-2). Known G121/G122/L077 and GC544/GC593/CL058 mechanisms credited. No monotone black-count assumption, numerical fit, orbit law, independent read or compilation. The separate GC2286/GC2288 Lean sources transcribe the older finite core and remain UNCOMPILED after the pilot stopped in an unchanged dependency.
+
+
+### Waiting room — four-black finite ancestry has sharp age bound four (GC2291,30 October2026)
+
+[Complete proof and branch table](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2291-four-black-cells-have-ancestral-age-at-most-four), solo PROOF-SKETCH. Every nonroot four-black row at0,1,k,R has k>=3 and parent1^(k-2)0 1^(R-k). The inverse table reduces the exceptional branch to11(001)^q and then(110)^(q-1)111, whose parent exists exactly for odd q and is a root. The sharp bound is4, attained by110010001. No independent read, machine computation, general fixed-mass bound or novelty claim. Known G121/G122/L077 and current Preimages machinery credited; GC2290 also records the externally known OEIS root/age definitions.

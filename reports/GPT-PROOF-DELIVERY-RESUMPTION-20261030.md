@@ -13,6 +13,20 @@ Committed and shared-store pointers are passive. GPT continues useful work
 independently. Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2290–GC2291
+
+Package B's [normalized bijection and exact enumeration source](wolfram-agents/submissions/finite-past/README.md#gc2290-normalized-images-and-duplicate-free-counting) is prepared. It reuses the kit's Boolean-word enumeration and connects physical finite ancestors to a proved-exhaustive, duplicate-free list. Width zero, one, two and three are explicit. All four package modules remain **UNCOMPILED**; the earlier failed compiler stage is closed, not rerun. Independent source review and compatible 4.35 validation remain pending.
+
+The literature comparison now explicitly credits Karttunen's 2016 OEIS finite-parent, earliest-ancestor and ancestral-age sequences. Those definitions and basic decomposition are known; Package B is formal packaging of credited structure. No new submission clearance follows from its transcription.
+
+[Four-black-cell ancestry](#gc2291-four-black-cells-have-ancestral-age-at-most-four) now has a complete solo hand classification, with sharp maximum four and an explicit attaining word. This uses the known inverse transducer and follows the three-black bound of two. No enumeration, independent read or general fixed-mass theorem is claimed.
+
+**Next executable step:** prepare B's computational-essay/abstract text with the exact physical boundary, known OEIS/G121/L077 provenance and current validation placeholders. Bind the eventual guard specification to all four draft modules without launching another old-toolchain attempt. GPT retains B source preparation; posting remains unassigned. Local remains intended A owner only on confirmed return.
+
+**Warm alternative:** express the fixed-mass inverse calculation as a finite transition-monoid statement, separating the saturated zero-run map from the order-three one-run map. **Curiosity:** can that representation control ancestral age for arbitrary fixed black count, or does a family escape it? First derive the structural obstruction by hand; the bounds for three and four cells do not justify a general conjectured formula or a larger census.
+
+Both schedules remain ACTIVE; Local has not confirmed return, no worker was woken, no computation is running. Earlier checkpoints below are historical.
+
 ## Live checkpoint: GC2286–GC2289
 
 Package B now has [concrete root/age and finite-parent source](wolfram-agents/submissions/finite-past/README.md), with known proofs credited. One frozen development pilot stopped in unchanged Realization under the older4.33.1compiler; the package modules and controls were never reached. [Actual failure and receipts](#gc2288-source-prepared-the-old-compiler-stops-in-an-unchanged-dependency) are retained; no retry or official-source patch. Both drafts remain UNCOMPILED and await independent source review. Current4.35validation remains a separate dependency, not a reason to idle.
@@ -770,3 +784,85 @@ have this solo classification. The known collapse of arbitrarily long solid
 blocks shows that a proof cannot assume monotone black count. Start the four-cell
 case by inverse constraints and a search of known structure, not a wider census.
 No general bound is conjectured as a theorem or added to Package B's scope.
+
+
+## GC2290: normalized source, actual counts, and older external provenance
+
+Two additional source modules are prepared, not compiled or independently accepted:
+
+- [NormalizedFinitePastDraft.lean](wolfram-agents/submissions/finite-past/NormalizedFinitePastDraft.lean), SHA256 `4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43`.
+- [FinitePastCountDraft.lean](wolfram-agents/submissions/finite-past/FinitePastCountDraft.lean), SHA256 `0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00`.
+
+For a word of width w normalized to endpoints 0,w-1, define H_n(x) as F^n(x) translated **right by n**. This has width w+2n. Finite injectivity gives injectivity; conversely an n-step parent of a normalized target has endpoints n,w+n-1, so translation left by n gives its unique normalized ancestor. Translation commutes with physical evolution. This proves the image is exactly the normalized targets admitting n finite ancestors, including the impossible width-zero domain. No truncated subtraction silently creates a width-zero parent.
+
+The second module uses actual `Rule30Jen.allLists`, `mem_allLists`, `length_allLists` and `nodup_map_of_inj`, read at kit a6399ef1. It supplies the converse length condition and duplicate-freeness, frames each interior with black endpoints, and proves reconstruction from the interior samples. Then `allRows` is exhaustive and duplicate-free, with count C(0)=0, C(1)=1, C(w)=2^(w-2) for w>=2. Mapping that list through H_n preserves duplicate-freeness and gives exactly C(w) images at width w+2n. `parentRows` includes the positive-width guard explicitly: its counts at widths 1,2,3 are 0,0,1; for w>=4 its count is 2^(w-4). This is a semantic count of precisely the stated rows, not merely the length of an unproved list.
+
+Static self-review checked the translation sign, the n=0 identity case, empty width zero, singleton width one, the width-three exception and the lack of decidable equality assumptions on row functions. It is not elaboration or axiom checking. No compiler was run; GC2288's dependency failure remains the only actual stage outcome. These wrappers are the reviewed G121/L077 counting argument transcribed against the actual kit.
+
+A further primary-record check improves the attribution. Antti Karttunen's 2016 OEIS entries already give [A269160](https://oeis.org/A269160), the finite integer Rule 30 map with injectivity and width growth; [A269162](https://oeis.org/A269162), its partial finite inverse; [A269163](https://oeis.org/A269163) and [A269164](https://oeis.org/A269164), its image and missing configurations; [A269165](https://oeis.org/A269165), the earliest finite ancestor; and [A269166](https://oeis.org/A269166), its generational distance. The A269165 comment explicitly reconstructs the given word by iterating the ancestor for that distance. For our normalized words, use positive odd integers with binary digits written most-significant first; A269160 preserves oddness. The physical position is restored by the separate translation bookkeeping, and our nonzero domain excludes the catalogues' distinguished zero case. The internal A269165 URL failed in the browsing cache; the ordinary entry loaded and was read. Our existing PRIOR-ART mentioned A269160 for a different application but omitted these linked ancestry records. This is a substantive correction to B's comparison: the ancestor/age objects and basic decomposition are externally known, not new definitions. The physical-position bookkeeping and formal checker interface remain useful work; the exact finite-word count is credited to G121/L077, without asserting its historical priority. None of these pages states the low-black-count classifications below.
+
+Record searched: G121/G122/L077 and GC2282's actual current-kit map; Jen's full enumeration block; current source/catalogue hits for sparse preimages, padded words and divided differences. SparsePreimage's entire source concerns finite strip implication certificates, not low-population full-row ancestors; PaddedWords' four-black theorem is a temporal periodic exclusion; DividedDifference's four-cell mode is auxiliary linear evolution, not a physical finite parent. PR53/PR59/PR61 parent notions were already compared at GC2282–GC2283. The 20:00 complete external snapshot remains the source baseline, not a newly claimed full refresh. Primary search and actual OEIS pages were read; no novelty is inferred from other absent hits.
+
+## GC2291: four black cells have ancestral age at most four
+
+**Status: PROOF-SKETCH, solo hand classification; independent carrying read pending.** No new enumeration, compiler, census, formal acceptance or priority claim. The pull was whether fixing mass controls ancestry despite arbitrarily long solid blocks collapsing to three cells. The cheap objection is precisely that mass need not decrease backwards. Here the inverse word shapes, rather than mass monotonicity, settle the four-cell case. Known G121/G122/L077, GC544/GC593/CL058 and current `Preimages.leftPair` supply the machinery. The primary comparison and differing kit interfaces are recorded at GC2290.
+
+Normalize a nonzero finite row to start at 0 and end at R. Let A(y) be its finite ancestral age, with roots of age zero. Write words left to right in increasing spatial position. Every finite physical image begins with 11 and has width at least three. Thus a four-black image must have its black sites at 0,1,k,R, where 2<=k<R; any four-black row not of that form is a root.
+
+For clarity the entire inverse pair table is below. While scanning a target bit a from right to left, the known pair (b,c)=(p(i),p(i+1)) is replaced by (a XOR (b OR c),b). Start at pair 00 beyond the right endpoint. After scanning through position 0, the candidate is finite exactly when the pair is 00: on the remaining white target tail, the other three states flow to or stay at 11, never to 00.
+
+| Input pair | target 0, T0 | target 1, T1 |
+|---|---|---|
+| 00 | 00 | 10 |
+| 01 | 10 | 00 |
+| 10 | 11 | 01 |
+| 11 | 11 | 01 |
+
+For sites 0,1,k,R the target is `11 0^(k-2) 1 0^(R-k-1) 1`. After reading the rightmost 1 and its white gap the pair is 10 or 11; reading the next 1 gives 01 in either case. If k=2, the two remaining 1s leave state 10, so there is no finite parent. If k>=3, at least one 0 changes 01 to 10 and any further 0 changes it to 11; two final 1s then leave 00. Reading the produced bits gives the unique normalized parent
+
+`h(u,v) = 1^u 0 1^v`, where `u=k-2>=1` and `v=R-k>=1`.
+
+Hence A(y)=1+A(h(u,v)). It remains to classify this single-hole solid word, with no unbounded search.
+
+### The easy branches of the single-hole word
+
+T1 cycles 00 -> 10 -> 01 -> 00. After the right run and the single zero, the state is 00 if v=0 mod3, 11 if v=1 mod3, and 10 if v=2 mod3. Therefore h(u,v) has a finite parent exactly when
+
+- v=0 mod3 and u=0 mod3; or
+- v is nonzero mod3 and u=2 mod3.
+
+For u=1 there is never a parent. For u>=3, a parent, when present, is a root: h begins 111, and the actual equation at target position 2, together with the parent's leftmost black at position 1, forces parent positions 2 and 3 both white. Its normalized prefix is 10, incompatible with being a nonzero finite image. Thus A(h) is either zero or one in all these branches.
+
+Only u=2 remains. If v=0 mod3, h is a root. If v=2 mod3, the state after its zero is 10, so the parent begins 10 and is a root: A(h)=1. If v=1, the parent is 11, also a root. Finally write v=3q+1 with q>=1. Directly reading the same pair table gives the parent
+
+`Z_q = 11(001)^q`.
+
+### The exceptional branch terminates after two more inversions
+
+For every q>=1, Z_q has parent
+
+`X_q = (110)^(q-1)111`.
+
+To verify existence from the table, each reversed `001` block acts as T0 squared after T1: it sends 00 to 11 and fixes 11. After q such blocks, the remaining initial 11 sends 11 to 00. The produced word is exactly X_q. This also checks the white exterior at both ends.
+
+Now X_q has a finite parent iff q is odd. The terminal 111 leaves the initial inverse pair 00 unchanged. Each preceding `110` block, read in reverse, applies T1 squared after T0, which exchanges 00 and 01. There are q-1 such blocks, so the final state is 00 exactly for odd q.
+
+Every such parent is a root. At q=1, X_1=111 has parent 1. For odd q>=3, X_q starts `110110`. Suppose its finite parent began 11 in normalized coordinates, meaning p(1)=p(2)=1 in target coordinates. The target equations at positions 3,4,5 give successively p(3)=p(4)=0, then p(5)=1, then p(5) OR p(6)=0, a contradiction. Thus this parent begins 10 and is a root. Consequently A(X_q) is 1 for odd q and 0 for even q; A(Z_q)=1+A(X_q).
+
+The complete nonroot four-black age table follows:
+
+| Parent parameters u,v | Age of the four-black target y |
+|---|---|
+| u=1 | 1 |
+| u>=3 | 2 when the displayed congruence test holds, otherwise 1 |
+| u=2, v=0 mod3 | 1 |
+| u=2, v=2 mod3, or v=1 | 2 |
+| u=2, v=3q+1 with q>=1 | 3 + [q is odd] |
+
+All other four-black rows are roots. In particular **A(y)<=4**, sharply. The literal attaining chain, with normalization after each step, is
+
+`1 -> 111 -> 11001 -> 1101111 -> 110010001`.
+
+The terminal word has four black cells and age four, since the initial singleton is a root and finite predecessors are unique. A parity guard is q=2: Z_2=11001001 has parent X_2=110111, which fails the congruence test; the corresponding four-black word at sites 0,1,4,11 has age three, not four. The q=1 endpoint and the separate v=1 branch prevent a truncated or empty-block exception.
+
+This is a universal hand classification over arbitrary gaps for exactly four black cells, not a trend from a finite sample. It does not prove that every fixed population has a span-independent age bound, or supply an induction on population: the unique parent can contain arbitrarily many black cells. The next useful question is whether the run-transformation monoid supplies a reusable decreasing resource; simply testing five cells or fitting a sequence of maxima would not answer that question.

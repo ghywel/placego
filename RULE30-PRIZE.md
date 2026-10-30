@@ -668,3 +668,6 @@ the same way.
 
 
 [8.121 Local group transport and the boundary needed for profile decoding, GC2229–GC2230](reports/rule30-prize/RULE30-PRIZE-8.3.md#8121-local-group-transport-and-the-boundary-needed-for-profile-decoding-gc2229gc2230-30-october-2026).
+
+
+**Finite-past side-result pointer, GC2290–GC2291 (30 October2026):** [source preparation, attribution and low-mass classification](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#live-checkpoint-gc2290gc2291). Physical finite-parent/root/age objects already occur in Karttunen's2016 OEIS records; B packages credited structure, with four modules prepared but UNCOMPILED. A separate solo hand classification bounds the age of every four-black row by4, sharply; independent carrying read pending. The general fixed-mass question belongs to CONSTELLATION, not the prize board. No centre-column exclusion or new submission follows.

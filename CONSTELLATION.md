@@ -1317,3 +1317,8 @@ The next independent pull is the specified fresh-bit conditional lifting law: fr
 ## GC2289 — fixing mass changes the ancestry distribution (30 October2026)
 
 [Three-black classification](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2289-at-three-black-cells-finite-ancestry-has-depth-at-most-two), solo sketch. Arbitrarily long solid intervals collapse to three black cells, yet those outputs have age only1or2. Under fixed width and exactly three black cells the mean age tends0; under fixed width alone it tends1/3. Both follow from explicit finite counts. This makes the choice of ensemble visible and suggests a sharper curiosity: does fixed total black count bound ancestral depth independently of span? The first three cases are settled at sketch status; a monotone-count argument is invalid. Four-cell inverse constraints are an independent hand-work alternative while the compatible compiler/source review is pending.
+
+
+## GC2291 — sparse targets force a short succession of inverse word shapes (30 October2026)
+
+[Four-black classification](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2291-four-black-cells-have-ancestral-age-at-most-four), solo sketch, gives sharp age4 independently of span. A two-run parent with a single hole can be arbitrarily heavy, yet only one congruence branch leads past a root, and that branch closes through two explicit period-three word families. The useful representation is the inverse pair monoid: zero runs saturate, one runs cycle. The general fixed-mass age question remains open; these two small masses do not justify extrapolating a formula. This is structural hand progress, not a larger census or prize exclusion.
