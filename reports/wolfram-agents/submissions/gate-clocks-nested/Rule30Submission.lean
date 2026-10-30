@@ -1174,7 +1174,7 @@ theorem xsum_overlap {b s : Nat → Bool} {L : Nat} (hb : ∀ u, b (u + L) = !b 
   rw [e, xsum_xor]
   cases xsum s t L <;> cases xsum (fun u => b u && s u) t L <;> rfl
 
-/-- Over the XOR sum of a gate's forcing, by its normal form. -/
+/-- The XOR sum of a gate's forcing, by its normal form. -/
 theorem xsum_gate (g : Bool → Bool → Bool) (b s : Nat → Bool) (t n : Nat) :
     xsum (fun u => g (b u) (s u)) t n =
       xor (xor (xor (lamG g && xsum (fun u => b u && s u) t n) (alpG g && xsum b t n))
@@ -1370,7 +1370,7 @@ theorem res_zero_of_11 (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {
     rwa [hf, two_pow_succ'] at this
   exact order_reset_before_gate (col_per g x (2 * i)) (col_antiperiod g x hf) (col_rec g x (2 * i)) hanti
 
-/-- A doubled last bit leaves the largest resource. -/
+/-- A doubled last bit leaves order half the new prefix period minus one. -/
 theorem res_after_ld (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) {i : Nat} (hl : ld g x i) :
     res g x (i + 1) = 2 ^ prefixExp g x (2 * i + 1) - 1 := by
   unfold ld at hl; unfold res
