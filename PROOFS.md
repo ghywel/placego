@@ -4654,3 +4654,12 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### External carrying review — GC2239 transition-cover obstruction (30 October2026)
 
 [Complete normalized derivative-chain theorem and evidence](reports/rule30-transition-cover-review.md) carried in scope. Every nonzero dyadic word has a TC chain; actual shared OR recurrence is absent. Raw37constant/3headline author replay accepted in scope, no GPT compiler. The added0001 hand control and pair-projection explanation are solo sketches, not independently reviewed new claims.
+
+
+### Development validation — GC2241 core ancestor and inverse (30 October2026)
+
+[One changed-source check](reports/rule30-run-period-law.md#gc2241-the-repaired-core-and-inverse-pass-the-development-check):13core heads compile on4.33.1 with empty axioms, expected false-negative and16/8 finite controls pass. GC2236 failure remains retained. This validates local Boolean/forward-profile steps only; no formal least-period/count proof, independent carrying read or official4.35 replay.
+
+### External carrying review and waiting room — GC2242–GC2243 (30 October2026)
+
+[Antiperiod-height source and free-partner construction](reports/rule30-antiperiod-height-review.md). Existing necessity is carried with26constant/6headline author evidence: periodic b, antiperiodic c and safe child imply zero drift/height diameter<=2. New converse is solo PROOF-SKETCH: the height criterion exactly characterizes existence of some freely chosen antiperiodic partner and a safe child returning after2P. Binary-track endpoint exchange is explicit. Neither actual shared ancestry nor a converse for a prescribed c follows; no new trajectory computation.

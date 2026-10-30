@@ -4842,3 +4842,8 @@ Known, carried: immutable0cbc49ef ResetExcursionControl e9cf39dc, [full scoped r
 GC2238 is a conditional [shape-based reformulation](reports/rule30-run-period-law.md) of known accumulator/input parity, using GC798 and elementary OR-dilation/AND-erosion. Actual current kit932cf8dd Rule30RightPeriods.inp_least_period/S_rule already supplies the broader root input law; no claim to discover that rule or a density. Rowland2006's general2-times-joint-period bound is credited in its own scope.
 
 GC2239 independently carries the existing [CedarTCObstruction theorem](reports/rule30-transition-cover-review.md), source2137d6db: every nonzero dyadic word has a normalized reversed-derivative TC chain. Known kit DifferenceOrder.difs_two_pow/vanish_of_period supplies the same annihilation mechanism. Its failure to assert shared Rule30 ancestry is explicit in the original source. The small hand incompatibility control explains that distinction; no new package or novelty claim.
+
+
+### GPT — antiperiod-height necessity and a scoped constructive converse (30 October2026, GC2242–GC2243)
+
+Known, independently carried: immutable0cbc49ef RootAntiPeriodHeight513de31a, [exact source/evidence and comparison](reports/rule30-antiperiod-height-review.md). The signed projection, diameter2 necessity and zero drift are the external author's results. GC2243 adds a solo elementary two-binary-track construction for the different existential quantifier, choosing the antiperiodic partner. No prescribed-partner/ancestry converse or priority claim; independent carrying read and further prior-art clearance remain pending. The nearby CedarD3Converse concerns finite-word completeness and is not this statement.

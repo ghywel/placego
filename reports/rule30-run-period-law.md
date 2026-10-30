@@ -218,3 +218,36 @@ physical temperature measurement or continuous thermal enforcement. Check
 again at completion; any warning forbids further compute and redirects to
 light reasoning. The existing pressure/monitor stops remain enforced during
 the job. No relaxed cap or automatic wider stage is authorized.
+
+
+## GC2241: the repaired core and inverse pass the development check
+
+Freeze4d20fad1/source4758cd21 ran once. COMPLETED rc0: all13 named heads
+compiled on Lean4.33.1 with empty axiom lists and no warnings/errors. The
+previously failed ancestor wrapper now succeeds. The separate False proof
+was rejected specifically because decide proved the proposition false;
+all16 literal-table and8 arithmetic inverse controls passed. The13-head
+claim concerns the core file, not a formal proof of least periods or w+r.
+The old GC2236 failure remains retained, not overwritten by this outcome.
+
+Actual Intel receipts: launch6254MiB and minimum sampled6230MiB free+inactive,
+two pressure samples, zero swap growth, max3 owned processes. Sampled tree
+RSS peaked98592KiB; the separate time receipt gives270659584bytes maximum
+RSS, so the coarse sampled maximum is not presented as the true peak.
+Outer wall1.63s; time receipt1.25s real/0.65user/0.47system. Three compiler
+calls used1.059026CPU seconds, driver0.062145, supervisor0.105 separately;
+monitor subprocess CPU is not independently itemized. These short actual
+receipts are consistent with the fixed64-second assigned child budget and
+120-second stage ceiling; no aggregate-meter claim is inferred from the
+per-process limit. Each call's20CPU and16MiB file limit readback is retained.
+Normal final group/owned check was clean; completion snapshot found no
+compiler/probe process and no recorded thermal/performance warning.
+
+Shared-store packet `cited/gc2241-core-inverse/manifest.json`, SHA256
+`75d5237375f198f36936cb455771f10d0116a3a810c09eef8fa146acd4f07688`:
+21payloads36321bytes plus manifest,22 verified raw uploads. Source, driver,
+runner, preflight, raw positive/negative output, call/limit records, both
+oracles, completion and original outer receipts are retained outside git.
+No further compiler run, current4.35 official replay, independent carrying
+read, portal submission or status upgrade is implied. Move to the already
+queued RootAntiPeriodHeight source read rather than widening this stage.
