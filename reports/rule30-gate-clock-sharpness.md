@@ -291,3 +291,61 @@ shared-store `cited/l1241-gate-sharpness/`, manifest SHA256
 What this shows: a single family keeps one doubling per pair, with excess 2, for 38 bits, through both countdowns. What
 it does not show: GC2310's gaps stand. A global bound needs the coupled accounting that covers `00` losses and later
 recovery, and per-depth best rows from other runs are not used as evidence here.
+
+## L1242: the coupled accounting, a first draft (PROOF-SKETCH, Local; GPT carrying read pending)
+
+**Claim.** For every two-input gate family (one static gate per depth) and every seed, `E(2m) ≤ m + 2` for all
+`m ≤ 2057`. More precisely, the excess `e_m = E(2m) - m` first reaches 3 no earlier than pair-count 2058. The
+record-charge bound alone allows excess 3 from pair-count 19.
+
+**Notation.** Pairs are zero-based: pair `i` is bits `2i, 2i+1`, and its pattern is (first bit doubles, last bit
+doubles). `M_i = 2^E(2i)` is the prefix period before pair `i`. `R_i = O(x_(2i-1), M_i)`, the kit's resource, is the
+order of the previous pair's last bit. `F_i` is the order of the previous pair's first bit, over that bit's prefix
+period. All periods below are dyadic, so the order is the kit's `order`.
+
+**The facts used, with their status:**
+1. (no-three, PROVED two-party) a `11` pair with `M ≥ 2` is followed by a first bit that does not double.
+2. (GC2310 (ii), carried L1241) after a `01` pair with `P ≥ 2`, the next first bit doubles only if the `01` pair's
+   first bit has order 0. After any `?1` pair the last bit has order `2^(E-1) - 1 ≠ 0` (kit `order_of_antiperiod`), so
+   a `11` needs the previous pair to end without doubling, with resource 0. Its last bit doubles only if
+   `R = 0` (the same parity computation, with the doubled first bit as the antiperiodic input).
+3. (iii) = `order_countdown_gate` (Lean, A): between consecutive `01` pairs, `F' ≥ F - 1`. Through a `10` pair,
+   `R' ≥ R - 1`.
+4. (L1241 step, PROOF-SKETCH, Local) right after a `11` pair with `M ≥ 4` before it, the next first bit, if it does
+   not double, has order `≥ M - 2`.
+5. (kit `order_of_antiperiod`) a `01` sets `R` to `2^(E-1) - 1`, at the new exponent E.
+
+**Structure of a first record (hand).** Excess changes only at `11` (+1) and `00` (−1). Suppose excess first reaches
+`q + 1` after pair `i - 1`, by a `11`; it cannot be anything else.
+- Take the last pair before `i - 1` that changed the excess. It is not a `00`: that would mean the excess had already
+  been `q + 1`. So it is a `11` at some pair `p'`, raising the excess to `q`, and every pair strictly between `p'` and
+  `i - 1` is `01` or `10`.
+- Pair `p' + 1` is `01`. By fact 1 it is not `1?`, and `00` would change the excess.
+- The pair before `i - 1` is `10`. By fact 2 it must end without doubling, and only `10` does, among `01`, `10`.
+- So the stretch is `11 · (01)^K · w · 11`. Here `K ≥ 1` counts the `01`s before the first `10`, and `w` is a word in
+  `01`, `10` that starts with `10` and ends with `10`.
+- By facts 2 to 4, the first `10` needs `F = 0`. `F` starts at least `M' - 2`, with `M' = M_(p')`, and drops by at
+  most one per `01`. Hence `K ≥ M' - 1`.
+- After the last `01` in the stretch, the resource is `2^(E*-1) - 1`, by fact 5. It drops by at most one per `10`
+  (fact 3) and must be 0 before the record `11`. So the last `10` run has at least `2^(E*-1) - 1` pairs, with
+  `E* ≥ E(2p') + 2 + K`, since each `01` adds one. A `01` inside `w` only resets `R` higher, so it cannot help.
+
+Hence `i ≥ p' + 1 + K + (2^(E* - 1) - 1) + 1`, with `M' = 2^E(2p')` and `E(2p') = p' + q - 1`.
+
+**For q + 1 = 3.** The `11` raising the excess to 2 is at pair `p' ≥ 2`. It cannot be pair 1, since `E(4) ≤ 3`: bits
+1 and 2 doubling with bit 0 of period 2 stop bit 3, by no-three. At `p' = 2`: `E(4) = 3`, `M' = 8`, `K ≥ 7`,
+`E* ≥ 12`, and the bound is `i ≥ 2 + 1 + 7 + 2047 + 1 = 2058`. Later `p'` give larger bounds. So excess 3 needs
+pair-count `m ≥ 2058`. This is the exact shape of the L1241 traced family (7 `01`s, then the countdown from 2047),
+which is therefore extremal up to the point the run reached.
+
+**Sharpness in this range.** The traced family has `E(2m) = m + 2` for `3 ≤ m ≤ 19`. The claim would make
+`m + 2` the exact maximum there, if the family continues, which is not shown beyond `m = 19`.
+
+**Larger q (outline only).** The same structure gives a doubly exponential recursion,
+`T(q+1) ≥ T(q) + 2^(T(q) + q - 2) + 2^(T(q) + q + 2^(T(q)+q-2) - 1)` roughly, against the record charge's
+`T(q) + 2^(T(q) + q)`. That would make the excess grow like half of `log*`. Not checked in detail.
+
+**Gaps a reader should test.** The record argument's case analysis, especially the claim that only `01` can follow
+the `11` at `p'` (fact 1 needs `M_(p') ≥ 2`). The direction of fact 2 for the last bit. The M−2 step's
+`le_order_iff` range (`M ≥ 4`). Whether a `00` anywhere outside the final stretch can matter: it cannot, since the
+argument looks only at the stretch after the last excess change.
