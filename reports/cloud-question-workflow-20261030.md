@@ -2,9 +2,37 @@
 
 GPT, GC2259, 30 October 2026. Owner resumes sustained work through CL658 and CL661. This supersedes the earlier single-block stop for this task, without rearming either heartbeat. New hand results remain PROOF-SKETCH until an independent carrying read. Computed answers retain their exact range and controls. No prize claim or automatic extension of a failed run.
 
-## Queue and scope
+## Outcome at GC2270
 
-Read CL653–CL661 completely, including the exact question set. Read all six new probe sources. Refresh: kit a6399ef1; portal/index15:45:30UTC,16open PRs. New PR60 inverse-cascade source and portal5beddc are relevant candidates for comparison, not yet adopted. Record/actual kit sources and Nersissian2609.25077 sections2/4 are being checked; the related2609.25078 is a different paper, already read in the preceding block.
+All nineteen main questions and nine conditional forks have a supported disposition below. This completes the requested investigation, not the unresolved universal claims. New solo hand deductions remain PROOF-SKETCH. Five stages passed; one additional structural stage failed its first control and was retained before a separately frozen correction passed. The period128 substep stopped at its declared state cap and is not a closed certificate.
+
+| Question | Answer / remaining obstruction |
+|---|---|
+| A1 | Antiperiodic-support lemma carried, known Lucas/Newton consequence. Case A needs P>=4; explicit P2 correction. |
+| A2 | Exact geometric fill REFUTED by retained integers; exact support recurrence supplied instead. |
+| A3 | Exact parity formula supplied; 0.29 has no specified root-induced distribution or limit theorem. OPEN. |
+| A4 | Explicit logarithmic bounds for both choked gates, by an invariant affine restriction. PROOF-SKETCH. |
+| A5 | Exact nonlinear difference recurrence; no universal finite propagation cutoff. A compressed rule for arbitrary odd seeds remains OPEN. |
+| A6 | A uniform finite bound would settle the existing open CQ01 reduction. Missing post-cone feedback bound identified. OPEN. |
+| B1 | Full distributions through21prefix bits COMPUTED; first difference at2bits, explained by AND fixed seeds. |
+| B2 | Exact transients through100000 COMPUTED; endpoint ratio1.33255. No limiting-speed decision. |
+| B3 | Period32first at87867; no higher through100000. Pointwise logarithmic-exponent premise REFUTED by known infinitely many constant diagonals. |
+| B4 | All W<=22 one/two-release maxima COMPUTED. Additivity REFUTED, with explicit joint-only gain. |
+| B5 | P128graph NOT CLOSED at200000states; maximum plateau unresolved. Earlier quoted maxima corrected to10/92. |
+| C1 | Cited gate census has four initialization defects. Common limiting density remains OPEN even after common upper bound. |
+| C2 | A conditional fresh-bit formula gives a precise probabilistic interface; actual-root correlation law remains OPEN. |
+| C3 | Proposed fill/parity/overlap monotones fail explicit controls. No second monotone established. |
+| C4 | Exact affine return formula unifies reset and memory; a mask probability alone is insufficient. |
+| E1 | Physical finite-parent law/depth carried; count corrected to2^(w-4) forw>=4. Exact wall bridge supplied. |
+| E2 | Mixed driver gives exactly p or2p via its recurrent-state permutation; constant-one3cycle is an exception. PROOF-SKETCH. |
+| E3 | Width12/40depth census complete. Stronger complete background graph allows exactly two period sequences through40for every finite root; universal bridge remains a solo sketch. |
+| E4 | White-right inverse is exactly T inverse; spatial factor3 and temporal dyadic periods concern different axes. |
+
+Forks: F1 answered negatively at2bits; F2's exact-fill premise is false; F3's pointwise premise is false and its running-maximum variant remains open; F4's exact slope premise is unproved and the suggested record-only mechanism fails to explain the retained jumps; F5's simple bottom-bit criterion fails; F6 additivity is false; F7 is precisely the unresolved CQ01 implication; F8 has two explicit branches through40, with distinct final necklaces and no all-depth conclusion; F9's next strict increase must be96 **if it occurs**, with neither existence nor depth determined by retained histories through512.
+
+## Scope and working sequence
+
+Read CL653–CL661 completely, including the exact question set, and all six new probe sources. Complete index refresh15:45:30UTC: kit a6399ef15ff409d4dc0c5feb119b289aa31588a4,16open PRs. PR60's complete330-line carrying source was read at head db6e71128339d1fc45b5a7ab5f2bade997996ae3, SHA2561d97523e4fd7d9315744852d4c34322846a422459aabd48e69b970f4512c203a; its conclusions remain conditional, with no GPT replay. New portal5beddc source6844781ef08b3cbfffac61e473fd9d3b58eb358f047e4fe3de7744bbc0d33cd7 received only a scope/headline read, not a complete carrying review. PR58's index change is likewise not a new carrying read. The actual kit, equivalent/catalogue and relevant source hits were checked. [Nersissian2609.25077](https://arxiv.org/html/2609.25077v1), sections2.1–2.3 and4.1, supplies the compared Newton and reset machinery; [2609.25078](https://arxiv.org/html/2609.25078v1) is the distinct related paper read in the preceding block. Parry access remains optional and parked at the owner's word.
 
 | Question | Concrete step / current status |
 |---|---|
@@ -90,7 +118,16 @@ This gives an exact analytic Case B, already in the known support calculus, but 
 
 Support growth is not a proof that no shorter description exists. A route to a distribution would need a specified invariant/root-induced measure and a proof controlling these correlations, or a cancellation invariant on actual suppliers. Neither follows from the data. C2 has this named missing step, not an impossibility theorem.
 
-The proposed elementary monotones fail: actual total support decreases from29 at j12 to23 at j13 at unchanged period64; the own-parity bit changes in both directions. Top-half occupancy drops to one coefficient at each doubling and is not a monotone. Raw overlap counts depend on the comparison period and are not a canonical monotone without a normalization. Existing resource inequalities remain useful, but their00case is exactly the known gap; no second monotone is proved here.
+The proposed elementary monotones fail: actual total support decreases from29 at j12 to23 at j13 at unchanged period64; the own-parity bit changes in both directions. Top-half occupancy drops to one coefficient at each doubling and is not a monotone. An explicit finite odd seed also removes any normalization ambiguity for overlaps: seed5 has profiles R0=1, R1=B1, R2=1+B1, R3=B1, R4=B1, all viewed over common period2. The temporal overlap count drops from1 for(R0,R1) to0 for(R1,R2). The raw complementary-support-pair count drops from2 for(R2,R3) to1 for(R3,R4). Dividing by the same period does not restore monotonicity. These identities follow immediately by integrating the constant forcing1 and require no enumeration. Existing resource inequalities remain useful, but their00case is exactly the known gap; no second monotone is proved here.
+
+A precise possible distributional interface is available from the carried reversal law, without assuming that the actual single-cell root is random. Choose initial bits independently and fairly, and condition on bits below j. The prefix period P_j is unchanged by flipping the fresh bit j. The next lifting flag obeys
+
+```text
+d_(j+1)(x_j=1) XOR d_(j+1)(x_j=0)
+ = (P_j mod2) XOR parity_over_P_j(R_(j-1)).
+```
+
+Thus it is conditionally fair exactly when this coefficient is1; otherwise it is deterministic given those lower bits. This gives a rigorous fair-or-deterministic decomposition for that specified product measure. It supplies neither the frequency of the two cases nor an invariant law for their deterministic branch, and it concerns infinite random initial codes rather than the actual finite root. Proving such a law would be a concrete route for C2; support growth alone does not prohibit it. No0.29or universal-density conclusion follows.
 
 ### A4: both choked gates have explicit logarithmic bounds
 
@@ -283,3 +320,39 @@ Failure receipts retained:0.10child wall,0.07user+0.02system seconds,17,362,944b
 Both ring lookbacks now use explicit modulo length. Hand boundary audit: on a one-cell ring both0and1 map to0; on a two-cell ring00->00,01->10,10->01,11->00. The all-black output's first periodic parents are the three rotations of001, canonical001. These explicit controls precede the existing exhaustive30driver-word comparison. No algorithm, horizon, root set, resource cap or canonicalization change.
 
 Corrected source `backward_background_closure.py` SHA256 `dbbcae4e51e03fabf4d6898d8adecfc564c82b8b2b37473ef4a743184c76c4a7`; syntax-only check passes, no corrected-source numerical execution before this freeze. One new diagnostic stage at the same30CPU/60wall/256MiB and previous tree/pressure/output stops. Prediction: repaired small-ring controls pass and the complete40-level background graph has exactly two period sequences. Any further failure ends this correction stage; do not retry. The failed source remains in git439fb062 and its actual receipts are retained separately.
+
+## GC2270: complete background restriction, retained evidence and final disposition
+
+The corrected source ran once under freeze1942840e and PASSED all30literal driver controls and all1536retained root-sequence checks. Child0.14wall,0.12user+0.01system seconds,21,377,024bytes peak RSS; launch5994MiB free+inactive. It completed before a periodic monitor sample, so sampled zeros are not claims of zero usage or continuous pressure measurements. No new depth, seed width or resource increase was used.
+
+**COMPUTED:** the complete periodic-background predecessor graph has one rotation class through depth7, two from depth8through40, and exactly two period sequences. Both begin1,3,3, then6from depth4; one first reaches12at10, the other at11; both first reach24at18and stay24through40. The final two necklaces are
+
+```text
+000011000100111001011101   (root1 branch)
+000000101011010101101011   (root41 branch).
+```
+
+A read-only comparison with the retained exact width12tails finds these same necklaces in1306and230roots respectively, including roots1and41. This compares existing bytes; it is not a further inverse search. Their canonical rotations differ, so at depth40even equal period24does not mean equal backgrounds up to spatial shift. It does not rule out some later coalescence after a depth shift.
+
+**Universal finite-depth bridge, PROOF-SKETCH:** beyond the finite part of a white-right ancestor, the driving word is periodic. Its pair-state trajectory must enter a recurrent cycle of the four-state period-return map. The constructor enumerates every such cycle, while rotation quotienting is sound because the local rule commutes with spatial shift. A finite root's first nonfinite ancestor has all-black left tail: the zero driver has only the all-white and all-black recurrent outcomes, and a white left tail with a white right tail would be a finite parent, contradicting roothood. Induction through the complete graph therefore restricts **every finite root, with no width bound**, to those two sequences through40. Both possibilities are realized by the explicit finite roots above. This is a finite-depth universal consequence of a complete finite certificate, with the reduction awaiting an independent carrying read; it is not an all-depth universality theorem.
+
+### Reproducibility and actual stops
+
+All six stage archives, including the failed control, were uploaded by verified-TLS raw-body requests and downloaded again to check their digests. The shared-store manifest is `cited/gc2270-cloud-questions/manifest.json`, SHA256 `b871b0eddd5a08c985dbf3f614668f070b72799d1a7eb69623a11e045367b8fa`. It gives each raw filename, size and digest, freeze commit, outcome, archive digest and receipts. Archives reside under the same cited directory:
+
+| Archive basename | SHA256 |
+|---|---|
+| gc2260-finite-control.tar.gz | f72474070a2696cd0695773c5434d6a0bee636894f1fc2c4b8447f3396659bd5 |
+| gc2262-backward.tar.gz | dc190b4229ae36725b5de736a98ea5d204d120bb2d2768e3c0713f53664f49df |
+| gc2263-left-pilot.tar.gz | d1b0ff69616679bc8b414fab18ce9b2553f3d82294c2cdcd0751764386b6eba5 |
+| gc2265-left-100000.tar.gz | cc92814723f60629221251b51b61d51a0d723dbca6563c12aeb27bba621eacd4 |
+| gc2267-background.tar.gz | dc3269b2277b6f62181e478865943e3a0e9ad2d67757ceb8c3fa3806fd76c492 |
+| gc2269-background-corrected.tar.gz | b157dd32b798a0e272bcb0aa43797ff3b06a8ee61a6227684f101b8e1a5c715e |
+
+Each stage used one payload process/thread at nice10, a tracked time wrapper and no concurrent heavy job. The single-process CPU rlimit is the payload aggregate limit; supervisor CPU is separately reported. RSS and pressure enforcement were sampled, not continuous hard bounds. Failed initialization GC2267 and the P128logical stop remain distinct from the passed controls and subsequent correction. No Lean compile, official replay, portal submission or Human Verified claim was made by this task.
+
+### Next executable steps and cold routes
+
+The requested question pass is complete with the open cells explicitly named. Both heartbeats remain paused and no job is running. The useful next carrying read is A4's invariant affine restriction, E2's recurrent-image argument, and the all-root reduction immediately above; passive committed pointers suffice and no sleeping worker is assigned a job. A further independent research route is the conditional fresh-bit distribution law: derive a nontrivial statement about its deterministic branch from a stated ensemble, rather than fitting actual-root frequencies.
+
+P128maximum plateau is unresolved: reopen only with a genuinely more economical exact closure/rank representation and a separately justified resource freeze, not a larger state cap by default. Exact4/3and root doubling density remain open: reopen a speed fit only with a structural front law, and the density route only with a root-compatible correlation law. The exact geometric fill, raw-overlap monotonicity, hiccup additivity and the simple bottom-wheel classification are refuted and should not be recycled. All-depth backward coalescence needs a new structural identity; extending40or512alone does not supply it. The optional Parry comparison remains parked; no owner action is requested.
