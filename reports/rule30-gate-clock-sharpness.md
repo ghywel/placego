@@ -235,3 +235,37 @@ prove the first-record bound allowing00 losses and recoveries. Before any
 new search, settle whether those abstract transitions already exclude the
 proposed early excess3. Independent alternative: the direct two-step-image
 covariance calculation in GC2309.
+
+## L1241: GPT's (ii) and (iii) carried, and a traced single-family beam (frozen before running)
+
+**Carrying read of GC2310 (Local, hand).**
+- **(ii) carries.** Over `2P` the AND term pairs across the antiperiod to `a`'s weight over `P`. The `b` term gives
+  `α(P mod 2)`, the `a` term `2·wt(a)`, the constant `2P`. For dyadic `P ≥ 2`, the next bit doubles iff `λ = 1` and
+  `wt(a)` over `P` is odd, that is `O(a, P) = 0`. The `P = 1` exception with gates 0, 15, 12 checks.
+- **(iii) is already machine-checked.** It is exactly Package A's `order_countdown_gate`, with `(s, b, h) := (a, b, c)`
+  and `M := P`: `order a P ≤ order c (2P) + 1`. Lean proves it for every gate, with no separate periodicity hypothesis
+  on `c`.
+
+**A new step from the same identity (PROOF-SKETCH, Local; GPT read pending).** Right after a `11` pair with prefix
+period `M` before it, the next bit `h`, if it does not double, has `O(h, 4M) ≥ M - 2`. Here `h`'s inputs are
+`b = x_(j+1)`, `2M`-antiperiodic, and `s = x_j`, `M`-antiperiodic of period `2M`, so `Δ^(2M+1) h = λ s + α`. Also
+`Δ^M s = 1`, so `Δ^(M+1) s = 0`. Hence `Δ^(3M+2) h = 0` and `O(h, 4M) ≥ 4M - (3M + 2) = M - 2`. With `M = 8` (`E = 3`
+before pair 2) this gives 6, the first first-bit order of the L1239 witnesses at n = 7.
+
+**GC2310's provenance gap taken.** `tests/probes/gate_clock_beam2.py` is a new beam:
+- duplicates are merged by the same normalized key, but each kept state is stored as its actual streams with its
+  parent and gate;
+- the best final state's ancestry is traced back to one gate sequence;
+- that sequence is re-simulated independently, as bit-parallel evolution of the first n bits from the all-zero seed,
+  with each prefix exponent read from the states at times `2^e`;
+- the controls are enforced, so any mismatch exits 1.
+
+Dry runs to n = 14: at K = 64 the traced best is only `E(14) = 7`, because ties at the cut break differently than in
+beam 1, so K = 64 is fragile. At K = 256 and K = 1024 the traced family reaches `E(14) = 9` with pairs
+`11 10 11 01 01 01 01`, and the independent simulation agrees.
+
+**Frozen run:** n = 38, K = 256. **Prediction:** one traced family with `E(38) = 21`, pairs
+`11 10 11 (01)×7 (10)×9`, first-bit orders `6, 5, …, 0` through the `01` run, last-bit resource from 2047 down by one
+per `10` pair, and the independent simulation agreeing. **Counterfactual:** a different pattern or a smaller `E(38)`
+would be reported as is; a simulation mismatch would fail the run. Caps: 1200 s CPU per process, 1800 s wall, 4 GiB
+RSS, 64 MiB per file, 128 MiB disk, 2.5 GiB launch floor.
