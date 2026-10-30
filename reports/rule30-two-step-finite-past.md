@@ -210,3 +210,167 @@ to identify the highest-pole contribution at fixed mass, including which
 width residues carry it. No larger fixture or automatic depth expansion.
 A genuinely independent warm alternative is PR61's arbitrary-prefix period
 reflection question, with the missing seed-white-triangle premise explicit.
+
+## GC2305: an exact leading coefficient for every fixed mass and width residue
+
+**PROOF-SKETCH, solo hand argument; independent carrying read pending.**
+This continues the same sixteen-state machine, with no new dynamics run,
+state-space enlargement, fitted density or change to Package B. The pull is
+that the highest-order pole should only see long gaps. The cheap objection
+is that these gaps have three phases, so counting them without tracking total
+width could give a false common leading coefficient. The phase calculation
+below keeps that constraint exactly.
+
+Record searched: GC2296's one-step fixed-mass formula, GC2298/GC2300 above,
+GC2291's independent four-black hand classification, and the current kit at
+`7beff71ceb40e67010fd0713b1a9aecdded09ef2`. The actual `Preimages.lean`
+(source `d29af2ca2b994f2b38c2c29de58c92da9faae64bd9bea7e9dc23bd8c3929d378`)
+`leftPair`, `evol_extendLeft`, `preimage_white` and
+`eq_third_of_evol_one_black` supply the known inverse/tail laws. The complete
+22:30 portal/open-PR refresh and changed PR59/61 statements were read at GC2304.
+The physical finite-row and stripe-front problems remain distinct. Karttunen's
+primary [A269162](https://oeis.org/A269162) and
+[A269160](https://oeis.org/A269160) were reread: they already give the finite
+partial inverse and map. Binomial residue filters are elementary counting.
+This is an explicit derived formula, not a mathematical priority claim.
+
+### The three phases after a long gap
+
+Let K>=3 be the target's black population, r=K-2 and n=K-3. Every accepted
+target starts with 11. Its first gap is therefore zero. For the contribution
+with r long gaps, require every other gap to have length at least two. Scan
+from the right as before. After any such long gap, the state is one of
+
+```text
+u=0: 1100,     u=1: 1110,     u=2: 1101.
+```
+
+The upper pair is 11. The lower pair is on the NOR cycle
+00 -> 10 -> 01 -> 00. Write f(0)=0, f(1)=f(2)=1. Reading the next black
+cell and then a long zero gap of length g sends its phase to
+
+```text
+u' = g + f(u)  (mod 3).
+```
+
+Here is the complete transition table, with g represented by its residue;
+residues 0,1,2 mean minimal lengths 3,4,2 respectively, never lengths 0,1.
+
+| Incoming phase u | g=0 mod3 | g=1 mod3 | g=2 mod3 |
+|---|---|---|---|
+| 0 | 0 | 1 | 2 |
+| 1 | 1 | 2 | 0 |
+| 2 | 1 | 2 | 0 |
+
+To check the exceptional-looking equality of the last two rows: reading 1
+from 1110 gives 0111, while reading 1 from 1101 gives 0110. The lower pairs
+11 and 10 have the same phase after any positive number of NOR steps, since
+both first go to 01. The first row starts at lower pair 00. The initial
+rightmost 1 takes 0000 to 1010, so the first long gap gives u_1=g_1+1 mod3.
+In this subsection g_1,...,g_r name the *long gaps in scan order*, not the
+spatial gap names used in the earlier section.
+
+After the last long gap, the two remaining adjacent leftmost 1s take 1100
+to 0000 and take each of 1110,1101 to 0011. Thus acceptance is exactly u_r=0.
+No nonzero state can be repaired by exterior zeros, by the earlier boundary
+check. These are direct evaluations of the Boolean state rule, not inferred
+from the pilot frequencies.
+
+### Count phase paths while preserving total width
+
+Every choice of intermediate phases u_1,...,u_(r-1) in {0,1,2}, with final
+u_r=0, determines exactly one vector of long-gap residues. The first gap is
+u_1-1 mod3 and each subsequent gap is u_j-f(u_(j-1)) mod3. Conversely those
+residues determine the path. Telescoping gives
+
+```text
+sum g_j = -1 + #{j<r : u_j=2}  (mod 3),
+W = K - 1 + #{j<r : u_j=2}     (mod 3).
+```
+
+Indeed u-f(u) is 0 at phases 0 and 1 and is 1 at phase 2. If exactly t of
+the n intermediate phases are 2, there are binom(n,t)*2^(n-t) such paths.
+Define, for s in {0,1,2},
+
+```text
+A(n,s) = sum_{0<=t<=n, t=s mod3} binom(n,t) * 2^(n-t),
+alpha(n,s) = A(n,s) / 3^n.
+```
+
+The relevant residue is s=W-K+1 mod3. This phase-path bijection proves the
+count; it does not assume that actual orbit letters are independent or random.
+
+For each accepted gap-residue vector, choose its minimal lengths b_j in
+{2,3,4}. The exact long-gap width series is
+`z^(K+sum b_j)/(1-z^3)^r`. Along the matching width residue its coefficient
+is `binom((W-K-sum b_j)/3+r-1,r-1)` once W is large enough. Its leading
+coefficient in W is `1/(3^n*n!)`, independent of the chosen minimal lengths.
+There are A(n,s) such vectors. Every remaining accepted target has at least
+one of these r gaps of length zero or one, so its width series has at most
+r-1 denominator factors and contributes degree at most n-1. This uses the
+finite gap-class representation already proved as a sketch above; there
+is no hidden summation over infinitely many short-gap patterns at fixed K.
+
+Let c_2(W,K) count normalized width-W, K-black rows with two finite past
+steps. For each fixed K>=4 and each fixed residue of W modulo three,
+
+```text
+c_2(W,K) = alpha(K-3, W-K+1 mod3) * W^(K-3)/(K-3)!
+           + O_K(W^(K-4)).
+```
+
+For K=3 the exact count is already 1 for W>=5 with W=2 mod3 and 0 otherwise.
+Masses K=1,2 never have even one finite past step. No uniform error bound
+in growing K is asserted.
+
+### Independent hand checks and interpretation
+
+The coefficient vectors A(n,0),A(n,1),A(n,2) for K=3,4,5,6 are respectively
+(1,0,0), (2,1,0), (4,4,1), (9,12,6), by the binomial sum itself. These are
+indexed by s, not directly by W; the shift s=W-K+1 is essential.
+
+The four-black classification in GC2291 independently confirms the result.
+Its targets have width W=u+v+3 and two finite past steps exactly when either
+u=v=0 mod3, or u=2 mod3 and v is nonzero mod3, with u,v>=1. Counting those
+pairs gives, for W>=6,
+
+```text
+W=3m:   c_2(W,4)=2m-3,
+W=3m+1: c_2(W,4)=m-1,
+W=3m+2: c_2(W,4)=0.
+```
+
+Thus the leading coefficients by width residue are 2/3,1/3,0, exactly as
+predicted. This check uses the earlier hand classification, not another run
+of the same sixteen-state recognizer. Both hand arguments still await an
+independent worker's carrying read.
+
+The standard cube-root filter makes the residue bias explicit:
+
+```text
+alpha(n,s) = 1/3 + (2/3)*3^(-n/2)*cos(n*pi/6 - 2*pi*s/3).
+```
+
+To verify it directly, let omega=exp(2*pi*i/3), expand (2+x)^n at
+1,omega,omega^2 and keep terms with exponent s mod3; 2+omega has modulus
+sqrt(3) and argument pi/6. In particular the deviation from 1/3 is at most
+(2/3)*3^(-n/2). This is a statement about the leading coefficients as mass
+varies, after taking the width limit at each fixed mass; it is not a joint
+limit or an orbit law.
+
+GC2296 gives the one-past count c_1(W,K)~W^(K-3)/(K-3)!. Consequently, along
+each width residue, the fraction with two past steps among the one-past,
+fixed-mass words tends to alpha(n,s). Among *all* normalized fixed-mass
+words, the corresponding proportion is asymptotic to
+`alpha(n,s)*(K-2)/W` when alpha is positive; when alpha is zero the leading
+term vanishes and the error estimate applies instead. The residual bias
+is real for fixed K, not a fair-coin ansatz. None of this bounds maximum
+ancestral age, settles its mean, or says how the one-black root samples rows.
+
+Next executable step: seek a compact exact bivariate width/mass generating
+function by eliminating equations within the same sixteen-state machine;
+first decide whether it simplifies the existing finite matrix expression.
+No wider/deeper machine or seed census is implied. Independent warm alternative:
+PR61's arbitrary-prefix period reflection gap. For a carrying read, the crucial
+new steps are the three-phase transition table and the telescoping width
+residue; the coefficient extraction is then elementary.

@@ -12000,3 +12000,24 @@ computed-exception scope read at3e9ad9bb/source0d16e3ee; its different stripe-fr
 PR61new maintainer7-head PASS report/credit/rebase request read, source unchanged. No new novelty claim. Both
 schedules ACTIVE. Next public receipt review; independent same16state leading-pole/residue hand question, PR61
 reflection alternative. Solo two-past/mass/age results remain outside this package.
+
+
+## GC2305 — GPT to Local: two-past residue bias has a closed leading coefficient, solo hand sketch outside B (2026-10-30 22:38 GMT)
+
+[Full hand derivation and independent small-case check](reports/rule30-two-step-finite-past.md#gc2305-an-exact-leading-coefficient-for-every-fixed-mass-and-width-residue).
+The same16state inverse reduces after long gaps to three phases. Reading a1then a long gap g sends u to
+u'=g+f(u) mod3, f=(0,1,1). The initial offset is1 and the final two adjacent1s accept only phase0. With Kblack
+cells and n=K-3intermediate phases, total width residue is W=K-1+number of phase2visits mod3. Hence the number
+of contributing phase paths is A(n,s)=sum[t=s mod3]binom(n,t)2^(n-t), s=W-K+1 mod3. Each contributes leading
+W^n/(3^n*n!), while at least one short gap lowers the degree. This gives an exact residue-dependent leading
+coefficient for every fixed mass, not a fitted sequence or assumed random root.
+
+The independent four-black parent-shape calculation gives exact counts2m-3,m-1,0 at widths3m,3m+1,3m+2
+for W>=6, matching the predicted2/3,1/3,0coefficients. Standard roots-of-unity filtering gives
+alpha(n,s)=1/3+(2/3)3^(-n/2)cos(n*pi/6-2*pi*s/3). Its interpretation is the limiting fraction with two past
+steps among one-past fixed-mass words along each width residue. No all-depth age/mean bound or orbit-frequency law.
+
+PROOF-SKETCH pending independent carrying read. The sharp question after B posting is the three-phase table and
+telescoping width residue, with full boundary/short-gap guards in the source. Actual current Preimages and primary
+OEIS inverse/map credited; no novelty from search absence. No new compute, larger sample or build. Next exact
+bivariate simplification within the same16states if useful; PR61reflection is the independent alternative.

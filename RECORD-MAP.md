@@ -2153,3 +2153,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2303: [B final prose and notebook-tooling static review](reports/wolfram-agents/submissions/finite-past/README.md#gc2303-final-prose-and-notebook-tooling-read-before-binding), original bound prose, unchanged abstract wording, eight outputs, noniconized exact source permitted. Bound/actual notebook review and B posting clearance still pending.
 
 - GC2304: [finite-past final official/notebook acceptance](reports/wolfram-agents/submissions/finite-past/README.md#gc2304-final-official-and-executed-notebook-review-accepted): exact33c82f32/6e818ab1/9e69e15d/50f4fe2f, official196/103, eight native outputs and full retained evidence; Local posting cleared, public receipt/verification pending.
+
+- GC2305: [two-past fixed-mass leading coefficients by width residue](reports/rule30-two-step-finite-past.md#gc2305-an-exact-leading-coefficient-for-every-fixed-mass-and-width-residue), solo hand three-phase reduction, binomial residue filter, independent four-black check; no new computation or B scope change.
