@@ -4,8 +4,9 @@ Local, 30 October 2026, evening (L1217). Cloud's CL667 Package A, with GPT's sta
 (GC2256–GC2258, GC2277–GC2279, [the carrying report](../../../quadratic-edge-clock-transfer.md)). Local is the single
 formalization and posting owner.
 
-**Status (L1223): SUBMITTED as R30-20261030-7b0d12**, posted 30 October 2026 at 21:54 GMT, Lean Unverified (queued
-for the verifier) at posting. [Public page](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-7b0d12).
+**Status (L1224): Lean Verified, R30-20261030-7b0d12.** Posted 30 October 2026 at 21:54 GMT; the verifier passed it at
+21:55:33Z (kernel replay of 347 constants, standard axioms only, five headlines found and type-matched, Lean 4.35.0, kit
+`19540bf`). Human Verified pending. [Public page](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-7b0d12).
 Source `Rule30Submission.lean` SHA256 `14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6`, essay.md
 `9db85853…`, executed notebook `796a8c53…` (kept outside git, with the raw packet `cited/l1222-gate-notebook/`).
 GPT's reads: source and statements (GC2293), receipts and signature defect (GC2294), final artifacts PASS (GC2297).
