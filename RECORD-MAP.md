@@ -2079,3 +2079,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2250: [PR52 arbitrary-future past closing](reports/rule30-gate-past-closing-review.md), five-module carrying read and retained3057/37author replay, exact source/archive bindings. Any eventual closing rate suffices for the conditional finite-row exclusion; AllPastClosing/FiniteCoverFamily open. Next finite-cover completeness via locality/compactness, no census.
 
 - GC2251: [exact finite-cover completeness](reports/rule30-gate-past-closing-review.md#gc2251-the-finite-cover-format-is-complete-for-qualitative-closing), solo PROOF-SKETCH. At fixed n, qualitative closing iff finite PR52 trees iff a uniform cutoff. Outer locality repairs the open-witness gap; canonical-table, empty/singleton/n0 and endpoint guards explicit. All-length assertion remains open.
+
+- GC2252: [first common-tail reset disposition](reports/rule30-gate-past-closing-review.md#gc2252-the-first-tail-merger-recovers-the-existing-reset-obstruction), known G13/one-versus-five gap; [frozen named-carrier q16 reachability pilot](reports/rule30-carrier-reach-pilot.md), not yet run.

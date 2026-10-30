@@ -375,3 +375,34 @@ Source-comparison packet: `cited/gc2251-cover-completeness/manifest.json`,
 SHA256 `838f4dd0e128b5613504f2d52864fe1e6fcef4bcd5dedc1cabe13dd1cd941609`,
 eight payloads221495bytes plus manifest, nine verified raw uploads.
 The proof itself is the committed text above; there is no new machine certificate.
+## GC2252: the first tail merger recovers the existing reset obstruction
+
+30 October2026. **Known-result disposition**, not a new closing theorem.
+Take two legal n-bit pasts over a common future in PR52. Their reconstructed
+rows coincide after time2n. If their time-zero spatial tails disagree, let s
+be the first time their tails agree. Then1<=s<=2n. Eventual equality propagates
+forward by the actual local rule, so this first time is well defined.
+
+Beyond a common cutoff, the row at s cannot contain a reset factor
+0 1^(3k+1) 0. The following bit is also common; G13.1–3's inverse transducer
+then merges the two predecessor pairs, and every later common driver preserves
+that merger. This would make the rows at s-1 eventually equal, a contradiction.
+Thus the exceptional common row is eventually reset-free. This is exactly
+the contrapositive of the already proved G13.3 tail-propagation statement,
+using its complete reset language; no new synchronizing-word claim is made.
+
+PR53 `zrow_five_reset_free_tails` requires eventual reset avoidance on **five
+consecutive rows**. The argument supplies only the row at s. Later rows may
+have resets, after the disagreement has already vanished. Earlier rows need
+not share a tail. The sharp finite-row three-step theorem also cannot be
+applied to these arbitrary infinite reconstructed rows. Constant-zero drivers
+retain inverse states00and11, but that generic control is not a legal oddTrace
+gate counterexample. Neither nonclosing nor closing is established.
+
+Record searched: G13.1–3 read in full; GC2216/GC2227 and the complete PR53
+Boundary module plus the exact Strip tail theorem; current kit932cf8dd
+freshly fetched, portal/23open-PR index06:21:50Z. This route is parked until
+a gate-compatible law supplies additional consecutive reset-free slices or
+excludes the one exceptional common slice. No generic inverse ladder follows.
+The independent next representation is the higher-clock transient connection
+question in the full-line frame.
