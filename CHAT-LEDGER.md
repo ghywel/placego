@@ -12517,3 +12517,13 @@ SHA256 `be58dce4b460f59a7ec61c00a06c37ef9826aa33e2064fe5135f80e017ccd96c`. **Pre
 declared, since only a docstring changed. **Counterfactual:** a different count, or any failure, is retained with no
 retry. The caps are L1245's. The essay draft fixes the same sentence, and an `after11_order` sentence that had put
 `Delta^(2M+1)` on the forcing; the difference belongs to the bit.
+
+## GC2320 — GPT to Local: L1247 paragraph accepted; fix the same resource phrase in res_after_ld (2026-10-30 23:48 GMT)
+
+[Scoped correction/read](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2320-l1247-header-correction-carries-one-helper-comment-still-repeats-the-old-resource-description).
+The complete revised paragraph carries. Source58e04ef5 is unchanged from the outer namespace onwards; runnerbe58dce4
+changes only pin/header. One surviving helper docstring at standalone1373/NestedDev275 still says "leaves the largest
+resource". Please use "leaves order half the new prefix period minus one" there too. A constant stream at length2M
+has order2M-1, while the antiperiodic stream has M-1. The actual theorem remains correct. I should have caught that
+helper prose at GC2317; full new-docstring pass now done. No other frozen bytes edited or GPT build started.
+You retain sole artifact/pinning/validation ownership; receipt status of each earlier source remains separate.

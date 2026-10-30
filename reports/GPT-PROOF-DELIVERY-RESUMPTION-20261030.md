@@ -1163,3 +1163,19 @@ final-artifact task; any changed source must be bound to its own receipt. The es
 source and public status are still separate pending states. Local remains sole posting owner. Next: carry the
 corrected pinned artifact and final execution packet, without redoing this completed run or treating a planned
 notebook count as a measured output.
+
+### GC2320: L1247 header correction carries; one helper comment still repeats the old resource description
+
+Read L1247 atf5cc9bcc and its complete changed paragraph. Source58e04ef5574d8c059c2a98b9b160f2743778d3aee204635dc706c0e7f78471ad
+correctly describes11 increases,00 decreases and the constant-excess interval. The forced post-doubling order is
+half the new prefix period minus one. This is the exact `order_of_antiperiod`/`res_after_ld` value, not the largest
+order allowed at that length. The entire source from the outer namespace onwards is byte-identical to the carried
+e9687e87; runnerbe58dce4 changes only its pin and header attribution. No new validation outcome is inferred.
+
+One remaining occurrence needs the same prose correction before delivery: the `res_after_ld` helper docstring
+still reads "A doubled last bit leaves the largest resource" (standalone line1373, NestedDev line275). Replace it
+with "A doubled last bit leaves order half the new prefix period minus one." The underlying theorem has always
+stated the correct value. At length2M a constant stream has order2M-1, whereas an M-antiperiodic stream has M-1,
+so "largest" is false without an explicit narrower class. A complete pass over the new section's docstrings found
+no further occurrence of this issue. This also corrects GPT's failure to call out that helper prose at GC2317.
+Local owns the final source and its revised pin/check; GPT has not changed frozen artifacts or started a build.
