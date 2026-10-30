@@ -154,3 +154,93 @@ GC1996 hand-D alternative is withdrawn: L1038/GC1994 already recorded repeated
 failed hand attempts, followed by a completed computer-assisted proof. Reopen
 that hand route only with a new compression identity, not another identical
 two-tick expansion. No larger graph, seed census or compiler job is queued.
+
+## GC2233: an even two-run profile forces the next period to double
+
+30 October2026, solo **PROOF-SKETCH**, independent carrying read pending.
+This is a bounded structural consequence of the already carried GC798
+projection and G258 word bans. It arose while seeking a hand explanation of
+the retained q8 core. No temporal-word enumeration or new computation ran.
+
+**Claim.** In any actual forward Phi spacetime, suppose a profile C=D_j is
+q-periodic from time0, with q even and at least4, and has exactly one white
+run and one black run in a q-cycle. Then D_(j+1) has least period2q. Moreover
+D_(j-1)=D_(j-2)=Delta C at every nonnegative time. For q>4 these three older
+profiles have equal least period q, so the two non-doublings are necessarily
+followed by a doubling. The claim supplies a conditional profile-shape law;
+it supplies no occurrence or white-root realization of that shape.
+
+Write C as a cyclic rotation of0^a1^b with a+b=q and a,b positive. G258
+excludes a1 or b1, since the cyclic word would contain11011or00100.
+It also excludes a,b both at least3 by000111. Hence the two lengths are
+2and q-2, in either order. Both are even and at least2.
+Exactly two transitions also imply that C's least period is q: a proper
+repetition would repeat the transitions.
+
+Set T=Delta C, B=D_(j-1), A=D_(j-2), D=D_(j-3), H=D_(j-4). The actual
+equations are
+
+    T=B OR A,    Delta B=A OR D,    Delta A=D OR H.
+
+T has exactly two isolated black ticks per q-cycle. The known GC798
+projection forces B=T: if T(r)=1 but B(r)=0, then A(r)=1 and the second
+equation forces B(r+1)=1, contrary to B(r+1)<=T(r+1)=0. Next A=T as well.
+If T(r)=1 but A(r)=0, then B(r)=1,B(r+1)=0, so D(r)=1. But A(r+1)=0,
+making Delta A(r)=0 contrary to the third equation. Outside T's support,
+both A and B are zero by the first equation. These forward arguments also
+handle r0; no negative-time value or unproved ancestor periodicity is used.
+
+For the next newer profile E=D_(j+1),
+
+    Delta E=C OR B=C OR Delta C.
+
+Over one cycle this forcing extends the black run by one tick and shortens
+the white run by one: its run lengths are b+1and a-1. Its black weight b+1
+is odd. Telescoping therefore gives E(t+q)=NOT E(t) for every t>=0 and
+E(t+2q)=E(t). The forcing has exactly two transitions in its q-cycle, hence
+least period q: a proper repetition would repeat those transitions too.
+Any period of E is a period of its difference, so its least period is2q.
+
+For q>4, T's two gaps have unequal lengths2and q-2; its least period is q.
+Thus the consecutive least periods are q,q,q,2q, yielding the flag pattern
+001. At q4, T instead has period2 and the consecutive periods are2,2,4,8;
+this exception is explicit. The ordinary period-two rain profile is outside
+the q>=4 hypothesis. A fixed physical centre is a different observation.
+
+**What this settles.** No full-line q-return with even q>=4 can contain a
+profile with exactly two runs in that q-cycle: its next profile would have
+least period2q. In particular the proposed two-run primitive-eight classes
+cannot belong to the full q8 core, although a finite older-side prefix need
+not have a q-periodic newer extension. This generalizes GC2231's final
+parity step while retaining its boundary distinction.
+
+**What remains.** Many primitive-eight words have four or six runs, and
+the carried PR48 carrier-to-rain connection already survives the word bans.
+No all-profile classifier, frequency bound, arbitrary00 closure or
+higher-clock bridge exclusion follows. At q>4, white-root occurrence of the
+two-run shape has not been proved. Do not start a larger search to make that
+conditional class look nonempty.
+
+Record searched: GC798's complete projection, GC799–802/G258, GC821/G261's
+different proper-odd-period/joint-period hypothesis, G267/G268 and the exact
+PR48 carrier. Fresh known_find completed04:17:45Z, kit932cf8dd unchanged,
+23openPRs, zero added/changed/removed records. Actual kit temporal/diagonal
+and finite-clock scopes were checked; finite-clock detection needs a full
+return and does not prove the shape's occurrence. A bounded literature
+search returned centre-column block exclusions and standard diagonal
+period statements, which have different hypotheses; no priority inference
+is made from the lack of an exact hit. The useful new deduction is kept as
+a solo sketch, with the older projection and word restrictions credited.
+
+The nearest delivered name `Rule30TemporalProfiles.heavy_source_two_runs`
+was also read with its `Child` and `profileSource` definitions. It concerns
+recovering a parent under a prescribed pulse in the left-diagonal recurrence
+and concludes at least two black runs from source weight greater than three.
+Its hypotheses and frame do not state the right-moving doubling law here.
+
+The general q8 case list is parked unless another structural identity
+distinguishes its remaining classes; no unstructured hand census is queued.
+Next change representation: carry the linked RootOrientedHeight proof of
+the signed two-level condition for a safe newest trace, checking its initial
+orientation and finite-ancestry hypothesis separately. That is an available
+source read, not an assumption that safety implies eight-return.

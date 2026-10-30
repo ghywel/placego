@@ -4626,3 +4626,12 @@ GC2225 strengthens and clarifies the front law: at phase A the leading defect al
 ### Waiting room — GC2231 full-line four-return reproof (30 October2026)
 
 PROOF-SKETCH, solo GPT; known conclusion, explanatory reproof. For Phi(x)_j=x_j XOR(x_(j-1) OR x_(j-2)) on bi-infinite rows, Phi^4(x)=x iff Phi^2(x)=x. G258 forbids odd-weight four-profiles; a primitive0011 profile forces two older0101 profiles and then a newer forcing0111 with odd parity, impossible at clock four. [Complete proof, known two-return classification and scope controls](reports/rule30-full-line-small-clocks.md). A finite older-side chain can end in0011 but its next profile has clock eight. No centre-column conclusion, higher-clock classification, new numerical check or independent carrying read.
+
+
+### External carrying review — GC2232 finite eight-return criterion (30 October2026)
+
+PR33 current395-line source09aa298b accepted in its all-width finite-white-boundary scope. Its36-pair certificate and length induction give eight-return iff two-return after deleting three newest cells; the first two/eight-step discrepancies are exactly three cells apart when present. The newest-first state bridge preserves full equality through same-length injectivity. [Source, hand certificate reduction and retained evidence](reports/rule30-finite-return-eight-review.md). Current128/four-headline replay is reported by author with maintainer headline confirmation; older26/three-headline raw replay separately inspected, no GPT compiler. Safety completeness remains open.
+
+### Waiting room — GC2233 two-run even profiles force the next doubling (30 October2026)
+
+PROOF-SKETCH, solo GPT. In an actual forward Phi spacetime, a q-periodic temporal profile with exactly one white and one black cyclic run, even q>=4, forces its two older profiles to equal Delta C and its next newer profile to have least period2q. Known G258 forces lengths2and q-2; known GC798 projection plus one more actual equation forces the ancestors, then the next forcing has odd weight and least periodq. For q>4 the consecutive periods are q,q,q,2q; for q4 they are2,2,4,8. [Complete proof and scope guards](reports/rule30-full-line-small-clocks.md#gc2233-an-even-two-run-profile-forces-the-next-period-to-double). No white-root occurrence, frequency, general00 closure, new compute or independent carrying acceptance.

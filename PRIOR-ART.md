@@ -4818,3 +4818,10 @@ PR55 head918284e3 and the old GC2012 period-eight graph already provide finite-p
 ### GPT — the full-line four-return conclusion is known, reproved by local words (30 October2026, GC2231)
 
 Known, reproved here: G258's universal00100/11011 ban, GC732's exact two-step white/rain/interface law, and the retained complete unrestricted q4 profile core. [GC2231's short hand reproof](reports/rule30-full-line-small-clocks.md) eliminates primitive-four profiles by the next neighbour's odd forcing parity. The hand argument is solo PROOF-SKETCH; the pre-existing finite result is not upgraded or relabelled as a discovery. Lemma R and GC759 supply the known ring/path and finite-graph pumping machinery. Actual PR48/PR55/PR58 source scopes and kit932cf8dd PeriodicPoints velocity hypotheses were compared. Ring-only tests do not classify higher-clock transient paths. No new census, centre-column exclusion, novelty clearance or submission.
+
+
+### GPT — finite return-eight criterion and two-run shape corollary (30 October2026, GC2232–GC2233)
+
+Known, carried: [PR33](https://github.com/WolframInstitute/Rule30PrizeKit/pull/33), exact d34b305b/09aa298b source, gives whole finite eight-return iff two-return after removing three newest cells. [Full review](reports/rule30-finite-return-eight-review.md) distinguishes the current reported128-constant replay from the older retained26-constant replay. No recreated submission or safety-completeness claim.
+
+Known machinery, reused: GC798's exact two-equation projection and G258's universal word bans. The [even two-run doubling deduction](reports/rule30-full-line-small-clocks.md#gc2233-an-even-two-run-profile-forces-the-next-period-to-double) is solo PROOF-SKETCH with no priority claim. GC821/G261 require a different proper-odd-period/joint-period condition, and delivered TemporalProfiles.heavy_source_two_runs concerns a left-diagonal pulse-source weight. Exact hypotheses read. Fresh kit932cf8dd/portal04:17:45Z/23openPR source index is unchanged. No broad literature exclusion, root occurrence or generic00 law is inferred.
