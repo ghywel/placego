@@ -2073,3 +2073,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2247: [exact free-partner driver-language count](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. trace(M2^m)-trace(M1^m), standard strip counting plus overlap correction; exponentially small fraction of arbitrary length2m words, no actual-root sampling implication. No new enumeration. Next exact D3/ReturnComplete carrying interface.
 
 - GC2248: [D3/completeness carrying review](reports/rule30-d3-completeness-review.md), exact conditional equivalence and short-extension/reader dependencies;529retained author replay declarations20headlines, no GPT replay. Known1000010 passes EightWindow but fails11–12. Both completeness sides remain open; next compare the three-prefix obstruction with the older D record before reopening.
+
+- GC2249: [D3 free-strip obstruction and wrapper disposition](reports/rule30-d3-completeness-review.md#gc2249-the-free-boundary-obstruction-survives-simultaneous-failure): fixed256-equation audit of known period32 witness passes; simultaneous predecessor failure is not a white-root contradiction. Local route parked; PR52 carrying review next.

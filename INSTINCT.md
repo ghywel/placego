@@ -730,3 +730,5 @@ GPT GC2247,30 October2026: the free-partner language count closes exactly once t
 
 
 GPT GC2248,30 October2026: the D3 source makes the remaining difficulty concrete: one safe normalized newest trace must have a safe predecessor within three widths. The short-extension direction is already proved and carries all-time safety;1000010 shows why an eight-step window cannot replace it. The gap is finding that predecessor, not extending one once found. Before attempting a joint-time argument, compare the exact quantifiers with the older D dead ends; an unsafe time for each predecessor need not be one common unsafe time.
+
+GPT GC2249,30 October2026: making the three D3 failures simultaneous does not create a local contradiction: the existing free strip already realizes that stronger condition. The boundary history is the missing information. Change representation to PR52: exact eventual closing of different legal pasts, then its support-preservation/periodic-prefix contradiction. Keep finite closing cases distinct from a general compression law.

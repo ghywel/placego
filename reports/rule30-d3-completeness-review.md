@@ -182,3 +182,61 @@ unsafe traces or identify the exact existing obstruction and park it.
 Independent alternative: compare a proposed guarded run-count formal
 wrapper with actual kit inp_least_period/S_rule before writing redundant
 formalization. No new width/clock census or compile is queued.
+
+
+## GC2249: the free-boundary obstruction survives simultaneous failure
+
+The earlier hand-D route is a different statement. L1038/GC1994 in
+[the hand record](rule30-disappearing-words-hand.md) concerns alternating-wall
+two-tick reset gaps4,3 forcing the patch000100111. Its finite audit is already
+complete, and its repeated hand expansion is parked. D3 instead concerns
+finite-white moving-frame safe prefixes. Neither result can be transferred
+merely because both were called D.
+
+The existing free-strip witness at immutable0cbc49ef gives a stronger
+objection to a local D3 argument than unrelated unsafe times. Its
+[exact JSON](https://github.com/Troyusrex2/Rule30PrizeKit/blob/0cbc49ef30888b32760def46ec31f954626192ff/research/agent-experiments/coordinator/20261026-height-and-cylinder/work/diagnostics/free_strip_safety.json)
+(SHA2563bcc3f601b9652f41cc4918c9a758af3f543ac889ce957b73dd690eb18d3f0c4)
+has width10 and period32, with its two oldest columns freely supplied.
+The newest trace is safe and has least period32, while its three immediate
+predecessor columns6,7,8 are all white at phases14 and15. Thus even a common
+unsafe time for all three predecessors is compatible with every interior
+Rule30 equation and a safe newest trace.
+
+Rephasing at phase1 gives the normalized older-first row1000000111. A first
+black cell at the initial time and a dyadic temporal period therefore do
+not rescue this free-boundary implication. The missing condition is real:
+from phase1 to2 both oldest columns should become1 under the literal white
+boundary but instead become0. This is **not** a finite-white counterexample
+to D3Star or ReturnComplete.
+
+A fixed retained-data audit, with prediction/counterfactual written before
+inspection, checked all256 interior equations against an independent
+eight-entry truth table, the supplied newest trace, its cyclic safety and
+least period, the common white pair and these two boundary violations.
+It passed. No search, new trajectory or larger horizon was run. The result
+is a known witness specialized to the proposed inference, not a novelty
+claim. Shared-store packet `cited/gc2249-d3-strip/manifest.json`, SHA256
+`497880d893ed20541b9f81b3c9ac3ee858d75b0b784661bf7465dc38a4193926`,
+holds three payloads4741bytes plus manifest, four verified raw uploads.
+
+**Disposition:** park local simultaneous-event/finite-strip D3 shortcuts.
+Reopen only with a genuinely white-boundary-history or jointly rooted law,
+not more ancestor layers or more strip samples. The D3 equivalence remains
+useful and open.
+
+The independent formal-wrapper check also has a scoped disposition: actual
+kit Rule30RightPeriods.inp_period/inp_least_period/inp_no_smaller_period and
+S_rule already supply the root-specific input-period and parity conclusion.
+GC2238's arbitrary coupled-fragment shape statement is broader and is not
+literally subsumed; its Boolean inverse already has the GC2241 development
+check. An extra generic shift-equivariance wrapper has no concrete delivery
+need now. Do not launch a redundant build while independent review remains
+pending.
+
+**Next pull:** carry PR52's exact arbitrary-future gate-past closing and
+conditional unbounded reduction. What would a compression theorem actually
+need to preserve? Its finite7-bit covers must be kept distinct from closing
+for every past length. Exact current head64003389e169db91b80a17b60670afb2eb22b87f
+and all three discussion channels were freshly read at metadata level;
+source/evidence carrying review is the next work, not yet accepted.
