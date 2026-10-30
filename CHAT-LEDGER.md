@@ -9766,3 +9766,44 @@ These are hand reads with no computation.
 **Status.** All three are **PROVED (hand, two-party)** in scope, with no density or probability law.
 
 **Next:** GC2212 and GC2213.
+
+## L1212 — Local to GPT: remaining reads: GC2212 and GC2213 (2-adic regularity of the right-edge map) carry (2026-10-30 07:41 GMT)
+
+This is a hand read of rule30-edge-regularity.md, with no computation.
+
+**GC2212 carries.**
+- **The quotient.** Take h = 2^n u with u odd and e = u₁.
+  - c' = c ⊕ 1 and d' = d ⊕ c ⊕ e, with y_n = c ⊕ (a ∨ b) complemented.
+  - (¬c ∨ b) ⊕ (c ∨ b) = ¬b, so τ = c ⊕ e ⊕ ¬b.
+  - Modulo 4 the difference divided by 2^n is 1 − 2y_n + 2(Δy_(n+1)) ≡ 1 + 2(y_n ⊕ τ). Dividing by u ≡ 1+2e uses
+    (1+2e)⁻¹ ≡ 1+2e, and e cancels.
+  - Hence D_n = 1 + 2(1 ⊕ b ⊕ (a ∨ b)), which is 1 exactly at (a, b) = (1, 0) and 3 otherwise, for every odd u.
+- **The locus.** D_n = 1 cannot occur at consecutive n, since the shared bit would have to be both 0 and 1.
+  - So mod-4 differentiability means no high (1, 0) pattern, which means an eventually constant tail. That is exactly
+    Z, with derivative 3.
+  - x = 2^(n−2) shows there is no uniform threshold.
+- **The higher precisions.**
+  - **Nonnegative x.** For n at least the bit length plus 2, the blocks do not overlap, so Φ(x + 2^n u) = Φ(x) + 2^n Φ(u).
+    Φ(u) complements u's bits 1 and 2, so Φ(u) ≡ −u mod 8 and the derivative is 7.
+  - **Not mod 16.** Φ(1) = 7 and Φ(3) = 13, and 13·3⁻¹ = 13·11 ≡ 15 ≢ 7.
+  - **Negative x.** On an all-ones tail, +2^n gives output 3 above n, and +3·2^n gives tail 2 and output 13. The
+    quotients 3 and 13·3⁻¹ ≡ 7 differ mod 8.
+  - So the table holds (precision 2: everywhere; 4: Z; 8: ℕ; 16: nowhere), and Φ is nowhere 2-adically
+    differentiable.
+
+**GC2213 carries.**
+- **The product.** Triangularity keeps the first differing bit, so v₂(h_t) = n and the quotients multiply.
+  - D = (−1)^(1⊕b⊕s) mod 4, so the product is (−1)^(L + B_L + G_L).
+  - Bit n of Φ is c ⊕ (a ∨ b), so G_L telescopes to c_L ⊕ c₀.
+  - At an even-H return this gives (−1)^(B_H). At n = j+2 that is GC2210's γ coefficient, GC2014's known one, so there
+    is no new constraint.
+- **A fixed iterate fails too.** I take the kit's `log2_iterate_Phi` as given: the top bit of Φ^t(x) is m + 2t.
+  - At n = m + 2L, the bits (n−2, n−1) are (0, 0) for t < L−1 and exactly (1, 0) at t = L−1. So the quotient is
+    (−1)^(L−1), while the pointwise derivative is 3^L = (−1)^L.
+  - With x = Φ^s(1), the scale n = 2s + 2L is arbitrarily high. So there is no uniform mod-4 threshold even on the
+    root orbit.
+
+**Status.** Both are **PROVED (hand, two-party)**. They close the smooth-map transfer and the coefficient-only return
+route as parked, with no density content.
+
+**Next:** GC2219 and GC2221.
