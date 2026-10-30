@@ -1,0 +1,121 @@
+{
+ "stage": "gate-clocks official check (L1220 freeze 62666f30), Local M5, one run after the owner's restart",
+ "runner_sha256": "dc3ff37cfc4a2d1e33df9227a38c6525f7bf7b8c1041ec2c455f02d1d288abca",
+ "source_sha256": "14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6",
+ "checker_sha256": "b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905",
+ "caps": {
+  "cpu": 600,
+  "wall": 900,
+  "rss_mib": 3072,
+  "file_mib": 256,
+  "disk_mib": 1024,
+  "min_free_mib": 1536,
+  "launch_free_mib": 2560,
+  "swap_growth_mib": 256,
+  "track_tree": true
+ },
+ "start_utc": "2026-10-30T21:33:12Z",
+ "end_utc": "2026-10-30T21:33:17Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "launch_gate": {
+  "free_inactive_mib": 6320,
+  "swap_used_mib": 0.0
+ },
+ "maxima": {
+  "rss_kib": 912032,
+  "procs": 3,
+  "disk_bytes": 2747612,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6320
+ },
+ "cleanup": null,
+ "wall_s_time": 5.17,
+ "max_rss_bytes_time": 930234368,
+ "check_json_sha256": "4fea2f7f57db27c4ccb99e904ef97a993c3a74af1b57ee2c4182b4344843f4cc",
+ "submission_check_sha256": "e7bd941fb70a79bc7cdbc42b0ca38258078ea1ba0c5c722ce3461222ddf85f56",
+ "raw_packet": "shared store cited/l1221-gate-official/MANIFEST.json, SHA256 b60d442a113b04cce914b09451109e8b5d9b0c35103b33c2df8364eb9199c613",
+ "result": {
+  "status": "PASS",
+  "declared": 173,
+  "replayed_constants": 347,
+  "checker_notice": "CAPPED_OUT/Check.lean:124:17: warning: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead\n\nNote: The updated constant has a different type:\n  Std.HashMap Name ConstantInfo → Kernel.Environment → IO Kernel.Environment\ninstead of\n  Std.HashMap Name ConstantInfo → Environment → IO Environment\n\nNote: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Kernel.Environment.replay x`).",
+  "headline_signatures": {
+   "Rule30Submission.prefix_period_iff": "theorem prefix_period_iff (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) : ∀ n P, PrefixPer g x n P ↔ 2 ^ prefixExp g x n ∣ P",
+   "Rule30Submission.prefix_window_bound": "theorem prefix_window_bound (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (a m : Nat) : prefixExp g x (a + 2 * m) - prefixExp g x a ≤ m + Q (prefixExp g x a) m ∧ prefixExp g x (a + 2 * m) - prefixExp g x a ≤ m + Q 0 m",
+   "Rule30Submission.prefix_window_le_B": "theorem prefix_window_le_B (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (a n : Nat) : prefixExp g x (a + n) - prefixExp g x a ≤ B n",
+   "Rule30Submission.prefixExp_le_B": "theorem prefixExp_le_B (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (n : Nat) : prefixExp g x n ≤ B n ∧ PrefixPer g x n (2 ^ B n)",
+   "Rule30Submission.affine_prefix_bound": "theorem affine_prefix_bound (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hg : ∀ j, Affine (g j)) {n r : Nat} (hr : n + 1 ≤ 2 ^ r) : PrefixPer g x n (2 ^ r) ∧ prefixExp g x n ≤ r"
+  },
+  "scope": "half-rate prefix-period bound for every two-input gate family, exact prefix periods, logarithmic affine bound; no lower bound, density, centre-column or prize claim"
+ },
+ "headlines": [
+  {
+   "axioms": [
+    "propext",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_period_iff",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_window_bound",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefix_window_le_B",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.prefixExp_le_B",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  },
+  {
+   "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+   ],
+   "found": true,
+   "kind": "theorem",
+   "name": "Rule30Submission.affine_prefix_bound",
+   "ok": true,
+   "problems": [],
+   "typeMatches": true
+  }
+ ],
+ "verdict": "pass",
+ "importsStatements": true,
+ "newAxioms": []
+}

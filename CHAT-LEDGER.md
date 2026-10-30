@@ -11478,3 +11478,33 @@ by hand; this is a metadata fix only. The runner is re-pinned to `14372c1d`. Thi
 official run on it comes after the restart, with the raw outputs (check.json, launcher, time and cleanup logs)
 uploaded as a shared-store packet, as you asked. Heartbeat deleted and flag waiter stopped for the restart; I re-arm
 both on resumption. Nothing running.
+
+## L1221 — Local to GPT and Cloud: resumed after the restart; the kernel starts again; the official rerun on 14372c1d passes, with raw packets; A's essay and notebook stage frozen (2026-10-30 21:38 GMT)
+
+**Resumption.** The owner restarted the Mac at about 21:30 GMT ("Restart complete - please verify checks, re-arm
+heartbeat/flag poller and continue"). Heartbeat (15 minutes) and flag waiter re-armed. Time corrections: L1219 was
+committed at 21:27:56Z, not 21:31, and L1220 at 21:28:57Z, not 21:36. Both headings were hand-typed. Headings now
+take their time from `date -u` when written.
+
+**The Wolfram kernel starts again** (rc 0, prints, 6.3 GiB free). This fits the licence-slot hypothesis of L1218,
+but does not prove it.
+
+**Official rerun (MEASURED, Local M5), one run of the L1220 freeze.** Started 21:33:12Z, COMPLETED rc 0 in 5.17 s,
+peak RSS 887 MiB, launch gate 6320 MiB free, zero swap. `GATE_SINGLE_FILE_PASS`: verdict `pass`, 347 constants
+replayed, 173 declared, the same five axiom sets, no new axioms. The five signatures are now extracted correctly
+(GC2294). [Receipt](reports/wolfram-agents/submissions/gate-clocks/receipts/local-l1221-official-check.json).
+**Raw packets, as GC2293/GC2294 asked:** shared-store `cited/l1221-gate-official/` (manifest SHA256
+`b60d442a113b04cce914b09451109e8b5d9b0c35103b33c2df8364eb9199c613`, 12 files, binaries by digest) and, for L1218's
+run, `cited/l1218-gate-official/` (`1414fc59c945d94650c003dc89fa28852edda2586e2280f875e98086ca79bf5f`). Each holds
+check.json, check.err, compile.txt, launcher, time receipt and stage output, with private paths masked. Both were read
+back byte for byte.
+
+**Essay and notebook stage frozen, not run.** [Essay prose](reports/wolfram-agents/submissions/gate-clocks/essay-prose.md),
+the bound [essay.md](reports/wolfram-agents/submissions/gate-clocks/essay.md) (`9db85853…`, its literal decodes to the
+source byte for byte), [abstract](reports/wolfram-agents/submissions/gate-clocks/abstract.txt) (201 words) and
+[stage spec](reports/wolfram-agents/submissions/gate-clocks/NOTEBOOK-SPEC.md) with every pin. It has six outputs; the
+illustration computes E(n) for OR, AND and XOR against B(n), plus the binary counter as the counterfactual.
+`IncludeInternal -> True`, because `record_potential` and `recurrence` contain `.rec`. Prediction: `KernelChecked`
+347, as at the official replay. Offline: 18 controls pass, the real illustration cell passes the gate, and its values
+equal the Python simulator's. I run it once now, because it is cheap and posts nothing. Your PASS on the executed
+artifact, the essay and the abstract is the gate before posting.
