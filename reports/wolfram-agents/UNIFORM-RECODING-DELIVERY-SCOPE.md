@@ -923,3 +923,71 @@ unavailable; bundled pypdf/pypdfium2 supplied extraction/rendering. No installat
 endpoint2q_next and limiting2+sqrt2 copies, for the stated lagQ only. It is now PROVED hand/two-party.
 No optimum over all periods or Rule30-preserving edit follows. The2020 primary comparison remains GPT's
 actual source read, not a second independent primary-paper audit.
+
+
+## GC2219: two substitutions have an exact endpoint, set by a residue chain
+
+**PROOF-SKETCH, solo GPT,30 October2026.** This continues the carried one-substitution endpoint GC2194/L1195. It is a hand statement about the same synthetic silver word and the same specified lag, not a Rule30-preserving modification, an optimum over all lags, or a new submission. No experiment or larger word scan was run.
+
+**Pull and discriminator.** Does the second edit buy another full period, or is it blocked by the second mismatch? The cheap objection is that one edit toggles up to two lag comparisons. Prediction: the first obstruction comes from a *repeated residue class*, not from merely counting different mismatched pairs. Counterfactual: an additional original mismatch in the needed interval, or a cheaper consensus on the two affected residue classes, would invalidate the endpoint below.
+
+### Known Hamming-distance formulation
+
+For a finite binary word w of length L and a fixed Q>0, its minimum number of substitutions to become Q-periodic is
+
+    H_Q(w)=sum_(0<=j<Q) min(number of zeros, number of ones in positions j mod Q).
+
+Each Q-periodic word chooses one symbol per residue class, independently, so choosing a majority attains the lower bound in every class. Empty classes cost zero. This elementary majority criterion is **KNOWN**, not a new algorithm: Amir–Eisenberg–Levy, [Approximate Periodicity, author full text](https://www.researchgate.net/publication/221544033_Approximate_Periodicity), Definition9 and Lemma2 use frequent elements in the same residue classes. Definition6 fixes a period length; Lemma1 explicitly notes that one substitution can create two shifted comparisons. Those definitions and Lemmas1–2, including their proofs, were read; the entire algorithmic paper was not audited. The hosted landing page describes the2010 proceedings item while the displayed full version cites later work; no exact-version or priority inference relies on that date.
+
+This total substitution cost differs from the number of mismatches with a shifted copy, the observable called a k-mismatch period in [El Ghazi–Starikovskaya, ISAAC2025, section2.1](https://drops.dagstuhl.de/storage/00lipics/lipics-vol359-isaac2025/html/LIPIcs.ISAAC.2025.36/LIPIcs.ISAAC.2025.36.html). Only the introductory distinction and definitions were read there; no algorithm or claimed bound is imported. We keep zero-based lag Q throughout rather than transferring the paper's indexing convention.
+
+### There is no hidden third mismatch before the repair breaks
+
+Use exactly GC2193's notation: beta=2-sqrt2, lambda=sqrt2-1, c(s)=floor(s beta)mod2, odd i>=3,
+
+    q=q_i, r=q_(i-1), q'=2q+r, Q=q+r, d=lambda^i.
+
+The carried mismatch rule places lag-Q mismatches at visits to I=[1-(1+lambda)d,1). The first two visits are h1=q and h2=q+q'. At h2 the orbit point is
+
+    {h2 beta}=1-(1-lambda)d.
+
+Suppose h2+k is another visit for0<k<=Q. Subtract the two points in I. For some integer m,
+
+    k beta-m belongs to [-2lambda*d,(1-lambda)d).
+
+Both endpoints have magnitude strictly less than d, since0<lambda<1/2. But k<=Q<q', and convergent best approximation gives |k beta-m|>=d. Contradiction. Thus there are no further mismatches through h2+Q=2q', inclusive. Combined with the carried first/second-hit result, the only mismatch starts in [0,2q'] are q and h2.
+
+This uses ordinary signed differences between two points of the same nonwrapping arc. No equidistribution or numerical return estimate is assumed; d=lambda^i with i>=3 ensures the displayed interval lies strictly inside the unit circle.
+
+### Exact optimum with at most two substitutions
+
+Put
+
+    L=2q'+Q=5q+3r.
+
+Flip c(q) and c(2q'). On a prefix of length L, only comparison starts s<L-Q=2q' matter. The first flip changes only comparison q, since q<Q. The second changes h2=2q'-Q and comparison2q'; the latter lies outside this prefix's comparison range. The preceding paragraph therefore proves the edited prefix is Q-periodic. Both flips are from0 to1, though the argument needs only their toggling action.
+
+A prefix of length L+1 cannot be repaired with two substitutions. Two distinct residue classes suffice to prove this:
+
+- At residue q modulo Q, positions q,q+Q,q+2Q,q+3Q all occur before L+1. Their bits are 0,1,1,1: the sole comparison change on that chain is the first mismatch q. This class needs at least one substitution.
+- Put j=q-r, so0<j<q<Q. Positions j,j+Q,j+2Q,j+3Q,j+4Q are j,2q,h2,2q',L. Their bits have the form b,b,b,1-b,1-b, since the only comparison change on this chain is h2. This class needs at least two substitutions. Here b=1, but its value is immaterial.
+
+The classes are distinct because r>0. Their costs add, so at least three substitutions are necessary. Equivalently, the second repair has merely moved a comparison defect one period to the right; once the next same-colour letter is included, changing the earlier side of its chain cannot avoid paying twice. The argument does not assume that a repair must preserve the original initial Q-block.
+
+It follows that the longest prefix admitting Q-periodicity after at most two substitutions has **exact length2q'+Q**. At that length the cost is exactly two, since the two original mismatches have four distinct endpoints. At length2q'+Q+1 the cost is exactly three: the lower bound above is attained by flipping q,2q',L. There are still only the same two mismatched comparisons in the original word at this new length. This exhibits the distinction between shifted mismatch count and repair cost within the actual symbolic family.
+
+The number of copies at the two-substitution optimum tends to
+
+    L/Q=1+2(2q+r)/(q+r) -> 3+sqrt2.
+
+The previous one-substitution optimum tended to2+sqrt2. Each scale uses different edit positions. Neither result changes the word's ordinary critical exponent or supplies one fixed finite edit creating these repeats at infinitely many scales.
+
+### Hand endpoint control and scope
+
+At i3, q5,r2,q'12,Q7. The optimum is31 letters; flip positions5 and24. At length32, residue3 has positions3,10,17,24,31 with floors1,5,9,14,18, hence bits1,1,1,0,0. Residue5 has positions5,12,19,26 with floors2,7,11,15, hence bits0,1,1,1. Their minimum costs are2 and1. These floors follow from rational bounds on sqrt2; no program or finite enumeration was substituted for the proof.
+
+Record searched: Hamming/substitution/mismatch/repair with silver/Rote/G143/G144; two-error/two-edit/two-substitution/approximate-period/corrupted-period/majority with word/period/Rote/silver. Current actual kit932cf8dd, equivalents/catalogues and portal/open-PR index00:10:27Z were included. Positive record dependencies are G143/L099, GC2187/L1192, GC2193/L1193 and GC2194/L1195. The primary approximate-period formulation is credited above. No exact silver endpoint export was identified among the checked sources; **no novelty clearance** follows. Universal result remains solo PROOF-SKETCH, and no formalization or posting owner is invented.
+
+**Disposition:** the two-edit target is complete in scope. Do not automatically extend to three edits or a hierarchy: the already-carried one-edit example established the qualitative failure of robust additive repeat bounds. This step identifies the first residue-chain obstruction and its exact cost, without claiming another Rule30 obstruction.
+
+**Next independent pull:** return to the right edge through its metric geometry. GC2205 counts exceptional ruler closures in initial prefixes. Test whether its disjoint-block argument also bounds such closures uniformly in *every spatial window*, with a bound depending only on the window length. If so, compare the resulting local prefix branching bound with the Assouad covering definition for the already-known homogeneous orbit tree. Cheap objection: a window may start inside a very long exceptional block, so a prefix bound cannot simply be subtracted. First settle the two boundary pieces and check the actual no-three guard. This is a distinct local-covering question, not a density fit or a reopened00 parity closure. No computation is frozen.
