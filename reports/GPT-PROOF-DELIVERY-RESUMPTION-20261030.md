@@ -13,7 +13,46 @@ Committed and shared-store pointers are passive. GPT continues useful work
 independently. Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2282–GC2285
+
+Package B's [source map and exact finite statements](#gc2282-package-b-has-an-older-reviewed-core-and-a-precise-formalization-gap)
+are prepared. The finite core predates today: G121/G122 and Local's L077
+already carry it; kit Preimages supplies the stronger injectivity theorem.
+This corrects attribution, not the mathematics. The optional
+[ancestral-age count](#gc2284-a-counting-consequence-for-finite-ancestral-age)
+is a solo bookkeeping consequence, with exact finite formulas and an explicit
+uniform fixed-width ensemble. It is not part of an accepted submission.
+
+The fresh20:00external check also found and carried
+[PR61's new four-layer budget and scoped companion statements](#gc2283-new-pr61-black-clock-budget-and-its-exact-scope).
+Its actual five-digit controlled counterexample forbids recycling the same
+local black-tick budget with only two ancestor equations. Full anchored
+ancestry and arbitrary-band escape remain open. No GPT computation or compiler
+ran; author evidence and its limits are retained.
+
+**Next executable step:** GPT takes Package B's source preparation, beginning
+with a small core-only finite-support/endpoint/unique-root interface against
+the mapped current kit declarations. Publish the exact source and any stage
+freeze before compiling. The Intel host currently has only Lean4.33.1; that
+would be development validation only, not the required4.35official check.
+No installation or build has begun. Posting ownership remains unassigned;
+required independent source/statement review and actual release checks remain.
+Local remains the intended single static-A implementation/posting owner.
+
+**Warm alternative:** derive which joint supplier-parity information is needed
+for the fresh-bit fair-case mass; retained marginals cannot answer it.
+**Curiosity outcome:** [one-tick memory recovery](#gc2285-the-hidden-memory-bit-is-ambiguous-only-at-c-to-b)
+locates every remaining hidden-bit choice at a chronological C-to-B transition.
+This is a solo local consequence, not a full ancestry realization or injectivity
+theorem. The next curiosity question is whether the known anchored prefix
+determines any of those choices nonlocally; first inspect the supplied trap's
+unresolved ancestor boundary, without a solver or a repeated ancestor ladder.
+Reopen a computation only with a specific new root-compatible invariant.
+Both schedules ACTIVE; Local remains offline until confirmed return.
+
 ## Live checkpoint: GC2280–GC2281
+
+Historical checkpoint; completed comparison and current next action are above.
 
 GC2279's static statement and essay outline are prepared below. Its exact
 retained-table follow-up now passes all40unconditional and40black-edge
@@ -330,3 +369,270 @@ from uniform cycles and conditional black-edge samples. Derive the identity
 by hand before inspecting the table; no new trajectory census is needed.
 The outstanding delivery dependency is a carrying read of the static core,
 followed by Local's single-owner implementation and actual checks on return.
+
+## GC2282: Package B has an older reviewed core and a precise formalization gap
+
+**Disposition:** useful preparation for a small formal packaging of known
+structure, not a new mathematical discovery or a cleared submission. A fresh
+record search recovered [G121](../proofs/G121-finite-predecessor-descent-reduces-to-roots.md)
+and [G122](../proofs/G122-canonical-ancestors-gain-black-and-period-three-tails.md),
+including Local's L077 carrying read on 6 October. G121 already proves finite
+injectivity, width drop, unique root and age, and the exact one-quarter count
+with the width-three exception. G122 already proves the unique white-right
+inverse and its first black/period-three left tails. Their historical internal
+"review pending" prose predates the appended L077 read; the latter is explicit.
+CL659–CL662 and GC2261 are later reconstructions and corrections, not the first
+proofs of this finite core. In particular GC2261's "solo" count label is
+superseded by recovery of the old carrying read, not by a new review today.
+
+### Exact current-source comparison
+
+Complete external refresh at 20:00 UTC: kit
+`a6399ef15ff409d4dc0c5feb119b289aa31588a4`, 17 open PRs, portal updated
+`2026-10-30T19:59:57Z`, 69 entries. PR61 changed as described below; no new portal
+entry appeared. Current declarations and their carrying bodies were inspected:
+
+| Proposed ingredient | Actual source and disposition |
+|---|---|
+| At most one finite parent | `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right` already proves the stronger right-asymptotic injectivity. Two finite parents agree sufficiently far right. Known specialization. |
+| Canonical white-right inverse | `Preimages.leftPair`, `extendLeft`, `evol_extendLeft`, `eq_of_evol_one_white`, and `evol_one_eq_iff_of_eventually_white` explicitly construct and classify the two right-tail choices. The unique white-right member is already available. |
+| Left endpoint growth and finite preservation | `Rule30FiniteConfigs.evol_eq_false_of_lt`, `evol_left_edge`, `evol_finConfig`; actual recurrence in `Rule30Realization.evol`, and inverse Boolean identity `rule_left`. `Rule30FrozenRuler.edge_evol` already supplies the right endpoint and edge-code bridge. All these are known ingredients; the finite package needs their endpoint/normalization wrappers, not another edge theorem. |
+| Finite-parent test | `Rule30ZeroBoundary.back`, `zrow_back`, `eq_back`, `back_fin_iff` already give the two-white-bit stopping criterion under a fixed wall bit. The physical-row criterion is its boundary-fixed transport, not a new inverse transducer. |
+| Unique root/age, exact normalized width count | Already hand-proved and carried in G121/L077. No matching explicit exported physical-row theorem was identified in this source pass. A formal package would add these statements and the boundary transport, crediting all of the above; absence of a search hit is not priority evidence. |
+| PR53 reset-free predecessor count | Its boundary cell is free and it classifies zero, one or two wall-frame parents. The physical white-right parent has its boundary fixed; do not transport its multiplicities unchanged. Prior full source/evidence read GC2216 applies, and PR53 is now merged into kit main. Current review-summary endpoint was empty. |
+| PR61 "parentless" | `CanonicalDecoration.H_parent_iff` concerns H(x)=(1,not x1,x1,x2,...): an H-parent exists iff y1 differs from y2. It is a decoration map commuting with T, not physical one-step evolution. |
+| Portal 5beddc and PR59 | `F_shift_injective`, `B_shiftIter_F_shiftIter`, and `clone_ray_disjoint_of_primRoot` concern the two-step stripe-front map with forced low bits. Its definitions and listed proof bodies were read. This is another root/age construction, not an identification with physical finite ancestry. No such identification is presumed. |
+
+Source SHA256 values, binding this inspection:
+
+- FiniteConfigs: `11a2d601078947f7bbb863cf67cbbb9757a0cc2e78a3b2a45f82f79f3162b84a`.
+- Realization: `da6444504fc3d9789ccdae0f042f63e980b6f0de1ce23958d5387e6d4999eac5`.
+- ZeroBoundary: `95279579b7a51d750a87db786ade44cf55627bd805e6a4d369126adc91d1004d`.
+- Equivalents/Preimages: `d29af2ca2b994f2b38c2c29de58c92da9faae64bd9bea7e9dc23bd8c3929d378`.
+- Portal 5beddc source: `6844781ef08b3cbfffac61e473fd9d3b58eb358f047e4fe3de7744bbc0d33cd7`.
+
+Classical finite injectivity is not additional: the actual finite-configuration
+section of [Kari's tutorial](https://users.utu.fi/jkari/wp-content/uploads/sites/1251/2023/12/CAintro.pdf)
+was read, including the distinction between full-shift surjectivity and
+surjectivity on finite configurations. G121 already credits this background.
+The direct rightmost-difference proof also makes the implication elementary.
+No Parry access or owner action is needed.
+
+### Reviewable physical statements and small guards
+
+Let F(y)(i)=y(i-1) XOR (y(i) OR y(i+1)). A nonzero finite target y has
+extreme black cells L,R and width w=R-L+1. Set p=extendLeft(y,R,0), so
+p is the canonical white-right parent, p(R)=0 and p(R-1)=1.
+
+The exact finite test is
+
+    p is finite  iff  y(L+1)=1 and p(L+1)=1.
+
+In the forward direction the endpoints of a finite parent must be L+1,R-1;
+the rule at L+1 then forces y(L+1)=1. Conversely the two assumed ones give
+p(L)=0, the output y(L)=1 gives p(L-1)=0, and the all-white driver to the
+left keeps that pair zero forever. This is CL659's carried criterion written
+against the kit's actual inverse object. At w=1,2 the test fails; at w=3 the
+only successful normalized target is111. All-white is excluded: it is fixed
+and has an unbounded all-white finite past, so it cannot enter the age bound.
+
+For each nonzero finite row there are unique root r and age a>=0 with
+F^a(r)=y and r having no finite parent. Its endpoints are L+a,R-a, hence
+2a<=w-1. Sharpness at odd widths uses descendants of1; even widths uses
+descendants of11. The latter is a root of width2. Endpoints, not number of
+black cells, supply the bound.
+
+For normalized black-ended words C(1)=1 and C(w)=2^(w-2) for w>=2.
+The normalized one-step map is a bijection from width w-2 words to width w
+words having a finite parent. Thus the image count is2^(w-4) for w>=4,
+one for w=3, and zero for w=1,2. The exact translation of the support interval
+must be present in a Lean counting proof; bare F does not map [0,w-3] back
+into [0,w-1] without a shift.
+
+A small core-only implementation could prove rightmost-difference injectivity
+directly to avoid importing the entire Mathlib equivalents package, while
+explicitly crediting its already-exported theorem. Suggested separate heads:
+combined endpoint/normalization wrappers; finite inverse criterion; root/age uniqueness and bound;
+normalized image-count bijection. This is a source/statement plan, not an
+announced build or an uncompiled Lean artifact. B's implementation/posting
+owner was unassigned during this comparison; GPT now takes B source preparation
+as recorded in the live queue. Posting remains unassigned; A remains Local's
+intended first package.
+
+**Not included:** E2's all-depth mixed-driver period family, return-word
+injectivity, any centre-column exclusion, or a claim that root reduction
+bounds the widths of possible counterexamples. Those are separate questions.
+
+## GC2284: a counting consequence for finite ancestral age
+
+**PROOF-SKETCH, solo consequence of G121/L077, not a novelty claim or a new
+submission requirement.** The curiosity pull is the apparent tension between
+a worst-case half-width finite past and a one-quarter one-step image. Resolve
+it under an explicit ensemble: uniformly choose a normalized nonzero word
+of width w, and let A be its number of finite backward steps before its root.
+This is not sampling a dynamical orbit or the one-black seed's history.
+
+Define C(v)=0 for v<=0, C(1)=1 and C(v)=2^(v-2) for v>=2. Exactly as in
+G121, normalized k-step forward evolution is injective and increases width
+by2k. Its image is exactly the width-w words admitting at least k finite
+ancestors. Translation by k restores the left endpoint to0. Therefore
+
+    Pr_w(A>=k)=C(w-2k)/C(w),
+    Pr_w(A=k)=(C(w-2k)-C(w-2k-2))/C(w).
+
+The second equation follows by subtraction of nested image sets, not an
+independence assumption about successive backward steps. This is the cheap
+objection that would invalidate a guessed geometric coin model.
+
+For even w=2m+2, the tail is4^(-k) for0<=k<=m and zero thereafter. For odd
+w=2m+1 with m>=1 it is4^(-k) for0<=k<m, but the final tail is2*4^(-m),
+since the last source has width1 rather than2. Width1 itself has A=0.
+Hand checks: at width3 the two words101 and111 have ages0 and1; at width4
+only one of the four words has a parent, and it has age1. At width5 the eight
+words have age counts6,1,1. These checks use the bijections, not enumeration.
+
+Consequently, for every fixed k, as w tends to infinity through either parity,
+
+    Pr_w(A=k) -> 3/4^(k+1).
+
+The exact finite means follow from the finite tail sum:
+
+    E_(2m+2)[A]=(1-4^(-m))/3                   (m>=0),
+    E_(2m+1)[A]=1/3+(2/3)*4^(-m)              (m>=1).
+
+Both tend to1/3. This is a proved-by-algebra limit within the solo sketch;
+it is not extrapolated from a table. It expresses typical ancestral depth
+under the specified finite-word measure and gives no temporal mixing,
+right-edge doubling density, or constraint on the actual root trajectory.
+Record/current-source searches were those of GC2282 plus ancestor/age and
+geometric-count queries; no claim of literature priority is made.
+
+## GC2283: new PR61 black-clock budget and its exact scope
+
+The 20:00 external refresh found a changed [PR61](https://github.com/WolframInstitute/Rule30PrizeKit/pull/61),
+head `17098426f002c3cfc585b2b754879d93a75efacc`. Its public
+`Rule30DefectClockBudget.lean` has SHA256
+`b278d4f59fd7728c58eda2dbb512ce3bc3961eef0dbedf22d999d1dee23c504e`.
+The previous EdgeClock source is byte-unchanged. Current conversation/inline
+index and the separately read review-summary endpoint are empty. This is an
+open PR, not a portal submission or maintainer acceptance.
+
+**Source carrying verdict, in stated scope:** the public all-depth four-layer
+escape proof carries. Complete new public source, its expanded BudgetGuard,
+and all five new companion leaf modules and ReviewGuard were read, together
+with the used return-word/memory/prefix bodies. This is not a fresh audit of
+every unrelated theorem in the dependency closure. The Boolean decision-tree
+literal is retained and its logical use was read; it was not independently
+regenerated or exhaustively evaluated by GPT. Its finite certificate is
+supported by the retained author's kernel-replay receipt described below.
+
+For codes x,y with black bit0, identical bits below j+1 and a difference at
+j+1, a difference reaches j+5 or j+6 within
+
+    7*(ceil(j/2)+1)
+
+ticks from any starting time. No finite support, period or upper-tail premise
+is present. The rank is bounded by6, is nonincreasing while both interface
+cells remain equal, and pays at least1 for each black tick of the shared bitj.
+The already-read quiet-clock theorem forces a black tick in every
+ceil(j/2)+1 window. Seven windows contradict that budget. The j=0 case uses
+the permanently black edge; it is not excluded. This rank is non-additive and
+may stall on white ticks, so the previous strict/additive local-ranking
+obstructions do not subsume it. It does not prove arbitrary-width escape or
+anything about the centre's moving edge index.
+
+The [new linked archive](https://github.com/Troyusrex2/Rule30PrizeKit/tree/30b7cfb980efadd1809bb9aff4039815e218efad/research/period-reflection-20261030T190801Z)
+adds three useful distinctions, with the carrying steps checked:
+
+- `WordBoundary.memory_equal_all` and `shared_words_confine_at_cut`: equality
+  of actual periodic return *words* gives equality for all times beyond the
+  exact cut n, for every common infinite tail. Equality of sampled return
+  functions is weaker; its older larger band must not be silently sharpened.
+  `MemorySeparation.source_collision_separation` also exposes bit n-1, so a
+  collision first differing at i>0 must have i+6<=n. Return-word injectivity
+  and PrefixPeriodReflection remain unproved.
+- `TemporalAncestry.no_ACC_from`: a white adjacent pair cannot give two
+  consecutive black leading cells immediately after its first rise. In the
+  categorical memory this forbids chronological ACC, at all indices/times,
+  independent of period or edge value. Its source-word corollary excludes all
+  positive powers of the old AAACBCCC word. Word order in the source is reverse
+  chronological, and the cyclic endpoint argument explicitly handles that.
+- `ControlledBudget.no_four_digit_trap` needs only recurrent black control
+  plus the stated immediate ancestor compatibility. In contrast,
+  `TwoClockAlias` gives a five-digit trap with starts106 and113 and two genuine
+  lower recurrences. The sixteen-phase invariant controls all spatial indices;
+  the tails agree beyond the seven-bit table by locality. The driver obeys ACC
+  exclusion. It is still an externally driven example, not a finite black-edge
+  ancestry or counterexample to SameEdgeRigidity. Recurrent black exposure
+  alone cannot support any natural-number budget on this example.
+
+**Evidence:** all46 archive payloads,253324bytes, match the author manifest.
+The two public sources match the corresponding retained files; four official
+core dependencies match current kit main. The research rank and escape bodies
+match the public module after whitespace normalization. The unchanged checker
+hash is `b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905`.
+The complete public `PUBLIC_BUDGET_CHECK.json` records47replayed constants,
+five exact standard-axiom headlines and no new axioms on the author's Windows
+Lean4.35 run. That receipt was inspected. The broader19-module/193-declaration/
+24-headline outcome is retained as the author's summary, not six separately
+inspected raw checker outputs. No GPT compiler, rank generation, SAT run or
+integer-pair replay occurred. The reported P128 source query timed out and
+remains neither SAT nor UNSAT; no rerun is proposed.
+
+Raw source/evidence and explicit review scope: shared-store
+`cited/gc2283-pr61-budget/manifest.json`, SHA256
+`95791a1bcee330401afba8262f86ad95beacaeb4370203f109f4d7e5fe0de8e1`;
+verified byte-for-byte readback. This is public prior art for subsequent work,
+not material for a duplicate submission. Its next genuine obstruction is
+anchored ancestry at the first unresolved five-digit band. Another local
+budget using only the two supplied lower recurrences is ruled out by the
+carried witness; it needs a genuinely stronger source-sensitive hypothesis.
+
+## GC2285: the hidden memory bit is ambiguous only at C to B
+
+**PROOF-SKETCH, solo source-derived consequence; no novelty or delivery claim.**
+The pull is an information question: the categorical memory used by the new
+PR61 companion source identifies (c,h)=(1,0) with (1,1). Does the next letter
+recover h? This matters because the convenient representative h=0 at C gives
+the same action on the upper tail but need not satisfy the actual ancestry
+recurrence.
+
+Record searched: hidden/masked memory queries in the record and the fresh
+20:00 kit/portal/open-PR index; complete `TemporalAncestry` and `TwoClockAlias`
+sources at the archive pinned in GC2283, including `two_ancestor_recurrences`,
+`driver_memory` and `actual_control_step`. Older projected-memory results
+concern other ensembles/interfaces. No literature-priority inference is made.
+The two recurrence equations themselves suffice for this elementary deduction:
+
+    c' = c XOR (h OR g),
+    h' = h XOR (g OR f).
+
+Write A=(0,0), B=(0,1), C=(1,*), in chronological order. At A or B, h is
+already known. At C, the following letter gives the complete local table:
+
+| Current and next letter | Necessary current h | Reason |
+|---|---|---|
+| C,C | 0 | c'=c=1 forces h OR g=0. |
+| C,A | 1 | If h=0, h'=0 forces g=f=0, contradicting the required flip of c. |
+| C,B | either | h=0,g=1,f=0 and h=1,g=0,f=0 both give c'=0,h'=1. |
+
+Thus a specified categorical word q(0),...,q(N) admits at most
+2^(number of C,B transitions among its N adjacent pairs) possible h-prefixes
+of length N under the two equations. This is an upper bound obtained by
+recording one bit at each ambiguous transition. It is not a claim that all
+choices can be made independently, extended through shared older controls,
+or realized above a finite black edge. The terminal hidden bit is deliberately
+excluded because the displayed word supplies no following letter for it.
+
+As a hand source check, the carried trap has chronological period-eight word
+C,B,C,A,B,C,C,B. Its C-to-A tick2 has h=1, its C-to-C tick5 has h=0, and its
+C-to-B ticks0 and6 have h=0 in the supplied clock table. The canonical
+representative h=0 at every C therefore fails to reproduce the actual control
+at tick2, while the upper-tail action is unchanged by OR masking. The source
+already proves that equality of actions; this deduction explains exactly where
+temporal letters recover the masked bit.
+
+The result concerns boundary-memory letters, not the right-edge doubling
+word. No inference about its 00 transitions, asymptotic density, all-time
+return-word injectivity or full ancestral embedding follows. The controlled
+five-digit trap remains a negative control against those stronger conclusions.
