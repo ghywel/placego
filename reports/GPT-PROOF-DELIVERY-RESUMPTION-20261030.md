@@ -1105,3 +1105,29 @@ but an exact standalone assembly, unchanged official-checker receipt, essay/note
 separate delivery gates. Local retains sole assembly/build/posting ownership. GPT's next executable delivery step is
 to compare the assembled proof bytes and full exact headline types, then carry the actual validation packet when it
 arrives. This is an affirmative source/meaning review of L1244, not approval to skip those remaining checks.
+
+### GC2318: the standalone assembly preserves the proof; one header sentence needs correction
+
+L1245 atba5b57af supplies source SHA256
+`e9687e872c127c3d8a1783383e3f7abe5d1511e363e080d4c34ca9d00839d9fb` and official-stage runner SHA256
+`e0e5dbf27055acfc946c373a5ba14698fc35a73360104416bd3ecaecd3d455ff`. Static comparison confirms the45145-byte base
+proof region is unchanged from carried A and the26831-byte new section is exactly the fully read NestedDev body.
+The outer namespace, all header text and five complete headline types were read separately. The sole import is the
+official statement module; forbidden proof-bypass tokens are absent. This is source equivalence, not a compiler run.
+
+**One concrete prose correction before delivery:** the new header says "excess changes only at doubled pairs".
+For signed excess E(2m)-m, a00 pair lowers excess by one;11 raises it by one;01/10 leave it fixed. A correct
+replacement is "Excess increases only at11 pairs;00 pairs lower it. The last-visit selection isolates an interval
+of constant excess2 between the bounding11 pairs." This does not invalidate the proof: its last-visit selection
+explicitly handles all earlier losses and recoveries. Local owns the artifact, so GPT has not changed its frozen bytes.
+Any revised artifact needs its own new source pin and the corresponding validation record; preserve any already
+started run rather than presenting it as validation of changed bytes.
+
+All145lines of the runner were read. It pins source/checker, creates a fresh output library, rejects a shadow
+Rule30Submission object, compiles and checks sequentially at j1, and requires silent compilation, exactly the five
+headlines, standard axioms, no new axioms/official target, successful kernel replay and sensible declared/replayed
+counts. The five extracted signature texts match the carried declarations. `--claim partial` does not independently
+certify their intended mathematical meaning; source pin plus this type review supply that separate check. Compiler
+version is printed rather than enforced by a literal version guard; actual toolchain/core identities and receipts
+still need to be inspected. The runner relies on its outer launcher for the stated resource caps, which remain
+Local's M5 stage, not an Intel measurement or a hard aggregate-CPU guarantee. No run outcome is asserted here.

@@ -12460,3 +12460,17 @@ this pin and five headlines: `prefixExp_le_add_two`, `first_excess_three`, `no_t
 `after11_order`. All five signatures parse uniquely. **Prediction:** PASS. The replayed and declared counts are not
 known yet; they are recorded for the notebook stage. **Counterfactual:** any failure is retained, with no retry.
 Caps: 600 s CPU per process, 900 s wall, 3 GiB RSS, 256 MiB per file, 1 GiB disk, 2.5 GiB launch floor.
+
+## GC2318 — GPT to Local: L1245 proof assembly matches; correct one explanatory sentence before delivery (2026-10-30 23:40 GMT)
+
+[Exact assembly and full runner review](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2318-the-standalone-assembly-preserves-the-proof-one-header-sentence-needs-correction).
+Source e9687e87 preserves45145base-proof bytes and26831NestedDev-section bytes exactly. Complete five types,
+outer namespace/header and145-line runner e0e5dbf2 read; source/checker/import/shadow-object/partial-replay guards
+carry. Actual version/core/output/resource evidence remains to read; no GPT compile or run outcome inferred.
+
+One prose flaw: "excess changes only at doubled pairs" omits00 losses. Please replace it before delivery with
+"Excess increases only at11 pairs;00 pairs lower it. The last-visit selection isolates an interval of constant
+excess2 between the bounding11 pairs." The proof already handles losses correctly and remains accepted. You own
+the frozen source; I have not edited it. If a run has started, retain its outcome and bind any later changed bytes
+to a new source pin/validation record. This is a precise header correction, not a mathematical obstruction or a
+request for an automatic retry. Next read your actual assembly/official packet; both schedules remain ACTIVE.
