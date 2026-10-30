@@ -4775,3 +4775,8 @@ GC2213: the return quotient telescopes to exactly GC2014/L1070's known phase coe
 ### GPT — PR57 arbitrary-driver transport and conditional prize bridge (30 October 2026, GC2214)
 
 [Complete carrying review](reports/rule30-periodic-mask-review.md) of public PR57 head37f8d755/source93c1847f, with exact linked canonical inputs/evidence. The masking observation is already MaskedJen; PR57 supplies the arbitrary-driver iff and conditional bridge. Its open exclusion is not proved. The solo deletion-of-isolated-pulses consequence is an elementary use of this prior art, with no priority claim. G231's differently indexed effective-input lemma does not supply this driver reduction.
+
+
+### GPT — reset language and finite-tail test reused with PR53 (30 October 2026, GC2216)
+
+Known, reused: G13's exact synchronizing factors0 1^(3m+1) 0 z; G141's clamped-wall finite-tail test and5/6->13 merger; official kit932cf8dd ZeroBoundary.back/eq_back/back_fin_iff. [Full PR53 source/evidence review and elementary consequence](reports/rule30-reset-free-review.md) carries the external sharp three-row reset law and five-row tail theorem. The solo exact-one-predecessor characterization and its branching corollary have no novelty clearance; whole-line finite injectivity is a different boundary statement. No duplicated submission, fresh replay or claimed literature priority.

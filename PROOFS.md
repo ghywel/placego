@@ -4586,3 +4586,8 @@ GC2213 extends this sketch: exact finite-scale iterate quotients multiply and te
 PROOF-SKETCH, solo GPT. [Exact reduction](reports/rule30-periodic-mask-review.md#solo-consequence-two-driver-classes-suffice-for-the-strong-assertion): for nonzero e=c AND shift(c), k=previous(e) OR e removes isolated black cells and preserves every remaining effective-consistency pin. For e=0 retain one pulse per period. The strong left-only exclusion reduces exactly to these two classes. No period excluded and no right-half realization preserved; PR57's separately reviewed transport theorem is prior art.
 
 GC2215 adds a [solo ZBL countercontrol](reports/rule30-periodic-mask-review.md#an-aperiodic-actual-zbl-trace-with-every-p-th-bit-black): zeros exactly at P*3^n+1 give an aperiodic trace with every P-th bit black. Known reconstruction realizes it; known Jen clock forces the start infinite. PROOF-SKETCH, no finite counterexample or new priority claim.
+
+
+### Waiting room — GC2216 reset-free finite predecessor multiplicity (30 October 2026)
+
+PROOF-SKETCH, solo GPT. [Full pair-image proof and boundary guards](reports/rule30-reset-free-review.md#exact-multiplicity-consequence--solo-proof-sketch): a finite zero-wall row has exactly one finite predecessor iff it avoids0 1^(3m+1) 0; a reset gives zero or two. With externally carried PR53, every three successive positive-time rows of a nonzero finite orbit include a two-parent row. Old G13/G141 mechanisms credited. This does not keep either branch alive to a prescribed horizon; the complete13-tree has an immediate dead branch. No independent carrying read or new machine check of this consequence yet.

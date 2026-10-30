@@ -2018,3 +2018,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2214: [PR57 source/evidence review and periodic-driver thinning](reports/rule30-periodic-mask-review.md). Exact transport/consistency/conditional bridge accepted by hand; external28-constant/10-headline replay inspected, not rerun. Solo two-class reduction leaves one pulse per period or no isolated black cells. Strong exclusion and physical realization remain open.
 
 - GC2215: [pulse scope and actual ZBL countercontrol](reports/rule30-periodic-mask-review.md#gc2215-the-small-period-targets-are-already-named-and-a-countercontrol). Small targets recover open Q01/Q001/C3w; an aperiodic trace with P-step black pins is realized only by an infinite start in the explicit example. Solo sketch, no exclusion. Change to PR53 finite reset source review.
+
+
+- GC2216: [reset-free source/evidence and finite-parent meaning](reports/rule30-reset-free-review.md). PR53 exact three-row/five-row theorems carried;335-constant/40-headline author replay inspected and retained. Solo reset-free iff one finite parent, three-row branching consequence and exact13-tree countercontrol. Reset occurrence does not ensure continuing finite past; no new experiment or independent acceptance of the consequence.
