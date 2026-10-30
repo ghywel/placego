@@ -10553,3 +10553,44 @@ of it is infinite: at most half the row's width of finite ancestors, then an oce
 that has just annihilated itself into white. A width-w row with a *finite* valid past is one of the quarter that
 begin 11 and pass the second-cell test, and its finite ancestry ends at a row with no finite parent, the single
 cell's rows being the deepest chains. Nothing for the prize; a clean small fact beside §8.19. READ-LEDGER.
+
+## CL660 — Cloud to the owner, correcting CL659's attribution and answering the question in the frame of the 28 October past-state study (GC2015 to GC2024): every finite row's deep past is the same ocean. Backward period sequences of all roots to width 8 agree up to the finite stretch and one branch (2026-10-30 14:41 GMT)
+
+**Correction.** CL659 placed the owner's question beside §8.19 (5 October). The owner is right that the intensive
+study of the single seed's past is this week's: GC2015 to GC2024 (28 October) with Local's reads L1067/L1068, in
+`reports/rule30-missing-parents.md`, `rule30-backward-diagonal-b.md`, `rule30-two-crystal-fronts.md` and
+`rule30-backward-period-three.md`: the single cell's two root parents A (...1111|0000...) and B (...1111 0 1111...),
+the backward diagonal x = t filtered through all ancestors (alternation survives 37 steps and fails at 38; the
+three period-3 words close within 5), the two crystal fronts of the past with period-48 backgrounds and 50-cell
+jumps, and GC2019's "x = t is the first defect against the periodic right background" for every root ancestor.
+§8.19 is the 5 October seed of that line; the substance is the 28 October work. CL659's facts stand; its framing is
+replaced by this entry.
+
+**The question in that frame.** A width-w row's past, with the right side kept white (the A-type history of the
+study) has three stretches:
+1. *A finite stretch*, at most floor((w-1)/2) steps, unique at every step (CL659's law: a finite parent exists iff
+   the row begins 11 and the leftward solution is black at its second cell). It ends at a finite row with no finite
+   parent, the row's **root**; three quarters of finite rows are their own root, and the single cell is one root
+   among them.
+2. *The root's parents*, as in GC2015: with the right tail white, one left-infinite parent; with the right tail black,
+   another. The study's A/B pair for the single cell is the general case for every root.
+3. *The ocean.* Beyond the root the left tail is periodic at every step and, measured on every row with black ends
+   up to width 8 (12 steps back, 900 cells of tail), **the period sequence is the same for every root up to the
+   length of its finite stretch and one branch**:
+   - 82 rows (the single cell among them): 1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12;
+   - 14 rows (e.g. 101001): 1, 3, 3, 6, 6, 6, 6, 6, 6, 6, 12, 12 (the doubling to 12 one step later);
+   - the rest are the same sequences shifted by the finite stretch (111 -> 1, then the single cell's sequence).
+   The first two steps are PROVED by hand: far left the recursion is a(i-1) = y(i) XOR (a(i) OR a(i+1)); with
+   y = 0 it sends every entering pair to all-black (or all-white, the finite case), and with y all-black it sends
+   every pair into the 3-cycle 001. Beyond that the leftward recursion driven by a periodic tail is a T-function
+   in space, so each step keeps or doubles the period: the past is a **backward odometer with base period 3**, the
+   mirror of the right edge's forward one, and COMPUTED to be nearly root-independent.
+
+**For the dialogue.** The zeros around the map are the present only. Every finite row's valid past is a short
+unique finite stretch, then a root with the single cell's two kinds of parent, then the same periodic ocean that the
+single cell has, black one step back, the owner's period-3 crystal two steps back, doubling slowly thereafter. The
+root decides only how long the finite stretch is and, once, whether the 6 -> 12 doubling comes a step late. What a
+width-w seed's past looks like is therefore the single cell's past with a different root; the 28 October machinery
+(ancestor filters, the first-defect lemma, the two fronts) applies to it unchanged. Open, and for GPT if the owner
+wishes: the law behind the backward doubling steps (2, 4, 10 or 11) and whether the one-step branch is the only
+freedom at every depth. No prize movement. READ-LEDGER.

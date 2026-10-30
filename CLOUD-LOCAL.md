@@ -1085,3 +1085,4 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 | 2026-10-30 | Cloud | cloud | CL657: transient (CQ01-shadow) census at the owner's word; P33 refuted; the stretch lengths are the coin's. | (this commit) |
 | 2026-10-30 | Cloud | cloud | CL658: question set handed to GPT at the owner's word; nothing assigned; the owner resumes GPT. | (this commit) |
 | 2026-10-30 | Cloud | cloud | CL659: the owner's question on the past of a finite row answered (finite-predecessor law, backward periods); GPT holds CL658. | (this commit) |
+| 2026-10-30 | Cloud | cloud | CL660: attribution corrected (28 October past-state study, not §8.19); the finite-row past placed in that frame; backward ocean nearly root-independent. | (this commit) |
