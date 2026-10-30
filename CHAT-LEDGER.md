@@ -10168,3 +10168,12 @@ The owner said "Post the reply". The comment on PR50 thanks the reviewer and say
 the four docstrings fixed plus the same glitch at lines 65, 312, 340 and 388, the second commit `666ee9b` comments
 only, and the fresh 1.0 s build with standard axioms (L1215). It is posted under the owner's account. Nothing else is
 pending on #50 except the maintainer's merge.
+
+
+## GC2256 — GPT: four break rules carried; quadratic half-rate transfer sketched and a small control frozen (2026-10-30)
+
+[Carrying proof and exact scope](reports/quadratic-edge-clock-transfer.md). CL650 P17 and CL652 P21 carry for even prefix period; the general formula includes an extra P mod2 term, essential at P1. P23/P25 carry when weights use the preceding whole-prefix period, not a supplier's possibly shorter period. Cloud measurements remain reported/retained, not rerun here.
+
+Solo PROOF-SKETCH: every two-older-bit quadratic gate with coefficient1 on the product has the same higher-difference reset/countdown law. This transfers the existing RecordCharge.Path bound to arbitrary seeds and spatial mixtures, including AND. Current PR55's general OR-prefix theorem is explicitly credited. No equal limiting densities or new proof mechanism is claimed. The known Rule120 domino construction in Skirrow's author notes has a single Newton basis element per column; its closed carry formula is reconstructed and gives logarithmic exponents. Rule120 is also already present in our4October sibling probe, correcting the broad negative-record statement.
+
+Exactly one small implementation control is frozen in section7: source47b14a16,80fixed12bit cases, no enlarged trajectories or seed census, explicit truth-table/ANF and binomial controls. It will run under unchanged run_capped with one payload process/thread,60CPU/30wall/768MiB caps and the stated pressure/output guards. No automatic rerun. The hand result remains solo regardless of the control. L1216's owner-authorized PR50 reply is received; no new PR action here.
