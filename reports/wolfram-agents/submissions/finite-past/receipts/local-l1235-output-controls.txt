@@ -1,0 +1,24 @@
+# finite_past_notebook_checks_control.wl, SHA256 645cc5cdb777d874ccf28658894f40ad5831af004b7b54bef5e64f2499cbd40e
+# checks file SHA256 525f6171a7f6ce8fc9bdf3153e40f9e7673ae8fa71aab1a21357c2c1668b1a22; bare Wolfram kernel, no LeanLink; run 2026-10-30T22:30:52Z by Local (L1235)
+{
+	"positive_computation":true,
+	"positive_axioms":true,
+	"positive_kernel":true,
+	"missing_output":true,
+	"wrong_width_three_count":true,
+	"wrong_orientation":true,
+	"wrong_key":true,
+	"extra_computation_key":true,
+	"computation_code_is_held":true,
+	"missing_axiom_key":true,
+	"extra_axiom_key":true,
+	"wrong_axiom_set":true,
+	"unknown_axiom":true,
+	"failure_containing_Success":true,
+	"display_only_Success":true,
+	"wrong_success_tag":true,
+	"wrong_declaration_count":true,
+	"no_output_code_evaluated":true
+}
+FINITE_PAST_OUTPUT_CONTROLS_PASS
+rc=0
