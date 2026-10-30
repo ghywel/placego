@@ -1,7 +1,7 @@
 # Two finite inverse steps: sixteen states and period-three gap counting
 
-GC2298, 30 October2026. **PROOF-SKETCH**, solo hand argument, independent
-carrying read pending. The control stage was frozen at GC2298 and passed once at GC2300;
+GC2298, 30 October2026. **PROVED, two-party hand read L1238** for the two-level
+boundary machine, gap law and fixed-mass quasipolynomial claims. The control stage was frozen at GC2298 and passed once at GC2300;
 its exact outcome and limits are below. Neither this result nor its experiment is added to Package B.
 
 ## Pull, comparison and scope
@@ -213,8 +213,9 @@ reflection question, with the missing seed-white-triangle premise explicit.
 
 ## GC2305: an exact leading coefficient for every fixed mass and width residue
 
-**PROOF-SKETCH, solo hand argument; independent carrying read pending.**
-This continues the same sixteen-state machine, with no new dynamics run,
+**PROVED, two-party hand read L1238** for the phase-path count and absolute
+leading coefficient. The ratio corollary still depends on the unreviewed
+GC2296 one-past formula. This continues the same sixteen-state machine, with no new dynamics run,
 state-space enlargement, fitted density or change to Package B. The pull is
 that the highest-order pole should only see long gaps. The cheap objection
 is that these gaps have three phases, so counting them without tracking total
@@ -342,8 +343,8 @@ W=3m+2: c_2(W,4)=0.
 
 Thus the leading coefficients by width residue are 2/3,1/3,0, exactly as
 predicted. This check uses the earlier hand classification, not another run
-of the same sixteen-state recognizer. Both hand arguments still await an
-independent worker's carrying read.
+of the same sixteen-state recognizer. L1238 independently carries the phase argument and recounts this four-black
+condition. GC2291's full age classification has not thereby been carried.
 
 The standard cube-root filter makes the residue bias explicit:
 
@@ -374,3 +375,153 @@ No wider/deeper machine or seed census is implied. Independent warm alternative:
 PR61's arbitrary-prefix period reflection gap. For a carrying read, the crucial
 new steps are the three-phase transition table and the telescoping width
 residue; the coefficient extraction is then elementary.
+
+## GC2307: a seven-state quotient and compact exact bivariate series
+
+**PROOF-SKETCH, solo hand derivation; the new quotient/elimination awaits an
+independent read.** L1238 carries the earlier machine and residue coefficient,
+not this extension. The pull is to replace a sixteen-state matrix inverse by
+a small reusable expression counting both width and black mass exactly. The
+cheap objections are loss of boundary information when states are merged,
+and accidental inclusion of arbitrarily padded/all-white words. Both must
+be settled before using the expression.
+
+Record searched: GC2296/GC2298/GC2305, the actual current Preimages source and
+primary Karttunen inverse/map already compared above, and the complete22:30
+kit/portal/PR snapshot. A fresh record/index search for generating-function
+and past terms also found Holonomic: its eventual centre-column recurrence
+argument is a different claim, not a finite-row counting formula. No new
+novelty or submission decision is made. Finite automata and rational formal
+series are standard tools.
+
+### A closed table that retains acceptance
+
+The ten states reached from0000 are partitioned below. Each row has exactly
+the shown destinations for both digits, for every state in that row; this
+is direct substitution into S_e. Only A is accepting.
+
+| Class | Original states | Read0 | Read1 |
+|---|---|---|---|
+| A | 0000 | A | D |
+| B | 0011 | B | C |
+| C | 1001,1101 | G | F |
+| D | 1010,1110 | C | F |
+| E | 0100 | D | A |
+| F | 0110,0111 | C | B |
+| G | 1100 | D | E |
+
+Closure from A and agreement of both digit transitions prove that this
+quotient recognizes exactly the same language. There is no need to claim
+it is minimal. Let z mark total width and u mark black cells; the edge
+weights for digits0,1 are z and z*u. Let X_A,...,X_G count all finite
+suffixes that finish at A when started in the indicated class. Their exact
+formal-series equations are
+
+```text
+X_A = 1 + z X_A + z u X_D
+X_B = z X_B + z u X_C
+X_C = z X_G + z u X_F
+X_D = z X_C + z u X_F
+X_E = z X_D + z u X_A
+X_F = z X_C + z u X_B
+X_G = z X_D + z u X_E.
+```
+
+These determine a unique formal series coefficient-by-coefficient because
+every transition has positive z degree. Write
+
+```text
+P = 1-z
+R = P + z u^2
+S = P + z u R = P(1+z u) + z^2 u^3
+T = P - z^2 u R
+V = T - z^3(1+z u)S
+Delta = P^2 - z^2 u P R - z^3 S^2.
+```
+
+Eliminate B,F,D first to obtain
+`X_B=z*u*X_C/P`, `X_F=z*R*X_C/P`, `X_D=z*S*X_C/P`.
+The C,G,E equations then give `V*X_C=z^3*u^2*P*X_A`.
+The A equation gives `X_A=V/Delta`, using
+`P*V-z^5*u^3*S=Delta`. No convergence or analytic division is being
+assumed: P,V and Delta all have constant term1. Explicit numerators over
+Delta for a check of every equation are
+
+```text
+A: V                  B: z^4 u^3           C: z^3 u^2 P
+D: z^4 u^2 S          E: z u(T-z^3 S)      F: z^4 u^2 R
+G: z^2 u^2 T.
+```
+
+### Remove exterior zero padding exactly
+
+X_A counts the empty word and all-white words as well as words with black
+cells. The all-white contribution is1/P. Every nonzero accepted word has a
+unique normalized core with first and last bit1, and arbitrary leading and
+trailing zeros. Removing leading zeros is harmless since S_0(A)=A. Removing
+trailing zeros is harmless specifically because **S_0(s)=A iff s=A**; without
+that earlier boundary law the argument would be invalid. Thus, for the
+normalized nonzero two-past generating function H,
+
+```text
+X_A = 1/P + H/P^2,
+H(z,u) = z^5 u^3 P S / (P^2 - z^2 u P R - z^3 S^2).
+```
+
+This counts actual normalized physical rows with two finite past steps.
+It is not a sum over multiple ancestors, nor a clocked-wall language.
+
+### Hand checks against independent known counts
+
+At u=1, R=S=1 and Delta=1-2z. Hence
+`H(z,1)=z^5(1-z)/(1-2z)`, exactly the known two-step translated-image
+bijection: one word at width5 and2^(W-6) words at width W>=6.
+Extracting the first three nonzero mass coefficients by ordinary formal
+series algebra gives
+
+```text
+[u^3]H = z^5/(1-z^3)
+[u^4]H = (z^6+z^7+z^9)/(1-z^3)^2
+[u^5]H = (z^8+z^9+3z^10+3z^11+z^13)/(1-z^3)^3.
+```
+
+The first two match the independent earlier hand classifications. The third
+predicts the retained GC2300 mass-five counts at widths8..12 as1,1,3,6,3;
+those are exactly the existing raw oracle table. This is a reuse of retained
+finite evidence, not a new dynamics run or a universal proof by five values.
+The formula itself follows from the complete table/equations above.
+
+### One separately frozen exact-arithmetic check
+
+[Source](../tests/probes/wolfram/finite_two_past_rational_control.py), SHA-256
+`b784b40da1876fb578f5fd23b66f4b9eed841939c08254dd936ca99cac3a141c`.
+It uses standard-library sparse integer polynomials, one Python thread and
+only serial thermal-monitor children. Fixed input: GC2300's retained
+result.json, SHA-256`f80ccf5a1f798b428c5d28cd73f06d4271c947d6923d9b10a353bdb533b17895`.
+No new forward evolution, seed, depth, horizon or state set is enumerated.
+
+**Prediction:** all20 Boolean transition checks, all seven exact polynomial
+suffix identities and the exact padding-removal identity pass. The rational
+series agrees with all90 width/mass entries at widths1..12 from the retained
+oracle, with total128 two-past words. The u=1 specialization gives the known
+width count; empty/all-white words are excluded.
+**Counterfactual:** any disagreement fails the whole check and preserves its
+exact residual; no rerun or widening. Independent controls are the retained
+forward truth-table oracle, known all-width bijection, and the hand mass-three/
+four formulas. Unexpected checks: omitting the padding factor P and changing
+the sign of the squared denominator term must each produce a disagreement.
+A test of the quotient alone would miss those algebra/boundary errors.
+
+At22:47UTC the Intel host had6327.2MiB free+inactive, load2.35/2.19/2.13,
+swap161.25MiB, all16CPUs available and scheduler/speed100%, no thermal warning
+and no research compiler identified. The one run will use run_capped.py with
+120s per-process CPU backstop,300s wall,768MiB sampled tree RSS,16MiB/file,
+128MiB stage disk,4096MiB launch headroom,3072MiB running floor,64MiB swap-growth
+stop, tree tracking and max4processes. The worker verifies nice10, separately
+stops at110aggregate CPU seconds over self plus reaped serial monitor children
+and280wall seconds, and checks thermal state before/after and every2seconds.
+Monitor reads have5second timeouts; pressure/monitor failure stops the job.
+Outer supervisor/time overhead is separate; these are sampled/cooperative
+stops, not hard aggregate enforcement. No concurrent heavy job, GPU or retry.
+Raw source/input/result/resource/failure receipts stay outside git with digests.
+Freeze must be committed and pushed before execution. **Not run at GC2307.**
