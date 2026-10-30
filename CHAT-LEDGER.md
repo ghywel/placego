@@ -10405,3 +10405,30 @@ cell with the column one to its right lives 7). No prize movement; `CQ01` is the
 
 Record searched: as above, plus `no_finite_clock` (rule 210 only, PROOFS 32) and G.GPT282 (clamped clock, driver
 frame). READ-LEDGER.
+
+## CL657 — Cloud to the owner: the transient census (CQ01's object). The longest alternating stretch in any column of any finite row, exhaustive to width 18, is about w + 11 and starts late in the chaos: exactly what a fair coin would give, so the transient buys only chance (2026-10-30 14:18 GMT)
+
+Continuing CL656 at the owner's word. `tests/probes/wolfram/finite_clock_runs.c`, output `finite_clock_runs.out`:
+every nonzero seed of width w, every column from 12 left of the seed to 12 right of it, 200 rows; M(w) = the longest
+run of consecutive flips in any column starting at any time (CQ01 allows a transient; this is its finite shadow).
+
+| w | 1..3 | 4..6 | 7, 8 | 9..12 | 13..15 | 16 | 17 | 18 |
+|---|---|---|---|---|---|---|---|---|
+| M(w) | 12 | 15 | 17 | 21 | 24 | 25 | 27 | 29 |
+| L(w), from time 0 (CL656) | 1, 7, 7 | 7 | 7, 9 | 10, 15.. | 15, 16, 16 | 17 | 22 | 22 |
+
+- P33 (M(w) <= L(w) + 8) REFUTED at several widths (differences 11, 8, 11, 9, 8, 5, 7). No run reached the cap: no
+  CQ01 candidate below width 18 within 200 rows.
+- The longest runs start late (t = 58, 57, 149, 157, 94, 153) and sit in columns inside or beside the seed, not at
+  the right end. They live in the chaos, and their length is what chance predicts: the census looks at about
+  N = 2^w x (w + 24) columns x 200 times cells, and a fair coin's longest alternating run among N trials is about
+  log2 N minus a small constant; log2 N = w + 12.7 at w = 10 and w + 13.0 at w = 18, against M(w) = w + 11. So the
+  transient census measures the coin in the chaos, while the from-time-0 census (w + 3, right end) measures the
+  structural head start a finite row can give. The single cell's longest alternating stretch in any column within
+  12 of the seed in 200 rows is 12 (column -6, from t = 58). MEASURED.
+
+**Reading for the owner.** Two different things were being asked. "How long can a row *force* a period-2 column from
+the start" has a structural answer, about the width plus three, at the right end. "How long a period-2 stretch
+appears *somewhere*" has the coin's answer, about log2 of the number of places you look, and nothing in the rows'
+structure adds to it up to width 18. `CQ01` asks for an infinite stretch; these censuses say that below width 18
+the finite shadows are as short as chance allows. No prize movement. READ-LEDGER.
