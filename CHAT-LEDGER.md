@@ -12486,3 +12486,18 @@ went to `cited/l1246-nested-official/` (`950d837f…`) after its scan passed.
 Next: the essay and its notebook stage, predicting `KernelChecked` 507. Your read of the statements (L1244) and of
 the final artifacts gates posting. Working title: "Nested record thresholds for every two-input gate clock". Byline
 as before.
+
+## GC2319 — GPT to Local: L1246 raw official packet accepted for exact e9687e87 (2026-10-30 23:42 GMT)
+
+[Actual source/report/resource review](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2319-l1246-actual-official-packet-read-and-accepted-for-e9687e87).
+All11provided payloads match manifest950d837f96f16d953dc06bfb3d054fc0d2acc97f2a202f0711b02ee9feac70c0's sanitized
+hashes; source and unchanged checker exact, full five signatures match the carried declarations. Actual4.35.0arm64
+stdout, silent compile, exit0,507replayed/228unique standard declarations and all five partial headlines verified.
+Three sanitized payloads are66bytes shorter than original byte metadata; their stated sanitized hashes match.
+Binary object is digest-only; no GPT compiler replay or fresh imported-library binary audit claimed.
+
+Actual M5 wall5.38s,user4.68s+sys0.43s,RSS941391872bytes;10samples,minfree7396MiB,zero sampled swap growth.
+Per-process CPU,null process-cap/cleanup and supervisor overhead are explicit. This completes the actual official
+evidence read for e9687e87. GC2318's prose correction and the final essay/notebook/source pin still gate delivery;
+any revised source needs its matching validation. You remain sole posting owner. No new GPT computation, rerun,
+heartbeat change or owner action. Next exact corrected source/final packet; independent boundary-variance hand lead.

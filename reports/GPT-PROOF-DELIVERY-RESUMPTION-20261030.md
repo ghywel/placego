@@ -13,12 +13,15 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
-## Live checkpoint: GC2316–GC2317
+## Live checkpoint: GC2316–GC2319
+
+GC2318–GC2319 update: standalone proof bytes and five exact types carry; the [actual official packet is accepted below](#gc2319-l1246-actual-official-packet-read-and-accepted-for-e9687e87).
+Replay507/declared228 is now independently read, not merely reported. One header sentence still needs correction
+(00 pairs lower excess); Local owns the pinned source revision and its validation. Final essay/notebook remain pending.
 
 L1244's complete development source is [accepted in its exact meaning below](#gc2317-l1244s-complete-development-source-carries-the-nested-threshold).
-Local solely owns nested gate-clock assembly/build/posting; GPT next compares the standalone source and headline
-types, then reads actual validation receipts. Dev compilation is Local-reported, not an independently read official
-receipt. The q=2→3 threshold is formalized; the general recursion remains two-party hand. A and B are already
+Local solely owns nested gate-clock assembly/build/posting; GPT next reviews the corrected artifact pin and final
+essay/notebook evidence. The q=2→3 threshold is formalized; the general recursion remains two-party hand. A and B are already
 delivered and Lean Verified, with Human Verified pending in the latest retained receipts.
 
 The [once-frozen boundary control passed](rule30-two-step-finite-past.md#gc2316-the-frozen-boundary-control-passes).
@@ -1131,3 +1134,32 @@ certify their intended mathematical meaning; source pin plus this type review su
 version is printed rather than enforced by a literal version guard; actual toolchain/core identities and receipts
 still need to be inspected. The runner relies on its outer launcher for the stated resource caps, which remain
 Local's M5 stage, not an Intel measurement or a hard aggregate-CPU guarantee. No run outcome is asserted here.
+
+### GC2319: L1246 actual official packet read and accepted for e9687e87
+
+Immutable manifest `cited/l1246-nested-official/MANIFEST.json`, SHA256
+`950d837f96f16d953dc06bfb3d054fc0d2acc97f2a202f0711b02ee9feac70c0`: all11provided payloads fetched and matched
+their sanitized hashes. Source e9687e87 and unchanged checker b882f252 match exactly; source bytes match the reviewed
+git assembly. The binary object is retained by digest only in this packet, not fetched or replayed by GPT. Three
+sanitized payloads (check.json, launcher.json, out.txt) are66bytes shorter than the manifest's original byte counts;
+their sanitized hashes match. This is a sanitation/metadata distinction, not an unexplained payload mismatch.
+
+The actual stdout reports Lean4.35.0, arm64, commiteb6cafb7290e8bd5f2937522d8d804f58f02bafc. Compile and checker
+stderr are empty, checker exit0, with only the runner's explicitly allowed replay deprecation notice before the
+single JSON object. All retained official guards were checked directly: partial/pass, importsStatements=true,
+no reasons/new axioms/official target, replay507/ok,228unique declared constants all standard, exactly five intended
+headlines found/ok/typeMatches with only standard axioms. The extracted exact source signatures agree with the
+carried statements and with the retained expected.json and submission-check.json. No compiler replay was run by GPT.
+The packet does not newly hash every imported compiled library; it uses the previously compared core arrangement.
+
+Actual M5 stage:23:37:43–23:37:49UTC, COMPLETED/child0; system-time wall5.38s,user4.68s,system0.43s,maxRSS941391872bytes.
+Supervisor wall5.74s/CPU0.059s separately;10tree samples, peak922944KiB/max3processes, launch7715MiB and running
+minimum7396MiB free+inactive, zero sampled swap growth. Process cap and cleanup fields are null; this is not a hard
+aggregate-CPU or enforced process-count receipt. The sampled peak differs from the single-process time peak, as
+expected for separate measurements. No Intel execution or host-budget claim is attributed to it.
+
+This accepts the actual unchanged-checker result for exact source e9687e87. GC2318's header correction remains a
+final-artifact task; any changed source must be bound to its own receipt. The essay, executed notebook, embedded
+source and public status are still separate pending states. Local remains sole posting owner. Next: carry the
+corrected pinned artifact and final execution packet, without redoing this completed run or treating a planned
+notebook count as a measured output.
