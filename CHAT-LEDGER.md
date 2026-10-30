@@ -10362,3 +10362,46 @@ as a function of t_h (is the best release time near D(W)/2, as at W = 16 where t
 
 Record searched: death_tables.py, d1_engine.py, §8.3 (D table, 8.117), kit `free_bits_no00_no11111`,
 `count_constrained`, `two_step_shift`; record_find hiccup / perturbed clock: none. No prize movement. READ-LEDGER.
+
+## CL656 — Cloud to the owner: finite starting rows that keep a period-2 column. Exhaustive to width 22: the longest alternating column from time 0 lives 25 steps, about w + 3, with the best column at the seed's right end; this is the kit's CQ01 question (FiniteConfigs), and my prediction that the wall frame sits inside it was a frame error (2026-10-30 14:12 GMT)
+
+The owner's thought: the single cell is only one start; take a finite row of width 3, 5, 7, ... chosen so that a column
+stays period 2, and see how long that can last. **Prior art first.** The kit's `Rule30FiniteConfigs` proves
+`CQ01_iff_no_finite_period_two`: the coupled question `CQ01` is exactly "no nonzero finite configuration has a centre
+column that is eventually 2-periodic, whatever the transient". So the owner's start is the `CQ01` question itself,
+open, with our absorbed families (8d7751) and Bosdure's trap as the partial answers. The kit's controlled-response
+modules (`Rule30FiniteClockCertificate`, `Rule30FiniteClockSixteen`) treat the column as a *driver* of a finite right
+half, a different frame. Our `cq01_census.py` works in the sideways (Psi R) frame. A census of fully finite seeds in
+the lab frame, alternating from time 0, I did not find (record_find; the kit's finite modules; the portal index).
+
+**Census** (`tests/probes/wolfram/finite_clock.c`, output `finite_clock.out`): every nonzero seed of width w, the
+clock column at every position p of the seed, lifetime = first time the column leaves the alternating word of the
+phase set at t = 0; cap 160; w = 1..22 exhaustive (4 million seeds times 22 positions at w = 22).
+
+| w | 1 | 2..7 | 8 | 9 | 10..13 | 14, 15 | 16 | 17..20 | 21, 22 |
+|---|---|---|---|---|---|---|---|---|---|
+| L(w) | 1 | 7 | 9 | 10 | 15 | 16 | 17 | 22 | 25 |
+
+- P31 (L(w) <= 3w + 6, linear) HELD, with slower growth than guessed: L(w) is about w + 3, and it climbs in steps
+  (7 for six widths, 15 for four, 22 for four). No seed reached the cap: no finite seed of width at most 22 keeps an
+  alternating column for 25 steps from time 0. MEASURED (a census, not a theorem; `CQ01` allows transients and this
+  does not).
+- P32 (L(w) >= D(w), "the wall-frame starts are among the seeds") **REFUTED by my own frame error**: L(w) is about
+  half of D(w) (L(14) = 16 against D(14) = 32). The wall frame (`Rule30ZeroBoundary`, pstep(Y) = (Y >> 1) XOR
+  (Y OR (Y << 1))) is the kit's sideways transform of `Q01` (`Q01_iff_Theta`; Frame C of the synthesis), not a
+  configuration with a physical white wall: a white cell to the right of a black one does not stay white under the
+  rule. Its "starts" are column profiles, not rows. CL655's hiccup results stand in their own frame; the comparison I
+  drew there between the two frames is withdrawn.
+- PU: the best column is at or just past the seed's right end (p = w - 1 for w = 10..13 with the seed 1010000010,
+  p = 16 of 17..20 with 0x1c6c5, p = 17 of 21..22 with 0x1f7d5b), never at the left end (p = 0 gives 2 at every width,
+  since the cell left of the seed's leftmost black turns black at once). The clock lives longest where the right
+  side is still white: the news has not yet arrived from the left.
+
+**Reading for the owner.** Finite rows keep a period-2 column only for about their own width plus three steps, with
+the best column at the right end, where the white right half has not yet heard the left. That is the owner's "news
+travels rightward" seen as a lifetime: a column can hold the clock only until the left half's news reaches it, and the
+widest head start a width-w row can give is about w steps. The single cell is not special here (L(1) = 1; the single
+cell with the column one to its right lives 7). No prize movement; `CQ01` is the home of this question.
+
+Record searched: as above, plus `no_finite_clock` (rule 210 only, PROOFS 32) and G.GPT282 (clamped clock, driver
+frame). READ-LEDGER.
