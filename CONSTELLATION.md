@@ -1257,3 +1257,14 @@ pointwise control beyond their whole support. Whether useful cancellations
 occur in return quotients is separate from this ambient regularity question.
 
 GC2213: the quotient product for an even prefix return is the old delayed phase coefficient. Separately, the actual root's moving outer edge prevents any fixed positive iterate from having a common modulo-four threshold along its finite states. This is an ambient-increment obstruction, not a statement about increments confined to the orbit closure. Solo PROOF-SKETCH; fixed-iterate smoothness transfer is parked.
+
+## GC2223–GC2224 — how a true edge breaks a periodic imitation
+
+PR48 constructs finite rows that imitate an8/2-periodic column pair for arbitrarily long finite times.
+A [solo guarded-front proof](reports/rule30-carrier-invasion.md) gives their exact first-failure times:
+6 at n0, then8k+6,8k+9,8k+13 for n3k+1,3k+2,3k+3. A three-cell guard repeats after four ticks
+and six depths, masking arbitrary older bits. One bounded control passed with independent literal
+and packed implementations. Universal status remains PROOF-SKETCH pending another worker's read.
+The period-eight ring carrier is known; neither its existence nor these finite imitation lifetimes
+settles the root's doubling density or a centre-column prize. Whether arbitrary finite older prefixes
+enter this guarded front is a separate question, now the next hand discriminator.

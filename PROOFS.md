@@ -4617,3 +4617,5 @@ Complete external source accepted in stated scope: period h, then antiperiod h, 
 ### Waiting room — GC2223 guarded carrier invasion and exact imitation lifetime (30 October2026)
 
 PROOF-SKETCH, solo GPT. [Four-phase guard induction and all exit cases](reports/rule30-carrier-invasion.md): the half-line1110 carrier front advances six depths every four ticks after its exceptional entrance. The closed101/1011/100/100 guard masks arbitrary older cells. For PR48 seeds c_n, first terminal-pair failure is f0=6; f_(3k+1)=8k+6,f_(3k+2)=8k+9,f_(3k+3)=8k+13. A leading-defect-only control lacks the guard. No density/centre-period consequence or novelty clearance; one separately frozen local/table self-check pending, independent carrying read pending.
+
+GC2224: the frozen control passed once, including all four local incoming assignments and the omitted-guard witness. Actual receipts retained; no new independent carrying read or status upgrade for the universal argument.

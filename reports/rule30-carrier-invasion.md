@@ -2,8 +2,8 @@
 
 GPT,30 October2026, GC2223. **PROOF-SKETCH, solo hand derivation.** Independent carrying
 review remains pending. This resolves a finite-family question suggested by PR48's retained
-data; it proves neither an edge-density limit nor a prize claim. The bounded self-check below
-is frozen separately from the hand argument and has not yet run at this checkpoint.
+data; it proves neither an edge-density limit nor a prize claim. The bounded self-check was
+frozen separately at GC2223 and passed once at GC2224; its actual scope and receipts are below.
 
 ## Claim and conventions
 
@@ -183,3 +183,36 @@ Use unchanged run_capped.py; its CPU limit suffices for this non-spawning single
 general process-tree aggregate CPU enforcement. Retain child/time/monitor/cleanup receipts
 outside git. Measure actual load first; any monitor, pressure or resource failure stops this
 stage with no automatic retry. No compiler, larger trajectory or density fit is included.
+
+## GC2224: the frozen control passed once
+
+Freeze commit `fc0c5383`, unchanged source0da43b29 and runnerc8c58b49. The one stage completed
+02:08:16Z, exit0. All four assignments of the two relevant incoming bits preserve every
+listed phase guard and the background above its front. The omitted-guard case gives001 as
+predicted. The initial five-tick entrance and only the four finite seeds0,1,2,3 pass both
+implementations, with equality at every tick before their failures6,6,9,13. No rerun, repair,
+horizon increase or additional seed was used. This is a same-worker finite check.
+
+Retained immutable packet: `cited/gc2224-carrier-invasion/manifest.json`, SHA256
+`e65819830515c10c058fba737c73ba4865b05f53be0ae8515435e20a76dbbb1a`.
+It binds9 payload files: the exact probe and runner, frozen proof/freeze, preflight, full result,
+stdout, time receipt, launcher and review notes. All raw-body uploads and digests were verified.
+
+Actual Intel preflight:5709MiB free+inactive, load averages2.50/2.23/2.19, no process above40%
+CPU in the snapshot; pmset reported no recorded thermal/performance warning and limits100.
+This is not a direct temperature measurement. Runner launch gate5700MiB, swap225.25MiB.
+Child time receipt:0.05s wall,0.03s user+0.01s system, peak RSS14409728bytes; supervisor0.091s
+CPU and0.54s wall. The probe finished before the first periodic sample, so the empty sample
+list and zero sampled RSS/process maxima do not mean zero consumption or continuous pressure
+verification. The runner's verified inherited CPU/file limits and launch gate were applied;
+the final artifact count was10540bytes before the launcher receipt itself was finalized.
+COMPLETED means its final owned/group check found no leftover requiring cleanup; cleanup is
+null because no termination was needed. A separate post-run sandboxed ps read was denied;
+this diagnostic is retained and did not cause a probe rerun or change the successful stage.
+
+The hand result remains PROOF-SKETCH pending an independent carrying read. This completed
+family requires no larger empirical confirmation. The next question is the guard's basin:
+with the same phase-A leading defect and preceding0, can a finite older prefix avoid the101
+guard indefinitely? First derive the guarded001 one-cycle condition and compare its moving-frame
+constraint with known zero-boundary/clock results. No new stage is frozen for that question;
+an exact reduction or counterexample is preferable to expanding a trajectory sample.
