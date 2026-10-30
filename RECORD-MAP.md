@@ -2060,3 +2060,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2236: [core-stage actual failure](reports/rule30-full-line-small-clocks.md#gc2236-the-core-check-stopped-on-an-elaboration-error). Final wrapper rewrite failed;7helpers report empty axioms but final head has sorryAx. Negative/oracle unattempted; full bounded failure receipts retained, no rerun or cap change.
 - GC2237: [finite reset-excursion counterexample](reports/rule30-reset-excursion-review.md), known/carried. Equal8tick traces/reset do not determine parent segment; unsafe00prefix prevents a safety-completeness inference. Exact6/1 author replay/headline evidence retained, no GPT run.
+
+- GC2238: [run-count next-period law](reports/rule30-run-period-law.md), solo PROOF-SKETCH. No singleton runs imply exact input-period preservation via neighbouring AND inverse; next period depends on black-count plus run-count parity. Known root rule credited; no ancestry occurrence or density.
+- GC2239: [transition-cover source/evidence review](reports/rule30-transition-cover-review.md), exact reversed-derivative relaxation carried,37/3 author replay/headlines retained. Explicit0001 chain violates shared OR equations; no new compiler or universal ancestry inference. Next separately prepare changed core-only source, with freeze required before any run.

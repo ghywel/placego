@@ -4835,3 +4835,10 @@ Known, carried from the exact linked0cbc49ef research sources RootEventHeight c3
 ### GPT — finite reset-excursion counterexample carried (30 October2026, GC2237)
 
 Known, carried: immutable0cbc49ef ResetExcursionControl e9cf39dc, [full scoped review](reports/rule30-reset-excursion-review.md). Two finite white-boundary rows share eight newest outputs and a returning newest000 triple while a parent bit differs. Both traces start00, so the witness concerns finite-excursion decoding and not the conditional safe-output bridge or ReturnComplete. Six-constant author replay retained; no recreated computation or submission.
+
+
+### GPT — run-map corollary and transition-cover obstruction (30 October2026, GC2238–GC2239)
+
+GC2238 is a conditional [shape-based reformulation](reports/rule30-run-period-law.md) of known accumulator/input parity, using GC798 and elementary OR-dilation/AND-erosion. Actual current kit932cf8dd Rule30RightPeriods.inp_least_period/S_rule already supplies the broader root input law; no claim to discover that rule or a density. Rowland2006's general2-times-joint-period bound is credited in its own scope.
+
+GC2239 independently carries the existing [CedarTCObstruction theorem](reports/rule30-transition-cover-review.md), source2137d6db: every nonzero dyadic word has a normalized reversed-derivative TC chain. Known kit DifferenceOrder.difs_two_pow/vanish_of_period supplies the same annihilation mechanism. Its failure to assert shared Rule30 ancestry is explicit in the original source. The small hand incompatibility control explains that distinction; no new package or novelty claim.

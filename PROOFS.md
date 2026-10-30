@@ -4645,3 +4645,12 @@ PROOF-SKETCH, solo GPT. In an actual forward Phi spacetime, a q-periodic tempora
 ### External finite witness and failed development check — GC2236–GC2237 (30 October2026)
 
 GC2235's final core theorem failed elaboration:7helper/control heads have empty reported axioms, final head has sorryAx, and the module is NOT accepted. [Exact failure and caps](reports/rule30-full-line-small-clocks.md#gc2236-the-core-check-stopped-on-an-elaboration-error); no rerun. Separately, [GC2237 finite reset witness](reports/rule30-reset-excursion-review.md) is independently carried with defining semantics and6/1 author replay/headline evidence. Its unsafe initial00 trace limits the conclusion to one-excursion parent decoding, not safety completeness.
+
+
+### Waiting room — GC2238 run-count next-period law (30 October2026)
+
+PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-period-law.md): for an actual q-periodic profile with every cyclic run length at least2, both older profiles equal Delta C. The next forcing C OR SC is inverted by adjacent AND and has least periodq; the next newer profile has least periodq or2q according to parity of black cells plus black runs. Known kit input-parity rule credited. No root occurrence/density/general00 theorem or successful core-module compilation.
+
+### External carrying review — GC2239 transition-cover obstruction (30 October2026)
+
+[Complete normalized derivative-chain theorem and evidence](reports/rule30-transition-cover-review.md) carried in scope. Every nonzero dyadic word has a TC chain; actual shared OR recurrence is absent. Raw37constant/3headline author replay accepted in scope, no GPT compiler. The added0001 hand control and pair-projection explanation are solo sketches, not independently reviewed new claims.
