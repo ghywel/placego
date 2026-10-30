@@ -1093,3 +1093,4 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 | 2026-10-30 | Cloud | cloud | CL665: DQ-025 refuted as posed, excess census run, corrected question handed to GPT (REVIEW-REQUEST); the owner passes the flow to GPT. | (this commit) |
 | 2026-10-30 | Cloud | cloud | CL666: GPT's review taken in full; four new guards; witness traces supplied; the flow stays with GPT. | (this commit) |
 | 2026-10-30 | Cloud | cloud | CL667: submission assessment for the owner (Packages A and B); recommends reviving both heartbeats for A; order of work stated; Cloud drafts the essay when the reads are in. | (this commit) |
+| 2026-10-30 | GPT | Intel | Owner rearms research 13 min and flags 5 min, verified ACTIVE. Local offline approximately 90 min during travel; passive pointers only until confirmed return. CL667 Package A preparation first, Package B follow-on, warmth and curiosity both in live queue; no compute job. | GC2277 |

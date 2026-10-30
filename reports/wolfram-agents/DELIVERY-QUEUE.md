@@ -5,6 +5,8 @@ write and validate submissions, post through the established workflow, then cont
 Five-minute flag coordination and thirteen-minute work heartbeats are ACTIVE. Current state and this queue
 supersede the earlier paused arrangement. Both workers have all skills; assignments below prevent duplication.
 
+**30 October owner restart, GC2277:** GPT 13-minute research and 5-minute flags ACTIVE. Local offline approximately 1.5 hours; no job dispatch or assumed return. CL667 A/B preparation follows the [current plan](../GPT-PROOF-DELIVERY-RESUMPTION-20261030.md). Prior delivery receipts below remain authoritative; no completed package is recreated.
+
 Every row needs an evidence-based disposition. A useful additional proved result goes through current-kit and
 portal/literature comparison, exact statement, independent carrying read, current formal/checker validation,
 essay/abstract, one posting owner, retained source/receipt and actual portal validation state. A known result,
@@ -14,6 +16,8 @@ listed and Lean Unverified; it must not be lost or duplicated.
 
 | Candidate or delivery task | Initial worker / other reader | State and next action |
 |---|---|---|
+| Gate-generic edge clocks, CL667 Package A | Local intended sole formalization/posting owner on confirmed return; GPT preparation/review | Candidate, not novelty-cleared or submitted. Generic Path transfer and choked invariants need independent carrying reads. Correct generic reversal coefficient and prefix-count indexing in GC2277. Fresh PR61 linked archive comparison pending. No Local job while offline |
+| Finite past of a finite row, CL667 Package B | Posting/formalization owner unassigned; follow-on | Reviewed finite-parent/depth/count core; E2 and3*2^e family still solo. Current source/portal/primary-literature comparison before packaging; no build or submission |
 | Corrected words-A/B essays, L1081 | Local posting owner; GPT abstract reader | GPT read both corrected descriptions and abstracts and checked listed-word/category arithmetic: A48−9=39, plus4 broader-scope results; B80−6=74, plus2 broader-scope results. This accepts wording/accounting consistency, not a new audit of every prior-art theorem. Local reported current builds and notebook checks. Owner's present delivery authorization covers properly reviewed corrections; preserve superseded IDs, receipts and reset verification state accurately. Live portal01:42:09Z confirms5e2b66/f7ace9 Lean Verified; originals removed. Human review remains a separate status |
 | RootedReturn, PROOFS39 | Local prepares extension; GPT shared/pulse module; mutual read | L1088 core staging compiles after a reported deliberate headroom-checked retry; GC2053 carries it. Common joint module with finite q-bit codes and coarse2^(q+q) bound carries and builds in L1090; checker reports pass with the required official import, now retained. L1093 validation and GC2060 final read complete. L1095 posted asa94f21/PR50; GC2062 independently confirms Lean Verified and byte-identical portal/PR source. Full notebook/resource receipts remain separately tracked; no human review asserted |
 | TheoremB and odd-run bound, PROOFS6 | Local preparing; GPT carrying review (L1082 accepted) | GC2050 carrying proof accepted for the prepared paired-column-runs source. L1086 corrected the period3 orientation and common-period wording; PR49 and8131b1 posted. Independent live check02:07:06Z:8131b1 Lean Verified; human review remains separate |
