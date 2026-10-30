@@ -4635,3 +4635,8 @@ PR33 current395-line source09aa298b accepted in its all-width finite-white-bound
 ### Waiting room — GC2233 two-run even profiles force the next doubling (30 October2026)
 
 PROOF-SKETCH, solo GPT. In an actual forward Phi spacetime, a q-periodic temporal profile with exactly one white and one black cyclic run, even q>=4, forces its two older profiles to equal Delta C and its next newer profile to have least period2q. Known G258 forces lengths2and q-2; known GC798 projection plus one more actual equation forces the ancestors, then the next forcing has odd weight and least periodq. For q>4 the consecutive periods are q,q,q,2q; for q4 they are2,2,4,8. [Complete proof and scope guards](reports/rule30-full-line-small-clocks.md#gc2233-an-even-two-run-profile-forces-the-next-period-to-double). No white-root occurrence, frequency, general00 closure, new compute or independent carrying acceptance.
+
+
+### External carrying review — GC2234 oriented height (30 October2026)
+
+[Exact signed-event identity and oriented safety converse](reports/rule30-oriented-height-review.md) accepted in scope for arbitrary Boolean drivers. Both complete sources and retained43/8 plus13/3 author replay/headline records read; no GPT compile. The integrality argument and initial-colour mark are essential. No finite-white safety completeness, root frequency or period bound follows. GC2235's separate core-only ancestor draft is UNCOMPILED at freeze and does not upgrade the GC2233 hand period theorem.

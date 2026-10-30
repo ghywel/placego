@@ -244,3 +244,58 @@ Next change representation: carry the linked RootOrientedHeight proof of
 the signed two-level condition for a safe newest trace, checking its initial
 orientation and finite-ancestry hypothesis separately. That is an available
 source read, not an assumption that safety implies eight-return.
+
+
+## GC2235: one frozen core-only ancestor check
+
+The new [core-only draft](../lean/Rule30IsolatedTransitionCore.lean) formalizes
+only the local step in GC2233: three actual temporal recurrences and isolated
+black transitions of C imply both older profiles equal Delta C, at every
+nonnegative time. It does not formalize the two-run period count, G258,
+period minimality, root occurrence, or a prize claim. Status at freeze:
+UNCOMPILED; the hand theorem remains solo PROOF-SKETCH.
+
+This is a changed dependency plan, not a retry of the GC2228 Window failure.
+It imports only Init, with no kit/Mathlib build or downloads. The local
+six-Boolean implication is proved by ordinary kernel decide and lifted to
+arbitrary histories. Three fixed controls omit isolation or either older
+recurrence and exhibit the failed conclusion. No initial time is excluded.
+
+**Prediction:** one development check on installed Lean4.33.1 compiles all
+eight theorem heads with empty axiom lists; a separate false proposition is
+rejected; a literal eight-entry Rule30 table agrees on all16 local inputs.
+**Counterfactual:** a positive diagnostic, nonempty axioms, wrong rejection,
+source/toolchain mismatch or oracle discrepancy stops the stage. Preserve
+failure; no automatic repair/retry or cap increase. **Unexpected check:**
+all three omitted-hypothesis countercontrols are kernel-checked, so none of
+the actual equations is silently dropped. This validates a carrying Boolean
+step, not its integration into the current official4.35 checker.
+
+Record searched: GC2233's full kit932cf8dd/portal23PR/primary-source scope
+comparison and complete GC798 projection, plus fresh record_find
+`isolated.*transition|GC798` (44record hits; no exact indexed external hit).
+The known machinery is credited. This is formal preparation of that stated
+step, not a newly claimed result or a negative-search novelty inference.
+
+Freeze source SHA256
+`92f49a07fd732c46ccfde7565bb7578d4d46777cef8ea8fa39b9a57d44d169f2`,
+[driver](../tests/probes/wolfram/check_isolated_transition_core_dev.py) SHA256
+`b84a38e7b084521b0a606576df8529301aff3d035649c0241245e2a51c21106a`,
+and unchanged run_capped SHA256
+`c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`.
+Exactly three possible sequential compiler calls: version, positive source
+with axiom/type printout, and false negative control. Each gets a verified
+20CPU-second hard limit; driver gets4CPU seconds soft, with no signal handler.
+Their assigned computation budgets sum to64seconds, below120aggregateCPU.
+Per-process limits alone are not called aggregate enforcement: the fixed
+call count and single-thread non-spawning compiler plan supply this bound;
+outer supervisor CPU is measured separately. No lake or descendant jobs.
+
+Outer caps:120CPU/300wall/768MiB owned RSS, one job/one Lean thread, nice10,
+tree tracking/max3processes,16MiB/file128MiB/stage, launch4096MiB and running
+3072MiB free+inactive, swap growth64MiB. Actual preflight:6541MiB headroom,
+193.25MiB swap, load2.45. Sandbox denied the first swap read; unrestricted
+read succeeded before any job launch. Thermal sensor unavailable; no normal
+temperature reading is inferred. Keep per-call CPU/limit receipts, raw
+compiler output, oracle, outer pressure/cleanup receipt and source hashes
+outside git. This stage is permitted once after its freeze is pushed.
