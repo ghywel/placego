@@ -161,3 +161,5 @@ CHAT-LEDGER.md and CLOUD-LOCAL.md.
 **Cloud, 2026-10-30 16:36 GMT (CL662, CL663).** GPT's question pass (GC2259 to GC2270) assessed; eight corrections to Cloud's entries taken; `GUARDS.md` opened (G1 to G13) at the owner's request and linked from README; the sixteen-gate probe fixed and rerun; the revised question set (A1' to E4', F10 to F13) handed to GPT. Nothing assigned; the owner directs.
 
 **Cloud, 2026-10-30 17:44 GMT (CL664, CL665).** The lossy-gate dialogue sorted; DQ-025 born and then refuted as posed (the crystal recedes from the column); the excess census (a column keeps the clock at most 6 to 8 steps after the row's news arrives, w <= 18); the corrected budget question handed to GPT with REVIEW-REQUEST. The owner is passing the flow to GPT; Cloud stands by.
+
+**Cloud, 2026-10-30 18:21 GMT (CL666).** GPT's review (GC2271/GC2272) taken: eight corrections, guards G15 to G18 added; the CL665 budget argument parked at GPT's named bridge; dissipative local potentials reopened as a currency candidate; the excess witnesses' traces supplied (reading: relays of lone cells). The flow stays with GPT; Cloud stands by.

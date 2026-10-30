@@ -23,6 +23,10 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 | G11 | The left-wheel transient scanned only from t >= j, so tau_1 = 0 where the right value is 1 (CL654; GC2264). | **A measured statistic is defined so that its smallest cases give sensible values, and those cases are printed and read.** |
 | G12 | The owner's question on the past of a finite row answered beside §8.19 (5 October) when the study he meant was GC2015 to GC2024 (28 October) (CL659; corrected CL660). | **When the owner refers to recent work, find it in the ledger by date before answering.** |
 | G14 | DQ-025 posed a mechanism in which the left crystal "reaches" the clock column; my own CL654 numbers put the front at x/t about -0.21, moving away from it (CL665). | **A mechanism involving motion is posed with the velocity written out, with its sign, in the frame of the question**, and checked against the measured value before the question is written. |
+| G15 | A halving law for survivors, proved for T <= W, extended past W as if it held there (CL665; GC1867's gap repeated); one survivor read as extinction. | **A counting law is used only on the range where it is proved, and its endpoint is written** (extinction is count zero, not count one). |
+| G16 | Constraints on coupled physical clocks (`free_bits_no00_no11111`, the width-14 channel bound) applied to bare ZBL survivors, and a bound on a language's size read as a refill rate (CL665). | **Before using a theorem's constraint, name the object its hypotheses quantify over and check it is the object in hand**; a size bound is never a rate. |
+| G17 | "For each fixed width the question is finitary" (CL664): finitely many starts, but each start's immortality is a for-all-t statement; the kit's `uniform_death` assumes Q01. | **Finitely many objects do not make a for-all-t statement finitary.** A death is a finite witness; immortality has none; write COMPUTED for a death table, never "settled". |
+| G18 | A bounded-constant sub-case (A6') proposed without checking the kit's realisation theorem, which makes every finite column word realisable (GC2272). | **Before proposing that a column word is bounded by a constant, check `Rule30Realization.realize`:** constants can only come from the finiteness of the row, so the dependence on the width must be stated. |
 | G13 | Blocks closed without separating the two kinds of error. | **Every block's closing note lists failed predictions and unguarded mistakes under separate headings**, and any new mistake gets a row here. |
 | G15 | GPT's GC2267 ring control used Python negative indexing as cyclic indexing; `a[i-2]` fails on a one-cell tuple. The control stopped before the proposed enumeration; corrected source was separately frozen (GC2268–GC2270). | **Cyclic offsets are reduced modulo the actual length.** Hand-check lengths1 and2 before using a ring implementation, including every occurrence in the oracle and constructor. |
 | G16 | CL665's budget moves from the bare ZBL survivor count to `free_bits_no00_no11111` and the physical channel bound without retaining their coupled-clock hypotheses; the same late-halving gap was already identified in GC1867 (review GC2271). | **A counting or entropy bound carries its population, conditioning and time unit.** Prove the map between populations before transferring it; an upper language count is not contraction or emptiness, and one survivor is not death. |
@@ -30,8 +34,8 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 ## How to use this file
 
 - At session start: read the table once; it is short on purpose.
-- Before posting a hand rule: G1, G2, G3, G5.
-- Before running or reading a census: G4, G6, G7, G11.
-- Before posing a question or a classifier to another worker: G8, G9, G10.
+- Before posting a hand rule: G1, G2, G3, G5, G15, G17.
+- Before running or reading a census: G4, G6, G7, G11, G16.
+- Before posing a question or a classifier to another worker: G8, G9, G10, G18.
 - Before answering the owner about earlier work: G12.
 - At the end of a block: G13.
