@@ -271,3 +271,15 @@ The40-step finite-root census suggests a stronger question: do all possible ente
 Source `tests/probes/wolfram/backward_background_closure.py`, SHA256 `f6a0f95ee9e53c24a0a6fcaa48f66c9ee788ebf357a9ecdd7752ad74495170a5`. Input backward-root receipt SHA256 `05ca324777df1762ab89ea88bfea22d77d21ebaa7dcee6f6589806787b3ed300`. Prediction: exactly two40-step period sequences and no new period beyond24. Counterfactual retained if extra profiles/sequences appear. Independent control: brute literal periodic-parent enumeration for all30binary driver words of lengths1–4, including the constant-one3cycle; all1536computed root histories must be included. Canonical rotations are checked against all rotations for lengths<=64. Record/prior art: GC2016/GC2023 four-state complete ray constructor, PR60 reset scope, current E2 proof and E3 certificates; no new arbitrary ancestry search.
 
 One process/thread, nice10,30CPU/60wall/256MiB, tree cap2,16MiB/file/128MiB stage disk; launch4096MiB, running3072MiB, swap growth64MiB. Hard logical caps4096profile/path pairs per level and period12288. Any control, logical, host or resource failure ends this one stage with retained evidence and no automatic rerun.
+
+## GC2268: structural stage failed before the enumeration
+
+Freeze439fb062/sourcef6a0f95e ran once and returned CHILD_FAILED rc1 in the first literal ring control. Python's a[i-2] is out of range for a one-cell tuple; negative indexing is not general cyclic indexing. The periodic-equation check inside the return-map constructor has the same boundary defect. No40-level graph or root inclusion ran, so the stage provides no universal-background result. Prior GC2260/2262/2263/2265 results are unaffected.
+
+Failure receipts retained:0.10child wall,0.07user+0.02system seconds,17,362,944bytes peak RSS; launch6020MiB free+inactive. It ended before a monitor sample; no pressure peak is inferred. No source or budget was silently reused.
+
+## GC2269: diagnosed correction and separate unchanged-budget freeze
+
+Both ring lookbacks now use explicit modulo length. Hand boundary audit: on a one-cell ring both0and1 map to0; on a two-cell ring00->00,01->10,10->01,11->00. The all-black output's first periodic parents are the three rotations of001, canonical001. These explicit controls precede the existing exhaustive30driver-word comparison. No algorithm, horizon, root set, resource cap or canonicalization change.
+
+Corrected source `backward_background_closure.py` SHA256 `dbbcae4e51e03fabf4d6898d8adecfc564c82b8b2b37473ef4a743184c76c4a7`; syntax-only check passes, no corrected-source numerical execution before this freeze. One new diagnostic stage at the same30CPU/60wall/256MiB and previous tree/pressure/output stops. Prediction: repaired small-ring controls pass and the complete40-level background graph has exactly two period sequences. Any further failure ends this correction stage; do not retry. The failed source remains in git439fb062 and its actual receipts are retained separately.

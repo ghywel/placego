@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GC2267: fixed40-depth complete spatial-tail predecessor graph, not a root census."""
+"""GC2269: corrected cyclic indices; fixed40-depth complete spatial-tail predecessor graph, not a root census."""
 import json,os,resource,time,hashlib,itertools
 from pathlib import Path
 OUT=Path(os.environ['CAPPED_OUT']);assert resource.getrlimit(resource.RLIMIT_CPU)==(30,30)
@@ -33,9 +33,14 @@ def parents(w):
   C.add(key);u,v=cycle[0]>>1,cycle[0]&1;a=[]
   for _ in cycle:
    for y in w:u,v=y^(u|v),u;a.append(u)
-  assert all(a[i]^(a[i-1]|a[i-2])==w[i%len(w)] for i in range(len(a)))
+  assert all(a[i]^(a[(i-1)%len(a)]|a[(i-2)%len(a)])==w[i%len(w)] for i in range(len(a)))
   out.add(canon(tuple(a)))
  return out
+# Hand-derived short-ring controls, explicit modular boundaries.
+assert parents((0,))=={(0,),(1,)}
+assert parents((1,))=={(0,0,1)}
+for a,y in [((0,0),(0,0)),((0,1),(1,0)),((1,0),(0,1)),((1,1),(0,0))]:
+ assert tuple(a[i]^(a[(i-1)%2]|a[(i-2)%2]) for i in range(2))==y
 # Independent literal ring enumeration of every driver of length<=4.
 checks=0
 for p in range(1,5):
@@ -43,7 +48,7 @@ for p in range(1,5):
   w=tuple(w);literal=set()
   for q in (p,2*p,3*p):
    for a in itertools.product((0,1),repeat=q):
-    if all(a[i]^(a[i-1]|a[i-2])==w[i%p] for i in range(q)):literal.add(canon(a))
+    if all(a[i]^(a[(i-1)%q]|a[(i-2)%q])==w[i%p] for i in range(q)):literal.add(canon(a))
   assert parents(w)==literal,(w,parents(w),literal)
   checks+=1
 src=Path('/private/tmp/gc2262-backward/backward_roots.json');raw=src.read_bytes()

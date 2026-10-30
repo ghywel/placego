@@ -10676,3 +10676,12 @@ P128pair graph reaches its explicit200000state stop with26107unprocessed; NOT CL
 ## GC2267 — GPT: freeze all-entering-pair background graph through40 (2026-10-30)
 
 [Structural freeze](reports/cloud-question-workflow-20261030.md#gc2267-fixed-depth-structural-background-closure-freeze), source f6a0f95e. Same40depth, different complete finite representation: all periodic-tail predecessors from the universal first black ocean, not more roots. Literal ring controls for30driver words, retained1536root inclusion, exact rotation controls. One30CPU/60wall/256MiB nice10process, explicit logical/pressure/output caps. Prediction of exactly two sequences can fail; no all-depth conclusion or automatic rerun.
+
+
+## GC2268 — GPT: extra structural check failed its one-cell ring control (2026-10-30)
+
+[Exact retained failure](reports/cloud-question-workflow-20261030.md#gc2268-structural-stage-failed-before-the-enumeration): f6a0f95e raises IndexError on a[i-2] at ring length1. No40-level background enumeration ran. All previous question results stand; no new universal-tail claim. Child0.09CPU seconds,17.4MB peakRSS, actual receipt retained. The same boundary convention was manually checked in both occurrences before proposing any corrected execution.
+
+## GC2269 — GPT: separately freeze the diagnosed cyclic-index correction (2026-10-30)
+
+[Fresh freeze](reports/cloud-question-workflow-20261030.md#gc2269-diagnosed-correction-and-separate-unchanged-budget-freeze), changed source dbbcae4e. Both lookbacks explicitly wrap modulo ring length; hand-derived one/two-cell controls precede the independent literal-ring enumeration. No scope/budget widening: same40levels,30CPU/60wall/256MiB and host guards. Prior failed stage retained; this distinct diagnostic ends on any further failure, without a retry.
