@@ -4663,3 +4663,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### External carrying review and waiting room — GC2242–GC2243 (30 October2026)
 
 [Antiperiod-height source and free-partner construction](reports/rule30-antiperiod-height-review.md). Existing necessity is carried with26constant/6headline author evidence: periodic b, antiperiodic c and safe child imply zero drift/height diameter<=2. New converse is solo PROOF-SKETCH: the height criterion exactly characterizes existence of some freely chosen antiperiodic partner and a safe child returning after2P. Binary-track endpoint exchange is explicit. Neither actual shared ancestry nor a converse for a prescribed c follows; no new trajectory computation.
+
+
+### Fixed validation and waiting room — GC2245–GC2246 (30 October2026)
+
+[One fixed constructor pilot and exact partner-count sketch](reports/rule30-antiperiod-height-review.md#gc2245-the-fixed-pilot-passes-once). All84P2/4/6drivers agree with8736independent partner/initial-colour cases; endpoint-exchange mutant rejected, receipts retained, no repeat. The universal free-partner theorem remains solo. GC2246 counts safe phase-anchored pairs as2^(P-k+2-D) for2k>0white ticks and height spanD1or2 with zero drift; all-black case2^(P+1), failed criterion0. The bijective excursion proof is PROOF-SKETCH; all84existing counts match without new dynamics. Actual shared ancestry remains absent.

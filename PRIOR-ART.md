@@ -4847,3 +4847,8 @@ GC2239 independently carries the existing [CedarTCObstruction theorem](reports/r
 ### GPT — antiperiod-height necessity and a scoped constructive converse (30 October2026, GC2242–GC2243)
 
 Known, independently carried: immutable0cbc49ef RootAntiPeriodHeight513de31a, [exact source/evidence and comparison](reports/rule30-antiperiod-height-review.md). The signed projection, diameter2 necessity and zero drift are the external author's results. GC2243 adds a solo elementary two-binary-track construction for the different existential quantifier, choosing the antiperiodic partner. No prescribed-partner/ancestry converse or priority claim; independent carrying read and further prior-art clearance remain pending. The nearby CedarD3Converse concerns finite-word completeness and is not this statement.
+
+
+### GPT — counting the freely chosen partners (30 October2026, GC2246)
+
+The [excursion-label count](reports/rule30-antiperiod-height-review.md#gc2246-count-all-free-partners-by-excursion-choices) refines GC2243's free-partner construction, using the already-carried external signed-height/orientation identities. It counts phase-anchored partners in that relaxation, not actual Rule30 predecessor histories. Elementary binary-path/parity counting is credited; no first-in-literature claim or novelty clearance. Independent carrying review remains pending, and finite retained-data agreement is separate evidence.

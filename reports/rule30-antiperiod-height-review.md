@@ -246,3 +246,131 @@ continuous temperature monitoring. Retain a completion warning/process
 snapshot, source, full84-row outcome, controls, time/pressure/cleanup and
 limit receipts. A warning redirects later work to light reasoning. No
 post-freeze cap increase or extra period is authorized by this stage.
+
+
+## GC2245: the fixed pilot passes once
+
+Freeze5c5fd4fd/sourceb6db991d ran once at05:31:37Z, COMPLETED rc0. All84
+height/construction/existence decisions agree across8736 partner/initial
+cases and61642 literal updates. Accepted-driver counts at P2,4,6 are2,6,20.
+All28 accepted drivers receive safe constructed children returning after2P.
+Their height categories are18 nonnegative,5 nonpositive,2 mixed and3 zero.
+The two retained P6 controls pass. Without the endpoint exchange, the mixed
+control ends its tracks at0,1 instead of1,0; the two child starts fail at
+indices4and7. No larger period, repeated dynamics or seed search ran.
+
+This finite check tests the construction including its mixed-sign boundary.
+It does not prove the universal claim. In particular, these small periods
+cannot expose every possible height-range obstruction; the necessity proof
+remains the separately carried external theorem, not a fitted count pattern.
+
+Actual Intel receipts: computation0.022510s wall, process0.070153CPU seconds;
+outer0.54s wall and0.138 supervisorCPU. The separate time receipt gives
+0.07real,0.06user/0.01system and14635008bytes maximum RSS. Kernel60CPU and
+16MiB file limits were read back exactly. Launch6242MiB free+inactive;
+the job completed before the first0.5s monitor sample. Therefore sampled
+RSS/proc zeros and an empty pressure series do not mean zero memory usage
+or a measured running minimum. Completion6252MiB/swap193.25MiB, no compute
+process and no recorded thermal/performance warning. No continuous thermal
+claim; original receipts and the empty sample series are preserved.
+
+Shared-store `cited/gc2245-free-partner-pilot/manifest.json`, SHA256
+`6254e7bb89e8a905f80389150fbd18dbeebf86472c3fd9e513fb418b0bc675ef`:
+11payloads81339bytes plus manifest,12 verified raw uploads. Full84-row
+results SHA256 `0b35dd6067c68be374bc42fbf6d18664bf917bce74c7444d122ae59d26a544af`.
+The stage is consumed; no repeat or extension is queued.
+
+## GC2246: count all free partners by excursion choices
+
+**PROOF-SKETCH, solo GPT.** Fix the phase of b and P; count pairs consisting
+of a P-bit first half of c and the initial colour of its child. The second
+half of c is forced by antiperiodicity. These are distinct phase-anchored
+words, with no quotient by rotations or by least periods.
+
+Let h=H_not_b, D=max(h)-min(h) over0..P, and n be the number of white ticks
+of b in a P-block. If h(P) is nonzero or D>2, the carried necessary theorem
+gives zero safe pairs. Otherwise n=2k is even. The exact count is
+
+```
+n=0:             2^(P+1),
+n>0 and D=1:     2^(P-k+1),
+n>0 and D=2:     2^(P-k).
+```
+
+No other D occurs when n>0 under the criterion. This is a refinement of the
+free-partner construction, not a new restriction on actual older profiles.
+
+### Why the lift counts all choices
+
+For a safe pair choose e=-q(d,0) and a=e*H_Z(P), so a is0or1. The two tracks
+are uniquely recovered as z(t)=e*H_Z(t) and w(t)=e*H_Z(t+P). The paired-height
+identity gives z+w=e*h+a. They start at(0,a) and end at(a,0), because zero
+drift gives H_Z(2P)=0. Each white tick of b changes exactly one track, and
+all other ticks change neither. Conversely every such lift gives precisely
+the white-tick values of c and the specified safe initial colour, by GC2243.
+Thus the correspondence is bijective on white ticks. At each of the P-2k
+black ticks, the first-half value of c is free and invisible to the child;
+its complement in the second half is then fixed. This multiplies the count
+by2^(P-2k).
+
+Discard zero steps of the total walk S=e*h+a. Its2k steps alternate between
+level1 and the boundary levels0or2. If a=0, every departure from a boundary
+into level1 has two possible track labels, independently; the k choices
+always finish at(0,0). There are2^k lifts.
+
+If a=1, the walk has k excursions from level1 back to level1. Each excursion
+may preserve or exchange the two labels. Ending at(1,0) from(0,1) requires
+an odd number of exchanges. For k>0, exactly2^(k-1) label-choice sequences
+have that parity. This includes all tracks, rather than only the one chosen
+by the constructor's first-excursion rule.
+
+For D=1, h has range[0,1] or[-1,0]. Exactly one orientation/offset pair has
+a=0 and two have a=1. The total lift count is
+2^k+2*2^(k-1)=2^(k+1). For D=2 with0 at an endpoint of h's range, exactly
+one pair has a=0, giving2^k. For D=2 with range[-1,1], both orientations
+have a=1, again giving2*2^(k-1)=2^k. Multiplying by the free black-tick factor
+proves the two nonzero-n formulas. If n=0, b is constantly black: both child
+starts alternate safely for every one of the2^P partners, giving2^(P+1).
+
+For n>0 each admissible partner has only one safe child start. If both
+complementary child histories were safe, neither could contain00or11, so
+both would alternate. That forces Z identically0, contradicting
+Z(t)+Z(t+P)=NOT b(t). Thus in this case the displayed pair count is also
+the number of admissible partner words.
+
+### Retained-data prediction before checking counts
+
+Record searched: the exact GC2242 necessary source and GC2234 oriented
+converse, GC2243's construction, and current record/kit/portal searches for
+partner counting and binary tracks. The elementary excursion/parity method
+is credited as such; no priority claim or additional literature clearance
+is asserted. The complete paired-height statement is the primary source
+used, with its arbitrary-driver scope preserved.
+
+Prediction, written before reading the retained per-driver success counts:
+all84 oracle_safe_initial_cases fields equal the displayed formula. Specific
+controls: P6 b010010 and b100100 each give16; b000000 gives16; b111111
+gives128. Counterfactual: any disagreement rejects this counting sketch
+pending an exact diagnosis; do not rerun the trajectory pilot or widen P.
+The comparison uses only the already-retained84 JSON rows and their digest,
+with integer arithmetic; no new dynamics, compiler or substantial run.
+
+
+The retained-data comparison PASSED all84 counts, including the four named
+P6 predictions16,16,16,128. It executed only integer arithmetic on the
+existing JSON, after checking its exact SHA256; no trajectories were rerun.
+Audit `cited/gc2246-free-partner-count/manifest.json`, SHA256
+`66e7d4ec437dce476bf30fdc574fd4657828a5d23521348d2b3a31a8376639a4`,
+two payloads15352bytes plus manifest, three verified raw uploads. The
+universal bijection/count argument still needs an independent carrying read.
+
+Next pull: count the admissible phase-anchored driver words themselves, not
+just their partners. Pairing one even and one odd tick suggests finite walk
+matrices M1=[[2,1],[1,1]] and M2=[[2,1,0],[1,2,1],[0,1,1]]. Test by hand
+whether the exact count at P=2m is trace(M2^m)-trace(M1^m), carefully handling
+which height intervals contain the initial0 and overlap. This would describe
+how restrictive the free-partner language is among all periodic drivers;
+it would say nothing about the actual root's sampling of those drivers.
+Search the record/current sources and standard bounded-walk prior art first.
+Use the retained2,6,20 counts as scope controls only; no new enumeration,
+larger pilot or inferred root density is queued.
