@@ -1,0 +1,103 @@
+{
+ "stage": "gate-clocks notebook stage (L1221 freeze d4406789), Local M5, one run",
+ "spec": "reports/wolfram-agents/submissions/gate-clocks/NOTEBOOK-SPEC.md",
+ "start_utc": "2026-10-30T21:39:01Z",
+ "end_utc": "2026-10-30T21:39:46Z",
+ "exit_reason": "COMPLETED",
+ "child_rc": 0,
+ "wall_s": 44.94,
+ "maxima": {
+  "rss_kib": 2261472,
+  "procs": 5,
+  "disk_bytes": 4388828,
+  "swap_growth_mib": 0.0,
+  "min_free_mib": 6139
+ },
+ "launch_gate": {
+  "free_inactive_mib": 7115,
+  "swap_used_mib": 0.0
+ },
+ "caps": {
+  "cpu": 1200,
+  "wall": 1200,
+  "rss_mib": 4096,
+  "file_mib": 64,
+  "disk_mib": 256,
+  "min_free_mib": 1024,
+  "launch_free_mib": 5120,
+  "swap_growth_mib": 256,
+  "track_tree": true,
+  "max_procs": 8
+ },
+ "essay_sha256": "9db85853e896c17e31f18661b4190a63f2f88322877bc089a279ba6ef7ada1cd",
+ "essay_md_matches_repo": true,
+ "notebook_sha256": "796a8c531297d803787673518692e2015b06a6c506e21a4e0e291792f0ccc81d",
+ "notebook_bytes": 206372,
+ "build_seconds": 23.6,
+ "output_cells": 6,
+ "output_digests": [
+  "308d9ad4831a3e483b550fd885a667a3f63d4a59f2bd93569c5bcd7f3b85a21c",
+  "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d",
+  "79f5782467ecbb555228dd998e99c59767095ed05286fe96bf2d765ba58d3cbc",
+  "23ec585d14b490202bc9b32acf1510c008932598ca129467f7bdbfd0125822ca",
+  "c5017e1fc0fa42cd6a1b6176a7f872c30a9480c59cb9b9ead94e7d78ec5d1666",
+  "7176d4f08b79b9e31e924e09c0a368ee320f63c10fedfdddceb154f0ec5cdb7d"
+ ],
+ "message_cells": 0,
+ "computation_ok": true,
+ "axioms_ok": true,
+ "kernelcheck_ok": true,
+ "kernelcheck_data": {
+  "MessageTemplate": "The kernel accepts all `1` declarations of `2`.",
+  "MessageParameters": [
+   347,
+   "LeanLinkTmp..."
+  ],
+  "Declarations": 347,
+  "Module": "LeanLinkTmp..."
+ },
+ "handler_events": 15129,
+ "handler_tally": [
+  {
+   "wolfram_inputform": "\"General::newsym\" -> 15072"
+  },
+  {
+   "wolfram_inputform": "\"LocalObject::nso\" -> 18"
+  },
+  {
+   "wolfram_inputform": "\"DeleteFile::fdnfnd\" -> 12"
+  },
+  {
+   "wolfram_inputform": "\"MIMETypeToFormatList::fmterr\" -> 12"
+  },
+  {
+   "wolfram_inputform": "\"FrontEndObject::notavail\" -> 5"
+  },
+  {
+   "wolfram_inputform": "\"General::openx\" -> 4"
+  },
+  {
+   "wolfram_inputform": "\"ImportExport`ExtensionToFormatList::fmterr\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"OptionValue::nodef\" -> 2"
+  },
+  {
+   "wolfram_inputform": "\"General::stop\" -> 1"
+  },
+  {
+   "wolfram_inputform": "\"LibraryFunction::overload\" -> 1"
+  }
+ ],
+ "reasons": [],
+ "resource": {
+  "Name": "MarkdownToNotebook",
+  "Version": {
+   "wolfram_inputform": "None"
+  },
+  "UUID": "42d07bb8-1692-42d6-8718-226e124b292b"
+ },
+ "output_checks_sha256": "3987d980868aa45f9023aa8faf6658e26d6cacbc70e22e549a9278b688d02707",
+ "receipt_helper_sha256": "4c6301c0d16cba03c03ba141da3afd827d1c5f777f4ea1cefbb8166e862b11e7",
+ "raw_packet": "shared store cited/l1222-gate-notebook/MANIFEST.json, SHA256 3f0cfd9a71eaf61795722fd5e435a1d046c1c0b8d89053922db8dca51a72af40 (16 files; tmp/ by digest only; home-relative paths as ~)"
+}
