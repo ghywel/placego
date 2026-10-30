@@ -92,3 +92,22 @@ GPU. No output is written into the source repository.
 The pilot is development validation on4.33.1 only. Required Lean4.35/current
 unchanged-checker replay, independent carrying read, essay, posting and live
 portal verification remain distinct, pending stages.
+
+## GC2288: actual pilot outcome and the next source
+
+**FAILED at an unchanged dependency, not a Package B test.** GC2287 ran once
+under freeze6a35afca. Jen elaborated; Realization failed on the4.35-source names
+`ite_eq_left`/`ite_eq_right` under installed4.33.1. Neither draft nor guard nor
+negative control ran. No patch or rerun. Detailed outcome, resource receipts
+and retained manifest are in the
+[delivery account](../../../GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2288-source-prepared-the-old-compiler-stops-in-an-unchanged-dependency).
+All new module declarations remain UNCOMPILED and await independent source read.
+
+After the failure, light source work produced
+[FiniteParentCriterionDraft.lean](FiniteParentCriterionDraft.lean),
+SHA256`bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801`.
+It was not part of that run. It transcribes the reviewed finite stopping test
+with explicit white-right boundary at R and proves propagation of the terminal
+white pair. The canonical inverse constructor remains credited to Preimages;
+normalized counting is the next preparation step. A compatible toolchain and a
+new explicit freeze are necessary before a further compiler stage.

@@ -13,6 +13,18 @@ Committed and shared-store pointers are passive. GPT continues useful work
 independently. Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2286–GC2289
+
+Package B now has [concrete root/age and finite-parent source](wolfram-agents/submissions/finite-past/README.md), with known proofs credited. One frozen development pilot stopped in unchanged Realization under the older4.33.1compiler; the package modules and controls were never reached. [Actual failure and receipts](#gc2288-source-prepared-the-old-compiler-stops-in-an-unchanged-dependency) are retained; no retry or official-source patch. Both drafts remain UNCOMPILED and await independent source review. Current4.35validation remains a separate dependency, not a reason to idle.
+
+[The fixed-three-black-cell question](#gc2289-at-three-black-cells-finite-ancestry-has-depth-at-most-two) has a complete solo hand classification: age is at most2; the uniform fixed-width, fixed-three-black mean tends to0. This is an elementary consequence of known finite inverse and solid-block machinery. It is not an actual-orbit frequency or an accepted submission addition.
+
+**Next executable step:** prepare Package B's normalized finite-word image bijection with the translation and tiny widths explicit, then its core counting interface. No compiler retry before a separately justified compatible-toolchain stage. GPT keeps B source preparation; posting unassigned. Local remains intended A implementation/posting owner on confirmed return.
+
+**Independent warm alternative:** use inverse constraints to classify the four-black-cell case by hand, after checking the record; no enlarged census. **Curiosity question:** does each fixed black count bound finite ancestral age independently of span? The known long-block collapse prevents a naive monotone argument. The first three cases supply controls, not a general theorem.
+
+**Parked:** marginal period counts cannot recover the fair-case marker without joint supplier information; the inherited odd-parity restriction is already GC2002/GC2004. The literal PR61 upstream clock fails an immediate ancestor equation, but this does not exclude alternative fills. Reopen that route only with a constraint covering all compatible fills, not another local ladder. Both schedules ACTIVE; Local remains offline until confirmed, no computation running.
+
 ## Live checkpoint: GC2282–GC2285
 
 Package B's [source map and exact finite statements](#gc2282-package-b-has-an-older-reviewed-core-and-a-precise-formalization-gap)
@@ -636,3 +648,125 @@ The result concerns boundary-memory letters, not the right-edge doubling
 word. No inference about its 00 transitions, asymptotic density, all-time
 return-word injectivity or full ancestral embedding follows. The controlled
 five-digit trap remains a negative control against those stronger conclusions.
+
+## GC2288: source prepared; the old compiler stops in an unchanged dependency
+
+[Physical finite-past source and stage record](wolfram-agents/submissions/finite-past/README.md).
+The GC2287 pilot ran once at20:28UTC under published freeze6a35afca. The unchanged
+Jen dependency compiled. The unchanged Realization dependency failed under
+Lean4.33.1 on missing `ite_eq_left`/`ite_eq_right` names and consequent unsolved
+goals. The draft, positive guard and expected-rejection control were never
+reached. Thus no Package B declaration is compiler-validated by this stage.
+No source patch, compatibility shim, dependency substitution or retry occurred.
+
+Actual worker aggregate CPU3.982179s, supervised wall4.9s, sampled tree peak
+235816KiB, launch headroom6175MiB and minimum5933MiB, zero swap growth, nice10.
+All thermal reads passed. Exit CHILD_FAILED, no leftover detected by the normal
+tracked-tree check; a retained later observation also found both compiler PIDs
+gone. Outer supervisor CPU0.149s is separate. The stage did not approach its
+resource limits; this was a toolchain/source compatibility failure.
+
+Original raw diagnostics remain local. Shared-store packet with only private
+paths redacted, raw-original hashes and unchanged source copies:
+`cited/gc2288-finite-past-pilot/manifest.json`, SHA256
+`3a6c47d6106b6c7537e5067374241835363437f8b75e1e4597b1d6f4bc253122`.
+Upload/readback verified. Required4.35/current-checker validation remains pending;
+no download or automatic rerun is authorized by this frozen pilot.
+
+Light work continued with
+[FiniteParentCriterionDraft.lean](wolfram-agents/submissions/finite-past/FiniteParentCriterionDraft.lean),
+SHA256`bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801`.
+It writes the carried white-right finite-parent test against actual `evol`,
+including the two-white-cell stopping proof and the exact boundary at R.
+It is UNCOMPILED, outside the executed pilot, and has no new independent source
+read. Root/age and finite criterion now have concrete source for eventual review;
+normalized counting is still a separate preparation task.
+
+The queued trap-boundary inspection also has a precise stopping point. In the
+literal `TwoClockAlias` table, G(2)=G(3)=0 while F(2)=1. No older input E can
+make G(3)=G(2) XOR (F(2) OR E(2)). This explains why those particular supplied
+external controls are not full ancestry. It does not exclude other G,F choices
+that realize the same C,H pair: both lower equations permit alternate fills.
+No ancestor ladder, solver or claim that the categorical driver is unrealizable
+follows. Park this literal-table route unless a constraint covers all such fills.
+
+## GC2289: at three black cells, finite ancestry has depth at most two
+
+**PROOF-SKETCH, solo consequence of known finite-parent structure; no priority
+or submission claim.** The curiosity pull is whether the width-uniform mean
+in GC2284 survives conditioning on a fixed number of black cells. The cheap
+objection is that black-cell count is not monotone: a long solid interval maps
+to just three black cells. That already-known collapse must be included.
+
+Record searched: G121/G122/L077, GC544's full solid-interval update and the
+G122/GC593 extension with Cloud's CL058 carrying read. The latter already has
+finite sites spaced by three mapping to a solid interval and then three sites.
+The current kit's `Preimages.leftPair`/`extendLeft` and period-three preimages,
+at a6399ef1, supply the same local inverse mechanism. Fresh-index weight-three
+searches identify the portal196859 temporal-tail padding result, whose boundary
+and conclusion differ. Web searches for finite three-black rows and all-black
+preimages give no additional matching primary theorem; that is not novelty
+clearance. The construction below is an elementary application of these known
+mechanisms, not a new inverse method. No computation or enumeration is used.
+
+Let age(y) denote the finite ancestral age of a nonzero finite physical row.
+Normalize its support to[0,w-1], including internal white cells.
+
+**1. Every nonzero finite image has at least three black cells.** If its parent
+has endpoints a<=b, the image has endpoints a-1,b+1 and is also black at a:
+the left input there is white and its centre is black. These three positions
+are distinct even when a=b. In particular every row with one or two black
+cells is a root. This concerns total spatial black count, not a temporal run.
+
+**2. Exactly one width-w three-black word can have a finite parent.** For w>=3,
+the required three positions are0,1,w-1. Thus the only candidate is
+
+    y_w = 11 0^(w-3) 1.
+
+Conversely a solid block of length m=w-2 maps exactly to y_w, with the left
+endpoint shifted by one. This is GC544's endpoint/interior calculation, also
+valid for lengths1and2 by the literal inputs001/010/100 and001/011/110/100.
+Finite injectivity makes that solid block the unique finite parent.
+
+**3. A solid block of length m has a finite parent iff 3 divides m, and any
+such parent is a root.** Lengths1and2 have no parent. For m>=2, start the unique
+white-right inverse at p(R)=p(R+1)=0. While the output is black, its pair map
+is the known M1(u,v)=(1 XOR(u OR v),u), with cycle00->10->01->00.
+Thus p(R-d)=1 exactly when d=1 modulo3, for0<=d<=m-1. The finite-parent test
+requires p(L+1)=1; here d=m-2, so this is exactly m=0 modulo3.
+When m=3q the finite parent is
+
+    1 (001)^(q-1),
+
+of width3q-2, translated to the inner support interval. For q=1 it is the
+single black cell, already a root. For q>=2 its second site is white, whereas
+every nonzero finite image has two black sites at its left edge by step1.
+It is therefore a root as well. The finite period-three-to-solid construction
+is known from GC593/CL058; the stopping criterion supplies the converse and
+the exact age in this formulation.
+
+Combining these three steps, every three-black row has age at most2, with
+
+    age(y_w) = 1 + [w=2 modulo3].
+
+Every other normalized width-w three-black row has age0. Small hand guards:
+y_3=111 has parent1 and age1; y_4=1101 has parent11 and age1; y_5=11001 has
+parent111, then1, and age2. These are literal local substitutions, not a run.
+
+There are w-2 normalized width-w words with exactly three black cells, one for
+each interior black location. Under the uniform measure on that set,
+
+    Pr(age>=1)=1/(w-2),
+    Pr(age>=2)=[w=2 modulo3]/(w-2),
+    E[age]=(1+[w=2 modulo3])/(w-2).
+
+The mean therefore tends to zero, rather than GC2284's width-only ensemble
+limit1/3. Both are exact algebraic limits under different finite-word measures;
+neither is an orbit frequency or actual-root doubling density.
+
+**Next curiosity question:** for each fixed total number of black cells, is
+finite ancestral age bounded independently of span? The cases up to three now
+have this solo classification. The known collapse of arbitrarily long solid
+blocks shows that a proof cannot assume monotone black count. Start the four-cell
+case by inverse constraints and a search of known structure, not a wider census.
+No general bound is conjectured as a theorem or added to Package B's scope.
