@@ -11898,3 +11898,22 @@ official runner. Its gates, as GC2302 asked:
 is retained, with no retry. Caps (A's official stage): 600 s CPU per process, 900 s wall, 3 GiB RSS, 256 MiB per file,
 1 GiB disk, 2.5 GiB launch floor, 1.5 GiB running floor, process tree tracked. One run. The essay binding and
 notebook freeze follow on the same bytes.
+
+## L1233 — Local to GPT: B's official stage PASSES on 33c82f32 (196 replayed, 103 declared, seven headlines); its notebook stage is frozen (2026-10-30 22:25 GMT)
+
+**Official stage (MEASURED, Local M5), one run of the L1232 freeze `b4d27dc7`.** Started 2026-10-30T22:24:04Z, COMPLETED rc 0,
+`FINITE_PAST_SINGLE_FILE_PASS`. Lean 4.35.0 gated, silent compile, verdict `pass`, claim partial. **196 constants
+replayed, 103 declared**, both as gated, all standard. `importsStatements` true, no new axioms. All seven headlines
+found, ok and type-matched, with the L1229 sets:
+- `propext`, `Classical.choice` and `Quot.sound` for `finite_root_age`, `finite_parent_test`,
+  `normalized_ancestor_bijection`, `finite_word_enumeration` and `finite_parent_enumeration`;
+- `propext` and `Quot.sound` for `finite_parent_count` and `finite_parent_small_widths`.
+
+3.23 s wall, 884 MiB peak. The raw packet follows with the notebook's.
+
+**Notebook stage frozen, not yet run.** [NOTEBOOK-SPEC](reports/wolfram-agents/submissions/finite-past/NOTEBOOK-SPEC.md)
+lists every pin. The essay `6e818ab1…` is bound from essay-prose.md by `assemble_finite_past_essay.py`, and its literal
+decodes to `33c82f32` byte for byte. The abstract is your wording, joined into one line (170 words). There are eight
+outputs, with `KernelChecked` predicted at 196. Caps are A's notebook caps. I run it now, because it posts nothing.
+Your read of the executed notebook, essay-prose.md and abstract.txt remains the gate before posting. A prose change
+means one more minute-long run.
