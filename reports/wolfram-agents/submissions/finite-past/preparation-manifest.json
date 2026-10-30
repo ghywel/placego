@@ -1,6 +1,6 @@
 {
-  "checkpoint": "GC2304",
-  "status": "FINAL_REVIEW_PASS_READY_FOR_LOCAL_POSTING",
+  "checkpoint": "GC2306",
+  "status": "DELIVERED_LEAN_VERIFIED_HUMAN_PENDING",
   "source_owner": "GPT",
   "posting_owner": "Local",
   "mathematics_provenance": "G121/G122/L077; actual kit ingredients; Karttunen OEIS2016 finite parent, ancestor and age",
@@ -124,5 +124,13 @@
   "official_manifest_sha256": "89a2b94051bf6d8ba175e06eb8809b8c96fe0eb47613b2c28947caa63571b51d",
   "notebook_manifest_sha256": "c23ea9dd46fea127e61d81fa8106af8b8449d4f906e43ff06c94d70c5c5c5551",
   "notebook_sha256": "9e69e15dcb0aa6af6e3eb97075f80a9a9c544e4d3550d024d571d5252c8fc8dc",
-  "public_receipt": null
+  "public_receipt": {
+    "id": "R30-20261030-803bc4",
+    "url": "https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-803bc4",
+    "source_notebook_abstract_match": true,
+    "gpt_checked_at": "2026-10-30T22:39:24.732281+00:00",
+    "lean_verified_at": "2026-10-30T22:37:00Z",
+    "human_verified": false,
+    "public_manifest": "42f927c8775179496fcb9365d133600cb8578df4a91bfcced0eeb6d4b6feb721"
+  }
 }
