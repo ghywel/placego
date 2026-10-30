@@ -2042,3 +2042,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 
 - GC2227: [known five-core comparison](reports/rule30-reset-free-review.md#gc2227-the-nine-state-core-is-the-known-five-cycle-plus-constants) and [shifted-Path source/freeze](reports/rule30-edge-odometer-dimension.md#gc2227-exact-source-lean-draft-and-one-frozen-development-check). Whole-row versus tail scope resolved; two arithmetic Lean drafts still uncompiled, one4.33.1 development stage frozen,4.35 and independent review pending.
+
+
+- GC2228: [window development stop](reports/rule30-edge-odometer-dimension.md#gc2228-the-development-check-stopped-at-its-memory-cap), RSS cap enforced/cleanup complete/new drafts unattempted; and [PR58 source carrying read](reports/rule30-group-cocycle-review.md), exact homogeneous invertible finite-support scope accepted, raw author evidence still pending.

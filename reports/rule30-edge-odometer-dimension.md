@@ -479,3 +479,40 @@ runner gate must succeed before launch. Thermal status is unmeasured, not claime
 All outputs stay outside git. Preserve the first failure and cleanup receipt; no rerun
 is authorized by this freeze. Exact4.35 integration and independent carrying review remain
 separate future requirements whichever way this development check goes.
+
+
+## GC2228: the development check stopped at its memory cap
+
+**FAILED stage, RSS_STOP; both new drafts remain UNCOMPILED.** The exact GC2227 freeze
+a0764b6e ran once on the Intel host at03:11:45–03:11:56Z. Explicit Lean4.33.1 compiled
+the unchanged `Rule30Jen`, `Rule30Diagonals` and `Rule30Prize` dependencies. During
+`Rule30Window`, sampled owned-tree RSS reached885428KiB, about864.7MiB, beyond the
+768MiB cap. The supervisor stopped the group with SIGTERM and confirmed zero remaining
+owned/group processes. There was no retry, relaxed limit or source modification.
+
+The formalization drafts, Q/nonzero-resource checks and rejected-False control were
+**not reached**. This is neither a proof rejection nor a compatibility pass for the
+whole closure. The memory cap correctly prevented further growth; it is a sampled
+cap with detection overshoot, not a hard resident-memory ceiling.
+
+Actual launch headroom5808MiB free+inactive, swap225.25MiB;20 retained samples, minimum
+headroom5614MiB, zero observed swap growth, at most3 concurrent owned processes,
+11.3s elapsed and1989196 final stage bytes. The first four completed calls consumed
+4.158596CPU seconds including the version query. The killed Window call has no final
+per-call CPU receipt and the outer time receipt is empty after termination; do not
+report4.158596 as the whole stage's CPU. Supervisor CPU0.242s is reported separately.
+Applied per-call CPU/file-limit receipts survive for all five started invocations.
+Thermal state remains unmeasured.
+
+Immutable packet: `cited/gc2228-window-development/manifest.json`, SHA256
+b51865aac14ec3dcb3525afcaf2de76c1265b3fe705046ffcd8dbff84e45c6ff. All44payloads plus
+the manifest were uploaded and read back with matching digests. It retains exact
+frozen source, copied kit inputs, completed dependency objects, partial logs, applied
+limits, monitor samples, cleanup and official release metadata.
+
+Computation is parked for now; the current work switches to PR58's new group-cocycle
+source and its retained evidence. Future compilation needs a separately justified
+changed dependency plan and exact toolchain provenance. Neither this failure nor the
+availability of more RAM authorizes an automatic rerun. The hand window/dimension
+result stays PROOF-SKETCH pending its independent read. No owner action is needed to
+continue the available source and mathematical work.
