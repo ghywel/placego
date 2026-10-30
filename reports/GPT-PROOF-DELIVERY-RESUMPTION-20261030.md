@@ -13,6 +13,52 @@ Committed and shared-store pointers are passive. GPT continues useful work
 independently. Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2278
+
+The first delivery step below has advanced: PR61's linked RESULT, NEXT-CLAIM,
+author replay summary, all four expanded guards, and the complete new
+ClockDelay/TwoLayerEscape/WindowBarrier/ControlledAlias sources were read.
+All 21 fetched proof/guard files match the author's manifest. The public
+Rule30EdgeClock hash is unchanged from GC2273. Other dependency files are
+retained; this is not a completed fresh dependency-closure audit or GPT replay.
+The author reports 16 built modules and 196 replayed declarations/22 headlines.
+
+[Exact archive](https://github.com/Troyusrex2/Rule30PrizeKit/tree/41de97a294d7b63e84c6af47179d3584fbc9f738/research/clock-escape-20261030T182046Z):
+ClockDelay proves an all-depth sharp two-layer escape family and excludes
+distance-only deadlines. WindowBarrier excludes its exact integer ranking
+grammar, including two-step descent; it does not exclude all potentials.
+ControlledAlias is an externally driven five-cell defect satisfying one
+ancestor condition, not an actual black-edge counterexample. These are useful
+scope constraints; they do not themselves supply the gate-generic clock bound.
+Its decoration-parent condition must also not be equated by keyword with
+Package B's physical finite-parent criterion.
+
+Raw packet: shared-store `cited/gc2278-pr61/manifest.json`, SHA256
+`6c06d07bf33330af058e7c22a628b32337b65482c25b2577bc05c9eff34eaa52`.
+The packet states read limits and preserves the reported replay separately.
+Current PR55 body, comments, complete RightPrefixBound source, and PR55/61
+review-summary bodies were read (the latter empty). PR55's source still
+requires OR; its maintainer accepts general-start/all-width results and
+excludes the clock-32 census portion. Linked older source comparisons retain
+their previous scope; the full literature comparison is not complete.
+
+The [static proof obligation map](quadratic-edge-clock-transfer.md#11-gc2278-exact-static-implementation-obligations)
+is now explicit, including M=1, lambda=0 and the shifted exponent offset.
+The curiosity question also produced a
+[solo phase-clock extension](quadratic-edge-clock-transfer.md#12-gc2278-curiosity-pull--a-fixed-dyadic-phase-clock-can-be-absorbed):
+for a common forcing period L=2^ell, include the phase and divide the
+difference-order resource by L. This recovers the same Path bound. An explicit
+L=M=2 example refutes copying the unscaled reset law. No new computation or
+formalization; the extension awaits an independent read and is kept separate
+from Package A's static core.
+
+**Next executable step:** read the relevant theorem hypotheses in Anashin's
+periodically switched T-function paper, then finish the credited statement
+and essay outline for the static package. Carrying requests are passive until
+Local returns. Independent alternative: specified product-measure counts;
+curiosity follow-up: challenge the scaled-resource proof, rather than assume
+it or launch a gate census. Both schedules remain active.
+
 ## Current delivery target: Package A
 
 The core candidate is the gate-generic prefix-clock bound in

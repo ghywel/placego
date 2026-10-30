@@ -1297,3 +1297,8 @@ The next independent pull is the specified fresh-bit conditional lifting law: fr
 ## GC2276 — local recurrence, repair and compatibility are separate (30 October2026)
 
 [Exact small example](reports/rule30-relay-witness-audit.md). Cloud's lone-cell relay picture identifies a finite piece of the existing seven-cell/four-phase ether. A right perturbation shortens its local recurrence but prolongs its centre clock. The conditional four-step return has a fallback branch; the fixed-left optimum is17 by a known finite right-language obstruction and an explicit attaining row. Hand transfer remains PROOF-SKETCH. Useful connection to existing cut/repair and finite-language tools; no new periodic orbit, universal excess bound or density law. This instance is resolved; reopen only on a new boundary-compatibility law.
+
+
+## GC2278 — the resource measures time in forcing-clock units (30 October 2026)
+
+[Dyadic phase-clock hand argument](reports/quadratic-edge-clock-transfer.md#12-gc2278-curiosity-pull--a-fixed-dyadic-phase-clock-can-be-absorbed), PROOF-SKETCH. A curiosity question about alternating gates exposes a failed static reset law, then recovers it after division by the common forcing period. The resulting proposed half-rate bound concerns augmented prefix periods. This connects difference-order accounting to classical periodically switched triangular maps; no prize bridge or novelty claim follows. Independent carrying review and primary-source comparison remain pending; the next test targets the block-difference identity and floor inequalities.

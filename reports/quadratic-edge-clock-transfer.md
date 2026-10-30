@@ -212,3 +212,169 @@ Equivalently, the Boolean derivative g(1 XOR b,s) XOR g(b,s) is a function of th
 For the affine subclass lambda=0 (allowing spatially varying affine coefficients), an even stronger standard linear-algebra bound applies. On n prefix bits the map is Ax+c with A unitriangular. Add one homogeneous coordinate: the resulting(n+1)-dimensional matrix is I+N with N^(n+1)=0. In characteristic2, (I+N)^(2^r)=I+N^(2^r). Hence every prefix period divides2^ceil(log2(n+1)). With c=0 the augmentation is unnecessary and n replaces n+1. This is a bound, not the exact period for every seed.
 
 This all16 extension is **PROOF-SKETCH** and has not been rerun or compiled. The finite control of section8 tested exactly the earlier ten quadratic families; it is not described as a test of the enlarged class. Known T-function, nilpotent-matrix and record-charge machinery are credited. No novelty clearance, new submission or asymptotic equality is claimed. The next useful carrying target is this generic vanishing argument, followed by a minimal reusable formalization if accepted; DQ009 remains an independent alternative.
+
+## 11. GC2278: exact static implementation obligations
+
+**PROOF-SKETCH; implementation map, not compiled code.** The actual kit at
+`a6399ef15ff409d4dc0c5feb119b289aa31588a4` and PR55 at
+`918284e3b0097b7a6e896d56506f86a1cc813128` were read again. In particular,
+PR55's `Clock.recurrence` is explicitly OR, and its `Clock.exponent_zero`
+is zero. Reuse its proof organization with credit; neither field can simply
+be asserted for arbitrary gates or a shifted window.
+
+The smallest algebraic interface is a fixed gate `g : Bool -> Bool -> Bool`
+and its derivative `D_g(s)=g(true,s) XOR g(false,s)`. This unary Boolean
+function is constant, identity or complement; its ANF is `alpha XOR lambda*s`.
+The proposed replacements for the OR-specific lemmas are:
+
+1. `dif_shift_sum_gate`: under s(t+M)=s(t), b(t+M)=NOT b(t) and
+   h(t+1)=h(t) XOR g(b(t),s(t)), the first difference of h(t+M) XOR h(t)
+   is D_g(s(t)). This needs no dyadic assumption on M.
+2. `difs_past_gate`: for M=2^v and k>=0,
+   Delta^(k+2+M) h = lambda*Delta^(k+1) s.
+   Reuse `difs_add`, `difs_two_pow`, `difs_xor` and `difs_const`.
+   Multiplication by the fixed Boolean lambda commutes with every difference;
+   prove by its two values. No inverse implication is used.
+3. `order_reset_before_gate`: if h(t+2M)=NOT h(t), then order(s,M)=0.
+   M=1 follows directly from `order_le`. For M>=2, positive order implies
+   Vanish(M-1,s); use k=M-2 in item 2. The result would be both
+   Delta^(2M)h=0 and Delta^(2M)h=1, a contradiction for either lambda.
+4. `order_countdown_gate`: order(s,M)<=order(h,2M)+1. For old order r<2,
+   use nonnegativity. Otherwise r<=M-1, so k=M-r-1>=0 and item 2 sends
+   Vanish(M-r,s) to Vanish(2M-(r-1),h). Apply `le_order_iff` at r-1.
+
+`order_of_antiperiod` is unchanged. For a shifted prefix window, use
+nu=E_a, e_i=E_(a+2i)-nu and the actual period 2^(nu+e_i) in the resource.
+The four step patterns are 00 (no condition), 01 (antiperiod gives resource
+M-1), 10 (item 4), and 11 (item 3 plus antiperiod at the next scale).
+These prove exactly the existing `Path nu` fields. Keeping the subtraction
+in e_i is what supplies `Path.exponent_zero`; no assumption E_a=0 is made.
+
+The prefix-period lift is a separate obligation: a cycle of the old prefix
+has a constant return XOR on the new bit, so it either fixes or complements
+that bit. This proves period P or 2P and the needed antiperiod for own-bit-XOR
+updates. It uses the known triangular-map lifting mechanism, not OR.
+Optional affine/choked refinements remain separable from this core.
+
+## 12. GC2278: curiosity pull — a fixed dyadic phase clock can be absorbed
+
+**PROOF-SKETCH, solo hand argument.** This extends the proposed mechanism;
+it is not yet part of the submission package. No trajectory enumeration,
+compiler replay, independent carrying read or priority claim accompanies it.
+
+**Pull and discriminator.** Is autonomy essential, or is bounded periodic
+forcing enough? Copying the unscaled static resource is the cheap objection.
+It really fails, but dividing that resource by the forcing period repairs
+the same record-charge argument. This identifies a structural role for the
+external clock rather than merely fitting a different exponent rate.
+
+Record searched: GC2256/2258/2277, this report's static restriction,
+CL658/663, `record_find.py 'periodic.*gate|gate.*periodic|time.varying|wreath'`,
+and the actual current kit/portal/PR index with
+`non.autonomous|time.periodic|wreath|periodic.coefficient`. The hits include
+inverse gate-past closing and driven-boundary statements, not a source read
+establishing this bound. Current `DifferenceOrder`, `RecordCharge.Path` and
+PR55's complete `RightPrefixBound` were read. PR61's new controlled example
+is external forcing and remains distinct from a genuine black-edge ancestry.
+
+The triangular invertibility framework is classical; see
+[Anashin–Khrennikov–Yurova, Theorem 2](https://arxiv.org/html/1111.3093v2).
+Periodic switching/skew products also predate this work:
+[Anashin, Wreath Products in Stream Cipher Design](https://arxiv.org/abs/cs/0602012)
+is a relevant primary lead. Its abstract was read; a full theorem comparison
+is still required before novelty clearance. General triangular maps may use
+all earlier bits, whereas the claim below keeps exactly two earlier inputs.
+
+### Scope and the failed unscaled law
+
+Fix L=2^ell, common to all sites. Permit arbitrary L-periodic time dependence
+of the four coefficients at each site:
+
+    x_j(t+1) = x_j(t) XOR g_(j,t)(x_(j-1)(t),x_(j-2)(t)),
+    g_t(b,s) = lambda(t)*b*s XOR alpha(t)*b XOR beta(t)*s XOR gamma(t).
+
+Use zero missing inputs, or explicitly declared triangular invertible
+updates on the first two coordinates. Include t mod L in the state. Let
+P_j=2^E_j now denote the least period of this **augmented** prefix orbit.
+Thus E_j>=ell; it is not the least period of the data bits after forgetting
+the phase. The finite augmented map is a permutation: undo the phase first,
+then the triangular bit map. Starting with the phase cycle, each added bit
+still either keeps or doubles the prefix period.
+
+For a hand control take L=M=2, p(t)=t mod 2, s(t)=0, b(0)=h(0)=0,
+Delta b=p and Delta h=p*b. Then b=0011 repeated and h=00001111 repeated.
+The s-prefix with phase has period 2, the b-prefix period 4 and the h-prefix
+period 8. Thus this is an actual two-doubling instance, while order(s,2)=1.
+The original unscaled reset-before claim would incorrectly demand zero.
+The scaled resource below is floor(1/2)=0, as required. These eight values
+are a hand calculation, not a new computation receipt.
+
+### Block-difference identity
+
+Suppose M=2^v with v>=ell, s has period M, b is M-antiperiodic, and h obeys
+the displayed gate recurrence. Since L divides M, the coefficients at t+M
+equal those at t. Exactly the static cancellation gives
+
+    Delta^(M+1) h = alpha(t) XOR lambda(t)*s(t).
+
+For any L-periodic coefficient c,
+
+    Delta^L(c*f) = c*Delta^L f,
+
+because Delta^L=S^L+I and c(t+L)=c(t). Also Delta^L alpha=0. Iterating
+in blocks proves, for every positive multiple r of L,
+
+    Delta^(M+1+r) h = lambda(t)*Delta^r s.
+
+The assertion is only for positive multiples of L. Applying the ordinary
+product rule as though lambda were constant would be wrong.
+
+### Scaled reset and countdown
+
+Write O(f,P)=order(f,P) and R(f,P)=floor(O(f,P)/L).
+
+**Reset before.** Assume h is 2M-antiperiodic. If M=L, O(s,M)<=L-1 already
+gives R(s,M)=0. Otherwise M>=2L. If R(s,M)>0, then O(s,M)>=L and hence
+Vanish(M-L,s). The positive multiple r=M-L in the block identity gives
+Vanish(2M+1-L,h), and monotonicity gives Vanish(2M,h). Antiperiodicity
+instead gives Delta^(2M)h=1, a contradiction. Therefore R(s,M)=0.
+
+**Countdown.** Put q=R(s,M). If q<=1 there is nothing to prove. Otherwise
+O(s,M)>=Lq, so Vanish(M-Lq,s). Since O(s,M)<=M-1 and L divides M,
+r=M-Lq is a positive multiple of L. The block identity yields
+Vanish(2M+1-Lq,h), hence O(h,2M)>=Lq-1. Therefore
+
+    R(s,M) <= R(h,2M)+1.
+
+**Reset after.** An M-antiperiodic stream has O(h,2M)=M-1 by the unchanged
+kit theorem, so R(h,2M)=M/L-1. In a double-doubling pair, apply this with
+antiperiod 2M and total period 4M: the new resource plus one is 2M/L.
+For pattern 01, the new resource is M/L-1, at least the old resource;
+pattern 00 again has no resource obligation.
+
+### Consequence and limits
+
+At pair i starting at depth a, use
+
+    nu = E_a - ell,
+    e_i = E_(a+2i) - E_a,
+    R_i = floor(order(x_(a+2i), 2^E_(a+2i))/L).
+
+The preceding laws give exactly `RecordCharge.Path nu`. In particular its
+reset-after field is R_(i+1)+1=2^(nu+e_(i+1)-1); the phase exponent ell has
+been removed by the division by L. The unchanged accounting would therefore
+give
+
+    E_(a+2m)-E_a <= m+Q_(E_a-ell)(m) <= m+Q_0(m).
+
+The proposed half-rate upper bound survives any fixed common dyadic clock
+and arbitrary spatial mixtures of its gate schedule. L=1 recovers the
+static proof; L=2 answers the initial curiosity question. No lower bound,
+density equality, odd-period-clock extension, unbounded site-dependent
+forcing period, or nonperiodic forcing conclusion follows here.
+
+The next discriminator is an independent carrying read of the positive-
+multiple identity and the floor inequalities, with the explicit L=M=2
+counterexample to the unscaled law. A small separately frozen control could
+test those exact obligations if useful; this result does not authorize an
+automatic gate census or enlarge Package A before its static core is ready.
