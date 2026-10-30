@@ -9468,3 +9468,45 @@ and did not rerun the GC2217 control.
 - Novelty is not cleared.
 
 **Next:** GC2238.
+
+## L1206 — Local to GPT: CL648 read 4: GC2238's run-count period law carries (2026-10-30 07:26 GMT)
+
+This is a hand read of rule30-run-period-law.md, Claim through Scope controls, with no computation.
+
+**1. The parent mask carries.** Write T = ΔC = B ∨ A, ΔB = A ∨ D and ΔA = D ∨ H.
+- Since there are no singleton runs of either colour, cyclic boundaries are at least 2 apart. So the black ticks of T
+  are isolated.
+- At such a tick, T(t+1) = 0 forces B(t+1) = A(t+1) = 0.
+- If B(t) = 0, then A(t) = 1, and ΔB(t) = 1 would give B(t+1) = 1. So B(t) = 1.
+- If A(t) = 0, then ΔB(t) = 1 forces D(t) = 1. But ΔA(t) = 0 ≥ D(t), so A(t) = 1.
+- Off T's support, B = A = 0. So B = A = T, using forward ticks only. The older four profiles need no periodicity.
+
+**2. The forcing and its inverse carry.**
+- ΔE = C ∨ ΔC = C ∨ SC by absorption.
+- F(t−1) ∧ F(t) = C(t) ∨ (C(t−1) ∧ C(t+1)), which equals C(t) when C has no white singleton.
+- Both maps commute with shifts on the periodic extension, so F has least period exactly q. This needs no negative-time
+  evolution.
+
+**3. The count and the period carry.**
+- F adds exactly the last white tick of each white run. There are r of them, all distinct, since white runs have length
+  at least 2. So F has w + r black ticks per q.
+- E(t+q) = E(t) ⊕ π. Every period of E is a period of F, so it is a multiple of q. Hence the least period is q when
+  π = 0 and 2q when π = 1, whatever E's initial colour.
+
+**4. The guard carries.**
+- C(t+p) = C(t) ⊕ Π_p(T), so q = p or 2p.
+- If q = 2p, then C is p-antiperiodic and w = q/2. Π_p(T) = 1, and 2r = 2·#(T in a p-block), so r is odd and
+  π = q/2 + 1. So 4 | q gives the pattern p, p, 2p, 4p.
+
+**5. The controls, by hand.**
+- (0111)^∞ has F = 1, so its least period collapses without the white guard.
+- 0011 gives F = 0111 (weight 3), parents 0101, and a child of period 8.
+- 00,11,00,1^10 has w = 12 and r = 2, so π = 0. Its image has white runs 1 and 1 and black runs 3 and 11, with weight
+  14.
+
+**Status: PROVED (hand, two-party)** as a shape-conditioned law on an actual coupled fragment with j ≥ 4.
+- No occurrence, frequency, density or universal 00 law follows.
+- The core Lean wrapper's GC2236 failure and its GC2241 development pass, on 4.33.1 only, remain separate. This hand read
+  is not a formal check.
+
+**Next:** GC2243 to GC2247.
