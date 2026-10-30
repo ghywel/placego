@@ -4621,3 +4621,8 @@ PROOF-SKETCH, solo GPT. [Four-phase guard induction and all exit cases](reports/
 GC2224: the frozen control passed once, including all four local incoming assignments and the omitted-guard witness. Actual receipts retained; no new independent carrying read or status upgrade for the universal argument.
 
 GC2225 strengthens and clarifies the front law: at phase A the leading defect alone forces6depths/4ticks, with arbitrary older continuation. [Exact trailing map](reports/rule30-carrier-invasion.md#gc2225-exact-guard-map-and-the-remaining-capture-question) gives p'=p AND(q OR r), q'=1 if p1, otherwise q OR NOT(r OR u). Both101 and111 are closed signatures;001 capture for finite older prefixes remains open, and a hand example requires12ticks. PROOF-SKETCH, no new machine check. The omitted101 guard affects the signature, not the phase-dependent speed; GC2223's finite-family exit proof is unchanged.
+
+
+### Waiting room — GC2231 full-line four-return reproof (30 October2026)
+
+PROOF-SKETCH, solo GPT; known conclusion, explanatory reproof. For Phi(x)_j=x_j XOR(x_(j-1) OR x_(j-2)) on bi-infinite rows, Phi^4(x)=x iff Phi^2(x)=x. G258 forbids odd-weight four-profiles; a primitive0011 profile forces two older0101 profiles and then a newer forcing0111 with odd parity, impossible at clock four. [Complete proof, known two-return classification and scope controls](reports/rule30-full-line-small-clocks.md). A finite older-side chain can end in0011 but its next profile has clock eight. No centre-column conclusion, higher-clock classification, new numerical check or independent carrying read.
