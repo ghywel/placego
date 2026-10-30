@@ -104,6 +104,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-022 | Is there one rule behind all the ordered structures? | L1000: yes, locally. Rule 30 acts on each run in place (R), and agreement with any simpler history is eaten from the left at light speed and holds on the right only on black (P). Triangles, caps, rain, staircases and the edge are its instances; every seed's edge is a half-ruler or a rain edge, decided by one bit. Bridges carry long-range order. No prize consequence. L1001: the ruler is universal: every finite seed's right edge is the single seed's ruler, cut off at one depth k* and frozen at width k* − 1 |
 | DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1951: fixed-cut49 optimum52 accepted with retained witness; original six cuts also resolved. GC1952: known laws bound support bars to3/5/7/9 and replacement gaps to4/6/8/10. Endless compatible renewal and a universal staircase representation remain open; no wider test agreed. |
 | DQ-024 | Does the right edge forget at exactly half speed? | Open; Cloud's question from the synthesis of 29 October (CL640): the doubling density of the right-diagonal periods is at most one half (AIOvernight's theorem) and measured 0.50 over k = 24..34;40 forecast already in Rowland2006, GC2151 |
+| DQ-025 | Does the clock die when the crystal reaches it? | Open; Cloud, 2026-10-30 (CL664): the front-to-column distance as the non-local currency every pin spends; a computation on the maximizers proposed, not run |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1796,3 +1797,23 @@ about other periods or eventual periodicity. [Result and visual evidence](report
 ### DQ-023 — GC2214: remove optional pulses before attempting the strong exclusion
 
 New PR57 precisely identifies when the original and effective drivers preserve the same left half, but its all-period exclusion remains an assumption. [Source review and solo reduction](reports/rule30-periodic-mask-review.md): remove isolated black pulses if the effective boundary is nonzero; if it is zero, keep only one pulse per period. It suffices to exclude these two driver classes for the strong left-only assertion. The zero-mask branch asks whether a finite left start can keep the neighbour black on one arithmetic progression, not whether its full trace is periodic. This preserves the one finite left beginning, but does not construct a physical right side. No period excluded; no new census.
+
+## DQ-025 — Does the clock die when the crystal reaches it?
+
+**Question:** "The left edge of any pattern grows a crystal, a band of settled diagonals that advances to the right at
+about four fifths of light speed. The clock column, if it could exist, would have a settled neighbour one day, and a
+settled neighbour beside a clock is a contradiction (Jen). Is the death of every finite start the day the crystal
+arrives at the column, so that the distance from the crystal's front to the column is the currency every pin spends?"
+
+**Origin:** Cloud, 2026-10-30 17:36 GMT, CL664, from the owner's dialogue on lossy gates and the quantifier shape of Q01. **Status: Open.**
+
+**Why it matters.** Q01 is uniform over widths; each width's death is a finite computation. A proof needs a non-local
+quantity the OR cannot refill and the clock exhausts (Lowry's theorem forbids a local one). The front-to-column
+distance is non-local, decreasing on average, and its exhaustion is Jen's contradiction. If the death times track the
+front's arrival, the conjecture names the right object; if not, the crystal is not what kills the clock.
+
+**What we know.** Left wheels settle at tau_j about 1.27 j to 1.33 j with periods at most 32 to wheel 100000 (CL654,
+GC2266, single cell); death times D(W) are about 2W with stairs (§8.3). Jen: two adjacent eventually periodic columns
+contradict the moving left edge (`Rule30FiniteConfigs.jen`, `no_left_periodic`). Nothing is measured yet for the
+maximizers' fronts. A provable front speed for every left-finite configuration would, with Jen, be Q01: no part of
+this is small (G10).

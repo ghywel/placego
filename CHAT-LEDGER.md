@@ -10863,3 +10863,58 @@ statement).
   0.5 after 00 and say whether the single cell behaves like a typical seed of the product measure at these depths.
 
 Guards applied in writing this: G1 (A1'), G3 (A2'), G7 (B4', B5', E4'), G8 (A4'), G9 (B2'), G10 (A6'). READ-LEDGER (GPT).
+
+## CL664 — Cloud to the owner: the dialogue on lossy gates, hashes and "truth gates", sorted against the record; the quantifier shape of Q01; DQ-025 born (does the clock die when the crystal reaches it?) (2026-10-30 17:36 GMT)
+
+The owner's two turns: (i) Rule 30 is logic gates; the OR is a one-way function; a proof would be like reversing a
+hash; can collisions, chains of hashes with stepping stones, or tricks from other fields weaken it; (ii) logic gates
+against "truth gates" with slightly different tables, and combining pure logic with the existential meaning of true
+and false. Sorted, with the record's instance of each (G5, G10 applied: nothing below is claimed beyond its status).
+
+**Exact parts of the picture.** The gate is left XOR (centre OR right): the XOR half is reversible, the OR half lossy;
+Rule 30 is therefore reversible sideways (to the left), never in time, which is Jen's left-permutivity and the whole
+sideways frame. Collisions are the normal case (every row has many parents), and two kinds are already tools:
+context-free merges (352e5d, `Rule30PrefixMerger`), the owner's stepping stones; and the clock frame as a collision
+machine (one pin per two steps, 2^(W/2) survivors of width W, `count_constrained`). The "truth gate" with the
+one-row difference from OR is material implication, and it is in the corrected sixteen-gate census as the gates
+b OR NOT s and NOT b OR s, in the OR class (0.402, 0.395): the meaning does not change the dynamics class.
+Three-valued logic (known / unknown; Kleene's OR(1, U) = 1, OR(0, U) = U, XOR(a, U) = U) is the exact calculus of the
+owner's doors: a black cell shuts the door on an unknown to its right, a white one lets it in, and the kit's
+`black_shield` (a column black for 9j steps forces an alternating 2j-cell neighbourhood) is the shut door made into a
+theorem. A fourth value, contradiction, is death in the wall frame.
+
+**The dictionary of one-way-function tricks.** Meet in the middle: no finite target for the clock; a speed-up for
+censuses only. Differential analysis: what the breaking work was (reversal law, break delays, GC2022's OR-masked and
+XOR-cancelled jumps). Algebraic attack: proved to fail in the strongest sense (the kit's degree 2t - 1). Invariants
+and checksums: none local (Lowry's theorem); rule 210's linear gate has one, and there the clock survives, so the loss
+is both why Q01 should be true and why it is hard. Weak keys: the ether and the rain, with the absorption theorems.
+Amortised potential functions: the one trick that beats a lossy gate without reversing it, and the kit's half-rate
+proof is exactly one (a resource that doublings reset and the OR refills at a bounded rate; GPT's GC2258 transfers
+it to all sixteen gates).
+
+**The quantifier shape, which is the owner's "existential meaning" made precise (PROVED by what the kit already
+has).** The clock's constraints by themselves are satisfiable: for every choice of the neighbour column, Jen's
+sideways reconstruction gives an infinite-width left half that keeps the clock for ever (the forced left half). Q01
+(`Rule30PeriodTwo.Q01`) quantifies over left-finite configurations only: a leftmost black cell at -m with white
+beyond. For each fixed m the question is finitary, a death time D(m), settled by gate logic alone and computed to
+width 60. The conjecture is the uniformity, for all m, which no single finite computation covers and which the
+maintainers' criterion ("a bound on D(W) for all W") names directly. So the wall is not computational hardness and
+not the one-wayness as such: it is the left edge. Every proof the kit has of a periodicity exclusion (period 1,
+Jen's two columns, `no_left_periodic`) is an argument that the moving left edge reaches a column after it has
+settled. The right form of the owner's question is therefore: what does the left edge do to the clock, uniformly?
+
+**DQ-025 (new; the candidate currency from CL664's predecessor turn).** The left edge grows a crystal: its wheels
+settle at about 1.27 steps per wheel (CL654, GC2266) with tiny periods, and Jen's theorem says a settled column
+beside the clock column is a contradiction. The pins reach the configuration at light speed; the crystal advances
+at about 0.79 of it. Candidate: the clock dies when the crystal's front reaches the column, and the distance from
+front to column is the non-local currency that every pin spends (Lowry forbids a local one; a front position is not
+local). Status CONJECTURE, and by G10 note what it would mean: a provable front speed for every left-finite
+configuration, plus Jen, would be Q01 itself, so no part of this is small. Proposed computation, not run, for the
+owner's word: for the known maximizers W = 8..22 (and the record's witnesses to 60), track the settled front in the
+wall frame (largest wheel j such that wheels 0..j have held their eventual period for two periods) against time, and
+compare its arrival at the column with the death time. P34: for every maximizer the front reaches the column within
+[D/2, D]; counterfactual: the front is still far from the column at death (death is not the crystal's arrival), or it
+arrives early and the clock survives inside the crystal (which would contradict Jen unless the front definition is
+wrong, so the definition is the first thing to check, G11).
+
+No prize movement. READ-LEDGER (GPT, Local).
