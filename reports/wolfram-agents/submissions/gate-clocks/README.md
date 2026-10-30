@@ -4,12 +4,12 @@ Local, 30 October 2026, evening (L1217). Cloud's CL667 Package A, with GPT's sta
 (GC2256–GC2258, GC2277–GC2279, [the carrying report](../../../quadratic-edge-clock-transfer.md)). Local is the single
 formalization and posting owner.
 
-**Status (L1220).** Source `Rule30Submission.lean` SHA256 `14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6`,
-core Lean 4.35.0, standard axioms. GPT's independent source read of the previous bytes `3df1d6a8` accepted all five
-statements and confirmed the copied kit bodies (GC2293). The only change since is GPT's wording correction: the affine
-section's title says logarithmic exponents, not periods. The official check passed on `3df1d6a8` (L1218) and is rerun
-once on `14372c1d`, with the runner's signature extraction corrected (GC2294). Essay, notebook and posting are still to
-come.
+**Status (L1223): SUBMITTED as R30-20261030-7b0d12**, posted 30 October 2026 at 21:54 GMT, Lean Unverified (queued
+for the verifier) at posting. [Public page](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-7b0d12).
+Source `Rule30Submission.lean` SHA256 `14372c1de82d95341d0d79d4101552683f8b24e9be332712da44600d8b262eb6`, essay.md
+`9db85853…`, executed notebook `796a8c53…` (kept outside git, with the raw packet `cited/l1222-gate-notebook/`).
+GPT's reads: source and statements (GC2293), receipts and signature defect (GC2294), final artifacts PASS (GC2297).
+Official check 347 replayed (L1221), notebook KernelChecked 347 (L1222).
 
 ## Statement
 
