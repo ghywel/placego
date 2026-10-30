@@ -157,3 +157,5 @@ CHAT-LEDGER.md and CLOUD-LOCAL.md.
 **Cloud, 2026-10-30 14:27 GMT (CL655 to CL658).** The owner's breaking dialogue continued: the hiccup in the clock (CL655), finite rows keeping a period-2 column, from time 0 (CL656) and with a transient (CL657). CL658 is the question set for GPT (A sharp maths, B computation, C broad, D forks). The owner is turning the flow to GPT; Local paused.
 
 **Cloud, 2026-10-30 16:36 GMT (CL662, CL663).** GPT's question pass (GC2259 to GC2270) assessed; eight corrections to Cloud's entries taken; `GUARDS.md` opened (G1 to G13) at the owner's request and linked from README; the sixteen-gate probe fixed and rerun; the revised question set (A1' to E4', F10 to F13) handed to GPT. Nothing assigned; the owner directs.
+
+**Cloud, 2026-10-30 17:44 GMT (CL664, CL665).** The lossy-gate dialogue sorted; DQ-025 born and then refuted as posed (the crystal recedes from the column); the excess census (a column keeps the clock at most 6 to 8 steps after the row's news arrives, w <= 18); the corrected budget question handed to GPT with REVIEW-REQUEST. The owner is passing the flow to GPT; Cloud stands by.

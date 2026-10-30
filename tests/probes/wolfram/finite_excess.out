@@ -1,0 +1,9 @@
+w=2 L(w)=7 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 0 0 1 4 0 0 0 0 1 0 0 0 0 0 0
+w=4 L(w)=7 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 10 17 12 14 2 0 2 0 3 0 0 0 0 0 0
+w=6 L(w)=7 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 84 81 52 30 11 3 4 0 5 0 0 0 0 0 0
+w=8 L(w)=9 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 360 226 121 69 52 11 6 0 7 0 0 0 0 0 0
+w=10 L(w)=15 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 934 585 334 158 116 22 15 0 10 0 0 0 0 0 0
+w=12 L(w)=15 maxexcess=6 (seed 0x1 p=1 L=7 arrival=1) excess histogram -2..12: 2498 1349 673 324 227 49 42 0 14 0 0 0 0 0 0
+w=14 L(w)=16 maxexcess=7 (seed 0x3b5b p=9 L=16 arrival=9) excess histogram -2..12: 5356 2799 1365 648 450 126 88 0 21 1 0 0 0 0 0
+w=16 L(w)=17 maxexcess=7 (seed 0x3b5b p=9 L=16 arrival=9) excess histogram -2..12: 11188 5682 2751 1360 920 281 149 7 35 15 0 0 0 0 0
+w=18 L(w)=22 maxexcess=8 (seed 0x24081 p=8 L=17 arrival=9) excess histogram -2..12: 22816 11703 5887 2858 1643 479 253 60 88 74 1 0 0 0 0

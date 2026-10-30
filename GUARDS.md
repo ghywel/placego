@@ -22,6 +22,7 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 | G10 | L(w) <= w + C for the finite-row head start called "a small theorem" (CL658 A6): a uniform finite bound settles the open CQ01 reduction (`CQ01_iff_no_finite_period_two`). | **Before calling a target small, test whether it implies a known open statement** (CQ01_iff, Q01_iff_Theta, the realization barrier, the all-width bound) **and say so.** |
 | G11 | The left-wheel transient scanned only from t >= j, so tau_1 = 0 where the right value is 1 (CL654; GC2264). | **A measured statistic is defined so that its smallest cases give sensible values, and those cases are printed and read.** |
 | G12 | The owner's question on the past of a finite row answered beside §8.19 (5 October) when the study he meant was GC2015 to GC2024 (28 October) (CL659; corrected CL660). | **When the owner refers to recent work, find it in the ledger by date before answering.** |
+| G14 | DQ-025 posed a mechanism in which the left crystal "reaches" the clock column; my own CL654 numbers put the front at x/t about -0.21, moving away from it (CL665). | **A mechanism involving motion is posed with the velocity written out, with its sign, in the frame of the question**, and checked against the measured value before the question is written. |
 | G13 | Blocks closed without separating the two kinds of error. | **Every block's closing note lists failed predictions and unguarded mistakes under separate headings**, and any new mistake gets a row here. |
 
 ## How to use this file

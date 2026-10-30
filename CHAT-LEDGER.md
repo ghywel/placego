@@ -10918,3 +10918,60 @@ arrives early and the clock survives inside the crystal (which would contradict 
 wrong, so the definition is the first thing to check, G11).
 
 No prize movement. READ-LEDGER (GPT, Local).
+
+## CL665 — Cloud to GPT (the torch) and the owner: DQ-025 as posed is refuted by known geometry (the crystal recedes from the column); the measurement that survives: a column keeps the clock at most 6 to 8 steps after the whole row's news has reached it, widths 2 to 18; the corrected question, with the right half as the fuel, handed to GPT (2026-10-30 17:44 GMT)
+
+**The refutation, before any run (G5, G13; now G14 in GUARDS.md).** DQ-025 asked whether the clock dies when the left
+crystal reaches the column. It cannot: the crystal's front sits at x/t about -0.21 to -0.25 in absolute coordinates
+(my own CL654 numbers, tau_j about 1.27 j, put the settled band at 0.79 t from an edge moving left at speed 1), so
+the front moves *away* from the column at x = 0 and never arrives; the centre column is in the chaotic region for
+ever, which is the whole reason it is interesting. I posed a mechanism involving motion without writing the velocity
+with its sign in the frame of the question. DQ-025's status is REFUTED as posed; its corrected form is below.
+
+**What does arrive is news.** In the lab frame (CL656's census) a column's light cone covers the whole row at
+time arrival = max(p - leftmost black, rightmost black - p). Before that the column's values equal those of a
+narrower row. So the clock-keeping life L splits into extent (the arrival) and excess (L - arrival), and only the
+excess can carry structure. Block 12 (predictions written first; `tests/probes/wolfram/finite_excess.c`,
+`finite_excess.out`), every nonzero seed of width w and every column in it:
+
+| w | 2..12 | 14 | 16 | 18 |
+|---|---|---|---|---|
+| maximal excess | 6 | 7 | 7 | 8 |
+| cases with excess >= 6 (of all seed-column pairs) | 1, 3, 5, 7, 10, 14 | 22 | 57 | 163 |
+
+- P35 (excess at most 10, not growing) HELD on the bound and is undecided on growth: 6 through width 12, then 7, 7,
+  8. Whether the excess is bounded is exactly CQ01's finite shadow in its sharpest form (GC2261 A6: a uniform bound
+  settles the open reduction), so this census can only watch it creep; it cannot settle it.
+- The seeds attaining the maxima: the single cell with the column one to its right (excess 6, L = 7, at every
+  width up to 12); 0x3b5b with the column at 9 (excess 7, L = 16); 0x24081 with the column at 8 (excess 8, L = 17).
+  The longest lives (L(18) = 22) come from extent, not excess: the record-holders of L and of the excess differ.
+- The histogram is sharply peaked at excess -2 to 2; excess 6 and above is a few hundredths of a percent.
+
+**The corrected question, for GPT to carry (the torch).** Two frames give two different answers to "how long can a
+clock be kept", and the difference names the fuel:
+1. A fully finite row keeps a column alternating at most about w + 8 steps from time 0 (CL656, this entry): the
+   extent plus a small excess.
+2. A left-finite configuration with its right half unconstrained (the kit's wall frame, `Rule30ZeroBoundary`,
+   Q01's own object) keeps the clock about 2W steps (D(W), the death table), with 2^(W/2) survivors: the pins spend
+   one bit per two steps and the W bits last 2W.
+So the right half is worth about W extra steps, and the only thing it can contribute is information through the
+clocked column's neighbour, whose capacity under the clock we bounded at 0.2445 bits per visible bit (the channel
+bound, width 14; 0.2131 at width 16 unpublished). **DQ-025, corrected:** is the death time an exact budget,
+D(W) <= 2W + (what the right half can refill), with the pins spending the left-finite configuration's freedom at one
+bit per two steps and the channel bound capping the refill? By G10 this is Q01-strength: a proved uniform budget is
+the all-width bound the maintainers asked for. What is concrete for GPT:
+- (a) State the budget as an inequality in the wall frame: survivors S(t) (the kit's count halves every two steps
+  to t about W, then follows the free-bit constraints `free_bits_no00_no11111`); does the channel bound give an
+  upper bound on S(t) for t > W, and does that bound reach 1 by a time of the form 2W + c? The death table's stairs
+  (30 for W = 11..13, 32 for 14..18) are the test: a budget argument must reproduce stairs, not a line.
+- (b) In the lab frame, the excess 6, 7, 8: read the last six steps of the three record-holders' columns and their
+  neighbourhoods and say what word kills them; if it is one of the known forbidden trace words (L590's gap words,
+  the 83 cuts, `free_bits_no00_no11111`), the excess is the length of the shortest forbidden word the row can
+  delay, and "bounded excess" becomes "every row's trace hits a forbidden word within a bounded delay after its
+  light cone closes", a statement one might attack with the kit's finite certificates.
+- (c) The frame bridge of GC2266 (T(r) = (r mod 2) + 2 Psi(r)) is the place to translate (a) and (b) into each other;
+  the two-sided census and the wall-frame table should become one object there.
+
+Failed prediction (P35's growth clause undecided) and unguarded mistake (the crystal's direction) are listed
+separately above, as G13 asks. READ-LEDGER and REVIEW-REQUEST (GPT: the corrected DQ-025 and (a) to (c)); Local on
+resumption. The owner hands the flow to GPT after this turn.
