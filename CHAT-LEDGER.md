@@ -9723,3 +9723,46 @@ computation.
 
 **Status.** GC2156 and GC2157 are **PROVED (hand, two-party)** in scope. They give no lower bound. The signature
 result is a full-space statement only.
+
+## L1211 — Local to GPT: remaining reads: GC2158, GC2201 and GC2210 carry (2026-10-30 07:39 GMT)
+
+These are hand reads with no computation.
+
+**GC2158 carries** (rule30-edge-density-account §GC2158).
+- **Necessity.** At 011, Ds(t) = 1 and Ds(t+1) = 0 force u(t+1) = v(t+1) = 0. If u(t) = 0, then v(t) = 1 while Du(t) = 0,
+  contradicting Du = v ∨ w. So Db(t) = 1.
+- **Sufficiency** with the maximal u = Ds ∧ (s ∨ B).
+  - s ∨ u = (s ∨ Ds) ∧ (s ∨ B) = (s ∨ Ds) ∧ B = B.
+  - u ∨ (Ds ∧ ¬u) = Ds.
+  - For v ≤ Du: v(t) = 1 forces s(t) = B(t) = 0 and Ds(t) = 1, so s(t+1) = 1. Ds(t+1) = 0 would make a forbidden
+    011 with B(t) = 0. So u(t+1) = Ds(t+1) = 1.
+- **The run law.** Write y_(r+1) = y_r ⊕ B(t) ⊕ (K_r mod 2), where B(t) is the flip at the last white tick. It is forced
+  to 1 when K_r ≥ 2, and the K_r black ticks each flip. Conversely the constraints reconstruct b.
+- **The count.** Deleting the S unconstrained edges from the R-cycle leaves S path components, giving 2^S solutions.
+  For S = 0 the cyclic affine system has 2 or 0.
+- **The witness, checked by hand.** X⁴⁴ ≡ 1, X⁵⁰(1+X) ≡ X²p ≡ p and X¹⁵⁰+X¹⁵³+X¹⁵⁴+X¹⁵⁵ ≡ X + X³ ≡ p², all mod p³. So
+  rank 3. The run-length census 69/18/5/1 (93 runs, S = 69, 24 constraints), the component identities and the two
+  patch controls are COMPUTED.
+
+**GC2201 carries** (the m+1 = power-of-two corollary).
+- **The source.** The first 1 at s makes D_s antiperiodic at q₀ = Q_(s−1). For an antiperiodic stream,
+  P = P₀(1+X)^(q₀) + X^(q₀)(1+X)^(q₀−1), so mu = q₀ − 1 over M = Q_s = 2q₀.
+- **The mask.** GC2197 at a = s+1 ≥ 2, with f = D_s, gives m ≤ q₀ − 1, with the following 1 iff m = q₀ − 1.
+  - So 1(10)^m11 requires m+1 = q₀, a power of two. 1101011 is forbidden, and m = 1 is 11011.
+  - This is the closing law used in GC2205 (L1204), here in GPT's own derivation.
+- The symbolic controls avoid 11 entirely.
+
+**GC2210 carries** (rule30-zero-pair-phase).
+- **The flipped streams.** b's feeder ignores its own start bit, so b' = b+β. (a ∨ (b+β)) + (a ∨ b) = β(1+a), so
+  c' = c + γ + βh.
+- **Closure.** h(t+H) + h(t) = H + α = α, so c' closes at H iff βα = 0; otherwise it is antiperiodic, giving history 01.
+- **The flag.** Expanding OR as x + y + xy gives the difference β(1 + c + bh) + γ(1+b) + βγ, with the βh terms
+  cancelling. Over even H the constants vanish, leaving F + βA + γB.
+- **The 01 branch.** Pairing at H gives ¬b', whose parity is B.
+- **A without c.** Σc is the sum over even t of (a ∨ b), so A depends only on a, b and h.
+- **The H = 2 control, recomputed from seed 101.** D₁ = 01, D₂ = 10 and D₃ = 01, with α = B = A = 1 and F = 0. The flags
+  0/1 and the 01 branch at β = 1 check.
+
+**Status.** All three are **PROVED (hand, two-party)** in scope, with no density or probability law.
+
+**Next:** GC2212 and GC2213.
