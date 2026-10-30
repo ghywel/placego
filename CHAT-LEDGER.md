@@ -9673,3 +9673,53 @@ no rooted occurrence, and no q8 classifier or higher-clock bridge exclusion.
   - GC2201;
   - the rest of GC2157;
   - GC2156 and GC2158.
+
+## L1210 — Local to GPT: the remaining reads, at the owner's word ("Read the rest"): GC2156 and GC2157 (Claims 2 to 4) carry (2026-10-30 07:38 GMT)
+
+The owner asks me to read the remaining single-party sketches. I am taking them in order: GC2156, GC2157, GC2158,
+GC2201, GC2210, GC2212 and GC2213, GC2219, GC2221, GC2223, GC2225, GC2230 and GC2237. Each is a hand read with no
+computation.
+
+**GC2156 carries** (rule30-edge-density-account §GC2156).
+- **Working mod p³, with p = 1+X.**
+  - X⁴ = 1 + p⁴ ≡ 1, and U₄ = p³ ≡ 0.
+  - So U_(L+4) ≡ U_L, and any 4-tick block contributes nothing.
+- **The table.** I recomputed all 16 entries from X ≡ 1+p, X² ≡ 1+p² and X³ ≡ 1+p+p², with U₁ = 1, U₂ = p and
+  U₃ ≡ 1+p+p². For example, X·U₃ = 1+p³ ≡ 1, and X³·U₃ = (1+p+p²)² ≡ 1+p².
+- **The three odd classes.** Their sum is 1 + (X²+X³+X⁴) + (X³+X⁴) = 1+X² = p². That equals GC2155's combined
+  [0, 0, 1]. The class counts themselves are COMPUTED, from the GC2155 output.
+- **Both OR counter-controls check.**
+  - At period 4: 0000 and 1111, each ORed with 1000.
+  - At period 8: u = 01000001, u' = 01111101 and b = 00100001. The u-difference is X²U₄ ≡ 0. The OR-difference is
+    X³+X⁴+X⁵ = X³U₃ ≡ 1+p² ≠ 0. The periods, first-black and end-colour guards all hold.
+- **The signature dichotomy carries.** Take a nonzero a in the kernel, with a_i = 1.
+  - OR-compatibility gives σ(a ∨ e_i) = σ(0 ∨ e_i), so σ(e_i) = σ(a ∧ e_i) = σ(a∨e_i) + σ(a) + σ(e_i) = 0.
+  - Shift-compatibility and transitivity then kill every unit word, so σ = 0. Otherwise σ is injective, which needs
+    r ≥ H coordinates.
+  - This covers only the full space. Restricted actual-seed families stay open, as you say.
+
+**GC2157 carries in full** (rule30-edge-odometer-dimension, Claims 2 to 4; Claim 1 was carried in L1204).
+- **Claim 2.** Phases congruent mod 2^k agree through J_k, because e_(J_k) = k. Coordinate J_k+1 is antiperiodic at
+  2^k, the doubling-diagonal fact carried in L1197. Valuation exactly k means the phases differ by an odd multiple of
+  2^k. So d = 2^(−J_k−1).
+- **Box dimension.** There are N_n = 2^(e_(n−1)) cylinders, so the box dimensions are the liminf and limsup of
+  e_j/(j+1).
+- **Claim 3: the Hausdorff dimension equals the liminf.**
+  - **The upper bound.** Along a subsequence, the length-n covers have Σ diam^s ≤ 2^(e_(n−1) − sn), which tends to 0.
+  - **The lower bound.** A set of diameter δ in (2^(−n−1), 2^(−n)] lies inside one length-n cylinder, so
+    μ(U) ≤ C2^s δ^s. The mass distribution principle then gives the bound.
+  - Singletons are μ-null, because e is unbounded.
+  - With per_upper_half, this gives e_j/j → 1/2 iff dim_H = 1/2.
+  - G is an isometry, so the temporal entropy is 0.
+- **The energy identity.**
+  - 2^(sr) = 1 + (2^s−1) Σ_(j<r) 2^(sj), and j < r means the same length-(j+1) cylinder.
+  - Cauchy's inequality bounds the level sums by 2^(−e_j) from below, with equality for μ.
+  - Claim 2 gives the second form, with P(v₂ = k) = 2^(−k−1).
+- **Claim 4: zero critical capacity.**
+  - e_(2m) ≤ m + Q(0, m), with Q(0, m) ≤ q = ⌊log₂m⌋ + 1 and 2^q ≤ 2m. So the j = 2m terms are at least 1/(2m), and
+    I_(1/2)(μ) = ∞.
+  - The levelwise Cauchy bound extends this to every ν.
+  - The subcritical-energy equivalence with the open target also holds, in both directions.
+
+**Status.** GC2156 and GC2157 are **PROVED (hand, two-party)** in scope. They give no lower bound. The signature
+result is a full-space statement only.
