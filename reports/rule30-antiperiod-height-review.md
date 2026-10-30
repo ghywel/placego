@@ -190,3 +190,59 @@ Freeze source, counters and conservative pilot limits before any run; no
 larger period or automatic repetition. Independent alternative remains a
 scoped source read of RootD3Reduction/CedarD3Converse's actual completeness
 interface, not an assumption that either open statement is proved.
+
+
+## GC2244: one fixed constructor-versus-existence pilot
+
+The [pilot source](../tests/probes/rule30_free_partner_pilot.py) is frozen at
+SHA256 `b6db991d88b2d4fbf44b84c6eda2fb8197f5aa36843a73abb94e1278dbc2109e`;
+run_capped stays
+`c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`.
+Source has been read and syntax parsed, but not executed at this freeze.
+
+**Prediction:** the height criterion, explicit binary-track construction and
+independent existence oracle agree for every driver at P=2,4,6. Every
+constructed partner is P-antiperiodic and its chosen child is safe and returns
+after2P. This tests the construction and its indexing, not the infinite
+statement or rooted occurrence. **Counterfactual:** any mismatch, unsafe
+constructed child, missing endpoint exchange, absent coverage/control,
+resource/monitor failure or input mismatch stops the stage. No automatic
+repair, repeat or larger period.
+
+Exactly84 drivers,2^P partners per driver and both initial colours give
+8736 partner/initial cases. No early termination of the outer enumeration.
+The oracle uses the literal eight-entry Rule30 table and detects cycles in
+(phase modulo2P,child colour), at most4P updates per case; no height or track
+logic enters its existence decision. These are only fixed small-period
+controls, not a seed census or an attempt to infer density.
+
+Independent controls: the retained P6 sharpness trace and the prescribed bad
+partner are checked exactly. **Unexpected/mutation check:** deliberately
+omit the endpoint exchange for b=100100; the track endpoints must fail and
+neither child initial colour may be safe for that mutant's partner. Correct
+constructions must include zero, nonnegative, nonpositive and mixed-sign
+height cases. The drift/diameter theorem's necessity is already the carried
+external result; finite agreement is not its replacement.
+
+Record searched: GC2242/GC2243's exact external513de31a necessity source,
+GC2234 oriented converse, adjacent CedarD3Converse's different quantifier,
+and the actual kit932cf8dd/23PR/portal snapshot completed04:53:47Z. The prior
+bounded primary-source search is recorded above. This is validation of the
+written sketch, not a new novelty decision or a search-silence claim.
+
+ONE run after this freeze is pushed. Single Python process, one thread,
+nice10, no subprocesses, no GPU or concurrent heavy job. Kernel-enforced
+60CPU seconds for the sole computation process, below the120aggregate pilot
+ceiling; actual process/supervisor CPU separately retained. Per-process
+limits are not described as aggregate tree metering. Outer300wall,
+768MiB owned-tree RSS,max2processes (time plus Python),16MiB/file,
+128MiB/stage,4096MiB launch and3072MiB running free+inactive,64MiB swap
+growth. Tree/monitor failure stops and cleanup checks remain active.
+
+Intel preflight05:30:17Z:6236MiB free+inactive,193.25MiB swap, load2.08;
+no existing compute process. pmset reports no recorded thermal/performance
+warning and scheduler/speed limits100. This is warning-status evidence, not
+continuous temperature monitoring. Retain a completion warning/process
+snapshot, source, full84-row outcome, controls, time/pressure/cleanup and
+limit receipts. A warning redirects later work to light reasoning. No
+post-freeze cap increase or extra period is authorized by this stage.
