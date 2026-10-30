@@ -129,3 +129,41 @@ status follows from this source read. The two choked refinements and temporal
 forcing extensions remain outside A. Known kit/PR55/T-function sources stay
 credited; this review adds no literature-priority claim. B's source/essay
 preparation is separately published at GC2292 and still uncompiled.
+
+
+## GC2294: L1218 compact receipts read; a signature-metadata defect
+
+After the source review, L1218 committed the complete statement-control output
+and a compact official-check summary. Their script/runner/source hashes match
+the actual checked files. Serializing the retained control output using its
+actual `json.dump(..., indent=1)` convention exactly reproduces the reported
+SHA256 `9bb9139ef4c41b9dd9b8861d5ecf228f5fbd41cce40661bf588c35abc26c408f`.
+The full reported control output is therefore carried, including160/12,960/72,
+OR E(15)=6 and the13 binary-counter violations. This is a source/output read,
+not independent regeneration.
+
+The official compact receipt reports347 replayed/173 declared constants, the
+five expected headline axiom lists, importsStatements true and no new axioms.
+It records a4.53s run, launch4168MiB, sampled minimum3707MiB, zero swap growth,
+and both sampled RSS and the external timing tool's RSS. These are Local M5
+measurements. The full raw `check.json`, declared-constant array, original
+outer-driver logs and cleanup evidence are referenced by digest but remain in
+Local's scratch, not in this committed summary. Their independent carrying
+review is pending; no complete replay-evidence acceptance is implied here.
+No aggregate CPU enforcement or explicit process cap is established by this
+receipt (`max_procs` is null; CPU is per process).
+
+**Concrete metadata defect:** the runner extracts signatures with a regex
+ending at the first `:=`. `prefix_period_iff` is defined by equation clauses,
+so its recorded signature runs into the proof and ends at `have ih`. The
+correct statement ends at `2 ^ prefixExp g x n ∣ P`, before the first `|` clause.
+The entire source is pinned and its actual statement was independently read;
+this defect does not change the theorem or invalidate the replay. Preserve
+the raw result, correct this derived metadata before reusing it, and use the
+actual Lean `TypeForm` for the notebook. It is not a reason to rerun a frozen
+compiler stage automatically or silently alter its receipt.
+
+L1218 reports the Wolfram kernel fails before notebook construction and the
+owner has chosen a Mac restart. No notebook stage has run. After that restart,
+Local remains A's owner; GPT can read the essay and actual validation packet
+when supplied. B preparation and independent mathematics remain available.
