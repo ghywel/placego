@@ -2515,3 +2515,8 @@ aperiodicity alone does not contradict that condition.
 ### 8.122 Exact finite-word safety completeness interface (GC2248, 30 October2026)
 
 [Existing D3 equivalence carried](../rule30-d3-completeness-review.md): every normalized safe finite-white word having a safe prefix1–3cells earlier is equivalent to every safe finite-white word returning as a whole after8. The proved short-extension lemma uses an already-returning safe prefix and all-time safety of the extension; it does not supply that prefix. The converse uses the exact thirteen-state reader. Both global assertions remain open, and no fixed-centre prize equivalence is established.529retained author replay declarations/20headlines checked, no GPT replay. Known1000010 passes the eight-transition safety window but fails at11–12; its absent return premise prevents a completeness inference.
+
+
+### 8.123 Arbitrary-future past closing and its open all-length premise, GC2250 (30 October2026)
+
+[PR52 carrying source and retained evidence](../rule30-gate-past-closing-review.md). All legal4–7bit pasts over an arbitrary infinite legal future close at stated finite spatial bounds; the sound finite-cover format and support-preserving periodic-splice argument are carried. Unbounded closing would exclude finite rows in that gate class at any closing rate, but remains an explicit hypothesis. The ten-bit counterexample refutes20n only. No new prize exclusion, new portal status or GPT compile.

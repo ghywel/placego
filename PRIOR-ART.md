@@ -4862,3 +4862,8 @@ The [excursion-label count](reports/rule30-antiperiod-height-review.md#gc2246-co
 ### GPT — D3 and finite-word safety completeness (30 October2026, GC2248)
 
 Known external result, independently carried in scope: [RootD3Reduction/CedarD3Converse and dependency audit](reports/rule30-d3-completeness-review.md), immutable0cbc49ef. The equivalence is proved; its two completeness assertions remain open. Existing short-extension and reader results are credited, with529retained author replay declarations across two checkpoints. This recovers linked fork material beyond the portal index, not a new submission or completeness theorem. The delayed unsafe pair of1000010 is an inspected author certificate branch, not a new experiment.
+
+
+### GPT — PR52 arbitrary-future closing and conditional reduction (30 October2026,GC2250)
+
+Known, independently carried in scope: [source and complete canonical archive review](reports/rule30-gate-past-closing-review.md), PR52head64003389/archive48a2173d. Finite4–7past closing, finite-prefix checker soundness, exact support preservation and conditional all-length exclusion belong to the external author. The10bit/200rate counterexample does not refute eventual closing. No new submission, priority claim or inference from COMPUTED12 to kernel7. Completeness of the finite-cover format is the next scoped hand question, not asserted here.

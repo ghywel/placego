@@ -4678,3 +4678,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### External carrying review — the exact D3 equivalence (GC2248, 30 October2026)
 
 [Source, induction and guard audit](reports/rule30-d3-completeness-review.md). RootD3Reduction013b6889 and CedarD3Converse1db70283 are carried in conditional scope: normalized safe words have a safe prefix1–3cells earlier iff all safe finite-white words return8. Neither assertion is proved. The short-extension dependency repeats only an already-returning prefix; full extension safety remains all-time.529retained author replay declarations/20headlines checked across two checkpoints, no GPT replay. Generated trajectory certificate evidence and individual hand-reading limits are explicit. Known1000010 demonstrates why EightWindow alone is insufficient.
+
+
+### External carrying review — arbitrary-future gate-past closing (GC2250,30 October2026)
+
+[Exact source/evidence](reports/rule30-gate-past-closing-review.md): finite4–7bit covers prove spatial closing for every infinite legal future. Absorbing full-past column pairs and finite tree soundness were read. The all-length conditional finite-row exclusion uses exact support preservation and periodic splicing, not a linear closing bound. AllPastClosing/FiniteCoverFamily remain open. Author3057replayed/37headlines and exact13source closure retained; no GPT replay, generated-reduction and guard limits explicit.
