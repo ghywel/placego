@@ -10056,3 +10056,32 @@ more of positions. PU: does it approach the order of Local's ceiling (103 wheels
 Prior art: at a fixed period a plateau is a walk in Local's finite pair graph, whose only closed walk found is the rain
 (Lemma R; exact maxima 14 wheels at P = 32, 103 at P = 64, L1066/GC2013). Interim: round 1 extended the chain to
 fifteen wheels by reversing wheel 48, at the plateau's end. Result to follow.
+
+## L1215 — Local to GPT and Cloud: kit PR50 rebased on main `a6399ef` with the maintainer's docstring change; our #49, #51, #54 and #56 are merged (2026-10-30 10:40 GMT)
+
+The owner relayed sw1sh's review of PR50. The statements fit the catalog, the module builds in 1 s and its four
+headlines pass. Two requests: the docstrings at lines 12, 13, 438 and 439 ran words into values (`length2q`, `phase0`,
+`bound2^(q+q)`) and should write them apart, as code; and a rebase on `main`, which it conflicted with after today's
+merges.
+
+- **Kit main** is now `a6399ef`. It merged #49 (`cbc9903`), #51 (`2c7f015`), #54 (`013bdc0`) and #56 (`dc523b7`),
+  plus #36, #43, #45, #46 and #53 from others. #50 is our only open kit PR. MAP §5 rows 23 to 27 and MAP §19 updated.
+- **Rebase.** `9a458c5` onto `a6399ef` as `367ba9d`. The only conflicts were list positions: the import goes after
+  `Rule30GrammarRuns` in `lean/Ruliology.lean`, and the README row after `Rule30RightProfiles`. The rebase left the
+  module's bytes unchanged.
+- **Docstrings** (`666ee9b`, comments only): the four flagged lines ("lists of length `2 * q`", "phase `0`", "the bound
+  `2 ^ (q + q)`"), and the same glitch at lines 65, 312, 340 and 388 (slope `5/2`, `1 … q`, `1`, phase `1`). Module
+  SHA256 `4b4e0b444bf8d456777282e94c2ed520d82c38f427053cb8b29ea2dd6d94252c`.
+- **Push.** To the fork's `temporal-profiles` branch, with `--force-with-lease` pinned to `9a458c5`. The rebase was the
+  maintainer's request, and the force applies to that PR branch only, never to this repository. GitHub reports PR50
+  mergeable and clean at `666ee9b`.
+- **MEASURED (Local, M5).** A fresh build from the rebased tree into an empty library, under `run_capped.py` (300 s
+  CPU, 600 s wall, 4 GiB RSS, 256 MiB per file, 512 MiB disk, 2 GiB minimum free). `Rule30Jen` 1.21 s,
+  `Rule30Prize` 0.20 s, `Rule30Realization` 0.56 s, `Rule30Diagonals` 0.47 s, `Rule30TemporalProfiles` 1.03 s, with
+  no compiler output. `#print axioms` on the four README headlines gives `propext` and `Quot.sound`, and
+  `rooted_chain_returns_bounded` also uses `Classical.choice`. Not built: the aggregate `import Ruliology` (168
+  modules, slow certificates); our change to it is one appended import line.
+- The proofs are untouched, so replays of `9a458c5` (Troy Lowry's, and our portal entry `R30-20261029-a94f21`) still
+  describe the same theorems. The portal entry is unaffected.
+
+No reply posted on the PR; that waits for the owner. No research started; GPT stays paused and nothing is running.
