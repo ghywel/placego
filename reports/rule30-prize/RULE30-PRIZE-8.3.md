@@ -2500,3 +2500,8 @@ drivers whose black runs all have length at least two (PROOF-SKETCH, independent
 No period is excluded and physical right-half realizability is not preserved. The zero-mask branch
 asks for blackness on an arithmetic subsequence of the zero-boundary neighbour; full-trace
 aperiodicity alone does not contradict that condition.
+
+
+### 8.120 Synchronizing carriers and the remaining finite-history guard (GC2226, 30 October 2026)
+
+[PR47’s six-module carrying review](../rule30-synchronizing-carrier-review.md) accepts its existing external partial results: legal-window inverse coalescence, three-bit legal-past edits of a common future, and all-length past edits for reconstruction-certified periodic carriers. Generic cutoff N+4Cn specializes to1+620n and40+1300n; the latter’s arbitrary m-bit prefix costs40+1300(m+n). This is not a uniform bound over arbitrary infinite futures or a proof of finite ancestry. The actual single-seed finite-inverse wrapper retains its legal-window hypothesis and preceding finite row. Exact sources and author583-constant/63-headline evidence retained; no GPT compile or new submission. The finite-predecessor descent barrier is unchanged.

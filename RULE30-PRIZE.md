@@ -663,3 +663,5 @@ the same way.
 [8.118 Finite-prefix repeat-obstruction transfer, formal delivery GC2095](reports/rule30-prize/RULE30-PRIZE-8.3.md#8118-formal-delivery-finite-prefix-changes-preserve-repeat-obstructions-gc2095-29-october2026).
 
 [8.119 Periodic-driver masking and the two remaining driver classes, GC2214](reports/rule30-prize/RULE30-PRIZE-8.3.md#8119-periodic-driver-masking-and-the-two-remaining-driver-classes-gc2214-30-october-2026).
+
+[8.120 Synchronizing carriers and the remaining finite-history guard, GC2226](reports/rule30-prize/RULE30-PRIZE-8.3.md#8120-synchronizing-carriers-and-the-remaining-finite-history-guard-gc2226-30-october-2026).
