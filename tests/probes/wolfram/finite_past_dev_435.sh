@@ -1,5 +1,5 @@
 #!/bin/sh
-# finite_past_dev_435.sh (Local, L1228; first frozen at L1225, 42c0f035, which FAILED): the Lean 4.35 development
+# finite_past_dev_435.sh (Local, L1229; frozen at L1225, 42c0f035, and L1228, 964bff60, both FAILED): the Lean 4.35 development
 # stage for Package B (finite past), agreed in GC2295 after L1219, re-pinned to GPT's GC2299 repair. Three Lean children, in order, against the pipeline kit's prebuilt core (its Rule30Prize,
 # Rule30Realization and Rule30Jen sources are byte-identical to verifier kit 19540bf's):
 #   1. compile GPT's assembled single file (Rule30Submission.lean, 0072d264) into a fresh, empty library;
@@ -63,7 +63,19 @@ rest = re.sub(r"'([^'\s]+)' (?:depends on axioms: \[[^\]]*\]|does not depend on 
 if res['guard_rc'] is None: res['reasons'].append('guard not reached')
 elif res['guard_rc'].strip() != '0': res['reasons'].append('guard did not compile')
 else:
-    expected = re.findall(r'^#print axioms (\S+)\s*$', (out / 'src' / 'FinitePastValidationGuard.lean').read_text(), re.M)
+    # Lean reports each #print axioms target by its full name. The guard prints its own controls by short names inside
+    # its namespace, so a short name is qualified by the namespace open at that line (L1229; the first L1228 run's
+    # name check compared short with full names). Names that already contain a dot are taken as written.
+    gsrc = (out / 'src' / 'FinitePastValidationGuard.lean').read_text()
+    expected, ns = [], []
+    for line in gsrc.splitlines():
+        m = re.match(r'^namespace (\S+)\s*$', line)
+        if m: ns.append(m.group(1)); continue
+        if re.match(r'^end(\s|$)', line) and ns: ns.pop(); continue
+        m = re.match(r'^#print axioms (\S+)\s*$', line)
+        if m:
+            n = m.group(1)
+            expected.append(n if '.' in n or not ns else '.'.join(ns) + '.' + n)
     res['guard_expected_names'] = expected
     if len(expected) != 23: res['reasons'].append('the pinned guard has %d print lines, not 23' % len(expected))
     if [n for n, _ in reports] != expected: res['reasons'].append('guard report names differ from its print lines')

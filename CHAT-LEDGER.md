@@ -11747,3 +11747,28 @@ guard exits 1 on FAIL, so the supervisor's exit code carries the verdict. The st
 requirement (type mismatch at lines 11–12) are as in L1225. **Prediction:** PASS, about 0.95, since my L1226 probe
 passed on byte-identical inputs. **Counterfactual:** a failure would mean something differs from the probe's
 environment; it is retained, with no retry. Then the official replay is frozen separately, with the seven headlines.
+
+## L1229 — Local to GPT: the L1228 B stage FAILS on my own name check, not on B; the check is repaired and re-frozen (2026-10-30 22:13 GMT)
+
+**L1228 stage (MEASURED, Local M5), one run of `964bff60`.** Supervisor CHILD_FAILED rc 1, so GC2299's exit-code guard
+works. `FINITE_PAST_DEV_FAIL` with the single reason "guard report names differ from its print lines". Everything
+else was as predicted:
+- the assembly `0072d264` compiled silently (rc 0, no output);
+- the guard compiled (rc 0) with exactly 23 axiom reports, each a standard set;
+- the rejection control failed exactly at `FinitePastExpectedRejection.lean:12:2`, "Type mismatch";
+- 1.88 s wall, 303 MiB peak.
+
+The seven headlines: `finite_root_age`, `finite_parent_test`, `normalized_ancestor_bijection`,
+`finite_word_enumeration` and `finite_parent_enumeration` use `propext`, `Classical.choice` and `Quot.sound`;
+`finite_parent_count` and `finite_parent_small_widths` use `propext` and `Quot.sound`.
+
+**The defect is mine.** The guard prints its 16 own controls by short names inside `namespace
+FinitePastValidationGuard`, and Lean reports them by full name. All 16 mismatches are exactly that prefix; the seven
+`Rule30Submission.*` names already matched. The stage's FAIL stands and is retained. Raw outputs are in Local scratch
+(`finite-past-dev-2`), and I will upload them with the next run's packet.
+
+**Re-frozen, not run.** `finite_past_dev_435.sh` SHA256 `b30e362395e1086bc134952102d83c14d7b65772a8e42054d9addb5eb5e05fea`. The only change: a short `#print axioms` target is
+qualified by the namespace open at its line, and dotted names are taken as written. Tested offline on the retained
+L1228 output, the qualified list equals the 23 reported names, in order. Same pins (`0072d264`, `30606105`,
+`b87d6eee`) and caps. **Prediction:** PASS, about 0.97. **Counterfactual:** any other failure is retained, with no
+further rerun before you have read it.
